@@ -3,7 +3,9 @@
 import Navbar from "@/components/Navbar";
 
 import { masterSyllabus } from "@/lib/masterSyllabus";
+
 import { userProgress } from "@/lib/userProgress";
+
 import { userStats } from "@/lib/gamification";
 
 export default function DashboardPage() {
@@ -15,6 +17,10 @@ export default function DashboardPage() {
     (completed / totalChapters) * 100
   );
 
+  const recommended =
+    userProgress.weakChapters[0] ||
+    userProgress.inProgress[0];
+
   return (
     <main className="min-h-screen bg-black text-white">
 
@@ -24,7 +30,7 @@ export default function DashboardPage() {
 
         <h1 className="text-5xl font-bold mb-4">
 
-          📊 Dashboard
+          📊 Smart Dashboard
 
         </h1>
 
@@ -34,7 +40,7 @@ export default function DashboardPage() {
 
         </p>
 
-        <div className="grid md:grid-cols-4 gap-6 mb-12">
+        <div className="grid md:grid-cols-5 gap-6 mb-12">
 
           <div className="border border-white/10 rounded-2xl p-6">
 
@@ -44,11 +50,7 @@ export default function DashboardPage() {
 
             </h2>
 
-            <p className="text-white/60">
-
-              Total Chapters
-
-            </p>
+            <p>Total Chapters</p>
 
           </div>
 
@@ -60,11 +62,7 @@ export default function DashboardPage() {
 
             </h2>
 
-            <p className="text-white/60">
-
-              Progress
-
-            </p>
+            <p>📈 Progress</p>
 
           </div>
 
@@ -76,11 +74,7 @@ export default function DashboardPage() {
 
             </h2>
 
-            <p className="text-white/60">
-
-              🔥 Study Streak
-
-            </p>
+            <p>🔥 Streak</p>
 
           </div>
 
@@ -92,39 +86,43 @@ export default function DashboardPage() {
 
             </h2>
 
-            <p className="text-white/60">
+            <p>🏆 Level</p>
 
-              🏆 Level
+          </div>
 
-            </p>
+          <div className="border border-white/10 rounded-2xl p-6">
+
+            <h2 className="text-3xl font-bold">
+
+              {userStats.xp}
+
+            </h2>
+
+            <p>⭐ XP</p>
 
           </div>
 
         </div>
 
-        <div className="grid md:grid-cols-2 gap-6 mb-12">
+        <div className="grid md:grid-cols-3 gap-6">
 
           <div className="border border-white/10 rounded-2xl p-8">
 
             <h2 className="text-2xl font-bold mb-6">
 
-              ⭐ Completed Chapters
+              ⚠️ Weak Chapters
 
             </h2>
 
-            <ul className="space-y-3 text-white/70">
+            {userProgress.weakChapters.map((item) => (
 
-              {userProgress.completed.map((chapter) => (
+              <p key={item}>
 
-                <li key={chapter}>
+                • {item}
 
-                  {chapter}
+              </p>
 
-                </li>
-
-              ))}
-
-            </ul>
+            ))}
 
           </div>
 
@@ -132,23 +130,35 @@ export default function DashboardPage() {
 
             <h2 className="text-2xl font-bold mb-6">
 
-              🎯 In Progress
+              💪 Strong Chapters
 
             </h2>
 
-            <ul className="space-y-3 text-white/70">
+            {userProgress.strongChapters.map((item) => (
 
-              {userProgress.inProgress.map((chapter) => (
+              <p key={item}>
 
-                <li key={chapter}>
+                • {item}
 
-                  {chapter}
+              </p>
 
-                </li>
+            ))}
 
-              ))}
+          </div>
 
-            </ul>
+          <div className="border border-white/10 rounded-2xl p-8">
+
+            <h2 className="text-2xl font-bold mb-6">
+
+              🎯 Recommended Next
+
+            </h2>
+
+            <p>
+
+              {recommended}
+
+            </p>
 
           </div>
 

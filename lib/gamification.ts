@@ -9,13 +9,16 @@ export type UserStats = {
 };
 
 export const userStats: UserStats = {
-  xp: 120,
+  xp: 320,
 
-  streak: 3,
+  streak: 7,
 
-  level: 1,
+  level: 4,
 
-  badges: [],
+  badges: [
+    "🔥 Consistent Learner",
+    "🧠 Atom Master",
+  ],
 };
 
 export function addXP(amount: number) {

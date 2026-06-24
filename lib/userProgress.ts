@@ -15,17 +15,28 @@ export type UserProgress = {
 };
 
 export const userProgress: UserProgress = {
-  completed: ["structure-of-atom"],
+  completed: [
+    "structure-of-atom",
+    "some-basic-concepts",
+  ],
 
-  inProgress: ["thermodynamics"],
+  inProgress: [
+    "thermodynamics",
+  ],
 
-  revisionQueue: ["some-basic-concepts"],
+  revisionQueue: [
+    "equilibrium",
+  ],
 
-  weakChapters: [],
+  weakChapters: [
+    "electrochemistry",
+  ],
 
-  strongChapters: [],
+  strongChapters: [
+    "structure-of-atom",
+  ],
 
-  totalStudyMinutes: 0,
+  totalStudyMinutes: 420,
 
-  testsTaken: 0,
+  testsTaken: 8,
 };

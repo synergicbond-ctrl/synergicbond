@@ -3,36 +3,18 @@
 import Navbar from "@/components/Navbar";
 
 export default function VaultPage() {
-  const sections = [
-    {
-      title: "📚 Formula Vault",
-      description: "Important formulas across chemistry.",
-    },
+  const vault = [
+    "⭐ Favorite Chapters",
 
-    {
-      title: "⚛️ Named Reactions",
-      description: "Organic chemistry reactions in one place.",
-    },
+    "📌 Saved Concepts",
 
-    {
-      title: "🧠 Important Exceptions",
-      description: "Frequently tested exceptions.",
-    },
+    "📚 Formula Vault",
 
-    {
-      title: "⚡ Quick Facts",
-      description: "High-yield exam facts.",
-    },
+    "⚛️ Named Reactions",
 
-    {
-      title: "🎯 Mechanisms",
-      description: "Reaction mechanisms and shortcuts.",
-    },
+    "🧠 Important Exceptions",
 
-    {
-      title: "🏆 Must Revise",
-      description: "High-priority concepts.",
-    },
+    "⚡ Quick Facts",
   ];
 
   return (
@@ -44,36 +26,30 @@ export default function VaultPage() {
 
         <h1 className="text-5xl font-bold mb-4">
 
-          🏛️ Chemistry Vault
+          🏛️ Knowledge Vault
 
         </h1>
 
-        <p className="text-white/60 mb-14">
+        <p className="text-white/60 mb-12">
 
-          Your permanent chemistry knowledge base.
+          Your personal chemistry memory bank.
 
         </p>
 
         <div className="grid md:grid-cols-3 gap-6">
 
-          {sections.map((section) => (
+          {vault.map((item) => (
 
             <div
-              key={section.title}
-              className="border border-white/10 rounded-2xl p-8 hover:border-white/30 transition"
+              key={item}
+              className="border border-white/10 rounded-2xl p-8"
             >
 
-              <h2 className="text-2xl font-bold mb-4">
+              <h2 className="text-2xl font-bold">
 
-                {section.title}
+                {item}
 
               </h2>
-
-              <p className="text-white/60">
-
-                {section.description}
-
-              </p>
 
             </div>
 

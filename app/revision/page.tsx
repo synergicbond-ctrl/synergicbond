@@ -1,13 +1,10 @@
 "use client";
 
 import Navbar from "@/components/Navbar";
-import { masterSyllabus } from "@/lib/masterSyllabus";
+
+import { userProgress } from "@/lib/userProgress";
 
 export default function RevisionPage() {
-  const highWeightage = masterSyllabus
-    .filter((chapter) => chapter.difficulty >= 4)
-    .slice(0, 6);
-
   return (
     <main className="min-h-screen bg-black text-white">
 
@@ -17,110 +14,101 @@ export default function RevisionPage() {
 
         <h1 className="text-5xl font-bold mb-4">
 
-          ⚡ Revision Engine
+          🔁 Smart Revision
 
         </h1>
 
         <p className="text-white/60 mb-12">
 
-          Revise smarter, not longer.
+          Revise according to priority.
 
         </p>
 
-        <div className="grid md:grid-cols-3 gap-6 mb-16">
+        <div className="grid md:grid-cols-3 gap-6 mb-12">
 
           <div className="border border-white/10 rounded-2xl p-8">
 
-            <h2 className="text-3xl font-bold mb-4">
+            <h2 className="text-2xl font-bold mb-6">
 
-              ⚡ 15 Min
-
-            </h2>
-
-            <p className="text-white/60">
-
-              Rapid formula revision.
-
-            </p>
-
-          </div>
-
-          <div className="border border-white/10 rounded-2xl p-8">
-
-            <h2 className="text-3xl font-bold mb-4">
-
-              ⚡ 30 Min
+              📅 Due Today
 
             </h2>
 
-            <p className="text-white/60">
+            {userProgress.revisionQueue.map((item) => (
 
-              Concepts + formulas.
+              <p key={item}>
 
-            </p>
+                • {item}
 
-          </div>
-
-          <div className="border border-white/10 rounded-2xl p-8">
-
-            <h2 className="text-3xl font-bold mb-4">
-
-              ⚡ 60 Min
-
-            </h2>
-
-            <p className="text-white/60">
-
-              Full chapter revision.
-
-            </p>
-
-          </div>
-
-        </div>
-
-        <section>
-
-          <h2 className="text-3xl font-bold mb-8">
-
-            🔥 High Weightage Chapters
-
-          </h2>
-
-          <div className="grid md:grid-cols-3 gap-6">
-
-            {highWeightage.map((chapter) => (
-
-              <div
-                key={chapter.id}
-                className="border border-white/10 rounded-2xl p-6"
-              >
-
-                <h3 className="text-xl font-bold mb-3">
-
-                  {chapter.title}
-
-                </h3>
-
-                <p className="text-white/50 mb-2">
-
-                  {chapter.category}
-
-                </p>
-
-                <p className="text-white/50">
-
-                  Difficulty {chapter.difficulty}/5
-
-                </p>
-
-              </div>
+              </p>
 
             ))}
 
           </div>
 
-        </section>
+          <div className="border border-white/10 rounded-2xl p-8">
+
+            <h2 className="text-2xl font-bold mb-6">
+
+              ⚠️ Weak Chapters
+
+            </h2>
+
+            {userProgress.weakChapters.map((item) => (
+
+              <p key={item}>
+
+                • {item}
+
+              </p>
+
+            ))}
+
+          </div>
+
+          <div className="border border-white/10 rounded-2xl p-8">
+
+            <h2 className="text-2xl font-bold mb-6">
+
+              🔥 In Progress
+
+            </h2>
+
+            {userProgress.inProgress.map((item) => (
+
+              <p key={item}>
+
+                • {item}
+
+              </p>
+
+            ))}
+
+          </div>
+
+        </div>
+
+        <div className="border border-white/10 rounded-2xl p-8">
+
+          <h2 className="text-2xl font-bold mb-6">
+
+            🧠 Spaced Repetition Rule
+
+          </h2>
+
+          <ul className="space-y-3 text-white/70">
+
+            <li>Day 1 → Learn</li>
+
+            <li>Day 3 → Revise</li>
+
+            <li>Day 7 → Practice PYQs</li>
+
+            <li>Day 15 → Retest</li>
+
+          </ul>
+
+        </div>
 
       </div>
 

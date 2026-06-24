@@ -4,30 +4,41 @@ import { useState } from "react";
 
 import Navbar from "@/components/Navbar";
 
-import {
-  explainChapter,
-  buildAiTutorContext,
-} from "@/lib/aiTutor";
+import { chemistryDatabase } from "@/lib/chemistryDatabase";
+import { pyqDatabase } from "@/lib/pyqDatabase";
 
 export default function TutorPage() {
   const [query, setQuery] = useState("");
 
-  const [searched, setSearched] = useState(false);
+  const [result, setResult] = useState<
+    (typeof chemistryDatabase)[string] | null
+  >(null);
 
-  const [result, setResult] = useState(
-    explainChapter("")
-  );
+  const [pyqs, setPyqs] = useState<string[]>([]);
 
-  const [context, setContext] = useState(
-    buildAiTutorContext()
-  );
+  const [notFound, setNotFound] = useState(false);
 
-  function handleAsk() {
-    setSearched(true);
+  function askTutor() {
+    const normalized = query
+      .trim()
+      .toLowerCase()
+      .replace(/\s+/g, "-");
 
-    setResult(explainChapter(query));
+    const topic = chemistryDatabase[normalized];
 
-    setContext(buildAiTutorContext(query));
+    if (topic) {
+      setResult(topic);
+
+      setPyqs(pyqDatabase[normalized] ?? []);
+
+      setNotFound(false);
+    } else {
+      setResult(null);
+
+      setPyqs([]);
+
+      setNotFound(true);
+    }
   }
 
   return (
@@ -39,13 +50,13 @@ export default function TutorPage() {
 
         <h1 className="text-5xl font-bold mb-4">
 
-          🧠 AI Chemistry Tutor
+          🧠 Smart Chemistry Tutor
 
         </h1>
 
         <p className="text-white/60 mb-12">
 
-          Explain • Revise • Practice • Learn
+          Offline Tutor for NEET & JEE.
 
         </p>
 
@@ -53,51 +64,49 @@ export default function TutorPage() {
 
           <input
             value={query}
-            onChange={(e) => setQuery(e.target.value)}
-            placeholder="Ask: Thermodynamics, Chemical Bonding, Mole Concept..."
+            onChange={(e) =>
+              setQuery(e.target.value)
+            }
+            placeholder="Try: thermodynamics"
             className="flex-1 p-4 rounded-xl bg-white/5 border border-white/10"
           />
 
           <button
-            onClick={handleAsk}
+            onClick={askTutor}
             className="px-8 py-4 rounded-xl bg-white text-black font-semibold"
           >
 
-            Ask Tutor
+            Search
 
           </button>
 
         </div>
 
-        {!searched && (
+        {!result && !notFound && (
 
-          <div className="border border-white/10 rounded-2xl p-8">
+          <div className="grid md:grid-cols-4 gap-4">
 
-            <h2 className="text-2xl font-bold mb-6">
+            <div className="border border-white/10 rounded-xl p-5">
 
-              🚀 Try asking
+              Thermodynamics
 
-            </h2>
+            </div>
 
-            <div className="grid md:grid-cols-3 gap-4">
+            <div className="border border-white/10 rounded-xl p-5">
 
-              <div className="border border-white/10 rounded-xl p-5">
+              Equilibrium
 
-                Thermodynamics
+            </div>
 
-              </div>
+            <div className="border border-white/10 rounded-xl p-5">
 
-              <div className="border border-white/10 rounded-xl p-5">
+              Electrochemistry
 
-                Structure of Atom
+            </div>
 
-              </div>
+            <div className="border border-white/10 rounded-xl p-5">
 
-              <div className="border border-white/10 rounded-xl p-5">
-
-                Chemical Bonding
-
-              </div>
+              Chemical Bonding
 
             </div>
 
@@ -105,98 +114,129 @@ export default function TutorPage() {
 
         )}
 
-        {searched && (
+        {notFound && (
+
+          <div className="border border-red-500/30 rounded-2xl p-8">
+
+            Topic not found.
+
+          </div>
+
+        )}
+
+        {result && (
 
           <div className="space-y-8">
 
             <div className="border border-white/10 rounded-2xl p-8">
 
-              <h2 className="text-3xl font-bold mb-6">
+              <h2 className="text-3xl font-bold mb-4">
 
                 {result.title}
 
               </h2>
 
-              <p className="text-white/60 mb-6">
+              <p>
 
-                Difficulty: {result.difficulty}/5
+                {result.overview}
 
               </p>
 
-              <h3 className="font-semibold mb-4">
+            </div>
 
-                🧠 Concepts
+            <div className="grid md:grid-cols-3 gap-6">
 
-              </h3>
+              <div className="border border-white/10 rounded-2xl p-6">
 
-              <ul className="space-y-2">
+                <h3 className="font-bold mb-4">
 
-                {result.concepts.map((concept) => (
+                  🟢 NEET Focus
 
-                  <li
-                    key={concept}
-                    className="text-white/80"
-                  >
+                </h3>
 
-                    • {concept}
+                {result.neet.map((item) => (
 
-                  </li>
+                  <p key={item}>
+
+                    • {item}
+
+                  </p>
 
                 ))}
 
-              </ul>
+              </div>
+
+              <div className="border border-white/10 rounded-2xl p-6">
+
+                <h3 className="font-bold mb-4">
+
+                  🟡 JEE Focus
+
+                </h3>
+
+                {result.jee.map((item) => (
+
+                  <p key={item}>
+
+                    • {item}
+
+                  </p>
+
+                ))}
+
+              </div>
+
+              <div className="border border-white/10 rounded-2xl p-6">
+
+                <h3 className="font-bold mb-4">
+
+                  🎯 Exam Tip
+
+                </h3>
+
+                <p>
+
+                  Study theory first.
+
+                </p>
+
+                <p className="mt-3">
+
+                  Then practice PYQs immediately.
+
+                </p>
+
+              </div>
 
             </div>
 
-            <div className="grid md:grid-cols-4 gap-6">
+            {pyqs.length > 0 && (
 
-              <div className="border border-white/10 rounded-xl p-6">
+              <div className="border border-white/10 rounded-2xl p-8">
 
-                💡 Hint
+                <h3 className="text-2xl font-bold mb-6">
+
+                  📚 Related PYQs
+
+                </h3>
+
+                <div className="space-y-3">
+
+                  {pyqs.map((pyq) => (
+
+                    <p key={pyq}>
+
+                      • {pyq}
+
+                    </p>
+
+                  ))}
+
+                </div>
 
               </div>
 
-              <div className="border border-white/10 rounded-xl p-6">
-
-                📝 Example
-
-              </div>
-
-              <div className="border border-white/10 rounded-xl p-6">
-
-                📚 PYQ
-
-              </div>
-
-              <div className="border border-white/10 rounded-xl p-6">
-
-                ⚡ Revise
-
-              </div>
-
-            </div>
-
-            <div className="border border-white/10 rounded-2xl p-8">
-
-              <h3 className="text-2xl font-bold mb-4">
-
-                🎯 Chapter Context
-
-              </h3>
-
-              <p className="mb-2">
-
-                Category: {context.category}
-
-              </p>
-
-              <p>
-
-                Chapter: {context.chapterTitle}
-
-              </p>
-
-            </div>
+            )}
 
           </div>
 

@@ -1,44 +1,41 @@
 import { NextResponse } from "next/server";
-import OpenAI from "openai";
+
 import { masterSyllabus } from "@/lib/masterSyllabus";
 
-const client = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY,
-});
-
 export async function POST(req: Request) {
-  const { message } = await req.json();
+  try {
+    const { message } = await req.json();
 
-  // find relevant chapter context
-  const chapter = masterSyllabus.find((c) =>
-    c.title.toLowerCase().includes(message.toLowerCase()) ||
-    c.pyqTags.some((t) => message.toLowerCase().includes(t))
-  );
+    const chapter = masterSyllabus.find(
+      (c) =>
+        c.title.toLowerCase().includes(message.toLowerCase()) ||
+        c.pyqTags.some((t) =>
+          message.toLowerCase().includes(t)
+        )
+    );
 
-  const context = chapter
-    ? `
-Chapter: ${chapter.title}
-Concepts: ${chapter.concepts.join(", ")}
-Difficulty: ${chapter.difficulty}/5
-`
-    : "No direct chapter found in syllabus.";
+    const context = chapter
+      ? {
+          chapter: chapter.title,
+          concepts: chapter.concepts,
+          difficulty: chapter.difficulty,
+        }
+      : null;
 
-  const completion = await client.chat.completions.create({
-    model: "gpt-4o-mini",
-    messages: [
+    return NextResponse.json({
+      reply:
+        "AI mode is currently disabled. Connect an OpenAI API key later to enable live tutoring.",
+
+      context,
+    });
+  } catch {
+    return NextResponse.json(
       {
-        role: "system",
-        content:
-          "You are an expert Chemistry tutor for NEET, JEE Main, and JEE Advanced students. Explain clearly and step-by-step.",
+        reply: "Unable to process request.",
       },
       {
-        role: "user",
-        content: `${context}\n\nStudent question: ${message}`,
-      },
-    ],
-  });
-
-  return NextResponse.json({
-    reply: completion.choices[0].message.content,
-  });
+        status: 500,
+      }
+    );
+  }
 }

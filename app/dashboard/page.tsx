@@ -1,101 +1,156 @@
 "use client";
 
 import Navbar from "@/components/Navbar";
+
 import { masterSyllabus } from "@/lib/masterSyllabus";
+import { userProgress } from "@/lib/userProgress";
+import { userStats } from "@/lib/gamification";
 
 export default function DashboardPage() {
   const totalChapters = masterSyllabus.length;
 
-  const physical = masterSyllabus.filter(
-    (c) => c.category === "physical"
-  ).length;
+  const completed = userProgress.completed.length;
 
-  const inorganic = masterSyllabus.filter(
-    (c) => c.category === "inorganic"
-  ).length;
-
-  const organic = masterSyllabus.filter(
-    (c) => c.category === "organic"
-  ).length;
+  const progress = Math.round(
+    (completed / totalChapters) * 100
+  );
 
   return (
     <main className="min-h-screen bg-black text-white">
 
       <Navbar />
 
-      <div className="max-w-6xl mx-auto px-6 py-16">
+      <div className="max-w-7xl mx-auto px-6 py-16">
 
         <h1 className="text-5xl font-bold mb-4">
+
           📊 Dashboard
+
         </h1>
 
         <p className="text-white/60 mb-12">
+
           Your Chemistry Command Center
+
         </p>
 
         <div className="grid md:grid-cols-4 gap-6 mb-12">
 
           <div className="border border-white/10 rounded-2xl p-6">
+
             <h2 className="text-3xl font-bold">
+
               {totalChapters}
+
             </h2>
 
             <p className="text-white/60">
+
               Total Chapters
+
             </p>
+
           </div>
 
           <div className="border border-white/10 rounded-2xl p-6">
+
             <h2 className="text-3xl font-bold">
-              {physical}
+
+              {progress}%
+
             </h2>
 
             <p className="text-white/60">
-              Physical Chemistry
+
+              Progress
+
             </p>
+
           </div>
 
           <div className="border border-white/10 rounded-2xl p-6">
+
             <h2 className="text-3xl font-bold">
-              {inorganic}
+
+              {userStats.streak}
+
             </h2>
 
             <p className="text-white/60">
-              Inorganic Chemistry
+
+              🔥 Study Streak
+
             </p>
+
           </div>
 
           <div className="border border-white/10 rounded-2xl p-6">
+
             <h2 className="text-3xl font-bold">
-              {organic}
+
+              {userStats.level}
+
             </h2>
 
             <p className="text-white/60">
-              Organic Chemistry
+
+              🏆 Level
+
             </p>
+
           </div>
 
         </div>
 
-        <div className="border border-white/10 rounded-2xl p-8">
+        <div className="grid md:grid-cols-2 gap-6 mb-12">
 
-          <h2 className="text-2xl font-bold mb-6">
-            🎯 Coming Soon
-          </h2>
+          <div className="border border-white/10 rounded-2xl p-8">
 
-          <ul className="space-y-3 text-white/70">
+            <h2 className="text-2xl font-bold mb-6">
 
-            <li>🔥 Study streak</li>
+              ⭐ Completed Chapters
 
-            <li>📈 Weak chapters</li>
+            </h2>
 
-            <li>⭐ Strong chapters</li>
+            <ul className="space-y-3 text-white/70">
 
-            <li>📝 Adaptive tests</li>
+              {userProgress.completed.map((chapter) => (
 
-            <li>🏆 Performance analytics</li>
+                <li key={chapter}>
 
-          </ul>
+                  {chapter}
+
+                </li>
+
+              ))}
+
+            </ul>
+
+          </div>
+
+          <div className="border border-white/10 rounded-2xl p-8">
+
+            <h2 className="text-2xl font-bold mb-6">
+
+              🎯 In Progress
+
+            </h2>
+
+            <ul className="space-y-3 text-white/70">
+
+              {userProgress.inProgress.map((chapter) => (
+
+                <li key={chapter}>
+
+                  {chapter}
+
+                </li>
+
+              ))}
+
+            </ul>
+
+          </div>
 
         </div>
 

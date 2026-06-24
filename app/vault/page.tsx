@@ -1,100 +1,81 @@
-import Link from "next/link";
+"use client";
 
-const categories = [
-  {
-    title: "⚛️ Physical Chemistry",
-
-    topics: [
-      "atomic-structure",
-      "mole-concept",
-      "thermodynamics",
-      "equilibrium",
-      "electrochemistry",
-      "chemical-kinetics",
-    ],
-  },
-
-  {
-    title: "🧪 Organic Chemistry",
-
-    topics: [
-      "goc",
-      "sn1",
-      "sn2",
-      "isomerism",
-      "hydrocarbons",
-    ],
-  },
-
-  {
-    title: "🧬 Inorganic Chemistry",
-
-    topics: [
-      "chemical-bonding",
-      "periodic-table",
-      "coordination-chemistry",
-      "d-and-f-block",
-    ],
-  },
-];
+import Navbar from "@/components/Navbar";
 
 export default function VaultPage() {
-  return (
-    <main className="min-h-screen bg-black text-white px-6 py-16">
+  const sections = [
+    {
+      title: "📚 Formula Vault",
+      description: "Important formulas across chemistry.",
+    },
 
-      <div className="max-w-7xl mx-auto">
+    {
+      title: "⚛️ Named Reactions",
+      description: "Organic chemistry reactions in one place.",
+    },
+
+    {
+      title: "🧠 Important Exceptions",
+      description: "Frequently tested exceptions.",
+    },
+
+    {
+      title: "⚡ Quick Facts",
+      description: "High-yield exam facts.",
+    },
+
+    {
+      title: "🎯 Mechanisms",
+      description: "Reaction mechanisms and shortcuts.",
+    },
+
+    {
+      title: "🏆 Must Revise",
+      description: "High-priority concepts.",
+    },
+  ];
+
+  return (
+    <main className="min-h-screen bg-black text-white">
+
+      <Navbar />
+
+      <div className="max-w-7xl mx-auto px-6 py-16">
 
         <h1 className="text-5xl font-bold mb-4">
 
-          🧪 Chemistry Vault
+          🏛️ Chemistry Vault
 
         </h1>
 
         <p className="text-white/60 mb-14">
 
-          Explore every chemistry topic in one place.
+          Your permanent chemistry knowledge base.
 
         </p>
 
-        <div className="space-y-12">
+        <div className="grid md:grid-cols-3 gap-6">
 
-          {categories.map((category) => (
+          {sections.map((section) => (
 
-            <section key={category.title}>
+            <div
+              key={section.title}
+              className="border border-white/10 rounded-2xl p-8 hover:border-white/30 transition"
+            >
 
-              <h2 className="text-3xl font-bold mb-6">
+              <h2 className="text-2xl font-bold mb-4">
 
-                {category.title}
+                {section.title}
 
               </h2>
 
-              <div className="grid md:grid-cols-3 gap-5">
+              <p className="text-white/60">
 
-                {category.topics.map((topic) => (
+                {section.description}
 
-                  <Link
-                    key={topic}
-                    href={`/concept/${topic}`}
-                    className="border border-white/10 rounded-2xl p-6 hover:border-white/30 hover:scale-105 transition duration-300"
-                  >
+              </p>
 
-                    <h3 className="text-xl font-semibold">
-
-                      {topic
-                        .replaceAll("-", " ")
-                        .replace(/\b\w/g, (c) =>
-                          c.toUpperCase()
-                        )}
-
-                    </h3>
-
-                  </Link>
-
-                ))}
-
-              </div>
-
-            </section>
+            </div>
 
           ))}
 

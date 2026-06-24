@@ -1,123 +1,105 @@
-import Hero from "@/components/Hero";
-import ChemSearch from "@/components/ChemSearch";
-import Stats from "@/components/Stats";
-import Navbar from "@/components/Navbar";
+"use client";
 
-export default function HomePage() {
+import Navbar from "@/components/Navbar";
+import { masterSyllabus } from "@/lib/masterSyllabus";
+
+export default function DashboardPage() {
+  const totalChapters = masterSyllabus.length;
+
+  const physical = masterSyllabus.filter(
+    (c) => c.category === "physical"
+  ).length;
+
+  const inorganic = masterSyllabus.filter(
+    (c) => c.category === "inorganic"
+  ).length;
+
+  const organic = masterSyllabus.filter(
+    (c) => c.category === "organic"
+  ).length;
+
   return (
     <main className="min-h-screen bg-black text-white">
 
       <Navbar />
 
-      <Hero />
+      <div className="max-w-6xl mx-auto px-6 py-16">
 
-      <section className="border-t border-white/10 py-20">
+        <h1 className="text-5xl font-bold mb-4">
+          📊 Dashboard
+        </h1>
 
-        <div className="max-w-6xl mx-auto px-6">
+        <p className="text-white/60 mb-12">
+          Your Chemistry Command Center
+        </p>
 
-          <ChemSearch />
+        <div className="grid md:grid-cols-4 gap-6 mb-12">
 
-        </div>
+          <div className="border border-white/10 rounded-2xl p-6">
+            <h2 className="text-3xl font-bold">
+              {totalChapters}
+            </h2>
 
-      </section>
+            <p className="text-white/60">
+              Total Chapters
+            </p>
+          </div>
 
-      <section className="border-t border-white/10 py-20">
+          <div className="border border-white/10 rounded-2xl p-6">
+            <h2 className="text-3xl font-bold">
+              {physical}
+            </h2>
 
-        <div className="max-w-6xl mx-auto px-6">
+            <p className="text-white/60">
+              Physical Chemistry
+            </p>
+          </div>
 
-          <h2 className="text-4xl font-bold text-center mb-14">
+          <div className="border border-white/10 rounded-2xl p-6">
+            <h2 className="text-3xl font-bold">
+              {inorganic}
+            </h2>
 
-            🚀 What can you do here?
+            <p className="text-white/60">
+              Inorganic Chemistry
+            </p>
+          </div>
 
-          </h2>
+          <div className="border border-white/10 rounded-2xl p-6">
+            <h2 className="text-3xl font-bold">
+              {organic}
+            </h2>
 
-          <div className="grid md:grid-cols-4 gap-6">
-
-            <div className="border border-white/10 rounded-2xl p-6">
-
-              <h3 className="text-2xl font-bold mb-3">
-
-                🔍 Search
-
-              </h3>
-
-              <p className="text-white/60">
-
-                Instantly find any chemistry topic.
-
-              </p>
-
-            </div>
-
-            <div className="border border-white/10 rounded-2xl p-6">
-
-              <h3 className="text-2xl font-bold mb-3">
-
-                🧠 Learn
-
-              </h3>
-
-              <p className="text-white/60">
-
-                Study concepts for NEET, JEE, GATE and InChO.
-
-              </p>
-
-            </div>
-
-            <div className="border border-white/10 rounded-2xl p-6">
-
-              <h3 className="text-2xl font-bold mb-3">
-
-                📚 Practice
-
-              </h3>
-
-              <p className="text-white/60">
-
-                Solve PYQs and revise quickly.
-
-              </p>
-
-            </div>
-
-            <div className="border border-white/10 rounded-2xl p-6">
-
-              <h3 className="text-2xl font-bold mb-3">
-
-                🏆 Master
-
-              </h3>
-
-              <p className="text-white/60">
-
-                Build long-term chemistry mastery.
-
-              </p>
-
-            </div>
-
+            <p className="text-white/60">
+              Organic Chemistry
+            </p>
           </div>
 
         </div>
 
-      </section>
+        <div className="border border-white/10 rounded-2xl p-8">
 
-      <section className="border-t border-white/10 py-20">
+          <h2 className="text-2xl font-bold mb-6">
+            🎯 Coming Soon
+          </h2>
 
-        <div className="max-w-6xl mx-auto px-6">
+          <ul className="space-y-3 text-white/70">
 
-          <Stats />
+            <li>🔥 Study streak</li>
+
+            <li>📈 Weak chapters</li>
+
+            <li>⭐ Strong chapters</li>
+
+            <li>📝 Adaptive tests</li>
+
+            <li>🏆 Performance analytics</li>
+
+          </ul>
 
         </div>
 
-      </section>
-
-      <footer className="border-t border-white/10 py-12 text-center text-white/40">
-
-        SYNERGIC BOND — Chemistry Operating System
-
-      </footer>
+      </div>
 
     </main>
   );

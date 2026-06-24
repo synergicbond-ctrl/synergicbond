@@ -1,55 +1,209 @@
 "use client";
 
 import { useState } from "react";
-import { explainChapter, type TutorResult } from "@/lib/aiTutor";
+
+import Navbar from "@/components/Navbar";
+
+import {
+  explainChapter,
+  buildAiTutorContext,
+} from "@/lib/aiTutor";
 
 export default function TutorPage() {
   const [query, setQuery] = useState("");
-  const [result, setResult] = useState<TutorResult | null>(null);
 
-  const handleAsk = () => {
-    const res = explainChapter(query);
-    setResult(res);
-  };
+  const [searched, setSearched] = useState(false);
+
+  const [result, setResult] = useState(
+    explainChapter("")
+  );
+
+  const [context, setContext] = useState(
+    buildAiTutorContext()
+  );
+
+  function handleAsk() {
+    setSearched(true);
+
+    setResult(explainChapter(query));
+
+    setContext(buildAiTutorContext(query));
+  }
 
   return (
-    <main className="min-h-screen bg-black text-white px-6 py-16">
-      <div className="max-w-3xl mx-auto">
-        <h1 className="text-4xl font-bold mb-6">Chemistry AI Tutor</h1>
+    <main className="min-h-screen bg-black text-white">
 
-        <div className="flex gap-2">
+      <Navbar />
+
+      <div className="max-w-6xl mx-auto px-6 py-16">
+
+        <h1 className="text-5xl font-bold mb-4">
+
+          🧠 AI Chemistry Tutor
+
+        </h1>
+
+        <p className="text-white/60 mb-12">
+
+          Explain • Revise • Practice • Learn
+
+        </p>
+
+        <div className="flex flex-col md:flex-row gap-4 mb-12">
+
           <input
             value={query}
             onChange={(e) => setQuery(e.target.value)}
-            placeholder="Ask: Thermodynamics, Atom, Mole concept..."
-            className="flex-1 p-3 rounded bg-white/5 border border-white/10"
+            placeholder="Ask: Thermodynamics, Chemical Bonding, Mole Concept..."
+            className="flex-1 p-4 rounded-xl bg-white/5 border border-white/10"
           />
 
           <button
             onClick={handleAsk}
-            className="px-6 py-3 bg-white text-black rounded"
+            className="px-8 py-4 rounded-xl bg-white text-black font-semibold"
           >
-            Ask
+
+            Ask Tutor
+
           </button>
+
         </div>
 
-        {result && (
-          <div className="mt-10 border border-white/10 p-6 rounded-xl">
-            <h2 className="text-2xl font-bold mb-4">{result.title}</h2>
+        {!searched && (
 
-            <h3 className="text-white/60 mb-2">Key Concepts</h3>
-            <ul className="list-disc ml-5 text-white/80">
-              {result.concepts.map((c) => (
-                <li key={c}>{c}</li>
-              ))}
-            </ul>
+          <div className="border border-white/10 rounded-2xl p-8">
 
-            <p className="mt-4 text-white/50">
-              Difficulty: {result.difficulty}/5
-            </p>
+            <h2 className="text-2xl font-bold mb-6">
+
+              🚀 Try asking
+
+            </h2>
+
+            <div className="grid md:grid-cols-3 gap-4">
+
+              <div className="border border-white/10 rounded-xl p-5">
+
+                Thermodynamics
+
+              </div>
+
+              <div className="border border-white/10 rounded-xl p-5">
+
+                Structure of Atom
+
+              </div>
+
+              <div className="border border-white/10 rounded-xl p-5">
+
+                Chemical Bonding
+
+              </div>
+
+            </div>
+
           </div>
+
         )}
+
+        {searched && (
+
+          <div className="space-y-8">
+
+            <div className="border border-white/10 rounded-2xl p-8">
+
+              <h2 className="text-3xl font-bold mb-6">
+
+                {result.title}
+
+              </h2>
+
+              <p className="text-white/60 mb-6">
+
+                Difficulty: {result.difficulty}/5
+
+              </p>
+
+              <h3 className="font-semibold mb-4">
+
+                🧠 Concepts
+
+              </h3>
+
+              <ul className="space-y-2">
+
+                {result.concepts.map((concept) => (
+
+                  <li
+                    key={concept}
+                    className="text-white/80"
+                  >
+
+                    • {concept}
+
+                  </li>
+
+                ))}
+
+              </ul>
+
+            </div>
+
+            <div className="grid md:grid-cols-4 gap-6">
+
+              <div className="border border-white/10 rounded-xl p-6">
+
+                💡 Hint
+
+              </div>
+
+              <div className="border border-white/10 rounded-xl p-6">
+
+                📝 Example
+
+              </div>
+
+              <div className="border border-white/10 rounded-xl p-6">
+
+                📚 PYQ
+
+              </div>
+
+              <div className="border border-white/10 rounded-xl p-6">
+
+                ⚡ Revise
+
+              </div>
+
+            </div>
+
+            <div className="border border-white/10 rounded-2xl p-8">
+
+              <h3 className="text-2xl font-bold mb-4">
+
+                🎯 Chapter Context
+
+              </h3>
+
+              <p className="mb-2">
+
+                Category: {context.category}
+
+              </p>
+
+              <p>
+
+                Chapter: {context.chapterTitle}
+
+              </p>
+
+            </div>
+
+          </div>
+
+        )}
+
       </div>
+
     </main>
   );
 }

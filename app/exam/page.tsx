@@ -2,25 +2,25 @@
 
 import Navbar from "@/components/Navbar";
 
+import { getAdaptiveTest } from "@/lib/adaptiveTestEngine";
+
 export default function ExamPage() {
   const exams = [
-    {
-      name: "🟢 NEET",
-      description: "NCERT-focused objective chemistry",
-    },
-
-    {
-      name: "🟡 JEE Main",
-      description: "Speed + conceptual chemistry",
-    },
-
-    {
-      name: "🔴 JEE Advanced",
-      description: "Advanced analytical chemistry",
-    },
+    "🟢 NEET",
+    "🟡 JEE Main",
+    "🔴 JEE Advanced",
   ];
 
-  const testSizes = [10, 20, 50];
+  const difficulty = [
+    "Easy",
+    "Medium",
+    "Hard",
+  ];
+
+  const adaptive = getAdaptiveTest([
+    "electrochemistry",
+    "thermodynamics",
+  ]);
 
   return (
     <main className="min-h-screen bg-black text-white">
@@ -35,17 +35,17 @@ export default function ExamPage() {
 
         </h1>
 
-        <p className="text-white/60 mb-14">
+        <p className="text-white/60 mb-12">
 
-          Practice exam-style chemistry questions.
+          Build personalized chemistry tests.
 
         </p>
 
-        <section className="mb-16">
+        <section className="mb-12">
 
-          <h2 className="text-3xl font-bold mb-8">
+          <h2 className="text-3xl font-bold mb-6">
 
-            🎯 Select Exam
+            🎯 Exam Modes
 
           </h2>
 
@@ -54,21 +54,11 @@ export default function ExamPage() {
             {exams.map((exam) => (
 
               <div
-                key={exam.name}
-                className="border border-white/10 rounded-2xl p-8"
+                key={exam}
+                className="border border-white/10 rounded-2xl p-6"
               >
 
-                <h3 className="text-2xl font-bold mb-4">
-
-                  {exam.name}
-
-                </h3>
-
-                <p className="text-white/60">
-
-                  {exam.description}
-
-                </p>
+                {exam}
 
               </div>
 
@@ -78,34 +68,24 @@ export default function ExamPage() {
 
         </section>
 
-        <section className="mb-16">
+        <section className="mb-12">
 
-          <h2 className="text-3xl font-bold mb-8">
+          <h2 className="text-3xl font-bold mb-6">
 
-            📋 Test Size
+            ⚡ Difficulty
 
           </h2>
 
           <div className="grid md:grid-cols-3 gap-6">
 
-            {testSizes.map((size) => (
+            {difficulty.map((level) => (
 
               <div
-                key={size}
-                className="border border-white/10 rounded-2xl p-8"
+                key={level}
+                className="border border-white/10 rounded-2xl p-6"
               >
 
-                <h3 className="text-3xl font-bold mb-3">
-
-                  {size}
-
-                </h3>
-
-                <p className="text-white/60">
-
-                  Questions
-
-                </p>
+                {level}
 
               </div>
 
@@ -115,27 +95,65 @@ export default function ExamPage() {
 
         </section>
 
-        <section>
+        <section className="grid md:grid-cols-3 gap-6">
 
           <div className="border border-white/10 rounded-2xl p-8">
 
-            <h2 className="text-3xl font-bold mb-6">
+            <h2 className="text-2xl font-bold mb-6">
 
-              🚀 Coming Soon
+              ⚠️ Weak Topics
 
             </h2>
 
-            <ul className="space-y-3 text-white/70">
+            {adaptive.weak.map((item) => (
 
-              <li>🎯 Adaptive difficulty</li>
+              <p key={item}>
 
-              <li>📈 Performance analytics</li>
+                • {item}
 
-              <li>🔥 Weak chapter detection</li>
+              </p>
 
-              <li>⭐ Personalized tests</li>
+            ))}
 
-            </ul>
+          </div>
+
+          <div className="border border-white/10 rounded-2xl p-8">
+
+            <h2 className="text-2xl font-bold mb-6">
+
+              🎯 Recommended
+
+            </h2>
+
+            {adaptive.recommended.map((item) => (
+
+              <p key={item}>
+
+                • {item}
+
+              </p>
+
+            ))}
+
+          </div>
+
+          <div className="border border-white/10 rounded-2xl p-8">
+
+            <h2 className="text-2xl font-bold mb-6">
+
+              ⭐ Bonus Topics
+
+            </h2>
+
+            {adaptive.bonus.map((item) => (
+
+              <p key={item}>
+
+                • {item}
+
+              </p>
+
+            ))}
 
           </div>
 

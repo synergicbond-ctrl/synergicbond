@@ -1,16 +1,39 @@
 import { masterSyllabus } from "./masterSyllabus";
 
-export function getAdaptiveTest(userWeakTopics: string[]) {
-  const weakChapters = masterSyllabus.filter((c) =>
-    userWeakTopics.includes(c.id)
-  );
+export type AdaptiveExam = {
+  recommended: string[];
 
-  const strongChapters = masterSyllabus.filter(
-    (c) => !userWeakTopics.includes(c.id)
-  );
+  weak: string[];
+
+  bonus: string[];
+};
+
+export function getAdaptiveTest(
+  weakTopics: string[]
+): AdaptiveExam {
+  const weak = masterSyllabus
+    .filter((chapter) =>
+      weakTopics.includes(chapter.id)
+    )
+    .map((chapter) => chapter.title);
+
+  const recommended = weak.length
+    ? weak
+    : masterSyllabus
+        .slice(0, 5)
+        .map((chapter) => chapter.title);
+
+  const bonus = masterSyllabus
+    .filter(
+      (chapter) =>
+        !weakTopics.includes(chapter.id)
+    )
+    .slice(0, 3)
+    .map((chapter) => chapter.title);
 
   return {
-    testFocus: weakChapters,
-    bonusQuestions: strongChapters.slice(0, 2),
+    recommended,
+    weak,
+    bonus,
   };
 }

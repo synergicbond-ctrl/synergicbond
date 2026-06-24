@@ -1,42 +1,27 @@
 export default function Stats() {
-
   return (
-
-    <section className="mx-auto grid max-w-6xl grid-cols-2 gap-6 px-6 pb-24 md:grid-cols-4">
-
-      <div className="rounded-3xl border border-white/10 bg-white/5 p-8">
-
-        <h2 className="text-4xl font-bold">50K+</h2>
-
-        <p>Resources</p>
-
+    <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+      
+      <div>
+        <h3 className="text-3xl font-bold">10K+</h3>
+        <p className="text-white/60 text-sm">Resources</p>
       </div>
 
-      <div className="rounded-3xl border border-white/10 bg-white/5 p-8">
-
-        <h2 className="text-4xl font-bold">1000+</h2>
-
-        <p>Assignments</p>
-
+      <div>
+        <h3 className="text-3xl font-bold">500+</h3>
+        <p className="text-white/60 text-sm">JEE Topics</p>
       </div>
 
-      <div className="rounded-3xl border border-white/10 bg-white/5 p-8">
-
-        <h2 className="text-4xl font-bold">500+</h2>
-
-        <p>Notes</p>
-
+      <div>
+        <h3 className="text-3xl font-bold">200+</h3>
+        <p className="text-white/60 text-sm">Olympiad Problems</p>
       </div>
 
-      <div className="rounded-3xl border border-white/10 bg-white/5 p-8">
-
-        <h2 className="text-4xl font-bold">100+</h2>
-
-        <p>Books</p>
-
+      <div>
+        <h3 className="text-3xl font-bold">24/7</h3>
+        <p className="text-white/60 text-sm">Learning Access</p>
       </div>
 
-    </section>
-
+    </div>
   );
 }

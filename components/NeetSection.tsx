@@ -1,34 +1,40 @@
 export default function NeetSection() {
-
   return (
+    <section className="max-w-6xl mx-auto px-6">
 
-    <section className="mx-auto max-w-6xl px-6 py-24">
-
-      <h2 className="mb-12 text-5xl font-bold">
-
-        🧬 NEET
-
+      <h2 className="text-3xl font-bold">
+        NEET CHEMISTRY
       </h2>
 
-      <div className="rounded-3xl border border-white/10 bg-white/5 p-10">
+      <p className="text-white/60 mt-2">
+        NCERT-based Chemistry preparation for NEET
+      </p>
 
-        <ul className="space-y-3 text-gray-300">
+      <div className="grid md:grid-cols-3 gap-6 mt-10">
 
-          <li>📄 Previous Year Papers</li>
+        <div className="p-6 border border-white/10 rounded-xl">
+          <h3 className="text-xl font-semibold">Physical Chemistry</h3>
+          <p className="text-white/60 mt-2">
+            Thermodynamics • Equilibrium • Electrochemistry
+          </p>
+        </div>
 
-          <li>📘 NCERT Notes</li>
+        <div className="p-6 border border-white/10 rounded-xl">
+          <h3 className="text-xl font-semibold">Organic Chemistry</h3>
+          <p className="text-white/60 mt-2">
+            Reactions • Biomolecules • Polymers
+          </p>
+        </div>
 
-          <li>🎯 Daily MCQs</li>
-
-          <li>🧠 Flashcards</li>
-
-          <li>⚡ Rapid Revision</li>
-
-        </ul>
+        <div className="p-6 border border-white/10 rounded-xl">
+          <h3 className="text-xl font-semibold">Inorganic Chemistry</h3>
+          <p className="text-white/60 mt-2">
+            Coordination • Periodic Table • Bonding
+          </p>
+        </div>
 
       </div>
 
     </section>
-
   );
 }

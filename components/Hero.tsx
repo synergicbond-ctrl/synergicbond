@@ -1,48 +1,127 @@
+import Link from "next/link";
+
 export default function Hero() {
   return (
-    <section className="flex min-h-[80vh] flex-col items-center justify-center px-6 text-center">
+    <section className="min-h-[85vh] flex items-center justify-center px-6 py-20">
 
-      <h1 className="max-w-5xl text-5xl font-bold md:text-7xl">
+      <div className="max-w-6xl mx-auto text-center">
 
-        The World's Most Advanced
+        <p className="uppercase tracking-[0.4em] text-white/40 mb-6">
 
-        <br />
+          SYNERGIC BOND
 
-        Chemistry Learning Ecosystem
+        </p>
 
-      </h1>
+        <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold leading-tight">
 
-      <p className="mt-8 text-xl text-gray-300">
+          The Chemistry
+          <br />
 
-        JEE Main • JEE Advanced • NEET
+          Operating System
 
-      </p>
+        </h1>
 
-      <p className="mt-3 text-xl text-gray-300">
+        <p className="mt-8 text-xl text-white/70">
 
-        INChO • IChO • Global Olympiads
+          Search • Learn • Practice • Master
 
-      </p>
+        </p>
 
-      <p className="mt-8 text-lg text-gray-400">
+        <p className="mt-3 text-lg text-white/50">
 
-        One Platform. Infinite Chemistry.
+          One platform for NEET, JEE, GATE & InChO
 
-      </p>
+        </p>
 
-      <div className="mt-12 flex flex-wrap justify-center gap-5">
+        <div className="mt-12 flex justify-center gap-4 flex-wrap">
 
-        <button className="rounded-full bg-blue-500 px-8 py-4 font-semibold">
+          <Link
+            href="/dashboard"
+            className="px-8 py-4 bg-white text-black rounded-2xl font-semibold hover:scale-105 transition duration-300"
+          >
 
-          Start Learning
+            🚀 Start Learning
 
-        </button>
+          </Link>
 
-        <button className="rounded-full border border-white/20 px-8 py-4">
+          <Link
+            href="/vault"
+            className="px-8 py-4 border border-white/20 rounded-2xl hover:bg-white/10 transition duration-300"
+          >
 
-          Download Resources
+            🧪 Explore Vault
 
-        </button>
+          </Link>
+
+        </div>
+
+        <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-5">
+
+          <div className="border border-white/10 rounded-2xl p-5">
+
+            <h3 className="text-2xl font-bold mb-2">
+
+              🟢 NEET
+
+            </h3>
+
+            <p className="text-white/50 text-sm">
+
+              NCERT-focused preparation
+
+            </p>
+
+          </div>
+
+          <div className="border border-white/10 rounded-2xl p-5">
+
+            <h3 className="text-2xl font-bold mb-2">
+
+              🟡 JEE
+
+            </h3>
+
+            <p className="text-white/50 text-sm">
+
+              Advanced problem solving
+
+            </p>
+
+          </div>
+
+          <div className="border border-white/10 rounded-2xl p-5">
+
+            <h3 className="text-2xl font-bold mb-2">
+
+              🟠 GATE
+
+            </h3>
+
+            <p className="text-white/50 text-sm">
+
+              Deep theoretical chemistry
+
+            </p>
+
+          </div>
+
+          <div className="border border-white/10 rounded-2xl p-5">
+
+            <h3 className="text-2xl font-bold mb-2">
+
+              🔴 InChO
+
+            </h3>
+
+            <p className="text-white/50 text-sm">
+
+              Olympiad-level mastery
+
+            </p>
+
+          </div>
+
+        </div>
 
       </div>
 

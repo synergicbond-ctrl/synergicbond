@@ -1,57 +1,44 @@
-import Navbar from "@/components/Navbar";
-import Hero from "@/components/Hero";
-import Stats from "@/components/Stats";
-
-import JeeSection from "@/components/JeeSection";
-import NeetSection from "@/components/NeetSection";
-import OlympiadSection from "@/components/OlympiadSection";
-import ResourcesSection from "@/components/ResourcesSection";
-
-import AIChemistryEngine from "@/components/AIChemistryEngine";
+import Navbar from "../components/Navbar";
+import Hero from "../components/Hero";
+import Stats from "../components/Stats";
+import JeeSection from "../components/JeeSection";
+import NeetSection from "../components/NeetSection";
+import OlympiadSection from "../components/OlympiadSection";
+import ResourcesSection from "../components/ResourcesSection";
+import ChemSearch from "@/components/ChemSearch";
 
 export default function Home() {
   return (
     <main className="bg-black text-white">
 
-      {/* HERO AREA */}
       <section className="min-h-screen flex flex-col">
         <Navbar />
         <Hero />
-
-        {/* SINGLE AI BRAIN */}
-        <div className="px-6 mt-10">
-          <AIChemistryEngine />
-        </div>
+        <ChemSearch />
       </section>
 
-      {/* STATS */}
       <section className="py-16 border-t border-white/10">
         <Stats />
       </section>
 
-      {/* JEE */}
       <section className="py-20 border-t border-white/10">
         <JeeSection />
       </section>
 
-      {/* NEET */}
       <section className="py-20 border-t border-white/10">
         <NeetSection />
       </section>
 
-      {/* OLYMPIAD */}
       <section className="py-20 border-t border-white/10">
         <OlympiadSection />
       </section>
 
-      {/* RESOURCES */}
       <section className="py-20 border-t border-white/10">
         <ResourcesSection />
       </section>
 
-      {/* FOOTER */}
       <section className="py-20 border-t border-white/10 text-center text-white/40">
-        SYNERGIC BOND — Chemistry Learning OS (AI Powered)
+        SYNERGIC BOND — Chemistry Operating System (ChemOS)
       </section>
 
     </main>

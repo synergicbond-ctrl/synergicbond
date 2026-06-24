@@ -11,15 +11,17 @@ import AIChemistryEngine from "@/components/AIChemistryEngine";
 
 export default function Home() {
   return (
-    <main className="bg-black text-white">
+    <main className="min-h-screen bg-black text-white">
 
-      {/* HERO AREA */}
-      <section className="min-h-screen flex flex-col">
-        <Navbar />
+      {/* NAVBAR */}
+      <Navbar />
+
+      {/* HERO + AI */}
+      <section className="flex flex-col gap-6">
         <Hero />
 
-        {/* SINGLE AI BRAIN */}
-        <div className="px-6 mt-10">
+        {/* 🧠 AI CHEMISTRY ENGINE (MAIN FEATURE) */}
+        <div className="px-6">
           <AIChemistryEngine />
         </div>
       </section>
@@ -30,29 +32,29 @@ export default function Home() {
       </section>
 
       {/* JEE */}
-      <section className="py-20 border-t border-white/10">
+      <section className="py-20 border-t border-white/10 px-6">
         <JeeSection />
       </section>
 
       {/* NEET */}
-      <section className="py-20 border-t border-white/10">
+      <section className="py-20 border-t border-white/10 px-6">
         <NeetSection />
       </section>
 
       {/* OLYMPIAD */}
-      <section className="py-20 border-t border-white/10">
+      <section className="py-20 border-t border-white/10 px-6">
         <OlympiadSection />
       </section>
 
       {/* RESOURCES */}
-      <section className="py-20 border-t border-white/10">
+      <section className="py-20 border-t border-white/10 px-6">
         <ResourcesSection />
       </section>
 
       {/* FOOTER */}
-      <section className="py-20 border-t border-white/10 text-center text-white/40">
-        SYNERGIC BOND — Chemistry Learning OS (AI Powered)
-      </section>
+      <footer className="py-10 border-t border-white/10 text-center text-white/40">
+        SYNERGIC BOND — AI Chemistry Learning OS
+      </footer>
 
     </main>
   );

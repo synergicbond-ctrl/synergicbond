@@ -1,45 +1,47 @@
 import OpenAI from "openai";
-import { buildAiTutorPrompt, type AiTutorRequest } from "@/lib/aiTutor";
 
 export async function POST(req: Request) {
   const apiKey = process.env.OPENAI_API_KEY;
 
   if (!apiKey || apiKey === "your_real_key_here") {
     return Response.json(
-      { error: "Add your real OPENAI_API_KEY in .env.local, then restart npm run dev." },
+      {
+        error:
+          "Vision API is disabled. Add a valid OPENAI_API_KEY to enable it.",
+      },
       { status: 500 }
     );
   }
 
   try {
-    const body = (await req.json()) as Partial<AiTutorRequest>;
-    const question = body.question?.trim();
+    const body = await req.json();
 
-    if (!question) {
-      return Response.json({ error: "Question is required." }, { status: 400 });
-    }
+    const client = new OpenAI({
+      apiKey,
+    });
 
-    const client = new OpenAI({ apiKey });
-    const completion = await client.chat.completions.create({
+    const response = await client.chat.completions.create({
       model: "gpt-4o-mini",
       messages: [
         {
           role: "system",
           content:
-            "You are a world-class Chemistry tutor for NEET and JEE students. Give clear, step-by-step, exam-focused explanations, diagnose likely mistakes, and keep the response practical.",
+            "You are an expert chemistry vision tutor. Help students understand chemistry diagrams, equations, reactions, laboratory setups, and molecular structures.",
         },
         {
           role: "user",
-          content: buildAiTutorPrompt({
-            question,
-            chapter: body.chapter,
-          }),
+          content:
+            typeof body.prompt === "string"
+              ? body.prompt
+              : "Analyze this chemistry question.",
         },
       ],
     });
 
     return Response.json({
-      answer: completion.choices[0].message.content || "No answer returned.",
+      answer:
+        response.choices[0].message.content ??
+        "No response generated.",
     });
   } catch (error) {
     return Response.json(
@@ -47,7 +49,7 @@ export async function POST(req: Request) {
         error:
           error instanceof Error
             ? error.message
-            : "Unable to generate an AI answer right now.",
+            : "Vision request failed.",
       },
       { status: 500 }
     );

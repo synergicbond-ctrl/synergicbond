@@ -1,41 +1,56 @@
 import Link from "next/link";
 
+const links = [
+  { href: "/", label: "Home" },
+  { href: "/vault", label: "Vault" },
+  { href: "/dashboard", label: "Dashboard" },
+  { href: "/tutor", label: "AI Tutor" },
+  { href: "/revision", label: "Revision" },
+];
+
 export default function Navbar() {
   return (
-    <nav className="sticky top-0 z-50 border-b border-white/10 bg-black/20 backdrop-blur-xl">
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-8 py-5">
-        <div>
-          <h1 className="text-2xl font-bold tracking-tight">
-            ⚛️ SYNERGIC BOND
-          </h1>
-        </div>
+    <header className="sticky top-0 z-50 border-b border-white/10 bg-black/70 backdrop-blur-2xl">
+      <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6">
 
-        <div className="hidden gap-8 text-sm md:flex">
-          <Link href="/" className="hover:text-white/70 transition">
-            Home
-          </Link>
+        <Link href="/" className="flex items-center gap-4">
 
-          <Link href="/jee" className="hover:text-white/70 transition">
-            JEE
-          </Link>
+          <div className="flex h-11 w-11 items-center justify-center rounded-2xl border border-cyan-400/20 bg-cyan-500/10 text-xl">
+            ⚛️
+          </div>
 
-          <Link href="/neet" className="hover:text-white/70 transition">
-            NEET
-          </Link>
+          <div>
+            <h1 className="text-lg font-bold tracking-wide">
+              SYNERGIC BOND
+            </h1>
 
-          <Link href="/olympiads" className="hover:text-white/70 transition">
-            Olympiads
-          </Link>
+            <p className="text-xs uppercase tracking-[0.35em] text-white/40">
+              Chemistry OS
+            </p>
+          </div>
 
-          <Link href="/resources" className="hover:text-white/70 transition">
-            Resources
-          </Link>
+        </Link>
 
-          <Link href="/donate" className="hover:text-white/70 transition">
-            Donate
-          </Link>
-        </div>
+        <nav className="hidden items-center gap-8 lg:flex">
+          {links.map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              className="text-sm text-white/70 transition hover:text-white"
+            >
+              {link.label}
+            </Link>
+          ))}
+        </nav>
+
+        <Link
+          href="/dashboard"
+          className="rounded-2xl bg-white px-6 py-3 font-semibold text-black transition hover:scale-105"
+        >
+          Start Learning
+        </Link>
+
       </div>
-    </nav>
+    </header>
   );
 }

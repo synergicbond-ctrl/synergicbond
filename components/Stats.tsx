@@ -1,27 +1,37 @@
+import Container from "@/components/ui/Container";
+import StatCard from "@/components/ui/StatCard";
+
+const stats = [
+  {
+    value: "10K+",
+    label: "Resources",
+  },
+  {
+    value: "500+",
+    label: "JEE Topics",
+  },
+  {
+    value: "200+",
+    label: "Olympiad Problems",
+  },
+  {
+    value: "24/7",
+    label: "Learning Access",
+  },
+];
+
 export default function Stats() {
   return (
-    <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-      
-      <div>
-        <h3 className="text-3xl font-bold">10K+</h3>
-        <p className="text-white/60 text-sm">Resources</p>
+    <Container>
+      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+        {stats.map((stat) => (
+          <StatCard
+            key={stat.label}
+            value={stat.value}
+            label={stat.label}
+          />
+        ))}
       </div>
-
-      <div>
-        <h3 className="text-3xl font-bold">500+</h3>
-        <p className="text-white/60 text-sm">JEE Topics</p>
-      </div>
-
-      <div>
-        <h3 className="text-3xl font-bold">200+</h3>
-        <p className="text-white/60 text-sm">Olympiad Problems</p>
-      </div>
-
-      <div>
-        <h3 className="text-3xl font-bold">24/7</h3>
-        <p className="text-white/60 text-sm">Learning Access</p>
-      </div>
-
-    </div>
+    </Container>
   );
 }

@@ -1,106 +1,58 @@
-import { masterSyllabus, type Chapter } from "@/lib/masterSyllabus";
+import { physical } from "@/lib/masterSyllabus/physical";
+import { organic } from "@/lib/masterSyllabus/organic";
+import { inorganic } from "@/lib/masterSyllabus/inorganic";
+import { masterFormulas } from "@/lib/masterSyllabus/formulas";
+import { masterReactions } from "@/lib/masterSyllabus/reactions";
+import { highYieldNotes } from "@/lib/masterSyllabus/notes";
+import { organicMechanisms } from "@/lib/masterSyllabus/mechanisms";
 
-export type TutorResult = {
-  title: string;
-  concepts: string[];
-  difficulty: number;
-};
+const allChapters = [...physical, ...organic, ...inorganic];
 
-export type AiTutorRequest = {
-  question: string;
-  chapter?: string;
-};
-
-export type AiTutorResponse = {
-  answer: string;
-};
-
-export type AiTutorContext = {
+export interface AITutorContext {
   chapterTitle: string;
-  category: Chapter["category"] | "general";
-  concepts: string[];
+  formulas: string[];
+  reactions: string[];
+  mechanisms: string[];
+  notesAndExceptions: string[];
   pyqTags: string[];
-  difficulty: Chapter["difficulty"] | null;
-};
-
-export function explainChapter(query: string): TutorResult {
-  const normalizedQuery = query.trim().toLowerCase();
-
-  if (!normalizedQuery) {
-    return {
-      title: "Ask a chemistry topic",
-      concepts: ["Try Thermodynamics, Structure of Atom, or Mole Concept."],
-      difficulty: 1,
-    };
-  }
-
-  const chapter = findChapterContext(normalizedQuery);
-
-  if (!chapter) {
-    return {
-      title: "Topic not found",
-      concepts: ["Try a different chapter name or concept keyword."],
-      difficulty: 1,
-    };
-  }
-
-  return {
-    title: chapter.title,
-    concepts: chapter.concepts,
-    difficulty: chapter.difficulty,
-  };
 }
 
-export function findChapterContext(chapterQuery?: string): Chapter | undefined {
-  const normalizedQuery = chapterQuery?.trim().toLowerCase();
+export function fetchSyllabusContext(chapterId: string): AITutorContext | null {
+  const chapter = allChapters.find((c) => c.id === chapterId);
+  if (!chapter) return null;
 
-  if (!normalizedQuery) {
-    return undefined;
-  }
-
-  return masterSyllabus.find(
-    (item) =>
-      item.title.toLowerCase().includes(normalizedQuery) ||
-      item.id.toLowerCase().includes(normalizedQuery) ||
-      item.concepts.some((concept) =>
-        concept.toLowerCase().includes(normalizedQuery)
-      ) ||
-      item.pyqTags.some((tag) => tag.toLowerCase().includes(normalizedQuery))
-  );
-}
-
-export function buildAiTutorContext(chapterQuery?: string): AiTutorContext {
-  const chapter = findChapterContext(chapterQuery);
-
-  if (!chapter) {
-    return {
-      chapterTitle: chapterQuery?.trim() || "General Chemistry",
-      category: "general",
-      concepts: [],
-      pyqTags: [],
-      difficulty: null,
-    };
-  }
+  const formulas = (masterFormulas[chapterId] || []).map(f => `${f.title}: ${f.expression}`);
+  const reactions = masterReactions.filter(r => r.category === chapter.category).map(r => r.name);
+  // Safely map mechanisms checking object properties
+  const mechanisms = (organicMechanisms[chapterId] || []).map(m => (m as any).name || (m as any).id || "Reaction Mechanism Pathway");
+  const notesAndExceptions = highYieldNotes.filter(n => n.chapterId === chapterId).map(n => n.content);
 
   return {
     chapterTitle: chapter.title,
-    category: chapter.category,
-    concepts: chapter.concepts,
-    pyqTags: chapter.pyqTags,
-    difficulty: chapter.difficulty,
+    formulas,
+    reactions,
+    mechanisms,
+    notesAndExceptions,
+    pyqTags: chapter.pyqTags || []
   };
 }
 
-export function buildAiTutorPrompt(request: AiTutorRequest): string {
-  const context = buildAiTutorContext(request.chapter);
+export function constructAIPrompt(userQuestion: string, context: AITutorContext): string {
+  return `
+You are the SYNERGIC BOND AI Chemistry Tutor, rigorously grounded in the NEET/JEE syllabus knowledge graph. 
+Answer the user's question using ONLY the factual graph context provided below. Do not assume or extrapolate outside this context. If the answer cannot be deduced from this syllabus data, state that clearly.
 
-  return [
-    `Chapter: ${context.chapterTitle}`,
-    `Category: ${context.category}`,
-    `Difficulty: ${context.difficulty ?? "adaptive"}`,
-    `Concepts: ${context.concepts.length ? context.concepts.join(", ") : "Use core chemistry fundamentals"}`,
-    `PYQ tags: ${context.pyqTags.length ? context.pyqTags.join(", ") : "Not specified"}`,
-    `Student question: ${request.question}`,
-    "Teach step-by-step, identify likely student mistakes, simplify the concept, and end with exam-focused insight.",
-  ].join("\n");
+Syllabus Context:
+- Chapter: ${context.chapterTitle}
+- Formulas: ${context.formulas.length > 0 ? context.formulas.join(", ") : "None"}
+- Organic Name Reactions: ${context.reactions.length > 0 ? context.reactions.join(", ") : "None"}
+- Organic Mechanisms: ${context.mechanisms.length > 0 ? context.mechanisms.join(", ") : "None"}
+- NCERT Notes & Exceptions: ${context.notesAndExceptions.length > 0 ? context.notesAndExceptions.join("; ") : "None"}
+- PYQ Tags: ${context.pyqTags.length > 0 ? context.pyqTags.join(", ") : "None"}
+
+User Question:
+"${userQuestion}"
+
+Provide an exam-focused, accurate, and structured answer.
+`;
 }

@@ -1,18 +1,10 @@
-import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
+import "@/app/globals.css";
+import { Inter } from "next/font/google";
+import { ThemeProvider } from "@/components/ThemeContext";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
+const inter = Inter({ subsets: ["latin"] });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
-export const metadata: Metadata = {
+export const metadata = {
   title: "SYNERGIC BOND",
   description: "Chemistry Operating System (ChemOS)",
 };
@@ -25,10 +17,15 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className="h-full dark"
+      suppressHydrationWarning
     >
-      <body className="min-h-screen bg-black text-white flex flex-col">
-        {children}
+      <body
+        className={`${inter.className} min-h-screen bg-black text-white flex flex-col m-0 p-0 w-full`}
+      >
+        <ThemeProvider>
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );

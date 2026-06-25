@@ -2,248 +2,111 @@
 
 import { useState } from "react";
 
-import Navbar from "@/components/Navbar";
+export default function AdvancedAITutorPage() {
+  const [messages, setMessages] = useState<{ role: "user" | "assistant"; content: string }[]>([
+    { role: "assistant", content: "Hello! I am your SYNERGIC BOND AI Tutor. Ask me any chemistry concept, formula, reaction, or exception from your syllabus, and I will help you master it." }
+  ]);
+  const [input, setInput] = useState("");
+  const [chapterId, setChapterId] = useState("mole-concept");
+  const [loading, setLoading] = useState(false);
 
-import { chemistryDatabase } from "@/lib/chemistryDatabase";
-import { pyqDatabase } from "@/lib/pyqDatabase";
+  const handleSend = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!input.trim() || loading) return;
 
-export default function TutorPage() {
-  const [query, setQuery] = useState("");
+    const userMessage = input;
+    setInput("");
+    setMessages((prev) => [...prev, { role: "user", content: userMessage }]);
+    setLoading(true);
 
-  const [result, setResult] = useState<
-    (typeof chemistryDatabase)[string] | null
-  >(null);
+    try {
+      const response = await fetch("/api/chat", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          message: userMessage,
+          chapterId: chapterId,
+          history: messages
+        })
+      });
 
-  const [pyqs, setPyqs] = useState<string[]>([]);
-
-  const [notFound, setNotFound] = useState(false);
-
-  function askTutor() {
-    const normalized = query
-      .trim()
-      .toLowerCase()
-      .replace(/\s+/g, "-");
-
-    const topic = chemistryDatabase[normalized];
-
-    if (topic) {
-      setResult(topic);
-
-      setPyqs(pyqDatabase[normalized] ?? []);
-
-      setNotFound(false);
-    } else {
-      setResult(null);
-
-      setPyqs([]);
-
-      setNotFound(true);
+      const data = await response.json();
+      setMessages((prev) => [...prev, { role: "assistant", content: data.reply || data.error || "No response received." }]);
+    } catch (err) {
+      setMessages((prev) => [...prev, { role: "assistant", content: "Error communicating with knowledge graph tutor." }]);
+    } finally {
+      setLoading(false);
     }
-  }
+  };
 
   return (
-    <main className="min-h-screen bg-black text-white">
-
-      <Navbar />
-
-      <div className="max-w-6xl mx-auto px-6 py-16">
-
-        <h1 className="text-5xl font-bold mb-4">
-
-          🧠 Smart Chemistry Tutor
-
-        </h1>
-
-        <p className="text-white/60 mb-12">
-
-          Offline Tutor for NEET & JEE.
-
-        </p>
-
-        <div className="flex flex-col md:flex-row gap-4 mb-12">
-
-          <input
-            value={query}
-            onChange={(e) =>
-              setQuery(e.target.value)
-            }
-            placeholder="Try: thermodynamics"
-            className="flex-1 p-4 rounded-xl bg-white/5 border border-white/10"
-          />
-
-          <button
-            onClick={askTutor}
-            className="px-8 py-4 rounded-xl bg-white text-black font-semibold"
-          >
-
-            Search
-
-          </button>
-
+    <div className="min-h-screen bg-slate-50 text-slate-900 p-6 md:p-12 max-w-5xl mx-auto flex flex-col h-[90vh]">
+      
+      {/* Header & Context Selector */}
+      <header className="mb-6 bg-white p-6 rounded-2xl shadow-sm border border-slate-100 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+        <div>
+          <h1 className="text-3xl font-black tracking-tight text-slate-900">Syllabus-Grounded AI Tutor</h1>
+          <p className="text-slate-600 text-sm mt-0.5">Trained entirely on the NEET/JEE knowledge graph. No hallucinations.</p>
         </div>
+        <div className="flex items-center gap-2 w-full md:w-auto">
+          <label className="text-xs font-bold text-slate-500 uppercase tracking-wider">Targeting:</label>
+          <select 
+            value={chapterId} 
+            onChange={(e) => setChapterId(e.target.value)}
+            className="flex-1 md:w-64 p-2.5 rounded-xl border border-slate-200 text-sm font-semibold text-slate-800 bg-slate-50 focus:outline-none focus:ring-2 focus:ring-indigo-600"
+          >
+            <option value="mole-concept">Mole Concept & Equivalents</option>
+            <option value="atomic-structure">Atomic Structure & Mechanics</option>
+            <option value="coordination-compounds">Coordination Compounds</option>
+            <option value="hydrocarbons">Hydrocarbons & Aromaticity</option>
+          </select>
+        </div>
+      </header>
 
-        {!result && !notFound && (
-
-          <div className="grid md:grid-cols-4 gap-4">
-
-            <div className="border border-white/10 rounded-xl p-5">
-
-              Thermodynamics
-
+      {/* Chat Messages Panel */}
+      <div className="flex-1 bg-white rounded-2xl shadow-sm border border-slate-100 p-6 overflow-y-auto space-y-4 flex flex-col">
+        {messages.map((m, idx) => (
+          <div key={idx} className={`flex ${m.role === "user" ? "justify-end" : "justify-start"}`}>
+            <div className={`max-w-[80%] p-4 rounded-2xl text-sm leading-relaxed ${
+              m.role === "user" 
+                ? "bg-indigo-600 text-white font-medium rounded-br-none" 
+                : "bg-slate-100 text-slate-800 font-medium rounded-bl-none border border-slate-200/60"
+            }`}>
+              {m.content}
             </div>
-
-            <div className="border border-white/10 rounded-xl p-5">
-
-              Equilibrium
-
-            </div>
-
-            <div className="border border-white/10 rounded-xl p-5">
-
-              Electrochemistry
-
-            </div>
-
-            <div className="border border-white/10 rounded-xl p-5">
-
-              Chemical Bonding
-
-            </div>
-
           </div>
-
-        )}
-
-        {notFound && (
-
-          <div className="border border-red-500/30 rounded-2xl p-8">
-
-            Topic not found.
-
-          </div>
-
-        )}
-
-        {result && (
-
-          <div className="space-y-8">
-
-            <div className="border border-white/10 rounded-2xl p-8">
-
-              <h2 className="text-3xl font-bold mb-4">
-
-                {result.title}
-
-              </h2>
-
-              <p>
-
-                {result.overview}
-
-              </p>
-
+        ))}
+        {loading && (
+          <div className="flex justify-start">
+            <div className="max-w-[80%] p-4 rounded-2xl bg-slate-100 border border-slate-200/60 text-slate-500 text-sm flex items-center gap-2 rounded-bl-none">
+              <svg className="animate-spin h-4 w-4 text-indigo-600" fill="none" viewBox="0 0 24 24">
+                <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+              </svg>
+              Graph context hydrating...
             </div>
-
-            <div className="grid md:grid-cols-3 gap-6">
-
-              <div className="border border-white/10 rounded-2xl p-6">
-
-                <h3 className="font-bold mb-4">
-
-                  🟢 NEET Focus
-
-                </h3>
-
-                {result.neet.map((item) => (
-
-                  <p key={item}>
-
-                    • {item}
-
-                  </p>
-
-                ))}
-
-              </div>
-
-              <div className="border border-white/10 rounded-2xl p-6">
-
-                <h3 className="font-bold mb-4">
-
-                  🟡 JEE Focus
-
-                </h3>
-
-                {result.jee.map((item) => (
-
-                  <p key={item}>
-
-                    • {item}
-
-                  </p>
-
-                ))}
-
-              </div>
-
-              <div className="border border-white/10 rounded-2xl p-6">
-
-                <h3 className="font-bold mb-4">
-
-                  🎯 Exam Tip
-
-                </h3>
-
-                <p>
-
-                  Study theory first.
-
-                </p>
-
-                <p className="mt-3">
-
-                  Then practice PYQs immediately.
-
-                </p>
-
-              </div>
-
-            </div>
-
-            {pyqs.length > 0 && (
-
-              <div className="border border-white/10 rounded-2xl p-8">
-
-                <h3 className="text-2xl font-bold mb-6">
-
-                  📚 Related PYQs
-
-                </h3>
-
-                <div className="space-y-3">
-
-                  {pyqs.map((pyq) => (
-
-                    <p key={pyq}>
-
-                      • {pyq}
-
-                    </p>
-
-                  ))}
-
-                </div>
-
-              </div>
-
-            )}
-
           </div>
-
         )}
-
       </div>
 
-    </main>
+      {/* Chat Input Field */}
+      <form onSubmit={handleSend} className="mt-6 flex gap-3 bg-white p-2 rounded-2xl shadow-sm border border-slate-200">
+        <input
+          type="text"
+          value={input}
+          onChange={(e) => setInput(e.target.value)}
+          placeholder="Ask e.g., 'Why does Wurtz reaction fail for odd alkanes?' or 'Explain Bohr radius formula'"
+          className="flex-1 p-3.5 rounded-xl border-0 focus:outline-none focus:ring-0 text-slate-800 text-sm font-medium"
+        />
+        <button 
+          type="submit" 
+          disabled={loading}
+          className="px-6 py-3.5 bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-sm rounded-xl transition shadow"
+        >
+          Send
+        </button>
+      </form>
+
+    </div>
   );
 }

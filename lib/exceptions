@@ -1,0 +1,11 @@
+export interface ExceptionNode {
+  id: string;
+
+  conceptId: string;
+
+  statement: string;
+
+  explanation: string;
+}
+
+export const exceptions: ExceptionNode[] = [];

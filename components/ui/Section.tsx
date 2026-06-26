@@ -1,19 +1,32 @@
 import { ReactNode } from "react";
+import Container from "./Container";
 
-type SectionProps = {
+interface SectionProps {
   children: ReactNode;
   className?: string;
-};
+  container?: boolean;
+}
 
 export default function Section({
   children,
   className = "",
+  container = true,
 }: SectionProps) {
+  const content = container ? (
+    <Container>{children}</Container>
+  ) : (
+    children
+  );
+
   return (
     <section
-      className={`w-full border-t border-white/10 py-24 ${className}`}
+      className={[
+        "relative w-full",
+        "py-24 lg:py-32",
+        className,
+      ].join(" ")}
     >
-      {children}
+      {content}
     </section>
   );
 }

@@ -1,23 +1,31 @@
 import Card from "./Card";
 
-type StatCardProps = {
+interface StatCardProps {
   value: string;
   label: string;
-};
+  description?: string;
+}
 
 export default function StatCard({
   value,
   label,
+  description,
 }: StatCardProps) {
   return (
-    <Card className="p-6 text-center">
-      <h3 className="text-4xl font-bold tracking-tight">
+    <Card padding="lg" className="text-center">
+      <div className="text-5xl font-extrabold tracking-tight text-white">
         {value}
-      </h3>
+      </div>
 
-      <p className="mt-2 text-white/60">
+      <div className="mt-3 text-lg font-semibold text-white">
         {label}
-      </p>
+      </div>
+
+      {description && (
+        <p className="mt-2 text-sm leading-6 text-white/60">
+          {description}
+        </p>
+      )}
     </Card>
   );
 }

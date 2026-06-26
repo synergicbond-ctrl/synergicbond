@@ -16,7 +16,7 @@ export default function HeroSearch() {
   const [query, setQuery] = useState("");
 
   return (
-    <div className="mx-auto w-full max-w-5xl rounded-[32px] border border-white/10 bg-white/[0.04] p-8 backdrop-blur-2xl">
+    <div className="mx-auto w-full max-w-5xl rounded-[32px] border border-white/10 bg-white/[0.03] p-8 backdrop-blur-2xl shadow-[0_0_60px_rgba(34,211,238,0.08)]">
 
       <div className="mb-6 flex items-center gap-3">
         <div className="rounded-xl bg-cyan-500/10 p-3">
@@ -29,14 +29,13 @@ export default function HeroSearch() {
           </p>
 
           <h2 className="mt-1 text-2xl font-bold text-white">
-            Ask anything in Chemistry
+            Search the Chemistry Universe
           </h2>
         </div>
       </div>
 
       <p className="mb-8 text-white/60">
-        Search concepts, reactions, mechanisms, formulas, PYQs and complete
-        chemistry knowledge.
+        Concepts • Reactions • Mechanisms • Formulas • PYQs • AI Explanations
       </p>
 
       <div className="flex flex-col gap-4 md:flex-row">
@@ -48,7 +47,7 @@ export default function HeroSearch() {
           className="flex-1 rounded-2xl border border-white/10 bg-black/40 px-6 py-4 text-white outline-none transition focus:border-cyan-400/60"
         />
 
-        <button className="rounded-2xl bg-white px-8 py-4 font-semibold text-black transition duration-300 hover:scale-105">
+        <button className="rounded-2xl bg-gradient-to-r from-cyan-400 to-sky-500 px-8 py-4 font-semibold text-black shadow-lg shadow-cyan-500/20 transition duration-300 hover:-translate-y-1">
           Ask AI
         </button>
 

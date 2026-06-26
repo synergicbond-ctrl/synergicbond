@@ -1,6 +1,6 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
-import HeroSearch from "@/components/home/HeroSearch";
+import KnowledgeVault from "@/components/KnowledgeVault";
 
 import AIChemistryEngine from "@/components/AIChemistryEngine";
 import Stats from "@/components/Stats";
@@ -13,12 +13,13 @@ import Footer from "@/components/Footer";
 export default function Home() {
   return (
     <main className="min-h-screen bg-black text-white">
-
       <Navbar />
 
       <Hero />
 
-      <HeroSearch />
+      <section className="py-20">
+        <KnowledgeVault />
+      </section>
 
       <section className="mx-auto w-full max-w-7xl px-6 py-12">
         <AIChemistryEngine />
@@ -45,7 +46,6 @@ export default function Home() {
       </section>
 
       <Footer />
-
     </main>
   );
 }

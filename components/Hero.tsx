@@ -13,9 +13,9 @@ export default function Hero() {
       {/* Background Effects */}
       <div className="absolute inset-0 -z-10">
 
-        <div className="absolute left-1/2 top-20 h-[600px] w-[600px] -translate-x-1/2 rounded-full bg-cyan-500/10 blur-[180px]" />
+        <div className="absolute left-1/2 top-20 h-[600px] w-[600px] -translate-x-1/2 rounded-full bg-cyan-500/15 blur-[180px]" />
 
-        <div className="absolute right-0 top-0 h-[500px] w-[500px] rounded-full bg-violet-500/10 blur-[180px]" />
+        <div className="absolute right-0 top-0 h-[500px] w-[500px] rounded-full bg-violet-500/15 blur-[180px]" />
 
         <div className="absolute bottom-0 left-0 h-[450px] w-[450px] rounded-full bg-sky-500/5 blur-[180px]" />
 
@@ -29,10 +29,12 @@ export default function Hero() {
             AI POWERED CHEMISTRY PLATFORM
           </Badge>
 
-          <h1 className="mt-8 text-5xl font-black leading-tight tracking-tight md:text-7xl xl:text-8xl">
+          <h1 className="mt-10 text-5xl font-black leading-[0.95] tracking-[-0.04em] md:text-7xl xl:text-8xl">
             The Chemistry
             <br />
-            Operating System
+            <span className="bg-gradient-to-r from-cyan-300 via-sky-400 to-violet-400 bg-clip-text text-transparent">
+              Operating System
+            </span>
           </h1>
 
           <p className="mt-8 max-w-3xl text-xl text-white/70">
@@ -47,16 +49,16 @@ export default function Hero() {
 
             <Link
               href="/dashboard"
-              className="rounded-2xl bg-white px-8 py-4 font-semibold text-black transition hover:scale-105"
+              className="rounded-2xl bg-gradient-to-r from-cyan-400 to-sky-500 px-8 py-4 font-semibold text-black shadow-lg shadow-cyan-500/20 transition duration-300 hover:-translate-y-1"
             >
-              🚀 Start Learning
+              Start Learning →
             </Link>
 
             <Link
               href="/vault"
-              className="rounded-2xl border border-white/10 bg-white/5 px-8 py-4 transition hover:bg-white/10"
+              className="rounded-2xl border border-white/10 bg-white/[0.03] px-8 py-4 transition duration-300 hover:-translate-y-1 hover:border-cyan-400/30 hover:bg-white/[0.06]"
             >
-              🧪 Explore Vault
+              Explore Vault →
             </Link>
 
           </div>

@@ -42,7 +42,7 @@ export default function Navbar() {
         </nav>
 
         <Link
-          href="/dashboard"
+          href="/auth/signin"
           className="rounded-2xl bg-gradient-to-r from-cyan-400 to-sky-500 px-6 py-3 text-sm font-semibold text-black shadow-lg shadow-cyan-500/20 transition hover:-translate-y-1"
         >
           Student Portal →

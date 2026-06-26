@@ -12,17 +12,30 @@ import {
 } from "@/components/dashboard/RecentTests";
 import { QuickActions } from "@/components/dashboard/QuickActions";
 
-export default function DashboardPage() {
-  const summaryData = {
-    chaptersCompleted: 0,
-    totalChapters: 30,
-    dailyStreak: 0,
-    averageAccuracy: 0,
-    totalStudyHours: 0,
-  };
+import { fetchStudentDashboardData } from "@/lib/dashboardData";
 
-  const weakTopics: WeakTopic[] = [];
-  const recentTests: RecentTest[] = [];
+export default function DashboardPage() {
+  const dashboard = fetchStudentDashboardData("demo-user");
+
+  const summaryData = dashboard.summary;
+
+  const weakTopics: WeakTopic[] = dashboard.weakTopics.map(
+    (topic, index) => ({
+      id: `weak-${index}`,
+      name: topic.topic,
+      accuracy: topic.accuracy,
+    })
+  );
+
+  const recentTests: RecentTest[] = dashboard.recentTests.map(
+    (test) => ({
+      id: test.id,
+      title: test.name,
+      date: test.date,
+      score: test.score,
+      passed: test.score >= 60,
+    })
+  );
 
   return (
     <main className="relative min-h-screen bg-black text-white">

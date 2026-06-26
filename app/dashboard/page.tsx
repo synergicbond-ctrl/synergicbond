@@ -22,19 +22,26 @@ export default function DashboardPage() {
   };
 
   const weakTopics: WeakTopic[] = [];
-
   const recentTests: RecentTest[] = [];
 
   return (
-    <main className="min-h-screen bg-slate-950 p-6 text-white md:p-10">
-      <div className="mx-auto max-w-7xl">
+    <main className="relative min-h-screen bg-black text-white">
+
+      <div className="absolute inset-0 -z-10 overflow-hidden">
+        <div className="absolute left-0 top-0 h-[500px] w-[500px] rounded-full bg-cyan-500/10 blur-[180px]" />
+        <div className="absolute right-0 top-0 h-[500px] w-[500px] rounded-full bg-violet-500/10 blur-[180px]" />
+      </div>
+
+      <div className="mx-auto max-w-7xl px-6 py-10">
+
         <DashboardHeader studentName="Student" />
 
         <div className="mt-8">
           <SummaryCards data={summaryData} />
         </div>
 
-        <div className="mt-8 grid grid-cols-1 gap-8 lg:grid-cols-3">
+        <div className="mt-10 grid gap-8 lg:grid-cols-3">
+
           <div className="space-y-8 lg:col-span-2">
             <WeakTopics topics={weakTopics} />
             <RecentTests tests={recentTests} />
@@ -43,7 +50,9 @@ export default function DashboardPage() {
           <div>
             <QuickActions />
           </div>
+
         </div>
+
       </div>
     </main>
   );

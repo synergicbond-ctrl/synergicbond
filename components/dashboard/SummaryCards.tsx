@@ -29,63 +29,64 @@ export function SummaryCards({
     totalStudyHours,
   } = data;
 
-  const chapterProgress =
-    totalChapters === 0
-      ? 0
-      : Math.round(
-          (chaptersCompleted / totalChapters) * 100
-        );
-
   const cards = [
     {
-      title: "Chapters Completed",
+      title: "Chapters",
       value: `${chaptersCompleted}/${totalChapters}`,
-      subtitle: `${chapterProgress}% Complete`,
+      subtitle: "Syllabus Progress",
       icon: BookOpen,
     },
     {
-      title: "Average Accuracy",
+      title: "Accuracy",
       value: `${averageAccuracy}%`,
-      subtitle: "Overall Performance",
+      subtitle: "Test Performance",
       icon: Target,
     },
     {
       title: "Study Hours",
-      value: `${totalStudyHours} hrs`,
-      subtitle: "Total Learning Time",
+      value: `${totalStudyHours}`,
+      subtitle: "Learning Time",
       icon: Clock3,
     },
     {
-      title: "Daily Streak",
-      value: `${dailyStreak} Days`,
-      subtitle: "Keep Going!",
+      title: "Streak",
+      value: `${dailyStreak}`,
+      subtitle: "Consistency Days",
       icon: Flame,
     },
   ];
 
   return (
-    <div className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-4">
+    <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
       {cards.map((card) => {
         const Icon = card.icon;
 
         return (
           <div
             key={card.title}
-            className="rounded-xl border border-slate-800 bg-slate-900 p-5"
+            className="group rounded-3xl border border-white/10 bg-white/[0.03] p-6 backdrop-blur-xl transition-all duration-300 hover:-translate-y-2 hover:border-cyan-400/30"
           >
-            <div className="mb-4 flex items-center justify-between">
-              <h3 className="text-sm text-slate-400">
-                {card.title}
-              </h3>
+            <div className="mb-5 flex items-center justify-between">
 
-              <Icon className="h-5 w-5 text-indigo-400" />
+              <div className="rounded-2xl bg-cyan-500/10 p-3">
+                <Icon className="h-5 w-5 text-cyan-300" />
+              </div>
+
+              <span className="text-xs uppercase tracking-wider text-white/40">
+                Live
+              </span>
+
             </div>
 
-            <p className="text-2xl font-bold text-white">
+            <p className="text-4xl font-black text-white">
               {card.value}
             </p>
 
-            <p className="mt-2 text-sm text-slate-500">
+            <h3 className="mt-3 text-lg font-semibold text-white">
+              {card.title}
+            </h3>
+
+            <p className="mt-2 text-sm text-white/50">
               {card.subtitle}
             </p>
           </div>

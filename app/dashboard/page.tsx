@@ -4,6 +4,8 @@ import { SummaryCards } from "@/components/dashboard/SummaryCards";
 import { RecentTests } from "@/components/dashboard/RecentTests";
 import { WeakTopics } from "@/components/dashboard/WeakTopics";
 import { QuickActions } from "@/components/dashboard/QuickActions";
+import { CoachWidget } from "@/components/dashboard/CoachWidget";
+import { RevisionQueue } from "@/components/dashboard/RevisionQueue";
 
 export default async function DashboardPage() {
   const supabase = await createClient();
@@ -94,6 +96,21 @@ export default async function DashboardPage() {
         exam.score / exam.total >= 0.5,
     })) || [];
 
+
+  const coachRecommendations = [
+    averageAccuracy < 70
+      ? "Improve quiz accuracy"
+      : "Maintain current accuracy",
+    "Complete 20 MCQs today",
+    "Study at least 60 minutes",
+    mistakes?.length
+      ? `Revise ${mistakes[0].chapter_id}`
+      : "No major weak topic detected",
+  ];
+
+  const revisionChapters =
+    [...new Set((mistakes || []).map(m => m.chapter_id))];
+
   const weakTopics =
     mistakes?.map((m, index) => ({
       id: String(index),
@@ -121,6 +138,16 @@ export default async function DashboardPage() {
       <div className="mt-8 grid gap-8 lg:grid-cols-2">
         <RecentTests tests={recentTests} />
         <WeakTopics topics={weakTopics} />
+      </div>
+
+      <div className="mt-8 grid gap-8 lg:grid-cols-2">
+        <CoachWidget
+          recommendations={coachRecommendations}
+        />
+
+        <RevisionQueue
+          chapters={revisionChapters}
+        />
       </div>
 
       <div className="mt-8">

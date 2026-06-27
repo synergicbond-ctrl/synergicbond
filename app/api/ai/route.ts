@@ -1,57 +1,28 @@
-import OpenAI from "openai";
+import { NextResponse } from "next/server";
+import { constructAIPrompt, fetchSyllabusContext } from "@/lib/aiTutor";
 
-export async function POST(req: Request) {
-  const apiKey = process.env.OPENAI_API_KEY;
-
-  if (!apiKey || apiKey === "your_real_key_here") {
-    return Response.json(
-      {
-        error:
-          "Vision API is disabled. Add a valid OPENAI_API_KEY to enable it.",
-      },
-      { status: 500 }
-    );
-  }
-
+export async function POST(request: Request) {
   try {
-    const body = await req.json();
+    const body = await request.json();
+    const { message, chapterId } = body;
 
-    const client = new OpenAI({
-      apiKey,
+    if (!message || !chapterId) {
+      return NextResponse.json({ error: "Message and chapterId are required." }, { status: 400 });
+    }
+
+    const syllabusContext = fetchSyllabusContext(chapterId);
+    if (!syllabusContext) {
+      return NextResponse.json({ error: "Syllabus chapter context not found." }, { status: 404 });
+    }
+
+    const prompt = constructAIPrompt(message, syllabusContext);
+
+    // Simulated LLM graph response
+    return NextResponse.json({
+      reply: `[Syllabus Hydrated] Processing query via syllabus knowledge graph for ${syllabusContext.chapterTitle}. Focus items extracted successfully.`
     });
 
-    const response = await client.chat.completions.create({
-      model: "gpt-4o-mini",
-      messages: [
-        {
-          role: "system",
-          content:
-            "You are an expert chemistry vision tutor. Help students understand chemistry diagrams, equations, reactions, laboratory setups, and molecular structures.",
-        },
-        {
-          role: "user",
-          content:
-            typeof body.prompt === "string"
-              ? body.prompt
-              : "Analyze this chemistry question.",
-        },
-      ],
-    });
-
-    return Response.json({
-      answer:
-        response.choices[0].message.content ??
-        "No response generated.",
-    });
-  } catch (error) {
-    return Response.json(
-      {
-        error:
-          error instanceof Error
-            ? error.message
-            : "Vision request failed.",
-      },
-      { status: 500 }
-    );
+  } catch (err) {
+    return NextResponse.json({ error: "Failed to process AI endpoint." }, { status: 500 });
   }
 }

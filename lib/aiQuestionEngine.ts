@@ -1,43 +1,30 @@
-import OpenAI from "openai";
-import { masterSyllabus } from "./masterSyllabus";
+export interface Chapter {
+  id: string;
+  title: string;
+  category: string;
+  difficulty: number;
+  estimatedHours: number;
+  exams: string[];
+  pyqTags: string[];
+  concepts: any[];
+  prerequisites?: string[];     // Marked optional
+  searchKeywords?: string[];    // Marked optional
+  ncert?: boolean;              // Marked optional
+}
 
-const client = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY,
-});
+export interface SelectedChapterWeight {
+  chapter: Chapter;
+  questionsAllocated: number;
+}
 
-export async function generateQuestion(chapterQuery: string) {
-  const chapter = masterSyllabus.find((c) =>
-    c.title.toLowerCase().includes(chapterQuery.toLowerCase())
-  );
+// Function to generate the exam prompt as expected by your API route
+export function buildMockPaperPrompt(selectedChapters: SelectedChapterWeight[], examType: string): string {
+  return `
+You are the SYNERGIC BOND Exam Generation Engine. 
+Generate a comprehensive mock paper strictly based on the syllabus data for the following chapters:
+${selectedChapters.map(c => `- ${c.chapter.title} (${c.questionsAllocated} questions)`).join("\n")}
 
-  if (!chapter) {
-    return "Chapter not found.";
-  }
-
-  const prompt = `
-Generate a JEE/NEET level Chemistry question.
-
-Chapter: ${chapter.title}
-Concepts: ${chapter.concepts.join(", ")}
-
-Return:
-1 question
-4 options
-correct answer
-difficulty explanation
+Exam Format: ${examType}
+Ensure all questions are rigorously aligned with NEET/JEE standards.
 `;
-
-  const res = await client.chat.completions.create({
-    model: "gpt-4o-mini",
-    messages: [
-      {
-        role: "system",
-        content:
-          "You are a top exam paper setter for NEET, JEE Main and Advanced.",
-      },
-      { role: "user", content: prompt },
-    ],
-  });
-
-  return res.choices[0].message.content;
 }

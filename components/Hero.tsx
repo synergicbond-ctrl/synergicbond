@@ -1,129 +1,75 @@
 import Link from "next/link";
 
+import Container from "@/components/ui/Container";
+import Badge from "@/components/ui/Badge";
+
+import HeroSearch from "@/components/home/HeroSearch";
+import ExamGrid from "@/components/home/ExamGrid";
+
 export default function Hero() {
   return (
-    <section className="min-h-[85vh] flex items-center justify-center px-6 py-20">
+    <section className="relative overflow-hidden bg-black">
 
-      <div className="max-w-6xl mx-auto text-center">
+      {/* Background Effects */}
+      <div className="absolute inset-0 -z-10">
 
-        <p className="uppercase tracking-[0.4em] text-white/40 mb-6">
+        <div className="absolute left-1/2 top-20 h-[600px] w-[600px] -translate-x-1/2 rounded-full bg-cyan-500/15 blur-[180px]" />
 
-          SYNERGIC BOND
+        <div className="absolute right-0 top-0 h-[500px] w-[500px] rounded-full bg-violet-500/15 blur-[180px]" />
 
-        </p>
-
-        <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold leading-tight">
-
-          The Chemistry
-          <br />
-
-          Operating System
-
-        </h1>
-
-        <p className="mt-8 text-xl text-white/70">
-
-          Search • Learn • Practice • Master
-
-        </p>
-
-        <p className="mt-3 text-lg text-white/50">
-
-          One platform for NEET, JEE, GATE & InChO
-
-        </p>
-
-        <div className="mt-12 flex justify-center gap-4 flex-wrap">
-
-          <Link
-            href="/dashboard"
-            className="px-8 py-4 bg-white text-black rounded-2xl font-semibold hover:scale-105 transition duration-300"
-          >
-
-            🚀 Start Learning
-
-          </Link>
-
-          <Link
-            href="/vault"
-            className="px-8 py-4 border border-white/20 rounded-2xl hover:bg-white/10 transition duration-300"
-          >
-
-            🧪 Explore Vault
-
-          </Link>
-
-        </div>
-
-        <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-5">
-
-          <div className="border border-white/10 rounded-2xl p-5">
-
-            <h3 className="text-2xl font-bold mb-2">
-
-              🟢 NEET
-
-            </h3>
-
-            <p className="text-white/50 text-sm">
-
-              NCERT-focused preparation
-
-            </p>
-
-          </div>
-
-          <div className="border border-white/10 rounded-2xl p-5">
-
-            <h3 className="text-2xl font-bold mb-2">
-
-              🟡 JEE
-
-            </h3>
-
-            <p className="text-white/50 text-sm">
-
-              Advanced problem solving
-
-            </p>
-
-          </div>
-
-          <div className="border border-white/10 rounded-2xl p-5">
-
-            <h3 className="text-2xl font-bold mb-2">
-
-              🟠 GATE
-
-            </h3>
-
-            <p className="text-white/50 text-sm">
-
-              Deep theoretical chemistry
-
-            </p>
-
-          </div>
-
-          <div className="border border-white/10 rounded-2xl p-5">
-
-            <h3 className="text-2xl font-bold mb-2">
-
-              🔴 InChO
-
-            </h3>
-
-            <p className="text-white/50 text-sm">
-
-              Olympiad-level mastery
-
-            </p>
-
-          </div>
-
-        </div>
+        <div className="absolute bottom-0 left-0 h-[450px] w-[450px] rounded-full bg-sky-500/5 blur-[180px]" />
 
       </div>
+
+      <Container>
+
+        <div className="mx-auto flex min-h-screen max-w-6xl flex-col items-center justify-center py-24 text-center">
+
+          <Badge>
+            AI POWERED CHEMISTRY PLATFORM
+          </Badge>
+
+          <h1 className="mt-10 text-5xl font-black leading-[0.95] tracking-[-0.04em] md:text-7xl xl:text-8xl">
+            The Chemistry
+            <br />
+            <span className="bg-gradient-to-r from-cyan-300 via-sky-400 to-violet-400 bg-clip-text text-transparent">
+              Operating System
+            </span>
+          </h1>
+
+          <p className="mt-8 max-w-3xl text-xl text-white/70">
+            Search • Learn • Practice • Master
+          </p>
+
+          <p className="mt-4 text-white/50">
+            Built for NEET • JEE • Olympiad • GATE
+          </p>
+
+          <div className="mt-10 flex flex-wrap justify-center gap-5">
+
+            <Link
+              href="/dashboard"
+              className="rounded-2xl bg-gradient-to-r from-cyan-400 to-sky-500 px-8 py-4 font-semibold text-black shadow-lg shadow-cyan-500/20 transition duration-300 hover:-translate-y-1"
+            >
+              Start Learning →
+            </Link>
+
+            <Link
+              href="/vault"
+              className="rounded-2xl border border-white/10 bg-white/[0.03] px-8 py-4 transition duration-300 hover:-translate-y-1 hover:border-cyan-400/30 hover:bg-white/[0.06]"
+            >
+              Explore Vault →
+            </Link>
+
+          </div>
+
+          <HeroSearch />
+
+          <ExamGrid />
+
+        </div>
+
+      </Container>
 
     </section>
   );

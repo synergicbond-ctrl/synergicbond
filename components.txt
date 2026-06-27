@@ -1,0 +1,12 @@
+components/AIChemistryEngine.tsx
+components/AITutor.tsx
+components/AiTutorBox.tsx
+components/ChemSearch.tsx
+components/Hero.tsx
+components/JeeSection.tsx
+components/Navbar.tsx
+components/NeetSection.tsx
+components/OlympiadSection.tsx
+components/QuizAndFeedback.tsx
+components/ResourcesSection.tsx
+components/Stats.tsx

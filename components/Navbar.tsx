@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
+import MoleculeLogo from "@/components/MoleculeLogo";
 import {
   BookOpen, ClipboardList, FlaskConical, FileText,
   Bot, Camera, PenLine, Atom, Target, Calendar,
@@ -60,14 +61,10 @@ export default function Navbar() {
     <header className="sticky top-0 z-50 border-b border-white/[0.06] bg-[#0B0F19]/90 backdrop-blur-2xl">
       <div className="mx-auto flex h-16 max-w-[1400px] items-center justify-between px-4 md:px-6 gap-4">
 
-        {/* Brand Logo */}
+        {/* Brand Logo — animated molecule in top-left corner */}
         <Link href="/" className="flex items-center gap-2.5 flex-shrink-0 group">
-          <div className="flex h-8 w-8 items-center justify-center rounded-xl border border-cyan-400/30 bg-cyan-950/40 shadow-[0_0_14px_rgba(34,211,238,0.18)] transition group-hover:shadow-[0_0_20px_rgba(34,211,238,0.3)]">
-            <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none">
-              <circle cx="12" cy="12" r="2.5" fill="#00F5D4"/>
-              <ellipse cx="12" cy="12" rx="9" ry="3.5" stroke="#00F5D4" strokeWidth="1.2" strokeOpacity="0.7" transform="rotate(-45 12 12)"/>
-              <ellipse cx="12" cy="12" rx="9" ry="3.5" stroke="#9B5DE5" strokeWidth="1.2" strokeOpacity="0.7" transform="rotate(45 12 12)"/>
-            </svg>
+          <div className="flex h-9 w-9 items-center justify-center rounded-xl border border-cyan-400/30 bg-cyan-950/40 shadow-[0_0_14px_rgba(34,211,238,0.18)] transition group-hover:shadow-[0_0_20px_rgba(34,211,238,0.3)]">
+            <MoleculeLogo size={28} />
           </div>
           <div>
             <p className="text-sm font-extrabold tracking-widest bg-gradient-to-r from-[#00F5D4] via-[#00BBF9] to-[#9B5DE5] bg-clip-text text-transparent leading-none">

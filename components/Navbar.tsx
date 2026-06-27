@@ -6,7 +6,8 @@ import { useState } from "react";
 import {
   BookOpen, ClipboardList, FlaskConical, FileText,
   Bot, Camera, PenLine, Atom, Target, Calendar,
-  BarChart2, Medal, Trophy, Archive, Gem, Menu, X
+  BarChart2, Medal, Trophy, Archive, Gem, Menu, X,
+  Globe, ChevronDown
 } from "lucide-react";
 
 const mainLinks = [
@@ -28,18 +29,26 @@ const mainLinks = [
 ];
 
 const LANGS = [
-  { code: "english",  label: "EN"  },
-  { code: "hinglish", label: "HI"  },
-  { code: "hindi",    label: "हिं"  },
+  { code: "english",  label: "English",  short: "EN", flag: "🇬🇧" },
+  { code: "hindi",    label: "हिन्दी",     short: "HI", flag: "🇮🇳" },
+  { code: "hinglish", label: "Hinglish", short: "HX", flag: "🇮🇳" },
+  { code: "spanish",  label: "Español",  short: "ES", flag: "🇪🇸" },
+  { code: "arabic",   label: "العربية",   short: "AR", flag: "🇸🇦" },
+  { code: "french",   label: "Français", short: "FR", flag: "🇫🇷" },
+  { code: "german",   label: "Deutsch",  short: "DE", flag: "🇩🇪" },
 ];
 
 export default function Navbar() {
   const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
   const [lang, setLang] = useState("english");
+  const [langOpen, setLangOpen] = useState(false);
+
+  const currentLang = LANGS.find((l) => l.code === lang) ?? LANGS[0];
 
   function switchLang(l: string) {
     setLang(l);
+    setLangOpen(false);
     if (typeof window !== "undefined") localStorage.setItem("sb_lang", l);
   }
 
@@ -102,21 +111,38 @@ export default function Navbar() {
 
         {/* Right Utilities */}
         <div className="flex items-center gap-2 flex-shrink-0">
-          {/* Language switcher */}
-          <div className="hidden sm:flex items-center rounded-xl border border-white/[0.08] bg-white/[0.04] p-0.5 gap-0.5">
-            {LANGS.map((l) => (
-              <button
-                key={l.code}
-                onClick={() => switchLang(l.code)}
-                className={`px-2 py-1 rounded-lg text-[11px] font-bold transition-all ${
-                  lang === l.code
-                    ? "bg-cyan-500 text-black shadow-[0_0_8px_rgba(34,211,238,0.4)]"
-                    : "text-white/40 hover:text-white"
-                }`}
-              >
-                {l.label}
-              </button>
-            ))}
+          {/* Language dropdown */}
+          <div className="hidden sm:block relative">
+            <button
+              onClick={() => setLangOpen(!langOpen)}
+              className="flex items-center gap-1.5 rounded-xl border border-white/[0.08] bg-white/[0.04] px-2.5 py-1.5 text-[11px] font-bold text-white/70 hover:text-white hover:border-cyan-400/30 transition"
+            >
+              <Globe className="h-3.5 w-3.5 text-cyan-400" />
+              {currentLang.short}
+              <ChevronDown className={`h-3 w-3 transition-transform ${langOpen ? "rotate-180" : ""}`} />
+            </button>
+
+            {langOpen && (
+              <>
+                <div className="fixed inset-0 z-40" onClick={() => setLangOpen(false)} />
+                <div className="absolute right-0 mt-2 w-44 z-50 rounded-xl border border-white/[0.08] bg-[#111827] shadow-2xl shadow-black/50 p-1.5">
+                  {LANGS.map((l) => (
+                    <button
+                      key={l.code}
+                      onClick={() => switchLang(l.code)}
+                      className={`flex items-center gap-2.5 w-full px-3 py-2 rounded-lg text-xs font-medium transition ${
+                        lang === l.code
+                          ? "bg-cyan-500/15 text-cyan-300 font-bold"
+                          : "text-gray-400 hover:text-white hover:bg-white/5"
+                      }`}
+                    >
+                      <span className="text-sm">{l.flag}</span>
+                      {l.label}
+                    </button>
+                  ))}
+                </div>
+              </>
+            )}
           </div>
 
           <Link
@@ -146,18 +172,18 @@ export default function Navbar() {
       {/* Mobile Menu */}
       {menuOpen && (
         <div className="lg:hidden border-t border-white/[0.06] bg-[#0B0F19]/98 px-4 py-4">
-          <div className="flex gap-2 mb-4">
+          <div className="grid grid-cols-4 gap-2 mb-4">
             {LANGS.map((l) => (
               <button
                 key={l.code}
                 onClick={() => switchLang(l.code)}
-                className={`flex-1 py-1.5 rounded-xl text-sm font-bold transition ${
+                className={`py-1.5 rounded-xl text-xs font-bold transition ${
                   lang === l.code
                     ? "bg-cyan-500 text-black"
                     : "border border-white/10 text-white/50"
                 }`}
               >
-                {l.label}
+                {l.short}
               </button>
             ))}
           </div>

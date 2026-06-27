@@ -7,7 +7,11 @@ import JeeSection from "@/components/JeeSection";
 import NeetSection from "@/components/NeetSection";
 import OlympiadSection from "@/components/OlympiadSection";
 import ResourcesSection from "@/components/ResourcesSection";
+import ExamCenter from "@/components/ExamCenter";
+import Testimonials from "@/components/Testimonials";
 import AboutVision from "@/components/AboutVision";
+import FAQ from "@/components/FAQ";
+import ContactFeedback from "@/components/ContactFeedback";
 import Footer from "@/components/Footer";
 
 export default function Home() {
@@ -41,7 +45,23 @@ export default function Home() {
         <ResourcesSection />
       </section>
 
+      <section className="border-t border-white/[0.06] py-20">
+        <ExamCenter />
+      </section>
+
+      <section className="border-t border-white/[0.06] py-20">
+        <Testimonials />
+      </section>
+
       <AboutVision />
+
+      <section className="border-t border-white/[0.06]">
+        <FAQ />
+      </section>
+
+      <section className="border-t border-white/[0.06]">
+        <ContactFeedback />
+      </section>
 
       <Footer />
     </main>

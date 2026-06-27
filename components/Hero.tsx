@@ -1,14 +1,11 @@
 "use client";
 import Link from "next/link";
-import dynamic from "next/dynamic";
 
 import Container from "@/components/ui/Container";
 import Badge from "@/components/ui/Badge";
 
 import HeroSearch from "@/components/home/HeroSearch";
 import ExamGrid from "@/components/home/ExamGrid";
-
-const MoleculeHero = dynamic(() => import("@/components/MoleculeHero"), { ssr: false });
 
 export default function Hero() {
   return (
@@ -28,10 +25,10 @@ export default function Hero() {
             AI POWERED CHEMISTRY PLATFORM
           </Badge>
 
-          {/* SYNERGIC BOND molecule banner — above the headline */}
-          <div className="mt-6 w-full max-w-sm">
-            <MoleculeHero />
-          </div>
+          {/* SYNERGIC BOND brand name — large, above the headline */}
+          <p className="mt-8 text-5xl md:text-7xl font-black tracking-[0.1em] bg-gradient-to-r from-[#FFD700] via-[#F472B6] to-[#9B5DE5] bg-clip-text text-transparent drop-shadow-[0_0_30px_rgba(244,114,182,0.3)]">
+            SYNERGIC BOND
+          </p>
 
           {/* Big headline — the centerpiece */}
           <h1 className="mt-6 text-5xl font-black leading-[0.95] tracking-[-0.04em] md:text-7xl xl:text-8xl">

@@ -1,22 +1,10 @@
 "use client";
 
 import { useState } from "react";
-import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { supabase } from "@/lib/supabase";
 
-async function handleGoogleSignIn() {
-  await supabase.auth.signInWithOAuth({
-    provider: "google",
-    options: {
-      redirectTo: `${window.location.origin}/auth/callback`,
-    },
-  });
-}
-
 export default function SignInPage() {
-  const router = useRouter();
-
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
@@ -27,14 +15,7 @@ export default function SignInPage() {
       setLoading(true);
       setError("");
 
-      const { data, error } =
-        await supabase.auth.signInWithPassword({
-          email,
-          password,
-        });
-
-      console.log("LOGIN DATA:", data);
-      console.log("LOGIN ERROR:", error);
+      const { error } = await supabase.auth.signInWithPassword({ email, password });
 
       if (error) {
         setError(error.message);
@@ -50,20 +31,23 @@ export default function SignInPage() {
     }
   }
 
+  async function handleGoogleSignIn() {
+    await supabase.auth.signInWithOAuth({
+      provider: "google",
+      options: {
+        redirectTo: `${window.location.origin}/auth/callback`,
+      },
+    });
+  }
+
   return (
     <main className="flex min-h-screen items-center justify-center bg-black text-white">
       <div className="w-full max-w-md rounded-3xl border border-white/10 bg-white/[0.03] p-8">
 
-        <h1 className="text-3xl font-bold">
-          Student Portal
-        </h1>
-
-        <p className="mt-2 text-white/60">
-          Sign in to continue your chemistry journey.
-        </p>
+        <h1 className="text-3xl font-bold">Student Portal</h1>
+        <p className="mt-2 text-white/60">Sign in to continue your chemistry journey.</p>
 
         <div className="mt-8 space-y-4">
-
           <input
             type="email"
             placeholder="Email"
@@ -80,16 +64,12 @@ export default function SignInPage() {
             className="w-full rounded-xl border border-white/10 bg-black/30 px-4 py-3"
           />
 
-          {error && (
-            <p className="text-red-400 text-sm">
-              {error}
-            </p>
-          )}
+          {error && <p className="text-red-400 text-sm">{error}</p>}
 
           <button
             onClick={handleSignIn}
             disabled={loading}
-            className="w-full rounded-xl bg-gradient-to-r from-cyan-400 to-blue-500 py-3 font-semibold text-black"
+            className="w-full rounded-xl bg-gradient-to-r from-cyan-400 to-blue-500 py-3 font-semibold text-black disabled:opacity-60"
           >
             {loading ? "Signing In..." : "Sign In"}
           </button>
@@ -110,10 +90,9 @@ export default function SignInPage() {
               <path d="M3.964 10.706A5.41 5.41 0 0 1 3.682 9c0-.593.102-1.17.282-1.706V4.962H.957A8.996 8.996 0 0 0 0 9c0 1.452.348 2.827.957 4.038l3.007-2.332Z" fill="#FBBC05"/>
               <path d="M9 3.58c1.321 0 2.508.454 3.44 1.345l2.582-2.58C13.463.891 11.426 0 9 0A8.997 8.997 0 0 0 .957 4.962L3.964 7.294C4.672 5.163 6.656 3.58 9 3.58Z" fill="#EA4335"/>
             </svg>
-            Continue with Google (Coming Soon)
+            Continue with Google
           </button>
 
-          {/* Guest / Demo Login */}
           <button
             onClick={() => { window.location.href = "/notes"; }}
             className="w-full rounded-xl border border-cyan-500/30 bg-cyan-950/30 py-3 font-semibold text-cyan-300 flex items-center justify-center gap-2 hover:bg-cyan-950/50 transition"
@@ -125,18 +104,11 @@ export default function SignInPage() {
           </p>
 
           <div className="text-center pt-4">
-            <p className="text-white/50">
-              New to SYNERGIC BOND?
-            </p>
-
-            <Link
-              href="/auth/signup"
-              className="mt-3 inline-block text-cyan-300"
-            >
+            <p className="text-white/50">New to SYNERGIC BOND?</p>
+            <Link href="/auth/signup" className="mt-3 inline-block text-cyan-300">
               Create Account →
             </Link>
           </div>
-
         </div>
       </div>
     </main>

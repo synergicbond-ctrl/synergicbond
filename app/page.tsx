@@ -21,10 +21,6 @@ export default function Home() {
         <KnowledgeVault />
       </section>
 
-      <section className="mx-auto w-full max-w-7xl px-6 py-12">
-        <AIChemistryEngine />
-      </section>
-
       <section className="border-t border-white/10 py-16">
         <Stats />
       </section>

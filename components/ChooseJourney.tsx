@@ -10,35 +10,47 @@ import {
 const journeys = [
   {
     title: "NEET",
-    subtitle: "NCERT • PYQs • Revision",
+    subtitle: "NCERT • PYQs • Revision • Hindi",
+    label: "NCERT MASTERY",
+    tools: ["AI Notes", "Quiz", "Mock Exam", "AI Tutor"],
     icon: Microscope,
-    href: "/revision",
+    href: "/neet",
     accent: "text-emerald-300",
     glow: "from-emerald-500/20 to-transparent",
+    border: "hover:border-emerald-400/30",
   },
   {
     title: "JEE",
-    subtitle: "Advanced • Mechanisms • Problems",
+    subtitle: "Main & Advanced • Mechanisms • Numericals",
+    label: "ADVANCED CHEMISTRY",
+    tools: ["AI Notes", "Assignments", "Mock Exam", "Vision AI"],
     icon: Atom,
-    href: "/dashboard",
+    href: "/jee",
     accent: "text-cyan-300",
     glow: "from-cyan-500/20 to-transparent",
+    border: "hover:border-cyan-400/30",
   },
   {
     title: "Olympiad",
-    subtitle: "INChO • IChO • Theory",
+    subtitle: "NSEC • INChO • IChO • USNCO",
+    label: "INTERNATIONAL LEVEL",
+    tools: ["University Notes", "Synthesis Problems", "Mock Papers", "Mechanism AI"],
     icon: Trophy,
-    href: "/olympiads",
+    href: "/olympiad",
     accent: "text-amber-300",
     glow: "from-amber-500/20 to-transparent",
+    border: "hover:border-amber-400/30",
   },
   {
     title: "GATE",
-    subtitle: "Engineering Chemistry",
+    subtitle: "Higher Studies • Engineering Chemistry",
+    label: "ENGINEERING CHEMISTRY",
+    tools: ["Graduate Notes", "NAT Questions", "Mock Exam", "Formula Vault"],
     icon: GraduationCap,
-    href: "/dashboard",
+    href: "/gate",
     accent: "text-violet-300",
     glow: "from-violet-500/20 to-transparent",
+    border: "hover:border-violet-400/30",
   },
 ];
 
@@ -72,29 +84,33 @@ export default function ChooseJourney() {
             <Link
               key={item.title}
               href={item.href}
-              className="group relative overflow-hidden rounded-[30px] border border-white/10 bg-white/[0.03] p-8 transition-all duration-300 hover:-translate-y-2 hover:border-cyan-400/30"
+              className={`group relative overflow-hidden rounded-[30px] border border-white/10 bg-white/[0.03] p-8 transition-all duration-300 hover:-translate-y-2 ${item.border}`}
             >
               <div className={`absolute inset-0 bg-gradient-to-br ${item.glow} opacity-0 transition duration-500 group-hover:opacity-100`} />
 
               <div className="relative">
+                <p className="text-xs font-bold uppercase tracking-widest text-white/30 mb-4">{item.label}</p>
 
-                <div className="flex h-16 w-16 items-center justify-center rounded-2xl border border-white/10 bg-black/40">
-                  <Icon className={`h-8 w-8 ${item.accent}`} />
+                <div className="flex h-14 w-14 items-center justify-center rounded-2xl border border-white/10 bg-black/40">
+                  <Icon className={`h-7 w-7 ${item.accent}`} />
                 </div>
 
-                <h3 className="mt-8 text-3xl font-bold">
-                  {item.title}
-                </h3>
+                <h3 className="mt-6 text-3xl font-bold">{item.title}</h3>
+                <p className="mt-2 text-white/50 text-sm">{item.subtitle}</p>
 
-                <p className="mt-3 text-white/60">
-                  {item.subtitle}
-                </p>
+                <div className="mt-5 space-y-1">
+                  {item.tools.map((tool) => (
+                    <div key={tool} className="flex items-center gap-2 text-xs text-white/40">
+                      <span className={`w-1.5 h-1.5 rounded-full ${item.accent.replace("text-", "bg-")}`} />
+                      {tool}
+                    </div>
+                  ))}
+                </div>
 
-                <div className="mt-10 flex items-center gap-2 font-medium text-cyan-300">
-                  Continue
+                <div className={`mt-6 flex items-center gap-2 font-medium ${item.accent}`}>
+                  Start Learning
                   <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </div>
-
               </div>
             </Link>
           );

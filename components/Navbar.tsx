@@ -61,16 +61,16 @@ export default function Navbar() {
     <header className="sticky top-0 z-50 border-b border-white/[0.06] bg-[#0B0F19]/90 backdrop-blur-2xl">
       <div className="mx-auto flex h-16 max-w-[1400px] items-center justify-between px-4 md:px-6 gap-4">
 
-        {/* Brand Logo — animated molecule in top-left corner */}
-        <Link href="/" className="flex items-center gap-2.5 flex-shrink-0 group">
-          <div className="flex h-9 w-9 items-center justify-center rounded-xl border border-cyan-400/30 bg-cyan-950/40 shadow-[0_0_14px_rgba(34,211,238,0.18)] transition group-hover:shadow-[0_0_20px_rgba(34,211,238,0.3)]">
-            <MoleculeLogo size={28} />
+        {/* Brand Logo — animated network molecule in top-left corner */}
+        <Link href="/" className="flex items-center gap-3 flex-shrink-0 group">
+          <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-cyan-400/30 bg-cyan-950/40 shadow-[0_0_16px_rgba(34,211,238,0.2)] transition group-hover:shadow-[0_0_24px_rgba(34,211,238,0.35)]">
+            <MoleculeLogo size={40} />
           </div>
           <div>
-            <p className="text-sm font-extrabold tracking-widest bg-gradient-to-r from-[#00F5D4] via-[#00BBF9] to-[#9B5DE5] bg-clip-text text-transparent leading-none">
+            <p className="text-lg font-extrabold tracking-widest bg-gradient-to-r from-[#00F5D4] via-[#00BBF9] to-[#9B5DE5] bg-clip-text text-transparent leading-none">
               SYNERGIC BOND
             </p>
-            <p className="text-[8px] font-bold uppercase tracking-[0.35em] text-cyan-400/50 hidden sm:block mt-0.5">
+            <p className="text-[9px] font-bold uppercase tracking-[0.35em] text-cyan-400/50 hidden sm:block mt-1">
               Chemistry OS
             </p>
           </div>
@@ -89,14 +89,14 @@ export default function Navbar() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className={`relative flex items-center gap-1.5 whitespace-nowrap px-3 py-1.5 rounded-full text-xs font-medium transition-all duration-200 hover:scale-105 group/tab
+                  className={`relative flex items-center gap-2 whitespace-nowrap px-3.5 py-2 rounded-full text-sm font-medium transition-all duration-200 hover:scale-105 group/tab
                     ${active
                       ? "text-white font-bold"
                       : "text-gray-400 hover:text-white font-normal"
                     }`}
                 >
                   <Icon
-                    className={`h-3.5 w-3.5 flex-shrink-0 transition-colors
+                    className={`h-[18px] w-[18px] flex-shrink-0 transition-colors
                       ${active ? "text-cyan-400" : "text-gray-500 group-hover/tab:text-gray-300"}`}
                   />
                   {link.label}

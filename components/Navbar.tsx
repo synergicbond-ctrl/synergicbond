@@ -7,7 +7,7 @@ import {
   BookOpen, ClipboardList, FlaskConical, FileText,
   Bot, Camera, PenLine, Atom, Target, Calendar,
   BarChart2, Medal, Trophy, Archive, Gem, Menu, X,
-  Globe, ChevronDown
+  Globe, ChevronDown, Sparkles
 } from "lucide-react";
 
 const mainLinks = [
@@ -17,6 +17,7 @@ const mainLinks = [
   { href: "/exam",             label: "Mock Exam",      icon: FileText,      category: "learn" },
   { href: "/tutor",            label: "AI Tutor",       icon: Bot,           category: "ai"    },
   { href: "/snap-solve",       label: "Snap & Solve",   icon: Camera,        category: "ai"    },
+  { href: "/doubt-solver",     label: "Doubt Solver",   icon: Sparkles,      category: "ai"    },
   { href: "/handwritten-notes",label: "Handwritten",    icon: PenLine,       category: "ai"    },
   { href: "/molecule",         label: "Molecule",       icon: Atom,          category: "ai"    },
   { href: "/daily-challenge",  label: "Challenge",      icon: Target,        category: "game"  },

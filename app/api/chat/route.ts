@@ -6,7 +6,9 @@ import { GoogleGenAI } from "@google/genai";
 import { createClient } from "@/lib/supabase/server";
 import { fetchSyllabusContext } from "@/lib/aiTutor";
 
-const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY || process.env.GOOGLE_API_KEY || "" });
+function getAI() {
+  return new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY || process.env.GOOGLE_API_KEY || "" });
+}
 
 export async function POST(req: Request) {
   try {
@@ -67,7 +69,7 @@ Rules:
       { role: "user", parts: [{ text: message }] },
     ];
 
-    const stream = await ai.models.generateContentStream({
+    const stream = await getAI().models.generateContentStream({
       model: "gemini-2.0-flash",
       contents,
       config: { systemInstruction },

@@ -1,11 +1,9 @@
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 
-import OpenAI from "openai";
 import { NextResponse } from "next/server";
 import { constructAIPrompt, fetchSyllabusContext } from "@/lib/aiTutor";
-
-const client = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
+import { generateText } from "@/lib/gemini";
 
 export async function POST(request: Request) {
   try {
@@ -22,19 +20,7 @@ export async function POST(request: Request) {
     }
 
     const prompt = constructAIPrompt(message, syllabusContext);
-
-    const completion = await client.chat.completions.create({
-      model: "gpt-4o-mini",
-      messages: [
-        {
-          role: "system",
-          content: "You are a JEE/NEET Chemistry tutor. Answer concisely and exam-focused.",
-        },
-        { role: "user", content: prompt },
-      ],
-    });
-
-    const reply = completion.choices[0]?.message?.content ?? "No response generated.";
+    const reply = await generateText(prompt);
     return NextResponse.json({ reply });
   } catch (err) {
     console.error("AI route error:", err);

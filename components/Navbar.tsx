@@ -76,10 +76,10 @@ export default function Navbar() {
           </div>
         </Link>
 
-        {/* Desktop Nav — scrollable pill container */}
+        {/* Desktop Nav — glossy glass dock */}
         <nav className="hidden lg:flex items-center flex-1 mx-4 overflow-hidden">
           <div
-            className="flex items-center space-x-3 overflow-x-auto scrollbar-none px-4 py-2 rounded-full bg-[#111827] border border-white/[0.06]"
+            className="flex items-center gap-1 overflow-x-auto scrollbar-none px-2 py-1.5 rounded-full bg-[#111827]/70 backdrop-blur-md border border-white/10 shadow-2xl shadow-black/40"
             style={{ scrollbarWidth: "none" }}
           >
             {mainLinks.map((link) => {
@@ -89,10 +89,10 @@ export default function Navbar() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className={`relative flex items-center gap-2 whitespace-nowrap px-3.5 py-2 rounded-full text-sm font-medium transition-all duration-200 hover:scale-105 group/tab
+                  className={`relative flex items-center gap-2 whitespace-nowrap px-3 py-1.5 rounded-full text-sm transition-all duration-200 group/tab
                     ${active
-                      ? "text-white font-bold"
-                      : "text-gray-400 hover:text-white font-normal"
+                      ? "text-white font-semibold bg-white/10 shadow-[inset_0_1px_0_rgba(255,255,255,0.12)]"
+                      : "text-gray-400 hover:text-white font-medium hover:bg-white/[0.04]"
                     }`}
                 >
                   <Icon
@@ -100,10 +100,6 @@ export default function Navbar() {
                       ${active ? "text-cyan-400" : "text-gray-500 group-hover/tab:text-gray-300"}`}
                   />
                   {link.label}
-                  {/* Active glowing underline */}
-                  {active && (
-                    <span className="absolute bottom-0 left-1/2 -translate-x-1/2 h-[2px] w-4/5 rounded-full bg-cyan-400 shadow-[0_0_8px_rgba(34,211,238,0.8)]" />
-                  )}
                 </Link>
               );
             })}

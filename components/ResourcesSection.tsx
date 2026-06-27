@@ -13,25 +13,25 @@ const features = [
     title: "AI Tutor",
     description: "Ask chemistry questions naturally and receive step-by-step explanations.",
     icon: Bot, href: "/tutor",
-    color: "text-cyan-300", tile: "from-cyan-400/25 to-cyan-500/5 border-cyan-400/25", glow: "rgba(34,211,238,0.18)",
+    color: "text-cyan-300", tile: "from-cyan-400/20 to-cyan-500/5 border-cyan-400/20", glow: "rgba(34,211,238,0.14)",
   },
   {
     title: "Universal Search",
     description: "Instantly search concepts, reactions, formulas and chapters.",
     icon: Search, href: "/search",
-    color: "text-violet-300", tile: "from-violet-400/25 to-violet-500/5 border-violet-400/25", glow: "rgba(155,93,229,0.18)",
+    color: "text-violet-300", tile: "from-violet-400/20 to-violet-500/5 border-violet-400/20", glow: "rgba(155,93,229,0.14)",
   },
   {
     title: "Revision Engine",
     description: "Revise smarter with quick facts, flashcards and memory boosters.",
     icon: BrainCircuit, href: "/revision",
-    color: "text-emerald-300", tile: "from-emerald-400/25 to-emerald-500/5 border-emerald-400/25", glow: "rgba(16,185,129,0.16)",
+    color: "text-cyan-300", tile: "from-cyan-400/20 to-cyan-500/5 border-cyan-400/20", glow: "rgba(34,211,238,0.14)",
   },
   {
     title: "Knowledge Library",
     description: "Everything you need—from concepts to mechanisms—in one place.",
     icon: BookOpen, href: "/vault",
-    color: "text-amber-300", tile: "from-amber-400/25 to-amber-500/5 border-amber-400/25", glow: "rgba(255,215,0,0.16)",
+    color: "text-violet-300", tile: "from-violet-400/20 to-violet-500/5 border-violet-400/20", glow: "rgba(155,93,229,0.14)",
   },
 ];
 

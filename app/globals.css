@@ -3,26 +3,34 @@
 :root {
   color-scheme: dark;
 
-  /* Backgrounds */
-  --background: #000000;
-  --background-secondary: #0b0b0b;
-  --surface: rgba(255, 255, 255, 0.04);
-  --surface-hover: rgba(255, 255, 255, 0.08);
+  /* ── SYNERGIC BOND DESIGN SYSTEM ──────────────────────────────
+     Direction: Linear + Notion + Apple. 80% calm, 20% accent.
+     Accents are CYAN + PURPLE only. Semantic colors (chemistry
+     compounds, warnings) live in content, never in UI chrome. */
 
-  /* Text */
-  --foreground: #ffffff;
-  --foreground-muted: #a1a1aa;
+  /* Surfaces — single calm dark base */
+  --background: #0b0f19;          /* page */
+  --surface: #111827;             /* cards / panels (the ONE card color) */
+  --surface-2: rgba(255, 255, 255, 0.03);
+  --surface-hover: rgba(255, 255, 255, 0.06);
 
-  /* Brand */
-  --primary: #00e5ff;
-  --primary-hover: #33ecff;
-  --secondary: #8b5cf6;
+  /* Text hierarchy — pure white for titles only, gray for the rest */
+  --foreground: #ffffff;          /* titles / active / hovered */
+  --text-body: rgba(255, 255, 255, 0.70);  /* body copy */
+  --text-muted: #9ca3af;          /* captions / meta */
+
+  /* Accents — cyan + purple ONLY */
+  --accent-cyan: #00f5d4;
+  --accent-blue: #00bbf9;
+  --accent-purple: #9b5de5;
 
   /* Borders */
   --border: rgba(255, 255, 255, 0.08);
+  --border-strong: rgba(255, 255, 255, 0.12);
 
-  /* Shadows */
-  --shadow: 0 10px 30px rgba(0, 229, 255, 0.12);
+  /* Shadows — soft, calm. Glow is reserved for :hover / active only */
+  --shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+  --glow-cyan: 0 0 24px rgba(0, 245, 212, 0.18);
 
   /* Radius */
   --radius: 16px;

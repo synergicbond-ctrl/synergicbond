@@ -2,15 +2,15 @@ import { Zap, ArrowRight } from "lucide-react";
 
 export default function SponsoredMock() {
   return (
-    <div className="relative rounded-2xl p-[1.5px] overflow-hidden animate-pulse bg-gradient-to-r from-cyan-500 via-purple-500 to-amber-500">
+    <div className="relative rounded-2xl p-[1px] overflow-hidden bg-gradient-to-r from-cyan-500/60 to-purple-500/60">
       <div className="rounded-2xl bg-[#111827] px-6 py-5 flex items-center justify-between flex-wrap gap-4">
         <div className="flex items-center gap-4">
-          <div className="p-2.5 rounded-xl bg-gradient-to-br from-cyan-500/20 to-amber-500/20">
-            <Zap className="h-5 w-5 text-amber-400" />
+          <div className="p-2.5 rounded-xl bg-gradient-to-br from-cyan-500/15 to-purple-500/15 border border-cyan-400/15">
+            <Zap className="h-5 w-5 text-cyan-300" />
           </div>
           <div>
             <div className="flex items-center gap-2">
-              <span className="text-[9px] font-bold tracking-widest text-amber-400 bg-amber-500/10 px-2 py-0.5 rounded-full">
+              <span className="text-[9px] font-bold tracking-widest text-cyan-300 bg-cyan-500/10 px-2 py-0.5 rounded-full">
                 ⚡ PREMIUM FEATURED CHALLENGE
               </span>
             </div>

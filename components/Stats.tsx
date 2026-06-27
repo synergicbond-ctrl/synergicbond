@@ -1,25 +1,26 @@
 import { Atom, BrainCircuit, Trophy, Clock3 } from "lucide-react";
 
+// Accent system: cyan + purple only, alternating
 const stats = [
   {
     icon: Atom, value: "10K+", title: "Chemistry Resources",
     subtitle: "Concepts, reactions, mechanisms & PYQs",
-    icon_color: "text-cyan-300", tile: "from-cyan-400/25 to-cyan-500/5 border-cyan-400/25", glow: "rgba(34,211,238,0.18)",
+    icon_color: "text-cyan-300", tile: "from-cyan-400/20 to-cyan-500/5 border-cyan-400/20", glow: "rgba(34,211,238,0.14)",
   },
   {
     icon: BrainCircuit, value: "500+", title: "JEE / NEET Topics",
     subtitle: "Mapped chapter-wise syllabus",
-    icon_color: "text-violet-300", tile: "from-violet-400/25 to-violet-500/5 border-violet-400/25", glow: "rgba(155,93,229,0.18)",
+    icon_color: "text-violet-300", tile: "from-violet-400/20 to-violet-500/5 border-violet-400/20", glow: "rgba(155,93,229,0.14)",
   },
   {
     icon: Trophy, value: "200+", title: "Olympiad Problems",
     subtitle: "National & International level",
-    icon_color: "text-amber-300", tile: "from-amber-400/25 to-amber-500/5 border-amber-400/25", glow: "rgba(255,215,0,0.16)",
+    icon_color: "text-cyan-300", tile: "from-cyan-400/20 to-cyan-500/5 border-cyan-400/20", glow: "rgba(34,211,238,0.14)",
   },
   {
     icon: Clock3, value: "24×7", title: "AI Learning",
     subtitle: "Instant chemistry assistance",
-    icon_color: "text-emerald-300", tile: "from-emerald-400/25 to-emerald-500/5 border-emerald-400/25", glow: "rgba(16,185,129,0.16)",
+    icon_color: "text-violet-300", tile: "from-violet-400/20 to-violet-500/5 border-violet-400/20", glow: "rgba(155,93,229,0.14)",
   },
 ];
 

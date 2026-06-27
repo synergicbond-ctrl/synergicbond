@@ -1,3 +1,4 @@
+import { redirect } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
 import { DashboardHeader } from "@/components/dashboard/DashboardHeader";
 import { SummaryCards } from "@/components/dashboard/SummaryCards";
@@ -15,11 +16,7 @@ export default async function DashboardPage() {
   } = await supabase.auth.getUser();
 
   if (!user) {
-    return (
-      <main className="min-h-screen bg-black text-white p-8">
-        User not authenticated
-      </main>
-    );
+    redirect("/auth/signin");
   }
 
   const { data: profile } = await supabase

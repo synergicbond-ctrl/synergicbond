@@ -1,3 +1,4 @@
+import { redirect } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
 
 export default async function CoachPage() {
@@ -8,11 +9,7 @@ export default async function CoachPage() {
   } = await supabase.auth.getUser();
 
   if (!user) {
-    return (
-      <main className="min-h-screen bg-black text-white p-8">
-        Please sign in.
-      </main>
-    );
+    redirect("/auth/signin");
   }
 
   const { data: exams } = await supabase

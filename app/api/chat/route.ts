@@ -2,11 +2,11 @@ export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 
 import { NextResponse } from "next/server";
-import { GoogleGenerativeAI } from "@google/generative-ai";
+import { GoogleGenAI } from "@google/genai";
 import { createClient } from "@/lib/supabase/server";
 import { fetchSyllabusContext } from "@/lib/aiTutor";
 
-const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY || process.env.GOOGLE_API_KEY || "");
+const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY || process.env.GOOGLE_API_KEY || "" });
 
 export async function POST(req: Request) {
   try {
@@ -16,7 +16,6 @@ export async function POST(req: Request) {
       return NextResponse.json({ error: "message and chapterId required" }, { status: 400 });
     }
 
-    // Get authenticated user (optional)
     let weakTopics: string[] = [];
     try {
       const supabase = await createClient();
@@ -59,33 +58,33 @@ Rules:
 - Use LaTeX for formulas ($...$ notation)
 - If question is about a weak topic, teach from basics`;
 
-    const model = genAI.getGenerativeModel({
-      model: "gemini-1.5-flash",
-      systemInstruction,
+    // Build conversation history
+    const contents = [
+      ...history.slice(-8).map((h: any) => ({
+        role: h.role === "assistant" ? "model" : "user",
+        parts: [{ text: h.content }],
+      })),
+      { role: "user", parts: [{ text: message }] },
+    ];
+
+    const stream = await ai.models.generateContentStream({
+      model: "gemini-2.0-flash",
+      contents,
+      config: { systemInstruction },
     });
 
-    // Build history for Gemini
-    const geminiHistory = history.slice(-8).map((h: any) => ({
-      role: h.role === "assistant" ? "model" : "user",
-      parts: [{ text: h.content }],
-    }));
-
-    const chat = model.startChat({ history: geminiHistory });
-    const result = await chat.sendMessageStream(message);
-
-    // Stream response
-    const stream = new ReadableStream({
+    const readable = new ReadableStream({
       async start(controller) {
         const encoder = new TextEncoder();
-        for await (const chunk of result.stream) {
-          const text = chunk.text();
+        for await (const chunk of stream) {
+          const text = chunk.text ?? "";
           if (text) controller.enqueue(encoder.encode(text));
         }
         controller.close();
       },
     });
 
-    return new Response(stream, {
+    return new Response(readable, {
       headers: { "Content-Type": "text/plain; charset=utf-8", "Cache-Control": "no-cache" },
     });
   } catch (e: any) {

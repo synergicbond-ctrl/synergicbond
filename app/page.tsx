@@ -8,8 +8,10 @@ import NeetSection from "@/components/NeetSection";
 import OlympiadSection from "@/components/OlympiadSection";
 import ResourcesSection from "@/components/ResourcesSection";
 import ExamCenter from "@/components/ExamCenter";
+import ReferenceBooks from "@/components/ReferenceBooks";
 import Testimonials from "@/components/Testimonials";
 import AboutVision from "@/components/AboutVision";
+import Donation from "@/components/Donation";
 import FAQ from "@/components/FAQ";
 import ContactFeedback from "@/components/ContactFeedback";
 import Footer from "@/components/Footer";
@@ -50,10 +52,18 @@ export default function Home() {
       </section>
 
       <section className="border-t border-white/[0.06] py-20">
+        <ReferenceBooks />
+      </section>
+
+      <section className="border-t border-white/[0.06] py-20">
         <Testimonials />
       </section>
 
       <AboutVision />
+
+      <section className="border-t border-white/[0.06] py-20">
+        <Donation />
+      </section>
 
       <section className="border-t border-white/[0.06]">
         <FAQ />

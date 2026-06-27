@@ -1,19 +1,20 @@
 import { BookMarked, ArrowRight } from "lucide-react";
 
 const books = [
-  { title: "NCERT Chemistry", author: "NCERT (XI & XII)", subject: "Foundation", difficulty: "Beginner", color: "#10B981", affiliate: "#" },
+  { title: "NCERT Chemistry", author: "NCERT (XI & XII)", subject: "Foundation", difficulty: "Beginner", color: "#00BBF9", affiliate: "#" },
   { title: "Concise Inorganic Chemistry", author: "J.D. Lee", subject: "Inorganic", difficulty: "Advanced", color: "#9B5DE5", affiliate: "#" },
-  { title: "Organic Chemistry", author: "Clayden et al.", subject: "Organic", difficulty: "Expert", color: "#EF4444", affiliate: "#" },
+  { title: "Organic Chemistry", author: "Clayden et al.", subject: "Organic", difficulty: "Expert", color: "#00BBF9", affiliate: "#" },
   { title: "Physical Chemistry", author: "Peter Atkins", subject: "Physical", difficulty: "Advanced", color: "#00BBF9", affiliate: "#" },
-  { title: "Modern Approach to Chemical Calculations", author: "R.C. Mukherjee", subject: "Numericals", difficulty: "Intermediate", color: "#FFD700", affiliate: "#" },
-  { title: "IChO Preparatory Problems", author: "Olympiad Board", subject: "Olympiad", difficulty: "Expert", color: "#F472B6", affiliate: "#" },
+  { title: "Modern Approach to Chemical Calculations", author: "R.C. Mukherjee", subject: "Numericals", difficulty: "Intermediate", color: "#9B5DE5", affiliate: "#" },
+  { title: "IChO Preparatory Problems", author: "Olympiad Board", subject: "Olympiad", difficulty: "Expert", color: "#9B5DE5", affiliate: "#" },
 ];
 
+// Difficulty as a calm cyan→purple progression (in-brand)
 const diffColor: Record<string, string> = {
-  Beginner: "text-emerald-400 bg-emerald-500/10",
-  Intermediate: "text-amber-400 bg-amber-500/10",
-  Advanced: "text-cyan-400 bg-cyan-500/10",
-  Expert: "text-red-400 bg-red-500/10",
+  Beginner: "text-cyan-300 bg-cyan-500/10",
+  Intermediate: "text-sky-300 bg-sky-500/10",
+  Advanced: "text-violet-300 bg-violet-500/10",
+  Expert: "text-purple-300 bg-purple-500/10",
 };
 
 export default function ReferenceBooks() {

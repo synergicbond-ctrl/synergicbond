@@ -13,17 +13,17 @@ const regions: { id: Region; label: string }[] = [
 
 const data: Record<Region, { country: string; exams: string[]; accent: string }[]> = {
   na: [
-    { country: "Canada", exams: ["MCAT (Biochem / Organic)", "Waterloo Avogadro Exam", "Canadian Chemistry Contest (CCC)"], accent: "#EF4444" },
+    { country: "Canada", exams: ["MCAT (Biochem / Organic)", "Waterloo Avogadro Exam", "Canadian Chemistry Contest (CCC)"], accent: "#00BBF9" },
     { country: "USA", exams: ["AP Chemistry", "USNCO Olympiad", "SAT Subject Chemistry"], accent: "#00BBF9" },
   ],
   ukeu: [
     { country: "France", exams: ["Concours Général (Chemistry)", "Baccalauréat (Physique-Chimie)"], accent: "#9B5DE5" },
-    { country: "Germany", exams: ["Abitur Chemistry (Leistungskurs)", "German National Chemistry Olympiad"], accent: "#FFD700" },
+    { country: "Germany", exams: ["Abitur Chemistry (Leistungskurs)", "German National Chemistry Olympiad"], accent: "#9B5DE5" },
     { country: "United Kingdom", exams: ["A-Levels Chemistry", "Cambridge Chemistry Challenge"], accent: "#00F5D4" },
   ],
   apac: [
-    { country: "Singapore", exams: ["GCE A-Levels (H2/H3 Chemistry)", "Singapore Chemistry Olympiad (SChO)"], accent: "#10B981" },
-    { country: "Global", exams: ["IB Diploma Chemistry HL/SL", "International Chemistry Olympiad (IChO)"], accent: "#F472B6" },
+    { country: "Singapore", exams: ["GCE A-Levels (H2/H3 Chemistry)", "Singapore Chemistry Olympiad (SChO)"], accent: "#00BBF9" },
+    { country: "Global", exams: ["IB Diploma Chemistry HL/SL", "International Chemistry Olympiad (IChO)"], accent: "#9B5DE5" },
   ],
 };
 
@@ -68,7 +68,7 @@ export default function InternationalRoadmap() {
             style={{ borderColor: `${c.accent}30`, boxShadow: `0 0 30px ${c.accent}12` }}
           >
             {/* status tag */}
-            <span className="absolute top-3 right-3 flex items-center gap-1 text-[8px] font-bold tracking-widest text-amber-300 bg-amber-500/15 border border-amber-500/30 px-2 py-0.5 rounded-full">
+            <span className="absolute top-3 right-3 flex items-center gap-1 text-[8px] font-bold tracking-widest text-white/60 bg-white/[0.06] border border-white/15 px-2 py-0.5 rounded-full">
               <Lock className="h-2.5 w-2.5" /> COMING SOON · PRO REGION
             </span>
 

@@ -23,7 +23,7 @@ const tiers = [
     icon: Building2,
     amount: "Custom",
     period: "/ annual",
-    accent: "#FFD700",
+    accent: "#9B5DE5",
     perks: ["Everything in Patron", "Bulk seats for your students", "Co-branded content options", "Dedicated success manager"],
   },
 ];

@@ -73,14 +73,14 @@ export default function ContactFeedback() {
 
           {/* Phone — coming soon */}
           <div className="rounded-2xl bg-[#111827] border border-white/[0.06] p-5 flex items-center gap-4 opacity-70">
-            <div className="p-3 rounded-xl bg-amber-500/10">
-              <Phone className="h-5 w-5 text-amber-400" />
+            <div className="p-3 rounded-xl bg-white/[0.06]">
+              <Phone className="h-5 w-5 text-white/50" />
             </div>
             <div className="flex-1">
               <h3 className="text-sm font-bold text-white">Phone Support</h3>
               <p className="text-xs text-gray-400 mt-0.5">Direct line to our academic team.</p>
             </div>
-            <span className="text-[10px] font-bold text-amber-400 bg-amber-500/10 px-2.5 py-1 rounded-full">SOON</span>
+            <span className="text-[10px] font-bold text-white/50 bg-white/[0.06] px-2.5 py-1 rounded-full">SOON</span>
           </div>
         </div>
 

@@ -21,9 +21,9 @@ const pillars = [
     icon: BrainCircuit,
     title: "Human Intelligence + AI",
     body: "Fine-tuned core chemistry data trained to assist students 24/7 with zero placeholders — real answers from a real expert, powered by AI speed.",
-    accent: "text-amber-400",
-    border: "border-amber-500/20",
-    bg: "bg-amber-950/20",
+    accent: "text-sky-400",
+    border: "border-sky-500/20",
+    bg: "bg-sky-950/20",
   },
 ];
 

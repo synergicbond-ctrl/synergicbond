@@ -70,7 +70,7 @@ Rules:
     ];
 
     const stream = await getAI().models.generateContentStream({
-      model: "gemini-2.0-flash",
+      model: "gemini-1.5-flash",
       contents,
       config: { systemInstruction },
     });

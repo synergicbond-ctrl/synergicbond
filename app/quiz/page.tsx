@@ -42,14 +42,19 @@ export default function QuizPage() {
       try {
         await fetch("/api/exam-result", {
           method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
+          headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
             examName: "Quiz Mode",
             score,
             total: questions.length,
           }),
+        });
+
+        const isPerfect = score === questions.length;
+        await fetch("/api/xp", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ action: isPerfect ? "quiz_perfect" : "quiz_complete" }),
         });
 
         setResultSaved(true);

@@ -11,6 +11,7 @@ import { organicMechanisms } from "@/lib/masterSyllabus/mechanisms";
 import AiTutorBox from "@/components/AiTutorBox";
 import QuizAndFeedback from "@/components/QuizAndFeedback";
 import VisionUploader from "@/components/VisionUploader";
+import StudySessionTracker from "@/components/StudySessionTracker";
 
 const allChapters = [...physical, ...organic, ...inorganic];
 
@@ -45,6 +46,7 @@ export default async function ChapterPage({ params }: PageProps) {
 
   return (
     <div className="min-h-screen p-6 md:p-12 max-w-7xl mx-auto space-y-12">
+      <StudySessionTracker chapterId={chapter.id} />
       
       <header className="pb-6 border-b border-slate-200 dark:border-slate-800 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
         <div>

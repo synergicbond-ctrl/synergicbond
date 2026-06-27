@@ -111,19 +111,34 @@ export default async function DashboardPage() {
   const revisionChapters =
     [...new Set((mistakes || []).map(m => m.chapter_id))];
 
-  const weakTopics =
-    mistakes?.map((m, index) => ({
-      id: String(index),
-      name: m.chapter_id
-        .replace(/-/g, " ")
-        .replace(/\b\w/g, (c: string) =>
-          c.toUpperCase()
-        ),
-      accuracy: Math.max(
-        20,
-        100 - mistakes.length * 15
-      ),
-    })) || [];
+  // Aggregate mistakes per chapter to compute per-chapter accuracy
+  const mistakeFrequency: Record<string, number> = {};
+  for (const m of mistakes || []) {
+    mistakeFrequency[m.chapter_id] = (mistakeFrequency[m.chapter_id] || 0) + 1;
+  }
+
+  const weakTopics = Object.entries(mistakeFrequency)
+    .sort((a, b) => b[1] - a[1])
+    .slice(0, 8)
+    .map(([chapterId, mistakeCount], index) => {
+      // Find actual quiz results for this chapter to compute real accuracy
+      const chapterExams = exams?.filter(
+        (e) => e.exam_name?.toLowerCase().includes(chapterId.replace(/-/g, " "))
+      ) || [];
+      const realAccuracy = chapterExams.length
+        ? Math.round(
+            chapterExams.reduce((sum, e) => sum + (e.score / e.total) * 100, 0) /
+              chapterExams.length
+          )
+        : Math.max(10, Math.round(100 - (mistakeCount / (mistakeCount + 3)) * 80));
+
+      return {
+        id: String(index),
+        name: chapterId.replace(/-/g, " ").replace(/\b\w/g, (c: string) => c.toUpperCase()),
+        accuracy: realAccuracy,
+        mistakeCount,
+      };
+    });
 
   return (
     <main className="min-h-screen bg-black text-white p-8">

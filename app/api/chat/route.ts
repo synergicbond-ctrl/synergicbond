@@ -1,6 +1,9 @@
+export const runtime = "nodejs";
+export const dynamic = "force-dynamic";
+
 import OpenAI from "openai";
 import { NextResponse } from "next/server";
-import { supabase } from "@/lib/supabase";
+import { createClient } from "@/lib/supabase/server";
 import { fetchSyllabusContext } from "@/lib/aiTutor";
 
 const client = new OpenAI({
@@ -8,7 +11,7 @@ const client = new OpenAI({
 });
 
 const systemPrompt = `
-You are a STRICT NEET/JEE Chemistry Tutor.
+You are a STRICT NEET/JEE Chemistry Tutor on SYNERGIC BOND platform.
 
 You NEVER behave like a chatbot.
 
@@ -24,12 +27,14 @@ RULES:
 - No greetings
 - No conversational language
 - Exam-focused only
-- Use LaTeX when needed
+- Use LaTeX when needed ($...$ notation)
+- If student writes in Hindi or Hinglish, respond in the SAME language
+- Keep chemistry terms, formulas, and LaTeX in English/standard notation always
 `;
 
 export async function POST(req: Request) {
   try {
-    const { message, chapterId, history = [] } = await req.json();
+    const { message, chapterId, history = [], language = "english" } = await req.json();
 
     if (!message || !chapterId) {
       return NextResponse.json(
@@ -46,23 +51,27 @@ export async function POST(req: Request) {
     // ===============================
     // 2. MISTAKE MEMORY (SUPABASE)
     // ===============================
-    const userId = "demo-user";
+    const supabase = await createClient();
+    const { data: { user } } = await supabase.auth.getUser();
 
-    const { data: mistakes } = await supabase
-      .from("mistakes")
-      .select("chapter_id")
-      .eq("user_id", userId);
+    let weakTopics: string[] = [];
 
-    const frequency: Record<string, number> = {};
+    if (user?.id) {
+      const { data: mistakes } = await supabase
+        .from("mistakes")
+        .select("chapter_id")
+        .eq("user_id", user.id);
 
-    for (const m of mistakes || []) {
-      frequency[m.chapter_id] = (frequency[m.chapter_id] || 0) + 1;
+      const frequency: Record<string, number> = {};
+      for (const m of mistakes || []) {
+        frequency[m.chapter_id] = (frequency[m.chapter_id] || 0) + 1;
+      }
+
+      weakTopics = Object.entries(frequency)
+        .sort((a, b) => b[1] - a[1])
+        .slice(0, 5)
+        .map(([chapter, count]) => `${chapter} (${count} mistakes)`);
     }
-
-    const weakTopics = Object.entries(frequency)
-      .sort((a, b) => b[1] - a[1])
-      .slice(0, 5)
-      .map(([chapter, count]) => `${chapter} (${count} mistakes)`);
 
     // ===============================
     // 3. SAFE HISTORY
@@ -80,7 +89,17 @@ export async function POST(req: Request) {
     const trimmedContext = JSON.stringify(context).slice(0, 3000);
 
     // ===============================
-    // 5. BUILD MESSAGE FLOW
+    // 5. LANGUAGE INSTRUCTION
+    // ===============================
+    const langInstruction =
+      language === "hindi"
+        ? "IMPORTANT: Respond entirely in Hindi (Devanagari script). Keep formulas and LaTeX in standard notation."
+        : language === "hinglish"
+        ? "IMPORTANT: Respond in Hinglish — Hindi words in Roman script mixed with English chemistry terms. Example: 'Is reaction mein nucleophile attack karta hai electron-deficient carbon pe.'"
+        : "";
+
+    // ===============================
+    // 6. BUILD MESSAGE FLOW
     // ===============================
     const messages = [
       {
@@ -92,14 +111,15 @@ export async function POST(req: Request) {
         content: `
 Chapter Context: ${chapterId}
 Syllabus Data: ${trimmedContext}
+${langInstruction}
 
 Student Weak Topics (VERY IMPORTANT):
 ${weakTopics.length ? weakTopics.join(", ") : "No weak topics yet"}
 
 INSTRUCTIONS:
-- If question matches weak topic → teach slower
-- Focus more on basics for weak areas
-- Reinforce core concepts
+- If question matches weak topic → teach slower, from basics
+- Focus more on core concepts for weak areas
+- Always relate to exam question patterns
         `,
       },
       ...sanitizedHistory,

@@ -1,29 +1,82 @@
+export const runtime = "nodejs";
+export const dynamic = "force-dynamic";
+
 import { NextResponse } from "next/server";
 
 export async function POST(request: Request) {
   try {
-    const { imageBase64, promptText } = await request.json();
+    const OpenAI = (await import("openai")).default;
+    const client = new OpenAI({ apiKey: process.env.OPENAI_API_KEY! });
+
+    const { imageBase64, promptText, language = "english" } = await request.json();
 
     if (!imageBase64) {
-      return NextResponse.json({ error: "Chemical structure or mechanism image data is required." }, { status: 400 });
+      return NextResponse.json(
+        { error: "Chemical structure or mechanism image data is required." },
+        { status: 400 }
+      );
     }
 
-    // Default system fallback / instructional instruction for the Vision Model
-    const systemInstruction = `You are an expert NEET/JEE Chemistry arrow-pushing and mechanism analysis engine. 
-Analyze the provided chemical structure or reaction mechanism image carefully. 
-Break down the steps: identify the nucleophile, electrophile, intermediates, and the final product. 
-Keep explanations strictly aligned with rigorous syllabus parameters.`;
+    const langInstruction =
+      language === "hindi"
+        ? "Respond in Hindi (Devanagari script)."
+        : language === "hinglish"
+        ? "Respond in Hinglish (Hindi words in Roman script mixed with English technical terms)."
+        : "Respond in English.";
 
-    // Simulated vision inference response (Integrate real Google GenAI / Gemini / OpenAI SDK here)
-    const mockAnalysis = `[Vision Analysis Successful] Analyzing image structure... 
-1. Nucleophilic Center Identified: Electron-rich species detected.
-2. Electrophilic Center Identified: Electron-deficient site or carbonyl carbon detected.
-3. Arrow-pushing pathway proceeds via concerted attack mechanism. 
-4. Syllabus Mapping: Aligned with standard organic reaction pathways.`;
+    const systemInstruction = `You are an expert NEET/JEE Chemistry mechanism analysis engine.
+Analyze the provided chemical structure or reaction mechanism image with full academic rigor.
 
-    return NextResponse.json({ analysis: mockAnalysis });
+${langInstruction}
 
+Structure your response as:
+1. 🔬 **Structure Identified:** Name and IUPAC if applicable
+2. ⚡ **Reactive Centers:** Nucleophile/electrophile, functional groups
+3. ➡️ **Mechanism Pathway:** Step-by-step arrow-pushing analysis
+4. 🧪 **Intermediates & Products:** All species formed
+5. 📚 **Syllabus Mapping:** Which NEET/JEE chapter/topic this belongs to
+6. 🎯 **Exam Tip:** Common question pattern from this mechanism
+
+Use LaTeX notation for formulas ($...$). Be concise but thorough.`;
+
+    const userContent: any[] = [
+      {
+        type: "image_url",
+        image_url: {
+          url: imageBase64.startsWith("data:")
+            ? imageBase64
+            : `data:image/jpeg;base64,${imageBase64}`,
+          detail: "high",
+        },
+      },
+    ];
+
+    if (promptText) {
+      userContent.push({ type: "text", text: promptText });
+    } else {
+      userContent.push({
+        type: "text",
+        text: "Analyze this chemical structure or reaction mechanism in detail.",
+      });
+    }
+
+    const completion = await client.chat.completions.create({
+      model: "gpt-4o",
+      messages: [
+        { role: "system", content: systemInstruction },
+        { role: "user", content: userContent },
+      ],
+      max_tokens: 1500,
+    });
+
+    const analysis = completion.choices[0]?.message?.content || "Analysis failed.";
+
+    return NextResponse.json({ analysis });
   } catch (err: any) {
-    return NextResponse.json({ error: "Failed to process visual chemical diagram." }, { status: 500 });
+    console.error("Vision API error:", err);
+    return NextResponse.json(
+      { error: "Failed to process visual chemical diagram." },
+      { status: 500 }
+    );
   }
 }

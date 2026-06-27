@@ -2,42 +2,60 @@
 
 import { useState } from "react";
 
+const ACTION_PROMPTS: Record<string, string> = {
+  simple: "Explain this chapter in the simplest possible terms, as if teaching a student who has never seen chemistry before. Use analogies.",
+  ncert: "Give me the complete NCERT-aligned explanation of this chapter's core concepts, covering everything in the NCERT textbook.",
+  neet: "What are the most important NEET-focused topics in this chapter? List the most common question types, key facts to memorize, and numerical patterns.",
+  jee: "Explain this chapter for JEE Advanced level. Cover advanced derivations, multi-concept problems, and subtle concepts that appear in JEE Advanced.",
+  mistakes: "What are the most common mistakes students make in this chapter? List the top 5 errors with explanations of why they happen and how to avoid them.",
+  trick: "Give me the best memory tricks, mnemonics, and shortcuts for this chapter to help remember formulas and concepts under exam pressure.",
+  viva: "Give me 5 important viva/interview questions about this chapter with model answers that demonstrate deep understanding.",
+  challenge: "Give me one challenging JEE Advanced level problem from this chapter with a detailed step-by-step solution.",
+};
+
 export default function AiTutorBox({ chapter, concepts }: { chapter: string; concepts: string[] }) {
   const [response, setResponse] = useState<string>("");
   const [loading, setLoading] = useState(false);
+  const [activeAction, setActiveAction] = useState<string | null>(null);
 
   const triggerAction = async (actionType: string) => {
     setLoading(true);
+    setActiveAction(actionType);
     setResponse("");
 
+    const prompt = ACTION_PROMPTS[actionType] ?? `Explain ${chapter}.`;
+
     try {
-      // Simulated Graph responses representing world-class educational payload
-      await new Promise((resolve) => setTimeout(resolve, 800));
-      
-      let replyText = "";
-      if (actionType === "simple") {
-        replyText = `💡 Explaining ${chapter} Simply: Atoms are like tiny solar systems. The center (nucleus) has heavy protons and neutrons, while super-light electrons orbit around in specific shells without falling in.`;
-      } else if (actionType === "ncert") {
-        replyText = `📖 NCERT Alignment: ${chapter} explores Bohr's stationary orbits, quantization of angular momentum, and how the Schrödinger wave equation treats electrons as waves, forming atomic orbitals.`;
-      } else if (actionType === "neet") {
-        replyText = `🎯 NEET Focus: Memorize the radius (r = 0.529 n²/Z Å) and velocity (v = 2.188×10⁶ Z/n m/s) formulas. Watch out for questions comparing the de Broglie wavelength of different particles.`;
-      } else if (actionType === "jee") {
-        replyText = `🚀 JEE Advanced Focus: Master multi-electron derivations, angular distribution nodes (Radial nodes = n - l - 1, Angular nodes = l), and radial probability distribution curves.`;
-      } else if (actionType === "mistakes") {
-        replyText = `⚠️ Common Mistakes: Don't forget to square the principal quantum number (n²) in radius and energy expressions. Remember that for hydrogenic ions, you MUST divide by Z².`;
-      } else if (actionType === "trick") {
-        replyText = `🧠 Memory Trick: To remember quantum numbers: "Please Ask My Sir" $\rightarrow$ **P**rincipal, **A**zimuthal, **M**agnetic, **S**pin.`;
-      } else if (actionType === "viva") {
-        replyText = `🎤 5 Viva Questions:\n1. Why can't we know both the position and momentum of an electron exactly?\n2. What is a radial node?\n3. Why is the total energy of an electron negative?\n4. What causes emission line spectra in hydrogen?\n5. Differentiate an orbit from an orbital.`;
-      } else if (actionType === "challenge") {
-        replyText = `⚔️ Challenge Mode:\nCalculate the exact wavelength of the photon emitted when an electron drops from the 4th orbit to the 2nd orbit in a Hydrogen atom. (Post your deduce in code or calculator).`;
+      const res = await fetch("/api/chat", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          message: prompt,
+          chapterId: chapter,
+          history: [],
+        }),
+      });
+
+      if (!res.ok || !res.body) {
+        setResponse("Failed to get response. Please try again.");
+        return;
       }
 
-      setResponse(replyText);
+      const reader = res.body.getReader();
+      const decoder = new TextDecoder();
+      let full = "";
+
+      while (true) {
+        const { done, value } = await reader.read();
+        if (done) break;
+        full += decoder.decode(value, { stream: true });
+        setResponse(full);
+      }
     } catch (err) {
-      setResponse("Error fetching contextual syllabus payload.");
+      setResponse("Error connecting to AI tutor. Please try again.");
     } finally {
       setLoading(false);
+      setActiveAction(null);
     }
   };
 
@@ -49,23 +67,65 @@ export default function AiTutorBox({ chapter, concepts }: { chapter: string; con
       </div>
 
       <div className="grid grid-cols-2 gap-2">
-        <button onClick={() => triggerAction("simple")} className="p-3 bg-slate-50 dark:bg-slate-950 border border-slate-100 dark:border-slate-800 rounded-xl text-[11px] font-bold text-indigo-700 dark:text-indigo-400 hover:border-indigo-300 transition text-left">Explain Simply</button>
-        <button onClick={() => triggerAction("ncert")} className="p-3 bg-slate-50 dark:bg-slate-950 border border-slate-100 dark:border-slate-800 rounded-xl text-[11px] font-bold text-indigo-700 dark:text-indigo-400 hover:border-indigo-300 transition text-left">Explain NCERT</button>
-        <button onClick={() => triggerAction("neet")} className="p-3 bg-slate-50 dark:bg-slate-950 border border-slate-100 dark:border-slate-800 rounded-xl text-[11px] font-bold text-indigo-700 dark:text-indigo-400 hover:border-indigo-300 transition text-left">Target NEET</button>
-        <button onClick={() => triggerAction("jee")} className="p-3 bg-slate-50 dark:bg-slate-950 border border-slate-100 dark:border-slate-800 rounded-xl text-[11px] font-bold text-indigo-700 dark:text-indigo-400 hover:border-indigo-300 transition text-left">Target JEE Adv</button>
-        <button onClick={() => triggerAction("mistakes")} className="p-3 bg-amber-50/40 dark:bg-amber-950/10 border border-amber-100 dark:border-amber-900 rounded-xl text-[11px] font-bold text-amber-800 dark:text-amber-400 hover:border-amber-300 transition text-left col-span-2">Common Mistakes</button>
-        <button onClick={() => triggerAction("trick")} className="p-3 bg-rose-50/40 dark:bg-rose-950/10 border border-rose-100 dark:border-rose-900 rounded-xl text-[11px] font-bold text-rose-800 dark:text-rose-400 hover:border-rose-300 transition text-left col-span-2">Memory Trick</button>
-        <button onClick={() => triggerAction("viva")} className="p-3 bg-slate-50 dark:bg-slate-950 border border-slate-100 dark:border-slate-800 rounded-xl text-[11px] font-bold hover:border-slate-300 transition text-left">5 Viva Questions</button>
-        <button onClick={() => triggerAction("challenge")} className="p-3 bg-emerald-50 dark:bg-emerald-950/10 border border-emerald-200 dark:border-emerald-800 rounded-xl text-[11px] font-bold text-emerald-800 dark:text-emerald-300 hover:border-emerald-400 transition text-left">Challenge Me</button>
+        {[
+          { key: "simple", label: "Explain Simply", color: "indigo" },
+          { key: "ncert", label: "Explain NCERT", color: "indigo" },
+          { key: "neet", label: "Target NEET", color: "indigo" },
+          { key: "jee", label: "Target JEE Adv", color: "indigo" },
+        ].map(({ key, label }) => (
+          <button
+            key={key}
+            onClick={() => triggerAction(key)}
+            disabled={loading}
+            className={`p-3 bg-slate-50 dark:bg-slate-950 border border-slate-100 dark:border-slate-800 rounded-xl text-[11px] font-bold text-indigo-700 dark:text-indigo-400 hover:border-indigo-300 transition text-left disabled:opacity-50 ${activeAction === key ? "border-indigo-400 bg-indigo-50 dark:bg-indigo-950/20" : ""}`}
+          >
+            {activeAction === key && loading ? "Loading..." : label}
+          </button>
+        ))}
+
+        <button
+          onClick={() => triggerAction("mistakes")}
+          disabled={loading}
+          className={`p-3 bg-amber-50/40 dark:bg-amber-950/10 border border-amber-100 dark:border-amber-900 rounded-xl text-[11px] font-bold text-amber-800 dark:text-amber-400 hover:border-amber-300 transition text-left col-span-2 disabled:opacity-50 ${activeAction === "mistakes" && loading ? "opacity-50" : ""}`}
+        >
+          {activeAction === "mistakes" && loading ? "Loading..." : "Common Mistakes"}
+        </button>
+
+        <button
+          onClick={() => triggerAction("trick")}
+          disabled={loading}
+          className={`p-3 bg-rose-50/40 dark:bg-rose-950/10 border border-rose-100 dark:border-rose-900 rounded-xl text-[11px] font-bold text-rose-800 dark:text-rose-400 hover:border-rose-300 transition text-left col-span-2 disabled:opacity-50`}
+        >
+          {activeAction === "trick" && loading ? "Loading..." : "Memory Trick"}
+        </button>
+
+        <button
+          onClick={() => triggerAction("viva")}
+          disabled={loading}
+          className="p-3 bg-slate-50 dark:bg-slate-950 border border-slate-100 dark:border-slate-800 rounded-xl text-[11px] font-bold hover:border-slate-300 transition text-left disabled:opacity-50"
+        >
+          {activeAction === "viva" && loading ? "Loading..." : "5 Viva Questions"}
+        </button>
+
+        <button
+          onClick={() => triggerAction("challenge")}
+          disabled={loading}
+          className="p-3 bg-emerald-50 dark:bg-emerald-950/10 border border-emerald-200 dark:border-emerald-800 rounded-xl text-[11px] font-bold text-emerald-800 dark:text-emerald-300 hover:border-emerald-400 transition text-left disabled:opacity-50"
+        >
+          {activeAction === "challenge" && loading ? "Loading..." : "Challenge Me"}
+        </button>
       </div>
 
-      {loading && (
-        <div className="text-center py-4 text-xs font-bold text-indigo-600 animate-pulse">Loading verified context...</div>
+      {loading && !response && (
+        <div className="text-center py-4 text-xs font-bold text-indigo-600 animate-pulse">
+          Generating response...
+        </div>
       )}
 
       {response && (
         <div className="p-4 bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700 rounded-xl text-slate-700 dark:text-slate-300 text-xs font-medium leading-relaxed whitespace-pre-line animate-fadeIn">
           {response}
+          {loading && <span className="animate-pulse">▊</span>}
         </div>
       )}
     </div>

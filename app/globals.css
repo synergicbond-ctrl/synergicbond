@@ -46,12 +46,70 @@ body {
 }
 
 body {
+  /* Apple SF Pro on Apple devices, Segoe UI on Windows, Roboto on Android */
   font-family:
-    Arial,
-    Helvetica,
+    -apple-system,
+    BlinkMacSystemFont,
+    "SF Pro Display",
+    "SF Pro Text",
+    "Helvetica Neue",
+    system-ui,
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  font-feature-settings: "kern" 1, "liga" 1, "calt" 1;
+}
+
+/* SF Pro dynamic optical sizing — matches Apple's automatic size/spacing behavior */
+h1, h2, h3 {
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    "SF Pro Display",
+    "Helvetica Neue",
+    system-ui,
+    sans-serif;
+  font-optical-sizing: auto;
+  letter-spacing: -0.02em;
+  font-weight: 700;
+}
+
+h4, h5, h6 {
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    "SF Pro Display",
+    "Helvetica Neue",
+    system-ui,
+    sans-serif;
+  font-optical-sizing: auto;
+  letter-spacing: -0.01em;
+  font-weight: 600;
+}
+
+p, li, span, label, input, textarea, select, button {
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    "SF Pro Text",
+    "Helvetica Neue",
+    system-ui,
+    sans-serif;
+  font-optical-sizing: auto;
+}
+
+/* SF Mono for code/LaTeX blocks */
+code, pre, kbd, .katex {
+  font-family:
+    "SF Mono",
+    ui-monospace,
+    "Cascadia Code",
+    "Fira Code",
+    Menlo,
+    Monaco,
+    monospace;
+  font-feature-settings: "liga" 0;
 }
 
 a {

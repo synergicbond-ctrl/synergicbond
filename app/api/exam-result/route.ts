@@ -18,17 +18,17 @@ export async function POST(req: Request) {
     const body = await req.json();
 
     const { error } = await supabase
-      .from("mistakes")
+      .from("exam_results")
       .insert({
         user_id: user.id,
-        chapter_id: body.chapterId,
-        question: body.question,
-        selected_answer: body.selectedAnswer,
-        correct_answer: body.correctAnswer,
+        exam_name: body.examName,
+        score: body.score,
+        total: body.total,
       });
 
     if (error) {
       console.error(error);
+
       return Response.json(
         { error: error.message },
         { status: 500 }

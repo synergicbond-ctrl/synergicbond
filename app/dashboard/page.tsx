@@ -1,32 +1,131 @@
 import { createClient } from "@/lib/supabase/server";
+import { DashboardHeader } from "@/components/dashboard/DashboardHeader";
+import { SummaryCards } from "@/components/dashboard/SummaryCards";
+import { RecentTests } from "@/components/dashboard/RecentTests";
+import { WeakTopics } from "@/components/dashboard/WeakTopics";
+import { QuickActions } from "@/components/dashboard/QuickActions";
 
 export default async function DashboardPage() {
   const supabase = await createClient();
 
   const {
-    data: { session },
-  } = await supabase.auth.getSession();
-
-  const {
     data: { user },
   } = await supabase.auth.getUser();
 
+  if (!user) {
+    return (
+      <main className="min-h-screen bg-black text-white p-8">
+        User not authenticated
+      </main>
+    );
+  }
+
+  const { data: profile } = await supabase
+    .from("profiles")
+    .select("*")
+    .eq("id", user.id)
+    .maybeSingle();
+
+  const { data: exams } = await supabase
+    .from("exam_results")
+    .select("*")
+    .eq("user_id", user.id);
+
+  const { data: sessions } = await supabase
+    .from("study_sessions")
+    .select("*")
+    .eq("user_id", user.id);
+
+  const { data: saved } = await supabase
+    .from("saved_chapters")
+    .select("*")
+    .eq("user_id", user.id);
+
+  const { data: mistakes } = await supabase
+    .from("mistakes")
+    .select("*")
+    .eq("user_id", user.id);
+
+  const studentName =
+    profile?.full_name ||
+    user.email?.split("@")[0] ||
+    "Student";
+
+  const averageAccuracy =
+    exams?.length
+      ? Math.round(
+          exams.reduce(
+            (sum, exam) =>
+              sum + (exam.score / exam.total) * 100,
+            0
+          ) / exams.length
+        )
+      : 0;
+
+  const totalStudyHours =
+    sessions?.length
+      ? Math.round(
+          sessions.reduce(
+            (sum, s) => sum + s.minutes,
+            0
+          ) / 60
+        )
+      : 0;
+
+  const summaryData = {
+    chaptersCompleted: saved?.length || 0,
+    totalChapters: 33,
+    dailyStreak: sessions?.length || 0,
+    averageAccuracy,
+    totalStudyHours,
+  };
+
+  const recentTests =
+    exams?.map((exam) => ({
+      id: String(exam.id),
+      title: exam.exam_name,
+      date: new Date(
+        exam.created_at
+      ).toLocaleDateString(),
+      score: Math.round(
+        (exam.score / exam.total) * 100
+      ),
+      passed:
+        exam.score / exam.total >= 0.5,
+    })) || [];
+
+  const weakTopics =
+    mistakes?.map((m, index) => ({
+      id: String(index),
+      name: m.chapter_id
+        .replace(/-/g, " ")
+        .replace(/\b\w/g, (c: string) =>
+          c.toUpperCase()
+        ),
+      accuracy: Math.max(
+        20,
+        100 - mistakes.length * 15
+      ),
+    })) || [];
+
   return (
     <main className="min-h-screen bg-black text-white p-8">
-      <h1 className="text-4xl font-bold mb-8">
-        Dashboard Debug
-      </h1>
+      <DashboardHeader
+        studentName={studentName}
+      />
 
-      <pre className="text-sm whitespace-pre-wrap">
-{JSON.stringify(
-  {
-    session,
-    user,
-  },
-  null,
-  2
-)}
-      </pre>
+      <div className="mt-8">
+        <SummaryCards data={summaryData} />
+      </div>
+
+      <div className="mt-8 grid gap-8 lg:grid-cols-2">
+        <RecentTests tests={recentTests} />
+        <WeakTopics topics={weakTopics} />
+      </div>
+
+      <div className="mt-8">
+        <QuickActions />
+      </div>
     </main>
   );
 }

@@ -32,7 +32,7 @@ export default function AboutVision() {
     <section className="mx-auto max-w-7xl px-6 py-24">
 
       {/* Gradient divider */}
-      <div className="h-px w-full mb-20 bg-gradient-to-r from-transparent via-cyan-500/40 to-transparent" />
+      <div className="h-px w-full mb-20 bg-gradient-to-r from-cyan-500 via-purple-500 to-transparent" />
 
       <div className="grid gap-16 lg:grid-cols-2 lg:gap-20 items-center">
 

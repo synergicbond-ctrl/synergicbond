@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import SponsoredMock from "@/components/SponsoredMock";
 
 type Question = {
   id: number;
@@ -106,6 +107,8 @@ export default function ExamHubPage() {
           AI-generated JEE/NEET-standard questions from selected chapters.
         </p>
       </header>
+
+      <SponsoredMock />
 
       <form onSubmit={handleGenerate} className="bg-white dark:bg-slate-900 p-8 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800 space-y-6">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">

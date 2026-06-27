@@ -13,10 +13,11 @@ const quickLinks = [
 ];
 
 const socials = [
+  { label: "Facebook",  href: "#", letter: "f"  },
   { label: "Twitter / X", href: "#", letter: "𝕏" },
-  { label: "Instagram",   href: "#", letter: "IG" },
-  { label: "LinkedIn",    href: "#", letter: "in" },
-  { label: "YouTube",     href: "#", letter: "▶" },
+  { label: "LinkedIn",  href: "#", letter: "in" },
+  { label: "Instagram", href: "#", letter: "IG" },
+  { label: "Reddit",    href: "#", letter: "r/" },
 ];
 
 export default function Footer() {

@@ -7,7 +7,7 @@ import {
   BookOpen, ClipboardList, FlaskConical, FileText,
   Bot, Camera, PenLine, Atom, Target, Calendar,
   BarChart2, Medal, Trophy, Archive, Gem, Menu, X,
-  Globe, ChevronDown, Sparkles, GraduationCap
+  Globe, ChevronDown, Sparkles, GraduationCap, Layers
 } from "lucide-react";
 
 const mainLinks = [
@@ -19,6 +19,7 @@ const mainLinks = [
   { href: "/snap-solve",       label: "Snap & Solve",   icon: Camera,        category: "ai"    },
   { href: "/doubt-solver",     label: "Doubt Solver",   icon: Sparkles,      category: "ai"    },
   { href: "/handwritten-notes",label: "Handwritten",    icon: PenLine,       category: "ai"    },
+  { href: "/study-tools",      label: "Study Tools",    icon: Layers,        category: "learn" },
   { href: "/molecule",         label: "Molecule",       icon: Atom,          category: "ai"    },
   { href: "/daily-challenge",  label: "Challenge",      icon: Target,        category: "game"  },
   { href: "/study-plan",       label: "Study Plan",     icon: Calendar,      category: "game"  },
@@ -81,7 +82,7 @@ export default function Navbar() {
         {/* Desktop Nav — scrollable pill container */}
         <nav className="hidden lg:flex items-center flex-1 mx-4 overflow-hidden">
           <div
-            className="flex items-center space-x-1 overflow-x-auto scrollbar-none px-3 py-1.5 rounded-full bg-[#111827] border border-white/[0.06]"
+            className="flex items-center space-x-3 overflow-x-auto scrollbar-none px-4 py-2 rounded-full bg-[#111827] border border-white/[0.06]"
             style={{ scrollbarWidth: "none" }}
           >
             {mainLinks.map((link) => {

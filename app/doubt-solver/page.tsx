@@ -2,6 +2,7 @@
 
 import { useState, useRef, useEffect, useCallback } from "react";
 import Navbar from "@/components/Navbar";
+import { checkRateLimit } from "@/lib/rateLimiter";
 import ReactMarkdown from "react-markdown";
 import remarkMath from "remark-math";
 import rehypeKatex from "rehype-katex";
@@ -46,6 +47,7 @@ export default function DoubtSolverPage() {
   const [listening, setListening] = useState(false);
   const [showPaywall, setShowPaywall] = useState(false);
   const [dragOver, setDragOver] = useState(false);
+  const [cooldown, setCooldown] = useState(0);
   const fileInputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => { setCreditsState(getCredits()); }, []);
@@ -75,6 +77,12 @@ export default function DoubtSolverPage() {
 
   async function solve(lang: "english" | "hinglish", isToggle = false) {
     if (!image && !doubt.trim()) { alert("Upload an image or type your doubt first."); return; }
+
+    // Sandbox rate limiter — blocks >10 solves / 60s with a cooldown
+    if (!isToggle) {
+      const rl = checkRateLimit("doubt-solve");
+      if (!rl.allowed) { setCooldown(rl.cooldownLeft); return; }
+    }
 
     // Only the first solve costs a credit; language toggle is free
     if (!isToggle) {
@@ -283,6 +291,22 @@ export default function DoubtSolverPage() {
             </button>
             <button onClick={() => setShowPaywall(false)} className="text-xs text-white/40 hover:text-white">
               Maybe later — resets at midnight
+            </button>
+          </div>
+        </div>
+      )}
+
+      {/* Rate-limit cooldown overlay */}
+      {cooldown > 0 && (
+        <div className="fixed inset-0 z-[100] flex items-center justify-center p-6 bg-black/70 backdrop-blur-sm">
+          <div className="max-w-sm w-full rounded-3xl bg-[#111827] border border-amber-500/30 p-8 text-center shadow-2xl">
+            <p className="text-4xl mb-3">⚠️</p>
+            <h3 className="text-lg font-black mb-2">Security Threshold Engaged</h3>
+            <p className="text-sm text-white/50 mb-5">
+              High-frequency traffic detected. A short cool-down is active to protect the service.
+            </p>
+            <button onClick={() => setCooldown(0)} className="rounded-xl bg-amber-500 text-black font-bold px-5 py-2.5 text-sm">
+              Got it ({cooldown}s)
             </button>
           </div>
         </div>

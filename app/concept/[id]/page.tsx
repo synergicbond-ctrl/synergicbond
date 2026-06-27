@@ -1,105 +1,60 @@
-"use client";
-
 import Navbar from "@/components/Navbar";
-import { masterSyllabus } from "@/lib/masterSyllabus";
+import Hero from "@/components/Hero";
+import Stats from "@/components/Stats";
 
-export default function DashboardPage() {
-  const totalChapters = masterSyllabus.length;
+import JeeSection from "@/components/JeeSection";
+import NeetSection from "@/components/NeetSection";
+import OlympiadSection from "@/components/OlympiadSection";
+import ResourcesSection from "@/components/ResourcesSection";
 
-  const physical = masterSyllabus.filter(
-    (c) => c.category === "physical"
-  ).length;
+import AIChemistryEngine from "@/components/AIChemistryEngine";
 
-  const inorganic = masterSyllabus.filter(
-    (c) => c.category === "inorganic"
-  ).length;
-
-  const organic = masterSyllabus.filter(
-    (c) => c.category === "organic"
-  ).length;
-
+export default function Home() {
   return (
     <main className="min-h-screen bg-black text-white">
 
+      {/* NAVBAR */}
       <Navbar />
 
-      <div className="max-w-6xl mx-auto px-6 py-16">
+      {/* HERO + AI */}
+      <section className="flex flex-col gap-6">
+        <Hero />
 
-        <h1 className="text-5xl font-bold mb-4">
-          📊 Dashboard
-        </h1>
-
-        <p className="text-white/60 mb-12">
-          Your Chemistry Command Center
-        </p>
-
-        <div className="grid md:grid-cols-4 gap-6 mb-12">
-
-          <div className="border border-white/10 rounded-2xl p-6">
-            <h2 className="text-3xl font-bold">
-              {totalChapters}
-            </h2>
-
-            <p className="text-white/60">
-              Total Chapters
-            </p>
-          </div>
-
-          <div className="border border-white/10 rounded-2xl p-6">
-            <h2 className="text-3xl font-bold">
-              {physical}
-            </h2>
-
-            <p className="text-white/60">
-              Physical Chemistry
-            </p>
-          </div>
-
-          <div className="border border-white/10 rounded-2xl p-6">
-            <h2 className="text-3xl font-bold">
-              {inorganic}
-            </h2>
-
-            <p className="text-white/60">
-              Inorganic Chemistry
-            </p>
-          </div>
-
-          <div className="border border-white/10 rounded-2xl p-6">
-            <h2 className="text-3xl font-bold">
-              {organic}
-            </h2>
-
-            <p className="text-white/60">
-              Organic Chemistry
-            </p>
-          </div>
-
+        {/* 🧠 AI CHEMISTRY ENGINE (MAIN FEATURE) */}
+        <div className="px-6">
+          <AIChemistryEngine />
         </div>
+      </section>
 
-        <div className="border border-white/10 rounded-2xl p-8">
+      {/* STATS */}
+      <section className="py-16 border-t border-white/10">
+        <Stats />
+      </section>
 
-          <h2 className="text-2xl font-bold mb-6">
-            🎯 Coming Soon
-          </h2>
+      {/* JEE */}
+      <section className="py-20 border-t border-white/10 px-6">
+        <JeeSection />
+      </section>
 
-          <ul className="space-y-3 text-white/70">
+      {/* NEET */}
+      <section className="py-20 border-t border-white/10 px-6">
+        <NeetSection />
+      </section>
 
-            <li>🔥 Study streak</li>
+      {/* OLYMPIAD */}
+      <section className="py-20 border-t border-white/10 px-6">
+        <OlympiadSection />
+      </section>
 
-            <li>📈 Weak chapters</li>
+      {/* RESOURCES */}
+      <section className="py-20 border-t border-white/10 px-6">
+        <ResourcesSection />
+      </section>
 
-            <li>⭐ Strong chapters</li>
-
-            <li>📝 Adaptive tests</li>
-
-            <li>🏆 Performance analytics</li>
-
-          </ul>
-
-        </div>
-
-      </div>
+      {/* FOOTER */}
+      <footer className="py-10 border-t border-white/10 text-center text-white/40">
+        SYNERGIC BOND — AI Chemistry Learning OS
+      </footer>
 
     </main>
   );

@@ -4,23 +4,38 @@ import Link from "next/link";
 import { useState } from "react";
 
 const mainLinks = [
-  { href: "/notes", label: "📘 Notes" },
-  { href: "/assignment", label: "📝 Assignments" },
-  { href: "/quiz", label: "🧪 Quiz" },
-  { href: "/exam", label: "📋 Mock Exam" },
-  { href: "/tutor", label: "🤖 AI Tutor" },
-  { href: "/snap-solve", label: "📸 Snap & Solve" },
-  { href: "/molecule", label: "🧬 Molecule" },
-  { href: "/daily-challenge", label: "🎯 Daily Challenge" },
-  { href: "/study-plan", label: "🗓️ Study Plan" },
-  { href: "/exam-predictor", label: "📊 Predictor" },
-  { href: "/leaderboard", label: "🏆 Leaderboard" },
-  { href: "/vault", label: "🗄️ Vault" },
-  { href: "/pricing", label: "💎 Pricing" },
+  { href: "/notes", label: "📘 Notes", category: "learn" },
+  { href: "/assignment", label: "📝 Assignments", category: "learn" },
+  { href: "/quiz", label: "🧪 Quiz", category: "learn" },
+  { href: "/exam", label: "📋 Mock Exam", category: "learn" },
+  { href: "/tutor", label: "🤖 AI Tutor", category: "ai" },
+  { href: "/snap-solve", label: "📸 Snap & Solve", category: "ai" },
+  { href: "/handwritten-notes", label: "✍️ Handwritten", category: "ai" },
+  { href: "/molecule", label: "🧬 Molecule", category: "ai" },
+  { href: "/daily-challenge", label: "🎯 Daily Challenge", category: "game" },
+  { href: "/study-plan", label: "🗓️ Study Plan", category: "game" },
+  { href: "/exam-predictor", label: "📊 Predictor", category: "game" },
+  { href: "/achievements", label: "🏅 Achievements", category: "game" },
+  { href: "/leaderboard", label: "🏆 Leaderboard", category: "game" },
+  { href: "/vault", label: "🗄️ Vault", category: "learn" },
+  { href: "/pricing", label: "💎 Pricing", category: "other" },
+];
+
+const LANGS = [
+  { code: "english", label: "EN" },
+  { code: "hinglish", label: "HI-EN" },
+  { code: "hindi", label: "हिं" },
 ];
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [lang, setLang] = useState("english");
+
+  // Store language in localStorage for pages to use
+  function switchLang(l: string) {
+    setLang(l);
+    if (typeof window !== "undefined") localStorage.setItem("sb_lang", l);
+  }
 
   return (
     <header className="sticky top-0 z-50 border-b border-white/10 bg-black/90 backdrop-blur-2xl">
@@ -42,39 +57,44 @@ export default function Navbar() {
         </Link>
 
         {/* Desktop Nav */}
-        <nav className="hidden items-center gap-1 lg:flex">
+        <nav className="hidden items-center gap-1 lg:flex overflow-x-auto max-w-3xl">
           {mainLinks.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className="text-xs font-medium text-neutral-400 transition hover:text-white hover:bg-white/5 px-3 py-2 rounded-lg"
-            >
+            <Link key={link.href} href={link.href}
+              className="whitespace-nowrap text-xs font-medium text-neutral-400 transition hover:text-white hover:bg-white/5 px-2.5 py-2 rounded-lg">
               {link.label}
             </Link>
           ))}
         </nav>
 
         {/* Right side */}
-        <div className="flex items-center gap-3">
-          <Link
-            href="/dashboard"
-            className="hidden sm:block text-xs font-medium text-zinc-400 hover:text-white border border-zinc-700 hover:border-zinc-500 px-4 py-2 rounded-xl transition"
-          >
+        <div className="flex items-center gap-2">
+          {/* Language switcher */}
+          <div className="hidden sm:flex items-center rounded-xl border border-white/10 bg-white/5 p-0.5 gap-0.5">
+            {LANGS.map((l) => (
+              <button key={l.code} onClick={() => switchLang(l.code)}
+                className={`px-2 py-1 rounded-lg text-xs font-bold transition ${lang === l.code ? "bg-cyan-500 text-black" : "text-white/40 hover:text-white"}`}>
+                {l.label}
+              </button>
+            ))}
+          </div>
+
+          <Link href="/achievements"
+            className="hidden sm:flex items-center gap-1 text-xs font-medium text-yellow-400/80 hover:text-yellow-400 border border-yellow-500/20 bg-yellow-950/20 px-3 py-2 rounded-xl transition">
+            🏅
+          </Link>
+
+          <Link href="/dashboard"
+            className="hidden sm:block text-xs font-medium text-zinc-400 hover:text-white border border-zinc-700 hover:border-zinc-500 px-3 py-2 rounded-xl transition">
             Dashboard
           </Link>
-          <Link
-            href="/auth/signin"
-            className="rounded-xl bg-gradient-to-r from-cyan-400 to-sky-500 px-4 py-2 text-xs font-semibold text-black shadow-lg shadow-cyan-500/20 transition hover:-translate-y-0.5"
-          >
+
+          <Link href="/auth/signin"
+            className="rounded-xl bg-gradient-to-r from-cyan-400 to-sky-500 px-3 py-2 text-xs font-semibold text-black shadow-lg shadow-cyan-500/20 transition hover:-translate-y-0.5">
             Sign In →
           </Link>
 
-          {/* Mobile menu button */}
-          <button
-            onClick={() => setMenuOpen(!menuOpen)}
-            className="lg:hidden p-2 text-zinc-400 hover:text-white"
-            aria-label="Menu"
-          >
+          <button onClick={() => setMenuOpen(!menuOpen)}
+            className="lg:hidden p-2 text-zinc-400 hover:text-white" aria-label="Menu">
             {menuOpen ? "✕" : "☰"}
           </button>
         </div>
@@ -83,22 +103,24 @@ export default function Navbar() {
       {/* Mobile Menu */}
       {menuOpen && (
         <div className="lg:hidden border-t border-white/10 bg-black/95 px-4 py-4">
+          {/* Mobile language switcher */}
+          <div className="flex gap-2 mb-3">
+            {LANGS.map((l) => (
+              <button key={l.code} onClick={() => switchLang(l.code)}
+                className={`flex-1 py-1.5 rounded-xl text-sm font-bold transition ${lang === l.code ? "bg-cyan-500 text-black" : "border border-white/10 text-white/50"}`}>
+                {l.label}
+              </button>
+            ))}
+          </div>
           <div className="grid grid-cols-2 gap-2">
             {mainLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                onClick={() => setMenuOpen(false)}
-                className="text-sm text-zinc-300 hover:text-white hover:bg-white/5 px-3 py-2.5 rounded-xl transition border border-zinc-800"
-              >
+              <Link key={link.href} href={link.href} onClick={() => setMenuOpen(false)}
+                className="text-sm text-zinc-300 hover:text-white hover:bg-white/5 px-3 py-2.5 rounded-xl transition border border-zinc-800">
                 {link.label}
               </Link>
             ))}
-            <Link
-              href="/dashboard"
-              onClick={() => setMenuOpen(false)}
-              className="text-sm text-cyan-400 hover:text-white hover:bg-cyan-950 px-3 py-2.5 rounded-xl transition border border-cyan-800 col-span-2 text-center"
-            >
+            <Link href="/dashboard" onClick={() => setMenuOpen(false)}
+              className="text-sm text-cyan-400 hover:text-white hover:bg-cyan-950 px-3 py-2.5 rounded-xl transition border border-cyan-800 col-span-2 text-center">
               📊 My Dashboard
             </Link>
           </div>

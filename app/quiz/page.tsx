@@ -49,7 +49,6 @@ export default function QuizPage() {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          userId: "demo-user",
           chapterId: "mole-concept",
           question: currentQ.question,
           selectedAnswer: option,

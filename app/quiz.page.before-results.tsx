@@ -20,7 +20,6 @@ export default function QuizPage() {
   const [selected, setSelected] = useState<string | null>(null);
   const [score, setScore] = useState(0);
   const [finished, setFinished] = useState(false);
-  const [resultSaved, setResultSaved] = useState(false);
 
   // Load quiz from backend
   useEffect(() => {
@@ -34,32 +33,6 @@ export default function QuizPage() {
         setQuestions(data.questions || []);
       });
   }, []);
-
-  useEffect(() => {
-    async function saveResult() {
-      if (!finished || resultSaved) return;
-
-      try {
-        await fetch("/api/exam-result", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            examName: "Quiz Mode",
-            score,
-            total: questions.length,
-          }),
-        });
-
-        setResultSaved(true);
-      } catch (e) {
-        console.error(e);
-      }
-    }
-
-    saveResult();
-  }, [finished, resultSaved, score, questions.length]);
 
   const currentQ = questions[current];
 

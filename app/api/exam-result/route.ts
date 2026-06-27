@@ -16,6 +16,7 @@ export async function POST(req: Request) {
     }
 
     const body = await req.json();
+    console.log("EXAM RESULT BODY:", body);
 
     const { error } = await supabase
       .from("exam_results")

@@ -110,8 +110,19 @@ export default function SignInPage() {
               <path d="M3.964 10.706A5.41 5.41 0 0 1 3.682 9c0-.593.102-1.17.282-1.706V4.962H.957A8.996 8.996 0 0 0 0 9c0 1.452.348 2.827.957 4.038l3.007-2.332Z" fill="#FBBC05"/>
               <path d="M9 3.58c1.321 0 2.508.454 3.44 1.345l2.582-2.58C13.463.891 11.426 0 9 0A8.997 8.997 0 0 0 .957 4.962L3.964 7.294C4.672 5.163 6.656 3.58 9 3.58Z" fill="#EA4335"/>
             </svg>
-            Continue with Google
+            Continue with Google (Coming Soon)
           </button>
+
+          {/* Guest / Demo Login */}
+          <button
+            onClick={() => { window.location.href = "/notes"; }}
+            className="w-full rounded-xl border border-cyan-500/30 bg-cyan-950/30 py-3 font-semibold text-cyan-300 flex items-center justify-center gap-2 hover:bg-cyan-950/50 transition"
+          >
+            ⚡ Try as Guest — No Login Needed
+          </button>
+          <p className="text-center text-xs text-white/30">
+            Guest access: Notes, Assignments, Quiz — no account required
+          </p>
 
           <div className="text-center pt-4">
             <p className="text-white/50">

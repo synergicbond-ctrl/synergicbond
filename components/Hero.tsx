@@ -1,11 +1,14 @@
 "use client";
 import Link from "next/link";
+import dynamic from "next/dynamic";
 
 import Container from "@/components/ui/Container";
 import Badge from "@/components/ui/Badge";
 
 import HeroSearch from "@/components/home/HeroSearch";
 import ExamGrid from "@/components/home/ExamGrid";
+
+const MoleculeHero = dynamic(() => import("@/components/MoleculeHero"), { ssr: false });
 
 export default function Hero() {
   return (
@@ -25,8 +28,13 @@ export default function Hero() {
             AI POWERED CHEMISTRY PLATFORM
           </Badge>
 
+          {/* SYNERGIC BOND molecule banner — above the headline */}
+          <div className="mt-6 w-full max-w-sm">
+            <MoleculeHero />
+          </div>
+
           {/* Big headline — the centerpiece */}
-          <h1 className="mt-10 text-5xl font-black leading-[0.95] tracking-[-0.04em] md:text-7xl xl:text-8xl">
+          <h1 className="mt-6 text-5xl font-black leading-[0.95] tracking-[-0.04em] md:text-7xl xl:text-8xl">
             The Chemistry
             <br />
             <span className="bg-gradient-to-r from-cyan-300 via-sky-400 to-violet-400 bg-clip-text text-transparent">
@@ -36,10 +44,6 @@ export default function Hero() {
 
           <p className="mt-8 max-w-3xl text-xl text-white/70">
             Search • Learn • Practice • Master
-          </p>
-
-          <p className="mt-4 text-white/50">
-            Built for NEET • JEE • Olympiad • GATE
           </p>
 
           <div className="mt-8 flex flex-wrap justify-center gap-5">

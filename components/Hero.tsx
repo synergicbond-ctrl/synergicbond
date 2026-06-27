@@ -28,16 +28,25 @@ export default function Hero() {
             AI POWERED CHEMISTRY PLATFORM
           </Badge>
 
-          {/* Molecule Animation */}
-          <div className="mt-8 w-full max-w-xl">
+          {/* Molecule Animation — accent above headline */}
+          <div className="mt-6 w-full max-w-sm">
             <MoleculeHero />
           </div>
 
-          <p className="mt-4 max-w-3xl text-xl text-white/70">
+          {/* Big headline — the centerpiece */}
+          <h1 className="mt-6 text-5xl font-black leading-[0.95] tracking-[-0.04em] md:text-7xl xl:text-8xl">
+            The Chemistry
+            <br />
+            <span className="bg-gradient-to-r from-cyan-300 via-sky-400 to-violet-400 bg-clip-text text-transparent">
+              Operating System
+            </span>
+          </h1>
+
+          <p className="mt-8 max-w-3xl text-xl text-white/70">
             Search • Learn • Practice • Master
           </p>
 
-          <p className="mt-2 text-white/50">
+          <p className="mt-3 text-white/50">
             Built for NEET • JEE • Olympiad • GATE
           </p>
 

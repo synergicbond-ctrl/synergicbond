@@ -25,13 +25,13 @@ export default function Hero() {
             AI POWERED CHEMISTRY PLATFORM
           </Badge>
 
-          {/* SYNERGIC BOND brand name — large, above the headline */}
-          <p className="mt-8 text-5xl md:text-7xl font-black tracking-[0.1em] bg-gradient-to-r from-[#FFD700] via-[#F472B6] to-[#9B5DE5] bg-clip-text text-transparent drop-shadow-[0_0_30px_rgba(244,114,182,0.3)]">
+          {/* SYNERGIC BOND brand name — largest, leads the hero */}
+          <p className="mt-8 text-6xl md:text-8xl font-black tracking-[0.08em] bg-gradient-to-r from-[#FFD700] via-[#F472B6] to-[#9B5DE5] bg-clip-text text-transparent drop-shadow-[0_0_30px_rgba(244,114,182,0.3)]">
             SYNERGIC BOND
           </p>
 
-          {/* Big headline — the centerpiece */}
-          <h1 className="mt-6 text-5xl font-black leading-[0.95] tracking-[-0.04em] md:text-7xl xl:text-8xl">
+          {/* Headline — supporting, a notch smaller than the brand */}
+          <h1 className="mt-6 text-4xl font-black leading-[0.95] tracking-[-0.04em] md:text-6xl">
             The Chemistry
             <br />
             <span className="bg-gradient-to-r from-cyan-300 via-sky-400 to-violet-400 bg-clip-text text-transparent">

@@ -1,4 +1,10 @@
+"use client";
+
+import { useState } from "react";
+import PaymentGateway from "@/components/PaymentGateway";
+
 export default function PricingPage() {
+  const [payOpen, setPayOpen] = useState(false);
   const FREE_FEATURES = [
     "2 chapters per subject (IOC, OC, PC, Spectroscopy, Analytical)",
     "10 AI tutor messages per day",
@@ -80,13 +86,13 @@ export default function PricingPage() {
           </div>
           <div className="space-y-3">
             <button
-              disabled
-              className="block w-full text-center bg-cyan-500 hover:bg-cyan-400 text-black font-bold py-3 rounded-xl transition opacity-70 cursor-not-allowed"
+              onClick={() => setPayOpen(true)}
+              className="block w-full text-center bg-cyan-500 hover:bg-cyan-400 text-black font-bold py-3 rounded-xl transition hover:-translate-y-0.5"
             >
-              Coming Soon — Razorpay Integration
+              Upgrade to PRO →
             </button>
             <div className="text-center text-xs text-zinc-600">
-              Payment system launching soon · Contact us for early access
+              Secure checkout · UPI, Cards, NetBanking, PhonePe, GPay, Apple Pay
             </div>
           </div>
         </div>
@@ -121,6 +127,13 @@ export default function PricingPage() {
           ))}
         </div>
       </div>
+
+      <PaymentGateway
+        open={payOpen}
+        onClose={() => setPayOpen(false)}
+        plan="SYNERGIC BOND PRO"
+        amount="₹1,499"
+      />
     </main>
   );
 }

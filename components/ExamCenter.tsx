@@ -76,8 +76,8 @@ export default function ExamCenter() {
         {exams.map((exam) => (
           <div
             key={exam.name}
-            className="rounded-2xl bg-[#111827] border p-5 transition-all duration-300 hover:-translate-y-1"
-            style={{ borderColor: `${exam.accent}30` }}
+            className="rounded-2xl bg-gradient-to-b from-white/[0.05] to-transparent border p-5 transition-all duration-300 hover:-translate-y-1"
+            style={{ borderColor: `${exam.accent}30`, backgroundColor: "#111827", boxShadow: "inset 0 1px 0 rgba(255,255,255,0.06)" }}
           >
             <div className="flex items-start justify-between mb-4">
               <div className="flex items-center gap-2.5">

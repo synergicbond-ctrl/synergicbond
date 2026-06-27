@@ -19,19 +19,19 @@ export default function Hero() {
       </div>
 
       <Container>
-        <div className="mx-auto flex min-h-screen max-w-6xl flex-col items-center justify-center py-24 text-center">
+        <div className="mx-auto flex min-h-screen max-w-6xl flex-col items-center justify-center py-16 text-center">
 
           <Badge>
             AI POWERED CHEMISTRY PLATFORM
           </Badge>
 
           {/* SYNERGIC BOND brand name — largest, leads the hero */}
-          <p className="mt-8 text-6xl md:text-8xl font-black tracking-[0.08em] bg-gradient-to-r from-[#FFD700] via-[#F472B6] to-[#9B5DE5] bg-clip-text text-transparent drop-shadow-[0_0_30px_rgba(244,114,182,0.3)]">
+          <p className="mt-6 text-6xl md:text-8xl font-black tracking-[0.08em] bg-gradient-to-r from-[#FFD700] via-[#F472B6] to-[#9B5DE5] bg-clip-text text-transparent drop-shadow-[0_0_30px_rgba(244,114,182,0.3)]">
             SYNERGIC BOND
           </p>
 
           {/* Headline — supporting, a notch smaller than the brand */}
-          <h1 className="mt-6 text-4xl font-black leading-[0.95] tracking-[-0.04em] md:text-6xl">
+          <h1 className="mt-4 text-4xl font-black leading-[0.95] tracking-[-0.04em] md:text-6xl">
             The Chemistry
             <br />
             <span className="bg-gradient-to-r from-cyan-300 via-sky-400 to-violet-400 bg-clip-text text-transparent">
@@ -39,7 +39,7 @@ export default function Hero() {
             </span>
           </h1>
 
-          <p className="mt-8 max-w-3xl text-xl text-white/70">
+          <p className="mt-6 max-w-3xl text-xl text-white/70">
             Search • Learn • Practice • Master
           </p>
 

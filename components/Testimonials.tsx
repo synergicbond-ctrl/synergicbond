@@ -99,7 +99,7 @@ export default function Testimonials() {
         {shown.map((t, i) => (
           <div
             key={i}
-            className="rounded-2xl bg-[#111827] border border-white/[0.06] p-6 flex flex-col"
+            className="rounded-2xl bg-gradient-to-b from-white/[0.05] to-transparent border border-white/[0.06] p-6 flex flex-col" style={{ backgroundColor: "#111827", boxShadow: "inset 0 1px 0 rgba(255,255,255,0.06)" }}
           >
             <div className="flex items-center justify-between mb-4">
               <Quote className="h-6 w-6 text-cyan-400/40" />

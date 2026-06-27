@@ -33,7 +33,8 @@ export default function ReferenceBooks() {
         {books.map((book) => (
           <div
             key={book.title}
-            className="group rounded-2xl bg-[#111827] border border-white/[0.06] p-5 flex gap-4 transition-all duration-300 hover:-translate-y-1 hover:border-white/[0.12]"
+            className="group rounded-2xl bg-gradient-to-b from-white/[0.05] to-transparent border border-white/[0.06] p-5 flex gap-4 transition-all duration-300 hover:-translate-y-1 hover:border-white/[0.12]"
+            style={{ backgroundColor: "#111827", boxShadow: "inset 0 1px 0 rgba(255,255,255,0.06)" }}
           >
             {/* Cover placeholder */}
             <div

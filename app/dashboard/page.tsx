@@ -5,6 +5,7 @@ import { SummaryCards } from "@/components/dashboard/SummaryCards";
 import { RecentTests } from "@/components/dashboard/RecentTests";
 import { WeakTopics } from "@/components/dashboard/WeakTopics";
 import { QuickActions } from "@/components/dashboard/QuickActions";
+import ActivityLog from "@/components/dashboard/ActivityLog";
 import { CoachWidget } from "@/components/dashboard/CoachWidget";
 import { RevisionQueue } from "@/components/dashboard/RevisionQueue";
 
@@ -160,6 +161,10 @@ export default async function DashboardPage() {
         <RevisionQueue
           chapters={revisionChapters}
         />
+      </div>
+
+      <div className="mt-8">
+        <ActivityLog />
       </div>
 
       <div className="mt-8">

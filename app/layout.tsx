@@ -1,12 +1,9 @@
 import "@/app/globals.css";
-import { Inter } from "next/font/google";
 import { ThemeProvider } from "@/components/ThemeContext";
 
-const inter = Inter({ subsets: ["latin"] });
-
 export const metadata = {
-  title: "SYNERGIC BOND",
-  description: "Chemistry Operating System (ChemOS)",
+  title: "SYNERGIC BOND — Chemistry OS",
+  description: "The Chemistry Operating System for NEET, JEE, Olympiad and GATE. AI-powered, expert-built.",
 };
 
 export default function RootLayout({
@@ -20,9 +17,8 @@ export default function RootLayout({
       className="h-full dark"
       suppressHydrationWarning
     >
-      <body
-        className={`${inter.className} min-h-screen bg-black text-white flex flex-col m-0 p-0 w-full`}
-      >
+      {/* Typography enforced globally via globals.css → SF Pro / -apple-system / BlinkMacSystemFont */}
+      <body className="min-h-screen bg-[#0B0F19] text-white flex flex-col m-0 p-0 w-full antialiased">
         <ThemeProvider>
           {children}
         </ThemeProvider>

@@ -157,3 +157,11 @@ video {
 ::-webkit-scrollbar-thumb:hover {
   background: #333;
 }
+/* Hide scrollbars on horizontal tab containers (swipeable on mobile) */
+.scrollbar-none {
+  scrollbar-width: none;        /* Firefox */
+  -ms-overflow-style: none;     /* IE/Edge */
+}
+.scrollbar-none::-webkit-scrollbar {
+  display: none;                /* Chrome/Safari */
+}

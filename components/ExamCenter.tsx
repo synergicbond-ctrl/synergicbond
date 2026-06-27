@@ -41,10 +41,10 @@ export default function ExamCenter() {
         <p className="mb-3 text-xs font-bold uppercase tracking-[0.4em] text-cyan-300">
           Exam Center
         </p>
-        <h2 className="text-4xl font-black md:text-5xl text-white">
+        <h2 className="text-3xl font-black md:text-4xl text-white">
           Every Chemistry Exam. One Directory.
         </h2>
-        <p className="mx-auto mt-4 max-w-2xl text-white/50 text-sm">
+        <p className="mx-auto mt-4 max-w-2xl text-white/70 text-sm">
           Eligibility, key dates, fees and official portals for chemistry exams worldwide.
         </p>
       </div>
@@ -55,7 +55,7 @@ export default function ExamCenter() {
           <button
             onClick={() => setRegion("india")}
             className={`px-6 py-2 rounded-full text-sm font-semibold transition-all ${
-              region === "india" ? "bg-cyan-500 text-black" : "text-gray-400 hover:text-white"
+              region === "india" ? "bg-cyan-500 text-black" : "text-gray-300 hover:text-white"
             }`}
           >
             🇮🇳 India Exams
@@ -63,7 +63,7 @@ export default function ExamCenter() {
           <button
             onClick={() => setRegion("intl")}
             className={`px-6 py-2 rounded-full text-sm font-semibold transition-all ${
-              region === "intl" ? "bg-cyan-500 text-black" : "text-gray-400 hover:text-white"
+              region === "intl" ? "bg-cyan-500 text-black" : "text-gray-300 hover:text-white"
             }`}
           >
             🌍 International Exams
@@ -88,7 +88,7 @@ export default function ExamCenter() {
               </div>
             </div>
 
-            <p className="text-xs text-gray-400 mb-4 flex items-center gap-1.5">
+            <p className="text-xs text-gray-300 mb-4 flex items-center gap-1.5">
               <span className="text-gray-600">Eligibility:</span> {exam.eligibility}
             </p>
 

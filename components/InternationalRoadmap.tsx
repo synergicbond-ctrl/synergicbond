@@ -37,7 +37,7 @@ export default function InternationalRoadmap() {
         <h2 className="text-3xl font-black md:text-4xl text-white flex items-center justify-center gap-3">
           <Globe2 className="h-7 w-7 text-cyan-400" /> International Exam Roadmap
         </h2>
-        <p className="mx-auto mt-4 max-w-2xl text-white/50 text-sm">
+        <p className="mx-auto mt-4 max-w-2xl text-white/70 text-sm">
           Full prep for the world's top chemistry exams — rolling out region by region.
         </p>
       </div>
@@ -50,7 +50,7 @@ export default function InternationalRoadmap() {
               key={r.id}
               onClick={() => setRegion(r.id)}
               className={`px-4 py-2 rounded-full text-xs font-semibold transition-all ${
-                region === r.id ? "bg-cyan-500 text-black" : "text-gray-400 hover:text-white"
+                region === r.id ? "bg-cyan-500 text-black" : "text-gray-300 hover:text-white"
               }`}
             >
               {r.label}

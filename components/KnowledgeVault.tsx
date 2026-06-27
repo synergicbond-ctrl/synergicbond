@@ -80,10 +80,10 @@ export default function KnowledgeVault() {
         <p className="mb-3 text-xs font-bold uppercase tracking-[0.4em] text-cyan-300">
           Knowledge Vault
         </p>
-        <h2 className="text-4xl font-black md:text-5xl text-white">
+        <h2 className="text-3xl font-black md:text-4xl text-white">
           Everything Chemistry. One Place.
         </h2>
-        <p className="mx-auto mt-5 max-w-2xl text-white/50 text-sm">
+        <p className="mx-auto mt-5 max-w-2xl text-white/70 text-sm">
           Concepts, formulas, reactions and exceptions — organized into a premium chemistry knowledge system.
         </p>
       </div>
@@ -102,7 +102,7 @@ export default function KnowledgeVault() {
                 key={tab.id}
                 onClick={() => setActive(tab.id)}
                 className={`relative flex items-center gap-2 whitespace-nowrap px-4 py-2 rounded-full text-xs font-medium transition-all duration-200 hover:scale-105 ${
-                  isActive ? "text-white font-bold bg-white/[0.06]" : "text-gray-400 hover:text-white"
+                  isActive ? "text-white font-bold bg-white/[0.06]" : "text-gray-300 hover:text-white"
                 }`}
               >
                 <TabIcon
@@ -135,7 +135,7 @@ export default function KnowledgeVault() {
               {current.count} entries
             </span>
             <h3 className="text-3xl font-black text-white mb-3">{current.title}</h3>
-            <p className="text-white/50 text-sm leading-relaxed mb-6">{current.blurb}</p>
+            <p className="text-white/70 text-sm leading-relaxed mb-6">{current.blurb}</p>
             <Link
               href={current.href}
               className="inline-flex items-center gap-2 text-sm font-semibold transition hover:gap-3"

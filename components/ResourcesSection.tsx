@@ -11,35 +11,27 @@ import {
 const features = [
   {
     title: "AI Tutor",
-    description:
-      "Ask chemistry questions naturally and receive step-by-step explanations.",
-    icon: Bot,
-    href: "/tutor",
-    color: "text-cyan-300",
+    description: "Ask chemistry questions naturally and receive step-by-step explanations.",
+    icon: Bot, href: "/tutor",
+    color: "text-cyan-300", tile: "from-cyan-400/25 to-cyan-500/5 border-cyan-400/25", glow: "rgba(34,211,238,0.18)",
   },
   {
     title: "Universal Search",
-    description:
-      "Instantly search concepts, reactions, formulas and chapters.",
-    icon: Search,
-    href: "/search",
-    color: "text-violet-300",
+    description: "Instantly search concepts, reactions, formulas and chapters.",
+    icon: Search, href: "/search",
+    color: "text-violet-300", tile: "from-violet-400/25 to-violet-500/5 border-violet-400/25", glow: "rgba(155,93,229,0.18)",
   },
   {
     title: "Revision Engine",
-    description:
-      "Revise smarter with quick facts, flashcards and memory boosters.",
-    icon: BrainCircuit,
-    href: "/revision",
-    color: "text-emerald-300",
+    description: "Revise smarter with quick facts, flashcards and memory boosters.",
+    icon: BrainCircuit, href: "/revision",
+    color: "text-emerald-300", tile: "from-emerald-400/25 to-emerald-500/5 border-emerald-400/25", glow: "rgba(16,185,129,0.16)",
   },
   {
     title: "Knowledge Library",
-    description:
-      "Everything you need—from concepts to mechanisms—in one place.",
-    icon: BookOpen,
-    href: "/vault",
-    color: "text-amber-300",
+    description: "Everything you need—from concepts to mechanisms—in one place.",
+    icon: BookOpen, href: "/vault",
+    color: "text-amber-300", tile: "from-amber-400/25 to-amber-500/5 border-amber-400/25", glow: "rgba(255,215,0,0.16)",
   },
 ];
 
@@ -54,20 +46,18 @@ export default function ResourcesSection() {
           Everything You Need
         </div>
 
-        <h2 className="mt-6 text-5xl font-black">
-          One Platform.
-          <br />
-          Unlimited Learning.
+        <h2 className="mt-6 text-3xl md:text-4xl font-black">
+          One Platform. Unlimited Learning.
         </h2>
 
-        <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-white/60">
+        <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-white/70">
           Every feature is designed to help you understand, remember and
           master chemistry faster.
         </p>
 
       </div>
 
-      <div className="mt-16 grid gap-8 md:grid-cols-2">
+      <div className="mt-14 grid gap-6 md:grid-cols-2">
 
         {features.map((item) => {
           const Icon = item.icon;
@@ -76,15 +66,21 @@ export default function ResourcesSection() {
             <Link
               key={item.title}
               href={item.href}
-              className="group rounded-[30px] border border-white/10 bg-white/[0.03] p-8 transition-all duration-300 hover:-translate-y-2 hover:border-cyan-400/30"
+              className="group rounded-3xl border border-white/10 bg-white/[0.03] p-7 transition-all duration-300 hover:-translate-y-2 hover:border-cyan-400/30"
             >
-              <Icon className={`h-10 w-10 ${item.color}`} />
+              {/* Glossy icon tile */}
+              <div
+                className={`flex h-14 w-14 items-center justify-center rounded-2xl border bg-gradient-to-br ${item.tile}`}
+                style={{ boxShadow: `0 6px 20px ${item.glow}, inset 0 1px 0 rgba(255,255,255,0.12)` }}
+              >
+                <Icon className={`h-7 w-7 ${item.color}`} />
+              </div>
 
-              <h3 className="mt-8 text-3xl font-bold">
+              <h3 className="mt-6 text-2xl font-bold">
                 {item.title}
               </h3>
 
-              <p className="mt-5 leading-8 text-white/60">
+              <p className="mt-3 leading-7 text-white/70">
                 {item.description}
               </p>
 

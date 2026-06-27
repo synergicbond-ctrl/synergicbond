@@ -73,7 +73,7 @@ export default function Testimonials() {
         <p className="mb-3 text-xs font-bold uppercase tracking-[0.4em] text-cyan-300">
           Success Stories
         </p>
-        <h2 className="text-4xl font-black md:text-5xl text-white">
+        <h2 className="text-3xl font-black md:text-4xl text-white">
           Trusted by Rankers Worldwide
         </h2>
       </div>

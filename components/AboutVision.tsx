@@ -47,12 +47,12 @@ export default function AboutVision() {
               Chemistry Education.
             </span>
           </h2>
-          <p className="mt-6 text-white/50 leading-relaxed text-base">
+          <p className="mt-6 text-white/70 leading-relaxed text-base">
             SYNERGIC BOND was built with a single obsession — give every chemistry student,
             regardless of geography or resources, access to the kind of precision preparation
             that produces top rankers, Olympiad medalists, and future scientists.
           </p>
-          <p className="mt-4 text-white/40 leading-relaxed text-sm">
+          <p className="mt-4 text-white/65 leading-relaxed text-sm">
             Created by Prof. Mritunjay Shukla — 18+ years faculty at ALLEN &amp; Sri Chaitanya,
             JEE Advanced expert, published author, and patent holder — this platform carries
             real pedagogical depth, not just AI-generated content.
@@ -61,17 +61,17 @@ export default function AboutVision() {
           <div className="mt-8 flex gap-4 flex-wrap">
             <div className="flex flex-col">
               <span className="text-3xl font-black text-white">18+</span>
-              <span className="text-xs text-white/40 font-medium">Years Teaching</span>
+              <span className="text-xs text-white/65 font-medium">Years Teaching</span>
             </div>
             <div className="w-px h-12 bg-white/10" />
             <div className="flex flex-col">
               <span className="text-3xl font-black text-white">50K+</span>
-              <span className="text-xs text-white/40 font-medium">Students Guided</span>
+              <span className="text-xs text-white/65 font-medium">Students Guided</span>
             </div>
             <div className="w-px h-12 bg-white/10" />
             <div className="flex flex-col">
               <span className="text-3xl font-black text-white">IIT</span>
-              <span className="text-xs text-white/40 font-medium">Rank Producers</span>
+              <span className="text-xs text-white/65 font-medium">Rank Producers</span>
             </div>
           </div>
         </div>
@@ -90,7 +90,7 @@ export default function AboutVision() {
                 </div>
                 <div>
                   <h3 className={`font-bold text-sm text-white mb-1`}>{p.title}</h3>
-                  <p className="text-xs text-gray-400 leading-relaxed">{p.body}</p>
+                  <p className="text-xs text-gray-300 leading-relaxed">{p.body}</p>
                 </div>
               </div>
             );

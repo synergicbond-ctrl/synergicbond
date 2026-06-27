@@ -15,7 +15,7 @@ const exams = [
     border: "rgba(0,245,212,0.35)",
     glow: "group-hover:shadow-[0_0_40px_rgba(0,245,212,0.2)]",
     borderHover: "group-hover:border-[rgba(0,245,212,0.5)]",
-    iconBg: "bg-cyan-950/50",
+    iconBg: "from-cyan-400/25 to-cyan-500/5 border-cyan-400/25",
     iconColor: "text-[#00F5D4]",
     pillColor: "bg-cyan-500/10 text-cyan-300 border-cyan-500/20",
   },
@@ -32,7 +32,7 @@ const exams = [
     border: "rgba(155,93,229,0.35)",
     glow: "group-hover:shadow-[0_0_40px_rgba(155,93,229,0.2)]",
     borderHover: "group-hover:border-[rgba(155,93,229,0.5)]",
-    iconBg: "bg-purple-950/50",
+    iconBg: "from-violet-400/25 to-violet-500/5 border-violet-400/25",
     iconColor: "text-[#9B5DE5]",
     pillColor: "bg-purple-500/10 text-purple-300 border-purple-500/20",
   },
@@ -49,7 +49,7 @@ const exams = [
     border: "rgba(255,215,0,0.35)",
     glow: "group-hover:shadow-[0_0_40px_rgba(255,215,0,0.18)]",
     borderHover: "group-hover:border-[rgba(255,215,0,0.5)]",
-    iconBg: "bg-amber-950/50",
+    iconBg: "from-amber-400/25 to-amber-500/5 border-amber-400/25",
     iconColor: "text-[#FFD700]",
     pillColor: "bg-amber-500/10 text-amber-300 border-amber-500/20",
   },
@@ -66,7 +66,7 @@ const exams = [
     border: "rgba(16,185,129,0.35)",
     glow: "group-hover:shadow-[0_0_40px_rgba(16,185,129,0.18)]",
     borderHover: "group-hover:border-[rgba(16,185,129,0.5)]",
-    iconBg: "bg-emerald-950/50",
+    iconBg: "from-emerald-400/25 to-emerald-500/5 border-emerald-400/25",
     iconColor: "text-emerald-400",
     pillColor: "bg-emerald-500/10 text-emerald-300 border-emerald-500/20",
   },
@@ -83,7 +83,7 @@ export default function ExamGrid() {
         <h2 className="text-4xl font-black tracking-tight text-white">
           Choose Your Journey
         </h2>
-        <p className="mx-auto mt-4 max-w-2xl text-white/50 text-sm leading-relaxed">
+        <p className="mx-auto mt-4 max-w-2xl text-white/70 text-sm leading-relaxed">
           Every scholar follows a different path. Select your destination and let SYNERGIC BOND guide you there.
         </p>
       </div>
@@ -98,14 +98,17 @@ export default function ExamGrid() {
               className={`group relative rounded-2xl border bg-[#111827] p-6 transition-all duration-300 hover:-translate-y-2 ${exam.borderHover} ${exam.glow}`}
               style={{ borderColor: "rgba(255,255,255,0.06)" }}
             >
-              {/* Status badge top right */}
-              <div className={`absolute top-4 right-4 text-[9px] font-bold tracking-widest px-2 py-0.5 rounded-full border ${exam.pillColor}`}>
-                {exam.badge}
-              </div>
-
-              {/* Icon */}
-              <div className={`flex h-12 w-12 items-center justify-center rounded-xl ${exam.iconBg} mb-5`}>
-                <Icon className={`h-6 w-6 ${exam.iconColor}`} />
+              {/* Icon + status badge on one row (no overlap) */}
+              <div className="flex items-start justify-between mb-5 gap-2">
+                <div
+                  className={`flex h-14 w-14 items-center justify-center rounded-2xl border bg-gradient-to-br ${exam.iconBg}`}
+                  style={{ boxShadow: `0 6px 20px ${exam.shadow}, inset 0 1px 0 rgba(255,255,255,0.12)` }}
+                >
+                  <Icon className={`h-7 w-7 ${exam.iconColor}`} />
+                </div>
+                <span className={`text-[8px] font-bold tracking-widest px-2 py-1 rounded-full border ${exam.pillColor} text-right`}>
+                  {exam.badge}
+                </span>
               </div>
 
               {/* Level pill */}
@@ -113,13 +116,13 @@ export default function ExamGrid() {
                 ⚡ {exam.pill}
               </span>
 
-              <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-white/40 mb-1.5">
+              <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-white/65 mb-1.5">
                 {exam.subtitle}
               </p>
               <h3 className="text-2xl font-black text-white mb-3">
                 {exam.title}
               </h3>
-              <p className="text-sm leading-relaxed text-white/50 mb-6">
+              <p className="text-sm leading-relaxed text-white/70 mb-6">
                 {exam.description}
               </p>
 

@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import { Camera, Keyboard, SunMedium } from "lucide-react";
 import type { SnapSolveResponse, SnapSolveClassification } from "@/lib/snapSolveTypes";
 import { renderChemistry } from "@/lib/renderChemistry";
@@ -12,10 +13,67 @@ const CLASS_STYLE: Record<SnapSolveClassification, { cls: string; emoji: string 
   General:    { cls: "bg-slate-500/15 text-slate-300 border-slate-500/25", emoji: "🧪" },
 };
 
+// Color shifts by accuracy: emerald >= 90%, amber 70-89%, red below.
 function confidenceTone(c: number): string {
-  if (c >= 0.85) return "#34D399";
+  if (c >= 0.9) return "#34D399";
   if (c >= 0.7) return "#FBBF24";
   return "#F87171";
+}
+
+/**
+ * Presentational accuracy gauge — animates a circular ring + count-up number
+ * from 0% to the API-provided ocrConfidence on mount. Visual only; no data logic.
+ */
+function AccuracyRing({ confidence }: { confidence: number }) {
+  const target = Math.round(Math.max(0, Math.min(1, confidence)) * 100);
+  const tone = confidenceTone(confidence);
+  const [shown, setShown] = useState(0);
+
+  useEffect(() => {
+    let raf = 0;
+    const start = performance.now();
+    const duration = 900;
+    const tick = (now: number) => {
+      const t = Math.min(1, (now - start) / duration);
+      const eased = 1 - Math.pow(1 - t, 3); // easeOutCubic
+      setShown(target * eased);
+      if (t < 1) raf = requestAnimationFrame(tick);
+    };
+    raf = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(raf);
+  }, [target]);
+
+  const radius = 20;
+  const circumference = 2 * Math.PI * radius;
+  const offset = circumference * (1 - shown / 100);
+
+  return (
+    <div className="flex items-center gap-2">
+      <span className="hidden text-xs text-white/45 sm:inline">Reading precision</span>
+      <div className="relative h-14 w-14 will-change-transform">
+        <svg className="h-14 w-14 -rotate-90" viewBox="0 0 48 48">
+          <circle cx="24" cy="24" r={radius} fill="none" stroke="rgba(255,255,255,0.1)" strokeWidth="4" />
+          <circle
+            cx="24"
+            cy="24"
+            r={radius}
+            fill="none"
+            stroke={tone}
+            strokeWidth="4"
+            strokeLinecap="round"
+            strokeDasharray={circumference}
+            strokeDashoffset={offset}
+          />
+        </svg>
+        <span
+          className="absolute inset-0 flex items-center justify-center text-xs font-black tabular-nums"
+          style={{ color: tone }}
+        >
+          {Math.round(shown)}%
+        </span>
+      </div>
+    </div>
+  );
 }
 
 export default function SnapSolveResult({ data }: { data: SnapSolveResponse }) {
@@ -50,22 +108,18 @@ export default function SnapSolveResult({ data }: { data: SnapSolveResponse }) {
   }
 
   const cls = CLASS_STYLE[data.classification];
-  const confPct = Math.round(data.ocrConfidence * 100);
 
   return (
     <div className="rounded-2xl border border-white/[0.08] bg-[#111827] p-5 space-y-5">
-      {/* Header: classification (left) · reading precision (right) */}
+      {/* scoped keyframes for the sequential timeline reveal */}
+      <style>{`@keyframes snapFadeUp{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}`}</style>
+
+      {/* Header: classification (left) · animated reading-precision gauge (right) */}
       <div className="flex items-center justify-between gap-3">
         <span className={`inline-flex items-center gap-1.5 rounded-full border px-2.5 py-0.5 text-xs font-bold ${cls.cls}`}>
           {cls.emoji} {data.classification}
         </span>
-        <div className="flex items-center gap-2 text-xs text-white/45">
-          <span className="hidden sm:inline">Reading precision</span>
-          <span className="inline-block h-1.5 w-16 overflow-hidden rounded-full bg-white/10">
-            <span className="block h-full rounded-full" style={{ width: `${confPct}%`, background: confidenceTone(data.ocrConfidence) }} />
-          </span>
-          <span className="tabular-nums font-semibold" style={{ color: confidenceTone(data.ocrConfidence) }}>{confPct}%</span>
-        </div>
+        <AccuracyRing confidence={data.ocrConfidence} />
       </div>
 
       {/* Parsed problem */}
@@ -74,13 +128,17 @@ export default function SnapSolveResult({ data }: { data: SnapSolveResponse }) {
         <p className="text-sm text-white/80">{renderChemistry(data.parsedProblem)}</p>
       </div>
 
-      {/* Step-wise vertical timeline */}
+      {/* Step-wise vertical timeline with sequential fade-up */}
       {data.solution.steps.length > 0 && (
         <div>
           <p className="mb-3 text-[10px] font-bold uppercase tracking-wider text-white/40">Step-by-step solution</p>
           <div className="border-l-2 border-slate-800 ml-4 pl-6 space-y-6">
-            {data.solution.steps.map((s) => (
-              <div key={s.stepNumber} className="relative">
+            {data.solution.steps.map((s, i) => (
+              <div
+                key={s.stepNumber}
+                className="relative will-change-transform"
+                style={{ animation: "snapFadeUp 0.45s ease-out both", animationDelay: `${i * 0.12}s` }}
+              >
                 <span className="absolute -left-[33px] flex h-5 w-5 items-center justify-center rounded-full bg-cyan-500/20 text-[11px] font-black text-cyan-300 ring-4 ring-[#111827]">
                   {s.stepNumber}
                 </span>

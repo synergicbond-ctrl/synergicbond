@@ -109,6 +109,33 @@ const domains: Domain[] = [
       { title: "Olympiad Problems & Solutions in Chemistry", author: "MIR / Collected volumes", level: "Olympiad" },
     ],
   },
+  {
+    name: "GATE / CSIR / IIT-JAM Chemistry",
+    tag: "🟦",
+    accent: "#00F5D4",
+    books: [
+      { title: "GATE Chemistry — Chapterwise Solved Papers", author: "Arihant Experts", level: "GATE", rank: 1 },
+      { title: "GATE Chemistry Guide", author: "GK Publications (GKP)", level: "GATE", rank: 2 },
+      { title: "University Chemistry", author: "Bruce H. Mahan", level: "GATE / IIT-JAM", rank: 3 },
+      { title: "GATE / CSIR-NET Chemistry Study Material", author: "Career Endeavour / IFAS", level: "GATE / CSIR-NET" },
+      { title: "Chemistry for Degree Students", author: "R.L. Madan", level: "GATE / B.Sc" },
+      { title: "A Textbook of Physical Chemistry (Vol I–V)", author: "K.L. Kapoor", level: "GATE / Advanced" },
+    ],
+  },
+  {
+    name: "NEET Rapid Revision & Crash",
+    tag: "🟪",
+    accent: "#C084FC",
+    books: [
+      { title: "NCERT at Your Fingertips — Chemistry", author: "MTG Editorial Board", level: "NEET", rank: 1 },
+      { title: "Errorless Chemistry", author: "Universal Self Scorer (USS)", level: "NEET", rank: 2 },
+      { title: "New Course Chemistry (NEET)", author: "Dr. P. Bahadur / Dinesh", level: "NEET", rank: 3 },
+      { title: "Objective NCERT Chemistry (Gear Up)", author: "MTG", level: "NEET" },
+      { title: "Pradeep's Objective Chemistry", author: "Pradeep Publications", level: "NEET" },
+      { title: "30 Days Crash Course — NEET Chemistry", author: "Arihant Experts", level: "NEET (Crash)" },
+      { title: "Objective Chemistry (NEET)", author: "Seema Saini & K.S. Verma (Cengage)", level: "NEET" },
+    ],
+  },
 ];
 
 function googleLink(b: Book) {
@@ -127,7 +154,7 @@ export default function LibraryPage() {
           <p className="text-xs font-bold uppercase tracking-[0.4em] text-cyan-300 mb-3">Knowledge Vault · Database</p>
           <h1 className="text-4xl font-black md:text-5xl">Chemistry Book Library</h1>
           <p className="mt-3 text-white/65 text-sm max-w-2xl">
-            A structured, exam-curated reference library — {total} standard texts across six domains, from NCERT/JEE foundations and India's best problem books to world-class and research-level treatises. ★ marks the top 3 picks per domain.
+            A structured, exam-curated reference library — {total} standard texts across eight domains, from NCERT/NEET rapid-revision and India's best problem books to GATE/CSIR and world-class research treatises. ★ marks the top 3 picks per domain.
           </p>
         </div>
 

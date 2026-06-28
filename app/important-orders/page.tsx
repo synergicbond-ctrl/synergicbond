@@ -154,7 +154,7 @@ export default function ImportantOrdersPage() {
                   <span className="rounded-full bg-white/[0.06] px-2 py-0.5 text-[10px] text-white/40">{items.length}</span>
                   <span className="h-px flex-1 bg-white/[0.06]" />
                 </div>
-                <div className="grid gap-3 sm:grid-cols-2">
+                <div className="grid gap-2.5 sm:grid-cols-2 lg:grid-cols-3">
                   {items.map((o) => (
                     <OrderCard key={o.id} order={o} />
                   ))}

@@ -68,8 +68,103 @@ const flame = [
   { el: "Cs", color: "Blue / violet", c: "#818CF8" },
 ];
 
+// ───────────────────────────────────────────────────────────────────────────
+// Deep-scanned compound colours from "Salt analysis (GUHA)" (Qualitative Salt
+// Analysis, Ch. 7). All entries below are taken directly from that document.
+// ───────────────────────────────────────────────────────────────────────────
+
+// Sublimate salts → coloured precipitate on passing H₂S (GUHA §7.14)
+const guhaSublimates = [
+  { salt: "HgCl₂", formula: "HgS", color: "Black" },
+  { salt: "Hg₂Cl₂", formula: "Hg + HgS", color: "Black" },
+  { salt: "As₂O₃", formula: "As₂S₃", color: "Yellow" },
+  { salt: "Sb₂O₃", formula: "Sb₂S₃", color: "Orange" },
+];
+
+// Borax bead colours — GUHA Table 7.1 (oxidising vs reducing flame, hot/cold)
+const guhaBoraxBeads = [
+  { metal: "Cr", oxHot: "Yellow", oxCold: "Green", redHot: "Green", redCold: "Green" },
+  { metal: "Mn", oxHot: "Violet", oxCold: "Violet", redHot: "Colourless", redCold: "Colourless" },
+  { metal: "Fe", oxHot: "Yellowish brown", oxCold: "Yellow", redHot: "Green", redCold: "Green" },
+  { metal: "Co", oxHot: "Blue", oxCold: "Blue", redHot: "Blue", redCold: "Blue" },
+  { metal: "Ni", oxHot: "Violet", oxCold: "Reddish brown", redHot: "Grey", redCold: "Grey" },
+  { metal: "Cu", oxHot: "Green", oxCold: "Blue", redHot: "Colourless", redCold: "Opaque (red Cu)" },
+];
+
+// Sulphide precipitate colours (GUHA §7.15, group II–IV)
+const guhaSulfides = [
+  { name: "Ag₂S", color: "Black" }, { name: "PbS", color: "Black" }, { name: "HgS", color: "Black" },
+  { name: "Hg + HgS", color: "Black" }, { name: "CuS", color: "Black" }, { name: "Bi₂S₃", color: "Brownish black" },
+  { name: "NiS", color: "Black" }, { name: "CoS", color: "Black" }, { name: "FeS", color: "Black" },
+  { name: "CdS", color: "Yellow" }, { name: "As₂S₃", color: "Yellow" }, { name: "As₂S₅", color: "Yellow" },
+  { name: "SnS₂", color: "Yellow" }, { name: "Sb₂S₃", color: "Orange" }, { name: "SnS", color: "Brown" },
+  { name: "MnS", color: "Buff / flesh" }, { name: "ZnS", color: "White" },
+];
+
+// Hydroxide precipitate colours (GUHA group III–VI)
+const guhaHydroxides = [
+  { name: "Al(OH)₃", color: "White" },
+  { name: "Cr(OH)₃", color: "Green" },
+  { name: "Fe(OH)₃", color: "Reddish brown" },
+  { name: "Fe(OH)₂", color: "Greenish white / dirty green" },
+  { name: "Mn(OH)₂", color: "Pinkish white" },
+  { name: "Zn(OH)₂", color: "White" },
+  { name: "Cu(OH)₂", color: "Blue" },
+  { name: "Ni(OH)₂", color: "Green" },
+];
+
+// Other characteristic compound colours noted across GUHA Ch. 7
+const guhaOther = [
+  { name: "AgBr", color: "Pale yellow" },
+  { name: "AgI", color: "Yellow" },
+  { name: "CuI / Cu₂I₂", color: "White" },
+  { name: "Fe₄[Fe(CN)₆]₃ (Prussian / Turnbull's blue)", color: "Blue" },
+  { name: "Ag₂O", color: "Brownish black" },
+  { name: "HgI₂", color: "Scarlet red (yellow > 127 °C)" },
+  { name: "I₃⁻ (in solution)", color: "Dark brown" },
+  { name: "Cl₂ (gas)", color: "Greenish yellow" },
+];
+
+// Map a colour name → swatch hex (compound phrases checked before single words).
+function tone(name: string): string {
+  const s = name.toLowerCase();
+  if (s.includes("colourless") || s.includes("colorless")) return "#cbd5e1";
+  if (s.includes("opaque")) return "#7f1d1d";
+  if (s.includes("scarlet")) return "#ef4444";
+  if (s.includes("brownish black") || s.includes("brownish-black")) return "#3b2417";
+  if (s.includes("reddish brown") || s.includes("reddish-brown")) return "#9a3412";
+  if (s.includes("yellowish brown")) return "#a16207";
+  if (s.includes("greenish white") || s.includes("dirty green")) return "#6b8e6b";
+  if (s.includes("pinkish white")) return "#f9c9d6";
+  if (s.includes("buff") || s.includes("flesh")) return "#e7c9a9";
+  if (s.includes("pale yellow") || s.includes("light yellow")) return "#fef08a";
+  if (s.includes("apple green") || s.includes("pale green")) return "#84cc16";
+  if (s.includes("prussian") || s.includes("deep blue")) return "#1d4ed8";
+  if (s.includes("blue")) return "#2563eb";
+  if (s.includes("green")) return "#22c55e";
+  if (s.includes("violet") || s.includes("lilac") || s.includes("purple")) return "#a855f7";
+  if (s.includes("orange")) return "#fb923c";
+  if (s.includes("yellow")) return "#fde047";
+  if (s.includes("pink")) return "#f472b6";
+  if (s.includes("brown")) return "#92400e";
+  if (s.includes("crimson") || s.includes("carmine") || s.includes("brick") || s.includes("red")) return "#dc2626";
+  if (s.includes("grey") || s.includes("gray")) return "#9ca3af";
+  if (s.includes("black")) return "#1f2937";
+  if (s.includes("white")) return "#f8fafc";
+  return "#94a3b8";
+}
+
 function Swatch({ c }: { c: string }) {
   return <span className="h-4 w-4 rounded-full flex-shrink-0 border border-white/20" style={{ background: c }} />;
+}
+
+function ColorChip({ name, color }: { name: string; color: string }) {
+  return (
+    <div className="flex items-center gap-3 rounded-xl bg-[#111827] border border-white/[0.06] px-4 py-2.5">
+      <Swatch c={tone(color)} />
+      <p className="text-sm text-white/80"><span className="font-bold text-white">{name}</span> — {color}</p>
+    </div>
+  );
 }
 
 export default function SaltColorsPage() {
@@ -175,6 +270,92 @@ export default function SaltColorsPage() {
               </div>
             ))}
           </div>
+        </section>
+
+        {/* ── Deep-scan additions from "Salt analysis (GUHA)" ── */}
+        <div className="my-10 flex items-center gap-3">
+          <span className="h-px flex-1 bg-white/10" />
+          <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-cyan-300/70">From Salt Analysis · GUHA</span>
+          <span className="h-px flex-1 bg-white/10" />
+        </div>
+
+        {/* Sublimate → H₂S precipitate */}
+        <section className="mb-8">
+          <h2 className="text-lg font-black text-cyan-300 mb-3">🧫 Sublimate → H₂S Precipitate Colours</h2>
+          <div className="overflow-x-auto rounded-2xl border border-white/[0.06]">
+            <table className="w-full text-sm min-w-[460px]">
+              <thead>
+                <tr className="bg-white/[0.04] text-[10px] font-bold uppercase tracking-wider text-white/50">
+                  <th className="text-left px-4 py-2.5">Sublimate salt</th>
+                  <th className="text-left px-3 py-2.5">Precipitate</th>
+                  <th className="text-left px-3 py-2.5">Colour</th>
+                </tr>
+              </thead>
+              <tbody>
+                {guhaSublimates.map((r, i) => (
+                  <tr key={r.salt} className={i % 2 ? "bg-[#111827]" : "bg-[#0e1421]"}>
+                    <td className="px-4 py-2.5 font-mono font-bold text-cyan-300">{r.salt}</td>
+                    <td className="px-3 py-2.5 font-mono text-white/80">{r.formula}</td>
+                    <td className="px-3 py-2.5"><span className="flex items-center gap-2 text-white/80"><Swatch c={tone(r.color)} /> {r.color}</span></td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        {/* Borax bead */}
+        <section className="mb-8">
+          <h2 className="text-lg font-black text-cyan-300 mb-3">🔵 Borax Bead Colours (Table 7.1)</h2>
+          <div className="overflow-x-auto rounded-2xl border border-white/[0.06]">
+            <table className="w-full text-sm min-w-[560px]">
+              <thead>
+                <tr className="bg-white/[0.04] text-[10px] font-bold uppercase tracking-wider text-white/50">
+                  <th className="text-left px-4 py-2.5">Metal</th>
+                  <th className="text-left px-3 py-2.5">Oxidising · hot</th>
+                  <th className="text-left px-3 py-2.5">Oxidising · cold</th>
+                  <th className="text-left px-3 py-2.5">Reducing · hot</th>
+                  <th className="text-left px-3 py-2.5">Reducing · cold</th>
+                </tr>
+              </thead>
+              <tbody>
+                {guhaBoraxBeads.map((r, i) => (
+                  <tr key={r.metal} className={i % 2 ? "bg-[#111827]" : "bg-[#0e1421]"}>
+                    <td className="px-4 py-2.5 font-mono font-bold text-cyan-300">{r.metal}</td>
+                    {[r.oxHot, r.oxCold, r.redHot, r.redCold].map((cval, j) => (
+                      <td key={j} className="px-3 py-2.5"><span className="flex items-center gap-2 text-white/80"><Swatch c={tone(cval)} /> {cval}</span></td>
+                    ))}
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <p className="mt-2 text-xs text-white/40">Na₂CO₃ bead: green bead → Mn compound · yellow bead → Cr compound. Borax bead test is done only for coloured salts.</p>
+        </section>
+
+        {/* Sulphide colours */}
+        <section className="mb-8">
+          <h2 className="text-lg font-black text-cyan-300 mb-3">⚫ Sulphide Precipitate Colours</h2>
+          <div className="grid gap-2 md:grid-cols-2 lg:grid-cols-3">
+            {guhaSulfides.map((p) => <ColorChip key={p.name} name={p.name} color={p.color} />)}
+          </div>
+        </section>
+
+        {/* Hydroxide colours */}
+        <section className="mb-8">
+          <h2 className="text-lg font-black text-cyan-300 mb-3">💠 Hydroxide Precipitate Colours</h2>
+          <div className="grid gap-2 md:grid-cols-2 lg:grid-cols-3">
+            {guhaHydroxides.map((p) => <ColorChip key={p.name} name={p.name} color={p.color} />)}
+          </div>
+        </section>
+
+        {/* Other characteristic colours */}
+        <section>
+          <h2 className="text-lg font-black text-cyan-300 mb-3">✨ Other Characteristic Colours</h2>
+          <div className="grid gap-2 md:grid-cols-2 lg:grid-cols-3">
+            {guhaOther.map((p) => <ColorChip key={p.name} name={p.name} color={p.color} />)}
+          </div>
+          <p className="mt-4 text-xs text-white/35">Source: Salt analysis (GUHA) — Qualitative Salt Analysis, Ch. 7. All colours above are taken directly from that document.</p>
         </section>
       </div>
     </main>

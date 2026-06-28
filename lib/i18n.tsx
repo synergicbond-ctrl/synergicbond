@@ -122,6 +122,10 @@ const DICT: Record<string, Record<Lang, string>> = {
 
   // ── Nav: About ──
   "nav.about": { english: "About & Mission", hindi: "हमारे बारे में", hinglish: "About & Mission", spanish: "Acerca y Misión", arabic: "من نحن ورسالتنا", french: "À Propos & Mission", german: "Über Uns & Mission" },
+  "nav.home": { english: "Home", hindi: "होम", hinglish: "Home", spanish: "Inicio", arabic: "الرئيسية", french: "Accueil", german: "Start" },
+  "nav.search": { english: "Search", hindi: "सर्च", hinglish: "Search", spanish: "Buscar", arabic: "بحث", french: "Recherche", german: "Suche" },
+  "nav.library": { english: "Library", hindi: "लाइब्रेरी", hinglish: "Library", spanish: "Biblioteca", arabic: "المكتبة", french: "Bibliothèque", german: "Bibliothek" },
+  "nav.more": { english: "More", hindi: "और", hinglish: "More", spanish: "Más", arabic: "المزيد", french: "Plus", german: "Mehr" },
 
   // ── Resources feature cards (titles + descriptions) ──
   "res.tutor.title": { english: "AI Tutor", hindi: "AI ट्यूटर", hinglish: "AI Tutor", spanish: "Tutor IA", arabic: "مدرّس ذكي", french: "Tuteur IA", german: "KI-Tutor" },

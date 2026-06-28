@@ -9,9 +9,22 @@ import {
   BookOpen, ClipboardList, FlaskConical, FileText,
   Bot, Camera, PenLine, Atom, Target, Calendar,
   BarChart2, Medal, Trophy, Archive, Gem, Menu, X,
-  Globe, ChevronDown, Sparkles, GraduationCap, Layers, Info
+  Globe, ChevronDown, Sparkles, GraduationCap, Layers, Info,
+  Home, Search, LayoutGrid
 } from "lucide-react";
 
+// Compact dock — the 7 core destinations (icon-only, with tooltips)
+const dockLinks = [
+  { href: "/",             tkey: "nav.home",        icon: Home },
+  { href: "/search",       tkey: "nav.search",      icon: Search },
+  { href: "/vault",        tkey: "nav.vault",       icon: Archive },
+  { href: "/tutor",        tkey: "nav.aiTutor",     icon: Bot },
+  { href: "/doubt-solver", tkey: "nav.doubtSolver", icon: Sparkles },
+  { href: "/quiz",         tkey: "nav.quiz",        icon: FlaskConical },
+  { href: "/exam",         tkey: "nav.mockExam",    icon: FileText },
+];
+
+// Full catalog — shown in the "More" grid panel
 const mainLinks = [
   { href: "/notes",            tkey: "nav.notes",        icon: BookOpen,      category: "learn" },
   { href: "/assignment",       tkey: "nav.assignments",  icon: ClipboardList, category: "learn" },
@@ -30,6 +43,7 @@ const mainLinks = [
   { href: "/leaderboard",      tkey: "nav.leaderboard",  icon: Trophy,        category: "game"  },
   { href: "/lab",              tkey: "nav.virtualLab",   icon: FlaskConical,  category: "ai"    },
   { href: "/vault",            tkey: "nav.vault",        icon: Archive,       category: "learn" },
+  { href: "/library",          tkey: "nav.library",      icon: BookOpen,      category: "learn" },
   { href: "/teachers",         tkey: "nav.teachers",     icon: GraduationCap, category: "other" },
   { href: "/about",            tkey: "nav.about",        icon: Info,          category: "other" },
   { href: "/pricing",          tkey: "nav.pricing",      icon: Gem,           category: "other" },
@@ -40,6 +54,7 @@ export default function Navbar() {
   const { lang, setLang, t } = useT();
   const [menuOpen, setMenuOpen] = useState(false);
   const [langOpen, setLangOpen] = useState(false);
+  const [moreOpen, setMoreOpen] = useState(false);
 
   const currentLang = LANGS.find((l) => l.code === lang) ?? LANGS[0];
 
@@ -67,34 +82,71 @@ export default function Navbar() {
           </div>
         </Link>
 
-        {/* Desktop Nav — glossy glass dock */}
-        <nav className="hidden lg:flex items-center flex-1 mx-4 overflow-hidden">
-          <div
-            className="flex items-center gap-1 overflow-x-auto scrollbar-none px-2 py-1.5 rounded-full bg-[#111827]/70 backdrop-blur-md border border-white/10 shadow-2xl shadow-black/40"
-            style={{ scrollbarWidth: "none" }}
-          >
-            {mainLinks.map((link) => {
+        {/* Desktop Nav — compact glass icon dock (system layer) */}
+        <nav className="hidden lg:flex items-center justify-center flex-1 mx-4 relative">
+          <div className="flex items-center gap-1 px-2 py-1.5 rounded-2xl bg-white/[0.06] backdrop-blur-xl border border-white/[0.08] shadow-[0_8px_32px_rgba(0,0,0,0.4)]">
+            {dockLinks.map((link) => {
               const Icon = link.icon;
               const active = pathname === link.href;
               return (
                 <Link
                   key={link.href}
                   href={link.href}
-                  className={`relative flex items-center gap-2 whitespace-nowrap px-3 py-1.5 rounded-full text-sm transition-all duration-200 group/tab
-                    ${active
-                      ? "text-white font-semibold bg-white/10 shadow-[inset_0_1px_0_rgba(255,255,255,0.12)]"
-                      : "text-gray-400 hover:text-white font-medium hover:bg-white/[0.04]"
-                    }`}
+                  title={t(link.tkey)}
+                  className={`group/dock relative flex h-9 w-9 items-center justify-center rounded-xl transition-all duration-200 hover:scale-105 active:scale-95
+                    ${active ? "bg-white/10" : "hover:bg-white/[0.06]"}`}
                 >
-                  <Icon
-                    className={`h-[18px] w-[18px] flex-shrink-0 transition-colors
-                      ${active ? "text-cyan-400" : "text-gray-500 group-hover/tab:text-gray-300"}`}
-                  />
-                  {t(link.tkey)}
+                  <Icon className={`h-[21px] w-[21px] transition-colors ${active ? "text-cyan-400" : "text-gray-400 group-hover/dock:text-white"}`} strokeWidth={active ? 2.2 : 1.8} />
+                  {/* active dot */}
+                  {active && <span className="absolute -bottom-0.5 left-1/2 -translate-x-1/2 h-1 w-1 rounded-full bg-cyan-400 shadow-[0_0_6px_rgba(34,211,238,0.9)]" />}
+                  {/* hover tooltip */}
+                  <span className="pointer-events-none absolute -bottom-9 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-lg bg-[#111827] border border-white/10 px-2 py-1 text-[10px] font-semibold text-white opacity-0 translate-y-1 transition-all duration-150 group-hover/dock:opacity-100 group-hover/dock:translate-y-0 z-50">
+                    {t(link.tkey)}
+                  </span>
                 </Link>
               );
             })}
+
+            {/* divider */}
+            <span className="mx-1 h-5 w-px bg-white/10" />
+
+            {/* More — opens full catalog */}
+            <button
+              onClick={() => setMoreOpen(!moreOpen)}
+              title={t("nav.more")}
+              className={`group/dock relative flex h-9 w-9 items-center justify-center rounded-xl transition-all duration-200 hover:scale-105 active:scale-95 ${moreOpen ? "bg-white/10" : "hover:bg-white/[0.06]"}`}
+            >
+              <LayoutGrid className={`h-[21px] w-[21px] transition-colors ${moreOpen ? "text-cyan-400" : "text-gray-400 group-hover/dock:text-white"}`} strokeWidth={1.8} />
+            </button>
           </div>
+
+          {/* More panel — full catalog grid */}
+          {moreOpen && (
+            <>
+              <div className="fixed inset-0 z-40" onClick={() => setMoreOpen(false)} />
+              <div className="absolute top-14 left-1/2 -translate-x-1/2 z-50 w-[520px] max-w-[90vw] rounded-2xl border border-white/[0.08] bg-[#111827]/95 backdrop-blur-xl shadow-2xl shadow-black/50 p-3">
+                <div className="grid grid-cols-3 gap-1">
+                  {mainLinks.map((link) => {
+                    const Icon = link.icon;
+                    const active = pathname === link.href;
+                    return (
+                      <Link
+                        key={link.href}
+                        href={link.href}
+                        onClick={() => setMoreOpen(false)}
+                        className={`flex items-center gap-2.5 px-3 py-2.5 rounded-xl text-sm transition ${
+                          active ? "bg-cyan-500/15 text-cyan-300 font-semibold" : "text-gray-300 hover:text-white hover:bg-white/5"
+                        }`}
+                      >
+                        <Icon className={`h-4 w-4 flex-shrink-0 ${active ? "text-cyan-400" : "text-gray-500"}`} />
+                        {t(link.tkey)}
+                      </Link>
+                    );
+                  })}
+                </div>
+              </div>
+            </>
+          )}
         </nav>
 
         {/* Right Utilities */}

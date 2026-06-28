@@ -1,3 +1,4 @@
+import HomeHero from "@/components/HomeHero";
 import ControlCenter from "@/components/ControlCenter";
 import { fetchControlCenterProgress } from "@/lib/controlCenterData";
 import KnowledgeVault from "@/components/KnowledgeVault";
@@ -22,6 +23,8 @@ export default async function Home() {
 
   return (
     <main className="min-h-screen bg-[#0B0F19] text-white">
+
+      <HomeHero />
 
       <ControlCenter progress={progress} />
 

@@ -57,17 +57,17 @@ export default function ControlCenter({ progress }: { progress?: ControlCenterPr
   }
 
   return (
-    <section className="mx-auto max-w-7xl px-6 pt-10 pb-6">
+    <section className="mx-auto max-w-7xl px-6 pt-2 pb-6">
 
-      {/* Hero control panel */}
+      {/* Control panel sub-heading (brand hero sits above this section) */}
       <div className="text-center mb-6">
         <div className="inline-flex items-center gap-2 rounded-full border border-cyan-400/20 bg-cyan-500/10 px-4 py-1.5 text-cyan-300 text-xs font-bold tracking-wider mb-4">
           <span className="relative flex h-2 w-2"><span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75" /><span className="relative inline-flex rounded-full h-2 w-2 bg-cyan-400" /></span>
-          CHEMISTRY OS · CONTROL CENTER
+          CONTROL CENTER
         </div>
-        <h1 className="text-3xl md:text-5xl font-black bg-gradient-to-r from-[#00F5D4] via-[#00BBF9] to-[#9B5DE5] bg-clip-text text-transparent tracking-tight">
+        <h2 className="text-2xl md:text-3xl font-black text-white tracking-tight">
           {isReal ? `Welcome back, ${progress!.name}` : "What do you want to master today?"}
-        </h1>
+        </h2>
       </div>
 
       {/* AI global search */}

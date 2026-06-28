@@ -1,5 +1,6 @@
 import "@/app/globals.css";
 import { ThemeProvider } from "@/components/ThemeContext";
+import { LanguageProvider } from "@/lib/i18n";
 
 export const metadata = {
   title: "SYNERGIC BOND — Chemistry OS",
@@ -20,7 +21,9 @@ export default function RootLayout({
       {/* Typography enforced globally via globals.css → SF Pro / -apple-system / BlinkMacSystemFont */}
       <body className="min-h-screen bg-[#0B0F19] text-white flex flex-col m-0 p-0 w-full antialiased">
         <ThemeProvider>
-          {children}
+          <LanguageProvider>
+            {children}
+          </LanguageProvider>
         </ThemeProvider>
       </body>
     </html>

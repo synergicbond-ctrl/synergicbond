@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import MoleculeLogo from "@/components/MoleculeLogo";
+import { useT, LANGS, type Lang } from "@/lib/i18n";
 import {
   BookOpen, ClipboardList, FlaskConical, FileText,
   Bot, Camera, PenLine, Atom, Target, Calendar,
@@ -12,49 +13,38 @@ import {
 } from "lucide-react";
 
 const mainLinks = [
-  { href: "/notes",            label: "Notes",          icon: BookOpen,      category: "learn" },
-  { href: "/assignment",       label: "Assignments",    icon: ClipboardList, category: "learn" },
-  { href: "/quiz",             label: "Quiz",           icon: FlaskConical,  category: "learn" },
-  { href: "/exam",             label: "Mock Exam",      icon: FileText,      category: "learn" },
-  { href: "/tutor",            label: "AI Tutor",       icon: Bot,           category: "ai"    },
-  { href: "/snap-solve",       label: "Snap & Solve",   icon: Camera,        category: "ai"    },
-  { href: "/doubt-solver",     label: "Doubt Solver",   icon: Sparkles,      category: "ai"    },
-  { href: "/handwritten-notes",label: "Handwritten",    icon: PenLine,       category: "ai"    },
-  { href: "/study-tools",      label: "Study Tools",    icon: Layers,        category: "learn" },
-  { href: "/molecule",         label: "Molecule",       icon: Atom,          category: "ai"    },
-  { href: "/daily-challenge",  label: "Challenge",      icon: Target,        category: "game"  },
-  { href: "/study-plan",       label: "Study Plan",     icon: Calendar,      category: "game"  },
-  { href: "/exam-predictor",   label: "Predictor",      icon: BarChart2,     category: "game"  },
-  { href: "/achievements",     label: "Achievements",   icon: Medal,         category: "game"  },
-  { href: "/leaderboard",      label: "Leaderboard",    icon: Trophy,        category: "game"  },
-  { href: "/lab",              label: "Virtual Lab",    icon: FlaskConical,  category: "ai"    },
-  { href: "/vault",            label: "Vault",          icon: Archive,       category: "learn" },
-  { href: "/teachers",         label: "Teachers",       icon: GraduationCap, category: "other" },
-  { href: "/pricing",          label: "Pricing",        icon: Gem,           category: "other" },
-];
-
-const LANGS = [
-  { code: "english",  label: "English",  short: "EN", flag: "🇬🇧" },
-  { code: "hindi",    label: "हिन्दी",     short: "HI", flag: "🇮🇳" },
-  { code: "hinglish", label: "Hinglish", short: "HX", flag: "🇮🇳" },
-  { code: "spanish",  label: "Español",  short: "ES", flag: "🇪🇸" },
-  { code: "arabic",   label: "العربية",   short: "AR", flag: "🇸🇦" },
-  { code: "french",   label: "Français", short: "FR", flag: "🇫🇷" },
-  { code: "german",   label: "Deutsch",  short: "DE", flag: "🇩🇪" },
+  { href: "/notes",            tkey: "nav.notes",        icon: BookOpen,      category: "learn" },
+  { href: "/assignment",       tkey: "nav.assignments",  icon: ClipboardList, category: "learn" },
+  { href: "/quiz",             tkey: "nav.quiz",         icon: FlaskConical,  category: "learn" },
+  { href: "/exam",             tkey: "nav.mockExam",     icon: FileText,      category: "learn" },
+  { href: "/tutor",            tkey: "nav.aiTutor",      icon: Bot,           category: "ai"    },
+  { href: "/snap-solve",       tkey: "nav.snapSolve",    icon: Camera,        category: "ai"    },
+  { href: "/doubt-solver",     tkey: "nav.doubtSolver",  icon: Sparkles,      category: "ai"    },
+  { href: "/handwritten-notes",tkey: "nav.handwritten",  icon: PenLine,       category: "ai"    },
+  { href: "/study-tools",      tkey: "nav.studyTools",   icon: Layers,        category: "learn" },
+  { href: "/molecule",         tkey: "nav.molecule",     icon: Atom,          category: "ai"    },
+  { href: "/daily-challenge",  tkey: "nav.challenge",    icon: Target,        category: "game"  },
+  { href: "/study-plan",       tkey: "nav.studyPlan",    icon: Calendar,      category: "game"  },
+  { href: "/exam-predictor",   tkey: "nav.predictor",    icon: BarChart2,     category: "game"  },
+  { href: "/achievements",     tkey: "nav.achievements", icon: Medal,         category: "game"  },
+  { href: "/leaderboard",      tkey: "nav.leaderboard",  icon: Trophy,        category: "game"  },
+  { href: "/lab",              tkey: "nav.virtualLab",   icon: FlaskConical,  category: "ai"    },
+  { href: "/vault",            tkey: "nav.vault",        icon: Archive,       category: "learn" },
+  { href: "/teachers",         tkey: "nav.teachers",     icon: GraduationCap, category: "other" },
+  { href: "/pricing",          tkey: "nav.pricing",      icon: Gem,           category: "other" },
 ];
 
 export default function Navbar() {
   const pathname = usePathname();
+  const { lang, setLang, t } = useT();
   const [menuOpen, setMenuOpen] = useState(false);
-  const [lang, setLang] = useState("english");
   const [langOpen, setLangOpen] = useState(false);
 
   const currentLang = LANGS.find((l) => l.code === lang) ?? LANGS[0];
 
-  function switchLang(l: string) {
+  function switchLang(l: Lang) {
     setLang(l);
     setLangOpen(false);
-    if (typeof window !== "undefined") localStorage.setItem("sb_lang", l);
   }
 
   return (
@@ -99,7 +89,7 @@ export default function Navbar() {
                     className={`h-[18px] w-[18px] flex-shrink-0 transition-colors
                       ${active ? "text-cyan-400" : "text-gray-500 group-hover/tab:text-gray-300"}`}
                   />
-                  {link.label}
+                  {t(link.tkey)}
                 </Link>
               );
             })}
@@ -153,7 +143,7 @@ export default function Navbar() {
             href="/auth/signin"
             className="rounded-xl bg-gradient-to-r from-cyan-400 to-sky-500 px-3 py-1.5 text-xs font-semibold text-black shadow-lg shadow-cyan-500/20 transition hover:-translate-y-0.5"
           >
-            Sign In →
+            {t("nav.signIn")} →
           </Link>
 
           <button
@@ -200,7 +190,7 @@ export default function Navbar() {
                   }`}
                 >
                   <Icon className={`h-3.5 w-3.5 ${active ? "text-cyan-400" : "text-gray-500"}`} />
-                  {link.label}
+                  {t(link.tkey)}
                 </Link>
               );
             })}

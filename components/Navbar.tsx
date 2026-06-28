@@ -12,18 +12,62 @@ import {
   BarChart2, Medal, Trophy, Archive, Gem, Menu, X,
   Globe, ChevronDown, Sparkles, GraduationCap, Layers, Info,
   Home, Search, LayoutGrid, GitBranch, Sigma, Palette,
-  LayoutDashboard, LogOut, UserCircle
+  LayoutDashboard, LogOut, UserCircle, BookMarked
 } from "lucide-react";
 
-// Compact dock — the 7 core destinations (icon-only, with tooltips)
-const dockLinks = [
-  { href: "/",             tkey: "nav.home",        icon: Home },
-  { href: "/search",       tkey: "nav.search",      icon: Search },
-  { href: "/vault",        tkey: "nav.vault",       icon: Archive },
-  { href: "/tutor",        tkey: "nav.aiTutor",     icon: Bot },
-  { href: "/doubt-solver", tkey: "nav.doubtSolver", icon: Sparkles },
-  { href: "/quiz",         tkey: "nav.quiz",        icon: FlaskConical },
-  { href: "/exam",         tkey: "nav.mockExam",    icon: FileText },
+// ALLEN-style category mega-menus (label + grouped links with descriptions)
+type MenuItem = { href: string; label: string; desc: string; icon: any };
+type Menu = { title: string; items: MenuItem[] };
+const menus: Menu[] = [
+  {
+    title: "Learn",
+    items: [
+      { href: "/vault",          label: "Knowledge Vault",   desc: "Concepts, reactions, formulas, exceptions", icon: Archive },
+      { href: "/notes",          label: "AI Notes",          desc: "Exam-focused notes for any topic",          icon: BookOpen },
+      { href: "/reagents",       label: "Reagents & Reactions", desc: "Reagents, redox, name reactions, more",   icon: FlaskConical },
+      { href: "/name-reactions", label: "Name Reactions",    desc: "700+ named reactions, AI-explained",        icon: GitBranch },
+      { href: "/library",        label: "Book Library",      desc: "70+ world-class textbooks",                 icon: BookMarked },
+      { href: "/study-tools",    label: "Study Tools",       desc: "Multicolor notes, focus timer, roadmap",    icon: Layers },
+    ],
+  },
+  {
+    title: "Practice",
+    items: [
+      { href: "/quiz",            label: "Quiz",            desc: "Topic-wise MCQ practice",         icon: FlaskConical },
+      { href: "/exam",            label: "Mock Exam",       desc: "Full JEE/NEET-pattern papers",    icon: FileText },
+      { href: "/assignment",      label: "Assignments",     desc: "Auto-generated practice sets",     icon: ClipboardList },
+      { href: "/daily-challenge", label: "Daily Challenge", desc: "One high-yield question a day",    icon: Target },
+    ],
+  },
+  {
+    title: "AI Tools",
+    items: [
+      { href: "/tutor",            label: "AI Tutor",       desc: "24×7 step-by-step doubt engine",  icon: Bot },
+      { href: "/doubt-solver",     label: "Doubt Solver",   desc: "Photo / voice → full solution",   icon: Sparkles },
+      { href: "/snap-solve",       label: "Snap & Solve",   desc: "Photograph a problem, get steps", icon: Camera },
+      { href: "/handwritten-notes",label: "Handwritten",    desc: "Convert handwriting to notes",    icon: PenLine },
+      { href: "/molecule",         label: "Molecule Explorer", desc: "Look up any compound",         icon: Atom },
+      { href: "/lab",              label: "Virtual Lab",    desc: "Interactive titration sim",       icon: FlaskConical },
+    ],
+  },
+  {
+    title: "Plan & Track",
+    items: [
+      { href: "/dashboard",      label: "My Dashboard",   desc: "Your progress & analytics",       icon: LayoutDashboard },
+      { href: "/study-plan",     label: "Study Plan",     desc: "Personalized 30-day plan",        icon: Calendar },
+      { href: "/exam-predictor", label: "Exam Predictor", desc: "Estimate your rank",              icon: BarChart2 },
+      { href: "/achievements",   label: "Achievements",   desc: "Badges, XP, levels",              icon: Medal },
+      { href: "/leaderboard",    label: "Leaderboard",    desc: "Compete with peers",              icon: Trophy },
+    ],
+  },
+  {
+    title: "More",
+    items: [
+      { href: "/teachers", label: "Teacher Hub",     desc: "Curriculum, analytics, routing", icon: GraduationCap },
+      { href: "/about",    label: "About & Mission", desc: "Why SYNERGIC BOND exists",       icon: Info },
+      { href: "/pricing",  label: "Pricing",         desc: "Free core + PRO plans",          icon: Gem },
+    ],
+  },
 ];
 
 // Full catalog — shown in the "More" grid panel
@@ -57,7 +101,7 @@ export default function Navbar() {
   const { lang, setLang, t } = useT();
   const [menuOpen, setMenuOpen] = useState(false);
   const [langOpen, setLangOpen] = useState(false);
-  const [moreOpen, setMoreOpen] = useState(false);
+  const [openMenu, setOpenMenu] = useState<string | null>(null);
   const [acctOpen, setAcctOpen] = useState(false);
   const [email, setEmail] = useState<string | null>(null);
   const [isGuest, setIsGuest] = useState(false);
@@ -108,70 +152,63 @@ export default function Navbar() {
           </div>
         </Link>
 
-        {/* Desktop Nav — glass icon dock with labels */}
-        <nav className="hidden lg:flex items-center justify-center flex-1 mx-4 relative">
-          <div className="flex items-end gap-0.5 px-2 py-1.5 rounded-2xl bg-white/[0.06] backdrop-blur-xl border border-white/[0.08] shadow-[0_8px_32px_rgba(0,0,0,0.4)]">
-            {dockLinks.map((link) => {
-              const Icon = link.icon;
-              const active = pathname === link.href;
-              return (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  className={`group/dock relative flex flex-col items-center gap-1 px-2.5 py-1.5 rounded-xl transition-all duration-200 hover:scale-105 active:scale-95
-                    ${active ? "bg-white/10" : "hover:bg-white/[0.06]"}`}
+        {/* Desktop Nav — ALLEN-style category mega-menus */}
+        <nav className="hidden lg:flex items-center justify-center flex-1 gap-1">
+          {/* Search quick-link */}
+          <Link href="/search" className="flex items-center gap-1.5 px-3 py-2 rounded-lg text-sm font-medium text-gray-300 hover:text-white hover:bg-white/[0.05] transition">
+            <Search className="h-4 w-4" /> {t("nav.search")}
+          </Link>
+
+          {menus.map((menu) => {
+            const open = openMenu === menu.title;
+            const hasActive = menu.items.some((it) => it.href === pathname);
+            return (
+              <div
+                key={menu.title}
+                className="relative"
+                onMouseEnter={() => setOpenMenu(menu.title)}
+                onMouseLeave={() => setOpenMenu(null)}
+              >
+                <button
+                  className={`flex items-center gap-1 px-3 py-2 rounded-lg text-sm font-medium transition ${
+                    open || hasActive ? "text-white bg-white/[0.06]" : "text-gray-300 hover:text-white hover:bg-white/[0.05]"
+                  }`}
                 >
-                  <Icon className={`h-[26px] w-[26px] transition-colors ${active ? "text-cyan-400" : "text-gray-400 group-hover/dock:text-white"}`} strokeWidth={active ? 2.1 : 1.7} />
-                  <span className={`text-[10px] leading-none font-medium transition-colors ${active ? "text-white" : "text-gray-500 group-hover/dock:text-gray-300"}`}>
-                    {t(link.tkey)}
-                  </span>
-                  {active && <span className="absolute top-0.5 right-1.5 h-1 w-1 rounded-full bg-cyan-400 shadow-[0_0_6px_rgba(34,211,238,0.9)]" />}
-                </Link>
-              );
-            })}
+                  {menu.title}
+                  <ChevronDown className={`h-3.5 w-3.5 transition-transform ${open ? "rotate-180" : ""}`} />
+                </button>
 
-            {/* divider */}
-            <span className="mx-1 h-9 w-px bg-white/10 self-center" />
-
-            {/* More — opens full catalog */}
-            <button
-              onClick={() => setMoreOpen(!moreOpen)}
-              className={`group/dock flex flex-col items-center gap-1 px-2.5 py-1.5 rounded-xl transition-all duration-200 hover:scale-105 active:scale-95 ${moreOpen ? "bg-white/10" : "hover:bg-white/[0.06]"}`}
-            >
-              <LayoutGrid className={`h-[26px] w-[26px] transition-colors ${moreOpen ? "text-cyan-400" : "text-gray-400 group-hover/dock:text-white"}`} strokeWidth={1.7} />
-              <span className={`text-[10px] leading-none font-medium transition-colors ${moreOpen ? "text-white" : "text-gray-500 group-hover/dock:text-gray-300"}`}>
-                {t("nav.more")}
-              </span>
-            </button>
-          </div>
-
-          {/* More panel — full catalog grid */}
-          {moreOpen && (
-            <>
-              <div className="fixed inset-0 z-40" onClick={() => setMoreOpen(false)} />
-              <div className="absolute top-14 left-1/2 -translate-x-1/2 z-50 w-[520px] max-w-[90vw] rounded-2xl border border-white/[0.08] bg-[#111827]/95 backdrop-blur-xl shadow-2xl shadow-black/50 p-3">
-                <div className="grid grid-cols-3 gap-1">
-                  {mainLinks.map((link) => {
-                    const Icon = link.icon;
-                    const active = pathname === link.href;
-                    return (
-                      <Link
-                        key={link.href}
-                        href={link.href}
-                        onClick={() => setMoreOpen(false)}
-                        className={`flex items-center gap-2.5 px-3 py-2.5 rounded-xl text-sm transition ${
-                          active ? "bg-cyan-500/15 text-cyan-300 font-semibold" : "text-gray-300 hover:text-white hover:bg-white/5"
-                        }`}
-                      >
-                        <Icon className={`h-4 w-4 flex-shrink-0 ${active ? "text-cyan-400" : "text-gray-500"}`} />
-                        {t(link.tkey)}
-                      </Link>
-                    );
-                  })}
-                </div>
+                {open && (
+                  <div className="absolute left-1/2 -translate-x-1/2 top-full pt-2 z-50">
+                    <div className="w-[340px] rounded-2xl border border-white/[0.08] bg-[#111827]/98 backdrop-blur-xl shadow-2xl shadow-black/50 p-2">
+                      {menu.items.map((it) => {
+                        const Icon = it.icon;
+                        const active = pathname === it.href;
+                        return (
+                          <Link
+                            key={it.href}
+                            href={it.href}
+                            onClick={() => setOpenMenu(null)}
+                            className={`flex items-start gap-3 px-3 py-2.5 rounded-xl transition ${
+                              active ? "bg-cyan-500/10" : "hover:bg-white/[0.05]"
+                            }`}
+                          >
+                            <span className={`flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-lg border ${active ? "border-cyan-400/30 bg-cyan-500/10" : "border-white/[0.06] bg-white/[0.03]"}`}>
+                              <Icon className={`h-4 w-4 ${active ? "text-cyan-400" : "text-gray-400"}`} />
+                            </span>
+                            <span className="min-w-0">
+                              <span className={`block text-sm font-semibold ${active ? "text-cyan-300" : "text-white"}`}>{it.label}</span>
+                              <span className="block text-xs text-gray-400 leading-snug">{it.desc}</span>
+                            </span>
+                          </Link>
+                        );
+                      })}
+                    </div>
+                  </div>
+                )}
               </div>
-            </>
-          )}
+            );
+          })}
         </nav>
 
         {/* Right Utilities */}

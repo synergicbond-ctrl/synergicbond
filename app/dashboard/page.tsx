@@ -1,5 +1,5 @@
-import { redirect } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
+import GuestDashboardPreview from "@/components/dashboard/GuestDashboardPreview";
 import { DashboardHeader } from "@/components/dashboard/DashboardHeader";
 import { SummaryCards } from "@/components/dashboard/SummaryCards";
 import { RecentTests } from "@/components/dashboard/RecentTests";
@@ -16,8 +16,9 @@ export default async function DashboardPage() {
     data: { user },
   } = await supabase.auth.getUser();
 
+  // Guests see a rich demo preview instead of a login wall
   if (!user) {
-    redirect("/auth/signin");
+    return <GuestDashboardPreview />;
   }
 
   const { data: profile } = await supabase

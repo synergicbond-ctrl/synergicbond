@@ -21,19 +21,14 @@ type Menu = { title: string; items: MenuItem[]; wide?: boolean };
 const menus: Menu[] = [
   {
     title: "Learn",
-    wide: true,
     items: [
-      { href: "/vault",           label: "Knowledge Vault",    desc: "Concepts, reactions, formulas, exceptions", icon: Archive },
-      { href: "/periodic-table",  label: "Periodic Table",     desc: "Interactive — tap any element",             icon: Table2 },
-      { href: "/name-reactions",  label: "Name Reactions",     desc: "700+ named reactions, AI-explained",        icon: GitBranch },
-      { href: "/reagents",        label: "Reagent Master List",desc: "Every reagent & what it does",              icon: FlaskConical },
-      { href: "/redox-reactions", label: "Oxidation / Reduction", desc: "Substrate → product → reagent",          icon: Sparkles },
-      { href: "/solubility",      label: "Solubility Rules",   desc: "Soluble/insoluble + exceptions",            icon: Sigma },
-      { href: "/salt-colors",     label: "Colours & Salt Analysis", desc: "Ion, ppt, flame test colours",         icon: Palette },
-      { href: "/properties",      label: "Physical Properties",desc: "BP/MP, state, geometry, dipole",            icon: Atom },
-      { href: "/notes",           label: "AI Notes",           desc: "Exam-focused notes for any topic",          icon: BookOpen },
-      { href: "/study-tools",     label: "Study Tools",        desc: "Multicolor notes, focus timer, roadmap",    icon: Layers },
-      { href: "/library",         label: "Book Library",       desc: "70+ world-class textbooks",                 icon: BookMarked },
+      { href: "/vault",          label: "Knowledge Vault",   desc: "Concepts, reactions, formulas, exceptions", icon: Archive },
+      { href: "/periodic-table", label: "Periodic Table",    desc: "Interactive — tap any element",             icon: Table2 },
+      { href: "/reagents",       label: "Reagents & Reference", desc: "Reagents · redox · name reactions · solubility · colours · properties", icon: FlaskConical },
+      { href: "/molecule",       label: "Molecule Explorer", desc: "Look up any compound's data",               icon: Atom },
+      { href: "/notes",          label: "AI Notes",          desc: "Exam-focused notes for any topic",          icon: BookOpen },
+      { href: "/study-tools",    label: "Study Tools",       desc: "Multicolor notes, focus timer, roadmap",    icon: Layers },
+      { href: "/library",        label: "Book Library",      desc: "70+ world-class textbooks",                 icon: BookMarked },
     ],
   },
   {

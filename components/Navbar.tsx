@@ -12,22 +12,28 @@ import {
   BarChart2, Medal, Trophy, Archive, Gem, Menu, X,
   Globe, ChevronDown, Sparkles, GraduationCap, Layers, Info,
   Home, Search, LayoutGrid, GitBranch, Sigma, Palette,
-  LayoutDashboard, LogOut, UserCircle, BookMarked
+  LayoutDashboard, LogOut, UserCircle, BookMarked, Table2
 } from "lucide-react";
 
 // ALLEN-style category mega-menus (label + grouped links with descriptions)
 type MenuItem = { href: string; label: string; desc: string; icon: any };
-type Menu = { title: string; items: MenuItem[] };
+type Menu = { title: string; items: MenuItem[]; wide?: boolean };
 const menus: Menu[] = [
   {
     title: "Learn",
+    wide: true,
     items: [
-      { href: "/vault",          label: "Knowledge Vault",   desc: "Concepts, reactions, formulas, exceptions", icon: Archive },
-      { href: "/notes",          label: "AI Notes",          desc: "Exam-focused notes for any topic",          icon: BookOpen },
-      { href: "/reagents",       label: "Reagents & Reactions", desc: "Reagents, redox, name reactions, more",   icon: FlaskConical },
-      { href: "/name-reactions", label: "Name Reactions",    desc: "700+ named reactions, AI-explained",        icon: GitBranch },
-      { href: "/library",        label: "Book Library",      desc: "70+ world-class textbooks",                 icon: BookMarked },
-      { href: "/study-tools",    label: "Study Tools",       desc: "Multicolor notes, focus timer, roadmap",    icon: Layers },
+      { href: "/vault",           label: "Knowledge Vault",    desc: "Concepts, reactions, formulas, exceptions", icon: Archive },
+      { href: "/periodic-table",  label: "Periodic Table",     desc: "Interactive — tap any element",             icon: Table2 },
+      { href: "/name-reactions",  label: "Name Reactions",     desc: "700+ named reactions, AI-explained",        icon: GitBranch },
+      { href: "/reagents",        label: "Reagent Master List",desc: "Every reagent & what it does",              icon: FlaskConical },
+      { href: "/redox-reactions", label: "Oxidation / Reduction", desc: "Substrate → product → reagent",          icon: Sparkles },
+      { href: "/solubility",      label: "Solubility Rules",   desc: "Soluble/insoluble + exceptions",            icon: Sigma },
+      { href: "/salt-colors",     label: "Colours & Salt Analysis", desc: "Ion, ppt, flame test colours",         icon: Palette },
+      { href: "/properties",      label: "Physical Properties",desc: "BP/MP, state, geometry, dipole",            icon: Atom },
+      { href: "/notes",           label: "AI Notes",           desc: "Exam-focused notes for any topic",          icon: BookOpen },
+      { href: "/study-tools",     label: "Study Tools",        desc: "Multicolor notes, focus timer, roadmap",    icon: Layers },
+      { href: "/library",         label: "Book Library",       desc: "70+ world-class textbooks",                 icon: BookMarked },
     ],
   },
   {
@@ -180,7 +186,7 @@ export default function Navbar() {
 
                 {open && (
                   <div className="absolute left-1/2 -translate-x-1/2 top-full pt-2 z-50">
-                    <div className="w-[340px] rounded-2xl border border-white/[0.08] bg-[#111827]/98 backdrop-blur-xl shadow-2xl shadow-black/50 p-2">
+                    <div className={`rounded-2xl border border-white/[0.08] bg-[#111827]/98 backdrop-blur-xl shadow-2xl shadow-black/50 p-2 ${menu.wide ? "w-[640px] grid grid-cols-2 gap-0.5" : "w-[340px]"}`}>
                       {menu.items.map((it) => {
                         const Icon = it.icon;
                         const active = pathname === it.href;

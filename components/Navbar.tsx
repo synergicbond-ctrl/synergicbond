@@ -85,6 +85,7 @@ const menus: Menu[] = [
   {
     title: "Exam Tracks",
     items: [
+      { href: "/exam-center", label: "Exam Center",  desc: "2026 dates · fees · seats",       icon: LayoutGrid },
       { href: "/neet",      label: "NEET Track",     desc: "NCERT mastery roadmap",          icon: Microscope },
       { href: "/jee",       label: "JEE Track",      desc: "Advanced rank-booster path",     icon: Atom },
       { href: "/olympiads", label: "Olympiad Track", desc: "INChO · IChO preparation",        icon: Trophy },

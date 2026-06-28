@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Navbar from "@/components/Navbar";
 import { masterSyllabus } from "@/lib/masterSyllabus";
 import { pyqDatabase, type PYQQuestion } from "@/lib/pyqDatabase";
 
@@ -24,7 +23,6 @@ export default function PYQPage() {
 
   return (
     <main className="min-h-screen bg-black text-white">
-      <Navbar />
 
       <div className="max-w-7xl mx-auto px-6 py-16 space-y-10">
         <div>

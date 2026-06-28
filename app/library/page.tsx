@@ -1,4 +1,3 @@
-import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { BookMarked, ExternalLink, Star } from "lucide-react";
 
@@ -78,7 +77,6 @@ export default function LibraryPage() {
 
   return (
     <main className="min-h-screen bg-[#0B0F19] text-white">
-      <Navbar />
 
       <div className="mx-auto max-w-6xl px-6 py-12">
         {/* Header */}

@@ -1,4 +1,3 @@
-import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import KnowledgeVault from "@/components/KnowledgeVault";
 import AIChemistryEngine from "@/components/AIChemistryEngine";
@@ -20,7 +19,6 @@ import Footer from "@/components/Footer";
 export default function Home() {
   return (
     <main className="min-h-screen bg-[#0B0F19] text-white">
-      <Navbar />
 
       <Hero />
 

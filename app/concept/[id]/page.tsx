@@ -1,4 +1,3 @@
-import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import Stats from "@/components/Stats";
 
@@ -14,7 +13,6 @@ export default function Home() {
     <main className="min-h-screen bg-black text-white">
 
       {/* NAVBAR */}
-      <Navbar />
 
       {/* HERO + AI */}
       <section className="flex flex-col gap-6">

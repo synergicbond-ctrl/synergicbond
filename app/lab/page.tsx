@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Navbar from "@/components/Navbar";
 import { Volume2, FlaskConical, Beaker, Droplet, RotateCcw } from "lucide-react";
 
 type Reagent = {
@@ -55,7 +54,6 @@ export default function LabPage() {
 
   return (
     <main className="min-h-screen bg-[#0B0F19] text-white">
-      <Navbar />
       <div className="mx-auto max-w-5xl px-6 py-12">
 
         <div className="text-center mb-8">

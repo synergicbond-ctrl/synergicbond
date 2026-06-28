@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Navbar from "@/components/Navbar";
 import {
   LayoutList, BarChart3, Inbox, GraduationCap,
   Plus, GripVertical, ArrowRight, Clock, CheckCircle2,
@@ -47,7 +46,6 @@ export default function TeachersPage() {
 
   return (
     <main className="min-h-screen bg-[#0B0F19] text-white">
-      <Navbar />
       <div className="mx-auto max-w-6xl px-6 py-12">
 
         <div className="flex items-center gap-3 mb-2">

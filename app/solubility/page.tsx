@@ -1,4 +1,3 @@
-import Navbar from "@/components/Navbar";
 
 export const metadata = {
   title: "Solubility Rules — SYNERGIC BOND",
@@ -32,7 +31,6 @@ const tricky = [
 export default function SolubilityPage() {
   return (
     <main className="min-h-screen bg-[#0B0F19] text-white">
-      <Navbar />
       <div className="mx-auto max-w-5xl px-6 py-12">
         <p className="text-xs font-bold uppercase tracking-[0.4em] text-cyan-300 mb-3">Knowledge Vault · Inorganic</p>
         <h1 className="text-4xl font-black md:text-5xl">Solubility Rules</h1>

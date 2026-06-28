@@ -1,7 +1,6 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import Navbar from "@/components/Navbar";
 import { Search, FlaskConical } from "lucide-react";
 
 type Reagent = { name: string; formula: string; fn: string; level: string };
@@ -57,7 +56,6 @@ export default function ReagentsPage() {
 
   return (
     <main className="min-h-screen bg-[#0B0F19] text-white">
-      <Navbar />
       <div className="mx-auto max-w-5xl px-6 py-12">
         <p className="text-xs font-bold uppercase tracking-[0.4em] text-cyan-300 mb-3">Knowledge Vault · Organic</p>
         <h1 className="text-4xl font-black md:text-5xl">Reagent Master List</h1>

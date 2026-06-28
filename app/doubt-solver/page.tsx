@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useRef, useEffect, useCallback } from "react";
-import Navbar from "@/components/Navbar";
 import { checkRateLimit } from "@/lib/rateLimiter";
 import ReactMarkdown from "react-markdown";
 import remarkMath from "remark-math";
@@ -131,7 +130,6 @@ export default function DoubtSolverPage() {
 
   return (
     <main className="min-h-screen bg-[#0B0F19] text-white">
-      <Navbar />
 
       <div className="mx-auto max-w-5xl px-6 py-12">
 

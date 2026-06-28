@@ -1,6 +1,7 @@
 import "@/app/globals.css";
 import { ThemeProvider } from "@/components/ThemeContext";
 import { LanguageProvider } from "@/lib/i18n";
+import Navbar from "@/components/Navbar";
 
 export const metadata = {
   title: "SYNERGIC BOND — Chemistry OS",
@@ -22,6 +23,7 @@ export default function RootLayout({
       <body className="min-h-screen bg-[#0B0F19] text-white flex flex-col m-0 p-0 w-full antialiased">
         <ThemeProvider>
           <LanguageProvider>
+            <Navbar />
             {children}
           </LanguageProvider>
         </ThemeProvider>

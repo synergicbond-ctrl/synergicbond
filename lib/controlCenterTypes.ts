@@ -7,9 +7,37 @@ export interface CoreProgress {
   last: string;
 }
 
+// ---- Exam Intelligence (insight-based) ----
+export interface WeakTopicInsight {
+  name: string;
+  impact: "high" | "medium" | "low";
+  recommendation: string;
+}
+
+export interface ExamIntelligenceData {
+  examName: string;
+  readinessPercentage: number;
+  weakTopics: WeakTopicInsight[];
+}
+
 export interface ExamReadiness {
   readiness: number;
-  weak: string[];
+  weak: WeakTopicInsight[];
+}
+
+// ---- Periodic Table "Brain Mode" knowledge graph ----
+export interface ReactionPathway {
+  /** clean, unescaped LaTeX, e.g. "R-X + Mg \\rightarrow R-MgX" */
+  equation: string;
+  mechanismContext: string;
+}
+
+export interface BrainModeContext {
+  symbol: string;
+  name: string;
+  examWeightage: string;
+  jeeCoreConcepts: string[];
+  reactions: ReactionPathway[];
 }
 
 export type ActionIcon = "revise" | "quiz" | "mock" | "learn" | "streak" | "tutor";

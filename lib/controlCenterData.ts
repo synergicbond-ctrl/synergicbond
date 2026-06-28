@@ -3,6 +3,7 @@ import type {
   ControlCenterProgress,
   ExamReadiness,
   NextAction,
+  WeakTopicInsight,
 } from "@/lib/controlCenterTypes";
 
 // Real progress payload for the homepage Control Center.
@@ -112,10 +113,21 @@ export async function fetchControlCenterProgress(): Promise<ControlCenterProgres
     if (m.chapter_id)
       mistakeFreq[m.chapter_id] = (mistakeFreq[m.chapter_id] || 0) + 1;
   }
-  const topWeak = Object.entries(mistakeFreq)
+  // pre-sorted, fully-computed weak-topic insights (SSOT — UI does no mapping)
+  const topWeak: WeakTopicInsight[] = Object.entries(mistakeFreq)
     .sort((a, b) => b[1] - a[1])
-    .slice(0, 2)
-    .map(([slug]) => titleCase(slug));
+    .slice(0, 3)
+    .map(([slug, count]) => {
+      const impact: WeakTopicInsight["impact"] =
+        count >= 3 ? "high" : count === 2 ? "medium" : "low";
+      const recommendation =
+        impact === "high"
+          ? "Revise + 15 MCQs"
+          : impact === "medium"
+          ? "10 MCQs today"
+          : "Quick review";
+      return { name: titleCase(slug), impact, recommendation };
+    });
 
   const overallAccuracy = accuracyOf(exams);
   const examKeys = ["neet", "jee", "olympiad", "gate"];
@@ -137,7 +149,7 @@ export async function fetchControlCenterProgress(): Promise<ControlCenterProgres
   // 1. Revise the most-missed topic (highest impact)
   if (topWeak.length) {
     nextActions.push({
-      label: `Revise ${topWeak[0]}`,
+      label: `Revise ${topWeak[0].name}`,
       reason: "Your most-missed topic — high impact",
       href: "/vault",
       icon: "revise",

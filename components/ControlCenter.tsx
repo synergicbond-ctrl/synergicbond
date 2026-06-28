@@ -8,7 +8,7 @@ import {
   BookOpen, GraduationCap, ArrowRight, Users, Zap, Trophy,
   BookMarked, GitBranch, Microscope, Lock, RotateCcw, Flame, Compass,
 } from "lucide-react";
-import type { ControlCenterProgress, ActionIcon } from "@/lib/controlCenterTypes";
+import type { ControlCenterProgress, ActionIcon, WeakTopicInsight } from "@/lib/controlCenterTypes";
 import { GUEST_NEXT_ACTIONS } from "@/lib/controlCenterTypes";
 
 const ACTION_ICONS: Record<ActionIcon, typeof Sparkles> = {
@@ -35,12 +35,34 @@ const coreCards = [
   { key: "aiLab" as const,    title: "AI Lab & Momentum", pct: 70, last: "Level 4 · 7-day streak", href: "/doubt-solver", cta: "Open AI Lab", icon: Sparkles, c: "#9B5DE5" },
 ];
 
-const examIntel = [
-  { key: "neet",     exam: "NEET", href: "/neet", readiness: 74, weak: ["Qualitative Analysis", "Thermodynamics"], icon: Microscope, c: "#00F5D4" },
-  { key: "jee",      exam: "JEE", href: "/jee", readiness: 61, weak: ["Chemical Kinetics", "GOC"], icon: Atom, c: "#00BBF9" },
-  { key: "olympiad", exam: "Olympiad", href: "/olympiads", readiness: 38, weak: ["Coordination", "Stereochemistry"], icon: Trophy, c: "#9B5DE5" },
-  { key: "gate",     exam: "GATE", href: "/gate", readiness: 22, weak: ["Spectroscopy", "Quantum"], icon: GraduationCap, c: "#C084FC" },
+const examIntel: {
+  key: string; exam: string; href: string; readiness: number;
+  weak: WeakTopicInsight[]; icon: typeof Atom; c: string;
+}[] = [
+  { key: "neet",     exam: "NEET", href: "/neet", readiness: 74, weak: [
+    { name: "Qualitative Analysis", impact: "high", recommendation: "Revise + 15 MCQs" },
+    { name: "Thermodynamics", impact: "medium", recommendation: "10 MCQs today" },
+  ], icon: Microscope, c: "#00F5D4" },
+  { key: "jee",      exam: "JEE", href: "/jee", readiness: 61, weak: [
+    { name: "Chemical Kinetics", impact: "high", recommendation: "Revise + 15 MCQs" },
+    { name: "GOC", impact: "medium", recommendation: "10 MCQs today" },
+  ], icon: Atom, c: "#00BBF9" },
+  { key: "olympiad", exam: "Olympiad", href: "/olympiads", readiness: 38, weak: [
+    { name: "Coordination", impact: "high", recommendation: "Revise + 15 MCQs" },
+    { name: "Stereochemistry", impact: "low", recommendation: "Quick review" },
+  ], icon: Trophy, c: "#9B5DE5" },
+  { key: "gate",     exam: "GATE", href: "/gate", readiness: 22, weak: [
+    { name: "Spectroscopy", impact: "high", recommendation: "Revise + 15 MCQs" },
+    { name: "Quantum", impact: "medium", recommendation: "10 MCQs today" },
+  ], icon: GraduationCap, c: "#C084FC" },
 ];
+
+// impact → badge style lookup (clean array map, no inline logic in JSX)
+const IMPACT_STYLE: Record<WeakTopicInsight["impact"], { label: string; cls: string }> = {
+  high:   { label: "High impact", cls: "bg-rose-500/15 text-rose-300 border-rose-500/20" },
+  medium: { label: "Medium",      cls: "bg-amber-500/15 text-amber-300 border-amber-500/20" },
+  low:    { label: "Low",         cls: "bg-emerald-500/15 text-emerald-300 border-emerald-500/20" },
+};
 
 const features = [
   { href: "/periodic-table", label: "Periodic Table", desc: "Interactive trends & data", icon: Table2, c: "#00F5D4" },
@@ -109,15 +131,6 @@ export default function ControlCenter({ progress }: { progress?: ControlCenterPr
         })}
       </div>
 
-      {/* Guest hint — your numbers are a demo until you sign in */}
-      {!isReal && (
-        <Link href="/login" className="group mx-auto mb-6 flex max-w-3xl items-center justify-center gap-2 rounded-xl border border-amber-400/20 bg-amber-500/[0.06] px-4 py-2.5 text-xs font-semibold text-amber-200/90 transition hover:bg-amber-500/[0.1]">
-          <Lock className="h-3.5 w-3.5" />
-          You're viewing a demo. <span className="underline underline-offset-2">Sign in to track your real progress</span>
-          <ArrowRight className="h-3.5 w-3.5 transition group-hover:translate-x-0.5" />
-        </Link>
-      )}
-
       {/* ===== PRIMARY ZONE — Next Action Engine ===== */}
       {(() => {
         const actions = progress?.nextActions?.length ? progress.nextActions : GUEST_NEXT_ACTIONS;
@@ -126,10 +139,16 @@ export default function ControlCenter({ progress }: { progress?: ControlCenterPr
         return (
           <div className="mb-10 rounded-3xl p-[1.5px] bg-gradient-to-r from-[#00F5D4]/60 via-[#00BBF9]/40 to-[#9B5DE5]/60 shadow-[0_0_50px_-12px_rgba(0,187,249,0.4)]">
             <div className="rounded-3xl bg-[#0B0F19] p-6 md:p-7">
-              <div className="flex items-center gap-2 mb-4">
+              <div className="flex flex-wrap items-center gap-2 mb-4">
                 <Compass className="h-4 w-4 text-cyan-300" />
                 <h2 className="text-xs font-bold uppercase tracking-[0.3em] text-cyan-300">What should I do next?</h2>
-                <span className="ml-2 rounded-full bg-cyan-500/10 px-2 py-0.5 text-[10px] font-bold text-cyan-300 border border-cyan-400/20">AI&nbsp;GUIDED</span>
+                <span className="rounded-full bg-cyan-500/10 px-2 py-0.5 text-[10px] font-bold text-cyan-300 border border-cyan-400/20">AI&nbsp;GUIDED</span>
+                {/* guest status chip — lives inside the card frame, not floating */}
+                {!isReal && (
+                  <Link href="/login" className="ml-auto inline-flex items-center gap-1.5 rounded-full border border-amber-400/20 bg-amber-500/[0.08] px-2.5 py-0.5 text-[10px] font-semibold text-amber-200/90 transition hover:bg-amber-500/15">
+                    <Lock className="h-3 w-3" /> Demo — <span className="underline underline-offset-2">sign in to personalise</span>
+                  </Link>
+                )}
               </div>
 
               <div className="grid gap-4 lg:grid-cols-[1.4fr_1fr]">
@@ -233,11 +252,20 @@ export default function ControlCenter({ progress }: { progress?: ControlCenterPr
               <div className="h-1.5 rounded-full bg-white/10 overflow-hidden mb-3">
                 <div className="h-full rounded-full" style={{ width: `${readiness}%`, background: e.c }} />
               </div>
-              <p className="text-[10px] uppercase tracking-wider text-white/35 mb-1">Weak topics</p>
-              <div className="flex flex-wrap gap-1">
-                {weak.length
-                  ? weak.map((w) => <span key={w} className="text-[10px] text-red-300 bg-red-500/10 px-1.5 py-0.5 rounded-full">{w}</span>)
-                  : <span className="text-[10px] text-emerald-300/80">None flagged yet 🎉</span>}
+              <p className="text-[10px] uppercase tracking-wider text-white/35 mb-1.5">Weak topics</p>
+              <div className="flex flex-col gap-1.5">
+                {weak.length ? weak.map((w) => {
+                  const s = IMPACT_STYLE[w.impact];
+                  return (
+                    <div key={w.name} className="flex items-center justify-between p-2.5 bg-slate-950/40 border border-slate-900 rounded-lg">
+                      <span className="min-w-0 truncate pr-2">
+                        <span className="block truncate text-xs font-semibold text-white/85">{w.name}</span>
+                        <span className="block truncate text-[10px] text-white/40">{w.recommendation}</span>
+                      </span>
+                      <span className={`shrink-0 font-semibold px-2 py-0.5 text-[11px] rounded-md border ${s.cls}`}>{s.label}</span>
+                    </div>
+                  );
+                }) : <span className="text-[10px] text-emerald-300/80">None flagged yet 🎉</span>}
               </div>
             </Link>
           );

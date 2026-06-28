@@ -3,7 +3,9 @@
 import { useState, useMemo } from "react";
 import Link from "next/link";
 import { ELEMENTS, CATS, blockOf, electronConfig, DETAIL, type Element, type Cat } from "@/lib/periodicTable";
-import { X, ExternalLink, Search, Atom, Sparkles, BarChart2, BookOpen, Target, Activity } from "lucide-react";
+import { X, ExternalLink, Search, Atom, Sparkles, BarChart2, BookOpen, Target, Activity, Brain } from "lucide-react";
+import BrainModeModal from "@/components/BrainModeModal";
+import { ELEMENT_BRAIN_MAP } from "./brainModeData";
 
 // Subtle emphasis in Study mode
 const CORE = new Set(["H", "C", "N", "O", "Na", "Cl", "Fe", "Ca", "S", "K", "Mg"]);
@@ -47,6 +49,7 @@ function valueOf(e: Element, prop: TrendProp): number | null {
 
 export default function PeriodicTablePage() {
   const [active, setActive] = useState<Element | null>(null);
+  const [selectedElementSymbol, setSelectedElementSymbol] = useState<string | null>(null);
   const [hl, setHl] = useState<Cat | null>(null);
   const [mode, setMode] = useState<Mode>("study");
   const [trendProp, setTrendProp] = useState<TrendProp>("en");
@@ -256,6 +259,16 @@ export default function PeriodicTablePage() {
                 <Fact label="Group" value={active.cat === "ln" || active.cat === "ac" ? "f-block" : String(active.x)} />
                 <Fact label="Period" value={active.cat === "ln" ? "6" : active.cat === "ac" ? "7" : String(active.y)} />
               </div>
+              {/* Brain Mode — exam intelligence for high-yield elements */}
+              {ELEMENT_BRAIN_MAP[active.sym] && (
+                <button
+                  onClick={() => { setSelectedElementSymbol(active.sym); setActive(null); }}
+                  className="mt-4 flex w-full items-center justify-center gap-2 rounded-xl border border-cyan-400/30 bg-gradient-to-r from-cyan-500/15 to-violet-500/10 px-4 py-2.5 text-sm font-bold text-cyan-200 transition hover:from-cyan-500/25 hover:to-violet-500/20"
+                >
+                  <Brain className="h-4 w-4" /> Open Brain Mode — reactions & exam intel
+                </button>
+              )}
+
               {/* Connected system — the periodic table as a navigation brain */}
               <p className="text-[10px] uppercase tracking-wider text-white/40 mt-4 mb-2">Explore connections</p>
               <div className="grid grid-cols-2 gap-2">
@@ -276,6 +289,14 @@ export default function PeriodicTablePage() {
           </div>
         </div>
       )}
+
+      {/* Brain Mode modal — presentational, fed by the static knowledge graph */}
+      {(() => {
+        const brainModeData = selectedElementSymbol ? ELEMENT_BRAIN_MAP[selectedElementSymbol] : null;
+        return brainModeData ? (
+          <BrainModeModal data={brainModeData} onClose={() => setSelectedElementSymbol(null)} />
+        ) : null;
+      })()}
     </main>
   );
 }

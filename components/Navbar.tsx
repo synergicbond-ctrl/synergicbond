@@ -39,7 +39,7 @@ const learnGroups: { title: string; items: MenuItem[] }[] = [
       { href: "/redox-reactions", label: "Redox",        desc: "Oxidation / reduction",      icon: Sparkles },
       { href: "/solubility",      label: "Solubility",   desc: "Rules & exceptions",         icon: GitBranch },
       { href: "/properties",      label: "Properties",   desc: "BP/MP, state, dipole",       icon: Atom },
-      { href: "/salt-colors",     label: "Salt Colors",  desc: "Ion, ppt, flame colours",    icon: Palette },
+      { href: "/salt-colors",     label: "Colour of Compounds", desc: "Compounds & ions by colour", icon: Palette },
     ],
   },
   {

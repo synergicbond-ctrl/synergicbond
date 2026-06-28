@@ -2,8 +2,8 @@ import ReferenceTabs from "@/components/ReferenceTabs";
 import { groupByColour, COMPOUND_COLOURS } from "@/lib/saltColourCompounds";
 
 export const metadata = {
-  title: "Salt Analysis Colors — SYNERGIC BOND",
-  description: "Qualitative analysis: ion colors, precipitate colors, carbonate & sulfide precipitates, flame tests for NEET & JEE.",
+  title: "Colour of Compounds — SYNERGIC BOND",
+  description: "Compound, ion, precipitate and flame colours for qualitative salt analysis, grouped by colour for NEET & JEE revision.",
 };
 
 const ions = [
@@ -174,15 +174,14 @@ export default function SaltColorsPage() {
       <div className="mx-auto max-w-5xl px-6 py-12">
         <ReferenceTabs />
         <p className="text-xs font-bold uppercase tracking-[0.4em] text-cyan-300 mb-3">Knowledge Vault · Inorganic</p>
-        <h1 className="text-4xl font-black md:text-5xl">Salt Analysis Colors</h1>
+        <h1 className="text-4xl font-black md:text-5xl">Colour of Compounds</h1>
         <p className="mt-3 text-white/65 text-sm max-w-2xl mb-8">
-          Qualitative analysis at a glance — ion colors, precipitates, carbonate & sulfide tests, and flame tests. Dots show the real observed color.
+          Compound, ion, precipitate and flame colours for qualitative salt analysis — grouped by colour for fast revision. Dots show the real observed colour.
         </p>
 
-        {/* Colour of Compounds — grouped by colour (deep-scan colour sheet) */}
+        {/* Colour of Compounds — grouped by colour */}
         <section className="mb-10">
-          <h2 className="text-lg font-black text-cyan-300 mb-1">🎨 Colour of Compounds</h2>
-          <p className="text-xs text-white/45 mb-4">{COMPOUND_COLOURS.length} compounds grouped by their colour — fast revision for salt analysis.</p>
+          <p className="text-xs text-white/45 mb-4">{COMPOUND_COLOURS.length} compounds & ions grouped by their colour — fast revision for salt analysis.</p>
           <div className="space-y-5">
             {groupByColour().map((g) => (
               <div key={g.family}>
@@ -203,7 +202,6 @@ export default function SaltColorsPage() {
               </div>
             ))}
           </div>
-          <p className="mt-4 text-xs text-white/35">Source: uploaded colour sheet (salt-analysis compound colours).</p>
         </section>
 
         {/* Ion colors */}
@@ -303,7 +301,7 @@ export default function SaltColorsPage() {
         {/* ── Deep-scan additions from "Salt analysis (GUHA)" ── */}
         <div className="my-10 flex items-center gap-3">
           <span className="h-px flex-1 bg-white/10" />
-          <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-cyan-300/70">From Salt Analysis · GUHA</span>
+          <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-cyan-300/70">Precipitate · Bead · Test Colours</span>
           <span className="h-px flex-1 bg-white/10" />
         </div>
 
@@ -383,7 +381,6 @@ export default function SaltColorsPage() {
           <div className="grid gap-2 md:grid-cols-2 lg:grid-cols-3">
             {guhaOther.map((p) => <ColorChip key={p.name} name={p.name} color={p.color} />)}
           </div>
-          <p className="mt-4 text-xs text-white/35">Source: Salt analysis (GUHA) — Qualitative Salt Analysis, Ch. 7. All colours above are taken directly from that document.</p>
         </section>
       </div>
     </main>

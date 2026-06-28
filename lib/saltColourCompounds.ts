@@ -151,6 +151,24 @@ export const COMPOUND_COLOURS: CompoundColour[] = [
   // ── Grey ──
   { name: "Hg + HgO", color: "Grey" },
 
+  // ── Transition metal ions (aqueous) ──
+  { name: "Sc³⁺", color: "Colourless" },
+  { name: "Ti⁴⁺", color: "Colourless" },
+  { name: "Ti³⁺", color: "Purple" },
+  { name: "V⁴⁺", color: "Blue" },
+  { name: "V³⁺", color: "Green" },
+  { name: "V²⁺", color: "Violet" },
+  { name: "Cr³⁺", color: "Violet" },
+  { name: "Mn³⁺", color: "Violet" },
+  { name: "Cr²⁺", color: "Blue" },
+  { name: "Mn²⁺", color: "Pink" },
+  { name: "Fe³⁺", color: "Yellow" },
+  { name: "Fe²⁺", color: "Green" },
+  { name: "Co³⁺ / Co²⁺", color: "Blue-pink" },
+  { name: "Ni²⁺", color: "Green" },
+  { name: "Cu²⁺", color: "Blue" },
+  { name: "Zn²⁺", color: "Colourless" },
+
   // ── Colourless soluble complexes ──
   { name: "[HgS₂]²⁻", color: "Colourless" },
   { name: "[PbI₄]²⁻", color: "Colourless" },
@@ -184,7 +202,7 @@ export function familyOf(color: string): string {
   if (/colourless|colorless/.test(s)) return "Colourless";
   if (/bluish white/.test(s)) return "White";
   if (/brownish[ -]?black/.test(s)) return "Black";
-  if (/red[ -]?violet|violet/.test(s)) return "Violet";
+  if (/purple|red[ -]?violet|violet/.test(s)) return "Violet";
   if (/reddish[ -]?brown|yellowish[ -]?brown|chocolate|dark brown|brownish|\bbrown\b/.test(s)) return "Brown";
   if (/grey|gray/.test(s)) return "Grey";
   if (/pink/.test(s)) return "Pink";

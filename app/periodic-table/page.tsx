@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { ELEMENTS, CATS, blockOf, type Element, type Cat } from "@/lib/periodicTable";
+import { ELEMENTS, CATS, blockOf, electronConfig, DETAIL, type Element, type Cat } from "@/lib/periodicTable";
 import { X, ExternalLink } from "lucide-react";
 
 export default function PeriodicTablePage() {
@@ -79,13 +79,20 @@ export default function PeriodicTablePage() {
               <button onClick={() => setActive(null)} className="p-1 text-white/40 hover:text-white"><X className="h-5 w-5" /></button>
             </div>
             <div className="px-6 pb-6">
+              {/* Electron configuration — full width */}
+              <div className="rounded-xl bg-white/[0.03] border border-white/[0.06] px-3 py-2 mb-3">
+                <p className="text-[10px] uppercase tracking-wider text-white/40">Electron Configuration</p>
+                <p className="text-sm font-mono font-semibold text-cyan-300 mt-0.5">{electronConfig(active.z)}</p>
+              </div>
               <div className="grid grid-cols-2 gap-3 text-sm">
                 <Fact label="Atomic Number" value={String(active.z)} />
                 <Fact label="Atomic Mass" value={active.mass.toString()} />
-                <Fact label="Group" value={active.cat === "ln" || active.cat === "ac" ? "—" : String(active.x)} />
-                <Fact label="Period" value={active.cat === "ln" ? "6" : active.cat === "ac" ? "7" : String(active.y)} />
+                <Fact label="Oxidation States" value={DETAIL[active.sym]?.ox ?? "—"} />
                 <Fact label="Block" value={blockOf(active)} />
-                <Fact label="Category" value={CATS[active.cat].label} />
+                <Fact label="Melting Point" value={DETAIL[active.sym] ? `${DETAIL[active.sym].mp} °C` : "—"} />
+                <Fact label="Boiling Point" value={DETAIL[active.sym] ? `${DETAIL[active.sym].bp} °C` : "—"} />
+                <Fact label="Group" value={active.cat === "ln" || active.cat === "ac" ? "f-block" : String(active.x)} />
+                <Fact label="Period" value={active.cat === "ln" ? "6" : active.cat === "ac" ? "7" : String(active.y)} />
               </div>
               <a
                 href={`https://www.google.com/search?q=${encodeURIComponent(active.name + " element properties")}`}

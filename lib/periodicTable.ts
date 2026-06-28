@@ -143,7 +143,80 @@ export const ELEMENTS: Element[] = [
 // Block from position
 export function blockOf(e: Element): string {
   if (e.cat === "ln" || e.cat === "ac") return "f-block";
-  if (e.x === 1 || e.x === 2) return e.z === 2 ? "s-block" : "s-block";
+  if (e.x === 1 || e.x === 2) return "s-block";
   if (e.x >= 13) return "p-block";
   return "d-block";
 }
+
+// ── Electron configuration (computed from Z, aufbau + known exceptions) ──
+const FILL: [string, number][] = [
+  ["1s", 2], ["2s", 2], ["2p", 6], ["3s", 2], ["3p", 6], ["4s", 2], ["3d", 10],
+  ["4p", 6], ["5s", 2], ["4d", 10], ["5p", 6], ["6s", 2], ["4f", 14], ["5d", 10],
+  ["6p", 6], ["7s", 2], ["5f", 14], ["6d", 10], ["7p", 6],
+];
+const NOBLE: [number, string][] = [[86, "Rn"], [54, "Xe"], [36, "Kr"], [18, "Ar"], [10, "Ne"], [2, "He"]];
+// Ground-state anomalies (exam-relevant)
+const EXC: Record<number, string> = {
+  24: "[Ar] 3d⁵ 4s¹", 29: "[Ar] 3d¹⁰ 4s¹",
+  41: "[Kr] 4d⁴ 5s¹", 42: "[Kr] 4d⁵ 5s¹", 44: "[Kr] 4d⁷ 5s¹", 45: "[Kr] 4d⁸ 5s¹",
+  46: "[Kr] 4d¹⁰", 47: "[Kr] 4d¹⁰ 5s¹",
+  57: "[Xe] 5d¹ 6s²", 58: "[Xe] 4f¹ 5d¹ 6s²", 64: "[Xe] 4f⁷ 5d¹ 6s²",
+  78: "[Xe] 4f¹⁴ 5d⁹ 6s¹", 79: "[Xe] 4f¹⁴ 5d¹⁰ 6s¹",
+  89: "[Rn] 6d¹ 7s²", 90: "[Rn] 6d² 7s²", 91: "[Rn] 5f² 6d¹ 7s²",
+  92: "[Rn] 5f³ 6d¹ 7s²", 93: "[Rn] 5f⁴ 6d¹ 7s²", 96: "[Rn] 5f⁷ 6d¹ 7s²",
+};
+function sup(n: number) {
+  return String(n).replace(/[0-9]/g, (d) => "⁰¹²³⁴⁵⁶⁷⁸⁹"[+d]);
+}
+export function electronConfig(z: number): string {
+  if (EXC[z]) return EXC[z];
+  let rem = z;
+  const parts: { sub: string; n: number; l: number; e: number }[] = [];
+  for (const [sub, cap] of FILL) {
+    if (rem <= 0) break;
+    const e = Math.min(cap, rem);
+    parts.push({ sub, n: +sub[0], l: "spdf".indexOf(sub[1]), e });
+    rem -= e;
+  }
+  // noble-gas shorthand: strip the core that sums exactly to a noble gas Z
+  const noble = NOBLE.find(([nz]) => nz < z);
+  let core = "";
+  let valence = parts;
+  if (noble) {
+    let acc = 0, idx = 0;
+    for (; idx < parts.length; idx++) { acc += parts[idx].e; if (acc === noble[0]) { idx++; break; } }
+    if (acc >= noble[0]) { core = `[${noble[1]}] `; valence = parts.slice(idx); }
+  }
+  valence = [...valence].sort((a, b) => a.n - b.n || a.l - b.l);
+  return core + valence.map((p) => p.sub + sup(p.e)).join(" ");
+}
+
+// ── Oxidation states + MP/BP (°C) for exam-relevant elements (by symbol) ──
+export const DETAIL: Record<string, { ox: string; mp: string; bp: string }> = {
+  H: { ox: "+1, −1", mp: "−259", bp: "−253" }, He: { ox: "0", mp: "—", bp: "−269" },
+  Li: { ox: "+1", mp: "181", bp: "1347" }, Be: { ox: "+2", mp: "1287", bp: "2470" },
+  B: { ox: "+3", mp: "2076", bp: "3927" }, C: { ox: "+4, +2, −4", mp: "3550 (subl.)", bp: "4027" },
+  N: { ox: "−3 … +5", mp: "−210", bp: "−196" }, O: { ox: "−2", mp: "−218", bp: "−183" },
+  F: { ox: "−1", mp: "−220", bp: "−188" }, Ne: { ox: "0", mp: "−249", bp: "−246" },
+  Na: { ox: "+1", mp: "98", bp: "883" }, Mg: { ox: "+2", mp: "650", bp: "1090" },
+  Al: { ox: "+3", mp: "660", bp: "2467" }, Si: { ox: "+4, −4", mp: "1414", bp: "3265" },
+  P: { ox: "+3, +5, −3", mp: "44", bp: "280" }, S: { ox: "−2, +4, +6", mp: "115", bp: "445" },
+  Cl: { ox: "−1 … +7", mp: "−101", bp: "−34" }, Ar: { ox: "0", mp: "−189", bp: "−186" },
+  K: { ox: "+1", mp: "64", bp: "759" }, Ca: { ox: "+2", mp: "842", bp: "1484" },
+  Sc: { ox: "+3", mp: "1541", bp: "2836" }, Ti: { ox: "+4, +3", mp: "1668", bp: "3287" },
+  V: { ox: "+5, +4, +3, +2", mp: "1910", bp: "3407" }, Cr: { ox: "+6, +3, +2", mp: "1907", bp: "2671" },
+  Mn: { ox: "+7, +4, +2", mp: "1246", bp: "2061" }, Fe: { ox: "+3, +2", mp: "1538", bp: "2861" },
+  Co: { ox: "+3, +2", mp: "1495", bp: "2927" }, Ni: { ox: "+2", mp: "1455", bp: "2913" },
+  Cu: { ox: "+2, +1", mp: "1085", bp: "2562" }, Zn: { ox: "+2", mp: "420", bp: "907" },
+  Ga: { ox: "+3", mp: "30", bp: "2204" }, Ge: { ox: "+4", mp: "938", bp: "2833" },
+  As: { ox: "+3, +5, −3", mp: "817 (subl.)", bp: "614" }, Se: { ox: "−2, +4, +6", mp: "221", bp: "685" },
+  Br: { ox: "−1, +1, +5", mp: "−7", bp: "59" }, Kr: { ox: "0", mp: "−157", bp: "−153" },
+  Rb: { ox: "+1", mp: "39", bp: "688" }, Sr: { ox: "+2", mp: "777", bp: "1377" },
+  Ag: { ox: "+1", mp: "962", bp: "2162" }, Cd: { ox: "+2", mp: "321", bp: "767" },
+  Sn: { ox: "+4, +2", mp: "232", bp: "2602" }, I: { ox: "−1, +1, +5, +7", mp: "114", bp: "184" },
+  Xe: { ox: "0, +2 … +8", mp: "−112", bp: "−108" }, Cs: { ox: "+1", mp: "28.5", bp: "671" },
+  Ba: { ox: "+2", mp: "727", bp: "1845" }, Pt: { ox: "+4, +2", mp: "1768", bp: "3825" },
+  Au: { ox: "+3, +1", mp: "1064", bp: "2856" }, Hg: { ox: "+2, +1", mp: "−39", bp: "357" },
+  Pb: { ox: "+4, +2", mp: "327", bp: "1749" }, W: { ox: "+6", mp: "3422", bp: "5555" },
+  U: { ox: "+6, +4, +3", mp: "1132", bp: "4131" },
+};

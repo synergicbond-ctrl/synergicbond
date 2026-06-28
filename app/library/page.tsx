@@ -21,6 +21,9 @@ const domains: Domain[] = [
       { title: "Inorganic Chemistry", author: "Shriver & Atkins", level: "Advanced / Research" },
       { title: "Chemistry of the Elements", author: "Greenwood & Earnshaw", level: "Research" },
       { title: "Fundamental Concepts of Inorganic Chemistry (Vol 1–5)", author: "Asim K. Das & Mahua Das", level: "Olympiad / Advanced" },
+      { title: "Advanced Inorganic Chemistry", author: "Cotton & Wilkinson", level: "Olympiad / Research" },
+      { title: "Inorganic Chemistry: Principles of Structure & Reactivity", author: "Huheey, Keiter & Keiter", level: "Advanced / Research" },
+      { title: "Concise Inorganic Chemistry (Indian adaptation)", author: "J.D. Lee — adapted by Sudarsan Guha", level: "JEE / NEET" },
     ],
   },
   {
@@ -37,6 +40,11 @@ const domains: Domain[] = [
       { title: "Organic Chemistry", author: "Solomons & Fryhle", level: "JEE / Advanced" },
       { title: "Organic Reaction Mechanisms: Selected Problems & Solutions", author: "William C. Groutas", level: "Advanced" },
       { title: "Advanced Problems in Organic Chemistry", author: "Nimai Tiwari", level: "JEE Advanced" },
+      { title: "Organic Chemistry", author: "Paula Y. Bruice", level: "JEE / Advanced" },
+      { title: "Organic Chemistry", author: "L.G. Wade", level: "JEE / Advanced" },
+      { title: "Organic Chemistry", author: "John McMurry", level: "JEE / Advanced" },
+      { title: "Organic Chemistry: Structure & Function", author: "Vollhardt & Schore", level: "Advanced" },
+      { title: "March's Advanced Organic Chemistry", author: "Michael B. Smith", level: "Research" },
     ],
   },
   {
@@ -51,6 +59,9 @@ const domains: Domain[] = [
       { title: "Quantum Chemistry", author: "Ira N. Levine", level: "Research" },
       { title: "Quantum Chemistry", author: "Donald A. McQuarrie", level: "Research" },
       { title: "Molecular Quantum Mechanics", author: "P.W. Atkins & R. Friedman", level: "Research" },
+      { title: "Physical Chemistry", author: "Engel & Reid", level: "Advanced" },
+      { title: "Physical Chemistry", author: "Gordon M. Barrow", level: "Advanced" },
+      { title: "Physical Chemistry", author: "Gilbert W. Castellan", level: "Advanced" },
     ],
   },
   {
@@ -64,6 +75,38 @@ const domains: Domain[] = [
       { title: "Organic Spectroscopy", author: "William Kemp", level: "Advanced" },
       { title: "Stereochemistry of Organic Compounds", author: "E.L. Eliel & S.H. Wilen", level: "Research" },
       { title: "Stereochemistry & Reaction Mechanism", author: "P.S. Kalsi", level: "Advanced / Olympiad" },
+      { title: "Fundamentals of Molecular Spectroscopy", author: "Banwell & McCash", level: "Advanced" },
+      { title: "Organic Structure Analysis", author: "Crews, Rodríguez & Jaspars", level: "Research" },
+    ],
+  },
+  {
+    name: "Indian Competitive & Foundation (JEE / NEET)",
+    tag: "🟧",
+    accent: "#00BBF9",
+    books: [
+      { title: "Chemistry (Class XI & XII)", author: "NCERT", level: "Foundation / NEET", rank: 1 },
+      { title: "Physical · Organic · Inorganic Chemistry (GRB)", author: "O.P. Tandon", level: "NEET / JEE", rank: 2 },
+      { title: "Numerical / Physical Chemistry", author: "P. Bahadur", level: "JEE", rank: 3 },
+      { title: "Advanced Problems in Organic Chemistry (GRB)", author: "Himanshu Pandey", level: "JEE Advanced" },
+      { title: "Organic Chemistry (Balaji)", author: "M.S. Chouhan", level: "JEE / Advanced" },
+      { title: "Problems in Physical Chemistry (Balaji)", author: "Narendra Awasthi", level: "JEE Advanced" },
+      { title: "Problems in Inorganic Chemistry (Balaji)", author: "V.K. Jaiswal", level: "JEE Advanced" },
+      { title: "Modern Approach to Chemical Calculations", author: "R.C. Mukherjee", level: "JEE / NEET" },
+      { title: "Cengage Chemistry Series", author: "K.S. Verma & others", level: "JEE / Advanced" },
+    ],
+  },
+  {
+    name: "Analytical · Practical · Olympiad",
+    tag: "🟪",
+    accent: "#9B5DE5",
+    books: [
+      { title: "Vogel's Quantitative Chemical Analysis", author: "Mendham, Denney, Barnes & Thomas", level: "Advanced / Research", rank: 1 },
+      { title: "Vogel's Qualitative Inorganic Analysis", author: "G. Svehla", level: "Advanced", rank: 2 },
+      { title: "Vogel's Practical Organic Chemistry", author: "Furniss, Hannaford et al.", level: "Advanced", rank: 3 },
+      { title: "Fundamentals of Analytical Chemistry", author: "Skoog, West, Holler & Crouch", level: "Advanced / Research" },
+      { title: "IChO Preparatory Problems", author: "Olympiad Board (annual)", level: "Olympiad (IChO / INChO)" },
+      { title: "Chemistry: Principles & Reactions", author: "Masterton & Hurley", level: "NSEC / Foundation" },
+      { title: "Olympiad Problems & Solutions in Chemistry", author: "MIR / Collected volumes", level: "Olympiad" },
     ],
   },
 ];
@@ -84,7 +127,7 @@ export default function LibraryPage() {
           <p className="text-xs font-bold uppercase tracking-[0.4em] text-cyan-300 mb-3">Knowledge Vault · Database</p>
           <h1 className="text-4xl font-black md:text-5xl">Chemistry Book Library</h1>
           <p className="mt-3 text-white/65 text-sm max-w-2xl">
-            A structured, exam-curated reference library — {total} standard texts across four core domains, from JEE foundations to research-level treatises. ★ marks the top 3 picks per domain.
+            A structured, exam-curated reference library — {total} standard texts across six domains, from NCERT/JEE foundations and India's best problem books to world-class and research-level treatises. ★ marks the top 3 picks per domain.
           </p>
         </div>
 

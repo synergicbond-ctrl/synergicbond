@@ -1,12 +1,55 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import { ELEMENTS, CATS, blockOf, electronConfig, DETAIL, type Element, type Cat } from "@/lib/periodicTable";
 import { X, ExternalLink } from "lucide-react";
+
+type View = "category" | "en" | "r" | "mp";
+const VIEWS: { id: View; label: string; unit: string }[] = [
+  { id: "category", label: "Category", unit: "" },
+  { id: "en", label: "Electronegativity", unit: "" },
+  { id: "r", label: "Atomic Radius", unit: "pm" },
+  { id: "mp", label: "Melting Point", unit: "°C" },
+];
+
+// Parse a DETAIL numeric value (handles − sign and "(subl.)")
+function num(s?: string): number | null {
+  if (!s || s === "—") return null;
+  const v = parseFloat(s.replace(/−/g, "-").replace(/[^0-9.\-]/g, ""));
+  return Number.isFinite(v) ? v : null;
+}
+function valueOf(e: Element, view: View): number | null {
+  const d = DETAIL[e.sym];
+  if (!d) return null;
+  if (view === "en") return num(d.en);
+  if (view === "r") return num(d.r);
+  if (view === "mp") return num(d.mp);
+  return null;
+}
 
 export default function PeriodicTablePage() {
   const [active, setActive] = useState<Element | null>(null);
   const [hl, setHl] = useState<Cat | null>(null);
+  const [view, setView] = useState<View>("category");
+
+  // min/max for the active property (for the gradient scale)
+  const range = useMemo(() => {
+    if (view === "category") return null;
+    const vals = ELEMENTS.map((e) => valueOf(e, view)).filter((v): v is number => v != null);
+    return { min: Math.min(...vals), max: Math.max(...vals) };
+  }, [view]);
+
+  // sequential trend color: cyan (low) → magenta (high)
+  function trendColor(t: number) {
+    return `hsl(${185 + t * 120}, 72%, 55%)`;
+  }
+  function tileColor(e: Element): string {
+    if (view === "category") return CATS[e.cat].color;
+    const v = valueOf(e, view);
+    if (v == null || !range) return "#475569";
+    const t = range.max === range.min ? 0.5 : (v - range.min) / (range.max - range.min);
+    return trendColor(t);
+  }
 
   return (
     <main className="min-h-screen bg-[#0B0F19] text-white">
@@ -17,20 +60,47 @@ export default function PeriodicTablePage() {
           <p className="mt-2 text-white/55 text-sm">Tap any element for details. Hover a category in the legend to highlight that family.</p>
         </div>
 
-        {/* Legend */}
-        <div className="flex flex-wrap gap-1.5 mb-5">
-          {(Object.keys(CATS) as Cat[]).map((c) => (
+        {/* View toggle — color the table by a property (trends) */}
+        <div className="flex flex-wrap items-center gap-1.5 mb-4">
+          <span className="text-[11px] font-bold uppercase tracking-wider text-white/40 mr-1">Colour by:</span>
+          {VIEWS.map((v) => (
             <button
-              key={c}
-              onMouseEnter={() => setHl(c)}
-              onMouseLeave={() => setHl(null)}
-              className="flex items-center gap-1.5 text-[11px] font-medium px-2.5 py-1 rounded-full border border-white/[0.06] bg-[#111827] hover:border-white/20 transition"
+              key={v.id}
+              onClick={() => setView(v.id)}
+              className={`text-[11px] font-semibold px-3 py-1.5 rounded-full transition ${
+                view === v.id ? "bg-cyan-500 text-black" : "bg-[#111827] border border-white/[0.06] text-gray-400 hover:text-white"
+              }`}
             >
-              <span className="h-2.5 w-2.5 rounded-full" style={{ background: CATS[c].color }} />
-              <span className="text-white/70">{CATS[c].label}</span>
+              {v.label}
             </button>
           ))}
         </div>
+
+        {/* Legend — category chips OR gradient scale */}
+        {view === "category" ? (
+          <div className="flex flex-wrap gap-1.5 mb-5">
+            {(Object.keys(CATS) as Cat[]).map((c) => (
+              <button
+                key={c}
+                onMouseEnter={() => setHl(c)}
+                onMouseLeave={() => setHl(null)}
+                className="flex items-center gap-1.5 text-[11px] font-medium px-2.5 py-1 rounded-full border border-white/[0.06] bg-[#111827] hover:border-white/20 transition"
+              >
+                <span className="h-2.5 w-2.5 rounded-full" style={{ background: CATS[c].color }} />
+                <span className="text-white/70">{CATS[c].label}</span>
+              </button>
+            ))}
+          </div>
+        ) : (
+          range && (
+            <div className="flex items-center gap-3 mb-5">
+              <span className="text-xs text-white/50">{range.min}{VIEWS.find((v) => v.id === view)!.unit} (low)</span>
+              <div className="h-2.5 flex-1 max-w-xs rounded-full" style={{ background: "linear-gradient(to right, hsl(185,72%,55%), hsl(245,72%,55%), hsl(305,72%,55%))" }} />
+              <span className="text-xs text-white/50">(high) {range.max}{VIEWS.find((v) => v.id === view)!.unit}</span>
+              <span className="text-[10px] text-white/30 ml-2">grey = no data</span>
+            </div>
+          )
+        )}
 
         {/* Grid */}
         <div className="overflow-x-auto pb-4">
@@ -39,8 +109,8 @@ export default function PeriodicTablePage() {
             style={{ gridTemplateColumns: "repeat(18, minmax(0, 1fr))", gridTemplateRows: "repeat(10, auto)" }}
           >
             {ELEMENTS.map((e) => {
-              const color = CATS[e.cat].color;
-              const dim = hl && hl !== e.cat;
+              const color = tileColor(e);
+              const dim = view === "category" && hl && hl !== e.cat;
               return (
                 <button
                   key={e.z}

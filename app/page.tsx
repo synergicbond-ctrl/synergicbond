@@ -12,7 +12,6 @@ import InternationalRoadmap from "@/components/InternationalRoadmap";
 import ReferenceBooks from "@/components/ReferenceBooks";
 import Testimonials from "@/components/Testimonials";
 import NewsSidebar from "@/components/NewsSidebar";
-import AboutVision from "@/components/AboutVision";
 import Donation from "@/components/Donation";
 import FAQ from "@/components/FAQ";
 import ContactFeedback from "@/components/ContactFeedback";
@@ -78,8 +77,6 @@ export default function Home() {
       <section className="border-t border-white/[0.06] py-14">
         <Testimonials />
       </section>
-
-      <AboutVision />
 
       <section className="border-t border-white/[0.06] py-14">
         <Donation />

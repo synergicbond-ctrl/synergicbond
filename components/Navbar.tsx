@@ -9,7 +9,7 @@ import {
   BookOpen, ClipboardList, FlaskConical, FileText,
   Bot, Camera, PenLine, Atom, Target, Calendar,
   BarChart2, Medal, Trophy, Archive, Gem, Menu, X,
-  Globe, ChevronDown, Sparkles, GraduationCap, Layers
+  Globe, ChevronDown, Sparkles, GraduationCap, Layers, Info
 } from "lucide-react";
 
 const mainLinks = [
@@ -31,6 +31,7 @@ const mainLinks = [
   { href: "/lab",              tkey: "nav.virtualLab",   icon: FlaskConical,  category: "ai"    },
   { href: "/vault",            tkey: "nav.vault",        icon: Archive,       category: "learn" },
   { href: "/teachers",         tkey: "nav.teachers",     icon: GraduationCap, category: "other" },
+  { href: "/about",            tkey: "nav.about",        icon: Info,          category: "other" },
   { href: "/pricing",          tkey: "nav.pricing",      icon: Gem,           category: "other" },
 ];
 

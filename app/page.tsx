@@ -1,4 +1,5 @@
 import ControlCenter from "@/components/ControlCenter";
+import { fetchControlCenterProgress } from "@/lib/controlCenterData";
 import KnowledgeVault from "@/components/KnowledgeVault";
 import AIChemistryEngine from "@/components/AIChemistryEngine";
 import Stats from "@/components/Stats";
@@ -16,11 +17,13 @@ import FAQ from "@/components/FAQ";
 import ContactFeedback from "@/components/ContactFeedback";
 import Footer from "@/components/Footer";
 
-export default function Home() {
+export default async function Home() {
+  const progress = await fetchControlCenterProgress();
+
   return (
     <main className="min-h-screen bg-[#0B0F19] text-white">
 
-      <ControlCenter />
+      <ControlCenter progress={progress} />
 
       <section className="py-10">
         <KnowledgeVault />

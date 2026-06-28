@@ -6,8 +6,9 @@ import Link from "next/link";
 import {
   Search, Sparkles, FlaskConical, Table2, Atom, FileText, Mic,
   BookOpen, GraduationCap, ArrowRight, Users, Zap, Trophy,
-  BookMarked, GitBranch, Microscope,
+  BookMarked, GitBranch, Microscope, Lock,
 } from "lucide-react";
+import type { ControlCenterProgress } from "@/lib/controlCenterData";
 
 const quickActions = [
   { href: "/doubt-solver", label: "Solve Doubt", icon: Sparkles, c: "#00F5D4" },
@@ -17,17 +18,18 @@ const quickActions = [
   { href: "/exam",         label: "Mock Exam",   icon: FileText, c: "#00BBF9" },
 ];
 
+// Static presentation meta + demo values (shown to guests). Real values are merged from props.
 const coreCards = [
-  { title: "Learn Progress", pct: 62, last: "Coordination Compounds", href: "/vault", cta: "Continue", icon: BookOpen, c: "#00F5D4" },
-  { title: "Practice Progress", pct: 48, last: "JEE Mock #4 — 168/180", href: "/quiz", cta: "Practice", icon: FlaskConical, c: "#00BBF9" },
-  { title: "AI Lab Usage", pct: 70, last: "Doubt solved 3h ago", href: "/doubt-solver", cta: "Open AI Lab", icon: Sparkles, c: "#9B5DE5" },
+  { key: "learn" as const,    title: "Learn Progress",    pct: 62, last: "Coordination Compounds", href: "/vault", cta: "Continue", icon: BookOpen, c: "#00F5D4" },
+  { key: "practice" as const, title: "Practice Progress", pct: 48, last: "JEE Mock #4 — 168/180", href: "/quiz", cta: "Practice", icon: FlaskConical, c: "#00BBF9" },
+  { key: "aiLab" as const,    title: "AI Lab & Momentum", pct: 70, last: "Level 4 · 7-day streak", href: "/doubt-solver", cta: "Open AI Lab", icon: Sparkles, c: "#9B5DE5" },
 ];
 
 const examIntel = [
-  { exam: "NEET", href: "/neet", readiness: 74, weak: ["Qualitative Analysis", "Thermodynamics"], icon: Microscope, c: "#00F5D4" },
-  { exam: "JEE", href: "/jee", readiness: 61, weak: ["Chemical Kinetics", "GOC"], icon: Atom, c: "#00BBF9" },
-  { exam: "Olympiad", href: "/olympiads", readiness: 38, weak: ["Coordination", "Stereochemistry"], icon: Trophy, c: "#9B5DE5" },
-  { exam: "GATE", href: "/gate", readiness: 22, weak: ["Spectroscopy", "Quantum"], icon: GraduationCap, c: "#C084FC" },
+  { key: "neet",     exam: "NEET", href: "/neet", readiness: 74, weak: ["Qualitative Analysis", "Thermodynamics"], icon: Microscope, c: "#00F5D4" },
+  { key: "jee",      exam: "JEE", href: "/jee", readiness: 61, weak: ["Chemical Kinetics", "GOC"], icon: Atom, c: "#00BBF9" },
+  { key: "olympiad", exam: "Olympiad", href: "/olympiads", readiness: 38, weak: ["Coordination", "Stereochemistry"], icon: Trophy, c: "#9B5DE5" },
+  { key: "gate",     exam: "GATE", href: "/gate", readiness: 22, weak: ["Spectroscopy", "Quantum"], icon: GraduationCap, c: "#C084FC" },
 ];
 
 const features = [
@@ -37,10 +39,11 @@ const features = [
   { href: "/library", label: "Book Library", desc: "70+ world-class textbooks", icon: BookMarked, c: "#C084FC" },
 ];
 
-export default function ControlCenter() {
+export default function ControlCenter({ progress }: { progress?: ControlCenterProgress | null }) {
   const router = useRouter();
   const [q, setQ] = useState("");
   const [online, setOnline] = useState(4310);
+  const isReal = !!progress;
 
   useEffect(() => {
     const id = setInterval(() => setOnline(4310 + Math.floor(Math.random() * 80) - 40), 2500);
@@ -63,7 +66,7 @@ export default function ControlCenter() {
           CHEMISTRY OS · CONTROL CENTER
         </div>
         <h1 className="text-3xl md:text-5xl font-black bg-gradient-to-r from-[#00F5D4] via-[#00BBF9] to-[#9B5DE5] bg-clip-text text-transparent tracking-tight">
-          What do you want to master today?
+          {isReal ? `Welcome back, ${progress!.name}` : "What do you want to master today?"}
         </h1>
       </div>
 
@@ -96,10 +99,22 @@ export default function ControlCenter() {
         })}
       </div>
 
+      {/* Guest hint — your numbers are a demo until you sign in */}
+      {!isReal && (
+        <Link href="/login" className="group mx-auto mb-6 flex max-w-3xl items-center justify-center gap-2 rounded-xl border border-amber-400/20 bg-amber-500/[0.06] px-4 py-2.5 text-xs font-semibold text-amber-200/90 transition hover:bg-amber-500/[0.1]">
+          <Lock className="h-3.5 w-3.5" />
+          You're viewing a demo. <span className="underline underline-offset-2">Sign in to track your real progress</span>
+          <ArrowRight className="h-3.5 w-3.5 transition group-hover:translate-x-0.5" />
+        </Link>
+      )}
+
       {/* 3 core system cards */}
       <div className="grid gap-4 md:grid-cols-3 mb-8">
         {coreCards.map((card) => {
           const Icon = card.icon;
+          const real = progress?.[card.key];
+          const value = real?.pct ?? card.pct;
+          const last = real?.last ?? card.last;
           return (
             <div key={card.title} className="rounded-2xl bg-[#111827] border border-white/[0.06] p-5">
               <div className="flex items-center justify-between mb-3">
@@ -107,12 +122,12 @@ export default function ControlCenter() {
                   <span className="flex h-9 w-9 items-center justify-center rounded-lg" style={{ background: `${card.c}1a` }}><Icon className="h-4.5 w-4.5" style={{ color: card.c }} /></span>
                   <h3 className="text-sm font-bold text-white">{card.title}</h3>
                 </div>
-                <span className="text-lg font-black" style={{ color: card.c }}>{card.pct}%</span>
+                <span className="text-lg font-black" style={{ color: card.c }}>{value}%</span>
               </div>
               <div className="h-1.5 rounded-full bg-white/10 overflow-hidden mb-3">
-                <div className="h-full rounded-full" style={{ width: `${card.pct}%`, background: `linear-gradient(to right, ${card.c}, ${card.c}aa)` }} />
+                <div className="h-full rounded-full" style={{ width: `${value}%`, background: `linear-gradient(to right, ${card.c}, ${card.c}aa)` }} />
               </div>
-              <p className="text-xs text-white/45 mb-3">Last: <span className="text-white/70">{card.last}</span></p>
+              <p className="text-xs text-white/45 mb-3">Last: <span className="text-white/70">{last}</span></p>
               <Link href={card.href} className="inline-flex items-center gap-1.5 text-xs font-semibold transition hover:gap-2.5" style={{ color: card.c }}>{card.cta} <ArrowRight className="h-3.5 w-3.5" /></Link>
             </div>
           );
@@ -127,20 +142,25 @@ export default function ControlCenter() {
       <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4 mb-8">
         {examIntel.map((e) => {
           const Icon = e.icon;
+          const real = progress?.exams?.[e.key];
+          const readiness = real?.readiness ?? e.readiness;
+          const weak = real && real.weak.length ? real.weak : isReal ? [] : e.weak;
           return (
             <Link key={e.exam} href={e.href} className="group rounded-2xl bg-[#111827] border p-5 transition hover:-translate-y-1" style={{ borderColor: `${e.c}30` }}>
               <div className="flex items-center justify-between mb-3">
                 <span className="flex items-center gap-2 font-black text-white">
                   <Icon className="h-4 w-4" style={{ color: e.c }} /> {e.exam}
                 </span>
-                <span className="text-xs font-bold" style={{ color: e.c }}>{e.readiness}% ready</span>
+                <span className="text-xs font-bold" style={{ color: e.c }}>{readiness}% ready</span>
               </div>
               <div className="h-1.5 rounded-full bg-white/10 overflow-hidden mb-3">
-                <div className="h-full rounded-full" style={{ width: `${e.readiness}%`, background: e.c }} />
+                <div className="h-full rounded-full" style={{ width: `${readiness}%`, background: e.c }} />
               </div>
               <p className="text-[10px] uppercase tracking-wider text-white/35 mb-1">Weak topics</p>
               <div className="flex flex-wrap gap-1">
-                {e.weak.map((w) => <span key={w} className="text-[10px] text-red-300 bg-red-500/10 px-1.5 py-0.5 rounded-full">{w}</span>)}
+                {weak.length
+                  ? weak.map((w) => <span key={w} className="text-[10px] text-red-300 bg-red-500/10 px-1.5 py-0.5 rounded-full">{w}</span>)
+                  : <span className="text-[10px] text-emerald-300/80">None flagged yet 🎉</span>}
               </div>
             </Link>
           );

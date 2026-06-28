@@ -13,7 +13,7 @@ import {
   Globe, ChevronDown, Sparkles, GraduationCap, Layers, Info,
   Home, Search, LayoutGrid, GitBranch, Sigma, Palette,
   LayoutDashboard, LogOut, UserCircle, BookMarked, Table2,
-  History, Microscope, Activity, Radio
+  History, Microscope, Activity, Radio, ListOrdered
 } from "lucide-react";
 
 // ALLEN-style category mega-menus (label + grouped links with descriptions)
@@ -45,6 +45,7 @@ const learnGroups: { title: string; items: MenuItem[] }[] = [
   {
     title: "📚 Study Support",
     items: [
+      { href: "/important-orders",label: "Important Orders",desc: "IOC · OC · PC — verified ordering sequences", icon: ListOrdered },
       { href: "/library",         label: "Book Library",  desc: "70+ world-class textbooks",     icon: BookMarked },
       { href: "/study-tools",     label: "Study Tools",   desc: "Multicolor notes, timer, plan", icon: Layers },
       { href: "/vault/formulas",  label: "Formula Sheets",desc: "Every key equation, one place", icon: Sigma },
@@ -53,6 +54,7 @@ const learnGroups: { title: string; items: MenuItem[] }[] = [
   {
     title: "🔥 Advanced",
     items: [
+      { href: "/periodic-trends",    label: "Periodic Trends",      desc: "Radius · IE · ΔₑgH · EN + exceptions", icon: Activity },
       { href: "/periodic-table",     label: "Trends Explorer",      desc: "Colour table by EN / radius / MP", icon: BarChart2 },
       { href: "/name-reactions",     label: "Mechanism Visualizer", desc: "700+ mechanisms, AI-explained",    icon: GitBranch },
       { href: "/reaction-predictor", label: "Reaction Prediction",  desc: "A + B → ? (AI · soon)",            icon: Sparkles },
@@ -212,7 +214,7 @@ export default function Navbar() {
 
           {/* LEARN — grouped knowledge engine with pinned Periodic Table */}
           <div className="relative" onMouseEnter={() => setOpenMenu("Learn")} onMouseLeave={() => setOpenMenu(null)}>
-            <button className={`flex items-center gap-1 px-3 py-2 rounded-lg text-sm font-medium transition ${openMenu === "Learn" || ["/vault","/periodic-table","/molecule","/notes","/reagents","/redox-reactions","/solubility","/properties","/salt-colors","/library","/study-tools","/name-reactions"].includes(pathname) ? "text-white bg-white/[0.06]" : "text-gray-300 hover:text-white hover:bg-white/[0.05]"}`}>
+            <button className={`flex items-center gap-1 px-3 py-2 rounded-lg text-sm font-medium transition ${openMenu === "Learn" || ["/vault","/periodic-table","/periodic-trends","/important-orders","/molecule","/notes","/reagents","/redox-reactions","/solubility","/properties","/salt-colors","/library","/study-tools","/name-reactions"].includes(pathname) ? "text-white bg-white/[0.06]" : "text-gray-300 hover:text-white hover:bg-white/[0.05]"}`}>
               Learn <ChevronDown className={`h-3.5 w-3.5 transition-transform ${openMenu === "Learn" ? "rotate-180" : ""}`} />
             </button>
             {openMenu === "Learn" && (

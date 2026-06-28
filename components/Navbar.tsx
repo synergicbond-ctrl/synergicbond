@@ -44,6 +44,7 @@ const mainLinks = [
   { href: "/lab",              tkey: "nav.virtualLab",   icon: FlaskConical,  category: "ai"    },
   { href: "/vault",            tkey: "nav.vault",        icon: Archive,       category: "learn" },
   { href: "/name-reactions",   tkey: "nav.nameReactions",icon: GitBranch,     category: "learn" },
+  { href: "/redox-reactions",  tkey: "nav.redox",        icon: Sparkles,      category: "learn" },
   { href: "/reagents",         tkey: "nav.reagents",     icon: FlaskConical,  category: "learn" },
   { href: "/solubility",       tkey: "nav.solubility",   icon: Sigma,         category: "learn" },
   { href: "/salt-colors",      tkey: "nav.saltColors",   icon: Palette,       category: "learn" },

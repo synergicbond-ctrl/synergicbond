@@ -1,63 +1,9 @@
 "use client";
 
-import { Fragment, type ReactNode } from "react";
 import Link from "next/link";
 import { X, Brain, FlaskConical, Atom, Sparkles } from "lucide-react";
 import type { BrainModeContext } from "@/lib/controlCenterTypes";
-
-/**
- * Zero-dependency LaTeX renderer for inorganic chemistry equations.
- * React does NOT render LaTeX natively, so we compile the stored strings
- * (e.g. "2SO_2 + O_2 \rightleftharpoons 2SO_3") into real symbols + <sub>/<sup>.
- */
-function renderChemistry(equation: string): ReactNode {
-  // 1. macros → unicode (note: source "\\x" becomes "\x" at runtime)
-  const s = equation
-    .replace(/\\rightleftharpoons|\\rightleftarrows/g, " ⇌ ") // ⇌
-    .replace(/\\xrightarrow|\\rightarrow|\\to|\\longrightarrow/g, " → ") // →
-    .replace(/\\leftarrow/g, " ← ")
-    .replace(/\\Delta/g, "Δ")
-    .replace(/\\alpha/g, "α")
-    .replace(/\\beta/g, "β")
-    .replace(/\\gamma/g, "γ")
-    .replace(/\\cdot/g, "·")
-    .replace(/\\times/g, "×")
-    .replace(/\\pm/g, "±")
-    .replace(/\^\\circ|\\degree/g, "°")
-    .replace(/\\,|\\ |\\;/g, " ")
-    .replace(/\\\\/g, " ");
-
-  // 2. tokenize sub/superscripts (_x / _{xyz} / ^x / ^{xyz})
-  const out: ReactNode[] = [];
-  let buf = "";
-  let key = 0;
-  const flush = () => {
-    if (buf) { out.push(<Fragment key={key++}>{buf}</Fragment>); buf = ""; }
-  };
-  for (let i = 0; i < s.length; i++) {
-    const ch = s[i];
-    if (ch === "_" || ch === "^") {
-      flush();
-      let content = "";
-      i++;
-      if (s[i] === "{") {
-        i++;
-        while (i < s.length && s[i] !== "}") content += s[i++];
-      } else {
-        content = s[i] ?? "";
-      }
-      out.push(
-        ch === "^"
-          ? <sup key={key++}>{content}</sup>
-          : <sub key={key++}>{content}</sub>
-      );
-    } else {
-      buf += ch;
-    }
-  }
-  flush();
-  return out;
-}
+import { renderChemistry } from "@/lib/renderChemistry";
 
 export default function BrainModeModal({
   data,

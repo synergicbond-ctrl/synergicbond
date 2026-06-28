@@ -31,4 +31,4 @@ export type SnapSolveClassification = SnapSolveResponse["classification"];
 export type SnapSolveStep = SnapSolveResponse["solution"]["steps"][number];
 
 // Confidence threshold below which the server forces fallback behaviour.
-export const OCR_CONFIDENCE_THRESHOLD = 0.45;
+export const OCR_CONFIDENCE_THRESHOLD = 0.7;

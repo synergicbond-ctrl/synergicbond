@@ -91,6 +91,8 @@ export default function PeriodicTablePage() {
                 <Fact label="Block" value={blockOf(active)} />
                 <Fact label="Melting Point" value={DETAIL[active.sym] ? `${DETAIL[active.sym].mp} °C` : "—"} />
                 <Fact label="Boiling Point" value={DETAIL[active.sym] ? `${DETAIL[active.sym].bp} °C` : "—"} />
+                <Fact label="Electronegativity" value={DETAIL[active.sym]?.en ?? "—"} />
+                <Fact label="Atomic Radius" value={DETAIL[active.sym] ? `${DETAIL[active.sym].r} pm` : "—"} />
                 <Fact label="Group" value={active.cat === "ln" || active.cat === "ac" ? "f-block" : String(active.x)} />
                 <Fact label="Period" value={active.cat === "ln" ? "6" : active.cat === "ac" ? "7" : String(active.y)} />
               </div>

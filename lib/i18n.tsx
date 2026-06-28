@@ -132,6 +132,7 @@ const DICT: Record<string, Record<Lang, string>> = {
   "nav.neet": { english: "NEET Track", hindi: "NEET ट्रैक", hinglish: "NEET Track", spanish: "Ruta NEET", arabic: "مسار NEET", french: "Parcours NEET", german: "NEET-Pfad" },
   "nav.jee": { english: "JEE Track", hindi: "JEE ट्रैक", hinglish: "JEE Track", spanish: "Ruta JEE", arabic: "مسار JEE", french: "Parcours JEE", german: "JEE-Pfad" },
   "nav.gate": { english: "GATE Track", hindi: "GATE ट्रैक", hinglish: "GATE Track", spanish: "Ruta GATE", arabic: "مسار GATE", french: "Parcours GATE", german: "GATE-Pfad" },
+  "nav.examCenter": { english: "Exam Center", hindi: "परीक्षा केंद्र", hinglish: "Exam Center", spanish: "Centro de Exámenes", arabic: "مركز الامتحانات", french: "Centre d'Examens", german: "Prüfungszentrum" },
   "nav.olympiadTrack": { english: "Olympiad Track", hindi: "ओलंपियाड ट्रैक", hinglish: "Olympiad Track", spanish: "Ruta Olimpiada", arabic: "مسار الأولمبياد", french: "Parcours Olympiade", german: "Olympiade-Pfad" },
   "nav.progress": { english: "Progress Analytics", hindi: "प्रोग्रेस एनालिटिक्स", hinglish: "Progress Analytics", spanish: "Analíticas", arabic: "تحليلات التقدّم", french: "Analytique", german: "Fortschritt" },
   "nav.reagents": { english: "Reagents", hindi: "रिएजेंट्स", hinglish: "Reagents", spanish: "Reactivos", arabic: "الكواشف", french: "Réactifs", german: "Reagenzien" },

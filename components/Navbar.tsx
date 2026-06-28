@@ -140,6 +140,7 @@ const mainLinks = [
   { href: "/jee",              tkey: "nav.jee",          icon: Atom,          category: "game"  },
   { href: "/olympiads",        tkey: "nav.olympiadTrack",icon: Trophy,        category: "game"  },
   { href: "/gate",             tkey: "nav.gate",         icon: GraduationCap, category: "game"  },
+  { href: "/exam-center",      tkey: "nav.examCenter",   icon: LayoutGrid,    category: "game"  },
   { href: "/activity",         tkey: "nav.progress",     icon: Activity,      category: "game"  },
   { href: "/teachers",         tkey: "nav.teachers",     icon: GraduationCap, category: "other" },
   { href: "/about",            tkey: "nav.about",        icon: Info,          category: "other" },

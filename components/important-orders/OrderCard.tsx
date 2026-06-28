@@ -13,14 +13,7 @@ export default function OrderCard({ order }: { order: ImportantOrder }) {
   const exc = isException(order);
   return (
     <div className="rounded-xl border border-white/[0.07] bg-[#111827] px-3.5 py-2.5 transition hover:border-cyan-400/25">
-      <div className="flex items-baseline justify-between gap-2">
-        <h3 className="text-[13px] font-bold leading-tight text-white">{order.property}</h3>
-        {exc && (
-          <span className="shrink-0 rounded-md bg-red-500/15 px-1.5 py-0.5 text-[9px] font-bold uppercase tracking-wide text-red-400">
-            Exception
-          </span>
-        )}
-      </div>
+      <h3 className="text-[13px] font-bold leading-tight text-white">{order.property}</h3>
       <p className="mt-0.5 text-[10px] uppercase tracking-wide text-white/30">{order.group}</p>
 
       <FormulaText

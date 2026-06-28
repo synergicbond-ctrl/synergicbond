@@ -126,6 +126,10 @@ const DICT: Record<string, Record<Lang, string>> = {
   "nav.search": { english: "Search", hindi: "सर्च", hinglish: "Search", spanish: "Buscar", arabic: "بحث", french: "Recherche", german: "Suche" },
   "nav.library": { english: "Library", hindi: "लाइब्रेरी", hinglish: "Library", spanish: "Biblioteca", arabic: "المكتبة", french: "Bibliothèque", german: "Bibliothek" },
   "nav.nameReactions": { english: "Name Reactions", hindi: "नेम रिएक्शन्स", hinglish: "Name Reactions", spanish: "Reacciones", arabic: "تفاعلات مسماة", french: "Réactions Nommées", german: "Namensreaktionen" },
+  "nav.reagents": { english: "Reagents", hindi: "रिएजेंट्स", hinglish: "Reagents", spanish: "Reactivos", arabic: "الكواشف", french: "Réactifs", german: "Reagenzien" },
+  "nav.solubility": { english: "Solubility", hindi: "विलेयता", hinglish: "Solubility", spanish: "Solubilidad", arabic: "الذوبانية", french: "Solubilité", german: "Löslichkeit" },
+  "nav.saltColors": { english: "Salt Colors", hindi: "साल्ट कलर्स", hinglish: "Salt Colors", spanish: "Colores de Sales", arabic: "ألوان الأملاح", french: "Couleurs des Sels", german: "Salzfarben" },
+  "nav.properties": { english: "Properties", hindi: "गुण", hinglish: "Properties", spanish: "Propiedades", arabic: "الخواص", french: "Propriétés", german: "Eigenschaften" },
   "nav.more": { english: "More", hindi: "और", hinglish: "More", spanish: "Más", arabic: "المزيد", french: "Plus", german: "Mehr" },
 
   // ── Resources feature cards (titles + descriptions) ──

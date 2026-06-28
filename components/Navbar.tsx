@@ -10,7 +10,7 @@ import {
   Bot, Camera, PenLine, Atom, Target, Calendar,
   BarChart2, Medal, Trophy, Archive, Gem, Menu, X,
   Globe, ChevronDown, Sparkles, GraduationCap, Layers, Info,
-  Home, Search, LayoutGrid, GitBranch
+  Home, Search, LayoutGrid, GitBranch, Sigma, Palette
 } from "lucide-react";
 
 // Compact dock — the 7 core destinations (icon-only, with tooltips)
@@ -44,6 +44,10 @@ const mainLinks = [
   { href: "/lab",              tkey: "nav.virtualLab",   icon: FlaskConical,  category: "ai"    },
   { href: "/vault",            tkey: "nav.vault",        icon: Archive,       category: "learn" },
   { href: "/name-reactions",   tkey: "nav.nameReactions",icon: GitBranch,     category: "learn" },
+  { href: "/reagents",         tkey: "nav.reagents",     icon: FlaskConical,  category: "learn" },
+  { href: "/solubility",       tkey: "nav.solubility",   icon: Sigma,         category: "learn" },
+  { href: "/salt-colors",      tkey: "nav.saltColors",   icon: Palette,       category: "learn" },
+  { href: "/properties",       tkey: "nav.properties",   icon: Atom,          category: "learn" },
   { href: "/library",          tkey: "nav.library",      icon: BookOpen,      category: "learn" },
   { href: "/teachers",         tkey: "nav.teachers",     icon: GraduationCap, category: "other" },
   { href: "/about",            tkey: "nav.about",        icon: Info,          category: "other" },

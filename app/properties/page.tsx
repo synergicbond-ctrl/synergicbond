@@ -41,6 +41,40 @@ const bpmp = [
   { c: "Benzene", bp: "80 °C", mp: "5.5 °C", state: "Liquid", reason: "London + symmetry" },
 ];
 
+// Element melting / boiling points (°C) — exam-relevant set
+const elements = [
+  { el: "H", mp: "−259", bp: "−253", note: "" },
+  { el: "He", mp: "—", bp: "−269", note: "lowest bp" },
+  { el: "Li", mp: "181", bp: "1347", note: "" },
+  { el: "Be", mp: "1287", bp: "2500", note: "" },
+  { el: "B", mp: "2180", bp: "3650", note: "" },
+  { el: "C", mp: "4100", bp: "—", note: "highest mp (sublimes)" },
+  { el: "N", mp: "−210", bp: "−196", note: "" },
+  { el: "O", mp: "−229", bp: "−183", note: "" },
+  { el: "F", mp: "−219", bp: "−188", note: "" },
+  { el: "Na", mp: "98", bp: "881", note: "" },
+  { el: "Mg", mp: "649", bp: "1105", note: "" },
+  { el: "Al", mp: "660", bp: "2467", note: "" },
+  { el: "Si", mp: "1420", bp: "3280", note: "" },
+  { el: "P", mp: "44", bp: "281", note: "white P, low mp" },
+  { el: "S", mp: "114", bp: "445", note: "" },
+  { el: "Cl", mp: "−101", bp: "−34", note: "" },
+  { el: "K", mp: "63", bp: "766", note: "" },
+  { el: "Ca", mp: "839", bp: "1494", note: "" },
+  { el: "Fe", mp: "1535", bp: "2750", note: "" },
+  { el: "Cu", mp: "1083", bp: "2570", note: "" },
+  { el: "Zn", mp: "419", bp: "907", note: "" },
+  { el: "Ga", mp: "30", bp: "2403", note: "melts in hand" },
+  { el: "Br", mp: "−7", bp: "60", note: "only liquid non-metal" },
+  { el: "Ag", mp: "962", bp: "2155", note: "" },
+  { el: "I", mp: "114", bp: "185", note: "sublimes" },
+  { el: "Cs", mp: "28.5", bp: "705", note: "lowest mp metal (after Hg)" },
+  { el: "W", mp: "3410", bp: "5650", note: "highest mp metal" },
+  { el: "Au", mp: "1064", bp: "2808", note: "" },
+  { el: "Hg", mp: "−38", bp: "357", note: "only liquid metal" },
+  { el: "Pb", mp: "327", bp: "1751", note: "" },
+];
+
 export default function PropertiesPage() {
   const [q, setQ] = useState("");
   const filtered = useMemo(() => {
@@ -116,6 +150,31 @@ export default function PropertiesPage() {
                   <td className="px-3 py-2.5 text-white/80">{b.mp}</td>
                   <td className="px-3 py-2.5 text-white/70">{b.state}</td>
                   <td className="px-3 py-2.5 text-gray-400 text-xs">{b.reason}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+
+        {/* Element MP/BP */}
+        <h2 className="text-lg font-black text-cyan-300 mt-8 mb-3">🧱 Element Melting & Boiling Points (°C)</h2>
+        <div className="overflow-x-auto rounded-2xl border border-white/[0.06]">
+          <table className="w-full text-sm min-w-[560px]">
+            <thead>
+              <tr className="bg-white/[0.04] text-[10px] font-bold uppercase tracking-wider text-white/50">
+                <th className="text-left px-4 py-2.5">Element</th>
+                <th className="text-left px-3 py-2.5">M.P.</th>
+                <th className="text-left px-3 py-2.5">B.P.</th>
+                <th className="text-left px-3 py-2.5">Note</th>
+              </tr>
+            </thead>
+            <tbody>
+              {elements.map((e, i) => (
+                <tr key={e.el} className={i % 2 ? "bg-[#111827]" : "bg-[#0e1421]"}>
+                  <td className="px-4 py-2.5 font-mono font-bold text-cyan-300">{e.el}</td>
+                  <td className="px-3 py-2.5 text-white/80">{e.mp}</td>
+                  <td className="px-3 py-2.5 text-white/80">{e.bp}</td>
+                  <td className="px-3 py-2.5 text-gray-400 text-xs">{e.note}</td>
                 </tr>
               ))}
             </tbody>

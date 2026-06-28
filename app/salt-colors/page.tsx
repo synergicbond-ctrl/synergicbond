@@ -1,7 +1,7 @@
 
 export const metadata = {
   title: "Salt Analysis Colors — SYNERGIC BOND",
-  description: "Qualitative analysis: ion solution colors, precipitate colors, flame test colors for NEET & JEE.",
+  description: "Qualitative analysis: ion colors, precipitate colors, carbonate & sulfide precipitates, flame tests for NEET & JEE.",
 };
 
 const ions = [
@@ -33,6 +33,29 @@ const precipitates = [
   { name: "ZnS", color: "White", c: "#F8FAFC" },
 ];
 
+// Carbonate precipitates — from (NH₄)₂CO₃ / Na₂CO₃ reagent
+const carbonates = [
+  { reagent: "CaCl₂", ppt: "CaCO₃", color: "White", c: "#F8FAFC" },
+  { reagent: "SrCl₂", ppt: "SrCO₃", color: "White", c: "#F8FAFC" },
+  { reagent: "BaCl₂", ppt: "BaCO₃", color: "White", c: "#F8FAFC" },
+  { reagent: "AgNO₃", ppt: "Ag₂CO₃", color: "White (very light yellow)", c: "#FEFCE8" },
+  { reagent: "Hg₂(NO₃)₂", ppt: "Hg₂CO₃", color: "Yellow", c: "#FDE047" },
+  { reagent: "HgCl₂", ppt: "HgCO₃·3HgO", color: "Reddish brown", c: "#9A3412" },
+  { reagent: "ZnCl₂", ppt: "ZnCO₃·3Zn(OH)₂", color: "White", c: "#F8FAFC" },
+  { reagent: "Pb(OAc)₂", ppt: "Pb(OH)₂·2PbCO₃", color: "White", c: "#F8FAFC" },
+  { reagent: "MgCl₂", ppt: "Mg(OH)₂·4MgCO₃·6H₂O", color: "White", c: "#F8FAFC" },
+  { reagent: "CuCl₂", ppt: "Cu(OH)₂·CuCO₃", color: "Green", c: "#22C55E" },
+];
+
+// Group II — thiosulfate (white) vs sulfide (black) precipitates + soluble complex
+const sulfides = [
+  { ion: "Ag⁺ (AgNO₃)", white: "Ag₂S₂O₃↓", black: "Ag₂S↓", sol: "[Ag(S₂O₃)₂]³⁻" },
+  { ion: "Pb²⁺ (Pb(OAc)₂)", white: "PbS₂O₃↓", black: "PbS↓", sol: "[Pb(S₂O₃)₂]²⁻" },
+  { ion: "Hg²⁺ (Hg(NO₃)₂)", white: "HgS₂O₃↓", black: "HgS↓", sol: "[Hg(S₂O₃)₂]²⁻" },
+  { ion: "Bi³⁺ (BiCl₃)", white: "Bi₂(S₂O₃)₃↓", black: "Bi₂S₃↓", sol: "[Bi(S₂O₃)₃]³⁻" },
+  { ion: "Cu²⁺ (CuSO₄)", white: "Cu₂S₂O₃↓", black: "Cu₂S↓", sol: "[Cu₆(S₂O₃)₅]⁴⁻" },
+];
+
 const flame = [
   { el: "Na", color: "Golden yellow", c: "#FACC15" },
   { el: "K", color: "Lilac / violet", c: "#A78BFA" },
@@ -55,7 +78,7 @@ export default function SaltColorsPage() {
         <p className="text-xs font-bold uppercase tracking-[0.4em] text-cyan-300 mb-3">Knowledge Vault · Inorganic</p>
         <h1 className="text-4xl font-black md:text-5xl">Salt Analysis Colors</h1>
         <p className="mt-3 text-white/65 text-sm max-w-2xl mb-8">
-          Qualitative analysis at a glance — ion solution colors, characteristic precipitates, and flame tests. The dots show the real observed color.
+          Qualitative analysis at a glance — ion colors, precipitates, carbonate & sulfide tests, and flame tests. Dots show the real observed color.
         </p>
 
         {/* Ion colors */}
@@ -71,6 +94,58 @@ export default function SaltColorsPage() {
                 </div>
               </div>
             ))}
+          </div>
+        </section>
+
+        {/* Carbonate precipitates */}
+        <section className="mb-8">
+          <h2 className="text-lg font-black text-cyan-300 mb-3">⚪ Carbonate Precipitates (with (NH₄)₂CO₃ / Na₂CO₃)</h2>
+          <div className="overflow-x-auto rounded-2xl border border-white/[0.06]">
+            <table className="w-full text-sm min-w-[480px]">
+              <thead>
+                <tr className="bg-white/[0.04] text-[10px] font-bold uppercase tracking-wider text-white/50">
+                  <th className="text-left px-4 py-2.5">Reagent</th>
+                  <th className="text-left px-3 py-2.5">Precipitate</th>
+                  <th className="text-left px-3 py-2.5">Colour</th>
+                </tr>
+              </thead>
+              <tbody>
+                {carbonates.map((r, i) => (
+                  <tr key={r.reagent} className={i % 2 ? "bg-[#111827]" : "bg-[#0e1421]"}>
+                    <td className="px-4 py-2.5 font-mono font-bold text-cyan-300">{r.reagent}</td>
+                    <td className="px-3 py-2.5 font-mono text-white/80">{r.ppt}</td>
+                    <td className="px-3 py-2.5"><span className="flex items-center gap-2 text-white/80"><Swatch c={r.c} /> {r.color}</span></td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        {/* Sulfide / thiosulfate */}
+        <section className="mb-8">
+          <h2 className="text-lg font-black text-cyan-300 mb-3">⚫ Group II — Thiosulfate (white) → Sulfide (black)</h2>
+          <div className="overflow-x-auto rounded-2xl border border-white/[0.06]">
+            <table className="w-full text-sm min-w-[560px]">
+              <thead>
+                <tr className="bg-white/[0.04] text-[10px] font-bold uppercase tracking-wider text-white/50">
+                  <th className="text-left px-4 py-2.5">Ion (reagent)</th>
+                  <th className="text-left px-3 py-2.5">White ppt (S₂O₃²⁻)</th>
+                  <th className="text-left px-3 py-2.5">Black ppt (S²⁻)</th>
+                  <th className="text-left px-3 py-2.5">Clear solution</th>
+                </tr>
+              </thead>
+              <tbody>
+                {sulfides.map((s, i) => (
+                  <tr key={s.ion} className={i % 2 ? "bg-[#111827]" : "bg-[#0e1421]"}>
+                    <td className="px-4 py-2.5 font-bold text-white">{s.ion}</td>
+                    <td className="px-3 py-2.5 font-mono text-white/70">{s.white}</td>
+                    <td className="px-3 py-2.5 font-mono text-white/70">{s.black}</td>
+                    <td className="px-3 py-2.5 font-mono text-cyan-300/80">{s.sol}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
           </div>
         </section>
 

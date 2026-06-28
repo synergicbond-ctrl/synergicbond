@@ -10,7 +10,7 @@ import {
   Bot, Camera, PenLine, Atom, Target, Calendar,
   BarChart2, Medal, Trophy, Archive, Gem, Menu, X,
   Globe, ChevronDown, Sparkles, GraduationCap, Layers, Info,
-  Home, Search, LayoutGrid
+  Home, Search, LayoutGrid, GitBranch
 } from "lucide-react";
 
 // Compact dock — the 7 core destinations (icon-only, with tooltips)
@@ -43,6 +43,7 @@ const mainLinks = [
   { href: "/leaderboard",      tkey: "nav.leaderboard",  icon: Trophy,        category: "game"  },
   { href: "/lab",              tkey: "nav.virtualLab",   icon: FlaskConical,  category: "ai"    },
   { href: "/vault",            tkey: "nav.vault",        icon: Archive,       category: "learn" },
+  { href: "/name-reactions",   tkey: "nav.nameReactions",icon: GitBranch,     category: "learn" },
   { href: "/library",          tkey: "nav.library",      icon: BookOpen,      category: "learn" },
   { href: "/teachers",         tkey: "nav.teachers",     icon: GraduationCap, category: "other" },
   { href: "/about",            tkey: "nav.about",        icon: Info,          category: "other" },
@@ -82,9 +83,9 @@ export default function Navbar() {
           </div>
         </Link>
 
-        {/* Desktop Nav — compact glass icon dock (system layer) */}
+        {/* Desktop Nav — glass icon dock with labels */}
         <nav className="hidden lg:flex items-center justify-center flex-1 mx-4 relative">
-          <div className="flex items-center gap-1 px-2 py-1.5 rounded-2xl bg-white/[0.06] backdrop-blur-xl border border-white/[0.08] shadow-[0_8px_32px_rgba(0,0,0,0.4)]">
+          <div className="flex items-end gap-0.5 px-2 py-1.5 rounded-2xl bg-white/[0.06] backdrop-blur-xl border border-white/[0.08] shadow-[0_8px_32px_rgba(0,0,0,0.4)]">
             {dockLinks.map((link) => {
               const Icon = link.icon;
               const active = pathname === link.href;
@@ -92,31 +93,30 @@ export default function Navbar() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  title={t(link.tkey)}
-                  className={`group/dock relative flex h-9 w-9 items-center justify-center rounded-xl transition-all duration-200 hover:scale-105 active:scale-95
+                  className={`group/dock relative flex flex-col items-center gap-1 px-2.5 py-1.5 rounded-xl transition-all duration-200 hover:scale-105 active:scale-95
                     ${active ? "bg-white/10" : "hover:bg-white/[0.06]"}`}
                 >
-                  <Icon className={`h-[21px] w-[21px] transition-colors ${active ? "text-cyan-400" : "text-gray-400 group-hover/dock:text-white"}`} strokeWidth={active ? 2.2 : 1.8} />
-                  {/* active dot */}
-                  {active && <span className="absolute -bottom-0.5 left-1/2 -translate-x-1/2 h-1 w-1 rounded-full bg-cyan-400 shadow-[0_0_6px_rgba(34,211,238,0.9)]" />}
-                  {/* hover tooltip */}
-                  <span className="pointer-events-none absolute -bottom-9 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-lg bg-[#111827] border border-white/10 px-2 py-1 text-[10px] font-semibold text-white opacity-0 translate-y-1 transition-all duration-150 group-hover/dock:opacity-100 group-hover/dock:translate-y-0 z-50">
+                  <Icon className={`h-[26px] w-[26px] transition-colors ${active ? "text-cyan-400" : "text-gray-400 group-hover/dock:text-white"}`} strokeWidth={active ? 2.1 : 1.7} />
+                  <span className={`text-[10px] leading-none font-medium transition-colors ${active ? "text-white" : "text-gray-500 group-hover/dock:text-gray-300"}`}>
                     {t(link.tkey)}
                   </span>
+                  {active && <span className="absolute top-0.5 right-1.5 h-1 w-1 rounded-full bg-cyan-400 shadow-[0_0_6px_rgba(34,211,238,0.9)]" />}
                 </Link>
               );
             })}
 
             {/* divider */}
-            <span className="mx-1 h-5 w-px bg-white/10" />
+            <span className="mx-1 h-9 w-px bg-white/10 self-center" />
 
             {/* More — opens full catalog */}
             <button
               onClick={() => setMoreOpen(!moreOpen)}
-              title={t("nav.more")}
-              className={`group/dock relative flex h-9 w-9 items-center justify-center rounded-xl transition-all duration-200 hover:scale-105 active:scale-95 ${moreOpen ? "bg-white/10" : "hover:bg-white/[0.06]"}`}
+              className={`group/dock flex flex-col items-center gap-1 px-2.5 py-1.5 rounded-xl transition-all duration-200 hover:scale-105 active:scale-95 ${moreOpen ? "bg-white/10" : "hover:bg-white/[0.06]"}`}
             >
-              <LayoutGrid className={`h-[21px] w-[21px] transition-colors ${moreOpen ? "text-cyan-400" : "text-gray-400 group-hover/dock:text-white"}`} strokeWidth={1.8} />
+              <LayoutGrid className={`h-[26px] w-[26px] transition-colors ${moreOpen ? "text-cyan-400" : "text-gray-400 group-hover/dock:text-white"}`} strokeWidth={1.7} />
+              <span className={`text-[10px] leading-none font-medium transition-colors ${moreOpen ? "text-white" : "text-gray-500 group-hover/dock:text-gray-300"}`}>
+                {t("nav.more")}
+              </span>
             </button>
           </div>
 

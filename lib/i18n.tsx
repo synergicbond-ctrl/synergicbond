@@ -125,6 +125,7 @@ const DICT: Record<string, Record<Lang, string>> = {
   "nav.home": { english: "Home", hindi: "होम", hinglish: "Home", spanish: "Inicio", arabic: "الرئيسية", french: "Accueil", german: "Start" },
   "nav.search": { english: "Search", hindi: "सर्च", hinglish: "Search", spanish: "Buscar", arabic: "بحث", french: "Recherche", german: "Suche" },
   "nav.library": { english: "Library", hindi: "लाइब्रेरी", hinglish: "Library", spanish: "Biblioteca", arabic: "المكتبة", french: "Bibliothèque", german: "Bibliothek" },
+  "nav.nameReactions": { english: "Name Reactions", hindi: "नेम रिएक्शन्स", hinglish: "Name Reactions", spanish: "Reacciones", arabic: "تفاعلات مسماة", french: "Réactions Nommées", german: "Namensreaktionen" },
   "nav.more": { english: "More", hindi: "और", hinglish: "More", spanish: "Más", arabic: "المزيد", french: "Plus", german: "Mehr" },
 
   // ── Resources feature cards (titles + descriptions) ──

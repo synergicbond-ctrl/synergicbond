@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { useT } from "@/lib/i18n";
 import {
   Atom, GitBranch, Sigma, AlertTriangle, Zap, Heart, ArrowRight,
 } from "lucide-react";
@@ -10,6 +11,7 @@ const tabs = [
   {
     id: "concepts",
     title: "Concepts",
+    tkey: "vault.tab.concepts",
     icon: Atom,
     count: "2000+",
     href: "/vault/concepts",
@@ -20,6 +22,7 @@ const tabs = [
   {
     id: "reactions",
     title: "Reactions",
+    tkey: "vault.tab.reactions",
     icon: GitBranch,
     count: "500+",
     href: "/vault",
@@ -30,6 +33,7 @@ const tabs = [
   {
     id: "formulas",
     title: "Formula Vault",
+    tkey: "vault.tab.formulas",
     icon: Sigma,
     count: "800+",
     href: "/vault/formulas",
@@ -40,6 +44,7 @@ const tabs = [
   {
     id: "exceptions",
     title: "Exceptions",
+    tkey: "vault.tab.exceptions",
     icon: AlertTriangle,
     count: "300+",
     href: "/vault/exceptions",
@@ -50,6 +55,7 @@ const tabs = [
   {
     id: "facts",
     title: "Quick Facts",
+    tkey: "vault.tab.facts",
     icon: Zap,
     count: "1500+",
     href: "/vault/facts",
@@ -60,6 +66,7 @@ const tabs = [
   {
     id: "favorites",
     title: "Favorites",
+    tkey: "vault.tab.favorites",
     icon: Heart,
     count: "Personal",
     href: "/vault/favorites",
@@ -70,21 +77,22 @@ const tabs = [
 ];
 
 export default function KnowledgeVault() {
+  const { t } = useT();
   const [active, setActive] = useState(tabs[0].id);
-  const current = tabs.find((t) => t.id === active)!;
+  const current = tabs.find((tab) => tab.id === active)!;
   const Icon = current.icon;
 
   return (
     <section className="mx-auto max-w-7xl px-6">
       <div className="mb-10 text-center">
         <p className="mb-3 text-xs font-bold uppercase tracking-[0.4em] text-cyan-300">
-          Knowledge Vault
+          {t("vault.eyebrow")}
         </p>
         <h2 className="text-3xl font-black md:text-4xl text-white">
-          Everything Chemistry. One Place.
+          {t("vault.title")}
         </h2>
         <p className="mx-auto mt-5 max-w-2xl text-white/70 text-sm">
-          Concepts, formulas, reactions and exceptions — organized into a premium chemistry knowledge system.
+          {t("vault.desc")}
         </p>
       </div>
 
@@ -109,7 +117,7 @@ export default function KnowledgeVault() {
                   className="h-3.5 w-3.5 flex-shrink-0 transition-colors"
                   style={{ color: isActive ? tab.accent : undefined }}
                 />
-                {tab.title}
+                {t(tab.tkey)}
               </button>
             );
           })}
@@ -132,16 +140,16 @@ export default function KnowledgeVault() {
               className="inline-block text-xs font-bold px-3 py-1 rounded-full mb-4"
               style={{ background: `${current.accent}1a`, color: current.accent }}
             >
-              {current.count} entries
+              {current.count} {t("vault.entries")}
             </span>
-            <h3 className="text-3xl font-black text-white mb-3">{current.title}</h3>
+            <h3 className="text-3xl font-black text-white mb-3">{t(current.tkey)}</h3>
             <p className="text-white/70 text-sm leading-relaxed mb-6">{current.blurb}</p>
             <Link
               href={current.href}
               className="inline-flex items-center gap-2 text-sm font-semibold transition hover:gap-3"
               style={{ color: current.accent }}
             >
-              Explore {current.title}
+              {t("vault.explore")} {t(current.tkey)}
               <ArrowRight className="h-4 w-4" />
             </Link>
           </div>

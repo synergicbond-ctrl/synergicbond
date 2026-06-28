@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { ExternalLink, Calendar, Wallet, GraduationCap } from "lucide-react";
+import { useT } from "@/lib/i18n";
 
 type Exam = {
   name: string;
@@ -32,6 +33,7 @@ const intlExams: Exam[] = [
 ];
 
 export default function ExamCenter() {
+  const { t } = useT();
   const [region, setRegion] = useState<"india" | "intl">("india");
   const exams = region === "india" ? indiaExams : intlExams;
 
@@ -39,13 +41,13 @@ export default function ExamCenter() {
     <section className="mx-auto max-w-7xl px-6 py-8">
       <div className="mb-8 text-center">
         <p className="mb-3 text-xs font-bold uppercase tracking-[0.4em] text-cyan-300">
-          Exam Center
+          {t("exam.eyebrow")}
         </p>
         <h2 className="text-3xl font-black md:text-4xl text-white">
-          Every Chemistry Exam. One Directory.
+          {t("exam.title")}
         </h2>
         <p className="mx-auto mt-4 max-w-2xl text-white/70 text-sm">
-          Eligibility, key dates, fees and official portals for chemistry exams worldwide.
+          {t("exam.desc")}
         </p>
       </div>
 
@@ -58,7 +60,7 @@ export default function ExamCenter() {
               region === "india" ? "bg-cyan-500 text-black" : "text-gray-300 hover:text-white"
             }`}
           >
-            🇮🇳 India Exams
+            🇮🇳 {t("exam.india")}
           </button>
           <button
             onClick={() => setRegion("intl")}
@@ -66,7 +68,7 @@ export default function ExamCenter() {
               region === "intl" ? "bg-cyan-500 text-black" : "text-gray-300 hover:text-white"
             }`}
           >
-            🌍 International Exams
+            🌍 {t("exam.intl")}
           </button>
         </div>
       </div>
@@ -89,16 +91,16 @@ export default function ExamCenter() {
             </div>
 
             <p className="text-xs text-gray-300 mb-4 flex items-center gap-1.5">
-              <span className="text-gray-600">Eligibility:</span> {exam.eligibility}
+              <span className="text-gray-600">{t("exam.eligibility")}</span> {exam.eligibility}
             </p>
 
             <div className="grid grid-cols-2 gap-2 mb-4 text-xs">
               <div className="rounded-lg bg-white/[0.03] px-3 py-2">
-                <p className="text-gray-600 mb-0.5 flex items-center gap-1"><Calendar className="h-3 w-3" /> Opens</p>
+                <p className="text-gray-600 mb-0.5 flex items-center gap-1"><Calendar className="h-3 w-3" /> {t("exam.opens")}</p>
                 <p className="text-white/80 font-semibold">{exam.opens}</p>
               </div>
               <div className="rounded-lg bg-white/[0.03] px-3 py-2">
-                <p className="text-gray-600 mb-0.5 flex items-center gap-1"><Calendar className="h-3 w-3" /> Closes</p>
+                <p className="text-gray-600 mb-0.5 flex items-center gap-1"><Calendar className="h-3 w-3" /> {t("exam.closes")}</p>
                 <p className="text-white/80 font-semibold">{exam.closes}</p>
               </div>
             </div>
@@ -113,7 +115,7 @@ export default function ExamCenter() {
                 rel="noopener noreferrer"
                 className="flex items-center gap-1.5 text-xs font-semibold text-white/70 hover:text-white border border-white/10 hover:border-white/30 px-3 py-1.5 rounded-lg transition"
               >
-                Official Site <ExternalLink className="h-3 w-3" />
+                {t("exam.officialSite")} <ExternalLink className="h-3 w-3" />
               </a>
             </div>
           </div>

@@ -1,4 +1,6 @@
+"use client";
 import { BookMarked, ArrowRight } from "lucide-react";
+import { useT } from "@/lib/i18n";
 
 const books = [
   { title: "NCERT Chemistry", author: "NCERT (XI & XII)", subject: "Foundation", difficulty: "Beginner", color: "#00BBF9", affiliate: "#" },
@@ -18,15 +20,16 @@ const diffColor: Record<string, string> = {
 };
 
 export default function ReferenceBooks() {
+  const { t } = useT();
   return (
     <section className="mx-auto max-w-7xl px-6 py-8">
       <div className="mb-8 text-center">
         <p className="mb-3 text-xs font-bold uppercase tracking-[0.4em] text-cyan-300">
-          Reference Library
+          {t("books.eyebrow")}
         </p>
-        <h2 className="text-3xl font-black md:text-4xl text-white">Elite Theory Bookshelf</h2>
+        <h2 className="text-3xl font-black md:text-4xl text-white">{t("books.title")}</h2>
         <p className="mx-auto mt-4 max-w-2xl text-white/70 text-sm">
-          The exact books that build deep chemistry intuition — curated by exam experts.
+          {t("books.desc")}
         </p>
       </div>
 
@@ -61,7 +64,7 @@ export default function ReferenceBooks() {
                 className="mt-auto inline-flex items-center gap-1.5 text-xs font-semibold transition group-hover:gap-2.5"
                 style={{ color: book.color }}
               >
-                Get Theory Edition <ArrowRight className="h-3.5 w-3.5" />
+                {t("books.cta")} <ArrowRight className="h-3.5 w-3.5" />
               </a>
             </div>
           </div>

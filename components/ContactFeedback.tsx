@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { MessageSquare, Mail, Phone, Send, CheckCircle2 } from "lucide-react";
+import { useT } from "@/lib/i18n";
 
 // Client-side XSS / injection sanitizer — strips tags, scripts, and dangerous chars
 function sanitize(input: string): string {
@@ -17,6 +18,7 @@ function sanitize(input: string): string {
 const feedbackTypes = ["UI Suggestion", "Syllabus Gap", "Feature Request", "Bug Report", "Other"];
 
 export default function ContactFeedback() {
+  const { t } = useT();
   const [type, setType] = useState(feedbackTypes[0]);
   const [message, setMessage] = useState("");
   const [submitted, setSubmitted] = useState(false);
@@ -35,9 +37,9 @@ export default function ContactFeedback() {
     <section className="mx-auto max-w-7xl px-6 py-16">
       <div className="mb-10 text-center">
         <p className="mb-3 text-xs font-bold uppercase tracking-[0.4em] text-cyan-300">
-          Get in Touch
+          {t("contact.eyebrow")}
         </p>
-        <h2 className="text-4xl font-black text-white">Contact & Feedback</h2>
+        <h2 className="text-4xl font-black text-white">{t("contact.title")}</h2>
       </div>
 
       <div className="grid gap-6 lg:grid-cols-2">

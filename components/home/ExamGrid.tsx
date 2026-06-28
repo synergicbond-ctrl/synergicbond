@@ -1,5 +1,7 @@
+"use client";
 import Link from "next/link";
 import { Microscope, Atom, Trophy, GraduationCap, ArrowRight } from "lucide-react";
+import { useT } from "@/lib/i18n";
 
 const exams = [
   {
@@ -73,18 +75,19 @@ const exams = [
 ];
 
 export default function ExamGrid() {
+  const { t } = useT();
   return (
     <section className="w-full mt-16">
 
       <div className="mb-10 text-center">
         <p className="text-xs font-bold uppercase tracking-[0.4em] text-cyan-300 mb-3">
-          — SELECT YOUR TRACK —
+          {t("journey.eyebrow")}
         </p>
         <h2 className="text-4xl font-black tracking-tight text-white">
-          Choose Your Journey
+          {t("journey.title")}
         </h2>
         <p className="mx-auto mt-4 max-w-2xl text-white/70 text-sm leading-relaxed">
-          Every scholar follows a different path. Select your destination and let SYNERGIC BOND guide you there.
+          {t("journey.desc")}
         </p>
       </div>
 
@@ -127,7 +130,7 @@ export default function ExamGrid() {
               </p>
 
               <div className="flex items-center gap-2 text-sm font-semibold transition-all duration-200" style={{ color: exam.accent }}>
-                Enter Track
+                {t("journey.cta")}
                 <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
               </div>
 

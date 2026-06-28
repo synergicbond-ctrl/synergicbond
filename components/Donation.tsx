@@ -1,4 +1,6 @@
+"use client";
 import { Heart, Star, Building2, Check } from "lucide-react";
+import { useT } from "@/lib/i18n";
 
 const tiers = [
   {
@@ -29,13 +31,14 @@ const tiers = [
 ];
 
 export default function Donation() {
+  const { t } = useT();
   return (
     <section className="mx-auto max-w-7xl px-6 py-8">
       <div className="mb-8 text-center">
         <p className="mb-3 text-xs font-bold uppercase tracking-[0.4em] text-cyan-300">
-          Support the Mission
+          {t("donate.eyebrow")}
         </p>
-        <h2 className="text-3xl font-black md:text-4xl text-white">Back Free Chemistry Education</h2>
+        <h2 className="text-3xl font-black md:text-4xl text-white">{t("donate.title")}</h2>
         <p className="mx-auto mt-4 max-w-2xl text-white/70 text-sm">
           We keep core learning free for every student. Your support funds servers, content and the next generation of tools.
         </p>

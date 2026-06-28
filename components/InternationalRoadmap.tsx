@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { Globe2, Lock } from "lucide-react";
+import { useT } from "@/lib/i18n";
 
 type Region = "na" | "ukeu" | "apac";
 
@@ -28,17 +29,18 @@ const data: Record<Region, { country: string; exams: string[]; accent: string }[
 };
 
 export default function InternationalRoadmap() {
+  const { t } = useT();
   const [region, setRegion] = useState<Region>("na");
 
   return (
     <section className="mx-auto max-w-7xl px-6 py-8">
       <div className="mb-8 text-center">
-        <p className="mb-3 text-xs font-bold uppercase tracking-[0.4em] text-cyan-300">Going Global</p>
+        <p className="mb-3 text-xs font-bold uppercase tracking-[0.4em] text-cyan-300">{t("intl.eyebrow")}</p>
         <h2 className="text-3xl font-black md:text-4xl text-white flex items-center justify-center gap-3">
-          <Globe2 className="h-7 w-7 text-cyan-400" /> International Exam Roadmap
+          <Globe2 className="h-7 w-7 text-cyan-400" /> {t("intl.title")}
         </h2>
         <p className="mx-auto mt-4 max-w-2xl text-white/70 text-sm">
-          Full prep for the world's top chemistry exams — rolling out region by region.
+          {t("intl.desc")}
         </p>
       </div>
 
@@ -69,7 +71,7 @@ export default function InternationalRoadmap() {
           >
             {/* status tag */}
             <span className="absolute top-3 right-3 flex items-center gap-1 text-[8px] font-bold tracking-widest text-white/60 bg-white/[0.06] border border-white/15 px-2 py-0.5 rounded-full">
-              <Lock className="h-2.5 w-2.5" /> COMING SOON · PRO REGION
+              <Lock className="h-2.5 w-2.5" /> {t("intl.comingSoon")}
             </span>
 
             <h3 className="text-lg font-black text-white mb-3 mt-1" style={{ color: c.accent }}>{c.country}</h3>

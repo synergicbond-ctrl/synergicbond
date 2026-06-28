@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { ChevronDown } from "lucide-react";
+import { useT } from "@/lib/i18n";
 
 const faqs = [
   {
@@ -31,15 +32,16 @@ const faqs = [
 ];
 
 export default function FAQ() {
+  const { t } = useT();
   const [open, setOpen] = useState<number | null>(0);
 
   return (
     <section className="mx-auto max-w-3xl px-6 py-16">
       <div className="mb-10 text-center">
         <p className="mb-3 text-xs font-bold uppercase tracking-[0.4em] text-cyan-300">
-          FAQ
+          {t("faq.eyebrow")}
         </p>
-        <h2 className="text-4xl font-black text-white">Frequently Asked Questions</h2>
+        <h2 className="text-4xl font-black text-white">{t("faq.title")}</h2>
       </div>
 
       <div className="space-y-3">

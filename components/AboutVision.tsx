@@ -1,8 +1,11 @@
+"use client";
 import { Rocket, BookOpenCheck, BrainCircuit } from "lucide-react";
+import { useT } from "@/lib/i18n";
 
 const pillars = [
   {
     icon: Rocket,
+    tkey: "about.pillar1",
     title: "Built for Elite Ranks",
     body: "Engineered to decode the highest-tier patterns of JEE Advanced, NEET, and International Olympiads — built by educators with 18+ years of rank-topping results.",
     accent: "text-cyan-400",
@@ -11,6 +14,7 @@ const pillars = [
   },
   {
     icon: BookOpenCheck,
+    tkey: "about.pillar2",
     title: "Beyond the Textbook",
     body: "We transform rigid rote-memorization into dynamic visual mechanisms and algorithmic practice — so chemistry becomes intuition, not cramming.",
     accent: "text-purple-400",
@@ -19,6 +23,7 @@ const pillars = [
   },
   {
     icon: BrainCircuit,
+    tkey: "about.pillar3",
     title: "Human Intelligence + AI",
     body: "Fine-tuned core chemistry data trained to assist students 24/7 with zero placeholders — real answers from a real expert, powered by AI speed.",
     accent: "text-sky-400",
@@ -28,6 +33,7 @@ const pillars = [
 ];
 
 export default function AboutVision() {
+  const { t } = useT();
   return (
     <section className="mx-auto max-w-7xl px-6 py-24">
 
@@ -39,7 +45,7 @@ export default function AboutVision() {
         {/* Left — mission statement */}
         <div>
           <p className="text-xs font-bold uppercase tracking-[0.4em] text-cyan-300 mb-5">
-            Our Mission
+            {t("about.eyebrow")}
           </p>
           <h2 className="text-4xl font-black leading-tight text-white md:text-5xl">
             Engineering the Future of{" "}
@@ -89,7 +95,7 @@ export default function AboutVision() {
                   <Icon className={`h-5 w-5 ${p.accent}`} />
                 </div>
                 <div>
-                  <h3 className={`font-bold text-sm text-white mb-1`}>{p.title}</h3>
+                  <h3 className={`font-bold text-sm text-white mb-1`}>{t(p.tkey)}</h3>
                   <p className="text-xs text-gray-300 leading-relaxed">{p.body}</p>
                 </div>
               </div>

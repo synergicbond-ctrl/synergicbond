@@ -1,4 +1,6 @@
+"use client";
 import Link from "next/link";
+import { useT } from "@/lib/i18n";
 import {
   Bot,
   Search,
@@ -36,6 +38,7 @@ const features = [
 ];
 
 export default function ResourcesSection() {
+  const { t } = useT();
   return (
     <section className="mx-auto mt-36 max-w-7xl px-6">
 
@@ -43,16 +46,15 @@ export default function ResourcesSection() {
 
         <div className="inline-flex items-center gap-2 rounded-full border border-cyan-400/20 bg-cyan-500/10 px-5 py-2 text-cyan-300">
           <Sparkles className="h-4 w-4" />
-          Everything You Need
+          {t("res.eyebrow")}
         </div>
 
         <h2 className="mt-6 text-3xl md:text-4xl font-black">
-          One Platform. Unlimited Learning.
+          {t("res.title")}
         </h2>
 
         <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-white/70">
-          Every feature is designed to help you understand, remember and
-          master chemistry faster.
+          {t("res.desc")}
         </p>
 
       </div>
@@ -85,7 +87,7 @@ export default function ResourcesSection() {
               </p>
 
               <div className="mt-10 flex items-center gap-2 font-medium text-cyan-300">
-                Explore
+                {t("vault.explore")}
                 <ArrowRight className="h-4 w-4 transition group-hover:translate-x-1" />
               </div>
 

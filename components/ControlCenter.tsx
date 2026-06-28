@@ -6,9 +6,19 @@ import Link from "next/link";
 import {
   Search, Sparkles, FlaskConical, Table2, Atom, FileText, Mic,
   BookOpen, GraduationCap, ArrowRight, Users, Zap, Trophy,
-  BookMarked, GitBranch, Microscope, Lock,
+  BookMarked, GitBranch, Microscope, Lock, RotateCcw, Flame, Compass,
 } from "lucide-react";
-import type { ControlCenterProgress } from "@/lib/controlCenterData";
+import type { ControlCenterProgress, ActionIcon } from "@/lib/controlCenterTypes";
+import { GUEST_NEXT_ACTIONS } from "@/lib/controlCenterTypes";
+
+const ACTION_ICONS: Record<ActionIcon, typeof Sparkles> = {
+  revise: RotateCcw,
+  quiz: FlaskConical,
+  mock: FileText,
+  learn: BookOpen,
+  streak: Flame,
+  tutor: Sparkles,
+};
 
 const quickActions = [
   { href: "/doubt-solver", label: "Solve Doubt", icon: Sparkles, c: "#00F5D4" },
@@ -108,8 +118,74 @@ export default function ControlCenter({ progress }: { progress?: ControlCenterPr
         </Link>
       )}
 
-      {/* 3 core system cards */}
-      <div className="grid gap-4 md:grid-cols-3 mb-8">
+      {/* ===== PRIMARY ZONE — Next Action Engine ===== */}
+      {(() => {
+        const actions = progress?.nextActions?.length ? progress.nextActions : GUEST_NEXT_ACTIONS;
+        const [primary, ...rest] = actions;
+        const PIcon = ACTION_ICONS[primary.icon];
+        return (
+          <div className="mb-10 rounded-3xl p-[1.5px] bg-gradient-to-r from-[#00F5D4]/60 via-[#00BBF9]/40 to-[#9B5DE5]/60 shadow-[0_0_50px_-12px_rgba(0,187,249,0.4)]">
+            <div className="rounded-3xl bg-[#0B0F19] p-6 md:p-7">
+              <div className="flex items-center gap-2 mb-4">
+                <Compass className="h-4 w-4 text-cyan-300" />
+                <h2 className="text-xs font-bold uppercase tracking-[0.3em] text-cyan-300">What should I do next?</h2>
+                <span className="ml-2 rounded-full bg-cyan-500/10 px-2 py-0.5 text-[10px] font-bold text-cyan-300 border border-cyan-400/20">AI&nbsp;GUIDED</span>
+              </div>
+
+              <div className="grid gap-4 lg:grid-cols-[1.4fr_1fr]">
+                {/* The one highlighted action */}
+                <Link
+                  href={primary.href}
+                  className="group relative overflow-hidden rounded-2xl border p-5 transition hover:-translate-y-0.5"
+                  style={{ borderColor: `${primary.tone}55`, background: `linear-gradient(135deg, ${primary.tone}1f, transparent)` }}
+                >
+                  <div className="absolute -right-6 -top-6 h-24 w-24 rounded-full blur-2xl opacity-40" style={{ background: primary.tone }} />
+                  <div className="relative">
+                    <div className="flex items-center gap-2 mb-3">
+                      <span className="flex h-10 w-10 items-center justify-center rounded-xl" style={{ background: `${primary.tone}22` }}>
+                        <PIcon className="h-5 w-5" style={{ color: primary.tone }} />
+                      </span>
+                      <span className="rounded-full px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider" style={{ color: primary.tone, background: `${primary.tone}1a` }}>Do this first</span>
+                    </div>
+                    <h3 className="text-xl font-black text-white leading-tight">{primary.label}</h3>
+                    <p className="mt-1 text-sm text-white/55">{primary.reason}</p>
+                    <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-bold transition group-hover:gap-2.5" style={{ color: primary.tone }}>
+                      Start now <ArrowRight className="h-4 w-4" />
+                    </span>
+                  </div>
+                </Link>
+
+                {/* Up-next stack */}
+                <div className="flex flex-col gap-2.5">
+                  <p className="text-[10px] uppercase tracking-wider text-white/35">Then</p>
+                  {rest.map((a) => {
+                    const Icon = ACTION_ICONS[a.icon];
+                    return (
+                      <Link key={a.label} href={a.href} className="group flex items-center gap-3 rounded-xl border border-white/[0.06] bg-[#111827] px-4 py-2.5 transition hover:border-white/[0.14]">
+                        <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg" style={{ background: `${a.tone}1a` }}>
+                          <Icon className="h-4 w-4" style={{ color: a.tone }} />
+                        </span>
+                        <span className="min-w-0 flex-1">
+                          <span className="block truncate text-sm font-semibold text-white">{a.label}</span>
+                          <span className="block truncate text-xs text-white/40">{a.reason}</span>
+                        </span>
+                        <ArrowRight className="h-4 w-4 shrink-0 text-white/30 transition group-hover:translate-x-0.5 group-hover:text-white/60" />
+                      </Link>
+                    );
+                  })}
+                </div>
+              </div>
+            </div>
+          </div>
+        );
+      })()}
+
+      {/* ===== SECONDARY ZONE — progress snapshot ===== */}
+      <div className="flex items-center gap-3 mb-3">
+        <h2 className="text-xs font-bold uppercase tracking-[0.3em] text-white/55">Your Progress</h2>
+        <div className="flex-1 h-px bg-white/[0.06]" />
+      </div>
+      <div className="grid gap-4 md:grid-cols-3 mb-10 opacity-95">
         {coreCards.map((card) => {
           const Icon = card.icon;
           const real = progress?.[card.key];
@@ -134,9 +210,10 @@ export default function ControlCenter({ progress }: { progress?: ControlCenterPr
         })}
       </div>
 
+      {/* ===== TERTIARY ZONE — system info (calm) ===== */}
       {/* Exam intelligence */}
       <div className="flex items-center gap-3 mb-3">
-        <h2 className="text-sm font-bold uppercase tracking-[0.3em] text-cyan-300">Exam Intelligence</h2>
+        <h2 className="text-xs font-bold uppercase tracking-[0.3em] text-white/40">Exam Intelligence</h2>
         <div className="flex-1 h-px bg-white/[0.06]" />
       </div>
       <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4 mb-8">
@@ -183,7 +260,7 @@ export default function ControlCenter({ progress }: { progress?: ControlCenterPr
 
       {/* Feature highlights */}
       <div className="flex items-center gap-3 mb-3">
-        <h2 className="text-sm font-bold uppercase tracking-[0.3em] text-cyan-300">Featured Tools</h2>
+        <h2 className="text-xs font-bold uppercase tracking-[0.3em] text-white/40">Featured Tools</h2>
         <div className="flex-1 h-px bg-white/[0.06]" />
       </div>
       <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">

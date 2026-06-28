@@ -1,28 +1,15 @@
 import { createClient } from "@/lib/supabase/server";
+import type {
+  ControlCenterProgress,
+  ExamReadiness,
+  NextAction,
+} from "@/lib/controlCenterTypes";
 
 // Real progress payload for the homepage Control Center.
 // Returns null for guests (not logged in) so the UI can fall back to the demo numbers.
+// Client-safe types/constants live in controlCenterTypes.ts.
 
 const TOTAL_CHAPTERS = 33; // keep in sync with the dashboard
-
-export interface CoreProgress {
-  pct: number;
-  last: string;
-}
-
-export interface ExamReadiness {
-  readiness: number;
-  weak: string[];
-}
-
-export interface ControlCenterProgress {
-  name: string;
-  learn: CoreProgress;
-  practice: CoreProgress;
-  aiLab: CoreProgress;
-  /** keyed by exam id: "neet" | "jee" | "olympiad" | "gate" */
-  exams: Record<string, ExamReadiness>;
-}
 
 function titleCase(slug: string): string {
   return slug
@@ -54,7 +41,7 @@ export async function fetchControlCenterProgress(): Promise<ControlCenterProgres
     supabase.from("profiles").select("full_name").eq("id", user.id).maybeSingle(),
     supabase
       .from("user_xp")
-      .select("xp, xp_level, streak")
+      .select("xp, xp_level, streak, last_active")
       .eq("user_id", user.id)
       .maybeSingle(),
     supabase
@@ -143,11 +130,87 @@ export async function fetchControlCenterProgress(): Promise<ControlCenterProgres
     examMap[key] = { readiness, weak: topWeak };
   }
 
+  // ---- Next Action Engine: rank what the student should do right now ----
+  const nextActions: NextAction[] = [];
+  const examsTaken = exams?.length ?? 0;
+
+  // 1. Revise the most-missed topic (highest impact)
+  if (topWeak.length) {
+    nextActions.push({
+      label: `Revise ${topWeak[0]}`,
+      reason: "Your most-missed topic — high impact",
+      href: "/vault",
+      icon: "revise",
+      tone: "#F87171",
+    });
+  }
+
+  // 2. Practice — driven by accuracy / whether any test exists
+  if (examsTaken === 0) {
+    nextActions.push({
+      label: "Take your first quiz",
+      reason: "Find your weak spots in 10 questions",
+      href: "/quiz",
+      icon: "quiz",
+      tone: "#00BBF9",
+    });
+  } else if (overallAccuracy < 60) {
+    nextActions.push({
+      label: "Take a focused 10-MCQ quiz",
+      reason: `Accuracy is ${pct(overallAccuracy)}% — let's lift it`,
+      href: "/quiz",
+      icon: "quiz",
+      tone: "#00BBF9",
+    });
+  }
+
+  // 3. Continue learning where progress is thin
+  if (learnPct < 80 && lastSession?.chapter_id) {
+    nextActions.push({
+      label: `Continue: ${titleCase(lastSession.chapter_id)}`,
+      reason: "Pick up where you left off",
+      href: "/vault",
+      icon: "learn",
+      tone: "#00F5D4",
+    });
+  } else if (learnPct < 30) {
+    nextActions.push({
+      label: "Start a core chapter",
+      reason: "Build your foundation in the Knowledge Vault",
+      href: "/vault",
+      icon: "learn",
+      tone: "#00F5D4",
+    });
+  }
+
+  // 4. Streak / inactivity nudge
+  const today = new Date().toISOString().split("T")[0];
+  const activeToday = (xp?.last_active ?? "") === today;
+  if (!activeToday) {
+    nextActions.push({
+      label: streak > 0 ? `Keep your ${streak}-day streak alive` : "Start a daily streak",
+      reason: "A 5-minute daily challenge counts",
+      href: "/quiz",
+      icon: "streak",
+      tone: "#FBBF24",
+    });
+  }
+
+  // 5. Always offer a mock as a fallback
+  nextActions.push({
+    label: "Start a 15-min mock",
+    reason: "Simulate real exam pressure",
+    href: "/exam",
+    icon: "mock",
+    tone: "#9B5DE5",
+  });
+
   return {
     name,
     learn: { pct: learnPct, last: learnLast },
     practice: { pct: practicePct, last: practiceLast },
     aiLab: { pct: aiLabPct, last: aiLabLast },
     exams: examMap,
+    nextActions: nextActions.slice(0, 4),
   };
 }

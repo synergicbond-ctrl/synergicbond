@@ -43,17 +43,19 @@ const learnGroups: { title: string; items: MenuItem[] }[] = [
     ],
   },
   {
-    title: "📚 Study Resources",
+    title: "📚 Study Support",
     items: [
-      { href: "/library",     label: "Book Library", desc: "70+ world-class textbooks",     icon: BookMarked },
-      { href: "/study-tools", label: "Study Tools",  desc: "Multicolor notes, timer, plan", icon: Layers },
+      { href: "/library",         label: "Book Library",  desc: "70+ world-class textbooks",     icon: BookMarked },
+      { href: "/study-tools",     label: "Study Tools",   desc: "Multicolor notes, timer, plan", icon: Layers },
+      { href: "/vault/formulas",  label: "Formula Sheets",desc: "Every key equation, one place", icon: Sigma },
     ],
   },
   {
     title: "🔥 Advanced",
     items: [
-      { href: "/periodic-table", label: "Trends Explorer",     desc: "Colour table by EN / radius / MP", icon: BarChart2 },
-      { href: "/name-reactions", label: "Mechanism Visualizer",desc: "700+ mechanisms, AI-explained",    icon: GitBranch },
+      { href: "/periodic-table",     label: "Trends Explorer",      desc: "Colour table by EN / radius / MP", icon: BarChart2 },
+      { href: "/name-reactions",     label: "Mechanism Visualizer", desc: "700+ mechanisms, AI-explained",    icon: GitBranch },
+      { href: "/reaction-predictor", label: "Reaction Prediction",  desc: "A + B → ? (AI · soon)",            icon: Sparkles },
     ],
   },
 ];

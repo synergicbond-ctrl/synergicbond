@@ -1,4 +1,4 @@
-import Hero from "@/components/Hero";
+import ControlCenter from "@/components/ControlCenter";
 import KnowledgeVault from "@/components/KnowledgeVault";
 import AIChemistryEngine from "@/components/AIChemistryEngine";
 import Stats from "@/components/Stats";
@@ -20,7 +20,7 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-[#0B0F19] text-white">
 
-      <Hero />
+      <ControlCenter />
 
       <section className="py-10">
         <KnowledgeVault />

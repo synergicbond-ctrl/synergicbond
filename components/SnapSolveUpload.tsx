@@ -1,29 +1,45 @@
 "use client";
 
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef } from "react";
 import { Camera, Type, Zap, AlertTriangle } from "lucide-react";
 import type { SnapSolveResponse } from "@/lib/snapSolveTypes";
 
 interface Props {
-  /** Fired with the validated payload after a successful dispatch. */
+  /** Fired with the validated payload after the stream's `final` event. */
   onUploadSuccess: (data: SnapSolveResponse) => void;
 }
 
 const LANGS = ["english", "hinglish", "hindi"] as const;
 
-// Cosmetic reasoning script for the simulated token stream — generic, process-
-// oriented copy only (no fabricated chemistry conclusions that could contradict
-// the real, server-computed answer). Never reflects actual API output.
-const REASONING_SCRIPT = [
-  "Analyzing the problem…",
-  "Parsing the given information…",
-  "Identifying the relevant concept…",
-  "Mapping out the solution path…",
-  "Considering an alternative route… reverting to the cleaner method…",
-  "Cross-verifying each step…",
-  "Computing the result…",
-  "Finalizing the answer…",
-].join("\n");
+interface StreamStep {
+  stepNumber: number;
+  text: string;
+}
+
+// Stable per-browser id so the server's Memory Core keys adaptation per student.
+function getUserId(): string {
+  try {
+    let id = localStorage.getItem("ss_uid");
+    if (!id) {
+      id = crypto.randomUUID();
+      localStorage.setItem("ss_uid", id);
+    }
+    return id;
+  } catch {
+    return "anonymous";
+  }
+}
+
+// Parse a single SSE frame ("event: x\ndata: ...") into its parts.
+function parseFrame(frame: string): { event?: string; data: string } {
+  let event: string | undefined;
+  const dataLines: string[] = [];
+  for (const line of frame.split("\n")) {
+    if (line.startsWith("event:")) event = line.slice(6).trim();
+    else if (line.startsWith("data:")) dataLines.push(line.slice(5).trim());
+  }
+  return { event, data: dataLines.join("\n") };
+}
 
 export default function SnapSolveUpload({ onUploadSuccess }: Props) {
   const [image, setImage] = useState<string | null>(null);
@@ -31,57 +47,74 @@ export default function SnapSolveUpload({ onUploadSuccess }: Props) {
   const [language, setLanguage] = useState<string>("english");
   const [isProcessing, setIsProcessing] = useState(false);
   const [error, setError] = useState<string | null>(null);
-  const [stream, setStream] = useState("");
+  const [reasoning, setReasoning] = useState<string[]>([]);
+  const [steps, setSteps] = useState<StreamStep[]>([]);
   const fileRef = useRef<HTMLInputElement>(null);
   const cameraRef = useRef<HTMLInputElement>(null);
 
-  // Simulated token stream — character-by-character reveal, fully decoupled from
-  // the API. ~20–40ms/char with natural pauses at sentence/line breaks. Purely a
-  // perceived-intelligence layer; never reflects real model output.
-  useEffect(() => {
-    if (!isProcessing) {
-      setStream("");
-      return;
-    }
-    setStream("");
-    const full = REASONING_SCRIPT;
-    let i = 0;
-    let timer: ReturnType<typeof setTimeout>;
-    const tick = () => {
-      if (i >= full.length) return; // hold at the end until the API resolves
-      const ch = full[i];
-      i += 1;
-      setStream(full.slice(0, i));
-      let delay = 20 + Math.floor(Math.random() * 20);
-      if (ch === "\n") delay = 300 + Math.floor(Math.random() * 500);
-      else if (ch === "…" || ch === ".") delay = 250 + Math.floor(Math.random() * 250);
-      timer = setTimeout(tick, delay);
-    };
-    timer = setTimeout(tick, 150);
-    return () => clearTimeout(timer);
-  }, [isProcessing]);
-
-  // Single dispatch path for both manual + camera flows. Takes an explicit
-  // base64 so the camera capture can fire instantly without waiting on the
-  // async `image` state update. Sends the exact JSON the API already expects.
+  // Single dispatch path for both manual + camera flows. Opens the SSE stream,
+  // renders reasoning/step events live, and hands the `final` payload to the page.
   async function dispatch(payload: { imageBase64?: string; query?: string }) {
     setIsProcessing(true);
     setError(null);
+    setReasoning([]);
+    setSteps([]);
     try {
       const res = await fetch("/api/snap-solve", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: { "Content-Type": "application/json", Accept: "text/event-stream" },
         body: JSON.stringify({
           imageBase64: payload.imageBase64 ?? undefined,
           query: payload.query?.trim() || undefined,
           language,
+          userId: getUserId(),
         }),
       });
-      const data = await res.json();
-      if (data?.error) {
-        setError(data.error);
-      } else {
-        onUploadSuccess(data as SnapSolveResponse);
+
+      const ctype = res.headers.get("content-type") || "";
+
+      // Non-stream response (validation/error path) → fall back to JSON handling.
+      if (!res.ok || !ctype.includes("text/event-stream") || !res.body) {
+        const data = await res.json().catch(() => null);
+        if (data?.error) setError(data.error);
+        else if (data) onUploadSuccess(data as SnapSolveResponse);
+        else setError("Unexpected response from the solver. Please try again.");
+        return;
+      }
+
+      // Read the SSE stream frame-by-frame.
+      const reader = res.body.getReader();
+      const decoder = new TextDecoder();
+      let buf = "";
+
+      while (true) {
+        const { done, value } = await reader.read();
+        if (done) break;
+        buf += decoder.decode(value, { stream: true });
+
+        // Frames are separated by a blank line; keep any trailing partial frame.
+        const frames = buf.split("\n\n");
+        buf = frames.pop() ?? "";
+
+        for (const frame of frames) {
+          if (!frame.trim()) continue;
+          const { event, data } = parseFrame(frame);
+          if (!event || !data) continue;
+          try {
+            const parsed = JSON.parse(data);
+            if (event === "reasoning") {
+              setReasoning((prev) => [...prev, parsed as string]);
+            } else if (event === "step") {
+              setSteps((prev) => [...prev, parsed as StreamStep]);
+            } else if (event === "final") {
+              onUploadSuccess(parsed as SnapSolveResponse);
+            }
+            // `partial_result` / `interrupt` are streamed too but the page's
+            // SnapSolveResult renders the complete `final`, so they're ignored here.
+          } catch {
+            /* skip malformed frame */
+          }
+        }
       }
     } catch (e: unknown) {
       setError(e instanceof Error ? e.message : "Network error — please try again.");
@@ -119,30 +152,62 @@ export default function SnapSolveUpload({ onUploadSuccess }: Props) {
   return (
     <div className="rounded-2xl border border-white/[0.08] bg-[#111827] p-5 space-y-4">
       <style>{`
-        @keyframes snapFadeIn { from { opacity: 0; } to { opacity: 1; } }
+        @keyframes snapFadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
         @keyframes snapBlink { 0%, 49% { opacity: 1; } 50%, 100% { opacity: 0; } }
       `}</style>
 
-      {/* Token-stream reasoning — replaces the form while the API works */}
+      {/* Live stream panel — driven by real SSE events from /api/snap-solve */}
       {isProcessing && (
         <div style={{ animation: "snapFadeIn 0.3s ease-out both" }} className="space-y-3 py-2">
           <div className="flex items-center gap-2 text-sm font-bold text-cyan-300">
             <span className="h-2 w-2 animate-ping rounded-full bg-cyan-400" />
             AI is reasoning…
           </div>
+
+          {/* Reasoning tokens (server-streamed) */}
           <div className="rounded-xl border border-cyan-500/25 bg-[#0B0F19] p-4 shadow-[0_0_45px_-12px_rgba(34,211,238,0.4)]">
-            <pre className="m-0 whitespace-pre-wrap break-words font-mono text-[13px] leading-relaxed text-emerald-300/90">
-              {stream}
-              <span
-                style={{ animation: "snapBlink 1s steps(1) infinite" }}
-                className="text-emerald-300"
-              >▍</span>
-            </pre>
+            {reasoning.length === 0 ? (
+              <p className="font-mono text-[13px] text-white/40">
+                Connecting to the solver…
+                <span style={{ animation: "snapBlink 1s steps(1) infinite" }} className="ml-0.5 text-emerald-300">▍</span>
+              </p>
+            ) : (
+              <ul className="space-y-1.5">
+                {reasoning.map((line, i) => (
+                  <li
+                    key={i}
+                    style={{ animation: "snapFadeIn 0.3s ease-out both" }}
+                    className="font-mono text-[13px] leading-relaxed text-emerald-300/90"
+                  >
+                    {line}
+                    {i === reasoning.length - 1 && (
+                      <span style={{ animation: "snapBlink 1s steps(1) infinite" }} className="ml-0.5 text-emerald-300">▍</span>
+                    )}
+                  </li>
+                ))}
+              </ul>
+            )}
           </div>
+
+          {/* Solution steps as they stream in */}
+          {steps.length > 0 && (
+            <ul className="space-y-2 border-l-2 border-cyan-500/20 pl-4">
+              {steps.map((s) => (
+                <li
+                  key={s.stepNumber}
+                  style={{ animation: "snapFadeIn 0.3s ease-out both" }}
+                  className="flex gap-2 text-sm text-white/80"
+                >
+                  <span className="shrink-0 font-bold text-cyan-400">{s.stepNumber}.</span>
+                  {s.text}
+                </li>
+              ))}
+            </ul>
+          )}
         </div>
       )}
 
-      {/* Input form — hidden while the thinking layer is shown */}
+      {/* Input form — hidden while the stream panel is shown */}
       {!isProcessing && (
       <>
       {/* Camera-first: open the back camera, capture, and auto-solve instantly */}

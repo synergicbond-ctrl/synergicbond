@@ -10,6 +10,7 @@ import {
   type SnapSolveResponse,
   type SnapSolveClassification,
 } from "@/lib/snapSolveTypes";
+import { getAdaptation, recordSession } from "@/lib/memoryCore";
 
 // ---------------------------------------------------------------------------
 // Fallback + guidance helpers (server-owned; the UI never computes these)
@@ -135,77 +136,336 @@ function stripFences(s: string): string {
 }
 
 // ---------------------------------------------------------------------------
-// Route
+// Core solve — single source of truth for BOTH the JSON and the SSE paths.
+// Always resolves to a schema-valid SnapSolveResponse (errors collapse into a
+// validated fallback object so callers never have to handle a throw).
+// ---------------------------------------------------------------------------
+interface SolveInput {
+  imageBase64?: string;
+  query?: string;
+  language?: string;
+  userId?: string;
+}
+
+async function solve({ imageBase64, query, language = "english" }: SolveInput): Promise<SnapSolveResponse> {
+  const typed = typeof query === "string" ? query.trim() : "";
+
+  const hasKey = !!process.env.GEMINI_API_KEY;
+  let candidate: unknown;
+
+  if (!hasKey) {
+    // Simulator path — keeps the whole pipeline testable without a live key.
+    candidate = simulate({ query: typed, hasImage: !!imageBase64 });
+  } else {
+    const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY || "" });
+    const parts: Array<Record<string, unknown>> = [];
+    if (imageBase64) {
+      const base64Data = imageBase64.startsWith("data:") ? imageBase64.split(",")[1] : imageBase64;
+      parts.push({ inlineData: { mimeType: "image/jpeg", data: base64Data } });
+    }
+    parts.push({
+      text: `${PROMPT}\n\n${langLine(language)}${typed ? `\n\nStudent's typed question: ${typed}` : ""}`,
+    });
+
+    const response = await ai.models.generateContent({
+      model: "gemini-1.5-flash",
+      contents: [{ role: "user", parts }],
+      config: { responseMimeType: "application/json", temperature: 0.2 },
+    });
+
+    const raw = stripFences(response.text ?? "");
+    try {
+      candidate = JSON.parse(raw);
+    } catch {
+      return buildFallback(typed, "The solver returned an unreadable response. Please try again.");
+    }
+  }
+
+  // Inject server-owned defaults so validation is deterministic.
+  if (candidate && typeof candidate === "object") {
+    const c = candidate as Record<string, unknown>;
+    c.id ??= randomUUID();
+    if (typeof c.fallbackTriggered !== "boolean") c.fallbackTriggered = false;
+  }
+
+  // Strict Zod contract validation BEFORE dispatching downstream.
+  let payload: SnapSolveResponse;
+  try {
+    payload = SnapSolveResponseSchema.parse(candidate);
+  } catch (e) {
+    console.error("snap-solve schema drift:", e);
+    return buildFallback(typed, "We couldn't structure this solution reliably. Please retake the photo or type the question.");
+  }
+
+  // Low-confidence fallback routing — server-side safety-threshold check.
+  if (payload.ocrConfidence < OCR_CONFIDENCE_THRESHOLD) {
+    payload.fallbackTriggered = true;
+  }
+  if (payload.fallbackTriggered) {
+    payload.recommendedPractice = Array.from(
+      new Set([...payload.recommendedPractice, ...CAMERA_GUIDANCE])
+    );
+  }
+
+  return payload;
+}
+
+// ---------------------------------------------------------------------------
+// SSE streaming layer (opt-in via `Accept: text/event-stream`).
+// Emits: reasoning* → step* → partial_result* → final.
+// The schema is never changed; `final` is the same validated SnapSolveResponse
+// the JSON path returns. Reasoning copy is generic/process-oriented only — it
+// never asserts a chemistry verdict that could contradict the real answer.
+// ---------------------------------------------------------------------------
+const REASONING_LINES = [
+  "Analyzing the problem…",
+  "Parsing the given information…",
+  "Identifying the relevant concept…",
+  "Mapping out the solution path…",
+  "Cross-verifying the approach…",
+];
+
+const sleep = (ms: number) => new Promise<void>((r) => setTimeout(r, ms));
+
+function sseFrame(event: string, data: unknown): string {
+  // JSON.stringify yields a single line (no raw newlines), so SSE framing is safe.
+  return `event: ${event}\ndata: ${JSON.stringify(data)}\n\n`;
+}
+
+function streamSolve(input: SolveInput): Response {
+  const encoder = new TextEncoder();
+  const userId = input.userId || "anonymous";
+  // Best-effort pre-classification of a typed question so reasoning depth/pace
+  // can adapt to the user's history before the real solve completes.
+  const topicGuess = classify(typeof input.query === "string" ? input.query : "");
+  const adapt = getAdaptation(userId, topicGuess);
+
+  const stream = new ReadableStream<Uint8Array>({
+    async start(controller) {
+      const send = (event: string, data: unknown) => {
+        controller.enqueue(encoder.encode(sseFrame(event, data)));
+      };
+
+      try {
+        // Phase 1 — reasoning stream (simulated cognition; not model output).
+        // Weak topics get a high-priority hint + more, slower reasoning; strong
+        // topics get a terser, faster stream. Adaptation never alters `final`.
+        if (adapt.hint) {
+          send("reasoning", adapt.hint);
+          await sleep(adapt.paceMs);
+        }
+        const lines = REASONING_LINES.slice(0, Math.min(adapt.reasoningDepth, REASONING_LINES.length));
+        for (let i = 0; i < lines.length; i++) {
+          send("reasoning", lines[i]);
+          await sleep(adapt.paceMs);
+        }
+
+        // Compute the real, validated answer (always schema-valid).
+        const payload = await solve(input);
+        recordSession(userId, payload);
+
+        // Phase 2 — stream solution steps. Strong topics get a condensed recap;
+        // the full step set is always preserved in `final`.
+        const streamedSteps = adapt.concise ? payload.solution.steps.slice(0, 2) : payload.solution.steps;
+        for (const step of streamedSteps) {
+          send("step", { stepNumber: step.stepNumber, text: step.title || step.explanation });
+          await sleep(adapt.concise ? 240 : 320);
+        }
+
+        // Phase 3 — incremental JSON hydration, in the mandated order.
+        send("partial_result", { classification: payload.classification });
+        await sleep(220);
+        send("partial_result", { ocrConfidence: payload.ocrConfidence });
+        await sleep(220);
+        send("partial_result", { parsedProblem: payload.parsedProblem });
+        await sleep(220);
+
+        // Phase 4 — final object: the COMPLETE payload, re-validated. Never trimmed.
+        const final = SnapSolveResponseSchema.parse(payload);
+        send("final", final);
+      } catch (err) {
+        // Headers are already sent — can't fall back to JSON. Emit a schema-valid
+        // final so the client always terminates on a usable contract object.
+        console.error("snap-solve stream error:", err);
+        const typed = typeof input.query === "string" ? input.query.trim() : "";
+        const fb = buildFallback(typed, "The live solver was interrupted. Please try again.");
+        try {
+          send("final", SnapSolveResponseSchema.parse(fb));
+        } catch {
+          /* client likely disconnected; nothing more to do */
+        }
+      } finally {
+        try {
+          controller.close();
+        } catch {
+          /* already closed */
+        }
+      }
+    },
+  });
+
+  return new Response(stream, {
+    headers: {
+      "Content-Type": "text/event-stream; charset=utf-8",
+      "Cache-Control": "no-cache, no-transform",
+      Connection: "keep-alive",
+      "X-Accel-Buffering": "no",
+    },
+  });
+}
+
+// ---------------------------------------------------------------------------
+// Tutor mode (interrupt) — a SEPARATE, stateless SSE stream.
+//
+// NOTE ON ARCHITECTURE: true single-connection interruption (request B mutating
+// request A's live stream) is not possible over stateless SSE without WebSockets
+// or shared session state (queue/DB) — all out of scope here. So an interrupt is
+// modelled as the client aborting the solve stream and opening THIS tutor stream.
+// It emits an `interrupt` event, switches to explanation-first pacing, answers
+// the clarification via the same validated solve(), and still ends on a
+// schema-valid `final`. Solve-mode SSE and the JSON path are unaffected.
+// ---------------------------------------------------------------------------
+const TUTOR_REASONING = [
+  "Pausing the solution to address your question…",
+  "Let's build the intuition before the maths…",
+  "Comparing the competing pathways side by side…",
+  "Breaking the idea into smaller pieces…",
+  "Connecting it back to where we left the solution…",
+];
+
+interface TutorInput extends SolveInput {
+  message?: string;
+  currentContext?: string;
+}
+
+function streamTutor({ imageBase64, query, language = "english", message, currentContext, userId }: TutorInput): Response {
+  const encoder = new TextEncoder();
+  // The interrupt's own message is the question to teach against; fall back to
+  // the original problem if the client sent no clarification text.
+  const tutorQuery = (typeof message === "string" && message.trim()) || query;
+  const uid = userId || "anonymous";
+  const topicGuess = classify(typeof tutorQuery === "string" ? tutorQuery : "");
+  const adapt = getAdaptation(uid, topicGuess);
+
+  const stream = new ReadableStream<Uint8Array>({
+    async start(controller) {
+      const send = (event: string, data: unknown) => {
+        controller.enqueue(encoder.encode(sseFrame(event, data)));
+      };
+
+      try {
+        // Announce the mode switch (new SSE event type — additive, non-breaking).
+        send("interrupt", {
+          message: typeof message === "string" && message.trim() ? `User asked: ${message.trim()}` : "User requested clarification",
+          context: typeof currentContext === "string" && currentContext ? currentContext : "unknown",
+        });
+        await sleep(250);
+
+        // Tutor pacing — slower, explanation-first (generic teaching scaffolding;
+        // never asserts a specific verdict that could contradict the real answer).
+        // Weak topics surface a high-priority hint and get the full explanation
+        // set; strong topics get a condensed teach-back.
+        if (adapt.hint) {
+          send("reasoning", adapt.hint);
+          await sleep(500);
+        }
+        const tutorLines = adapt.isStrong ? TUTOR_REASONING.slice(0, 2) : TUTOR_REASONING;
+        for (let i = 0; i < tutorLines.length; i++) {
+          send("reasoning", tutorLines[i]);
+          await sleep(600 + ((i * 113) % 400)); // 600–1000ms, deliberately slower
+        }
+
+        // Resolve the clarification via the same validated pipeline.
+        const payload = await solve({ imageBase64, query: tutorQuery, language });
+        recordSession(uid, payload);
+
+        // Optional resumption of the solution — stream its steps as a recap.
+        const recapSteps = adapt.concise ? payload.solution.steps.slice(0, 2) : payload.solution.steps;
+        for (const step of recapSteps) {
+          send("step", { stepNumber: step.stepNumber, text: step.title || step.explanation });
+          await sleep(420);
+        }
+
+        send("partial_result", { classification: payload.classification });
+        await sleep(220);
+        send("partial_result", { ocrConfidence: payload.ocrConfidence });
+        await sleep(220);
+        send("partial_result", { parsedProblem: payload.parsedProblem });
+        await sleep(220);
+
+        const final = SnapSolveResponseSchema.parse(payload);
+        send("final", final);
+      } catch (err) {
+        console.error("snap-solve tutor stream error:", err);
+        const fb = buildFallback(typeof tutorQuery === "string" ? tutorQuery.trim() : "", "The tutor session was interrupted. Please try again.");
+        try {
+          send("final", SnapSolveResponseSchema.parse(fb));
+        } catch {
+          /* client likely disconnected */
+        }
+      } finally {
+        try {
+          controller.close();
+        } catch {
+          /* already closed */
+        }
+      }
+    },
+  });
+
+  return new Response(stream, {
+    headers: {
+      "Content-Type": "text/event-stream; charset=utf-8",
+      "Cache-Control": "no-cache, no-transform",
+      Connection: "keep-alive",
+      "X-Accel-Buffering": "no",
+    },
+  });
+}
+
+// ---------------------------------------------------------------------------
+// Route — JSON by default (unchanged contract); SSE when explicitly requested;
+// tutor-mode SSE when an interrupt is posted.
 // ---------------------------------------------------------------------------
 export async function POST(request: Request) {
   try {
-    const { imageBase64, query, language = "english" } = await request.json();
+    const body = await request.json();
+    const { imageBase64, query, language = "english", interrupt, message, currentContext } = body ?? {};
+    // Optional — present only once a future frontend sends it. Until then all
+    // sessions share the "anonymous" bucket (see lib/memoryCore caveats).
+    const userId = typeof body?.userId === "string" && body.userId.trim() ? body.userId.trim() : "anonymous";
+
+    // Interrupt → tutor-mode SSE. Needs either a clarification message or the
+    // original question to teach against.
+    if (interrupt === true) {
+      const hasTopic =
+        (typeof message === "string" && message.trim()) ||
+        (typeof query === "string" && query.trim()) ||
+        !!imageBase64;
+      if (!hasTopic) {
+        return NextResponse.json({ error: "An interrupt needs a message or an existing question." }, { status: 400 });
+      }
+      return streamTutor({ imageBase64, query, language, message, currentContext, userId });
+    }
+
     const typed = typeof query === "string" ? query.trim() : "";
     if (!imageBase64 && !typed) {
       return NextResponse.json({ error: "Provide an image or a typed question." }, { status: 400 });
     }
 
-    const hasKey = !!process.env.GEMINI_API_KEY;
-    let candidate: unknown;
-
-    if (!hasKey) {
-      // Simulator path — keeps the whole pipeline testable without a live key.
-      candidate = simulate({ query: typed, hasImage: !!imageBase64 });
-    } else {
-      const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY || "" });
-      const parts: Array<Record<string, unknown>> = [];
-      if (imageBase64) {
-        const base64Data = imageBase64.startsWith("data:") ? imageBase64.split(",")[1] : imageBase64;
-        parts.push({ inlineData: { mimeType: "image/jpeg", data: base64Data } });
-      }
-      parts.push({
-        text: `${PROMPT}\n\n${langLine(language)}${typed ? `\n\nStudent's typed question: ${typed}` : ""}`,
-      });
-
-      const response = await ai.models.generateContent({
-        model: "gemini-1.5-flash",
-        contents: [{ role: "user", parts }],
-        config: { responseMimeType: "application/json", temperature: 0.2 },
-      });
-
-      const raw = stripFences(response.text ?? "");
-      try {
-        candidate = JSON.parse(raw);
-      } catch {
-        return NextResponse.json(buildFallback(typed, "The solver returned an unreadable response. Please try again."));
-      }
+    // Backward-compatible: only stream when the client opts in. The existing
+    // frontend (which calls res.json()) keeps receiving the same JSON payload.
+    const wantsStream = (request.headers.get("accept") || "").includes("text/event-stream");
+    if (wantsStream) {
+      return streamSolve({ imageBase64, query, language, userId });
     }
 
-    // Inject server-owned defaults so validation is deterministic.
-    if (candidate && typeof candidate === "object") {
-      const c = candidate as Record<string, unknown>;
-      c.id ??= randomUUID();
-      if (typeof c.fallbackTriggered !== "boolean") c.fallbackTriggered = false;
-    }
-
-    // Strict Zod contract validation BEFORE dispatching downstream.
-    let payload: SnapSolveResponse;
-    try {
-      payload = SnapSolveResponseSchema.parse(candidate);
-    } catch (e) {
-      console.error("snap-solve schema drift:", e);
-      return NextResponse.json(buildFallback(typed, "We couldn't structure this solution reliably. Please retake the photo or type the question."));
-    }
-
-    // Low-confidence fallback routing — server-side safety-threshold check.
-    if (payload.ocrConfidence < OCR_CONFIDENCE_THRESHOLD) {
-      payload.fallbackTriggered = true;
-    }
-    if (payload.fallbackTriggered) {
-      payload.recommendedPractice = Array.from(
-        new Set([...payload.recommendedPractice, ...CAMERA_GUIDANCE])
-      );
-    }
-
+    const payload = await solve({ imageBase64, query, language });
+    recordSession(userId, payload);
     return NextResponse.json(payload);
   } catch (err: unknown) {
-    const message = err instanceof Error ? err.message : "Snap solve failed";
+    const errMessage = err instanceof Error ? err.message : "Snap solve failed";
     console.error("Snap solve error:", err);
-    return NextResponse.json({ error: message }, { status: 500 });
+    return NextResponse.json({ error: errMessage }, { status: 500 });
   }
 }

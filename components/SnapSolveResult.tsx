@@ -1,5 +1,6 @@
 "use client";
 
+import { Camera, Keyboard, SunMedium } from "lucide-react";
 import type { SnapSolveResponse, SnapSolveClassification } from "@/lib/snapSolveTypes";
 import { renderChemistry } from "@/lib/renderChemistry";
 
@@ -18,12 +19,42 @@ function confidenceTone(c: number): string {
 }
 
 export default function SnapSolveResult({ data }: { data: SnapSolveResponse }) {
+  // Fallback intercepted → swap the entire viewport to a defensive card.
+  if (data.fallbackTriggered) {
+    return (
+      <div className="flex flex-col items-center justify-center rounded-2xl border border-amber-500/25 bg-amber-500/[0.06] p-8 text-center">
+        <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-amber-500/15">
+          <Camera className="h-7 w-7 text-amber-300" />
+        </div>
+        <h3 className="mt-4 text-lg font-black text-amber-100">Couldn’t read that clearly</h3>
+        <p className="mt-1 max-w-sm text-sm text-amber-200/80">
+          Reading precision was too low to solve reliably ({Math.round(data.ocrConfidence * 100)}%).
+          Try one of these for an exact solution:
+        </p>
+        <div className="mt-5 grid w-full max-w-sm gap-2.5 text-left">
+          <div className="flex items-center gap-3 rounded-xl border border-white/[0.06] bg-[#111827] px-4 py-3">
+            <Keyboard className="h-4 w-4 shrink-0 text-cyan-300" />
+            <span className="text-sm text-white/80">Type the formula or question manually</span>
+          </div>
+          <div className="flex items-center gap-3 rounded-xl border border-white/[0.06] bg-[#111827] px-4 py-3">
+            <SunMedium className="h-4 w-4 shrink-0 text-cyan-300" />
+            <span className="text-sm text-white/80">Retake under clearer lighting / higher contrast</span>
+          </div>
+          <div className="flex items-center gap-3 rounded-xl border border-white/[0.06] bg-[#111827] px-4 py-3">
+            <Camera className="h-4 w-4 shrink-0 text-cyan-300" />
+            <span className="text-sm text-white/80">Crop tightly to a single question</span>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   const cls = CLASS_STYLE[data.classification];
   const confPct = Math.round(data.ocrConfidence * 100);
 
   return (
     <div className="rounded-2xl border border-white/[0.08] bg-[#111827] p-5 space-y-5">
-      {/* Utility header: classification (left) · reading precision (right) */}
+      {/* Header: classification (left) · reading precision (right) */}
       <div className="flex items-center justify-between gap-3">
         <span className={`inline-flex items-center gap-1.5 rounded-full border px-2.5 py-0.5 text-xs font-bold ${cls.cls}`}>
           {cls.emoji} {data.classification}
@@ -36,13 +67,6 @@ export default function SnapSolveResult({ data }: { data: SnapSolveResponse }) {
           <span className="tabular-nums font-semibold" style={{ color: confidenceTone(data.ocrConfidence) }}>{confPct}%</span>
         </div>
       </div>
-
-      {/* Low-confidence guidance */}
-      {data.fallbackTriggered && (
-        <div className="rounded-xl border border-amber-500/25 bg-amber-500/[0.08] px-4 py-3 text-sm text-amber-200">
-          ⚠️ Low-confidence read — type the question manually, or adjust your camera’s contrast / lighting and retake the photo for an exact solution.
-        </div>
-      )}
 
       {/* Parsed problem */}
       <div>
@@ -57,13 +81,12 @@ export default function SnapSolveResult({ data }: { data: SnapSolveResponse }) {
           <div className="border-l-2 border-slate-800 ml-4 pl-6 space-y-6">
             {data.solution.steps.map((s) => (
               <div key={s.stepNumber} className="relative">
-                {/* timeline node */}
                 <span className="absolute -left-[33px] flex h-5 w-5 items-center justify-center rounded-full bg-cyan-500/20 text-[11px] font-black text-cyan-300 ring-4 ring-[#111827]">
                   {s.stepNumber}
                 </span>
                 <h4 className="text-sm font-bold text-white">{s.title}</h4>
                 {s.equation && (
-                  <div className="mt-2 inline-block font-mono bg-slate-950/60 border border-slate-900 px-3 py-1.5 rounded text-rose-400 text-xs tracking-wide max-w-full overflow-x-auto whitespace-nowrap">
+                  <div className="mt-2 inline-block max-w-full overflow-x-auto whitespace-nowrap font-mono bg-slate-950/60 border border-slate-900 px-3 py-1.5 rounded text-rose-400 text-xs tracking-wide">
                     {renderChemistry(s.equation)}
                   </div>
                 )}

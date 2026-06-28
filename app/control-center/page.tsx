@@ -1,11 +1,14 @@
-import SnapSolvePanel from "@/components/SnapSolvePanel";
+"use client";
 
-export const metadata = {
-  title: "Control Center · Snap & Solve",
-  description: "Snap a photo or type any chemistry/physics problem and get a structured, step-by-step AI solution.",
-};
+import { useState } from "react";
+import SnapSolveUpload from "@/components/SnapSolveUpload";
+import SnapSolveResult from "@/components/SnapSolveResult";
+import type { SnapSolveResponse } from "@/lib/snapSolveTypes";
 
 export default function ControlCenterPage() {
+  // Local state coordinator — owns the active solution pipeline (SSOT).
+  const [activeSolution, setActiveSolution] = useState<SnapSolveResponse | null>(null);
+
   return (
     <main className="min-h-screen bg-[#0B0F19] text-white">
       <div className="mx-auto max-w-5xl px-6 py-12">
@@ -18,7 +21,19 @@ export default function ControlCenterPage() {
           </p>
         </div>
 
-        <SnapSolvePanel />
+        {/* Root grid framework matrix */}
+        <div className="grid gap-5 lg:grid-cols-2 lg:items-start">
+          <SnapSolveUpload onUploadSuccess={(data) => setActiveSolution(data)} />
+
+          {activeSolution ? (
+            <SnapSolveResult data={activeSolution} />
+          ) : (
+            <div className="flex min-h-44 flex-col items-center justify-center rounded-2xl border border-white/[0.06] bg-[#111827]/50 p-6 text-center text-white/25">
+              <div className="text-4xl">💡</div>
+              <p className="mt-2 text-sm">Your structured solution will appear here</p>
+            </div>
+          )}
+        </div>
       </div>
     </main>
   );

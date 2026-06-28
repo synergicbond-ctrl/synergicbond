@@ -19,19 +19,46 @@ import {
 // ALLEN-style category mega-menus (label + grouped links with descriptions)
 type MenuItem = { href: string; label: string; desc: string; icon: any };
 type Menu = { title: string; items: MenuItem[]; wide?: boolean };
-const menus: Menu[] = [
+
+// LEARN is special: a pinned Periodic Table + grouped sections (the "knowledge engine")
+const learnPinned = { href: "/periodic-table", label: "Periodic Table", desc: "Interactive · trends · element data — the brain of chemistry", icon: Table2 };
+const learnGroups: { title: string; items: MenuItem[] }[] = [
   {
-    title: "Learn",
+    title: "🧠 Core Chemistry",
     items: [
-      { href: "/vault",          label: "Knowledge Vault",   desc: "Concepts, reactions, formulas, exceptions", icon: Archive },
-      { href: "/periodic-table", label: "Periodic Table",    desc: "Interactive — tap any element",             icon: Table2 },
-      { href: "/reagents",       label: "Reagents & Reference", desc: "Reagents · redox · name reactions · solubility · colours · properties", icon: FlaskConical },
-      { href: "/molecule",       label: "Molecule Explorer", desc: "Look up any compound's data",               icon: Atom },
-      { href: "/notes",          label: "AI Notes",          desc: "Exam-focused notes for any topic",          icon: BookOpen },
-      { href: "/study-tools",    label: "Study Tools",       desc: "Multicolor notes, focus timer, roadmap",    icon: Layers },
-      { href: "/library",        label: "Book Library",      desc: "70+ world-class textbooks",                 icon: BookMarked },
+      { href: "/vault",     label: "Knowledge Vault",   desc: "Concepts, reactions, exceptions", icon: Archive },
+      { href: "/molecule",  label: "Molecule Explorer", desc: "Look up any compound",            icon: Atom },
+      { href: "/properties",label: "Bonding & Geometry",desc: "Shape, hybridization, dipole",    icon: Sigma },
+      { href: "/notes",     label: "AI Notes",          desc: "Exam-focused notes",              icon: BookOpen },
     ],
   },
+  {
+    title: "🧪 Reactions & Reference",
+    items: [
+      { href: "/reagents",        label: "Reagents",     desc: "Reagent master list",        icon: FlaskConical },
+      { href: "/redox-reactions", label: "Redox",        desc: "Oxidation / reduction",      icon: Sparkles },
+      { href: "/solubility",      label: "Solubility",   desc: "Rules & exceptions",         icon: GitBranch },
+      { href: "/properties",      label: "Properties",   desc: "BP/MP, state, dipole",       icon: Atom },
+      { href: "/salt-colors",     label: "Salt Colors",  desc: "Ion, ppt, flame colours",    icon: Palette },
+    ],
+  },
+  {
+    title: "📚 Study Resources",
+    items: [
+      { href: "/library",     label: "Book Library", desc: "70+ world-class textbooks",     icon: BookMarked },
+      { href: "/study-tools", label: "Study Tools",  desc: "Multicolor notes, timer, plan", icon: Layers },
+    ],
+  },
+  {
+    title: "🔥 Advanced",
+    items: [
+      { href: "/periodic-table", label: "Trends Explorer",     desc: "Colour table by EN / radius / MP", icon: BarChart2 },
+      { href: "/name-reactions", label: "Mechanism Visualizer",desc: "700+ mechanisms, AI-explained",    icon: GitBranch },
+    ],
+  },
+];
+
+const menus: Menu[] = [
   {
     title: "Practice",
     items: [
@@ -178,6 +205,54 @@ export default function Navbar() {
           <Link href="/search" className="flex items-center gap-1.5 px-3 py-2 rounded-lg text-sm font-medium text-gray-300 hover:text-white hover:bg-white/[0.05] transition">
             <Search className="h-4 w-4" /> {t("nav.search")}
           </Link>
+
+          {/* LEARN — grouped knowledge engine with pinned Periodic Table */}
+          <div className="relative" onMouseEnter={() => setOpenMenu("Learn")} onMouseLeave={() => setOpenMenu(null)}>
+            <button className={`flex items-center gap-1 px-3 py-2 rounded-lg text-sm font-medium transition ${openMenu === "Learn" || ["/vault","/periodic-table","/molecule","/notes","/reagents","/redox-reactions","/solubility","/properties","/salt-colors","/library","/study-tools","/name-reactions"].includes(pathname) ? "text-white bg-white/[0.06]" : "text-gray-300 hover:text-white hover:bg-white/[0.05]"}`}>
+              Learn <ChevronDown className={`h-3.5 w-3.5 transition-transform ${openMenu === "Learn" ? "rotate-180" : ""}`} />
+            </button>
+            {openMenu === "Learn" && (
+              <div className="absolute left-1/2 -translate-x-1/2 top-full pt-2 z-50">
+                <div className="w-[620px] rounded-2xl border border-white/[0.08] bg-[#111827]/98 backdrop-blur-xl shadow-2xl shadow-black/50 p-3">
+                  {/* Pinned Periodic Table */}
+                  <Link href={learnPinned.href} onClick={() => setOpenMenu(null)} className="group flex items-center gap-3 rounded-xl p-3 mb-2 border border-cyan-400/25 bg-gradient-to-r from-cyan-500/15 to-purple-500/10 hover:from-cyan-500/20 transition">
+                    <span className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-xl bg-cyan-500/20 border border-cyan-400/30">
+                      <Table2 className="h-5 w-5 text-cyan-300" />
+                    </span>
+                    <span className="flex-1 min-w-0">
+                      <span className="flex items-center gap-2 text-sm font-black text-white">{learnPinned.label}<span className="text-[8px] font-bold tracking-wider text-cyan-300 bg-cyan-500/15 px-1.5 py-0.5 rounded-full">PINNED</span></span>
+                      <span className="block text-xs text-white/55">{learnPinned.desc}</span>
+                    </span>
+                    {/* mini grid motif */}
+                    <span className="hidden sm:grid grid-cols-6 gap-[2px] flex-shrink-0">
+                      {Array.from({ length: 18 }).map((_, i) => <span key={i} className="h-1.5 w-1.5 rounded-[1px]" style={{ background: `hsl(${185 + (i / 18) * 120},70%,55%)`, opacity: 0.7 }} />)}
+                    </span>
+                  </Link>
+                  {/* Grouped sections */}
+                  <div className="grid grid-cols-2 gap-x-3">
+                    {learnGroups.map((g) => (
+                      <div key={g.title} className="py-1">
+                        <p className="text-[10px] font-bold uppercase tracking-wider text-white/35 px-2 mt-1 mb-0.5">{g.title}</p>
+                        {g.items.map((it) => {
+                          const Icon = it.icon;
+                          const active = pathname === it.href;
+                          return (
+                            <Link key={it.label} href={it.href} onClick={() => setOpenMenu(null)} className={`flex items-center gap-2.5 px-2 py-1.5 rounded-lg transition ${active ? "bg-cyan-500/10" : "hover:bg-white/[0.05]"}`}>
+                              <Icon className={`h-4 w-4 flex-shrink-0 ${active ? "text-cyan-400" : "text-gray-400"}`} />
+                              <span className="min-w-0">
+                                <span className={`block text-[13px] font-semibold leading-tight ${active ? "text-cyan-300" : "text-white"}`}>{it.label}</span>
+                                <span className="block text-[10px] text-gray-500 leading-tight">{it.desc}</span>
+                              </span>
+                            </Link>
+                          );
+                        })}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            )}
+          </div>
 
           {menus.map((menu) => {
             const open = openMenu === menu.title;

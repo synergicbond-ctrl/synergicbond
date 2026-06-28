@@ -1,8 +1,9 @@
 "use client";
 
 import { useState, useMemo } from "react";
+import Link from "next/link";
 import { ELEMENTS, CATS, blockOf, electronConfig, DETAIL, type Element, type Cat } from "@/lib/periodicTable";
-import { X, ExternalLink } from "lucide-react";
+import { X, ExternalLink, Search, Atom, Sparkles, BarChart2 } from "lucide-react";
 
 type View = "category" | "en" | "r" | "mp";
 const VIEWS: { id: View; label: string; unit: string }[] = [
@@ -31,6 +32,8 @@ export default function PeriodicTablePage() {
   const [active, setActive] = useState<Element | null>(null);
   const [hl, setHl] = useState<Cat | null>(null);
   const [view, setView] = useState<View>("category");
+  const [query, setQuery] = useState("");
+  const q = query.trim().toLowerCase();
 
   // min/max for the active property (for the gradient scale)
   const range = useMemo(() => {
@@ -57,7 +60,18 @@ export default function PeriodicTablePage() {
         <div className="mb-6">
           <p className="text-xs font-bold uppercase tracking-[0.4em] text-cyan-300 mb-2">Knowledge Vault · Interactive</p>
           <h1 className="text-3xl md:text-4xl font-black">Periodic Table</h1>
-          <p className="mt-2 text-white/55 text-sm">Tap any element for details. Hover a category in the legend to highlight that family.</p>
+          <p className="mt-2 text-white/55 text-sm">Tap any element for details · search to jump · colour by trend.</p>
+        </div>
+
+        {/* Search shortcut */}
+        <div className="relative max-w-sm mb-4">
+          <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 h-4 w-4 text-white/30" />
+          <input
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+            placeholder="Search element — Fe, iron, halogen…"
+            className="w-full rounded-xl border border-white/[0.08] bg-[#111827] pl-10 pr-4 py-2.5 text-sm text-white placeholder-white/30 outline-none focus:border-cyan-400/50"
+          />
         </div>
 
         {/* View toggle — color the table by a property (trends) */}
@@ -110,12 +124,14 @@ export default function PeriodicTablePage() {
           >
             {ELEMENTS.map((e) => {
               const color = tileColor(e);
-              const dim = view === "category" && hl && hl !== e.cat;
+              const matches = !q || e.sym.toLowerCase().includes(q) || e.name.toLowerCase().includes(q) || CATS[e.cat].label.toLowerCase().includes(q);
+              const dim = (view === "category" && hl && hl !== e.cat) || !matches;
+              const hit = !!q && matches;
               return (
                 <button
                   key={e.z}
                   onClick={() => setActive(e)}
-                  style={{ gridColumn: e.x, gridRow: e.y, borderColor: `${color}55`, background: `${color}14`, opacity: dim ? 0.2 : 1 }}
+                  style={{ gridColumn: e.x, gridRow: e.y, borderColor: hit ? color : `${color}55`, background: `${color}${hit ? "33" : "14"}`, opacity: dim ? 0.12 : 1, boxShadow: hit ? `0 0 12px ${color}` : undefined }}
                   className="aspect-square rounded-md border p-0.5 flex flex-col items-center justify-center transition-all duration-150 hover:scale-110 hover:z-10 hover:shadow-lg"
                 >
                   <span className="text-[7px] leading-none text-white/40 self-start pl-0.5">{e.z}</span>
@@ -166,13 +182,22 @@ export default function PeriodicTablePage() {
                 <Fact label="Group" value={active.cat === "ln" || active.cat === "ac" ? "f-block" : String(active.x)} />
                 <Fact label="Period" value={active.cat === "ln" ? "6" : active.cat === "ac" ? "7" : String(active.y)} />
               </div>
-              <a
-                href={`https://www.google.com/search?q=${encodeURIComponent(active.name + " element properties")}`}
-                target="_blank" rel="noopener noreferrer"
-                className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-cyan-300 hover:gap-2.5 transition"
-              >
-                More about {active.name} <ExternalLink className="h-3.5 w-3.5" />
-              </a>
+              {/* Connected system — the periodic table as a navigation brain */}
+              <p className="text-[10px] uppercase tracking-wider text-white/40 mt-4 mb-2">Explore connections</p>
+              <div className="grid grid-cols-2 gap-2">
+                <Link href={`/molecule?q=${active.sym}`} onClick={() => setActive(null)} className="flex items-center gap-2 rounded-lg bg-white/[0.03] border border-white/[0.06] px-3 py-2 text-xs font-semibold text-white/80 hover:border-cyan-400/30 hover:text-white transition">
+                  <Atom className="h-3.5 w-3.5 text-cyan-400" /> Compounds
+                </Link>
+                <Link href="/name-reactions" onClick={() => setActive(null)} className="flex items-center gap-2 rounded-lg bg-white/[0.03] border border-white/[0.06] px-3 py-2 text-xs font-semibold text-white/80 hover:border-cyan-400/30 hover:text-white transition">
+                  <Sparkles className="h-3.5 w-3.5 text-violet-400" /> Reactions
+                </Link>
+                <button onClick={() => { setView("en"); setActive(null); }} className="flex items-center gap-2 rounded-lg bg-white/[0.03] border border-white/[0.06] px-3 py-2 text-xs font-semibold text-white/80 hover:border-cyan-400/30 hover:text-white transition">
+                  <BarChart2 className="h-3.5 w-3.5 text-cyan-400" /> Compare Trends
+                </button>
+                <a href={`https://www.google.com/search?q=${encodeURIComponent(active.name + " element properties")}`} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 rounded-lg bg-white/[0.03] border border-white/[0.06] px-3 py-2 text-xs font-semibold text-white/80 hover:border-cyan-400/30 hover:text-white transition">
+                  <ExternalLink className="h-3.5 w-3.5 text-cyan-400" /> More
+                </a>
+              </div>
             </div>
           </div>
         </div>

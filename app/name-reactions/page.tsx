@@ -3,6 +3,7 @@
 import { useMemo, useState } from "react";
 import { NAME_REACTIONS, HIGH_YIELD } from "@/lib/nameReactions";
 import { Search, Star, X, Sparkles, Loader2 } from "lucide-react";
+import ReferenceTabs from "@/components/ReferenceTabs";
 import ReactMarkdown from "react-markdown";
 import remarkMath from "remark-math";
 import rehypeKatex from "rehype-katex";
@@ -57,6 +58,7 @@ export default function NameReactionsPage() {
     <main className="min-h-screen bg-[#0B0F19] text-white">
 
       <div className="mx-auto max-w-5xl px-6 py-12">
+        <ReferenceTabs />
         {/* Header */}
         <div className="mb-6">
           <p className="text-xs font-bold uppercase tracking-[0.4em] text-cyan-300 mb-3">Knowledge Vault · Organic</p>

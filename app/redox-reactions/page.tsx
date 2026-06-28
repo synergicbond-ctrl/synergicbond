@@ -2,6 +2,7 @@
 
 import { useMemo, useState } from "react";
 import { Search, ArrowRight } from "lucide-react";
+import ReferenceTabs from "@/components/ReferenceTabs";
 
 type Rxn = { substrate: string; product: string; reagent: string; level: string };
 
@@ -77,6 +78,7 @@ export default function RedoxPage() {
   return (
     <main className="min-h-screen bg-[#0B0F19] text-white">
       <div className="mx-auto max-w-5xl px-6 py-12">
+        <ReferenceTabs />
         <p className="text-xs font-bold uppercase tracking-[0.4em] text-cyan-300 mb-3">Knowledge Vault · Organic</p>
         <h1 className="text-4xl font-black md:text-5xl">Oxidation & Reduction</h1>
         <p className="mt-3 text-white/65 text-sm max-w-2xl mb-6">

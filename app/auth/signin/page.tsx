@@ -94,7 +94,7 @@ export default function SignInPage() {
           </button>
 
           <button
-            onClick={() => { window.location.href = "/notes"; }}
+            onClick={() => { localStorage.setItem("sb_guest", "1"); window.location.href = "/notes"; }}
             className="w-full rounded-xl border border-cyan-500/30 bg-cyan-950/30 py-3 font-semibold text-cyan-300 flex items-center justify-center gap-2 hover:bg-cyan-950/50 transition"
           >
             ⚡ Try as Guest — No Login Needed

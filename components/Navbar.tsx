@@ -2,15 +2,17 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import MoleculeLogo from "@/components/MoleculeLogo";
 import { useT, LANGS, type Lang } from "@/lib/i18n";
+import { supabase } from "@/lib/supabase";
 import {
   BookOpen, ClipboardList, FlaskConical, FileText,
   Bot, Camera, PenLine, Atom, Target, Calendar,
   BarChart2, Medal, Trophy, Archive, Gem, Menu, X,
   Globe, ChevronDown, Sparkles, GraduationCap, Layers, Info,
-  Home, Search, LayoutGrid, GitBranch, Sigma, Palette
+  Home, Search, LayoutGrid, GitBranch, Sigma, Palette,
+  LayoutDashboard, LogOut, UserCircle
 } from "lucide-react";
 
 // Compact dock — the 7 core destinations (icon-only, with tooltips)
@@ -61,6 +63,29 @@ export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [langOpen, setLangOpen] = useState(false);
   const [moreOpen, setMoreOpen] = useState(false);
+  const [acctOpen, setAcctOpen] = useState(false);
+  const [email, setEmail] = useState<string | null>(null);
+  const [isGuest, setIsGuest] = useState(false);
+
+  // Auth state — show the signed-in student in the navbar
+  useEffect(() => {
+    let mounted = true;
+    supabase.auth.getUser().then(({ data }) => {
+      if (mounted) setEmail(data.user?.email ?? null);
+    });
+    const { data: sub } = supabase.auth.onAuthStateChange((_e, session) => {
+      setEmail(session?.user?.email ?? null);
+    });
+    if (typeof window !== "undefined") setIsGuest(localStorage.getItem("sb_guest") === "1");
+    return () => { mounted = false; sub.subscription.unsubscribe(); };
+  }, []);
+
+  async function signOut() {
+    await supabase.auth.signOut();
+    if (typeof window !== "undefined") localStorage.removeItem("sb_guest");
+    setEmail(null); setIsGuest(false); setAcctOpen(false);
+    window.location.href = "/";
+  }
 
   const currentLang = LANGS.find((l) => l.code === lang) ?? LANGS[0];
 
@@ -197,12 +222,58 @@ export default function Navbar() {
             <Medal className="h-3.5 w-3.5" />
           </Link>
 
-          <Link
-            href="/auth/signin"
-            className="rounded-xl bg-gradient-to-r from-cyan-400 to-sky-500 px-3 py-1.5 text-xs font-semibold text-black shadow-lg shadow-cyan-500/20 transition hover:-translate-y-0.5"
-          >
-            {t("nav.signIn")} →
-          </Link>
+          {email ? (
+            /* Signed-in account chip + dropdown */
+            <div className="relative">
+              <button
+                onClick={() => setAcctOpen(!acctOpen)}
+                className="flex items-center gap-2 rounded-xl border border-white/[0.08] bg-white/[0.04] pl-1 pr-2.5 py-1 hover:border-cyan-400/30 transition"
+              >
+                <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-gradient-to-br from-cyan-400 to-sky-500 text-black text-xs font-black">
+                  {email[0].toUpperCase()}
+                </span>
+                <span className="hidden md:block text-xs font-semibold text-white/80 max-w-[120px] truncate">{email.split("@")[0]}</span>
+                <ChevronDown className={`h-3 w-3 text-white/50 transition-transform ${acctOpen ? "rotate-180" : ""}`} />
+              </button>
+              {acctOpen && (
+                <>
+                  <div className="fixed inset-0 z-40" onClick={() => setAcctOpen(false)} />
+                  <div className="absolute right-0 mt-2 w-56 z-50 rounded-xl border border-white/[0.08] bg-[#111827] shadow-2xl shadow-black/50 p-1.5">
+                    <div className="px-3 py-2 border-b border-white/[0.06] mb-1">
+                      <p className="text-[10px] text-white/40 uppercase tracking-wider">Signed in as</p>
+                      <p className="text-xs font-semibold text-white truncate">{email}</p>
+                    </div>
+                    <Link href="/dashboard" onClick={() => setAcctOpen(false)} className="flex items-center gap-2.5 w-full px-3 py-2 rounded-lg text-xs font-medium text-gray-300 hover:text-white hover:bg-white/5 transition">
+                      <LayoutDashboard className="h-4 w-4 text-cyan-400" /> My Dashboard
+                    </Link>
+                    <Link href="/achievements" onClick={() => setAcctOpen(false)} className="flex items-center gap-2.5 w-full px-3 py-2 rounded-lg text-xs font-medium text-gray-300 hover:text-white hover:bg-white/5 transition">
+                      <Medal className="h-4 w-4 text-yellow-400" /> Achievements
+                    </Link>
+                    <button onClick={signOut} className="flex items-center gap-2.5 w-full px-3 py-2 rounded-lg text-xs font-medium text-red-400 hover:bg-red-500/10 transition">
+                      <LogOut className="h-4 w-4" /> Sign Out
+                    </button>
+                  </div>
+                </>
+              )}
+            </div>
+          ) : isGuest ? (
+            /* Guest mode — prompt to create real account */
+            <div className="flex items-center gap-2">
+              <span className="hidden sm:flex items-center gap-1.5 rounded-xl border border-white/[0.08] bg-white/[0.04] px-2.5 py-1.5 text-[11px] font-semibold text-white/60">
+                <UserCircle className="h-3.5 w-3.5" /> Guest
+              </span>
+              <Link href="/auth/signup" className="rounded-xl bg-gradient-to-r from-cyan-400 to-sky-500 px-3 py-1.5 text-xs font-semibold text-black shadow-lg shadow-cyan-500/20 transition hover:-translate-y-0.5">
+                Sign Up →
+              </Link>
+            </div>
+          ) : (
+            <Link
+              href="/auth/signin"
+              className="rounded-xl bg-gradient-to-r from-cyan-400 to-sky-500 px-3 py-1.5 text-xs font-semibold text-black shadow-lg shadow-cyan-500/20 transition hover:-translate-y-0.5"
+            >
+              {t("nav.signIn")} →
+            </Link>
+          )}
 
           <button
             onClick={() => setMenuOpen(!menuOpen)}

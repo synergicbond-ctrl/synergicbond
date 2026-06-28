@@ -3,6 +3,7 @@
 import { useState, useMemo } from "react";
 import Link from "next/link";
 import { ELEMENTS, CATS, blockOf, electronConfig, DETAIL, type Element, type Cat } from "@/lib/periodicTable";
+import { IE1, EGE } from "@/lib/periodicTrends";
 import { X, ExternalLink, Search, Atom, Sparkles, BarChart2, BookOpen, Target, Activity, Brain } from "lucide-react";
 import BrainModeModal from "@/components/BrainModeModal";
 import { ELEMENT_BRAIN_MAP } from "./brainModeData";
@@ -25,10 +26,12 @@ const MODES: { id: Mode; label: string; desc: string; icon: typeof BookOpen }[] 
 ];
 
 // Trend property (only used in Trend mode)
-type TrendProp = "en" | "r" | "mp";
+type TrendProp = "en" | "r" | "mp" | "ie" | "ege";
 const TRENDS: { id: TrendProp; label: string; unit: string }[] = [
   { id: "en", label: "Electronegativity", unit: "" },
   { id: "r", label: "Atomic Radius", unit: "pm" },
+  { id: "ie", label: "Ionisation Enthalpy", unit: " kJ/mol" },
+  { id: "ege", label: "Electron Gain Enthalpy", unit: " kJ/mol" },
   { id: "mp", label: "Melting Point", unit: "°C" },
 ];
 
@@ -39,6 +42,8 @@ function num(s?: string): number | null {
   return Number.isFinite(v) ? v : null;
 }
 function valueOf(e: Element, prop: TrendProp): number | null {
+  if (prop === "ie") return IE1[e.sym] ?? null;
+  if (prop === "ege") return EGE[e.sym] ?? null;
   const d = DETAIL[e.sym];
   if (!d) return null;
   if (prop === "en") return num(d.en);

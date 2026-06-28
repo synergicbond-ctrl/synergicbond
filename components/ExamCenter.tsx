@@ -39,7 +39,7 @@ export default function ExamCenter() {
 
   return (
     <section className="mx-auto max-w-7xl px-6 py-8">
-      <div className="mb-8 text-center">
+      <div className="mb-6 text-center">
         <p className="mb-3 text-xs font-bold uppercase tracking-[0.4em] text-cyan-300">
           {t("exam.eyebrow")}
         </p>

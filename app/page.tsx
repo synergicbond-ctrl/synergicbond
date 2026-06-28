@@ -24,44 +24,44 @@ export default function Home() {
 
       <Hero />
 
-      <section className="py-14">
+      <section className="py-10">
         <KnowledgeVault />
       </section>
 
-      <section className="border-t border-white/[0.06] py-12">
+      <section className="border-t border-white/[0.06] py-10">
         <Stats />
       </section>
 
-      <section className="border-t border-white/[0.06] py-14">
+      <section className="border-t border-white/[0.06] py-10">
         <JeeSection />
       </section>
 
-      <section className="border-t border-white/[0.06] py-14">
+      <section className="border-t border-white/[0.06] py-10">
         <NeetSection />
       </section>
 
-      <section className="border-t border-white/[0.06] py-14">
+      <section className="border-t border-white/[0.06] py-10">
         <OlympiadSection />
       </section>
 
-      <section className="border-t border-white/[0.06] py-14">
+      <section className="border-t border-white/[0.06] py-10">
         <ResourcesSection />
       </section>
 
-      <section className="border-t border-white/[0.06] py-14">
+      <section className="border-t border-white/[0.06] py-10">
         <ExamCenter />
       </section>
 
-      <section className="border-t border-white/[0.06] py-14">
+      <section className="border-t border-white/[0.06] py-10">
         <InternationalRoadmap />
       </section>
 
-      <section className="border-t border-white/[0.06] py-14">
+      <section className="border-t border-white/[0.06] py-10">
         <ReferenceBooks />
       </section>
 
       {/* Latest Operations Hub — news/blogs sidebar layout */}
-      <section className="border-t border-white/[0.06] py-14">
+      <section className="border-t border-white/[0.06] py-10">
         <div className="mx-auto max-w-7xl px-6 grid gap-8 lg:grid-cols-[1.6fr_1fr]">
           <div className="rounded-3xl bg-[#111827] border border-white/[0.06] p-8 flex flex-col justify-center">
             <p className="text-xs font-bold uppercase tracking-[0.4em] text-cyan-300 mb-3">Stay Ahead</p>
@@ -74,11 +74,11 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="border-t border-white/[0.06] py-14">
+      <section className="border-t border-white/[0.06] py-10">
         <Testimonials />
       </section>
 
-      <section className="border-t border-white/[0.06] py-14">
+      <section className="border-t border-white/[0.06] py-10">
         <Donation />
       </section>
 

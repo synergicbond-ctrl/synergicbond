@@ -84,7 +84,7 @@ export default function KnowledgeVault() {
 
   return (
     <section className="mx-auto max-w-7xl px-6">
-      <div className="mb-10 text-center">
+      <div className="mb-7 text-center">
         <p className="mb-3 text-xs font-bold uppercase tracking-[0.4em] text-cyan-300">
           {t("vault.eyebrow")}
         </p>

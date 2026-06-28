@@ -71,7 +71,7 @@ export default function Testimonials() {
 
   return (
     <section className="mx-auto max-w-7xl px-6 py-8">
-      <div className="mb-8 text-center">
+      <div className="mb-6 text-center">
         <p className="mb-3 text-xs font-bold uppercase tracking-[0.4em] text-cyan-300">
           {t("testi.eyebrow")}
         </p>
@@ -97,14 +97,14 @@ export default function Testimonials() {
         </div>
       </div>
 
-      <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+      <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
         {shown.map((item, i) => (
           <div
             key={i}
-            className="rounded-2xl bg-gradient-to-b from-white/[0.05] to-transparent border border-white/[0.06] p-6 flex flex-col" style={{ backgroundColor: "#111827", boxShadow: "inset 0 1px 0 rgba(255,255,255,0.06)" }}
+            className="rounded-2xl bg-gradient-to-b from-white/[0.05] to-transparent border border-white/[0.06] p-5 flex flex-col" style={{ backgroundColor: "#111827", boxShadow: "inset 0 1px 0 rgba(255,255,255,0.06)" }}
           >
-            <div className="flex items-center justify-between mb-4">
-              <Quote className="h-6 w-6 text-cyan-400/40" />
+            <div className="flex items-center justify-between mb-2.5">
+              <Quote className="h-5 w-5 text-cyan-400/40" />
               <div className="flex gap-0.5">
                 {[...Array(5)].map((_, s) => (
                   <Star key={s} className="h-3 w-3 fill-amber-400 text-amber-400" />
@@ -112,19 +112,19 @@ export default function Testimonials() {
               </div>
             </div>
 
-            <p className="text-sm text-white/70 leading-relaxed flex-1 mb-5">"{item.quote}"</p>
+            <p className="text-sm text-white/70 leading-relaxed flex-1 mb-4">"{item.quote}"</p>
 
             {item.hasVideo && (
-              <div className="relative rounded-xl bg-black/40 border border-white/[0.06] h-20 mb-4 flex items-center justify-center group cursor-pointer overflow-hidden">
+              <button className="relative rounded-lg bg-black/40 border border-white/[0.06] h-11 mb-3 flex items-center gap-2 px-3 group cursor-pointer overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/10 to-purple-500/10" />
-                <div className="relative flex h-10 w-10 items-center justify-center rounded-full bg-white/10 backdrop-blur-sm group-hover:bg-cyan-500/30 transition">
-                  <Play className="h-4 w-4 text-white fill-white ml-0.5" />
+                <div className="relative flex h-6 w-6 items-center justify-center rounded-full bg-white/10 group-hover:bg-cyan-500/30 transition flex-shrink-0">
+                  <Play className="h-3 w-3 text-white fill-white ml-0.5" />
                 </div>
-                <span className="absolute bottom-1.5 left-2 text-[9px] text-white/40 font-medium">Video Testimonial</span>
-              </div>
+                <span className="relative text-[10px] text-white/50 font-medium">Watch Video Testimonial</span>
+              </button>
             )}
 
-            <div className="border-t border-white/[0.06] pt-4">
+            <div className="border-t border-white/[0.06] pt-3">
               <p className="text-sm font-bold text-white">{item.name}</p>
               <p className="text-xs text-cyan-400 mt-0.5">{item.role}</p>
               <p className="text-xs text-gray-500 mt-0.5">📍 {item.location}</p>

@@ -45,7 +45,7 @@ export default function ResourcesSection() {
         </div>
       </div>
 
-      <div className="mt-10 grid gap-6 md:grid-cols-2">
+      <div className="mt-8 grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
 
         {features.map((item) => {
           const Icon = item.icon;
@@ -54,27 +54,27 @@ export default function ResourcesSection() {
             <Link
               key={item.titleKey}
               href={item.href}
-              className="group rounded-3xl border border-white/10 bg-white/[0.03] p-7 transition-all duration-300 hover:-translate-y-2 hover:border-cyan-400/30"
+              className="group rounded-2xl border border-white/10 bg-white/[0.03] p-5 transition-all duration-300 hover:-translate-y-1 hover:border-cyan-400/30"
             >
               {/* Glossy icon tile */}
               <div
-                className={`flex h-14 w-14 items-center justify-center rounded-2xl border bg-gradient-to-br ${item.tile}`}
-                style={{ boxShadow: `0 6px 20px ${item.glow}, inset 0 1px 0 rgba(255,255,255,0.12)` }}
+                className={`flex h-10 w-10 items-center justify-center rounded-xl border bg-gradient-to-br ${item.tile}`}
+                style={{ boxShadow: `0 4px 14px ${item.glow}, inset 0 1px 0 rgba(255,255,255,0.12)` }}
               >
-                <Icon className={`h-7 w-7 ${item.color}`} />
+                <Icon className={`h-5 w-5 ${item.color}`} />
               </div>
 
-              <h3 className="mt-6 text-2xl font-bold">
+              <h3 className="mt-4 text-lg font-bold">
                 {t(item.titleKey)}
               </h3>
 
-              <p className="mt-3 leading-7 text-white/70">
+              <p className="mt-1.5 text-sm leading-6 text-white/65">
                 {t(item.descKey)}
               </p>
 
-              <div className="mt-10 flex items-center gap-2 font-medium text-cyan-300">
+              <div className="mt-4 flex items-center gap-1.5 text-sm font-medium text-cyan-300">
                 {t("vault.explore")}
-                <ArrowRight className="h-4 w-4 transition group-hover:translate-x-1" />
+                <ArrowRight className="h-3.5 w-3.5 transition group-hover:translate-x-1" />
               </div>
 
             </Link>

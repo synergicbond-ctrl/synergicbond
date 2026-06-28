@@ -34,7 +34,7 @@ export default function InternationalRoadmap() {
 
   return (
     <section className="mx-auto max-w-7xl px-6 py-8">
-      <div className="mb-8 text-center">
+      <div className="mb-6 text-center">
         <p className="mb-3 text-xs font-bold uppercase tracking-[0.4em] text-cyan-300">{t("intl.eyebrow")}</p>
         <h2 className="text-3xl font-black md:text-4xl text-white flex items-center justify-center gap-3">
           <Globe2 className="h-7 w-7 text-cyan-400" /> {t("intl.title")}

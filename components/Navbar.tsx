@@ -257,20 +257,45 @@ export default function Navbar() {
           {menus.map((menu) => {
             const open = openMenu === menu.title;
             const hasActive = menu.items.some((it) => it.href === pathname);
+            const isNew = menu.title === "Exam Tracks";
             return (
+              <div key={menu.title} className="flex items-center">
+              {/* zone separators */}
+              {(menu.title === "Exam Tracks" || menu.title === "More") && (
+                <span className="mx-1.5 h-5 w-px bg-white/10" />
+              )}
+              {/* Live sits just before More (utility zone) */}
+              {menu.title === "More" && (
+                <Link
+                  href="/live"
+                  className={`flex items-center gap-2 px-3 py-2 mr-1 rounded-lg text-sm font-bold transition ${
+                    pathname === "/live" ? "text-white bg-green-500/15 ring-1 ring-green-400/40" : "text-green-400 hover:bg-green-500/10"
+                  }`}
+                  style={{ boxShadow: pathname === "/live" ? "0 0 14px rgba(34,197,94,0.35)" : undefined }}
+                >
+                  <span className="relative flex h-2 w-2">
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75" />
+                    <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500" />
+                  </span>
+                  Live <span className="text-[10px] font-semibold text-green-400/70 hidden xl:inline">1.2K</span>
+                </Link>
+              )}
               <div
-                key={menu.title}
                 className="relative"
                 onMouseEnter={() => setOpenMenu(menu.title)}
                 onMouseLeave={() => setOpenMenu(null)}
               >
                 <button
-                  className={`flex items-center gap-1 px-3 py-2 rounded-lg text-sm font-medium transition ${
-                    open || hasActive ? "text-white bg-white/[0.06]" : "text-gray-300 hover:text-white hover:bg-white/[0.05]"
+                  className={`relative flex items-center gap-1 px-3 py-2 rounded-lg text-sm transition-all duration-200 ${
+                    hasActive
+                      ? "text-white font-bold bg-white/[0.08] -translate-y-px shadow-[0_4px_14px_rgba(0,0,0,0.4)]"
+                      : open ? "text-white font-medium bg-white/[0.06]" : "text-gray-300 font-medium hover:text-white hover:bg-white/[0.05]"
                   }`}
                 >
                   {menu.title}
+                  {isNew && <span className="text-[8px] font-black tracking-wider text-cyan-300 bg-cyan-500/15 border border-cyan-400/30 px-1.5 py-0.5 rounded-full">NEW</span>}
                   <ChevronDown className={`h-3.5 w-3.5 transition-transform ${open ? "rotate-180" : ""}`} />
+                  {hasActive && <span className="absolute -bottom-0.5 left-1/2 -translate-x-1/2 h-0.5 w-2/3 rounded-full bg-cyan-400 shadow-[0_0_8px_rgba(34,211,238,0.8)]" />}
                 </button>
 
                 {open && (
@@ -302,22 +327,9 @@ export default function Navbar() {
                   </div>
                 )}
               </div>
+              </div>
             );
           })}
-
-          {/* Live — direct highlighted link */}
-          <Link
-            href="/live"
-            className={`flex items-center gap-1.5 px-3 py-2 rounded-lg text-sm font-bold transition ${
-              pathname === "/live" ? "text-white bg-green-500/15" : "text-green-400 hover:bg-green-500/10"
-            }`}
-          >
-            <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75" />
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500" />
-            </span>
-            Live
-          </Link>
         </nav>
 
         {/* Right Utilities */}

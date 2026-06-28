@@ -5,6 +5,9 @@ import Link from "next/link";
 import { ELEMENTS, CATS, blockOf, electronConfig, DETAIL, type Element, type Cat } from "@/lib/periodicTable";
 import { X, ExternalLink, Search, Atom, Sparkles, BarChart2 } from "lucide-react";
 
+// Most-important exam elements — emphasized in category view
+const CORE = new Set(["H", "C", "N", "O", "Na", "Cl", "Fe", "Ca", "S", "K", "Mg"]);
+
 type View = "category" | "en" | "r" | "mp";
 const VIEWS: { id: View; label: string; unit: string }[] = [
   { id: "category", label: "Category", unit: "" },
@@ -116,26 +119,35 @@ export default function PeriodicTablePage() {
           )
         )}
 
-        {/* Grid */}
-        <div className="overflow-x-auto pb-4">
+        {/* Grid — darker panel for contrast */}
+        <div className="overflow-x-auto pb-4 rounded-2xl bg-[#06080F] border border-white/[0.05] p-2.5">
           <div
-            className="grid gap-[3px] min-w-[820px]"
+            className="grid gap-[3px] min-w-[820px] group/grid"
             style={{ gridTemplateColumns: "repeat(18, minmax(0, 1fr))", gridTemplateRows: "repeat(10, auto)" }}
           >
             {ELEMENTS.map((e) => {
               const color = tileColor(e);
               const matches = !q || e.sym.toLowerCase().includes(q) || e.name.toLowerCase().includes(q) || CATS[e.cat].label.toLowerCase().includes(q);
+              const isCore = view === "category" && CORE.has(e.sym);
+              const fDim = view === "category" && !q && !hl && (e.cat === "ln" || e.cat === "ac");
               const dim = (view === "category" && hl && hl !== e.cat) || !matches;
               const hit = !!q && matches;
+              const opacity = dim ? 0.1 : fDim ? 0.55 : 1;
               return (
                 <button
                   key={e.z}
                   onClick={() => setActive(e)}
-                  style={{ gridColumn: e.x, gridRow: e.y, borderColor: hit ? color : `${color}55`, background: `${color}${hit ? "33" : "14"}`, opacity: dim ? 0.12 : 1, boxShadow: hit ? `0 0 12px ${color}` : undefined }}
-                  className="aspect-square rounded-md border p-0.5 flex flex-col items-center justify-center transition-all duration-150 hover:scale-110 hover:z-10 hover:shadow-lg"
+                  style={{
+                    gridColumn: e.x, gridRow: e.y, opacity,
+                    borderColor: hit || isCore ? color : `${color}45`,
+                    background: `${color}${hit ? "40" : isCore ? "2e" : "12"}`,
+                    boxShadow: hit ? `0 0 14px ${color}` : isCore ? `0 0 10px ${color}66, inset 0 0 8px ${color}22` : undefined,
+                    transform: isCore ? "scale(1.04)" : undefined,
+                  }}
+                  className="relative aspect-square rounded-md border-[1.5px] p-0.5 flex flex-col items-center justify-center transition-all duration-150 hover:!scale-[1.22] hover:z-20 hover:!opacity-100 hover:shadow-2xl"
                 >
-                  <span className="text-[7px] leading-none text-white/40 self-start pl-0.5">{e.z}</span>
-                  <span className="text-[13px] md:text-sm font-black leading-none" style={{ color }}>{e.sym}</span>
+                  <span className="text-[7px] leading-none text-white/45 self-start pl-0.5">{e.z}</span>
+                  <span className="text-[15px] md:text-lg font-black leading-none tracking-tight" style={{ color, textShadow: `0 0 8px ${color}55` }}>{e.sym}</span>
                   <span className="text-[6px] leading-none text-white/40 truncate w-full text-center hidden md:block">{e.name}</span>
                 </button>
               );

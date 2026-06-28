@@ -273,7 +273,7 @@ export default function AssignmentPage() {
                   <div className="text-zinc-500 text-xs">Total Marks</div>
                 </div>
                 <div className="bg-zinc-800 rounded-lg px-3 py-2 text-center">
-                  <div className="font-bold text-amber-400">{assignment.duration}</div>
+                  <div className="font-bold text-violet-400">{assignment.duration}</div>
                   <div className="text-zinc-500 text-xs">Duration</div>
                 </div>
               </div>
@@ -303,7 +303,7 @@ export default function AssignmentPage() {
                     <span className="text-zinc-500 font-medium text-sm">Q{idx + 1}.</span>
                     <span className={`text-xs px-2 py-0.5 rounded-full border ${
                       q.difficulty === "easy" ? "border-green-700 text-green-400" :
-                      q.difficulty === "medium" ? "border-amber-700 text-amber-400" :
+                      q.difficulty === "medium" ? "border-violet-700 text-violet-400" :
                       "border-red-700 text-red-400"
                     }`}>{q.difficulty}</span>
                     <span className="text-xs px-2 py-0.5 rounded-full border border-zinc-700 text-zinc-400">{q.type.replace("_", " ")}</span>
@@ -357,7 +357,7 @@ export default function AssignmentPage() {
                       <div className="text-xs font-semibold text-zinc-400 mb-2">SOLUTION</div>
                       <p className="text-zinc-200 text-sm leading-relaxed">{q.solution}</p>
                       {q.tip && (
-                        <div className="mt-2 text-xs text-amber-400">💡 Tip: {q.tip}</div>
+                        <div className="mt-2 text-xs text-violet-400">💡 Tip: {q.tip}</div>
                       )}
                     </div>
                   )}

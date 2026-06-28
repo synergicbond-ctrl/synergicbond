@@ -1,12 +1,12 @@
 import Link from "next/link";
 
 const tools = [
-  { icon: "📘", label: "AI Notes", desc: "INChO/IChO level — university depth", href: "/notes?exam=INChO&difficulty=incho", color: "border-amber-700 hover:border-amber-500" },
-  { icon: "📝", label: "Assignments", desc: "Olympiad-style problems with full solutions", href: "/assignment?exam=INChO&difficulty=hard", color: "border-amber-700 hover:border-amber-500" },
-  { icon: "🧪", label: "Quiz", desc: "NSEC pattern questions", href: "/quiz?exam=NSEC", color: "border-amber-700 hover:border-amber-500" },
-  { icon: "📋", label: "Mock Exam", desc: "INChO / IChO mock paper", href: "/exam?exam=INChO", color: "border-amber-700 hover:border-amber-500" },
-  { icon: "🤖", label: "AI Tutor", desc: "University-level chemistry explained", href: "/tutor?exam=INChO", color: "border-amber-700 hover:border-amber-500" },
-  { icon: "👁️", label: "Mechanism Solver", desc: "Upload synthesis problem — get solution", href: "/tutor?tab=vision", color: "border-amber-700 hover:border-amber-500" },
+  { icon: "📘", label: "AI Notes", desc: "INChO/IChO level — university depth", href: "/notes?exam=INChO&difficulty=incho", color: "border-violet-700 hover:border-violet-500" },
+  { icon: "📝", label: "Assignments", desc: "Olympiad-style problems with full solutions", href: "/assignment?exam=INChO&difficulty=hard", color: "border-violet-700 hover:border-violet-500" },
+  { icon: "🧪", label: "Quiz", desc: "NSEC pattern questions", href: "/quiz?exam=NSEC", color: "border-violet-700 hover:border-violet-500" },
+  { icon: "📋", label: "Mock Exam", desc: "INChO / IChO mock paper", href: "/exam?exam=INChO", color: "border-violet-700 hover:border-violet-500" },
+  { icon: "🤖", label: "AI Tutor", desc: "University-level chemistry explained", href: "/tutor?exam=INChO", color: "border-violet-700 hover:border-violet-500" },
+  { icon: "👁️", label: "Mechanism Solver", desc: "Upload synthesis problem — get solution", href: "/tutor?tab=vision", color: "border-violet-700 hover:border-violet-500" },
 ];
 
 const topics = [
@@ -18,17 +18,17 @@ const topics = [
 export default function OlympiadPage() {
   return (
     <main className="min-h-screen bg-black text-white">
-      <div className="border-b border-white/10 bg-gradient-to-b from-amber-950/30 to-black px-6 py-16 text-center">
-        <div className="text-xs font-bold uppercase tracking-widest text-amber-400 mb-3">International Level</div>
+      <div className="border-b border-white/10 bg-gradient-to-b from-violet-950/30 to-black px-6 py-16 text-center">
+        <div className="text-xs font-bold uppercase tracking-widest text-violet-400 mb-3">International Level</div>
         <h1 className="text-5xl font-black tracking-tight mb-4">Chemistry Olympiad</h1>
         <p className="text-zinc-400 max-w-xl mx-auto text-lg">
           NSEC → INChO → IChO preparation. Advanced theoretical and practical chemistry beyond JEE.
         </p>
         <div className="flex gap-3 justify-center mt-6 flex-wrap">
-          <span className="px-3 py-1 rounded-full border border-amber-700 text-amber-300 text-sm">NSEC</span>
-          <span className="px-3 py-1 rounded-full border border-amber-700 text-amber-300 text-sm">INChO</span>
-          <span className="px-3 py-1 rounded-full border border-amber-700 text-amber-300 text-sm">IChO</span>
-          <span className="px-3 py-1 rounded-full border border-amber-700 text-amber-300 text-sm">USNCO</span>
+          <span className="px-3 py-1 rounded-full border border-violet-700 text-violet-300 text-sm">NSEC</span>
+          <span className="px-3 py-1 rounded-full border border-violet-700 text-violet-300 text-sm">INChO</span>
+          <span className="px-3 py-1 rounded-full border border-violet-700 text-violet-300 text-sm">IChO</span>
+          <span className="px-3 py-1 rounded-full border border-violet-700 text-violet-300 text-sm">USNCO</span>
         </div>
       </div>
 
@@ -41,7 +41,7 @@ export default function OlympiadPage() {
               <Link key={t.label} href={t.href}
                 className={`bg-zinc-900 border ${t.color} rounded-2xl p-5 transition group`}>
                 <div className="text-3xl mb-3">{t.icon}</div>
-                <div className="font-bold text-white group-hover:text-amber-300 transition">{t.label}</div>
+                <div className="font-bold text-white group-hover:text-violet-300 transition">{t.label}</div>
                 <div className="text-zinc-500 text-sm mt-1">{t.desc}</div>
               </Link>
             ))}
@@ -54,7 +54,7 @@ export default function OlympiadPage() {
           <div className="grid md:grid-cols-3 gap-6">
             {topics.map((cat) => (
               <div key={cat.label} className="bg-zinc-900 border border-zinc-800 rounded-2xl p-5">
-                <div className="font-bold text-amber-400 mb-3">{cat.label}</div>
+                <div className="font-bold text-violet-400 mb-3">{cat.label}</div>
                 <div className="space-y-2">
                   {cat.items.map((topic) => (
                     <Link key={topic} href={`/notes?topic=${encodeURIComponent(topic)}&exam=INChO&difficulty=incho`}

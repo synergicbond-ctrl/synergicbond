@@ -100,7 +100,7 @@ export default function HandwrittenNotesPage() {
             </div>
 
             <button onClick={convert} disabled={!image || loading}
-              className="w-full rounded-2xl bg-gradient-to-r from-purple-500 to-pink-500 py-4 font-bold text-white disabled:opacity-40">
+              className="w-full rounded-2xl bg-gradient-to-r from-purple-500 to-purple-500 py-4 font-bold text-white disabled:opacity-40">
               {loading ? "✨ Converting..." : "✨ Convert to Digital Notes"}
             </button>
 

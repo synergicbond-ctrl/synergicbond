@@ -153,8 +153,8 @@ export default function StudyPlanPage() {
             ))}
 
             {/* Tips */}
-            <div className="rounded-2xl border border-yellow-500/20 bg-yellow-950/20 p-6">
-              <h3 className="font-bold mb-3 text-yellow-300">💡 Expert Tips</h3>
+            <div className="rounded-2xl border border-violet-500/20 bg-violet-950/20 p-6">
+              <h3 className="font-bold mb-3 text-violet-300">💡 Expert Tips</h3>
               {plan.tips?.map((tip: string, i: number) => (
                 <p key={i} className="text-white/80 text-sm mb-1">• {tip}</p>
               ))}

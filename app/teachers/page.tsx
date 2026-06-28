@@ -100,7 +100,7 @@ export default function TeachersPage() {
                       <p className="text-sm font-semibold text-white truncate">{l.title}</p>
                       <p className="text-xs text-white/40">{l.lessons} lessons</p>
                     </div>
-                    <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full ${l.status === "Published" ? "text-emerald-400 bg-emerald-500/10" : "text-amber-400 bg-amber-500/10"}`}>
+                    <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full ${l.status === "Published" ? "text-cyan-400 bg-cyan-500/10" : "text-violet-400 bg-violet-500/10"}`}>
                       {l.status}
                     </span>
                   </div>
@@ -154,11 +154,11 @@ export default function TeachersPage() {
                       <p className="text-xs text-white/50 mt-0.5 truncate">{d.topic}</p>
                     </div>
                     {d.status === "resolved" ? (
-                      <span className="flex items-center gap-1 text-[10px] font-bold text-emerald-400 bg-emerald-500/10 px-2.5 py-1 rounded-full">
+                      <span className="flex items-center gap-1 text-[10px] font-bold text-cyan-400 bg-cyan-500/10 px-2.5 py-1 rounded-full">
                         <CheckCircle2 className="h-3 w-3" /> Resolved
                       </span>
                     ) : d.status === "assigned" ? (
-                      <span className="text-[10px] font-bold text-amber-400 bg-amber-500/10 px-2.5 py-1 rounded-full">Assigned</span>
+                      <span className="text-[10px] font-bold text-violet-400 bg-violet-500/10 px-2.5 py-1 rounded-full">Assigned</span>
                     ) : (
                       <button className="flex items-center gap-1 text-[10px] font-bold bg-cyan-500 text-black px-3 py-1.5 rounded-lg hover:bg-cyan-400 transition">
                         Respond <ArrowRight className="h-3 w-3" />

@@ -70,7 +70,7 @@ export default function ExamPredictorPage() {
             {error && <p className="text-red-400">{error}</p>}
 
             <button onClick={predict} disabled={loading}
-              className="w-full rounded-2xl bg-gradient-to-r from-purple-500 to-pink-500 py-4 font-bold text-white text-lg disabled:opacity-40">
+              className="w-full rounded-2xl bg-gradient-to-r from-purple-500 to-purple-500 py-4 font-bold text-white text-lg disabled:opacity-40">
               {loading ? "🤖 Analyzing your performance..." : "🔮 Predict My Rank"}
             </button>
           </div>
@@ -145,8 +145,8 @@ export default function ExamPredictorPage() {
             </div>
 
             {/* Motivational message */}
-            <div className="rounded-2xl border border-yellow-500/20 bg-yellow-950/20 p-5">
-              <p className="text-yellow-300 font-semibold">💪 Message from AI Mentor</p>
+            <div className="rounded-2xl border border-violet-500/20 bg-violet-950/20 p-5">
+              <p className="text-violet-300 font-semibold">💪 Message from AI Mentor</p>
               <p className="text-white/80 mt-2 italic">"{result.motivationalMessage}"</p>
             </div>
 

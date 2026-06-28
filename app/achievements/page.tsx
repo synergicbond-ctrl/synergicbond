@@ -139,11 +139,11 @@ export default function AchievementsPage() {
                   const isEarned = earned.includes(badge.id);
                   return (
                     <div key={badge.id}
-                      className={`rounded-xl p-4 border transition ${isEarned ? "border-yellow-500/30 bg-yellow-950/20" : "border-white/5 bg-white/[0.02] opacity-40"}`}>
+                      className={`rounded-xl p-4 border transition ${isEarned ? "border-violet-500/30 bg-violet-950/20" : "border-white/5 bg-white/[0.02] opacity-40"}`}>
                       <div className="text-3xl mb-2">{badge.icon}</div>
                       <p className="font-semibold text-sm">{badge.name}</p>
                       <p className="text-xs text-white/50 mt-0.5">{badge.description}</p>
-                      {isEarned && <p className="text-xs text-yellow-400 mt-1">✓ Earned</p>}
+                      {isEarned && <p className="text-xs text-violet-400 mt-1">✓ Earned</p>}
                     </div>
                   );
                 })}

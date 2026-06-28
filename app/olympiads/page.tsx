@@ -2,12 +2,12 @@ import Link from "next/link";
 import ThemeToggle from "@/components/ThemeToggle";
 
 const olympiads = [
-  { region: "India (National)", code: "NSEC", name: "National Standard Examination in Chemistry", desc: "The first stage of the Chemistry Olympiad in India, testing broad fundamental knowledge.", color: "bg-amber-500/20 text-amber-400 border-amber-500/30" },
-  { region: "India (National)", code: "INChO", name: "Indian National Chemistry Olympiad", desc: "Advanced theoretical and experimental problems for top tier selection.", color: "bg-orange-500/20 text-orange-400 border-orange-500/30" },
+  { region: "India (National)", code: "NSEC", name: "National Standard Examination in Chemistry", desc: "The first stage of the Chemistry Olympiad in India, testing broad fundamental knowledge.", color: "bg-violet-500/20 text-violet-400 border-violet-500/30" },
+  { region: "India (National)", code: "INChO", name: "Indian National Chemistry Olympiad", desc: "Advanced theoretical and experimental problems for top tier selection.", color: "bg-violet-500/20 text-violet-400 border-violet-500/30" },
   { region: "Global (International)", code: "IChO", name: "International Chemistry Olympiad", desc: "The pinnacle of pre-university chemical competitions worldwide.", color: "bg-indigo-500/20 text-indigo-400 border-indigo-500/30" },
   { region: "United States", code: "USNCO", name: "US National Chemistry Olympiad", desc: "Rigorous multi-tiered qualifying rounds for the US team.", color: "bg-blue-500/20 text-blue-400 border-blue-500/30" },
-  { region: "United Kingdom", code: "UKChO", name: "UK Chemistry Olympiad", desc: "Problem solving challenging real-world chemical scenarios.", color: "bg-rose-500/20 text-rose-400 border-rose-500/30" },
-  { region: "Australia", code: "AsChO", name: "Australian Chemistry Olympiad", desc: "Analytical and descriptive training tracks.", color: "bg-emerald-500/20 text-emerald-400 border-emerald-500/30" },
+  { region: "United Kingdom", code: "UKChO", name: "UK Chemistry Olympiad", desc: "Problem solving challenging real-world chemical scenarios.", color: "bg-purple-500/20 text-purple-400 border-purple-500/30" },
+  { region: "Australia", code: "AsChO", name: "Australian Chemistry Olympiad", desc: "Analytical and descriptive training tracks.", color: "bg-cyan-500/20 text-cyan-400 border-cyan-500/30" },
 ];
 
 export default function OlympiadUniverse() {

@@ -82,7 +82,7 @@ export default function LeaderboardPage() {
           <div className="text-right">
             <div className="text-2xl font-bold text-cyan-400">{currentUserRank.xp} XP</div>
             <div className="text-zinc-400 text-sm">Level {currentUserRank.level} — {getLevelTitle(currentUserRank.level)}</div>
-            <div className="text-orange-400 text-sm">🔥 {currentUserRank.streak} day streak</div>
+            <div className="text-violet-400 text-sm">🔥 {currentUserRank.streak} day streak</div>
           </div>
         </div>
       )}
@@ -130,7 +130,7 @@ export default function LeaderboardPage() {
               </div>
 
               {/* Streak */}
-              <div className="text-orange-400 text-sm hidden sm:block">
+              <div className="text-violet-400 text-sm hidden sm:block">
                 🔥 {entry.streak}d
               </div>
 

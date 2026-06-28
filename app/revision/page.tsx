@@ -14,21 +14,21 @@ export default function RevisionPage() {
       title: "One-Day-Before-Exam Refresher",
       description: "Comprehensive formula review and reaction pathways consolidation for complete exam confidence.",
       time: "45 min",
-      color: "bg-amber-50 border-amber-100 text-amber-900"
+      color: "bg-violet-50 border-violet-100 text-violet-900"
     },
     {
       type: "formula",
       title: "Formula & Constants Recall",
       description: "Drill on exact expressions, variables, units, and common numeric traps.",
       time: "10 min",
-      color: "bg-emerald-50 border-emerald-100 text-emerald-900"
+      color: "bg-cyan-50 border-cyan-100 text-cyan-900"
     },
     {
       type: "reaction",
       title: "Name Reactions & Mechanisms",
       description: "Review organic transformation conditions, intermediates, and inorganic exceptions.",
       time: "10 min",
-      color: "bg-rose-50 border-rose-100 text-rose-900"
+      color: "bg-purple-50 border-purple-100 text-purple-900"
     }
   ];
 

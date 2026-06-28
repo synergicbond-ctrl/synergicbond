@@ -280,7 +280,7 @@ export default function AdvancedAITutorPage() {
               onClick={handleClearChat}
               title="Clear Chat"
               disabled={loading}
-              className="p-2.5 rounded-xl bg-rose-50 text-rose-600 hover:bg-rose-100 border border-rose-100 transition-colors flex items-center justify-center disabled:cursor-not-allowed disabled:opacity-50"
+              className="p-2.5 rounded-xl bg-purple-50 text-purple-600 hover:bg-purple-100 border border-purple-100 transition-colors flex items-center justify-center disabled:cursor-not-allowed disabled:opacity-50"
             >
               <Trash2 className="w-5 h-5" />
             </button>

@@ -150,9 +150,9 @@ export default function DoubtSolverPage() {
         {/* Token wallet */}
         <div className="flex justify-center mb-8">
           <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-[#111827] border border-white/[0.06]">
-            <Zap className={`h-4 w-4 ${credits > 0 ? "text-amber-400" : "text-red-400"}`} />
+            <Zap className={`h-4 w-4 ${credits > 0 ? "text-violet-400" : "text-red-400"}`} />
             <span className="text-sm font-semibold">
-              <span className={credits > 0 ? "text-amber-400" : "text-red-400"}>{credits}</span>
+              <span className={credits > 0 ? "text-violet-400" : "text-red-400"}>{credits}</span>
               <span className="text-white/40"> / {DAILY_LIMIT}</span>
               <span className="text-white/60"> Free Daily AI Solves Left</span>
             </span>
@@ -278,15 +278,15 @@ export default function DoubtSolverPage() {
               <X className="h-5 w-5" />
             </button>
             <div className="flex justify-center mb-4">
-              <div className="p-3 rounded-2xl bg-gradient-to-br from-amber-400/20 to-amber-600/10">
-                <Crown className="h-8 w-8 text-amber-400" />
+              <div className="p-3 rounded-2xl bg-gradient-to-br from-violet-400/20 to-violet-600/10">
+                <Crown className="h-8 w-8 text-violet-400" />
               </div>
             </div>
             <h3 className="text-xl font-black mb-2">Daily AI Limit Reached</h3>
             <p className="text-sm text-white/50 mb-6 leading-relaxed">
               Upgrade to <span className="text-cyan-400 font-bold">SYNERGIC BOND PRO</span> for unlimited instant reasoning engines, verified expert reviews, and full-syllabus national rank analytics.
             </p>
-            <button className="w-full rounded-xl bg-gradient-to-r from-amber-400 to-amber-500 py-3 text-sm font-bold text-black mb-3 transition hover:-translate-y-0.5">
+            <button className="w-full rounded-xl bg-gradient-to-r from-violet-400 to-violet-500 py-3 text-sm font-bold text-black mb-3 transition hover:-translate-y-0.5">
               ⚡ Upgrade to PRO
             </button>
             <button onClick={() => setShowPaywall(false)} className="text-xs text-white/40 hover:text-white">
@@ -299,13 +299,13 @@ export default function DoubtSolverPage() {
       {/* Rate-limit cooldown overlay */}
       {cooldown > 0 && (
         <div className="fixed inset-0 z-[100] flex items-center justify-center p-6 bg-black/70 backdrop-blur-sm">
-          <div className="max-w-sm w-full rounded-3xl bg-[#111827] border border-amber-500/30 p-8 text-center shadow-2xl">
+          <div className="max-w-sm w-full rounded-3xl bg-[#111827] border border-violet-500/30 p-8 text-center shadow-2xl">
             <p className="text-4xl mb-3">⚠️</p>
             <h3 className="text-lg font-black mb-2">Security Threshold Engaged</h3>
             <p className="text-sm text-white/50 mb-5">
               High-frequency traffic detected. A short cool-down is active to protect the service.
             </p>
-            <button onClick={() => setCooldown(0)} className="rounded-xl bg-amber-500 text-black font-bold px-5 py-2.5 text-sm">
+            <button onClick={() => setCooldown(0)} className="rounded-xl bg-violet-500 text-black font-bold px-5 py-2.5 text-sm">
               Got it ({cooldown}s)
             </button>
           </div>

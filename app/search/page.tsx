@@ -133,11 +133,11 @@ export default function GlobalSearchPage() {
                   <div key={r.id} className="p-5 bg-white rounded-xl border border-slate-200/60 shadow-sm flex justify-between items-center">
                     <div>
                       <h4 className="font-bold text-slate-900 text-sm">{r.name}</h4>
-                      <span className="inline-block mt-1 text-[10px] font-black uppercase px-2 py-0.5 bg-rose-50 text-rose-600 rounded">
+                      <span className="inline-block mt-1 text-[10px] font-black uppercase px-2 py-0.5 bg-purple-50 text-purple-600 rounded">
                         {r.category}
                       </span>
                     </div>
-                    <Link href={`/chapter/${r.category === "organic" ? "organic" : "inorganic"}`} className="text-rose-600 text-xs font-bold hover:underline">
+                    <Link href={`/chapter/${r.category === "organic" ? "organic" : "inorganic"}`} className="text-purple-600 text-xs font-bold hover:underline">
                       View Pathway
                     </Link>
                   </div>

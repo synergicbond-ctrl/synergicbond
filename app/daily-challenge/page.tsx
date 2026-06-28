@@ -108,12 +108,12 @@ export default function DailyChallengePage() {
             {/* Hint */}
             {!submitted && (
               <button onClick={() => setShowHint(!showHint)}
-                className="text-sm text-yellow-400/70 hover:text-yellow-400 transition">
+                className="text-sm text-violet-400/70 hover:text-violet-400 transition">
                 {showHint ? "Hide hint" : "💡 Show hint"}
               </button>
             )}
             {showHint && !submitted && (
-              <div className="rounded-xl border border-yellow-500/20 bg-yellow-950/20 p-4 text-yellow-200 text-sm">
+              <div className="rounded-xl border border-violet-500/20 bg-violet-950/20 p-4 text-violet-200 text-sm">
                 {challenge.hint}
               </div>
             )}

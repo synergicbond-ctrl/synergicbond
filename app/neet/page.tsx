@@ -1,12 +1,12 @@
 import Link from "next/link";
 
 const tools = [
-  { icon: "📘", label: "AI Notes", desc: "NCERT-aligned notes for any topic", href: "/notes?exam=NEET&difficulty=ncert", color: "border-emerald-700 hover:border-emerald-500" },
-  { icon: "📝", label: "Assignments", desc: "NEET-pattern MCQ practice sets", href: "/assignment?exam=NEET&difficulty=medium", color: "border-emerald-700 hover:border-emerald-500" },
-  { icon: "🧪", label: "Quiz", desc: "Chapter-wise NEET MCQs +4/-1", href: "/quiz?exam=NEET", color: "border-emerald-700 hover:border-emerald-500" },
-  { icon: "📋", label: "Mock Exam", desc: "Full NEET mock paper — 180 questions", href: "/exam?exam=NEET", color: "border-emerald-700 hover:border-emerald-500" },
-  { icon: "🤖", label: "AI Tutor", desc: "Ask any NCERT doubt in Hindi/English", href: "/tutor?exam=NEET", color: "border-emerald-700 hover:border-emerald-500" },
-  { icon: "🔁", label: "Revision", desc: "5-min rapid revision for NEET", href: "/revision?exam=NEET", color: "border-emerald-700 hover:border-emerald-500" },
+  { icon: "📘", label: "AI Notes", desc: "NCERT-aligned notes for any topic", href: "/notes?exam=NEET&difficulty=ncert", color: "border-cyan-700 hover:border-cyan-500" },
+  { icon: "📝", label: "Assignments", desc: "NEET-pattern MCQ practice sets", href: "/assignment?exam=NEET&difficulty=medium", color: "border-cyan-700 hover:border-cyan-500" },
+  { icon: "🧪", label: "Quiz", desc: "Chapter-wise NEET MCQs +4/-1", href: "/quiz?exam=NEET", color: "border-cyan-700 hover:border-cyan-500" },
+  { icon: "📋", label: "Mock Exam", desc: "Full NEET mock paper — 180 questions", href: "/exam?exam=NEET", color: "border-cyan-700 hover:border-cyan-500" },
+  { icon: "🤖", label: "AI Tutor", desc: "Ask any NCERT doubt in Hindi/English", href: "/tutor?exam=NEET", color: "border-cyan-700 hover:border-cyan-500" },
+  { icon: "🔁", label: "Revision", desc: "5-min rapid revision for NEET", href: "/revision?exam=NEET", color: "border-cyan-700 hover:border-cyan-500" },
 ];
 
 const chapters = [
@@ -19,17 +19,17 @@ export default function NEETPage() {
   return (
     <main className="min-h-screen bg-black text-white">
       {/* Hero */}
-      <div className="border-b border-white/10 bg-gradient-to-b from-emerald-950/30 to-black px-6 py-16 text-center">
-        <div className="text-xs font-bold uppercase tracking-widest text-emerald-400 mb-3">NCERT Mastery</div>
+      <div className="border-b border-white/10 bg-gradient-to-b from-cyan-950/30 to-black px-6 py-16 text-center">
+        <div className="text-xs font-bold uppercase tracking-widest text-cyan-400 mb-3">NCERT Mastery</div>
         <h1 className="text-5xl font-black tracking-tight mb-4">NEET Chemistry</h1>
         <p className="text-zinc-400 max-w-xl mx-auto text-lg">
           Complete NCERT-based preparation with AI guidance, PYQs, revision, and unlimited practice.
         </p>
         <div className="flex gap-3 justify-center mt-6 flex-wrap">
-          <span className="px-3 py-1 rounded-full border border-emerald-700 text-emerald-300 text-sm">+4 / -1 Marking</span>
-          <span className="px-3 py-1 rounded-full border border-emerald-700 text-emerald-300 text-sm">180 Questions</span>
-          <span className="px-3 py-1 rounded-full border border-emerald-700 text-emerald-300 text-sm">NCERT Level</span>
-          <span className="px-3 py-1 rounded-full border border-emerald-700 text-emerald-300 text-sm">Hindi / Hinglish / English</span>
+          <span className="px-3 py-1 rounded-full border border-cyan-700 text-cyan-300 text-sm">+4 / -1 Marking</span>
+          <span className="px-3 py-1 rounded-full border border-cyan-700 text-cyan-300 text-sm">180 Questions</span>
+          <span className="px-3 py-1 rounded-full border border-cyan-700 text-cyan-300 text-sm">NCERT Level</span>
+          <span className="px-3 py-1 rounded-full border border-cyan-700 text-cyan-300 text-sm">Hindi / Hinglish / English</span>
         </div>
       </div>
 
@@ -43,7 +43,7 @@ export default function NEETPage() {
               <Link key={t.label} href={t.href}
                 className={`bg-zinc-900 border ${t.color} rounded-2xl p-5 transition group`}>
                 <div className="text-3xl mb-3">{t.icon}</div>
-                <div className="font-bold text-white group-hover:text-emerald-300 transition">{t.label}</div>
+                <div className="font-bold text-white group-hover:text-cyan-300 transition">{t.label}</div>
                 <div className="text-zinc-500 text-sm mt-1">{t.desc}</div>
               </Link>
             ))}
@@ -57,7 +57,7 @@ export default function NEETPage() {
           <div className="grid md:grid-cols-3 gap-6">
             {chapters.map((cat) => (
               <div key={cat.label} className="bg-zinc-900 border border-zinc-800 rounded-2xl p-5">
-                <div className="font-bold text-emerald-400 mb-3">{cat.label}</div>
+                <div className="font-bold text-cyan-400 mb-3">{cat.label}</div>
                 <div className="space-y-2">
                   {cat.topics.map((topic) => (
                     <Link key={topic} href={`/notes?topic=${encodeURIComponent(topic)}&exam=NEET&difficulty=ncert`}

@@ -12,7 +12,8 @@ import {
   BarChart2, Medal, Trophy, Archive, Gem, Menu, X,
   Globe, ChevronDown, Sparkles, GraduationCap, Layers, Info,
   Home, Search, LayoutGrid, GitBranch, Sigma, Palette,
-  LayoutDashboard, LogOut, UserCircle, BookMarked, Table2
+  LayoutDashboard, LogOut, UserCircle, BookMarked, Table2,
+  History, Microscope, Activity, Radio
 } from "lucide-react";
 
 // ALLEN-style category mega-menus (label + grouped links with descriptions)
@@ -38,27 +39,38 @@ const menus: Menu[] = [
       { href: "/exam",            label: "Mock Exam",       desc: "Full JEE/NEET-pattern papers",    icon: FileText },
       { href: "/assignment",      label: "Assignments",     desc: "Auto-generated practice sets",     icon: ClipboardList },
       { href: "/daily-challenge", label: "Daily Challenge", desc: "One high-yield question a day",    icon: Target },
+      { href: "/pyq",             label: "PYQ Mode",        desc: "Previous-year questions, sorted",  icon: History },
     ],
   },
   {
-    title: "AI Tools",
+    title: "AI Lab",
     items: [
       { href: "/tutor",            label: "AI Tutor",       desc: "24×7 step-by-step doubt engine",  icon: Bot },
       { href: "/doubt-solver",     label: "Doubt Solver",   desc: "Photo / voice → full solution",   icon: Sparkles },
       { href: "/snap-solve",       label: "Snap & Solve",   desc: "Photograph a problem, get steps", icon: Camera },
-      { href: "/handwritten-notes",label: "Handwritten",    desc: "Convert handwriting to notes",    icon: PenLine },
-      { href: "/molecule",         label: "Molecule Explorer", desc: "Look up any compound",         icon: Atom },
+      { href: "/handwritten-notes",label: "Handwritten Solver", desc: "Convert handwriting to notes", icon: PenLine },
       { href: "/lab",              label: "Virtual Lab",    desc: "Interactive titration sim",       icon: FlaskConical },
+      { href: "/molecule",         label: "Molecule Builder", desc: "Explore & build compounds",     icon: Atom },
     ],
   },
   {
-    title: "Plan & Track",
+    title: "Exam Tracks",
     items: [
-      { href: "/dashboard",      label: "My Dashboard",   desc: "Your progress & analytics",       icon: LayoutDashboard },
-      { href: "/study-plan",     label: "Study Plan",     desc: "Personalized 30-day plan",        icon: Calendar },
-      { href: "/exam-predictor", label: "Exam Predictor", desc: "Estimate your rank",              icon: BarChart2 },
-      { href: "/achievements",   label: "Achievements",   desc: "Badges, XP, levels",              icon: Medal },
-      { href: "/leaderboard",    label: "Leaderboard",    desc: "Compete with peers",              icon: Trophy },
+      { href: "/neet",      label: "NEET Track",     desc: "NCERT mastery roadmap",          icon: Microscope },
+      { href: "/jee",       label: "JEE Track",      desc: "Advanced rank-booster path",     icon: Atom },
+      { href: "/olympiads", label: "Olympiad Track", desc: "INChO · IChO preparation",        icon: Trophy },
+      { href: "/gate",      label: "GATE Track",     desc: "Engineering chemistry path",     icon: GraduationCap },
+    ],
+  },
+  {
+    title: "Plan & Performance",
+    items: [
+      { href: "/dashboard",      label: "My Dashboard",      desc: "Your home screen",            icon: LayoutDashboard },
+      { href: "/study-plan",     label: "Study Plan",        desc: "Personalized 30-day plan",    icon: Calendar },
+      { href: "/exam-predictor", label: "Exam Predictor",    desc: "Estimate your rank",          icon: BarChart2 },
+      { href: "/activity",       label: "Progress Analytics",desc: "Recently read, search, time", icon: Activity },
+      { href: "/achievements",   label: "Achievements",      desc: "Badges, XP, levels",          icon: Medal },
+      { href: "/leaderboard",    label: "Leaderboard",       desc: "Compete with peers",          icon: Trophy },
     ],
   },
   {
@@ -92,6 +104,13 @@ const mainLinks = [
   { href: "/vault",            tkey: "nav.vault",        icon: Archive,       category: "learn" },
   { href: "/reagents",         tkey: "nav.reagents",     icon: FlaskConical,  category: "learn" },
   { href: "/library",          tkey: "nav.library",      icon: BookOpen,      category: "learn" },
+  { href: "/pyq",              tkey: "nav.pyq",          icon: History,       category: "learn" },
+  { href: "/live",             tkey: "nav.live",         icon: Radio,         category: "game"  },
+  { href: "/neet",             tkey: "nav.neet",         icon: Microscope,    category: "game"  },
+  { href: "/jee",              tkey: "nav.jee",          icon: Atom,          category: "game"  },
+  { href: "/olympiads",        tkey: "nav.olympiadTrack",icon: Trophy,        category: "game"  },
+  { href: "/gate",             tkey: "nav.gate",         icon: GraduationCap, category: "game"  },
+  { href: "/activity",         tkey: "nav.progress",     icon: Activity,      category: "game"  },
   { href: "/teachers",         tkey: "nav.teachers",     icon: GraduationCap, category: "other" },
   { href: "/about",            tkey: "nav.about",        icon: Info,          category: "other" },
   { href: "/pricing",          tkey: "nav.pricing",      icon: Gem,           category: "other" },
@@ -210,6 +229,20 @@ export default function Navbar() {
               </div>
             );
           })}
+
+          {/* Live — direct highlighted link */}
+          <Link
+            href="/live"
+            className={`flex items-center gap-1.5 px-3 py-2 rounded-lg text-sm font-bold transition ${
+              pathname === "/live" ? "text-white bg-green-500/15" : "text-green-400 hover:bg-green-500/10"
+            }`}
+          >
+            <span className="relative flex h-2 w-2">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75" />
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500" />
+            </span>
+            Live
+          </Link>
         </nav>
 
         {/* Right Utilities */}

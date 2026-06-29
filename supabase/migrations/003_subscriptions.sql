@@ -30,3 +30,6 @@ drop policy if exists "subscriptions_select_own" on public.subscriptions;
 create policy "subscriptions_select_own"
   on public.subscriptions for select
   using (auth.uid() = user_id);
+
+-- ROLLBACK (run manually):
+-- DROP TABLE IF EXISTS public.subscriptions;

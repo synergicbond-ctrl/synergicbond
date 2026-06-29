@@ -22,3 +22,6 @@ create policy "snap_usage_insert_own"
 drop policy if exists "snap_usage_update_own" on public.snap_usage;
 create policy "snap_usage_update_own"
   on public.snap_usage for update using (auth.uid() = user_id);
+
+-- ROLLBACK (run manually):
+-- DROP TABLE IF EXISTS public.snap_usage;

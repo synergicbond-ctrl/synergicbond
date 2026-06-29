@@ -10,3 +10,6 @@ create table if not exists public.payment_events (
 );
 
 alter table public.payment_events enable row level security;
+
+-- ROLLBACK (run manually):
+-- DROP TABLE IF EXISTS public.payment_events;

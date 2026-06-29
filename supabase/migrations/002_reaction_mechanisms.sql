@@ -24,3 +24,6 @@ create policy "reaction_mechanisms insert"
 drop policy if exists "reaction_mechanisms update" on public.reaction_mechanisms;
 create policy "reaction_mechanisms update"
   on public.reaction_mechanisms for update using (true) with check (true);
+
+-- ROLLBACK (run manually):
+-- DROP TABLE IF EXISTS public.reaction_mechanisms;

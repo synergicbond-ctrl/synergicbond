@@ -1,7 +1,26 @@
 -- Run this in your Supabase SQL editor to enable progress tracking
 
+-- Ensure study_sessions exists before ALTER TABLE — required for a fresh-DB
+-- run. The table was previously assumed to pre-exist from an undocumented step.
+CREATE TABLE IF NOT EXISTS public.study_sessions (
+  id         UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  user_id    UUID NOT NULL REFERENCES auth.users(id) ON DELETE CASCADE,
+  chapter_id TEXT,
+  started_at TIMESTAMPTZ NOT NULL DEFAULT now(),
+  ended_at   TIMESTAMPTZ,
+  duration   INTEGER
+);
+
+ALTER TABLE public.study_sessions ENABLE ROW LEVEL SECURITY;
+
+DROP POLICY IF EXISTS "study_sessions_own" ON public.study_sessions;
+CREATE POLICY "study_sessions_own"
+  ON public.study_sessions FOR ALL
+  USING (auth.uid() = user_id)
+  WITH CHECK (auth.uid() = user_id);
+
 -- Add chapter_id to study_sessions (if column doesn't exist)
-ALTER TABLE study_sessions
+ALTER TABLE public.study_sessions
   ADD COLUMN IF NOT EXISTS chapter_id TEXT;
 
 -- XP and gamification table
@@ -33,3 +52,7 @@ CREATE POLICY "Users can update own XP"
 -- Enable Google OAuth: go to Supabase dashboard → Authentication → Providers → Google
 -- Set your Google OAuth Client ID and Secret from console.cloud.google.com
 -- Add authorized redirect URI: https://<your-project>.supabase.co/auth/v1/callback
+
+-- ROLLBACK (run manually; Supabase migrations have no automatic DOWN):
+-- DROP TABLE IF EXISTS public.user_xp;
+-- DROP TABLE IF EXISTS public.study_sessions;

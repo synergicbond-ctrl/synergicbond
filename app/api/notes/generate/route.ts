@@ -4,6 +4,7 @@ export const dynamic = "force-dynamic";
 import { NextResponse } from "next/server";
 import { generateText } from "@/lib/gemini";
 import { fetchSyllabusContext } from "@/lib/aiTutor";
+import { createClient } from "@/lib/supabase/server";
 
 const DIFFICULTY_INSTRUCTIONS: Record<string, string> = {
   ncert: "NCERT level — simple language, NCERT textbook only, suitable for NEET basic preparation.",
@@ -23,6 +24,10 @@ const LANG_INSTRUCTIONS: Record<string, string> = {
 
 export async function POST(req: Request) {
   try {
+    const supabase = await createClient();
+    const { data: { user } } = await supabase.auth.getUser();
+    if (!user) return NextResponse.json({ error: "Sign in to generate notes." }, { status: 401 });
+
     const {
       topic,
       chapterId,

@@ -4,6 +4,7 @@ export const dynamic = "force-dynamic";
 import { NextResponse } from "next/server";
 import { generateJSON } from "@/lib/gemini";
 import { buildMockPaperPrompt } from "@/lib/aiQuestionEngine";
+import { createClient } from "@/lib/supabase/server";
 
 const MARKING_SCHEMES: Record<string, string> = {
   "JEE Main": "Single correct: +4/-1.",
@@ -17,6 +18,10 @@ const MARKING_SCHEMES: Record<string, string> = {
 
 export async function POST(request: Request) {
   try {
+    const supabase = await createClient();
+    const { data: { user } } = await supabase.auth.getUser();
+    if (!user) return NextResponse.json({ error: "Sign in to generate an exam." }, { status: 401 });
+
     const { exam, totalQuestions, targetDifficulty, selectedChapters, language = "english" } = await request.json();
 
     if (!exam || !selectedChapters) {

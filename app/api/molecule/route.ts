@@ -3,9 +3,14 @@ export const dynamic = "force-dynamic";
 
 import { NextResponse } from "next/server";
 import { generateJSON } from "@/lib/gemini";
+import { createClient } from "@/lib/supabase/server";
 
 export async function POST(request: Request) {
   try {
+    const supabase = await createClient();
+    const { data: { user } } = await supabase.auth.getUser();
+    if (!user) return NextResponse.json({ error: "Sign in to use the molecule explorer." }, { status: 401 });
+
     const { compound, language = "english" } = await request.json();
     if (!compound) return NextResponse.json({ error: "Compound name required" }, { status: 400 });
 

@@ -3,6 +3,7 @@ export const dynamic = "force-dynamic";
 
 import { NextResponse } from "next/server";
 import { generateJSON } from "@/lib/gemini";
+import { createClient } from "@/lib/supabase/server";
 
 // Deterministic topic rotation by date
 const TOPICS = [
@@ -16,6 +17,10 @@ const TOPICS = [
 
 export async function GET(request: Request) {
   try {
+    const supabase = await createClient();
+    const { data: { user } } = await supabase.auth.getUser();
+    if (!user) return NextResponse.json({ error: "Sign in to access the daily challenge." }, { status: 401 });
+
     const { searchParams } = new URL(request.url);
     const exam = searchParams.get("exam") || "JEE Main";
     const date = new Date().toISOString().split("T")[0];

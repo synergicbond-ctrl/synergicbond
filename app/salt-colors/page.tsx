@@ -21,21 +21,6 @@ const ions = [
   { ion: "Cu²⁺ + NH₃ (excess)", solution: "Deep blue [Cu(NH₃)₄]²⁺", ppt: "—", c: "#2563EB" },
 ];
 
-const precipitates = [
-  { name: "AgCl", color: "White (turns grey in light)", c: "#F8FAFC" },
-  { name: "AgBr", color: "Pale yellow", c: "#FEF9C3" },
-  { name: "AgI", color: "Yellow", c: "#FDE047" },
-  { name: "PbI₂", color: "Bright yellow (golden spangles)", c: "#FACC15" },
-  { name: "PbCrO₄", color: "Yellow", c: "#FDE047" },
-  { name: "BaSO₄", color: "White", c: "#F8FAFC" },
-  { name: "PbSO₄", color: "White", c: "#F8FAFC" },
-  { name: "Cu₂O (Fehling +ve)", color: "Brick red", c: "#B91C1C" },
-  { name: "HgI₂", color: "Scarlet red", c: "#EF4444" },
-  { name: "As₂S₃", color: "Yellow", c: "#FDE047" },
-  { name: "CuS / PbS / NiS", color: "Black", c: "#1f2937" },
-  { name: "ZnS", color: "White", c: "#F8FAFC" },
-];
-
 // Carbonate precipitates — from (NH₄)₂CO₃ / Na₂CO₃ reagent
 const carbonates = [
   { reagent: "CaCl₂", ppt: "CaCO₃", color: "White", c: "#F8FAFC" },
@@ -92,40 +77,6 @@ const guhaBoraxBeads = [
   { metal: "Cu", oxHot: "Green", oxCold: "Blue", redHot: "Colourless", redCold: "Opaque (red Cu)" },
 ];
 
-// Sulphide precipitate colours (group II–IV)
-const guhaSulfides = [
-  { name: "Ag₂S", color: "Black" }, { name: "PbS", color: "Black" }, { name: "HgS", color: "Black" },
-  { name: "Hg + HgS", color: "Black" }, { name: "CuS", color: "Black" }, { name: "Bi₂S₃", color: "Brownish black" },
-  { name: "NiS", color: "Black" }, { name: "CoS", color: "Black" }, { name: "FeS", color: "Black" },
-  { name: "CdS", color: "Yellow" }, { name: "As₂S₃", color: "Yellow" }, { name: "As₂S₅", color: "Yellow" },
-  { name: "SnS₂", color: "Yellow" }, { name: "Sb₂S₃", color: "Orange" }, { name: "SnS", color: "Brown" },
-  { name: "MnS", color: "Buff / flesh" }, { name: "ZnS", color: "White" },
-];
-
-// Hydroxide precipitate colours (group III–VI)
-const guhaHydroxides = [
-  { name: "Al(OH)₃", color: "White" },
-  { name: "Cr(OH)₃", color: "Green" },
-  { name: "Fe(OH)₃", color: "Reddish brown" },
-  { name: "Fe(OH)₂", color: "Greenish white / dirty green" },
-  { name: "Mn(OH)₂", color: "Pinkish white" },
-  { name: "Zn(OH)₂", color: "White" },
-  { name: "Cu(OH)₂", color: "Blue" },
-  { name: "Ni(OH)₂", color: "Green" },
-];
-
-// Other characteristic compound colours
-const guhaOther = [
-  { name: "AgBr", color: "Pale yellow" },
-  { name: "AgI", color: "Yellow" },
-  { name: "CuI / Cu₂I₂", color: "White" },
-  { name: "Fe₄[Fe(CN)₆]₃ (Prussian / Turnbull's blue)", color: "Blue" },
-  { name: "Ag₂O", color: "Brownish black" },
-  { name: "HgI₂", color: "Scarlet red (yellow > 127 °C)" },
-  { name: "I₃⁻ (in solution)", color: "Dark brown" },
-  { name: "Cl₂ (gas)", color: "Greenish yellow" },
-];
-
 // Map a colour name → swatch hex (compound phrases checked before single words).
 function tone(name: string): string {
   const s = name.toLowerCase();
@@ -159,31 +110,22 @@ function Swatch({ c }: { c: string }) {
   return <span className="h-4 w-4 rounded-full flex-shrink-0 border border-white/20" style={{ background: c }} />;
 }
 
-function ColorChip({ name, color }: { name: string; color: string }) {
-  return (
-    <div className="flex items-center gap-3 rounded-xl bg-[#111827] border border-white/[0.06] px-4 py-2.5">
-      <Swatch c={tone(color)} />
-      <p className="text-sm text-white/80"><span className="font-bold text-white">{name}</span> — {color}</p>
-    </div>
-  );
-}
-
 export default function SaltColorsPage() {
   return (
     <main className="min-h-screen bg-[#0B0F19] text-white">
-      <div className="mx-auto max-w-5xl px-6 py-12">
+      <div className="mx-auto max-w-5xl px-6 py-6">
         <ReferenceTabs />
-        <p className="text-xs font-bold uppercase tracking-[0.4em] text-cyan-300 mb-3">Knowledge Vault · Inorganic</p>
-        <h1 className="text-4xl font-black md:text-5xl">Colour of Compounds</h1>
-        <p className="mt-3 text-white/65 text-sm max-w-2xl mb-8">
+        <p className="text-[11px] font-bold uppercase tracking-[0.35em] text-cyan-300 mb-1.5">Knowledge Vault · Inorganic</p>
+        <h1 className="text-2xl font-black md:text-3xl">Colour of Compounds</h1>
+        <p className="mt-1.5 text-white/60 text-[13px] max-w-3xl mb-5">
           Comprehensive colour reference for inorganic compounds, ions, precipitates, complexes, flame tests, borax bead tests, and qualitative analysis observations.
         </p>
 
         {/* Colour of Compounds — grouped by colour */}
-        <section className="mb-10">
-          <h2 className="text-lg font-black text-cyan-300 mb-1">🎨 Colour of Compounds</h2>
-          <p className="text-xs text-white/45 mb-4">{COMPOUND_COLOURS.length} compounds grouped by their colour — fast revision.</p>
-          <div className="space-y-5">
+        <section className="mb-6">
+          <h2 className="text-base font-black text-cyan-300 mb-0.5">🎨 Colour of Compounds</h2>
+          <p className="text-xs text-white/45 mb-3">{COMPOUND_COLOURS.length} compounds grouped by colour.</p>
+          <div className="space-y-4">
             {groupByColour().map((g) => (
               <div key={g.family}>
                 <div className="mb-2 flex items-center gap-2">
@@ -209,7 +151,7 @@ export default function SaltColorsPage() {
         <TransitionMetalIonsTable />
 
         {/* Ion colors */}
-        <section className="mb-8">
+        <section className="mb-6">
           <h2 className="text-lg font-black text-cyan-300 mb-3">🧪 Ion Colors (aqueous + hydroxide ppt)</h2>
           <div className="grid gap-2 md:grid-cols-2">
             {ions.map((i) => (
@@ -225,7 +167,7 @@ export default function SaltColorsPage() {
         </section>
 
         {/* Carbonate precipitates */}
-        <section className="mb-8">
+        <section className="mb-6">
           <h2 className="text-lg font-black text-cyan-300 mb-3">⚪ Carbonate Precipitates (with (NH₄)₂CO₃ / Na₂CO₃)</h2>
           <div className="overflow-x-auto rounded-2xl border border-white/[0.06]">
             <table className="w-full text-sm min-w-[480px]">
@@ -250,7 +192,7 @@ export default function SaltColorsPage() {
         </section>
 
         {/* Sulfide / thiosulfate */}
-        <section className="mb-8">
+        <section className="mb-6">
           <h2 className="text-lg font-black text-cyan-300 mb-3">⚫ Group II — Thiosulfate (white) → Sulfide (black)</h2>
           <div className="overflow-x-auto rounded-2xl border border-white/[0.06]">
             <table className="w-full text-sm min-w-[560px]">
@@ -276,19 +218,6 @@ export default function SaltColorsPage() {
           </div>
         </section>
 
-        {/* Precipitates */}
-        <section className="mb-8">
-          <h2 className="text-lg font-black text-cyan-300 mb-3">💧 Characteristic Precipitates</h2>
-          <div className="grid gap-2 md:grid-cols-2 lg:grid-cols-3">
-            {precipitates.map((p) => (
-              <div key={p.name} className="flex items-center gap-3 rounded-xl bg-[#111827] border border-white/[0.06] px-4 py-2.5">
-                <Swatch c={p.c} />
-                <p className="text-sm text-white/80"><span className="font-bold text-white">{p.name}</span> — {p.color}</p>
-              </div>
-            ))}
-          </div>
-        </section>
-
         {/* Flame tests */}
         <section>
           <h2 className="text-lg font-black text-cyan-300 mb-3">🔥 Flame Test Colors</h2>
@@ -303,14 +232,14 @@ export default function SaltColorsPage() {
         </section>
 
         {/* ── Additional compound colours ── */}
-        <div className="my-10 flex items-center gap-3">
+        <div className="my-6 flex items-center gap-3">
           <span className="h-px flex-1 bg-white/10" />
           <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-cyan-300/70">Precipitate · Bead · Test Colours</span>
           <span className="h-px flex-1 bg-white/10" />
         </div>
 
         {/* Sublimate → H₂S precipitate */}
-        <section className="mb-8">
+        <section className="mb-6">
           <h2 className="text-lg font-black text-cyan-300 mb-3">🧫 Sublimate → H₂S Precipitate Colours</h2>
           <div className="overflow-x-auto rounded-2xl border border-white/[0.06]">
             <table className="w-full text-sm min-w-[460px]">
@@ -335,7 +264,7 @@ export default function SaltColorsPage() {
         </section>
 
         {/* Borax bead */}
-        <section className="mb-8">
+        <section className="mb-6">
           <h2 className="text-lg font-black text-cyan-300 mb-3">🔵 Borax Bead Colours</h2>
           <div className="overflow-x-auto rounded-2xl border border-white/[0.06]">
             <table className="w-full text-sm min-w-[560px]">
@@ -361,30 +290,6 @@ export default function SaltColorsPage() {
             </table>
           </div>
           <p className="mt-2 text-xs text-white/40">Na₂CO₃ bead: green bead → Mn compound · yellow bead → Cr compound. Borax bead test is done only for coloured salts.</p>
-        </section>
-
-        {/* Sulphide colours */}
-        <section className="mb-8">
-          <h2 className="text-lg font-black text-cyan-300 mb-3">⚫ Sulphide Precipitate Colours</h2>
-          <div className="grid gap-2 md:grid-cols-2 lg:grid-cols-3">
-            {guhaSulfides.map((p) => <ColorChip key={p.name} name={p.name} color={p.color} />)}
-          </div>
-        </section>
-
-        {/* Hydroxide colours */}
-        <section className="mb-8">
-          <h2 className="text-lg font-black text-cyan-300 mb-3">💠 Hydroxide Precipitate Colours</h2>
-          <div className="grid gap-2 md:grid-cols-2 lg:grid-cols-3">
-            {guhaHydroxides.map((p) => <ColorChip key={p.name} name={p.name} color={p.color} />)}
-          </div>
-        </section>
-
-        {/* Other characteristic colours */}
-        <section>
-          <h2 className="text-lg font-black text-cyan-300 mb-3">✨ Other Characteristic Colours</h2>
-          <div className="grid gap-2 md:grid-cols-2 lg:grid-cols-3">
-            {guhaOther.map((p) => <ColorChip key={p.name} name={p.name} color={p.color} />)}
-          </div>
         </section>
       </div>
     </main>

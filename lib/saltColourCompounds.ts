@@ -50,6 +50,17 @@ export const COMPOUND_COLOURS: CompoundColour[] = [
   { name: "Zn[Hg(SCN)₄]", color: "White" },
   { name: "CuSCN", color: "White" },
   { name: "CuSO₄·H₂O", color: "Bluish white" },
+  { name: "Ag₂S₂O₃", color: "White" },
+  { name: "PbS₂O₃", color: "White" },
+  { name: "HgS₂O₃", color: "White" },
+  { name: "Bi₂(S₂O₃)₃", color: "White" },
+  { name: "Cu₂S₂O₃", color: "White" },
+  { name: "BaSO₄", color: "White" },
+  { name: "PbSO₄", color: "White" },
+  { name: "ZnS", color: "White" },
+  { name: "Al(OH)₃", color: "White" },
+  { name: "Zn(OH)₂", color: "White" },
+  { name: "Mn(OH)₂", color: "White" },
 
   // ── Yellow ──
   { name: "CdS", color: "Yellow" },
@@ -74,6 +85,11 @@ export const COMPOUND_COLOURS: CompoundColour[] = [
   { name: "Fluorescein", color: "Yellow" },
   { name: "PbO (Massicot)", color: "Yellow" },
   { name: "ZnO (hot)", color: "Yellow" },
+  { name: "Ag₂CO₃", color: "Very light yellow" },
+  { name: "Hg₂CO₃", color: "Yellow" },
+  { name: "As₂S₃", color: "Yellow" },
+  { name: "As₂S₅", color: "Yellow" },
+  { name: "SnS₂", color: "Yellow" },
 
   // ── Black ──
   { name: "Ag₂S", color: "Black" },
@@ -87,6 +103,11 @@ export const COMPOUND_COLOURS: CompoundColour[] = [
   { name: "CuO", color: "Black" },
   { name: "Ag₂O", color: "Brownish black" },
   { name: "BiI₃", color: "Brownish black" },
+  { name: "HgS", color: "Black" },
+  { name: "Hg + HgS", color: "Black" },
+  { name: "CuS", color: "Black" },
+  { name: "Cu₂S", color: "Black" },
+  { name: "Bi₂S₃", color: "Brownish black" },
 
   // ── Brown ──
   { name: "HgO·Hg(NH₂)I", color: "Brown" },
@@ -97,6 +118,9 @@ export const COMPOUND_COLOURS: CompoundColour[] = [
   { name: "Fe[Fe(CN)₆]", color: "Brown colouration" },
   { name: "KI₃", color: "Dark brown" },
   { name: "[Co(NH₃)₆]²⁺ (solution)", color: "Brownish yellow" },
+  { name: "SnS", color: "Brown" },
+  { name: "HgCO₃·3HgO", color: "Reddish brown" },
+  { name: "Fe(OH)₃", color: "Reddish brown" },
 
   // ── Red ──
   { name: "Fe(SCN)₃", color: "Blood red" },
@@ -112,6 +136,7 @@ export const COMPOUND_COLOURS: CompoundColour[] = [
   { name: "[Fe(dipy)₃]²⁺", color: "Red colouration" },
   { name: "[Fe(C₁₂H₈N₂)₃]²⁺", color: "Red colouration" },
   { name: "PbO (Litharge)", color: "Red" },
+  { name: "Cu₂O", color: "Brick red" },
 
   // ── Pink ──
   { name: "CoCl₂·6H₂O", color: "Pink" },
@@ -119,12 +144,14 @@ export const COMPOUND_COLOURS: CompoundColour[] = [
   { name: "Co(OH)₂", color: "Pink" },
   { name: "[Co(NH₃)₆]³⁺ (solution)", color: "Pink" },
   { name: "Mn₃(PO₄)₂", color: "Pink" },
+  { name: "MnS", color: "Buff / flesh" },
 
   // ── Orange ──
   { name: "K₂Cr₂O₇ (Cr₂O₇²⁻)", color: "Orange" },
   { name: "Trichromate (Cr₃O₁₀²⁻)", color: "Orange-red" },
   { name: "Tetrachromate (Cr₄O₁₃²⁻)", color: "Dark red" },
   { name: "[BiI₄]⁻ (solution)", color: "Orange to yellow" },
+  { name: "Sb₂S₃", color: "Orange" },
 
   // ── Green ──
   { name: "Cu(OH)₂·CuCO₃", color: "Green" },
@@ -134,6 +161,10 @@ export const COMPOUND_COLOURS: CompoundColour[] = [
   { name: "CoO·ZnO / Co[ZnO₂] (Rinmann's green)", color: "Green" },
   { name: "Cr₂O₃", color: "Green" },
   { name: "FeSO₄·7H₂O (green vitriol)", color: "Green" },
+  { name: "Cr(OH)₃", color: "Green" },
+  { name: "Fe(OH)₂", color: "Dirty green" },
+  { name: "Ni(OH)₂", color: "Green" },
+  { name: "Cl₂ (gas)", color: "Greenish yellow" },
 
   // ── Blue ──
   { name: "I₂ + starch", color: "Deep blue" },
@@ -142,11 +173,14 @@ export const COMPOUND_COLOURS: CompoundColour[] = [
   { name: "[Ni(NH₃)₆]²⁺ (solution)", color: "Deep blue" },
   { name: "Fe₄[Fe(CN)₆]₃ (Prussian blue)", color: "Blue" },
   { name: "Fe₃[Fe(CN)₆]₂ (Turnbull's blue)", color: "Blue" },
+  { name: "Cu(OH)₂", color: "Blue" },
+  { name: "[Cu(NH₃)₄]²⁺ (solution)", color: "Deep blue" },
 
   // ── Violet ──
   { name: "[Ni(en)₃]S₂O₃", color: "Violet" },
   { name: "Cu[Hg(SCN)₄]·Zn[Hg(SCN)₄]", color: "Violet" },
   { name: "CoCl₂·2H₂O", color: "Red violet" },
+  { name: "MnO₄⁻", color: "Intense purple" },
 
   // ── Grey ──
   { name: "Hg + HgO", color: "Grey" },
@@ -160,6 +194,11 @@ export const COMPOUND_COLOURS: CompoundColour[] = [
   { name: "[Cu(CN)₄]³⁻", color: "Colourless" },
   { name: "[Cu(SCN)₄]³⁻", color: "Colourless" },
   { name: "[FeF₆]³⁻", color: "Colourless" },
+  { name: "[Ag(S₂O₃)₂]³⁻", color: "Colourless" },
+  { name: "[Pb(S₂O₃)₂]²⁻", color: "Colourless" },
+  { name: "[Hg(S₂O₃)₂]²⁻", color: "Colourless" },
+  { name: "[Bi(S₂O₃)₃]³⁻", color: "Colourless" },
+  { name: "[Cu₆(S₂O₃)₅]⁴⁻", color: "Colourless" },
 ];
 
 // Display order + heading swatch for each colour family.
@@ -187,6 +226,7 @@ export function familyOf(color: string): string {
   if (/purple|red[ -]?violet|violet/.test(s)) return "Violet";
   if (/reddish[ -]?brown|yellowish[ -]?brown|chocolate|dark brown|brownish|\bbrown\b/.test(s)) return "Brown";
   if (/grey|gray/.test(s)) return "Grey";
+  if (/buff|flesh/.test(s)) return "Pink";
   if (/pink/.test(s)) return "Pink";
   if (/orange/.test(s)) return "Orange";
   if (/green/.test(s)) return "Green";

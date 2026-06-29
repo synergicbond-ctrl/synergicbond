@@ -11,6 +11,8 @@ import {
   type SnapSolveClassification,
 } from "@/lib/snapSolveTypes";
 import { getAdaptation, recordSession } from "@/lib/memoryCore";
+import { rateLimit, clientIp } from "@/lib/rateLimit";
+import { checkAndConsumeSnapQuota } from "@/lib/snapQuota";
 
 // ---------------------------------------------------------------------------
 // Fallback + guidance helpers (server-owned; the UI never computes these)
@@ -429,6 +431,15 @@ function streamTutor({ imageBase64, query, language = "english", message, curren
 // ---------------------------------------------------------------------------
 export async function POST(request: Request) {
   try {
+    // Abuse guard (per-IP). Cheap first line of defense on a paid AI route.
+    const rl = rateLimit(`snap:${clientIp(request)}`, 20, 60_000);
+    if (!rl.ok) {
+      return NextResponse.json(
+        { error: "Too many requests. Please wait a few seconds and try again." },
+        { status: 429, headers: { "Retry-After": String(rl.retryAfter) } }
+      );
+    }
+
     const body = await request.json();
     const { imageBase64, query, language = "english", interrupt, message, currentContext } = body ?? {};
     // Optional — present only once a future frontend sends it. Until then all
@@ -451,6 +462,21 @@ export async function POST(request: Request) {
     const typed = typeof query === "string" ? query.trim() : "";
     if (!imageBase64 && !typed) {
       return NextResponse.json({ error: "Provide an image or a typed question." }, { status: 400 });
+    }
+
+    // Paywall gate — free tier = 5 solves/day, Pro = unlimited. Applies to the
+    // main solve path only (interrupt/tutor follow-ups are not separately metered).
+    // Degrades open if the usage tables aren't migrated yet (see lib/snapQuota).
+    const quota = await checkAndConsumeSnapQuota();
+    if (!quota.allowed) {
+      return NextResponse.json(
+        {
+          error: "You've used your 5 free solves today. Upgrade to Pro for unlimited Snap & Solve.",
+          paywall: true,
+          tier: quota.tier,
+        },
+        { status: 402 }
+      );
     }
 
     // Backward-compatible: only stream when the client opts in. The existing

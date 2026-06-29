@@ -24,40 +24,44 @@ type Menu = { title: string; items: MenuItem[]; wide?: boolean };
 const learnPinned = { href: "/periodic-table", label: "Periodic Table", desc: "Interactive · trends · element data — the brain of chemistry", icon: Table2 };
 const learnGroups: { title: string; items: MenuItem[] }[] = [
   {
-    title: "🧠 Core Chemistry",
+    title: "📚 Learn Concepts",
     items: [
-      { href: "/vault",     label: "Knowledge Vault",   desc: "Concepts, reactions, exceptions", icon: Archive },
-      { href: "/molecule",  label: "Molecule Explorer", desc: "Look up any compound",            icon: Atom },
-      { href: "/properties",label: "Bonding & Geometry",desc: "Shape, hybridization, dipole",    icon: Sigma },
-      { href: "/notes",     label: "AI Notes",          desc: "Exam-focused notes",              icon: BookOpen },
+      { href: "/vault",          label: "Knowledge Vault", desc: "Concepts, reactions, exceptions", icon: Archive },
+      { href: "/notes",          label: "AI Notes",        desc: "Exam-focused notes",              icon: BookOpen },
+      { href: "/vault/formulas", label: "Formula Sheets",  desc: "Every key equation, one place",   icon: Sigma },
+      { href: "/library",        label: "Book Library",    desc: "70+ world-class textbooks",       icon: BookMarked },
+      { href: "/study-tools",    label: "Study Tools",     desc: "Notes, timer, planner",           icon: Layers },
     ],
   },
   {
-    title: "🧪 Reactions & Reference",
+    title: "⚗️ Reactions",
     items: [
-      { href: "/reagents",        label: "Reagents",     desc: "Reagent master list",        icon: FlaskConical },
-      { href: "/redox-reactions", label: "Redox",        desc: "Oxidation / reduction",      icon: Sparkles },
-      { href: "/solubility",      label: "Solubility",   desc: "Rules & exceptions",         icon: GitBranch },
-      { href: "/properties",      label: "Properties",   desc: "BP/MP, state, dipole",       icon: Atom },
-      { href: "/salt-colors",     label: "Colour of Compounds", desc: "Compounds & ions by colour", icon: Palette },
+      { href: "/name-reactions",     label: "Named Reactions",    desc: "700+ with AI mechanisms", icon: GitBranch },
+      { href: "/reagents",           label: "Reagent Explorer",   desc: "Reagent master list",     icon: FlaskConical },
+      { href: "/reaction-predictor", label: "Reaction Predictor", desc: "A + B → ? (AI)",          icon: Sparkles },
     ],
   },
   {
-    title: "📚 Study Support",
+    title: "🧬 Molecules",
     items: [
-      { href: "/important-orders",label: "Important Orders",desc: "IOC · OC · PC — verified ordering sequences", icon: ListOrdered },
-      { href: "/library",         label: "Book Library",  desc: "70+ world-class textbooks",     icon: BookMarked },
-      { href: "/study-tools",     label: "Study Tools",   desc: "Multicolor notes, timer, plan", icon: Layers },
-      { href: "/vault/formulas",  label: "Formula Sheets",desc: "Every key equation, one place", icon: Sigma },
+      { href: "/molecule",   label: "Molecule Explorer",  desc: "Look up any compound",         icon: Atom },
+      { href: "/properties", label: "Bonding & Geometry", desc: "Shape, hybridization, dipole", icon: Sigma },
     ],
   },
   {
-    title: "🔥 Advanced",
+    title: "🧪 Periodic Chemistry",
     items: [
-      { href: "/periodic-trends",    label: "Periodic Trends",      desc: "Radius · IE · ΔₑgH · EN + exceptions", icon: Activity },
-      { href: "/periodic-table",     label: "Trends Explorer",      desc: "Colour table by EN / radius / MP", icon: BarChart2 },
-      { href: "/name-reactions",     label: "Mechanism Visualizer", desc: "700+ mechanisms, AI-explained",    icon: GitBranch },
-      { href: "/reaction-predictor", label: "Reaction Prediction",  desc: "A + B → ? (AI · soon)",            icon: Sparkles },
+      { href: "/periodic-table",  label: "Periodic Table",  desc: "Interactive · element data", icon: Table2 },
+      { href: "/periodic-trends", label: "Trends Explorer", desc: "Radius · IE · ΔₑgH · EN",    icon: BarChart2 },
+      { href: "/salt-colors",     label: "Colour Explorer", desc: "Compound & ion colours",     icon: Palette },
+    ],
+  },
+  {
+    title: "🎯 Exam Hub",
+    items: [
+      { href: "/important-orders", label: "Important Orders", desc: "Ranking sequences (IOC)",  icon: ListOrdered },
+      { href: "/pyq",              label: "PYQs",             desc: "Previous-year questions",  icon: History },
+      { href: "/revision",         label: "Revision Sheets",  desc: "Rapid last-mile revision", icon: BookMarked },
     ],
   },
 ];
@@ -74,7 +78,19 @@ const menus: Menu[] = [
     ],
   },
   {
-    title: "AI Lab",
+    title: "Track",
+    items: [
+      { href: "/dashboard",      label: "My Dashboard",      desc: "Your home screen",            icon: LayoutDashboard },
+      { href: "/study-plan",     label: "Study Plan",        desc: "Personalized 30-day plan",    icon: Calendar },
+      { href: "/activity",       label: "Progress Analytics",desc: "Recently read, search, time", icon: Activity },
+      { href: "/exam-predictor", label: "Exam Predictor",    desc: "Estimate your rank",          icon: BarChart2 },
+      { href: "/achievements",   label: "Achievements",      desc: "Badges, XP, levels",          icon: Medal },
+      { href: "/leaderboard",    label: "Leaderboard",       desc: "Compete with peers",          icon: Trophy },
+      { href: "/live",           label: "Live",              desc: "Live classes & rooms",        icon: Radio },
+    ],
+  },
+  {
+    title: "AI",
     items: [
       { href: "/tutor",            label: "AI Tutor",       desc: "24×7 step-by-step doubt engine",  icon: Bot },
       { href: "/doubt-solver",     label: "Doubt Solver",   desc: "Photo / voice → full solution",   icon: Sparkles },
@@ -85,32 +101,17 @@ const menus: Menu[] = [
     ],
   },
   {
-    title: "Exam Tracks",
-    items: [
-      { href: "/exam-center", label: "Exam Center",  desc: "2026 dates · fees · seats",       icon: LayoutGrid },
-      { href: "/neet",      label: "NEET Track",     desc: "NCERT mastery roadmap",          icon: Microscope },
-      { href: "/jee",       label: "JEE Track",      desc: "Advanced rank-booster path",     icon: Atom },
-      { href: "/olympiads", label: "Olympiad Track", desc: "INChO · IChO preparation",        icon: Trophy },
-      { href: "/gate",      label: "GATE Track",     desc: "Engineering chemistry path",     icon: GraduationCap },
-    ],
-  },
-  {
-    title: "Plan & Performance",
-    items: [
-      { href: "/dashboard",      label: "My Dashboard",      desc: "Your home screen",            icon: LayoutDashboard },
-      { href: "/study-plan",     label: "Study Plan",        desc: "Personalized 30-day plan",    icon: Calendar },
-      { href: "/exam-predictor", label: "Exam Predictor",    desc: "Estimate your rank",          icon: BarChart2 },
-      { href: "/activity",       label: "Progress Analytics",desc: "Recently read, search, time", icon: Activity },
-      { href: "/achievements",   label: "Achievements",      desc: "Badges, XP, levels",          icon: Medal },
-      { href: "/leaderboard",    label: "Leaderboard",       desc: "Compete with peers",          icon: Trophy },
-    ],
-  },
-  {
     title: "More",
+    wide: true,
     items: [
-      { href: "/teachers", label: "Teacher Hub",     desc: "Curriculum, analytics, routing", icon: GraduationCap },
-      { href: "/about",    label: "About & Mission", desc: "Why SYNERGIC BOND exists",       icon: Info },
-      { href: "/pricing",  label: "Pricing",         desc: "Free core + PRO plans",          icon: Gem },
+      { href: "/exam-center", label: "Exam Center",     desc: "2026 dates · fees · seats",      icon: LayoutGrid },
+      { href: "/neet",        label: "NEET Track",      desc: "NCERT mastery roadmap",          icon: Microscope },
+      { href: "/jee",         label: "JEE Track",       desc: "Advanced rank-booster path",     icon: Atom },
+      { href: "/olympiads",   label: "Olympiad Track",  desc: "INChO · IChO preparation",       icon: Trophy },
+      { href: "/gate",        label: "GATE Track",      desc: "Engineering chemistry path",     icon: GraduationCap },
+      { href: "/teachers",    label: "Teacher Hub",     desc: "Curriculum, analytics, routing", icon: GraduationCap },
+      { href: "/about",       label: "About & Mission", desc: "Why SYNERGIC BOND exists",       icon: Info },
+      { href: "/pricing",     label: "Pricing",         desc: "Free core + PRO plans",          icon: Gem },
     ],
   },
 ];
@@ -266,25 +267,9 @@ export default function Navbar() {
             const isNew = menu.title === "Exam Tracks";
             return (
               <div key={menu.title} className="flex items-center">
-              {/* zone separators */}
-              {(menu.title === "Exam Tracks" || menu.title === "More") && (
-                <span className="mx-1.5 h-5 w-px bg-white/10" />
-              )}
-              {/* Live sits just before More (utility zone) */}
+              {/* zone separator before the utility/More zone */}
               {menu.title === "More" && (
-                <Link
-                  href="/live"
-                  className={`flex items-center gap-2 px-3 py-2 mr-1 rounded-lg text-sm font-bold transition ${
-                    pathname === "/live" ? "text-white bg-green-500/15 ring-1 ring-green-400/40" : "text-green-400 hover:bg-green-500/10"
-                  }`}
-                  style={{ boxShadow: pathname === "/live" ? "0 0 14px rgba(34,197,94,0.35)" : undefined }}
-                >
-                  <span className="relative flex h-2 w-2">
-                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75" />
-                    <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500" />
-                  </span>
-                  Live <span className="text-[10px] font-semibold text-green-400/70 hidden xl:inline">1.2K</span>
-                </Link>
+                <span className="mx-1.5 h-5 w-px bg-white/10" />
               )}
               <div
                 className="relative"

@@ -3,9 +3,7 @@
 //
 // - Pro users:  unlimited.
 // - Free (signed-in) users:  SNAP_FREE_DAILY_LIMIT solves/day, then 402 paywall.
-// - Guests (no auth):  not metered here in Phase 1 — covered only by the per-IP
-//   rate limiter. Tightening guests to sign-in (or an IP/day cap) is a Phase 2
-//   toggle. Documented as a known gap.
+// - Guests (no auth):  blocked — must create a free account to use Snap & Solve.
 //
 // Every Supabase call degrades OPEN (allow) on error so the product keeps
 // working before the 003/004 migrations have run on prod.
@@ -27,8 +25,8 @@ export async function checkAndConsumeSnapQuota(): Promise<SnapQuota> {
     const supabase = await createClient();
     const { data: { user } } = await supabase.auth.getUser();
 
-    // Guests: allow (rate-limiter handles abuse). Not metered in Phase 1.
-    if (!user) return { allowed: true, paywall: false, tier: "guest", remaining: null };
+    // Guests must sign in — a free account gives 5 solves/day at no cost.
+    if (!user) return { allowed: false, paywall: false, tier: "guest", remaining: null };
 
     // Pro: unlimited.
     if (await isProActive(supabase, user.id)) {

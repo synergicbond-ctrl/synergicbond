@@ -469,6 +469,12 @@ export async function POST(request: Request) {
     // Degrades open if the usage tables aren't migrated yet (see lib/snapQuota).
     const quota = await checkAndConsumeSnapQuota();
     if (!quota.allowed) {
+      if (quota.tier === "guest") {
+        return NextResponse.json(
+          { error: "Sign in to use Snap & Solve — free accounts get 5 solves per day at no cost." },
+          { status: 401 }
+        );
+      }
       return NextResponse.json(
         {
           error: "You've used your 5 free solves today. Upgrade to Pro for unlimited Snap & Solve.",

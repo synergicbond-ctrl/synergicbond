@@ -1,4 +1,4 @@
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 import Link from "next/link";
 import { physical } from "@/lib/masterSyllabus/physical";
 import { organic } from "@/lib/masterSyllabus/organic";
@@ -12,6 +12,17 @@ import AiTutorBox from "@/components/AiTutorBox";
 import QuizAndFeedback from "@/components/QuizAndFeedback";
 import VisionUploader from "@/components/VisionUploader";
 import StudySessionTracker from "@/components/StudySessionTracker";
+import { createClient } from "@/lib/supabase/server";
+import { isProActive } from "@/lib/subscription";
+
+// Must match FREE_CHAPTERS in /api/content/access/route.ts — single source of truth
+// for which chapters are publicly accessible without a subscription.
+const FREE_CHAPTER_IDS = [
+  "mole-concept", "atomic-structure",
+  "general-organic-chemistry", "hydrocarbons",
+  "periodic-table", "chemical-bonding",
+  "introduction-to-spectroscopy", "gravimetric-analysis",
+];
 
 const allChapters = [...physical, ...organic, ...inorganic];
 
@@ -28,6 +39,17 @@ export default async function ChapterPage({ params }: PageProps) {
   }
 
   const lookupId = chapterIdMap[chapter.id] ?? chapter.id;
+
+  // Server-side access gate: free chapters pass through; premium chapters
+  // require an active Pro subscription. Server redirect means zero premium
+  // content reaches the client for unauthorized users.
+  if (!FREE_CHAPTER_IDS.includes(lookupId)) {
+    const supabase = await createClient();
+    const { data: { user } } = await supabase.auth.getUser();
+    if (!user) redirect(`/auth/signin?next=/chapter/${resolvedParams.id}`);
+    const isPro = await isProActive(supabase, user.id);
+    if (!isPro) redirect("/pricing");
+  }
 
   const formulas = masterFormulas[lookupId] || [];
   const reactions = masterReactions.filter((r) => r.category === chapter.category);

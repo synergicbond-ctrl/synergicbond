@@ -6,6 +6,7 @@ import { Search, Star, X, Sparkles, Loader2 } from "lucide-react";
 import ReferenceTabs from "@/components/ReferenceTabs";
 import ReactMarkdown from "react-markdown";
 import remarkMath from "remark-math";
+import remarkGfm from "remark-gfm";
 import rehypeKatex from "rehype-katex";
 import "katex/dist/katex.min.css";
 
@@ -147,8 +148,8 @@ export default function NameReactionsPage() {
                   <span className="text-sm">Generating mechanism & exam tips…</span>
                 </div>
               ) : (
-                <div className="prose-invert text-sm leading-relaxed text-white/80 [&_h2]:text-cyan-300 [&_h2]:font-black [&_h2]:text-lg [&_h2]:mb-3 [&_h3]:text-cyan-200 [&_h3]:font-bold [&_h3]:mt-4 [&_h3]:mb-1.5 [&_strong]:text-white [&_ol]:my-2 [&_ol]:list-decimal [&_ol]:pl-5 [&_ul]:my-2 [&_ul]:list-disc [&_ul]:pl-5 [&_li]:my-1 [&_p]:my-2.5 [&_hr]:my-4 [&_hr]:border-white/10 [&_code]:rounded [&_code]:bg-white/10 [&_code]:px-1 [&_code]:py-0.5">
-                  <ReactMarkdown remarkPlugins={[remarkMath]} rehypePlugins={[rehypeKatex]}>
+                <div className="prose-invert text-sm leading-relaxed text-white/80 [&_h2]:text-cyan-300 [&_h2]:font-black [&_h2]:text-lg [&_h2]:mb-3 [&_h3]:text-cyan-200 [&_h3]:font-bold [&_h3]:mt-4 [&_h3]:mb-1.5 [&_strong]:text-white [&_ol]:my-2 [&_ol]:list-decimal [&_ol]:pl-5 [&_ul]:my-2 [&_ul]:list-disc [&_ul]:pl-5 [&_li]:my-1 [&_p]:my-2.5 [&_hr]:my-4 [&_hr]:border-white/10 [&_code]:rounded [&_code]:bg-white/10 [&_code]:px-1 [&_code]:py-0.5 [&_table]:my-3 [&_table]:w-full [&_table]:block [&_table]:overflow-x-auto [&_table]:text-xs [&_table]:border-collapse [&_th]:border [&_th]:border-white/10 [&_th]:bg-white/[0.05] [&_th]:px-2 [&_th]:py-1.5 [&_th]:text-left [&_th]:text-cyan-200 [&_td]:border [&_td]:border-white/10 [&_td]:px-2 [&_td]:py-1.5 [&_td]:align-top">
+                  <ReactMarkdown remarkPlugins={[remarkGfm, remarkMath]} rehypePlugins={[rehypeKatex]}>
                     {explanation}
                   </ReactMarkdown>
                 </div>

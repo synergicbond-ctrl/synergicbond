@@ -3,9 +3,14 @@ export const dynamic = "force-dynamic";
 
 import { NextResponse } from "next/server";
 import { generateJSON } from "@/lib/gemini";
+import { createClient } from "@/lib/supabase/server";
 
 export async function POST(request: Request) {
   try {
+    const supabase = await createClient();
+    const { data: { user } } = await supabase.auth.getUser();
+    if (!user) return NextResponse.json({ error: "Sign in to generate a study plan." }, { status: 401 });
+
     const { weakTopics, examType, examDate, hoursPerDay = 4, language = "english" } = await request.json();
 
     if (!weakTopics || !examType) {

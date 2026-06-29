@@ -3,6 +3,7 @@ export const dynamic = "force-dynamic";
 
 import { NextResponse } from "next/server";
 import { generateText } from "@/lib/gemini";
+import { createClient } from "@/lib/supabase/server";
 
 // Server-side sanitizer — defense in depth on top of the client sanitizer
 function clean(input: string): string {
@@ -11,6 +12,10 @@ function clean(input: string): string {
 
 export async function POST(request: Request) {
   try {
+    const supabase = await createClient();
+    const { data: { user } } = await supabase.auth.getUser();
+    if (!user) return NextResponse.json({ error: "Sign in to use the doubt solver." }, { status: 401 });
+
     const { doubt, language = "english" } = await request.json();
     const safeDoubt = clean(doubt);
     if (!safeDoubt) return NextResponse.json({ error: "Doubt text required" }, { status: 400 });

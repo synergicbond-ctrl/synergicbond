@@ -4,9 +4,14 @@ export const dynamic = "force-dynamic";
 import { NextResponse } from "next/server";
 import { constructAIPrompt, fetchSyllabusContext } from "@/lib/aiTutor";
 import { generateText } from "@/lib/gemini";
+import { createClient } from "@/lib/supabase/server";
 
 export async function POST(request: Request) {
   try {
+    const supabase = await createClient();
+    const { data: { user } } = await supabase.auth.getUser();
+    if (!user) return NextResponse.json({ error: "Sign in to use the AI tutor." }, { status: 401 });
+
     const body = await request.json();
     const { message, chapterId } = body;
 

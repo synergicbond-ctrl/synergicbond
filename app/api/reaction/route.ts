@@ -2,114 +2,86 @@ export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 
 import { NextResponse } from "next/server";
-import { generateText } from "@/lib/gemini";
+import { generateJSON } from "@/lib/gemini";
+import { reactionSlug } from "@/lib/reactionSlug";
+import { getSeed } from "@/lib/reactionSeeds";
+import { getCached, putCached } from "@/lib/mechanismCache";
+import { MechanismSchema, SCHEMA_VERSION } from "@/lib/mechanismSchema";
 
-// User-facing fallback — never expose model names, API errors, or payloads.
 const UNAVAILABLE = "Explanation temporarily unavailable. Please try again in a few moments.";
 
-// Sanitize the reaction name before sending to the model
-function clean(s: string) {
-  return String(s).replace(/[<>{}]/g, "").slice(0, 120).trim();
+function clean(s: unknown) {
+  return String(s ?? "").replace(/[<>{}]/g, "").slice(0, 120).trim();
+}
+function stripFences(s: string) {
+  return s.trim().replace(/^```(?:json)?\s*/i, "").replace(/\s*```$/i, "").trim();
 }
 
 export async function POST(request: Request) {
   try {
-    const { reaction, language = "english" } = await request.json();
-    const name = clean(reaction);
+    const body = await request.json();
+    const name = clean(body?.reaction);
     if (!name) return NextResponse.json({ error: "Reaction name required" }, { status: 400 });
+    const slug = clean(body?.slug) || reactionSlug(name);
+    const language = clean(body?.language) || "english";
 
+    // 1) Hand-authored seed — always accurate, instant.
+    const seed = getSeed(slug);
+    if (seed) return NextResponse.json({ mechanism: seed, source: "seed" });
+
+    // 2) Persisted cache — never regenerate the same reaction.
+    const cached = await getCached(slug, language);
+    if (cached) return NextResponse.json({ mechanism: cached, source: "cache" });
+
+    // 3) Generate structured JSON, validate against the SSOT, then persist.
     const langLine =
-      language === "hindi" ? "Respond in Hindi (Devanagari); keep chemical names/formulae in standard notation."
-      : language === "hinglish" ? "Respond in Hinglish (Hindi in Roman script + English chemistry terms)."
-      : "Respond in English.";
+      language === "hindi" ? "Write all human-readable text in Hindi (Devanagari); keep formulae/SMILES standard."
+      : language === "hinglish" ? "Write human-readable text in Hinglish (Roman Hindi + English terms)."
+      : "Write in English.";
 
-    const prompt = `You are an expert organic chemistry content author, reaction-mechanism specialist and fact-checker. Create a COMPLETE, EXAM-READY, scientifically VERIFIED reaction note for "${name}". ${langLine}
+    const prompt = `You are an expert organic chemistry author. Return ONE JSON object (no markdown) for the reaction "${name}". ${langLine}
 
-ACCURACY RULES (strict):
-- Write ONLY verified chemistry cross-checked against NCERT, Clayden, Morrison & Boyd, March, Carey & Sundberg and IUPAC recommendations.
-- Do NOT assume, infer or invent reagents, intermediates, products, stereochemistry, RDS or kinetics.
-- If literature disagrees, state the disagreement. If a detail is uncertain, write exactly: "Not conclusively established in standard literature." Never guess.
-- Every mechanistic statement must be chemically correct. Omit any uncertain statement.
+Verified chemistry only (NCERT / Clayden / March). No invented reagents/intermediates. Every text field MUST be ONE short line (no paragraphs).
 
-Output clean GitHub-flavored markdown (tables allowed) using EXACTLY these sections in order. Use $...$ LaTeX for all formulae/equations. No preamble, no closing remarks. Keep each section tight but complete.
+Shape:
+{
+  "dashboard": { "reactionType": str, "difficulty": "Easy|Moderate|Hard|Olympiad", "examFrequency": "Low|Medium|High|Very High", "reagents": [str], "products": [str], "chapter": str, "mechanismType": str, "rds": str, "stereochemistry": str, "conditions": str, "timeToLearn": str },
+  "flowMap": [ { "label": str, "kind": "reactant|reagent|intermediate|transition|product" } ],
+  "steps": [ { "n": int, "title": str, "beforeSmiles": str, "afterSmiles": str, "electronMove": str, "intermediate": str, "reason": str, "trap": str, "hook": str } ],
+  "quickView": { "reaction": str, "keyIntermediate": str, "rds": str, "keyReagent": str, "trap": str, "mnemonic": str },
+  "stereochemistry": { "applicable": bool, "summary": str, "outcomes": [str] },
+  "examples": [ { "tier": "Basic|JEE Main|JEE Advanced|Olympiad|PYQ", "prompt": str, "answer": str } ],
+  "relatedReactions": [str]
+}
 
-## ⚗️ ${name}
+Rules: 3–7 mechanism steps; beforeSmiles/afterSmiles must be VALID SMILES of the actual species (omit a SMILES field only if truly not representable); 6–10 examples across tiers; 3–6 related reactions. Output ONLY the JSON.`;
 
-### 1. Reaction Name
-Official name, alternative names, named-reaction classification (if any).
+    const raw = stripFences(await generateJSON(prompt));
+    let candidate: unknown;
+    try {
+      candidate = JSON.parse(raw);
+    } catch {
+      return NextResponse.json({ error: UNAVAILABLE }, { status: 503 });
+    }
 
-### 2. Definition
-Precise textbook-level definition.
+    // Inject server-owned identity fields, then strictly validate.
+    if (candidate && typeof candidate === "object") {
+      const c = candidate as Record<string, unknown>;
+      c.schemaVersion = SCHEMA_VERSION;
+      c.slug = slug;
+      c.name = name;
+      c.category = "named-reaction";
+    }
+    const parsed = MechanismSchema.safeParse(candidate);
+    if (!parsed.success) {
+      console.error("mechanism schema drift:", parsed.error.issues?.slice(0, 3));
+      return NextResponse.json({ error: UNAVAILABLE }, { status: 503 });
+    }
 
-### 3. Type of Reaction
-All applicable categories (e.g. nucleophilic substitution, addition, elimination, rearrangement, condensation, oxidation, reduction, pericyclic, radical, electrophilic aromatic substitution).
-
-### 4. General Reaction
-Generic scheme in proper notation.
-
-### 5. Standard Examples
-3–5 verified examples — reactants, reagents, conditions, products.
-
-### 6. Reaction Conditions
-Catalyst, solvent, temperature, pressure, light/UV, atmosphere, acidic/basic. Then **Conditions required**, **Conditions to avoid**, **Why these conditions matter**.
-
-### 7. Mechanism
-Complete stepwise mechanism. For EACH step: the chemical event; curved-arrow description (which bond breaks/forms, electron source → destination); intermediate formed (name + type: carbocation/carbanion/radical/enolate/arenium ion/tetrahedral intermediate/ylide/etc.); brief stability discussion.
-
-### 8. Curved-Arrow Summary
-Concise arrow-pushing sequence (Step 1 → Step 2 → …), suitable for drawing.
-
-### 9. Rate-Determining Step
-Exact RDS and why it is slow; energy-profile reasoning; evidence if known. If none established, say so.
-
-### 10. Order of Reaction
-Molecularity, kinetic order, rate law (e.g. Rate = k[RX] or Rate = k[RX][Nu⁻]). If not experimentally established, write "Order of reaction is not universally defined." Do not invent kinetics.
-
-### 11. Stereochemistry
-Retention/inversion/racemization, syn/anti addition, cis/trans, E/Z, stereospecific vs stereoselective. If irrelevant, write "No stereochemical consequences."
-
-### 12. Regioselectivity
-Markovnikov/anti-Markovnikov, o/p/m orientation, kinetic vs thermodynamic — only if applicable.
-
-### 13. Energy Profile
-Transition states, activation energy, relative intermediate energies, highest-energy step.
-
-### 14. Why The Reaction Occurs
-Driving forces (aromatic/resonance/hyperconjugative stabilisation, ring-strain relief, entropy/enthalpy, stable intermediate/product).
-
-### 15. Scope
-Substrates that work well.
-
-### 16. Limitations
-Substrates that fail; side/competing reactions.
-
-### 17. Important Variations
-Notable modified versions.
-
-### 18. Exam Q&A
-At least 8 conceptual questions WITH answers.
-
-### 19. Common Mistakes
-At least 8 accurate student errors.
-
-### 20. Memory Tricks
-Only chemically correct mnemonics.
-
-### 21. Comparison Table
-A markdown table comparing with closely related reactions — columns: Reaction | Key Reagent | Intermediate | RDS | Product | Distinguishing Feature.
-
-### 22. JEE / NEET High-Yield Points
-The highest-yield exam facts.
-
-### 23. References
-The standard sources used (NCERT, Clayden, Morrison & Boyd, March, Carey & Sundberg), with chapter/topic where possible.`;
-
-    const text = await generateText(prompt);
-    if (!text.trim()) return NextResponse.json({ error: UNAVAILABLE }, { status: 503 });
-    return NextResponse.json({ explanation: text });
+    await putCached(slug, language, parsed.data);
+    return NextResponse.json({ mechanism: parsed.data, source: "generated" });
   } catch (err) {
-    // Log technical details internally only; return a clean message to the client.
-    console.error("Reaction explain error:", err);
+    console.error("Reaction route error:", err);
     return NextResponse.json({ error: UNAVAILABLE }, { status: 503 });
   }
 }

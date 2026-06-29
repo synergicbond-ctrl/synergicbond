@@ -1,9 +1,10 @@
 import ReferenceTabs from "@/components/ReferenceTabs";
+import TransitionMetalIonsTable from "@/components/salt-colors/TransitionMetalIonsTable";
 import { groupByColour, COMPOUND_COLOURS } from "@/lib/saltColourCompounds";
 
 export const metadata = {
   title: "Colour of Compounds — SYNERGIC BOND",
-  description: "Compound, ion, precipitate and flame colours for qualitative salt analysis, grouped by colour for NEET & JEE revision.",
+  description: "Comprehensive colour reference for inorganic compounds, ions, precipitates, complexes, flame tests and qualitative analysis observations.",
 };
 
 const ions = [
@@ -70,11 +71,10 @@ const flame = [
 ];
 
 // ───────────────────────────────────────────────────────────────────────────
-// Deep-scanned compound colours from "Salt analysis (GUHA)" (Qualitative Salt
-// Analysis, Ch. 7). All entries below are taken directly from that document.
+// Additional compound, precipitate, bead and test colours.
 // ───────────────────────────────────────────────────────────────────────────
 
-// Sublimate salts → coloured precipitate on passing H₂S (GUHA §7.14)
+// Sublimate salts → coloured precipitate on passing H₂S
 const guhaSublimates = [
   { salt: "HgCl₂", formula: "HgS", color: "Black" },
   { salt: "Hg₂Cl₂", formula: "Hg + HgS", color: "Black" },
@@ -82,7 +82,7 @@ const guhaSublimates = [
   { salt: "Sb₂O₃", formula: "Sb₂S₃", color: "Orange" },
 ];
 
-// Borax bead colours — GUHA Table 7.1 (oxidising vs reducing flame, hot/cold)
+// Borax bead colours — oxidising vs reducing flame (hot/cold)
 const guhaBoraxBeads = [
   { metal: "Cr", oxHot: "Yellow", oxCold: "Green", redHot: "Green", redCold: "Green" },
   { metal: "Mn", oxHot: "Violet", oxCold: "Violet", redHot: "Colourless", redCold: "Colourless" },
@@ -92,7 +92,7 @@ const guhaBoraxBeads = [
   { metal: "Cu", oxHot: "Green", oxCold: "Blue", redHot: "Colourless", redCold: "Opaque (red Cu)" },
 ];
 
-// Sulphide precipitate colours (GUHA §7.15, group II–IV)
+// Sulphide precipitate colours (group II–IV)
 const guhaSulfides = [
   { name: "Ag₂S", color: "Black" }, { name: "PbS", color: "Black" }, { name: "HgS", color: "Black" },
   { name: "Hg + HgS", color: "Black" }, { name: "CuS", color: "Black" }, { name: "Bi₂S₃", color: "Brownish black" },
@@ -102,7 +102,7 @@ const guhaSulfides = [
   { name: "MnS", color: "Buff / flesh" }, { name: "ZnS", color: "White" },
 ];
 
-// Hydroxide precipitate colours (GUHA group III–VI)
+// Hydroxide precipitate colours (group III–VI)
 const guhaHydroxides = [
   { name: "Al(OH)₃", color: "White" },
   { name: "Cr(OH)₃", color: "Green" },
@@ -114,7 +114,7 @@ const guhaHydroxides = [
   { name: "Ni(OH)₂", color: "Green" },
 ];
 
-// Other characteristic compound colours noted across GUHA Ch. 7
+// Other characteristic compound colours
 const guhaOther = [
   { name: "AgBr", color: "Pale yellow" },
   { name: "AgI", color: "Yellow" },
@@ -176,12 +176,13 @@ export default function SaltColorsPage() {
         <p className="text-xs font-bold uppercase tracking-[0.4em] text-cyan-300 mb-3">Knowledge Vault · Inorganic</p>
         <h1 className="text-4xl font-black md:text-5xl">Colour of Compounds</h1>
         <p className="mt-3 text-white/65 text-sm max-w-2xl mb-8">
-          Compound, ion, precipitate and flame colours for qualitative salt analysis — grouped by colour for fast revision. Dots show the real observed colour.
+          Comprehensive colour reference for inorganic compounds, ions, precipitates, complexes, flame tests, borax bead tests, and qualitative analysis observations.
         </p>
 
         {/* Colour of Compounds — grouped by colour */}
         <section className="mb-10">
-          <p className="text-xs text-white/45 mb-4">{COMPOUND_COLOURS.length} compounds & ions grouped by their colour — fast revision for salt analysis.</p>
+          <h2 className="text-lg font-black text-cyan-300 mb-1">🎨 Colour of Compounds</h2>
+          <p className="text-xs text-white/45 mb-4">{COMPOUND_COLOURS.length} compounds grouped by their colour — fast revision.</p>
           <div className="space-y-5">
             {groupByColour().map((g) => (
               <div key={g.family}>
@@ -203,6 +204,9 @@ export default function SaltColorsPage() {
             ))}
           </div>
         </section>
+
+        {/* Aquated first-row transition-metal ion colours — standalone resource */}
+        <TransitionMetalIonsTable />
 
         {/* Ion colors */}
         <section className="mb-8">
@@ -298,7 +302,7 @@ export default function SaltColorsPage() {
           </div>
         </section>
 
-        {/* ── Deep-scan additions from "Salt analysis (GUHA)" ── */}
+        {/* ── Additional compound colours ── */}
         <div className="my-10 flex items-center gap-3">
           <span className="h-px flex-1 bg-white/10" />
           <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-cyan-300/70">Precipitate · Bead · Test Colours</span>
@@ -332,7 +336,7 @@ export default function SaltColorsPage() {
 
         {/* Borax bead */}
         <section className="mb-8">
-          <h2 className="text-lg font-black text-cyan-300 mb-3">🔵 Borax Bead Colours (Table 7.1)</h2>
+          <h2 className="text-lg font-black text-cyan-300 mb-3">🔵 Borax Bead Colours</h2>
           <div className="overflow-x-auto rounded-2xl border border-white/[0.06]">
             <table className="w-full text-sm min-w-[560px]">
               <thead>

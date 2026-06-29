@@ -22,30 +22,12 @@ type Menu = { title: string; items: MenuItem[]; wide?: boolean };
 
 // LEARN is special: a pinned Periodic Table + grouped sections (the "knowledge engine")
 const learnPinned = { href: "/periodic-table", label: "Periodic Table", desc: "Interactive · trends · element data — the brain of chemistry", icon: Table2 };
+// PHASE 1: trimmed to the verified-reference KEEP set (non-core routes hidden from nav).
 const learnGroups: { title: string; items: MenuItem[] }[] = [
-  {
-    title: "📚 Learn Concepts",
-    items: [
-      { href: "/vault",          label: "Knowledge Vault", desc: "Concepts, reactions, exceptions", icon: Archive },
-      { href: "/notes",          label: "AI Notes",        desc: "Exam-focused notes",              icon: BookOpen },
-      { href: "/vault/formulas", label: "Formula Sheets",  desc: "Every key equation, one place",   icon: Sigma },
-      { href: "/library",        label: "Book Library",    desc: "70+ world-class textbooks",       icon: BookMarked },
-      { href: "/study-tools",    label: "Study Tools",     desc: "Notes, timer, planner",           icon: Layers },
-    ],
-  },
   {
     title: "⚗️ Reactions",
     items: [
-      { href: "/name-reactions",     label: "Named Reactions",    desc: "700+ with AI mechanisms", icon: GitBranch },
-      { href: "/reagents",           label: "Reagent Explorer",   desc: "Reagent master list",     icon: FlaskConical },
-      { href: "/reaction-predictor", label: "Reaction Predictor", desc: "A + B → ? (AI)",          icon: Sparkles },
-    ],
-  },
-  {
-    title: "🧬 Molecules",
-    items: [
-      { href: "/molecule",   label: "Molecule Explorer",  desc: "Look up any compound",         icon: Atom },
-      { href: "/properties", label: "Bonding & Geometry", desc: "Shape, hybridization, dipole", icon: Sigma },
+      { href: "/name-reactions", label: "Named Reactions", desc: "700+ with AI mechanisms", icon: GitBranch },
     ],
   },
   {
@@ -59,95 +41,34 @@ const learnGroups: { title: string; items: MenuItem[] }[] = [
   {
     title: "🎯 Exam Hub",
     items: [
-      { href: "/important-orders", label: "Important Orders", desc: "Ranking sequences (IOC)",  icon: ListOrdered },
-      { href: "/pyq",              label: "PYQs",             desc: "Previous-year questions",  icon: History },
-      { href: "/revision",         label: "Revision Sheets",  desc: "Rapid last-mile revision", icon: BookMarked },
+      { href: "/important-orders", label: "Important Orders", desc: "Ranking sequences (IOC)", icon: ListOrdered },
     ],
   },
 ];
 
+// PHASE 1: Practice/Track/AI mega-menus hidden. Snap & Solve is now a top-level
+// link (rendered directly below); only "More" survives, holding About + Pricing.
 const menus: Menu[] = [
   {
-    title: "Practice",
-    items: [
-      { href: "/quiz",            label: "Quiz",            desc: "Topic-wise MCQ practice",         icon: FlaskConical },
-      { href: "/exam",            label: "Mock Exam",       desc: "Full JEE/NEET-pattern papers",    icon: FileText },
-      { href: "/assignment",      label: "Assignments",     desc: "Auto-generated practice sets",     icon: ClipboardList },
-      { href: "/daily-challenge", label: "Daily Challenge", desc: "One high-yield question a day",    icon: Target },
-      { href: "/pyq",             label: "PYQ Mode",        desc: "Previous-year questions, sorted",  icon: History },
-    ],
-  },
-  {
-    title: "Track",
-    items: [
-      { href: "/dashboard",      label: "My Dashboard",      desc: "Your home screen",            icon: LayoutDashboard },
-      { href: "/study-plan",     label: "Study Plan",        desc: "Personalized 30-day plan",    icon: Calendar },
-      { href: "/activity",       label: "Progress Analytics",desc: "Recently read, search, time", icon: Activity },
-      { href: "/exam-predictor", label: "Exam Predictor",    desc: "Estimate your rank",          icon: BarChart2 },
-      { href: "/achievements",   label: "Achievements",      desc: "Badges, XP, levels",          icon: Medal },
-      { href: "/leaderboard",    label: "Leaderboard",       desc: "Compete with peers",          icon: Trophy },
-      { href: "/live",           label: "Live",              desc: "Live classes & rooms",        icon: Radio },
-    ],
-  },
-  {
-    title: "AI",
-    items: [
-      { href: "/tutor",            label: "AI Tutor",       desc: "24×7 step-by-step doubt engine",  icon: Bot },
-      { href: "/doubt-solver",     label: "Doubt Solver",   desc: "Photo / voice → full solution",   icon: Sparkles },
-      { href: "/snap-solve",       label: "Snap & Solve",   desc: "Photograph a problem, get steps", icon: Camera },
-      { href: "/handwritten-notes",label: "Handwritten Solver", desc: "Convert handwriting to notes", icon: PenLine },
-      { href: "/lab",              label: "Virtual Lab",    desc: "Interactive titration sim",       icon: FlaskConical },
-      { href: "/molecule",         label: "Molecule Builder", desc: "Explore & build compounds",     icon: Atom },
-    ],
-  },
-  {
     title: "More",
-    wide: true,
     items: [
-      { href: "/exam-center", label: "Exam Center",     desc: "2026 dates · fees · seats",      icon: LayoutGrid },
-      { href: "/neet",        label: "NEET Track",      desc: "NCERT mastery roadmap",          icon: Microscope },
-      { href: "/jee",         label: "JEE Track",       desc: "Advanced rank-booster path",     icon: Atom },
-      { href: "/olympiads",   label: "Olympiad Track",  desc: "INChO · IChO preparation",       icon: Trophy },
-      { href: "/gate",        label: "GATE Track",      desc: "Engineering chemistry path",     icon: GraduationCap },
-      { href: "/teachers",    label: "Teacher Hub",     desc: "Curriculum, analytics, routing", icon: GraduationCap },
-      { href: "/about",       label: "About & Mission", desc: "Why SYNERGIC BOND exists",       icon: Info },
-      { href: "/pricing",     label: "Pricing",         desc: "Free core + PRO plans",          icon: Gem },
+      { href: "/about",   label: "About & Mission", desc: "Why SYNERGIC BOND exists", icon: Info },
+      { href: "/pricing", label: "Pricing",         desc: "Free core + PRO plans",    icon: Gem },
     ],
   },
 ];
 
-// Full catalog — shown in the "More" grid panel
-const mainLinks = [
-  { href: "/notes",            tkey: "nav.notes",        icon: BookOpen,      category: "learn" },
-  { href: "/assignment",       tkey: "nav.assignments",  icon: ClipboardList, category: "learn" },
-  { href: "/quiz",             tkey: "nav.quiz",         icon: FlaskConical,  category: "learn" },
-  { href: "/exam",             tkey: "nav.mockExam",     icon: FileText,      category: "learn" },
-  { href: "/tutor",            tkey: "nav.aiTutor",      icon: Bot,           category: "ai"    },
-  { href: "/snap-solve",       tkey: "nav.snapSolve",    icon: Camera,        category: "ai"    },
-  { href: "/doubt-solver",     tkey: "nav.doubtSolver",  icon: Sparkles,      category: "ai"    },
-  { href: "/handwritten-notes",tkey: "nav.handwritten",  icon: PenLine,       category: "ai"    },
-  { href: "/study-tools",      tkey: "nav.studyTools",   icon: Layers,        category: "learn" },
-  { href: "/molecule",         tkey: "nav.molecule",     icon: Atom,          category: "ai"    },
-  { href: "/daily-challenge",  tkey: "nav.challenge",    icon: Target,        category: "game"  },
-  { href: "/study-plan",       tkey: "nav.studyPlan",    icon: Calendar,      category: "game"  },
-  { href: "/exam-predictor",   tkey: "nav.predictor",    icon: BarChart2,     category: "game"  },
-  { href: "/achievements",     tkey: "nav.achievements", icon: Medal,         category: "game"  },
-  { href: "/leaderboard",      tkey: "nav.leaderboard",  icon: Trophy,        category: "game"  },
-  { href: "/lab",              tkey: "nav.virtualLab",   icon: FlaskConical,  category: "ai"    },
-  { href: "/vault",            tkey: "nav.vault",        icon: Archive,       category: "learn" },
-  { href: "/reagents",         tkey: "nav.reagents",     icon: FlaskConical,  category: "learn" },
-  { href: "/library",          tkey: "nav.library",      icon: BookOpen,      category: "learn" },
-  { href: "/pyq",              tkey: "nav.pyq",          icon: History,       category: "learn" },
-  { href: "/live",             tkey: "nav.live",         icon: Radio,         category: "game"  },
-  { href: "/neet",             tkey: "nav.neet",         icon: Microscope,    category: "game"  },
-  { href: "/jee",              tkey: "nav.jee",          icon: Atom,          category: "game"  },
-  { href: "/olympiads",        tkey: "nav.olympiadTrack",icon: Trophy,        category: "game"  },
-  { href: "/gate",             tkey: "nav.gate",         icon: GraduationCap, category: "game"  },
-  { href: "/exam-center",      tkey: "nav.examCenter",   icon: LayoutGrid,    category: "game"  },
-  { href: "/activity",         tkey: "nav.progress",     icon: Activity,      category: "game"  },
-  { href: "/teachers",         tkey: "nav.teachers",     icon: GraduationCap, category: "other" },
-  { href: "/about",            tkey: "nav.about",        icon: Info,          category: "other" },
-  { href: "/pricing",          tkey: "nav.pricing",      icon: Gem,           category: "other" },
+// PHASE 1: mobile catalog trimmed to the KEEP set. Uses explicit labels (no i18n
+// key dependency) so hidden-route translation keys can't leak as raw strings.
+const mainLinks: { href: string; label: string; icon: any }[] = [
+  { href: "/snap-solve",       label: "Snap & Solve",     icon: Camera },
+  { href: "/name-reactions",   label: "Named Reactions",  icon: GitBranch },
+  { href: "/periodic-table",   label: "Periodic Table",   icon: Table2 },
+  { href: "/periodic-trends",  label: "Trends Explorer",  icon: BarChart2 },
+  { href: "/salt-colors",      label: "Colour Explorer",  icon: Palette },
+  { href: "/important-orders", label: "Important Orders", icon: ListOrdered },
+  { href: "/pricing",          label: "Pricing",          icon: Gem },
+  { href: "/about",            label: "About",            icon: Info },
 ];
 
 export default function Navbar() {
@@ -260,6 +181,18 @@ export default function Navbar() {
               </div>
             )}
           </div>
+
+          {/* Snap & Solve — promoted to a top-level link (the hero product) */}
+          <Link
+            href="/snap-solve"
+            className={`flex items-center gap-1.5 px-3 py-2 rounded-lg text-sm font-semibold transition ${
+              pathname === "/snap-solve"
+                ? "text-cyan-300 bg-cyan-500/10"
+                : "text-gray-200 hover:text-white hover:bg-white/[0.05]"
+            }`}
+          >
+            <Camera className="h-4 w-4" /> Snap &amp; Solve
+          </Link>
 
           {menus.map((menu) => {
             const open = openMenu === menu.title;
@@ -463,7 +396,7 @@ export default function Navbar() {
                   }`}
                 >
                   <Icon className={`h-3.5 w-3.5 ${active ? "text-cyan-400" : "text-gray-500"}`} />
-                  {t(link.tkey)}
+                  {link.label}
                 </Link>
               );
             })}

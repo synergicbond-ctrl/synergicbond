@@ -45,10 +45,15 @@ export default function NameReactionsPage() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ reaction, language }),
       });
-      const data = await res.json();
-      setExplanation(data.explanation || data.error || "Could not load explanation.");
+      const data = await res.json().catch(() => null);
+      // Only ever render the generated lesson or a clean, user-friendly message —
+      // never a raw backend/model/API error.
+      setExplanation(
+        (res.ok && data?.explanation) ||
+          "⚠️ Explanation temporarily unavailable. Please try again in a few moments."
+      );
     } catch {
-      setExplanation("⚠️ Something went wrong. Please try again.");
+      setExplanation("⚠️ Explanation temporarily unavailable. Please try again in a few moments.");
     } finally {
       setLoading(false);
     }
@@ -64,7 +69,7 @@ export default function NameReactionsPage() {
           <p className="text-xs font-bold uppercase tracking-[0.4em] text-cyan-300 mb-3">Knowledge Vault · Organic</p>
           <h1 className="text-4xl font-black md:text-5xl">Name Reactions</h1>
           <p className="mt-3 text-white/65 text-sm max-w-2xl">
-            {NAME_REACTIONS.length}+ standard organic name reactions. Search any reaction and tap <span className="text-cyan-300 font-semibold">Explain with AI</span> for a mechanism, reagents, type and exam tip. ★ = high-yield for NEET/JEE.
+            {NAME_REACTIONS.length}+ standard organic name reactions. Tap any reaction for a full <span className="text-cyan-300 font-semibold">structured mini-lesson</span> — definition, type, general scheme, standard example, reagents, step-by-step mechanism, why it happens, products, stereochemistry, exam tip, memory trick, common mistakes & related reactions. ★ = high-yield for NEET/JEE.
           </p>
         </div>
 
@@ -142,7 +147,7 @@ export default function NameReactionsPage() {
                   <span className="text-sm">Generating mechanism & exam tips…</span>
                 </div>
               ) : (
-                <div className="prose-invert text-sm leading-relaxed text-white/80 [&_h2]:text-cyan-300 [&_h2]:font-black [&_h2]:text-lg [&_h2]:mb-3 [&_strong]:text-white [&_li]:my-1 [&_p]:my-2">
+                <div className="prose-invert text-sm leading-relaxed text-white/80 [&_h2]:text-cyan-300 [&_h2]:font-black [&_h2]:text-lg [&_h2]:mb-3 [&_h3]:text-cyan-200 [&_h3]:font-bold [&_h3]:mt-4 [&_h3]:mb-1.5 [&_strong]:text-white [&_ol]:my-2 [&_ol]:list-decimal [&_ol]:pl-5 [&_ul]:my-2 [&_ul]:list-disc [&_ul]:pl-5 [&_li]:my-1 [&_p]:my-2.5 [&_hr]:my-4 [&_hr]:border-white/10 [&_code]:rounded [&_code]:bg-white/10 [&_code]:px-1 [&_code]:py-0.5">
                   <ReactMarkdown remarkPlugins={[remarkMath]} rehypePlugins={[rehypeKatex]}>
                     {explanation}
                   </ReactMarkdown>

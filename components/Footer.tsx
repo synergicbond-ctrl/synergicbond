@@ -1,15 +1,17 @@
 import Link from "next/link";
-import { BookOpen, Bot, Database, FlaskConical, Target, BarChart2, Users } from "lucide-react";
+import { Camera, GitBranch, Table2, BarChart2, Palette, ListOrdered, Gem, Info, Users } from "lucide-react";
 
+// Phase 1: only link to routes that are live and in the navbar.
+// Hidden/scaffolded routes must not appear here to avoid surface-area leaks.
 const quickLinks = [
-  { title: "Knowledge Vault", href: "/vault",            icon: Database    },
-  { title: "AI Tutor",        href: "/tutor",            icon: Bot         },
-  { title: "Notes Generator", href: "/notes",            icon: BookOpen    },
-  { title: "Quiz Engine",     href: "/quiz",             icon: FlaskConical},
-  { title: "Daily Challenge", href: "/daily-challenge",  icon: Target      },
-  { title: "Exam Predictor",  href: "/exam-predictor",   icon: BarChart2   },
-  { title: "Leaderboard",     href: "/leaderboard",      icon: Users       },
-  { title: "Snap & Solve",    href: "/snap-solve",       icon: FlaskConical},
+  { title: "Snap & Solve",     href: "/snap-solve",       icon: Camera      },
+  { title: "Named Reactions",  href: "/name-reactions",   icon: GitBranch   },
+  { title: "Periodic Table",   href: "/periodic-table",   icon: Table2      },
+  { title: "Trends Explorer",  href: "/periodic-trends",  icon: BarChart2   },
+  { title: "Colour Explorer",  href: "/salt-colors",      icon: Palette     },
+  { title: "Important Orders", href: "/important-orders", icon: ListOrdered },
+  { title: "Pricing",          href: "/pricing",          icon: Gem         },
+  { title: "About",            href: "/about",            icon: Info        },
 ];
 
 const socials = [

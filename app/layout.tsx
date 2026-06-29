@@ -1,4 +1,5 @@
 import "@/app/globals.css";
+import { Analytics } from "@vercel/analytics/react";
 import { ThemeProvider } from "@/components/ThemeContext";
 import { LanguageProvider } from "@/lib/i18n";
 import Navbar from "@/components/Navbar";
@@ -27,6 +28,7 @@ export default function RootLayout({
             {children}
           </LanguageProvider>
         </ThemeProvider>
+        <Analytics />
       </body>
     </html>
   );

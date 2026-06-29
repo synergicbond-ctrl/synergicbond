@@ -1,22 +1,28 @@
 "use client";
 
 /**
- * INSULATED PAYMENT GATEWAY
- * ─────────────────────────
- * This component is a FRONT-END SHELL ONLY. No real charges occur.
- * All actual processing is intentionally stubbed out and clearly marked.
- *
- * TO ACTIVATE LATER:
- *   1. Choose a provider (Razorpay recommended for India: UPI, cards, netbanking, wallets).
- *   2. Add server route /api/checkout that creates an order with the provider SDK.
- *   3. Replace `handlePay()` below with the provider's checkout invocation.
- *   4. Verify payment signature server-side before granting PRO access.
- *
- * Nothing here transmits card data — buttons are visual selectors only.
+ * PAYMENT GATEWAY — Razorpay Checkout (UPI / cards / netbanking / wallets).
+ * Flow: POST /api/payment/create-order → open Razorpay Checkout → the
+ * /api/payment/webhook (HMAC-verified) activates Pro server-side. The card-data
+ * never touches our code; Razorpay's hosted checkout handles it.
  */
 
 import { useState } from "react";
+import { track } from "@vercel/analytics";
 import { X, ShieldCheck, CreditCard, Smartphone, Building2, Wallet, Apple } from "lucide-react";
+
+type PlanId = "pro_monthly" | "pro_annual";
+
+function loadRazorpay(): Promise<void> {
+  return new Promise((resolve, reject) => {
+    if ((window as any).Razorpay) return resolve();
+    const s = document.createElement("script");
+    s.src = "https://checkout.razorpay.com/v1/checkout.js";
+    s.onload = () => resolve();
+    s.onerror = () => reject(new Error("Failed to load Razorpay"));
+    document.body.appendChild(s);
+  });
+}
 
 const methods = [
   { id: "card",       label: "Credit / Debit Card", icon: CreditCard,  hint: "Visa · Mastercard · RuPay" },
@@ -30,32 +36,66 @@ const methods = [
 export default function PaymentGateway({
   open,
   onClose,
+  planId = "pro_monthly",
   plan = "SYNERGIC BOND PRO",
-  amount = "₹499",
+  amount = "₹149",
+  period = "month",
 }: {
   open: boolean;
   onClose: () => void;
+  planId?: PlanId;
   plan?: string;
   amount?: string;
+  period?: string;
 }) {
   const [selected, setSelected] = useState("upi");
   const [processing, setProcessing] = useState(false);
 
   if (!open) return null;
 
-  function handlePay() {
-    // ─── BACKEND ANCHOR ───────────────────────────────────────────────
-    // Activate when payment provider is connected:
-    // const res = await fetch("/api/checkout", { method: "POST",
-    //   body: JSON.stringify({ method: selected, plan, amount }) });
-    // const { orderId } = await res.json();
-    // provider.open({ orderId, onSuccess: verifyAndUnlockPro });
-    // ──────────────────────────────────────────────────────────────────
+  async function handlePay() {
     setProcessing(true);
-    setTimeout(() => {
+    try {
+      const res = await fetch("/api/payment/create-order", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ plan: planId }),
+      });
+      const data = await res.json().catch(() => ({}));
+
+      if (!res.ok) {
+        if (res.status === 401) {
+          window.location.href = "/auth/signin?next=/pricing";
+          return;
+        }
+        alert(data?.error || "Could not start checkout. Please try again.");
+        setProcessing(false);
+        return;
+      }
+
+      await loadRazorpay();
+      const rzp = new (window as any).Razorpay({
+        key: data.keyId,
+        amount: data.amount,
+        currency: data.currency,
+        name: "SYNERGIC BOND",
+        description: data.label || plan,
+        order_id: data.orderId,
+        prefill: { email: data.email || "" },
+        theme: { color: "#22D3EE" },
+        handler: function () {
+          // The webhook activates Pro server-side; this just confirms to the user.
+          track("payment_success", { plan: planId });
+          alert("Payment received! Your Pro access will activate within a few seconds.");
+          window.location.reload();
+        },
+        modal: { ondismiss: () => setProcessing(false) },
+      });
+      rzp.open();
+    } catch {
+      alert("Checkout could not start. Please try again.");
       setProcessing(false);
-      alert("💳 Payment gateway is not yet activated.\nThis is a secure front-end preview only — no charge was made.");
-    }, 900);
+    }
   }
 
   return (
@@ -68,7 +108,7 @@ export default function PaymentGateway({
         <div className="mb-6">
           <p className="text-xs font-bold text-cyan-400 uppercase tracking-wider">Checkout</p>
           <h3 className="text-xl font-black mt-1">{plan}</h3>
-          <p className="text-3xl font-black text-white mt-2">{amount}<span className="text-sm text-white/40 font-normal"> / year</span></p>
+          <p className="text-3xl font-black text-white mt-2">{amount}<span className="text-sm text-white/40 font-normal"> / {period}</span></p>
         </div>
 
         <p className="text-xs font-semibold text-white/50 mb-3">Select payment method</p>

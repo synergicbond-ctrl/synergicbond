@@ -1,30 +1,39 @@
 "use client";
 
 import { useState } from "react";
+import { track } from "@vercel/analytics";
 import PaymentGateway from "@/components/PaymentGateway";
+
+type PlanId = "pro_monthly" | "pro_annual";
 
 export default function PricingPage() {
   const [payOpen, setPayOpen] = useState(false);
+  const [planId, setPlanId] = useState<PlanId>("pro_monthly");
+
   const FREE_FEATURES = [
-    "2 chapters per subject (IOC, OC, PC, Spectroscopy, Analytical)",
-    "10 AI tutor messages per day",
-    "5 quiz questions per session",
-    "Basic dashboard & progress tracking",
-    "NCERT-level content only",
+    "5 Snap & Solve solutions per day",
+    "Full verified reference — Periodic Trends, Important Orders, Colours, Named Reactions",
+    "Step-by-step solutions in English, Hindi & Hinglish",
+    "No credit card required",
   ];
 
   const PRO_FEATURES = [
-    "All 33+ chapters unlocked",
-    "Unlimited AI tutor (English, Hindi, Hinglish)",
-    "Full mock exam papers — JEE/NEET/GATE/Olympiad",
-    "AI Notes Generator (any topic, any difficulty)",
-    "Assignment Generator (MCQ + Numerical + Reasoning)",
-    "Vision API — analyze chemical structure images",
-    "Olympiad content — NSEC, INChO, IChO level",
-    "Performance analytics & weak topic detection",
-    "Leaderboard & XP gamification",
-    "Revision summaries & spaced repetition",
+    "Unlimited Snap & Solve — photograph any problem, get verified steps",
+    "Solution history saved to your account",
+    "All verified reference content",
+    "English, Hindi & Hinglish solutions",
+    "Priority solving",
+    "Built by an 18-year JEE Advanced chemistry faculty",
   ];
+
+  const isAnnual = planId === "pro_annual";
+  const amount = isAnnual ? "₹999" : "₹149";
+  const period = isAnnual ? "year" : "month";
+
+  function openCheckout() {
+    track("upgrade_click", { plan: planId });
+    setPayOpen(true);
+  }
 
   return (
     <main className="min-h-screen bg-black text-white p-6 max-w-5xl mx-auto">
@@ -68,12 +77,27 @@ export default function PricingPage() {
           </div>
           <div className="mb-6">
             <div className="text-sm font-semibold text-cyan-400 uppercase tracking-wide mb-2">Pro</div>
+            {/* Monthly / Annual toggle */}
+            <div className="inline-flex rounded-xl border border-zinc-700 p-1 mb-3">
+              <button
+                onClick={() => setPlanId("pro_monthly")}
+                className={`px-3 py-1 rounded-lg text-xs font-semibold transition ${!isAnnual ? "bg-cyan-500 text-black" : "text-zinc-400"}`}
+              >
+                Monthly
+              </button>
+              <button
+                onClick={() => setPlanId("pro_annual")}
+                className={`px-3 py-1 rounded-lg text-xs font-semibold transition ${isAnnual ? "bg-cyan-500 text-black" : "text-zinc-400"}`}
+              >
+                Annual · save 44%
+              </button>
+            </div>
             <div className="flex items-end gap-2">
-              <div className="text-4xl font-bold">₹199</div>
-              <div className="text-zinc-400 text-sm mb-1">/month</div>
+              <div className="text-4xl font-bold">{amount}</div>
+              <div className="text-zinc-400 text-sm mb-1">/{period}</div>
             </div>
             <div className="text-zinc-500 text-sm mt-1">
-              Or ₹999 for 6 months · ₹1,499/year
+              {isAnnual ? "₹999 billed yearly — best value" : "₹999/year if you go annual"}
             </div>
           </div>
           <div className="space-y-3 mb-8">
@@ -86,7 +110,7 @@ export default function PricingPage() {
           </div>
           <div className="space-y-3">
             <button
-              onClick={() => setPayOpen(true)}
+              onClick={openCheckout}
               className="block w-full text-center bg-cyan-500 hover:bg-cyan-400 text-black font-bold py-3 rounded-xl transition hover:-translate-y-0.5"
             >
               Upgrade to PRO →
@@ -131,8 +155,10 @@ export default function PricingPage() {
       <PaymentGateway
         open={payOpen}
         onClose={() => setPayOpen(false)}
+        planId={planId}
         plan="SYNERGIC BOND PRO"
-        amount="₹1,499"
+        amount={amount}
+        period={period}
       />
     </main>
   );

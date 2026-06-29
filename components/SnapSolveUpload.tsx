@@ -1,7 +1,8 @@
 "use client";
 
 import { useState, useRef } from "react";
-import { Camera, Type, Zap, AlertTriangle } from "lucide-react";
+import { track } from "@vercel/analytics";
+import { Camera, Type, Zap, AlertTriangle, Lock } from "lucide-react";
 import type { SnapSolveResponse } from "@/lib/snapSolveTypes";
 
 interface Props {
@@ -47,6 +48,7 @@ export default function SnapSolveUpload({ onUploadSuccess }: Props) {
   const [language, setLanguage] = useState<string>("english");
   const [isProcessing, setIsProcessing] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [paywall, setPaywall] = useState(false);
   const [reasoning, setReasoning] = useState<string[]>([]);
   const [steps, setSteps] = useState<StreamStep[]>([]);
   const fileRef = useRef<HTMLInputElement>(null);
@@ -57,6 +59,7 @@ export default function SnapSolveUpload({ onUploadSuccess }: Props) {
   async function dispatch(payload: { imageBase64?: string; query?: string }) {
     setIsProcessing(true);
     setError(null);
+    setPaywall(false);
     setReasoning([]);
     setSteps([]);
     try {
@@ -76,7 +79,10 @@ export default function SnapSolveUpload({ onUploadSuccess }: Props) {
       // Non-stream response (validation/error path) → fall back to JSON handling.
       if (!res.ok || !ctype.includes("text/event-stream") || !res.body) {
         const data = await res.json().catch(() => null);
-        if (data?.error) setError(data.error);
+        if (res.status === 402 || data?.paywall) {
+          setPaywall(true);
+          track("paywall_hit", { feature: "snap-solve" });
+        } else if (data?.error) setError(data.error);
         else if (data) onUploadSuccess(data as SnapSolveResponse);
         else setError("Unexpected response from the solver. Please try again.");
         return;
@@ -313,6 +319,26 @@ export default function SnapSolveUpload({ onUploadSuccess }: Props) {
         </button>
       )}
       </>
+      )}
+
+      {/* Paywall — free daily limit reached */}
+      {paywall && !isProcessing && (
+        <div className="rounded-2xl border border-cyan-500/30 bg-cyan-500/[0.06] p-5 text-center space-y-3">
+          <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-2xl border border-cyan-400/30 bg-cyan-500/10">
+            <Lock className="h-5 w-5 text-cyan-300" />
+          </div>
+          <div>
+            <p className="text-sm font-bold text-white">You&apos;ve used your 5 free solves today</p>
+            <p className="mt-1 text-xs text-white/55">Upgrade to Pro for unlimited Snap &amp; Solve.</p>
+          </div>
+          <a
+            href="/pricing"
+            onClick={() => track("upgrade_click", { feature: "snap-solve" })}
+            className="inline-block w-full rounded-xl bg-gradient-to-r from-cyan-400 to-sky-500 py-2.5 text-sm font-bold text-black transition hover:-translate-y-0.5"
+          >
+            Upgrade to Pro →
+          </a>
+        </div>
       )}
 
       {/* Network / middleware error boundary — capture stays enabled for retry */}

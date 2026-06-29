@@ -7,6 +7,11 @@ export async function GET(request: NextRequest) {
   const code = requestUrl.searchParams.get("code");
   const origin = requestUrl.origin;
 
+  // Read the ?next= param threaded through from the sign-in page's redirectTo.
+  // Validate it is a same-origin relative path to prevent open-redirect attacks.
+  const rawNext = requestUrl.searchParams.get("next") ?? "";
+  const next = rawNext.startsWith("/") && !rawNext.startsWith("//") ? rawNext : "/dashboard";
+
   if (code) {
     const cookieStore = await cookies();
     const supabase = createServerClient(
@@ -28,5 +33,5 @@ export async function GET(request: NextRequest) {
     await supabase.auth.exchangeCodeForSession(code);
   }
 
-  return NextResponse.redirect(`${origin}/dashboard`);
+  return NextResponse.redirect(`${origin}${next}`);
 }

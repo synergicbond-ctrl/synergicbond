@@ -1,10 +1,20 @@
 "use client";
 
 import { useState } from "react";
+import { useSearchParams } from "next/navigation";
 import Link from "next/link";
 import { supabase } from "@/lib/supabase";
 
+// Only allow same-origin relative redirects to prevent open-redirect attacks.
+function safeNext(raw: string | null): string {
+  if (!raw) return "/dashboard";
+  return raw.startsWith("/") && !raw.startsWith("//") ? raw : "/dashboard";
+}
+
 export default function SignInPage() {
+  const searchParams = useSearchParams();
+  const next = safeNext(searchParams.get("next"));
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
@@ -22,7 +32,7 @@ export default function SignInPage() {
         return;
       }
 
-      window.location.href = "/dashboard";
+      window.location.href = next;
     } catch (err) {
       console.error(err);
       setError("Unexpected error");
@@ -35,7 +45,8 @@ export default function SignInPage() {
     await supabase.auth.signInWithOAuth({
       provider: "google",
       options: {
-        redirectTo: `${window.location.origin}/auth/callback`,
+        // Pass next through the callback URL so the server-side handler can redirect there.
+        redirectTo: `${window.location.origin}/auth/callback?next=${encodeURIComponent(next)}`,
       },
     });
   }

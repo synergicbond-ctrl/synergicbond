@@ -86,7 +86,7 @@ export function PaywallGate({ chapterId, children }: Props) {
               href="/pricing"
               className="w-full bg-cyan-500 hover:bg-cyan-400 text-black font-semibold py-3 rounded-xl transition text-center"
             >
-              Upgrade to Pro — ₹199/month
+              Upgrade to Pro — ₹149/month
             </a>
             <div className="text-xs text-zinc-600">
               ✅ All 33 chapters &nbsp;·&nbsp; ✅ Unlimited AI tutor &nbsp;·&nbsp; ✅ Full mock exams

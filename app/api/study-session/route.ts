@@ -15,16 +15,27 @@ export async function POST(req: Request) {
       return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
     }
 
-    const { minutes, chapterId } = await req.json();
+    const body = await req.json().catch(() => null);
+    if (!body || typeof body !== "object") {
+      return NextResponse.json({ error: "Invalid JSON body" }, { status: 400 });
+    }
 
-    if (!minutes || minutes <= 0) {
+    const { minutes, chapterId } = body as { minutes?: unknown; chapterId?: unknown };
+    const parsedMinutes =
+      typeof minutes === "number"
+        ? minutes
+        : typeof minutes === "string"
+          ? Number(minutes)
+          : NaN;
+
+    if (!Number.isFinite(parsedMinutes) || parsedMinutes <= 0) {
       return NextResponse.json({ error: "minutes must be positive" }, { status: 400 });
     }
 
     const { error } = await supabase.from("study_sessions").insert({
       user_id: user.id,
-      minutes: Math.round(minutes),
-      chapter_id: chapterId ?? null,
+      minutes: Math.round(parsedMinutes),
+      chapter_id: typeof chapterId === "string" && chapterId.trim() ? chapterId.trim() : null,
     });
 
     if (error) {

@@ -46,7 +46,10 @@ export default function HeroSearch() {
     recognition.lang = "en-IN";
     recognition.onstart = () => setListening(true);
     recognition.onend = () => setListening(false);
-    recognition.onresult = (e) => setQuery(e.results[0][0].transcript);
+    recognition.onresult = (e) => {
+      const transcript = e.results[0]?.[0]?.transcript;
+      if (transcript) setQuery(transcript);
+    };
     recognition.start();
   }
 

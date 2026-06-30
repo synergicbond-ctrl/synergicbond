@@ -49,8 +49,14 @@ function getCredits(): number {
   const today = new Date().toDateString();
   const saved = localStorage.getItem("sb_ai_credits");
   if (saved) {
-    const parsed = JSON.parse(saved);
-    if (parsed.date === today) return parsed.left;
+    try {
+      const parsed = JSON.parse(saved) as { date?: string; left?: number };
+      if (parsed.date === today && typeof parsed.left === "number") {
+        return Math.max(0, Math.min(DAILY_LIMIT, parsed.left));
+      }
+    } catch {
+      localStorage.removeItem("sb_ai_credits");
+    }
   }
   localStorage.setItem("sb_ai_credits", JSON.stringify({ date: today, left: DAILY_LIMIT }));
   return DAILY_LIMIT;
@@ -95,7 +101,11 @@ export default function DoubtSolverPage() {
     rec.lang = language === "hinglish" ? "hi-IN" : "en-IN";
     rec.onstart = () => setListening(true);
     rec.onend = () => setListening(false);
-    rec.onresult = (e) => setDoubt((prev) => (prev ? prev + " " : "") + e.results[0][0].transcript);
+    rec.onresult = (e) => {
+      const transcript = e.results[0]?.[0]?.transcript;
+      if (!transcript) return;
+      setDoubt((prev) => (prev ? prev + " " : "") + transcript);
+    };
     rec.start();
   }
 

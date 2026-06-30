@@ -18,7 +18,8 @@ export async function GET(req: Request) {
     const supabase = await createClient();
     const url = new URL(req.url);
     const scope = url.searchParams.get("scope") || "global"; // global | weekly
-    const limit = Math.min(parseInt(url.searchParams.get("limit") || "50"), 100);
+    const rawLimit = Number.parseInt(url.searchParams.get("limit") || "50", 10);
+    const limit = Number.isFinite(rawLimit) ? Math.min(Math.max(rawLimit, 1), 100) : 50;
 
     // Get current user
     const { data: { user } } = await supabase.auth.getUser();

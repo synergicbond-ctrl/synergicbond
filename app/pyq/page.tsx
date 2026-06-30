@@ -1,8 +1,17 @@
 "use client";
 
 import { useState } from "react";
-import { masterSyllabus } from "@/lib/masterSyllabus";
+import { physical } from "@/lib/masterSyllabus/physical";
+import { organic } from "@/lib/masterSyllabus/organic";
+import { inorganic } from "@/lib/masterSyllabus/inorganic";
 import { pyqDatabase, type PYQQuestion } from "@/lib/pyqDatabase";
+
+const masterSyllabus = [...physical, ...organic, ...inorganic];
+
+function examMatches(exams: string[], activeExam: "neet" | "jeeMain" | "jeeAdvanced") {
+  const normalized = exams.map((exam) => exam.toLowerCase().replace(/[\s_-]/g, ""));
+  return normalized.includes(activeExam.toLowerCase());
+}
 
 export default function PYQPage() {
   const [activeChapter, setActiveChapter] = useState<string | null>(null);
@@ -15,7 +24,7 @@ export default function PYQPage() {
     { key: "jeeAdvanced", title: "🔴 JEE Advanced" },
   ];
 
-  const chapters = masterSyllabus.filter((c) => c.exams.includes(activeExam));
+  const chapters = masterSyllabus.filter((c) => examMatches(c.exams, activeExam));
   const questions: PYQQuestion[] = activeChapter ? (pyqDatabase[activeChapter] ?? []) : [];
 
   const toggleReveal = (id: string) =>

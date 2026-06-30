@@ -13,6 +13,8 @@ const HIDDEN_PATHS = [
   "/donate", "/control-center", "/debug",
 ];
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://synergicbond.vercel.app";
+
 export default function robots(): MetadataRoute.Robots {
   return {
     rules: {
@@ -20,5 +22,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: "/",
       disallow: HIDDEN_PATHS,
     },
+    sitemap: `${siteUrl}/sitemap.xml`,
   };
 }

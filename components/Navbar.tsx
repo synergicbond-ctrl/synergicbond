@@ -6,6 +6,7 @@ import { useState, useEffect } from "react";
 import MoleculeLogo from "@/components/MoleculeLogo";
 import { useT, LANGS, type Lang } from "@/lib/i18n";
 import { supabase } from "@/lib/supabase";
+import type { Session } from "@supabase/supabase-js";
 import {
   Camera, BarChart2, Medal, Gem, Menu, X,
   Globe, ChevronDown, Info, Search, GitBranch, Palette,
@@ -83,10 +84,10 @@ export default function Navbar() {
   // Auth state — show the signed-in student in the navbar
   useEffect(() => {
     let mounted = true;
-    supabase.auth.getUser().then(({ data }) => {
+    supabase.auth.getUser().then(({ data }: { data: { user: { email?: string } | null } }) => {
       if (mounted) setEmail(data.user?.email ?? null);
     });
-    const { data: sub } = supabase.auth.onAuthStateChange((_e, session) => {
+    const { data: sub } = supabase.auth.onAuthStateChange((_e: string, session: Session | null) => {
       setEmail(session?.user?.email ?? null);
     });
     return () => { mounted = false; sub.subscription.unsubscribe(); };
@@ -352,7 +353,7 @@ export default function Navbar() {
 
           <button
             onClick={() => setMenuOpen(!menuOpen)}
-            className="lg:hidden p-2 text-gray-400 hover:text-white transition"
+            className="flex h-11 w-11 items-center justify-center rounded-xl text-gray-400 transition hover:bg-white/[0.05] hover:text-white lg:hidden"
             aria-label="Menu"
           >
             {menuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}

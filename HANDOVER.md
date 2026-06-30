@@ -3,31 +3,17 @@
 ## Build Status
 
 PASS.
+- `npm run lint`: PASS
 - `npx tsc --noEmit --pretty false`: PASS
 - `npm run build`: PASS
-- `npm run lint`: FAIL from pre-existing repository lint debt
+- Build evidence: Next.js 16.2.9 generated 70 app routes.
 
 ## Files Changed
 
-- app/api/formula-cards/route.ts
-- app/api/knowledge-graph/route.ts
-- app/api/search/route.ts
-- app/formula-cards/page.tsx
-- app/learn/reactions/[slug]/page.tsx
-- app/pyq/page.tsx
-- app/search/page.tsx
-- lib/chemistry/formulas/index.ts
-- lib/chemistry/formulas/schema.ts
-- lib/chemistry/formulas/searchIndex.ts
-- lib/chemistry/graph/index.ts
-- lib/chemistry/graph/links.ts
-- lib/chemistry/graph/schema.ts
-- FORMULA_UI_AUDIT.md
-- GRAPH_UI_AUDIT.md
-- GRAPH_VALIDATION_AUDIT.md
-- HARDENING_AUDIT.md
-- PYQ_UI_AUDIT.md
-- SEARCH_AUDIT.md
+- REVENUE_READINESS.md
+- CONTENT_COVERAGE.md
+- LAUNCH_CHECKLIST.md
+- RELEASE_CANDIDATE_REPORT.md
 - HANDOVER.md
 - ROADMAP.md
 - TECH_DEBT.md
@@ -37,56 +23,62 @@ PASS.
 ## Actual Counts
 
 - Reactions: 50
-- Formula cards: 200
-- Formula chapters: 8
+- Reagent NCERT records: 30
+- Reagent graph entities: 107
+- Canonical exceptions: 3
+- Exception graph entities: 53
+- Important order records: 207
+- Order graph entities: 215
 - PYQs: 34
 - PYQ chapters: 14
-- PYQ chapter difficulty filters: 3, 4
-- NCERT linked entities: 324
+- Formula cards: 200
+- NCERT entity links: 324
+- Formula -> NCERT links: 200
 - Graph nodes: 435
 - Graph edges: 605
 - Broken graph links: 0
 - Duplicate graph edges: 0
 - Orphan graph nodes: 0
-- Formula -> PYQ edges: 200
-- Formula -> NCERT edges: 200
-- PYQs linked to reactions: 8
-- PYQs linked to formulas: 20
-- PYQs linked to NCERT: 34
 
 ## Actual Blockers
 
-- Revenue live verification requires Razorpay and Supabase credentials.
-- `npm run lint` fails with 118 pre-existing problems outside current touched files.
-- Reaction-order coverage remains 10%.
-- Exception-PYQ coverage remains 15.09%.
-- Order-PYQ coverage remains 3.72%.
-- User-specific weak areas require authenticated progress/mistake data.
-- No browser-device visual pass was run.
+- Live revenue verification requires Razorpay and Supabase credentials.
+- Live webhook delivery and database writes were not verified.
+- Premium gate and Snap Solve quota were not executed against production users.
+- Browser/device mobile QA was not executed.
+- NCERT search results route to `/search`; no dedicated NCERT reference route exists.
+- PYQ corpus is 34 questions.
+- Canonical exception corpus is 3 records.
+- Reaction -> Order coverage is 10%.
+- Exception -> PYQ coverage is 15.09%.
+- Order -> PYQ coverage is 3.72%.
 
 ## Exact Restart Prompt
 
 ```text
-SYNERGIC BOND - RESUME EXECUTION
+SYNERGIC BOND - RELEASE CANDIDATE RESUME
 
-Start by checking:
+Start by running:
 - git status --short
+- npm run lint
 - npx tsc --noEmit --pretty false
 - npm run build
 
-Continue from:
-- HANDOVER.md
+Use:
+- RELEASE_CANDIDATE_REPORT.md
+- REVENUE_READINESS.md
+- CONTENT_COVERAGE.md
+- LAUNCH_CHECKLIST.md
 - VERIFICATION_STATUS.md
 - OPEN_BUGS.md
 - TECH_DEBT.md
-- HARDENING_AUDIT.md
 
 Highest ROI:
-1. Fix pre-existing lint debt in unrelated files.
-2. Add NCERT detail route for NCERT search results.
-3. Add authenticated weak-area insights from progress/mistake data.
-4. Improve verified Reaction-Order, Exception-PYQ, and Order-PYQ coverage only where source links exist.
-5. Run browser/mobile visual verification for /formula-cards, /pyq, /search, and reaction detail pages.
+1. Verify live Razorpay checkout/webhook/subscription flow with production credentials.
+2. Verify premium gating and Snap Solve limits against the production Supabase database.
+3. Run browser/mobile QA for `/search`, `/formula-cards`, `/pyq`, reaction detail pages, and pricing/payment.
+4. Add a dedicated NCERT reference route if NCERT search result navigation must leave `/search`.
+5. Expand PYQ and canonical exception coverage from verified sources only.
 
 Rules:
 - Reuse existing schemas/data.
@@ -95,5 +87,4 @@ Rules:
 - No architecture rewrite.
 - No unverified chemistry links.
 - Build after every logical change.
-- Stop only for external credentials, production verification, unfixable build failure, or repository inconsistency.
 ```

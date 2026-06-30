@@ -33,8 +33,17 @@ const ALL_BADGES = [
   { id: "top_10", name: "Top 10", icon: "🥇", description: "Reach top 10 on leaderboard" },
 ];
 
+type XpData = {
+  xp?: number;
+  streak?: number;
+};
+
+type EarnedBadge = {
+  id: string;
+};
+
 export default function AchievementsPage() {
-  const [xpData, setXpData] = useState<any>(null);
+  const [xpData, setXpData] = useState<XpData | null>(null);
   const [earned, setEarned] = useState<string[]>([]);
   const [loading, setLoading] = useState(true);
 
@@ -48,7 +57,7 @@ export default function AchievementsPage() {
         const xp = await xpRes.json();
         const badges = await badgeRes.json();
         setXpData(xp);
-        setEarned(badges.earned?.map((b: any) => b.id) || []);
+        setEarned((badges.earned as EarnedBadge[] | undefined)?.map((b) => b.id) || []);
       } catch {}
       setLoading(false);
     }

@@ -18,6 +18,14 @@ import { isFreeChapter } from "@/lib/freeChapters";
 
 const allChapters = [...physical, ...organic, ...inorganic];
 
+type Mechanism = {
+  id?: string;
+  title?: string;
+  name?: string;
+  description?: string;
+  steps?: string[];
+};
+
 interface PageProps {
   params: Promise<{ id: string }>;
 }
@@ -146,10 +154,10 @@ export default async function ChapterPage({ params }: PageProps) {
             <section className="p-6 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800 bg-white dark:bg-slate-900">
               <h2 className="text-2xl font-bold mb-4">Mechanisms & Pathways</h2>
               <div className="space-y-4">
-                {mechanisms.map((m: any, idx: number) => (
+                {mechanisms.map((m: Mechanism, idx) => (
                   <div key={idx} className="p-4 rounded-xl border border-rose-100 dark:border-rose-950 bg-rose-50/20 dark:bg-rose-950/20">
-                    <h4 className="font-bold text-rose-800 dark:text-rose-400">{m.name} Mechanism</h4>
-                    <p className="text-xs text-slate-600 dark:text-slate-400 mt-1 leading-relaxed">{m.description}</p>
+                    <h4 className="font-bold text-rose-800 dark:text-rose-400">{m.name ?? m.title} Mechanism</h4>
+                    <p className="text-xs text-slate-600 dark:text-slate-400 mt-1 leading-relaxed">{m.description ?? m.steps?.join(" ")}</p>
                   </div>
                 ))}
               </div>

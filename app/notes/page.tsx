@@ -46,8 +46,8 @@ export default function NotesPage() {
       if (data.error) throw new Error(data.error);
       setNotes(data.content);
       setCached(data.cached);
-    } catch (e: any) {
-      setError(e.message);
+    } catch (e: unknown) {
+      setError(e instanceof Error ? e.message : "Failed to generate notes.");
     } finally {
       setLoading(false);
     }

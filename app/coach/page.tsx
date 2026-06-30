@@ -78,7 +78,7 @@ export default async function CoachPage() {
 
       <div className="mt-10 rounded-2xl border border-white/10 p-6">
         <h2 className="text-2xl font-bold">
-          Today's Focus
+          Today&apos;s Focus
         </h2>
 
         <ul className="mt-4 space-y-2 text-white/70">

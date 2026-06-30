@@ -67,7 +67,7 @@ export default function NameReactionsPage() {
 
         {/* A–Z groups */}
         {groups.length === 0 && (
-          <p className="text-white/50 text-sm py-10 text-center">No reactions match "{query}".</p>
+          <p className="text-white/50 text-sm py-10 text-center">No reactions match &quot;{query}&quot;.</p>
         )}
         <div className="space-y-6">
           {groups.map(([letter, items]) => (

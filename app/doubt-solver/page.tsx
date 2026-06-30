@@ -1,6 +1,7 @@
 "use client";
 
-import { useState, useRef, useEffect, useCallback } from "react";
+import { useState, useRef, useCallback } from "react";
+import Image from "next/image";
 import { checkRateLimit } from "@/lib/rateLimiter";
 import ReactMarkdown from "react-markdown";
 import remarkMath from "remark-math";
@@ -12,6 +13,31 @@ import {
 } from "lucide-react";
 
 const DAILY_LIMIT = 10;
+
+type SpeechRecognitionResultEvent = {
+  results: {
+    [index: number]: {
+      [index: number]: {
+        transcript: string;
+      };
+    };
+  };
+};
+
+type SpeechRecognitionInstance = {
+  lang: string;
+  onstart: () => void;
+  onend: () => void;
+  onresult: (event: SpeechRecognitionResultEvent) => void;
+  start: () => void;
+};
+
+type SpeechRecognitionConstructor = new () => SpeechRecognitionInstance;
+
+type SpeechRecognitionWindow = Window & typeof globalThis & {
+  webkitSpeechRecognition?: SpeechRecognitionConstructor;
+  SpeechRecognition?: SpeechRecognitionConstructor;
+};
 
 // XSS-safe text sanitizer for the typed doubt
 function sanitize(input: string): string {
@@ -36,7 +62,7 @@ function setCredits(left: number) {
 }
 
 export default function DoubtSolverPage() {
-  const [credits, setCreditsState] = useState(DAILY_LIMIT);
+  const [credits, setCreditsState] = useState(() => getCredits());
   const [image, setImage] = useState<string | null>(null);
   const [fileName, setFileName] = useState<string>("");
   const [doubt, setDoubt] = useState("");
@@ -48,8 +74,6 @@ export default function DoubtSolverPage() {
   const [dragOver, setDragOver] = useState(false);
   const [cooldown, setCooldown] = useState(0);
   const fileInputRef = useRef<HTMLInputElement>(null);
-
-  useEffect(() => { setCreditsState(getCredits()); }, []);
 
   const handleFile = useCallback((file: File) => {
     setFileName(file.name);
@@ -64,13 +88,14 @@ export default function DoubtSolverPage() {
   }, []);
 
   function startVoice() {
-    const SR = (window as any).webkitSpeechRecognition || (window as any).SpeechRecognition;
+    const speechWindow = window as SpeechRecognitionWindow;
+    const SR = speechWindow.webkitSpeechRecognition || speechWindow.SpeechRecognition;
     if (!SR) { alert("Voice not supported in this browser. Try Chrome."); return; }
     const rec = new SR();
     rec.lang = language === "hinglish" ? "hi-IN" : "en-IN";
     rec.onstart = () => setListening(true);
     rec.onend = () => setListening(false);
-    rec.onresult = (e: any) => setDoubt((prev) => (prev ? prev + " " : "") + e.results[0][0].transcript);
+    rec.onresult = (e) => setDoubt((prev) => (prev ? prev + " " : "") + e.results[0][0].transcript);
     rec.start();
   }
 
@@ -179,7 +204,7 @@ export default function DoubtSolverPage() {
             />
             {image ? (
               <div className="relative inline-block">
-                <img src={image} alt="upload" className="max-h-48 rounded-xl mx-auto" />
+                <Image src={image} alt="upload" width={320} height={192} unoptimized className="max-h-48 rounded-xl mx-auto object-contain" />
                 <button
                   onClick={(e) => { e.stopPropagation(); setImage(null); setFileName(""); }}
                   className="absolute -top-2 -right-2 p-1 rounded-full bg-red-500 text-white"

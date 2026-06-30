@@ -69,7 +69,10 @@ export async function GET(req: Request) {
       reason: "subscription_active",
       tier: "pro",
     });
-  } catch (error: any) {
-    return NextResponse.json({ error: error.message }, { status: 500 });
+  } catch (error: unknown) {
+    return NextResponse.json(
+      { error: error instanceof Error ? error.message : "Failed to check content access" },
+      { status: 500 }
+    );
   }
 }

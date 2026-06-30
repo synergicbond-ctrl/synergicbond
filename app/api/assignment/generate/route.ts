@@ -71,8 +71,11 @@ Respond with ONLY this JSON (no markdown, no code blocks):
     const parsed = JSON.parse(clean);
 
     return NextResponse.json(parsed);
-  } catch (error: any) {
+  } catch (error: unknown) {
     console.error("Assignment error:", error);
-    return NextResponse.json({ error: error.message }, { status: 500 });
+    return NextResponse.json(
+      { error: error instanceof Error ? error.message : "Failed to generate assignment" },
+      { status: 500 }
+    );
   }
 }

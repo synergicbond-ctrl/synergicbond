@@ -7,17 +7,14 @@ import MoleculeLogo from "@/components/MoleculeLogo";
 import { useT, LANGS, type Lang } from "@/lib/i18n";
 import { supabase } from "@/lib/supabase";
 import {
-  BookOpen, ClipboardList, FlaskConical, FileText,
-  Bot, Camera, PenLine, Atom, Target, Calendar,
-  BarChart2, Medal, Trophy, Archive, Gem, Menu, X,
-  Globe, ChevronDown, Sparkles, GraduationCap, Layers, Info,
-  Home, Search, LayoutGrid, GitBranch, Sigma, Palette,
-  LayoutDashboard, LogOut, UserCircle, BookMarked, Table2,
-  History, Microscope, Activity, Radio, ListOrdered
+  Camera, BarChart2, Medal, Gem, Menu, X,
+  Globe, ChevronDown, Info, Search, GitBranch, Palette,
+  LayoutDashboard, LogOut, UserCircle, Table2, ListOrdered,
 } from "lucide-react";
+import type { LucideIcon } from "lucide-react";
 
 // ALLEN-style category mega-menus (label + grouped links with descriptions)
-type MenuItem = { href: string; label: string; desc: string; icon: any };
+type MenuItem = { href: string; label: string; desc: string; icon: LucideIcon };
 type Menu = { title: string; items: MenuItem[]; wide?: boolean };
 
 // LEARN is special: a pinned Periodic Table + grouped sections (the "knowledge engine")
@@ -60,7 +57,7 @@ const menus: Menu[] = [
 
 // PHASE 1: mobile catalog trimmed to the KEEP set. Uses explicit labels (no i18n
 // key dependency) so hidden-route translation keys can't leak as raw strings.
-const mainLinks: { href: string; label: string; icon: any }[] = [
+const mainLinks: { href: string; label: string; icon: LucideIcon }[] = [
   { href: "/snap-solve",       label: "Snap & Solve",     icon: Camera },
   { href: "/name-reactions",   label: "Named Reactions",  icon: GitBranch },
   { href: "/periodic-table",   label: "Periodic Table",   icon: Table2 },

@@ -8,12 +8,35 @@ const WEAK_TOPICS_LIST = [
   "p-Block", "d-Block", "Solutions", "Solid State", "Kinetics", "Periodic Table"
 ];
 
+type StudyPlanDay = {
+  day: number;
+  topic: string;
+  tasks?: string[];
+  duration?: string;
+  goal?: string;
+};
+
+type StudyPlanWeek = {
+  week: number;
+  theme: string;
+  focus?: string;
+  days?: StudyPlanDay[];
+};
+
+type StudyPlan = {
+  title?: string;
+  strategy?: string;
+  dailyRoutine?: Record<string, string>;
+  weeks?: StudyPlanWeek[];
+  tips?: string[];
+};
+
 export default function StudyPlanPage() {
   const [selectedTopics, setSelectedTopics] = useState<string[]>([]);
   const [examType, setExamType] = useState("NEET");
   const [examDate, setExamDate] = useState("");
   const [hours, setHours] = useState(4);
-  const [plan, setPlan] = useState<any>(null);
+  const [plan, setPlan] = useState<StudyPlan | null>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
@@ -35,8 +58,8 @@ export default function StudyPlanPage() {
       const data = await res.json();
       if (data.error) setError(data.error);
       else setPlan(data.plan);
-    } catch (e: any) {
-      setError(e.message);
+    } catch (e: unknown) {
+      setError(e instanceof Error ? e.message : "Failed to generate study plan.");
     } finally {
       setLoading(false);
     }
@@ -127,12 +150,12 @@ export default function StudyPlanPage() {
             </div>
 
             {/* Weeks */}
-            {plan.weeks?.map((week: any) => (
+            {plan.weeks?.map((week) => (
               <div key={week.week} className="rounded-2xl border border-white/10 bg-white/[0.03] p-6">
                 <h3 className="font-bold text-lg mb-1">Week {week.week}: {week.theme}</h3>
                 <p className="text-white/50 text-sm mb-4">{week.focus}</p>
                 <div className="space-y-3">
-                  {week.days?.slice(0, 3).map((day: any) => (
+                  {week.days?.slice(0, 3).map((day) => (
                     <div key={day.day} className="rounded-xl border border-white/10 bg-black/20 p-4">
                       <div className="flex items-center gap-3 mb-2">
                         <span className="rounded-full bg-cyan-500/20 text-cyan-300 text-xs px-2 py-1">Day {day.day}</span>
@@ -147,7 +170,9 @@ export default function StudyPlanPage() {
                       </div>
                     </div>
                   ))}
-                  {week.days?.length > 3 && <p className="text-white/30 text-sm">+{week.days.length - 3} more days...</p>}
+                  {Math.max((week.days?.length ?? 0) - 3, 0) > 0 && (
+                    <p className="text-white/30 text-sm">+{Math.max((week.days?.length ?? 0) - 3, 0)} more days...</p>
+                  )}
                 </div>
               </div>
             ))}

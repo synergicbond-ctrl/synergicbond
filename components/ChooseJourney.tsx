@@ -70,7 +70,7 @@ export default function ChooseJourney() {
         </h2>
 
         <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-white/60">
-          Whether you're preparing for NEET, JEE, Olympiads or GATE,
+          Whether you&apos;re preparing for NEET, JEE, Olympiads or GATE,
           SYNERGIC BOND adapts to your learning journey.
         </p>
       </div>

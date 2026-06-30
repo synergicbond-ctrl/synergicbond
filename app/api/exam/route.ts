@@ -76,7 +76,7 @@ Respond with ONLY this JSON (no markdown, no code blocks):
     const paper = JSON.parse(clean);
 
     return NextResponse.json({ paper });
-  } catch (err: any) {
+  } catch (err: unknown) {
     console.error("Exam error:", err);
     return NextResponse.json({ error: "Error generating mock paper." }, { status: 500 });
   }

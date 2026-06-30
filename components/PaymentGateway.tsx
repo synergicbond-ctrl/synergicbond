@@ -13,9 +13,42 @@ import { X, ShieldCheck, CreditCard, Smartphone, Building2, Wallet, Apple } from
 
 type PlanId = "pro_monthly" | "pro_annual";
 
+type RazorpayOrderResponse = {
+  keyId?: string;
+  amount?: number;
+  currency?: string;
+  label?: string;
+  orderId?: string;
+  email?: string;
+  error?: string;
+};
+
+type RazorpayOptions = {
+  key?: string;
+  amount?: number;
+  currency?: string;
+  name: string;
+  description: string;
+  order_id?: string;
+  prefill: { email: string };
+  theme: { color: string };
+  handler: () => void;
+  modal: { ondismiss: () => void };
+};
+
+type RazorpayInstance = {
+  open: () => void;
+};
+
+type RazorpayConstructor = new (options: RazorpayOptions) => RazorpayInstance;
+
+type RazorpayWindow = Window & typeof globalThis & {
+  Razorpay?: RazorpayConstructor;
+};
+
 function loadRazorpay(): Promise<void> {
   return new Promise((resolve, reject) => {
-    if ((window as any).Razorpay) return resolve();
+    if ((window as RazorpayWindow).Razorpay) return resolve();
     const s = document.createElement("script");
     s.src = "https://checkout.razorpay.com/v1/checkout.js";
     s.onload = () => resolve();
@@ -61,7 +94,7 @@ export default function PaymentGateway({
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ plan: planId }),
       });
-      const data = await res.json().catch(() => ({}));
+      const data = await res.json().catch(() => ({})) as RazorpayOrderResponse;
 
       if (!res.ok) {
         if (res.status === 401) {
@@ -74,7 +107,10 @@ export default function PaymentGateway({
       }
 
       await loadRazorpay();
-      const rzp = new (window as any).Razorpay({
+      const Razorpay = (window as RazorpayWindow).Razorpay;
+      if (!Razorpay) throw new Error("Razorpay checkout failed to load");
+
+      const rzp = new Razorpay({
         key: data.keyId,
         amount: data.amount,
         currency: data.currency,

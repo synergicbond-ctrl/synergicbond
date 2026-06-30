@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useRef } from "react";
+import Image from "next/image";
 import ReactMarkdown from "react-markdown";
 import remarkMath from "remark-math";
 import rehypeKatex from "rehype-katex";
@@ -34,8 +35,8 @@ export default function HandwrittenNotesPage() {
       const data = await res.json();
       if (data.error) setError(data.error);
       else setNotes(data.notes);
-    } catch (e: any) {
-      setError(e.message);
+    } catch (e: unknown) {
+      setError(e instanceof Error ? e.message : "Failed to convert notes.");
     } finally {
       setLoading(false);
     }
@@ -57,11 +58,14 @@ export default function HandwrittenNotesPage() {
           {/* Upload side */}
           <div className="space-y-4">
             <div onClick={() => fileRef.current?.click()}
-              onDrop={(e) => { e.preventDefault(); e.dataTransfer.files[0] && handleFile(e.dataTransfer.files[0]); }}
+              onDrop={(e) => {
+                e.preventDefault();
+                if (e.dataTransfer.files[0]) handleFile(e.dataTransfer.files[0]);
+              }}
               onDragOver={(e) => e.preventDefault()}
               className="flex min-h-64 cursor-pointer flex-col items-center justify-center rounded-2xl border-2 border-dashed border-white/20 bg-white/[0.03] p-6 text-center hover:border-cyan-500/50 transition">
               {image ? (
-                <img src={image} alt="Notes" className="max-h-60 rounded-xl object-contain" />
+                <Image src={image} alt="Notes" width={400} height={240} unoptimized className="max-h-60 rounded-xl object-contain" />
               ) : (
                 <>
                   <div className="text-5xl mb-3">✍️</div>

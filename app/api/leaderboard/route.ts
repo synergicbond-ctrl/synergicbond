@@ -4,6 +4,15 @@ export const dynamic = "force-dynamic";
 import { NextResponse } from "next/server";
 import { createClient } from "@/lib/supabase/server";
 
+type LeaderboardProfile = {
+  full_name?: string | null;
+  exam_target?: string | null;
+};
+
+function firstProfile(profile: LeaderboardProfile | LeaderboardProfile[] | null | undefined): LeaderboardProfile | null {
+  return Array.isArray(profile) ? profile[0] ?? null : profile ?? null;
+}
+
 export async function GET(req: Request) {
   try {
     const supabase = await createClient();
@@ -45,17 +54,21 @@ export async function GET(req: Request) {
     }
 
     // Format and add rank
-    const ranked = (leaderboard || []).map((entry: any, index: number) => ({
-      rank: index + 1,
-      userId: entry.user_id,
-      name: entry.profiles?.full_name || "Anonymous Student",
-      examTarget: entry.profiles?.exam_target || "JEE",
-      xp: entry.xp,
-      level: entry.xp_level,
-      streak: entry.streak,
-      lastActive: entry.last_active,
-      isCurrentUser: entry.user_id === user?.id,
-    }));
+    const ranked = (leaderboard || []).map((entry, index: number) => {
+      const profile = firstProfile(entry.profiles);
+
+      return {
+        rank: index + 1,
+        userId: entry.user_id,
+        name: profile?.full_name || "Anonymous Student",
+        examTarget: profile?.exam_target || "JEE",
+        xp: entry.xp,
+        level: entry.xp_level,
+        streak: entry.streak,
+        lastActive: entry.last_active,
+        isCurrentUser: entry.user_id === user?.id,
+      };
+    });
 
     // Find current user's rank if they're outside top limit
     let currentUserRank = null;
@@ -100,8 +113,11 @@ export async function GET(req: Request) {
       scope,
       total: ranked.length,
     });
-  } catch (error: any) {
+  } catch (error: unknown) {
     console.error("Leaderboard error:", error);
-    return NextResponse.json({ error: error.message }, { status: 500 });
+    return NextResponse.json(
+      { error: error instanceof Error ? error.message : "Failed to load leaderboard" },
+      { status: 500 }
+    );
   }
 }

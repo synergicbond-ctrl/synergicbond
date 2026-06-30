@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useRef } from "react";
+import Image from "next/image";
 import { track } from "@vercel/analytics";
 import { Camera, Type, Zap, AlertTriangle, Lock } from "lucide-react";
 import type { SnapSolveResponse } from "@/lib/snapSolveTypes";
@@ -252,7 +253,7 @@ export default function SnapSolveUpload({ onUploadSuccess }: Props) {
           }`}
         >
           {image ? (
-            <img src={image} alt="Problem" className="max-h-40 rounded-xl object-contain" />
+            <Image src={image} alt="Problem" width={320} height={160} unoptimized className="max-h-40 rounded-xl object-contain" />
           ) : (
             <>
               <Camera className="mb-3 h-8 w-8 text-cyan-400" />

@@ -37,14 +37,20 @@ export default function LeaderboardPage() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    setLoading(true);
+    let cancelled = false;
     fetch(`/api/leaderboard?scope=${scope}&limit=50`)
       .then((r) => r.json())
       .then((d) => {
+        if (cancelled) return;
         setData(d.leaderboard || []);
         setCurrentUserRank(d.currentUserRank || null);
       })
-      .finally(() => setLoading(false));
+      .finally(() => {
+        if (!cancelled) setLoading(false);
+      });
+    return () => {
+      cancelled = true;
+    };
   }, [scope]);
 
   return (
@@ -59,7 +65,10 @@ export default function LeaderboardPage() {
         {(["global", "weekly"] as const).map((s) => (
           <button
             key={s}
-            onClick={() => setScope(s)}
+            onClick={() => {
+              setLoading(true);
+              setScope(s);
+            }}
             className={`px-5 py-2 rounded-xl text-sm font-medium border capitalize transition ${
               scope === s
                 ? "bg-cyan-500 border-cyan-500 text-black"

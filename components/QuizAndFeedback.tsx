@@ -50,7 +50,7 @@ export default function QuizAndFeedback({ questions, chapterId }: { questions: Q
       });
       const data = await res.json();
       setAiExplain(data.reply || "Knowledge graph context hydrated.");
-    } catch (err) {
+    } catch {
       setAiExplain("Failed to connect to Knowledge Graph Tutor.");
     } finally {
       setLoadingAi(false);

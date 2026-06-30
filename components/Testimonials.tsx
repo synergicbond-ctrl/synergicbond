@@ -112,7 +112,7 @@ export default function Testimonials() {
               </div>
             </div>
 
-            <p className="text-sm text-white/70 leading-relaxed flex-1 mb-4">"{item.quote}"</p>
+            <p className="text-sm text-white/70 leading-relaxed flex-1 mb-4">&quot;{item.quote}&quot;</p>
 
             {item.hasVideo && (
               <button className="relative rounded-lg bg-black/40 border border-white/[0.06] h-11 mb-3 flex items-center gap-2 px-3 group cursor-pointer overflow-hidden">

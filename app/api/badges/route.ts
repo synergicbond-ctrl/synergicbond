@@ -68,7 +68,7 @@ export async function GET() {
     const earned = getEarnedBadges(xp, streak);
 
     return NextResponse.json({ badges: BADGES, earned, levels: LEVELS, currentLevel: levelInfo, xp, streak });
-  } catch (e) {
+  } catch {
     return NextResponse.json({ badges: BADGES, earned: [], levels: LEVELS });
   }
 }

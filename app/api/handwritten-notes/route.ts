@@ -61,8 +61,11 @@ Rules:
     });
 
     return NextResponse.json({ notes: response.text ?? "Could not convert notes." });
-  } catch (err: any) {
+  } catch (err: unknown) {
     console.error("Handwritten notes error:", err);
-    return NextResponse.json({ error: err.message }, { status: 500 });
+    return NextResponse.json(
+      { error: err instanceof Error ? err.message : "Failed to convert handwritten notes" },
+      { status: 500 }
+    );
   }
 }

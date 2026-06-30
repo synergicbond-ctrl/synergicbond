@@ -4,9 +4,32 @@ import { useState } from "react";
 
 const QUICK_COMPOUNDS = ["H2O", "NaCl", "H2SO4", "Glucose", "Benzene", "NH3", "CO2", "Ethanol", "Aspirin", "Caffeine"];
 
+type MoleculeData = {
+  name?: string;
+  commonName?: string;
+  formula?: string;
+  molecularWeight?: string;
+  structure?: string;
+  pubchemCID?: string | number | null;
+  appearance?: string;
+  properties?: {
+    meltingPoint?: string;
+    boilingPoint?: string;
+    density?: string;
+    solubility?: string;
+    state?: string;
+  };
+  uses?: string[];
+  examRelevance?: {
+    chapters?: string[];
+    importantFacts?: string[];
+  };
+  funFact?: string;
+};
+
 export default function MoleculePage() {
   const [compound, setCompound] = useState("");
-  const [data, setData] = useState<any>(null);
+  const [data, setData] = useState<MoleculeData | null>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
@@ -25,8 +48,8 @@ export default function MoleculePage() {
       const result = await res.json();
       if (result.error) setError(result.error);
       else setData(result);
-    } catch (e: any) {
-      setError(e.message);
+    } catch (e: unknown) {
+      setError(e instanceof Error ? e.message : "Failed to load molecule.");
     } finally {
       setLoading(false);
     }

@@ -8,19 +8,45 @@ const quickTopics = [
   "Equilibrium", "Organic Chemistry", "Electrochemistry",
 ];
 
+type SpeechRecognitionResultEvent = {
+  results: {
+    [index: number]: {
+      [index: number]: {
+        transcript: string;
+      };
+    };
+  };
+};
+
+type SpeechRecognitionInstance = {
+  lang: string;
+  onstart: () => void;
+  onend: () => void;
+  onresult: (event: SpeechRecognitionResultEvent) => void;
+  start: () => void;
+};
+
+type SpeechRecognitionConstructor = new () => SpeechRecognitionInstance;
+
+type SpeechRecognitionWindow = Window & typeof globalThis & {
+  webkitSpeechRecognition?: SpeechRecognitionConstructor;
+  SpeechRecognition?: SpeechRecognitionConstructor;
+};
+
 export default function HeroSearch() {
   const [query, setQuery] = useState("");
   const [listening, setListening] = useState(false);
 
   function startVoice() {
     if (typeof window === "undefined") return;
-    const SR = (window as any).webkitSpeechRecognition || (window as any).SpeechRecognition;
+    const speechWindow = window as SpeechRecognitionWindow;
+    const SR = speechWindow.webkitSpeechRecognition || speechWindow.SpeechRecognition;
     if (!SR) { alert("Voice search not supported in this browser."); return; }
     const recognition = new SR();
     recognition.lang = "en-IN";
     recognition.onstart = () => setListening(true);
     recognition.onend = () => setListening(false);
-    recognition.onresult = (e: any) => setQuery(e.results[0][0].transcript);
+    recognition.onresult = (e) => setQuery(e.results[0][0].transcript);
     recognition.start();
   }
 

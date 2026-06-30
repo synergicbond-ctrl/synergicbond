@@ -1,9 +1,10 @@
 import { Zap, Target, FlaskConical, AlertTriangle, Brain } from "lucide-react";
+import type { LucideIcon } from "lucide-react";
 import type { Mechanism } from "@/lib/mechanismSchema";
 
 // 30-second revision card.
 export default function JeeQuickView({ q }: { q: Mechanism["quickView"] }) {
-  const rows: { icon: any; label: string; value: string; tone?: string }[] = [
+  const rows: { icon: LucideIcon; label: string; value: string; tone?: string }[] = [
     { icon: Zap, label: "Reaction", value: q.reaction },
     { icon: Brain, label: "Key intermediate", value: q.keyIntermediate },
     { icon: Target, label: "RDS", value: q.rds },

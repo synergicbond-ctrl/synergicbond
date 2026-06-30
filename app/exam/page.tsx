@@ -90,8 +90,8 @@ export default function ExamHubPage() {
       const data = await res.json();
       if (!res.ok) throw new Error(data.error || "Generation failed");
       setPaper(data.paper);
-    } catch (err: any) {
-      setError(err.message || "Failed to generate paper.");
+    } catch (err: unknown) {
+      setError(err instanceof Error ? err.message : "Failed to generate paper.");
     } finally {
       setLoading(false);
     }

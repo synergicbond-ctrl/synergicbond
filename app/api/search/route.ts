@@ -5,6 +5,11 @@ import { inorganic } from "@/lib/masterSyllabus/inorganic";
 import { NAME_REACTIONS } from "@/lib/nameReactions";
 import { reactionSlug } from "@/lib/reactionSlug";
 import { searchReactions } from "@/lib/chemistry/reactions";
+import { searchKnowledgeGraph } from "@/lib/chemistry/graph";
+import { searchFormulaCards } from "@/lib/chemistry/formulas";
+import { searchNCERTLinks } from "@/lib/chemistry/ncert";
+import { pyqDatabase } from "@/lib/pyqDatabase";
+import { IMPORTANT_ORDERS } from "@/lib/importantOrders";
 
 type ChapterSearchSource = {
   id: string;
@@ -22,11 +27,27 @@ type SearchResult = {
   id: string;
   title: string;
   category: string;
-  type: "chapter" | "reaction";
+  type: "chapter" | "reaction" | "formula" | "pyq" | "ncert" | "order" | "graph";
   href: string;
   subtitle?: string;
+  graphType?: string;
   relevanceScore: number;
 };
+
+function normalizeSearch(value: string): string {
+  return value.toLowerCase().replace(/[^a-z0-9]+/g, " ").trim();
+}
+
+function scoreText(fields: string[], query: string): number {
+  const q = normalizeSearch(query);
+  const text = normalizeSearch(fields.join(" "));
+  if (!q || !text.includes(q.split(" ")[0] ?? "")) return 0;
+
+  const exactScore = fields.some((field) => normalizeSearch(field) === q) ? 80 : 0;
+  const prefixScore = fields.some((field) => normalizeSearch(field).startsWith(q)) ? 40 : 0;
+  const termScore = q.split(" ").filter(Boolean).reduce((sum, term) => sum + (text.includes(term) ? 10 : 0), 0);
+  return exactScore + prefixScore + termScore;
+}
 
 function scoreChapter(chapter: ChapterSearchSource, query: string): number {
   const q = query.toLowerCase();
@@ -110,9 +131,102 @@ export async function GET(request: Request) {
     relevanceScore: reaction.relevanceScore,
   }));
 
-  const results = [...chapterResults, ...reactionResults]
+  const formulaResults: SearchResult[] = searchFormulaCards(query, 20).map((formula) => ({
+    id: formula.id,
+    title: formula.name,
+    category: formula.chapter,
+    type: "formula",
+    href: `/formula-cards?id=${encodeURIComponent(formula.id)}`,
+    subtitle: `${formula.formula} - ${formula.ncertReference.chapter}`,
+    relevanceScore: formula.relevanceScore,
+  }));
+
+  const pyqResults: SearchResult[] = Object.entries(pyqDatabase)
+    .flatMap(([chapterId, questions]) => questions.map((question) => ({ chapterId, question })))
+    .map(({ chapterId, question }) => ({
+      chapterId,
+      question,
+      score: scoreText([question.id, question.year, question.exam, question.topic, question.question, question.explanation], query),
+    }))
+    .filter((result) => result.score > 0)
+    .sort((a, b) => b.score - a.score || a.question.topic.localeCompare(b.question.topic))
+    .slice(0, 20)
+    .map(({ chapterId, question, score }) => ({
+      id: question.id,
+      title: question.topic,
+      category: chapterId,
+      type: "pyq" as const,
+      href: `/pyq?pyq=${encodeURIComponent(question.id)}`,
+      subtitle: `${question.year} - ${question.exam}`,
+      relevanceScore: score,
+    }));
+
+  const ncertResults: SearchResult[] = searchNCERTLinks(query, { limit: 20 }).map((link) => ({
+    id: `${link.entityType}-${link.entityId}`,
+    title: link.label,
+    category: link.entityType,
+    type: "ncert",
+    href: "/search",
+    subtitle: `Class ${link.ncertReference.class} - ${link.ncertReference.chapter} - ${link.ncertReference.topic}`,
+    relevanceScore: link.relevanceScore,
+  }));
+
+  const orderResults: SearchResult[] = IMPORTANT_ORDERS
+    .map((order) => ({
+      order,
+      score: scoreText([order.id, order.group, order.property, order.order, order.note ?? "", order.reference ?? "", order.sourcePdf], query),
+    }))
+    .filter((result) => result.score > 0)
+    .sort((a, b) => b.score - a.score || a.order.property.localeCompare(b.order.property))
+    .slice(0, 20)
+    .map(({ order, score }) => ({
+      id: order.id,
+      title: order.property,
+      category: order.category,
+      type: "order" as const,
+      href: "/important-orders",
+      subtitle: `${order.order} - ${order.group}`,
+      relevanceScore: score,
+    }));
+
+  const graphResults: SearchResult[] = searchKnowledgeGraph(query, { limit: 30 })
+    .filter((hit) => !["reaction", "formula", "pyq"].includes(hit.type))
+    .map((hit) => ({
+    id: hit.id,
+    title: hit.label,
+    category: hit.type.replace("derived-", ""),
+    type: "graph",
+    href: hit.type === "reaction"
+      ? "/name-reactions"
+      : hit.type === "pyq"
+        ? "/pyq"
+        : hit.type === "formula"
+          ? `/formula-cards?id=${encodeURIComponent(hit.id)}`
+          : hit.type === "ncert-reference"
+            ? "/search"
+            : hit.type === "derived-reagent"
+              ? "/reagents"
+              : hit.type === "derived-exception"
+                ? "/vault/exceptions"
+                : hit.type === "derived-order"
+                  ? "/important-orders"
+                  : "/search",
+    subtitle: hit.summary,
+    graphType: hit.type,
+    relevanceScore: hit.score,
+  }));
+
+  const results = [
+    ...chapterResults,
+    ...reactionResults,
+    ...formulaResults,
+    ...pyqResults,
+    ...ncertResults,
+    ...orderResults,
+    ...graphResults,
+  ]
     .sort((a, b) => b.relevanceScore - a.relevanceScore || a.title.localeCompare(b.title))
-    .slice(0, 30);
+    .slice(0, 60);
 
   return NextResponse.json({ results, total: results.length });
 }

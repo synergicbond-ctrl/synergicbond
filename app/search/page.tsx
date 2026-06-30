@@ -8,9 +8,10 @@ interface SearchResults {
     id: string;
     title: string;
     category: string;
-    type?: "chapter" | "reaction";
+    type?: "chapter" | "reaction" | "formula" | "pyq" | "ncert" | "order" | "graph";
     href?: string;
     subtitle?: string;
+    graphType?: string;
     relevanceScore?: number;
   }[];
   total: number;
@@ -36,7 +37,7 @@ export default function GlobalSearchPage() {
       }
       const data = await res.json();
       setResults(data);
-    } catch (err) {
+    } catch {
       setError("Could not retrieve search results. Please try another term.");
     } finally {
       setLoading(false);
@@ -50,7 +51,7 @@ export default function GlobalSearchPage() {
       <header className="space-y-2 text-center">
         <h1 className="text-4xl font-black tracking-tight text-slate-900">Global Syllabus Search</h1>
         <p className="text-slate-600 max-w-xl mx-auto text-sm">
-          Search across syllabus chapters and core concepts.
+          Search across reactions, reagents, exceptions, orders, formulas, PYQs, and NCERT refs.
         </p>
       </header>
 
@@ -60,7 +61,7 @@ export default function GlobalSearchPage() {
           type="text"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
-          placeholder="e.g., Bohr energy, Wurtz reaction, SN1, Ionic equilibrium..."
+          placeholder="e.g., Bohr energy, Wurtz, SN1, osmotic pressure, acidity order..."
           className="flex-1 p-4 rounded-xl border-0 focus:outline-none focus:ring-0 text-slate-800 font-medium text-sm"
         />
         <button 
@@ -85,19 +86,24 @@ export default function GlobalSearchPage() {
           {results.results.length > 0 && (
             <section className="space-y-3">
               <h2 className="text-xl font-bold text-slate-800 border-b border-slate-200 pb-2">
-                Matching Chapters ({results.total})
+                Matching Results ({results.total})
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {results.results.map((c) => (
-                  <Link key={`${c.type ?? "chapter"}-${c.id}`} href={c.href ?? `/chapter/${c.id}`} className="p-5 bg-white rounded-xl border border-slate-200/60 shadow-sm hover:border-indigo-500 transition flex justify-between items-center">
+                  <Link key={`${c.type ?? "chapter"}-${c.id}`} href={c.href ?? `/chapter/${c.id}`} className={`p-5 bg-white rounded-xl border shadow-sm transition flex justify-between items-center gap-4 ${c.type === "graph" || c.type === "formula" || c.type === "pyq" ? "border-emerald-200 hover:border-emerald-500" : "border-slate-200/60 hover:border-indigo-500"}`}>
                     <div>
                       <h4 className="font-bold text-slate-900">{c.title}</h4>
                       <span className="inline-block mt-1 text-[10px] font-black uppercase px-2 py-0.5 bg-slate-100 text-slate-600 rounded">
                         {(c.type ?? "chapter")} - {c.category}
                       </span>
+                      {c.graphType && (
+                        <span className="ml-2 inline-block text-[10px] font-black uppercase px-2 py-0.5 bg-emerald-50 text-emerald-700 rounded">
+                          {c.graphType}
+                        </span>
+                      )}
                       {c.subtitle && <p className="mt-2 text-xs text-slate-500">{c.subtitle}</p>}
                     </div>
-                    <span className="text-indigo-600 text-xs font-bold">Open Result →</span>
+                    <span className="shrink-0 text-indigo-600 text-xs font-bold">Open Result →</span>
                   </Link>
                 ))}
               </div>
@@ -106,7 +112,7 @@ export default function GlobalSearchPage() {
 
           {results.results.length === 0 && (
             <div className="p-12 text-center bg-white rounded-2xl border border-dashed border-slate-300 text-slate-500 font-medium">
-              No syllabus elements found matching your query. Try searching for broad topics like 'Atomic', 'Organic', or specific laws.
+              No syllabus elements found matching your query. Try broad topics like Atomic, Organic, or specific laws.
             </div>
           )}
 

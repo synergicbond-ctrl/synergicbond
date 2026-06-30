@@ -179,11 +179,11 @@ function PYQContent() {
                     <button
                       key={chapter.id}
                       onClick={() => setActiveChapter(chapter.id)}
-                      className="rounded-lg border border-white/10 bg-white/[0.03] p-5 text-left transition hover:border-cyan-400/50"
+                      className="min-w-0 rounded-lg border border-white/10 bg-white/[0.03] p-5 text-left transition hover:border-cyan-400/50"
                     >
                       <div className="flex items-start justify-between gap-3">
                         <div>
-                          <h2 className="text-base font-black">{chapter.title}</h2>
+                          <h2 className="break-words text-base font-black">{chapter.title}</h2>
                           <p className="mt-1 text-xs font-semibold capitalize text-white/40">{chapter.category}</p>
                         </div>
                         <span className={`rounded-md px-2 py-1 text-xs font-black ${
@@ -197,7 +197,7 @@ function PYQContent() {
                           Difficulty {chapter.difficulty}
                         </span>
                         {chapter.pyqTags.slice(0, 3).map((tag) => (
-                          <span key={tag} className="rounded-md bg-white/5 px-2 py-1 text-[11px] font-bold text-white/45">
+                          <span key={tag} className="max-w-full break-words rounded-md bg-white/5 px-2 py-1 text-[11px] font-bold text-white/45">
                             {tag}
                           </span>
                         ))}
@@ -227,7 +227,7 @@ function PYQContent() {
                   Back
                 </button>
                 <div>
-                  <h2 className="text-2xl font-black">{activeChapterMeta.title}</h2>
+                  <h2 className="break-words text-2xl font-black">{activeChapterMeta.title}</h2>
                   <p className="text-xs font-semibold capitalize text-white/40">{activeChapterMeta.category}</p>
                 </div>
               </div>
@@ -264,12 +264,12 @@ function PYQContent() {
 
               <div className="rounded-lg border border-white/10 bg-white/[0.035] p-4">
                 <p className="text-xs font-black uppercase tracking-wide text-fuchsia-300">Prediction Signals</p>
-                <p className="mt-3 text-sm font-semibold text-white/80">
+                <p className="mt-3 break-words text-sm font-semibold text-white/80">
                   {chapterIntelligence.topTopic
                     ? `${chapterIntelligence.topTopic[0]} appears in ${chapterIntelligence.topTopic[1]} verified PYQ(s).`
                     : "No PYQs available for this chapter."}
                 </p>
-                <p className="mt-2 text-xs text-white/45">{activeChapterMeta.pyqTags.slice(0, 4).join(" | ")}</p>
+                <p className="mt-2 break-words text-xs text-white/45">{activeChapterMeta.pyqTags.slice(0, 4).join(" | ")}</p>
               </div>
 
               <div className="rounded-lg border border-white/10 bg-white/[0.035] p-4">
@@ -277,7 +277,7 @@ function PYQContent() {
                 {chapterIntelligence.unsupportedTopics.length > 0 ? (
                   <div className="mt-3 flex flex-wrap gap-2">
                     {chapterIntelligence.unsupportedTopics.slice(0, 4).map((topic) => (
-                      <span key={topic} className="rounded-md bg-amber-950/60 px-2 py-1 text-xs font-bold text-amber-200">
+                      <span key={topic} className="max-w-full break-words rounded-md bg-amber-950/60 px-2 py-1 text-xs font-bold text-amber-200">
                         {topic}
                       </span>
                     ))}
@@ -298,21 +298,21 @@ function PYQContent() {
                   const graph = graphByQuestionId.get(question.id);
                   const ncertLink = graph?.ncertLinks[0];
                   return (
-                    <article key={question.id} className="rounded-lg border border-white/10 bg-white/[0.03] p-5">
+                    <article key={question.id} className="min-w-0 overflow-hidden rounded-lg border border-white/10 bg-white/[0.03] p-5">
                       <div className="flex flex-wrap items-center gap-2 text-xs font-bold text-white/50">
                         <span className="rounded-md bg-white/5 px-2 py-1">{question.id}</span>
                         <span className="rounded-md bg-white/5 px-2 py-1">{question.year}</span>
                         <span className="rounded-md bg-white/5 px-2 py-1">{question.exam}</span>
-                        <span className="rounded-md bg-indigo-950 px-2 py-1 text-indigo-300">{question.topic}</span>
+                        <span className="max-w-full break-words rounded-md bg-indigo-950 px-2 py-1 text-indigo-300">{question.topic}</span>
                       </div>
 
-                      <p className="mt-4 text-base font-semibold leading-relaxed text-white">{question.question}</p>
+                      <p className="mt-4 break-words text-base font-semibold leading-relaxed text-white">{question.question}</p>
 
                       <div className="mt-4 grid gap-2 md:grid-cols-2">
                         {Object.entries(question.options).map(([key, value]) => {
                           const isCorrect = revealed[question.id] && key === question.answer;
                           return (
-                            <div key={key} className={`rounded-md border p-3 text-sm ${
+                            <div key={key} className={`min-w-0 break-words rounded-md border p-3 text-sm ${
                               isCorrect
                                 ? "border-green-500 bg-green-950/40 text-green-200"
                                 : "border-white/10 bg-black/20 text-white/70"
@@ -328,7 +328,7 @@ function PYQContent() {
                           <p className="text-[11px] font-black uppercase tracking-wide text-cyan-300">Linked Reactions</p>
                           <div className="mt-2 flex flex-wrap gap-2">
                             {graph?.reactions.length ? graph.reactions.map((reaction) => (
-                              <span key={reaction.id} className="rounded-md bg-cyan-500/10 px-2 py-1 text-xs font-bold text-cyan-200">
+                              <span key={reaction.id} className="max-w-full break-words rounded-md bg-cyan-500/10 px-2 py-1 text-xs font-bold text-cyan-200">
                                 {reaction.name}
                               </span>
                             )) : <span className="text-xs font-semibold text-white/35">0 verified links</span>}
@@ -339,7 +339,7 @@ function PYQContent() {
                           <p className="text-[11px] font-black uppercase tracking-wide text-emerald-300">Linked Formulas</p>
                           <div className="mt-2 flex flex-wrap gap-2">
                             {graph?.formulas.length ? graph.formulas.slice(0, 4).map((formula) => (
-                              <Link key={formula.id} href={`/formula-cards?id=${encodeURIComponent(formula.id)}`} className="rounded-md bg-emerald-500/10 px-2 py-1 text-xs font-bold text-emerald-200">
+                              <Link key={formula.id} href={`/formula-cards?id=${encodeURIComponent(formula.id)}`} className="max-w-full break-words rounded-md bg-emerald-500/10 px-2 py-1 text-xs font-bold text-emerald-200">
                                 {formula.name}
                               </Link>
                             )) : <span className="text-xs font-semibold text-white/35">0 verified links</span>}
@@ -349,7 +349,7 @@ function PYQContent() {
                         <div className="rounded-lg border border-sky-400/15 bg-sky-950/20 p-3">
                           <p className="text-[11px] font-black uppercase tracking-wide text-sky-300">NCERT Reference</p>
                           {ncertLink ? (
-                            <p className="mt-2 text-xs font-semibold leading-relaxed text-sky-100">
+                            <p className="mt-2 break-words text-xs font-semibold leading-relaxed text-sky-100">
                               Class {ncertLink.ncertReference.class} | {ncertLink.ncertReference.chapter} | {ncertLink.ncertReference.topic}
                             </p>
                           ) : (
@@ -359,7 +359,7 @@ function PYQContent() {
                       </div>
 
                       {revealed[question.id] && (
-                        <div className="mt-4 rounded-lg border border-indigo-500/30 bg-indigo-950/40 p-4 text-sm text-slate-200">
+                        <div className="mt-4 break-words rounded-lg border border-indigo-500/30 bg-indigo-950/40 p-4 text-sm text-slate-200">
                           <span className="font-black text-indigo-300">Answer {question.answer}: </span>
                           {question.explanation}
                         </div>

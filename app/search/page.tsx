@@ -56,18 +56,18 @@ export default function GlobalSearchPage() {
       </header>
 
       {/* Search Input Form */}
-      <form onSubmit={handleSearch} className="flex gap-3 bg-white p-2 rounded-2xl shadow-sm border border-slate-200 max-w-3xl mx-auto">
+      <form onSubmit={handleSearch} className="flex flex-col gap-3 bg-white p-2 rounded-2xl shadow-sm border border-slate-200 max-w-3xl mx-auto sm:flex-row">
         <input
           type="text"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           placeholder="e.g., Bohr energy, Wurtz, SN1, osmotic pressure, acidity order..."
-          className="flex-1 p-4 rounded-xl border-0 focus:outline-none focus:ring-0 text-slate-800 font-medium text-sm"
+          className="min-w-0 flex-1 p-4 rounded-xl border-0 focus:outline-none focus:ring-0 text-slate-800 font-medium text-sm"
         />
         <button 
           type="submit" 
           disabled={loading}
-          className="px-8 py-4 bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-sm rounded-xl transition shadow"
+          className="w-full px-8 py-4 bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-sm rounded-xl transition shadow sm:w-auto"
         >
           {loading ? "Searching..." : "Search"}
         </button>
@@ -90,9 +90,9 @@ export default function GlobalSearchPage() {
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {results.results.map((c) => (
-                  <Link key={`${c.type ?? "chapter"}-${c.id}`} href={c.href ?? `/chapter/${c.id}`} className={`p-5 bg-white rounded-xl border shadow-sm transition flex justify-between items-center gap-4 ${c.type === "graph" || c.type === "formula" || c.type === "pyq" ? "border-emerald-200 hover:border-emerald-500" : "border-slate-200/60 hover:border-indigo-500"}`}>
-                    <div>
-                      <h4 className="font-bold text-slate-900">{c.title}</h4>
+                  <Link key={`${c.type ?? "chapter"}-${c.id}`} href={c.href ?? `/chapter/${c.id}`} className={`flex min-w-0 flex-col gap-4 p-5 bg-white rounded-xl border shadow-sm transition sm:flex-row sm:items-center sm:justify-between ${c.type === "graph" || c.type === "formula" || c.type === "pyq" ? "border-emerald-200 hover:border-emerald-500" : "border-slate-200/60 hover:border-indigo-500"}`}>
+                    <div className="min-w-0">
+                      <h4 className="break-words font-bold text-slate-900">{c.title}</h4>
                       <span className="inline-block mt-1 text-[10px] font-black uppercase px-2 py-0.5 bg-slate-100 text-slate-600 rounded">
                         {(c.type ?? "chapter")} - {c.category}
                       </span>
@@ -101,9 +101,9 @@ export default function GlobalSearchPage() {
                           {c.graphType}
                         </span>
                       )}
-                      {c.subtitle && <p className="mt-2 text-xs text-slate-500">{c.subtitle}</p>}
+                      {c.subtitle && <p className="mt-2 break-words text-xs text-slate-500">{c.subtitle}</p>}
                     </div>
-                    <span className="shrink-0 text-indigo-600 text-xs font-bold">Open Result →</span>
+                    <span className="shrink-0 self-end text-indigo-600 text-xs font-bold sm:self-auto">Open Result →</span>
                   </Link>
                 ))}
               </div>

@@ -14,11 +14,11 @@ const totalFormulaCount = chapters.reduce((sum, chapter) => sum + chapter.count,
 
 function FormulaCardView({ card }: { card: FormulaSearchResult }) {
   return (
-    <article className="flex h-full flex-col rounded-lg border border-slate-200 bg-white p-4 shadow-sm">
+    <article className="flex h-full min-w-0 flex-col rounded-lg border border-slate-200 bg-white p-4 shadow-sm">
       <div className="flex flex-wrap items-start justify-between gap-3">
-        <div>
-          <p className="text-[11px] font-bold uppercase tracking-wide text-indigo-600">{card.topic}</p>
-          <h2 className="mt-1 text-lg font-black leading-tight text-slate-950">{card.name}</h2>
+        <div className="min-w-0">
+          <p className="break-words text-[11px] font-bold uppercase tracking-wide text-indigo-600">{card.topic}</p>
+          <h2 className="mt-1 break-words text-lg font-black leading-tight text-slate-950">{card.name}</h2>
         </div>
         <span className="rounded-md bg-slate-100 px-2 py-1 text-[11px] font-bold text-slate-600">
           Class {card.ncertReference.class}
@@ -54,13 +54,13 @@ function FormulaCardView({ card }: { card: FormulaSearchResult }) {
 
         <div>
           <p className="text-[11px] font-black uppercase tracking-wide text-slate-400">Derivation</p>
-          <p className="mt-1 leading-relaxed">{card.derivation}</p>
+          <p className="mt-1 break-words leading-relaxed">{card.derivation}</p>
         </div>
 
         {card.exceptions.length > 0 && (
           <div className="rounded-md border border-amber-200 bg-amber-50 p-3 text-amber-900">
             <p className="text-[11px] font-black uppercase tracking-wide text-amber-600">Exceptions</p>
-            <p className="mt-1">{card.exceptions.join("; ")}</p>
+            <p className="mt-1 break-words">{card.exceptions.join("; ")}</p>
           </div>
         )}
       </div>
@@ -70,7 +70,7 @@ function FormulaCardView({ card }: { card: FormulaSearchResult }) {
           <Link
             key={pyqId}
             href={`/pyq?pyq=${encodeURIComponent(pyqId)}`}
-            className="rounded-md border border-cyan-200 bg-cyan-50 px-2.5 py-1 text-xs font-bold text-cyan-800 transition hover:border-cyan-400"
+            className="max-w-full break-words rounded-md border border-cyan-200 bg-cyan-50 px-2.5 py-1 text-xs font-bold text-cyan-800 transition hover:border-cyan-400"
           >
             PYQ {pyqId}
           </Link>
@@ -146,7 +146,7 @@ function FormulaCardsContent() {
             <button
               key={item.chapter}
               onClick={() => setChapter(item.chapter)}
-              className={`shrink-0 rounded-md border px-3 py-2 text-xs font-black ${chapter === item.chapter ? "border-indigo-600 bg-indigo-600 text-white" : "border-slate-200 bg-white text-slate-600"}`}
+            className={`shrink-0 rounded-md border px-3 py-2 text-xs font-black ${chapter === item.chapter ? "border-indigo-600 bg-indigo-600 text-white" : "border-slate-200 bg-white text-slate-600"}`}
             >
               {item.chapter}
             </button>

@@ -1,5 +1,5 @@
 import { formulaCards } from "./data";
-import type { FormulaSearchEntry } from "./schema";
+import type { FormulaSearchEntry, FormulaSearchResult } from "./schema";
 
 function normalize(value: string): string {
   return value.toLowerCase().replace(/[^a-z0-9]+/g, " ").trim();
@@ -30,7 +30,7 @@ export const formulaSearchIndex: FormulaSearchEntry[] = formulaCards.map((card) 
   ),
 }));
 
-export function searchFormulaCards(query: string, limit = 20) {
+export function searchFormulaCards(query: string, limit = 20): FormulaSearchResult[] {
   const q = normalize(query);
   if (!q) return [];
   const terms = q.split(" ").filter(Boolean);

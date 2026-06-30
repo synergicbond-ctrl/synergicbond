@@ -34,32 +34,52 @@ function Section({ title, children }: { title: string; children: React.ReactNode
   );
 }
 
+function readReactionBookmarks(): string[] {
+  if (typeof window === "undefined") return [];
+  try {
+    const saved = JSON.parse(localStorage.getItem("sb_reaction_bookmarks") || "[]");
+    return Array.isArray(saved) ? saved : [];
+  } catch {
+    return [];
+  }
+}
+
+function getReactionLanguage(): string {
+  return (typeof window !== "undefined" && localStorage.getItem("sb_lang")) || "english";
+}
+
+function readCachedMechanism(slug: string): Mechanism | null {
+  if (typeof window === "undefined") return null;
+  try {
+    const cached = localStorage.getItem(`sb_mech_${slug}_${getReactionLanguage()}`);
+    return cached ? JSON.parse(cached) : null;
+  } catch {
+    return null;
+  }
+}
+
 export default function ReactionLessonPage() {
   const params = useParams();
   const router = useRouter();
   const slug = String(params?.slug || "");
   const name = reactionFromSlug(slug);
+  const [initialMechanism] = useState<Mechanism | null>(() => (name ? readCachedMechanism(slug) : null));
 
-  const [mech, setMech] = useState<Mechanism | null>(null);
-  const [loading, setLoading] = useState(true);
+  const [mech, setMech] = useState<Mechanism | null>(initialMechanism);
+  const [loading, setLoading] = useState(() => !!name && !initialMechanism);
   const [error, setError] = useState(false);
-  const [bookmarked, setBookmarked] = useState(false);
+  const [bookmarks, setBookmarks] = useState<string[]>(readReactionBookmarks);
   const [copied, setCopied] = useState(false);
   const [practiceOpen, setPracticeOpen] = useState(false);
   const [quizOpen, setQuizOpen] = useState(false);
 
   const highYield = !!name && HIGH_YIELD.has(name);
+  const bookmarked = bookmarks.includes(slug);
 
   useEffect(() => {
-    if (!name) { setLoading(false); return; }
-    const language = (typeof window !== "undefined" && localStorage.getItem("sb_lang")) || "english";
+    if (!name) return;
+    const language = getReactionLanguage();
     const cacheKey = `sb_mech_${slug}_${language}`;
-
-    // Instant hydrate from localStorage (<200ms re-open), then revalidate.
-    try {
-      const cached = localStorage.getItem(cacheKey);
-      if (cached) { setMech(JSON.parse(cached)); setLoading(false); }
-    } catch {}
 
     let active = true;
     (async () => {
@@ -87,19 +107,12 @@ export default function ReactionLessonPage() {
     return () => { active = false; };
   }, [name, slug]);
 
-  useEffect(() => {
-    try {
-      const saved = JSON.parse(localStorage.getItem("sb_reaction_bookmarks") || "[]");
-      setBookmarked(Array.isArray(saved) && saved.includes(slug));
-    } catch {}
-  }, [slug]);
-
   function toggleBookmark() {
     try {
-      const saved: string[] = JSON.parse(localStorage.getItem("sb_reaction_bookmarks") || "[]");
+      const saved = readReactionBookmarks();
       const next = saved.includes(slug) ? saved.filter((s) => s !== slug) : [...saved, slug];
       localStorage.setItem("sb_reaction_bookmarks", JSON.stringify(next));
-      setBookmarked(next.includes(slug));
+      setBookmarks(next);
     } catch {}
   }
   async function share() {

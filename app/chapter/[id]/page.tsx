@@ -14,15 +14,7 @@ import VisionUploader from "@/components/VisionUploader";
 import StudySessionTracker from "@/components/StudySessionTracker";
 import { createClient } from "@/lib/supabase/server";
 import { isProActive } from "@/lib/subscription";
-
-// Must match FREE_CHAPTERS in /api/content/access/route.ts — single source of truth
-// for which chapters are publicly accessible without a subscription.
-const FREE_CHAPTER_IDS = [
-  "mole-concept", "atomic-structure",
-  "general-organic-chemistry", "hydrocarbons",
-  "periodic-table", "chemical-bonding",
-  "introduction-to-spectroscopy", "gravimetric-analysis",
-];
+import { isFreeChapter } from "@/lib/freeChapters";
 
 const allChapters = [...physical, ...organic, ...inorganic];
 
@@ -43,7 +35,7 @@ export default async function ChapterPage({ params }: PageProps) {
   // Server-side access gate: free chapters pass through; premium chapters
   // require an active Pro subscription. Server redirect means zero premium
   // content reaches the client for unauthorized users.
-  if (!FREE_CHAPTER_IDS.includes(lookupId)) {
+  if (!isFreeChapter(lookupId)) {
     const supabase = await createClient();
     const { data: { user } } = await supabase.auth.getUser();
     if (!user) redirect(`/auth/signin?next=/chapter/${resolvedParams.id}`);

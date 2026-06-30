@@ -466,9 +466,14 @@ export async function POST(request: Request) {
 
     // Paywall gate — free tier = 5 solves/day, Pro = unlimited. Applies to the
     // main solve path only (interrupt/tutor follow-ups are not separately metered).
-    // Degrades open if the usage tables aren't migrated yet (see lib/snapQuota).
     const quota = await checkAndConsumeSnapQuota();
     if (!quota.allowed) {
+      if (quota.reason === "quota_error") {
+        return NextResponse.json(
+          { error: "Snap & Solve quota is temporarily unavailable. Please try again." },
+          { status: 503 }
+        );
+      }
       if (quota.tier === "guest") {
         return NextResponse.json(
           { error: "Sign in to use Snap & Solve — free accounts get 5 solves per day at no cost." },

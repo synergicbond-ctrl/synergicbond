@@ -6,7 +6,7 @@ import Link from "next/link";
 import { ArrowLeft, Star, Bookmark, Share2, Loader2, FlaskConical, Brain } from "lucide-react";
 import MoleculeLogo from "@/components/MoleculeLogo";
 import { HIGH_YIELD } from "@/lib/nameReactions";
-import { reactionFromSlug } from "@/lib/reactionSlug";
+import { reactionFromSlug, reactionSlug } from "@/lib/reactionSlug";
 import type { Mechanism } from "@/lib/mechanismSchema";
 import ReactionDashboard from "@/components/mechanism/ReactionDashboard";
 import FlowMap from "@/components/mechanism/FlowMap";
@@ -17,6 +17,8 @@ import ExamplesEngine from "@/components/mechanism/ExamplesEngine";
 import RelatedReactions from "@/components/mechanism/RelatedReactions";
 import PracticeDrawer from "@/components/mechanism/PracticeDrawer";
 import QuizDrawer from "@/components/mechanism/QuizDrawer";
+import { getReactionGraph } from "@/lib/chemistry/graph";
+import { highYieldReactions } from "@/lib/chemistry/reactions";
 
 const THEME = {
   chip: "bg-purple-500/15 text-purple-200 border-purple-400/30",
@@ -75,6 +77,8 @@ export default function ReactionLessonPage() {
 
   const highYield = !!name && HIGH_YIELD.has(name);
   const bookmarked = bookmarks.includes(slug);
+  const graphReaction = highYieldReactions.find((reaction) => reactionSlug(reaction.name) === slug);
+  const reactionGraph = graphReaction ? getReactionGraph(graphReaction.id) : null;
 
   useEffect(() => {
     if (!name) return;
@@ -198,6 +202,48 @@ export default function ReactionLessonPage() {
         {mech && (
           <>
             <Section title="Reaction Dashboard"><ReactionDashboard d={mech.dashboard} /></Section>
+            {reactionGraph && (
+              <Section title="Knowledge Graph">
+                <div className="rounded-2xl border border-white/[0.08] bg-white/[0.035] p-4">
+                  <div className="grid grid-cols-2 gap-2 sm:grid-cols-5">
+                    {[
+                      ["Reagents", reactionGraph.reagents.length],
+                      ["Exceptions", reactionGraph.exceptions.length],
+                      ["Orders", reactionGraph.orders.length],
+                      ["PYQs", reactionGraph.pyqs.length],
+                      ["NCERT", reactionGraph.ncertLinks.length],
+                    ].map(([label, count]) => (
+                      <div key={label} className="rounded-xl bg-black/20 p-3">
+                        <p className="text-[10px] font-black uppercase tracking-wider text-white/35">{label}</p>
+                        <p className="mt-1 text-lg font-black text-white">{count}</p>
+                      </div>
+                    ))}
+                  </div>
+                  <div className="mt-4 flex flex-wrap gap-2">
+                    {reactionGraph.reagents.slice(0, 4).map((node) => (
+                      <span key={node.id} className="rounded-full border border-cyan-400/20 bg-cyan-500/10 px-2.5 py-1 text-xs text-cyan-200">
+                        {node.label}
+                      </span>
+                    ))}
+                    {reactionGraph.exceptions.slice(0, 3).map((node) => (
+                      <span key={node.id} className="rounded-full border border-amber-400/20 bg-amber-500/10 px-2.5 py-1 text-xs text-amber-200">
+                        {node.label}
+                      </span>
+                    ))}
+                    {reactionGraph.pyqs.slice(0, 3).map((pyq) => (
+                      <span key={pyq.id} className="rounded-full border border-indigo-400/20 bg-indigo-500/10 px-2.5 py-1 text-xs text-indigo-200">
+                        {pyq.year}
+                      </span>
+                    ))}
+                    {reactionGraph.ncertLinks.slice(0, 2).map((link) => (
+                      <span key={`${link.entityId}-${link.ncertReference.topic}`} className="rounded-full border border-emerald-400/20 bg-emerald-500/10 px-2.5 py-1 text-xs text-emerald-200">
+                        {link.ncertReference.chapter}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </Section>
+            )}
             {mech.flowMap.length > 0 && <Section title="Reaction Flow Map"><FlowMap nodes={mech.flowMap} /></Section>}
             <Section title="Mechanism"><MechanismSteps steps={mech.steps} /></Section>
             <Section title="JEE Quick View"><JeeQuickView q={mech.quickView} /></Section>

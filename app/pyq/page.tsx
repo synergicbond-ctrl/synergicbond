@@ -5,6 +5,7 @@ import { physical } from "@/lib/masterSyllabus/physical";
 import { organic } from "@/lib/masterSyllabus/organic";
 import { inorganic } from "@/lib/masterSyllabus/inorganic";
 import { pyqDatabase, type PYQQuestion } from "@/lib/pyqDatabase";
+import { getReactionsForPYQ } from "@/lib/chemistry/reactions";
 
 const masterSyllabus = [...physical, ...organic, ...inorganic];
 
@@ -96,12 +97,19 @@ export default function PYQPage() {
               </div>
             ) : (
               <div className="space-y-5">
-                {questions.map((q) => (
+                {questions.map((q) => {
+                  const linkedReactions = getReactionsForPYQ(q.id);
+                  return (
                   <div key={q.id} className="border border-white/10 rounded-2xl p-6 space-y-4">
-                    <div className="flex items-center gap-3 text-xs text-white/40">
+                    <div className="flex flex-wrap items-center gap-3 text-xs text-white/40">
                       <span className="bg-white/5 px-2 py-0.5 rounded-md">{q.year}</span>
                       <span className="bg-white/5 px-2 py-0.5 rounded-md">{q.exam}</span>
                       <span className="bg-indigo-900/40 text-indigo-400 px-2 py-0.5 rounded-md">{q.topic}</span>
+                      {linkedReactions.map((reaction) => (
+                        <span key={reaction.id} className="bg-cyan-950/50 text-cyan-300 px-2 py-0.5 rounded-md">
+                          {reaction.name}
+                        </span>
+                      ))}
                     </div>
 
                     <p className="text-white font-medium leading-relaxed">{q.question}</p>
@@ -133,7 +141,7 @@ export default function PYQPage() {
                       {revealed[q.id] ? "Hide Answer" : "Reveal Answer & Explanation"}
                     </button>
                   </div>
-                ))}
+                );})}
               </div>
             )}
           </div>

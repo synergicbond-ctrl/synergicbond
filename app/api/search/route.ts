@@ -2,10 +2,33 @@ import { NextResponse } from "next/server";
 import { physical } from "@/lib/masterSyllabus/physical";
 import { organic } from "@/lib/masterSyllabus/organic";
 import { inorganic } from "@/lib/masterSyllabus/inorganic";
+import { NAME_REACTIONS } from "@/lib/nameReactions";
+import { reactionSlug } from "@/lib/reactionSlug";
+import { searchReactions } from "@/lib/chemistry/reactions";
 
-const allChapters = [...physical, ...organic, ...inorganic];
+type ChapterSearchSource = {
+  id: string;
+  title: string;
+  category: string;
+  exams?: string[];
+  concepts?: { title?: string; description?: string }[];
+  searchKeywords?: string[];
+};
 
-function scoreChapter(chapter: any, query: string): number {
+const allChapters: ChapterSearchSource[] = [...physical, ...organic, ...inorganic];
+const knownReactionNames = new Set<string>(NAME_REACTIONS);
+
+type SearchResult = {
+  id: string;
+  title: string;
+  category: string;
+  type: "chapter" | "reaction";
+  href: string;
+  subtitle?: string;
+  relevanceScore: number;
+};
+
+function scoreChapter(chapter: ChapterSearchSource, query: string): number {
   const q = query.toLowerCase();
   let score = 0;
 
@@ -49,23 +72,47 @@ export async function GET(request: Request) {
 
   // Filter by exam type
   if (exam) {
-    chapters = chapters.filter((c: any) => c.exams?.includes(exam));
+    chapters = chapters.filter((c) => c.exams?.includes(exam));
   }
 
   // Filter by category (physical/organic/inorganic)
   if (category) {
-    chapters = chapters.filter((c: any) =>
+    chapters = chapters.filter((c) =>
       c.category?.toLowerCase() === category.toLowerCase()
     );
   }
 
   // Score and filter
-  const scored = chapters
-    .map((c: any) => ({ chapter: c, score: scoreChapter(c, query) }))
+  const chapterResults: SearchResult[] = chapters
+    .map((c) => ({ chapter: c, score: scoreChapter(c, query) }))
     .filter((r) => r.score > 0)
     .sort((a, b) => b.score - a.score)
     .slice(0, 20)
-    .map((r) => ({ ...r.chapter, relevanceScore: r.score }));
+    .map((r) => ({
+      id: r.chapter.id,
+      title: r.chapter.title,
+      category: r.chapter.category,
+      type: "chapter",
+      href: `/chapter/${r.chapter.id}`,
+      subtitle: `${r.chapter.concepts?.length ?? 0} concepts`,
+      relevanceScore: r.score,
+    }));
 
-  return NextResponse.json({ results: scored, total: scored.length });
+  const reactionResults: SearchResult[] = searchReactions(query, { limit: 20 }).map((reaction) => ({
+    id: reaction.id,
+    title: reaction.name,
+    category: reaction.category,
+    type: "reaction",
+    href: knownReactionNames.has(reaction.name)
+      ? `/learn/reactions/${reactionSlug(reaction.name)}`
+      : "/name-reactions",
+    subtitle: `${reaction.reactionType} - ${reaction.ncertReference.chapter}`,
+    relevanceScore: reaction.relevanceScore,
+  }));
+
+  const results = [...chapterResults, ...reactionResults]
+    .sort((a, b) => b.relevanceScore - a.relevanceScore || a.title.localeCompare(b.title))
+    .slice(0, 30);
+
+  return NextResponse.json({ results, total: results.length });
 }

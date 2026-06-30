@@ -8,6 +8,9 @@ interface SearchResults {
     id: string;
     title: string;
     category: string;
+    type?: "chapter" | "reaction";
+    href?: string;
+    subtitle?: string;
     relevanceScore?: number;
   }[];
   total: number;
@@ -86,14 +89,15 @@ export default function GlobalSearchPage() {
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {results.results.map((c) => (
-                  <Link key={c.id} href={`/chapter/${c.id}`} className="p-5 bg-white rounded-xl border border-slate-200/60 shadow-sm hover:border-indigo-500 transition flex justify-between items-center">
+                  <Link key={`${c.type ?? "chapter"}-${c.id}`} href={c.href ?? `/chapter/${c.id}`} className="p-5 bg-white rounded-xl border border-slate-200/60 shadow-sm hover:border-indigo-500 transition flex justify-between items-center">
                     <div>
                       <h4 className="font-bold text-slate-900">{c.title}</h4>
                       <span className="inline-block mt-1 text-[10px] font-black uppercase px-2 py-0.5 bg-slate-100 text-slate-600 rounded">
-                        {c.category}
+                        {(c.type ?? "chapter")} - {c.category}
                       </span>
+                      {c.subtitle && <p className="mt-2 text-xs text-slate-500">{c.subtitle}</p>}
                     </div>
-                    <span className="text-indigo-600 text-xs font-bold">Open Learning Hub →</span>
+                    <span className="text-indigo-600 text-xs font-bold">Open Result →</span>
                   </Link>
                 ))}
               </div>

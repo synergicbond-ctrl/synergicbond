@@ -167,13 +167,10 @@ type Ctx = { lang: Lang; setLang: (l: Lang) => void; t: (key: string) => string 
 const LangContext = createContext<Ctx>({ lang: "english", setLang: () => {}, t: (k) => k });
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
-  const [lang, setLangState] = useState<Lang>("english");
-
-  // hydrate from saved preference
-  useEffect(() => {
+  const [lang, setLangState] = useState<Lang>(() => {
     const saved = (typeof window !== "undefined" && localStorage.getItem("sb_lang")) as Lang | null;
-    if (saved && LANGS.some((l) => l.code === saved)) setLangState(saved);
-  }, []);
+    return saved && LANGS.some((l) => l.code === saved) ? saved : "english";
+  });
 
   // apply direction (RTL for Arabic) + html lang
   useEffect(() => {

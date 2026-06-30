@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { masterSyllabus } from "@/lib/masterSyllabus";
+import { masterSyllabus } from "@/lib/masterSyllabus/all";
 
 const EXAMS = ["JEE Main", "JEE Advanced", "NEET", "GATE", "NSEC", "INChO", "IChO"];
 const DIFFICULTIES = [

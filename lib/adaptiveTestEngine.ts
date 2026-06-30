@@ -1,4 +1,4 @@
-import { masterSyllabus } from "./masterSyllabus";
+import { masterSyllabus } from "./masterSyllabus/all";
 
 export type AdaptiveExam = {
   recommended: string[];

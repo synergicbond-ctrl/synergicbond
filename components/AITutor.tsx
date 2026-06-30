@@ -1,4 +1,4 @@
-import { masterSyllabus } from "@/lib/masterSyllabus";
+import { masterSyllabus } from "@/lib/masterSyllabus/all";
 
 export function explainChapter(query: string) {
   const q = query.toLowerCase();

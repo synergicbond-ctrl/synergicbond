@@ -46,7 +46,18 @@ export async function POST(req: Request) {
       return NextResponse.json({ error: "Could not start checkout. Please try again." }, { status: 502 });
     }
 
-    const order = await res.json();
+    const order = await res.json().catch(() => null);
+    if (
+      !order ||
+      typeof order !== "object" ||
+      typeof order.id !== "string" ||
+      typeof order.amount !== "number" ||
+      typeof order.currency !== "string"
+    ) {
+      console.error("razorpay order malformed:", order);
+      return NextResponse.json({ error: "Could not start checkout. Please try again." }, { status: 502 });
+    }
+
     return NextResponse.json({
       orderId: order.id,
       amount: order.amount,

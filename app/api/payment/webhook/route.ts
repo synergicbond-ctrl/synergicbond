@@ -63,8 +63,11 @@ export async function POST(req: Request) {
   try {
     const paymentEntity = event?.payload?.payment?.entity ?? {};
     const orderEntity = event?.payload?.order?.entity ?? {};
-    const eventId: string =
-      paymentEntity.id || orderEntity.id || event?.id || crypto.randomUUID();
+    const eventId = paymentEntity.id || orderEntity.id || event?.id;
+    if (!eventId) {
+      console.error("razorpay webhook: missing event id");
+      return NextResponse.json({ ok: false }, { status: 400 });
+    }
 
     // Idempotency: skip if we've already processed this event.
     const { data: seen, error: seenError } = await admin

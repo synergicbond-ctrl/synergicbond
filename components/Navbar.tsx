@@ -79,7 +79,9 @@ export default function Navbar() {
   const [openMenu, setOpenMenu] = useState<string | null>(null);
   const [acctOpen, setAcctOpen] = useState(false);
   const [email, setEmail] = useState<string | null>(null);
-  const [isGuest, setIsGuest] = useState(false);
+  const [isGuest, setIsGuest] = useState(
+    () => typeof window !== "undefined" && localStorage.getItem("sb_guest") === "1"
+  );
 
   // Auth state — show the signed-in student in the navbar
   useEffect(() => {
@@ -90,7 +92,6 @@ export default function Navbar() {
     const { data: sub } = supabase.auth.onAuthStateChange((_e, session) => {
       setEmail(session?.user?.email ?? null);
     });
-    if (typeof window !== "undefined") setIsGuest(localStorage.getItem("sb_guest") === "1");
     return () => { mounted = false; sub.subscription.unsubscribe(); };
   }, []);
 

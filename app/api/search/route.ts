@@ -42,7 +42,7 @@ export async function GET(request: Request) {
   const category = url.searchParams.get("category") || "";
 
   if (!query) {
-    return NextResponse.json({ results: [] });
+    return NextResponse.json({ results: [], total: 0 });
   }
 
   let chapters = allChapters;

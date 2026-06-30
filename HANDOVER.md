@@ -1,81 +1,99 @@
 # HANDOVER
 
-## Build status
+## Build Status
 
-PASS. `npm run build` passed after P4.0 Formula Cards.
+PASS.
+- `npx tsc --noEmit --pretty false`: PASS
+- `npm run build`: PASS
+- `npm run lint`: FAIL from pre-existing repository lint debt
 
-## Files changed
+## Files Changed
 
+- app/api/formula-cards/route.ts
+- app/api/knowledge-graph/route.ts
 - app/api/search/route.ts
-- app/search/page.tsx
+- app/formula-cards/page.tsx
+- app/learn/reactions/[slug]/page.tsx
 - app/pyq/page.tsx
-- lib/pyqDatabase.ts
-- lib/pyqEngine.ts
-- lib/masterSyllabus/ncert.ts
-- lib/chemistry/reactions/*
-- lib/chemistry/ncert/*
-- lib/chemistry/formulas/*
-- REACTION_AUDIT.md
-- PYQ_LINK_AUDIT.md
-- NCERT_AUDIT.md
-- GRAPH_AUDIT.md
-- FORMULA_AUDIT.md
-- PHASE_STATUS.md
+- app/search/page.tsx
+- lib/chemistry/formulas/index.ts
+- lib/chemistry/formulas/schema.ts
+- lib/chemistry/formulas/searchIndex.ts
+- lib/chemistry/graph/index.ts
+- lib/chemistry/graph/links.ts
+- lib/chemistry/graph/schema.ts
+- FORMULA_UI_AUDIT.md
+- GRAPH_UI_AUDIT.md
+- GRAPH_VALIDATION_AUDIT.md
+- HARDENING_AUDIT.md
+- PYQ_UI_AUDIT.md
+- SEARCH_AUDIT.md
 - HANDOVER.md
 - ROADMAP.md
 - TECH_DEBT.md
 - OPEN_BUGS.md
 - VERIFICATION_STATUS.md
 
-## Actual counts
+## Actual Counts
 
 - Reactions: 50
-- Reaction categories covered: 7/7
-- PYQs: 34
-- PYQs linked to reactions: 8
-- PYQ-Reaction coverage: 23.53%
-- NCERT linked entities: 324
-- Graph audit edge groups: 3 PASS, 3 PARTIAL, 3 FAIL
 - Formula cards: 200
-- Formula required-area coverage: 7/7
+- Formula chapters: 8
+- PYQs: 34
+- PYQ chapters: 14
+- PYQ chapter difficulty filters: 3, 4
+- NCERT linked entities: 324
+- Graph nodes: 435
+- Graph edges: 605
+- Broken graph links: 0
+- Duplicate graph edges: 0
+- Orphan graph nodes: 0
+- Formula -> PYQ edges: 200
+- Formula -> NCERT edges: 200
+- PYQs linked to reactions: 8
+- PYQs linked to formulas: 20
+- PYQs linked to NCERT: 34
 
-## Actual blockers
+## Actual Blockers
 
 - Revenue live verification requires Razorpay and Supabase credentials.
-- Knowledge graph lacks canonical reagent, exception, and order ID edges.
-- Formula data has no dedicated formula API route.
-- Full lint still fails from pre-existing errors.
-- Git commit for P3.2 was blocked by approval usage limit; phase files remain uncommitted.
+- `npm run lint` fails with 118 pre-existing problems outside current touched files.
+- Reaction-order coverage remains 10%.
+- Exception-PYQ coverage remains 15.09%.
+- Order-PYQ coverage remains 3.72%.
+- User-specific weak areas require authenticated progress/mistake data.
+- No browser-device visual pass was run.
 
-## Exact restart prompt
+## Exact Restart Prompt
 
 ```text
+SYNERGIC BOND - RESUME EXECUTION
 
-SYNERGIC BOND — RESUME EXECUTION
-
-Start by checking git status and npm run build.
+Start by checking:
+- git status --short
+- npx tsc --noEmit --pretty false
+- npm run build
 
 Continue from:
 - HANDOVER.md
-- PHASE_STATUS.md
+- VERIFICATION_STATUS.md
 - OPEN_BUGS.md
 - TECH_DEBT.md
-- VERIFICATION_STATUS.md
+- HARDENING_AUDIT.md
 
 Highest ROI:
-Implement canonical knowledge graph edges:
-Reaction <-> Reagent
-Reaction <-> Exception
-Reaction <-> Order
-Exception <-> PYQ
-Order <-> PYQ
+1. Fix pre-existing lint debt in unrelated files.
+2. Add NCERT detail route for NCERT search results.
+3. Add authenticated weak-area insights from progress/mistake data.
+4. Improve verified Reaction-Order, Exception-PYQ, and Order-PYQ coverage only where source links exist.
+5. Run browser/mobile visual verification for /formula-cards, /pyq, /search, and reaction detail pages.
 
 Rules:
-- Reuse existing schemas
-- No mock data
-- No duplicate schemas
-- No architecture rewrite
-- Build after each logical fix
+- Reuse existing schemas/data.
+- No mock data.
+- No duplicate types.
+- No architecture rewrite.
+- No unverified chemistry links.
+- Build after every logical change.
 - Stop only for external credentials, production verification, unfixable build failure, or repository inconsistency.
-
 ```

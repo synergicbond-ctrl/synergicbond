@@ -1,42 +1,47 @@
 # OPEN BUGS
 
-## Revenue verification blocked
+## Revenue Verification
 
-Status: NOT TESTED end to end.
+Status: NOT TESTED.
 
 Evidence:
 - `app/api/payment/create-order/route.ts` requires Razorpay key/secret.
 - `app/api/payment/webhook/route.ts` requires Razorpay webhook secret and Supabase service role.
-- Live webhook delivery to `/api/payment/webhook` cannot be proven locally.
+- Live webhook delivery cannot be proven without external credentials.
 
-## Graph canonical edges missing
-
-Status: PARTIAL.
-
-Evidence:
-- `GRAPH_AUDIT.md` shows Reaction-Reagent and Reaction-Exception only as text fields.
-- Reaction-Order, Exception-PYQ, and Order-PYQ links are 0.
-
-## Formula API missing
-
-Status: PARTIAL.
-
-Evidence:
-- `lib/chemistry/formulas/*` exposes reusable data/search.
-- No `/api/formulas` route exists.
-
-## Full lint failure
+## Full Lint Failure
 
 Status: FAIL.
 
 Evidence:
-- Last full `npm run lint` reported 128 problems before P3.2-P4.0 work.
-- Build and TypeScript pass.
+- `npm run lint` reports 118 problems.
+- Current touched files are no longer listed in lint errors.
+- `npx tsc --noEmit --pretty false` passes.
+- `npm run build` passes.
 
-## Git commit blocked
+## NCERT Detail Routing
 
 Status: PARTIAL.
 
 Evidence:
-- Local commit attempt after P3.2 was rejected by approval usage limit.
-- Changes remain in the working tree.
+- `/api/search` returns NCERT results.
+- NCERT results currently link to `/search`.
+- No dedicated NCERT reference route exists.
+
+## Low-Coverage Graph Edges
+
+Status: PARTIAL.
+
+Evidence:
+- Reaction -> Order: 6 edges, 10% coverage.
+- Exception -> PYQ: 10 edges, 15.09% coverage.
+- Order -> PYQ: 8 edges, 3.72% coverage.
+- No broken graph IDs, duplicate edges, or orphan graph nodes.
+
+## User-Specific PYQ Weak Areas
+
+Status: PARTIAL.
+
+Evidence:
+- `/pyq` shows source-data weak-area signals.
+- Authenticated progress/mistake history is not connected to `/pyq`.

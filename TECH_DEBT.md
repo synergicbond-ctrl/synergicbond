@@ -1,25 +1,49 @@
 # TECH DEBT
 
-## Knowledge graph edge model
+## Lint Cleanup
 
-Reaction records contain reagent and exception text, but graph-grade links need canonical IDs for reagents, exceptions, and important orders.
+Status: FAIL.
 
-## Formula API/UI integration
+`npm run lint` reports 118 problems in unrelated files. Dominant categories:
+- `@typescript-eslint/no-explicit-any`
+- `react/no-unescaped-entities`
+- `react-hooks/set-state-in-effect`
+- unused imports/variables
+- `<img>` optimization warnings
 
-Formula cards are reusable and searchable in `lib/chemistry/formulas/*`, but no API route or updated vault UI consumes the new 200-card dataset yet.
+## NCERT Result Routing
 
-## Reagent source normalization
+Status: PARTIAL.
 
-Reagent data still lives in `app/reagents/page.tsx`; NCERT mapping mirrors those names in the NCERT layer. A shared reagent module would reduce drift.
+NCERT search results are returned by `/api/search`, but they route to `/search` because no dedicated NCERT detail/reference page exists.
 
-## Search result surface
+## Graph Coverage
 
-Global search now includes reactions, but formula and NCERT search indexes are library-only.
+Status: PARTIAL.
 
-## Lint cleanup
+Current verified graph coverage:
+- Reaction -> Reagent: 100%
+- Reaction -> Exception: 100%
+- Reaction -> Order: 10%
+- Exception -> PYQ: 15.09%
+- Order -> PYQ: 3.72%
+- Formula -> PYQ: 100%
+- Formula -> NCERT: 100%
 
-Pre-existing lint errors remain across API routes and UI pages, mostly `no-explicit-any`, hook effect state, and unescaped entities.
+## User-Specific Insights
 
-## Git hygiene
+Status: PARTIAL.
 
-P3.2-P4.0 changes are uncommitted because commit approval failed after staging P3.2 files.
+PYQ weak-area cards currently use source-data support gaps. Real weak-area personalization requires authenticated progress or mistake records.
+
+## Visual QA
+
+Status: NOT TESTED.
+
+No Playwright/browser-device visual pass was run for mobile overflow, hydration warnings, or card layout inspection.
+
+## Git Hygiene
+
+Status: PARTIAL.
+
+Latest sprint changes are present in the working tree and are not committed.

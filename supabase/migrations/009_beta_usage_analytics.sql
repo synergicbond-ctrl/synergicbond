@@ -38,6 +38,7 @@ create table if not exists public.beta_feedback (
 
 create index if not exists beta_feedback_created_at_idx on public.beta_feedback(created_at desc);
 create index if not exists beta_feedback_user_id_idx on public.beta_feedback(user_id);
+create unique index if not exists beta_feedback_anonymous_id_key on public.beta_feedback(anonymous_id);
 
 alter table public.beta_feedback enable row level security;
 

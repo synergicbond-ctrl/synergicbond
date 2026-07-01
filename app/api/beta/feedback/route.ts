@@ -32,6 +32,9 @@ export async function POST(req: Request) {
     });
 
     if (error) {
+      if (error.code === "23505") {
+        return NextResponse.json({ success: true, duplicate: true });
+      }
       console.error("beta feedback insert error:", error);
       return NextResponse.json({ error: "Could not save feedback." }, { status: 500 });
     }

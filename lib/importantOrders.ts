@@ -1,7 +1,6 @@
 // ---------------------------------------------------------------------------
-// Important Orders — document-verified ordering sequences extracted from the
-// uploaded PDFs ONLY. No content here is invented, summarised, or rewritten;
-// every entry traces back to a source PDF (see `sourcePdf`).
+// Important Orders — verified ordering sequences. Uploaded-PDF entries trace
+// back to source PDFs; NCERT entries trace to direct NCERT chapter facts.
 //
 // Categories: IOC = Inorganic, OC = Organic, PC = Physical chemistry.
 // Per the content-governance decision, ALL uploaded content is inorganic, so
@@ -37,6 +36,7 @@ export const CATEGORY_META: Record<OrderCategory, { label: string; full: string;
 const PF = "Periodic Table facts.pdf";
 const IMP = "Increase and Decrease_Akal se Nakal se_Final.pdf";
 const BND = "imp orders.pdf";
+const NCERT = "NCERT direct facts";
 
 let _seq = 0;
 const nid = () => `io-${String(++_seq).padStart(3, "0")}`;
@@ -302,7 +302,29 @@ const BND_ORDERS: ImportantOrder[] = [
   ]),
 ];
 
-export const IMPORTANT_ORDERS: ImportantOrder[] = [...PF_ORDERS, ...IMP_ORDERS, ...BND_ORDERS];
+const NCERT_ORDERS: ImportantOrder[] = [
+  ...rows("OC", NCERT, "Organic Acidity and Basicity", [
+    { property: "Acidity", order: "Carboxylic acid > Phenol > Alcohol", note: "Carboxylate is more resonance stabilised than phenoxide; alkoxide has no resonance stabilisation.", reference: "Class 12: Alcohols, Phenols and Ethers; Aldehydes, Ketones and Carboxylic Acids" },
+    { property: "Basicity in aqueous medium", order: "Secondary amine > Primary amine > Tertiary amine > Ammonia", note: "In water, inductive effect and solvation together determine aliphatic amine basicity.", reference: "Class 12: Amines" },
+    { property: "Aromatic amine basicity", order: "Aliphatic amine > Ammonia > Aniline", note: "Aniline lone pair is delocalised into the benzene ring.", reference: "Class 12: Amines" },
+    { property: "Leaving group ability", order: "I^- > Br^- > Cl^- > F^-", note: "Weaker bases and larger polarisable halides leave more readily.", reference: "Class 12: Haloalkanes and Haloarenes" },
+    { property: "SN1 reactivity of alkyl halides", order: "3° > 2° > 1° > methyl", note: "Follows carbocation stability.", reference: "Class 12: Haloalkanes and Haloarenes" },
+    { property: "SN2 reactivity of alkyl halides", order: "methyl > 1° > 2° > 3°", note: "Follows decreasing steric accessibility for backside attack.", reference: "Class 12: Haloalkanes and Haloarenes" },
+    { property: "Alcohol dehydration ease", order: "3° > 2° > 1°", note: "Acid-catalysed dehydration follows carbocation stability where E1 pathway is involved.", reference: "Class 12: Alcohols, Phenols and Ethers" },
+    { property: "Carbonyl electrophilicity", order: "Aldehyde > Ketone", note: "Aldehydes have less steric hindrance and weaker electron donation than ketones.", reference: "Class 12: Aldehydes, Ketones and Carboxylic Acids" },
+  ]),
+  ...rows("PC", NCERT, "Physical Chemistry Orders", [
+    { property: "First-order completion time", order: "50% < 75% < 87.5% < 93.75%", note: "Each additional half-life halves the remaining reactant.", reference: "Class 12: Chemical Kinetics" },
+    { property: "Colligative effect magnitude at same molality", order: "Osmotic pressure > Boiling elevation / Freezing depression sensitivity for molar mass determination", note: "Osmotic pressure is measurable even for very dilute solutions.", reference: "Class 12: Solutions" },
+    { property: "van't Hoff factor", order: "Association: i < 1 ; no association/dissociation: i = 1 ; dissociation: i > 1", note: "Particle count controls abnormal colligative properties.", reference: "Class 12: Solutions" },
+    { property: "Molar conductivity on dilution", order: "Lambda_m(dilute) > Lambda_m(concentrated)", note: "Dilution lowers interionic interactions and increases ionic mobility per mole electrolyte.", reference: "Class 12: Electrochemistry" },
+    { property: "Conductivity on dilution for electrolytes", order: "kappa(concentrated) > kappa(dilute)", note: "Number of ions per unit volume decreases on dilution.", reference: "Class 12: Electrochemistry" },
+    { property: "Spontaneity by Gibbs energy", order: "Delta G < 0 spontaneous; Delta G = 0 equilibrium; Delta G > 0 non-spontaneous", note: "At constant temperature and pressure, Gibbs energy decides spontaneity.", reference: "Class 11: Thermodynamics" },
+    { property: "Gas speed at same temperature", order: "u_mp < u_avg < u_rms", note: "Maxwell speed distribution gives most probable, average, and rms speeds in increasing order.", reference: "Class 11: States of Matter" },
+  ]),
+];
+
+export const IMPORTANT_ORDERS: ImportantOrder[] = [...PF_ORDERS, ...IMP_ORDERS, ...BND_ORDERS, ...NCERT_ORDERS];
 
 /** Distinct source PDFs that contributed verified content (for filtering). */
 export const SOURCE_PDFS: string[] = Array.from(new Set(IMPORTANT_ORDERS.map((o) => o.sourcePdf)));

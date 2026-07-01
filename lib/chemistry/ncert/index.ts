@@ -10,6 +10,8 @@ export {
   reagentNCERTLinks,
 } from "./data";
 export { ncertSearchIndex, searchNCERTLinks } from "./searchIndex";
+export { ncertHighlights } from "./highlights";
+export type { NCERTHighlight } from "./highlights";
 export type { NCERTCoverageAudit, NCERTEntityLink, NCERTEntityType, NCERTSearchEntry } from "./schema";
 
 export function getNCERTLinksForEntity(entityType: NCERTEntityType, entityId: string): NCERTEntityLink[] {

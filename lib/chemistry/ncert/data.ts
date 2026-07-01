@@ -65,6 +65,33 @@ const exceptionReferences: Record<string, NCERTReference> = {
   "ex-ice-density": { class: 11, chapter: "Hydrogen", topic: "Structure of water and ice" },
 };
 
+function exceptionReference(exceptionId: string, topic: string): NCERTReference {
+  const explicit = exceptionReferences[exceptionId];
+  if (explicit) return explicit;
+
+  if (/lithium|beryllium|alkali|alkaline/i.test(topic)) {
+    return { class: 11, chapter: "The s-Block Elements", topic };
+  }
+
+  if (/boron|carbon|nitrogen|oxygen|fluorine|chlorine|xenon|noble|inert pair|oxide|hydride/i.test(topic)) {
+    return { class: 12, chapter: "The p-Block Elements", topic };
+  }
+
+  if (/chromium|copper|zinc|manganese|lanthanide|zirconium|hafnium/i.test(topic)) {
+    return { class: 12, chapter: "The d- and f-Block Elements", topic };
+  }
+
+  if (/phenol|aniline|aldehyde|ketone|acid|amide|ester|iodoform|cannizzaro|aldol/i.test(topic)) {
+    return { class: 12, chapter: "Aldehydes, Ketones and Carboxylic Acids", topic };
+  }
+
+  if (/halide|grignard|peroxide|alkene|alkyne|toluene|carbocation/i.test(topic)) {
+    return { class: 12, chapter: "Haloalkanes and Haloarenes", topic };
+  }
+
+  return { class: 11, chapter: "Organic Chemistry - Some Basic Principles and Techniques", topic };
+}
+
 function orderReference(sourcePdf: string, group: string, property: string): NCERTReference {
   if (sourcePdf === "imp orders.pdf") {
     return { class: 11, chapter: "Chemical Bonding and Molecular Structure", topic: `${group}: ${property}` };
@@ -109,7 +136,7 @@ export const exceptionNCERTLinks: NCERTEntityLink[] = exceptionsList.map((except
   entityType: "exception",
   entityId: exception.id,
   label: exception.topic,
-  ncertReference: exceptionReferences[exception.id],
+  ncertReference: exceptionReference(exception.id, exception.topic),
   source: "lib/masterSyllabus/exceptions.ts",
 }));
 

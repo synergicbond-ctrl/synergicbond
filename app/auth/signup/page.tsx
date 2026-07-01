@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { supabase } from "@/lib/supabase";
 import Link from "next/link";
+import { trackBetaEvent } from "@/lib/betaAnalyticsClient";
 
 export default function SignUp() {
   const [email, setEmail] = useState("");
@@ -39,7 +40,10 @@ export default function SignUp() {
         if (profileError) throw profileError;
       }
 
-      router.push("/dashboard");
+      trackBetaEvent("signup", { method: "email" }, "/auth/signup");
+      window.setTimeout(() => {
+        router.push("/dashboard");
+      }, 50);
     } catch (err: unknown) {
       setError(err instanceof Error ? err.message : "An error occurred during sign up.");
     } finally {

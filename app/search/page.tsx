@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { trackBetaEvent } from "@/lib/betaAnalyticsClient";
 
 interface SearchResults {
   results: {
@@ -37,6 +38,10 @@ export default function GlobalSearchPage() {
       }
       const data = await res.json();
       setResults(data);
+      trackBetaEvent("search", {
+        queryLength: query.trim().length,
+        total: typeof data?.total === "number" ? data.total : 0,
+      }, "/search");
     } catch {
       setError("Could not retrieve search results. Please try another term.");
     } finally {

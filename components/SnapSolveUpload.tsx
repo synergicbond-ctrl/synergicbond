@@ -3,6 +3,7 @@
 import { useState, useRef } from "react";
 import Image from "next/image";
 import { track } from "@vercel/analytics";
+import { trackBetaEvent } from "@/lib/betaAnalyticsClient";
 import { Camera, Type, Zap, AlertTriangle, Lock } from "lucide-react";
 import type { SnapSolveResponse } from "@/lib/snapSolveTypes";
 
@@ -64,6 +65,10 @@ export default function SnapSolveUpload({ onUploadSuccess }: Props) {
     setReasoning([]);
     setSteps([]);
     try {
+      trackBetaEvent("snap_solve_start", {
+        mode: payload.imageBase64 ? "image" : "text",
+        language,
+      }, "/snap-solve");
       const res = await fetch("/api/snap-solve", {
         method: "POST",
         headers: { "Content-Type": "application/json", Accept: "text/event-stream" },
@@ -84,7 +89,10 @@ export default function SnapSolveUpload({ onUploadSuccess }: Props) {
           setPaywall(true);
           track("paywall_hit", { feature: "snap-solve" });
         } else if (data?.error) setError(data.error);
-        else if (data) onUploadSuccess(data as SnapSolveResponse);
+        else if (data) {
+          trackBetaEvent("snap_solve_completed", { mode: payload.imageBase64 ? "image" : "text" }, "/snap-solve");
+          onUploadSuccess(data as SnapSolveResponse);
+        }
         else setError("Unexpected response from the solver. Please try again.");
         return;
       }
@@ -114,6 +122,7 @@ export default function SnapSolveUpload({ onUploadSuccess }: Props) {
             } else if (event === "step") {
               setSteps((prev) => [...prev, parsed as StreamStep]);
             } else if (event === "final") {
+              trackBetaEvent("snap_solve_completed", { mode: payload.imageBase64 ? "image" : "text" }, "/snap-solve");
               onUploadSuccess(parsed as SnapSolveResponse);
             }
             // `partial_result` / `interrupt` are streamed too but the page's

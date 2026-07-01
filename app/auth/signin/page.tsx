@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useSearchParams } from "next/navigation";
 import Link from "next/link";
 import { supabase } from "@/lib/supabase";
+import { trackBetaEvent } from "@/lib/betaAnalyticsClient";
 
 // Only allow same-origin relative redirects to prevent open-redirect attacks.
 function safeNext(raw: string | null): string {
@@ -32,7 +33,10 @@ export default function SignInPage() {
         return;
       }
 
-      window.location.href = next;
+      trackBetaEvent("login", { method: "password" }, "/auth/signin");
+      window.setTimeout(() => {
+        window.location.href = next;
+      }, 50);
     } catch (err) {
       console.error(err);
       setError("Unexpected error");
@@ -42,6 +46,7 @@ export default function SignInPage() {
   }
 
   async function handleGoogleSignIn() {
+    trackBetaEvent("login", { method: "google" }, "/auth/signin");
     await supabase.auth.signInWithOAuth({
       provider: "google",
       options: {

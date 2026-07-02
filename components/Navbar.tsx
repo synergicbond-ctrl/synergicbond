@@ -8,92 +8,127 @@ import { useT, LANGS, type Lang } from "@/lib/i18n";
 import { supabase } from "@/lib/supabase";
 import type { Session } from "@supabase/supabase-js";
 import {
-  Camera, BarChart2, Medal, Gem, Menu, X,
+  Camera, Gem, Medal, Menu, X,
   Globe, ChevronDown, Info, Search, GitBranch, Palette,
   LayoutDashboard, LogOut, UserCircle, Table2, ListOrdered,
-  // WEEK 10–11 nav groups (Study & Track / Programs)
   BookOpen, Target, ClipboardList, Activity, Bot,
   GraduationCap, Microscope, Trophy,
+  // WEEK 13 final navbar (Roadmap Phase 9)
+  Home, Sigma, FlaskConical, FileText, Calendar, History, Heart,
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 
-// ALLEN-style category mega-menus (label + grouped links with descriptions)
+// Mega-menu building blocks (label + grouped links with descriptions)
 type MenuItem = { href: string; label: string; desc: string; icon: LucideIcon };
-type Menu = { title: string; items: MenuItem[]; wide?: boolean };
+type MenuGroup = { title: string; items: MenuItem[] };
+type MegaMenu = {
+  title: string;
+  groups: MenuGroup[];
+  /** Optional flagship pinned at the top of the panel. */
+  pinned?: MenuItem;
+  /** Optional honest footnote (e.g. coming-soon programs). */
+  note?: string;
+  /** Panel width + column count. */
+  wide?: boolean;
+};
 
-// LEARN is special: a pinned Periodic Table + grouped sections (the "knowledge engine")
-const learnPinned = { href: "/periodic-table", label: "Periodic Table", desc: "Interactive · trends · element data — the brain of chemistry", icon: Table2 };
-// PHASE 1: trimmed to the verified-reference KEEP set (non-core routes hidden from nav).
-const learnGroups: { title: string; items: MenuItem[] }[] = [
+// ─────────────────────────────────────────────────────────────────────────────
+// WEEK 13 — Final public navbar (Roadmap Phase 9):
+//   Home · Programs · Features · Pricing · Support
+// Snap & Solve stays a top-level link (Phase 7 rule: permanent flagship).
+// Every href is a real, existing route; International programs are honestly
+// marked coming-soon (Phase 2) rather than linked to nothing.
+// ─────────────────────────────────────────────────────────────────────────────
+
+const featuresPinned: MenuItem = { href: "/periodic-table", label: "Periodic Table", desc: "Interactive · trends · element data — the brain of chemistry", icon: Table2 };
+
+const MEGA_MENUS: MegaMenu[] = [
   {
-    title: "⚗️ Reactions",
-    items: [
-      { href: "/name-reactions", label: "Named Reactions", desc: "700+ with AI mechanisms", icon: GitBranch },
+    title: "Programs",
+    groups: [
+      {
+        title: "🇮🇳 National",
+        items: [
+          { href: "/jee",      label: "JEE Chemistry",      desc: "Main & Advanced track",  icon: GraduationCap },
+          { href: "/neet",     label: "NEET Chemistry",     desc: "Medical entrance track", icon: Microscope },
+          { href: "/olympiad", label: "Olympiad Chemistry", desc: "NSEC · INChO · IChO",    icon: Trophy },
+        ],
+      },
     ],
+    note: "🌍 International programs (AP · IB · A-Level · MCAT) — coming soon",
   },
   {
-    title: "🧪 Periodic Chemistry",
-    items: [
-      { href: "/periodic-table",  label: "Periodic Table",  desc: "Interactive · element data", icon: Table2 },
-      { href: "/periodic-trends", label: "Trends Explorer", desc: "Radius · IE · ΔₑgH · EN",    icon: BarChart2 },
-      { href: "/salt-colors",     label: "Colour Explorer", desc: "Compound & ion colours",     icon: Palette },
-    ],
-  },
-  {
-    title: "🎯 Exam Hub",
-    items: [
-      { href: "/important-orders", label: "Important Orders", desc: "Ranking sequences (IOC)", icon: ListOrdered },
-    ],
-  },
-  // WEEK 10–11: study/track/AI core routes surfaced in nav (additive — no redesign).
-  {
-    title: "📚 Study & Track",
-    items: [
-      { href: "/notes",       label: "Chapter Notes",  desc: "Verified exam notes",              icon: BookOpen },
-      { href: "/pyq",         label: "PYQ Intelligence", desc: "Real previous-year analytics",   icon: Target },
-      { href: "/tests",       label: "Practice Tests", desc: "Chapter · topic · papers",         icon: ClipboardList },
-      { href: "/performance", label: "Performance",    desc: "Readiness · weak topics · progress", icon: Activity },
-      { href: "/ai-lab",      label: "AI Lab",         desc: "Snap & Solve · tutor · planner",   icon: Bot },
-    ],
-  },
-  {
-    title: "🎓 Programs",
-    items: [
-      { href: "/jee",      label: "JEE",      desc: "Main & Advanced track",  icon: GraduationCap },
-      { href: "/neet",     label: "NEET",     desc: "Medical entrance track", icon: Microscope },
-      { href: "/olympiad", label: "Olympiad", desc: "NSEC · IChO pathway",    icon: Trophy },
+    title: "Features",
+    wide: true,
+    pinned: featuresPinned,
+    groups: [
+      {
+        title: "📖 Learn Ecosystem",
+        items: [
+          { href: "/notes",            label: "Chapter Notes",    desc: "Verified exam notes",        icon: BookOpen },
+          { href: "/formula-cards",    label: "Formula Cards",    desc: "Verified formula library",   icon: Sigma },
+          { href: "/reagents",         label: "Reagents",         desc: "Reagent master list",        icon: FlaskConical },
+          { href: "/important-orders", label: "Important Orders", desc: "Ranking sequences (IOC)",    icon: ListOrdered },
+          { href: "/salt-colors",      label: "Colours",          desc: "Compound & ion colours",     icon: Palette },
+          { href: "/name-reactions",   label: "Mechanisms",       desc: "700+ named reactions",       icon: GitBranch },
+        ],
+      },
+      {
+        title: "🎯 Practice Ecosystem",
+        items: [
+          { href: "/pyq",   label: "PYQ Center",     desc: "Previous-year intelligence", icon: Target },
+          { href: "/tests", label: "Practice Tests", desc: "Chapter · topic · papers",   icon: ClipboardList },
+        ],
+      },
+      {
+        title: "🤖 AI Ecosystem",
+        items: [
+          { href: "/snap-solve",   label: "Snap & Solve",  desc: "Photo → verified solution", icon: Camera },
+          { href: "/tutor",        label: "AI Tutor",      desc: "Step-by-step explanations", icon: Bot },
+          { href: "/ai-lab/notes", label: "AI Notes",      desc: "Generate exam-focused notes", icon: FileText },
+          { href: "/ai-lab",       label: "Study Planner", desc: "Week-by-week syllabus plan", icon: Calendar },
+        ],
+      },
+      {
+        title: "📊 Performance Ecosystem",
+        items: [
+          { href: "/dashboard",   label: "Mission Control", desc: "Your study command centre",  icon: LayoutDashboard },
+          { href: "/performance", label: "Analytics",       desc: "Readiness · weak topics",    icon: Activity },
+          { href: "/revision",    label: "Revision Queue",  desc: "What to revise next",        icon: History },
+        ],
+      },
     ],
   },
 ];
 
-// PHASE 1: Practice/Track/AI mega-menus hidden. Snap & Solve is now a top-level
-// link (rendered directly below); only "More" survives, holding About + Pricing.
-const menus: Menu[] = [
-  {
-    title: "More",
-    items: [
-      { href: "/about",   label: "About & Mission", desc: "Why SYNERGIC BOND exists", icon: Info },
-      { href: "/pricing", label: "Pricing",         desc: "Free core + PRO plans",    icon: Gem },
-    ],
-  },
+// Plain top-level links after the mega-menus (final navbar tail).
+const NAV_LINKS: { href: string; label: string; icon: LucideIcon }[] = [
+  { href: "/pricing", label: "Pricing", icon: Gem },
+  { href: "/support", label: "Support", icon: Heart },
 ];
 
-// PHASE 1: mobile catalog trimmed to the KEEP set. Uses explicit labels (no i18n
-// key dependency) so hidden-route translation keys can't leak as raw strings.
+// Mobile drawer — final IA flattened (Home · flagship · Programs · Features ·
+// Pricing · Support). Explicit labels (no i18n key dependency).
 const mainLinks: { href: string; label: string; icon: LucideIcon }[] = [
+  { href: "/",                 label: "Home",             icon: Home },
   { href: "/snap-solve",       label: "Snap & Solve",     icon: Camera },
-  // WEEK 10–11: study/track/AI core routes (additive)
-  { href: "/notes",            label: "Chapter Notes",    icon: BookOpen },
-  { href: "/pyq",              label: "PYQ Intelligence", icon: Target },
-  { href: "/tests",            label: "Practice Tests",   icon: ClipboardList },
-  { href: "/performance",      label: "Performance",      icon: Activity },
-  { href: "/ai-lab",           label: "AI Lab",           icon: Bot },
-  { href: "/name-reactions",   label: "Named Reactions",  icon: GitBranch },
+  { href: "/jee",              label: "JEE Chemistry",    icon: GraduationCap },
+  { href: "/neet",             label: "NEET Chemistry",   icon: Microscope },
+  { href: "/olympiad",         label: "Olympiad",         icon: Trophy },
   { href: "/periodic-table",   label: "Periodic Table",   icon: Table2 },
-  { href: "/periodic-trends",  label: "Trends Explorer",  icon: BarChart2 },
-  { href: "/salt-colors",      label: "Colour Explorer",  icon: Palette },
+  { href: "/notes",            label: "Chapter Notes",    icon: BookOpen },
+  { href: "/formula-cards",    label: "Formula Cards",    icon: Sigma },
+  { href: "/reagents",         label: "Reagents",         icon: FlaskConical },
   { href: "/important-orders", label: "Important Orders", icon: ListOrdered },
+  { href: "/salt-colors",      label: "Colours",          icon: Palette },
+  { href: "/name-reactions",   label: "Mechanisms",       icon: GitBranch },
+  { href: "/pyq",              label: "PYQ Center",       icon: Target },
+  { href: "/tests",            label: "Practice Tests",   icon: ClipboardList },
+  { href: "/ai-lab",           label: "AI Lab",           icon: Bot },
+  { href: "/dashboard",        label: "Mission Control",  icon: LayoutDashboard },
+  { href: "/performance",      label: "Analytics",        icon: Activity },
   { href: "/pricing",          label: "Pricing",          icon: Gem },
+  { href: "/support",          label: "Support",          icon: Heart },
   { href: "/about",            label: "About",            icon: Info },
 ];
 
@@ -154,62 +189,84 @@ export default function Navbar() {
           </div>
         </Link>
 
-        {/* Desktop Nav — ALLEN-style category mega-menus */}
+        {/* Desktop Nav — WEEK 13 final IA: Home · Programs · Features · Pricing · Support */}
         <nav className="hidden lg:flex items-center justify-center flex-1 gap-1">
-          {/* Search quick-link */}
-          <Link href="/search" className="flex items-center gap-1.5 px-3 py-2 rounded-lg text-sm font-medium text-gray-300 hover:text-white hover:bg-white/[0.05] transition">
-            <Search className="h-4 w-4" /> {t("nav.search")}
+          {/* Home */}
+          <Link
+            href="/"
+            className={`flex items-center gap-1.5 px-3 py-2 rounded-lg text-sm font-medium transition ${
+              pathname === "/" ? "text-white bg-white/[0.06]" : "text-gray-300 hover:text-white hover:bg-white/[0.05]"
+            }`}
+          >
+            <Home className="h-4 w-4" /> Home
           </Link>
 
-          {/* LEARN — grouped knowledge engine with pinned Periodic Table */}
-          <div className="relative" onMouseEnter={() => setOpenMenu("Learn")} onMouseLeave={() => setOpenMenu(null)}>
-            <button className={`flex items-center gap-1 px-3 py-2 rounded-lg text-sm font-medium transition ${openMenu === "Learn" || ["/vault","/periodic-table","/periodic-trends","/important-orders","/molecule","/notes","/reagents","/redox-reactions","/solubility","/properties","/salt-colors","/library","/study-tools","/name-reactions","/pyq","/tests","/performance","/ai-lab","/jee","/neet","/olympiad"].includes(pathname) ? "text-white bg-white/[0.06]" : "text-gray-300 hover:text-white hover:bg-white/[0.05]"}`}>
-              Learn <ChevronDown className={`h-3.5 w-3.5 transition-transform ${openMenu === "Learn" ? "rotate-180" : ""}`} />
-            </button>
-            {openMenu === "Learn" && (
-              <div className="absolute left-1/2 -translate-x-1/2 top-full pt-2 z-50">
-                <div className="w-[620px] rounded-2xl border border-white/[0.08] bg-[#111827]/98 backdrop-blur-xl shadow-2xl shadow-black/50 p-3">
-                  {/* Pinned Periodic Table */}
-                  <Link href={learnPinned.href} onClick={() => setOpenMenu(null)} className="group flex items-center gap-3 rounded-xl p-3 mb-2 border border-cyan-400/25 bg-gradient-to-r from-cyan-500/15 to-purple-500/10 hover:from-cyan-500/20 transition">
-                    <span className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-xl bg-cyan-500/20 border border-cyan-400/30">
-                      <Table2 className="h-5 w-5 text-cyan-300" />
-                    </span>
-                    <span className="flex-1 min-w-0">
-                      <span className="flex items-center gap-2 text-sm font-black text-white">{learnPinned.label}<span className="text-[8px] font-bold tracking-wider text-cyan-300 bg-cyan-500/15 px-1.5 py-0.5 rounded-full">PINNED</span></span>
-                      <span className="block text-xs text-white/55">{learnPinned.desc}</span>
-                    </span>
-                    {/* mini grid motif */}
-                    <span className="hidden sm:grid grid-cols-6 gap-[2px] flex-shrink-0">
-                      {Array.from({ length: 18 }).map((_, i) => <span key={i} className="h-1.5 w-1.5 rounded-[1px]" style={{ background: `hsl(${185 + (i / 18) * 120},70%,55%)`, opacity: 0.7 }} />)}
-                    </span>
-                  </Link>
-                  {/* Grouped sections */}
-                  <div className="grid grid-cols-2 gap-x-3">
-                    {learnGroups.map((g) => (
-                      <div key={g.title} className="py-1">
-                        <p className="text-[10px] font-bold uppercase tracking-wider text-white/35 px-2 mt-1 mb-0.5">{g.title}</p>
-                        {g.items.map((it) => {
-                          const Icon = it.icon;
-                          const active = pathname === it.href;
-                          return (
-                            <Link key={it.label} href={it.href} onClick={() => setOpenMenu(null)} className={`flex items-center gap-2.5 px-2 py-1.5 rounded-lg transition ${active ? "bg-cyan-500/10" : "hover:bg-white/[0.05]"}`}>
-                              <Icon className={`h-4 w-4 flex-shrink-0 ${active ? "text-cyan-400" : "text-gray-400"}`} />
-                              <span className="min-w-0">
-                                <span className={`block text-[13px] font-semibold leading-tight ${active ? "text-cyan-300" : "text-white"}`}>{it.label}</span>
-                                <span className="block text-[10px] text-gray-500 leading-tight">{it.desc}</span>
-                              </span>
-                            </Link>
-                          );
-                        })}
+          {/* Programs + Features mega-menus (shared panel machinery) */}
+          {MEGA_MENUS.map((menu) => {
+            const open = openMenu === menu.title;
+            const allItems = menu.groups.flatMap((g) => g.items);
+            const hasActive = allItems.some((it) => it.href === pathname) || menu.pinned?.href === pathname;
+            return (
+              <div key={menu.title} className="relative" onMouseEnter={() => setOpenMenu(menu.title)} onMouseLeave={() => setOpenMenu(null)}>
+                <button
+                  className={`flex items-center gap-1 px-3 py-2 rounded-lg text-sm font-medium transition ${
+                    open || hasActive ? "text-white bg-white/[0.06]" : "text-gray-300 hover:text-white hover:bg-white/[0.05]"
+                  }`}
+                >
+                  {menu.title} <ChevronDown className={`h-3.5 w-3.5 transition-transform ${open ? "rotate-180" : ""}`} />
+                </button>
+                {open && (
+                  <div className="absolute left-1/2 -translate-x-1/2 top-full pt-2 z-50">
+                    <div className={`${menu.wide ? "w-[620px]" : "w-[340px]"} rounded-2xl border border-white/[0.08] bg-[#111827]/98 backdrop-blur-xl shadow-2xl shadow-black/50 p-3`}>
+                      {/* Pinned flagship (Periodic Table in Features) */}
+                      {menu.pinned && (
+                        <Link href={menu.pinned.href} onClick={() => setOpenMenu(null)} className="group flex items-center gap-3 rounded-xl p-3 mb-2 border border-cyan-400/25 bg-gradient-to-r from-cyan-500/15 to-purple-500/10 hover:from-cyan-500/20 transition">
+                          <span className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-xl bg-cyan-500/20 border border-cyan-400/30">
+                            <Table2 className="h-5 w-5 text-cyan-300" />
+                          </span>
+                          <span className="flex-1 min-w-0">
+                            <span className="flex items-center gap-2 text-sm font-black text-white">{menu.pinned.label}<span className="text-[8px] font-bold tracking-wider text-cyan-300 bg-cyan-500/15 px-1.5 py-0.5 rounded-full">PINNED</span></span>
+                            <span className="block text-xs text-white/55">{menu.pinned.desc}</span>
+                          </span>
+                          {/* mini grid motif */}
+                          <span className="hidden sm:grid grid-cols-6 gap-[2px] flex-shrink-0">
+                            {Array.from({ length: 18 }).map((_, i) => <span key={i} className="h-1.5 w-1.5 rounded-[1px]" style={{ background: `hsl(${185 + (i / 18) * 120},70%,55%)`, opacity: 0.7 }} />)}
+                          </span>
+                        </Link>
+                      )}
+                      {/* Grouped sections */}
+                      <div className={menu.wide ? "grid grid-cols-2 gap-x-3" : ""}>
+                        {menu.groups.map((g) => (
+                          <div key={g.title} className="py-1">
+                            <p className="text-[10px] font-bold uppercase tracking-wider text-white/35 px-2 mt-1 mb-0.5">{g.title}</p>
+                            {g.items.map((it) => {
+                              const Icon = it.icon;
+                              const active = pathname === it.href;
+                              return (
+                                <Link key={it.label} href={it.href} onClick={() => setOpenMenu(null)} className={`flex items-center gap-2.5 px-2 py-1.5 rounded-lg transition ${active ? "bg-cyan-500/10" : "hover:bg-white/[0.05]"}`}>
+                                  <Icon className={`h-4 w-4 flex-shrink-0 ${active ? "text-cyan-400" : "text-gray-400"}`} />
+                                  <span className="min-w-0">
+                                    <span className={`block text-[13px] font-semibold leading-tight ${active ? "text-cyan-300" : "text-white"}`}>{it.label}</span>
+                                    <span className="block text-[10px] text-gray-500 leading-tight">{it.desc}</span>
+                                  </span>
+                                </Link>
+                              );
+                            })}
+                          </div>
+                        ))}
                       </div>
-                    ))}
+                      {/* Honest coming-soon footnote (International programs) */}
+                      {menu.note && (
+                        <p className="mt-2 border-t border-white/[0.06] px-2 pt-2 text-[11px] text-white/40">{menu.note}</p>
+                      )}
+                    </div>
                   </div>
-                </div>
+                )}
               </div>
-            )}
-          </div>
+            );
+          })}
 
-          {/* Snap & Solve — promoted to a top-level link (the hero product) */}
+          {/* Snap & Solve — permanent flagship, stays top-level (Phase 7 rule) */}
           <Link
             href="/snap-solve"
             className={`flex items-center gap-1.5 px-3 py-2 rounded-lg text-sm font-semibold transition ${
@@ -221,66 +278,28 @@ export default function Navbar() {
             <Camera className="h-4 w-4" /> Snap &amp; Solve
           </Link>
 
-          {menus.map((menu) => {
-            const open = openMenu === menu.title;
-            const hasActive = menu.items.some((it) => it.href === pathname);
-            const isNew = menu.title === "Exam Tracks";
-            return (
-              <div key={menu.title} className="flex items-center">
-              {/* zone separator before the utility/More zone */}
-              {menu.title === "More" && (
-                <span className="mx-1.5 h-5 w-px bg-white/10" />
-              )}
-              <div
-                className="relative"
-                onMouseEnter={() => setOpenMenu(menu.title)}
-                onMouseLeave={() => setOpenMenu(null)}
-              >
-                <button
-                  className={`relative flex items-center gap-1 px-3 py-2 rounded-lg text-sm transition-all duration-200 ${
-                    hasActive
-                      ? "text-white font-bold bg-white/[0.08] -translate-y-px shadow-[0_4px_14px_rgba(0,0,0,0.4)]"
-                      : open ? "text-white font-medium bg-white/[0.06]" : "text-gray-300 font-medium hover:text-white hover:bg-white/[0.05]"
-                  }`}
-                >
-                  {menu.title}
-                  {isNew && <span className="text-[8px] font-black tracking-wider text-cyan-300 bg-cyan-500/15 border border-cyan-400/30 px-1.5 py-0.5 rounded-full">NEW</span>}
-                  <ChevronDown className={`h-3.5 w-3.5 transition-transform ${open ? "rotate-180" : ""}`} />
-                  {hasActive && <span className="absolute -bottom-0.5 left-1/2 -translate-x-1/2 h-0.5 w-2/3 rounded-full bg-cyan-400 shadow-[0_0_8px_rgba(34,211,238,0.8)]" />}
-                </button>
+          <span className="mx-1.5 h-5 w-px bg-white/10" />
 
-                {open && (
-                  <div className="absolute left-1/2 -translate-x-1/2 top-full pt-2 z-50">
-                    <div className={`rounded-2xl border border-white/[0.08] bg-[#111827]/98 backdrop-blur-xl shadow-2xl shadow-black/50 p-2 ${menu.wide ? "w-[640px] grid grid-cols-2 gap-0.5" : "w-[340px]"}`}>
-                      {menu.items.map((it) => {
-                        const Icon = it.icon;
-                        const active = pathname === it.href;
-                        return (
-                          <Link
-                            key={it.href}
-                            href={it.href}
-                            onClick={() => setOpenMenu(null)}
-                            className={`flex items-start gap-3 px-3 py-2.5 rounded-xl transition ${
-                              active ? "bg-cyan-500/10" : "hover:bg-white/[0.05]"
-                            }`}
-                          >
-                            <span className={`flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-lg border ${active ? "border-cyan-400/30 bg-cyan-500/10" : "border-white/[0.06] bg-white/[0.03]"}`}>
-                              <Icon className={`h-4 w-4 ${active ? "text-cyan-400" : "text-gray-400"}`} />
-                            </span>
-                            <span className="min-w-0">
-                              <span className={`block text-sm font-semibold ${active ? "text-cyan-300" : "text-white"}`}>{it.label}</span>
-                              <span className="block text-xs text-gray-400 leading-snug">{it.desc}</span>
-                            </span>
-                          </Link>
-                        );
-                      })}
-                    </div>
-                  </div>
-                )}
-              </div>
-              </div>
+          {/* Pricing · Support */}
+          {NAV_LINKS.map((l) => {
+            const Icon = l.icon;
+            return (
+              <Link
+                key={l.href}
+                href={l.href}
+                className={`flex items-center gap-1.5 px-3 py-2 rounded-lg text-sm font-medium transition ${
+                  pathname === l.href ? "text-white bg-white/[0.06]" : "text-gray-300 hover:text-white hover:bg-white/[0.05]"
+                }`}
+              >
+                <Icon className="h-4 w-4" /> {l.label}
+              </Link>
             );
           })}
+
+          {/* Search quick-link (utility) */}
+          <Link href="/search" className="flex items-center gap-1.5 px-3 py-2 rounded-lg text-sm font-medium text-gray-300 hover:text-white hover:bg-white/[0.05] transition">
+            <Search className="h-4 w-4" /> {t("nav.search")}
+          </Link>
         </nav>
 
         {/* Right Utilities */}

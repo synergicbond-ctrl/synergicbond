@@ -1,5 +1,26 @@
 # ROADMAP
 
+## Master Roadmap V1 — Phase Status (July 2026)
+
+| Phase | Status |
+|---|---|
+| 0 — Positioning | 🟡 |
+| 1 — Foundation | 🟢 |
+| 2 — Exam Programs | 🟢 |
+| 3 — Notes Engine | 🟡 foundation complete |
+| 4 — PYQ Domination | 🟡 foundation complete |
+| 5 — Test Engine | 🟢 foundation complete |
+| 6 — Performance | 🟢 foundation complete |
+| 7 — AI System | 🟢 foundation complete |
+| 8 — Monetization | 🟢 **Week 12 foundation complete** (see MONETIZATION_FOUNDATION_AUDIT.md) |
+| 9 — Final Navbar | 🔴 NEXT (Week 13) |
+| 10 — Moat | 🟡 |
+
+Week 12 delivered: free-chapter system (GOC / Mole Concept / Periodic Table),
+preview mode + unlock messaging on all reference libraries, pricing cleanup,
+honest /support page. Open founder decision: direct-contribution checkout
+(Razorpay payment link or dedicated order route).
+
 ## Next Highest ROI
 
 1. PARTIAL: run live Razorpay checkout, webhook, subscription, premium gate, and Snap Solve quota verification with real credentials.

@@ -5,6 +5,7 @@ import { ThemeProvider } from "@/components/ThemeContext";
 import { LanguageProvider } from "@/lib/i18n";
 import Navbar from "@/components/Navbar";
 import BetaTracker from "@/components/BetaTracker";
+import FeedbackButton from "@/components/FeedbackButton";
 
 const siteUrl = new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "https://synergicbond.vercel.app");
 
@@ -51,6 +52,7 @@ export default function RootLayout({
             <Navbar />
             {children}
             <BetaTracker />
+            <FeedbackButton />
           </LanguageProvider>
         </ThemeProvider>
         <Analytics />

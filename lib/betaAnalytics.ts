@@ -10,6 +10,9 @@ export const BETA_EVENT_NAMES = [
   "periodic_table_visit",
   "session_start",
   "session_end",
+  // WEEK 15 — conversion tracking: any click on an "Unlock Complete Library" /
+  // upgrade CTA (metadata.source says which surface).
+  "upgrade_intent",
 ] as const;
 
 export type BetaEventName = (typeof BETA_EVENT_NAMES)[number];

@@ -8,6 +8,7 @@ import { QuickActions } from "@/components/dashboard/QuickActions";
 import ActivityLog from "@/components/dashboard/ActivityLog";
 import { CoachWidget } from "@/components/dashboard/CoachWidget";
 import { RevisionQueue } from "@/components/dashboard/RevisionQueue";
+import { OnboardingChecklist } from "@/components/dashboard/OnboardingChecklist";
 
 export default async function DashboardPage() {
   const supabase = await createClient();
@@ -148,6 +149,20 @@ export default async function DashboardPage() {
       <div className="mt-8">
         <SummaryCards data={summaryData} />
       </div>
+
+      {/* WEEK 15 — onboarding for new students, driven by real activity only.
+          Hidden once the student has both studied and tested. */}
+      {!((sessions?.length ?? 0) > 0 && (exams?.length ?? 0) > 0) && (
+        <div className="mt-8">
+          <OnboardingChecklist
+            state={{
+              hasStudied: (sessions?.length ?? 0) > 0,
+              hasTested: (exams?.length ?? 0) > 0,
+              hasSaved: (saved?.length ?? 0) > 0,
+            }}
+          />
+        </div>
+      )}
 
       <div className="mt-8 grid gap-8 lg:grid-cols-2">
         <RecentTests tests={recentTests} />

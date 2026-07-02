@@ -78,6 +78,18 @@ export default function BetaTracker() {
     };
   }, []);
 
+  // WEEK 15 — manual feedback / bug-report entry point: any component can
+  // dispatch `beta-feedback-open` (see FeedbackButton). Manual opens bypass
+  // the once-only guard so students can always report a bug.
+  useEffect(() => {
+    const openManually = () => {
+      setTriggerReason("manual");
+      setShowFeedback(true);
+    };
+    window.addEventListener("beta-feedback-open", openManually);
+    return () => window.removeEventListener("beta-feedback-open", openManually);
+  }, []);
+
   async function handleSubmit() {
     setSaving(true);
     try {

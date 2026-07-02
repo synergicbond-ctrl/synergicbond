@@ -1,9 +1,16 @@
-import Link from "next/link";
+"use client";
 
-// Unlock messaging for Preview Mode (Roadmap Phase 8). Purely presentational —
-// callers pass REAL counts from the catalogue they are rendering.
+import Link from "next/link";
+import { track } from "@vercel/analytics";
+import { trackBetaEvent } from "@/lib/betaAnalyticsClient";
+
+// Unlock messaging for Preview Mode (Roadmap Phase 8). Callers pass REAL
+// counts from the catalogue they are rendering.
 //
 //   250 Available · 2000 Total → "Unlock Complete Library"
+//
+// WEEK 15 — conversion tracking: clicking the CTA records an `upgrade_intent`
+// beta event (+ Vercel analytics) with the surface it came from.
 export default function UnlockBanner({
   available,
   total,
@@ -24,6 +31,10 @@ export default function UnlockBanner({
       </p>
       <Link
         href="/pricing"
+        onClick={() => {
+          trackBetaEvent("upgrade_intent", { source: itemLabel, available, total });
+          track("unlock_banner_click", { source: itemLabel });
+        }}
         className="mt-4 inline-block rounded-xl bg-gradient-to-r from-cyan-500 to-blue-500 px-5 py-2.5 text-sm font-bold text-black transition hover:opacity-90"
       >
         Unlock Complete Library →

@@ -26,7 +26,13 @@ Support, Snap & Solve pinned top-level), ecosystem-grouped Features menu,
 mobile drawer on the same IA, homepage "What is Synergic Bond?" section with
 honest video slot. Open founder deliverable: the 60–90s intro video.
 
-Next: Week 14 — Launch Certification.
+Week 14 delivered: launch certification with live production probes (see
+LAUNCH_CERTIFICATION_AUDIT.md). Razorpay config, webhook security, premium
+gates, protected routes, build & CD all PASS. Founder actions before launch:
+one live ₹149 test transaction; intro video. Dev-only fix: `vercel env pull`
+(stale local Supabase key).
+
+Next: Week 15 — Beta Readiness.
 
 ## Next Highest ROI
 

@@ -44,6 +44,25 @@ const learnGroups: { title: string; items: MenuItem[] }[] = [
       { href: "/important-orders", label: "Important Orders", desc: "Ranking sequences (IOC)", icon: ListOrdered },
     ],
   },
+  // WEEK 10–11: study/track/AI core routes surfaced in nav (additive — no redesign).
+  {
+    title: "📚 Study & Track",
+    items: [
+      { href: "/notes",       label: "Chapter Notes",  desc: "Verified exam notes",              icon: BookOpen },
+      { href: "/pyq",         label: "PYQ Intelligence", desc: "Real previous-year analytics",   icon: Target },
+      { href: "/tests",       label: "Practice Tests", desc: "Chapter · topic · papers",         icon: ClipboardList },
+      { href: "/performance", label: "Performance",    desc: "Readiness · weak topics · progress", icon: Activity },
+      { href: "/ai-lab",      label: "AI Lab",         desc: "Snap & Solve · tutor · planner",   icon: Bot },
+    ],
+  },
+  {
+    title: "🎓 Programs",
+    items: [
+      { href: "/jee",      label: "JEE",      desc: "Main & Advanced track",  icon: GraduationCap },
+      { href: "/neet",     label: "NEET",     desc: "Medical entrance track", icon: Microscope },
+      { href: "/olympiad", label: "Olympiad", desc: "NSEC · IChO pathway",    icon: Trophy },
+    ],
+  },
 ];
 
 // PHASE 1: Practice/Track/AI mega-menus hidden. Snap & Solve is now a top-level
@@ -62,6 +81,12 @@ const menus: Menu[] = [
 // key dependency) so hidden-route translation keys can't leak as raw strings.
 const mainLinks: { href: string; label: string; icon: any }[] = [
   { href: "/snap-solve",       label: "Snap & Solve",     icon: Camera },
+  // WEEK 10–11: study/track/AI core routes (additive)
+  { href: "/notes",            label: "Chapter Notes",    icon: BookOpen },
+  { href: "/pyq",              label: "PYQ Intelligence", icon: Target },
+  { href: "/tests",            label: "Practice Tests",   icon: ClipboardList },
+  { href: "/performance",      label: "Performance",      icon: Activity },
+  { href: "/ai-lab",           label: "AI Lab",           icon: Bot },
   { href: "/name-reactions",   label: "Named Reactions",  icon: GitBranch },
   { href: "/periodic-table",   label: "Periodic Table",   icon: Table2 },
   { href: "/periodic-trends",  label: "Trends Explorer",  icon: BarChart2 },
@@ -136,7 +161,7 @@ export default function Navbar() {
 
           {/* LEARN — grouped knowledge engine with pinned Periodic Table */}
           <div className="relative" onMouseEnter={() => setOpenMenu("Learn")} onMouseLeave={() => setOpenMenu(null)}>
-            <button className={`flex items-center gap-1 px-3 py-2 rounded-lg text-sm font-medium transition ${openMenu === "Learn" || ["/vault","/periodic-table","/periodic-trends","/important-orders","/molecule","/notes","/reagents","/redox-reactions","/solubility","/properties","/salt-colors","/library","/study-tools","/name-reactions"].includes(pathname) ? "text-white bg-white/[0.06]" : "text-gray-300 hover:text-white hover:bg-white/[0.05]"}`}>
+            <button className={`flex items-center gap-1 px-3 py-2 rounded-lg text-sm font-medium transition ${openMenu === "Learn" || ["/vault","/periodic-table","/periodic-trends","/important-orders","/molecule","/notes","/reagents","/redox-reactions","/solubility","/properties","/salt-colors","/library","/study-tools","/name-reactions","/pyq","/tests","/performance","/ai-lab","/jee","/neet","/olympiad"].includes(pathname) ? "text-white bg-white/[0.06]" : "text-gray-300 hover:text-white hover:bg-white/[0.05]"}`}>
               Learn <ChevronDown className={`h-3.5 w-3.5 transition-transform ${openMenu === "Learn" ? "rotate-180" : ""}`} />
             </button>
             {openMenu === "Learn" && (

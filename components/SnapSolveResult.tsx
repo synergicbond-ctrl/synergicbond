@@ -1,9 +1,11 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
+import Link from "next/link";
 import { Camera, Keyboard, SunMedium } from "lucide-react";
 import type { SnapSolveResponse, SnapSolveClassification } from "@/lib/snapSolveTypes";
 import { renderChemistry } from "@/lib/renderChemistry";
+import { deriveSnapSolveLinks, type SnapLink } from "@/lib/ai/snapSolveLinks";
 
 const CLASS_STYLE: Record<SnapSolveClassification, { cls: string; emoji: string }> = {
   Organic:    { cls: "bg-emerald-500/15 text-emerald-300 border-emerald-500/25", emoji: "🧬" },
@@ -72,6 +74,125 @@ function AccuracyRing({ confidence }: { confidence: number }) {
           {Math.round(shown)}%
         </span>
       </div>
+    </div>
+  );
+}
+
+// ── Deep-linking panels (Week 8) — purely presentational ──────────────────────
+
+function LinkList({ links }: { links: SnapLink[] }) {
+  return (
+    <div className="space-y-2">
+      {links.map((l, i) => (
+        <Link
+          key={i}
+          href={l.href}
+          className="group flex items-center justify-between gap-3 rounded-xl border border-white/[0.07] bg-white/[0.03] px-3.5 py-2.5 transition hover:border-cyan-400/40 hover:bg-white/[0.06]"
+        >
+          <span className="min-w-0">
+            <span className="block truncate text-sm font-semibold text-white group-hover:text-cyan-300">{l.label}</span>
+            {l.note && <span className="mt-0.5 block truncate text-[11px] text-white/50">{l.note}</span>}
+          </span>
+          <span className="shrink-0 text-white/40 transition group-hover:translate-x-0.5 group-hover:text-cyan-300">→</span>
+        </Link>
+      ))}
+    </div>
+  );
+}
+
+function EmptyLink({ message }: { message: string }) {
+  return (
+    <div className="rounded-xl border border-dashed border-white/10 bg-white/[0.02] px-3.5 py-3 text-xs text-white/35">
+      {message}
+    </div>
+  );
+}
+
+function DeepLinkPanel({ icon, title, children }: { icon: string; title: string; children: React.ReactNode }) {
+  return (
+    <div>
+      <p className="mb-2 flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-wider text-white/45">
+        <span>{icon}</span> {title}
+      </p>
+      {children}
+    </div>
+  );
+}
+
+function SnapSolveDeepLinks({ data }: { data: SnapSolveResponse }) {
+  const links = useMemo(() => deriveSnapSolveLinks(data), [data]);
+  const hasReagents = links.reagents.length > 0;
+  const hasOrders = links.orders.length > 0;
+
+  return (
+    <div className="space-y-5 rounded-2xl border border-cyan-500/15 bg-cyan-500/[0.03] p-4">
+      <p className="text-[10px] font-black uppercase tracking-[0.3em] text-cyan-300/80">Connected in your Chemistry OS</p>
+
+      {/* Concept Detected */}
+      <DeepLinkPanel icon="🧭" title="Concept Detected">
+        <div className="flex flex-wrap items-center gap-2 text-sm">
+          <span className="rounded-full border border-white/10 bg-white/[0.05] px-2.5 py-1 text-xs font-semibold text-white/80">
+            {data.classification}
+          </span>
+          {links.detectedChapter ? (
+            <span className="rounded-full border border-cyan-400/25 bg-cyan-500/10 px-2.5 py-1 text-xs font-semibold text-cyan-200">
+              {links.detectedChapter}
+            </span>
+          ) : (
+            <span className="text-xs text-white/40">Chapter not confidently detected</span>
+          )}
+          {links.detectedTopic && (
+            <span className="text-xs text-white/55">· {links.detectedTopic}</span>
+          )}
+        </div>
+      </DeepLinkPanel>
+
+      {/* Learn This Topic */}
+      <DeepLinkPanel icon="📖" title="Learn This Topic">
+        {links.notes.length > 0 ? <LinkList links={links.notes} /> : <EmptyLink message="No linked notes yet — browse all chapter notes." />}
+      </DeepLinkPanel>
+
+      {/* Formula Cards */}
+      <DeepLinkPanel icon="🧮" title="Formula Cards">
+        {links.formulas.length > 0 ? <LinkList links={links.formulas} /> : <EmptyLink message="No linked formula yet." />}
+      </DeepLinkPanel>
+
+      {/* Related PYQs */}
+      <DeepLinkPanel icon="🎯" title="Related PYQs">
+        {links.pyqs.length > 0 ? <LinkList links={links.pyqs} /> : <EmptyLink message="No PYQ available yet." />}
+      </DeepLinkPanel>
+
+      {/* Related Mechanisms / Reagents */}
+      <DeepLinkPanel icon="⚗️" title="Related Mechanisms & Reagents">
+        {links.mechanisms.length > 0 ? (
+          <LinkList links={links.mechanisms} />
+        ) : (
+          <EmptyLink message="No mechanism link for this topic yet." />
+        )}
+        {(hasReagents || hasOrders) && (
+          <div className="mt-2 space-y-2">
+            {hasReagents && <LinkList links={links.reagents} />}
+            {hasOrders && <LinkList links={links.orders} />}
+          </div>
+        )}
+      </DeepLinkPanel>
+
+      {/* Practice Next */}
+      <DeepLinkPanel icon="🧪" title="Practice Next">
+        {links.practice.length > 0 && (
+          <div className="mb-2 flex flex-wrap gap-1.5">
+            {links.practice.map((t) => (
+              <span key={t} className="rounded-full border border-white/10 bg-white/[0.04] px-2.5 py-1 text-xs text-white/70">{t}</span>
+            ))}
+          </div>
+        )}
+        <div className="flex items-center justify-between gap-3 rounded-xl border border-white/[0.08] bg-white/[0.03] px-3.5 py-2.5">
+          <span className="text-sm text-white/70">Topic-wise practice tests</span>
+          <span className="shrink-0 rounded-full border border-white/15 bg-white/[0.06] px-2.5 py-1 text-[10px] font-bold uppercase tracking-wide text-white/55">
+            Coming soon
+          </span>
+        </div>
+      </DeepLinkPanel>
     </div>
   );
 }
@@ -180,6 +301,9 @@ export default function SnapSolveResult({ data }: { data: SnapSolveResponse }) {
           </div>
         </div>
       )}
+
+      {/* Week 8 — deep links into the Learn ecosystem (derived, additive) */}
+      <SnapSolveDeepLinks data={data} />
     </div>
   );
 }

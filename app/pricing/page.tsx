@@ -20,7 +20,7 @@ export default function PricingPage() {
   ];
 
   const PRO_FEATURES = [
-    "All 33 chapters unlocked — notes, PYQs, tests, mechanisms & analytics",
+    "Every chapter unlocked — notes, PYQs, tests, mechanisms & analytics",
     "Complete reference libraries — every formula card, reagent, order & colour",
     "Unlimited Snap & Solve — photograph any problem, get verified steps",
     "Solution history saved to your account",

@@ -235,4 +235,90 @@ export const physical = [
       }
     ]
   }
+  ,
+  // ── Added from verified JEE (Advanced) 2026 syllabus PDF (Advanced-only:
+  //    dropped from the rationalized JEE Main / NEET syllabi). ──
+  {
+    id: "states-of-matter",
+    title: "States of Matter (Gases and Liquids)",
+    category: "physical",
+    difficulty: 3,
+    estimatedHours: 6,
+    exams: ["JEE ADVANCED"],
+    pyqTags: ["van der Waals equation", "Kinetic Theory", "RMS velocity", "Partial Pressure", "Surface Tension"],
+    concepts: [
+      {
+        id: "gas-laws-ideal",
+        title: "Gas Laws & Ideal Gas Equation",
+        description: "Gas laws and ideal gas equation, absolute scale of temperature; law of partial pressures; diffusion of gases."
+      },
+      {
+        id: "real-gases",
+        title: "Real Gases & van der Waals Equation",
+        description: "Deviation from ideality, van der Waals equation and the significance of its constants."
+      },
+      {
+        id: "kinetic-theory",
+        title: "Kinetic Theory of Gases",
+        description: "Average, root-mean-square and most probable velocities and their relation with temperature."
+      },
+      {
+        id: "liquids-imf",
+        title: "Intermolecular Forces & Liquids",
+        description: "Types of intermolecular interactions, distance dependence and effect on properties; liquids: vapour pressure, surface tension, viscosity."
+      }
+    ]
+  },
+  {
+    id: "solid-state",
+    title: "Solid State",
+    category: "physical",
+    difficulty: 3,
+    estimatedHours: 6,
+    exams: ["JEE ADVANCED"],
+    pyqTags: ["fcc bcc hcp", "Radius Ratio", "Point Defects", "Crystal Systems", "Packing Efficiency"],
+    concepts: [
+      {
+        id: "crystal-systems",
+        title: "Crystalline State & Crystal Systems",
+        description: "Classification of solids, crystalline state, seven crystal systems (cell parameters a, b, c, α, β, γ)."
+      },
+      {
+        id: "close-packing",
+        title: "Close Packing & Lattices",
+        description: "Close-packed structures of solids (cubic and hexagonal); packing in fcc, bcc and hcp lattices; nearest neighbours."
+      },
+      {
+        id: "radius-ratio-defects",
+        title: "Ionic Radii, Radius Ratio & Defects",
+        description: "Ionic radii and radius-ratio rules for ionic solids; point defects."
+      }
+    ]
+  },
+  {
+    id: "surface-chemistry",
+    title: "Surface Chemistry",
+    category: "physical",
+    difficulty: 2,
+    estimatedHours: 4,
+    exams: ["JEE ADVANCED"],
+    pyqTags: ["Physisorption", "Chemisorption", "Freundlich Isotherm", "Colloids", "Micelles"],
+    concepts: [
+      {
+        id: "adsorption",
+        title: "Adsorption",
+        description: "Elementary concepts of physisorption and chemisorption; Freundlich adsorption isotherm."
+      },
+      {
+        id: "colloids",
+        title: "Colloids",
+        description: "Types of colloids, methods of preparation and general properties."
+      },
+      {
+        id: "emulsions-micelles",
+        title: "Emulsions, Surfactants & Micelles",
+        description: "Elementary ideas of emulsions, surfactants and micelles (definitions and examples only)."
+      }
+    ]
+  }
 ];

@@ -6,7 +6,7 @@ export const inorganic: Chapter[] = [
     id: "periodic-table",
     title: "Classification of Elements and Periodicity in Properties",
     category: "inorganic",
-    exams: ["neet", "jeeMain", "jeeAdvanced"],
+    exams: ["NEET", "JEE MAIN", "JEE ADVANCED"],
     difficulty: 2,
     estimatedHours: 8,
     prerequisites: ["atomic-structure"],
@@ -34,7 +34,7 @@ export const inorganic: Chapter[] = [
     id: "chemical-bonding",
     title: "Chemical Bonding and Molecular Structure",
     category: "inorganic",
-    exams: ["neet", "jeeMain", "jeeAdvanced"],
+    exams: ["NEET", "JEE MAIN", "JEE ADVANCED"],
     difficulty: 4,
     estimatedHours: 18,
     prerequisites: ["atomic-structure", "periodic-table"],
@@ -80,7 +80,7 @@ export const inorganic: Chapter[] = [
     id: "coordination-compounds",
     title: "Coordination Compounds",
     category: "inorganic",
-    exams: ["neet", "jeeMain", "jeeAdvanced"],
+    exams: ["NEET", "JEE MAIN", "JEE ADVANCED"],
     difficulty: 4,
     estimatedHours: 16,
     prerequisites: ["chemical-bonding", "d-block-elements"],
@@ -126,7 +126,7 @@ export const inorganic: Chapter[] = [
     id: "p-block-elements",
     title: "p-Block Elements",
     category: "inorganic",
-    exams: ["neet", "jeeMain", "jeeAdvanced"],
+    exams: ["NEET", "JEE MAIN", "JEE ADVANCED"],
     difficulty: 3,
     estimatedHours: 14,
     prerequisites: ["periodic-table", "chemical-bonding"],
@@ -158,7 +158,7 @@ export const inorganic: Chapter[] = [
     id: "d-and-f-block-elements",
     title: "d- and f-Block Elements",
     category: "inorganic",
-    exams: ["neet", "jeeMain", "jeeAdvanced"],
+    exams: ["NEET", "JEE MAIN", "JEE ADVANCED"],
     difficulty: 3,
     estimatedHours: 12,
     prerequisites: ["atomic-structure", "periodic-table"],
@@ -184,7 +184,7 @@ export const inorganic: Chapter[] = [
     id: "hydrogen",
     title: "Hydrogen",
     category: "inorganic",
-    exams: ["neet", "jeeMain"],
+    exams: ["JEE ADVANCED"],
     difficulty: 2,
     estimatedHours: 6,
     prerequisites: ["atomic-structure", "chemical-bonding"],
@@ -210,7 +210,7 @@ export const inorganic: Chapter[] = [
     id: "s-block-elements",
     title: "s-Block Elements (Alkali and Alkaline Earth Metals)",
     category: "inorganic",
-    exams: ["neet", "jeeMain"],
+    exams: ["JEE ADVANCED"],
     difficulty: 2,
     estimatedHours: 10,
     prerequisites: ["periodic-table", "atomic-structure"],
@@ -229,6 +229,92 @@ export const inorganic: Chapter[] = [
         title: "Group 2 Elements: Alkaline Earth Metals",
         description: "Electronic configuration, trends, anomalous behavior of beryllium, solubility and thermal stability of oxosalts.",
         keywords: ["alkaline earth metals", "gypsum", "plaster of paris", "solvay process"]
+      }
+    ]
+  }
+  ,
+  // ── Added from verified JEE (Advanced) 2026 syllabus PDF (Advanced-only). ──
+  {
+    id: "metallurgy",
+    title: "Isolation of Metals (Metallurgy)",
+    category: "inorganic",
+    exams: ["JEE ADVANCED"],
+    difficulty: 3,
+    estimatedHours: 5,
+    prerequisites: ["periodic-table", "electrochemistry", "thermodynamics"],
+    searchKeywords: ["metallurgy", "ellingham", "ore concentration", "cyanide process", "refining", "extraction of metals"],
+    ncert: { class: 12, chapter: "General Principles and Processes of Isolation of Elements" },
+    pyqTags: ["Ellingham Diagram", "Cyanide Process", "Electrolytic Refining", "Ore Concentration", "Self Reduction"],
+    concepts: [
+      {
+        id: "ore-concentration",
+        title: "Ores & Concentration",
+        description: "Metal ores and their concentration methods.",
+        keywords: ["ores", "froth floatation", "leaching", "magnetic separation"]
+      },
+      {
+        id: "extraction-principles",
+        title: "Extraction Principles",
+        description: "Extraction of crude metal from concentrated ores: thermodynamic principles (iron, copper, zinc) and electrochemical principles (aluminium) of metallurgy.",
+        keywords: ["ellingham diagram", "smelting", "hall-heroult", "thermodynamics of extraction"]
+      },
+      {
+        id: "cyanide-refining",
+        title: "Cyanide Process & Refining",
+        description: "Cyanide process for silver and gold; refining of metals.",
+        keywords: ["cyanide process", "silver", "gold", "electrolytic refining", "zone refining"]
+      }
+    ]
+  },
+  {
+    id: "qualitative-analysis",
+    title: "Principles of Qualitative Analysis",
+    category: "inorganic",
+    exams: ["JEE ADVANCED"],
+    difficulty: 4,
+    estimatedHours: 8,
+    prerequisites: ["chemical-equilibrium", "p-block-elements", "d-and-f-block-elements"],
+    searchKeywords: ["qualitative analysis", "salt analysis", "group reagents", "precipitate", "cation", "anion"],
+    ncert: { class: 12 },
+    pyqTags: ["Group Reagents", "Salt Analysis", "Precipitate Colours", "Cation Groups", "Anion Tests"],
+    concepts: [
+      {
+        id: "cation-groups",
+        title: "Cation Analysis (Groups I–V)",
+        description: "Groups I to V — only Ag⁺, Hg²⁺, Cu²⁺, Pb²⁺, Fe³⁺, Cr³⁺, Al³⁺, Ca²⁺, Ba²⁺, Zn²⁺, Mn²⁺ and Mg²⁺.",
+        keywords: ["group reagent", "cation analysis", "sulphide precipitates"]
+      },
+      {
+        id: "anion-tests",
+        title: "Anion Analysis",
+        description: "Nitrate, halides (excluding fluoride), carbonate and bicarbonate, sulphate and sulphide.",
+        keywords: ["anion tests", "brown ring", "chromyl chloride", "barium sulphate"]
+      }
+    ]
+  },
+  {
+    id: "environmental-chemistry",
+    title: "Environmental Chemistry",
+    category: "inorganic",
+    exams: ["JEE ADVANCED"],
+    difficulty: 1,
+    estimatedHours: 3,
+    prerequisites: [],
+    searchKeywords: ["environmental chemistry", "pollution", "green chemistry", "acid rain", "ozone"],
+    ncert: { class: 11, chapter: "Environmental Chemistry" },
+    pyqTags: ["Green Chemistry", "Atmospheric Pollution", "Water Pollution", "Industrial Waste"],
+    concepts: [
+      {
+        id: "pollution-types",
+        title: "Pollution",
+        description: "Atmospheric pollution, water pollution, soil pollution and industrial waste.",
+        keywords: ["smog", "acid rain", "greenhouse effect", "BOD"]
+      },
+      {
+        id: "green-chemistry",
+        title: "Control Strategies & Green Chemistry",
+        description: "Strategies to control environmental pollution; green chemistry.",
+        keywords: ["green chemistry", "pollution control"]
       }
     ]
   }

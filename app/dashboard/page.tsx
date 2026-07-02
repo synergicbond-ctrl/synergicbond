@@ -1,4 +1,5 @@
 import { createClient } from "@/lib/supabase/server";
+import { masterSyllabus } from "@/lib/masterSyllabus/all";
 import GuestDashboardPreview from "@/components/dashboard/GuestDashboardPreview";
 import { DashboardHeader } from "@/components/dashboard/DashboardHeader";
 import { SummaryCards } from "@/components/dashboard/SummaryCards";
@@ -76,7 +77,7 @@ export default async function DashboardPage() {
 
   const summaryData = {
     chaptersCompleted: saved?.length || 0,
-    totalChapters: 33,
+    totalChapters: masterSyllabus.length,
     dailyStreak: sessions?.length || 0,
     averageAccuracy,
     totalStudyHours,

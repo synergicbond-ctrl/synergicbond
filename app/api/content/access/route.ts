@@ -4,6 +4,7 @@ export const dynamic = "force-dynamic";
 import { NextResponse } from "next/server";
 import { createClient } from "@/lib/supabase/server";
 import { ALL_FREE_CHAPTER_IDS, isFreeChapter } from "@/lib/freeChapters";
+import { masterSyllabus } from "@/lib/masterSyllabus/all";
 
 export async function GET(req: Request) {
   try {
@@ -60,7 +61,7 @@ export async function GET(req: Request) {
         reason: "no_subscription",
         tier: "free",
         freeChapters: ALL_FREE_CHAPTER_IDS,
-        upgradeMessage: "Upgrade to SYNERGIC BOND Pro to unlock all 33 chapters + unlimited AI",
+        upgradeMessage: `Upgrade to SYNERGIC BOND Pro to unlock all ${masterSyllabus.length} chapters + unlimited AI`,
       });
     }
 

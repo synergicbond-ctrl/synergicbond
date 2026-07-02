@@ -5,10 +5,13 @@ export type SubjectCategory =
   | "organic"
   | "inorganic";
 
+// Display-format exam tags — the format used by the subject arrays and the
+// AI Lab planner. Consumers that filter (examSyllabus, /pyq) normalize case
+// and spacing, so these remain compatible everywhere.
 export type Exam =
-  | "neet"
-  | "jeeMain"
-  | "jeeAdvanced";
+  | "NEET"
+  | "JEE MAIN"
+  | "JEE ADVANCED";
 
 export interface Formula {
   id: string;

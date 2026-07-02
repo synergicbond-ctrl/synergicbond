@@ -1,4 +1,5 @@
 import { createClient } from "@/lib/supabase/server";
+import { masterSyllabus } from "@/lib/masterSyllabus/all";
 import type {
   ControlCenterProgress,
   ExamReadiness,
@@ -10,7 +11,7 @@ import type {
 // Returns null for guests (not logged in) so the UI can fall back to the demo numbers.
 // Client-safe types/constants live in controlCenterTypes.ts.
 
-const TOTAL_CHAPTERS = 33; // keep in sync with the dashboard
+const TOTAL_CHAPTERS = masterSyllabus.length; // derived from the syllabus SSOT
 
 function titleCase(slug: string): string {
   return slug

@@ -1,4 +1,5 @@
 import { createClient } from "@/lib/supabase/server";
+import { masterSyllabus } from "@/lib/masterSyllabus/all";
 import type {
   ActivityItem,
   PerformanceData,
@@ -26,7 +27,7 @@ import type {
 //   • Recent activity = merged exam_results + study_sessions, newest first.
 // ─────────────────────────────────────────────────────────────────────────────
 
-const TOTAL_CHAPTERS = 33; // keep in sync with the dashboard / control center
+const TOTAL_CHAPTERS = masterSyllabus.length; // derived from the syllabus SSOT
 
 function titleCase(slug: string): string {
   return slug.replace(/[-_]/g, " ").replace(/\b\w/g, (c) => c.toUpperCase());

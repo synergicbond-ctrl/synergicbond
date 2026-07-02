@@ -37,7 +37,7 @@ export default function SupportPage() {
         <section className="mt-8 rounded-2xl border border-cyan-400/25 bg-gradient-to-r from-cyan-500/10 to-purple-500/10 p-6">
           <h2 className="text-lg font-black">The most direct way to support: go Pro</h2>
           <p className="mt-1.5 text-sm text-white/60">
-            ₹149/month or ₹999/year — you unlock all 33 chapters and every reference library, and you
+            ₹149/month or ₹999/year — you unlock every chapter and reference library, and you
             fund the free tier for students who can&apos;t pay.
           </p>
           <Link

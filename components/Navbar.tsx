@@ -12,7 +12,7 @@ import {
   Globe, ChevronDown, Info, Search, GitBranch, Palette,
   LayoutDashboard, LogOut, UserCircle, Table2, ListOrdered,
   BookOpen, Target, ClipboardList, Activity, Bot,
-  GraduationCap, Microscope, Trophy,
+  GraduationCap, Microscope, Trophy, Atom, School, Landmark,
   // WEEK 13 final navbar (Roadmap Phase 9)
   Home, Sigma, FlaskConical, FileText, Calendar, History, Heart,
 } from "lucide-react";
@@ -45,13 +45,23 @@ const featuresPinned: MenuItem = { href: "/periodic-table", label: "Periodic Tab
 const MEGA_MENUS: MegaMenu[] = [
   {
     title: "Programs",
+    pinned: { href: "/programs", label: "All Programs", desc: "NEET · JEE · Olympiad · Boards — choose your exam", icon: GraduationCap },
     groups: [
       {
-        title: "🇮🇳 National",
+        title: "🇮🇳 Entrance & Olympiad",
         items: [
-          { href: "/jee",      label: "JEE Chemistry",      desc: "Main & Advanced track",  icon: GraduationCap },
-          { href: "/neet",     label: "NEET Chemistry",     desc: "Medical entrance track", icon: Microscope },
-          { href: "/olympiad", label: "Olympiad Chemistry", desc: "NSEC · INChO · IChO",    icon: Trophy },
+          { href: "/programs/neet",         label: "NEET",         desc: "Medical entrance track",     icon: Microscope },
+          { href: "/programs/jee-main",     label: "JEE Main",     desc: "NTA engineering entrance",   icon: GraduationCap },
+          { href: "/programs/jee-advanced", label: "JEE Advanced", desc: "IIT entrance track",         icon: Atom },
+          { href: "/programs/olympiad",     label: "Olympiad",     desc: "NSEC · INChO · IChO",        icon: Trophy },
+        ],
+      },
+      {
+        title: "🏫 School Boards",
+        items: [
+          { href: "/programs/cbse",         label: "CBSE",         desc: "Class 11–12 · NCERT first",  icon: BookOpen },
+          { href: "/programs/icse",         label: "ICSE",         desc: "ISC Class 11–12",            icon: School },
+          { href: "/programs/state-boards", label: "State Boards", desc: "State curricula tracks",     icon: Landmark },
         ],
       },
     ],
@@ -112,9 +122,7 @@ const NAV_LINKS: { href: string; label: string; icon: LucideIcon }[] = [
 const mainLinks: { href: string; label: string; icon: LucideIcon }[] = [
   { href: "/",                 label: "Home",             icon: Home },
   { href: "/snap-solve",       label: "Snap & Solve",     icon: Camera },
-  { href: "/jee",              label: "JEE Chemistry",    icon: GraduationCap },
-  { href: "/neet",             label: "NEET Chemistry",   icon: Microscope },
-  { href: "/olympiad",         label: "Olympiad",         icon: Trophy },
+  { href: "/programs",         label: "Programs",         icon: GraduationCap },
   { href: "/periodic-table",   label: "Periodic Table",   icon: Table2 },
   { href: "/notes",            label: "Chapter Notes",    icon: BookOpen },
   { href: "/formula-cards",    label: "Formula Cards",    icon: Sigma },
@@ -218,11 +226,11 @@ export default function Navbar() {
                 {open && (
                   <div className="absolute left-1/2 -translate-x-1/2 top-full pt-2 z-50">
                     <div className={`${menu.wide ? "w-[620px]" : "w-[340px]"} rounded-2xl border border-white/[0.08] bg-[#111827]/98 backdrop-blur-xl shadow-2xl shadow-black/50 p-3`}>
-                      {/* Pinned flagship (Periodic Table in Features) */}
+                      {/* Pinned flagship (Periodic Table in Features, All Programs in Programs) */}
                       {menu.pinned && (
                         <Link href={menu.pinned.href} onClick={() => setOpenMenu(null)} className="group flex items-center gap-3 rounded-xl p-3 mb-2 border border-cyan-400/25 bg-gradient-to-r from-cyan-500/15 to-purple-500/10 hover:from-cyan-500/20 transition">
                           <span className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-xl bg-cyan-500/20 border border-cyan-400/30">
-                            <Table2 className="h-5 w-5 text-cyan-300" />
+                            <menu.pinned.icon className="h-5 w-5 text-cyan-300" />
                           </span>
                           <span className="flex-1 min-w-0">
                             <span className="flex items-center gap-2 text-sm font-black text-white">{menu.pinned.label}<span className="text-[8px] font-bold tracking-wider text-cyan-300 bg-cyan-500/15 px-1.5 py-0.5 rounded-full">PINNED</span></span>

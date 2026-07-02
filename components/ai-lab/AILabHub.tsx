@@ -130,17 +130,20 @@ function StudyPlanner() {
         <Link href="/study-plan" className="font-semibold text-cyan-300 hover:text-cyan-200">/study-plan</Link>.
       </p>
       <div className="flex flex-wrap gap-2">
-        {PLANNER_EXAMS.map((e) => (
-          <button
-            key={e}
-            onClick={() => { setExam(e); setPlan(null); }}
-            className={`rounded-lg border px-3 py-1.5 text-xs font-semibold transition ${
-              exam === e ? "border-cyan-400/50 bg-cyan-500/15 text-white" : "border-white/10 bg-white/[0.03] text-white/60 hover:text-white/85"
-            }`}
-          >
-            {e}
-          </button>
-        ))}
+        {PLANNER_EXAMS.map((e) => {
+          const count = ALL_CHAPTERS.filter((c) => c.exams.includes(e)).length;
+          return (
+            <button
+              key={e}
+              onClick={() => { setExam(e); setPlan(null); }}
+              className={`rounded-lg border px-3 py-1.5 text-xs font-semibold transition ${
+                exam === e ? "border-cyan-400/50 bg-cyan-500/15 text-white" : "border-white/10 bg-white/[0.03] text-white/60 hover:text-white/85"
+              }`}
+            >
+              {e} <span className="text-white/40">· {count} ch</span>
+            </button>
+          );
+        })}
       </div>
       <div className="flex flex-wrap items-center gap-2">
         <span className="text-xs text-white/50">Study hours / week:</span>

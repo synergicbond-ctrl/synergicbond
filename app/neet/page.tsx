@@ -1,4 +1,5 @@
 import Link from "next/link";
+import ExamSyllabus from "@/components/syllabus/ExamSyllabus";
 
 const tools = [
   { icon: "📘", label: "AI Notes", desc: "NCERT-aligned notes for any topic", href: "/notes?exam=NEET&difficulty=ncert", color: "border-cyan-700 hover:border-cyan-500" },
@@ -9,11 +10,9 @@ const tools = [
   { icon: "🔁", label: "Revision", desc: "5-min rapid revision for NEET", href: "/revision?exam=NEET", color: "border-cyan-700 hover:border-cyan-500" },
 ];
 
-const chapters = [
-  { label: "Physical Chemistry", topics: ["Mole Concept", "Atomic Structure", "Thermodynamics", "Equilibrium", "Electrochemistry"] },
-  { label: "Organic Chemistry", topics: ["GOC", "Hydrocarbons", "Alcohols & Ethers", "Aldehydes & Ketones", "Biomolecules"] },
-  { label: "Inorganic Chemistry", topics: ["Periodic Table", "Chemical Bonding", "s-Block", "p-Block", "Coordination Compounds"] },
-];
+// Syllabus renders from the master-syllabus SSOT (see ExamSyllabus). The old
+// hardcoded list had drifted (it still showed s-Block, which the rationalized
+// NEET syllabus dropped).
 
 export default function NEETPage() {
   return (
@@ -50,27 +49,12 @@ export default function NEETPage() {
           </div>
         </div>
 
-        {/* Chapters */}
-        <div>
-          <h2 className="text-2xl font-bold mb-2">NEET Syllabus — Chapter by Chapter</h2>
-          <p className="text-zinc-500 mb-6">Click any topic to generate notes or start a quiz instantly</p>
-          <div className="grid md:grid-cols-3 gap-6">
-            {chapters.map((cat) => (
-              <div key={cat.label} className="bg-zinc-900 border border-zinc-800 rounded-2xl p-5">
-                <div className="font-bold text-cyan-400 mb-3">{cat.label}</div>
-                <div className="space-y-2">
-                  {cat.topics.map((topic) => (
-                    <Link key={topic} href={`/notes?topic=${encodeURIComponent(topic)}&exam=NEET&difficulty=ncert`}
-                      className="flex items-center justify-between text-sm text-zinc-300 hover:text-white hover:bg-white/5 px-3 py-2 rounded-lg transition">
-                      <span>{topic}</span>
-                      <span className="text-zinc-600">→</span>
-                    </Link>
-                  ))}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
+        {/* Chapters — SSOT-driven */}
+        <ExamSyllabus
+          exams={["NEET"]}
+          heading="NEET Syllabus — Chapter by Chapter"
+          blurb="Rationalized NTA syllabus"
+        />
       </div>
     </main>
   );

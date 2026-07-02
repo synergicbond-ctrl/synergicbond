@@ -1,12 +1,10 @@
 "use client";
 
 import { useState } from "react";
+import { masterSyllabus } from "@/lib/masterSyllabus/all";
 
-const WEAK_TOPICS_LIST = [
-  "Mole Concept", "Atomic Structure", "Chemical Bonding", "Thermodynamics",
-  "Equilibrium", "Electrochemistry", "GOC", "Hydrocarbons", "Coordination Compounds",
-  "p-Block", "d-Block", "Solutions", "Solid State", "Kinetics", "Periodic Table"
-];
+// Topic list derives from the master-syllabus SSOT (was a hardcoded, drifting list).
+const WEAK_TOPICS_LIST = masterSyllabus.map((c) => c.title);
 
 type StudyPlanDay = {
   day: number;

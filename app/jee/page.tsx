@@ -1,4 +1,5 @@
 import Link from "next/link";
+import ExamSyllabus from "@/components/syllabus/ExamSyllabus";
 
 const tools = [
   { icon: "📘", label: "AI Notes", desc: "JEE Advanced depth — mechanisms, derivations", href: "/notes?exam=JEE Advanced&difficulty=jee_advanced", color: "border-cyan-700 hover:border-cyan-500" },
@@ -9,11 +10,8 @@ const tools = [
   { icon: "👁️", label: "Vision AI", desc: "Upload mechanism image — get full analysis", href: "/tutor?tab=vision", color: "border-cyan-700 hover:border-cyan-500" },
 ];
 
-const chapters = [
-  { label: "Physical Chemistry", topics: ["Mole Concept", "Thermodynamics", "Chemical Kinetics", "Electrochemistry", "Solutions", "Atomic Structure"] },
-  { label: "Organic Chemistry", topics: ["GOC & Inductive Effect", "SN1 & SN2 Mechanisms", "Elimination Reactions", "Aromatic Chemistry", "Aldol Condensation", "Name Reactions"] },
-  { label: "Inorganic Chemistry", topics: ["Chemical Bonding", "Coordination Chemistry", "p-Block Elements", "d-Block Elements", "Metallurgy", "Qualitative Analysis"] },
-];
+// Syllabus is rendered from the master-syllabus SSOT (see ExamSyllabus) —
+// the old hardcoded topic list drifted from the official documents.
 
 export default function JEEPage() {
   return (
@@ -48,26 +46,11 @@ export default function JEEPage() {
           </div>
         </div>
 
-        <div>
-          <h2 className="text-2xl font-bold mb-2">JEE Syllabus</h2>
-          <p className="text-zinc-500 mb-6">Click any topic → instant AI notes at JEE Advanced level</p>
-          <div className="grid md:grid-cols-3 gap-6">
-            {chapters.map((cat) => (
-              <div key={cat.label} className="bg-zinc-900 border border-zinc-800 rounded-2xl p-5">
-                <div className="font-bold text-cyan-400 mb-3">{cat.label}</div>
-                <div className="space-y-2">
-                  {cat.topics.map((topic) => (
-                    <Link key={topic} href={`/notes?topic=${encodeURIComponent(topic)}&exam=JEE Advanced&difficulty=jee_advanced`}
-                      className="flex items-center justify-between text-sm text-zinc-300 hover:text-white hover:bg-white/5 px-3 py-2 rounded-lg transition">
-                      <span>{topic}</span>
-                      <span className="text-zinc-600">→</span>
-                    </Link>
-                  ))}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
+        <ExamSyllabus
+          exams={["JEE MAIN", "JEE ADVANCED"]}
+          heading="JEE Syllabus (Main + Advanced)"
+          blurb="Chapter tags show which paper covers each chapter"
+        />
       </div>
     </main>
   );

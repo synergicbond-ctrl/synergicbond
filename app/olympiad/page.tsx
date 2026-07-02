@@ -50,7 +50,13 @@ export default function OlympiadPage() {
 
         <div>
           <h2 className="text-2xl font-bold mb-2">Olympiad Topics</h2>
-          <p className="text-zinc-500 mb-6">Click any topic → AI notes at INChO/IChO level</p>
+          <p className="text-zinc-500 mb-2">Advanced focus areas beyond the JEE syllabus.</p>
+          {/* Honest state: a verified chapter-wise NSEC/INChO/IChO syllabus mapping is not
+              authored yet — do not fake one. The JEE Advanced syllabus is the foundation. */}
+          <p className="text-zinc-500 mb-6 text-sm">
+            Chapter-wise Olympiad syllabus mapping is coming soon. Foundation: the{" "}
+            <Link href="/jee" className="text-violet-300 font-semibold hover:text-violet-200">complete JEE Advanced syllabus →</Link>
+          </p>
           <div className="grid md:grid-cols-3 gap-6">
             {topics.map((cat) => (
               <div key={cat.label} className="bg-zinc-900 border border-zinc-800 rounded-2xl p-5">

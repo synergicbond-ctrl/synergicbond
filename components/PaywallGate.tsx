@@ -64,7 +64,7 @@ export function PaywallGate({ chapterId, children }: Props) {
         <p className="text-zinc-400 mb-6 text-sm leading-relaxed">
           {reason === "not_logged_in"
             ? "Create a free account to access 2 chapters per subject and 10 AI messages per day."
-            : "Upgrade to SYNERGIC BOND Pro to unlock all 33 chapters, unlimited AI tutor, full mock exams, and more."}
+            : "Upgrade to SYNERGIC BOND Pro to unlock every chapter, unlimited AI tutor, full mock exams, and more."}
         </p>
 
         {reason === "not_logged_in" ? (
@@ -91,7 +91,7 @@ export function PaywallGate({ chapterId, children }: Props) {
               Upgrade to Pro — ₹149/month
             </a>
             <div className="text-xs text-zinc-600">
-              ✅ All 33 chapters &nbsp;·&nbsp; ✅ Unlimited AI tutor &nbsp;·&nbsp; ✅ Full mock exams
+              ✅ Every chapter &nbsp;·&nbsp; ✅ Unlimited AI tutor &nbsp;·&nbsp; ✅ Full mock exams
             </div>
           </div>
         )}

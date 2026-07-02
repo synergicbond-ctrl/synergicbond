@@ -10,6 +10,9 @@ import {
   type NoteSectionKey,
   type NoteLink,
 } from "@/lib/notesEngine";
+import { isFreeChapter } from "@/lib/freeChapters";
+import { useUnlocked } from "@/components/monetization/useUnlocked";
+import UnlockBanner from "@/components/monetization/UnlockBanner";
 
 // ─────────────────────────────────────────────────────────────────────────────
 // Notes Explorer — mobile-first reader for the curated Notes Engine (SSOT).
@@ -189,9 +192,15 @@ function SectionBody({ chapter, section }: { chapter: NotesChapter; section: Not
 export default function NotesExplorer() {
   const [chapterId, setChapterId] = useState<string>(NOTES_CHAPTERS[0].id);
   const [section, setSection] = useState<NoteSectionKey>("syllabus");
+  const unlocked = useUnlocked();
 
   const chapter = NOTES_CHAPTERS.find((c) => c.id === chapterId) ?? NOTES_CHAPTERS[0];
   const activeSection = NOTE_SECTIONS.find((s) => s.key === section) ?? NOTE_SECTIONS[0];
+
+  // Preview Mode: free-chapter notes stay fully open. Premium chapters (once
+  // authored beyond the free set) show an unlock prompt instead of content.
+  const chapterLocked = !unlocked && !isFreeChapter(chapter.id);
+  const freeCount = NOTES_CHAPTERS.filter((c) => isFreeChapter(c.id)).length;
 
   return (
     <div className="space-y-6">
@@ -219,7 +228,9 @@ export default function NotesExplorer() {
                   : "border-white/10 bg-white/[0.03] hover:border-white/20 hover:bg-white/[0.06]"
               }`}
             >
-              <span className={`block text-sm font-bold ${active ? "text-white" : "text-white/80"}`}>{c.title}</span>
+              <span className={`block text-sm font-bold ${active ? "text-white" : "text-white/80"}`}>
+                {c.title}{!unlocked && !isFreeChapter(c.id) && <span className="ml-1.5 text-[11px]" title="Pro chapter">🔒</span>}
+              </span>
               <span className="mt-0.5 block text-[11px] capitalize text-white/45">{c.category} chemistry</span>
             </button>
           );
@@ -263,12 +274,18 @@ export default function NotesExplorer() {
         </div>
       </div>
 
-      {/* Active section */}
+      {/* Active section (or unlock prompt for premium chapters) */}
       <section className="min-h-[200px]">
-        <h2 className="mb-4 flex items-center gap-2 text-lg font-black text-white">
-          <span>{activeSection.icon}</span> {activeSection.label}
-        </h2>
-        <SectionBody chapter={chapter} section={section} />
+        {chapterLocked ? (
+          <UnlockBanner available={freeCount} total={NOTES_ENGINE_STATS.chapters} itemLabel="notes chapters" />
+        ) : (
+          <>
+            <h2 className="mb-4 flex items-center gap-2 text-lg font-black text-white">
+              <span>{activeSection.icon}</span> {activeSection.label}
+            </h2>
+            <SectionBody chapter={chapter} section={section} />
+          </>
+        )}
       </section>
     </div>
   );

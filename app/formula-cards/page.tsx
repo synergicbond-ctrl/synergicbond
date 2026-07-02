@@ -8,6 +8,9 @@ import {
   queryFormulaCards,
   type FormulaSearchResult,
 } from "@/lib/chemistry/formulas";
+import { PREVIEW_LIMITS, slicePreview } from "@/lib/monetization/preview";
+import { useUnlocked } from "@/components/monetization/useUnlocked";
+import UnlockBanner from "@/components/monetization/UnlockBanner";
 
 const chapters = getFormulaChapterSummaries();
 const totalFormulaCount = chapters.reduce((sum, chapter) => sum + chapter.count, 0);
@@ -86,10 +89,13 @@ function FormulaCardsContent() {
   const [chapter, setChapter] = useState(() => searchParams.get("chapter") || "");
   const [pyqId, setPyqId] = useState(() => searchParams.get("pyq") || searchParams.get("pyqId") || "");
 
-  const formulas = useMemo(
+  const unlocked = useUnlocked();
+  const allMatches = useMemo(
     () => queryFormulaCards({ query, chapter, pyqId, limit: 200 }),
     [query, chapter, pyqId]
   );
+  // Preview Mode: free users browse a real slice; Pro sees everything.
+  const { visible: formulas, locked } = slicePreview(allMatches, PREVIEW_LIMITS.formulas, unlocked);
 
   return (
     <main className="min-h-screen bg-slate-50 px-4 py-6 text-slate-950 sm:px-6 lg:px-8">
@@ -163,6 +169,10 @@ function FormulaCardsContent() {
               <FormulaCardView key={card.id} card={card} />
             ))}
           </section>
+        )}
+
+        {locked > 0 && (
+          <UnlockBanner available={PREVIEW_LIMITS.formulas} total={totalFormulaCount} itemLabel="formula cards" />
         )}
       </div>
     </main>

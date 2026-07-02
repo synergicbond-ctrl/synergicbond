@@ -3,6 +3,9 @@
 import { useMemo, useState } from "react";
 import { Search, FlaskConical } from "lucide-react";
 import ReferenceTabs from "@/components/ReferenceTabs";
+import { PREVIEW_LIMITS, slicePreview } from "@/lib/monetization/preview";
+import { useUnlocked } from "@/components/monetization/useUnlocked";
+import UnlockBanner from "@/components/monetization/UnlockBanner";
 
 type Reagent = { name: string; formula: string; fn: string; level: string };
 
@@ -49,11 +52,14 @@ const lvlColor: Record<string, string> = {
 
 export default function ReagentsPage() {
   const [q, setQ] = useState("");
-  const filtered = useMemo(() => {
+  const unlocked = useUnlocked();
+  const matches = useMemo(() => {
     const s = q.toLowerCase().replace(/[<>{}]/g, "").trim();
     if (!s) return reagents;
     return reagents.filter((r) => (r.name + r.formula + r.fn).toLowerCase().includes(s));
   }, [q]);
+  // Preview Mode: free users browse a real slice; Pro sees everything.
+  const { visible: filtered, locked } = slicePreview(matches, PREVIEW_LIMITS.reagents, unlocked);
 
   return (
     <main className="min-h-screen bg-[#0B0F19] text-white">
@@ -85,6 +91,10 @@ export default function ReagentsPage() {
             </div>
           ))}
         </div>
+
+        {locked > 0 && (
+          <UnlockBanner available={PREVIEW_LIMITS.reagents} total={reagents.length} itemLabel="reagents" />
+        )}
       </div>
     </main>
   );

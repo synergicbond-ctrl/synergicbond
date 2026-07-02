@@ -10,6 +10,9 @@ import {
   type OrderCategory,
   type ImportantOrder,
 } from "@/lib/importantOrders";
+import { PREVIEW_LIMITS, slicePreview } from "@/lib/monetization/preview";
+import { useUnlocked } from "@/components/monetization/useUnlocked";
+import UnlockBanner from "@/components/monetization/UnlockBanner";
 
 const TABS: OrderCategory[] = ["IOC", "OC", "PC"];
 
@@ -20,8 +23,10 @@ export default function ImportantOrdersPage() {
 
   const q = query.trim().toLowerCase();
 
+  const unlocked = useUnlocked();
+
   // Filter to the active category, then by search + source (future-proof filter).
-  const filtered = useMemo(() => {
+  const matches = useMemo(() => {
     return IMPORTANT_ORDERS.filter((o) => {
       if (o.category !== tab) return false;
       if (source && o.sourcePdf !== source) return false;
@@ -34,6 +39,9 @@ export default function ImportantOrdersPage() {
       );
     });
   }, [tab, q, source]);
+
+  // Preview Mode: free users browse a real slice per tab; Pro sees everything.
+  const { visible: filtered, locked } = slicePreview(matches, PREVIEW_LIMITS.orders, unlocked);
 
   // Group the filtered orders by their `group` for sectioned display.
   const grouped = useMemo(() => {
@@ -162,6 +170,10 @@ export default function ImportantOrdersPage() {
               </section>
             ))}
           </div>
+        )}
+
+        {locked > 0 && (
+          <UnlockBanner available={PREVIEW_LIMITS.orders} total={IMPORTANT_ORDERS.length} itemLabel="verified orders" />
         )}
       </div>
     </main>

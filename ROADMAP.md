@@ -32,7 +32,14 @@ gates, protected routes, build & CD all PASS. Founder actions before launch:
 one live ₹149 test transaction; intro video. Dev-only fix: `vercel env pull`
 (stale local Supabase key).
 
-Next: Week 15 — Beta Readiness.
+Week 15 delivered: beta readiness (see BETA_READINESS_AUDIT.md) — persistent
+feedback/bug-report flow reusing the beta stack, real-activity onboarding
+checklist, upgrade_intent conversion tracking, empty-state + mobile review of
+all five systems.
+
+NEXT: Real Student Beta + Revenue Validation — blocked on founder actions:
+(1) live ₹149 test transaction, (2) intro video, (3) beta cohort recruitment,
+(4) optional direct-contribution checkout decision.
 
 ## Next Highest ROI
 

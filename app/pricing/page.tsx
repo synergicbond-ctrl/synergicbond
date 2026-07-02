@@ -11,18 +11,20 @@ export default function PricingPage() {
   const [planId, setPlanId] = useState<PlanId>("pro_monthly");
 
   const FREE_FEATURES = [
+    "3 complete free chapters — General Organic Chemistry, Mole Concept & Periodic Table: notes, PYQs, tests, formulas, AI, mechanisms — no restrictions",
+    "Preview of every reference library — Formula Cards, Reagents, Important Orders, Compound Colours",
+    "Periodic Table, Trends Explorer & Named Reactions",
     "5 Snap & Solve solutions per day",
-    "Full verified reference — Periodic Trends, Important Orders, Colours, Named Reactions",
     "Step-by-step solutions in English, Hindi & Hinglish",
     "No credit card required",
   ];
 
   const PRO_FEATURES = [
+    "All 33 chapters unlocked — notes, PYQs, tests, mechanisms & analytics",
+    "Complete reference libraries — every formula card, reagent, order & colour",
     "Unlimited Snap & Solve — photograph any problem, get verified steps",
     "Solution history saved to your account",
-    "All verified reference content",
     "English, Hindi & Hinglish solutions",
-    "Priority solving",
     "Built by an 18-year JEE Advanced chemistry faculty",
   ];
 
@@ -130,6 +132,10 @@ export default function PricingPage() {
             {
               q: "What exams does SYNERGIC BOND cover?",
               a: "NEET, JEE Main, JEE Advanced, GATE, NSEC, INChO, and IChO Olympiads. All with difficulty-appropriate content.",
+            },
+            {
+              q: "What exactly is free?",
+              a: "One flagship chapter per branch of chemistry — General Organic Chemistry (organic), Mole Concept (physical) and Periodic Table (inorganic) — with everything inside fully unlocked. Plus a real preview slice of every reference library.",
             },
             {
               q: "Can I use it in Hindi or Hinglish?",

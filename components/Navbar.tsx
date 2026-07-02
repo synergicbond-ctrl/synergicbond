@@ -6,18 +6,19 @@ import { useState, useEffect } from "react";
 import MoleculeLogo from "@/components/MoleculeLogo";
 import { useT, LANGS, type Lang } from "@/lib/i18n";
 import { supabase } from "@/lib/supabase";
+import type { Session } from "@supabase/supabase-js";
 import {
-  BookOpen, ClipboardList, FlaskConical, FileText,
-  Bot, Camera, PenLine, Atom, Target, Calendar,
-  BarChart2, Medal, Trophy, Archive, Gem, Menu, X,
-  Globe, ChevronDown, Sparkles, GraduationCap, Layers, Info,
-  Home, Search, LayoutGrid, GitBranch, Sigma, Palette,
-  LayoutDashboard, LogOut, UserCircle, BookMarked, Table2,
-  History, Microscope, Activity, Radio, ListOrdered
+  Camera, BarChart2, Medal, Gem, Menu, X,
+  Globe, ChevronDown, Info, Search, GitBranch, Palette,
+  LayoutDashboard, LogOut, UserCircle, Table2, ListOrdered,
+  // WEEK 10–11 nav groups (Study & Track / Programs)
+  BookOpen, Target, ClipboardList, Activity, Bot,
+  GraduationCap, Microscope, Trophy,
 } from "lucide-react";
+import type { LucideIcon } from "lucide-react";
 
 // ALLEN-style category mega-menus (label + grouped links with descriptions)
-type MenuItem = { href: string; label: string; desc: string; icon: any };
+type MenuItem = { href: string; label: string; desc: string; icon: LucideIcon };
 type Menu = { title: string; items: MenuItem[]; wide?: boolean };
 
 // LEARN is special: a pinned Periodic Table + grouped sections (the "knowledge engine")
@@ -79,7 +80,7 @@ const menus: Menu[] = [
 
 // PHASE 1: mobile catalog trimmed to the KEEP set. Uses explicit labels (no i18n
 // key dependency) so hidden-route translation keys can't leak as raw strings.
-const mainLinks: { href: string; label: string; icon: any }[] = [
+const mainLinks: { href: string; label: string; icon: LucideIcon }[] = [
   { href: "/snap-solve",       label: "Snap & Solve",     icon: Camera },
   // WEEK 10–11: study/track/AI core routes (additive)
   { href: "/notes",            label: "Chapter Notes",    icon: BookOpen },
@@ -104,18 +105,19 @@ export default function Navbar() {
   const [openMenu, setOpenMenu] = useState<string | null>(null);
   const [acctOpen, setAcctOpen] = useState(false);
   const [email, setEmail] = useState<string | null>(null);
-  const [isGuest, setIsGuest] = useState(false);
+  const [isGuest, setIsGuest] = useState(
+    () => typeof window !== "undefined" && localStorage.getItem("sb_guest") === "1"
+  );
 
   // Auth state — show the signed-in student in the navbar
   useEffect(() => {
     let mounted = true;
-    supabase.auth.getUser().then(({ data }) => {
+    supabase.auth.getUser().then(({ data }: { data: { user: { email?: string } | null } }) => {
       if (mounted) setEmail(data.user?.email ?? null);
     });
-    const { data: sub } = supabase.auth.onAuthStateChange((_e, session) => {
+    const { data: sub } = supabase.auth.onAuthStateChange((_e: string, session: Session | null) => {
       setEmail(session?.user?.email ?? null);
     });
-    if (typeof window !== "undefined") setIsGuest(localStorage.getItem("sb_guest") === "1");
     return () => { mounted = false; sub.subscription.unsubscribe(); };
   }, []);
 
@@ -379,7 +381,7 @@ export default function Navbar() {
 
           <button
             onClick={() => setMenuOpen(!menuOpen)}
-            className="lg:hidden p-2 text-gray-400 hover:text-white transition"
+            className="flex h-11 w-11 items-center justify-center rounded-xl text-gray-400 transition hover:bg-white/[0.05] hover:text-white lg:hidden"
             aria-label="Menu"
           >
             {menuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}

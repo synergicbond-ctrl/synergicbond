@@ -20,7 +20,10 @@ const defaultMessages: ReadonlyArray<ChatMessage> = [
 ];
 
 export default function AdvancedAITutorPage() {
-  const [messages, setMessages] = useState<ChatMessage[]>([...defaultMessages]);
+  const [messages, setMessages] = useState<ChatMessage[]>(() => {
+    const stored = loadChat();
+    return stored && stored.length > 0 ? stored : [...defaultMessages];
+  });
   const [input, setInput] = useState("");
   const [chapterId, setChapterId] = useState("mole-concept");
   const [loading, setLoading] = useState(false);
@@ -28,14 +31,6 @@ export default function AdvancedAITutorPage() {
   
   // Stream lock to prevent corruption from concurrent requests during active streaming
   const streamLockRef = useRef(false);
-
-  // Load persisted chat on mount
-  useEffect(() => {
-    const stored = loadChat();
-    if (stored && stored.length > 0) {
-      setMessages(stored);
-    }
-  }, []);
 
   // Persist chat to local storage whenever messages update (skipping initial greeting save)
   useEffect(() => {

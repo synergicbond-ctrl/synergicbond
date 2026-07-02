@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import {
-  Search, Sparkles, FlaskConical, Table2, Atom, FileText, Mic,
+  Search, Sparkles, FlaskConical, Table2, Atom, FileText,
   BookOpen, GraduationCap, ArrowRight, Users, Zap, Trophy,
   BookMarked, GitBranch, Microscope, Lock, RotateCcw, Flame, Compass,
 } from "lucide-react";

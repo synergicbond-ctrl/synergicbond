@@ -1,3 +1,9 @@
+type OrganicMechanism = {
+  name: string;
+  steps: string[];
+  description: string;
+};
+
 export const organic = [
   {
     id: "haloalkanes-haloarenes",
@@ -162,7 +168,7 @@ export const organic = [
   }
 ];
 
-export const organicMechanisms: Record<string, any[]> = {
+export const organicMechanisms: Record<string, OrganicMechanism[]> = {
   "haloalkanes-haloarenes": [
     {
       name: "SN2",

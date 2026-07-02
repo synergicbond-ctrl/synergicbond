@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 interface Question {
   id: string;
@@ -11,10 +11,9 @@ interface Question {
   conceptTitle: string;
 }
 
-export default function PracticeLoop({ questions, chapterId }: { questions: Question[]; chapterId: string }) {
+export default function PracticeLoop({ questions }: { questions: Question[]; chapterId: string }) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [selectedOption, setSelectedOption] = useState<string | null>(null);
-  const [isCorrect, setIsCorrect] = useState<boolean | null>(null);
   const [mistakes, setMistakes] = useState<Question[]>([]);
   const [completed, setCompleted] = useState(false);
   const [aiExplanation, setAiExplanation] = useState<string | null>(null);
@@ -25,7 +24,6 @@ export default function PracticeLoop({ questions, chapterId }: { questions: Ques
     if (selectedOption) return; // Prevent double clicking
     setSelectedOption(option);
     const correct = option.startsWith(currentQ.answer);
-    setIsCorrect(correct);
 
     if (!correct) {
       setMistakes((prev) => [...prev, currentQ]);
@@ -38,7 +36,6 @@ export default function PracticeLoop({ questions, chapterId }: { questions: Ques
 
   const nextQuestion = () => {
     setSelectedOption(null);
-    setIsCorrect(null);
     setAiExplanation(null);
     if (currentIndex < questions.length - 1) {
       setCurrentIndex(currentIndex + 1);
@@ -51,7 +48,6 @@ export default function PracticeLoop({ questions, chapterId }: { questions: Ques
     setCurrentIndex(0);
     setMistakes([]);
     setSelectedOption(null);
-    setIsCorrect(null);
     setCompleted(false);
     setAiExplanation(null);
   };

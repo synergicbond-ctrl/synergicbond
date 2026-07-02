@@ -18,7 +18,7 @@ export interface DashboardPayload {
   recentTests: { id: string; name: string; score: number; date: string }[];
 }
 
-export function fetchStudentDashboardData(userId: string): DashboardPayload {
+export function fetchStudentDashboardData(): DashboardPayload {
   return {
     summary: {
       chaptersCompleted: 12,

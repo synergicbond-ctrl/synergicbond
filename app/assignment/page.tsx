@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { masterSyllabus } from "@/lib/masterSyllabus";
+import { masterSyllabus } from "@/lib/masterSyllabus/all";
 
 const EXAMS = ["JEE Main", "JEE Advanced", "NEET", "GATE", "NSEC", "INChO", "IChO"];
 const QUESTION_TYPES = [
@@ -31,6 +31,16 @@ type Question = {
   tip: string;
 };
 
+type Assignment = {
+  title?: string;
+  topic?: string;
+  examType?: string;
+  totalQuestions?: number;
+  totalMarks?: number;
+  duration?: string;
+  questions: Question[];
+};
+
 export default function AssignmentPage() {
   const [topic, setTopic] = useState("");
   const [chapterId, setChapterId] = useState("");
@@ -40,7 +50,7 @@ export default function AssignmentPage() {
   const [language, setLanguage] = useState("english");
   const [selectedTypes, setSelectedTypes] = useState(["single_correct", "numerical"]);
   const [loading, setLoading] = useState(false);
-  const [assignment, setAssignment] = useState<any>(null);
+  const [assignment, setAssignment] = useState<Assignment | null>(null);
   const [error, setError] = useState("");
   const [answers, setAnswers] = useState<Record<number, string>>({});
   const [submitted, setSubmitted] = useState(false);
@@ -71,8 +81,8 @@ export default function AssignmentPage() {
       const data = await res.json();
       if (data.error) throw new Error(data.error);
       setAssignment(data.assignment);
-    } catch (e: any) {
-      setError(e.message);
+    } catch (e: unknown) {
+      setError(e instanceof Error ? e.message : "Failed to generate assignment.");
     } finally {
       setLoading(false);
     }

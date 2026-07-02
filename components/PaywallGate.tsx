@@ -7,6 +7,8 @@ type Props = {
   children: React.ReactNode;
 };
 
+const previewLineWidths = ["78%", "92%", "84%", "96%", "73%"];
+
 export function PaywallGate({ chapterId, children }: Props) {
   const [access, setAccess] = useState<"loading" | "allowed" | "blocked">("loading");
   const [reason, setReason] = useState("");
@@ -43,8 +45,8 @@ export function PaywallGate({ chapterId, children }: Props) {
             <h3 className="text-white font-bold mb-2">Chapter Content</h3>
             <p className="text-zinc-400 text-sm">This chapter contains comprehensive notes, formulas, reactions, mechanisms, practice questions, and PYQ analysis...</p>
             <div className="mt-4 space-y-2">
-              {[...Array(5)].map((_, i) => (
-                <div key={i} className="h-3 bg-zinc-700 rounded" style={{ width: `${70 + Math.random() * 30}%` }} />
+              {previewLineWidths.map((width, i) => (
+                <div key={i} className="h-3 bg-zinc-700 rounded" style={{ width }} />
               ))}
             </div>
           </div>

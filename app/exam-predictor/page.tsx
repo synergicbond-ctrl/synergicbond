@@ -2,11 +2,37 @@
 
 import { useState } from "react";
 
+type WeeklyTarget = {
+  week: number;
+  target: string;
+  expectedScoreGain: string;
+};
+
+type ExamPrediction = {
+  currentLevel?: string;
+  estimatedScore?: {
+    chemistry?: number;
+    overall?: number;
+    outOf?: number;
+  };
+  estimatedRank?: {
+    optimistic?: string;
+    realistic?: string;
+    conservative?: string;
+  };
+  percentile?: string;
+  improvementPotential?: string;
+  weeklyTargets?: WeeklyTarget[];
+  topicsToFocusNow?: string[];
+  motivationalMessage?: string;
+  successProbability?: string;
+};
+
 export default function ExamPredictorPage() {
   const [examType, setExamType] = useState("NEET");
   const [scores, setScores] = useState("");
   const [hours, setHours] = useState(4);
-  const [result, setResult] = useState<any>(null);
+  const [result, setResult] = useState<ExamPrediction | null>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
@@ -24,8 +50,8 @@ export default function ExamPredictorPage() {
       const data = await res.json();
       if (data.error) setError(data.error);
       else setResult(data.prediction);
-    } catch (e: any) {
-      setError(e.message);
+    } catch (e: unknown) {
+      setError(e instanceof Error ? e.message : "Failed to predict exam performance.");
     } finally {
       setLoading(false);
     }
@@ -124,7 +150,7 @@ export default function ExamPredictorPage() {
             <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-6">
               <h3 className="font-bold mb-4">📅 4-Week Target Plan</h3>
               <div className="space-y-3">
-                {result.weeklyTargets?.map((w: any) => (
+                {result.weeklyTargets?.map((w) => (
                   <div key={w.week} className="flex items-center gap-4 rounded-xl bg-white/5 p-3">
                     <span className="text-sm font-bold text-cyan-400 w-14">Week {w.week}</span>
                     <span className="flex-1 text-white/80 text-sm">{w.target}</span>
@@ -147,7 +173,7 @@ export default function ExamPredictorPage() {
             {/* Motivational message */}
             <div className="rounded-2xl border border-violet-500/20 bg-violet-950/20 p-5">
               <p className="text-violet-300 font-semibold">💪 Message from AI Mentor</p>
-              <p className="text-white/80 mt-2 italic">"{result.motivationalMessage}"</p>
+              <p className="text-white/80 mt-2 italic">&quot;{result.motivationalMessage}&quot;</p>
             </div>
 
             <div className="rounded-xl bg-white/5 p-4 text-center">

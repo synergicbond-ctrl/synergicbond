@@ -60,8 +60,11 @@ Respond with ONLY this JSON (no markdown, no code blocks):
     const parsed = JSON.parse(clean);
 
     return NextResponse.json({ questions: parsed.questions || [], chapterId, difficulty, exam });
-  } catch (error: any) {
+  } catch (error: unknown) {
     console.error("Quiz error:", error);
-    return NextResponse.json({ error: error.message }, { status: 500 });
+    return NextResponse.json(
+      { error: error instanceof Error ? error.message : "Failed to generate quiz" },
+      { status: 500 }
+    );
   }
 }

@@ -16,15 +16,16 @@ export default function StructureView({
   height?: number;
   label?: string;
 }) {
-  const [svg, setSvg] = useState<string | null>(null);
-  const [failed, setFailed] = useState(false);
+  const [rendered, setRendered] = useState<{
+    smiles: string;
+    svg: string | null;
+    failed: boolean;
+  } | null>(null);
   const reqId = useRef(0);
 
   useEffect(() => {
     if (!smiles) return;
     const id = ++reqId.current;
-    setSvg(null);
-    setFailed(false);
     (async () => {
       try {
         const OCL = (await import("openchemlib/minimal")).default;
@@ -40,14 +41,16 @@ export default function StructureView({
           .replace(/rgb\(0,\s*0,\s*0\)/gi, "#cbd5e1")
           .replace(/(stroke|fill)="#000000"/gi, '$1="#cbd5e1"')
           .replace(/(stroke|fill)="black"/gi, '$1="#cbd5e1"');
-        if (id === reqId.current) setSvg(out);
+        if (id === reqId.current) setRendered({ smiles, svg: out, failed: false });
       } catch {
-        if (id === reqId.current) setFailed(true);
+        if (id === reqId.current) setRendered({ smiles, svg: null, failed: true });
       }
     })();
   }, [smiles, width, height]);
 
   if (!smiles) return null;
+
+  const current = rendered?.smiles === smiles ? rendered : null;
 
   return (
     <div className="flex flex-col items-center">
@@ -55,9 +58,9 @@ export default function StructureView({
         className="flex items-center justify-center rounded-lg border border-white/[0.06] bg-white/[0.03] p-1"
         style={{ minWidth: width / 1.4, minHeight: height / 1.6 }}
       >
-        {svg ? (
-          <span dangerouslySetInnerHTML={{ __html: svg }} />
-        ) : failed ? (
+        {current?.svg ? (
+          <span dangerouslySetInnerHTML={{ __html: current.svg }} />
+        ) : current?.failed ? (
           <span className="px-2 py-3 font-mono text-[11px] text-white/50">{smiles}</span>
         ) : (
           <span className="block h-[80px] w-[140px] animate-pulse rounded bg-white/5" />

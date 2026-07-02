@@ -45,7 +45,7 @@ export default function AboutPage() {
           </span>
         </h1>
         <p className="mt-5 max-w-2xl mx-auto text-white/65 text-base leading-relaxed">
-          SYNERGIC BOND isn't another study website. It's a Chemistry Operating System — a structured intelligence layer that turns scattered knowledge into one connected system.
+          SYNERGIC BOND isn&apos;t another study website. It&apos;s a Chemistry Operating System — a structured intelligence layer that turns scattered knowledge into one connected system.
         </p>
       </section>
 
@@ -57,7 +57,7 @@ export default function AboutPage() {
             <h2 className="text-2xl font-black">The Real Problem</h2>
           </div>
           <p className="text-white/70 mb-6 text-sm leading-relaxed max-w-2xl">
-            Most students don't fail chemistry because it's hard. They fail because traditional learning leaves knowledge scattered:
+            Most students don&apos;t fail chemistry because it&apos;s hard. They fail because traditional learning leaves knowledge scattered:
           </p>
           <div className="grid gap-3 sm:grid-cols-2">
             {problems.map((p) => (
@@ -81,7 +81,7 @@ export default function AboutPage() {
       {/* Features */}
       <section className="mx-auto max-w-6xl px-6 py-10">
         <div className="text-center mb-8">
-          <p className="text-xs font-bold uppercase tracking-[0.4em] text-cyan-300 mb-3">What's Inside</p>
+          <p className="text-xs font-bold uppercase tracking-[0.4em] text-cyan-300 mb-3">What&apos;s Inside</p>
           <h2 className="text-3xl md:text-4xl font-black">Nine Systems. One Chemistry OS.</h2>
         </div>
         <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">

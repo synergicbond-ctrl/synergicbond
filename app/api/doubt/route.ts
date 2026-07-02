@@ -47,8 +47,11 @@ Student doubt: ${safeDoubt}`;
 
     const reply = await generateText(prompt);
     return NextResponse.json({ reply });
-  } catch (err: any) {
+  } catch (err: unknown) {
     console.error("Doubt route error:", err);
-    return NextResponse.json({ error: err.message || "Failed to solve doubt." }, { status: 500 });
+    return NextResponse.json(
+      { error: err instanceof Error ? err.message : "Failed to solve doubt." },
+      { status: 500 }
+    );
   }
 }

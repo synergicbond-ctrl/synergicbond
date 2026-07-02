@@ -25,7 +25,7 @@ async function run(contents: string): Promise<string> {
   throw lastErr ?? new Error("All Gemini models failed");
 }
 
-export async function generateText(prompt: string, _usePro = false): Promise<string> {
+export async function generateText(prompt: string): Promise<string> {
   return run(prompt);
 }
 

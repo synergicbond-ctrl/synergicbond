@@ -13,6 +13,7 @@ import {
 import { getAdaptation, recordSession } from "@/lib/memoryCore";
 import { rateLimit, clientIp } from "@/lib/rateLimit";
 import { checkAndConsumeSnapQuota } from "@/lib/snapQuota";
+import { createClient } from "@/lib/supabase/server";
 
 // ---------------------------------------------------------------------------
 // Fallback + guidance helpers (server-owned; the UI never computes these)
@@ -440,11 +441,23 @@ export async function POST(request: Request) {
       );
     }
 
-    const body = await request.json();
-    const { imageBase64, query, language = "english", interrupt, message, currentContext } = body ?? {};
-    // Optional — present only once a future frontend sends it. Until then all
-    // sessions share the "anonymous" bucket (see lib/memoryCore caveats).
-    const userId = typeof body?.userId === "string" && body.userId.trim() ? body.userId.trim() : "anonymous";
+    const body = await request.json().catch(() => null);
+    if (!body || typeof body !== "object") {
+      return NextResponse.json({ error: "Invalid JSON body." }, { status: 400 });
+    }
+
+    const { imageBase64, query, language = "english", interrupt, message, currentContext } = body as {
+      imageBase64?: string;
+      query?: string;
+      language?: string;
+      interrupt?: boolean;
+      message?: string;
+      currentContext?: string;
+    };
+
+    const supabase = await createClient();
+    const { data: { user } } = await supabase.auth.getUser();
+    const userId = user?.id ?? "anonymous";
 
     // Interrupt → tutor-mode SSE. Needs either a clarification message or the
     // original question to teach against.
@@ -466,9 +479,14 @@ export async function POST(request: Request) {
 
     // Paywall gate — free tier = 5 solves/day, Pro = unlimited. Applies to the
     // main solve path only (interrupt/tutor follow-ups are not separately metered).
-    // Degrades open if the usage tables aren't migrated yet (see lib/snapQuota).
     const quota = await checkAndConsumeSnapQuota();
     if (!quota.allowed) {
+      if (quota.reason === "quota_error") {
+        return NextResponse.json(
+          { error: "Snap & Solve quota is temporarily unavailable. Please try again." },
+          { status: 503 }
+        );
+      }
       if (quota.tier === "guest") {
         return NextResponse.json(
           { error: "Sign in to use Snap & Solve — free accounts get 5 solves per day at no cost." },

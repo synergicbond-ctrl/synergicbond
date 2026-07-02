@@ -273,7 +273,7 @@ export default function AILabHub() {
         <ToolCard icon="💬" title="Doubt Solver" desc="Type or snap a doubt and get an instant structured answer." badge="live" href="/doubt-solver" />
         <ToolCard icon="🗓️" title="Study Planner" desc="Week-by-week chapter plan built from real syllabus difficulty & hours — no fabricated pacing." badge="builtin" onOpen={() => setOpen(open === "planner" ? null : "planner")} />
         <ToolCard icon="🔁" title="Revision Generator" desc="One-tap rapid-revision sheets from the verified chapter notes, with linked tests & PYQs." badge="builtin" onOpen={() => setOpen(open === "revision" ? null : "revision")} />
-        <ToolCard icon="📝" title="AI Notes" desc="AI-personalised notes are on the roadmap. Verified human-authored notes are available today in /notes." badge="soon" />
+        <ToolCard icon="📝" title="AI Notes" desc="Generate exam-focused notes for any topic, exam & difficulty. Verified human-authored notes stay at /notes." badge="live" href="/ai-lab/notes" />
       </div>
 
       {open === "planner" && (

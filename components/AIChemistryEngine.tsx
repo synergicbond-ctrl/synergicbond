@@ -4,7 +4,8 @@ import { useState } from "react";
 
 import Card from "@/components/ui/Card";
 import Container from "@/components/ui/Container";
-import { type Chapter, masterSyllabus } from "@/lib/masterSyllabus";
+import { masterSyllabus } from "@/lib/masterSyllabus/all";
+import type { Chapter } from "@/lib/masterSyllabus/types";
 
 type SearchResult = Pick<Chapter, "title" | "concepts">;
 
@@ -102,7 +103,7 @@ export default function AIChemistryEngine() {
             {result.concepts.length > 0 ? (
               <ul className="mt-4 list-disc space-y-2 pl-5 text-white/70">
                 {result.concepts.map((concept) => (
-                  <li key={concept}>{concept}</li>
+                  <li key={concept.id}>{concept.title}</li>
                 ))}
               </ul>
             ) : (

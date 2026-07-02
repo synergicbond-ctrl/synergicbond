@@ -59,7 +59,7 @@ Use LaTeX notation for formulas ($...$). Be concise but thorough.`;
 
     const analysis = response.text ?? "Analysis failed.";
     return NextResponse.json({ analysis });
-  } catch (err: any) {
+  } catch (err: unknown) {
     console.error("Vision API error:", err);
     return NextResponse.json({ error: "Failed to analyze image." }, { status: 500 });
   }

@@ -66,8 +66,11 @@ Respond with ONLY this JSON:
     const data = JSON.parse(clean);
 
     return NextResponse.json(data);
-  } catch (err: any) {
+  } catch (err: unknown) {
     console.error("Predictor error:", err);
-    return NextResponse.json({ error: err.message }, { status: 500 });
+    return NextResponse.json(
+      { error: err instanceof Error ? err.message : "Failed to generate prediction" },
+      { status: 500 }
+    );
   }
 }

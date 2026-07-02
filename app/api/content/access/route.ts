@@ -3,17 +3,7 @@ export const dynamic = "force-dynamic";
 
 import { NextResponse } from "next/server";
 import { createClient } from "@/lib/supabase/server";
-
-// Free chapters per category — students can access these without subscription
-const FREE_CHAPTERS: Record<string, string[]> = {
-  physical: ["mole-concept", "atomic-structure"],
-  organic: ["general-organic-chemistry", "hydrocarbons"],
-  inorganic: ["periodic-table", "chemical-bonding"],
-  spectroscopy: ["introduction-to-spectroscopy"],
-  analytical: ["gravimetric-analysis"],
-};
-
-const ALL_FREE_CHAPTERS = Object.values(FREE_CHAPTERS).flat();
+import { ALL_FREE_CHAPTER_IDS, isFreeChapter } from "@/lib/freeChapters";
 
 export async function GET(req: Request) {
   try {
@@ -26,7 +16,7 @@ export async function GET(req: Request) {
     }
 
     // Check if chapter is free
-    const isChapterFree = chapterId ? ALL_FREE_CHAPTERS.includes(chapterId) : false;
+    const isChapterFree = chapterId ? isFreeChapter(chapterId) : false;
     if (isChapterFree) {
       return NextResponse.json({ access: true, reason: "free_chapter", tier: "free" });
     }
@@ -60,7 +50,7 @@ export async function GET(req: Request) {
         access: false,
         reason: "not_logged_in",
         tier: "guest",
-        freeChapters: ALL_FREE_CHAPTERS,
+        freeChapters: ALL_FREE_CHAPTER_IDS,
       });
     }
 
@@ -69,7 +59,7 @@ export async function GET(req: Request) {
         access: false,
         reason: "no_subscription",
         tier: "free",
-        freeChapters: ALL_FREE_CHAPTERS,
+        freeChapters: ALL_FREE_CHAPTER_IDS,
         upgradeMessage: "Upgrade to SYNERGIC BOND Pro to unlock all 33 chapters + unlimited AI",
       });
     }
@@ -79,7 +69,10 @@ export async function GET(req: Request) {
       reason: "subscription_active",
       tier: "pro",
     });
-  } catch (error: any) {
-    return NextResponse.json({ error: error.message }, { status: 500 });
+  } catch (error: unknown) {
+    return NextResponse.json(
+      { error: error instanceof Error ? error.message : "Failed to check content access" },
+      { status: 500 }
+    );
   }
 }

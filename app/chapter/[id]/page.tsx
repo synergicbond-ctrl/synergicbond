@@ -14,17 +14,17 @@ import VisionUploader from "@/components/VisionUploader";
 import StudySessionTracker from "@/components/StudySessionTracker";
 import { createClient } from "@/lib/supabase/server";
 import { isProActive } from "@/lib/subscription";
-
-// Must match FREE_CHAPTERS in /api/content/access/route.ts — single source of truth
-// for which chapters are publicly accessible without a subscription.
-const FREE_CHAPTER_IDS = [
-  "mole-concept", "atomic-structure",
-  "general-organic-chemistry", "hydrocarbons",
-  "periodic-table", "chemical-bonding",
-  "introduction-to-spectroscopy", "gravimetric-analysis",
-];
+import { isFreeChapter } from "@/lib/freeChapters";
 
 const allChapters = [...physical, ...organic, ...inorganic];
+
+type Mechanism = {
+  id?: string;
+  title?: string;
+  name?: string;
+  description?: string;
+  steps?: string[];
+};
 
 interface PageProps {
   params: Promise<{ id: string }>;
@@ -43,7 +43,7 @@ export default async function ChapterPage({ params }: PageProps) {
   // Server-side access gate: free chapters pass through; premium chapters
   // require an active Pro subscription. Server redirect means zero premium
   // content reaches the client for unauthorized users.
-  if (!FREE_CHAPTER_IDS.includes(lookupId)) {
+  if (!isFreeChapter(lookupId)) {
     const supabase = await createClient();
     const { data: { user } } = await supabase.auth.getUser();
     if (!user) redirect(`/auth/signin?next=/chapter/${resolvedParams.id}`);
@@ -154,10 +154,10 @@ export default async function ChapterPage({ params }: PageProps) {
             <section className="p-6 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800 bg-white dark:bg-slate-900">
               <h2 className="text-2xl font-bold mb-4">Mechanisms & Pathways</h2>
               <div className="space-y-4">
-                {mechanisms.map((m: any, idx: number) => (
+                {mechanisms.map((m: Mechanism, idx) => (
                   <div key={idx} className="p-4 rounded-xl border border-rose-100 dark:border-rose-950 bg-rose-50/20 dark:bg-rose-950/20">
-                    <h4 className="font-bold text-rose-800 dark:text-rose-400">{m.name} Mechanism</h4>
-                    <p className="text-xs text-slate-600 dark:text-slate-400 mt-1 leading-relaxed">{m.description}</p>
+                    <h4 className="font-bold text-rose-800 dark:text-rose-400">{m.name ?? m.title} Mechanism</h4>
+                    <p className="text-xs text-slate-600 dark:text-slate-400 mt-1 leading-relaxed">{m.description ?? m.steps?.join(" ")}</p>
                   </div>
                 ))}
               </div>

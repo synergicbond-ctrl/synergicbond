@@ -70,8 +70,11 @@ Respond with ONLY this JSON:
     const data = JSON.parse(clean);
 
     return NextResponse.json(data);
-  } catch (err: any) {
+  } catch (err: unknown) {
     console.error("Study plan error:", err);
-    return NextResponse.json({ error: err.message }, { status: 500 });
+    return NextResponse.json(
+      { error: err instanceof Error ? err.message : "Failed to generate study plan" },
+      { status: 500 }
+    );
   }
 }

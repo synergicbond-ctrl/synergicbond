@@ -164,7 +164,7 @@ export default function PeriodicTablePage() {
         {mode === "exam" && (
           <div className="flex items-center gap-2 mb-5 text-xs text-white/50">
             <Target className="h-3.5 w-3.5 text-amber-300" />
-            <span><b className="text-amber-300">{EXAM_HIGH_YIELD.size} high-yield elements</b> for NEET / JEE are spotlit — the rest are dimmed so you focus on what's tested most.</span>
+            <span><b className="text-amber-300">{EXAM_HIGH_YIELD.size} high-yield elements</b> for NEET / JEE are spotlit — the rest are dimmed so you focus on what&apos;s tested most.</span>
           </div>
         )}
         {mode === "trend" && range && (

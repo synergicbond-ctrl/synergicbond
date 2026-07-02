@@ -5,13 +5,26 @@ import ReactMarkdown from "react-markdown";
 import remarkMath from "remark-math";
 import rehypeKatex from "rehype-katex";
 
+const DEFAULT_EXAM = "JEE Main";
+
+type DailyChallenge = {
+  topic?: string;
+  xpReward?: number;
+  difficulty?: string;
+  question?: string;
+  options?: Record<string, string>;
+  answer?: string;
+  explanation?: string;
+  hint?: string;
+};
+
 export default function DailyChallengePage() {
-  const [challenge, setChallenge] = useState<any>(null);
+  const [challenge, setChallenge] = useState<DailyChallenge | null>(null);
   const [selected, setSelected] = useState<string | null>(null);
   const [submitted, setSubmitted] = useState(false);
   const [showHint, setShowHint] = useState(false);
   const [loading, setLoading] = useState(true);
-  const [exam, setExam] = useState("JEE Main");
+  const [exam, setExam] = useState(DEFAULT_EXAM);
 
   async function loadChallenge(examType = exam) {
     setLoading(true);
@@ -29,7 +42,23 @@ export default function DailyChallengePage() {
     }
   }
 
-  useEffect(() => { loadChallenge(); }, []);
+  useEffect(() => {
+    let cancelled = false;
+
+    fetch(`/api/daily-challenge?exam=${encodeURIComponent(DEFAULT_EXAM)}`)
+      .then((res) => res.json())
+      .then((data) => {
+        if (!cancelled) setChallenge(data);
+      })
+      .catch((e) => console.error(e))
+      .finally(() => {
+        if (!cancelled) setLoading(false);
+      });
+
+    return () => {
+      cancelled = true;
+    };
+  }, []);
 
   const today = new Date().toLocaleDateString("en-IN", { weekday: "long", day: "numeric", month: "long" });
   const isCorrect = submitted && selected === challenge?.answer;
@@ -56,7 +85,7 @@ export default function DailyChallengePage() {
         {loading && (
           <div className="text-center py-20 text-white/40">
             <div className="text-5xl mb-4 animate-pulse">🎯</div>
-            <p>Loading today's challenge...</p>
+            <p>Loading today&apos;s challenge...</p>
           </div>
         )}
 

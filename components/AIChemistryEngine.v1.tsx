@@ -1,7 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import { type Chapter, masterSyllabus } from "@/lib/masterSyllabus";
+import { masterSyllabus } from "@/lib/masterSyllabus/all";
+import type { Chapter } from "@/lib/masterSyllabus/types";
 
 type SearchResult = Pick<Chapter, "title" | "concepts">;
 
@@ -51,7 +52,7 @@ export default function AIChemistryEngine() {
           {result.concepts.length > 0 && (
             <ul className="list-disc ml-5 text-white/70 mt-2">
               {result.concepts.map((c) => (
-                <li key={c}>{c}</li>
+                <li key={c.id}>{c.title}</li>
               ))}
             </ul>
           )}

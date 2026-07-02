@@ -50,7 +50,7 @@ export default function GuestDashboardPreview() {
         {/* Greeting */}
         <div className="mb-6">
           <h1 className="text-3xl font-black">Welcome, Future Ranker 👋</h1>
-          <p className="text-white/50 text-sm mt-1">Here's what your Chemistry OS dashboard looks like.</p>
+          <p className="text-white/50 text-sm mt-1">Here&apos;s what your Chemistry OS dashboard looks like.</p>
         </div>
 
         {/* Stats */}

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 
 export default function VisionUploader() {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
@@ -34,7 +35,7 @@ export default function VisionUploader() {
       });
       const data = await res.json();
       setAnalysis(data.analysis || "Diagram analyzed successfully.");
-    } catch (err) {
+    } catch {
       setAnalysis("Error analyzing the chemical diagram via vision engine.");
     } finally {
       setLoading(false);
@@ -58,7 +59,7 @@ export default function VisionUploader() {
 
         {selectedImage && (
           <div className="relative w-full h-48 rounded-xl border border-slate-200 dark:border-slate-700 overflow-hidden bg-slate-50 dark:bg-slate-950 flex items-center justify-center">
-            <img src={selectedImage} alt="Chemical Diagram" className="max-h-full object-contain" />
+            <Image src={selectedImage} alt="Chemical Diagram" width={360} height={192} unoptimized className="max-h-full object-contain" />
           </div>
         )}
 

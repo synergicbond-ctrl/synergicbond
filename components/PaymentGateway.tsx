@@ -2,9 +2,9 @@
 
 /**
  * PAYMENT GATEWAY — Razorpay Checkout (UPI / cards / netbanking / wallets).
- * Flow: POST /api/payment/create-order → open Razorpay Checkout → the
- * /api/payment/webhook (HMAC-verified) activates Pro server-side. The card-data
- * never touches our code; Razorpay's hosted checkout handles it.
+ * Flow: POST /api/payment/create-order -> open Razorpay Checkout ->
+ * POST /api/payment/verify-payment -> webhook activates Pro server-side.
+ * The card data never touches our code; Razorpay's hosted checkout handles it.
  */
 
 import { useState } from "react";
@@ -13,9 +13,62 @@ import { X, ShieldCheck, CreditCard, Smartphone, Building2, Wallet, Apple } from
 
 type PlanId = "pro_monthly" | "pro_annual";
 
+type RazorpayOrderResponse = {
+  keyId?: string;
+  amount?: number;
+  currency?: string;
+  label?: string;
+  orderId?: string;
+  order_id?: string;
+  email?: string;
+  error?: string;
+};
+
+type RazorpaySuccessResponse = {
+  razorpay_payment_id: string;
+  razorpay_order_id: string;
+  razorpay_signature: string;
+};
+
+type RazorpayFailureResponse = {
+  error?: {
+    code?: string;
+    description?: string;
+    reason?: string;
+    metadata?: {
+      payment_id?: string;
+      order_id?: string;
+    };
+  };
+};
+
+type RazorpayOptions = {
+  key?: string;
+  amount?: number;
+  currency?: string;
+  name: string;
+  description: string;
+  order_id?: string;
+  prefill: { email: string };
+  theme: { color: string };
+  handler: (response: RazorpaySuccessResponse) => void;
+  modal: { ondismiss: () => void };
+};
+
+type RazorpayInstance = {
+  open: () => void;
+  on: (event: "payment.failed", handler: (response: RazorpayFailureResponse) => void) => void;
+};
+
+type RazorpayConstructor = new (options: RazorpayOptions) => RazorpayInstance;
+
+type RazorpayWindow = Window & typeof globalThis & {
+  Razorpay?: RazorpayConstructor;
+};
+
 function loadRazorpay(): Promise<void> {
   return new Promise((resolve, reject) => {
-    if ((window as any).Razorpay) return resolve();
+    if ((window as RazorpayWindow).Razorpay) return resolve();
     const s = document.createElement("script");
     s.src = "https://checkout.razorpay.com/v1/checkout.js";
     s.onload = () => resolve();
@@ -61,7 +114,7 @@ export default function PaymentGateway({
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ plan: planId }),
       });
-      const data = await res.json().catch(() => ({}));
+      const data = await res.json().catch(() => ({})) as RazorpayOrderResponse;
 
       if (!res.ok) {
         if (res.status === 401) {
@@ -73,23 +126,59 @@ export default function PaymentGateway({
         return;
       }
 
+      const orderId = data.orderId || data.order_id;
+      if (!data.keyId || !data.amount || !data.currency || !orderId) {
+        alert("Checkout could not start. Please try again.");
+        setProcessing(false);
+        return;
+      }
+
       await loadRazorpay();
-      const rzp = new (window as any).Razorpay({
+      const Razorpay = (window as RazorpayWindow).Razorpay;
+      if (!Razorpay) throw new Error("Razorpay checkout failed to load");
+
+      const rzp = new Razorpay({
         key: data.keyId,
         amount: data.amount,
         currency: data.currency,
         name: "SYNERGIC BOND",
         description: data.label || plan,
-        order_id: data.orderId,
+        order_id: orderId,
         prefill: { email: data.email || "" },
         theme: { color: "#22D3EE" },
-        handler: function () {
-          // The webhook activates Pro server-side; this just confirms to the user.
+        handler: async function (response) {
+          const verifyRes = await fetch("/api/payment/verify-payment", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(response),
+          });
+          const verifyData = await verifyRes.json().catch(() => ({})) as { success?: boolean; error?: string };
+
+          if (!verifyRes.ok || !verifyData.success) {
+            track("payment_verification_failed", { plan: planId });
+            alert(verifyData.error || "Payment could not be verified. Please contact support.");
+            setProcessing(false);
+            return;
+          }
+
           track("payment_success", { plan: planId });
-          alert("Payment received! Your Pro access will activate within a few seconds.");
+          alert("Payment verified. Your Pro access will activate within a few seconds.");
           window.location.reload();
         },
-        modal: { ondismiss: () => setProcessing(false) },
+        modal: {
+          ondismiss: () => {
+            track("payment_cancelled", { plan: planId });
+            setProcessing(false);
+          },
+        },
+      });
+      rzp.on("payment.failed", (response) => {
+        track("payment_failed", {
+          plan: planId,
+          reason: response.error?.reason || response.error?.code || "unknown",
+        });
+        alert(response.error?.description || "Payment failed. Please try again.");
+        setProcessing(false);
       });
       rzp.open();
     } catch {

@@ -1,17 +1,27 @@
 import { supabase } from "@/lib/supabase";
 
 export async function fetchRealDashboardData(userId: string) {
-  // Fetch real analytics, tests, and progress mapped to the authenticated user ID
-  const { data: analytics, error } = await supabase
-    .from("analytics") // Adjust to your actual analytics/progress table name
-    .select("*")
-    .eq("user_id", userId)
-    .single();
+  const [{ data: xp, error: xpError }, { data: sessions, error: sessionsError }] =
+    await Promise.all([
+      supabase
+        .from("user_xp")
+        .select("xp, xp_level, streak, last_active")
+        .eq("user_id", userId)
+        .maybeSingle(),
+      supabase
+        .from("study_sessions")
+        .select("id, chapter_id, started_at, ended_at, duration")
+        .eq("user_id", userId)
+        .order("started_at", { ascending: false }),
+    ]);
 
-  if (error) {
-    console.error("Error fetching user data:", error);
+  if (xpError || sessionsError) {
+    console.error("Error fetching dashboard data:", xpError || sessionsError);
     return null;
   }
 
-  return analytics;
+  return {
+    xp: xp ?? { xp: 0, xp_level: 1, streak: 0, last_active: null },
+    sessions: sessions ?? [],
+  };
 }

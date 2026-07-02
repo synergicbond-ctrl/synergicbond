@@ -2,7 +2,6 @@ import HomeHero from "@/components/HomeHero";
 import ControlCenter from "@/components/ControlCenter";
 import { fetchControlCenterProgress } from "@/lib/controlCenterData";
 import KnowledgeVault from "@/components/KnowledgeVault";
-import AIChemistryEngine from "@/components/AIChemistryEngine";
 import Stats from "@/components/Stats";
 import JeeSection from "@/components/JeeSection";
 import NeetSection from "@/components/NeetSection";
@@ -71,7 +70,7 @@ export default async function Home() {
             <p className="text-xs font-bold uppercase tracking-[0.4em] text-cyan-300 mb-3">Stay Ahead</p>
             <h2 className="text-3xl font-black text-white mb-3">Never Miss an Exam Update</h2>
             <p className="text-white/70 text-sm leading-relaxed">
-              Registration windows, syllabus changes, and high-yield strategy blogs — tracked live in the Operations Hub. Bookmark this page so you're always a step ahead of every deadline.
+              Registration windows, syllabus changes, and high-yield strategy blogs — tracked live in the Operations Hub. Bookmark this page so you&apos;re always a step ahead of every deadline.
             </p>
           </div>
           <NewsSidebar />

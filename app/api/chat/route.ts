@@ -62,7 +62,7 @@ Rules:
 
     // Build conversation history
     const contents = [
-      ...history.slice(-8).map((h: any) => ({
+      ...history.slice(-8).map((h: { role?: string; content?: string }) => ({
         role: h.role === "assistant" ? "model" : "user",
         parts: [{ text: h.content }],
       })),
@@ -89,7 +89,7 @@ Rules:
     return new Response(readable, {
       headers: { "Content-Type": "text/plain; charset=utf-8", "Cache-Control": "no-cache" },
     });
-  } catch (e: any) {
+  } catch (e: unknown) {
     console.error("Chat error:", e);
     return NextResponse.json({ error: "AI request failed" }, { status: 500 });
   }

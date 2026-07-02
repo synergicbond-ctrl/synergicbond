@@ -5,8 +5,7 @@
 // - Free (signed-in) users:  SNAP_FREE_DAILY_LIMIT solves/day, then 402 paywall.
 // - Guests (no auth):  blocked — must create a free account to use Snap & Solve.
 //
-// Every Supabase call degrades OPEN (allow) on error so the product keeps
-// working before the 003/004 migrations have run on prod.
+// Quota errors fail closed so Snap & Solve cannot bypass the free-tier limit.
 // ---------------------------------------------------------------------------
 import { createClient } from "@/lib/supabase/server";
 import { isProActive } from "@/lib/subscription";
@@ -18,6 +17,7 @@ export interface SnapQuota {
   paywall: boolean;
   tier: "guest" | "free" | "pro";
   remaining: number | null; // null = unlimited / unknown
+  reason?: "quota_error";
 }
 
 export async function checkAndConsumeSnapQuota(): Promise<SnapQuota> {
@@ -35,12 +35,14 @@ export async function checkAndConsumeSnapQuota(): Promise<SnapQuota> {
 
     // Free: count today's solves.
     const day = new Date().toISOString().slice(0, 10); // YYYY-MM-DD (UTC)
-    const { data: usage } = await supabase
+    const { data: usage, error: usageError } = await supabase
       .from("snap_usage")
       .select("count")
       .eq("user_id", user.id)
       .eq("day", day)
       .maybeSingle();
+
+    if (usageError) throw usageError;
 
     const used = usage?.count ?? 0;
     if (used >= SNAP_FREE_DAILY_LIMIT) {
@@ -48,9 +50,11 @@ export async function checkAndConsumeSnapQuota(): Promise<SnapQuota> {
     }
 
     // Consume one (upsert on the (user_id, day) primary key).
-    await supabase
+    const { error: upsertError } = await supabase
       .from("snap_usage")
       .upsert({ user_id: user.id, day, count: used + 1 }, { onConflict: "user_id,day" });
+
+    if (upsertError) throw upsertError;
 
     return {
       allowed: true,
@@ -59,7 +63,7 @@ export async function checkAndConsumeSnapQuota(): Promise<SnapQuota> {
       remaining: SNAP_FREE_DAILY_LIMIT - (used + 1),
     };
   } catch (e) {
-    console.error("snap quota check failed (degrading open):", e);
-    return { allowed: true, paywall: false, tier: "guest", remaining: null };
+    console.error("snap quota check failed:", e);
+    return { allowed: false, paywall: false, tier: "free", remaining: null, reason: "quota_error" };
   }
 }

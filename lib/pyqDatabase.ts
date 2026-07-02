@@ -7,6 +7,7 @@ export type PYQQuestion = {
   answer: string;
   explanation: string;
   topic: string;
+  reactionIds?: string[];
 };
 
 export const pyqDatabase: Record<string, PYQQuestion[]> = {

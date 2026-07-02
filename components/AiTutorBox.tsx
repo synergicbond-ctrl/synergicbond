@@ -13,7 +13,7 @@ const ACTION_PROMPTS: Record<string, string> = {
   challenge: "Give me one challenging JEE Advanced level problem from this chapter with a detailed step-by-step solution.",
 };
 
-export default function AiTutorBox({ chapter, concepts }: { chapter: string; concepts: string[] }) {
+export default function AiTutorBox({ chapter }: { chapter: string; concepts: string[] }) {
   const [response, setResponse] = useState<string>("");
   const [loading, setLoading] = useState(false);
   const [activeAction, setActiveAction] = useState<string | null>(null);
@@ -51,7 +51,7 @@ export default function AiTutorBox({ chapter, concepts }: { chapter: string; con
         full += decoder.decode(value, { stream: true });
         setResponse(full);
       }
-    } catch (err) {
+    } catch {
       setResponse("Error connecting to AI tutor. Please try again.");
     } finally {
       setLoading(false);

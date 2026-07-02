@@ -1,3 +1,5 @@
+import type { Concept } from "@/lib/masterSyllabus/types";
+
 export interface Chapter {
   id: string;
   title: string;
@@ -6,7 +8,7 @@ export interface Chapter {
   estimatedHours: number;
   exams: string[];
   pyqTags: string[];
-  concepts: any[];
+  concepts: Concept[];
   prerequisites?: string[];     // Marked optional
   searchKeywords?: string[];    // Marked optional
   ncert?: boolean;              // Marked optional

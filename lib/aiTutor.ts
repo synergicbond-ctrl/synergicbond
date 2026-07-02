@@ -24,7 +24,7 @@ export function fetchSyllabusContext(chapterId: string): AITutorContext | null {
   const formulas = (masterFormulas[chapterId] || []).map(f => `${f.title}: ${f.expression}`);
   const reactions = masterReactions.filter(r => r.category === chapter.category).map(r => r.name);
   // Safely map mechanisms checking object properties
-  const mechanisms = (organicMechanisms[chapterId] || []).map(m => (m as any).name || (m as any).id || "Reaction Mechanism Pathway");
+  const mechanisms = (organicMechanisms[chapterId] || []).map((m) => m.title || m.id || "Reaction Mechanism Pathway");
   const notesAndExceptions = highYieldNotes.filter(n => n.chapterId === chapterId).map(n => n.content);
 
   return {

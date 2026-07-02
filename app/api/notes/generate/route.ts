@@ -89,11 +89,14 @@ Rules:
 - Be precise and exam-relevant
 - Do not add anything chemically inaccurate`;
 
-    const content = await generateText(prompt, difficulty === "icho" || difficulty === "gate");
+    const content = await generateText(prompt);
 
     return NextResponse.json({ content, topic: topic || chapterId, difficulty, examType, language, cached: false });
-  } catch (error: any) {
+  } catch (error: unknown) {
     console.error("Notes error:", error);
-    return NextResponse.json({ error: error.message || "Failed to generate notes" }, { status: 500 });
+    return NextResponse.json(
+      { error: error instanceof Error ? error.message : "Failed to generate notes" },
+      { status: 500 }
+    );
   }
 }

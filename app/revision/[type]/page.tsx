@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { generateRevisionSession } from "@/lib/revisionEngine";
+import { generateRevisionSession, type RevisionType } from "@/lib/revisionEngine";
 
 interface PageProps {
   params: Promise<{ type: string }>;
@@ -11,7 +11,7 @@ export default async function RevisionSessionPage({ params, searchParams }: Page
   const resolvedSearch = await searchParams;
   
   // Fetch specific drill info depending on the session type
-  const sessionType = resolvedParams.type as any;
+  const sessionType = resolvedParams.type as RevisionType;
   const sessionPayload = resolvedSearch?.topic || (sessionType === "weakTopic" ? "Targeted Concept" : undefined);
   
   const session = generateRevisionSession(sessionType, sessionPayload);

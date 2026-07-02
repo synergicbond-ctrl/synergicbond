@@ -71,8 +71,8 @@ export async function POST(req: Request) {
       .eq("user_id", user.id);
 
     return NextResponse.json({ xp: currentXp, xp_level, streak, xpGained });
-  } catch (e) {
-    console.error(e);
+  } catch (error) {
+    console.error(error);
     return NextResponse.json({ error: "failed" }, { status: 500 });
   }
 }
@@ -95,7 +95,7 @@ export async function GET() {
       .single();
 
     return NextResponse.json(data ?? { xp: 0, xp_level: 1, streak: 0 });
-  } catch (e) {
+  } catch {
     return NextResponse.json({ xp: 0, level: 1, streak: 0 });
   }
 }

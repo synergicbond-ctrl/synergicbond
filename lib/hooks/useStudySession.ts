@@ -3,7 +3,7 @@
 import { useEffect, useRef } from "react";
 
 export function useStudySession(chapterId?: string) {
-  const startTime = useRef<number>(Date.now());
+  const startTime = useRef<number>(0);
   const logged = useRef(false);
 
   useEffect(() => {

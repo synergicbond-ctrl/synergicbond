@@ -54,8 +54,11 @@ Respond with ONLY this JSON (no markdown, no code blocks):
     const data = JSON.parse(clean);
 
     return NextResponse.json(data);
-  } catch (err: any) {
+  } catch (err: unknown) {
     console.error("Molecule error:", err);
-    return NextResponse.json({ error: err.message }, { status: 500 });
+    return NextResponse.json(
+      { error: err instanceof Error ? err.message : "Failed to load molecule data" },
+      { status: 500 }
+    );
   }
 }

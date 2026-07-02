@@ -6,7 +6,7 @@ import { createClient } from "@/lib/supabase/server";
 import { PLANS, isValidPlan } from "@/lib/subscription";
 
 // Creates a Razorpay order for the chosen plan. The client opens Razorpay
-// Checkout with the returned orderId + keyId. No SDK — direct REST + Basic auth.
+// Checkout with the returned orderId + keyId. No SDK; direct REST + Basic auth.
 export async function POST(req: Request) {
   try {
     const keyId = process.env.RAZORPAY_KEY_ID;
@@ -27,6 +27,9 @@ export async function POST(req: Request) {
       return NextResponse.json({ error: "Invalid plan." }, { status: 400 });
     }
     const p = PLANS[plan];
+    if (p.amount < 100) {
+      return NextResponse.json({ error: "Payment amount must be at least 100 paise." }, { status: 400 });
+    }
 
     const auth = Buffer.from(`${keyId}:${keySecret}`).toString("base64");
     const res = await fetch("https://api.razorpay.com/v1/orders", {
@@ -43,12 +46,24 @@ export async function POST(req: Request) {
 
     if (!res.ok) {
       console.error("razorpay order error:", await res.text().catch(() => ""));
-      return NextResponse.json({ error: "Could not start checkout. Please try again." }, { status: 502 });
+      return NextResponse.json({ error: "Could not start checkout. Please try again." }, { status: 500 });
     }
 
-    const order = await res.json();
+    const order = await res.json().catch(() => null);
+    if (
+      !order ||
+      typeof order !== "object" ||
+      typeof order.id !== "string" ||
+      typeof order.amount !== "number" ||
+      typeof order.currency !== "string"
+    ) {
+      console.error("razorpay order malformed:", order);
+      return NextResponse.json({ error: "Could not start checkout. Please try again." }, { status: 500 });
+    }
+
     return NextResponse.json({
       orderId: order.id,
+      order_id: order.id,
       amount: order.amount,
       currency: order.currency,
       keyId,

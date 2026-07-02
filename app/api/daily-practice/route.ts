@@ -12,7 +12,7 @@ export async function GET() {
 
     // Get weak topics from mistakes
     let weakTopics: string[] = ["Mole Concept", "Chemical Bonding"];
-    let examType = "JEE Main";
+    const examType = "JEE Main";
 
     if (user) {
       const { data: mistakes } = await supabase
@@ -50,7 +50,10 @@ Respond with ONLY this JSON:
     const data = JSON.parse(clean);
 
     return NextResponse.json(data);
-  } catch (err: any) {
-    return NextResponse.json({ error: err.message }, { status: 500 });
+  } catch (err: unknown) {
+    return NextResponse.json(
+      { error: err instanceof Error ? err.message : "Failed to generate daily practice" },
+      { status: 500 }
+    );
   }
 }

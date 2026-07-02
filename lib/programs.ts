@@ -8,10 +8,13 @@
 // as honest structure-only hubs (no fake content, per roadmap rules).
 // ─────────────────────────────────────────────────────────────────────────────
 
-export interface ProgramTool {
+import type { PYQExam } from "@/lib/pyq";
+
+export interface ProgramSection {
   label: string;
   desc: string;
-  href: string;
+  /** Program-scoped segment under /programs/[slug]/. */
+  path: "learn" | "practice" | "tests";
   icon: string;
 }
 
@@ -23,6 +26,8 @@ export interface Program {
   chips: string[];
   /** masterSyllabus exam tags — empty means no verified syllabus yet. */
   examTags: string[];
+  /** lib/pyq exam tag — absent means no verified PYQ/test mapping yet. */
+  pyqExam?: PYQExam;
   syllabusHeading?: string;
   syllabusBlurb?: string;
   /** Pre-existing deep route for this program, if one exists. */
@@ -36,12 +41,13 @@ export interface Program {
   };
 }
 
-// Learn / Practice / Tests links stay global until the program-scoped routes
-// land in Weeks 2–3 — every href below is a real, existing route.
-export const PROGRAM_TOOLS: ProgramTool[] = [
-  { label: "Learn", desc: "Notes · formula cards · vault · NCERT references", href: "/learn", icon: "📖" },
-  { label: "Practice PYQs", desc: "Previous-year questions with chapter intelligence", href: "/pyq", icon: "🎯" },
-  { label: "Tests", desc: "Chapter · topic · previous-paper tests", href: "/tests", icon: "📋" },
+// Program-scoped sections (Weeks 2–4). Hub cards compose the href as
+// /programs/[slug]/[path]; the global /learn, /pyq and /tests routes stay as
+// secondary fallback links.
+export const PROGRAM_SECTIONS: ProgramSection[] = [
+  { label: "Learn", desc: "Chapters · notes · formula cards · vault · NCERT", path: "learn", icon: "📖" },
+  { label: "Practice", desc: "PYQs with chapter, topic and difficulty filters", path: "practice", icon: "🎯" },
+  { label: "Tests", desc: "Chapter · topic · full-paper tests", path: "tests", icon: "📋" },
 ];
 
 export const PROGRAMS: Program[] = [
@@ -52,6 +58,7 @@ export const PROGRAMS: Program[] = [
     tagline: "NCERT-anchored chemistry for the medical entrance — memory-heavy inorganic, application-based organic and physical.",
     chips: ["+4 / −1 Marking", "45 Questions", "NCERT Focused", "180 Marks"],
     examTags: ["NEET"],
+    pyqExam: "NEET",
     syllabusHeading: "NEET Chemistry Syllabus",
     syllabusBlurb: "Official NTA syllabus rendered from the verified master syllabus",
     legacyHub: { href: "/neet", label: "NEET Chemistry tools" },
@@ -69,6 +76,7 @@ export const PROGRAMS: Program[] = [
     tagline: "Speed and accuracy across the full NCERT-plus syllabus — the qualifying gate for NITs, IIITs and JEE Advanced.",
     chips: ["+4 / −1 Marking", "Numerical Answer Type", "2 Sessions / Year", "NTA Pattern"],
     examTags: ["JEE MAIN"],
+    pyqExam: "JEE Main",
     syllabusHeading: "JEE Main Chemistry Syllabus",
     syllabusBlurb: "Official NTA syllabus rendered from the verified master syllabus",
     legacyHub: { href: "/jee", label: "JEE Chemistry tools" },
@@ -86,6 +94,7 @@ export const PROGRAMS: Program[] = [
     tagline: "Multi-concept problems, partial marking and mechanism-level depth — chemistry the way IIT paper-setters test it.",
     chips: ["Partial Marking", "Multi-Correct", "Matrix Match", "Numerical Type"],
     examTags: ["JEE ADVANCED"],
+    pyqExam: "JEE Advanced",
     syllabusHeading: "JEE Advanced Chemistry Syllabus",
     syllabusBlurb: "Official JAB syllabus rendered from the verified master syllabus",
     legacyHub: { href: "/jee", label: "JEE Chemistry tools" },

@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import ExamSyllabus from "@/components/syllabus/ExamSyllabus";
-import { getProgram, PROGRAMS, PROGRAM_TOOLS } from "@/lib/programs";
+import { getProgram, PROGRAMS, PROGRAM_SECTIONS } from "@/lib/programs";
 
 // ─────────────────────────────────────────────────────────────────────────────
 // /programs/[slug] — Program hub (Roadmap V2 · Week 1).
@@ -55,31 +55,39 @@ export default async function ProgramHubPage({ params }: { params: Promise<{ slu
       <div className="mx-auto max-w-6xl px-6 py-12">
         <div className="mb-12">
           <h2 className="mb-2 text-2xl font-bold">Start Here</h2>
-          <p className="mb-6 text-zinc-500">Learn, practice and test from the verified chemistry library</p>
+          <p className="mb-6 text-zinc-500">Learn, practice and test inside the {name} program</p>
           <div className="grid gap-4 sm:grid-cols-3">
-            {PROGRAM_TOOLS.map((tool) => (
+            {PROGRAM_SECTIONS.map((section) => (
               <Link
-                key={tool.label}
-                href={tool.href}
+                key={section.path}
+                href={`/programs/${slug}/${section.path}`}
                 className={`group rounded-2xl border bg-white/[0.02] p-5 transition hover:-translate-y-0.5 hover:bg-white/[0.04] ${accent.card}`}
               >
-                <div className="text-2xl">{tool.icon}</div>
-                <div className="mt-2 font-bold text-white">{tool.label}</div>
-                <div className="mt-1 text-sm text-zinc-400">{tool.desc}</div>
+                <div className="text-2xl">{section.icon}</div>
+                <div className="mt-2 font-bold text-white">{section.label}</div>
+                <div className="mt-1 text-sm text-zinc-400">{section.desc}</div>
                 <div className={`mt-3 text-sm font-semibold ${accent.text}`}>
                   Open <span className="inline-block transition group-hover:translate-x-1">→</span>
                 </div>
               </Link>
             ))}
           </div>
-          {legacyHub && (
-            <p className="mt-4 text-sm text-zinc-500">
-              Looking for the AI toolset?{" "}
-              <Link href={legacyHub.href} className={`font-semibold underline-offset-4 hover:underline ${accent.text}`}>
-                {legacyHub.label} →
-              </Link>
-            </p>
-          )}
+          <p className="mt-4 text-sm text-zinc-500">
+            Global library:{" "}
+            <Link href="/learn" className="underline-offset-4 hover:underline hover:text-white">Learn</Link>
+            {" · "}
+            <Link href="/pyq" className="underline-offset-4 hover:underline hover:text-white">PYQ Center</Link>
+            {" · "}
+            <Link href="/tests" className="underline-offset-4 hover:underline hover:text-white">Tests</Link>
+            {legacyHub && (
+              <>
+                {" — or the AI toolset: "}
+                <Link href={legacyHub.href} className={`font-semibold underline-offset-4 hover:underline ${accent.text}`}>
+                  {legacyHub.label} →
+                </Link>
+              </>
+            )}
+          </p>
         </div>
 
         {examTags.length > 0 && syllabusHeading ? (

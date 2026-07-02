@@ -11,7 +11,7 @@ import {
   type TestCategory,
   type TestDefinition,
 } from "@/lib/tests/testEngine";
-import type { PYQDifficulty } from "@/lib/pyq";
+import type { PYQDifficulty, PYQExam } from "@/lib/pyq";
 import { renderChemistry } from "@/lib/renderChemistry";
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -184,12 +184,25 @@ function TestRunner({ id, onBack }: { id: string; onBack: () => void }) {
 
 // ── Root ──────────────────────────────────────────────────────────────────────
 
-export default function TestEngine() {
+// Optional `exam` locks the engine to one exam's tests (program-scoped tests
+// pages, Roadmap V2 Week 4). Without it, behaviour is unchanged (/tests).
+export default function TestEngine({ exam }: { exam?: PYQExam } = {}) {
   const [category, setCategory] = useState<TestCategory>("chapter");
   const [openId, setOpenId] = useState<string | null>(null);
 
   const meta = TEST_CATEGORIES.find((c) => c.key === category) ?? TEST_CATEGORIES[0];
-  const defs = TESTS_BY_CATEGORY[category];
+  const byCategory = useMemo(() => {
+    if (!exam) return TESTS_BY_CATEGORY;
+    const filtered = {} as Record<TestCategory, TestDefinition[]>;
+    for (const key of Object.keys(TESTS_BY_CATEGORY) as TestCategory[]) {
+      filtered[key] = TESTS_BY_CATEGORY[key].filter((d) => d.exams.includes(exam));
+    }
+    return filtered;
+  }, [exam]);
+  const defs = byCategory[category];
+  const totalTests = exam
+    ? Object.values(byCategory).reduce((sum, list) => sum + list.length, 0)
+    : TEST_ENGINE_STATS.totalTests;
 
   if (openId) {
     return (
@@ -204,9 +217,9 @@ export default function TestEngine() {
       {/* Header */}
       <div>
         <p className="mb-2 text-xs font-bold uppercase tracking-[0.4em] text-cyan-300">Test Engine</p>
-        <h1 className="text-3xl font-black md:text-4xl">Practice Tests</h1>
+        <h1 className="text-3xl font-black md:text-4xl">{exam ? `${exam} Tests` : "Practice Tests"}</h1>
         <p className="mt-2 text-sm text-white/55">
-          {TEST_ENGINE_STATS.totalTests} tests built from {TEST_ENGINE_STATS.questionPool} real previous-year questions —
+          {totalTests} tests built from real previous-year questions —
           {" "}chapter, topic, revision & full papers. Scoring & performance tracking arrive next.
         </p>
       </div>
@@ -216,7 +229,7 @@ export default function TestEngine() {
         <div className="flex gap-2 md:flex-wrap">
           {TEST_CATEGORIES.map((c) => {
             const active = c.key === category;
-            const count = TESTS_BY_CATEGORY[c.key].length;
+            const count = byCategory[c.key].length;
             return (
               <button
                 key={c.key}

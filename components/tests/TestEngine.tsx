@@ -3,6 +3,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import { recordAttempt } from "@/lib/attempts/client";
+import AddToRevision from "@/components/revision/AddToRevision";
 import {
   TEST_CATEGORIES,
   TESTS_BY_CATEGORY,
@@ -223,26 +224,37 @@ function TestRunner({ id, onBack }: { id: string; onBack: () => void }) {
                   </div>
                 )}
 
-                {answerable ? (
-                  <p className="mt-3 text-xs text-white/40">
-                    Tap an option to answer — or{" "}
-                    <button
-                      onClick={() => setRevealed((p) => ({ ...p, [q.id]: true }))}
-                      className="font-semibold text-cyan-400 transition hover:text-cyan-300"
-                    >
-                      reveal without answering
-                    </button>
-                  </p>
-                ) : (
-                  !picked && (
+                <div className="mt-3 flex flex-wrap items-center justify-between gap-2">
+                  {answerable ? (
+                    <p className="text-xs text-white/40">
+                      Tap an option to answer — or{" "}
+                      <button
+                        onClick={() => setRevealed((p) => ({ ...p, [q.id]: true }))}
+                        className="font-semibold text-cyan-400 transition hover:text-cyan-300"
+                      >
+                        reveal without answering
+                      </button>
+                    </p>
+                  ) : !picked ? (
                     <button
                       onClick={() => setRevealed((p) => ({ ...p, [q.id]: !p[q.id] }))}
-                      className="mt-3 text-xs font-semibold text-cyan-400 transition hover:text-cyan-300"
+                      className="text-xs font-semibold text-cyan-400 transition hover:text-cyan-300"
                     >
                       {show ? "Hide answer" : "Reveal answer & explanation"}
                     </button>
-                  )
-                )}
+                  ) : (
+                    <span />
+                  )}
+                  <AddToRevision
+                    item={{
+                      id: `pyq:${q.id}`,
+                      type: "pyq",
+                      title: q.question.slice(0, 90),
+                      subtitle: `${q.exam} ${q.year} · ${q.chapter}`,
+                      href: "/tests",
+                    }}
+                  />
+                </div>
               </div>
             );
           })}

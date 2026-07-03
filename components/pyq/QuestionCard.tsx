@@ -10,6 +10,7 @@ import {
 } from "@/lib/pyq";
 import type { PYQQuestion } from "@/lib/pyq";
 import { recordAttempt } from "@/lib/attempts/client";
+import AddToRevision from "@/components/revision/AddToRevision";
 
 type CaptureSource = "practice" | "test";
 import { DIFFICULTY_BADGE, EXAM_BADGE } from "./uiHelpers";
@@ -256,16 +257,27 @@ export default function QuestionCard({
         </div>
       )}
 
-      {interactive ? (
-        <p className="text-xs text-white/40">Tap an option to answer — your attempt is scored and saved.</p>
-      ) : (
-        <button
-          onClick={() => setRevealed((r) => !r)}
-          className="text-sm font-semibold text-cyan-400 hover:text-cyan-300 transition"
-        >
-          {revealed ? "Hide" : "Reveal Answer & Explanation"}
-        </button>
-      )}
+      <div className="flex flex-wrap items-center justify-between gap-2">
+        {interactive ? (
+          <p className="text-xs text-white/40">Tap an option to answer — your attempt is scored and saved.</p>
+        ) : (
+          <button
+            onClick={() => setRevealed((r) => !r)}
+            className="text-sm font-semibold text-cyan-400 hover:text-cyan-300 transition"
+          >
+            {revealed ? "Hide" : "Reveal Answer & Explanation"}
+          </button>
+        )}
+        <AddToRevision
+          item={{
+            id: `pyq:${question.id}`,
+            type: "pyq",
+            title: question.question.slice(0, 90),
+            subtitle: `${question.exam} ${question.year} · ${question.chapter}`,
+            href: "/pyq",
+          }}
+        />
+      </div>
     </div>
   );
 }

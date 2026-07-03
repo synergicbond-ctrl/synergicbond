@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { getUserAttempts } from "@/lib/attempts/store";
+import SavedRevisionList from "@/components/revision/SavedRevisionList";
 
 // Saved attempts (Week 5A Attempt Layer) — real sessions only; signed-out
 // users see an honest sign-in hint instead of an empty fake list.
@@ -132,6 +133,9 @@ export default function RevisionPage() {
         </div>
         <span className="text-3xl">📓</span>
       </Link>
+
+      {/* One-Tap Revision saved items (Week 7) */}
+      <SavedRevisionList />
 
       {/* Saved attempts (Attempt Layer) */}
       <SavedAttempts />

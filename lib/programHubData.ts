@@ -115,6 +115,7 @@ export function getProgramSections(program: Program): HubSection[] {
       cards: [
         { title: "Performance", description: "Accuracy and weak-topic breakdown.", status: "available", href: "/performance", iconKey: "activity" },
         { title: "Exam Predictor", description: "Likely high-yield topics from PYQ trends.", status: "available", href: "/exam-predictor", iconKey: "predict" },
+        { title: "Syllabus Mastery Map", description: "Chapter-by-chapter R/Y/G mastery from your attempts.", status: "available", href: "/analytics", iconKey: "gauge" },
         { title: "Readiness Report", description: "Program-wise readiness score from your attempts.", status: "coming-soon", iconKey: "gauge" },
       ],
     },

@@ -11,6 +11,7 @@ const PROTECTED_PATHS = [
   "/pyq",
   "/revision",
   "/mistakes",
+  "/analytics",
   "/vault",
   "/search",
   "/upload",

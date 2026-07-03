@@ -12,6 +12,7 @@ const PROTECTED_PATHS = [
   "/revision",
   "/mistakes",
   "/analytics",
+  "/ncert",
   "/vault",
   "/search",
   "/upload",

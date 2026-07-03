@@ -65,12 +65,13 @@ export function getProgramSections(program: Program): HubSection[] {
       key: "memory",
       label: "Memory System",
       iconKey: "brain",
-      blurb: "Active-recall decks and spaced revision — building next.",
+      blurb: "Active-recall decks scheduled with SM-2 spaced repetition.",
       cards: [
-        { title: "Reaction Recall", description: "Flip-card recall for named reactions & mechanisms.", status: "coming-soon", iconKey: "reaction" },
-        { title: "Formula Recall", description: "Rapid drill on expressions, variables and traps.", status: "coming-soon", iconKey: "sigma" },
-        { title: "Reagent & Fact Recall", description: "High-yield reagent and exception recall decks.", status: "coming-soon", iconKey: "flask" },
-        { title: "Daily Revision Queue", description: "Spaced-repetition queue tuned to your weak areas.", status: "coming-soon", iconKey: "repeat" },
+        { title: "Daily Revision Queue", description: "Every card due today, across all decks.", status: "available", href: "/memory?deck=daily", iconKey: "repeat" },
+        { title: "Formula Recall", description: "Rapid drill on expressions, variables and units.", status: "available", href: "/memory?deck=formula", iconKey: "sigma" },
+        { title: "Reagent Recall", description: "What each reagent does, and its selectivity.", status: "available", href: "/memory?deck=reagent", iconKey: "flask" },
+        { title: "Fact & Order Recall", description: "NCERT exceptions and verified ranking orders.", status: "available", href: "/memory?deck=fact", iconKey: "brain" },
+        { title: "Reaction Recall", description: "Mechanism recall decks — building next.", status: "coming-soon", iconKey: "reaction" },
       ],
     },
     {

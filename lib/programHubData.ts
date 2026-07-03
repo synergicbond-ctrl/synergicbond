@@ -118,7 +118,7 @@ export function getProgramSections(program: Program): HubSection[] {
         { title: "Exam Predictor", description: "Likely high-yield topics from PYQ trends.", status: "available", href: "/exam-predictor", iconKey: "predict" },
         { title: "Syllabus Mastery Map", description: "Chapter-by-chapter R/Y/G mastery from your attempts.", status: "available", href: "/analytics", iconKey: "gauge" },
         { title: "NCERT Blind Spots", description: "Line-level NCERT coverage — mastered, weak and unseen.", status: "available", href: "/ncert", iconKey: "predict" },
-        { title: "Readiness Report", description: "Program-wise readiness score from your attempts.", status: "coming-soon", iconKey: "gauge" },
+        { title: "Readiness Report", description: "One explainable readiness score with what to fix next.", status: "available", href: "/readiness", iconKey: "gauge" },
       ],
     },
     {

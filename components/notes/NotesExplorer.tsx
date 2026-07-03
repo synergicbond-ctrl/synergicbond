@@ -285,6 +285,14 @@ export default function NotesExplorer() {
               ))}
             </div>
             <p className="mt-2.5 text-[13.5px] text-white/70">{chapter.tagline}</p>
+            {chapter.id === "mole-concept" && (
+              <Link
+                href="/notes/mole-concept"
+                className="mt-4 inline-flex items-center rounded-xl border border-cyan-400/25 bg-cyan-500/10 px-3.5 py-2 text-xs font-black text-cyan-100 transition hover:border-cyan-300/45 hover:bg-cyan-500/15"
+              >
+                Open full Mole Concept textbook →
+              </Link>
+            )}
           </div>
 
           {/* Section nav — horizontal scroll on mobile */}

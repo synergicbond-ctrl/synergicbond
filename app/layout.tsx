@@ -1,4 +1,5 @@
 import "@/app/globals.css";
+import "katex/dist/katex.min.css";
 import { Analytics } from "@vercel/analytics/react";
 import type { Metadata } from "next";
 import { ThemeProvider } from "@/components/ThemeContext";

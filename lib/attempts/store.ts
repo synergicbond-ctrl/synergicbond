@@ -244,3 +244,25 @@ export async function getQuestionAttempts(questionId: string): Promise<StoreResu
   }
   return { data: (data as AttemptAnswerRow[]).map((r) => rowToAnswer(r)), error: null };
 }
+
+/**
+ * Every answer row the signed-in user has recorded, newest first — the raw
+ * feed the Mistake Journal (Week 6) reduces to latest-wrong-per-question.
+ * Reads only the existing attempt_answers table (no new pipeline).
+ */
+export async function getAllUserAnswers(limit = 2000): Promise<StoreResult<AttemptAnswerRecord[]>> {
+  const { supabase, user } = await requireUser();
+  if (!user) return { data: null, error: "Unauthorized" };
+
+  const { data, error } = await supabase
+    .from("attempt_answers")
+    .select("*")
+    .eq("user_id", user.id)
+    .order("created_at", { ascending: false })
+    .limit(Math.min(limit, 5000));
+  if (error) {
+    console.error("[attempts] getAllUserAnswers failed:", error.message);
+    return { data: null, error: error.message };
+  }
+  return { data: (data as AttemptAnswerRow[]).map((r) => rowToAnswer(r)), error: null };
+}

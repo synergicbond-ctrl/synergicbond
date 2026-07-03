@@ -104,7 +104,7 @@ export function getProgramSections(program: Program): HubSection[] {
       cards: [
         { title: "Revision Engine", description: "High-yield revision sessions.", status: "available", href: "/revision", iconKey: "history" },
         { title: "Saved Attempts", description: "Reopen and review any submitted exam or test.", status: "available", href: "/revision", iconKey: "history" },
-        { title: "Mistake Journal", description: "Auto-collected wrong questions with reattempt queue.", status: "coming-soon", iconKey: "alert" },
+        { title: "Mistake Journal", description: "Auto-collected wrong questions with reattempt queue.", status: "available", href: "/mistakes", iconKey: "alert" },
       ],
     },
     {

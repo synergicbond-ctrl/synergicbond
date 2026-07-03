@@ -10,6 +10,7 @@ const PROTECTED_PATHS = [
   "/exam",
   "/pyq",
   "/revision",
+  "/mistakes",
   "/vault",
   "/search",
   "/upload",

@@ -119,6 +119,20 @@ export default function RevisionPage() {
         ))}
       </div>
 
+      {/* Mistake Journal entry (Week 6) */}
+      <Link
+        href="/mistakes"
+        className="flex items-center justify-between gap-4 rounded-2xl border border-rose-200 bg-rose-50 p-6 shadow-sm transition hover:border-rose-300"
+      >
+        <div>
+          <h2 className="text-2xl font-bold text-rose-900">Mistake Journal →</h2>
+          <p className="mt-1 text-sm text-rose-700/80">
+            Every question you got wrong, categorised, with a one-tap reattempt queue.
+          </p>
+        </div>
+        <span className="text-3xl">📓</span>
+      </Link>
+
       {/* Saved attempts (Attempt Layer) */}
       <SavedAttempts />
 

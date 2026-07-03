@@ -108,6 +108,7 @@ export interface AttemptAnswerRecord {
   difficulty: string | null;
   marksAwarded: number;
   timeSpentMs: number;
+  answeredAt: string;
 }
 
 /* Snake_case row shapes of the LIVE tables. */
@@ -192,5 +193,6 @@ export function rowToAnswer(row: AttemptAnswerRow, extra?: AnswerExtra): Attempt
     difficulty: row.difficulty,
     marksAwarded: Number(row.awarded_marks),
     timeSpentMs: extra?.timeSpentMs ?? 0,
+    answeredAt: row.created_at,
   };
 }

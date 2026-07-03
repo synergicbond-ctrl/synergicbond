@@ -18,12 +18,16 @@ export interface ProgramSection {
   icon: string;
 }
 
+export type ProgramGroup = "entrance" | "boards" | "global";
+
 export interface Program {
   slug: string;
   name: string;
   kicker: string;
   tagline: string;
   chips: string[];
+  /** Landing-page grouping. */
+  group: ProgramGroup;
   /** masterSyllabus exam tags — empty means no verified syllabus yet. */
   examTags: string[];
   /** lib/pyq exam tag — absent means no verified PYQ/test mapping yet. */
@@ -54,6 +58,7 @@ export const PROGRAMS: Program[] = [
   {
     slug: "neet",
     name: "NEET",
+    group: "entrance",
     kicker: "🇮🇳 National · Medical Entrance",
     tagline: "NCERT-anchored chemistry for the medical entrance — memory-heavy inorganic, application-based organic and physical.",
     chips: ["+4 / −1 Marking", "45 Questions", "NCERT Focused", "180 Marks"],
@@ -72,6 +77,7 @@ export const PROGRAMS: Program[] = [
   {
     slug: "jee-main",
     name: "JEE Main",
+    group: "entrance",
     kicker: "🇮🇳 National · Engineering Entrance",
     tagline: "Speed and accuracy across the full NCERT-plus syllabus — the qualifying gate for NITs, IIITs and JEE Advanced.",
     chips: ["+4 / −1 Marking", "Numerical Answer Type", "2 Sessions / Year", "NTA Pattern"],
@@ -90,6 +96,7 @@ export const PROGRAMS: Program[] = [
   {
     slug: "jee-advanced",
     name: "JEE Advanced",
+    group: "entrance",
     kicker: "🇮🇳 National · IIT Entrance",
     tagline: "Multi-concept problems, partial marking and mechanism-level depth — chemistry the way IIT paper-setters test it.",
     chips: ["Partial Marking", "Multi-Correct", "Matrix Match", "Numerical Type"],
@@ -108,6 +115,7 @@ export const PROGRAMS: Program[] = [
   {
     slug: "olympiad",
     name: "Olympiad",
+    group: "entrance",
     kicker: "🌍 International · NSEC → INChO → IChO",
     tagline: "University-depth theoretical and practical chemistry beyond JEE — for the national and international olympiad track.",
     chips: ["NSEC", "INChO", "IChO", "USNCO"],
@@ -123,6 +131,7 @@ export const PROGRAMS: Program[] = [
   {
     slug: "cbse",
     name: "CBSE",
+    group: "boards",
     kicker: "🏫 Board · Class 11–12",
     tagline: "NCERT-first preparation for CBSE boards — the same verified NCERT-aligned content that powers the entrance tracks.",
     chips: ["Class 11", "Class 12", "NCERT Aligned", "Board Pattern"],
@@ -137,6 +146,7 @@ export const PROGRAMS: Program[] = [
   {
     slug: "icse",
     name: "ICSE",
+    group: "boards",
     kicker: "🏫 Board · Class 11–12 (ISC)",
     tagline: "Concept-rich chemistry for the ISC curriculum — descriptive answers, named reactions and rigorous fundamentals.",
     chips: ["Class 11", "Class 12", "ISC Pattern", "Theory + Practical"],
@@ -151,6 +161,7 @@ export const PROGRAMS: Program[] = [
   {
     slug: "state-boards",
     name: "State Boards",
+    group: "boards",
     kicker: "🏫 Board · State Curricula",
     tagline: "Chemistry fundamentals mapped to state board curricula — built on the same verified core content library.",
     chips: ["Class 11", "Class 12", "State Pattern", "Bilingual Ready"],
@@ -160,6 +171,37 @@ export const PROGRAMS: Program[] = [
       chip: "border-orange-700 text-orange-300",
       card: "border-orange-800/60 hover:border-orange-500",
       gradient: "from-orange-950/30",
+    },
+  },
+  {
+    slug: "gate",
+    name: "GATE",
+    group: "global",
+    kicker: "🎓 Postgraduate · GATE Chemistry (CY)",
+    tagline: "Graduate-level chemistry for GATE CY — physical, organic and inorganic depth with numerical-answer and 1/2-mark MCQ practice.",
+    chips: ["GATE CY", "MCQ +1/−⅓", "NAT no negative", "Graduate Depth"],
+    examTags: [],
+    legacyHub: { href: "/gate", label: "GATE Chemistry tools" },
+    accent: {
+      text: "text-teal-400",
+      chip: "border-teal-700 text-teal-300",
+      card: "border-teal-800/60 hover:border-teal-500",
+      gradient: "from-teal-950/30",
+    },
+  },
+  {
+    slug: "international",
+    name: "International",
+    group: "global",
+    kicker: "🌍 International · AP · IB · A-Level · MCAT",
+    tagline: "Chemistry mapped to international curricula — AP, IB, A-Level and MCAT tracks built on the same verified core library.",
+    chips: ["AP", "IB", "A-Level", "MCAT"],
+    examTags: [],
+    accent: {
+      text: "text-indigo-400",
+      chip: "border-indigo-700 text-indigo-300",
+      card: "border-indigo-800/60 hover:border-indigo-500",
+      gradient: "from-indigo-950/30",
     },
   },
 ];

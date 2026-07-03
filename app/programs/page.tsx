@@ -13,11 +13,12 @@ import { PROGRAMS } from "@/lib/programs";
 export const metadata = {
   title: "Programs — SYNERGIC BOND",
   description:
-    "Chemistry programs for NEET, JEE Main, JEE Advanced, Olympiad, CBSE, ICSE and State Boards — verified content, PYQs and tests organised by exam.",
+    "Chemistry programs for NEET, JEE Main, JEE Advanced, Olympiad, CBSE, ICSE, State Boards, GATE and International curricula — verified content, PYQs and tests organised by exam.",
 };
 
-const NATIONAL = PROGRAMS.filter((p) => p.kicker.includes("National") || p.kicker.includes("International"));
-const BOARDS = PROGRAMS.filter((p) => p.kicker.includes("Board"));
+const ENTRANCE = PROGRAMS.filter((p) => p.group === "entrance");
+const BOARDS = PROGRAMS.filter((p) => p.group === "boards");
+const GLOBAL = PROGRAMS.filter((p) => p.group === "global");
 
 function ProgramCard({ slug, name, kicker, tagline, chips, accent }: (typeof PROGRAMS)[number]) {
   return (
@@ -58,7 +59,7 @@ export default function ProgramsPage() {
         <h2 className="mb-1 text-xl font-bold">🇮🇳 Entrance &amp; Olympiad</h2>
         <p className="mb-6 text-sm text-zinc-500">Competitive tracks with exam-specific pattern and depth</p>
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-2">
-          {NATIONAL.map((p) => (
+          {ENTRANCE.map((p) => (
             <ProgramCard key={p.slug} {...p} />
           ))}
         </div>
@@ -71,9 +72,13 @@ export default function ProgramsPage() {
           ))}
         </div>
 
-        <p className="mt-12 text-center text-xs text-zinc-600">
-          🌍 International programs (AP · IB · A-Level · MCAT) — coming soon
-        </p>
+        <h2 className="mb-1 mt-12 text-xl font-bold">🎓 Graduate &amp; International</h2>
+        <p className="mb-6 text-sm text-zinc-500">GATE Chemistry and international curricula on the same verified core</p>
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-2">
+          {GLOBAL.map((p) => (
+            <ProgramCard key={p.slug} {...p} />
+          ))}
+        </div>
       </div>
     </main>
   );

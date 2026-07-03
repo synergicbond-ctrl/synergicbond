@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import {
   ALL_PYQ_QUESTIONS,
   getByReagent,
@@ -9,6 +9,9 @@ import {
   filterPYQ,
 } from "@/lib/pyq";
 import type { PYQQuestion } from "@/lib/pyq";
+import { recordAttempt } from "@/lib/attempts/client";
+
+type CaptureSource = "practice" | "test";
 import { DIFFICULTY_BADGE, EXAM_BADGE } from "./uiHelpers";
 
 type LinkKind = "reaction" | "reagent" | "exception" | "formula" | "ncert" | "concept";
@@ -80,15 +83,39 @@ function LinkChip({
   );
 }
 
+// `attemptSource` opts the card into answer capture (Week 5A Attempt Layer):
+// options become tappable, the pick is scored locally, and the attempt is
+// recorded fire-and-forget. Without it, behaviour is unchanged (global /pyq).
 export default function QuestionCard({
   question,
   compact = false,
+  attemptSource,
 }: {
   question: PYQQuestion;
   compact?: boolean;
+  attemptSource?: CaptureSource;
 }) {
   const [revealed, setRevealed] = useState(false);
+  const [selected, setSelected] = useState<string | null>(null);
   const [activeLink, setActiveLink] = useState<{ kind: LinkKind; value: string } | null>(null);
+  const shownAt = useRef(0);
+  useEffect(() => {
+    shownAt.current = Date.now();
+  }, []);
+
+  const interactive = Boolean(attemptSource) && Boolean(question.options) && selected === null;
+
+  const pickOption = (key: string) => {
+    if (!interactive || !attemptSource) return;
+    setSelected(key);
+    setRevealed(true);
+    recordAttempt({
+      question,
+      source: attemptSource,
+      selectedAnswer: key,
+      shownAtMs: shownAt.current,
+    });
+  };
 
   const toggleLink = (kind: LinkKind, value: string) => {
     setActiveLink((prev) => (prev && prev.kind === kind && prev.value === value ? null : { kind, value }));
@@ -128,26 +155,44 @@ export default function QuestionCard({
       {/* Question */}
       <p className="text-white font-medium leading-relaxed">{question.question}</p>
 
-      {/* Options */}
+      {/* Options — tappable when answer capture is on */}
       {question.options && (
         <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
           {Object.entries(question.options).map(([key, val]) => {
             const isCorrect = revealed && key === question.answer;
+            const isWrongPick = selected === key && key !== question.answer;
+            const tone = isCorrect
+              ? "bg-green-900/30 border-green-600 text-green-300 font-semibold"
+              : isWrongPick
+                ? "bg-red-900/30 border-red-600 text-red-300 font-semibold"
+                : "bg-white/[0.03] border-white/10 text-white/70";
+            if (interactive) {
+              return (
+                <button
+                  key={key}
+                  onClick={() => pickOption(key)}
+                  className={`p-3 rounded-lg text-sm border text-left transition hover:border-cyan-400/50 hover:bg-cyan-500/[0.06] ${tone}`}
+                >
+                  <span className="font-bold mr-2">{key}.</span>
+                  {val}
+                </button>
+              );
+            }
             return (
-              <div
-                key={key}
-                className={`p-3 rounded-lg text-sm border transition ${
-                  isCorrect
-                    ? "bg-green-900/30 border-green-600 text-green-300 font-semibold"
-                    : "bg-white/[0.03] border-white/10 text-white/70"
-                }`}
-              >
+              <div key={key} className={`p-3 rounded-lg text-sm border transition ${tone}`}>
                 <span className="font-bold mr-2">{key}.</span>
                 {val}
               </div>
             );
           })}
         </div>
+      )}
+
+      {/* Attempt result (answer-capture mode only) */}
+      {selected !== null && (
+        <p className={`text-sm font-bold ${selected === question.answer ? "text-green-400" : "text-red-400"}`}>
+          {selected === question.answer ? "✅ Correct" : `❌ Incorrect — correct answer: ${question.answer}`}
+        </p>
       )}
 
       {/* Explanation + knowledge linking */}
@@ -211,12 +256,16 @@ export default function QuestionCard({
         </div>
       )}
 
-      <button
-        onClick={() => setRevealed((r) => !r)}
-        className="text-sm font-semibold text-cyan-400 hover:text-cyan-300 transition"
-      >
-        {revealed ? "Hide" : "Reveal Answer & Explanation"}
-      </button>
+      {interactive ? (
+        <p className="text-xs text-white/40">Tap an option to answer — your attempt is scored and saved.</p>
+      ) : (
+        <button
+          onClick={() => setRevealed((r) => !r)}
+          className="text-sm font-semibold text-cyan-400 hover:text-cyan-300 transition"
+        >
+          {revealed ? "Hide" : "Reveal Answer & Explanation"}
+        </button>
+      )}
     </div>
   );
 }

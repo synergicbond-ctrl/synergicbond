@@ -1,4 +1,58 @@
 import Link from "next/link";
+import { getUserAttempts } from "@/lib/attempts/store";
+
+// Saved attempts (Week 5A Attempt Layer) — real sessions only; signed-out
+// users see an honest sign-in hint instead of an empty fake list.
+async function SavedAttempts() {
+  const result = await getUserAttempts({ limit: 20 });
+  const error = result.error;
+  const attempts = result.data ?? [];
+
+  return (
+    <section className="bg-white border border-slate-100 rounded-2xl p-6 shadow-sm">
+      <h2 className="text-2xl font-bold text-slate-800">Saved Attempts</h2>
+      <p className="text-slate-600 text-sm mt-1">
+        Your submitted exams and test answers — open any attempt to review every question.
+      </p>
+
+      {error === "Unauthorized" ? (
+        <p className="mt-4 text-sm text-slate-600">
+          <Link href="/auth/signin" className="font-bold text-indigo-600 hover:underline">Sign in</Link>{" "}
+          to save and review your attempts.
+        </p>
+      ) : error ? (
+        <p className="mt-4 text-sm text-slate-500">Attempts are unavailable right now — try again shortly.</p>
+      ) : attempts.length === 0 ? (
+        <p className="mt-4 text-sm text-slate-600">
+          No attempts yet — take a{" "}
+          <Link href="/exam" className="font-bold text-indigo-600 hover:underline">mock exam</Link> or a{" "}
+          <Link href="/tests" className="font-bold text-indigo-600 hover:underline">practice test</Link> to start.
+        </p>
+      ) : (
+        <ul className="mt-4 divide-y divide-slate-100">
+          {attempts.map((a) => (
+            <li key={a.attemptId}>
+              <Link
+                href={`/revision/attempt/${a.attemptId}`}
+                className="flex flex-wrap items-center gap-x-4 gap-y-1 py-3 hover:bg-slate-50 rounded-lg px-2 -mx-2 transition"
+              >
+                <span className="font-bold text-slate-900">{a.title ?? `${a.exam} ${a.source}`}</span>
+                <span className="text-xs uppercase tracking-wide text-slate-400">{a.source}</span>
+                <span className="text-sm text-slate-600">
+                  {a.correctCount}/{a.totalQuestions} correct · score {a.score}/{a.maxScore}
+                </span>
+                <span className="ml-auto text-xs text-slate-400">
+                  {new Date(a.submittedAt).toLocaleDateString("en-IN", { day: "numeric", month: "short", year: "numeric" })}
+                </span>
+                <span className="text-indigo-600 font-semibold text-sm">Review →</span>
+              </Link>
+            </li>
+          ))}
+        </ul>
+      )}
+    </section>
+  );
+}
 
 export default function RevisionPage() {
   const revisionModules = [
@@ -64,6 +118,9 @@ export default function RevisionPage() {
           </div>
         ))}
       </div>
+
+      {/* Saved attempts (Attempt Layer) */}
+      <SavedAttempts />
 
       {/* Weak Topic Custom Search */}
       <section className="bg-white p-6 rounded-2xl shadow-sm border border-slate-100">

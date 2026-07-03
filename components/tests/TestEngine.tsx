@@ -1,7 +1,8 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
+import { recordAttempt } from "@/lib/attempts/client";
 import {
   TEST_CATEGORIES,
   TESTS_BY_CATEGORY,
@@ -11,7 +12,7 @@ import {
   type TestCategory,
   type TestDefinition,
 } from "@/lib/tests/testEngine";
-import type { PYQDifficulty, PYQExam } from "@/lib/pyq";
+import type { PYQDifficulty, PYQExam, PYQQuestion } from "@/lib/pyq";
 import { renderChemistry } from "@/lib/renderChemistry";
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -97,6 +98,28 @@ function TestRunner({ id, onBack }: { id: string; onBack: () => void }) {
   const def = getTestById(id);
   const questions = useMemo(() => (def ? getTestQuestions(def) : []), [def]);
   const [revealed, setRevealed] = useState<Record<string, boolean>>({});
+  // Week 5A Attempt Layer — answers picked in this run (questionId → option key).
+  const [answers, setAnswers] = useState<Record<string, string>>({});
+  const lastActionAt = useRef(0);
+  useEffect(() => {
+    lastActionAt.current = Date.now();
+  }, []);
+
+  const answeredCount = Object.keys(answers).length;
+  const correctCount = questions.filter((q) => answers[q.id] && answers[q.id] === q.answer).length;
+  const accuracy = answeredCount === 0 ? 0 : Math.round((correctCount / answeredCount) * 100);
+
+  const answerQuestion = (question: PYQQuestion, key: string) => {
+    if (answers[question.id] || revealed[question.id]) return; // no capture after answering or peeking
+    setAnswers((p) => ({ ...p, [question.id]: key }));
+    setRevealed((p) => ({ ...p, [question.id]: true }));
+    recordAttempt({
+      question,
+      source: "test",
+      selectedAnswer: key,
+      shownAtRef: lastActionAt,
+    });
+  };
 
   if (!def) {
     return <EmptyState message="Test not found." hint="It may have been regenerated. Go back and pick another." />;
@@ -121,7 +144,23 @@ function TestRunner({ id, onBack }: { id: string; onBack: () => void }) {
         <div className="mt-3 flex flex-wrap gap-2 text-[11px]">
           <Link href="/notes" className="rounded-lg border border-white/10 bg-white/[0.04] px-2.5 py-1 text-white/70 transition hover:border-cyan-400/40 hover:text-cyan-300">📖 Revise notes</Link>
           <Link href="/pyq" className="rounded-lg border border-white/10 bg-white/[0.04] px-2.5 py-1 text-white/70 transition hover:border-cyan-400/40 hover:text-cyan-300">🎯 PYQ analytics</Link>
-          <span className="rounded-lg border border-white/10 bg-white/[0.03] px-2.5 py-1 text-white/35">📊 Scoring — coming soon</span>
+        </div>
+        {/* Live score (Week 5A) — derived from this run's answers only */}
+        <div className="mt-3 flex flex-wrap items-center gap-2 text-xs">
+          <span className="rounded-full border border-white/15 bg-white/[0.06] px-2.5 py-1 font-bold text-white/80">
+            Answered {answeredCount}/{questions.length}
+          </span>
+          <span className="rounded-full border border-emerald-500/30 bg-emerald-500/10 px-2.5 py-1 font-bold text-emerald-300">
+            ✓ {correctCount} correct
+          </span>
+          <span className="rounded-full border border-rose-500/30 bg-rose-500/10 px-2.5 py-1 font-bold text-rose-300">
+            ✗ {answeredCount - correctCount} incorrect
+          </span>
+          {answeredCount > 0 && (
+            <span className="rounded-full border border-cyan-400/30 bg-cyan-500/10 px-2.5 py-1 font-bold text-cyan-300">
+              {accuracy}% accuracy
+            </span>
+          )}
         </div>
       </div>
 
@@ -131,12 +170,19 @@ function TestRunner({ id, onBack }: { id: string; onBack: () => void }) {
         <div className="space-y-4">
           {questions.map((q, i) => {
             const show = revealed[q.id];
+            const picked = answers[q.id];
+            const answerable = Boolean(q.options) && !picked && !show;
             return (
               <div key={q.id} className="rounded-2xl border border-white/[0.08] bg-[#111827] p-4">
                 <div className="mb-2 flex flex-wrap items-center gap-2 text-[11px]">
                   <span className="font-bold text-cyan-300">Q{i + 1}</span>
                   <span className="rounded bg-white/5 px-2 py-0.5 text-white/60">{q.exam} {q.year}</span>
                   <span className={`rounded bg-white/5 px-2 py-0.5 font-semibold ${DIFF_TONE[q.difficulty]}`}>{q.difficulty}</span>
+                  {picked && (
+                    <span className={`rounded px-2 py-0.5 font-bold ${picked === q.answer ? "bg-emerald-500/15 text-emerald-300" : "bg-rose-500/15 text-rose-300"}`}>
+                      {picked === q.answer ? "✓ Correct" : "✗ Incorrect"}
+                    </span>
+                  )}
                 </div>
                 <p className="text-sm font-medium leading-relaxed text-white">{renderChemistry(q.question)}</p>
 
@@ -144,15 +190,25 @@ function TestRunner({ id, onBack }: { id: string; onBack: () => void }) {
                   <div className="mt-3 grid grid-cols-1 gap-2 md:grid-cols-2">
                     {Object.entries(q.options).map(([k, v]) => {
                       const correct = show && k === q.answer;
+                      const wrongPick = picked === k && k !== q.answer;
+                      const tone = correct
+                        ? "border-emerald-500/50 bg-emerald-500/10 font-semibold text-emerald-200"
+                        : wrongPick
+                          ? "border-rose-500/50 bg-rose-500/10 font-semibold text-rose-200"
+                          : "border-white/10 bg-white/[0.03] text-white/70";
+                      if (answerable) {
+                        return (
+                          <button
+                            key={k}
+                            onClick={() => answerQuestion(q, k)}
+                            className={`rounded-lg border p-2.5 text-left text-sm transition hover:border-cyan-400/50 hover:bg-cyan-500/[0.06] ${tone}`}
+                          >
+                            <span className="mr-2 font-bold">{k}.</span>{renderChemistry(v)}
+                          </button>
+                        );
+                      }
                       return (
-                        <div
-                          key={k}
-                          className={`rounded-lg border p-2.5 text-sm transition ${
-                            correct
-                              ? "border-emerald-500/50 bg-emerald-500/10 font-semibold text-emerald-200"
-                              : "border-white/10 bg-white/[0.03] text-white/70"
-                          }`}
-                        >
+                        <div key={k} className={`rounded-lg border p-2.5 text-sm transition ${tone}`}>
                           <span className="mr-2 font-bold">{k}.</span>{renderChemistry(v)}
                         </div>
                       );
@@ -167,12 +223,26 @@ function TestRunner({ id, onBack }: { id: string; onBack: () => void }) {
                   </div>
                 )}
 
-                <button
-                  onClick={() => setRevealed((p) => ({ ...p, [q.id]: !p[q.id] }))}
-                  className="mt-3 text-xs font-semibold text-cyan-400 transition hover:text-cyan-300"
-                >
-                  {show ? "Hide answer" : "Reveal answer & explanation"}
-                </button>
+                {answerable ? (
+                  <p className="mt-3 text-xs text-white/40">
+                    Tap an option to answer — or{" "}
+                    <button
+                      onClick={() => setRevealed((p) => ({ ...p, [q.id]: true }))}
+                      className="font-semibold text-cyan-400 transition hover:text-cyan-300"
+                    >
+                      reveal without answering
+                    </button>
+                  </p>
+                ) : (
+                  !picked && (
+                    <button
+                      onClick={() => setRevealed((p) => ({ ...p, [q.id]: !p[q.id] }))}
+                      className="mt-3 text-xs font-semibold text-cyan-400 transition hover:text-cyan-300"
+                    >
+                      {show ? "Hide answer" : "Reveal answer & explanation"}
+                    </button>
+                  )
+                )}
               </div>
             );
           })}

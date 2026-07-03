@@ -1,226 +1,444 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
+import Link from "next/link";
 import SponsoredMock from "@/components/SponsoredMock";
+import { EXAM_BLUEPRINTS } from "@/lib/examBlueprints";
+import { submitAttempt, stampNow, bankElapsed, elapsedMs } from "@/lib/attempts/client";
+import { renderChemistry } from "@/lib/renderChemistry";
+import type { PYQExam } from "@/lib/pyq";
 
-type Question = {
-  id: number;
+// ─────────────────────────────────────────────────────────────────────────────
+// /exam — real-pattern mock exam (Week 5A rebuild).
+//
+// Real paper sizes from lib/examBlueprints (NEET 45 · JEE Main 25 · JEE Adv
+// 18, MCQ-only honestly). One question at a time, tappable options with a
+// strong selected state, question navigator, sticky action bar, math via
+// renderChemistry. Review unlocks only after submit; the submission persists
+// through the Attempt Layer (attempts + attempt_answers).
+// ─────────────────────────────────────────────────────────────────────────────
+
+interface PaperQuestion {
+  id: string;
   question: string;
-  options: string[];
+  options: Record<string, string>;
   correct: string;
   explanation: string;
   difficulty: string;
-  marks: number;
-  negativeMarks: number;
-};
-
-type Section = {
   chapter: string;
-  questions: Question[];
-};
+  topic?: string;
+  questionId?: string;
+}
 
-type Paper = {
-  exam: string;
+interface Paper {
+  exam: PYQExam;
   markingScheme: string;
+  marksCorrect: number;
+  marksWrong: number;
+  note: string | null;
   totalQuestions: number;
-  sections: Section[];
+  questions: PaperQuestion[];
+}
+
+type Phase = "setup" | "loading" | "running" | "submitting" | "review";
+
+const EXAM_ACCENT: Record<PYQExam, string> = {
+  NEET: "border-emerald-700 hover:border-emerald-500 text-emerald-300",
+  "JEE Main": "border-cyan-700 hover:border-cyan-500 text-cyan-300",
+  "JEE Advanced": "border-sky-700 hover:border-sky-500 text-sky-300",
 };
 
-const CHAPTERS = [
-  "Atomic Structure",
-  "Mole Concept",
-  "Chemical Bonding",
-  "Thermodynamics",
-  "Equilibrium",
-  "Electrochemistry",
-  "Chemical Kinetics",
-  "Solutions",
-  "Haloalkanes and Haloarenes",
-  "General Organic Chemistry",
-  "Aldehydes and Ketones",
-  "Alcohols, Phenols and Ethers",
-  "Amines",
-  "p-Block Elements",
-  "d and f Block Elements",
-  "Coordination Compounds",
-];
-
-export default function ExamHubPage() {
-  const [exam, setExam] = useState("JEE Main");
-  const [totalQuestions, setTotalQuestions] = useState(10);
-  const [difficulty, setDifficulty] = useState("mixed");
-  const [selectedChapters, setSelectedChapters] = useState<string[]>(["Atomic Structure", "Mole Concept"]);
-  const [loading, setLoading] = useState(false);
+export default function ExamPage() {
+  const [phase, setPhase] = useState<Phase>("setup");
   const [paper, setPaper] = useState<Paper | null>(null);
+  const [fallbackNote, setFallbackNote] = useState<string | null>(null);
   const [error, setError] = useState("");
-  const [showAnswers, setShowAnswers] = useState(false);
+  const [needsSignIn, setNeedsSignIn] = useState(false);
 
-  const toggleChapter = (ch: string) => {
-    setSelectedChapters((prev) =>
-      prev.includes(ch) ? prev.filter((c) => c !== ch) : [...prev, ch]
-    );
-  };
+  const [current, setCurrent] = useState(0);
+  const [answers, setAnswers] = useState<Record<number, string>>({});
+  const [confirmSubmit, setConfirmSubmit] = useState(false);
+  const [attemptId, setAttemptId] = useState<string | null>(null);
+  const [saveFailed, setSaveFailed] = useState(false);
 
-  const handleGenerate = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (selectedChapters.length === 0) {
-      setError("Select at least one chapter.");
-      return;
-    }
-    setLoading(true);
-    setPaper(null);
+  const startedAt = useRef(0);
+  const questionShownAt = useRef(0);
+  const timeSpent = useRef<Record<number, number>>({});
+
+  // Stamp per-question focus time when leaving a question.
+  const bankTime = (index: number) => bankElapsed(questionShownAt, timeSpent.current, index);
+
+  const startExam = async (exam: PYQExam) => {
+    setPhase("loading");
     setError("");
-    setShowAnswers(false);
-
+    setNeedsSignIn(false);
+    setFallbackNote(null);
     try {
       const res = await fetch("/api/exam", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          exam,
-          totalQuestions,
-          targetDifficulty: difficulty,
-          selectedChapters: selectedChapters.map((ch) => ({
-            chapter: ch,
-            questionsAllocated: Math.ceil(totalQuestions / selectedChapters.length),
-          })),
-        }),
+        body: JSON.stringify({ exam }),
       });
-
       const data = await res.json();
+      if (res.status === 401) {
+        setNeedsSignIn(true);
+        setPhase("setup");
+        return;
+      }
       if (!res.ok) throw new Error(data.error || "Generation failed");
       setPaper(data.paper);
-    } catch (err: unknown) {
-      setError(err instanceof Error ? err.message : "Failed to generate paper.");
-    } finally {
-      setLoading(false);
+      setFallbackNote(data.fallbackNote ?? null);
+      setAnswers({});
+      timeSpent.current = {};
+      setCurrent(0);
+      setAttemptId(null);
+      setSaveFailed(false);
+      setConfirmSubmit(false);
+      stampNow(startedAt, questionShownAt);
+      setPhase("running");
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Failed to generate the paper.");
+      setPhase("setup");
     }
   };
 
-  const allQuestions = paper?.sections.flatMap((s) => s.questions) ?? [];
+  const goTo = (index: number) => {
+    if (!paper || index < 0 || index >= paper.questions.length) return;
+    bankTime(current);
+    setCurrent(index);
+  };
 
-  return (
-    <div className="min-h-screen bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-white p-6 md:p-12 max-w-5xl mx-auto space-y-10">
-      <header className="space-y-1">
-        <h1 className="text-4xl font-black tracking-tight">Mock Exam Generator</h1>
-        <p className="text-slate-500 dark:text-slate-400 text-sm">
-          AI-generated JEE/NEET-standard questions from selected chapters.
-        </p>
-      </header>
+  const pick = (key: string) => {
+    setAnswers((p) => ({ ...p, [current]: p[current] === key ? undefined : key } as Record<number, string>));
+  };
 
-      <SponsoredMock />
+  const doSubmit = async () => {
+    if (!paper) return;
+    bankTime(current);
+    setPhase("submitting");
+    const result = await submitAttempt({
+      source: "exam",
+      exam: paper.exam,
+      title: `${paper.exam} Mock Paper`,
+      durationMs: elapsedMs(startedAt.current),
+      answers: paper.questions.map((q, i) => ({
+        questionId: q.questionId,
+        questionText: q.question,
+        options: q.options,
+        selectedAnswer: answers[i] ?? null,
+        correctAnswer: q.correct,
+        explanation: q.explanation || undefined,
+        chapter: q.chapter,
+        topic: q.topic,
+        difficulty: q.difficulty,
+        timeSpentMs: Math.round(timeSpent.current[i] ?? 0),
+      })),
+    });
+    if (result) setAttemptId(result.attemptId);
+    else setSaveFailed(true);
+    setPhase("review");
+  };
 
-      <form onSubmit={handleGenerate} className="bg-white dark:bg-slate-900 p-8 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800 space-y-6">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-          <div className="space-y-2">
-            <label className="text-xs font-bold text-slate-600 dark:text-slate-400 uppercase tracking-wider block">Exam</label>
-            <select value={exam} onChange={(e) => setExam(e.target.value)}
-              className="w-full p-3 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 font-semibold">
-              <option>JEE Main</option>
-              <option>JEE Advanced</option>
-              <option>NEET</option>
-            </select>
-          </div>
-          <div className="space-y-2">
-            <label className="text-xs font-bold text-slate-600 dark:text-slate-400 uppercase tracking-wider block">Questions</label>
-            <select value={totalQuestions} onChange={(e) => setTotalQuestions(Number(e.target.value))}
-              className="w-full p-3 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 font-semibold">
-              <option value={5}>5 — Quick Drill</option>
-              <option value={10}>10 — Chapter Test</option>
-              <option value={25}>25 — Unit Mock</option>
-            </select>
-          </div>
-          <div className="space-y-2">
-            <label className="text-xs font-bold text-slate-600 dark:text-slate-400 uppercase tracking-wider block">Difficulty</label>
-            <select value={difficulty} onChange={(e) => setDifficulty(e.target.value)}
-              className="w-full p-3 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 font-semibold">
-              <option value="easy">Easy</option>
-              <option value="medium">Medium</option>
-              <option value="hard">Hard</option>
-              <option value="mixed">Mixed</option>
-            </select>
-          </div>
-        </div>
+  // Result numbers — computed locally from the paper (review is post-submit only).
+  const graded = paper
+    ? paper.questions.map((q, i) => {
+        const selected = answers[i] ?? null;
+        return { q, i, selected, isCorrect: selected !== null && selected === q.correct };
+      })
+    : [];
+  const answeredCount = graded.filter((g) => g.selected !== null).length;
+  const correctCount = graded.filter((g) => g.isCorrect).length;
+  const score = paper
+    ? graded.reduce((s, g) => (g.selected === null ? s : s + (g.isCorrect ? paper.marksCorrect : paper.marksWrong)), 0)
+    : 0;
 
-        <div className="space-y-2">
-          <label className="text-xs font-bold text-slate-600 dark:text-slate-400 uppercase tracking-wider block">
-            Chapters ({selectedChapters.length} selected)
-          </label>
-          <div className="flex flex-wrap gap-2">
-            {CHAPTERS.map((ch) => (
-              <button key={ch} type="button" onClick={() => toggleChapter(ch)}
-                className={`px-3 py-1.5 rounded-lg text-xs font-semibold border transition ${
-                  selectedChapters.includes(ch)
-                    ? "bg-indigo-600 text-white border-indigo-600"
-                    : "bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border-slate-200 dark:border-slate-700 hover:border-indigo-400"
-                }`}>
-                {ch}
+  // ── Setup ──────────────────────────────────────────────────────────────────
+  if (phase === "setup" || phase === "loading") {
+    return (
+      <main className="min-h-screen bg-black text-white">
+        <div className="mx-auto max-w-3xl px-4 py-10 sm:px-6">
+          <p className="mb-2 text-xs font-bold uppercase tracking-[0.3em] text-cyan-300">Exam Center</p>
+          <h1 className="text-3xl font-black tracking-tight sm:text-4xl">Mock Exam</h1>
+          <p className="mt-2 text-sm text-white/55">
+            Real paper pattern and marking. AI-generated at exam standard — if AI is slow or unavailable,
+            the paper is built instantly from verified PYQs instead.
+          </p>
+
+          {needsSignIn && (
+            <div className="mt-6 rounded-2xl border border-amber-500/30 bg-amber-500/10 p-4 text-sm text-amber-200">
+              Sign in to take an exam — attempts are saved to your account for revision.{" "}
+              <Link href="/auth/signin" className="font-bold underline underline-offset-4">Sign in →</Link>
+            </div>
+          )}
+          {error && (
+            <div className="mt-6 rounded-2xl border border-rose-500/30 bg-rose-500/10 p-4 text-sm text-rose-200">{error}</div>
+          )}
+
+          <div className="mt-8 grid gap-4 sm:grid-cols-3">
+            {Object.values(EXAM_BLUEPRINTS).map((bp) => (
+              <button
+                key={bp.exam}
+                disabled={phase === "loading"}
+                onClick={() => startExam(bp.exam)}
+                className={`rounded-2xl border bg-white/[0.02] p-5 text-left transition hover:-translate-y-0.5 hover:bg-white/[0.04] disabled:opacity-50 ${EXAM_ACCENT[bp.exam]}`}
+              >
+                <div className="text-lg font-black text-white">{bp.exam}</div>
+                <div className="mt-1 text-2xl font-black">{bp.totalQuestions} Qs</div>
+                <div className="mt-1 text-xs text-white/50">{bp.markingLabel}</div>
+                {bp.note && <div className="mt-2 text-[11px] leading-snug text-white/35">{bp.note}</div>}
               </button>
             ))}
           </div>
-        </div>
 
-        {error && <p className="text-red-500 text-sm">{error}</p>}
-
-        <button type="submit" disabled={loading}
-          className="w-full py-4 bg-indigo-600 hover:bg-indigo-700 disabled:opacity-50 text-white font-black rounded-xl transition">
-          {loading ? "Generating via AI..." : `Generate ${totalQuestions}-Question ${exam} Paper`}
-        </button>
-      </form>
-
-      {paper && (
-        <section className="space-y-6">
-          <div className="flex items-center justify-between">
-            <div>
-              <h2 className="text-2xl font-black">{paper.exam} Mock Paper</h2>
-              <p className="text-slate-500 text-sm mt-1">{paper.totalQuestions} questions · {paper.markingScheme}</p>
+          {phase === "loading" && (
+            <div className="mt-8 rounded-2xl border border-white/10 bg-white/[0.02] p-6 text-center">
+              <div className="mx-auto h-8 w-8 animate-spin rounded-full border-2 border-cyan-400 border-t-transparent" />
+              <p className="mt-3 text-sm font-semibold text-white/70">Building your paper…</p>
+              <p className="mt-1 text-xs text-white/40">
+                Takes up to ~20s with AI — falls back to verified PYQs automatically if AI is slow.
+              </p>
             </div>
-            <button onClick={() => setShowAnswers((v) => !v)}
-              className="px-4 py-2 rounded-xl border border-slate-300 dark:border-slate-700 text-sm font-semibold hover:bg-slate-100 dark:hover:bg-slate-800 transition">
-              {showAnswers ? "Hide Answers" : "Show Answers"}
-            </button>
+          )}
+
+          <p className="mt-8 text-xs text-white/35">
+            Looking for short drills instead? Use{" "}
+            <Link href="/quiz" className="text-cyan-400 hover:underline">Quiz</Link> or{" "}
+            <Link href="/tests" className="text-cyan-400 hover:underline">Practice Tests</Link>.
+          </p>
+
+          <div className="mt-8"><SponsoredMock /></div>
+        </div>
+      </main>
+    );
+  }
+
+  if (!paper) return null;
+
+  // ── Review (post-submit only) ──────────────────────────────────────────────
+  if (phase === "review" || phase === "submitting") {
+    return (
+      <main className="min-h-screen bg-black text-white">
+        <div className="mx-auto max-w-3xl px-4 py-10 sm:px-6">
+          <p className="mb-2 text-xs font-bold uppercase tracking-[0.3em] text-cyan-300">Result</p>
+          <h1 className="text-3xl font-black">{paper.exam} Mock Paper</h1>
+
+          <div className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-4">
+            <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-4 text-center">
+              <div className="text-2xl font-black text-cyan-300">{score}</div>
+              <div className="mt-1 text-xs text-white/50">Score / {paper.questions.length * paper.marksCorrect}</div>
+            </div>
+            <div className="rounded-2xl border border-emerald-500/20 bg-emerald-500/5 p-4 text-center">
+              <div className="text-2xl font-black text-emerald-300">{correctCount}</div>
+              <div className="mt-1 text-xs text-white/50">Correct</div>
+            </div>
+            <div className="rounded-2xl border border-rose-500/20 bg-rose-500/5 p-4 text-center">
+              <div className="text-2xl font-black text-rose-300">{answeredCount - correctCount}</div>
+              <div className="mt-1 text-xs text-white/50">Incorrect</div>
+            </div>
+            <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-4 text-center">
+              <div className="text-2xl font-black text-white/70">{paper.questions.length - answeredCount}</div>
+              <div className="mt-1 text-xs text-white/50">Unanswered</div>
+            </div>
           </div>
 
-          {allQuestions.map((q, i) => (
-            <div key={i} className="bg-white dark:bg-slate-900 rounded-2xl p-6 border border-slate-100 dark:border-slate-800 space-y-4">
-              <div className="flex items-start justify-between gap-4">
-                <p className="font-semibold text-slate-800 dark:text-white">
-                  <span className="text-indigo-600 dark:text-indigo-400 font-black mr-2">Q{i + 1}.</span>
-                  {q.question}
-                </p>
-                <span className={`shrink-0 px-2 py-0.5 rounded-md text-xs font-bold ${
-                  q.difficulty === "hard" ? "bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-400" :
-                  q.difficulty === "medium" ? "bg-violet-100 text-violet-700 dark:bg-violet-900/30 dark:text-violet-400" :
-                  "bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400"
-                }`}>{q.difficulty}</span>
-              </div>
+          <div className="mt-4 text-sm">
+            {phase === "submitting" ? (
+              <p className="text-white/50">Saving your attempt…</p>
+            ) : saveFailed ? (
+              <p className="rounded-xl border border-amber-500/30 bg-amber-500/10 p-3 text-amber-200">
+                Result shown above, but the attempt could not be saved (are you signed in?).
+              </p>
+            ) : attemptId ? (
+              <p className="text-emerald-300/80">
+                ✓ Attempt saved —{" "}
+                <Link href="/revision" className="font-bold underline underline-offset-4">review anytime in Revision</Link>
+              </p>
+            ) : null}
+          </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
-                {(q.options ?? []).map((opt, j) => {
-                  const letter = ["A", "B", "C", "D"][j];
-                  const isCorrect = showAnswers && letter === q.correct;
-                  return (
-                    <div key={j} className={`p-3 rounded-xl text-sm border ${
-                      isCorrect
-                        ? "bg-green-50 dark:bg-green-900/20 border-green-400 text-green-800 dark:text-green-300 font-semibold"
-                        : "bg-slate-50 dark:bg-slate-800 border-slate-200 dark:border-slate-700"
-                    }`}>
-                      {opt}
-                    </div>
-                  );
-                })}
-              </div>
-
-              {showAnswers && (
-                <div className="bg-indigo-50 dark:bg-indigo-950/30 border border-indigo-200 dark:border-indigo-800 rounded-xl p-4 text-sm">
-                  <span className="font-bold text-indigo-700 dark:text-indigo-400">Explanation: </span>
-                  {q.explanation}
+          <h2 className="mt-10 mb-4 text-xl font-bold">Review</h2>
+          <div className="space-y-4">
+            {graded.map(({ q, i, selected, isCorrect }) => (
+              <div key={q.id} className="rounded-2xl border border-white/[0.08] bg-[#111827] p-4">
+                <div className="mb-2 flex flex-wrap items-center gap-2 text-[11px]">
+                  <span className="font-bold text-cyan-300">Q{i + 1}</span>
+                  <span className="rounded bg-white/5 px-2 py-0.5 text-white/60">{q.chapter}</span>
+                  {selected === null ? (
+                    <span className="rounded bg-white/10 px-2 py-0.5 font-bold text-white/50">Skipped</span>
+                  ) : (
+                    <span className={`rounded px-2 py-0.5 font-bold ${isCorrect ? "bg-emerald-500/15 text-emerald-300" : "bg-rose-500/15 text-rose-300"}`}>
+                      {isCorrect ? `✓ +${paper.marksCorrect}` : `✗ ${paper.marksWrong}`}
+                    </span>
+                  )}
                 </div>
-              )}
-            </div>
-          ))}
-        </section>
-      )}
-    </div>
+                <p className="text-sm font-medium leading-relaxed">{renderChemistry(q.question)}</p>
+                <div className="mt-3 grid grid-cols-1 gap-2 sm:grid-cols-2">
+                  {Object.entries(q.options).map(([k, v]) => {
+                    const tone =
+                      k === q.correct
+                        ? "border-emerald-500/50 bg-emerald-500/10 text-emerald-200 font-semibold"
+                        : k === selected
+                          ? "border-rose-500/50 bg-rose-500/10 text-rose-200 font-semibold"
+                          : "border-white/10 bg-white/[0.03] text-white/60";
+                    return (
+                      <div key={k} className={`rounded-lg border p-2.5 text-sm ${tone}`}>
+                        <span className="mr-2 font-bold">{k}.</span>
+                        {renderChemistry(v)}
+                        {k === selected && <span className="ml-2 text-[10px] uppercase tracking-wide opacity-70">your answer</span>}
+                      </div>
+                    );
+                  })}
+                </div>
+                {q.explanation && (
+                  <div className="mt-3 rounded-xl border border-white/[0.08] bg-white/[0.03] p-3 text-sm text-white/65">
+                    <span className="font-semibold text-indigo-300">Explanation: </span>
+                    {renderChemistry(q.explanation)}
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-8 flex flex-wrap gap-3">
+            <button
+              onClick={() => { setPaper(null); setPhase("setup"); }}
+              className="rounded-xl border border-cyan-400/40 bg-cyan-500/10 px-4 py-2 text-sm font-semibold text-cyan-300 transition hover:bg-cyan-500/20"
+            >
+              New exam
+            </button>
+            <Link href="/revision" className="rounded-xl border border-white/15 bg-white/[0.04] px-4 py-2 text-sm font-semibold text-white/80 transition hover:bg-white/[0.08]">
+              Revision →
+            </Link>
+          </div>
+        </div>
+      </main>
+    );
+  }
+
+  // ── Runner ─────────────────────────────────────────────────────────────────
+  const q = paper.questions[current];
+  const selected = answers[current];
+
+  return (
+    <main className="min-h-screen bg-black pb-28 text-white">
+      <div className="mx-auto max-w-3xl px-4 py-6 sm:px-6">
+        {/* Header */}
+        <div className="flex flex-wrap items-center justify-between gap-2">
+          <div>
+            <h1 className="text-lg font-black">{paper.exam} Mock Paper</h1>
+            <p className="text-xs text-white/45">{paper.totalQuestions} questions · {paper.markingScheme}</p>
+          </div>
+          <span className="rounded-full border border-white/15 bg-white/[0.06] px-3 py-1 text-xs font-bold text-white/80">
+            {answeredCount}/{paper.questions.length} answered
+          </span>
+        </div>
+
+        {fallbackNote && (
+          <p className="mt-3 rounded-xl border border-amber-500/25 bg-amber-500/[0.07] p-3 text-xs leading-snug text-amber-200/90">
+            {fallbackNote}
+          </p>
+        )}
+
+        {/* Question navigator */}
+        <div className="mt-4 flex flex-wrap gap-1.5">
+          {paper.questions.map((_, i) => {
+            const state =
+              i === current
+                ? "border-cyan-400 bg-cyan-500/20 text-white"
+                : answers[i]
+                  ? "border-emerald-500/40 bg-emerald-500/10 text-emerald-300"
+                  : "border-white/10 bg-white/[0.03] text-white/50";
+            return (
+              <button
+                key={i}
+                onClick={() => goTo(i)}
+                className={`h-8 w-8 rounded-lg border text-xs font-bold transition ${state}`}
+                aria-label={`Question ${i + 1}${answers[i] ? " (answered)" : ""}`}
+              >
+                {i + 1}
+              </button>
+            );
+          })}
+        </div>
+
+        {/* Question */}
+        <div className="mt-5 rounded-2xl border border-white/[0.08] bg-[#111827] p-4 sm:p-5">
+          <div className="mb-2 flex flex-wrap items-center gap-2 text-[11px]">
+            <span className="font-bold text-cyan-300">Q{current + 1} of {paper.questions.length}</span>
+            <span className="rounded bg-white/5 px-2 py-0.5 text-white/60">{q.chapter}</span>
+            <span className="rounded bg-white/5 px-2 py-0.5 capitalize text-white/60">{q.difficulty}</span>
+          </div>
+          <p className="text-base font-medium leading-relaxed">{renderChemistry(q.question)}</p>
+
+          <div className="mt-4 grid grid-cols-1 gap-2.5" role="radiogroup" aria-label="Answer options">
+            {Object.entries(q.options).map(([k, v]) => {
+              const isSelected = selected === k;
+              return (
+                <button
+                  key={k}
+                  role="radio"
+                  aria-checked={isSelected}
+                  onClick={() => pick(k)}
+                  className={`flex w-full items-start gap-3 rounded-xl border p-3.5 text-left text-sm transition ${
+                    isSelected
+                      ? "border-cyan-400 bg-cyan-500/15 text-white ring-2 ring-cyan-400/60"
+                      : "border-white/10 bg-white/[0.03] text-white/75 hover:border-cyan-400/40 hover:bg-white/[0.06]"
+                  }`}
+                >
+                  <span className={`flex h-6 w-6 shrink-0 items-center justify-center rounded-full border text-xs font-black ${
+                    isSelected ? "border-cyan-300 bg-cyan-400 text-black" : "border-white/25 text-white/60"
+                  }`}>
+                    {k}
+                  </span>
+                  <span className="pt-0.5">{renderChemistry(v)}</span>
+                </button>
+              );
+            })}
+          </div>
+          <p className="mt-3 text-[11px] text-white/35">Tap again to clear your selection. Answers reveal only after submit.</p>
+        </div>
+      </div>
+
+      {/* Sticky action bar */}
+      <div className="fixed inset-x-0 bottom-0 z-40 border-t border-white/10 bg-[#0B0F19]/95 backdrop-blur">
+        <div className="mx-auto flex max-w-3xl items-center gap-2 px-4 py-3 sm:px-6">
+          <button
+            onClick={() => goTo(current - 1)}
+            disabled={current === 0}
+            className="rounded-xl border border-white/15 bg-white/[0.04] px-4 py-2.5 text-sm font-semibold text-white/80 transition hover:bg-white/[0.08] disabled:opacity-35"
+          >
+            ← Prev
+          </button>
+          <button
+            onClick={() => goTo(current + 1)}
+            disabled={current === paper.questions.length - 1}
+            className="rounded-xl border border-white/15 bg-white/[0.04] px-4 py-2.5 text-sm font-semibold text-white/80 transition hover:bg-white/[0.08] disabled:opacity-35"
+          >
+            Next →
+          </button>
+          <div className="flex-1" />
+          {confirmSubmit ? (
+            <>
+              <span className="hidden text-xs text-white/50 sm:block">
+                {paper.questions.length - answeredCount} unanswered — submit?
+              </span>
+              <button onClick={() => setConfirmSubmit(false)} className="rounded-xl border border-white/15 px-3 py-2.5 text-sm font-semibold text-white/70">
+                Back
+              </button>
+              <button onClick={doSubmit} className="rounded-xl bg-gradient-to-r from-emerald-400 to-cyan-400 px-5 py-2.5 text-sm font-black text-black transition hover:-translate-y-0.5">
+                Confirm Submit
+              </button>
+            </>
+          ) : (
+            <button
+              onClick={() => (answeredCount < paper.questions.length ? setConfirmSubmit(true) : doSubmit())}
+              className="rounded-xl bg-gradient-to-r from-cyan-400 to-sky-500 px-6 py-2.5 text-sm font-black text-black shadow-lg shadow-cyan-500/20 transition hover:-translate-y-0.5"
+            >
+              Submit Exam
+            </button>
+          )}
+        </div>
+      </div>
+    </main>
   );
 }

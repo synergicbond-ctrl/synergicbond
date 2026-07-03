@@ -64,8 +64,14 @@ const MEGA_MENUS: MegaMenu[] = [
           { href: "/programs/state-boards", label: "State Boards", desc: "State curricula tracks",     icon: Landmark },
         ],
       },
+      {
+        title: "🎓 Graduate & International",
+        items: [
+          { href: "/programs/gate",          label: "GATE",          desc: "GATE Chemistry (CY)",       icon: Medal },
+          { href: "/programs/international",  label: "International",  desc: "AP · IB · A-Level · MCAT",  icon: Globe },
+        ],
+      },
     ],
-    note: "🌍 International programs (AP · IB · A-Level · MCAT) — coming soon",
   },
   {
     title: "Features",

@@ -129,6 +129,7 @@ export function getProgramSections(program: Program): HubSection[] {
       cards: [
         { title: "AI Tutor", description: "Step-by-step conceptual doubt solving.", status: "available", href: "/tutor", iconKey: "bot" },
         { title: "AI Notes", description: "Generate exam-focused notes for any topic.", status: "available", href: "/ai-lab/notes", iconKey: "notes" },
+        { title: "AI Board Examiner", description: "Grade a written answer to the marking scheme.", status: "available", href: "/board-examiner", iconKey: "clipboard" },
         { title: "Study Planner", description: "Week-by-week syllabus plan in the AI Lab.", status: "available", href: "/ai-lab", iconKey: "calendar" },
         { title: "Digital Twin", description: "A personalised model of your prep that adapts your plan.", status: "premium", iconKey: "sparkles" },
       ],

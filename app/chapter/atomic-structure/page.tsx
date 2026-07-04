@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Home() {
   return (
     <main className="bg-black text-white">
@@ -30,12 +32,12 @@ export default function Home() {
             <p className="mt-3 text-lg text-white/50">One platform for NEET, JEE, GATE & InChO</p>
             
             <div className="mt-12 flex justify-center gap-4 flex-wrap">
-              <a className="px-8 py-4 bg-white text-black rounded-2xl font-semibold hover:scale-105 transition duration-300 cursor-pointer" href="/dashboard">
+              <Link className="px-8 py-4 bg-white text-black rounded-2xl font-semibold hover:scale-105 transition duration-300 cursor-pointer" href="/dashboard">
                 🚀 Start Learning
-              </a>
-              <a className="px-8 py-4 border border-white/20 rounded-2xl hover:bg-white/10 transition duration-300 cursor-pointer" href="/vault">
+              </Link>
+              <Link className="px-8 py-4 border border-white/20 rounded-2xl hover:bg-white/10 transition duration-300 cursor-pointer" href="/vault">
                 🧪 Explore Vault
-              </a>
+              </Link>
             </div>
 
             <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-5">

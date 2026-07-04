@@ -148,6 +148,18 @@ export const CLASS_DASHBOARD_SECTIONS: DashSection[] = [
 // ── Custom Test Paper Generator config (SSOT for the future generator) ────────
 export const TEST_QUESTION_TYPES = ["1 Mark", "2 Mark", "3 Mark", "5 Mark", "Case-Based", "Assertion–Reason", "Competency-Based", "HOTS"] as const;
 
+// ── Section → scoped hub route ────────────────────────────────────────────────
+// Each section that now has a real, class-scoped hub maps here. `base` is
+// `/dashboard/{board}/{class}`. Sections without an entry keep their item links.
+export const SECTION_ROUTES: Record<string, (base: string) => string> = {
+  "chapter-learning": (base) => `${base}/full-syllabus`,
+  "full-syllabus": (base) => `${base}/full-syllabus`,
+  "project-journal": (base) => `${base}/projects`,
+  "practical-lab": (base) => `${base}/practical`,
+  "profile-progress": (base) => `${base}/analytics`,
+  "mentorship": (base) => `${base}/mentorship`,
+};
+
 // ── Purchase gating ───────────────────────────────────────────────────────────
 // A purchased program is a real (board, class) entitlement. There is NO
 // board-class purchase table yet, so this returns [] — the UI then shows the

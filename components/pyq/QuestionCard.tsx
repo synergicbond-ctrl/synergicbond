@@ -91,10 +91,13 @@ export default function QuestionCard({
   question,
   compact = false,
   attemptSource,
+  onAnswered,
 }: {
   question: PYQQuestion;
   compact?: boolean;
   attemptSource?: CaptureSource;
+  /** Fired once when the student picks an option (answer-capture mode). */
+  onAnswered?: (question: PYQQuestion, selectedKey: string, correct: boolean) => void;
 }) {
   const [revealed, setRevealed] = useState(false);
   const [selected, setSelected] = useState<string | null>(null);
@@ -116,6 +119,7 @@ export default function QuestionCard({
       selectedAnswer: key,
       shownAtMs: shownAt.current,
     });
+    onAnswered?.(question, key, key === question.answer);
   };
 
   const toggleLink = (kind: LinkKind, value: string) => {

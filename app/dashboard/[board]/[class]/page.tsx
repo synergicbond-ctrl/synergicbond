@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import {
-  BOARDS, CLASSES, getBoard, getClass, CLASS_DASHBOARD_SECTIONS, TEST_QUESTION_TYPES,
+  BOARDS, CLASSES, getBoard, getClass, CLASS_DASHBOARD_SECTIONS, TEST_QUESTION_TYPES, SECTION_ROUTES,
 } from "@/lib/boardDashboard";
 
 // /dashboard/[board]/[class] — Class Dashboard (six sections). Board-aware and
@@ -24,6 +24,8 @@ export default async function ClassDashboard({ params }: { params: Promise<{ boa
   const b = getBoard(board); const c = getClass(cls);
   if (!b || !c) notFound();
 
+  const base = `/dashboard/${b.slug}/${c.slug}`;
+
   return (
     <main className="min-h-screen bg-[#0B1220] text-white">
       <div className="border-b border-white/10 bg-gradient-to-b from-amber-950/20 to-[#0B1220] px-6 py-12">
@@ -41,11 +43,27 @@ export default async function ClassDashboard({ params }: { params: Promise<{ boa
       </div>
 
       <div className="mx-auto max-w-5xl space-y-6 px-6 py-10">
-        {CLASS_DASHBOARD_SECTIONS.map((section) => (
+        {/* Primary entry — the Full Syllabus Dashboard hub */}
+        <Link href={`${base}/full-syllabus`}
+          className="flex items-center justify-between rounded-2xl border border-cyan-400/30 bg-gradient-to-r from-cyan-500/[0.08] to-transparent p-5 transition hover:border-cyan-400/60">
+          <div>
+            <div className="text-xs font-bold uppercase tracking-wider text-cyan-300">Start here</div>
+            <div className="mt-0.5 text-lg font-black text-white">Full Syllabus Dashboard</div>
+            <p className="text-sm text-white/55">Notes, practice, PYQs, mock tests, custom test generator & analytics — all chapters.</p>
+          </div>
+          <span className="text-2xl text-cyan-300">→</span>
+        </Link>
+
+        {CLASS_DASHBOARD_SECTIONS.map((section) => {
+          const route = SECTION_ROUTES[section.key]?.(base);
+          return (
           <section key={section.key} className="rounded-2xl border border-white/[0.08] bg-white/[0.03] p-5">
-            <div className="mb-3">
-              <h2 className="text-lg font-black text-white">{section.label}</h2>
-              <p className="mt-0.5 text-sm text-white/50">{section.blurb}</p>
+            <div className="mb-3 flex items-start justify-between gap-3">
+              <div>
+                <h2 className="text-lg font-black text-white">{section.label}</h2>
+                <p className="mt-0.5 text-sm text-white/50">{section.blurb}</p>
+              </div>
+              {route && <Link href={route} className="shrink-0 rounded-lg border border-cyan-400/40 bg-cyan-500/10 px-3 py-1.5 text-xs font-bold text-cyan-300 hover:bg-cyan-500/20">Open →</Link>}
             </div>
             <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
               {section.items.map((it) =>
@@ -63,23 +81,24 @@ export default async function ClassDashboard({ params }: { params: Promise<{ boa
               )}
             </div>
 
-            {/* Custom Test Paper Generator — surface its config honestly under Full Syllabus */}
+            {/* Custom Test Paper Generator — now live under Full Syllabus */}
             {section.key === "full-syllabus" && (
-              <div className="mt-3 rounded-xl border border-cyan-400/15 bg-cyan-500/[0.04] p-3">
-                <p className="text-[11px] font-bold uppercase tracking-wider text-cyan-300">Custom Test Paper Generator — coming soon</p>
-                <p className="mt-1 text-xs text-white/55">
-                  Will select board · class · chapters · topics · difficulty · duration and generate a board-style paper
-                  (answer key, marking scheme, performance report) with per-student non-repetition. Question types:
+              <Link href={`${base}/custom-test`} className="mt-3 block rounded-xl border border-cyan-400/25 bg-cyan-500/[0.06] p-3 transition hover:border-cyan-400/50">
+                <p className="text-[11px] font-bold uppercase tracking-wider text-cyan-300">Custom Test Paper Generator — live →</p>
+                <p className="mt-1 text-xs text-white/60">
+                  Pick chapters · difficulty · count, add an AI subjective section, and get a board-style paper with per-student
+                  non-repetition and a live performance report. Question types:
                 </p>
                 <div className="mt-2 flex flex-wrap gap-1.5">
                   {TEST_QUESTION_TYPES.map((t) => (
                     <span key={t} className="rounded-full border border-white/10 bg-white/[0.04] px-2 py-0.5 text-[10px] font-semibold text-white/55">{t}</span>
                   ))}
                 </div>
-              </div>
+              </Link>
             )}
           </section>
-        ))}
+          );
+        })}
 
         <div className="pt-2"><Link href={`/dashboard/${b.slug}`} className="text-sm text-white/45 hover:text-white">← {b.name} classes</Link></div>
       </div>

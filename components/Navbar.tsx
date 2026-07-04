@@ -59,6 +59,7 @@ const MEGA_MENUS: MegaMenu[] = [
       {
         title: "🏫 School Boards",
         items: [
+          { href: "/dashboard/boards",      label: "Board Dashboards", desc: "Full Class 11 & 12 dashboards", icon: LayoutDashboard },
           { href: "/programs/cbse",         label: "CBSE",         desc: "Class 11–12 · NCERT first",  icon: BookOpen },
           { href: "/programs/icse",         label: "ICSE",         desc: "ISC Class 11–12",            icon: School },
           { href: "/programs/state-boards", label: "State Boards", desc: "State curricula tracks",     icon: Landmark },

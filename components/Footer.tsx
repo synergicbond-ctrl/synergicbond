@@ -119,7 +119,7 @@ export default function Footer() {
           <div className="flex gap-4 text-xs text-gray-600">
             <Link href="#" className="hover:text-white transition">Privacy Policy</Link>
             <Link href="#" className="hover:text-white transition">Terms of Use</Link>
-            <Link href="#" className="hover:text-white transition">Contact</Link>
+            <a href="mailto:hello@synergicbond.com" className="hover:text-white transition">hello@synergicbond.com</a>
           </div>
         </div>
 

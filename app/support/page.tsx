@@ -83,6 +83,16 @@ export default function SupportPage() {
             <li className="flex gap-2"><span className="text-cyan-400">•</span> Hand-verified notes, PYQ intelligence and test content — authored, never scraped.</li>
           </ul>
         </section>
+
+        {/* Direct contact */}
+        <section className="mt-6 rounded-2xl border border-white/[0.08] bg-[#111827] p-6 text-center">
+          <h2 className="text-lg font-black">Need help or have a question?</h2>
+          <p className="mt-1.5 text-sm text-white/60">Write to us — a real person reads every mail.</p>
+          <a href="mailto:hello@synergicbond.com"
+            className="mt-3 inline-block rounded-xl border border-cyan-400/40 bg-cyan-500/10 px-5 py-2.5 text-sm font-black text-cyan-300 transition hover:bg-cyan-500/20">
+            hello@synergicbond.com
+          </a>
+        </section>
       </div>
     </main>
   );

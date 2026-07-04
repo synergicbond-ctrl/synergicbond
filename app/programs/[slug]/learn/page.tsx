@@ -4,6 +4,7 @@ import ProgramPageHeader from "@/components/programs/ProgramPageHeader";
 import { examChapters } from "@/components/syllabus/ExamSyllabus";
 import { getProgram, PROGRAMS } from "@/lib/programs";
 import { formulaCards } from "@/lib/chemistry/formulas";
+import { isEngineSlug } from "@/lib/engine/programSpec";
 
 // ─────────────────────────────────────────────────────────────────────────────
 // /programs/[slug]/learn — Learn Engine V1 (Roadmap V2 · Week 2).
@@ -99,11 +100,18 @@ export default async function ProgramLearnPage({ params }: { params: Promise<{ s
                 {chapters.map((chapter) => (
                   <Link
                     key={chapter.id}
-                    href={`/chapter/${chapter.id}`}
+                    // Engine programs open the full 11-section Chapter Engine;
+                    // others keep the classic chapter workspace.
+                    href={isEngineSlug(slug) ? `/programs/${slug}/chapter/${chapter.id}` : `/chapter/${chapter.id}`}
                     className={`group rounded-xl border bg-white/[0.02] p-4 transition hover:bg-white/[0.04] ${accent.card}`}
                   >
-                    <div className="text-[11px] font-bold uppercase tracking-wider text-white/40">
-                      {BRANCH_LABEL[chapter.category] ?? chapter.category}
+                    <div className="flex items-start justify-between gap-2">
+                      <div className="text-[11px] font-bold uppercase tracking-wider text-white/40">
+                        {BRANCH_LABEL[chapter.category] ?? chapter.category}
+                      </div>
+                      {isEngineSlug(slug) && (
+                        <span className="rounded-full border border-cyan-400/30 bg-cyan-400/10 px-1.5 py-0.5 text-[9px] font-bold uppercase text-cyan-300">Engine</span>
+                      )}
                     </div>
                     <div className="mt-1.5 text-sm font-bold text-white">{chapter.title}</div>
                     <div className="mt-1 text-xs text-white/45">

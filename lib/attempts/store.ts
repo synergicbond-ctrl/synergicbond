@@ -266,3 +266,56 @@ export async function getAllUserAnswers(limit = 2000): Promise<StoreResult<Attem
   }
   return { data: (data as AttemptAnswerRow[]).map((r) => rowToAnswer(r)), error: null };
 }
+
+/**
+ * Answers with per-question timeSpentMs re-hydrated from each attempt's
+ * metadata.answerExtras (Speed Analysis). Same tables, no new pipeline —
+ * fetches the user's recent sessions plus their answers and applies the
+ * existing hydrateAnswers join per session. Sessions without timing extras
+ * simply yield timeSpentMs 0 and are excluded by the speed reducer.
+ */
+export async function getAllUserAnswersWithTime(
+  attemptLimit = 200
+): Promise<StoreResult<AttemptAnswerRecord[]>> {
+  const { supabase, user } = await requireUser();
+  if (!user) return { data: null, error: "Unauthorized" };
+
+  const { data: attemptRows, error: attemptsError } = await supabase
+    .from("attempts")
+    .select("id, metadata")
+    .eq("user_id", user.id)
+    .order("created_at", { ascending: false })
+    .limit(Math.min(attemptLimit, 500));
+  if (attemptsError) {
+    console.error("[attempts] getAllUserAnswersWithTime attempts failed:", attemptsError.message);
+    return { data: null, error: attemptsError.message };
+  }
+  const metaById = new Map(
+    (attemptRows as Pick<AttemptRow, "id" | "metadata">[]).map((r) => [r.id, r.metadata])
+  );
+  if (metaById.size === 0) return { data: [], error: null };
+
+  const { data: answerRows, error: answersError } = await supabase
+    .from("attempt_answers")
+    .select("*")
+    .eq("user_id", user.id)
+    .in("attempt_id", [...metaById.keys()])
+    .order("created_at", { ascending: false })
+    .limit(5000);
+  if (answersError) {
+    console.error("[attempts] getAllUserAnswersWithTime answers failed:", answersError.message);
+    return { data: null, error: answersError.message };
+  }
+
+  const byAttempt = new Map<string, AttemptAnswerRow[]>();
+  for (const row of answerRows as AttemptAnswerRow[]) {
+    const arr = byAttempt.get(row.attempt_id) ?? [];
+    arr.push(row);
+    byAttempt.set(row.attempt_id, arr);
+  }
+  const out: AttemptAnswerRecord[] = [];
+  for (const [attemptId, rows] of byAttempt) {
+    out.push(...hydrateAnswers(rows, metaById.get(attemptId) ?? null));
+  }
+  return { data: out, error: null };
+}

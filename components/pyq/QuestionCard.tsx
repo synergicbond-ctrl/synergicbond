@@ -11,6 +11,7 @@ import {
 import type { PYQQuestion } from "@/lib/pyq";
 import { recordAttempt } from "@/lib/attempts/client";
 import AddToRevision from "@/components/revision/AddToRevision";
+import { expectedSeconds } from "@/lib/engine/programSpec";
 
 type CaptureSource = "practice" | "test";
 import { DIFFICULTY_BADGE, EXAM_BADGE } from "./uiHelpers";
@@ -148,6 +149,9 @@ export default function QuestionCard({
         {!compact && <span className="bg-white/5 px-2 py-1 rounded">{question.chapter}</span>}
         <span className={`px-2 py-1 rounded font-semibold ${DIFFICULTY_BADGE[question.difficulty]}`}>
           {question.difficulty}
+        </span>
+        <span className="bg-white/5 px-2 py-1 rounded text-white/60" title="Pace benchmark derived from difficulty — not exam data">
+          ⏱ ~{expectedSeconds(question.difficulty)}s
         </span>
         {question.ncertDirect && (
           <span className="bg-purple-900/40 text-purple-400 px-2 py-1 rounded">NCERT Direct</span>

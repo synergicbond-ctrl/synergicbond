@@ -1,4 +1,5 @@
 import type { Program } from "./programs";
+import { ENGINE_PROGRAMS, isEngineSlug } from "./engine/programSpec";
 
 // ─────────────────────────────────────────────────────────────────────────────
 // Program Hub SSOT (Program Hub Scaffold pass).
@@ -46,7 +47,26 @@ export const HUB_SECTION_KEYS = [
 
 export function getProgramSections(program: Program): HubSection[] {
   const base = `/programs/${program.slug}`;
+  const sections = buildBaseSections(program, base);
 
+  // Learning-engine layer (NEET / JEE Main / JEE Advanced only) — ADDITIVE
+  // cards on the existing hub, never a redesign. Every href is a live route.
+  if (isEngineSlug(program.slug)) {
+    const engine = ENGINE_PROGRAMS[program.slug];
+    const add = (key: string, card: HubCard) => {
+      sections.find((s) => s.key === key)?.cards.push(card);
+    };
+    add("learn", { title: "Full Syllabus Dashboard", description: "Whole-course tools — notes, NCERT, formula/exception/trick books, timers, prediction.", status: "available", href: `${base}/full-syllabus`, iconKey: "book" });
+    add("learn", { title: "Chapter Engine", description: "11-section chapter experience — mastery, NCERT intelligence, question bank, innovation lab, tutor.", status: "available", href: `${base}/learn`, iconKey: "sparkles" });
+    add("testing", { title: "Smart Timers", description: "Pomodoro · deep work · exam simulation · custom.", status: "available", href: "/timers", iconKey: "calendar" });
+    if (engine.hasSpeedAnalysis) {
+      add("analytics", { title: "Speed Analysis", description: "Real per-question pace vs difficulty benchmarks — rushing & slow chapters.", status: "available", href: `${base}/speed`, iconKey: "activity" });
+    }
+  }
+  return sections;
+}
+
+function buildBaseSections(program: Program, base: string): HubSection[] {
   return [
     {
       key: "learn",

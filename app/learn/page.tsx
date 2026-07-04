@@ -98,6 +98,32 @@ export default function LearnPage() {
           </p>
         </header>
 
+        {/* Premium visual chapters (new notes template) */}
+        <section>
+          <div className="mb-4 flex items-center gap-2">
+            <h2 className="text-xl font-black text-white">Premium Chapters</h2>
+            <span className="rounded-full border border-amber-400/30 bg-amber-400/10 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide text-amber-300">New</span>
+          </div>
+          <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-3">
+            {[
+              { href: "/learn/mole-concept", title: "Mole Concept", tag: "Physical · Class 11" },
+              { href: "/learn/atomic-structure", title: "Atomic Structure", tag: "Physical · Class 11" },
+              { href: "/learn/chemical-bonding", title: "Chemical Bonding", tag: "Physical · Class 11" },
+              { href: "/learn/thermodynamics", title: "Thermodynamics", tag: "Physical · Class 11" },
+              { href: "/learn/periodic-table", title: "Periodic Table", tag: "Inorganic · Class 11" },
+            ].map((c) => (
+              <Link key={c.href} href={c.href}
+                className="group flex flex-col justify-between rounded-lg border border-white/[0.08] bg-gradient-to-br from-cyan-500/[0.06] to-white/[0.02] p-5 transition hover:-translate-y-0.5 hover:border-cyan-400/40">
+                <div>
+                  <div className="text-[11px] font-bold uppercase tracking-wider text-cyan-300/80">{c.tag}</div>
+                  <div className="mt-1.5 text-lg font-black text-white">{c.title}</div>
+                </div>
+                <span className="mt-4 text-xs font-black uppercase tracking-wide text-cyan-300">Read chapter →</span>
+              </Link>
+            ))}
+          </div>
+        </section>
+
         <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
           {modules.map((item) => {
             const Icon = item.icon;

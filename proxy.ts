@@ -1,40 +1,26 @@
 import { createServerClient } from "@supabase/ssr";
 import { NextResponse, type NextRequest } from "next/server";
+import { requiresAuth } from "@/lib/access/contentAccess";
 
-const PROTECTED_PATHS = [
-  "/dashboard",
-  "/coach",
-  "/tutor",
-  "/chapter",
-  "/quiz",
-  "/exam",
-  "/pyq",
-  "/revision",
-  "/mistakes",
-  "/analytics",
-  "/ncert",
-  "/readiness",
-  "/board-examiner",
-  "/vault",
-  "/search",
-  "/upload",
-  "/olympiads",
-];
+/** Build /auth/signin?next=<current path+query> so the user returns after login. */
+function signinRedirect(request: NextRequest): NextResponse {
+  const url = request.nextUrl.clone();
+  const next = request.nextUrl.pathname + request.nextUrl.search;
+  url.pathname = "/auth/signin";
+  url.search = "";
+  url.searchParams.set("next", next);
+  return NextResponse.redirect(url);
+}
 
 export async function proxy(request: NextRequest) {
   let supabaseResponse = NextResponse.next({ request });
-  const isProtected = PROTECTED_PATHS.some((path) =>
-    request.nextUrl.pathname.startsWith(path)
-  );
+  const isProtected = requiresAuth(request.nextUrl.pathname);
   const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
   const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
 
   if (!supabaseUrl || !supabaseAnonKey) {
     if (!isProtected) return supabaseResponse;
-
-    const url = request.nextUrl.clone();
-    url.pathname = "/auth/signin";
-    return NextResponse.redirect(url);
+    return signinRedirect(request);
   }
 
   const supabase = createServerClient(
@@ -63,9 +49,7 @@ export async function proxy(request: NextRequest) {
   } = await supabase.auth.getUser();
 
   if (!user && isProtected) {
-    const url = request.nextUrl.clone();
-    url.pathname = "/auth/signin";
-    return NextResponse.redirect(url);
+    return signinRedirect(request);
   }
 
   return supabaseResponse;

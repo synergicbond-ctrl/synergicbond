@@ -1,9 +1,10 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import ExamSyllabus from "@/components/syllabus/ExamSyllabus";
+import ProgramSyllabusTree from "@/components/programs/ProgramSyllabusTree";
 import ProgramHubSections from "@/components/programs/ProgramHubSections";
 import { getProgram, PROGRAMS } from "@/lib/programs";
 import { getProgramSections } from "@/lib/programHubData";
+import { getProgramSyllabus, HUB_SYLLABUS_MAP } from "@/lib/programSyllabus";
 
 // ─────────────────────────────────────────────────────────────────────────────
 // /programs/[slug] — Program hub (Program Hub Scaffold pass).
@@ -37,8 +38,12 @@ export default async function ProgramHubPage({ params }: { params: Promise<{ slu
   const program = getProgram(slug);
   if (!program) notFound();
 
-  const { name, kicker, tagline, chips, examTags, syllabusHeading, syllabusBlurb, legacyHub, accent } = program;
+  const { name, kicker, tagline, chips, legacyHub, accent } = program;
   const sections = getProgramSections(program);
+  // Program-isolated official syllabus trees (never another program's names).
+  const syllabuses = (HUB_SYLLABUS_MAP[slug] ?? [])
+    .map((id) => getProgramSyllabus(id))
+    .filter((s): s is NonNullable<typeof s> => Boolean(s));
 
   return (
     <main className="min-h-screen bg-black text-white">
@@ -102,8 +107,10 @@ export default async function ProgramHubPage({ params }: { params: Promise<{ slu
           </p>
         </div>
 
-        {examTags.length > 0 && syllabusHeading ? (
-          <ExamSyllabus exams={examTags} heading={syllabusHeading} blurb={syllabusBlurb ?? ""} />
+        {syllabuses.length > 0 ? (
+          <div className="space-y-6">
+            {syllabuses.map((s) => <ProgramSyllabusTree key={s.programId} syllabus={s} />)}
+          </div>
         ) : (
           <div className="rounded-2xl border border-white/10 bg-white/[0.02] p-8 text-center">
             <h2 className="text-xl font-bold">Verified syllabus mapping in progress</h2>

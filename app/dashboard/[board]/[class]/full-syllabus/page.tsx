@@ -1,8 +1,9 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { BOARDS, CLASSES, getBoard, getClass } from "@/lib/boardDashboard";
-import { getCbseChapters, classNumber, CATEGORY_LABEL, type CbseCategory } from "@/lib/cbse/syllabus";
-import { objectiveInventory } from "@/lib/cbse/practice";
+import { CATEGORY_LABEL, type CbseCategory } from "@/lib/cbse/syllabus";
+import { ALL_PYQ_QUESTIONS } from "@/lib/pyq";
+import { getBoardChapters, boardExamName, boardCoreNote } from "@/lib/boards";
 
 // /dashboard/[board]/[class]/full-syllabus — Full Syllabus Dashboard.
 // Whole-course tools across every chapter at once (Full Syllabus) kept distinct
@@ -28,15 +29,17 @@ export default async function FullSyllabusPage({ params }: { params: Promise<{ b
   if (!b || !c) notFound();
 
   const base = `/dashboard/${b.slug}/${c.slug}`;
-  const n = classNumber(c.slug);
-  const chapters = getCbseChapters(n);
-  const inv = objectiveInventory(c.slug);
-  const objectiveCount = inv.reduce((s, i) => s + i.count, 0);
+  const chapters = getBoardChapters(b.slug, c.slug);
+  const examName = boardExamName(b.slug);
+  const coreNote = boardCoreNote(b.slug);
+  // Real objective inventory over THIS board's chapters only.
+  const scope = new Set(chapters.flatMap((ch) => ch.pyqChapters));
+  const objectiveCount = ALL_PYQ_QUESTIONS.filter((q) => scope.has(q.chapter) && q.options).length;
 
   // Full-syllabus tools — all wired to real, class-scoped routes.
   const tools = [
     { label: "Short Notes", desc: "Concise revision notes across every chapter.", href: "/notes", tag: "Live" },
-    { label: "Practice Problems", desc: `${objectiveCount} verified objective questions + AI subjective, all 8 board types.`, href: `${base}/practice`, tag: "Live" },
+    { label: "Practice Problems", desc: objectiveCount > 0 ? `${objectiveCount} verified objective questions + AI subjective, all 8 board types.` : `AI subjective practice, all board types — a verified ${examName} objective bank is being sourced.`, href: `${base}/practice`, tag: "Live" },
     { label: "PYQ Bank", desc: "Previous-year questions, chapter-filtered.", href: "/pyq", tag: "Live" },
     { label: "Mock Tests", desc: "Full-syllabus mock papers with instant scoring.", href: "/tests", tag: "Live" },
     { label: "Custom Test Generator", desc: "Build a board-style paper: chapters · types · marks · difficulty.", href: `${base}/custom-test`, tag: "Live" },
@@ -59,8 +62,9 @@ export default async function FullSyllabusPage({ params }: { params: Promise<{ b
           </nav>
           <h1 className="text-3xl font-black tracking-tight sm:text-4xl">Full Syllabus Dashboard</h1>
           <p className="mt-2 max-w-2xl text-white/55">
-            {b.name} {c.name} Chemistry · {chapters.length} chapters. Whole-course tools on the left; go chapter-by-chapter below.
+            {b.name} {c.name} Chemistry{chapters.length > 0 ? ` · ${chapters.length} official units` : ""}. Whole-course tools on the left; go chapter-by-chapter below.
           </p>
+          {coreNote && <p className="mt-1 max-w-2xl text-xs text-white/40">{coreNote}</p>}
         </div>
       </div>
 
@@ -91,6 +95,11 @@ export default async function FullSyllabusPage({ params }: { params: Promise<{ b
             <h2 className="text-sm font-bold uppercase tracking-wider text-white/40">Chapter Wise</h2>
             <span className="text-xs text-white/35">Syllabus → Chapter → deep study</span>
           </div>
+          {chapters.length === 0 && (
+            <p className="rounded-2xl border border-white/10 bg-white/[0.02] p-6 text-sm text-white/55">
+              The official {examName} {c.name} unit list ships as soon as its Council document is uploaded — units are never invented. The whole-course tools above are live.
+            </p>
+          )}
           <div className="space-y-5">
             {byCat.map(({ cat, list }) => (
               <div key={cat}>
@@ -105,11 +114,15 @@ export default async function FullSyllabusPage({ params }: { params: Promise<{ b
                         </div>
                       </div>
                       <div className="mt-2 flex flex-wrap gap-1.5 text-xs">
-                        <Link href={ch.learnHref ?? `/chapter/${ch.masterId}`} className="rounded-md border border-white/10 bg-[#0B1220] px-2 py-1 font-semibold text-white/80 hover:border-cyan-400/40 hover:text-cyan-200">
-                          {ch.learnHref ? "Premium Notes" : "Chapter"}
-                        </Link>
+                        {(ch.learnHref || ch.masterId) && (
+                          <Link href={ch.learnHref ?? `/chapter/${ch.masterId}`} className="rounded-md border border-white/10 bg-[#0B1220] px-2 py-1 font-semibold text-white/80 hover:border-cyan-400/40 hover:text-cyan-200">
+                            {ch.learnHref ? "Premium Notes" : "Chapter"}
+                          </Link>
+                        )}
                         <Link href={`${base}/practice?chapter=${ch.id}`} className="rounded-md border border-white/10 bg-[#0B1220] px-2 py-1 font-semibold text-white/80 hover:border-cyan-400/40 hover:text-cyan-200">Practice</Link>
-                        <Link href={`/chapter/${ch.masterId}`} className="rounded-md border border-white/10 bg-[#0B1220] px-2 py-1 font-semibold text-white/60 hover:border-cyan-400/40 hover:text-cyan-200">PYQs</Link>
+                        {ch.masterId && (
+                          <Link href={`/chapter/${ch.masterId}`} className="rounded-md border border-white/10 bg-[#0B1220] px-2 py-1 font-semibold text-white/60 hover:border-cyan-400/40 hover:text-cyan-200">Deep study</Link>
+                        )}
                       </div>
                     </div>
                   ))}

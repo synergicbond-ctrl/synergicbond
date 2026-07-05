@@ -44,7 +44,11 @@ export function getBoardQuestionType(key: string): BoardQuestionType | undefined
 
 export interface ObjectiveSelectOpts {
   cls: ClassSlug;
-  /** Restrict to these CBSE chapter ids; empty = whole class. */
+  /**
+   * Explicit PYQ-chapter scope. undefined = whole CBSE class; an EMPTY array
+   * means an empty pool (boards without a verified bank stay honestly empty —
+   * never fall back to another board's chapters).
+   */
   chapterPyq?: PYQChapter[];
   pyqType: PYQQuestion["questionType"];
   difficulty?: PYQDifficulty | null;
@@ -78,7 +82,7 @@ function shuffle<T>(arr: T[], seed: number): T[] {
 /** Select real, non-repeating objective questions for a class. */
 export function selectObjective(opts: ObjectiveSelectOpts): ObjectiveSelectResult {
   const { cls, pyqType, difficulty, count, excludeIds } = opts;
-  const scope = opts.chapterPyq && opts.chapterPyq.length > 0 ? opts.chapterPyq : classPyqChapters(cls);
+  const scope = opts.chapterPyq !== undefined ? opts.chapterPyq : classPyqChapters(cls);
   const scopeSet = new Set(scope);
 
   const pool = ALL_PYQ_QUESTIONS.filter(

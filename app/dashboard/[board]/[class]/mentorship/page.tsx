@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { BOARDS, CLASSES, getBoard, getClass } from "@/lib/boardDashboard";
-import { getCbseChapters, classNumber } from "@/lib/cbse/syllabus";
+import { getBoardChapters } from "@/lib/boards";
 import MentorshipClient from "@/components/board/MentorshipClient";
 
 // /dashboard/[board]/[class]/mentorship — Mentorship Center. Exam countdown,
@@ -24,7 +24,7 @@ export default async function MentorshipPage({ params }: { params: Promise<{ boa
   if (!b || !c) notFound();
 
   const base = `/dashboard/${b.slug}/${c.slug}`;
-  const chapterTitles = getCbseChapters(classNumber(c.slug)).map((ch) => ch.title);
+  const chapterTitles = getBoardChapters(b.slug, c.slug).map((ch) => ch.title);
 
   return (
     <main className="min-h-screen bg-[#0B1220] text-white">

@@ -4,7 +4,7 @@ import { useCallback, useEffect, useMemo, useState } from "react";
 import QuestionCard from "@/components/pyq/QuestionCard";
 import type { PYQDifficulty, PYQQuestion } from "@/lib/pyq";
 import { BOARD_QUESTION_TYPES, selectObjective, type BoardQuestionType } from "@/lib/cbse/practice";
-import type { CbseChapter } from "@/lib/cbse/syllabus";
+import type { BoardChapter } from "@/lib/boards";
 import type { ClassSlug } from "@/lib/boardDashboard";
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -30,8 +30,8 @@ function Chip({ active, onClick, children }: { active: boolean; onClick: () => v
 }
 
 export default function PracticeClient({
-  base, cls, chapters, initialChapterId,
-}: { base: string; cls: ClassSlug; chapters: CbseChapter[]; initialChapterId?: string }) {
+  base, cls, chapters, initialChapterId, boardName = "CBSE",
+}: { base: string; cls: ClassSlug; chapters: BoardChapter[]; initialChapterId?: string; boardName?: string }) {
   const resetKey = `sb_practice_reset_${base}`;
 
   const [typeKey, setTypeKey] = useState<string>(BOARD_QUESTION_TYPES[0].key);
@@ -44,9 +44,11 @@ export default function PracticeClient({
   const [signedIn, setSignedIn] = useState<boolean | null>(null);
 
   const activeType: BoardQuestionType = useMemo(() => BOARD_QUESTION_TYPES.find((t) => t.key === typeKey)!, [typeKey]);
+  // ALWAYS an explicit scope from THIS board's chapters — an empty union means
+  // an honestly empty pool, never a fallback into another board's bank.
   const chapterPyq = useMemo(() => {
-    if (chapterId === "all") return undefined;
-    return chapters.find((c) => c.id === chapterId)?.pyqChapters;
+    if (chapterId === "all") return [...new Set(chapters.flatMap((c) => c.pyqChapters))];
+    return chapters.find((c) => c.id === chapterId)?.pyqChapters ?? [];
   }, [chapterId, chapters]);
 
   // Fetch served question ids (non-repetition), honouring the device reset window.
@@ -112,14 +114,14 @@ export default function PracticeClient({
       const chapterTitle = chapterId === "all" ? undefined : chapters.find((c) => c.id === chapterId)?.title;
       const res = await fetch("/api/board-practice", {
         method: "POST", headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ classNumber: cls === "class-12" ? 12 : 11, chapter: chapterTitle, typeKey, marks: activeType.marks }),
+        body: JSON.stringify({ classNumber: cls === "class-12" ? 12 : 11, chapter: chapterTitle, typeKey, marks: activeType.marks, board: boardName }),
       });
       const data = await res.json();
       if (!res.ok) { setSubError(data.error ?? "Could not generate a question right now."); return; }
       setSubQ(data);
     } catch { setSubError("Could not reach the question generator."); }
     finally { setSubLoading(false); }
-  }, [chapterId, chapters, cls, typeKey, activeType.marks]);
+  }, [chapterId, chapters, cls, typeKey, activeType.marks, boardName]);
 
   const evaluate = useCallback(async () => {
     if (!subQ || !answer.trim()) return;
@@ -127,14 +129,14 @@ export default function PracticeClient({
     try {
       const res = await fetch("/api/board-examiner", {
         method: "POST", headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ question: subQ.question, answer, maxMarks: activeType.marks, exam: "CBSE" }),
+        body: JSON.stringify({ question: subQ.question, answer, maxMarks: activeType.marks, exam: boardName }),
       });
       const data = await res.json();
       if (res.ok && data.result) setGrade(data.result);
       else setSubError(data.error ?? "Evaluation failed.");
     } catch { setSubError("Could not reach the examiner."); }
     finally { setGradeLoading(false); }
-  }, [subQ, answer, activeType.marks]);
+  }, [subQ, answer, activeType.marks, boardName]);
 
   return (
     <div className="space-y-5">

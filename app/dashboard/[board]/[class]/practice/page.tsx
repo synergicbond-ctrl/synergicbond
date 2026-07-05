@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { BOARDS, CLASSES, getBoard, getClass } from "@/lib/boardDashboard";
-import { getCbseChapters, classNumber } from "@/lib/cbse/syllabus";
+import { getBoardChapters, boardExamName } from "@/lib/boards";
 import PracticeClient from "@/components/board/PracticeClient";
 
 // /dashboard/[board]/[class]/practice — board Practice Problems. Objective types
@@ -31,7 +31,7 @@ export default async function PracticePage({
   if (!b || !c) notFound();
 
   const base = `/dashboard/${b.slug}/${c.slug}`;
-  const chapters = getCbseChapters(classNumber(c.slug));
+  const chapters = getBoardChapters(b.slug, c.slug);
 
   return (
     <main className="min-h-screen bg-[#0B1220] text-white">
@@ -50,7 +50,7 @@ export default async function PracticePage({
         </div>
       </div>
       <div className="mx-auto max-w-4xl px-6 py-8">
-        <PracticeClient base={base} cls={c.slug} chapters={chapters} initialChapterId={chapter} />
+        <PracticeClient base={base} cls={c.slug} chapters={chapters} initialChapterId={chapter} boardName={boardExamName(b.slug)} />
       </div>
     </main>
   );

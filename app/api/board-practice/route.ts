@@ -32,6 +32,8 @@ export async function POST(req: Request) {
 
     const body = await req.json();
     const classNumber = Number(body.classNumber) === 12 ? 12 : 11;
+    // Board isolation: the prompt speaks ONLY the requesting board's language.
+    const board = ["CBSE", "ISC", "State Board"].includes(body.board) ? body.board : "CBSE";
     const type = getBoardQuestionType(String(body.typeKey));
     if (!type || type.kind !== "subjective") {
       return NextResponse.json({ error: "Unknown or non-subjective question type." }, { status: 400 });
@@ -49,9 +51,9 @@ export async function POST(req: Request) {
     };
     const style = styleByKey[type.key] ?? "a board-style question";
 
-    const prompt = `You are a CBSE Class ${classNumber} Chemistry board paper setter.
-Create ${style} worth ${marks} marks strictly from the CBSE Class ${classNumber} chapter "${chapter}".
-It must match the official CBSE board exam standard and be factually correct chemistry.
+    const prompt = `You are a ${board} Class ${classNumber} Chemistry board paper setter.
+Create ${style} worth ${marks} marks strictly from the ${board} Class ${classNumber} chapter "${chapter}".
+It must match the official ${board} board exam standard and be factually correct chemistry.
 
 Respond with ONLY this JSON (no markdown):
 {

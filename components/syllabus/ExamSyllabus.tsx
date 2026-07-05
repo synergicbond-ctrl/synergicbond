@@ -51,8 +51,9 @@ function ChapterSyllabusCard({ chapter }: { chapter: SyllabusChapter }) {
       <summary className="flex cursor-pointer list-none items-center gap-3 px-3.5 py-3 [&::-webkit-details-marker]:hidden">
         <span className="min-w-0 flex-1">
           <span className="block text-sm font-bold text-white">{chapter.title}</span>
+          {/* Program isolation: never print other programs' exam tags here. */}
           <span className="mt-0.5 block text-[11px] text-white/45">
-            D{chapter.difficulty} · ~{chapter.estimatedHours}h · {chapter.exams.join(" · ")}
+            D{chapter.difficulty} · ~{chapter.estimatedHours}h · {chapter.concepts.length} syllabus points
           </span>
         </span>
         <span className="shrink-0 text-white/40 transition group-open:rotate-90">›</span>

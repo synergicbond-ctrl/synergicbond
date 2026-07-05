@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { BOARDS, CLASSES, getBoard, getClass } from "@/lib/boardDashboard";
-import { getCbseChapters, classNumber } from "@/lib/cbse/syllabus";
+import { getBoardChapters, boardExamName } from "@/lib/boards";
 import CustomTestClient from "@/components/board/CustomTestClient";
 
 // /dashboard/[board]/[class]/custom-test — Custom Test Paper Generator (Board
@@ -25,7 +25,7 @@ export default async function CustomTestPage({ params }: { params: Promise<{ boa
   if (!b || !c) notFound();
 
   const base = `/dashboard/${b.slug}/${c.slug}`;
-  const chapters = getCbseChapters(classNumber(c.slug));
+  const chapters = getBoardChapters(b.slug, c.slug);
 
   return (
     <main className="min-h-screen bg-[#0B1220] text-white">
@@ -42,7 +42,7 @@ export default async function CustomTestPage({ params }: { params: Promise<{ boa
         </div>
       </div>
       <div className="mx-auto max-w-4xl px-6 py-8">
-        <CustomTestClient base={base} cls={c.slug} chapters={chapters} />
+        <CustomTestClient base={base} cls={c.slug} chapters={chapters} boardName={boardExamName(b.slug)} />
       </div>
     </main>
   );

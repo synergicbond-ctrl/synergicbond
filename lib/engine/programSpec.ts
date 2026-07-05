@@ -50,6 +50,13 @@ const NEET_TYPES: EngineQType[] = [
   { key: "ncert-based", label: "NCERT Based", source: "bank", pyqType: "MCQ-Single", predicate: "ncertDirect", blurb: "Questions asked directly from NCERT text." },
 ];
 
+// Official JEE Main formats ONLY (per the uploaded NTA syllabus + program
+// spec): SCQ from the verified bank + the numeric family. No Assertion–Reason,
+// Statement or Matrix formats inside JEE Main.
+const SCQ_ONLY: EngineQType[] = [
+  { key: "scq", label: "SCQ", source: "bank", pyqType: "MCQ-Single", blurb: "Single-correct questions from the verified bank." },
+];
+
 const JEE_MAIN_EXTRA: EngineQType[] = [
   { key: "integer", label: "Integer", source: "ai-numeric", format: "integer", blurb: "AI-generated integer-answer questions, auto-graded." },
   { key: "numerical", label: "Numerical", source: "ai-numeric", format: "numerical", blurb: "AI-generated numerical-value questions, auto-graded with tolerance." },
@@ -57,13 +64,16 @@ const JEE_MAIN_EXTRA: EngineQType[] = [
   { key: "scientific", label: "Scientific Notation", source: "ai-numeric", format: "scientific", blurb: "Answers in a×10ⁿ form, auto-graded." },
 ];
 
+// Official JEE Advanced formats (uploaded IIT syllabus + program spec).
 const JEE_ADV_EXTRA: EngineQType[] = [
-  { key: "multi-correct", label: "Multi Correct", source: "ai-self", pattern: "multi-correct", blurb: "One-or-more-correct MCQs — model answer revealed, self-graded." },
+  { key: "multi-correct", label: "Multiple Correct", source: "ai-self", pattern: "multi-correct", blurb: "One-or-more-correct MCQs — model answer revealed, self-graded." },
+  { key: "integer", label: "Integer", source: "ai-numeric", format: "integer", blurb: "AI-generated integer-answer questions, auto-graded." },
   { key: "matrix-match", label: "Matrix Match", source: "ai-self", pattern: "matrix-match", blurb: "Column matching — model answer revealed, self-graded." },
   { key: "list-match", label: "List Match", source: "ai-self", pattern: "list-match", blurb: "List-I / List-II matching sets." },
-  { key: "paragraph", label: "Paragraph", source: "ai-self", pattern: "paragraph", blurb: "Comprehension passage with linked questions." },
+  { key: "paragraph", label: "Paragraph Based", source: "ai-self", pattern: "paragraph", blurb: "Data/experiment passage with linked questions." },
   { key: "numerical-response", label: "Numerical Response", source: "ai-numeric", format: "numerical", blurb: "Numerical-response questions, auto-graded." },
-  { key: "challenge", label: "Advanced Challenge", source: "ai-self", pattern: "challenge", blurb: "Multi-concept, olympiad-leaning challenge problems." },
+  { key: "comprehension", label: "Comprehension", source: "ai-self", pattern: "paragraph", blurb: "Extended comprehension sets — model answer revealed, self-graded." },
+  { key: "challenge", label: "Advanced Challenge", source: "ai-self", pattern: "challenge", blurb: "Multi-concept challenge problems beyond routine difficulty." },
 ];
 
 export interface EngineProgram {
@@ -84,11 +94,11 @@ export const ENGINE_PROGRAMS: Record<EngineSlug, EngineProgram> = {
   },
   "jee-main": {
     slug: "jee-main", name: "JEE Main", exam: "JEE Main", examTag: "JEE MAIN",
-    questionTypes: [...NEET_TYPES, ...JEE_MAIN_EXTRA], hasSpeedAnalysis: true,
+    questionTypes: [...SCQ_ONLY, ...JEE_MAIN_EXTRA], hasSpeedAnalysis: true,
   },
   "jee-advanced": {
     slug: "jee-advanced", name: "JEE Advanced", exam: "JEE Advanced", examTag: "JEE ADVANCED",
-    questionTypes: [...NEET_TYPES, ...JEE_MAIN_EXTRA, ...JEE_ADV_EXTRA], hasSpeedAnalysis: true,
+    questionTypes: [...SCQ_ONLY, ...JEE_ADV_EXTRA], hasSpeedAnalysis: true,
   },
 };
 

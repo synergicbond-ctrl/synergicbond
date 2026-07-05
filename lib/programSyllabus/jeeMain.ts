@@ -1,0 +1,42 @@
+import type { ProgramSyllabus } from "./types";
+
+// JEE Main Chemistry — transcribed from the official NTA syllabus document
+// (uploaded: "JEE MAIN CHEMISTRY SYLLABUS.pdf", 20 units). Rationalized
+// syllabus: no States of Matter, Solid State, Surface Chemistry, s-Block,
+// Hydrogen, Environmental, Polymers or Everyday-Life units.
+
+export const JEE_MAIN_SYLLABUS: ProgramSyllabus = {
+  programId: "jee-main",
+  name: "JEE Main Chemistry",
+  source: "Official NTA JEE Main Chemistry syllabus (uploaded PDF, 20 units)",
+  units: [
+    { id: "basic-concepts", code: "Unit 1", title: "Some Basic Concepts in Chemistry", branch: "physical", topics: ["Matter and its nature, Dalton's atomic theory", "Laws of chemical combination", "Atomic & molecular masses, mole concept, molar mass", "Percentage composition, empirical & molecular formulae", "Chemical equations and stoichiometry"] },
+    { id: "atomic-structure", code: "Unit 2", title: "Atomic Structure", branch: "physical", topics: ["Photoelectric effect, hydrogen spectrum, Bohr model & limitations", "de Broglie relation, Heisenberg uncertainty", "Quantum mechanical model, ψ and ψ² for 1s/2s", "Quantum numbers, shapes of s/p/d orbitals", "Aufbau, Pauli, Hund; stability of half/fully-filled orbitals"] },
+    { id: "chemical-bonding", code: "Unit 3", title: "Chemical Bonding and Molecular Structure", branch: "physical", topics: ["Kossel–Lewis approach; ionic bond & lattice enthalpy", "Electronegativity, Fajan's rule, dipole moment", "VSEPR and shapes of simple molecules", "VBT: hybridisation (s, p, d), resonance", "MOT: LCAO, bonding/antibonding, bond order of homonuclear diatomics", "Metallic bonding (elementary), hydrogen bonding"] },
+    { id: "thermodynamics", code: "Unit 4", title: "Chemical Thermodynamics", branch: "physical", topics: ["System/surroundings, state functions, extensive & intensive", "First law: work, heat, internal energy, enthalpy, heat capacity, Hess's law", "Enthalpies: bond dissociation, combustion, formation, atomization, sublimation, phase transition, hydration, ionization, solution", "Second law: spontaneity, ΔS universe, ΔG; ΔG° and equilibrium constant"] },
+    { id: "solutions", code: "Unit 5", title: "Solutions", branch: "physical", topics: ["Concentration measures: molality, molarity, mole fraction, percentage", "Vapour pressure, Raoult's law; ideal & non-ideal solutions", "Colligative properties (all four); molecular mass determination", "Abnormal molar mass, van't Hoff factor"] },
+    { id: "equilibrium", code: "Unit 6", title: "Equilibrium", branch: "physical", topics: ["Dynamic equilibrium; physical-process equilibria; Henry's law", "Kp, Kc; ΔG and ΔG° in equilibrium; Le Chatelier", "Ionic equilibrium: acid–base concepts (Arrhenius, Brønsted–Lowry, Lewis)", "pH, common-ion effect, salt hydrolysis, solubility product, buffers"] },
+    { id: "redox-electrochemistry", code: "Unit 7", title: "Redox Reactions and Electrochemistry", branch: "physical", topics: ["Oxidation number, balancing redox reactions", "Conductance, molar conductivity, Kohlrausch's law", "Electrolytic & galvanic cells, standard electrode potentials", "Nernst equation, emf ↔ ΔG; dry cell, lead accumulator, fuel cells"] },
+    { id: "chemical-kinetics", code: "Unit 8", title: "Chemical Kinetics", branch: "physical", topics: ["Rate, factors affecting rate; order & molecularity", "Rate law, rate constant & units", "Zero & first order: integrated forms, half-lives", "Arrhenius theory, activation energy; collision theory (no derivation)"] },
+    { id: "periodicity", code: "Unit 9", title: "Classification of Elements and Periodicity", branch: "inorganic", topics: ["Modern periodic law and present periodic table; s, p, d, f blocks", "Trends: atomic/ionic radii, ionization enthalpy, electron gain enthalpy, valence, oxidation states, reactivity"] },
+    { id: "p-block", code: "Unit 10", title: "p-Block Elements (Groups 13–18)", branch: "inorganic", topics: ["Electronic configuration and general trends across periods and down groups", "Unique behaviour of the first element of each group"] },
+    { id: "d-f-block", code: "Unit 11", title: "d- and f-Block Elements", branch: "inorganic", topics: ["First-row transition elements: trends, oxidation states, colour, magnetism, catalysis, interstitial compounds, alloys", "K₂Cr₂O₇ and KMnO₄: preparation, properties, uses", "Lanthanoids: configuration, oxidation states, contraction", "Actinoids: configuration and oxidation states"] },
+    { id: "coordination", code: "Unit 12", title: "Coordination Compounds", branch: "inorganic", topics: ["Werner's theory; ligands, coordination number, denticity, chelation", "IUPAC nomenclature; isomerism", "VBT and basic CFT; colour and magnetism", "Importance: qualitative analysis, metal extraction, biology"] },
+    { id: "purification", code: "Unit 13", title: "Purification and Characterisation of Organic Compounds", branch: "organic", topics: ["Crystallization, sublimation, distillation, differential extraction, chromatography", "Qualitative detection of N, S, P, halogens", "Quantitative estimation principles; empirical & molecular formula calculations"] },
+    { id: "goc", code: "Unit 14", title: "Some Basic Principles of Organic Chemistry", branch: "organic", topics: ["Tetravalency; hybridisation; functional-group classification; homologous series", "Structural and stereo isomerism; nomenclature (trivial & IUPAC)", "Bond fission; carbocations, carbanions, free radicals and their stability", "Inductive, electromeric, resonance & hyperconjugation effects", "Substitution, addition, elimination, rearrangement"] },
+    { id: "hydrocarbons", code: "Unit 15", title: "Hydrocarbons", branch: "organic", topics: ["Alkanes: conformations (sawhorse/Newman of ethane), halogenation mechanism", "Alkenes: geometrical isomerism, electrophilic addition (Markownikoff & peroxide effect), ozonolysis, polymerization", "Alkynes: acidic character, additions, polymerization", "Aromatics: aromaticity, electrophilic substitution mechanisms, Friedel–Crafts, directive influence"] },
+    { id: "halogens-organic", code: "Unit 16", title: "Organic Compounds Containing Halogens", branch: "organic", topics: ["Preparation, properties, reactions; C–X bond nature", "Substitution mechanisms", "Uses & environmental effects: chloroform, iodoform, freons, DDT"] },
+    { id: "oxygen-organic", code: "Unit 17", title: "Organic Compounds Containing Oxygen", branch: "organic", topics: ["Alcohols: 1°/2°/3° identification, dehydration mechanism", "Phenols: acidity, electrophilic substitution, Reimer–Tiemann", "Ethers: structure", "Aldehydes & ketones: nucleophilic addition, Grignard, oxidation/reduction (Wolff–Kishner, Clemmensen), α-H acidity, aldol, Cannizzaro, haloform, distinguishing tests", "Carboxylic acids: acidic strength and factors"] },
+    { id: "nitrogen-organic", code: "Unit 18", title: "Organic Compounds Containing Nitrogen", branch: "organic", topics: ["Amines: nomenclature, classification, basic character, 1°/2°/3° identification", "Diazonium salts and their synthetic importance"] },
+    { id: "biomolecules", code: "Unit 19", title: "Biomolecules", branch: "organic", topics: ["Carbohydrates: classification; glucose, fructose; sucrose, lactose, maltose constituents", "Proteins: α-amino acids, peptide bond, structure levels, denaturation, enzymes", "Vitamins: classification & functions", "Nucleic acids: DNA/RNA constitution & functions; hormones (general)"] },
+    { id: "practical-principles", code: "Unit 20", title: "Principles Related to Practical Chemistry", branch: "practical", topics: ["Detection of extra elements and functional groups", "Preparations: Mohr's salt, potash alum; acetanilide, p-nitroacetanilide, aniline yellow, iodoform", "Titrimetric exercises: oxalic acid & Mohr's salt vs KMnO₄", "Qualitative salt analysis (listed cations/anions)", "Experiments: enthalpy of solution/neutralisation, sols, iodide–H₂O₂ kinetics"] },
+  ],
+  questionTypes: [
+    { key: "scq", label: "SCQ", source: "bank" },
+    { key: "integer", label: "Integer", source: "ai-numeric" },
+    { key: "numerical", label: "Numerical", source: "ai-numeric" },
+    { key: "decimal", label: "Decimal", source: "ai-numeric" },
+    { key: "scientific", label: "Scientific Notation", source: "ai-numeric" },
+  ],
+  features: { notes: true, pyqs: true, mocks: true, analytics: true, practicals: false, projects: false, viva: false },
+};

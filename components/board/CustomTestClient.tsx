@@ -4,7 +4,7 @@ import { useCallback, useEffect, useMemo, useState } from "react";
 import QuestionCard from "@/components/pyq/QuestionCard";
 import type { PYQDifficulty, PYQQuestion } from "@/lib/pyq";
 import { selectObjective } from "@/lib/cbse/practice";
-import type { CbseChapter } from "@/lib/cbse/syllabus";
+import type { BoardChapter } from "@/lib/boards";
 import type { ClassSlug } from "@/lib/boardDashboard";
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -21,8 +21,8 @@ const DIFFICULTIES: (PYQDifficulty | "All")[] = ["All", "Easy", "Moderate", "Har
 function num(n: number) { return Math.max(0, Math.round(n)); }
 
 export default function CustomTestClient({
-  base, cls, chapters,
-}: { base: string; cls: ClassSlug; chapters: CbseChapter[] }) {
+  base, cls, chapters, boardName = "CBSE",
+}: { base: string; cls: ClassSlug; chapters: BoardChapter[]; boardName?: string }) {
   const resetKey = `sb_practice_reset_${base}`; // share the practice non-repetition window
 
   // config
@@ -70,7 +70,7 @@ export default function CustomTestClient({
       for (const w of wanted) {
         const res = await fetch("/api/board-practice", {
           method: "POST", headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ classNumber: cls === "class-12" ? 12 : 11, chapter: chapterTitle, typeKey: w.key, marks: w.marks }),
+          body: JSON.stringify({ classNumber: cls === "class-12" ? 12 : 11, chapter: chapterTitle, typeKey: w.key, marks: w.marks, board: boardName }),
         });
         const data = await res.json();
         if (res.ok) out.push({ typeKey: w.key, label: w.label, question: data.question, markingScheme: data.markingScheme, modelAnswer: data.modelAnswer });
@@ -79,7 +79,7 @@ export default function CustomTestClient({
       setSubQs(out);
     } catch { setSubError("Could not reach the generator."); }
     finally { setSubLoading(false); }
-  }, [selected, chapters, cls]);
+  }, [selected, chapters, cls, boardName]);
 
   const generate = useCallback(() => {
     const exclude = new Set(servedIds);

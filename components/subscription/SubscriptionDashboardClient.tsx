@@ -59,6 +59,12 @@ export default function SubscriptionDashboardClient({ user, subscription, entitl
     ? Math.max(0, Math.ceil((new Date(subscription.expires_at).getTime() - nowMs) / 86_400_000))
     : 0;
 
+  // Founder/owner grant — an all-access Pro provisioned manually (source of the
+  // grant lives on user_program_entitlements.source='grant'); labelled distinctly.
+  const isFounder = subscription?.plan === "founder";
+  const planLabel = isFounder ? "FOUNDER ACCESS" : subscription?.plan === "pro_annual" ? "PRO ANNUAL" : "PRO MONTHLY";
+  const planName = isFounder ? "Founder Access — All Programs" : subscription?.plan === "pro_annual" ? "Pro Annual All-Access" : "Pro Monthly All-Access";
+
   // Active Entitlements map (only includes non-expired, active entitlements)
   const activeEntitlements = entitlements.filter(e => {
     if (e.status !== "active") return false;
@@ -99,7 +105,7 @@ export default function SubscriptionDashboardClient({ user, subscription, entitl
   if (isPro && proDaysRemaining <= 30) {
     expiringItems.push({
       id: subscription!.plan!,
-      name: subscription!.plan === "pro_annual" ? "Pro Annual All-Access" : "Pro Monthly All-Access",
+      name: planName,
       days: proDaysRemaining,
       isProgram: false,
       amount: subscription!.plan === "pro_annual" ? PLANS.pro_annual.amount : PLANS.pro_monthly.amount
@@ -217,16 +223,16 @@ export default function SubscriptionDashboardClient({ user, subscription, entitl
                   All-Access
                 </div>
                 <h3 className="font-black text-cyan-300 text-lg uppercase tracking-wide">
-                  {subscription!.plan === "pro_annual" ? "PRO ANNUAL" : "PRO MONTHLY"}
+                  {planLabel}
                 </h3>
                 <div className="mt-3 space-y-2 text-xs text-white/70">
                   <div className="flex justify-between">
                     <span>Days remaining</span>
-                    <span className="font-bold text-cyan-300">{proDaysRemaining} days</span>
+                    <span className="font-bold text-cyan-300">{isFounder ? "Lifetime" : `${proDaysRemaining} days`}</span>
                   </div>
                   <div className="flex justify-between">
                     <span>Expires on</span>
-                    <span className="font-bold text-white">{formatDate(subscription!.expires_at)}</span>
+                    <span className="font-bold text-white">{isFounder ? "Never" : formatDate(subscription!.expires_at)}</span>
                   </div>
                   <div className="flex justify-between">
                     <span>Renewal Status</span>
@@ -235,17 +241,19 @@ export default function SubscriptionDashboardClient({ user, subscription, entitl
                     </span>
                   </div>
                 </div>
-                <button 
-                  onClick={() => initiatePurchase(
-                    subscription!.plan!, 
-                    subscription!.plan === "pro_annual" ? "Pro Annual All-Access" : "Pro Monthly All-Access",
-                    subscription!.plan === "pro_annual" ? PLANS.pro_annual.amount : PLANS.pro_monthly.amount,
-                    false
-                  )}
-                  className="w-full mt-4 py-2 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-black font-extrabold text-xs transition"
-                >
-                  Extend Subscription
-                </button>
+                {!isFounder && (
+                  <button
+                    onClick={() => initiatePurchase(
+                      subscription!.plan!,
+                      planName,
+                      subscription!.plan === "pro_annual" ? PLANS.pro_annual.amount : PLANS.pro_monthly.amount,
+                      false
+                    )}
+                    className="w-full mt-4 py-2 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-black font-extrabold text-xs transition"
+                  >
+                    Extend Subscription
+                  </button>
+                )}
               </div>
             )}
 

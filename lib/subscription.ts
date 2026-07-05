@@ -3,8 +3,7 @@
 // quota gate, and the Razorpay routes). Amounts are in paise (INR).
 // ---------------------------------------------------------------------------
 import type { SupabaseClient } from "@supabase/supabase-js";
-// TEMPORARY CONTENT-DEVELOPMENT BYPASS. REMOVE BEFORE PUBLIC LAUNCH.
-import { isFounderBypassActive } from "@/lib/access/founderBypass";
+import { isPrivilegedById } from "@/lib/auth/roles";
 
 export const PLANS = {
   pro_monthly: { amount: 14900, days: 30, label: "Pro Monthly" },   // ₹149
@@ -32,14 +31,31 @@ export function isValidPlan(plan: unknown): plan is PlanId {
   return typeof plan === "string" && plan in PLANS;
 }
 
+// ─── "Coming Soon" programs ──────────────────────────────────────────────────
+// Program keys whose DATA is kept (owner can still preview them) but that are
+// NOT purchasable yet. State Boards will launch after CBSE and ISC stabilize.
+// Enforced server-side (create-order / webhook) and in the pricing UI.
+export const COMING_SOON_PROGRAM_KEYS: ReadonlySet<string> = new Set([
+  "state-boards:class-11",
+  "state-boards:class-12",
+]);
+
+export const COMING_SOON_NOTE =
+  "State board coverage will be launched after CBSE and ISC stabilization.";
+
+/** A program key that may be bought right now (not coming-soon). */
+export function isSaleableProgram(programKey: string): boolean {
+  return !COMING_SOON_PROGRAM_KEYS.has(programKey);
+}
+
 /** Returns true if the user has an active, unexpired subscription. Degrades to
  *  false on any error (e.g. table not migrated yet) so the app stays usable. */
 export async function isProActive(supabase: SupabaseClient, userId: string): Promise<boolean> {
-  // ── TEMPORARY CONTENT-DEVELOPMENT BYPASS. REMOVE BEFORE PUBLIC LAUNCH. ──────
-  // Founder-only all-access (production + FOUNDER_DEV_BYPASS=true + email match).
+  // ── Role-based all-access (owner/admin) — the SINGLE privilege gate. ────────
+  // Centralized in lib/auth/access.ts (profiles.role), no email hardcoding.
   // getUserEntitlements() derives ALL program keys from this, so this single
-  // line also grants every program entitlement for the founder.
-  if (await isFounderBypassActive(supabase)) return true;
+  // line also grants every program entitlement to privileged users.
+  if (await isPrivilegedById(supabase, userId)) return true;
   // ───────────────────────────────────────────────────────────────────────────
   try {
     const { data } = await supabase

@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { track } from "@vercel/analytics";
 import PaymentGateway from "@/components/PaymentGateway";
 import StudentDetailsForm from "@/components/StudentDetailsForm";
+import { COMING_SOON_PROGRAM_KEYS, COMING_SOON_NOTE, isSaleableProgram } from "@/lib/subscription";
 
 type ProgramOption = {
   key: string;
@@ -122,6 +123,9 @@ export default function PricingPage() {
       resolvedName = `${class12Board.toUpperCase()} Class 12 Chemistry`;
     }
 
+    // Never start checkout for a "Coming Soon" program (e.g. State Boards).
+    if (!isSaleableProgram(resolvedKey)) return;
+
     track("upgrade_click", { programKey: resolvedKey });
     setSelectedKey(resolvedKey);
     setSelectedBaseKey(prog.key);
@@ -178,7 +182,13 @@ export default function PricingPage() {
         </div>
 
         {/* Paid Programs */}
-        {PROGRAMS.map((p) => (
+        {PROGRAMS.map((p) => {
+          const resolvedKey =
+            p.key === "class-11" ? `${class11Board}:class-11`
+            : p.key === "class-12" ? `${class12Board}:class-12`
+            : p.key;
+          const cardComingSoon = COMING_SOON_PROGRAM_KEYS.has(resolvedKey);
+          return (
           <div key={p.key} className="bg-zinc-900 border border-white/[0.08] rounded-3xl p-7 flex flex-col justify-between hover:border-cyan-500/30 transition">
             <div>
               <div className="mb-5">
@@ -227,14 +237,22 @@ export default function PricingPage() {
               </div>
             </div>
 
-            <button
-              onClick={() => handleBuy(p)}
-              className="block w-full text-center bg-cyan-500 hover:bg-cyan-400 text-black font-bold py-3 rounded-xl transition text-xs hover:-translate-y-0.5"
-            >
-              Unlock {p.name} →
-            </button>
+            {cardComingSoon ? (
+              <div className="w-full text-center border border-white/10 bg-white/[0.04] text-white/60 py-3 rounded-xl text-xs font-bold">
+                <div className="uppercase tracking-wider text-[11px] font-black text-white/70">Coming Soon</div>
+                <div className="text-white/40 text-[10px] mt-1 font-normal leading-relaxed px-2">{COMING_SOON_NOTE}</div>
+              </div>
+            ) : (
+              <button
+                onClick={() => handleBuy(p)}
+                className="block w-full text-center bg-cyan-500 hover:bg-cyan-400 text-black font-bold py-3 rounded-xl transition text-xs hover:-translate-y-0.5"
+              >
+                Unlock {p.name} →
+              </button>
+            )}
           </div>
-        ))}
+          );
+        })}
       </div>
 
       {/* FAQ */}

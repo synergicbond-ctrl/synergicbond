@@ -8,7 +8,7 @@ import {
 } from "lucide-react";
 import PaymentGateway from "@/components/PaymentGateway";
 import StudentDetailsForm from "@/components/StudentDetailsForm";
-import { PLANS, PROGRAM_ACCESS_PRICE_PAISE_BY_KEY } from "@/lib/subscription";
+import { PLANS, PROGRAM_ACCESS_PRICE_PAISE_BY_KEY, COMING_SOON_PROGRAM_KEYS, COMING_SOON_NOTE } from "@/lib/subscription";
 
 type UserSub = {
   plan: string | null;
@@ -31,9 +31,13 @@ type Props = {
   subscription: UserSub | null;
   entitlements: UserEntitlement[];
   nowMs: number;
+  /** Owner/admin role → unrestricted all-access preview (no purchase prompts). */
+  isOwner?: boolean;
+  /** Owner/admin role → may open the admin console. */
+  isStaff?: boolean;
 };
 
-export default function SubscriptionDashboardClient({ user, subscription, entitlements, nowMs }: Props) {
+export default function SubscriptionDashboardClient({ user, subscription, entitlements, nowMs, isOwner = false, isStaff = false }: Props) {
   const [selectedPlan, setSelectedPlan] = useState<{ id: string; name: string; amount: number; isProgram: boolean } | null>(null);
   const [detailsOpen, setDetailsOpen] = useState(false);
   const [confirmOpen, setConfirmOpen] = useState(false);
@@ -55,6 +59,9 @@ export default function SubscriptionDashboardClient({ user, subscription, entitl
 
   // Active Pro Subscription
   const isPro = subscription?.status === "active" && subscription?.expires_at && new Date(subscription.expires_at).getTime() > nowMs;
+  // Owner/admin get unrestricted all-access at the application layer — treated
+  // exactly like Pro here, but never shown purchase/upgrade prompts.
+  const allAccess = isOwner || Boolean(isPro);
   const proDaysRemaining = isPro && subscription?.expires_at
     ? Math.max(0, Math.ceil((new Date(subscription.expires_at).getTime() - nowMs) / 86_400_000))
     : 0;
@@ -86,7 +93,8 @@ export default function SubscriptionDashboardClient({ user, subscription, entitl
     return activeEntitlements.find(e => e.program_key === key);
   };
 
-  // Group programs for styling & display
+  // Group programs for styling & display. `comingSoon` programs (State Boards)
+  // keep their row but are not purchasable — no price, no Add Plan, no checkout.
   const PROGRAMS_LIST = [
     { key: "cbse:class-11", name: "CBSE Class 11 Chemistry", price: 499, category: "Boards" },
     { key: "isc:class-11", name: "ISC Class 11 Chemistry", price: 499, category: "Boards" },
@@ -97,7 +105,7 @@ export default function SubscriptionDashboardClient({ user, subscription, entitl
     { key: "neet", name: "NEET Entrance Program", price: 999, category: "Entrance" },
     { key: "jee-main", name: "JEE Main Prep Program", price: 1099, category: "Entrance" },
     { key: "jee-advanced", name: "JEE Advanced Prep Program", price: 1499, category: "Entrance" },
-  ];
+  ].map((p) => ({ ...p, comingSoon: COMING_SOON_PROGRAM_KEYS.has(p.key) }));
 
   // Expiry Center filtering (expiring in <= 30 days)
   const expiringItems = [];
@@ -149,6 +157,48 @@ export default function SubscriptionDashboardClient({ user, subscription, entitl
     });
   };
 
+  // One row in the "Upgrade & Add Programs" catalogue. Handles three states:
+  //  • comingSoon (State Boards) → neutral badge + note, never purchasable.
+  //  • owner all-access          → "Preview" (unlocked), no purchase prompt.
+  //  • normal user               → price + Add Plan / Owned.
+  const renderProgramRow = (p: (typeof PROGRAMS_LIST)[number], blurb: string) => {
+    const active = isProgramActive(p.key);
+    return (
+      <div key={p.key} className="flex items-center justify-between border-b border-white/[0.04] pb-3 last:border-0 last:pb-0">
+        <div>
+          <h4 className="font-bold text-white text-sm">{p.name}</h4>
+          <p className="text-xs text-white/40 mt-0.5">{p.comingSoon ? COMING_SOON_NOTE : blurb}</p>
+        </div>
+        <div className="text-right">
+          {p.comingSoon ? (
+            <span className="inline-block px-3 py-1 rounded-lg text-[10px] font-black uppercase tracking-wider bg-white/[0.06] text-white/60">
+              {isOwner ? "Coming Soon · Preview" : "Coming Soon"}
+            </span>
+          ) : isOwner ? (
+            <span className="inline-block px-3 py-1.5 rounded-lg text-xs font-extrabold bg-white/10 text-cyan-300">
+              Preview
+            </span>
+          ) : (
+            <>
+              <div className="font-black text-cyan-400 text-sm">₹{p.price}</div>
+              <button
+                disabled={active}
+                onClick={() => initiatePurchase(p.key, p.name, p.price * 100, true)}
+                className={`mt-1.5 px-4 py-1.5 rounded-lg font-extrabold text-xs transition ${
+                  active
+                    ? "bg-white/10 text-white/40 cursor-not-allowed"
+                    : "bg-cyan-500 hover:bg-cyan-400 text-black"
+                }`}
+              >
+                {active ? "Owned" : "Add Plan"}
+              </button>
+            </>
+          )}
+        </div>
+      </div>
+    );
+  };
+
   return (
     <div className="max-w-6xl mx-auto px-4 py-8">
       {/* Expiry Center Alert Banner */}
@@ -190,9 +240,9 @@ export default function SubscriptionDashboardClient({ user, subscription, entitl
           <h1 className="text-3xl font-black tracking-tight">Subscription Management</h1>
           <p className="text-white/50 text-sm mt-1">View active entitlements, renew plans, or upgrade to new programs.</p>
         </div>
-        {user.email && ["hello@synergicbond.com", "admin@synergicbond.com", "founder@synergicbond.com"].includes(user.email) && (
-          <Link 
-            href="/dashboard/subscription/admin" 
+        {isStaff && (
+          <Link
+            href="/dashboard/subscription/admin"
             className="px-4 py-2 rounded-xl border border-cyan-400/30 bg-cyan-500/10 text-cyan-300 font-bold text-xs hover:bg-cyan-500/20 transition flex items-center gap-1.5"
           >
             <Sparkles className="h-3.5 w-3.5" /> Admin Analytics
@@ -206,7 +256,7 @@ export default function SubscriptionDashboardClient({ user, subscription, entitl
           <CreditCard className="h-5 w-5 text-cyan-400" /> My Active Plans
         </h2>
 
-        {!isPro && activeEntitlements.length === 0 ? (
+        {!allAccess && activeEntitlements.length === 0 ? (
           <div className="p-8 rounded-3xl border border-white/[0.06] bg-[#111827] text-center max-w-lg mx-auto">
             <Lock className="h-10 w-10 text-white/30 mx-auto mb-3" />
             <h3 className="font-bold">No Active Subscriptions</h3>
@@ -216,6 +266,34 @@ export default function SubscriptionDashboardClient({ user, subscription, entitl
           </div>
         ) : (
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {/* Owner / Admin all-access card (role-based, no subscription needed) */}
+            {isOwner && !isPro && (
+              <div className="relative overflow-hidden rounded-2xl border border-cyan-500/30 bg-gradient-to-br from-cyan-950/20 to-sky-950/20 p-5 shadow-lg">
+                <div className="absolute top-0 right-0 bg-cyan-500 text-black text-[9px] font-black px-3 py-1 rounded-bl-xl uppercase tracking-wider">
+                  All-Access
+                </div>
+                <h3 className="font-black text-cyan-300 text-lg uppercase tracking-wide">
+                  Owner Access
+                </h3>
+                <div className="mt-3 space-y-2 text-xs text-white/70">
+                  <div className="flex justify-between">
+                    <span>Access</span>
+                    <span className="font-bold text-cyan-300">All programs &amp; tools</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span>Expires on</span>
+                    <span className="font-bold text-white">Never</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span>Renewal Status</span>
+                    <span className="text-green-400 font-bold flex items-center gap-1">
+                      <CheckCircle2 className="h-3.5 w-3.5" /> Active
+                    </span>
+                  </div>
+                </div>
+              </div>
+            )}
+
             {/* Pro Subscription Card */}
             {isPro && (
               <div className="relative overflow-hidden rounded-2xl border border-cyan-500/30 bg-gradient-to-br from-cyan-950/20 to-sky-950/20 p-5 shadow-lg">
@@ -316,7 +394,11 @@ export default function SubscriptionDashboardClient({ user, subscription, entitl
           <Sparkles className="h-5 w-5 text-cyan-400" /> Upgrade & Add Programs
         </h2>
 
-        {isPro && (
+        {isOwner ? (
+          <div className="p-5 rounded-2xl border border-cyan-400/20 bg-cyan-500/5 mb-6 text-sm text-cyan-300 leading-relaxed">
+            ✨ You have <strong>Owner all-access</strong>. Every program and tool is unlocked for you at the application layer — nothing to purchase. Programs below are shown for preview only.
+          </div>
+        ) : isPro && (
           <div className="p-5 rounded-2xl border border-cyan-400/20 bg-cyan-500/5 mb-6 text-sm text-cyan-300 leading-relaxed">
             ✨ You currently hold a **Pro All-Access** subscription. Every program (NEET, JEE, CBSE, ISC) is fully unlocked for you at the application layer. You do not need to buy individual programs unless you wish to pre-purchase them to extend access beyond your Pro expiration date.
           </div>
@@ -327,31 +409,9 @@ export default function SubscriptionDashboardClient({ user, subscription, entitl
           <div className="rounded-2xl border border-white/[0.08] bg-[#111827] p-6">
             <h3 className="font-black text-sm text-white/40 uppercase tracking-widest mb-4">School Board Programs</h3>
             <div className="space-y-4">
-              {PROGRAMS_LIST.filter(p => p.category === "Boards").map(p => {
-                const active = isProgramActive(p.key);
-                return (
-                  <div key={p.key} className="flex items-center justify-between border-b border-white/[0.04] pb-3 last:border-0 last:pb-0">
-                    <div>
-                      <h4 className="font-bold text-white text-sm">{p.name}</h4>
-                      <p className="text-xs text-white/40 mt-0.5">Annual plan · access to notes, tests, evaluations</p>
-                    </div>
-                    <div className="text-right">
-                      <div className="font-black text-cyan-400 text-sm">₹{p.price}</div>
-                      <button 
-                        disabled={active}
-                        onClick={() => initiatePurchase(p.key, p.name, p.price * 100, true)}
-                        className={`mt-1.5 px-4 py-1.5 rounded-lg font-extrabold text-xs transition ${
-                          active 
-                            ? "bg-white/10 text-white/40 cursor-not-allowed" 
-                            : "bg-cyan-500 hover:bg-cyan-400 text-black"
-                        }`}
-                      >
-                        {active ? "Owned" : "Add Plan"}
-                      </button>
-                    </div>
-                  </div>
-                );
-              })}
+              {PROGRAMS_LIST.filter(p => p.category === "Boards").map(p =>
+                renderProgramRow(p, "Annual plan · access to notes, tests, evaluations")
+              )}
             </div>
           </div>
 
@@ -359,31 +419,9 @@ export default function SubscriptionDashboardClient({ user, subscription, entitl
           <div className="rounded-2xl border border-white/[0.08] bg-[#111827] p-6">
             <h3 className="font-black text-sm text-white/40 uppercase tracking-widest mb-4">Entrance Prep Programs</h3>
             <div className="space-y-4">
-              {PROGRAMS_LIST.filter(p => p.category === "Entrance").map(p => {
-                const active = isProgramActive(p.key);
-                return (
-                  <div key={p.key} className="flex items-center justify-between border-b border-white/[0.04] pb-3 last:border-0 last:pb-0">
-                    <div>
-                      <h4 className="font-bold text-white text-sm">{p.name}</h4>
-                      <p className="text-xs text-white/40 mt-0.5">Annual plan · full entrance syllabus access</p>
-                    </div>
-                    <div className="text-right">
-                      <div className="font-black text-cyan-400 text-sm">₹{p.price}</div>
-                      <button 
-                        disabled={active}
-                        onClick={() => initiatePurchase(p.key, p.name, p.price * 100, true)}
-                        className={`mt-1.5 px-4 py-1.5 rounded-lg font-extrabold text-xs transition ${
-                          active 
-                            ? "bg-white/10 text-white/40 cursor-not-allowed" 
-                            : "bg-cyan-500 hover:bg-cyan-400 text-black"
-                        }`}
-                      >
-                        {active ? "Owned" : "Add Plan"}
-                      </button>
-                    </div>
-                  </div>
-                );
-              })}
+              {PROGRAMS_LIST.filter(p => p.category === "Entrance").map(p =>
+                renderProgramRow(p, "Annual plan · full entrance syllabus access")
+              )}
             </div>
           </div>
         </div>

@@ -4,7 +4,7 @@ export const dynamic = "force-dynamic";
 import { NextResponse } from "next/server";
 import crypto from "crypto";
 import { createAdminClient } from "@/lib/supabase/admin";
-import { PLANS, isValidPlan, type PlanId } from "@/lib/subscription";
+import { PLANS, isValidPlan, isSaleableProgram, type PlanId } from "@/lib/subscription";
 import { ALL_PROGRAM_KEYS } from "@/lib/access/entitlements";
 
 type RazorpayNotes = {
@@ -37,7 +37,13 @@ function getValidNotes(notes?: RazorpayNotes): ValidNotesResult | null {
     if (isValidPlan(notes.plan)) {
       return { userId: notes.user_id, plan: notes.plan };
     }
-    if (typeof notes.program_key === "string" && ALL_PROGRAM_KEYS.includes(notes.program_key)) {
+    if (
+      typeof notes.program_key === "string" &&
+      ALL_PROGRAM_KEYS.includes(notes.program_key) &&
+      // Never activate a "Coming Soon" program (e.g. State Boards) even if an
+      // order somehow carried its key — no purchase path should exist for it.
+      isSaleableProgram(notes.program_key)
+    ) {
       return { userId: notes.user_id, programKey: notes.program_key };
     }
   }

@@ -3,7 +3,7 @@ export const dynamic = "force-dynamic";
 
 import { NextResponse } from "next/server";
 import { createClient } from "@/lib/supabase/server";
-import { PLANS, isValidPlan, PROGRAM_ACCESS_PRICE_PAISE_BY_KEY } from "@/lib/subscription";
+import { PLANS, isValidPlan, PROGRAM_ACCESS_PRICE_PAISE_BY_KEY, isSaleableProgram } from "@/lib/subscription";
 import { ALL_PROGRAM_KEYS } from "@/lib/access/entitlements";
 
 // Creates a Razorpay order for the chosen plan or program key. The client opens Razorpay
@@ -45,6 +45,11 @@ export async function POST(req: Request) {
     } else {
       if (typeof programKey !== "string" || !ALL_PROGRAM_KEYS.includes(programKey)) {
         return NextResponse.json({ error: "Invalid program key." }, { status: 400 });
+      }
+      // "Coming Soon" programs (e.g. State Boards) keep their data but cannot be
+      // purchased — never create a Razorpay order for them.
+      if (!isSaleableProgram(programKey)) {
+        return NextResponse.json({ error: "This program is not available for purchase yet." }, { status: 400 });
       }
       const price = PROGRAM_ACCESS_PRICE_PAISE_BY_KEY[programKey];
       if (price === undefined) {

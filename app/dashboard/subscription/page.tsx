@@ -1,6 +1,7 @@
 import { createClient } from "@/lib/supabase/server";
 import { redirect } from "next/navigation";
 import SubscriptionDashboardClient from "@/components/subscription/SubscriptionDashboardClient";
+import { getRole, isOwner as roleIsOwner, isPrivileged } from "@/lib/auth/roles";
 
 export const dynamic = "force-dynamic";
 
@@ -18,6 +19,12 @@ export default async function SubscriptionDashboardPage() {
   if (!user) {
     redirect("/auth/signin?next=/dashboard/subscription");
   }
+
+  // Role-based privileges (owner/admin) — drives owner all-access preview + the
+  // admin console link. No email hardcoding (see lib/auth/access.ts).
+  const role = await getRole(supabase, user.id);
+  const owner = roleIsOwner({ id: user.id, role });
+  const staff = isPrivileged({ id: user.id, role });
 
   // Get current Pro subscription status
   const { data: subscription } = await supabase
@@ -54,11 +61,13 @@ export default async function SubscriptionDashboardPage() {
 
   return (
     <main className="min-h-screen bg-[#0B0F19] text-white py-12">
-      <SubscriptionDashboardClient 
+      <SubscriptionDashboardClient
         user={{ id: user.id, email: user.email }}
         subscription={userSub}
         entitlements={userEntitlements}
         nowMs={nowMs}
+        isOwner={owner}
+        isStaff={staff}
       />
     </main>
   );

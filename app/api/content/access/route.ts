@@ -5,8 +5,7 @@ import { NextResponse } from "next/server";
 import { createClient } from "@/lib/supabase/server";
 import { ALL_FREE_CHAPTER_IDS, isFreeChapter } from "@/lib/freeChapters";
 import { masterSyllabus } from "@/lib/masterSyllabus/all";
-// TEMPORARY CONTENT-DEVELOPMENT BYPASS. REMOVE BEFORE PUBLIC LAUNCH.
-import { isFounderBypassActive } from "@/lib/access/founderBypass";
+import { isPrivilegedServer } from "@/lib/auth/roles";
 
 export async function GET(req: Request) {
   try {
@@ -34,8 +33,8 @@ export async function GET(req: Request) {
       userId = user?.id ?? null;
 
       if (userId) {
-        // ── TEMPORARY CONTENT-DEVELOPMENT BYPASS. REMOVE BEFORE PUBLIC LAUNCH. ──
-        if (await isFounderBypassActive(supabase)) {
+        // Role-based all-access (owner/admin) — centralized in lib/auth/access.ts.
+        if (await isPrivilegedServer(supabase)) {
           subscriptionActive = true;
         } else {
           const { data: sub } = await supabase

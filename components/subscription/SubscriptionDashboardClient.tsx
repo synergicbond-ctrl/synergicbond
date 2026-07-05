@@ -7,6 +7,7 @@ import {
   Sparkles, Lock, ArrowRight, RefreshCw, ShieldAlert, BadgeAlert 
 } from "lucide-react";
 import PaymentGateway from "@/components/PaymentGateway";
+import StudentDetailsForm from "@/components/StudentDetailsForm";
 import { PLANS, PROGRAM_ACCESS_PRICE_PAISE_BY_KEY } from "@/lib/subscription";
 
 type UserSub = {
@@ -34,6 +35,7 @@ type Props = {
 
 export default function SubscriptionDashboardClient({ user, subscription, entitlements, nowMs }: Props) {
   const [selectedPlan, setSelectedPlan] = useState<{ id: string; name: string; amount: number; isProgram: boolean } | null>(null);
+  const [detailsOpen, setDetailsOpen] = useState(false);
   const [confirmOpen, setConfirmOpen] = useState(false);
   const [gatewayOpen, setGatewayOpen] = useState(false);
   const [consentChecked, setConsentChecked] = useState(false);
@@ -124,7 +126,7 @@ export default function SubscriptionDashboardClient({ user, subscription, entitl
   const initiatePurchase = (id: string, name: string, amount: number, isProgram: boolean) => {
     setSelectedPlan({ id, name, amount, isProgram });
     setConsentChecked(false);
-    setConfirmOpen(true);
+    setDetailsOpen(true);
   };
 
   const handleConfirm = () => {
@@ -458,6 +460,17 @@ export default function SubscriptionDashboardClient({ user, subscription, entitl
           </div>
         </div>
       )}
+
+      {/* Student Details Step */}
+      <StudentDetailsForm
+        open={detailsOpen}
+        onClose={() => setDetailsOpen(false)}
+        onComplete={() => {
+          setDetailsOpen(false);
+          setConfirmOpen(true);
+        }}
+        userEmail={user?.email}
+      />
 
       {/* Razorpay Gateway Portal */}
       {gatewayOpen && selectedPlan && (

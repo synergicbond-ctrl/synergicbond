@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { track } from "@vercel/analytics";
 import PaymentGateway from "@/components/PaymentGateway";
+import StudentDetailsForm from "@/components/StudentDetailsForm";
 
 type ProgramOption = {
   key: string;
@@ -15,6 +16,7 @@ type ProgramOption = {
 
 export default function PricingPage() {
   const [payOpen, setPayOpen] = useState(false);
+  const [detailsOpen, setDetailsOpen] = useState(false);
   const [selectedKey, setSelectedKey] = useState<string>("");
   const [selectedName, setSelectedName] = useState<string>("");
   const [selectedAmount, setSelectedAmount] = useState<string>("");
@@ -123,7 +125,7 @@ export default function PricingPage() {
     setSelectedKey(resolvedKey);
     setSelectedName(resolvedName);
     setSelectedAmount(`₹${prog.price}`);
-    setPayOpen(true);
+    setDetailsOpen(true);
   }
 
   return (
@@ -256,6 +258,15 @@ export default function PricingPage() {
           ))}
         </div>
       </div>
+
+      <StudentDetailsForm
+        open={detailsOpen}
+        onClose={() => setDetailsOpen(false)}
+        onComplete={() => {
+          setDetailsOpen(false);
+          setPayOpen(true);
+        }}
+      />
 
       <PaymentGateway
         open={payOpen}

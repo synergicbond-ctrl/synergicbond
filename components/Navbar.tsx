@@ -123,7 +123,6 @@ const MEGA_MENUS: MegaMenu[] = [
 const NAV_LINKS: { href: string; label: string; icon: LucideIcon }[] = [
   { href: "/pricing", label: "Pricing", icon: Gem },
   { href: "/support", label: "Support", icon: Heart },
-  { href: "/donate", label: "Donate", icon: Gift },
 ];
 
 // Mobile drawer — final IA flattened (Home · flagship · Programs · Features ·
@@ -146,7 +145,6 @@ const mainLinks: { href: string; label: string; icon: LucideIcon }[] = [
   { href: "/performance",      label: "Analytics",        icon: Activity },
   { href: "/pricing",          label: "Pricing",          icon: Gem },
   { href: "/support",          label: "Support",          icon: Heart },
-  { href: "/donate",           label: "Donate",           icon: Gift },
   { href: "/about",            label: "About",            icon: Info },
 ];
 

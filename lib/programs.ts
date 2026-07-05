@@ -209,3 +209,27 @@ export const PROGRAMS: Program[] = [
 export function getProgram(slug: string): Program | undefined {
   return PROGRAMS.find((p) => p.slug === slug);
 }
+
+// ─── Program key → in-app experience route (SSOT) ────────────────────────────
+// Maps an entitlement/program key to the route a paid subscriber (or an
+// owner/admin previewing) lands on. Client-safe (pure), so both the pricing UI
+// and server code can use it.
+//   • Entrance keys (neet | jee-main | jee-advanced) → /programs/<slug> hub
+//     (Learn · full-syllabus · practice · tests · notes · AI, all in one place).
+//   • Board keys (<board>:<class>) → /dashboard/<board>/<class> board dashboard.
+//     The entitlement key uses `isc`; the dashboard route board slug is `icse`.
+const BOARD_KEY_TO_ROUTE_SLUG: Record<string, string> = {
+  cbse: "cbse",
+  isc: "icse",
+  icse: "icse",
+  "state-boards": "state-boards",
+};
+
+export function programKeyToHref(programKey: string): string {
+  const [board, cls] = programKey.split(":");
+  if (cls) {
+    const routeBoard = BOARD_KEY_TO_ROUTE_SLUG[board] ?? board;
+    return `/dashboard/${routeBoard}/${cls}`;
+  }
+  return `/programs/${programKey}`;
+}

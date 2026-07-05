@@ -9,6 +9,7 @@ import {
 import PaymentGateway from "@/components/PaymentGateway";
 import StudentDetailsForm from "@/components/StudentDetailsForm";
 import { PLANS, PROGRAM_ACCESS_PRICE_PAISE_BY_KEY, COMING_SOON_PROGRAM_KEYS, COMING_SOON_NOTE } from "@/lib/subscription";
+import { programKeyToHref } from "@/lib/programs";
 
 type UserSub = {
   plan: string | null;
@@ -171,13 +172,28 @@ export default function SubscriptionDashboardClient({ user, subscription, entitl
         </div>
         <div className="text-right">
           {p.comingSoon ? (
-            <span className="inline-block px-3 py-1 rounded-lg text-[10px] font-black uppercase tracking-wider bg-white/[0.06] text-white/60">
-              {isOwner ? "Coming Soon · Preview" : "Coming Soon"}
-            </span>
+            // State Boards: owner may open the dashboard shell to preview safely;
+            // normal users see an inert Coming Soon badge (no route, no checkout).
+            isOwner ? (
+              <Link
+                href={programKeyToHref(p.key)}
+                className="inline-block px-3 py-1 rounded-lg text-[10px] font-black uppercase tracking-wider bg-white/[0.06] text-white/60 hover:bg-white/10 hover:text-white/80 transition"
+              >
+                Coming Soon · Preview
+              </Link>
+            ) : (
+              <span className="inline-block px-3 py-1 rounded-lg text-[10px] font-black uppercase tracking-wider bg-white/[0.06] text-white/60">
+                Coming Soon
+              </span>
+            )
           ) : isOwner ? (
-            <span className="inline-block px-3 py-1.5 rounded-lg text-xs font-extrabold bg-white/10 text-cyan-300">
-              Preview
-            </span>
+            // Owner/admin: no checkout — open the same experience a subscriber gets.
+            <Link
+              href={programKeyToHref(p.key)}
+              className="inline-block px-4 py-1.5 rounded-lg text-xs font-extrabold bg-cyan-500 hover:bg-cyan-400 text-black transition"
+            >
+              Preview →
+            </Link>
           ) : (
             <>
               <div className="font-black text-cyan-400 text-sm">₹{p.price}</div>

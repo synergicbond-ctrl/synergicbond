@@ -19,15 +19,25 @@ export default function Home() {
         </div>
         
         <div className="relative mx-auto max-w-5xl text-center space-y-8">
-          <div className="inline-flex items-center gap-2 rounded-full border border-cyan-500/25 bg-cyan-500/10 px-4 py-1.5 text-cyan-300 text-xs font-bold tracking-wider uppercase">
-            <Atom className="h-4 w-4 animate-spin-slow text-cyan-400" /> Chemistry OS v2.0
+          <div className="inline-flex items-center gap-2 rounded-full border border-cyan-500/20 bg-cyan-950/40 px-5 py-2 text-[11px] font-bold tracking-[0.2em] text-cyan-300 uppercase">
+            AI POWERED CHEMISTRY PLATFORM
           </div>
           
-          <h1 className="text-4xl sm:text-6xl md:text-7xl font-black tracking-tight leading-none text-white max-w-4xl mx-auto">
-            Master Chemistry with AI, Expert Notes &amp; Exam-Focused Practice
-          </h1>
+          <div className="space-y-4">
+            <h1 className="text-5xl sm:text-7xl md:text-8xl font-black tracking-tight leading-none">
+              <span className="bg-gradient-to-r from-yellow-400 via-pink-400 to-purple-400 bg-clip-text text-transparent">
+                SYNERGIC BOND
+              </span>
+            </h1>
+            <p className="text-3xl sm:text-5xl md:text-6xl font-black tracking-tight leading-tight text-white">
+              The Chemistry Operating System
+            </p>
+            <p className="text-sm sm:text-base md:text-lg font-bold text-white/50 tracking-widest uppercase">
+              Search &bull; Learn &bull; Practice &bull; Master
+            </p>
+          </div>
           
-          <p className="max-w-3xl mx-auto text-white/70 text-sm sm:text-base md:text-lg leading-relaxed">
+          <p className="max-w-3xl mx-auto text-white/70 text-sm sm:text-base leading-relaxed pt-2">
             Synergic Bond is a complete Chemistry learning ecosystem for Boards, JEE, NEET and Olympiads — combining verified content, AI tutoring, PYQs, smart practice, mock tests and visual learning tools.
           </p>
 

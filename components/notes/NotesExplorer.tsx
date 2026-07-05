@@ -4,10 +4,8 @@ import { useState } from "react";
 import Link from "next/link";
 import {
   NOTES_CHAPTERS,
-  NOTE_SECTIONS,
   NOTES_ENGINE_STATS,
   type NotesChapter,
-  type NoteSectionKey,
   type NoteLink,
 } from "@/lib/notesEngine";
 import { masterSyllabus } from "@/lib/masterSyllabus/all";
@@ -16,9 +14,26 @@ import { useUnlocked } from "@/components/monetization/useUnlocked";
 import UnlockBanner from "@/components/monetization/UnlockBanner";
 
 // ─────────────────────────────────────────────────────────────────────────────
-// Notes Explorer — mobile-first reader for the curated Notes Engine (SSOT).
-// Chapter pills → horizontally-scrollable section nav → section content.
+// Notes Explorer — strict separation architecture.
+// Tab split:
+// 1. Detailed Notes (full theory, examples, derivations, exceptions & NCERT highlights)
+// 2. Short Notes (revision summary only)
+// 3. Formula Sheets (equations only)
+// 4. PYQ Section (questions only)
+// 5. Practice Section (practice only)
+// 6. Mock Tests (tests only)
 // ─────────────────────────────────────────────────────────────────────────────
+
+export const STRICT_NOTE_SECTIONS = [
+  { key: "detailed", label: "Detailed Notes", icon: "📖", description: "Full theory, examples, derivations & NCERT highlights" },
+  { key: "short", label: "Short Notes", icon: "⚡", description: "Quick 2-5 page revision summaries" },
+  { key: "formulas", label: "Formula Sheets", icon: "🧮", description: "Pure mathematical equations & constants only" },
+  { key: "pyqs", label: "PYQ Section", icon: "🎯", description: "Previous year questions for target exams" },
+  { key: "practice", label: "Practice Section", icon: "✍️", description: "Chapter-wise concept practice & question banks" },
+  { key: "mocks", label: "Mock Tests", icon: "🧪", description: "Timed examination simulations" },
+] as const;
+
+export type StrictNoteSectionKey = (typeof STRICT_NOTE_SECTIONS)[number]["key"];
 
 const CATEGORY_STYLE: Record<NotesChapter["category"], string> = {
   physical: "text-cyan-300 border-cyan-400/30 bg-cyan-500/10",
@@ -27,6 +42,9 @@ const CATEGORY_STYLE: Record<NotesChapter["category"], string> = {
 };
 
 function LinkRow({ links }: { links: NoteLink[] }) {
+  if (!links || links.length === 0) {
+    return <p className="text-xs text-white/40">No external links configured for this section.</p>;
+  }
   return (
     <div className="space-y-2.5">
       {links.map((l, i) => (
@@ -59,118 +77,144 @@ function Bullets({ items }: { items: string[] }) {
   );
 }
 
-function SectionBody({ chapter, section }: { chapter: NotesChapter; section: NoteSectionKey }) {
+function StrictSectionBody({ chapter, section }: { chapter: NotesChapter; section: StrictNoteSectionKey }) {
   switch (section) {
-    case "syllabus":
-      return <Bullets items={chapter.syllabus} />;
-
-    case "subtopics":
+    case "detailed":
       return (
-        <div className="flex flex-wrap gap-2">
-          {chapter.subtopics.map((s, i) => (
-            <span key={i} className="rounded-full border border-white/10 bg-white/[0.04] px-3 py-1.5 text-[13px] text-white/80">
-              {i + 1}. {s}
-            </span>
-          ))}
-        </div>
-      );
+        <div className="space-y-6">
+          {/* Syllabus Scope */}
+          <div className="p-4 rounded-2xl border border-white/[0.06] bg-black/25">
+            <h4 className="text-xs font-bold uppercase tracking-wider text-white/40 mb-2">📋 Syllabus Scope</h4>
+            <Bullets items={chapter.syllabus} />
+          </div>
 
-    case "detailedNotes":
-      return (
-        <div className="space-y-5">
-          {chapter.detailedNotes.map((b, i) => (
-            <div key={i} className="rounded-2xl border border-white/[0.07] bg-[#111827] p-4">
-              <h4 className="mb-3 text-sm font-black text-white">{b.heading}</h4>
-              <Bullets items={b.points} />
-            </div>
-          ))}
-        </div>
-      );
-
-    case "shortNotes":
-    case "revisionNotes":
-      return <Bullets items={section === "shortNotes" ? chapter.shortNotes : chapter.revisionNotes} />;
-
-    case "ncertHighlights":
-      return (
-        <div className="rounded-2xl border border-purple-400/20 bg-purple-500/[0.06] p-4">
-          <Bullets items={chapter.ncertHighlights} />
-        </div>
-      );
-
-    case "commonMistakes":
-      return (
-        <ul className="space-y-2.5">
-          {chapter.commonMistakes.map((t, i) => (
-            <li key={i} className="flex gap-2.5 rounded-xl border border-rose-400/15 bg-rose-500/[0.06] p-3 text-[13.5px] leading-relaxed text-rose-100/85">
-              <span className="shrink-0">⚠️</span>
-              <span>{t}</span>
-            </li>
-          ))}
-        </ul>
-      );
-
-    case "solvedExamples":
-      return (
-        <div className="space-y-4">
-          {chapter.solvedExamples.map((ex, i) => (
-            <div key={i} className="rounded-2xl border border-white/[0.07] bg-[#111827] p-4">
-              <div className="mb-2 flex items-start justify-between gap-3">
-                <p className="text-sm font-semibold text-white">Q{i + 1}. {ex.q}</p>
-                {ex.tag && (
-                  <span className="shrink-0 rounded-full border border-cyan-400/25 bg-cyan-500/10 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide text-cyan-200">
-                    {ex.tag}
-                  </span>
-                )}
+          {/* Core Theory Note Blocks */}
+          <div className="space-y-4">
+            <h4 className="text-xs font-bold uppercase tracking-wider text-white/40">📖 Core Theory &amp; Concepts</h4>
+            {chapter.detailedNotes.map((b, i) => (
+              <div key={i} className="rounded-2xl border border-white/[0.07] bg-[#111827] p-4 space-y-2">
+                <h5 className="text-sm font-black text-white">{b.heading}</h5>
+                <Bullets items={b.points} />
               </div>
-              <ol className="mt-2 space-y-1.5">
-                {ex.steps.map((s, j) => (
-                  <li key={j} className="flex gap-2 text-[13px] leading-relaxed text-white/65">
-                    <span className="font-mono text-white/35">{j + 1}.</span>
-                    <span>{s}</span>
+            ))}
+          </div>
+
+          {/* NCERT Highlights */}
+          {chapter.ncertHighlights && chapter.ncertHighlights.length > 0 && (
+            <div className="rounded-2xl border border-purple-400/20 bg-purple-500/[0.06] p-4 space-y-2">
+              <h4 className="text-xs font-bold uppercase tracking-wider text-purple-300">📕 NCERT Highlights &amp; Core Lines</h4>
+              <Bullets items={chapter.ncertHighlights} />
+            </div>
+          )}
+
+          {/* Derivations */}
+          {chapter.derivations && chapter.derivations.length > 0 && (
+            <div className="space-y-3">
+              <h4 className="text-xs font-bold uppercase tracking-wider text-white/40">📐 Essential Derivations</h4>
+              {chapter.derivations.map((d, i) => (
+                <div key={i} className="rounded-2xl border border-white/[0.07] bg-[#111827] p-4">
+                  <h5 className="mb-2 text-sm font-black text-white">{d.title}</h5>
+                  <ol className="space-y-1.5">
+                    {d.steps.map((s, j) => (
+                      <li key={j} className="flex gap-2 text-[13px] leading-relaxed text-white/65">
+                        <span className="font-mono text-white/35">{j + 1}.</span>
+                        <span>{s}</span>
+                      </li>
+                    ))}
+                  </ol>
+                  <p className="mt-3 rounded-lg bg-cyan-500/[0.08] px-3 py-2 text-[13px] font-semibold text-cyan-200">
+                    Result: {d.result}
+                  </p>
+                </div>
+              ))}
+            </div>
+          )}
+
+          {/* Exceptions & Common Mistakes */}
+          {chapter.commonMistakes && chapter.commonMistakes.length > 0 && (
+            <div className="space-y-2">
+              <h4 className="text-xs font-bold uppercase tracking-wider text-white/40">⚠️ Critical Exceptions &amp; Pitfalls</h4>
+              <ul className="space-y-2.5">
+                {chapter.commonMistakes.map((t, i) => (
+                  <li key={i} className="flex gap-2.5 rounded-xl border border-rose-400/15 bg-rose-500/[0.06] p-3 text-[13.5px] leading-relaxed text-rose-100/85">
+                    <span className="shrink-0">⚠️</span>
+                    <span>{t}</span>
                   </li>
                 ))}
-              </ol>
-              <p className="mt-3 rounded-lg bg-emerald-500/[0.08] px-3 py-2 text-[13px] font-semibold text-emerald-200">
-                ✓ {ex.answer}
-              </p>
+              </ul>
             </div>
-          ))}
+          )}
+
+          {/* Solved Examples */}
+          {chapter.solvedExamples && chapter.solvedExamples.length > 0 && (
+            <div className="space-y-3">
+              <h4 className="text-xs font-bold uppercase tracking-wider text-white/40">✍️ Solved Conceptual Examples</h4>
+              {chapter.solvedExamples.map((ex, i) => (
+                <div key={i} className="rounded-2xl border border-white/[0.07] bg-[#111827] p-4">
+                  <div className="mb-2 flex items-start justify-between gap-3">
+                    <p className="text-sm font-semibold text-white">Q{i + 1}. {ex.q}</p>
+                    {ex.tag && (
+                      <span className="shrink-0 rounded-full border border-cyan-400/25 bg-cyan-500/10 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide text-cyan-200">
+                        {ex.tag}
+                      </span>
+                    )}
+                  </div>
+                  <ol className="mt-2 space-y-1.5">
+                    {ex.steps.map((s, j) => (
+                      <li key={j} className="flex gap-2 text-[13px] leading-relaxed text-white/65">
+                        <span className="font-mono text-white/35">{j + 1}.</span>
+                        <span>{s}</span>
+                      </li>
+                    ))}
+                  </ol>
+                  <p className="mt-3 rounded-lg bg-emerald-500/[0.08] px-3 py-2 text-[13px] font-semibold text-emerald-200">
+                    ✓ {ex.answer}
+                  </p>
+                </div>
+              ))}
+            </div>
+          )}
         </div>
       );
 
-    case "derivations":
+    case "short":
       return (
         <div className="space-y-4">
-          {chapter.derivations.map((d, i) => (
-            <div key={i} className="rounded-2xl border border-white/[0.07] bg-[#111827] p-4">
-              <h4 className="mb-3 text-sm font-black text-white">📐 {d.title}</h4>
-              <ol className="space-y-1.5">
-                {d.steps.map((s, j) => (
-                  <li key={j} className="flex gap-2 text-[13px] leading-relaxed text-white/65">
-                    <span className="font-mono text-white/35">{j + 1}.</span>
-                    <span>{s}</span>
-                  </li>
-                ))}
-              </ol>
-              <p className="mt-3 rounded-lg bg-cyan-500/[0.08] px-3 py-2 text-[13px] font-semibold text-cyan-200">
-                = {d.result}
-              </p>
-            </div>
-          ))}
+          <div className="p-4 rounded-2xl border border-white/[0.06] bg-black/25">
+            <h4 className="text-xs font-bold uppercase tracking-wider text-white/40 mb-2">⚡ Quick-Recall Revision Summary</h4>
+            <Bullets items={[...chapter.shortNotes, ...chapter.revisionNotes]} />
+          </div>
         </div>
       );
 
-    case "formulaLinks":
-      return <LinkRow links={chapter.formulaLinks} />;
-    case "pyqLinks":
-      return <LinkRow links={chapter.pyqLinks} />;
-    case "learnLinks":
-      return <LinkRow links={chapter.learnLinks} />;
-
-    case "tests":
+    case "formulas":
       return (
-        <div className="space-y-2.5">
+        <div className="space-y-4">
+          <h4 className="text-xs font-bold uppercase tracking-wider text-white/40">🧮 Formula Cards &amp; Equations</h4>
+          <LinkRow links={chapter.formulaLinks} />
+        </div>
+      );
+
+    case "pyqs":
+      return (
+        <div className="space-y-4">
+          <h4 className="text-xs font-bold uppercase tracking-wider text-white/40">🎯 PYQ Practice Questions</h4>
+          <LinkRow links={chapter.pyqLinks} />
+        </div>
+      );
+
+    case "practice":
+      return (
+        <div className="space-y-4">
+          <h4 className="text-xs font-bold uppercase tracking-wider text-white/40">✍️ Concept-wise Practice Problems</h4>
+          <LinkRow links={chapter.learnLinks} />
+        </div>
+      );
+
+    case "mocks":
+      return (
+        <div className="space-y-3">
+          <h4 className="text-xs font-bold uppercase tracking-wider text-white/40">🧪 Mocks &amp; Timed Tests</h4>
           {chapter.tests.map((t, i) => (
             <div key={i} className="flex items-center justify-between gap-3 rounded-xl border border-white/[0.08] bg-white/[0.03] p-3.5">
               <span className="min-w-0">
@@ -190,11 +234,6 @@ function SectionBody({ chapter, section }: { chapter: NotesChapter; section: Not
   }
 }
 
-// ── Syllabus integration: every master-syllabus chapter is browsable here.
-// Authored chapters render the full 13-section Notes Engine content; chapters
-// without authored notes show an honest syllabus-only state (official syllabus
-// points from the SSOT — notes are never fabricated).
-
 interface SyllabusLite {
   id: string;
   title: string;
@@ -206,8 +245,6 @@ interface SyllabusLite {
 }
 
 const SYLLABUS_CHAPTERS = masterSyllabus as unknown as SyllabusLite[];
-
-// Id alignment between the syllabus SSOT and authored Notes Engine ids.
 const NOTES_ID_FOR_SYLLABUS: Record<string, string> = { goc: "general-organic-chemistry" };
 
 function authoredFor(syllabusId: string): NotesChapter | undefined {
@@ -217,17 +254,14 @@ function authoredFor(syllabusId: string): NotesChapter | undefined {
 
 export default function NotesExplorer() {
   const [chapterId, setChapterId] = useState<string>(SYLLABUS_CHAPTERS[0].id);
-  const [section, setSection] = useState<NoteSectionKey>("syllabus");
+  const [section, setSection] = useState<StrictNoteSectionKey>("detailed");
   const unlocked = useUnlocked();
 
   const syllabusChapter = SYLLABUS_CHAPTERS.find((c) => c.id === chapterId) ?? SYLLABUS_CHAPTERS[0];
   const chapter = authoredFor(syllabusChapter.id);
-  const activeSection = NOTE_SECTIONS.find((s) => s.key === section) ?? NOTE_SECTIONS[0];
+  const activeSection = STRICT_NOTE_SECTIONS.find((s) => s.key === section) ?? STRICT_NOTE_SECTIONS[0];
   const authoredCount = SYLLABUS_CHAPTERS.filter((c) => authoredFor(c.id)).length;
 
-  // Preview Mode: free-chapter notes stay fully open. Premium authored chapters
-  // show an unlock prompt instead of content. (Official syllabus points are
-  // public exam information — never gated.)
   const chapterLocked = !!chapter && !unlocked && !isFreeChapter(chapter.id);
   const freeCount = NOTES_CHAPTERS.filter((c) => isFreeChapter(c.id)).length;
 
@@ -236,14 +270,14 @@ export default function NotesExplorer() {
       {/* Header */}
       <div>
         <p className="mb-2 text-xs font-bold uppercase tracking-[0.4em] text-cyan-300">Notes Engine</p>
-        <h1 className="text-3xl font-black md:text-4xl">Chapter Notes</h1>
+        <h1 className="text-3xl font-black md:text-4xl">Chapter Notes Explorer</h1>
         <p className="mt-2 text-sm text-white/55">
           {authoredCount} of {SYLLABUS_CHAPTERS.length} chapters have full verified notes
-          ({NOTES_ENGINE_STATS.sections} sections each) — every chapter shows its official syllabus.
+          ({STRICT_NOTE_SECTIONS.length} strict categories each) — every chapter shows its official syllabus.
         </p>
       </div>
 
-      {/* Chapter selector — full master syllabus, authored chapters marked */}
+      {/* Chapter selector */}
       <div className="flex flex-wrap gap-2">
         {SYLLABUS_CHAPTERS.map((c) => {
           const active = c.id === chapterId;
@@ -251,7 +285,7 @@ export default function NotesExplorer() {
           return (
             <button
               key={c.id}
-              onClick={() => { setChapterId(c.id); setSection("syllabus"); }}
+              onClick={() => { setChapterId(c.id); setSection("detailed"); }}
               className={`rounded-xl border px-3.5 py-2 text-left transition ${
                 active
                   ? "border-cyan-400/50 bg-cyan-500/10"
@@ -287,10 +321,10 @@ export default function NotesExplorer() {
             <p className="mt-2.5 text-[13.5px] text-white/70">{chapter.tagline}</p>
           </div>
 
-          {/* Section nav — horizontal scroll on mobile */}
+          {/* Section nav */}
           <div className="-mx-4 overflow-x-auto px-4 md:mx-0 md:px-0">
             <div className="flex gap-2 md:flex-wrap">
-              {NOTE_SECTIONS.map((s) => {
+              {STRICT_NOTE_SECTIONS.map((s) => {
                 const active = s.key === section;
                 return (
                   <button
@@ -309,22 +343,25 @@ export default function NotesExplorer() {
             </div>
           </div>
 
-          {/* Active section (or unlock prompt for premium chapters) */}
+          {/* Active section */}
           <section className="min-h-[200px]">
             {chapterLocked ? (
               <UnlockBanner available={freeCount} total={NOTES_ENGINE_STATS.chapters} itemLabel="notes chapters" />
             ) : (
-              <>
-                <h2 className="mb-4 flex items-center gap-2 text-lg font-black text-white">
-                  <span>{activeSection.icon}</span> {activeSection.label}
-                </h2>
-                <SectionBody chapter={chapter} section={section} />
-              </>
+              <div className="space-y-4">
+                <div className="border-b border-white/[0.06] pb-3">
+                  <h2 className="flex items-center gap-2 text-lg font-black text-white">
+                    <span>{activeSection.icon}</span> {activeSection.label}
+                  </h2>
+                  <p className="text-xs text-white/45 mt-1">{activeSection.description}</p>
+                </div>
+                <StrictSectionBody chapter={chapter} section={section} />
+              </div>
             )}
           </section>
         </>
       ) : (
-        /* Syllabus-only state — no authored notes yet, never fabricated */
+        /* Syllabus-only state */
         <section className="min-h-[200px] space-y-4">
           <div className="rounded-2xl border border-white/[0.07] bg-gradient-to-b from-white/[0.05] to-transparent p-4">
             <div className="flex flex-wrap items-center gap-2">

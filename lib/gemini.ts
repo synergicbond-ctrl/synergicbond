@@ -32,3 +32,19 @@ export async function generateText(prompt: string): Promise<string> {
 export async function generateJSON(prompt: string): Promise<string> {
   return run(prompt + "\n\nIMPORTANT: Respond with valid JSON only. No markdown, no code blocks, no extra text.");
 }
+
+export async function generateMultimodal(
+  contents: Array<string | { text: string } | { inlineData: { mimeType: string; data: string } }>
+): Promise<string> {
+  let lastErr: unknown;
+  for (const model of GEMINI_MODELS) {
+    try {
+      const response = await getAI().models.generateContent({ model, contents });
+      const text = response.text ?? "";
+      if (text.trim()) return text;
+    } catch (e) {
+      lastErr = e;
+    }
+  }
+  throw lastErr ?? new Error("All Gemini models failed");
+}

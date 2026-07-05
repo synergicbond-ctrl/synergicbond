@@ -107,7 +107,7 @@ export default function PracticeClient({
   const [subError, setSubError] = useState<string | null>(null);
   const [subQ, setSubQ] = useState<{ question: string; markingScheme: string[]; modelAnswer: string } | null>(null);
   const [answer, setAnswer] = useState("");
-  const [grade, setGrade] = useState<{ marksAwarded: number; maxMarks: number; verdict: string; missingKeywords: string[]; strengths: string[] } | null>(null);
+  const [grade, setGrade] = useState<{ marksAwarded: number; maxMarks: number; verdict: string; missingKeywords: string[]; strengths: string[]; improvements?: string[] } | null>(null);
   const [gradeLoading, setGradeLoading] = useState(false);
 
   // Subjective Upload states
@@ -191,19 +191,19 @@ export default function PracticeClient({
   }, [chapterId, chapters, cls, typeKey, activeType.marks, boardName]);
 
   const evaluate = useCallback(async () => {
-    if (!subQ || !answer.trim()) return;
+    if (!subQ || (!answer.trim() && !uploadedFile)) return;
     setGradeLoading(true); setGrade(null);
     try {
       const res = await fetch("/api/board-examiner", {
         method: "POST", headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ question: subQ.question, answer, maxMarks: activeType.marks, exam: boardName }),
+        body: JSON.stringify({ question: subQ.question, answer, maxMarks: activeType.marks, exam: boardName, uploadedFile }),
       });
       const data = await res.json();
       if (res.ok && data.result) setGrade(data.result);
       else setSubError(data.error ?? "Evaluation failed.");
     } catch { setSubError("Could not reach the examiner."); }
     finally { setGradeLoading(false); }
-  }, [subQ, answer, activeType.marks, boardName]);
+  }, [subQ, answer, activeType.marks, boardName, uploadedFile]);
 
   return (
     <div className="space-y-5">
@@ -316,11 +316,39 @@ export default function PracticeClient({
                 </button>
               </div>
               {grade && (
-                <div className="rounded-xl border border-emerald-500/25 bg-emerald-500/[0.05] p-3 text-sm">
-                  <div className="font-black text-emerald-300">{grade.marksAwarded} / {grade.maxMarks} marks</div>
-                  <p className="mt-1 text-white/75">{grade.verdict}</p>
-                  {grade.missingKeywords?.length > 0 && <p className="mt-2 text-rose-300"><span className="font-bold">Missing:</span> {grade.missingKeywords.join(", ")}</p>}
-                  {grade.strengths?.length > 0 && <p className="mt-1 text-emerald-200/80"><span className="font-bold">Good:</span> {grade.strengths.join(", ")}</p>}
+                <div className="rounded-xl border border-emerald-500/25 bg-emerald-500/[0.05] p-4 text-sm space-y-3">
+                  <div className="flex items-center justify-between border-b border-white/[0.06] pb-2">
+                    <span className="font-bold text-white text-xs uppercase tracking-wider">AI Evaluation Report</span>
+                    <span className="font-black text-emerald-300 px-2 py-0.5 bg-emerald-500/10 rounded-lg">{grade.marksAwarded} / {grade.maxMarks} Marks</span>
+                  </div>
+                  <p className="text-white/75 italic">"{grade.verdict}"</p>
+                  
+                  {grade.strengths?.length > 0 && (
+                    <div className="space-y-1">
+                      <span className="font-bold text-emerald-300 text-xs uppercase tracking-wider block">Key Strengths:</span>
+                      <ul className="list-disc pl-5 text-white/75 space-y-0.5">
+                        {grade.strengths.map((str, idx) => <li key={idx}>{str}</li>)}
+                      </ul>
+                    </div>
+                  )}
+                  
+                  {grade.missingKeywords?.length > 0 && (
+                    <div className="space-y-1">
+                      <span className="font-bold text-rose-300 text-xs uppercase tracking-wider block">Weaknesses / Missing Keywords:</span>
+                      <ul className="list-disc pl-5 text-rose-100/70 space-y-0.5">
+                        {grade.missingKeywords.map((kw, idx) => <li key={idx}>{kw}</li>)}
+                      </ul>
+                    </div>
+                  )}
+
+                  {grade.improvements && grade.improvements.length > 0 && (
+                    <div className="space-y-1">
+                      <span className="font-bold text-cyan-300 text-xs uppercase tracking-wider block">Suggested Improvements:</span>
+                      <ul className="list-disc pl-5 text-white/70 space-y-0.5">
+                        {grade.improvements.map((imp, idx) => <li key={idx}>{imp}</li>)}
+                      </ul>
+                    </div>
+                  )}
                 </div>
               )}
               <details className="text-sm">

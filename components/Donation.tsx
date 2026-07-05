@@ -83,8 +83,14 @@ export default function Donation() {
                 ))}
               </ul>
 
-              {/* TODO: wire to payment gateway when activated */}
               <button
+                onClick={() => {
+                  if (tier.name === "Institutional") {
+                    window.location.href = "mailto:hello@synergicbond.com?subject=Institutional%20Sponsorship";
+                  } else {
+                    window.location.href = "/pricing";
+                  }
+                }}
                 className="w-full rounded-xl py-2.5 text-sm font-semibold transition hover:-translate-y-0.5"
                 style={{
                   background: tier.featured ? tier.accent : "transparent",

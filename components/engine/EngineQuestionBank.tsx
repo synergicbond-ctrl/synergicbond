@@ -34,6 +34,73 @@ function shuffle<T>(arr: T[], seed: number): T[] {
   return a;
 }
 
+function VirtualNumericalKeyboard({
+  value,
+  onChange,
+  disabled,
+}: {
+  value: string;
+  onChange: (val: string) => void;
+  disabled: boolean;
+}) {
+  const keys = [
+    "1", "2", "3",
+    "4", "5", "6",
+    "7", "8", "9",
+    "-", "0", ".",
+  ];
+
+  const handleKeyPress = (key: string) => {
+    if (disabled) return;
+    onChange(value + key);
+  };
+
+  const handleBackspace = () => {
+    if (disabled) return;
+    onChange(value.slice(0, -1));
+  };
+
+  const handleClear = () => {
+    if (disabled) return;
+    onChange("");
+  };
+
+  return (
+    <div className="mt-3 p-3 bg-white/[0.02] border border-white/10 rounded-xl w-64 space-y-2 select-none">
+      <p className="text-[10px] uppercase font-bold tracking-wider text-white/40 mb-1">JEE Virtual Keyboard</p>
+      <div className="grid grid-cols-3 gap-1.5">
+        {keys.map((k) => (
+          <button
+            key={k}
+            type="button"
+            disabled={disabled}
+            onClick={() => handleKeyPress(k)}
+            className="flex h-10 items-center justify-center rounded-lg bg-[#111827] border border-white/10 text-sm font-bold text-white hover:bg-white/[0.1] active:scale-95 transition disabled:opacity-50"
+          >
+            {k}
+          </button>
+        ))}
+        <button
+          type="button"
+          disabled={disabled}
+          onClick={handleClear}
+          className="col-span-1 flex h-10 items-center justify-center rounded-lg bg-rose-500/10 border border-rose-500/20 text-xs font-black text-rose-300 hover:bg-rose-500/20 active:scale-95 transition disabled:opacity-50"
+        >
+          CLEAR
+        </button>
+        <button
+          type="button"
+          disabled={disabled}
+          onClick={handleBackspace}
+          className="col-span-2 flex h-10 items-center justify-center rounded-lg bg-amber-500/10 border border-amber-500/20 text-xs font-black text-amber-300 hover:bg-amber-500/20 active:scale-95 transition disabled:opacity-50"
+        >
+          BACKSPACE
+        </button>
+      </div>
+    </div>
+  );
+}
+
 /** Parse "42", "3.25", "6.02e23", "6.02×10^23", "6.02x10^23". */
 function parseNumeric(s: string): number | null {
   const t = s.trim().replace(/×/g, "x").replace(/\s+/g, "");
@@ -231,6 +298,7 @@ export default function EngineQuestionBank({
                 <button onClick={gradeNumeric} disabled={!numericInput.trim() || numericResult !== null}
                   className="rounded-lg border border-cyan-400/40 bg-cyan-500/10 px-4 py-2 text-sm font-bold text-cyan-300 disabled:opacity-50">Check</button>
               </div>
+              <VirtualNumericalKeyboard value={numericInput} onChange={setNumericInput} disabled={numericResult !== null} />
               {numericResult && (
                 <div className={`rounded-xl border p-3 text-sm ${numericResult === "correct" ? "border-emerald-500/25 bg-emerald-500/[0.05]" : "border-rose-500/25 bg-rose-500/[0.05]"}`}>
                   <p className={`font-black ${numericResult === "correct" ? "text-emerald-300" : "text-rose-300"}`}>

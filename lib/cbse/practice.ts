@@ -90,7 +90,10 @@ export function selectObjective(opts: ObjectiveSelectOpts): ObjectiveSelectResul
       scopeSet.has(q.chapter) &&
       q.questionType === pyqType &&
       Boolean(q.options) &&
-      (!difficulty || q.difficulty === difficulty)
+      (!difficulty || q.difficulty === difficulty) &&
+      // Board isolation rule: exclude complex entrance-only questions (JEE Advanced)
+      // unless tagged as ncertDirect (serving as enrichment).
+      (q.exam !== "JEE Advanced" || q.ncertDirect === true)
   );
 
   const excluded = excludeIds ?? new Set<string>();

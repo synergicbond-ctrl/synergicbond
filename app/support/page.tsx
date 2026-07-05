@@ -1,98 +1,194 @@
 import Link from "next/link";
+import { 
+  Sparkles, Globe, Heart, Compass, Cpu, Target, 
+  GraduationCap, Microscope, BookOpen, Layers
+} from "lucide-react";
 
 export const metadata = {
-  title: "Support — SYNERGIC BOND",
+  title: "Our Mission & Vision — SYNERGIC BOND",
   description:
-    "Support the mission to build the complete chemistry learning platform. Go Pro, or contribute directly (from ₹100).",
+    "Democratizing quality chemistry education through advanced technology, adaptive learning, and student-first accessibility.",
 };
-
-// Week 12 — honest Support page (replaces the old /donate mock-up, which showed
-// a fabricated fundraising bar and dead payment buttons).
-//
-// • "Go Pro" is the LIVE way to support today — it uses the existing, working
-//   Razorpay checkout on /pricing (payment infra untouched, per roadmap).
-// • Direct one-time contributions (min ₹100) are shown but clearly labelled
-//   as opening soon: enabling them needs a founder decision (Razorpay payment
-//   link or a dedicated contribution order route). No fake checkout.
-
-const CONTRIBUTION_TIERS = [
-  { amount: "₹100", note: "Fuels one student's free chapter access" },
-  { amount: "₹250", note: "Supports verified content authoring" },
-  { amount: "₹500", note: "Backs the free Snap & Solve quota" },
-];
 
 export default function SupportPage() {
   return (
-    <main className="min-h-screen bg-[#0B0F19] text-white">
-      <div className="mx-auto max-w-3xl px-4 py-10 sm:px-6 md:py-14">
-        <p className="mb-2 text-xs font-bold uppercase tracking-[0.4em] text-cyan-300">Support</p>
-        <h1 className="text-3xl font-black md:text-4xl">Keep Chemistry Free for the Next Student</h1>
-        <p className="mt-3 max-w-2xl text-sm leading-relaxed text-white/60">
-          SYNERGIC BOND keeps one full chapter per branch of chemistry — notes, PYQs, tests, formulas
-          and AI — free for every student, forever. Built by an 18-year JEE Advanced chemistry
-          faculty. Your support pays for the verified content, the AI compute and the free tier.
-        </p>
-
-        {/* Live path — Pro subscription via the existing checkout */}
-        <section className="mt-8 rounded-2xl border border-cyan-400/25 bg-gradient-to-r from-cyan-500/10 to-purple-500/10 p-6">
-          <h2 className="text-lg font-black">The most direct way to support: go Pro</h2>
-          <p className="mt-1.5 text-sm text-white/60">
-            ₹149/month or ₹999/year — you unlock every chapter and reference library, and you
-            fund the free tier for students who can&apos;t pay.
+    <main className="min-h-screen bg-[#0B0F19] text-white selection:bg-cyan-500/30">
+      <div className="mx-auto max-w-4xl px-4 py-12 sm:px-6 md:py-20 space-y-16">
+        
+        {/* ── HEADER: The Grand Mission ─────────────────────────────────── */}
+        <header className="text-center space-y-4">
+          <div className="inline-flex items-center gap-2 rounded-full border border-cyan-500/25 bg-cyan-500/10 px-4 py-1.5 text-cyan-300 text-xs font-bold tracking-wider uppercase">
+            <Heart className="h-3.5 w-3.5 text-cyan-400 animate-pulse" /> Student-First Education
+          </div>
+          <h1 className="text-4xl md:text-6xl font-black tracking-tight leading-none bg-gradient-to-r from-white via-slate-100 to-cyan-300 bg-clip-text text-transparent">
+            Democratizing Quality Chemistry Education
+          </h1>
+          <p className="max-w-2xl mx-auto text-white/60 text-sm md:text-base leading-relaxed">
+            We believe that high-quality, conceptual chemistry instruction is a fundamental right. 
+            By blending pedagogical expertise with intelligent technology, we are building 
+            an accessible ecosystem for every chemistry student worldwide.
           </p>
-          <Link
-            href="/pricing"
-            className="mt-4 inline-block rounded-xl bg-gradient-to-r from-cyan-500 to-blue-500 px-5 py-2.5 text-sm font-bold text-black transition hover:opacity-90"
-          >
-            See Pro plans →
-          </Link>
+        </header>
+
+        {/* ── A. OUR MISSION & B. WHY WE EXIST ────────────────────────── */}
+        <section className="grid gap-6 md:grid-cols-2">
+          <div className="rounded-3xl border border-white/[0.08] bg-[#111827] p-6 md:p-8 space-y-3">
+            <div className="h-10 w-10 flex items-center justify-center rounded-xl bg-cyan-500/10 text-cyan-300 border border-cyan-500/25">
+              <Compass className="h-5 w-5" />
+            </div>
+            <h2 className="text-xl font-black text-white">Our Mission</h2>
+            <p className="text-xs text-white/55 leading-relaxed">
+              Every student deserves access to world-class chemistry instruction, regardless of 
+              geography, school infrastructure, or economic background. We maintain robust 
+              free-tier modules, including visual reference utilities and essential learning chapters, 
+              ensuring that core educational resources remain open to all.
+            </p>
+          </div>
+
+          <div className="rounded-3xl border border-white/[0.08] bg-[#111827] p-6 md:p-8 space-y-3">
+            <div className="h-10 w-10 flex items-center justify-center rounded-xl bg-purple-500/10 text-purple-300 border border-purple-500/25">
+              <GraduationCap className="h-5 w-5" />
+            </div>
+            <h2 className="text-xl font-black text-white">Why We Exist</h2>
+            <p className="text-xs text-white/55 leading-relaxed">
+              Traditional classrooms often struggle to provide personalized pace and deep 
+              conceptual clarity. We exist to bridge this gap. By offering student-first, 
+              concept-driven study paths that replace rote memorization with visualization, 
+              we cultivate lifelong learning outcomes and scientific curiosity.
+            </p>
+          </div>
         </section>
 
-        {/* Direct contributions — honest coming-soon (needs founder payment link) */}
-        <section className="mt-6 rounded-2xl border border-white/[0.08] bg-[#111827] p-6">
-          <div className="flex flex-wrap items-center justify-between gap-2">
-            <h2 className="text-lg font-black">One-time contribution</h2>
-            <span className="rounded-full border border-white/15 bg-white/[0.06] px-3 py-1 text-[10px] font-bold uppercase tracking-wide text-white/55">
-              Checkout opening soon
-            </span>
+        {/* ── C. TECHNOLOGY FOR EDUCATION ─────────────────────────────────── */}
+        <section className="space-y-6">
+          <div className="text-center space-y-2">
+            <h2 className="text-2xl font-black text-white flex items-center justify-center gap-2">
+              <Cpu className="h-6 w-6 text-cyan-400" /> Technology for Education
+            </h2>
+            <p className="text-xs text-white/50 max-w-xl mx-auto">
+              Our pedagogical engines utilize artificial intelligence to design adaptive learning loops.
+            </p>
           </div>
-          <p className="mt-1.5 text-sm text-white/60">
-            Contributions start at ₹100. Direct checkout is being wired up — until then, going Pro is
-            the way to contribute.
-          </p>
-          <div className="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-3">
-            {CONTRIBUTION_TIERS.map((t) => (
-              <div
-                key={t.amount}
-                className="cursor-not-allowed rounded-xl border border-white/[0.08] bg-white/[0.03] p-4 text-center opacity-70"
-                aria-disabled="true"
-              >
-                <p className="text-2xl font-black text-white/80">{t.amount}</p>
-                <p className="mt-1 text-[11px] leading-snug text-white/45">{t.note}</p>
+
+          <div className="grid gap-4 sm:grid-cols-3">
+            <div className="p-5 rounded-2xl border border-white/[0.05] bg-black/20 space-y-2">
+              <h3 className="text-sm font-bold text-cyan-300">Intelligent Doubt Solving</h3>
+              <p className="text-xs text-white/50 leading-relaxed">
+                Instant explanation engines trained to break down complex physical chemistry equations 
+                and organic synthesis steps.
+              </p>
+            </div>
+            <div className="p-5 rounded-2xl border border-white/[0.05] bg-black/20 space-y-2">
+              <h3 className="text-sm font-bold text-violet-300">Personalized Pathways</h3>
+              <p className="text-xs text-white/50 leading-relaxed">
+                Adaptive study plans that identify conceptual weak areas and recommend tailored practice modules.
+              </p>
+            </div>
+            <div className="p-5 rounded-2xl border border-white/[0.05] bg-black/20 space-y-2">
+              <h3 className="text-sm font-bold text-emerald-300">Smart Revision Systems</h3>
+              <p className="text-xs text-white/50 leading-relaxed">
+                Retrieval practice tools that track performance trends to suggest high-impact revision chapters.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* ── D. THE FUTURE WE ARE BUILDING ────────────────────────────── */}
+        <section className="rounded-3xl border border-white/[0.08] bg-[#111827] p-6 md:p-8 space-y-6">
+          <div className="space-y-2">
+            <h2 className="text-2xl font-black text-white flex items-center gap-2">
+              <Sparkles className="h-6 w-6 text-yellow-400" /> The Future We Are Building
+            </h2>
+            <p className="text-xs text-white/50">
+              Our engineering roadmap leverages next-generation technologies to change how chemistry is learned:
+            </p>
+          </div>
+
+          <div className="grid gap-4 sm:grid-cols-2 text-xs">
+            <div className="flex gap-3">
+              <span className="text-cyan-400 font-bold font-mono">01</span>
+              <div>
+                <h4 className="font-bold text-white">AI Chemistry Tutor & Companion</h4>
+                <p className="text-white/50 mt-0.5">An interactive conversation partner for step-by-step molecular mechanics.</p>
               </div>
-            ))}
+            </div>
+            <div className="flex gap-3">
+              <span className="text-cyan-400 font-bold font-mono">02</span>
+              <div>
+                <h4 className="font-bold text-white">Intelligent Learning Analytics</h4>
+                <p className="text-white/50 mt-0.5">Concept-by-concept mastery maps detailing exact readiness metrics.</p>
+              </div>
+            </div>
+            <div className="flex gap-3">
+              <span className="text-cyan-400 font-bold font-mono">03</span>
+              <div>
+                <h4 className="font-bold text-white">Interactive Simulations & Virtual Labs</h4>
+                <p className="text-white/50 mt-0.5">A sandbox to experiment with atomic configurations and reaction kinetics safely.</p>
+              </div>
+            </div>
+            <div className="flex gap-3">
+              <span className="text-cyan-400 font-bold font-mono">04</span>
+              <div>
+                <h4 className="font-bold text-white">Multimodal Board Evaluation</h4>
+                <p className="text-white/50 mt-0.5">AI-powered grading of subjective worksheets mapped directly to board schemes.</p>
+              </div>
+            </div>
           </div>
         </section>
 
-        {/* What support funds — real platform facts only */}
-        <section className="mt-6 rounded-2xl border border-white/[0.08] bg-[#111827] p-6">
-          <h2 className="text-lg font-black">Where it goes</h2>
-          <ul className="mt-3 space-y-2 text-sm text-white/70">
-            <li className="flex gap-2"><span className="text-cyan-400">•</span> Free flagship chapters — General Organic Chemistry, Mole Concept, Periodic Table — stay fully unlocked for everyone.</li>
-            <li className="flex gap-2"><span className="text-cyan-400">•</span> The daily free Snap &amp; Solve quota and its AI compute.</li>
-            <li className="flex gap-2"><span className="text-cyan-400">•</span> Hand-verified notes, PYQ intelligence and test content — authored, never scraped.</li>
-          </ul>
+        {/* ── E. IMPACT WE WANT TO CREATE ─────────────────────────────────── */}
+        <section className="space-y-6">
+          <div className="text-center space-y-2">
+            <h2 className="text-2xl font-black text-white flex items-center justify-center gap-2">
+              <Globe className="h-6 w-6 text-cyan-400" /> Impact We Want to Create
+            </h2>
+            <p className="text-xs text-white/50 max-w-xl mx-auto">
+              Our core objective is geographic and systemic reach, supporting:
+            </p>
+          </div>
+
+          <div className="grid gap-3 sm:grid-cols-4 text-center">
+            <div className="p-4 rounded-xl border border-white/[0.04] bg-white/[0.02]">
+              <span className="block text-sm font-bold text-white">School Boards</span>
+              <span className="block text-[10px] text-white/40 mt-1">Class 11 &amp; 12</span>
+            </div>
+            <div className="p-4 rounded-xl border border-white/[0.04] bg-white/[0.02]">
+              <span className="block text-sm font-bold text-white">JEE &amp; NEET</span>
+              <span className="block text-[10px] text-white/40 mt-1">Entrance Aspirants</span>
+            </div>
+            <div className="p-4 rounded-xl border border-white/[0.04] bg-white/[0.02]">
+              <span className="block text-sm font-bold text-white">Olympiads</span>
+              <span className="block text-[10px] text-white/40 mt-1">Advanced Chemistry</span>
+            </div>
+            <div className="p-4 rounded-xl border border-white/[0.04] bg-white/[0.02]">
+              <span className="block text-sm font-bold text-white">Rural &amp; Towns</span>
+              <span className="block text-[10px] text-white/40 mt-1">Unrestricted Access</span>
+            </div>
+          </div>
         </section>
 
-        {/* Direct contact */}
-        <section className="mt-6 rounded-2xl border border-white/[0.08] bg-[#111827] p-6 text-center">
-          <h2 className="text-lg font-black">Need help or have a question?</h2>
-          <p className="mt-1.5 text-sm text-white/60">Write to us — a real person reads every mail.</p>
-          <a href="mailto:hello@synergicbond.com"
-            className="mt-3 inline-block rounded-xl border border-cyan-400/40 bg-cyan-500/10 px-5 py-2.5 text-sm font-black text-cyan-300 transition hover:bg-cyan-500/20">
-            hello@synergicbond.com
-          </a>
+        {/* ── SUSTAINING THE MISSION ──────────────────────────────────────── */}
+        <section className="relative overflow-hidden rounded-3xl border border-cyan-400/20 bg-gradient-to-br from-[#111827] to-[#0f1d3a] p-8 text-center space-y-4">
+          <div className="absolute inset-0">
+            <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-48 w-48 rounded-full bg-cyan-500/10 blur-3xl pointer-events-none" />
+          </div>
+          <div className="relative space-y-2">
+            <h2 className="text-xl md:text-2xl font-black text-white">Join the Educational Mission</h2>
+            <p className="text-xs text-white/60 max-w-lg mx-auto">
+              Our Pro subscriptions fund ongoing server compute, AI tokens, and keep free chapters
+              fully open for students from small-towns and government schools.
+            </p>
+          </div>
+          <div className="relative pt-2">
+            <Link
+              href="/pricing"
+              className="inline-block rounded-xl bg-cyan-500 text-black px-6 py-3 text-sm font-bold hover:bg-cyan-400 transition"
+            >
+              Explore Pro Plans →
+            </Link>
+          </div>
         </section>
+
       </div>
     </main>
   );

@@ -1,5 +1,7 @@
 import Link from "next/link";
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
+import { isFreeChapter } from "@/lib/freeChapters";
+import { getUserEntitlements } from "@/lib/access/entitlements";
 import { masterSyllabus } from "@/lib/masterSyllabus/all";
 import { getProgram } from "@/lib/programs";
 import { ALL_PYQ_QUESTIONS, getChapterStats } from "@/lib/pyq";
@@ -75,6 +77,15 @@ export default async function ChapterEnginePage({ params }: { params: Promise<{ 
   if (!chapter || !program) notFound();
   // Program lock: the chapter must belong to this program's verified syllabus.
   if (!chapter.exams.includes(engine.examTag)) notFound();
+
+  // Access gate — mirrors /chapter/[id]: free flagship chapters pass through;
+  // premium chapters need Pro or a purchased-program entitlement. Server
+  // redirect means zero premium content reaches unauthorized clients.
+  if (!isFreeChapter(id)) {
+    const { hasUser, keys } = await getUserEntitlements();
+    if (!hasUser) redirect(`/auth/signin?next=/programs/${slug}/chapter/${id}`);
+    if (!keys.has(slug)) redirect("/pricing");
+  }
 
   const base = `/programs/${slug}`;
   const pyqChapters: PYQChapter[] = CHAPTER_PYQ_MAP[id] ?? [];

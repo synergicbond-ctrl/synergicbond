@@ -1,14 +1,13 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { BOARDS, CLASSES, getBoard, getPurchasedPrograms } from "@/lib/boardDashboard";
+import { CLASSES, getBoard } from "@/lib/boardDashboard";
+import { getPurchasedBoardPrograms } from "@/lib/access/entitlements";
 
 // /dashboard/[board] — Board → Class selector (CBSE / ICSE / State Boards).
 // Board-aware; boards are never mixed. Purchased classes surface at top.
+// Dynamic: purchased badges come from the signed-in user's real entitlements.
 
-export function generateStaticParams() {
-  return BOARDS.map((b) => ({ board: b.slug }));
-}
-export const dynamicParams = false;
+export const dynamic = "force-dynamic";
 
 export async function generateMetadata({ params }: { params: Promise<{ board: string }> }) {
   const { board } = await params;
@@ -21,7 +20,7 @@ export default async function BoardPage({ params }: { params: Promise<{ board: s
   const b = getBoard(board);
   if (!b) notFound();
 
-  const purchased = await getPurchasedPrograms();
+  const purchased = await getPurchasedBoardPrograms();
   const purchasedHere = purchased.filter((p) => p.board === b.slug).map((p) => p.class);
 
   return (

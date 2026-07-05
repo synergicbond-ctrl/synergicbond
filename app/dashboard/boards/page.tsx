@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { BOARDS, getBoard, getClass, getPurchasedPrograms } from "@/lib/boardDashboard";
+import { BOARDS, getBoard, getClass } from "@/lib/boardDashboard";
+import { getPurchasedBoardPrograms } from "@/lib/access/entitlements";
 
 // /dashboard/boards — School Boards entry. Purchased programs surface at top;
 // the full catalogue is browsable below. No fabricated purchase data.
@@ -12,7 +13,7 @@ export const metadata = {
 };
 
 export default async function BoardsPage() {
-  const purchased = await getPurchasedPrograms();
+  const purchased = await getPurchasedBoardPrograms();
 
   return (
     <main className="min-h-screen bg-[#0B1220] text-white">

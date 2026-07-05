@@ -161,14 +161,8 @@ export const SECTION_ROUTES: Record<string, (base: string) => string> = {
 };
 
 // ── Purchase gating ───────────────────────────────────────────────────────────
-// A purchased program is a real (board, class) entitlement. There is NO
-// board-class purchase table yet, so this returns [] — the UI then shows the
-// full catalogue as browsable preview and NEVER fabricates "purchased" badges.
-// Wiring real entitlements later is a one-function change here.
+// A purchased program is a real (board, class) entitlement. The read path
+// lives in lib/access/entitlements.ts (SERVER-ONLY — Pro subscription ⇒ all
+// programs; granular rows from user_program_entitlements, migration 013).
+// This module stays a pure data SSOT so client components can import types.
 export interface PurchasedProgram { board: BoardSlug; class: ClassSlug }
-
-export async function getPurchasedPrograms(): Promise<PurchasedProgram[]> {
-  // TODO: read from real entitlements (Razorpay subscription → board/class map)
-  // once a purchases table exists. Never returns fabricated data.
-  return [];
-}

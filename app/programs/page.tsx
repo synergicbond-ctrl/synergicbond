@@ -1,14 +1,18 @@
 import Link from "next/link";
 import { PROGRAMS } from "@/lib/programs";
+import { getUserEntitlements } from "@/lib/access/entitlements";
 
 // ─────────────────────────────────────────────────────────────────────────────
 // /programs — Programs landing (Roadmap V2 · Week 1).
 //
 // Structure-only hub: one card per program from the programs SSOT, national
-// entrance tracks first, boards after. No analytics, no AI, no progress —
-// those arrive with the program-scoped Learn (Week 2) and Practice (Week 3)
-// routes. Server component, zero client JS.
+// entrance tracks first, boards after. Now dynamic: signed-in users see an
+// "Included in your plan" badge on programs their REAL entitlements cover
+// (Pro subscription or a granular purchase) — never fabricated. Signed-out
+// users see the plain catalogue. Server component, zero client JS.
 // ─────────────────────────────────────────────────────────────────────────────
+
+export const dynamic = "force-dynamic";
 
 export const metadata = {
   title: "Programs — SYNERGIC BOND",
@@ -20,13 +24,21 @@ const ENTRANCE = PROGRAMS.filter((p) => p.group === "entrance");
 const BOARDS = PROGRAMS.filter((p) => p.group === "boards");
 const GLOBAL = PROGRAMS.filter((p) => p.group === "global");
 
-function ProgramCard({ slug, name, kicker, tagline, chips, accent }: (typeof PROGRAMS)[number]) {
+function ProgramCard({ owned, ...p }: (typeof PROGRAMS)[number] & { owned: boolean }) {
+  const { slug, name, kicker, tagline, chips, accent } = p;
   return (
     <Link
       href={`/programs/${slug}`}
       className={`group flex flex-col rounded-2xl border bg-white/[0.02] p-6 transition hover:-translate-y-0.5 hover:bg-white/[0.04] ${accent.card}`}
     >
-      <div className={`text-[11px] font-bold uppercase tracking-widest ${accent.text}`}>{kicker}</div>
+      <div className="flex items-start justify-between gap-2">
+        <div className={`text-[11px] font-bold uppercase tracking-widest ${accent.text}`}>{kicker}</div>
+        {owned && (
+          <span className="shrink-0 rounded-full border border-emerald-400/30 bg-emerald-400/10 px-2 py-0.5 text-[10px] font-bold uppercase text-emerald-300">
+            Included in your plan
+          </span>
+        )}
+      </div>
       <h2 className="mt-2 text-2xl font-black tracking-tight text-white">{name}</h2>
       <p className="mt-2 flex-1 text-sm leading-relaxed text-zinc-400">{tagline}</p>
       <div className="mt-4 flex flex-wrap gap-1.5">
@@ -43,7 +55,13 @@ function ProgramCard({ slug, name, kicker, tagline, chips, accent }: (typeof PRO
   );
 }
 
-export default function ProgramsPage() {
+export default async function ProgramsPage() {
+  const { keys } = await getUserEntitlements();
+  // Entrance engine programs match by slug; board programs are owned when any
+  // of their classes is entitled. Structure-only hubs never claim ownership.
+  const owns = (slug: string) =>
+    keys.has(slug) || keys.has(`${slug}:class-11`) || keys.has(`${slug}:class-12`);
+
   return (
     <main className="min-h-screen bg-black text-white">
       <div className="border-b border-white/10 bg-gradient-to-b from-cyan-950/20 to-black px-6 py-16 text-center">
@@ -60,7 +78,7 @@ export default function ProgramsPage() {
         <p className="mb-6 text-sm text-zinc-500">Competitive tracks with exam-specific pattern and depth</p>
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-2">
           {ENTRANCE.map((p) => (
-            <ProgramCard key={p.slug} {...p} />
+            <ProgramCard key={p.slug} {...p} owned={owns(p.slug)} />
           ))}
         </div>
 
@@ -68,7 +86,7 @@ export default function ProgramsPage() {
         <p className="mb-6 text-sm text-zinc-500">Class 11–12 board preparation on the same verified core</p>
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {BOARDS.map((p) => (
-            <ProgramCard key={p.slug} {...p} />
+            <ProgramCard key={p.slug} {...p} owned={owns(p.slug)} />
           ))}
         </div>
 
@@ -76,7 +94,7 @@ export default function ProgramsPage() {
         <p className="mb-6 text-sm text-zinc-500">GATE Chemistry and international curricula on the same verified core</p>
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-2">
           {GLOBAL.map((p) => (
-            <ProgramCard key={p.slug} {...p} />
+            <ProgramCard key={p.slug} {...p} owned={owns(p.slug)} />
           ))}
         </div>
       </div>

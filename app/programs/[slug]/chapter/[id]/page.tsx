@@ -17,6 +17,8 @@ import EngineQuestionBank from "@/components/engine/EngineQuestionBank";
 import IllustrationLab from "@/components/engine/IllustrationLab";
 import TutorActions from "@/components/engine/TutorActions";
 import QuestionCard from "@/components/pyq/QuestionCard";
+import NotesRenderer from "@/components/premiumNotes/NotesRenderer";
+import { getPremiumNotes } from "@/lib/premiumNotes";
 
 // ─────────────────────────────────────────────────────────────────────────────
 // /programs/[slug]/chapter/[id] — the premium Chapter Experience (learning
@@ -94,6 +96,7 @@ export default async function ChapterEnginePage({ params }: { params: Promise<{ 
   const ncert = buildNcertIntel(pyqChapters);
   const topics = chapter.concepts.map((c) => c.title).slice(0, 10);
   const authoredHref = AUTHORED_NOTES[id];
+  const premiumNotes = getPremiumNotes(id);
 
   // Per-user layers (route is auth-protected; degrade gracefully regardless).
   const { data: answers } = await getAllUserAnswers();
@@ -172,26 +175,43 @@ export default async function ChapterEnginePage({ params }: { params: Promise<{ 
           )}
         </section>
 
-        {/* 1 · Learn */}
+        {/* 1 · Learn — Premium Notes Engine when authored, syllabus grid otherwise */}
         <section id="learn" className="scroll-mt-16">
           <h2 className="mb-1 text-lg font-black">Learn</h2>
-          <p className="mb-3 text-sm text-white/50">Topics & subtopics from the official syllabus. Visual notes follow the premium template (graphics, analogies, focus & trap boxes, memory tricks, exceptions, applications).</p>
-          <div className="mb-3 flex flex-wrap gap-2">
-            {authoredHref ? (
-              <Link href={authoredHref} className="rounded-xl bg-gradient-to-r from-cyan-400 to-sky-500 px-4 py-2 text-sm font-black text-black">Open premium visual notes →</Link>
-            ) : (
-              <span className="rounded-xl border border-white/10 bg-white/[0.03] px-4 py-2 text-sm text-white/50">Premium visual notes for this chapter are being authored — the official syllabus and full question layer below are live.</span>
-            )}
-            <Link href={`/chapter/${id}`} className="rounded-xl border border-white/15 bg-white/[0.04] px-4 py-2 text-sm font-semibold text-white/80 hover:bg-white/[0.08]">Chapter workspace →</Link>
-          </div>
-          <div className="grid gap-2 sm:grid-cols-2">
-            {chapter.concepts.map((c) => (
-              <div key={c.id} className="rounded-xl border border-white/[0.08] bg-white/[0.02] p-3">
-                <div className="text-sm font-bold text-white/90">{c.title}</div>
-                {c.description && <p className="mt-0.5 text-xs text-white/50">{c.description}</p>}
+          {premiumNotes ? (
+            <>
+              <p className="mb-3 text-sm text-white/50">
+                Full premium notes — topic → subtopic with detailed & visual notes, focus points, exam traps, mistakes, exceptions, memory tricks, solved illustrations, misc examples and revision sheets, scoped to {engine.name}.
+              </p>
+              <div className="mb-4 flex flex-wrap gap-2">
+                {authoredHref && (
+                  <Link href={authoredHref} className="rounded-xl border border-white/15 bg-white/[0.04] px-4 py-2 text-sm font-semibold text-white/80 hover:bg-white/[0.08]">Visual summary page →</Link>
+                )}
+                <Link href={`/chapter/${id}`} className="rounded-xl border border-white/15 bg-white/[0.04] px-4 py-2 text-sm font-semibold text-white/80 hover:bg-white/[0.08]">Chapter workspace →</Link>
               </div>
-            ))}
-          </div>
+              <NotesRenderer notes={premiumNotes} exam={engine.exam} />
+            </>
+          ) : (
+            <>
+              <p className="mb-3 text-sm text-white/50">Topics & subtopics from the official syllabus. Full premium notes (the Chemical Bonding template) are being authored chapter by chapter.</p>
+              <div className="mb-3 flex flex-wrap gap-2">
+                {authoredHref ? (
+                  <Link href={authoredHref} className="rounded-xl bg-gradient-to-r from-cyan-400 to-sky-500 px-4 py-2 text-sm font-black text-black">Open premium visual notes →</Link>
+                ) : (
+                  <span className="rounded-xl border border-white/10 bg-white/[0.03] px-4 py-2 text-sm text-white/50">Premium notes for this chapter are being authored — the official syllabus and full question layer below are live.</span>
+                )}
+                <Link href={`/chapter/${id}`} className="rounded-xl border border-white/15 bg-white/[0.04] px-4 py-2 text-sm font-semibold text-white/80 hover:bg-white/[0.08]">Chapter workspace →</Link>
+              </div>
+              <div className="grid gap-2 sm:grid-cols-2">
+                {chapter.concepts.map((c) => (
+                  <div key={c.id} className="rounded-xl border border-white/[0.08] bg-white/[0.02] p-3">
+                    <div className="text-sm font-bold text-white/90">{c.title}</div>
+                    {c.description && <p className="mt-0.5 text-xs text-white/50">{c.description}</p>}
+                  </div>
+                ))}
+              </div>
+            </>
+          )}
         </section>
 
         {/* 2 · NCERT Intelligence */}

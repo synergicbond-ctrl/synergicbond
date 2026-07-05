@@ -15,6 +15,7 @@ import {
   GraduationCap, Microscope, Trophy, Atom, School, Landmark,
   // WEEK 13 final navbar (Roadmap Phase 9)
   Home, Sigma, FlaskConical, FileText, Calendar, History, Heart,
+  CreditCard,
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 
@@ -383,6 +384,9 @@ export default function Navbar() {
                     </div>
                     <Link href="/dashboard" onClick={() => setAcctOpen(false)} className="flex items-center gap-2.5 w-full px-3 py-2 rounded-lg text-xs font-medium text-gray-300 hover:text-white hover:bg-white/5 transition">
                       <LayoutDashboard className="h-4 w-4 text-cyan-400" /> My Dashboard
+                    </Link>
+                    <Link href="/dashboard/subscription" onClick={() => setAcctOpen(false)} className="flex items-center gap-2.5 w-full px-3 py-2 rounded-lg text-xs font-medium text-gray-300 hover:text-white hover:bg-white/5 transition">
+                      <CreditCard className="h-4 w-4 text-cyan-400" /> Manage Subscriptions
                     </Link>
                     <Link href="/achievements" onClick={() => setAcctOpen(false)} className="flex items-center gap-2.5 w-full px-3 py-2 rounded-lg text-xs font-medium text-gray-300 hover:text-white hover:bg-white/5 transition">
                       <Medal className="h-4 w-4 text-yellow-400" /> Achievements

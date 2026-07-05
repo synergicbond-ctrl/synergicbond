@@ -323,14 +323,14 @@ export default function Home() {
           </div>
         </section>
 
-        {/* ── 8. WHY SYNERGIC BOND IS DIFFERENT ───────────────────────── */}
+        {/* ── 8. WHY STUDENTS CHOOSE SYNERGIC BOND ───────────────────────── */}
         <section className="space-y-8">
           <div className="text-center space-y-2">
-            <h2 className="text-3xl font-black text-white">Why Synergic Bond?</h2>
-            <p className="text-xs text-white/50">Designed around deep academic outcomes.</p>
+            <h2 className="text-3xl font-black text-white">Why Students Choose Synergic Bond</h2>
+            <p className="text-xs text-white/50 font-semibold">Designed around deep academic outcomes.</p>
           </div>
           
-          <div className="grid gap-4 sm:grid-cols-3">
+          <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-3">
             <div className="p-5 rounded-2xl border border-white/[0.06] bg-[#111827] space-y-2">
               <h3 className="text-sm font-bold text-white">Chemistry-Only Focus</h3>
               <p className="text-xs text-white/50 leading-relaxed">
@@ -338,33 +338,39 @@ export default function Home() {
               </p>
             </div>
             <div className="p-5 rounded-2xl border border-white/[0.06] bg-[#111827] space-y-2">
-              <h3 className="text-sm font-bold text-white">Verified Syllabus</h3>
+              <h3 className="text-sm font-bold text-white">AI Chemistry Tutor</h3>
               <p className="text-xs text-white/50 leading-relaxed">
-                Curriculums are mapped strictly to official CBSE, ISC, JEE, NEET, and NSEC guidelines, preventing out-of-scope clutter.
+                Personalized step-by-step doubt-solving and grading feedback available 24/7.
               </p>
             </div>
             <div className="p-5 rounded-2xl border border-white/[0.06] bg-[#111827] space-y-2">
-              <h3 className="text-sm font-bold text-white">Affordable Access</h3>
+              <h3 className="text-sm font-bold text-white">Chapter-wise Notes</h3>
               <p className="text-xs text-white/50 leading-relaxed">
-                We believe premium conceptual preparation should be highly accessible to students in small towns and villages.
+                Verified detailed theory, short notes, formula sheets, and derivations in one place.
               </p>
             </div>
             <div className="p-5 rounded-2xl border border-white/[0.06] bg-[#111827] space-y-2">
-              <h3 className="text-sm font-bold text-white">AI-Powered Learning</h3>
+              <h3 className="text-sm font-bold text-white">PYQs &amp; Mock Tests</h3>
               <p className="text-xs text-white/50 leading-relaxed">
-                Our AI engines evaluate subjective scripts, compile error patterns, and auto-grade numerical keyboard inputs.
+                Real previous year questions and timed exam simulations to build test readiness.
               </p>
             </div>
             <div className="p-5 rounded-2xl border border-white/[0.06] bg-[#111827] space-y-2">
-              <h3 className="text-sm font-bold text-white">Board + Entrance Alignment</h3>
+              <h3 className="text-sm font-bold text-white">Board + Entrance Preparation</h3>
               <p className="text-xs text-white/50 leading-relaxed">
-                Saves time and eliminates confusion by providing school-board descriptive notes alongside competitive MCQ pools.
+                Aligning school-board descriptive answers alongside competitive objective question formats.
               </p>
             </div>
             <div className="p-5 rounded-2xl border border-white/[0.06] bg-[#111827] space-y-2">
-              <h3 className="text-sm font-bold text-white">Visual Concept Learning</h3>
+              <h3 className="text-sm font-bold text-white">Visual Learning Tools</h3>
               <p className="text-xs text-white/50 leading-relaxed">
-                Leverage interactive visual tools like periodic tables, compound color maps, and named reactions indexes.
+                Interactive visual aids including periodic tables, reagent lists, and compound colors.
+              </p>
+            </div>
+            <div className="p-5 rounded-2xl border border-white/[0.06] bg-[#111827] space-y-2 sm:col-span-2 md:col-span-3">
+              <h3 className="text-sm font-bold text-cyan-300">Affordable Access</h3>
+              <p className="text-xs text-white/50 leading-relaxed">
+                Sustaining high-quality preparatory tools at a low cost for students nationwide.
               </p>
             </div>
           </div>

@@ -5,6 +5,8 @@ import { NextResponse } from "next/server";
 import { createClient } from "@/lib/supabase/server";
 import { ALL_FREE_CHAPTER_IDS, isFreeChapter } from "@/lib/freeChapters";
 import { masterSyllabus } from "@/lib/masterSyllabus/all";
+// TEMPORARY CONTENT-DEVELOPMENT BYPASS. REMOVE BEFORE PUBLIC LAUNCH.
+import { isFounderBypassActive } from "@/lib/access/founderBypass";
 
 export async function GET(req: Request) {
   try {
@@ -32,17 +34,22 @@ export async function GET(req: Request) {
       userId = user?.id ?? null;
 
       if (userId) {
-        const { data: sub } = await supabase
-          .from("subscriptions")
-          .select("status, expires_at, plan")
-          .eq("user_id", userId)
-          .eq("status", "active")
-          .gte("expires_at", new Date().toISOString())
-          .order("expires_at", { ascending: false })
-          .limit(1)
-          .single();
+        // ── TEMPORARY CONTENT-DEVELOPMENT BYPASS. REMOVE BEFORE PUBLIC LAUNCH. ──
+        if (await isFounderBypassActive(supabase)) {
+          subscriptionActive = true;
+        } else {
+          const { data: sub } = await supabase
+            .from("subscriptions")
+            .select("status, expires_at, plan")
+            .eq("user_id", userId)
+            .eq("status", "active")
+            .gte("expires_at", new Date().toISOString())
+            .order("expires_at", { ascending: false })
+            .limit(1)
+            .single();
 
-        subscriptionActive = !!sub;
+          subscriptionActive = !!sub;
+        }
       }
     } catch {}
 

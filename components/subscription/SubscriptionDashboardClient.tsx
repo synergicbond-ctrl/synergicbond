@@ -9,7 +9,7 @@ import {
 import PaymentGateway from "@/components/PaymentGateway";
 import StudentDetailsForm from "@/components/StudentDetailsForm";
 import { PLANS, PROGRAM_ACCESS_PRICE_PAISE_BY_KEY, COMING_SOON_PROGRAM_KEYS, COMING_SOON_NOTE } from "@/lib/subscription";
-import { programKeyToHref } from "@/lib/programs";
+import { programKeyToHref, PROGRAM_CATALOG } from "@/lib/programs";
 
 type UserSub = {
   plan: string | null;
@@ -94,19 +94,14 @@ export default function SubscriptionDashboardClient({ user, subscription, entitl
     return activeEntitlements.find(e => e.program_key === key);
   };
 
-  // Group programs for styling & display. `comingSoon` programs (State Boards)
+  // Program catalogue from the SSOT (lib/programs.ts); prices derive from the
+  // paise map so nothing is duplicated. `comingSoon` programs (State Boards)
   // keep their row but are not purchasable — no price, no Add Plan, no checkout.
-  const PROGRAMS_LIST = [
-    { key: "cbse:class-11", name: "CBSE Class 11 Chemistry", price: 499, category: "Boards" },
-    { key: "isc:class-11", name: "ISC Class 11 Chemistry", price: 499, category: "Boards" },
-    { key: "state-boards:class-11", name: "State Boards Class 11", price: 499, category: "Boards" },
-    { key: "cbse:class-12", name: "CBSE Class 12 Chemistry", price: 699, category: "Boards" },
-    { key: "isc:class-12", name: "ISC Class 12 Chemistry", price: 699, category: "Boards" },
-    { key: "state-boards:class-12", name: "State Boards Class 12", price: 699, category: "Boards" },
-    { key: "neet", name: "NEET Entrance Program", price: 999, category: "Entrance" },
-    { key: "jee-main", name: "JEE Main Prep Program", price: 1099, category: "Entrance" },
-    { key: "jee-advanced", name: "JEE Advanced Prep Program", price: 1499, category: "Entrance" },
-  ].map((p) => ({ ...p, comingSoon: COMING_SOON_PROGRAM_KEYS.has(p.key) }));
+  const PROGRAMS_LIST = PROGRAM_CATALOG.map((p) => ({
+    ...p,
+    price: (PROGRAM_ACCESS_PRICE_PAISE_BY_KEY[p.key] ?? 49900) / 100,
+    comingSoon: COMING_SOON_PROGRAM_KEYS.has(p.key),
+  }));
 
   // Expiry Center filtering (expiring in <= 30 days)
   const expiringItems = [];

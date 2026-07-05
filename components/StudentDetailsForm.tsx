@@ -4,20 +4,7 @@ import { useState, useEffect, useCallback } from "react";
 import { supabase } from "@/lib/supabase";
 import { User, Phone, GraduationCap, BookOpen, Mail, Calendar, Megaphone, ShieldQuestion, KeyRound, ArrowRight, X, LogIn, UserPlus } from "lucide-react";
 
-const CLASS_OPTIONS = [
-  { value: "class-11", label: "Class 11" },
-  { value: "class-12", label: "Class 12" },
-  { value: "dropper", label: "Dropper / Repeater" },
-];
-
-const BOARD_OPTIONS = [
-  { value: "cbse", label: "CBSE" },
-  { value: "isc", label: "ISC / ICSE" },
-  { value: "state-boards", label: "State Board" },
-  { value: "neet", label: "NEET" },
-  { value: "jee-main", label: "JEE Main" },
-  { value: "jee-advanced", label: "JEE Advanced" },
-];
+import { CLASS_OPTIONS, BOARD_OPTIONS } from "@/lib/studentOptions";
 
 const DISCOVERY_OPTIONS = [
   "Google Search",

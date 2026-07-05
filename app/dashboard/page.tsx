@@ -1,7 +1,12 @@
 import { createClient } from "@/lib/supabase/server";
 import { masterSyllabus } from "@/lib/masterSyllabus/all";
+import { getUserEntitlements } from "@/lib/access/entitlements";
+import { getRole, isPrivileged } from "@/lib/auth/roles";
+import { COMING_SOON_PROGRAM_KEYS } from "@/lib/subscription";
 import GuestDashboardPreview from "@/components/dashboard/GuestDashboardPreview";
 import { DashboardHeader } from "@/components/dashboard/DashboardHeader";
+import { MyPrograms, resolveOwnedPrograms } from "@/components/dashboard/MyPrograms";
+import { ProfileCard } from "@/components/dashboard/ProfileCard";
 import { SummaryCards } from "@/components/dashboard/SummaryCards";
 import { RecentTests } from "@/components/dashboard/RecentTests";
 import { WeakTopics } from "@/components/dashboard/WeakTopics";
@@ -53,6 +58,25 @@ export default async function DashboardPage() {
     profile?.full_name ||
     user.email?.split("@")[0] ||
     "Student";
+
+  // Real entitlements + role (profiles.role) — drives the My Programs section
+  // and the profile summary. Owner/admin see every program as preview.
+  const [entitlements, role] = await Promise.all([
+    getUserEntitlements(),
+    getRole(supabase, user.id),
+  ]);
+  const privileged = isPrivileged({ id: user.id, role });
+  const ownedPrograms = resolveOwnedPrograms(entitlements.keys, {
+    isOwner: privileged,
+    comingSoonKeys: COMING_SOON_PROGRAM_KEYS,
+  });
+  const subscriptionLabel = privileged
+    ? `${role === "owner" ? "Owner" : "Admin"} all-access`
+    : entitlements.isPro
+      ? "Pro All-Access"
+      : ownedPrograms.length > 0
+        ? `${ownedPrograms.length} program${ownedPrograms.length > 1 ? "s" : ""} active`
+        : "Free Tier";
 
   const averageAccuracy =
     exams?.length
@@ -142,50 +166,72 @@ export default async function DashboardPage() {
     });
 
   return (
-    <main className="min-h-screen bg-black text-white p-8">
-      <DashboardHeader
-        studentName={studentName}
-      />
+    <main className="min-h-screen bg-black text-white px-4 py-8 md:p-8">
+      <div className="max-w-7xl mx-auto">
+        <DashboardHeader
+          studentName={studentName}
+        />
 
-      <div className="mt-8">
-        <SummaryCards data={summaryData} />
-      </div>
-
-      {/* WEEK 15 — onboarding for new students, driven by real activity only.
-          Hidden once the student has both studied and tested. */}
-      {!((sessions?.length ?? 0) > 0 && (exams?.length ?? 0) > 0) && (
-        <div className="mt-8">
-          <OnboardingChecklist
-            state={{
-              hasStudied: (sessions?.length ?? 0) > 0,
-              hasTested: (exams?.length ?? 0) > 0,
-              hasSaved: (saved?.length ?? 0) > 0,
-            }}
-          />
+        {/* ── 1 · MY PROGRAMS + PROFILE — the organizing spine ─────────────── */}
+        <div className="mt-8 grid gap-6 lg:grid-cols-3 items-start">
+          <div className="lg:col-span-2">
+            <MyPrograms programs={ownedPrograms} isOwner={privileged} />
+          </div>
+          <div>
+            <h2 className="text-lg font-black mb-4">Profile</h2>
+            <ProfileCard
+              name={studentName}
+              email={profile?.email || user.email || null}
+              phone={profile?.phone ?? null}
+              classStandard={profile?.class_standard ?? null}
+              boardProgram={profile?.board_program ?? null}
+              subscriptionLabel={subscriptionLabel}
+            />
+          </div>
         </div>
-      )}
 
-      <div className="mt-8 grid gap-8 lg:grid-cols-2">
-        <RecentTests tests={recentTests} />
-        <WeakTopics topics={weakTopics} />
-      </div>
+        {/* ── 2 · CONTINUE LEARNING ─────────────────────────────────────────── */}
+        <section className="mt-10">
+          <h2 className="text-lg font-black mb-4">Continue Learning</h2>
 
-      <div className="mt-8 grid gap-8 lg:grid-cols-2">
-        <CoachWidget
-          recommendations={coachRecommendations}
-        />
+          {/* WEEK 15 — onboarding for new students, driven by real activity only.
+              Hidden once the student has both studied and tested. */}
+          {!((sessions?.length ?? 0) > 0 && (exams?.length ?? 0) > 0) && (
+            <div className="mb-6">
+              <OnboardingChecklist
+                state={{
+                  hasStudied: (sessions?.length ?? 0) > 0,
+                  hasTested: (exams?.length ?? 0) > 0,
+                  hasSaved: (saved?.length ?? 0) > 0,
+                }}
+              />
+            </div>
+          )}
 
-        <RevisionQueue
-          chapters={revisionChapters}
-        />
-      </div>
+          <div className="grid gap-6 lg:grid-cols-2">
+            <RevisionQueue chapters={revisionChapters} />
+            <CoachWidget recommendations={coachRecommendations} />
+          </div>
+        </section>
 
-      <div className="mt-8">
-        <ActivityLog />
-      </div>
+        {/* ── 3 · PROGRESS & PERFORMANCE ────────────────────────────────────── */}
+        <section className="mt-10">
+          <h2 className="text-lg font-black mb-4">Progress &amp; Performance</h2>
+          <SummaryCards data={summaryData} />
+          <div className="mt-6 grid gap-6 lg:grid-cols-2">
+            <RecentTests tests={recentTests} />
+            <WeakTopics topics={weakTopics} />
+          </div>
+          <div className="mt-6">
+            <ActivityLog />
+          </div>
+        </section>
 
-      <div className="mt-8">
-        <QuickActions />
+        {/* ── 4 · QUICK TOOLS ───────────────────────────────────────────────── */}
+        <section className="mt-10">
+          <h2 className="text-lg font-black mb-4">Quick Tools</h2>
+          <QuickActions />
+        </section>
       </div>
     </main>
   );

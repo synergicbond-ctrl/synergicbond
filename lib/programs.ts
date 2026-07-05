@@ -233,3 +233,44 @@ export function programKeyToHref(programKey: string): string {
   }
   return `/programs/${programKey}`;
 }
+
+// ─── Purchasable-program catalogue (SSOT) ────────────────────────────────────
+// The nine sellable program keys with display names — shared by the student
+// dashboard, the subscription dashboard and anything else that lists programs,
+// so names/keys are never duplicated. `aliasKeys` covers the icse↔isc split:
+// checkout sells `isc:*` keys while the Pro/owner derivation also emits
+// `icse:*` keys for the same experience.
+export interface CatalogProgram {
+  key: string;
+  name: string;
+  category: "Boards" | "Entrance";
+  aliasKeys?: string[];
+}
+
+export const PROGRAM_CATALOG: CatalogProgram[] = [
+  { key: "cbse:class-11", name: "CBSE Class 11 Chemistry", category: "Boards" },
+  { key: "isc:class-11", name: "ISC Class 11 Chemistry", category: "Boards", aliasKeys: ["icse:class-11"] },
+  { key: "state-boards:class-11", name: "State Boards Class 11", category: "Boards" },
+  { key: "cbse:class-12", name: "CBSE Class 12 Chemistry", category: "Boards" },
+  { key: "isc:class-12", name: "ISC Class 12 Chemistry", category: "Boards", aliasKeys: ["icse:class-12"] },
+  { key: "state-boards:class-12", name: "State Boards Class 12", category: "Boards" },
+  { key: "neet", name: "NEET Entrance Program", category: "Entrance" },
+  { key: "jee-main", name: "JEE Main Prep Program", category: "Entrance" },
+  { key: "jee-advanced", name: "JEE Advanced Prep Program", category: "Entrance" },
+];
+
+/** Does an entitlement key-set cover this catalogue entry (key or alias)? */
+export function ownsCatalogProgram(keys: ReadonlySet<string>, p: CatalogProgram): boolean {
+  return keys.has(p.key) || (p.aliasKeys ?? []).some((k) => keys.has(k));
+}
+
+/** The in-program destinations the dashboard deep-links to. Chapter-wise
+ *  learning/notes is the primary action; practice and tests are secondary.
+ *  Entrance hubs and board dashboards expose these under different paths. */
+export function programKeyToActions(programKey: string): { notes: string; practice: string; tests: string } {
+  const base = programKeyToHref(programKey);
+  const isBoard = programKey.includes(":");
+  return isBoard
+    ? { notes: `${base}/full-syllabus`, practice: `${base}/practice`, tests: `${base}/custom-test` }
+    : { notes: `${base}/learn`, practice: `${base}/practice`, tests: `${base}/tests` };
+}

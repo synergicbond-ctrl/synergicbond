@@ -195,77 +195,87 @@ export default function PaymentGateway({
   }
 
   return (
-    <div className="fixed inset-0 z-[100] flex items-center justify-center p-6 bg-black/70 backdrop-blur-sm">
-      <div className="relative max-w-md w-full rounded-3xl bg-[#111827] border border-white/[0.08] p-7 shadow-2xl">
-        <button onClick={onClose} className="absolute top-4 right-4 text-white/40 hover:text-white">
+    <div className="fixed inset-0 z-[100] flex items-end justify-center bg-black/70 backdrop-blur-sm sm:items-center sm:p-6">
+      <div className="relative flex max-h-[90vh] w-full max-w-md flex-col overflow-hidden rounded-t-3xl border border-white/[0.08] bg-[#111827] shadow-2xl sm:rounded-3xl">
+        <button
+          onClick={onClose}
+          aria-label="Close checkout"
+          className="absolute top-4 right-4 z-10 text-white/40 transition hover:text-white"
+        >
           <X className="h-5 w-5" />
         </button>
 
-        <div className="mb-6">
-          <p className="text-xs font-bold text-cyan-400 uppercase tracking-wider">Checkout</p>
-          <h3 className="text-xl font-black mt-1">{plan}</h3>
-          <p className="text-3xl font-black text-white mt-2">{amount}<span className="text-sm text-white/40 font-normal"> / {period}</span></p>
+        {/* Scrollable body */}
+        <div className="flex-1 overflow-y-auto overscroll-contain px-6 pt-7 pb-5 sm:px-7">
+          <div className="mb-6 pr-8">
+            <p className="text-xs font-bold text-cyan-400 uppercase tracking-wider">Checkout</p>
+            <h3 className="text-xl font-black mt-1">{plan}</h3>
+            <p className="text-3xl font-black text-white mt-2">{amount}<span className="text-sm text-white/40 font-normal"> / {period}</span></p>
+          </div>
+
+          <p className="text-xs font-semibold text-white/50 mb-3">Select payment method</p>
+          <div className="grid grid-cols-2 gap-2 mb-5">
+            {methods.map((m) => {
+              const Icon = m.icon;
+              const active = selected === m.id;
+              return (
+                <button
+                  key={m.id}
+                  onClick={() => setSelected(m.id)}
+                  className={`flex flex-col items-start gap-1 rounded-xl border p-3 text-left transition ${
+                    active ? "border-cyan-400/60 bg-cyan-500/10" : "border-white/[0.08] bg-black/30 hover:border-white/20"
+                  }`}
+                >
+                  <Icon className={`h-4 w-4 ${active ? "text-cyan-400" : "text-white/50"}`} />
+                  <span className="text-xs font-semibold text-white/80">{m.label}</span>
+                  <span className="text-[9px] text-white/30">{m.hint}</span>
+                </button>
+              );
+            })}
+          </div>
+
+          {/* Warning Copy */}
+          <div className="bg-black/40 border border-white/5 rounded-xl p-3 text-[10px] text-white/60 leading-relaxed space-y-1.5">
+            <p className="font-extrabold text-amber-400">Subscription Terms</p>
+            <p>
+              This is an annual program subscription. Access remains active for 365 days from activation.
+              Once expired, paid content will be locked unless renewed.
+            </p>
+            <p className="text-white/40">
+              Once added, a program cannot be removed or downgraded. Please confirm before payment.
+            </p>
+          </div>
         </div>
 
-        <p className="text-xs font-semibold text-white/50 mb-3">Select payment method</p>
-        <div className="grid grid-cols-2 gap-2 mb-4">
-          {methods.map((m) => {
-            const Icon = m.icon;
-            const active = selected === m.id;
-            return (
-              <button
-                key={m.id}
-                onClick={() => setSelected(m.id)}
-                className={`flex flex-col items-start gap-1 rounded-xl border p-3 text-left transition ${
-                  active ? "border-cyan-400/60 bg-cyan-500/10" : "border-white/[0.08] bg-black/30 hover:border-white/20"
-                }`}
-              >
-                <Icon className={`h-4 w-4 ${active ? "text-cyan-400" : "text-white/50"}`} />
-                <span className="text-xs font-semibold text-white/80">{m.label}</span>
-                <span className="text-[9px] text-white/30">{m.hint}</span>
-              </button>
-            );
-          })}
-        </div>
+        {/* Sticky footer — consent + pay stay visible on every screen */}
+        <div className="shrink-0 border-t border-white/[0.08] bg-[#111827] px-6 pt-4 pb-6 sm:px-7">
+          {/* Legal Consent Checkbox */}
+          <label className="flex items-start gap-2.5 mb-4 cursor-pointer select-none">
+            <input
+              type="checkbox"
+              checked={consentChecked}
+              onChange={(e) => setConsentChecked(e.target.checked)}
+              className="mt-0.5 rounded border-white/10 bg-black/50 text-cyan-500 focus:ring-0 focus:ring-offset-0 h-3.5 w-3.5"
+            />
+            <span className="text-[10px] text-white/70 leading-normal">
+              I understand this annual program subscription will be added to my account after payment.
+              It cannot be removed or downgraded during the active period.
+            </span>
+          </label>
 
-        {/* Warning Copy */}
-        <div className="mb-4 bg-black/40 border border-white/5 rounded-xl p-3 text-[10px] text-white/60 leading-relaxed space-y-1">
-          <p className="font-extrabold text-amber-400">Subscription Terms</p>
-          <p>
-            This is an annual program subscription. Access remains active for 365 days from activation. 
-            Once expired, paid content will be locked unless renewed.
+          <button
+            onClick={handlePay}
+            disabled={processing || !consentChecked}
+            className="w-full rounded-xl bg-gradient-to-r from-cyan-400 to-sky-500 py-3 text-sm font-bold text-black transition hover:-translate-y-0.5 disabled:translate-y-0 disabled:opacity-50"
+          >
+            {processing ? "Processing..." : `Pay ${amount} Securely`}
+          </button>
+
+          <p className="flex items-center justify-center gap-1.5 text-[10px] text-white/30 mt-3">
+            <ShieldCheck className="h-3 w-3 text-green-400" />
+            256-bit encrypted · Gateway activates after backend connection
           </p>
-          <p className="text-white/40">
-            Once added, a program cannot be removed or downgraded. Please confirm before payment.
-          </p>
         </div>
-
-        {/* Legal Consent Checkbox */}
-        <label className="flex items-start gap-2.5 mb-5 cursor-pointer select-none">
-          <input
-            type="checkbox"
-            checked={consentChecked}
-            onChange={(e) => setConsentChecked(e.target.checked)}
-            className="mt-0.5 rounded border-white/10 bg-black/50 text-cyan-500 focus:ring-0 focus:ring-offset-0 h-3.5 w-3.5"
-          />
-          <span className="text-[10px] text-white/70 leading-normal">
-            I understand this annual program subscription will be added to my account after payment. 
-            It cannot be removed or downgraded during the active period.
-          </span>
-        </label>
-
-        <button
-          onClick={handlePay}
-          disabled={processing || !consentChecked}
-          className="w-full rounded-xl bg-gradient-to-r from-cyan-400 to-sky-500 py-3 text-sm font-bold text-black transition hover:-translate-y-0.5 disabled:opacity-50"
-        >
-          {processing ? "Processing..." : `Pay ${amount} Securely`}
-        </button>
-
-        <p className="flex items-center justify-center gap-1.5 text-[10px] text-white/30 mt-4">
-          <ShieldCheck className="h-3 w-3 text-green-400" />
-          256-bit encrypted · Gateway activates after backend connection
-        </p>
       </div>
     </div>
   );

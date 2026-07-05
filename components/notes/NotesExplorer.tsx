@@ -243,6 +243,34 @@ export default function NotesExplorer() {
         </p>
       </div>
 
+      <Link
+        href="/notes/mole-concept"
+        className="group block rounded-2xl border border-cyan-400/20 bg-[#111827] p-5 shadow-[0_18px_50px_rgba(0,0,0,0.22)] transition hover:-translate-y-0.5 hover:border-cyan-300/40 hover:bg-[#132033]"
+      >
+        <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+          <div className="min-w-0">
+            <div className="flex flex-wrap items-center gap-2">
+              <span className="rounded-full border border-cyan-400/30 bg-cyan-500/10 px-2.5 py-1 text-[11px] font-bold uppercase tracking-[0.18em] text-cyan-200">
+                Full Web Notes
+              </span>
+              <span className="rounded-full border border-white/10 bg-white/[0.04] px-2.5 py-1 text-[11px] font-semibold text-white/55">
+                JEE Main · Boards · NEET-style
+              </span>
+            </div>
+            <h2 className="mt-3 text-xl font-black tracking-normal text-white">
+              Some Basic Concepts of Chemistry — Mole Concept
+            </h2>
+            <p className="mt-2 max-w-2xl text-sm leading-relaxed text-white/60">
+              Full-length visual textbook with mole conversions, stoichiometry, limiting reagent,
+              POAC, formula cards, solved examples, revision, and practice MCQs.
+            </p>
+          </div>
+          <span className="inline-flex shrink-0 items-center justify-center rounded-xl border border-cyan-300/25 bg-cyan-400/[0.08] px-4 py-2 text-sm font-black text-cyan-100 transition group-hover:bg-cyan-400/[0.13]">
+            Open notes →
+          </span>
+        </div>
+      </Link>
+
       {/* Chapter selector — full master syllabus, authored chapters marked */}
       <div className="flex flex-wrap gap-2">
         {SYLLABUS_CHAPTERS.map((c) => {

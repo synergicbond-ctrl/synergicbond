@@ -47,6 +47,24 @@ const BRANCH_LABEL: Record<string, string> = {
   inorganic: "🧪 Inorganic",
 };
 
+const FEATURED_CHEMISTRY_NOTES: Record<string, Array<{
+  href: string;
+  branch: string;
+  title: string;
+  desc: string;
+  metrics: string[];
+}>> = {
+  "jee-main": [
+    {
+      href: "/notes/mole-concept",
+      branch: "Physical Chemistry",
+      title: "Some Basic Concepts of Chemistry — Mole Concept",
+      desc: "Full JEE Main web notes with mole conversions, stoichiometry, limiting reagent, POAC, formula cards, solved examples, revision, and MCQs.",
+      metrics: ["24 sections", "Formula cards", "Practice MCQs"],
+    },
+  ],
+};
+
 export default async function ProgramLearnPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const program = getProgram(slug);
@@ -87,6 +105,38 @@ export default async function ProgramLearnPage({ params }: { params: Promise<{ s
             ))}
           </div>
         </section>
+
+        {FEATURED_CHEMISTRY_NOTES[slug]?.length ? (
+          <section className="mb-12">
+            <h2 className="mb-2 text-2xl font-bold">Chemistry Notes</h2>
+            <p className="mb-6 text-zinc-500">Program-linked chapter notes ready for {name}</p>
+            <div className="grid gap-4 lg:grid-cols-2">
+              {FEATURED_CHEMISTRY_NOTES[slug].map((note) => (
+                <Link
+                  key={note.href}
+                  href={note.href}
+                  className={`group rounded-2xl border bg-white/[0.02] p-5 transition hover:-translate-y-0.5 hover:bg-white/[0.04] ${accent.card}`}
+                >
+                  <div className="flex flex-wrap items-center gap-2">
+                    <span className={`rounded-full border px-2.5 py-1 text-[11px] font-bold uppercase tracking-[0.18em] ${accent.chip}`}>
+                      {note.branch}
+                    </span>
+                    {note.metrics.map((metric) => (
+                      <span key={metric} className="rounded-full border border-white/10 bg-white/[0.04] px-2.5 py-1 text-[11px] font-semibold text-white/50">
+                        {metric}
+                      </span>
+                    ))}
+                  </div>
+                  <h3 className="mt-4 text-lg font-black tracking-normal text-white">{note.title}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-zinc-400">{note.desc}</p>
+                  <div className={`mt-4 text-sm font-semibold ${accent.text}`}>
+                    Open notes <span className="inline-block transition group-hover:translate-x-1">→</span>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </section>
+        ) : null}
 
         <section>
           <h2 className="mb-2 text-2xl font-bold">Chapters</h2>

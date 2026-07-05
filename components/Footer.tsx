@@ -89,23 +89,38 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div className="col-span-2">
-            <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-gray-500 mb-5">
-              Platform
-            </p>
-            <div className="grid grid-cols-2 gap-2 sm:grid-cols-4">
-              {quickLinks.map((item) => {
-                const Icon = item.icon;
-                return (
-                  <Link
-                    key={item.title}
-                    href={item.href}
-                    className="flex items-center gap-2 text-xs text-gray-400 hover:text-white transition py-1"
-                  >
-                    <Icon className="h-3.5 w-3.5 text-gray-600 flex-shrink-0" />
-                    {item.title}
-                  </Link>
-                );
-              })}
+            <div className="grid gap-8 sm:grid-cols-3">
+              <div className="sm:col-span-2">
+                <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-gray-500 mb-5">
+                  Platform
+                </p>
+                <div className="grid grid-cols-2 gap-2">
+                  {quickLinks.map((item) => {
+                    const Icon = item.icon;
+                    return (
+                      <Link
+                        key={item.title}
+                        href={item.href}
+                        className="flex items-center gap-2 text-xs text-gray-400 hover:text-white transition py-1"
+                      >
+                        <Icon className="h-3.5 w-3.5 text-gray-600 flex-shrink-0" />
+                        {item.title}
+                      </Link>
+                    );
+                  })}
+                </div>
+              </div>
+              <div className="sm:col-span-1">
+                <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-gray-500 mb-5">
+                  Contact Us
+                </p>
+                <p className="text-xs text-gray-400 leading-relaxed mb-3">
+                  For support, subscription assistance, academic queries, and partnerships, contact:
+                </p>
+                <a href="mailto:hello@synergicbond.com" className="text-xs font-bold text-cyan-400 hover:text-cyan-300 transition">
+                  hello@synergicbond.com
+                </a>
+              </div>
             </div>
           </div>
 

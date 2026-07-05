@@ -90,13 +90,15 @@ export default function PaymentGateway({
   open,
   onClose,
   planId = "pro_monthly",
+  programKey,
   plan = "SYNERGIC BOND PRO",
   amount = "₹149",
   period = "month",
 }: {
   open: boolean;
   onClose: () => void;
-  planId?: PlanId;
+  planId?: string;
+  programKey?: string;
   plan?: string;
   amount?: string;
   period?: string;
@@ -104,21 +106,26 @@ export default function PaymentGateway({
   const [selected, setSelected] = useState("upi");
   const [processing, setProcessing] = useState(false);
 
+  const [consentChecked, setConsentChecked] = useState(false);
+
   if (!open) return null;
 
   async function handlePay() {
+    if (!consentChecked) return;
     setProcessing(true);
     try {
       const res = await fetch("/api/payment/create-order", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ plan: planId }),
+        body: JSON.stringify(
+          programKey ? { programKey } : { plan: planId }
+        ),
       });
       const data = await res.json().catch(() => ({})) as RazorpayOrderResponse;
 
       if (!res.ok) {
         if (res.status === 401) {
-          window.location.href = "/auth/signin?next=/pricing";
+          window.location.href = `/auth/signin?next=${encodeURIComponent(window.location.pathname)}`;
           return;
         }
         alert(data?.error || "Could not start checkout. Please try again.");
@@ -155,26 +162,26 @@ export default function PaymentGateway({
           const verifyData = await verifyRes.json().catch(() => ({})) as { success?: boolean; error?: string };
 
           if (!verifyRes.ok || !verifyData.success) {
-            track("payment_verification_failed", { plan: planId });
+            track("payment_verification_failed", { plan: planId || programKey });
             alert(verifyData.error || "Payment could not be verified. Please contact support.");
             setProcessing(false);
             return;
           }
 
-          track("payment_success", { plan: planId });
-          alert("Payment verified. Your Pro access will activate within a few seconds.");
+          track("payment_success", { plan: planId || programKey });
+          alert("Payment verified. Your access will activate within a few seconds.");
           window.location.reload();
         },
         modal: {
           ondismiss: () => {
-            track("payment_cancelled", { plan: planId });
+            track("payment_cancelled", { plan: planId || programKey });
             setProcessing(false);
           },
         },
       });
       rzp.on("payment.failed", (response) => {
         track("payment_failed", {
-          plan: planId,
+          plan: planId || programKey,
           reason: response.error?.reason || response.error?.code || "unknown",
         });
         alert(response.error?.description || "Payment failed. Please try again.");
@@ -201,7 +208,7 @@ export default function PaymentGateway({
         </div>
 
         <p className="text-xs font-semibold text-white/50 mb-3">Select payment method</p>
-        <div className="grid grid-cols-2 gap-2 mb-6">
+        <div className="grid grid-cols-2 gap-2 mb-4">
           {methods.map((m) => {
             const Icon = m.icon;
             const active = selected === m.id;
@@ -221,10 +228,36 @@ export default function PaymentGateway({
           })}
         </div>
 
+        {/* Warning Copy */}
+        <div className="mb-4 bg-black/40 border border-white/5 rounded-xl p-3 text-[10px] text-white/60 leading-relaxed space-y-1">
+          <p className="font-extrabold text-amber-400">Subscription Terms</p>
+          <p>
+            This is an annual program subscription. Access remains active for 365 days from activation. 
+            Once expired, paid content will be locked unless renewed.
+          </p>
+          <p className="text-white/40">
+            Once added, a program cannot be removed or downgraded. Please confirm before payment.
+          </p>
+        </div>
+
+        {/* Legal Consent Checkbox */}
+        <label className="flex items-start gap-2.5 mb-5 cursor-pointer select-none">
+          <input
+            type="checkbox"
+            checked={consentChecked}
+            onChange={(e) => setConsentChecked(e.target.checked)}
+            className="mt-0.5 rounded border-white/10 bg-black/50 text-cyan-500 focus:ring-0 focus:ring-offset-0 h-3.5 w-3.5"
+          />
+          <span className="text-[10px] text-white/70 leading-normal">
+            I understand this annual program subscription will be added to my account after payment. 
+            It cannot be removed or downgraded during the active period.
+          </span>
+        </label>
+
         <button
           onClick={handlePay}
-          disabled={processing}
-          className="w-full rounded-xl bg-gradient-to-r from-cyan-400 to-sky-500 py-3 text-sm font-bold text-black transition hover:-translate-y-0.5 disabled:opacity-60"
+          disabled={processing || !consentChecked}
+          className="w-full rounded-xl bg-gradient-to-r from-cyan-400 to-sky-500 py-3 text-sm font-bold text-black transition hover:-translate-y-0.5 disabled:opacity-50"
         >
           {processing ? "Processing..." : `Pay ${amount} Securely`}
         </button>

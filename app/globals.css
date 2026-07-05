@@ -173,3 +173,25 @@ video {
 .scrollbar-none::-webkit-scrollbar {
   display: none;                /* Chrome/Safari */
 }
+
+/* ── Modal open animations (no external plugin needed) ──────────── */
+@keyframes sb-overlay-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes sb-panel-in {
+  from { opacity: 0; transform: translateY(16px) scale(0.98); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+.sb-modal-overlay {
+  animation: sb-overlay-in 0.2s ease-out;
+}
+.sb-modal-panel {
+  animation: sb-panel-in 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+}
+@media (prefers-reduced-motion: reduce) {
+  .sb-modal-overlay,
+  .sb-modal-panel {
+    animation: none;
+  }
+}

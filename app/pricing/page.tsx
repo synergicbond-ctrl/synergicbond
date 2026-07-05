@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { track } from "@vercel/analytics";
 import PaymentGateway from "@/components/PaymentGateway";
 import StudentDetailsForm from "@/components/StudentDetailsForm";
@@ -18,6 +18,7 @@ export default function PricingPage() {
   const [payOpen, setPayOpen] = useState(false);
   const [detailsOpen, setDetailsOpen] = useState(false);
   const [selectedKey, setSelectedKey] = useState<string>("");
+  const [selectedBaseKey, setSelectedBaseKey] = useState<string>("");
   const [selectedName, setSelectedName] = useState<string>("");
   const [selectedAmount, setSelectedAmount] = useState<string>("");
   
@@ -123,10 +124,21 @@ export default function PricingPage() {
 
     track("upgrade_click", { programKey: resolvedKey });
     setSelectedKey(resolvedKey);
+    setSelectedBaseKey(prog.key);
     setSelectedName(resolvedName);
     setSelectedAmount(`₹${prog.price}`);
     setDetailsOpen(true);
   }
+
+  // Reopen the selected program after returning from sign-in (?program=<key>).
+  // Deferred to a microtask so it doesn't cascade renders during the effect.
+  useEffect(() => {
+    const param = new URLSearchParams(window.location.search).get("program");
+    if (!param) return;
+    const prog = PROGRAMS.find((p) => p.key === param);
+    if (prog) queueMicrotask(() => handleBuy(prog));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <main className="min-h-screen bg-black text-white p-6 max-w-6xl mx-auto">
@@ -261,6 +273,7 @@ export default function PricingPage() {
 
       <StudentDetailsForm
         open={detailsOpen}
+        programKey={selectedBaseKey}
         onClose={() => setDetailsOpen(false)}
         onComplete={() => {
           setDetailsOpen(false);

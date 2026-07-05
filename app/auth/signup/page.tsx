@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { supabase } from "@/lib/supabase";
+import { siteUrl } from "@/lib/siteUrl";
 import Link from "next/link";
 import { trackBetaEvent } from "@/lib/betaAnalyticsClient";
 
@@ -23,6 +24,12 @@ export default function SignUp() {
       const { data, error } = await supabase.auth.signUp({
         email,
         password,
+        options: {
+          // Email-confirmation ("magic") link must return to the production
+          // callback (not localhost) so the code is exchanged and the user
+          // lands signed-in on their subscription dashboard.
+          emailRedirectTo: siteUrl("/auth/callback?next=/dashboard/subscription"),
+        },
       });
 
       if (error) throw error;

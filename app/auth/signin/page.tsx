@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useSearchParams } from "next/navigation";
 import Link from "next/link";
 import { supabase } from "@/lib/supabase";
+import { siteUrl } from "@/lib/siteUrl";
 import { trackBetaEvent } from "@/lib/betaAnalyticsClient";
 
 // Only allow same-origin relative redirects to prevent open-redirect attacks.
@@ -20,6 +21,33 @@ export default function SignInPage() {
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
+  const [resetSent, setResetSent] = useState(false);
+  const [resetting, setResetting] = useState(false);
+
+  async function handleForgotPassword() {
+    setError("");
+    setResetSent(false);
+    if (!email.trim()) {
+      setError("Enter your email above first, then tap Forgot Password.");
+      return;
+    }
+    try {
+      setResetting(true);
+      const { error } = await supabase.auth.resetPasswordForEmail(email.trim(), {
+        redirectTo: siteUrl("/reset-password"),
+      });
+      if (error) {
+        setError(error.message);
+        return;
+      }
+      setResetSent(true);
+    } catch (err) {
+      console.error(err);
+      setError("Could not send reset email. Please try again.");
+    } finally {
+      setResetting(false);
+    }
+  }
 
   async function handleSignIn() {
     try {
@@ -79,6 +107,23 @@ export default function SignInPage() {
             onChange={(e) => setPassword(e.target.value)}
             className="w-full rounded-xl border border-white/10 bg-black/30 px-4 py-3"
           />
+
+          <div className="flex justify-end -mt-1">
+            <button
+              type="button"
+              onClick={handleForgotPassword}
+              disabled={resetting}
+              className="text-xs text-cyan-300 hover:underline disabled:opacity-50"
+            >
+              {resetting ? "Sending…" : "Forgot Password?"}
+            </button>
+          </div>
+
+          {resetSent && (
+            <p className="rounded-xl border border-green-500/20 bg-green-500/10 px-3 py-2 text-xs text-green-300">
+              Password reset link sent. Check your email and open it on this device.
+            </p>
+          )}
 
           {error && <p className="text-red-400 text-sm">{error}</p>}
 

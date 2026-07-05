@@ -26,6 +26,23 @@ export default async function ClassDashboard({ params }: { params: Promise<{ boa
 
   const base = `/dashboard/${b.slug}/${c.slug}`;
 
+  // Program isolation: keep board quick-links inside board-scoped surfaces.
+  // Global entrance routes (/pyq, /tests, /ncert, /performance, /analytics,
+  // /mistakes, /readiness) carry JEE/NEET content & tags, so they are remapped
+  // to this board/class's own practice, custom-test and analytics pages.
+  // Chemistry-reference and generic tools (notes, formulas, memory, vault,
+  // tutor, board-examiner, support, …) are program-neutral and pass through.
+  const BOARD_SCOPE_REMAP: Record<string, string> = {
+    "/pyq": `${base}/practice`,
+    "/tests": `${base}/custom-test`,
+    "/ncert": `${base}/analytics`,
+    "/performance": `${base}/analytics`,
+    "/analytics": `${base}/analytics`,
+    "/mistakes": `${base}/analytics`,
+    "/readiness": `${base}/analytics`,
+  };
+  const scopedHref = (href: string) => BOARD_SCOPE_REMAP[href] ?? href;
+
   return (
     <main className="min-h-screen bg-[#0B1220] text-white">
       <div className="border-b border-white/10 bg-gradient-to-b from-amber-950/20 to-[#0B1220] px-6 py-12">
@@ -68,7 +85,7 @@ export default async function ClassDashboard({ params }: { params: Promise<{ boa
             <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
               {section.items.map((it) =>
                 it.status === "available" && it.href ? (
-                  <Link key={it.label} href={it.href}
+                  <Link key={it.label} href={scopedHref(it.href)}
                     className="flex items-center justify-between rounded-lg border border-white/[0.08] bg-[#0B1220] px-3 py-2.5 text-sm font-semibold text-white/85 transition hover:border-cyan-400/40 hover:text-cyan-200">
                     {it.label}<span className="text-cyan-400">→</span>
                   </Link>

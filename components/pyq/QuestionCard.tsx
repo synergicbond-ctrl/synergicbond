@@ -36,26 +36,35 @@ const LINK_CHIP_CLASS: Record<LinkKind, string> = {
   concept: "bg-cyan-900/30 text-cyan-300 hover:bg-cyan-900/50",
 };
 
-function getLinkedQuestions(kind: LinkKind, value: string, excludeId: string): PYQQuestion[] {
+function getLinkedQuestions(
+  kind: LinkKind,
+  value: string,
+  excludeId: string,
+  examScope?: PYQQuestion["exam"],
+): PYQQuestion[] {
+  // Program isolation: in a program-locked surface, the "other PYQs" discovery
+  // panel must stay within that program's exam. Unscoped (global /pyq) keeps
+  // the full cross-exam behaviour.
+  const pool = examScope ? ALL_PYQ_QUESTIONS.filter((q) => q.exam === examScope) : ALL_PYQ_QUESTIONS;
   let results: PYQQuestion[];
   switch (kind) {
     case "reaction":
-      results = getByReaction(ALL_PYQ_QUESTIONS, value);
+      results = getByReaction(pool, value);
       break;
     case "reagent":
-      results = getByReagent(ALL_PYQ_QUESTIONS, value);
+      results = getByReagent(pool, value);
       break;
     case "exception":
-      results = getByException(ALL_PYQ_QUESTIONS, value);
+      results = getByException(pool, value);
       break;
     case "concept":
-      results = filterPYQ(ALL_PYQ_QUESTIONS, { concept: value });
+      results = filterPYQ(pool, { concept: value });
       break;
     case "formula":
-      results = ALL_PYQ_QUESTIONS.filter((q) => q.formulas.includes(value));
+      results = pool.filter((q) => q.formulas.includes(value));
       break;
     case "ncert":
-      results = ALL_PYQ_QUESTIONS.filter((q) => q.ncertLines.includes(value));
+      results = pool.filter((q) => q.ncertLines.includes(value));
       break;
   }
   return results.filter((q) => q.id !== excludeId).slice(0, 6);
@@ -93,12 +102,15 @@ export default function QuestionCard({
   compact = false,
   attemptSource,
   onAnswered,
+  examScope,
 }: {
   question: PYQQuestion;
   compact?: boolean;
   attemptSource?: CaptureSource;
   /** Fired once when the student picks an option (answer-capture mode). */
   onAnswered?: (question: PYQQuestion, selectedKey: string, correct: boolean) => void;
+  /** Program isolation: restrict the linked-PYQ discovery panel to one exam. */
+  examScope?: PYQQuestion["exam"];
 }) {
   const [revealed, setRevealed] = useState(false);
   const [selected, setSelected] = useState<string | null>(null);
@@ -127,7 +139,7 @@ export default function QuestionCard({
     setActiveLink((prev) => (prev && prev.kind === kind && prev.value === value ? null : { kind, value }));
   };
 
-  const linkedQuestions = activeLink ? getLinkedQuestions(activeLink.kind, activeLink.value, question.id) : [];
+  const linkedQuestions = activeLink ? getLinkedQuestions(activeLink.kind, activeLink.value, question.id, examScope) : [];
 
   const chipGroups: Array<{ kind: LinkKind; values: string[] }> = [
     { kind: "concept", values: question.concepts },

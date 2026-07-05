@@ -186,7 +186,7 @@ export default function ProgramPracticeClient({ exam }: { exam: PYQExam }) {
       ) : (
         <div className="space-y-4">
           {shown.map((q) => (
-            <QuestionCard key={q.id} question={q} attemptSource="practice" />
+            <QuestionCard key={q.id} question={q} attemptSource="practice" examScope={exam} />
           ))}
         </div>
       )}

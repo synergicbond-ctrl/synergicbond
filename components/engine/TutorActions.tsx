@@ -12,7 +12,7 @@ import Link from "next/link";
 const ACTIONS = [
   { key: "explain", label: "Explain Again", prompt: "Explain the core ideas of this chapter again, clearly and compactly." },
   { key: "simpler", label: "Simpler Version", prompt: "Explain this chapter like I'm struggling — simplest possible words, small steps, everyday analogies." },
-  { key: "advanced", label: "Advanced Version", prompt: "Give me the advanced, JEE-Advanced-depth view of this chapter: edge cases, exceptions, deeper reasoning." },
+  { key: "advanced", label: "Advanced Version", prompt: "Give me the most advanced, competition-depth view of this chapter: edge cases, exceptions, deeper reasoning." },
   { key: "similar", label: "Similar Questions", prompt: "Generate 3 fresh practice questions on this chapter with answers at the end." },
   { key: "revision", label: "Revision Notes", prompt: "Create compact one-screen revision notes for this chapter: key points, formulas, traps." },
   { key: "formulas", label: "Formula Sheet", prompt: "Create a formula sheet for this chapter: every formula, variables defined, units, when to use." },

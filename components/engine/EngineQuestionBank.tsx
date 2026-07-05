@@ -208,7 +208,7 @@ export default function EngineQuestionBank({
             </p>
           ) : (
             <div className="space-y-3">
-              {bankBatch.questions.map((q) => <QuestionCard key={q.id} question={q} attemptSource="practice" onAnswered={onAnswered} />)}
+              {bankBatch.questions.map((q) => <QuestionCard key={q.id} question={q} attemptSource="practice" onAnswered={onAnswered} examScope={program.exam} />)}
             </div>
           )}
         </>

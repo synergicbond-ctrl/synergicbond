@@ -96,8 +96,9 @@ export default async function ChapterEnginePage({ params }: { params: Promise<{ 
   const wrongIds = new Set(chapterMistakes.map((m) => m.questionId));
   const recovery = examPool.filter((q) => weakTopics.has(q.subtopic) && !wrongIds.has(q.id)).slice(0, 3);
 
-  // PYQ Center stats — real counts from the verified bank.
-  const stats = pyqChapters.map((c) => getChapterStats(ALL_PYQ_QUESTIONS, c));
+  // PYQ Center stats — real counts from the verified bank, SCOPED to THIS
+  // program's exam (examPool) so counts never mix in other programs' questions.
+  const stats = pyqChapters.map((c) => getChapterStats(examPool, c));
 
   const bandTone = mastery.band === "strong" ? "text-emerald-300" : mastery.band === "onTrack" ? "text-amber-300" : "text-white/60";
 
@@ -195,10 +196,11 @@ export default async function ChapterEnginePage({ params }: { params: Promise<{ 
               {ncert.lines.map((l) => (
                 <div key={l.line} className="flex flex-wrap items-center justify-between gap-2 rounded-xl border border-white/[0.08] bg-white/[0.02] p-3">
                   <span className="min-w-0 text-sm font-semibold text-white/85">{l.line}</span>
+                  {/* Program isolation: only THIS program's importance is shown. */}
                   <span className="flex shrink-0 gap-1.5 text-[10px] font-bold">
-                    <span className={`rounded-full border px-2 py-0.5 ${IMPORTANCE_TONE[l.importance.neet]}`}>NEET {l.byExam.neet}</span>
-                    <span className={`rounded-full border px-2 py-0.5 ${IMPORTANCE_TONE[l.importance.jeeMain]}`}>JM {l.byExam.jeeMain}</span>
-                    <span className={`rounded-full border px-2 py-0.5 ${IMPORTANCE_TONE[l.importance.jeeAdvanced]}`}>JA {l.byExam.jeeAdvanced}</span>
+                    {engine.exam === "NEET" && <span className={`rounded-full border px-2 py-0.5 ${IMPORTANCE_TONE[l.importance.neet]}`}>{l.byExam.neet} question{l.byExam.neet === 1 ? "" : "s"}</span>}
+                    {engine.exam === "JEE Main" && <span className={`rounded-full border px-2 py-0.5 ${IMPORTANCE_TONE[l.importance.jeeMain]}`}>{l.byExam.jeeMain} question{l.byExam.jeeMain === 1 ? "" : "s"}</span>}
+                    {engine.exam === "JEE Advanced" && <span className={`rounded-full border px-2 py-0.5 ${IMPORTANCE_TONE[l.importance.jeeAdvanced]}`}>{l.byExam.jeeAdvanced} question{l.byExam.jeeAdvanced === 1 ? "" : "s"}</span>}
                   </span>
                 </div>
               ))}
@@ -297,7 +299,7 @@ export default async function ChapterEnginePage({ params }: { params: Promise<{ 
                 <>
                   <h3 className="mb-2 text-sm font-bold uppercase tracking-wider text-white/40">Recovery questions (fresh, on your weak topics)</h3>
                   <div className="space-y-3">
-                    {recovery.map((q) => <QuestionCard key={q.id} question={q} attemptSource="practice" />)}
+                    {recovery.map((q) => <QuestionCard key={q.id} question={q} attemptSource="practice" examScope={engine.exam} />)}
                   </div>
                 </>
               )}

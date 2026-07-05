@@ -17,6 +17,14 @@ export default function ResetPasswordPage() {
   // (PKCE ?code= or #access_token hash). createBrowserClient processes it on
   // load; we listen for PASSWORD_RECOVERY / SIGNED_IN and confirm via getSession.
   useEffect(() => {
+    // /auth/confirm redirects here with ?error=invalid when the token_hash was
+    // missing/expired/already-used — surface the message immediately (deferred
+    // off the synchronous effect body to avoid a cascading render).
+    if (new URLSearchParams(window.location.search).get("error")) {
+      queueMicrotask(() => setStatus("invalid"));
+      return;
+    }
+
     let settled = false;
     const markReady = () => {
       settled = true;

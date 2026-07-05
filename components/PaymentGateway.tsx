@@ -7,7 +7,7 @@
  * The card data never touches our code; Razorpay's hosted checkout handles it.
  */
 
-import { useState } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { track } from "@vercel/analytics";
 import { X, ShieldCheck, CreditCard, Smartphone, Building2, Wallet, Apple } from "lucide-react";
 
@@ -108,6 +108,26 @@ export default function PaymentGateway({
 
   const [consentChecked, setConsentChecked] = useState(false);
 
+  // Don't allow closing mid-checkout; Razorpay owns the flow once processing.
+  const handleClose = useCallback(() => {
+    if (!processing) onClose();
+  }, [processing, onClose]);
+
+  // ESC key closes; lock background scroll while open.
+  useEffect(() => {
+    if (!open) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") handleClose();
+    };
+    document.addEventListener("keydown", onKey);
+    const prevOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.removeEventListener("keydown", onKey);
+      document.body.style.overflow = prevOverflow;
+    };
+  }, [open, handleClose]);
+
   if (!open) return null;
 
   async function handlePay() {
@@ -170,7 +190,9 @@ export default function PaymentGateway({
 
           track("payment_success", { plan: planId || programKey });
           alert("Payment verified. Your access will activate within a few seconds.");
-          window.location.reload();
+          // Take the student straight to their subscription dashboard so they
+          // immediately see the purchased program, status, and expiry date.
+          window.location.href = "/dashboard/subscription";
         },
         modal: {
           ondismiss: () => {
@@ -195,10 +217,19 @@ export default function PaymentGateway({
   }
 
   return (
-    <div className="fixed inset-0 z-[100] flex items-end justify-center bg-black/70 backdrop-blur-sm sm:items-center sm:p-6">
-      <div className="relative flex max-h-[90vh] w-full max-w-md flex-col overflow-hidden rounded-t-3xl border border-white/[0.08] bg-[#111827] shadow-2xl sm:rounded-3xl">
+    <div
+      className="sb-modal-overlay fixed inset-0 z-[100] flex items-end justify-center bg-black/70 backdrop-blur-sm sm:items-center sm:p-6"
+      onClick={handleClose}
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="payment-title"
+    >
+      <div
+        className="sb-modal-panel relative flex max-h-[90vh] w-full max-w-md flex-col overflow-hidden rounded-t-3xl border border-white/[0.08] bg-[#111827] shadow-2xl sm:rounded-3xl"
+        onClick={(e) => e.stopPropagation()}
+      >
         <button
-          onClick={onClose}
+          onClick={handleClose}
           aria-label="Close checkout"
           className="absolute top-4 right-4 z-10 text-white/40 transition hover:text-white"
         >
@@ -209,7 +240,7 @@ export default function PaymentGateway({
         <div className="flex-1 overflow-y-auto overscroll-contain px-6 pt-7 pb-5 sm:px-7">
           <div className="mb-6 pr-8">
             <p className="text-xs font-bold text-cyan-400 uppercase tracking-wider">Checkout</p>
-            <h3 className="text-xl font-black mt-1">{plan}</h3>
+            <h3 id="payment-title" className="text-xl font-black mt-1">{plan}</h3>
             <p className="text-3xl font-black text-white mt-2">{amount}<span className="text-sm text-white/40 font-normal"> / {period}</span></p>
           </div>
 

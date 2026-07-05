@@ -129,15 +129,30 @@ export async function POST(req: Request) {
 
       if (validNotes) {
         if ("plan" in validNotes) {
-          const expires = new Date(Date.now() + PLANS[validNotes.plan].days * 86_400_000).toISOString();
+          const { data: existingSub } = await admin
+            .from("subscriptions")
+            .select("expires_at")
+            .eq("user_id", validNotes.userId)
+            .maybeSingle();
+
+          const daysToAdd = PLANS[validNotes.plan].days;
+          let newExpiresAt: Date;
+          const now = new Date();
+
+          if (existingSub?.expires_at && new Date(existingSub.expires_at) > now) {
+            newExpiresAt = new Date(new Date(existingSub.expires_at).getTime() + daysToAdd * 86_400_000);
+          } else {
+            newExpiresAt = new Date(now.getTime() + daysToAdd * 86_400_000);
+          }
+
           const { error: subscriptionError } = await admin.from("subscriptions").upsert(
             {
               user_id: validNotes.userId,
               plan: validNotes.plan,
               status: "active",
-              expires_at: expires,
+              expires_at: newExpiresAt.toISOString(),
               razorpay_payment_id: paymentEntity.id ?? null,
-              updated_at: new Date().toISOString(),
+              updated_at: now.toISOString(),
             },
             { onConflict: "user_id" }
           );
@@ -146,7 +161,22 @@ export async function POST(req: Request) {
             return NextResponse.json({ ok: false }, { status: 500 });
           }
         } else if ("programKey" in validNotes) {
-          const programExpires = new Date(Date.now() + 365 * 86_400_000).toISOString();
+          const { data: existingEnt } = await admin
+            .from("user_program_entitlements")
+            .select("expires_at")
+            .eq("user_id", validNotes.userId)
+            .eq("program_key", validNotes.programKey)
+            .maybeSingle();
+
+          let newExpiresAt: Date;
+          const now = new Date();
+
+          if (existingEnt?.expires_at && new Date(existingEnt.expires_at) > now) {
+            newExpiresAt = new Date(new Date(existingEnt.expires_at).getTime() + 365 * 86_400_000);
+          } else {
+            newExpiresAt = new Date(now.getTime() + 365 * 86_400_000);
+          }
+
           const { error: entitlementError } = await admin.from("user_program_entitlements").upsert(
             {
               user_id: validNotes.userId,
@@ -154,8 +184,8 @@ export async function POST(req: Request) {
               source: "purchase",
               status: "active",
               razorpay_payment_id: paymentEntity.id ?? null,
-              expires_at: programExpires,
-              updated_at: new Date().toISOString(),
+              expires_at: newExpiresAt.toISOString(),
+              updated_at: now.toISOString(),
             },
             { onConflict: "user_id,program_key" }
           );

@@ -28,7 +28,13 @@ export interface EntitlementSet {
 }
 
 const ALL_BOARD_KEYS: ProgramKey[] = BOARDS.flatMap((b) => CLASSES.map((c) => `${b.slug}:${c.slug}`));
-const ALL_PROGRAM_KEYS: ProgramKey[] = [...ENGINE_SLUGS, ...ALL_BOARD_KEYS];
+export const ALL_PROGRAM_KEYS: ProgramKey[] = Array.from(new Set([
+  ...ENGINE_SLUGS,
+  ...ALL_BOARD_KEYS,
+  "isc:class-11",
+  "isc:class-12",
+]));
+
 
 interface EntitlementRow {
   program_key: string;
@@ -75,10 +81,15 @@ export async function hasProgramAccess(slug: string): Promise<boolean> {
 export async function getPurchasedBoardPrograms(): Promise<PurchasedProgram[]> {
   const { keys } = await getUserEntitlements();
   const out: PurchasedProgram[] = [];
+  const seen = new Set<string>();
   for (const key of keys) {
-    const [board, cls] = key.split(":");
+    const [rawBoard, cls] = key.split(":");
     if (!cls) continue; // entrance keys have no ':'
+    const board = rawBoard === "isc" ? "icse" : rawBoard;
+    const combo = `${board}:${cls}`;
+    if (seen.has(combo)) continue;
     if (BOARDS.some((b) => b.slug === board) && CLASSES.some((c) => c.slug === cls)) {
+      seen.add(combo);
       out.push({ board: board as BoardSlug, class: cls as ClassSlug });
     }
   }

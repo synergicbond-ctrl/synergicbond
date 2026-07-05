@@ -11,6 +11,8 @@
 // No fabricated purchase data — paid access comes from real subscription state.
 // ─────────────────────────────────────────────────────────────────────────────
 
+import { ALL_FREE_CHAPTER_IDS } from "../freeChapters";
+
 /** Fully public — no auth, no paywall. */
 const PUBLIC_EXACT = new Set<string>([
   "/",
@@ -24,8 +26,7 @@ const PUBLIC_EXACT = new Set<string>([
 /** Public path prefixes (auth screens, marketing sub-pages). */
 const PUBLIC_PREFIXES = ["/auth", "/pricing", "/support", "/about"];
 
-/** Free content anyone can open (currently one free chapter). */
-const FREE_CHAPTERS = new Set<string>(["/learn/mole-concept"]);
+// Free chapters are loaded from the centralized lib/freeChapters.ts SSOT
 
 /** Whole-area protected prefixes — everything under these needs auth. */
 const PROTECTED_PREFIXES = [
@@ -55,7 +56,8 @@ const PROTECTED_SUBPREFIXES = ["/programs/", "/learn/"];
 
 /** Free content — open to signed-out users and guests. */
 export function isFreeChapter(path: string): boolean {
-  return FREE_CHAPTERS.has(path);
+  const segments = path.split("/");
+  return segments.some((segment) => ALL_FREE_CHAPTER_IDS.includes(segment));
 }
 
 /** Open to everyone (marketing, auth screens, free content). */

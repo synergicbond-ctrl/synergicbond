@@ -4,11 +4,13 @@ export const dynamic = "force-dynamic";
 import { NextResponse } from "next/server";
 import crypto from "crypto";
 import { createAdminClient } from "@/lib/supabase/admin";
-import { PLANS, isValidPlan } from "@/lib/subscription";
+import { PLANS, isValidPlan, type PlanId } from "@/lib/subscription";
+import { ALL_PROGRAM_KEYS } from "@/lib/access/entitlements";
 
 type RazorpayNotes = {
   user_id?: unknown;
   plan?: unknown;
+  program_key?: unknown;
 };
 
 type RazorpayEntity = {
@@ -26,9 +28,18 @@ type RazorpayWebhookEvent = {
   };
 };
 
-function getValidNotes(notes?: RazorpayNotes) {
-  if (typeof notes?.user_id === "string" && isValidPlan(notes.plan)) {
-    return { userId: notes.user_id, plan: notes.plan };
+type ValidNotesResult =
+  | { userId: string; plan: PlanId }
+  | { userId: string; programKey: string };
+
+function getValidNotes(notes?: RazorpayNotes): ValidNotesResult | null {
+  if (typeof notes?.user_id === "string") {
+    if (isValidPlan(notes.plan)) {
+      return { userId: notes.user_id, plan: notes.plan };
+    }
+    if (typeof notes.program_key === "string" && ALL_PROGRAM_KEYS.includes(notes.program_key)) {
+      return { userId: notes.user_id, programKey: notes.program_key };
+    }
   }
   return null;
 }
@@ -117,21 +128,41 @@ export async function POST(req: Request) {
         (orderId ? await fetchOrderNotes(orderId) : null);
 
       if (validNotes) {
-        const expires = new Date(Date.now() + PLANS[validNotes.plan].days * 86_400_000).toISOString();
-        const { error: subscriptionError } = await admin.from("subscriptions").upsert(
-          {
-            user_id: validNotes.userId,
-            plan: validNotes.plan,
-            status: "active",
-            expires_at: expires,
-            razorpay_payment_id: paymentEntity.id ?? null,
-            updated_at: new Date().toISOString(),
-          },
-          { onConflict: "user_id" }
-        );
-        if (subscriptionError) {
-          console.error("razorpay webhook: subscription upsert failed", subscriptionError);
-          return NextResponse.json({ ok: false }, { status: 500 });
+        if ("plan" in validNotes) {
+          const expires = new Date(Date.now() + PLANS[validNotes.plan].days * 86_400_000).toISOString();
+          const { error: subscriptionError } = await admin.from("subscriptions").upsert(
+            {
+              user_id: validNotes.userId,
+              plan: validNotes.plan,
+              status: "active",
+              expires_at: expires,
+              razorpay_payment_id: paymentEntity.id ?? null,
+              updated_at: new Date().toISOString(),
+            },
+            { onConflict: "user_id" }
+          );
+          if (subscriptionError) {
+            console.error("razorpay webhook: subscription upsert failed", subscriptionError);
+            return NextResponse.json({ ok: false }, { status: 500 });
+          }
+        } else if ("programKey" in validNotes) {
+          const programExpires = new Date(Date.now() + 365 * 86_400_000).toISOString();
+          const { error: entitlementError } = await admin.from("user_program_entitlements").upsert(
+            {
+              user_id: validNotes.userId,
+              program_key: validNotes.programKey,
+              source: "purchase",
+              status: "active",
+              razorpay_payment_id: paymentEntity.id ?? null,
+              expires_at: programExpires,
+              updated_at: new Date().toISOString(),
+            },
+            { onConflict: "user_id,program_key" }
+          );
+          if (entitlementError) {
+            console.error("razorpay webhook: entitlement upsert failed", entitlementError);
+            return NextResponse.json({ ok: false }, { status: 500 });
+          }
         }
       } else {
         console.error("razorpay webhook: missing/invalid notes", {

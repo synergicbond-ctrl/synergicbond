@@ -134,20 +134,74 @@ function Block({ block }: { block: NoteBlock }) {
         </Callout>
       );
 
-    case "illustration":
+    case "illustration": {
+      const tricky = block.tricky;
+      const edge = tricky ? "border-amber-400/30" : "border-cyan-400/25";
+      const headBg = tricky ? "bg-amber-500/[0.08] border-amber-400/20" : "bg-cyan-500/[0.07] border-cyan-400/15";
+      const headText = tricky ? "text-amber-200" : "text-cyan-200";
       return (
-        <div className="overflow-hidden rounded-xl border border-cyan-400/25 bg-gradient-to-b from-cyan-500/[0.06] to-white/[0.02]">
-          <div className="flex items-center gap-2 border-b border-cyan-400/15 bg-cyan-500/[0.06] px-4 py-2">
-            <span className="text-base leading-none">✎</span>
-            <span className="text-[11px] font-black uppercase tracking-[0.15em] text-cyan-200">Solved Example</span>
+        <div className={`overflow-hidden rounded-xl border ${edge} bg-gradient-to-b ${tricky ? "from-amber-500/[0.05]" : "from-cyan-500/[0.05]"} to-white/[0.02] shadow-sm`}>
+          {/* header */}
+          <div className={`flex flex-wrap items-center gap-2 border-b px-4 py-2.5 ${headBg}`}>
+            <span className="text-base leading-none">{tricky ? "🧩" : "✎"}</span>
+            <span className={`text-[11px] font-black uppercase tracking-[0.15em] ${headText}`}>{tricky ? "Tricky / Conceptual" : "Solved Example"}</span>
             <span className="rounded-full border border-white/10 bg-white/[0.06] px-1.5 py-0.5 text-[9px] font-bold uppercase tracking-wide text-white/55">{block.level}</span>
+            {block.concept && <span className="rounded-full border border-white/10 bg-white/[0.05] px-2 py-0.5 text-[9px] font-bold text-white/60">◦ {block.concept}</span>}
             <ExamTags exams={block.exams} />
           </div>
           <div className="p-4">
-            <p className="text-sm font-semibold leading-relaxed text-white">{block.question}</p>
-            <div className="mt-3 space-y-2">
-              <div className="rounded-lg border border-white/[0.08] bg-white/[0.03] p-2.5 text-sm leading-relaxed text-white/75"><span className="font-bold text-cyan-300">Approach · </span>{block.thinking}</div>
-              <div className="rounded-lg border border-white/[0.07] bg-[#0B1220] p-2.5 text-sm leading-relaxed text-white/85"><span className="font-bold text-white/60">Solution · </span>{block.solution}</div>
+            {/* question */}
+            <div className="flex gap-2">
+              <span className="mt-0.5 shrink-0 text-[11px] font-black text-white/35">Q</span>
+              <p className="text-[15px] font-semibold leading-relaxed text-white">{block.question}</p>
+            </div>
+
+            {/* approach */}
+            {block.thinking && (
+              <div className="mt-3 rounded-lg border border-white/[0.08] bg-white/[0.03] p-2.5 text-sm leading-relaxed text-white/75">
+                <span className="font-bold text-cyan-300">Approach · </span>{block.thinking}
+              </div>
+            )}
+
+            {/* stepped timeline (preferred) */}
+            {block.steps && block.steps.length > 0 && (
+              <ol className="mt-3 space-y-0">
+                {block.steps.map((s, i) => (
+                  <li key={i} className="relative flex gap-3 pb-3 last:pb-0">
+                    {/* connector rail */}
+                    {i < block.steps!.length - 1 && <span className="absolute left-[11px] top-6 h-full w-px bg-cyan-400/20" aria-hidden />}
+                    <span className="z-10 flex h-6 w-6 shrink-0 items-center justify-center rounded-full border border-cyan-400/40 bg-[#0B1220] text-[11px] font-black text-cyan-300">{i + 1}</span>
+                    <div className="min-w-0 flex-1 pt-0.5">
+                      {s.label && <p className="text-[13px] font-bold text-white/90">{s.label}</p>}
+                      <p className="text-sm leading-relaxed text-white/75">{s.work}</p>
+                    </div>
+                  </li>
+                ))}
+              </ol>
+            )}
+
+            {/* single-paragraph fallback */}
+            {!block.steps && block.solution && (
+              <div className="mt-3 rounded-lg border border-white/[0.07] bg-[#0B1220] p-2.5 text-sm leading-relaxed text-white/85"><span className="font-bold text-white/60">Solution · </span>{block.solution}</div>
+            )}
+
+            {/* boxed final answer */}
+            {block.answer && (
+              <div className="mt-3 flex items-center gap-2 rounded-lg border border-emerald-400/30 bg-emerald-500/[0.08] px-3 py-2">
+                <span className="text-[10px] font-black uppercase tracking-[0.15em] text-emerald-300/80">Answer</span>
+                <span className="text-[15px] font-black text-emerald-200">{block.answer}</span>
+              </div>
+            )}
+
+            {/* insight */}
+            {block.insight && (
+              <div className="mt-2 rounded-lg border border-violet-400/20 bg-violet-500/[0.05] p-2.5 text-sm leading-relaxed text-violet-100/90">
+                <span className="font-bold text-violet-300">💡 Key insight · </span>{block.insight}
+              </div>
+            )}
+
+            {/* extras */}
+            <div className="mt-2 space-y-2">
               {block.fastMethod && <div className="rounded-lg border border-emerald-400/15 bg-emerald-500/[0.04] p-2.5 text-sm leading-relaxed text-white/75"><span className="font-bold text-emerald-300">⚡ Fast method · </span>{block.fastMethod}</div>}
               {block.alternateMethod && <div className="rounded-lg border border-indigo-400/15 bg-indigo-500/[0.04] p-2.5 text-sm leading-relaxed text-white/75"><span className="font-bold text-indigo-300">Alternate · </span>{block.alternateMethod}</div>}
               {block.commonMistakes && block.commonMistakes.length > 0 && (
@@ -159,6 +213,7 @@ function Block({ block }: { block: NoteBlock }) {
           </div>
         </div>
       );
+    }
 
     case "misc":
       return (
@@ -188,6 +243,11 @@ function Block({ block }: { block: NoteBlock }) {
 }
 
 function Topic({ topic, index, defaultOpen }: { topic: NoteTopic; index: number; defaultOpen: boolean }) {
+  const examples = topic.subtopics.reduce(
+    (n, st) => n + st.blocks.filter((b) => b.kind === "illustration" || b.kind === "misc").length,
+    0,
+  );
+  const diagrams = topic.subtopics.reduce((n, st) => n + st.blocks.filter((b) => b.kind === "visual").length, 0);
   return (
     <details open={defaultOpen} className="group rounded-2xl border border-white/[0.08] bg-white/[0.02] open:border-cyan-400/25">
       <summary className="flex cursor-pointer list-none items-center gap-3 p-4 [&::-webkit-details-marker]:hidden">
@@ -195,6 +255,10 @@ function Topic({ topic, index, defaultOpen }: { topic: NoteTopic; index: number;
         <span className="min-w-0 flex-1">
           <span className="block font-black text-white">{topic.title}</span>
           {topic.intro && <span className="mt-0.5 block text-xs text-white/45">{topic.intro}</span>}
+          <span className="mt-1.5 flex flex-wrap gap-1.5">
+            {examples > 0 && <span className="rounded-full border border-emerald-400/20 bg-emerald-500/[0.08] px-2 py-0.5 text-[9px] font-bold uppercase tracking-wide text-emerald-300/90">✎ {examples} worked examples</span>}
+            {diagrams > 0 && <span className="rounded-full border border-cyan-400/20 bg-cyan-500/[0.06] px-2 py-0.5 text-[9px] font-bold uppercase tracking-wide text-cyan-300/90">◈ {diagrams} diagram{diagrams > 1 ? "s" : ""}</span>}
+          </span>
         </span>
         <span className="shrink-0 text-cyan-400 transition group-open:rotate-90">›</span>
       </summary>
@@ -215,13 +279,19 @@ function Topic({ topic, index, defaultOpen }: { topic: NoteTopic; index: number;
 export default function NotesRenderer({ notes, exam }: { notes: PremiumChapterNotes; exam: NotesExam }) {
   const scoped = filterNotesForExam(notes, exam);
   const stats = notesStats(scoped);
+  const examples = (stats.byKind.get("illustration") ?? 0) + (stats.byKind.get("misc") ?? 0);
+  const diagrams = stats.byKind.get("visual") ?? 0;
 
   return (
     <div className="space-y-3">
       {/* Derived header — never hardcoded counts */}
       <div className="flex flex-wrap items-center gap-2 text-xs text-white/45">
         <span className="rounded-full border border-cyan-400/25 bg-cyan-400/10 px-2 py-0.5 font-bold text-cyan-300">{exam} edition</span>
-        <span>{stats.topics} topics · {stats.subtopics} subtopics · {stats.blocks} note blocks</span>
+        <span>{stats.topics} topics</span>
+        <span className="text-white/25">·</span>
+        <span className="font-semibold text-emerald-300/80">{examples} worked examples</span>
+        <span className="text-white/25">·</span>
+        <span className="font-semibold text-cyan-300/80">{diagrams} diagrams</span>
       </div>
 
       {scoped.topics.map((t, i) => <Topic key={t.id} topic={t} index={i} defaultOpen={i === 0} />)}

@@ -9,7 +9,9 @@ import {
   Flame, 
   CheckCircle2, 
   Sparkles, 
-  AlertCircle
+  AlertCircle,
+  Search,
+  Filter
 } from "lucide-react";
 
 // Chapter categories
@@ -56,6 +58,13 @@ const organicChapters = [
 export default function PYQDominationDashboard() {
   const [activeTab, setActiveTab] = useState<"status" | "gaps" | "roadmap" | "audit">("status");
   const [selectedSub, setSelectedSub] = useState<"all" | "physical" | "inorganic" | "organic">("all");
+
+  // Audit Filters
+  const [auditSearch, setAuditSearch] = useState("");
+  const [auditExam, setAuditExam] = useState("ALL");
+  const [auditYear, setAuditYear] = useState("ALL");
+  const [auditStatus, setAuditStatus] = useState("ALL");
+  const [auditChapter, setAuditChapter] = useState("ALL");
 
   // Calculate live statistics
   const neetCount = ALL_PYQ_QUESTIONS.filter((q) => q.exam === "NEET").length;
@@ -453,42 +462,115 @@ export default function PYQDominationDashboard() {
           {/* TAB 4: Verification Audit */}
           {activeTab === "audit" && (
             <div className="space-y-6 animate-fadeIn">
-              <div className="rounded-2xl border border-white/5 bg-white/[0.02] p-6">
-                <div className="flex items-center gap-3 border-b border-white/10 pb-4 mb-4">
-                  <AlertTriangle className="h-5 w-5 text-amber-400" />
-                  <h3 className="text-lg font-bold text-white">Pending Manual Review</h3>
+              <div className="grid grid-cols-3 gap-4 mb-6">
+                <div className="rounded-xl border border-emerald-500/20 bg-emerald-500/5 p-4 flex flex-col items-center">
+                  <span className="text-2xl font-bold text-emerald-400">{ALL_PYQ_QUESTIONS.filter(q => q.authenticityStatus === "VERIFIED_PYQ").length}</span>
+                  <span className="text-xs text-emerald-500 uppercase tracking-wider font-semibold mt-1">Verified</span>
                 </div>
-                
-                <p className="text-sm text-white/60 leading-relaxed mb-6">
-                  The following questions have been flagged with <code className="bg-amber-500/10 text-amber-300 px-1.5 py-0.5 rounded">NEEDS_MANUAL_REVIEW</code>. 
-                  They require the source, year, paper number, and question number to be visually verified and authenticated before they can be marked as <code className="bg-emerald-500/10 text-emerald-300 px-1.5 py-0.5 rounded">VERIFIED_PYQ</code>.
-                </p>
+                <div className="rounded-xl border border-sky-500/20 bg-sky-500/5 p-4 flex flex-col items-center">
+                  <span className="text-2xl font-bold text-sky-400">{ALL_PYQ_QUESTIONS.filter(q => q.authenticityStatus === "ADAPTED_PYQ").length}</span>
+                  <span className="text-xs text-sky-500 uppercase tracking-wider font-semibold mt-1">Adapted</span>
+                </div>
+                <div className="rounded-xl border border-amber-500/20 bg-amber-500/5 p-4 flex flex-col items-center">
+                  <span className="text-2xl font-bold text-amber-400">{ALL_PYQ_QUESTIONS.filter(q => q.authenticityStatus === "NEEDS_MANUAL_REVIEW").length}</span>
+                  <span className="text-xs text-amber-500 uppercase tracking-wider font-semibold mt-1">Needs Review</span>
+                </div>
+              </div>
+
+              <div className="rounded-2xl border border-white/5 bg-white/[0.02] p-6">
+                <div className="flex flex-col gap-4 mb-6 pb-6 border-b border-white/10">
+                  <div className="relative">
+                    <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-white/40" />
+                    <input 
+                      type="text" 
+                      placeholder="Search questions, sources, IDs..." 
+                      value={auditSearch}
+                      onChange={(e) => setAuditSearch(e.target.value)}
+                      className="w-full bg-white/5 border border-white/10 rounded-xl py-2 pl-10 pr-4 text-sm text-white focus:outline-none focus:border-cyan-500/50 transition-colors"
+                    />
+                  </div>
+                  <div className="flex flex-wrap gap-3">
+                    <select value={auditExam} onChange={(e) => setAuditExam(e.target.value)} className="bg-white/5 border border-white/10 rounded-lg px-3 py-1.5 text-xs text-white focus:outline-none">
+                      <option value="ALL">All Exams</option>
+                      <option value="JEE Advanced">JEE Advanced</option>
+                      <option value="JEE Main">JEE Main</option>
+                      <option value="NEET">NEET</option>
+                    </select>
+                    <select value={auditStatus} onChange={(e) => setAuditStatus(e.target.value)} className="bg-white/5 border border-white/10 rounded-lg px-3 py-1.5 text-xs text-white focus:outline-none">
+                      <option value="ALL">All Statuses</option>
+                      <option value="NEEDS_MANUAL_REVIEW">Needs Review</option>
+                      <option value="VERIFIED_PYQ">Verified</option>
+                      <option value="ADAPTED_PYQ">Adapted</option>
+                    </select>
+                    <select value={auditYear} onChange={(e) => setAuditYear(e.target.value)} className="bg-white/5 border border-white/10 rounded-lg px-3 py-1.5 text-xs text-white focus:outline-none">
+                      <option value="ALL">All Years</option>
+                      {Array.from(new Set(ALL_PYQ_QUESTIONS.map(q => q.year))).sort((a,b)=>b-a).map(y => (
+                        <option key={y} value={y.toString()}>{y}</option>
+                      ))}
+                    </select>
+                    <select value={auditChapter} onChange={(e) => setAuditChapter(e.target.value)} className="bg-white/5 border border-white/10 rounded-lg px-3 py-1.5 text-xs text-white focus:outline-none max-w-[200px]">
+                      <option value="ALL">All Chapters</option>
+                      {Array.from(new Set(ALL_PYQ_QUESTIONS.map(q => q.chapter))).sort().map(c => (
+                        <option key={c} value={c}>{c}</option>
+                      ))}
+                    </select>
+                  </div>
+                </div>
 
                 <div className="grid gap-3 max-h-[500px] overflow-y-auto pr-2 custom-scrollbar">
-                  {ALL_PYQ_QUESTIONS.filter(q => q.authenticityStatus === "NEEDS_MANUAL_REVIEW").map(q => (
-                    <div key={q.id} className="rounded-xl border border-amber-500/20 bg-amber-500/5 p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-                      <div>
-                        <div className="flex items-center gap-2">
+                  {ALL_PYQ_QUESTIONS.filter(q => {
+                    if (auditExam !== "ALL" && q.exam !== auditExam) return false;
+                    if (auditStatus !== "ALL" && q.authenticityStatus !== auditStatus) return false;
+                    if (auditYear !== "ALL" && q.year.toString() !== auditYear) return false;
+                    if (auditChapter !== "ALL" && q.chapter !== auditChapter) return false;
+                    if (auditSearch.trim()) {
+                      const lower = auditSearch.toLowerCase();
+                      return q.question.toLowerCase().includes(lower) || 
+                             q.id.toLowerCase().includes(lower) || 
+                             q.source.toLowerCase().includes(lower);
+                    }
+                    return true;
+                  }).map(q => (
+                    <div key={q.id} className="rounded-xl border border-white/10 bg-white/[0.01] p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-4 hover:bg-white/[0.03] transition-colors">
+                      <div className="flex-1 min-w-0">
+                        <div className="flex flex-wrap items-center gap-2">
                           <span className="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-white/10 text-white/80">
-                            {q.exam}
+                            {q.exam} {q.year}
                           </span>
-                          <span className="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-amber-500/10 text-amber-400">
+                          <span className="text-[10px] font-mono tracking-wider px-2 py-0.5 rounded bg-white/5 text-white/60">
                             {q.id}
                           </span>
+                          {q.authenticityStatus === "NEEDS_MANUAL_REVIEW" && (
+                            <span className="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-amber-500/10 text-amber-400 border border-amber-500/20">
+                              Needs Official Verification
+                            </span>
+                          )}
+                          {q.authenticityStatus === "VERIFIED_PYQ" && (
+                            <span className="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+                              Verified Authentic
+                            </span>
+                          )}
+                          {q.authenticityStatus === "ADAPTED_PYQ" && (
+                            <span className="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-sky-500/10 text-sky-400 border border-sky-500/20">
+                              Adapted
+                            </span>
+                          )}
                         </div>
-                        <h4 className="mt-2 text-sm font-medium text-white truncate max-w-lg">
-                          {q.question.substring(0, 100)}...
+                        <h4 className="mt-2 text-sm text-white/90 line-clamp-2">
+                          {q.question}
                         </h4>
-                      </div>
-                      <div className="flex flex-col items-end gap-1 shrink-0">
-                         <div className="text-xs text-white/50">Year: <span className="text-white/80">{q.year}</span></div>
-                         <div className="text-xs text-white/50">Src: <span className="text-white/80">{q.source}</span></div>
+                        <div className="mt-2 flex flex-wrap gap-4 text-xs text-white/50">
+                          <div><span className="font-semibold text-white/70">Src:</span> {q.source}</div>
+                          <div><span className="font-semibold text-white/70">Paper:</span> {q.paperNumber}</div>
+                          <div><span className="font-semibold text-white/70">Q.No:</span> {q.questionNumber}</div>
+                          <div><span className="font-semibold text-white/70">Chapter:</span> {q.chapter}</div>
+                        </div>
                       </div>
                     </div>
                   ))}
-                  {ALL_PYQ_QUESTIONS.filter(q => q.authenticityStatus === "NEEDS_MANUAL_REVIEW").length === 0 && (
-                    <div className="p-8 text-center border border-emerald-500/20 bg-emerald-500/5 rounded-xl text-emerald-400">
-                      All questions are fully verified!
+                  {ALL_PYQ_QUESTIONS.length === 0 && (
+                    <div className="p-8 text-center border border-white/5 bg-white/5 rounded-xl text-white/50">
+                      No questions match the selected filters.
                     </div>
                   )}
                 </div>

@@ -225,3 +225,86 @@ export function OleumBar() {
     </svg>
   );
 }
+
+/** Empirical → molecular formula as a 5-step flowchart. */
+export function EmpiricalFormulaFlow() {
+  const steps: [string, string][] = [
+    ["Take 100 g", "% becomes grams"],
+    ["÷ atomic mass", "grams → moles"],
+    ["÷ smallest", "mole ratio"],
+    ["× to clear", "whole numbers → EF"],
+    ["× (M / EF-mass)", "EF → molecular formula"],
+  ];
+  return (
+    <svg viewBox="0 0 680 150" className="h-auto w-full" role="img" aria-label="Five-step empirical to molecular formula flowchart">
+      {steps.map((s, i) => {
+        const x = 12 + i * 133;
+        const last = i === steps.length - 1;
+        return (
+          <g key={s[0]}>
+            <rect x={x} y={40} width={118} height={64} rx="10" fill={CARD} stroke={last ? OK : AX} strokeWidth="1.3" />
+            <text x={x + 59} y={56} textAnchor="middle" style={{ ...TXS, fill: last ? OK : AX }}>{`STEP ${i + 1}`}</text>
+            <text x={x + 59} y={74} textAnchor="middle" style={TB}>{s[0]}</text>
+            <text x={x + 59} y={92} textAnchor="middle" style={TXS}>{s[1]}</text>
+            {!last && <Arrow x1={x + 118} y1={72} x2={x + 133} y2={72} />}
+          </g>
+        );
+      })}
+      <text x={340} y={128} textAnchor="middle" style={TXS}>Never round a 1 : 1.33 ratio — multiply by 3 to reach 3 : 4. Rounding fabricates a different compound.</text>
+    </svg>
+  );
+}
+
+/** Acid–base titration: burette + flask + the equivalence relation. */
+export function TitrationSetup() {
+  return (
+    <svg viewBox="0 0 660 240" className="h-auto w-full" role="img" aria-label="Acid base titration apparatus and the equivalence relation">
+      {/* burette */}
+      <g transform="translate(70,10)">
+        <rect x={0} y={0} width={26} height={150} rx="5" fill={CARD} stroke={AX} strokeWidth="1.4" />
+        <rect x={3} y={70} width={20} height={78} rx="3" fill="rgba(196,181,253,0.25)" />
+        {[0, 1, 2, 3, 4, 5].map((t) => <line key={t} x1={0} y1={12 + t * 22} x2={8} y2={12 + t * 22} stroke={LINE} />)}
+        <text x={13} y={-4} textAnchor="middle" style={TXS}>titrant</text>
+        <text x={40} y={40} style={TXS}>known M, V</text>
+        <polygon points="13,152 8,160 18,160" fill={VEC} />
+      </g>
+      {/* flask */}
+      <g transform="translate(45,168)">
+        <path d="M40 0 L40 14 L18 52 L74 52 L52 14 L52 0 Z" fill="rgba(103,232,249,0.12)" stroke={AX} strokeWidth="1.4" />
+        <text x={46} y={40} textAnchor="middle" style={TXS}>analyte</text>
+        <text x={46} y={68} textAnchor="middle" style={{ ...TXS, fill: OK }}>+ indicator</text>
+      </g>
+
+      {/* relation card */}
+      <g transform="translate(230,44)">
+        <rect x={0} y={0} width={390} height={150} rx="12" fill={CARD} stroke={LINE} />
+        <text x={20} y={30} style={TB}>At the end point — equivalents match:</text>
+        <text x={20} y={62} style={{ ...TS, fill: AX }}>Molarity:  n₁ M₁ V₁ = n₂ M₂ V₂   (n = valence factor)</text>
+        <text x={20} y={90} style={{ ...TS, fill: VEC }}>Normality:  N₁ V₁ = N₂ V₂   (N = n × M)</text>
+        <line x1={20} y1={104} x2={370} y2={104} stroke={LINE} />
+        <text x={20} y={126} style={TXS}>e.g. H₂SO₄ (n=2) vs NaOH (n=1): 2·M(acid)·V = 1·M(base)·V</text>
+        <text x={20} y={142} style={{ ...TXS, fill: WARN }}>Milli-mole trick: use mL and M directly → millimoles, no ÷1000.</text>
+      </g>
+    </svg>
+  );
+}
+
+/** Percent-yield funnel: theoretical → losses → actual. */
+export function YieldFunnel() {
+  return (
+    <svg viewBox="0 0 640 200" className="h-auto w-full" role="img" aria-label="Percent yield funnel from theoretical to actual yield">
+      <text x={320} y={22} textAnchor="middle" style={TB}>% yield = (actual / theoretical) × 100 — always from the limiting reagent</text>
+      <polygon points="90,50 420,50 330,120 180,120" fill="rgba(103,232,249,0.14)" stroke={AX} strokeWidth="1.3" />
+      <polygon points="180,120 330,120 300,168 210,168" fill="rgba(74,222,128,0.2)" stroke={OK} strokeWidth="1.3" />
+      <text x={255} y={82} textAnchor="middle" style={TB}>Theoretical yield</text>
+      <text x={255} y={100} textAnchor="middle" style={TXS}>100% — from LR stoichiometry</text>
+      <text x={255} y={150} textAnchor="middle" style={{ ...TS, fill: OK, fontWeight: 700 }}>Actual yield</text>
+      {/* loss arrows */}
+      <Arrow x1={430} y1={72} x2={480} y2={72} color={WARN} />
+      <text x={490} y={62} style={{ ...TXS, fill: WARN }}>side reactions</text>
+      <text x={490} y={78} style={{ ...TXS, fill: WARN }}>equilibrium limits</text>
+      <text x={490} y={94} style={{ ...TXS, fill: WARN }}>handling losses</text>
+      <text x={320} y={192} textAnchor="middle" style={TXS}>Sequential steps multiply: 80% then 60% ⇒ overall 0.8 × 0.6 = 48%.</text>
+    </svg>
+  );
+}

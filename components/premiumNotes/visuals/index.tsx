@@ -1,6 +1,6 @@
 import type { ComponentType } from "react";
 import { DipoleVectors, VseprGallery, HybridShapes, MoDiagram } from "./chemicalBonding";
-import { MoleConversionMap, LimitingReagentBars, EudiometryTube, ConcentrationMap, OleumBar } from "./moleConcept";
+import { MoleConversionMap, LimitingReagentBars, EudiometryTube, ConcentrationMap, OleumBar, EmpiricalFormulaFlow, TitrationSetup, YieldFunnel } from "./moleConcept";
 
 // Visual registry — VisualBlock.visual (string key) → SVG server component.
 // Add new chapters' visuals here; unknown keys render an honest missing state
@@ -16,4 +16,7 @@ export const VISUAL_REGISTRY: Record<string, ComponentType> = {
   "eudiometry-tube": EudiometryTube,
   "concentration-map": ConcentrationMap,
   "oleum-bar": OleumBar,
+  "empirical-formula-flow": EmpiricalFormulaFlow,
+  "titration-setup": TitrationSetup,
+  "yield-funnel": YieldFunnel,
 };

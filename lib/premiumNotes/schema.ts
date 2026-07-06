@@ -76,13 +76,36 @@ export interface TrickBlock extends BaseBlock {
   items: { trick: string; recall: string }[];
 }
 
-/** 8 · Solved Illustrations — same contract as the AI illustration lab. */
+/** A single numbered step in a worked solution. */
+export interface IllustrationStep {
+  /** Short imperative title, e.g. "Convert mass → moles". */
+  label?: string;
+  /** The actual working / computation / reasoning for this step. */
+  work: string;
+}
+
+/** 8 · Solved Illustrations — step-by-step worked examples woven into the
+ *  theory. `steps` is the preferred, numbered, timeline path; `solution`
+ *  remains a single-paragraph fallback for older chapters. Author at least
+ *  one of the two. */
 export interface IllustrationBlock extends BaseBlock {
   kind: "illustration";
   level: "basic" | "intermediate" | "advanced";
+  /** The one idea this example makes concrete (rendered as a chip). */
+  concept?: string;
+  /** Flag genuinely tricky / conceptual problems for a distinct accent. */
+  tricky?: boolean;
   question: string;
-  thinking: string;
-  solution: string;
+  /** How to attack it, before any numbers (the "read the problem" move). */
+  thinking?: string;
+  /** Preferred: numbered worked steps, rendered as a timeline. */
+  steps?: IllustrationStep[];
+  /** Fallback single-paragraph solution when `steps` is absent. */
+  solution?: string;
+  /** The boxed final answer. */
+  answer?: string;
+  /** The "aha" — why this problem teaches something, or the trap it hides. */
+  insight?: string;
   fastMethod?: string;
   alternateMethod?: string;
   commonMistakes?: string[];

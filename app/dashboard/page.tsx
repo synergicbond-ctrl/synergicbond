@@ -4,6 +4,7 @@ import { getUserEntitlements } from "@/lib/access/entitlements";
 import { getRole, isPrivileged } from "@/lib/auth/roles";
 import { COMING_SOON_PROGRAM_KEYS } from "@/lib/subscription";
 import GuestDashboardPreview from "@/components/dashboard/GuestDashboardPreview";
+import MyProgramsGrid from "@/components/dashboard/MyProgramsGrid";
 import Link from "next/link";
 import { 
   Sparkles, BookOpen, FileText, ClipboardList, Search, Award, PenTool, 
@@ -194,6 +195,11 @@ export default async function DashboardPage() {
               </div>
             </div>
           </div>
+        </section>
+
+        {/* ── PURCHASED PROGRAMS: Chapter-wise & Full Syllabus Dashboards ── */}
+        <section className="mt-8">
+          <MyProgramsGrid activeKeys={activeProgramKeys} isPro={entitlements.isPro || privileged} />
         </section>
 
         {/* ── CORE grid layout: 12 key sections ──────────────────────────── */}

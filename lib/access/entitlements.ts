@@ -33,6 +33,7 @@ export const ALL_PROGRAM_KEYS: ProgramKey[] = Array.from(new Set([
   ...ALL_BOARD_KEYS,
   "isc:class-11",
   "isc:class-12",
+  "olympiad",
 ]));
 
 

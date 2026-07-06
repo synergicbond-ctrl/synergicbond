@@ -63,6 +63,10 @@ const exceptionReferences: Record<string, NCERTReference> = {
   "ex-f2-bond-energy": { class: 11, chapter: "Chemical Bonding and Molecular Structure", topic: "Bond parameters and bond enthalpy" },
   "ex-inert-pair": { class: 12, chapter: "The p-Block Elements", topic: "Inert pair effect" },
   "ex-ice-density": { class: 11, chapter: "Hydrogen", topic: "Structure of water and ice" },
+  "ex-cr-cu-config": { class: 11, chapter: "Structure of Atom", topic: "Electronic configurations of atoms" },
+  "ex-odd-electron": { class: 11, chapter: "Chemical Bonding and Molecular Structure", topic: "Octet rule exceptions" },
+  "ex-water-heat-capacity": { class: 11, chapter: "Thermodynamics", topic: "Specific heat capacity" },
+  "ex-buffer-dilution": { class: 11, chapter: "Equilibrium", topic: "Buffer solutions" },
 };
 
 function orderReference(sourcePdf: string, group: string, property: string): NCERTReference {

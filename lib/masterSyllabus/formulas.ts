@@ -129,6 +129,39 @@ export const masterFormulas: Record<string, FormulaDetail[]> = {
     }
   ],
 
+  "chemical-bonding": [
+    {
+      title: "Formal Charge",
+      expression: "FC = V - N - \\frac{B}{2}",
+      meaning: "Valence electrons (V) minus non-bonding electrons (N) minus half of bonding electrons (B).",
+      units: "Dimensionless",
+      derivation: "Assigns electrons to atoms in a Lewis structure assuming equal sharing in bonds.",
+      shortcut: "Lowest formal charges generally correspond to the most stable Lewis structure.",
+      commonMistakes: "Confusing total bonding electrons with number of bonds.",
+      pyqContext: "Determining the most stable resonance structure."
+    },
+    {
+      title: "Dipole Moment",
+      expression: "\\mu = Q \\times r",
+      meaning: "Product of charge separation (Q) and distance between charges (r).",
+      units: "Debye (D) or Coulomb-meter (C·m)",
+      derivation: "Vector sum of individual bond dipoles.",
+      shortcut: "Symmetric molecules (e.g., CCl4, BF3, SF6) have μ = 0.",
+      commonMistakes: "Assuming molecules with polar bonds are always polar overall.",
+      pyqContext: "Predicting molecular polarity and solubility."
+    },
+    {
+      title: "MOT Bond Order",
+      expression: "BO = \\frac{N_b - N_a}{2}",
+      meaning: "Half the difference between bonding and antibonding electrons.",
+      units: "Dimensionless",
+      derivation: "Molecular Orbital Theory.",
+      shortcut: "For 14 electrons (N2), BO = 3. Each electron added or removed reduces BO by 0.5.",
+      commonMistakes: "Forgetting the division by 2.",
+      pyqContext: "Comparing bond length, bond strength, and magnetic properties (paramagnetic vs diamagnetic) across species like O2, O2+, O2-."
+    }
+  ],
+
   "thermodynamics": [
     {
       title: "First Law of Thermodynamics",

@@ -67,8 +67,7 @@ export default function ContactFeedback() {
             </div>
             <div className="flex-1">
               <h3 className="text-sm font-bold text-white">Email Support</h3>
-              {/* TODO: Replace placeholder with active domain route later */}
-              <p className="text-xs text-gray-400 mt-0.5">test@abc.com</p>
+              <p className="text-xs text-gray-400 mt-0.5">hello@synergicbond.com</p>
             </div>
             <span className="text-[10px] font-bold text-green-400 bg-green-500/10 px-2.5 py-1 rounded-full">ACTIVE</span>
           </div>

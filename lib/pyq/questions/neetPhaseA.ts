@@ -52,7 +52,7 @@ export const NEET_PHASE_A_QUESTIONS: PYQQuestion[] = [
     options: {
       A: "Benzene",
       B: "Cyclopentadienyl anion",
-      C: "Cycloheptatrienyl cation (Tropylium ion)",
+      C: "Cycloheptatrienyl cation",
       D: "Cyclooctatetraene"
     },
     answer: "D",
@@ -356,9 +356,9 @@ export const NEET_PHASE_A_QUESTIONS: PYQQuestion[] = [
     questionType: "MCQ-Single",
     question: "Which of the following conformations of n-butane is the most stable around the C2–C3 bond?",
     options: {
-      A: "Eclipsed (syn-periplanar)",
-      B: "Gauche (staggered skew)",
-      C: "Anti (staggered anti-periplanar)",
+      A: "Eclipsed",
+      B: "Gauche",
+      C: "Anti",
       D: "Partially eclipsed"
     },
     answer: "C",
@@ -434,10 +434,10 @@ export const NEET_PHASE_A_QUESTIONS: PYQQuestion[] = [
     questionType: "MCQ-Single",
     question: "Which of the following oxoacids of sulfur contains a peroxide linkage (-O-O-)?",
     options: {
-      A: "H2SO4 (Sulfuric acid)",
-      B: "H2S2O7 (Pyrosulfuric acid / Oleum)",
-      C: "H2S2O8 (Peroxodisulfuric acid / Marshall's acid)",
-      D: "H2S2O6 (Dithionic acid)"
+      A: "H2SO4",
+      B: "H2S2O7",
+      C: "H2S2O8",
+      D: "H2S2O6"
     },
     answer: "C",
     explanation: "Peroxodisulfuric acid (H2S2O8, Marshall's acid) contains a peroxide linkage (-O-O-) bridging two SO3H groups: HO-S(=O)2-O-O-S(=O)2-OH. In oleum (H2S2O7), the bridge is a single oxygen (-O-). In sulfuric acid and dithionic acid (-S-S- bond), no peroxide linkage exists.",
@@ -776,25 +776,6 @@ export const NEET_PHASE_A_QUESTIONS: PYQQuestion[] = [
 
   // ── CHEMICAL KINETICS (10 Questions) ────────────────────────────────────────
   {
-    id: "nt-ck-101", exam: "NEET", year: 2023,
-    questionType: "MCQ-Single",
-    question: "For a first-order reaction, the half-life period (t1/2) is 69.3 seconds. What is the rate constant (k) of the reaction?",
-    options: {
-      A: "0.01 s-1",
-      B: "0.1 s-1",
-      C: "0.001 s-1",
-      D: "10 s-1"
-    },
-    answer: "A",
-    explanation: "For a first-order reaction, the half-life is independent of initial concentration and given by $t_{1/2} = \\frac{0.693}{k}$. Solving for rate constant: $k = \\frac{0.693}{69.3\\text{ s}} = 0.01\\text{ s}^{-1}$.",
-    chapter: "Chemical Kinetics", subtopic: "First Order Kinetics",
-    concepts: ["First order reaction", "Half-life period", "Rate constant calculation"],
-    reactions: [], reagents: [], exceptions: [],
-    formulas: ["t_{1/2} = \\frac{0.693}{k}"],
-    ncertLines: ["Class 12 Ch. 4 — Chemical Kinetics — Half-life of a reaction"],
-    difficulty: "Easy", marks: 4, negMarks: 1, frequency: 45, trending: true, ncertDirect: true,
-  },
-  {
     id: "nt-ck-102", exam: "NEET", year: 2022,
     questionType: "MCQ-Single",
     question: "Which of the following graphs represents a zero-order reaction?",
@@ -814,25 +795,6 @@ export const NEET_PHASE_A_QUESTIONS: PYQQuestion[] = [
     difficulty: "Easy", marks: 4, negMarks: 1, frequency: 38, trending: true, ncertDirect: true,
   },
   {
-    id: "nt-ck-103", exam: "NEET", year: 2024,
-    questionType: "MCQ-Single",
-    question: "In the Arrhenius equation $k = A e^{-E_a / RT}$, if the temperature T increases from 300 K to 310 K, the rate constant approximately doubles. What is the primary reason for this increase in rate?",
-    options: {
-      A: "The average kinetic energy and collision frequency double",
-      B: "The fraction of molecules possessing energy equal to or greater than activation energy ($E_a$) approximately doubles",
-      C: "The activation energy ($E_a$) is halved at higher temperature",
-      D: "The pre-exponential factor A doubles"
-    },
-    answer: "B",
-    explanation: "According to Boltzmann distribution and collision theory, a 10 K rise in temperature only increases average kinetic energy and collision frequency by ~2-3%. However, the fraction of effective collisions ($e^{-E_a/RT}$, representing molecules with energy $\\ge E_a$) approximately doubles or triples, which is the primary cause of the rate doubling.",
-    chapter: "Chemical Kinetics", subtopic: "Temperature Dependence (Arrhenius Equation)",
-    concepts: ["Arrhenius equation", "Temperature coefficient", "Activation energy", "Boltzmann distribution"],
-    reactions: [], reagents: [], exceptions: [],
-    formulas: ["k = A e^{-E_a/RT}", "\\log\\frac{k_2}{k_1} = \\frac{E_a}{2.303R}\\left(\\frac{1}{T_1} - \\frac{1}{T_2}\\right)"],
-    ncertLines: ["Class 12 Ch. 4 — Chemical Kinetics — Temperature dependence of the rate of a reaction"],
-    difficulty: "Moderate", marks: 4, negMarks: 1, frequency: 40, trending: true, ncertDirect: true,
-  },
-  {
     id: "nt-ck-104", exam: "NEET", year: 2021,
     questionType: "MCQ-Single",
     question: "What is the unit of the rate constant (k) for a second-order reaction?",
@@ -850,25 +812,6 @@ export const NEET_PHASE_A_QUESTIONS: PYQQuestion[] = [
     formulas: ["(\\text{mol L}^{-1})^{1-n} \\text{ s}^{-1}"],
     ncertLines: ["Class 12 Ch. 4 — Chemical Kinetics — Units of rate constant"],
     difficulty: "Easy", marks: 4, negMarks: 1, frequency: 33, trending: false, ncertDirect: true,
-  },
-  {
-    id: "nt-ck-105", exam: "NEET", year: 2020,
-    questionType: "MCQ-Single",
-    question: "The rate law for the reaction $2A + B \\rightarrow C$ is given by $\\text{Rate} = k[A]^1 [B]^2$. By what factor does the rate of reaction change if the concentration of A is doubled and concentration of B is halved?",
-    options: {
-      A: "Remains unchanged (factor of 1)",
-      B: "Halved (factor of 0.5)",
-      C: "Doubled (factor of 2)",
-      D: "Quadrupled (factor of 4)"
-    },
-    answer: "B",
-    explanation: "Initial rate $R_1 = k[A][B]^2$. When $[A]$ is doubled ($2[A]$) and $[B]$ is halved ($[B]/2$), the new rate is $R_2 = k(2[A])([B]/2)^2 = k(2[A])([B]^2 / 4) = 0.5 \\times k[A][B]^2 = 0.5 R_1$. Thus, the reaction rate is halved.",
-    chapter: "Chemical Kinetics", subtopic: "Rate Law Calculations",
-    concepts: ["Rate law", "Order of reaction", "Concentration dependence"],
-    reactions: [], reagents: [], exceptions: [],
-    formulas: ["\\text{Rate} = k[A]^x[B]^y"],
-    ncertLines: ["Class 12 Ch. 4 — Chemical Kinetics — Rate law and rate constant"],
-    difficulty: "Easy", marks: 4, negMarks: 1, frequency: 31, trending: false, ncertDirect: true,
   },
   {
     id: "nt-ck-106", exam: "NEET", year: 2019,
@@ -1084,7 +1027,7 @@ export const NEET_PHASE_A_QUESTIONS: PYQQuestion[] = [
   {
     id: "nt-el-107", exam: "NEET", year: 2018,
     questionType: "MCQ-Single",
-    question: "In a lead storage battery (secondary cell), during discharging, what happens at the anode and cathode?",
+    question: "In a lead storage battery, during discharging, what happens at the anode and cathode?",
     options: {
       A: "Both lead (Pb) anode and lead dioxide (PbO2) cathode are converted into white insoluble lead sulfate (PbSO4)",
       B: "Pb is converted to PbO2 and sulfuric acid is regenerated",

@@ -125,9 +125,9 @@
     },
     {
       "chapterName": "Thermodynamics",
-      "totalCount": 14,
+      "totalCount": 12,
       "neetCount": 1,
-      "jmCount": 11,
+      "jmCount": 9,
       "jaCount": 2,
       "years": [
         2018,
@@ -156,14 +156,12 @@
     },
     {
       "chapterName": "Equilibrium",
-      "totalCount": 12,
+      "totalCount": 9,
       "neetCount": 1,
-      "jmCount": 10,
+      "jmCount": 7,
       "jaCount": 1,
       "years": [
         2018,
-        2019,
-        2020,
         2021,
         2022,
         2023,
@@ -182,7 +180,9 @@
         2014,
         2015,
         2016,
-        2017
+        2017,
+        2019,
+        2020
       ]
     },
     {
@@ -248,14 +248,13 @@
     },
     {
       "chapterName": "Chemical Kinetics",
-      "totalCount": 14,
-      "neetCount": 10,
+      "totalCount": 11,
+      "neetCount": 7,
       "jmCount": 3,
       "jaCount": 1,
       "years": [
         2018,
         2019,
-        2020,
         2021,
         2022,
         2023,
@@ -274,7 +273,8 @@
         2014,
         2015,
         2016,
-        2017
+        2017,
+        2020
       ]
     },
     {
@@ -526,9 +526,9 @@
     },
     {
       "chapterName": "Coordination Compounds",
-      "totalCount": 15,
+      "totalCount": 13,
       "neetCount": 1,
-      "jmCount": 12,
+      "jmCount": 10,
       "jaCount": 2,
       "years": [
         2018,
@@ -536,8 +536,7 @@
         2020,
         2021,
         2022,
-        2023,
-        2024
+        2023
       ],
       "missingYears": [
         2005,
@@ -552,7 +551,8 @@
         2014,
         2015,
         2016,
-        2017
+        2017,
+        2024
       ]
     },
     {

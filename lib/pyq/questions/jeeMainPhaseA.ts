@@ -12,7 +12,7 @@ export const JEE_MAIN_PHASE_A_QUESTIONS: PYQQuestion[] = [
     questionType: "MCQ-Single",
     question: "When acetaldehyde ($\\ce{CH3CHO}$) is treated with dilute $\\ce{NaOH}$ solution followed by heating, the major organic product formed is:",
     options: {
-      A: "But-2-enal (Crotonaldehyde)",
+      A: "But-2-enal",
       B: "3-Hydroxybutanal",
       C: "But-3-enal",
       D: "Butan-1-ol"
@@ -124,7 +124,7 @@ export const JEE_MAIN_PHASE_A_QUESTIONS: PYQQuestion[] = [
   {
     id: "jm-ak-107", exam: "JEE Main", year: 2018,
     questionType: "MCQ-Single",
-    question: "Which of the following reagents can convert toluene directly into benzaldehyde (Etard reaction)?",
+    question: "Which of the following reagents can convert toluene directly into benzaldehyde?",
     options: {
       A: "Alkaline $\\ce{KMnO4}$ followed by acid hydrolysis",
       B: "Chromyl chloride ($\\ce{CrO2Cl2}$) in $\\ce{CS2}$ followed by hydrolysis",
@@ -145,10 +145,10 @@ export const JEE_MAIN_PHASE_A_QUESTIONS: PYQQuestion[] = [
     questionType: "MCQ-Single",
     question: "The carboxylic acid that does NOT undergo Hell-Volhard-Zelinsky (HVZ) reaction is:",
     options: {
-      A: "Propanoic acid (CH3CH2COOH)",
-      B: "Ethanoic acid (CH3COOH)",
-      C: "2-Methylpropanoic acid ((CH3)2CHCOOH)",
-      D: "2,2-Dimethylpropanoic acid ((CH3)3CCOOH)"
+      A: "Propanoic acid",
+      B: "Ethanoic acid",
+      C: "2-Methylpropanoic acid",
+      D: "2,2-Dimethylpropanoic acid"
     },
     answer: "D",
     explanation: "The Hell-Volhard-Zelinsky (HVZ) reaction involves the $\\alpha$-halogenation of carboxylic acids using chlorine or bromine in the presence of a small amount of red phosphorus. This reaction strictly requires the presence of at least one $\\alpha$-hydrogen atom. 2,2-Dimethylpropanoic acid (pivalic acid, $\\ce{(CH3)3CCOOH}$) has no $\\alpha$-hydrogen on its quaternary $\\alpha$-carbon and thus fails to undergo the HVZ reaction.",
@@ -204,10 +204,10 @@ export const JEE_MAIN_PHASE_A_QUESTIONS: PYQQuestion[] = [
     questionType: "MCQ-Single",
     question: "Which of the following amines will give a foul-smelling carbylamine (isocyanide) gas when heated with chloroform and alcoholic $\\ce{KOH}$?",
     options: {
-      A: "N-Methylaniline (secondary amine)",
-      B: "N,N-Dimethylaniline (tertiary amine)",
-      C: "Aniline (primary aromatic amine)",
-      D: "Diethylamine (secondary aliphatic amine)"
+      A: "N-Methylaniline",
+      B: "N,N-Dimethylaniline",
+      C: "Aniline",
+      D: "Diethylamine"
     },
     answer: "C",
     explanation: "The Carbylamine reaction (isocyanide test) is a specific test given ONLY by primary aliphatic and primary aromatic amines. When heated with chloroform ($\\ce{CHCl3}$) and alcoholic alkali ($\\ce{KOH}$), primary amines generate dichlorocarbene ($:CCl2$) intermediate which converts them into extremely foul-smelling isocyanides (carbylamines). Aniline ($\\ce{C6H5NH2}$) is a primary aromatic amine and gives a positive test.",
@@ -373,25 +373,6 @@ export const JEE_MAIN_PHASE_A_QUESTIONS: PYQQuestion[] = [
     difficulty: "Easy", marks: 4, negMarks: 1, frequency: 38, trending: false, ncertDirect: true,
   },
   {
-    id: "jm-th-105", exam: "JEE Main", year: 2020,
-    questionType: "MCQ-Single",
-    question: "During an adiabatic process on an ideal gas, which of the following conditions is satisfied?",
-    options: {
-      A: "$q = 0$ and $\\Delta U = w$",
-      B: "$w = 0$ and $\\Delta U = q$",
-      C: "$\\Delta T = 0$ and $\\Delta U = 0$",
-      D: "$\\Delta P = 0$ and $q = \\Delta H$"
-    },
-    answer: "A",
-    explanation: "An adiabatic process is defined as a thermodynamic process wherein no heat transfer occurs between the system and its surroundings ($q = 0$). Substituting $q = 0$ into the first law of thermodynamics ($\\Delta U = q + w$), we get $\\Delta U = w$, meaning any work done on/by the system directly changes its internal energy and temperature.",
-    chapter: "Thermodynamics", subtopic: "Adiabatic Processes & First Law",
-    concepts: ["Adiabatic process", "First law of thermodynamics", "Internal energy change", "Work done in adiabatic expansion"],
-    reactions: [], reagents: [], exceptions: [],
-    formulas: ["\\Delta U = w_{\\text{ad}}", "P V^\\gamma = \\text{constant}"],
-    ncertLines: ["Class 11 Ch. 6 — Thermodynamics — Applications of First Law of Thermodynamics"],
-    difficulty: "Easy", marks: 4, negMarks: 1, frequency: 40, trending: false, ncertDirect: true,
-  },
-  {
     id: "jm-th-106", exam: "JEE Main", year: 2019,
     questionType: "MCQ-Single",
     question: "What is the standard enthalpy of formation ($\\Delta_f H^\\circ$) of an element in its most stable standard reference state at 298 K and 1 bar?",
@@ -429,25 +410,6 @@ export const JEE_MAIN_PHASE_A_QUESTIONS: PYQQuestion[] = [
     ncertLines: ["Class 11 Ch. 6 — Thermodynamics — Entropy and Second Law of Thermodynamics"],
     difficulty: "Easy", marks: 4, negMarks: 1, frequency: 36, trending: false, ncertDirect: true,
   },
-  {
-    id: "jm-th-108", exam: "JEE Main", year: 2022,
-    questionType: "MCQ-Single",
-    question: "The variation of equilibrium constant ($K$) with absolute temperature ($T$) for an endothermic reaction is given by the Van 't Hoff equation $\\ln\\left(\\frac{K_2}{K_1}\\right) = \\frac{\\Delta H^\\circ}{R}\\left(\\frac{1}{T_1} - \\frac{1}{T_2}\\right)$. If temperature increases ($T_2 > T_1$), how does $K$ change?",
-    options: {
-      A: "$K_2 > K_1$ (Equilibrium constant increases)",
-      B: "$K_2 < K_1$ (Equilibrium constant decreases)",
-      C: "$K_2 = K_1$ (Equilibrium constant remains unchanged)",
-      D: "$K_2$ becomes zero"
-    },
-    answer: "A",
-    explanation: "For an endothermic reaction, $\\Delta H^\\circ > 0$. When temperature increases ($T_2 > T_1$), the term $(1/T_1 - 1/T_2)$ is positive. Therefore, $\\ln(K_2/K_1) > 0$, which implies $K_2 > K_1$. Thus, increasing temperature increases the equilibrium constant of an endothermic reaction, shifting equilibrium forward (in agreement with Le Chatelier's principle).",
-    chapter: "Thermodynamics", subtopic: "Van 't Hoff Equation",
-    concepts: ["Van 't Hoff equation", "Temperature dependence of equilibrium constant", "Endothermic vs Exothermic equilibrium shift", "Le Chatelier principle"],
-    reactions: [], reagents: [], exceptions: [],
-    formulas: ["\\log\\left(\\frac{K_2}{K_1}\\right) = \\frac{\\Delta H^\\circ}{2.303 R}\\left(\\frac{1}{T_1} - \\frac{1}{T_2}\\right)"],
-    ncertLines: ["Class 11 Ch. 6 & Ch. 7 — Thermodynamics & Equilibrium — Temperature dependence of K"],
-    difficulty: "Moderate", marks: 4, negMarks: 1, frequency: 42, trending: true, ncertDirect: true,
-  },
 
   // ── EQUILIBRIUM (7 Questions) ───────────────────────────────────────────────
   {
@@ -472,7 +434,7 @@ export const JEE_MAIN_PHASE_A_QUESTIONS: PYQQuestion[] = [
   {
     id: "jm-eq-102", exam: "JEE Main", year: 2024,
     questionType: "MCQ-Single",
-    question: "According to Le Chatelier's principle, what is the effect of adding an inert gas (like Argon) at constant volume to the equilibrium $\\ce{PCl5(g) <=> PCl3(g) + Cl2(g)}$?",
+    question: "According to Le Chatelier's principle, what is the effect of adding an inert gas at constant volume to the equilibrium $\\ce{PCl5(g) <=> PCl3(g) + Cl2(g)}$?",
     options: {
       A: "Equilibrium shifts in the forward direction (more dissociation of PCl5)",
       B: "Equilibrium shifts in the backward direction (less dissociation of PCl5)",
@@ -508,63 +470,6 @@ export const JEE_MAIN_PHASE_A_QUESTIONS: PYQQuestion[] = [
     difficulty: "Easy", marks: 4, negMarks: 1, frequency: 48, trending: true, ncertDirect: true,
   },
   {
-    id: "jm-eq-104", exam: "JEE Main", year: 2021,
-    questionType: "MCQ-Single",
-    question: "In qualitative salt analysis, precipitation of Group III cations ($\\ce{Fe^{3+}, Al^{3+}, Cr^{3+}}$) as hydroxides requires adding ammonium chloride ($\\ce{NH4Cl}$) before adding ammonium hydroxide ($\\ce{NH4OH}$). What is the specific chemical role of $\\ce{NH4Cl}$?",
-    options: {
-      A: "To suppress the ionization of $\\ce{NH4OH}$ via the common ion effect, keeping $[\\ce{OH-}]$ low enough to prevent precipitation of Group IV and V hydroxides",
-      B: "To increase the ionization of $\\ce{NH4OH}$ to ensure rapid precipitation of all metal cations",
-      C: "To oxidize ferrous ($\\ce{Fe^{2+}}$) to ferric ($\\ce{Fe^{3+}}$) ion",
-      D: "To form soluble chloro complexes with Group III cations"
-    },
-    answer: "A",
-    explanation: "Group III hydroxides have very low solubility products ($K_{sp} \\sim 10^{-38}$), whereas Group IV and V hydroxides have much higher $K_{sp}$ values. Adding strong electrolyte $\\ce{NH4Cl}$ provides a high concentration of common ion $\\ce{NH4+}$, which suppresses the weak ionization of $\\ce{NH4OH}$ (common ion effect). This limits $[\\ce{OH-}]$ to just enough to exceed $K_{sp}$ of Group III cations without precipitating later groups.",
-    chapter: "Equilibrium", subtopic: "Common Ion Effect in Qualitative Analysis",
-    concepts: ["Common ion effect", "Qualitative salt analysis", "Solubility product vs Ionic product", "Selective precipitation"],
-    reactions: ["NH4OH <-> NH4+ + OH-"], reagents: ["NH4Cl + NH4OH"], exceptions: [],
-    formulas: [],
-    ncertLines: ["Class 11 Ch. 7 — Equilibrium — Common ion effect in the ionization of acids and bases"],
-    difficulty: "Moderate", marks: 4, negMarks: 1, frequency: 45, trending: true, ncertDirect: true,
-  },
-  {
-    id: "jm-eq-105", exam: "JEE Main", year: 2020,
-    questionType: "MCQ-Single",
-    question: "Calculate the pH of a $10^{-8}\\text{ M} \\ce{HCl}$ aqueous solution at 298 K.",
-    options: {
-      A: "8.00",
-      B: "6.98",
-      C: "7.00",
-      D: "6.00"
-    },
-    answer: "B",
-    explanation: "For very dilute acid solutions ($\\le 10^{-7}\\text{ M}$), the hydronium ion contribution from self-ionization of water ($10^{-7}\\text{ M}$) cannot be neglected. Total $[\\ce{H3O+}] = [\\ce{H3O+}]_{\\text{acid}} + [\\ce{H3O+}]_{\\text{water}} = 10^{-8} + 10^{-7} = 1.1 \\times 10^{-7}\\text{ M}$. pH $= -\\log_{10}(1.1 \\times 10^{-7}) = 7 - \\log_{10}(1.1) \\approx 7 - 0.04 = 6.96 \\text{ to } 6.98$. An acid solution must have $\\text{pH} < 7$ at 298 K.",
-    chapter: "Equilibrium", subtopic: "pH of Extremely Dilute Acids",
-    concepts: ["pH calculation", "Self ionization of water", "Extremely dilute acid solutions", "Logarithm rules"],
-    reactions: ["2 H2O <-> H3O+ + OH-"], reagents: [], exceptions: ["pH of 10^-8 M HCl is ~6.98, not 8.00"],
-    formulas: ["[\\ce{H3O+}]_{\\text{total}} = [\\ce{H+}]_{\\text{acid}} + 10^{-7}"],
-    ncertLines: ["Class 11 Ch. 7 — Equilibrium — pH scale"],
-    difficulty: "Moderate", marks: 4, negMarks: 1, frequency: 50, trending: true, ncertDirect: true,
-  },
-  {
-    id: "jm-eq-106", exam: "JEE Main", year: 2019,
-    questionType: "MCQ-Single",
-    question: "What is the correct pH formula for an aqueous solution of a salt derived from a weak acid and a weak base (e.g., ammonium acetate, $\\ce{CH3COONH4}$)?",
-    options: {
-      A: "$\\text{pH} = 7 + \\frac{1}{2}(p K_a - p K_b)$",
-      B: "$\\text{pH} = 7 + \\frac{1}{2}(p K_a + p K_b)$",
-      C: "$\\text{pH} = 7 - \\frac{1}{2}(p K_a + p K_b)$",
-      D: "$\\text{pH} = \\frac{1}{2}(p K_w + p K_a + \\log c)$"
-    },
-    answer: "A",
-    explanation: "For a salt of a weak acid and weak base (like $\\ce{CH3COONH4}$), both cation and anion undergo hydrolysis. The pH is independent of salt concentration ($c$) and depends only on the relative dissociation constants of the acid ($p K_a$) and base ($p K_b$): $\\text{pH} = \\frac{1}{2}(p K_w + p K_a - p K_b) = 7 + \\frac{1}{2}(p K_a - p K_b)$ at 298 K.",
-    chapter: "Equilibrium", subtopic: "Salt Hydrolysis",
-    concepts: ["Salt hydrolysis", "Weak acid weak base salt", "pH of hydrolyzed salts", "Dissociation constants"],
-    reactions: ["CH3COO- + NH4+ + H2O <-> CH3COOH + NH4OH"], reagents: [], exceptions: ["pH is independent of salt concentration c"],
-    formulas: ["\\text{pH} = 7 + \\frac{1}{2}(p K_a - p K_b)"],
-    ncertLines: ["Class 11 Ch. 7 — Equilibrium — Hydrolysis of Salts and the pH of their Solutions"],
-    difficulty: "Easy", marks: 4, negMarks: 1, frequency: 38, trending: false, ncertDirect: true,
-  },
-  {
     id: "jm-eq-107", exam: "JEE Main", year: 2018,
     questionType: "MCQ-Single",
     question: "For the exothermic equilibrium $\\ce{2 SO2(g) + O2(g) <=> 2 SO3(g)}$, $\\Delta H = -198\\text{ kJ/mol}$. Which combination of conditions favors maximum yield of $\\ce{SO3}$?",
@@ -585,44 +490,6 @@ export const JEE_MAIN_PHASE_A_QUESTIONS: PYQQuestion[] = [
   },
 
   // ── COORDINATION COMPOUNDS (10 Questions) ───────────────────────────────────
-  {
-    id: "jm-cc-101", exam: "JEE Main", year: 2023,
-    questionType: "MCQ-Single",
-    question: "In metal carbonyls like $\\ce{Ni(CO)4}$ or $\\ce{Fe(CO)5}$, what is the nature of the synergic bonding between the metal atom (M) and carbon monoxide (CO) ligand?",
-    options: {
-      A: "$\\sigma$ donation from lone pair on carbon to empty M orbital, accompanied by $\\pi$ back-bonding from filled metal d-orbital into empty $\\pi^*$ antibonding orbital of CO",
-      B: "Pure electrostatic ionic attraction between $\\ce{M^{2+}}$ and $\\ce{CO^{2-}}$",
-      C: "$\\pi$ donation from CO double bond to metal d-orbital without any $\\sigma$ bond",
-      D: "$\\sigma$ donation from oxygen lone pair to metal and $\\pi$ back-bonding into carbon d-orbital"
-    },
-    answer: "A",
-    explanation: "In organometallic metal carbonyls, the M-C bond possesses synergic bonding: (1) A $\\sigma$-bond is formed by donation of a lone pair of electrons on the carbonyl carbon into a vacant orbital of the metal. (2) A $\\pi$ back-bond is formed by donation of electrons from a filled d-orbital of the metal into the vacant $\\pi^*$ antibonding molecular orbital of CO. This mutual reinforcement (synergic effect) strengthens the M-C bond while weakening and lengthening the C-O bond.",
-    chapter: "Coordination Compounds", subtopic: "Synergic Bonding in Metal Carbonyls",
-    concepts: ["Synergic bonding", "Metal carbonyls", "Pi back bonding", "Pi star antibonding orbitals", "Bond length variation"],
-    reactions: [], reagents: ["CO ligand"], exceptions: ["Synergic bonding strengthens M-C bond but weakens C-O bond"],
-    formulas: [],
-    ncertLines: ["Class 12 Ch. 9 — Coordination Compounds — Bonding in Metal Carbonyls (Synergic bonding)"],
-    difficulty: "Easy", marks: 4, negMarks: 1, frequency: 60, trending: true, ncertDirect: true,
-  },
-  {
-    id: "jm-cc-102", exam: "JEE Main", year: 2024,
-    questionType: "MCQ-Single",
-    question: "According to Crystal Field Theory (CFT), what is the electronic configuration and hybridization of the central iron atom in the low-spin hexacyanoferrate(II) ion, $\\ce{[Fe(CN)6]^{4-}}$?",
-    options: {
-      A: "$t_{2g}^6 e_g^0$, $d^2sp^3$ (Inner orbital complex, diamagnetic)",
-      B: "$t_{2g}^4 e_g^2$, $sp^3d^2$ (Outer orbital complex, paramagnetic)",
-      C: "$t_{2g}^3 e_g^3$, $d^2sp^3$ (Inner orbital complex, paramagnetic)",
-      D: "$t_{2g}^6 e_g^0$, $sp^3d^2$ (Outer orbital complex, diamagnetic)"
-    },
-    answer: "A",
-    explanation: "In $\\ce{[Fe(CN)6]^{4-}}$, iron is in +2 oxidation state ($3d^6$). Cyanide ($\\ce{CN-}$) is a strong field ligand in the spectrochemical series, causing large crystal field splitting ($\\Delta_o > P$). Therefore, all six $3d$ electrons pair up in the lower energy $t_{2g}$ orbitals ($t_{2g}^6 e_g^0$). This leaves two inner $3d$ orbitals vacant for $d^2sp^3$ hybridization, forming an inner-orbital, diamagnetic octahedral complex.",
-    chapter: "Coordination Compounds", subtopic: "Crystal Field Theory & VBT",
-    concepts: ["Crystal field theory", "Valence bond theory", "Strong field ligand", "Inner orbital complex", "Diamagnetism"],
-    reactions: [], reagents: [], exceptions: [],
-    formulas: ["\\Delta_o > P \\implies \\text{Low spin pairing}"],
-    ncertLines: ["Class 12 Ch. 9 — Coordination Compounds — Crystal Field Theory — Octahedral splitting"],
-    difficulty: "Easy", marks: 4, negMarks: 1, frequency: 55, trending: true, ncertDirect: true,
-  },
   {
     id: "jm-cc-103", exam: "JEE Main", year: 2022,
     questionType: "MCQ-Single",
@@ -763,7 +630,7 @@ export const JEE_MAIN_PHASE_A_QUESTIONS: PYQQuestion[] = [
     options: {
       A: "Nitrite ion ($\\ce{NO2-}$)",
       B: "Oxalate ion ($\\ce{C2O4^{2-}}$)",
-      C: "Ethylenediamine (en)",
+      C: "Ethylenediamine",
       D: "Ammonia ($\\ce{NH3}$)"
     },
     answer: "A",

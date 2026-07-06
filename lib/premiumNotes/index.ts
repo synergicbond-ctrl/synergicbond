@@ -5,6 +5,7 @@ import { MOLE_CONCEPT_NOTES } from "./content/moleConcept";
 import { ATOMIC_STRUCTURE_NOTES } from "./content/atomicStructure";
 import { THERMODYNAMICS_NOTES } from "./content/thermodynamics";
 import { EQUILIBRIUM_NOTES } from "./content/equilibrium";
+import { IONIC_EQUILIBRIUM_NOTES } from "./content/ionicEquilibrium";
 
 // ─────────────────────────────────────────────────────────────────────────────
 // Premium Notes registry — chapterId (masterSyllabus dir id) → authored notes.
@@ -18,6 +19,7 @@ export const PREMIUM_NOTES: Record<string, PremiumChapterNotes> = {
   "atomic-structure": ATOMIC_STRUCTURE_NOTES,
   "thermodynamics": THERMODYNAMICS_NOTES,
   "chemical-equilibrium": EQUILIBRIUM_NOTES,
+  "ionic-equilibrium": IONIC_EQUILIBRIUM_NOTES,
 };
 
 export function getPremiumNotes(chapterId: string): PremiumChapterNotes | undefined {

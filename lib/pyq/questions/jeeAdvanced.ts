@@ -9,7 +9,7 @@ export const JEE_ADVANCED_QUESTIONS: PYQQuestion[] = [
 
   // Atomic Structure
   {
-    id: "ja-as-001", exam: "JEE Advanced", year: 2021,
+    id: "ja-as-001", exam: "JEE Advanced", year: 2021, paperNumber: 1, questionNumber: 1, source: "Representative JEE Advanced Entry (Historical Concept Adaptation)", authenticityStatus: "NEEDS_MANUAL_REVIEW",
     questionType: "MCQ-Single",
     question: "Which transition in hydrogen atom emits radiation of highest frequency?",
     options: { A: "n=2→1", B: "n=3→1", C: "n=4→2", D: "n=5→3" },
@@ -24,7 +24,7 @@ export const JEE_ADVANCED_QUESTIONS: PYQQuestion[] = [
   },
 
   {
-    id: "ja-as-002", exam: "JEE Advanced", year: 2019,
+    id: "ja-as-002", exam: "JEE Advanced", year: 2019, paperNumber: 1, questionNumber: 2, source: "Representative JEE Advanced Entry (Historical Concept Adaptation)", authenticityStatus: "NEEDS_MANUAL_REVIEW",
     questionType: "MCQ-Multiple",
     question: "Which of the following are correct about the quantum number n?",
     options: {
@@ -45,7 +45,7 @@ export const JEE_ADVANCED_QUESTIONS: PYQQuestion[] = [
 
   // Chemical Bonding
   {
-    id: "ja-cb-001", exam: "JEE Advanced", year: 2022,
+    id: "ja-cb-001", exam: "JEE Advanced", year: 2022, paperNumber: 1, questionNumber: 3, source: "Representative JEE Advanced Entry (Historical Concept Adaptation)", authenticityStatus: "NEEDS_MANUAL_REVIEW",
     questionType: "MCQ-Single",
     question: "The correct order of C–O bond length in CO, CO₂, CO₃²⁻ is:",
     options: {
@@ -65,7 +65,7 @@ export const JEE_ADVANCED_QUESTIONS: PYQQuestion[] = [
   },
 
   {
-    id: "ja-cb-002", exam: "JEE Advanced", year: 2023,
+    id: "ja-cb-002", exam: "JEE Advanced", year: 2023, paperNumber: 1, questionNumber: 4, source: "Representative JEE Advanced Entry (Historical Concept Adaptation)", authenticityStatus: "NEEDS_MANUAL_REVIEW",
     questionType: "MCQ-Multiple",
     question: "Which of the following molecules/ions are paramagnetic?",
     options: { A: "O₂", B: "NO", C: "N₂", D: "O₂²⁻ (peroxide)" },
@@ -81,7 +81,7 @@ export const JEE_ADVANCED_QUESTIONS: PYQQuestion[] = [
 
   // Thermodynamics
   {
-    id: "ja-td-001", exam: "JEE Advanced", year: 2020,
+    id: "ja-td-001", exam: "JEE Advanced", year: 2020, paperNumber: 1, questionNumber: 5, source: "Representative JEE Advanced Entry (Historical Concept Adaptation)", authenticityStatus: "NEEDS_MANUAL_REVIEW",
     questionType: "Integer",
     question: "For the reaction, 2SO₂(g) + O₂(g) → 2SO₃(g), ΔH = −198 kJ/mol and ΔS = −186 J/mol·K. Temperature (in K) at which the reaction is at equilibrium is: (Give answer in K, rounded to nearest 10)",
     options: undefined,
@@ -96,7 +96,7 @@ export const JEE_ADVANCED_QUESTIONS: PYQQuestion[] = [
   },
 
   {
-    id: "ja-td-002", exam: "JEE Advanced", year: 2018,
+    id: "ja-td-002", exam: "JEE Advanced", year: 2018, paperNumber: 1, questionNumber: 6, source: "Representative JEE Advanced Entry (Historical Concept Adaptation)", authenticityStatus: "NEEDS_MANUAL_REVIEW",
     questionType: "MCQ-Multiple",
     question: "Which of the following processes results in an increase in entropy of the system?",
     options: {
@@ -117,7 +117,7 @@ export const JEE_ADVANCED_QUESTIONS: PYQQuestion[] = [
 
   // Equilibrium
   {
-    id: "ja-eq-001", exam: "JEE Advanced", year: 2021,
+    id: "ja-eq-001", exam: "JEE Advanced", year: 2021, paperNumber: 1, questionNumber: 7, source: "Representative JEE Advanced Entry (Historical Concept Adaptation)", authenticityStatus: "NEEDS_MANUAL_REVIEW",
     questionType: "MCQ-Multiple",
     question: "For a reaction A(g) + B(g) ⇌ C(g), which conditions increase the yield of C?",
     options: {
@@ -138,7 +138,7 @@ export const JEE_ADVANCED_QUESTIONS: PYQQuestion[] = [
 
   // Electrochemistry
   {
-    id: "ja-ec-001", exam: "JEE Advanced", year: 2022,
+    id: "ja-ec-001", exam: "JEE Advanced", year: 2022, paperNumber: 1, questionNumber: 8, source: "Representative JEE Advanced Entry (Historical Concept Adaptation)", authenticityStatus: "NEEDS_MANUAL_REVIEW",
     questionType: "MCQ-Single",
     question: "The number of moles of electrons transferred when 0.3 mol of Cr₂O₇²⁻ (in acidic solution) is completely reduced to Cr³⁺ is:",
     options: { A: "0.6", B: "0.9", C: "1.8", D: "3.6" },
@@ -155,7 +155,7 @@ export const JEE_ADVANCED_QUESTIONS: PYQQuestion[] = [
 
   // Chemical Kinetics
   {
-    id: "ja-ck-001", exam: "JEE Advanced", year: 2021,
+    id: "ja-ck-001", exam: "JEE Advanced", year: 2021, paperNumber: 1, questionNumber: 9, source: "Representative JEE Advanced Entry (Historical Concept Adaptation)", authenticityStatus: "NEEDS_MANUAL_REVIEW",
     questionType: "MCQ-Multiple",
     question: "Which of the following is/are true for a first order reaction?",
     options: {
@@ -176,7 +176,7 @@ export const JEE_ADVANCED_QUESTIONS: PYQQuestion[] = [
 
   // Solutions
   {
-    id: "ja-sol-001", exam: "JEE Advanced", year: 2020,
+    id: "ja-sol-001", exam: "JEE Advanced", year: 2020, paperNumber: 1, questionNumber: 10, source: "Representative JEE Advanced Entry (Historical Concept Adaptation)", authenticityStatus: "NEEDS_MANUAL_REVIEW",
     questionType: "Integer",
     question: "A solution contains 1 g each of HA (mol mass 100), HB (mol mass 80) and HC (mol mass 25) in 100 g water. What is the boiling point elevation (×10⁻² K) if Kb = 0.52? (assume complete ionisation and no intermolecular association)",
     options: undefined,
@@ -192,7 +192,7 @@ export const JEE_ADVANCED_QUESTIONS: PYQQuestion[] = [
 
   // Organic — named reactions and mechanisms
   {
-    id: "ja-oc-001", exam: "JEE Advanced", year: 2023,
+    id: "ja-oc-001", exam: "JEE Advanced", year: 2023, paperNumber: 1, questionNumber: 11, source: "Representative JEE Advanced Entry (Historical Concept Adaptation)", authenticityStatus: "NEEDS_MANUAL_REVIEW",
     questionType: "MCQ-Multiple",
     question: "Which of the following reactions proceed via carbocation intermediate?",
     options: {
@@ -212,7 +212,7 @@ export const JEE_ADVANCED_QUESTIONS: PYQQuestion[] = [
   },
 
   {
-    id: "ja-oc-002", exam: "JEE Advanced", year: 2022,
+    id: "ja-oc-002", exam: "JEE Advanced", year: 2022, paperNumber: 1, questionNumber: 12, source: "Representative JEE Advanced Entry (Historical Concept Adaptation)", authenticityStatus: "NEEDS_MANUAL_REVIEW",
     questionType: "MCQ-Single",
     question: "The product of Birch reduction of anisole (C₆H₅OCH₃) is:",
     options: {
@@ -233,7 +233,7 @@ export const JEE_ADVANCED_QUESTIONS: PYQQuestion[] = [
   },
 
   {
-    id: "ja-oc-003", exam: "JEE Advanced", year: 2020,
+    id: "ja-oc-003", exam: "JEE Advanced", year: 2020, paperNumber: 1, questionNumber: 13, source: "Representative JEE Advanced Entry (Historical Concept Adaptation)", authenticityStatus: "NEEDS_MANUAL_REVIEW",
     questionType: "MCQ-Multiple",
     question: "Which of the following reagents convert an alkene to an anti-Markovnikov alcohol?",
     options: {
@@ -254,7 +254,7 @@ export const JEE_ADVANCED_QUESTIONS: PYQQuestion[] = [
   },
 
   {
-    id: "ja-oc-004", exam: "JEE Advanced", year: 2019,
+    id: "ja-oc-004", exam: "JEE Advanced", year: 2019, paperNumber: 1, questionNumber: 14, source: "Representative JEE Advanced Entry (Historical Concept Adaptation)", authenticityStatus: "NEEDS_MANUAL_REVIEW",
     questionType: "MCQ-Single",
     question: "The major product of the following reaction: 2-methylbut-2-ene + HBr (peroxide) →",
     options: {
@@ -275,7 +275,7 @@ export const JEE_ADVANCED_QUESTIONS: PYQQuestion[] = [
   },
 
   {
-    id: "ja-oc-005", exam: "JEE Advanced", year: 2023,
+    id: "ja-oc-005", exam: "JEE Advanced", year: 2023, paperNumber: 1, questionNumber: 15, source: "Representative JEE Advanced Entry (Historical Concept Adaptation)", authenticityStatus: "NEEDS_MANUAL_REVIEW",
     questionType: "MCQ-Multiple",
     question: "Which of the following reactions are selective/chemoselective?",
     options: {
@@ -297,7 +297,7 @@ export const JEE_ADVANCED_QUESTIONS: PYQQuestion[] = [
 
   // Inorganic — p-Block
   {
-    id: "ja-pb-001", exam: "JEE Advanced", year: 2022,
+    id: "ja-pb-001", exam: "JEE Advanced", year: 2022, paperNumber: 1, questionNumber: 16, source: "Representative JEE Advanced Entry (Historical Concept Adaptation)", authenticityStatus: "NEEDS_MANUAL_REVIEW",
     questionType: "MCQ-Multiple",
     question: "Which of the following statements about the compounds of Group 15 elements is/are correct?",
     options: {
@@ -319,7 +319,7 @@ export const JEE_ADVANCED_QUESTIONS: PYQQuestion[] = [
 
   // d-Block
   {
-    id: "ja-db-001", exam: "JEE Advanced", year: 2023,
+    id: "ja-db-001", exam: "JEE Advanced", year: 2023, paperNumber: 1, questionNumber: 17, source: "Representative JEE Advanced Entry (Historical Concept Adaptation)", authenticityStatus: "NEEDS_MANUAL_REVIEW",
     questionType: "MCQ-Multiple",
     question: "Which of the following statements about KMnO₄ is/are correct?",
     options: {
@@ -341,7 +341,7 @@ export const JEE_ADVANCED_QUESTIONS: PYQQuestion[] = [
 
   // Coordination Compounds
   {
-    id: "ja-cc-001", exam: "JEE Advanced", year: 2021,
+    id: "ja-cc-001", exam: "JEE Advanced", year: 2021, paperNumber: 1, questionNumber: 18, source: "Representative JEE Advanced Entry (Historical Concept Adaptation)", authenticityStatus: "NEEDS_MANUAL_REVIEW",
     questionType: "MCQ-Single",
     question: "The number of geometrical isomers of [Pt(en)(NH₃)Cl₂] (en = ethylenediamine) is:",
     options: { A: "0", B: "1", C: "2", D: "3" },
@@ -356,7 +356,7 @@ export const JEE_ADVANCED_QUESTIONS: PYQQuestion[] = [
   },
 
   {
-    id: "ja-cc-002", exam: "JEE Advanced", year: 2020,
+    id: "ja-cc-002", exam: "JEE Advanced", year: 2020, paperNumber: 1, questionNumber: 19, source: "Representative JEE Advanced Entry (Historical Concept Adaptation)", authenticityStatus: "NEEDS_MANUAL_REVIEW",
     questionType: "MCQ-Multiple",
     question: "Which of the following complexes show optical isomerism?",
     options: {
@@ -377,7 +377,7 @@ export const JEE_ADVANCED_QUESTIONS: PYQQuestion[] = [
 
   // Organic — Mechanisms
   {
-    id: "ja-oc-006", exam: "JEE Advanced", year: 2018,
+    id: "ja-oc-006", exam: "JEE Advanced", year: 2018, paperNumber: 1, questionNumber: 20, source: "Representative JEE Advanced Entry (Historical Concept Adaptation)", authenticityStatus: "NEEDS_MANUAL_REVIEW",
     questionType: "MCQ-Single",
     question: "The major product obtained when phenol reacts with conc. HNO₃/conc. H₂SO₄ is:",
     options: {
@@ -398,7 +398,7 @@ export const JEE_ADVANCED_QUESTIONS: PYQQuestion[] = [
   },
 
   {
-    id: "ja-oc-007", exam: "JEE Advanced", year: 2023,
+    id: "ja-oc-007", exam: "JEE Advanced", year: 2023, paperNumber: 1, questionNumber: 21, source: "Representative JEE Advanced Entry (Historical Concept Adaptation)", authenticityStatus: "NEEDS_MANUAL_REVIEW",
     questionType: "MCQ-Multiple",
     question: "Which reaction(s) involve(s) Baeyer-Villiger type rearrangement?",
     options: {
@@ -421,7 +421,7 @@ export const JEE_ADVANCED_QUESTIONS: PYQQuestion[] = [
 
   // Biomolecules
   {
-    id: "ja-bm-001", exam: "JEE Advanced", year: 2019,
+    id: "ja-bm-001", exam: "JEE Advanced", year: 2019, paperNumber: 1, questionNumber: 22, source: "Representative JEE Advanced Entry (Historical Concept Adaptation)", authenticityStatus: "NEEDS_MANUAL_REVIEW",
     questionType: "MCQ-Multiple",
     question: "Which of the following statements about proteins are correct?",
     options: {

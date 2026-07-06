@@ -110,7 +110,7 @@ const DICT: Record<string, Record<Lang, string>> = {
 
   // ── Donation ──
   "donate.eyebrow": { english: "Support the Mission", hindi: "मिशन का समर्थन करें", hinglish: "Support the Mission", spanish: "Apoya la Misión", arabic: "ادعم المهمة", french: "Soutenez la Mission", german: "Unterstütze die Mission" },
-  "donate.title": { english: "Back Free Chemistry Education", hindi: "मुफ़्त केमिस्ट्री शिक्षा का साथ दें", hinglish: "Back Free Chemistry Education", spanish: "Apoya la Educación Gratuita", arabic: "ادعم تعليم الكيمياء المجاني", french: "Soutenez l'Éducation Gratuite", german: "Kostenlose Chemie-Bildung Fördern" },
+  "donate.title": { english: "Support Affordable Chemistry Education", hindi: "किफायती केमिस्ट्री शिक्षा का समर्थन करें", hinglish: "Support Affordable Chemistry Education", spanish: "Apoya la Educación Química Asequible", arabic: "ادعم تعليم الكيمياء الميسر", french: "Soutenez l'Éducation Chimique Abordable", german: "Erschwingliche Chemie-Bildung Unterstützen" },
 
   // ── FAQ ──
   "faq.eyebrow": { english: "FAQ", hindi: "सामान्य प्रश्न", hinglish: "FAQ", spanish: "Preguntas", arabic: "الأسئلة الشائعة", french: "FAQ", german: "FAQ" },

@@ -77,40 +77,58 @@ export default function FullSyllabusDashboard({
   // Isolated question pool for this specific program only
   const programQuestions = useMemo(() => getIsolatedProgramQuestions(programKey), [programKey]);
 
+  // Derive accent color based on program type for visual identity
+  const accentClass = programType === "olympiad"
+    ? "from-amber-950/50 via-[#0B1220]/90 to-[#0B1220] border-amber-500/30"
+    : programType === "entrance" && programKey === "jee-advanced"
+    ? "from-violet-950/50 via-[#0B1220]/90 to-[#0B1220] border-violet-500/30"
+    : programType === "entrance" && programKey === "neet"
+    ? "from-emerald-950/50 via-[#0B1220]/90 to-[#0B1220] border-emerald-500/30"
+    : "from-cyan-950/50 via-[#0B1220]/90 to-[#0B1220] border-cyan-500/30";
+
+  const statColor = programType === "olympiad" ? "text-amber-400"
+    : programType === "entrance" && programKey === "jee-advanced" ? "text-violet-400"
+    : programType === "entrance" && programKey === "neet" ? "text-emerald-400"
+    : "text-cyan-400";
+
   return (
     <div className="min-h-screen bg-[#0B1220] text-white selection:bg-cyan-500/30">
       {/* ── Top Header Banner ───────────────────────────────────────────── */}
-      <div className="border-b border-white/10 bg-gradient-to-b from-cyan-950/30 via-[#0B1220]/80 to-[#0B1220] px-4 py-8 sm:px-6 sm:py-10">
+      <div className={`border-b border-white/[0.08] bg-gradient-to-b ${accentClass} px-4 py-8 sm:px-6 sm:py-12`}>
         <div className="mx-auto max-w-6xl">
           {backUrl && (
-            <nav className="mb-4 text-xs font-semibold text-white/50">
-              <Link href={backUrl} className="hover:text-cyan-400 transition flex items-center gap-1.5 inline-flex">
-                &larr; {backLabel || "Back to Dashboard"}
+            <nav className="mb-5">
+              <Link
+                href={backUrl}
+                className="inline-flex items-center gap-1.5 text-sm font-bold text-cyan-400 hover:text-cyan-300 hover:underline underline-offset-2 transition"
+              >
+                <span aria-hidden>←</span> {backLabel || "Back to Dashboard"}
               </Link>
             </nav>
           )}
-          <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
-            <div>
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 text-cyan-300 text-xs font-bold border border-cyan-500/20 mb-2">
-                <ShieldCheck className="h-3.5 w-3.5" /> Program Isolated Curriculum
+          <div className="flex flex-col gap-5 md:flex-row md:items-end md:justify-between">
+            <div className="space-y-2">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/[0.07] text-white/60 text-xs font-bold border border-white/10">
+                <ShieldCheck className="h-3.5 w-3.5 text-cyan-400" /> Program-Isolated · Zero Cross-Program Leakage
               </div>
-              <h1 className="text-2xl sm:text-3xl md:text-4xl font-black tracking-tight text-white">
-                {programName} <span className="text-white/40 font-light">&bull;</span> Full Syllabus
+              <h1 className="text-2xl sm:text-3xl md:text-4xl font-black tracking-tight text-white leading-tight">
+                {programName}
+                <span className="block text-sm font-semibold text-white/40 mt-1 tracking-normal">Full Syllabus Dashboard · 9 Learning Modules</span>
               </h1>
-              <p className="mt-1.5 text-sm text-white/60 max-w-2xl">
-                Comprehensive 9-module study suite tailored specifically for {programName}. No content is ever shared or mixed with other programs.
+              <p className="text-sm text-white/55 max-w-xl leading-relaxed">
+                Every tool on this page is strictly scoped to {programName}. No content is shared or mixed with other programs.
               </p>
             </div>
 
-            <div className="flex items-center gap-3 bg-black/40 border border-white/10 px-4 py-3 rounded-2xl shrink-0">
-              <div className="text-right">
-                <div className="text-[10px] font-bold uppercase tracking-wider text-white/40">Verified Pool</div>
-                <div className="text-lg font-black text-cyan-400">{programQuestions.length} PYQs / Items</div>
+            <div className="flex items-center gap-3 bg-black/50 border border-white/[0.08] px-4 py-3 rounded-2xl shrink-0 self-start md:self-auto shadow-lg">
+              <div className="text-center px-2">
+                <div className="text-[10px] font-bold uppercase tracking-wider text-white/40">PYQ Pool</div>
+                <div className={`text-xl font-black ${statColor} mt-0.5`}>{programQuestions.length}</div>
               </div>
-              <div className="h-8 w-px bg-white/10" />
-              <div className="text-right">
+              <div className="h-10 w-px bg-white/10" />
+              <div className="text-center px-2">
                 <div className="text-[10px] font-bold uppercase tracking-wider text-white/40">Syllabus Units</div>
-                <div className="text-lg font-black text-emerald-400">{chapters.length || "Official"} Units</div>
+                <div className="text-xl font-black text-emerald-400 mt-0.5">{chapters.length || "—"}</div>
               </div>
             </div>
           </div>
@@ -118,33 +136,35 @@ export default function FullSyllabusDashboard({
       </div>
 
       {/* ── Navigation Tabs (Horizontal Scrollable on Mobile) ───────────── */}
-      <div className="sticky top-0 z-30 border-b border-white/10 bg-[#0B1220]/95 backdrop-blur-md px-4 sm:px-6">
-        <div className="mx-auto max-w-6xl">
-          <div className="flex items-center gap-1 overflow-x-auto py-3 no-scrollbar">
-            {TABS.map((tab) => {
+      <div className="sticky top-0 z-30 border-b border-white/[0.08] bg-[#0B1220]/97 backdrop-blur-lg shadow-[0_4px_24px_-8px_rgba(0,0,0,0.5)]">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6">
+          <div className="flex items-center gap-0.5 overflow-x-auto py-2.5 no-scrollbar">
+            {TABS.map((tab, i) => {
               const Icon = tab.icon;
               const isActive = activeTab === tab.id;
               return (
                 <button
                   key={tab.id}
                   onClick={() => setActiveTab(tab.id)}
-                  className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs font-bold whitespace-nowrap transition shrink-0 ${
+                  className={`flex items-center gap-1.5 px-3.5 py-2 rounded-lg text-[11px] font-bold whitespace-nowrap transition-all duration-150 shrink-0 ${
                     isActive
-                      ? "bg-cyan-500 text-black shadow-lg shadow-cyan-500/20 font-black"
-                      : "text-white/70 hover:text-white hover:bg-white/[0.06]"
+                      ? "bg-cyan-500/15 text-cyan-300 border border-cyan-500/40 shadow-sm"
+                      : "text-white/50 hover:text-white/90 hover:bg-white/[0.05] border border-transparent"
                   }`}
                 >
-                  <Icon className={`h-4 w-4 ${isActive ? "text-black" : "text-cyan-400"}`} />
+                  <Icon className={`h-3.5 w-3.5 shrink-0 ${isActive ? "text-cyan-400" : "text-white/30"}`} />
                   {tab.label}
                 </button>
               );
             })}
           </div>
+          {/* Mobile hint — only visible on xs */}
+          <p className="text-[10px] text-white/25 pb-1.5 sm:hidden font-medium">Swipe to explore all 9 modules →</p>
         </div>
       </div>
 
       {/* ── Tab Content Area ────────────────────────────────────────────── */}
-      <div className="mx-auto max-w-6xl px-4 py-8 sm:px-6 space-y-8">
+      <div className="mx-auto max-w-6xl px-4 py-8 sm:px-6">
         {activeTab === "short-notes" && (
           <ShortNotesTab programName={programName} chapters={chapters} />
         )}
@@ -198,8 +218,8 @@ function ShortNotesTab({ programName, chapters }: { programName: string; chapter
   ];
 
   return (
-    <div className="space-y-6">
-      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 bg-white/[0.02] border border-white/10 p-5 rounded-3xl">
+    <div className="space-y-5">
+      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 bg-[#111827] border border-white/[0.08] p-5 rounded-2xl shadow-sm">
         <div>
           <h2 className="text-xl font-black text-white flex items-center gap-2">
             <FileText className="h-5 w-5 text-cyan-400" /> Short Notes &amp; Revision Vault
@@ -231,16 +251,16 @@ function ShortNotesTab({ programName, chapters }: { programName: string; chapter
         </div>
       </div>
 
-      {/* Category Pills */}
-      <div className="flex flex-wrap gap-2">
+      {/* Category Pills — horizontal scroll on mobile */}
+      <div className="flex items-center gap-2 overflow-x-auto no-scrollbar pb-1">
         {categories.map((c) => (
           <button
             key={c.id}
             onClick={() => setSelectedCategory(c.id)}
-            className={`px-3 py-1.5 rounded-xl text-xs font-bold transition ${
+            className={`shrink-0 px-3 py-1.5 rounded-xl text-xs font-bold transition ${
               selectedCategory === c.id 
                 ? "bg-cyan-500/20 border border-cyan-500/50 text-cyan-300" 
-                : "bg-white/[0.03] border border-white/10 text-white/60 hover:text-white"
+                : "bg-white/[0.04] border border-white/10 text-white/60 hover:text-white hover:bg-white/[0.07]"
             }`}
           >
             {c.label}
@@ -248,11 +268,11 @@ function ShortNotesTab({ programName, chapters }: { programName: string; chapter
         ))}
       </div>
 
-      {/* Grid of Notes Links / Empty State */}
+      {/* Grid of Notes Links */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-        <Link href="/notes" className="group p-5 bg-gradient-to-br from-cyan-950/20 to-black/40 border border-cyan-500/30 hover:border-cyan-400 rounded-3xl transition space-y-3">
+        <Link href="/notes" className="group p-5 bg-gradient-to-br from-cyan-950/30 to-black/50 border border-cyan-500/30 hover:border-cyan-400 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-cyan-500/10 rounded-2xl transition-all duration-200 space-y-3">
           <div className="flex items-center justify-between">
-            <span className="text-xs font-bold px-2.5 py-1 rounded-full bg-cyan-500/10 text-cyan-300 border border-cyan-500/20">Featured</span>
+            <span className="text-xs font-bold px-2.5 py-1 rounded-full bg-cyan-500/15 text-cyan-300 border border-cyan-500/20">Featured</span>
             <ArrowRight className="h-4 w-4 text-cyan-400 group-hover:translate-x-1 transition" />
           </div>
           <h3 className="text-base font-black text-white">Full Chemistry Notes Explorer</h3>
@@ -261,10 +281,10 @@ function ShortNotesTab({ programName, chapters }: { programName: string; chapter
           </p>
         </Link>
 
-        <Link href="/vault/formulas" className="group p-5 bg-white/[0.03] border border-white/10 hover:border-cyan-400/40 rounded-3xl transition space-y-3">
+        <Link href="/vault/formulas" className="group p-5 bg-[#111827] border border-white/[0.08] hover:border-emerald-400/40 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-black/20 rounded-2xl transition-all duration-200 space-y-3">
           <div className="flex items-center justify-between">
             <span className="text-xs font-bold px-2.5 py-1 rounded-full bg-emerald-500/10 text-emerald-300 border border-emerald-500/20">Important Formulae</span>
-            <ArrowRight className="h-4 w-4 text-white/40 group-hover:text-cyan-400 group-hover:translate-x-1 transition" />
+            <ArrowRight className="h-4 w-4 text-white/40 group-hover:text-emerald-400 group-hover:translate-x-1 transition" />
           </div>
           <h3 className="text-base font-black text-white">Verified Formula Book</h3>
           <p className="text-xs text-white/60 leading-relaxed">
@@ -272,10 +292,10 @@ function ShortNotesTab({ programName, chapters }: { programName: string; chapter
           </p>
         </Link>
 
-        <Link href="/vault/exceptions" className="group p-5 bg-white/[0.03] border border-white/10 hover:border-cyan-400/40 rounded-3xl transition space-y-3">
+        <Link href="/vault/exceptions" className="group p-5 bg-[#111827] border border-white/[0.08] hover:border-violet-400/40 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-black/20 rounded-2xl transition-all duration-200 space-y-3">
           <div className="flex items-center justify-between">
             <span className="text-xs font-bold px-2.5 py-1 rounded-full bg-violet-500/10 text-violet-300 border border-violet-500/20">Key Exceptions</span>
-            <ArrowRight className="h-4 w-4 text-white/40 group-hover:text-cyan-400 group-hover:translate-x-1 transition" />
+            <ArrowRight className="h-4 w-4 text-white/40 group-hover:text-violet-400 group-hover:translate-x-1 transition" />
           </div>
           <h3 className="text-base font-black text-white">Inorganic &amp; Organic Exception Vault</h3>
           <p className="text-xs text-white/60 leading-relaxed">
@@ -284,13 +304,18 @@ function ShortNotesTab({ programName, chapters }: { programName: string; chapter
         </Link>
       </div>
 
-      {/* Honest Empty State for chapter-specific filtering */}
-      <div className="p-6 rounded-3xl border border-dashed border-white/15 bg-white/[0.01] text-center space-y-2">
-        <AlertCircle className="h-6 w-6 text-cyan-400 mx-auto" />
+      {/* Chapter-specific empty state */}
+      <div className="py-10 px-6 rounded-2xl border border-white/[0.08] bg-[#111827]/70 text-center space-y-3">
+        <div className="flex h-12 w-12 items-center justify-center rounded-full bg-cyan-500/10 border border-cyan-500/20 mx-auto">
+          <AlertCircle className="h-6 w-6 text-cyan-400" />
+        </div>
         <h4 className="text-sm font-bold text-white">Curating Specific Revision Material</h4>
-        <p className="text-xs text-white/50 max-w-xl mx-auto">
-          {selectedChapter === "all" ? "Select a specific chapter above to view granular topic summaries." : `Production short notes for "${selectedChapter}" in ${programName} are actively being verified against official curriculum standards. No unverified summaries are ever shown.`}
+        <p className="text-xs text-white/50 max-w-xl mx-auto leading-relaxed">
+          {selectedChapter === "all" ? "Select a specific chapter above to view granular topic summaries." : `Short notes for "${selectedChapter}" are being verified against official curriculum standards. No unverified summaries are shown.`}
         </p>
+        <Link href="/notes" className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-cyan-500/10 hover:bg-cyan-500/20 border border-cyan-500/20 text-cyan-300 text-xs font-bold transition mt-2">
+          Browse All Notes <ArrowRight className="h-3.5 w-3.5" />
+        </Link>
       </div>
     </div>
   );
@@ -340,8 +365,8 @@ function PracticeProblemsTab({
   }, [questions, selectedChapter, selectedFormat]);
 
   return (
-    <div className="space-y-6">
-      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 bg-white/[0.02] border border-white/10 p-5 rounded-3xl">
+    <div className="space-y-5">
+      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 bg-[#111827] border border-white/[0.08] p-5 rounded-2xl shadow-sm">
         <div>
           <h2 className="text-xl font-black text-white flex items-center gap-2">
             <PenTool className="h-5 w-5 text-emerald-400" /> Practice Problems Suite
@@ -374,16 +399,16 @@ function PracticeProblemsTab({
         </div>
       </div>
 
-      {/* Format Pills */}
-      <div className="flex flex-wrap gap-2">
+      {/* Format Pills — horizontal scroll on mobile */}
+      <div className="flex items-center gap-2 overflow-x-auto no-scrollbar pb-1">
         {formats.map((f) => (
           <button
             key={f.id}
             onClick={() => setSelectedFormat(f.id)}
-            className={`px-3 py-1.5 rounded-xl text-xs font-bold transition ${
+            className={`shrink-0 px-3 py-1.5 rounded-xl text-xs font-bold transition ${
               selectedFormat === f.id 
                 ? "bg-emerald-500/20 border border-emerald-500/50 text-emerald-300" 
-                : "bg-white/[0.03] border border-white/10 text-white/60 hover:text-white"
+                : "bg-white/[0.04] border border-white/10 text-white/60 hover:text-white hover:bg-white/[0.07]"
             }`}
           >
             {f.label}
@@ -417,20 +442,20 @@ function PracticeProblemsTab({
           </div>
         </div>
       ) : (
-        <div className="p-8 rounded-3xl border border-dashed border-white/15 bg-white/[0.01] text-center space-y-3">
-          <AlertCircle className="h-8 w-8 text-emerald-400 mx-auto" />
-          <h4 className="text-base font-bold text-white">No Matching Practice Sets in This Filter</h4>
-          <p className="text-xs text-white/50 max-w-lg mx-auto leading-relaxed">
-            Production questions matching "{formats.find(f => f.id === selectedFormat)?.label}" for {selectedChapter === "all" ? "all chapters" : selectedChapter} in {programName} are being curated.
-          </p>
-          <div className="pt-2">
-            <button 
-              onClick={() => { setSelectedFormat("all"); setSelectedChapter("all"); }}
-              className="px-4 py-2 rounded-xl bg-emerald-500/20 hover:bg-emerald-500/30 text-emerald-300 text-xs font-bold border border-emerald-500/30 transition"
-            >
-              Reset Filters &amp; View Available Pool
-            </button>
+        <div className="py-10 px-6 rounded-2xl border border-white/[0.08] bg-[#111827]/70 text-center space-y-3">
+          <div className="flex h-12 w-12 items-center justify-center rounded-full bg-emerald-500/10 border border-emerald-500/20 mx-auto">
+            <AlertCircle className="h-6 w-6 text-emerald-400" />
           </div>
+          <h4 className="text-base font-bold text-white">No Matching Practice Sets</h4>
+          <p className="text-xs text-white/50 max-w-lg mx-auto leading-relaxed">
+            Questions matching &ldquo;{formats.find(f => f.id === selectedFormat)?.label}&rdquo; for {selectedChapter === "all" ? "all chapters" : selectedChapter} in {programName} are being curated. Try resetting your filters.
+          </p>
+          <button 
+            onClick={() => { setSelectedFormat("all"); setSelectedChapter("all"); }}
+            className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-300 text-xs font-bold border border-emerald-500/20 transition mt-1"
+          >
+            Reset Filters
+          </button>
         </div>
       )}
     </div>
@@ -537,8 +562,8 @@ function MockTestsTab({
   ];
 
   return (
-    <div className="space-y-6">
-      <div className="bg-white/[0.02] border border-white/10 p-5 rounded-3xl">
+    <div className="space-y-5">
+      <div className="bg-[#111827] border border-white/[0.08] p-5 rounded-2xl shadow-sm">
         <h2 className="text-xl font-black text-white flex items-center gap-2">
           <ClipboardList className="h-5 w-5 text-purple-400" /> Mock Test Simulation Center
         </h2>
@@ -642,8 +667,8 @@ function CustomTestGeneratorTab({
   };
 
   return (
-    <div className="space-y-6">
-      <div className="bg-white/[0.02] border border-white/10 p-5 rounded-3xl">
+    <div className="space-y-5">
+      <div className="bg-[#111827] border border-white/[0.08] p-5 rounded-2xl shadow-sm">
         <h2 className="text-xl font-black text-white flex items-center gap-2">
           <Settings className="h-5 w-5 text-cyan-400" /> Custom Test Generator
         </h2>
@@ -807,8 +832,8 @@ function AITutorTab({ programName }: { programName: string }) {
   ];
 
   return (
-    <div className="space-y-6">
-      <div className="bg-white/[0.02] border border-white/10 p-5 rounded-3xl">
+    <div className="space-y-5">
+      <div className="bg-[#111827] border border-white/[0.08] p-5 rounded-2xl shadow-sm">
         <h2 className="text-xl font-black text-white flex items-center gap-2">
           <Sparkles className="h-5 w-5 text-cyan-400" /> AI Coach &amp; Doubt Solver
         </h2>
@@ -860,9 +885,20 @@ function AnalyticsTab({ programName, chapters }: { programName: string; chapters
     { label: "8. Recommended Action", val: "Solve PYQs", desc: "Focus on Chemical Kinetics numerical problems." },
   ];
 
+  const metricColors = [
+    "text-emerald-400", "text-cyan-400", "text-sky-400", "text-violet-400",
+    "text-rose-400", "text-amber-400", "text-indigo-400", "text-teal-400",
+  ];
+  const metricBg = [
+    "border-emerald-500/20 bg-emerald-500/5", "border-cyan-500/20 bg-cyan-500/5",
+    "border-sky-500/20 bg-sky-500/5", "border-violet-500/20 bg-violet-500/5",
+    "border-rose-500/20 bg-rose-500/5", "border-amber-500/20 bg-amber-500/5",
+    "border-indigo-500/20 bg-indigo-500/5", "border-teal-500/20 bg-teal-500/5",
+  ];
+
   return (
-    <div className="space-y-6">
-      <div className="bg-white/[0.02] border border-white/10 p-5 rounded-3xl">
+    <div className="space-y-5">
+      <div className="bg-[#111827] border border-white/[0.08] p-5 rounded-2xl shadow-sm">
         <h2 className="text-xl font-black text-white flex items-center gap-2">
           <Activity className="h-5 w-5 text-rose-400" /> Performance Analytics Suite
         </h2>
@@ -873,10 +909,10 @@ function AnalyticsTab({ programName, chapters }: { programName: string; chapters
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
         {metrics.map((m, idx) => (
-          <div key={idx} className="p-4 rounded-2xl bg-white/[0.03] border border-white/10 space-y-1">
+          <div key={idx} className={`p-4 rounded-2xl border ${metricBg[idx] || "border-white/10 bg-white/[0.03]"} space-y-1.5`}>
             <div className="text-[10px] font-bold uppercase tracking-wider text-white/40">{m.label}</div>
-            <div className="text-xl font-black text-white">{m.val}</div>
-            <p className="text-[11px] text-white/50 leading-tight">{m.desc}</p>
+            <div className={`text-xl font-black ${metricColors[idx] || "text-white"}`}>{m.val}</div>
+            <p className="text-[11px] text-white/55 leading-tight">{m.desc}</p>
           </div>
         ))}
       </div>
@@ -910,29 +946,32 @@ function MentorshipTab({ programName }: { programName: string }) {
   ];
 
   return (
-    <div className="space-y-6">
-      <div className="bg-white/[0.02] border border-white/10 p-5 rounded-3xl">
+    <div className="space-y-5">
+      <div className="bg-[#111827] border border-white/[0.08] p-5 rounded-2xl shadow-sm">
         <h2 className="text-xl font-black text-white flex items-center gap-2">
           <Users className="h-5 w-5 text-violet-400" /> Mentorship &amp; Guidance Desk
         </h2>
         <p className="text-xs text-white/50 mt-1">
-          Structured human mentorship placeholders and integration points for {programName}.
+          Structured guidance and support resources for {programName}.
         </p>
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         {pillars.map((p, idx) => (
-          <div key={idx} className="p-5 rounded-3xl bg-white/[0.03] border border-white/10 flex flex-col justify-between space-y-4">
+          <div key={idx} className="p-5 rounded-2xl bg-[#111827] border border-white/[0.08] hover:border-violet-400/30 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-black/20 flex flex-col justify-between space-y-4 transition-all duration-200">
             <div>
-              <div className="flex items-center justify-between">
+              <div className="flex items-center justify-between gap-2">
                 <span className="font-black text-white text-sm">{p.title}</span>
-                <span className="text-[9px] font-bold px-2 py-0.5 rounded-full bg-violet-500/20 text-violet-300 border border-violet-500/30 uppercase">{p.status}</span>
+                <span className="shrink-0 text-[9px] font-bold px-2 py-0.5 rounded-full bg-violet-500/15 text-violet-300 border border-violet-500/25 uppercase">{p.status}</span>
               </div>
               <p className="text-xs text-white/55 mt-2 leading-relaxed">{p.desc}</p>
             </div>
-            <div className="pt-2 border-t border-white/10 text-right">
-              <span className="text-[11px] font-bold text-violet-400 hover:underline cursor-pointer">View Portal &rarr;</span>
-            </div>
+            <Link
+              href="/coach"
+              className="flex items-center justify-end gap-1 pt-2 border-t border-white/[0.08] text-[11px] font-bold text-violet-400 hover:text-violet-300 transition"
+            >
+              View Portal <ArrowRight className="h-3 w-3" />
+            </Link>
           </div>
         ))}
       </div>
@@ -960,8 +999,8 @@ function ProjectsPracticalsTab({
   ];
 
   return (
-    <div className="space-y-6">
-      <div className="bg-white/[0.02] border border-white/10 p-5 rounded-3xl">
+    <div className="space-y-5">
+      <div className="bg-[#111827] border border-white/[0.08] p-5 rounded-2xl shadow-sm">
         <h2 className="text-xl font-black text-white flex items-center gap-2">
           <FlaskConical className="h-5 w-5 text-cyan-400" /> Projects &amp; Practicals Center
         </h2>
@@ -972,16 +1011,16 @@ function ProjectsPracticalsTab({
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         {practicals.map((pr, idx) => (
-          <div key={idx} className="p-5 rounded-3xl bg-white/[0.03] border border-white/10 flex flex-col justify-between space-y-4">
+          <div key={idx} className="p-5 rounded-2xl bg-[#111827] border border-white/[0.08] hover:border-cyan-400/30 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-black/20 flex flex-col justify-between space-y-4 transition-all duration-200">
             <div>
-              <div className="flex items-center justify-between">
+              <div className="flex items-center justify-between gap-2">
                 <span className="font-black text-white text-sm">{pr.title}</span>
-                <span className="text-[9px] font-bold px-2 py-0.5 rounded-full bg-cyan-500/20 text-cyan-300 border border-cyan-500/30 uppercase">{pr.tag}</span>
+                <span className="shrink-0 text-[9px] font-bold px-2 py-0.5 rounded-full bg-cyan-500/15 text-cyan-300 border border-cyan-500/25 uppercase">{pr.tag}</span>
               </div>
               <p className="text-xs text-white/55 mt-2 leading-relaxed">{pr.desc}</p>
             </div>
-            <Link href="/lab" className="text-xs font-bold text-cyan-400 hover:underline block text-right pt-2 border-t border-white/10">
-              Open Practical Guide &rarr;
+            <Link href="/lab" className="flex items-center justify-end gap-1 pt-2 border-t border-white/[0.08] text-xs font-bold text-cyan-400 hover:text-cyan-300 transition">
+              Open Practical Guide <ArrowRight className="h-3 w-3" />
             </Link>
           </div>
         ))}

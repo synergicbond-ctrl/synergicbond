@@ -16,25 +16,38 @@ export async function POST(req: Request) {
       return NextResponse.json({ error: "Payments are not configured yet." }, { status: 503 });
     }
 
-    const supabase = await createClient();
-    const { data: { user } } = await supabase.auth.getUser();
-    if (!user) {
-      return NextResponse.json({ error: "Please sign in to upgrade." }, { status: 401 });
-    }
-
     const body = await req.json().catch(() => ({}));
     const plan = body?.plan;
     const programKey = body?.programKey || body?.program_key;
+    const type = body?.type;
 
-    if (!plan && !programKey) {
+    const supabase = await createClient();
+    const { data: { user } } = await supabase.auth.getUser();
+    if (!user && type !== "contribution") {
+      return NextResponse.json({ error: "Please sign in to upgrade." }, { status: 401 });
+    }
+
+    if (!plan && !programKey && type !== "contribution") {
       return NextResponse.json({ error: "Invalid plan or program key." }, { status: 400 });
     }
 
     let amount = 0;
     let label = "";
-    const notes: Record<string, string> = { user_id: user.id };
+    const notes: Record<string, string> = { user_id: user?.id || "anonymous" };
 
-    if (plan) {
+    if (type === "contribution") {
+      const contribAmount = Number(body?.amount);
+      if (isNaN(contribAmount) || contribAmount < 499) {
+        return NextResponse.json({ error: "Minimum contribution amount is ₹499." }, { status: 400 });
+      }
+      amount = contribAmount * 100;
+      label = `Contribution - ${body?.name || "Supporter"}`;
+      notes.type = "contribution";
+      notes.name = String(body?.name || "Anonymous").slice(0, 100);
+      notes.email = String(body?.email || "").slice(0, 100);
+      notes.message = String(body?.message || "").slice(0, 200);
+      notes.amount_rupees = String(contribAmount);
+    } else if (plan) {
       if (!isValidPlan(plan)) {
         return NextResponse.json({ error: "Invalid plan." }, { status: 400 });
       }
@@ -71,7 +84,7 @@ export async function POST(req: Request) {
       body: JSON.stringify({
         amount,
         currency: "INR",
-        receipt: `sb_${user.id.slice(0, 8)}_${Date.now()}`,
+        receipt: `sb_${(user?.id || "anon").slice(0, 8)}_${Date.now()}`,
         // notes are echoed back on the webhook payload
         notes,
       }),
@@ -102,8 +115,9 @@ export async function POST(req: Request) {
       keyId,
       plan: plan || null,
       programKey: programKey || null,
+      type: type || null,
       label,
-      email: user.email ?? "",
+      email: body?.email || user?.email || "",
     });
   } catch (e) {
     console.error("create-order failed:", e);

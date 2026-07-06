@@ -11,6 +11,11 @@ type RazorpayNotes = {
   user_id?: unknown;
   plan?: unknown;
   program_key?: unknown;
+  type?: unknown;
+  name?: unknown;
+  email?: unknown;
+  message?: unknown;
+  amount_rupees?: unknown;
 };
 
 type RazorpayEntity = {
@@ -30,9 +35,19 @@ type RazorpayWebhookEvent = {
 
 type ValidNotesResult =
   | { userId: string; plan: PlanId }
-  | { userId: string; programKey: string };
+  | { userId: string; programKey: string }
+  | { type: "contribution"; name: string; email: string; message: string; amount_rupees: string };
 
 function getValidNotes(notes?: RazorpayNotes): ValidNotesResult | null {
+  if (notes?.type === "contribution") {
+    return {
+      type: "contribution",
+      name: typeof notes.name === "string" ? notes.name : "Anonymous",
+      email: typeof notes.email === "string" ? notes.email : "",
+      message: typeof notes.message === "string" ? notes.message : "",
+      amount_rupees: typeof notes.amount_rupees === "string" ? notes.amount_rupees : "0",
+    };
+  }
   if (typeof notes?.user_id === "string") {
     if (isValidPlan(notes.plan)) {
       return { userId: notes.user_id, plan: notes.plan };
@@ -197,6 +212,25 @@ export async function POST(req: Request) {
           );
           if (entitlementError) {
             console.error("razorpay webhook: entitlement upsert failed", entitlementError);
+            return NextResponse.json({ ok: false }, { status: 500 });
+          }
+        } else if ("type" in validNotes && validNotes.type === "contribution") {
+          const now = new Date();
+          const { error: contribError } = await admin.from("contributions").upsert(
+            {
+              name: validNotes.name,
+              email: validNotes.email || null,
+              message: validNotes.message || null,
+              amount: Number(validNotes.amount_rupees) || 0,
+              payment_id: paymentEntity.id ?? null,
+              order_id: orderId || "",
+              status: "paid",
+              updated_at: now.toISOString(),
+            },
+            { onConflict: "order_id" }
+          );
+          if (contribError) {
+            console.error("razorpay webhook: contribution upsert failed", contribError);
             return NextResponse.json({ ok: false }, { status: 500 });
           }
         }

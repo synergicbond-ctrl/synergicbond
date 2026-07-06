@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { Heart, Sparkles, CheckCircle2, ShieldCheck, ArrowRight } from "lucide-react";
 import { useT } from "@/lib/i18n";
+import PaymentGateway from "@/components/PaymentGateway";
 
 export default function Donation() {
   const { t } = useT();
@@ -10,6 +11,7 @@ export default function Donation() {
   const [amount, setAmount] = useState("");
   const [message, setMessage] = useState("");
   const [submitted, setSubmitted] = useState(false);
+  const [payOpen, setPayOpen] = useState(false);
 
   const numericAmount = Number(amount);
   const isValidAmount = !isNaN(numericAmount) && numericAmount >= 499;
@@ -18,7 +20,7 @@ export default function Donation() {
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     if (!isFormValid) return;
-    setSubmitted(true);
+    setPayOpen(true);
   }
 
   return (
@@ -157,6 +159,23 @@ export default function Donation() {
           )}
         </div>
       </div>
+
+      <PaymentGateway
+        open={payOpen}
+        onClose={() => setPayOpen(false)}
+        type="contribution"
+        amount={`₹${amount}`}
+        customAmount={numericAmount}
+        name={name}
+        email={email}
+        message={message}
+        plan={`Contribution - ${name || "Supporter"}`}
+        period="one-time"
+        onSuccess={() => {
+          setPayOpen(false);
+          setSubmitted(true);
+        }}
+      />
     </section>
   );
 }

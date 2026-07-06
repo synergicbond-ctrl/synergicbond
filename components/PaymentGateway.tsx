@@ -94,6 +94,12 @@ export default function PaymentGateway({
   plan = "SYNERGIC BOND PRO",
   amount = "₹149",
   period = "month",
+  type,
+  customAmount,
+  name = "",
+  email = "",
+  message = "",
+  onSuccess,
 }: {
   open: boolean;
   onClose: () => void;
@@ -102,6 +108,12 @@ export default function PaymentGateway({
   plan?: string;
   amount?: string;
   period?: string;
+  type?: "contribution" | "subscription" | "program";
+  customAmount?: number;
+  name?: string;
+  email?: string;
+  message?: string;
+  onSuccess?: () => void;
 }) {
   const [selected, setSelected] = useState("upi");
   const [processing, setProcessing] = useState(false);
@@ -138,7 +150,11 @@ export default function PaymentGateway({
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(
-          programKey ? { programKey } : { plan: planId }
+          type === "contribution"
+            ? { type: "contribution", amount: customAmount, name, email, message }
+            : programKey
+            ? { programKey }
+            : { plan: planId }
         ),
       });
       const data = await res.json().catch(() => ({})) as RazorpayOrderResponse;
@@ -177,18 +193,31 @@ export default function PaymentGateway({
           const verifyRes = await fetch("/api/payment/verify-payment", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(response),
+            body: JSON.stringify({
+              ...response,
+              type,
+              name,
+              email,
+              message,
+              amount: customAmount,
+            }),
           });
           const verifyData = await verifyRes.json().catch(() => ({})) as { success?: boolean; error?: string };
 
           if (!verifyRes.ok || !verifyData.success) {
-            track("payment_verification_failed", { plan: planId || programKey });
+            track("payment_verification_failed", { plan: planId || programKey || "contribution" });
             alert(verifyData.error || "Payment could not be verified. Please contact support.");
             setProcessing(false);
             return;
           }
 
-          track("payment_success", { plan: planId || programKey });
+          track("payment_success", { plan: planId || programKey || "contribution" });
+          
+          if (type === "contribution") {
+            if (onSuccess) onSuccess();
+            return;
+          }
+
           alert("Payment verified. Your access will activate within a few seconds.");
           // Take the student straight to their subscription dashboard so they
           // immediately see the purchased program, status, and expiry date.
@@ -196,17 +225,27 @@ export default function PaymentGateway({
         },
         modal: {
           ondismiss: () => {
-            track("payment_cancelled", { plan: planId || programKey });
+            track("payment_cancelled", { plan: planId || programKey || "contribution" });
             setProcessing(false);
           },
         },
       });
       rzp.on("payment.failed", (response) => {
         track("payment_failed", {
-          plan: planId || programKey,
+          plan: planId || programKey || "contribution",
           reason: response.error?.reason || response.error?.code || "unknown",
         });
-        alert(response.error?.description || "Payment failed. Please try again.");
+        if (type === "contribution") {
+          const wantRetry = window.confirm(
+            (response.error?.description || "Payment failed.") + "\n\nWould you like to retry your contribution?"
+          );
+          if (wantRetry) {
+            setProcessing(false);
+            return;
+          }
+        } else {
+          alert(response.error?.description || "Payment failed. Please try again.");
+        }
         setProcessing(false);
       });
       rzp.open();
@@ -266,16 +305,28 @@ export default function PaymentGateway({
           </div>
 
           {/* Warning Copy */}
-          <div className="bg-black/40 border border-white/5 rounded-xl p-3 text-[10px] text-white/60 leading-relaxed space-y-1.5">
-            <p className="font-extrabold text-amber-400">Subscription Terms</p>
-            <p>
-              This is an annual program subscription. Access remains active for 365 days from activation.
-              Once expired, paid content will be locked unless renewed.
-            </p>
-            <p className="text-white/40">
-              Once added, a program cannot be removed or downgraded. Please confirm before payment.
-            </p>
-          </div>
+          {type === "contribution" ? (
+            <div className="bg-black/40 border border-white/5 rounded-xl p-3 text-[10px] text-white/60 leading-relaxed space-y-1.5">
+              <p className="font-extrabold text-cyan-400">Contribution Terms</p>
+              <p>
+                Your contribution directly funds student server infrastructure, verified question bank expansion, and free educational tools.
+              </p>
+              <p className="text-white/40">
+                This is a voluntary contribution to support affordable chemistry education.
+              </p>
+            </div>
+          ) : (
+            <div className="bg-black/40 border border-white/5 rounded-xl p-3 text-[10px] text-white/60 leading-relaxed space-y-1.5">
+              <p className="font-extrabold text-amber-400">Subscription Terms</p>
+              <p>
+                This is an annual program subscription. Access remains active for 365 days from activation.
+                Once expired, paid content will be locked unless renewed.
+              </p>
+              <p className="text-white/40">
+                Once added, a program cannot be removed or downgraded. Please confirm before payment.
+              </p>
+            </div>
+          )}
         </div>
 
         {/* Sticky footer — consent + pay stay visible on every screen */}
@@ -289,8 +340,9 @@ export default function PaymentGateway({
               className="mt-0.5 rounded border-white/10 bg-black/50 text-cyan-500 focus:ring-0 focus:ring-offset-0 h-3.5 w-3.5"
             />
             <span className="text-[10px] text-white/70 leading-normal">
-              I understand this annual program subscription will be added to my account after payment.
-              It cannot be removed or downgraded during the active period.
+              {type === "contribution"
+                ? "I understand this is a voluntary contribution to support affordable chemistry education."
+                : "I understand this annual program subscription will be added to my account after payment. It cannot be removed or downgraded during the active period."}
             </span>
           </label>
 

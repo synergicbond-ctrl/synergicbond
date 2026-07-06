@@ -3,11 +3,17 @@ export const dynamic = "force-dynamic";
 
 import crypto from "crypto";
 import { NextResponse } from "next/server";
+import { createAdminClient } from "@/lib/supabase/admin";
 
 type VerifyPaymentBody = {
   razorpay_payment_id?: unknown;
   razorpay_order_id?: unknown;
   razorpay_signature?: unknown;
+  type?: unknown;
+  name?: unknown;
+  email?: unknown;
+  message?: unknown;
+  amount?: unknown;
 };
 
 function safeCompareHex(expected: string, received: string) {
@@ -44,6 +50,25 @@ export async function POST(req: Request) {
 
     if (!safeCompareHex(expectedSignature, signature)) {
       return NextResponse.json({ success: false, error: "Payment signature verification failed." }, { status: 400 });
+    }
+
+    if (body?.type === "contribution") {
+      const admin = createAdminClient();
+      if (admin) {
+        const { error: dbError } = await admin.from("contributions").upsert({
+          name: String(body.name || "Anonymous").slice(0, 100),
+          email: String(body.email || "").slice(0, 100) || null,
+          message: String(body.message || "").slice(0, 500) || null,
+          amount: Number(body.amount) || 0,
+          payment_id: paymentId,
+          order_id: orderId,
+          status: "paid",
+          updated_at: new Date().toISOString(),
+        }, { onConflict: "order_id" });
+        if (dbError) {
+          console.error("verify-payment: failed to record contribution:", dbError);
+        }
+      }
     }
 
     return NextResponse.json({ success: true, orderId, paymentId });

@@ -1,6 +1,6 @@
 import type { ComponentType } from "react";
 import { DipoleVectors, VseprGallery, HybridShapes, MoDiagram } from "./chemicalBonding";
-import { MoleConversionMap, LimitingReagentBars, EudiometryTube, ConcentrationMap, OleumBar, EmpiricalFormulaFlow, TitrationSetup, YieldFunnel, ConcentrationTermsMap, NormalityNFactor, PoacBridge, SequentialReactions } from "./moleConcept";
+import { MoleConversionMap, LimitingReagentBars, EudiometryTube, ConcentrationMap, OleumBar, EmpiricalFormulaFlow, TitrationSetup, YieldFunnel, ConcentrationTermsMap, NormalityNFactor, PoacBridge, SequentialReactions, TemperatureScales, SignificantFigures, StpConventions, CrystalPacking } from "./moleConcept";
 
 // Visual registry — VisualBlock.visual (string key) → SVG server component.
 // Add new chapters' visuals here; unknown keys render an honest missing state
@@ -23,4 +23,8 @@ export const VISUAL_REGISTRY: Record<string, ComponentType> = {
   "normality-nfactor": NormalityNFactor,
   "poac-bridge": PoacBridge,
   "sequential-reactions": SequentialReactions,
+  "temperature-scales": TemperatureScales,
+  "significant-figures": SignificantFigures,
+  "stp-conventions": StpConventions,
+  "crystal-packing": CrystalPacking,
 };

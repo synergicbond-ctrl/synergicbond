@@ -445,3 +445,133 @@ export function SequentialReactions() {
     </svg>
   );
 }
+
+/** The three temperature scales aligned, with the conversion relations. */
+export function TemperatureScales() {
+  const rows: [string, string, string, string][] = [
+    ["Boiling water", "100 °C", "212 °F", "373 K"],
+    ["Body", "37 °C", "98.6 °F", "310 K"],
+    ["Freezing water", "0 °C", "32 °F", "273 K"],
+    ["Absolute zero", "−273 °C", "−460 °F", "0 K"],
+  ];
+  return (
+    <svg viewBox="0 0 660 240" className="h-auto w-full" role="img" aria-label="Celsius Fahrenheit Kelvin temperature scales and conversions">
+      <text x={330} y={22} textAnchor="middle" style={TB}>Temperature scales & conversions</text>
+      <g transform="translate(30,44)">
+        <rect x={0} y={0} width={360} height={130} rx="10" fill={CARD} stroke={LINE} />
+        <text x={12} y={22} style={{ ...TS, fontWeight: 700 }}>Reference</text>
+        <text x={170} y={22} style={{ ...TS, fontWeight: 700, fill: AX }}>°C</text>
+        <text x={240} y={22} style={{ ...TS, fontWeight: 700, fill: VEC }}>°F</text>
+        <text x={310} y={22} style={{ ...TS, fontWeight: 700, fill: OK }}>K</text>
+        {rows.map((r, i) => (
+          <g key={r[0]}>
+            <text x={12} y={46 + i * 22} style={TS}>{r[0]}</text>
+            <text x={170} y={46 + i * 22} style={{ ...TS, fill: AX }}>{r[1]}</text>
+            <text x={240} y={46 + i * 22} style={{ ...TS, fill: VEC }}>{r[2]}</text>
+            <text x={310} y={46 + i * 22} style={{ ...TS, fill: OK }}>{r[3]}</text>
+          </g>
+        ))}
+      </g>
+      <g transform="translate(410,44)">
+        <rect x={0} y={0} width={220} height={130} rx="10" fill={CARD} stroke={AX} />
+        <text x={16} y={30} style={{ ...TS, fill: AX }}>K = °C + 273.15</text>
+        <text x={16} y={62} style={{ ...TS, fill: VEC }}>°F = (9/5)°C + 32</text>
+        <text x={16} y={94} style={TXS}>ΔT: 1 K = 1 °C = 1.8 °F</text>
+        <text x={16} y={116} style={{ ...TXS, fill: WARN }}>−40 °C = −40 °F (they meet)</text>
+      </g>
+      <text x={330} y={230} textAnchor="middle" style={TXS}>Kelvin is absolute — always convert to K before using PV = nRT.</text>
+    </svg>
+  );
+}
+
+/** Significant-figure rules for arithmetic. */
+export function SignificantFigures() {
+  return (
+    <svg viewBox="0 0 660 210" className="h-auto w-full" role="img" aria-label="Significant figure rules for addition and multiplication">
+      <text x={330} y={22} textAnchor="middle" style={TB}>Significant figures in calculations</text>
+      <g transform="translate(30,40)">
+        <rect x={0} y={0} width={290} height={150} rx="10" fill={CARD} stroke={AX} />
+        <text x={16} y={26} style={{ ...TS, fill: AX, fontWeight: 700 }}>Add / Subtract</text>
+        <text x={16} y={50} style={TXS}>→ keep the FEWEST DECIMAL PLACES</text>
+        <text x={16} y={82} style={TS}>12.11 + 18.0 + 1.012</text>
+        <text x={16} y={104} style={TS}>= 31.122 → 31.1</text>
+        <text x={16} y={130} style={{ ...TXS, fill: WARN }}>18.0 has 1 decimal → answer 1 decimal</text>
+      </g>
+      <g transform="translate(340,40)">
+        <rect x={0} y={0} width={290} height={150} rx="10" fill={CARD} stroke={VEC} />
+        <text x={16} y={26} style={{ ...TS, fill: VEC, fontWeight: 700 }}>Multiply / Divide</text>
+        <text x={16} y={50} style={TXS}>→ keep the FEWEST SIG FIGS</text>
+        <text x={16} y={82} style={TS}>2.5 × 1.20</text>
+        <text x={16} y={104} style={TS}>= 3.00 → 3.0</text>
+        <text x={16} y={130} style={{ ...TXS, fill: WARN }}>2.5 has 2 sig figs → answer 2 sig figs</text>
+      </g>
+    </svg>
+  );
+}
+
+/** STP / NTP / RTP / SATP conventions and molar volumes. */
+export function StpConventions() {
+  const rows: [string, string, string, string][] = [
+    ["Old STP", "0 °C (273.15 K)", "1 atm", "22.4 L"],
+    ["Modern STP", "273.15 K", "1 bar", "22.7 L"],
+    ["NTP", "0 °C", "1 atm", "22.4 L"],
+    ["SATP", "25 °C (298 K)", "1 bar", "24.8 L"],
+  ];
+  return (
+    <svg viewBox="0 0 660 210" className="h-auto w-full" role="img" aria-label="STP NTP SATP conventions with molar volumes">
+      <text x={330} y={22} textAnchor="middle" style={TB}>Standard conditions & molar volume</text>
+      <g transform="translate(30,40)">
+        <rect x={0} y={0} width={600} height={140} rx="10" fill={CARD} stroke={LINE} />
+        <text x={16} y={26} style={{ ...TS, fontWeight: 700 }}>Convention</text>
+        <text x={200} y={26} style={{ ...TS, fontWeight: 700 }}>Temperature</text>
+        <text x={400} y={26} style={{ ...TS, fontWeight: 700 }}>Pressure</text>
+        <text x={520} y={26} style={{ ...TS, fontWeight: 700, fill: OK }}>Vₘ</text>
+        <line x1={16} y1={34} x2={584} y2={34} stroke={LINE} />
+        {rows.map((r, i) => (
+          <g key={r[0]}>
+            <text x={16} y={58 + i * 26} style={TS}>{r[0]}</text>
+            <text x={200} y={58 + i * 26} style={{ ...TS, fill: AX }}>{r[1]}</text>
+            <text x={400} y={58 + i * 26} style={{ ...TS, fill: VEC }}>{r[2]}</text>
+            <text x={520} y={58 + i * 26} style={{ ...TS, fill: OK, fontWeight: 700 }}>{r[3]}</text>
+          </g>
+        ))}
+      </g>
+      <text x={330} y={200} textAnchor="middle" style={TXS}>JEE default = 22.4 L at 1 atm, 0 °C. Away from these, always PV = nRT.</text>
+    </svg>
+  );
+}
+
+/** Crystal packing efficiencies SC / BCC / FCC. */
+export function CrystalPacking() {
+  const cells: [string, string, string][] = [
+    ["Simple cubic", "52%", "atoms at 8 corners"],
+    ["Body-centred", "68%", "corners + 1 centre"],
+    ["Face-centred", "74%", "corners + 6 faces"],
+  ];
+  return (
+    <svg viewBox="0 0 660 220" className="h-auto w-full" role="img" aria-label="Crystal packing efficiencies for simple, body-centred and face-centred cubic">
+      <text x={330} y={22} textAnchor="middle" style={TB}>Crystal packing efficiency (needed for density-from-radius problems)</text>
+      {cells.map((c, i) => {
+        const x = 30 + i * 205;
+        return (
+          <g key={c[0]}>
+            <rect x={x} y={44} width={185} height={120} rx="10" fill={CARD} stroke={AX} strokeWidth="1.2" />
+            {/* mini cube */}
+            <g transform={`translate(${x + 24},68)`} stroke={LINE} fill="none" strokeWidth="1">
+              <rect x={0} y={14} width={40} height={40} />
+              <rect x={14} y={0} width={40} height={40} />
+              <line x1={0} y1={14} x2={14} y2={0} /><line x1={40} y1={14} x2={54} y2={0} />
+              <line x1={0} y1={54} x2={14} y2={40} /><line x1={40} y1={54} x2={54} y2={40} />
+              {i >= 1 && <circle cx={27} cy={27} r={4} fill={VEC} stroke="none" />}
+              {i === 2 && <><circle cx={7} cy={34} r={3} fill={OK} stroke="none" /><circle cx={47} cy={34} r={3} fill={OK} stroke="none" /><circle cx={27} cy={7} r={3} fill={OK} stroke="none" /></>}
+            </g>
+            <text x={x + 100} y={92} textAnchor="middle" style={TB}>{c[0]}</text>
+            <text x={x + 100} y={116} textAnchor="middle" style={{ ...T, fontSize: 20, fontWeight: 700, fill: OK }}>{c[1]}</text>
+            <text x={x + 100} y={138} textAnchor="middle" style={TXS}>{c[2]}</text>
+          </g>
+        );
+      })}
+      <text x={330} y={188} textAnchor="middle" style={TXS}>Effective density d(atoms) = packing-fraction × (bulk density). If no crystal type is given, assume 100% occupancy.</text>
+    </svg>
+  );
+}

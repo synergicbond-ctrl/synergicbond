@@ -18,6 +18,120 @@ export const MOLE_CONCEPT_NOTES: PremiumChapterNotes = {
   title: "Mole Concept — Chemical Calculations",
   tagline: "One idea — count particles by weighing them — powers all of chemistry. Learn it the way toppers do: through worked examples and the tricky problems that separate ranks.",
   topics: [
+    // ═════════════════════════════ TOPIC 0 · FOUNDATION ═════════════════════════════
+    {
+      id: "matter-measurement",
+      title: "Matter, Measurement & Significant Figures",
+      intro: "Before counting particles, fix the ground rules: what matter is, the SI units we measure it in, and how many digits of an answer are actually trustworthy.",
+      subtopics: [
+        {
+          id: "matter",
+          title: "Nature & Classification of Matter",
+          blocks: [
+            {
+              kind: "detailed",
+              heading: "The map of matter",
+              paras: [
+                "Matter is anything with mass and volume, existing mainly as solid, liquid or gas. It splits into pure substances and mixtures. Pure substances are elements (one kind of atom) or compounds (fixed ratio of elements, fixed properties). Mixtures are homogeneous (uniform throughout — a true solution) or heterogeneous (non-uniform — suspensions, most colloids).",
+                "Three particle-size families sit on a spectrum: true solution (particles <1 nm, transparent, non-settling), colloid (1–1000 nm, scatters light — the Tyndall effect), suspension (>1000 nm, settles, filterable). Mole-concept calculations live in the world of pure substances and true solutions.",
+              ],
+              points: [
+                "Element → compound → (homogeneous | heterogeneous) mixture.",
+                "Compound: fixed composition & properties; mixture: variable, components keep their identity.",
+              ],
+            },
+            {
+              kind: "detailed",
+              heading: "Physical vs chemical properties; mass vs weight",
+              paras: [
+                "A physical property (mass, volume, density, m.p., b.p., colour) is measured without changing chemical identity; a chemical property (combustibility, reactivity with acids, oxidation, decomposition) describes how a substance reacts. Mass is the amount of matter in a body (invariant); weight is the gravitational force on it (varies with g) — chemistry always uses mass.",
+              ],
+              points: [
+                "Volume: 1 mL = 1 cm³ = 1 cc; 1 L = 1000 mL = 1 dm³; 1 m³ = 1000 L.",
+                "Density d = mass / volume — the bridge used all through concentration terms.",
+              ],
+            },
+            {
+              kind: "detailed",
+              heading: "SI units — the seven that matter here",
+              paras: [
+                "The SI system (metric, powers of ten) is the modern standard. For chemical calculations the key base units are: mass — kilogram (kg); length — metre (m); time — second (s); temperature — kelvin (K); amount of substance — MOLE (mol). Everything downstream (molarity, molar volume, gas constant) is built from these.",
+              ],
+            },
+            {
+              kind: "visual",
+              title: "Temperature Scales & Conversions",
+              visual: "temperature-scales",
+              caption: "Kelvin is absolute; always convert to K before PV = nRT. K = °C + 273.15; °F = (9/5)°C + 32.",
+            },
+            {
+              kind: "illustration",
+              level: "basic",
+              concept: "Temperature conversion",
+              question: "Normal body temperature is 37 °C. Express it in kelvin and in °F.",
+              thinking: "Two independent relations: K = °C + 273; °F = (9/5)°C + 32.",
+              steps: [
+                { label: "To kelvin", work: "K = 37 + 273.15 = 310.15 K." },
+                { label: "To Fahrenheit", work: "°F = (9/5)(37) + 32 = 66.6 + 32 = 98.6 °F." },
+              ],
+              answer: "310.15 K and 98.6 °F",
+            },
+          ],
+        },
+        {
+          id: "sig-figs",
+          title: "Significant Figures, Precision & Dimensional Analysis",
+          blocks: [
+            {
+              kind: "detailed",
+              heading: "How many digits does an answer deserve?",
+              paras: [
+                "A measured value carries only as much certainty as the instrument allows; significant figures capture that. Scientific notation N × 10ⁿ (with 1 ≤ N < 10) keeps very large/small numbers and their sig-fig count honest. Precision is closeness of repeated readings to each other; accuracy is closeness to the TRUE value — a set can be precise but inaccurate (systematic error).",
+                "Arithmetic rules: in ADDITION/SUBTRACTION, report the fewest DECIMAL PLACES among the inputs; in MULTIPLICATION/DIVISION, report the fewest SIGNIFICANT FIGURES. Exact numbers (counts, defined constants like N_A in a definition) have infinite sig figs and never limit the answer.",
+              ],
+              points: [
+                "Add/subtract → least decimal places.  Multiply/divide → least sig figs.",
+                "Trailing zeros after a decimal are significant (0.04050 has 4); leading zeros are not.",
+              ],
+            },
+            {
+              kind: "visual",
+              title: "Significant Figures in Calculations",
+              visual: "significant-figures",
+              caption: "Two different rules for the two operations — the classic exam trap is applying the sig-fig rule to a sum.",
+            },
+            {
+              kind: "illustration",
+              level: "intermediate",
+              tricky: true,
+              concept: "Sig figs across mixed operations",
+              question: "Evaluate (2.5 × 1.20) and (12.11 + 18.0 + 1.012), each to the correct number of significant figures.",
+              thinking: "Pick the rule per operation: product → fewest sig figs; sum → fewest decimal places.",
+              steps: [
+                { label: "Product", work: "2.5 × 1.20 = 3.00; but 2.5 has only 2 sig figs → report 3.0." },
+                { label: "Sum", work: "12.11 + 18.0 + 1.012 = 31.122; 18.0 has 1 decimal place → report 31.1." },
+              ],
+              answer: "3.0  and  31.1",
+              insight: "The two operations obey DIFFERENT rules. Students who count sig figs for the sum (getting 31.1 'because 18.0 has 3 sig figs') land on the right digits by luck — but the same reflex wrecks 100.0 + 1.11. Track decimal places for sums, sig figs for products.",
+            },
+            {
+              kind: "detailed",
+              heading: "Dimensional analysis (the factor-label method)",
+              paras: [
+                "Dimensional analysis converts units by multiplying with conversion factors written so the unwanted unit cancels. It is the safety net for every numerical: if the units don't cancel to the target unit, the setup is wrong before you even compute. It is exactly how g/L becomes mol/L, mm Hg becomes atm, and mL becomes L in every problem that follows.",
+              ],
+            },
+            {
+              kind: "misc",
+              level: "easy",
+              question: "Significant figures in 0.04050 and in 6.022 × 10²³?",
+              answer: "4 and 4",
+              explanation: "Leading zeros don't count; the trailing zero after the decimal does → 0.04050 has 4. In scientific notation only the mantissa counts → 6.022 has 4.",
+            },
+          ],
+        },
+      ],
+    },
     // ═════════════════════════════ TOPIC 1 ═════════════════════════════
     {
       id: "mole",
@@ -168,14 +282,28 @@ export const MOLE_CONCEPT_NOTES: PremiumChapterNotes = {
               kind: "detailed",
               heading: "From hydrogen to oxygen to carbon-12",
               paras: [
-                "A single atom (~10⁻²³ g) can't be weighed, so masses are relative to a standard. History tried H = 1, then O = 16, before IUPAC fixed carbon-12: one atomic mass unit (amu, u) is exactly 1/12 the mass of one ¹²C atom.",
+                "An isolated atom (~10⁻²³ g) can never be weighed directly, so we define RELATIVE atomic mass — how many times heavier an atom is than a chosen reference. The standard moved twice: H = 1 (Dalton), then O = 16 (convenient, oxygen combines with almost everything), and finally ¹²C. On the carbon-12 scale, one atomic mass unit (amu, u) is exactly 1/12 the mass of one ¹²C atom, so relative atomic mass = (mass of one atom)/(1/12 of a ¹²C atom).",
+                "Why ¹²C won: physicists (mass-spectrometer scale) and chemists (natural-abundance scale) disagreed slightly on 'O = 16'. Carbon-12 MINIMISED the gap between the physical and chemical atomic-mass scales (their ratio is just 1.0028), so IUPAC adopted it as the single universal standard.",
                 "The amu and N_A are two faces of one definition: 1 amu = 1/N_A gram ≈ 1.66 × 10⁻²⁴ g. That is EXACTLY why atomic mass in amu and molar mass in g/mol share the same number — N_A amu-sized particles weigh that many grams.",
               ],
               points: [
+                "Relative atomic mass = (mass of 1 atom) / (1/12 mass of a ¹²C atom).",
                 "Gram atomic mass: A grams of an element = 1 mol of atoms → n = w/A.",
-                "Actual atomic mass < Σ(protons + neutrons + electrons): the deficit Δm is binding energy, E = Δm·c² — which is why atomic masses aren't integers.",
+                "Actual atomic mass < Σ(protons + neutrons + electrons): the deficit Δm is the binding energy released, E = Δm·c² — mass defect. Combined with isotope averaging, this is why atomic masses aren't whole numbers.",
               ],
               exams: ["JEE Main", "JEE Advanced"],
+            },
+            {
+              kind: "detailed",
+              heading: "Why relative atomic masses are fractional",
+              paras: [
+                "Two independent reasons make tabulated atomic masses non-integer. (1) Isotopic averaging: chlorine's 35.5 is ¾×35 + ¼×37, not any single atom's mass. (2) Mass defect: even a single isotope's mass isn't an exact integer of amu because binding energy is 'missing mass' (Δm = M_theoretical − M_actual, released as E = Δm·c²). The nuclide with the highest binding energy PER NUCLEON — not the highest total — is the most stable (⁵⁶Fe sits at the peak).",
+              ],
+              points: [
+                "Mass number A (integer, = protons + neutrons) ≠ isotopic mass (near-integer) ≠ average atomic mass (fractional).",
+                "Stability tracks binding energy per nucleon, so a bigger total mass defect (e.g. ¹⁴C vs ¹²C) does NOT guarantee greater stability.",
+              ],
+              exams: ["JEE Advanced"],
             },
             {
               kind: "illustration",
@@ -262,9 +390,15 @@ export const MOLE_CONCEPT_NOTES: PremiumChapterNotes = {
           blocks: [
             {
               kind: "detailed",
-              heading: "Adding up the architecture (mind the brackets)",
+              heading: "Molecule vs formula unit — use the right word",
               paras: [
-                "Molecular mass = Σ atomic masses in one molecule (CO₂ = 44). Ionic/network solids have no molecule, so the same sum over one formula unit is the formula mass (NaCl = 58.5). Hydrates count every water: CuSO₄·5H₂O = 159.5 + 90 = 249.5. The subscript OUTSIDE a bracket multiplies everything inside — the single biggest source of silly errors.",
+                "A molecule is an independent particle of one or more atoms that can exist on its own — covalent species like H₂O, NH₃, CH₄, CO₂, N₂, HCl. Ionic compounds have NO discrete molecule: NaCl is a 3-D lattice of Na⁺ and Cl⁻, so its smallest repeating unit is the simplest whole-number ion ratio, called a FORMULA UNIT (NaCl, MgO, CaCl₂, Al₂O₃). Say 'molecule' for covalent, 'formula unit' for ionic.",
+                "Correspondingly, molecular mass = Σ atomic masses in one molecule (CO₂ = 44); formula mass = the same sum over one formula unit (NaCl = 58.5). When the particle type isn't stated, the mole is taken over g-molecules, since substances usually exist as molecules.",
+              ],
+              points: [
+                "Covalent → molecule (H₂O, HCl, CO₂).  Ionic → formula unit (NaCl, MgO, CaCl₂).",
+                "Hydrates count every water: CuSO₄·5H₂O = 159.5 + 90 = 249.5.",
+                "The subscript OUTSIDE a bracket multiplies everything inside — the commonest silly error.",
               ],
             },
             {
@@ -288,6 +422,41 @@ export const MOLE_CONCEPT_NOTES: PremiumChapterNotes = {
               question: "Moles of ions released by 0.5 mol Al₂(SO₄)₃ in water?",
               answer: "2.5 mol ions",
               explanation: "Each formula unit → 2 Al³⁺ + 3 SO₄²⁻ = 5 ions → 0.5 × 5 = 2.5 mol.",
+            },
+          ],
+        },
+        {
+          id: "mass-determination",
+          title: "Determining Atomic & Molecular Masses",
+          exams: ["JEE Advanced"],
+          blocks: [
+            {
+              kind: "detailed",
+              heading: "How masses were actually measured",
+              paras: [
+                "Atomic mass: Dulong–Petit's rule gives an APPROXIMATE atomic mass of a solid metal — (atomic mass) × (specific heat) ≈ 6.4 cal·mol⁻¹·°C⁻¹; the equivalent mass then sharpens it to the exact value. Cannizzaro's method uses vapour densities of many volatile compounds of the element — the smallest mass of the element found in one molar mass across those compounds is its atomic mass. Mitscherlich's law of isomorphism (isomorphous salts have the same formula type) and the equivalent method complete the classical toolkit.",
+                "Molecular mass of a volatile substance: Victor Meyer and Dumas methods measure vapour density → M = 2 × VD; Hofmann's method does the same under reduced pressure for less-volatile liquids; Graham's law of diffusion (rate ∝ 1/√M) compares an unknown gas with a known one. For non-volatile solutes, the colligative properties (elevation of boiling point, depression of freezing point, relative lowering of vapour pressure, osmotic pressure) give molar mass, with the Van't Hoff factor correcting for association/dissociation.",
+              ],
+              points: [
+                "Dulong–Petit: atomic mass ≈ 6.4 / (specific heat) — approximate, for solid metals.",
+                "Volatile M: Victor Meyer · Dumas · Hofmann · Graham's diffusion → via M = 2 × VD.",
+                "Non-volatile M: the four colligative properties, corrected by the Van't Hoff factor i.",
+              ],
+            },
+            {
+              kind: "illustration",
+              level: "intermediate",
+              concept: "Dulong–Petit approximate atomic mass",
+              question: "A metal has specific heat 0.113 cal·g⁻¹·°C⁻¹. Its chloride is MCl₂ with equivalent mass giving 'atomic mass ≈ 28'. Use Dulong–Petit to find the true atomic mass.",
+              thinking: "Dulong–Petit gives an approximate atomic mass; the valency (whole number) from it fixes the exact value via the equivalent mass.",
+              steps: [
+                { label: "Approx atomic mass", work: "A ≈ 6.4 / specific heat = 6.4 / 0.113 ≈ 56.6." },
+                { label: "Find valency", work: "valency = approx A / equivalent mass ≈ 56.6 / 28 ≈ 2 (whole number)." },
+                { label: "Exact atomic mass", work: "A(exact) = valency × equivalent mass = 2 × 28 = 56 (iron)." },
+              ],
+              answer: "A = 56 (Dulong–Petit fixes the valency; the equivalent mass fixes the exact value)",
+              insight: "Dulong–Petit is deliberately rough — its only job is to pin down the WHOLE-NUMBER valency. The precise atomic mass then comes from valency × equivalent mass. Using the 56.6 estimate as the final answer is the classic misuse.",
+              exams: ["JEE Advanced"],
             },
           ],
         },
@@ -338,15 +507,36 @@ export const MOLE_CONCEPT_NOTES: PremiumChapterNotes = {
           blocks: [
             {
               kind: "detailed",
-              heading: "22.4 L — and exactly when it fails",
+              heading: "22.4 L — the conditions behind it, and when it fails",
               paras: [
-                "Avogadro's law (equal volumes of gases at the same P, T hold equal molecules) gives every gas a universal molar volume: 22.4 L/mol at STP (1 atm, 0 °C); 22.7 L/mol on the 1 bar convention. Away from STP there is NO shortcut — use PV = nRT with R = 0.0821 L·atm·K⁻¹·mol⁻¹, T in kelvin (T = t°C + 273), matched pressure units (1 atm = 760 mm Hg = 1.013 bar).",
+                "Avogadro's law (equal volumes of gases at the same P, T hold equal molecules) gives every gas a universal molar volume — BUT only at a stated standard condition. Old STP / NTP = 0 °C, 1 atm → Vₘ = 22.4 L. Modern (IUPAC) STP = 273.15 K, 1 bar → Vₘ = 22.7 L. SATP = 25 °C, 1 bar → Vₘ ≈ 24.8 L. JEE problems default to 22.4 L at 1 atm unless the '1 bar' convention is explicitly named.",
+                "Away from these conditions there is NO shortcut — use the ideal gas equation PV = nRT with T in kelvin (T = t°C + 273) and matched units. R = 0.0821 L·atm·K⁻¹·mol⁻¹ = 8.314 J·K⁻¹·mol⁻¹ = 2 cal·K⁻¹·mol⁻¹. Pressure conversions: 1 atm = 76 cm Hg = 760 mm Hg = 760 torr = 1.013 bar = 1.013 × 10⁵ Pa; 1 bar = 10⁵ Pa.",
               ],
               points: [
-                "n = V/22.4 ONLY at STP. At 25 °C the molar volume is ≈ 24.5 L.",
-                "Density forms: PM = dRT, and at STP d = M/22.4 g/L.",
-                "Vapour density VD = M/2 (dimensionless, T-independent) — see it, write molar mass.",
+                "n = V/22.4 ONLY at 1 atm, 0 °C. At 25 °C the molar volume is ≈ 24.5 L.",
+                "Density: from PM = dRT, at STP d = M/22.4 g/L. Vapour density VD = M/2 (dimensionless, T-independent) — see it, write molar mass.",
               ],
+            },
+            {
+              kind: "visual",
+              title: "Standard Conditions & Molar Volume",
+              visual: "stp-conventions",
+              caption: "STP/NTP/SATP each fix a different (T, P) — so a different molar volume. Name the convention before using any '22.4'.",
+            },
+            {
+              kind: "illustration",
+              level: "advanced",
+              concept: "Density of a gas via PM = dRT",
+              question: "Derive d for a gas from PV = nRT and use it to find the density of N₂ at STP (1 atm, 273 K).",
+              thinking: "Substitute n = w/M into PV = nRT, regroup into PM = dRT, then plug numbers.",
+              steps: [
+                { label: "Insert n = w/M", work: "PV = (w/M)RT → PM = (w/V)RT = dRT (since d = w/V)." },
+                { label: "Solve for d", work: "d = PM/RT." },
+                { label: "N₂ at STP", work: "d = (1 × 28)/(0.0821 × 273) = 28/22.4 ≈ 1.25 g/L." },
+              ],
+              answer: "PM = dRT; d(N₂, STP) ≈ 1.25 g/L",
+              insight: "PM = dRT is just PV = nRT rearranged — it turns a single density reading into a molar mass at ANY P, T, not only at STP. That generality is why it beats the 'd = M/22.4' shortcut for non-standard conditions.",
+              exams: ["JEE Advanced"],
             },
             {
               kind: "illustration",
@@ -398,6 +588,47 @@ export const MOLE_CONCEPT_NOTES: PremiumChapterNotes = {
                 { trap: "'Room temperature ≈ standard', so use 22.4 L at 25 °C.", reality: "22.4 L is 0 °C only. At 25 °C, 1 atm the molar volume is ≈ 24.5 L. Use PV = nRT." },
                 { trap: "Plugging °C into PV = nRT.", reality: "Kelvin only: T = t + 273. JEE picks temperatures (27 °C → 300 K) that hint at this." },
               ],
+            },
+          ],
+        },
+        {
+          id: "atoms-in-solids",
+          title: "Atoms in Solids — Packing, Density & Line-Up",
+          exams: ["JEE Advanced"],
+          blocks: [
+            {
+              kind: "detailed",
+              heading: "From atomic radius to a countable number of atoms",
+              paras: [
+                "Solids let us connect a bulk measurement (mass, density) to a COUNT of atoms — and to atomic size. Two facts do the work: (1) moles ↔ atoms via N_A, and (2) real crystals never fill 100% of space. Packing efficiency depends on the lattice: simple cubic 52%, body-centred cubic 68%, face-centred cubic (and hexagonal close-packed) 74%. The atoms' own density is the packing fraction times the bulk density.",
+                "If the problem states no crystal type, assume 100% occupancy — a standard simplification for basic mole-concept work.",
+              ],
+              points: [
+                "Packing efficiency: SC 52% · BCC 68% · FCC/HCP 74%.",
+                "Effective atom density = (packing fraction) × (bulk density).",
+              ],
+            },
+            {
+              kind: "visual",
+              title: "Crystal Packing Efficiencies",
+              visual: "crystal-packing",
+              caption: "SC 52% · BCC 68% · FCC 74%. Needed whenever a problem gives density AND atomic radius.",
+            },
+            {
+              kind: "illustration",
+              level: "advanced",
+              tricky: true,
+              concept: "Atoms in a line (count → length)",
+              question: "If all the sodium atoms in 6.9 mg of sodium are lined up touching side-by-side, how long is the line (in miles)? Atomic radius of Na = 1.05 Å; A(Na) = 23; 1 mile = 1.6 km.",
+              thinking: "Mass → moles → number of atoms; each atom contributes a diameter 2r to the length; then convert metres → miles.",
+              steps: [
+                { label: "Moles → atoms", work: "n = 6.9×10⁻³/23 = 3×10⁻⁴ mol → N = 3×10⁻⁴ × 6.022×10²³ ≈ 1.8×10²⁰ atoms." },
+                { label: "Length of the line", work: "each atom adds a diameter 2r → L ≈ N × 2r = 1.8×10²⁰ × 2 × 1.05×10⁻¹⁰ m ≈ 3.78×10¹⁰ m." },
+                { label: "Metres → miles", work: "L = 3.78×10¹⁰ / 1600 ≈ 2.36×10⁷ miles." },
+              ],
+              answer: "≈ 2.36 × 10⁷ miles",
+              insight: "A milligram of sodium lines up longer than 250 round trips to the Moon — a visceral feel for how enormous N_A is. The whole problem is 'mass → N_A count → geometry', the same wheel as every other, just ending in length instead of volume.",
+              exams: ["JEE Advanced"],
             },
           ],
         },
@@ -464,15 +695,43 @@ export const MOLE_CONCEPT_NOTES: PremiumChapterNotes = {
           blocks: [
             {
               kind: "detailed",
+              heading: "Law vs theory vs hypothesis",
+              paras: [
+                "These three words are not interchangeable. A LAW is a summary of reproducible experimental observations (it says WHAT happens, e.g. conservation of mass) and does not fail under its stated conditions. A THEORY is a well-tested explanation built on reasoning and assumptions that accounts for laws (it says WHY — e.g. Dalton's atomic theory). A HYPOTHESIS is a proposed explanation not yet fully proven, but not yet disproven either. Dalton's atomic theory and Avogadro's hypothesis illustrate the progression from bold proposal to accepted framework.",
+              ],
+              points: [
+                "Law → observation (what) · Theory → tested explanation (why) · Hypothesis → tentative proposal.",
+              ],
+              exams: ["JEE Advanced"],
+            },
+            {
+              kind: "detailed",
               heading: "Volumes react in simple ratios — and why that needed molecules",
               paras: [
-                "Gay-Lussac: gases combine (and form) in simple whole-number ratios BY VOLUME at the same P, T. Berzelius tried 'equal volumes hold equal ATOMS', which breaks for H₂ + Cl₂ → 2HCl (one atom can't become two molecules). Avogadro fixed it: equal volumes hold equal MOLECULES, and elemental gases are diatomic. This single idea turns volume ratios into mole ratios — the engine of all eudiometry (Topic 8).",
+                "Gay-Lussac: gases combine (and form) in simple whole-number ratios BY VOLUME at the same P, T. Berzelius then proposed 'equal volumes hold equal ATOMS', which breaks for H₂ + Cl₂ → 2HCl — one atom of each cannot become two molecules of product without splitting atoms (impossible). Avogadro fixed it: equal volumes hold equal MOLECULES, and elemental gases like H₂, O₂, N₂, Cl₂ are DIATOMIC. This single idea both determined the atomicity of gases and turned volume ratios into mole ratios — the engine of all eudiometry.",
               ],
               points: [
                 "Volume ratio = mole ratio = molecule ratio (gases, same P·T).",
+                "Avogadro's hypothesis relates volume to number of MOLECULES, not atoms — that's what fixed the diatomic formulas.",
                 "This is the only combination law stated in volumes; the other four are mass laws.",
               ],
               exams: ["JEE Main", "JEE Advanced"],
+            },
+            {
+              kind: "illustration",
+              level: "advanced",
+              tricky: true,
+              concept: "Atomic mass of oxygen from water composition",
+              question: "Water is 11.11% H and 88.89% O by mass, and one water molecule contains 2 H atoms and 1 O atom. Taking H = 1, show that the atomic mass of oxygen is 16.",
+              thinking: "In N molecules there are 2N H atoms and N O atoms. The mass ratio O:H equals (N·A_O):(2N·A_H); use the measured composition.",
+              steps: [
+                { label: "Mass ratio from data", work: "mass O / mass H = 88.89 / 11.11 = 8." },
+                { label: "Mass ratio from formula", work: "(N·A_O)/(2N·A_H) = A_O/(2×1) = A_O/2." },
+                { label: "Equate & solve", work: "A_O/2 = 8 → A_O = 16." },
+              ],
+              answer: "A(oxygen) = 16",
+              insight: "Composition alone gives only the O:H mass ratio (8:1); you get the ATOMIC mass only after the FORMULA (H₂O, the factor of 2) is fixed by Avogadro. This is exactly why Dalton's wrong 'HO' gave O = 8 — same data, wrong formula, wrong atomic mass.",
+              exams: ["JEE Advanced"],
             },
             {
               kind: "illustration",
@@ -1623,14 +1882,44 @@ export const MOLE_CONCEPT_NOTES: PremiumChapterNotes = {
         },
         {
           id: "mean-molar-mass",
-          title: "Mean Molar Mass & Dissociation",
+          title: "Mean Molar Mass, Partial Laws & Dissociation",
           blocks: [
             {
               kind: "detailed",
-              heading: "One number for a mixture — and a window into equilibrium",
+              heading: "Mass adds, volume doesn't — Dalton & Amagat",
               paras: [
-                "A gas mixture behaves as if it had M(mix) = (total mass)/(total moles) = Σ XᵢMᵢ. Dissociation LOWERS it: for A ⇌ (k products), starting n₀ with degree α gives total moles n₀[1 + (k−1)α] at unchanged mass, so M₀/M(mix) = 1 + (k−1)α. Measuring an average molar mass (via vapour density) therefore MEASURES the dissociation — the bridge into chemical equilibrium.",
+                "For a non-reacting gas mixture, mass is conserved (m_mix = m₁ + m₂ + …) but VOLUME is not additive at fixed P, T — 100 mL of N₂ mixed with 100 mL of O₂ still occupies 100 mL, because each gas already fills the whole container. Two partial laws formalise this: Dalton's law of partial pressures (each gas exerts the pressure it would if alone in the full volume; P_total = ΣPᵢ) and Amagat's law of partial volumes (each gas's partial volume is what it would occupy at the full pressure; V_total = ΣVᵢ). Partial pressure Pᵢ = Xᵢ·P_total.",
+                "(For solids/liquids the intermolecular space is tiny, so their volumes ARE taken as additive — the exception that proves the rule.)",
               ],
+              points: [
+                "Mixture: m_mix = Σmᵢ (mass conserved) but no law of conservation of VOLUME for gases.",
+                "Dalton: P_total = ΣPᵢ, Pᵢ = Xᵢ·P_total.  Amagat: V_total = ΣVᵢ, Vᵢ = Xᵢ·V_total.",
+              ],
+              exams: ["JEE Advanced"],
+            },
+            {
+              kind: "detailed",
+              heading: "Mean molar mass — one number, and a window into equilibrium",
+              paras: [
+                "A gas mixture behaves as if it had M(mix) = (total mass)/(total moles) = Σ XᵢMᵢ. Dissociation that INCREASES the mole count LOWERS M(mix): for A ⇌ (k products), starting n₀ with degree α gives total moles n₀[1 + (k−1)α] at unchanged mass, so M₀/M(mix) = 1 + (k−1)α. Measuring an average molar mass (via vapour density) therefore MEASURES the dissociation — the doorway to chemical equilibrium and the Van't Hoff factor i = M₀/M(mix) = 1 + (k−1)α.",
+                "Key exception: if the number of moles does NOT change, M(mix) stays equal to M₀ even at full dissociation — e.g. 2HI ⇌ H₂ + I₂ and 2NO ⇌ N₂ + O₂ (2 mol → 2 mol). Vapour density then reveals nothing about α. Association (2A ⇌ A₂) does the opposite: fewer moles, so M(mix) RISES above M₀.",
+              ],
+              exams: ["JEE Advanced"],
+            },
+            {
+              kind: "misc",
+              level: "medium",
+              question: "Mean molar mass of a non-reacting mixture that is 60% N₂ and 40% O₂ by volume?",
+              answer: "28.8 g/mol",
+              explanation: "By volume % = mole %: M(mix) = 0.6×28 + 0.4×32 = 16.8 + 12.8 = 28.8.",
+              exams: ["JEE Main", "JEE Advanced"],
+            },
+            {
+              kind: "misc",
+              level: "hard",
+              question: "HI is heated until 20% dissociates: 2HI ⇌ H₂ + I₂. What is the vapour density of the equilibrium mixture relative to pure HI (VD₀ = 64)?",
+              answer: "Unchanged — VD = 64",
+              explanation: "2 mol HI → 2 mol products (no mole change), so M(mix) = M₀ and VD = VD₀ regardless of α. The mole-count invariance is the whole point.",
               exams: ["JEE Advanced"],
             },
             {

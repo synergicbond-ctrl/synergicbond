@@ -32,7 +32,7 @@ export default function Donation() {
           {t("donate.title")}
         </h2>
         <p className="mx-auto mt-4 max-w-2xl text-white/75 text-base sm:text-lg leading-relaxed">
-          We keep core learning free for every student. Your contribution directly funds server infrastructure, verified question bank expansion, and accessibility for underserved aspirants.
+          Help support free chemistry education, AI learning tools, content development, and educational outreach initiatives.
         </p>
       </div>
 

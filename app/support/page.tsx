@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Donation from "@/components/Donation";
 import { 
   Sparkles, Globe, Compass, Cpu, Target, Users, BookOpen, Layers, 
   HelpCircle, GraduationCap, AlertCircle, Quote, Eye, ShieldCheck
@@ -241,28 +241,7 @@ export default function SupportPage() {
         </section>
 
         {/* ── SECTION 8: SUPPORT THE MISSION ──────────────────────────── */}
-        <section className="relative overflow-hidden rounded-3xl border border-cyan-400/20 bg-gradient-to-br from-[#111827] to-[#0f1d3a] p-8 text-center space-y-6">
-          <div className="absolute inset-0 pointer-events-none">
-            <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-48 w-48 rounded-full bg-cyan-500/10 blur-3xl" />
-          </div>
-          <div className="relative space-y-2 max-w-lg mx-auto">
-            <div className="flex items-center justify-center gap-1 text-cyan-300 font-bold text-xs uppercase tracking-wider">
-              <ShieldCheck className="h-4.5 w-4.5" /> Support the Mission
-            </div>
-            <h2 className="text-2xl font-black text-white">Join Us in Rebuilding Chemistry Prep</h2>
-            <p className="text-xs text-white/60 leading-relaxed">
-              Our Pro subscriptions fund ongoing content authoring, the server infrastructure hosting our interactive periodic table, AI evaluation compute, and help maintain extensive free-tier modules for students nationwide.
-            </p>
-          </div>
-          <div className="relative pt-2">
-            <Link
-              href="/pricing"
-              className="inline-block rounded-xl bg-cyan-500 text-black px-6 py-3 text-sm font-bold hover:bg-cyan-400 transition"
-            >
-              Explore Pro Plans →
-            </Link>
-          </div>
-        </section>
+        <Donation />
 
       </div>
     </main>

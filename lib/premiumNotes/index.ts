@@ -1,5 +1,6 @@
 import type { PremiumChapterNotes } from "./schema";
 import { CHEMICAL_BONDING_NOTES } from "./content/chemicalBonding";
+import { MOLE_CONCEPT_NOTES } from "./content/moleConcept";
 
 // ─────────────────────────────────────────────────────────────────────────────
 // Premium Notes registry — chapterId (masterSyllabus dir id) → authored notes.
@@ -9,6 +10,7 @@ import { CHEMICAL_BONDING_NOTES } from "./content/chemicalBonding";
 
 export const PREMIUM_NOTES: Record<string, PremiumChapterNotes> = {
   "chemical-bonding": CHEMICAL_BONDING_NOTES,
+  "mole-concept": MOLE_CONCEPT_NOTES,
 };
 
 export function getPremiumNotes(chapterId: string): PremiumChapterNotes | undefined {

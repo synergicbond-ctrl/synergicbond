@@ -7,7 +7,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "audit-pyq": "npx tsx scripts/pyq-audit.ts",
+    "test-chemistry": "npx tsx scripts/run-audit.ts"
   },
   "dependencies": {
     "@google/genai": "^2.10.0",

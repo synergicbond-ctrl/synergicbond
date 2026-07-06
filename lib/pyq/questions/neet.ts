@@ -1,4 +1,5 @@
 import type { PYQQuestion } from "../schema";
+import { NEET_PHASE_A_QUESTIONS } from "./neetPhaseA";
 
 // ─────────────────────────────────────────────────────────────────────────────
 // NEET PYQ Database — Phase 3
@@ -624,5 +625,6 @@ export const NEET_QUESTIONS: PYQQuestion[] = [
     ncertLines: ["Class 11 Ch. 7 — Buffer Solutions"],
     difficulty: "Easy", marks: 4, negMarks: 1, frequency: 22, trending: true, ncertDirect: true,
   },
-
+  ...NEET_PHASE_A_QUESTIONS,
 ];
+

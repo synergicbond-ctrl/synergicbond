@@ -1,4 +1,5 @@
 import type { PYQQuestion } from "../schema";
+import { JEE_MAIN_PHASE_A_QUESTIONS } from "./jeeMainPhaseA";
 
 // ─────────────────────────────────────────────────────────────────────────────
 // JEE Main PYQ Database — Phase 3
@@ -858,5 +859,6 @@ export const JEE_MAIN_QUESTIONS: PYQQuestion[] = [
     ncertLines: ["Class 12 Ch. 15 — Polyamides — Nylon-6,6"],
     difficulty: "Easy", marks: 4, negMarks: 1, frequency: 22, trending: false, ncertDirect: true,
   },
-
+  ...JEE_MAIN_PHASE_A_QUESTIONS,
 ];
+

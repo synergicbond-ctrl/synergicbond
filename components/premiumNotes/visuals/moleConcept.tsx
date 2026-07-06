@@ -1,0 +1,227 @@
+// ─────────────────────────────────────────────────────────────────────────────
+// Mole Concept — hand-built SVG visual notes (server components, no JS).
+// Registered by key in components/premiumNotes/visuals/index.tsx and referenced
+// from content via VisualBlock.visual. Colors follow the premium design system
+// (cyan/purple accents on dark; semantic chemistry colors allowed).
+// ─────────────────────────────────────────────────────────────────────────────
+
+const AX = "#67e8f9"; // cyan-300 — primary accent
+const VEC = "#c4b5fd"; // violet-300 — secondary accent
+const OK = "#4ade80"; // green — allowed as semantic "product/result"
+const WARN = "#fbbf24"; // amber — semantic caution (limiting reagent)
+const MUTE = "rgba(255,255,255,0.45)";
+const LINE = "rgba(255,255,255,0.25)";
+const CARD = "rgba(255,255,255,0.04)";
+const T = { fontFamily: "ui-sans-serif, system-ui", fill: "rgba(255,255,255,0.85)" };
+const TS = { ...T, fontSize: 11 };
+const TB = { ...T, fontSize: 12, fontWeight: 700 as const };
+const TXS = { ...T, fontSize: 9.5, fill: MUTE };
+
+function Arrow({ x1, y1, x2, y2, color = AX, w = 1.6 }: { x1: number; y1: number; x2: number; y2: number; color?: string; w?: number }) {
+  const a = Math.atan2(y2 - y1, x2 - x1);
+  const h = 5.5;
+  return (
+    <g stroke={color} fill={color} strokeWidth={w}>
+      <line x1={x1} y1={y1} x2={x2} y2={y2} />
+      <polygon points={`${x2},${y2} ${x2 - h * Math.cos(a - 0.45)},${y2 - h * Math.sin(a - 0.45)} ${x2 - h * Math.cos(a + 0.45)},${y2 - h * Math.sin(a + 0.45)}`} stroke="none" />
+    </g>
+  );
+}
+
+function Node({ x, y, w, h, title, sub, accent = AX }: { x: number; y: number; w: number; h: number; title: string; sub?: string; accent?: string }) {
+  return (
+    <g>
+      <rect x={x} y={y} width={w} height={h} rx="10" fill={CARD} stroke={accent} strokeWidth="1.2" />
+      <text x={x + w / 2} y={y + (sub ? h / 2 - 4 : h / 2 + 4)} textAnchor="middle" style={TB}>{title}</text>
+      {sub && <text x={x + w / 2} y={y + h / 2 + 12} textAnchor="middle" style={TXS}>{sub}</text>}
+    </g>
+  );
+}
+
+/** THE conversion wheel: particles ↔ mole ↔ mass ↔ gas volume, formulas on every arrow. */
+export function MoleConversionMap() {
+  return (
+    <svg viewBox="0 0 680 300" className="h-auto w-full" role="img" aria-label="Mole conversion map linking particles, mass and gas volume through the mole">
+      {/* central mole hub */}
+      <circle cx={340} cy={150} r={44} fill={CARD} stroke={AX} strokeWidth="2" />
+      <text x={340} y={146} textAnchor="middle" style={{ ...TB, fontSize: 15 }}>n (mol)</text>
+      <text x={340} y={163} textAnchor="middle" style={TXS}>amount of substance</text>
+
+      {/* particles (left) */}
+      <Node x={30} y={110} w={150} h={80} title="Particles  N" sub="atoms · molecules · ions" accent={VEC} />
+      <Arrow x1={185} y1={135} x2={292} y2={140} />
+      <text x={238} y={126} textAnchor="middle" style={TS}>÷ N_A</text>
+      <Arrow x1={292} y1={165} x2={185} y2={170} color={VEC} />
+      <text x={238} y={188} textAnchor="middle" style={TS}>× N_A</text>
+
+      {/* mass (right) */}
+      <Node x={500} y={110} w={150} h={80} title="Mass  w (g)" sub="laboratory balance" accent={VEC} />
+      <Arrow x1={495} y1={140} x2={388} y2={140} />
+      <text x={442} y={126} textAnchor="middle" style={TS}>÷ M (g/mol)</text>
+      <Arrow x1={388} y1={165} x2={495} y2={165} color={VEC} />
+      <text x={442} y={188} textAnchor="middle" style={TS}>× M</text>
+
+      {/* gas volume (bottom) */}
+      <Node x={255} y={230} w={170} h={56} title="Gas volume V" sub="22.4 L at STP (1 atm, 0 °C)" accent={VEC} />
+      <Arrow x1={320} y1={225} x2={330} y2={198} />
+      <text x={270} y={214} textAnchor="middle" style={TS}>÷ 22.4 L</text>
+      <Arrow x1={355} y1={198} x2={365} y2={225} color={VEC} />
+      <text x={412} y={214} textAnchor="middle" style={TS}>× 22.4 L</text>
+
+      {/* ideal gas (top) */}
+      <rect x={255} y={22} width={170} height={48} rx="10" fill={CARD} stroke={OK} strokeWidth="1.2" />
+      <text x={340} y={42} textAnchor="middle" style={TB}>Any P, T:  PV = nRT</text>
+      <text x={340} y={58} textAnchor="middle" style={TXS}>R = 0.0821 L·atm·K⁻¹·mol⁻¹</text>
+      <Arrow x1={340} y1={74} x2={340} y2={102} color={OK} />
+
+      <text x={340} y={296} textAnchor="middle" style={TXS}>Every mole-concept problem is a walk on this map — convert INTO moles, reason, convert OUT.</text>
+    </svg>
+  );
+}
+
+/** Limiting reagent bars: available vs required for 2H₂ + O₂ → 2H₂O. */
+export function LimitingReagentBars() {
+  return (
+    <svg viewBox="0 0 640 240" className="h-auto w-full" role="img" aria-label="Limiting reagent comparison of available versus required moles">
+      <text x={320} y={22} textAnchor="middle" style={TB}>2H₂ + O₂ → 2H₂O   ·   given 6 mol H₂ and 2 mol O₂</text>
+
+      {/* divide-by-coefficient rule */}
+      <g transform="translate(60,50)">
+        <text x={0} y={0} style={TS}>H₂ :  n/ν = 6/2 = 3</text>
+        <rect x={140} y={-14} width={180} height={20} rx="5" fill="rgba(103,232,249,0.25)" stroke={AX} />
+        <text x={330} y={0} style={TXS}>← larger → EXCESS</text>
+      </g>
+      <g transform="translate(60,90)">
+        <text x={0} y={0} style={TS}>O₂ :  n/ν = 2/1 = 2</text>
+        <rect x={140} y={-14} width={120} height={20} rx="5" fill="rgba(251,191,36,0.3)" stroke={WARN} />
+        <text x={270} y={0} style={{ ...TS, fill: WARN, fontWeight: 700 }}>← smaller → LIMITING</text>
+      </g>
+
+      {/* consequence bars */}
+      <g transform="translate(60,140)">
+        <text x={0} y={0} style={TS}>O₂ used</text>
+        <rect x={140} y={-14} width={120} height={20} rx="5" fill="rgba(251,191,36,0.3)" stroke={WARN} />
+        <text x={268} y={0} style={TXS}>all 2 mol consumed</text>
+      </g>
+      <g transform="translate(60,172)">
+        <text x={0} y={0} style={TS}>H₂ used</text>
+        <rect x={140} y={-14} width={120} height={20} rx="5" fill="rgba(103,232,249,0.25)" stroke={AX} />
+        <text x={268} y={0} style={TXS}>2×2 = 4 mol used · 2 mol H₂ left over</text>
+      </g>
+      <g transform="translate(60,204)">
+        <text x={0} y={0} style={TS}>H₂O made</text>
+        <rect x={140} y={-14} width={120} height={20} rx="5" fill="rgba(74,222,128,0.25)" stroke={OK} />
+        <text x={268} y={0} style={{ ...TXS, fill: OK }}>2×2 = 4 mol product — always from the LR</text>
+      </g>
+    </svg>
+  );
+}
+
+/** Eudiometer + the absorber table every gas-analysis problem uses. */
+export function EudiometryTube() {
+  const rows: [string, string][] = [
+    ["KOH (aq)", "absorbs CO₂"],
+    ["Alkaline pyrogallol", "absorbs O₂"],
+    ["Turpentine oil", "absorbs O₃"],
+    ["Ammoniacal Cu₂Cl₂", "absorbs CO"],
+    ["Conc. H₂SO₄ / CaCl₂", "absorbs H₂O (g)"],
+  ];
+  return (
+    <svg viewBox="0 0 660 260" className="h-auto w-full" role="img" aria-label="Eudiometry tube with gas volumes and the standard absorber table">
+      {/* tube */}
+      <g transform="translate(50,26)">
+        <rect x={0} y={0} width={70} height={190} rx="14" fill={CARD} stroke={AX} strokeWidth="1.5" />
+        <rect x={6} y={120} width={58} height={64} rx="9" fill="rgba(103,232,249,0.12)" />
+        <text x={35} y={30} textAnchor="middle" style={TXS}>graduated</text>
+        <text x={35} y={42} textAnchor="middle" style={TXS}>tube (mL)</text>
+        <text x={35} y={100} textAnchor="middle" style={TS}>gas mixture</text>
+        <text x={35} y={155} textAnchor="middle" style={TXS}>Hg / water</text>
+        <line x1={0} y1={118} x2={70} y2={118} stroke={LINE} strokeDasharray="3 3" />
+        {/* spark wires */}
+        <line x1={22} y1={0} x2={22} y2={-12} stroke={VEC} strokeWidth="2" />
+        <line x1={48} y1={0} x2={48} y2={-12} stroke={VEC} strokeWidth="2" />
+        <text x={35} y={-16} textAnchor="middle" style={{ ...TXS, fill: VEC }}>spark → explode</text>
+      </g>
+
+      {/* protocol */}
+      <g transform="translate(160,44)">
+        <text x={0} y={0} style={TB}>Volumes ∝ moles (Avogadro, same P·T)</text>
+        <text x={0} y={22} style={TS}>1 · measure mixture → 2 · explode with O₂ → 3 · cool (H₂O condenses)</text>
+        <text x={0} y={42} style={TS}>4 · pass through absorbers, read the drop at each step</text>
+        <text x={0} y={66} style={{ ...TS, fill: WARN }}>Contraction on cooling = V(initial) + V(O₂) − V(after cooling)</text>
+      </g>
+
+      {/* absorber table */}
+      <g transform="translate(160,124)">
+        <rect x={0} y={-18} width={440} height={124} rx="10" fill={CARD} stroke={LINE} />
+        <text x={12} y={0} style={{ ...TS, fontWeight: 700 }}>Absorber</text>
+        <text x={220} y={0} style={{ ...TS, fontWeight: 700 }}>Removes</text>
+        {rows.map((r, i) => (
+          <g key={r[0]}>
+            <text x={12} y={20 + i * 17} style={TS}>{r[0]}</text>
+            <text x={220} y={20 + i * 17} style={{ ...TS, fill: OK }}>{r[1]}</text>
+          </g>
+        ))}
+      </g>
+    </svg>
+  );
+}
+
+/** Concentration interconversion map with the density bridge. */
+export function ConcentrationMap() {
+  return (
+    <svg viewBox="0 0 680 300" className="h-auto w-full" role="img" aria-label="Concentration term interconversion map through the density bridge">
+      <Node x={40} y={30} w={180} h={62} title="Molarity M" sub="mol solute / L solution · needs V" accent={AX} />
+      <Node x={460} y={30} w={180} h={62} title="Molality m" sub="mol solute / kg solvent · mass only" accent={AX} />
+      <Node x={40} y={208} w={180} h={62} title="% w/w · % w/v · ppm" sub="mass-ratio labels" accent={VEC} />
+      <Node x={460} y={208} w={180} h={62} title="Mole fraction X" sub="nᵢ / Σn · symmetric" accent={VEC} />
+
+      {/* density bridge in the middle */}
+      <rect x={255} y={120} width={170} height={60} rx="12" fill={CARD} stroke={WARN} strokeWidth="1.5" />
+      <text x={340} y={144} textAnchor="middle" style={TB}>DENSITY  d (g/mL)</text>
+      <text x={340} y={162} textAnchor="middle" style={TXS}>the only bridge volume ↔ mass</text>
+
+      <Arrow x1={222} y1={61} x2={456} y2={61} />
+      <text x={339} y={50} textAnchor="middle" style={TS}>m = 1000·M / (1000·d − M·M₂)</text>
+      <Arrow x1={150} y1={96} x2={290} y2={120} color={WARN} />
+      <Arrow x1={530} y1={96} x2={390} y2={120} color={WARN} />
+      <Arrow x1={290} y1={182} x2={150} y2={206} color={WARN} />
+      <Arrow x1={390} y1={182} x2={530} y2={206} color={WARN} />
+
+      <text x={340} y={250} textAnchor="middle" style={TS}>Temperature-independent: m, X, % w/w  ·  Temperature-dependent: M, % w/v (volume expands)</text>
+      <text x={340} y={272} textAnchor="middle" style={TXS}>Golden method: take 1 L of solution (for M) or 1 kg of solvent (for m), convert everything to masses, re-divide.</text>
+    </svg>
+  );
+}
+
+/** Oleum bar: label = (100 + x)% where x g water converts free SO₃. */
+export function OleumBar() {
+  return (
+    <svg viewBox="0 0 660 240" className="h-auto w-full" role="img" aria-label="Oleum composition bar and labelling logic">
+      <text x={330} y={24} textAnchor="middle" style={TB}>Oleum = H₂SO₄ + dissolved free SO₃   ·   label “(100 + x)%”</text>
+
+      {/* 100 g bar */}
+      <g transform="translate(80,52)">
+        <rect x={0} y={0} width={320} height={40} rx="8" fill="rgba(103,232,249,0.18)" stroke={AX} />
+        <rect x={320} y={0} width={180} height={40} rx="8" fill="rgba(196,181,253,0.22)" stroke={VEC} />
+        <text x={160} y={25} textAnchor="middle" style={TS}>pure H₂SO₄</text>
+        <text x={410} y={25} textAnchor="middle" style={TS}>free SO₃</text>
+        <text x={250} y={-8} textAnchor="middle" style={TXS}>take 100 g oleum</text>
+      </g>
+
+      {/* + water step */}
+      <g transform="translate(80,120)">
+        <text x={0} y={0} style={TS}>+ x g H₂O :  SO₃ + H₂O → H₂SO₄  (all free SO₃ consumed)</text>
+        <Arrow x1={330} y1={-6} x2={400} y2={-6} color={OK} />
+        <text x={470} y={0} style={{ ...TS, fill: OK }}>(100 + x) g H₂SO₄</text>
+      </g>
+
+      {/* the two formulas */}
+      <g transform="translate(80,158)">
+        <rect x={0} y={0} width={500} height={62} rx="10" fill={CARD} stroke={LINE} />
+        <text x={16} y={24} style={TS}>% free SO₃ = (80/18) · x     — because 18 g H₂O frees one 80 g SO₃</text>
+        <text x={16} y={46} style={TS}>e.g. 109% → x = 9 → 40% SO₃  ·  118% → x = 18 → 80% SO₃ (maximum label)</text>
+      </g>
+    </svg>
+  );
+}

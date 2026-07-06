@@ -308,3 +308,140 @@ export function YieldFunnel() {
     </svg>
   );
 }
+
+/** Master map of all concentration terms, split mass-based vs volume-based. */
+export function ConcentrationTermsMap() {
+  const massBased: [string, string][] = [
+    ["% w/w", "g solute / 100 g soln"],
+    ["ppm · ppb", "g / 10⁶ · 10⁹ g soln"],
+    ["molality m", "mol / kg solvent"],
+    ["mole fraction X", "nᵢ / Σn"],
+  ];
+  const volBased: [string, string][] = [
+    ["molarity M", "mol / L soln"],
+    ["normality N", "g-equiv / L soln"],
+    ["formality F", "formula-units / L"],
+    ["% w/v · g/L", "g / 100 mL · g / L"],
+  ];
+  return (
+    <svg viewBox="0 0 700 320" className="h-auto w-full" role="img" aria-label="Master map of concentration terms, mass-based versus volume-based, joined by density">
+      <text x={350} y={22} textAnchor="middle" style={TB}>Concentration = amount of solute in a given amount of solution</text>
+
+      {/* mass-based column */}
+      <rect x={20} y={44} width={300} height={230} rx="12" fill={CARD} stroke={AX} strokeWidth="1.3" />
+      <text x={170} y={68} textAnchor="middle" style={{ ...TB, fill: AX }}>MASS / MOLE based</text>
+      <text x={170} y={84} textAnchor="middle" style={TXS}>temperature-INDEPENDENT</text>
+      {massBased.map((r, i) => (
+        <g key={r[0]}>
+          <text x={40} y={112 + i * 38} style={TB}>{r[0]}</text>
+          <text x={40} y={128 + i * 38} style={TXS}>{r[1]}</text>
+        </g>
+      ))}
+
+      {/* volume-based column */}
+      <rect x={380} y={44} width={300} height={230} rx="12" fill={CARD} stroke={VEC} strokeWidth="1.3" />
+      <text x={530} y={68} textAnchor="middle" style={{ ...TB, fill: VEC }}>VOLUME based</text>
+      <text x={530} y={84} textAnchor="middle" style={TXS}>temperature-DEPENDENT (soln expands)</text>
+      {volBased.map((r, i) => (
+        <g key={r[0]}>
+          <text x={400} y={112 + i * 38} style={TB}>{r[0]}</text>
+          <text x={400} y={128 + i * 38} style={TXS}>{r[1]}</text>
+        </g>
+      ))}
+
+      {/* density bridge */}
+      <rect x={300} y={150} width={100} height={40} rx="10" fill="rgba(251,191,36,0.15)" stroke={WARN} strokeWidth="1.4" />
+      <text x={350} y={166} textAnchor="middle" style={{ ...TS, fill: WARN, fontWeight: 700 }}>DENSITY</text>
+      <text x={350} y={181} textAnchor="middle" style={TXS}>d (g/mL)</text>
+      <Arrow x1={322} y1={158} x2={300} y2={168} color={WARN} />
+      <Arrow x1={400} y1={170} x2={378} y2={180} color={WARN} />
+
+      <text x={350} y={298} textAnchor="middle" style={TXS}>Golden method: fix a basis (1 L soln for M/N; 1 kg solvent for m; 1 mol for X), convert all to masses, re-divide.</text>
+      <text x={350} y={314} textAnchor="middle" style={{ ...TXS, fill: OK }}>Key bridges: strength (g/L) = M·M′  ·  N = M × n-factor  ·  1/m = d/M − M′/1000</text>
+    </svg>
+  );
+}
+
+/** n-factor / equivalent-weight / Normality reference. */
+export function NormalityNFactor() {
+  const rows: [string, string][] = [
+    ["Element", "valency"],
+    ["Ion", "|charge|"],
+    ["Acid", "basicity (replaceable H⁺)"],
+    ["Base", "acidity (replaceable OH⁻)"],
+    ["Salt", "(metal atoms) × (its valency)"],
+    ["Redox agent", "change in oxidation number"],
+  ];
+  return (
+    <svg viewBox="0 0 680 320" className="h-auto w-full" role="img" aria-label="n-factor table, equivalent weight and normality relations">
+      <text x={340} y={22} textAnchor="middle" style={TB}>Equivalents: n-factor, equivalent weight & Normality</text>
+
+      {/* formula rail */}
+      <g transform="translate(30,40)">
+        <rect x={0} y={0} width={620} height={54} rx="10" fill={CARD} stroke={AX} />
+        <text x={16} y={22} style={{ ...TS, fill: AX }}>Equivalent weight E = (molar mass M) / (n-factor)</text>
+        <text x={16} y={42} style={{ ...TS, fill: OK }}>g-equivalents n_eq = w/E = moles × n-factor   ⇒   Normality N = Molarity M × n-factor</text>
+      </g>
+
+      {/* n-factor table */}
+      <g transform="translate(30,112)">
+        <rect x={0} y={0} width={620} height={168} rx="10" fill={CARD} stroke={LINE} />
+        <text x={20} y={24} style={{ ...TS, fontWeight: 700 }}>Substance</text>
+        <text x={280} y={24} style={{ ...TS, fontWeight: 700 }}>n-factor</text>
+        <line x1={16} y1={32} x2={604} y2={32} stroke={LINE} />
+        {rows.map((r, i) => (
+          <g key={r[0]}>
+            <text x={20} y={54 + i * 22} style={TS}>{r[0]}</text>
+            <text x={280} y={54 + i * 22} style={{ ...TS, fill: VEC }}>{r[1]}</text>
+          </g>
+        ))}
+      </g>
+      <text x={340} y={300} textAnchor="middle" style={TXS}>e.g. H₂SO₄ n = 2 → E = 49 · KMnO₄(acidic) n = 5 → E = 31.6 · Na₂CO₃ n = 2 → E = 53</text>
+    </svg>
+  );
+}
+
+/** POAC — atoms of a chosen element are conserved end-to-end. */
+export function PoacBridge() {
+  return (
+    <svg viewBox="0 0 680 240" className="h-auto w-full" role="img" aria-label="Principle of atomic conservation bridging reactant to product through a chosen element">
+      <text x={340} y={22} textAnchor="middle" style={TB}>POAC: atoms of a chosen element are conserved — skip the equation</text>
+
+      <Node x={40} y={60} w={200} h={70} title="Reactant A" sub="a atoms of X per formula" accent={AX} />
+      <Node x={440} y={60} w={200} h={70} title="Product P" sub="p atoms of X per formula" accent={OK} />
+
+      {/* conservation arrow */}
+      <Arrow x1={244} y1={95} x2={436} y2={95} color={VEC} w={2} />
+      <text x={340} y={84} textAnchor="middle" style={{ ...TS, fill: VEC, fontWeight: 700 }}>X atoms conserved</text>
+      <text x={340} y={112} textAnchor="middle" style={TXS}>(through any number of unknown steps)</text>
+
+      {/* the equation */}
+      <rect x={120} y={150} width={440} height={44} rx="10" fill={CARD} stroke={LINE} />
+      <text x={340} y={177} textAnchor="middle" style={{ ...TS, fill: AX }}>a × (moles of A) = p × (moles of P)</text>
+
+      <text x={340} y={220} textAnchor="middle" style={TXS}>Choose X appearing in exactly one known reactant and one known product (e.g. O in KClO₃ → O₂; P in sample → Mg₂P₂O₇).</text>
+    </svg>
+  );
+}
+
+/** Linking sequential reactions via a common substance (the ×m / ×n method). */
+export function SequentialReactions() {
+  return (
+    <svg viewBox="0 0 680 220" className="h-auto w-full" role="img" aria-label="Linking sequential reactions through a common substance">
+      <text x={340} y={22} textAnchor="middle" style={TB}>Sequential reactions — the mole-bridge (≡) method</text>
+
+      <g transform="translate(40,44)">
+        <text x={0} y={16} style={TS}>2KClO₃ → 2KCl + 3O₂</text>
+        <text x={0} y={40} style={TS}>C₂H₆ + 7/2 O₂ → 2CO₂ + 3H₂O</text>
+        <text x={330} y={16} style={{ ...TXS, fill: WARN }}>common link: O₂</text>
+        <text x={330} y={40} style={TXS}>cancel it to relate the ends</text>
+      </g>
+
+      <rect x={40} y={100} width={600} height={44} rx="10" fill={CARD} stroke={OK} />
+      <text x={60} y={128} style={{ ...TS, fill: OK }}>1 mol C₂H₆ ≡ 7/2 mol O₂ ≡ 7/3 mol KClO₃   — read moles straight across the chain</text>
+
+      <text x={340} y={178} textAnchor="middle" style={TXS}>Method: write each step, make the shared species′ coefficient match, add/subtract → one relation linking start to end.</text>
+      <text x={340} y={198} textAnchor="middle" style={{ ...TXS, fill: VEC }}>POAC is the special case where the shared link is an ATOM.</text>
+    </svg>
+  );
+}

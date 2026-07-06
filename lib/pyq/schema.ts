@@ -61,11 +61,10 @@ export const PYQQuestionSchema = z.object({
   exam:         PYQExamSchema,
   year:         z.number().int().min(2005).max(2026),
   session:      z.string().optional(),    // "Jan Session 1", "April", etc.
-  questionNo:   z.number().int().optional(),
-  questionNumber: z.number().int().optional(),
-  paperNumber:  z.number().int().optional(),
-  source:       z.string().optional(),
-  authenticityStatus: z.enum(["VERIFIED_PYQ", "ADAPTED_PYQ", "NEEDS_MANUAL_REVIEW"]).optional(),
+  questionNumber: z.number().int(),
+  paperNumber:  z.number().int(),
+  source:       z.string(),
+  authenticityStatus: z.enum(["VERIFIED_PYQ", "ADAPTED_PYQ", "NEEDS_MANUAL_REVIEW"]),
   questionType: z.enum(["MCQ-Single", "MCQ-Multiple", "Integer", "Numerical", "Assertion-Reason"]).default("MCQ-Single"),
 
   // Content

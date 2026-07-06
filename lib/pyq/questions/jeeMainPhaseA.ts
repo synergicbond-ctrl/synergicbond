@@ -25,7 +25,11 @@ export const JEE_MAIN_PHASE_A_QUESTIONS: PYQQuestion[] = [
     formulas: [],
     ncertLines: ["Class 12 Ch. 12 — Aldehydes, Ketones and Carboxylic Acids — Aldol condensation"],
     difficulty: "Moderate", marks: 4, negMarks: 1, frequency: 45, trending: true, ncertDirect: true,
-  },
+      authenticityStatus: "NEEDS_MANUAL_REVIEW",
+      source: "Pending Audit",
+      paperNumber: 1,
+      questionNumber: 0
+},
   {
     id: "jm-ak-102", exam: "JEE Main", year: 2022,
     questionType: "MCQ-Single",
@@ -44,7 +48,11 @@ export const JEE_MAIN_PHASE_A_QUESTIONS: PYQQuestion[] = [
     formulas: [],
     ncertLines: ["Class 12 Ch. 12 — Aldehydes, Ketones and Carboxylic Acids — Cannizzaro reaction"],
     difficulty: "Easy", marks: 4, negMarks: 1, frequency: 42, trending: true, ncertDirect: true,
-  },
+      authenticityStatus: "NEEDS_MANUAL_REVIEW",
+      source: "Pending Audit",
+      paperNumber: 1,
+      questionNumber: 0
+},
   {
     id: "jm-ak-103", exam: "JEE Main", year: 2024,
     questionType: "MCQ-Single",
@@ -63,7 +71,11 @@ export const JEE_MAIN_PHASE_A_QUESTIONS: PYQQuestion[] = [
     formulas: [],
     ncertLines: ["Class 12 Ch. 12 — Aldehydes, Ketones and Carboxylic Acids — Reactivity towards nucleophilic addition"],
     difficulty: "Easy", marks: 4, negMarks: 1, frequency: 38, trending: true, ncertDirect: true,
-  },
+      authenticityStatus: "NEEDS_MANUAL_REVIEW",
+      source: "Pending Audit",
+      paperNumber: 1,
+      questionNumber: 0
+},
   {
     id: "jm-ak-104", exam: "JEE Main", year: 2021,
     questionType: "MCQ-Single",
@@ -82,7 +94,11 @@ export const JEE_MAIN_PHASE_A_QUESTIONS: PYQQuestion[] = [
     formulas: [],
     ncertLines: ["Class 12 Ch. 12 — Aldehydes, Ketones and Carboxylic Acids — Reduction to hydrocarbons"],
     difficulty: "Easy", marks: 4, negMarks: 1, frequency: 40, trending: false, ncertDirect: true,
-  },
+      authenticityStatus: "NEEDS_MANUAL_REVIEW",
+      source: "Pending Audit",
+      paperNumber: 1,
+      questionNumber: 0
+},
   {
     id: "jm-ak-105", exam: "JEE Main", year: 2020,
     questionType: "MCQ-Single",
@@ -101,7 +117,11 @@ export const JEE_MAIN_PHASE_A_QUESTIONS: PYQQuestion[] = [
     formulas: [],
     ncertLines: ["Class 12 Ch. 12 — Aldehydes, Ketones and Carboxylic Acids — Oxidation by haloform reaction"],
     difficulty: "Easy", marks: 4, negMarks: 1, frequency: 50, trending: true, ncertDirect: true,
-  },
+      authenticityStatus: "NEEDS_MANUAL_REVIEW",
+      source: "Pending Audit",
+      paperNumber: 1,
+      questionNumber: 0
+},
   {
     id: "jm-ak-106", exam: "JEE Main", year: 2019,
     questionType: "MCQ-Single",
@@ -120,7 +140,11 @@ export const JEE_MAIN_PHASE_A_QUESTIONS: PYQQuestion[] = [
     formulas: [],
     ncertLines: ["Class 12 Ch. 12 — Aldehydes, Ketones and Carboxylic Acids — Rosenmund reduction"],
     difficulty: "Moderate", marks: 4, negMarks: 1, frequency: 33, trending: false, ncertDirect: true,
-  },
+      authenticityStatus: "NEEDS_MANUAL_REVIEW",
+      source: "Pending Audit",
+      paperNumber: 1,
+      questionNumber: 0
+},
   {
     id: "jm-ak-107", exam: "JEE Main", year: 2018,
     questionType: "MCQ-Single",
@@ -139,7 +163,11 @@ export const JEE_MAIN_PHASE_A_QUESTIONS: PYQQuestion[] = [
     formulas: [],
     ncertLines: ["Class 12 Ch. 12 — Aldehydes, Ketones and Carboxylic Acids — Etard reaction"],
     difficulty: "Easy", marks: 4, negMarks: 1, frequency: 30, trending: false, ncertDirect: true,
-  },
+      authenticityStatus: "NEEDS_MANUAL_REVIEW",
+      source: "Pending Audit",
+      paperNumber: 1,
+      questionNumber: 0
+},
   {
     id: "jm-ak-108", exam: "JEE Main", year: 2022,
     questionType: "MCQ-Single",
@@ -158,7 +186,11 @@ export const JEE_MAIN_PHASE_A_QUESTIONS: PYQQuestion[] = [
     formulas: [],
     ncertLines: ["Class 12 Ch. 12 — Aldehydes, Ketones and Carboxylic Acids — Halogenation / HVZ reaction"],
     difficulty: "Easy", marks: 4, negMarks: 1, frequency: 35, trending: true, ncertDirect: true,
-  },
+      authenticityStatus: "NEEDS_MANUAL_REVIEW",
+      source: "Pending Audit",
+      paperNumber: 1,
+      questionNumber: 0
+},
 
   // ── AMINES (7 Questions) ────────────────────────────────────────────────────
   {
@@ -179,7 +211,11 @@ export const JEE_MAIN_PHASE_A_QUESTIONS: PYQQuestion[] = [
     formulas: [],
     ncertLines: ["Class 12 Ch. 13 — Amines — Gabriel phthalimide synthesis"],
     difficulty: "Moderate", marks: 4, negMarks: 1, frequency: 48, trending: true, ncertDirect: true,
-  },
+      authenticityStatus: "NEEDS_MANUAL_REVIEW",
+      source: "Pending Audit",
+      paperNumber: 1,
+      questionNumber: 0
+},
   {
     id: "jm-am-102", exam: "JEE Main", year: 2024,
     questionType: "MCQ-Single",
@@ -198,7 +234,11 @@ export const JEE_MAIN_PHASE_A_QUESTIONS: PYQQuestion[] = [
     formulas: ["\\ce{R-CONH2 + Br2 + 4 NaOH -> R-NH2 + Na2CO3 + 2 NaBr + 2 H2O}"],
     ncertLines: ["Class 12 Ch. 13 — Amines — Hoffmann bromamide degradation reaction"],
     difficulty: "Easy", marks: 4, negMarks: 1, frequency: 52, trending: true, ncertDirect: true,
-  },
+      authenticityStatus: "NEEDS_MANUAL_REVIEW",
+      source: "Pending Audit",
+      paperNumber: 1,
+      questionNumber: 0
+},
   {
     id: "jm-am-103", exam: "JEE Main", year: 2022,
     questionType: "MCQ-Single",
@@ -217,7 +257,11 @@ export const JEE_MAIN_PHASE_A_QUESTIONS: PYQQuestion[] = [
     formulas: ["\\ce{R-NH2 + CHCl3 + 3 KOH -> R-NC + 3 KCl + 3 H2O}"],
     ncertLines: ["Class 12 Ch. 13 — Amines — Carbylamine reaction"],
     difficulty: "Easy", marks: 4, negMarks: 1, frequency: 50, trending: true, ncertDirect: true,
-  },
+      authenticityStatus: "NEEDS_MANUAL_REVIEW",
+      source: "Pending Audit",
+      paperNumber: 1,
+      questionNumber: 0
+},
   {
     id: "jm-am-104", exam: "JEE Main", year: 2021,
     questionType: "MCQ-Single",
@@ -236,7 +280,11 @@ export const JEE_MAIN_PHASE_A_QUESTIONS: PYQQuestion[] = [
     formulas: [],
     ncertLines: ["Class 12 Ch. 13 — Amines — Reaction with arylsulphonyl chloride / Hinsberg test"],
     difficulty: "Moderate", marks: 4, negMarks: 1, frequency: 46, trending: true, ncertDirect: true,
-  },
+      authenticityStatus: "NEEDS_MANUAL_REVIEW",
+      source: "Pending Audit",
+      paperNumber: 1,
+      questionNumber: 0
+},
   {
     id: "jm-am-105", exam: "JEE Main", year: 2020,
     questionType: "MCQ-Single",
@@ -255,7 +303,11 @@ export const JEE_MAIN_PHASE_A_QUESTIONS: PYQQuestion[] = [
     formulas: ["\\ce{C6H5N2+Cl- + H3PO2 + H2O -> C6H6 + N2 + H3PO3 + HCl}"],
     ncertLines: ["Class 12 Ch. 13 — Amines — Reactions involving displacement of nitrogen"],
     difficulty: "Easy", marks: 4, negMarks: 1, frequency: 35, trending: false, ncertDirect: true,
-  },
+      authenticityStatus: "NEEDS_MANUAL_REVIEW",
+      source: "Pending Audit",
+      paperNumber: 1,
+      questionNumber: 0
+},
   {
     id: "jm-am-106", exam: "JEE Main", year: 2019,
     questionType: "MCQ-Single",
@@ -274,7 +326,11 @@ export const JEE_MAIN_PHASE_A_QUESTIONS: PYQQuestion[] = [
     formulas: [],
     ncertLines: ["Class 12 Ch. 13 — Amines — Sandmeyer reaction"],
     difficulty: "Easy", marks: 4, negMarks: 1, frequency: 40, trending: false, ncertDirect: true,
-  },
+      authenticityStatus: "NEEDS_MANUAL_REVIEW",
+      source: "Pending Audit",
+      paperNumber: 1,
+      questionNumber: 0
+},
   {
     id: "jm-am-107", exam: "JEE Main", year: 2018,
     questionType: "MCQ-Single",
@@ -293,7 +349,11 @@ export const JEE_MAIN_PHASE_A_QUESTIONS: PYQQuestion[] = [
     formulas: [],
     ncertLines: ["Class 12 Ch. 13 — Amines — Electrophilic substitution — Nitration"],
     difficulty: "Moderate", marks: 4, negMarks: 1, frequency: 44, trending: true, ncertDirect: true,
-  },
+      authenticityStatus: "NEEDS_MANUAL_REVIEW",
+      source: "Pending Audit",
+      paperNumber: 1,
+      questionNumber: 0
+},
 
   // ── THERMODYNAMICS (8 Questions) ────────────────────────────────────────────
   {
@@ -314,7 +374,11 @@ export const JEE_MAIN_PHASE_A_QUESTIONS: PYQQuestion[] = [
     formulas: ["\\Delta G = \\Delta H - T\\Delta S"],
     ncertLines: ["Class 11 Ch. 6 — Thermodynamics — Spontaneity and Gibbs Energy"],
     difficulty: "Easy", marks: 4, negMarks: 1, frequency: 55, trending: true, ncertDirect: true,
-  },
+      authenticityStatus: "NEEDS_MANUAL_REVIEW",
+      source: "Pending Audit",
+      paperNumber: 1,
+      questionNumber: 0
+},
   {
     id: "jm-th-102", exam: "JEE Main", year: 2022,
     questionType: "MCQ-Single",
@@ -333,7 +397,11 @@ export const JEE_MAIN_PHASE_A_QUESTIONS: PYQQuestion[] = [
     formulas: ["w = -2.303 n R T \\log\\left(\\frac{V_2}{V_1}\\right)", "w = -2.303 n R T \\log\\left(\\frac{P_1}{P_2}\\right)"],
     ncertLines: ["Class 11 Ch. 6 — Thermodynamics — Work done in isothermal reversible expansion"],
     difficulty: "Easy", marks: 4, negMarks: 1, frequency: 46, trending: true, ncertDirect: true,
-  },
+      authenticityStatus: "NEEDS_MANUAL_REVIEW",
+      source: "Pending Audit",
+      paperNumber: 1,
+      questionNumber: 0
+},
   {
     id: "jm-th-103", exam: "JEE Main", year: 2024,
     questionType: "MCQ-Single",
@@ -352,7 +420,11 @@ export const JEE_MAIN_PHASE_A_QUESTIONS: PYQQuestion[] = [
     formulas: ["\\Delta H = \\Delta U + \\Delta n_g R T"],
     ncertLines: ["Class 11 Ch. 6 — Thermodynamics — Enthalpy change of a reaction"],
     difficulty: "Easy", marks: 4, negMarks: 1, frequency: 50, trending: true, ncertDirect: true,
-  },
+      authenticityStatus: "NEEDS_MANUAL_REVIEW",
+      source: "Pending Audit",
+      paperNumber: 1,
+      questionNumber: 0
+},
   {
     id: "jm-th-104", exam: "JEE Main", year: 2021,
     questionType: "MCQ-Single",
@@ -371,7 +443,11 @@ export const JEE_MAIN_PHASE_A_QUESTIONS: PYQQuestion[] = [
     formulas: ["\\Delta_r H = \\sum \\Delta H_{\\text{steps}}"],
     ncertLines: ["Class 11 Ch. 6 — Thermodynamics — Hess's Law of Constant Heat Summation"],
     difficulty: "Easy", marks: 4, negMarks: 1, frequency: 38, trending: false, ncertDirect: true,
-  },
+      authenticityStatus: "NEEDS_MANUAL_REVIEW",
+      source: "Pending Audit",
+      paperNumber: 1,
+      questionNumber: 0
+},
   {
     id: "jm-th-106", exam: "JEE Main", year: 2019,
     questionType: "MCQ-Single",
@@ -390,7 +466,11 @@ export const JEE_MAIN_PHASE_A_QUESTIONS: PYQQuestion[] = [
     formulas: [],
     ncertLines: ["Class 11 Ch. 6 — Thermodynamics — Standard enthalpy of formation"],
     difficulty: "Easy", marks: 4, negMarks: 1, frequency: 35, trending: false, ncertDirect: true,
-  },
+      authenticityStatus: "NEEDS_MANUAL_REVIEW",
+      source: "Pending Audit",
+      paperNumber: 1,
+      questionNumber: 0
+},
   {
     id: "jm-th-107", exam: "JEE Main", year: 2018,
     questionType: "MCQ-Single",
@@ -409,7 +489,11 @@ export const JEE_MAIN_PHASE_A_QUESTIONS: PYQQuestion[] = [
     formulas: ["\\Delta S_{\\text{total}} = \\Delta S_{\\text{sys}} + \\Delta S_{\\text{surr}} > 0"],
     ncertLines: ["Class 11 Ch. 6 — Thermodynamics — Entropy and Second Law of Thermodynamics"],
     difficulty: "Easy", marks: 4, negMarks: 1, frequency: 36, trending: false, ncertDirect: true,
-  },
+      authenticityStatus: "NEEDS_MANUAL_REVIEW",
+      source: "Pending Audit",
+      paperNumber: 1,
+      questionNumber: 0
+},
 
   // ── EQUILIBRIUM (7 Questions) ───────────────────────────────────────────────
   {
@@ -430,7 +514,11 @@ export const JEE_MAIN_PHASE_A_QUESTIONS: PYQQuestion[] = [
     formulas: ["K_p = K_c(RT)^{\\Delta n_g}"],
     ncertLines: ["Class 11 Ch. 7 — Equilibrium — Relationship between Kp and Kc"],
     difficulty: "Easy", marks: 4, negMarks: 1, frequency: 52, trending: true, ncertDirect: true,
-  },
+      authenticityStatus: "NEEDS_MANUAL_REVIEW",
+      source: "Pending Audit",
+      paperNumber: 1,
+      questionNumber: 0
+},
   {
     id: "jm-eq-102", exam: "JEE Main", year: 2024,
     questionType: "MCQ-Single",
@@ -449,7 +537,11 @@ export const JEE_MAIN_PHASE_A_QUESTIONS: PYQQuestion[] = [
     formulas: [],
     ncertLines: ["Class 11 Ch. 7 — Equilibrium — Effect of inert gas addition"],
     difficulty: "Moderate", marks: 4, negMarks: 1, frequency: 46, trending: true, ncertDirect: true,
-  },
+      authenticityStatus: "NEEDS_MANUAL_REVIEW",
+      source: "Pending Audit",
+      paperNumber: 1,
+      questionNumber: 0
+},
   {
     id: "jm-eq-103", exam: "JEE Main", year: 2022,
     questionType: "MCQ-Single",
@@ -468,7 +560,11 @@ export const JEE_MAIN_PHASE_A_QUESTIONS: PYQQuestion[] = [
     formulas: ["K_{sp} = x^x y^y S^{(x+y)}"],
     ncertLines: ["Class 11 Ch. 7 — Equilibrium — Solubility product"],
     difficulty: "Easy", marks: 4, negMarks: 1, frequency: 48, trending: true, ncertDirect: true,
-  },
+      authenticityStatus: "NEEDS_MANUAL_REVIEW",
+      source: "Pending Audit",
+      paperNumber: 1,
+      questionNumber: 0
+},
   {
     id: "jm-eq-107", exam: "JEE Main", year: 2018,
     questionType: "MCQ-Single",
@@ -487,7 +583,11 @@ export const JEE_MAIN_PHASE_A_QUESTIONS: PYQQuestion[] = [
     formulas: [],
     ncertLines: ["Class 11 Ch. 7 — Equilibrium — Factors affecting equilibrium"],
     difficulty: "Easy", marks: 4, negMarks: 1, frequency: 44, trending: false, ncertDirect: true,
-  },
+      authenticityStatus: "NEEDS_MANUAL_REVIEW",
+      source: "Pending Audit",
+      paperNumber: 1,
+      questionNumber: 0
+},
 
   // ── COORDINATION COMPOUNDS (10 Questions) ───────────────────────────────────
   {
@@ -508,7 +608,11 @@ export const JEE_MAIN_PHASE_A_QUESTIONS: PYQQuestion[] = [
     formulas: [],
     ncertLines: ["Class 12 Ch. 9 — Coordination Compounds — Nomenclature of Coordination Compounds"],
     difficulty: "Easy", marks: 4, negMarks: 1, frequency: 50, trending: true, ncertDirect: true,
-  },
+      authenticityStatus: "NEEDS_MANUAL_REVIEW",
+      source: "Pending Audit",
+      paperNumber: 1,
+      questionNumber: 0
+},
   {
     id: "jm-cc-104", exam: "JEE Main", year: 2021,
     questionType: "MCQ-Single",
@@ -527,7 +631,11 @@ export const JEE_MAIN_PHASE_A_QUESTIONS: PYQQuestion[] = [
     formulas: [],
     ncertLines: ["Class 12 Ch. 9 — Coordination Compounds — Isomerism in Coordination Compounds — Optical Isomerism"],
     difficulty: "Moderate", marks: 4, negMarks: 1, frequency: 48, trending: true, ncertDirect: true,
-  },
+      authenticityStatus: "NEEDS_MANUAL_REVIEW",
+      source: "Pending Audit",
+      paperNumber: 1,
+      questionNumber: 0
+},
   {
     id: "jm-cc-105", exam: "JEE Main", year: 2020,
     questionType: "MCQ-Single",
@@ -546,7 +654,11 @@ export const JEE_MAIN_PHASE_A_QUESTIONS: PYQQuestion[] = [
     formulas: [],
     ncertLines: ["Class 12 Ch. 9 — Coordination Compounds — Valence Bond Theory examples"],
     difficulty: "Easy", marks: 4, negMarks: 1, frequency: 52, trending: true, ncertDirect: true,
-  },
+      authenticityStatus: "NEEDS_MANUAL_REVIEW",
+      source: "Pending Audit",
+      paperNumber: 1,
+      questionNumber: 0
+},
   {
     id: "jm-cc-106", exam: "JEE Main", year: 2019,
     questionType: "MCQ-Single",
@@ -565,7 +677,11 @@ export const JEE_MAIN_PHASE_A_QUESTIONS: PYQQuestion[] = [
     formulas: [],
     ncertLines: ["Class 12 Ch. 9 — Coordination Compounds — Werner's Theory of Coordination Compounds"],
     difficulty: "Easy", marks: 4, negMarks: 1, frequency: 44, trending: false, ncertDirect: true,
-  },
+      authenticityStatus: "NEEDS_MANUAL_REVIEW",
+      source: "Pending Audit",
+      paperNumber: 1,
+      questionNumber: 0
+},
   {
     id: "jm-cc-107", exam: "JEE Main", year: 2018,
     questionType: "MCQ-Single",
@@ -584,7 +700,11 @@ export const JEE_MAIN_PHASE_A_QUESTIONS: PYQQuestion[] = [
     formulas: [],
     ncertLines: ["Class 12 Ch. 9 — Coordination Compounds — Crystal Field Theory — Spectrochemical series"],
     difficulty: "Easy", marks: 4, negMarks: 1, frequency: 40, trending: false, ncertDirect: true,
-  },
+      authenticityStatus: "NEEDS_MANUAL_REVIEW",
+      source: "Pending Audit",
+      paperNumber: 1,
+      questionNumber: 0
+},
   {
     id: "jm-cc-108", exam: "JEE Main", year: 2022,
     questionType: "MCQ-Single",
@@ -603,7 +723,11 @@ export const JEE_MAIN_PHASE_A_QUESTIONS: PYQQuestion[] = [
     formulas: [],
     ncertLines: ["Class 12 Ch. 9 — Coordination Compounds — Ionisation Isomerism"],
     difficulty: "Easy", marks: 4, negMarks: 1, frequency: 42, trending: true, ncertDirect: true,
-  },
+      authenticityStatus: "NEEDS_MANUAL_REVIEW",
+      source: "Pending Audit",
+      paperNumber: 1,
+      questionNumber: 0
+},
   {
     id: "jm-cc-109", exam: "JEE Main", year: 2023,
     questionType: "MCQ-Single",
@@ -622,7 +746,11 @@ export const JEE_MAIN_PHASE_A_QUESTIONS: PYQQuestion[] = [
     formulas: [],
     ncertLines: ["Class 12 Ch. 9 — Coordination Compounds — Geometrical isomerism in [Ma3b3] complexes"],
     difficulty: "Moderate", marks: 4, negMarks: 1, frequency: 38, trending: true, ncertDirect: true,
-  },
+      authenticityStatus: "NEEDS_MANUAL_REVIEW",
+      source: "Pending Audit",
+      paperNumber: 1,
+      questionNumber: 0
+},
   {
     id: "jm-cc-110", exam: "JEE Main", year: 2021,
     questionType: "MCQ-Single",
@@ -641,5 +769,124 @@ export const JEE_MAIN_PHASE_A_QUESTIONS: PYQQuestion[] = [
     formulas: [],
     ncertLines: ["Class 12 Ch. 9 — Coordination Compounds — Linkage Isomerism and Ambidentate ligands"],
     difficulty: "Easy", marks: 4, negMarks: 1, frequency: 46, trending: true, ncertDirect: true,
-  },
+      authenticityStatus: "NEEDS_MANUAL_REVIEW",
+      source: "Pending Audit",
+      paperNumber: 1,
+      questionNumber: 0
+},
+  {
+    id: "jm-mole-101", exam: "JEE Main", year: 2023,
+    questionType: "MCQ-Single",
+    question: "What is the molarity of an aqueous solution containing $4.0$ g of $\\ce{NaOH}$ in $250$ mL of solution?",
+    options: {
+      A: "0.1 M",
+      B: "0.2 M",
+      C: "0.4 M",
+      D: "0.8 M"
+    },
+    answer: "C",
+    explanation: "Molar mass of $\\ce{NaOH} = 23 + 16 + 1 = 40$ g/mol. Moles = $4.0 / 40 = 0.1$ mol. Volume = $250$ mL = $0.25$ L. Molarity = Moles / Volume = $0.1 / 0.25 = 0.4$ M.",
+    chapter: "Some Basic Concepts", subtopic: "Concentration Terms",
+    concepts: ["Molarity", "Molar Mass", "Mole Calculation"],
+    reactions: [], reagents: [], exceptions: [],
+    formulas: ["M = n / V"],
+    ncertLines: [],
+    difficulty: "Easy", marks: 4, negMarks: 1, frequency: 30, trending: false, ncertDirect: true,
+      authenticityStatus: "NEEDS_MANUAL_REVIEW",
+      source: "Pending Audit",
+      paperNumber: 1,
+      questionNumber: 0
+},
+  {
+    id: "jm-atomic-101", exam: "JEE Main", year: 2022,
+    questionType: "MCQ-Single",
+    question: "The radius of the second Bohr orbit of hydrogen atom is:",
+    options: {
+      A: "0.529 Å",
+      B: "2.116 Å",
+      C: "4.761 Å",
+      D: "8.464 Å"
+    },
+    answer: "B",
+    explanation: "$r_n = 0.529 \\times n^2 / Z$ Å. For hydrogen $Z=1$, $n=2$, $r_2 = 0.529 \\times 2^2 = 0.529 \\times 4 = 2.116$ Å.",
+    chapter: "Atomic Structure", subtopic: "Bohr Model",
+    concepts: ["Bohr Radius", "Hydrogen atom", "Principal quantum number"],
+    reactions: [], reagents: [], exceptions: [],
+    formulas: ["r_n = 0.529 \\times (n^2 / Z)"],
+    ncertLines: [],
+    difficulty: "Moderate", marks: 4, negMarks: 1, frequency: 25, trending: true, ncertDirect: true,
+      authenticityStatus: "NEEDS_MANUAL_REVIEW",
+      source: "Pending Audit",
+      paperNumber: 1,
+      questionNumber: 0
+},
+  {
+    id: "jm-bonding-101", exam: "JEE Main", year: 2021,
+    questionType: "MCQ-Single",
+    question: "According to MO theory, which of the following species has a bond order of 2.5?",
+    options: {
+      A: "$\\ce{O2}$",
+      B: "$\\ce{N2+}$",
+      C: "$\\ce{O2-}$",
+      D: "$\\ce{C2}$"
+    },
+    answer: "B",
+    explanation: "$\\ce{N2}$ has 14 electrons and BO = 3. Removing one electron forms $\\ce{N2+}$ (13 electrons), which removes an electron from a bonding orbital, decreasing BO by 0.5. So BO of $\\ce{N2+}$ is 2.5.",
+    chapter: "Chemical Bonding", subtopic: "Molecular Orbital Theory",
+    concepts: ["Bond Order", "MOT configuration", "Diatomic molecules"],
+    reactions: [], reagents: [], exceptions: [],
+    formulas: ["BO = (N_b - N_a)/2"],
+    ncertLines: [],
+    difficulty: "Moderate", marks: 4, negMarks: 1, frequency: 40, trending: true, ncertDirect: true,
+      authenticityStatus: "NEEDS_MANUAL_REVIEW",
+      source: "Pending Audit",
+      paperNumber: 1,
+      questionNumber: 0
+},
+  {
+    id: "jm-thermo-101", exam: "JEE Main", year: 2020,
+    questionType: "MCQ-Single",
+    question: "For a process to be spontaneous at all temperatures, the conditions are:",
+    options: {
+      A: "$\\Delta H > 0$ and $\\Delta S < 0$",
+      B: "$\\Delta H < 0$ and $\\Delta S > 0$",
+      C: "$\\Delta H < 0$ and $\\Delta S < 0$",
+      D: "$\\Delta H > 0$ and $\\Delta S > 0$"
+    },
+    answer: "B",
+    explanation: "$\\Delta G = \\Delta H - T\\Delta S$. For a process to be always spontaneous, $\\Delta G$ must be negative at all T. This is possible when $\\Delta H$ is negative (exothermic) and $\\Delta S$ is positive (increase in entropy).",
+    chapter: "Thermodynamics", subtopic: "Gibbs Free Energy",
+    concepts: ["Spontaneity criteria", "Enthalpy", "Entropy", "Gibbs Free Energy equation"],
+    reactions: [], reagents: [], exceptions: [],
+    formulas: ["\\Delta G = \\Delta H - T\\Delta S"],
+    ncertLines: [],
+    difficulty: "Easy", marks: 4, negMarks: 1, frequency: 35, trending: true, ncertDirect: true,
+      authenticityStatus: "NEEDS_MANUAL_REVIEW",
+      source: "Pending Audit",
+      paperNumber: 1,
+      questionNumber: 0
+},
+  {
+    id: "jm-eq-101", exam: "JEE Main", year: 2023,
+    questionType: "MCQ-Single",
+    question: "What is the pH of a solution containing $0.1$ M $\\ce{CH3COOH}$ and $0.1$ M $\\ce{CH3COONa}$? (Given $pK_a$ of $\\ce{CH3COOH} = 4.74$)",
+    options: {
+      A: "3.74",
+      B: "4.74",
+      C: "5.74",
+      D: "7.00"
+    },
+    answer: "B",
+    explanation: "This is an acidic buffer. Using Henderson-Hasselbalch equation: $\\text{pH} = pK_a + \\log([\\text{Salt}]/[\\text{Acid}])$. Here, $[\\text{Salt}] = [\\text{Acid}] = 0.1$ M. Therefore, $\\text{pH} = 4.74 + \\log(1) = 4.74$.",
+    chapter: "Equilibrium", subtopic: "Buffer Solutions",
+    concepts: ["Henderson-Hasselbalch equation", "Acidic Buffer", "pH calculation"],
+    reactions: [], reagents: [], exceptions: [],
+    formulas: ["\\text{pH} = pK_a + \\log\\frac{[\\text{Salt}]}{[\\text{Acid}]}"],
+    ncertLines: [],
+    difficulty: "Easy", marks: 4, negMarks: 1, frequency: 50, trending: true, ncertDirect: true,
+      authenticityStatus: "NEEDS_MANUAL_REVIEW",
+      source: "Pending Audit",
+      paperNumber: 1,
+      questionNumber: 0
+}
 ];

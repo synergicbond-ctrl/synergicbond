@@ -29,7 +29,11 @@ export const NEET_QUESTIONS: PYQQuestion[] = [
     formulas: [],
     ncertLines: ["Class 11 Ch. 2 — Electronic Configuration — Cr Exception"],
     difficulty: "Easy", marks: 4, negMarks: 1, frequency: 35, trending: true, ncertDirect: true,
-  },
+      authenticityStatus: "NEEDS_MANUAL_REVIEW",
+      source: "Pending Audit",
+      paperNumber: 1,
+      questionNumber: 0
+},
 
   {
     id: "nt-as-002", exam: "NEET", year: 2022,
@@ -44,7 +48,11 @@ export const NEET_QUESTIONS: PYQQuestion[] = [
     formulas: ["λ = 12.27/√V Å (for electrons)"],
     ncertLines: ["Class 11 Ch. 2 — de Broglie Relationship"],
     difficulty: "Easy", marks: 4, negMarks: 1, frequency: 28, trending: false, ncertDirect: true,
-  },
+      authenticityStatus: "NEEDS_MANUAL_REVIEW",
+      source: "Pending Audit",
+      paperNumber: 1,
+      questionNumber: 0
+},
 
   {
     id: "nt-as-003", exam: "NEET", year: 2024,
@@ -59,7 +67,11 @@ export const NEET_QUESTIONS: PYQQuestion[] = [
     formulas: ["Angular nodes = l", "Radial nodes = n − l − 1"],
     ncertLines: ["Class 11 Ch. 2 — Shapes of Atomic Orbitals"],
     difficulty: "Easy", marks: 4, negMarks: 1, frequency: 20, trending: false, ncertDirect: true,
-  },
+      authenticityStatus: "NEEDS_MANUAL_REVIEW",
+      source: "Pending Audit",
+      paperNumber: 1,
+      questionNumber: 0
+},
 
   // Periodic Table
   {
@@ -76,7 +88,11 @@ export const NEET_QUESTIONS: PYQQuestion[] = [
     formulas: [],
     ncertLines: ["Class 11 Ch. 3 — Ionisation Enthalpy"],
     difficulty: "Easy", marks: 4, negMarks: 1, frequency: 42, trending: true, ncertDirect: true,
-  },
+      authenticityStatus: "NEEDS_MANUAL_REVIEW",
+      source: "Pending Audit",
+      paperNumber: 1,
+      questionNumber: 0
+},
 
   {
     id: "nt-pt-002", exam: "NEET", year: 2022,
@@ -92,7 +108,11 @@ export const NEET_QUESTIONS: PYQQuestion[] = [
     formulas: [],
     ncertLines: ["Class 11 Ch. 3 — Electron Gain Enthalpy"],
     difficulty: "Easy", marks: 4, negMarks: 1, frequency: 38, trending: true, ncertDirect: true,
-  },
+      authenticityStatus: "NEEDS_MANUAL_REVIEW",
+      source: "Pending Audit",
+      paperNumber: 1,
+      questionNumber: 0
+},
 
   // Chemical Bonding
   {
@@ -108,7 +128,11 @@ export const NEET_QUESTIONS: PYQQuestion[] = [
     formulas: [],
     ncertLines: ["Class 11 Ch. 4 — VSEPR Theory — NH₃"],
     difficulty: "Easy", marks: 4, negMarks: 1, frequency: 30, trending: false, ncertDirect: true,
-  },
+      authenticityStatus: "NEEDS_MANUAL_REVIEW",
+      source: "Pending Audit",
+      paperNumber: 1,
+      questionNumber: 0
+},
 
   {
     id: "nt-cb-002", exam: "NEET", year: 2023,
@@ -129,7 +153,11 @@ export const NEET_QUESTIONS: PYQQuestion[] = [
     formulas: [],
     ncertLines: ["Class 11 Ch. 4 — Hydrogen Bonding"],
     difficulty: "Moderate", marks: 4, negMarks: 1, frequency: 28, trending: true, ncertDirect: true,
-  },
+      authenticityStatus: "NEEDS_MANUAL_REVIEW",
+      source: "Pending Audit",
+      paperNumber: 1,
+      questionNumber: 0
+},
 
   // s-Block
   {
@@ -145,7 +173,11 @@ export const NEET_QUESTIONS: PYQQuestion[] = [
     formulas: [],
     ncertLines: ["Class 11 Ch. 10 — s-Block Elements — Physical Properties"],
     difficulty: "Easy", marks: 4, negMarks: 1, frequency: 18, trending: false, ncertDirect: true,
-  },
+      authenticityStatus: "NEEDS_MANUAL_REVIEW",
+      source: "Pending Audit",
+      paperNumber: 1,
+      questionNumber: 0
+},
 
   {
     id: "nt-sb-002", exam: "NEET", year: 2022,
@@ -161,7 +193,11 @@ export const NEET_QUESTIONS: PYQQuestion[] = [
     formulas: [],
     ncertLines: ["Class 11 Ch. 10 — Anomalous Behaviour of Beryllium"],
     difficulty: "Moderate", marks: 4, negMarks: 1, frequency: 20, trending: true, ncertDirect: true,
-  },
+      authenticityStatus: "NEEDS_MANUAL_REVIEW",
+      source: "Pending Audit",
+      paperNumber: 1,
+      questionNumber: 0
+},
 
   // p-Block
   {
@@ -183,7 +219,11 @@ export const NEET_QUESTIONS: PYQQuestion[] = [
     formulas: [],
     ncertLines: ["Class 12 Ch. 7 — Hydrogen Halides"],
     difficulty: "Easy", marks: 4, negMarks: 1, frequency: 35, trending: true, ncertDirect: true,
-  },
+      authenticityStatus: "NEEDS_MANUAL_REVIEW",
+      source: "Pending Audit",
+      paperNumber: 1,
+      questionNumber: 0
+},
 
   {
     id: "nt-pb-002", exam: "NEET", year: 2023,
@@ -204,7 +244,11 @@ export const NEET_QUESTIONS: PYQQuestion[] = [
     formulas: [],
     ncertLines: ["Class 12 Ch. 7 — Anomalous Behaviour of Nitrogen"],
     difficulty: "Easy", marks: 4, negMarks: 1, frequency: 30, trending: true, ncertDirect: true,
-  },
+      authenticityStatus: "NEEDS_MANUAL_REVIEW",
+      source: "Pending Audit",
+      paperNumber: 1,
+      questionNumber: 0
+},
 
   {
     id: "nt-pb-003", exam: "NEET", year: 2022,
@@ -225,7 +269,11 @@ export const NEET_QUESTIONS: PYQQuestion[] = [
     formulas: [],
     ncertLines: ["Class 12 Ch. 7 — Oxoacids of Sulphur"],
     difficulty: "Moderate", marks: 4, negMarks: 1, frequency: 22, trending: false, ncertDirect: true,
-  },
+      authenticityStatus: "NEEDS_MANUAL_REVIEW",
+      source: "Pending Audit",
+      paperNumber: 1,
+      questionNumber: 0
+},
 
   // d and f Block
   {
@@ -247,7 +295,11 @@ export const NEET_QUESTIONS: PYQQuestion[] = [
     formulas: [],
     ncertLines: ["Class 12 Ch. 8 — Electronic Configurations — Cu Exception"],
     difficulty: "Easy", marks: 4, negMarks: 1, frequency: 42, trending: true, ncertDirect: true,
-  },
+      authenticityStatus: "NEEDS_MANUAL_REVIEW",
+      source: "Pending Audit",
+      paperNumber: 1,
+      questionNumber: 0
+},
 
   {
     id: "nt-db-002", exam: "NEET", year: 2023,
@@ -263,7 +315,11 @@ export const NEET_QUESTIONS: PYQQuestion[] = [
     formulas: [],
     ncertLines: ["Class 12 Ch. 8 — Colour of Transition Metal Ions"],
     difficulty: "Easy", marks: 4, negMarks: 1, frequency: 30, trending: true, ncertDirect: true,
-  },
+      authenticityStatus: "NEEDS_MANUAL_REVIEW",
+      source: "Pending Audit",
+      paperNumber: 1,
+      questionNumber: 0
+},
 
   // Coordination Compounds
   {
@@ -279,7 +335,11 @@ export const NEET_QUESTIONS: PYQQuestion[] = [
     formulas: ["μ = √(n(n+2)) BM"],
     ncertLines: ["Class 12 Ch. 9 — Crystal Field Theory"],
     difficulty: "Moderate", marks: 4, negMarks: 1, frequency: 25, trending: true, ncertDirect: true,
-  },
+      authenticityStatus: "NEEDS_MANUAL_REVIEW",
+      source: "Pending Audit",
+      paperNumber: 1,
+      questionNumber: 0
+},
 
   // Thermodynamics
   {
@@ -295,7 +355,11 @@ export const NEET_QUESTIONS: PYQQuestion[] = [
     formulas: ["ΔHrxn = ΣΔHf(products) − ΣΔHf(reactants)"],
     ncertLines: ["Class 11 Ch. 6 — Hess's Law"],
     difficulty: "Moderate", marks: 4, negMarks: 1, frequency: 24, trending: false, ncertDirect: true,
-  },
+      authenticityStatus: "NEEDS_MANUAL_REVIEW",
+      source: "Pending Audit",
+      paperNumber: 1,
+      questionNumber: 0
+},
 
   // Electrochemistry
   {
@@ -311,7 +375,11 @@ export const NEET_QUESTIONS: PYQQuestion[] = [
     formulas: ["W = EIt/96500", "W = (M/n) × (It/F)"],
     ncertLines: ["Class 12 Ch. 3 — Faraday's Laws of Electrolysis"],
     difficulty: "Easy", marks: 4, negMarks: 1, frequency: 28, trending: false, ncertDirect: true,
-  },
+      authenticityStatus: "NEEDS_MANUAL_REVIEW",
+      source: "Pending Audit",
+      paperNumber: 1,
+      questionNumber: 0
+},
 
   // General Organic
   {
@@ -332,7 +400,11 @@ export const NEET_QUESTIONS: PYQQuestion[] = [
     formulas: [],
     ncertLines: ["Class 11 Ch. 12 — Reactive Intermediates"],
     difficulty: "Easy", marks: 4, negMarks: 1, frequency: 32, trending: true, ncertDirect: false,
-  },
+      authenticityStatus: "NEEDS_MANUAL_REVIEW",
+      source: "Pending Audit",
+      paperNumber: 1,
+      questionNumber: 0
+},
 
   {
     id: "nt-goc-002", exam: "NEET", year: 2023,
@@ -353,7 +425,11 @@ export const NEET_QUESTIONS: PYQQuestion[] = [
     formulas: [],
     ncertLines: ["Class 12 Ch. 14 — Glucose — Open Chain Structure"],
     difficulty: "Hard", marks: 4, negMarks: 1, frequency: 14, trending: false, ncertDirect: true,
-  },
+      authenticityStatus: "NEEDS_MANUAL_REVIEW",
+      source: "Pending Audit",
+      paperNumber: 1,
+      questionNumber: 0
+},
 
   // Alcohols, Phenols, Ethers
   {
@@ -375,7 +451,11 @@ export const NEET_QUESTIONS: PYQQuestion[] = [
     formulas: ["pKa phenol ≈ 10; pKa ethanol ≈ 16"],
     ncertLines: ["Class 12 Ch. 11 — Acidity of Phenols"],
     difficulty: "Easy", marks: 4, negMarks: 1, frequency: 36, trending: true, ncertDirect: true,
-  },
+      authenticityStatus: "NEEDS_MANUAL_REVIEW",
+      source: "Pending Audit",
+      paperNumber: 1,
+      questionNumber: 0
+},
 
   {
     id: "nt-ape-002", exam: "NEET", year: 2022,
@@ -396,7 +476,11 @@ export const NEET_QUESTIONS: PYQQuestion[] = [
     formulas: [],
     ncertLines: ["Class 12 Ch. 11 — Distinction of Alcohols"],
     difficulty: "Easy", marks: 4, negMarks: 1, frequency: 30, trending: false, ncertDirect: true,
-  },
+      authenticityStatus: "NEEDS_MANUAL_REVIEW",
+      source: "Pending Audit",
+      paperNumber: 1,
+      questionNumber: 0
+},
 
   // Aldehydes & Ketones
   {
@@ -418,7 +502,11 @@ export const NEET_QUESTIONS: PYQQuestion[] = [
     formulas: [],
     ncertLines: ["Class 12 Ch. 12 — Cannizzaro Reaction"],
     difficulty: "Easy", marks: 4, negMarks: 1, frequency: 30, trending: true, ncertDirect: true,
-  },
+      authenticityStatus: "NEEDS_MANUAL_REVIEW",
+      source: "Pending Audit",
+      paperNumber: 1,
+      questionNumber: 0
+},
 
   {
     id: "nt-ak-002", exam: "NEET", year: 2023,
@@ -439,7 +527,11 @@ export const NEET_QUESTIONS: PYQQuestion[] = [
     formulas: [],
     ncertLines: ["Class 12 Ch. 12 — Iodoform Reaction"],
     difficulty: "Easy", marks: 4, negMarks: 1, frequency: 28, trending: true, ncertDirect: true,
-  },
+      authenticityStatus: "NEEDS_MANUAL_REVIEW",
+      source: "Pending Audit",
+      paperNumber: 1,
+      questionNumber: 0
+},
 
   // Carboxylic Acids
   {
@@ -460,7 +552,11 @@ export const NEET_QUESTIONS: PYQQuestion[] = [
     formulas: [],
     ncertLines: ["Class 12 Ch. 12 — Acidity of Carboxylic Acids"],
     difficulty: "Moderate", marks: 4, negMarks: 1, frequency: 26, trending: true, ncertDirect: false,
-  },
+      authenticityStatus: "NEEDS_MANUAL_REVIEW",
+      source: "Pending Audit",
+      paperNumber: 1,
+      questionNumber: 0
+},
 
   // Amines
   {
@@ -482,7 +578,11 @@ export const NEET_QUESTIONS: PYQQuestion[] = [
     formulas: [],
     ncertLines: ["Class 12 Ch. 13 — Basicity of Amines"],
     difficulty: "Moderate", marks: 4, negMarks: 1, frequency: 38, trending: true, ncertDirect: true,
-  },
+      authenticityStatus: "NEEDS_MANUAL_REVIEW",
+      source: "Pending Audit",
+      paperNumber: 1,
+      questionNumber: 0
+},
 
   {
     id: "nt-am-002", exam: "NEET", year: 2022,
@@ -503,7 +603,11 @@ export const NEET_QUESTIONS: PYQQuestion[] = [
     formulas: [],
     ncertLines: ["Class 12 Ch. 13 — Reactions of Amines — Acetylation"],
     difficulty: "Easy", marks: 4, negMarks: 1, frequency: 20, trending: false, ncertDirect: true,
-  },
+      authenticityStatus: "NEEDS_MANUAL_REVIEW",
+      source: "Pending Audit",
+      paperNumber: 1,
+      questionNumber: 0
+},
 
   // Biomolecules
   {
@@ -519,7 +623,11 @@ export const NEET_QUESTIONS: PYQQuestion[] = [
     formulas: [],
     ncertLines: ["Class 12 Ch. 15 — Natural Rubber — Monomer"],
     difficulty: "Easy", marks: 4, negMarks: 1, frequency: 22, trending: false, ncertDirect: true,
-  },
+      authenticityStatus: "NEEDS_MANUAL_REVIEW",
+      source: "Pending Audit",
+      paperNumber: 1,
+      questionNumber: 0
+},
 
   {
     id: "nt-bm-002", exam: "NEET", year: 2024,
@@ -535,7 +643,11 @@ export const NEET_QUESTIONS: PYQQuestion[] = [
     formulas: [],
     ncertLines: ["Class 12 Ch. 14 — Reducing Sugars"],
     difficulty: "Easy", marks: 4, negMarks: 1, frequency: 34, trending: true, ncertDirect: true,
-  },
+      authenticityStatus: "NEEDS_MANUAL_REVIEW",
+      source: "Pending Audit",
+      paperNumber: 1,
+      questionNumber: 0
+},
 
   {
     id: "nt-bm-003", exam: "NEET", year: 2022,
@@ -555,7 +667,11 @@ export const NEET_QUESTIONS: PYQQuestion[] = [
     formulas: [],
     ncertLines: ["Class 12 Ch. 14 — Structure of Proteins"],
     difficulty: "Easy", marks: 4, negMarks: 1, frequency: 28, trending: true, ncertDirect: true,
-  },
+      authenticityStatus: "NEEDS_MANUAL_REVIEW",
+      source: "Pending Audit",
+      paperNumber: 1,
+      questionNumber: 0
+},
 
   // Chemistry in Everyday Life
   {
@@ -571,7 +687,11 @@ export const NEET_QUESTIONS: PYQQuestion[] = [
     formulas: [],
     ncertLines: ["Class 12 Ch. 16 — Drugs and Medicines — Analgesics"],
     difficulty: "Easy", marks: 4, negMarks: 1, frequency: 20, trending: false, ncertDirect: true,
-  },
+      authenticityStatus: "NEEDS_MANUAL_REVIEW",
+      source: "Pending Audit",
+      paperNumber: 1,
+      questionNumber: 0
+},
 
   {
     id: "nt-ced-002", exam: "NEET", year: 2022,
@@ -592,7 +712,11 @@ export const NEET_QUESTIONS: PYQQuestion[] = [
     formulas: [],
     ncertLines: ["Class 12 Ch. 16 — Soaps and Detergents"],
     difficulty: "Easy", marks: 4, negMarks: 1, frequency: 18, trending: false, ncertDirect: true,
-  },
+      authenticityStatus: "NEEDS_MANUAL_REVIEW",
+      source: "Pending Audit",
+      paperNumber: 1,
+      questionNumber: 0
+},
 
   // Solutions
   {
@@ -608,7 +732,11 @@ export const NEET_QUESTIONS: PYQQuestion[] = [
     formulas: ["ΔTf = Kf × m × i"],
     ncertLines: ["Class 12 Ch. 2 — Freezing Point Depression"],
     difficulty: "Easy", marks: 4, negMarks: 1, frequency: 28, trending: false, ncertDirect: true,
-  },
+      authenticityStatus: "NEEDS_MANUAL_REVIEW",
+      source: "Pending Audit",
+      paperNumber: 1,
+      questionNumber: 0
+},
 
   // Equilibrium
   {
@@ -624,7 +752,11 @@ export const NEET_QUESTIONS: PYQQuestion[] = [
     formulas: ["pH = pKa + log([A⁻]/[HA])"],
     ncertLines: ["Class 11 Ch. 7 — Buffer Solutions"],
     difficulty: "Easy", marks: 4, negMarks: 1, frequency: 22, trending: true, ncertDirect: true,
-  },
+      authenticityStatus: "NEEDS_MANUAL_REVIEW",
+      source: "Pending Audit",
+      paperNumber: 1,
+      questionNumber: 0
+},
   ...NEET_PHASE_A_QUESTIONS,
 ];
 

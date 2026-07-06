@@ -25,7 +25,11 @@ export const JEE_MAIN_QUESTIONS: PYQQuestion[] = [
     formulas: ["En = −13.6 Z²/n² eV"],
     ncertLines: ["Class 11 Ch. 2 — Bohr Model of Hydrogen Atom"],
     difficulty: "Easy", marks: 4, negMarks: 1, frequency: 18, trending: true, ncertDirect: true,
-  },
+      authenticityStatus: "NEEDS_MANUAL_REVIEW",
+      source: "Pending Audit",
+      paperNumber: 1,
+      questionNumber: 0
+},
 
   {
     id: "jm-as-002", exam: "JEE Main", year: 2022, session: "Jun S1",
@@ -40,7 +44,11 @@ export const JEE_MAIN_QUESTIONS: PYQQuestion[] = [
     formulas: ["Radial nodes = n − l − 1", "Angular nodes = l"],
     ncertLines: ["Class 11 Ch. 2 p.49 — Nodes in orbitals"],
     difficulty: "Easy", marks: 4, negMarks: 1, frequency: 22, trending: true, ncertDirect: true,
-  },
+      authenticityStatus: "NEEDS_MANUAL_REVIEW",
+      source: "Pending Audit",
+      paperNumber: 1,
+      questionNumber: 0
+},
 
   {
     id: "jm-as-003", exam: "JEE Main", year: 2024, session: "Jan S2",
@@ -58,7 +66,11 @@ export const JEE_MAIN_QUESTIONS: PYQQuestion[] = [
     formulas: [],
     ncertLines: ["Class 11 Ch. 2 — Hund's Rule of Maximum Multiplicity"],
     difficulty: "Easy", marks: 4, negMarks: 1, frequency: 14, trending: false, ncertDirect: true,
-  },
+      authenticityStatus: "NEEDS_MANUAL_REVIEW",
+      source: "Pending Audit",
+      paperNumber: 1,
+      questionNumber: 0
+},
 
   {
     id: "jm-as-004", exam: "JEE Main", year: 2021,
@@ -73,7 +85,11 @@ export const JEE_MAIN_QUESTIONS: PYQQuestion[] = [
     formulas: ["λ = h/mv", "λ = h/p"],
     ncertLines: ["Class 11 Ch. 2 — de Broglie Relationship"],
     difficulty: "Moderate", marks: 4, negMarks: 0, frequency: 15, trending: false, ncertDirect: true,
-  },
+      authenticityStatus: "NEEDS_MANUAL_REVIEW",
+      source: "Pending Audit",
+      paperNumber: 1,
+      questionNumber: 0
+},
 
   // Mole Concept & Stoichiometry
   {
@@ -89,7 +105,11 @@ export const JEE_MAIN_QUESTIONS: PYQQuestion[] = [
     formulas: ["n = m/M", "N = n × Nₐ"],
     ncertLines: ["Class 11 Ch. 1 — Mole Concept"],
     difficulty: "Easy", marks: 4, negMarks: 1, frequency: 20, trending: true, ncertDirect: true,
-  },
+      authenticityStatus: "NEEDS_MANUAL_REVIEW",
+      source: "Pending Audit",
+      paperNumber: 1,
+      questionNumber: 0
+},
 
   {
     id: "jm-mc-002", exam: "JEE Main", year: 2022,
@@ -104,7 +124,11 @@ export const JEE_MAIN_QUESTIONS: PYQQuestion[] = [
     formulas: ["mole ratio = mass/atomic mass"],
     ncertLines: ["Class 11 Ch. 1 — Empirical and Molecular Formula"],
     difficulty: "Easy", marks: 4, negMarks: 1, frequency: 16, trending: false, ncertDirect: true,
-  },
+      authenticityStatus: "NEEDS_MANUAL_REVIEW",
+      source: "Pending Audit",
+      paperNumber: 1,
+      questionNumber: 0
+},
 
   // Chemical Bonding
   {
@@ -120,7 +144,11 @@ export const JEE_MAIN_QUESTIONS: PYQQuestion[] = [
     formulas: ["BO = (bonding e⁻ − antibonding e⁻)/2"],
     ncertLines: ["Class 11 Ch. 4 — Molecular Orbital Theory"],
     difficulty: "Moderate", marks: 4, negMarks: 1, frequency: 24, trending: true, ncertDirect: true,
-  },
+      authenticityStatus: "NEEDS_MANUAL_REVIEW",
+      source: "Pending Audit",
+      paperNumber: 1,
+      questionNumber: 0
+},
 
   {
     id: "jm-cb-002", exam: "JEE Main", year: 2022, session: "Jun S2",
@@ -135,7 +163,11 @@ export const JEE_MAIN_QUESTIONS: PYQQuestion[] = [
     formulas: [],
     ncertLines: ["Class 11 Ch. 4 — VSEPR Theory, XeF₄ example"],
     difficulty: "Easy", marks: 4, negMarks: 1, frequency: 28, trending: true, ncertDirect: true,
-  },
+      authenticityStatus: "NEEDS_MANUAL_REVIEW",
+      source: "Pending Audit",
+      paperNumber: 1,
+      questionNumber: 0
+},
 
   {
     id: "jm-cb-003", exam: "JEE Main", year: 2024, session: "Jan S1",
@@ -156,7 +188,11 @@ export const JEE_MAIN_QUESTIONS: PYQQuestion[] = [
     formulas: [],
     ncertLines: ["Class 12 Ch. 11 — Boron Trihalides"],
     difficulty: "Hard", marks: 4, negMarks: 1, frequency: 16, trending: true, ncertDirect: false,
-  },
+      authenticityStatus: "NEEDS_MANUAL_REVIEW",
+      source: "Pending Audit",
+      paperNumber: 1,
+      questionNumber: 0
+},
 
   {
     id: "jm-cb-004", exam: "JEE Main", year: 2020,
@@ -177,7 +213,11 @@ export const JEE_MAIN_QUESTIONS: PYQQuestion[] = [
     formulas: [],
     ncertLines: ["Class 12 Ch. 7 — PCl₅ Structure"],
     difficulty: "Moderate", marks: 4, negMarks: 1, frequency: 20, trending: false, ncertDirect: true,
-  },
+      authenticityStatus: "NEEDS_MANUAL_REVIEW",
+      source: "Pending Audit",
+      paperNumber: 1,
+      questionNumber: 0
+},
 
   // Thermodynamics
   {
@@ -193,7 +233,11 @@ export const JEE_MAIN_QUESTIONS: PYQQuestion[] = [
     formulas: ["ΔG = ΔH − TΔS", "At equilibrium: ΔG = 0, T = ΔH/ΔS"],
     ncertLines: ["Class 11 Ch. 6 — Gibbs Energy and Spontaneity"],
     difficulty: "Easy", marks: 4, negMarks: 1, frequency: 25, trending: true, ncertDirect: true,
-  },
+      authenticityStatus: "NEEDS_MANUAL_REVIEW",
+      source: "Pending Audit",
+      paperNumber: 1,
+      questionNumber: 0
+},
 
   {
     id: "jm-td-002", exam: "JEE Main", year: 2022,
@@ -213,7 +257,11 @@ export const JEE_MAIN_QUESTIONS: PYQQuestion[] = [
     formulas: ["ΔS = Sfinal − Sinitial"],
     ncertLines: ["Class 11 Ch. 6 — Entropy"],
     difficulty: "Easy", marks: 4, negMarks: 1, frequency: 18, trending: false, ncertDirect: true,
-  },
+      authenticityStatus: "NEEDS_MANUAL_REVIEW",
+      source: "Pending Audit",
+      paperNumber: 1,
+      questionNumber: 0
+},
 
   {
     id: "jm-td-003", exam: "JEE Main", year: 2024, session: "Apr S1",
@@ -228,7 +276,11 @@ export const JEE_MAIN_QUESTIONS: PYQQuestion[] = [
     formulas: ["ΔHreaction = Σ(bonds broken) − Σ(bonds formed)"],
     ncertLines: ["Class 11 Ch. 6 — Bond Enthalpy"],
     difficulty: "Moderate", marks: 4, negMarks: 0, frequency: 12, trending: true, ncertDirect: false,
-  },
+      authenticityStatus: "NEEDS_MANUAL_REVIEW",
+      source: "Pending Audit",
+      paperNumber: 1,
+      questionNumber: 0
+},
 
   // Chemical Equilibrium
   {
@@ -249,7 +301,11 @@ export const JEE_MAIN_QUESTIONS: PYQQuestion[] = [
     formulas: ["Kp = Kc(RT)^Δn", "Δn = Δmoles of gaseous products − reactants"],
     ncertLines: ["Class 11 Ch. 7 — Relation between Kp and Kc"],
     difficulty: "Easy", marks: 4, negMarks: 1, frequency: 30, trending: true, ncertDirect: true,
-  },
+      authenticityStatus: "NEEDS_MANUAL_REVIEW",
+      source: "Pending Audit",
+      paperNumber: 1,
+      questionNumber: 0
+},
 
   {
     id: "jm-eq-002", exam: "JEE Main", year: 2022, session: "Jun S1",
@@ -264,7 +320,11 @@ export const JEE_MAIN_QUESTIONS: PYQQuestion[] = [
     formulas: ["[H⁺] = √(Ka × C)", "pH = −log[H⁺]"],
     ncertLines: ["Class 11 Ch. 7 — Ionization of Acids"],
     difficulty: "Easy", marks: 4, negMarks: 1, frequency: 28, trending: true, ncertDirect: true,
-  },
+      authenticityStatus: "NEEDS_MANUAL_REVIEW",
+      source: "Pending Audit",
+      paperNumber: 1,
+      questionNumber: 0
+},
 
   {
     id: "jm-eq-003", exam: "JEE Main", year: 2024, session: "Jan S1",
@@ -279,7 +339,11 @@ export const JEE_MAIN_QUESTIONS: PYQQuestion[] = [
     formulas: ["Ksp = [Ag⁺][Cl⁻]", "s = Ksp/[Cl⁻] (common ion)"],
     ncertLines: ["Class 11 Ch. 7 — Solubility Product"],
     difficulty: "Moderate", marks: 4, negMarks: 1, frequency: 20, trending: true, ncertDirect: true,
-  },
+      authenticityStatus: "NEEDS_MANUAL_REVIEW",
+      source: "Pending Audit",
+      paperNumber: 1,
+      questionNumber: 0
+},
 
   // Electrochemistry
   {
@@ -295,7 +359,11 @@ export const JEE_MAIN_QUESTIONS: PYQQuestion[] = [
     formulas: ["log K = nE°/0.0592 (at 298 K)", "ΔG° = −nFE° = −RT ln K"],
     ncertLines: ["Class 12 Ch. 3 — Nernst Equation"],
     difficulty: "Moderate", marks: 4, negMarks: 1, frequency: 22, trending: true, ncertDirect: true,
-  },
+      authenticityStatus: "NEEDS_MANUAL_REVIEW",
+      source: "Pending Audit",
+      paperNumber: 1,
+      questionNumber: 0
+},
 
   {
     id: "jm-ec-002", exam: "JEE Main", year: 2022,
@@ -315,7 +383,11 @@ export const JEE_MAIN_QUESTIONS: PYQQuestion[] = [
     formulas: ["Q = It", "W = ZIt (Faraday's law)"],
     ncertLines: ["Class 12 Ch. 3 — Electrolysis"],
     difficulty: "Easy", marks: 4, negMarks: 1, frequency: 16, trending: false, ncertDirect: true,
-  },
+      authenticityStatus: "NEEDS_MANUAL_REVIEW",
+      source: "Pending Audit",
+      paperNumber: 1,
+      questionNumber: 0
+},
 
   // Chemical Kinetics
   {
@@ -331,7 +403,11 @@ export const JEE_MAIN_QUESTIONS: PYQQuestion[] = [
     formulas: ["t₁/₂ = 0.693/k", "t = (1/k) ln(a₀/a)"],
     ncertLines: ["Class 12 Ch. 4 — First Order Reaction"],
     difficulty: "Easy", marks: 4, negMarks: 1, frequency: 32, trending: true, ncertDirect: true,
-  },
+      authenticityStatus: "NEEDS_MANUAL_REVIEW",
+      source: "Pending Audit",
+      paperNumber: 1,
+      questionNumber: 0
+},
 
   {
     id: "jm-ck-002", exam: "JEE Main", year: 2024, session: "Apr S2",
@@ -351,7 +427,11 @@ export const JEE_MAIN_QUESTIONS: PYQQuestion[] = [
     formulas: ["rate = k[A]ⁿ", "For zero order: rate = k"],
     ncertLines: ["Class 12 Ch. 4 — Zero Order Reaction"],
     difficulty: "Easy", marks: 4, negMarks: 1, frequency: 20, trending: false, ncertDirect: true,
-  },
+      authenticityStatus: "NEEDS_MANUAL_REVIEW",
+      source: "Pending Audit",
+      paperNumber: 1,
+      questionNumber: 0
+},
 
   {
     id: "jm-ck-003", exam: "JEE Main", year: 2021,
@@ -371,7 +451,11 @@ export const JEE_MAIN_QUESTIONS: PYQQuestion[] = [
     formulas: ["k = Ae^(−Ea/RT)", "ln k = ln A − Ea/RT"],
     ncertLines: ["Class 12 Ch. 4 — Arrhenius Equation"],
     difficulty: "Moderate", marks: 4, negMarks: 1, frequency: 14, trending: false, ncertDirect: true,
-  },
+      authenticityStatus: "NEEDS_MANUAL_REVIEW",
+      source: "Pending Audit",
+      paperNumber: 1,
+      questionNumber: 0
+},
 
   // Solutions
   {
@@ -392,7 +476,11 @@ export const JEE_MAIN_QUESTIONS: PYQQuestion[] = [
     formulas: ["π = iCRT", "van't Hoff factor i"],
     ncertLines: ["Class 12 Ch. 2 — Osmotic Pressure"],
     difficulty: "Easy", marks: 4, negMarks: 1, frequency: 25, trending: true, ncertDirect: true,
-  },
+      authenticityStatus: "NEEDS_MANUAL_REVIEW",
+      source: "Pending Audit",
+      paperNumber: 1,
+      questionNumber: 0
+},
 
   {
     id: "jm-sol-002", exam: "JEE Main", year: 2022, session: "Jun S2",
@@ -412,7 +500,11 @@ export const JEE_MAIN_QUESTIONS: PYQQuestion[] = [
     formulas: ["p_total = pA° xA + pB° xB (Raoult's law)"],
     ncertLines: ["Class 12 Ch. 2 — Non-ideal Solutions"],
     difficulty: "Moderate", marks: 4, negMarks: 1, frequency: 20, trending: true, ncertDirect: true,
-  },
+      authenticityStatus: "NEEDS_MANUAL_REVIEW",
+      source: "Pending Audit",
+      paperNumber: 1,
+      questionNumber: 0
+},
 
   // ── INORGANIC CHEMISTRY ───────────────────────────────────────────────────
 
@@ -436,7 +528,11 @@ export const JEE_MAIN_QUESTIONS: PYQQuestion[] = [
     formulas: [],
     ncertLines: ["Class 11 Ch. 3 — Ionisation Enthalpy"],
     difficulty: "Moderate", marks: 4, negMarks: 1, frequency: 40, trending: true, ncertDirect: true,
-  },
+      authenticityStatus: "NEEDS_MANUAL_REVIEW",
+      source: "Pending Audit",
+      paperNumber: 1,
+      questionNumber: 0
+},
 
   {
     id: "jm-pt-002", exam: "JEE Main", year: 2024, session: "Jan S2",
@@ -452,7 +548,11 @@ export const JEE_MAIN_QUESTIONS: PYQQuestion[] = [
     formulas: [],
     ncertLines: ["Class 11 Ch. 3 — Electron Gain Enthalpy"],
     difficulty: "Easy", marks: 4, negMarks: 1, frequency: 38, trending: true, ncertDirect: true,
-  },
+      authenticityStatus: "NEEDS_MANUAL_REVIEW",
+      source: "Pending Audit",
+      paperNumber: 1,
+      questionNumber: 0
+},
 
   // p-Block
   {
@@ -469,7 +569,11 @@ export const JEE_MAIN_QUESTIONS: PYQQuestion[] = [
     formulas: [],
     ncertLines: ["Class 12 Ch. 7 — Group 15 Elements: Anomalous Behaviour of Nitrogen"],
     difficulty: "Easy", marks: 4, negMarks: 1, frequency: 22, trending: true, ncertDirect: true,
-  },
+      authenticityStatus: "NEEDS_MANUAL_REVIEW",
+      source: "Pending Audit",
+      paperNumber: 1,
+      questionNumber: 0
+},
 
   {
     id: "jm-pb-002", exam: "JEE Main", year: 2022,
@@ -490,7 +594,11 @@ export const JEE_MAIN_QUESTIONS: PYQQuestion[] = [
     formulas: [],
     ncertLines: ["Class 12 Ch. 7 — Manufacture of Sulphuric Acid"],
     difficulty: "Easy", marks: 4, negMarks: 1, frequency: 18, trending: false, ncertDirect: true,
-  },
+      authenticityStatus: "NEEDS_MANUAL_REVIEW",
+      source: "Pending Audit",
+      paperNumber: 1,
+      questionNumber: 0
+},
 
   // d-Block
   {
@@ -512,7 +620,11 @@ export const JEE_MAIN_QUESTIONS: PYQQuestion[] = [
     formulas: [],
     ncertLines: ["Class 12 Ch. 8 — Electronic Configurations of d-Block Elements"],
     difficulty: "Easy", marks: 4, negMarks: 1, frequency: 42, trending: true, ncertDirect: true,
-  },
+      authenticityStatus: "NEEDS_MANUAL_REVIEW",
+      source: "Pending Audit",
+      paperNumber: 1,
+      questionNumber: 0
+},
 
   {
     id: "jm-db-002", exam: "JEE Main", year: 2024, session: "Apr S1",
@@ -528,7 +640,11 @@ export const JEE_MAIN_QUESTIONS: PYQQuestion[] = [
     formulas: ["MnO₄⁻ + 8H⁺ + 5e⁻ → Mn²⁺ + 4H₂O"],
     ncertLines: ["Class 12 Ch. 8 — Potassium Permanganate"],
     difficulty: "Easy", marks: 4, negMarks: 1, frequency: 28, trending: true, ncertDirect: true,
-  },
+      authenticityStatus: "NEEDS_MANUAL_REVIEW",
+      source: "Pending Audit",
+      paperNumber: 1,
+      questionNumber: 0
+},
 
   // Coordination Compounds
   {
@@ -549,7 +665,11 @@ export const JEE_MAIN_QUESTIONS: PYQQuestion[] = [
     formulas: [],
     ncertLines: ["Class 12 Ch. 9 — IUPAC Nomenclature of Coordination Compounds"],
     difficulty: "Moderate", marks: 4, negMarks: 1, frequency: 30, trending: true, ncertDirect: true,
-  },
+      authenticityStatus: "NEEDS_MANUAL_REVIEW",
+      source: "Pending Audit",
+      paperNumber: 1,
+      questionNumber: 0
+},
 
   {
     id: "jm-cc-002", exam: "JEE Main", year: 2022,
@@ -564,7 +684,11 @@ export const JEE_MAIN_QUESTIONS: PYQQuestion[] = [
     formulas: ["μ = √(n(n+2)) BM"],
     ncertLines: ["Class 12 Ch. 9 — Crystal Field Theory"],
     difficulty: "Moderate", marks: 4, negMarks: 1, frequency: 24, trending: true, ncertDirect: true,
-  },
+      authenticityStatus: "NEEDS_MANUAL_REVIEW",
+      source: "Pending Audit",
+      paperNumber: 1,
+      questionNumber: 0
+},
 
   // ── ORGANIC CHEMISTRY ─────────────────────────────────────────────────────
 
@@ -587,7 +711,11 @@ export const JEE_MAIN_QUESTIONS: PYQQuestion[] = [
     formulas: [],
     ncertLines: ["Class 12 Ch. 12 — Inductive Effect on Acidity"],
     difficulty: "Moderate", marks: 4, negMarks: 1, frequency: 28, trending: true, ncertDirect: false,
-  },
+      authenticityStatus: "NEEDS_MANUAL_REVIEW",
+      source: "Pending Audit",
+      paperNumber: 1,
+      questionNumber: 0
+},
 
   {
     id: "jm-goc-002", exam: "JEE Main", year: 2024, session: "Jan S1",
@@ -607,7 +735,11 @@ export const JEE_MAIN_QUESTIONS: PYQQuestion[] = [
     formulas: [],
     ncertLines: ["Class 11 Ch. 12 — Stability of Carbocations"],
     difficulty: "Moderate", marks: 4, negMarks: 1, frequency: 35, trending: true, ncertDirect: false,
-  },
+      authenticityStatus: "NEEDS_MANUAL_REVIEW",
+      source: "Pending Audit",
+      paperNumber: 1,
+      questionNumber: 0
+},
 
   // Hydrocarbons
   {
@@ -629,7 +761,11 @@ export const JEE_MAIN_QUESTIONS: PYQQuestion[] = [
     formulas: [],
     ncertLines: ["Class 11 Ch. 13 — Ozonolysis of Alkenes"],
     difficulty: "Moderate", marks: 4, negMarks: 1, frequency: 22, trending: true, ncertDirect: true,
-  },
+      authenticityStatus: "NEEDS_MANUAL_REVIEW",
+      source: "Pending Audit",
+      paperNumber: 1,
+      questionNumber: 0
+},
 
   {
     id: "jm-hc-002", exam: "JEE Main", year: 2022,
@@ -650,7 +786,11 @@ export const JEE_MAIN_QUESTIONS: PYQQuestion[] = [
     formulas: [],
     ncertLines: ["Class 11 Ch. 13 — Reactions of Alkynes"],
     difficulty: "Moderate", marks: 4, negMarks: 1, frequency: 20, trending: true, ncertDirect: true,
-  },
+      authenticityStatus: "NEEDS_MANUAL_REVIEW",
+      source: "Pending Audit",
+      paperNumber: 1,
+      questionNumber: 0
+},
 
   // Haloalkanes
   {
@@ -671,7 +811,11 @@ export const JEE_MAIN_QUESTIONS: PYQQuestion[] = [
     formulas: [],
     ncertLines: ["Class 12 Ch. 10 — SN1 Mechanism"],
     difficulty: "Moderate", marks: 4, negMarks: 1, frequency: 28, trending: true, ncertDirect: false,
-  },
+      authenticityStatus: "NEEDS_MANUAL_REVIEW",
+      source: "Pending Audit",
+      paperNumber: 1,
+      questionNumber: 0
+},
 
   {
     id: "jm-ha-002", exam: "JEE Main", year: 2023, session: "Apr S1",
@@ -691,7 +835,11 @@ export const JEE_MAIN_QUESTIONS: PYQQuestion[] = [
     formulas: [],
     ncertLines: ["Class 12 Ch. 10 — Elimination Reactions"],
     difficulty: "Easy", marks: 4, negMarks: 1, frequency: 32, trending: true, ncertDirect: true,
-  },
+      authenticityStatus: "NEEDS_MANUAL_REVIEW",
+      source: "Pending Audit",
+      paperNumber: 1,
+      questionNumber: 0
+},
 
   // Aldehydes & Ketones
   {
@@ -713,7 +861,11 @@ export const JEE_MAIN_QUESTIONS: PYQQuestion[] = [
     formulas: [],
     ncertLines: ["Class 12 Ch. 12 — Tests for Aldehydes"],
     difficulty: "Easy", marks: 4, negMarks: 1, frequency: 26, trending: true, ncertDirect: true,
-  },
+      authenticityStatus: "NEEDS_MANUAL_REVIEW",
+      source: "Pending Audit",
+      paperNumber: 1,
+      questionNumber: 0
+},
 
   {
     id: "jm-ak-002", exam: "JEE Main", year: 2024, session: "Jan S2",
@@ -734,7 +886,11 @@ export const JEE_MAIN_QUESTIONS: PYQQuestion[] = [
     formulas: [],
     ncertLines: ["Class 12 Ch. 12 — Fehling's Solution"],
     difficulty: "Moderate", marks: 4, negMarks: 1, frequency: 24, trending: true, ncertDirect: true,
-  },
+      authenticityStatus: "NEEDS_MANUAL_REVIEW",
+      source: "Pending Audit",
+      paperNumber: 1,
+      questionNumber: 0
+},
 
   {
     id: "jm-ak-003", exam: "JEE Main", year: 2021,
@@ -755,7 +911,11 @@ export const JEE_MAIN_QUESTIONS: PYQQuestion[] = [
     formulas: [],
     ncertLines: ["Class 12 Ch. 12 — Aldol Condensation"],
     difficulty: "Easy", marks: 4, negMarks: 1, frequency: 20, trending: false, ncertDirect: true,
-  },
+      authenticityStatus: "NEEDS_MANUAL_REVIEW",
+      source: "Pending Audit",
+      paperNumber: 1,
+      questionNumber: 0
+},
 
   // Amines
   {
@@ -777,7 +937,11 @@ export const JEE_MAIN_QUESTIONS: PYQQuestion[] = [
     formulas: [],
     ncertLines: ["Class 12 Ch. 13 — Tests for Amines"],
     difficulty: "Easy", marks: 4, negMarks: 1, frequency: 25, trending: true, ncertDirect: true,
-  },
+      authenticityStatus: "NEEDS_MANUAL_REVIEW",
+      source: "Pending Audit",
+      paperNumber: 1,
+      questionNumber: 0
+},
 
   {
     id: "jm-am-002", exam: "JEE Main", year: 2023, session: "Jan S1",
@@ -798,7 +962,11 @@ export const JEE_MAIN_QUESTIONS: PYQQuestion[] = [
     formulas: [],
     ncertLines: ["Class 12 Ch. 13 — Basicity of Amines"],
     difficulty: "Hard", marks: 4, negMarks: 1, frequency: 38, trending: true, ncertDirect: true,
-  },
+      authenticityStatus: "NEEDS_MANUAL_REVIEW",
+      source: "Pending Audit",
+      paperNumber: 1,
+      questionNumber: 0
+},
 
   // Biomolecules
   {
@@ -815,7 +983,11 @@ export const JEE_MAIN_QUESTIONS: PYQQuestion[] = [
     formulas: [],
     ncertLines: ["Class 12 Ch. 14 — Disaccharides"],
     difficulty: "Easy", marks: 4, negMarks: 1, frequency: 30, trending: true, ncertDirect: true,
-  },
+      authenticityStatus: "NEEDS_MANUAL_REVIEW",
+      source: "Pending Audit",
+      paperNumber: 1,
+      questionNumber: 0
+},
 
   {
     id: "jm-bm-002", exam: "JEE Main", year: 2024, session: "Jan S1",
@@ -836,7 +1008,11 @@ export const JEE_MAIN_QUESTIONS: PYQQuestion[] = [
     formulas: [],
     ncertLines: ["Class 12 Ch. 14 — Fructose"],
     difficulty: "Moderate", marks: 4, negMarks: 1, frequency: 28, trending: true, ncertDirect: true,
-  },
+      authenticityStatus: "NEEDS_MANUAL_REVIEW",
+      source: "Pending Audit",
+      paperNumber: 1,
+      questionNumber: 0
+},
 
   // Polymers
   {
@@ -858,7 +1034,11 @@ export const JEE_MAIN_QUESTIONS: PYQQuestion[] = [
     formulas: [],
     ncertLines: ["Class 12 Ch. 15 — Polyamides — Nylon-6,6"],
     difficulty: "Easy", marks: 4, negMarks: 1, frequency: 22, trending: false, ncertDirect: true,
-  },
+      authenticityStatus: "NEEDS_MANUAL_REVIEW",
+      source: "Pending Audit",
+      paperNumber: 1,
+      questionNumber: 0
+},
   ...JEE_MAIN_PHASE_A_QUESTIONS,
 ];
 

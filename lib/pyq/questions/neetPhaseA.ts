@@ -25,7 +25,11 @@ export const NEET_PHASE_A_QUESTIONS: PYQQuestion[] = [
     formulas: [],
     ncertLines: ["Class 11 Ch. 12 — Reaction Intermediates — Carbocations"],
     difficulty: "Easy", marks: 4, negMarks: 1, frequency: 32, trending: true, ncertDirect: true,
-  },
+      authenticityStatus: "NEEDS_MANUAL_REVIEW",
+      source: "Pending Audit",
+      paperNumber: 1,
+      questionNumber: 0
+},
   {
     id: "nt-goc-102", exam: "NEET", year: 2022,
     questionType: "MCQ-Single",
@@ -44,7 +48,11 @@ export const NEET_PHASE_A_QUESTIONS: PYQQuestion[] = [
     formulas: [],
     ncertLines: ["Class 11 Ch. 12 — Electronic Displacements in Covalent Bonds — Inductive Effect"],
     difficulty: "Easy", marks: 4, negMarks: 1, frequency: 28, trending: true, ncertDirect: true,
-  },
+      authenticityStatus: "NEEDS_MANUAL_REVIEW",
+      source: "Pending Audit",
+      paperNumber: 1,
+      questionNumber: 0
+},
   {
     id: "nt-goc-103", exam: "NEET", year: 2024,
     questionType: "MCQ-Single",
@@ -63,7 +71,11 @@ export const NEET_PHASE_A_QUESTIONS: PYQQuestion[] = [
     formulas: ["(4n + 2) π electrons"],
     ncertLines: ["Class 11 Ch. 13 — Aromatic Hydrocarbons — Hückel's Rule"],
     difficulty: "Moderate", marks: 4, negMarks: 1, frequency: 25, trending: true, ncertDirect: true,
-  },
+      authenticityStatus: "NEEDS_MANUAL_REVIEW",
+      source: "Pending Audit",
+      paperNumber: 1,
+      questionNumber: 0
+},
   {
     id: "nt-goc-104", exam: "NEET", year: 2021,
     questionType: "MCQ-Single",
@@ -82,7 +94,11 @@ export const NEET_PHASE_A_QUESTIONS: PYQQuestion[] = [
     formulas: [],
     ncertLines: ["Class 11 Ch. 12 — Nomenclature of Organic Compounds"],
     difficulty: "Easy", marks: 4, negMarks: 1, frequency: 35, trending: false, ncertDirect: true,
-  },
+      authenticityStatus: "NEEDS_MANUAL_REVIEW",
+      source: "Pending Audit",
+      paperNumber: 1,
+      questionNumber: 0
+},
   {
     id: "nt-goc-105", exam: "NEET", year: 2020,
     questionType: "MCQ-Single",
@@ -101,7 +117,11 @@ export const NEET_PHASE_A_QUESTIONS: PYQQuestion[] = [
     formulas: [],
     ncertLines: ["Class 11 Ch. 12 — Nucleophiles and Electrophiles"],
     difficulty: "Easy", marks: 4, negMarks: 1, frequency: 30, trending: false, ncertDirect: true,
-  },
+      authenticityStatus: "NEEDS_MANUAL_REVIEW",
+      source: "Pending Audit",
+      paperNumber: 1,
+      questionNumber: 0
+},
   {
     id: "nt-goc-106", exam: "NEET", year: 2019,
     questionType: "MCQ-Single",
@@ -120,7 +140,11 @@ export const NEET_PHASE_A_QUESTIONS: PYQQuestion[] = [
     formulas: [],
     ncertLines: ["Class 11 Ch. 12 — Isomerism"],
     difficulty: "Moderate", marks: 4, negMarks: 1, frequency: 22, trending: false, ncertDirect: true,
-  },
+      authenticityStatus: "NEEDS_MANUAL_REVIEW",
+      source: "Pending Audit",
+      paperNumber: 1,
+      questionNumber: 0
+},
   {
     id: "nt-goc-107", exam: "NEET", year: 2018,
     questionType: "MCQ-Single",
@@ -139,7 +163,11 @@ export const NEET_PHASE_A_QUESTIONS: PYQQuestion[] = [
     formulas: [],
     ncertLines: ["Class 11 Ch. 12 — Resonance Effect"],
     difficulty: "Moderate", marks: 4, negMarks: 1, frequency: 19, trending: false, ncertDirect: true,
-  },
+      authenticityStatus: "NEEDS_MANUAL_REVIEW",
+      source: "Pending Audit",
+      paperNumber: 1,
+      questionNumber: 0
+},
   {
     id: "nt-goc-108", exam: "NEET", year: 2022,
     questionType: "MCQ-Single",
@@ -158,7 +186,11 @@ export const NEET_PHASE_A_QUESTIONS: PYQQuestion[] = [
     formulas: [],
     ncertLines: ["Class 11 Ch. 13 — Directive influence of a functional group in monosubstituted benzene"],
     difficulty: "Easy", marks: 4, negMarks: 1, frequency: 40, trending: true, ncertDirect: true,
-  },
+      authenticityStatus: "NEEDS_MANUAL_REVIEW",
+      source: "Pending Audit",
+      paperNumber: 1,
+      questionNumber: 0
+},
   {
     id: "nt-goc-109", exam: "NEET", year: 2023,
     questionType: "MCQ-Single",
@@ -177,7 +209,11 @@ export const NEET_PHASE_A_QUESTIONS: PYQQuestion[] = [
     formulas: [],
     ncertLines: ["Class 11 Ch. 13 — Geometrical Isomerism"],
     difficulty: "Easy", marks: 4, negMarks: 1, frequency: 31, trending: true, ncertDirect: true,
-  },
+      authenticityStatus: "NEEDS_MANUAL_REVIEW",
+      source: "Pending Audit",
+      paperNumber: 1,
+      questionNumber: 0
+},
   {
     id: "nt-goc-110", exam: "NEET", year: 2021,
     questionType: "MCQ-Single",
@@ -196,7 +232,11 @@ export const NEET_PHASE_A_QUESTIONS: PYQQuestion[] = [
     formulas: [],
     ncertLines: ["Class 12 Ch. 13 — Amines — Structure-Basicity relationship of amines in aqueous medium"],
     difficulty: "Moderate", marks: 4, negMarks: 1, frequency: 38, trending: true, ncertDirect: true,
-  },
+      authenticityStatus: "NEEDS_MANUAL_REVIEW",
+      source: "Pending Audit",
+      paperNumber: 1,
+      questionNumber: 0
+},
 
   // ── HYDROCARBONS (10 Questions) ─────────────────────────────────────────────
   {
@@ -217,7 +257,11 @@ export const NEET_PHASE_A_QUESTIONS: PYQQuestion[] = [
     formulas: [],
     ncertLines: ["Class 11 Ch. 13 — Hydrocarbons — Ozonolysis"],
     difficulty: "Easy", marks: 4, negMarks: 1, frequency: 34, trending: true, ncertDirect: true,
-  },
+      authenticityStatus: "NEEDS_MANUAL_REVIEW",
+      source: "Pending Audit",
+      paperNumber: 1,
+      questionNumber: 0
+},
   {
     id: "nt-hc-102", exam: "NEET", year: 2024,
     questionType: "MCQ-Single",
@@ -236,7 +280,11 @@ export const NEET_PHASE_A_QUESTIONS: PYQQuestion[] = [
     formulas: [],
     ncertLines: ["Class 11 Ch. 13 — Hydrocarbons — Anti Markovnikov addition or peroxide effect"],
     difficulty: "Easy", marks: 4, negMarks: 1, frequency: 36, trending: true, ncertDirect: true,
-  },
+      authenticityStatus: "NEEDS_MANUAL_REVIEW",
+      source: "Pending Audit",
+      paperNumber: 1,
+      questionNumber: 0
+},
   {
     id: "nt-hc-103", exam: "NEET", year: 2022,
     questionType: "MCQ-Single",
@@ -255,7 +303,11 @@ export const NEET_PHASE_A_QUESTIONS: PYQQuestion[] = [
     formulas: [],
     ncertLines: ["Class 11 Ch. 13 — Hydrocarbons — Acidic character of alkyne"],
     difficulty: "Easy", marks: 4, negMarks: 1, frequency: 29, trending: true, ncertDirect: true,
-  },
+      authenticityStatus: "NEEDS_MANUAL_REVIEW",
+      source: "Pending Audit",
+      paperNumber: 1,
+      questionNumber: 0
+},
   {
     id: "nt-hc-104", exam: "NEET", year: 2021,
     questionType: "MCQ-Single",
@@ -274,7 +326,11 @@ export const NEET_PHASE_A_QUESTIONS: PYQQuestion[] = [
     formulas: [],
     ncertLines: ["Class 11 Ch. 13 — Hydrocarbons — Friedel-Crafts alkylation reaction mechanism"],
     difficulty: "Easy", marks: 4, negMarks: 1, frequency: 24, trending: false, ncertDirect: true,
-  },
+      authenticityStatus: "NEEDS_MANUAL_REVIEW",
+      source: "Pending Audit",
+      paperNumber: 1,
+      questionNumber: 0
+},
   {
     id: "nt-hc-105", exam: "NEET", year: 2020,
     questionType: "MCQ-Single",
@@ -293,7 +349,11 @@ export const NEET_PHASE_A_QUESTIONS: PYQQuestion[] = [
     formulas: [],
     ncertLines: ["Class 11 Ch. 13 — Hydrocarbons — Wurtz reaction"],
     difficulty: "Easy", marks: 4, negMarks: 1, frequency: 27, trending: false, ncertDirect: true,
-  },
+      authenticityStatus: "NEEDS_MANUAL_REVIEW",
+      source: "Pending Audit",
+      paperNumber: 1,
+      questionNumber: 0
+},
   {
     id: "nt-hc-106", exam: "NEET", year: 2019,
     questionType: "MCQ-Single",
@@ -312,7 +372,11 @@ export const NEET_PHASE_A_QUESTIONS: PYQQuestion[] = [
     formulas: ["3 C2H2 → C6H6"],
     ncertLines: ["Class 11 Ch. 13 — Hydrocarbons — Cyclic polymerization"],
     difficulty: "Easy", marks: 4, negMarks: 1, frequency: 33, trending: false, ncertDirect: true,
-  },
+      authenticityStatus: "NEEDS_MANUAL_REVIEW",
+      source: "Pending Audit",
+      paperNumber: 1,
+      questionNumber: 0
+},
   {
     id: "nt-hc-107", exam: "NEET", year: 2018,
     questionType: "MCQ-Single",
@@ -331,7 +395,11 @@ export const NEET_PHASE_A_QUESTIONS: PYQQuestion[] = [
     formulas: [],
     ncertLines: ["Class 11 Ch. 13 — Hydrocarbons — Distinction between terminal and non-terminal alkynes"],
     difficulty: "Moderate", marks: 4, negMarks: 1, frequency: 22, trending: false, ncertDirect: true,
-  },
+      authenticityStatus: "NEEDS_MANUAL_REVIEW",
+      source: "Pending Audit",
+      paperNumber: 1,
+      questionNumber: 0
+},
   {
     id: "nt-hc-108", exam: "NEET", year: 2022,
     questionType: "MCQ-Single",
@@ -350,7 +418,11 @@ export const NEET_PHASE_A_QUESTIONS: PYQQuestion[] = [
     formulas: [],
     ncertLines: ["Class 11 Ch. 13 — Hydrocarbons — Mechanism of nitration"],
     difficulty: "Moderate", marks: 4, negMarks: 1, frequency: 30, trending: true, ncertDirect: true,
-  },
+      authenticityStatus: "NEEDS_MANUAL_REVIEW",
+      source: "Pending Audit",
+      paperNumber: 1,
+      questionNumber: 0
+},
   {
     id: "nt-hc-109", exam: "NEET", year: 2023,
     questionType: "MCQ-Single",
@@ -369,7 +441,11 @@ export const NEET_PHASE_A_QUESTIONS: PYQQuestion[] = [
     formulas: [],
     ncertLines: ["Class 11 Ch. 13 — Hydrocarbons — Conformations of butane"],
     difficulty: "Easy", marks: 4, negMarks: 1, frequency: 26, trending: true, ncertDirect: true,
-  },
+      authenticityStatus: "NEEDS_MANUAL_REVIEW",
+      source: "Pending Audit",
+      paperNumber: 1,
+      questionNumber: 0
+},
   {
     id: "nt-hc-110", exam: "NEET", year: 2021,
     questionType: "MCQ-Single",
@@ -388,7 +464,11 @@ export const NEET_PHASE_A_QUESTIONS: PYQQuestion[] = [
     formulas: [],
     ncertLines: ["Class 11 Ch. 13 — Hydrocarbons — β-elimination / Zaitsev rule"],
     difficulty: "Easy", marks: 4, negMarks: 1, frequency: 38, trending: true, ncertDirect: true,
-  },
+      authenticityStatus: "NEEDS_MANUAL_REVIEW",
+      source: "Pending Audit",
+      paperNumber: 1,
+      questionNumber: 0
+},
 
   // ── p-BLOCK ELEMENTS (10 Questions) ─────────────────────────────────────────
   {
@@ -409,7 +489,11 @@ export const NEET_PHASE_A_QUESTIONS: PYQQuestion[] = [
     formulas: [],
     ncertLines: ["Class 11 Ch. 11 — The p-Block Elements — Diborane"],
     difficulty: "Easy", marks: 4, negMarks: 1, frequency: 39, trending: true, ncertDirect: true,
-  },
+      authenticityStatus: "NEEDS_MANUAL_REVIEW",
+      source: "Pending Audit",
+      paperNumber: 1,
+      questionNumber: 0
+},
   {
     id: "nt-pb-102", exam: "NEET", year: 2022,
     questionType: "MCQ-Single",
@@ -428,7 +512,11 @@ export const NEET_PHASE_A_QUESTIONS: PYQQuestion[] = [
     formulas: [],
     ncertLines: ["Class 12 Ch. 7 — The p-Block Elements — Group 15 Hydrides properties table"],
     difficulty: "Moderate", marks: 4, negMarks: 1, frequency: 35, trending: true, ncertDirect: true,
-  },
+      authenticityStatus: "NEEDS_MANUAL_REVIEW",
+      source: "Pending Audit",
+      paperNumber: 1,
+      questionNumber: 0
+},
   {
     id: "nt-pb-103", exam: "NEET", year: 2024,
     questionType: "MCQ-Single",
@@ -447,7 +535,11 @@ export const NEET_PHASE_A_QUESTIONS: PYQQuestion[] = [
     formulas: ["H2S2O8"],
     ncertLines: ["Class 12 Ch. 7 — The p-Block Elements — Oxoacids of Sulphur"],
     difficulty: "Easy", marks: 4, negMarks: 1, frequency: 31, trending: true, ncertDirect: true,
-  },
+      authenticityStatus: "NEEDS_MANUAL_REVIEW",
+      source: "Pending Audit",
+      paperNumber: 1,
+      questionNumber: 0
+},
   {
     id: "nt-pb-104", exam: "NEET", year: 2021,
     questionType: "MCQ-Single",
@@ -466,7 +558,11 @@ export const NEET_PHASE_A_QUESTIONS: PYQQuestion[] = [
     formulas: [],
     ncertLines: ["Class 12 Ch. 7 — The p-Block Elements — Xenon-fluorine compounds"],
     difficulty: "Easy", marks: 4, negMarks: 1, frequency: 42, trending: true, ncertDirect: true,
-  },
+      authenticityStatus: "NEEDS_MANUAL_REVIEW",
+      source: "Pending Audit",
+      paperNumber: 1,
+      questionNumber: 0
+},
   {
     id: "nt-pb-105", exam: "NEET", year: 2020,
     questionType: "MCQ-Single",
@@ -485,7 +581,11 @@ export const NEET_PHASE_A_QUESTIONS: PYQQuestion[] = [
     formulas: [],
     ncertLines: ["Class 12 Ch. 7 — The p-Block Elements — Group 17 Elements Electron Gain Enthalpy"],
     difficulty: "Easy", marks: 4, negMarks: 1, frequency: 45, trending: false, ncertDirect: true,
-  },
+      authenticityStatus: "NEEDS_MANUAL_REVIEW",
+      source: "Pending Audit",
+      paperNumber: 1,
+      questionNumber: 0
+},
   {
     id: "nt-pb-106", exam: "NEET", year: 2019,
     questionType: "MCQ-Single",
@@ -504,7 +604,11 @@ export const NEET_PHASE_A_QUESTIONS: PYQQuestion[] = [
     formulas: ["H3PO4", "H4P2O7", "(HPO3)3"],
     ncertLines: ["Class 12 Ch. 7 — The p-Block Elements — Oxoacids of Phosphorus"],
     difficulty: "Moderate", marks: 4, negMarks: 1, frequency: 28, trending: false, ncertDirect: true,
-  },
+      authenticityStatus: "NEEDS_MANUAL_REVIEW",
+      source: "Pending Audit",
+      paperNumber: 1,
+      questionNumber: 0
+},
   {
     id: "nt-pb-107", exam: "NEET", year: 2018,
     questionType: "MCQ-Single",
@@ -523,7 +627,11 @@ export const NEET_PHASE_A_QUESTIONS: PYQQuestion[] = [
     formulas: ["B(OH)3"],
     ncertLines: ["Class 11 Ch. 11 — The p-Block Elements — Orthoboric acid"],
     difficulty: "Easy", marks: 4, negMarks: 1, frequency: 24, trending: false, ncertDirect: true,
-  },
+      authenticityStatus: "NEEDS_MANUAL_REVIEW",
+      source: "Pending Audit",
+      paperNumber: 1,
+      questionNumber: 0
+},
   {
     id: "nt-pb-108", exam: "NEET", year: 2022,
     questionType: "MCQ-Single",
@@ -542,7 +650,11 @@ export const NEET_PHASE_A_QUESTIONS: PYQQuestion[] = [
     formulas: [],
     ncertLines: ["Class 12 Ch. 7 — The p-Block Elements — Ozone"],
     difficulty: "Easy", marks: 4, negMarks: 1, frequency: 26, trending: true, ncertDirect: true,
-  },
+      authenticityStatus: "NEEDS_MANUAL_REVIEW",
+      source: "Pending Audit",
+      paperNumber: 1,
+      questionNumber: 0
+},
   {
     id: "nt-pb-109", exam: "NEET", year: 2023,
     questionType: "MCQ-Single",
@@ -561,7 +673,11 @@ export const NEET_PHASE_A_QUESTIONS: PYQQuestion[] = [
     formulas: ["(-R2Si-O-)n"],
     ncertLines: ["Class 11 Ch. 11 — The p-Block Elements — Silicones"],
     difficulty: "Easy", marks: 4, negMarks: 1, frequency: 22, trending: true, ncertDirect: true,
-  },
+      authenticityStatus: "NEEDS_MANUAL_REVIEW",
+      source: "Pending Audit",
+      paperNumber: 1,
+      questionNumber: 0
+},
   {
     id: "nt-pb-110", exam: "NEET", year: 2021,
     questionType: "MCQ-Single",
@@ -580,7 +696,11 @@ export const NEET_PHASE_A_QUESTIONS: PYQQuestion[] = [
     formulas: [],
     ncertLines: ["Class 12 Ch. 7 — The p-Block Elements — Sulphuric Acid — Manufacture"],
     difficulty: "Easy", marks: 4, negMarks: 1, frequency: 30, trending: false, ncertDirect: true,
-  },
+      authenticityStatus: "NEEDS_MANUAL_REVIEW",
+      source: "Pending Audit",
+      paperNumber: 1,
+      questionNumber: 0
+},
 
   // ── d AND f BLOCK ELEMENTS (10 Questions) ───────────────────────────────────
   {
@@ -601,7 +721,11 @@ export const NEET_PHASE_A_QUESTIONS: PYQQuestion[] = [
     formulas: ["\\mu = \\sqrt{n(n+2)}\\text{ BM}"],
     ncertLines: ["Class 12 Ch. 8 — The d- and f-Block Elements — Magnetic Properties"],
     difficulty: "Easy", marks: 4, negMarks: 1, frequency: 45, trending: true, ncertDirect: true,
-  },
+      authenticityStatus: "NEEDS_MANUAL_REVIEW",
+      source: "Pending Audit",
+      paperNumber: 1,
+      questionNumber: 0
+},
   {
     id: "nt-df-102", exam: "NEET", year: 2022,
     questionType: "MCQ-Single",
@@ -620,7 +744,11 @@ export const NEET_PHASE_A_QUESTIONS: PYQQuestion[] = [
     formulas: [],
     ncertLines: ["Class 12 Ch. 8 — The d- and f-Block Elements — Lanthanoid Contraction consequences"],
     difficulty: "Easy", marks: 4, negMarks: 1, frequency: 48, trending: true, ncertDirect: true,
-  },
+      authenticityStatus: "NEEDS_MANUAL_REVIEW",
+      source: "Pending Audit",
+      paperNumber: 1,
+      questionNumber: 0
+},
   {
     id: "nt-df-103", exam: "NEET", year: 2024,
     questionType: "MCQ-Single",
@@ -639,7 +767,11 @@ export const NEET_PHASE_A_QUESTIONS: PYQQuestion[] = [
     formulas: [],
     ncertLines: ["Class 12 Ch. 8 — The d- and f-Block Elements — Potassium dichromate properties"],
     difficulty: "Easy", marks: 4, negMarks: 1, frequency: 33, trending: true, ncertDirect: true,
-  },
+      authenticityStatus: "NEEDS_MANUAL_REVIEW",
+      source: "Pending Audit",
+      paperNumber: 1,
+      questionNumber: 0
+},
   {
     id: "nt-df-104", exam: "NEET", year: 2021,
     questionType: "MCQ-Single",
@@ -658,7 +790,11 @@ export const NEET_PHASE_A_QUESTIONS: PYQQuestion[] = [
     formulas: [],
     ncertLines: ["Class 12 Ch. 8 — The d- and f-Block Elements — Oxidation States"],
     difficulty: "Easy", marks: 4, negMarks: 1, frequency: 36, trending: false, ncertDirect: true,
-  },
+      authenticityStatus: "NEEDS_MANUAL_REVIEW",
+      source: "Pending Audit",
+      paperNumber: 1,
+      questionNumber: 0
+},
   {
     id: "nt-df-105", exam: "NEET", year: 2020,
     questionType: "MCQ-Single",
@@ -677,7 +813,11 @@ export const NEET_PHASE_A_QUESTIONS: PYQQuestion[] = [
     formulas: [],
     ncertLines: ["Class 12 Ch. 8 — The d- and f-Block Elements — Catalytic properties"],
     difficulty: "Easy", marks: 4, negMarks: 1, frequency: 28, trending: false, ncertDirect: true,
-  },
+      authenticityStatus: "NEEDS_MANUAL_REVIEW",
+      source: "Pending Audit",
+      paperNumber: 1,
+      questionNumber: 0
+},
   {
     id: "nt-df-106", exam: "NEET", year: 2019,
     questionType: "MCQ-Single",
@@ -696,7 +836,11 @@ export const NEET_PHASE_A_QUESTIONS: PYQQuestion[] = [
     formulas: [],
     ncertLines: ["Class 12 Ch. 8 — The d- and f-Block Elements — Permanganate titration in neutral medium"],
     difficulty: "Moderate", marks: 4, negMarks: 1, frequency: 32, trending: true, ncertDirect: true,
-  },
+      authenticityStatus: "NEEDS_MANUAL_REVIEW",
+      source: "Pending Audit",
+      paperNumber: 1,
+      questionNumber: 0
+},
   {
     id: "nt-df-107", exam: "NEET", year: 2018,
     questionType: "MCQ-Single",
@@ -715,7 +859,11 @@ export const NEET_PHASE_A_QUESTIONS: PYQQuestion[] = [
     formulas: [],
     ncertLines: ["Class 12 Ch. 8 — The d- and f-Block Elements — Formation of Coloured Ions"],
     difficulty: "Easy", marks: 4, negMarks: 1, frequency: 38, trending: false, ncertDirect: true,
-  },
+      authenticityStatus: "NEEDS_MANUAL_REVIEW",
+      source: "Pending Audit",
+      paperNumber: 1,
+      questionNumber: 0
+},
   {
     id: "nt-df-108", exam: "NEET", year: 2022,
     questionType: "MCQ-Single",
@@ -734,7 +882,11 @@ export const NEET_PHASE_A_QUESTIONS: PYQQuestion[] = [
     formulas: [],
     ncertLines: ["Class 12 Ch. 8 — The d- and f-Block Elements — Actinoids — Oxidation States"],
     difficulty: "Moderate", marks: 4, negMarks: 1, frequency: 29, trending: true, ncertDirect: true,
-  },
+      authenticityStatus: "NEEDS_MANUAL_REVIEW",
+      source: "Pending Audit",
+      paperNumber: 1,
+      questionNumber: 0
+},
   {
     id: "nt-df-109", exam: "NEET", year: 2023,
     questionType: "MCQ-Single",
@@ -753,7 +905,11 @@ export const NEET_PHASE_A_QUESTIONS: PYQQuestion[] = [
     formulas: [],
     ncertLines: ["Class 12 Ch. 8 — The d- and f-Block Elements — Interstitial Compounds"],
     difficulty: "Easy", marks: 4, negMarks: 1, frequency: 25, trending: true, ncertDirect: true,
-  },
+      authenticityStatus: "NEEDS_MANUAL_REVIEW",
+      source: "Pending Audit",
+      paperNumber: 1,
+      questionNumber: 0
+},
   {
     id: "nt-df-110", exam: "NEET", year: 2021,
     questionType: "MCQ-Single",
@@ -772,7 +928,11 @@ export const NEET_PHASE_A_QUESTIONS: PYQQuestion[] = [
     formulas: [],
     ncertLines: ["Class 12 Ch. 8 — The d- and f-Block Elements — Trends in the M2+/M Standard Electrode Potentials"],
     difficulty: "Moderate", marks: 4, negMarks: 1, frequency: 34, trending: true, ncertDirect: true,
-  },
+      authenticityStatus: "NEEDS_MANUAL_REVIEW",
+      source: "Pending Audit",
+      paperNumber: 1,
+      questionNumber: 0
+},
 
   // ── CHEMICAL KINETICS (10 Questions) ────────────────────────────────────────
   {
@@ -793,7 +953,11 @@ export const NEET_PHASE_A_QUESTIONS: PYQQuestion[] = [
     formulas: ["[R] = -kt + [R]_0"],
     ncertLines: ["Class 12 Ch. 4 — Chemical Kinetics — Zero order reaction graphs"],
     difficulty: "Easy", marks: 4, negMarks: 1, frequency: 38, trending: true, ncertDirect: true,
-  },
+      authenticityStatus: "NEEDS_MANUAL_REVIEW",
+      source: "Pending Audit",
+      paperNumber: 1,
+      questionNumber: 0
+},
   {
     id: "nt-ck-104", exam: "NEET", year: 2021,
     questionType: "MCQ-Single",
@@ -812,7 +976,11 @@ export const NEET_PHASE_A_QUESTIONS: PYQQuestion[] = [
     formulas: ["(\\text{mol L}^{-1})^{1-n} \\text{ s}^{-1}"],
     ncertLines: ["Class 12 Ch. 4 — Chemical Kinetics — Units of rate constant"],
     difficulty: "Easy", marks: 4, negMarks: 1, frequency: 33, trending: false, ncertDirect: true,
-  },
+      authenticityStatus: "NEEDS_MANUAL_REVIEW",
+      source: "Pending Audit",
+      paperNumber: 1,
+      questionNumber: 0
+},
   {
     id: "nt-ck-106", exam: "NEET", year: 2019,
     questionType: "MCQ-Single",
@@ -831,7 +999,11 @@ export const NEET_PHASE_A_QUESTIONS: PYQQuestion[] = [
     formulas: [],
     ncertLines: ["Class 12 Ch. 4 — Chemical Kinetics — Pseudo first order reaction"],
     difficulty: "Easy", marks: 4, negMarks: 1, frequency: 36, trending: false, ncertDirect: true,
-  },
+      authenticityStatus: "NEEDS_MANUAL_REVIEW",
+      source: "Pending Audit",
+      paperNumber: 1,
+      questionNumber: 0
+},
   {
     id: "nt-ck-107", exam: "NEET", year: 2018,
     questionType: "MCQ-Single",
@@ -850,7 +1022,11 @@ export const NEET_PHASE_A_QUESTIONS: PYQQuestion[] = [
     formulas: [],
     ncertLines: ["Class 12 Ch. 4 — Chemical Kinetics — Effect of catalyst"],
     difficulty: "Easy", marks: 4, negMarks: 1, frequency: 39, trending: false, ncertDirect: true,
-  },
+      authenticityStatus: "NEEDS_MANUAL_REVIEW",
+      source: "Pending Audit",
+      paperNumber: 1,
+      questionNumber: 0
+},
   {
     id: "nt-ck-108", exam: "NEET", year: 2022,
     questionType: "MCQ-Single",
@@ -869,7 +1045,11 @@ export const NEET_PHASE_A_QUESTIONS: PYQQuestion[] = [
     formulas: ["\\Delta H = E_{a(\\text{fwd})} - E_{a(\\text{bwd})}"],
     ncertLines: ["Class 12 Ch. 4 — Chemical Kinetics — Potential energy diagram"],
     difficulty: "Easy", marks: 4, negMarks: 1, frequency: 32, trending: true, ncertDirect: true,
-  },
+      authenticityStatus: "NEEDS_MANUAL_REVIEW",
+      source: "Pending Audit",
+      paperNumber: 1,
+      questionNumber: 0
+},
   {
     id: "nt-ck-109", exam: "NEET", year: 2023,
     questionType: "MCQ-Single",
@@ -888,7 +1068,11 @@ export const NEET_PHASE_A_QUESTIONS: PYQQuestion[] = [
     formulas: ["\\text{Rate} = P Z_{AB} e^{-E_a/RT}"],
     ncertLines: ["Class 12 Ch. 4 — Chemical Kinetics — Collision theory of chemical reactions"],
     difficulty: "Moderate", marks: 4, negMarks: 1, frequency: 24, trending: true, ncertDirect: true,
-  },
+      authenticityStatus: "NEEDS_MANUAL_REVIEW",
+      source: "Pending Audit",
+      paperNumber: 1,
+      questionNumber: 0
+},
   {
     id: "nt-ck-110", exam: "NEET", year: 2021,
     questionType: "MCQ-Single",
@@ -907,7 +1091,11 @@ export const NEET_PHASE_A_QUESTIONS: PYQQuestion[] = [
     formulas: ["t_{75\\%} = 2 \\times t_{1/2}", "t_{87.5\\%} = 3 \\times t_{1/2}", "t_{99.9\\%} \\approx 10 \\times t_{1/2}"],
     ncertLines: ["Class 12 Ch. 4 — Chemical Kinetics — Integrated rate equations"],
     difficulty: "Easy", marks: 4, negMarks: 1, frequency: 42, trending: true, ncertDirect: true,
-  },
+      authenticityStatus: "NEEDS_MANUAL_REVIEW",
+      source: "Pending Audit",
+      paperNumber: 1,
+      questionNumber: 0
+},
 
   // ── ELECTROCHEMISTRY (10 Questions) ─────────────────────────────────────────
   {
@@ -928,7 +1116,11 @@ export const NEET_PHASE_A_QUESTIONS: PYQQuestion[] = [
     formulas: ["E^\\circ_{\\text{cell}} = E^\\circ_{\\text{cathode}} - E^\\circ_{\\text{anode}}"],
     ncertLines: ["Class 12 Ch. 3 — Electrochemistry — Galvanic cells"],
     difficulty: "Easy", marks: 4, negMarks: 1, frequency: 48, trending: true, ncertDirect: true,
-  },
+      authenticityStatus: "NEEDS_MANUAL_REVIEW",
+      source: "Pending Audit",
+      paperNumber: 1,
+      questionNumber: 0
+},
   {
     id: "nt-el-102", exam: "NEET", year: 2024,
     questionType: "MCQ-Single",
@@ -947,7 +1139,11 @@ export const NEET_PHASE_A_QUESTIONS: PYQQuestion[] = [
     formulas: ["\\Delta G^\\circ = -n F E^\\circ_{\\text{cell}}", "\\Delta G^\\circ = -2.303 R T \\log K_c"],
     ncertLines: ["Class 12 Ch. 3 — Electrochemistry — Electrochemical Cell and Gibbs Energy of the Reaction"],
     difficulty: "Easy", marks: 4, negMarks: 1, frequency: 42, trending: true, ncertDirect: true,
-  },
+      authenticityStatus: "NEEDS_MANUAL_REVIEW",
+      source: "Pending Audit",
+      paperNumber: 1,
+      questionNumber: 0
+},
   {
     id: "nt-el-103", exam: "NEET", year: 2022,
     questionType: "MCQ-Single",
@@ -966,7 +1162,11 @@ export const NEET_PHASE_A_QUESTIONS: PYQQuestion[] = [
     formulas: ["\\Lambda^\\circ_m(\\ce{CH3COOH}) = \\lambda^\\circ(\\ce{CH3COO-}) + \\lambda^\\circ(\\ce{H+})"],
     ncertLines: ["Class 12 Ch. 3 — Electrochemistry — Kohlrausch law of independent migration of ions"],
     difficulty: "Easy", marks: 4, negMarks: 1, frequency: 44, trending: true, ncertDirect: true,
-  },
+      authenticityStatus: "NEEDS_MANUAL_REVIEW",
+      source: "Pending Audit",
+      paperNumber: 1,
+      questionNumber: 0
+},
   {
     id: "nt-el-104", exam: "NEET", year: 2021,
     questionType: "MCQ-Single",
@@ -985,7 +1185,11 @@ export const NEET_PHASE_A_QUESTIONS: PYQQuestion[] = [
     formulas: ["Q = n \\times F"],
     ncertLines: ["Class 12 Ch. 3 — Electrochemistry — Faraday's laws of electrolysis"],
     difficulty: "Easy", marks: 4, negMarks: 1, frequency: 40, trending: false, ncertDirect: true,
-  },
+      authenticityStatus: "NEEDS_MANUAL_REVIEW",
+      source: "Pending Audit",
+      paperNumber: 1,
+      questionNumber: 0
+},
   {
     id: "nt-el-105", exam: "NEET", year: 2020,
     questionType: "MCQ-Single",
@@ -1004,7 +1208,11 @@ export const NEET_PHASE_A_QUESTIONS: PYQQuestion[] = [
     formulas: [],
     ncertLines: ["Class 12 Ch. 3 — Electrochemistry — Products of Electrolysis"],
     difficulty: "Moderate", marks: 4, negMarks: 1, frequency: 37, trending: false, ncertDirect: true,
-  },
+      authenticityStatus: "NEEDS_MANUAL_REVIEW",
+      source: "Pending Audit",
+      paperNumber: 1,
+      questionNumber: 0
+},
   {
     id: "nt-el-106", exam: "NEET", year: 2019,
     questionType: "MCQ-Single",
@@ -1023,7 +1231,11 @@ export const NEET_PHASE_A_QUESTIONS: PYQQuestion[] = [
     formulas: ["\\Lambda_m = \\Lambda^\\circ_m - A\\sqrt{c}", "\\alpha = \\frac{\\Lambda_m}{\\Lambda^\\circ_m}"],
     ncertLines: ["Class 12 Ch. 3 — Electrochemistry — Variation of Conductivity and Molar Conductivity with Concentration"],
     difficulty: "Easy", marks: 4, negMarks: 1, frequency: 35, trending: false, ncertDirect: true,
-  },
+      authenticityStatus: "NEEDS_MANUAL_REVIEW",
+      source: "Pending Audit",
+      paperNumber: 1,
+      questionNumber: 0
+},
   {
     id: "nt-el-107", exam: "NEET", year: 2018,
     questionType: "MCQ-Single",
@@ -1042,7 +1254,11 @@ export const NEET_PHASE_A_QUESTIONS: PYQQuestion[] = [
     formulas: [],
     ncertLines: ["Class 12 Ch. 3 — Electrochemistry — Batteries — Lead storage battery"],
     difficulty: "Easy", marks: 4, negMarks: 1, frequency: 31, trending: false, ncertDirect: true,
-  },
+      authenticityStatus: "NEEDS_MANUAL_REVIEW",
+      source: "Pending Audit",
+      paperNumber: 1,
+      questionNumber: 0
+},
   {
     id: "nt-el-108", exam: "NEET", year: 2022,
     questionType: "MCQ-Single",
@@ -1061,7 +1277,11 @@ export const NEET_PHASE_A_QUESTIONS: PYQQuestion[] = [
     formulas: ["E = E^\\circ + \\frac{0.059}{n} \\log[\\ce{M^{n+}}]"],
     ncertLines: ["Class 12 Ch. 3 — Electrochemistry — Nernst equation"],
     difficulty: "Easy", marks: 4, negMarks: 1, frequency: 46, trending: true, ncertDirect: true,
-  },
+      authenticityStatus: "NEEDS_MANUAL_REVIEW",
+      source: "Pending Audit",
+      paperNumber: 1,
+      questionNumber: 0
+},
   {
     id: "nt-el-109", exam: "NEET", year: 2023,
     questionType: "MCQ-Single",
@@ -1080,7 +1300,11 @@ export const NEET_PHASE_A_QUESTIONS: PYQQuestion[] = [
     formulas: ["\\text{Efficiency } \\eta = \\frac{\\Delta G}{\\Delta H} \\times 100\\%"],
     ncertLines: ["Class 12 Ch. 3 — Electrochemistry — Fuel cells"],
     difficulty: "Moderate", marks: 4, negMarks: 1, frequency: 27, trending: true, ncertDirect: true,
-  },
+      authenticityStatus: "NEEDS_MANUAL_REVIEW",
+      source: "Pending Audit",
+      paperNumber: 1,
+      questionNumber: 0
+},
   {
     id: "nt-el-110", exam: "NEET", year: 2021,
     questionType: "MCQ-Single",
@@ -1099,5 +1323,9 @@ export const NEET_PHASE_A_QUESTIONS: PYQQuestion[] = [
     formulas: [],
     ncertLines: ["Class 12 Ch. 3 — Electrochemistry — Electrochemical series table and applications"],
     difficulty: "Easy", marks: 4, negMarks: 1, frequency: 45, trending: true, ncertDirect: true,
-  },
+      authenticityStatus: "NEEDS_MANUAL_REVIEW",
+      source: "Pending Audit",
+      paperNumber: 1,
+      questionNumber: 0
+},
 ];

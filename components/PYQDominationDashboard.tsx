@@ -54,7 +54,7 @@ const organicChapters = [
 ];
 
 export default function PYQDominationDashboard() {
-  const [activeTab, setActiveTab] = useState<"status" | "gaps" | "roadmap">("status");
+  const [activeTab, setActiveTab] = useState<"status" | "gaps" | "roadmap" | "audit">("status");
   const [selectedSub, setSelectedSub] = useState<"all" | "physical" | "inorganic" | "organic">("all");
 
   // Calculate live statistics
@@ -162,6 +162,18 @@ export default function PYQDominationDashboard() {
           >
             <Layers className="h-5 w-5" />
             <span>Roadmap</span>
+          </button>
+
+          <button
+            onClick={() => setActiveTab("audit")}
+            className={`flex items-center gap-3 w-full px-4 py-3 rounded-2xl text-left font-bold transition-all ${
+              activeTab === "audit"
+                ? "bg-gradient-to-r from-cyan-500/25 to-sky-500/5 border border-cyan-400/30 text-cyan-300"
+                : "text-white/60 hover:text-white hover:bg-white/[0.02]"
+            }`}
+          >
+            <CheckCircle2 className="h-5 w-5" />
+            <span>Audit Queue</span>
           </button>
         </div>
 
@@ -435,6 +447,52 @@ export default function PYQDominationDashboard() {
                 </div>
               </div>
 
+            </div>
+          )}
+
+          {/* TAB 4: Verification Audit */}
+          {activeTab === "audit" && (
+            <div className="space-y-6 animate-fadeIn">
+              <div className="rounded-2xl border border-white/5 bg-white/[0.02] p-6">
+                <div className="flex items-center gap-3 border-b border-white/10 pb-4 mb-4">
+                  <AlertTriangle className="h-5 w-5 text-amber-400" />
+                  <h3 className="text-lg font-bold text-white">Pending Manual Review</h3>
+                </div>
+                
+                <p className="text-sm text-white/60 leading-relaxed mb-6">
+                  The following questions have been flagged with <code className="bg-amber-500/10 text-amber-300 px-1.5 py-0.5 rounded">NEEDS_MANUAL_REVIEW</code>. 
+                  They require the source, year, paper number, and question number to be visually verified and authenticated before they can be marked as <code className="bg-emerald-500/10 text-emerald-300 px-1.5 py-0.5 rounded">VERIFIED_PYQ</code>.
+                </p>
+
+                <div className="grid gap-3 max-h-[500px] overflow-y-auto pr-2 custom-scrollbar">
+                  {ALL_PYQ_QUESTIONS.filter(q => q.authenticityStatus === "NEEDS_MANUAL_REVIEW").map(q => (
+                    <div key={q.id} className="rounded-xl border border-amber-500/20 bg-amber-500/5 p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                      <div>
+                        <div className="flex items-center gap-2">
+                          <span className="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-white/10 text-white/80">
+                            {q.exam}
+                          </span>
+                          <span className="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-amber-500/10 text-amber-400">
+                            {q.id}
+                          </span>
+                        </div>
+                        <h4 className="mt-2 text-sm font-medium text-white truncate max-w-lg">
+                          {q.question.substring(0, 100)}...
+                        </h4>
+                      </div>
+                      <div className="flex flex-col items-end gap-1 shrink-0">
+                         <div className="text-xs text-white/50">Year: <span className="text-white/80">{q.year}</span></div>
+                         <div className="text-xs text-white/50">Src: <span className="text-white/80">{q.source}</span></div>
+                      </div>
+                    </div>
+                  ))}
+                  {ALL_PYQ_QUESTIONS.filter(q => q.authenticityStatus === "NEEDS_MANUAL_REVIEW").length === 0 && (
+                    <div className="p-8 text-center border border-emerald-500/20 bg-emerald-500/5 rounded-xl text-emerald-400">
+                      All questions are fully verified!
+                    </div>
+                  )}
+                </div>
+              </div>
             </div>
           )}
 

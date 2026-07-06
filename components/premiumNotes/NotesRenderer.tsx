@@ -136,38 +136,44 @@ function Block({ block }: { block: NoteBlock }) {
 
     case "illustration":
       return (
-        <div className="rounded-xl border border-white/[0.09] bg-white/[0.03] p-4">
-          <div className="mb-2 text-[10px] font-bold uppercase tracking-[0.15em] text-white/50">
-            Solved Illustration · {block.level}<ExamTags exams={block.exams} />
+        <div className="overflow-hidden rounded-xl border border-cyan-400/25 bg-gradient-to-b from-cyan-500/[0.06] to-white/[0.02]">
+          <div className="flex items-center gap-2 border-b border-cyan-400/15 bg-cyan-500/[0.06] px-4 py-2">
+            <span className="text-base leading-none">✎</span>
+            <span className="text-[11px] font-black uppercase tracking-[0.15em] text-cyan-200">Solved Example</span>
+            <span className="rounded-full border border-white/10 bg-white/[0.06] px-1.5 py-0.5 text-[9px] font-bold uppercase tracking-wide text-white/55">{block.level}</span>
+            <ExamTags exams={block.exams} />
           </div>
-          <p className="text-sm font-semibold leading-relaxed text-white">{block.question}</p>
-          <div className="mt-3 space-y-2">
-            <div className="rounded-lg border border-cyan-400/15 bg-cyan-500/[0.04] p-2.5 text-sm leading-relaxed text-white/75"><span className="font-bold text-cyan-300">Thinking · </span>{block.thinking}</div>
-            <div className="rounded-lg border border-white/[0.07] bg-[#0B1220] p-2.5 text-sm leading-relaxed text-white/80"><span className="font-bold text-white/60">Solution · </span>{block.solution}</div>
-            {block.fastMethod && <div className="rounded-lg border border-emerald-400/15 bg-emerald-500/[0.04] p-2.5 text-sm leading-relaxed text-white/75"><span className="font-bold text-emerald-300">Fast method · </span>{block.fastMethod}</div>}
-            {block.alternateMethod && <div className="rounded-lg border border-indigo-400/15 bg-indigo-500/[0.04] p-2.5 text-sm leading-relaxed text-white/75"><span className="font-bold text-indigo-300">Alternate · </span>{block.alternateMethod}</div>}
-            {block.commonMistakes && block.commonMistakes.length > 0 && (
-              <div className="rounded-lg border border-rose-400/15 bg-rose-500/[0.04] p-2.5 text-sm leading-relaxed text-white/75">
-                <span className="font-bold text-rose-300">Watch out · </span>{block.commonMistakes.join(" ")}
-              </div>
-            )}
+          <div className="p-4">
+            <p className="text-sm font-semibold leading-relaxed text-white">{block.question}</p>
+            <div className="mt-3 space-y-2">
+              <div className="rounded-lg border border-white/[0.08] bg-white/[0.03] p-2.5 text-sm leading-relaxed text-white/75"><span className="font-bold text-cyan-300">Approach · </span>{block.thinking}</div>
+              <div className="rounded-lg border border-white/[0.07] bg-[#0B1220] p-2.5 text-sm leading-relaxed text-white/85"><span className="font-bold text-white/60">Solution · </span>{block.solution}</div>
+              {block.fastMethod && <div className="rounded-lg border border-emerald-400/15 bg-emerald-500/[0.04] p-2.5 text-sm leading-relaxed text-white/75"><span className="font-bold text-emerald-300">⚡ Fast method · </span>{block.fastMethod}</div>}
+              {block.alternateMethod && <div className="rounded-lg border border-indigo-400/15 bg-indigo-500/[0.04] p-2.5 text-sm leading-relaxed text-white/75"><span className="font-bold text-indigo-300">Alternate · </span>{block.alternateMethod}</div>}
+              {block.commonMistakes && block.commonMistakes.length > 0 && (
+                <div className="rounded-lg border border-rose-400/15 bg-rose-500/[0.04] p-2.5 text-sm leading-relaxed text-white/75">
+                  <span className="font-bold text-rose-300">Watch out · </span>{block.commonMistakes.join(" ")}
+                </div>
+              )}
+            </div>
           </div>
         </div>
       );
 
     case "misc":
       return (
-        <details className="rounded-xl border border-white/[0.07] bg-white/[0.02] p-3.5">
-          <summary className="cursor-pointer list-none text-sm leading-relaxed">
-            <span className="mr-2 rounded-full border border-white/10 bg-white/[0.05] px-1.5 py-0.5 text-[9px] font-bold uppercase tracking-wide text-white/50">{block.level}</span>
-            <span className="font-semibold text-white/90">{block.question}</span>
+        <div className="rounded-xl border border-white/[0.08] bg-white/[0.02] p-3.5">
+          <div className="mb-2 flex items-center gap-2">
+            <span className="text-[10px] font-bold uppercase tracking-[0.15em] text-white/45">Quick Example</span>
+            <span className="rounded-full border border-white/10 bg-white/[0.05] px-1.5 py-0.5 text-[9px] font-bold uppercase tracking-wide text-white/50">{block.level}</span>
             <ExamTags exams={block.exams} />
-          </summary>
-          <div className="mt-2.5 border-t border-white/[0.06] pt-2.5 text-sm leading-relaxed">
-            <p className="font-bold text-emerald-300">{block.answer}</p>
-            <p className="mt-1 text-white/70">{block.explanation}</p>
           </div>
-        </details>
+          <p className="text-sm font-semibold leading-relaxed text-white/90">{block.question}</p>
+          <div className="mt-2 flex flex-wrap items-baseline gap-x-2 gap-y-1 border-t border-white/[0.06] pt-2 text-sm leading-relaxed">
+            <span className="rounded bg-emerald-500/15 px-1.5 py-0.5 text-[13px] font-black text-emerald-300">{block.answer}</span>
+            <span className="text-white/70">{block.explanation}</span>
+          </div>
+        </div>
       );
 
     case "revision":

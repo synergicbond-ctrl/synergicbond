@@ -27,7 +27,7 @@ const faqs = [
   },
   {
     q: "Who builds the content — is it just AI?",
-    a: "Content is authored and verified by Prof. Mritunjay Shukla, an 18+ year chemistry faculty member, JEE Advanced expert, author and patent holder. AI accelerates delivery, but pedagogy comes from real expert experience.",
+    a: "Content is built upon a verified chemistry question bank and structured reference curriculum. AI accelerates delivery and personalization, but every output is governed by strict chemistry schemas and pedagogical guardrails.",
   },
 ];
 

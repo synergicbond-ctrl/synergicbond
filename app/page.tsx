@@ -1,6 +1,7 @@
 import HomeHero from "@/components/HomeHero";
 import WhatIsSynergicBond from "@/components/home/WhatIsSynergicBond";
 import ControlCenter from "@/components/ControlCenter";
+import FloatingCTAs from "@/components/home/FloatingCTAs";
 import { fetchControlCenterProgress } from "@/lib/controlCenterData";
 import KnowledgeVault from "@/components/KnowledgeVault";
 import Stats from "@/components/Stats";
@@ -104,6 +105,7 @@ export default async function Home() {
         <ContactFeedback />
       </section>
 
+      <FloatingCTAs />
       <Footer />
     </main>
   );

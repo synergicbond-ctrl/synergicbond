@@ -1,7 +1,7 @@
 # PRODUCT_SPEC.md — Synergic Bond ("The Chemistry Operating System")
 
 > **Audience:** Future AI assistants / PMs / engineers continuing the product.
-> **Source of truth for facts:** the repo (commits, pages, components). Product *vision* statements below are synthesized from in-repo copy (homepage hero "The Chemistry Operating System", `AGENTS.md`, marketing components like `AboutVision.tsx`, `Hero.tsx`, `InternationalRoadmap.tsx`), the existing `PROJECT_HANDOVER.md`, and the founder profile (senior chemistry faculty, 18+ yrs, ALLEN/Sri Chaitanya, JEE Advanced expert). Where a claim is product intent rather than shipped code, it is marked **(vision)**.
+> **Source of truth for facts:** the repo (commits, pages, components). Product *vision* statements below are synthesized from in-repo copy (homepage hero "The Chemistry Operating System", `AGENTS.md`, marketing components like `AboutVision.tsx`, `Hero.tsx`, `InternationalRoadmap.tsx`), the existing `PROJECT_HANDOVER.md`, and the founder profile (senior chemistry faculty, 18+ yrs, JEE Advanced expert). Where a claim is product intent rather than shipped code, it is marked **(vision)**.
 
 ---
 

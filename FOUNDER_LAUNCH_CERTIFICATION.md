@@ -41,7 +41,7 @@ section; `/notes`, `/tests`, `/ai-lab`, `/ai-lab/notes`, `/pricing`, `/support`,
 HTML by design, verified present in the rendered DOM on this exact commit.)
 
 **2. Authentication** — real account exercised against production Supabase (GoTrue v2.192.0):
-- Signup created a real user (`mshukla000+launchcert@gmail.com`) and returned a session
+- Signup created a real user (`student+launchcert@gmail.com`) and returned a session
   immediately — **email auto-confirm is ON** (no verification step; see decisions below).
 - Password login → session (expires_in 3600). Refresh-token grant → new session
   (persistence mechanism works). Logout → HTTP 204, and the old refresh token is
@@ -99,5 +99,5 @@ HTML by design, verified present in the rendered DOM on this exact commit.)
    chapter access, and preview unlock, then flip 4b–4f to PASS/FAIL.
 3. Approve the `/api/chat` auth fix (5-minute change + deploy).
 4. Decide the two policy questions above.
-5. Housekeeping: test account `mshukla000+launchcert@gmail.com` can be deleted in Supabase
+5. Housekeeping: test account `student+launchcert@gmail.com` can be deleted in Supabase
    Auth (or kept as the payment-test account for step 1 — recommended).

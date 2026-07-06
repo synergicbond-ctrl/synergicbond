@@ -4,7 +4,6 @@ import ControlCenter from "@/components/ControlCenter";
 import { fetchControlCenterProgress } from "@/lib/controlCenterData";
 import KnowledgeVault from "@/components/KnowledgeVault";
 import Stats from "@/components/Stats";
-import PYQDominationDashboard from "@/components/PYQDominationDashboard";
 import JeeSection from "@/components/JeeSection";
 import NeetSection from "@/components/NeetSection";
 import OlympiadSection from "@/components/OlympiadSection";
@@ -45,10 +44,6 @@ export default async function Home() {
 
       <section className="py-16 md:py-24 border-t border-white/[0.04]">
         <Stats />
-      </section>
-
-      <section className="py-16 md:py-24 border-t border-white/[0.04] bg-gradient-to-b from-black/20 to-transparent">
-        <PYQDominationDashboard />
       </section>
 
       <section className="py-16 md:py-24 border-t border-white/[0.04] bg-gradient-to-b from-black/20 to-transparent">

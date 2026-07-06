@@ -11,7 +11,6 @@ import OlympiadSection from "@/components/OlympiadSection";
 import ResourcesSection from "@/components/ResourcesSection";
 import ExamCenter from "@/components/ExamCenter";
 import InternationalRoadmap from "@/components/InternationalRoadmap";
-import ReferenceBooks from "@/components/ReferenceBooks";
 import Testimonials from "@/components/Testimonials";
 import NewsSidebar from "@/components/NewsSidebar";
 import Donation from "@/components/Donation";
@@ -69,10 +68,6 @@ export default async function Home() {
 
       <section className="py-16 md:py-24 border-t border-white/[0.04]">
         <InternationalRoadmap />
-      </section>
-
-      <section className="py-16 md:py-24 border-t border-white/[0.04] bg-gradient-to-b from-black/20 to-transparent">
-        <ReferenceBooks />
       </section>
 
       {/* Latest Operations Hub — news/blogs sidebar layout */}

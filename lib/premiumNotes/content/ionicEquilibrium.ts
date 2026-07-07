@@ -6,6 +6,94 @@ export const IONIC_EQUILIBRIUM_NOTES: PremiumChapterNotes = {
   tagline: "Acids, bases, pH scale, buffers, solubility product, and common ion effect.",
   topics: [
     {
+      id: "electrolytes-classification",
+      title: "Electrolytes & Their Classification",
+      intro: "What ionises, how completely, and which salts dissolve — the groundwork every pH and Kₛₚ calculation silently assumes.",
+      subtopics: [
+        {
+          id: "types-of-electrolytes",
+          title: "True vs Potential, Strong vs Weak",
+          blocks: [
+            {
+              kind: "detailed",
+              heading: "True vs Potential Electrolytes",
+              paras: [
+                "A substance that produces ions in solution is an electrolyte. The classification depends on whether ions already exist in the pure substance."
+              ],
+              points: [
+                "True (ionic) electrolyte: already ionic in the pure state — produces ions in the melt AND in solution. e.g. NaCl(s) → Na⁺ + Cl⁻ on melting or on dissolving.",
+                "Potential (covalent) electrolyte: molecular in the pure state, produces ions only on dissolving in a suitable solvent. e.g. HCl(g) is covalent, but HCl(aq) → H⁺ + Cl⁻."
+              ]
+            },
+            {
+              kind: "detailed",
+              heading: "Strong vs Weak Electrolytes",
+              paras: [
+                "Strong electrolytes dissociate almost completely in solution (α → 1); weak electrolytes dissociate only partially (α ≪ 1).",
+                "In water: strong acids, strong bases and water-soluble salts are strong electrolytes; weak acids, weak bases and sparingly soluble salts are weak."
+              ]
+            },
+            {
+              kind: "focus",
+              title: "Strength depends on the SOLVENT, not just the solute",
+              points: [
+                "HCl behaves as a strong acid in water,",
+                "…a weak acid in CH₃COOH (ethanoic acid) as solvent,",
+                "…a non-electrolyte in C₆H₆ (benzene),",
+                "…and even a weak base in liquid HF.",
+                "Moral: 'strong' and 'weak' describe the acid–solvent pair, never the acid alone."
+              ]
+            },
+            {
+              kind: "detailed",
+              heading: "The Strong Acids & Strong Bases to Memorise",
+              points: [
+                "Strong acids: HCl, HBr, HI, HNO₃, H₂SO₄ (1st ionisation), HClO₄.",
+                "Strong bases: Group-1 hydroxides (LiOH, NaOH, KOH, RbOH, CsOH) and the heavier Group-2 hydroxides Ca(OH)₂, Sr(OH)₂, Ba(OH)₂.",
+                "Everything else is weak (or sparingly soluble) until proven otherwise."
+              ]
+            },
+            {
+              kind: "trap",
+              items: [
+                {
+                  trap: "HF is a hydrogen halide, so it must be a strong acid like HCl, HBr and HI.",
+                  reality: "HF is a WEAK acid (Ka ≈ 6.6 × 10⁻⁴). The very strong H–F bond and extensive H-bonding suppress ionisation — it is the odd one out of the hydrohalic acids."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          id: "solubility-rules",
+          title: "Solubility Rules for Salts",
+          blocks: [
+            {
+              kind: "detailed",
+              heading: "Which salts dissolve in water",
+              paras: [
+                "You cannot begin a Kₛₚ or precipitation problem without knowing which salt is the sparingly soluble one. These rules identify it at a glance."
+              ],
+              points: [
+                "All nitrates (NO₃⁻) are soluble — no exceptions.",
+                "All chlorides are soluble EXCEPT AgCl, Hg₂Cl₂, CuCl and PbCl₂ (PbCl₂ dissolves in hot water).",
+                "All sulphates are soluble EXCEPT CaSO₄, SrSO₄, BaSO₄ and PbSO₄ (Ag₂SO₄ is sparingly soluble).",
+                "All carbonates, phosphates, sulphides and oxalates are INSOLUBLE except those of the alkali metals and NH₄⁺."
+              ]
+            },
+            {
+              kind: "illustration",
+              level: "basic",
+              concept: "Applying solubility rules",
+              question: "Which of these is sparingly soluble in water: NaCl, KNO₃, BaSO₄, (NH₄)₂CO₃?",
+              thinking: "Run each through the rules: nitrates are always soluble; alkali-metal and ammonium salts are soluble; the sulphate exception list contains BaSO₄.",
+              answer: "BaSO₄ — a member of the sulphate exceptions. It is the only one here that has a Kₛₚ."
+            }
+          ]
+        }
+      ]
+    },
+    {
       id: "acid-base-theories",
       title: "Acid-Base Theories & Autoionization",
       intro: "Fundamental definitions of acids and bases and the ionic product of water.",
@@ -97,6 +185,49 @@ export const IONIC_EQUILIBRIUM_NOTES: PremiumChapterNotes = {
               solution: "Kw = [H₃O⁺][OH⁻] = (10⁻⁶)(10⁻⁶) = 10⁻¹²."
             }
           ]
+        },
+        {
+          id: "merits-demerits-leveling",
+          title: "Merits, Demerits & the Leveling Effect",
+          blocks: [
+            {
+              kind: "detailed",
+              heading: "Arrhenius — what it gets right and wrong",
+              points: [
+                "Merit: cleanly explains neutralisation (H⁺ + OH⁻ → H₂O) and ranks strength by the ionisation constant (Ka, Kb).",
+                "Demerit: confined to water — the solvent's role is undefined, and it cannot explain why aqueous AlCl₃/CuSO₄ are acidic or Na₂CO₃/NH₃ are basic.",
+                "Demerit: cannot account for amphoteric species such as Al(OH)₃."
+              ]
+            },
+            {
+              kind: "detailed",
+              heading: "Brønsted–Lowry — what it adds and where it stops",
+              points: [
+                "Merit: the solvent's role is explicit; acidic/basic behaviour is defined even in non-aqueous media; amphiprotic nature falls out naturally (H₂O, HCO₃⁻).",
+                "Demerit: still tied to proton transfer — it cannot describe an acid–base reaction with NO proton, e.g. CaO (base) + CO₂ (acid) → CaCO₃. That gap is exactly what the Lewis picture fills."
+              ]
+            },
+            {
+              kind: "detailed",
+              exams: ["JEE Advanced"],
+              heading: "Leveling & Differentiating Effect",
+              paras: [
+                "Water is a 'leveling' solvent: any acid stronger than H₃O⁺ is dragged down to the strength of H₃O⁺ because it hands its proton over completely. So HClO₄, HCl and HNO₃ all appear equally strong (≈100% ionised) in water — water levels them.",
+                "A weaker base solvent (e.g. glacial CH₃COOH) accepts protons reluctantly, so the acids ionise to different extents and their TRUE order is revealed: HClO₄ > H₂SO₄ > HCl > HNO₃. Such a solvent is 'differentiating'."
+              ]
+            },
+            {
+              kind: "illustration",
+              level: "intermediate",
+              tricky: true,
+              exams: ["JEE Advanced"],
+              concept: "Leveling effect",
+              question: "In aqueous solution HCl and HClO₄ appear equally strong, yet in glacial acetic acid HClO₄ is clearly the stronger. Explain.",
+              thinking: "Ask what the solvent does to the proton. If the solvent takes the proton completely, every acid looks '100% ionised' and their differences vanish.",
+              solution: "Water is a strong enough base to strip the proton fully from both, leveling both to H₃O⁺ — so both read as 'strong'. Glacial acetic acid is a much weaker base; it does not fully remove the proton, so the intrinsic difference in proton-donating tendency shows through and HClO₄ ionises more than HCl.",
+              insight: "The measured strength of a strong acid is a property of the acid–solvent pair. 'All strong acids are equal in water' is a statement about water, not about the acids."
+            }
+          ]
         }
       ]
     },
@@ -181,6 +312,61 @@ export const IONIC_EQUILIBRIUM_NOTES: PremiumChapterNotes = {
               question: "Calculate the degree of dissociation of 0.01 M CH₃COOH if its Ka is 1.8 × 10⁻⁵.",
               thinking: "Check if α is small: √(Ka/C) = √(1.8×10⁻⁵ / 10⁻²) = √(1.8×10⁻³) ≈ 0.042 (4.2%). Since it's < 5%, approximation is valid.",
               solution: "α = √(Ka / C) = 0.042."
+            }
+          ]
+        },
+        {
+          id: "weak-acid-four-cases",
+          title: "When the Approximation Breaks: The Four Cases",
+          exams: ["JEE Advanced"],
+          blocks: [
+            {
+              kind: "detailed",
+              heading: "α = √(Ka/C) is a shortcut, not a law",
+              paras: [
+                "The clean result [H⁺] = √(Ka·C) rests on TWO assumptions: (1 − α) ≈ 1, and water's own H⁺ being negligible. Either can fail. Classify every weak-acid problem into one of four cases before reaching for a formula."
+              ],
+              points: [
+                "Case I — C ≫ Ka and Ka ≫ Kw: α = √(Ka/C) ≪ 1 so (1 − α) ≈ 1. Use [H⁺] = √(Ka·C). (The everyday case.)",
+                "Case II — C ≈ Ka (still Ka ≫ Kw): α is NOT small, so (1 − α) ≠ 1. Solve the full quadratic Ka = Cα²/(1 − α).",
+                "Case III — C ≫ Ka but Ka ≈ Kw: the acid is so weak that water's H⁺ is comparable — solve the acid and water equilibria together.",
+                "Case IV — C ≪ Ka (roughly C < 10⁻⁶ M): the acid is essentially fully dissociated (α ≈ 1) AND water contributes — combine both."
+              ]
+            },
+            {
+              kind: "focus",
+              title: "The practical water-contribution rule",
+              points: [
+                "Neglect water's contribution to [H⁺] only if [H⁺] from the acid ≥ 10⁻⁶ M.",
+                "For a base, neglect water's [OH⁻] only if [OH⁻] from the base ≥ 10⁻⁶ M.",
+                "Always sanity-check α = [H⁺]/C after using the shortcut: if α exceeds ~5%, the (1 − α) ≈ 1 step was illegal — redo it as a quadratic."
+              ]
+            },
+            {
+              kind: "illustration",
+              level: "advanced",
+              tricky: true,
+              concept: "Case II — approximation fails",
+              question: "Calculate the pH of 0.002 M HCOOH. (Ka = 2.4 × 10⁻⁴)",
+              thinking: "First test the shortcut, then check α. If α is large, the denominator (1 − α) cannot be dropped.",
+              steps: [
+                { label: "Try the shortcut & check α", work: "α = √(Ka/C) = √(2.4×10⁻⁴ / 2×10⁻³) = √0.12 ≈ 0.35 → 35%. That is far above 5%, so the approximation is INVALID here." },
+                { label: "Set up the exact balance", work: "With x = [H⁺]: Ka = x²/(C − x) ⇒ x² + Ka·x − Ka·C = 0 ⇒ x² + 2.4×10⁻⁴x − 4.8×10⁻⁷ = 0." },
+                { label: "Solve the quadratic", work: "x = [−2.4×10⁻⁴ + √(5.76×10⁻⁸ + 1.92×10⁻⁶)] / 2 = [−2.4×10⁻⁴ + 1.41×10⁻³] / 2 ≈ 5.8×10⁻⁴ M." },
+                { label: "Convert to pH", work: "pH = −log(5.8×10⁻⁴) ≈ 3.24." }
+              ],
+              answer: "pH ≈ 3.24 (the shortcut would have wrongly given ≈ 3.16).",
+              insight: "A dilute solution of a not-so-weak acid is the classic Case II trap: low C pushes α up, so the missing (1 − α) matters. Reflex-checking α is what saves the mark."
+            },
+            {
+              kind: "illustration",
+              level: "advanced",
+              tricky: true,
+              concept: "Case IV — very dilute weak acid",
+              question: "Qualitatively, what happens to the degree of dissociation of 5 × 10⁻⁸ M CH₃COOH, and why can't you use [H⁺] = √(Ka·C)?",
+              thinking: "Compare C with Ka (1.8 × 10⁻⁵). Here C ≪ Ka, and C is also below 10⁻⁶ M.",
+              solution: "Because C ≪ Ka, Ostwald's law forces α → 1: the acid is essentially fully dissociated, so [H⁺] from the acid ≈ C = 5×10⁻⁸ M — well below 10⁻⁶ M. Water's own 10⁻⁷ M H⁺ now dominates, so the acid and water equilibria must be solved together; the shortcut (which assumes α small AND water negligible) is doubly invalid.",
+              insight: "There are two distinct reasons to distrust √(Ka·C): α too big (Case II), OR the solution so dilute that water takes over (Cases III/IV). Naming the case first prevents both mistakes."
             }
           ]
         }

@@ -38,43 +38,96 @@ function Node({ x, y, w, h, title, sub, accent = AX }: { x: number; y: number; w
   );
 }
 
-/** THE conversion wheel: particles ↔ mole ↔ mass ↔ gas volume, formulas on every arrow. */
+/** THE Conversion Wheel: circular 3-door map (mass, particles, gas volume) + ideal gas door with radial spokes and wheel rim orbit. */
 export function MoleConversionMap() {
   return (
-    <svg viewBox="0 0 680 300" className="h-auto w-full" role="img" aria-label="Mole conversion map linking particles, mass and gas volume through the mole">
-      {/* central mole hub */}
-      <circle cx={340} cy={150} r={44} fill={CARD} stroke={AX} strokeWidth="2" />
-      <text x={340} y={146} textAnchor="middle" style={{ ...TB, fontSize: 15 }}>n (mol)</text>
-      <text x={340} y={163} textAnchor="middle" style={TXS}>amount of substance</text>
+    <svg viewBox="0 0 720 400" className="h-auto w-full" role="img" aria-label="The Conversion Wheel: Circular map linking mass, particles, and gas volume through Moles">
+      <defs>
+        <radialGradient id="hubGrad" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stopColor="#4FD8B8" stopOpacity="0.25" />
+          <stop offset="100%" stopColor="#0A1828" stopOpacity="0" />
+        </radialGradient>
+        <filter id="glow">
+          <feGaussianBlur stdDeviation="3.5" result="coloredBlur" />
+          <feMerge>
+            <feMergeNode in="coloredBlur" />
+            <feMergeNode in="SourceGraphic" />
+          </feMerge>
+        </filter>
+      </defs>
 
-      {/* particles (left) */}
-      <Node x={30} y={110} w={150} h={80} title="Particles  N" sub="atoms · molecules · ions" accent={VEC} />
-      <Arrow x1={185} y1={135} x2={292} y2={140} />
-      <text x={238} y={126} textAnchor="middle" style={TS}>÷ N_A</text>
-      <Arrow x1={292} y1={165} x2={185} y2={170} color={VEC} />
-      <text x={238} y={188} textAnchor="middle" style={TS}>× N_A</text>
+      {/* Outer circular wheel rim track */}
+      <circle cx={360} cy={200} r={140} fill="none" stroke="rgba(79, 216, 184, 0.2)" strokeWidth="1.5" strokeDasharray="6,6" />
 
-      {/* mass (right) */}
-      <Node x={500} y={110} w={150} h={80} title="Mass  w (g)" sub="laboratory balance" accent={VEC} />
-      <Arrow x1={495} y1={140} x2={388} y2={140} />
-      <text x={442} y={126} textAnchor="middle" style={TS}>÷ M (g/mol)</text>
-      <Arrow x1={388} y1={165} x2={495} y2={165} color={VEC} />
-      <text x={442} y={188} textAnchor="middle" style={TS}>× M</text>
+      {/* Central glowing hub: Moles (n) */}
+      <circle cx={360} cy={200} r={65} fill="url(#hubGrad)" />
+      <circle cx={360} cy={200} r={52} fill="#0F2340" stroke="#4FD8B8" strokeWidth="3" filter="url(#glow)" />
+      <text x={360} y={196} textAnchor="middle" style={{ fontFamily: "monospace", fontSize: 20, fontWeight: 800, fill: "#4FD8B8" }}>
+        n (mol)
+      </text>
+      <text x={360} y={216} textAnchor="middle" style={{ ...T, fontSize: 11, fontWeight: 700, fill: "#E8E8E8" }}>
+        THE MOLE HUB
+      </text>
+      <text x={360} y={230} textAnchor="middle" style={{ ...T, fontSize: 9.5, fill: "#A8E8D8" }}>
+        6.022 × 10²³
+      </text>
 
-      {/* gas volume (bottom) */}
-      <Node x={255} y={230} w={170} h={56} title="Gas volume V" sub="22.4 L at STP (1 atm, 0 °C)" accent={VEC} />
-      <Arrow x1={320} y1={225} x2={330} y2={198} />
-      <text x={270} y={214} textAnchor="middle" style={TS}>÷ 22.4 L</text>
-      <Arrow x1={355} y1={198} x2={365} y2={225} color={VEC} />
-      <text x={412} y={214} textAnchor="middle" style={TS}>× 22.4 L</text>
+      {/* DOOR 1: Mass w (g) — WEST / LEFT */}
+      <g transform="translate(20, 160)">
+        <rect x={0} y={0} width={150} height={80} rx="14" fill="#0F2340" stroke="#B89FFF" strokeWidth="2" filter="url(#glow)" />
+        <text x={75} y={28} textAnchor="middle" style={{ ...TB, fontSize: 14, fill: "#B89FFF" }}>Mass w (g)</text>
+        <text x={75} y={48} textAnchor="middle" style={{ ...TS, fill: "#E8E8E8" }}>Lab balance weight</text>
+        <text x={75} y={66} textAnchor="middle" style={{ ...TXS, fill: "#B89FFF" }}>Molar mass M (g/mol)</text>
+      </g>
+      {/* Spokes WEST */}
+      <Arrow x1={175} y1={188} x2={305} y2={188} color="#B89FFF" w={2} />
+      <text x={240} y={180} textAnchor="middle" style={{ ...TB, fontSize: 11, fill: "#B89FFF" }}>÷ M</text>
+      <Arrow x1={305} y1={212} x2={175} y2={212} color="#4FD8B8" w={2} />
+      <text x={240} y={228} textAnchor="middle" style={{ ...TB, fontSize: 11, fill: "#4FD8B8" }}>× M</text>
 
-      {/* ideal gas (top) */}
-      <rect x={255} y={22} width={170} height={48} rx="10" fill={CARD} stroke={OK} strokeWidth="1.2" />
-      <text x={340} y={42} textAnchor="middle" style={TB}>Any P, T:  PV = nRT</text>
-      <text x={340} y={58} textAnchor="middle" style={TXS}>R = 0.0821 L·atm·K⁻¹·mol⁻¹</text>
-      <Arrow x1={340} y1={74} x2={340} y2={102} color={OK} />
+      {/* DOOR 2: Particles N — EAST / RIGHT */}
+      <g transform="translate(550, 160)">
+        <rect x={0} y={0} width={150} height={80} rx="14" fill="#0F2340" stroke="#FFD93D" strokeWidth="2" filter="url(#glow)" />
+        <text x={75} y={28} textAnchor="middle" style={{ ...TB, fontSize: 14, fill: "#FFD93D" }}>Particles N</text>
+        <text x={75} y={48} textAnchor="middle" style={{ ...TS, fill: "#E8E8E8" }}>Atoms, ions, molecules</text>
+        <text x={75} y={66} textAnchor="middle" style={{ ...TXS, fill: "#FFD93D" }}>Avogadro N_A</text>
+      </g>
+      {/* Spokes EAST */}
+      <Arrow x1={545} y1={188} x2={415} y2={188} color="#FFD93D" w={2} />
+      <text x={480} y={180} textAnchor="middle" style={{ ...TB, fontSize: 11, fill: "#FFD93D" }}>÷ N_A</text>
+      <Arrow x1={415} y1={212} x2={545} y2={212} color="#4FD8B8" w={2} />
+      <text x={480} y={228} textAnchor="middle" style={{ ...TB, fontSize: 11, fill: "#4FD8B8" }}>× N_A</text>
 
-      <text x={340} y={296} textAnchor="middle" style={TXS}>Every mole-concept problem is a walk on this map — convert INTO moles, reason, convert OUT.</text>
+      {/* DOOR 3: Gas Volume V — SOUTH / BOTTOM */}
+      <g transform="translate(275, 305)">
+        <rect x={0} y={0} width={170} height={75} rx="14" fill="#0F2340" stroke="#52B788" strokeWidth="2" filter="url(#glow)" />
+        <text x={85} y={26} textAnchor="middle" style={{ ...TB, fontSize: 14, fill: "#52B788" }}>Gas Volume V (L)</text>
+        <text x={85} y={45} textAnchor="middle" style={{ ...TS, fill: "#E8E8E8" }}>STP (1 atm, 273 K)</text>
+        <text x={85} y={63} textAnchor="middle" style={{ ...TXS, fill: "#52B788" }}>Molar volume 22.4 L</text>
+      </g>
+      {/* Spokes SOUTH */}
+      <Arrow x1={348} y1={300} x2={348} y2={255} color="#52B788" w={2} />
+      <text x={306} y={282} textAnchor="middle" style={{ ...TB, fontSize: 11, fill: "#52B788" }}>÷ 22.4 L</text>
+      <Arrow x1={372} y1={255} x2={372} y2={300} color="#4FD8B8" w={2} />
+      <text x={415} y={282} textAnchor="middle" style={{ ...TB, fontSize: 11, fill: "#4FD8B8" }}>× 22.4 L</text>
+
+      {/* DOOR 4 (TOP / NORTH): Any Gas condition PV = nRT */}
+      <g transform="translate(265, 12)">
+        <rect x={0} y={0} width={190} height={66} rx="14" fill="#0F2340" stroke="#FF6B6B" strokeWidth="2" filter="url(#glow)" />
+        <text x={95} y={24} textAnchor="middle" style={{ ...TB, fontSize: 14, fill: "#FF6B6B" }}>Any Condition Gas</text>
+        <text x={95} y={42} textAnchor="middle" style={{ fontFamily: "monospace", fontSize: 13, fontWeight: 800, fill: "#E8E8E8" }}>PV = nRT</text>
+        <text x={95} y={57} textAnchor="middle" style={{ ...TXS, fill: "#FF6B6B" }}>R = 0.0821 L·atm/mol·K</text>
+      </g>
+      {/* Spokes NORTH */}
+      <Arrow x1={348} y1={82} x2={348} y2={145} color="#FF6B6B" w={2} />
+      <text x={304} y={118} textAnchor="middle" style={{ ...TB, fontSize: 11, fill: "#FF6B6B" }}>÷ (RT/P)</text>
+      <Arrow x1={372} y1={145} x2={372} y2={82} color="#4FD8B8" w={2} />
+      <text x={418} y={118} textAnchor="middle" style={{ ...TB, fontSize: 11, fill: "#4FD8B8" }}>× (RT/P)</text>
+
+      {/* Bottom instructional legend */}
+      <text x={360} y={392} textAnchor="middle" style={{ ...TS, fill: "#A8E8D8", fontWeight: 700 }}>
+        🔄 THE THREE DOORS TO THE MOLE: Pick any starting point on the wheel, spin IN to the central n hub, and spin OUT to any destination.
+      </text>
     </svg>
   );
 }
@@ -309,55 +362,102 @@ export function YieldFunnel() {
   );
 }
 
-/** Master map of all concentration terms, split mass-based vs volume-based. */
+/** Master color-coded grid of all concentration terms: RED (#E85D6A) for temp-dependent vs BLUE (#5E9FFF) for temp-independent, joined by density bridge. */
 export function ConcentrationTermsMap() {
-  const massBased: [string, string][] = [
-    ["% w/w", "g solute / 100 g soln"],
-    ["ppm · ppb", "g / 10⁶ · 10⁹ g soln"],
-    ["molality m", "mol / kg solvent"],
-    ["mole fraction X", "nᵢ / Σn"],
+  const tempDependent: [string, string, string][] = [
+    ["Molarity M", "mol solute / L soln", "Most common lab unit; changes with T"],
+    ["Normality N", "g-equiv / L soln", "N = M × n-factor (titrations)"],
+    ["Formality F", "formula units / L soln", "Used for ionic solids (NaCl etc.)"],
+    ["% w/v & g/L", "g solute / 100 mL or L", "Medical & pharmacy solutions"],
+    ["% v/v", "mL solute / 100 mL soln", "Liquid-in-liquid solutions (ethanol)"],
   ];
-  const volBased: [string, string][] = [
-    ["molarity M", "mol / L soln"],
-    ["normality N", "g-equiv / L soln"],
-    ["formality F", "formula-units / L"],
-    ["% w/v · g/L", "g / 100 mL · g / L"],
+  const tempIndependent: [string, string, string][] = [
+    ["Molality m", "mol solute / kg solvent", "Preferred for colligative properties"],
+    ["Mole Fraction χ", "nᵢ / (n₁ + n₂ + ...)", "Dimensionless ratio; sum of χ = 1"],
+    ["% w/w", "g solute / 100 g soln", "Industrial bulk reagent labeling"],
+    ["ppm & ppb", "g / 10⁶ g or 10⁹ g soln", "Trace pollutants & micro-solutes"],
   ];
   return (
-    <svg viewBox="0 0 700 320" className="h-auto w-full" role="img" aria-label="Master map of concentration terms, mass-based versus volume-based, joined by density">
-      <text x={350} y={22} textAnchor="middle" style={TB}>Concentration = amount of solute in a given amount of solution</text>
+    <svg viewBox="0 0 740 360" className="h-auto w-full" role="img" aria-label="Master color-coded concentration grid: Red (Temperature Dependent) versus Blue (Temperature Independent)">
+      <defs>
+        <filter id="glowRed">
+          <feGaussianBlur stdDeviation="3" result="coloredBlur" />
+          <feMerge>
+            <feMergeNode in="coloredBlur" />
+            <feMergeNode in="SourceGraphic" />
+          </feMerge>
+        </filter>
+        <filter id="glowBlue">
+          <feGaussianBlur stdDeviation="3" result="coloredBlur" />
+          <feMerge>
+            <feMergeNode in="coloredBlur" />
+            <feMergeNode in="SourceGraphic" />
+          </feMerge>
+        </filter>
+      </defs>
 
-      {/* mass-based column */}
-      <rect x={20} y={44} width={300} height={230} rx="12" fill={CARD} stroke={AX} strokeWidth="1.3" />
-      <text x={170} y={68} textAnchor="middle" style={{ ...TB, fill: AX }}>MASS / MOLE based</text>
-      <text x={170} y={84} textAnchor="middle" style={TXS}>temperature-INDEPENDENT</text>
-      {massBased.map((r, i) => (
-        <g key={r[0]}>
-          <text x={40} y={112 + i * 38} style={TB}>{r[0]}</text>
-          <text x={40} y={128 + i * 38} style={TXS}>{r[1]}</text>
-        </g>
-      ))}
+      <text x={370} y={24} textAnchor="middle" style={{ ...TB, fontSize: 16, fill: "#E8E8E8" }}>
+        Concentration Taxonomy: Temperature-Dependent vs Independent
+      </text>
 
-      {/* volume-based column */}
-      <rect x={380} y={44} width={300} height={230} rx="12" fill={CARD} stroke={VEC} strokeWidth="1.3" />
-      <text x={530} y={68} textAnchor="middle" style={{ ...TB, fill: VEC }}>VOLUME based</text>
-      <text x={530} y={84} textAnchor="middle" style={TXS}>temperature-DEPENDENT (soln expands)</text>
-      {volBased.map((r, i) => (
-        <g key={r[0]}>
-          <text x={400} y={112 + i * 38} style={TB}>{r[0]}</text>
-          <text x={400} y={128 + i * 38} style={TXS}>{r[1]}</text>
-        </g>
-      ))}
+      {/* RED COLUMN (Left): Temperature-Dependent (Volume-based) */}
+      <g transform="translate(15, 45)">
+        <rect x={0} y={0} width={310} height={250} rx="14" fill="#0F2340" stroke="#E85D6A" strokeWidth="2" filter="url(#glowRed)" />
+        <rect x={0} y={0} width={310} height={46} rx="14" fill="#E85D6A" fillOpacity="0.15" />
+        <text x={155} y={24} textAnchor="middle" style={{ ...TB, fontSize: 14, fill: "#E85D6A" }}>
+          🔴 TEMP-DEPENDENT (RED)
+        </text>
+        <text x={155} y={40} textAnchor="middle" style={{ ...TXS, fill: "#FFB3B8" }}>
+          Volume-Based (Soln expands/shrinks when heated)
+        </text>
+        {tempDependent.map((r, i) => (
+          <g key={r[0]} transform={`translate(15, ${64 + i * 36})`}>
+            <circle cx={6} cy={-4} r={3.5} fill="#E85D6A" />
+            <text x={18} y={0} style={{ ...TB, fontSize: 13, fill: "#FFFFFF" }}>{r[0]}</text>
+            <text x={160} y={0} style={{ fontFamily: "monospace", fontSize: 11.5, fontWeight: 700, fill: "#FFB3B8" }}>{r[1]}</text>
+            <text x={18} y={15} style={{ ...TXS, fontSize: 10, fill: "#A0AEC0" }}>{r[2]}</text>
+          </g>
+        ))}
+      </g>
 
-      {/* density bridge */}
-      <rect x={300} y={150} width={100} height={40} rx="10" fill="rgba(251,191,36,0.15)" stroke={WARN} strokeWidth="1.4" />
-      <text x={350} y={166} textAnchor="middle" style={{ ...TS, fill: WARN, fontWeight: 700 }}>DENSITY</text>
-      <text x={350} y={181} textAnchor="middle" style={TXS}>d (g/mL)</text>
-      <Arrow x1={322} y1={158} x2={300} y2={168} color={WARN} />
-      <Arrow x1={400} y1={170} x2={378} y2={180} color={WARN} />
+      {/* BLUE COLUMN (Right): Temperature-Independent (Mass-based) */}
+      <g transform="translate(415, 45)">
+        <rect x={0} y={0} width={310} height={250} rx="14" fill="#0F2340" stroke="#5E9FFF" strokeWidth="2" filter="url(#glowBlue)" />
+        <rect x={0} y={0} width={310} height={46} rx="14" fill="#5E9FFF" fillOpacity="0.15" />
+        <text x={155} y={24} textAnchor="middle" style={{ ...TB, fontSize: 14, fill: "#5E9FFF" }}>
+          🔵 TEMP-INDEPENDENT (BLUE)
+        </text>
+        <text x={155} y={40} textAnchor="middle" style={{ ...TXS, fill: "#B3D4FF" }}>
+          Mass-Based (Unchanged by heat — Gold standard in labs)
+        </text>
+        {tempIndependent.map((r, i) => (
+          <g key={r[0]} transform={`translate(15, ${68 + i * 42})`}>
+            <circle cx={6} cy={-4} r={3.5} fill="#5E9FFF" />
+            <text x={18} y={0} style={{ ...TB, fontSize: 13, fill: "#FFFFFF" }}>{r[0]}</text>
+            <text x={160} y={0} style={{ fontFamily: "monospace", fontSize: 11.5, fontWeight: 700, fill: "#B3D4FF" }}>{r[1]}</text>
+            <text x={18} y={16} style={{ ...TXS, fontSize: 10, fill: "#A0AEC0" }}>{r[2]}</text>
+          </g>
+        ))}
+      </g>
 
-      <text x={350} y={298} textAnchor="middle" style={TXS}>Golden method: fix a basis (1 L soln for M/N; 1 kg solvent for m; 1 mol for X), convert all to masses, re-divide.</text>
-      <text x={350} y={314} textAnchor="middle" style={{ ...TXS, fill: OK }}>Key bridges: strength (g/L) = M·M′  ·  N = M × n-factor  ·  1/m = d/M − M′/1000</text>
+      {/* DENSITY BRIDGE (Center) */}
+      <g transform="translate(325, 140)">
+        <rect x={0} y={0} width={90} height={60} rx="12" fill="#0A1828" stroke="#FFD93D" strokeWidth="2" />
+        <text x={45} y={22} textAnchor="middle" style={{ ...TB, fontSize: 12, fill: "#FFD93D" }}>DENSITY</text>
+        <text x={45} y={38} textAnchor="middle" style={{ fontFamily: "monospace", fontSize: 13, fontWeight: 800, fill: "#FFFFFF" }}>d (g/mL)</text>
+        <text x={45} y={52} textAnchor="middle" style={{ ...TXS, fontSize: 9, fill: "#FFD93D" }}>THE BRIDGE</text>
+      </g>
+      <Arrow x1={325} y1={170} x2={305} y2={170} color="#FFD93D" w={2} />
+      <Arrow x1={415} y1={170} x2={435} y2={170} color="#FFD93D" w={2} />
+
+      {/* Footer Key Equations */}
+      <rect x={15} y={308} width={710} height={42} rx="10" fill="#0A1828" stroke="rgba(255,255,255,0.12)" strokeWidth="1" />
+      <text x={370} y={326} textAnchor="middle" style={{ ...TS, fontSize: 11.5, fill: "#4FD8B8", fontWeight: 700 }}>
+        ⚡ Master Interconversion Formula: 1 / m = (d / M) − (M_solute / 1000)
+      </text>
+      <text x={370} y={342} textAnchor="middle" style={{ ...TXS, fontSize: 11, fill: "#E8E8E8" }}>
+        Normality: N = M × n-factor   ·   Strength (g/L) = M × Molar Mass   ·   Mole Fraction: χ_solute = (M × M_solvent) / (1000 × d + ...)
+      </text>
     </svg>
   );
 }

@@ -127,6 +127,46 @@ export interface RevisionBlock extends BaseBlock {
   points: string[];
 }
 
+/** 11 · Scientist Story — historical discovery, conflict & impact. */
+export interface ScientistBlock extends BaseBlock {
+  kind: "scientist";
+  scientist: string;
+  year?: string | number;
+  contribution: string;
+  source?: string;
+  whyItMattered?: string;
+  funFact?: string;
+}
+
+/** 12 · Did You Know — surprising, high-curiosity fact tied back to topic. */
+export interface DykBlock extends BaseBlock {
+  kind: "dyk";
+  fact: string;
+  connection?: string;
+}
+
+/** 13 · Formula Decoder Cards — decoding industrial/chemical strength codes and labels into exact math. */
+export interface DecoderBlock extends BaseBlock {
+  kind: "decoder";
+  title: string;
+  labelCode: string;
+  formula?: string;
+  meaning: string;
+  example?: string;
+  insights?: string[];
+}
+
+/** 14 · Error Analysis Cards — forensic breakdown of why students make a specific error and how to verify. */
+export interface ErrorAnalysisBlock extends BaseBlock {
+  kind: "errorAnalysis";
+  title?: string;
+  error: string;
+  whyItHappens: string;
+  correctApproach: string;
+  verificationStep?: string;
+  examImpact?: string;
+}
+
 export type NoteBlock =
   | DetailedBlock
   | VisualBlock
@@ -137,7 +177,11 @@ export type NoteBlock =
   | TrickBlock
   | IllustrationBlock
   | MiscBlock
-  | RevisionBlock;
+  | RevisionBlock
+  | ScientistBlock
+  | DykBlock
+  | DecoderBlock
+  | ErrorAnalysisBlock;
 
 export interface NoteSubtopic {
   id: string;

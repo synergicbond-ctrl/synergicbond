@@ -188,6 +188,14 @@ export default async function ChapterEnginePage({ params }: { params: Promise<{ 
                   <Link href={authoredHref} className="rounded-xl border border-white/15 bg-white/[0.04] px-4 py-2 text-sm font-semibold text-white/80 hover:bg-white/[0.08]">Visual summary page →</Link>
                 )}
                 <Link href={`/chapter/${id}`} className="rounded-xl border border-white/15 bg-white/[0.04] px-4 py-2 text-sm font-semibold text-white/80 hover:bg-white/[0.08]">Chapter workspace →</Link>
+                {id === "mole-concept" && (
+                  <>
+                    <Link href="/notes/mole-concept" className="rounded-xl border border-cyan-400/30 bg-cyan-500/10 px-4 py-2 text-sm font-bold text-cyan-300 hover:bg-cyan-500/20">Transcribed Notes Hub →</Link>
+                    <Link href="/notes/mole-concept/part1" className="rounded-xl border border-lime-400/30 bg-lime-500/10 px-4 py-2 text-sm font-semibold text-lime-300 hover:bg-lime-500/20">Mole Concept Part 1 →</Link>
+                    <Link href="/notes/concentration-terms" className="rounded-xl border border-red-400/30 bg-red-500/10 px-4 py-2 text-sm font-semibold text-red-300 hover:bg-red-500/20">Concentration Terms (Parts 1–3) →</Link>
+                    <Link href="/notes/stoichiometry" className="rounded-xl border border-amber-400/30 bg-amber-500/10 px-4 py-2 text-sm font-semibold text-amber-300 hover:bg-amber-500/20">Stoichiometry Part 1 →</Link>
+                  </>
+                )}
               </div>
               <NotesRenderer notes={premiumNotes} exam={engine.exam} />
             </>

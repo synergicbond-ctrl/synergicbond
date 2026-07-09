@@ -1,217 +1,36 @@
 "use client";
 import React from "react";
 import { InlineMath, BlockMath } from "@/components/math/react-katex";
-
-type PageCardProps = {
-  page?: string;
-  title: string;
-  children: React.ReactNode;
-};
-
-function PageCard({ title, children }: PageCardProps) {
-  return (
-    <section className="my-6 rounded-3xl border border-slate-700/60 bg-[#111827] p-6 sm:p-8 shadow-xl">
-      <div className="mb-4 flex items-center justify-between gap-4 border-b border-slate-800 pb-3">
-        <h3 className="text-xl font-bold text-cyan-300">{title}</h3>
-      </div>
-      <div className="space-y-4 text-[15px] leading-relaxed text-slate-200">{children}</div>
-    </section>
-  );
-}
-
-function FormulaBox({ children }: { children: React.ReactNode }) {
-  return (
-    <div className="my-4 rounded-2xl border border-cyan-400/30 bg-slate-950 px-5 py-4 text-center font-semibold text-cyan-300 shadow-lg">
-      {children}
-    </div>
-  );
-}
-
-function WorkingLine({ children }: { children: React.ReactNode }) {
-  return (
-    <div className="my-2 rounded-xl border border-slate-800 bg-slate-900/80 px-4 py-3 font-medium text-slate-200 shadow-sm">
-      {children}
-    </div>
-  );
-}
-
-function DiagramBox({ title, children }: { title: string; children: React.ReactNode }) {
-  return (
-    <div className="my-4 rounded-2xl border border-dashed border-blue-400/40 bg-slate-950 p-5 text-center shadow-md">
-      <div className="mb-3 text-xs font-bold uppercase tracking-widest text-blue-400">
-        {title}
-      </div>
-      <div className="text-slate-200">{children}</div>
-    </div>
-  );
-}
-
-function Highlight({ children }: { children: React.ReactNode }) {
-  return (
-    <div className="my-4 rounded-2xl border border-emerald-400/30 bg-emerald-950/20 p-5 shadow-md text-sm text-slate-200 space-y-2">
-      {children}
-    </div>
-  );
-}
-
-function RuleBox({ children }: { children: React.ReactNode }) {
-  return (
-    <div className="my-4 rounded-2xl border border-rose-400/30 bg-rose-950/20 px-5 py-4 font-semibold text-rose-300 shadow-md">
-      {children}
-    </div>
-  );
-}
-
-function LabelPill({ children }: { children: React.ReactNode }) {
-  return (
-    <span className="inline-flex rounded-full bg-amber-500/20 px-3 py-1 text-xs font-bold text-amber-300 border border-amber-400/30">
-      {children}
-    </span>
-  );
-}
-
-function ReactionBox({ children }: { children: React.ReactNode }) {
-  return (
-    <div className="my-3 rounded-xl border border-indigo-500/30 bg-indigo-950/30 p-4 font-mono text-sm text-indigo-200 overflow-x-auto shadow-sm">
-      {children}
-    </div>
-  );
-}
-
-function QuestionBox({ children }: { children: React.ReactNode }) {
-  return (
-    <div className="my-4 rounded-2xl border border-purple-500/30 bg-purple-950/20 p-5 text-sm text-purple-200 shadow-md space-y-2">
-      {children}
-    </div>
-  );
-}
-
-function MiniStructure({ title, children }: { title: string; children: React.ReactNode }) {
-  return (
-    <div className="my-3 rounded-xl border border-slate-700 bg-slate-900 p-4 text-center">
-      <div className="text-xs font-bold uppercase text-slate-400 mb-2">{title}</div>
-      <div className="text-sm font-mono text-slate-200">{children}</div>
-    </div>
-  );
-}
-
-function ReactionCard({ children }: { children: React.ReactNode }) {
-  return (
-    <div className="my-3 rounded-xl border border-cyan-500/20 bg-slate-900/60 p-4 text-sm text-slate-200">
-      {children}
-    </div>
-  );
-}
-
-function YellowNote({ children }: { children: React.ReactNode }) {
-  return (
-    <div className="my-3 rounded-xl border border-yellow-500/30 bg-yellow-950/20 p-4 text-sm text-yellow-300">
-      {children}
-    </div>
-  );
-}
-
-function RedNote({ children }: { children: React.ReactNode }) {
-  return (
-    <div className="my-3 rounded-xl border border-red-500/30 bg-red-950/20 p-4 text-sm text-red-300">
-      {children}
-    </div>
-  );
-}
-
-function PinkBox({ children }: { children: React.ReactNode }) {
-  return (
-    <div className="my-3 rounded-xl border border-pink-500/30 bg-pink-950/20 p-4 text-sm text-pink-200">
-      {children}
-    </div>
-  );
-}
-
-function PinkQuestion({ children }: { children: React.ReactNode }) {
-  return (
-    <div className="my-3 rounded-xl border border-pink-500/40 bg-pink-950/30 p-4 font-semibold text-pink-300">
-      {children}
-    </div>
-  );
-}
-
-function SourceNote({ children }: { children: React.ReactNode }) {
-  return (
-    <div className="my-2 text-xs italic text-slate-400">
-      {children}
-    </div>
-  );
-}
-
-function CrossedOut({ children }: { children: React.ReactNode }) {
-  return (
-    <div className="my-2 rounded-lg bg-red-950/40 p-3 text-red-400 line-through text-sm">
-      {children}
-    </div>
-  );
-}
-
-function CrossedRelation({ children }: { children: React.ReactNode }) {
-  return (
-    <div className="my-2 rounded-lg bg-red-950/40 p-3 text-red-400 line-through font-mono text-xs">
-      {children}
-    </div>
-  );
-}
-
-function NoteBox({ children }: { children: React.ReactNode }) {
-  return (
-    <div className="my-3 rounded-xl border border-amber-500/30 bg-amber-950/20 p-4 text-sm text-amber-300">
-      {children}
-    </div>
-  );
-}
-
-function WarningBox({ children }: { children: React.ReactNode }) {
-  return (
-    <div className="my-3 rounded-xl border border-rose-500/40 bg-rose-950/30 p-4 text-sm font-bold text-rose-300">
-      {children}
-    </div>
-  );
-}
-
-function Tag({ children }: { children: React.ReactNode }) {
-  return (
-    <span className="inline-block rounded bg-slate-800 px-2 py-0.5 text-xs font-semibold text-slate-300 mr-2">
-      {children}
-    </span>
-  );
-}
-
-function StatusBadge({ status }: { status?: string }) {
-  return (
-    <span className="rounded-full bg-cyan-500/20 px-2 py-1 text-xs font-bold text-cyan-300">
-      {status || "VERIFIED"}
-    </span>
-  );
-}
-
-function ChecklistItem({ children, checked, done }: { children: React.ReactNode; checked?: boolean; done?: boolean }) {
-  return (
-    <div className="flex items-center gap-2 py-1 text-sm text-slate-300">
-      <span className="text-emerald-400 font-bold">{(checked || done) ? "✓" : "○"}</span>
-      <span>{children}</span>
-    </div>
-  );
-}
+import {
+  PageCard,
+  FormulaBox,
+  WorkingLine,
+  DiagramBox,
+  Highlight,
+  NoteBox,
+  YellowNote,
+  RedNote,
+  WarningBox,
+  PinkQuestion,
+  QuestionBox,
+  PinkBox,
+  ReactionBox,
+  ReactionCard,
+  RuleBox,
+  ChecklistItem,
+  StatusBadge,
+  Tag,
+  LabelPill,
+  CrossedOut,
+  CrossedRelation,
+  MiniStructure,
+  SourceNote,
+} from "@/components/notes/chemistry";
 
 export default function TitrationPart6() {
   return (
-    <main className="min-h-screen bg-slate-50 px-4 py-8 text-slate-900">
-      <header className="mb-8 border-b border-slate-200 pb-4">
-        <h1 className="text-3xl font-black text-slate-900 md:text-4xl">
-          Precipitation & Complexometric Titrations
-        </h1>
-      </header>
-      <div className="mx-auto max-w-5xl space-y-8">
-        
-
-        <PageCard title="Fe₂O₃ Sample, Zn Dust and KMnO₄ Titration">
+    <div className="space-y-6 sm:space-y-8">
+<PageCard title="Fe₂O₃ Sample, Zn Dust and KMnO₄ Titration">
           <div className="space-y-4 rounded-2xl border border-pink-200 bg-pink-50 p-4">
             <QuestionBox>
               Q. 4.8 gm Fe<sub>2</sub>O<sub>3</sub> sample{" "}
@@ -310,10 +129,10 @@ export default function TitrationPart6() {
           <div className="grid gap-4 md:grid-cols-2">
             <DiagramBox title="Soap molecule">
               <div className="mx-auto flex max-w-md items-center justify-center gap-4">
-                <div className="h-10 w-40 rounded-full border-2 border-slate-400 bg-white">
+                <div className="h-10 w-40 rounded-full border-2 border-slate-700 bg-slate-900/30">
                   <div className="mt-2 text-sm font-semibold">zig-zag hydrocarbon chain</div>
                 </div>
-                <div className="rounded-full border-2 border-blue-400 bg-white px-4 py-3 font-bold">
+                <div className="rounded-full border-2 border-blue-500/30 bg-slate-950/40 px-4 py-3 font-bold">
                   COO<sup>-</sup>
                 </div>
                 <div className="text-2xl font-black">—</div>
@@ -327,7 +146,7 @@ export default function TitrationPart6() {
             </DiagramBox>
 
             <DiagramBox title="Soap at water surface">
-              <div className="mx-auto h-40 max-w-sm rounded-xl border-2 border-blue-500 bg-white p-3">
+              <div className="mx-auto h-40 max-w-sm rounded-xl border-2 border-blue-500/30 bg-slate-950/40 p-3">
                 <div className="h-16 border-b border-blue-400">
                   <div className="flex justify-around pt-3 text-pink-600">
                     <span>⊖</span>
@@ -339,7 +158,7 @@ export default function TitrationPart6() {
                 <div className="pt-5 text-blue-600">water</div>
               </div>
               <p className="mt-3 text-sm font-semibold">
-                Surface arrangement of soap ions shown in the source diagram.
+                Surface arrangement of soap ions at the water interface.
               </p>
             </DiagramBox>
           </div>
@@ -353,7 +172,7 @@ export default function TitrationPart6() {
                 {Array.from({ length: 12 }).map((_, index) => (
                   <span
                     key={index}
-                    className="absolute rounded-full bg-white px-2 py-1 text-pink-600 shadow-sm"
+                    className="absolute rounded-full bg-slate-800/80 px-2 py-1 text-pink-600 shadow-sm"
                     style={{
                       left: `${50 + 42 * Math.cos((index * Math.PI) / 6)}%`,
                       top: `${50 + 42 * Math.sin((index * Math.PI) / 6)}%`,
@@ -370,13 +189,13 @@ export default function TitrationPart6() {
                   <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 font-bold text-pink-700">
                     oil
                   </div>
-                  <span className="absolute right-0 top-1/2 rounded-full bg-white px-2 py-1 text-pink-600">
+                  <span className="absolute right-0 top-1/2 rounded-full bg-slate-800/80 px-2 py-1 text-pink-600">
                     ⊖
                   </span>
-                  <span className="absolute left-3 top-5 rounded-full bg-white px-2 py-1 text-pink-600">
+                  <span className="absolute left-3 top-5 rounded-full bg-slate-800/80 px-2 py-1 text-pink-600">
                     ⊖
                   </span>
-                  <span className="absolute bottom-3 left-1/2 rounded-full bg-white px-2 py-1 text-pink-600">
+                  <span className="absolute bottom-3 left-1/2 rounded-full bg-slate-800/80 px-2 py-1 text-pink-600">
                     ⊖
                   </span>
                 </div>
@@ -387,13 +206,13 @@ export default function TitrationPart6() {
                   <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 font-bold text-pink-700">
                     oil
                   </div>
-                  <span className="absolute right-0 top-1/2 rounded-full bg-white px-2 py-1 text-pink-600">
+                  <span className="absolute right-0 top-1/2 rounded-full bg-slate-800/80 px-2 py-1 text-pink-600">
                     ⊖
                   </span>
-                  <span className="absolute left-3 top-5 rounded-full bg-white px-2 py-1 text-pink-600">
+                  <span className="absolute left-3 top-5 rounded-full bg-slate-800/80 px-2 py-1 text-pink-600">
                     ⊖
                   </span>
-                  <span className="absolute bottom-3 left-1/2 rounded-full bg-white px-2 py-1 text-pink-600">
+                  <span className="absolute bottom-3 left-1/2 rounded-full bg-slate-800/80 px-2 py-1 text-pink-600">
                     ⊖
                   </span>
                 </div>
@@ -402,7 +221,7 @@ export default function TitrationPart6() {
           </DiagramBox>
 
           <NoteBox>
-            The source page shows hydrophobic tail, hydrophilic ionic head, soap
+            Diagram showing hydrophobic tail, hydrophilic ionic head, soap
             ions at the water surface, and micelle-like oil droplets surrounded
             by negatively charged heads.
           </NoteBox>
@@ -478,6 +297,5 @@ export default function TitrationPart6() {
           </div>
         </PageCard>
       </div>
-    </main>
   );
 }

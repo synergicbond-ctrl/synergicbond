@@ -31,7 +31,7 @@ export default function EquivalentConceptPart5() {
   return (
     <div className="space-y-6 sm:space-y-8">
 <PageCard title="Redox Equivalent Weight — Oxalate, Thiosulphate, Ethane, FeC₂O₄ and FeS₂">
-          <div className="space-y-4 rounded-2xl border border-pink-200 bg-pink-50 p-4">
+          <div className="space-y-4 rounded-2xl border border-rose-500/20 bg-rose-950/20 text-rose-200 p-4">
             <h3 className="font-bold text-pink-800">
               H₂C₂O₄ as R.A.
             </h3>
@@ -45,7 +45,7 @@ export default function EquivalentConceptPart5() {
             </FormulaBox>
           </div>
 
-          <div className="space-y-4 rounded-2xl border border-blue-200 bg-blue-50 p-4">
+          <div className="space-y-4 rounded-2xl border border-blue-500/20 bg-blue-950/20 text-blue-200 p-4">
             <h3 className="font-bold text-blue-800">
               S₂O₃²⁻ in reaction with Cl₂
             </h3>
@@ -63,7 +63,7 @@ export default function EquivalentConceptPart5() {
             </FormulaBox>
           </div>
 
-          <div className="space-y-4 rounded-2xl border border-orange-200 bg-orange-50 p-4">
+          <div className="space-y-4 rounded-2xl border border-amber-500/20 bg-amber-950/20 text-amber-200 p-4">
             <h3 className="font-bold text-orange-800">
               C₂H₆ in combustion reaction
             </h3>
@@ -99,7 +99,7 @@ export default function EquivalentConceptPart5() {
             </FormulaBox>
           </div>
 
-          <div className="space-y-4 rounded-2xl border border-purple-200 bg-purple-50 p-4">
+          <div className="space-y-4 rounded-2xl border border-violet-500/20 bg-violet-950/20 text-violet-200 p-4">
             <h3 className="font-bold text-purple-800">
               FeS₂
             </h3>
@@ -123,7 +123,7 @@ export default function EquivalentConceptPart5() {
         </PageCard>
 
         <PageCard title="Redox Equivalent Weight — Co(MnO₄)₃, CrBr₃ and Cl₂ Disproportionation">
-          <div className="space-y-4 rounded-2xl border border-blue-200 bg-blue-50 p-4">
+          <div className="space-y-4 rounded-2xl border border-blue-500/20 bg-blue-950/20 text-blue-200 p-4">
             <h3 className="font-bold text-blue-800">
               Co(MnO₄)₃
             </h3>
@@ -145,7 +145,7 @@ export default function EquivalentConceptPart5() {
             </FormulaBox>
           </div>
 
-          <div className="space-y-4 rounded-2xl border border-orange-200 bg-orange-50 p-4">
+          <div className="space-y-4 rounded-2xl border border-amber-500/20 bg-amber-950/20 text-amber-200 p-4">
             <h3 className="font-bold text-orange-800">
               CrBr₃
             </h3>
@@ -167,7 +167,7 @@ export default function EquivalentConceptPart5() {
             </FormulaBox>
           </div>
 
-          <div className="space-y-4 rounded-2xl border border-red-200 bg-red-50 p-4">
+          <div className="space-y-4 rounded-2xl border border-red-500/20 bg-red-950/20 text-red-200 p-4">
             <h3 className="font-bold text-red-800">
               Cl₂ — Disproportionation
             </h3>
@@ -241,7 +241,7 @@ export default function EquivalentConceptPart5() {
             </WorkingLine>
           </div>
 
-          <div className="space-y-4 rounded-2xl border border-blue-200 bg-blue-50 p-4">
+          <div className="space-y-4 rounded-2xl border border-blue-500/20 bg-blue-950/20 text-blue-200 p-4">
             <h3 className="font-bold text-blue-800">
               Cl₂ disproportionation in water
             </h3>
@@ -267,7 +267,7 @@ export default function EquivalentConceptPart5() {
             </FormulaBox>
           </div>
 
-          <div className="space-y-4 rounded-2xl border border-pink-200 bg-pink-50 p-4">
+          <div className="space-y-4 rounded-2xl border border-rose-500/20 bg-rose-950/20 text-rose-200 p-4">
             <h3 className="font-bold text-pink-800">
               P₄ disproportionation
             </h3>
@@ -299,7 +299,7 @@ export default function EquivalentConceptPart5() {
         </PageCard>
 
         <PageCard title="H₂O₂, I₂, NH₃ and HNO₃ Redox n-Factor Cases">
-          <div className="space-y-4 rounded-2xl border border-purple-200 bg-purple-50 p-4">
+          <div className="space-y-4 rounded-2xl border border-violet-500/20 bg-violet-950/20 text-violet-200 p-4">
             <h3 className="font-bold text-purple-800">
               H₂O₂ disproportionation
             </h3>
@@ -323,7 +323,7 @@ export default function EquivalentConceptPart5() {
             </FormulaBox>
           </div>
 
-          <div className="space-y-4 rounded-2xl border border-orange-200 bg-orange-50 p-4">
+          <div className="space-y-4 rounded-2xl border border-amber-500/20 bg-amber-950/20 text-amber-200 p-4">
             <h3 className="font-bold text-orange-800">
               IO₄⁻ + I⁻ → I₂
             </h3>
@@ -357,7 +357,7 @@ export default function EquivalentConceptPart5() {
             </FormulaBox>
           </div>
 
-          <div className="space-y-4 rounded-2xl border border-red-200 bg-red-50 p-4">
+          <div className="space-y-4 rounded-2xl border border-red-500/20 bg-red-950/20 text-red-200 p-4">
             <h3 className="font-bold text-red-800">
               NH₃
             </h3>

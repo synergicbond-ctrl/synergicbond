@@ -31,7 +31,7 @@ export default function TitrationPart5() {
   return (
     <div className="space-y-6 sm:space-y-8">
 <PageCard title="HCl, KMnO₄ and Oxidising Agent Problem">
-          <div className="space-y-4 rounded-2xl border border-pink-200 bg-pink-50 p-4">
+          <div className="space-y-4 rounded-2xl border border-rose-500/20 bg-rose-950/20 text-rose-200 p-4">
             <QuestionBox>
               Q. 40 ml of <b>M-HCl</b> sol<sup>n</sup> is mixed with 10 ml of
               0.1 M-KMnO<sub>4</sub> sol<sup>n</sup> in presence of H
@@ -116,7 +116,7 @@ export default function TitrationPart5() {
         </PageCard>
 
         <PageCard title="KMnO₄ + KI + K₂Cr₂O₇ Mixed Redox Titration">
-          <div className="space-y-4 rounded-2xl border border-blue-200 bg-blue-50 p-4">
+          <div className="space-y-4 rounded-2xl border border-blue-500/20 bg-blue-950/20 text-blue-200 p-4">
             <QuestionBox>
               Q. 40 ml of M/20-KMnO<sub>4</sub> sol<sup>n</sup> is mixed with
               50 ml of KI sol<sup>n</sup> in presence of H<sub>2</sub>SO
@@ -170,7 +170,7 @@ export default function TitrationPart5() {
             </FormulaBox>
           </div>
 
-          <div className="mt-6 space-y-4 rounded-2xl border border-pink-200 bg-pink-50 p-4">
+          <div className="mt-6 space-y-4 rounded-2xl border border-rose-500/20 bg-rose-950/20 text-rose-200 p-4">
             <QuestionBox>
               Q. V ml of 1.5 M-K<sub>2</sub>Cr<sub>2</sub>O<sub>7</sub> sol
               <sup>n</sup> is reacted with excess of KI sol<sup>n</sup> in
@@ -206,7 +206,7 @@ export default function TitrationPart5() {
         </PageCard>
 
         <PageCard title="K₂Cr₂O₇/KI/I₂ Continuation and KIO₃–KI–Hypo Problem">
-          <div className="space-y-4 rounded-2xl border border-pink-200 bg-pink-50 p-4">
+          <div className="space-y-4 rounded-2xl border border-rose-500/20 bg-rose-950/20 text-rose-200 p-4">
             <h3 className="font-bold text-pink-800">
               Continuation of V ml K<sub>2</sub>Cr<sub>2</sub>O<sub>7</sub>{" "}
               question
@@ -227,7 +227,7 @@ export default function TitrationPart5() {
             </FormulaBox>
           </div>
 
-          <div className="mt-6 space-y-4 rounded-2xl border border-purple-200 bg-purple-50 p-4">
+          <div className="mt-6 space-y-4 rounded-2xl border border-violet-500/20 bg-violet-950/20 text-violet-200 p-4">
             <QuestionBox>
               Q. 12 ml of 0.15 M-KIO<sub>3</sub> sol<sup>n</sup> is mixed with
               30 ml of KI sol<sup>n</sup> in presence of HCl. If the liberated I

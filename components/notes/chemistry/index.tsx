@@ -6,7 +6,7 @@ import { InlineMath, BlockMath } from "@/components/math/react-katex";
 
 // ─────────────────────────────────────────────────────────────────────────────
 // Chemistry Notes Shared Design System (SSOT) - Dark Branded Theme
-// Premium Synergic Bond dark chemistry aesthetic, gradients, depth, and brand colours.
+// Minimal container approach, one page background, transparent & borderless cards
 // ─────────────────────────────────────────────────────────────────────────────
 
 export interface NumberedSectionItem {
@@ -38,7 +38,7 @@ export function NotesChapterHeader({
   onSelectSection: (id: number) => void;
 }) {
   return (
-    <header className="rounded-2xl border border-purple-500/20 bg-slate-900/60 p-6 sm:p-8 shadow-xl space-y-5 backdrop-blur-md relative overflow-hidden">
+    <header className="rounded-2xl border border-purple-500/20 bg-slate-900/40 p-6 sm:p-8 shadow-xl space-y-5 backdrop-blur-md relative overflow-hidden">
       {/* Decorative Glow */}
       <div className="absolute -right-10 -top-10 h-40 w-40 rounded-full bg-purple-500/10 blur-2xl pointer-events-none" />
 
@@ -120,7 +120,7 @@ export function NumberedSectionNav({
 export function NumberedSectionHeader({ number, title }: { number: number; title: string }) {
   return (
     <div className="scroll-mt-28 flex items-center gap-3.5 border-b border-slate-800 pb-4 mb-6">
-      <span className="flex shrink-0 h-10 w-10 sm:h-11 sm:w-11 items-center justify-center rounded-xl bg-purple-600 text-white font-black text-lg shadow-sm border border-purple-500/20">
+      <span className="flex shrink-0 h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-violet-600 to-blue-600 text-white font-black text-lg shadow-md border border-purple-500/20">
         {number}
       </span>
       <h2 className="text-xl sm:text-2xl font-extrabold tracking-tight text-white">
@@ -138,7 +138,7 @@ export function NotesContentCard({
   className?: string;
 }) {
   return (
-    <div className={`rounded-2xl border border-slate-800 bg-slate-900/40 p-6 sm:p-8 shadow-xl space-y-6 text-[15px] sm:text-base leading-relaxed text-slate-300 backdrop-blur-sm ${className}`}>
+    <div className={`space-y-8 text-[15px] sm:text-base leading-relaxed text-slate-200 ${className}`}>
       {children}
     </div>
   );
@@ -154,9 +154,9 @@ export function ConceptCard({
   className?: string;
 }) {
   return (
-    <section className={`rounded-xl border border-slate-800 bg-slate-950/40 p-5 sm:p-6 shadow-md space-y-4 my-4 text-slate-300 ${className}`}>
+    <section className={`py-4 space-y-3.5 text-slate-200 ${className}`}>
       {title && (
-        <h3 className="text-lg font-bold text-white border-b border-slate-800 pb-2.5 mb-3">
+        <h3 className="text-lg font-bold text-white border-b border-slate-800 pb-2 mb-2">
           {title}
         </h3>
       )}
@@ -175,9 +175,9 @@ export function FormulaCard({
   className?: string;
 }) {
   return (
-    <div className={`rounded-xl border border-blue-500/20 bg-blue-950/20 p-5 my-4 space-y-3 text-blue-200 text-center sm:text-left overflow-x-auto font-medium ${className}`}>
-      {title && <div className="text-xs font-bold uppercase tracking-wider text-blue-400 mb-1">{title}</div>}
-      <div className="text-slate-100 space-y-2">{children}</div>
+    <div className={`border-l-4 border-cyan-400 bg-cyan-950/10 px-5 py-4 my-4 space-y-2 text-cyan-200 overflow-x-auto font-medium ${className}`}>
+      {title && <div className="text-xs font-bold uppercase tracking-wider text-cyan-300 mb-1">{title}</div>}
+      <div className="text-white space-y-1.5">{children}</div>
     </div>
   );
 }
@@ -192,7 +192,7 @@ export function ExampleCard({
   className?: string;
 }) {
   return (
-    <div className={`rounded-xl border border-slate-800 bg-slate-900/30 p-5 my-4 space-y-3 text-slate-300 ${className}`}>
+    <div className={`border-l-4 border-violet-400 bg-violet-950/10 p-5 my-4 space-y-3 text-slate-200 ${className}`}>
       {title && <div className="font-bold text-white">{title}</div>}
       <div className="space-y-2">{children}</div>
     </div>
@@ -209,9 +209,9 @@ export function QuestionCard({
   className?: string;
 }) {
   return (
-    <div className={`rounded-xl border border-rose-500/20 bg-rose-950/20 p-5 my-4 space-y-3 text-rose-200 ${className}`}>
+    <div className={`border-l-4 border-rose-400 bg-rose-500/5 p-5 my-4 space-y-2 text-slate-100 ${className}`}>
       <div className="font-bold text-rose-300 text-sm uppercase tracking-wider">{title}</div>
-      <div className="space-y-2.5 font-medium leading-relaxed">{children}</div>
+      <div className="space-y-2 font-medium leading-relaxed">{children}</div>
     </div>
   );
 }
@@ -226,8 +226,8 @@ export function SolutionSteps({
   className?: string;
 }) {
   return (
-    <div className={`rounded-xl border border-slate-800 bg-slate-950/50 p-4 sm:p-5 my-3 space-y-2.5 text-slate-300 ${className}`}>
-      {title && <div className="text-xs font-bold uppercase tracking-wider text-slate-500 mb-2">{title}</div>}
+    <div className={`py-3 space-y-2.5 text-slate-300 border-t border-slate-800/60 mt-3 ${className}`}>
+      {title && <div className="text-xs font-bold uppercase tracking-wider text-slate-500 mb-1">{title}</div>}
       <div className="space-y-2 font-normal leading-relaxed">{children}</div>
     </div>
   );
@@ -241,7 +241,7 @@ export function FinalAnswerCard({
   className?: string;
 }) {
   return (
-    <div className={`rounded-xl border border-emerald-500/20 bg-emerald-950/20 p-4 sm:p-5 my-3.5 font-bold text-emerald-300 flex items-start sm:items-center gap-2.5 ${className}`}>
+    <div className={`border-l-4 border-emerald-400 bg-emerald-500/10 p-4 my-3.5 font-bold text-emerald-100 flex items-start sm:items-center gap-2.5 ${className}`}>
       <span className="flex shrink-0 h-6 w-6 rounded-full bg-emerald-600 text-white items-center justify-center text-xs font-extrabold">✓</span>
       <div className="flex-1 text-[15px] sm:text-base">{children}</div>
     </div>
@@ -258,7 +258,7 @@ export function ImportantNoteCard({
   className?: string;
 }) {
   return (
-    <div className={`rounded-xl border border-amber-500/20 bg-amber-950/20 p-5 my-4 space-y-2.5 text-amber-200 ${className}`}>
+    <div className={`border-l-4 border-amber-400 bg-amber-500/5 p-5 my-4 space-y-2.5 text-amber-200 ${className}`}>
       {title && (
         <div className="font-bold text-amber-300 flex items-center gap-1.5 text-sm uppercase tracking-wider">
           <span>★</span> {title}
@@ -279,7 +279,7 @@ export function WarningCard({
   className?: string;
 }) {
   return (
-    <div className={`rounded-xl border border-red-500/20 bg-red-950/20 p-5 my-4 space-y-2.5 text-red-200 ${className}`}>
+    <div className={`border-l-4 border-red-400 bg-red-500/5 p-5 my-4 space-y-2.5 text-red-200 ${className}`}>
       {title && (
         <div className="font-bold text-red-300 flex items-center gap-1.5 text-sm uppercase tracking-wider">
           <span>⚠️</span> {title}
@@ -300,7 +300,7 @@ export function DiagramPanel({
   className?: string;
 }) {
   return (
-    <div className={`rounded-2xl border border-slate-800 bg-slate-950/30 p-6 my-6 text-center shadow-sm space-y-4 overflow-x-auto ${className}`}>
+    <div className={`py-4 my-4 text-center space-y-3 overflow-x-auto ${className}`}>
       {title && <div className="text-xs font-bold uppercase tracking-widest text-purple-400 mb-2">{title}</div>}
       <div className="text-slate-200 flex flex-col items-center justify-center gap-3">{children}</div>
     </div>

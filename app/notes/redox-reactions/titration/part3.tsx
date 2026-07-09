@@ -31,7 +31,7 @@ export default function TitrationPart3() {
   return (
     <div className="space-y-6 sm:space-y-8">
 <PageCard title="More Types of Titration and Back Titration">
-          <div className="space-y-4 rounded-2xl border border-purple-200 bg-purple-50 p-4">
+          <div className="space-y-4 rounded-2xl border border-violet-500/20 bg-violet-950/20 text-violet-200 p-4">
             <h3 className="text-xl font-black text-purple-800">
               Continued types of titration:
             </h3>
@@ -77,7 +77,7 @@ export default function TitrationPart3() {
             </p>
           </div>
 
-          <div className="space-y-4 rounded-2xl border border-pink-200 bg-pink-50 p-4">
+          <div className="space-y-4 rounded-2xl border border-rose-500/20 bg-rose-950/20 text-rose-200 p-4">
             <QuestionBox>
               Q. What volume of 0.4 N KMnO<sub>4</sub> sol<sup>n</sup> is needed
               for titration with 20 ml of 0.25 N HCl sol<sup>n</sup> in presence
@@ -99,7 +99,7 @@ export default function TitrationPart3() {
         </PageCard>
 
         <PageCard title="Molarity Questions — NaOH, K₂Cr₂O₇, SO₂/HClO₃">
-          <div className="space-y-4 rounded-2xl border border-pink-200 bg-pink-50 p-4">
+          <div className="space-y-4 rounded-2xl border border-rose-500/20 bg-rose-950/20 text-rose-200 p-4">
             <QuestionBox>
               Q. 30 ml NaOH sol<sup>n</sup> is needed for complete
               neutralisation of 20 ml 0.2 M H<sub>3</sub>PO<sub>4</sub> sol
@@ -120,7 +120,7 @@ export default function TitrationPart3() {
             </FormulaBox>
           </div>
 
-          <div className="space-y-4 rounded-2xl border border-blue-200 bg-blue-50 p-4">
+          <div className="space-y-4 rounded-2xl border border-blue-500/20 bg-blue-950/20 text-blue-200 p-4">
             <QuestionBox>
               Q. 25 ml K<sub>2</sub>Cr<sub>2</sub>O<sub>7</sub> sol
               <sup>n</sup> is needed for complete oxidation of 50 ml of 0.1 M KI
@@ -156,7 +156,7 @@ export default function TitrationPart3() {
             </FormulaBox>
           </div>
 
-          <div className="space-y-4 rounded-2xl border border-orange-200 bg-orange-50 p-4">
+          <div className="space-y-4 rounded-2xl border border-amber-500/20 bg-amber-950/20 text-amber-200 p-4">
             <QuestionBox>
               Q. What volume of SO<sub>2</sub> gas is needed at 0°C and 1 atm
               for complete reduction of 40 ml of decimolar HClO<sub>3</sub> sol
@@ -171,7 +171,7 @@ export default function TitrationPart3() {
         </PageCard>
 
         <PageCard title="SO₂/HClO₃ Solution, I₂–Hypo Problem and Next Question Start">
-          <div className="space-y-4 rounded-2xl border border-orange-200 bg-orange-50 p-4">
+          <div className="space-y-4 rounded-2xl border border-amber-500/20 bg-amber-950/20 text-amber-200 p-4">
             <h3 className="text-lg font-black text-orange-800">
               Continuation of SO<sub>2</sub> / HClO<sub>3</sub> question
             </h3>
@@ -203,7 +203,7 @@ export default function TitrationPart3() {
             </FormulaBox>
           </div>
 
-          <div className="space-y-4 rounded-2xl border border-pink-200 bg-pink-50 p-4">
+          <div className="space-y-4 rounded-2xl border border-rose-500/20 bg-rose-950/20 text-rose-200 p-4">
             <QuestionBox>
               Q. 5 gm of x% pure I<sub>2</sub> sol<sup>n</sup> exactly requires
               x ml of Na<sub>2</sub>S<sub>2</sub>O<sub>3</sub> sol
@@ -236,7 +236,7 @@ export default function TitrationPart3() {
             </FormulaBox>
           </div>
 
-          <div className="space-y-4 rounded-2xl border border-purple-200 bg-purple-50 p-4">
+          <div className="space-y-4 rounded-2xl border border-violet-500/20 bg-violet-950/20 text-violet-200 p-4">
             <QuestionBox>
               Q. 40 ml 0.2 M KMnO<sub>4</sub> sol<sup>n</sup> is needed for
               complete rxn with certain mass of H<sub>2</sub>C<sub>2</sub>O

@@ -128,7 +128,7 @@ export default function EquivalentConceptPart7() {
         </PageCard>
 
         <PageCard title="Correction Rule When Intermediate Has Different n-Factor">
-          <div className="space-y-4 rounded-2xl border border-blue-200 bg-blue-50 p-4">
+          <div className="space-y-4 rounded-2xl border border-blue-500/20 bg-blue-950/20 text-blue-200 p-4">
             <ReactionBox>A → B</ReactionBox>
 
             <WorkingLine>
@@ -166,7 +166,7 @@ export default function EquivalentConceptPart7() {
             </WorkingLine>
           </div>
 
-          <div className="space-y-4 rounded-2xl border border-pink-200 bg-pink-50 p-4">
+          <div className="space-y-4 rounded-2xl border border-rose-500/20 bg-rose-950/20 text-rose-200 p-4">
             <h3 className="font-bold text-pink-800">
               Applying correction to KIO<sub>3</sub> / I<sub>2</sub> / Na
               <sub>2</sub>S<sub>2</sub>O<sub>3</sub>
@@ -188,7 +188,7 @@ export default function EquivalentConceptPart7() {
         </PageCard>
 
         <PageCard title="Reaction Verification and C₂H₆ / CO₂ / NaOH Problem">
-          <div className="space-y-4 rounded-2xl border border-amber-200 bg-amber-50 p-4">
+          <div className="space-y-4 rounded-2xl border border-amber-500/20 bg-amber-950/20 text-amber-200 p-4">
             <h3 className="font-bold text-amber-900">
               Verification by balanced reactions:
             </h3>
@@ -219,7 +219,7 @@ export default function EquivalentConceptPart7() {
             <FormulaBox>Mass = 18.96 gm</FormulaBox>
           </div>
 
-          <div className="mt-6 space-y-4 rounded-2xl border border-purple-200 bg-purple-50 p-4">
+          <div className="mt-6 space-y-4 rounded-2xl border border-violet-500/20 bg-violet-950/20 text-violet-200 p-4">
             <QuestionBox>
               Q. How many gm C<sub>2</sub>H<sub>6</sub> should be burnt
               completely to produce sufficient CO<sub>2</sub> needed for complete

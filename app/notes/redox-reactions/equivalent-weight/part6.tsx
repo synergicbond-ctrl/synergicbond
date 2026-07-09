@@ -37,7 +37,7 @@ export default function EquivalentConceptPart6() {
             are never considered as acid, base or salt for n-factor.
           </p>
 
-          <div className="space-y-4 rounded-2xl border border-blue-200 bg-blue-50 p-4">
+          <div className="space-y-4 rounded-2xl border border-blue-500/20 bg-blue-950/20 text-blue-200 p-4">
             <h3 className="font-bold text-blue-800">
               Example: Zn + HNO<sub>3</sub>
             </h3>
@@ -90,7 +90,7 @@ export default function EquivalentConceptPart6() {
             </div>
           </div>
 
-          <div className="space-y-4 rounded-2xl border border-orange-200 bg-orange-50 p-4">
+          <div className="space-y-4 rounded-2xl border border-amber-500/20 bg-amber-950/20 text-amber-200 p-4">
             <h3 className="font-bold text-orange-800">
               Example: Cl<sub>2</sub> + NaOH
             </h3>
@@ -113,7 +113,7 @@ export default function EquivalentConceptPart6() {
             </FormulaBox>
           </div>
 
-          <div className="space-y-4 rounded-2xl border border-purple-200 bg-purple-50 p-4">
+          <div className="space-y-4 rounded-2xl border border-violet-500/20 bg-violet-950/20 text-violet-200 p-4">
             <h3 className="font-bold text-purple-800">
               Example: MnO<sub>2</sub> + HCl
             </h3>
@@ -136,7 +136,7 @@ export default function EquivalentConceptPart6() {
             </FormulaBox>
           </div>
 
-          <div className="space-y-4 rounded-2xl border border-pink-200 bg-pink-50 p-4">
+          <div className="space-y-4 rounded-2xl border border-rose-500/20 bg-rose-950/20 text-rose-200 p-4">
             <h3 className="font-bold text-pink-800">
               Example: KMnO<sub>4</sub>, H<sub>2</sub>SO<sub>4</sub>, HCl
             </h3>
@@ -189,7 +189,7 @@ export default function EquivalentConceptPart6() {
         </PageCard>
 
         <PageCard title="Equivalent Volume of a Gas">
-          <div className="space-y-4 rounded-2xl border border-blue-200 bg-blue-50 p-4">
+          <div className="space-y-4 rounded-2xl border border-blue-500/20 bg-blue-950/20 text-blue-200 p-4">
             <ReactionBox>
               H<sub>3</sub>PO<sub>4</sub> + 3NaOH → Na<sub>3</sub>PO<sub>4</sub>{" "}
               + 3H<sub>2</sub>O
@@ -213,7 +213,7 @@ export default function EquivalentConceptPart6() {
             in the given condition.
           </p>
 
-          <div className="space-y-3 rounded-2xl border border-amber-200 bg-amber-50 p-4">
+          <div className="space-y-3 rounded-2xl border border-amber-500/20 bg-amber-950/20 text-amber-200 p-4">
             <WorkingLine>
               M gm of gas occupy V<sub>m</sub> volume
             </WorkingLine>
@@ -278,7 +278,7 @@ export default function EquivalentConceptPart6() {
             components.
           </p>
 
-          <div className="space-y-4 rounded-2xl border border-pink-200 bg-pink-50 p-4">
+          <div className="space-y-4 rounded-2xl border border-rose-500/20 bg-rose-950/20 text-rose-200 p-4">
             <PinkQuestion>
               Q. How many gm NaOH is needed for complete neutralization of 19.6
               gm H<sub>2</sub>SO<sub>4</sub>?
@@ -297,7 +297,7 @@ export default function EquivalentConceptPart6() {
             </FormulaBox>
           </div>
 
-          <div className="space-y-4 rounded-2xl border border-purple-200 bg-purple-50 p-4">
+          <div className="space-y-4 rounded-2xl border border-violet-500/20 bg-violet-950/20 text-violet-200 p-4">
             <PinkQuestion>
               Q. How many gm H<sub>2</sub>C<sub>2</sub>O<sub>4</sub> · 2H
               <sub>2</sub>O(s) is needed for complete reduction of 7.9 gm KMnO
@@ -326,7 +326,7 @@ export default function EquivalentConceptPart6() {
         </PageCard>
 
         <PageCard title="Numericals Based on Principle of Equivalence">
-          <div className="space-y-4 rounded-2xl border border-pink-200 bg-pink-50 p-4">
+          <div className="space-y-4 rounded-2xl border border-rose-500/20 bg-rose-950/20 text-rose-200 p-4">
             <PinkQuestion>
               Q. How many gm Na<sub>2</sub>S<sub>2</sub>O<sub>3</sub> is needed
               for complete reduction of 0.02 mole I<sub>2</sub>?
@@ -362,7 +362,7 @@ export default function EquivalentConceptPart6() {
             </FormulaBox>
           </div>
 
-          <div className="space-y-4 rounded-2xl border border-blue-200 bg-blue-50 p-4">
+          <div className="space-y-4 rounded-2xl border border-blue-500/20 bg-blue-950/20 text-blue-200 p-4">
             <PinkQuestion>
               Q. What volume of O<sub>2</sub> gas is needed at 0°C, 1 atm for
               complete combustion of 4 gm CH<sub>4</sub>?
@@ -385,7 +385,7 @@ export default function EquivalentConceptPart6() {
             </FormulaBox>
           </div>
 
-          <div className="space-y-4 rounded-2xl border border-amber-200 bg-amber-50 p-4">
+          <div className="space-y-4 rounded-2xl border border-amber-500/20 bg-amber-950/20 text-amber-200 p-4">
             <PinkQuestion>
               Q. How many gm KClO<sub>3</sub> should be decomposed completely to
               give 2.27 L O<sub>2</sub> gas at STP?

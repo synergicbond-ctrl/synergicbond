@@ -150,7 +150,7 @@ export default function EquivalentConceptPart1() {
 
         <PageCard title="Numerical Questions on Equivalent Weight">
           <div className="space-y-5">
-            <div className="rounded-2xl border border-pink-200 bg-pink-50 p-4">
+            <div className="rounded-2xl border border-rose-500/20 bg-rose-950/20 text-rose-200 p-4">
               <h3 className="font-bold text-pink-700">
                 Q. A metal oxide contains 40% oxygen by wt. Calculate the
                 equivalent weight of metal.
@@ -173,7 +173,7 @@ export default function EquivalentConceptPart1() {
               </div>
             </div>
 
-            <div className="rounded-2xl border border-pink-200 bg-pink-50 p-4">
+            <div className="rounded-2xl border border-rose-500/20 bg-rose-950/20 text-rose-200 p-4">
               <h3 className="font-bold text-pink-700">
                 Q. The equivalent weight of a metal is 20. Calculate the mass
                 percent of hydrogen in its hydride.
@@ -189,7 +189,7 @@ export default function EquivalentConceptPart1() {
               </div>
             </div>
 
-            <div className="rounded-2xl border border-pink-200 bg-pink-50 p-4">
+            <div className="rounded-2xl border border-rose-500/20 bg-rose-950/20 text-rose-200 p-4">
               <h3 className="font-bold text-pink-700">
                 Q. 5.6 L Cl<sub>2</sub> gas at 0°C and 1 atm is treated with
                 excess of a metal, by which 31.75 gm metal chloride is formed.

@@ -70,7 +70,7 @@ export default function TitrationPart2() {
             </RuleBox>
           </div>
 
-          <div className="space-y-4 rounded-2xl border border-blue-200 bg-blue-50 p-4">
+          <div className="space-y-4 rounded-2xl border border-blue-500/20 bg-blue-950/20 text-blue-200 p-4">
             <h4 className="font-bold text-blue-900">
               (ii) Na<sub>2</sub>CO<sub>3</sub> as solute
             </h4>
@@ -99,7 +99,7 @@ export default function TitrationPart2() {
             </RuleBox>
           </div>
 
-          <div className="space-y-4 rounded-2xl border border-purple-200 bg-purple-50 p-4">
+          <div className="space-y-4 rounded-2xl border border-violet-500/20 bg-violet-950/20 text-violet-200 p-4">
             <h4 className="font-bold text-purple-900">
               (iii) Solute of higher molar mass is preferred.
             </h4>
@@ -131,7 +131,7 @@ export default function TitrationPart2() {
         </PageCard>
 
         <PageCard title="Examples of Primary Standards, End Point, Equivalent Point and Indicator">
-          <div className="space-y-4 rounded-2xl border border-pink-200 bg-pink-50 p-4">
+          <div className="space-y-4 rounded-2xl border border-rose-500/20 bg-rose-950/20 text-rose-200 p-4">
             <h3 className="text-xl font-black text-pink-700 underline">
               Acid:
             </h3>
@@ -157,7 +157,7 @@ export default function TitrationPart2() {
             </DiagramBox>
           </div>
 
-          <div className="space-y-4 rounded-2xl border border-blue-200 bg-blue-50 p-4">
+          <div className="space-y-4 rounded-2xl border border-blue-500/20 bg-blue-950/20 text-blue-200 p-4">
             <h3 className="text-xl font-black text-blue-700 underline">
               Base:
             </h3>
@@ -168,7 +168,7 @@ export default function TitrationPart2() {
             </WorkingLine>
           </div>
 
-          <div className="space-y-4 rounded-2xl border border-orange-200 bg-orange-50 p-4">
+          <div className="space-y-4 rounded-2xl border border-amber-500/20 bg-amber-950/20 text-amber-200 p-4">
             <h3 className="text-xl font-black text-orange-700 underline">
               Oxidising agent:
             </h3>
@@ -242,7 +242,7 @@ export default function TitrationPart2() {
         </PageCard>
 
         <PageCard title="Perfect Indicator and Types of Titration">
-          <div className="rounded-2xl border border-blue-200 bg-blue-50 p-4">
+          <div className="rounded-2xl border border-blue-500/20 bg-blue-950/20 text-blue-200 p-4">
             <p>
               A perfect indicator makes end point and equivalent point identical.
               Sudden change in colour of sol<sup>n</sup> occur exactly at that
@@ -254,7 +254,7 @@ export default function TitrationPart2() {
             Types of titration:
           </h3>
 
-          <div className="space-y-4 rounded-2xl border border-pink-200 bg-pink-50 p-4">
+          <div className="space-y-4 rounded-2xl border border-rose-500/20 bg-rose-950/20 text-rose-200 p-4">
             <h4 className="text-lg font-black text-pink-700">
               1. Acid - Base Titration
             </h4>
@@ -278,7 +278,7 @@ export default function TitrationPart2() {
             </div>
           </div>
 
-          <div className="space-y-4 rounded-2xl border border-purple-200 bg-purple-50 p-4">
+          <div className="space-y-4 rounded-2xl border border-violet-500/20 bg-violet-950/20 text-violet-200 p-4">
             <h4 className="text-lg font-black text-purple-700">
               2. Redox titration
             </h4>
@@ -313,7 +313,7 @@ export default function TitrationPart2() {
             </div>
           </div>
 
-          <div className="space-y-4 rounded-2xl border border-amber-200 bg-amber-50 p-4">
+          <div className="space-y-4 rounded-2xl border border-amber-500/20 bg-amber-950/20 text-amber-200 p-4">
             <h4 className="text-lg font-black text-amber-800">
               3. Precipitation Titration:
             </h4>

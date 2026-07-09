@@ -140,7 +140,7 @@ export default function TitrationPart7() {
             </FormulaBox>
           </div>
 
-          <div className="space-y-4 rounded-2xl border border-blue-200 bg-blue-50 p-4">
+          <div className="space-y-4 rounded-2xl border border-blue-500/20 bg-blue-950/20 text-blue-200 p-4">
             <h3 className="font-black text-blue-800 underline">
               P.H.:
             </h3>
@@ -171,7 +171,7 @@ export default function TitrationPart7() {
         </PageCard>
 
         <PageCard title="Hardness from pH after Acidic Resin and Lime Softening">
-          <div className="space-y-4 rounded-2xl border border-pink-200 bg-pink-50 p-4">
+          <div className="space-y-4 rounded-2xl border border-rose-500/20 bg-rose-950/20 text-rose-200 p-4">
             <QuestionBox>
               Q. 100 L water sample containing only Ca<sup>2+</sup> and Mg
               <sup>2+</sup> ions as cations is passed through acidic resin. If
@@ -211,7 +211,7 @@ export default function TitrationPart7() {
             </FormulaBox>
           </div>
 
-          <div className="mt-6 space-y-4 rounded-2xl border border-purple-200 bg-purple-50 p-4">
+          <div className="mt-6 space-y-4 rounded-2xl border border-violet-500/20 bg-violet-950/20 text-violet-200 p-4">
             <QuestionBox>
               Q. 5 kg of a hard water sample contains 324 gm Ca(HCO
               <sub>3</sub>)<sub>2</sub> and 365 gm Mg(HCO<sub>3</sub>)

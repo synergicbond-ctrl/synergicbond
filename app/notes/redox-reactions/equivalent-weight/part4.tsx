@@ -37,7 +37,7 @@ export default function EquivalentConceptPart4() {
             <br />= <b>51.67</b>
           </WorkingLine>
 
-          <div className="space-y-4 rounded-2xl border border-blue-200 bg-blue-50 p-4">
+          <div className="space-y-4 rounded-2xl border border-blue-500/20 bg-blue-950/20 text-blue-200 p-4">
             <h3 className="font-bold text-blue-800">
               For Na₂CO₃ · 10H₂O
             </h3>
@@ -67,7 +67,7 @@ export default function EquivalentConceptPart4() {
             </WorkingLine>
           </div>
 
-          <div className="space-y-4 rounded-2xl border border-pink-200 bg-pink-50 p-4">
+          <div className="space-y-4 rounded-2xl border border-rose-500/20 bg-rose-950/20 text-rose-200 p-4">
             <h3 className="font-bold text-pink-800">
               For FeSO₄ · 7H₂O
             </h3>
@@ -85,7 +85,7 @@ export default function EquivalentConceptPart4() {
             </WorkingLine>
           </div>
 
-          <div className="space-y-4 rounded-2xl border border-purple-200 bg-purple-50 p-4">
+          <div className="space-y-4 rounded-2xl border border-violet-500/20 bg-violet-950/20 text-violet-200 p-4">
             <h3 className="font-bold text-purple-800">
               For Al₂(SO₄)₃ · 12H₂O
             </h3>
@@ -103,7 +103,7 @@ export default function EquivalentConceptPart4() {
             </WorkingLine>
           </div>
 
-          <div className="space-y-4 rounded-2xl border border-amber-200 bg-amber-50 p-4">
+          <div className="space-y-4 rounded-2xl border border-amber-500/20 bg-amber-950/20 text-amber-200 p-4">
             <h3 className="font-bold text-amber-800">
               For FeCl₃ · 6H₂O
             </h3>
@@ -194,7 +194,7 @@ export default function EquivalentConceptPart4() {
         </PageCard>
 
         <PageCard title="n-Factor in Redox Changes">
-          <div className="space-y-4 rounded-2xl border border-blue-200 bg-blue-50 p-4">
+          <div className="space-y-4 rounded-2xl border border-blue-500/20 bg-blue-950/20 text-blue-200 p-4">
             <h3 className="font-bold text-blue-800">
               FeO → Fe₂O₃
             </h3>
@@ -214,7 +214,7 @@ export default function EquivalentConceptPart4() {
             </WorkingLine>
           </div>
 
-          <div className="space-y-4 rounded-2xl border border-red-200 bg-red-50 p-4">
+          <div className="space-y-4 rounded-2xl border border-red-500/20 bg-red-950/20 text-red-200 p-4">
             <h3 className="font-bold text-red-800">
               Fe₃O₄ → Fe₂O₃
             </h3>
@@ -274,7 +274,7 @@ export default function EquivalentConceptPart4() {
             </WorkingLine>
           </div>
 
-          <div className="space-y-4 rounded-2xl border border-orange-200 bg-orange-50 p-4">
+          <div className="space-y-4 rounded-2xl border border-amber-500/20 bg-amber-950/20 text-amber-200 p-4">
             <h3 className="font-bold text-orange-800">
               MnO₂ → Mn₃O₄
             </h3>
@@ -302,7 +302,7 @@ export default function EquivalentConceptPart4() {
             </WorkingLine>
           </div>
 
-          <div className="space-y-4 rounded-2xl border border-pink-200 bg-pink-50 p-4">
+          <div className="space-y-4 rounded-2xl border border-rose-500/20 bg-rose-950/20 text-rose-200 p-4">
             <h3 className="font-bold text-pink-800">
               C₃H₈ → CO₂
             </h3>
@@ -332,7 +332,7 @@ export default function EquivalentConceptPart4() {
         </PageCard>
 
         <PageCard title="Redox Equivalent Weight — More Cases">
-          <div className="space-y-4 rounded-2xl border border-orange-200 bg-orange-50 p-4">
+          <div className="space-y-4 rounded-2xl border border-amber-500/20 bg-amber-950/20 text-amber-200 p-4">
             <h3 className="font-bold text-orange-800">
               S₂O₃²⁻ → S₄O₆²⁻
             </h3>
@@ -360,7 +360,7 @@ export default function EquivalentConceptPart4() {
             </WorkingLine>
           </div>
 
-          <div className="space-y-4 rounded-2xl border border-blue-200 bg-blue-50 p-4">
+          <div className="space-y-4 rounded-2xl border border-blue-500/20 bg-blue-950/20 text-blue-200 p-4">
             <h3 className="font-bold text-blue-800">
               KMnO₄ as O.A.
             </h3>
@@ -392,7 +392,7 @@ export default function EquivalentConceptPart4() {
             </div>
           </div>
 
-          <div className="space-y-4 rounded-2xl border border-purple-200 bg-purple-50 p-4">
+          <div className="space-y-4 rounded-2xl border border-violet-500/20 bg-violet-950/20 text-violet-200 p-4">
             <h3 className="font-bold text-purple-800">
               K₂Cr₂O₇ as O.A.
             </h3>
@@ -434,7 +434,7 @@ export default function EquivalentConceptPart4() {
             </FormulaBox>
           </div>
 
-          <div className="space-y-4 rounded-2xl border border-amber-200 bg-amber-50 p-4">
+          <div className="space-y-4 rounded-2xl border border-amber-500/20 bg-amber-950/20 text-amber-200 p-4">
             <h3 className="font-bold text-amber-800">
               O₃ as O.A.
             </h3>

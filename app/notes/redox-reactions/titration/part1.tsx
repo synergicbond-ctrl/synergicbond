@@ -31,7 +31,7 @@ export default function TitrationPart1() {
   return (
     <div className="space-y-6 sm:space-y-8">
 <PageCard title="Titration — Volumetric Analysis">
-          <div className="rounded-2xl border border-blue-200 bg-blue-50 p-4">
+          <div className="rounded-2xl border border-blue-500/20 bg-blue-950/20 text-blue-200 p-4">
             <h3 className="mb-2 text-lg font-bold text-blue-800 underline">
               Titration:
             </h3>
@@ -158,7 +158,7 @@ export default function TitrationPart1() {
             </DiagramBox>
           </div>
 
-          <div className="rounded-2xl border border-pink-200 bg-pink-50 p-4">
+          <div className="rounded-2xl border border-rose-500/20 bg-rose-950/20 text-rose-200 p-4">
             <h3 className="mb-3 text-lg font-bold text-pink-700">
               Conical flask contents
             </h3>

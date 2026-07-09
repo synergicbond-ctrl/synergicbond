@@ -31,7 +31,7 @@ export default function EquivalentConceptPart8() {
   return (
     <div className="space-y-6 sm:space-y-8">
 <PageCard title="Equivalent Concept — Final Practice Questions">
-          <div className="space-y-4 rounded-2xl border border-pink-200 bg-pink-50 p-4">
+          <div className="space-y-4 rounded-2xl border border-rose-500/20 bg-rose-950/20 text-rose-200 p-4">
             <QuestionBox>
               Q. A metal oxide contains 40% oxygen, by weight. Calculate the
               equivalent weight of metal.
@@ -50,7 +50,7 @@ export default function EquivalentConceptPart8() {
             </FormulaBox>
           </div>
 
-          <div className="space-y-4 rounded-2xl border border-blue-200 bg-blue-50 p-4">
+          <div className="space-y-4 rounded-2xl border border-blue-500/20 bg-blue-950/20 text-blue-200 p-4">
             <QuestionBox>
               Q. 4.2 gm of a metal carbonate gives 2.0 gm metal oxide on
               complete decomposition. Calculate the equivalent weight of metal.
@@ -77,7 +77,7 @@ export default function EquivalentConceptPart8() {
             </FormulaBox>
           </div>
 
-          <div className="space-y-4 rounded-2xl border border-purple-200 bg-purple-50 p-4">
+          <div className="space-y-4 rounded-2xl border border-violet-500/20 bg-violet-950/20 text-violet-200 p-4">
             <QuestionBox>
               Q. When 2.70 gm MCl₂ · 6H₂O(s) is reacted with excess of H₂SO₄,
               1.80 gm MSO₄(s) is formed. Calculate equivalent weight of metal,
@@ -113,7 +113,7 @@ export default function EquivalentConceptPart8() {
         </PageCard>
 
         <PageCard title="Multi-Product Redox Equivalence Correction">
-          <div className="space-y-4 rounded-2xl border border-amber-200 bg-amber-50 p-4">
+          <div className="space-y-4 rounded-2xl border border-amber-500/20 bg-amber-950/20 text-amber-200 p-4">
             <ReactionBox>
               3MnO₄⁻ + 5FeC₂O₄ + 24H⁺ → 3Mn²⁺ + 5Fe³⁺ + 10CO₂ + 12H₂O
             </ReactionBox>
@@ -141,7 +141,7 @@ export default function EquivalentConceptPart8() {
             </FormulaBox>
           </div>
 
-          <div className="space-y-4 rounded-2xl border border-blue-200 bg-blue-50 p-4">
+          <div className="space-y-4 rounded-2xl border border-blue-500/20 bg-blue-950/20 text-blue-200 p-4">
             <h3 className="font-bold text-blue-800">
               If 10 moles MnO₄⁻ are taken:
             </h3>
@@ -177,7 +177,7 @@ export default function EquivalentConceptPart8() {
             </FormulaBox>
           </div>
 
-          <div className="space-y-4 rounded-2xl border border-orange-200 bg-orange-50 p-4">
+          <div className="space-y-4 rounded-2xl border border-amber-500/20 bg-amber-950/20 text-amber-200 p-4">
             <h3 className="font-bold text-orange-800">
               Equivalent split method:
             </h3>

@@ -31,7 +31,7 @@ export default function TitrationPart4() {
   return (
     <div className="space-y-6 sm:space-y-8">
 <PageCard title="Mixed Oxalate Compound — KMnO₄ and NaOH Titration">
-          <div className="space-y-4 rounded-2xl border border-purple-200 bg-purple-50 p-4">
+          <div className="space-y-4 rounded-2xl border border-violet-500/20 bg-violet-950/20 text-violet-200 p-4">
             <h3 className="font-bold text-purple-900">
               Continuation of previous question:
             </h3>
@@ -91,7 +91,7 @@ export default function TitrationPart4() {
             </FormulaBox>
           </div>
 
-          <div className="mt-6 space-y-4 rounded-2xl border border-pink-200 bg-pink-50 p-4">
+          <div className="mt-6 space-y-4 rounded-2xl border border-rose-500/20 bg-rose-950/20 text-rose-200 p-4">
             <QuestionBox>
               Q. 40 ml of 1.5 M H<sub>2</sub>SO<sub>4</sub> sol<sup>n</sup> is
               diluted to 200 ml. 25 ml of diluted sol<sup>n</sup> exactly require
@@ -127,7 +127,7 @@ export default function TitrationPart4() {
         </PageCard>
 
         <PageCard title="Dilution Problem and Original KMnO₄ Molarity Question">
-          <div className="space-y-4 rounded-2xl border border-blue-200 bg-blue-50 p-4">
+          <div className="space-y-4 rounded-2xl border border-blue-500/20 bg-blue-950/20 text-blue-200 p-4">
             <h3 className="font-bold text-blue-900">
               Solution of H<sub>2</sub>SO<sub>4</sub> dilution problem
             </h3>
@@ -199,7 +199,7 @@ export default function TitrationPart4() {
             </FormulaBox>
           </div>
 
-          <div className="mt-6 space-y-4 rounded-2xl border border-pink-200 bg-pink-50 p-4">
+          <div className="mt-6 space-y-4 rounded-2xl border border-rose-500/20 bg-rose-950/20 text-rose-200 p-4">
             <QuestionBox>
               Q. 20 ml of KMnO<sub>4</sub> sol<sup>n</sup> is diluted to 500 ml.
               30 ml of diluted sol<sup>n</sup> exactly requires 15 ml of M / 50 —
@@ -213,7 +213,7 @@ export default function TitrationPart4() {
         </PageCard>
 
         <PageCard title="KMnO₄–H₂O₂ Dilution, Mixed Acid-Base and Metal Equivalent Weight">
-          <div className="space-y-4 rounded-2xl border border-purple-200 bg-purple-50 p-4">
+          <div className="space-y-4 rounded-2xl border border-violet-500/20 bg-violet-950/20 text-violet-200 p-4">
             <h3 className="font-bold text-purple-900">
               Solution of original KMnO<sub>4</sub> molarity question
             </h3>
@@ -236,7 +236,7 @@ export default function TitrationPart4() {
             </FormulaBox>
           </div>
 
-          <div className="mt-6 space-y-4 rounded-2xl border border-blue-200 bg-blue-50 p-4">
+          <div className="mt-6 space-y-4 rounded-2xl border border-blue-500/20 bg-blue-950/20 text-blue-200 p-4">
             <QuestionBox>
               Q. 20 ml of 0.8 M H<sub>2</sub>SO<sub>4</sub> sol<sup>n</sup> is
               mixed with 40 ml of 0.4 M NaOH sol<sup>n</sup>. What volume of 0.6
@@ -259,7 +259,7 @@ export default function TitrationPart4() {
             </FormulaBox>
           </div>
 
-          <div className="mt-6 space-y-4 rounded-2xl border border-red-200 bg-red-50 p-4">
+          <div className="mt-6 space-y-4 rounded-2xl border border-red-500/20 bg-red-950/20 text-red-200 p-4">
             <QuestionBox>
               Q. 0.4 gm of a metal reacts completely with 50 ml of 0.5 M HCl sol
               <sup>n</sup>. If the excess acid requires 20 ml of 0.3 M NaOH sol

@@ -123,7 +123,7 @@ export default function EquivalentConceptPart3() {
             </WorkingLine>
           </div>
 
-          <div className="space-y-3 rounded-2xl border border-blue-200 bg-blue-50 p-4">
+          <div className="space-y-3 rounded-2xl border border-blue-500/20 bg-blue-950/20 text-blue-200 p-4">
             <FormulaBox>
               Na₂O + H₂O → 2NaOH → 2Na⁺ + 2OH⁻
             </FormulaBox>
@@ -225,7 +225,7 @@ export default function EquivalentConceptPart3() {
             Eq. wt. of salt:
           </h3>
 
-          <div className="rounded-2xl border border-blue-200 bg-blue-50 p-4">
+          <div className="rounded-2xl border border-blue-500/20 bg-blue-950/20 text-blue-200 p-4">
             <WorkingLine>
               CaCl₂
               <br />

@@ -12,6 +12,11 @@ import AiTutorBox from "@/components/AiTutorBox";
 import QuizAndFeedback from "@/components/QuizAndFeedback";
 import VisionUploader from "@/components/VisionUploader";
 import StudySessionTracker from "@/components/StudySessionTracker";
+import HeroBlueprint from "@/components/HeroBlueprint";
+import MatterClassificationTree from "@/components/MatterClassificationTree";
+import ParticleSizeSpectrum from "@/components/ParticleSizeSpectrum";
+import PhysicalVsChemicalComparison from "@/components/PhysicalVsChemicalComparison";
+import SigFigDecisionCards from "@/components/SigFigDecisionCards";
 import { createClient } from "@/lib/supabase/server";
 import { isProActive } from "@/lib/subscription";
 import { isFreeChapter } from "@/lib/freeChapters";
@@ -95,10 +100,28 @@ export default async function ChapterPage({ params }: PageProps) {
         </div>
       </header>
 
+      {chapter.id === "mole-concept" && (
+        <div className="space-y-12 mb-12">
+          <HeroBlueprint
+            title="Topic 01: Matter Classification"
+            subtitle="Explore the hierarchy of matter — from elements to mixtures. Master the distinctions that define chemistry."
+            height="md"
+          />
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <MatterClassificationTree />
+            <ParticleSizeSpectrum />
+          </div>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <PhysicalVsChemicalComparison />
+            <SigFigDecisionCards />
+          </div>
+        </div>
+      )}
+
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
-        
+
         <div className="lg:col-span-2 space-y-10">
-          
+
           <section className="p-6 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800 bg-white dark:bg-slate-900">
             <h2 className="text-2xl font-bold mb-4">Core Concepts</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">

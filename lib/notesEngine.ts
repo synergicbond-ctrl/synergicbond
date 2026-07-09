@@ -97,7 +97,7 @@ export type NoteSectionKey = (typeof NOTE_SECTIONS)[number]["key"];
 
 const MOLE_CONCEPT: NotesChapter = {
   id: "mole-concept",
-  title: "Mole Concept",
+  title: "Some Basic Concepts of Chemistry",
   category: "physical",
   exams: ["neet", "jeeMain", "jeeAdvanced"],
   tagline: "The counting unit of chemistry — moles, stoichiometry & concentration.",
@@ -253,6 +253,121 @@ const MOLE_CONCEPT: NotesChapter = {
     { label: "Formula Vault", href: "/vault/formulas", note: "All mole-concept formula cards" },
     { label: "Concept Vault", href: "/vault/concepts", note: "Core definitions" },
     { label: "PYQ Intelligence", href: "/pyq", note: "Trend & frequency analytics" },
+  ],
+};
+
+// ═════════════════════════════════════════════════════════════════════════════
+// CHAPTER 2 — REDOX REACTIONS
+// ═════════════════════════════════════════════════════════════════════════════
+
+const REDOX_REACTIONS: NotesChapter = {
+  id: "redox-reactions",
+  title: "Redox Reactions",
+  category: "physical",
+  exams: ["neet", "jeeMain", "jeeAdvanced"],
+  tagline: "Electron transfer dynamics, equivalent weight determination, and volumetric titration analysis.",
+  syllabus: [
+    "Concept of oxidation and reduction, oxidation number determination, balancing redox equations.",
+    "Equivalent weight concepts, n-factor calculation for elements, oxides, acids, bases, salts, and redox changes.",
+    "Volumetric analysis and titration: primary standards, apparatus, indicators, end point vs equivalent point.",
+    "Acid-base titration, redox titration (permanganatometry, dichromatometry, iodimetry, iodometry), back titration.",
+  ],
+  subtopics: [
+    "Equivalent Weight & n-Factor",
+    "Titration & Volumetric Analysis",
+  ],
+  detailedNotes: [
+    {
+      heading: "1. Equivalent Concept & n-Factor",
+      points: [
+        "Fundamental Rule: The number of g-equivalents (neq = W / E) of each reactant reacted must be equal, and equal number of g-equivalents of each product is formed: W1/E1 = W2/E2.",
+        "Equivalent Weight (E) = Molecular Weight (M) / n-factor. The n-factor depends strictly on the chemical nature and transformation of the substance.",
+        "Elements: Grams of element combining with or displacing 1 g H, 8 g O, or 35.5 g Cl.",
+        "Oxides (M2Ov): E = Atomic Weight / Valency.",
+        "Acids & Bases: E_acid = M / Basicity (replaceable H+); E_base = M / Acidity (replaceable OH- or H+ combined). Note special cases: H3BO3 is a monobasic Lewis acid (n-factor = 1).",
+        "Salts & Hydrated Salts: E_salt = M / (Total positive or negative charge transferred). For hydrated salts like Na2CO3·10H2O or FeSO4·7H2O, water contribution is included.",
+        "Redox Agents: E = M / (Total electrons gained/lost per molecule or total change in oxidation number).",
+      ],
+    },
+    {
+      heading: "2. Volumetric Analysis (Titration)",
+      points: [
+        "Titration determines the concentration of an unknown solution using a standard solution (known concentration) through rapid and quantitative reaction.",
+        "Primary Standards: Extremely pure, non-hygroscopic, stable in air, and preferably high molar mass to minimize weighing errors (e.g., Oxalic acid H2C2O4·2H2O, Na2CO3, K2Cr2O7).",
+        "Apparatus & Terms: Burette (delivers variable volume of standard solution), Pipette (delivers fixed volume of unknown), Titre value (concordant/consecutive identical readings, never averaged).",
+        "End Point vs Equivalent Point: Equivalent point is where stoichiometric completion occurs; End point is where the indicator changes color. A perfect indicator makes both identical.",
+        "Titration Types: Acidimetry/Alkalimetry (acid-base), Permanganatometry/Dichromatometry/Iodimetry/Iodometry (redox), Precipitation titration, and Back titration (excess standard reagent back-titrated).",
+      ],
+    },
+  ],
+  shortNotes: [
+    "Fundamental Equation: W1 / E1 = W2 / E2 or V1N1 = V2N2.",
+    "Equivalent Weight E = M / n-factor.",
+    "Special Basicity: H3PO4 (3), H3PO3 (2), H3PO2 (1), H3BO3 (1, Lewis acid).",
+    "Redox n-factors: KMnO4 in acidic (5), neutral/weakly basic (3), strongly basic (1); K2Cr2O7 in acidic (6); Oxalate C2O4(2-) -> CO2 (2); Hypo S2O3(2-) -> S4O6(2-) (1).",
+    "Primary standards: Oxalic acid, Na2CO3, K2Cr2O7. Secondary standards: NaOH, KMnO4.",
+  ],
+  revisionNotes: [
+    "In multi-step or mixture titrations, equate total gram equivalents of oxidizers/acids to total gram equivalents of reducers/bases.",
+    "For back titration: neq of reagent taken = neq reacted with sample + neq back-titrated.",
+  ],
+  formulaLinks: [
+    { label: "Equivalent Weight & Redox Formulas", href: "/notes/redox-reactions/equivalent-weight", note: "n-factor table and W1/E1 = W2/E2 derivations" },
+    { label: "Volumetric Titration Equations", href: "/notes/redox-reactions/titration", note: "Normality, molarity & back-titration formulas" },
+  ],
+  pyqLinks: [
+    { label: "Redox Reactions PYQs", href: "/pyq", note: "Equivalent concept and titration past exam questions" },
+  ],
+  tests: [
+    { label: "Equivalent Weight Mastery Test", questions: 15, status: "coming-soon" },
+    { label: "Volumetric Titration Test", questions: 15, status: "coming-soon" },
+  ],
+  ncertHighlights: [
+    "NCERT Class 11 Unit 8: Oxidation-reduction reactions, oxidation number concept, and redox titrations using KMnO4 and K2Cr2O7.",
+  ],
+  commonMistakes: [
+    "Taking the average of burette readings instead of concordant (three identical consecutive) titre values.",
+    "Using n-factor = 3 for H3PO3 (actual is 2) or n-factor = 3 for H3BO3 (actual is 1).",
+    "Confusing Iodimetry (direct titration using I2 solution) with Iodometry (indirect titration of liberated I2 using hypo).",
+  ],
+  solvedExamples: [
+    {
+      q: "A metal oxide contains 40% oxygen by weight. Calculate the equivalent weight of the metal.",
+      steps: [
+        "Let total mass of metal oxide = 100 g. Mass of oxygen = 40 g, Mass of metal = 60 g.",
+        "By definition of equivalent weight, E_metal is the mass of metal combining with 8 g of oxygen.",
+        "If 40 g oxygen combines with 60 g metal, then 8 g oxygen combines with (60 / 40) × 8 = 12 g metal.",
+      ],
+      answer: "Equivalent weight E_metal = 12",
+      tag: "jeeMain",
+    },
+    {
+      q: "What volume of 0.4 N KMnO4 solution is needed for titration with 20 ml of 0.25 N HCl solution in acidic medium?",
+      steps: [
+        "In a complete redox titration: neq(KMnO4) = neq(HCl).",
+        "V(KMnO4) × N1 = V(HCl) × N2",
+        "V × 0.4 = 20 × 0.25",
+        "V = 5.0 / 0.4 = 12.5 ml",
+      ],
+      answer: "Volume required = 12.5 ml",
+      tag: "jeeAdvanced",
+    },
+  ],
+  derivations: [
+    {
+      title: "Derivation of Equivalent Weight from Oxide Composition",
+      steps: [
+        "Let element M form an oxide with formula M2Ov where v is the valency of M and atomic weight is A.",
+        "Molecular weight of M2Ov = 2A + 16v.",
+        "Thus, 16v grams of oxygen combine with 2A grams of M.",
+        "Mass of M combining with 8 grams of oxygen = (2A / 16v) × 8 = A / v.",
+      ],
+      result: "Equivalent Weight E = Atomic Weight / Valency",
+    },
+  ],
+  learnLinks: [
+    { label: "Equivalent Weight Lesson", href: "/notes/redox-reactions/equivalent-weight", note: "Comprehensive n-factor analysis" },
+    { label: "Titration Lesson", href: "/notes/redox-reactions/titration", note: "Volumetric analysis and calculations" },
   ],
 };
 
@@ -574,12 +689,140 @@ const GENERAL_ORGANIC_CHEMISTRY: NotesChapter = {
   ],
 };
 
+// ═════════════════════════════════════════════════════════════════════════════
+// CHAPTER 5 — ELECTROCHEMISTRY
+// ═════════════════════════════════════════════════════════════════════════════
+
+const ELECTROCHEMISTRY: NotesChapter = {
+  id: "electrochemistry",
+  title: "Electrochemistry",
+  category: "physical",
+  exams: ["neet", "jeeMain", "jeeAdvanced"],
+  tagline: "Electrolytic and galvanic cells, Nernst equation, conductance and Kohlrausch's law.",
+  syllabus: [
+    "Electrochemical cells; standard electrode potentials; SHE and electrochemical series.",
+    "Nernst equation and its applications to chemical cells; relationship between EMF and Gibbs free energy change.",
+    "Conductance in electrolytic solutions, specific and molar conductivity variations with concentration; Kohlrausch's law.",
+    "Electrolysis and Faraday's laws of electrolysis.",
+    "Batteries: primary and secondary cells, fuel cells, and corrosion mechanisms.",
+  ],
+  subtopics: [
+    "Galvanic Cells & Electrode Potentials",
+    "Nernst Equation & Thermodynamics",
+    "Conductance & Kohlrausch's Law",
+    "Faraday's Laws of Electrolysis",
+    "Commercial Cells & Corrosion",
+  ],
+  detailedNotes: [
+    {
+      heading: "Galvanic Cells & Standard Electrode Potentials",
+      points: [
+        "Standard Hydrogen Electrode (SHE) is assigned zero potential at all temperatures (E° = 0.00 V).",
+        "Anode undergoes oxidation (left cell) while cathode undergoes reduction (right cell). Salt bridge maintains neutrality and prevents liquid junction potential.",
+        "E°_cell = E°_cathode - E°_anode (both expressed as standard reduction potentials according to IUPAC convention).",
+      ],
+    },
+    {
+      heading: "Nernst Equation & Thermodynamic Relationships",
+      points: [
+        "Nernst Equation at 298 K: E_cell = E°_cell - (0.0591 / n) log_10 Q, where Q = [Products] / [Reactants].",
+        "Gibbs Free Energy & Equilibrium Constant: ΔG° = -n F E°_cell = -2.303 R T log_10 K_c.",
+        "If E_cell > 0, ΔG < 0 (spontaneous cell reaction); if E_cell = 0, the cell has reached equilibrium.",
+      ],
+    },
+    {
+      heading: "Electrolytic Conductance & Kohlrausch's Law",
+      points: [
+        "Molar Conductivity (Λ_m): Λ_m = (κ × 1000) / Molarity (in S cm² mol⁻¹), where κ is specific conductivity.",
+        "With dilution, specific conductivity κ decreases (fewer ions per unit volume) but molar conductivity Λ_m increases.",
+        "Kohlrausch's Law of Independent Migration of Ions: Λ°_m(A_x B_y) = x λ°(A⁺⁺) + y λ°(B⁻⁻) at infinite dilution.",
+      ],
+    },
+    {
+      heading: "Faraday's Laws of Quantitative Electrolysis",
+      points: [
+        "Faraday's First Law: Mass deposited w = Z × I × t = (Equivalent weight × I × t) / 96500.",
+        "Faraday's Second Law: When the same quantity of electricity passes through different electrolytes in series, masses deposited are proportional to their chemical equivalent weights (w₁/w₂ = E₁/E₂).",
+        "1 Faraday ≈ 96500 C, which equals the charge carried by exactly 1 mole of electrons.",
+      ],
+    },
+  ],
+  shortNotes: [
+    "E°_cell = E°_cathode - E°_anode (both as reduction potentials).",
+    "If E_cell > 0, ΔG < 0 (spontaneous galvanic reaction); if E_cell < 0, non-spontaneous (electrolytic).",
+    "Conductivity (κ) decreases with dilution, but Molar Conductivity (Λ_m) increases with dilution.",
+    "1 Faraday (F) ≈ 96500 C = charge on 1 mole of electrons.",
+  ],
+  ncertHighlights: [
+    "NCERT Class 12 Unit 2: Electrochemistry covers electrochemical cells, galvanic vs electrolytic distinction, Nernst equation, and Kohlrausch's law.",
+  ],
+  solvedExamples: [
+    {
+      q: "Calculate E°_cell and ΔG° for the reaction: Zn(s) + Cu²⁺(aq) → Zn²⁺(aq) + Cu(s), given E°(Zn²⁺/Zn) = -0.76 V and E°(Cu²⁺/Cu) = +0.34 V.",
+      steps: [
+        "E°_cell = E°_cathode - E°_anode = +0.34 - (-0.76) = 1.10 V.",
+        "Number of electrons transferred (n) = 2.",
+        "ΔG° = -n F E°_cell = -2 × 96500 C × 1.10 V = -212300 J mol⁻¹ = -212.3 kJ mol⁻¹.",
+      ],
+      answer: "E°_cell = 1.10 V and ΔG° = -212.3 kJ mol⁻¹.",
+      tag: "jeeMain",
+    },
+    {
+      q: "A current of 1.5 A is passed through CuSO₄ solution for 20 minutes. Calculate the mass of copper deposited at the cathode (Atomic weight of Cu = 63.5 g/mol).",
+      steps: [
+        "Quantity of charge Q = I × t = 1.5 A × (20 × 60 s) = 1800 C.",
+        "Cu²⁺ + 2e⁻ → Cu (n = 2, Equivalent weight E = 63.5 / 2 = 31.75 g/eq).",
+        "Mass deposited w = (E × Q) / 96500 = (31.75 × 1800) / 96500 ≈ 0.592 g.",
+      ],
+      answer: "0.592 g of Cu.",
+      tag: "neet",
+    },
+  ],
+  derivations: [
+    {
+      title: "Derivation of Nernst Equation from Gibbs Free Energy",
+      steps: [
+        "From thermodynamics, the change in Gibbs free energy for any reaction is related to standard Gibbs free energy by: ΔG = ΔG° + R T ln Q.",
+        "Substitute electrical work for free energy: ΔG = -n F E_cell and ΔG° = -n F E°_cell.",
+        "Therefore: -n F E_cell = -n F E°_cell + R T ln Q.",
+        "Divide the entire equation by (-n F): E_cell = E°_cell - (R T / n F) ln Q.",
+        "Converting natural log (ln) to base-10 log (2.303 log_10) at T = 298 K (25°C): E_cell = E°_cell - (0.0591 / n) log_10 Q.",
+      ],
+      result: "E_cell = E°_cell - (0.0591 / n) log_10 Q",
+    },
+  ],
+  commonMistakes: [
+    "Using oxidation potential instead of standard reduction potential when substituting into E°_cathode - E°_anode.",
+    "Forgetting to balance the number of electrons (n) when combining half-cell reactions in the Nernst equation.",
+    "Confusing specific conductivity κ (which decreases with dilution) with molar conductivity Λ_m (which increases with dilution).",
+  ],
+  revisionNotes: [
+    "Always check whether electrode potentials are given as reduction potentials before calculating cell EMF.",
+    "For weak electrolytes like CH3COOH, degree of dissociation α = Λ_m / Λ°_m, and dissociation constant K_a = (C α²) / (1 - α).",
+  ],
+  formulaLinks: [
+    { label: "Nernst Equation & Cell Potentials", href: "/notes/electrochemistry", note: "E° calculation and equilibrium constant derivation" },
+    { label: "Kohlrausch & Electrolysis Formulas", href: "/notes/electrochemistry", note: "Molar conductivity and Faraday law formulas" },
+  ],
+  pyqLinks: [
+    { label: "Electrochemistry PYQs", href: "/pyq", note: "Past JEE and NEET numericals on cells and electrolysis" },
+  ],
+  tests: [
+    { label: "Electrochemistry Mastery Test", questions: 20, status: "coming-soon" },
+  ],
+  learnLinks: [
+    { label: "Electrochemistry Chapter Page", href: "/notes/electrochemistry", note: "Comprehensive notes & solved examples" },
+  ],
+};
+
 // ── Registry & lookups ────────────────────────────────────────────────────────
 
 export const NOTES_CHAPTERS: NotesChapter[] = [
   MOLE_CONCEPT,
+  REDOX_REACTIONS,
   PERIODIC_TABLE,
   GENERAL_ORGANIC_CHEMISTRY,
+  ELECTROCHEMISTRY,
 ];
 
 export function getNotesChapter(id: string): NotesChapter | undefined {

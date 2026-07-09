@@ -1233,161 +1233,7 @@ export const MOLE_CONCEPT_NOTES: PremiumChapterNotes = {
         },
       ],
     },
-    // ═════════════════════════════ TOPIC 9 (was 8) ═════════════════════════════
-    {
-      id: "eudiometry",
-      title: "Eudiometry — Gas Phase Analysis",
-      intro: "A graduated tube, a spark, and Avogadro's law: gas volumes read moles directly, so an explosion plus a few absorbers can crack a molecular formula.",
-      exams: ["JEE Advanced"],
-      subtopics: [
-        {
-          id: "eudiometer",
-          title: "The Eudiometer & the Absorber Table",
-          blocks: [
-            {
-              kind: "detailed",
-              heading: "The protocol and its five governing rules",
-              paras: [
-                "A measured gas mixture over mercury is sparked with excess O₂. Since volume ∝ moles at constant P, T (Gay-Lussac + Avogadro), every combustion coefficient is also a VOLUME ratio. Cooling condenses water (liquid → ~0 volume); the contraction = V(initial gases) + V(O₂) − V(residual). Selective absorbers then read each component off.",
-              ],
-              points: [
-                "① All volumes measured at the SAME P and T (so volume = mole ratio).",
-                "② Amagat's law holds: V(mixture) = V₁ + V₂ + … (partial volumes of non-reacting gases add).",
-                "③ Solids/liquids have negligible volume — H₂O(l) after cooling counts as ZERO (18 mL vs 22 400 mL for the gas, <0.1%).",
-                "④ N₂ is treated as UNREACTIVE — its reaction (N₂ + O₂ → 2NO) needs ~3000 °C, which would shatter the glass tube; noble gases likewise survive combustion AND absorbers, so the leftover is usually N₂.",
-                "⑤ Air is taken as 21% O₂ + 79% N₂ by volume (trace gases lumped into N₂). ΔV arises ONLY from a change in the number of moles of GASEOUS species.",
-              ],
-            },
-            {
-              kind: "visual",
-              title: "Eudiometry — Apparatus & Absorbers",
-              visual: "eudiometry-tube",
-              caption: "The five standard absorbers are non-negotiable memory work: KOH→CO₂, pyrogallol→O₂, turpentine→O₃, ammoniacal Cu₂Cl₂→CO, conc. H₂SO₄/CaCl₂→H₂O.",
-            },
-            {
-              kind: "trick",
-              items: [
-                { trick: "\"KOH Pyro Turps Copper Dry\"", recall: "KOH→CO₂ · pyrogallol→O₂ · turpentine→O₃ · ammoniacal Cu₂Cl₂→CO · H₂SO₄/CaCl₂→H₂O." },
-              ],
-            },
-            {
-              kind: "misc",
-              level: "medium",
-              question: "100 mL of ozonised oxygen (O₂ + O₃) through turpentine oil shrinks to 80 mL. % O₃ by volume?",
-              answer: "20%",
-              explanation: "Turpentine removes only O₃ → V(O₃) = 20 mL of the original 100 mL.",
-            },
-          ],
-        },
-        {
-          id: "hydrocarbon-combustion",
-          title: "Hydrocarbon Combustion",
-          blocks: [
-            {
-              kind: "detailed",
-              heading: "The master equation",
-              paras: [
-                "CₓH_y + (x + y/4) O₂ → x CO₂ + (y/2) H₂O. Per volume of fuel: O₂ consumed = (x + y/4), CO₂ formed = x. Two readings give two equations in x and y. Oxygen-bearing fuels CₓH_yO_z subtract z/2 from the O₂ demand.",
-              ],
-            },
-            {
-              kind: "illustration",
-              level: "advanced",
-              concept: "Formula from volumes",
-              question: "15 mL of a hydrocarbon needs 75 mL of O₂ for complete combustion and yields 45 mL of CO₂. Find the formula.",
-              thinking: "x from the CO₂ ratio; (x + y/4) from the O₂ ratio; solve for y.",
-              steps: [
-                { label: "Find x", work: "x = V(CO₂)/V(fuel) = 45/15 = 3." },
-                { label: "Find x + y/4", work: "(x + y/4) = V(O₂)/V(fuel) = 75/15 = 5." },
-                { label: "Solve for y", work: "3 + y/4 = 5 → y/4 = 2 → y = 8." },
-                { label: "Formula", work: "C₃H₈ (propane)." },
-              ],
-              answer: "C₃H₈",
-            },
-            {
-              kind: "illustration",
-              level: "advanced",
-              tricky: true,
-              concept: "Mixture + absorber bookkeeping",
-              question: "25 mL of a CO + C₂H₄ mixture is exploded with 75 mL of O₂. After cooling, the total volume is 65 mL. Find the volume of CO.",
-              thinking: "Let CO = a, C₂H₄ = b. Track O₂ consumed and CO₂ produced; water condenses. Build the residual-volume equation.",
-              steps: [
-                { label: "Composition", work: "a + b = 25." },
-                { label: "Per-gas reactions", work: "CO + ½O₂ → CO₂ (O₂: 0.5a, CO₂: a); C₂H₄ + 3O₂ → 2CO₂ + 2H₂O(l) (O₂: 3b, CO₂: 2b)." },
-                { label: "Residual volume", work: "(75 − 0.5a − 3b) + (a + 2b) = 65 → 75 + 0.5a − b = 65 → b − 0.5a = 10." },
-                { label: "Solve", work: "Sub b = 25 − a: 25 − 1.5a = 10 → a = 10 mL." },
-              ],
-              answer: "V(CO) = 10 mL (V(C₂H₄) = 15 mL)",
-              insight: "Residual = (leftover O₂) + (all CO₂), because CO₂ from BOTH fuels stays until KOH and water is already gone. Adding water volume, or forgetting the excess O₂, are the two ways this problem is failed.",
-              commonMistakes: ["Counting condensed water as volume.", "Forgetting CO₂ from C₂H₄ in the residue."],
-            },
-            {
-              kind: "misc",
-              level: "hard",
-              question: "10 mL of C₂H₂ burns in excess O₂. Volume contraction on cooling?",
-              answer: "15 mL",
-              explanation: "C₂H₂ + 2.5O₂ → 2CO₂ + H₂O(l): contraction/vol = (1 + 2.5) − 2 = 1.5 → 15 mL.",
-            },
-          ],
-        },
-        {
-          id: "mixture-analysis",
-          title: "Mixtures, Multi-Explosion & Formula from Dissociation",
-          blocks: [
-            {
-              kind: "detailed",
-              heading: "Variables + volume bookkeeping",
-              paras: [
-                "For an unknown mixture, assign a volume variable to each component and write one linear equation per observation: total volume, contraction after firing, and each absorber reading. Inert gases (N₂, He) pass through everything and appear only in the total. Reactions producing/consuming gas can also be run in reverse — CO₂ over red-hot charcoal (CO₂ + C → 2CO) and O₂ under silent electric discharge (3O₂ → 2O₃) both expand or contract predictably.",
-              ],
-            },
-            {
-              kind: "illustration",
-              level: "advanced",
-              tricky: true,
-              concept: "Two-stage explosion (limiting-reagent detective work)",
-              question: "20 mL of an N₂ + H₂ mixture is mixed with 8 mL of O₂ and fired; the final volume becomes 10 mL. Determine the initial and final composition.",
-              thinking: "First TEST whether O₂ is limiting. If it were, the contraction would be fixed; compare with the observed contraction of (20+8) − 10 = 18 mL. The mismatch reveals which gas actually limits.",
-              steps: [
-                { label: "Assume O₂ limiting", work: "H₂ + ½O₂ → H₂O(l): 8 mL O₂ would burn 16 mL H₂. Contraction = (16 + 8) − 0 = 24 mL." },
-                { label: "Compare with data", work: "Observed contraction = (20 + 8) − 10 = 18 mL ≠ 24 → O₂ is NOT limiting; H₂ is." },
-                { label: "Let H₂ = x, all of it burns", work: "consumes x mL H₂ + x/2 mL O₂ → water (0 vol). Contraction = (x + x/2) − 0 = 18 ⇒ 3x/2 = 18 ⇒ x = 12." },
-                { label: "Compositions", work: "Initial: H₂ = 12, N₂ = 20 − 12 = 8 mL. Final: N₂ = 8, O₂ left = 8 − 6 = 2 → total 10 mL ✓." },
-              ],
-              answer: "Initial H₂ = 12 mL, N₂ = 8 mL; final N₂ = 8 mL, O₂ = 2 mL",
-              insight: "Never assume which reactant limits in eudiometry — TEST it. The contraction under the 'O₂-limiting' assumption (24 mL) disagreeing with the observed 18 mL is the tell that H₂ ran out first. This limiting-reagent-by-contradiction is the signature of the hardest gas-analysis problems.",
-              exams: ["JEE Advanced"],
-            },
-            {
-              kind: "illustration",
-              level: "advanced",
-              tricky: true,
-              concept: "Molecular formula of a compound by dissociation",
-              question: "50 mL of ammonia is sparked to dissociate into N₂ and H₂; the volume becomes 97 mL. Passing through water leaves 94 mL of dry gas. Then 100 mL O₂ is added and fired; the final volume is 88.25 mL. Find the formula NₓHᵧ.",
-              thinking: "Unreacted NH₃ is absorbed by water; the volume rise gives how much dissociated. Then the H₂ combustion contraction fixes y, and the N-balance fixes x.",
-              steps: [
-                { label: "How much dissociated", work: "unreacted NₓHᵧ = 97 − 94 = 3 mL → reacted = 50 − 3 = 47 mL." },
-                { label: "Products from 47 mL", work: "NₓHᵧ → (x/2)N₂ + (y/2)H₂; total = 47(x+y)/2 = 94 ⇒ x + y = 4." },
-                { label: "Burn the H₂", work: "H₂ = 47y/2 mL; H₂ + ½O₂ → H₂O(l), contraction = (3/2)(47y/2) = (94+100) − 88.25 ⇒ y = 3." },
-                { label: "Solve", work: "x + y = 4, y = 3 ⇒ x = 1 → NH₃." },
-              ],
-              answer: "NH₃ (x = 1, y = 3)",
-              insight: "Water absorbs only the leftover NH₃ (polar), not N₂/H₂ — that single step separates 'undissociated' from 'products'. The formula then falls out of two conservation equations (volume of products, and the H₂ combustion contraction).",
-              exams: ["JEE Advanced"],
-            },
-            {
-              kind: "misc",
-              level: "hard",
-              question: "40 mL of a CO + C₂H₂ mixture is fired with excess air; passing through KOH gives 65 mL contraction (= total CO₂). Find the CO volume.",
-              answer: "CO = 15 mL (C₂H₂ = 25 mL)",
-              explanation: "x + y = 40; CO₂ = x + 2y = 65 → y = 25, x = 15. KOH contraction equals total CO₂ from both gases.",
-              exams: ["JEE Advanced"],
-            },
-          ],
-        },
-      ],
-    },
-    // ═════════════════════════════ TOPIC 9 ═════════════════════════════
+    // ═════════════════════════════ TOPIC 9 · CONCENTRATION TERMS ═════════════════════════════
     {
       id: "concentration",
       title: "Concentration Terms & Solution Stoichiometry",
@@ -1802,7 +1648,161 @@ export const MOLE_CONCEPT_NOTES: PremiumChapterNotes = {
         },
       ],
     },
-    // ═════════════════════════════ TOPIC 10 ═════════════════════════════
+    // ═════════════════════════════ TOPIC 10 · EUDIOMETRY ═════════════════════════════
+    {
+      id: "eudiometry",
+      title: "Eudiometry — Gas Phase Analysis",
+      intro: "A graduated tube, a spark, and Avogadro's law: gas volumes read moles directly, so an explosion plus a few absorbers can crack a molecular formula.",
+      exams: ["JEE Advanced"],
+      subtopics: [
+        {
+          id: "eudiometer",
+          title: "The Eudiometer & the Absorber Table",
+          blocks: [
+            {
+              kind: "detailed",
+              heading: "The protocol and its five governing rules",
+              paras: [
+                "A measured gas mixture over mercury is sparked with excess O₂. Since volume ∝ moles at constant P, T (Gay-Lussac + Avogadro), every combustion coefficient is also a VOLUME ratio. Cooling condenses water (liquid → ~0 volume); the contraction = V(initial gases) + V(O₂) − V(residual). Selective absorbers then read each component off.",
+              ],
+              points: [
+                "① All volumes measured at the SAME P and T (so volume = mole ratio).",
+                "② Amagat's law holds: V(mixture) = V₁ + V₂ + … (partial volumes of non-reacting gases add).",
+                "③ Solids/liquids have negligible volume — H₂O(l) after cooling counts as ZERO (18 mL vs 22 400 mL for the gas, <0.1%).",
+                "④ N₂ is treated as UNREACTIVE — its reaction (N₂ + O₂ → 2NO) needs ~3000 °C, which would shatter the glass tube; noble gases likewise survive combustion AND absorbers, so the leftover is usually N₂.",
+                "⑤ Air is taken as 21% O₂ + 79% N₂ by volume (trace gases lumped into N₂). ΔV arises ONLY from a change in the number of moles of GASEOUS species.",
+              ],
+            },
+            {
+              kind: "visual",
+              title: "Eudiometry — Apparatus & Absorbers",
+              visual: "eudiometry-tube",
+              caption: "The five standard absorbers are non-negotiable memory work: KOH→CO₂, pyrogallol→O₂, turpentine→O₃, ammoniacal Cu₂Cl₂→CO, conc. H₂SO₄/CaCl₂→H₂O.",
+            },
+            {
+              kind: "trick",
+              items: [
+                { trick: "\"KOH Pyro Turps Copper Dry\"", recall: "KOH→CO₂ · pyrogallol→O₂ · turpentine→O₃ · ammoniacal Cu₂Cl₂→CO · H₂SO₄/CaCl₂→H₂O." },
+              ],
+            },
+            {
+              kind: "misc",
+              level: "medium",
+              question: "100 mL of ozonised oxygen (O₂ + O₃) through turpentine oil shrinks to 80 mL. % O₃ by volume?",
+              answer: "20%",
+              explanation: "Turpentine removes only O₃ → V(O₃) = 20 mL of the original 100 mL.",
+            },
+          ],
+        },
+        {
+          id: "hydrocarbon-combustion",
+          title: "Hydrocarbon Combustion",
+          blocks: [
+            {
+              kind: "detailed",
+              heading: "The master equation",
+              paras: [
+                "CₓH_y + (x + y/4) O₂ → x CO₂ + (y/2) H₂O. Per volume of fuel: O₂ consumed = (x + y/4), CO₂ formed = x. Two readings give two equations in x and y. Oxygen-bearing fuels CₓH_yO_z subtract z/2 from the O₂ demand.",
+              ],
+            },
+            {
+              kind: "illustration",
+              level: "advanced",
+              concept: "Formula from volumes",
+              question: "15 mL of a hydrocarbon needs 75 mL of O₂ for complete combustion and yields 45 mL of CO₂. Find the formula.",
+              thinking: "x from the CO₂ ratio; (x + y/4) from the O₂ ratio; solve for y.",
+              steps: [
+                { label: "Find x", work: "x = V(CO₂)/V(fuel) = 45/15 = 3." },
+                { label: "Find x + y/4", work: "(x + y/4) = V(O₂)/V(fuel) = 75/15 = 5." },
+                { label: "Solve for y", work: "3 + y/4 = 5 → y/4 = 2 → y = 8." },
+                { label: "Formula", work: "C₃H₈ (propane)." },
+              ],
+              answer: "C₃H₈",
+            },
+            {
+              kind: "illustration",
+              level: "advanced",
+              tricky: true,
+              concept: "Mixture + absorber bookkeeping",
+              question: "25 mL of a CO + C₂H₄ mixture is exploded with 75 mL of O₂. After cooling, the total volume is 65 mL. Find the volume of CO.",
+              thinking: "Let CO = a, C₂H₄ = b. Track O₂ consumed and CO₂ produced; water condenses. Build the residual-volume equation.",
+              steps: [
+                { label: "Composition", work: "a + b = 25." },
+                { label: "Per-gas reactions", work: "CO + ½O₂ → CO₂ (O₂: 0.5a, CO₂: a); C₂H₄ + 3O₂ → 2CO₂ + 2H₂O(l) (O₂: 3b, CO₂: 2b)." },
+                { label: "Residual volume", work: "(75 − 0.5a − 3b) + (a + 2b) = 65 → 75 + 0.5a − b = 65 → b − 0.5a = 10." },
+                { label: "Solve", work: "Sub b = 25 − a: 25 − 1.5a = 10 → a = 10 mL." },
+              ],
+              answer: "V(CO) = 10 mL (V(C₂H₄) = 15 mL)",
+              insight: "Residual = (leftover O₂) + (all CO₂), because CO₂ from BOTH fuels stays until KOH and water is already gone. Adding water volume, or forgetting the excess O₂, are the two ways this problem is failed.",
+              commonMistakes: ["Counting condensed water as volume.", "Forgetting CO₂ from C₂H₄ in the residue."],
+            },
+            {
+              kind: "misc",
+              level: "hard",
+              question: "10 mL of C₂H₂ burns in excess O₂. Volume contraction on cooling?",
+              answer: "15 mL",
+              explanation: "C₂H₂ + 2.5O₂ → 2CO₂ + H₂O(l): contraction/vol = (1 + 2.5) − 2 = 1.5 → 15 mL.",
+            },
+          ],
+        },
+        {
+          id: "mixture-analysis",
+          title: "Mixtures, Multi-Explosion & Formula from Dissociation",
+          blocks: [
+            {
+              kind: "detailed",
+              heading: "Variables + volume bookkeeping",
+              paras: [
+                "For an unknown mixture, assign a volume variable to each component and write one linear equation per observation: total volume, contraction after firing, and each absorber reading. Inert gases (N₂, He) pass through everything and appear only in the total. Reactions producing/consuming gas can also be run in reverse — CO₂ over red-hot charcoal (CO₂ + C → 2CO) and O₂ under silent electric discharge (3O₂ → 2O₃) both expand or contract predictably.",
+              ],
+            },
+            {
+              kind: "illustration",
+              level: "advanced",
+              tricky: true,
+              concept: "Two-stage explosion (limiting-reagent detective work)",
+              question: "20 mL of an N₂ + H₂ mixture is mixed with 8 mL of O₂ and fired; the final volume becomes 10 mL. Determine the initial and final composition.",
+              thinking: "First TEST whether O₂ is limiting. If it were, the contraction would be fixed; compare with the observed contraction of (20+8) − 10 = 18 mL. The mismatch reveals which gas actually limits.",
+              steps: [
+                { label: "Assume O₂ limiting", work: "H₂ + ½O₂ → H₂O(l): 8 mL O₂ would burn 16 mL H₂. Contraction = (16 + 8) − 0 = 24 mL." },
+                { label: "Compare with data", work: "Observed contraction = (20 + 8) − 10 = 18 mL ≠ 24 → O₂ is NOT limiting; H₂ is." },
+                { label: "Let H₂ = x, all of it burns", work: "consumes x mL H₂ + x/2 mL O₂ → water (0 vol). Contraction = (x + x/2) − 0 = 18 ⇒ 3x/2 = 18 ⇒ x = 12." },
+                { label: "Compositions", work: "Initial: H₂ = 12, N₂ = 20 − 12 = 8 mL. Final: N₂ = 8, O₂ left = 8 − 6 = 2 → total 10 mL ✓." },
+              ],
+              answer: "Initial H₂ = 12 mL, N₂ = 8 mL; final N₂ = 8 mL, O₂ = 2 mL",
+              insight: "Never assume which reactant limits in eudiometry — TEST it. The contraction under the 'O₂-limiting' assumption (24 mL) disagreeing with the observed 18 mL is the tell that H₂ ran out first. This limiting-reagent-by-contradiction is the signature of the hardest gas-analysis problems.",
+              exams: ["JEE Advanced"],
+            },
+            {
+              kind: "illustration",
+              level: "advanced",
+              tricky: true,
+              concept: "Molecular formula of a compound by dissociation",
+              question: "50 mL of ammonia is sparked to dissociate into N₂ and H₂; the volume becomes 97 mL. Passing through water leaves 94 mL of dry gas. Then 100 mL O₂ is added and fired; the final volume is 88.25 mL. Find the formula NₓHᵧ.",
+              thinking: "Unreacted NH₃ is absorbed by water; the volume rise gives how much dissociated. Then the H₂ combustion contraction fixes y, and the N-balance fixes x.",
+              steps: [
+                { label: "How much dissociated", work: "unreacted NₓHᵧ = 97 − 94 = 3 mL → reacted = 50 − 3 = 47 mL." },
+                { label: "Products from 47 mL", work: "NₓHᵧ → (x/2)N₂ + (y/2)H₂; total = 47(x+y)/2 = 94 ⇒ x + y = 4." },
+                { label: "Burn the H₂", work: "H₂ = 47y/2 mL; H₂ + ½O₂ → H₂O(l), contraction = (3/2)(47y/2) = (94+100) − 88.25 ⇒ y = 3." },
+                { label: "Solve", work: "x + y = 4, y = 3 ⇒ x = 1 → NH₃." },
+              ],
+              answer: "NH₃ (x = 1, y = 3)",
+              insight: "Water absorbs only the leftover NH₃ (polar), not N₂/H₂ — that single step separates 'undissociated' from 'products'. The formula then falls out of two conservation equations (volume of products, and the H₂ combustion contraction).",
+              exams: ["JEE Advanced"],
+            },
+            {
+              kind: "misc",
+              level: "hard",
+              question: "40 mL of a CO + C₂H₂ mixture is fired with excess air; passing through KOH gives 65 mL contraction (= total CO₂). Find the CO volume.",
+              answer: "CO = 15 mL (C₂H₂ = 25 mL)",
+              explanation: "x + y = 40; CO₂ = x + 2y = 65 → y = 25, x = 15. KOH contraction equals total CO₂ from both gases.",
+              exams: ["JEE Advanced"],
+            },
+          ],
+        },
+      ],
+    },
+    // ═════════════════════════════ TOPIC 11 · SPECIAL LABELS ═════════════════════════════
     {
       id: "special-labels",
       title: "Special Strength Labels — H₂O₂, Oleum & Mean Molar Mass",

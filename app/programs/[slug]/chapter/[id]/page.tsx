@@ -190,10 +190,16 @@ export default async function ChapterEnginePage({ params }: { params: Promise<{ 
                 <Link href={`/chapter/${id}`} className="rounded-xl border border-white/15 bg-white/[0.04] px-4 py-2 text-sm font-semibold text-white/80 hover:bg-white/[0.08]">Chapter workspace →</Link>
                 {id === "mole-concept" && (
                   <>
-                    <Link href="/notes/mole-concept" className="rounded-xl border border-cyan-400/30 bg-cyan-500/10 px-4 py-2 text-sm font-bold text-cyan-300 hover:bg-cyan-500/20">Transcribed Notes Hub →</Link>
-                    <Link href="/notes/mole-concept/part1" className="rounded-xl border border-lime-400/30 bg-lime-500/10 px-4 py-2 text-sm font-semibold text-lime-300 hover:bg-lime-500/20">Mole Concept Part 1 →</Link>
-                    <Link href="/notes/concentration-terms" className="rounded-xl border border-red-400/30 bg-red-500/10 px-4 py-2 text-sm font-semibold text-red-300 hover:bg-red-500/20">Concentration Terms (Parts 1–3) →</Link>
-                    <Link href="/notes/stoichiometry" className="rounded-xl border border-amber-400/30 bg-amber-500/10 px-4 py-2 text-sm font-semibold text-amber-300 hover:bg-amber-500/20">Stoichiometry Part 1 →</Link>
+                    <Link href="/notes/mole-concept" className="rounded-xl border border-lime-400/30 bg-lime-500/10 px-4 py-2 text-sm font-bold text-lime-300 hover:bg-lime-500/20">1. Mole Concept (15 Topics) →</Link>
+                    <Link href="/notes/stoichiometry" className="rounded-xl border border-amber-400/30 bg-amber-500/10 px-4 py-2 text-sm font-bold text-amber-300 hover:bg-amber-500/20">2. Stoichiometry →</Link>
+                    <Link href="/notes/concentration-terms" className="rounded-xl border border-red-400/30 bg-red-500/10 px-4 py-2 text-sm font-bold text-red-300 hover:bg-red-500/20">3. Concentration Terms →</Link>
+                    <Link href="/notes/eudiometry" className="rounded-xl border border-cyan-400/30 bg-cyan-500/10 px-4 py-2 text-sm font-bold text-cyan-300 hover:bg-cyan-500/20">4. Eudiometry →</Link>
+                  </>
+                )}
+                {id === "redox-reactions" && (
+                  <>
+                    <Link href="/notes/redox-reactions/equivalent-weight" className="rounded-xl border border-pink-400/30 bg-pink-500/10 px-4 py-2 text-sm font-bold text-pink-300 hover:bg-pink-500/20">1. Equivalent Weight & n-Factor →</Link>
+                    <Link href="/notes/redox-reactions/titration" className="rounded-xl border border-blue-400/30 bg-blue-500/10 px-4 py-2 text-sm font-bold text-blue-300 hover:bg-blue-500/20">2. Titration & Volumetric Analysis →</Link>
                   </>
                 )}
               </div>

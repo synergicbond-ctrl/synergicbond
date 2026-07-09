@@ -75,6 +75,42 @@ export const physical = [
   },
 
   {
+    id: "redox-reactions",
+    title: "Redox Reactions",
+    category: "physical",
+    difficulty: 4,
+    estimatedHours: 10,
+    exams: ["NEET", "JEE MAIN", "JEE ADVANCED", "CBSE 11", "ISC 11"],
+    pyqTags: ["n-Factor calculation", "Equivalent weight", "Volumetric titration", "Oxidation state", "Disproportionation"],
+    concepts: [
+      {
+        id: "equivalent-weight-nfactor",
+        title: "Equivalent Weight and n-Factor Determination",
+        description: "Definition of equivalent weight, relation with molar mass, and calculation of n-factor for elements, oxides, acids, bases, normal/hydrated salts, and redox species across acidic, neutral, and basic media.",
+        animations: ["Electron transfer and n-factor evaluation across oxidation state jumps."]
+      },
+      {
+        id: "disproportionation-redox-balancing",
+        title: "Disproportionation and Redox Formulas",
+        description: "Oxidation state evaluation, general rules for disproportionation reactions, special peroxide/superoxide linkages, and balancing ion-electron half-reactions.",
+        animations: ["Simultaneous oxidation and reduction of single chemical species."]
+      },
+      {
+        id: "principle-of-equivalence",
+        title: "Principle of Equivalence and Law of Equivalence",
+        description: "Conservation of equivalents across multi-step reactions, equivalent volume of gases at STP, and displacement stoichiometry (W1/E1 = W2/E2).",
+        animations: ["Equal equivalents reacting at endpoint."]
+      },
+      {
+        id: "volumetric-titration-analysis",
+        title: "Volumetric Titration Analysis",
+        description: "Primary vs secondary standards, apparatus setup (pipette, burette), indicator theory, acidimetry vs alkalimetry, permanganatometry, dichromatometry, iodometry vs iodimetry, and back titration numericals.",
+        animations: ["Colorimetric indicator jump at equivalence point versus end point."]
+      }
+    ]
+  },
+
+  {
     id: "chemical-equilibrium",
     title: "Equilibrium",
     category: "physical",

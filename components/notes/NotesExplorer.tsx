@@ -277,6 +277,138 @@ export default function NotesExplorer() {
         </p>
       </div>
 
+      {/* Chapter 1: Some Basic Concepts of Chemistry */}
+      <div className="rounded-3xl border border-cyan-400/30 bg-slate-900/90 p-6 shadow-2xl space-y-4">
+        <div className="flex items-center justify-between border-b border-slate-800 pb-3">
+          <span className="rounded-full bg-cyan-500/20 px-3 py-1 text-xs font-bold uppercase tracking-widest text-cyan-300">
+            1. Some Basic Concepts of Chemistry
+          </span>
+          <span className="text-xs font-bold text-slate-400">Physical Chemistry Core</span>
+        </div>
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          <Link
+            href="/notes/mole-concept"
+            className="group flex flex-col justify-between rounded-2xl border border-lime-400/30 bg-slate-950 p-4 transition hover:border-lime-400 hover:shadow-lg hover:shadow-lime-500/10"
+          >
+            <div>
+              <span className="rounded-full bg-lime-500/20 px-2.5 py-0.5 text-[10px] font-bold text-lime-300">Section 1</span>
+              <h3 className="mt-2 text-base font-black text-white group-hover:text-lime-300 transition">Mole Concept</h3>
+              <p className="mt-1 text-xs text-slate-400">Complete 15-topic foundation course.</p>
+            </div>
+            <span className="mt-4 text-xs font-bold text-lime-400 group-hover:translate-x-1 transition-transform">Explore Topics →</span>
+          </Link>
+
+          <Link
+            href="/notes/stoichiometry"
+            className="group flex flex-col justify-between rounded-2xl border border-amber-400/30 bg-slate-950 p-4 transition hover:border-amber-400 hover:shadow-lg hover:shadow-amber-500/10"
+          >
+            <div>
+              <span className="rounded-full bg-amber-500/20 px-2.5 py-0.5 text-[10px] font-bold text-amber-300">Section 2</span>
+              <h3 className="mt-2 text-base font-black text-white group-hover:text-amber-300 transition">Stoichiometry</h3>
+              <p className="mt-1 text-xs text-slate-400">Complete 9-part reaction analysis course.</p>
+            </div>
+            <span className="mt-4 text-xs font-bold text-amber-400 group-hover:translate-x-1 transition-transform">Explore Lessons →</span>
+          </Link>
+
+          <Link
+            href="/notes/concentration-terms"
+            className="group flex flex-col justify-between rounded-2xl border border-red-400/30 bg-slate-950 p-4 transition hover:border-red-400 hover:shadow-lg hover:shadow-red-500/10"
+          >
+            <div>
+              <span className="rounded-full bg-red-500/20 px-2.5 py-0.5 text-[10px] font-bold text-red-300">Section 3</span>
+              <h3 className="mt-2 text-base font-black text-white group-hover:text-red-300 transition">Concentration Terms</h3>
+              <p className="mt-1 text-xs text-slate-400">Complete 6-part solution analysis course.</p>
+            </div>
+            <span className="mt-4 text-xs font-bold text-red-400 group-hover:translate-x-1 transition-transform">Explore Lessons →</span>
+          </Link>
+
+          <Link
+            href="/notes/eudiometry"
+            className="group flex flex-col justify-between rounded-2xl border border-cyan-400/30 bg-slate-950 p-4 transition hover:border-cyan-400 hover:shadow-lg hover:shadow-cyan-500/10"
+          >
+            <div>
+              <span className="rounded-full bg-cyan-500/20 px-2.5 py-0.5 text-[10px] font-bold text-cyan-300">Section 4</span>
+              <h3 className="mt-2 text-base font-black text-white group-hover:text-cyan-300 transition">Eudiometry</h3>
+              <p className="mt-1 text-xs text-slate-400">Complete 6-part gas volume course.</p>
+            </div>
+            <span className="mt-4 text-xs font-bold text-cyan-400 group-hover:translate-x-1 transition-transform">Explore Lessons →</span>
+          </Link>
+        </div>
+      </div>
+
+      {/* Chapter 2: Redox Reactions */}
+      <div className="rounded-3xl border border-purple-400/30 bg-slate-900/90 p-6 shadow-2xl space-y-4">
+        <div className="flex items-center justify-between border-b border-slate-800 pb-3">
+          <Link href="/notes/redox-reactions" className="rounded-full bg-purple-500/20 px-3 py-1 text-xs font-bold uppercase tracking-widest text-purple-300 hover:bg-purple-500/30 transition">
+            2. Redox Reactions
+          </Link>
+          <Link href="/notes/redox-reactions" className="text-xs font-bold text-slate-400 hover:text-purple-300 transition">
+            Chapter Hub →
+          </Link>
+        </div>
+        <div className="grid gap-4 sm:grid-cols-2">
+          <Link
+            href="/notes/redox-reactions/equivalent-weight"
+            className="group flex flex-col justify-between rounded-2xl border border-pink-400/30 bg-slate-950 p-4 transition hover:border-pink-400 hover:shadow-lg hover:shadow-pink-500/10"
+          >
+            <div>
+              <span className="rounded-full bg-pink-500/20 px-2.5 py-0.5 text-[10px] font-bold text-pink-300">Section 1</span>
+              <h3 className="mt-2 text-base font-black text-white group-hover:text-pink-300 transition">Equivalent Weight</h3>
+              <p className="mt-1 text-xs text-slate-400">Equivalent concept, n-factor & redox changes.</p>
+            </div>
+            <span className="mt-4 text-xs font-bold text-pink-400 group-hover:translate-x-1 transition-transform">Open Section →</span>
+          </Link>
+
+          <Link
+            href="/notes/redox-reactions/titration"
+            className="group flex flex-col justify-between rounded-2xl border border-blue-400/30 bg-slate-950 p-4 transition hover:border-blue-400 hover:shadow-lg hover:shadow-blue-500/10"
+          >
+            <div>
+              <span className="rounded-full bg-blue-500/20 px-2.5 py-0.5 text-[10px] font-bold text-blue-300">Section 2</span>
+              <h3 className="mt-2 text-base font-black text-white group-hover:text-blue-300 transition">Titration</h3>
+              <p className="mt-1 text-xs text-slate-400">Volumetric analysis, indicators & calculations.</p>
+            </div>
+            <span className="mt-4 text-xs font-bold text-blue-400 group-hover:translate-x-1 transition-transform">Open Section →</span>
+          </Link>
+        </div>
+      </div>
+
+      <div className="rounded-3xl border border-cyan-400/30 bg-slate-900/90 p-6 shadow-2xl space-y-4">
+        <div className="flex items-center justify-between border-b border-slate-800 pb-3">
+          <Link href="/notes/electrochemistry" className="rounded-full bg-cyan-500/20 px-3 py-1 text-xs font-bold uppercase tracking-widest text-cyan-300 hover:bg-cyan-500/30 transition">
+            5. Electrochemistry
+          </Link>
+          <Link href="/notes/electrochemistry" className="text-xs font-bold text-slate-400 hover:text-cyan-300 transition">
+            Chapter Hub →
+          </Link>
+        </div>
+        <div className="grid gap-4 sm:grid-cols-2">
+          <Link
+            href="/notes/electrochemistry"
+            className="group flex flex-col justify-between rounded-2xl border border-cyan-400/30 bg-slate-950 p-4 transition hover:border-cyan-400 hover:shadow-lg hover:shadow-cyan-500/10"
+          >
+            <div>
+              <span className="rounded-full bg-cyan-500/20 px-2.5 py-0.5 text-[10px] font-bold text-cyan-300">Section 1</span>
+              <h3 className="mt-2 text-base font-black text-white group-hover:text-cyan-300 transition">Galvanic Cells & Nernst Equation</h3>
+              <p className="mt-1 text-xs text-slate-400">Electrochemical series, EMF & thermodynamics.</p>
+            </div>
+            <span className="mt-4 text-xs font-bold text-cyan-400 group-hover:translate-x-1 transition-transform">Open Section →</span>
+          </Link>
+
+          <Link
+            href="/notes/electrochemistry"
+            className="group flex flex-col justify-between rounded-2xl border border-lime-400/30 bg-slate-950 p-4 transition hover:border-lime-400 hover:shadow-lg hover:shadow-lime-500/10"
+          >
+            <div>
+              <span className="rounded-full bg-lime-500/20 px-2.5 py-0.5 text-[10px] font-bold text-lime-300">Section 2</span>
+              <h3 className="mt-2 text-base font-black text-white group-hover:text-lime-300 transition">Conductance & Kohlrausch&apos;s Law</h3>
+              <p className="mt-1 text-xs text-slate-400">Molar conductivity & Faraday electrolysis laws.</p>
+            </div>
+            <span className="mt-4 text-xs font-bold text-lime-400 group-hover:translate-x-1 transition-transform">Open Section →</span>
+          </Link>
+        </div>
+      </div>
+
       {/* Chapter selector */}
       <div className="flex flex-wrap gap-2">
         {SYLLABUS_CHAPTERS.map((c) => {

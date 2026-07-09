@@ -3,31 +3,28 @@ import Link from "next/link";
 import ConcentrationTermsPart2 from "../part2";
 
 export const metadata = {
-  title: "Concentration Terms Part 2 (Pages 5–8) — SYNERGIC BOND",
-  description: "Transcribed handwritten notes: % w/v calculations, % dilution & mixing formulas, PPM (Parts Per Million) and Solved Examples.",
+  title: "Concentration Terms — Topic 2: Dilution Formulas & Mixing — SYNERGIC BOND",
+  description: "Transcribed classroom notes: Dilution mole conservation, mixing of solutions, and PPM/PPB trace scales.",
 };
 
 export default function Page() {
   return (
-    <div className="bg-white min-h-screen">
-      <div className="sticky top-0 z-50 border-b border-slate-200 bg-slate-900/95 px-4 py-3 text-white backdrop-blur md:px-10">
-        <div className="mx-auto flex max-w-5xl items-center justify-between text-sm">
+    <div className="bg-slate-950 min-h-screen">
+      <div className="sticky top-0 z-50 border-b border-white/10 bg-slate-900/95 px-4 py-3 text-white backdrop-blur md:px-10">
+        <div className="mx-auto flex max-w-6xl items-center justify-between text-sm">
           <div className="flex items-center gap-4">
             <Link href="/programs/jee-main/chapter/mole-concept" className="font-semibold text-cyan-400 hover:underline">
               ← Back to Chapter Engine
             </Link>
             <span className="text-slate-500">|</span>
-            <Link href="/notes/mole-concept" className="text-slate-300 hover:text-white">
-              Mole Concept Notes Hub
+            <Link href="/notes/concentration-terms" className="text-slate-300 hover:text-white">
+              Concentration Hub
             </Link>
           </div>
           <div className="flex gap-2">
-            <Link href="/notes/concentration-terms/part1" className="rounded-full bg-slate-800 px-3 py-1 text-xs font-bold text-slate-300 hover:bg-slate-700">
-              ← Prev: Part 1
-            </Link>
-            <span className="rounded-full bg-red-500/20 px-3 py-1 text-xs font-bold text-red-300">Part 2 (Pages 5–8)</span>
+            <span className="rounded-full bg-amber-500/20 px-3 py-1 text-xs font-bold text-amber-300">Topic 2 of 6</span>
             <Link href="/notes/concentration-terms/part3" className="rounded-full bg-slate-800 px-3 py-1 text-xs font-bold text-cyan-300 hover:bg-slate-700">
-              Next: Part 3 →
+              Next: Topic 3 →
             </Link>
           </div>
         </div>

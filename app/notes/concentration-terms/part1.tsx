@@ -1,382 +1,248 @@
-import React from 'react';
-import 'katex/dist/katex.min.css';
-import { BlockMath, InlineMath } from '@/components/math/react-katex';
+"use client";
 
-interface ExampleProps {
-  title?: string;
-  question: React.ReactNode;
-  given: React.ReactNode;
-  formula: React.ReactNode;
-  calculation: React.ReactNode;
-  answer: React.ReactNode;
-}
-
-interface DiagramProps {
-  title: string;
-  children: React.ReactNode;
-}
-
-const FormulaLine = ({ tex }: { tex: string }) => (
-  <div className="my-2 rounded-md bg-white p-3 text-center">
-    <BlockMath math={tex} />
-  </div>
-);
-
-const DiagramBlock = ({ title, children }: DiagramProps) => (
-  <div className="my-4 rounded-lg border border-dashed border-slate-300 bg-slate-50 p-4">
-    <h4 className="mb-2 font-semibold text-slate-800">{title}</h4>
-    <div className="space-y-1 text-sm text-slate-700">{children}</div>
-  </div>
-);
-
-const ExampleCard = ({
-  title = 'Solved Example',
-  question,
-  given,
-  formula,
-  calculation,
-  answer,
-}: ExampleProps) => (
-  <div className="my-6 rounded-xl border border-blue-100 bg-white p-6 shadow-sm">
-    <h4 className="mb-3 text-lg font-bold text-blue-900">{title}</h4>
-
-    <div className="space-y-3 text-sm leading-7">
-      <div>
-        <strong>Question:</strong> {question}
-      </div>
-
-      <div>
-        <strong>Given:</strong> {given}
-      </div>
-
-      <div>
-        <strong>Formula Used:</strong>
-        <div className="mt-2">{formula}</div>
-      </div>
-
-      <div>
-        <strong>Calculation:</strong>
-        <div className="mt-2 rounded-lg border bg-slate-50 p-3">{calculation}</div>
-      </div>
-
-      <div className="rounded-md bg-blue-50 p-3 font-bold text-blue-900">
-        Final Answer: {answer}
-      </div>
-    </div>
-  </div>
-);
+import React from "react";
+import { InlineMath, BlockMath } from "@/components/math/react-katex";
 
 export default function ConcentrationTermsPart1() {
   return (
-    <main className="mx-auto max-w-4xl space-y-10 bg-white p-8 text-slate-900">
-      {/* Page 1 */}
-      <section className="space-y-5">
-        <h2 className="border-b pb-2 text-2xl font-bold">Page 1</h2>
+    <main className="min-h-screen bg-slate-950 px-4 py-8 text-slate-100 md:px-10">
+      <article className="mx-auto max-w-5xl space-y-10">
+        <header className="rounded-3xl border border-rose-400/30 bg-gradient-to-br from-slate-900 via-slate-900 to-slate-950 p-6 shadow-2xl md:p-8">
+          <div className="flex items-center justify-between">
+            <span className="rounded-full bg-rose-500/20 px-3 py-1 text-xs font-bold uppercase tracking-[0.2em] text-rose-300">
+              Concentration Terms — Topic 1
+            </span>
+            <span className="text-xs font-bold text-slate-400">Quantitative Solution Chemistry</span>
+          </div>
 
-        <h1 className="text-3xl font-extrabold text-red-600">
-          Concentration Terms
-        </h1>
+          <h1 className="mt-4 text-3xl font-black text-white md:text-4xl">
+            Solute vs. Solvent Definitions &amp; Percentage Method (<InlineMath math="\% w/w, w/v, v/v, v/w" />)
+          </h1>
 
-        <p>
-          <strong>Solution:</strong> It is the homogeneous mixture of two or
-          more pure substances.
-        </p>
-
-        <div className="rounded-lg border bg-slate-50 p-4">
-          <p>
-            <strong>Solution</strong>
+          <p className="mt-3 text-sm leading-relaxed text-slate-300 md:text-base">
+            Comprehensive foundations of solution chemistry: exact criteria for designating solute versus solvent across multi-phase binary systems, classification of aqueous solutions, and master formulas for the four fundamental percentage concentration scales.
           </p>
-          <ul className="ml-6 list-disc space-y-2">
-            <li>
-              <strong>Solute</strong> → which dissolves in solvent
-            </li>
-            <li>
-              <strong>Solvent</strong> → which dissolves other substances in it
-            </li>
-          </ul>
-        </div>
+        </header>
 
-        <DiagramBlock title="Diagram: NaCl and water solution">
-          <p>
-            The page shows <strong>200 gm NaCl</strong> labelled as solute and{' '}
-            <strong>100 gm H₂O</strong> labelled as solvent.
-          </p>
-          <p>
-            NaCl is shown dissociating into <InlineMath math={String.raw`Na^+`} />{' '}
-            and <InlineMath math={String.raw`Cl^-`} /> ions.
-          </p>
-          <p>
-            A water molecule <InlineMath math={String.raw`H_2O`} /> is shown
-            near the ions, indicating hydration/interaction with ions.
-          </p>
-          <p>
-            A crossed diagram on the right shows <InlineMath math={String.raw`H_2O`} />{' '}
-            in the centre with surrounding ionic labels.
-          </p>
-        </DiagramBlock>
+        {/* Section 1: Solution Definitions & Phase Criteria */}
+        <section className="space-y-6">
+          <h2 className="text-2xl font-bold text-rose-300 border-l-4 border-rose-400 pl-3">
+            1. Solution Definition &amp; Phase Selection Criteria
+          </h2>
 
-        <DiagramBlock title="Diagram: ROH and water">
-          <p>
-            The note shows <strong>ROH + H₂O</strong> and states that they are
-            soluble in each other.
-          </p>
-          <p>
-            Two hydrogen-bonding style sketches are drawn using labels R, O, H,
-            and dotted bonds.
-          </p>
-          <p>
-            The diagrams indicate interaction between alcohol molecules and
-            water molecules.
-          </p>
-        </DiagramBlock>
-
-        <p>
-          If both are soluble in each other, then the substance having greater
-          amount by mole is solvent.
-        </p>
-
-        <p>
-          A solution may have any physical state. Its final state is the state
-          of solvent.
-        </p>
-
-        <p className="text-xs italic text-slate-400">TG ~ @bohring_bot</p>
-      </section>
-
-      {/* Page 2 */}
-      <section className="space-y-5">
-        <h2 className="border-b pb-2 text-2xl font-bold">Page 2</h2>
-
-        <h3 className="text-xl font-bold">Solvent, Solute and Examples</h3>
-
-        <div className="overflow-x-auto">
-          <table className="w-full border-collapse border border-slate-300 text-sm">
-            <thead className="bg-slate-100">
-              <tr>
-                <th className="border border-slate-300 p-2 text-left">
-                  Solvent
-                </th>
-                <th className="border border-slate-300 p-2 text-left">
-                  Solute
-                </th>
-                <th className="border border-slate-300 p-2 text-left">
-                  Examples
-                </th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td className="border border-slate-300 p-2">Solid</td>
-                <td className="border border-slate-300 p-2">Solid</td>
-                <td className="border border-slate-300 p-2">Alloys</td>
-              </tr>
-              <tr>
-                <td className="border border-slate-300 p-2">Solid</td>
-                <td className="border border-slate-300 p-2">Liquid</td>
-                <td className="border border-slate-300 p-2">Amalgams</td>
-              </tr>
-              <tr>
-                <td className="border border-slate-300 p-2">Solid</td>
-                <td className="border border-slate-300 p-2">Gas</td>
-                <td className="border border-slate-300 p-2">
-                  <InlineMath math={String.raw`H_2`} /> gas absorbed in Pd
-                </td>
-              </tr>
-              <tr>
-                <td className="border border-slate-300 p-2">Liquid</td>
-                <td className="border border-slate-300 p-2">Solid</td>
-                <td className="border border-slate-300 p-2">Water + salt</td>
-              </tr>
-              <tr>
-                <td className="border border-slate-300 p-2">Liquid</td>
-                <td className="border border-slate-300 p-2">Liquid</td>
-                <td className="border border-slate-300 p-2">
-                  Water + ethanol
-                </td>
-              </tr>
-              <tr>
-                <td className="border border-slate-300 p-2">Liquid</td>
-                <td className="border border-slate-300 p-2">Gas</td>
-                <td className="border border-slate-300 p-2">Aerated drink</td>
-              </tr>
-              <tr>
-                <td className="border border-slate-300 p-2">Gas</td>
-                <td className="border border-slate-300 p-2">Solid</td>
-                <td className="border border-slate-300 p-2">
-                  Any sublimable solid in a gas
-                </td>
-              </tr>
-              <tr>
-                <td className="border border-slate-300 p-2">Gas</td>
-                <td className="border border-slate-300 p-2">Liquid</td>
-                <td className="border border-slate-300 p-2">
-                  Any volatile liquid in a gas
-                </td>
-              </tr>
-              <tr>
-                <td className="border border-slate-300 p-2">Gas</td>
-                <td className="border border-slate-300 p-2">Gas</td>
-                <td className="border border-slate-300 p-2">
-                  Any gaseous mixture
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-
-        <DiagramBlock title="Diagram: sublimable/volatile substance in gas">
-          <p>
-            A rectangular vessel is drawn with vapour particles inside. A solid
-            lump is drawn at the bottom.
-          </p>
-          <p>
-            The label <strong>Camphor</strong> appears below the solid lump.
-          </p>
-          <p>
-            The label <InlineMath math={String.raw`CCl_4(l)`} /> is written
-            below the diagram.
-          </p>
-        </DiagramBlock>
-
-        <p className="font-semibold text-red-600">
-          We will mainly study aqueous binary solutions.
-        </p>
-
-        <p className="text-xs italic text-slate-400">TG ~ @bohring_bot</p>
-      </section>
-
-      {/* Page 3 */}
-      <section className="space-y-5">
-        <h2 className="border-b pb-2 text-2xl font-bold">Page 3</h2>
-
-        <h3 className="text-xl font-bold">
-          Concentration or Strength of Solution
-        </h3>
-
-        <p>
-          Normally, concentration of a solution represents the amount of solute
-          in the given amount of solution.
-        </p>
-
-        <p>
-          Depending on the units to express amount, there are large number of
-          concentration terms. Some of them are:
-        </p>
-
-        <ol className="ml-6 list-decimal space-y-2">
-          <li>Percentage method</li>
-          <li>PPM</li>
-          <li>gm/litre</li>
-          <li>Molarity (M)</li>
-          <li>Formality (F)</li>
-          <li>Normality (N)</li>
-          <li>Molality (m)</li>
-          <li>Mole-fraction (X)</li>
-          <li>
-            Volume strength of <InlineMath math={String.raw`H_2O_2`} />
-          </li>
-          <li>Labelling of oleum</li>
-        </ol>
-
-        <p className="text-xs italic text-slate-400">TG ~ @bohring_bot</p>
-      </section>
-
-      {/* Page 4 */}
-      <section className="space-y-5">
-        <h2 className="border-b pb-2 text-2xl font-bold">Page 4</h2>
-
-        <h3 className="text-xl font-bold text-red-600">Percentage Method</h3>
-
-        <p>
-          Amount (gm or ml) of solute in every 100 amount (gm or ml) of
-          solution.
-        </p>
-
-        <div className="grid gap-4 md:grid-cols-2">
-          <div className="rounded-lg border bg-slate-50 p-4">
-            <p className="font-semibold">
-              <InlineMath math={String.raw`\% (w/w)`} /> method
-            </p>
+          <div className="rounded-2xl border border-slate-800 bg-slate-900 p-6 space-y-4 text-sm leading-relaxed text-slate-200">
             <p>
-              Percentage by weight / weight percent: gm of solute in every 100
-              gm of solution.
+              A <strong className="text-white">Solution</strong> is defined as a homogeneous mixture of two or more pure chemical substances whose composition can be varied continuously within certain limits.
+            </p>
+
+            <div className="grid gap-6 md:grid-cols-2 pt-2">
+              <div className="rounded-xl border border-slate-800 bg-slate-950 p-5">
+                <h3 className="font-bold text-cyan-300 mb-2">Solute</h3>
+                <p className="text-xs text-slate-300 leading-relaxed">
+                  The component which dissolves in the solvent, generally present in lesser molar quantity or undergoing a physical phase change upon dissolution.
+                </p>
+              </div>
+
+              <div className="rounded-xl border border-slate-800 bg-slate-950 p-5">
+                <h3 className="font-bold text-emerald-300 mb-2">Solvent</h3>
+                <p className="text-xs text-slate-300 leading-relaxed">
+                  The dispersion medium which dissolves other substances inside it. The final physical state of the solution is always identical to the physical state of the solvent.
+                </p>
+              </div>
+            </div>
+
+            <div className="rounded-xl bg-slate-950 p-5 border border-slate-800 space-y-3">
+              <span className="text-xs font-bold uppercase tracking-widest text-amber-300">Universal Phase &amp; Molar Criteria</span>
+              <ul className="list-disc ml-5 space-y-2 text-xs text-slate-300">
+                <li>
+                  <strong className="text-white">Solute and Solvent in different physical states:</strong> The component whose physical state is retained in the final solution is designated as the solvent. (Example: In an aqueous salt solution formed from <InlineMath math="200\text{ g } \text{NaCl (s)}" /> and <InlineMath math="100\text{ g } \text{H}_2\text{O (l)}" />, water is the solvent because the final solution is liquid, regardless of mass).
+                </li>
+                <li>
+                  <strong className="text-white">Solute and Solvent completely miscible in identical physical states:</strong> If both components are mutually soluble liquids (e.g., Ethanol <InlineMath math="\text{ROH}" /> and Water <InlineMath math="\text{H}_2\text{O}" />), the substance present in the <strong className="text-cyan-300">greater amount by number of moles (<InlineMath math="n" />)</strong> is designated as the solvent.
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        {/* Section 2: Classification of Binary Solutions */}
+        <section className="space-y-6">
+          <h2 className="text-2xl font-bold text-rose-300 border-l-4 border-rose-400 pl-3">
+            2. Classification of Binary Solutions across Physical States
+          </h2>
+
+          <div className="rounded-2xl border border-slate-800 bg-slate-900 p-6 space-y-4">
+            <p className="text-sm text-slate-300 leading-relaxed">
+              Depending on the physical state of the solute and solvent, nine distinct types of binary solutions can exist:
+            </p>
+
+            <div className="overflow-x-auto">
+              <table className="w-full text-left border-collapse text-xs font-mono">
+                <thead>
+                  <tr className="border-b border-slate-700 bg-slate-950/60 text-slate-300">
+                    <th className="p-3">Solvent State</th>
+                    <th className="p-3">Solute State</th>
+                    <th className="p-3">Representative Chemical Examples</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-slate-800 text-slate-200">
+                  <tr>
+                    <td className="p-3 font-bold text-cyan-300">Solid</td>
+                    <td className="p-3">Solid</td>
+                    <td className="p-3">Metallic Alloys (e.g., Brass, Bronze, Steel)</td>
+                  </tr>
+                  <tr>
+                    <td className="p-3 font-bold text-cyan-300">Solid</td>
+                    <td className="p-3">Liquid</td>
+                    <td className="p-3">Amalgams of Mercury with metals (<InlineMath math="\text{Hg-Na}" /> or <InlineMath math="\text{Hg-Zn}" />)</td>
+                  </tr>
+                  <tr>
+                    <td className="p-3 font-bold text-cyan-300">Solid</td>
+                    <td className="p-3">Gas</td>
+                    <td className="p-3">Hydrogen (<InlineMath math="\text{H}_2" />) gas adsorbed in Palladium (<InlineMath math="\text{Pd}" />) or Platinum</td>
+                  </tr>
+                  <tr>
+                    <td className="p-3 font-bold text-emerald-300">Liquid</td>
+                    <td className="p-3">Solid</td>
+                    <td className="p-3">Aqueous salt solutions (Water + <InlineMath math="\text{NaCl}" />, Sugar in water)</td>
+                  </tr>
+                  <tr>
+                    <td className="p-3 font-bold text-emerald-300">Liquid</td>
+                    <td className="p-3">Liquid</td>
+                    <td className="p-3">Miscible liquid mixtures (Water + Ethanol, Acetone + Benzene)</td>
+                  </tr>
+                  <tr>
+                    <td className="p-3 font-bold text-emerald-300">Liquid</td>
+                    <td className="p-3">Gas</td>
+                    <td className="p-3">Aerated/Carbonated drinks (<InlineMath math="\text{CO}_2" /> in water), Dissolved <InlineMath math="\text{O}_2" /> in lakes</td>
+                  </tr>
+                  <tr>
+                    <td className="p-3 font-bold text-amber-300">Gas</td>
+                    <td className="p-3">Solid</td>
+                    <td className="p-3">Sublimable solids in air (Camphor vapour or Iodine sublimation in <InlineMath math="\text{N}_2" />)</td>
+                  </tr>
+                  <tr>
+                    <td className="p-3 font-bold text-amber-300">Gas</td>
+                    <td className="p-3">Liquid</td>
+                    <td className="p-3">Volatile liquids in gas (Chloroform <InlineMath math="\text{CHCl}_3" /> or <InlineMath math="\text{CCl}_4" /> vapour in nitrogen)</td>
+                  </tr>
+                  <tr>
+                    <td className="p-3 font-bold text-amber-300">Gas</td>
+                    <td className="p-3">Gas</td>
+                    <td className="p-3">Any gaseous mixture (Air: <InlineMath math="\text{N}_2 + \text{O}_2 + \text{Ar}" />)</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <p className="text-xs text-rose-300 font-semibold pt-2">
+              Note: In our quantitative chemistry syllabus, we will focus exclusively on aqueous binary solutions where water is the universal solvent.
             </p>
           </div>
+        </section>
 
-          <div className="rounded-lg border bg-slate-50 p-4">
-            <p className="font-semibold">
-              <InlineMath math={String.raw`\% (w/v)`} /> method
+        {/* Section 3: The Four Percentage Concentration Scales */}
+        <section className="space-y-6">
+          <h2 className="text-2xl font-bold text-rose-300 border-l-4 border-rose-400 pl-3">
+            3. The Percentage Concentration Method (<InlineMath math="\% w/w, \% w/v, \% v/v, \% v/w" />)
+          </h2>
+
+          <div className="rounded-2xl border border-slate-800 bg-slate-900 p-6 space-y-4 text-sm leading-relaxed text-slate-200">
+            <p>
+              The percentage method expresses the quantity of solute dissolved in exactly <InlineMath math="100\text{ units}" /> (grams or millilitres) of the total solution.
             </p>
-            <p>gm of solute in every 100 ml of solution.</p>
+
+            <div className="grid gap-6 md:grid-cols-2">
+              <div className="rounded-xl border border-slate-800 bg-slate-950 p-5 flex flex-col justify-between">
+                <div>
+                  <h3 className="font-bold text-cyan-300 mb-2">1. Percentage by Weight (<InlineMath math="\% w/w" />)</h3>
+                  <p className="text-xs text-slate-300 leading-relaxed">
+                    Mass of solute in grams dissolved per <InlineMath math="100\text{ g}" /> of total solution. Being mass-based, it is <strong className="text-white">temperature independent</strong>.
+                  </p>
+                  <div className="mt-3 overflow-x-auto py-2">
+                    <BlockMath math={String.raw`\% (w/w) = \frac{\text{Mass of solute (g)}}{\text{Mass of solution (g)}} \times 100`} />
+                  </div>
+                </div>
+              </div>
+
+              <div className="rounded-xl border border-slate-800 bg-slate-950 p-5 flex flex-col justify-between">
+                <div>
+                  <h3 className="font-bold text-emerald-300 mb-2">2. Weight-Volume Percentage (<InlineMath math="\% w/v" />)</h3>
+                  <p className="text-xs text-slate-300 leading-relaxed">
+                    Mass of solute in grams dissolved per <InlineMath math="100\text{ mL}" /> of solution. Being volume-dependent, it <strong className="text-white">varies with temperature</strong>.
+                  </p>
+                  <div className="mt-3 overflow-x-auto py-2">
+                    <BlockMath math={String.raw`\% (w/v) = \frac{\text{Mass of solute (g)}}{\text{Volume of solution (mL)}} \times 100`} />
+                  </div>
+                </div>
+              </div>
+
+              <div className="rounded-xl border border-slate-800 bg-slate-950 p-5 flex flex-col justify-between">
+                <div>
+                  <h3 className="font-bold text-amber-300 mb-2">3. Volume-Weight Percentage (<InlineMath math="\% v/w" />)</h3>
+                  <p className="text-xs text-slate-300 leading-relaxed">
+                    Volume of liquid/gaseous solute in millilitres dissolved per <InlineMath math="100\text{ g}" /> of total solution.
+                  </p>
+                  <div className="mt-3 overflow-x-auto py-2">
+                    <BlockMath math={String.raw`\% (v/w) = \frac{\text{Volume of solute (mL)}}{\text{Mass of solution (g)}} \times 100`} />
+                  </div>
+                </div>
+              </div>
+
+              <div className="rounded-xl border border-slate-800 bg-slate-950 p-5 flex flex-col justify-between">
+                <div>
+                  <h3 className="font-bold text-rose-300 mb-2">4. Percentage by Volume (<InlineMath math="\% v/v" />)</h3>
+                  <p className="text-xs text-slate-300 leading-relaxed">
+                    Volume of liquid solute in millilitres dissolved per <InlineMath math="100\text{ mL}" /> of total solution. Widely used for liquid mixtures (e.g., alcohol in water).
+                  </p>
+                  <div className="mt-3 overflow-x-auto py-2">
+                    <BlockMath math={String.raw`\% (v/v) = \frac{\text{Volume of solute (mL)}}{\text{Volume of solution (mL)}} \times 100`} />
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
+        </section>
 
-          <div className="rounded-lg border bg-slate-50 p-4">
-            <p className="font-semibold">
-              <InlineMath math={String.raw`\% (v/w)`} /> method
-            </p>
-            <p>ml of solute in every 100 gm of solution.</p>
-          </div>
+        {/* Section 4: Solved Example */}
+        <section className="space-y-6">
+          <h2 className="text-2xl font-bold text-rose-300 border-l-4 border-rose-400 pl-3">
+            4. Solved Application: Density Interconversion
+          </h2>
 
-          <div className="rounded-lg border bg-slate-50 p-4">
-            <p className="font-semibold">
-              <InlineMath math={String.raw`\% (v/v)`} /> method / % by volume
-            </p>
-            <p>ml of solute in every 100 ml of solution.</p>
-          </div>
-        </div>
-
-        <ExampleCard
-          title="Solved Example — Percentage Method"
-          question={
-            <>
-              40 gm of a solute is dissolved in 160 gm water to form a solution
-              of density 1.25 gm/ml. Calculate the concentration of solution in{' '}
-              <InlineMath math={String.raw`\% (w/w)`} /> and{' '}
-              <InlineMath math={String.raw`\% (w/v)`} />.
-            </>
-          }
-          given={
-            <>
-              Mass of solute = 40 gm; mass of water = 160 gm; density of
-              solution = 1.25 gm/ml.
-            </>
-          }
-          formula={
-            <>
-              <FormulaLine
-                tex={String.raw`\% (w/w)=\frac{\text{mass of solute}}{\text{mass of solution}}\times 100`}
-              />
-              <FormulaLine
-                tex={String.raw`\% (w/v)=\frac{\text{mass of solute}}{\text{volume of solution in ml}}\times 100`}
-              />
-            </>
-          }
-          calculation={
-            <>
-              <p>Mass of solution:</p>
-              <FormulaLine tex={String.raw`40+160=200\ \text{gm}`} />
-
-              <p>For weight by weight percentage:</p>
-              <FormulaLine
-                tex={String.raw`\% (w/w)=\frac{40}{200}\times 100=20\%`}
-              />
-
-              <p className="font-semibold text-amber-700">
-                The <InlineMath math={String.raw`\% (w/v)`} /> calculation
-                continues on Page 5 / Part 2.
+          <div className="rounded-2xl border border-slate-800 bg-slate-900 p-6 space-y-4 text-sm leading-relaxed text-slate-200">
+            <div className="rounded-xl border border-slate-800 bg-slate-950 p-5 space-y-3">
+              <h3 className="font-bold text-white text-base">Problem Statement</h3>
+              <p className="text-slate-300 text-xs leading-relaxed">
+                <InlineMath math="40\text{ g}" /> of a solid solute is dissolved in <InlineMath math="160\text{ g}" /> of pure water to form a solution having a measured density <InlineMath math="d = 1.25\text{ g/mL}" />. Calculate the concentration of this solution in both <InlineMath math="\% (w/w)" /> and <InlineMath math="\% (w/v)" />.
               </p>
-            </>
-          }
-          answer={
-            <>
-              <InlineMath math={String.raw`20\% (w/w)`} />;{' '}
-              <InlineMath math={String.raw`\% (w/v)`} /> continues in Part 2.
-            </>
-          }
-        />
 
-        <p className="text-xs italic text-slate-400">TG ~ @bohring_bot</p>
-      </section>
+              <div className="border-t border-slate-800 pt-3 space-y-2 text-xs font-mono">
+                <div className="text-slate-400">Step 1: Calculate total mass of solution</div>
+                <BlockMath math={String.raw`m_{\text{solution}} = m_{\text{solute}} + m_{\text{solvent}} = 40 + 160 = 200\text{ g}`} />
+
+                <div className="text-slate-400 pt-2">Step 2: Calculate Percentage by Weight (<InlineMath math="\% w/w" />)</div>
+                <BlockMath math={String.raw`\% (w/w) = \frac{40}{200} \times 100 = 20\%`} />
+
+                <div className="text-slate-400 pt-2">Step 3: Calculate volume of solution using density <InlineMath math="V = \frac{m}{d}" /></div>
+                <BlockMath math={String.raw`V_{\text{solution}} = \frac{200\text{ g}}{1.25\text{ g/mL}} = 160\text{ mL}`} />
+
+                <div className="text-slate-400 pt-2">Step 4: Calculate Weight-Volume Percentage (<InlineMath math="\% w/v" />)</div>
+                <BlockMath math={String.raw`\% (w/v) = \frac{40\text{ g}}{160\text{ mL}} \times 100 = 25\%`} />
+              </div>
+
+              <div className="rounded-lg bg-emerald-500/10 border border-emerald-500/20 p-3 font-bold text-emerald-300 text-xs text-center">
+                Final Answer: <InlineMath math="20\% (w/w)" /> and <InlineMath math="25\% (w/v)" />.
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Footer info */}
+        <footer className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 text-center text-xs text-slate-400">
+          <p>Concentration Terms Module • Topic 1: Solute vs Solvent Definitions &amp; Percentage Method</p>
+        </footer>
+      </article>
     </main>
   );
 }

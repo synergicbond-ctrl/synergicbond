@@ -14,7 +14,7 @@
 
 export const FREE_CHAPTERS: Record<string, string[]> = {
   organic: ["goc", "general-organic-chemistry"],
-  physical: ["mole-concept"],
+  physical: ["mole-concept", "redox-reactions"],
   inorganic: ["periodic-table"],
 };
 

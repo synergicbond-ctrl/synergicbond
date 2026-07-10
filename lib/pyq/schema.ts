@@ -65,6 +65,11 @@ export const PYQQuestionSchema = z.object({
   paperNumber:  z.number().int(),
   source:       z.string(),
   authenticityStatus: z.enum(["VERIFIED_PYQ", "ADAPTED_PYQ", "NEEDS_MANUAL_REVIEW"]),
+  officialSource: z.string().optional(),
+  officialPaperCode: z.string().optional(),
+  officialAnswerKeySource: z.string().optional(),
+  verificationStatus: z.enum(["OFFICIAL_VERIFIED", "UNVERIFIED", "REJECTED"]).optional(),
+  verifiedAt: z.string().optional(),
   questionType: z.enum(["MCQ-Single", "MCQ-Multiple", "Integer", "Numerical", "Assertion-Reason"]).default("MCQ-Single"),
 
   // Content

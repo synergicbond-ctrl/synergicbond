@@ -1,0 +1,1498 @@
+# NEET Chemistry PYQ Legal-Safety Report
+
+Generated: 2026-07-10T03:06:50.916Z
+
+## Decision
+
+- Production records imported from the 50-part extracted ZIP: 0
+- Staging checklist records found: 1440
+- Records lacking official-source verification: 1440
+- The extracted ZIP is untrusted staging material only. It must not be published, imported, adapted, or used as a production source dataset.
+- A record can enter production only after verification against an official NTA, CBSE, or other examination-authority paper and the corresponding official final answer key.
+- Arihant/source-book solutions, numbering, ordering, chapter arrangement, metadata, branding, page references, editorial notes, diagrams, and formatting are excluded from production.
+
+## Required Production Provenance
+
+Every future production PYQ record must carry: `officialSource`, `officialPaperCode`, `officialAnswerKeySource`, `verificationStatus`, and `verifiedAt`.
+
+## Unverified Checklist By Year
+
+- 1988: 23
+- 1989: 41
+- 1990: 18
+- 1991: 33
+- 1992: 31
+- 1993: 39
+- 1994: 57
+- 1995: 35
+- 1996: 37
+- 1997: 41
+- 1998: 42
+- 1999: 39
+- 2000: 41
+- 2001: 43
+- 2002: 38
+- 2003: 36
+- 2004: 44
+- 2005: 38
+- 2006: 41
+- 2007: 41
+- 2008: 41
+- 2009: 39
+- 2010: 36
+- 2011: 39
+- 2012: 35
+- 2013: 37
+- 2014: 37
+- 2015: 75
+- 2016: 73
+- 2017: 35
+- 2018: 31
+- 2019: 71
+- 2020: 69
+- 2021: 45
+- unknown: 19
+
+## Records Lacking Official-Source Verification
+
+- NEET-PYQ-0001 | CBSE AIPMT 1994 | 1994 | Chemical Bonding and Molecular Structure | NeetPyqPart01.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0002 | CBSE AIPMT 2001 | 2001 | Coordination Compounds | NeetPyqPart01.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0003 | CBSE AIPMT 2001 | 2001 | Organic Compounds Containing Oxygen | NeetPyqPart01.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0004 | CBSE AIPMT 2002 | 2002 | Some Basic Concepts in Chemistry | NeetPyqPart01.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0005 | CBSE AIPMT 1993 | 1993 | Organic Compounds Containing Halogens | NeetPyqPart01.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0006 | CBSE AIPMT 1990 | 1990 | Some Basic Concepts in Chemistry | NeetPyqPart01.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0007 | NEET 2021 | 2021 | s-Block Elements | NeetPyqPart01.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0008 | CBSE AIPMT 2015, 2014 | 2014 | Surface Chemistry | NeetPyqPart01.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0009 | CBSE AIPMT 2005 | 2005 | Solutions | NeetPyqPart01.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0010 | NEET 2017 | 2017 | Isolation of Metals | NeetPyqPart01.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0011 | CBSE AIPMT 1993 | 1993 | States of Matter | NeetPyqPart01.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0012 | CBSE AIPMT 1988 | 1988 | Atomic Structure | NeetPyqPart01.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0013 | NEET 2016, Phase I | 2016 | Biomolecules, Chemistry in Everyday Life and Environmental Chemistry | NeetPyqPart01.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0014 | CBSE AIPMT 2007 | 2007 | d- and f-Block Elements | NeetPyqPart01.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0015 | NEET (Sep.) 2020 | 2020 | Coordination Compounds | NeetPyqPart01.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0016 | CBSE AIPMT 1988 | 1988 | Solutions | NeetPyqPart01.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0017 | NEET 2018 | 2018 | Chemical Kinetics | NeetPyqPart01.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0018 | CBSE AIPMT 2012 | 2012 | Hydrocarbons | NeetPyqPart01.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0019 | NEET (Sep.) 2020 | 2020 | Redox Reactions and Electrochemistry | NeetPyqPart01.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0020 | NEET (Oct.) 2020 | 2020 | Solutions | NeetPyqPart01.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0021 | CBSE AIPMT 2007 | 2007 | Solutions | NeetPyqPart01.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0022 | CBSE AIPMT 2002, 1999, 98 | 1999 | Some Basic Concepts in Chemistry | NeetPyqPart01.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0023 | CBSE AIPMT 2009 | 2009 | Chemical Bonding and Molecular Structure | NeetPyqPart01.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0024 | CBSE AIPMT 1990 | 1990 | Chemical Thermodynamics | NeetPyqPart01.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0025 | CBSE AIPMT 2006 | 2006 | Solid State | NeetPyqPart01.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0026 | CBSE AIPMT 1991 | 1991 | p-Block Elements | NeetPyqPart01.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0027 | NEET 2016, Phase I | 2016 | Chemical Kinetics | NeetPyqPart01.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0028 | NEET 2016, Phase I | 2016 | Ionic Equilibrium | NeetPyqPart01.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0029 | CBSE AIPMT 2004 | 2004 | p-Block Elements | NeetPyqPart01.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0030 | CBSE AIPMT 2015 | 2015 | Organic Compounds Containing Halogens | NeetPyqPart02.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0031 | NEET 2013 | 2013 | Some Basic Concepts in Chemistry | NeetPyqPart02.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0032 | NEET (Sep.) 2020 | 2020 | Chemical Thermodynamics | NeetPyqPart02.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0033 | CBSE AIPMT 2016, Phase I | 2016 | Redox Reactions and Electrochemistry | NeetPyqPart02.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0034 | CBSE AIPMT 2000 | 2000 | Chemical Bonding and Molecular Structure | NeetPyqPart02.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0035 | NEET 2013 | 2013 | Biomolecules, Chemistry in Everyday Life and Environmental Chemistry | NeetPyqPart02.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0036 | NEET (Odisha) 2019 | 2019 | States of Matter | NeetPyqPart02.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0037 | CBSE AIPMT 1988 | 1988 | Solutions | NeetPyqPart02.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0038 | CBSE AIPMT 2009 | 2009 | Ionic Equilibrium | NeetPyqPart02.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0039 | CBSE AIPMT 1992 | 1992 | Organic Compounds Containing Oxygen | NeetPyqPart02.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0040 | CBSE AIPMT 1996 | 1996 | Organic Chemistry - Basic Principles | NeetPyqPart02.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0041 | NEET 2018 | 2018 | Coordination Compounds | NeetPyqPart02.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0042 | NEET (National) 2019 | 2019 | Hydrogen | NeetPyqPart02.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0043 | CBSE AIPMT 1995 | 1995 | p-Block Elements | NeetPyqPart02.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0044 | NEET 2016, Phase I | 2016 | Polymers | NeetPyqPart02.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0045 | CBSE AIPMT 1988 | 1988 | p-Block Elements | NeetPyqPart02.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0046 | CBSE AIPMT 2011 | 2011 | Solutions | NeetPyqPart02.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0047 | CBSE AIPMT 1991 | 1991 | p-Block Elements | NeetPyqPart02.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0048 | CBSE AIPMT 1990 | 1990 | p-Block Elements | NeetPyqPart02.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0049 | NEET (Odisha) 2019 | 2019 | Chemical Kinetics | NeetPyqPart02.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0050 | CBSE AIPMT 2006 | 2006 | Atomic Structure | NeetPyqPart02.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0051 | NEET 2013 | 2013 | Hydrocarbons | NeetPyqPart02.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0052 | NEET (Oct.) 2020 | 2020 | Organic Compounds Containing Nitrogen | NeetPyqPart02.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0053 | NEET 2013 | 2013 | Organic Chemistry - Basic Principles | NeetPyqPart02.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0054 | CBSE AIPMT 1998 | 1998 | Chemical Bonding and Molecular Structure | NeetPyqPart02.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0055 | CBSE AIPMT 2014 | 2014 | Chemical Bonding and Molecular Structure | NeetPyqPart02.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0056 | CBSE AIPMT 2012 | 2012 | Biomolecules, Chemistry in Everyday Life and Environmental Chemistry | NeetPyqPart02.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0057 | CBSE AIPMT 1995 | 1995 | Hydrocarbons | NeetPyqPart02.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0058 | CBSE AIPMT 2015, 2014 | 2014 | d- and f-Block Elements | NeetPyqPart02.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0059 | NEET 2016, Phase II | 2016 | Ionic Equilibrium | NeetPyqPart03.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0060 | NEET 2013 | 2013 | d- and f-Block Elements | NeetPyqPart03.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0061 | CBSE AIPMT 2010 | 2010 | Biomolecules, Chemistry in Everyday Life and Environmental Chemistry | NeetPyqPart03.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0062 | CBSE AIPMT 2001 | 2001 | d- and f-Block Elements | NeetPyqPart03.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0063 | CBSE AIPMT 2002 | 2002 | Polymers | NeetPyqPart03.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0064 | CBSE AIPMT 2011 | 2011 | States of Matter | NeetPyqPart03.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0065 | CBSE AIPMT 2008 | 2008 | Chemical Thermodynamics | NeetPyqPart03.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0066 | CBSE AIPMT 2007 | 2007 | Organic Compounds Containing Oxygen | NeetPyqPart03.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0067 | NEET (Oct.) 2020 | 2020 | Chemical Kinetics | NeetPyqPart03.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0068 | CBSE AIPMT 1988 | 1988 | Ionic Equilibrium | NeetPyqPart03.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0069 | CBSE AIPMT 1994 | 1994 | p-Block Elements | NeetPyqPart03.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0070 | CBSE AIPMT 2001 | 2001 | Coordination Compounds | NeetPyqPart03.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0071 | CBSE AIPMT 2001 | 2001 | Chemical Thermodynamics | NeetPyqPart03.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0072 | CBSE AIPMT 1999 | 1999 | Redox Reactions and Electrochemistry | NeetPyqPart03.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0073 | NEET (National) 2019 | 2019 | Hydrocarbons | NeetPyqPart03.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0074 | CBSE AIPMT 2012 | 2012 | Organic Compounds Containing Oxygen | NeetPyqPart03.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0075 | CBSE AIPMT 1992 | 1992 | States of Matter | NeetPyqPart03.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0076 | CBSE AIPMT 2015 | 2015 | Organic Compounds Containing Oxygen | NeetPyqPart03.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0077 | CBSE AIPMT 2016, Phase II | 2016 | Redox Reactions and Electrochemistry | NeetPyqPart03.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0078 | CBSE AIPMT 1989 | 1989 | Atomic Structure | NeetPyqPart03.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0079 | CBSE AIPMT 1994 | 1994 | Solutions | NeetPyqPart03.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0080 | CBSE AIPMT 2000 | 2000 | Chemical Bonding and Molecular Structure | NeetPyqPart03.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0081 | NEET (Odisha) 2019 | 2019 | Organic Compounds Containing Oxygen | NeetPyqPart03.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0082 | CBSE AIPMT 2004 | 2004 | Chemical Thermodynamics | NeetPyqPart03.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0083 | NEET 2016, Phase II | 2016 | Polymers | NeetPyqPart03.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0084 | CBSE AIPMT 2015 | 2015 | Solutions | NeetPyqPart03.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0085 | NEET 2016, Phase I | 2016 | Surface Chemistry | NeetPyqPart03.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0086 | NEET (National) 2019 | 2019 | Surface Chemistry | NeetPyqPart03.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0087 | CBSE AIPMT 2004 | 2004 | Chemical Bonding and Molecular Structure | NeetPyqPart04.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0088 | CBSE AIPMT 2001 | 2001 | Hydrocarbons | NeetPyqPart04.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0089 | NEET (Sep.) 2020 | 2020 | Isolation of Metals | NeetPyqPart04.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0090 | CBSE AIPMT 2006 | 2006 | Coordination Compounds | NeetPyqPart04.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0091 | CBSE AIPMT 1996 | 1996 | Organic Compounds Containing Nitrogen | NeetPyqPart04.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0092 | CBSE AIPMT 2008 | 2008 | Some Basic Concepts in Chemistry | NeetPyqPart04.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0093 | CBSE AIPMT 2003 | 2003 | d- and f-Block Elements | NeetPyqPart04.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0094 | CBSE AIPMT 1997 | 1997 | Hydrocarbons | NeetPyqPart04.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0095 | CBSE AIPMT 1989 | 1989 | s-Block Elements | NeetPyqPart04.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0096 | CBSE AIPMT 1988 | 1988 | Some Basic Concepts in Chemistry | NeetPyqPart04.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0097 | NEET 2016, Phase I | 2016 | Chemical Bonding and Molecular Structure | NeetPyqPart04.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0098 | CBSE AIPMT 1992 | 1992 | States of Matter | NeetPyqPart04.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0099 | CBSE AIPMT 2011 | 2011 | Atomic Structure | NeetPyqPart04.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0100 | NEET 2018 | 2018 | Biomolecules, Chemistry in Everyday Life and Environmental Chemistry | NeetPyqPart04.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0101 | CBSE AIPMT 2008 | 2008 | Solid State | NeetPyqPart04.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0102 | CBSE AIPMT 1996 | 1996 | Biomolecules, Chemistry in Everyday Life and Environmental Chemistry | NeetPyqPart04.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0103 | CBSE AIPMT 1989 | 1989 | Organic Compounds Containing Nitrogen | NeetPyqPart04.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0104 | CBSE AIPMT 2008 | 2008 | Atomic Structure | NeetPyqPart04.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0105 | CBSE AIPMT 1993 | 1993 | Classification of Elements and Periodicity | NeetPyqPart04.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0106 | CBSE AIPMT 1992 | 1992 | Ionic Equilibrium | NeetPyqPart04.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0107 | CBSE AIPMT 1994 | 1994 | States of Matter | NeetPyqPart04.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0108 | CBSE AIPMT 1998 | 1998 | Some Basic Concepts in Chemistry | NeetPyqPart04.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0109 | CBSE AIPMT 2002 | 2002 | p-Block Elements | NeetPyqPart04.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0110 | NEET 2016, Phase I | 2016 | d- and f-Block Elements | NeetPyqPart04.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0111 | CBSE AIPMT 2015 | 2015 | Ionic Equilibrium | NeetPyqPart04.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0112 | CBSE AIPMT 1992 | 1992 | p-Block Elements | NeetPyqPart04.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0113 | CBSE AIPMT 1997 | 1997 | Chemical Bonding and Molecular Structure | NeetPyqPart04.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0114 | CBSE AIPMT 2006 | 2006 | Chemical Kinetics | NeetPyqPart04.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0115 | CBSE AIPMT 2010 | 2010 | Chemical Kinetics | NeetPyqPart04.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0116 | NEET (Odisha) 2019 | 2019 | Redox Reactions and Electrochemistry | NeetPyqPart05.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0117 | CBSE AIPMT 2012 | 2012 | Organic Chemistry - Basic Principles | NeetPyqPart05.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0118 | NEET (Nationa) 2019 | 2019 | Coordination Compounds | NeetPyqPart05.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0119 | CBSE AIPMT 2003 | 2003 | Hydrocarbons | NeetPyqPart05.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0120 | NEET (Oct.) 2020 | 2020 | Biomolecules, Chemistry in Everyday Life and Environmental Chemistry | NeetPyqPart05.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0121 | CBSE AIPMT 1989 | 1989 | Organic Compounds Containing Oxygen | NeetPyqPart05.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0122 | CBSE AIPMT 2015 | 2015 | Chemical Bonding and Molecular Structure | NeetPyqPart05.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0123 | CBSE AIPMT 1991 | 1991 | Biomolecules, Chemistry in Everyday Life and Environmental Chemistry | NeetPyqPart05.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0124 | NEET/AIPMT | unknown year | States of Matter | NeetPyqPart05.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0125 | NEET (Phase I) 2016 | 2016 | Atomic Structure | NeetPyqPart05.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0126 | CBSE AIPMT 2000 | 2000 | Chemical Thermodynamics | NeetPyqPart05.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0127 | NEET 2016, Phase II | 2016 | Organic Chemistry - Basic Principles | NeetPyqPart05.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0128 | CBSE AIPMT 1992 | 1992 | Chemical Bonding and Molecular Structure | NeetPyqPart05.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0129 | CBSE AIPMT 99, 1998 | 1998 | Organic Chemistry - Basic Principles | NeetPyqPart05.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0130 | NEET 2021 | 2021 | Solid State | NeetPyqPart05.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0131 | NEET (National) 2019 | 2019 | Chemical Thermodynamics | NeetPyqPart05.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0132 | CBSE AIPMT 1988 | 1988 | Isolation of Metals | NeetPyqPart05.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0133 | NEET 2013 | 2013 | Organic Chemistry - Basic Principles | NeetPyqPart05.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0134 | NEET 2013 | 2013 | Chemical Bonding and Molecular Structure | NeetPyqPart05.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0135 | NEET 2018 | 2018 | Hydrocarbons | NeetPyqPart05.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0136 | NEET 2016, Phase II | 2016 | Biomolecules, Chemistry in Everyday Life and Environmental Chemistry | NeetPyqPart05.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0137 | CBSE AIPMT 1997 | 1997 | Organic Compounds Containing Halogens | NeetPyqPart05.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0138 | CBSE AIPMT 1994 | 1994 | States of Matter | NeetPyqPart05.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0139 | CBSE AIPMT 2000 | 2000 | Organic Chemistry - Basic Principles | NeetPyqPart05.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0140 | CBSE AIPMT 2007 | 2007 | Some Basic Concepts in Chemistry | NeetPyqPart05.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0141 | CBSE AIPMT 1989 | 1989 | s-Block Elements | NeetPyqPart05.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0142 | NEET 2013 | 2013 | p-Block Elements | NeetPyqPart05.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0143 | CBSE AIPMT 1999 | 1999 | Solutions | NeetPyqPart05.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0144 | NEET 2016, Phase I | 2016 | Solid State | NeetPyqPart05.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0145 | CBSE AIPMT 1990 | 1990 | States of Matter | NeetPyqPart06.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0146 | NEET 2018 | 2018 | States of Matter | NeetPyqPart06.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0147 | NEET 2013 | 2013 | Ionic Equilibrium | NeetPyqPart06.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0148 | CBSE AIPMT 2001 | 2001 | Chemical Bonding and Molecular Structure | NeetPyqPart06.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0149 | CBSE AIPMT 2006 | 2006 | d- and f-Block Elements | NeetPyqPart06.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0150 | CBSE AIPMT 2008 | 2008 | Atomic Structure | NeetPyqPart06.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0151 | CBSE AIPMT 2004 | 2004 | Chemical Thermodynamics | NeetPyqPart06.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0152 | CBSE AIPMT 2015 | 2015 | Organic Compounds Containing Oxygen | NeetPyqPart06.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0153 | CBSE AIPMT 2004 | 2004 | Biomolecules, Chemistry in Everyday Life and Environmental Chemistry | NeetPyqPart06.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0154 | CBSE AIPMT 2006 | 2006 | Chemical Kinetics | NeetPyqPart06.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0155 | CBSE AIPMT 2004 | 2004 | Classification of Elements and Periodicity | NeetPyqPart06.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0156 | CBSE AIPMT 2007 | 2007 | s-Block Elements | NeetPyqPart06.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0157 | CBSE AIPMT 2006 | 2006 | Organic Compounds Containing Oxygen | NeetPyqPart06.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0158 | CBSE AIPMT 2008 | 2008 | Biomolecules, Chemistry in Everyday Life and Environmental Chemistry | NeetPyqPart06.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0159 | CBSE AIPMT 2005 | 2005 | Atomic Structure | NeetPyqPart06.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0160 | CBSE AIPMT 2005 | 2005 | Chemical Kinetics | NeetPyqPart06.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0161 | CBSE AIPMT 2011 | 2011 | Polymers | NeetPyqPart06.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0162 | CBSE AIPMT 2007 | 2007 | Ionic Equilibrium | NeetPyqPart06.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0163 | CBSE AIPMT 2004 | 2004 | Coordination Compounds | NeetPyqPart06.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0164 | CBSE AIPMT 1997 | 1997 | Organic Chemistry - Basic Principles | NeetPyqPart06.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0165 | CBSE AIPMT 2011 | 2011 | Organic Chemistry - Basic Principles | NeetPyqPart06.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0166 | CBSE AIPMT 2011 | 2011 | Solutions | NeetPyqPart06.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0167 | CBSE AIPMT 1994 | 1994 | Chemical Kinetics | NeetPyqPart06.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0168 | CBSE AIPMT 2015 | 2015 | Coordination Compounds | NeetPyqPart06.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0169 | CBSE AIPMT 2012 | 2012 | Ionic Equilibrium | NeetPyqPart06.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0170 | CBSE AIPMT 1991 | 1991 | p-Block Elements | NeetPyqPart06.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0171 | CBSE AIPMT 2004 | 2004 | Organic Chemistry - Basic Principles | NeetPyqPart06.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0172 | CBSE AIPMT 1989 | 1989 | Chemical Equilibrium | NeetPyqPart06.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0173 | CBSE AIPMT 2009 | 2009 | Organic Compounds Containing Nitrogen | NeetPyqPart06.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0174 | CBSE AIPMT 2014 | 2014 | Organic Compounds Containing Halogens | NeetPyqPart07.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0175 | CBSE AIPMT 2012 | 2012 | Organic Chemistry - Basic Principles | NeetPyqPart07.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0176 | NEET 2016, Phase I | 2016 | Organic Chemistry - Basic Principles | NeetPyqPart07.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0177 | CBSE AIPMT 2015 | 2015 | p-Block Elements | NeetPyqPart07.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0178 | NEET 2017 | 2017 | Solutions | NeetPyqPart07.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0179 | CBSE AIPMT 1989 | 1989 | p-Block Elements | NeetPyqPart07.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0180 | CBSE AIPMT 1994 | 1994 | Solutions | NeetPyqPart07.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0181 | NEET 2021 | 2021 | Chemical Thermodynamics | NeetPyqPart07.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0182 | CBSE AIPMT 2012 | 2012 | p-Block Elements | NeetPyqPart07.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0183 | NEET (Sep.) 2020 | 2020 | Some Basic Concepts in Chemistry | NeetPyqPart07.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0184 | NEET (Odisha) 2019 | 2019 | Chemical Thermodynamics | NeetPyqPart07.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0185 | CBSE AIPMT 2010 | 2010 | Chemical Bonding and Molecular Structure | NeetPyqPart07.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0186 | CBSE AIPMT 2015 | 2015 | Some Basic Concepts in Chemistry | NeetPyqPart07.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0187 | CBSE AIPMT 1989 | 1989 | Organic Compounds Containing Oxygen | NeetPyqPart07.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0188 | NEET 2017 | 2017 | Organic Chemistry - Basic Principles | NeetPyqPart07.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0189 | CBSE AIPMT 2004 | 2004 | Chemical Thermodynamics | NeetPyqPart07.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0190 | CBSE AIPMT 1996 | 1996 | p-Block Elements | NeetPyqPart07.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0191 | CBSE AIPMT 1991 | 1991 | Atomic Structure | NeetPyqPart07.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0192 | CBSE AIPMT 2008 | 2008 | s-Block Elements | NeetPyqPart07.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0193 | CBSE AIPMT 1989 | 1989 | Organic Chemistry - Basic Principles | NeetPyqPart07.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0194 | CBSE AIPMT 2011 | 2011 | Redox Reactions and Electrochemistry | NeetPyqPart07.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0195 | CBSE AIPMT 1993 | 1993 | Organic Compounds Containing Oxygen | NeetPyqPart07.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0196 | NEET (Odisha) 2019 | 2019 | p-Block Elements | NeetPyqPart07.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0197 | NEET (Sep.) 2020 | 2020 | Organic Compounds Containing Oxygen | NeetPyqPart07.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0198 | CBSE AIPMT 2015 | 2015 | Classification of Elements and Periodicity | NeetPyqPart07.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0199 | CBSE AIPMT 1994 | 1994 | Coordination Compounds | NeetPyqPart07.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0200 | CBSE AIPMT 1994 | 1994 | Chemical Bonding and Molecular Structure | NeetPyqPart07.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0201 | CBSE AIPMT 2009 | 2009 | Atomic Structure | NeetPyqPart07.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0202 | NEET 2021 | 2021 | Organic Compounds Containing Oxygen | NeetPyqPart07.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0203 | NEET 2017 | 2017 | Organic Compounds Containing Oxygen | NeetPyqPart08.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0204 | CBSE AIPMT 2015 | 2015 | Purification and Characterisation of Organic Compounds | NeetPyqPart08.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0205 | CBSE AIPMT 1991 | 1991 | Chemical Bonding and Molecular Structure | NeetPyqPart08.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0206 | CBSE AIPMT 1994 | 1994 | Redox Reactions and Electrochemistry | NeetPyqPart08.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0207 | CBSE AIPMT 2015 | 2015 | Organic Chemistry - Basic Principles | NeetPyqPart08.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0208 | CBSE AIPMT 2006 | 2006 | Biomolecules, Chemistry in Everyday Life and Environmental Chemistry | NeetPyqPart08.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0209 | CBSE AIPMT 2012 | 2012 | Isolation of Metals | NeetPyqPart08.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0210 | CBSE AIPMT 2012 | 2012 | Isolation of Metals | NeetPyqPart08.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0211 | CBSE AIPMT 2010 | 2010 | Organic Chemistry - Basic Principles | NeetPyqPart08.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0212 | CBSE AIPMT 2007 | 2007 | Some Basic Concepts in Chemistry | NeetPyqPart08.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0213 | NEET 2016, Phase I | 2016 | States of Matter | NeetPyqPart08.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0214 | CBSE AIPMT 2008 | 2008 | Hydrocarbons | NeetPyqPart08.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0215 | NEET (Odisha) 2019 | 2019 | Solid State | NeetPyqPart08.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0216 | CBSE AIPMT 1997 | 1997 | Solid State | NeetPyqPart08.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0217 | CBSE AIPMT 1994 | 1994 | Solid State | NeetPyqPart08.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0218 | CBSE AIPMT 1998 | 1998 | Classification of Elements and Periodicity | NeetPyqPart08.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0219 | NEET 2017 | 2017 | Chemical Equilibrium | NeetPyqPart08.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0220 | CBSE AIPMT 2015 | 2015 | Organic Chemistry - Basic Principles | NeetPyqPart08.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0221 | CBSE AIPMT 2002 | 2002 | Chemical Kinetics | NeetPyqPart08.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0222 | CBSE AIPMT 1988 | 1988 | Atomic Structure | NeetPyqPart08.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0223 | NEET (Odisha) 2019 | 2019 | Organic Compounds Containing Oxygen | NeetPyqPart08.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0224 | NEET 2016, Phase I | 2016 | Surface Chemistry | NeetPyqPart08.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0225 | NEET 2018 | 2018 | d- and f-Block Elements | NeetPyqPart08.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0226 | NEET (National) 2019 | 2019 | Ionic Equilibrium | NeetPyqPart08.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0227 | NEET (Odisha) 2019 | 2019 | Organic Compounds Containing Oxygen | NeetPyqPart08.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0228 | CBSE AIPMT 1991, 94 | 1991 | Chemical Thermodynamics | NeetPyqPart08.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0229 | NEET 2013 | 2013 | Organic Compounds Containing Oxygen | NeetPyqPart08.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0230 | CBSE AIPMT 2010 | 2010 | Some Basic Concepts in Chemistry | NeetPyqPart08.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0231 | CBSE AIPMT 1997 | 1997 | Hydrocarbons | NeetPyqPart09.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0232 | CBSE AIPMT 1994 | 1994 | d- and f-Block Elements | NeetPyqPart09.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0233 | CBSE AIPMT 2005 | 2005 | Solutions | NeetPyqPart09.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0234 | NEET (Oct.) 2020 | 2020 | Redox Reactions and Electrochemistry | NeetPyqPart09.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0235 | CBSE AIPMT 2002 | 2002 | Ionic Equilibrium | NeetPyqPart09.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0236 | NEET (Oct.) 2020 | 2020 | p-Block Elements | NeetPyqPart09.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0237 | CBSE AIPMT 2006 | 2006 | Chemical Bonding and Molecular Structure | NeetPyqPart09.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0238 | CBSE AIPMT 1997 | 1997 | Biomolecules, Chemistry in Everyday Life and Environmental Chemistry | NeetPyqPart09.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0239 | CBSE AIPMT 2010 | 2010 | Coordination Compounds | NeetPyqPart09.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0240 | NEET (National) 2019 | 2019 | p-Block Elements | NeetPyqPart09.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0241 | CBSE AIPMT 2009 | 2009 | Chemical Kinetics | NeetPyqPart09.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0242 | NEET 2016, Phase I | 2016 | Organic Compounds Containing Halogens | NeetPyqPart09.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0243 | CBSE AIPMT 2015 | 2015 | Atomic Structure | NeetPyqPart09.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0244 | CBSE AIPMT 1998 | 1998 | Coordination Compounds | NeetPyqPart09.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0245 | CBSE AIPMT 1999 | 1999 | Solutions | NeetPyqPart09.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0246 | CBSE AIPMT 2010 | 2010 | Redox Reactions and Electrochemistry | NeetPyqPart09.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0247 | CBSE AIPMT 1993 | 1993 | Classification of Elements and Periodicity | NeetPyqPart09.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0248 | CBSE AIPMT 2007 | 2007 | Ionic Equilibrium | NeetPyqPart09.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0249 | NEET 2018 | 2018 | Chemical Equilibrium | NeetPyqPart09.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0250 | CBSE AIPMT 2007 | 2007 | Classification of Elements and Periodicity | NeetPyqPart09.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0251 | CBSE AIPMT 2009 | 2009 | Chemical Bonding and Molecular Structure | NeetPyqPart09.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0252 | CBSE AIPMT 2002 | 2002 | Organic Chemistry - Basic Principles | NeetPyqPart09.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0253 | CBSE AIPMT 1996 | 1996 | p-Block Elements | NeetPyqPart09.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0254 | CBSE AIPMT 1990 | 1990 | s-Block Elements | NeetPyqPart09.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0255 | CBSE AIPMT 2002 | 2002 | Organic Compounds Containing Halogens | NeetPyqPart09.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0256 | NEET (Odisha) 2019 | 2019 | Polymers | NeetPyqPart09.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0257 | NEET (Odisha) 2019 | 2019 | Ionic Equilibrium | NeetPyqPart09.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0258 | CBSE AIPMT 2005 | 2005 | p-Block Elements | NeetPyqPart09.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0259 | CBSE AIPMT 2003 | 2003 | Organic Chemistry - Basic Principles | NeetPyqPart09.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0260 | CBSE AIPMT 2015 | 2015 | Coordination Compounds | NeetPyqPart10.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0261 | CBSE AIPMT 1993 | 1993 | s-Block Elements | NeetPyqPart10.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0262 | NEET (Oct.) 2020 | 2020 | States of Matter | NeetPyqPart10.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0263 | NEET 2016, Phase I | 2016 | Biomolecules, Chemistry in Everyday Life and Environmental Chemistry | NeetPyqPart10.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0264 | CBSE AIPMT 2008 | 2008 | Some Basic Concepts in Chemistry | NeetPyqPart10.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0265 | CBSE AIPMT 2002 | 2002 | p-Block Elements | NeetPyqPart10.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0266 | CBSE AIPMT 2010 | 2010 | Chemical Kinetics | NeetPyqPart10.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0267 | NEET (Odisha) 2019 | 2019 | Chemical Bonding and Molecular Structure | NeetPyqPart10.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0268 | CBSE AIPMT 1991 | 1991 | Chemical Bonding and Molecular Structure | NeetPyqPart10.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0269 | CBSE AIPMT 2008 | 2008 | Chemical Bonding and Molecular Structure | NeetPyqPart10.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0270 | CBSE AIPMT 2014 | 2014 | Polymers | NeetPyqPart10.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0271 | CBSE AIPMT 1997 | 1997 | Biomolecules, Chemistry in Everyday Life and Environmental Chemistry | NeetPyqPart10.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0272 | CBSE AIPMT 1991 | 1991 | Isolation of Metals | NeetPyqPart10.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0273 | CBSE AIPMT 1990 | 1990 | Some Basic Concepts in Chemistry | NeetPyqPart10.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0274 | CBSE AIPMT 2004 | 2004 | Chemical Bonding and Molecular Structure | NeetPyqPart10.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0275 | NEET 2016, Phase I | 2016 | p-Block Elements | NeetPyqPart10.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0276 | CBSE AIPMT 2014 | 2014 | Ionic Equilibrium | NeetPyqPart10.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0277 | CBSE AIPMT 2012 | 2012 | p-Block Elements | NeetPyqPart10.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0278 | CBSE AIPMT 2007 | 2007 | Classification of Elements and Periodicity | NeetPyqPart10.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0279 | CBSE AIPMT 2008 | 2008 | Classification of Elements and Periodicity | NeetPyqPart10.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0280 | CBSE AIPMT 2001 | 2001 | Polymers | NeetPyqPart10.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0281 | CBSE AIPMT 1994 | 1994 | Atomic Structure | NeetPyqPart10.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0282 | CBSE AIPMT 2011 | 2011 | States of Matter | NeetPyqPart10.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0283 | NEET 2021 | 2021 | States of Matter | NeetPyqPart10.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0284 | CBSE AIPMT 1993 | 1993 | Chemical Bonding and Molecular Structure | NeetPyqPart10.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0285 | CBSE AIPMT 2009 | 2009 | Coordination Compounds | NeetPyqPart10.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0286 | CBSE AIPMT 1998 | 1998 | Chemical Bonding and Molecular Structure | NeetPyqPart10.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0287 | CBSE AIPMT 1997 | 1997 | Chemical Bonding and Molecular Structure | NeetPyqPart10.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0288 | NEET (Odisha) 2019 | 2019 | Atomic Structure | NeetPyqPart10.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0289 | CBSE AIPMT 1988 | 1988 | Organic Compounds Containing Oxygen | NeetPyqPart11.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0290 | CBSE AIPMT 1999 | 1999 | Organic Compounds Containing Nitrogen | NeetPyqPart11.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0291 | CBSE AIPMT 2007 | 2007 | p-Block Elements | NeetPyqPart11.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0292 | CBSE AIPMT 2015 | 2015 | Polymers | NeetPyqPart11.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0293 | CBSE AIPMT 2008 | 2008 | Chemical Equilibrium | NeetPyqPart11.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0294 | NEET 2017 | 2017 | Solutions | NeetPyqPart11.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0295 | CBSE AIPMT 2006 | 2006 | Solid State | NeetPyqPart11.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0296 | CBSE AIPMT 1996 | 1996 | Chemical Thermodynamics | NeetPyqPart11.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0297 | CBSE AIPMT 1989 | 1989 | p-Block Elements | NeetPyqPart11.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0298 | CBSE AIPMT 2014 | 2014 | Coordination Compounds | NeetPyqPart11.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0299 | CBSE AIPMT 1991 | 1991 | p-Block Elements | NeetPyqPart11.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0300 | NEET 2016, Phase I | 2016 | Coordination Compounds | NeetPyqPart11.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0301 | NEET 2018 | 2018 | Organic Chemistry - Basic Principles | NeetPyqPart11.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0302 | CBSE AIPMT 1991 | 1991 | Purification and Characterisation of Organic Compounds | NeetPyqPart11.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0303 | CBSE AIPMT 2010 | 2010 | d- and f-Block Elements | NeetPyqPart11.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0304 | CBSE AIPMT 1998 | 1998 | Organic Chemistry - Basic Principles | NeetPyqPart11.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0305 | CBSE AIPMT 2015 | 2015 | Polymers | NeetPyqPart11.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0306 | CBSE AIPMT 1993 | 1993 | Organic Compounds Containing Oxygen | NeetPyqPart11.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0307 | CBSE AIPMT 2010 | 2010 | Organic Compounds Containing Nitrogen | NeetPyqPart11.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0308 | CBSE AIPMT 2000 | 2000 | Redox Reactions and Electrochemistry | NeetPyqPart11.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0309 | CBSE AIPMT 2015 | 2015 | Hydrocarbons | NeetPyqPart11.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0310 | CBSE AIPMT 1999 | 1999 | Ionic Equilibrium | NeetPyqPart11.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0311 | CBSE AIPMT 2015 | 2015 | Organic Compounds Containing Oxygen | NeetPyqPart11.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0312 | CBSE AIPMT 2001 | 2001 | Coordination Compounds | NeetPyqPart11.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0313 | CBSE AIPMT 2001 | 2001 | Organic Compounds Containing Oxygen | NeetPyqPart11.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0314 | CBSE AIPMT 1990 | 1990 | Some Basic Concepts in Chemistry | NeetPyqPart11.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0315 | NEET (National) 2019 | 2019 | Chemical Kinetics | NeetPyqPart11.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0316 | CBSE AIPMT 2015 | 2015 | Redox Reactions and Electrochemistry | NeetPyqPart11.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0317 | NEET/AIPMT | unknown year | Solid State | NeetPyqPart11.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0318 | CBSE AIPMT 1993 | 1993 | Solid State | NeetPyqPart12.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0319 | CBSE AIPMT 2000 | 2000 | Ionic Equilibrium | NeetPyqPart12.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0320 | NEET (Odisha) 2019 | 2019 | Organic Compounds Containing Nitrogen | NeetPyqPart12.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0321 | CBSE AIPMT 2003 | 2003 | Biomolecules, Chemistry in Everyday Life and Environmental Chemistry | NeetPyqPart12.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0322 | CBSE AIPMT 2000 | 2000 | Coordination Compounds | NeetPyqPart12.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0323 | CBSE AIPMT 1995 | 1995 | Coordination Compounds | NeetPyqPart12.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0324 | CBSE AIPMT 2014 | 2014 | Polymers | NeetPyqPart12.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0325 | CBSE AIPMT 2004 | 2004 | Chemical Bonding and Molecular Structure | NeetPyqPart12.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0326 | NEET (National) 2019 | 2019 | Solid State | NeetPyqPart12.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0327 | CBSE AIPMT 1989 | 1989 | p-Block Elements | NeetPyqPart12.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0328 | CBSE AIPMT 1989 | 1989 | Atomic Structure | NeetPyqPart12.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0329 | NEET (Odisha) 2019 | 2019 | Solutions | NeetPyqPart12.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0330 | CBSE AIPMT 1989 | 1989 | d- and f-Block Elements | NeetPyqPart12.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0331 | NEET 2013 | 2013 | Chemical Bonding and Molecular Structure | NeetPyqPart12.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0332 | CBSE AIPMT 2001 | 2001 | Chemical Bonding and Molecular Structure | NeetPyqPart12.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0333 | CBSE AIPMT 1995 | 1995 | Redox Reactions and Electrochemistry | NeetPyqPart12.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0334 | CBSE AIPMT 2009 | 2009 | Coordination Compounds | NeetPyqPart12.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0335 | NEET 2021 | 2021 | Chemical Kinetics | NeetPyqPart12.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0336 | CBSE AIPMT
+2003 | 2003 | Redox Reactions and Electrochemistry | NeetPyqPart12.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0337 | NEET 2016, Phase II | 2016 | Solutions | NeetPyqPart12.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0338 | CBSE AIPMT 2011 | 2011 | d- and f-Block Elements | NeetPyqPart12.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0339 | CBSE AIPMT 1994 | 1994 | Atomic Structure | NeetPyqPart12.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0340 | NEET 2018 | 2018 | Organic Compounds Containing Oxygen | NeetPyqPart12.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0341 | CBSE AIPMT 2006 | 2006 | Organic Chemistry - Basic Principles | NeetPyqPart12.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0342 | NEET (Odisha) 2019 | 2019 | Surface Chemistry | NeetPyqPart12.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0343 | CBSE AIPMT 2005 | 2005 | Hydrocarbons | NeetPyqPart12.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0344 | NEET (Sep.) 2020 | 2020 | Solutions | NeetPyqPart12.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0345 | CBSE AIPMT 2002 | 2002 | Classification of Elements and Periodicity | NeetPyqPart12.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0346 | CBSE AIPMT 2002 | 2002 | Chemical Bonding and Molecular Structure | NeetPyqPart12.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0347 | CBSE AIPMT 2015 | 2015 | Coordination Compounds | NeetPyqPart13.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0348 | NEET/AIPMT | unknown year | Ionic Equilibrium | NeetPyqPart13.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0349 | CBSE AIPMT 2009 | 2009 | Redox Reactions and Electrochemistry | NeetPyqPart13.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0350 | CBSE AIPMT 1999 | 1999 | Hydrocarbons | NeetPyqPart13.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0351 | CBSE AIPMT 1997 | 1997 | Ionic Equilibrium | NeetPyqPart13.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0352 | CBSE AIPMT 2007 | 2007 | Chemical Kinetics | NeetPyqPart13.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0353 | CBSE AIPMT 2010 | 2010 | Chemical Bonding and Molecular Structure | NeetPyqPart13.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0354 | CBSE AIPMT 1991 | 1991 | Solid State | NeetPyqPart13.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0355 | CBSE AIPMT 2011 | 2011 | Organic Compounds Containing Oxygen | NeetPyqPart13.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0356 | NEET (Odisha) 2019 | 2019 | Coordination Compounds | NeetPyqPart13.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0357 | NEET/AIPMT | unknown year | Classification of Elements and Periodicity | NeetPyqPart13.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0358 | CBSE AIPMT 2000 | 2000 | Redox Reactions and Electrochemistry | NeetPyqPart13.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0359 | CBSE AIPMT 2015 | 2015 | Chemical Equilibrium | NeetPyqPart13.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0360 | CBSE AIPMT 2015 | 2015 | Isolation of Metals | NeetPyqPart13.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0361 | NEET 2017 | 2017 | Organic Compounds Containing Oxygen | NeetPyqPart13.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0362 | CBSE AIPMT 2002 | 2002 | Organic Compounds Containing Oxygen | NeetPyqPart13.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0363 | CBSE AIPMT 2007 | 2007 | Coordination Compounds | NeetPyqPart13.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0364 | CBSE AIPMT 1999 | 1999 | Ionic Equilibrium | NeetPyqPart13.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0365 | CBSE AIPMT 2006 | 2006 | Chemical Thermodynamics | NeetPyqPart13.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0366 | CBSE AIPMT 2009 | 2009 | Classification of Elements and Periodicity | NeetPyqPart13.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0367 | NEET 2021 | 2021 | s-Block Elements | NeetPyqPart13.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0368 | CBSE AIPMT 2015 | 2015 | Hydrocarbons | NeetPyqPart13.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0369 | CBSE AIPMT 2004 | 2004 | Hydrocarbons | NeetPyqPart13.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0370 | CBSE AIPMT 2012 | 2012 | Organic Compounds Containing Oxygen | NeetPyqPart13.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0371 | CBSE AIPMT 1995 | 1995 | Surface Chemistry | NeetPyqPart13.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0372 | CBSE AIPMT 1992 | 1992 | p-Block Elements | NeetPyqPart13.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0373 | NEET (Sep.) 2020 | 2020 | s-Block Elements | NeetPyqPart13.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0374 | CBSE AIPMT 2008 | 2008 | Redox Reactions and Electrochemistry | NeetPyqPart13.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0375 | CBSE AIPMT 2009 | 2009 | Chemical Thermodynamics | NeetPyqPart14.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0376 | CBSE AIPMT 1999 | 1999 | Redox Reactions and Electrochemistry | NeetPyqPart14.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0377 | NEET 2018 | 2018 | Surface Chemistry | NeetPyqPart14.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0378 | CBSE AIPMT 2005 | 2005 | Organic Chemistry - Basic Principles | NeetPyqPart14.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0379 | CBSE AIPMT 2015 | 2015 | Atomic Structure | NeetPyqPart14.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0380 | CBSE AIPMT 2011 | 2011 | Chemical Equilibrium | NeetPyqPart14.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0381 | CBSE AIPMT 2006 | 2006 | Biomolecules, Chemistry in Everyday Life and Environmental Chemistry | NeetPyqPart14.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0382 | CBSE AIPMT 1995 | 1995 | Classification of Elements and Periodicity | NeetPyqPart14.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0383 | NEET (Oct.) 2020 | 2020 | Polymers | NeetPyqPart14.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0384 | CBSE AIPMT 1990 | 1990 | Atomic Structure | NeetPyqPart14.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0385 | NEET 2017 | 2017 | s-Block Elements | NeetPyqPart14.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0386 | CBSE AIPMT 2004 | 2004 | Solid State | NeetPyqPart14.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0387 | CBSE AIPMT 2005 | 2005 | Chemical Thermodynamics | NeetPyqPart14.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0388 | CBSE AIPMT 2001 | 2001 | Chemical Kinetics | NeetPyqPart14.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0389 | NEET 2018 | 2018 | p-Block Elements | NeetPyqPart14.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0390 | CBSE AIPMT 2009 | 2009 | Redox Reactions and Electrochemistry | NeetPyqPart14.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0391 | NEET/AIPMT | unknown year | Chemical Thermodynamics | NeetPyqPart14.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0392 | CBSE AIPMT 1999 | 1999 | Chemical Kinetics | NeetPyqPart14.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0393 | CBSE AIPMT 2011 | 2011 | Chemical Bonding and Molecular Structure | NeetPyqPart14.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0394 | NEET 2021 | 2021 | Chemical Bonding and Molecular Structure | NeetPyqPart14.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0395 | CBSE AIPMT 2003 | 2003 | Biomolecules, Chemistry in Everyday Life and Environmental Chemistry | NeetPyqPart14.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0396 | CBSE AIPMT 1994 | 1994 | Organic Chemistry - Basic Principles | NeetPyqPart14.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0397 | CBSE AIPMT 1989 | 1989 | Chemical Bonding and Molecular Structure | NeetPyqPart14.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0398 | NEET 2016, Phase II | 2016 | Solutions | NeetPyqPart14.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0399 | CBSE AIPMT 2007 | 2007 | Organic Compounds Containing Oxygen | NeetPyqPart14.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0400 | NEET (Sep.) 2020 | 2020 | Hydrocarbons | NeetPyqPart14.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0401 | NEET 2021 | 2021 | Coordination Compounds | NeetPyqPart14.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0402 | NEET 2016, Phase II | 2016 | Chemical Bonding and Molecular Structure | NeetPyqPart14.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0403 | NEET 2018 | 2018 | d- and f-Block Elements | NeetPyqPart14.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0404 | CBSE AIPMT 2007 | 2007 | Chemical Kinetics | NeetPyqPart15.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0405 | CBSE AIPMT1993 | 1993 | s-Block Elements | NeetPyqPart15.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0406 | CBSE AIPMT 1998 | 1998 | Chemical Thermodynamics | NeetPyqPart15.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0407 | NEET (Sep.) 2020 | 2020 | Polymers | NeetPyqPart15.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0408 | CBSE AIPMT 2007 | 2007 | Organic Compounds Containing Nitrogen | NeetPyqPart15.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0409 | CBSE AIPMT 1994 | 1994 | Some Basic Concepts in Chemistry | NeetPyqPart15.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0410 | NEET (National) 2019 | 2019 | Polymers | NeetPyqPart15.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0411 | CBSE AIPMT 2010 | 2010 | Polymers | NeetPyqPart15.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0412 | CBSE AIPMT 2015 | 2015 | Chemical Thermodynamics | NeetPyqPart15.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0413 | NEET (Odisha) 2019 | 2019 | p-Block Elements | NeetPyqPart15.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0414 | NEET (Sep.) 2020 | 2020 | Some Basic Concepts in Chemistry | NeetPyqPart15.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0415 | NEET (Sep.) 2020 | 2020 | Organic Compounds Containing Halogens | NeetPyqPart15.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0416 | CBSE AIPMT 2003 | 2003 | Ionic Equilibrium | NeetPyqPart15.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0417 | CBSE AIPMT 2000 | 2000 | Atomic Structure | NeetPyqPart15.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0418 | CBSE AIPMT 1989 | 1989 | p-Block Elements | NeetPyqPart15.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0419 | CBSE AIPMT 1998 | 1998 | Organic Compounds Containing Nitrogen | NeetPyqPart15.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0420 | CBSE AIPMT 1999 | 1999 | Polymers | NeetPyqPart15.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0421 | CBSE AIPMT 1999 | 1999 | States of Matter | NeetPyqPart15.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0422 | CBSE AIPMT 1998 | 1998 | Surface Chemistry | NeetPyqPart15.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0423 | NEET 2017 | 2017 | Organic Compounds Containing Nitrogen | NeetPyqPart15.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0424 | CBSE AIPMT 1998 | 1998 | Hydrocarbons | NeetPyqPart15.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0425 | CBSE AIPMT 1998 | 1998 | Chemical Thermodynamics | NeetPyqPart15.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0426 | CBSE AIPMT 2010 | 2010 | Biomolecules, Chemistry in Everyday Life and Environmental Chemistry | NeetPyqPart15.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0427 | CBSE AIPMT 1995 | 1995 | d- and f-Block Elements | NeetPyqPart15.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0428 | CBSE AIPMT 2002 | 2002 | Some Basic Concepts in Chemistry | NeetPyqPart15.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0429 | CBSE AIPMT 2007 | 2007 | Organic Compounds Containing Oxygen | NeetPyqPart15.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0430 | CBSE AIPMT 2005 | 2005 | Coordination Compounds | NeetPyqPart15.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0431 | CBSE AIPMT 2000 | 2000 | Solutions | NeetPyqPart15.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0432 | CBSE AIPMT 2015 | 2015 | Redox Reactions and Electrochemistry | NeetPyqPart15.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0433 | CBSE AIPMT 2006 | 2006 | p-Block Elements | NeetPyqPart16.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0434 | NEET (National) 2019 | 2019 | Organic Chemistry - Basic Principles | NeetPyqPart16.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0435 | CBSE AIPMT 2005 | 2005 | d- and f-Block Elements | NeetPyqPart16.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0436 | CBSE AIPMT 1993 | 1993 | Classification of Elements and Periodicity | NeetPyqPart16.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0437 | CBSE AIPMT 1992 | 1992 | Organic Chemistry - Basic Principles | NeetPyqPart16.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0438 | CBSE AIPMT 2014 | 2014 | d- and f-Block Elements | NeetPyqPart16.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0439 | CBSE AIPMT 1993 | 1993 | Hydrocarbons | NeetPyqPart16.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0440 | CBSE AIPMT 2000 | 2000 | Some Basic Concepts in Chemistry | NeetPyqPart16.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0441 | NEET 2013 | 2013 | Chemical Bonding and Molecular Structure | NeetPyqPart16.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0442 | CBSE AIPMT 2005 | 2005 | Ionic Equilibrium | NeetPyqPart16.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0443 | CBSE AIPMT 2011 | 2011 | Organic Chemistry - Basic Principles | NeetPyqPart16.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0444 | CBSE AIPMT 1989 | 1989 | States of Matter | NeetPyqPart16.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0445 | CBSE AIPMT 2005 | 2005 | Chemical Kinetics | NeetPyqPart16.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0446 | CBSE AIPMT 2015 | 2015 | Organic Compounds Containing Nitrogen | NeetPyqPart16.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0447 | NEET 2018 | 2018 | Atomic Structure | NeetPyqPart16.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0448 | NEET 2017 | 2017 | Biomolecules, Chemistry in Everyday Life and Environmental Chemistry | NeetPyqPart16.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0449 | CBSE AIPMT 2014 | 2014 | Chemical Bonding and Molecular Structure | NeetPyqPart16.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0450 | NEET (Oct.) 2020 | 2020 | Solid State | NeetPyqPart16.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0451 | CBSE AIPMT 2011 | 2011 | Organic Compounds Containing Nitrogen | NeetPyqPart16.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0452 | NEET 2017 | 2017 | Coordination Compounds | NeetPyqPart16.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0453 | CBSE AIPMT 2010 | 2010 | Hydrocarbons | NeetPyqPart16.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0454 | NEET (National) 2019 | 2019 | Ionic Equilibrium | NeetPyqPart16.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0455 | CBSE AIPMT 2007 | 2007 | Organic Chemistry - Basic Principles | NeetPyqPart16.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0456 | CBSE AIPMT 1998, 2008 | 2008 | Biomolecules, Chemistry in Everyday Life and Environmental Chemistry | NeetPyqPart16.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0457 | CBSE AIPMT 2010 | 2010 | Organic Compounds Containing Nitrogen | NeetPyqPart16.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0458 | CBSE AIPMT 1994 | 1994 | s-Block Elements | NeetPyqPart16.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0459 | CBSE AIPMT 2003 | 2003 | p-Block Elements | NeetPyqPart16.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0460 | CBSE AIPMT 2010 | 2010 | Solutions | NeetPyqPart16.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0461 | NEET 2013 | 2013 | Chemical Bonding and Molecular Structure | NeetPyqPart16.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0462 | NEET 2016, Phase II | 2016 | Coordination Compounds | NeetPyqPart17.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0463 | NEET (Oct.) 2020 | 2020 | Biomolecules, Chemistry in Everyday Life and Environmental Chemistry | NeetPyqPart17.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0464 | CBSE AIPMT 1989 | 1989 | Organic Chemistry - Basic Principles | NeetPyqPart17.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0465 | CBSE AIPMT 2004 | 2004 | Hydrocarbons | NeetPyqPart17.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0466 | NEET/AIPMT | unknown year | Chemical Kinetics | NeetPyqPart17.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0467 | CBSE AIPMT 2003 | 2003 | d- and f-Block Elements | NeetPyqPart17.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0468 | CBSE AIPMT 1999 | 1999 | d- and f-Block Elements | NeetPyqPart17.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0469 | CBSE AIPMT 2009 | 2009 | Atomic Structure | NeetPyqPart17.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0470 | CBSE AIPMT 2012 | 2012 | Organic Chemistry - Basic Principles | NeetPyqPart17.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0471 | NEET 2017 | 2017 | d- and f-Block Elements | NeetPyqPart17.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0472 | CBSE AIPMT 2008 | 2008 | s-Block Elements | NeetPyqPart17.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0473 | CBSE AIPMT 2004 | 2004 | Coordination Compounds | NeetPyqPart17.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0474 | NEET 2017 | 2017 | Chemical Kinetics | NeetPyqPart17.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0475 | CBSE AIPMT 1998 | 1998 | Redox Reactions and Electrochemistry | NeetPyqPart17.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0476 | NEET (Sep.) 2020 | 2020 | Chemical Bonding and Molecular Structure | NeetPyqPart17.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0477 | CBSE AIPMT 2012 | 2012 | Organic Compounds Containing Oxygen | NeetPyqPart17.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0478 | CBSE AIPMT 2014 | 2014 | Coordination Compounds | NeetPyqPart17.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0479 | CBSE AIPMT 1995 | 1995 | Coordination Compounds | NeetPyqPart17.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0480 | CBSE AIPMT 1991 | 1991 | Atomic Structure | NeetPyqPart17.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0481 | CBSE AIPMT 1993 | 1993 | Hydrocarbons | NeetPyqPart17.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0482 | CBSE AIPMT 2007 | 2007 | Isolation of Metals | NeetPyqPart17.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0483 | CBSE AIPMT 2009 | 2009 | Organic Compounds Containing Oxygen | NeetPyqPart17.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0484 | CBSE AIPMT 2010 | 2010 | Solutions | NeetPyqPart17.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0485 | CBSE AIPMT 2006 | 2006 | Chemical Thermodynamics | NeetPyqPart17.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0486 | CBSE AIPMT 2010 | 2010 | Organic Chemistry - Basic Principles | NeetPyqPart17.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0487 | NEET (National) 2019 | 2019 | Chemical Bonding and Molecular Structure | NeetPyqPart17.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0488 | NEET/AIPMT | unknown year | Chemical Bonding and Molecular Structure | NeetPyqPart17.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0489 | NEET (National) 2019 | 2019 | Chemical Bonding and Molecular Structure | NeetPyqPart17.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0490 | CBSE AIPMT 2003 | 2003 | Organic Compounds Containing Oxygen | NeetPyqPart17.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0491 | NEET Phase II 2016 | 2016 | Some Basic Concepts in Chemistry | NeetPyqPart18.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0492 | NEET 2017 | 2017 | Organic Chemistry - Basic Principles | NeetPyqPart18.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0493 | NEET/AIPMT | unknown year | Redox Reactions and Electrochemistry | NeetPyqPart18.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0494 | CBSE AIPMT 2001 | 2001 | Classification of Elements and Periodicity | NeetPyqPart18.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0495 | NEET 2021 | 2021 | Classification of Elements and Periodicity | NeetPyqPart18.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0496 | CBSE AIPMT 2005 | 2005 | Chemical Bonding and Molecular Structure | NeetPyqPart18.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0497 | NEET (Sept.) 2020 | 2020 | Organic Compounds Containing Oxygen | NeetPyqPart18.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0498 | CBSE AIPMT 2015 | 2015 | Organic Compounds Containing Oxygen | NeetPyqPart18.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0499 | CBSE AIPMT 1988 | 1988 | Some Basic Concepts in Chemistry | NeetPyqPart18.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0500 | CBSE AIPMT 1992 | 1992 | Atomic Structure | NeetPyqPart18.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0501 | CBSE AIPMT 2000 | 2000 | Chemical Bonding and Molecular Structure | NeetPyqPart18.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0502 | NEET 2021 | 2021 | Solutions | NeetPyqPart18.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0503 | CBSE AIPMT 1998 | 1998 | Biomolecules, Chemistry in Everyday Life and Environmental Chemistry | NeetPyqPart18.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0504 | CBSE AIPMT 2012 | 2012 | Purification and Characterisation of Organic Compounds | NeetPyqPart18.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0505 | NEET 2017 | 2017 | Biomolecules, Chemistry in Everyday Life and Environmental Chemistry | NeetPyqPart18.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0506 | CBSE AIPMT 2002 | 2002 | Solutions | NeetPyqPart18.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0507 | CBSE AIPMT 2006 | 2006 | Organic Compounds Containing Nitrogen | NeetPyqPart18.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0508 | CBSE AIPMT 1989 | 1989 | States of Matter | NeetPyqPart18.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0509 | CBSE AIPMT 2015 | 2015 | Coordination Compounds | NeetPyqPart18.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0510 | NEET (Sep.) 2020 | 2020 | Coordination Compounds | NeetPyqPart18.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0511 | CBSE AIPMT 1998 | 1998 | Atomic Structure | NeetPyqPart18.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0512 | NEET 2017 | 2017 | Organic Compounds Containing Oxygen | NeetPyqPart18.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0513 | CBSE AIPMT 1995 | 1995 | States of Matter | NeetPyqPart18.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0514 | CBSE AIPMT 1998 | 1998 | Organic Compounds Containing Oxygen | NeetPyqPart18.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0515 | CBSE AIPMT 1989 | 1989 | p-Block Elements | NeetPyqPart18.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0516 | NEET 2018 | 2018 | Chemical Kinetics | NeetPyqPart18.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0517 | CBSE AIPMT 1996 | 1996 | p-Block Elements | NeetPyqPart18.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0518 | NEET 2021 | 2021 | d- and f-Block Elements | NeetPyqPart18.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0519 | NEET 2013 | 2013 | Some Basic Concepts in Chemistry | NeetPyqPart19.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0520 | CBSE AIPMT 2004 | 2004 | Biomolecules, Chemistry in Everyday Life and Environmental Chemistry | NeetPyqPart19.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0521 | CBSE AIPMT 1988 | 1988 | Some Basic Concepts in Chemistry | NeetPyqPart19.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0522 | CBSE AIPMT 2006 | 2006 | Organic Chemistry - Basic Principles | NeetPyqPart19.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0523 | CBSE AIPMT 1999 | 1999 | p-Block Elements | NeetPyqPart19.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0524 | CBSE AIPMT 2005 | 2005 | States of Matter | NeetPyqPart19.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0525 | CBSE AIPMT 2005 | 2005 | Some Basic Concepts in Chemistry | NeetPyqPart19.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0526 | (NEET (Oct.) 2020 | 2020 | Organic Chemistry - Basic Principles | NeetPyqPart19.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0527 | CBSE AIPMT 1988 | 1988 | Atomic Structure | NeetPyqPart19.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0528 | CBSE AIPMT 1990 | 1990 | Solid State | NeetPyqPart19.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0529 | NEET 2017 | 2017 | Coordination Compounds | NeetPyqPart19.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0530 | CBSE AIPMT 2004 | 2004 | Chemical Bonding and Molecular Structure | NeetPyqPart19.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0531 | CBSE AIPMT 2012 | 2012 | Chemical Thermodynamics | NeetPyqPart19.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0532 | CBSE AIPMT 1996 | 1996 | p-Block Elements | NeetPyqPart19.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0533 | CBSE AIPMT 1992 | 1992 | Organic Compounds Containing Nitrogen | NeetPyqPart19.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0534 | CBSE AIPMT 2003 | 2003 | Polymers | NeetPyqPart19.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0535 | CBSE AIPMT 2004 | 2004 | Organic Compounds Containing Oxygen | NeetPyqPart19.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0536 | CBSE AIPMT 2011 | 2011 | Chemical Bonding and Molecular Structure | NeetPyqPart19.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0537 | CBSE AIPMT 2001 | 2001 | Ionic Equilibrium | NeetPyqPart19.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0538 | CBSE AIPMT 1997 | 1997 | d- and f-Block Elements | NeetPyqPart19.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0539 | CBSE AIPMT 2001 | 2001 | Some Basic Concepts in Chemistry | NeetPyqPart19.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0540 | CBSE AIPMT 2015 | 2015 | Organic Compounds Containing Oxygen | NeetPyqPart19.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0541 | NEET 2016, Phase II | 2016 | Coordination Compounds | NeetPyqPart19.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0542 | CBSE AIPMT 2009 | 2009 | Ionic Equilibrium | NeetPyqPart19.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0543 | CBSE AIPMT 2002 | 2002 | Chemical Thermodynamics | NeetPyqPart19.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0544 | NEET 2021 | 2021 | Coordination Compounds | NeetPyqPart19.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0545 | CBSE AIPMT 2015 | 2015 | d- and f-Block Elements | NeetPyqPart19.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0546 | NEET (National) 2019 | 2019 | Organic Compounds Containing Nitrogen | NeetPyqPart19.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0547 | CBSE AIPMT 2014 | 2014 | Chemical Thermodynamics | NeetPyqPart19.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0548 | CBSE AIPMT 1989 | 1989 | d- and f-Block Elements | NeetPyqPart20.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0549 | NEET 2017 | 2017 | Coordination Compounds | NeetPyqPart20.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0550 | CBSE AIPMT 2001 | 2001 | Organic Compounds Containing Oxygen | NeetPyqPart20.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0551 | NEET 2018 | 2018 | Solid State | NeetPyqPart20.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0552 | CBSE AIPMT 2012 | 2012 | Classification of Elements and Periodicity | NeetPyqPart20.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0553 | NEET/AIPMT | unknown year | Ionic Equilibrium | NeetPyqPart20.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0554 | CBSE AIPMT 1997 | 1997 | Chemical Kinetics | NeetPyqPart20.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0555 | CBSE AIPMT 2008 | 2008 | Organic Compounds Containing Oxygen | NeetPyqPart20.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0556 | CBSE AIPMT 1991 | 1991 | States of Matter | NeetPyqPart20.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0557 | NEET 2021 | 2021 | Organic Chemistry - Basic Principles | NeetPyqPart20.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0558 | CBSE AIPMT 2015 | 2015 | Chemical Equilibrium | NeetPyqPart20.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0559 | NEET 2021 | 2021 | Chemical Bonding and Molecular Structure | NeetPyqPart20.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0560 | CBSE AIPMT 1991 | 1991 | Atomic Structure | NeetPyqPart20.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0561 | NEET (Sep.) 2020 | 2020 | d- and f-Block Elements | NeetPyqPart20.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0562 | NEET (National) 2019 | 2019 | Biomolecules, Chemistry in Everyday Life and Environmental Chemistry | NeetPyqPart20.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0563 | CBSE AIPMT 2004 | 2004 | Coordination Compounds | NeetPyqPart20.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0564 | NEET 2017 | 2017 | Chemical Thermodynamics | NeetPyqPart20.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0565 | CBSE AIPMT 1999 | 1999 | Atomic Structure | NeetPyqPart20.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0566 | NEET 2021 | 2021 | Surface Chemistry | NeetPyqPart20.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0567 | CBSE AIPMT 1998 | 1998 | Redox Reactions and Electrochemistry | NeetPyqPart20.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0568 | CBSE AIPMT 2002 | 2002 | Organic Compounds Containing Halogens | NeetPyqPart20.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0569 | CBSE AIPMT 2006, 2005 | 2005 | d- and f-Block Elements | NeetPyqPart20.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0570 | CBSE AIPMT 1999 | 1999 | p-Block Elements | NeetPyqPart20.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0571 | CBSE AIPMT 1996 | 1996 | Redox Reactions and Electrochemistry | NeetPyqPart20.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0572 | CBSE AIPMT 2006 | 2006 | Ionic Equilibrium | NeetPyqPart20.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0573 | NEET 2016, Phase II | 2016 | Ionic Equilibrium | NeetPyqPart20.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0574 | CBSE AIPMT 2007 | 2007 | Organic Chemistry - Basic Principles | NeetPyqPart20.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0575 | CBSE AIPMT 1992 | 1992 | Organic Compounds Containing Oxygen | NeetPyqPart20.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0576 | CBSE AIPMT 2004 | 2004 | d- and f-Block Elements | NeetPyqPart20.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0577 | CBSE AIPMT 2005 | 2005 | Hydrocarbons | NeetPyqPart21.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0578 | NEET 2021 | 2021 | Biomolecules, Chemistry in Everyday Life and Environmental Chemistry | NeetPyqPart21.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0579 | NEET (National) 2019 | 2019 | Biomolecules, Chemistry in Everyday Life and Environmental Chemistry | NeetPyqPart21.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0580 | NEET 2021 | 2021 | Atomic Structure | NeetPyqPart21.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0581 | CBSE AIPMT 2014 | 2014 | Organic Chemistry - Basic Principles | NeetPyqPart21.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0582 | CBSE AIPMT 1997 | 1997 | Chemical Bonding and Molecular Structure | NeetPyqPart21.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0583 | NEET (Oct.) 2020 | 2020 | Organic Chemistry - Basic Principles | NeetPyqPart21.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0584 | CBSE AIPMT 2004 | 2004 | Biomolecules, Chemistry in Everyday Life and Environmental Chemistry | NeetPyqPart21.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0585 | CBSE AIPMT 2015 | 2015 | Organic Compounds Containing Nitrogen | NeetPyqPart21.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0586 | CBSE AIPMT 2006 | 2006 | Atomic Structure | NeetPyqPart21.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0587 | CBSE AIPMT 2004 | 2004 | Polymers | NeetPyqPart21.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0588 | CBSE AIPMT 1999 | 1999 | Chemical Thermodynamics | NeetPyqPart21.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0589 | CBSE AIPMT 2006 | 2006 | Biomolecules, Chemistry in Everyday Life and Environmental Chemistry | NeetPyqPart21.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0590 | CBSE AIPMT 2006 | 2006 | s-Block Elements | NeetPyqPart21.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0591 | CBSE AIPMT 1999 | 1999 | Chemical Thermodynamics | NeetPyqPart21.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0592 | CBSE AIPMT 2015 | 2015 | Coordination Compounds | NeetPyqPart21.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0593 | CBSE AIPMT 2004 | 2004 | Chemical Kinetics | NeetPyqPart21.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0594 | CBSE AIPMT 2014 | 2014 | p-Block Elements | NeetPyqPart21.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0595 | CBSE AIPMT 1991 | 1991 | p-Block Elements | NeetPyqPart21.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0596 | CBSE AIPMT 2007 | 2007 | Hydrocarbons | NeetPyqPart21.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0597 | CBSE AIPMT 2000 | 2000 | Surface Chemistry | NeetPyqPart21.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0598 | CBSE AIPMT 1996 | 1996 | Some Basic Concepts in Chemistry | NeetPyqPart21.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0599 | CBSE AIPMT 1994 | 1994 | Biomolecules, Chemistry in Everyday Life and Environmental Chemistry | NeetPyqPart21.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0600 | CBSE AIPMT 1993 | 1993 | Classification of Elements and Periodicity | NeetPyqPart21.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0601 | CBSE AIPMT 1998 | 1998 | Atomic Structure | NeetPyqPart21.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0602 | NEET/AIPMT | unknown year | d- and f-Block Elements | NeetPyqPart21.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0603 | NEET (Oct.) 2020 | 2020 | Hydrocarbons | NeetPyqPart21.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0604 | CBSE AIPMT 1996 | 1996 | Chemical Equilibrium | NeetPyqPart21.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0605 | CBSE AIPMT 1995 | 1995 | Chemical Kinetics | NeetPyqPart21.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0606 | NEET 2017 | 2017 | Organic Compounds Containing Oxygen | NeetPyqPart22.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0607 | CBSE AIPMT 2006 | 2006 | Redox Reactions and Electrochemistry | NeetPyqPart22.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0608 | CBSE AIPMT 2008 | 2008 | Chemical Kinetics | NeetPyqPart22.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0609 | CBSE AIPMT 1994 | 1994 | s-Block Elements | NeetPyqPart22.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0610 | CBSE AIPMT 2015 | 2015 | States of Matter | NeetPyqPart22.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0611 | CBSE AIPMT 1997 | 1997 | Organic Chemistry - Basic Principles | NeetPyqPart22.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0612 | NEET 2013 | 2013 | Organic Compounds Containing Nitrogen | NeetPyqPart22.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0613 | CBSE AIPMT 1989 | 1989 | s-Block Elements | NeetPyqPart22.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0614 | CBSE AIPMT 2009 | 2009 | Chemical Kinetics | NeetPyqPart22.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0615 | CBSE AIPMT 2008 | 2008 | Solid State | NeetPyqPart22.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0616 | CBSE AIPMT 1991 | 1991 | Solutions | NeetPyqPart22.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0617 | NEET (National) 2019 | 2019 | Biomolecules, Chemistry in Everyday Life and Environmental Chemistry | NeetPyqPart22.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0618 | CBSE AIPMT 1995 | 1995 | Chemical Bonding and Molecular Structure | NeetPyqPart22.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0619 | NEET 2021 | 2021 | States of Matter | NeetPyqPart22.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0620 | NEET 2016, Phase I | 2016 | Chemical Thermodynamics | NeetPyqPart22.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0621 | NEET (Odisha) 2019 | 2019 | Redox Reactions and Electrochemistry | NeetPyqPart22.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0622 | CBSE AIPMT 1998 | 1998 | d- and f-Block Elements | NeetPyqPart22.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0623 | CBSE AIPMT 1996 | 1996 | Polymers | NeetPyqPart22.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0624 | CBSE AIPMT 2007 | 2007 | Chemical Thermodynamics | NeetPyqPart22.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0625 | NEET (Odisha) 2019 | 2019 | Hydrocarbons | NeetPyqPart22.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0626 | CBSE AIPMT 2011 | 2011 | Coordination Compounds | NeetPyqPart22.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0627 | CBSE AIPMT 2005 | 2005 | Solutions | NeetPyqPart22.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0628 | NEET 2016, Phase II | 2016 | Chemical Bonding and Molecular Structure | NeetPyqPart22.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0629 | NEET 2016, Phase I | 2016 | Organic Compounds Containing Nitrogen | NeetPyqPart22.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0630 | CBSE AIPMT 2009 | 2009 | Polymers | NeetPyqPart22.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0631 | NEET 2016, Phase II | 2016 | Chemical Kinetics | NeetPyqPart22.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0632 | CBSE AIPMT 2012 | 2012 | Organic Chemistry - Basic Principles | NeetPyqPart22.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0633 | NEET (Odisha) 2019 | 2019 | d- and f-Block Elements | NeetPyqPart22.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0634 | CBSE AIPMT 2012 | 2012 | Surface Chemistry | NeetPyqPart22.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0635 | CBSE AIPMT 2015 | 2015 | Chemical Bonding and Molecular Structure | NeetPyqPart23.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0636 | CBSE AIPMT 1988 | 1988 | Organic Compounds Containing Oxygen | NeetPyqPart23.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0637 | CBSE AIPMT 2014 | 2014 | Redox Reactions and Electrochemistry | NeetPyqPart23.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0638 | CBSE AIPMT 1989 | 1989 | Classification of Elements and Periodicity | NeetPyqPart23.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0639 | CBSE AIPMT 1996 | 1996 | Classification of Elements and Periodicity | NeetPyqPart23.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0640 | CBSE AIPMT 1998 | 1998 | Chemical Bonding and Molecular Structure | NeetPyqPart23.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0641 | CBSE AIPMT 2008 | 2008 | Chemical Bonding and Molecular Structure | NeetPyqPart23.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0642 | CBSE AIPMT 2010 | 2010 | Organic Compounds Containing Nitrogen | NeetPyqPart23.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0643 | NEET 2017 | 2017 | Chemical Bonding and Molecular Structure | NeetPyqPart23.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0644 | CBSE AIPMT 2010 | 2010 | d- and f-Block Elements | NeetPyqPart23.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0645 | NEET (Odisha) 2019 | 2019 | Isolation of Metals | NeetPyqPart23.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0646 | NEET 2021 | 2021 | Redox Reactions and Electrochemistry | NeetPyqPart23.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0647 | NEET (Oct.) 2020 | 2020 | Organic Compounds Containing Oxygen | NeetPyqPart23.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0648 | CBSE AIPMT 2005 | 2005 | d- and f-Block Elements | NeetPyqPart23.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0649 | CBSE AIPMT 2007 | 2007 | Chemical Bonding and Molecular Structure | NeetPyqPart23.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0650 | CBSE AIPMT 2011 | 2011 | Chemical Bonding and Molecular Structure | NeetPyqPart23.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0651 | NEET 2018 | 2018 | p-Block Elements | NeetPyqPart23.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0652 | CBSE AIPMT 2007 | 2007 | Solid State | NeetPyqPart23.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0653 | NEET (Oct.) 2020 | 2020 | Biomolecules, Chemistry in Everyday Life and Environmental Chemistry | NeetPyqPart23.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0654 | CBSE AIPMT 2007 | 2007 | Hydrocarbons | NeetPyqPart23.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0655 | CBSE AIPMT 2003 | 2003 | Chemical Kinetics | NeetPyqPart23.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0656 | CBSE AIPMT 2011 | 2011 | Coordination Compounds | NeetPyqPart23.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0657 | CBSE AIPMT 2004 | 2004 | Coordination Compounds | NeetPyqPart23.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0658 | CBSE AIPMT 2013 | 2013 | Organic Compounds Containing Oxygen | NeetPyqPart23.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0659 | CBSE AIPMT 2012 | 2012 | Isolation of Metals | NeetPyqPart23.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0660 | CBSE AIPMT 2003 | 2003 | Chemical Kinetics | NeetPyqPart23.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0661 | CBSE AIPMT 2014 | 2014 | Biomolecules, Chemistry in Everyday Life and Environmental Chemistry | NeetPyqPart23.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0662 | CBSE AIPMT 1994 | 1994 | Organic Compounds Containing Oxygen | NeetPyqPart23.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0663 | CBSE AIPMT 1994 | 1994 | Atomic Structure | NeetPyqPart24.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0664 | CBSE AIPMT 1996 | 1996 | Surface Chemistry | NeetPyqPart24.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0665 | CBSE AIPMT 2001 | 2001 | Biomolecules, Chemistry in Everyday Life and Environmental Chemistry | NeetPyqPart24.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0666 | CBSE AIPMT 1992 | 1992 | Biomolecules, Chemistry in Everyday Life and Environmental Chemistry | NeetPyqPart24.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0667 | CBSE AIPMT 2014 | 2014 | Organic Chemistry - Basic Principles | NeetPyqPart24.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0668 | CBSE AIPMT 2009 | 2009 | Coordination Compounds | NeetPyqPart24.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0669 | CBSE AIPMT 1996 | 1996 | Chemical Kinetics | NeetPyqPart24.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0670 | CBSE AIPMT 2005 | 2005 | Ionic Equilibrium | NeetPyqPart24.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0671 | CBSE AIPMT 1995 | 1995 | d- and f-Block Elements | NeetPyqPart24.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0672 | CBSE AIPMT 1997 | 1997 | Purification and Characterisation of Organic Compounds | NeetPyqPart24.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0673 | CBSE AIPMT 1994 | 1994 | Atomic Structure | NeetPyqPart24.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0674 | NEET 2016, Phase II | 2016 | Organic Chemistry - Basic Principles | NeetPyqPart24.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0675 | CBSE AIPMT 2006 | 2006 | Organic Chemistry - Basic Principles | NeetPyqPart24.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0676 | CBSE AIPMT 1999 | 1999 | Some Basic Concepts in Chemistry | NeetPyqPart24.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0677 | CBSE AIPMT 1993 | 1993 | States of Matter | NeetPyqPart24.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0678 | CBSE AIPMT 1992 | 1992 | Hydrocarbons | NeetPyqPart24.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0679 | CBSE AIPMT 1994 | 1994 | d- and f-Block Elements | NeetPyqPart24.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0680 | CBSE AIPMT 2005 | 2005 | Organic Chemistry - Basic Principles | NeetPyqPart24.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0681 | CBSE AIPMT 2007 | 2007 | s-Block Elements | NeetPyqPart24.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0682 | NEET (Odisha) 2019 | 2019 | Coordination Compounds | NeetPyqPart24.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0683 | CBSE AIPMT 2015 | 2015 | Chemical Kinetics | NeetPyqPart24.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0684 | CBSE AIPMT 2005 | 2005 | Ionic Equilibrium | NeetPyqPart24.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0685 | CBSE AIPMT 1994 | 1994 | Organic Chemistry - Basic Principles | NeetPyqPart24.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0686 | NEET 2016, Phase I | 2016 | Biomolecules, Chemistry in Everyday Life and Environmental Chemistry | NeetPyqPart24.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0687 | CBSE AIPMT 1999 | 1999 | Atomic Structure | NeetPyqPart24.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0688 | NEET 2016, Phase I | 2016 | Chemical Kinetics | NeetPyqPart24.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0689 | CBSE AIPMT 1993 | 1993 | Chemical Bonding and Molecular Structure | NeetPyqPart24.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0690 | CBSE AIPMT 2002 | 2002 | Ionic Equilibrium | NeetPyqPart24.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0691 | NEET (Oct.) 2020 | 2020 | Atomic Structure | NeetPyqPart24.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0692 | CBSE AIPMT 1996 | 1996 | Chemical Thermodynamics | NeetPyqPart25.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0693 | CBSE AIPMT 2000 | 2000 | Chemical Equilibrium | NeetPyqPart25.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0694 | CBSE AIPMT 2004 | 2004 | Organic Compounds Containing Halogens | NeetPyqPart25.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0695 | CBSE AIPMT 1991 | 1991 | States of Matter | NeetPyqPart25.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0696 | CBSE AIPMT 2003 | 2003 | Organic Compounds Containing Oxygen | NeetPyqPart25.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0697 | CBSE AIPMT 2007 | 2007 | Organic Compounds Containing Oxygen | NeetPyqPart25.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0698 | CBSE AIPMT 1998 | 1998 | p-Block Elements | NeetPyqPart25.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0699 | CBSE AIPMT 1991 | 1991 | p-Block Elements | NeetPyqPart25.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0700 | CBSE AIPMT 1998 | 1998 | Classification of Elements and Periodicity | NeetPyqPart25.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0701 | CBSE AIPMT 1999 | 1999 | Polymers | NeetPyqPart25.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0702 | CBSE AIPMT 2000 | 2000 | Ionic Equilibrium | NeetPyqPart25.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0703 | CBSE AIPMT 1999 | 1999 | d- and f-Block Elements | NeetPyqPart25.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0704 | CBSE AIPMT 1989 | 1989 | Atomic Structure | NeetPyqPart25.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0705 | NEET (Odisha) 2019 | 2019 | d- and f-Block Elements | NeetPyqPart25.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0706 | NEET (National) 2019 | 2019 | d- and f-Block Elements | NeetPyqPart25.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0707 | CBSE AIPMT 1998 | 1998 | d- and f-Block Elements | NeetPyqPart25.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0708 | CBSE AIPMT 1996 | 1996 | Organic Compounds Containing Nitrogen | NeetPyqPart25.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0709 | CBSE AIPMT 2007 | 2007 | p-Block Elements | NeetPyqPart25.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0710 | CBSE AIPMT 1995 | 1995 | s-Block Elements | NeetPyqPart25.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0711 | CBSE AIPMT 2014 | 2014 | Chemical Thermodynamics | NeetPyqPart25.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0712 | CBSE AIPMT 1999 | 1999 | Hydrogen | NeetPyqPart25.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0713 | NEET 2018 | 2018 | Organic Compounds Containing Oxygen | NeetPyqPart25.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0714 | CBSE AIPMT 2000 | 2000 | Hydrocarbons | NeetPyqPart25.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0715 | NEET (National) 2019 | 2019 | Hydrocarbons | NeetPyqPart25.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0716 | CBSE AIPMT 2006 | 2006 | Organic Compounds Containing Oxygen | NeetPyqPart25.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0717 | CBSE AIPMT 1989 | 1989 | Coordination Compounds | NeetPyqPart25.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0718 | CBSE AIPMT 1993 | 1993 | Hydrocarbons | NeetPyqPart25.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0719 | CBSE AIPMT 1994 | 1994 | Classification of Elements and Periodicity | NeetPyqPart25.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0720 | CBSE AIPMT 1995 | 1995 | Hydrocarbons | NeetPyqPart25.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0721 | CBSE AIPMT 1997 | 1997 | Hydrocarbons | NeetPyqPart26.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0722 | CBSE AIPMT 2008 | 2008 | Ionic Equilibrium | NeetPyqPart26.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0723 | CBSE AIPMT 1991 | 1991 | Ionic Equilibrium | NeetPyqPart26.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0724 | NEET 2013 | 2013 | Chemical Equilibrium | NeetPyqPart26.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0725 | NEET (Oct.) 2020 | 2020 | Chemical Bonding and Molecular Structure | NeetPyqPart26.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0726 | CBSE AIPMT 1994 | 1994 | Chemical Bonding and Molecular Structure | NeetPyqPart26.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0727 | CBSE AIPMT 2014 | 2014 | Surface Chemistry | NeetPyqPart26.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0728 | CBSE AIPMT 1995 | 1995 | Chemical Kinetics | NeetPyqPart26.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0729 | CBSE AIPMT 1989 | 1989 | p-Block Elements | NeetPyqPart26.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0730 | CBSE AIPMT 2015 | 2015 | Hydrogen | NeetPyqPart26.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0731 | CBSE AIPMT 2000 | 2000 | States of Matter | NeetPyqPart26.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0732 | CBSE AIPMT 1995 | 1995 | Some Basic Concepts in Chemistry | NeetPyqPart26.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0733 | NEET 2013 | 2013 | Atomic Structure | NeetPyqPart26.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0734 | CBSE AIPMT 2002 | 2002 | Chemical Thermodynamics | NeetPyqPart26.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0735 | CBSE AIPMT 2015 | 2015 | Solid State | NeetPyqPart26.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0736 | CBSE AIPMT 2001 | 2001 | States of Matter | NeetPyqPart26.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0737 | CBSE AIPMT 1994 | 1994 | Atomic Structure | NeetPyqPart26.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0738 | CBSE AIPMT 2007 | 2007 | Chemical Bonding and Molecular Structure | NeetPyqPart26.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0739 | NEET 2016, Phase II | 2016 | Organic Compounds Containing Nitrogen | NeetPyqPart26.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0740 | CBSE AIPMT 2014 | 2014 | Redox Reactions and Electrochemistry | NeetPyqPart26.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0741 | CBSE AIPMT 2004 | 2004 | Surface Chemistry | NeetPyqPart26.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0742 | CBSE AIPMT 2002 | 2002 | d- and f-Block Elements | NeetPyqPart26.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0743 | CBSE AIPMT 2000 | 2000 | Chemical Thermodynamics | NeetPyqPart26.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0744 | CBSE AIPMT 2006 | 2006 | Chemical Bonding and Molecular Structure | NeetPyqPart26.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0745 | CBSE AIPMT 1988 | 1988 | s-Block Elements | NeetPyqPart26.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0746 | NEET (Odisha) 2019 | 2019 | d- and f-Block Elements | NeetPyqPart26.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0747 | NEET (Odisha) 2019 | 2019 | Solutions | NeetPyqPart26.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0748 | CBSE AIPMT 1998 | 1998 | Solutions | NeetPyqPart26.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0749 | NEET 2013 | 2013 | Chemical Bonding and Molecular Structure | NeetPyqPart26.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0750 | NEET 2021 | 2021 | Hydrocarbons | NeetPyqPart27.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0751 | CBSE AIPMT 2001 | 2001 | Chemical Bonding and Molecular Structure | NeetPyqPart27.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0752 | CBSE AIPMT 2010 | 2010 | Organic Compounds Containing Oxygen | NeetPyqPart27.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0753 | NEET 2016, Phase II | 2016 | p-Block Elements | NeetPyqPart27.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0754 | CBSE AIPMT 2000 | 2000 | Organic Chemistry - Basic Principles | NeetPyqPart27.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0755 | CBSE AIPMT 2001 | 2001 | Ionic Equilibrium | NeetPyqPart27.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0756 | CBSE AIPMT 1991 | 1991 | Solutions | NeetPyqPart27.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0757 | CBSE AIPMT 1989 | 1989 | p-Block Elements | NeetPyqPart27.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0758 | CBSE AIPMT 2002 | 2002 | Polymers | NeetPyqPart27.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0759 | NEET 2013 | 2013 | Atomic Structure | NeetPyqPart27.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0760 | CBSE AIPMT 2006 | 2006 | Redox Reactions and Electrochemistry | NeetPyqPart27.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0761 | CBSE AIPMT 2015 | 2015 | p-Block Elements | NeetPyqPart27.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0762 | CBSE AIPMT 1997 | 1997 | Isolation of Metals | NeetPyqPart27.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0763 | CBSE AIPMT 2006 | 2006 | Chemical Bonding and Molecular Structure | NeetPyqPart27.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0764 | CBSE AIPMT 1998 | 1998 | Organic Chemistry - Basic Principles | NeetPyqPart27.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0765 | CBSE AIPMT 2015 | 2015 | Organic Chemistry - Basic Principles | NeetPyqPart27.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0766 | NEET 2013 | 2013 | Redox Reactions and Electrochemistry | NeetPyqPart27.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0767 | CBSE AIPMT 2001 | 2001 | Atomic Structure | NeetPyqPart27.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0768 | CBSE AIPMT 1991 | 1991 | Hydrocarbons | NeetPyqPart27.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0769 | CBSE AIPMT 2015 | 2015 | Chemical Kinetics | NeetPyqPart27.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0770 | CBSE AIPMT 2009 | 2009 | Redox Reactions and Electrochemistry | NeetPyqPart27.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0771 | CBSE AIPMT 2008 | 2008 | Chemical Kinetics | NeetPyqPart27.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0772 | CBSE AIPMT 2008 | 2008 | Coordination Compounds | NeetPyqPart27.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0773 | CBSE AIPMT 2008 | 2008 | Coordination Compounds | NeetPyqPart27.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0774 | CBSE AIPMT 1991 | 1991 | p-Block Elements | NeetPyqPart27.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0775 | NEET (National) 2019 | 2019 | Chemical Thermodynamics | NeetPyqPart27.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0776 | CBSE AIPMT 1995 | 1995 | Organic Compounds Containing Nitrogen | NeetPyqPart27.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0777 | CBSE AIPMT 2008 | 2008 | Biomolecules, Chemistry in Everyday Life and Environmental Chemistry | NeetPyqPart27.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0778 | NEET 2021 | 2021 | Organic Compounds Containing Nitrogen | NeetPyqPart27.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0779 | CBSE AIPMT 2009 | 2009 | Chemical Kinetics | NeetPyqPart28.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0780 | NEET 2017 | 2017 | Chemical Thermodynamics | NeetPyqPart28.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0781 | NEET 2016, Phase I | 2016 | Hydrocarbons | NeetPyqPart28.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0782 | NEET (Oct.) 2020 | 2020 | Isolation of Metals | NeetPyqPart28.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0783 | CBSE AIPMT 2012 | 2012 | Chemical Kinetics | NeetPyqPart28.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0784 | NEET 2016, Phase II | 2016 | Organic Compounds Containing Oxygen | NeetPyqPart28.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0785 | NEET (Oct.) 2020 | 2020 | Chemical Bonding and Molecular Structure | NeetPyqPart28.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0786 | NEET 2013 | 2013 | Redox Reactions and Electrochemistry | NeetPyqPart28.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0787 | CBSE AIPMT 2009 | 2009 | Hydrocarbons | NeetPyqPart28.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0788 | NEET (Oct.) 2020 | 2020 | Surface Chemistry | NeetPyqPart28.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0789 | CBSE AIPMT 2009 | 2009 | p-Block Elements | NeetPyqPart28.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0790 | CBSE AIPMT 2012 | 2012 | Chemical Kinetics | NeetPyqPart28.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0791 | CBSE AIPMT 1988 | 1988 | Organic Chemistry - Basic Principles | NeetPyqPart28.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0792 | CBSE AIPMT 2001 | 2001 | Purification and Characterisation of Organic Compounds | NeetPyqPart28.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0793 | CBSE AIPMT 2012 | 2012 | Atomic Structure | NeetPyqPart28.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0794 | CBSE AIPMT 2002 | 2002 | Chemical Bonding and Molecular Structure | NeetPyqPart28.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0795 | CBSE AIPMT 2000 | 2000 | Redox Reactions and Electrochemistry | NeetPyqPart28.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0796 | CBSE AIPMT 1996 | 1996 | Atomic Structure | NeetPyqPart28.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0797 | CBSE AIPMT 2003 | 2003 | Chemical Kinetics | NeetPyqPart28.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0798 | NEET (National) 2019 | 2019 | Hydrocarbons | NeetPyqPart28.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0799 | CBSE AIPMT 1992 | 1992 | p-Block Elements | NeetPyqPart28.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0800 | CBSE AIPMT 1998 | 1998 | d- and f-Block Elements | NeetPyqPart28.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0801 | NEET 2013 | 2013 | Polymers | NeetPyqPart28.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0802 | CBSE AIPMT 2001 | 2001 | Chemical Thermodynamics | NeetPyqPart28.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0803 | CBSE AIPMT 2000 | 2000 | Coordination Compounds | NeetPyqPart28.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0804 | CBSE AIPMT 2002 | 2002 | Chemical Kinetics | NeetPyqPart28.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0805 | CBSE AIPMT 1994 | 1994 | s-Block Elements | NeetPyqPart28.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0806 | CBSE AIPMT 2006 | 2006 | Organic Compounds Containing Oxygen | NeetPyqPart28.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0807 | CBSE AIPMT 2015 | 2015 | p-Block Elements | NeetPyqPart29.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0808 | NEET (Oct.) 2020 | 2020 | d- and f-Block Elements | NeetPyqPart29.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0809 | CBSE AIPMT 2003 | 2003 | Organic Chemistry - Basic Principles | NeetPyqPart29.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0810 | CBSE AIPMT 1997 | 1997 | p-Block Elements | NeetPyqPart29.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0811 | CBSE AIPMT 2014 | 2014 | Biomolecules, Chemistry in Everyday Life and Environmental Chemistry | NeetPyqPart29.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0812 | CBSE AIPMT 2001 | 2001 | Redox Reactions and Electrochemistry | NeetPyqPart29.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0813 | NEET (Sep.) 2020 | 2020 | s-Block Elements | NeetPyqPart29.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0814 | CBSE AIPMT 2005 | 2005 | Some Basic Concepts in Chemistry | NeetPyqPart29.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0815 | CBSE AIPMT 2009 | 2009 | Chemical Thermodynamics | NeetPyqPart29.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0816 | NEET (National) 2019 | 2019 | Chemical Thermodynamics | NeetPyqPart29.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0817 | NEET 2016, Phase I | 2016 | Hydrocarbons | NeetPyqPart29.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0818 | CBSE AIPMT 2005 | 2005 | Organic Chemistry - Basic Principles | NeetPyqPart29.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0819 | NEET (Oct.) 2020 | 2020 | Redox Reactions and Electrochemistry | NeetPyqPart29.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0820 | NEET 2016, Phase II | 2016 | Organic Compounds Containing Oxygen | NeetPyqPart29.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0821 | CBSE AIPMT 2007 | 2007 | Biomolecules, Chemistry in Everyday Life and Environmental Chemistry | NeetPyqPart29.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0822 | CBSE AIPMT 2006 | 2006 | Solutions | NeetPyqPart29.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0823 | CBSE AIPMT 2000 | 2000 | Organic Compounds Containing Oxygen | NeetPyqPart29.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0824 | CBSE AIPMT 2011 | 2011 | d- and f-Block Elements | NeetPyqPart29.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0825 | CBSE AIPMT 2012 | 2012 | Surface Chemistry | NeetPyqPart29.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0826 | CBSE AIPMT 2000 | 2000 | Coordination Compounds | NeetPyqPart29.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0827 | CBSE AIPMT 2016, Phase II | 2016 | Redox Reactions and Electrochemistry | NeetPyqPart29.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0828 | NEET 2013 | 2013 | p-Block Elements | NeetPyqPart29.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0829 | CBSE AIPMT 2004 | 2004 | Ionic Equilibrium | NeetPyqPart29.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0830 | NEET 2016, Phase II | 2016 | Ionic Equilibrium | NeetPyqPart29.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0831 | CBSE AIPMT 2010 | 2010 | Hydrocarbons | NeetPyqPart29.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0832 | CBSE AIPMT 1998 | 1998 | Redox Reactions and Electrochemistry | NeetPyqPart29.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0833 | CBSE AIPMT 1997 | 1997 | Atomic Structure | NeetPyqPart29.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0834 | CBSE AIPMT 2008 | 2008 | Organic Chemistry - Basic Principles | NeetPyqPart29.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0835 | CBSE AIPMT 2006 | 2006 | Solutions | NeetPyqPart29.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0836 | NEET (Sep.) 2020 | 2020 | Biomolecules, Chemistry in Everyday Life and Environmental Chemistry | NeetPyqPart30.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0837 | CBSE AIPMT 1991 | 1991 | Organic Chemistry - Basic Principles | NeetPyqPart30.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0838 | CBSE AIPMT 1993, 97 | 1993 | p-Block Elements | NeetPyqPart30.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0839 | NEET 2016, Phase I | 2016 | s-Block Elements | NeetPyqPart30.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0840 | NEET 2017 | 2017 | Hydrocarbons | NeetPyqPart30.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0841 | NEET 2013 | 2013 | States of Matter | NeetPyqPart30.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0842 | CBSE AIPMT 2004 | 2004 | Chemical Thermodynamics | NeetPyqPart30.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0843 | CBSE AIPMT 1989, 88 | 1989 | Organic Compounds Containing Oxygen | NeetPyqPart30.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0844 | CBSE AIPMT 1999 | 1999 | Hydrocarbons | NeetPyqPart30.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0845 | CBSE AIPMT 1994 | 1994 | Some Basic Concepts in Chemistry | NeetPyqPart30.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0846 | CBSE AIPMT 1997 | 1997 | Solutions | NeetPyqPart30.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0847 | CBSE AIPMT 1990 | 1990 | States of Matter | NeetPyqPart30.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0848 | CBSE AIPMT 2000 | 2000 | p-Block Elements | NeetPyqPart30.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0849 | CBSE AIPMT 2014 | 2014 | d- and f-Block Elements | NeetPyqPart30.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0850 | CBSE AIPMT 2012 | 2012 | Biomolecules, Chemistry in Everyday Life and Environmental Chemistry | NeetPyqPart30.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0851 | CBSE AIPMT 1993 | 1993 | Hydrocarbons | NeetPyqPart30.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0852 | NEET 2016, Phase II | 2016 | Organic Chemistry - Basic Principles | NeetPyqPart30.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0853 | CBSE AIPMT 2006 | 2006 | Chemical Thermodynamics | NeetPyqPart30.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0854 | CBSE AIPMT 2000 | 2000 | d- and f-Block Elements | NeetPyqPart30.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0855 | CBSE AIPMT 1996 | 1996 | p-Block Elements | NeetPyqPart30.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0856 | NEET (Sep.) 2020 | 2020 | Biomolecules, Chemistry in Everyday Life and Environmental Chemistry | NeetPyqPart30.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0857 | CBSE AIPMT 1994 | 1994 | Chemical Thermodynamics | NeetPyqPart30.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0858 | NEET 2016, Phase II | 2016 | p-Block Elements | NeetPyqPart30.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0859 | CBSE AIPMT 2004 | 2004 | Chemical Bonding and Molecular Structure | NeetPyqPart30.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0860 | CBSE AIPMT 1997 | 1997 | Chemical Bonding and Molecular Structure | NeetPyqPart30.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0861 | CBSE AIPMT 2015 | 2015 | d- and f-Block Elements | NeetPyqPart30.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0862 | CBSE AIPMT 2008 | 2008 | Chemical Thermodynamics | NeetPyqPart30.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0863 | NEET 2017 | 2017 | Organic Compounds Containing Nitrogen | NeetPyqPart30.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0864 | CBSE AIPMT 2012 | 2012 | Organic Compounds Containing Oxygen | NeetPyqPart30.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0865 | NEET 2013 | 2013 | p-Block Elements | NeetPyqPart31.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0866 | CBSE AIPMT 1994 | 1994 | Solutions | NeetPyqPart31.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0867 | CBSE AIPMT 1999 | 1999 | d- and f-Block Elements | NeetPyqPart31.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0868 | CBSE AIPMT 1992 | 1992 | Organic Compounds Containing Oxygen | NeetPyqPart31.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0869 | CBSE AIPMT 1992 | 1992 | p-Block Elements | NeetPyqPart31.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0870 | NEET (National) 2019 | 2019 | Organic Chemistry - Basic Principles | NeetPyqPart31.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0871 | CBSE AIPMT 1995 | 1995 | Polymers | NeetPyqPart31.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0872 | CBSE AIPMT 2010 | 2010 | Organic Compounds Containing Oxygen | NeetPyqPart31.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0873 | NEET (National) 2019 | 2019 | Redox Reactions and Electrochemistry | NeetPyqPart31.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0874 | CBSE AIPMT 2006 | 2006 | Organic Compounds Containing Oxygen | NeetPyqPart31.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0875 | CBSE AIPMT 2015 | 2015 | Organic Chemistry - Basic Principles | NeetPyqPart31.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0876 | CBSE AIPMT 1994 | 1994 | Atomic Structure | NeetPyqPart31.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0877 | NEET 2016, Phase I | 2016 | Chemical Bonding and Molecular Structure | NeetPyqPart31.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0878 | NEET (Sep.) 2020 | 2020 | p-Block Elements | NeetPyqPart31.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0879 | CBSE AIPMT 1993 | 1993 | Organic Compounds Containing Halogens | NeetPyqPart31.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0880 | CBSE AIPMT 1993 | 1993 | Ionic Equilibrium | NeetPyqPart31.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0881 | CBSE AIPMT 1998 | 1998 | Coordination Compounds | NeetPyqPart31.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0882 | NEET (National) 2019 | 2019 | Isolation of Metals | NeetPyqPart31.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0883 | NEET 2017 | 2017 | Organic Compounds Containing Oxygen | NeetPyqPart31.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0884 | CBSE AIPMT 1997 | 1997 | d- and f-Block Elements | NeetPyqPart31.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0885 | CBSE AIPMT 1999 | 1999 | States of Matter | NeetPyqPart31.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0886 | NEET (Sep.) 2020 | 2020 | Chemical Kinetics | NeetPyqPart31.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0887 | CBSE AIPMT 2014 | 2014 | Organic Compounds Containing Oxygen | NeetPyqPart31.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0888 | CBSE AIPMT 2006 | 2006 | Solutions | NeetPyqPart31.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0889 | CBSE AIPMT 1996 | 1996 | Polymers | NeetPyqPart31.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0890 | CBSE AIPMT 1988 | 1988 | d- and f-Block Elements | NeetPyqPart31.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0891 | NEET 2016, Phase II | 2016 | Surface Chemistry | NeetPyqPart31.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0892 | CBSE AIPMT 2015 | 2015 | Solid State | NeetPyqPart31.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0893 | CBSE AIPMT 2005 | 2005 | Chemical Bonding and Molecular Structure | NeetPyqPart31.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0894 | NEET 2018 | 2018 | Some Basic Concepts in Chemistry | NeetPyqPart32.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0895 | CBSE AIPMT 1989 | 1989 | Chemical Bonding and Molecular Structure | NeetPyqPart32.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0896 | CBSE AIPMT 2015 | 2015 | s-Block Elements | NeetPyqPart32.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0897 | CBSE AIPMT 2011 | 2011 | Chemical Bonding and Molecular Structure | NeetPyqPart32.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0898 | CBSE AIPMT 1999 | 1999 | Ionic Equilibrium | NeetPyqPart32.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0899 | CBSE AIPMT 1992 | 1992 | States of Matter | NeetPyqPart32.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0900 | CBSE AIPMT 2015 | 2015 | Solutions | NeetPyqPart32.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0901 | CBSE AIPMT 1993 | 1993 | Atomic Structure | NeetPyqPart32.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0902 | CBSE AIPMT 1994 | 1994 | s-Block Elements | NeetPyqPart32.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0903 | CBSE AIPMT 2004 | 2004 | Organic Compounds Containing Oxygen | NeetPyqPart32.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0904 | CBSE AIPMT 2004 | 2004 | Coordination Compounds | NeetPyqPart32.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0905 | CBSE AIPMT 2005 | 2005 | Biomolecules, Chemistry in Everyday Life and Environmental Chemistry | NeetPyqPart32.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0906 | CBSE AIPMT 1988 | 1988 | Organic Chemistry - Basic Principles | NeetPyqPart32.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0907 | NEET 2018 | 2018 | Organic Compounds Containing Nitrogen | NeetPyqPart32.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0908 | CBSE AIPMT 2015 | 2015 | Biomolecules, Chemistry in Everyday Life and Environmental Chemistry | NeetPyqPart32.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0909 | CBSE AIPMT 1999 | 1999 | Isolation of Metals | NeetPyqPart32.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0910 | NEET 2016, Phase II | 2016 | Hydrocarbons | NeetPyqPart32.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0911 | CBSE AIPMT 1988 | 1988 | Organic Compounds Containing Halogens | NeetPyqPart32.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0912 | CBSE AIPMT 1995 | 1995 | Some Basic Concepts in Chemistry | NeetPyqPart32.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0913 | CBSE AIPMT 1991 | 1991 | Solutions | NeetPyqPart32.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0914 | CBSE AIPMT 1989 | 1989 | Hydrocarbons | NeetPyqPart32.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0915 | CBSE AIPMT 1997 | 1997 | Polymers | NeetPyqPart32.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0916 | CBSE AIPMT 1994 | 1994 | d- and f-Block Elements | NeetPyqPart32.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0917 | CBSE AIPMT 2011 | 2011 | Redox Reactions and Electrochemistry | NeetPyqPart32.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0918 | CBSE AIPMT 1994 | 1994 | Purification and Characterisation of Organic Compounds | NeetPyqPart32.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0919 | CBSE AIPMT 1995 | 1995 | Chemical Thermodynamics | NeetPyqPart32.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0920 | NEET/AIPMT | unknown year | Organic Compounds Containing Nitrogen | NeetPyqPart32.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0921 | NEET 2021 | 2021 | Hydrogen | NeetPyqPart32.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0922 | CBSE AIPMT 2000 | 2000 | Chemical Bonding and Molecular Structure | NeetPyqPart32.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0923 | CBSE AIPMT 2012 | 2012 | Ionic Equilibrium | NeetPyqPart33.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0924 | CBSE AIPMT 2015 | 2015 | Solutions | NeetPyqPart33.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0925 | CBSE AIPMT 2005 | 2005 | Coordination Compounds | NeetPyqPart33.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0926 | CBSE AIPMT 1992 | 1992 | States of Matter | NeetPyqPart33.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0927 | NEET (Sep.) 2020 | 2020 | Organic Compounds Containing Nitrogen | NeetPyqPart33.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0928 | CBSE AIPMT 1990 | 1990 | Chemical Bonding and Molecular Structure | NeetPyqPart33.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0929 | CBSE AIPMT 2007 | 2007 | Redox Reactions and Electrochemistry | NeetPyqPart33.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0930 | NEET (Sept.) 2020 | 2020 | Organic Compounds Containing Oxygen | NeetPyqPart33.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0931 | CBSE AIPMT 2011 | 2011 | Chemical Thermodynamics | NeetPyqPart33.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0932 | CBSE AIPMT 1993 | 1993 | States of Matter | NeetPyqPart33.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0933 | CBSE AIPMT 1997 | 1997 | Hydrocarbons | NeetPyqPart33.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0934 | CBSE AIPMT 1989 | 1989 | Some Basic Concepts in Chemistry | NeetPyqPart33.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0935 | NEET (Odisha) 2019 | 2019 | Ionic Equilibrium | NeetPyqPart33.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0936 | CBSE AIPMT 2007 | 2007 | Biomolecules, Chemistry in Everyday Life and Environmental Chemistry | NeetPyqPart33.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0937 | CBSE AIPMT 2003 | 2003 | Chemical Equilibrium | NeetPyqPart33.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0938 | CBSE AIPMT 1989 | 1989 | Classification of Elements and Periodicity | NeetPyqPart33.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0939 | CBSE AIPMT 2001 | 2001 | Organic Chemistry - Basic Principles | NeetPyqPart33.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0940 | NEET 2021 | 2021 | Some Basic Concepts in Chemistry | NeetPyqPart33.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0941 | CBSE AIPMT 1997 | 1997 | Chemical Thermodynamics | NeetPyqPart33.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0942 | CBSE AIPMT 2003 | 2003 | Organic Chemistry - Basic Principles | NeetPyqPart33.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0943 | CBSE AIPMT 2004 | 2004 | d- and f-Block Elements | NeetPyqPart33.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0944 | CBSE AIPMT 2014 | 2014 | States of Matter | NeetPyqPart33.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0945 | CBSE AIPMT 2014 | 2014 | d- and f-Block Elements | NeetPyqPart33.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0946 | CBSE AIPMT 1991 | 1991 | Atomic Structure | NeetPyqPart33.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0947 | CBSE AIPMT 1992 | 1992 | Purification and Characterisation of Organic Compounds | NeetPyqPart33.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0948 | CBSE AIPMT 2001 | 2001 | Surface Chemistry | NeetPyqPart33.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0949 | NEET (Odisha) 2019 | 2019 | Atomic Structure | NeetPyqPart33.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0950 | CBSE AIPMT 2011 | 2011 | s-Block Elements | NeetPyqPart33.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0951 | CBSE AIPMT 1999 | 1999 | p-Block Elements | NeetPyqPart34.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0952 | CBSE AIPMT 2004 | 2004 | Organic Compounds Containing Nitrogen | NeetPyqPart34.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0953 | CBSE AIPMT 1998 | 1998 | p-Block Elements | NeetPyqPart34.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0954 | CBSE AIPMT 2005 | 2005 | Biomolecules, Chemistry in Everyday Life and Environmental Chemistry | NeetPyqPart34.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0955 | CBSE AIPMT 1992 | 1992 | p-Block Elements | NeetPyqPart34.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0956 | CBSE AIPMT 1998 | 1998 | Organic Chemistry - Basic Principles | NeetPyqPart34.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0957 | NEET 2021 | 2021 | Redox Reactions and Electrochemistry | NeetPyqPart34.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0958 | CBSE AIPMT 1998 | 1998 | Organic Compounds Containing Halogens | NeetPyqPart34.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0959 | CBSE AIPMT 2015 | 2015 | Coordination Compounds | NeetPyqPart34.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0960 | CBSE AIPMT 1996 | 1996 | Chemical Bonding and Molecular Structure | NeetPyqPart34.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0961 | CBSE AIPMT 2001 | 2001 | Solutions | NeetPyqPart34.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0962 | NEET (National) 2019 | 2019 | Redox Reactions and Electrochemistry | NeetPyqPart34.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0963 | NEET 2013 | 2013 | Chemical Kinetics | NeetPyqPart34.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0964 | CBSE AIPMT 2001 | 2001 | Organic Compounds Containing Nitrogen | NeetPyqPart34.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0965 | CBSE AIPMT 1991 | 1991 | p-Block Elements | NeetPyqPart34.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0966 | CBSE AIPMT 2002 | 2002 | Redox Reactions and Electrochemistry | NeetPyqPart34.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0967 | CBSE AIPMT 2015 | 2015 | Chemical Thermodynamics | NeetPyqPart34.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0968 | CBSE AIPMT 1992 | 1992 | p-Block Elements | NeetPyqPart34.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0969 | CBSE AIPMT 1993 | 1993 | p-Block Elements | NeetPyqPart34.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0970 | NEET 2016, Phase I | 2016 | Isolation of Metals | NeetPyqPart34.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0971 | CBSE AIPMT 2011 | 2011 | Purification and Characterisation of Organic Compounds | NeetPyqPart34.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0972 | CBSE AIPMT 2004 | 2004 | Organic Compounds Containing Halogens | NeetPyqPart34.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0973 | CBSE AIPMT 2008 | 2008 | Solid State | NeetPyqPart34.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0974 | CBSE AIPMT 1995 | 1995 | Atomic Structure | NeetPyqPart34.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0975 | CBSE AIPMT 1989 | 1989 | Organic Compounds Containing Nitrogen | NeetPyqPart34.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0976 | CBSE AIPMT 1994 | 1994 | Some Basic Concepts in Chemistry | NeetPyqPart34.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0977 | CBSE AIPMT 2007 | 2007 | Redox Reactions and Electrochemistry | NeetPyqPart34.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0978 | CBSE AIPMT 2014 | 2014 | Some Basic Concepts in Chemistry | NeetPyqPart34.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0979 | NEET (National) 2019 | 2019 | Atomic Structure | NeetPyqPart34.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0980 | CBSE AIPMT 1990 | 1990 | States of Matter | NeetPyqPart35.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0981 | CBSE AIPMT 1995 | 1995 | Chemical Equilibrium | NeetPyqPart35.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0982 | NEET/AIPMT | unknown year | d- and f-Block Elements | NeetPyqPart35.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0983 | NEET (Odisha) 2019 | 2019 | Biomolecules, Chemistry in Everyday Life and Environmental Chemistry | NeetPyqPart35.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0984 | CBSE AIPMT 1990 | 1990 | Classification of Elements and Periodicity | NeetPyqPart35.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0985 | CBSE AIPMT 1996 | 1996 | Hydrocarbons | NeetPyqPart35.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0986 | NEET 2017 | 2017 | Atomic Structure | NeetPyqPart35.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0987 | CBSE AIPMT 2002 | 2002 | Organic Compounds Containing Halogens | NeetPyqPart35.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0988 | CBSE AIPMT 1995 | 1995 | States of Matter | NeetPyqPart35.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0989 | CBSE AIPMT 1994 | 1994 | Biomolecules, Chemistry in Everyday Life and Environmental Chemistry | NeetPyqPart35.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0990 | CBSE AIPMT 2015 | 2015 | Chemical Kinetics | NeetPyqPart35.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0991 | NEET (Odisha) 2019 | 2019 | Chemical Kinetics | NeetPyqPart35.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0992 | NEET 2016, Phase II | 2016 | Organic Compounds Containing Nitrogen | NeetPyqPart35.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0993 | CBSE AIPMT 1993 | 1993 | d- and f-Block Elements | NeetPyqPart35.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0994 | CBSE AIPMT 1992 | 1992 | Organic Compounds Containing Halogens | NeetPyqPart35.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0995 | CBSE AIPMT 2009 | 2009 | Organic Chemistry - Basic Principles | NeetPyqPart35.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0996 | CBSE AIPMT 1989 | 1989 | Some Basic Concepts in Chemistry | NeetPyqPart35.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0997 | CBSE AIPMT 1995 | 1995 | Solutions | NeetPyqPart35.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0998 | CBSE AIPMT 2015 | 2015 | Some Basic Concepts in Chemistry | NeetPyqPart35.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-0999 | CBSE AIPMT 1994 | 1994 | d- and f-Block Elements | NeetPyqPart35.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1000 | CBSE AIPMT 2008 | 2008 | Chemical Thermodynamics | NeetPyqPart35.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1001 | CBSE AIPMT 2005, 1994 | 1994 | Chemical Equilibrium | NeetPyqPart35.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1002 | CBSE AIPMT 2008 | 2008 | Organic Chemistry - Basic Principles | NeetPyqPart35.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1003 | CBSE AIPMT 2008 | 2008 | Organic Compounds Containing Oxygen | NeetPyqPart35.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1004 | NEET 2018 | 2018 | Isolation of Metals | NeetPyqPart35.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1005 | CBSE AIPMT 2010 | 2010 | Ionic Equilibrium | NeetPyqPart35.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1006 | CBSE AIPMT 2002 | 2002 | Chemical Equilibrium | NeetPyqPart35.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1007 | CBSE AIPMT 2015 | 2015 | Solid State | NeetPyqPart35.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1008 | NEET 2018 | 2018 | Polymers | NeetPyqPart35.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1009 | CBSE AIPMT 1999 | 1999 | Organic Compounds Containing Nitrogen | NeetPyqPart36.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1010 | CBSE AIPMT 1992 | 1992 | Organic Chemistry - Basic Principles | NeetPyqPart36.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1011 | CBSE AIPMT 2008 | 2008 | Redox Reactions and Electrochemistry | NeetPyqPart36.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1012 | CBSE AIPMT 1998 | 1998 | Coordination Compounds | NeetPyqPart36.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1013 | CBSE AIPMT 1991 | 1991 | Chemical Thermodynamics | NeetPyqPart36.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1014 | CBSE AIPMT 1999 | 1999 | p-Block Elements | NeetPyqPart36.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1015 | NEET (National) 2019 | 2019 | s-Block Elements | NeetPyqPart36.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1016 | CBSE AIPMT 2000 | 2000 | Biomolecules, Chemistry in Everyday Life and Environmental Chemistry | NeetPyqPart36.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1017 | CBSE AIPMT 2015 | 2015 | Organic Compounds Containing Oxygen | NeetPyqPart36.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1018 | CBSE AIPMT 2009 | 2009 | Atomic Structure | NeetPyqPart36.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1019 | CBSE AIPMT 2006 | 2006 | Solutions | NeetPyqPart36.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1020 | CBSE AIPMT 2010 | 2010 | Classification of Elements and Periodicity | NeetPyqPart36.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1021 | CBSE AIPMT 1992 | 1992 | States of Matter | NeetPyqPart36.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1022 | CBSE AIPMT 2011 | 2011 | Organic Compounds Containing Oxygen | NeetPyqPart36.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1023 | CBSE AIPMT 1988 | 1988 | Redox Reactions and Electrochemistry | NeetPyqPart36.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1024 | NEET (Odisha) 2019 | 2019 | Chemical Bonding and Molecular Structure | NeetPyqPart36.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1025 | NEET (National) 2019 | 2019 | Some Basic Concepts in Chemistry | NeetPyqPart36.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1026 | CBSE AIPMT 2003 | 2003 | Coordination Compounds | NeetPyqPart36.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1027 | CBSE AIPMT 1994 | 1994 | Hydrocarbons | NeetPyqPart36.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1028 | CBSE AIPMT 2008 | 2008 | Organic Chemistry - Basic Principles | NeetPyqPart36.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1029 | CBSE AIPMT 1997 | 1997 | Redox Reactions and Electrochemistry | NeetPyqPart36.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1030 | CBSE AIPMT 1997 | 1997 | d- and f-Block Elements | NeetPyqPart36.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1031 | NEET (Sept.) 2020 | 2020 | Chemical Thermodynamics | NeetPyqPart36.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1032 | CBSE AIPMT 2014 | 2014 | Solutions | NeetPyqPart36.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1033 | CBSE AIPMT 2015 | 2015 | p-Block Elements | NeetPyqPart36.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1034 | CBSE AIPMT 2001 | 2001 | Solid State | NeetPyqPart36.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1035 | CBSE AIPMT 2000 | 2000 | Chemical Bonding and Molecular Structure | NeetPyqPart36.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1036 | CBSE AIPMT 1994 | 1994 | Chemical Thermodynamics | NeetPyqPart36.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1037 | CBSE AIPMT 1997 | 1997 | Surface Chemistry | NeetPyqPart36.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1038 | CBSE AIPMT 2000 | 2000 | Hydrocarbons | NeetPyqPart37.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1039 | NEET 2016, Phase II | 2016 | Solid State | NeetPyqPart37.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1040 | NEET 2013 | 2013 | Hydrocarbons | NeetPyqPart37.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1041 | CBSE AIPMT 2008 | 2008 | Organic Compounds Containing Nitrogen | NeetPyqPart37.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1042 | CBSE AIPMT 2004 | 2004 | Atomic Structure | NeetPyqPart37.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1043 | NEET 2021 | 2021 | d- and f-Block Elements | NeetPyqPart37.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1044 | CBSE AIPMT 2007 | 2007 | d- and f-Block Elements | NeetPyqPart37.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1045 | NEET 2018 | 2018 | Classification of Elements and Periodicity | NeetPyqPart37.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1046 | CBSE AIPMT 2011 | 2011 | Chemical Thermodynamics | NeetPyqPart37.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1047 | CBSE AIPMT 2015 | 2015 | p-Block Elements | NeetPyqPart37.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1048 | CBSE AIPMT 2007 | 2007 | Chemical Thermodynamics | NeetPyqPart37.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1049 | NEET (Sep.) 2020 | 2020 | Surface Chemistry | NeetPyqPart37.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1050 | CBSE AIPMT 2001 | 2001 | Solutions | NeetPyqPart37.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1051 | CBSE AIPMT 1991 | 1991 | d- and f-Block Elements | NeetPyqPart37.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1052 | CBSE AIPMT 2008 | 2008 | Some Basic Concepts in Chemistry | NeetPyqPart37.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1053 | NEET 2016, Phase I | 2016 | d- and f-Block Elements | NeetPyqPart37.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1054 | NEET 2016, Phase II | 2016 | Organic Compounds Containing Halogens | NeetPyqPart37.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1055 | CBSE AIPMT 2014 | 2014 | Chemical Equilibrium | NeetPyqPart37.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1056 | CBSE AIPMT 2006 | 2006 | Organic Compounds Containing Oxygen | NeetPyqPart37.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1057 | CBSE AIPMT 2004 | 2004 | Redox Reactions and Electrochemistry | NeetPyqPart37.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1058 | CBSE AIPMT 1996 | 1996 | Some Basic Concepts in Chemistry | NeetPyqPart37.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1059 | CBSE AIPMT 2006 | 2006 | Ionic Equilibrium | NeetPyqPart37.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1060 | NEET (Oct.) 2020 | 2020 | Organic Compounds Containing Oxygen | NeetPyqPart37.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1061 | CBSE AIPMT 2011 | 2011 | Purification and Characterisation of Organic Compounds | NeetPyqPart37.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1062 | CBSE AIPMT 1993 | 1993 | Chemical Bonding and Molecular Structure | NeetPyqPart37.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1063 | CBSE AIPMT 1998 | 1998 | Solutions | NeetPyqPart37.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1064 | CBSE AIPMT 2010 | 2010 | Chemical Bonding and Molecular Structure | NeetPyqPart37.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1065 | CBSE AIPMT 1994 | 1994 | p-Block Elements | NeetPyqPart37.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1066 | CBSE AIPMT 1994 | 1994 | d- and f-Block Elements | NeetPyqPart37.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1067 | CBSE AIPMT 1989 | 1989 | Chemical Bonding and Molecular Structure | NeetPyqPart38.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1068 | CBSE AIPMT 2002 | 2002 | Surface Chemistry | NeetPyqPart38.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1069 | CBSE AIPMT 2001 | 2001 | Coordination Compounds | NeetPyqPart38.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1070 | CBSE AIPMT 2005 | 2005 | p-Block Elements | NeetPyqPart38.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1071 | CBSE AIPMT 2006 | 2006 | Chemical Bonding and Molecular Structure | NeetPyqPart38.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1072 | CBSE AIPMT 1996 | 1996 | Biomolecules, Chemistry in Everyday Life and Environmental Chemistry | NeetPyqPart38.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1073 | CBSE AIPMT 2003 | 2003 | Polymers | NeetPyqPart38.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1074 | NEET 2018 | 2018 | Chemical Bonding and Molecular Structure | NeetPyqPart38.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1075 | NEET (Oct.) 2020 | 2020 | Some Basic Concepts in Chemistry | NeetPyqPart38.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1076 | CBSE AIPMT 2002 | 2002 | Classification of Elements and Periodicity | NeetPyqPart38.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1077 | CBSE AIPMT 2015 | 2015 | Organic Chemistry - Basic Principles | NeetPyqPart38.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1078 | CBSE AIPMT 1989 | 1989 | p-Block Elements | NeetPyqPart38.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1079 | NEET 2021 | 2021 | Solid State | NeetPyqPart38.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1080 | CBSE AIPMT 2002 | 2002 | Coordination Compounds | NeetPyqPart38.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1081 | CBSE AIPMT 2002 | 2002 | Solutions | NeetPyqPart38.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1082 | CBSE AIPMT 1992 | 1992 | Chemical Bonding and Molecular Structure | NeetPyqPart38.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1083 | CBSE AIPMT 2003 | 2003 | d- and f-Block Elements | NeetPyqPart38.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1084 | NEET 2016, Phase II | 2016 | d- and f-Block Elements | NeetPyqPart38.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1085 | CBSE AIPMT 2015 | 2015 | Solutions | NeetPyqPart38.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1086 | NEET (Sep.) 2020 | 2020 | Solid State | NeetPyqPart38.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1087 | CBSE AIPMT 2008 | 2008 | Organic Chemistry - Basic Principles | NeetPyqPart38.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1088 | NEET 2013 | 2013 | Redox Reactions and Electrochemistry | NeetPyqPart38.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1089 | CBSE AIPMT 2016, Phase II | 2016 | Redox Reactions and Electrochemistry | NeetPyqPart38.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1090 | CBSE AIPMT 2006, 1994 | 1994 | Surface Chemistry | NeetPyqPart38.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1091 | NEET 2021 | 2021 | Chemical Bonding and Molecular Structure | NeetPyqPart38.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1092 | CBSE AIPMT 2014 | 2014 | Some Basic Concepts in Chemistry | NeetPyqPart38.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1093 | CBSE AIPMT 1988 | 1988 | p-Block Elements | NeetPyqPart38.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1094 | CBSE AIPMT 1994 | 1994 | p-Block Elements | NeetPyqPart38.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1095 | NEET 2016, Phase II | 2016 | Surface Chemistry | NeetPyqPart39.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1096 | CBSE AIPMT 1997 | 1997 | Organic Compounds Containing Nitrogen | NeetPyqPart39.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1097 | CBSE AIPMT 2009 | 2009 | Organic Compounds Containing Oxygen | NeetPyqPart39.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1098 | CBSE AIPMT 1991 | 1991 | Organic Compounds Containing Halogens | NeetPyqPart39.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1099 | CBSE AIPMT 1992 | 1992 | Atomic Structure | NeetPyqPart39.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1100 | CBSE AIPMT 1989 | 1989 | Purification and Characterisation of Organic Compounds | NeetPyqPart39.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1101 | CBSE AIPMT 2005 | 2005 | Redox Reactions and Electrochemistry | NeetPyqPart39.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1102 | CBSE AIPMT 1993 | 1993 | s-Block Elements | NeetPyqPart39.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1103 | NEET/AIPMT | unknown year | Chemical Kinetics | NeetPyqPart39.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1104 | CBSE AIPMT 2004 | 2004 | Organic Chemistry - Basic Principles | NeetPyqPart39.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1105 | CBSE AIPMT 2010 | 2010 | Classification of Elements and Periodicity | NeetPyqPart39.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1106 | CBSE AIPMT 2001 | 2001 | Organic Chemistry - Basic Principles | NeetPyqPart39.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1107 | CBSEAIPMT1998 | 1998 | Chemical Equilibrium | NeetPyqPart39.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1108 | NEET 2017 | 2017 | Coordination Compounds | NeetPyqPart39.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1109 | CBSE AIPMT 2010 | 2010 | Solutions | NeetPyqPart39.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1110 | CBSE AIPMT 2004 | 2004 | Coordination Compounds | NeetPyqPart39.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1111 | NEET 2013 | 2013 | Polymers | NeetPyqPart39.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1112 | CBSE AIPMT 2005 | 2005 | Organic Compounds Containing Halogens | NeetPyqPart39.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1113 | CBSE AIPMT 2004 | 2004 | Some Basic Concepts in Chemistry | NeetPyqPart39.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1114 | NEET (Oct.) 2020 | 2020 | Biomolecules, Chemistry in Everyday Life and Environmental Chemistry | NeetPyqPart39.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1115 | CBSE AIPMT 1994 | 1994 | Biomolecules, Chemistry in Everyday Life and Environmental Chemistry | NeetPyqPart39.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1116 | CBSE AIPMT 1999 | 1999 | Atomic Structure | NeetPyqPart39.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1117 | CBSE AIPMT 2014 | 2014 | Chemical Equilibrium | NeetPyqPart39.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1118 | NEET 2021 | 2021 | d- and f-Block Elements | NeetPyqPart39.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1119 | CBSE AIPMT 2001 | 2001 | p-Block Elements | NeetPyqPart39.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1120 | CBSE AIPMT 2015 | 2015 | Organic Chemistry - Basic Principles | NeetPyqPart39.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1121 | CBSE AIPMT 1993 | 1993 | Chemical Equilibrium | NeetPyqPart39.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1122 | CBSE AIPMT 2003 | 2003 | Biomolecules, Chemistry in Everyday Life and Environmental Chemistry | NeetPyqPart39.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1123 | CBSE AIPMT 1988 | 1988 | Chemical Bonding and Molecular Structure | NeetPyqPart39.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1124 | CBSE AIPMT 1991 | 1991 | States of Matter | NeetPyqPart40.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1125 | NEET 2016, Phase II | 2016 | p-Block Elements | NeetPyqPart40.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1126 | CBSE AIPMT 2010 | 2010 | p-Block Elements | NeetPyqPart40.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1127 | NEET/AIPMT | unknown year | Ionic Equilibrium | NeetPyqPart40.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1128 | CBSE AIPMT 1990 | 1990 | Purification and Characterisation of Organic Compounds | NeetPyqPart40.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1129 | CBSE AIPMT1989 | 1989 | Isolation of Metals | NeetPyqPart40.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1130 | CBSE AIPMT 2005 | 2005 | Solutions | NeetPyqPart40.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1131 | CBSE AIPMT 1995 | 1995 | Organic Chemistry - Basic Principles | NeetPyqPart40.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1132 | CBSE AIPMT 1999 | 1999 | Biomolecules, Chemistry in Everyday Life and Environmental Chemistry | NeetPyqPart40.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1133 | CBSE AIPMT 2007 | 2007 | Chemical Kinetics | NeetPyqPart40.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1134 | CBSE AIPMT 2014 | 2014 | Biomolecules, Chemistry in Everyday Life and Environmental Chemistry | NeetPyqPart40.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1135 | CBSE AIPMT 2014 | 2014 | Organic Compounds Containing Oxygen | NeetPyqPart40.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1136 | CBSE AIPMT 2001 | 2001 | Biomolecules, Chemistry in Everyday Life and Environmental Chemistry | NeetPyqPart40.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1137 | CBSE AIPMT 2012 | 2012 | Surface Chemistry | NeetPyqPart40.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1138 | CBSE AIPMT 2009 | 2009 | Organic Chemistry - Basic Principles | NeetPyqPart40.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1139 | NEET (Sep.) 2020 | 2020 | Classification of Elements and Periodicity | NeetPyqPart40.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1140 | CBSE AIPMT 1996 | 1996 | Solutions | NeetPyqPart40.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1141 | CBSE AIPMT 1988 | 1988 | Organic Compounds Containing Halogens | NeetPyqPart40.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1142 | NEET 2021 | 2021 | Chemical Bonding and Molecular Structure | NeetPyqPart40.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1143 | CBSE AIPMT 1993 | 1993 | Organic Compounds Containing Oxygen | NeetPyqPart40.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1144 | NEET 2016, Phase I | 2016 | Organic Compounds Containing Nitrogen | NeetPyqPart40.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1145 | CBSE AIPMT 2001 | 2001 | Redox Reactions and Electrochemistry | NeetPyqPart40.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1146 | CBSE AIPMT 1996 | 1996 | States of Matter | NeetPyqPart40.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1147 | CBSE AIPMT 2012 | 2012 | Redox Reactions and Electrochemistry | NeetPyqPart40.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1148 | NEET/AIPMT | unknown year | Ionic Equilibrium | NeetPyqPart40.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1149 | CBSE AIPMT 2009, 2000 | 2000 | Chemical Kinetics | NeetPyqPart40.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1150 | CBSE AIPMT 2001 | 2001 | Organic Compounds Containing Oxygen | NeetPyqPart40.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1151 | CBSE AIPMT 1988 | 1988 | Chemical Bonding and Molecular Structure | NeetPyqPart40.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1152 | NEET 2021 | 2021 | Biomolecules, Chemistry in Everyday Life and Environmental Chemistry | NeetPyqPart40.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1153 | CBSE AIPMT 1992 | 1992 | Chemical Equilibrium | NeetPyqPart41.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1154 | CBSE AIPMT 2009 | 2009 | Classification of Elements and Periodicity | NeetPyqPart41.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1155 | CBSE AIPMT 2009 | 2009 | p-Block Elements | NeetPyqPart41.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1156 | CBSE AIPMT 1998 | 1998 | Isolation of Metals | NeetPyqPart41.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1157 | CBSE AIPMT 2000 | 2000 | Biomolecules, Chemistry in Everyday Life and Environmental Chemistry | NeetPyqPart41.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1158 | CBSE AIPMT 1999 | 1999 | Atomic Structure | NeetPyqPart41.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1159 | CBSE AIPMT 1990 | 1990 | Purification and Characterisation of Organic Compounds | NeetPyqPart41.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1160 | CBSE AIPMT 1996 | 1996 | Organic Chemistry - Basic Principles | NeetPyqPart41.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1161 | CBSE AIPMT 1995 | 1995 | Atomic Structure | NeetPyqPart41.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1162 | CBSE AIPMT 2010 | 2010 | Redox Reactions and Electrochemistry | NeetPyqPart41.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1163 | CBSE AIPMT 2002 | 2002 | Ionic Equilibrium | NeetPyqPart41.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1164 | NEET 2021 | 2021 | Isolation of Metals | NeetPyqPart41.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1165 | CBSE AIPMT 1994 | 1994 | Solid State | NeetPyqPart41.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1166 | CBSE AIPMT 2015 | 2015 | Organic Compounds Containing Oxygen | NeetPyqPart41.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1167 | NEET (National) 2019 | 2019 | Coordination Compounds | NeetPyqPart41.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1168 | NEET/AIPMT | unknown year | Hydrocarbons | NeetPyqPart41.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1169 | NEET (Odisha) 2019 | 2019 | Redox Reactions and Electrochemistry | NeetPyqPart41.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1170 | CBSE AIPMT 1993 | 1993 | Classification of Elements and Periodicity | NeetPyqPart41.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1171 | CBSE AIPMT 2004 | 2004 | Purification and Characterisation of Organic Compounds | NeetPyqPart41.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1172 | CBSE AIPMT 1995 | 1995 | Biomolecules, Chemistry in Everyday Life and Environmental Chemistry | NeetPyqPart41.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1173 | NEET 2021 | 2021 | Organic Compounds Containing Oxygen | NeetPyqPart41.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1174 | CBSE AIPMT 1998 | 1998 | Chemical Kinetics | NeetPyqPart41.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1175 | CBSE AIPMT 2015 | 2015 | d- and f-Block Elements | NeetPyqPart41.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1176 | CBSE AIPMT 2007 | 2007 | Organic Chemistry - Basic Principles | NeetPyqPart41.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1177 | NEET 2018 | 2018 | Chemical Thermodynamics | NeetPyqPart41.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1178 | NEET (Oct.) 2020 | 2020 | s-Block Elements | NeetPyqPart41.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1179 | CBSE AIPMT 2011 | 2011 | Coordination Compounds | NeetPyqPart41.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1180 | CBSE AIPMT 2013 | 2013 | Coordination Compounds | NeetPyqPart41.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1181 | NEET (Odisha) 2019 | 2019 | Ionic Equilibrium | NeetPyqPart41.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1182 | CBSE AIPMT 2016, Phase II | 2016 | Redox Reactions and Electrochemistry | NeetPyqPart42.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1183 | CBSE AIPMT 2003 | 2003 | Coordination Compounds | NeetPyqPart42.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1184 | CBSE AIPMT 1998 | 1998 | Solid State | NeetPyqPart42.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1185 | CBSE AIPMT 2003 | 2003 | Coordination Compounds | NeetPyqPart42.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1186 | NEET 2017, 2003 | 2003 | Redox Reactions and Electrochemistry | NeetPyqPart42.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1187 | CBSE AIPMT 1994 | 1994 | Organic Compounds Containing Nitrogen | NeetPyqPart42.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1188 | CBSE AIPMT 1999 | 1999 | Organic Compounds Containing Nitrogen | NeetPyqPart42.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1189 | CBSE AIPMT 2001 | 2001 | Organic Chemistry - Basic Principles | NeetPyqPart42.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1190 | NEET 2020 | 2020 | Hydrocarbons | NeetPyqPart42.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1191 | CBSE AIPMT 2000 | 2000 | Chemical Bonding and Molecular Structure | NeetPyqPart42.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1192 | CBSE AIPMT 2009 | 2009 | Biomolecules, Chemistry in Everyday Life and Environmental Chemistry | NeetPyqPart42.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1193 | NEET (Sep.) 2020 | 2020 | Redox Reactions and Electrochemistry | NeetPyqPart42.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1194 | CBSE AIPMT 2015 | 2015 | Solutions | NeetPyqPart42.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1195 | CBSE AIPMT 1998 | 1998 | Organic Chemistry - Basic Principles | NeetPyqPart42.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1196 | CBSE AIPMT 2014 | 2014 | Organic Compounds Containing Nitrogen | NeetPyqPart42.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1197 | NEET 2018 | 2018 | States of Matter | NeetPyqPart42.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1198 | NEET (Sept.) 2020 | 2020 | Chemical Thermodynamics | NeetPyqPart42.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1199 | CBSE AIPMT 2000 | 2000 | Solid State | NeetPyqPart42.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1200 | CBSE AIPMT 1994 | 1994 | Hydrocarbons | NeetPyqPart42.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1201 | CBSE AIPMT 2001 | 2001 | Biomolecules, Chemistry in Everyday Life and Environmental Chemistry | NeetPyqPart42.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1202 | CBSE AIPMT 2012 | 2012 | Chemical Thermodynamics | NeetPyqPart42.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1203 | CBSE AIPMT 2015 | 2015 | p-Block Elements | NeetPyqPart42.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1204 | CBSE AIPMT 2009 | 2009 | Solid State | NeetPyqPart42.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1205 | CBSE AIPMT 2003 | 2003 | Coordination Compounds | NeetPyqPart42.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1206 | CBSE AIPMT 1995 | 1995 | Solutions | NeetPyqPart42.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1207 | CBSE AIPMT 1989 | 1989 | Some Basic Concepts in Chemistry | NeetPyqPart42.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1208 | CBSE AIPMT 1995 | 1995 | Biomolecules, Chemistry in Everyday Life and Environmental Chemistry | NeetPyqPart42.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1209 | CBSE AIPMT 1995 | 1995 | Coordination Compounds | NeetPyqPart42.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1210 | CBSE AIPMT 2015 | 2015 | Ionic Equilibrium | NeetPyqPart42.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1211 | CBSE AIPMT 1995 | 1995 | Ionic Equilibrium | NeetPyqPart43.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1212 | CBSE AIPMT 2009 | 2009 | Chemical Bonding and Molecular Structure | NeetPyqPart43.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1213 | CBSE AIPMT 2003 | 2003 | Organic Chemistry - Basic Principles | NeetPyqPart43.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1214 | NEET 2017 | 2017 | Chemical Kinetics | NeetPyqPart43.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1215 | CBSE AIPMT 2003 | 2003 | Chemical Thermodynamics | NeetPyqPart43.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1216 | CBSE AIPMT 2008 | 2008 | Organic Chemistry - Basic Principles | NeetPyqPart43.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1217 | CBSE AIPMT 2000 | 2000 | Organic Compounds Containing Oxygen | NeetPyqPart43.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1218 | CBSE AIPMT 1994 | 1994 | s-Block Elements | NeetPyqPart43.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1219 | NEET (Oct.) 2020 | 2020 | Organic Compounds Containing Halogens | NeetPyqPart43.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1220 | CBSE AIPMT 2012 | 2012 | d- and f-Block Elements | NeetPyqPart43.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1221 | CBSE AIPMT 2004 | 2004 | Biomolecules, Chemistry in Everyday Life and Environmental Chemistry | NeetPyqPart43.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1222 | NEET (Sep.) 2020 | 2020 | p-Block Elements | NeetPyqPart43.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1223 | NEET (Sep.) 2020 | 2020 | Biomolecules, Chemistry in Everyday Life and Environmental Chemistry | NeetPyqPart43.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1224 | CBSE AIPMT 2001 | 2001 | Organic Chemistry - Basic Principles | NeetPyqPart43.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1225 | CBSE AIPMT 2012 | 2012 | Organic Compounds Containing Oxygen | NeetPyqPart43.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1226 | NEET (Oct.) 2020 | 2020 | Organic Compounds Containing Oxygen | NeetPyqPart43.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1227 | NEET 2021 | 2021 | Organic Compounds Containing Halogens | NeetPyqPart43.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1228 | CBSE AIPMT 1994 | 1994 | Organic Compounds Containing Nitrogen | NeetPyqPart43.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1229 | CBSE AIPMT 2007 | 2007 | Surface Chemistry | NeetPyqPart43.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1230 | CBSE AIPMT 2002 | 2002 | Chemical Thermodynamics | NeetPyqPart43.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1231 | CBSE AIPMT 2002 | 2002 | Chemical Thermodynamics | NeetPyqPart43.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1232 | CBSE AIPMT 2006 | 2006 | Chemical Thermodynamics | NeetPyqPart43.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1233 | CBSE AIPMT 1996 | 1996 | Biomolecules, Chemistry in Everyday Life and Environmental Chemistry | NeetPyqPart43.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1234 | CBSE AIPMT 2003 | 2003 | Chemical Thermodynamics | NeetPyqPart43.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1235 | CBSE AIPMT 2004 | 2004 | Biomolecules, Chemistry in Everyday Life and Environmental Chemistry | NeetPyqPart43.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1236 | CBSE AIPMT 1992 | 1992 | Organic Compounds Containing Oxygen | NeetPyqPart43.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1237 | NEET/AIPMT | unknown year | Redox Reactions and Electrochemistry | NeetPyqPart43.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1238 | CBSE AIPMT 2005 | 2005 | Chemical Thermodynamics | NeetPyqPart43.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1239 | NEET 2018 | 2018 | Organic Chemistry - Basic Principles | NeetPyqPart44.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1240 | NEET (Sep.) 2020 | 2020 | Ionic Equilibrium | NeetPyqPart44.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1241 | CBSE AIPMT 1995 | 1995 | Chemical Thermodynamics | NeetPyqPart44.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1242 | CBSE AIPMT 2000 | 2000 | p-Block Elements | NeetPyqPart44.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1243 | CBSE AIPMT 1997 | 1997 | d- and f-Block Elements | NeetPyqPart44.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1244 | NEET 2016, Phase I | 2016 | Solid State | NeetPyqPart44.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1245 | CBSE AIPMT 2005 | 2005 | Purification and Characterisation of Organic Compounds | NeetPyqPart44.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1246 | CBSE AIPMT 2003 | 2003 | Isolation of Metals | NeetPyqPart44.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1247 | CBSE AIPMT 2009 | 2009 | Solid State | NeetPyqPart44.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1248 | CBSE AIPMT 1993 | 1993 | Solid State | NeetPyqPart44.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1249 | CBSE AIPMT 1996 | 1996 | s-Block Elements | NeetPyqPart44.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1250 | CBSE AIPMT 1996 | 1996 | Chemical Thermodynamics | NeetPyqPart44.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1251 | CBSE AIPMT 1994 | 1994 | Chemical Bonding and Molecular Structure | NeetPyqPart44.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1252 | CBSE AIPMT 1997 | 1997 | Chemical Bonding and Molecular Structure | NeetPyqPart44.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1253 | CBSE AIPMT 2014 | 2014 | Redox Reactions and Electrochemistry | NeetPyqPart44.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1254 | CBSE AIPMT 2009 | 2009 | Hydrocarbons | NeetPyqPart44.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1255 | CBSE AIPMT 2004 | 2004 | Biomolecules, Chemistry in Everyday Life and Environmental Chemistry | NeetPyqPart44.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1256 | CBSE AIPMT 1993 | 1993 | Solid State | NeetPyqPart44.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1257 | CBSE AIPMT 1989 | 1989 | Some Basic Concepts in Chemistry | NeetPyqPart44.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1258 | CBSE AIPMT 1994 | 1994 | Ionic Equilibrium | NeetPyqPart44.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1259 | CBSE AIPMT 1997 | 1997 | Hydrocarbons | NeetPyqPart44.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1260 | CBSE AIPMT 2010 | 2010 | Hydrocarbons | NeetPyqPart44.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1261 | NEET 2018 | 2018 | Biomolecules, Chemistry in Everyday Life and Environmental Chemistry | NeetPyqPart44.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1262 | CBSE AIPMT 1994 | 1994 | Coordination Compounds | NeetPyqPart44.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1263 | CBSE AIPMT 1993 | 1993 | States of Matter | NeetPyqPart44.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1264 | CBSE AIPMT 1993 | 1993 | Solid State | NeetPyqPart44.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1265 | CBSE AIPMT 2015 | 2015 | Ionic Equilibrium | NeetPyqPart44.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1266 | NEET 2016, Phase II | 2016 | s-Block Elements | NeetPyqPart44.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1267 | CBSE AIPMT 2009 | 2009 | Biomolecules, Chemistry in Everyday Life and Environmental Chemistry | NeetPyqPart44.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1268 | CBSE AIPMT 1993 | 1993 | Classification of Elements and Periodicity | NeetPyqPart45.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1269 | CBSE AIPMT 2011 | 2011 | Chemical Equilibrium | NeetPyqPart45.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1270 | NEET/AIPMT | unknown year | Atomic Structure | NeetPyqPart45.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1271 | CBSE AIPMT 2002 | 2002 | Coordination Compounds | NeetPyqPart45.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1272 | CBSE AIPMT 1993 | 1993 | Hydrocarbons | NeetPyqPart45.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1273 | NEET 2017 | 2017 | Biomolecules, Chemistry in Everyday Life and Environmental Chemistry | NeetPyqPart45.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1274 | NEET 2021 | 2021 | Polymers | NeetPyqPart45.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1275 | NEET 2021 | 2021 | Chemical Thermodynamics | NeetPyqPart45.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1276 | NEET (Oct.) 2021 | 2021 | Biomolecules, Chemistry in Everyday Life and Environmental Chemistry | NeetPyqPart45.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1277 | CBSE AIPMT 2015 | 2015 | Atomic Structure | NeetPyqPart45.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1278 | NEET 2016, Phase I | 2016 | Biomolecules, Chemistry in Everyday Life and Environmental Chemistry | NeetPyqPart45.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1279 | NEET (Oct.) 2020 | 2020 | Chemical Bonding and Molecular Structure | NeetPyqPart45.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1280 | CBSE AIPMT 1999 | 1999 | Solutions | NeetPyqPart45.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1281 | NEET (National) 2019 | 2019 | Solutions | NeetPyqPart45.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1282 | CBSE AIPMT 2014 | 2014 | Biomolecules, Chemistry in Everyday Life and Environmental Chemistry | NeetPyqPart45.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1283 | NEET 2017 | 2017 | d- and f-Block Elements | NeetPyqPart45.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1284 | CBSE AIPMT 2009 | 2009 | Organic Chemistry - Basic Principles | NeetPyqPart45.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1285 | NEET (Oct.) 2020 | 2020 | d- and f-Block Elements | NeetPyqPart45.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1286 | CBSE AIPMT 1997 | 1997 | Organic Chemistry - Basic Principles | NeetPyqPart45.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1287 | CBSE AIPMT 1997 | 1997 | Chemical Bonding and Molecular Structure | NeetPyqPart45.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1288 | CBSE AIPMT 2002 | 2002 | Atomic Structure | NeetPyqPart45.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1289 | CBSE AIPMT 2000 | 2000 | Chemical Thermodynamics | NeetPyqPart45.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1290 | NEET 2018 | 2018 | Coordination Compounds | NeetPyqPart45.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1291 | CBSE AIPMT 1992 | 1992 | p-Block Elements | NeetPyqPart45.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1292 | CBSE AIPMT 2014 | 2014 | Organic Chemistry - Basic Principles | NeetPyqPart45.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1293 | CBSE AIPMT 2011 | 2011 | Surface Chemistry | NeetPyqPart45.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1294 | CBSE AIPMT 1997 | 1997 | Ionic Equilibrium | NeetPyqPart45.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1295 | NEET (Oct.) 2020 | 2020 | Biomolecules, Chemistry in Everyday Life and Environmental Chemistry | NeetPyqPart45.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1296 | CBSE AIPMT 2014 | 2014 | Organic Compounds Containing Oxygen | NeetPyqPart45.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1297 | CBSE AIPMT 2015 | 2015 | Chemical Bonding and Molecular Structure | NeetPyqPart46.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1298 | CBSE AIPMT 1993 | 1993 | Hydrocarbons | NeetPyqPart46.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1299 | CBSE AIPMT 1991 | 1991 | Chemical Thermodynamics | NeetPyqPart46.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1300 | CBSE AIPMT 2009 | 2009 | Biomolecules, Chemistry in Everyday Life and Environmental Chemistry | NeetPyqPart46.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1301 | NEET 2018 | 2018 | p-Block Elements | NeetPyqPart46.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1302 | CBSE AIPMT 1995 | 1995 | Ionic Equilibrium | NeetPyqPart46.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1303 | CBSE AIPMT 2001 | 2001 | Coordination Compounds | NeetPyqPart46.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1304 | NEET 2017, CBSE AIPMT 2007 | 2007 | Chemical Equilibrium | NeetPyqPart46.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1305 | CBSE AIPMT 1999 | 1999 | Organic Compounds Containing Nitrogen | NeetPyqPart46.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1306 | CBSE AIPMT 2000 | 2000 | Chemical Equilibrium | NeetPyqPart46.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1307 | NEET (Odisha) 2019 | 2019 | Organic Chemistry - Basic Principles | NeetPyqPart46.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1308 | NEET 2021 | 2021 | Isolation of Metals | NeetPyqPart46.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1309 | CBSE AIPMT 1997 | 1997 | Chemical Bonding and Molecular Structure | NeetPyqPart46.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1310 | CBSE AIPMT 2008 | 2008 | States of Matter | NeetPyqPart46.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1311 | CBSE AIPMT 2011 | 2011 | Organic Chemistry - Basic Principles | NeetPyqPart46.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1312 | CBSE AIPMT 2000 | 2000 | Organic Compounds Containing Oxygen | NeetPyqPart46.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1313 | CBSE AIPMT 1997 | 1997 | Redox Reactions and Electrochemistry | NeetPyqPart46.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1314 | NEET 2013 | 2013 | Ionic Equilibrium | NeetPyqPart46.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1315 | CBSE AIPMT 2012 | 2012 | Polymers | NeetPyqPart46.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1316 | CBSE AIPMT 2011 | 2011 | Isolation of Metals | NeetPyqPart46.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1317 | NEET 2016, Phase I | 2016 | Organic Chemistry - Basic Principles | NeetPyqPart46.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1318 | CBSE AIPMT 1993 | 1993 | Classification of Elements and Periodicity | NeetPyqPart46.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1319 | CBSE AIPMT 2011 | 2011 | Redox Reactions and Electrochemistry | NeetPyqPart46.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1320 | CBSE AIPMT 2002, 2000 | 2000 | d- and f-Block Elements | NeetPyqPart46.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1321 | NEET (Odisha) 2019 | 2019 | p-Block Elements | NeetPyqPart46.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1322 | NEET 2021 | 2021 | Solutions | NeetPyqPart46.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1323 | CBSE AIPMT 2011 | 2011 | Ionic Equilibrium | NeetPyqPart46.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1324 | NEET 2016, Phase II | 2016 | Chemical Thermodynamics | NeetPyqPart46.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1325 | NEET (National) 2019 | 2019 | p-Block Elements | NeetPyqPart46.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1326 | CBSE AIPMT 2009 | 2009 | p-Block Elements | NeetPyqPart47.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1327 | CBSE AIPMT 1997 | 1997 | Biomolecules, Chemistry in Everyday Life and Environmental Chemistry | NeetPyqPart47.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1328 | NEET 2021 | 2021 | Organic Compounds Containing Oxygen | NeetPyqPart47.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1329 | CBSE AIPMT 2003 | 2003 | Atomic Structure | NeetPyqPart47.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1330 | NEET 2013 | 2013 | d- and f-Block Elements | NeetPyqPart47.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1331 | NEET 2017 | 2017 | d- and f-Block Elements | NeetPyqPart47.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1332 | NEET/AIPMT | unknown year | Chemical Bonding and Molecular Structure | NeetPyqPart47.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1333 | CBSE AIPMT 2003 | 2003 | Chemical Thermodynamics | NeetPyqPart47.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1334 | CBSE AIPMT 1995, 92 | 1995 | Solutions | NeetPyqPart47.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1335 | CBSE AIPMT 1997 | 1997 | Biomolecules, Chemistry in Everyday Life and Environmental Chemistry | NeetPyqPart47.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1336 | CBSE AIPMT 2003 | 2003 | Chemical Thermodynamics | NeetPyqPart47.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1337 | CBSE AIPMT 2012 | 2012 | Chemical Thermodynamics | NeetPyqPart47.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1338 | CBSE AIPMT 1996 | 1996 | Chemical Equilibrium | NeetPyqPart47.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1339 | CBSE AIPMT 1998 | 1998 | Biomolecules, Chemistry in Everyday Life and Environmental Chemistry | NeetPyqPart47.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1340 | CBSE AIPMT 2003 | 2003 | Classification of Elements and Periodicity | NeetPyqPart47.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1341 | CBSE AIPMT 2011 | 2011 | Atomic Structure | NeetPyqPart47.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1342 | CBSE AIPMT 2006 | 2006 | Chemical Equilibrium | NeetPyqPart47.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1343 | NEET (Sep.) 2020 | 2020 | Hydrogen | NeetPyqPart47.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1344 | CBSE AIPMT 1994 | 1994 | Organic Chemistry - Basic Principles | NeetPyqPart47.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1345 | CBSE AIPMT 2012 | 2012 | Polymers | NeetPyqPart47.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1346 | CBSE AIPMT 2008 | 2008 | Ionic Equilibrium | NeetPyqPart47.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1347 | CBSE AIPMT 1999 | 1999 | Isolation of Metals | NeetPyqPart47.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1348 | NEET 2021 | 2021 | Ionic Equilibrium | NeetPyqPart47.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1349 | CBSE AIPMT 2002 | 2002 | d- and f-Block Elements | NeetPyqPart47.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1350 | NEET 2018 | 2018 | Coordination Compounds | NeetPyqPart47.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1351 | CBSE AIPMT 2000 | 2000 | Polymers | NeetPyqPart47.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1352 | NEET (Odisha) 2019 | 2019 | Organic Compounds Containing Oxygen | NeetPyqPart47.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1353 | CBSE AIPMT 2006 | 2006 | p-Block Elements | NeetPyqPart47.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1354 | CBSE AIPMT 2008 | 2008 | s-Block Elements | NeetPyqPart47.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1355 | NEET 2013 | 2013 | d- and f-Block Elements | NeetPyqPart48.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1356 | CBSE AIPMT 2007 | 2007 | Solutions | NeetPyqPart48.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1357 | NEET (Oct.) 2020 | 2020 | Ionic Equilibrium | NeetPyqPart48.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1358 | NEET 2017 | 2017 | Chemical Kinetics | NeetPyqPart48.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1359 | CBSE AIPMT 2002 | 2002 | Biomolecules, Chemistry in Everyday Life and Environmental Chemistry | NeetPyqPart48.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1360 | CBSE AIPMT 2015 | 2015 | p-Block Elements | NeetPyqPart48.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1361 | CBSE AIPMT 1990 | 1990 | s-Block Elements | NeetPyqPart48.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1362 | CBSE AIPMT 2011 | 2011 | Organic Compounds Containing Nitrogen | NeetPyqPart48.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1363 | CBSE AIPMT 2011 | 2011 | Biomolecules, Chemistry in Everyday Life and Environmental Chemistry | NeetPyqPart48.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1364 | NEET 2016, Phase II | 2016 | Chemical Bonding and Molecular Structure | NeetPyqPart48.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1365 | NEET 2017, CBSE AIPMT 99, 94 | 2017 | Purification and Characterisation of Organic Compounds | NeetPyqPart48.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1366 | CBSE AIPMT 1992 | 1992 | s-Block Elements | NeetPyqPart48.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1367 | CBSE AIPMT 2005 | 2005 | Organic Compounds Containing Oxygen | NeetPyqPart48.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1368 | NEET (Phase II) 2016 | 2016 | Atomic Structure | NeetPyqPart48.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1369 | CBSE AIPMT 2015 | 2015 | Some Basic Concepts in Chemistry | NeetPyqPart48.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1370 | CBSE AIPMT 2002 | 2002 | Solutions | NeetPyqPart48.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1371 | CBSE AIPMT 1996 | 1996 | Organic Chemistry - Basic Principles | NeetPyqPart48.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1372 | CBSE AIPMT 2000 | 2000 | Organic Chemistry - Basic Principles | NeetPyqPart48.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1373 | NEET 2016, Phase I | 2016 | Solutions | NeetPyqPart48.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1374 | CBSE AIPMT 2012 | 2012 | Coordination Compounds | NeetPyqPart48.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1375 | CBSE AIPMT 2007 | 2007 | d- and f-Block Elements | NeetPyqPart48.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1376 | CBSE AIPMT 2010 | 2010 | p-Block Elements | NeetPyqPart48.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1377 | CBSE AIPMT 1996 | 1996 | Solid State | NeetPyqPart48.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1378 | CBSE AIPMT 2005 | 2005 | Solid State | NeetPyqPart48.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1379 | CBSE AIPMT 2015 | 2015 | Organic Chemistry - Basic Principles | NeetPyqPart48.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1380 | CBSE AIPMT 1997 | 1997 | Coordination Compounds | NeetPyqPart48.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1381 | NEET 2016, Phase I | 2016 | Solutions | NeetPyqPart48.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1382 | CBSE AIPMT 2001 | 2001 | Biomolecules, Chemistry in Everyday Life and Environmental Chemistry | NeetPyqPart48.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1383 | NEET (Oct.) 2020 | 2020 | Chemical Thermodynamics | NeetPyqPart49.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1384 | CBSE AIPMT 2010 | 2010 | Chemical Equilibrium | NeetPyqPart49.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1385 | CBSE AIPMT 1995 | 1995 | s-Block Elements | NeetPyqPart49.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1386 | CBSE AIPMT 2001 | 2001 | Chemical Thermodynamics | NeetPyqPart49.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1387 | NEET 2013 | 2013 | Chemical Bonding and Molecular Structure | NeetPyqPart49.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1388 | CBSE AIPMT 1989 | 1989 | Organic Compounds Containing Oxygen | NeetPyqPart49.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1389 | CBSE AIPMT 2008 | 2008 | Polymers | NeetPyqPart49.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1390 | CBSE AIPMT 1993, 1990 | 1990 | Chemical Bonding and Molecular Structure | NeetPyqPart49.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1391 | CBSE AIPMT 1996 | 1996 | d- and f-Block Elements | NeetPyqPart49.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1392 | CBSE AIPMT 2003 | 2003 | Surface Chemistry | NeetPyqPart49.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1393 | CBSE AIPMT 2010 | 2010 | d- and f-Block Elements | NeetPyqPart49.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1394 | CBSE AIPMT 1997 | 1997 | Organic Compounds Containing Halogens | NeetPyqPart49.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1395 | NEET 2013 | 2013 | Chemical Thermodynamics | NeetPyqPart49.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1396 | CBSE AIPMT 1996 | 1996 | Chemical Kinetics | NeetPyqPart49.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1397 | NEET 2013 | 2013 | Isolation of Metals | NeetPyqPart49.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1398 | CBSE AIPMT 1998 | 1998 | Solid State | NeetPyqPart49.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1399 | CBSE AIPMT 2010 | 2010 | Coordination Compounds | NeetPyqPart49.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1400 | CBSE AIPMT 2008 | 2008 | Ionic Equilibrium | NeetPyqPart49.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1401 | NEET 2016, Phase I | 2016 | d- and f-Block Elements | NeetPyqPart49.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1402 | CBSE AIPMT 2015 | 2015 | Organic Compounds Containing Halogens | NeetPyqPart49.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1403 | CBSE AIPMT 2005 | 2005 | Chemical Thermodynamics | NeetPyqPart49.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1404 | CBSE AIPMT 2016, Phase II, 2011 | 2011 | Redox Reactions and Electrochemistry | NeetPyqPart49.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1405 | CBSE AIPMT 2006 | 2006 | Chemical Bonding and Molecular Structure | NeetPyqPart49.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1406 | CBSE AIPMT 2002 | 2002 | Biomolecules, Chemistry in Everyday Life and Environmental Chemistry | NeetPyqPart49.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1407 | CBSE AIPMT 1989 | 1989 | Hydrocarbons | NeetPyqPart49.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1408 | NEET 2021 | 2021 | Organic Compounds Containing Oxygen | NeetPyqPart49.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1409 | NEET 2017 | 2017 | p-Block Elements | NeetPyqPart49.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1410 | NEET 2021 | 2021 | Organic Compounds Containing Halogens | NeetPyqPart49.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1411 | NEET 2017 | 2017 | p-Block Elements | NeetPyqPart49.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1412 | CBSE AIPMT 1994 | 1994 | s-Block Elements | NeetPyqPart50.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1413 | CBSE AIPMT 1998 | 1998 | Some Basic Concepts in Chemistry | NeetPyqPart50.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1414 | CBSE AIPMT 2011 | 2011 | p-Block Elements | NeetPyqPart50.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1415 | NEET 2018 | 2018 | Organic Compounds Containing Halogens | NeetPyqPart50.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1416 | CBSE AIPMT 1990 | 1990 | Some Basic Concepts in Chemistry | NeetPyqPart50.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1417 | CBSE AIPMT 2005 | 2005 | Polymers | NeetPyqPart50.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1418 | NEET 2021 | 2021 | p-Block Elements | NeetPyqPart50.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1419 | CBSE AIPMT 1992 | 1992 | Hydrocarbons | NeetPyqPart50.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1420 | CBSE AIPMT 2010 | 2010 | Coordination Compounds | NeetPyqPart50.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1421 | CBSE AIPMT 2003 | 2003 | Solutions | NeetPyqPart50.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1422 | NEET 2021 | 2021 | Organic Compounds Containing Oxygen | NeetPyqPart50.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1423 | NEET (Sept.) 2020 | 2020 | Chemical Bonding and Molecular Structure | NeetPyqPart50.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1424 | CBSE AIPMT 1996 | 1996 | Classification of Elements and Periodicity | NeetPyqPart50.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1425 | CBSE AIPMT 1998 | 1998 | Some Basic Concepts in Chemistry | NeetPyqPart50.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1426 | NEET (Odisha) 2019 | 2019 | Hydrocarbons | NeetPyqPart50.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1427 | CBSE AIPMT 1999 | 1999 | Chemical Bonding and Molecular Structure | NeetPyqPart50.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1428 | CBSE AIPMT 2004 | 2004 | Organic Compounds Containing Oxygen | NeetPyqPart50.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1429 | CBSE AIPMT 1991 | 1991 | States of Matter | NeetPyqPart50.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1430 | CBSE AIPMT 2002 | 2002 | Organic Chemistry - Basic Principles | NeetPyqPart50.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1431 | NEET (Sep.) 2020 | 2020 | Solutions | NeetPyqPart50.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1432 | NEET 2016, Phase II | 2016 | Organic Compounds Containing Nitrogen | NeetPyqPart50.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1433 | CBSE AIPMT 2009 | 2009 | Some Basic Concepts in Chemistry | NeetPyqPart50.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1434 | CBSE AIPMT 2001 | 2001 | Chemical Bonding and Molecular Structure | NeetPyqPart50.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1435 | CBSE AIPMT 1994 | 1994 | Hydrocarbons | NeetPyqPart50.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1436 | CBSE AIPMT 2015 | 2015 | s-Block Elements | NeetPyqPart50.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1437 | NEET 2016, Phase II | 2016 | p-Block Elements | NeetPyqPart50.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1438 | CBSE AIPMT 1993 | 1993 | Organic Compounds Containing Halogens | NeetPyqPart50.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1439 | CBSE AIPMT 1996 | 1996 | Isolation of Metals | NeetPyqPart50.tsx | UNVERIFIED | EXCLUDED
+- NEET-PYQ-1440 | NEET (National) 2019 | 2019 | p-Block Elements | NeetPyqPart50.tsx | UNVERIFIED | EXCLUDED

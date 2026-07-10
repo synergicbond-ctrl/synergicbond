@@ -33,6 +33,9 @@ export default function PYQPage() {
             {PYQ_DB_STATS.total}+ questions from JEE Main, JEE Advanced & NEET — chapter &amp; topic intelligence,
             trend analytics, prediction engine, and knowledge linking.
           </p>
+          <p className="max-w-4xl rounded-lg border border-amber-400/20 bg-amber-400/10 px-4 py-3 text-sm text-amber-100">
+            Synergic Bond is an independent educational platform. It is not affiliated with, endorsed by, or sponsored by NTA, CBSE, NEET, JEE, or any examination authority.
+          </p>
         </div>
 
         {/* Tabs */}

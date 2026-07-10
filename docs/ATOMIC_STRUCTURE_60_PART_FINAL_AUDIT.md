@@ -118,3 +118,19 @@ Audit date: 2026-07-11
 ## Overall result
 
 **FAIL — completion is blocked by the absent 192-page Atomic Structure source and 49 missing, source-faithful TSX components.** Creating them without the source would violate the requirement not to invent or use placeholder content.
+
+## Batch A update (parts 13–18) — 2026-07-11
+
+Source PDF now present at `private/source/Atomic Structure Kohinoor.pdf` (192 pages, verified with `pdfinfo`).
+Pages rendered at 200 DPI to `/private/tmp/atomic-structure-batch-A` (outside the repository) and deleted after transcription.
+
+| Part | Source pages | Title | Status |
+| --- | --- | --- | --- |
+| 13 | 39–41 | Stopping Potential Graphs and Photon Flux | Transcribed, routed |
+| 14 | 42–44 | Work Function Data and Bohr Model Postulates | Transcribed, routed |
+| 15 | 45–48 | Bohr Quantisation, Orbit Radius, Speed and Time Period | Transcribed, routed |
+| 16 | 49–51 | Energy of the Electron and Level Differences | Transcribed, routed |
+| 17 | 52–54 | Ionisation Energy, Binding Energy and Rydberg's Equation | Transcribed, routed |
+| 18 | 55–57 | Ritz Principle, Reduced Mass and Spectrum | Transcribed, routed |
+
+Checks: `npm run typecheck` PASS · placeholder/watermark scan PASS (0 markers, 0 `[UNCLEAR]`) · 18 files / 18 routes registered.

@@ -24,6 +24,12 @@ export const atomicPartMeta: AtomicPartMeta[] = [
   { part: 10, title: "Rayleigh-Jeans and Planck Quantum Theory", pages: "29-32", href: "/learn/atomic-structure/part10" },
   { part: 11, title: "Photoelectric Effect and Einstein Equation", pages: "33-35", href: "/learn/atomic-structure/part11" },
   { part: 12, title: "Photoelectric Current and Stopping Potential", pages: "36-38", href: "/learn/atomic-structure/part12" },
+  { part: 13, title: "Stopping Potential Graphs and Photon Flux", pages: "39-41", href: "/learn/atomic-structure/part13" },
+  { part: 14, title: "Work Function Data and Bohr Model Postulates", pages: "42-44", href: "/learn/atomic-structure/part14" },
+  { part: 15, title: "Bohr Quantisation, Orbit Radius, Speed and Time Period", pages: "45-48", href: "/learn/atomic-structure/part15" },
+  { part: 16, title: "Energy of the Electron and Level Differences", pages: "49-51", href: "/learn/atomic-structure/part16" },
+  { part: 17, title: "Ionisation Energy, Binding Energy and Rydberg's Equation", pages: "52-54", href: "/learn/atomic-structure/part17" },
+  { part: 18, title: "Ritz Principle, Reduced Mass and Spectrum", pages: "55-57", href: "/learn/atomic-structure/part18" },
 ];
 
 export function AtomicPartShell({

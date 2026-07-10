@@ -10,7 +10,9 @@
     "typecheck": "tsc --noEmit",
     "audit-pyq": "npx tsx scripts/pyq-audit.ts",
     "test-chemistry": "npx tsx scripts/run-audit.ts",
-    "audit-neet-staging": "node scripts/audit-neet-chemistry-staging.mjs"
+    "audit-neet-staging": "node scripts/audit-neet-chemistry-staging.mjs",
+    "audit-neet-pyq": "npx tsx scripts/audit-neet-chemistry-pyq.ts",
+    "import-neet-pyq": "npx tsx scripts/import-verified-neet-pyq.ts"
   },
   "dependencies": {
     "@google/genai": "^2.10.0",

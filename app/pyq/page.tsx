@@ -8,10 +8,12 @@ import PYQTopicsTab from "@/components/pyq/PYQTopicsTab";
 import PYQTrendsTab from "@/components/pyq/PYQTrendsTab";
 import PYQPredictionsTab from "@/components/pyq/PYQPredictionsTab";
 import PYQDashboardTab from "@/components/pyq/PYQDashboardTab";
+import NEETChemistryPYQEngine from "@/components/pyq/NEETChemistryPYQEngine";
 
-type Tab = "search" | "chapters" | "topics" | "trends" | "predictions" | "dashboard";
+type Tab = "neet-chemistry" | "search" | "chapters" | "topics" | "trends" | "predictions" | "dashboard";
 
 const TABS: Array<{ key: Tab; label: string; icon: string }> = [
+  { key: "neet-chemistry", label: "NEET Chemistry", icon: "🧪" },
   { key: "search", label: "Search", icon: "🔍" },
   { key: "chapters", label: "Chapters", icon: "📖" },
   { key: "topics", label: "Topics", icon: "🧩" },
@@ -21,7 +23,7 @@ const TABS: Array<{ key: Tab; label: string; icon: string }> = [
 ];
 
 export default function PYQPage() {
-  const [tab, setTab] = useState<Tab>("search");
+  const [tab, setTab] = useState<Tab>("neet-chemistry");
 
   return (
     <main className="min-h-screen bg-black text-white">
@@ -30,8 +32,8 @@ export default function PYQPage() {
         <div className="space-y-2">
           <h1 className="text-4xl md:text-5xl font-bold">📚 PYQ Intelligence</h1>
           <p className="text-white/60">
-            {PYQ_DB_STATS.total}+ questions from JEE Main, JEE Advanced & NEET — chapter &amp; topic intelligence,
-            trend analytics, prediction engine, and knowledge linking.
+            {PYQ_DB_STATS.total}+ verified or review-tagged records across the legacy intelligence layer, plus a
+            separate official-source NEET Chemistry practice engine.
           </p>
           <p className="max-w-4xl rounded-lg border border-amber-400/20 bg-amber-400/10 px-4 py-3 text-sm text-amber-100">
             Synergic Bond is an independent educational platform. It is not affiliated with, endorsed by, or sponsored by NTA, CBSE, NEET, JEE, or any examination authority.
@@ -55,6 +57,7 @@ export default function PYQPage() {
           ))}
         </div>
 
+        {tab === "neet-chemistry" && <NEETChemistryPYQEngine />}
         {tab === "search" && <PYQSearchTab />}
         {tab === "chapters" && <PYQChaptersTab />}
         {tab === "topics" && <PYQTopicsTab />}

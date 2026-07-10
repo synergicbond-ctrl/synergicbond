@@ -1,0 +1,47 @@
+[
+  {
+    "id": "neet-chemistry-official-template-001",
+    "program": "neet",
+    "subject": "chemistry",
+    "examName": "NEET UG",
+    "examYear": 2024,
+    "examSession": "replace-with-official-session-if-any",
+    "paperCode": "replace-with-official-paper-code",
+    "language": "english",
+    "domain": "physical-chemistry",
+    "classLevel": "12",
+    "chapterId": "electrochemistry",
+    "chapterName": "Electrochemistry",
+    "topicId": "replace-with-topic-id",
+    "topicName": "replace-with-topic-name",
+    "questionType": "single-correct",
+    "questionText": "PLACEHOLDER ONLY. Paste official-question text only after official-source verification and rights review.",
+    "options": [
+      { "id": "A", "label": "A", "text": "Placeholder option A" },
+      { "id": "B", "label": "B", "text": "Placeholder option B" },
+      { "id": "C", "label": "C", "text": "Placeholder option C" },
+      { "id": "D", "label": "D", "text": "Placeholder option D" }
+    ],
+    "correctOptionId": "A",
+    "explanation": "Original Synergic Bond explanation placeholder. Do not copy publisher solutions.",
+    "difficulty": "moderate",
+    "ncertReference": {
+      "classLevel": "12",
+      "chapter": "Electrochemistry",
+      "section": "replace-with-section",
+      "edition": "replace-with-edition"
+    },
+    "officialSource": {
+      "authority": "National Testing Agency",
+      "documentTitle": "Replace with official question paper title",
+      "sourceUrl": "https://example.invalid/official-source-placeholder",
+      "officialPaperCode": "replace-with-official-paper-code",
+      "officialAnswerKeyCode": "replace-with-official-answer-key-code",
+      "questionNumber": 1,
+      "verifiedBy": "replace-with-reviewer",
+      "verifiedAt": "2026-07-10",
+      "verificationNotes": "Placeholder template only; not production content."
+    },
+    "verificationStatus": "verified-official"
+  }
+]

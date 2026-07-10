@@ -1,5 +1,6 @@
 import type { PYQQuestion } from "../schema";
 import { NEET_PHASE_A_QUESTIONS } from "./neetPhaseA";
+import { NEET_CHEMISTRY_PYQ_QUESTIONS } from "../generated/neetChemistry";
 
 // ─────────────────────────────────────────────────────────────────────────────
 // NEET PYQ Database — Phase 3
@@ -8,6 +9,7 @@ import { NEET_PHASE_A_QUESTIONS } from "./neetPhaseA";
 // ─────────────────────────────────────────────────────────────────────────────
 
 export const NEET_QUESTIONS: PYQQuestion[] = [
+  ...NEET_CHEMISTRY_PYQ_QUESTIONS,
 
   // Atomic Structure
   {
@@ -759,4 +761,3 @@ export const NEET_QUESTIONS: PYQQuestion[] = [
 },
   ...NEET_PHASE_A_QUESTIONS,
 ];
-

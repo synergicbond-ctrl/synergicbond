@@ -70,3 +70,11 @@ Split rule: repeat `3 pages, 3 pages, 3 pages, 3 pages, 4 pages` exactly 12 time
 | Part 60 | 189-192 |
 
 Coverage check: parts 1-60 cover pages 1-192 exactly with no intended missing or duplicated source page.
+
+## Implementation Status
+
+| Batch | Parts | Source pages | Status |
+| --- | --- | --- | --- |
+| Batch 01 | Parts 01-05 | 1-16 | Implemented and audited in `docs/ATOMIC_STRUCTURE_BATCH_01_AUDIT.md` |
+| Batch 02 | Parts 06-10 | 17-32 | Implemented and audited in `docs/ATOMIC_STRUCTURE_BATCH_02_AUDIT.md` |
+| Part 11 | Part 11 | 33-35 | Implemented and audited in `docs/ATOMIC_STRUCTURE_PART_11_AUDIT.md` |

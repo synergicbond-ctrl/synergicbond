@@ -17,6 +17,12 @@ export const atomicPartMeta: AtomicPartMeta[] = [
   { part: 3, title: "Discovery of Proton", pages: "7-9", href: "/learn/atomic-structure/part03" },
   { part: 4, title: "Neutron and Rutherford Scattering", pages: "10-12", href: "/learn/atomic-structure/part04" },
   { part: 5, title: "Rutherford Model Calculations", pages: "13-16", href: "/learn/atomic-structure/part05" },
+  { part: 6, title: "Rutherford Scattering Cross Section", pages: "17-19", href: "/learn/atomic-structure/part06" },
+  { part: 7, title: "Rutherford Drawbacks and EM Waves", pages: "20-22", href: "/learn/atomic-structure/part07" },
+  { part: 8, title: "Wave Terms and Black Body Radiation", pages: "23-25", href: "/learn/atomic-structure/part08" },
+  { part: 9, title: "Radiation Laws and Planck Formula", pages: "26-28", href: "/learn/atomic-structure/part09" },
+  { part: 10, title: "Rayleigh-Jeans and Planck Quantum Theory", pages: "29-32", href: "/learn/atomic-structure/part10" },
+  { part: 11, title: "Photoelectric Effect and Einstein Equation", pages: "33-35", href: "/learn/atomic-structure/part11" },
 ];
 
 export function AtomicPartShell({

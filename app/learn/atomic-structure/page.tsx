@@ -56,8 +56,8 @@ export default function AtomicStructureNotes() {
 
       <Section id="source-parts" eyebrow="Handwritten source" title="Kohinoor Atomic Structure Parts">
         <p className="mb-5 max-w-2xl leading-relaxed text-white/65">
-          Forensic TSX transcription from the handwritten Atomic Structure source begins here. This batch implements only
-          Parts 01-05, matching source pages 1-16 from the 60-part manifest.
+          Forensic TSX transcription from the handwritten Atomic Structure source begins here. Parts 01-11 are now
+          implemented, matching source pages 1-35 from the 60-part manifest.
         </p>
         <div className="grid gap-3 sm:grid-cols-2">
           {atomicPartMeta.map((part) => (

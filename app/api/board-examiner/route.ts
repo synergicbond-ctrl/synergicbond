@@ -54,7 +54,7 @@ Respond with ONLY valid JSON (no markdown, no code blocks, no extra text):
   "modelPoints": ["the value-points a full-marks answer must contain"]
 }`;
 
-    const contents: any[] = [{ text: prompt }];
+    const contents: Array<{ text: string } | { inlineData: { mimeType: string; data: string } }> = [{ text: prompt }];
 
     if (uploadedFile?.localPreview) {
       const match = uploadedFile.localPreview.match(/^data:(image\/[a-z]+|application\/pdf);base64,(.+)$/);

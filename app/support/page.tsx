@@ -117,7 +117,7 @@ export default function SupportPage() {
           <div className="p-5 rounded-2xl border border-white/10 bg-black/30 space-y-2">
             <h3 className="text-sm font-bold text-white uppercase tracking-wider text-center text-xs">Our Mission Statement</h3>
             <p className="text-sm text-center text-white/70 italic">
-              "Provide a world-class Chemistry learning ecosystem that is accessible, affordable, and available to every student."
+              &ldquo;Provide a world-class Chemistry learning ecosystem that is accessible, affordable, and available to every student.&rdquo;
             </p>
           </div>
         </section>
@@ -202,7 +202,7 @@ export default function SupportPage() {
           <div className="grid gap-4 sm:grid-cols-3">
             {TESTIMONIALS.map((t, i) => (
               <div key={i} className="p-5 rounded-2xl border border-white/[0.06] bg-[#111827] flex flex-col justify-between space-y-4">
-                <p className="text-xs text-white/70 italic leading-relaxed">"{t.quote}"</p>
+                <p className="text-xs text-white/70 italic leading-relaxed">&ldquo;{t.quote}&rdquo;</p>
                 <div>
                   <span className="block text-xs font-bold text-white">{t.author}</span>
                   <span className="block text-[10px] text-white/40 mt-0.5">{t.tag}</span>

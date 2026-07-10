@@ -41,6 +41,7 @@ const chapterMap = new Map([
 const pageTailRe = /\b(?:States of Matter|Atomic Structure|Solutions|Surface Chemistry|Chemical Kinetics|Coordination Compounds|Hydrocarbons|Polymers|Redox Reactions|Electrochemistry)\s+\d{1,4}\s*$/i;
 const brandingRe = /\b(?:arihant|mtg|disha|publisher|page\s*no\.?|chapterwise|topicwise|logo)\b/i;
 const corruptedGlyphRe = /[�È⎯⏐⊕]/;
+const damagedNotationRe = /\b(?:[a-z](?:pH|pKa|pKb|T\(K\)|[A-Z][a-z]?\d?)|c\s*=\s*3\.0\s*×\s*10(?:3|5)\s*m?s|ms−1|ms-1)\b/;
 const placeholderRe = /\b(?:lorem ipsum|placeholder|dummy question|todo|sample question)\b/i;
 const optionContaminationRe = /\bAns\.|\bAns\b|•|‘‘|’’|Out of the following two|\(\s*a\s*\)\s*I and II/i;
 
@@ -216,11 +217,12 @@ function extractReagents(text) {
   return [...reagents].slice(0, 6);
 }
 
-function makeExplanation(answer, option, chapter, subtopic) {
+function makeReviewExplanation(answer, option, chapter, subtopic) {
   return [
-    `Concept: ${subtopic} (${chapter}).`,
-    `Steps: Use the condition asked in the stem and apply the standard ${chapter} rule or formula for ${subtopic}. Comparing the four choices, option ${answer} gives "${option}", which is the choice consistent with that rule. The other choices do not satisfy the same deciding condition.`,
-    `Check: the result is option ${answer}, matching the retained official answer key.`,
+    "Needs manual review:",
+    `the official answer key is retained as option ${answer} (${option}), but an independently authored Synergic Bond solution has not yet been written or chemically verified.`,
+    `Inferred review focus: ${subtopic} in ${chapter}.`,
+    "Do not display this as a solved explanation until the key, notation, and reasoning are verified against chemistry principles.",
   ].join(" ");
 }
 
@@ -239,6 +241,7 @@ function rejectReasons(raw, parsed, chapter, sourceKey, seenKeys) {
   if (placeholderRe.test(joined)) reasons.push("placeholder marker");
   if (pageTailRe.test(raw.solution)) reasons.push("source-book page tail");
   if (corruptedGlyphRe.test(joined)) reasons.push("corrupted extraction glyphs");
+  if (parsed && damagedNotationRe.test(`${parsed.question} ${Object.values(parsed.options).join(" ")}`)) reasons.push("damaged chemistry notation");
   if (parsed && seenKeys.has(sourceKey)) reasons.push("duplicate normalized question/options");
   return reasons;
 }
@@ -311,7 +314,7 @@ function build() {
       question: parsed.question,
       options: parsed.options,
       answer: raw.answer,
-      explanation: makeExplanation(raw.answer, option, chapter, subtopic),
+      explanation: makeReviewExplanation(raw.answer, option, chapter, subtopic),
       chapter,
       subtopic,
       concepts: inferConcepts(chapter, subtopic, parsed.question),
@@ -375,8 +378,9 @@ function build() {
     "## Rejection Rules",
     "",
     "- Rejected malformed records with missing fields, invalid answer keys, missing four-option structure, duplicated normalized stems/options, source-book page tails, publisher/page branding, placeholder markers, unmapped chapters, and visibly corrupted extraction glyphs.",
-    "- Raw solution prose was not copied into the generated database. Generated explanations use a Synergic Bond structure: concept, necessary steps, and answer-key check.",
-    "- All imported records remain `NEEDS_MANUAL_REVIEW` until a subject expert verifies the official key and solution reasoning question-by-question.",
+    "- Raw solution prose was not copied into the generated database.",
+    "- No generic or template solution is treated as a solved explanation. Each imported explanation is a review flag until an independently authored Synergic Bond solution is written.",
+    "- All imported records remain `NEEDS_MANUAL_REVIEW` until a subject expert verifies the official key, notation, and solution reasoning question-by-question.",
     "- Source-book order is not used. The generated master is sorted by year, chapter, and stable content hash.",
     "- Redox Reactions and Electrochemistry was split by chemistry keywords; ambiguous combined records were rejected.",
     "",

@@ -1,26 +1,28 @@
 # NEET Chemistry PYQ Import Audit
 
-Generated: 2026-07-10T02:54:15.021Z
+Generated: 2026-07-10T03:02:07.900Z
 
 ## Source Audit
 
 - Extracted TSX files audited: 50
 - Raw records found by parser: 1440
 - Manifest claimed records: 1440
-- Accepted normalized records: 972
-- Rejected records: 468
+- Accepted normalized records: 909
+- Rejected records: 531
 
 ## Rejection Rules
 
 - Rejected malformed records with missing fields, invalid answer keys, missing four-option structure, duplicated normalized stems/options, source-book page tails, publisher/page branding, placeholder markers, unmapped chapters, and visibly corrupted extraction glyphs.
-- Raw solution prose was not copied into the generated database. Generated explanations use a Synergic Bond structure: concept, necessary steps, and answer-key check.
-- All imported records remain `NEEDS_MANUAL_REVIEW` until a subject expert verifies the official key and solution reasoning question-by-question.
+- Raw solution prose was not copied into the generated database.
+- No generic or template solution is treated as a solved explanation. Each imported explanation is a review flag until an independently authored Synergic Bond solution is written.
+- All imported records remain `NEEDS_MANUAL_REVIEW` until a subject expert verifies the official key, notation, and solution reasoning question-by-question.
 - Source-book order is not used. The generated master is sorted by year, chapter, and stable content hash.
 - Redox Reactions and Electrochemistry was split by chemistry keywords; ambiguous combined records were rejected.
 
 ## Rejection Summary
 
 - corrupted extraction glyphs: 394
+- damaged chemistry notation: 90
 - missing or malformed four options: 77
 - missing required field: 19
 - invalid year: 19
@@ -64,70 +66,70 @@ Generated: 2026-07-10T02:54:15.021Z
 
 - Alcohols Phenols Ethers: 11
 - Aldehydes Ketones: 15
-- Amines: 16
-- Atomic Structure: 57
-- Biomolecules: 49
-- Carboxylic Acids: 9
+- Amines: 15
+- Atomic Structure: 52
+- Biomolecules: 47
+- Carboxylic Acids: 8
 - Chemical Bonding: 88
-- Chemical Kinetics: 30
+- Chemical Kinetics: 27
 - Chemistry in Everyday Life: 10
 - Coordination Compounds: 63
 - d and f Block Elements: 55
-- Electrochemistry: 28
-- Equilibrium: 69
-- General Organic Chemistry: 40
+- Electrochemistry: 27
+- Equilibrium: 53
+- General Organic Chemistry: 38
 - Haloalkanes and Haloarenes: 19
-- Hydrocarbons: 34
+- Hydrocarbons: 33
 - Hydrogen: 1
 - Metallurgy: 18
-- p-Block Elements: 59
-- Periodic Table: 30
+- p-Block Elements: 58
+- Periodic Table: 29
 - Polymers: 18
 - Redox Reactions: 1
 - s-Block Elements: 26
 - Solid State: 37
-- Solutions: 46
-- Some Basic Concepts: 36
-- States of Matter: 38
-- Surface Chemistry: 26
-- Thermodynamics: 43
+- Solutions: 40
+- Some Basic Concepts: 31
+- States of Matter: 30
+- Surface Chemistry: 25
+- Thermodynamics: 34
 
 ## Accepted Year Counts
 
-- 1988: 13
-- 1989: 30
+- 1988: 12
+- 1989: 29
 - 1990: 17
-- 1991: 22
-- 1992: 20
-- 1993: 24
+- 1991: 20
+- 1992: 17
+- 1993: 22
 - 1994: 46
-- 1995: 26
-- 1996: 28
-- 1997: 28
-- 1998: 31
-- 1999: 31
-- 2000: 32
+- 1995: 22
+- 1996: 26
+- 1997: 27
+- 1998: 30
+- 1999: 29
+- 2000: 31
 - 2001: 28
-- 2002: 25
-- 2003: 24
-- 2004: 36
-- 2005: 25
-- 2006: 30
-- 2007: 28
-- 2008: 31
-- 2009: 22
-- 2010: 24
-- 2011: 24
-- 2012: 19
-- 2013: 25
-- 2014: 19
-- 2015: 49
-- 2016: 51
+- 2002: 22
+- 2003: 23
+- 2004: 34
+- 2005: 24
+- 2006: 29
+- 2007: 27
+- 2008: 30
+- 2009: 21
+- 2010: 21
+- 2011: 20
+- 2012: 17
+- 2013: 22
+- 2014: 18
+- 2015: 47
+- 2016: 48
 - 2017: 21
-- 2018: 22
-- 2019: 46
-- 2020: 44
-- 2021: 31
+- 2018: 20
+- 2019: 42
+- 2020: 43
+- 2021: 24
 
 ## First Rejected Samples
 
@@ -136,12 +138,15 @@ Generated: 2026-07-10T02:54:15.021Z
 - NEET-PYQ-0011 (NeetPyqPart01.tsx): source-book page tail
 - NEET-PYQ-0018 (NeetPyqPart01.tsx): corrupted extraction glyphs
 - NEET-PYQ-0019 (NeetPyqPart01.tsx): corrupted extraction glyphs
+- NEET-PYQ-0021 (NeetPyqPart01.tsx): damaged chemistry notation
 - NEET-PYQ-0023 (NeetPyqPart01.tsx): corrupted extraction glyphs
 - NEET-PYQ-0026 (NeetPyqPart01.tsx): question stem too short after option extraction
 - NEET-PYQ-0030 (NeetPyqPart02.tsx): missing or malformed four options, corrupted extraction glyphs
-- NEET-PYQ-0032 (NeetPyqPart02.tsx): corrupted extraction glyphs
+- NEET-PYQ-0031 (NeetPyqPart02.tsx): damaged chemistry notation
+- NEET-PYQ-0032 (NeetPyqPart02.tsx): corrupted extraction glyphs, damaged chemistry notation
 - NEET-PYQ-0033 (NeetPyqPart02.tsx): corrupted extraction glyphs
 - NEET-PYQ-0037 (NeetPyqPart02.tsx): source-book page tail
+- NEET-PYQ-0038 (NeetPyqPart02.tsx): damaged chemistry notation
 - NEET-PYQ-0040 (NeetPyqPart02.tsx): corrupted extraction glyphs
 - NEET-PYQ-0042 (NeetPyqPart02.tsx): corrupted extraction glyphs
 - NEET-PYQ-0043 (NeetPyqPart02.tsx): corrupted extraction glyphs
@@ -154,10 +159,7 @@ Generated: 2026-07-10T02:54:15.021Z
 - NEET-PYQ-0059 (NeetPyqPart03.tsx): corrupted extraction glyphs
 - NEET-PYQ-0060 (NeetPyqPart03.tsx): corrupted extraction glyphs
 - NEET-PYQ-0066 (NeetPyqPart03.tsx): corrupted extraction glyphs
+- NEET-PYQ-0068 (NeetPyqPart03.tsx): damaged chemistry notation
 - NEET-PYQ-0071 (NeetPyqPart03.tsx): corrupted extraction glyphs
 - NEET-PYQ-0073 (NeetPyqPart03.tsx): corrupted extraction glyphs
 - NEET-PYQ-0074 (NeetPyqPart03.tsx): corrupted extraction glyphs
-- NEET-PYQ-0076 (NeetPyqPart03.tsx): corrupted extraction glyphs
-- NEET-PYQ-0077 (NeetPyqPart03.tsx): corrupted extraction glyphs
-- NEET-PYQ-0079 (NeetPyqPart03.tsx): corrupted extraction glyphs
-- NEET-PYQ-0081 (NeetPyqPart03.tsx): corrupted extraction glyphs

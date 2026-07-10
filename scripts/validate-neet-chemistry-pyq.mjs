@@ -28,9 +28,11 @@ for (const q of NEET_CHEMISTRY_PYQ_QUESTIONS) {
   assert.ok(!/\([a-d]\)/i.test(q.question), `question still contains inline option markers: ${q.id}`);
   assert.ok(!/(arihant|mtg|disha|publisher|page\s*no)/i.test(`${q.question} ${q.explanation}`), `branding leaked: ${q.id}`);
   assert.ok(!/(Work through the governing concept|States of Matter\s+\d+$)/i.test(q.explanation), `source solution prose leaked: ${q.id}`);
-  assert.ok(q.explanation.includes("Concept:"), `solution missing governing concept: ${q.id}`);
-  assert.ok(q.explanation.includes("Steps:"), `solution missing reasoning steps: ${q.id}`);
-  assert.ok(q.explanation.includes("Check:"), `solution missing answer-key verification: ${q.id}`);
+  assert.ok(!/\b(?:[a-z](?:pH|pKa|pKb|T\(K\)|[A-Z][a-z]?\d?)|c\s*=\s*3\.0\s*×\s*10(?:3|5)\s*m?s|ms−1|ms-1)\b/.test(`${q.question} ${Object.values(q.options).join(" ")}`), `damaged notation leaked: ${q.id}`);
+  assert.ok(!/(Concept:\s|Steps:\s|Check:\s)/.test(q.explanation), `generic pseudo-solution leaked: ${q.id}`);
+  assert.ok(q.explanation.startsWith("Needs manual review:"), `imported record must be review-flagged, not solved: ${q.id}`);
+  assert.ok(q.explanation.includes("official answer key is retained"), `review flag must describe retained key status: ${q.id}`);
+  assert.ok(q.explanation.includes("independently authored Synergic Bond solution has not yet been written"), `review flag must not imply solved status: ${q.id}`);
   assert.equal(q.authenticityStatus, "NEEDS_MANUAL_REVIEW", `imported key must remain review-flagged: ${q.id}`);
   assert.ok(!/[�È⎯⏐⊕]/.test(`${q.question} ${Object.values(q.options).join(" ")} ${q.explanation}`), `corrupt glyph leaked: ${q.id}`);
   const key = `${q.question} ${Object.values(q.options).join(" ")}`.toLowerCase().replace(/\s+/g, " ").trim();

@@ -2,8 +2,8 @@
   "physical": [
     {
       "chapterName": "Some Basic Concepts",
-      "totalCount": 39,
-      "neetCount": 36,
+      "totalCount": 34,
+      "neetCount": 31,
       "jmCount": 3,
       "jaCount": 0,
       "years": [
@@ -12,7 +12,6 @@
         1990,
         1994,
         1995,
-        1996,
         1998,
         1999,
         2001,
@@ -21,10 +20,8 @@
         2007,
         2008,
         2010,
-        2013,
         2015,
         2016,
-        2018,
         2019,
         2020,
         2021,
@@ -37,15 +34,17 @@
         2009,
         2011,
         2012,
+        2013,
         2014,
         2017,
+        2018,
         2024
       ]
     },
     {
       "chapterName": "Atomic Structure",
-      "totalCount": 67,
-      "neetCount": 60,
+      "totalCount": 62,
+      "neetCount": 55,
       "jmCount": 5,
       "jaCount": 2,
       "years": [
@@ -54,7 +53,6 @@
         1990,
         1991,
         1992,
-        1993,
         1994,
         1995,
         1996,
@@ -65,11 +63,9 @@
         2001,
         2003,
         2004,
-        2005,
         2006,
         2008,
         2009,
-        2011,
         2012,
         2013,
         2015,
@@ -84,8 +80,10 @@
         2024
       ],
       "missingYears": [
+        2005,
         2007,
         2010,
+        2011,
         2014
       ]
     },
@@ -138,8 +136,8 @@
     },
     {
       "chapterName": "States of Matter",
-      "totalCount": 38,
-      "neetCount": 38,
+      "totalCount": 30,
+      "neetCount": 30,
       "jmCount": 0,
       "jaCount": 0,
       "years": [
@@ -162,8 +160,7 @@
         2016,
         2018,
         2019,
-        2020,
-        2021
+        2020
       ],
       "missingYears": [
         2005,
@@ -173,6 +170,7 @@
         2010,
         2012,
         2017,
+        2021,
         2022,
         2023,
         2024
@@ -180,15 +178,14 @@
     },
     {
       "chapterName": "Thermodynamics",
-      "totalCount": 56,
-      "neetCount": 44,
+      "totalCount": 47,
+      "neetCount": 35,
       "jmCount": 10,
       "jaCount": 2,
       "years": [
         1990,
         1991,
         1994,
-        1995,
         1996,
         1998,
         1999,
@@ -201,12 +198,10 @@
         2006,
         2007,
         2008,
-        2011,
         2012,
         2013,
         2014,
         2015,
-        2016,
         2017,
         2018,
         2019,
@@ -218,17 +213,18 @@
       ],
       "missingYears": [
         2009,
-        2010
+        2010,
+        2011,
+        2016
       ]
     },
     {
       "chapterName": "Equilibrium",
-      "totalCount": 79,
-      "neetCount": 70,
+      "totalCount": 63,
+      "neetCount": 54,
       "jmCount": 8,
       "jaCount": 1,
       "years": [
-        1988,
         1989,
         1991,
         1992,
@@ -242,7 +238,6 @@
         2001,
         2002,
         2003,
-        2004,
         2005,
         2006,
         2007,
@@ -250,7 +245,6 @@
         2009,
         2010,
         2011,
-        2012,
         2013,
         2014,
         2015,
@@ -264,7 +258,9 @@
         2023,
         2024
       ],
-      "missingYears": []
+      "missingYears": [
+        2012
+      ]
     },
     {
       "chapterName": "Redox Reactions",
@@ -300,12 +296,11 @@
     },
     {
       "chapterName": "Electrochemistry",
-      "totalCount": 42,
-      "neetCount": 39,
+      "totalCount": 41,
+      "neetCount": 38,
       "jmCount": 2,
       "jaCount": 1,
       "years": [
-        1995,
         1996,
         1997,
         1998,
@@ -340,8 +335,8 @@
     },
     {
       "chapterName": "Chemical Kinetics",
-      "totalCount": 41,
-      "neetCount": 37,
+      "totalCount": 38,
+      "neetCount": 34,
       "jmCount": 3,
       "jaCount": 1,
       "years": [
@@ -357,9 +352,7 @@
         2007,
         2008,
         2009,
-        2010,
         2012,
-        2013,
         2015,
         2016,
         2017,
@@ -373,14 +366,16 @@
       ],
       "missingYears": [
         2006,
+        2010,
         2011,
+        2013,
         2014
       ]
     },
     {
       "chapterName": "Surface Chemistry",
-      "totalCount": 26,
-      "neetCount": 26,
+      "totalCount": 25,
+      "neetCount": 25,
       "jmCount": 0,
       "jaCount": 0,
       "years": [
@@ -419,8 +414,8 @@
     },
     {
       "chapterName": "Solutions",
-      "totalCount": 50,
-      "neetCount": 47,
+      "totalCount": 44,
+      "neetCount": 41,
       "jmCount": 2,
       "jaCount": 1,
       "years": [
@@ -445,7 +440,6 @@
         2017,
         2019,
         2020,
-        2021,
         2022,
         2023
       ],
@@ -455,6 +449,7 @@
         2012,
         2013,
         2018,
+        2021,
         2024
       ]
     },
@@ -533,8 +528,8 @@
   "inorganic": [
     {
       "chapterName": "Periodic Table",
-      "totalCount": 34,
-      "neetCount": 32,
+      "totalCount": 33,
+      "neetCount": 31,
       "jmCount": 2,
       "jaCount": 0,
       "years": [
@@ -611,8 +606,8 @@
     },
     {
       "chapterName": "p-Block Elements",
-      "totalCount": 75,
-      "neetCount": 72,
+      "totalCount": 74,
+      "neetCount": 71,
       "jmCount": 2,
       "jaCount": 1,
       "years": [
@@ -843,8 +838,8 @@
   "organic": [
     {
       "chapterName": "General Organic Chemistry",
-      "totalCount": 53,
-      "neetCount": 51,
+      "totalCount": 51,
+      "neetCount": 49,
       "jmCount": 2,
       "jaCount": 0,
       "years": [
@@ -884,8 +879,8 @@
     },
     {
       "chapterName": "Hydrocarbons",
-      "totalCount": 49,
-      "neetCount": 44,
+      "totalCount": 48,
+      "neetCount": 43,
       "jmCount": 2,
       "jaCount": 3,
       "years": [
@@ -1031,8 +1026,8 @@
     },
     {
       "chapterName": "Carboxylic Acids",
-      "totalCount": 11,
-      "neetCount": 10,
+      "totalCount": 10,
+      "neetCount": 9,
       "jmCount": 1,
       "jaCount": 0,
       "years": [
@@ -1066,8 +1061,8 @@
     },
     {
       "chapterName": "Amines",
-      "totalCount": 27,
-      "neetCount": 18,
+      "totalCount": 26,
+      "neetCount": 17,
       "jmCount": 9,
       "jaCount": 0,
       "years": [
@@ -1102,8 +1097,8 @@
     },
     {
       "chapterName": "Biomolecules",
-      "totalCount": 55,
-      "neetCount": 52,
+      "totalCount": 53,
+      "neetCount": 50,
       "jmCount": 2,
       "jaCount": 1,
       "years": [

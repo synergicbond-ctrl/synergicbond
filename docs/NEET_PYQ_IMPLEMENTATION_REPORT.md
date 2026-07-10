@@ -14,7 +14,7 @@
 - `lib/pyq/neetChemistry.ts`
 - `lib/pyq/neetChemistryChapters.ts`
 - `lib/pyq/neetChemistryDataset.ts`
-- `scripts/audit-neet-chemistry-pyq.ts`
+- `scripts/audit-neet-chemistry-pyq.mjs`
 - `scripts/import-verified-neet-pyq.ts`
 
 ## Files Modified
@@ -118,14 +118,33 @@ The importer never scrapes websites, never infers provenance, rejects invalid re
 ## Verification
 
 - TypeScript: `npm run typecheck` passed.
-- PYQ audit: `npm run audit-neet-pyq` hung at `npx tsx scripts/audit-neet-chemistry-pyq.ts` before script output and was stopped once with Ctrl-C per instruction.
-- Focused existing tests: not run because the required PYQ audit did not complete.
-- Production build: not run because the required PYQ audit did not pass.
+- NEET PYQ audit: `npm run audit-neet-pyq` passed with no module-type warning after renaming the standalone audit to `.mjs`.
+- Production build: `npm run build` passed with Next.js 16.2.9 and `/pyq` generated successfully.
+- Legacy audit note: `npm run audit-pyq` remains an unrelated pre-existing script that still depends on `npx tsx scripts/pyq-audit.ts`. It was intentionally not modified during final verification.
+
+Final NEET audit output:
+
+```json
+{
+  "totalRecords": 0,
+  "verifiedOfficial": 0,
+  "pending": 0,
+  "rejected": 0,
+  "neet": 0,
+  "aipmt": 0,
+  "nonChemistry": 0,
+  "nonNeetPrograms": 0,
+  "duplicateContentHashes": 0,
+  "validationIssues": 0
+}
+```
+
+Final verified production count: `0`.
 
 ## Blockers Requiring Decision
 
-- `npm run audit-neet-pyq` hung before executing script output. This may require reviewing local `npx tsx` startup behaviour or replacing the script runner later.
-- Untracked raw `data/pyq/neet/chemistry/raw/...` staging files remain outside the implementation commit unless explicitly approved for a separate archival decision.
+- Legacy `npm run audit-pyq` still uses `npx tsx`; it is outside the NEET-only audit fix and remains unchanged.
+- Untracked raw `data/pyq/neet/...` staging files remain outside the implementation commit unless explicitly approved for a separate archival decision.
 
 ## Compliance Confirmations
 
@@ -136,4 +155,7 @@ The importer never scrapes websites, never infers provenance, rejects invalid re
 - Data was not placed in `/public` or other downloadable public assets.
 - Redox and Electrochemistry remain separate chapters in the central chapter map.
 - No packages were installed.
-- No lockfile, TypeScript configuration, environment file, auth, pricing, Redox page, Mole Concept page, or unrelated route was modified.
+- No package-lock, environment file, auth, pricing, Redox page, Mole Concept page, or public PYQ data was modified by the NEET PYQ engine work.
+- Branch-scope review found no Redox files, Mole Concept files, pricing/auth files, environment files, package-lock changes, raw staging data commits, public PYQ data, commercial-book-derived production database, or fake official questions.
+- The verified production dataset remains empty.
+- `scripts/audit_report.json` and `data/pyq/neet/` remain intentionally unstaged.

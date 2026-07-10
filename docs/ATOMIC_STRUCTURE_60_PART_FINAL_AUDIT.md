@@ -134,3 +134,18 @@ Pages rendered at 200 DPI to `/private/tmp/atomic-structure-batch-A` (outside th
 | 18 | 55–57 | Ritz Principle, Reduced Mass and Spectrum | Transcribed, routed |
 
 Checks: `npm run typecheck` PASS · placeholder/watermark scan PASS (0 markers, 0 `[UNCLEAR]`) · 18 files / 18 routes registered.
+
+## Batch B update (parts 19–24) — 2026-07-11
+
+Pages 58–76 rendered at 200 DPI to `/private/tmp/atomic-structure-batch-B` (outside the repository), deleted after transcription.
+
+| Part | Source pages | Title | Status |
+| --- | --- | --- | --- |
+| 19 | 58–60 | Hydrogen Spectrum and Spectral Series | Transcribed, routed |
+| 20 | 61–64 | Visible Lines, Line Counting and Bohr Model Limits | Transcribed, routed (1 `[UNCLEAR]`: empty highlight band, p61) |
+| 21 | 65–67 | Bohr Magneton and Photon Flux Problems | Transcribed, routed |
+| 22 | 68–70 | Wave Packet Energy and Uncertainty Problems | Transcribed, routed |
+| 23 | 71–73 | Uncertainty Principle Worked Problems | Transcribed, routed |
+| 24 | 74–76 | Sommerfeld Extension and Spin Doublets | Transcribed, routed |
+
+Checks: `npm run typecheck` PASS · `npm run build` PASS (compiled successfully) · placeholder/watermark scan PASS · 24 files / 24 routes registered.

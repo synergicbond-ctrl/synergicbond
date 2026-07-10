@@ -30,6 +30,12 @@ export const atomicPartMeta: AtomicPartMeta[] = [
   { part: 16, title: "Energy of the Electron and Level Differences", pages: "49-51", href: "/learn/atomic-structure/part16" },
   { part: 17, title: "Ionisation Energy, Binding Energy and Rydberg's Equation", pages: "52-54", href: "/learn/atomic-structure/part17" },
   { part: 18, title: "Ritz Principle, Reduced Mass and Spectrum", pages: "55-57", href: "/learn/atomic-structure/part18" },
+  { part: 19, title: "Hydrogen Spectrum and Spectral Series", pages: "58-60", href: "/learn/atomic-structure/part19" },
+  { part: 20, title: "Visible Lines, Line Counting and Bohr Model Limits", pages: "61-64", href: "/learn/atomic-structure/part20" },
+  { part: 21, title: "Bohr Magneton and Photon Flux Problems", pages: "65-67", href: "/learn/atomic-structure/part21" },
+  { part: 22, title: "Wave Packet Energy and Uncertainty Problems", pages: "68-70", href: "/learn/atomic-structure/part22" },
+  { part: 23, title: "Uncertainty Principle Worked Problems", pages: "71-73", href: "/learn/atomic-structure/part23" },
+  { part: 24, title: "Sommerfeld Extension and Spin Doublets", pages: "74-76", href: "/learn/atomic-structure/part24" },
 ];
 
 export function AtomicPartShell({

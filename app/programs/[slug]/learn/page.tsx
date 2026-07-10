@@ -102,7 +102,9 @@ export default async function ProgramLearnPage({ params }: { params: Promise<{ s
                     key={chapter.id}
                     // Engine programs open the full 11-section Chapter Engine;
                     // others keep the classic chapter workspace.
-                    href={isEngineSlug(slug) ? `/programs/${slug}/chapter/${chapter.id}` : `/chapter/${chapter.id}`}
+                    href={slug === "jee-advanced" && chapter.id === "atomic-structure"
+                      ? "/learn/atomic-structure"
+                      : isEngineSlug(slug) ? `/programs/${slug}/chapter/${chapter.id}` : `/chapter/${chapter.id}`}
                     className={`group rounded-xl border bg-white/[0.02] p-4 transition hover:bg-white/[0.04] ${accent.card}`}
                   >
                     <div className="flex items-start justify-between gap-2">

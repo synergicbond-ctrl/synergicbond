@@ -23,6 +23,7 @@ export const atomicPartMeta: AtomicPartMeta[] = [
   { part: 9, title: "Radiation Laws and Planck Formula", pages: "26-28", href: "/learn/atomic-structure/part09" },
   { part: 10, title: "Rayleigh-Jeans and Planck Quantum Theory", pages: "29-32", href: "/learn/atomic-structure/part10" },
   { part: 11, title: "Photoelectric Effect and Einstein Equation", pages: "33-35", href: "/learn/atomic-structure/part11" },
+  { part: 12, title: "Photoelectric Current and Stopping Potential", pages: "36-38", href: "/learn/atomic-structure/part12" },
 ];
 
 export function AtomicPartShell({

@@ -44,3 +44,7 @@ backups/
 
 # Local preview/launch config
 .claude/
+
+# never commit source scans or temp renders
+private/
+tmp/

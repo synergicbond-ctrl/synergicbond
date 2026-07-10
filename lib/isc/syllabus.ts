@@ -22,6 +22,8 @@ export interface IscUnit {
   category: "physical" | "inorganic" | "organic";
   /** Shared chemistry-content chapter (dir masterSyllabus id) for deep study. */
   masterId?: string;
+  /** Authored notes route, when the shared chapter has a board-safe notes page. */
+  learnHref?: string;
   /** No verified ISC PYQ bank yet — always empty, honestly. */
   pyqChapters: [];
   /** Key topics transcribed from the official 2026 document. */
@@ -50,6 +52,7 @@ export const ISC_CLASS_11_UNITS: IscUnit[] = [
     class: 11,
     category: "physical",
     masterId: "mole-concept",
+    learnHref: "/notes/some-basic-concepts-of-chemistry",
     pyqChapters: [],
     topics: [
       "Precision, accuracy, significant figures, SI units, dimensional analysis",

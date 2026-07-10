@@ -36,6 +36,12 @@ export const atomicPartMeta: AtomicPartMeta[] = [
   { part: 22, title: "Wave Packet Energy and Uncertainty Problems", pages: "68-70", href: "/learn/atomic-structure/part22" },
   { part: 23, title: "Uncertainty Principle Worked Problems", pages: "71-73", href: "/learn/atomic-structure/part23" },
   { part: 24, title: "Sommerfeld Extension and Spin Doublets", pages: "74-76", href: "/learn/atomic-structure/part24" },
+  { part: 25, title: "Dual Nature and de Broglie Equation", pages: "77-80", href: "/learn/atomic-structure/part25" },
+  { part: 26, title: "Standing Electron Waves and Uncertainty Principle", pages: "81-83", href: "/learn/atomic-structure/part26" },
+  { part: 27, title: "Uncertainty Variants and Quantum Numbers", pages: "84-86", href: "/learn/atomic-structure/part27" },
+  { part: 28, title: "Azimuthal Quantum Number, Orbitals and Shapes", pages: "87-89", href: "/learn/atomic-structure/part28" },
+  { part: 29, title: "Magnetic and Spin Quantum Numbers, (n+l) Rule", pages: "90-92", href: "/learn/atomic-structure/part29" },
+  { part: 30, title: "Aufbau Principle and Electronic Configuration", pages: "93-96", href: "/learn/atomic-structure/part30" },
 ];
 
 export function AtomicPartShell({

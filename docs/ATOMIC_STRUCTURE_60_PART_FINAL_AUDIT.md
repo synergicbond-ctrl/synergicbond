@@ -149,3 +149,18 @@ Pages 58–76 rendered at 200 DPI to `/private/tmp/atomic-structure-batch-B` (ou
 | 24 | 74–76 | Sommerfeld Extension and Spin Doublets | Transcribed, routed |
 
 Checks: `npm run typecheck` PASS · `npm run build` PASS (compiled successfully) · placeholder/watermark scan PASS · 24 files / 24 routes registered.
+
+## Batch C update (parts 25–30) — 2026-07-11
+
+Pages 77–96 rendered at 200 DPI to `/private/tmp/atomic-structure-batch-C` (outside the repository), deleted after transcription.
+
+| Part | Source pages | Title | Status |
+| --- | --- | --- | --- |
+| 25 | 77–80 | Dual Nature and de Broglie Equation | Transcribed, routed (p77 mostly blank in source — noted) |
+| 26 | 81–83 | Standing Electron Waves and Uncertainty Principle | Transcribed, routed |
+| 27 | 84–86 | Uncertainty Variants and Quantum Numbers | Transcribed, routed |
+| 28 | 87–89 | Azimuthal Quantum Number, Orbitals and Shapes | Transcribed, routed |
+| 29 | 90–92 | Magnetic and Spin Quantum Numbers, (n+l) Rule | Transcribed, routed (p92 single item — noted) |
+| 30 | 93–96 | Aufbau Principle and Electronic Configuration | Transcribed, routed |
+
+Checks: `npm run typecheck` PASS · placeholder/watermark scan PASS · 30 files / 30 routes registered.

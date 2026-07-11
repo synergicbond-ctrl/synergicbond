@@ -80,6 +80,10 @@ export function AtomicPartShell({
   pages: string;
   children: ReactNode;
 }) {
+  const currentIndex = atomicPartMeta.findIndex((entry) => entry.part === part);
+  const previousPart = currentIndex > 0 ? atomicPartMeta[currentIndex - 1] : undefined;
+  const nextPart = currentIndex >= 0 ? atomicPartMeta[currentIndex + 1] : undefined;
+
   return (
     <article className="min-h-screen bg-[#0B1220] px-5 py-10 text-white sm:px-6">
       <div className="mx-auto max-w-5xl">
@@ -96,6 +100,24 @@ export function AtomicPartShell({
           <h1 className="mt-2 text-3xl font-black tracking-tight sm:text-5xl">{title}</h1>
         </header>
         <div className="mt-8 space-y-8">{children}</div>
+        <nav aria-label="Atomic Structure part navigation" className="mt-10 flex items-center justify-between gap-4 border-t border-white/[0.08] pt-6">
+          {previousPart ? (
+            <Link
+              href={previousPart.href}
+              className="rounded-lg border border-white/15 px-4 py-2 text-sm font-semibold text-white/80 transition hover:border-cyan-300/50 hover:text-cyan-100"
+            >
+              ← Part {String(previousPart.part).padStart(2, "0")}
+            </Link>
+          ) : <span />}
+          {nextPart ? (
+            <Link
+              href={nextPart.href}
+              className="rounded-lg border border-cyan-400/30 bg-cyan-400/10 px-4 py-2 text-sm font-semibold text-cyan-100 transition hover:bg-cyan-400/20"
+            >
+              Part {String(nextPart.part).padStart(2, "0")} →
+            </Link>
+          ) : <span className="text-sm font-semibold text-cyan-200">Final part</span>}
+        </nav>
       </div>
     </article>
   );

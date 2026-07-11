@@ -18,12 +18,13 @@ export default function Part34() {
           <FormulaLine math="\text{or}\quad\boxed{\sqrt{\nu}=a(Z-b)}" />
           <p>where a and b are constants depending upon the particular spectral line.</p>
           <DiagramBox title="X-ray series diagram">
+            <MoseleySeriesVisual />
+            <p>The Kα arrow is the <MathText math="n=2\to1" /> transition used in the frequency derivation below.</p>
             <p>
               Levels n = 1 to 4 with downward arrows: to n = 1 the lines <MathText math="K_\gamma,\ K_\beta,\ K_\alpha" />; to
               n = 2 the lines <MathText math="L_\beta,\ L_\alpha" />; to n = 3 the line <MathText math="M_\alpha" />.
             </p>
           </DiagramBox>
-          <figure className="rounded-2xl border border-cyan-400/20 bg-cyan-400/[0.04] p-4"><MoseleySeriesVisual /><figcaption className="mt-3 text-sm text-slate-300">The Kα arrow is the <MathText math="n=2\to1" /> transition used in the frequency derivation below.</figcaption></figure>
           <p><MathText math="K_\alpha" />:</p>
           <FormulaLine math="E=h\nu=E_i-E_f=\frac{me^{4}(Z-1)^{2}}{8h^{2}\varepsilon_0^{2}}\left(\frac{1}{1^{2}}-\frac{1}{2^{2}}\right)" />
           <FormulaLine math="\nu=\frac{me^{4}}{8h^{3}\varepsilon_0^{2}}\left(\frac{3}{4}\right)(Z-1)^{2}" />
@@ -71,9 +72,10 @@ export default function Part34() {
           <FormulaLine math="v_g=\frac{p}{m}" />
           <FormulaLine math="\boxed{v_g=v}" />
           <DiagramBox title="Wave packet">
+            <WavePacketVisual />
+            <p>A localised packet makes the group-velocity treatment meaningful.</p>
             <p>A Gaussian wave packet showing real and imaginary oscillations under an absolute-value envelope.</p>
           </DiagramBox>
-          <figure className="rounded-2xl border border-cyan-400/20 bg-cyan-400/[0.04] p-4"><WavePacketVisual /><figcaption className="mt-3 text-sm text-slate-300">A localised packet makes the group-velocity treatment meaningful.</figcaption></figure>
           <p>hence, matter wave is wave packet not single wave.</p>
         </DerivationPanel>
       </SourcePage>

@@ -2,7 +2,7 @@
 
 import { AtomicPartShell, AuditComment, DataTable, DiagramBox, FormulaLine, MathText, NoteBlock, SourcePage } from "./_shared";
 import { LearningObjectives, ImportantNote, PracticeQuestion, SummaryStrip } from "../_components/AtomicLearning";
-import { ClosestApproachVisual } from "../_components/AtomicVisuals";
+import { AtomRegionsVisual, ClosestApproachVisual, ImpactParameterVisual, ScatteringCrossSectionVisual } from "../_components/AtomicVisuals";
 
 export default function Part05() {
   return (
@@ -56,6 +56,7 @@ export default function Part05() {
             In Rutherford&apos;s classical orbit picture, the Coulomb attraction supplies the required centripetal force. In a co-moving rotating frame, this may be described using an outward centrifugal pseudo-force; it is not an additional real force in an inertial frame.
           </p>
           <DiagramBox title="Atom labels">
+            <AtomRegionsVisual />
             <p>atom → Nucleus</p>
             <p>atom → extra nuclear part.</p>
           </DiagramBox>
@@ -85,6 +86,7 @@ export default function Part05() {
         <NoteBlock title="Alpha scattering geometry">
           <p>p = momentum of projectile.</p>
           <DiagramBox title="Impact parameter and geometry labels">
+            <ImpactParameterVisual />
             <p>Labels: α scattering geometry, symmetry plane, Δp, θ, φ, b impact parameter, path of projectile, target nucleus.</p>
             <p>After Beiser figure: closest approach, r min, impact parameter b.</p>
           </DiagramBox>
@@ -114,6 +116,7 @@ export default function Part05() {
           <FormulaLine math="\sigma=\pi r^2" />
           <FormulaLine math="\sigma=\pi Z^2\left(\frac{Ke^2}{KE}\right)^2\frac{1+\cos\theta}{1-\cos\theta}" />
           <DiagramBox title="Scattering cross-section figure">
+            <ScatteringCrossSectionVisual />
             <p>Visible labels: db, b, dθ, θ, r, rdθ, r sinθ, after Thornton & Rex.</p>
           </DiagramBox>
         </NoteBlock>

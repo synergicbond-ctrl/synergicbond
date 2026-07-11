@@ -1,7 +1,7 @@
 "use client";
 
 import { AtomicPartShell, AuditComment, DataTable, DiagramBox, FormulaLine, MathText, NoteBlock, SourcePage } from "./_shared";
-import { HydrogenLevelGapsVisual } from "../_components/AtomicVisuals";
+import { CircularOrbitVisual, HydrogenLevelGapsVisual } from "../_components/AtomicVisuals";
 import { DefinitionCard, DerivationPanel, FigureCaption, LearningObjectives, PracticeQuestion, SummaryStrip } from "../_components/AtomicLearning";
 
 export default function Part16() {
@@ -28,6 +28,7 @@ export default function Part16() {
         </NoteBlock>
         <NoteBlock title="Calculation of energy of e⁻">
           <DiagramBox title="Orbit for the energy calculation">
+            <CircularOrbitVisual />
             <p>
               Circular orbit around the nucleus <MathText math="\oplus" /> with radius <MathText math="r" /> to the electron.
             </p>

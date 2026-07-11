@@ -1,7 +1,7 @@
 "use client";
 
 import { AtomicPartShell, AuditComment, DiagramBox, FormulaLine, MathText, NoteBlock, SourcePage } from "./_shared";
-import { ElectromagneticSpectrumVisual } from "../_components/AtomicVisuals";
+import { EMWaveVisual, ElectromagneticSpectrumVisual, VisibleSpectrumStripVisual } from "../_components/AtomicVisuals";
 import { LearningObjectives, ImportantNote, PracticeQuestion, SummaryStrip } from "../_components/AtomicLearning";
 
 export default function Part07() {
@@ -52,6 +52,7 @@ export default function Part07() {
             <li>They consist of EF and MF oscillating ⟂ to each other as well as direction of propagation.</li>
           </ol>
           <DiagramBox title="Electromagnetic wave labels">
+            <EMWaveVisual />
             <p>Electric Field, Magnetic Field, Wavelength λ, Electromagnetic Waves, Direction, x, y, z.</p>
           </DiagramBox>
         </NoteBlock>
@@ -76,6 +77,7 @@ export default function Part07() {
           </DiagramBox>
           <p>[UNCLEAR] The original note contains an unverified statement about x-ray guns; no scientific inference is made from it.</p>
           <DiagramBox title="Visible Range">
+            <VisibleSpectrumStripVisual />
             <p>Visible Range → V I B G Y O R</p>
           </DiagramBox>
         </NoteBlock>

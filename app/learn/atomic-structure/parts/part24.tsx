@@ -2,7 +2,7 @@
 
 import { AtomicPartShell, AuditComment, DiagramBox, FormulaLine, MathText, NoteBlock, SourcePage } from "./_shared";
 import { ComparisonTable, ImportantNote, LearningObjectives, SummaryStrip } from "../_components/AtomicLearning";
-import { SommerfeldOrbitsVisual } from "../_components/AtomicVisuals";
+import { EllipseAxesVisual, FineStructureLevelsVisual, SommerfeldOrbitsVisual } from "../_components/AtomicVisuals";
 
 export default function Part24() {
   return (
@@ -15,6 +15,7 @@ export default function Part24() {
             the major axis and minor axis become equal.
           </p>
           <DiagramBox title="Ellipse with axes">
+            <EllipseAxesVisual />
             <p>An ellipse with its minor axis (vertical) and major axis (horizontal) labelled.</p>
           </DiagramBox>
           <p>Sommerfeld explained splitting of sharp spectral lines by assuming some orbits elliptical.</p>
@@ -63,6 +64,7 @@ export default function Part24() {
             <MathText math="\to\ \theta" /> is different (splitting of lines)
           </p>
           <DiagramBox title="Split levels">
+            <FineStructureLevelsVisual />
             <p>
               Levels 1, 2 and 3 drawn as horizontal bands: level 1 a single line; levels 2 and 3 shown as closely spaced
               sub-levels (shaded bands between split lines), level 3 with a slanting sub-level inside.

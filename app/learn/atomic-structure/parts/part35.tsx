@@ -2,7 +2,7 @@
 
 import { AtomicPartShell, AuditComment, DiagramBox, FormulaLine, MathText, NoteBlock, SourcePage } from "./_shared";
 import { ConceptCard, DerivationPanel, ImportantNote, LearningObjectives, SummaryStrip } from "../_components/AtomicLearning";
-import { WavePacketVisual } from "../_components/AtomicVisuals";
+import { CandidateFunctionsVisual, MonochromaticWaveVisual, SineWaveVisual, WavePacketVisual } from "../_components/AtomicVisuals";
 
 export default function Part35() {
   return (
@@ -15,6 +15,7 @@ export default function Part35() {
             significance.
           </p>
           <DiagramBox title="Candidate wave-function graphs">
+            <CandidateFunctionsVisual />
             <p>
               Six sketched graphs of candidate functions against position, each with dotted vertical reference lines: a
               rising asymptotic curve, a bell-shaped curve, an S-shaped loop, a V-shaped cusp, a sigmoid curve, and an
@@ -31,6 +32,7 @@ export default function Part35() {
         </ConceptCard>
         <NoteBlock title="Schrödinger Wave Equation (boxed heading)">
           <DiagramBox title="Sine wave sketch">
+            <SineWaveVisual />
             <p>A sine wave preceding the boxed heading.</p>
           </DiagramBox>
           <p>
@@ -65,6 +67,7 @@ export default function Part35() {
           </p>
           <FormulaLine math="\nu=\frac{\omega}{2\pi},\qquad \omega=2\pi\nu" />
           <DiagramBox title="Monochromatic wave graphs">
+            <MonochromaticWaveVisual />
             <p>
               Left: a red sinusoidal E-vs-time trace extending from −∞ to +∞ with period brackets marked along the time
               axis. Right: a blue sine curve labelled Wavelength (between crests), Amplitude (from axis to crest),
@@ -73,6 +76,7 @@ export default function Part35() {
           </DiagramBox>
           <p>The above graph is only for monochromatic wave or sinusoidal wavelength. For all waves</p>
           <DiagramBox title="Wave packet">
+            <WavePacketVisual />
             <p>
               A pink wave packet along x labelled &quot;Oscillation of the electromagnetic field&quot; with a green arrow
               v = c and the wavelength λ marked between adjacent oscillations.

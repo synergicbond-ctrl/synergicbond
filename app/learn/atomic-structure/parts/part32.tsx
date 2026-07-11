@@ -1,6 +1,7 @@
 "use client";
 
 import { AtomicPartShell, AuditComment, DataTable, DiagramBox, FormulaLine, MathText, NoteBlock, SourcePage } from "./_shared";
+import { OrbitalFillRowsVisual, SpinOrbitalMomentVisual } from "../_components/AtomicVisuals";
 import { ComparisonTable, DefinitionCard, FormulaCard, ImportantNote, LearningObjectives, SummaryStrip, WorkedExample } from "../_components/AtomicLearning";
 
 export default function Part32() {
@@ -55,10 +56,20 @@ export default function Part32() {
           <FormulaLine math="n=4:\ 32e^{-}\qquad 4s+4p+4d+4f=2+6+10+14=32" />
           <FormulaLine math="n=4,\ l=2:\ 10e^{-}\ (4d)" />
           <DiagramBox title="4d boxes">
+            <OrbitalFillRowsVisual
+              title="Fully paired 4d subshell"
+              description="Five 4d orbital boxes, each holding an up-and-down electron pair."
+              rows={[{ label: "4d¹⁰", boxes: ["pair", "pair", "pair", "pair", "pair"] }]}
+            />
             <p>Five boxes each holding ↑↓.</p>
           </DiagramBox>
           <FormulaLine math="n=4,\ l=2,\ m=-2\ \to\ \text{two }e^{-}" />
           <DiagramBox title="m labels">
+            <OrbitalFillRowsVisual
+              title="Magnetic quantum number labels on the 4d boxes"
+              description="The five 4d boxes labelled with m values minus two, minus one, zero, plus one and plus two. The highlighted m equals minus two box holds the electron pair under discussion."
+              rows={[{ label: "4d", boxes: ["pair", "pair", "pair", "pair", "pair"], boxLabels: ["−2", "−1", "0", "+1", "+2"], highlight: 0 }]}
+            />
             <p>Boxes labelled −2, −1, 0, +1, +2; the −2 box holds the highlighted pair.</p>
           </DiagramBox>
           <FormulaLine math="n=4,\ l=2,\ m=-2,\ s=-\tfrac{1}{2}:\ \text{one }e^{-}" />
@@ -95,6 +106,7 @@ export default function Part32() {
             orientation of a magnet or other object that produces magnetic field.
           </p>
           <DiagramBox title="Spin and orbital moments">
+            <SpinOrbitalMomentVisual />
             <p>
               A sphere with arrows labelled <MathText math="\mu_{spin}" /> and <MathText math="\mu\text{-orbital}" />.
             </p>

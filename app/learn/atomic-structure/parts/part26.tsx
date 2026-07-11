@@ -2,7 +2,7 @@
 
 import { AtomicPartShell, AuditComment, DiagramBox, FormulaLine, MathText, NoteBlock, SourcePage } from "./_shared";
 import { DerivationPanel, ImportantNote, LearningObjectives, SummaryStrip, WorkedExample } from "../_components/AtomicLearning";
-import { StandingWaveOrbitVisual, StringStandingWaveVisual } from "../_components/AtomicVisuals";
+import { MeasurementDisturbanceVisual, StandingWaveOrbitVisual, StringStandingWaveVisual } from "../_components/AtomicVisuals";
 
 export default function Part26() {
   return (
@@ -98,6 +98,7 @@ export default function Part26() {
             </p>
           </div>
           <DiagramBox title="Photon-electron measurement disturbance">
+            <MeasurementDisturbanceVisual />
             <p className="text-sm text-white/75">
               A long-wavelength (low-energy) light wave passes the electron with minimal disturbance but
               cannot locate it precisely (marked ✗). A high-energy γ-ray can locate the electron precisely

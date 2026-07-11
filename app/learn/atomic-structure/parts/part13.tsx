@@ -1,7 +1,7 @@
 "use client";
 
 import { AtomicPartShell, AuditComment, DiagramBox, FormulaLine, MathText, NoteBlock, SourcePage } from "./_shared";
-import { PhotocurrentPotentialGraph, StoppingPotentialFrequencyGraph } from "../_components/AtomicVisuals";
+import { PhotocurrentPotentialGraph, PhotocurrentSingleCurveGraph, SaturationCurrentIntensityGraph, StoppingPotentialFrequencyGraph, V0FrequencyGraph, V0InverseLambdaGraph } from "../_components/AtomicVisuals";
 import { DefinitionCard, FigureCaption, ImportantNote, LearningObjectives, PracticeQuestion, SummaryStrip } from "../_components/AtomicLearning";
 
 export default function Part13() {
@@ -21,12 +21,14 @@ export default function Part13() {
             (<MathText math="V_0" />).
           </p>
           <DiagramBox title="Saturated current v/s intensity">
+            <SaturationCurrentIntensityGraph />
             <FigureCaption>
               Axes: saturation current (vertical) against intensity of incident light (horizontal). The saturation current
               grows as a straight line from the origin — it is directly proportional to intensity.
             </FigureCaption>
           </DiagramBox>
           <DiagramBox title="V_max v/s V">
+            <PhotocurrentSingleCurveGraph />
             <FigureCaption>
               Axes: <MathText math="V_{max}" /> against <MathText math="V" />. The curve rises steeply from the point{" "}
               <MathText math="V_0" /> on the potential axis and flattens.
@@ -37,6 +39,7 @@ export default function Part13() {
             </p>
           </DiagramBox>
           <DiagramBox title="Stopping potential v/s frequency">
+            <V0FrequencyGraph />
             <p>
               Axes: stopping potential <MathText math="V_0" /> (vertical) against frequency <MathText math="\nu" />{" "}
               (horizontal). A straight line crosses the frequency axis at the threshold frequency{" "}
@@ -85,6 +88,7 @@ export default function Part13() {
           <FormulaLine math="eV_0=\frac{hc}{\lambda}-\phi" />
           <FormulaLine math="V_0=\frac{hc}{e}\cdot\frac{1}{\lambda}-\frac{\phi}{e}" />
           <DiagramBox title="V0 versus 1/lambda">
+            <V0InverseLambdaGraph />
             <p>
               Axes: <MathText math="V_0" /> against <MathText math="\tfrac{1}{\lambda}" />. Three parallel straight lines
               labelled K, Na and Li cut the <MathText math="\tfrac{1}{\lambda}" /> axis in that order; dotted extrapolations

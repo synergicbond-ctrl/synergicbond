@@ -2,7 +2,7 @@
 
 import { AtomicPartShell, AuditComment, DiagramBox, FormulaLine, MathText, NoteBlock, SourcePage } from "./_shared";
 import { LearningObjectives, PracticeQuestion, SummaryStrip } from "../_components/AtomicLearning";
-import { PlanckComparisonVisual } from "../_components/AtomicVisuals";
+import { PlanckComparisonVisual, RadiationComparisonPanelsVisual } from "../_components/AtomicVisuals";
 
 export default function Part10() {
   return (
@@ -30,6 +30,7 @@ export default function Part10() {
             </p>
           </DiagramBox>
           <DiagramBox title="Comparison graphs">
+            <RadiationComparisonPanelsVisual />
             <p>Left graph: 3000 K, 4000 K, 5000 K, 6000 K; ultraviolet, visible light, infrared; wavelength (angstroms).</p>
             <p>Right graph: T = 5800 K; Rayleigh-Jeans, Planck, Wien; ν [THz].</p>
           </DiagramBox>

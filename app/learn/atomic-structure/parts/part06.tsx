@@ -1,6 +1,7 @@
 "use client";
 
 import { AtomicPartShell, AuditComment, DiagramBox, FormulaLine, MathText, NoteBlock, SourcePage } from "./_shared";
+import { AlphaNucleusChargesVisual, FoilSlabVisual } from "../_components/AtomicVisuals";
 import { LearningObjectives, PracticeQuestion, SummaryStrip } from "../_components/AtomicLearning";
 
 export default function Part06() {
@@ -10,6 +11,7 @@ export default function Part06() {
       <SourcePage page={17}>
         <NoteBlock title="Gold foil target and scattered fraction">
           <DiagramBox title="Gold foil slab">
+            <FoilSlabVisual />
             <p>Gold foil drawn as a rectangular slab.</p>
             <p>Surface Area = A, thickness = t</p>
           </DiagramBox>
@@ -61,6 +63,7 @@ export default function Part06() {
             When α-particle of K.E. 5.4 MeV is projected towards Mg nucleus, calculate the distance of closest approach.
           </p>
           <DiagramBox title="Mg nucleus and alpha particle">
+            <AlphaNucleusChargesVisual />
             <p>Mg nucleus is shown with 12p and 12n.</p>
             <p>α = He<sup>2+</sup>, q<sub>1</sub> = 2e, q<sub>2</sub> = 12e.</p>
           </DiagramBox>

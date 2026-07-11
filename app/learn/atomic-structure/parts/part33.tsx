@@ -1,6 +1,7 @@
 "use client";
 
 import { AtomicPartShell, AuditComment, DiagramBox, FormulaLine, MathText, NoteBlock, SourcePage } from "./_shared";
+import { OrbitalFillRowsVisual } from "../_components/AtomicVisuals";
 import { DerivationPanel, ImportantNote, LearningObjectives, SummaryStrip, WorkedExample } from "../_components/AtomicLearning";
 
 export default function Part33() {
@@ -45,6 +46,11 @@ export default function Part33() {
           <FormulaLine math="\mu=g\sqrt{J(J+1)}" />
           <FormulaLine math="g=\frac{3}{2}+\frac{S(S+1)-L(L+1)}{2J(J+1)}" />
           <DiagramBox title="4f⁷ boxes">
+            <OrbitalFillRowsVisual
+              title="Half-filled 4f subshell"
+              description="Seven 4f orbital boxes, each holding a single up arrow: seven unpaired electrons."
+              rows={[{ label: "4f⁷", boxes: ["up", "up", "up", "up", "up", "up", "up"], note: "7 unpaired electrons" }]}
+            />
             <p>Seven boxes each holding one electron (1 1 1 1 1 1 1).</p>
           </DiagramBox>
           <FormulaLine math="L=\sum m_l=(-3)+(-2)+(-1)+0+1+2+3=0" />

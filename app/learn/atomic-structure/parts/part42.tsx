@@ -1,7 +1,7 @@
 "use client";
 
 import { AtomicPartShell, AuditComment, DiagramBox, FormulaLine, MathText, NoteBlock, SourcePage } from "./_shared";
-import { RadialDistributionVisual } from "../_components/AtomicVisuals";
+import { RadialDistributionVisual, RadialFunctionCurvesVisual } from "../_components/AtomicVisuals";
 import { DefinitionCard, FigureCaption, ImportantNote, LearningObjectives, SummaryStrip, WorkedExample } from "../_components/AtomicLearning";
 
 export default function Part42() {
@@ -15,6 +15,7 @@ export default function Part42() {
         </WorkedExample>
         <NoteBlock title="Radial Function Curve [R(r) vs r]">
           <DiagramBox title="R(r) vs r for nodeless orbitals (diagram)">
+            <RadialFunctionCurvesVisual nodes={0} />
             <p>
               For n − l − 1 = 0 (1s, 2p, 3d, 4f, 5g …): the 1s curve starts at K on the R(r) axis and decays
               monotonically to zero; the 2p, 3d, 4f … curves start at zero, rise to a single maximum, then decay — no
@@ -23,6 +24,7 @@ export default function Part42() {
           </DiagramBox>
           <FormulaLine math="R(r)=K\,e^{-\sigma/2}\,\sigma^{l}\quad\begin{cases}l=0\\l\neq0\end{cases}\qquad \sigma=\frac{2Z}{n a_0}\,r" />
           <DiagramBox title="R(r) vs r for one-node orbitals (diagram)">
+            <RadialFunctionCurvesVisual nodes={1} />
             <p>
               For n − l − 1 = 1 (2s, 3p, 4d, 5f …): the 2s curve starts at aK, falls, crosses zero (the radial node,
               circled) and goes negative; the 3p, 4d, 5f … curves start at zero, rise, then cross the axis once — one

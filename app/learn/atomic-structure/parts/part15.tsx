@@ -1,6 +1,7 @@
 "use client";
 
 import { AtomicPartShell, AuditComment, DataTable, DiagramBox, FormulaLine, MathText, NoteBlock, SourcePage } from "./_shared";
+import { CircularOrbitVisual } from "../_components/AtomicVisuals";
 import { ConceptCard, DerivationPanel, LearningObjectives, PracticeQuestion, SummaryStrip } from "../_components/AtomicLearning";
 
 export default function Part15() {
@@ -31,6 +32,7 @@ export default function Part15() {
           <FormulaLine math="\frac{mv^{2}}{r}=\frac{KZe^{2}}{r^{2}}" />
           <FormulaLine math="v^{2}=\frac{KZe^{2}}{mr}" />
           <DiagramBox title="Electron in a circular orbit">
+            <CircularOrbitVisual />
             <p>
               A circular orbit around the nucleus <MathText math="\oplus" /> with radius <MathText math="r" /> drawn to the
               revolving electron marked <MathText math="m,\ e,\ v" />.

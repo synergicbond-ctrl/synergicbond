@@ -1,6 +1,7 @@
 "use client";
 
 import { AtomicPartShell, AuditComment, DataTable, DiagramBox, FormulaLine, MathText, NoteBlock, SourcePage } from "./_shared";
+import { CircularOrbitVisual, HydrogenLevelGapsVisual } from "../_components/AtomicVisuals";
 import { DefinitionCard, DerivationPanel, LearningObjectives, PracticeQuestion, SummaryStrip } from "../_components/AtomicLearning";
 
 export default function Part17() {
@@ -44,6 +45,7 @@ export default function Part17() {
         </NoteBlock>
         <NoteBlock title="Binding energy of e⁻">
           <DiagramBox title="Electron removed to infinity">
+            <CircularOrbitVisual showEscape />
             <p>
               The nucleus <MathText math="\oplus" /> with a circular orbit; an arrow carries the electron e away to{" "}
               <MathText math="\infty" />.
@@ -85,6 +87,7 @@ export default function Part17() {
             <li>C. (i) 2 → 1 ✓, (ii) ∞ → 2, (iii) ∞ → 5, (iv) 7 → 5</li>
           </ul>
           <DiagramBox title="Hydrogen level gaps">
+            <HydrogenLevelGapsVisual />
             <p>
               Energy levels 1, 2 and <MathText math="\infty" /> drawn as horizontal lines: 3.4 eV separates level 2 from{" "}
               <MathText math="\infty" />, and 10.2 eV separates level 1 from level 2.

@@ -1,7 +1,7 @@
 "use client";
 
 import { AtomicPartShell, AuditComment, DataTable, DiagramBox, FormulaLine, MathText, NoteBlock, SourcePage } from "./_shared";
-import { EmissionAbsorptionSpectraVisual, HydrogenSeriesVisual } from "../_components/AtomicVisuals";
+import { EmissionAbsorptionSpectraVisual, HydrogenSeriesVisual, LevelDiagramVisual, SpectrumApparatusVisual } from "../_components/AtomicVisuals";
 import { DefinitionCard, FigureCaption, LearningObjectives, PracticeQuestion, SummaryStrip } from "../_components/AtomicLearning";
 
 export default function Part19() {
@@ -26,6 +26,7 @@ export default function Part19() {
       <SourcePage page={59}>
         <NoteBlock title="Hydrogen spectrum">
           <DiagramBox title="Hydrogen emission apparatus">
+            <SpectrumApparatusVisual kind="emission" />
             <FigureCaption>
               Excited hydrogen sample sends radiation through a slit and prism onto a film or detector; the recorded emission
               spectrum shows lines with increasing wavelength.
@@ -43,6 +44,7 @@ export default function Part19() {
             The max. number of spectral lines is <MathText math="\tfrac{n(n-1)}{2}" />, n = shell no.
           </p>
           <DiagramBox title="Counting lines from n = 5">
+            <LevelDiagramVisual nMax={5} arrows={[{ from: 5, to: 4 }, { from: 5, to: 3 }, { from: 5, to: 2 }, { from: 5, to: 1 }, { from: 4, to: 3 }, { from: 4, to: 2 }, { from: 4, to: 1 }, { from: 3, to: 2 }, { from: 3, to: 1 }, { from: 2, to: 1 }]} footer="every downward transition among five levels: N = 5×4/2 = 10 lines" />
             <p>Five levels (5 down to 1) with all downward transitions drawn.</p>
           </DiagramBox>
           <FormulaLine math="=\frac{5\times4}{2}=10" />

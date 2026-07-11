@@ -1,6 +1,7 @@
 "use client";
 
 import { AtomicPartShell, AuditComment, DiagramBox, FormulaLine, MathText, NoteBlock, SourcePage } from "./_shared";
+import { LevelDiagramVisual } from "../_components/AtomicVisuals";
 import { DefinitionCard, DerivationPanel, LearningObjectives, PracticeQuestion, SummaryStrip } from "../_components/AtomicLearning";
 
 export default function Part20() {
@@ -19,16 +20,19 @@ export default function Part20() {
         <NoteBlock title="e.g. — atoms in the 5th energy state">
           <p>Single hydrogen atom in 5th energy state</p>
           <DiagramBox title="One atom, stepwise fall">
+            <LevelDiagramVisual nMax={5} arrows={[{ from: 5, to: 4, column: 0 }, { from: 4, to: 3, column: 0 }, { from: 3, to: 2, column: 0 }, { from: 2, to: 1, column: 0 }]} footer="a single atom cascades step by step: 5→4, 4→3, 3→2, 2→1 — 4 lines" />
             <p>Levels 5→1 with single cascade arrows.</p>
           </DiagramBox>
           <FormulaLine math="\text{Total lines}=4\qquad 5\to4,\ 4\to3,\ 3\to2,\ 2\to1" />
           <p>two hydrogen atom in 5th energy state</p>
           <DiagramBox title="Two atoms">
+            <LevelDiagramVisual nMax={5} arrows={[{ from: 5, to: 4, column: 0 }, { from: 4, to: 3, column: 0 }, { from: 3, to: 2, column: 0 }, { from: 2, to: 1, column: 0 }, { from: 5, to: 3, column: 2, colour: "#67e8f9" }, { from: 3, to: 1, column: 2, colour: "#67e8f9" }]} footer="the second atom takes a different route (5→3, 3→1), adding 2 new lines — total 6" />
             <p>Levels 5→1 with two cascades marked.</p>
           </DiagramBox>
           <FormulaLine math="\text{Total lines}=6\qquad 5\to4,\ 4\to3,\ 3\to2,\ 2\to1,\ 5\to3,\ 3\to1" />
           <p>three hydrogen atom in 5th energy state</p>
           <DiagramBox title="Three atoms">
+            <LevelDiagramVisual nMax={5} arrows={[{ from: 5, to: 4, column: 0 }, { from: 4, to: 3, column: 0 }, { from: 3, to: 2, column: 0 }, { from: 2, to: 1, column: 0 }, { from: 5, to: 3, column: 2, colour: "#67e8f9" }, { from: 3, to: 1, column: 2, colour: "#67e8f9" }, { from: 5, to: 2, column: 4, colour: "#f472b6" }, { from: 2, to: 1, column: 4, colour: "#f472b6" }]} footer="a third route (5→2, 2→1) adds one new line — total 7 distinct lines" />
             <p>Levels 5→1 with three cascades marked.</p>
           </DiagramBox>
           <FormulaLine math="\text{Total lines}=7" />

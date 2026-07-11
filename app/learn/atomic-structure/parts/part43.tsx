@@ -2,7 +2,7 @@
 
 import { AtomicPartShell, AuditComment, DataTable, DiagramBox, FormulaLine, MathText, NoteBlock, SourcePage } from "./_shared";
 import { DerivationPanel, FigureCaption, LearningObjectives, SummaryStrip } from "../_components/AtomicLearning";
-import { OrbitalBoxVisual } from "../_components/AtomicVisuals";
+import { OrbitalBoxVisual, RadialFunctionCurvesVisual } from "../_components/AtomicVisuals";
 
 export default function Part43() {
   return (
@@ -41,6 +41,8 @@ export default function Part43() {
       <SourcePage page={137}>
         <NoteBlock title="Radial part solution table">
           <DiagramBox title="Hydrogen radial wave functions">
+            <RadialFunctionCurvesVisual nodes={0} />
+            <RadialFunctionCurvesVisual nodes={1} />
             <FigureCaption>The following ψ values are radial parts, using a<sub>0</sub> as the Bohr radius.</FigureCaption>
           </DiagramBox>
           <FormulaLine math="1s\ (n=1,l=0):\ \psi=2\left(\frac{1}{a_0}\right)^{3/2}e^{-r/a_0}" />

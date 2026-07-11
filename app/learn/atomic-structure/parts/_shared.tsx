@@ -60,7 +60,7 @@ export const atomicPartMeta: AtomicPartMeta[] = [
   { part: 45, title: "Radial Function Chart, Average Distance and the dz² Designation", pages: "141-144", href: "/learn/atomic-structure/part45" },
   { part: 46, title: "dz² as a Sum of Cloverleaves, and Orbital Shapes with Node Counts", pages: "145-147", href: "/learn/atomic-structure/part46" },
   { part: 47, title: "np Density Pictures, the Five d-Orbitals and Gerade/Ungerade", pages: "148-150", href: "/learn/atomic-structure/part47" },
-  { part: 48, title: "Beginner's Box-7, Unsöld's Theorem and p-Orbital Symmetry", pages: "151-153", href: "/learn/atomic-structure/part48" },
+  { part: 48, title: "Nodes, Orbital Symmetry and Penetration", pages: "151-153", href: "/learn/atomic-structure/part48" },
   { part: 49, title: "3d vs 4d/5d, 4f vs 5f, and Orbital Shape Galleries", pages: "154-156", href: "/learn/atomic-structure/part49" },
   { part: 50, title: "7d Gallery and the 4f, 5f, 6f Orbital Sets", pages: "157-160", href: "/learn/atomic-structure/part50" },
   { part: 51, title: "7f Orbitals and the Nine 5g and 6g Orbitals", pages: "161-163", href: "/learn/atomic-structure/part51" },

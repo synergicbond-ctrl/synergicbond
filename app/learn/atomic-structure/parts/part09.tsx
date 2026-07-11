@@ -2,7 +2,7 @@
 
 import { AtomicPartShell, AuditComment, DataTable, DiagramBox, FormulaLine, MathText, NoteBlock, SourcePage } from "./_shared";
 import { LearningObjectives, ImportantNote, PracticeQuestion, SummaryStrip } from "../_components/AtomicLearning";
-import { BlackBodyCurvesVisual } from "../_components/AtomicVisuals";
+import { BlackBodyCurvesVisual, BulbHeatingSequenceVisual, EnergyBandStripVisual } from "../_components/AtomicVisuals";
 
 export default function Part09() {
   return (
@@ -11,7 +11,8 @@ export default function Part09() {
       <SourcePage page={26}>
         <NoteBlock title="Heating visual inserts">
           <DiagramBox title="Bulb heating sequence">
-            <p>Four photographic inserts show an electric bulb/filament glowing with increasing brightness.</p>
+            <BulbHeatingSequenceVisual />
+            <p>As the tungsten filament is heated, its radiance rises and its visible glow shifts from dim red through orange toward yellow-white. The colour transition is qualitative; the black-body curve below gives the quantitative wavelength trend.</p>
           </DiagramBox>
           <DiagramBox title="Black-body peak graph">
             <BlackBodyCurvesVisual />
@@ -49,6 +50,7 @@ export default function Part09() {
             u<sub>λ</sub>dλ = energy per unit volume in the wavelength interval λ to λ + dλ.
           </p>
           <DiagramBox title="Energy in dλ band">
+            <EnergyBandStripVisual />
             <p>Curve with a narrow vertical strip marked dλ.</p>
           </DiagramBox>
         </NoteBlock>

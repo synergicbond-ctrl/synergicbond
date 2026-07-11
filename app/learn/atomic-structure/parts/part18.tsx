@@ -1,6 +1,7 @@
 "use client";
 
 import { AtomicPartShell, AuditComment, DiagramBox, FormulaLine, MathText, NoteBlock, SourcePage } from "./_shared";
+import { LevelDiagramVisual, PrismSpectrumVisual, ReducedMassVisual, SpectrumApparatusVisual } from "../_components/AtomicVisuals";
 import { DefinitionCard, ImportantNote, LearningObjectives, PracticeQuestion, SummaryStrip } from "../_components/AtomicLearning";
 
 export default function Part18() {
@@ -18,6 +19,7 @@ export default function Part18() {
         </NoteBlock>
         <NoteBlock title="Ritz Combination Principle">
           <DiagramBox title="Levels 1, 2, 3">
+            <LevelDiagramVisual nMax={3} />
             <p>Three horizontal energy levels labelled 3, 2 and 1.</p>
           </DiagramBox>
           <FormulaLine math="3\to2:\ \lambda_2,\ \nu_2,\ \bar{\nu}_2" />
@@ -32,6 +34,7 @@ export default function Part18() {
         </NoteBlock>
         <NoteBlock title="Reduced Mass Effect">
           <DiagramBox title="Nucleus and electron about the centre of mass">
+            <ReducedMassVisual />
             <p>
               A circular orbit of radius <MathText math="r" />; below it, the line Nu — com — e marks distances{" "}
               <MathText math="r_1" /> (nucleus to centre of mass) and <MathText math="r_2" /> (centre of mass to electron).
@@ -79,6 +82,7 @@ export default function Part18() {
       <SourcePage page={57}>
         <NoteBlock title="Dispersion through a prism">
           <DiagramBox title="Solar spectrum from a prism">
+            <PrismSpectrumVisual />
             <p>
               Sunlight or white light enters the prism, deviates by angle <MathText math="\theta" /> and spreads onto the screen
               as the solar spectrum. Side note: <MathText math="\theta\propto\tfrac{1}{\lambda}" />.
@@ -99,6 +103,7 @@ export default function Part18() {
             lines. These wavelengths are called missing wavelengths.
           </p>
           <DiagramBox title="Emission versus absorption apparatus">
+            <SpectrumApparatusVisual kind="both" />
             <p>
               An excited sample sends light through a slit and prism onto a film or detector, giving the
               emission spectrum (bright lines, increasing wavelength). A white light source passing through an absorbing sample,

@@ -2,7 +2,7 @@
 
 import { AtomicPartShell, AuditComment, DiagramBox, FormulaLine, MathText, NoteBlock, SourcePage } from "./_shared";
 import { LearningObjectives, PracticeQuestion, SummaryStrip } from "../_components/AtomicLearning";
-import { BlackBodyCurvesVisual } from "../_components/AtomicVisuals";
+import { BlackBodyCavityVisual, BlackBodyCurvesVisual, WienGraphVisual } from "../_components/AtomicVisuals";
 
 export default function Part08() {
   return (
@@ -64,6 +64,7 @@ export default function Part08() {
           <p>At a given temperature and wavelength, a good absorber is a good emitter.</p>
           <p>An ideal black body absorbs all incident radiation.</p>
           <DiagramBox title="Absorption and emission by black body">
+            <BlackBodyCavityVisual />
             <p>Two black-body cavity sketches: one absorbing incoming radiation, one emitting arrows outward.</p>
             <p>T = constant</p>
           </DiagramBox>
@@ -78,6 +79,7 @@ export default function Part08() {
           </p>
           <p>T is the temperature in kelvins.</p>
           <DiagramBox title="Wien radiation law graph">
+            <WienGraphVisual />
             <p>
               U<sub>λ</sub> = energy of radiation per unit volume in range of λ to λ + dλ.
             </p>

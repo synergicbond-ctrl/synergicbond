@@ -1,6 +1,7 @@
 "use client";
 
 import { AtomicPartShell, AuditComment, DataTable, DiagramBox, FormulaLine, MathText, NoteBlock, SourcePage } from "./_shared";
+import { PenultimateShellVisual, SubshellZCrossingVisual } from "../_components/AtomicVisuals";
 import { ConceptCard, ImportantNote, LearningObjectives, SummaryStrip } from "../_components/AtomicLearning";
 
 const T1_HEADERS = ["Element", "Z", "1s", "2s 2p", "3s 3p 3d", "4s 4p 4d 4f", "5s 5p 5d 5f", "6s 6p 6d 7s"];
@@ -134,6 +135,7 @@ export default function Part31() {
           <FormulaLine math="N_{max}=\sum_{l=0}^{l=n-1}2(2l+1)" />
           <p>3. Difference of energy level</p>
           <DiagramBox title="Subshell energies versus atomic number">
+            <SubshellZCrossingVisual />
             <p>
               Principal quantum number (1–7) against atomic number (0–100): curves for 1s up to 7p cross as Z grows, showing
               how subshell order changes with atomic number.
@@ -160,6 +162,7 @@ export default function Part31() {
           <FormulaLine math="Cu\ (29)=3d^{10}4s^{1}\qquad Zn\ (30)=3d^{10}4s^{2}" />
           <FormulaLine math="Cu^{2+}=3d^{9}\qquad Zn^{2+}=3d^{10}" />
           <DiagramBox title="Penultimate shells">
+            <PenultimateShellVisual />
             <p>
               Concentric shells around the nucleus with the second-outermost ring labelled Penultimate Shell and the one inside
               it labelled Pre or anti Penultimate Shell.

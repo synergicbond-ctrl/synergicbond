@@ -1,7 +1,7 @@
 "use client";
 
 import { AtomicPartShell, AuditComment, DiagramBox, FormulaLine, MathText, NoteBlock, SourcePage } from "./_shared";
-import { PhotocurrentPotentialGraph } from "../_components/AtomicVisuals";
+import { KmaxFrequencyGraph, PhotocurrentPotentialGraph, PhotoelectronEnergyDistributionVisual } from "../_components/AtomicVisuals";
 import { DefinitionCard, FigureCaption, ImportantNote, LearningObjectives, PracticeQuestion, SummaryStrip } from "../_components/AtomicLearning";
 
 export default function Part12() {
@@ -17,6 +17,7 @@ export default function Part12() {
           </ol>
           <p>If the photon has energy equal to or greater than the work function, the electron becomes free from the influence of the nucleus and may eject out.</p>
           <DiagramBox title="Energy distribution of photoelectrons">
+            <PhotoelectronEnergyDistributionVisual />
             <p>Labels: <MathText math="E=h\nu_0" />, <MathText math="E=h\nu" />, <MathText math="KE=0" />, <MathText math="KE_{max}" /> and energy levels marked <MathText math="E_0" /> and <MathText math="E" />.</p>
           </DiagramBox>
           <p>The kinetic energy of a photoelectron may have a value from 0 to <MathText math="h\nu-\phi" />.</p>
@@ -35,6 +36,7 @@ export default function Part12() {
           <FormulaLine math="\nu_0=\frac{\phi}{h}" />
           <FormulaLine math="\lambda_0=\frac{hc}{\phi}" />
           <DiagramBox title="KE versus frequency">
+            <KmaxFrequencyGraph />
             <p>Axes: <MathText math="KE_{max}" /> versus <MathText math="\nu" />. The straight-line slope is <MathText math="h" /> and the frequency-axis intercept is <MathText math="\nu_0" />.</p>
           </DiagramBox>
           <p>On the particle nature: increase in intensity represents increase in the number of photons of the same frequency. As the energy of each photon remains unchanged, <MathText math="KE_{max}" /> remains unchanged; but due to increase in photons, the number of photoelectrons and photocurrent increase.</p>

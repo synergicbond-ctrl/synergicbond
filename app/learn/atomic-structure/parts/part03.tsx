@@ -2,6 +2,7 @@
 
 import { AtomicPartShell, AuditComment, BulletList, DiagramBox, FormulaLine, MathText, NoteBlock, SourcePage } from "./_shared";
 import { LearningObjectives, PracticeQuestion, SummaryStrip } from "../_components/AtomicLearning";
+import { AnodeRayTubeVisual } from "../_components/AtomicVisuals";
 
 export default function Part03() {
   return (
@@ -22,29 +23,7 @@ export default function Part03() {
         <NoteBlock title="Discovery of Proton">
           <h3 className="text-lg font-black text-fuchsia-300">Anode ray experiment</h3>
           <DiagramBox title="Anode ray experiment">
-            <svg viewBox="0 0 780 250" className="h-auto w-full">
-              <rect x="120" y="80" width="540" height="72" rx="36" fill="none" stroke="#e5e7eb" strokeWidth="3" />
-              <path d="M120 80 Q75 116 120 152" stroke="#f87171" strokeWidth="8" fill="none" />
-              <line x1="100" y1="116" x2="55" y2="116" stroke="#e5e7eb" strokeWidth="3" />
-              <line x1="662" y1="116" x2="720" y2="116" stroke="#e5e7eb" strokeWidth="3" />
-              <line x1="130" y1="90" x2="130" y2="142" stroke="#e5e7eb" strokeWidth="3" strokeDasharray="7 5" />
-              <line x1="680" y1="93" x2="680" y2="140" stroke="#e5e7eb" strokeWidth="3" />
-              <path d="M260 105 H200 M260 130 H200" stroke="#e5e7eb" strokeWidth="3" markerEnd="url(#leftArrow)" />
-              <text x="230" y="100" fill="#a3e635" fontSize="22">⊕</text>
-              <text x="260" y="100" fill="#a3e635" fontSize="22">⊕</text>
-              <text x="230" y="137" fill="#a3e635" fontSize="22">⊕</text>
-              <text x="260" y="137" fill="#a3e635" fontSize="22">⊕</text>
-              <text x="80" y="70" fill="#fff" fontSize="24">ZnS</text>
-              <text x="60" y="108" fill="#fff" fontSize="24">-</text>
-              <text x="715" y="103" fill="#fff" fontSize="24">+</text>
-              <path d="M65 152 V215 H720 V116" fill="none" stroke="#e5e7eb" strokeWidth="3" />
-              <text x="360" y="240" fill="#fff" fontSize="26">V</text>
-              <defs>
-                <marker id="leftArrow" markerWidth="10" markerHeight="10" refX="1" refY="3" orient="auto">
-                  <path d="M9,0 L9,6 L0,3 z" fill="#e5e7eb" />
-                </marker>
-              </defs>
-            </svg>
+            <AnodeRayTubeVisual />
           </DiagramBox>
         </NoteBlock>
       </SourcePage>

@@ -2,7 +2,7 @@
 
 import { AtomicPartShell, AuditComment, DiagramBox, FormulaLine, MathText, NoteBlock, SourcePage } from "./_shared";
 import { ConceptCard, FormulaCard, ImportantNote, LearningObjectives, SummaryStrip, WorkedExample } from "../_components/AtomicLearning";
-import { AufbauFillingVisual } from "../_components/AtomicVisuals";
+import { AufbauFillingVisual, OrbitalFillRowsVisual, SubshellOrderVisual } from "../_components/AtomicVisuals";
 
 export default function Part30() {
   return (
@@ -55,12 +55,14 @@ export default function Part30() {
       <SourcePage page={94}>
         <NoteBlock title="Energy-level ladders">
           <DiagramBox title="Multielectron atoms — non-degenerate subshells">
+            <SubshellOrderVisual />
             <p className="text-sm text-white/75">
               Energy levels stacked in filling order: 1s, 2s, 2p, 3s, 3p, 4s, 3d, 4p, 5s, 4d … with s, p, d
               columns separated. Subshells of the same shell differ in energy due to electron–electron repulsion.
             </p>
           </DiagramBox>
           <DiagramBox title="Hydrogen and hydrogen-like — degenerate subshells">
+            <SubshellOrderVisual degenerate />
             <p className="text-sm text-white/75">
               All subshells of the same n lie at the same energy: 1s; 2s = 2p; 3s = 3p = 3d; 4s = 4p = 4d = 4f.
             </p>
@@ -82,6 +84,16 @@ export default function Part30() {
             of unpaired electrons with parallel spins.
           </p>
           <DiagramBox title="Orbital box diagrams for 3p³ and 3p⁴">
+            <OrbitalFillRowsVisual
+              title="Hund's rule for 3p³ and 3p⁴"
+              description="Orbital box diagrams comparing correct and incorrect fillings of a 3p subshell with three and four electrons. The correct three-electron filling keeps three parallel single arrows; pairing before every orbital is singly occupied is wrong. With four electrons one pair forms and two unpaired electrons remain."
+              rows={[
+                { label: "3p³", verdict: "ok", boxes: ["up", "up", "up"], note: "all parallel — 3 unpaired" },
+                { label: "3p³", verdict: "bad", boxes: ["pair", "up", "empty"], note: "premature pairing" },
+                { label: "3p⁴", verdict: "ok", boxes: ["pair", "up", "up"], note: "pair only after all are singly filled — 2 unpaired" },
+                { label: "3p⁴", verdict: "bad", boxes: ["pair", "pair", "empty"], note: "two forced pairs — 0 unpaired" },
+              ]}
+            />
             <p className="text-sm text-white/75">
               <strong className="text-cyan-200">3p³</strong> correct ✓: ↑ | ↑ | ↑ — three singly occupied orbitals, all parallel.<br />
               <strong className="text-white/50">3p³</strong> wrong ✗: ↑↓ | ↑ | (empty) — forced pairing reduces unpaired count.<br />
@@ -119,6 +131,16 @@ export default function Part30() {
         <WorkedExample title="Why half-filled and fully-filled configurations are extra stable">
           <p className="font-semibold text-white">1. Symmetrical arrangement</p>
           <DiagramBox title="Symmetry comparison: 3d⁴ vs 3d⁵ and 3d⁹ vs 3d¹⁰">
+            <OrbitalFillRowsVisual
+              title="Symmetric and asymmetric d-subshell fillings"
+              description="Box diagrams contrasting 3d4 with the half-filled 3d5, and 3d9 with the fully filled 3d10. The half-filled and fully filled arrangements distribute electron density symmetrically over all five orbitals and gain extra stability."
+              rows={[
+                { label: "3d⁴", boxes: ["up", "up", "up", "up", "empty"], note: "one orbital empty — less symmetric" },
+                { label: "3d⁵", boxes: ["up", "up", "up", "up", "up"], note: "half-filled — spherically symmetric, extra stable" },
+                { label: "3d⁹", boxes: ["pair", "pair", "pair", "pair", "up"], note: "four pairs + one single — asymmetric" },
+                { label: "3d¹⁰", boxes: ["pair", "pair", "pair", "pair", "pair"], note: "fully filled — spherically symmetric, extra stable" },
+              ]}
+            />
             <p className="text-sm text-white/75">
               <strong className="text-cyan-200">3d⁴</strong>: ↑ ↑ ↑ ↑ □ — one empty orbital, less symmetric distribution.<br />
               <strong className="text-cyan-200">3d⁵</strong>: ↑ ↑ ↑ ↑ ↑ — all five orbitals equally occupied (half-filled), perfectly symmetric.<br />
@@ -130,6 +152,16 @@ export default function Part30() {
           <p className="mt-4 font-semibold text-white">2. Exchange energy</p>
           <p className="text-sm text-white/75">Greater the number of exchanges between electrons of parallel spin, greater the stability.</p>
           <DiagramBox title="Counting exchange pairs among parallel spins">
+            <OrbitalFillRowsVisual
+              title="Exchange pairs among parallel spins"
+              description="Box diagrams used to count exchange pairs. Four parallel spins give three plus two plus one equals six exchanges; five parallel spins give ten; a paired orbital plus four singles still gives ten from the parallel set; and the fully filled subshell gives ten within each spin direction, twenty in all."
+              rows={[
+                { label: "3d⁴", boxes: ["up", "up", "up", "up", "empty"], note: "exchanges = 3 + 2 + 1 = 6" },
+                { label: "3d⁵", boxes: ["up", "up", "up", "up", "up"], note: "exchanges = 4 + 3 + 2 + 1 = 10" },
+                { label: "pair + 4", boxes: ["pair", "up", "up", "up", "up"], note: "10 exchanges from the parallel (↑) set" },
+                { label: "3d¹⁰", boxes: ["pair", "pair", "pair", "pair", "pair"], note: "10 per spin set — 20 in total" },
+              ]}
+            />
             <p className="text-sm text-white/75">
               <strong className="text-cyan-200">4 parallel spins (3d⁴)</strong>: exchanges = 3 + 2 + 1 = <strong className="text-white">6</strong>.<br />
               <strong className="text-cyan-200">5 parallel spins (3d⁵)</strong>: exchanges = 4 + 3 + 2 + 1 = <strong className="text-white">10</strong>.<br />

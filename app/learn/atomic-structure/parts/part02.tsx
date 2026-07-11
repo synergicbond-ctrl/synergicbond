@@ -2,7 +2,7 @@
 
 import { AtomicPartShell, AuditComment, DataTable, DiagramBox, FormulaLine, MathText, NoteBlock, SourcePage } from "./_shared";
 import { LearningObjectives, ImportantNote, PracticeQuestion, SummaryStrip } from "../_components/AtomicLearning";
-import { MillikanOilDropVisual } from "../_components/AtomicVisuals";
+import { EMDeflectionVisual, ElectronClassicalRadiusVisual, MillikanOilDropVisual } from "../_components/AtomicVisuals";
 
 export default function Part02() {
   return (
@@ -11,20 +11,7 @@ export default function Part02() {
       <SourcePage page={4}>
         <NoteBlock title="Determination of e/m">
           <DiagramBox title="Electrical and magnetic field deflection setup">
-            <svg viewBox="0 0 780 250" className="h-auto w-full">
-              <path d="M80 120 H445 L495 70 L545 120 Q565 150 545 180 L495 230 L445 180 H80 Q35 150 80 120Z" fill="none" stroke="#22d3ee" strokeWidth="3" />
-              <line x1="40" y1="150" x2="600" y2="150" stroke="#f59e0b" strokeWidth="3" />
-              <path d="M470 150 L570 85 M470 150 L590 150 M470 150 L555 215" stroke="#f59e0b" strokeWidth="3" />
-              <text x="150" y="210" fill="#22d3ee" fontSize="24">PD</text>
-              <text x="220" y="210" fill="#22d3ee" fontSize="24">V</text>
-              <text x="315" y="215" fill="#22d3ee" fontSize="24">EF</text>
-              <text x="420" y="215" fill="#22d3ee" fontSize="24">MF</text>
-              <text x="585" y="90" fill="#22d3ee" fontSize="22">C only M.F</text>
-              <text x="610" y="155" fill="#22d3ee" fontSize="22">B EF = MF</text>
-              <text x="585" y="215" fill="#22d3ee" fontSize="22">A only EF</text>
-              <text x="300" y="118" fill="#fff" fontSize="24">-</text>
-              <text x="300" y="175" fill="#fff" fontSize="24">+</text>
-            </svg>
+            <EMDeflectionVisual />
           </DiagramBox>
           <FormulaLine math="F_e=F_m" />
           <FormulaLine math="eE=eBv" />
@@ -78,12 +65,7 @@ export default function Part02() {
         </NoteBlock>
         <NoteBlock title="Radius of e-">
           <DiagramBox title="Electron radius sketch">
-            <svg viewBox="0 0 240 130" className="mx-auto h-auto max-w-sm">
-              <circle cx="110" cy="65" r="48" fill="none" stroke="#34d399" strokeWidth="4" />
-              <circle cx="110" cy="65" r="8" fill="#f0f" />
-              <line x1="110" y1="65" x2="158" y2="65" stroke="#fde047" strokeWidth="3" />
-              <text x="140" y="55" fill="#fff" fontSize="22">r</text>
-            </svg>
+            <ElectronClassicalRadiusVisual />
           </DiagramBox>
           <p>rest mass energy = electrostatic P.E.</p>
           <FormulaLine math="m_oc^2=K\frac{e^2}{r}" />

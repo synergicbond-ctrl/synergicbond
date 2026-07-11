@@ -51,8 +51,11 @@ const PROTECTED_PREFIXES = [
   "/olympiads",
 ];
 
-/** Sub-path protected: the exact base is public, but deeper pages need auth. */
-const PROTECTED_SUBPREFIXES = ["/programs/", "/learn/"];
+/** Sub-path protected: the exact base is public, but deeper pages need auth.
+ *  `/notes/` is here so premium chapter pages are auth-gated at the proxy before
+ *  any payload renders; deliberately-free chapters (mole-concept, redox-reactions,
+ *  …) are exempted automatically by isFreeChapter() inside isPublicRoute(). */
+const PROTECTED_SUBPREFIXES = ["/programs/", "/learn/", "/notes/"];
 
 /** Free content — open to signed-out users and guests. */
 export function isFreeChapter(path: string): boolean {

@@ -194,3 +194,18 @@ Pages 116–134 rendered at 200 DPI to `/private/tmp/atomic-structure-batch-E` (
 | 42 | 132–134 | Radial Function Curves, Radial Nodes and Radial Distribution Function | Transcribed, routed |
 
 Checks: `npm run typecheck` PASS · placeholder/watermark scan PASS · 42 files / 42 routes registered. (Full `npm run build` scheduled after Batch F — two-batch cadence.)
+
+## Batch F update (parts 43–48) — 2026-07-11
+
+Pages 135–153 rendered at 200 DPI to `/private/tmp/atomic-structure-batch-F` (outside the repository), deleted after transcription.
+
+| Part | Source pages | Title | Status |
+| --- | --- | --- | --- |
+| 43 | 135–137 | Most Probable Radius, Radial Solutions and Radial Node Counting | Transcribed, routed |
+| 44 | 138–140 | Real Hydrogen Wave Functions and Electron-Density Graphs | Transcribed, routed |
+| 45 | 141–144 | Radial Function Chart, Average Distance and the dz² Designation | Transcribed, routed |
+| 46 | 145–147 | dz² as a Sum of Cloverleaves, and Orbital Shapes with Node Counts | Transcribed, routed |
+| 47 | 148–150 | np Density Pictures, the Five d-Orbitals and Gerade/Ungerade | Transcribed, routed |
+| 48 | 151–153 | Beginner's Box-7, Unsöld's Theorem and p-Orbital Symmetry | Transcribed, routed |
+
+Checks: `npm run typecheck` PASS · `npm run build` PASS (compiled successfully in 30.8s) · placeholder/watermark scan PASS · 48 files / 48 routes registered.

@@ -54,6 +54,12 @@ export const atomicPartMeta: AtomicPartMeta[] = [
   { part: 40, title: "Radial Probability Distribution, Normalisation and Angular Functions", pages: "125-128", href: "/learn/atomic-structure/part40" },
   { part: 41, title: "d-Orbital Angular Functions, Nodal Surfaces and Radial Functions", pages: "129-131", href: "/learn/atomic-structure/part41" },
   { part: 42, title: "Radial Function Curves, Radial Nodes and Radial Distribution Function", pages: "132-134", href: "/learn/atomic-structure/part42" },
+  { part: 43, title: "Most Probable Radius, Radial Solutions and Radial Node Counting", pages: "135-137", href: "/learn/atomic-structure/part43" },
+  { part: 44, title: "Real Hydrogen Wave Functions and Electron-Density Graphs", pages: "138-140", href: "/learn/atomic-structure/part44" },
+  { part: 45, title: "Radial Function Chart, Average Distance and the dz² Designation", pages: "141-144", href: "/learn/atomic-structure/part45" },
+  { part: 46, title: "dz² as a Sum of Cloverleaves, and Orbital Shapes with Node Counts", pages: "145-147", href: "/learn/atomic-structure/part46" },
+  { part: 47, title: "np Density Pictures, the Five d-Orbitals and Gerade/Ungerade", pages: "148-150", href: "/learn/atomic-structure/part47" },
+  { part: 48, title: "Beginner's Box-7, Unsöld's Theorem and p-Orbital Symmetry", pages: "151-153", href: "/learn/atomic-structure/part48" },
 ];
 
 export function AtomicPartShell({

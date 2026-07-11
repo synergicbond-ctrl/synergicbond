@@ -1,6 +1,7 @@
 "use client";
 
 import { AtomicPartShell, AuditComment, DiagramBox, FormulaLine, MathText, NoteBlock, SourcePage } from "./_shared";
+import { RadialDistributionVisual } from "../_components/AtomicVisuals";
 
 export default function Part42() {
   return (
@@ -18,7 +19,7 @@ export default function Part42() {
               radial node.
             </p>
           </DiagramBox>
-          <FormulaLine math="R(r)=K\,e^{-\sigma/2}\,\sigma^{l}\quad\begin{cases}l=0\\l\neq1\end{cases}\qquad \sigma=\frac{2Z}{n a_0}\,r" />
+          <FormulaLine math="R(r)=K\,e^{-\sigma/2}\,\sigma^{l}\quad\begin{cases}l=0\\l\neq0\end{cases}\qquad \sigma=\frac{2Z}{n a_0}\,r" />
           <DiagramBox title="R(r) vs r for one-node orbitals (diagram)">
             <p>
               For n − l − 1 = 1 (2s, 3p, 4d, 5f …): the 2s curve starts at aK, falls, crosses zero (the radial node,
@@ -47,7 +48,7 @@ export default function Part42() {
         <NoteBlock title="Radial Probability Distribution Function [P(r) vs r]">
           <FormulaLine math="|\psi|^{2}\propto\text{Probability Density}\propto\frac{P}{dV}" />
           <FormulaLine math="P=|\psi|^{2}\,dV\times\text{constant}" />
-          <p>(constant already involved in radial function equation during of SWE.)</p>
+          <p>(constant already involved in the radial function equation during the solution of SWE.)</p>
           <FormulaLine math="\text{Probability of finding of }e^{-}=\psi^{2}\,dV" />
           <FormulaLine math="\text{Radial Probability of finding }e^{-}=R^{2}(r)\,dV=\psi_r^{2}\,dV" />
           <FormulaLine math="dV=dx\,dy\,dz" />
@@ -64,6 +65,7 @@ export default function Part42() {
           <FormulaLine math="P_{\text{Total}}=R^{2}(r)\left(4\pi r^{2}\,dr\right)" />
           <FormulaLine math="\frac{P_{\text{Total}}}{dr}=4\pi r^{2}\,R^{2}(r)=P(r)=\text{Radial Distribution Function}" />
           <DiagramBox title="P(r) vs r (diagram)">
+            <RadialDistributionVisual />
             <p>
               For n − l − 1 = 0 (1s, 2p, 3d, 4f, 5g …): a single hump rising from the origin to a peak then falling to
               zero. The peak sits at the most probable radius.
@@ -71,7 +73,10 @@ export default function Part42() {
           </DiagramBox>
           <FormulaLine math="r_{mp}=\frac{n^{2}a_0}{Z}" />
           <FormulaLine math="P(r)=4\pi r^{2}\cdot\left(K\,e^{-\sigma/2}\,\sigma^{l}\right)^{2}" />
-          <FormulaLine math="0=\ \underset{r=0}{}\quad \underset{r=\infty}{}\quad \underset{r=0,\ l\neq0}{}" />
+          <p>
+            P(r) = 0 at r = 0 (from the r² factor, and additionally from σ<sup>l</sup> when l ≠ 0) and as r → ∞ (from the
+            exponential factor).
+          </p>
           <p>r_mp = most probable radius of electron from nucleus.</p>
         </NoteBlock>
       </SourcePage>

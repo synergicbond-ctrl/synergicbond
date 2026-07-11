@@ -180,6 +180,27 @@ export function PzAngularPolarVisual() {
   </ScientificVisual>;
 }
 
+export function RadialDistributionVisual() {
+  const curves = [
+    { label: "1s", colour: "#67e8f9", f: (r: number) => r * r * Math.exp(-2 * r) },
+    { label: "2s", colour: "#facc15", f: (r: number) => r * r * (2 - r) ** 2 * Math.exp(-r) },
+    { label: "3s", colour: "#f472b6", f: (r: number) => r * r * (27 - 18 * r + 2 * r * r) ** 2 * Math.exp((-2 * r) / 3) },
+  ].map(({ label, colour, f }) => {
+    const values = Array.from({ length: 201 }, (_, i) => f(i * 0.125));
+    const max = Math.max(...values);
+    const points = values.map((value, i) => `${(60 + (i * 0.125 * 380) / 25).toFixed(1)},${(250 - (value / max) * 190).toFixed(1)}`).join(" ");
+    return { label, colour, points };
+  });
+  return <ScientificVisual title="Radial probability distribution for 1s, 2s and 3s" description="Curves of the radial distribution function four pi r squared R squared against radius in Bohr units, computed from the exact hydrogen radial functions. The 1s curve has one hump peaking at one Bohr radius; the 2s curve has two humps separated by a node at two Bohr radii; the 3s curve has three humps with two nodes. Each curve is scaled to the same display height." viewBox="0 0 470 300" className="h-auto w-full">
+    <path d="M60 40V250H450" fill="none" stroke="#94a3b8" strokeWidth="2" />
+    <text x="12" y="56" fill="#e2e8f0" fontSize="13">4πr²R²</text><text x="416" y="272" fill="#e2e8f0" fontSize="13">r / a₀</text>
+    {[5, 10, 15, 20].map((r) => <g key={r}><path d={`M${60 + (r * 380) / 25} 250v5`} stroke="#94a3b8" strokeWidth="1.6" /><text x={54 + (r * 380) / 25} y="268" fill="#94a3b8" fontSize="12">{r}</text></g>)}
+    {curves.map(({ label, colour, points }) => <polyline key={label} points={points} fill="none" stroke={colour} strokeWidth="2.2" />)}
+    <text x="86" y="52" fill="#a5f3fc" fontSize="13">1s</text><text x="160" y="52" fill="#fde68a" fontSize="13">2s</text><text x="300" y="52" fill="#f9a8d4" fontSize="13">3s</text>
+    <text x="60" y="292" fill="#94a3b8" fontSize="12">computed from exact hydrogen R(r); curves scaled to equal peak height; humps = n − l, nodes = n − l − 1</text>
+  </ScientificVisual>;
+}
+
 export function SommerfeldOrbitsVisual() {
   return <ScientificVisual title="Sommerfeld orbits for n equals three" description="Three nested electron paths about the nucleus for n equals three: a circle for K equals three, a wider ellipse for K equals two, and a narrower ellipse for K equals one. The ratio of major to minor axis equals n over K." viewBox="0 0 440 260" className="h-auto w-full">
     <circle cx="220" cy="130" r="100" fill="none" stroke="#67e8f9" strokeWidth="2" />

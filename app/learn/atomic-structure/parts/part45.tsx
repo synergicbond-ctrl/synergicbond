@@ -50,8 +50,8 @@ export default function Part45() {
       <SourcePage page={143}>
         <NoteBlock title="Trend in average distance">
           <p>
-            For the same orbital &apos;n&apos;, the average distance as well as r_mp of electron from nucleus ↓ with
-            increase in &apos;l&apos; value.
+            For the same value of &apos;n&apos;, the average distance as well as r_mp of the electron from the nucleus ↓
+            with increase in &apos;l&apos; value.
           </p>
         </NoteBlock>
       </SourcePage>
@@ -59,14 +59,14 @@ export default function Part45() {
       <SourcePage page={144}>
         <NoteBlock title="dz² orbital and its designation">
           <FormulaLine math="\psi_{3d_{z^{2}}}(r,\theta,\phi)=\frac{1}{81\sqrt{6\pi}}\left(\frac{1}{a_0}\right)^{3/2}\frac{r^{2}}{a_0^{2}}\,e^{-r/3a_0}\left(3\cos^{2}\theta-1\right)" />
-          <FormulaLine math="\psi^{2}=0\ \Rightarrow\ 3\cos^{2}\theta-1=0\ \Rightarrow\ \theta=\cos^{-1}\!\left(\frac{1}{\sqrt{3}}\right)=54.3^{\circ}" />
+          <FormulaLine math="\psi^{2}=0\ \Rightarrow\ 3\cos^{2}\theta-1=0\ \Rightarrow\ \theta=\cos^{-1}\!\left(\frac{1}{\sqrt{3}}\right)=54.7^{\circ}" />
           <DataTable
             headers={["θ", "3cos²θ − 1"]}
             rows={[
               ["0", "2"],
               ["30°", "1.25"],
               ["45°", "0.5"],
-              ["60°", "0.25"],
+              ["60°", "−0.25"],
               ["90°", "−1"],
               ["135°", "0.5"],
               ["180°", "2"],
@@ -75,7 +75,7 @@ export default function Part45() {
           <DiagramBox title="dz² orbital (printed and sketch)">
             <p>
               Two red (+) lobes along the z-axis with a white/orange (−) torus around the origin in the xy-plane; the two
-              nodal cones open at 54.3°.
+              nodal cones open at 54.7°.
             </p>
           </DiagramBox>
         </NoteBlock>

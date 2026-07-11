@@ -17,7 +17,7 @@ export default function Part44() {
           <FormulaLine math="\psi_{3d_{z^{2}}}=\frac{1}{81\sqrt{6\pi}}\left(\frac{1}{a_0}\right)^{3/2}\frac{r^{2}}{a_0^{2}}\,e^{-r/3a_0}\left(3\cos^{2}\theta-1\right)" />
           <FormulaLine math="\psi_{3d_{xz}}=\frac{\sqrt{2}}{81\sqrt{\pi}}\left(\frac{1}{a_0}\right)^{3/2}\frac{r^{2}}{a_0^{2}}\,e^{-r/3a_0}\sin\theta\cos\theta\cos\phi" />
           <FormulaLine math="\psi_{3d_{yz}}=\frac{\sqrt{2}}{81\sqrt{\pi}}\left(\frac{1}{a_0}\right)^{3/2}\frac{r^{2}}{a_0^{2}}\,e^{-r/3a_0}\sin\theta\cos\theta\sin\phi" />
-          <FormulaLine math="\psi_{3d_{x^{2}-y^{2}}}=\frac{\sqrt{2}}{81\sqrt{2\pi}}\left(\frac{1}{a_0}\right)^{3/2}\frac{r^{2}}{a_0^{2}}\,e^{-r/3a_0}\sin^{2}\theta\cos 2\phi" />
+          <FormulaLine math="\psi_{3d_{x^{2}-y^{2}}}=\frac{1}{81\sqrt{2\pi}}\left(\frac{1}{a_0}\right)^{3/2}\frac{r^{2}}{a_0^{2}}\,e^{-r/3a_0}\sin^{2}\theta\cos 2\phi" />
           <FormulaLine math="\psi_{3d_{xy}}=\frac{1}{81\sqrt{2\pi}}\left(\frac{1}{a_0}\right)^{3/2}\frac{r^{2}}{a_0^{2}}\,e^{-r/3a_0}\sin^{2}\theta\sin 2\phi" />
         </NoteBlock>
       </SourcePage>

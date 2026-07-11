@@ -24,13 +24,13 @@ export default function Part43() {
           <FormulaLine math="=\frac{1}{2\sqrt{6}}\left(\frac{Z}{a_0}\right)^{3/2}\left(\frac{Zr}{a_0}\right)e^{-\frac{Zr}{2a_0}}" />
           <FormulaLine math="=\frac{1}{2\sqrt{6}}\left(\frac{Z}{a_0}\right)^{5/2}r\,e^{-\frac{Zr}{2a_0}}" />
           <p>Now</p>
-          <FormulaLine math="P(r)=4\pi r^{2}R^{2}(r)=4\pi r^{2}\left(\frac{1}{2\sqrt{6}}\left(\frac{Z}{a_0}\right)^{5/2}r\,e^{-(Zr/a_0)}\right)^{2}" />
+          <FormulaLine math="P(r)=4\pi r^{2}R^{2}(r)=4\pi r^{2}\left(\frac{1}{2\sqrt{6}}\left(\frac{Z}{a_0}\right)^{5/2}r\,e^{-\frac{Zr}{2a_0}}\right)^{2}" />
           <FormulaLine math="=4\pi r^{2}\,\frac{1}{4\times6}\left(\frac{Z}{a_0}\right)^{5}r^{2}\,e^{-Zr/a_0}" />
           <FormulaLine math="=\frac{\pi}{6}r^{2}\left(\frac{Z}{a_0}\right)^{5}r^{2}\,e^{-Zr/a_0}=\frac{\pi}{6}\left(\frac{Z}{a_0}\right)^{5}r^{4}\,e^{-Zr/a_0}" />
           <p>For maxima or minima —</p>
           <FormulaLine math="\frac{d(P_r)}{dr}=0" />
           <FormulaLine math="\frac{\pi}{6}\left(\frac{Z}{a_0}\right)^{5}\left[4r^{3}e^{-\frac{Zr}{a_0}}+r^{4}e^{-\frac{Zr}{a_0}}\left(-\frac{Z}{a_0}\right)\right]" />
-          <FormulaLine math="\frac{\pi}{6}\left(\frac{Z}{a_0}\right)^{5}r^{3}\,e^{-Zr/a_0}\left[1-\frac{Zr}{a_0}\right]" />
+          <FormulaLine math="\frac{\pi}{6}\left(\frac{Z}{a_0}\right)^{5}r^{3}\,e^{-Zr/a_0}\left[4-\frac{Zr}{a_0}\right]=0" />
           <FormulaLine math="r_{mp}=\frac{4a_0}{Z}" />
         </NoteBlock>
       </SourcePage>
@@ -44,7 +44,7 @@ export default function Part43() {
           <FormulaLine math="2s\ (n=2,l=0):\ \psi=\frac{1}{\sqrt{8}}\left(\frac{1}{a_0}\right)^{3/2}\left(2-\frac{r}{a_0}\right)e^{-r/2a_0}" />
           <FormulaLine math="2p\ (n=2,l=1):\ \psi=\frac{1}{\sqrt{24}}\left(\frac{1}{a_0}\right)^{3/2}\frac{r}{a_0}\,e^{-r/2a_0}" />
           <FormulaLine math="3s\ (n=3,l=0):\ \psi=\frac{2}{81\sqrt{3}}\left(\frac{1}{a_0}\right)^{3/2}\left(27-18\frac{r}{a_0}+2\frac{r^{2}}{a_0^{2}}\right)e^{-r/3a_0}" />
-          <FormulaLine math="3p\ (n=3,l=1):\ \psi=\frac{2}{9\sqrt{6}}\left(\frac{1}{a_0}\right)^{3/2}\left(6\frac{r}{a_0}-2\frac{r^{2}}{a_0^{2}}\right)e^{-r/3a_0}" />
+          <FormulaLine math="3p\ (n=3,l=1):\ \psi=\frac{2}{9\sqrt{6}}\left(\frac{1}{a_0}\right)^{3/2}\left(6\frac{r}{a_0}-\frac{r^{2}}{a_0^{2}}\right)e^{-r/3a_0}" />
           <FormulaLine math="3d\ (n=3,l=2):\ \psi=\frac{4}{81\sqrt{30}}\left(\frac{1}{a_0}\right)^{3/2}\frac{r^{2}}{a_0^{2}}\,e^{-r/3a_0}" />
         </NoteBlock>
         <NoteBlock title="Nodes and radial-node counting">

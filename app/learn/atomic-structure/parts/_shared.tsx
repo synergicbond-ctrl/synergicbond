@@ -42,6 +42,12 @@ export const atomicPartMeta: AtomicPartMeta[] = [
   { part: 28, title: "Azimuthal Quantum Number, Orbitals and Shapes", pages: "87-89", href: "/learn/atomic-structure/part28" },
   { part: 29, title: "Magnetic and Spin Quantum Numbers, (n+l) Rule", pages: "90-92", href: "/learn/atomic-structure/part29" },
   { part: 30, title: "Aufbau Principle and Electronic Configuration", pages: "93-96", href: "/learn/atomic-structure/part30" },
+  { part: 31, title: "Transition Metals and the Full Configuration Table", pages: "97-99", href: "/learn/atomic-structure/part31" },
+  { part: 32, title: "Pauli Exclusion, Possible Quantum Sets and Magnetism", pages: "100-102", href: "/learn/atomic-structure/part32" },
+  { part: 33, title: "Magnetic Moment Calculations", pages: "103-105", href: "/learn/atomic-structure/part33" },
+  { part: 34, title: "Moseley's Law and Group Velocity", pages: "106-108", href: "/learn/atomic-structure/part34" },
+  { part: 35, title: "Schrödinger Wave Equation — Wave Function and Wave Equation", pages: "109-112", href: "/learn/atomic-structure/part35" },
+  { part: 36, title: "Schrödinger Wave Equation — Time Dependence and Hamiltonian", pages: "113-115", href: "/learn/atomic-structure/part36" },
 ];
 
 export function AtomicPartShell({

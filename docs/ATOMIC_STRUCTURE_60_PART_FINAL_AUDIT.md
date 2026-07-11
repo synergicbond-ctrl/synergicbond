@@ -164,3 +164,18 @@ Pages 77–96 rendered at 200 DPI to `/private/tmp/atomic-structure-batch-C` (ou
 | 30 | 93–96 | Aufbau Principle and Electronic Configuration | Transcribed, routed |
 
 Checks: `npm run typecheck` PASS · placeholder/watermark scan PASS · 30 files / 30 routes registered.
+
+## Batch D update (parts 31–36) — 2026-07-11
+
+Pages 97–115 rendered at 200 DPI to `/private/tmp/atomic-structure-batch-D` (outside the repository), deleted after transcription.
+
+| Part | Source pages | Title | Status |
+| --- | --- | --- | --- |
+| 31 | 97–99 | Transition Metals and the Full Configuration Table | Transcribed, routed (4 `[UNCLEAR]`: Rf–Bh 5f cells in printed table) |
+| 32 | 100–102 | Pauli Exclusion, Possible Quantum Sets and Magnetism | Transcribed, routed |
+| 33 | 103–105 | Magnetic Moment Calculations | Transcribed, routed (p105 blank in source — noted) |
+| 34 | 106–108 | Moseley's Law and Group Velocity | Transcribed, routed |
+| 35 | 109–112 | Schrödinger Wave Equation — Wave Function and Wave Equation | Transcribed, routed |
+| 36 | 113–115 | Schrödinger Wave Equation — Time Dependence and Hamiltonian | Transcribed, routed |
+
+Checks: `npm run typecheck` PASS · `npm run build` PASS (compiled successfully in 16.2s) · placeholder/watermark scan PASS · 36 files / 36 routes registered.

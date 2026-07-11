@@ -224,3 +224,15 @@ Pages 154–172 rendered at 200 DPI to `/private/tmp/atomic-structure-batch-G` (
 | 54 | 170–172 | Olympiad Problems — de Broglie Wavelengths (2.1–2.7) | Transcribed, routed |
 
 Checks: `npm run typecheck` PASS · placeholder/watermark scan PASS · 54 files / 54 routes registered. (Full `npm run build` scheduled after Batch H — two-batch cadence.)
+
+## Batch H update (part 55) — 2026-07-11 — SCOPE CHANGE
+
+Per an explicit instruction mid-batch, **source pages 176–192 were excluded from transcription**. Batch H therefore collapses to a single closing part, and the project finalizes at **55 parts** (not 60). Pages 173–175 were rendered at 200 DPI to `/private/tmp/atomic-structure-batch-H` (outside the repository) and deleted after transcription; the render of 176–192 was produced but not transcribed and was deleted.
+
+| Part | Source pages | Title | Status |
+| --- | --- | --- | --- |
+| 55 | 173–175 | Olympiad Problems — Uncertainty and Relativistic Wavelength (2.7–2.14) | Transcribed, routed (final part) |
+
+Parts 56–60 (source pages 176–192) are intentionally **not created** — out of scope.
+
+Checks: `npm run typecheck` PASS · `npm run lint` PASS (0 errors; 6 pre-existing unused-import warnings) · `npm run build` PASS (compiled successfully in 18.5s) · placeholder/watermark scan PASS · **55 files / 55 routes / 55 metadata entries**, contiguous part01–part55, no gaps. JEE Advanced navigation and Board Class 11 "Some Basic Concepts" routing verified intact.

@@ -66,6 +66,7 @@ export const atomicPartMeta: AtomicPartMeta[] = [
   { part: 52, title: "The Nine 7g Orbitals and the Eleven 6h and 7h Orbitals", pages: "164-166", href: "/learn/atomic-structure/part52" },
   { part: 53, title: "7i Orbitals and Hybridisation Bond-Angle Proofs (sp, sp²)", pages: "167-169", href: "/learn/atomic-structure/part53" },
   { part: 54, title: "Olympiad Problems — de Broglie Wavelengths (2.1–2.7)", pages: "170-172", href: "/learn/atomic-structure/part54" },
+  { part: 55, title: "Olympiad Problems — Uncertainty and Relativistic Wavelength (2.7–2.14)", pages: "173-175", href: "/learn/atomic-structure/part55" },
 ];
 
 export function AtomicPartShell({

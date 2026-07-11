@@ -53,6 +53,7 @@ import Part51 from "../parts/part51";
 import Part52 from "../parts/part52";
 import Part53 from "../parts/part53";
 import Part54 from "../parts/part54";
+import Part55 from "../parts/part55";
 
 const parts = {
   part01: Part01,
@@ -109,6 +110,7 @@ const parts = {
   part52: Part52,
   part53: Part53,
   part54: Part54,
+  part55: Part55,
 };
 
 export function generateStaticParams() {

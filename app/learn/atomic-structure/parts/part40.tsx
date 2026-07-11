@@ -1,13 +1,14 @@
 "use client";
 
 import { AtomicPartShell, AuditComment, DataTable, DiagramBox, FormulaLine, MathText, NoteBlock, SourcePage } from "./_shared";
+import { PzAngularPolarVisual } from "../_components/AtomicVisuals";
 
 export default function Part40() {
   return (
     <AtomicPartShell part={40} title="Radial Probability Distribution, Normalisation and Angular Functions" pages="125-128">
       <SourcePage page={125}>
         <NoteBlock title="Radial probability density and distribution">
-          <FormulaLine math="\text{Probability}=\left(R(r)\,\Theta(\theta)\,\Phi(\phi)\right)^{2}r^{2}\sin\theta\,d\theta\,d\phi\;[=d\tau]" />
+          <FormulaLine math="\text{Probability}=\left(R(r)\,\Theta(\theta)\,\Phi(\phi)\right)^{2}\,\underbrace{r^{2}\sin\theta\,dr\,d\theta\,d\phi}_{=\,d\tau}" />
           <p>
             Radial Probability density — It is probability at distance r in a specified direction. Radial probability
             density at constant angle is
@@ -21,7 +22,7 @@ export default function Part40() {
           <FormulaLine math="\text{vol}=\frac{4}{3}\pi(r+dr)^{3}-\frac{4}{3}\pi r^{3}" />
           <FormulaLine math="=\frac{4}{3}\pi\left(r^{3}+3r^{2}dr+3r\,dr^{2}+dr^{3}-r^{3}\right)" />
           <FormulaLine math="=\frac{4}{3}\pi\cdot 3r^{2}dr=4\pi r^{2}dr" />
-          <p>Radial probability distribution — It give spherical sence of probability without any specified direction.</p>
+          <p>Radial probability distribution — It gives a spherical sense of probability without any specified direction.</p>
           <FormulaLine math="\text{Radial probability distribution}=[R(r)]^{2}\,4\pi r^{2}dr=4\pi r^{2}\psi^{2}(r)\,dr=P(r)" />
           <FormulaLine math="\text{Radial probability distribution function}=4\pi r^{2}\psi^{2}(r)=\frac{P(r)}{dr}" />
         </NoteBlock>
@@ -81,6 +82,7 @@ export default function Part40() {
             <li>Angular node = 1 (xy-plane)</li>
           </ul>
           <DiagramBox title="pz orbital (printed)">
+            <PzAngularPolarVisual />
             <p>
               Two lobes along the z-axis: an orange (+) lobe above and a white (−) lobe below, tangent at the origin.
               Dashed rays at 30°, 45°, 60°, 90°, 120°, 135°, 150° carry the values +0.866K, +0.707K, 0.5K, 0, −0.5K,

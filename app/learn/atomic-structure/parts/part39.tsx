@@ -7,7 +7,7 @@ export default function Part39() {
     <AtomicPartShell part={39} title="Matter Wave as a Wave of Probability and Schrödinger in Polar Coordinates" pages="122-124">
       <SourcePage page={122}>
         <NoteBlock title="Electron probability across repeated measurements">
-          <p>but e&#8315; have different probability at different at different place.</p>
+          <p>but e&#8315; have different probability at different places.</p>
           <DiagramBox title="Electron in different measurement (printed)">
             <p>
               A <MathText math="|\psi(x)|^{2}" />-vs-x axis with a few scattered faint orange dots near the baseline — a
@@ -64,7 +64,7 @@ export default function Part39() {
           <FormulaLine math="\theta\to 0\text{ to }\pi\qquad \phi\to 0\text{ to }2\pi" />
           <FormulaLine math="\psi(x,y,z)=R(r)\,\Theta(\theta)\,\Phi(\phi)" />
           <FormulaLine math="\psi_{n,l,m}=\underbrace{R(r)}_{\text{Radial function }f(n,l)}\ \underbrace{\Theta(\theta)\,\Phi(\phi)}_{\text{angular function}}\quad[\Theta=f(l,m),\ \Phi=f(m)]" />
-          <p>The differential polar equation is broken into 3 independent equation —</p>
+          <p>The differential polar equation is broken into 3 independent equations —</p>
           <ol className="list-decimal space-y-1 pl-5">
             <li>Radial Equation</li>
             <li>Zenith Equation</li>

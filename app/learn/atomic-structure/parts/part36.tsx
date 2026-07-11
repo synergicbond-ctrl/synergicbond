@@ -12,7 +12,7 @@ export default function Part36() {
           <p>Side working:</p>
           <FormulaLine math="E\psi=-\frac{\hbar}{i}\,\frac{\partial\psi}{\partial t}=i\hbar\,\frac{\partial\psi}{\partial t}\qquad(i^{2}=-1,\ -\tfrac{1}{i}=i)" />
           <FormulaLine math="\text{for free particle }E\psi=\frac{p^{2}}{2m}\,\psi" />
-          <FormulaLine math="\boxed{-i\hbar\,\frac{\partial\psi}{\partial t}=\frac{\hbar^{2}}{2\pi}\,\frac{\partial^{2}\psi}{\partial x^{2}}}" />
+          <FormulaLine math="\boxed{-i\hbar\,\frac{\partial\psi}{\partial t}=\frac{\hbar^{2}}{2m}\,\frac{\partial^{2}\psi}{\partial x^{2}}}" />
           <p>we got a differential equation free from p, E.</p>
           <FormulaLine math="E=KE+PE=\frac{p^{2}}{2m}+V(x)\qquad\text{one dimension}" />
           <FormulaLine math="E\psi=\frac{p^{2}}{2m}\,\psi+V(x)\,\psi" />
@@ -41,8 +41,8 @@ export default function Part36() {
           <FormulaLine math="\left(\frac{\partial^{2}}{\partial x^{2}}+\frac{\partial^{2}}{\partial y^{2}}+\frac{\partial^{2}}{\partial z^{2}}\right)\psi+\frac{8\pi^{2}m}{h^{2}}\,(E-V)\,\psi=0" />
           <FormulaLine math="\boxed{\nabla^{2}\psi+\frac{8\pi^{2}m}{h^{2}}\,(E-V)\,\psi=0}" />
           <FormulaLine math="-\frac{h^{2}}{8\pi^{2}m}\,\nabla^{2}\psi=(E-V)\,\psi" />
-          <FormulaLine math="\left(-\frac{h^{2}}{8\pi^{2}m}\,\nabla^{2}-V\right)\psi=E\,\psi" />
-          <FormulaLine math="\boxed{\hat{H}\psi=E\,\psi}\qquad \hat{H}=\left(-\frac{h^{2}}{8\pi^{2}m}\,\nabla^{2}-V\right)" />
+          <FormulaLine math="\left(-\frac{h^{2}}{8\pi^{2}m}\,\nabla^{2}+V\right)\psi=E\,\psi" />
+          <FormulaLine math="\boxed{\hat{H}\psi=E\,\psi}\qquad \hat{H}=\left(-\frac{h^{2}}{8\pi^{2}m}\,\nabla^{2}+V\right)" />
           <p>
             <MathText math="\hat{H}" /> = Hamiltonian operator. <MathText math="\hat{H}" /> gives information about total
             energy of electron.
@@ -53,8 +53,8 @@ export default function Part36() {
       <SourcePage page={115}>
         <NoteBlock title="Wave Mechanical Model of atom">
           <p>
-            Schrodinger given a general equation for all the moving object showing wave-particle duality, for which the
-            energy in a particular state does not change with time. as
+            Schrödinger gave a general equation for all moving objects showing wave–particle duality, for which the
+            energy in a particular state does not change with time, as
           </p>
         </NoteBlock>
         <NoteBlock title="Schrodinger Wave Equation">

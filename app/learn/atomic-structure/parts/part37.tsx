@@ -37,7 +37,7 @@ export default function Part37() {
         </NoteBlock>
         <NoteBlock title="Eigenfunctions and eigenvalues">
           <FormulaLine math="\frac{dy}{dx}=7\,y" />
-          <FormulaLine math="\underset{\text{operator}}{\frac{d}{dy}}\ \underset{\text{function}}{(y)}=\underset{\text{constant}}{7}\times\underset{\text{function}}{(y)}" />
+          <FormulaLine math="\underset{\text{operator}}{\frac{d}{dx}}\ \underset{\text{function}}{(y)}=\underset{\text{constant}}{7}\times\underset{\text{function}}{(y)}" />
           <p>Here (y) is the eigenfunction and the constant 7 is the eigenvalue.</p>
           <FormulaLine math="\underset{\text{operator}}{\hat{H}}\ \underset{\text{function}}{\psi}=\underset{\text{constant}}{E}\ \underset{\text{function}}{\psi}" />
           <FormulaLine math="\psi=\text{eigen function}\qquad E=\text{eigen value}" />
@@ -47,20 +47,20 @@ export default function Part37() {
       <SourcePage page={118}>
         <NoteBlock title="Properties of the Schrödinger wave equation and its solutions">
           <ul className="list-disc space-y-3 pl-5">
-            <li>Schrodinger wave equation is a second order differential equation. It has infinite solution.</li>
+            <li>Schrodinger wave equation is a second order differential equation. It has infinite solutions.</li>
             <li>
-              Out of infinite solution only those solution are acceptable in which <MathText math="\psi" /> is finite,
-              single valued and continuous.
+              Out of the infinite solutions only those solutions are acceptable in which <MathText math="\psi" /> is
+              finite, single valued and continuous.
             </li>
             <li>
-              When solved with certain restriction, called boundary condition, only finite number of solutions are
+              When solved with certain restrictions, called boundary conditions, only a finite number of solutions are
               obtained.
             </li>
-            <li>The acceptable solution corresponds to different states of electron in an atom.</li>
+            <li>The acceptable solutions correspond to different states of the electron in an atom.</li>
             <li>
-              SWE may be solved only for single electron system. Its solution for multielectron system under certain
-              condition resemble with H-like atoms. Hence the conditions for single electron system is generallised for
-              all the system.
+              SWE may be solved exactly only for single electron systems. Its solution for multielectron systems under
+              certain conditions resembles that of H-like atoms. Hence the conditions for the single electron system are
+              generalised for all systems.
             </li>
           </ul>
         </NoteBlock>
@@ -68,8 +68,8 @@ export default function Part37() {
           <ul className="list-disc space-y-2 pl-5">
             <li>It is wave function</li>
             <li>It has no physical significance</li>
-            <li>It represent single particle</li>
-            <li>It represent amplitude</li>
+            <li>It represents a single particle</li>
+            <li>It represents amplitude</li>
           </ul>
         </NoteBlock>
       </SourcePage>

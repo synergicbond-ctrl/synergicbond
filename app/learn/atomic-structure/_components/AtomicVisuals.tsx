@@ -169,6 +169,17 @@ export function AufbauFillingVisual() {
   </ScientificVisual>;
 }
 
+export function PzAngularPolarVisual() {
+  return <ScientificVisual title="Polar plot of the pz angular function" description="Exact polar plot of the pz angular function Y proportional to cosine theta: two circles tangent at the nucleus along the z axis, a positive lobe above and a negative lobe below, with the x y plane as the angular nodal plane." viewBox="0 0 420 300" className="h-auto w-full">
+    <path d="M210 20V280" stroke="#94a3b8" strokeWidth="1.4" strokeDasharray="4 5" /><text x="216" y="32" fill="#e2e8f0" fontSize="14">z</text>
+    <path d="M80 150H340" stroke="#94a3b8" strokeWidth="1.8" /><text x="346" y="155" fill="#e2e8f0" fontSize="14">xy-plane (node)</text>
+    <circle cx="210" cy="95" r="55" fill="#facc15" opacity=".3" stroke="#facc15" strokeWidth="2" /><text x="202" y="100" fill="#fde68a" fontSize="17">+</text>
+    <circle cx="210" cy="205" r="55" fill="#67e8f9" opacity=".22" stroke="#67e8f9" strokeWidth="2" /><text x="203" y="212" fill="#a5f3fc" fontSize="17">−</text>
+    <circle cx="210" cy="150" r="4" fill="#fb7185" />
+    <text x="12" y="292" fill="#94a3b8" fontSize="13">exact curve r = K·|cos θ| — the polar plot of Y(pz); signs are those of the angular function</text>
+  </ScientificVisual>;
+}
+
 export function SommerfeldOrbitsVisual() {
   return <ScientificVisual title="Sommerfeld orbits for n equals three" description="Three nested electron paths about the nucleus for n equals three: a circle for K equals three, a wider ellipse for K equals two, and a narrower ellipse for K equals one. The ratio of major to minor axis equals n over K." viewBox="0 0 440 260" className="h-auto w-full">
     <circle cx="220" cy="130" r="100" fill="none" stroke="#67e8f9" strokeWidth="2" />

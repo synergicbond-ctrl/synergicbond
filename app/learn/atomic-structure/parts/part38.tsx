@@ -49,20 +49,20 @@ export default function Part38() {
         </NoteBlock>
         <NoteBlock title="Normalised Wave Function">
           <p>
-            <MathText math="|\psi(x)|^{2}\,dx" /> probability of finding the particle in range x to dx. It is called Born
-            interpretation.
+            <MathText math="|\psi(x)|^{2}\,dx" /> is the probability of finding the particle in the range x to x + dx. It
+            is called the Born interpretation.
           </p>
           <p>If</p>
           <FormulaLine math="\int_{-\infty}^{\infty}|\psi(x)|^{2}\,dx=1,\quad \psi\text{ is a normalised wave function}" />
         </NoteBlock>
         <NoteBlock title="Boundary surface (contour) diagram">
           <p>
-            The shape of orbital are given either as graphical representation or boundary surface (contour) diagram for the
-            probability of finding electron according to SWE.
+            The shapes of orbitals are given either as a graphical representation or a boundary surface (contour) diagram
+            for the probability of finding the electron according to SWE.
           </p>
           <p>
-            In boundary surface diagram the 3D space around the nucleus is covered in which probability of finding e&#8315;
-            very high (&#8776; 90%).
+            In a boundary surface diagram the 3D space around the nucleus is covered in which the probability of finding
+            e&#8315; is very high (&#8776; 90%).
           </p>
         </NoteBlock>
       </SourcePage>
@@ -80,7 +80,7 @@ export default function Part38() {
           </p>
         </NoteBlock>
         <NoteBlock title="Physical meaning of ψ">
-          <p>Let a ball rolling on a surface. it has 100%.</p>
+          <p>Let a ball roll on a surface — at its location the probability of finding it is 100%.</p>
           <DiagramBox title="Rolling ball (printed)">
             <p>A blue ball on a horizontal line with a 100% probability marker pinned above it — probability at a place.</p>
           </DiagramBox>

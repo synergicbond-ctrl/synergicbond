@@ -1,6 +1,7 @@
 "use client";
 
 import { AtomicPartShell, AuditComment, DataTable, DiagramBox, FormulaLine, MathText, NoteBlock, SourcePage } from "./_shared";
+import { BohrOrbitsVisual } from "../_components/AtomicVisuals";
 
 export default function Part14() {
   return (
@@ -65,6 +66,11 @@ export default function Part14() {
           <p className="font-black text-white">Solution</p>
           <p>We know from classical electromagnetism that the energy of a charged shell is</p>
           <FormulaLine math="E=\frac{e^{2}}{4\pi\varepsilon_0 r_e}\qquad(5.1)" />
+          <p>
+            (This is the conventional expression used to define the classical electron radius; the exact electrostatic
+            self-energy of a charged shell carries an additional factor of <MathText math="\tfrac{1}{2}" />, which the
+            convention omits.)
+          </p>
           <p>Since <MathText math="E=mc^{2}" />, we find</p>
           <FormulaLine math="r_e=\frac{e^{2}}{4\pi\varepsilon_0 mc^{2}}=2.82\times10^{-15}\ \text{m}\qquad(5.2)" />
           <p>
@@ -103,15 +109,17 @@ export default function Part14() {
       <SourcePage page={44}>
         <NoteBlock title="Bohr's Atomic Model">
           <p>
-            Bohr defined that the microscopic particle like electron will not radiate energy continuously. They emit energy
-            discontinuously (Planck Theory). On losing energy electron will jump closer to the nucleus. By doing so it must
-            acquire a certain minimum energy after which it can not lose energy and e&#8315; will never drop in the nucleus.
+            Bohr proposed that a microscopic particle like the electron will not radiate energy continuously. It emits energy
+            discontinuously (Planck theory). On losing energy the electron jumps closer to the nucleus. By doing so it must
+            reach a certain minimum energy after which it cannot lose energy, and the e&#8315; will never drop into the
+            nucleus.
           </p>
           <p>According to Bohr&apos;s model</p>
           <ol className="list-decimal space-y-3 pl-5">
-            <li>Electrons revolve around the nucleus in definite circular path called orbits or shell.</li>
+            <li>Electrons revolve around the nucleus in definite circular paths called orbits or shells.</li>
           </ol>
           <DiagramBox title="Stationary state">
+            <BohrOrbitsVisual />
             <p>
               Concentric circular orbits around the nucleus (+); orbits numbered 1, 2, 3, 4, … and lettered K, L, M, N, O …
               outward. Caption: stationary state.
@@ -119,8 +127,8 @@ export default function Part14() {
           </DiagramBox>
           <ol className="list-decimal space-y-3 pl-5" start={2}>
             <li>
-              The energy of e&#8315; remain constant in an orbit and hence are called energy level. The energy of e&#8315;
-              increases on increasing distance from nucleus.
+              The energy of the e&#8315; remains constant in an orbit, and hence the orbits are also called energy levels.
+              The energy of the e&#8315; increases on increasing distance from the nucleus.
             </li>
           </ol>
           <FormulaLine math="E_1<E_2<E_3\cdots" />

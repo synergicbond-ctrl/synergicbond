@@ -1,6 +1,7 @@
 "use client";
 
 import { AtomicPartShell, AuditComment, DiagramBox, FormulaLine, MathText, NoteBlock, SourcePage } from "./_shared";
+import { KmaxFrequencyGraph, PhotoelectricApparatusVisual } from "../_components/AtomicVisuals";
 
 export default function Part11() {
   return (
@@ -21,6 +22,7 @@ export default function Part11() {
             <MathText math="\phi" /> is the work function of the metal.
           </p>
           <DiagramBox title="Photoelectric setup">
+            <PhotoelectricApparatusVisual />
             <p>Light source, metal surface, emitted electrons, current meter, variable voltage source, anode and cathode.</p>
             <p>Arrows show ejection of photoelectrons from the illuminated metal plate.</p>
           </DiagramBox>
@@ -37,6 +39,7 @@ export default function Part11() {
             energy appears as kinetic energy of the emitted electron.
           </p>
           <DiagramBox title="Kinetic energy versus frequency">
+            <KmaxFrequencyGraph />
             <p>Graph is a straight line starting at threshold frequency ν₀ on the frequency axis.</p>
             <p>Labels: Kmax, ν, ν₀, slope = h, intercept on ν-axis = threshold frequency.</p>
           </DiagramBox>

@@ -1,6 +1,7 @@
 "use client";
 
 import { AtomicPartShell, AuditComment, DiagramBox, FormulaLine, MathText, NoteBlock, SourcePage } from "./_shared";
+import { PhotocurrentPotentialGraph, StoppingPotentialFrequencyGraph } from "../_components/AtomicVisuals";
 
 export default function Part13() {
   return (
@@ -18,8 +19,8 @@ export default function Part13() {
           </p>
           <DiagramBox title="Saturated current v/s intensity">
             <p>
-              Axes: Intensity (vertical) against Current (horizontal). The saturated current grows as a straight line from the
-              origin.
+              Axes: saturation current (vertical) against intensity of incident light (horizontal). The saturation current
+              grows as a straight line from the origin — it is directly proportional to intensity.
             </p>
           </DiagramBox>
           <DiagramBox title="V_max v/s V">
@@ -27,11 +28,18 @@ export default function Part13() {
               Axes: <MathText math="V_{max}" /> against <MathText math="V" />. The curve rises steeply from the point{" "}
               <MathText math="V_0" /> on the potential axis and flattens.
             </p>
+            <p>
+              [UNCLEAR] The printed axis labels of this sketch are ambiguous; the shape matches photoelectric current rising
+              from the stopping potential and levelling off at saturation.
+            </p>
           </DiagramBox>
           <DiagramBox title="Stopping potential v/s frequency">
             <p>
-              Axes: <MathText math="V_e" /> against <MathText math="V" />. A straight line crosses the frequency axis at{" "}
-              <MathText math="V" /> making angle <MathText math="\theta" />; the dotted portion extends below the axis.
+              Axes: stopping potential <MathText math="V_0" /> (vertical) against frequency <MathText math="\nu" />{" "}
+              (horizontal). A straight line crosses the frequency axis at the threshold frequency{" "}
+              <MathText math="\nu_0" /> making angle <MathText math="\theta" /> with it, where{" "}
+              <MathText math="\tan\theta=h/e" />; the dotted portion extends below the axis towards the intercept{" "}
+              <MathText math="-\phi/e" />.
             </p>
           </DiagramBox>
           <p>
@@ -43,6 +51,7 @@ export default function Part13() {
       <SourcePage page={40}>
         <NoteBlock title="Photoelectric current versus collector plate potential">
           <DiagramBox title="Variation of photoelectric current with collector plate potential for different frequencies of incident radiation">
+            <PhotocurrentPotentialGraph />
             <p>
               Photoelectric current (vertical) against collector plate potential (horizontal); the arrow to the left of 0 marks
               the retarding potential. Three curves for frequencies <MathText math="\nu_3 > \nu_2 > \nu_1" /> rise to the same
@@ -55,6 +64,7 @@ export default function Part13() {
             and effect of intensity of the incident light on the photoelectric current.
           </p>
           <DiagramBox title="Variation of stopping potential V0 with frequency v of incident radiation for a given photosensitive material">
+            <StoppingPotentialFrequencyGraph />
             <p>
               Stopping potential <MathText math="V_0" /> (vertical) against frequency of incident radiation{" "}
               <MathText math="\nu" /> (horizontal). Two parallel straight lines: Metal A rising from threshold{" "}
@@ -85,14 +95,15 @@ export default function Part13() {
           </p>
           <ul className="list-disc space-y-2 pl-5">
             <li>(a) Red — ✗</li>
-            <li>(2) Blue — ✓</li>
+            <li>(b) Blue — ✓</li>
             <li>(c) Yellow — may or may not</li>
           </ul>
           <p>Side note: V I B G | Y | O R (the cut-offs fall between G, Y and O).</p>
         </NoteBlock>
         <NoteBlock title="Question — number of photons from two sources">
           <p>
-            Q. Source-a of intensity <MathText math="I" /> and Source-b of intensity <MathText math="I" />.
+            Q. Source-a of intensity <MathText math="I" /> and Source-b of intensity <MathText math="I" /> — compare the
+            number of photons emitted when source-a gives red light and source-b gives blue light of the same intensity.
           </p>
           <FormulaLine math="n=\frac{IAt}{E}" />
           <p>

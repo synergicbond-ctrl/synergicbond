@@ -1,6 +1,7 @@
 "use client";
 
 import { AtomicPartShell, AuditComment, DiagramBox, FormulaLine, MathText, NoteBlock, SourcePage } from "./_shared";
+import { PhotocurrentPotentialGraph } from "../_components/AtomicVisuals";
 
 export default function Part12() {
   return (
@@ -39,6 +40,7 @@ export default function Part12() {
       <SourcePage page={38}>
         <NoteBlock title="Saturation current and stopping potential">
           <DiagramBox title="Photoelectric-current versus collector potential">
+            <PhotocurrentPotentialGraph />
             <p>Labels: anode/collector C, emitter A, positive potential, negative potential, saturation current, current I, voltage V and stopping potential <MathText math="V_0" />.</p>
           </DiagramBox>
           <ol className="list-decimal space-y-3 pl-5">

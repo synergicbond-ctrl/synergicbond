@@ -306,6 +306,96 @@ export function DeBroglieVoltageVisual() {
   </ScientificVisual>;
 }
 
+export function StringStandingWaveVisual() {
+  const modes = [
+    { n: 1, colour: "#67e8f9", lambda: "2L" },
+    { n: 2, colour: "#facc15", lambda: "L" },
+    { n: 3, colour: "#f472b6", lambda: "2L/3" },
+    { n: 4, colour: "#a78bfa", lambda: "L/2" },
+  ];
+  const pW = 130;
+  const sL = 105;
+  const baseline = 108;
+  const amp = 28;
+  return (
+    <ScientificVisual
+      title="Standing wave modes on a vibrating string"
+      description="Four panels showing the first four harmonics of a standing wave on a string of length L. Mode n has n half-wavelengths fitting in the length L, with fixed-end nodes and n minus one interior nodes. The pattern follows lambda equals 2L over n."
+      viewBox="0 0 555 182"
+      className="h-auto w-full"
+    >
+      {modes.map(({ n, colour, lambda }, i) => {
+        const px = 12 + i * pW;
+        const points = Array.from({ length: 101 }, (_, j) => {
+          const t = j / 100;
+          const x = px + t * sL;
+          const y = baseline - amp * Math.sin(n * Math.PI * t);
+          return `${x.toFixed(1)},${y.toFixed(1)}`;
+        }).join(" ");
+        const nodes = Array.from({ length: n + 1 }, (_, j) => px + (j / n) * sL);
+        return (
+          <g key={n}>
+            <path d={`M${px} ${baseline - 35}V${baseline + 35}`} stroke="#64748b" strokeWidth="3" strokeLinecap="round" />
+            <path d={`M${px + sL} ${baseline - 35}V${baseline + 35}`} stroke="#64748b" strokeWidth="3" strokeLinecap="round" />
+            <path d={`M${px} ${baseline}H${px + sL}`} stroke="#334155" strokeWidth="1" strokeDasharray="2 4" />
+            <polyline points={points} fill="none" stroke={colour} strokeWidth="2.4" />
+            {nodes.map((nx, ni) => (
+              <circle key={ni} cx={nx} cy={baseline} r="3.5" fill="#94a3b8" />
+            ))}
+            <text x={px + sL / 2} y={17} textAnchor="middle" fill={colour} fontSize="13" fontWeight="700">n = {n}</text>
+            <text x={px + sL / 2} y={162} textAnchor="middle" fill="#e2e8f0" fontSize="12">λ = {lambda}</text>
+          </g>
+        );
+      })}
+      <text x="10" y="178" fill="#94a3b8" fontSize="11">grey dots = nodes · coloured arcs = antinodes · L = nλ/2 in each panel</text>
+    </ScientificVisual>
+  );
+}
+
+export function MagneticQuantumNumberVisual() {
+  const cx = 200;
+  const cy = 148;
+  const vecLen = 80;
+  const sqrt6 = Math.sqrt(6);
+  const mValues = [2, 1, 0, -1, -2] as const;
+  const colours = ["#67e8f9", "#86efac", "#fde68a", "#f9a8d4", "#c4b5fd"] as const;
+  const entries = mValues.map((m, i) => {
+    const zFrac = m / sqrt6;
+    const tFrac = Math.sqrt(Math.max(0, 1 - zFrac * zFrac));
+    const tipX = cx - tFrac * vecLen;
+    const tipY = cy - zFrac * vecLen;
+    return { m, tipX, tipY, colour: colours[i] };
+  });
+  return (
+    <ScientificVisual
+      title="Space quantisation for d orbitals (l = 2)"
+      description="Fan diagram for l equals two. Five arrows from the origin show the orbital angular momentum vector L at each of the five allowed precession angles, one for each value of the magnetic quantum number m from plus two to minus two. The dashed horizontal lines show the projection onto the z-axis, which equals m in units of h over 2 pi."
+      viewBox="0 0 420 296"
+      className="h-auto w-full"
+    >
+      <defs>
+        <marker id="mq-z-head" markerWidth="7" markerHeight="7" refX="6" refY="3" orient="auto">
+          <path d="M0,0 L0,6 L7,3z" fill="#94a3b8" />
+        </marker>
+      </defs>
+      <path d={`M${cx} 18V272`} stroke="#94a3b8" strokeWidth="2" markerEnd="url(#mq-z-head)" />
+      <text x={cx + 8} y="24" fill="#e2e8f0" fontSize="13">z (field H)</text>
+      {entries.map(({ m, tipX, tipY, colour }) => (
+        <g key={m}>
+          <path d={`M${cx} ${cy}L${tipX} ${tipY}`} stroke={colour} strokeWidth="2.4" />
+          <circle cx={tipX} cy={tipY} r="3.5" fill={colour} />
+          <path d={`M${tipX} ${tipY}H${cx}`} stroke={colour} strokeWidth="1" strokeDasharray="3 4" opacity="0.5" />
+          <path d={`M${cx - 7} ${tipY}H${cx + 7}`} stroke={colour} strokeWidth="2.5" />
+          <path d={`M${cx} ${tipY}H${cx + 110}`} stroke={colour} strokeWidth="1" strokeDasharray="2 5" opacity="0.35" />
+          <text x={cx + 116} y={tipY + 5} fill={colour} fontSize="13">m = {m > 0 ? `+${m}` : m}</text>
+        </g>
+      ))}
+      <circle cx={cx} cy={cy} r="5" fill="#fb7185" />
+      <text x="10" y="290" fill="#94a3b8" fontSize="12">l = 2 · |L| = √6 ħ · z-projection = m ħ · fan shows all 2l+1 = 5 allowed orientations</text>
+    </ScientificVisual>
+  );
+}
+
 export function BohrOrbitsVisual() {
   const orbits = [[45, "n = 1 (K)"], [78, "n = 2 (L)"], [111, "n = 3 (M)"], [144, "n = 4 (N)"]] as const;
   return <ScientificVisual title="Bohr stationary orbits" description="Concentric circular orbits around a central positive nucleus, numbered n equals one to four outward and lettered K, L, M and N. Electron energy increases with distance from the nucleus while successive energy gaps decrease." viewBox="0 0 440 310" className="h-auto w-full">

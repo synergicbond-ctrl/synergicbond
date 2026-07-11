@@ -65,12 +65,12 @@ export default function Part55() {
         <NoteBlock title="Problem 2.14 — uncertainty for a macroscopic bullet (0.03 kg, 500 m/s, 0.02%)">
           <FormulaLine math="p=0.03\times500=15\ \text{kg m s}^{-1}" />
           <FormulaLine math="\frac{\Delta p}{p}\times100=0.02\ \Rightarrow\ \Delta p=\frac{0.02\times15}{100}=3\times10^{-3}\ \text{kg m s}^{-1}" />
-          <FormulaLine math="\Delta x\approx\frac{h}{2\,\Delta p}=\frac{6.626\times10^{-34}}{4\pi\times3\times10^{-3}}=1.76\times10^{-31}\ \text{m}" />
+          <FormulaLine math="\Delta x\approx\frac{\hbar}{2\,\Delta p}=\frac{h}{4\pi\,\Delta p}=\frac{6.626\times10^{-34}}{4\pi\times3\times10^{-3}}=1.76\times10^{-31}\ \text{m}" />
           <p>The uncertainty in position is negligibly small for a macroscopic object.</p>
         </NoteBlock>
       </SourcePage>
 
-      <AuditComment pages="173-175" unclear={0} note="pages 176-192 excluded from transcription per project scope" />
+      <AuditComment pages="173-175" unclear={0} note="pages 176-192 intentionally excluded per accepted 55-part scope" />
     </AtomicPartShell>
   );
 }

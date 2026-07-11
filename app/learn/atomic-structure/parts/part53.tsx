@@ -40,7 +40,7 @@ export default function Part53() {
           </p>
           <FormulaLine math="\phi=a\,p_x+b\,p_y" />
           <FormulaLine math="\psi_1=c_1 s+c_2 p_1" />
-          <p>Each hybrid has one-third s-character and two-third p-character:</p>
+          <p>Each hybrid has one-third s-character and two-thirds p-character:</p>
           <FormulaLine math="c_1^{2}=\frac{1}{3},\ c_2^{2}=\frac{2}{3}\quad\text{or}\quad c_1=\frac{1}{\sqrt{3}},\ c_2=\sqrt{\frac{2}{3}}" />
           <FormulaLine math="\psi_1=\frac{1}{\sqrt{3}}s+\sqrt{\frac{2}{3}}p_1\qquad \psi_2=\frac{1}{\sqrt{3}}s+\sqrt{\frac{2}{3}}p_2" />
           <p>Since ψ₁ and ψ₂ are orthogonal,</p>

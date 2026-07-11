@@ -125,3 +125,15 @@
 - Forbidden-term audit: passed. Route count 55/55 unchanged; navigation intact.
 - Validation: typecheck pass, lint 0 errors, launch-safety 28/28 pass, production build compiled successfully (scheduled post-Batch-10 build).
 - Exact next batch: Batch 11 — Parts 51–55.
+
+## Batch 11 — Parts 51–55
+
+- Content inventory and retention: Part 51 (7f general and cubic set descriptions, nine 5g and 6g orbital galleries with all labels); Part 52 (nine 7g orbitals, eleven 6h and 7h orbitals with full label lists and node descriptions); Part 53 (thirteen 7i orbitals with polynomial labels, and the three hybridisation bond-angle proofs — sp → 180°, sp² → 120°, sp³ → 109°28′ — with all orthogonality steps and the Aruldhas attribution); Part 54 (Olympiad problems 2.1–2.7: 1000 eV de Broglie vs X-ray comparison with 31.85 ratio, 100/200 V wavelengths, relativistic 310 MeV nuclear-scattering estimate, electron:proton wavelength ratios 42.85 and 13.55, relativistic 618.2 MeV proton estimate, neutron-diffraction velocity 1978 m/s); Part 55 (problems 2.7–2.14: 37.65 eV electron-diffraction energy, KE ratio 1836, 0.0364 m locating uncertainty, natural linewidth 9.5×10⁻¹⁴ m, hydrogen n = 2 chain, full relativistic-wavelength proof λ = hc/[eV(eV+2m₀c²)]^½, resonance lifetime 5.86×10⁻²⁴ s with travel distance, macroscopic bullet 1.76×10⁻³¹ m). All retained; every numerical chain re-computed and confirmed; verified against pre-edit Git versions.
+- Scientific corrections (demonstrable): Part 54 problem 2.5 momentum expression corrected to (1+T/m₀c²)² − 1 under the root (the square was dropped in transcription; the following line and problem 2.3 both carry it, and the printed 618.2 MeV answer requires it); Part 55 problem 2.14 first expression corrected to ħ/(2Δp) = h/(4πΔp), consistent with the 4π substitution actually used (same correction as the Part 23 twin problem).
+- Internal-marker hygiene: Part 55 audit marker rephrased to "pages 176-192 intentionally excluded per accepted 55-part scope".
+- Notation/grammar: Part 53 "two-thirds p-character".
+- Parts 51–52 required no changes (gallery descriptions verified against standard orbital nomenclature; the x⁴+y⁴ g-orbital and cubic-set f labels are the accepted naming).
+- Visuals: none added — the f/g/h/i galleries cannot be faithfully reproduced without copying source artwork, and the hybridisation/Olympiad material is derivation-dominated.
+- Forbidden-term audit: passed. Route count 55/55 unchanged; navigation ends correctly at Part 55 ("Final part" state).
+- Validation: typecheck pass, lint 0 errors, launch-safety 28/28 pass, production build compiled successfully (scheduled post-Batch-11 build).
+- Exact next batch: Final batch — chapter index redesign, global audits and final documentation.

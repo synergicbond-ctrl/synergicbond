@@ -60,7 +60,7 @@ export default function Part54() {
             If nuclei diameter ≈ 10⁻¹⁵ m, the proton de Broglie wavelength must be of that order. With the relativistic
             momentum (as in Problem 2.3),
           </p>
-          <FormulaLine math="p=m_0 c\sqrt{\left(1+\frac{T}{m_0 c^{2}}\right)-1},\qquad \lambda=\frac{h}{p}\approx10^{-15}\ \text{m}" />
+          <FormulaLine math="p=m_0 c\sqrt{\left(1+\frac{T}{m_0 c^{2}}\right)^{2}-1},\qquad \lambda=\frac{h}{p}\approx10^{-15}\ \text{m}" />
           <FormulaLine math="\frac{h^{2}}{\lambda^{2}}=m_0^{2}c^{2}\left[\left(1+\frac{T}{m_0 c^{2}}\right)^{2}-1\right]" />
           <FormulaLine math="T=9.8912\times10^{-11}\ \text{J}=618.2\ \text{MeV}" />
         </NoteBlock>

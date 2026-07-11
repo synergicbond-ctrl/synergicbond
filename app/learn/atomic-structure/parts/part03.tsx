@@ -1,10 +1,12 @@
 "use client";
 
 import { AtomicPartShell, AuditComment, BulletList, DiagramBox, FormulaLine, MathText, NoteBlock, SourcePage } from "./_shared";
+import { LearningObjectives, PracticeQuestion, SummaryStrip } from "../_components/AtomicLearning";
 
 export default function Part03() {
   return (
     <AtomicPartShell part={3} title="Discovery of Proton" pages="7-9">
+      <LearningObjectives items={["Recognise the scope and limitation of classical electron-radius expressions.", "Describe the anode-ray experiment and canal rays.", "Explain why hydrogen positive ions are identified as protons.", "Compare the charge-to-mass behaviour of anode and cathode rays."]} />
       <SourcePage page={7}>
         <NoteBlock title="Classical electron-radius relations">
           <p>
@@ -74,6 +76,8 @@ export default function Part03() {
           <FormulaLine math="\frac{e}{m}=9.58\times10^7\ \mathrm{C/kg}" />
         </NoteBlock>
       </SourcePage>
+      <PracticeQuestion prompt={<>Why does the fact that anode-ray <MathText math="e/m" /> varies with the gas distinguish these rays from cathode rays?</>} answer="The positive particles are ions of the gas, so their masses—and hence e/m values—vary with gas identity." />
+      <SummaryStrip items={["Classical self-energy formulas are model expressions, not a complete quantum description.", "Goldstein’s canal rays are streams of positive particles moving opposite to cathode rays.", "The hydrogen nucleus H⁺ is the proton; mₚ = 1.67 × 10⁻²⁷ kg and e/m = 9.58 × 10⁷ C kg⁻¹."]} />
       <AuditComment pages="7-9" unclear={0} note="printed insert copyright-limited" />
     </AtomicPartShell>
   );

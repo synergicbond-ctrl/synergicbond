@@ -1,5 +1,20 @@
 # Atomic Structure Premium Redesign Audit
 
+## Batch 1 — Parts 01–05 (current branch delivery)
+
+- Files inspected before editing: Parts 01–05; `parts/_shared.tsx`; the Atomic Structure dynamic route and chapter index; `AtomicVisuals.tsx`; this audit; package scripts; and the applicable Next App Router page and Link guidance.
+- Content inventory and retention: Part 01 (Dalton theory, discharge conditions, ionisation examples, cathode-ray properties, Thomson e/m conclusion); Part 02 (crossed-field e/m derivation, species table, Millikan relation and problem, electron mass and classical-radius equations); Part 03 (classical self-energy relations, anode-ray apparatus and properties, ionisation examples, proton constants); Part 04 (neutron reaction/constants, Thomson and Rutherford models, gold-foil observations, scattering formula and definitions); Part 05 (Geiger–Marsden data, nuclear-radius relations, closest-approach derivation, impact-parameter derivation and cross section). All listed valid content has been retained and rechecked after composition. No `[UNCLEAR]` marker occurs in Parts 01–05.
+- Redesigned Parts 01–05 with learning objectives, focused recap strips, retrieval practice, responsive learning cards, chapter-progress header, desktop chapter shortcuts, keyboard-visible navigation, and retained previous/next navigation.
+- Shared components created: `AtomicLearning.tsx` with `LearningObjectives`, `ConceptCard`, `ImportantNote`, `PracticeQuestion`, `SummaryStrip`, and `PartNavigator`; shared shell enhanced with progress, accessible desktop part navigation, and reusable navigator.
+- Original accessible SVG diagrams created: cathode-ray discharge tube, Millikan oil-drop apparatus, Thomson historical model, and head-on closest approach. Existing gold-foil visual remains in use. No graph was required by the Batch 1 material; the scattering relation remains presented exactly as a formula.
+- Scientific corrections and clarifications: “Milliken” is retained in the original heading but the apparatus is correctly identified visually as Millikan; the classical-radius boundary and inertial/rotating-frame centrifugal-force distinction are explicitly clarified. No source formula, substitution, unit, data-table entry, or numerical answer was removed. Rutherford scattering is identified as a Coulomb-scattering relation, not a complete electronic model.
+- Retained approximations: the stated classical electron-radius model and its electrostatic-energy relations; historical Thomson and Rutherford models; the stated nuclear-radius constant and order-of-magnitude radii.
+- Student-visible forbidden-term audit: passed for Parts 01–05. Internal components and hidden coverage metadata are not student-visible.
+- Accessibility/responsive/security: all new SVGs include title and description through `ScientificVisual`; objectives, recap, and navigation use semantic labelled landmarks; figures have responsive viewBoxes; KaTeX containers remain horizontally scrollable on narrow screens; no authentication, entitlement, middleware, or route guard was changed.
+- Validation: `npm run typecheck` passed; `npm run lint` completed with 0 errors (repository-wide pre-existing warnings); `npm run launch-safety` passed all 28 assertions; `npm run build` compiled successfully; `git diff --check` passed. Route/file checks confirmed 55 parts registered and present, no Parts 56–60, no conflict markers, no TODO/FIXME in edited Atomic Structure files, and Parts 06–55 unchanged.
+- Commit: `feat: premium redesign atomic structure parts 01-05`; the exact immutable commit hash and push confirmation are recorded in the Batch 1 handoff after this final audit update.
+- Remaining scope: exact next batch is Parts 06–10. No Part 06–55 content was edited in this batch.
+
 ## Batch 1 — Parts 01–05
 
 - Branch: `feature/atomic-structure-premium-redesign`

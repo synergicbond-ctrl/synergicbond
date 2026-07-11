@@ -1,10 +1,13 @@
 "use client";
 
 import { AtomicPartShell, AuditComment, DataTable, DiagramBox, FormulaLine, MathText, NoteBlock, SourcePage } from "./_shared";
+import { LearningObjectives, ImportantNote, PracticeQuestion, SummaryStrip } from "../_components/AtomicLearning";
+import { ClosestApproachVisual } from "../_components/AtomicVisuals";
 
 export default function Part05() {
   return (
     <AtomicPartShell part={5} title="Rutherford Model Calculations" pages="13-16">
+      <LearningObjectives items={["Interpret the Geiger–Marsden deflection data and the nuclear-size scale.", "Derive the head-on distance of closest approach from energy conservation.", "Follow the momentum-impulse derivation for impact parameter.", "Relate scattering geometry to cross section."]} />
       <SourcePage page={13}>
         <NoteBlock title="Geiger and Marsden table">
           <DataTable
@@ -59,6 +62,7 @@ export default function Part05() {
         </NoteBlock>
         <NoteBlock title="Calculation of Distance of Closest Approach">
           <DiagramBox title="Closest approach">
+            <ClosestApproachVisual />
             <p>Positive nucleus Nu and incoming α particle; far away: KE = known, P.E. = 0; closest: KE = 0.</p>
             <p>
               <MathText math="PE=K\frac{q_1q_2}{r}" />
@@ -114,6 +118,9 @@ export default function Part05() {
           </DiagramBox>
         </NoteBlock>
       </SourcePage>
+      <ImportantNote title="Frame of reference">Coulomb attraction is the real force in an inertial frame. “Centrifugal force” is only a rotating-frame description, as noted in this part.</ImportantNote>
+      <PracticeQuestion prompt={<>For a head-on α-particle approach, what energy statement is used to obtain <MathText math="r=Kq_1q_2/KE" />?</>} answer="The initial kinetic energy becomes electrostatic potential energy at the closest approach, where the instantaneous kinetic energy is zero." />
+      <SummaryStrip items={["Nuclear radius follows RNu = R₀A¹ᐟ³, with R₀ = 1 × 10⁻¹⁵ m; atomic radius is of order 10⁻¹⁰ m.", "Head-on closest approach follows directly from KE = Kq₁q₂/r.", "Impact parameter b and scattering cross section encode how Coulomb repulsion redirects the projectile."]} />
       <AuditComment pages="13-16" unclear={0} />
     </AtomicPartShell>
   );

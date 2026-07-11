@@ -3,6 +3,7 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
 import { BlockMath, InlineMath } from "@/components/math/react-katex";
+import { PartNavigator } from "../_components/AtomicLearning";
 
 export type AtomicPartMeta = {
   part: number;
@@ -93,31 +94,15 @@ export function AtomicPartShell({
         >
           Atomic Structure
         </Link>
-        <header className="mt-6 rounded-3xl border border-cyan-300/15 bg-gradient-to-br from-cyan-400/[0.12] via-slate-950/40 to-violet-500/[0.10] p-6 shadow-2xl shadow-cyan-950/30 sm:p-9">
+        <header className="mt-6 overflow-hidden rounded-3xl border border-cyan-300/15 bg-[radial-gradient(circle_at_top_right,_rgba(34,211,238,.18),_transparent_32%),linear-gradient(135deg,rgba(34,211,238,.12),rgba(2,6,23,.6),rgba(139,92,246,.1))] p-6 shadow-2xl shadow-cyan-950/30 sm:p-9">
           <p className="text-[11px] font-bold uppercase tracking-[0.3em] text-cyan-200">Atomic Structure · Part {String(part).padStart(2, "0")}</p>
           <h1 className="mt-3 text-3xl font-black tracking-tight sm:text-5xl">{title}</h1>
           <div className="mt-6 h-1.5 overflow-hidden rounded-full bg-white/10" aria-label={`Chapter progress: part ${part} of 55`}><div className="h-full rounded-full bg-gradient-to-r from-cyan-300 to-violet-400" style={{ width: `${(part / 55) * 100}%` }} /></div>
           <p className="mt-2 text-sm text-slate-300">Study sequence {part} of 55 · approximately 8–12 minutes</p>
         </header>
+        <div className="mt-6 hidden rounded-xl border border-white/10 bg-slate-950/55 p-3 lg:block lg:sticky lg:top-3 lg:z-10"><nav aria-label="Part shortcuts" className="flex items-center gap-2 overflow-x-auto"><span className="shrink-0 text-xs font-bold uppercase tracking-wider text-slate-400">Chapter</span>{atomicPartMeta.slice(Math.max(0, currentIndex - 2), currentIndex + 3).map((entry) => <Link key={entry.href} href={entry.href} aria-current={entry.part === part ? "page" : undefined} className={`shrink-0 rounded-lg px-3 py-2 text-xs font-bold transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-cyan-300 ${entry.part === part ? "bg-cyan-300 text-slate-950" : "text-slate-300 hover:bg-white/10"}`}>Part {String(entry.part).padStart(2, "0")}</Link>)}</nav></div>
         <div className="mt-8 space-y-8">{children}</div>
-        <nav aria-label="Atomic Structure part navigation" className="mt-10 flex items-center justify-between gap-4 border-t border-white/[0.08] pt-6">
-          {previousPart ? (
-            <Link
-              href={previousPart.href}
-              className="rounded-lg border border-white/15 px-4 py-2 text-sm font-semibold text-white/80 transition hover:border-cyan-300/50 hover:text-cyan-100"
-            >
-              ← Part {String(previousPart.part).padStart(2, "0")}
-            </Link>
-          ) : <span />}
-          {nextPart ? (
-            <Link
-              href={nextPart.href}
-              className="rounded-lg border border-cyan-400/30 bg-cyan-400/10 px-4 py-2 text-sm font-semibold text-cyan-100 transition hover:bg-cyan-400/20"
-            >
-              Part {String(nextPart.part).padStart(2, "0")} →
-            </Link>
-          ) : <span className="text-sm font-semibold text-cyan-200">Final part</span>}
-        </nav>
+        <PartNavigator previous={previousPart ? { href: previousPart.href, label: `Part ${String(previousPart.part).padStart(2, "0")}` } : undefined} next={nextPart ? { href: nextPart.href, label: `Part ${String(nextPart.part).padStart(2, "0")}` } : undefined} />
       </div>
     </article>
   );

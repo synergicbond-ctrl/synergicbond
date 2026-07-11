@@ -1,10 +1,13 @@
 "use client";
 
 import { AtomicPartShell, AuditComment, BulletList, DiagramBox, FormulaLine, MathText, NoteBlock, SourcePage } from "./_shared";
+import { LearningObjectives, PracticeQuestion, SummaryStrip } from "../_components/AtomicLearning";
+import { CathodeRayTubeVisual } from "../_components/AtomicVisuals";
 
 export default function Part01() {
   return (
     <AtomicPartShell part={1} title="Dalton Theory and Cathode Rays" pages="1-3">
+      <LearningObjectives items={["State Dalton’s atomic theory and its chemical-reaction implication.", "Describe how a low-pressure discharge tube produces cathode rays.", "List observations that identify cathode rays as electrons.", "Interpret Thomson’s specific-charge result with its unit."]} />
       <SourcePage page={1}>
         <NoteBlock title="Atomic Structure">
           <h3 className="text-xl font-black text-amber-300">Dalton&apos;s Atomic Theory</h3>
@@ -24,28 +27,7 @@ export default function Part01() {
         <NoteBlock title="Discovery of electron - Cathode ray">
           <p className="text-emerald-300">Cathode Ray Tube or Discharge tube experiment</p>
           <DiagramBox title="Cathode ray tube or discharge tube experiment">
-            <svg viewBox="0 0 760 250" className="h-auto w-full">
-              <rect x="95" y="70" width="560" height="70" rx="35" fill="none" stroke="#e5e7eb" strokeWidth="3" />
-              <path d="M655 70 Q710 105 655 140" fill="none" stroke="#a3e635" strokeWidth="5" />
-              <line x1="60" y1="105" x2="95" y2="105" stroke="#e5e7eb" strokeWidth="3" />
-              <line x1="665" y1="105" x2="720" y2="105" stroke="#e5e7eb" strokeWidth="3" />
-              <line x1="75" y1="65" x2="75" y2="145" stroke="#e5e7eb" strokeWidth="3" />
-              <line x1="680" y1="80" x2="680" y2="130" stroke="#e5e7eb" strokeWidth="3" />
-              <path d="M210 115 H330 M360 95 H490" stroke="#e5e7eb" strokeWidth="3" markerEnd="url(#arrow)" />
-              <text x="250" y="105" fill="#fff" fontSize="24">e</text>
-              <text x="420" y="85" fill="#fff" fontSize="24">e</text>
-              <text x="35" y="95" fill="#fff" fontSize="24">-</text>
-              <text x="700" y="90" fill="#fff" fontSize="24">+</text>
-              <text x="710" y="45" fill="#fff" fontSize="24">ZnS</text>
-              <path d="M705 50 L675 83" stroke="#fff" strokeWidth="3" markerEnd="url(#arrow)" />
-              <path d="M70 145 V205 H720 V105" fill="none" stroke="#e5e7eb" strokeWidth="3" />
-              <text x="310" y="235" fill="#fff" fontSize="26">V</text>
-              <defs>
-                <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
-                  <path d="M0,0 L0,6 L9,3 z" fill="#e5e7eb" />
-                </marker>
-              </defs>
-            </svg>
+            <CathodeRayTubeVisual />
           </DiagramBox>
           <p>Gases are poor/bad conductor of electricity.</p>
           <p>
@@ -96,6 +78,8 @@ export default function Part01() {
           <FormulaLine math="\frac{e}{m}=1.758\times 10^{11}\ \mathrm{C/kg}" />
         </NoteBlock>
       </SourcePage>
+      <PracticeQuestion prompt="Why does the constant value of e/m for every gas–electrode combination support the conclusion that cathode rays contain a universal particle?" answer="A constant ratio shows the rays are made of the same kind of particle, present in all atoms: the electron." />
+      <SummaryStrip items={["Dalton treated atoms as hard, dense and indestructible; chemical reactions rearrange atoms.", "Reduced gas pressure and a high potential difference enable discharge through a gas.", "Thomson found |e/m| = 1.758 × 10¹¹ C kg⁻¹ for cathode-ray particles."]} />
       <AuditComment pages="1-3" unclear={0} />
     </AtomicPartShell>
   );

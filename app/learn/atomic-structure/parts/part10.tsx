@@ -29,7 +29,7 @@ export default function Part10() {
               <MathText math="\frac{8\pi\nu^2}{c^3}\frac{h\nu}{e^{h\nu/kT}-1}" />.
             </p>
           </DiagramBox>
-          <DiagramBox title="Printed comparison graphs">
+          <DiagramBox title="Comparison graphs">
             <p>Left graph: 3000 K, 4000 K, 5000 K, 6000 K; ultraviolet, visible light, infrared; wavelength (angstroms).</p>
             <p>Right graph: T = 5800 K; Rayleigh-Jeans, Planck, Wien; ν [THz].</p>
           </DiagramBox>

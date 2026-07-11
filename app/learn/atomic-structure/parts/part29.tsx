@@ -116,7 +116,7 @@ export default function Part29() {
         "(n+l) rule: lower (n+l) fills first; equal (n+l) → lower n fills first (Madelung / Klechkowsky).",
       ]} />
 
-      <AuditComment pages="90-92" unclear={0} note="page 92 has a single continuation item" />
+      <AuditComment pages="90-92" unclear={0} note="single continuation item retained" />
     </AtomicPartShell>
   );
 }

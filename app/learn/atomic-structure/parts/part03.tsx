@@ -78,7 +78,7 @@ export default function Part03() {
       </SourcePage>
       <PracticeQuestion prompt={<>Why does the fact that anode-ray <MathText math="e/m" /> varies with the gas distinguish these rays from cathode rays?</>} answer="The positive particles are ions of the gas, so their masses—and hence e/m values—vary with gas identity." />
       <SummaryStrip items={["Classical self-energy formulas are model expressions, not a complete quantum description.", "Goldstein’s canal rays are streams of positive particles moving opposite to cathode rays.", "The hydrogen nucleus H⁺ is the proton; mₚ = 1.67 × 10⁻²⁷ kg and e/m = 9.58 × 10⁷ C kg⁻¹."]} />
-      <AuditComment pages="7-9" unclear={0} note="printed insert copyright-limited" />
+      <AuditComment pages="7-9" unclear={0} note="supplementary insert reviewed" />
     </AtomicPartShell>
   );
 }

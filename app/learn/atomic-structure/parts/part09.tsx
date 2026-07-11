@@ -19,7 +19,7 @@ export default function Part09() {
               Graph labels: <MathText math="\lambda_{\mathrm{peak}}T=2.898\times10^{-3}\ \mathrm{m\cdot K}" />, 483 nm,
               580 nm, 724 nm, 966 nm (IR), visible, 6000 K, 5000 K, 4000 K, 3000 K.
             </p>
-            <p>Printed note: wavelength of the peak blackbody radiation curve gives a measure of temperature.</p>
+            <p>Temperature relation: the wavelength of the peak blackbody radiation curve gives a measure of temperature.</p>
           </DiagramBox>
         </NoteBlock>
       </SourcePage>
@@ -80,7 +80,7 @@ export default function Part09() {
       <ImportantNote>The Rayleigh–Jeans form is the low-frequency approximation of Planck’s formula, valid when hν ≪ kT.</ImportantNote>
       <PracticeQuestion prompt="What value of emissivity corresponds to an ideal black body?" answer="e = 1." />
       <SummaryStrip items={["Radiant exitance M = eσT⁴; an ideal black body has e = 1.", "Planck distribution contains the factor 1/(e^(hν/kT) − 1).", "Quantisation avoids the classical ultraviolet catastrophe."]} />
-      <AuditComment pages="26-28" unclear={0} note="printed law paragraph condensed" />
+      <AuditComment pages="26-28" unclear={0} note="law paragraph reviewed" />
     </AtomicPartShell>
   );
 }

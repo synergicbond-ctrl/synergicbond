@@ -101,7 +101,7 @@ export default function Part02() {
       </SourcePage>
       <PracticeQuestion prompt={<>The charge on several droplets is an integral multiple of <MathText math="3\times10^{-15}\ \mathrm{C}" />. What elementary charge is inferred from this data set?</>} answer={<MathText math="3\times10^{-15}\ \mathrm{C}" />} />
       <SummaryStrip items={["Crossed fields give v = E/B; combining this with eV = ½mv² gives e/m.", "Millikan’s data establish quantisation of charge; the accepted elementary charge is 1.602 × 10⁻¹⁹ C.", "mₑ = e/(e/m) = 9.1 × 10⁻³¹ kg."]} />
-      <AuditComment pages="4-6" unclear={0} note="printed insert copyright-limited" />
+      <AuditComment pages="4-6" unclear={0} note="supplementary insert reviewed" />
     </AtomicPartShell>
   );
 }

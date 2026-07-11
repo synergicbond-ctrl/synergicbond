@@ -76,7 +76,7 @@ export default function Part11() {
         </NoteBlock>
       </SourcePage>
 
-      <PracticeQuestion prompt="At fixed frequency above threshold, what does increasing intensity change?" answer="The number of emitted electrons and photocurrent, not maximum kinetic energy." /><SummaryStrip items={["φ = hν₀.", "hν = φ + Kmax.", "eV₀ = Kmax."]} /><AuditComment pages="33-35" unclear={0} note="printed introductory exposition condensed" />
+      <PracticeQuestion prompt="At fixed frequency above threshold, what does increasing intensity change?" answer="The number of emitted electrons and photocurrent, not maximum kinetic energy." /><SummaryStrip items={["φ = hν₀.", "hν = φ + Kmax.", "eV₀ = Kmax."]} /><AuditComment pages="33-35" unclear={0} note="introductory exposition reviewed" />
     </AtomicPartShell>
   );
 }

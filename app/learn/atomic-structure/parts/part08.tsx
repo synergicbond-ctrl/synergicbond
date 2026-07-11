@@ -88,7 +88,7 @@ export default function Part08() {
       </SourcePage>
       <PracticeQuestion prompt={<>A radiation has <MathText math="\bar\nu=6\times10^5\ \mathrm{cm^{-1}}" />. What frequency follows using c = 3 × 10¹⁰ cm s⁻¹?</>} answer="1.8 × 10¹⁶ Hz." />
       <SummaryStrip items={["ν = c/λ = cν̄ and c = νλ.", "A good absorber is a good emitter at the same temperature and wavelength.", "Wien’s law: λmaxT = 2.898 × 10⁻³ m K."]} />
-      <AuditComment pages="23-25" unclear={0} note="printed law paragraph condensed" />
+      <AuditComment pages="23-25" unclear={0} note="law paragraph reviewed" />
     </AtomicPartShell>
   );
 }

@@ -9,12 +9,12 @@ export default function Part49() {
         <NoteBlock title="3d orbitals vs 4d, 5d orbitals">
           <p>
             From radial probability distribution curve, it is evident that for the 3d-orbital, the maximum (i.e. r_max)
-            lies within the maxima of 3s, 3p, 4s and 4p orbitals. Thus, the 3d-orbitals are deeply seated and they can not
+            lies within the maxima of 3s, 3p, 4s and 4p orbitals. Thus, the 3d-orbitals are deeply seated and they cannot
             generally participate in making covalent bonds.
           </p>
           <p>
-            In contrast, for the 4d and 5d series, the r_max of the d-orbitals relatively closer the r_max of relevent
-            valence s- and p-orbitals. Because of relativistic expansion (caused by the contracted inner s- and
+            In contrast, for the 4d and 5d series, the r_max of the d-orbitals lies relatively closer to the r_max of the
+            relevant valence s- and p-orbitals. Because of relativistic expansion (caused by the contracted inner s- and
             p-orbitals) r_max of the (n−1)d orbitals of the heavy congeners increases. In fact, r_max of the 5d and 6s
             orbitals become comparable. Thus bonding ability of the 5d orbitals is increased. In other words, relativistic
             expansion increases attainment of higher oxidation state.
@@ -22,14 +22,14 @@ export default function Part49() {
           <FormulaLine math="\text{The relativistic expansion effect runs as: }5d>4d>3d" />
           <p>
             The effect of this phenomenon can be stated, in general, as follows: The d-orbital of the heavier congeners
-            can participate better in bonding activites. In fact, this makes the higher oxidation state more common in the
+            can participate better in bonding activities. In fact, this makes the higher oxidation state more common in the
             heavier congeners of the d-block elements.
           </p>
         </NoteBlock>
         <NoteBlock title="4f orbital vs 5f orbitals">
           <p>The 4f orbitals of the lanthanides are more deeply buried than the 5f orbitals of actinides.</p>
           <p>
-            Thus the 5f-orbitals can participate better in bonding activites and this also favours the attainment of their
+            Thus the 5f-orbitals can participate better in bonding activities and this also favours the attainment of their
             higher oxidation states.
           </p>
           <DiagramBox title="RDF vs r for 4f/6s and 5f/7s (printed)">

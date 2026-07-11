@@ -63,8 +63,8 @@ export default function Part46() {
         <NoteBlock title="Nodal planes of the p-orbitals">
           <DiagramBox title="p_z / pₓ / p_y nodal planes (diagram)">
             <p>
-              p_z: dumbbell along z, nodal plane yz. pₓ: dumbbell along x, nodal plane zx. p_y: dumbbell along the y
-              diagonal, nodal plane xy. Each p-orbital has exactly one nodal plane (angular node = 1).
+              p_z: dumbbell along z, nodal plane xy. pₓ: dumbbell along x, nodal plane yz. p_y: dumbbell along the y
+              diagonal, nodal plane zx. Each p-orbital has exactly one nodal plane (angular node = 1).
             </p>
           </DiagramBox>
         </NoteBlock>

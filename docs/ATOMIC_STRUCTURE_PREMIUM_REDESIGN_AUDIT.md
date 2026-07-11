@@ -113,3 +113,15 @@
 - Forbidden-term audit: passed. Route count 55/55 unchanged; navigation intact.
 - Validation: typecheck pass, lint 0 errors, launch-safety 28/28 pass.
 - Exact next batch: Batch 10 — Parts 46–50.
+
+## Batch 10 — Parts 46–50
+
+- Content inventory and retention: Part 46 (dz² as superposition of two cloverleaves with doughnut/belly-band naming, node-rule formulas, s-orbital and p-orbital shape blocks with node tables, np nested-dumbbell radial-node table); Part 47 (np dot-density descriptions, five d-orbital shapes with nodal-plane formulas, d(x²−y²) 45°/135° planes, dz² conical surfaces, axial/non-axial classification, 4d/5d growth, gerade/ungerade rule, m assignments table); Part 48 (Beginner's Box-7 questions 1–7 with options, answers and worked node calculations, Unsöld's theorem statement and (2l+1)/4π expression, non-spherical configuration list, p-orbital summation proof 3/4π, 3s/3p/3d penetration-shielding discussion); Part 49 (3d vs 4d/5d relativistic-expansion discussion with 5d>4d>3d, 4f vs 5f burial and oxidation-state consequence, RDF figure meanings, np and nd 3-D gallery descriptions); Part 50 (7d gallery description, 4f/5f/6f general and cubic set descriptions with all orbital labels and spherical-node counts). All retained; verified against pre-edit Git versions.
+- Scientific corrections (demonstrable): Part 46 page-147 nodal-plane assignments corrected to p_z → xy, pₓ → yz, p_y → zx (the transcribed sketch caption contradicted the part's own page-146 table and the physics); Part 47 dz² cone angles corrected from 54.3°/125.7° to 54.7°/125.3° (cos⁻¹(±1/√3)); Part 48 question-2 radial prefactor exponent corrected from (Z/a₀)^¾ to (Z/a₀)^{3/2} (dimensional requirement for R(r); the node answer 0.423 Å is unaffected).
+- Verified unchanged: Q2 node arithmetic (4a₀/5 = 0.423 Å), Q7 roots σ = (3/2)(3±√3), Unsöld sum, p-summation proof, gerade/ungerade rule, all node-count tables.
+- Manual-review items: Part 48 question 1 prints options (A) and (C) both as "r = a₀" — an apparent source artifact left as printed since the original option text cannot be reconstructed; option (C) of question 7 shows √6 where the second root has √3 (also left as printed).
+- Notation/grammar: Part 48 spherical-symmetry sentences repaired ("Hence…"); Part 49 "cannot", "lies relatively closer to", "relevant", "activities" (×2).
+- Visuals: none added — Parts 46–50 are gallery/description-dominated and already carry the batch-9 computed radial visual and batch-8 pz polar plot patterns; the printed 3-D galleries cannot be reproduced without copying source artwork.
+- Forbidden-term audit: passed. Route count 55/55 unchanged; navigation intact.
+- Validation: typecheck pass, lint 0 errors, launch-safety 28/28 pass, production build compiled successfully (scheduled post-Batch-10 build).
+- Exact next batch: Batch 11 — Parts 51–55.

@@ -36,10 +36,10 @@ export default function Part47() {
           <FormulaLine math="d_{x^{2}-y^{2}}:\ x^{2}-y^{2}=0\ \Rightarrow\ x=y,\ x=-y\ (45^{\circ},135^{\circ})\ \text{four lobe}" />
           <DiagramBox title="dz² (diagram)">
             <p>
-              Two lobes along z with an orange equatorial ring; the nodal surfaces are two cones at θ = 54.3° and 125.7°.
+              Two lobes along z with an orange equatorial ring; the nodal surfaces are two cones at θ = 54.7° and 125.3°.
             </p>
           </DiagramBox>
-          <FormulaLine math="d_{z^{2}}:\ \theta=54.3^{\circ},125.7^{\circ}\ \text{— Nodal surfaces are conical}" />
+          <FormulaLine math="d_{z^{2}}:\ \theta=54.7^{\circ},125.3^{\circ}\ \text{— Nodal surfaces are conical}" />
           <p>d-subshell — two axial, three non-axial orbitals.</p>
           <DiagramBox title="4d / 5d radial growth (diagram)">
             <p>Nested cloverleaves: 4d adds one inner shell, 5d adds two inner shells (increasing radial nodes).</p>

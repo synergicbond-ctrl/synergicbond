@@ -17,7 +17,7 @@ export default function Part48() {
           <p>
             <strong>2.</strong> For an orbital in B⁺⁴ radial function is:
           </p>
-          <FormulaLine math="R(r)=\frac{1}{9\sqrt{6}}\left(\frac{Z}{a_0}\right)^{3/4}(4-\sigma)\,\sigma\,e^{-\sigma/2}" />
+          <FormulaLine math="R(r)=\frac{1}{9\sqrt{6}}\left(\frac{Z}{a_0}\right)^{3/2}(4-\sigma)\,\sigma\,e^{-\sigma/2}" />
           <p>where σ = Zr/a₀ and a₀ = 0.529 Å. The radial node of orbital is at distance from nucleus.</p>
           <p>(A) 0.529 Å (B) 2.12 Å (C) 1.06 Å (D) 0.423 Å ✓</p>
           <FormulaLine math="\sigma=4:\ \frac{Zr}{a_0}=4\ \Rightarrow\ r=\frac{4\times a_0}{Z}=\frac{4}{5}\times0.529=0.423\ \text{Å}" />
@@ -79,8 +79,8 @@ export default function Part48() {
           <FormulaLine math="\psi_{p_x}=\sqrt{\frac{3}{4\pi}}\sin\theta\cos\phi" />
           <FormulaLine math="\psi_{p_y}=\sqrt{\frac{3}{4\pi}}\sin\theta\sin\phi" />
           <p>
-            Show that the summation of electron distribution probability function of three p-orbital is spherical
-            symmetrical.
+            Show that the summation of the electron distribution probability functions of the three p-orbitals is
+            spherically symmetrical.
           </p>
         </NoteBlock>
       </SourcePage>
@@ -91,7 +91,10 @@ export default function Part48() {
           <FormulaLine math="=\frac{3}{4\pi}\sin^{2}\theta\cos^{2}\phi+\frac{3}{4\pi}\sin^{2}\theta\sin^{2}\phi+\frac{3}{4\pi}\cos^{2}\theta" />
           <FormulaLine math="=\frac{3}{4\pi}\sin^{2}\theta\left(\cos^{2}\phi+\sin^{2}\phi\right)+\frac{3}{4\pi}\cos^{2}\theta" />
           <FormulaLine math="=\frac{3}{4\pi}\left(\sin^{2}\theta+\cos^{2}\theta\right)=\frac{3}{4\pi}" />
-          <p>Since the summation of electron distribution probability function of three p-orbital is spherically symmetrical.</p>
+          <p>
+            Hence, the summation of the electron distribution probability functions of the three p-orbitals is spherically
+            symmetrical.
+          </p>
         </NoteBlock>
         <NoteBlock title="Penetration and shielding of 3s, 3p, 3d">
           <DiagramBox title="P(r) vs r for 3s, 3p, 3d (diagram)">

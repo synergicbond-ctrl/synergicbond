@@ -63,7 +63,7 @@ Audit date: 2026-07-11
 
 ## Batch A update (parts 13–18) — 2026-07-11
 
-Source PDF now present at `private/source/Atomic Structure Kohinoor.pdf` (192 pages, verified with `pdfinfo`).
+Source PDF now present at `private/source/Atomic Structure.pdf` (192 pages, verified with `pdfinfo`).
 Pages rendered at 200 DPI to `/private/tmp/atomic-structure-batch-A` (outside the repository) and deleted after transcription.
 
 | Part | Source pages | Title | Status |

@@ -1,10 +1,13 @@
 "use client";
 
 import { AtomicPartShell, AuditComment, DiagramBox, FormulaLine, MathText, NoteBlock, SourcePage } from "./_shared";
+import { LearningObjectives, PracticeQuestion, SummaryStrip } from "../_components/AtomicLearning";
+import { PlanckComparisonVisual } from "../_components/AtomicVisuals";
 
 export default function Part10() {
   return (
     <AtomicPartShell part={10} title="Rayleigh-Jeans and Planck Quantum Theory" pages="29-32">
+      <LearningObjectives items={["State the Rayleigh–Jeans formula and its failure.", "Explain Planck’s quantum hypothesis.", "Calculate photon energy from wavelength or energy.", "Find photon number from a required absorbed energy."]} />
       <SourcePage page={29}>
         <NoteBlock title="Rayleigh-Jeans Formula">
           <FormulaLine math="u(\nu)d\nu=\bar{E}G(\nu)d\nu=\frac{8\pi KT}{c^3}\nu^2d\nu" />
@@ -18,6 +21,7 @@ export default function Part10() {
             u(ν)dν - Total energy per unit volume in the cavity in the frequency from ν to ν + dν
           </p>
           <DiagramBox title="Classical vs quantum radiation curves">
+            <PlanckComparisonVisual />
             <p>Axes: Radiated Intensity vs Frequency.</p>
             <p>Labels: Towards Ultraviolet Catastrophe; Rayleigh-Jeans Law; Classical; Quantum; Planck Law; curves agree at very low frequencies.</p>
             <p>
@@ -101,6 +105,8 @@ export default function Part10() {
           <FormulaLine math="=27.7\simeq28" />
         </NoteBlock>
       </SourcePage>
+      <PracticeQuestion prompt={<>What wavelength corresponds to a photon energy of <MathText math="20\ \mathrm{eV}" /> in the worked calculation?</>} answer={<MathText math="621.2\ \mathrm{\AA}" />} />
+      <SummaryStrip items={["Rayleigh–Jeans uses average oscillator energy kT and fails at high frequency.", "Planck proposed discrete quanta with E = hν and total energy E = nhν.", "The worked green-light threshold problem gives approximately 28 photons."]} />
       <AuditComment pages="29-32" unclear={0} />
     </AtomicPartShell>
   );

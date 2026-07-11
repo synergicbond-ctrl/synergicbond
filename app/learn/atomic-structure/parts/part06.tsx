@@ -1,10 +1,12 @@
 "use client";
 
 import { AtomicPartShell, AuditComment, DiagramBox, FormulaLine, MathText, NoteBlock, SourcePage } from "./_shared";
+import { LearningObjectives, PracticeQuestion, SummaryStrip } from "../_components/AtomicLearning";
 
 export default function Part06() {
   return (
     <AtomicPartShell part={6} title="Rutherford Scattering Cross Section" pages="17-19">
+      <LearningObjectives items={["Derive the Rutherford angular count relation.", "Interpret impact parameter and scattering cross section.", "Solve closest-approach and α-particle energy problems.", "Use dimensional units consistently in nuclear-scale calculations."]} />
       <SourcePage page={17}>
         <NoteBlock title="Gold foil target and scattered fraction">
           <DiagramBox title="Gold foil slab">
@@ -84,6 +86,8 @@ export default function Part06() {
           <FormulaLine math="v=2\times10^6\ \mathrm{m/sec}" />
         </NoteBlock>
       </SourcePage>
+      <PracticeQuestion prompt={<>For fixed projectile energy, why does the Rutherford count rise strongly at small <MathText math="\theta" />?</>} answer="The count contains 1/sin⁴(θ/2), which becomes very large as θ approaches zero." />
+      <SummaryStrip items={["f = ntσ connects target thickness, number density and cross section.", "Rutherford count is proportional to 1/sin⁴(θ/2).", "The Mg example gives r = 6.4 × 10⁻¹⁵ m."]} />
       <AuditComment pages="17-19" unclear={0} />
     </AtomicPartShell>
   );

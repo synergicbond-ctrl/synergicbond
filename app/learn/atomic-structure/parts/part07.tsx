@@ -2,10 +2,12 @@
 
 import { AtomicPartShell, AuditComment, DiagramBox, FormulaLine, MathText, NoteBlock, SourcePage } from "./_shared";
 import { ElectromagneticSpectrumVisual } from "../_components/AtomicVisuals";
+import { LearningObjectives, ImportantNote, PracticeQuestion, SummaryStrip } from "../_components/AtomicLearning";
 
 export default function Part07() {
   return (
     <AtomicPartShell part={7} title="Rutherford Drawbacks and EM Waves" pages="20-22">
+      <LearningObjectives items={["Apply the inverse-square momentum dependence of closest approach.", "State the classical stability problem in Rutherford’s model.", "Describe electromagnetic-wave field geometry.", "Order electromagnetic radiation by frequency and wavelength."]} />
       <SourcePage page={20}>
         <NoteBlock title="Problem">
           <p>
@@ -78,6 +80,9 @@ export default function Part07() {
           </DiagramBox>
         </NoteBlock>
       </SourcePage>
+      <ImportantNote>Electromagnetic waves do not require a material medium; their vacuum speed is c.</ImportantNote>
+      <PracticeQuestion prompt="If an α particle’s momentum doubles, what happens to its head-on closest-approach distance?" answer="It becomes one quarter of the original distance." />
+      <SummaryStrip items={["Classical radiation predicts an orbiting electron would lose energy and collapse.", "EM electric and magnetic fields are mutually perpendicular and transverse to propagation.", "Frequency increases from radio to γ rays; wavelength changes in the reverse order."]} />
       <AuditComment pages="20-22" unclear={0} />
     </AtomicPartShell>
   );

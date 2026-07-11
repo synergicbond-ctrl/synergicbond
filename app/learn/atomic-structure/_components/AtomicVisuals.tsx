@@ -44,6 +44,15 @@ export function ElectromagneticSpectrumVisual() {
   </ScientificVisual>;
 }
 
+export function BlackBodyCurvesVisual() {
+  const curves = [["3000 K", "#a78bfa", 330, 130], ["4000 K", "#67e8f9", 265, 105], ["5000 K", "#facc15", 210, 85], ["6000 K", "#fb7185", 175, 68]] as const;
+  return <ScientificVisual title="Black-body spectral curves" description="Spectral irradiance against wavelength for four temperatures. As temperature rises, the peak becomes higher and moves to shorter wavelength, illustrating Wien's displacement law." viewBox="0 0 500 290" className="h-auto w-full"><path d="M55 25V235H470" fill="none" stroke="#94a3b8" strokeWidth="2"/><text x="8" y="35" fill="#e2e8f0" fontSize="13">spectral irradiance</text><text x="380" y="260" fill="#e2e8f0" fontSize="13">wavelength / nm</text>{curves.map(([label, colour, peak, height]) => <g key={label}><path d={`M56 235 C${peak-130} 235 ${peak-80} ${height} ${peak} ${height} C${peak+60} ${height} ${peak+120} 225 465 235`} fill="none" stroke={colour} strokeWidth="2.5"/><text x={peak+8} y={height-6} fill={colour} fontSize="13">{label}</text></g>)}<text x="64" y="278" fill="#94a3b8" fontSize="12">higher T → higher peak and shorter λmax</text></ScientificVisual>;
+}
+
+export function PlanckComparisonVisual() {
+  return <ScientificVisual title="Rayleigh-Jeans and Planck comparison" description="Radiated intensity against frequency. Planck's curve rises then falls at high frequency, whereas the Rayleigh-Jeans prediction diverges upward in the ultraviolet region; they agree at low frequency." viewBox="0 0 500 280" className="h-auto w-full"><path d="M55 25V230H470" fill="none" stroke="#94a3b8" strokeWidth="2"/><text x="10" y="37" fill="#e2e8f0" fontSize="13">radiated intensity</text><text x="414" y="252" fill="#e2e8f0" fontSize="13">frequency ν</text><path d="M55 230C150 230 180 70 275 85S385 185 465 220" fill="none" stroke="#67e8f9" strokeWidth="3"/><path d="M55 230C170 230 260 185 465 28" fill="none" stroke="#f472b6" strokeWidth="3"/><text x="300" y="105" fill="#a5f3fc" fontSize="13">Planck law</text><text x="322" y="50" fill="#f9a8d4" fontSize="13">Rayleigh–Jeans</text><text x="66" y="270" fill="#94a3b8" fontSize="12">agreement at low frequency; classical result diverges at high frequency</text></ScientificVisual>;
+}
+
 export function PhotoelectricApparatusVisual() {
   return <ScientificVisual title="Photoelectric-effect apparatus" description="Monochromatic light enters an evacuated tube and strikes the emitter plate. Ejected photoelectrons travel to the collector plate, and the resulting photocurrent is measured by a microammeter in a circuit with a variable potential source." viewBox="0 0 460 290" className="h-auto w-full">
     <defs><marker id="pe-arrow" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3z" fill="#facc15" /></marker><marker id="pe-earrow" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3z" fill="#67e8f9" /></marker></defs>

@@ -1,5 +1,14 @@
 # Atomic Structure Premium Redesign Audit
 
+## Batch 2 — Parts 06–10
+
+- Inspected and retained all content in Parts 06–10: Rutherford cross-section derivation and two calculations; Rutherford limitations and EM-wave properties including the retained `[UNCLEAR]` entry; wave terms, black bodies, Kirchhoff and Wien law; Stefan–Boltzmann, Planck and Rayleigh–Jeans relations; Planck quantum theory and all worked photon problems.
+- Redesigned Parts 06–10 with objectives, retrieval questions, recaps, explanatory notes, and existing shared responsive navigation.
+- Added two accessible computed instructional visuals: black-body spectral curves (peak rises and shifts to shorter wavelength with increasing temperature) and Planck versus Rayleigh–Jeans comparison.
+- Scientific clarifications: low-frequency condition `hν ≪ kT` stated near its use; EM vacuum propagation stated; no original formula, unit, numerical result, `[UNCLEAR]` marker, or problem removed.
+- Retained approximations: low-frequency Planck expansion, ideal black-body treatment, and the stated nuclear-scattering model.
+- Remaining scope: exact next batch is Parts 11–15. Parts 11–55 were not edited.
+
 ## Batch 1 — Parts 01–05 (current branch delivery)
 
 - Files inspected before editing: Parts 01–05; `parts/_shared.tsx`; the Atomic Structure dynamic route and chapter index; `AtomicVisuals.tsx`; this audit; package scripts; and the applicable Next App Router page and Link guidance.

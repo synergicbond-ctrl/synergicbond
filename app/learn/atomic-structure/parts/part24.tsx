@@ -1,11 +1,13 @@
 "use client";
 
 import { AtomicPartShell, AuditComment, DiagramBox, FormulaLine, MathText, NoteBlock, SourcePage } from "./_shared";
+import { ComparisonTable, ImportantNote, LearningObjectives, SummaryStrip } from "../_components/AtomicLearning";
 import { SommerfeldOrbitsVisual } from "../_components/AtomicVisuals";
 
 export default function Part24() {
   return (
     <AtomicPartShell part={24} title="Sommerfeld Extension and Spin Doublets" pages="74-76">
+      <LearningObjectives items={["describe the historical Sommerfeld extension of Bohr’s model", "relate K and l in the old-quantum-number notation", "separate historical orbit pictures from modern quantum-mechanical language"]} />
       <SourcePage page={74}>
         <NoteBlock title="Sommerfeld Extension of Bohr Model">
           <p>
@@ -26,6 +28,7 @@ export default function Part24() {
             <p>Three nested paths about the nucleus dot — one circle and two ellipses of different widths, labelled n = 3.</p>
           </DiagramBox>
         </NoteBlock>
+        <ImportantNote title="Historical model, not a modern orbital picture">Elliptical paths are part of the Sommerfeld extension of the Bohr model. In quantum mechanics, an electron is described by a state or orbital rather than a definite classical path around the nucleus.</ImportantNote>
       </SourcePage>
 
       <SourcePage page={75}>
@@ -50,6 +53,7 @@ export default function Part24() {
           </p>
           <p>In the presence of an external field, the increase in energy of the orbits is different.</p>
         </NoteBlock>
+        <ComparisonTable headers={["Old-quantum description", "Modern caution"]} rows={[["K labels the allowed ellipse families; l = K − 1 in this presentation.", "The modern orbital angular-momentum quantum number l labels wave functions, not the shape of a particle trajectory."], ["External fields split energies and therefore spectral lines.", "Actual fine structure and Zeeman patterns require quantum mechanics, including spin and relativistic effects."]]} />
       </SourcePage>
 
       <SourcePage page={76}>
@@ -71,7 +75,10 @@ export default function Part24() {
             <MathText math="m_s" /> is the spin quantum number.
           </p>
         </NoteBlock>
+        <ImportantNote title="Spin language">The clockwise/anticlockwise image is a historical visualisation only. Electron spin is intrinsic angular momentum; for an electron, <MathText math="s=\tfrac12" /> and the measured spin component is <MathText math="m_s\hbar" /> with <MathText math="m_s=\pm\tfrac12" />.</ImportantNote>
       </SourcePage>
+
+      <SummaryStrip items={["For n = 3, K = 3, 2, 1 gives one circle and two ellipse families in the historical model.", "The listed l values run from 0 to n − 1.", "Energy splitting produces different transition wavelengths and hence separated spectral lines."]} />
 
       <AuditComment pages="74-76" unclear={0} />
     </AtomicPartShell>

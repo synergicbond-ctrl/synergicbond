@@ -1,10 +1,13 @@
 "use client";
 
-import { AtomicPartShell, AuditComment, FormulaLine, MathText, NoteBlock, SourcePage } from "./_shared";
+import { AtomicPartShell, AuditComment, DiagramBox, FormulaLine, MathText, NoteBlock, SourcePage } from "./_shared";
+import { ImportantNote, LearningObjectives, SummaryStrip } from "../_components/AtomicLearning";
+import { UncertaintyTradeoffVisual } from "../_components/AtomicVisuals";
 
 export default function Part22() {
   return (
     <AtomicPartShell part={22} title="Wave Packet Energy and Uncertainty Problems" pages="68-70">
+      <LearningObjectives items={["derive E = ħω from wave-packet group velocity", "track the convention used in an energy–time uncertainty estimate", "estimate natural spectral widths from state lifetimes"]} />
       <SourcePage page={68}>
         <NoteBlock title="Problem — total energy of a particle is E = ħω">
           <p>
@@ -46,6 +49,8 @@ export default function Part22() {
           <FormulaLine math="\hbar\omega=E," />
           <p>which is the same that holds for photons.</p>
         </NoteBlock>
+        <DiagramBox title="Wave-packet width and spectral spread"><UncertaintyTradeoffVisual /><p className="mt-3 text-sm text-slate-300">A packet confined in position requires a wider range of <MathText math="k" /> values. Since <MathText math="p=\hbar k" /> and <MathText math="E=\hbar\omega" />, that spread becomes a momentum or energy spread.</p></DiagramBox>
+        <ImportantNote title="Convention used in this derivation">This worked derivation explicitly starts from <MathText math="\Delta x\,\Delta k=2\pi" />, so it obtains <MathText math="\Delta E\,\Delta t=h" />. In the standard-deviation convention, the familiar lower bound is <MathText math="\Delta E\,\Delta t\ge\hbar/2" />; the numerical factor depends on how widths are defined.</ImportantNote>
         <NoteBlock title="Problem — energy–time uncertainty relation">
           <p>
             The time required for a wave packet to move the distance equal to the width of the wave packet is{" "}
@@ -120,6 +125,8 @@ export default function Part22() {
           <FormulaLine math="\Delta t=\frac{\hbar}{2}\frac{1}{\Delta E}=\frac{(1.05\times10^{-34}\ \text{J s})}{2}\,\frac{1}{(56\times1.6\times10^{-13}\ \text{J})}=5.86\times10^{-24}\ \text{s}" />
         </NoteBlock>
       </SourcePage>
+
+      <SummaryStrip items={["The integration constant in ħω is the rest-energy contribution.", "Lifetime limits spectral sharpness: shorter Δt means larger ΔE.", "Use ΔE/E = Δλ/λ only for a small wavelength width."]} />
 
       <AuditComment pages="68-70" unclear={0} />
     </AtomicPartShell>

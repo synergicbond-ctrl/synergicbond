@@ -1,10 +1,13 @@
 "use client";
 
-import { AtomicPartShell, AuditComment, FormulaLine, MathText, NoteBlock, SourcePage } from "./_shared";
+import { AtomicPartShell, AuditComment, DiagramBox, FormulaLine, MathText, NoteBlock, SourcePage } from "./_shared";
+import { ConceptCard, ImportantNote, LearningObjectives, SummaryStrip } from "../_components/AtomicLearning";
+import { PhotonFluxGeometryVisual } from "../_components/AtomicVisuals";
 
 export default function Part21() {
   return (
     <AtomicPartShell part={21} title="Bohr Magneton and Photon Flux Problems" pages="65-67">
+      <LearningObjectives items={["connect orbital angular momentum to magnetic moment", "turn light power and geometry into a photon rate", "distinguish phase velocity from group velocity"]} />
       <SourcePage page={65}>
         <NoteBlock title="Quantized magnetic moment (conclusion)">
           <p>From the definition of the angular momentum</p>
@@ -19,6 +22,10 @@ export default function Part21() {
             where <MathText math="m_B=e\hbar/2m=9.27\times10^{-24}\ [\text{A}\cdot\text{m}^2]" /> is the Bohr magneton.
           </p>
         </NoteBlock>
+        <ConceptCard title="Geometry before arithmetic">
+          <p>The photon-rate calculation has two separate ideas: isotropic spreading sets the intensity at the eye, then the pupil&apos;s area selects a small part of that flux.</p>
+          <DiagramBox title="Isotropic photon flux and pupil aperture"><PhotonFluxGeometryVisual /><p className="mt-3 text-sm text-slate-300">The diagram explains why the inverse-square factor belongs to intensity, while the pupil enters only through <MathText math="A=\pi r_{\rm pupil}^{2}" />.</p></DiagramBox>
+        </ConceptCard>
         <NoteBlock title="Problem — photons striking the eye">
           <p>
             Consider an experiment. A student is at a distance of 10 m from a light source whose power is{" "}
@@ -38,6 +45,7 @@ export default function Part21() {
           <FormulaLine math="R=IA=0.032\times\pi\times(2\times10^{-3})^{2}=402.1\times10^{-9}\ \left[\frac{\text{J}}{\text{s}}\right]," />
           <p>where A is the area of the pupil.</p>
         </NoteBlock>
+        <ImportantNote title="Interpret the one-photon condition">Part (b) means an average arrival rate of one photon per second through the pupil. Photon detection is intrinsically discrete, so individual one-second intervals need not each contain exactly one photon.</ImportantNote>
       </SourcePage>
 
       <SourcePage page={66}>
@@ -66,6 +74,9 @@ export default function Part21() {
             the velocity of the particle becomes small compared to the speed of light?
           </p>
         </NoteBlock>
+        <ConceptCard title="Why the two phase-velocity formulae do not match">
+          <p>The relativistic expression uses total energy, including rest energy; the non-relativistic expression uses kinetic energy only. Their different zero points are the reason the phase velocities do not approach one another as <MathText math="v\ll c" />.</p>
+        </ConceptCard>
       </SourcePage>
 
       <SourcePage page={67}>
@@ -102,6 +113,8 @@ export default function Part21() {
           </p>
         </NoteBlock>
       </SourcePage>
+
+      <SummaryStrip items={["Orbital magnetic moment is proportional to angular momentum: μ = (e/2m)L.", "At fixed aperture, photon rate falls as 1/r².", "For a non-relativistic matter wave, vₚ = v_g/2 while v_g = v."]} />
 
       <AuditComment pages="65-67" unclear={0} />
     </AtomicPartShell>

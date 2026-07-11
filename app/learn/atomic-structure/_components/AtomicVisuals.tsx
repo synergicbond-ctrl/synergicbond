@@ -263,6 +263,49 @@ export function SommerfeldOrbitsVisual() {
   </ScientificVisual>;
 }
 
+export function PhotonFluxGeometryVisual() {
+  return <ScientificVisual title="Photon flux through a pupil" description="An isotropic point source produces a spherical intensity surface at distance r. A small circular pupil intercepts its area A, so its received power is intensity times area." viewBox="0 0 620 300" className="h-auto w-full">
+    <defs><marker id="flux-arrow" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3z" fill="#67e8f9" /></marker></defs>
+    <circle cx="130" cy="150" r="25" fill="#facc15" opacity=".9" /><text x="104" y="195" fill="#fde68a" fontSize="15">source, P</text>
+    <path d="M155 150H460" stroke="#67e8f9" strokeWidth="2" strokeDasharray="6 6" markerEnd="url(#flux-arrow)" /><text x="284" y="137" fill="#a5f3fc" fontSize="15">distance r</text>
+    <path d="M130 50A150 100 0 0 1 130 250" fill="none" stroke="#a78bfa" strokeWidth="2" /><path d="M130 50A150 100 0 0 0 130 250" fill="none" stroke="#a78bfa" strokeWidth="2" strokeDasharray="5 5" />
+    <ellipse cx="490" cy="150" rx="24" ry="38" fill="#fb7185" opacity=".38" stroke="#fda4af" strokeWidth="2" /><text x="462" y="208" fill="#fecdd3" fontSize="15">pupil area A</text>
+    <text x="200" y="276" fill="#94a3b8" fontSize="14">isotropic spreading: I = P/(4πr²), received power R = IA</text>
+  </ScientificVisual>;
+}
+
+export function UncertaintyTradeoffVisual() {
+  const gaussian = (spread: number) => Array.from({ length: 81 }, (_, i) => {
+    const x = i * 4;
+    const y = 116 - 70 * Math.exp(-((x - 160) ** 2) / (2 * spread * spread));
+    return `${x + 50},${y}`;
+  }).join(" ");
+  return <ScientificVisual title="Localisation and momentum spread trade-off" description="A narrow wave packet in position space has a broad spread in wave number and therefore momentum. A broad wave packet has a narrow momentum spread. The sketch illustrates the reciprocal relation rather than a numerical scale." viewBox="0 0 760 290" className="h-auto w-full">
+    <path d="M50 130H350M50 30V130M430 130H730M430 30V130" stroke="#94a3b8" strokeWidth="2" />
+    <polyline points={gaussian(22)} fill="none" stroke="#67e8f9" strokeWidth="3" /><polyline points={gaussian(72)} fill="none" stroke="#facc15" strokeWidth="3" />
+    <text x="50" y="160" fill="#e2e8f0" fontSize="15">position x</text><text x="4" y="42" fill="#e2e8f0" fontSize="15">amplitude</text>
+    <path d="M430 130H730M430 30V130" stroke="#94a3b8" strokeWidth="2" /><polyline points={gaussian(72).replace(/(\d+),(\d+(?:\.\d+)?)/g, (_, x, y) => `${Number(x) + 380},${y}`)} fill="none" stroke="#67e8f9" strokeWidth="3" /><polyline points={gaussian(22).replace(/(\d+),(\d+(?:\.\d+)?)/g, (_, x, y) => `${Number(x) + 380},${y}`)} fill="none" stroke="#facc15" strokeWidth="3" />
+    <text x="430" y="160" fill="#e2e8f0" fontSize="15">wave number k (and momentum p = ħk)</text>
+    <text x="52" y="205" fill="#a5f3fc" fontSize="14">narrow Δx</text><text x="176" y="205" fill="#fde68a" fontSize="14">broad Δx</text><text x="435" y="205" fill="#a5f3fc" fontSize="14">broad Δk</text><text x="590" y="205" fill="#fde68a" fontSize="14">narrow Δk</text>
+    <text x="50" y="260" fill="#94a3b8" fontSize="14">qualitative Fourier-pair picture: localisation requires a range of k values; it is not an experimental error bar.</text>
+  </ScientificVisual>;
+}
+
+export function DeBroglieVoltageVisual() {
+  const points = Array.from({ length: 121 }, (_, i) => {
+    const voltageKv = 0.1 + i * 0.5;
+    const wavelengthAngstrom = 12.24 / Math.sqrt(voltageKv * 1000);
+    return `${65 + (voltageKv / 60.1) * 470},${235 - wavelengthAngstrom * 500}`;
+  }).join(" ");
+  return <ScientificVisual title="Electron de Broglie wavelength versus accelerating voltage" description="A graph of the non-relativistic electron de Broglie wavelength in angstroms as a function of accelerating voltage in kilovolts. The curve decreases as one over the square root of voltage." viewBox="0 0 600 310" className="h-auto w-full">
+    <path d="M65 25V235H545" fill="none" stroke="#94a3b8" strokeWidth="2" /><polyline points={points} fill="none" stroke="#67e8f9" strokeWidth="3" />
+    {[10, 20, 30, 40, 50, 60].map((v) => <g key={v}><path d={`M${65 + (v / 61) * 470} 235v6`} stroke="#94a3b8" /><text x={58 + (v / 61) * 470} y="256" fill="#94a3b8" fontSize="12">{v}</text></g>)}
+    {[0.1, 0.2, 0.3].map((l) => <g key={l}><path d={`M59 ${235 - l * 500}h6`} stroke="#94a3b8" /><text x="28" y={239 - l * 500} fill="#94a3b8" fontSize="12">{l}</text></g>)}
+    <text x="350" y="283" fill="#e2e8f0" fontSize="14">accelerating voltage V / kV</text><text x="8" y="18" fill="#e2e8f0" fontSize="14">λ / Å</text><text x="300" y="55" fill="#a5f3fc" fontSize="14">λ = 12.24/√V (V in volts)</text>
+    <text x="65" y="304" fill="#94a3b8" fontSize="12">non-relativistic plot; a relativistic correction becomes important at high voltage</text>
+  </ScientificVisual>;
+}
+
 export function BohrOrbitsVisual() {
   const orbits = [[45, "n = 1 (K)"], [78, "n = 2 (L)"], [111, "n = 3 (M)"], [144, "n = 4 (N)"]] as const;
   return <ScientificVisual title="Bohr stationary orbits" description="Concentric circular orbits around a central positive nucleus, numbered n equals one to four outward and lettered K, L, M and N. Electron energy increases with distance from the nucleus while successive energy gaps decrease." viewBox="0 0 440 310" className="h-auto w-full">

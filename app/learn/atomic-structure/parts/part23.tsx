@@ -1,10 +1,13 @@
 "use client";
 
-import { AtomicPartShell, AuditComment, FormulaLine, MathText, NoteBlock, SourcePage } from "./_shared";
+import { AtomicPartShell, AuditComment, DiagramBox, FormulaLine, MathText, NoteBlock, SourcePage } from "./_shared";
+import { ImportantNote, LearningObjectives, SummaryStrip } from "../_components/AtomicLearning";
+import { UncertaintyTradeoffVisual } from "../_components/AtomicVisuals";
 
 export default function Part23() {
   return (
     <AtomicPartShell part={23} title="Uncertainty Principle Worked Problems" pages="71-73">
+      <LearningObjectives items={["estimate localisation limits across macroscopic and microscopic cases", "use de Broglie wavelength to reason about resolution", "recognise uncertainty estimates as order-of-magnitude arguments"]} />
       <SourcePage page={71}>
         <NoteBlock title="Lifetime and travel distance (conclusion)">
           <p>
@@ -12,6 +15,7 @@ export default function Part23() {
           </p>
           <FormulaLine math="\text{Distance travelled before disintegration}=(5.86\times10^{-24}\ \text{s})(10^{8}\ \text{m/s})=5.86\times10^{-16}\ \text{m}" />
         </NoteBlock>
+        <DiagramBox title="What a localisation estimate means"><UncertaintyTradeoffVisual /><p className="mt-3 text-sm text-slate-300">The extremely small bullet result is physical, not a failure of the calculation: Planck&apos;s constant makes quantum uncertainty negligible on everyday scales.</p></DiagramBox>
         <NoteBlock title="Problem — bullet uncertainty">
           <p>
             A bullet of mass 0.03 kg is moving with a velocity of 500 m s&#8315;&#185;. The speed is measured up to an accuracy
@@ -59,6 +63,7 @@ export default function Part23() {
           <FormulaLine math="(10^{-15}\ \text{m})\,\Delta p\ge\frac{\hbar}{2}" />
           <FormulaLine math="\Delta p\ge\frac{1.05\times10^{-34}\ \text{J s}}{2\,(10^{-15}\ \text{m})}=5.25\times10^{-20}\ \text{kg m s}^{-1}" />
         </NoteBlock>
+        <ImportantNote title="Relativistic check in the nuclear estimate">The inferred electron momentum is large enough that <MathText math="E\simeq pc" /> is the appropriate energy estimate. The conclusion concerns a pre-existing electron confined to nuclear dimensions; β decay instead creates the electron in the decay process.</ImportantNote>
       </SourcePage>
 
       <SourcePage page={72}>
@@ -106,6 +111,8 @@ export default function Part23() {
           <FormulaLine math="(\Delta E)(\Delta t)\ge\frac{\hbar}{2}\qquad\text{(i)}" />
         </NoteBlock>
       </SourcePage>
+
+      <SummaryStrip items={["A smaller Δx requires a larger momentum spread Δp.", "Resolving power is limited by wavelength, so equal λ means equal momentum.", "The Bohr-radius calculation is a variational, order-of-magnitude argument—not a classical orbit proof."]} />
 
       <SourcePage page={73}>
         <NoteBlock title="Natural line width (continued)">

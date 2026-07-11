@@ -1,10 +1,13 @@
 "use client";
 
-import { AtomicPartShell, AuditComment, DataTable, FormulaLine, MathText, NoteBlock, SourcePage } from "./_shared";
+import { AtomicPartShell, AuditComment, DataTable, DiagramBox, FormulaLine, MathText, NoteBlock, SourcePage } from "./_shared";
+import { ImportantNote, LearningObjectives, SummaryStrip } from "../_components/AtomicLearning";
+import { DeBroglieVoltageVisual } from "../_components/AtomicVisuals";
 
 export default function Part25() {
   return (
     <AtomicPartShell part={25} title="Dual Nature and de Broglie Equation" pages="77-80">
+      <LearningObjectives items={["derive and apply the de Broglie relation", "compare photon and massive-particle relationships without mixing them", "identify when an electron wavelength needs a relativistic correction"]} />
       <SourcePage page={77}>
         <NoteBlock title="Quantum-mechanical spin angular momentum">
           <p>
@@ -20,6 +23,7 @@ export default function Part25() {
             According to deBroglie — like light, material particle also have dual nature of wave as well as particle (wavicle).
           </p>
         </NoteBlock>
+        <DiagramBox title="Electron wavelength set by accelerating voltage"><DeBroglieVoltageVisual /><p className="mt-3 text-sm text-slate-300">The curve is generated from the stated non-relativistic relation. It shows why higher accelerating voltage improves electron-beam resolution by reducing <MathText math="\lambda" />.</p></DiagramBox>
         <NoteBlock title="Derivation of de Broglie equation">
           <p>According to Planck&apos;s quantum theory,</p>
           <FormulaLine math="E=h\nu\qquad\cdots\text{(i)}" />
@@ -38,6 +42,7 @@ export default function Part25() {
           <p>for e&#8315;,</p>
           <FormulaLine math="\lambda=\sqrt{\frac{150}{V}}=\frac{12.24}{\sqrt{V}}\ \text{\AA}" />
         </NoteBlock>
+        <ImportantNote title="Scope of the 12.24 rule">The convenient coefficient <MathText math="12.24/\sqrt V" /> gives <MathText math="\lambda" /> in Å for an electron accelerated through <MathText math="V" /> volts, using the non-relativistic kinetic-energy relation.</ImportantNote>
       </SourcePage>
 
       <SourcePage page={79}>
@@ -71,7 +76,10 @@ export default function Part25() {
           <FormulaLine math="KE=(m-m_0)c^{2}" />
           <FormulaLine math="eV=(m-m_0)c^{2}" />
         </NoteBlock>
+        <ImportantNote title="Why the nuclear-speed result signals a failed approximation">The non-relativistic substitution predicts <MathText math="v\approx10^{12}\ \text{m s}^{-1}" />, greater than c, so it cannot be physically used. Its useful message is that localising a pre-existing electron to nuclear dimensions would require an enormous relativistic momentum and energy; it does not mean β-decay electrons were stored inside nuclei.</ImportantNote>
       </SourcePage>
+
+      <SummaryStrip items={["For a massive particle, λ = h/p; λ = h/mv is non-relativistic shorthand.", "For electrons accelerated through V, λ = 12.24/√V Å is a useful low-voltage rule.", "At high voltage, use relativistic momentum rather than an effective-mass shortcut."]} />
 
       <SourcePage page={80}>
         <NoteBlock title="Relativistic wavelength">
@@ -110,7 +118,7 @@ export default function Part25() {
         </NoteBlock>
       </SourcePage>
 
-      <AuditComment pages="77-80" unclear={0} note="page 77 is blank apart from the two spin lines" />
+      <AuditComment pages="77-80" unclear={0} />
     </AtomicPartShell>
   );
 }

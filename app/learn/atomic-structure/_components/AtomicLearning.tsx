@@ -17,6 +17,10 @@ export function FormulaCard({ label, children }: { label: string; children: Reac
   return <section className="overflow-hidden rounded-2xl border border-violet-300/25 bg-[#0a1324] shadow-lg shadow-black/15"><div className="border-b border-violet-300/15 bg-violet-300/[0.07] px-4 py-2 text-xs font-black uppercase tracking-[0.17em] text-violet-100">{label}</div><div className="overflow-x-auto px-4 py-4 text-cyan-100">{children}</div></section>;
 }
 
+export function ComparisonTable({ headers, rows }: { headers: ReactNode[]; rows: ReactNode[][] }) {
+  return <section aria-label="Comparison" className="overflow-x-auto rounded-2xl border border-white/10 bg-slate-950/45"><table className="min-w-[38rem] w-full text-left text-sm sm:text-base"><thead className="bg-cyan-300/[0.08] text-cyan-100"><tr>{headers.map((header) => <th key={String(header)} scope="col" className="px-4 py-3 font-black">{header}</th>)}</tr></thead><tbody className="divide-y divide-white/10 text-slate-200">{rows.map((row, rowIndex) => <tr key={rowIndex}>{row.map((cell, cellIndex) => <td key={cellIndex} className="px-4 py-4 align-top leading-relaxed">{cell}</td>)}</tr>)}</tbody></table></section>;
+}
+
 export function WorkedExample({ title, children }: { title: string; children: ReactNode }) {
   return <section className="rounded-2xl border border-amber-300/20 bg-amber-300/[0.045] p-5"><p className="text-[11px] font-black uppercase tracking-[0.18em] text-amber-200">Worked example</p><h2 className="mt-1 text-lg font-black text-white">{title}</h2><div className="mt-4 space-y-3 text-sm leading-relaxed text-slate-100 sm:text-base">{children}</div></section>;
 }

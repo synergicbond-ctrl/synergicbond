@@ -109,8 +109,11 @@
 - Forbidden-term handling: "Credit line printed on the page: …" rephrased to "Problem credit: …" in Parts 22–23 (attribution kept, transcription phrasing removed); "The rest of this source page is blank." removed from Part 25 (already recorded in its audit marker).
 - Notation/grammar: Part 24 extensive typo repair (quantum number, subshells, split/doublets, anticlockwise, presence of external field); Part 25 "singnificantly"/"exis" fixed and de Broglie sentence grammar.
 - Shared visual extension: `SommerfeldOrbitsVisual` (n = 3 circle plus two ellipses with axis ratios drawn to the n/K rule, marked conceptual, accessible title/desc).
+- Premium lesson architecture added in this implementation: learning-objective panels and concise recap strips across Parts 21–25; `PhotonFluxGeometryVisual` (isotropic intensity and pupil-area geometry), `UncertaintyTradeoffVisual` (qualitative reciprocal position/k spread), and `DeBroglieVoltageVisual` (computed non-relativistic electron wavelength against accelerating voltage). `ComparisonTable` was added for the historically framed Sommerfeld-versus-modern-quantum comparison.
+- Accessibility and responsive review: semantic article/section/aside/table/figure structure retained; all new SVGs have programmatic title and description through `ScientificVisual`, responsive viewBoxes, labelled axes where applicable, explanatory figure captions, keyboard focus is inherited from navigation, and horizontally constrained mathematics/tables remain scrollable rather than clipping.
+- Security and routing result: no route, entitlement, authentication, middleware, API, or security file was changed. Parts 01–55 registrations and the Part 21–25 navigator entries remain unchanged.
 - Forbidden-term audit: passed after the two rephrasings and one removal. Route count 55/55 unchanged; navigation intact.
-- Validation: typecheck pass, lint 0 errors, launch-safety 28/28 pass.
+- Validation: `npm run typecheck` pass; `npm run lint` exit 0 (0 errors; existing repository-wide warnings remain); `npm run launch-safety` 28/28 pass; `npm run build` production compilation pass; `git diff --check` pass.
 - Exact next batch: Batch 6 — Parts 26–30.
 
 ## Batch 6 — Parts 26–30

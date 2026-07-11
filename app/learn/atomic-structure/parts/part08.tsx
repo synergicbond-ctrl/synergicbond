@@ -44,8 +44,8 @@ export default function Part08() {
 
       <SourcePage page={24}>
         <NoteBlock title="Black Body Radiation">
-          <p>Emission radiated by a black body is called Black Body Radiation.</p>
-          <p>Black body is the substance which can absorbs or emits all radiation.</p>
+          <p>Radiation emitted by a black body is called black-body radiation.</p>
+          <p>An ideal black body absorbs all incident radiation; at thermal equilibrium, it is also an ideal emitter.</p>
           <DiagramBox title="Black-body cavity and radiation graph">
             <p>Circular cavity with internal reflections and outgoing radiation.</p>
             <p>Graph labels: T, blackbody radiation, spectral irradiance (kW/m²/nm), wavelength (nm), 3000 K, 4000 K, 5000 K, 6000 K, 7000 K.</p>
@@ -56,9 +56,9 @@ export default function Part08() {
 
       <SourcePage page={25}>
         <NoteBlock title="Kirchhoff">
-          <p>Every substance absorb and emit radiation always.</p>
-          <p>A good absorber is always a good emitter.</p>
-          <p>Black Body - It absorbs all radiation.</p>
+          <p>Every substance can absorb and emit radiation.</p>
+          <p>At a given temperature and wavelength, a good absorber is a good emitter.</p>
+          <p>An ideal black body absorbs all incident radiation.</p>
           <DiagramBox title="Absorption and emission by black body">
             <p>Two black-body cavity sketches: one absorbing incoming radiation, one emitting arrows outward.</p>
             <p>T = constant</p>

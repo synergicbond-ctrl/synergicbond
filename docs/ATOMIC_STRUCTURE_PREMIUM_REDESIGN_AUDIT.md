@@ -17,3 +17,11 @@
 - Route/part validation: 55 static part files and 55 route registrations retained; Parts 56–60 absent.
 - Manual review: verify the original historical wording against the owner-held material if a literal archival transcription is required.
 - Exact next batch: Batch 2 — Parts 06–10.
+
+## Batch 2 — Parts 06–10
+
+- Content inventory and retention: Part 06 (cross-section derivation, closest-approach examples, density); Part 07 (momentum problem, Rutherford limitations, EM-wave and spectrum statements); Part 08 (wave terms, frequency example, black-body and Wien material); Part 09 (heating/peak observations, Stefan-Boltzmann, Planck/Rayleigh-Jeans derivation); Part 10 (Rayleigh-Jeans, Planck postulates, photon-energy examples). All existing academic steps, formulae, questions, answers, tables and diagram meanings were retained.
+- Corrections: Part 06 adds the negative derivative sign for decreasing scattered fraction and explicitly uses its magnitude for counts (presentation correction). Part 07 limits speed c to vacuum and preserves an unverified note as `[UNCLEAR]` (meaning clarified). Part 09 distinguishes energy density `u` from radiant exitance `M`, fixes the Stefan spelling and defines units/role (notation and scientific correction).
+- Shared visual extension: accessible `ElectromagneticSpectrumVisual`; all new SVGs include title and description.
+- Forbidden-term, equation-delimiter, route and navigation audit: passed. Parts 01–05 and 11–55 untouched.
+- Exact next batch: Batch 3 — Parts 11–15.

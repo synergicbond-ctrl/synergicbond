@@ -25,7 +25,8 @@ export default function Part06() {
           <FormulaLine math="b=\frac{ze^2\cot(\theta/2)}{(4\pi\epsilon_o)E}" />
           <FormulaLine math="f=\pi nt\frac{z^2e^4\cot^2(\theta/2)}{16\pi^2\epsilon_o^2E^2}" />
           <FormulaLine math="f=\frac{ntz^2e^4}{16\pi^2\epsilon_o^2E^2}\cot^2\frac{\theta}{2}" />
-          <FormulaLine math="df=\frac{ntz^2e^4}{16\pi^2\epsilon_o^2E^2}\cot\frac{\theta}{2}\csc^2\frac{\theta}{2}\,d\theta\qquad(1)" />
+          <FormulaLine math="df=-\frac{ntz^2e^4}{16\pi^2\epsilon_o^2E^2}\cot\frac{\theta}{2}\csc^2\frac{\theta}{2}\,d\theta\qquad(1)" />
+          <p>For a scattered-particle count, use the magnitude <MathText math="|df|" />.</p>
           <FormulaLine math="ds=(2\pi r\sin\theta)\,r\,d\theta=2\pi r^2\sin\theta\,d\theta" />
           <FormulaLine math="\sin\theta=2\sin\frac{\theta}{2}\cos\frac{\theta}{2}" />
           <FormulaLine math="ds=4\pi r^2\sin\frac{\theta}{2}\cos\frac{\theta}{2}\,d\theta" />

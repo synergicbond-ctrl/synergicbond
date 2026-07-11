@@ -25,10 +25,10 @@ export default function Part09() {
           <FormulaLine math="U=\int_0^\infty u(\nu)\,d\nu=\frac{8\pi^5K^4}{15c^3h^2}=aT^4" />
           <p>a is universal constant.</p>
           <p>The total energy density is proportional to the fourth power of the absolute temperature.</p>
-          <FormulaLine math="U_\lambda=e\sigma T^4" />
+          <FormulaLine math="M=e\sigma T^4" />
           <p>For a perfectly black body</p>
-          <FormulaLine math="U_\lambda=\sigma T^4" />
-          <p>σ = Stephen-Boltzmann constant</p>
+          <FormulaLine math="M=\sigma T^4" />
+          <p>σ = Stefan-Boltzmann constant; M is radiant exitance (power emitted per unit area).</p>
           <FormulaLine math="\sigma=\frac{ac}{4}=5.670374419\ \mathrm{W/m^2K^4}" />
           <p>emissivity e-</p>
           <DataTable
@@ -42,7 +42,7 @@ export default function Part09() {
             ]}
           />
           <p>
-            U<sub>λ</sub>dλ = energy of radiation per unit volume in range of (λ + dλ)
+            u<sub>λ</sub>dλ = energy per unit volume in the wavelength interval λ to λ + dλ.
           </p>
           <DiagramBox title="Energy in dλ band">
             <p>Curve with a narrow vertical strip marked dλ.</p>
@@ -69,8 +69,7 @@ export default function Part09() {
           <p>Wien Radiation law</p>
           <FormulaLine math="U_\lambda=a\nu^3e^{-b\nu/T}" />
           <div className="rounded-lg border border-amber-400/20 bg-amber-400/[0.06] p-3 text-sm text-amber-100">
-            Printed ultraviolet-catastrophe paragraph present. Concise extraction: classical Rayleigh-Jeans theory predicts
-            unlimited high-frequency radiation, which is physically impossible and not observed.
+            <strong>Ultraviolet catastrophe.</strong> Classical Rayleigh-Jeans theory predicts unlimited high-frequency radiation, which is physically impossible and not observed.
           </div>
         </NoteBlock>
       </SourcePage>

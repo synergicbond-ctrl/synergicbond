@@ -1,6 +1,7 @@
 "use client";
 
-import { AtomicPartShell, AuditComment, BulletList, DiagramBox, FormulaLine, MathText, NoteBlock, SourcePage } from "./_shared";
+import { AtomicPartShell, AuditComment, DiagramBox, FormulaLine, MathText, NoteBlock, SourcePage } from "./_shared";
+import { ElectromagneticSpectrumVisual } from "../_components/AtomicVisuals";
 
 export default function Part07() {
   return (
@@ -59,18 +60,19 @@ export default function Part07() {
           <ol start={2} className="list-decimal space-y-3 pl-5">
             <li>They do not require medium.</li>
             <li>Light is also an example of EMW.</li>
-            <li>All EMW travel with velocity of light.</li>
+            <li>All electromagnetic waves travel at the speed of light in vacuum.</li>
             <li>
               If all EMW are arranged in ↑ or ↓ order of frequency or wavelength, then the arrangement obtained is called
               spectrum.
             </li>
           </ol>
           <DiagramBox title="Electromagnetic spectrum">
+            <ElectromagneticSpectrumVisual />
             <p>Increasing Frequency (ν): γ rays, X rays, UV, IR, Microwave, FM radio waves, AM, Long radio waves.</p>
             <p>Increasing Wavelength (λ): visible spectrum 400-700 nm.</p>
-            <p>Handwritten order: Radio wave, Microwave, Infrared, visible, UV, x-ray, γ.</p>
+            <p>Order from low to high frequency: radio waves, microwaves, infrared, visible light, ultraviolet, X-rays, γ rays.</p>
           </DiagramBox>
-          <p>Roman men invented very unusual x-ray guns.</p>
+          <p>[UNCLEAR] The original note contains an unverified statement about x-ray guns; no scientific inference is made from it.</p>
           <DiagramBox title="Visible Range">
             <p>Visible Range → V I B G Y O R</p>
           </DiagramBox>

@@ -41,14 +41,14 @@ export default function Part10() {
             classical wave on increasing energy, amplitude of wave should change without change in λ or ν. From classical
             wave concept, on heating, the brightness of iron sample should increase without change in colour.
           </p>
-          <p>Planck explained such observation by assuming the propagation of wave discontinuously.</p>
+          <p>Planck explained this observation by proposing that radiation is emitted and absorbed in discrete packets.</p>
           <p>According to him</p>
           <ol className="list-decimal space-y-3 pl-5">
             <li>
-              A body may absorbs or emits radiations only discontinuously in the form of small packets called quanta. The
+              A body may absorb or emit radiation discontinuously in the form of small packets called quanta. The
               packets of light are called photons.
             </li>
-            <li>Each quanta is directly proportional to the frequency of radiation involved.</li>
+            <li>The energy of each quantum is directly proportional to the frequency of the radiation involved.</li>
           </ol>
         </NoteBlock>
       </SourcePage>

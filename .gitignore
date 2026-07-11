@@ -48,3 +48,6 @@ backups/
 # never commit source scans or temp renders
 private/
 tmp/
+
+# nested working clone — must never be tracked (carried committed node_modules)
+synergic-bond-clone/

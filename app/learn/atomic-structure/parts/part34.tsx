@@ -6,7 +6,7 @@ export default function Part34() {
   return (
     <AtomicPartShell part={34} title="Moseley's Law and Group Velocity" pages="106-108">
       <SourcePage page={106}>
-        <NoteBlock title="Mosley Experiment">
+        <NoteBlock title="Moseley Experiment">
           <p>
             Moseley&apos;s Law — It states that the frequency of the spectral line in the characteristic X-ray spectrum is
             directly proportional to the square of the atomic number of the element considered.
@@ -57,7 +57,7 @@ export default function Part34() {
       <SourcePage page={108}>
         <NoteBlock title="Group Velocity and Phase Velocity">
           <p>If we consider matter wave as a single wave</p>
-          <FormulaLine math="\lambda=\frac{h}{mv}\qquad\frac{1}{\lambda v}=\frac{m}{h}\qquad\lambda\nu=\frac{h}{m}" />
+          <FormulaLine math="\lambda=\frac{h}{mv}\qquad\frac{1}{\lambda v}=\frac{m}{h}\qquad\lambda v=\frac{h}{m}" />
           <FormulaLine math="V_p=\frac{\omega}{K}\qquad\omega=2\pi\nu\qquad K=\frac{2\pi}{\lambda}" />
           <FormulaLine math="V_p=\nu\lambda\qquad V_p=\frac{h\nu}{h/\lambda}=\frac{E}{p}=\frac{mc^{2}}{mv}" />
           <FormulaLine math="\text{Phase velocity }v_p=\nu\lambda=\frac{c^{2}}{v}\qquad c>v\ \Rightarrow\ v_p>v" />

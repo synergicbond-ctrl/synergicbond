@@ -52,12 +52,6 @@ export default function Part33() {
         </NoteBlock>
       </SourcePage>
 
-      <SourcePage page={105}>
-        <NoteBlock title="Blank page">
-          <p>This source page is blank.</p>
-        </NoteBlock>
-      </SourcePage>
-
       <AuditComment pages="103-105" unclear={0} note="page 105 is blank in the source" />
     </AtomicPartShell>
   );

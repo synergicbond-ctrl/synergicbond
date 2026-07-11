@@ -8,8 +8,8 @@ export default function Part32() {
       <SourcePage page={100}>
         <NoteBlock title="Pauli's Exclusion Principle">
           <p>
-            &quot;No two e&#8315; of an atom can have all four quantum numbers equal. If n, l, m are same the s will be
-            different.
+            &quot;No two e&#8315; of an atom can have all four quantum numbers equal.&quot; If n, l, m are the same, then s
+            will be different.
           </p>
           <FormulaLine math="He=1s^{2}\ \boxed{\uparrow\downarrow}\qquad\text{box notation: }\tfrac{1s}{n\,l}" />
           <DataTable

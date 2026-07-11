@@ -35,7 +35,7 @@ export default function Part35() {
           <ul className="list-disc space-y-2 pl-5">
             <li>⇒ Wave function ⇒ amplitude</li>
             <li>⇒ Ψ must show interference</li>
-            <li>⇒ It represent single particle</li>
+            <li>⇒ It represents a single particle</li>
             <li>⇒ Ψ should be max where probability is max.</li>
           </ul>
         </NoteBlock>
@@ -47,7 +47,8 @@ export default function Part35() {
             For EMW, EF and MF change with time and position. If light is coming from x-direction. For monochromatic
             wave
           </p>
-          <FormulaLine math="\vec{E}=\vec{E}_0\cos(Kx-\omega t)\qquad E=E\cdot F" />
+          <FormulaLine math="\vec{E}=\vec{E}_0\cos(Kx-\omega t)" />
+          <p>(E denotes the electric field, EF)</p>
           <p>direction of propagation — x axis</p>
           <FormulaLine math="\text{wave length }\lambda=\frac{2\pi}{K}\qquad K=\frac{2\pi}{\lambda}\quad K=\text{Propagation constant}" />
           <FormulaLine math="\vec{K}=\frac{2\pi}{\lambda}\hat{e}" />
@@ -74,12 +75,12 @@ export default function Part35() {
           <FormulaLine math="E=h\nu=\frac{h}{2\pi}\,2\pi\nu=\hbar\omega" />
           <FormulaLine math="\boxed{\frac{\omega}{K}=c}" />
           <p>For EM Radiation,</p>
-          <FormulaLine math="\frac{\hbar\omega}{\hbar K}=c,\qquad \frac{E}{p}=c,\qquad E=PC" />
+          <FormulaLine math="\frac{\hbar\omega}{\hbar K}=c,\qquad \frac{E}{p}=c,\qquad E=pc" />
           <p>If wave in x-direction going with fixed speed,</p>
           <FormulaLine math="Y=A\,f(x-vt)" />
           <p>t = constant</p>
-          <FormulaLine math="\frac{\partial Y}{\partial t}=A\,\frac{df}{d(x-vt)}\cdot\frac{d(x-vt)}{dx}=A\,f'" />
-          <FormulaLine math="\frac{\partial^{2}Y}{\partial t^{2}}=A\,\frac{df'}{d(x-vt)}\cdot\frac{d(x-vt)}{dx}=A\,f''" />
+          <FormulaLine math="\frac{\partial Y}{\partial x}=A\,\frac{df}{d(x-vt)}\cdot\frac{d(x-vt)}{dx}=A\,f'" />
+          <FormulaLine math="\frac{\partial^{2}Y}{\partial x^{2}}=A\,\frac{df'}{d(x-vt)}\cdot\frac{d(x-vt)}{dx}=A\,f''" />
         </NoteBlock>
       </SourcePage>
 
@@ -90,7 +91,7 @@ export default function Part35() {
           <FormulaLine math="\frac{\partial Y}{\partial t}=A\,f'\,\frac{d(x-vt)}{dt}=A\,f'(-v)" />
           <FormulaLine math="\frac{\partial^{2}Y}{\partial t^{2}}=A\,f''(-v)(-v)=A\,f''(v)^{2}" />
           <FormulaLine math="\boxed{\frac{\partial^{2}Y}{\partial x^{2}}=\frac{1}{v^{2}}\,\frac{\partial^{2}Y}{\partial t^{2}}}\quad\text{wave equation}" />
-          <p>It is applicable to all types of wave but it is calculate at constant v.</p>
+          <p>It is applicable to all types of waves, but it is calculated at constant v.</p>
           <p>What we should do if v is changing</p>
         </NoteBlock>
         <NoteBlock title="Free particle wave function">
@@ -104,7 +105,7 @@ export default function Part35() {
           <FormulaLine math="\psi=e^{i(Kx-\omega t)}" />
           <FormulaLine math="\psi=A\,e^{i\left(\frac{px}{\hbar}-\frac{Et}{\hbar}\right)}=A\,e^{\frac{i}{\hbar}(px-Et)}" />
           <p>
-            Side notes: E ↔ K, p ↔ ω;{" "}
+            Side notes: E ↔ ω, p ↔ K;{" "}
             <MathText math="E=KE=\tfrac{1}{2}mv^{2}=\tfrac{p^{2}}{2m}" />;{" "}
             <MathText math="E=\tfrac{p^{2}}{2m}\ \leftarrow\ \text{classical}" />;{" "}
             <MathText math="\boxed{E=\hbar\omega}\quad\boxed{p=\hbar K}" />
@@ -112,7 +113,7 @@ export default function Part35() {
           <p>at constant &apos;t&apos;</p>
           <FormulaLine math="\frac{\partial\psi}{\partial x}=A\,e^{\frac{i}{\hbar}(px-Et)}\left(\frac{i}{\hbar}p\right)=\frac{i}{\hbar}\,p\,\psi" />
           <FormulaLine math="p\,\psi=-i\hbar\,\frac{\partial\psi}{\partial x}\qquad p^{2}\psi=-\hbar^{2}\,\frac{\partial^{2}\psi}{\partial x^{2}}" />
-          <FormulaLine math="\frac{\partial^{2}\psi}{\partial x^{2}}=A\left(\frac{i}{\hbar}p\right)\left(\frac{i}{\hbar}p\right)e^{\frac{i}{\hbar}(px-Et)}=-A\,\frac{p^{2}}{\hbar}\,e^{\frac{i}{\hbar}(px-Et)}" />
+          <FormulaLine math="\frac{\partial^{2}\psi}{\partial x^{2}}=A\left(\frac{i}{\hbar}p\right)\left(\frac{i}{\hbar}p\right)e^{\frac{i}{\hbar}(px-Et)}=-A\,\frac{p^{2}}{\hbar^{2}}\,e^{\frac{i}{\hbar}(px-Et)}" />
           <FormulaLine math="\frac{\partial^{2}\psi}{\partial x^{2}}=-\frac{p^{2}}{\hbar^{2}}\,\psi,\qquad p^{2}\psi=-\hbar^{2}\,\frac{\partial^{2}\psi}{\partial x^{2}}" />
         </NoteBlock>
       </SourcePage>

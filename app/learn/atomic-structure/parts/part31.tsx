@@ -137,7 +137,7 @@ export default function Part31() {
         </NoteBlock>
         <NoteBlock title="Transition Metal">
           <p>
-            The d block elements or their ions which have incompletely filled (n−1)d orbital are called transition metal.
+            The d block elements or their ions which have incompletely filled (n−1)d orbitals are called transition metals.
           </p>
           <DataTable
             headers={["Sc 21", "Ti 22", "V 23", "Cr 24", "Mn 25", "Fe 26", "Co 27", "Ni 28"]}
@@ -174,8 +174,8 @@ export default function Part31() {
         <NoteBlock title="Electronic configurations Cs (55) – Rg (111) (printed table)">
           <DataTable headers={[...T1_HEADERS.slice(0, 7), "6s 6p 6d", "7s"].slice(0, 9)} rows={T2_ROWS} />
           <p>
-            Starred elements mark exceptional configurations. The 5f entries printed for Rf–Bh are hard to read at scan
-            resolution and are marked [UNCLEAR].
+            Starred elements mark exceptional configurations. The 5f entries for Rf–Bh could not be verified and are marked
+            [UNCLEAR].
           </p>
         </NoteBlock>
       </SourcePage>

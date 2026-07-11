@@ -8,7 +8,7 @@ export default function Part21() {
       <SourcePage page={65}>
         <NoteBlock title="Quantized magnetic moment (conclusion)">
           <p>From the definition of the angular momentum</p>
-          <FormulaLine math="\vec{L}=\vec{p}\times\vec{r}=mvr\hat{n}," />
+          <FormulaLine math="\vec{L}=\vec{r}\times\vec{p}=mvr\hat{n}," />
           <p>where <MathText math="\vec{p}=m\vec{v}" />, we find that</p>
           <FormulaLine math="\vec{\mu}=\frac{1}{2}evr\hat{n}=\frac{e}{2m}\vec{L}." />
           <p>Since</p>

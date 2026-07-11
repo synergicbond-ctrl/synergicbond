@@ -11,7 +11,6 @@ export default function Part25() {
             Acc. to quantum mechanics it is <MathText math="\sqrt{s(s+1)}\,\frac{h}{2\pi}" />
           </p>
           <p>s is either spin quantum number or resultant of several spins</p>
-          <p>The rest of this source page is blank.</p>
         </NoteBlock>
       </SourcePage>
 
@@ -64,7 +63,7 @@ export default function Part25() {
         </NoteBlock>
         <NoteBlock title="Relativistic correction in the de Broglie electron wave">
           <p>
-            When the high PD is made singnificantly high (~ 50 kV) to have the electron beam of the wavelength of order of 0.05
+            When the PD is made significantly high (~ 50 kV) to have the electron beam of the wavelength of order of 0.05
             Å, the velocity of e&#8315; is very high. Under the circumstances, the approximation <MathText math="m\approx m_0" />{" "}
             is not valid.
           </p>
@@ -81,6 +80,16 @@ export default function Part25() {
           <FormulaLine math="\sqrt{m}=\sqrt{m_0}\left(1+\frac{eV}{m_0c^{2}}\right)^{1/2}" />
           <FormulaLine math="\lambda=\frac{h}{\sqrt{2Vem_0}}\left(1+\frac{eV}{m_0c^{2}}\right)^{-1/2}" />
           <FormulaLine math="\boxed{\lambda=\frac{12.24}{\sqrt{V}}\left(1+\frac{eV}{m_0c^{2}}\right)^{-1/2}\ \text{\AA}}" />
+          <p>
+            Note on precision: the substitution <MathText math="\lambda=h/\sqrt{2eVm}" /> with the relativistic mass is an
+            approximation. The exact relativistic momentum is{" "}
+            <MathText math="p^{2}=2m_0eV\left(1+\tfrac{eV}{2m_0c^{2}}\right)" />, so the exact correction factor is
+          </p>
+          <FormulaLine math="\lambda=\frac{12.24}{\sqrt{V}}\left(1+\frac{eV}{2m_0c^{2}}\right)^{-1/2}\ \text{\AA}" />
+          <p>
+            with a factor <MathText math="\tfrac{1}{2}" /> inside the bracket; the boxed form above overstates the correction
+            term by a factor of two, which matters only at very high accelerating potentials.
+          </p>
         </NoteBlock>
         <NoteBlock title="Major difference between EMW and de-Broglie matter wave">
           <ol className="list-decimal space-y-3 pl-5">
@@ -95,7 +104,7 @@ export default function Part25() {
           </ol>
         </NoteBlock>
         <NoteBlock title="Electron can never exist in the nucleus (de Broglie)">
-          <p>From deBroglie equation prove that e&#8315; can never exis in nucleus.</p>
+          <p>From the de Broglie equation prove that e&#8315; can never exist in the nucleus.</p>
           <FormulaLine math="2\pi r=n\lambda=10^{-15}\ \text{m}" />
           <FormulaLine math="\lambda=\frac{h}{mv}\ \Rightarrow\ v=\frac{h}{\lambda\cdot m}=\frac{6.626\times10^{-34}}{10^{-15}\times9.1\times10^{-31}}\approx10^{12}\ \text{m/s}\ =\ \text{not possible}" />
         </NoteBlock>

@@ -121,6 +121,19 @@ export function EmissionAbsorptionSpectraVisual() {
   </ScientificVisual>;
 }
 
+export function SommerfeldOrbitsVisual() {
+  return <ScientificVisual title="Sommerfeld orbits for n equals three" description="Three nested electron paths about the nucleus for n equals three: a circle for K equals three, a wider ellipse for K equals two, and a narrower ellipse for K equals one. The ratio of major to minor axis equals n over K." viewBox="0 0 440 260" className="h-auto w-full">
+    <circle cx="220" cy="130" r="100" fill="none" stroke="#67e8f9" strokeWidth="2" />
+    <ellipse cx="220" cy="130" rx="100" ry="66.7" fill="none" stroke="#facc15" strokeWidth="2" />
+    <ellipse cx="220" cy="130" rx="100" ry="33.3" fill="none" stroke="#f472b6" strokeWidth="2" />
+    <circle cx="220" cy="130" r="7" fill="#fb7185" />
+    <text x="228" y="40" fill="#a5f3fc" fontSize="13">K = 3 (circle, n/K = 1)</text>
+    <text x="248" y="74" fill="#fde68a" fontSize="13">K = 2 (n/K = 3/2)</text>
+    <text x="258" y="112" fill="#f9a8d4" fontSize="13">K = 1 (n/K = 3)</text>
+    <text x="12" y="248" fill="#94a3b8" fontSize="13">conceptual diagram — axis ratios drawn to the n/K rule, not to orbital scale</text>
+  </ScientificVisual>;
+}
+
 export function BohrOrbitsVisual() {
   const orbits = [[45, "n = 1 (K)"], [78, "n = 2 (L)"], [111, "n = 3 (M)"], [144, "n = 4 (N)"]] as const;
   return <ScientificVisual title="Bohr stationary orbits" description="Concentric circular orbits around a central positive nucleus, numbered n equals one to four outward and lettered K, L, M and N. Electron energy increases with distance from the nucleus while successive energy gaps decrease." viewBox="0 0 440 310" className="h-auto w-full">

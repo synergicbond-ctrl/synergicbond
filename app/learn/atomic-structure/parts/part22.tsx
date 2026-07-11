@@ -73,7 +73,7 @@ export default function Part22() {
             and <MathText math="\Delta t" /> is the time interval characteristic of the rate of changes in the system&apos;s
             energy.
           </p>
-          <p>Credit line printed on the page: Zbigniew Ficek.</p>
+          <p>Problem credit: Zbigniew Ficek.</p>
         </NoteBlock>
       </SourcePage>
 

@@ -1,10 +1,12 @@
 "use client";
 
 import { AtomicPartShell, AuditComment, DataTable, DiagramBox, FormulaLine, MathText, NoteBlock, SourcePage } from "./_shared";
+import { ConceptCard, DerivationPanel, LearningObjectives, PracticeQuestion, SummaryStrip } from "../_components/AtomicLearning";
 
 export default function Part15() {
   return (
     <AtomicPartShell part={15} title="Bohr Quantisation, Orbit Radius, Speed and Time Period" pages="45-48">
+      <LearningObjectives items={["Use Bohr angular-momentum quantisation.", "Derive orbit-radius dependence.", "Calculate orbital speed.", "Relate revolution frequency and period to n and Z."]} />
       <SourcePage page={45}>
         <NoteBlock title="Bohr's postulates (continued)">
           <ol className="list-decimal space-y-3 pl-5" start={3}>
@@ -39,6 +41,8 @@ export default function Part15() {
         </NoteBlock>
       </SourcePage>
 
+      <ConceptCard title="Hydrogen-like scaling map"><p>Keep the three derived relations together: <MathText math="r\propto n^2/Z" />, <MathText math="v\propto Z/n" />, and <MathText math="T\propto n^3/Z^2" />. They apply to one-electron species such as H, He<sup>+</sup>, and Li<sup>2+</sup>.</p></ConceptCard>
+      <DerivationPanel title="Assumptions before substituting"><p>The relations below assume a non-relativistic electron, a circular Bohr orbit, a nucleus of charge <MathText math="+Ze" />, and a one-electron ion. Equate Coulomb attraction to <MathText math="mv^2/r" />, then combine it with <MathText math="mvr=nh/(2\pi)" />; every algebraic step remains below.</p></DerivationPanel>
       <SourcePage page={46}>
         <NoteBlock title="Radius of the nth orbit">
           <FormulaLine math="v^{2}=\frac{n^{2}h^{2}}{4\pi^{2}m^{2}r^{2}}" />
@@ -139,7 +143,7 @@ export default function Part15() {
         </NoteBlock>
       </SourcePage>
 
-      <AuditComment pages="45-48" unclear={0} />
+      <PracticeQuestion prompt={<>How does a hydrogen-like orbit radius depend on <MathText math="n" /> and <MathText math="Z" />?</>} answer={<MathText math="r_n=0.529n^2/Z\ \mathrm{\AA}" />} /><SummaryStrip items={["mvr = nh/2π.", "r ∝ n²/Z and v ∝ Z/n.", "T ∝ n³/Z²."]} /><AuditComment pages="45-48" unclear={0} />
     </AtomicPartShell>
   );
 }

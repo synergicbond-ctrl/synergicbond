@@ -2,10 +2,13 @@
 
 import { AtomicPartShell, AuditComment, DiagramBox, FormulaLine, MathText, NoteBlock, SourcePage } from "./_shared";
 import { KmaxFrequencyGraph, PhotoelectricApparatusVisual } from "../_components/AtomicVisuals";
+import { ConceptCard, DefinitionCard, FigureCaption, FormulaCard, LearningObjectives, PracticeQuestion, SummaryStrip } from "../_components/AtomicLearning";
 
 export default function Part11() {
   return (
     <AtomicPartShell part={11} title="Photoelectric Effect and Einstein Equation" pages="33-35">
+      <LearningObjectives items={["Define threshold frequency and work function.", "Apply Einstein’s photoelectric equation.", "Distinguish effects of intensity and frequency.", "Relate stopping potential to maximum kinetic energy."]} />
+      <DefinitionCard term="Threshold frequency, ν₀"><p>The least frequency that can produce photoemission from a specified metal. At threshold, <MathText math="K_{\max}=0" />, so <MathText math="h\nu_0=\phi" />.</p></DefinitionCard>
       <SourcePage page={33}>
         <NoteBlock title="Photoelectric effect">
           <p>
@@ -23,12 +26,13 @@ export default function Part11() {
           </p>
           <DiagramBox title="Photoelectric setup">
             <PhotoelectricApparatusVisual />
-            <p>Light source, metal surface, emitted electrons, current meter, variable voltage source, anode and cathode.</p>
-            <p>Arrows show ejection of photoelectrons from the illuminated metal plate.</p>
+            <FigureCaption>Light ejects electrons from the illuminated emitter; the collector and microammeter register photocurrent. The variable potential can aid collection or oppose the emitted electrons.</FigureCaption>
           </DiagramBox>
         </NoteBlock>
       </SourcePage>
 
+      <ConceptCard title="Read the equation as an energy budget"><p><MathText math="h\nu" /> is the photon energy. First supply the work function <MathText math="\phi" />; only the remainder can appear as <MathText math="K_{\max}" />.</p></ConceptCard>
+      <FormulaCard label="Einstein relation"><FormulaLine math="h\nu=\phi+K_{\max}=\phi+\frac12mv_{\max}^2" /></FormulaCard>
       <SourcePage page={34}>
         <NoteBlock title="Einstein's photoelectric equation">
           <FormulaLine math="h\nu=\phi+K_{\max}" />
@@ -40,8 +44,7 @@ export default function Part11() {
           </p>
           <DiagramBox title="Kinetic energy versus frequency">
             <KmaxFrequencyGraph />
-            <p>Graph is a straight line starting at threshold frequency ν₀ on the frequency axis.</p>
-            <p>Labels: Kmax, ν, ν₀, slope = h, intercept on ν-axis = threshold frequency.</p>
+            <FigureCaption><MathText math="K_{\max}=h\nu-\phi" /> has gradient <MathText math="h" />, crosses the frequency axis at <MathText math="\nu_0" />, and extrapolates to <MathText math="-\phi" /> on the energy axis. No photoemission occurs for <MathText math="\nu&lt;\nu_0" />.</FigureCaption>
           </DiagramBox>
         </NoteBlock>
         <NoteBlock title="Intensity versus frequency">
@@ -73,7 +76,7 @@ export default function Part11() {
         </NoteBlock>
       </SourcePage>
 
-      <AuditComment pages="33-35" unclear={0} note="printed introductory exposition condensed" />
+      <PracticeQuestion prompt="At fixed frequency above threshold, what does increasing intensity change?" answer="The number of emitted electrons and photocurrent, not maximum kinetic energy." /><SummaryStrip items={["φ = hν₀.", "hν = φ + Kmax.", "eV₀ = Kmax."]} /><AuditComment pages="33-35" unclear={0} note="printed introductory exposition condensed" />
     </AtomicPartShell>
   );
 }

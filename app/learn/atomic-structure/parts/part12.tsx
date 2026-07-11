@@ -2,14 +2,17 @@
 
 import { AtomicPartShell, AuditComment, DiagramBox, FormulaLine, MathText, NoteBlock, SourcePage } from "./_shared";
 import { PhotocurrentPotentialGraph } from "../_components/AtomicVisuals";
+import { DefinitionCard, FigureCaption, ImportantNote, LearningObjectives, PracticeQuestion, SummaryStrip } from "../_components/AtomicLearning";
 
 export default function Part12() {
   return (
     <AtomicPartShell part={12} title="Photoelectric Current and Stopping Potential" pages="36-38">
+      <LearningObjectives items={["Describe photoelectron energy range.", "Relate Kmax and V₀.", "Interpret saturation current.", "Interpret retarding-potential behaviour."]} />
+      <DefinitionCard term="Five quantities that must not be conflated"><p><strong>Photocurrent</strong> is charge collected per unit time. <strong>Saturation current</strong> is its limiting value when all emitted electrons are collected. A <strong>retarding potential</strong> opposes them; its stopping magnitude gives <MathText math="K_{\max}=eV_0" />.</p></DefinitionCard>
       <SourcePage page={36}>
         <NoteBlock title="Photoelectric emission">
           <ol className="list-decimal space-y-3 pl-5" start={3}>
-            <li>When a photon collides with an electron at the surface, either the electron ejects out immediately or the photon is reflected.</li>
+            <li>In the simplified one-photon account, photon energy either enables immediate ejection or does not produce photoemission.</li>
             <li>For most metals, the work function is nearly half of the ionisation energy (I.E.).</li>
           </ol>
           <p>If the photon has energy equal to or greater than the work function, the electron becomes free from the influence of the nucleus and may eject out.</p>
@@ -22,6 +25,7 @@ export default function Part12() {
           <p>Einstein&apos;s photoelectric equation.</p>
         </NoteBlock>
       </SourcePage>
+      <ImportantNote title="Graph reading">Saturation current measures how many emitted electrons are collected; stopping potential measures the most energetic electron.</ImportantNote>
 
       <SourcePage page={37}>
         <NoteBlock title="Maximum kinetic energy">
@@ -41,7 +45,7 @@ export default function Part12() {
         <NoteBlock title="Saturation current and stopping potential">
           <DiagramBox title="Photoelectric-current versus collector potential">
             <PhotocurrentPotentialGraph />
-            <p>Labels: anode/collector C, emitter A, positive potential, negative potential, saturation current, current I, voltage V and stopping potential <MathText math="V_0" />.</p>
+            <FigureCaption>At equal intensity, the curves share a saturation current. Stronger retarding potential is left of zero; higher frequency requires a more negative stopping potential because <MathText math="K_{\max}" /> is larger.</FigureCaption>
           </DiagramBox>
           <ol className="list-decimal space-y-3 pl-5">
             <li><MathText math="V_A&lt;V_C" />: some photoelectrons reach electrode C and result in current. Such current is called photocurrent.</li>
@@ -51,7 +55,7 @@ export default function Part12() {
           <p><MathText math="V_0" /> is related to maximum kinetic energy.</p>
         </NoteBlock>
       </SourcePage>
-      <AuditComment pages="36-38" unclear={0} />
+      <PracticeQuestion prompt="What does stopping potential measure?" answer="The maximum kinetic energy per unit charge of the photoelectrons." /><SummaryStrip items={["Kmax = hν − φ.", "Kmax = eV₀.", "Saturation current collects even the slowest emitted electrons."]} /><AuditComment pages="36-38" unclear={0} />
     </AtomicPartShell>
   );
 }

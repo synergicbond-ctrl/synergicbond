@@ -1,5 +1,18 @@
 # Atomic Structure Premium Redesign Audit
 
+## Batch 3 — Parts 11–15
+
+- Files inspected: Parts 11–15; `AtomicLearning.tsx`, `AtomicVisuals.tsx`, and `_shared.tsx`; this audit. No Part 16–55 file was edited.
+- Content inventory and retention: Part 11 (all apparatus observations, threshold/work-function definitions, Einstein equations, Kmax graph and intensity distinctions) retained; Part 12 (photoelectron energy range, Kmax/stopping-potential relations, current–potential graph and every collection condition) retained; Part 13 (all current/stopping-potential graph meanings, colour and photon-flux questions) retained; Part 14 (complete work-function table, visible-photon calculation, classical-radius and caesium examples, Bohr postulates) retained; Part 15 (quantisation, every radius/speed/frequency/period derivation, table, constants, and numerical problems) retained.
+- Premium learning treatment: content-specific DefinitionCard, FormulaCard, WorkedExample, DerivationPanel and FigureCaption treatments are used alongside objectives, comparison notes, practice and recap. No decorative visual was added.
+- Diagrams and graphs: photoelectric apparatus; Kmax–frequency graph (slope h, ν0 intercept and −φ extrapolation); current–collector-potential graph; stopping-potential–frequency graph (slope h/e); and Bohr stationary-orbit visual were reviewed and captioned. SVGs have titles/descriptions and responsive viewBoxes.
+- Unresolved ambiguity: Part 13 retains one `[UNCLEAR]` marker for the original “Vmax v/s V” sketch whose axes are ambiguous; its only scientifically supported interpretation is stated beside it.
+- Factual corrections and clarifications: Part 12’s over-specific photon-reflection phrasing was replaced by a bounded one-photon teaching account; Part 14’s claim that the classical electron radius is a physical lower bound was corrected. Retained approximations: Bohr circular stationary orbits and non-relativistic one-electron scaling; conventional classical-radius expression; idealised saturation/current curves.
+- Student-visible wording: forbidden source/transcription/conversion/audit wording is absent from Parts 11–15. No source-page numbers are displayed.
+- Accessibility and responsive audit: semantic sections/figures, labelled SVG title/description pairs, keyboard focus styles, responsive SVG viewBoxes, horizontal-safe formula wrappers and scrollable data tables pass review.
+- Security/routing: premium entitlement, routes, navigation registration and security behaviour were not changed. Parts 16–55 remain unedited.
+- Remaining scope: exact next batch is Parts 16–20. Parts 16–55 remain unedited.
+
 ## Batch 2 — Parts 06–10
 
 - Inspected and retained all content in Parts 06–10: Rutherford cross-section derivation and two calculations; Rutherford limitations and EM-wave properties including the retained `[UNCLEAR]` entry; wave terms, black bodies, Kirchhoff and Wien law; Stefan–Boltzmann, Planck and Rayleigh–Jeans relations; Planck quantum theory and all worked photon problems.

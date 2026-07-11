@@ -2,10 +2,13 @@
 
 import { AtomicPartShell, AuditComment, DiagramBox, FormulaLine, MathText, NoteBlock, SourcePage } from "./_shared";
 import { PhotocurrentPotentialGraph, StoppingPotentialFrequencyGraph } from "../_components/AtomicVisuals";
+import { DefinitionCard, FigureCaption, ImportantNote, LearningObjectives, PracticeQuestion, SummaryStrip } from "../_components/AtomicLearning";
 
 export default function Part13() {
   return (
     <AtomicPartShell part={13} title="Stopping Potential Graphs and Photon Flux" pages="39-41">
+      <LearningObjectives items={["Read stopping-potential graphs.", "Relate intensity to saturation current.", "Predict photoemission from colour.", "Compare photon flux at equal intensity."]} />
+      <DefinitionCard term="Graph rule: hold one control fixed"><p>For one material, <MathText math="V_0=(h/e)\nu-\phi/e" />. Frequency changes stopping potential; intensity at fixed frequency changes saturation current by changing photon flux.</p></DefinitionCard>
       <SourcePage page={39}>
         <NoteBlock title="Case 3 — collector below anode potential">
           <p>
@@ -18,18 +21,18 @@ export default function Part13() {
             (<MathText math="V_0" />).
           </p>
           <DiagramBox title="Saturated current v/s intensity">
-            <p>
+            <FigureCaption>
               Axes: saturation current (vertical) against intensity of incident light (horizontal). The saturation current
               grows as a straight line from the origin — it is directly proportional to intensity.
-            </p>
+            </FigureCaption>
           </DiagramBox>
           <DiagramBox title="V_max v/s V">
-            <p>
+            <FigureCaption>
               Axes: <MathText math="V_{max}" /> against <MathText math="V" />. The curve rises steeply from the point{" "}
               <MathText math="V_0" /> on the potential axis and flattens.
-            </p>
+            </FigureCaption>
             <p>
-              [UNCLEAR] The printed axis labels of this sketch are ambiguous; the shape matches photoelectric current rising
+              [UNCLEAR] The axis labels of this sketch are ambiguous; the shape matches photoelectric current rising
               from the stopping potential and levelling off at saturation.
             </p>
           </DiagramBox>
@@ -48,16 +51,17 @@ export default function Part13() {
         </NoteBlock>
       </SourcePage>
 
+      <ImportantNote title="Two different controls">At fixed frequency, intensity changes photocurrent. At fixed intensity, frequency changes the stopping potential.</ImportantNote>
       <SourcePage page={40}>
         <NoteBlock title="Photoelectric current versus collector plate potential">
           <DiagramBox title="Variation of photoelectric current with collector plate potential for different frequencies of incident radiation">
             <PhotocurrentPotentialGraph />
-            <p>
+            <FigureCaption>
               Photoelectric current (vertical) against collector plate potential (horizontal); the arrow to the left of 0 marks
               the retarding potential. Three curves for frequencies <MathText math="\nu_3 > \nu_2 > \nu_1" /> rise to the same
               saturation current; their intercepts on the retarding-potential axis are <MathText math="-V_{03}" />,{" "}
               <MathText math="-V_{02}" /> and <MathText math="-V_{01}" /> respectively.
-            </p>
+            </FigureCaption>
           </DiagramBox>
           <p>
             Millikan&apos;s Experiment — variation of photoelectric current with the change of potential on the collector plate
@@ -65,12 +69,12 @@ export default function Part13() {
           </p>
           <DiagramBox title="Variation of stopping potential V0 with frequency v of incident radiation for a given photosensitive material">
             <StoppingPotentialFrequencyGraph />
-            <p>
+            <FigureCaption>
               Stopping potential <MathText math="V_0" /> (vertical) against frequency of incident radiation{" "}
               <MathText math="\nu" /> (horizontal). Two parallel straight lines: Metal A rising from threshold{" "}
               <MathText math="\nu_0" /> (region <MathText math="\nu > \nu_0" />) and Metal B rising from{" "}
               <MathText math="\nu_0'" /> (region <MathText math="\nu > \nu_0'" />).
-            </p>
+            </FigureCaption>
           </DiagramBox>
         </NoteBlock>
       </SourcePage>
@@ -116,7 +120,7 @@ export default function Part13() {
         </NoteBlock>
       </SourcePage>
 
-      <AuditComment pages="39-41" unclear={0} />
+      <PracticeQuestion prompt="At equal intensity, which source emits more photons: red or blue?" answer="Red, because photon number is proportional to wavelength at fixed delivered energy." /><SummaryStrip items={["V₀ rises linearly with ν.", "Slope of V₀–ν is h/e.", "At equal intensity n ∝ λ."]} /><AuditComment pages="39-41" unclear={1} />
     </AtomicPartShell>
   );
 }

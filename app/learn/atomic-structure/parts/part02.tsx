@@ -90,9 +90,7 @@ export default function Part02() {
           <FormulaLine math="=2.82\times10^{-13}\ \mathrm{cm}" />
           <FormulaLine math="=2.82\times10^{-15}\ \mathrm{m}\quad(\mathrm{Classical\ Radius})" />
           <div className="rounded-lg border border-amber-400/20 bg-amber-400/[0.06] p-3 text-sm text-amber-100">
-            Printed insert present: heading &quot;Classical Radius of the Electron&quot; with formulas including{" "}
-            <MathText math="E=mc^2" /> and <MathText math="W=\frac{e^2}{2r_o}" />. Long verbatim printed text is
-            copyright-limited and not reproduced.
+            <strong>Classical-radius note.</strong> The model also uses <MathText math="E=mc^2" /> and the electrostatic-energy relation <MathText math="W=\frac{e^2}{2r_o}" />.
           </div>
         </NoteBlock>
       </SourcePage>

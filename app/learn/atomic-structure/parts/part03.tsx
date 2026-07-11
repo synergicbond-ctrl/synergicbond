@@ -6,14 +6,13 @@ export default function Part03() {
   return (
     <AtomicPartShell part={3} title="Discovery of Proton" pages="7-9">
       <SourcePage page={7}>
-        <NoteBlock title="Printed insert continuation">
+        <NoteBlock title="Classical electron-radius relations">
           <p>
-            Printed insert continuation from Fundamentals of Electromagnetism: visible formulas include{" "}
+            Useful classical-model formulas include{" "}
             <MathText math="W=\frac{3e^2}{5r_o}" />, <MathText math="W=\frac{e^2}{r_o}" />, and{" "}
             <MathText math="r_o=\frac{e^2}{m_oc^2}\approx3\times10^{-13}\ \mathrm{cm}" />.
           </p>
-          <p>Source credit visible: From - A. Lopez Davalos, D. Zanette, Fundamentals of Electromagnetism.</p>
-          <p className="text-amber-200">Long verbatim printed text is copyright-limited and not reproduced.</p>
+          <p>These relations are classical-model expressions for electrostatic self-energy and radius.</p>
         </NoteBlock>
       </SourcePage>
 
@@ -50,8 +49,8 @@ export default function Part03() {
 
       <SourcePage page={9}>
         <NoteBlock title="Anode rays and proton">
-          <p>Goldstein gave the name proton, the particles of anode ray when hydrogen was filled in the tube.</p>
-          <p>Rutherford proved that proton is present in all the atoms with the help of artificial transmutation.</p>
+          <p>Goldstein observed positive (canal) rays. The hydrogen nucleus, H<sup>+</sup>, is the proton.</p>
+          <p>Rutherford established that the proton is a constituent of atomic nuclei through artificial transmutation experiments.</p>
           <h3 className="font-black text-fuchsia-300">Properties-</h3>
           <BulletList
             items={[

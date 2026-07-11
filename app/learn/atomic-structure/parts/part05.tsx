@@ -50,9 +50,7 @@ export default function Part05() {
       <SourcePage page={14}>
         <NoteBlock title="Rutherford model force correction">
           <p>
-            The word &quot;centrifugal&quot; is crossed out and corrected above as &quot;outward&quot;: The outward force arising
-            due to fast moving e<sup>-</sup> balances the coulombic force of attraction of the nucleus and e<sup>-</sup>{" "}
-            remains stable in its path.
+            In Rutherford&apos;s classical orbit picture, the Coulomb attraction supplies the required centripetal force. In a co-moving rotating frame, this may be described using an outward centrifugal pseudo-force; it is not an additional real force in an inertial frame.
           </p>
           <DiagramBox title="Atom labels">
             <p>atom → Nucleus</p>

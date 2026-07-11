@@ -1,6 +1,7 @@
 "use client";
 
-import { AtomicPartShell, AuditComment, BulletList, DiagramBox, FormulaLine, MathText, NoteBlock, SourcePage } from "./_shared";
+import { AtomicPartShell, AuditComment, DiagramBox, FormulaLine, MathText, NoteBlock, SourcePage } from "./_shared";
+import { GoldFoilVisual } from "../_components/AtomicVisuals";
 
 export default function Part04() {
   return (
@@ -56,6 +57,7 @@ export default function Part04() {
         </NoteBlock>
         <NoteBlock title="Rutherford α-ray scattering Experiment and atomic model">
           <DiagramBox title="Rutherford gold foil experiment">
+            <GoldFoilVisual />
             <div className="grid gap-3 text-sm text-white/75 sm:grid-cols-2">
               <div>
                 <p className="font-bold text-white">Visible labels</p>

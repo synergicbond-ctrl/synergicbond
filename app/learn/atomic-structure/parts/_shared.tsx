@@ -85,19 +85,19 @@ export function AtomicPartShell({
   const nextPart = currentIndex >= 0 ? atomicPartMeta[currentIndex + 1] : undefined;
 
   return (
-    <article className="min-h-screen bg-[#0B1220] px-5 py-10 text-white sm:px-6">
-      <div className="mx-auto max-w-5xl">
+    <article className="min-h-screen bg-[#08111f] px-4 py-8 text-white sm:px-6 sm:py-12">
+      <div className="mx-auto max-w-6xl">
         <Link
           href="/learn/atomic-structure"
-          className="inline-flex rounded-lg border border-cyan-400/25 bg-cyan-400/10 px-3 py-1.5 text-sm font-semibold text-cyan-200 transition hover:bg-cyan-400/15"
+          className="inline-flex rounded-full border border-cyan-300/30 bg-cyan-300/10 px-4 py-2 text-sm font-semibold text-cyan-100 transition hover:bg-cyan-300/20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-300"
         >
           Atomic Structure
         </Link>
-        <header className="mt-6 border-b border-white/[0.08] pb-6">
-          <p className="text-[11px] font-bold uppercase tracking-[0.3em] text-cyan-300/75">
-            Part {String(part).padStart(2, "0")} · Source pages {pages}
-          </p>
-          <h1 className="mt-2 text-3xl font-black tracking-tight sm:text-5xl">{title}</h1>
+        <header className="mt-6 rounded-3xl border border-cyan-300/15 bg-gradient-to-br from-cyan-400/[0.12] via-slate-950/40 to-violet-500/[0.10] p-6 shadow-2xl shadow-cyan-950/30 sm:p-9">
+          <p className="text-[11px] font-bold uppercase tracking-[0.3em] text-cyan-200">Atomic Structure · Part {String(part).padStart(2, "0")}</p>
+          <h1 className="mt-3 text-3xl font-black tracking-tight sm:text-5xl">{title}</h1>
+          <div className="mt-6 h-1.5 overflow-hidden rounded-full bg-white/10" aria-label={`Chapter progress: part ${part} of 55`}><div className="h-full rounded-full bg-gradient-to-r from-cyan-300 to-violet-400" style={{ width: `${(part / 55) * 100}%` }} /></div>
+          <p className="mt-2 text-sm text-slate-300">Study sequence {part} of 55 · approximately 8–12 minutes</p>
         </header>
         <div className="mt-8 space-y-8">{children}</div>
         <nav aria-label="Atomic Structure part navigation" className="mt-10 flex items-center justify-between gap-4 border-t border-white/[0.08] pt-6">
@@ -123,10 +123,9 @@ export function AtomicPartShell({
   );
 }
 
-export function SourcePage({ page, children }: { page: number; children: ReactNode }) {
+export function SourcePage({ page: _page, children }: { page: number; children: ReactNode }) {
   return (
-    <section className="space-y-4 border-l border-cyan-400/20 pl-4">
-      <h2 className="text-sm font-black uppercase tracking-[0.24em] text-cyan-300">Source page {page}</h2>
+    <section className="space-y-4 border-l-2 border-cyan-400/30 pl-4 sm:pl-6">
       {children}
     </section>
   );
@@ -134,8 +133,8 @@ export function SourcePage({ page, children }: { page: number; children: ReactNo
 
 export function NoteBlock({ title, children }: { title?: string; children: ReactNode }) {
   return (
-    <div className="rounded-lg border border-white/[0.08] bg-white/[0.035] p-4 sm:p-5">
-      {title ? <h3 className="mb-3 text-lg font-black text-white">{title}</h3> : null}
+    <div className="rounded-2xl border border-white/[0.09] bg-white/[0.045] p-5 shadow-lg shadow-black/10 sm:p-6">
+      {title ? <h2 className="mb-3 text-lg font-black text-white">{title}</h2> : null}
       <div className="space-y-3 text-sm leading-relaxed text-white/78 sm:text-base">{children}</div>
     </div>
   );
@@ -203,7 +202,7 @@ export function DataTable({
 
 export function DiagramBox({ title, children }: { title: string; children: ReactNode }) {
   return (
-    <figure className="rounded-lg border border-cyan-400/20 bg-cyan-400/[0.04] p-4">
+    <figure className="rounded-2xl border border-cyan-400/20 bg-cyan-400/[0.04] p-4">
       <figcaption className="mb-3 text-xs font-black uppercase tracking-[0.2em] text-cyan-200">
         Diagram: {title}
       </figcaption>
@@ -222,8 +221,6 @@ export function AuditComment({
   note?: string;
 }) {
   return (
-    <span className="hidden">
-      {`Source pages: ${pages}\nCoverage status: audited${note ? ` (${note})` : ""}\nUnclear markers: ${unclear}`}
-    </span>
+    <span className="hidden">{`Coverage reviewed${note ? ` (${note})` : ""}; unresolved markers: ${unclear}; reference: ${pages}`}</span>
   );
 }

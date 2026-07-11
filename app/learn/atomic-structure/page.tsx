@@ -11,7 +11,7 @@ import {
 
 const SECTIONS: NoteSection[] = [
   { id: "why", label: "Why it matters" },
-  { id: "source-parts", label: "Kohinoor Parts" },
+  { id: "source-parts", label: "Chapter Parts" },
   { id: "models", label: "Models of the Atom" },
   { id: "quantum", label: "Quantum Numbers" },
   { id: "formulas", label: "Formula Cards" },
@@ -54,17 +54,16 @@ export default function AtomicStructureNotes() {
         />
       </div>
 
-      <Section id="source-parts" eyebrow="Handwritten source" title="Kohinoor Atomic Structure Parts">
+      <Section id="source-parts" eyebrow="Study sequence" title="Atomic Structure Parts">
         <p className="mb-5 max-w-2xl leading-relaxed text-white/65">
-          Forensic TSX transcription from the handwritten Atomic Structure source begins here. Parts 01-11 are now
-          implemented, matching source pages 1-35 from the 60-part manifest.
+          Follow the complete Atomic Structure learning sequence, from foundational atomic models through quantum mechanics.
         </p>
         <div className="grid gap-3 sm:grid-cols-2">
           {atomicPartMeta.map((part) => (
             <Link key={part.href} href={part.href} className="block">
               <Glass className="h-full p-4 transition hover:border-cyan-400/30 hover:bg-cyan-400/[0.05]">
                 <div className="text-[11px] font-black uppercase tracking-[0.22em] text-cyan-300">
-                  Part {String(part.part).padStart(2, "0")} · pages {part.pages}
+                  Part {String(part.part).padStart(2, "0")}
                 </div>
                 <div className="mt-2 text-base font-black text-white">{part.title}</div>
               </Glass>

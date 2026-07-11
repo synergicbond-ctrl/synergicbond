@@ -9,14 +9,13 @@ export default function Part01() {
         <NoteBlock title="Atomic Structure">
           <h3 className="text-xl font-black text-amber-300">Dalton&apos;s Atomic Theory</h3>
           <ol className="list-decimal space-y-3 pl-5">
-            <li>Atoms are the smallest particles of any substance which are indestructible.</li>
-            <li>Atom can never be created or destroyed; only the rearrangement of atoms occur in reaction.</li>
-            <li>All the atom be hard and dense.</li>
+            <li>In Dalton&apos;s model, atoms were treated as the smallest particles of a substance and as indestructible.</li>
+            <li>In ordinary chemical reactions, atoms are not created or destroyed; they are rearranged.</li>
+            <li>Dalton pictured atoms as hard, dense particles.</li>
             <li>
-              All the atoms of a substance is identical in all respects but the atoms of different substances are
-              different.
+              Atoms of a given element were considered identical in all respects, whereas atoms of different elements were considered different.
             </li>
-            <li>Compounds is formed when the atoms of different elements combine in a fixed ratio by mass.</li>
+            <li>Compounds form when atoms of different elements combine in a fixed ratio by mass.</li>
           </ol>
         </NoteBlock>
       </SourcePage>

@@ -1,10 +1,13 @@
 "use client";
 
 import { AtomicPartShell, AuditComment, DiagramBox, FormulaLine, MathText, NoteBlock, SourcePage } from "./_shared";
+import { DerivationPanel, ImportantNote, LearningObjectives, SummaryStrip, WorkedExample } from "../_components/AtomicLearning";
+import { MoseleySeriesVisual, WavePacketVisual } from "../_components/AtomicVisuals";
 
 export default function Part34() {
   return (
     <AtomicPartShell part={34} title="Moseley's Law and Group Velocity" pages="106-108">
+      <LearningObjectives items={["use Moseley&apos;s relation for Kα X-rays", "solve wavelength-ratio questions from atomic number", "separate phase velocity from group velocity for matter waves"]} />
       <SourcePage page={106}>
         <NoteBlock title="Moseley Experiment">
           <p>
@@ -20,6 +23,7 @@ export default function Part34() {
               n = 2 the lines <MathText math="L_\beta,\ L_\alpha" />; to n = 3 the line <MathText math="M_\alpha" />.
             </p>
           </DiagramBox>
+          <figure className="rounded-2xl border border-cyan-400/20 bg-cyan-400/[0.04] p-4"><MoseleySeriesVisual /><figcaption className="mt-3 text-sm text-slate-300">The Kα arrow is the <MathText math="n=2\to1" /> transition used in the frequency derivation below.</figcaption></figure>
           <p><MathText math="K_\alpha" />:</p>
           <FormulaLine math="E=h\nu=E_i-E_f=\frac{me^{4}(Z-1)^{2}}{8h^{2}\varepsilon_0^{2}}\left(\frac{1}{1^{2}}-\frac{1}{2^{2}}\right)" />
           <FormulaLine math="\nu=\frac{me^{4}}{8h^{3}\varepsilon_0^{2}}\left(\frac{3}{4}\right)(Z-1)^{2}" />
@@ -29,15 +33,15 @@ export default function Part34() {
       </SourcePage>
 
       <SourcePage page={107}>
-        <NoteBlock title="Printed problem — Kα ratio for Fe and Sc">
+        <WorkedExample title="Kα ratio for Fe and Sc">
           <p>
             The ratio of wavelengths of <MathText math="K_\alpha" />-characteristic X-rays produced when iron (Z = 26) and
             scandium (Z = 21) are used as anticathode, is
           </p>
           <FormulaLine math="\frac{1}{\lambda}\propto(Z-1)^{2}" />
           <FormulaLine math="\frac{\lambda_{Fe}}{\lambda_{Sc}}=\frac{(21-1)^{2}}{(26-1)^{2}}=\frac{16}{25}" />
-        </NoteBlock>
-        <NoteBlock title="Printed problem — Kα line for Z = 57 and Z = 29">
+        </WorkedExample>
+        <WorkedExample title="Kα line for Z = 57 and Z = 29">
           <p>
             The wavelength of the <MathText math="K_\alpha" /> line for an element of atomic number 57 is{" "}
             <MathText math="\lambda" />. What is the wavelength of <MathText math="k_\alpha" /> line for the element of atomic
@@ -51,11 +55,11 @@ export default function Part34() {
           </ul>
           <FormulaLine math="\frac{\lambda_2}{\lambda_1}=\left(\frac{57-1}{29-1}\right)^{2}" />
           <FormulaLine math="\lambda_2=4\lambda_1" />
-        </NoteBlock>
+        </WorkedExample>
       </SourcePage>
 
       <SourcePage page={108}>
-        <NoteBlock title="Group Velocity and Phase Velocity">
+        <DerivationPanel title="Group Velocity and Phase Velocity">
           <p>If we consider matter wave as a single wave</p>
           <FormulaLine math="\lambda=\frac{h}{mv}\qquad\frac{1}{\lambda v}=\frac{m}{h}\qquad\lambda v=\frac{h}{m}" />
           <FormulaLine math="V_p=\frac{\omega}{K}\qquad\omega=2\pi\nu\qquad K=\frac{2\pi}{\lambda}" />
@@ -66,12 +70,16 @@ export default function Part34() {
           <FormulaLine math="v_g=\frac{d\omega}{dK}=\frac{dE}{dp}=\frac{d}{dp}\left(\frac{p^{2}}{2m}\right)" />
           <FormulaLine math="v_g=\frac{p}{m}" />
           <FormulaLine math="\boxed{v_g=v}" />
-          <DiagramBox title="Wave packet (printed)">
+          <DiagramBox title="Wave packet">
             <p>A Gaussian wave packet showing real and imaginary oscillations under an absolute-value envelope.</p>
           </DiagramBox>
+          <figure className="rounded-2xl border border-cyan-400/20 bg-cyan-400/[0.04] p-4"><WavePacketVisual /><figcaption className="mt-3 text-sm text-slate-300">A localised packet makes the group-velocity treatment meaningful.</figcaption></figure>
           <p>hence, matter wave is wave packet not single wave.</p>
-        </NoteBlock>
+        </DerivationPanel>
       </SourcePage>
+
+      <ImportantNote title="Model assumption">The phase-velocity chain uses the single-wave assumption and demonstrates why it does not represent a localised matter particle; the packet calculation gives <MathText math="v_g=v" />.</ImportantNote>
+      <SummaryStrip items={["For Kα, ν ∝ (Z−1)² under the stated screening form.", "The Fe/Sc wavelength ratio is 16/25; Z = 29 gives 4λ relative to Z = 57.", "Phase velocity c²/v exceeds c for v<c, while group velocity equals particle velocity."]} />
 
       <AuditComment pages="106-108" unclear={0} />
     </AtomicPartShell>

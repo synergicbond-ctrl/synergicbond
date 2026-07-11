@@ -9,6 +9,25 @@ export function ScientificVisual({ title, description, children, ...props }: Vis
   </svg>;
 }
 
+export function MoseleySeriesVisual() {
+  const levels: Array<[number, number]> = [[1, 240], [2, 155], [3, 95], [4, 50]];
+  const kSeries: Array<[number, number, number, string]> = [[190, 155, 240, "Kα"], [250, 95, 240, "Kβ"], [310, 50, 240, "Kγ"]];
+  const otherSeries: Array<[number, number, number, string]> = [[365, 95, 155, "Lα"], [405, 50, 155, "Lβ"], [445, 50, 95, "Mα"]];
+  return <ScientificVisual title="Characteristic X-ray series" description="Energy-level diagram with transitions ending at n equals one labelled K alpha, K beta and K gamma; transitions ending at n equals two labelled L alpha and L beta; and a transition ending at n equals three labelled M alpha. The K alpha transition runs from n equals two to n equals one." viewBox="0 0 520 300" className="h-auto w-full">
+    {levels.map(([n,y]) => <g key={n}><path d={`M105 ${y}H440`} stroke="#94a3b8" strokeWidth="2"/><text x="62" y={y + 5} fill="#e2e8f0" fontSize="15">n = {n}</text></g>)}
+    <defs><marker id="moseley-arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L7,3z" fill="#facc15"/></marker></defs>
+    {kSeries.map(([x,y1,y2,label]) => <g key={label}><path d={`M${x} ${y1}V${y2 + 6}`} stroke="#facc15" strokeWidth="2.5" markerEnd="url(#moseley-arrow)"/><text x={x+8} y={(y1+y2)/2} fill="#fde68a" fontSize="13">{label}</text></g>)}
+    {otherSeries.map(([x,y1,y2,label]) => <g key={label}><path d={`M${x} ${y1}V${y2 + 6}`} stroke="#67e8f9" strokeWidth="2" markerEnd="url(#moseley-arrow)"/><text x={x-25} y={(y1+y2)/2} fill="#a5f3fc" fontSize="13">{label}</text></g>)}
+    <text x="20" y="286" fill="#94a3b8" fontSize="13">arrows show emission transitions; the K series terminates at n = 1</text>
+  </ScientificVisual>;
+}
+
+export function WavePacketVisual() {
+  const packet = Array.from({ length: 181 }, (_, i) => { const x = 45 + i * 2.3; const u = (x - 252) / 82; const y = 142 - 60 * Math.exp(-u * u) * Math.cos((x - 252) / 9); return `${x.toFixed(1)},${y.toFixed(1)}`; }).join(" ");
+  const envelope = (sign: 1 | -1) => Array.from({ length: 181 }, (_, i) => { const x = 45 + i * 2.3; const u = (x - 252) / 82; return `${x.toFixed(1)},${(142 + sign * 60 * Math.exp(-u * u)).toFixed(1)}`; }).join(" ");
+  return <ScientificVisual title="Localised matter-wave packet" description="A localised oscillatory wave packet against position x. A carrier oscillation lies inside a Gaussian envelope, illustrating why a single sinusoid is not localised." viewBox="0 0 520 260" className="h-auto w-full"><path d="M45 142H475M45 35V225" stroke="#94a3b8" strokeWidth="2"/><text x="465" y="163" fill="#e2e8f0" fontSize="14">x</text><text x="15" y="43" fill="#e2e8f0" fontSize="14">ψ</text><polyline points={envelope(1)} fill="none" stroke="#f472b6" strokeWidth="1.6" strokeDasharray="5 5"/><polyline points={envelope(-1)} fill="none" stroke="#f472b6" strokeWidth="1.6" strokeDasharray="5 5"/><polyline points={packet} fill="none" stroke="#67e8f9" strokeWidth="2.4"/><text x="270" y="45" fill="#f9a8d4" fontSize="13">envelope</text><text x="58" y="246" fill="#94a3b8" fontSize="13">a superposition can be localised; a single sinusoid extends indefinitely</text></ScientificVisual>;
+}
+
 export function GoldFoilVisual() {
   return <ScientificVisual title="Rutherford gold-foil scattering" description="Alpha particles from a source strike thin gold foil. Most continue forward, some deflect, and a very small number scatter backward." viewBox="0 0 760 260" className="h-auto w-full">
     <defs><marker id="alpha-arrow" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3z" fill="#67e8f9" /></marker></defs>

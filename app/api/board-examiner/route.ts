@@ -4,6 +4,7 @@ export const dynamic = "force-dynamic";
 import { NextResponse } from "next/server";
 import { generateMultimodal } from "@/lib/gemini";
 import { createClient } from "@/lib/supabase/server";
+import { guardAiRequest } from "@/lib/ai/guardAiRequest";
 
 // ─────────────────────────────────────────────────────────────────────────────
 // /api/board-examiner — AI Board Examiner (Roadmap V2 · Week 11).
@@ -23,6 +24,8 @@ function withTimeout<T>(p: Promise<T>, ms: number): Promise<T> {
 
 export async function POST(req: Request) {
   try {
+    const gate = await guardAiRequest(req, { bucket: "board-examiner" });
+    if (!gate.ok) return gate.response;
     const supabase = await createClient();
     const { data: { user } } = await supabase.auth.getUser();
     if (!user) return NextResponse.json({ error: "Sign in to use the AI Board Examiner." }, { status: 401 });

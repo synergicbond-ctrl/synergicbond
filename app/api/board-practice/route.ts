@@ -4,6 +4,7 @@ export const dynamic = "force-dynamic";
 import { NextResponse } from "next/server";
 import { generateJSON } from "@/lib/gemini";
 import { createClient } from "@/lib/supabase/server";
+import { guardAiRequest } from "@/lib/ai/guardAiRequest";
 import { getBoardQuestionType } from "@/lib/cbse/practice";
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -26,6 +27,8 @@ function withTimeout<T>(p: Promise<T>, ms: number): Promise<T> {
 
 export async function POST(req: Request) {
   try {
+    const gate = await guardAiRequest(req, { bucket: "board-practice" });
+    if (!gate.ok) return gate.response;
     const supabase = await createClient();
     const { data: { user } } = await supabase.auth.getUser();
     if (!user) return NextResponse.json({ error: "Sign in to generate board practice questions." }, { status: 401 });

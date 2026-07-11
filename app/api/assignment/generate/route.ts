@@ -2,11 +2,15 @@ export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 
 import { NextResponse } from "next/server";
+import { guardAiRequest } from "@/lib/ai/guardAiRequest";
 import { generateJSON } from "@/lib/gemini";
 import { fetchSyllabusContext } from "@/lib/aiTutor";
 
 export async function POST(req: Request) {
   try {
+    const gate = await guardAiRequest(req, { bucket: "assignment" });
+    if (!gate.ok) return gate.response;
+
     const {
       topic, chapterId,
       examType = "JEE Main",
@@ -74,7 +78,7 @@ Respond with ONLY this JSON (no markdown, no code blocks):
   } catch (error: unknown) {
     console.error("Assignment error:", error);
     return NextResponse.json(
-      { error: error instanceof Error ? error.message : "Failed to generate assignment" },
+      { error: "Failed to generate assignment. Please try again." },
       { status: 500 }
     );
   }

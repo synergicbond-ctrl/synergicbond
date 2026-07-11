@@ -4,6 +4,7 @@ export const dynamic = "force-dynamic";
 import { NextResponse } from "next/server";
 import { generateJSON } from "@/lib/gemini";
 import { createClient } from "@/lib/supabase/server";
+import { guardAiRequest } from "@/lib/ai/guardAiRequest";
 
 // ─────────────────────────────────────────────────────────────────────────────
 // POST /api/engine/generate — the learning engine's single AI generation route
@@ -43,6 +44,8 @@ const ILLUSTRATION_JSON = `{
 
 export async function POST(req: Request) {
   try {
+    const gate = await guardAiRequest(req, { bucket: "engine-generate" });
+    if (!gate.ok) return gate.response;
     const supabase = await createClient();
     const { data: { user } } = await supabase.auth.getUser();
     if (!user) return NextResponse.json({ error: "Sign in to use the learning engine." }, { status: 401 });

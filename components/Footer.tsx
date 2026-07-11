@@ -132,8 +132,9 @@ export default function Footer() {
             Copyright © 2026 SYNERGIC BOND. All Rights Reserved.
           </p>
           <div className="flex gap-4 text-xs text-gray-600">
-            <Link href="#" className="hover:text-white transition">Privacy Policy</Link>
-            <Link href="#" className="hover:text-white transition">Terms of Use</Link>
+            <Link href="/privacy" className="hover:text-white transition">Privacy Policy</Link>
+            <Link href="/terms" className="hover:text-white transition">Terms of Service</Link>
+            <Link href="/refund" className="hover:text-white transition">Refund Policy</Link>
             <a href="mailto:hello@synergicbond.com" className="hover:text-white transition">hello@synergicbond.com</a>
           </div>
         </div>

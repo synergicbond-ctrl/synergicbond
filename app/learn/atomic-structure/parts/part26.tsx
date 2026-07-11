@@ -41,7 +41,7 @@ export default function Part26() {
         <DerivationPanel title="de Broglie standing-wave condition on a Bohr orbit">
           <p>de Broglie treated the electron wave as a <em>standing wave</em> around its circular orbit. For the wave to close continuously on itself, an integer number of wavelengths must fit around the circumference:</p>
           <FormulaLine math="2\pi r = n\lambda = n\frac{h}{mv}" />
-          <p>Rearranging gives Bohr's angular-momentum quantisation — now derived from a wave argument, not assumed as a postulate:</p>
+          <p>Rearranging gives Bohr&apos;s angular-momentum quantisation — now derived from a wave argument, not assumed as a postulate:</p>
           <FormulaLine math="\boxed{mvr = n\frac{h}{2\pi}}" />
           <DiagramBox title="Standing wave on a Bohr orbit (n = 5 shown)">
             <StandingWaveOrbitVisual />

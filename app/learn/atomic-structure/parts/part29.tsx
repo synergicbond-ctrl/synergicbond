@@ -106,7 +106,7 @@ export default function Part29() {
         <ImportantNote title="Madelung rule summary">
           Fill in order of increasing <MathText math="(n+l)" />. When two subshells have the same{" "}
           <MathText math="(n+l)" />, the one with lower <MathText math="n" /> fills first. This is the Madelung rule
-          (also called Klechkowsky's rule), which empirically reproduces the filling order for most elements.
+          (also called Klechkowsky&apos;s rule), which empirically reproduces the filling order for most elements.
         </ImportantNote>
       </SourcePage>
 

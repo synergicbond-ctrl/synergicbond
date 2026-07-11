@@ -20,7 +20,7 @@ export default function Part27() {
         <DerivationPanel title="Energy–time uncertainty: ΔE·Δt ≥ h/4π">
           <p>Start from the kinetic–energy and momentum relation:</p>
           <FormulaLine math="E = \frac{p^2}{2m}\qquad p = \sqrt{2Em}" />
-          <p>Newton's second law gives <MathText math="F = \Delta p/\Delta t" />, so <MathText math="F\cdot\Delta t = \Delta p" />. Then:</p>
+          <p>Newton&apos;s second law gives <MathText math="F = \Delta p/\Delta t" />, so <MathText math="F\cdot\Delta t = \Delta p" />. Then:</p>
           <FormulaLine math="\left(\frac{\Delta x}{\Delta t}\cdot F\cdot\Delta t\right)\Delta t \ge \frac{h}{4\pi}" />
           <FormulaLine math="\boxed{\Delta E\cdot\Delta t \ge \frac{h}{4\pi}}" />
           <p>By the same reasoning, for angular momentum <MathText math="L" /> and angular position <MathText math="\theta" />:</p>

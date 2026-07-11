@@ -18,14 +18,14 @@ export default function Part30() {
           <ol className="list-decimal space-y-2 pl-5 text-sm">
             <li>
               <strong className="text-white">Aufbau Principle</strong> — electrons fill the lowest available energy
-              subshell first (<em>Aufbau</em> = German for "building up").
+              subshell first (<em>Aufbau</em> = German for &quot;building up&quot;).
             </li>
             <li>
               <strong className="text-white">Pauli Exclusion Principle</strong> — no two electrons in an atom may have
               all four quantum numbers identical; at most 2 electrons per orbital (with opposite spins).
             </li>
             <li>
-              <strong className="text-white">Hund's Rule of Maximum Multiplicity</strong> — electrons distribute among
+              <strong className="text-white">Hund&apos;s Rule of Maximum Multiplicity</strong> — electrons distribute among
               degenerate orbitals to give the maximum number of unpaired electrons with parallel spin.
             </li>
           </ol>
@@ -34,7 +34,7 @@ export default function Part30() {
         <NoteBlock title="Aufbau Principle and Madelung Rule">
           <p>
             The filling order is governed by the <MathText math="(n+l)" /> rule, also called the{" "}
-            <strong className="text-white">Madelung Rule</strong> or Klechkowsky's rule:
+            <strong className="text-white">Madelung Rule</strong> or Klechkowsky&apos;s rule:
           </p>
           <FormulaLine math="1s<2s<2p<3s<3p<4s<3d<4p<5s<4d<5p<6s<4f<5d<6p<7s<5f<6d<7p<8s" />
           <FormulaLine math="(n+l):\ 1s=1;\ 2s=2;\ 2p,3s=3;\ 3p,4s=4;\ 3d,4p,5s=5;\ 4d,5p,6s=6;\ 4f,5d,6p,7s=7;\ 5f,6d,7p=8" />

@@ -369,7 +369,7 @@ export default function StoichiometryPart7() {
       {/* Page 60 */}
       <section className="space-y-5">
         <h2 className="border-b pb-2 text-2xl font-bold">Page 60</h2>
-        <h5 className="font-semibold">b. Kjeldahl's Method</h5>
+        <h5 className="font-semibold">b. Kjeldahl&apos;s Method</h5>
         <DiagramBlock title="Kjeldahl method">
           <FormulaLine
             tex={String.raw`\text{O.C.}\xrightarrow[\Delta]{\text{conc. }H_2SO_4}(NH_4)_2SO_4\xrightarrow[\text{boil}]{\text{conc. NaOH}}NH_3(g)`}
@@ -459,7 +459,7 @@ export default function StoichiometryPart7() {
           title="Solved Example — Kjeldahl's Method"
           question={
             <>
-              In a Kjeldahl's experiment, 10 gm of an organic compound produces
+              In a Kjeldahl&apos;s experiment, 10 gm of an organic compound produces
               some <InlineMath math={String.raw`NH_3`} /> gas which is completely
               absorbed in a solution containing 49 gm{' '}
               <InlineMath math={String.raw`H_2SO_4`} />. The resulting solution

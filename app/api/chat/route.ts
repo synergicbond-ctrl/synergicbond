@@ -4,6 +4,7 @@ export const dynamic = "force-dynamic";
 import { NextResponse } from "next/server";
 import { GoogleGenAI } from "@google/genai";
 import { createClient } from "@/lib/supabase/server";
+import { guardAiRequest } from "@/lib/ai/guardAiRequest";
 import { fetchSyllabusContext } from "@/lib/aiTutor";
 
 function getAI() {
@@ -12,6 +13,9 @@ function getAI() {
 
 export async function POST(req: Request) {
   try {
+    const gate = await guardAiRequest(req, { bucket: "chat" });
+    if (!gate.ok) return gate.response;
+
     const { message, chapterId, history = [], language = "english" } = await req.json();
 
     if (!message || !chapterId) {

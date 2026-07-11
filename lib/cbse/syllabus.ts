@@ -41,7 +41,7 @@ export interface CbseChapter {
 
 // ── Class 11 (NCERT Part I) ───────────────────────────────────────────────────
 const CLASS_11: CbseChapter[] = [
-  { id: "some-basic-concepts", unit: 1, title: "Some Basic Concepts of Chemistry", class: 11, category: "physical", masterId: "some-basic-concepts", pyqChapters: ["Some Basic Concepts"], learnHref: "/learn/mole-concept" },
+  { id: "some-basic-concepts", unit: 1, title: "Some Basic Concepts of Chemistry", class: 11, category: "physical", masterId: "some-basic-concepts", pyqChapters: ["Some Basic Concepts"], learnHref: "/notes/some-basic-concepts-of-chemistry" },
   { id: "structure-of-atom", unit: 2, title: "Structure of Atom", class: 11, category: "physical", masterId: "structure-of-atom", pyqChapters: ["Atomic Structure"], learnHref: "/learn/atomic-structure" },
   { id: "classification-periodicity", unit: 3, title: "Classification of Elements & Periodicity", class: 11, category: "inorganic", masterId: "periodic-table", pyqChapters: ["Periodic Table"], learnHref: "/learn/periodic-table" },
   { id: "chemical-bonding", unit: 4, title: "Chemical Bonding & Molecular Structure", class: 11, category: "inorganic", masterId: "chemical-bonding", pyqChapters: ["Chemical Bonding"], learnHref: "/learn/chemical-bonding" },

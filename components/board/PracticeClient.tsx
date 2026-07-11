@@ -321,7 +321,7 @@ export default function PracticeClient({
                     <span className="font-bold text-white text-xs uppercase tracking-wider">AI Evaluation Report</span>
                     <span className="font-black text-emerald-300 px-2 py-0.5 bg-emerald-500/10 rounded-lg">{grade.marksAwarded} / {grade.maxMarks} Marks</span>
                   </div>
-                  <p className="text-white/75 italic">"{grade.verdict}"</p>
+                  <p className="text-white/75 italic">&ldquo;{grade.verdict}&rdquo;</p>
                   
                   {grade.strengths?.length > 0 && (
                     <div className="space-y-1">

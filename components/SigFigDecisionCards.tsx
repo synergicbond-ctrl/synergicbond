@@ -125,7 +125,7 @@ export default function SigFigDecisionCards() {
       {/* Quick reference */}
       <div className="bg-amber-50 dark:bg-amber-950 border border-amber-200 dark:border-amber-800 p-4 rounded-xl">
         <p className="text-sm text-amber-800 dark:text-amber-200">
-          <span className="font-bold">💡 Memory Aid:</span> Think "fewest wins" — whichever number has fewer decimals (or fewer sig figs) limits the answer.
+          <span className="font-bold">💡 Memory Aid:</span> Think &ldquo;fewest wins&rdquo; — whichever number has fewer decimals (or fewer sig figs) limits the answer.
         </p>
       </div>
     </div>

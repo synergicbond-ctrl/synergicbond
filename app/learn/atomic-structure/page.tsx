@@ -1,6 +1,8 @@
 "use client";
 
 import { renderChemistry } from "@/lib/renderChemistry";
+import Link from "next/link";
+import { atomicPartMeta } from "./parts/_shared";
 import {
   PremiumNotes, Glass, Hero, Section, FormulaCard, Step, CalloutList, JeeFocus, RevisionSheet, type NoteSection,
 } from "@/components/notes/premium";
@@ -9,6 +11,7 @@ import {
 
 const SECTIONS: NoteSection[] = [
   { id: "why", label: "Why it matters" },
+  { id: "source-parts", label: "Kohinoor Parts" },
   { id: "models", label: "Models of the Atom" },
   { id: "quantum", label: "Quantum Numbers" },
   { id: "formulas", label: "Formula Cards" },
@@ -50,6 +53,25 @@ export default function AtomicStructureNotes() {
           ]}
         />
       </div>
+
+      <Section id="source-parts" eyebrow="Handwritten source" title="Kohinoor Atomic Structure Parts">
+        <p className="mb-5 max-w-2xl leading-relaxed text-white/65">
+          Forensic TSX transcription from the handwritten Atomic Structure source begins here. Parts 01-11 are now
+          implemented, matching source pages 1-35 from the 60-part manifest.
+        </p>
+        <div className="grid gap-3 sm:grid-cols-2">
+          {atomicPartMeta.map((part) => (
+            <Link key={part.href} href={part.href} className="block">
+              <Glass className="h-full p-4 transition hover:border-cyan-400/30 hover:bg-cyan-400/[0.05]">
+                <div className="text-[11px] font-black uppercase tracking-[0.22em] text-cyan-300">
+                  Part {String(part.part).padStart(2, "0")} · pages {part.pages}
+                </div>
+                <div className="mt-2 text-base font-black text-white">{part.title}</div>
+              </Glass>
+            </Link>
+          ))}
+        </div>
+      </Section>
 
       <Section id="models" eyebrow="The story" title="Models of the Atom">
         <p className="mb-5 max-w-2xl leading-relaxed text-white/70">

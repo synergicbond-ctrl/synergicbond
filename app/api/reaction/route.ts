@@ -2,6 +2,7 @@ export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 
 import { NextResponse } from "next/server";
+import { guardAiRequest } from "@/lib/ai/guardAiRequest";
 import { generateJSON } from "@/lib/gemini";
 import { reactionSlug } from "@/lib/reactionSlug";
 import { getSeed } from "@/lib/reactionSeeds";
@@ -19,6 +20,9 @@ function stripFences(s: string) {
 
 export async function POST(request: Request) {
   try {
+    const gate = await guardAiRequest(request, { bucket: "reaction" });
+    if (!gate.ok) return gate.response;
+
     const body = await request.json();
     const name = clean(body?.reaction);
     if (!name) return NextResponse.json({ error: "Reaction name required" }, { status: 400 });

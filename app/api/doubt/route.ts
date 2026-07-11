@@ -4,6 +4,7 @@ export const dynamic = "force-dynamic";
 import { NextResponse } from "next/server";
 import { generateText } from "@/lib/gemini";
 import { createClient } from "@/lib/supabase/server";
+import { guardAiRequest } from "@/lib/ai/guardAiRequest";
 
 // Server-side sanitizer — defense in depth on top of the client sanitizer
 function clean(input: string): string {
@@ -12,6 +13,8 @@ function clean(input: string): string {
 
 export async function POST(request: Request) {
   try {
+    const gate = await guardAiRequest(request, { bucket: "doubt" });
+    if (!gate.ok) return gate.response;
     const supabase = await createClient();
     const { data: { user } } = await supabase.auth.getUser();
     if (!user) return NextResponse.json({ error: "Sign in to use the doubt solver." }, { status: 401 });

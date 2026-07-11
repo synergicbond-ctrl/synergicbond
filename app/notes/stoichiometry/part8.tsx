@@ -388,7 +388,7 @@ export default function StoichiometryPart8() {
             tex={String.raw`\text{Average atomic mass of Cl}=\frac{35\times75+37\times25}{100}=35.5`}
           />
         </DiagramBlock>
-        <h4 className="text-lg font-semibold">2. Cannizzaro's Method</h4>
+        <h4 className="text-lg font-semibold">2. Cannizzaro&apos;s Method</h4>
         <p>
           The atomic mass of an element may be determined using the percentage
           composition and molecular masses of its compounds.
@@ -449,7 +449,7 @@ export default function StoichiometryPart8() {
       <section className="space-y-5">
         <h2 className="border-b pb-2 text-2xl font-bold">Page 69</h2>
         <h3 className="text-xl font-bold text-red-600">
-          3. Dulong and Petit's Law
+          3. Dulong and Petit&apos;s Law
         </h3>
         <p>
           For solid elements at high temperature, the product of atomic weight
@@ -472,7 +472,7 @@ export default function StoichiometryPart8() {
           tex={String.raw`S=\frac{q}{m\Delta T}`}
         />
         <p>
-          Dulong and Petit's law gives approximate atomic mass. Exact atomic mass
+          Dulong and Petit&apos;s law gives approximate atomic mass. Exact atomic mass
           may be determined experimentally by determining the equivalent weight
           of the element.
         </p>

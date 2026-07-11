@@ -96,7 +96,7 @@ export default function PhysicalVsChemicalComparison() {
       {/* Key insight */}
       <div className="bg-indigo-50 dark:bg-indigo-950 border border-indigo-200 dark:border-indigo-800 p-4 rounded-xl">
         <p className="text-sm text-indigo-800 dark:text-indigo-200">
-          <span className="font-bold">✨ The Key Test:</span> If you can't easily undo it or if something brand new is created, it's likely <span className="font-bold">chemical</span>.
+          <span className="font-bold">✨ The Key Test:</span> If you can&apos;t easily undo it or if something brand new is created, it&apos;s likely <span className="font-bold">chemical</span>.
         </p>
       </div>
     </div>

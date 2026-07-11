@@ -5,9 +5,12 @@ import { NextResponse } from "next/server";
 import { constructAIPrompt, fetchSyllabusContext } from "@/lib/aiTutor";
 import { generateText } from "@/lib/gemini";
 import { createClient } from "@/lib/supabase/server";
+import { guardAiRequest } from "@/lib/ai/guardAiRequest";
 
 export async function POST(request: Request) {
   try {
+    const gate = await guardAiRequest(request, { bucket: "ai" });
+    if (!gate.ok) return gate.response;
     const supabase = await createClient();
     const { data: { user } } = await supabase.auth.getUser();
     if (!user) return NextResponse.json({ error: "Sign in to use the AI tutor." }, { status: 401 });

@@ -464,3 +464,31 @@ export function BohrOrbitsVisual() {
     <text x="12" y="298" fill="#94a3b8" fontSize="13">conceptual diagram — orbit spacing not to scale; E₁ &lt; E₂ &lt; E₃ &lt; E₄</text>
   </ScientificVisual>;
 }
+
+export function OrbitalNodeSeriesVisual({ kind = "p" }: { kind?: "s" | "p" }) {
+  const labels = kind === "s" ? ["1s", "2s", "3s"] : ["2p", "3p", "4p", "5p"];
+  return <ScientificVisual title={`${kind}-orbital radial-node sequence`} description={`Conceptual ${kind}-orbital boundary surfaces arranged by increasing principal quantum number. Nested outlines mark radial nodes; colour indicates the sign of a real wavefunction across a node. The outer angular shape is preserved.`} viewBox="0 0 760 230" className="h-auto w-full">
+    {labels.map((label, i) => {
+      const x = 95 + i * (kind === "s" ? 240 : 175);
+      const radial = i;
+      return <g key={label}>
+        {kind === "s" ? Array.from({ length: radial + 1 }, (_, shell) => <circle key={shell} cx={x} cy="108" r={26 + shell * 22} fill={shell % 2 ? "#f472b6" : "#67e8f9"} fillOpacity={shell === radial ? ".22" : ".08"} stroke={shell % 2 ? "#f472b6" : "#67e8f9"} strokeWidth="2" />) : Array.from({ length: radial + 1 }, (_, shell) => { const rx = 22 + shell * 15; const ry = 40 + shell * 19; const colour = shell % 2 ? "#f472b6" : "#67e8f9"; return <g key={shell}><ellipse cx={x - rx} cy="108" rx={rx} ry={ry} fill={colour} fillOpacity={shell === radial ? ".22" : ".08"} stroke={colour} strokeWidth="1.8" /><ellipse cx={x + rx} cy="108" rx={rx} ry={ry} fill={colour} fillOpacity={shell === radial ? ".22" : ".08"} stroke={colour} strokeWidth="1.8" /></g>; })}
+        <circle cx={x} cy="108" r="3" fill="#fbbf24" /><text x={x} y="190" textAnchor="middle" fill="#e2e8f0" fontSize="16" fontWeight="700">{label}</text><text x={x} y="211" textAnchor="middle" fill="#94a3b8" fontSize="13">{radial} radial node{radial === 1 ? "" : "s"}</text>
+      </g>;
+    })}
+    <text x="18" y="24" fill="#94a3b8" fontSize="13">conceptual boundary surfaces; nested regions are separated by radial nodes (not electron trajectories)</text>
+  </ScientificVisual>;
+}
+
+export function DOrbitalNodalMapVisual() {
+  const orbitals = [["dxy", "between x, y", "zx and yz"], ["dyz", "between y, z", "xy and zx"], ["dzx", "between z, x", "xy and yz"], ["dx²−y²", "along x, y", "x = y; x = −y"]] as const;
+  return <ScientificVisual title="Four real d orbitals and their nodal planes" description="A four-panel schematic of real d orbitals. The first three have lobes between coordinate axes. The d x squared minus y squared orbital has lobes on the x and y axes. Dashed lines identify the two angular nodal planes in each case." viewBox="0 0 760 245" className="h-auto w-full">
+    {orbitals.map(([name, placement, nodes], i) => { const x = 98 + i * 190; const rotate = i === 3 ? 0 : 45; return <g key={name}><path d={`M${x - 68} 108H${x + 68}M${x} 40V176`} stroke="#64748b" strokeWidth="1.2" /><path d={`M${x - 60} 168L${x + 60} 48M${x - 60} 48L${x + 60} 168`} stroke="#facc15" strokeWidth="1.4" strokeDasharray="5 4" opacity={i === 3 ? .95 : .55} />{[45, 135, 225, 315].map((a, j) => { const r = a * Math.PI / 180; const cx = x + Math.cos(r) * 35; const cy = 108 + Math.sin(r) * 35; return <ellipse key={j} cx={cx} cy={cy} rx="19" ry="34" transform={`rotate(${a + rotate} ${cx} ${cy})`} fill={j % 2 ? "#f472b6" : "#67e8f9"} fillOpacity=".28" stroke={j % 2 ? "#f472b6" : "#67e8f9"} strokeWidth="1.7" />; })}<circle cx={x} cy="108" r="3" fill="#fbbf24" /><text x={x} y="199" textAnchor="middle" fill="#e2e8f0" fontSize="15" fontWeight="700">{name}</text><text x={x} y="219" textAnchor="middle" fill="#94a3b8" fontSize="12">{placement}; nodes: {nodes}</text></g>; })}
+    <text x="16" y="24" fill="#94a3b8" fontSize="13">each real d orbital has l = 2 angular nodes; colours indicate opposite signs of the angular function</text>
+  </ScientificVisual>;
+}
+
+export function PenetrationComparisonVisual() {
+  const curve = (peaks: number[], colour: string) => { const pts = Array.from({ length: 181 }, (_, i) => { const r = i / 18; const value = peaks.reduce((sum, p, j) => sum + Math.exp(-((r - p) ** 2) / (j === 0 ? .18 : .52)), 0); return `${55 + r * 48},${220 - value * 70}`; }).join(" "); return <polyline points={pts} fill="none" stroke={colour} strokeWidth="2.5" />; };
+  return <ScientificVisual title="Qualitative radial penetration of 3s, 3p and 3d" description="Qualitative radial-distribution curves versus radius. The 3s curve has three maxima and reaches closest to the nucleus, the 3p curve has two maxima, and the 3d curve has one outer maximum. The figure explains the ordering of penetration, not an absolute probability scale." viewBox="0 0 570 285" className="h-auto w-full"><path d="M55 25V220H535" fill="none" stroke="#94a3b8" strokeWidth="2" /><text x="8" y="35" fill="#e2e8f0" fontSize="13">P(r)</text><text x="480" y="247" fill="#e2e8f0" fontSize="13">r</text>{curve([.7, 2.8, 6.3], "#67e8f9")}{curve([2.1, 6.1], "#facc15")}{curve([6.8], "#f472b6")}<path d="M55 25V220" stroke="#fbbf24" strokeWidth="1.2" strokeDasharray="4 4" /><text x="63" y="48" fill="#fde68a" fontSize="13">nucleus</text><text x="165" y="80" fill="#a5f3fc" fontSize="14">3s: 3 humps</text><text x="270" y="115" fill="#fde68a" fontSize="14">3p: 2 humps</text><text x="390" y="145" fill="#f9a8d4" fontSize="14">3d: 1 hump</text><text x="55" y="274" fill="#94a3b8" fontSize="12">qualitative radial distributions: inner 3s density gives greatest penetration; maxima are not on a shared numerical scale</text></ScientificVisual>;
+}

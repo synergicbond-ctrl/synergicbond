@@ -125,6 +125,18 @@ export function NoteBlock({ title, children }: { title?: string; children: React
   );
 }
 
+export function LearningObjectives({ items }: { items: ReactNode[] }) {
+  return <aside aria-label="Learning objectives" className="rounded-2xl border border-violet-300/20 bg-violet-400/[0.06] p-5"><p className="text-xs font-black uppercase tracking-[0.18em] text-violet-200">In this part</p><ul className="mt-3 grid gap-2 text-sm leading-relaxed text-slate-200 sm:grid-cols-3">{items.map((item, index) => <li key={index} className="border-l-2 border-violet-300/60 pl-3">{item}</li>)}</ul></aside>;
+}
+
+export function ImportantNote({ title, children }: { title: string; children: ReactNode }) {
+  return <aside className="rounded-xl border border-amber-300/20 bg-amber-300/[0.06] p-4" aria-label={title}><h3 className="text-sm font-black text-amber-100">{title}</h3><div className="mt-2 text-sm leading-relaxed text-amber-50/85">{children}</div></aside>;
+}
+
+export function SummaryStrip({ items }: { items: ReactNode[] }) {
+  return <section aria-label="Key takeaways" className="grid gap-px overflow-hidden rounded-2xl border border-cyan-300/20 bg-cyan-300/20 sm:grid-cols-3">{items.map((item, index) => <p key={index} className="bg-[#0b1728] p-4 text-sm font-semibold leading-relaxed text-cyan-50">{item}</p>)}</section>;
+}
+
 export function FormulaLine({ math }: { math: string }) {
   return (
     <div className="overflow-x-auto rounded-lg border border-cyan-400/15 bg-[#07101e] px-4 py-3 text-cyan-100">

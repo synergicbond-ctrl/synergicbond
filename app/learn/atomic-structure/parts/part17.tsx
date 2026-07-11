@@ -1,10 +1,13 @@
 "use client";
 
 import { AtomicPartShell, AuditComment, DataTable, DiagramBox, FormulaLine, MathText, NoteBlock, SourcePage } from "./_shared";
+import { DefinitionCard, DerivationPanel, LearningObjectives, PracticeQuestion, SummaryStrip } from "../_components/AtomicLearning";
 
 export default function Part17() {
   return (
     <AtomicPartShell part={17} title="Ionisation Energy, Binding Energy and Rydberg's Equation" pages="52-54">
+      <LearningObjectives items={["Define ionisation and binding energy.", "Use Bohr-model ionisation energies.", "Derive the Rydberg relation.", "Identify wavelength limits for a series."]} />
+      <DefinitionCard term="Ionisation energy"><p>For a gas-phase species, it is the energy required to remove an electron completely to infinity. In a hydrogen-like ground state, its magnitude equals the electron binding energy.</p></DefinitionCard>
       <SourcePage page={52}>
         <NoteBlock title="Ionisation energy">
           <p>
@@ -51,7 +54,7 @@ export default function Part17() {
       </SourcePage>
 
       <SourcePage page={53}>
-        <NoteBlock title="Rydberg's Equation">
+        <DerivationPanel title="Rydberg's equation from a transition">
           <FormulaLine math="\Delta E=E_{n_2}-E_{n_1}" />
           <FormulaLine math="\frac{hc}{\lambda}=\frac{2\pi^{2}mK^{2}Z^{2}e^{4}}{h^{2}}\left(\frac{1}{n_1^{2}}-\frac{1}{n_2^{2}}\right)" />
           <FormulaLine math="\frac{1}{\lambda}=\frac{2\pi^{2}mK^{2}Z^{2}e^{4}}{ch^{3}}\left(\frac{1}{n_1^{2}}-\frac{1}{n_2^{2}}\right)" />
@@ -59,7 +62,7 @@ export default function Part17() {
           <FormulaLine math="R=\text{Rydberg's constant}=\frac{2\pi^{2}mK^{2}e^{4}}{ch^{3}}=109678\ \text{cm}^{-1}=1.097\times10^{7}\ \text{m}^{-1}" />
           <FormulaLine math="\boxed{\frac{1}{R}=912\ \text{\AA}}" />
           <FormulaLine math="\boxed{\nu=\frac{c}{\lambda}=RcZ^{2}\left(\frac{1}{n_1^{2}}-\frac{1}{n_2^{2}}\right)}" />
-        </NoteBlock>
+        </DerivationPanel>
         <NoteBlock title="Question — excite He⁺ from the 2nd to the 4th shell">
           <p>Q. Calculate frequency of EMR needed to excite e&#8315; of He&#8314; from 2nd to 4th shell.</p>
           <FormulaLine math="\nu=3\times10^{8}\times1.09\times10^{7}\times2^{2}\left(\frac{1}{2^{2}}-\frac{1}{4^{2}}\right)" />
@@ -106,7 +109,7 @@ export default function Part17() {
         </NoteBlock>
       </SourcePage>
 
-      <AuditComment pages="52-54" unclear={0} />
+      <PracticeQuestion prompt="For a ground-state hydrogen atom, which transition gives the longest Lyman wavelength?" answer="n = 2 to n = 1; it has the smallest allowed energy difference in the Lyman series." /><SummaryStrip items={["IE = 13.6 Z² eV for a hydrogen-like ground state.", "1/λ = RZ²(1/n₁² − 1/n₂²).", "Shortest series line: n₂ → ∞."]} /><AuditComment pages="52-54" unclear={0} />
     </AtomicPartShell>
   );
 }

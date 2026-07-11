@@ -2,10 +2,13 @@
 
 import { AtomicPartShell, AuditComment, DataTable, DiagramBox, FormulaLine, MathText, NoteBlock, SourcePage } from "./_shared";
 import { HydrogenLevelGapsVisual } from "../_components/AtomicVisuals";
+import { DefinitionCard, DerivationPanel, FigureCaption, LearningObjectives, PracticeQuestion, SummaryStrip } from "../_components/AtomicLearning";
 
 export default function Part16() {
   return (
     <AtomicPartShell part={16} title="Energy of the Electron and Level Differences" pages="49-51">
+      <LearningObjectives items={["Relate Bohr radius to angular momentum.", "Derive hydrogen-like energy levels.", "Interpret negative bound-state energies.", "Calculate excitation energy between levels."]} />
+      <DefinitionCard term="Bound-state energy"><p>With zero potential energy defined at infinite separation, an electron bound to the nucleus has <MathText math="E_n&lt;0" />. Energy must be absorbed to reach <MathText math="E=0" /> and ionise the atom.</p></DefinitionCard>
       <SourcePage page={49}>
         <NoteBlock title="Problem — angular momentum in the 5th orbit">
           <p>Calculate the angular momentum of e&#8315; in the 5th orbit of H-atom.</p>
@@ -39,15 +42,16 @@ export default function Part16() {
       </SourcePage>
 
       <SourcePage page={50}>
-        <NoteBlock title="Total energy of the electron">
+        <DerivationPanel title="Total energy of the electron">
           <FormulaLine math="T.E.=-\frac{KZe^{2}}{r}+\frac{1}{2}\,\frac{KZe^{2}}{r}" />
           <FormulaLine math="\boxed{T.E.=-\frac{1}{2}\,\frac{KZe^{2}}{r}}" />
           <FormulaLine math="\boxed{TE=-KE=\frac{PE}{2}}" />
           <FormulaLine math="E_n=-\frac{1}{2}KZe^{2}\cdot\frac{4\pi^{2}mKZe^{2}}{n^{2}h^{2}}=\frac{-2\pi^{2}mK^{2}Z^{2}e^{4}}{n^{2}h^{2}}\qquad E\propto\frac{Z^{2}}{n^{2}}" />
           <FormulaLine math="\boxed{E_n=-13.6\,\frac{Z^{2}}{n^{2}}\ \text{eV/atom}=-2.18\times10^{-18}\times\frac{Z^{2}}{n^{2}}\ \text{J/atom}=-1312\,\frac{Z^{2}}{n^{2}}\ \text{kJ/mol}=-313.6\,\frac{Z^{2}}{n^{2}}\ \text{kcal/mol}}" />
-        </NoteBlock>
+        </DerivationPanel>
         <NoteBlock title="For hydrogen">
           <HydrogenLevelGapsVisual />
+          <FigureCaption>Hydrogen levels rise toward zero energy as n increases. The gaps shrink at larger n, so equal changes in orbit number do not require equal energy.</FigureCaption>
           <FormulaLine math="E_1=-13.6\ \text{eV}" />
           <FormulaLine math="E_2=-13.6\times\frac{1}{4}=-3.4\ \text{eV}" />
           <FormulaLine math="E_3=-13.6\times\frac{1}{9}=-1.51\ \text{eV}" />
@@ -93,7 +97,7 @@ export default function Part16() {
         </NoteBlock>
       </SourcePage>
 
-      <AuditComment pages="49-51" unclear={0} />
+      <PracticeQuestion prompt={<>What energy is absorbed when <MathText math="Li^{2+}" /> moves from <MathText math="n=1" /> to <MathText math="n=3" />?</>} answer={<MathText math="108.8\ \text{eV}" />} /><SummaryStrip items={["Eₙ = −13.6 Z²/n² eV.", "Bound states have negative energy.", "|ΔE| depends on both levels and Z²."]} /><AuditComment pages="49-51" unclear={0} />
     </AtomicPartShell>
   );
 }

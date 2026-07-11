@@ -2,19 +2,22 @@
 
 import { AtomicPartShell, AuditComment, DataTable, DiagramBox, FormulaLine, MathText, NoteBlock, SourcePage } from "./_shared";
 import { EmissionAbsorptionSpectraVisual, HydrogenSeriesVisual } from "../_components/AtomicVisuals";
+import { DefinitionCard, FigureCaption, LearningObjectives, PracticeQuestion, SummaryStrip } from "../_components/AtomicLearning";
 
 export default function Part19() {
   return (
     <AtomicPartShell part={19} title="Hydrogen Spectrum and Spectral Series" pages="58-60">
+      <LearningObjectives items={["Compare three kinds of spectrum.", "Identify hydrogen spectral series.", "Count possible transitions.", "Find series wavelength limits."]} />
+      <DefinitionCard term="A spectral series"><p>A family of hydrogen emission lines with one common final level <MathText math="n_1" />. As <MathText math="n_2" /> increases, the lines crowd toward the series limit.</p></DefinitionCard>
       <SourcePage page={58}>
         <NoteBlock title="Continuous, emission, and absorption spectra">
-          <DiagramBox title="Three spectra compared (printed slide)">
+          <DiagramBox title="Three spectra compared">
             <EmissionAbsorptionSpectraVisual />
-            <p>
+            <FigureCaption>
               A light bulb through a prism gives the Continuous Spectrum (unbroken band of colours). A hot gas through a prism
               gives the Emission Spectrum (bright lines on dark background). A bulb behind a cold gas gives the Absorption
               Spectrum (dark lines on the continuous band).
-            </p>
+            </FigureCaption>
           </DiagramBox>
           <p>Atomic Spectrum or line spectrum and Band spectrum or molecular spectrum</p>
         </NoteBlock>
@@ -22,19 +25,19 @@ export default function Part19() {
 
       <SourcePage page={59}>
         <NoteBlock title="Hydrogen spectrum">
-          <DiagramBox title="Hydrogen emission apparatus (printed figure)">
-            <p>
+          <DiagramBox title="Hydrogen emission apparatus">
+            <FigureCaption>
               Excited hydrogen sample sends radiation through a slit and prism onto a film or detector; the recorded emission
               spectrum shows lines with increasing wavelength.
-            </p>
+            </FigureCaption>
           </DiagramBox>
           <DiagramBox title="Energy-level diagram of the hydrogen series">
             <HydrogenSeriesVisual />
-            <p>
+            <FigureCaption>
               Levels n = 1 to 7 and <MathText math="\infty" /> drawn as horizontal lines. Downward arrows group into: Lyman
               Series to n = 1 (U.V); Balmer Series to n = 2 (visible + UV, four lines drawn); Paschen IR to n = 3; Brackett IR
               to n = 4; Pfund IR to n = 5; Humphreys IR to n = 6.
-            </p>
+            </FigureCaption>
           </DiagramBox>
           <p>
             The max. number of spectral lines is <MathText math="\tfrac{n(n-1)}{2}" />, n = shell no.
@@ -52,7 +55,7 @@ export default function Part19() {
           <FormulaLine math="\text{Total number of lines}=\frac{(n_2-n_1)(n_2-n_1+1)}{2}" />
           <FormulaLine math="6\to3:\quad=\frac{(6-3)(6-3+1)}{2}=6" />
         </NoteBlock>
-        <NoteBlock title="Spectral series table (printed)">
+        <NoteBlock title="Spectral series table">
           <DataTable
             headers={["Series", "Discovered by", "regions", <MathText key="n" math="n_2\to n_1" />, "Number of lines"]}
             rows={[
@@ -92,7 +95,7 @@ export default function Part19() {
         </NoteBlock>
       </SourcePage>
 
-      <AuditComment pages="58-60" unclear={0} />
+      <PracticeQuestion prompt="How many distinct lines are possible when an electron initially at n = 6 can make every downward transition?" answer="15, using n(n − 1)/2 = 6×5/2." /><SummaryStrip items={["A series has a fixed final level.", "Maximum lines from n: n(n − 1)/2.", "Lyman ends at n = 1; Balmer ends at n = 2."]} /><AuditComment pages="58-60" unclear={0} />
     </AtomicPartShell>
   );
 }

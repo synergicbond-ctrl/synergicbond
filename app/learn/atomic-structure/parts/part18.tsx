@@ -1,10 +1,13 @@
 "use client";
 
 import { AtomicPartShell, AuditComment, DiagramBox, FormulaLine, MathText, NoteBlock, SourcePage } from "./_shared";
+import { DefinitionCard, ImportantNote, LearningObjectives, PracticeQuestion, SummaryStrip } from "../_components/AtomicLearning";
 
 export default function Part18() {
   return (
     <AtomicPartShell part={18} title="Ritz Principle, Reduced Mass and Spectrum" pages="55-57">
+      <LearningObjectives items={["Apply Ritz combination relations.", "Explain reduced mass in atomic motion.", "Compare isotope-dependent Rydberg constants.", "Distinguish continuous, emission and absorption spectra."]} />
+      <DefinitionCard term="Ritz combination principle"><p>When two successive transitions connect 3→2 and 2→1, the transition energy and frequency for 3→1 equal the sums of the two component transition energies and frequencies. Wavelengths themselves do not add.</p></DefinitionCard>
       <SourcePage page={55}>
         <NoteBlock title="Shortest wavelength">
           <p>
@@ -22,7 +25,7 @@ export default function Part18() {
           <FormulaLine math="3\to1:\ \lambda_3,\ \nu_3,\ \bar{\nu}_3" />
           <FormulaLine math="\nu_3=\nu_1+\nu_2" />
           <FormulaLine math="\bar{\nu}_3=\bar{\nu}_1+\bar{\nu}_2" />
-          <FormulaLine math="E_3=E_1+E_2" />
+          <FormulaLine math="\Delta E_{31}=\Delta E_{32}+\Delta E_{21}" />
           <FormulaLine math="\lambda_3=\lambda_2+\lambda_1\ \Rightarrow\ \text{wrong}" />
           <p>The correct wavelength relation follows from adding wave numbers:</p>
           <FormulaLine math="\frac{1}{\lambda_3}=\frac{1}{\lambda_1}+\frac{1}{\lambda_2}" />
@@ -44,6 +47,8 @@ export default function Part18() {
           <FormulaLine math="\frac{m_e m_n}{m_e+m_n}\,r^{2}\omega=\frac{nh}{2\pi}" />
         </NoteBlock>
       </SourcePage>
+
+      <ImportantNote title="Model precision">Replacing electron mass by reduced mass is a small correction for hydrogen, but it is essential when comparing isotope spectra.</ImportantNote>
 
       <SourcePage page={56}>
         <NoteBlock title="Reduced mass in the quantisation condition">
@@ -95,7 +100,7 @@ export default function Part18() {
           </p>
           <DiagramBox title="Emission versus absorption apparatus">
             <p>
-              Printed figure: an excited sample sends light through a slit and prism onto a film or detector, giving the
+              An excited sample sends light through a slit and prism onto a film or detector, giving the
               emission spectrum (bright lines, increasing wavelength). A white light source passing through an absorbing sample,
               slit and prism gives the absorption spectrum (dark lines on a continuous band, increasing wavelength).
             </p>
@@ -103,7 +108,7 @@ export default function Part18() {
         </NoteBlock>
       </SourcePage>
 
-      <AuditComment pages="55-57" unclear={0} />
+      <PracticeQuestion prompt="Why is the relation λ₃ = λ₂ + λ₁ invalid in the Ritz example?" answer="Photon energy is proportional to frequency and wavenumber, not wavelength; the reciprocal wavelengths add." /><SummaryStrip items={["Transition frequencies and wavenumbers add in Ritz combinations.", "μ = mₑmₙ/(mₑ + mₙ).", "Emission gives bright lines; absorption gives dark missing wavelengths."]} /><AuditComment pages="55-57" unclear={0} />
     </AtomicPartShell>
   );
 }

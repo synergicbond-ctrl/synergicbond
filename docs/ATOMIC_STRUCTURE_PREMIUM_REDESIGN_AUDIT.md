@@ -1,5 +1,16 @@
 # Atomic Structure Premium Redesign Audit
 
+## Batch 4 — Parts 16–20
+
+- Files inspected: Parts 16–20 and existing shared Atomic Structure learning/visual components. No Part 21–55 file was edited.
+- Content retention: Part 16 (angular-momentum question, full energy derivation, level values, grid, ΔE and excitation question); Part 17 (ionisation/binding definitions, ionisation table, Rydberg derivation and wavelength-limit questions); Part 18 (shortest wavelength, Ritz relations, every reduced-mass step and spectrum distinctions); Part 19 (spectra comparison, all series/table entries, line counting and wavelength limits); Part 20 (visible Balmer lines, every multi-atom count, He+ calculation, Bohr limits and radius/magnetic-moment derivations) retained.
+- Premium treatment: objectives, definition cards, compact derivation panels, figure captions, retrieval practice and recap strips added only where used.
+- Factual corrections: Ritz statement expressed as additive transition energies ΔE31 = ΔE32 + ΔE21 rather than additive level energies. Student-visible archival/scan wording removed without removing any scientific content.
+- Retained approximations: Bohr circular one-electron model, non-relativistic orbit relations, idealised line-counting condition that all relevant downward transitions occur.
+- Unresolved ambiguity: Part 20 retains one `[UNCLEAR]` marker for a highlight band without legible scientific content.
+- Accessibility and responsive result: labelled existing responsive visuals, semantic panels, scroll-safe formula/table treatment and keyboard focus styles retained.
+- Security/routing: unchanged. Remaining scope: Parts 21–25.
+
 ## Batch 3 — Parts 11–15
 
 - Files inspected: Parts 11–15; `AtomicLearning.tsx`, `AtomicVisuals.tsx`, and `_shared.tsx`; this audit. No Part 16–55 file was edited.

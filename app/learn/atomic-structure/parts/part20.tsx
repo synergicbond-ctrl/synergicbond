@@ -1,10 +1,13 @@
 "use client";
 
 import { AtomicPartShell, AuditComment, DiagramBox, FormulaLine, MathText, NoteBlock, SourcePage } from "./_shared";
+import { DefinitionCard, DerivationPanel, LearningObjectives, PracticeQuestion, SummaryStrip } from "../_components/AtomicLearning";
 
 export default function Part20() {
   return (
     <AtomicPartShell part={20} title="Visible Lines, Line Counting and Bohr Model Limits" pages="61-64">
+      <LearningObjectives items={["Identify visible Balmer lines.", "Count multi-step spectral lines.", "State Bohr-model limits.", "Follow radius and magnetic-moment derivations."]} />
+      <DefinitionCard term="Counting emitted wavelengths"><p>The maximum number of distinct transition energies from an initially populated level <MathText math="n" /> is <MathText math="n(n-1)/2" />, provided enough atoms follow all possible downward paths.</p></DefinitionCard>
       <SourcePage page={61}>
         <NoteBlock title="Four lines of visible region">
           <FormulaLine math="n=2\ \leftarrow\ n=3\quad656\ \text{nm}\quad\text{Red}" />
@@ -36,7 +39,7 @@ export default function Part20() {
       </SourcePage>
 
       <SourcePage page={62}>
-        <NoteBlock title="Printed example — 7 → 1 in multi steps">
+        <NoteBlock title="Example — 7 → 1 in multiple steps">
           <p>
             In a hydrogen spectrum if electron moves from 7 to 1 orbit by transition in multi steps then find out the total
             number of lines in the spectrum.
@@ -82,7 +85,7 @@ export default function Part20() {
             </li>
           </ol>
         </NoteBlock>
-        <NoteBlock title="Printed problem — quantized Bohr radii">
+        <DerivationPanel title="Quantized Bohr radii">
           <p>
             Show that in the Bohr atom model, the electron&apos;s orbits in a hydrogen-like atom are quantized with the radius{" "}
             <MathText math="r=n^{2}a_0/Z" />, where <MathText math="a_0=4\pi\varepsilon_0\hbar^{2}/me^{2}" /> is the Bohr
@@ -104,11 +107,11 @@ export default function Part20() {
           <FormulaLine math="\frac{Zme^{2}r}{4\pi\varepsilon_0}=n^{2}\hbar^{2}," />
           <p>from which we find</p>
           <FormulaLine math="r=n^{2}\frac{a_0}{Z},\qquad\text{where}\qquad a_0=\frac{4\pi\varepsilon_0\hbar^{2}}{me^{2}}." />
-        </NoteBlock>
+        </DerivationPanel>
       </SourcePage>
 
       <SourcePage page={64}>
-        <NoteBlock title="Printed problem — quantized magnetic dipole moment">
+        <DerivationPanel title="Quantized magnetic dipole moment">
           <p>
             The magnetic dipole moment <MathText math="\vec{\mu}" /> of a current loop is defined by{" "}
             <MathText math="\vec{\mu}=I\vec{S}" />, where I is the current and <MathText math="\vec{S}=S\hat{n}" /> is the area
@@ -143,10 +146,10 @@ export default function Part20() {
           </p>
           <p>Thus</p>
           <FormulaLine math="\vec{\mu}=\frac{ev}{2\pi r}\,\pi r^{2}\hat{n}=\frac{1}{2}evr\hat{n}." />
-        </NoteBlock>
+        </DerivationPanel>
       </SourcePage>
 
-      <AuditComment pages="61-64" unclear={1} note="page 61 has a highlight band with no legible text" />
+      <PracticeQuestion prompt="Why does the Bohr model not give a complete modern account of atoms?" answer="It is limited to one-electron species and cannot account for features such as line splitting, uncertainty and wave behaviour." /><SummaryStrip items={["Four visible Balmer lines arise from 3–6 → 2.", "Maximum line count needs all allowed downward paths.", "Bohr’s model is historically useful but limited."]} /><AuditComment pages="61-64" unclear={1} note="a highlight band has no legible text" />
     </AtomicPartShell>
   );
 }

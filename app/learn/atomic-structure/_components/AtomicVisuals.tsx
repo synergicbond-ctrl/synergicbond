@@ -201,6 +201,30 @@ export function RadialDistributionVisual() {
   </ScientificVisual>;
 }
 
+export function AtomicConceptMapVisual() {
+  const nodes: Array<[string, number, number, string]> = [
+    ["Subatomic particles & nuclear model", 20, 30, "#67e8f9"],
+    ["EM radiation & Planck quanta", 20, 90, "#facc15"],
+    ["Photoelectric effect", 20, 150, "#fb7185"],
+    ["Bohr model & hydrogen spectrum", 20, 210, "#a78bfa"],
+    ["Dual nature & uncertainty", 400, 30, "#67e8f9"],
+    ["Quantum numbers", 400, 90, "#facc15"],
+    ["Schrödinger equation & wave functions", 400, 150, "#fb7185"],
+    ["Orbitals, nodes & configurations", 400, 210, "#a78bfa"],
+  ];
+  return <ScientificVisual title="Atomic Structure concept map" description="The chapter progresses from the discovery of subatomic particles and the nuclear model, through electromagnetic radiation and Planck quanta, the photoelectric effect, and the Bohr model with the hydrogen spectrum, then on to dual nature and uncertainty, quantum numbers, the Schrödinger equation and wave functions, and finally orbitals, nodes and electronic configurations." viewBox="0 0 760 260" className="h-auto w-full">
+    <defs><marker id="cmap-arrow" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3z" fill="#94a3b8" /></marker></defs>
+    {nodes.map(([label, x, y, colour]) => <g key={label}><rect x={x} y={y} width="330" height="42" rx="10" fill="none" stroke={colour} strokeWidth="1.8" opacity=".9" /><text x={x + 14} y={y + 26} fill="#e2e8f0" fontSize="14">{label}</text></g>)}
+    <path d="M185 72V88" fill="none" stroke="#94a3b8" strokeWidth="2" markerEnd="url(#cmap-arrow)" opacity=".9" />
+    <path d="M185 132V148" fill="none" stroke="#94a3b8" strokeWidth="2" markerEnd="url(#cmap-arrow)" opacity=".9" />
+    <path d="M185 192V208" fill="none" stroke="#94a3b8" strokeWidth="2" markerEnd="url(#cmap-arrow)" opacity=".9" />
+    <path d="M565 72V88" fill="none" stroke="#94a3b8" strokeWidth="2" markerEnd="url(#cmap-arrow)" opacity=".9" />
+    <path d="M565 132V148" fill="none" stroke="#94a3b8" strokeWidth="2" markerEnd="url(#cmap-arrow)" opacity=".9" />
+    <path d="M565 192V208" fill="none" stroke="#94a3b8" strokeWidth="2" markerEnd="url(#cmap-arrow)" opacity=".9" />
+    <path d="M352 231h18q15 0 15-15V66q0-15 15-15" fill="none" stroke="#94a3b8" strokeWidth="2" strokeDasharray="6 5" opacity=".75" markerEnd="url(#cmap-arrow)" />
+  </ScientificVisual>;
+}
+
 export function SommerfeldOrbitsVisual() {
   return <ScientificVisual title="Sommerfeld orbits for n equals three" description="Three nested electron paths about the nucleus for n equals three: a circle for K equals three, a wider ellipse for K equals two, and a narrower ellipse for K equals one. The ratio of major to minor axis equals n over K." viewBox="0 0 440 260" className="h-auto w-full">
     <circle cx="220" cy="130" r="100" fill="none" stroke="#67e8f9" strokeWidth="2" />

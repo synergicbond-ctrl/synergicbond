@@ -179,3 +179,18 @@ Pages 97–115 rendered at 200 DPI to `/private/tmp/atomic-structure-batch-D` (o
 | 36 | 113–115 | Schrödinger Wave Equation — Time Dependence and Hamiltonian | Transcribed, routed |
 
 Checks: `npm run typecheck` PASS · `npm run build` PASS (compiled successfully in 16.2s) · placeholder/watermark scan PASS · 36 files / 36 routes registered.
+
+## Batch E update (parts 37–42) — 2026-07-11
+
+Pages 116–134 rendered at 200 DPI to `/private/tmp/atomic-structure-batch-E` (outside the repository), deleted after transcription.
+
+| Part | Source pages | Title | Status |
+| --- | --- | --- | --- |
+| 37 | 116–118 | Deriving the Wave Equation from a Sine Wave and Eigenvalues | Transcribed, routed |
+| 38 | 119–121 | Acceptable Wave Functions, Probability Density and Normalisation | Transcribed, routed |
+| 39 | 122–124 | Matter Wave as a Wave of Probability and Schrödinger in Polar Coordinates | Transcribed, routed |
+| 40 | 125–128 | Radial Probability Distribution, Normalisation and Angular Functions | Transcribed, routed |
+| 41 | 129–131 | d-Orbital Angular Functions, Nodal Surfaces and Radial Functions | Transcribed, routed |
+| 42 | 132–134 | Radial Function Curves, Radial Nodes and Radial Distribution Function | Transcribed, routed |
+
+Checks: `npm run typecheck` PASS · placeholder/watermark scan PASS · 42 files / 42 routes registered. (Full `npm run build` scheduled after Batch F — two-batch cadence.)

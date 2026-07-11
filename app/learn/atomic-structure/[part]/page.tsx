@@ -35,6 +35,12 @@ import Part33 from "../parts/part33";
 import Part34 from "../parts/part34";
 import Part35 from "../parts/part35";
 import Part36 from "../parts/part36";
+import Part37 from "../parts/part37";
+import Part38 from "../parts/part38";
+import Part39 from "../parts/part39";
+import Part40 from "../parts/part40";
+import Part41 from "../parts/part41";
+import Part42 from "../parts/part42";
 
 const parts = {
   part01: Part01,
@@ -73,6 +79,12 @@ const parts = {
   part34: Part34,
   part35: Part35,
   part36: Part36,
+  part37: Part37,
+  part38: Part38,
+  part39: Part39,
+  part40: Part40,
+  part41: Part41,
+  part42: Part42,
 };
 
 export function generateStaticParams() {

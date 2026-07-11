@@ -48,6 +48,12 @@ export const atomicPartMeta: AtomicPartMeta[] = [
   { part: 34, title: "Moseley's Law and Group Velocity", pages: "106-108", href: "/learn/atomic-structure/part34" },
   { part: 35, title: "Schrödinger Wave Equation — Wave Function and Wave Equation", pages: "109-112", href: "/learn/atomic-structure/part35" },
   { part: 36, title: "Schrödinger Wave Equation — Time Dependence and Hamiltonian", pages: "113-115", href: "/learn/atomic-structure/part36" },
+  { part: 37, title: "Deriving the Wave Equation from a Sine Wave and Eigenvalues", pages: "116-118", href: "/learn/atomic-structure/part37" },
+  { part: 38, title: "Acceptable Wave Functions, Probability Density and Normalisation", pages: "119-121", href: "/learn/atomic-structure/part38" },
+  { part: 39, title: "Matter Wave as a Wave of Probability and Schrödinger in Polar Coordinates", pages: "122-124", href: "/learn/atomic-structure/part39" },
+  { part: 40, title: "Radial Probability Distribution, Normalisation and Angular Functions", pages: "125-128", href: "/learn/atomic-structure/part40" },
+  { part: 41, title: "d-Orbital Angular Functions, Nodal Surfaces and Radial Functions", pages: "129-131", href: "/learn/atomic-structure/part41" },
+  { part: 42, title: "Radial Function Curves, Radial Nodes and Radial Distribution Function", pages: "132-134", href: "/learn/atomic-structure/part42" },
 ];
 
 export function AtomicPartShell({

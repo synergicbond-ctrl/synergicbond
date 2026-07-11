@@ -64,6 +64,9 @@ jobs:
         run: npm ci
 
       # Deterministic, secret-free validators over the local content SSOTs.
+      - name: Launch-safety regression checks
+        run: npm run launch-safety
+
       - name: Validate NEET Chemistry PYQ integrity
         run: npm run validate-neet-pyq
 

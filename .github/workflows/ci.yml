@@ -1,0 +1,72 @@
+name: CI
+
+# Launch-safety gate. Runs on every PR and on pushes to main. Uses only
+# placeholder public env — NO production secrets are required to compile, so
+# the pipeline is safe to run on forks and untrusted branches.
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    name: typecheck · lint · build
+    runs-on: ubuntu-latest
+    env:
+      # Placeholder public config so the client bundle compiles. These are NOT
+      # secrets and are never used to reach a real backend in CI.
+      NEXT_PUBLIC_SITE_URL: "https://ci.invalid"
+      NEXT_PUBLIC_SUPABASE_URL: "https://ci-placeholder.supabase.co"
+      NEXT_PUBLIC_SUPABASE_ANON_KEY: "ci-placeholder-anon-key"
+      NEXT_TELEMETRY_DISABLED: "1"
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies (clean, from lockfile)
+        run: npm ci
+
+      - name: Typecheck
+        run: npm run typecheck
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Build
+        run: npm run build
+
+  content-validation:
+    name: content · PYQ validation
+    runs-on: ubuntu-latest
+    env:
+      NEXT_TELEMETRY_DISABLED: "1"
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies (clean, from lockfile)
+        run: npm ci
+
+      # Deterministic, secret-free validators over the local content SSOTs.
+      - name: Validate NEET Chemistry PYQ integrity
+        run: npm run validate-neet-pyq
+
+      - name: PYQ distribution audit (report only)
+        run: npm run audit-pyq
+        continue-on-error: true

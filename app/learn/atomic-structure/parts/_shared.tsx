@@ -60,6 +60,12 @@ export const atomicPartMeta: AtomicPartMeta[] = [
   { part: 46, title: "dz² as a Sum of Cloverleaves, and Orbital Shapes with Node Counts", pages: "145-147", href: "/learn/atomic-structure/part46" },
   { part: 47, title: "np Density Pictures, the Five d-Orbitals and Gerade/Ungerade", pages: "148-150", href: "/learn/atomic-structure/part47" },
   { part: 48, title: "Beginner's Box-7, Unsöld's Theorem and p-Orbital Symmetry", pages: "151-153", href: "/learn/atomic-structure/part48" },
+  { part: 49, title: "3d vs 4d/5d, 4f vs 5f, and Orbital Shape Galleries", pages: "154-156", href: "/learn/atomic-structure/part49" },
+  { part: 50, title: "7d Gallery and the 4f, 5f, 6f Orbital Sets", pages: "157-160", href: "/learn/atomic-structure/part50" },
+  { part: 51, title: "7f Orbitals and the Nine 5g and 6g Orbitals", pages: "161-163", href: "/learn/atomic-structure/part51" },
+  { part: 52, title: "The Nine 7g Orbitals and the Eleven 6h and 7h Orbitals", pages: "164-166", href: "/learn/atomic-structure/part52" },
+  { part: 53, title: "7i Orbitals and Hybridisation Bond-Angle Proofs (sp, sp²)", pages: "167-169", href: "/learn/atomic-structure/part53" },
+  { part: 54, title: "Olympiad Problems — de Broglie Wavelengths (2.1–2.7)", pages: "170-172", href: "/learn/atomic-structure/part54" },
 ];
 
 export function AtomicPartShell({

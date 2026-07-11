@@ -209,3 +209,18 @@ Pages 135–153 rendered at 200 DPI to `/private/tmp/atomic-structure-batch-F` (
 | 48 | 151–153 | Beginner's Box-7, Unsöld's Theorem and p-Orbital Symmetry | Transcribed, routed |
 
 Checks: `npm run typecheck` PASS · `npm run build` PASS (compiled successfully in 30.8s) · placeholder/watermark scan PASS · 48 files / 48 routes registered.
+
+## Batch G update (parts 49–54) — 2026-07-11
+
+Pages 154–172 rendered at 200 DPI to `/private/tmp/atomic-structure-batch-G` (outside the repository), deleted after transcription.
+
+| Part | Source pages | Title | Status |
+| --- | --- | --- | --- |
+| 49 | 154–156 | 3d vs 4d/5d, 4f vs 5f, and Orbital Shape Galleries | Transcribed, routed |
+| 50 | 157–160 | 7d Gallery and the 4f, 5f, 6f Orbital Sets | Transcribed, routed |
+| 51 | 161–163 | 7f Orbitals and the Nine 5g and 6g Orbitals | Transcribed, routed |
+| 52 | 164–166 | The Nine 7g Orbitals and the Eleven 6h and 7h Orbitals | Transcribed, routed |
+| 53 | 167–169 | 7i Orbitals and Hybridisation Bond-Angle Proofs (sp, sp²) | Transcribed, routed |
+| 54 | 170–172 | Olympiad Problems — de Broglie Wavelengths (2.1–2.7) | Transcribed, routed |
+
+Checks: `npm run typecheck` PASS · placeholder/watermark scan PASS · 54 files / 54 routes registered. (Full `npm run build` scheduled after Batch H — two-batch cadence.)

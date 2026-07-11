@@ -19,7 +19,7 @@ export default function Part27() {
           <FormulaLine math="\Delta x\cdot\Delta\lambda\ge\frac{\lambda^{2}}{4\pi}" />
           <FormulaLine math="p=\frac{h}{\lambda}" />
           <FormulaLine math="\left|\frac{dp}{d\lambda}\right|=\frac{h}{\lambda^{2}}" />
-          <FormulaLine math="dP=\frac{h}{\lambda^{2}}\cdot d\lambda" />
+          <FormulaLine math="dp=\frac{h}{\lambda^{2}}\cdot d\lambda" />
           <FormulaLine math="\Delta p=\frac{h}{\lambda^{2}}\,\Delta\lambda\qquad\Delta p\ge\frac{h}{4\pi\Delta x}" />
           <p>Hence</p>
           <FormulaLine math="\boxed{\Delta x\cdot\Delta\lambda\ge\frac{\lambda^{2}}{4\pi}}" />
@@ -53,7 +53,7 @@ export default function Part27() {
         <NoteBlock title="Quantum Number">
           <p>It is the set of four quantum numbers which give complete information about electrons in an atom.</p>
         </NoteBlock>
-        <NoteBlock title="1. Principle Quantum Number (n)">
+        <NoteBlock title="1. Principal Quantum Number (n)">
           <p>It gives the average distance of the e&#8315; from the nucleus</p>
           <p>It determines the energy of e&#8315;</p>
           <FormulaLine math="\text{Max. no. of }e^{-}\text{ in a shell}=2n^{2}" />
@@ -62,16 +62,16 @@ export default function Part27() {
           <FormulaLine math="n=3\ \text{M shell}=18" />
           <FormulaLine math="n=4\ \text{N shell}=32" />
           <p>
-            It can not be zero, <MathText math="n=1\ \text{to}\ \infty" />
+            It cannot be zero, <MathText math="n=1\ \text{to}\ \infty" />
           </p>
           <p>
             It gives value of angular momentum of e&#8315; e.g. <MathText math="\frac{nh}{2\pi}" />
           </p>
         </NoteBlock>
         <NoteBlock title="2. Azimuthal or angular or secondary quantum number (l)">
-          <p>It identify subshell in atom</p>
-          <p>The value of l give name of subshell and shape of orbital</p>
-          <p>It give information about orbital angular momentum of e&#8315;.</p>
+          <p>It identifies the subshell in an atom</p>
+          <p>The value of l gives the name of the subshell and the shape of the orbital</p>
+          <p>It gives information about the orbital angular momentum of e&#8315;.</p>
         </NoteBlock>
       </SourcePage>
 

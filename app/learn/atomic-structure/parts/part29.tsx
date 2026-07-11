@@ -37,7 +37,7 @@ export default function Part29() {
           <FormulaLine math="\text{Spin angular momentum}=\sqrt{s(s+1)}\,\frac{h}{2\pi}" />
           <p>
             It has two possible values <MathText math="+\tfrac{1}{2},-\tfrac{1}{2}" />. Spinning e&#8315; can have only two
-            possibilities, it can spin clockwise or anticlock wise.
+            possibilities, it can spin clockwise or anticlockwise.
           </p>
         </NoteBlock>
         <NoteBlock title="Find (n+l) value">
@@ -60,7 +60,6 @@ export default function Part29() {
         <NoteBlock title="Increasing order of energy (continued)">
           <p>(d) 4f, 7p, 8s, 5d, 6p — n+l values 7, 8, 8, 7, 7:</p>
           <FormulaLine math="4f<5d<6p<7p<8s" />
-          <p>The rest of this source page is blank.</p>
         </NoteBlock>
       </SourcePage>
 

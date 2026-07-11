@@ -121,6 +121,54 @@ export function EmissionAbsorptionSpectraVisual() {
   </ScientificVisual>;
 }
 
+export function StandingWaveOrbitVisual() {
+  const n = 5;
+  const points = Array.from({ length: 181 }, (_, i) => {
+    const theta = (i / 180) * 2 * Math.PI;
+    const radius = 95 + 14 * Math.sin(n * theta);
+    return `${(210 + radius * Math.cos(theta)).toFixed(1)},${(140 + radius * Math.sin(theta)).toFixed(1)}`;
+  }).join(" ");
+  return <ScientificVisual title="de Broglie standing wave on a Bohr orbit" description="A circular Bohr orbit around the nucleus with a standing electron wave of five whole wavelengths fitted around its circumference, so that two pi r equals n lambda." viewBox="0 0 420 280" className="h-auto w-full">
+    <circle cx="210" cy="140" r="95" fill="none" stroke="#94a3b8" strokeWidth="1.6" strokeDasharray="5 6" />
+    <polyline points={points} fill="none" stroke="#67e8f9" strokeWidth="2.4" />
+    <circle cx="210" cy="140" r="9" fill="#fb7185" /><text x="204" y="146" fill="#08111f" fontSize="13" fontWeight="700">+</text>
+    <text x="300" y="34" fill="#a5f3fc" fontSize="14">n = 5 wavelengths</text>
+    <text x="12" y="268" fill="#94a3b8" fontSize="13">standing wave closes on itself only when 2πr = nλ (conceptual)</text>
+  </ScientificVisual>;
+}
+
+export function OrbitalShapesBasicVisual() {
+  return <ScientificVisual title="Shapes of s and p orbitals" description="Conceptual shapes of the s and p orbitals. The s orbital is a sphere centred on the nucleus. The three p orbitals are dumbbells directed along the x, y and z axes, each with a nodal plane through the nucleus." viewBox="0 0 760 240" className="h-auto w-full">
+    <circle cx="100" cy="110" r="58" fill="#67e8f9" opacity=".35" stroke="#67e8f9" strokeWidth="2" /><text x="88" y="206" fill="#e2e8f0" fontSize="15">s</text>
+    <g><ellipse cx="255" cy="110" rx="45" ry="22" fill="#f472b6" opacity=".35" stroke="#f472b6" strokeWidth="2" transform="rotate(0 300 110)" /><ellipse cx="345" cy="110" rx="45" ry="22" fill="#f472b6" opacity=".35" stroke="#f472b6" strokeWidth="2" /><path d="M300 40V180" stroke="#94a3b8" strokeWidth="1.4" strokeDasharray="4 5" /><text x="278" y="206" fill="#e2e8f0" fontSize="15">pₓ</text></g>
+    <g><ellipse cx="480" cy="65" rx="22" ry="45" fill="#facc15" opacity=".35" stroke="#facc15" strokeWidth="2" /><ellipse cx="480" cy="155" rx="22" ry="45" fill="#facc15" opacity=".35" stroke="#facc15" strokeWidth="2" /><path d="M410 110H550" stroke="#94a3b8" strokeWidth="1.4" strokeDasharray="4 5" /><text x="464" y="228" fill="#e2e8f0" fontSize="15">p_z</text></g>
+    <g><ellipse cx="628" cy="78" rx="40" ry="20" fill="#a78bfa" opacity=".35" stroke="#a78bfa" strokeWidth="2" transform="rotate(-35 660 110)" /><ellipse cx="692" cy="142" rx="40" ry="20" fill="#a78bfa" opacity=".35" stroke="#a78bfa" strokeWidth="2" transform="rotate(-35 660 110)" /><text x="642" y="206" fill="#e2e8f0" fontSize="15">p_y</text></g>
+    <text x="12" y="26" fill="#94a3b8" fontSize="13">conceptual boundary surfaces — not exact isosurfaces; each p orbital has a nodal plane (dashed)</text>
+  </ScientificVisual>;
+}
+
+export function AufbauFillingVisual() {
+  const cells: Array<[number, number]> = [[1, 0], [2, 0], [2, 1], [3, 0], [3, 1], [3, 2], [4, 0], [4, 1], [4, 2], [4, 3], [5, 0], [5, 1], [5, 2], [5, 3], [6, 0], [6, 1], [6, 2], [7, 0], [7, 1], [8, 0]];
+  const names = ["s", "p", "d", "f"];
+  const cx = (l: number) => 100 + l * 90;
+  const cy = (n: number) => 48 + (n - 1) * 34;
+  const diagonals = Array.from({ length: 8 }, (_, i) => i + 1).map((sum) => cells.filter(([n, l]) => n + l === sum));
+  return <ScientificVisual title="Aufbau diagonal filling order" description="Chart of subshells one s through eight s arranged by shell and subshell, with diagonal arrows sweeping through equal n plus l groups to show the filling order one s, two s, two p, three s, three p, four s, three d and so on." viewBox="0 0 480 320" className="h-auto w-full">
+    {cells.map(([n, l]) => <text key={`${n}${l}`} x={cx(l) - 14} y={cy(n) + 5} fill="#e2e8f0" fontSize="15">{`${n}${names[l]}`}</text>)}
+    {diagonals.map((group, index) => {
+      if (group.length === 0) return null;
+      const start = group[0];
+      const end = group[group.length - 1];
+      const x1 = cx(start[1]) + 16;
+      const y1 = cy(start[0]) - 12;
+      const x2 = cx(end[1]) - 22;
+      const y2 = cy(end[0]) + 12;
+      return <g key={index}><path d={`M${x1} ${y1}L${x2} ${y2}`} stroke="#fb7185" strokeWidth="1.8" opacity=".85" /><path d={`M${x2} ${y2}l10 -3l-4 9z`} fill="#fb7185" /></g>;
+    })}
+    <text x="12" y="310" fill="#94a3b8" fontSize="13">follow the arrows top to bottom: lower n+l fills first; equal n+l fills lower n first</text>
+  </ScientificVisual>;
+}
+
 export function SommerfeldOrbitsVisual() {
   return <ScientificVisual title="Sommerfeld orbits for n equals three" description="Three nested electron paths about the nucleus for n equals three: a circle for K equals three, a wider ellipse for K equals two, and a narrower ellipse for K equals one. The ratio of major to minor axis equals n over K." viewBox="0 0 440 260" className="h-auto w-full">
     <circle cx="220" cy="130" r="100" fill="none" stroke="#67e8f9" strokeWidth="2" />

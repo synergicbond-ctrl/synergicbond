@@ -1,6 +1,7 @@
 "use client";
 
 import { AtomicPartShell, AuditComment, DataTable, DiagramBox, FormulaLine, MathText, NoteBlock, SourcePage } from "./_shared";
+import { OrbitalShapesBasicVisual } from "../_components/AtomicVisuals";
 
 export default function Part28() {
   return (
@@ -12,7 +13,7 @@ export default function Part28() {
             headers={["Subshell", "l", "Name"]}
             rows={[
               ["s", "0", "s — sharp"],
-              ["p", "1", "p — principle"],
+              ["p", "1", "p — principal"],
               ["d", "2", "d — diffuse"],
               ["f", "3", "f — fundamental"],
               ["g", "4", ""],
@@ -22,13 +23,13 @@ export default function Part28() {
           <FormulaLine math="n=2\quad l=0,1\quad\text{2s, 2p}" />
           <FormulaLine math="n=3\quad l=0,1,2\quad\text{3s, 3p, 3d}" />
           <FormulaLine math="n=4\quad l=0,1,2,3\quad\text{4s, 4p, 4d, 4f}" />
-          <p>No. of value of l = n</p>
+          <p>No. of values of l = n</p>
           <DataTable
             headers={["Subshell", "shape"]}
             rows={[
               ["s", "Spherical"],
-              ["p", "dumbell"],
-              ["d", "double dumbell"],
+              ["p", "dumbbell"],
+              ["d", "double dumbbell"],
               ["f", "complex"],
             ]}
           />
@@ -78,6 +79,7 @@ export default function Part28() {
           <FormulaLine math="l=1\quad=\sqrt{2}\,\frac{h}{2\pi}" />
           <FormulaLine math="l=2\quad=\sqrt{6}\,\frac{h}{2\pi}" />
           <DiagramBox title="s orbital (printed)">
+            <OrbitalShapesBasicVisual />
             <p>A sphere centred on the x, y, z axes.</p>
           </DiagramBox>
           <DiagramBox title="2p orbitals (printed)">

@@ -1,6 +1,7 @@
 "use client";
 
 import { AtomicPartShell, AuditComment, DiagramBox, FormulaLine, MathText, NoteBlock, SourcePage } from "./_shared";
+import { AufbauFillingVisual } from "../_components/AtomicVisuals";
 
 export default function Part30() {
   return (
@@ -17,6 +18,7 @@ export default function Part30() {
           <p>Aufbau → building up (German word)</p>
           <p>(n+l) rule — Madelung Rule or Klechkowsky&apos;s rule</p>
           <DiagramBox title="Diagonal filling chart (printed)">
+            <AufbauFillingVisual />
             <p>
               Shells n = 1 to 8 with subshells 1s; 2s 2p; 3s 3p 3d; 4s 4p 4d 4f; 5s 5p 5d 5f; 6s 6p 6d; 7s 7p; 8s — red diagonal
               arrows sweep through them in filling order.

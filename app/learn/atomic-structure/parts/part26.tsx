@@ -1,6 +1,7 @@
 "use client";
 
 import { AtomicPartShell, AuditComment, DiagramBox, FormulaLine, MathText, NoteBlock, SourcePage } from "./_shared";
+import { StandingWaveOrbitVisual } from "../_components/AtomicVisuals";
 
 export default function Part26() {
   return (
@@ -17,8 +18,8 @@ export default function Part26() {
         </NoteBlock>
         <NoteBlock title="Davisson–Germer and dual behaviour">
           <p>
-            Davison and Germer experimentally proved the wave nature of e&#8315;. They found that cathode rays also result the
-            similar diffraction pattern of solids as X-rays.
+            Davisson and Germer experimentally proved the wave nature of e&#8315;. They found that cathode rays also produce a
+            diffraction pattern from solids similar to that of X-rays.
           </p>
           <p>
             The dual behaviour means that exact behaviour is not known. Some of the properties will be explained by wave nature
@@ -28,6 +29,7 @@ export default function Part26() {
         <NoteBlock title="de Broglie standing electron wave">
           <p>de-Broglie considered the e&#8315; wave as standing wave.</p>
           <DiagramBox title="Standing waves on orbits (n = 2, n = 3)">
+            <StandingWaveOrbitVisual />
             <p>Concentric circular orbits with dashed standing-wave loops drawn around them, labelled n = 2 and n = 3.</p>
           </DiagramBox>
           <FormulaLine math="2\pi r=n\lambda=n\frac{h}{mv}" />
@@ -54,7 +56,8 @@ export default function Part26() {
             <p>
               Single loop: <MathText math="\lambda=2L" />. Two loops (n = 2): <MathText math="\lambda=L" />. Three loops (n =
               3): <MathText math="\lambda=\tfrac{2L}{3}" /> with nodes and antinodes labelled. Four loops (n = 4):{" "}
-              <MathText math="\lambda=\tfrac{2L}{4}" />. The span between end nodes is marked <MathText math="n\lambda" />.
+              <MathText math="\lambda=\tfrac{2L}{4}" />. The span between the end nodes is{" "}
+              <MathText math="L=n\lambda/2" />.
             </p>
           </DiagramBox>
         </NoteBlock>

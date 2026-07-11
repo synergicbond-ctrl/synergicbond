@@ -245,6 +245,25 @@ export function RadialDistributionVisual() {
   </ScientificVisual>;
 }
 
+export function Dz2OrbitalVisual() {
+  return <ScientificVisual title="d z squared orbital and its nodal cones" description="Cross-section of the real d z squared angular function. Positive lobes lie on the z axis, a negative toroidal region surrounds the origin in the x y plane, and two conical nodal surfaces make an angle 54.7 degrees with the positive and negative z axes." viewBox="0 0 500 310" className="h-auto w-full">
+    <path d="M250 22V274M56 155H446" stroke="#94a3b8" strokeWidth="1.6" /><text x="258" y="33" fill="#e2e8f0" fontSize="14">z</text><text x="425" y="147" fill="#e2e8f0" fontSize="14">r⊥</text>
+    <path d="M250 150 C190 124 193 55 250 40 C307 55 310 124 250 150Z" fill="#67e8f9" fillOpacity=".32" stroke="#67e8f9" strokeWidth="2" />
+    <path d="M250 160 C190 186 193 255 250 270 C307 255 310 186 250 160Z" fill="#67e8f9" fillOpacity=".32" stroke="#67e8f9" strokeWidth="2" />
+    <ellipse cx="250" cy="155" rx="112" ry="31" fill="#f472b6" fillOpacity=".25" stroke="#f472b6" strokeWidth="2" /><ellipse cx="250" cy="155" rx="45" ry="12" fill="#08111f" stroke="#f472b6" strokeWidth="1.5" />
+    <path d="M250 155L109 252M250 155L391 252M250 155L109 58M250 155L391 58" stroke="#facc15" strokeWidth="1.5" strokeDasharray="6 5" /><text x="82" y="48" fill="#fde68a" fontSize="13">nodal cones: θ = 54.7°</text>
+    <text x="258" y="88" fill="#a5f3fc" fontSize="18">+</text><text x="258" y="238" fill="#a5f3fc" fontSize="18">+</text><text x="342" y="160" fill="#f9a8d4" fontSize="18">−</text><circle cx="250" cy="155" r="4" fill="#fbbf24" /><text x="258" y="176" fill="#fde68a" fontSize="12">nucleus</text>
+    <text x="18" y="296" fill="#94a3b8" fontSize="12">signs refer to Y₂,₀; rotation of this cross-section gives the toroidal region and conical nodes</text>
+  </ScientificVisual>;
+}
+
+export function OrbitalBoxVisual() {
+  const groups = [["s", ["s"]], ["p", ["pₓ", "pᵧ", "p_z"]], ["d", ["dₓᵧ", "dᵧz", "d_zx", "d₍ₓ²−ᵧ²₎", "d_z²"]]] as const;
+  return <ScientificVisual title="Orbital boxes in s p and d subshells" description="One orbital box represents an s subshell, three boxes represent the p orbitals p x, p y and p z, and five boxes represent the real d orbitals d xy, d yz, d zx, d x squared minus y squared and d z squared." viewBox="0 0 740 180" className="h-auto w-full">
+    {groups.map(([group, labels], groupIndex) => { const x = [35, 150, 350][groupIndex]; return <g key={group}><text x={x} y="34" fill="#a5f3fc" fontSize="16" fontWeight="700">{group} subshell</text>{labels.map((label, i) => <g key={label}><rect x={x + i * 70} y="58" width="58" height="52" rx="5" fill="#0f1d32" stroke="#67e8f9" strokeWidth="1.5" /><text x={x + i * 70 + 29} y="140" textAnchor="middle" fill="#e2e8f0" fontSize="12">{label}</text></g>)}<text x={x} y="166" fill="#94a3b8" fontSize="12">{labels.length} orbital{labels.length > 1 ? "s" : ""}</text></g>; })}
+  </ScientificVisual>;
+}
+
 export function WaveFunctionCriteriaVisual() {
   return <ScientificVisual title="Acceptability tests for a wave function" description="Three coordinate plots compare rejected multi-valued curves with a smooth acceptable single-valued continuous wave function. A dashed vertical test line intersects the rejected curves more than once and the accepted curve once." viewBox="0 0 720 220" className="h-auto w-full">
     {[0, 1, 2].map((panel) => <g key={panel} transform={`translate(${20 + panel * 235} 0)`}><path d="M10 170H210M30 25V185" stroke="#94a3b8" strokeWidth="1.5" /><text x="195" y="190" fill="#cbd5e1" fontSize="13">x</text><text x="16" y="38" fill="#cbd5e1" fontSize="13">ψ</text>{panel === 0 ? <><path d="M45 145C70 30 135 30 155 142C170 205 75 205 80 58" fill="none" stroke="#fb7185" strokeWidth="2.5" /><path d="M115 35V170" stroke="#facc15" strokeDasharray="5 5" /><circle cx="115" cy="49" r="4" fill="#facc15" /><circle cx="115" cy="142" r="4" fill="#facc15" /></> : panel === 1 ? <><path d="M45 130C85 35 145 35 170 125C192 198 85 182 75 100" fill="none" stroke="#fb7185" strokeWidth="2.5" /><path d="M116 35V170" stroke="#facc15" strokeDasharray="5 5" /><circle cx="116" cy="61" r="4" fill="#facc15" /><circle cx="116" cy="152" r="4" fill="#facc15" /></> : <><path d="M42 155C72 152 82 62 116 92S155 163 192 42" fill="none" stroke="#67e8f9" strokeWidth="2.8" /><path d="M120 35V170" stroke="#facc15" strokeDasharray="5 5" /><circle cx="120" cy="102" r="4" fill="#facc15" /></>}<text x="110" y="212" textAnchor="middle" fill={panel === 2 ? "#a5f3fc" : "#fda4af"} fontSize="13">{panel === 2 ? "accepted: one ψ for each x" : "rejected: multiple ψ values"}</text></g>)}

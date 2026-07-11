@@ -1,14 +1,18 @@
 "use client";
 
 import { AtomicPartShell, AuditComment, DataTable, DiagramBox, FormulaLine, MathText, NoteBlock, SourcePage } from "./_shared";
+import { CircularOrbitVisual, HydrogenLevelGapsVisual } from "../_components/AtomicVisuals";
+import { DefinitionCard, DerivationPanel, LearningObjectives, PracticeQuestion, SummaryStrip } from "../_components/AtomicLearning";
 
 export default function Part17() {
   return (
     <AtomicPartShell part={17} title="Ionisation Energy, Binding Energy and Rydberg's Equation" pages="52-54">
+      <LearningObjectives items={["Define ionisation and binding energy.", "Use Bohr-model ionisation energies.", "Derive the Rydberg relation.", "Identify wavelength limits for a series."]} />
+      <DefinitionCard term="Ionisation energy"><p>For a gas-phase species, it is the energy required to remove an electron completely to infinity. In a hydrogen-like ground state, its magnitude equals the electron binding energy.</p></DefinitionCard>
       <SourcePage page={52}>
         <NoteBlock title="Ionisation energy">
           <p>
-            It is defined as the amount energy required to remove outer shell e&#8315; from an isolated{" "}
+            It is defined as the amount of energy required to remove the outer-shell e&#8315; from an isolated{" "}
             <span className="rounded bg-rose-500/30 px-1 font-semibold">gaseous atom</span>.
           </p>
           <FormulaLine math="H\longrightarrow H^{+}+e^{-}\quad I.E." />
@@ -41,6 +45,7 @@ export default function Part17() {
         </NoteBlock>
         <NoteBlock title="Binding energy of e⁻">
           <DiagramBox title="Electron removed to infinity">
+            <CircularOrbitVisual showEscape />
             <p>
               The nucleus <MathText math="\oplus" /> with a circular orbit; an arrow carries the electron e away to{" "}
               <MathText math="\infty" />.
@@ -51,15 +56,15 @@ export default function Part17() {
       </SourcePage>
 
       <SourcePage page={53}>
-        <NoteBlock title="Rydberg's Equation">
-          <FormulaLine math="\Delta E=E_1-E_2" />
-          <FormulaLine math="\frac{hc}{\lambda}=\frac{2\pi^{2}mK^{2}Z^{2}e^{4}}{h^{2}}\left(\frac{1}{n_1^{2}}-\frac{1}{n^{2}}\right)" />
-          <FormulaLine math="\frac{1}{\lambda}=\frac{2\pi^{2}mK^{2}Z^{2}e^{4}}{ch^{3}}\left(\frac{1}{n_1^{2}}-\frac{1}{n^{2}}\right)" />
+        <DerivationPanel title="Rydberg's equation from a transition">
+          <FormulaLine math="\Delta E=E_{n_2}-E_{n_1}" />
+          <FormulaLine math="\frac{hc}{\lambda}=\frac{2\pi^{2}mK^{2}Z^{2}e^{4}}{h^{2}}\left(\frac{1}{n_1^{2}}-\frac{1}{n_2^{2}}\right)" />
+          <FormulaLine math="\frac{1}{\lambda}=\frac{2\pi^{2}mK^{2}Z^{2}e^{4}}{ch^{3}}\left(\frac{1}{n_1^{2}}-\frac{1}{n_2^{2}}\right)" />
           <FormulaLine math="\boxed{\frac{1}{\lambda}=RZ^{2}\left(\frac{1}{n_1^{2}}-\frac{1}{n_2^{2}}\right)}" />
-          <FormulaLine math="R=\text{Rydberg's constant}=\frac{2\pi^{2}mK^{2}e^{4}}{ch^{3}}=109678\ \text{cm}^{-1}=1.09\times10^{7}\ \text{m}^{-1}" />
+          <FormulaLine math="R=\text{Rydberg's constant}=\frac{2\pi^{2}mK^{2}e^{4}}{ch^{3}}=109678\ \text{cm}^{-1}=1.097\times10^{7}\ \text{m}^{-1}" />
           <FormulaLine math="\boxed{\frac{1}{R}=912\ \text{\AA}}" />
           <FormulaLine math="\boxed{\nu=\frac{c}{\lambda}=RcZ^{2}\left(\frac{1}{n_1^{2}}-\frac{1}{n_2^{2}}\right)}" />
-        </NoteBlock>
+        </DerivationPanel>
         <NoteBlock title="Question — excite He⁺ from the 2nd to the 4th shell">
           <p>Q. Calculate frequency of EMR needed to excite e&#8315; of He&#8314; from 2nd to 4th shell.</p>
           <FormulaLine math="\nu=3\times10^{8}\times1.09\times10^{7}\times2^{2}\left(\frac{1}{2^{2}}-\frac{1}{4^{2}}\right)" />
@@ -82,6 +87,7 @@ export default function Part17() {
             <li>C. (i) 2 → 1 ✓, (ii) ∞ → 2, (iii) ∞ → 5, (iv) 7 → 5</li>
           </ul>
           <DiagramBox title="Hydrogen level gaps">
+            <HydrogenLevelGapsVisual />
             <p>
               Energy levels 1, 2 and <MathText math="\infty" /> drawn as horizontal lines: 3.4 eV separates level 2 from{" "}
               <MathText math="\infty" />, and 10.2 eV separates level 1 from level 2.
@@ -106,7 +112,7 @@ export default function Part17() {
         </NoteBlock>
       </SourcePage>
 
-      <AuditComment pages="52-54" unclear={0} />
+      <PracticeQuestion prompt="For a ground-state hydrogen atom, which transition gives the longest Lyman wavelength?" answer="n = 2 to n = 1; it has the smallest allowed energy difference in the Lyman series." /><SummaryStrip items={["IE = 13.6 Z² eV for a hydrogen-like ground state.", "1/λ = RZ²(1/n₁² − 1/n₂²).", "Shortest series line: n₂ → ∞."]} /><AuditComment pages="52-54" unclear={0} />
     </AtomicPartShell>
   );
 }

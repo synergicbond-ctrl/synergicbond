@@ -1,10 +1,13 @@
 "use client";
 
-import { AtomicPartShell, AuditComment, FormulaLine, MathText, NoteBlock, SourcePage } from "./_shared";
+import { AtomicPartShell, AuditComment, DiagramBox, FormulaLine, MathText, NoteBlock, SourcePage } from "./_shared";
+import { ImportantNote, LearningObjectives, SummaryStrip } from "../_components/AtomicLearning";
+import { UncertaintyTradeoffVisual } from "../_components/AtomicVisuals";
 
 export default function Part23() {
   return (
     <AtomicPartShell part={23} title="Uncertainty Principle Worked Problems" pages="71-73">
+      <LearningObjectives items={["estimate localisation limits across macroscopic and microscopic cases", "use de Broglie wavelength to reason about resolution", "recognise uncertainty estimates as order-of-magnitude arguments"]} />
       <SourcePage page={71}>
         <NoteBlock title="Lifetime and travel distance (conclusion)">
           <p>
@@ -12,6 +15,7 @@ export default function Part23() {
           </p>
           <FormulaLine math="\text{Distance travelled before disintegration}=(5.86\times10^{-24}\ \text{s})(10^{8}\ \text{m/s})=5.86\times10^{-16}\ \text{m}" />
         </NoteBlock>
+        <DiagramBox title="What a localisation estimate means"><UncertaintyTradeoffVisual /><p className="mt-3 text-sm text-slate-300">The extremely small bullet result is physical, not a failure of the calculation: Planck&apos;s constant makes quantum uncertainty negligible on everyday scales.</p></DiagramBox>
         <NoteBlock title="Problem — bullet uncertainty">
           <p>
             A bullet of mass 0.03 kg is moving with a velocity of 500 m s&#8315;&#185;. The speed is measured up to an accuracy
@@ -21,7 +25,7 @@ export default function Part23() {
           <FormulaLine math="\text{Momentum }p=0.03\times500=15\ \text{kg m s}^{-1}" />
           <FormulaLine math="\frac{\Delta p}{p}\times100=0.02" />
           <FormulaLine math="\Delta p=\frac{0.02\times15}{100}=3\times10^{-3}\ \text{kg m s}^{-1}" />
-          <FormulaLine math="\Delta x\approx\frac{h}{2\Delta p}=\frac{6.626\times10^{-34}\ \text{J s}}{4\pi\times3\times10^{-3}\ \text{km/s}}=1.76\times10^{-31}\ \text{m}" />
+          <FormulaLine math="\Delta x\approx\frac{\hbar}{2\Delta p}=\frac{h}{4\pi\Delta p}=\frac{6.626\times10^{-34}\ \text{J s}}{4\pi\times3\times10^{-3}\ \text{kg m s}^{-1}}=1.76\times10^{-31}\ \text{m}" />
         </NoteBlock>
         <NoteBlock title="Problem — 5 keV electron located within 2 Å">
           <p>
@@ -59,6 +63,7 @@ export default function Part23() {
           <FormulaLine math="(10^{-15}\ \text{m})\,\Delta p\ge\frac{\hbar}{2}" />
           <FormulaLine math="\Delta p\ge\frac{1.05\times10^{-34}\ \text{J s}}{2\,(10^{-15}\ \text{m})}=5.25\times10^{-20}\ \text{kg m s}^{-1}" />
         </NoteBlock>
+        <ImportantNote title="Relativistic check in the nuclear estimate">The inferred electron momentum is large enough that <MathText math="E\simeq pc" /> is the appropriate energy estimate. The conclusion concerns a pre-existing electron confined to nuclear dimensions; β decay instead creates the electron in the decay process.</ImportantNote>
       </SourcePage>
 
       <SourcePage page={72}>
@@ -107,6 +112,8 @@ export default function Part23() {
         </NoteBlock>
       </SourcePage>
 
+      <SummaryStrip items={["A smaller Δx requires a larger momentum spread Δp.", "Resolving power is limited by wavelength, so equal λ means equal momentum.", "The Bohr-radius calculation is a variational, order-of-magnitude argument—not a classical orbit proof."]} />
+
       <SourcePage page={73}>
         <NoteBlock title="Natural line width (continued)">
           <p>
@@ -134,7 +141,7 @@ export default function Part23() {
             the radius of the electron orbit in the ground state is equal to the Bohr radius.
           </p>
           <p className="font-black text-white">Solution</p>
-          <p>The energy of the electron in the hydrogen atom is the given by</p>
+          <p>The energy of the electron in the hydrogen atom is given by</p>
           <FormulaLine math="E=\frac{p^{2}}{2m}-\frac{ke^{2}}{r},\qquad k=\frac{1}{4\pi\varepsilon_0}" />
           <p>
             where p is the momentum of the electron. For the order of magnitude of the position uncertainty, if we take{" "}
@@ -144,12 +151,12 @@ export default function Part23() {
           <p>Taking the order of momentum p as equal to the uncertainty in momentum, we get</p>
           <FormulaLine math="(\Delta p)^{2}=\langle p^{2}\rangle=\frac{\hbar^{2}}{r^{2}}" />
           <p>Hence, the total energy</p>
-          <FormulaLine math="E=\frac{\hbar}{2mr^{2}}-\frac{ke^{2}}{r}" />
+          <FormulaLine math="E=\frac{\hbar^{2}}{2mr^{2}}-\frac{ke^{2}}{r}" />
           <p>For E to be minimum, <MathText math="(dE/dr)=0" />. Then,</p>
           <FormulaLine math="\frac{dE}{dr}=-\frac{\hbar^{2}}{mr^{3}}+\frac{ke^{2}}{r^{2}}=0" />
-          <FormulaLine math="r=\frac{\hbar^{2}}{kme^{3}}=a_0" />
+          <FormulaLine math="r=\frac{\hbar^{2}}{kme^{2}}=a_0" />
           <p>which is the required result.</p>
-          <p>Credit line printed on the page: G. Aruldhas.</p>
+          <p>Problem credit: G. Aruldhas.</p>
         </NoteBlock>
       </SourcePage>
 

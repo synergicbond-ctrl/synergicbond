@@ -1,10 +1,13 @@
 "use client";
 
 import { AtomicPartShell, AuditComment, DiagramBox, FormulaLine, MathText, NoteBlock, SourcePage } from "./_shared";
+import { LearningObjectives, PracticeQuestion, SummaryStrip } from "../_components/AtomicLearning";
+import { PlanckComparisonVisual, RadiationComparisonPanelsVisual } from "../_components/AtomicVisuals";
 
 export default function Part10() {
   return (
     <AtomicPartShell part={10} title="Rayleigh-Jeans and Planck Quantum Theory" pages="29-32">
+      <LearningObjectives items={["State the Rayleigh–Jeans formula and its failure.", "Explain Planck’s quantum hypothesis.", "Calculate photon energy from wavelength or energy.", "Find photon number from a required absorbed energy."]} />
       <SourcePage page={29}>
         <NoteBlock title="Rayleigh-Jeans Formula">
           <FormulaLine math="u(\nu)d\nu=\bar{E}G(\nu)d\nu=\frac{8\pi KT}{c^3}\nu^2d\nu" />
@@ -18,6 +21,7 @@ export default function Part10() {
             u(ν)dν - Total energy per unit volume in the cavity in the frequency from ν to ν + dν
           </p>
           <DiagramBox title="Classical vs quantum radiation curves">
+            <PlanckComparisonVisual />
             <p>Axes: Radiated Intensity vs Frequency.</p>
             <p>Labels: Towards Ultraviolet Catastrophe; Rayleigh-Jeans Law; Classical; Quantum; Planck Law; curves agree at very low frequencies.</p>
             <p>
@@ -25,7 +29,8 @@ export default function Part10() {
               <MathText math="\frac{8\pi\nu^2}{c^3}\frac{h\nu}{e^{h\nu/kT}-1}" />.
             </p>
           </DiagramBox>
-          <DiagramBox title="Printed comparison graphs">
+          <DiagramBox title="Comparison graphs">
+            <RadiationComparisonPanelsVisual />
             <p>Left graph: 3000 K, 4000 K, 5000 K, 6000 K; ultraviolet, visible light, infrared; wavelength (angstroms).</p>
             <p>Right graph: T = 5800 K; Rayleigh-Jeans, Planck, Wien; ν [THz].</p>
           </DiagramBox>
@@ -41,14 +46,14 @@ export default function Part10() {
             classical wave on increasing energy, amplitude of wave should change without change in λ or ν. From classical
             wave concept, on heating, the brightness of iron sample should increase without change in colour.
           </p>
-          <p>Planck explained such observation by assuming the propagation of wave discontinuously.</p>
+          <p>Planck explained this observation by proposing that radiation is emitted and absorbed in discrete packets.</p>
           <p>According to him</p>
           <ol className="list-decimal space-y-3 pl-5">
             <li>
-              A body may absorbs or emits radiations only discontinuously in the form of small packets called quanta. The
+              A body may absorb or emit radiation discontinuously in the form of small packets called quanta. The
               packets of light are called photons.
             </li>
-            <li>Each quanta is directly proportional to the frequency of radiation involved.</li>
+            <li>The energy of each quantum is directly proportional to the frequency of the radiation involved.</li>
           </ol>
         </NoteBlock>
       </SourcePage>
@@ -101,6 +106,8 @@ export default function Part10() {
           <FormulaLine math="=27.7\simeq28" />
         </NoteBlock>
       </SourcePage>
+      <PracticeQuestion prompt={<>What wavelength corresponds to a photon energy of <MathText math="20\ \mathrm{eV}" /> in the worked calculation?</>} answer={<MathText math="621.2\ \mathrm{\AA}" />} />
+      <SummaryStrip items={["Rayleigh–Jeans uses average oscillator energy kT and fails at high frequency.", "Planck proposed discrete quanta with E = hν and total energy E = nhν.", "The worked green-light threshold problem gives approximately 28 photons."]} />
       <AuditComment pages="29-32" unclear={0} />
     </AtomicPartShell>
   );

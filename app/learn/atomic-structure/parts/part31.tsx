@@ -1,6 +1,8 @@
 "use client";
 
 import { AtomicPartShell, AuditComment, DataTable, DiagramBox, FormulaLine, MathText, NoteBlock, SourcePage } from "./_shared";
+import { PenultimateShellVisual, SubshellZCrossingVisual } from "../_components/AtomicVisuals";
+import { ConceptCard, ImportantNote, LearningObjectives, SummaryStrip } from "../_components/AtomicLearning";
 
 const T1_HEADERS = ["Element", "Z", "1s", "2s 2p", "3s 3p 3d", "4s 4p 4d 4f", "5s 5p 5d 5f", "6s 6p 6d 7s"];
 
@@ -124,11 +126,16 @@ const T2_ROWS: string[][] = [
 export default function Part31() {
   return (
     <AtomicPartShell part={31} title="Transition Metals and the Full Configuration Table" pages="97-99">
+      <LearningObjectives items={["relate shell capacity to the allowed subshells", "identify transition metals from atom or ion configurations", "read the full configuration reference table, including exceptions"]} />
       <SourcePage page={97}>
-        <NoteBlock title="Max number of e⁻ in a shell">
+        <ConceptCard title="A configuration reference, read with structure">
+          <p>Read across a row as the occupancy of successive subshell groups; an asterisk flags an exceptional configuration. The table remains a reference, while the rules behind it are kept close by.</p>
+        </ConceptCard>
+        <NoteBlock title="Maximum number of e⁻ in a shell">
           <FormulaLine math="N_{max}=\sum_{l=0}^{l=n-1}2(2l+1)" />
           <p>3. Difference of energy level</p>
-          <DiagramBox title="Subshell energies versus atomic number (printed)">
+          <DiagramBox title="Subshell energies versus atomic number">
+            <SubshellZCrossingVisual />
             <p>
               Principal quantum number (1–7) against atomic number (0–100): curves for 1s up to 7p cross as Z grows, showing
               how subshell order changes with atomic number.
@@ -137,7 +144,7 @@ export default function Part31() {
         </NoteBlock>
         <NoteBlock title="Transition Metal">
           <p>
-            The d block elements or their ions which have incompletely filled (n−1)d orbital are called transition metal.
+            The d block elements or their ions which have incompletely filled (n−1)d orbitals are called transition metals.
           </p>
           <DataTable
             headers={["Sc 21", "Ti 22", "V 23", "Cr 24", "Mn 25", "Fe 26", "Co 27", "Ni 28"]}
@@ -155,6 +162,7 @@ export default function Part31() {
           <FormulaLine math="Cu\ (29)=3d^{10}4s^{1}\qquad Zn\ (30)=3d^{10}4s^{2}" />
           <FormulaLine math="Cu^{2+}=3d^{9}\qquad Zn^{2+}=3d^{10}" />
           <DiagramBox title="Penultimate shells">
+            <PenultimateShellVisual />
             <p>
               Concentric shells around the nucleus with the second-outermost ring labelled Penultimate Shell and the one inside
               it labelled Pre or anti Penultimate Shell.
@@ -164,23 +172,26 @@ export default function Part31() {
       </SourcePage>
 
       <SourcePage page={98}>
-        <NoteBlock title="Electronic configurations H (1) – Xe (54) (printed table)">
+        <NoteBlock title="Electronic configurations H (1) – Xe (54)">
           <DataTable headers={T1_HEADERS} rows={T1_ROWS} />
           <p>Starred elements mark exceptional configurations.</p>
         </NoteBlock>
       </SourcePage>
 
       <SourcePage page={99}>
-        <NoteBlock title="Electronic configurations Cs (55) – Rg (111) (printed table)">
+        <NoteBlock title="Electronic configurations Cs (55) – Rg (111)">
           <DataTable headers={[...T1_HEADERS.slice(0, 7), "6s 6p 6d", "7s"].slice(0, 9)} rows={T2_ROWS} />
           <p>
-            Starred elements mark exceptional configurations. The 5f entries printed for Rf–Bh are hard to read at scan
-            resolution and are marked [UNCLEAR].
+            Starred elements mark exceptional configurations. The 5f entries for Rf–Bh could not be verified and are marked
+            [UNCLEAR].
           </p>
         </NoteBlock>
       </SourcePage>
 
-      <AuditComment pages="97-99" unclear={4} note="four 5f cells in the printed Rf-Bh rows are low-legibility" />
+      <ImportantNote title="Scope of the table">The asterisk is a prompt to check the configuration rather than apply a simple filling pattern mechanically. The four marked <MathText math="5f" /> cells below remain <strong>[UNCLEAR]</strong>.</ImportantNote>
+      <SummaryStrip items={["A shell with principal quantum number n contains the stated sum of subshell capacities.", "A transition metal has an incompletely filled (n−1)d subshell in its atom or ion.", "Use the long tables as a configuration reference; preserve the starred exceptions."]} />
+
+      <AuditComment pages="97-99" unclear={4} note="four 5f cells in the Rf-Bh rows remain [UNCLEAR]" />
     </AtomicPartShell>
   );
 }

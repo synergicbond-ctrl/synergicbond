@@ -1,10 +1,14 @@
 "use client";
 
 import { AtomicPartShell, AuditComment, DataTable, DiagramBox, FormulaLine, MathText, NoteBlock, SourcePage } from "./_shared";
+import { BohrOrbitsVisual } from "../_components/AtomicVisuals";
+import { DefinitionCard, FigureCaption, ImportantNote, LearningObjectives, PracticeQuestion, SummaryStrip, WorkedExample } from "../_components/AtomicLearning";
 
 export default function Part14() {
   return (
     <AtomicPartShell part={14} title="Work Function Data and Bohr Model Postulates" pages="42-44">
+      <LearningObjectives items={["Use work-function data.", "Calculate visible photon energies.", "Apply stopping-potential relations.", "State Bohr stationary-orbit ideas."]} />
+      <DefinitionCard term="Work function, φ₀"><p>The minimum energy needed to remove an electron from a metal surface. Photoemission requires <MathText math="h\nu\geq\phi_0" />; equality defines threshold frequency.</p></DefinitionCard>
       <SourcePage page={42}>
         <NoteBlock title="Work functions of photosensitive metals">
           <DataTable
@@ -19,7 +23,7 @@ export default function Part14() {
             ]}
           />
         </NoteBlock>
-        <NoteBlock title="Solved example — photon energies across the visible region">
+        <WorkedExample title="Photon energies across the visible region">
           <p>
             The wavelength of light in the visible region is about 390 nm for violet colour, about 550 nm (average wavelength)
             for yellow-green colour and about 760 nm for red colour.
@@ -52,9 +56,10 @@ export default function Part14() {
             will not operate with red light (with <MathText math="E=1.64\ \text{eV}" />) for any of these photosensitive
             materials.
           </p>
-        </NoteBlock>
+        </WorkedExample>
       </SourcePage>
 
+      <ImportantNote title="Model scope">Bohr orbits are a successful hydrogen-like model; later quantum mechanics replaces definite electron paths with orbitals.</ImportantNote>
       <SourcePage page={43}>
         <NoteBlock title="Problem — classical electron radius">
           <p>
@@ -65,11 +70,16 @@ export default function Part14() {
           <p className="font-black text-white">Solution</p>
           <p>We know from classical electromagnetism that the energy of a charged shell is</p>
           <FormulaLine math="E=\frac{e^{2}}{4\pi\varepsilon_0 r_e}\qquad(5.1)" />
+          <p>
+            (This is the conventional expression used to define the classical electron radius; the exact electrostatic
+            self-energy of a charged shell carries an additional factor of <MathText math="\tfrac{1}{2}" />, which the
+            convention omits.)
+          </p>
           <p>Since <MathText math="E=mc^{2}" />, we find</p>
           <FormulaLine math="r_e=\frac{e^{2}}{4\pi\varepsilon_0 mc^{2}}=2.82\times10^{-15}\ \text{m}\qquad(5.2)" />
           <p>
-            This is the allowed classical electron radius. It is about the size of an atomic nucleus. The size of the electron
-            cannot be smaller than this; otherwise, the electron&apos;s mass would be larger.
+            This conventional classical radius is of nuclear length scale. It is not a measured electron size or a physical lower
+            bound: modern scattering finds no resolved electron size at much smaller scales.
           </p>
           <p>
             However, according to experiments, the electron is smaller, and yet its mass is not larger. Thus, classical
@@ -103,24 +113,26 @@ export default function Part14() {
       <SourcePage page={44}>
         <NoteBlock title="Bohr's Atomic Model">
           <p>
-            Bohr defined that the microscopic particle like electron will not radiate energy continuously. They emit energy
-            discontinuously (Planck Theory). On losing energy electron will jump closer to the nucleus. By doing so it must
-            acquire a certain minimum energy after which it can not lose energy and e&#8315; will never drop in the nucleus.
+            Bohr proposed that a microscopic particle like the electron will not radiate energy continuously. It emits energy
+            discontinuously (Planck theory). On losing energy the electron jumps closer to the nucleus. By doing so it must
+            reach a certain minimum energy after which it cannot lose energy, and the e&#8315; will never drop into the
+            nucleus.
           </p>
           <p>According to Bohr&apos;s model</p>
           <ol className="list-decimal space-y-3 pl-5">
-            <li>Electrons revolve around the nucleus in definite circular path called orbits or shell.</li>
+            <li>Electrons revolve around the nucleus in definite circular paths called orbits or shells.</li>
           </ol>
           <DiagramBox title="Stationary state">
-            <p>
+            <BohrOrbitsVisual />
+            <FigureCaption>
               Concentric circular orbits around the nucleus (+); orbits numbered 1, 2, 3, 4, … and lettered K, L, M, N, O …
-              outward. Caption: stationary state.
-            </p>
+              outward. This is a conceptual stationary-state visual: orbit spacing is not to scale, while energy increases outward.
+            </FigureCaption>
           </DiagramBox>
           <ol className="list-decimal space-y-3 pl-5" start={2}>
             <li>
-              The energy of e&#8315; remain constant in an orbit and hence are called energy level. The energy of e&#8315;
-              increases on increasing distance from nucleus.
+              The energy of the e&#8315; remains constant in an orbit, and hence the orbits are also called energy levels.
+              The energy of the e&#8315; increases on increasing distance from the nucleus.
             </li>
           </ol>
           <FormulaLine math="E_1<E_2<E_3\cdots" />
@@ -129,7 +141,7 @@ export default function Part14() {
         </NoteBlock>
       </SourcePage>
 
-      <AuditComment pages="42-44" unclear={0} />
+      <PracticeQuestion prompt="Which listed metal works with yellow-green light in the solved example?" answer="Caesium only." /><SummaryStrip items={["Visible photon energy decreases from violet to red.", "Caesium threshold frequency is 5.16 × 10¹⁴ Hz.", "Bohr stationary orbits have fixed energy."]} /><AuditComment pages="42-44" unclear={0} />
     </AtomicPartShell>
   );
 }

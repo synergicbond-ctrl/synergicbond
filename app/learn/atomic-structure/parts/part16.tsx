@@ -1,13 +1,17 @@
 "use client";
 
 import { AtomicPartShell, AuditComment, DataTable, DiagramBox, FormulaLine, MathText, NoteBlock, SourcePage } from "./_shared";
+import { CircularOrbitVisual, HydrogenLevelGapsVisual } from "../_components/AtomicVisuals";
+import { DefinitionCard, DerivationPanel, FigureCaption, LearningObjectives, PracticeQuestion, SummaryStrip } from "../_components/AtomicLearning";
 
 export default function Part16() {
   return (
     <AtomicPartShell part={16} title="Energy of the Electron and Level Differences" pages="49-51">
+      <LearningObjectives items={["Relate Bohr radius to angular momentum.", "Derive hydrogen-like energy levels.", "Interpret negative bound-state energies.", "Calculate excitation energy between levels."]} />
+      <DefinitionCard term="Bound-state energy"><p>With zero potential energy defined at infinite separation, an electron bound to the nucleus has <MathText math="E_n&lt;0" />. Energy must be absorbed to reach <MathText math="E=0" /> and ionise the atom.</p></DefinitionCard>
       <SourcePage page={49}>
         <NoteBlock title="Problem — angular momentum in the 5th orbit">
-          <p>Calculate the angular momentum of e&#8315; the 5th orbit of H-atom.</p>
+          <p>Calculate the angular momentum of e&#8315; in the 5th orbit of H-atom.</p>
           <FormulaLine math="mvr=n\frac{h}{2\pi}=\frac{5h}{2\pi}" />
         </NoteBlock>
         <NoteBlock title="MCQ — angular momentum versus radius">
@@ -24,12 +28,14 @@ export default function Part16() {
         </NoteBlock>
         <NoteBlock title="Calculation of energy of e⁻">
           <DiagramBox title="Orbit for the energy calculation">
+            <CircularOrbitVisual />
             <p>
               Circular orbit around the nucleus <MathText math="\oplus" /> with radius <MathText math="r" /> to the electron.
             </p>
           </DiagramBox>
           <p>Total energy = P.E + K.E.</p>
           <FormulaLine math="P.E.=\int F\cdot dr=\int\frac{KZe^{2}}{r^{2}}\,dr=-\frac{KZe^{2}}{r}" />
+          <p>(taking the potential energy to be zero at infinite separation)</p>
           <FormulaLine math="K.E.=\frac{1}{2}mv^{2}" />
           <FormulaLine math="\frac{mv^{2}}{r}=\frac{KZe^{2}}{r^{2}}" />
           <FormulaLine math="K.E.=\frac{1}{2}mv^{2}=\frac{1}{2}\,\frac{KZe^{2}}{r}" />
@@ -37,16 +43,18 @@ export default function Part16() {
       </SourcePage>
 
       <SourcePage page={50}>
-        <NoteBlock title="Total energy of the electron">
+        <DerivationPanel title="Total energy of the electron">
           <FormulaLine math="T.E.=-\frac{KZe^{2}}{r}+\frac{1}{2}\,\frac{KZe^{2}}{r}" />
           <FormulaLine math="\boxed{T.E.=-\frac{1}{2}\,\frac{KZe^{2}}{r}}" />
           <FormulaLine math="\boxed{TE=-KE=\frac{PE}{2}}" />
           <FormulaLine math="E_n=-\frac{1}{2}KZe^{2}\cdot\frac{4\pi^{2}mKZe^{2}}{n^{2}h^{2}}=\frac{-2\pi^{2}mK^{2}Z^{2}e^{4}}{n^{2}h^{2}}\qquad E\propto\frac{Z^{2}}{n^{2}}" />
-          <FormulaLine math="\boxed{E_n=-13.6\,\frac{Z^{2}}{n^{2}}\ \text{eV/atom}=-2.18\times10^{-18}\times\frac{Z^{2}}{n^{2}}\ \text{J/atom}=-1312\,\frac{Z^{2}}{n^{2}}\ \text{kJ/mol}=-316\,\frac{Z^{2}}{n^{2}}\ \text{kcal/mol}}" />
-        </NoteBlock>
+          <FormulaLine math="\boxed{E_n=-13.6\,\frac{Z^{2}}{n^{2}}\ \text{eV/atom}=-2.18\times10^{-18}\times\frac{Z^{2}}{n^{2}}\ \text{J/atom}=-1312\,\frac{Z^{2}}{n^{2}}\ \text{kJ/mol}=-313.6\,\frac{Z^{2}}{n^{2}}\ \text{kcal/mol}}" />
+        </DerivationPanel>
         <NoteBlock title="For hydrogen">
+          <HydrogenLevelGapsVisual />
+          <FigureCaption>Hydrogen levels rise toward zero energy as n increases. The gaps shrink at larger n, so equal changes in orbit number do not require equal energy.</FigureCaption>
           <FormulaLine math="E_1=-13.6\ \text{eV}" />
-          <FormulaLine math="E_2=-13.6\times\frac{1}{4}=-3.4" />
+          <FormulaLine math="E_2=-13.6\times\frac{1}{4}=-3.4\ \text{eV}" />
           <FormulaLine math="E_3=-13.6\times\frac{1}{9}=-1.51\ \text{eV}" />
           <FormulaLine math="E_4=-13.6\times\frac{1}{16}=-0.85\ \text{eV}" />
           <FormulaLine math="E_2-E_1=10.2\ \text{eV}\qquad E_4-E_3=0.66\ \text{eV}" />
@@ -74,7 +82,8 @@ export default function Part16() {
         </NoteBlock>
         <NoteBlock title="Problem — absorption in Li²⁺ from n = 1 to n = 3">
           <p>
-            Calculate amount energy absorbed in transition of e&#8315; from n = 1 to n = 3 in <MathText math="Li^{2+}" /> ion
+            Calculate the amount of energy absorbed in transition of e&#8315; from n = 1 to n = 3 in{" "}
+            <MathText math="Li^{2+}" /> ion
           </p>
           <FormulaLine math="\Delta E=13.6\times9\left(\frac{1}{1^{2}}-\frac{1}{3^{2}}\right)=13.6\times9\times\frac{8}{9}=13.6\times8\ \text{eV}" />
         </NoteBlock>
@@ -89,7 +98,7 @@ export default function Part16() {
         </NoteBlock>
       </SourcePage>
 
-      <AuditComment pages="49-51" unclear={0} />
+      <PracticeQuestion prompt={<>What energy is absorbed when <MathText math="Li^{2+}" /> moves from <MathText math="n=1" /> to <MathText math="n=3" />?</>} answer={<MathText math="108.8\ \text{eV}" />} /><SummaryStrip items={["Eₙ = −13.6 Z²/n² eV.", "Bound states have negative energy.", "|ΔE| depends on both levels and Z²."]} /><AuditComment pages="49-51" unclear={0} />
     </AtomicPartShell>
   );
 }

@@ -1,21 +1,26 @@
 "use client";
 
 import { AtomicPartShell, AuditComment, DataTable, DiagramBox, FormulaLine, MathText, NoteBlock, SourcePage } from "./_shared";
+import { LearningObjectives, ImportantNote, PracticeQuestion, SummaryStrip } from "../_components/AtomicLearning";
+import { BlackBodyCurvesVisual, BulbHeatingSequenceVisual, EnergyBandStripVisual } from "../_components/AtomicVisuals";
 
 export default function Part09() {
   return (
     <AtomicPartShell part={9} title="Radiation Laws and Planck Formula" pages="26-28">
+      <LearningObjectives items={["Relate black-body peak wavelength to temperature.", "Use Stefan–Boltzmann and emissivity relations.", "Recognise Planck’s distribution and its low-frequency limit.", "Explain the ultraviolet catastrophe."]} />
       <SourcePage page={26}>
         <NoteBlock title="Heating visual inserts">
           <DiagramBox title="Bulb heating sequence">
-            <p>Four photographic inserts show an electric bulb/filament glowing with increasing brightness.</p>
+            <BulbHeatingSequenceVisual />
+            <p>As the tungsten filament is heated, its radiance rises and its visible glow shifts from dim red through orange toward yellow-white. The colour transition is qualitative; the black-body curve below gives the quantitative wavelength trend.</p>
           </DiagramBox>
           <DiagramBox title="Black-body peak graph">
+            <BlackBodyCurvesVisual />
             <p>
               Graph labels: <MathText math="\lambda_{\mathrm{peak}}T=2.898\times10^{-3}\ \mathrm{m\cdot K}" />, 483 nm,
               580 nm, 724 nm, 966 nm (IR), visible, 6000 K, 5000 K, 4000 K, 3000 K.
             </p>
-            <p>Printed note: wavelength of the peak blackbody radiation curve gives a measure of temperature.</p>
+            <p>Temperature relation: the wavelength of the peak blackbody radiation curve gives a measure of temperature.</p>
           </DiagramBox>
         </NoteBlock>
       </SourcePage>
@@ -25,10 +30,10 @@ export default function Part09() {
           <FormulaLine math="U=\int_0^\infty u(\nu)\,d\nu=\frac{8\pi^5K^4}{15c^3h^2}=aT^4" />
           <p>a is universal constant.</p>
           <p>The total energy density is proportional to the fourth power of the absolute temperature.</p>
-          <FormulaLine math="U_\lambda=e\sigma T^4" />
+          <FormulaLine math="M=e\sigma T^4" />
           <p>For a perfectly black body</p>
-          <FormulaLine math="U_\lambda=\sigma T^4" />
-          <p>σ = Stephen-Boltzmann constant</p>
+          <FormulaLine math="M=\sigma T^4" />
+          <p>σ = Stefan-Boltzmann constant; M is radiant exitance (power emitted per unit area).</p>
           <FormulaLine math="\sigma=\frac{ac}{4}=5.670374419\ \mathrm{W/m^2K^4}" />
           <p>emissivity e-</p>
           <DataTable
@@ -42,9 +47,10 @@ export default function Part09() {
             ]}
           />
           <p>
-            U<sub>λ</sub>dλ = energy of radiation per unit volume in range of (λ + dλ)
+            u<sub>λ</sub>dλ = energy per unit volume in the wavelength interval λ to λ + dλ.
           </p>
           <DiagramBox title="Energy in dλ band">
+            <EnergyBandStripVisual />
             <p>Curve with a narrow vertical strip marked dλ.</p>
           </DiagramBox>
         </NoteBlock>
@@ -69,12 +75,14 @@ export default function Part09() {
           <p>Wien Radiation law</p>
           <FormulaLine math="U_\lambda=a\nu^3e^{-b\nu/T}" />
           <div className="rounded-lg border border-amber-400/20 bg-amber-400/[0.06] p-3 text-sm text-amber-100">
-            Printed ultraviolet-catastrophe paragraph present. Concise extraction: classical Rayleigh-Jeans theory predicts
-            unlimited high-frequency radiation, which is physically impossible and not observed.
+            <strong>Ultraviolet catastrophe.</strong> Classical Rayleigh-Jeans theory predicts unlimited high-frequency radiation, which is physically impossible and not observed.
           </div>
         </NoteBlock>
       </SourcePage>
-      <AuditComment pages="26-28" unclear={0} note="printed paragraph condensed" />
+      <ImportantNote>The Rayleigh–Jeans form is the low-frequency approximation of Planck’s formula, valid when hν ≪ kT.</ImportantNote>
+      <PracticeQuestion prompt="What value of emissivity corresponds to an ideal black body?" answer="e = 1." />
+      <SummaryStrip items={["Radiant exitance M = eσT⁴; an ideal black body has e = 1.", "Planck distribution contains the factor 1/(e^(hν/kT) − 1).", "Quantisation avoids the classical ultraviolet catastrophe."]} />
+      <AuditComment pages="26-28" unclear={0} note="law paragraph reviewed" />
     </AtomicPartShell>
   );
 }

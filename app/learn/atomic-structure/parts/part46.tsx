@@ -1,88 +1,14 @@
 "use client";
 
-import { AtomicPartShell, AuditComment, DataTable, DiagramBox, FormulaLine, MathText, NoteBlock, SourcePage } from "./_shared";
+import { AtomicPartShell, AuditComment, DataTable, DiagramBox, FormulaLine, ImportantNote, LearningObjectives, NoteBlock, SourcePage, SummaryStrip } from "./_shared";
+import { Dz2OrbitalVisual, OrbitalNodeSeriesVisual, OrbitalShapesBasicVisual } from "../_components/AtomicVisuals";
 
 export default function Part46() {
-  return (
-    <AtomicPartShell part={46} title="dz² as a Sum of Cloverleaves, and Orbital Shapes with Node Counts" pages="145-147">
-      <SourcePage page={145}>
-        <NoteBlock title="dz² as the superposition of two cloverleaf lobes">
-          <DiagramBox title="d(z²−y²) + d(z²−x²) → dz² (diagram)">
-            <p>
-              Left: a four-lobe cloverleaf in the y–z plane labelled <MathText math="d_{z^{2}-y^{2}}" />. Middle: a
-              four-lobe cloverleaf in the x–z plane labelled <MathText math="d_{z^{2}-x^{2}}" />. Their sum gives the{" "}
-              <MathText math="d_{z^{2}}" /> orbital on the right: two lobes along z plus an orange ring around the origin.
-            </p>
-          </DiagramBox>
-          <p>The equatorial ring of the dz² orbital is called the doughnut or belly band.</p>
-        </NoteBlock>
-      </SourcePage>
-
-      <SourcePage page={146}>
-        <NoteBlock title="Shape of orbital — node rules">
-          <FormulaLine math="\text{Radial node}=n-l-1" />
-          <FormulaLine math="\text{angular node}=l" />
-          <FormulaLine math="\text{Total node}=n-1" />
-          <FormulaLine math="\text{nodal plane}=l" />
-        </NoteBlock>
-        <NoteBlock title="s-orbital">
-          <p>Shape = spherical, non directional.</p>
-          <DiagramBox title="1s / 2s / 3s (printed)">
-            <p>
-              1s a single filled disc; 2s a disc with one surrounding ring; 3s a disc with two surrounding rings — the dark
-              gaps are the radial nodes.
-            </p>
-          </DiagramBox>
-          <DataTable
-            headers={["", "1s", "2s", "3s"]}
-            rows={[
-              ["Radial node", "0", "1", "2"],
-              ["angular node", "0", "0", "0"],
-            ]}
-          />
-        </NoteBlock>
-        <NoteBlock title="p-orbital">
-          <p>Shape = dumbbell.</p>
-          <DiagramBox title="2pₓ / 2p_y / 2p_z (printed)">
-            <p>
-              Three dumbbells: 2pₓ with the nodal (yz) plane, 2p_y with its nodal (xz) plane, 2p_z along z with the xy nodal
-              plane. Each lobe pair has one orange (+) and one blue (−) lobe.
-            </p>
-          </DiagramBox>
-          <DataTable
-            headers={["", "2pₓ", "2p_y", "2p_z"]}
-            rows={[
-              ["Radial node", "0", "0", "0"],
-              ["angular node", "1", "1", "1"],
-            ]}
-          />
-        </NoteBlock>
-      </SourcePage>
-
-      <SourcePage page={147}>
-        <NoteBlock title="Nodal planes of the p-orbitals">
-          <DiagramBox title="p_z / pₓ / p_y nodal planes (diagram)">
-            <p>
-              p_z: dumbbell along z, nodal plane yz. pₓ: dumbbell along x, nodal plane zx. p_y: dumbbell along the y
-              diagonal, nodal plane xy. Each p-orbital has exactly one nodal plane (angular node = 1).
-            </p>
-          </DiagramBox>
-        </NoteBlock>
-        <NoteBlock title="Radial nodes across the np series">
-          <DiagramBox title="2p / 3p / 4p / 5p (diagram)">
-            <p>
-              Nested dumbbells along the same axis: 2p a single dumbbell, 3p with one extra inner shell, 4p with two, 5p
-              with three — the number of nested extra loops equals the radial-node count.
-            </p>
-          </DiagramBox>
-          <DataTable
-            headers={["orbital", "2p", "3p", "4p", "5p"]}
-            rows={[["Radial node", "0", "1", "2", "3"]]}
-          />
-        </NoteBlock>
-      </SourcePage>
-
-      <AuditComment pages="145-147" unclear={0} />
-    </AtomicPartShell>
-  );
+  return <AtomicPartShell part={46} title="Orbital Shapes and the Geometry of Nodes" pages="145-147">
+    <LearningObjectives items={["Resolve the distinctive d z² shape into axial lobes and its equatorial region.", "Count radial and angular nodes directly from n and l.", "Relate p-orbital orientation to its unique nodal plane."]} />
+    <SourcePage page={145}><NoteBlock title="d z² as the superposition of two cloverleaves"><DiagramBox title="d(z²−y²) + d(z²−x²) → d z²"><Dz2OrbitalVisual /><p>Left: a four-lobe cloverleaf in the y–z plane, <i>d</i><sub>z²−y²</sub>. Middle: a four-lobe cloverleaf in the x–z plane, <i>d</i><sub>z²−x²</sub>. Their sum gives <i>d</i><sub>z²</sub>: two lobes along z plus an orange equatorial ring around the origin.</p></DiagramBox><p>The equatorial ring of the d z² orbital is called the <strong>doughnut</strong> or <strong>belly band</strong>.</p></NoteBlock></SourcePage>
+    <SourcePage page={146}><NoteBlock title="Shape of orbital — node rules"><FormulaLine math="\text{Radial node}=n-l-1" /><FormulaLine math="\text{angular node}=l" /><FormulaLine math="\text{Total node}=n-1" /><FormulaLine math="\text{nodal plane}=l" /><ImportantNote title="Reading the rule"><p>For s orbitals, l = 0, so every node is radial. For p orbitals, l = 1, so one angular node is present; for the real p orbitals it is a plane through the nucleus.</p></ImportantNote></NoteBlock><NoteBlock title="s-orbital"><p>Shape = spherical, non directional.</p><DiagramBox title="1s / 2s / 3s"><OrbitalNodeSeriesVisual kind="s" /><p>1s is a single filled sphere; 2s has one surrounding region; 3s has two surrounding regions. The dark gaps are radial nodes.</p></DiagramBox><DataTable headers={["", "1s", "2s", "3s"]} rows={[["Radial node", "0", "1", "2"], ["angular node", "0", "0", "0"]]} /></NoteBlock><NoteBlock title="p-orbital"><p>Shape = dumbbell.</p><DiagramBox title="2pₓ / 2pᵧ / 2p_z"><OrbitalShapesBasicVisual /><p>2pₓ has the nodal yz plane; 2pᵧ has the nodal xz plane; 2p_z lies along z with the xy nodal plane. Each lobe pair has one positive and one negative phase.</p></DiagramBox><DataTable headers={["", "2pₓ", "2pᵧ", "2p_z"]} rows={[["Radial node", "0", "0", "0"], ["angular node", "1", "1", "1"]]} /></NoteBlock></SourcePage>
+    <SourcePage page={147}><NoteBlock title="Nodal planes of the p-orbitals"><DiagramBox title="p_z / pₓ / pᵧ nodal planes"><OrbitalShapesBasicVisual /><p>p_z: dumbbell along z, nodal plane xy. pₓ: dumbbell along x, nodal plane yz. pᵧ: dumbbell along y, nodal plane zx. Each p-orbital has exactly one nodal plane (angular node = 1).</p></DiagramBox></NoteBlock><NoteBlock title="Radial nodes across the np series"><DiagramBox title="2p / 3p / 4p / 5p"><OrbitalNodeSeriesVisual /><p>Nested dumbbells lie along the same axis: 2p is a single dumbbell; 3p has one extra inner shell; 4p has two; 5p has three. The number of nested extra loops equals the radial-node count.</p></DiagramBox><DataTable headers={["orbital", "2p", "3p", "4p", "5p"]} rows={[["Radial node", "0", "1", "2", "3"]]} /></NoteBlock></SourcePage>
+    <SummaryStrip items={["d z² combines axial lobes with an equatorial doughnut.", "Radial nodes = n − l − 1; angular nodes = l.", "Every real p orbital has one nodal plane."]} /><AuditComment pages="145-147" unclear={0} />
+  </AtomicPartShell>;
 }

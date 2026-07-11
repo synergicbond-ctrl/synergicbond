@@ -1,10 +1,14 @@
 "use client";
 
 import { AtomicPartShell, AuditComment, DiagramBox, FormulaLine, MathText, NoteBlock, SourcePage } from "./_shared";
+import { LevelDiagramVisual } from "../_components/AtomicVisuals";
+import { DefinitionCard, DerivationPanel, LearningObjectives, PracticeQuestion, SummaryStrip } from "../_components/AtomicLearning";
 
 export default function Part20() {
   return (
     <AtomicPartShell part={20} title="Visible Lines, Line Counting and Bohr Model Limits" pages="61-64">
+      <LearningObjectives items={["Identify visible Balmer lines.", "Count multi-step spectral lines.", "State Bohr-model limits.", "Follow radius and magnetic-moment derivations."]} />
+      <DefinitionCard term="Counting emitted wavelengths"><p>The maximum number of distinct transition energies from an initially populated level <MathText math="n" /> is <MathText math="n(n-1)/2" />, provided enough atoms follow all possible downward paths.</p></DefinitionCard>
       <SourcePage page={61}>
         <NoteBlock title="Four lines of visible region">
           <FormulaLine math="n=2\ \leftarrow\ n=3\quad656\ \text{nm}\quad\text{Red}" />
@@ -16,16 +20,19 @@ export default function Part20() {
         <NoteBlock title="e.g. — atoms in the 5th energy state">
           <p>Single hydrogen atom in 5th energy state</p>
           <DiagramBox title="One atom, stepwise fall">
+            <LevelDiagramVisual nMax={5} arrows={[{ from: 5, to: 4, column: 0 }, { from: 4, to: 3, column: 0 }, { from: 3, to: 2, column: 0 }, { from: 2, to: 1, column: 0 }]} footer="a single atom cascades step by step: 5→4, 4→3, 3→2, 2→1 — 4 lines" />
             <p>Levels 5→1 with single cascade arrows.</p>
           </DiagramBox>
           <FormulaLine math="\text{Total lines}=4\qquad 5\to4,\ 4\to3,\ 3\to2,\ 2\to1" />
           <p>two hydrogen atom in 5th energy state</p>
           <DiagramBox title="Two atoms">
+            <LevelDiagramVisual nMax={5} arrows={[{ from: 5, to: 4, column: 0 }, { from: 4, to: 3, column: 0 }, { from: 3, to: 2, column: 0 }, { from: 2, to: 1, column: 0 }, { from: 5, to: 3, column: 2, colour: "#67e8f9" }, { from: 3, to: 1, column: 2, colour: "#67e8f9" }]} footer="the second atom takes a different route (5→3, 3→1), adding 2 new lines — total 6" />
             <p>Levels 5→1 with two cascades marked.</p>
           </DiagramBox>
           <FormulaLine math="\text{Total lines}=6\qquad 5\to4,\ 4\to3,\ 3\to2,\ 2\to1,\ 5\to3,\ 3\to1" />
           <p>three hydrogen atom in 5th energy state</p>
           <DiagramBox title="Three atoms">
+            <LevelDiagramVisual nMax={5} arrows={[{ from: 5, to: 4, column: 0 }, { from: 4, to: 3, column: 0 }, { from: 3, to: 2, column: 0 }, { from: 2, to: 1, column: 0 }, { from: 5, to: 3, column: 2, colour: "#67e8f9" }, { from: 3, to: 1, column: 2, colour: "#67e8f9" }, { from: 5, to: 2, column: 4, colour: "#f472b6" }, { from: 2, to: 1, column: 4, colour: "#f472b6" }]} footer="a third route (5→2, 2→1) adds one new line — total 7 distinct lines" />
             <p>Levels 5→1 with three cascades marked.</p>
           </DiagramBox>
           <FormulaLine math="\text{Total lines}=7" />
@@ -36,7 +43,7 @@ export default function Part20() {
       </SourcePage>
 
       <SourcePage page={62}>
-        <NoteBlock title="Printed example — 7 → 1 in multi steps">
+        <NoteBlock title="Example — 7 → 1 in multiple steps">
           <p>
             In a hydrogen spectrum if electron moves from 7 to 1 orbit by transition in multi steps then find out the total
             number of lines in the spectrum.
@@ -44,9 +51,9 @@ export default function Part20() {
           <FormulaLine math="\text{Lyman}=(n_2-1)=7-1=6" />
           <FormulaLine math="\text{Balmer}=(n_2-2)=7-2=5" />
           <FormulaLine math="\text{Paschen}=(n_2-3)=7-3=4" />
-          <FormulaLine math="\text{Bracket}=(n_2-4)=7-4=3" />
+          <FormulaLine math="\text{Brackett}=(n_2-4)=7-4=3" />
           <FormulaLine math="\text{Pfund}=(n_2-5)=7-5=2" />
-          <FormulaLine math="\text{Humphrey}=(n_2-6)=7-6=1" />
+          <FormulaLine math="\text{Humphreys}=(n_2-6)=7-6=1" />
           <FormulaLine math="\text{Total}=21" />
         </NoteBlock>
         <NoteBlock title="Question — He⁺ absorbs x Å and emits 15 wavelengths">
@@ -65,8 +72,8 @@ export default function Part20() {
             <li>Atom is spherical (3D) but the path of e&#8315; is circular (2D)</li>
             <li>It does not explain the different thickness of spectral line.</li>
             <li>
-              It does not explain the splitting of spectral lines in electric field (Stark effect) and magnetic effect
-              (Zeeman&apos;s effect)
+              It does not explain the splitting of spectral lines in an electric field (Stark effect) and a magnetic field
+              (Zeeman effect)
             </li>
           </ol>
         </NoteBlock>
@@ -75,14 +82,14 @@ export default function Part20() {
       <SourcePage page={63}>
         <NoteBlock title="Limitations (continued)">
           <ol className="list-decimal space-y-3 pl-5" start={5}>
-            <li>Heisenberg&apos;s uncertainity principle</li>
+            <li>Heisenberg&apos;s uncertainty principle</li>
             <li>
               de Broglie suggested that e&#8315; like light have dual character (wave and particle), but Bohr treated the
               e&#8315; like particle.
             </li>
           </ol>
         </NoteBlock>
-        <NoteBlock title="Printed problem — quantized Bohr radii">
+        <DerivationPanel title="Quantized Bohr radii">
           <p>
             Show that in the Bohr atom model, the electron&apos;s orbits in a hydrogen-like atom are quantized with the radius{" "}
             <MathText math="r=n^{2}a_0/Z" />, where <MathText math="a_0=4\pi\varepsilon_0\hbar^{2}/me^{2}" /> is the Bohr
@@ -104,11 +111,11 @@ export default function Part20() {
           <FormulaLine math="\frac{Zme^{2}r}{4\pi\varepsilon_0}=n^{2}\hbar^{2}," />
           <p>from which we find</p>
           <FormulaLine math="r=n^{2}\frac{a_0}{Z},\qquad\text{where}\qquad a_0=\frac{4\pi\varepsilon_0\hbar^{2}}{me^{2}}." />
-        </NoteBlock>
+        </DerivationPanel>
       </SourcePage>
 
       <SourcePage page={64}>
-        <NoteBlock title="Printed problem — quantized magnetic dipole moment">
+        <DerivationPanel title="Quantized magnetic dipole moment">
           <p>
             The magnetic dipole moment <MathText math="\vec{\mu}" /> of a current loop is defined by{" "}
             <MathText math="\vec{\mu}=I\vec{S}" />, where I is the current and <MathText math="\vec{S}=S\hat{n}" /> is the area
@@ -128,7 +135,7 @@ export default function Part20() {
             revolution is
           </p>
           <FormulaLine math="T=\frac{2\pi}{\omega}=\frac{2\pi r}{v}." />
-          <p>Hence, the current induced by the revolting electron is</p>
+          <p>Hence, the current induced by the revolving electron is</p>
           <FormulaLine math="I=\frac{e}{T}=\frac{ev}{2\pi r}." />
           <p>
             We know from electromagnetism that current produces a magnetic field and a current loop closing some area creates a
@@ -137,16 +144,16 @@ export default function Part20() {
           </p>
           <FormulaLine math="\vec{\mu}=I\vec{S}=IS\hat{n}," />
           <p>
-            where <MathText math="S=\pi r^{2}" /> is the area closed by the loop (the orbit of the revolting electron),{" "}
+            where <MathText math="S=\pi r^{2}" /> is the area closed by the loop (the orbit of the revolving electron),{" "}
             <MathText math="\hat{n}" /> is the unit vector perpendicular to the plane of the loop and oriented along the
             direction set by the right-hand rule.
           </p>
           <p>Thus</p>
           <FormulaLine math="\vec{\mu}=\frac{ev}{2\pi r}\,\pi r^{2}\hat{n}=\frac{1}{2}evr\hat{n}." />
-        </NoteBlock>
+        </DerivationPanel>
       </SourcePage>
 
-      <AuditComment pages="61-64" unclear={1} note="page 61 has a highlight band with no legible text" />
+      <PracticeQuestion prompt="Why does the Bohr model not give a complete modern account of atoms?" answer="It is limited to one-electron species and cannot account for features such as line splitting, uncertainty and wave behaviour." /><SummaryStrip items={["Four visible Balmer lines arise from 3–6 → 2.", "Maximum line count needs all allowed downward paths.", "Bohr’s model is historically useful but limited."]} /><AuditComment pages="61-64" unclear={1} note="a highlight band has no legible text" />
     </AtomicPartShell>
   );
 }

@@ -3,6 +3,7 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
 import { BlockMath, InlineMath } from "@/components/math/react-katex";
+import { PartNavigator } from "../_components/AtomicLearning";
 
 export type AtomicPartMeta = {
   part: number;
@@ -59,7 +60,7 @@ export const atomicPartMeta: AtomicPartMeta[] = [
   { part: 45, title: "Radial Function Chart, Average Distance and the dz² Designation", pages: "141-144", href: "/learn/atomic-structure/part45" },
   { part: 46, title: "dz² as a Sum of Cloverleaves, and Orbital Shapes with Node Counts", pages: "145-147", href: "/learn/atomic-structure/part46" },
   { part: 47, title: "np Density Pictures, the Five d-Orbitals and Gerade/Ungerade", pages: "148-150", href: "/learn/atomic-structure/part47" },
-  { part: 48, title: "Beginner's Box-7, Unsöld's Theorem and p-Orbital Symmetry", pages: "151-153", href: "/learn/atomic-structure/part48" },
+  { part: 48, title: "Nodes, Orbital Symmetry and Penetration", pages: "151-153", href: "/learn/atomic-structure/part48" },
   { part: 49, title: "3d vs 4d/5d, 4f vs 5f, and Orbital Shape Galleries", pages: "154-156", href: "/learn/atomic-structure/part49" },
   { part: 50, title: "7d Gallery and the 4f, 5f, 6f Orbital Sets", pages: "157-160", href: "/learn/atomic-structure/part50" },
   { part: 51, title: "7f Orbitals and the Nine 5g and 6g Orbitals", pages: "161-163", href: "/learn/atomic-structure/part51" },
@@ -85,48 +86,31 @@ export function AtomicPartShell({
   const nextPart = currentIndex >= 0 ? atomicPartMeta[currentIndex + 1] : undefined;
 
   return (
-    <article className="min-h-screen bg-[#0B1220] px-5 py-10 text-white sm:px-6">
-      <div className="mx-auto max-w-5xl">
+    <article className="min-h-screen bg-[#08111f] px-4 py-8 text-white sm:px-6 sm:py-12">
+      <div className="mx-auto max-w-6xl">
         <Link
           href="/learn/atomic-structure"
-          className="inline-flex rounded-lg border border-cyan-400/25 bg-cyan-400/10 px-3 py-1.5 text-sm font-semibold text-cyan-200 transition hover:bg-cyan-400/15"
+          className="inline-flex rounded-full border border-cyan-300/30 bg-cyan-300/10 px-4 py-2 text-sm font-semibold text-cyan-100 transition hover:bg-cyan-300/20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-300"
         >
           Atomic Structure
         </Link>
-        <header className="mt-6 border-b border-white/[0.08] pb-6">
-          <p className="text-[11px] font-bold uppercase tracking-[0.3em] text-cyan-300/75">
-            Part {String(part).padStart(2, "0")} · Source pages {pages}
-          </p>
-          <h1 className="mt-2 text-3xl font-black tracking-tight sm:text-5xl">{title}</h1>
+        <header className="mt-6 overflow-hidden rounded-3xl border border-cyan-300/15 bg-[radial-gradient(circle_at_top_right,_rgba(34,211,238,.18),_transparent_32%),linear-gradient(135deg,rgba(34,211,238,.12),rgba(2,6,23,.6),rgba(139,92,246,.1))] p-6 shadow-2xl shadow-cyan-950/30 sm:p-9">
+          <p className="text-[11px] font-bold uppercase tracking-[0.3em] text-cyan-200">Atomic Structure · Part {String(part).padStart(2, "0")}</p>
+          <h1 className="mt-3 text-3xl font-black tracking-tight sm:text-5xl">{title}</h1>
+          <div className="mt-6 h-1.5 overflow-hidden rounded-full bg-white/10" aria-label={`Chapter progress: part ${part} of 55`}><div className="h-full rounded-full bg-gradient-to-r from-cyan-300 to-violet-400" style={{ width: `${(part / 55) * 100}%` }} /></div>
+          <p className="mt-2 text-sm text-slate-300">Study sequence {part} of 55 · approximately 8–12 minutes</p>
         </header>
+        <div className="mt-6 hidden rounded-xl border border-white/10 bg-slate-950/55 p-3 lg:block lg:sticky lg:top-3 lg:z-10"><nav aria-label="Part shortcuts" className="flex items-center gap-2 overflow-x-auto"><span className="shrink-0 text-xs font-bold uppercase tracking-wider text-slate-400">Chapter</span>{atomicPartMeta.slice(Math.max(0, currentIndex - 2), currentIndex + 3).map((entry) => <Link key={entry.href} href={entry.href} aria-current={entry.part === part ? "page" : undefined} className={`shrink-0 rounded-lg px-3 py-2 text-xs font-bold transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-cyan-300 ${entry.part === part ? "bg-cyan-300 text-slate-950" : "text-slate-300 hover:bg-white/10"}`}>Part {String(entry.part).padStart(2, "0")}</Link>)}</nav></div>
         <div className="mt-8 space-y-8">{children}</div>
-        <nav aria-label="Atomic Structure part navigation" className="mt-10 flex items-center justify-between gap-4 border-t border-white/[0.08] pt-6">
-          {previousPart ? (
-            <Link
-              href={previousPart.href}
-              className="rounded-lg border border-white/15 px-4 py-2 text-sm font-semibold text-white/80 transition hover:border-cyan-300/50 hover:text-cyan-100"
-            >
-              ← Part {String(previousPart.part).padStart(2, "0")}
-            </Link>
-          ) : <span />}
-          {nextPart ? (
-            <Link
-              href={nextPart.href}
-              className="rounded-lg border border-cyan-400/30 bg-cyan-400/10 px-4 py-2 text-sm font-semibold text-cyan-100 transition hover:bg-cyan-400/20"
-            >
-              Part {String(nextPart.part).padStart(2, "0")} →
-            </Link>
-          ) : <span className="text-sm font-semibold text-cyan-200">Final part</span>}
-        </nav>
+        <PartNavigator previous={previousPart ? { href: previousPart.href, label: `Part ${String(previousPart.part).padStart(2, "0")}` } : undefined} next={nextPart ? { href: nextPart.href, label: `Part ${String(nextPart.part).padStart(2, "0")}` } : undefined} />
       </div>
     </article>
   );
 }
 
-export function SourcePage({ page, children }: { page: number; children: ReactNode }) {
+export function SourcePage({ page: _page, children }: { page: number; children: ReactNode }) {
   return (
-    <section className="space-y-4 border-l border-cyan-400/20 pl-4">
-      <h2 className="text-sm font-black uppercase tracking-[0.24em] text-cyan-300">Source page {page}</h2>
+    <section className="space-y-4 border-l-2 border-cyan-400/30 pl-4 sm:pl-6">
       {children}
     </section>
   );
@@ -134,11 +118,23 @@ export function SourcePage({ page, children }: { page: number; children: ReactNo
 
 export function NoteBlock({ title, children }: { title?: string; children: ReactNode }) {
   return (
-    <div className="rounded-lg border border-white/[0.08] bg-white/[0.035] p-4 sm:p-5">
-      {title ? <h3 className="mb-3 text-lg font-black text-white">{title}</h3> : null}
+    <div className="rounded-2xl border border-white/[0.09] bg-white/[0.045] p-5 shadow-lg shadow-black/10 sm:p-6">
+      {title ? <h2 className="mb-3 text-lg font-black text-white">{title}</h2> : null}
       <div className="space-y-3 text-sm leading-relaxed text-white/78 sm:text-base">{children}</div>
     </div>
   );
+}
+
+export function LearningObjectives({ items }: { items: ReactNode[] }) {
+  return <aside aria-label="Learning objectives" className="rounded-2xl border border-violet-300/20 bg-violet-400/[0.06] p-5"><p className="text-xs font-black uppercase tracking-[0.18em] text-violet-200">In this part</p><ul className="mt-3 grid gap-2 text-sm leading-relaxed text-slate-200 sm:grid-cols-3">{items.map((item, index) => <li key={index} className="border-l-2 border-violet-300/60 pl-3">{item}</li>)}</ul></aside>;
+}
+
+export function ImportantNote({ title, children }: { title: string; children: ReactNode }) {
+  return <aside className="rounded-xl border border-amber-300/20 bg-amber-300/[0.06] p-4" aria-label={title}><h3 className="text-sm font-black text-amber-100">{title}</h3><div className="mt-2 text-sm leading-relaxed text-amber-50/85">{children}</div></aside>;
+}
+
+export function SummaryStrip({ items }: { items: ReactNode[] }) {
+  return <section aria-label="Key takeaways" className="grid gap-px overflow-hidden rounded-2xl border border-cyan-300/20 bg-cyan-300/20 sm:grid-cols-3">{items.map((item, index) => <p key={index} className="bg-[#0b1728] p-4 text-sm font-semibold leading-relaxed text-cyan-50">{item}</p>)}</section>;
 }
 
 export function FormulaLine({ math }: { math: string }) {
@@ -203,7 +199,7 @@ export function DataTable({
 
 export function DiagramBox({ title, children }: { title: string; children: ReactNode }) {
   return (
-    <figure className="rounded-lg border border-cyan-400/20 bg-cyan-400/[0.04] p-4">
+    <figure className="rounded-2xl border border-cyan-400/20 bg-cyan-400/[0.04] p-4">
       <figcaption className="mb-3 text-xs font-black uppercase tracking-[0.2em] text-cyan-200">
         Diagram: {title}
       </figcaption>
@@ -222,8 +218,6 @@ export function AuditComment({
   note?: string;
 }) {
   return (
-    <span className="hidden">
-      {`Source pages: ${pages}\nCoverage status: audited${note ? ` (${note})` : ""}\nUnclear markers: ${unclear}`}
-    </span>
+    <span className="hidden">{`Coverage reviewed${note ? ` (${note})` : ""}; unresolved markers: ${unclear}; reference: ${pages}`}</span>
   );
 }

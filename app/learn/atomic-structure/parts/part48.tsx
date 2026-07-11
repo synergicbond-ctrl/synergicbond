@@ -1,111 +1,70 @@
 "use client";
 
-import { AtomicPartShell, AuditComment, DiagramBox, FormulaLine, MathText, NoteBlock, SourcePage } from "./_shared";
+import { AtomicPartShell, FormulaLine, ImportantNote, LearningObjectives, MathText, NoteBlock, SourcePage, SummaryStrip } from "./_shared";
+import { PenetrationComparisonVisual } from "../_components/AtomicVisuals";
 
 export default function Part48() {
   return (
-    <AtomicPartShell part={48} title="Beginner's Box-7, Unsöld's Theorem and p-Orbital Symmetry" pages="151-153">
+    <AtomicPartShell part={48} title="Nodes, Orbital Symmetry and Penetration" pages="151-153">
+      <LearningObjectives
+        items={[
+          "Read a radial node directly from the zero of a radial expression.",
+          "Explain why the combined p-orbital density has no preferred direction.",
+          "Compare penetration within the n = 3 shell.",
+        ]}
+      />
+
       <SourcePage page={151}>
-        <NoteBlock title="Beginner's Box-7 — Wave mechanical model">
-          <p>
-            <strong>1.</strong> Consider ψ (wave function) of 2s atomic orbital of H-atom is
-          </p>
-          <FormulaLine math="\psi_{2s}=\frac{1}{4\sqrt{2\pi}\,a_0^{3/2}}\left[2-\frac{r}{a_0}\right]e^{-\frac{r}{2a_0}}" />
-          <p>Find distance of radial node from nucleus in terms of a₀.</p>
-          <p>(A) r = a₀ (B) r = 2a₀ ✓ (C) r = a₀ (D) data insufficient</p>
-          <FormulaLine math="2-\frac{r}{a_0}=0\ \Rightarrow\ r=2a_0" />
-          <p>
-            <strong>2.</strong> For an orbital in B⁺⁴ radial function is:
-          </p>
-          <FormulaLine math="R(r)=\frac{1}{9\sqrt{6}}\left(\frac{Z}{a_0}\right)^{3/4}(4-\sigma)\,\sigma\,e^{-\sigma/2}" />
-          <p>where σ = Zr/a₀ and a₀ = 0.529 Å. The radial node of orbital is at distance from nucleus.</p>
-          <p>(A) 0.529 Å (B) 2.12 Å (C) 1.06 Å (D) 0.423 Å ✓</p>
-          <FormulaLine math="\sigma=4:\ \frac{Zr}{a_0}=4\ \Rightarrow\ r=\frac{4\times a_0}{Z}=\frac{4}{5}\times0.529=0.423\ \text{Å}" />
-          <p>
-            <strong>3.</strong> The wave function for an orbital in H-atom is given as
-          </p>
-          <FormulaLine math="\left(\frac{\sqrt{2}}{81\sqrt{\pi}}\right)\left(\frac{1}{a_0}\right)^{3/2}\left(6-\frac{r}{a_0}\right)\left(\frac{r}{a_0}\right)e^{-\frac{r}{3a_0}}\sin\theta\sin\phi" />
-          <p>The orbital is: (A) 2s (B) 3p ✓ (C) 2p (D) 3d</p>
-          <FormulaLine math="r=6a_0\ \text{(one node)}\ \Rightarrow\ 3p" />
-          <p>
-            <strong>4.</strong>{" "}
-            <MathText math="\psi_{1s}=\frac{1}{\sqrt{\pi}\,a_0^{3/2}}e^{-\frac{r}{a_0}}" /> — Find the distance
-            &apos;r&apos; from nucleus at which e&#8315; finding probability is max. [For H-atom, a₀ → 1 Bohr radius]
-          </p>
-          <FormulaLine math="r=a_0=0.529\ \text{Å}" />
-          <p>
-            <strong>Comprehension for Q.5 to Q.7</strong> — According to quantum mechanical model of H-like species, an
-            electron can be represented by a wave function (ψ) which contains all dynamic information about the electron.
-            For an orbital
-          </p>
-          <FormulaLine math="\psi=\left[\frac{\sqrt{2}}{81\sqrt{3\pi}}\right]\left(\frac{1}{a_0}\right)^{3/2}\left(27-18\sigma+2\sigma^{2}\right)e^{-\frac{\sigma}{3}}" />
-          <p>where σ = Zr/a₀, a₀ = 52.9 pm.</p>
-          <FormulaLine math="27-18\sigma+2\sigma^{2}=0\ \Rightarrow\ n=3,\ \text{Radial node}=2,\ \text{orbital}=s\ (l=0)" />
-          <p>
-            <strong>5.</strong> The number of radial and angular nodes possible for the orbital given above are
-            respectively: (A) zero, zero (B) 0, 2 (C) 2, 0 ✓ (D) 2, 1
-          </p>
-          <p>
-            <strong>6.</strong> The orbital could possibly be: (A) 4s (B) 4p (C) 3s ✓ (D) 3p
-          </p>
-          <p>
-            <strong>7.</strong> Which of the following represents the position of one of the radial nodes for Z = 1?
-          </p>
-          <p>
-            (A) r = ½(3+√3)a₀ (B) r = ½(3−√3)a₀ (C) r = 3/2(3−√6)a₀ (D) r = 3/2(3+√3)a₀ ✓
-          </p>
-          <FormulaLine math="\sigma=\frac{9}{2}\pm\frac{3\sqrt{3}}{2}=\frac{3}{2}\left(3\pm\sqrt{3}\right)" />
+        <NoteBlock title="Node detective: a short practice lab">
+          <p>A radial node is a spherical surface at which the radial part of an orbital is zero. Constants and exponential factors do not create a finite radial node, so focus on the polynomial factor.</p>
+          <h3 className="pt-2 font-bold text-white">Checkpoint 1 — hydrogen 2s</h3>
+          <p>For hydrogen, the 2s wave function contains the factor <MathText math="(2-r/a_0)" />. At what radius is its radial node found?</p>
+          <FormulaLine math="2-\frac{r}{a_0}=0\quad\Longrightarrow\quad r=2a_0" />
+          <p>The node lies two Bohr radii from the nucleus. This is consistent with the node-count rule: a 2s orbital has <MathText math="n-l-1=1" /> radial node.</p>
+
+          <h3 className="pt-2 font-bold text-white">Checkpoint 2 — a hydrogen-like ion</h3>
+          <p>Suppose a radial factor is <MathText math="(4-\rho)\rho e^{-\rho/2}" />, where <MathText math="\rho=Zr/a_0" />. The factor <MathText math="\rho" /> represents the origin; the nonzero radial node comes from <MathText math="4-\rho=0" />. For <MathText math="Z=5" />, find its position using <MathText math="a_0=0.529\,\text{Å}" />.</p>
+          <FormulaLine math="\rho=4\quad\Longrightarrow\quad r=\frac{4a_0}{Z}=\frac{4(0.529)}{5}=0.423\,\text{Å}" />
+          <ImportantNote title="A useful distinction"><p>Do not count <MathText math="r=0" /> as a radial node. The origin is a point, whereas a radial node is a finite-radius spherical surface where the radial function changes sign.</p></ImportantNote>
+        </NoteBlock>
+
+        <NoteBlock title="Identify an orbital from its angular and radial clues">
+          <p>Consider a hydrogenic wave function proportional to</p>
+          <FormulaLine math="\left(6-\frac{r}{a_0}\right)\left(\frac{r}{a_0}\right)e^{-r/(3a_0)}\sin\theta\sin\phi" />
+          <p>The angular factor <MathText math="\sin\theta\sin\phi" /> signals a p-type angular shape, so <MathText math="l=1" />. The exponential scale gives <MathText math="n=3" />, and the factor <MathText math="6-r/a_0" /> gives one finite radial node. Together these clues identify a <MathText math="3p" /> orbital.</p>
+          <FormulaLine math="\text{radial nodes}=n-l-1=3-1-1=1" />
         </NoteBlock>
       </SourcePage>
 
       <SourcePage page={152}>
-        <NoteBlock title="Unsöld's Theorem">
-          <p>
-            Unsöld&apos;s theorem states that for the half filled and full filled orbitals corresponding to a particular
-            value of l, the sum of the values <MathText math="[\Theta(\theta)\,\Phi(\phi)]^{2}" /> is a constant i.e.
-            independent of θ and φ. In other words, for the half filled and full filled orbitals, the summation of total
-            angular probability distribution is spherically symmetrical.
-          </p>
-          <p>The mathematical expression of Unsöld&apos;s theorem is —</p>
-          <FormulaLine math="\sum_{m_l=-l}^{+l}\left[\psi_{l,m}(\theta,\phi)\right]^{2}=\frac{2l+1}{4\pi}" />
-          <p>
-            For p¹, p², p⁴, p⁵, d¹, d², d³, d⁴, d⁶, d⁷, d⁸, d⁹ and fⁿ (n ≠ 7, 14), the total e&#8315; distribution is not
-            spherically symmetric.
-          </p>
-        </NoteBlock>
-        <NoteBlock title="Problem — angular wave functions of px, py, pz">
-          <p>The angular wave functions for px, py and pz are given as follows:</p>
-          <FormulaLine math="\psi_{p_z}=\sqrt{\frac{3}{4\pi}}\cos\theta" />
-          <FormulaLine math="\psi_{p_x}=\sqrt{\frac{3}{4\pi}}\sin\theta\cos\phi" />
-          <FormulaLine math="\psi_{p_y}=\sqrt{\frac{3}{4\pi}}\sin\theta\sin\phi" />
-          <p>
-            Show that the summation of electron distribution probability function of three p-orbital is spherical
-            symmetrical.
-          </p>
+        <NoteBlock title="Why a complete p set looks spherical">
+          <p>An individual p orbital points along one axis, but the three-member p set has no net directional preference when all three angular probability contributions are included. This is a special case of Unsöld’s theorem: the sum over every <MathText math="m_l" /> value for a fixed <MathText math="l" /> is independent of direction.</p>
+          <FormulaLine math="\sum_{m_l=-l}^{+l}|Y_l^{m_l}(\theta,\phi)|^2=\frac{2l+1}{4\pi}" />
+          <p>For the real p orbitals, use the normalized angular functions below.</p>
+          <FormulaLine math="p_x=\sqrt{\frac{3}{4\pi}}\sin\theta\cos\phi,\qquad p_y=\sqrt{\frac{3}{4\pi}}\sin\theta\sin\phi,\qquad p_z=\sqrt{\frac{3}{4\pi}}\cos\theta" />
+          <p>Adding their squared amplitudes gives</p>
+          <FormulaLine math="|p_x|^2+|p_y|^2+|p_z|^2=\frac{3}{4\pi}\left[\sin^2\theta(\cos^2\phi+\sin^2\phi)+\cos^2\theta\right]=\frac{3}{4\pi}" />
+          <p>Because the result is a constant, it is the same in every direction: the combined angular probability distribution is spherical.</p>
+          <ImportantNote title="Occupancy matters"><p>For an isolated electron in one p orbital, the density is directional. Spherical symmetry applies to a complete p subshell, or to the mathematical sum over the full p set.</p></ImportantNote>
         </NoteBlock>
       </SourcePage>
 
       <SourcePage page={153}>
-        <NoteBlock title="Solution — p-orbital summation is spherically symmetric">
-          <FormulaLine math="P=\left[\psi_{p_x}\right]^{2}+\left[\psi_{p_y}\right]^{2}+\left[\psi_{p_z}\right]^{2}" />
-          <FormulaLine math="=\frac{3}{4\pi}\sin^{2}\theta\cos^{2}\phi+\frac{3}{4\pi}\sin^{2}\theta\sin^{2}\phi+\frac{3}{4\pi}\cos^{2}\theta" />
-          <FormulaLine math="=\frac{3}{4\pi}\sin^{2}\theta\left(\cos^{2}\phi+\sin^{2}\phi\right)+\frac{3}{4\pi}\cos^{2}\theta" />
-          <FormulaLine math="=\frac{3}{4\pi}\left(\sin^{2}\theta+\cos^{2}\theta\right)=\frac{3}{4\pi}" />
-          <p>Since the summation of electron distribution probability function of three p-orbital is spherically symmetrical.</p>
-        </NoteBlock>
-        <NoteBlock title="Penetration and shielding of 3s, 3p, 3d">
-          <DiagramBox title="P(r) vs r for 3s, 3p, 3d (diagram)">
-            <p>
-              Three radial-distribution curves. 3s has three humps, the innermost sitting closest to the nucleus; 3p has
-              two humps; 3d has a single hump farthest out. The small inner 3s peak penetrates nearest the nucleus.
-            </p>
-          </DiagramBox>
-          <p>As the probability of finding 3s e&#8315; closer to nucleus is very high, its shielding effect is also very high.</p>
-          <FormulaLine math="3s>3p>3d" />
+        <NoteBlock title="Penetration inside the n = 3 shell">
+          <PenetrationComparisonVisual />
+          <p>Penetration describes how much electron density reaches close to the nucleus. Within the same principal shell, an s orbital has the greatest inner density, followed by p and then d.</p>
+          <FormulaLine math="\text{penetration:}\qquad 3s>3p>3d" />
+          <p>A more penetrating electron experiences less shielding from inner electrons and, in multi-electron atoms, a larger effective nuclear attraction. That is why the corresponding energies within a shell are ordered oppositely:</p>
+          <FormulaLine math="\text{energy in multi-electron atoms:}\qquad 3s<3p<3d" />
+          <ImportantNote title="Keep the contexts separate"><p>Hydrogen-like ions have orbital energies determined only by <MathText math="n" />. The 3s–3p–3d energy splitting discussed here occurs in multi-electron atoms.</p></ImportantNote>
         </NoteBlock>
       </SourcePage>
 
-      <AuditComment pages="151-153" unclear={0} />
+      <SummaryStrip items={[
+        "Set the nontrivial radial factor equal to zero to locate a radial node.",
+        "The squared angular functions of px, py and pz add to a direction-independent constant.",
+        "Within n = 3, penetration decreases from s to p to d; in multi-electron atoms, energy rises in that direction.",
+      ]} />
     </AtomicPartShell>
   );
 }

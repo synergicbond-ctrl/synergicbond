@@ -1,10 +1,13 @@
 "use client";
 
 import { AtomicPartShell, AuditComment, DiagramBox, FormulaLine, MathText, NoteBlock, SourcePage } from "./_shared";
+import { LearningObjectives, PracticeQuestion, SummaryStrip } from "../_components/AtomicLearning";
+import { BlackBodyCavityVisual, BlackBodyCurvesVisual, WienGraphVisual } from "../_components/AtomicVisuals";
 
 export default function Part08() {
   return (
     <AtomicPartShell part={8} title="Wave Terms and Black Body Radiation" pages="23-25">
+      <LearningObjectives items={["Relate wavelength, frequency, wavenumber and wave speed.", "Calculate frequency from wavenumber.", "Explain an ideal black body and Kirchhoff’s law.", "Use Wien’s displacement law and interpret spectral curves."]} />
       <SourcePage page={23}>
         <NoteBlock title="Terms related wave">
           <ol className="list-decimal space-y-4 pl-5">
@@ -44,9 +47,10 @@ export default function Part08() {
 
       <SourcePage page={24}>
         <NoteBlock title="Black Body Radiation">
-          <p>Emission radiated by a black body is called Black Body Radiation.</p>
-          <p>Black body is the substance which can absorbs or emits all radiation.</p>
+          <p>Radiation emitted by a black body is called black-body radiation.</p>
+          <p>An ideal black body absorbs all incident radiation; at thermal equilibrium, it is also an ideal emitter.</p>
           <DiagramBox title="Black-body cavity and radiation graph">
+            <BlackBodyCurvesVisual />
             <p>Circular cavity with internal reflections and outgoing radiation.</p>
             <p>Graph labels: T, blackbody radiation, spectral irradiance (kW/m²/nm), wavelength (nm), 3000 K, 4000 K, 5000 K, 6000 K, 7000 K.</p>
             <p>Annotations: decrease in λ with ↑ in temperature; ↑ of intensity with T and ↓ of peak of λ with T.</p>
@@ -56,10 +60,11 @@ export default function Part08() {
 
       <SourcePage page={25}>
         <NoteBlock title="Kirchhoff">
-          <p>Every substance absorb and emit radiation always.</p>
-          <p>A good absorber is always a good emitter.</p>
-          <p>Black Body - It absorbs all radiation.</p>
+          <p>Every substance can absorb and emit radiation.</p>
+          <p>At a given temperature and wavelength, a good absorber is a good emitter.</p>
+          <p>An ideal black body absorbs all incident radiation.</p>
           <DiagramBox title="Absorption and emission by black body">
+            <BlackBodyCavityVisual />
             <p>Two black-body cavity sketches: one absorbing incoming radiation, one emitting arrows outward.</p>
             <p>T = constant</p>
           </DiagramBox>
@@ -74,6 +79,7 @@ export default function Part08() {
           </p>
           <p>T is the temperature in kelvins.</p>
           <DiagramBox title="Wien radiation law graph">
+            <WienGraphVisual />
             <p>
               U<sub>λ</sub> = energy of radiation per unit volume in range of λ to λ + dλ.
             </p>
@@ -82,7 +88,9 @@ export default function Part08() {
           </DiagramBox>
         </NoteBlock>
       </SourcePage>
-      <AuditComment pages="23-25" unclear={0} note="printed law paragraph condensed" />
+      <PracticeQuestion prompt={<>A radiation has <MathText math="\bar\nu=6\times10^5\ \mathrm{cm^{-1}}" />. What frequency follows using c = 3 × 10¹⁰ cm s⁻¹?</>} answer="1.8 × 10¹⁶ Hz." />
+      <SummaryStrip items={["ν = c/λ = cν̄ and c = νλ.", "A good absorber is a good emitter at the same temperature and wavelength.", "Wien’s law: λmaxT = 2.898 × 10⁻³ m K."]} />
+      <AuditComment pages="23-25" unclear={0} note="law paragraph reviewed" />
     </AtomicPartShell>
   );
 }

@@ -1,10 +1,13 @@
 "use client";
 
-import { AtomicPartShell, AuditComment, BulletList, DiagramBox, FormulaLine, MathText, NoteBlock, SourcePage } from "./_shared";
+import { AtomicPartShell, AuditComment, DiagramBox, FormulaLine, MathText, NoteBlock, SourcePage } from "./_shared";
+import { LearningObjectives, ImportantNote, PracticeQuestion, SummaryStrip } from "../_components/AtomicLearning";
+import { GoldFoilVisual, RutherfordAtomVisual, ThomsonModelVisual } from "../_components/AtomicVisuals";
 
 export default function Part04() {
   return (
     <AtomicPartShell part={4} title="Neutron Discovery and Rutherford Scattering" pages="10-12">
+      <LearningObjectives items={["Write the beryllium transmutation reaction used in neutron discovery.", "Contrast Thomson’s historical model with Rutherford’s nuclear model.", "Connect each gold-foil observation to its conclusion.", "Use the angular dependence in Rutherford scattering."]} />
       <SourcePage page={10}>
         <NoteBlock title="Discovery of Neutron">
           <p>
@@ -30,18 +33,7 @@ export default function Part04() {
             charge particles are embedded in them.
           </p>
           <DiagramBox title="Thomson atomic model">
-            <svg viewBox="0 0 260 220" className="mx-auto h-auto max-w-xs">
-              <circle cx="130" cy="110" r="86" fill="#d3366f" stroke="#0f172a" strokeWidth="5" />
-              {[
-                [85, 55], [132, 50], [178, 60], [101, 95], [145, 85], [195, 95], [78, 130], [126, 126], [175, 130],
-                [102, 162], [151, 165], [200, 160],
-              ].map(([x, y], index) => (
-                <g key={index}>
-                  <circle cx={x} cy={y} r="11" fill="#22d3ee" />
-                  <text x={x - 5} y={y + 5} fill="#0f172a" fontSize="20" fontWeight="900">-</text>
-                </g>
-              ))}
-            </svg>
+            <ThomsonModelVisual />
           </DiagramBox>
         </NoteBlock>
       </SourcePage>
@@ -56,6 +48,7 @@ export default function Part04() {
         </NoteBlock>
         <NoteBlock title="Rutherford α-ray scattering Experiment and atomic model">
           <DiagramBox title="Rutherford gold foil experiment">
+            <GoldFoilVisual />
             <div className="grid gap-3 text-sm text-white/75 sm:grid-cols-2">
               <div>
                 <p className="font-bold text-white">Visible labels</p>
@@ -71,7 +64,7 @@ export default function Part04() {
             </div>
           </DiagramBox>
           <DiagramBox title="Rutherford atom sketch">
-            <p>Central red nucleus, blue electrons, incoming paths, one path bends sharply, and several pass through.</p>
+            <RutherfordAtomVisual />
           </DiagramBox>
         </NoteBlock>
       </SourcePage>
@@ -102,6 +95,9 @@ export default function Part04() {
           <p>No. of α-particles scattered by a gold foil by Geiger and Marsden&apos;s experiments :-</p>
         </NoteBlock>
       </SourcePage>
+      <ImportantNote title="Historical framing">The Rutherford scattering relation describes Coulomb scattering by nuclei; the atom’s electronic structure requires later quantum models.</ImportantNote>
+      <PracticeQuestion prompt={<>If the scattering angle increases, what happens to the count predicted by <MathText math="N(\\theta)\\propto1/\\sin^4(\\theta/2)" />?</>} answer="It decreases sharply, because sin(θ/2) increases as θ increases from small angles." />
+      <SummaryStrip items={["Chadwick’s neutron is neutral: mₙ = 1.675 × 10⁻²⁷ kg = 1.00867 u.", "Most α particles pass through foil: the atom is largely empty space; rare backscattering reveals a compact massive nucleus.", "Rutherford scattering count varies as 1/sin⁴(θ/2)."]} />
       <AuditComment pages="10-12" unclear={0} />
     </AtomicPartShell>
   );

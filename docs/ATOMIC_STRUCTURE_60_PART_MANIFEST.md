@@ -1,6 +1,6 @@
 # Atomic Structure 60-Part Source Manifest
 
-Source PDF: `Atomic Structure Kohinoor .pdf`
+Source PDF: `Atomic Structure.pdf`
 
 Verified page count: 192 pages.
 

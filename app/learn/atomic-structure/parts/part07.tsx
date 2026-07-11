@@ -1,10 +1,13 @@
 "use client";
 
-import { AtomicPartShell, AuditComment, BulletList, DiagramBox, FormulaLine, MathText, NoteBlock, SourcePage } from "./_shared";
+import { AtomicPartShell, AuditComment, DiagramBox, FormulaLine, MathText, NoteBlock, SourcePage } from "./_shared";
+import { EMWaveVisual, ElectromagneticSpectrumVisual, VisibleSpectrumStripVisual } from "../_components/AtomicVisuals";
+import { LearningObjectives, ImportantNote, PracticeQuestion, SummaryStrip } from "../_components/AtomicLearning";
 
 export default function Part07() {
   return (
     <AtomicPartShell part={7} title="Rutherford Drawbacks and EM Waves" pages="20-22">
+      <LearningObjectives items={["Apply the inverse-square momentum dependence of closest approach.", "State the classical stability problem in Rutherford’s model.", "Describe electromagnetic-wave field geometry.", "Order electromagnetic radiation by frequency and wavelength."]} />
       <SourcePage page={20}>
         <NoteBlock title="Problem">
           <p>
@@ -49,6 +52,7 @@ export default function Part07() {
             <li>They consist of EF and MF oscillating ⟂ to each other as well as direction of propagation.</li>
           </ol>
           <DiagramBox title="Electromagnetic wave labels">
+            <EMWaveVisual />
             <p>Electric Field, Magnetic Field, Wavelength λ, Electromagnetic Waves, Direction, x, y, z.</p>
           </DiagramBox>
         </NoteBlock>
@@ -59,23 +63,28 @@ export default function Part07() {
           <ol start={2} className="list-decimal space-y-3 pl-5">
             <li>They do not require medium.</li>
             <li>Light is also an example of EMW.</li>
-            <li>All EMW travel with velocity of light.</li>
+            <li>All electromagnetic waves travel at the speed of light in vacuum.</li>
             <li>
               If all EMW are arranged in ↑ or ↓ order of frequency or wavelength, then the arrangement obtained is called
               spectrum.
             </li>
           </ol>
           <DiagramBox title="Electromagnetic spectrum">
+            <ElectromagneticSpectrumVisual />
             <p>Increasing Frequency (ν): γ rays, X rays, UV, IR, Microwave, FM radio waves, AM, Long radio waves.</p>
             <p>Increasing Wavelength (λ): visible spectrum 400-700 nm.</p>
-            <p>Handwritten order: Radio wave, Microwave, Infrared, visible, UV, x-ray, γ.</p>
+            <p>Order from low to high frequency: radio waves, microwaves, infrared, visible light, ultraviolet, X-rays, γ rays.</p>
           </DiagramBox>
-          <p>Roman men invented very unusual x-ray guns.</p>
+          <p>[UNCLEAR] The original note contains an unverified statement about x-ray guns; no scientific inference is made from it.</p>
           <DiagramBox title="Visible Range">
+            <VisibleSpectrumStripVisual />
             <p>Visible Range → V I B G Y O R</p>
           </DiagramBox>
         </NoteBlock>
       </SourcePage>
+      <ImportantNote>Electromagnetic waves do not require a material medium; their vacuum speed is c.</ImportantNote>
+      <PracticeQuestion prompt="If an α particle’s momentum doubles, what happens to its head-on closest-approach distance?" answer="It becomes one quarter of the original distance." />
+      <SummaryStrip items={["Classical radiation predicts an orbiting electron would lose energy and collapse.", "EM electric and magnetic fields are mutually perpendicular and transverse to propagation.", "Frequency increases from radio to γ rays; wavelength changes in the reverse order."]} />
       <AuditComment pages="20-22" unclear={0} />
     </AtomicPartShell>
   );

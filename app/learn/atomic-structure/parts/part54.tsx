@@ -1,10 +1,11 @@
 "use client";
 
-import { AtomicPartShell, AuditComment, FormulaLine, NoteBlock, SourcePage } from "./_shared";
+import { AtomicPartShell, AuditComment, FormulaLine, ImportantNote, LearningObjectives, MathText, NoteBlock, SourcePage, SummaryStrip } from "./_shared";
 
 export default function Part54() {
   return (
     <AtomicPartShell part={54} title="Olympiad Problems — de Broglie Wavelengths (2.1–2.7)" pages="170-172">
+      <LearningObjectives items={[<>Apply <MathText math="\lambda=h/p" /> to particles and photons.</>, <>Choose non-relativistic or relativistic momentum appropriately.</>, <>Follow every unit conversion in a multi-step estimate.</>]} />
       <SourcePage page={170}>
         <NoteBlock title="For Olympiads — Problem 2.1">
           <p>
@@ -71,6 +72,9 @@ export default function Part54() {
           <p>Problem 2.7 — Estimate the energy of electrons needed for electron diffraction of crystals with interatomic spacing ≈ 2 Å.</p>
         </NoteBlock>
       </SourcePage>
+
+      <ImportantNote title="Model choice">The low-energy electron, proton and neutron problems use <MathText math="T=p^2/(2m)" />. Nuclear-length estimates require the relativistic momentum relation used explicitly in Problems 2.3 and 2.5.</ImportantNote>
+      <SummaryStrip items={[<>Same energy: the x-ray wavelength is <MathText math="31.85" /> times the electron’s in Problem 2.1.</>, <>Equal kinetic energy gives <MathText math="\lambda_e/\lambda_p=42.85" />.</>, <>A 2 Å neutron has <MathText math="v=1.978\times10^3\ \mathrm{m\,s^{-1}}" />.</>]} />
 
       <AuditComment pages="170-172" unclear={0} />
     </AtomicPartShell>

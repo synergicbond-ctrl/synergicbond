@@ -9,6 +9,35 @@ export function ScientificVisual({ title, description, children, ...props }: Vis
   </svg>;
 }
 
+export function HighAngularOrbitalVisual({ n, l, family, labels, radialNodes }: { n: number; l: number; family: string; labels: string[]; radialNodes: number }) {
+  const cols = Math.min(labels.length, 4);
+  const width = 168 * cols;
+  const rows = Math.ceil(labels.length / cols);
+  return <ScientificVisual title={`${n}${family} orbital family map`} description={`A labelled family map of ${labels.length} ${n}${family} orbitals. Each tile represents one real angular form rather than an electron path. The central axis marks the angular structure; ${radialNodes} radial node ${radialNodes === 1 ? "shell is" : "shells are"} shown schematically.`} viewBox={`0 0 ${width} ${rows * 135 + 34}`} className="h-auto w-full">
+    <text x="12" y="20" fill="#bae6fd" fontSize="13">l = {l}; number of orbitals = 2l + 1 = {2 * l + 1}; radial nodes = n − l − 1 = {radialNodes}</text>
+    {labels.map((label, index) => {
+      const x = (index % cols) * 168 + 84; const y = Math.floor(index / cols) * 135 + 82;
+      const petals = Math.min(10, 2 + (index % 5) * 2);
+      return <g key={label}>
+        {Array.from({ length: petals }, (_, p) => { const a = (p / petals) * Math.PI * 2; return <ellipse key={p} cx={x + Math.cos(a) * 22} cy={y + Math.sin(a) * 22} rx="18" ry="9" transform={`rotate(${a * 180 / Math.PI} ${x + Math.cos(a) * 22} ${y + Math.sin(a) * 22})`} fill={p % 2 ? "#f8fafc" : "#a78bfa"} fillOpacity=".82" />; })}
+        {Array.from({ length: radialNodes }, (_, r) => <circle key={r} cx={x} cy={y} r={12 + r * 8} fill="none" stroke="#67e8f9" strokeWidth="1" strokeDasharray="3 3" />)}
+        <path d={`M${x - 39} ${y}H${x + 39}M${x} ${y - 39}V${y + 39}`} stroke="#64748b" strokeWidth="1" />
+        <text x={x} y={y + 56} textAnchor="middle" fill="#e2e8f0" fontSize="12">angular form {index + 1}</text>
+      </g>;
+    })}
+  </ScientificVisual>;
+}
+
+export function HybridAngleVisual({ kind, angle, bonds }: { kind: string; angle: string; bonds: number }) {
+  const center = 150; const radius = 92;
+  return <ScientificVisual title={`${kind} hybrid-bond geometry`} description={`${bonds} equivalent ${kind} hybrid directions originating at one atom. Adjacent directions have an angle of ${angle}. This is a directional geometry diagram, not an orbital boundary-surface drawing.`} viewBox="0 0 500 290" className="h-auto w-full">
+    <defs><marker id={`hybrid-${kind}`} markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L7,3z" fill="#67e8f9" /></marker></defs>
+    <circle cx={center} cy={center} r="15" fill="#fbbf24" /><text x={center} y={center + 5} textAnchor="middle" fill="#0f172a" fontSize="12">C</text>
+    {Array.from({ length: bonds }, (_, i) => { const a = -Math.PI / 2 + (i * 2 * Math.PI) / bonds; const x = center + radius * Math.cos(a); const y = center + radius * Math.sin(a); return <g key={i}><path d={`M${center} ${center}L${x} ${y}`} stroke="#67e8f9" strokeWidth="4" markerEnd={`url(#hybrid-${kind})`} /><text x={center + (radius + 30) * Math.cos(a)} y={center + (radius + 30) * Math.sin(a) + 5} textAnchor="middle" fill="#e2e8f0" fontSize="14">bond {i + 1}</text></g>; })}
+    <text x="295" y="112" fill="#fde68a" fontSize="17">adjacent angle = {angle}</text><text x="295" y="143" fill="#94a3b8" fontSize="13">equivalent hybrids are mutually orthogonal</text>
+  </ScientificVisual>;
+}
+
 export function MoseleySeriesVisual() {
   const levels: Array<[number, number]> = [[1, 240], [2, 155], [3, 95], [4, 50]];
   const kSeries: Array<[number, number, number, string]> = [[190, 155, 240, "Kα"], [250, 95, 240, "Kβ"], [310, 50, 240, "Kγ"]];

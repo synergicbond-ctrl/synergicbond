@@ -1,10 +1,11 @@
 "use client";
 
-import { AtomicPartShell, AuditComment, FormulaLine, NoteBlock, SourcePage } from "./_shared";
+import { AtomicPartShell, AuditComment, FormulaLine, ImportantNote, LearningObjectives, MathText, NoteBlock, SourcePage, SummaryStrip } from "./_shared";
 
 export default function Part55() {
   return (
     <AtomicPartShell part={55} title="Olympiad Problems — Uncertainty and Relativistic Wavelength (2.7–2.14)" pages="173-175">
+      <LearningObjectives items={[<>Use uncertainty relations with stated experimental precision.</>, <>Relate a finite lifetime to linewidth.</>, <>Derive the relativistic electron wavelength without skipping algebra.</>]} />
       <SourcePage page={173}>
         <NoteBlock title="Problem 2.7 — electron energy for electron diffraction (spacing 2 Å)">
           <p>de Broglie wavelength of electrons ≈ 2 Å = 2 × 10⁻¹⁰ m.</p>
@@ -70,7 +71,10 @@ export default function Part55() {
         </NoteBlock>
       </SourcePage>
 
-      <AuditComment pages="173-175" unclear={0} note="pages 176-192 intentionally excluded per accepted 55-part scope" />
+      <ImportantNote title="Reading the uncertainty estimates">The symbol <MathText math="\approx" /> marks the order-of-magnitude use of the uncertainty relation. The line-width calculations instead retain <MathText math="\Delta E\,\Delta t\approx\hbar/2" /> through the stated substitutions.</ImportantNote>
+      <SummaryStrip items={[<>Electron diffraction at 2 Å requires <MathText math="37.65\ \mathrm{eV}" />.</>, <>The relativistic result is <MathText math="\lambda=hc/[eV(eV+2m_0c^2)]^{1/2}" />.</>, <>For the bullet, <MathText math="\Delta x=1.76\times10^{-31}\ \mathrm{m}" />.</>]} />
+
+      <AuditComment pages="173-175" unclear={0} />
     </AtomicPartShell>
   );
 }

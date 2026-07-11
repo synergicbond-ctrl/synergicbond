@@ -1,13 +1,14 @@
 "use client";
 
 import { AtomicPartShell, AuditComment, DataTable, DiagramBox, FormulaLine, MathText, NoteBlock, SourcePage } from "./_shared";
+import { HydrogenLevelGapsVisual } from "../_components/AtomicVisuals";
 
 export default function Part16() {
   return (
     <AtomicPartShell part={16} title="Energy of the Electron and Level Differences" pages="49-51">
       <SourcePage page={49}>
         <NoteBlock title="Problem — angular momentum in the 5th orbit">
-          <p>Calculate the angular momentum of e&#8315; the 5th orbit of H-atom.</p>
+          <p>Calculate the angular momentum of e&#8315; in the 5th orbit of H-atom.</p>
           <FormulaLine math="mvr=n\frac{h}{2\pi}=\frac{5h}{2\pi}" />
         </NoteBlock>
         <NoteBlock title="MCQ — angular momentum versus radius">
@@ -30,6 +31,7 @@ export default function Part16() {
           </DiagramBox>
           <p>Total energy = P.E + K.E.</p>
           <FormulaLine math="P.E.=\int F\cdot dr=\int\frac{KZe^{2}}{r^{2}}\,dr=-\frac{KZe^{2}}{r}" />
+          <p>(taking the potential energy to be zero at infinite separation)</p>
           <FormulaLine math="K.E.=\frac{1}{2}mv^{2}" />
           <FormulaLine math="\frac{mv^{2}}{r}=\frac{KZe^{2}}{r^{2}}" />
           <FormulaLine math="K.E.=\frac{1}{2}mv^{2}=\frac{1}{2}\,\frac{KZe^{2}}{r}" />
@@ -42,11 +44,12 @@ export default function Part16() {
           <FormulaLine math="\boxed{T.E.=-\frac{1}{2}\,\frac{KZe^{2}}{r}}" />
           <FormulaLine math="\boxed{TE=-KE=\frac{PE}{2}}" />
           <FormulaLine math="E_n=-\frac{1}{2}KZe^{2}\cdot\frac{4\pi^{2}mKZe^{2}}{n^{2}h^{2}}=\frac{-2\pi^{2}mK^{2}Z^{2}e^{4}}{n^{2}h^{2}}\qquad E\propto\frac{Z^{2}}{n^{2}}" />
-          <FormulaLine math="\boxed{E_n=-13.6\,\frac{Z^{2}}{n^{2}}\ \text{eV/atom}=-2.18\times10^{-18}\times\frac{Z^{2}}{n^{2}}\ \text{J/atom}=-1312\,\frac{Z^{2}}{n^{2}}\ \text{kJ/mol}=-316\,\frac{Z^{2}}{n^{2}}\ \text{kcal/mol}}" />
+          <FormulaLine math="\boxed{E_n=-13.6\,\frac{Z^{2}}{n^{2}}\ \text{eV/atom}=-2.18\times10^{-18}\times\frac{Z^{2}}{n^{2}}\ \text{J/atom}=-1312\,\frac{Z^{2}}{n^{2}}\ \text{kJ/mol}=-313.6\,\frac{Z^{2}}{n^{2}}\ \text{kcal/mol}}" />
         </NoteBlock>
         <NoteBlock title="For hydrogen">
+          <HydrogenLevelGapsVisual />
           <FormulaLine math="E_1=-13.6\ \text{eV}" />
-          <FormulaLine math="E_2=-13.6\times\frac{1}{4}=-3.4" />
+          <FormulaLine math="E_2=-13.6\times\frac{1}{4}=-3.4\ \text{eV}" />
           <FormulaLine math="E_3=-13.6\times\frac{1}{9}=-1.51\ \text{eV}" />
           <FormulaLine math="E_4=-13.6\times\frac{1}{16}=-0.85\ \text{eV}" />
           <FormulaLine math="E_2-E_1=10.2\ \text{eV}\qquad E_4-E_3=0.66\ \text{eV}" />
@@ -74,7 +77,8 @@ export default function Part16() {
         </NoteBlock>
         <NoteBlock title="Problem — absorption in Li²⁺ from n = 1 to n = 3">
           <p>
-            Calculate amount energy absorbed in transition of e&#8315; from n = 1 to n = 3 in <MathText math="Li^{2+}" /> ion
+            Calculate the amount of energy absorbed in transition of e&#8315; from n = 1 to n = 3 in{" "}
+            <MathText math="Li^{2+}" /> ion
           </p>
           <FormulaLine math="\Delta E=13.6\times9\left(\frac{1}{1^{2}}-\frac{1}{3^{2}}\right)=13.6\times9\times\frac{8}{9}=13.6\times8\ \text{eV}" />
         </NoteBlock>

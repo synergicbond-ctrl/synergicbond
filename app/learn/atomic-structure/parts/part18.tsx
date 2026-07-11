@@ -24,6 +24,8 @@ export default function Part18() {
           <FormulaLine math="\bar{\nu}_3=\bar{\nu}_1+\bar{\nu}_2" />
           <FormulaLine math="E_3=E_1+E_2" />
           <FormulaLine math="\lambda_3=\lambda_2+\lambda_1\ \Rightarrow\ \text{wrong}" />
+          <p>The correct wavelength relation follows from adding wave numbers:</p>
+          <FormulaLine math="\frac{1}{\lambda_3}=\frac{1}{\lambda_1}+\frac{1}{\lambda_2}" />
         </NoteBlock>
         <NoteBlock title="Reduced Mass Effect">
           <DiagramBox title="Nucleus and electron about the centre of mass">
@@ -32,7 +34,7 @@ export default function Part18() {
               <MathText math="r_1" /> (nucleus to centre of mass) and <MathText math="r_2" /> (centre of mass to electron).
             </p>
           </DiagramBox>
-          <FormulaLine math="m_n r_1=m_e r_2=m_e(r-r_2)" />
+          <FormulaLine math="m_n r_1=m_e r_2=m_e(r-r_1)" />
           <FormulaLine math="r_1=\frac{m_e}{m_e+m_n}\,r" />
           <FormulaLine math="r_2=\frac{m_n}{m_e+m_n}\,r" />
           <p>modified quantisation of angular momentum,</p>
@@ -49,10 +51,10 @@ export default function Part18() {
           <p>where <MathText math="\mu" /> is reduced mass,</p>
           <FormulaLine math="\boxed{\mu=\frac{m_e m_n}{m_e+m_n}}" />
           <p>when nucleus is stationary</p>
-          <FormulaLine math="(I.W.)_e=\frac{nh}{2\pi}\qquad\cdots(ii)" />
+          <FormulaLine math="(I\omega)_e=\frac{nh}{2\pi}\qquad\cdots(ii)" />
           <p>in all calculation we may replace mass of e&#8315; by reduced mass (<MathText math="\mu" />)</p>
           <FormulaLine math="m_n\gg m_e" />
-          <FormulaLine math="\mu=\frac{m_e m_n}{m_n}=m_e" />
+          <FormulaLine math="\mu\approx\frac{m_e m_n}{m_n}=m_e" />
           <p>
             Reduced mass effect does not influence the calculations significantly but it must be considered in comparison of
             isotope and some hypothetical atoms.
@@ -63,8 +65,8 @@ export default function Part18() {
         </NoteBlock>
         <NoteBlock title="Spectrum">
           <p>
-            The impression produced on a screen when any light fall on screen after passing through a prism or prism like
-            material is called spectrum.
+            The impression produced on a screen when any light falls on the screen after passing through a prism or
+            prism-like material is called a spectrum.
           </p>
         </NoteBlock>
       </SourcePage>
@@ -80,15 +82,16 @@ export default function Part18() {
         </NoteBlock>
         <NoteBlock title="Continuous and Discontinuous spectrum">
           <p>
-            In continuous spectrum all the the spectral lines overlap each other while some gap exist in discontinuous
+            In a continuous spectrum all the spectral lines overlap each other, while some gaps exist in a discontinuous
             spectrum.
           </p>
         </NoteBlock>
         <NoteBlock title="Emission and Absorption spectrum">
           <p>
-            In emission spectrum radiation coming out from some source fall on screen after passing through prism but in
-            absorption spectrum sunlight fall on prism after passing through some sample. As the sample absorbs radiation of
-            some certain wavelength, these radiation appears in solar spectrum. These wavelength are called missing wavelength.
+            In an emission spectrum, radiation coming out from a source falls on the screen after passing through a prism;
+            but in an absorption spectrum, sunlight falls on the prism after passing through a sample. As the sample absorbs
+            radiation of certain wavelengths, these radiations do not appear in the solar spectrum — they show up as dark
+            lines. These wavelengths are called missing wavelengths.
           </p>
           <DiagramBox title="Emission versus absorption apparatus">
             <p>

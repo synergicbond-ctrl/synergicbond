@@ -1,6 +1,7 @@
 "use client";
 
 import { AtomicPartShell, AuditComment, DataTable, DiagramBox, FormulaLine, MathText, NoteBlock, SourcePage } from "./_shared";
+import { EmissionAbsorptionSpectraVisual, HydrogenSeriesVisual } from "../_components/AtomicVisuals";
 
 export default function Part19() {
   return (
@@ -8,6 +9,7 @@ export default function Part19() {
       <SourcePage page={58}>
         <NoteBlock title="Continuous, emission, and absorption spectra">
           <DiagramBox title="Three spectra compared (printed slide)">
+            <EmissionAbsorptionSpectraVisual />
             <p>
               A light bulb through a prism gives the Continuous Spectrum (unbroken band of colours). A hot gas through a prism
               gives the Emission Spectrum (bright lines on dark background). A bulb behind a cold gas gives the Absorption
@@ -27,10 +29,11 @@ export default function Part19() {
             </p>
           </DiagramBox>
           <DiagramBox title="Energy-level diagram of the hydrogen series">
+            <HydrogenSeriesVisual />
             <p>
               Levels n = 1 to 7 and <MathText math="\infty" /> drawn as horizontal lines. Downward arrows group into: Lyman
               Series to n = 1 (U.V); Balmer Series to n = 2 (visible + UV, four lines drawn); Paschen IR to n = 3; Brackett IR
-              to n = 4; Pfund IR to n = 5; Humphey IR to n = 6.
+              to n = 4; Pfund IR to n = 5; Humphreys IR to n = 6.
             </p>
           </DiagramBox>
           <p>
@@ -53,12 +56,12 @@ export default function Part19() {
           <DataTable
             headers={["Series", "Discovered by", "regions", <MathText key="n" math="n_2\to n_1" />, "Number of lines"]}
             rows={[
-              ["lyman", "lyman", "U.V. region", "n₂ = 2,3,4 … / n₁ = 1", "n₂ − 1"],
+              ["Lyman", "Lyman", "U.V. region", "n₂ = 2,3,4 … / n₁ = 1", "n₂ − 1"],
               ["Balmer", "Balmer", "UV + Visible region", "n₂ = 3,4,5 … / n₁ = 2", "n₂ − 2"],
               ["Paschen", "Paschen", "Infra red (I.R.)", "n₂ = 4,5,6 … / n₁ = 3", "n₂ − 3"],
-              ["Bracket", "Bracket", "I.R. region", "n₂ = 5,6,7 … / n₁ = 4", "n₂ − 4"],
+              ["Brackett", "Brackett", "I.R. region", "n₂ = 5,6,7 … / n₁ = 4", "n₂ − 4"],
               ["Pfund", "Pfund", "I.R. region", "n₂ = 6,7,8 … / n₁ = 5", "n₂ − 5"],
-              ["Humphery", "Humphery", "far I.R. region", "n₂ = 7,8,9 … / n₁ = 6", "n₂ − 6"],
+              ["Humphreys", "Humphreys", "far I.R. region", "n₂ = 7,8,9 … / n₁ = 6", "n₂ − 6"],
             ]}
           />
         </NoteBlock>
@@ -85,7 +88,7 @@ export default function Part19() {
             Longest: <MathText math="n_2=3" />, <MathText math="n_1=2" />
           </p>
           <FormulaLine math="\frac{1}{\lambda}=R\left(\frac{1}{2^{2}}-\frac{1}{3^{2}}\right)=\frac{5R}{36}" />
-          <FormulaLine math="\lambda=\frac{36}{5}\times912=656\ \text{nm}" />
+          <FormulaLine math="\lambda=\frac{36}{5}\times912=6566\ \text{\AA}\approx656.6\ \text{nm}" />
         </NoteBlock>
       </SourcePage>
 

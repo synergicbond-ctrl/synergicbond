@@ -81,6 +81,46 @@ export function StoppingPotentialFrequencyGraph() {
   </ScientificVisual>;
 }
 
+export function HydrogenLevelGapsVisual() {
+  const levels = [[1, -13.6, 270], [2, -3.4, 97.5], [3, -1.51, 65.5], [4, -0.85, 54.4]] as const;
+  return <ScientificVisual title="Hydrogen energy levels" description="Horizontal energy levels of hydrogen drawn to scale from minus 13.6 electron volts at n equals one up to zero at infinity. The gap from n equals one to two is 10.2 electron volts, from two to three 1.89 electron volts, and from three to four 0.66 electron volts, showing that successive gaps shrink rapidly." viewBox="0 0 440 300" className="h-auto w-full">
+    {levels.map(([n, E, y]) => <g key={n}><path d={`M90 ${y}H350`} stroke="#67e8f9" strokeWidth="2.4" /><text x="56" y={y + 5} fill="#e2e8f0" fontSize="14">{`n=${n}`}</text><text x="358" y={y + 5} fill="#a5f3fc" fontSize="13">{`${E} eV`}</text></g>)}
+    <path d="M90 40H350" stroke="#94a3b8" strokeWidth="2" strokeDasharray="6 5" /><text x="58" y="45" fill="#e2e8f0" fontSize="14">∞</text><text x="358" y="45" fill="#94a3b8" fontSize="13">0 eV</text>
+    <path d="M220 270V97.5" stroke="#facc15" strokeWidth="2" /><path d="M220 97.5l-5 10h10z" fill="#facc15" /><text x="228" y="190" fill="#fde68a" fontSize="13">10.2 eV</text>
+    <text x="120" y="88" fill="#94a3b8" fontSize="12">2→3: 1.89 eV · 3→4: 0.66 eV</text>
+    <text x="90" y="292" fill="#94a3b8" fontSize="13">level spacing drawn to scale (E ∝ −1/n²)</text>
+  </ScientificVisual>;
+}
+
+export function HydrogenSeriesVisual() {
+  const levels = [[1, 280], [2, 92.5], [3, 57.8], [4, 45.6], [5, 40], [6, 36.9]] as const;
+  const series = [["Lyman (UV)", 1, 110, "#a855f7"], ["Balmer (visible)", 2, 205, "#facc15"], ["Paschen (IR)", 3, 300, "#fb7185"], ["Brackett (IR)", 4, 360, "#f97316"], ["Pfund (IR)", 5, 410, "#ef4444"]] as const;
+  const levelY = (n: number) => levels.find(([m]) => m === n)?.[1] ?? 30;
+  return <ScientificVisual title="Hydrogen spectral series" description="Energy-level diagram of hydrogen with levels n equals one to six drawn to scale. Downward arrows mark the Lyman series ending on n equals one in the ultraviolet, the Balmer series ending on n equals two in the visible, and the Paschen, Brackett and Pfund series ending on n equals three, four and five in the infrared." viewBox="0 0 460 330" className="h-auto w-full">
+    {levels.map(([n, y]) => <g key={n}><path d={`M70 ${y}H440`} stroke="#94a3b8" strokeWidth="1.6" opacity=".8" /><text x="46" y={y + 4} fill="#e2e8f0" fontSize="12">{`n=${n}`}</text></g>)}
+    {series.map(([label, nLow, x, colour]) => <g key={label}><path d={`M${x} 33V${levelY(nLow) - 3}`} stroke={colour} strokeWidth="2.4" /><path d={`M${x} ${levelY(nLow) - 3}l-5 -10h10z`} fill={colour} /></g>)}
+    <text x="82" y="305" fill="#c4b5fd" fontSize="12">Lyman → n=1 (UV)</text><text x="82" y="322" fill="#fde68a" fontSize="12">Balmer → n=2 (visible)</text>
+    <text x="255" y="305" fill="#fda4af" fontSize="12">Paschen → n=3 · Brackett → n=4</text><text x="255" y="322" fill="#fca5a5" fontSize="12">Pfund → n=5 (all IR)</text>
+    <text x="70" y="24" fill="#94a3b8" fontSize="12">levels drawn to scale (E ∝ −1/n²); arrows show emission</text>
+  </ScientificVisual>;
+}
+
+export function EmissionAbsorptionSpectraVisual() {
+  const balmer = [410, 434, 486, 656];
+  const x = (lambda: number) => 130 + (lambda - 400);
+  const stops = [["400", "#7c3aed"], ["440", "#3b82f6"], ["490", "#22d3ee"], ["530", "#22c55e"], ["580", "#facc15"], ["620", "#f97316"], ["700", "#ef4444"]] as const;
+  return <ScientificVisual title="Continuous, emission and absorption spectra" description="Three horizontal spectrum strips. The continuous spectrum is an unbroken band of colour. The hydrogen emission spectrum shows bright lines on a dark background at the Balmer wavelengths 410, 434, 486 and 656 nanometres. The absorption spectrum shows dark lines at the same wavelengths on the continuous band." viewBox="0 0 460 250" className="h-auto w-full">
+    <defs><linearGradient id="vis-band" x1="0" y1="0" x2="1" y2="0">{stops.map(([nm, colour]) => <stop key={nm} offset={`${((Number(nm) - 400) / 300) * 100}%`} stopColor={colour} />)}</linearGradient></defs>
+    <text x="10" y="46" fill="#e2e8f0" fontSize="13">continuous</text><rect x="130" y="30" width="300" height="26" rx="4" fill="url(#vis-band)" />
+    <text x="10" y="116" fill="#e2e8f0" fontSize="13">emission</text><rect x="130" y="100" width="300" height="26" rx="4" fill="#0b1220" stroke="#334155" />
+    {balmer.map((nm) => <rect key={`e${nm}`} x={x(nm) - 1.5} y="100" width="3" height="26" fill={nm > 600 ? "#ef4444" : nm > 470 ? "#22d3ee" : "#818cf8"} />)}
+    <text x="10" y="186" fill="#e2e8f0" fontSize="13">absorption</text><rect x="130" y="170" width="300" height="26" rx="4" fill="url(#vis-band)" />
+    {balmer.map((nm) => <rect key={`a${nm}`} x={x(nm) - 1.5} y="170" width="3" height="26" fill="#08111f" />)}
+    {balmer.map((nm) => <text key={`l${nm}`} x={x(nm) - 14} y="216" fill="#94a3b8" fontSize="11">{nm}</text>)}
+    <text x="130" y="240" fill="#94a3b8" fontSize="12">wavelength / nm → (Balmer lines at their true positions)</text>
+  </ScientificVisual>;
+}
+
 export function BohrOrbitsVisual() {
   const orbits = [[45, "n = 1 (K)"], [78, "n = 2 (L)"], [111, "n = 3 (M)"], [144, "n = 4 (N)"]] as const;
   return <ScientificVisual title="Bohr stationary orbits" description="Concentric circular orbits around a central positive nucleus, numbered n equals one to four outward and lettered K, L, M and N. Electron energy increases with distance from the nucleus while successive energy gaps decrease." viewBox="0 0 440 310" className="h-auto w-full">

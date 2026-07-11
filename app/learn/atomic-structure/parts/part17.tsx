@@ -8,7 +8,7 @@ export default function Part17() {
       <SourcePage page={52}>
         <NoteBlock title="Ionisation energy">
           <p>
-            It is defined as the amount energy required to remove outer shell e&#8315; from an isolated{" "}
+            It is defined as the amount of energy required to remove the outer-shell e&#8315; from an isolated{" "}
             <span className="rounded bg-rose-500/30 px-1 font-semibold">gaseous atom</span>.
           </p>
           <FormulaLine math="H\longrightarrow H^{+}+e^{-}\quad I.E." />
@@ -52,11 +52,11 @@ export default function Part17() {
 
       <SourcePage page={53}>
         <NoteBlock title="Rydberg's Equation">
-          <FormulaLine math="\Delta E=E_1-E_2" />
-          <FormulaLine math="\frac{hc}{\lambda}=\frac{2\pi^{2}mK^{2}Z^{2}e^{4}}{h^{2}}\left(\frac{1}{n_1^{2}}-\frac{1}{n^{2}}\right)" />
-          <FormulaLine math="\frac{1}{\lambda}=\frac{2\pi^{2}mK^{2}Z^{2}e^{4}}{ch^{3}}\left(\frac{1}{n_1^{2}}-\frac{1}{n^{2}}\right)" />
+          <FormulaLine math="\Delta E=E_{n_2}-E_{n_1}" />
+          <FormulaLine math="\frac{hc}{\lambda}=\frac{2\pi^{2}mK^{2}Z^{2}e^{4}}{h^{2}}\left(\frac{1}{n_1^{2}}-\frac{1}{n_2^{2}}\right)" />
+          <FormulaLine math="\frac{1}{\lambda}=\frac{2\pi^{2}mK^{2}Z^{2}e^{4}}{ch^{3}}\left(\frac{1}{n_1^{2}}-\frac{1}{n_2^{2}}\right)" />
           <FormulaLine math="\boxed{\frac{1}{\lambda}=RZ^{2}\left(\frac{1}{n_1^{2}}-\frac{1}{n_2^{2}}\right)}" />
-          <FormulaLine math="R=\text{Rydberg's constant}=\frac{2\pi^{2}mK^{2}e^{4}}{ch^{3}}=109678\ \text{cm}^{-1}=1.09\times10^{7}\ \text{m}^{-1}" />
+          <FormulaLine math="R=\text{Rydberg's constant}=\frac{2\pi^{2}mK^{2}e^{4}}{ch^{3}}=109678\ \text{cm}^{-1}=1.097\times10^{7}\ \text{m}^{-1}" />
           <FormulaLine math="\boxed{\frac{1}{R}=912\ \text{\AA}}" />
           <FormulaLine math="\boxed{\nu=\frac{c}{\lambda}=RcZ^{2}\left(\frac{1}{n_1^{2}}-\frac{1}{n_2^{2}}\right)}" />
         </NoteBlock>

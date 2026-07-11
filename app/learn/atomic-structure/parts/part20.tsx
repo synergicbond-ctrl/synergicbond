@@ -44,9 +44,9 @@ export default function Part20() {
           <FormulaLine math="\text{Lyman}=(n_2-1)=7-1=6" />
           <FormulaLine math="\text{Balmer}=(n_2-2)=7-2=5" />
           <FormulaLine math="\text{Paschen}=(n_2-3)=7-3=4" />
-          <FormulaLine math="\text{Bracket}=(n_2-4)=7-4=3" />
+          <FormulaLine math="\text{Brackett}=(n_2-4)=7-4=3" />
           <FormulaLine math="\text{Pfund}=(n_2-5)=7-5=2" />
-          <FormulaLine math="\text{Humphrey}=(n_2-6)=7-6=1" />
+          <FormulaLine math="\text{Humphreys}=(n_2-6)=7-6=1" />
           <FormulaLine math="\text{Total}=21" />
         </NoteBlock>
         <NoteBlock title="Question — He⁺ absorbs x Å and emits 15 wavelengths">
@@ -65,8 +65,8 @@ export default function Part20() {
             <li>Atom is spherical (3D) but the path of e&#8315; is circular (2D)</li>
             <li>It does not explain the different thickness of spectral line.</li>
             <li>
-              It does not explain the splitting of spectral lines in electric field (Stark effect) and magnetic effect
-              (Zeeman&apos;s effect)
+              It does not explain the splitting of spectral lines in an electric field (Stark effect) and a magnetic field
+              (Zeeman effect)
             </li>
           </ol>
         </NoteBlock>
@@ -75,7 +75,7 @@ export default function Part20() {
       <SourcePage page={63}>
         <NoteBlock title="Limitations (continued)">
           <ol className="list-decimal space-y-3 pl-5" start={5}>
-            <li>Heisenberg&apos;s uncertainity principle</li>
+            <li>Heisenberg&apos;s uncertainty principle</li>
             <li>
               de Broglie suggested that e&#8315; like light have dual character (wave and particle), but Bohr treated the
               e&#8315; like particle.
@@ -128,7 +128,7 @@ export default function Part20() {
             revolution is
           </p>
           <FormulaLine math="T=\frac{2\pi}{\omega}=\frac{2\pi r}{v}." />
-          <p>Hence, the current induced by the revolting electron is</p>
+          <p>Hence, the current induced by the revolving electron is</p>
           <FormulaLine math="I=\frac{e}{T}=\frac{ev}{2\pi r}." />
           <p>
             We know from electromagnetism that current produces a magnetic field and a current loop closing some area creates a
@@ -137,7 +137,7 @@ export default function Part20() {
           </p>
           <FormulaLine math="\vec{\mu}=I\vec{S}=IS\hat{n}," />
           <p>
-            where <MathText math="S=\pi r^{2}" /> is the area closed by the loop (the orbit of the revolting electron),{" "}
+            where <MathText math="S=\pi r^{2}" /> is the area closed by the loop (the orbit of the revolving electron),{" "}
             <MathText math="\hat{n}" /> is the unit vector perpendicular to the plane of the loop and oriented along the
             direction set by the right-hand rule.
           </p>

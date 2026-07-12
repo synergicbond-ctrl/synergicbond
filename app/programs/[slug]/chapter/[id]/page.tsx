@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { notFound, redirect } from "next/navigation";
+import { notFound, permanentRedirect, redirect } from "next/navigation";
 import { isFreeChapter } from "@/lib/freeChapters";
 import { getUserEntitlements } from "@/lib/access/entitlements";
 import { masterSyllabus } from "@/lib/masterSyllabus/all";
@@ -72,6 +72,9 @@ const SECTIONS = [
 
 export default async function ChapterEnginePage({ params }: { params: Promise<{ slug: string; id: string }> }) {
   const { slug, id } = await params;
+  if (slug === "jee-advanced" && id === "thermodynamics") {
+    permanentRedirect("/learn/thermodynamics");
+  }
   if (!isEngineSlug(slug)) notFound();
   const engine = ENGINE_PROGRAMS[slug];
   const program = getProgram(slug);

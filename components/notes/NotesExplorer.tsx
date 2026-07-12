@@ -375,6 +375,28 @@ export default function NotesExplorer() {
 
       <div className="rounded-3xl border border-cyan-400/30 bg-slate-900/90 p-6 shadow-2xl space-y-4">
         <div className="flex items-center justify-between border-b border-slate-800 pb-3">
+          <span className="rounded-full bg-cyan-500/20 px-3 py-1 text-xs font-bold uppercase tracking-widest text-cyan-300">
+            Thermodynamics
+          </span>
+          <span className="text-xs font-bold text-slate-400">Physical Chemistry Core</span>
+        </div>
+        <div className="grid gap-4 sm:grid-cols-2">
+          <Link
+            href="/learn/thermodynamics"
+            className="group flex flex-col justify-between rounded-2xl border border-cyan-400/30 bg-slate-950 p-4 transition hover:border-cyan-400 hover:shadow-lg hover:shadow-cyan-500/10"
+          >
+            <div>
+              <span className="rounded-full bg-cyan-500/20 px-2.5 py-0.5 text-[10px] font-bold text-cyan-300">30 Parts</span>
+              <h3 className="mt-2 text-base font-black text-white transition group-hover:text-cyan-300">Thermodynamics</h3>
+              <p className="mt-1 text-xs text-slate-400">Complete 30-part visual theory, derivations, graphs, tables, worked examples, and solutions.</p>
+            </div>
+            <span className="mt-4 text-xs font-bold text-cyan-400 transition-transform group-hover:translate-x-1">Explore Lessons →</span>
+          </Link>
+        </div>
+      </div>
+
+      <div className="rounded-3xl border border-cyan-400/30 bg-slate-900/90 p-6 shadow-2xl space-y-4">
+        <div className="flex items-center justify-between border-b border-slate-800 pb-3">
           <Link href="/notes/electrochemistry" className="rounded-full bg-cyan-500/20 px-3 py-1 text-xs font-bold uppercase tracking-widest text-cyan-300 hover:bg-cyan-500/30 transition">
             5. Electrochemistry
           </Link>

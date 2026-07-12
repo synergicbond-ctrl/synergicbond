@@ -55,6 +55,9 @@ export default async function ProgramLearnPage({ params }: { params: Promise<{ s
 
   const { name, examTags, accent } = program;
   const chapters = examTags.length > 0 ? examChapters(examTags) : [];
+  const displayedChapters = slug === "jee-advanced"
+    ? chapters.filter((chapter) => chapter.id !== "thermodynamics")
+    : chapters;
 
   return (
     <main className="min-h-screen bg-black text-white">
@@ -91,13 +94,27 @@ export default async function ProgramLearnPage({ params }: { params: Promise<{ s
 
         <section>
           <h2 className="mb-2 text-2xl font-bold">Chapters</h2>
-          {chapters.length > 0 ? (
+          {slug === "jee-advanced" && (
+            <div className="mb-6">
+              <p className="mb-3 text-[11px] font-bold uppercase tracking-wider text-cyan-300">Physical Chemistry</p>
+              <Link
+                href="/programs/jee-advanced/chapter/thermodynamics"
+                className={`group block rounded-xl border bg-white/[0.02] p-4 transition hover:bg-white/[0.04] ${accent.card}`}
+              >
+                <div className="text-[11px] font-bold uppercase tracking-wider text-white/40">⚗️ Physical</div>
+                <div className="mt-1.5 text-sm font-bold text-white">Thermodynamics</div>
+                <div className="mt-1 text-xs text-white/45">Complete 30-part visual theory, derivations, graphs, tables, worked examples, and solutions.</div>
+                <div className={`mt-3 text-sm font-semibold ${accent.text}`}>Explore Lessons <span className="inline-block transition group-hover:translate-x-1">→</span></div>
+              </Link>
+            </div>
+          )}
+          {displayedChapters.length > 0 ? (
             <>
               <p className="mb-6 text-zinc-500">
                 {chapters.length} chapters from the verified {name} syllabus — open any chapter for notes, formulas and PYQs
               </p>
               <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-                {chapters.map((chapter) => (
+                {displayedChapters.map((chapter) => (
                   <Link
                     key={chapter.id}
                     // Engine programs open the full 11-section Chapter Engine;

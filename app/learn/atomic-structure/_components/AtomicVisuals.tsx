@@ -1390,3 +1390,36 @@ export function DotDensityOrbitalVisual({ orbitals }: { orbitals: string[] }) {
     <text x="12" y={H - 2} fill="#94a3b8" fontSize="12">computed from exact hydrogen R(r); bright rings = density maxima, dark gaps = radial nodes (Born: |ψ|²)</text>
   </ScientificVisual>;
 }
+
+export function RadialFunctionGridVisual() {
+  const laguerre = (k: number, a: number, x: number): number => { if (k === 0) return 1; if (k === 1) return 1 + a - x; let p0 = 1, p1 = 1 + a - x; for (let j = 2; j <= k; j++) { const p2 = ((2 * j - 1 + a - x) * p1 - (j - 1 + a) * p0) / j; p0 = p1; p1 = p2; } return p1; };
+  const R = (n: number, l: number, r: number) => Math.pow(r, l) * Math.exp(-r / n) * laguerre(n - l - 1, 2 * l + 1, (2 * r) / n);
+  const orbitals: Array<[number, number, string]> = [[1, 0, "1s"], [2, 0, "2s"], [2, 1, "2p"], [3, 0, "3s"], [3, 1, "3p"], [3, 2, "3d"], [4, 0, "4s"], [4, 1, "4p"], [4, 2, "4d"], [4, 3, "4f"]];
+  const rowH = 62; const colW = 230; const plotW = 190; const top = 26;
+  const H = top + orbitals.length * rowH + 30;
+  return <ScientificVisual title="Radial function and radial probability distribution for 1s through 4f" description="Ten stacked small graphs, one row per orbital from 1s to 4f. The left column plots the radial function R(r) against r in units of the Bohr radius; the right column plots the radial probability distribution 4 pi r squared R squared against r. Each curve is computed from the exact hydrogen radial function and scaled to its own peak height, matching the number of radial nodes expected for that orbital." viewBox={`0 0 500 ${H}`} className="mx-auto h-auto w-full max-w-md">
+    <text x="14" y="16" fill="#a5f3fc" fontSize="12" fontWeight="700">R(r)</text>
+    <text x="270" y="16" fill="#fde68a" fontSize="12" fontWeight="700">4πr²R(r)²</text>
+    {orbitals.map(([n, l, name], i) => {
+      const rMax = 4 * n + 4 * l + 4;
+      const y0 = top + i * rowH; const baseline = y0 + rowH - 16;
+      const steps = 120;
+      const rVals = Array.from({ length: steps + 1 }, (_, g) => (g / steps) * rMax);
+      const Rvals = rVals.map((r) => R(n, l, Math.max(r, 1e-6)));
+      const peakR = Math.max(...Rvals.map(Math.abs), 1e-9);
+      const rdfVals = rVals.map((r, g) => r * r * Rvals[g] * Rvals[g]);
+      const peakRdf = Math.max(...rdfVals, 1e-9);
+      const ptsR = rVals.map((r, g) => `${(14 + (r / rMax) * plotW).toFixed(1)},${(baseline - (Rvals[g] / peakR) * (rowH - 22)).toFixed(1)}`).join(" ");
+      const ptsRdf = rVals.map((r, g) => `${(270 + (r / rMax) * plotW).toFixed(1)},${(baseline - (rdfVals[g] / peakRdf) * (rowH - 22)).toFixed(1)}`).join(" ");
+      return <g key={name}>
+        <path d={`M14 ${baseline}H${14 + plotW}`} stroke="#334155" strokeWidth="1" />
+        <path d={`M270 ${baseline}H${270 + plotW}`} stroke="#334155" strokeWidth="1" />
+        <polyline points={ptsR} fill="none" stroke="#67e8f9" strokeWidth="1.8" />
+        <polyline points={ptsRdf} fill="none" stroke="#facc15" strokeWidth="1.8" />
+        <text x={14 + plotW + 4} y={baseline + 4} fill="#e2e8f0" fontSize="13" fontWeight="700">{name}</text>
+        <text x={270 + plotW + 4} y={baseline + 4} fill="#e2e8f0" fontSize="13" fontWeight="700">{name}</text>
+      </g>;
+    })}
+    <text x="14" y={H - 6} fill="#94a3b8" fontSize="11">r (increasing →, units of a₀/Z); computed from exact R_nl(r) — most probable radius for 1s is a₀/Z</text>
+  </ScientificVisual>;
+}

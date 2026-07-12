@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import ThermodynamicsPart25 from "../../thermodynamics-local-review/_components/ThermodynamicsPart25LocalhostReview";
+import ThermodynamicsPart25 from "../parts/ThermodynamicsPart25";
 
 export const metadata: Metadata = { title: "Thermodynamics Part 25 | Synergic Bond", description: "Thermodynamics Part 25: visual theory, derivations, examples, and solutions." };
 

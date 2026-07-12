@@ -25,7 +25,7 @@ export default function Part23() {
           <FormulaLine math="\text{Momentum }p=0.03\times500=15\ \text{kg m s}^{-1}" />
           <FormulaLine math="\frac{\Delta p}{p}\times100=0.02" />
           <FormulaLine math="\Delta p=\frac{0.02\times15}{100}=3\times10^{-3}\ \text{kg m s}^{-1}" />
-          <FormulaLine math="\Delta x\approx\frac{\hbar}{2\Delta p}=\frac{h}{4\pi\Delta p}=\frac{6.626\times10^{-34}\ \text{J s}}{4\pi\times3\times10^{-3}\ \text{kg m s}^{-1}}=1.76\times10^{-31}\ \text{m}" />
+          <FormulaLine math="\Delta x\approx\frac{\hbar}{2\Delta p}=\frac{h}{4\pi\Delta p}=\frac{6.626\times10^{-34}\ \text{J s}}{4\pi\times3\times10^{-3}\ \text{kg m s}^{-1}}=1.76\times10^{-32}\ \text{m}" />
         </NoteBlock>
         <NoteBlock title="Problem — 5 keV electron located within 2 Å">
           <p>

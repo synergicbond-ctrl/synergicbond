@@ -27,14 +27,14 @@ export default function Part09() {
 
       <SourcePage page={27}>
         <NoteBlock title="Stefan-Boltzmann Law">
-          <FormulaLine math="U=\int_0^\infty u(\nu)\,d\nu=\frac{8\pi^5K^4}{15c^3h^2}=aT^4" />
+          <FormulaLine math="U=\int_0^\infty u(\nu)\,d\nu=\frac{8\pi^{5}k^{4}}{15c^{3}h^{3}}\,T^{4}=aT^{4}" />
           <p>a is universal constant.</p>
           <p>The total energy density is proportional to the fourth power of the absolute temperature.</p>
           <FormulaLine math="M=e\sigma T^4" />
           <p>For a perfectly black body</p>
           <FormulaLine math="M=\sigma T^4" />
           <p>σ = Stefan-Boltzmann constant; M is radiant exitance (power emitted per unit area).</p>
-          <FormulaLine math="\sigma=\frac{ac}{4}=5.670374419\ \mathrm{W/m^2K^4}" />
+          <FormulaLine math="\sigma=\frac{ac}{4}=5.670\times10^{-8}\ \mathrm{W\,m^{-2}\,K^{-4}}" />
           <p>emissivity e-</p>
           <DataTable
             headers={["Emissivity", "Surface"]}
@@ -73,7 +73,7 @@ export default function Part09() {
           <p>Actual average energy per standing wave</p>
           <FormulaLine math="\varepsilon=\frac{h\nu}{e^{h\nu/kT}-1}" />
           <p>Wien Radiation law</p>
-          <FormulaLine math="U_\lambda=a\nu^3e^{-b\nu/T}" />
+          <FormulaLine math="u(\nu)=a\nu^{3}e^{-b\nu/T}" />
           <div className="rounded-lg border border-amber-400/20 bg-amber-400/[0.06] p-3 text-sm text-amber-100">
             <strong>Ultraviolet catastrophe.</strong> Classical Rayleigh-Jeans theory predicts unlimited high-frequency radiation, which is physically impossible and not observed.
           </div>

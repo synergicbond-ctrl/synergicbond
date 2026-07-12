@@ -203,7 +203,7 @@ export function DiagramBox({ title, children }: { title: string; children: React
       <figcaption className="mb-3 text-xs font-black uppercase tracking-[0.2em] text-cyan-200">
         Diagram: {title}
       </figcaption>
-      <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-3 [&>p]:w-full [&>div]:w-full [&>figure]:w-full">{children}</div>
+      <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-3 [&>p]:w-full [&>div]:w-full [&>figure]:w-full [&_svg]:h-auto [&>svg]:w-full [&>svg]:max-w-lg">{children}</div>
     </figure>
   );
 }

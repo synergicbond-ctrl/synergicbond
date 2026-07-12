@@ -137,7 +137,7 @@ function ProcessCard({
 
 function ProcessMapAnimation() {
   return (
-    <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
+    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
       <svg
         viewBox="0 0 1200 720"
         role="img"
@@ -178,16 +178,16 @@ function ProcessMapAnimation() {
         <text x="1115" y="637" fill="#e2e8f0" fontSize="25">V</text>
         <text x="118" y="82" fill="#e2e8f0" fontSize="25">P</text>
 
-        <path id="isobarPath" d="M250 245 H960" fill="none" stroke="#22d3ee" strokeWidth="10" markerEnd="url(#pmCyan)" />
+        <path id="isobarPath" d="M250 245 H960" fill="none" stroke="#22d3ee" strokeWidth="5" markerEnd="url(#pmCyan)" />
         <text x="615" y="220" fill="#a5f3fc" fontSize="21" textAnchor="middle">isobaric: P = constant</text>
 
-        <path id="isochorPath" d="M355 520 V155" fill="none" stroke="#fbbf24" strokeWidth="10" markerEnd="url(#pmAmber)" />
+        <path id="isochorPath" d="M355 520 V155" fill="none" stroke="#fbbf24" strokeWidth="5" markerEnd="url(#pmAmber)" />
         <text x="390" y="360" fill="#fde68a" fontSize="21">isochoric: V = constant</text>
 
-        <path id="isothermPath" d="M235 160 C385 255 655 390 965 520" fill="none" stroke="#f472b6" strokeWidth="10" markerEnd="url(#pmPink)" />
+        <path id="isothermPath" d="M235 160 C385 255 655 390 965 520" fill="none" stroke="#f472b6" strokeWidth="5" markerEnd="url(#pmPink)" />
         <text x="735" y="430" fill="#f9a8d4" fontSize="21">isothermal: PV = constant for ideal gas</text>
 
-        <path id="adiabatPath" d="M235 135 C355 250 535 440 820 555" fill="none" stroke="#34d399" strokeWidth="10" markerEnd="url(#pmGreen)" />
+        <path id="adiabatPath" d="M235 135 C355 250 535 440 820 555" fill="none" stroke="#34d399" strokeWidth="5" markerEnd="url(#pmGreen)" />
         <text x="520" y="510" fill="#a7f3d0" fontSize="21">reversible adiabatic: PVᵞ = constant</text>
 
         <path
@@ -195,7 +195,7 @@ function ProcessMapAnimation() {
           d="M690 190 C850 115 1015 220 965 350 C925 470 710 480 635 365 C580 275 610 225 690 190 Z"
           fill="rgba(167,139,250,0.08)"
           stroke="#a78bfa"
-          strokeWidth="10"
+          strokeWidth="5"
           markerEnd="url(#pmViolet)"
         />
         <text x="845" y="145" fill="#ddd6fe" fontSize="21" textAnchor="middle">cyclic: final state = initial state</text>
@@ -214,7 +214,7 @@ function ProcessMapAnimation() {
           </circle>
         ))}
 
-        <text x="600" y="690" fill="#94a3b8" fontSize="18" textAnchor="middle">
+        <text x="600" y="690" fill="#94a3b8" fontSize="20" textAnchor="middle">
           The same endpoints may be joined by different process constraints and therefore different heat–work histories.
         </text>
       </svg>
@@ -235,14 +235,14 @@ function HeatFlowAnimation() {
               <path d="M0 0 L10 5 L0 10 Z" fill="#fbbf24" />
             </marker>
           </defs>
-          <rect x="120" y="60" width="360" height="230" rx="22" fill="#0f172a" stroke="#22d3ee" strokeWidth="8" />
+          <rect x="120" y="60" width="360" height="230" rx="22" fill="#0f172a" stroke="#22d3ee" strokeWidth="5" />
           <rect x="150" y="140" width="300" height="22" rx="8" fill="#67e8f9">
             <animate attributeName="y" values="180;105;180" dur="4s" repeatCount="indefinite" />
           </rect>
-          <line x1="300" y1="65" x2="300" y2="140" stroke="#67e8f9" strokeWidth="14" strokeLinecap="round">
+          <line x1="300" y1="65" x2="300" y2="140" stroke="#67e8f9" strokeWidth="6" strokeLinecap="round">
             <animate attributeName="y2" values="180;105;180" dur="4s" repeatCount="indefinite" />
           </line>
-          <path d="M30 230 H120" stroke="#fbbf24" strokeWidth="8" markerEnd="url(#heatArrow)">
+          <path d="M30 230 H120" stroke="#fbbf24" strokeWidth="5" markerEnd="url(#heatArrow)">
             <animate attributeName="stroke-dasharray" values="0 100;50 50;100 0" dur="2s" repeatCount="indefinite" />
           </path>
           <text x="60" y="205" fill="#fde68a" fontSize="22">q</text>
@@ -255,15 +255,15 @@ function HeatFlowAnimation() {
         <svg viewBox="0 0 620 360" role="img" aria-label="Adiabatic piston with no heat transfer" className="mt-4 h-auto w-full">
         <title>Thermodynamics Part 04 scientific diagram 3</title>
         <desc>Original responsive scientific visual supporting the thermodynamics lesson.</desc>
-          <rect x="120" y="60" width="360" height="230" rx="22" fill="#0f172a" stroke="#f59e0b" strokeWidth="14" />
+          <rect x="120" y="60" width="360" height="230" rx="22" fill="#0f172a" stroke="#f59e0b" strokeWidth="6" />
           <rect x="150" y="140" width="300" height="22" rx="8" fill="#86efac">
             <animate attributeName="y" values="180;105;180" dur="4s" repeatCount="indefinite" />
           </rect>
-          <line x1="300" y1="65" x2="300" y2="140" stroke="#86efac" strokeWidth="14" strokeLinecap="round">
+          <line x1="300" y1="65" x2="300" y2="140" stroke="#86efac" strokeWidth="6" strokeLinecap="round">
             <animate attributeName="y2" values="180;105;180" dur="4s" repeatCount="indefinite" />
           </line>
-          <path d="M35 225 H110" stroke="#fb7185" strokeWidth="8" />
-          <path d="M82 195 L115 250 M115 195 L82 250" stroke="#fb7185" strokeWidth="8" />
+          <path d="M35 225 H110" stroke="#fb7185" strokeWidth="5" />
+          <path d="M82 195 L115 250 M115 195 L82 250" stroke="#fb7185" strokeWidth="5" />
           <text x="55" y="190" fill="#fda4af" fontSize="22">q = 0</text>
           <text x="300" y="330" fill="#e2e8f0" fontSize="21" textAnchor="middle">temperature may change as work occurs</text>
         </svg>
@@ -274,7 +274,7 @@ function HeatFlowAnimation() {
 
 function ReversibilityAnimation() {
   return (
-    <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
+    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
       <svg
         viewBox="0 0 1200 670"
         role="img"
@@ -297,11 +297,11 @@ function ReversibilityAnimation() {
         </text>
 
         <g>
-          <path d="M110 530 V190 H490 V530" fill="none" stroke="#34d399" strokeWidth="9" />
+          <path d="M110 530 V190 H490 V530" fill="none" stroke="#34d399" strokeWidth="5" />
           <rect x="145" y="325" width="310" height="25" rx="9" fill="#67e8f9">
             <animate attributeName="y" values="350;265;350" dur="8s" repeatCount="indefinite" />
           </rect>
-          <line x1="300" y1="190" x2="300" y2="325" stroke="#67e8f9" strokeWidth="15" strokeLinecap="round">
+          <line x1="300" y1="190" x2="300" y2="325" stroke="#67e8f9" strokeWidth="6" strokeLinecap="round">
             <animate attributeName="y2" values="350;265;350" dur="8s" repeatCount="indefinite" />
           </line>
 
@@ -319,7 +319,7 @@ function ReversibilityAnimation() {
           <text x="300" y="565" fill="#a7f3d0" fontSize="20" textAnchor="middle">
             |P − Pext| → infinitesimal
           </text>
-          <text x="300" y="600" fill="#cbd5e1" fontSize="18" textAnchor="middle">
+          <text x="300" y="600" fill="#cbd5e1" fontSize="20" textAnchor="middle">
             continuous succession of equilibrium states
           </text>
         </g>
@@ -327,7 +327,7 @@ function ReversibilityAnimation() {
         <line x1="600" y1="90" x2="600" y2="620" stroke="#334155" strokeWidth="4" />
 
         <g>
-          <path d="M710 530 V190 H1090 V530" fill="none" stroke="#fb7185" strokeWidth="9" />
+          <path d="M710 530 V190 H1090 V530" fill="none" stroke="#fb7185" strokeWidth="5" />
           <rect x="745" y="325" width="310" height="25" rx="9" fill="#f472b6">
             <animate
               attributeName="y"
@@ -337,7 +337,7 @@ function ReversibilityAnimation() {
               repeatCount="indefinite"
             />
           </rect>
-          <line x1="900" y1="190" x2="900" y2="325" stroke="#f472b6" strokeWidth="15" strokeLinecap="round">
+          <line x1="900" y1="190" x2="900" y2="325" stroke="#f472b6" strokeWidth="6" strokeLinecap="round">
             <animate
               attributeName="y2"
               values="330;220;275;235;260;245;252"
@@ -353,12 +353,12 @@ function ReversibilityAnimation() {
           <text x="900" y="565" fill="#fda4af" fontSize="20" textAnchor="middle">
             finite pressure imbalance
           </text>
-          <text x="900" y="600" fill="#cbd5e1" fontSize="18" textAnchor="middle">
+          <text x="900" y="600" fill="#cbd5e1" fontSize="20" textAnchor="middle">
             rapid motion, overshoot, damping, entropy production
           </text>
         </g>
 
-        <text x="600" y="650" fill="#94a3b8" fontSize="18" textAnchor="middle">
+        <text x="600" y="650" fill="#94a3b8" fontSize="20" textAnchor="middle">
           Quasi-static motion is necessary for reversibility but is not sufficient when friction or finite gradients exist.
         </text>
       </svg>
@@ -418,7 +418,7 @@ function EquilibriumCompass() {
 
 function CycleGraph() {
   return (
-    <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
+    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
       <svg
         viewBox="0 0 1200 650"
         role="img"
@@ -451,10 +451,10 @@ function CycleGraph() {
             d="M165 430 L165 190 L440 190 L440 430 Z"
             fill="rgba(34,211,238,0.12)"
             stroke="#22d3ee"
-            strokeWidth="9"
+            strokeWidth="5"
             markerEnd="url(#cycleCyan)"
           />
-          <path d="M165 430 L165 190 L440 190 L440 430 L165 430" fill="none" stroke="#22d3ee" strokeWidth="9" strokeDasharray="450 600">
+          <path d="M165 430 L165 190 L440 190 L440 430 L165 430" fill="none" stroke="#22d3ee" strokeWidth="5" strokeDasharray="450 600">
             <animate attributeName="stroke-dashoffset" values="0;-1050" dur="4.5s" repeatCount="indefinite" />
           </path>
           <text x="300" y="585" fill="#a5f3fc" fontSize="20" textAnchor="middle">
@@ -474,10 +474,10 @@ function CycleGraph() {
             d="M750 430 L1025 430 L1025 190 L750 190 Z"
             fill="rgba(244,114,182,0.12)"
             stroke="#f472b6"
-            strokeWidth="9"
+            strokeWidth="5"
             markerEnd="url(#cyclePink)"
           />
-          <path d="M750 430 L1025 430 L1025 190 L750 190 L750 430" fill="none" stroke="#f472b6" strokeWidth="9" strokeDasharray="450 600">
+          <path d="M750 430 L1025 430 L1025 190 L750 190 L750 430" fill="none" stroke="#f472b6" strokeWidth="5" strokeDasharray="450 600">
             <animate attributeName="stroke-dashoffset" values="0;-1050" dur="4.5s" repeatCount="indefinite" />
           </path>
           <text x="900" y="585" fill="#f9a8d4" fontSize="20" textAnchor="middle">

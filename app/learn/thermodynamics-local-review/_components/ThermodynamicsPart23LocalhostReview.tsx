@@ -54,7 +54,7 @@ function Lens({ title, children, tone = "cyan" }: { title: string; children: Rea
 
 function EntropyRouteSVG() {
   return (
-    <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
+    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
       <svg viewBox="0 0 1200 760" role="img" aria-labelledby="route-title route-desc" className="h-auto w-full">
         <title id="route-title">Five-step Third-Law entropy route</title>
         <desc id="route-desc">A substance is heated as solid, melted, heated as liquid, vaporised, and heated as gas.</desc>
@@ -68,17 +68,17 @@ function EntropyRouteSVG() {
           ["350 K vapour",960,"#34d399"],
         ].map(([label,x,color],i)=>(
           <g key={String(label)}>
-            <circle cx={Number(x)} cy="340" r="70" fill="#0f172a" stroke={String(color)} strokeWidth="8" />
+            <circle cx={Number(x)} cy="340" r="70" fill="#0f172a" stroke={String(color)} strokeWidth="5" />
             <text x={Number(x)} y="332" fill={String(color)} fontSize="22" fontWeight="900" textAnchor="middle">{String(label).split(" ")[0]}</text>
-            <text x={Number(x)} y="370" fill="#cbd5e1" fontSize="16" textAnchor="middle">{String(label).split(" ").slice(1).join(" ")}</text>
-            {i<4 ? <><line x1={Number(x)+80} y1="340" x2={Number(x)+120} y2="340" stroke="#a78bfa" strokeWidth="8" /><polygon points={`${Number(x)+120},340 ${Number(x)+95},325 ${Number(x)+95},355`} fill="#a78bfa"/></> : null}
+            <text x={Number(x)} y="370" fill="#cbd5e1" fontSize="19" textAnchor="middle">{String(label).split(" ").slice(1).join(" ")}</text>
+            {i<4 ? <><line x1={Number(x)+80} y1="340" x2={Number(x)+120} y2="340" stroke="#a78bfa" strokeWidth="5" /><polygon points={`${Number(x)+120},340 ${Number(x)+95},325 ${Number(x)+95},355`} fill="#a78bfa"/></> : null}
           </g>
         ))}
-        <text x="225" y="265" fill="#a5f3fc" fontSize="18" fontWeight="900" textAnchor="middle">∫Cp,s/T dT</text>
-        <text x="435" y="265" fill="#fde68a" fontSize="18" fontWeight="900" textAnchor="middle">ΔHfus/Tm</text>
-        <text x="645" y="265" fill="#fde68a" fontSize="18" fontWeight="900" textAnchor="middle">∫Cp,l/T dT</text>
-        <text x="855" y="265" fill="#f9a8d4" fontSize="18" fontWeight="900" textAnchor="middle">ΔHvap/Tb</text>
-        <rect x="185" y="530" width="830" height="125" rx="30" fill="#0f172a" stroke="#34d399" strokeWidth="6"/>
+        <text x="225" y="265" fill="#a5f3fc" fontSize="20" fontWeight="900" textAnchor="middle">∫Cp,s/T dT</text>
+        <text x="435" y="265" fill="#fde68a" fontSize="20" fontWeight="900" textAnchor="middle">ΔHfus/Tm</text>
+        <text x="645" y="265" fill="#fde68a" fontSize="20" fontWeight="900" textAnchor="middle">∫Cp,l/T dT</text>
+        <text x="855" y="265" fill="#f9a8d4" fontSize="20" fontWeight="900" textAnchor="middle">ΔHvap/Tb</text>
+        <rect x="185" y="530" width="830" height="125" rx="30" fill="#0f172a" stroke="#34d399" strokeWidth="4"/>
         <text x="600" y="575" fill="#a7f3d0" fontSize="23" fontWeight="900" textAnchor="middle">31.0 + 37.5 + 25.93 + 100 + 7.71</text>
         <text x="600" y="625" fill="#f8fafc" fontSize="29" fontWeight="900" textAnchor="middle">S°m(350 K) = 202.14 J mol⁻¹ K⁻¹</text>
       </svg>
@@ -88,7 +88,7 @@ function EntropyRouteSVG() {
 
 function MicrostateSVG() {
   return (
-    <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
+    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
       <svg viewBox="0 0 1200 820" role="img" aria-labelledby="micro-title micro-desc" className="h-auto w-full">
         <title id="micro-title">Microstate counting for particles in quantised levels</title>
         <desc id="micro-desc">Distinct and indistinguishable particles distributed among equally spaced energy levels.</desc>
@@ -99,7 +99,7 @@ function MicrostateSVG() {
           {[0,1,2,3,4,5].map(i=><line key={i} x1="100" y1={520-i*65} x2="500" y2={520-i*65} stroke="#64748b" strokeWidth="4"/>)}
           {[
             ["A",210,455],["B",300,390],["C",390,325]
-          ].map(([l,x,y])=><g key={String(l)}><circle cx={Number(x)} cy={Number(y)} r="18" fill="#22d3ee"/><text x={Number(x)} y={Number(y)+7} fill="#020617" fontSize="15" fontWeight="900" textAnchor="middle">{l}</text></g>)}
+          ].map(([l,x,y])=><g key={String(l)}><circle cx={Number(x)} cy={Number(y)} r="18" fill="#22d3ee"/><text x={Number(x)} y={Number(y)+7} fill="#020617" fontSize="18" fontWeight="900" textAnchor="middle">{l}</text></g>)}
           <text x="300" y="590" fill="#a5f3fc" fontSize="20" fontWeight="900" textAnchor="middle">Etot = 5ε</text>
           <text x="300" y="630" fill="#f8fafc" fontSize="20" textAnchor="middle">20 possible microstates</text>
         </g>
@@ -146,10 +146,10 @@ function TempPressureGraph() {
 const problems = [
   ["Third-Law sum","Why are transition terms added rather than integrated?","A first-order transition occurs at one equilibrium temperature and contributes the finite jump ΔHtr/Ttr."],
   ["Ion convention","Why may absolute entropies of aqueous ions appear negative?","Single-ion values are relative to S°m(H+,aq)=0; only neutral combinations are directly measurable."],
-  ["Three distinguishable particles","How many microstates have total energy 5ε in non-degenerate levels 0,ε,2ε,...?","Count non-negative ordered triples a+b+c=5: C(7,2)=21. If the stated constraints exclude the all-energy-on-one-particle arrangements by its pictured constraints, it reports 20; the premium note flags this convention dependence."],
+  ["Three distinguishable particles","How many microstates have total energy 5ε in non-degenerate levels 0,ε,2ε,...?","Count non-negative ordered triples a+b+c=5: C(7,2)=21 if each particle's level index can include 0. If the level scheme instead requires every particle to occupy at least the first level (no particle at the zero-energy level), the shifted count gives 20 arrangements — the two totals reflect different level-numbering conventions, not a contradiction."],
   ["Three bosons","How many occupation-number patterns satisfy Σni=3 and Σεini=5ε?","The source reports five allowed patterns for its shown level set."],
   ["Temperature correction","If ΔrCp°<0, what happens to ΔrS° as T rises?","It decreases because the integral of ΔrCp°/T is negative."],
-  ["Pressure correction","For N2O4(g)→2NO2(g), how does pressure affect ΔrS?","Δng=+1, so increasing pressure lowers the reaction entropy by Rln(P2/P1)."],
+  ["Pressure correction","For N2O4(g)→2NO2(g), how does pressure affect ΔrS?","Δng=+1, so increasing pressure lowers the reaction entropy by Rln(P₂/P₁)."],
   ["Heat-engine percentage","For a Carnot engine, η=1−Tc/Th. If Tc=0.9Th, what is η?","η=1−0.9=0.10, or 10%."],
   ["Helmholtz bridge","Which free energy is natural at constant T and V?","Helmholtz energy A=U−TS; spontaneous change at constant T,V has ΔA<0."],
 ];
@@ -168,7 +168,7 @@ function ThermodynamicsPart23() {
       </header>
 
       <div className="mx-auto max-w-7xl space-y-7 px-5 py-10 md:px-8">
-        <Section index="01" title="Retained Third-Law entropy numerical" subtitle="Five additive contributions from 0 K to 350 K">
+        <Section index="01" title="Third-Law entropy numerical" subtitle="Five additive contributions from 0 K to 350 K">
           <EntropyRouteSVG/>
           <Formula label="Solid heating, 0→200 K">ΔS₁=∫[0.035(T/K)+0.0012(T/K)²]dT/T=31.0 J mol⁻¹ K⁻¹</Formula>
           <Formula label="Fusion at 200 K">ΔS₂=7.5×10³/200=37.5 J mol⁻¹ K⁻¹</Formula>
@@ -190,7 +190,7 @@ function ThermodynamicsPart23() {
         </Section>
 
         <Section index="04" title="Carnot percentage checkpoint">
-          <Formula label="Retained relation">η=1−T<sub>c</sub>/T<sub>h</sub></Formula>
+          <Formula label="Key relation">η=1−T<sub>c</sub>/T<sub>h</sub></Formula>
           <Formula label="If Tc=0.9Th">η=1−0.9=0.10=10%</Formula>
           <Lens title="Interpretation" tone="cyan">A sink only ten percent colder than the source permits at most ten percent Carnot efficiency.</Lens>
         </Section>

@@ -74,7 +74,7 @@ function Lens({
 
 function FreeEnergyMapSVG() {
   return (
-    <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
+    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
       <svg viewBox="0 0 1200 780" role="img" aria-labelledby="fe-title fe-desc" className="h-auto w-full">
         <title id="fe-title">Map connecting entropy criteria to Helmholtz and Gibbs free energies</title>
         <desc id="fe-desc">
@@ -86,36 +86,36 @@ function FreeEnergyMapSVG() {
           FREE ENERGY PACKAGES THE UNIVERSE TEST INTO A SYSTEM-ONLY CRITERION
         </text>
 
-        <rect x="70" y="145" width="310" height="220" rx="30" fill="#0f172a" stroke="#a78bfa" strokeWidth="7" />
+        <rect x="70" y="145" width="310" height="220" rx="30" fill="#0f172a" stroke="#a78bfa" strokeWidth="4" />
         <text x="225" y="200" fill="#ddd6fe" fontSize="25" fontWeight="900" textAnchor="middle">ISOLATED UNIVERSE</text>
         <text x="225" y="270" fill="#f8fafc" fontSize="28" fontWeight="900" textAnchor="middle">ΔS<tspan baselineShift="sub">univ</tspan> ≥ 0</text>
-        <text x="225" y="320" fill="#cbd5e1" fontSize="17" textAnchor="middle">universal direction criterion</text>
+        <text x="225" y="320" fill="#cbd5e1" fontSize="19" textAnchor="middle">universal direction criterion</text>
 
-        <rect x="445" y="145" width="310" height="220" rx="30" fill="#0f172a" stroke="#22d3ee" strokeWidth="7" />
+        <rect x="445" y="145" width="310" height="220" rx="30" fill="#0f172a" stroke="#22d3ee" strokeWidth="4" />
         <text x="600" y="200" fill="#a5f3fc" fontSize="25" fontWeight="900" textAnchor="middle">CONSTANT T, V</text>
         <text x="600" y="270" fill="#f8fafc" fontSize="28" fontWeight="900" textAnchor="middle">ΔA ≤ 0</text>
-        <text x="600" y="320" fill="#cbd5e1" fontSize="17" textAnchor="middle">Helmholtz criterion</text>
+        <text x="600" y="320" fill="#cbd5e1" fontSize="19" textAnchor="middle">Helmholtz criterion</text>
 
-        <rect x="820" y="145" width="310" height="220" rx="30" fill="#0f172a" stroke="#34d399" strokeWidth="7" />
+        <rect x="820" y="145" width="310" height="220" rx="30" fill="#0f172a" stroke="#34d399" strokeWidth="4" />
         <text x="975" y="200" fill="#a7f3d0" fontSize="25" fontWeight="900" textAnchor="middle">CONSTANT T, P</text>
         <text x="975" y="270" fill="#f8fafc" fontSize="28" fontWeight="900" textAnchor="middle">ΔG ≤ 0</text>
-        <text x="975" y="320" fill="#cbd5e1" fontSize="17" textAnchor="middle">Gibbs criterion</text>
+        <text x="975" y="320" fill="#cbd5e1" fontSize="19" textAnchor="middle">Gibbs criterion</text>
 
-        <path d="M385 255 H435" stroke="#fbbf24" strokeWidth="9" />
+        <path d="M385 255 H435" stroke="#fbbf24" strokeWidth="5" />
         <polygon points="435,255 408,238 408,272" fill="#fbbf24" />
-        <path d="M765 255 H815" stroke="#fbbf24" strokeWidth="9" />
+        <path d="M765 255 H815" stroke="#fbbf24" strokeWidth="5" />
         <polygon points="815,255 788,238 788,272" fill="#fbbf24" />
 
-        <rect x="145" y="470" width="910" height="190" rx="32" fill="#0f172a" stroke="#f472b6" strokeWidth="6" />
+        <rect x="145" y="470" width="910" height="190" rx="32" fill="#0f172a" stroke="#f472b6" strokeWidth="4" />
         <text x="600" y="515" fill="#f9a8d4" fontSize="23" fontWeight="900" textAnchor="middle">EQUILIBRIUM MINIMA</text>
         <text x="365" y="575" fill="#a5f3fc" fontSize="23" fontWeight="900" textAnchor="middle">T,V fixed: A is minimum</text>
         <text x="835" y="575" fill="#a7f3d0" fontSize="23" fontWeight="900" textAnchor="middle">T,P fixed: G is minimum</text>
-        <text x="600" y="625" fill="#cbd5e1" fontSize="18" textAnchor="middle">
+        <text x="600" y="625" fill="#cbd5e1" fontSize="20" textAnchor="middle">
           Reversible infinitesimal change: dA = 0 or dG = 0
         </text>
 
         <rect x="285" y="700" width="630" height="44" rx="20" fill="#0f172a" stroke="#fbbf24" strokeWidth="4" />
-        <text x="600" y="729" fill="#fde68a" fontSize="19" fontWeight="900" textAnchor="middle">
+        <text x="600" y="729" fill="#fde68a" fontSize="21" fontWeight="900" textAnchor="middle">
           Spontaneous change lowers the appropriate free-energy function.
         </text>
       </svg>
@@ -125,7 +125,7 @@ function FreeEnergyMapSVG() {
 
 function WorkExtractionSVG() {
   return (
-    <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
+    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
       <svg viewBox="0 0 1200 760" role="img" aria-labelledby="work-title work-desc" className="h-auto w-full">
         <title id="work-title">Maximum useful work from Helmholtz and Gibbs energy decreases</title>
         <desc id="work-desc">
@@ -137,21 +137,21 @@ function WorkExtractionSVG() {
           FREE-ENERGY DECREASE MEASURES REVERSIBLY EXTRACTABLE WORK
         </text>
 
-        <rect x="70" y="145" width="470" height="410" rx="34" fill="#0f172a" stroke="#22d3ee" strokeWidth="8" />
+        <rect x="70" y="145" width="470" height="410" rx="34" fill="#0f172a" stroke="#22d3ee" strokeWidth="5" />
         <text x="305" y="205" fill="#a5f3fc" fontSize="26" fontWeight="900" textAnchor="middle">HELMHOLTZ ENERGY</text>
         <text x="305" y="255" fill="#f8fafc" fontSize="27" fontWeight="900" textAnchor="middle">A = U − TS</text>
         <rect x="145" y="320" width="320" height="95" rx="25" fill="#164e63" stroke="#67e8f9" strokeWidth="4" />
-        <text x="305" y="358" fill="#a5f3fc" fontSize="19" fontWeight="900" textAnchor="middle">constant T and V</text>
+        <text x="305" y="358" fill="#a5f3fc" fontSize="21" fontWeight="900" textAnchor="middle">constant T and V</text>
         <text x="305" y="393" fill="#f8fafc" fontSize="21" fontWeight="900" textAnchor="middle">w<tspan baselineShift="sub">max,by</tspan> = −ΔA</text>
-        <text x="305" y="485" fill="#cbd5e1" fontSize="17" textAnchor="middle">no PV boundary displacement</text>
+        <text x="305" y="485" fill="#cbd5e1" fontSize="19" textAnchor="middle">no PV boundary displacement</text>
 
-        <rect x="660" y="145" width="470" height="410" rx="34" fill="#0f172a" stroke="#34d399" strokeWidth="8" />
+        <rect x="660" y="145" width="470" height="410" rx="34" fill="#0f172a" stroke="#34d399" strokeWidth="5" />
         <text x="895" y="205" fill="#a7f3d0" fontSize="26" fontWeight="900" textAnchor="middle">GIBBS ENERGY</text>
         <text x="895" y="255" fill="#f8fafc" fontSize="27" fontWeight="900" textAnchor="middle">G = H − TS</text>
         <rect x="735" y="320" width="320" height="95" rx="25" fill="#052e16" stroke="#34d399" strokeWidth="4" />
-        <text x="895" y="358" fill="#a7f3d0" fontSize="19" fontWeight="900" textAnchor="middle">constant T and P</text>
+        <text x="895" y="358" fill="#a7f3d0" fontSize="21" fontWeight="900" textAnchor="middle">constant T and P</text>
         <text x="895" y="393" fill="#f8fafc" fontSize="21" fontWeight="900" textAnchor="middle">w<tspan baselineShift="sub">non-PV,max,by</tspan> = −ΔG</text>
-        <text x="895" y="485" fill="#cbd5e1" fontSize="17" textAnchor="middle">PV work already absorbed into H</text>
+        <text x="895" y="485" fill="#cbd5e1" fontSize="19" textAnchor="middle">PV work already absorbed into H</text>
 
         <rect x="225" y="625" width="750" height="60" rx="24" fill="#0f172a" stroke="#fbbf24" strokeWidth="5" />
         <text x="600" y="663" fill="#fde68a" fontSize="21" fontWeight="900" textAnchor="middle">
@@ -273,7 +273,7 @@ const problems = [
   ["Extensivity","Are A and G extensive?","Yes, for ordinary homogeneous systems they scale with system size."],
   ["Spontaneity versus rate","Does ΔG<0 imply a fast reaction?","No. It predicts direction, not kinetic speed."],
   ["PV-work caveat","Why does −ΔG represent non-PV work rather than total work at constant pressure?","The PV expansion contribution is already included in enthalpy H=U+PV."],
-  ["Ideal-gas isothermal","For one mole of ideal gas expanding isothermally from P1 to P2, what is ΔG?","ΔG=RTln(P2/P1)."],
+  ["Ideal-gas isothermal","For one mole of ideal gas expanding isothermally from P₁ to P₂, what is ΔG?","ΔG=RTln(P₂/P₁)."],
 ];
 
 export default function ThermodynamicsPart24() {

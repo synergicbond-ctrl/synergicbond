@@ -85,7 +85,7 @@ function Formula({
 
 function WorkTransferAnimation() {
   return (
-    <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
+    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
       <svg
         viewBox="0 0 1200 690"
         role="img"
@@ -116,11 +116,11 @@ function WorkTransferAnimation() {
           WORK IS ORGANISED ENERGY TRANSFER
         </text>
 
-        <path d="M130 520 V150 H690 V520" fill="url(#wtGas)" stroke="#22d3ee" strokeWidth="8" />
+        <path d="M130 520 V150 H690 V520" fill="url(#wtGas)" stroke="#22d3ee" strokeWidth="5" />
         <rect x="170" y="285" width="480" height="28" rx="8" fill="#67e8f9">
           <animate attributeName="y" values="335;235;335" dur="4.5s" repeatCount="indefinite" />
         </rect>
-        <line x1="410" y1="150" x2="410" y2="285" stroke="#67e8f9" strokeWidth="18" strokeLinecap="round">
+        <line x1="410" y1="150" x2="410" y2="285" stroke="#67e8f9" strokeWidth="6" strokeLinecap="round">
           <animate attributeName="y2" values="335;235;335" dur="4.5s" repeatCount="indefinite" />
         </line>
 
@@ -143,7 +143,7 @@ function WorkTransferAnimation() {
           <animate attributeName="y" values="125;45;125" dur="4.5s" repeatCount="indefinite" />
         </text>
 
-        <path d="M720 330 H1030" stroke="#22d3ee" strokeWidth="9" markerEnd="url(#wtArrowCyan)">
+        <path d="M720 330 H1030" stroke="#22d3ee" strokeWidth="5" markerEnd="url(#wtArrowCyan)">
           <animate attributeName="stroke-dasharray" values="0 320;160 160;320 0" dur="2.3s" repeatCount="indefinite" />
         </path>
         <text x="875" y="295" fill="#a5f3fc" fontSize="23" fontWeight="800" textAnchor="middle">
@@ -155,9 +155,9 @@ function WorkTransferAnimation() {
 
         <rect x="770" y="445" width="300" height="95" rx="24" fill="#0f172a" stroke="#a78bfa" strokeWidth="5" />
         <text x="920" y="485" fill="#ddd6fe" fontSize="21" fontWeight="900" textAnchor="middle">AT STATE A OR B</text>
-        <text x="920" y="520" fill="#cbd5e1" fontSize="18" textAnchor="middle">energy exists; “work content” does not</text>
+        <text x="920" y="520" fill="#cbd5e1" fontSize="20" textAnchor="middle">energy exists; “work content” does not</text>
 
-        <text x="600" y="635" fill="#94a3b8" fontSize="18" textAnchor="middle">
+        <text x="600" y="635" fill="#94a3b8" fontSize="20" textAnchor="middle">
           Microscopic signature: work produces coordinated motion; heat produces disordered energy transfer.
         </text>
       </svg>
@@ -253,7 +253,7 @@ function GeneralisedWorkGrid() {
 
 function SignConventionAnimation() {
   return (
-    <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
+    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
       <svg
         viewBox="0 0 1200 720"
         role="img"
@@ -281,33 +281,33 @@ function SignConventionAnimation() {
         <text x="900" y="58" fill="#fda4af" fontSize="30" fontWeight="900" textAnchor="middle">COMPRESSION</text>
 
         <g>
-          <path d="M105 495 V150 H495 V495" fill="none" stroke="#34d399" strokeWidth="8" />
+          <path d="M105 495 V150 H495 V495" fill="none" stroke="#34d399" strokeWidth="5" />
           <rect x="140" y="330" width="320" height="25" rx="8" fill="#86efac">
             <animate attributeName="y" values="365;230;365" dur="4.5s" repeatCount="indefinite" />
           </rect>
-          <line x1="300" y1="150" x2="300" y2="330" stroke="#86efac" strokeWidth="16" strokeLinecap="round">
+          <line x1="300" y1="150" x2="300" y2="330" stroke="#86efac" strokeWidth="6" strokeLinecap="round">
             <animate attributeName="y2" values="365;230;365" dur="4.5s" repeatCount="indefinite" />
           </line>
-          <path d="M300 205 V110" stroke="#34d399" strokeWidth="8" markerEnd="url(#signGreen)" />
+          <path d="M300 205 V110" stroke="#34d399" strokeWidth="5" markerEnd="url(#signGreen)" />
           <text x="300" y="535" fill="#a7f3d0" fontSize="23" fontWeight="900" textAnchor="middle">ΔV &gt; 0</text>
           <text x="300" y="575" fill="#a7f3d0" fontSize="23" fontWeight="900" textAnchor="middle">w = −PextΔV &lt; 0</text>
-          <text x="300" y="615" fill="#cbd5e1" fontSize="18" textAnchor="middle">system does work on surroundings</text>
+          <text x="300" y="615" fill="#cbd5e1" fontSize="20" textAnchor="middle">system does work on surroundings</text>
         </g>
 
         <line x1="600" y1="95" x2="600" y2="635" stroke="#334155" strokeWidth="4" />
 
         <g>
-          <path d="M705 495 V150 H1095 V495" fill="none" stroke="#fb7185" strokeWidth="8" />
+          <path d="M705 495 V150 H1095 V495" fill="none" stroke="#fb7185" strokeWidth="5" />
           <rect x="740" y="230" width="320" height="25" rx="8" fill="#fda4af">
             <animate attributeName="y" values="230;365;230" dur="4.5s" repeatCount="indefinite" />
           </rect>
-          <line x1="900" y1="150" x2="900" y2="230" stroke="#fda4af" strokeWidth="16" strokeLinecap="round">
+          <line x1="900" y1="150" x2="900" y2="230" stroke="#fda4af" strokeWidth="6" strokeLinecap="round">
             <animate attributeName="y2" values="230;365;230" dur="4.5s" repeatCount="indefinite" />
           </line>
-          <path d="M900 105 V205" stroke="#fb7185" strokeWidth="8" markerEnd="url(#signRose)" />
+          <path d="M900 105 V205" stroke="#fb7185" strokeWidth="5" markerEnd="url(#signRose)" />
           <text x="900" y="535" fill="#fda4af" fontSize="23" fontWeight="900" textAnchor="middle">ΔV &lt; 0</text>
           <text x="900" y="575" fill="#fda4af" fontSize="23" fontWeight="900" textAnchor="middle">w = −PextΔV &gt; 0</text>
-          <text x="900" y="615" fill="#cbd5e1" fontSize="18" textAnchor="middle">surroundings do work on system</text>
+          <text x="900" y="615" fill="#cbd5e1" fontSize="20" textAnchor="middle">surroundings do work on system</text>
         </g>
 
         <rect x="235" y="655" width="730" height="45" rx="20" fill="#0f172a" stroke="#a78bfa" strokeWidth="4" />
@@ -321,7 +321,7 @@ function SignConventionAnimation() {
 
 function PVDerivationVisual() {
   return (
-    <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
+    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
       <svg
         viewBox="0 0 1200 730"
         role="img"
@@ -346,21 +346,21 @@ function PVDerivationVisual() {
           FROM FORCE × DISTANCE TO −Pext dV
         </text>
 
-        <path d="M80 520 V145 H540 V520" fill="none" stroke="#22d3ee" strokeWidth="8" />
+        <path d="M80 520 V145 H540 V520" fill="none" stroke="#22d3ee" strokeWidth="5" />
         <rect x="115" y="300" width="390" height="28" rx="8" fill="#67e8f9">
           <animate attributeName="y" values="355;245;355" dur="4.5s" repeatCount="indefinite" />
         </rect>
-        <line x1="310" y1="145" x2="310" y2="300" stroke="#67e8f9" strokeWidth="18" strokeLinecap="round">
+        <line x1="310" y1="145" x2="310" y2="300" stroke="#67e8f9" strokeWidth="6" strokeLinecap="round">
           <animate attributeName="y2" values="355;245;355" dur="4.5s" repeatCount="indefinite" />
         </line>
 
-        <path d="M310 95 V220" stroke="#fbbf24" strokeWidth="9" markerEnd="url(#pvdArrow)" />
+        <path d="M310 95 V220" stroke="#fbbf24" strokeWidth="5" markerEnd="url(#pvdArrow)" />
         <text x="355" y="125" fill="#fde68a" fontSize="22">Fext = Pext A</text>
 
-        <path d="M555 355 H655" stroke="#a78bfa" strokeWidth="7" strokeDasharray="14 10" />
+        <path d="M555 355 H655" stroke="#a78bfa" strokeWidth="4" strokeDasharray="14 10" />
         <text x="605" y="335" fill="#ddd6fe" fontSize="20" textAnchor="middle">dx</text>
 
-        <rect x="680" y="120" width="440" height="440" rx="30" fill="#0f172a" stroke="#a78bfa" strokeWidth="6" />
+        <rect x="680" y="120" width="440" height="440" rx="30" fill="#0f172a" stroke="#a78bfa" strokeWidth="4" />
 
         <text x="900" y="175" fill="#a5f3fc" fontSize="23" fontWeight="900" textAnchor="middle">1. Pressure creates force</text>
         <text x="900" y="215" fill="#f8fafc" fontSize="24" fontFamily="monospace" textAnchor="middle">Fext = Pext A</text>
@@ -377,7 +377,7 @@ function PVDerivationVisual() {
         <text x="600" y="650" fill="#cbd5e1" fontSize="20" textAnchor="middle">
           External pressure—not the gas pressure—is the mechanical resistance that determines actual boundary work.
         </text>
-        <text x="600" y="690" fill="#94a3b8" fontSize="18" textAnchor="middle">
+        <text x="600" y="690" fill="#94a3b8" fontSize="20" textAnchor="middle">
           Only in the reversible limit may Pext be replaced by the system pressure at each stage.
         </text>
       </svg>
@@ -387,7 +387,7 @@ function PVDerivationVisual() {
 
 function WorkGraphVisual() {
   return (
-    <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
+    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
       <svg
         viewBox="0 0 1200 690"
         role="img"
@@ -417,7 +417,7 @@ function WorkGraphVisual() {
         <line x1="80" y1="545" x2="535" y2="545" stroke="#e2e8f0" strokeWidth="5" />
         <line x1="80" y1="545" x2="80" y2="100" stroke="#e2e8f0" strokeWidth="5" />
         <rect x="160" y="245" width="300" height="300" fill="url(#wgHatchCyan)" />
-        <line x1="160" y1="245" x2="460" y2="245" stroke="#22d3ee" strokeWidth="10" />
+        <line x1="160" y1="245" x2="460" y2="245" stroke="#22d3ee" strokeWidth="6" />
         <line x1="160" y1="545" x2="160" y2="555" stroke="#e2e8f0" strokeWidth="4" />
         <line x1="460" y1="545" x2="460" y2="555" stroke="#e2e8f0" strokeWidth="4" />
         <text x="160" y="580" fill="#cbd5e1" fontSize="20" textAnchor="middle">Vi</text>
@@ -442,7 +442,7 @@ function WorkGraphVisual() {
           d="M745 165 C835 220 940 320 1045 430"
           fill="none"
           stroke="#f472b6"
-          strokeWidth="10"
+          strokeWidth="5"
         />
         <circle cx="745" cy="165" r="12" fill="#34d399" />
         <circle cx="1045" cy="430" r="12" fill="#a78bfa" />
@@ -450,7 +450,7 @@ function WorkGraphVisual() {
           |w| = area under Pext(V)
         </text>
 
-        <text x="600" y="670" fill="#94a3b8" fontSize="18" textAnchor="middle">
+        <text x="600" y="670" fill="#94a3b8" fontSize="20" textAnchor="middle">
           Chemistry sign: expansion work is the negative of the shaded geometric area.
         </text>
       </svg>
@@ -558,9 +558,9 @@ const problems = [
   {
     title: "Concept Application 5 — linear external-pressure path",
     question:
-      "During expansion from V1 to V2, external pressure decreases linearly from P1 to P2. Obtain w.",
+      "During expansion from V₁ to V₂, external pressure decreases linearly from P₁ to P₂. Obtain w.",
     solution:
-      "The area under a linear Pext–V path is average pressure times volume change. Thus w = −[(P1 + P2)/2](V2 − V1).",
+      "The area under a linear Pext–V path is average pressure times volume change. Thus w = −[(P₁ + P₂)/2](V₂ − V₁).",
   },
   {
     title: "Concept Application 6 — piston and lifted mass",

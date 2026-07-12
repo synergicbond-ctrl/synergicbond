@@ -85,7 +85,7 @@ function Formula({
 
 function ClausiusInequalityAnimation() {
   return (
-    <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
+    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
       <svg
         viewBox="0 0 1200 760"
         role="img"
@@ -113,16 +113,16 @@ function ClausiusInequalityAnimation() {
           CLAUSIUS INEQUALITY: REVERSIBILITY SETS THE EQUALITY LIMIT
         </text>
 
-        <circle cx="145" cy="350" r="64" fill="#0f172a" stroke="#22d3ee" strokeWidth="7" />
+        <circle cx="145" cy="350" r="64" fill="#0f172a" stroke="#22d3ee" strokeWidth="4" />
         <text x="145" y="342" fill="#a5f3fc" fontSize="23" fontWeight="900" textAnchor="middle">STATE 1</text>
-        <text x="145" y="378" fill="#cbd5e1" fontSize="16" textAnchor="middle">equilibrium</text>
+        <text x="145" y="378" fill="#cbd5e1" fontSize="19" textAnchor="middle">equilibrium</text>
 
-        <circle cx="1055" cy="350" r="64" fill="#0f172a" stroke="#34d399" strokeWidth="7" />
+        <circle cx="1055" cy="350" r="64" fill="#0f172a" stroke="#34d399" strokeWidth="4" />
         <text x="1055" y="342" fill="#a7f3d0" fontSize="23" fontWeight="900" textAnchor="middle">STATE 2</text>
-        <text x="1055" y="378" fill="#cbd5e1" fontSize="16" textAnchor="middle">equilibrium</text>
+        <text x="1055" y="378" fill="#cbd5e1" fontSize="19" textAnchor="middle">equilibrium</text>
 
-        <path id="ciRevPath" d="M215 300 C430 120 760 120 985 300" fill="none" stroke="#34d399" strokeWidth="10" markerEnd="url(#ciGreen)" />
-        <path id="ciIrrPath" d="M215 400 C430 585 760 585 985 400" fill="none" stroke="#fb7185" strokeWidth="10" markerEnd="url(#ciRose)" />
+        <path id="ciRevPath" d="M215 300 C430 120 760 120 985 300" fill="none" stroke="#34d399" strokeWidth="5" markerEnd="url(#ciGreen)" />
+        <path id="ciIrrPath" d="M215 400 C430 585 760 585 985 400" fill="none" stroke="#fb7185" strokeWidth="5" markerEnd="url(#ciRose)" />
 
         <circle r="13" fill="#86efac">
           <animateMotion dur="4.6s" repeatCount="indefinite">
@@ -146,7 +146,7 @@ function ClausiusInequalityAnimation() {
         <text x="600" y="273" fill="#a7f3d0" fontSize="20" fontWeight="900" textAnchor="middle">
           dS = δqrev / T
         </text>
-        <text x="600" y="311" fill="#cbd5e1" fontSize="18" textAnchor="middle">
+        <text x="600" y="311" fill="#cbd5e1" fontSize="20" textAnchor="middle">
           equality for an internally reversible infinitesimal step
         </text>
 
@@ -154,7 +154,7 @@ function ClausiusInequalityAnimation() {
         <text x="600" y="433" fill="#fda4af" fontSize="20" fontWeight="900" textAnchor="middle">
           dS &gt; δqirr / Tb
         </text>
-        <text x="600" y="471" fill="#cbd5e1" fontSize="18" textAnchor="middle">
+        <text x="600" y="471" fill="#cbd5e1" fontSize="20" textAnchor="middle">
           strict inequality when entropy is generated
         </text>
 
@@ -169,7 +169,7 @@ function ClausiusInequalityAnimation() {
 
 function EntropyLedgerAnimation() {
   return (
-    <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
+    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
       <svg
         viewBox="0 0 1200 760"
         role="img"
@@ -196,16 +196,16 @@ function EntropyLedgerAnimation() {
           ENTROPY ACCOUNTING: TRANSFER + GENERATION
         </text>
 
-        <rect x="355" y="155" width="490" height="350" rx="42" fill="#0f172a" stroke="#a78bfa" strokeWidth="9" />
+        <rect x="355" y="155" width="490" height="350" rx="42" fill="#0f172a" stroke="#a78bfa" strokeWidth="5" />
         <text x="600" y="215" fill="#ddd6fe" fontSize="30" fontWeight="900" textAnchor="middle">SYSTEM</text>
 
-        <path d="M175 330 H340" stroke="#22d3ee" strokeWidth="12" markerEnd="url(#elCyan)">
+        <path d="M175 330 H340" stroke="#22d3ee" strokeWidth="5" markerEnd="url(#elCyan)">
           <animate attributeName="stroke-dasharray" values="0 180;90 90;180 0" dur="2s" repeatCount="indefinite" />
         </path>
         <text x="255" y="300" fill="#a5f3fc" fontSize="23" fontWeight="900" textAnchor="middle">
           δQ/Tb
         </text>
-        <text x="255" y="365" fill="#cbd5e1" fontSize="17" textAnchor="middle">
+        <text x="255" y="365" fill="#cbd5e1" fontSize="19" textAnchor="middle">
           entropy transfer
         </text>
 
@@ -225,11 +225,11 @@ function EntropyLedgerAnimation() {
         <text x="600" y="300" fill="#fde68a" fontSize="23" fontWeight="900" textAnchor="middle">
           dSgen ≥ 0
         </text>
-        <text x="600" y="455" fill="#cbd5e1" fontSize="18" textAnchor="middle">
+        <text x="600" y="455" fill="#cbd5e1" fontSize="20" textAnchor="middle">
           friction • finite gradients • mixing • free expansion
         </text>
 
-        <path d="M860 330 H1025" stroke="#fbbf24" strokeWidth="12" markerEnd="url(#elAmber)">
+        <path d="M860 330 H1025" stroke="#fbbf24" strokeWidth="5" markerEnd="url(#elAmber)">
           <animate attributeName="stroke-dasharray" values="180 0;90 90;0 180" dur="2s" repeatCount="indefinite" />
         </path>
         <text x="945" y="300" fill="#fde68a" fontSize="23" fontWeight="900" textAnchor="middle">
@@ -240,7 +240,7 @@ function EntropyLedgerAnimation() {
         <text x="600" y="620" fill="#a7f3d0" fontSize="23" fontWeight="900" textAnchor="middle">
           ΔSuniverse = ΔSsystem + ΔSsurroundings = Sgen,total ≥ 0
         </text>
-        <text x="600" y="658" fill="#cbd5e1" fontSize="17" textAnchor="middle">
+        <text x="600" y="658" fill="#cbd5e1" fontSize="19" textAnchor="middle">
           Internal entropy generation cannot be negative, but a system’s entropy may decrease by exporting more entropy than it generates.
         </text>
       </svg>
@@ -250,7 +250,7 @@ function EntropyLedgerAnimation() {
 
 function ExpansionCompressionAnimation() {
   return (
-    <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
+    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
       <svg
         viewBox="0 0 1200 850"
         role="img"
@@ -278,11 +278,11 @@ function ExpansionCompressionAnimation() {
             <text x={item.x + 250} y={item.y + 35} fill={item.stroke} fontSize="22" fontWeight="900" textAnchor="middle">
               {item.title}
             </text>
-            <path d={`M${item.x+70} ${item.y+250} V${item.y+75} H${item.x+430} V${item.y+250}`} fill="none" stroke={item.stroke} strokeWidth="8" />
+            <path d={`M${item.x+70} ${item.y+250} V${item.y+75} H${item.x+430} V${item.y+250}`} fill="none" stroke={item.stroke} strokeWidth="5" />
             <rect x={item.x + 100} y={item.y + 180} width="300" height="24" rx="8" fill={item.stroke}>
               <animate attributeName="y" values={item.piston} dur={`${4.6 + index*0.35}s`} repeatCount="indefinite" />
             </rect>
-            <line x1={item.x + 250} y1={item.y + 75} x2={item.x + 250} y2={item.y + 180} stroke={item.stroke} strokeWidth="14" strokeLinecap="round">
+            <line x1={item.x + 250} y1={item.y + 75} x2={item.x + 250} y2={item.y + 180} stroke={item.stroke} strokeWidth="6" strokeLinecap="round">
               <animate attributeName="y2" values={item.piston} dur={`${4.6 + index*0.35}s`} repeatCount="indefinite" />
             </line>
 
@@ -314,7 +314,7 @@ function ExpansionCompressionAnimation() {
           </g>
         ))}
 
-        <text x="600" y="825" fill="#94a3b8" fontSize="18" textAnchor="middle">
+        <text x="600" y="825" fill="#94a3b8" fontSize="20" textAnchor="middle">
           System entropy is fixed by endpoints; irreversibility changes the surroundings balance and creates positive total entropy.
         </text>
       </svg>
@@ -324,7 +324,7 @@ function ExpansionCompressionAnimation() {
 
 function MaximumEntropyAnimation() {
   return (
-    <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
+    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
       <svg
         viewBox="0 0 1200 740"
         role="img"
@@ -353,7 +353,7 @@ function MaximumEntropyAnimation() {
         <text x="1115" y="632" fill="#e2e8f0" fontSize="24">extent coordinate ξ</text>
         <text x="95" y="90" fill="#e2e8f0" fontSize="24">S</text>
 
-        <path id="maxSPath" d="M180 555 C340 455 500 175 690 145 C845 120 970 300 1040 500" fill="none" stroke="#34d399" strokeWidth="11" markerEnd="url(#msGreen)" />
+        <path id="maxSPath" d="M180 555 C340 455 500 175 690 145 C845 120 970 300 1040 500" fill="none" stroke="#34d399" strokeWidth="5" markerEnd="url(#msGreen)" />
 
         <circle r="14" fill="#fde047">
           <animateMotion dur="5.5s" repeatCount="indefinite">
@@ -700,7 +700,7 @@ const problems = [
     question:
       "An ideal gas freely expands in an insulated container. Determine ΔSsurr and the sign of ΔSsys.",
     solution:
-      "ΔSsurr = 0 because no heat crosses the outer boundary. ΔSsys = nR ln(V2/V1) > 0, so all of the increase is entropy generation.",
+      "ΔSsurr = 0 because no heat crosses the outer boundary. ΔSsys = nR ln(V₂/V₁) > 0, so all of the increase is entropy generation.",
   },
   {
     title: "Concept Application 4 — reversible adiabat",
@@ -747,16 +747,16 @@ const problems = [
   {
     title: "Concept Application 10 — one-step expansion inequality",
     question:
-      "For an isothermal ideal-gas expansion ending at P2 = Pext, show ΔSuniv > 0.",
+      "For an isothermal ideal-gas expansion ending at P₂ = Pext, show ΔSuniv > 0.",
     solution:
-      "Let x = V2/V1 > 1. Then ΔSuniv/Rn = ln x − (1−1/x). Since ln x > 1−1/x for x > 1, the total is positive.",
+      "Let x = V₂/V₁ > 1. Then ΔSuniv/Rn = ln x − (1−1/x). Since ln x > 1−1/x for x > 1, the total is positive.",
   },
   {
     title: "Concept Application 11 — one-step compression inequality",
     question:
-      "For sudden isothermal compression from V1 to V2 against Pext = P2, prove positive entropy generation.",
+      "For sudden isothermal compression from V₁ to V₂ against Pext = P₂, prove positive entropy generation.",
     solution:
-      "Let x = V1/V2 > 1. Then ΔSuniv/Rn = x−1−ln x > 0 for x > 1.",
+      "Let x = V₁/V₂ > 1. Then ΔSuniv/Rn = x−1−ln x > 0 for x > 1.",
   },
   {
     title: "Concept Application 12 — surroundings correction",
@@ -1000,7 +1000,7 @@ export default function ThermodynamicsPart17() {
         <Section
           index="02"
           title="Chapter pressure–volume derivation"
-          subtitle="Retained in sequence and made explicit for expansion and compression."
+          subtitle="Presented in sequence and made explicit for expansion and compression."
         >
           <ClausiusDerivation />
 
@@ -1049,7 +1049,7 @@ export default function ThermodynamicsPart17() {
           </div>
         </Section>
 
-        <Section index="05" title="Retained scientific statements—scientific audit">
+        <Section index="05" title="Key scientific statements—critical review">
           <SurroundingsCorrection />
         </Section>
 

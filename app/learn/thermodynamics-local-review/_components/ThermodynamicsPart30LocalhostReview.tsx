@@ -45,7 +45,7 @@ function Lens({ title, children, tone = "cyan" }: { title: string; children: Rea
 // SVG 1: ln K vs 1/T (van't Hoff plot)
 function VantHoffPlotSVG() {
   return (
-    <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
+    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
       <svg viewBox="0 0 1200 600" role="img" aria-labelledby="p30-vh-title p30-vh-desc" className="h-auto w-full">
         <title id="p30-vh-title">van&apos;t Hoff plot: ln K versus 1/T</title>
         <desc id="p30-vh-desc">
@@ -66,37 +66,37 @@ function VantHoffPlotSVG() {
 
         <line x1="130" y1="480" x2="1080" y2="480" stroke="#e2e8f0" strokeWidth="4" markerEnd="url(#p30axArrow)" />
         <line x1="130" y1="480" x2="130" y2="80" stroke="#e2e8f0" strokeWidth="4" markerEnd="url(#p30axArrow)" />
-        <text x="1095" y="494" fill="#e2e8f0" fontSize="18">1/T →</text>
-        <text x="70" y="68" fill="#e2e8f0" fontSize="18">ln K</text>
+        <text x="1095" y="494" fill="#e2e8f0" fontSize="20">1/T →</text>
+        <text x="70" y="68" fill="#e2e8f0" fontSize="20">ln K</text>
 
         {/* Zero line */}
         <line x1="130" y1="280" x2="1080" y2="280" stroke="#475569" strokeWidth="2" strokeDasharray="14 10" />
-        <text x="1090" y="285" fill="#475569" fontSize="14">ln K = 0 (K=1)</text>
+        <text x="1090" y="285" fill="#475569" fontSize="18">ln K = 0 (K=1)</text>
 
         {/* Exothermic: positive slope (K decreases as T increases → ln K vs 1/T has positive slope = −ΔH/R > 0 when ΔH < 0) */}
-        <path d="M200 430 L960 130" fill="none" stroke="#22d3ee" strokeWidth="9" />
-        <text x="400" y="380" fill="#a5f3fc" fontSize="16" fontWeight="900">exothermic: ΔrH° &lt; 0</text>
-        <text x="400" y="402" fill="#a5f3fc" fontSize="13">slope = −ΔrH°/R &gt; 0</text>
-        <text x="400" y="422" fill="#a5f3fc" fontSize="13">K decreases as T rises</text>
+        <path d="M200 430 L960 130" fill="none" stroke="#22d3ee" strokeWidth="5" />
+        <text x="400" y="380" fill="#a5f3fc" fontSize="19" fontWeight="900">exothermic: ΔrH° &lt; 0</text>
+        <text x="400" y="402" fill="#a5f3fc" fontSize="17">slope = −ΔrH°/R &gt; 0</text>
+        <text x="400" y="422" fill="#a5f3fc" fontSize="17">K decreases as T rises</text>
 
         {/* Endothermic: negative slope */}
-        <path d="M200 130 L960 430" fill="none" stroke="#fb7185" strokeWidth="9" />
-        <text x="600" y="185" fill="#fda4af" fontSize="16" fontWeight="900">endothermic: ΔrH° &gt; 0</text>
-        <text x="600" y="207" fill="#fda4af" fontSize="13">slope = −ΔrH°/R &lt; 0</text>
-        <text x="600" y="227" fill="#fda4af" fontSize="13">K increases as T rises</text>
+        <path d="M200 130 L960 430" fill="none" stroke="#fb7185" strokeWidth="5" />
+        <text x="600" y="185" fill="#fda4af" fontSize="19" fontWeight="900">endothermic: ΔrH° &gt; 0</text>
+        <text x="600" y="207" fill="#fda4af" fontSize="17">slope = −ΔrH°/R &lt; 0</text>
+        <text x="600" y="227" fill="#fda4af" fontSize="17">K increases as T rises</text>
 
         {/* Slope annotation */}
         <line x1="200" y1="430" x2="400" y2="430" stroke="#fbbf24" strokeWidth="3" strokeDasharray="10 6" />
         <line x1="400" y1="430" x2="400" y2="230" stroke="#fbbf24" strokeWidth="3" strokeDasharray="10 6" />
-        <text x="510" y="445" fill="#fde68a" fontSize="14">Δ(1/T)</text>
-        <text x="405" y="340" fill="#fde68a" fontSize="14">Δ(ln K)</text>
-        <text x="500" y="300" fill="#fde68a" fontSize="15" fontWeight="900">slope = −ΔrH°/R</text>
+        <text x="510" y="445" fill="#fde68a" fontSize="18">Δ(1/T)</text>
+        <text x="405" y="340" fill="#fde68a" fontSize="18">Δ(ln K)</text>
+        <text x="500" y="300" fill="#fde68a" fontSize="18" fontWeight="900">slope = −ΔrH°/R</text>
 
         <rect x="180" y="520" width="840" height="60" rx="14" fill="#0f172a" />
-        <text x="600" y="544" fill="#cbd5e1" fontSize="14" textAnchor="middle">
+        <text x="600" y="544" fill="#cbd5e1" fontSize="18" textAnchor="middle">
           Integrated form: ln(K₂/K₁) = −(ΔrH°/R)(1/T₂ − 1/T₁)
         </text>
-        <text x="600" y="566" fill="#94a3b8" fontSize="13" textAnchor="middle">
+        <text x="600" y="566" fill="#94a3b8" fontSize="17" textAnchor="middle">
           Valid when ΔrH° is approximately constant over [T₁, T₂]
         </text>
       </svg>
@@ -107,7 +107,7 @@ function VantHoffPlotSVG() {
 // SVG 2: Clapeyron phase diagram P-T with coexistence curves
 function ClapeyronSVG() {
   return (
-    <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
+    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
       <svg viewBox="0 0 1200 640" role="img" aria-labelledby="p30-clap-title p30-clap-desc" className="h-auto w-full">
         <title id="p30-clap-title">Pressure–temperature phase diagram with coexistence curves and Clapeyron slopes</title>
         <desc id="p30-clap-desc">
@@ -128,35 +128,35 @@ function ClapeyronSVG() {
 
         <line x1="100" y1="540" x2="1100" y2="540" stroke="#e2e8f0" strokeWidth="4" markerEnd="url(#p30cAxArrow)" />
         <line x1="100" y1="540" x2="100" y2="80" stroke="#e2e8f0" strokeWidth="4" markerEnd="url(#p30cAxArrow)" />
-        <text x="1115" y="554" fill="#e2e8f0" fontSize="18">T →</text>
-        <text x="65" y="68" fill="#e2e8f0" fontSize="18">P ↑</text>
+        <text x="1115" y="554" fill="#e2e8f0" fontSize="20">T →</text>
+        <text x="65" y="68" fill="#e2e8f0" fontSize="20">P ↑</text>
 
         {/* Liquid-vapour (Clausius-Clapeyron): exponential rise to critical point */}
         <path d="M350 520 C400 490 450 440 520 390 C600 330 680 270 750 220 C800 185 840 165 870 155"
-          fill="none" stroke="#fb7185" strokeWidth="9" />
+          fill="none" stroke="#fb7185" strokeWidth="5" />
         {/* Critical point */}
         <circle cx="870" cy="155" r="14" fill="#fbbf24" />
-        <text x="880" y="143" fill="#fde68a" fontSize="14" fontWeight="900">critical point</text>
+        <text x="880" y="143" fill="#fde68a" fontSize="18" fontWeight="900">critical point</text>
 
         {/* Solid-liquid (Clapeyron): steep, slightly positive for most substances */}
-        <path d="M350 520 L320 115" fill="none" stroke="#22d3ee" strokeWidth="9" />
-        <text x="160" y="250" fill="#a5f3fc" fontSize="14" fontWeight="900">solid–liquid</text>
-        <text x="160" y="270" fill="#a5f3fc" fontSize="12">steep: ΔV_fus small</text>
-        <text x="160" y="290" fill="#a5f3fc" fontSize="12">positive slope typical</text>
+        <path d="M350 520 L320 115" fill="none" stroke="#22d3ee" strokeWidth="5" />
+        <text x="160" y="250" fill="#a5f3fc" fontSize="18" fontWeight="900">solid–liquid</text>
+        <text x="160" y="270" fill="#a5f3fc" fontSize="17">steep: ΔV_fus small</text>
+        <text x="160" y="290" fill="#a5f3fc" fontSize="17">positive slope typical</text>
 
         {/* Water anomaly dashed line */}
-        <path d="M350 520 L370 115" fill="none" stroke="#60a5fa" strokeWidth="6" strokeDasharray="16 10" />
-        <text x="375" y="108" fill="#93c5fd" fontSize="13" fontWeight="900">water: negative slope</text>
+        <path d="M350 520 L370 115" fill="none" stroke="#60a5fa" strokeWidth="4" strokeDasharray="16 10" />
+        <text x="375" y="108" fill="#93c5fd" fontSize="17" fontWeight="900">water: negative slope</text>
 
         {/* Solid-vapour */}
         <path d="M150 540 C200 510 260 480 310 460 C330 453 345 530 350 520"
-          fill="none" stroke="#a78bfa" strokeWidth="9" />
-        <text x="180" y="500" fill="#c4b5fd" fontSize="14" fontWeight="900">solid–vapour</text>
+          fill="none" stroke="#a78bfa" strokeWidth="5" />
+        <text x="180" y="500" fill="#c4b5fd" fontSize="18" fontWeight="900">solid–vapour</text>
 
         {/* Triple point */}
         <circle cx="350" cy="520" r="14" fill="#34d399" />
-        <text x="355" y="508" fill="#a7f3d0" fontSize="14" fontWeight="900">triple point</text>
-        <text x="355" y="524" fill="#a7f3d0" fontSize="12">T_tp, P_tp</text>
+        <text x="355" y="508" fill="#a7f3d0" fontSize="18" fontWeight="900">triple point</text>
+        <text x="355" y="524" fill="#a7f3d0" fontSize="17">T_tp, P_tp</text>
 
         {/* Phase region labels */}
         <text x="180" y="360" fill="#f8fafc" fontSize="22" fontWeight="900">SOLID</text>
@@ -165,10 +165,10 @@ function ClapeyronSVG() {
 
         {/* Clapeyron annotations */}
         <rect x="130" y="570" width="940" height="50" rx="16" fill="#0f172a" />
-        <text x="600" y="594" fill="#cbd5e1" fontSize="14" textAnchor="middle">
+        <text x="600" y="594" fill="#cbd5e1" fontSize="18" textAnchor="middle">
           Clapeyron: dP/dT = ΔH_tr/(T ΔV_tr). Clausius–Clapeyron (l–v): d ln P/dT = ΔH_vap/(RT²).
         </text>
-        <text x="600" y="612" fill="#94a3b8" fontSize="13" textAnchor="middle">
+        <text x="600" y="612" fill="#94a3b8" fontSize="17" textAnchor="middle">
           Water anomaly: ΔV_fus &lt; 0 (ice less dense than liquid) → negative S–L slope.
         </text>
       </svg>

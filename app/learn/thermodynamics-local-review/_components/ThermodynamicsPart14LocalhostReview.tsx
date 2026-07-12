@@ -85,7 +85,7 @@ function Formula({
 
 function HeatEngineAnimation() {
   return (
-    <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
+    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
       <svg
         viewBox="0 0 1200 760"
         role="img"
@@ -119,35 +119,35 @@ function HeatEngineAnimation() {
           HEAT ENGINE: CYCLIC CONVERSION OF PART OF HEAT INTO WORK
         </text>
 
-        <rect x="360" y="105" width="480" height="110" rx="28" fill="#7c2d12" stroke="#f97316" strokeWidth="8" />
+        <rect x="360" y="105" width="480" height="110" rx="28" fill="#7c2d12" stroke="#f97316" strokeWidth="5" />
         <text x="600" y="155" fill="#fed7aa" fontSize="28" fontWeight="900" textAnchor="middle">HOT RESERVOIR / SOURCE</text>
         <text x="600" y="190" fill="#f8fafc" fontSize="22" fontWeight="900" textAnchor="middle">T<tspan baselineShift="sub">H</tspan></text>
 
-        <circle cx="600" cy="390" r="125" fill="url(#engineCore)" stroke="#a78bfa" strokeWidth="9" />
+        <circle cx="600" cy="390" r="125" fill="url(#engineCore)" stroke="#a78bfa" strokeWidth="5" />
         <text x="600" y="377" fill="#f8fafc" fontSize="31" fontWeight="900" textAnchor="middle">ENGINE</text>
         <text x="600" y="420" fill="#ddd6fe" fontSize="20" fontWeight="900" textAnchor="middle">returns to initial state each cycle</text>
 
         <g transform="translate(600 390)">
           <animateTransform attributeName="transform" type="rotate" from="0 600 390" to="360 600 390" dur="5s" repeatCount="indefinite" />
-          <line x1="-75" y1="0" x2="75" y2="0" stroke="#fde047" strokeWidth="12" />
-          <line x1="0" y1="-75" x2="0" y2="75" stroke="#fde047" strokeWidth="12" />
+          <line x1="-75" y1="0" x2="75" y2="0" stroke="#fde047" strokeWidth="6" />
+          <line x1="0" y1="-75" x2="0" y2="75" stroke="#fde047" strokeWidth="6" />
         </g>
 
-        <rect x="360" y="575" width="480" height="110" rx="28" fill="#164e63" stroke="#22d3ee" strokeWidth="8" />
+        <rect x="360" y="575" width="480" height="110" rx="28" fill="#164e63" stroke="#22d3ee" strokeWidth="5" />
         <text x="600" y="625" fill="#a5f3fc" fontSize="28" fontWeight="900" textAnchor="middle">COLD RESERVOIR / SINK</text>
         <text x="600" y="660" fill="#f8fafc" fontSize="22" fontWeight="900" textAnchor="middle">T<tspan baselineShift="sub">C</tspan></text>
 
-        <path d="M600 225 V250" stroke="#fbbf24" strokeWidth="12" markerEnd="url(#heAmber)">
+        <path d="M600 225 V250" stroke="#fbbf24" strokeWidth="5" markerEnd="url(#heAmber)">
           <animate attributeName="stroke-dasharray" values="0 140;70 70;140 0" dur="2s" repeatCount="indefinite" />
         </path>
         <text x="650" y="252" fill="#fde68a" fontSize="24" fontWeight="900">QH</text>
 
-        <path d="M600 520 V560" stroke="#22d3ee" strokeWidth="12" markerEnd="url(#heCyan)">
+        <path d="M600 520 V560" stroke="#22d3ee" strokeWidth="5" markerEnd="url(#heCyan)">
           <animate attributeName="stroke-dasharray" values="140 0;70 70;0 140" dur="2s" repeatCount="indefinite" />
         </path>
         <text x="650" y="555" fill="#a5f3fc" fontSize="24" fontWeight="900">QC</text>
 
-        <path d="M735 390 H1050" stroke="#fb7185" strokeWidth="12" markerEnd="url(#heRose)">
+        <path d="M735 390 H1050" stroke="#fb7185" strokeWidth="5" markerEnd="url(#heRose)">
           <animate attributeName="stroke-dasharray" values="0 320;160 160;320 0" dur="2.3s" repeatCount="indefinite" />
         </path>
         <text x="900" y="355" fill="#fda4af" fontSize="25" fontWeight="900" textAnchor="middle">useful work output</text>
@@ -155,9 +155,9 @@ function HeatEngineAnimation() {
         <rect x="70" y="295" width="300" height="185" rx="26" fill="#0f172a" stroke="#34d399" strokeWidth="5" />
         <text x="220" y="338" fill="#a7f3d0" fontSize="22" fontWeight="900" textAnchor="middle">PER CYCLE</text>
         <text x="220" y="390" fill="#f8fafc" fontSize="25" fontWeight="900" textAnchor="middle">Wout = QH − QC</text>
-        <text x="220" y="435" fill="#cbd5e1" fontSize="18" textAnchor="middle">0 &lt; Wout &lt; QH</text>
+        <text x="220" y="435" fill="#cbd5e1" fontSize="20" textAnchor="middle">0 &lt; Wout &lt; QH</text>
 
-        <text x="600" y="730" fill="#94a3b8" fontSize="18" textAnchor="middle">
+        <text x="600" y="730" fill="#94a3b8" fontSize="20" textAnchor="middle">
           Reservoir temperatures remain effectively constant despite the exchanged heat.
         </text>
       </svg>
@@ -167,7 +167,7 @@ function HeatEngineAnimation() {
 
 function CarnotFourStageAnimation() {
   return (
-    <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
+    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
       <svg
         viewBox="0 0 1200 820"
         role="img"
@@ -208,13 +208,13 @@ function CarnotFourStageAnimation() {
         ].map((item, idx) => (
           <g key={item.title}>
             <text x={item.x + 110} y="120" fill={item.stroke} fontSize="28" fontWeight="900" textAnchor="middle">{item.title}</text>
-            <text x={item.x + 110} y="154" fill="#cbd5e1" fontSize="17" textAnchor="middle">{item.subtitle}</text>
+            <text x={item.x + 110} y="154" fill="#cbd5e1" fontSize="19" textAnchor="middle">{item.subtitle}</text>
 
-            <path d={`M${item.x + 10} 510 V200 H${item.x + 210} V510`} fill="none" stroke={item.stroke} strokeWidth="8" />
+            <path d={`M${item.x + 10} 510 V200 H${item.x + 210} V510`} fill="none" stroke={item.stroke} strokeWidth="5" />
             <rect x={item.x + 32} y="345" width="156" height="24" rx="8" fill={item.stroke}>
               <animate attributeName="y" values={item.piston} dur={`${4.6 + idx * 0.35}s`} repeatCount="indefinite" />
             </rect>
-            <line x1={item.x + 110} y1="200" x2={item.x + 110} y2="345" stroke={item.stroke} strokeWidth="14" strokeLinecap="round">
+            <line x1={item.x + 110} y1="200" x2={item.x + 110} y2="345" stroke={item.stroke} strokeWidth="6" strokeLinecap="round">
               <animate attributeName="y2" values={item.piston} dur={`${4.6 + idx * 0.35}s`} repeatCount="indefinite" />
             </line>
 
@@ -237,16 +237,16 @@ function CarnotFourStageAnimation() {
 
             <rect x={item.x + 10} y="545" width="200" height="105" rx="22" fill="#0f172a" stroke={item.stroke} strokeWidth="4" />
             <text x={item.x + 110} y="582" fill={item.stroke} fontSize="20" fontWeight="900" textAnchor="middle">{item.t}</text>
-            <text x={item.x + 110} y="620" fill="#e2e8f0" fontSize="18" textAnchor="middle">{item.q}</text>
+            <text x={item.x + 110} y="620" fill="#e2e8f0" fontSize="20" textAnchor="middle">{item.q}</text>
           </g>
         ))}
 
-        <path d="M165 690 H455" stroke="#fbbf24" strokeWidth="8" markerEnd="url(#csArrowA)" />
-        <path d="M455 715 H745" stroke="#34d399" strokeWidth="8" markerEnd="url(#csArrowB)" />
-        <path d="M745 690 H1035" stroke="#22d3ee" strokeWidth="8" markerEnd="url(#csArrowC)" />
-        <path d="M1035 755 H165" stroke="#f472b6" strokeWidth="8" markerEnd="url(#csArrowD)" />
+        <path d="M165 690 H455" stroke="#fbbf24" strokeWidth="5" markerEnd="url(#csArrowA)" />
+        <path d="M455 715 H745" stroke="#34d399" strokeWidth="5" markerEnd="url(#csArrowB)" />
+        <path d="M745 690 H1035" stroke="#22d3ee" strokeWidth="5" markerEnd="url(#csArrowC)" />
+        <path d="M1035 755 H165" stroke="#f472b6" strokeWidth="5" markerEnd="url(#csArrowD)" />
 
-        <text x="600" y="795" fill="#94a3b8" fontSize="18" textAnchor="middle">
+        <text x="600" y="795" fill="#94a3b8" fontSize="20" textAnchor="middle">
           The adiabatic legs connect the two reservoir temperatures without heat transfer.
         </text>
       </svg>
@@ -257,7 +257,7 @@ function CarnotFourStageAnimation() {
 function CarnotDiagrams() {
   return (
     <div className="grid gap-4 lg:grid-cols-2">
-      <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-4">
+      <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-4">
         <svg viewBox="0 0 600 560" role="img" aria-label="Carnot cycle on a pressure-volume diagram" className="h-auto w-full">
         <title>Thermodynamics Part 14 scientific diagram 3</title>
         <desc>Original responsive scientific visual supporting the thermodynamics lesson.</desc>
@@ -277,7 +277,7 @@ function CarnotDiagrams() {
           <text x="50" y="70" fill="#e2e8f0" fontSize="20">P</text>
 
           <path d="M135 145 C220 175 300 215 410 270 C445 315 460 365 475 420 C365 395 285 370 205 335 C170 275 150 215 135 145 Z" fill="url(#pvShade)" />
-          <path id="pvCarnot" d="M135 145 C220 175 300 215 410 270 C445 315 460 365 475 420 C365 395 285 370 205 335 C170 275 150 215 135 145" fill="none" stroke="#34d399" strokeWidth="8" markerEnd="url(#pvA)" />
+          <path id="pvCarnot" d="M135 145 C220 175 300 215 410 270 C445 315 460 365 475 420 C365 395 285 370 205 335 C170 275 150 215 135 145" fill="none" stroke="#34d399" strokeWidth="5" markerEnd="url(#pvA)" />
           <circle r="10" fill="#fde047">
             <animateMotion dur="5s" repeatCount="indefinite">
               <mpath href="#pvCarnot" />
@@ -287,13 +287,13 @@ function CarnotDiagrams() {
           <text x="420" y="260" fill="#f8fafc" fontSize="20" fontWeight="900">2</text>
           <text x="485" y="430" fill="#f8fafc" fontSize="20" fontWeight="900">3</text>
           <text x="185" y="350" fill="#f8fafc" fontSize="20" fontWeight="900">4</text>
-          <text x="280" y="145" fill="#fde68a" fontSize="18" fontWeight="900">TH isotherm</text>
-          <text x="310" y="445" fill="#a5f3fc" fontSize="18" fontWeight="900">TC isotherm</text>
-          <text x="300" y="530" fill="#ddd6fe" fontSize="18" fontWeight="900" textAnchor="middle">enclosed area = net work output</text>
+          <text x="280" y="145" fill="#fde68a" fontSize="20" fontWeight="900">TH isotherm</text>
+          <text x="310" y="445" fill="#a5f3fc" fontSize="20" fontWeight="900">TC isotherm</text>
+          <text x="300" y="530" fill="#ddd6fe" fontSize="20" fontWeight="900" textAnchor="middle">enclosed area = net work output</text>
         </svg>
       </div>
 
-      <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-4">
+      <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-4">
         <svg viewBox="0 0 600 560" role="img" aria-label="Carnot cycle on a temperature-entropy diagram" className="h-auto w-full">
         <title>Thermodynamics Part 14 scientific diagram 4</title>
         <desc>Original responsive scientific visual supporting the thermodynamics lesson.</desc>
@@ -312,8 +312,8 @@ function CarnotDiagrams() {
           <text x="560" y="500" fill="#e2e8f0" fontSize="20">S</text>
           <text x="50" y="70" fill="#e2e8f0" fontSize="20">T</text>
 
-          <rect x="170" y="155" width="270" height="245" fill="url(#tsShade)" stroke="#f472b6" strokeWidth="8" />
-          <path id="tsCarnot" d="M170 155 H440 V400 H170 V155" fill="none" stroke="#f472b6" strokeWidth="8" markerEnd="url(#tsA)" />
+          <rect x="170" y="155" width="270" height="245" fill="url(#tsShade)" stroke="#f472b6" strokeWidth="5" />
+          <path id="tsCarnot" d="M170 155 H440 V400 H170 V155" fill="none" stroke="#f472b6" strokeWidth="5" markerEnd="url(#tsA)" />
           <circle r="10" fill="#fde047">
             <animateMotion dur="5s" repeatCount="indefinite">
               <mpath href="#tsCarnot" />
@@ -323,11 +323,11 @@ function CarnotDiagrams() {
           <text x="450" y="150" fill="#f8fafc" fontSize="20" fontWeight="900">2</text>
           <text x="450" y="420" fill="#f8fafc" fontSize="20" fontWeight="900">3</text>
           <text x="145" y="420" fill="#f8fafc" fontSize="20" fontWeight="900">4</text>
-          <text x="115" y="165" fill="#fde68a" fontSize="18" fontWeight="900">TH</text>
-          <text x="115" y="405" fill="#a5f3fc" fontSize="18" fontWeight="900">TC</text>
-          <text x="305" y="130" fill="#fde68a" fontSize="18" fontWeight="900" textAnchor="middle">QH = TH ΔS</text>
-          <text x="305" y="435" fill="#a5f3fc" fontSize="18" fontWeight="900" textAnchor="middle">QC = TC ΔS</text>
-          <text x="300" y="530" fill="#ddd6fe" fontSize="18" fontWeight="900" textAnchor="middle">rectangle area = Wout</text>
+          <text x="115" y="165" fill="#fde68a" fontSize="20" fontWeight="900">TH</text>
+          <text x="115" y="405" fill="#a5f3fc" fontSize="20" fontWeight="900">TC</text>
+          <text x="305" y="130" fill="#fde68a" fontSize="20" fontWeight="900" textAnchor="middle">QH = TH ΔS</text>
+          <text x="305" y="435" fill="#a5f3fc" fontSize="20" fontWeight="900" textAnchor="middle">QC = TC ΔS</text>
+          <text x="300" y="530" fill="#ddd6fe" fontSize="20" fontWeight="900" textAnchor="middle">rectangle area = Wout</text>
         </svg>
       </div>
     </div>
@@ -338,7 +338,7 @@ function CarnotDerivation() {
   const steps = [
     {
       title: "Leg 1 → 2",
-      equation: "QH = nRTH ln(V2/V1)",
+      equation: "QH = nRTH ln(V₂/V₁)",
       text: "Reversible isothermal expansion at the hot-reservoir temperature.",
       tone: "amber" as Tone,
     },
@@ -362,7 +362,7 @@ function CarnotDerivation() {
     },
     {
       title: "Adiabatic geometry",
-      equation: "V2/V1 = V3/V4",
+      equation: "V₂/V₁ = V3/V4",
       text: "This follows by dividing the two reversible-adiabatic endpoint relations.",
       tone: "violet" as Tone,
     },
@@ -391,7 +391,7 @@ function CarnotDerivation() {
 
 function TemperatureLeversGraphic() {
   return (
-    <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
+    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
       <svg viewBox="0 0 1200 680" role="img" aria-labelledby="lever-title lever-description" className="h-auto w-full">
         <title id="lever-title">Effect of source and sink temperature on Carnot efficiency</title>
         <desc id="lever-description">
@@ -404,23 +404,23 @@ function TemperatureLeversGraphic() {
           TEMPERATURE LEVERS OF CARNOT EFFICIENCY
         </text>
 
-        <rect x="420" y="120" width="360" height="110" rx="28" fill="#0f172a" stroke="#a78bfa" strokeWidth="6" />
+        <rect x="420" y="120" width="360" height="110" rx="28" fill="#0f172a" stroke="#a78bfa" strokeWidth="4" />
         <text x="600" y="165" fill="#ddd6fe" fontSize="26" fontWeight="900" textAnchor="middle">η = 1 − TC/TH</text>
-        <text x="600" y="205" fill="#cbd5e1" fontSize="18" textAnchor="middle">absolute temperatures in kelvin</text>
+        <text x="600" y="205" fill="#cbd5e1" fontSize="20" textAnchor="middle">absolute temperatures in kelvin</text>
 
-        <rect x="95" y="310" width="430" height="245" rx="30" fill="#0f172a" stroke="#f97316" strokeWidth="7" />
+        <rect x="95" y="310" width="430" height="245" rx="30" fill="#0f172a" stroke="#f97316" strokeWidth="4" />
         <text x="310" y="360" fill="#fed7aa" fontSize="24" fontWeight="900" textAnchor="middle">RAISE TH</text>
-        <path d="M180 480 H430" stroke="#fbbf24" strokeWidth="10" />
+        <path d="M180 480 H430" stroke="#fbbf24" strokeWidth="5" />
         <polygon points="430,480 400,462 400,498" fill="#fbbf24" />
         <text x="310" y="430" fill="#fde68a" fontSize="22" fontWeight="900" textAnchor="middle">η increases</text>
-        <text x="310" y="525" fill="#cbd5e1" fontSize="18" textAnchor="middle">∂η/∂TH = TC/TH²</text>
+        <text x="310" y="525" fill="#cbd5e1" fontSize="20" textAnchor="middle">∂η/∂TH = TC/TH²</text>
 
-        <rect x="675" y="310" width="430" height="245" rx="30" fill="#0f172a" stroke="#22d3ee" strokeWidth="7" />
+        <rect x="675" y="310" width="430" height="245" rx="30" fill="#0f172a" stroke="#22d3ee" strokeWidth="4" />
         <text x="890" y="360" fill="#a5f3fc" fontSize="24" fontWeight="900" textAnchor="middle">LOWER TC</text>
-        <path d="M1015 480 H765" stroke="#22d3ee" strokeWidth="10" />
+        <path d="M1015 480 H765" stroke="#22d3ee" strokeWidth="5" />
         <polygon points="765,480 795,462 795,498" fill="#22d3ee" />
         <text x="890" y="430" fill="#a5f3fc" fontSize="22" fontWeight="900" textAnchor="middle">η increases</text>
-        <text x="890" y="525" fill="#cbd5e1" fontSize="18" textAnchor="middle">∂η/∂TC = −1/TH</text>
+        <text x="890" y="525" fill="#cbd5e1" fontSize="20" textAnchor="middle">∂η/∂TC = −1/TH</text>
 
         <rect x="270" y="590" width="660" height="50" rx="22" fill="#0f172a" stroke="#34d399" strokeWidth="4" />
         <text x="600" y="623" fill="#a7f3d0" fontSize="20" fontWeight="900" textAnchor="middle">
@@ -473,7 +473,7 @@ function VanDerWaalsProof() {
       <div className="flex flex-wrap items-center justify-between gap-3">
         <div>
           <p className="text-xs font-black uppercase tracking-[0.2em] text-violet-300">
-            Retained chapter proof
+            Chapter proof
           </p>
           <h3 className="mt-2 text-xl font-black text-white">
             A van der Waals working gas gives the same Carnot efficiency
@@ -635,7 +635,7 @@ const problems = [
     question:
       "Show that the two isothermal volume ratios in an ideal-gas Carnot cycle are equal.",
     solution:
-      "Use THV2^(γ−1)=TCV3^(γ−1) and TCV4^(γ−1)=THV1^(γ−1). Division gives (V2/V1)^(γ−1)=(V3/V4)^(γ−1), so V2/V1=V3/V4.",
+      "Use THV2^(γ−1)=TCV3^(γ−1) and TCV4^(γ−1)=THV1^(γ−1). Division gives (V₂/V₁)^(γ−1)=(V3/V4)^(γ−1), so V₂/V₁=V3/V4.",
   },
   {
     title: "Concept Application 11 — T–S rectangle",
@@ -1005,7 +1005,7 @@ export default function ThermodynamicsPart14() {
           </ConceptLens>
         </Section>
 
-        <Section index="09" title="Retained van der Waals working-fluid proof">
+        <Section index="09" title="Van der Waals working-fluid proof">
           <VanDerWaalsProof />
         </Section>
 

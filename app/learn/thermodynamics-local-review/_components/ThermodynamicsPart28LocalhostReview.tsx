@@ -45,7 +45,7 @@ function Lens({ title, children, tone = "cyan" }: { title: string; children: Rea
 // SVG: ΔG_mix vs mole fraction — symmetric parabola-like shape
 function MixingGibbsSVG() {
   return (
-    <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
+    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
       <svg viewBox="0 0 1200 620" role="img" aria-labelledby="p28-mix-title p28-mix-desc" className="h-auto w-full">
         <title id="p28-mix-title">Gibbs energy of ideal mixing versus mole fraction</title>
         <desc id="p28-mix-desc">
@@ -66,17 +66,17 @@ function MixingGibbsSVG() {
         {/* Axes */}
         <line x1="130" y1="430" x2="1080" y2="430" stroke="#e2e8f0" strokeWidth="4" markerEnd="url(#p28axArrow)" />
         <line x1="130" y1="430" x2="130" y2="80" stroke="#e2e8f0" strokeWidth="4" markerEnd="url(#p28axArrow)" />
-        <text x="1095" y="444" fill="#e2e8f0" fontSize="18" fontWeight="900">x₂ →</text>
-        <text x="60" y="80" fill="#e2e8f0" fontSize="16" textAnchor="middle">ΔG_mix</text>
-        <text x="130" y="448" fill="#94a3b8" fontSize="15" textAnchor="middle">0</text>
-        <text x="1070" y="448" fill="#94a3b8" fontSize="15" textAnchor="middle">1</text>
+        <text x="1095" y="444" fill="#e2e8f0" fontSize="20" fontWeight="900">x₂ →</text>
+        <text x="60" y="80" fill="#e2e8f0" fontSize="19" textAnchor="middle">ΔG_mix</text>
+        <text x="130" y="448" fill="#94a3b8" fontSize="18" textAnchor="middle">0</text>
+        <text x="1070" y="448" fill="#94a3b8" fontSize="18" textAnchor="middle">1</text>
         {/* Zero line */}
         <line x1="130" y1="430" x2="1070" y2="430" stroke="#334155" strokeWidth="2" strokeDasharray="14 10" />
-        <text x="1090" y="430" fill="#475569" fontSize="14">ΔG=0</text>
+        <text x="1090" y="430" fill="#475569" fontSize="18">ΔG=0</text>
 
         {/* Mixing curve: negative parabola shape RT(x ln x + (1-x)ln(1-x)) */}
         <path d="M130 430 C180 415 260 360 380 290 C500 225 600 200 700 225 C800 250 900 305 990 385 C1020 405 1050 425 1070 430"
-          fill="none" stroke="#34d399" strokeWidth="10" />
+          fill="none" stroke="#34d399" strokeWidth="5" />
         <path d="M130 430 L1070 430" fill="none" stroke="#475569" strokeWidth="3" strokeDasharray="12 8" />
 
         {/* ΔG_mix shaded area */}
@@ -86,16 +86,16 @@ function MixingGibbsSVG() {
         {/* Minimum at x≈0.5 */}
         <circle cx="600" cy="200" r="13" fill="#fbbf24" />
         <line x1="600" y1="200" x2="600" y2="430" stroke="#fbbf24" strokeWidth="3" strokeDasharray="12 8" />
-        <text x="600" y="460" fill="#fde68a" fontSize="17" fontWeight="900" textAnchor="middle">x₂ = 0.5</text>
-        <text x="600" y="482" fill="#fde68a" fontSize="13" textAnchor="middle">ΔG_mix,min = −RT ln 2 per mole</text>
+        <text x="600" y="460" fill="#fde68a" fontSize="19" fontWeight="900" textAnchor="middle">x₂ = 0.5</text>
+        <text x="600" y="482" fill="#fde68a" fontSize="17" textAnchor="middle">ΔG_mix,min = −RT ln 2 per mole</text>
 
         {/* Labels */}
-        <text x="480" y="185" fill="#a7f3d0" fontSize="17" fontWeight="900">ΔG_mix &lt; 0 (always)</text>
-        <text x="480" y="208" fill="#6ee7b7" fontSize="13">mixing is spontaneous</text>
+        <text x="480" y="185" fill="#a7f3d0" fontSize="19" fontWeight="900">ΔG_mix &lt; 0 (always)</text>
+        <text x="480" y="208" fill="#6ee7b7" fontSize="17">mixing is spontaneous</text>
 
         {/* ΔH_mix = 0 label */}
         <rect x="200" y="520" width="800" height="40" rx="16" fill="#0f172a" />
-        <text x="600" y="544" fill="#cbd5e1" fontSize="14" textAnchor="middle">
+        <text x="600" y="544" fill="#cbd5e1" fontSize="18" textAnchor="middle">
           Ideal mixing: ΔH_mix = 0. All spontaneity comes from ΔS_mix = −R Σxᵢ ln xᵢ &gt; 0.
         </text>
       </svg>
@@ -106,7 +106,7 @@ function MixingGibbsSVG() {
 // SVG 2: Raoult's law vapour pressure diagram
 function RaoultSVG() {
   return (
-    <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
+    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
       <svg viewBox="0 0 1200 560" role="img" aria-labelledby="p28-raoult-title p28-raoult-desc" className="h-auto w-full">
         <title id="p28-raoult-title">Raoult&apos;s law: partial and total vapour pressure versus liquid mole fraction</title>
         <desc id="p28-raoult-desc">
@@ -126,33 +126,33 @@ function RaoultSVG() {
 
         <line x1="130" y1="420" x2="1080" y2="420" stroke="#e2e8f0" strokeWidth="4" markerEnd="url(#p28raArrow)" />
         <line x1="130" y1="420" x2="130" y2="80" stroke="#e2e8f0" strokeWidth="4" markerEnd="url(#p28raArrow)" />
-        <text x="1095" y="434" fill="#e2e8f0" fontSize="18">x_A →</text>
-        <text x="85" y="68" fill="#e2e8f0" fontSize="18">P / bar</text>
-        <text x="130" y="440" fill="#94a3b8" fontSize="14" textAnchor="middle">0</text>
-        <text x="1070" y="440" fill="#94a3b8" fontSize="14" textAnchor="middle">1</text>
+        <text x="1095" y="434" fill="#e2e8f0" fontSize="20">x_A →</text>
+        <text x="85" y="68" fill="#e2e8f0" fontSize="20">P / bar</text>
+        <text x="130" y="440" fill="#94a3b8" fontSize="18" textAnchor="middle">0</text>
+        <text x="1070" y="440" fill="#94a3b8" fontSize="18" textAnchor="middle">1</text>
 
         {/* P*_A at xA=1 */}
         <line x1="1070" y1="420" x2="1070" y2="140" stroke="#22d3ee" strokeWidth="3" strokeDasharray="12 8" />
-        <text x="1085" y="138" fill="#a5f3fc" fontSize="15" fontWeight="900">P*_A</text>
+        <text x="1085" y="138" fill="#a5f3fc" fontSize="18" fontWeight="900">P*_A</text>
         {/* P*_B at xA=0 */}
         <line x1="130" y1="420" x2="130" y2="240" stroke="#a78bfa" strokeWidth="3" strokeDasharray="12 8" />
-        <text x="90" y="238" fill="#c4b5fd" fontSize="15" fontWeight="900">P*_B</text>
+        <text x="90" y="238" fill="#c4b5fd" fontSize="18" fontWeight="900">P*_B</text>
 
         {/* P_A line: from 0 at xA=0 to P*_A at xA=1 */}
-        <line x1="130" y1="420" x2="1070" y2="140" stroke="#22d3ee" strokeWidth="8" />
-        <text x="750" y="210" fill="#a5f3fc" fontSize="16" fontWeight="900">P_A = x_A P*_A</text>
+        <line x1="130" y1="420" x2="1070" y2="140" stroke="#22d3ee" strokeWidth="5" />
+        <text x="750" y="210" fill="#a5f3fc" fontSize="19" fontWeight="900">P_A = x_A P*_A</text>
 
         {/* P_B line: from P*_B at xA=0 to 0 at xA=1 */}
-        <line x1="130" y1="240" x2="1070" y2="420" stroke="#a78bfa" strokeWidth="8" />
-        <text x="280" y="320" fill="#c4b5fd" fontSize="16" fontWeight="900">P_B = (1−x_A) P*_B</text>
+        <line x1="130" y1="240" x2="1070" y2="420" stroke="#a78bfa" strokeWidth="5" />
+        <text x="280" y="320" fill="#c4b5fd" fontSize="19" fontWeight="900">P_B = (1−x_A) P*_B</text>
 
         {/* Total pressure P = P_A + P_B */}
-        <line x1="130" y1="240" x2="1070" y2="140" stroke="#34d399" strokeWidth="9" />
-        <text x="580" y="158" fill="#a7f3d0" fontSize="16" fontWeight="900">P_total = P_A + P_B</text>
+        <line x1="130" y1="240" x2="1070" y2="140" stroke="#34d399" strokeWidth="5" />
+        <text x="580" y="158" fill="#a7f3d0" fontSize="19" fontWeight="900">P_total = P_A + P_B</text>
 
         <rect x="150" y="470" width="900" height="60" rx="16" fill="#0f172a" />
-        <text x="600" y="495" fill="#cbd5e1" fontSize="14" textAnchor="middle">Raoult: Pᵢ = xᵢ P*ᵢ. Total P varies linearly between P*_B (xA=0) and P*_A (xA=1).</text>
-        <text x="600" y="516" fill="#94a3b8" fontSize="13" textAnchor="middle">Vapour mole fraction: yA = PA/P = xA P*A / P. Vapour is richer in the more volatile component.</text>
+        <text x="600" y="495" fill="#cbd5e1" fontSize="18" textAnchor="middle">Raoult: Pᵢ = xᵢ P*ᵢ. Total P varies linearly between P*_B (xA=0) and P*_A (xA=1).</text>
+        <text x="600" y="516" fill="#94a3b8" fontSize="17" textAnchor="middle">Vapour mole fraction: yA = PA/P = xA P*A / P. Vapour is richer in the more volatile component.</text>
       </svg>
     </div>
   );

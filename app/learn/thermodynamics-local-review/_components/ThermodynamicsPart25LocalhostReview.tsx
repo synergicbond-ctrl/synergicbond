@@ -66,7 +66,7 @@ function DerivRow({ step, result }: { step: string; result: string }) {
 // ─── SVG 1: Four Fundamental Relations ───────────────────────────────────────
 function FundamentalRelationsSVG() {
   return (
-    <figure className="overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
+    <figure className="mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
       <svg
         viewBox="0 0 1200 680"
         role="img"
@@ -107,7 +107,7 @@ function FundamentalRelationsSVG() {
         <text x="600" y="52" fill="#f8fafc" fontSize="28" fontWeight="900" textAnchor="middle">
           THE FOUR FUNDAMENTAL DIFFERENTIAL RELATIONS
         </text>
-        <text x="600" y="82" fill="#94a3b8" fontSize="16" textAnchor="middle">
+        <text x="600" y="82" fill="#94a3b8" fontSize="19" textAnchor="middle">
           Natural variables in parentheses • conjugate pair structure
         </text>
 
@@ -116,76 +116,76 @@ function FundamentalRelationsSVG() {
         <text x="170" y="158" fill="#a5f3fc" fontSize="22" fontWeight="900" textAnchor="middle">INTERNAL ENERGY</text>
         <text x="170" y="192" fill="#cffafe" fontSize="36" fontWeight="900" textAnchor="middle">U(S, V)</text>
         <line x1="60" y1="210" x2="280" y2="210" stroke="#22d3ee" strokeWidth="3" strokeOpacity="0.5" />
-        <text x="170" y="250" fill="#e0f2fe" fontSize="18" fontWeight="700" textAnchor="middle">dU = T dS − P dV</text>
+        <text x="170" y="250" fill="#e0f2fe" fontSize="20" fontWeight="700" textAnchor="middle">dU = T dS − P dV</text>
         <line x1="60" y1="270" x2="280" y2="270" stroke="#22d3ee" strokeWidth="2" strokeOpacity="0.3" />
-        <text x="170" y="310" fill="#7dd3fc" fontSize="15" textAnchor="middle">(∂U/∂S)_V = T</text>
-        <text x="170" y="340" fill="#7dd3fc" fontSize="15" textAnchor="middle">(∂U/∂V)_S = −P</text>
+        <text x="170" y="310" fill="#7dd3fc" fontSize="18" textAnchor="middle">(∂U/∂S)_V = T</text>
+        <text x="170" y="340" fill="#7dd3fc" fontSize="18" textAnchor="middle">(∂U/∂V)_S = −P</text>
         <line x1="60" y1="360" x2="280" y2="360" stroke="#22d3ee" strokeWidth="2" strokeOpacity="0.3" />
-        <text x="170" y="400" fill="#bae6fd" fontSize="14" textAnchor="middle">Natural variable: S</text>
-        <text x="170" y="425" fill="#bae6fd" fontSize="14" textAnchor="middle">Natural variable: V</text>
+        <text x="170" y="400" fill="#bae6fd" fontSize="18" textAnchor="middle">Natural variable: S</text>
+        <text x="170" y="425" fill="#bae6fd" fontSize="18" textAnchor="middle">Natural variable: V</text>
         <line x1="60" y1="448" x2="280" y2="448" stroke="#22d3ee" strokeWidth="2" strokeOpacity="0.3" />
-        <text x="170" y="488" fill="#e0f2fe" fontSize="13" textAnchor="middle">Max work for</text>
-        <text x="170" y="510" fill="#e0f2fe" fontSize="13" textAnchor="middle">adiabatic reversible</text>
-        <text x="170" y="532" fill="#e0f2fe" fontSize="13" textAnchor="middle">process = −dU</text>
+        <text x="170" y="488" fill="#e0f2fe" fontSize="17" textAnchor="middle">Max work for</text>
+        <text x="170" y="510" fill="#e0f2fe" fontSize="17" textAnchor="middle">adiabatic reversible</text>
+        <text x="170" y="532" fill="#e0f2fe" fontSize="17" textAnchor="middle">process = −dU</text>
         <rect x="60" y="560" width="220" height="36" rx="14" fill="#0c4a6e" />
-        <text x="170" y="584" fill="#38bdf8" fontSize="15" fontWeight="900" textAnchor="middle">Isolated: ΔU = 0</text>
+        <text x="170" y="584" fill="#38bdf8" fontSize="18" fontWeight="900" textAnchor="middle">Isolated: ΔU = 0</text>
 
         {/* H card */}
         <rect x="320" y="110" width="260" height="510" rx="28" fill="url(#p25CardH)" filter="url(#p25Shadow)" />
         <text x="450" y="158" fill="#e9d5ff" fontSize="22" fontWeight="900" textAnchor="middle">ENTHALPY</text>
         <text x="450" y="192" fill="#f5f3ff" fontSize="36" fontWeight="900" textAnchor="middle">H(S, P)</text>
         <line x1="340" y1="210" x2="560" y2="210" stroke="#a78bfa" strokeWidth="3" strokeOpacity="0.5" />
-        <text x="450" y="250" fill="#ede9fe" fontSize="18" fontWeight="700" textAnchor="middle">dH = T dS + V dP</text>
+        <text x="450" y="250" fill="#ede9fe" fontSize="20" fontWeight="700" textAnchor="middle">dH = T dS + V dP</text>
         <line x1="340" y1="270" x2="560" y2="270" stroke="#a78bfa" strokeWidth="2" strokeOpacity="0.3" />
-        <text x="450" y="310" fill="#c4b5fd" fontSize="15" textAnchor="middle">(∂H/∂S)_P = T</text>
-        <text x="450" y="340" fill="#c4b5fd" fontSize="15" textAnchor="middle">(∂H/∂P)_S = V</text>
+        <text x="450" y="310" fill="#c4b5fd" fontSize="18" textAnchor="middle">(∂H/∂S)_P = T</text>
+        <text x="450" y="340" fill="#c4b5fd" fontSize="18" textAnchor="middle">(∂H/∂P)_S = V</text>
         <line x1="340" y1="360" x2="560" y2="360" stroke="#a78bfa" strokeWidth="2" strokeOpacity="0.3" />
-        <text x="450" y="400" fill="#ddd6fe" fontSize="14" textAnchor="middle">Natural variable: S</text>
-        <text x="450" y="425" fill="#ddd6fe" fontSize="14" textAnchor="middle">Natural variable: P</text>
+        <text x="450" y="400" fill="#ddd6fe" fontSize="18" textAnchor="middle">Natural variable: S</text>
+        <text x="450" y="425" fill="#ddd6fe" fontSize="18" textAnchor="middle">Natural variable: P</text>
         <line x1="340" y1="448" x2="560" y2="448" stroke="#a78bfa" strokeWidth="2" strokeOpacity="0.3" />
-        <text x="450" y="488" fill="#ede9fe" fontSize="13" textAnchor="middle">Heat at constant P</text>
-        <text x="450" y="510" fill="#ede9fe" fontSize="13" textAnchor="middle">for closed system</text>
-        <text x="450" y="532" fill="#ede9fe" fontSize="13" textAnchor="middle">q_P = ΔH</text>
+        <text x="450" y="488" fill="#ede9fe" fontSize="17" textAnchor="middle">Heat at constant P</text>
+        <text x="450" y="510" fill="#ede9fe" fontSize="17" textAnchor="middle">for closed system</text>
+        <text x="450" y="532" fill="#ede9fe" fontSize="17" textAnchor="middle">q_P = ΔH</text>
         <rect x="340" y="560" width="220" height="36" rx="14" fill="#3b0764" />
-        <text x="450" y="584" fill="#c4b5fd" fontSize="15" fontWeight="900" textAnchor="middle">Const. P: q = ΔH</text>
+        <text x="450" y="584" fill="#c4b5fd" fontSize="18" fontWeight="900" textAnchor="middle">Const. P: q = ΔH</text>
 
         {/* A card */}
         <rect x="600" y="110" width="260" height="510" rx="28" fill="url(#p25CardA)" filter="url(#p25Shadow)" />
         <text x="730" y="158" fill="#fde68a" fontSize="22" fontWeight="900" textAnchor="middle">HELMHOLTZ</text>
         <text x="730" y="192" fill="#fef3c7" fontSize="36" fontWeight="900" textAnchor="middle">A(T, V)</text>
         <line x1="620" y1="210" x2="840" y2="210" stroke="#fbbf24" strokeWidth="3" strokeOpacity="0.5" />
-        <text x="730" y="250" fill="#fef9c3" fontSize="18" fontWeight="700" textAnchor="middle">dA = −S dT − P dV</text>
+        <text x="730" y="250" fill="#fef9c3" fontSize="20" fontWeight="700" textAnchor="middle">dA = −S dT − P dV</text>
         <line x1="620" y1="270" x2="840" y2="270" stroke="#fbbf24" strokeWidth="2" strokeOpacity="0.3" />
-        <text x="730" y="310" fill="#fde68a" fontSize="15" textAnchor="middle">(∂A/∂T)_V = −S</text>
-        <text x="730" y="340" fill="#fde68a" fontSize="15" textAnchor="middle">(∂A/∂V)_T = −P</text>
+        <text x="730" y="310" fill="#fde68a" fontSize="18" textAnchor="middle">(∂A/∂T)_V = −S</text>
+        <text x="730" y="340" fill="#fde68a" fontSize="18" textAnchor="middle">(∂A/∂V)_T = −P</text>
         <line x1="620" y1="360" x2="840" y2="360" stroke="#fbbf24" strokeWidth="2" strokeOpacity="0.3" />
-        <text x="730" y="400" fill="#fef3c7" fontSize="14" textAnchor="middle">Natural variable: T</text>
-        <text x="730" y="425" fill="#fef3c7" fontSize="14" textAnchor="middle">Natural variable: V</text>
+        <text x="730" y="400" fill="#fef3c7" fontSize="18" textAnchor="middle">Natural variable: T</text>
+        <text x="730" y="425" fill="#fef3c7" fontSize="18" textAnchor="middle">Natural variable: V</text>
         <line x1="620" y1="448" x2="840" y2="448" stroke="#fbbf24" strokeWidth="2" strokeOpacity="0.3" />
-        <text x="730" y="488" fill="#fef9c3" fontSize="13" textAnchor="middle">Max work at const T</text>
-        <text x="730" y="510" fill="#fef9c3" fontSize="13" textAnchor="middle">w_max = ΔA</text>
-        <text x="730" y="532" fill="#fef9c3" fontSize="13" textAnchor="middle">(all modes of work)</text>
+        <text x="730" y="488" fill="#fef9c3" fontSize="17" textAnchor="middle">Max work at const T</text>
+        <text x="730" y="510" fill="#fef9c3" fontSize="17" textAnchor="middle">w_max = ΔA</text>
+        <text x="730" y="532" fill="#fef9c3" fontSize="17" textAnchor="middle">(all modes of work)</text>
         <rect x="620" y="560" width="220" height="36" rx="14" fill="#451a03" />
-        <text x="730" y="584" fill="#fde68a" fontSize="15" fontWeight="900" textAnchor="middle">Const. T,V: ΔA ≤ 0</text>
+        <text x="730" y="584" fill="#fde68a" fontSize="18" fontWeight="900" textAnchor="middle">Const. T,V: ΔA ≤ 0</text>
 
         {/* G card */}
         <rect x="880" y="110" width="280" height="510" rx="28" fill="url(#p25CardG)" filter="url(#p25Shadow)" />
         <text x="1020" y="158" fill="#a7f3d0" fontSize="22" fontWeight="900" textAnchor="middle">GIBBS</text>
         <text x="1020" y="192" fill="#ecfdf5" fontSize="36" fontWeight="900" textAnchor="middle">G(T, P)</text>
         <line x1="900" y1="210" x2="1140" y2="210" stroke="#34d399" strokeWidth="3" strokeOpacity="0.5" />
-        <text x="1020" y="250" fill="#d1fae5" fontSize="18" fontWeight="700" textAnchor="middle">dG = −S dT + V dP</text>
+        <text x="1020" y="250" fill="#d1fae5" fontSize="20" fontWeight="700" textAnchor="middle">dG = −S dT + V dP</text>
         <line x1="900" y1="270" x2="1140" y2="270" stroke="#34d399" strokeWidth="2" strokeOpacity="0.3" />
-        <text x="1020" y="310" fill="#6ee7b7" fontSize="15" textAnchor="middle">(∂G/∂T)_P = −S</text>
-        <text x="1020" y="340" fill="#6ee7b7" fontSize="15" textAnchor="middle">(∂G/∂P)_T = V</text>
+        <text x="1020" y="310" fill="#6ee7b7" fontSize="18" textAnchor="middle">(∂G/∂T)_P = −S</text>
+        <text x="1020" y="340" fill="#6ee7b7" fontSize="18" textAnchor="middle">(∂G/∂P)_T = V</text>
         <line x1="900" y1="360" x2="1140" y2="360" stroke="#34d399" strokeWidth="2" strokeOpacity="0.3" />
-        <text x="1020" y="400" fill="#d1fae5" fontSize="14" textAnchor="middle">Natural variable: T</text>
-        <text x="1020" y="425" fill="#d1fae5" fontSize="14" textAnchor="middle">Natural variable: P</text>
+        <text x="1020" y="400" fill="#d1fae5" fontSize="18" textAnchor="middle">Natural variable: T</text>
+        <text x="1020" y="425" fill="#d1fae5" fontSize="18" textAnchor="middle">Natural variable: P</text>
         <line x1="900" y1="448" x2="1140" y2="448" stroke="#34d399" strokeWidth="2" strokeOpacity="0.3" />
-        <text x="1020" y="488" fill="#ecfdf5" fontSize="13" textAnchor="middle">Non-PV max work</text>
-        <text x="1020" y="510" fill="#ecfdf5" fontSize="13" textAnchor="middle">at const T, P:</text>
-        <text x="1020" y="532" fill="#ecfdf5" fontSize="13" textAnchor="middle">w_max = ΔG</text>
+        <text x="1020" y="488" fill="#ecfdf5" fontSize="17" textAnchor="middle">Non-PV max work</text>
+        <text x="1020" y="510" fill="#ecfdf5" fontSize="17" textAnchor="middle">at const T, P:</text>
+        <text x="1020" y="532" fill="#ecfdf5" fontSize="17" textAnchor="middle">w_max = ΔG</text>
         <rect x="900" y="560" width="220" height="36" rx="14" fill="#022c22" />
-        <text x="1020" y="584" fill="#6ee7b7" fontSize="15" fontWeight="900" textAnchor="middle">Const. T,P: ΔG ≤ 0</text>
+        <text x="1020" y="584" fill="#6ee7b7" fontSize="18" fontWeight="900" textAnchor="middle">Const. T,P: ΔG ≤ 0</text>
       </svg>
       <figcaption className="px-3 pt-3 text-center text-sm leading-6 text-slate-300">
         The four thermodynamic potentials, their natural variables, fundamental differential forms and response relationships.
@@ -197,7 +197,7 @@ function FundamentalRelationsSVG() {
 // ─── SVG 2: Maxwell Relations ────────────────────────────────────────────────
 function MaxwellRelationsSVG() {
   return (
-    <figure className="overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
+    <figure className="mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
       <svg
         viewBox="0 0 1200 640"
         role="img"
@@ -219,7 +219,7 @@ function MaxwellRelationsSVG() {
         <text x="600" y="52" fill="#f8fafc" fontSize="28" fontWeight="900" textAnchor="middle">
           THE FOUR PRINCIPAL MAXWELL RELATIONS
         </text>
-        <text x="600" y="80" fill="#94a3b8" fontSize="16" textAnchor="middle">
+        <text x="600" y="80" fill="#94a3b8" fontSize="19" textAnchor="middle">
           Derived from equality of mixed second partial derivatives of each thermodynamic potential
         </text>
 
@@ -259,9 +259,9 @@ function MaxwellRelationsSVG() {
         ].map((row) => (
           <g key={row.relation}>
             <rect x="40" y={row.y} width="1120" height="105" rx="22" fill={row.bg} stroke={row.color} strokeWidth="3" />
-            <text x="70" y={row.y + 28} fill={row.color} fontSize="14" fontWeight="900">{row.source}</text>
+            <text x="70" y={row.y + 28} fill={row.color} fontSize="18" fontWeight="900">{row.source}</text>
             <text x="70" y={row.y + 60} fill="#f8fafc" fontSize="22" fontWeight="900" fontFamily="monospace">{row.relation}</text>
-            <text x="70" y={row.y + 90} fill="#cbd5e1" fontSize="13">{row.meaning}</text>
+            <text x="70" y={row.y + 90} fill="#cbd5e1" fontSize="17">{row.meaning}</text>
           </g>
         ))}
       </svg>
@@ -275,7 +275,7 @@ function MaxwellRelationsSVG() {
 // ─── SVG: Joule Free Expansion vs Joule–Thomson Throttling ──────────────────
 function JouleVsThrottlingSVG() {
   return (
-    <figure className="overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
+    <figure className="mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
       <svg
         viewBox="0 0 1200 720"
         role="img"
@@ -303,52 +303,52 @@ function JouleVsThrottlingSVG() {
         <text x="600" y="48" fill="#f8fafc" fontSize="27" fontWeight="900" textAnchor="middle">
           TWO DISTINCT EXPERIMENTS: CONSTANT U VS CONSTANT H
         </text>
-        <text x="600" y="77" fill="#94a3b8" fontSize="16" textAnchor="middle">
+        <text x="600" y="77" fill="#94a3b8" fontSize="19" textAnchor="middle">
           Free expansion is a closed-system process; throttling is a steady-flow open-system process.
         </text>
 
         <rect x="34" y="106" width="548" height="570" rx="28" fill="#082f49" stroke="#22d3ee" strokeOpacity="0.55" strokeWidth="2" />
         <text x="308" y="148" fill="#a5f3fc" fontSize="23" fontWeight="900" textAnchor="middle">JOULE FREE EXPANSION</text>
-        <text x="308" y="176" fill="#cffafe" fontSize="15" fontWeight="700" textAnchor="middle">CLOSED SYSTEM • INSULATED, RIGID VESSEL • CONSTANT U</text>
+        <text x="308" y="176" fill="#cffafe" fontSize="18" fontWeight="700" textAnchor="middle">CLOSED SYSTEM • INSULATED, RIGID VESSEL • CONSTANT U</text>
 
         <rect x="82" y="221" width="420" height="174" rx="14" fill="#0f172a" stroke="#e0f2fe" strokeWidth="4" />
         <rect x="91" y="230" width="193" height="156" rx="7" fill="#155e75" />
-        <line x1="292" y1="226" x2="292" y2="390" stroke="#f8fafc" strokeWidth="7" strokeDasharray="10 7" />
+        <line x1="292" y1="226" x2="292" y2="390" stroke="#f8fafc" strokeWidth="4" strokeDasharray="10 7" />
         <circle cx="133" cy="278" r="8" fill="#67e8f9" /><circle cx="171" cy="315" r="8" fill="#67e8f9" />
         <circle cx="220" cy="270" r="8" fill="#67e8f9" /><circle cx="245" cy="339" r="8" fill="#67e8f9" />
         <circle cx="154" cy="350" r="8" fill="#67e8f9" /><circle cx="240" cy="308" r="8" fill="#67e8f9" />
-        <text x="187" y="420" fill="#67e8f9" fontSize="15" fontWeight="700" textAnchor="middle">gas initially confined</text>
+        <text x="187" y="420" fill="#67e8f9" fontSize="18" fontWeight="700" textAnchor="middle">gas initially confined</text>
         <text x="397" y="300" fill="#cbd5e1" fontSize="23" fontWeight="900" textAnchor="middle">VACUUM</text>
-        <text x="292" y="205" fill="#f8fafc" fontSize="14" fontWeight="700" textAnchor="middle">partition removed</text>
+        <text x="292" y="205" fill="#f8fafc" fontSize="18" fontWeight="700" textAnchor="middle">partition removed</text>
         <line x1="250" y1="440" x2="424" y2="440" stroke="#22d3ee" strokeWidth="5" markerEnd="url(#p25JCompareArrowCyan)" />
-        <text x="337" y="470" fill="#a5f3fc" fontSize="15" fontWeight="700" textAnchor="middle">spontaneous expansion into vacuum</text>
+        <text x="337" y="470" fill="#a5f3fc" fontSize="18" fontWeight="700" textAnchor="middle">spontaneous expansion into vacuum</text>
         <rect x="76" y="501" width="440" height="50" rx="15" fill="#083344" stroke="#22d3ee" strokeOpacity="0.55" />
         <text x="296" y="533" fill="#ecfeff" fontSize="22" fontWeight="900" textAnchor="middle">q = 0   •   w = 0   →   ΔU = 0</text>
         <text x="296" y="586" fill="#bae6fd" fontSize="20" fontWeight="700" textAnchor="middle">μ_J = (∂T/∂V)_U</text>
         <rect x="113" y="610" width="366" height="40" rx="14" fill="#164e63" />
-        <text x="296" y="636" fill="#67e8f9" fontSize="17" fontWeight="900" textAnchor="middle">Ideal gas: ΔT = 0</text>
+        <text x="296" y="636" fill="#67e8f9" fontSize="19" fontWeight="900" textAnchor="middle">Ideal gas: ΔT = 0</text>
 
         <rect x="618" y="106" width="548" height="570" rx="28" fill="#451a03" stroke="#fbbf24" strokeOpacity="0.6" strokeWidth="2" />
         <text x="892" y="148" fill="#fde68a" fontSize="23" fontWeight="900" textAnchor="middle">JOULE–THOMSON THROTTLING</text>
-        <text x="892" y="176" fill="#fef3c7" fontSize="15" fontWeight="700" textAnchor="middle">STEADY-FLOW OPEN SYSTEM • CONSTANT H</text>
+        <text x="892" y="176" fill="#fef3c7" fontSize="18" fontWeight="700" textAnchor="middle">STEADY-FLOW OPEN SYSTEM • CONSTANT H</text>
         <path d="M670 260 H838 L864 230 L890 290 L916 230 L942 290 L968 230 L994 260 H1114" fill="none" stroke="#f8fafc" strokeWidth="5" />
         <path d="M670 344 H838 L864 374 L890 314 L916 374 L942 314 L968 374 L994 344 H1114" fill="none" stroke="#f8fafc" strokeWidth="5" />
         <rect x="854" y="247" width="126" height="110" rx="10" fill="#78350f" stroke="#fbbf24" strokeWidth="3" />
-        <text x="917" y="293" fill="#fef3c7" fontSize="16" fontWeight="900" textAnchor="middle">POROUS</text>
-        <text x="917" y="316" fill="#fef3c7" fontSize="16" fontWeight="900" textAnchor="middle">PLUG</text>
+        <text x="917" y="293" fill="#fef3c7" fontSize="19" fontWeight="900" textAnchor="middle">POROUS</text>
+        <text x="917" y="316" fill="#fef3c7" fontSize="19" fontWeight="900" textAnchor="middle">PLUG</text>
         <line x1="704" y1="302" x2="834" y2="302" stroke="#fbbf24" strokeWidth="5" markerEnd="url(#p25JCompareArrowAmber)" />
         <line x1="1000" y1="302" x2="1080" y2="302" stroke="#fbbf24" strokeWidth="5" markerEnd="url(#p25JCompareArrowAmber)" />
         <text x="750" y="231" fill="#fde68a" fontSize="21" fontWeight="900" textAnchor="middle">P₁</text>
-        <text x="750" y="255" fill="#fef3c7" fontSize="14" textAnchor="middle">high pressure</text>
+        <text x="750" y="255" fill="#fef3c7" fontSize="18" textAnchor="middle">high pressure</text>
         <text x="1055" y="231" fill="#fde68a" fontSize="21" fontWeight="900" textAnchor="middle">P₂</text>
-        <text x="1055" y="255" fill="#fef3c7" fontSize="14" textAnchor="middle">low pressure</text>
-        <text x="917" y="412" fill="#fde68a" fontSize="19" fontWeight="900" textAnchor="middle">P₁ &gt; P₂   •   flow: high P → low P</text>
+        <text x="1055" y="255" fill="#fef3c7" fontSize="18" textAnchor="middle">low pressure</text>
+        <text x="917" y="412" fill="#fde68a" fontSize="21" fontWeight="900" textAnchor="middle">P₁ &gt; P₂   •   flow: high P → low P</text>
         <rect x="670" y="439" width="444" height="48" rx="15" fill="#78350f" stroke="#fbbf24" strokeOpacity="0.6" />
         <text x="892" y="470" fill="#fef3c7" fontSize="22" fontWeight="900" textAnchor="middle">H₁ = H₂   •   ΔH = 0</text>
         <text x="892" y="522" fill="#fde68a" fontSize="20" fontWeight="700" textAnchor="middle">μ_JT = (∂T/∂P)_H</text>
-        <text x="892" y="558" fill="#bbf7d0" fontSize="16" fontWeight="700" textAnchor="middle">μ_JT &gt; 0: cooling   •   μ_JT &lt; 0: heating   •   μ_JT = 0: no ΔT</text>
+        <text x="892" y="558" fill="#bbf7d0" fontSize="19" fontWeight="700" textAnchor="middle">μ_JT &gt; 0: cooling   •   μ_JT &lt; 0: heating   •   μ_JT = 0: no ΔT</text>
         <rect x="720" y="590" width="344" height="50" rx="14" fill="#713f12" />
-        <text x="892" y="621" fill="#fde68a" fontSize="17" fontWeight="900" textAnchor="middle">Ideal gas: μ_JT = 0</text>
+        <text x="892" y="621" fill="#fde68a" fontSize="19" fontWeight="900" textAnchor="middle">Ideal gas: μ_JT = 0</text>
       </svg>
       <figcaption className="px-3 pt-3 text-center text-sm leading-6 text-slate-300">
         Joule free expansion conserves internal energy in an insulated rigid closed vessel, whereas a
@@ -361,7 +361,7 @@ function JouleVsThrottlingSVG() {
 // ─── SVG 3: Joule–Thomson Inversion Curve ────────────────────────────────────
 function JouleThomsonSVG() {
   return (
-    <figure className="overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
+    <figure className="mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
       <svg
         viewBox="0 0 1200 720"
         role="img"
@@ -408,50 +408,50 @@ function JouleThomsonSVG() {
         <line x1="110" y1="600" x2="110" y2="80" stroke="#e2e8f0" strokeWidth="5" markerEnd="url(#p25AxArrow)" />
         <text x="1125" y="615" fill="#e2e8f0" fontSize="22" fontWeight="900">T</text>
         <text x="78" y="68" fill="#e2e8f0" fontSize="22" fontWeight="900">P</text>
-        <text x="600" y="655" fill="#94a3b8" fontSize="17" textAnchor="middle">Temperature →</text>
-        <text x="42" y="350" fill="#94a3b8" fontSize="17" textAnchor="middle" transform="rotate(-90 42 350)">Pressure →</text>
+        <text x="600" y="655" fill="#94a3b8" fontSize="19" textAnchor="middle">Temperature →</text>
+        <text x="42" y="350" fill="#94a3b8" fontSize="19" textAnchor="middle" transform="rotate(-90 42 350)">Pressure →</text>
 
         {/* Inversion curve: a closed dome-shaped curve */}
         <path
           d="M190 580 C200 350 250 150 450 110 C650 80 850 180 950 350 C1010 450 980 560 940 580 Z"
           fill="url(#p25Cool)"
           stroke="#22d3ee"
-          strokeWidth="8"
+          strokeWidth="5"
         />
 
         {/* Heating region label (outside) */}
         <text x="1020" y="220" fill="#fb7185" fontSize="20" fontWeight="900">HEATING</text>
-        <text x="1020" y="246" fill="#fda4af" fontSize="14">μ_JT &lt; 0</text>
-        <text x="1020" y="268" fill="#fda4af" fontSize="14">gas warms</text>
-        <text x="1020" y="290" fill="#fda4af" fontSize="14">on throttle</text>
+        <text x="1020" y="246" fill="#fda4af" fontSize="18">μ_JT &lt; 0</text>
+        <text x="1020" y="268" fill="#fda4af" fontSize="18">gas warms</text>
+        <text x="1020" y="290" fill="#fda4af" fontSize="18">on throttle</text>
 
         {/* Cooling region label (inside) */}
         <text x="490" y="340" fill="#22d3ee" fontSize="22" fontWeight="900" textAnchor="middle">COOLING</text>
-        <text x="490" y="372" fill="#a5f3fc" fontSize="16" textAnchor="middle">μ_JT &gt; 0</text>
-        <text x="490" y="398" fill="#a5f3fc" fontSize="16" textAnchor="middle">gas cools on throttle</text>
+        <text x="490" y="372" fill="#a5f3fc" fontSize="19" textAnchor="middle">μ_JT &gt; 0</text>
+        <text x="490" y="398" fill="#a5f3fc" fontSize="19" textAnchor="middle">gas cools on throttle</text>
 
         {/* Annotations */}
         <circle cx="450" cy="110" r="14" fill="#fbbf24" />
-        <text x="458" y="88" fill="#fde68a" fontSize="15" fontWeight="900">T_inv,max</text>
-        <text x="458" y="108" fill="#fde68a" fontSize="13">(maximum inversion temperature)</text>
+        <text x="458" y="88" fill="#fde68a" fontSize="18" fontWeight="900">T_inv,max</text>
+        <text x="458" y="108" fill="#fde68a" fontSize="17">(maximum inversion temperature)</text>
 
         {/* μ_JT = 0 label on the curve */}
-        <text x="700" y="96" fill="#22d3ee" fontSize="14" fontWeight="900">μ_JT = 0 on curve</text>
+        <text x="700" y="96" fill="#22d3ee" fontSize="18" fontWeight="900">μ_JT = 0 on curve</text>
         <line x1="668" y1="98" x2="620" y2="105" stroke="#22d3ee" strokeWidth="3" />
 
         {/* Process arrow: throttling process from right to left */}
-        <path d="M820 380 L620 380" stroke="#22d3ee" strokeWidth="7" markerEnd="url(#p25CoolArrow)" strokeDasharray="18 10" />
-        <text x="720" y="365" fill="#a5f3fc" fontSize="14" textAnchor="middle">throttling (H = const)</text>
+        <path d="M820 380 L620 380" stroke="#22d3ee" strokeWidth="4" markerEnd="url(#p25CoolArrow)" strokeDasharray="18 10" />
+        <text x="720" y="365" fill="#a5f3fc" fontSize="18" textAnchor="middle">throttling (H = const)</text>
 
-        <path d="M1050 250 L900 300" stroke="#fb7185" strokeWidth="7" markerEnd="url(#p25HeatArrow)" strokeDasharray="18 10" />
-        <text x="1000" y="360" fill="#fda4af" fontSize="14" textAnchor="middle">throttling heats gas</text>
+        <path d="M1050 250 L900 300" stroke="#fb7185" strokeWidth="4" markerEnd="url(#p25HeatArrow)" strokeDasharray="18 10" />
+        <text x="1000" y="360" fill="#fda4af" fontSize="18" textAnchor="middle">throttling heats gas</text>
 
         {/* Low-T axis annotation */}
-        <text x="190" y="625" fill="#22d3ee" fontSize="14" textAnchor="middle">P → 0 crossing</text>
+        <text x="190" y="625" fill="#22d3ee" fontSize="18" textAnchor="middle">P → 0 crossing</text>
 
         {/* Caption */}
         <rect x="200" y="660" width="800" height="40" rx="16" fill="#0f172a" stroke="#334155" strokeWidth="2" />
-        <text x="600" y="685" fill="#cbd5e1" fontSize="14" textAnchor="middle">
+        <text x="600" y="685" fill="#cbd5e1" fontSize="18" textAnchor="middle">
           For most real gases at room temperature, T &lt; T_inv,max so cooling occurs on throttling.
         </text>
       </svg>

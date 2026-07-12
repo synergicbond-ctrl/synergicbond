@@ -86,7 +86,7 @@ function Formula({
 
 function RouteAnimation() {
   return (
-    <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
+    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
       <svg
         viewBox="0 0 1200 650"
         role="img"
@@ -121,20 +121,20 @@ function RouteAnimation() {
           SAME STATES • DIFFERENT ROUTES
         </text>
 
-        <circle cx="165" cy="325" r="62" fill="#0f172a" stroke="#34d399" strokeWidth="8" />
+        <circle cx="165" cy="325" r="62" fill="#0f172a" stroke="#34d399" strokeWidth="5" />
         <text x="165" y="314" fill="#a7f3d0" fontSize="30" fontWeight="900" textAnchor="middle">A</text>
-        <text x="165" y="346" fill="#cbd5e1" fontSize="17" textAnchor="middle">initial state</text>
+        <text x="165" y="346" fill="#cbd5e1" fontSize="19" textAnchor="middle">initial state</text>
 
-        <circle cx="1035" cy="325" r="62" fill="#0f172a" stroke="#a78bfa" strokeWidth="8" />
+        <circle cx="1035" cy="325" r="62" fill="#0f172a" stroke="#a78bfa" strokeWidth="5" />
         <text x="1035" y="314" fill="#ddd6fe" fontSize="30" fontWeight="900" textAnchor="middle">B</text>
-        <text x="1035" y="346" fill="#cbd5e1" fontSize="17" textAnchor="middle">final state</text>
+        <text x="1035" y="346" fill="#cbd5e1" fontSize="19" textAnchor="middle">final state</text>
 
         <path
           id="upperRoute"
           d="M230 290 C430 75 770 75 970 290"
           fill="none"
           stroke="#22d3ee"
-          strokeWidth="9"
+          strokeWidth="5"
           markerEnd="url(#routeArrowCyan)"
         />
         <path
@@ -142,7 +142,7 @@ function RouteAnimation() {
           d="M230 325 H970"
           fill="none"
           stroke="#fbbf24"
-          strokeWidth="9"
+          strokeWidth="5"
           markerEnd="url(#routeArrowAmber)"
         />
         <path
@@ -150,7 +150,7 @@ function RouteAnimation() {
           d="M230 360 C430 575 770 575 970 360"
           fill="none"
           stroke="#f472b6"
-          strokeWidth="9"
+          strokeWidth="5"
           markerEnd="url(#routeArrowPink)"
         />
 
@@ -191,7 +191,7 @@ function RouteAnimation() {
 
 function DifferentialVisual() {
   return (
-    <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
+    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
       <svg
         viewBox="0 0 1200 620"
         role="img"
@@ -226,12 +226,12 @@ function DifferentialVisual() {
         <ellipse cx="300" cy="320" rx="90" ry="55" fill="none" stroke="#a5f3fc" strokeWidth="5" opacity="0.9" />
         <circle cx="125" cy="405" r="13" fill="#34d399" />
         <circle cx="385" cy="225" r="13" fill="#a78bfa" />
-        <path d="M140 395 Q260 190 370 230" fill="none" stroke="#fbbf24" strokeWidth="7" markerEnd="url(#diffArrow)" />
-        <path d="M140 410 Q350 500 380 240" fill="none" stroke="#f472b6" strokeWidth="7" strokeDasharray="14 10" />
+        <path d="M140 395 Q260 190 370 230" fill="none" stroke="#fbbf24" strokeWidth="4" markerEnd="url(#diffArrow)" />
+        <path d="M140 410 Q350 500 380 240" fill="none" stroke="#f472b6" strokeWidth="4" strokeDasharray="14 10" />
         <text x="300" y="530" fill="#a7f3d0" fontSize="20" textAnchor="middle">
           net change = final level − initial level
         </text>
-        <text x="300" y="562" fill="#cbd5e1" fontSize="18" textAnchor="middle">
+        <text x="300" y="562" fill="#cbd5e1" fontSize="20" textAnchor="middle">
           route shape does not matter
         </text>
 
@@ -240,16 +240,16 @@ function DifferentialVisual() {
         <text x="900" y="55" fill="#fbcfe8" fontSize="30" fontWeight="900" textAnchor="middle">
           INEXACT DIFFERENTIAL δX
         </text>
-        <rect x="690" y="130" width="420" height="340" rx="30" fill="#0f172a" stroke="#f472b6" strokeWidth="6" />
-        <path d="M735 390 C790 140 1020 140 1070 390" fill="none" stroke="#fbbf24" strokeWidth="9" />
-        <path d="M735 390 C805 520 1010 520 1070 390" fill="none" stroke="#f472b6" strokeWidth="9" />
-        <path d="M735 390 H1070" fill="none" stroke="#22d3ee" strokeWidth="9" />
+        <rect x="690" y="130" width="420" height="340" rx="30" fill="#0f172a" stroke="#f472b6" strokeWidth="4" />
+        <path d="M735 390 C790 140 1020 140 1070 390" fill="none" stroke="#fbbf24" strokeWidth="5" />
+        <path d="M735 390 C805 520 1010 520 1070 390" fill="none" stroke="#f472b6" strokeWidth="5" />
+        <path d="M735 390 H1070" fill="none" stroke="#22d3ee" strokeWidth="5" />
         <circle cx="735" cy="390" r="14" fill="#34d399" />
         <circle cx="1070" cy="390" r="14" fill="#a78bfa" />
         <text x="900" y="530" fill="#f9a8d4" fontSize="20" textAnchor="middle">
           accumulated transfer depends on the route
         </text>
-        <text x="900" y="562" fill="#cbd5e1" fontSize="18" textAnchor="middle">
+        <text x="900" y="562" fill="#cbd5e1" fontSize="20" textAnchor="middle">
           examples: δq and δw
         </text>
       </svg>
@@ -280,7 +280,7 @@ function TestCard({ title, expression, result, tone, children }: TestCardProps) 
 
 function PVPathVisual() {
   return (
-    <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
+    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
       <svg
         viewBox="0 0 1200 650"
         role="img"
@@ -321,13 +321,13 @@ function PVPathVisual() {
         <text x="915" y="455" fill="#ddd6fe" fontSize="21" fontWeight="800">B(P₂,V₂)</text>
 
         <rect x="330" y="170" width="570" height="360" fill="url(#hatchCyan)" />
-        <path d="M330 170 H900 V420" fill="none" stroke="#22d3ee" strokeWidth="10" markerEnd="url(#pvArrowCyan)" />
+        <path d="M330 170 H900 V420" fill="none" stroke="#22d3ee" strokeWidth="5" markerEnd="url(#pvArrowCyan)" />
         <text x="610" y="145" fill="#a5f3fc" fontSize="21" textAnchor="middle">
           Path I: expand at P₁, then lower pressure
         </text>
 
         <rect x="330" y="420" width="570" height="110" fill="url(#hatchPink)" />
-        <path d="M330 170 V420 H900" fill="none" stroke="#f472b6" strokeWidth="10" markerEnd="url(#pvArrowPink)" />
+        <path d="M330 170 V420 H900" fill="none" stroke="#f472b6" strokeWidth="5" markerEnd="url(#pvArrowPink)" />
         <text x="610" y="595" fill="#f9a8d4" fontSize="21" textAnchor="middle">
           Path II: lower pressure, then expand at P₂
         </text>

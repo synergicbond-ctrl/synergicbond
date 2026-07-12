@@ -105,7 +105,7 @@ function Formula({
 
 function GlossyPhaseGraphic() {
   return (
-    <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-4 shadow-2xl shadow-cyan-950/30 md:p-6">
+    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-4 shadow-2xl shadow-cyan-950/30 md:p-6">
       <svg
         viewBox="0 0 1200 760"
         role="img"
@@ -147,7 +147,7 @@ function GlossyPhaseGraphic() {
         </text>
 
         <g filter="url(#phaseShadow)">
-          <rect x="70" y="130" width="470" height="480" rx="34" fill="#0f172a" stroke="#22d3ee" strokeWidth="7" />
+          <rect x="70" y="130" width="470" height="480" rx="34" fill="#0f172a" stroke="#22d3ee" strokeWidth="4" />
           <text x="305" y="190" fill="#a5f3fc" fontSize="29" fontWeight="900" textAnchor="middle">
             HOMOGENEOUS
           </text>
@@ -173,19 +173,19 @@ function GlossyPhaseGraphic() {
           <text x="305" y="555" fill="#d1fae5" fontSize="20" fontWeight="900" textAnchor="middle">
             one phase throughout
           </text>
-          <text x="305" y="590" fill="#cbd5e1" fontSize="17" textAnchor="middle">
+          <text x="305" y="590" fill="#cbd5e1" fontSize="19" textAnchor="middle">
             no macroscopic interface inside
           </text>
         </g>
 
         <g filter="url(#phaseShadow)">
-          <rect x="660" y="130" width="470" height="480" rx="34" fill="#0f172a" stroke="#f472b6" strokeWidth="7" />
+          <rect x="660" y="130" width="470" height="480" rx="34" fill="#0f172a" stroke="#f472b6" strokeWidth="4" />
           <text x="895" y="190" fill="#f9a8d4" fontSize="29" fontWeight="900" textAnchor="middle">
             HETEROGENEOUS
           </text>
           <rect x="725" y="235" width="340" height="132" rx="24" fill="url(#oilLayer)" />
           <rect x="725" y="367" width="340" height="133" rx="24" fill="url(#waterLayer)" />
-          <line x1="725" y1="367" x2="1065" y2="367" stroke="#f8fafc" strokeWidth="7" />
+          <line x1="725" y1="367" x2="1065" y2="367" stroke="#f8fafc" strokeWidth="4" />
           {Array.from({ length: 8 }).map((_, i) => (
             <circle
               key={`top-${i}`}
@@ -207,13 +207,13 @@ function GlossyPhaseGraphic() {
           <text x="895" y="555" fill="#fbcfe8" fontSize="20" fontWeight="900" textAnchor="middle">
             two or more phases
           </text>
-          <text x="895" y="590" fill="#cbd5e1" fontSize="17" textAnchor="middle">
+          <text x="895" y="590" fill="#cbd5e1" fontSize="19" textAnchor="middle">
             interface marks a discontinuity
           </text>
         </g>
 
         <rect x="280" y="660" width="640" height="56" rx="22" fill="#0f172a" stroke="#a78bfa" strokeWidth="4" />
-        <text x="600" y="695" fill="#ddd6fe" fontSize="19" fontWeight="900" textAnchor="middle">
+        <text x="600" y="695" fill="#ddd6fe" fontSize="21" fontWeight="900" textAnchor="middle">
           Number of components and number of phases are different ideas.
         </text>
       </svg>
@@ -223,7 +223,7 @@ function GlossyPhaseGraphic() {
 
 function ScalingGraphic() {
   return (
-    <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-4 md:p-6">
+    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-4 md:p-6">
       <svg
         viewBox="0 0 1200 760"
         role="img"
@@ -263,7 +263,7 @@ function ScalingGraphic() {
         </text>
 
         <g filter="url(#scaleShadow)">
-          <rect x="90" y="165" width="350" height="360" rx="34" fill="url(#scaleBody)" stroke="#22d3ee" strokeWidth="7" />
+          <rect x="90" y="165" width="350" height="360" rx="34" fill="url(#scaleBody)" stroke="#22d3ee" strokeWidth="4" />
           <text x="265" y="215" fill="#a5f3fc" fontSize="25" fontWeight="900" textAnchor="middle">
             ORIGINAL SYSTEM
           </text>
@@ -281,14 +281,14 @@ function ScalingGraphic() {
           </text>
         </g>
 
-        <path d="M470 345 H620" stroke="#fbbf24" strokeWidth="10" markerEnd="url(#scaleArrow)" />
-        <text x="545" y="315" fill="#fde68a" fontSize="19" fontWeight="900" textAnchor="middle">
+        <path d="M470 345 H620" stroke="#fbbf24" strokeWidth="5" markerEnd="url(#scaleArrow)" />
+        <text x="545" y="315" fill="#fde68a" fontSize="21" fontWeight="900" textAnchor="middle">
           divide unequally
         </text>
 
         <g filter="url(#scaleShadow)">
-          <rect x="660" y="145" width="450" height="400" rx="34" fill="#0f172a" stroke="#a78bfa" strokeWidth="7" />
-          <line x1="820" y1="150" x2="820" y2="540" stroke="#f8fafc" strokeWidth="6" />
+          <rect x="660" y="145" width="450" height="400" rx="34" fill="#0f172a" stroke="#a78bfa" strokeWidth="4" />
+          <line x1="820" y1="150" x2="820" y2="540" stroke="#f8fafc" strokeWidth="4" />
           <text x="740" y="205" fill="#a5f3fc" fontSize="21" fontWeight="900" textAnchor="middle">
             PART A
           </text>
@@ -313,24 +313,24 @@ function ScalingGraphic() {
           <text x="965" y="430" fill="#a7f3d0" fontSize="22" fontWeight="900" textAnchor="middle">
             ρ
           </text>
-          <text x="885" y="500" fill="#cbd5e1" fontSize="17" textAnchor="middle">
+          <text x="885" y="500" fill="#cbd5e1" fontSize="19" textAnchor="middle">
             after internal equilibrium is restored
           </text>
         </g>
 
         <rect x="135" y="620" width="420" height="70" rx="24" fill="#0f172a" stroke="#f472b6" strokeWidth="4" />
-        <text x="345" y="648" fill="#f9a8d4" fontSize="18" fontWeight="900" textAnchor="middle">
+        <text x="345" y="648" fill="#f9a8d4" fontSize="20" fontWeight="900" textAnchor="middle">
           extensive: m, V, n, U, S...
         </text>
-        <text x="345" y="678" fill="#cbd5e1" fontSize="16" textAnchor="middle">
+        <text x="345" y="678" fill="#cbd5e1" fontSize="19" textAnchor="middle">
           value scales with system size
         </text>
 
         <rect x="645" y="620" width="420" height="70" rx="24" fill="#0f172a" stroke="#34d399" strokeWidth="4" />
-        <text x="855" y="648" fill="#a7f3d0" fontSize="18" fontWeight="900" textAnchor="middle">
+        <text x="855" y="648" fill="#a7f3d0" fontSize="20" fontWeight="900" textAnchor="middle">
           intensive: T, P, ρ, concentration...
         </text>
-        <text x="855" y="678" fill="#cbd5e1" fontSize="16" textAnchor="middle">
+        <text x="855" y="678" fill="#cbd5e1" fontSize="19" textAnchor="middle">
           unchanged for a uniform equilibrium phase
         </text>
       </svg>
@@ -340,7 +340,7 @@ function ScalingGraphic() {
 
 function PathLandscapeGraphic() {
   return (
-    <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-4 md:p-6">
+    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-4 md:p-6">
       <svg
         viewBox="0 0 1200 760"
         role="img"
@@ -395,19 +395,19 @@ function PathLandscapeGraphic() {
         </text>
 
         <g filter="url(#pathShadow)">
-          <circle cx="220" cy="390" r="96" fill="url(#stateA)" stroke="#67e8f9" strokeWidth="7" />
+          <circle cx="220" cy="390" r="96" fill="url(#stateA)" stroke="#67e8f9" strokeWidth="4" />
           <text x="220" y="380" fill="#ecfeff" fontSize="27" fontWeight="900" textAnchor="middle">
             STATE 1
           </text>
-          <text x="220" y="420" fill="#cffafe" fontSize="17" textAnchor="middle">
+          <text x="220" y="420" fill="#cffafe" fontSize="19" textAnchor="middle">
             X₁, P₁, V₁, T₁
           </text>
 
-          <circle cx="980" cy="390" r="96" fill="url(#stateB)" stroke="#f9a8d4" strokeWidth="7" />
+          <circle cx="980" cy="390" r="96" fill="url(#stateB)" stroke="#f9a8d4" strokeWidth="4" />
           <text x="980" y="380" fill="#fff1f2" fontSize="27" fontWeight="900" textAnchor="middle">
             STATE 2
           </text>
-          <text x="980" y="420" fill="#fce7f3" fontSize="17" textAnchor="middle">
+          <text x="980" y="420" fill="#fce7f3" fontSize="19" textAnchor="middle">
             X₂, P₂, V₂, T₂
           </text>
         </g>
@@ -417,7 +417,7 @@ function PathLandscapeGraphic() {
           d="M315 345 C475 135 725 135 885 345"
           fill="none"
           stroke="#34d399"
-          strokeWidth="12"
+          strokeWidth="5"
           markerEnd="url(#pathArrowA)"
         />
         <path
@@ -425,7 +425,7 @@ function PathLandscapeGraphic() {
           d="M315 435 C480 625 720 625 885 435"
           fill="none"
           stroke="#fbbf24"
-          strokeWidth="12"
+          strokeWidth="5"
           markerEnd="url(#pathArrowB)"
         />
 
@@ -458,7 +458,7 @@ function PathLandscapeGraphic() {
 
 function ExactnessGraphic() {
   return (
-    <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-4 md:p-6">
+    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-4 md:p-6">
       <svg
         viewBox="0 0 1200 720"
         role="img"
@@ -487,7 +487,7 @@ function ExactnessGraphic() {
         </text>
 
         <g filter="url(#exactShadow)">
-          <rect x="90" y="130" width="1020" height="485" rx="34" fill="url(#exactPanel)" stroke="#a78bfa" strokeWidth="6" />
+          <rect x="90" y="130" width="1020" height="485" rx="34" fill="url(#exactPanel)" stroke="#a78bfa" strokeWidth="4" />
           <text x="600" y="205" fill="#ddd6fe" fontSize="31" fontWeight="900" textAnchor="middle">
             dF = M(x,y) dx + N(x,y) dy
           </text>
@@ -499,7 +499,7 @@ function ExactnessGraphic() {
           <text x="345" y="375" fill="#f8fafc" fontSize="25" fontWeight="900" textAnchor="middle">
             ∂M/∂y = ∂N/∂x
           </text>
-          <text x="345" y="412" fill="#cbd5e1" fontSize="16" textAnchor="middle">
+          <text x="345" y="412" fill="#cbd5e1" fontSize="19" textAnchor="middle">
             necessary and locally sufficient under usual conditions
           </text>
 
@@ -510,15 +510,15 @@ function ExactnessGraphic() {
           <text x="855" y="375" fill="#f8fafc" fontSize="25" fontWeight="900" textAnchor="middle">
             ∮ dF = 0
           </text>
-          <text x="855" y="412" fill="#cbd5e1" fontSize="16" textAnchor="middle">
+          <text x="855" y="412" fill="#cbd5e1" fontSize="19" textAnchor="middle">
             closed-cycle change of a state function vanishes
           </text>
 
           <rect x="245" y="490" width="710" height="75" rx="24" fill="#0f172a" stroke="#fbbf24" strokeWidth="4" />
-          <text x="600" y="522" fill="#fde68a" fontSize="19" fontWeight="900" textAnchor="middle">
+          <text x="600" y="522" fill="#fde68a" fontSize="21" fontWeight="900" textAnchor="middle">
             exact differential ⇒ endpoint function exists
           </text>
-          <text x="600" y="550" fill="#cbd5e1" fontSize="16" textAnchor="middle">
+          <text x="600" y="550" fill="#cbd5e1" fontSize="19" textAnchor="middle">
             inexact differential δq or δw ⇒ no stored “heat content” or “work content”
           </text>
         </g>
@@ -1033,7 +1033,7 @@ export default function ThermodynamicsPart02LocalhostReview() {
           <div className="flex flex-wrap gap-2">
             <Chip tone="cyan">SYNERGIC BOND MASTER NOTES</Chip>
             <Chip tone="violet">COMPLETE THEORY</Chip>
-            <Chip tone="amber">LOCALHOST REVIEW BUILD</Chip>
+            <Chip tone="amber">PREMIUM MASTER EDITION</Chip>
           </div>
 
           <div className="mt-8 grid gap-10 lg:grid-cols-[1.15fr_0.85fr] lg:items-center">

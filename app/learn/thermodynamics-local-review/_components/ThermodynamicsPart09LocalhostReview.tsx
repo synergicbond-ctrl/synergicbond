@@ -64,7 +64,7 @@ function Lens({
 
 function IsothermalPathsGraphic() {
   return (
-    <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-4">
+    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-4">
       <svg viewBox="0 0 1200 760" role="img" aria-label="Isothermal expansion routes" className="h-auto w-full">
         <title>Thermodynamics Part 09 scientific diagram 1</title>
         <desc>Original responsive scientific visual supporting the thermodynamics lesson.</desc>
@@ -77,9 +77,9 @@ function IsothermalPathsGraphic() {
         <text x="1110" y="635" fill="#e2e8f0" fontSize="22">V</text>
         <text x="92" y="100" fill="#e2e8f0" fontSize="22">P</text>
 
-        <path d="M220 170 C420 260 680 400 980 520" fill="none" stroke="#34d399" strokeWidth="11" />
-        <path d="M220 170 V520 H980" fill="none" stroke="#fbbf24" strokeWidth="9" />
-        <path d="M220 170 C470 600 760 600 980 520" fill="none" stroke="#fb7185" strokeWidth="8" strokeDasharray="18 12" />
+        <path d="M220 170 C420 260 680 400 980 520" fill="none" stroke="#34d399" strokeWidth="5" />
+        <path d="M220 170 V520 H980" fill="none" stroke="#fbbf24" strokeWidth="5" />
+        <path d="M220 170 C470 600 760 600 980 520" fill="none" stroke="#fb7185" strokeWidth="5" strokeDasharray="18 12" />
 
         <circle cx="220" cy="170" r="15" fill="#f8fafc" />
         <circle cx="980" cy="520" r="15" fill="#f8fafc" />
@@ -95,12 +95,12 @@ function IsothermalPathsGraphic() {
 }
 
 const problems = [
-  ["Reversible work", "Derive the reversible isothermal work of an ideal gas.", "wrev = −∫P dV = −nRT∫dV/V = −nRT ln(V2/V1)."],
-  ["Pressure form", "Express reversible isothermal work using pressures.", "Because P1V1=P2V2, wrev=−nRT ln(P1/P2)."],
+  ["Reversible work", "Derive the reversible isothermal work of an ideal gas.", "wrev = −∫P dV = −nRT∫dV/V = −nRT ln(V₂/V₁)."],
+  ["Pressure form", "Express reversible isothermal work using pressures.", "Because P1V1=P2V2, wrev=−nRT ln(P₁/P₂)."],
   ["Free expansion", "Find q, w, ΔU and ΔT for ideal-gas free expansion in an insulated container.", "Pext=0 gives w=0; q=0; hence ΔU=0 and, for an ideal gas, ΔT=0."],
   ["Work ranking", "Rank work magnitude for reversible, multistep, one-step and free expansion.", "|wrev| > |wmultistep| > |wone-step| > |wfree|=0."],
   ["Compression ranking", "Which path requires the least work input for isothermal compression?", "The reversible path requires the minimum work input magnitude."],
-  ["Retained numerical", "For 4 mol ideal gas at 300 K expanding from 10 atm to 5 atm, find reversible work.", "wrev=−4R(300)ln2≈−6.92 kJ."],
+  ["Worked numerical", "For 4 mol ideal gas at 300 K expanding from 10 atm to 5 atm, find reversible work.", "wrev=−4R(300)ln2≈−6.92 kJ."],
 ];
 
 function ThermodynamicsPart09() {
@@ -165,7 +165,7 @@ function ThermodynamicsPart09() {
           <Formula label="Compression ranking">reversible compression requires minimum work input</Formula>
         </Section>
 
-        <Section index="06" title="Retained chapter numerical">
+        <Section index="06" title="Chapter numerical">
           <p>Four moles of an ideal gas at 27 °C expand isothermally from 10 atm to 5 atm.</p>
           <Formula label="Reversible path">wrev = −4R(300)ln2 ≈ −6.92 kJ</Formula>
           <Formula label="One-step against 5 atm">wirr = −Pext(V₂−V₁) ≈ −4.99 kJ</Formula>
@@ -309,7 +309,7 @@ const part09BundledQuestions = [
 
 function Part09BundledPVGraph() {
   return (
-    <figure className="overflow-hidden rounded-[2rem] border border-cyan-300/20 bg-[#07111f] p-4">
+    <figure className="mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-cyan-300/20 bg-[#07111f] p-4">
       <svg
         viewBox="0 0 1200 720"
         role="img"
@@ -354,14 +354,14 @@ function Part09BundledPVGraph() {
           d="M205 175 C330 280 460 360 610 425 C760 490 900 525 1020 545"
           fill="none"
           stroke="#22d3ee"
-          strokeWidth="8"
+          strokeWidth="5"
         />
 
         <path
           d="M205 175 H350 V285 H520 V380 H700 V455 H860 V510 H1020 V545"
           fill="none"
           stroke="#a78bfa"
-          strokeWidth="7"
+          strokeWidth="4"
         />
 
         <line
@@ -370,7 +370,7 @@ function Part09BundledPVGraph() {
           x2="1020"
           y2="500"
           stroke="#fbbf24"
-          strokeWidth="7"
+          strokeWidth="4"
         />
 
         <line
@@ -379,20 +379,20 @@ function Part09BundledPVGraph() {
           x2="1020"
           y2="610"
           stroke="#fb7185"
-          strokeWidth="8"
+          strokeWidth="5"
           strokeDasharray="18 13"
         />
 
-        <text x="475" y="260" fill="#67e8f9" fontSize="19" fontWeight="900">
+        <text x="475" y="260" fill="#67e8f9" fontSize="21" fontWeight="900">
           reversible: P = nRT/V
         </text>
-        <text x="650" y="350" fill="#c4b5fd" fontSize="18" fontWeight="900">
+        <text x="650" y="350" fill="#c4b5fd" fontSize="20" fontWeight="900">
           finite multistep staircase
         </text>
-        <text x="650" y="476" fill="#fde68a" fontSize="18" fontWeight="900">
+        <text x="650" y="476" fill="#fde68a" fontSize="20" fontWeight="900">
           one-step constant Pext
         </text>
-        <text x="600" y="654" fill="#fda4af" fontSize="18" fontWeight="900" textAnchor="middle">
+        <text x="600" y="654" fill="#fda4af" fontSize="20" fontWeight="900" textAnchor="middle">
           free expansion: Pext = 0 and w = 0
         </text>
 
@@ -410,7 +410,7 @@ function Part09BundledPVGraph() {
           x="600"
           y="126"
           fill="#e2e8f0"
-          fontSize="17"
+          fontSize="19"
           fontWeight="900"
           textAnchor="middle"
         >
@@ -427,7 +427,7 @@ function Part09BundledPVGraph() {
 
 function Part09BundledProcessGraphic() {
   return (
-    <figure className="overflow-hidden rounded-[2rem] border border-violet-300/20 bg-[#07111f] p-4">
+    <figure className="mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-violet-300/20 bg-[#07111f] p-4">
       <svg
         viewBox="0 0 1200 700"
         role="img"
@@ -521,13 +521,13 @@ function Part09BundledProcessGraphic() {
               x2={panel.x + 275}
               y2="285"
               stroke={panel.stroke}
-              strokeWidth="10"
+              strokeWidth="6"
             />
             <text
               x={panel.x + 175}
               y="455"
               fill={panel.stroke}
-              fontSize="17"
+              fontSize="19"
               fontWeight="900"
               textAnchor="middle"
             >
@@ -537,7 +537,7 @@ function Part09BundledProcessGraphic() {
               x={panel.x + 175}
               y="495"
               fill="#cbd5e1"
-              fontSize="15"
+              fontSize="18"
               textAnchor="middle"
             >
               {panel.line2}
@@ -546,7 +546,7 @@ function Part09BundledProcessGraphic() {
               x={panel.x + 175}
               y="555"
               fill="#f8fafc"
-              fontSize="15"
+              fontSize="18"
               fontWeight="800"
               textAnchor="middle"
             >
@@ -559,7 +559,7 @@ function Part09BundledProcessGraphic() {
           x="600"
           y="665"
           fill="#cbd5e1"
-          fontSize="17"
+          fontSize="19"
           fontWeight="800"
           textAnchor="middle"
         >

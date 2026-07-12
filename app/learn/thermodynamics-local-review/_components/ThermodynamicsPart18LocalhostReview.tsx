@@ -86,7 +86,7 @@ function Formula({
 
 function PhaseTransitionAnimation() {
   return (
-    <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
+    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
       <svg
         viewBox="0 0 1200 800"
         role="img"
@@ -118,7 +118,7 @@ function PhaseTransitionAnimation() {
 
         <g>
           <text x="195" y="120" fill="#a5f3fc" fontSize="27" fontWeight="900" textAnchor="middle">SOLID</text>
-          <rect x="55" y="155" width="280" height="305" rx="30" fill="#0f172a" stroke="#22d3ee" strokeWidth="8" />
+          <rect x="55" y="155" width="280" height="305" rx="30" fill="#0f172a" stroke="#22d3ee" strokeWidth="5" />
           {Array.from({ length: 16 }).map((_, i) => (
             <circle
               key={`s-${i}`}
@@ -135,13 +135,13 @@ function PhaseTransitionAnimation() {
               />
             </circle>
           ))}
-          <text x="195" y="500" fill="#cbd5e1" fontSize="18" textAnchor="middle">ordered lattice</text>
-          <text x="195" y="535" fill="#cbd5e1" fontSize="18" textAnchor="middle">restricted positions</text>
+          <text x="195" y="500" fill="#cbd5e1" fontSize="20" textAnchor="middle">ordered lattice</text>
+          <text x="195" y="535" fill="#cbd5e1" fontSize="20" textAnchor="middle">restricted positions</text>
         </g>
 
         <g>
           <text x="600" y="120" fill="#fde68a" fontSize="27" fontWeight="900" textAnchor="middle">LIQUID</text>
-          <rect x="460" y="155" width="280" height="305" rx="30" fill="#0f172a" stroke="#fbbf24" strokeWidth="8" />
+          <rect x="460" y="155" width="280" height="305" rx="30" fill="#0f172a" stroke="#fbbf24" strokeWidth="5" />
           {Array.from({ length: 16 }).map((_, i) => (
             <circle
               key={`l-${i}`}
@@ -162,13 +162,13 @@ function PhaseTransitionAnimation() {
               />
             </circle>
           ))}
-          <text x="600" y="500" fill="#cbd5e1" fontSize="18" textAnchor="middle">mobile neighbours</text>
-          <text x="600" y="535" fill="#cbd5e1" fontSize="18" textAnchor="middle">greater configurational freedom</text>
+          <text x="600" y="500" fill="#cbd5e1" fontSize="20" textAnchor="middle">mobile neighbours</text>
+          <text x="600" y="535" fill="#cbd5e1" fontSize="20" textAnchor="middle">greater configurational freedom</text>
         </g>
 
         <g>
           <text x="1005" y="120" fill="#f9a8d4" fontSize="27" fontWeight="900" textAnchor="middle">GAS</text>
-          <rect x="865" y="155" width="280" height="305" rx="30" fill="#0f172a" stroke="#f472b6" strokeWidth="8" />
+          <rect x="865" y="155" width="280" height="305" rx="30" fill="#0f172a" stroke="#f472b6" strokeWidth="5" />
           {Array.from({ length: 10 }).map((_, i) => (
             <circle
               key={`g-${i}`}
@@ -189,17 +189,17 @@ function PhaseTransitionAnimation() {
               />
             </circle>
           ))}
-          <text x="1005" y="500" fill="#cbd5e1" fontSize="18" textAnchor="middle">large accessible volume</text>
-          <text x="1005" y="535" fill="#cbd5e1" fontSize="18" textAnchor="middle">maximum translational freedom</text>
+          <text x="1005" y="500" fill="#cbd5e1" fontSize="20" textAnchor="middle">large accessible volume</text>
+          <text x="1005" y="535" fill="#cbd5e1" fontSize="20" textAnchor="middle">maximum translational freedom</text>
         </g>
 
-        <path d="M345 300 H445" stroke="#fbbf24" strokeWidth="10" markerEnd="url(#ptAmber)" />
+        <path d="M345 300 H445" stroke="#fbbf24" strokeWidth="5" markerEnd="url(#ptAmber)" />
         <text x="395" y="260" fill="#fde68a" fontSize="20" fontWeight="900" textAnchor="middle">fusion</text>
 
-        <path d="M750 300 H850" stroke="#fb7185" strokeWidth="10" markerEnd="url(#ptRose)" />
+        <path d="M750 300 H850" stroke="#fb7185" strokeWidth="5" markerEnd="url(#ptRose)" />
         <text x="800" y="260" fill="#fda4af" fontSize="20" fontWeight="900" textAnchor="middle">vaporisation</text>
 
-        <path d="M290 600 C500 735 735 735 930 600" fill="none" stroke="#22d3ee" strokeWidth="10" markerEnd="url(#ptCyan)" />
+        <path d="M290 600 C500 735 735 735 930 600" fill="none" stroke="#22d3ee" strokeWidth="5" markerEnd="url(#ptCyan)" />
         <text x="610" y="735" fill="#a5f3fc" fontSize="21" fontWeight="900" textAnchor="middle">sublimation</text>
 
         <rect x="260" y="585" width="680" height="58" rx="22" fill="#0f172a" stroke="#a78bfa" strokeWidth="4" />
@@ -207,7 +207,7 @@ function PhaseTransitionAnimation() {
           ΔS<tspan baselineShift="sub">tr</tspan> = ΔH<tspan baselineShift="sub">tr</tspan>/T<tspan baselineShift="sub">tr</tspan>
         </text>
 
-        <text x="600" y="775" fill="#94a3b8" fontSize="18" textAnchor="middle">
+        <text x="600" y="775" fill="#94a3b8" fontSize="20" textAnchor="middle">
           Forward transitions toward greater molecular freedom have positive system entropy changes.
         </text>
       </svg>
@@ -217,7 +217,7 @@ function PhaseTransitionAnimation() {
 
 function EntropyTemperatureGraph() {
   return (
-    <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
+    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
       <svg
         viewBox="0 0 1200 760"
         role="img"
@@ -251,7 +251,7 @@ function EntropyTemperatureGraph() {
           d="M160 580 C235 545 285 505 330 455 L330 410 C390 380 425 345 470 305 L470 230 C575 205 680 180 790 160 L790 85 C885 75 965 68 1040 60"
           fill="none"
           stroke="#34d399"
-          strokeWidth="11"
+          strokeWidth="5"
           markerEnd="url(#stGreen)"
         />
 
@@ -265,17 +265,17 @@ function EntropyTemperatureGraph() {
         <line x1="470" y1="650" x2="470" y2="215" stroke="#fbbf24" strokeWidth="3" strokeDasharray="12 10" />
         <line x1="790" y1="650" x2="790" y2="75" stroke="#f472b6" strokeWidth="3" strokeDasharray="12 10" />
 
-        <text x="330" y="690" fill="#ddd6fe" fontSize="18" textAnchor="middle">Ttrans</text>
-        <text x="470" y="690" fill="#fde68a" fontSize="18" textAnchor="middle">Tm</text>
-        <text x="790" y="690" fill="#f9a8d4" fontSize="18" textAnchor="middle">Tb</text>
+        <text x="330" y="690" fill="#ddd6fe" fontSize="20" textAnchor="middle">Ttrans</text>
+        <text x="470" y="690" fill="#fde68a" fontSize="20" textAnchor="middle">Tm</text>
+        <text x="790" y="690" fill="#f9a8d4" fontSize="20" textAnchor="middle">Tb</text>
 
-        <text x="245" y="525" fill="#a5f3fc" fontSize="18">solid I</text>
-        <text x="380" y="360" fill="#ddd6fe" fontSize="18">solid II</text>
-        <text x="590" y="220" fill="#fde68a" fontSize="18">liquid</text>
-        <text x="915" y="120" fill="#f9a8d4" fontSize="18">gas</text>
+        <text x="245" y="525" fill="#a5f3fc" fontSize="20">solid I</text>
+        <text x="380" y="360" fill="#ddd6fe" fontSize="20">solid II</text>
+        <text x="590" y="220" fill="#fde68a" fontSize="20">liquid</text>
+        <text x="915" y="120" fill="#f9a8d4" fontSize="20">gas</text>
 
         <rect x="210" y="705" width="780" height="38" rx="18" fill="#0f172a" stroke="#22d3ee" strokeWidth="3" />
-        <text x="600" y="731" fill="#a5f3fc" fontSize="18" fontWeight="900" textAnchor="middle">
+        <text x="600" y="731" fill="#a5f3fc" fontSize="20" fontWeight="900" textAnchor="middle">
           Continuous slopes come from ∫Cp/T dT; vertical jumps equal ΔHtransition/Ttransition.
         </text>
       </svg>
@@ -285,7 +285,7 @@ function EntropyTemperatureGraph() {
 
 function TroutonRuleGraphic() {
   return (
-    <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
+    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
       <svg
         viewBox="0 0 1200 680"
         role="img"
@@ -308,7 +308,7 @@ function TroutonRuleGraphic() {
         <text x="1100" y="582" fill="#e2e8f0" fontSize="22">liquid family</text>
         <text x="88" y="105" fill="#e2e8f0" fontSize="22">ΔSvap/R</text>
 
-        <line x1="150" y1="315" x2="1050" y2="315" stroke="#34d399" strokeWidth="6" strokeDasharray="16 12" />
+        <line x1="150" y1="315" x2="1050" y2="315" stroke="#34d399" strokeWidth="4" strokeDasharray="16 12" />
         <text x="1025" y="290" fill="#a7f3d0" fontSize="22" fontWeight="900" textAnchor="end">≈ 10.5</text>
 
         {[
@@ -316,7 +316,7 @@ function TroutonRuleGraphic() {
         ].map(([cx,cy,label]) => (
           <g key={String(label)}>
             <circle cx={Number(cx)} cy={Number(cy)} r="15" fill="#67e8f9" />
-            <text x={Number(cx)} y={Number(cy)+6} fill="#020617" fontSize="13" fontWeight="900" textAnchor="middle">{label}</text>
+            <text x={Number(cx)} y={Number(cy)+6} fill="#020617" fontSize="17" fontWeight="900" textAnchor="middle">{label}</text>
           </g>
         ))}
 
@@ -324,7 +324,7 @@ function TroutonRuleGraphic() {
           <animate attributeName="r" values="14;22;14" dur="2.4s" repeatCount="indefinite" />
         </circle>
         <text x="900" y="150" fill="#f9a8d4" fontSize="20" fontWeight="900" textAnchor="middle">associated liquid</text>
-        <text x="900" y="225" fill="#cbd5e1" fontSize="17" textAnchor="middle">strong liquid-state ordering</text>
+        <text x="900" y="225" fill="#cbd5e1" fontSize="19" textAnchor="middle">strong liquid-state ordering</text>
 
         <rect x="220" y="600" width="760" height="48" rx="20" fill="#0f172a" stroke="#a78bfa" strokeWidth="4" />
         <text x="600" y="632" fill="#ddd6fe" fontSize="20" fontWeight="900" textAnchor="middle">
@@ -337,7 +337,7 @@ function TroutonRuleGraphic() {
 
 function ReactionEntropyLedger() {
   return (
-    <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
+    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
       <svg
         viewBox="0 0 1200 740"
         role="img"
@@ -354,35 +354,35 @@ function ReactionEntropyLedger() {
           REACTION ENTROPY IS A STOICHIOMETRIC STATE-FUNCTION BALANCE
         </text>
 
-        <rect x="70" y="135" width="430" height="360" rx="32" fill="#0f172a" stroke="#fb7185" strokeWidth="8" />
+        <rect x="70" y="135" width="430" height="360" rx="32" fill="#0f172a" stroke="#fb7185" strokeWidth="5" />
         <text x="285" y="190" fill="#fda4af" fontSize="26" fontWeight="900" textAnchor="middle">REACTANTS</text>
 
         <rect x="115" y="245" width="150" height="110" rx="22" fill="#4c1d95" stroke="#a78bfa" strokeWidth="4" />
         <text x="190" y="290" fill="#f8fafc" fontSize="24" fontWeight="900" textAnchor="middle">aA</text>
-        <text x="190" y="325" fill="#ddd6fe" fontSize="17" textAnchor="middle">aS<tspan baselineShift="sub">A</tspan></text>
+        <text x="190" y="325" fill="#ddd6fe" fontSize="19" textAnchor="middle">aS<tspan baselineShift="sub">A</tspan></text>
 
         <rect x="305" y="245" width="150" height="110" rx="22" fill="#4c1d95" stroke="#a78bfa" strokeWidth="4" />
         <text x="380" y="290" fill="#f8fafc" fontSize="24" fontWeight="900" textAnchor="middle">bB</text>
-        <text x="380" y="325" fill="#ddd6fe" fontSize="17" textAnchor="middle">bS<tspan baselineShift="sub">B</tspan></text>
+        <text x="380" y="325" fill="#ddd6fe" fontSize="19" textAnchor="middle">bS<tspan baselineShift="sub">B</tspan></text>
 
         <text x="285" y="430" fill="#f9a8d4" fontSize="23" fontWeight="900" textAnchor="middle">
           ΣνS = aSA + bSB
         </text>
 
-        <path d="M520 315 H680" stroke="#fbbf24" strokeWidth="11" />
+        <path d="M520 315 H680" stroke="#fbbf24" strokeWidth="5" />
         <polygon points="680,315 650,297 650,333" fill="#fbbf24" />
         <text x="600" y="275" fill="#fde68a" fontSize="20" fontWeight="900" textAnchor="middle">balanced reaction</text>
 
-        <rect x="700" y="135" width="430" height="360" rx="32" fill="#0f172a" stroke="#34d399" strokeWidth="8" />
+        <rect x="700" y="135" width="430" height="360" rx="32" fill="#0f172a" stroke="#34d399" strokeWidth="5" />
         <text x="915" y="190" fill="#a7f3d0" fontSize="26" fontWeight="900" textAnchor="middle">PRODUCTS</text>
 
         <rect x="745" y="245" width="150" height="110" rx="22" fill="#164e63" stroke="#22d3ee" strokeWidth="4" />
         <text x="820" y="290" fill="#f8fafc" fontSize="24" fontWeight="900" textAnchor="middle">cC</text>
-        <text x="820" y="325" fill="#a5f3fc" fontSize="17" textAnchor="middle">cS<tspan baselineShift="sub">C</tspan></text>
+        <text x="820" y="325" fill="#a5f3fc" fontSize="19" textAnchor="middle">cS<tspan baselineShift="sub">C</tspan></text>
 
         <rect x="935" y="245" width="150" height="110" rx="22" fill="#164e63" stroke="#22d3ee" strokeWidth="4" />
         <text x="1010" y="290" fill="#f8fafc" fontSize="24" fontWeight="900" textAnchor="middle">dD</text>
-        <text x="1010" y="325" fill="#a5f3fc" fontSize="17" textAnchor="middle">dS<tspan baselineShift="sub">D</tspan></text>
+        <text x="1010" y="325" fill="#a5f3fc" fontSize="19" textAnchor="middle">dS<tspan baselineShift="sub">D</tspan></text>
 
         <text x="915" y="430" fill="#a7f3d0" fontSize="23" fontWeight="900" textAnchor="middle">
           ΣνS = cSC + dSD
@@ -392,11 +392,11 @@ function ReactionEntropyLedger() {
         <text x="600" y="600" fill="#ddd6fe" fontSize="24" fontWeight="900" textAnchor="middle">
           ΔrS = ΣνSproducts − ΣνSreactants
         </text>
-        <text x="600" y="635" fill="#cbd5e1" fontSize="17" textAnchor="middle">
+        <text x="600" y="635" fill="#cbd5e1" fontSize="19" textAnchor="middle">
           Stoichiometric coefficients and physical states are essential.
         </text>
 
-        <text x="600" y="700" fill="#94a3b8" fontSize="18" textAnchor="middle">
+        <text x="600" y="700" fill="#94a3b8" fontSize="20" textAnchor="middle">
           Entropy of reaction is path independent; it is calculated from equilibrium-state molar entropies.
         </text>
       </svg>
@@ -406,7 +406,7 @@ function ReactionEntropyLedger() {
 
 function VanDerWaalsEntropyAnimation() {
   return (
-    <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
+    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
       <svg
         viewBox="0 0 1200 760"
         role="img"
@@ -434,7 +434,7 @@ function VanDerWaalsEntropyAnimation() {
         <text x="600" y="178" fill="#ddd6fe" fontSize="23" fontWeight="900" textAnchor="middle">
           (P + an²/V²)(V − nb) = nRT
         </text>
-        <text x="600" y="215" fill="#cbd5e1" fontSize="17" textAnchor="middle">
+        <text x="600" y="215" fill="#cbd5e1" fontSize="19" textAnchor="middle">
           a represents attractions; b represents excluded volume.
         </text>
 
@@ -450,7 +450,7 @@ function VanDerWaalsEntropyAnimation() {
         <text x="600" y="365" fill="#a5f3fc" fontSize="20" fontWeight="900" textAnchor="middle">
           Pressure term
         </text>
-        <text x="600" y="410" fill="#f8fafc" fontSize="19" fontWeight="900" textAnchor="middle">
+        <text x="600" y="410" fill="#f8fafc" fontSize="21" fontWeight="900" textAnchor="middle">
           P = nRT/(V−nb) − an²/V²
         </text>
 
@@ -462,18 +462,18 @@ function VanDerWaalsEntropyAnimation() {
           nRT/(V−nb)
         </text>
 
-        <path d="M350 395 H455" stroke="#34d399" strokeWidth="9" markerEnd="url(#vdwArrow)" />
-        <path d="M730 395 H835" stroke="#34d399" strokeWidth="9" markerEnd="url(#vdwArrow)" />
+        <path d="M350 395 H455" stroke="#34d399" strokeWidth="5" markerEnd="url(#vdwArrow)" />
+        <path d="M730 395 H835" stroke="#34d399" strokeWidth="5" markerEnd="url(#vdwArrow)" />
 
         <rect x="170" y="555" width="860" height="105" rx="28" fill="#0f172a" stroke="#fbbf24" strokeWidth="5" />
         <text x="600" y="595" fill="#fde68a" fontSize="21" fontWeight="900" textAnchor="middle">
           ΔS = nCv,m ln(T₂/T₁) + nR ln[(V₂−nb)/(V₁−nb)]
         </text>
-        <text x="600" y="635" fill="#cbd5e1" fontSize="17" textAnchor="middle">
+        <text x="600" y="635" fill="#cbd5e1" fontSize="19" textAnchor="middle">
           for constant Cv,m and fixed composition
         </text>
 
-        <text x="600" y="715" fill="#94a3b8" fontSize="18" textAnchor="middle">
+        <text x="600" y="715" fill="#94a3b8" fontSize="20" textAnchor="middle">
           Parameter a influences energetic behaviour, but the entropy volume term depends on the available volume V−nb.
         </text>
       </svg>
@@ -635,7 +635,7 @@ function WorkedExamples() {
       problem:
         "Two moles of a solid with constant Cp,m = 25.0 J mol⁻¹ K⁻¹ are heated reversibly at constant pressure from 300 K to 500 K. Find ΔS.",
       solution:
-        "ΔS = nCp,m ln(T2/T1) = 2×25.0×ln(500/300) ≈ 25.5 J K⁻¹.",
+        "ΔS = nCp,m ln(T₂/T₁) = 2×25.0×ln(500/300) ≈ 25.5 J K⁻¹.",
     },
   ];
 
@@ -718,7 +718,7 @@ const problems = [
   {
     title: "Concept Application 9 — physical states",
     question:
-      "Why is N2(g) + 3H2(g) → 2NH3(g) not thermodynamically equivalent to a hypothetical equation with liquid ammonia?",
+      "Why is N₂(g) + 3H₂(g) → 2NH₃(g) not thermodynamically equivalent to a hypothetical equation with liquid ammonia?",
     solution:
       "Molar entropy depends strongly on physical state. Reaction entropy must use the specified equilibrium state of every species.",
   },

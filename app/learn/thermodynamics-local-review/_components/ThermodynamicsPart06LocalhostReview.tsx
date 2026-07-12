@@ -85,7 +85,7 @@ function Formula({
 
 function EnergyLedgerAnimation() {
   return (
-    <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
+    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
       <svg
         viewBox="0 0 1200 680"
         role="img"
@@ -116,40 +116,40 @@ function EnergyLedgerAnimation() {
 
         <rect x="410" y="105" width="380" height="105" rx="30" fill="url(#ledgerCore)" stroke="#f8fafc" strokeWidth="5" />
         <text x="600" y="150" fill="#f8fafc" fontSize="28" fontWeight="900" textAnchor="middle">TOTAL ENERGY E</text>
-        <text x="600" y="183" fill="#cbd5e1" fontSize="19" textAnchor="middle">energy assigned to the complete selected system</text>
+        <text x="600" y="183" fill="#cbd5e1" fontSize="21" textAnchor="middle">energy assigned to the complete selected system</text>
 
-        <path d="M600 215 V285" stroke="#67e8f9" strokeWidth="8" markerEnd="url(#ledgerArrow)">
+        <path d="M600 215 V285" stroke="#67e8f9" strokeWidth="5" markerEnd="url(#ledgerArrow)">
           <animate attributeName="stroke-dasharray" values="0 80;40 40;80 0" dur="2s" repeatCount="indefinite" />
         </path>
 
-        <rect x="80" y="310" width="320" height="205" rx="28" fill="#0f172a" stroke="#34d399" strokeWidth="7" />
+        <rect x="80" y="310" width="320" height="205" rx="28" fill="#0f172a" stroke="#34d399" strokeWidth="4" />
         <text x="240" y="360" fill="#a7f3d0" fontSize="25" fontWeight="900" textAnchor="middle">INTERNAL ENERGY U</text>
-        <text x="240" y="404" fill="#cbd5e1" fontSize="18" textAnchor="middle">molecular translation</text>
-        <text x="240" y="436" fill="#cbd5e1" fontSize="18" textAnchor="middle">rotation and vibration</text>
-        <text x="240" y="468" fill="#cbd5e1" fontSize="18" textAnchor="middle">intermolecular, electronic, nuclear</text>
+        <text x="240" y="404" fill="#cbd5e1" fontSize="20" textAnchor="middle">molecular translation</text>
+        <text x="240" y="436" fill="#cbd5e1" fontSize="20" textAnchor="middle">rotation and vibration</text>
+        <text x="240" y="468" fill="#cbd5e1" fontSize="20" textAnchor="middle">intermolecular, electronic, nuclear</text>
 
-        <rect x="440" y="310" width="320" height="205" rx="28" fill="#0f172a" stroke="#fbbf24" strokeWidth="7" />
+        <rect x="440" y="310" width="320" height="205" rx="28" fill="#0f172a" stroke="#fbbf24" strokeWidth="4" />
         <text x="600" y="360" fill="#fde68a" fontSize="25" fontWeight="900" textAnchor="middle">MACROSCOPIC KE</text>
         <circle cx="535" cy="430" r="24" fill="#fde047">
           <animate attributeName="cx" values="500;700;500" dur="3.2s" repeatCount="indefinite" />
         </circle>
         <path d="M500 475 H700" stroke="#fbbf24" strokeWidth="5" strokeDasharray="16 10" />
-        <text x="600" y="495" fill="#cbd5e1" fontSize="18" textAnchor="middle">motion of the system as a whole</text>
+        <text x="600" y="495" fill="#cbd5e1" fontSize="20" textAnchor="middle">motion of the system as a whole</text>
 
-        <rect x="800" y="310" width="320" height="205" rx="28" fill="#0f172a" stroke="#f472b6" strokeWidth="7" />
+        <rect x="800" y="310" width="320" height="205" rx="28" fill="#0f172a" stroke="#f472b6" strokeWidth="4" />
         <text x="960" y="360" fill="#f9a8d4" fontSize="25" fontWeight="900" textAnchor="middle">EXTERNAL PE</text>
         <circle cx="960" cy="410" r="23" fill="#f472b6">
           <animate attributeName="cy" values="390;455;390" dur="3s" repeatCount="indefinite" />
         </circle>
-        <line x1="960" y1="470" x2="960" y2="395" stroke="#f472b6" strokeWidth="7" />
-        <text x="960" y="495" fill="#cbd5e1" fontSize="18" textAnchor="middle">gravity or an imposed external field</text>
+        <line x1="960" y1="470" x2="960" y2="395" stroke="#f472b6" strokeWidth="4" />
+        <text x="960" y="495" fill="#cbd5e1" fontSize="20" textAnchor="middle">gravity or an imposed external field</text>
 
         <rect x="220" y="560" width="760" height="72" rx="25" fill="#0f172a" stroke="#a78bfa" strokeWidth="5" />
         <text x="600" y="605" fill="#ddd6fe" fontSize="25" fontWeight="900" textAnchor="middle">
           E = U + KE(macroscopic) + PE(external)
         </text>
 
-        <text x="600" y="660" fill="#94a3b8" fontSize="18" textAnchor="middle">
+        <text x="600" y="660" fill="#94a3b8" fontSize="20" textAnchor="middle">
           If the system is stationary and no external field contribution changes, thermodynamic energy bookkeeping focuses on U.
         </text>
       </svg>
@@ -159,7 +159,7 @@ function EnergyLedgerAnimation() {
 
 function MolecularModesAnimation() {
   return (
-    <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
+    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
       <svg
         viewBox="0 0 1200 720"
         role="img"
@@ -178,7 +178,7 @@ function MolecularModesAnimation() {
         </text>
 
         <g>
-          <rect x="55" y="115" width="330" height="235" rx="28" fill="#0f172a" stroke="#22d3ee" strokeWidth="6" />
+          <rect x="55" y="115" width="330" height="235" rx="28" fill="#0f172a" stroke="#22d3ee" strokeWidth="4" />
           <text x="220" y="155" fill="#a5f3fc" fontSize="24" fontWeight="900" textAnchor="middle">TRANSLATION</text>
           <circle cx="130" cy="250" r="18" fill="#67e8f9">
             <animate attributeName="cx" values="105;300;105" dur="2.7s" repeatCount="indefinite" />
@@ -188,18 +188,18 @@ function MolecularModesAnimation() {
         </g>
 
         <g>
-          <rect x="435" y="115" width="330" height="235" rx="28" fill="#0f172a" stroke="#a78bfa" strokeWidth="6" />
+          <rect x="435" y="115" width="330" height="235" rx="28" fill="#0f172a" stroke="#a78bfa" strokeWidth="4" />
           <text x="600" y="155" fill="#ddd6fe" fontSize="24" fontWeight="900" textAnchor="middle">ROTATION</text>
           <g transform="translate(600 250)">
             <animateTransform attributeName="transform" type="rotate" from="0 600 250" to="360 600 250" dur="3s" repeatCount="indefinite" />
-            <line x1="-70" y1="0" x2="70" y2="0" stroke="#c4b5fd" strokeWidth="12" />
+            <line x1="-70" y1="0" x2="70" y2="0" stroke="#c4b5fd" strokeWidth="6" />
             <circle cx="-78" cy="0" r="22" fill="#f472b6" />
             <circle cx="78" cy="0" r="22" fill="#67e8f9" />
           </g>
         </g>
 
         <g>
-          <rect x="815" y="115" width="330" height="235" rx="28" fill="#0f172a" stroke="#fbbf24" strokeWidth="6" />
+          <rect x="815" y="115" width="330" height="235" rx="28" fill="#0f172a" stroke="#fbbf24" strokeWidth="4" />
           <text x="980" y="155" fill="#fde68a" fontSize="24" fontWeight="900" textAnchor="middle">VIBRATION</text>
           <circle cx="905" cy="250" r="23" fill="#f97316">
             <animate attributeName="cx" values="885;925;885" dur="1.5s" repeatCount="indefinite" />
@@ -207,14 +207,14 @@ function MolecularModesAnimation() {
           <circle cx="1055" cy="250" r="23" fill="#fde047">
             <animate attributeName="cx" values="1075;1035;1075" dur="1.5s" repeatCount="indefinite" />
           </circle>
-          <line x1="928" y1="250" x2="1032" y2="250" stroke="#fbbf24" strokeWidth="9">
+          <line x1="928" y1="250" x2="1032" y2="250" stroke="#fbbf24" strokeWidth="5">
             <animate attributeName="x1" values="908;948;908" dur="1.5s" repeatCount="indefinite" />
             <animate attributeName="x2" values="1052;1012;1052" dur="1.5s" repeatCount="indefinite" />
           </line>
         </g>
 
         <g>
-          <rect x="150" y="405" width="410" height="220" rx="28" fill="#0f172a" stroke="#34d399" strokeWidth="6" />
+          <rect x="150" y="405" width="410" height="220" rx="28" fill="#0f172a" stroke="#34d399" strokeWidth="4" />
           <text x="355" y="448" fill="#a7f3d0" fontSize="24" fontWeight="900" textAnchor="middle">INTERMOLECULAR POTENTIAL</text>
           <circle cx="270" cy="535" r="25" fill="#86efac">
             <animate attributeName="cx" values="245;315;245" dur="2.8s" repeatCount="indefinite" />
@@ -222,11 +222,11 @@ function MolecularModesAnimation() {
           <circle cx="440" cy="535" r="25" fill="#67e8f9">
             <animate attributeName="cx" values="465;395;465" dur="2.8s" repeatCount="indefinite" />
           </circle>
-          <path d="M305 535 Q355 485 405 535" fill="none" stroke="#34d399" strokeWidth="7" strokeDasharray="12 10" />
+          <path d="M305 535 Q355 485 405 535" fill="none" stroke="#34d399" strokeWidth="4" strokeDasharray="12 10" />
         </g>
 
         <g>
-          <rect x="640" y="405" width="410" height="220" rx="28" fill="#0f172a" stroke="#f472b6" strokeWidth="6" />
+          <rect x="640" y="405" width="410" height="220" rx="28" fill="#0f172a" stroke="#f472b6" strokeWidth="4" />
           <text x="845" y="448" fill="#f9a8d4" fontSize="24" fontWeight="900" textAnchor="middle">ELECTRONIC / INTRAMOLECULAR</text>
           <circle cx="845" cy="535" r="45" fill="#fde047" opacity="0.8" />
           <ellipse cx="845" cy="535" rx="135" ry="58" fill="none" stroke="#f472b6" strokeWidth="5">
@@ -237,7 +237,7 @@ function MolecularModesAnimation() {
           </circle>
         </g>
 
-        <text x="600" y="680" fill="#94a3b8" fontSize="18" textAnchor="middle">
+        <text x="600" y="680" fill="#94a3b8" fontSize="20" textAnchor="middle">
           Thermodynamics usually measures changes in the sum of these microscopic energies—not each contribution separately.
         </text>
       </svg>
@@ -247,7 +247,7 @@ function MolecularModesAnimation() {
 
 function IdealRealAnimation() {
   return (
-    <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
+    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
       <svg
         viewBox="0 0 1200 690"
         role="img"
@@ -265,7 +265,7 @@ function IdealRealAnimation() {
         <text x="300" y="58" fill="#a5f3fc" fontSize="30" fontWeight="900" textAnchor="middle">IDEAL GAS MODEL</text>
         <text x="900" y="58" fill="#f9a8d4" fontSize="30" fontWeight="900" textAnchor="middle">REAL GAS</text>
 
-        <rect x="70" y="110" width="460" height="360" rx="30" fill="#0f172a" stroke="#22d3ee" strokeWidth="7" />
+        <rect x="70" y="110" width="460" height="360" rx="30" fill="#0f172a" stroke="#22d3ee" strokeWidth="4" />
         {[
           [145,180],[255,160],[400,190],[175,300],[320,280],[445,345],[245,400]
         ].map(([cx,cy], i) => (
@@ -278,7 +278,7 @@ function IdealRealAnimation() {
 
         <line x1="600" y1="95" x2="600" y2="605" stroke="#334155" strokeWidth="4" />
 
-        <rect x="670" y="110" width="460" height="360" rx="30" fill="#0f172a" stroke="#f472b6" strokeWidth="7" />
+        <rect x="670" y="110" width="460" height="360" rx="30" fill="#0f172a" stroke="#f472b6" strokeWidth="4" />
         {[
           [750,180],[850,160],[1010,195],[780,310],[915,285],[1060,350],[845,405]
         ].map(([cx,cy], i) => (
@@ -472,9 +472,9 @@ const problems = [
   {
     title: "Concept Application 4 — real-gas isothermal change",
     question:
-      "For a van der Waals gas, derive ΔU when n moles expand isothermally from V1 to V2.",
+      "For a van der Waals gas, derive ΔU when n moles expand isothermally from V₁ to V₂.",
     solution:
-      "Using U(T,V) = f(T) − an²/V, ΔU = an²(1/V1 − 1/V2). For expansion V2 > V1, ΔU is positive.",
+      "Using U(T,V) = f(T) − an²/V, ΔU = an²(1/V₁ − 1/V₂). For expansion V₂ > V₁, ΔU is positive.",
   },
   {
     title: "Concept Application 5 — hard-sphere model",

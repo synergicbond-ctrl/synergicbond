@@ -86,7 +86,7 @@ function Formula({
 
 function AdiabaticPistonAnimation() {
   return (
-    <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
+    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
       <svg
         viewBox="0 0 1200 720"
         role="img"
@@ -117,8 +117,8 @@ function AdiabaticPistonAnimation() {
           ADIABATIC: NO HEAT CROSSING, BUT TEMPERATURE CAN CHANGE
         </text>
 
-        <rect x="80" y="100" width="1040" height="505" rx="36" fill="#0f172a" stroke="#f59e0b" strokeWidth="14" />
-        <path d="M210 520 V165 H790 V520" fill="#07111f" stroke="#22d3ee" strokeWidth="8" />
+        <rect x="80" y="100" width="1040" height="505" rx="36" fill="#0f172a" stroke="#f59e0b" strokeWidth="6" />
+        <path d="M210 520 V165 H790 V520" fill="#07111f" stroke="#22d3ee" strokeWidth="5" />
         <rect x="250" y="335" width="500" height="28" rx="9" fill="#67e8f9">
           <animate
             attributeName="y"
@@ -127,7 +127,7 @@ function AdiabaticPistonAnimation() {
             repeatCount="indefinite"
           />
         </rect>
-        <line x1="500" y1="165" x2="500" y2="335" stroke="#67e8f9" strokeWidth="18" strokeLinecap="round">
+        <line x1="500" y1="165" x2="500" y2="335" stroke="#67e8f9" strokeWidth="6" strokeLinecap="round">
           <animate
             attributeName="y2"
             values="365;235;365"
@@ -157,16 +157,16 @@ function AdiabaticPistonAnimation() {
           </circle>
         ))}
 
-        <path d="M500 130 V75" stroke="#34d399" strokeWidth="9" markerEnd="url(#adiaGreenArrow)" />
-        <path d="M560 75 V130" stroke="#fb7185" strokeWidth="9" markerEnd="url(#adiaRoseArrow)" />
-        <text x="430" y="92" fill="#a7f3d0" fontSize="19" textAnchor="middle">expansion</text>
-        <text x="635" y="92" fill="#fda4af" fontSize="19" textAnchor="middle">compression</text>
+        <path d="M500 130 V75" stroke="#34d399" strokeWidth="5" markerEnd="url(#adiaGreenArrow)" />
+        <path d="M560 75 V130" stroke="#fb7185" strokeWidth="5" markerEnd="url(#adiaRoseArrow)" />
+        <text x="430" y="92" fill="#a7f3d0" fontSize="21" textAnchor="middle">expansion</text>
+        <text x="635" y="92" fill="#fda4af" fontSize="21" textAnchor="middle">compression</text>
 
-        <path d="M815 325 H965" stroke="#fb7185" strokeWidth="8" />
-        <path d="M870 275 L940 375 M940 275 L870 375" stroke="#fb7185" strokeWidth="10" />
+        <path d="M815 325 H965" stroke="#fb7185" strokeWidth="5" />
+        <path d="M870 275 L940 375 M940 275 L870 375" stroke="#fb7185" strokeWidth="5" />
         <text x="905" y="245" fill="#fda4af" fontSize="24" fontWeight="900" textAnchor="middle">q = 0</text>
 
-        <rect x="845" y="410" width="230" height="130" rx="26" fill="#020617" stroke="url(#adiaTemp)" strokeWidth="6" />
+        <rect x="845" y="410" width="230" height="130" rx="26" fill="#020617" stroke="url(#adiaTemp)" strokeWidth="4" />
         <text x="960" y="450" fill="#a5f3fc" fontSize="20" fontWeight="900" textAnchor="middle">expansion: T ↓</text>
         <text x="960" y="495" fill="#fed7aa" fontSize="20" fontWeight="900" textAnchor="middle">compression: T ↑</text>
 
@@ -232,7 +232,7 @@ function DerivationLadder() {
 
 function TripleGraphAnimation() {
   return (
-    <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
+    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
       <svg
         viewBox="0 0 1200 720"
         role="img"
@@ -263,10 +263,10 @@ function TripleGraphAnimation() {
           <text x="180" y="35" fill="#a5f3fc" fontSize="24" fontWeight="900" textAnchor="middle">P–V</text>
           <line x1="55" y1="475" x2="350" y2="475" stroke="#e2e8f0" strokeWidth="5" />
           <line x1="55" y1="475" x2="55" y2="70" stroke="#e2e8f0" strokeWidth="5" />
-          <path id="isoPV" d="M95 115 C155 170 230 270 325 390" fill="none" stroke="#f472b6" strokeWidth="9" markerEnd="url(#tgPink)" />
-          <path id="adiaPV" d="M95 115 C135 195 185 330 290 435" fill="none" stroke="#34d399" strokeWidth="9" markerEnd="url(#tgGreen)" />
-          <text x="255" y="260" fill="#f9a8d4" fontSize="17">isothermal</text>
-          <text x="165" y="385" fill="#a7f3d0" fontSize="17">adiabatic</text>
+          <path id="isoPV" d="M95 115 C155 170 230 270 325 390" fill="none" stroke="#f472b6" strokeWidth="5" markerEnd="url(#tgPink)" />
+          <path id="adiaPV" d="M95 115 C135 195 185 330 290 435" fill="none" stroke="#34d399" strokeWidth="5" markerEnd="url(#tgGreen)" />
+          <text x="255" y="260" fill="#f9a8d4" fontSize="19">isothermal</text>
+          <text x="165" y="385" fill="#a7f3d0" fontSize="19">adiabatic</text>
           <text x="365" y="488" fill="#e2e8f0" fontSize="20">V</text>
           <text x="35" y="60" fill="#e2e8f0" fontSize="20">P</text>
           <circle r="10" fill="#86efac">
@@ -280,10 +280,10 @@ function TripleGraphAnimation() {
           <text x="180" y="35" fill="#fde68a" fontSize="24" fontWeight="900" textAnchor="middle">T–V</text>
           <line x1="55" y1="475" x2="350" y2="475" stroke="#e2e8f0" strokeWidth="5" />
           <line x1="55" y1="475" x2="55" y2="70" stroke="#e2e8f0" strokeWidth="5" />
-          <path d="M90 180 H325" fill="none" stroke="#f472b6" strokeWidth="9" />
-          <path id="adiaTV" d="M90 180 C150 235 220 335 325 420" fill="none" stroke="#34d399" strokeWidth="9" markerEnd="url(#tgGreen)" />
-          <text x="230" y="155" fill="#f9a8d4" fontSize="17">isothermal: T constant</text>
-          <text x="175" y="350" fill="#a7f3d0" fontSize="17">TV^(γ−1) constant</text>
+          <path d="M90 180 H325" fill="none" stroke="#f472b6" strokeWidth="5" />
+          <path id="adiaTV" d="M90 180 C150 235 220 335 325 420" fill="none" stroke="#34d399" strokeWidth="5" markerEnd="url(#tgGreen)" />
+          <text x="230" y="155" fill="#f9a8d4" fontSize="19">isothermal: T constant</text>
+          <text x="175" y="350" fill="#a7f3d0" fontSize="19">TV^(γ−1) constant</text>
           <text x="365" y="488" fill="#e2e8f0" fontSize="20">V</text>
           <text x="35" y="60" fill="#e2e8f0" fontSize="20">T</text>
           <circle r="10" fill="#86efac">
@@ -297,10 +297,10 @@ function TripleGraphAnimation() {
           <text x="180" y="35" fill="#ddd6fe" fontSize="24" fontWeight="900" textAnchor="middle">T–P</text>
           <line x1="55" y1="475" x2="350" y2="475" stroke="#e2e8f0" strokeWidth="5" />
           <line x1="55" y1="475" x2="55" y2="70" stroke="#e2e8f0" strokeWidth="5" />
-          <path d="M90 180 H325" fill="none" stroke="#f472b6" strokeWidth="9" />
-          <path id="adiaTP" d="M90 420 C165 330 245 230 325 150" fill="none" stroke="#34d399" strokeWidth="9" markerEnd="url(#tgGreen)" />
-          <text x="215" y="155" fill="#f9a8d4" fontSize="17">isothermal</text>
-          <text x="135" y="365" fill="#a7f3d0" fontSize="17">T ∝ P^((γ−1)/γ)</text>
+          <path d="M90 180 H325" fill="none" stroke="#f472b6" strokeWidth="5" />
+          <path id="adiaTP" d="M90 420 C165 330 245 230 325 150" fill="none" stroke="#34d399" strokeWidth="5" markerEnd="url(#tgGreen)" />
+          <text x="215" y="155" fill="#f9a8d4" fontSize="19">isothermal</text>
+          <text x="135" y="365" fill="#a7f3d0" fontSize="19">T ∝ P^((γ−1)/γ)</text>
           <text x="365" y="488" fill="#e2e8f0" fontSize="20">P</text>
           <text x="35" y="60" fill="#e2e8f0" fontSize="20">T</text>
           <circle r="10" fill="#86efac">
@@ -321,7 +321,7 @@ function TripleGraphAnimation() {
 
 function PathComparisonAnimation() {
   return (
-    <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
+    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
       <svg
         viewBox="0 0 1200 690"
         role="img"
@@ -369,14 +369,14 @@ function PathComparisonAnimation() {
             <text x={item.x + 145} y="60" fill={item.stroke} fontSize="26" fontWeight="900" textAnchor="middle">
               {item.title}
             </text>
-            <text x={item.x + 145} y="92" fill="#cbd5e1" fontSize="17" textAnchor="middle">
+            <text x={item.x + 145} y="92" fill="#cbd5e1" fontSize="19" textAnchor="middle">
               {item.subtitle}
             </text>
             <path
               d={`M${item.x + 10} 500 V150 H${item.x + 280} V500`}
               fill="none"
               stroke={item.stroke}
-              strokeWidth="8"
+              strokeWidth="5"
             />
             <rect x={item.x + 40} y="330" width="210" height="24" rx="8" fill={item.stroke}>
               <animate
@@ -392,7 +392,7 @@ function PathComparisonAnimation() {
               x2={item.x + 145}
               y2="330"
               stroke={item.stroke}
-              strokeWidth="14"
+              strokeWidth="6"
               strokeLinecap="round"
             >
               <animate
@@ -403,13 +403,13 @@ function PathComparisonAnimation() {
               />
             </line>
             <rect x={item.x + 30} y="540" width="230" height="75" rx="20" fill="#0f172a" stroke={item.stroke} strokeWidth="4" />
-            <text x={item.x + 145} y="585" fill={item.stroke} fontSize="19" fontWeight="900" textAnchor="middle">
+            <text x={item.x + 145} y="585" fill={item.stroke} fontSize="21" fontWeight="900" textAnchor="middle">
               {item.temp}
             </text>
           </g>
         ))}
 
-        <text x="600" y="655" fill="#94a3b8" fontSize="18" textAnchor="middle">
+        <text x="600" y="655" fill="#94a3b8" fontSize="20" textAnchor="middle">
           Comparison assumes the same initial ideal-gas state and the same final volume.
         </text>
       </svg>
@@ -468,7 +468,7 @@ function RetainedExampleOne() {
       <div className="flex flex-wrap items-center justify-between gap-3">
         <div>
           <p className="text-xs font-black uppercase tracking-[0.2em] text-amber-300">
-            Retained example 1
+            Example 1
           </p>
           <h3 className="mt-2 text-xl font-black text-white">
             Two-mole monatomic gas: three adiabatic routes
@@ -564,7 +564,7 @@ function RetainedExampleTwo() {
       <div className="flex flex-wrap items-center justify-between gap-3">
         <div>
           <p className="text-xs font-black uppercase tracking-[0.2em] text-violet-300">
-            Retained example 2
+            Example 2
           </p>
           <h3 className="mt-2 text-xl font-black text-white">
             Final temperature in one-step adiabatic expansion
@@ -1140,7 +1140,7 @@ export default function ThermodynamicsPart10() {
           </div>
         </Section>
 
-        <Section index="09" title="Retained chapter examples">
+        <Section index="09" title="Chapter examples">
           <RetainedExampleOne />
           <RetainedExampleTwo />
         </Section>

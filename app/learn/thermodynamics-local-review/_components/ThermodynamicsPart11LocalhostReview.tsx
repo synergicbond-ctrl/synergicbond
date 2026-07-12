@@ -85,7 +85,7 @@ function Formula({
 
 function PolytropicFamilyAnimation() {
   return (
-    <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
+    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
       <svg
         viewBox="0 0 1200 760"
         role="img"
@@ -123,11 +123,11 @@ function PolytropicFamilyAnimation() {
         <text x="1125" y="662" fill="#e2e8f0" fontSize="25">V</text>
         <text x="103" y="87" fill="#e2e8f0" fontSize="25">P</text>
 
-        <path id="polyX0" d="M230 255 H980" fill="none" stroke="#fbbf24" strokeWidth="9" markerEnd="url(#polyAmber)" />
-        <path id="polyX1" d="M230 150 C370 240 620 390 980 535" fill="none" stroke="#f472b6" strokeWidth="9" markerEnd="url(#polyPink)" />
-        <path id="polyMid" d="M230 150 C335 270 515 455 890 595" fill="none" stroke="#22d3ee" strokeWidth="9" markerEnd="url(#polyCyan)" />
-        <path id="polyGamma" d="M230 150 C305 300 430 500 755 620" fill="none" stroke="#34d399" strokeWidth="9" markerEnd="url(#polyGreen)" />
-        <path d="M230 150 V620" fill="none" stroke="#a78bfa" strokeWidth="9" strokeDasharray="16 12" />
+        <path id="polyX0" d="M230 255 H980" fill="none" stroke="#fbbf24" strokeWidth="5" markerEnd="url(#polyAmber)" />
+        <path id="polyX1" d="M230 150 C370 240 620 390 980 535" fill="none" stroke="#f472b6" strokeWidth="5" markerEnd="url(#polyPink)" />
+        <path id="polyMid" d="M230 150 C335 270 515 455 890 595" fill="none" stroke="#22d3ee" strokeWidth="5" markerEnd="url(#polyCyan)" />
+        <path id="polyGamma" d="M230 150 C305 300 430 500 755 620" fill="none" stroke="#34d399" strokeWidth="5" markerEnd="url(#polyGreen)" />
+        <path d="M230 150 V620" fill="none" stroke="#a78bfa" strokeWidth="5" strokeDasharray="16 12" />
 
         <circle r="12" fill="#fde047">
           <animateMotion dur="4.2s" repeatCount="indefinite">
@@ -167,7 +167,7 @@ function PolytropicFamilyAnimation() {
 
 function HeatCapacityRegimeAnimation() {
   return (
-    <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
+    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
       <svg
         viewBox="0 0 1200 720"
         role="img"
@@ -197,46 +197,46 @@ function HeatCapacityRegimeAnimation() {
         <text x="835" y="675" fill="#a7f3d0" fontSize="20" textAnchor="middle">x = γ</text>
 
         <line x1="150" y1="350" x2="1090" y2="350" stroke="#22d3ee" strokeWidth="3" strokeDasharray="10 10" opacity="0.6" />
-        <text x="1080" y="337" fill="#a5f3fc" fontSize="19" textAnchor="end">Cᵥ</text>
+        <text x="1080" y="337" fill="#a5f3fc" fontSize="21" textAnchor="end">Cᵥ</text>
 
         <line x1="150" y1="250" x2="1090" y2="250" stroke="#fbbf24" strokeWidth="3" strokeDasharray="10 10" opacity="0.6" />
-        <text x="1080" y="237" fill="#fde68a" fontSize="19" textAnchor="end">Cₚ</text>
+        <text x="1080" y="237" fill="#fde68a" fontSize="21" textAnchor="end">Cₚ</text>
 
         <path
           d="M160 315 C310 300 470 260 600 115"
           fill="none"
           stroke="#fbbf24"
-          strokeWidth="9"
+          strokeWidth="5"
         />
         <path
           d="M680 645 C710 520 765 390 835 585"
           fill="none"
           stroke="#f472b6"
-          strokeWidth="9"
+          strokeWidth="5"
         />
         <path
           d="M835 585 C900 455 985 385 1080 365"
           fill="none"
           stroke="#34d399"
-          strokeWidth="9"
+          strokeWidth="5"
         />
 
         <circle cx="420" cy="250" r="13" fill="#fde047">
           <animate attributeName="r" values="10;18;10" dur="2.4s" repeatCount="indefinite" />
         </circle>
-        <text x="420" y="220" fill="#fde68a" fontSize="19" textAnchor="middle">x = 0 → Cₘ = Cₚ</text>
+        <text x="420" y="220" fill="#fde68a" fontSize="21" textAnchor="middle">x = 0 → Cₘ = Cₚ</text>
 
         <circle cx="835" cy="585" r="13" fill="#86efac">
           <animate attributeName="r" values="10;18;10" dur="2.4s" repeatCount="indefinite" />
         </circle>
-        <text x="835" y="545" fill="#a7f3d0" fontSize="19" textAnchor="middle">Cₘ = 0</text>
+        <text x="835" y="545" fill="#a7f3d0" fontSize="21" textAnchor="middle">Cₘ = 0</text>
 
         <text x="695" y="160" fill="#fda4af" fontSize="20" fontWeight="900">x → 1⁻: +∞</text>
         <text x="695" y="625" fill="#fda4af" fontSize="20" fontWeight="900">x → 1⁺: −∞</text>
-        <text x="980" y="405" fill="#a5f3fc" fontSize="19" fontWeight="900">x → ∞: Cₘ → Cᵥ</text>
+        <text x="980" y="405" fill="#a5f3fc" fontSize="21" fontWeight="900">x → ∞: Cₘ → Cᵥ</text>
 
         <rect x="210" y="625" width="360" height="48" rx="20" fill="#0f172a" stroke="#a78bfa" strokeWidth="4" />
-        <text x="390" y="657" fill="#ddd6fe" fontSize="19" fontWeight="900" textAnchor="middle">
+        <text x="390" y="657" fill="#ddd6fe" fontSize="21" fontWeight="900" textAnchor="middle">
           Cₘ = Cᵥ + R/(1−x)
         </text>
       </svg>
@@ -496,21 +496,21 @@ const problems = [
     question:
       "An ideal gas follows a reversible path for which pressure becomes one-fourth when volume doubles. Find the polytropic index.",
     solution:
-      "From P1V1^x = P2V2^x, P2/P1 = (V1/V2)^x. Thus 1/4 = (1/2)^x, giving x = 2.",
+      "From P1V1^x = P2V2^x, P₂/P₁ = (V₁/V₂)^x. Thus 1/4 = (1/2)^x, giving x = 2.",
   },
   {
     title: "Concept Application 2 — final temperature",
     question:
-      "One mole of ideal gas expands polytropically with x = 1.30 from 300 K until its volume triples. Find T2.",
+      "One mole of ideal gas expands polytropically with x = 1.30 from 300 K until its volume triples. Find T₂.",
     solution:
-      "T2/T1 = (V1/V2)^(x−1) = (1/3)^0.30. Hence T2 ≈ 215.8 K.",
+      "T₂/T₁ = (V₁/V₂)^(x−1) = (1/3)^0.30. Hence T₂ ≈ 215.8 K.",
   },
   {
     title: "Concept Application 3 — work from temperatures",
     question:
       "Three moles of ideal gas undergo x = 1.25 polytropic expansion from 500 K to 400 K. Calculate chemistry-sign work.",
     solution:
-      "w = nR(T2−T1)/(x−1) = 3×8.314×(−100)/0.25 ≈ −9.98 kJ.",
+      "w = nR(T₂−T₁)/(x−1) = 3×8.314×(−100)/0.25 ≈ −9.98 kJ.",
   },
   {
     title: "Concept Application 4 — effective heat capacity",
@@ -538,7 +538,7 @@ const problems = [
     question:
       "Explain mathematically why x → ∞ approaches an isochoric process.",
     solution:
-      "For finite pressure ratios, V2/V1 = (P1/P2)^(1/x) tends to 1 as x → ∞. Hence volume change tends to zero and Cm tends to Cv,m.",
+      "For finite pressure ratios, V₂/V₁ = (P₁/P₂)^(1/x) tends to 1 as x → ∞. Hence volume change tends to zero and Cm tends to Cv,m.",
   },
   {
     title: "Concept Application 8 — negative heat capacity",
@@ -573,7 +573,7 @@ const problems = [
     question:
       "Derive the T–P relation for a polytropic ideal-gas process.",
     solution:
-      "Eliminate V from PV^x = constant using V = nRT/P. This gives T^xP^(1−x) = constant, or T2/T1 = (P2/P1)^((x−1)/x).",
+      "Eliminate V from PV^x = constant using V = nRT/P. This gives T^xP^(1−x) = constant, or T₂/T₁ = (P₂/P₁)^((x−1)/x).",
   },
   {
     title: "Concept Application 13 — infer process from Cm",
@@ -587,7 +587,7 @@ const problems = [
     question:
       "From the same initial state to the same larger volume, rank final pressure for x = 0, 1, 1.2 and γ = 1.4.",
     solution:
-      "P2/P1 = (V1/V2)^x. For V2 > V1, larger x gives smaller final pressure. Therefore P(x=0) > P(x=1) > P(x=1.2) > P(x=1.4).",
+      "P₂/P₁ = (V₁/V₂)^x. For V₂ > V₁, larger x gives smaller final pressure. Therefore P(x=0) > P(x=1) > P(x=1.2) > P(x=1.4).",
   },
 ];
 

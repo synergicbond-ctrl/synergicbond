@@ -86,7 +86,7 @@ function Formula({
 
 function ThirdLawCrystalAnimation() {
   return (
-    <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
+    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
       <svg
         viewBox="0 0 1200 780"
         role="img"
@@ -121,7 +121,7 @@ function ThirdLawCrystalAnimation() {
           <text x="285" y="120" fill="#fde68a" fontSize="26" fontWeight="900" textAnchor="middle">
             FINITE TEMPERATURE
           </text>
-          <rect x="75" y="155" width="420" height="410" rx="32" fill="#0f172a" stroke="#fbbf24" strokeWidth="8" />
+          <rect x="75" y="155" width="420" height="410" rx="32" fill="#0f172a" stroke="#fbbf24" strokeWidth="5" />
           {Array.from({ length: 20 }).map((_, i) => {
             const cx = 130 + (i % 5) * 78;
             const cy = 220 + Math.floor(i / 5) * 82;
@@ -140,12 +140,12 @@ function ThirdLawCrystalAnimation() {
               </circle>
             );
           })}
-          <text x="285" y="610" fill="#fde68a" fontSize="19" fontWeight="900" textAnchor="middle">
+          <text x="285" y="610" fill="#fde68a" fontSize="21" fontWeight="900" textAnchor="middle">
             many thermally accessible excitations
           </text>
         </g>
 
-        <path d="M515 360 H675" stroke="#22d3ee" strokeWidth="11" markerEnd="url(#tlArrow)">
+        <path d="M515 360 H675" stroke="#22d3ee" strokeWidth="5" markerEnd="url(#tlArrow)">
           <animate attributeName="stroke-dasharray" values="0 180;90 90;180 0" dur="2.2s" repeatCount="indefinite" />
         </path>
         <text x="595" y="320" fill="#a5f3fc" fontSize="22" fontWeight="900" textAnchor="middle">
@@ -156,7 +156,7 @@ function ThirdLawCrystalAnimation() {
           <text x="915" y="120" fill="#a5f3fc" fontSize="26" fontWeight="900" textAnchor="middle">
             PERFECT CRYSTAL AT 0 K
           </text>
-          <rect x="705" y="155" width="420" height="410" rx="32" fill="#0f172a" stroke="#22d3ee" strokeWidth="8" />
+          <rect x="705" y="155" width="420" height="410" rx="32" fill="#0f172a" stroke="#22d3ee" strokeWidth="5" />
           {Array.from({ length: 20 }).map((_, i) => {
             const cx = 760 + (i % 5) * 78;
             const cy = 220 + Math.floor(i / 5) * 82;
@@ -166,7 +166,7 @@ function ThirdLawCrystalAnimation() {
               </circle>
             );
           })}
-          <text x="915" y="610" fill="#a5f3fc" fontSize="19" fontWeight="900" textAnchor="middle">
+          <text x="915" y="610" fill="#a5f3fc" fontSize="21" fontWeight="900" textAnchor="middle">
             one unique ordered ground-state arrangement
           </text>
         </g>
@@ -176,7 +176,7 @@ function ThirdLawCrystalAnimation() {
           Ω₀ = 1 ⇒ S(0) = k<tspan baselineShift="sub">B</tspan> ln1 = 0
         </text>
 
-        <text x="600" y="765" fill="#94a3b8" fontSize="18" textAnchor="middle">
+        <text x="600" y="765" fill="#94a3b8" fontSize="20" textAnchor="middle">
           Residual disorder changes Ω₀ from one and must be added explicitly.
         </text>
       </svg>
@@ -195,7 +195,7 @@ function BoltzmannMultiplicityAnimation() {
   ];
 
   return (
-    <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
+    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
       <svg
         viewBox="0 0 1200 820"
         role="img"
@@ -213,7 +213,7 @@ function BoltzmannMultiplicityAnimation() {
           BOLTZMANN BRIDGE: MICROSCOPIC MULTIPLICITY → MACROSCOPIC ENTROPY
         </text>
 
-        <rect x="400" y="110" width="400" height="100" rx="28" fill="#0f172a" stroke="#a78bfa" strokeWidth="6" />
+        <rect x="400" y="110" width="400" height="100" rx="28" fill="#0f172a" stroke="#a78bfa" strokeWidth="4" />
         <text x="600" y="150" fill="#ddd6fe" fontSize="22" fontWeight="900" textAnchor="middle">
           one macrostate
         </text>
@@ -225,7 +225,7 @@ function BoltzmannMultiplicityAnimation() {
           const y = 285 + row * 74;
           return (
             <g key={row}>
-              <text x="165" y={y + 9} fill="#cbd5e1" fontSize="17" textAnchor="end">
+              <text x="165" y={y + 9} fill="#cbd5e1" fontSize="19" textAnchor="end">
                 microstate {row + 1}
               </text>
               {arrangement.map((label, col) => (
@@ -259,7 +259,7 @@ function BoltzmannMultiplicityAnimation() {
           );
         })}
 
-        <rect x="825" y="280" width="280" height="380" rx="30" fill="#0f172a" stroke="#34d399" strokeWidth="7" />
+        <rect x="825" y="280" width="280" height="380" rx="30" fill="#0f172a" stroke="#34d399" strokeWidth="4" />
         <text x="965" y="335" fill="#a7f3d0" fontSize="24" fontWeight="900" textAnchor="middle">
           MULTIPLICITY
         </text>
@@ -269,10 +269,10 @@ function BoltzmannMultiplicityAnimation() {
         <text x="965" y="485" fill="#fde68a" fontSize="25" fontWeight="900" textAnchor="middle">
           S = k<tspan baselineShift="sub">B</tspan> lnΩ
         </text>
-        <text x="965" y="550" fill="#cbd5e1" fontSize="18" textAnchor="middle">
+        <text x="965" y="550" fill="#cbd5e1" fontSize="20" textAnchor="middle">
           logarithm makes entropy additive
         </text>
-        <text x="965" y="600" fill="#cbd5e1" fontSize="18" textAnchor="middle">
+        <text x="965" y="600" fill="#cbd5e1" fontSize="20" textAnchor="middle">
           when independent multiplicities multiply
         </text>
 
@@ -287,7 +287,7 @@ function BoltzmannMultiplicityAnimation() {
 
 function ResidualEntropyAnimation() {
   return (
-    <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
+    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
       <svg
         viewBox="0 0 1200 790"
         role="img"
@@ -308,7 +308,7 @@ function ResidualEntropyAnimation() {
           <text x="305" y="120" fill="#a7f3d0" fontSize="26" fontWeight="900" textAnchor="middle">
             PERFECTLY ORDERED
           </text>
-          <rect x="70" y="155" width="470" height="410" rx="32" fill="#0f172a" stroke="#34d399" strokeWidth="8" />
+          <rect x="70" y="155" width="470" height="410" rx="32" fill="#0f172a" stroke="#34d399" strokeWidth="5" />
 
           {Array.from({ length: 12 }).map((_, i) => {
             const x = 125 + (i % 4) * 110;
@@ -316,7 +316,7 @@ function ResidualEntropyAnimation() {
             return (
               <g key={i}>
                 <circle cx={x} cy={y} r="22" fill="#164e63" stroke="#67e8f9" strokeWidth="4" />
-                <line x1={x - 32} y1={y} x2={x + 32} y2={y} stroke="#fde047" strokeWidth="8" strokeLinecap="round" />
+                <line x1={x - 32} y1={y} x2={x + 32} y2={y} stroke="#fde047" strokeWidth="5" strokeLinecap="round" />
                 <circle cx={x - 32} cy={y} r="7" fill="#f8fafc" />
                 <circle cx={x + 32} cy={y} r="7" fill="#f8fafc" />
               </g>
@@ -334,7 +334,7 @@ function ResidualEntropyAnimation() {
           <text x="895" y="120" fill="#fda4af" fontSize="26" fontWeight="900" textAnchor="middle">
             ORIENTATIONAL DISORDER
           </text>
-          <rect x="660" y="155" width="470" height="410" rx="32" fill="#0f172a" stroke="#fb7185" strokeWidth="8" />
+          <rect x="660" y="155" width="470" height="410" rx="32" fill="#0f172a" stroke="#fb7185" strokeWidth="5" />
 
           {Array.from({ length: 12 }).map((_, i) => {
             const x = 715 + (i % 4) * 110;
@@ -343,7 +343,7 @@ function ResidualEntropyAnimation() {
             return (
               <g key={i} transform={`rotate(${angle} ${x} ${y})`}>
                 <circle cx={x} cy={y} r="22" fill="#4c1d95" stroke="#f472b6" strokeWidth="4" />
-                <line x1={x - 32} y1={y} x2={x + 32} y2={y} stroke="#fde047" strokeWidth="8" strokeLinecap="round" />
+                <line x1={x - 32} y1={y} x2={x + 32} y2={y} stroke="#fde047" strokeWidth="5" strokeLinecap="round" />
                 <circle cx={x - 32} cy={y} r="7" fill="#f8fafc" />
                 <circle cx={x + 32} cy={y} r="7" fill="#f8fafc" />
                 <animateTransform
@@ -373,7 +373,7 @@ function ResidualEntropyAnimation() {
 
 function DebyeT3Animation() {
   return (
-    <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
+    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
       <svg
         viewBox="0 0 1200 750"
         role="img"
@@ -406,7 +406,7 @@ function DebyeT3Animation() {
           d="M150 600 C340 595 500 545 650 405 C780 280 900 165 1035 120 L1035 610 L150 610 Z"
           fill="url(#debyeFill)"
           stroke="#22d3ee"
-          strokeWidth="10"
+          strokeWidth="5"
         />
 
         {[250, 370, 490, 610, 730, 850, 970].map((x, i) => {
@@ -418,8 +418,8 @@ function DebyeT3Animation() {
           );
         })}
 
-        <path d="M150 600 C255 600 345 590 430 560" fill="none" stroke="#f472b6" strokeWidth="7" strokeDasharray="14 10" />
-        <text x="305" y="530" fill="#f9a8d4" fontSize="19" fontWeight="900" textAnchor="middle">
+        <path d="M150 600 C255 600 345 590 430 560" fill="none" stroke="#f472b6" strokeWidth="4" strokeDasharray="14 10" />
+        <text x="305" y="530" fill="#f9a8d4" fontSize="21" fontWeight="900" textAnchor="middle">
           extrapolated low-T region
         </text>
 
@@ -427,7 +427,7 @@ function DebyeT3Animation() {
         <text x="880" y="463" fill="#ddd6fe" fontSize="22" fontWeight="900" textAnchor="middle">
           C<tspan baselineShift="sub">p,m</tspan> = aT³
         </text>
-        <text x="880" y="505" fill="#f8fafc" fontSize="19" fontWeight="900" textAnchor="middle">
+        <text x="880" y="505" fill="#f8fafc" fontSize="21" fontWeight="900" textAnchor="middle">
           S<tspan baselineShift="sub">m</tspan>(T)−S<tspan baselineShift="sub">m</tspan>(0) = aT³/3
         </text>
 
@@ -442,7 +442,7 @@ function DebyeT3Animation() {
 
 function CalorimetricEntropyPathAnimation() {
   return (
-    <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
+    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
       <svg
         viewBox="0 0 1200 840"
         role="img"
@@ -474,7 +474,7 @@ function CalorimetricEntropyPathAnimation() {
           { x: 705, w: 355, label: "gas", fill: "#4c0519", stroke: "#f472b6" },
         ].map((phase) => (
           <g key={phase.label}>
-            <rect x={phase.x} y="200" width={phase.w} height="370" rx="28" fill={phase.fill} opacity="0.75" stroke={phase.stroke} strokeWidth="6" />
+            <rect x={phase.x} y="200" width={phase.w} height="370" rx="28" fill={phase.fill} opacity="0.75" stroke={phase.stroke} strokeWidth="4" />
             <text x={phase.x + phase.w / 2} y="545" fill={phase.stroke} fontSize="24" fontWeight="900" textAnchor="middle">
               {phase.label}
             </text>
@@ -486,7 +486,7 @@ function CalorimetricEntropyPathAnimation() {
           d="M120 585 C210 545 275 470 345 410 L345 350 C410 310 505 280 660 250 L660 165 C790 130 900 105 1060 95"
           fill="none"
           stroke="#34d399"
-          strokeWidth="10"
+          strokeWidth="5"
         />
 
         <circle r="13" fill="#fde047">
@@ -497,14 +497,14 @@ function CalorimetricEntropyPathAnimation() {
 
         <line x1="345" y1="625" x2="345" y2="340" stroke="#fbbf24" strokeWidth="4" strokeDasharray="12 10" />
         <line x1="660" y1="625" x2="660" y2="155" stroke="#f472b6" strokeWidth="4" strokeDasharray="12 10" />
-        <text x="345" y="665" fill="#fde68a" fontSize="19" textAnchor="middle">T<tspan baselineShift="sub">f</tspan></text>
-        <text x="660" y="665" fill="#f9a8d4" fontSize="19" textAnchor="middle">T<tspan baselineShift="sub">b</tspan></text>
+        <text x="345" y="665" fill="#fde68a" fontSize="21" textAnchor="middle">T<tspan baselineShift="sub">f</tspan></text>
+        <text x="660" y="665" fill="#f9a8d4" fontSize="21" textAnchor="middle">T<tspan baselineShift="sub">b</tspan></text>
 
-        <text x="190" y="350" fill="#a5f3fc" fontSize="17">∫C<tspan baselineShift="sub">p,s</tspan>/T dT</text>
-        <text x="420" y="255" fill="#fde68a" fontSize="17">ΔH<tspan baselineShift="sub">fus</tspan>/T<tspan baselineShift="sub">f</tspan></text>
-        <text x="505" y="205" fill="#fde68a" fontSize="17">∫C<tspan baselineShift="sub">p,l</tspan>/T dT</text>
-        <text x="680" y="135" fill="#f9a8d4" fontSize="17">ΔH<tspan baselineShift="sub">vap</tspan>/T<tspan baselineShift="sub">b</tspan></text>
-        <text x="875" y="95" fill="#f9a8d4" fontSize="17">∫C<tspan baselineShift="sub">p,g</tspan>/T dT</text>
+        <text x="190" y="350" fill="#a5f3fc" fontSize="19">∫C<tspan baselineShift="sub">p,s</tspan>/T dT</text>
+        <text x="420" y="255" fill="#fde68a" fontSize="19">ΔH<tspan baselineShift="sub">fus</tspan>/T<tspan baselineShift="sub">f</tspan></text>
+        <text x="505" y="205" fill="#fde68a" fontSize="19">∫C<tspan baselineShift="sub">p,l</tspan>/T dT</text>
+        <text x="680" y="135" fill="#f9a8d4" fontSize="19">ΔH<tspan baselineShift="sub">vap</tspan>/T<tspan baselineShift="sub">b</tspan></text>
+        <text x="875" y="95" fill="#f9a8d4" fontSize="19">∫C<tspan baselineShift="sub">p,g</tspan>/T dT</text>
 
         <rect x="95" y="705" width="1010" height="90" rx="27" fill="#0f172a" stroke="#a78bfa" strokeWidth="5" />
         <text x="600" y="742" fill="#ddd6fe" fontSize="20" fontWeight="900" textAnchor="middle">
@@ -521,7 +521,7 @@ function CalorimetricEntropyPathAnimation() {
 function AreaEquivalenceGraphic() {
   return (
     <div className="grid gap-4 lg:grid-cols-2">
-      <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
+      <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
         <svg viewBox="0 0 760 560" role="img" aria-labelledby="cpt-title cpt-description" className="h-auto w-full">
           <title id="cpt-title">Area under heat capacity divided by temperature versus temperature</title>
           <desc id="cpt-description">The area under Cp divided by T from zero to the target temperature equals the entropy increase.</desc>
@@ -531,17 +531,17 @@ function AreaEquivalenceGraphic() {
           </text>
           <line x1="90" y1="470" x2="690" y2="470" stroke="#e2e8f0" strokeWidth="4" />
           <line x1="90" y1="470" x2="90" y2="95" stroke="#e2e8f0" strokeWidth="4" />
-          <path d="M105 450 C210 420 300 315 410 220 C500 145 585 125 650 115 L650 470 L105 470 Z" fill="#22d3ee" fillOpacity="0.22" stroke="#22d3ee" strokeWidth="8" />
+          <path d="M105 450 C210 420 300 315 410 220 C500 145 585 125 650 115 L650 470 L105 470 Z" fill="#22d3ee" fillOpacity="0.22" stroke="#22d3ee" strokeWidth="5" />
           <line x1="540" y1="470" x2="540" y2="145" stroke="#fbbf24" strokeWidth="4" strokeDasharray="12 10" />
-          <text x="540" y="510" fill="#fde68a" fontSize="18" textAnchor="middle">T</text>
-          <text x="62" y="88" fill="#e2e8f0" fontSize="18">C<tspan baselineShift="sub">p</tspan>/T</text>
+          <text x="540" y="510" fill="#fde68a" fontSize="20" textAnchor="middle">T</text>
+          <text x="62" y="88" fill="#e2e8f0" fontSize="20">C<tspan baselineShift="sub">p</tspan>/T</text>
           <text x="370" y="320" fill="#a5f3fc" fontSize="20" fontWeight="900" textAnchor="middle">
             area = ∫₀ᵀ C<tspan baselineShift="sub">p,m</tspan>(T′)/T′ dT′
           </text>
         </svg>
       </div>
 
-      <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
+      <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
         <svg viewBox="0 0 760 560" role="img" aria-labelledby="cpln-title cpln-description" className="h-auto w-full">
           <title id="cpln-title">Area under heat capacity versus logarithm of temperature</title>
           <desc id="cpln-description">Because d ln T equals dT divided by T, the area under Cp versus ln T gives the same entropy increase.</desc>
@@ -551,10 +551,10 @@ function AreaEquivalenceGraphic() {
           </text>
           <line x1="90" y1="470" x2="690" y2="470" stroke="#e2e8f0" strokeWidth="4" />
           <line x1="90" y1="470" x2="90" y2="95" stroke="#e2e8f0" strokeWidth="4" />
-          <path d="M105 450 C230 440 330 370 420 265 C505 165 585 125 650 115 L650 470 L105 470 Z" fill="#a78bfa" fillOpacity="0.22" stroke="#a78bfa" strokeWidth="8" />
+          <path d="M105 450 C230 440 330 370 420 265 C505 165 585 125 650 115 L650 470 L105 470 Z" fill="#a78bfa" fillOpacity="0.22" stroke="#a78bfa" strokeWidth="5" />
           <line x1="540" y1="470" x2="540" y2="155" stroke="#fbbf24" strokeWidth="4" strokeDasharray="12 10" />
-          <text x="540" y="510" fill="#fde68a" fontSize="18" textAnchor="middle">lnT</text>
-          <text x="58" y="88" fill="#e2e8f0" fontSize="18">C<tspan baselineShift="sub">p</tspan></text>
+          <text x="540" y="510" fill="#fde68a" fontSize="20" textAnchor="middle">lnT</text>
+          <text x="58" y="88" fill="#e2e8f0" fontSize="20">C<tspan baselineShift="sub">p</tspan></text>
           <text x="370" y="320" fill="#ddd6fe" fontSize="20" fontWeight="900" textAnchor="middle">
             area = ∫ C<tspan baselineShift="sub">p,m</tspan> d(lnT)
           </text>
@@ -603,7 +603,7 @@ function RetainedDebyeExample() {
       <div className="flex flex-wrap items-center justify-between gap-3">
         <div>
           <p className="text-xs font-black uppercase tracking-[0.2em] text-emerald-300">
-            Retained chapter numerical
+            Chapter numerical
           </p>
           <h3 className="mt-2 text-xl font-black text-white">
             Low-temperature entropy from one heat-capacity measurement
@@ -643,30 +643,53 @@ function RetainedDebyeExample() {
   );
 }
 
-function SourceFragmentPreservation() {
+function ResidualEntropyImperfectCrystals() {
   return (
     <article className="rounded-[2rem] border border-rose-300/25 bg-rose-300/[0.06] p-5 md:p-7">
       <div className="flex flex-wrap items-center justify-between gap-3">
         <div>
           <p className="text-xs font-black uppercase tracking-[0.2em] text-rose-300">
-            Unclear statement retained
+            Exception to the Third Law
           </p>
           <h3 className="mt-2 text-xl font-black text-white">
-            Isolated equilibrium sentence at the bottom of the residual-entropy page
+            Residual entropy of imperfect crystals
           </h3>
         </div>
-        <Chip tone="rose">[UNCLEAR]</Chip>
+        <Chip tone="rose">S(0) &gt; 0</Chip>
       </div>
 
       <p className="mt-4 leading-7 text-slate-300">
-        A separate line begins: “Allow a slight disturbance of the equilibrium, and upon its restoration,
-        the free e… reactant and product will assume values … respectively.” The central words and symbols
-        are not visible enough to reconstruct a reliable statement.
+        The Third Law statement S<sub>m</sub>(0) = 0 applies strictly to a perfect crystal, meaning every
+        lattice site has one unique, ordered orientation. Some molecular solids freeze into a rigid lattice
+        before every molecule can settle into its lowest-energy orientation. The disorder becomes trapped, so
+        the crystal reaches 0 K without ever reaching a single unique microstate.
       </p>
 
-      <ConceptLens title="Handling rule" tone="violet">
-        The fragment is recorded here for audit completeness but is not converted into a scientific claim.
-        The later free-energy/equilibrium block will be transcribed from its complete pages.
+      <div className="mt-5 space-y-4">
+        <Formula label="Statistical origin of residual entropy">
+          S(0) = k ln Ω(0), with Ω(0) &gt; 1 for a frozen orientational disorder
+        </Formula>
+
+        <Formula label="Carbon monoxide, CO(s)">
+          Two nearly identical orientations (C≡O and O≡C) per site ⇒ Ω(0) ≈ 2ᴺ ⇒ S<sub>m</sub>(0) = R ln 2 ≈ 5.76 J K⁻¹ mol⁻¹
+        </Formula>
+
+        <Formula label="Ice, H₂O(s)">
+          Pauling residual entropy from proton disorder in the hydrogen-bonded lattice: S<sub>m</sub>(0) = R ln(3/2) ≈ 3.37 J K⁻¹ mol⁻¹
+        </Formula>
+      </div>
+
+      <ConceptLens title="How residual entropy is detected experimentally" tone="violet">
+        The calorimetric (Third-Law) entropy, built by integrating C<sub>p</sub>/T from 0 K, is compared with
+        the spectroscopic entropy calculated independently from molecular and rotational data. A calorimetric
+        value that falls short of the spectroscopic value by a fixed amount reveals the residual entropy
+        frozen into the solid at 0 K.
+      </ConceptLens>
+
+      <ConceptLens title="Why perfectly ordered solids do not show this gap" tone="emerald">
+        For a substance with only one possible ground-state orientation (Ω(0) = 1), S(0) = k ln 1 = 0 exactly,
+        and calorimetric and spectroscopic entropies agree. Residual entropy appears only when near-degenerate
+        orientations remain kinetically frozen rather than annealing into a single arrangement before 0 K is reached.
       </ConceptLens>
     </article>
   );
@@ -1267,12 +1290,12 @@ export default function ThermodynamicsPart22() {
           </ConceptLens>
         </Section>
 
-        <Section index="10" title="Retained complete summary">
+        <Section index="10" title="Complete chapter summary">
           <RetainedSummaryGrid />
         </Section>
 
-        <Section index="11" title="Preserved incomplete chapter fragment">
-          <SourceFragmentPreservation />
+        <Section index="11" title="Residual entropy exceptions">
+          <ResidualEntropyImperfectCrystals />
         </Section>
 
         <Section index="12" title="Original and retained worked examples">

@@ -85,7 +85,7 @@ function Formula({
 
 function ZerothLawAnimation() {
   return (
-    <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
+    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
       <svg
         viewBox="0 0 1200 700"
         role="img"
@@ -119,7 +119,7 @@ function ZerothLawAnimation() {
         </text>
 
         <g>
-          <rect x="85" y="180" width="260" height="250" rx="34" fill="#0f172a" stroke="url(#hotGrad)" strokeWidth="8" />
+          <rect x="85" y="180" width="260" height="250" rx="34" fill="#0f172a" stroke="url(#hotGrad)" strokeWidth="5" />
           <text x="215" y="240" fill="#fda4af" fontSize="34" fontWeight="900" textAnchor="middle">A</text>
           <text x="215" y="285" fill="#cbd5e1" fontSize="20" textAnchor="middle">unknown body</text>
           <circle cx="185" cy="355" r="16" fill="#f97316">
@@ -131,7 +131,7 @@ function ZerothLawAnimation() {
         </g>
 
         <g>
-          <rect x="855" y="180" width="260" height="250" rx="34" fill="#0f172a" stroke="#a78bfa" strokeWidth="8" />
+          <rect x="855" y="180" width="260" height="250" rx="34" fill="#0f172a" stroke="#a78bfa" strokeWidth="5" />
           <text x="985" y="240" fill="#ddd6fe" fontSize="34" fontWeight="900" textAnchor="middle">B</text>
           <text x="985" y="285" fill="#cbd5e1" fontSize="20" textAnchor="middle">second body</text>
           <circle cx="955" cy="355" r="16" fill="#f472b6">
@@ -143,9 +143,9 @@ function ZerothLawAnimation() {
         </g>
 
         <g>
-          <rect x="500" y="145" width="200" height="330" rx="40" fill="#0f172a" stroke="#22d3ee" strokeWidth="8" />
+          <rect x="500" y="145" width="200" height="330" rx="40" fill="#0f172a" stroke="#22d3ee" strokeWidth="5" />
           <text x="600" y="200" fill="#a5f3fc" fontSize="34" fontWeight="900" textAnchor="middle">C</text>
-          <text x="600" y="235" fill="#cbd5e1" fontSize="19" textAnchor="middle">thermometer</text>
+          <text x="600" y="235" fill="#cbd5e1" fontSize="21" textAnchor="middle">thermometer</text>
           <rect x="575" y="265" width="50" height="145" rx="25" fill="#1e293b" stroke="#e2e8f0" strokeWidth="4" />
           <rect x="588" y="310" width="24" height="90" rx="12" fill="url(#thermoGrad)">
             <animate attributeName="y" values="340;295;340" dur="4s" repeatCount="indefinite" />
@@ -154,15 +154,15 @@ function ZerothLawAnimation() {
           <circle cx="600" cy="420" r="36" fill="#f472b6" />
         </g>
 
-        <path d="M360 305 H485" stroke="#67e8f9" strokeWidth="8" markerEnd="url(#zeroArrow)">
+        <path d="M360 305 H485" stroke="#67e8f9" strokeWidth="5" markerEnd="url(#zeroArrow)">
           <animate attributeName="stroke-dasharray" values="0 130;65 65;130 0" dur="2.2s" repeatCount="indefinite" />
         </path>
-        <path d="M840 305 H715" stroke="#67e8f9" strokeWidth="8" markerEnd="url(#zeroArrow)">
+        <path d="M840 305 H715" stroke="#67e8f9" strokeWidth="5" markerEnd="url(#zeroArrow)">
           <animate attributeName="stroke-dasharray" values="130 0;65 65;0 130" dur="2.2s" repeatCount="indefinite" />
         </path>
 
-        <text x="420" y="275" fill="#a5f3fc" fontSize="18" textAnchor="middle">A ↔ C</text>
-        <text x="780" y="275" fill="#a5f3fc" fontSize="18" textAnchor="middle">B ↔ C</text>
+        <text x="420" y="275" fill="#a5f3fc" fontSize="20" textAnchor="middle">A ↔ C</text>
+        <text x="780" y="275" fill="#a5f3fc" fontSize="20" textAnchor="middle">B ↔ C</text>
 
         <rect x="265" y="520" width="670" height="90" rx="28" fill="#0f172a" stroke="#34d399" strokeWidth="5" />
         <text x="600" y="558" fill="#a7f3d0" fontSize="25" fontWeight="900" textAnchor="middle">
@@ -172,7 +172,7 @@ function ZerothLawAnimation() {
           therefore TA = TB
         </text>
 
-        <text x="600" y="660" fill="#94a3b8" fontSize="18" textAnchor="middle">
+        <text x="600" y="660" fill="#94a3b8" fontSize="20" textAnchor="middle">
           A thermometer compares temperatures indirectly without placing A and B in direct contact.
         </text>
       </svg>
@@ -182,7 +182,7 @@ function ZerothLawAnimation() {
 
 function EnergyConservationAnimation() {
   return (
-    <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
+    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
       <svg
         viewBox="0 0 1200 720"
         role="img"
@@ -214,7 +214,7 @@ function EnergyConservationAnimation() {
           FIRST LAW: ENERGY CHANGES FORM, NOT TOTAL AMOUNT
         </text>
 
-        <rect x="385" y="180" width="430" height="330" rx="44" fill="url(#systemCore)" stroke="#a78bfa" strokeWidth="9" />
+        <rect x="385" y="180" width="430" height="330" rx="44" fill="url(#systemCore)" stroke="#a78bfa" strokeWidth="5" />
         <text x="600" y="240" fill="#f8fafc" fontSize="32" fontWeight="900" textAnchor="middle">SYSTEM</text>
 
         <circle cx="520" cy="350" r="22" fill="#fde047">
@@ -227,12 +227,12 @@ function EnergyConservationAnimation() {
           <animate attributeName="cy" values="285;410;285" dur="2.6s" repeatCount="indefinite" />
         </circle>
 
-        <path d="M80 290 H370" stroke="#fbbf24" strokeWidth="10" markerEnd="url(#ecAmber)">
+        <path d="M80 290 H370" stroke="#fbbf24" strokeWidth="5" markerEnd="url(#ecAmber)">
           <animate attributeName="stroke-dasharray" values="0 300;150 150;300 0" dur="2.4s" repeatCount="indefinite" />
         </path>
         <text x="220" y="255" fill="#fde68a" fontSize="26" fontWeight="900" textAnchor="middle">heat q</text>
 
-        <path d="M1120 410 H830" stroke="#22d3ee" strokeWidth="10" markerEnd="url(#ecCyan)">
+        <path d="M1120 410 H830" stroke="#22d3ee" strokeWidth="5" markerEnd="url(#ecCyan)">
           <animate attributeName="stroke-dasharray" values="300 0;150 150;0 300" dur="2.4s" repeatCount="indefinite" />
         </path>
         <text x="980" y="375" fill="#a5f3fc" fontSize="26" fontWeight="900" textAnchor="middle">work w</text>
@@ -251,7 +251,7 @@ function EnergyConservationAnimation() {
 
 function EquivalentRoutesAnimation() {
   return (
-    <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
+    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
       <svg
         viewBox="0 0 1200 700"
         role="img"
@@ -273,13 +273,13 @@ function EquivalentRoutesAnimation() {
           <text x="300" y="115" fill="#a5f3fc" fontSize="26" fontWeight="900" textAnchor="middle">
             MECHANICAL ROUTE
           </text>
-          <rect x="110" y="150" width="380" height="360" rx="34" fill="#0f172a" stroke="#22d3ee" strokeWidth="8" />
+          <rect x="110" y="150" width="380" height="360" rx="34" fill="#0f172a" stroke="#22d3ee" strokeWidth="5" />
           <path d="M145 270 H455 V475 H145 Z" fill="#164e63" opacity="0.85" />
-          <line x1="300" y1="145" x2="300" y2="350" stroke="#e2e8f0" strokeWidth="14" />
+          <line x1="300" y1="145" x2="300" y2="350" stroke="#e2e8f0" strokeWidth="6" />
           <g transform="translate(300 350)">
             <animateTransform attributeName="transform" type="rotate" from="0 300 350" to="360 300 350" dur="1.4s" repeatCount="indefinite" />
-            <line x1="-80" y1="0" x2="80" y2="0" stroke="#fbbf24" strokeWidth="15" />
-            <line x1="0" y1="-80" x2="0" y2="80" stroke="#fbbf24" strokeWidth="15" />
+            <line x1="-80" y1="0" x2="80" y2="0" stroke="#fbbf24" strokeWidth="6" />
+            <line x1="0" y1="-80" x2="0" y2="80" stroke="#fbbf24" strokeWidth="6" />
           </g>
           <text x="300" y="550" fill="#cbd5e1" fontSize="20" textAnchor="middle">paddle work on insulated water</text>
         </g>
@@ -288,13 +288,13 @@ function EquivalentRoutesAnimation() {
           <text x="900" y="115" fill="#f9a8d4" fontSize="26" fontWeight="900" textAnchor="middle">
             ELECTRICAL ROUTE
           </text>
-          <rect x="710" y="150" width="380" height="360" rx="34" fill="#0f172a" stroke="#f472b6" strokeWidth="8" />
+          <rect x="710" y="150" width="380" height="360" rx="34" fill="#0f172a" stroke="#f472b6" strokeWidth="5" />
           <path d="M745 270 H1055 V475 H745 Z" fill="#4c1d95" opacity="0.75" />
-          <path d="M800 340 C840 290 880 390 920 340 C960 290 1000 390 1040 340" fill="none" stroke="#fde047" strokeWidth="13">
+          <path d="M800 340 C840 290 880 390 920 340 C960 290 1000 390 1040 340" fill="none" stroke="#fde047" strokeWidth="5">
             <animate attributeName="stroke-dasharray" values="0 350;175 175;350 0" dur="1.8s" repeatCount="indefinite" />
           </path>
-          <line x1="800" y1="340" x2="800" y2="205" stroke="#67e8f9" strokeWidth="8" />
-          <line x1="1040" y1="340" x2="1040" y2="205" stroke="#67e8f9" strokeWidth="8" />
+          <line x1="800" y1="340" x2="800" y2="205" stroke="#67e8f9" strokeWidth="5" />
+          <line x1="1040" y1="340" x2="1040" y2="205" stroke="#67e8f9" strokeWidth="5" />
           <text x="900" y="550" fill="#cbd5e1" fontSize="20" textAnchor="middle">resistive work on insulated water</text>
         </g>
 

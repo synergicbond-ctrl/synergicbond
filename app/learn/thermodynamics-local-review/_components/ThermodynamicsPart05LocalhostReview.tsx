@@ -85,7 +85,7 @@ function Formula({
 
 function ResponseSurfaceAnimation() {
   return (
-    <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
+    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
       <svg
         viewBox="0 0 1200 700"
         role="img"
@@ -125,7 +125,7 @@ function ResponseSurfaceAnimation() {
             d="M80 440 C220 330 355 345 510 225 C680 95 805 145 920 55"
             fill="none"
             stroke="url(#meshGrad)"
-            strokeWidth="12"
+            strokeWidth="5"
           />
           {[0,1,2,3,4,5].map((i) => (
             <path
@@ -152,13 +152,13 @@ function ResponseSurfaceAnimation() {
             <animate attributeName="r" values="12;19;12" dur="2.4s" repeatCount="indefinite" />
           </circle>
 
-          <path d="M500 235 L720 155" stroke="#22d3ee" strokeWidth="8" markerEnd="url(#surfArrowCyan)" />
+          <path d="M500 235 L720 155" stroke="#22d3ee" strokeWidth="5" markerEnd="url(#surfArrowCyan)" />
           <text x="730" y="140" fill="#a5f3fc" fontSize="21">change T at constant P</text>
 
-          <path d="M500 235 L340 360" stroke="#fbbf24" strokeWidth="8" markerEnd="url(#surfArrowAmber)" />
+          <path d="M500 235 L340 360" stroke="#fbbf24" strokeWidth="5" markerEnd="url(#surfArrowAmber)" />
           <text x="155" y="390" fill="#fde68a" fontSize="21">change P at constant T</text>
 
-          <path d="M500 235 L610 390" stroke="#f472b6" strokeWidth="8" markerEnd="url(#surfArrowPink)" />
+          <path d="M500 235 L610 390" stroke="#f472b6" strokeWidth="5" markerEnd="url(#surfArrowPink)" />
           <text x="625" y="425" fill="#f9a8d4" fontSize="21">change T at constant V</text>
 
           <text x="970" y="95" fill="#cbd5e1" fontSize="25">T</text>
@@ -166,7 +166,7 @@ function ResponseSurfaceAnimation() {
           <text x="780" y="545" fill="#cbd5e1" fontSize="25">V</text>
         </g>
 
-        <text x="600" y="665" fill="#94a3b8" fontSize="18" textAnchor="middle">
+        <text x="600" y="665" fill="#94a3b8" fontSize="20" textAnchor="middle">
           Different constraints select different tangent directions on the same equilibrium surface.
         </text>
       </svg>
@@ -264,7 +264,7 @@ function CoefficientAnimation() {
         <svg viewBox="0 0 500 330" role="img" aria-label="Container expanding as temperature rises" className="mt-3 h-auto w-full">
         <title>Thermodynamics Part 05 scientific diagram 2</title>
         <desc>Original responsive scientific visual supporting the thermodynamics lesson.</desc>
-          <rect x="115" y="90" width="270" height="170" rx="25" fill="#0f172a" stroke="#fbbf24" strokeWidth="8">
+          <rect x="115" y="90" width="270" height="170" rx="25" fill="#0f172a" stroke="#fbbf24" strokeWidth="5">
             <animate attributeName="x" values="135;95;135" dur="4s" repeatCount="indefinite" />
             <animate attributeName="width" values="230;310;230" dur="4s" repeatCount="indefinite" />
           </rect>
@@ -284,11 +284,11 @@ function CoefficientAnimation() {
         <svg viewBox="0 0 500 330" role="img" aria-label="Container compressing as pressure rises at constant temperature" className="mt-3 h-auto w-full">
         <title>Thermodynamics Part 05 scientific diagram 3</title>
         <desc>Original responsive scientific visual supporting the thermodynamics lesson.</desc>
-          <path d="M95 250 V90 H405 V250" fill="none" stroke="#22d3ee" strokeWidth="8" />
+          <path d="M95 250 V90 H405 V250" fill="none" stroke="#22d3ee" strokeWidth="5" />
           <rect x="125" y="125" width="250" height="22" rx="8" fill="#67e8f9">
             <animate attributeName="y" values="110;185;110" dur="4s" repeatCount="indefinite" />
           </rect>
-          <line x1="250" y1="85" x2="250" y2="125" stroke="#67e8f9" strokeWidth="14" strokeLinecap="round">
+          <line x1="250" y1="85" x2="250" y2="125" stroke="#67e8f9" strokeWidth="6" strokeLinecap="round">
             <animate attributeName="y2" values="110;185;110" dur="4s" repeatCount="indefinite" />
           </line>
           <text x="250" y="55" fill="#a5f3fc" fontSize="24" fontWeight="800" textAnchor="middle">P ↑ at constant T</text>
@@ -301,7 +301,7 @@ function CoefficientAnimation() {
         <svg viewBox="0 0 500 330" role="img" aria-label="Pressure rising during heating at fixed volume" className="mt-3 h-auto w-full">
         <title>Thermodynamics Part 05 scientific diagram 4</title>
         <desc>Original responsive scientific visual supporting the thermodynamics lesson.</desc>
-          <rect x="110" y="90" width="280" height="170" rx="25" fill="#0f172a" stroke="#a78bfa" strokeWidth="9" />
+          <rect x="110" y="90" width="280" height="170" rx="25" fill="#0f172a" stroke="#a78bfa" strokeWidth="5" />
           {[0,1,2,3,4,5,6,7].map((i) => (
             <circle key={i} cx={160 + (i % 4) * 60} cy={135 + Math.floor(i / 4) * 65} r="10" fill={i % 2 ? "#f472b6" : "#c4b5fd"}>
               <animate
@@ -322,7 +322,7 @@ function CoefficientAnimation() {
 
 function MasterRelationVisual() {
   return (
-    <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-4 md:p-6">
+    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-4 md:p-6">
       <svg viewBox="0 0 1200 590" role="img" aria-labelledby="master-title master-description" className="h-auto w-full">
         <title id="master-title">Master differential relation for volume response</title>
         <desc id="master-description">
@@ -345,17 +345,17 @@ function MasterRelationVisual() {
           VOLUME RESPONDS TO BOTH TEMPERATURE AND PRESSURE
         </text>
 
-        <rect x="430" y="205" width="340" height="155" rx="28" fill="#0f172a" stroke="#67e8f9" strokeWidth="8">
+        <rect x="430" y="205" width="340" height="155" rx="28" fill="#0f172a" stroke="#67e8f9" strokeWidth="5">
           <animate attributeName="width" values="310;370;310" dur="4s" repeatCount="indefinite" />
           <animate attributeName="x" values="445;415;445" dur="4s" repeatCount="indefinite" />
         </rect>
         <text x="600" y="285" fill="#e2e8f0" fontSize="30" fontWeight="900" textAnchor="middle">SYSTEM VOLUME</text>
 
-        <path d="M105 282 H415" stroke="#34d399" strokeWidth="9" markerEnd="url(#mrArrowGreen)" />
+        <path d="M105 282 H415" stroke="#34d399" strokeWidth="5" markerEnd="url(#mrArrowGreen)" />
         <text x="250" y="245" fill="#a7f3d0" fontSize="22" textAnchor="middle">thermal term</text>
         <text x="250" y="315" fill="#a7f3d0" fontSize="24" fontWeight="900" textAnchor="middle">+ αV dT</text>
 
-        <path d="M1095 282 H785" stroke="#fb7185" strokeWidth="9" markerEnd="url(#mrArrowRose)" />
+        <path d="M1095 282 H785" stroke="#fb7185" strokeWidth="5" markerEnd="url(#mrArrowRose)" />
         <text x="950" y="245" fill="#fda4af" fontSize="22" textAnchor="middle">pressure term</text>
         <text x="950" y="315" fill="#fda4af" fontSize="24" fontWeight="900" textAnchor="middle">− κT V dP</text>
 

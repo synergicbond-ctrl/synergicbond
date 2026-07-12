@@ -45,7 +45,7 @@ function Lens({ title, children, tone = "cyan" }: { title: string; children: Rea
 // SVG 1: Chemical potential vs pressure (logarithmic for ideal gas)
 function MuVsPSVG() {
   return (
-    <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
+    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
       <svg viewBox="0 0 1200 600" role="img" aria-labelledby="p27-mu-title p27-mu-desc" className="h-auto w-full">
         <title id="p27-mu-title">Chemical potential of an ideal gas versus pressure</title>
         <desc id="p27-mu-desc">
@@ -64,26 +64,26 @@ function MuVsPSVG() {
         <text x="600" y="48" fill="#f8fafc" fontSize="26" fontWeight="900" textAnchor="middle">CHEMICAL POTENTIAL: μ(T,P) = μ°(T) + RT ln(P/P°)</text>
         <line x1="100" y1="480" x2="1100" y2="480" stroke="#e2e8f0" strokeWidth="4" markerEnd="url(#p27axArrow)" />
         <line x1="100" y1="480" x2="100" y2="80" stroke="#e2e8f0" strokeWidth="4" markerEnd="url(#p27axArrow)" />
-        <text x="1115" y="494" fill="#e2e8f0" fontSize="18" fontWeight="900">P</text>
-        <text x="72" y="68" fill="#e2e8f0" fontSize="18" fontWeight="900">μ</text>
+        <text x="1115" y="494" fill="#e2e8f0" fontSize="20" fontWeight="900">P</text>
+        <text x="72" y="68" fill="#e2e8f0" fontSize="20" fontWeight="900">μ</text>
         {/* Logarithmic curve */}
         <path d="M120 460 C180 440 250 390 350 330 C450 270 550 235 650 210 C750 188 850 170 950 155 C1000 148 1060 140 1100 135"
-          fill="none" stroke="#22d3ee" strokeWidth="10" />
+          fill="none" stroke="#22d3ee" strokeWidth="5" />
         {/* Dotted reference line at μ° */}
         <line x1="100" y1="280" x2="1100" y2="280" stroke="#64748b" strokeWidth="3" strokeDasharray="16 10" />
-        <text x="1110" y="285" fill="#94a3b8" fontSize="16" fontWeight="900">μ°</text>
+        <text x="1110" y="285" fill="#94a3b8" fontSize="19" fontWeight="900">μ°</text>
         {/* Mark at P° */}
         <line x1="500" y1="280" x2="500" y2="480" stroke="#fbbf24" strokeWidth="3" strokeDasharray="12 8" />
         <circle cx="500" cy="280" r="13" fill="#fbbf24" />
-        <text x="500" y="510" fill="#fde68a" fontSize="17" fontWeight="900" textAnchor="middle">P° (standard)</text>
-        <text x="500" y="532" fill="#fde68a" fontSize="13" textAnchor="middle">μ = μ° here</text>
+        <text x="500" y="510" fill="#fde68a" fontSize="19" fontWeight="900" textAnchor="middle">P° (standard)</text>
+        <text x="500" y="532" fill="#fde68a" fontSize="17" textAnchor="middle">μ = μ° here</text>
         {/* Labels for regions */}
         <rect x="140" y="380" width="180" height="40" rx="14" fill="#0c4a6e" />
-        <text x="230" y="406" fill="#a5f3fc" fontSize="14" fontWeight="900" textAnchor="middle">μ &lt; μ° (P &lt; P°)</text>
+        <text x="230" y="406" fill="#a5f3fc" fontSize="18" fontWeight="900" textAnchor="middle">μ &lt; μ° (P &lt; P°)</text>
         <rect x="750" y="130" width="180" height="40" rx="14" fill="#451a03" />
-        <text x="840" y="156" fill="#fde68a" fontSize="14" fontWeight="900" textAnchor="middle">μ &gt; μ° (P &gt; P°)</text>
+        <text x="840" y="156" fill="#fde68a" fontSize="18" fontWeight="900" textAnchor="middle">μ &gt; μ° (P &gt; P°)</text>
         <rect x="200" y="540" width="800" height="35" rx="14" fill="#0f172a" />
-        <text x="600" y="563" fill="#cbd5e1" fontSize="14" textAnchor="middle">
+        <text x="600" y="563" fill="#cbd5e1" fontSize="18" textAnchor="middle">
           RT ln(P/P°) is negative when P &lt; P°, making μ &lt; μ° — dilute gas has lower chemical potential.
         </text>
       </svg>
@@ -94,7 +94,7 @@ function MuVsPSVG() {
 // SVG 2: Mole fraction effect on chemical potential
 function MuVsMoleFracSVG() {
   return (
-    <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
+    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
       <svg viewBox="0 0 1200 520" role="img" aria-labelledby="p27-yx-title p27-yx-desc" className="h-auto w-full">
         <title id="p27-yx-title">Chemical potential of a mixture component versus mole fraction</title>
         <desc id="p27-yx-desc">
@@ -113,23 +113,23 @@ function MuVsMoleFracSVG() {
         <text x="600" y="46" fill="#f8fafc" fontSize="24" fontWeight="900" textAnchor="middle">MIXING LOWERS CHEMICAL POTENTIAL: μ_i = μ_i(pure) + RT ln y_i</text>
         <line x1="150" y1="400" x2="1100" y2="400" stroke="#e2e8f0" strokeWidth="4" markerEnd="url(#p27yxArrow)" />
         <line x1="150" y1="400" x2="150" y2="80" stroke="#e2e8f0" strokeWidth="4" markerEnd="url(#p27yxArrow)" />
-        <text x="1115" y="414" fill="#e2e8f0" fontSize="18">y_i →</text>
-        <text x="122" y="68" fill="#e2e8f0" fontSize="18">μ_i</text>
+        <text x="1115" y="414" fill="#e2e8f0" fontSize="20">y_i →</text>
+        <text x="122" y="68" fill="#e2e8f0" fontSize="20">μ_i</text>
         {/* Label y=0 and y=1 on axis */}
-        <text x="150" y="430" fill="#94a3b8" fontSize="15" textAnchor="middle">0</text>
-        <text x="1080" y="430" fill="#94a3b8" fontSize="15" textAnchor="middle">1</text>
+        <text x="150" y="430" fill="#94a3b8" fontSize="18" textAnchor="middle">0</text>
+        <text x="1080" y="430" fill="#94a3b8" fontSize="18" textAnchor="middle">1</text>
         {/* Logarithmic rise from left edge approaching μ° at y=1 */}
         <path d="M240 400 C270 370 320 310 420 250 C520 195 650 165 780 145 C880 130 980 118 1080 110"
-          fill="none" stroke="#a78bfa" strokeWidth="9" />
+          fill="none" stroke="#a78bfa" strokeWidth="5" />
         <circle cx="1080" cy="110" r="12" fill="#a78bfa" />
-        <text x="1090" y="100" fill="#c4b5fd" fontSize="15" fontWeight="900">y_i = 1 (pure)</text>
-        <text x="1090" y="118" fill="#c4b5fd" fontSize="13">μ = μ°_i + RT ln(P/P°)</text>
+        <text x="1090" y="100" fill="#c4b5fd" fontSize="18" fontWeight="900">y_i = 1 (pure)</text>
+        <text x="1090" y="118" fill="#c4b5fd" fontSize="17">μ = μ°_i + RT ln(P/P°)</text>
         {/* Asymptote arrow at y→0 */}
         <path d="M240 395 L200 400" stroke="#fb7185" strokeWidth="4" />
-        <text x="155" y="370" fill="#fda4af" fontSize="14" fontWeight="900">μ → −∞</text>
-        <text x="155" y="390" fill="#fda4af" fontSize="12">as y_i → 0</text>
+        <text x="155" y="370" fill="#fda4af" fontSize="18" fontWeight="900">μ → −∞</text>
+        <text x="155" y="390" fill="#fda4af" fontSize="17">as y_i → 0</text>
         <rect x="180" y="455" width="840" height="35" rx="14" fill="#0f172a" />
-        <text x="600" y="478" fill="#cbd5e1" fontSize="14" textAnchor="middle">
+        <text x="600" y="478" fill="#cbd5e1" fontSize="18" textAnchor="middle">
           RT ln y_i &lt; 0 for y_i &lt; 1. Dilution always lowers the chemical potential of an ideal-gas component.
         </text>
       </svg>

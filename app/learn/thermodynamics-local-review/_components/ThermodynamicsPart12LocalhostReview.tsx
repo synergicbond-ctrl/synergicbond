@@ -85,7 +85,7 @@ function Formula({
 
 function CycleDirectionAnimation() {
   return (
-    <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
+    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
       <svg
         viewBox="0 0 1200 700"
         role="img"
@@ -129,7 +129,7 @@ function CycleDirectionAnimation() {
             d="M165 445 L165 195 L440 195 L440 445 Z"
             fill="url(#cdCyanHatch)"
             stroke="#22d3ee"
-            strokeWidth="9"
+            strokeWidth="5"
             markerEnd="url(#cdCyan)"
           />
           <path
@@ -137,7 +137,7 @@ function CycleDirectionAnimation() {
             d="M165 445 L165 195 L440 195 L440 445 L165 445"
             fill="none"
             stroke="#22d3ee"
-            strokeWidth="9"
+            strokeWidth="5"
           />
           <circle r="12" fill="#67e8f9">
             <animateMotion dur="4.2s" repeatCount="indefinite">
@@ -158,7 +158,7 @@ function CycleDirectionAnimation() {
             d="M755 445 L1030 445 L1030 195 L755 195 Z"
             fill="url(#cdPinkHatch)"
             stroke="#f472b6"
-            strokeWidth="9"
+            strokeWidth="5"
             markerEnd="url(#cdPink)"
           />
           <path
@@ -166,7 +166,7 @@ function CycleDirectionAnimation() {
             d="M755 445 L1030 445 L1030 195 L755 195 L755 445"
             fill="none"
             stroke="#f472b6"
-            strokeWidth="9"
+            strokeWidth="5"
           />
           <circle r="12" fill="#f9a8d4">
             <animateMotion dur="4.2s" repeatCount="indefinite">
@@ -179,7 +179,7 @@ function CycleDirectionAnimation() {
         </g>
 
         <rect x="255" y="640" width="690" height="40" rx="18" fill="#0f172a" stroke="#a78bfa" strokeWidth="3" />
-        <text x="600" y="667" fill="#ddd6fe" fontSize="19" fontWeight="900" textAnchor="middle">
+        <text x="600" y="667" fill="#ddd6fe" fontSize="21" fontWeight="900" textAnchor="middle">
           |wcycle| = geometric area enclosed on the P–V diagram
         </text>
       </svg>
@@ -189,7 +189,7 @@ function CycleDirectionAnimation() {
 
 function StateFunctionClosureAnimation() {
   return (
-    <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
+    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
       <svg
         viewBox="0 0 1200 680"
         role="img"
@@ -213,7 +213,7 @@ function StateFunctionClosureAnimation() {
           A CYCLE CLOSES EVERY STATE FUNCTION
         </text>
 
-        <circle cx="600" cy="330" r="210" fill="none" stroke="#34d399" strokeWidth="10" markerEnd="url(#sfArrow)" />
+        <circle cx="600" cy="330" r="210" fill="none" stroke="#34d399" strokeWidth="6" markerEnd="url(#sfArrow)" />
         <path id="sfCircle" d="M600 120 A210 210 0 1 1 599.9 120" fill="none" />
 
         {[
@@ -260,7 +260,7 @@ function StateFunctionClosureAnimation() {
 
 function ThreeStateCycleGraph() {
   return (
-    <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
+    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
       <svg
         viewBox="0 0 1200 760"
         role="img"
@@ -312,9 +312,9 @@ function ThreeStateCycleGraph() {
           strokeWidth="4"
         />
 
-        <path id="legA" d="M310 520 V210" fill="none" stroke="#22d3ee" strokeWidth="10" markerEnd="url(#tsA)" />
-        <path id="legB" d="M310 210 C430 250 610 340 900 520" fill="none" stroke="#34d399" strokeWidth="10" markerEnd="url(#tsB)" />
-        <path id="legC" d="M900 520 H310" fill="none" stroke="#f472b6" strokeWidth="10" markerEnd="url(#tsC)" />
+        <path id="legA" d="M310 520 V210" fill="none" stroke="#22d3ee" strokeWidth="5" markerEnd="url(#tsA)" />
+        <path id="legB" d="M310 210 C430 250 610 340 900 520" fill="none" stroke="#34d399" strokeWidth="5" markerEnd="url(#tsB)" />
+        <path id="legC" d="M900 520 H310" fill="none" stroke="#f472b6" strokeWidth="5" markerEnd="url(#tsC)" />
 
         <circle cx="310" cy="520" r="16" fill="#fde047" />
         <circle cx="310" cy="210" r="16" fill="#fde047" />
@@ -328,10 +328,10 @@ function ThreeStateCycleGraph() {
         <text x="610" y="305" fill="#a7f3d0" fontSize="20" fontWeight="900">B: isothermal at 546 K</text>
         <text x="610" y="565" fill="#f9a8d4" fontSize="20" fontWeight="900">C: isobaric at 1 atm</text>
 
-        <text x="310" y="690" fill="#cbd5e1" fontSize="19" textAnchor="middle">22.4 L</text>
-        <text x="900" y="690" fill="#cbd5e1" fontSize="19" textAnchor="middle">44.8 L</text>
-        <text x="110" y="527" fill="#cbd5e1" fontSize="19" textAnchor="middle">1 atm</text>
-        <text x="110" y="217" fill="#cbd5e1" fontSize="19" textAnchor="middle">2 atm</text>
+        <text x="310" y="690" fill="#cbd5e1" fontSize="21" textAnchor="middle">22.4 L</text>
+        <text x="900" y="690" fill="#cbd5e1" fontSize="21" textAnchor="middle">44.8 L</text>
+        <text x="110" y="527" fill="#cbd5e1" fontSize="21" textAnchor="middle">1 atm</text>
+        <text x="110" y="217" fill="#cbd5e1" fontSize="21" textAnchor="middle">2 atm</text>
 
         <circle r="12" fill="#67e8f9">
           <animateMotion dur="2.2s" repeatCount="indefinite">
@@ -349,7 +349,7 @@ function ThreeStateCycleGraph() {
           </animateMotion>
         </circle>
 
-        <text x="600" y="735" fill="#94a3b8" fontSize="18" textAnchor="middle">
+        <text x="600" y="735" fill="#94a3b8" fontSize="20" textAnchor="middle">
           The loop is clockwise, so chemistry-sign net work is negative and net heat absorbed is positive.
         </text>
       </svg>
@@ -519,7 +519,7 @@ function RetainedCycleExample() {
       <div className="flex flex-wrap items-center justify-between gap-3">
         <div>
           <p className="text-xs font-black uppercase tracking-[0.2em] text-amber-300">
-            Retained chapter cycle example
+            Chapter cycle example
           </p>
           <h3 className="mt-2 text-xl font-black text-white">
             One mole of a monatomic ideal gas through states 1, 2 and 3
@@ -733,7 +733,7 @@ const problems = [
   {
     title: "Concept Application 9 — work from two paths",
     question:
-      "A gas expands from V1 to V2 along a high-pressure curve and returns along a lower-pressure curve. Determine the cycle direction and work sign.",
+      "A gas expands from V₁ to V₂ along a high-pressure curve and returns along a lower-pressure curve. Determine the cycle direction and work sign.",
     solution:
       "Expansion occurs at higher pressure than compression, so the loop is clockwise. The gas delivers net work and chemistry-sign wcycle is negative.",
   },
@@ -756,7 +756,7 @@ const problems = [
     question:
       "Two isotherms connect the same volume limits. Which one gives the larger reversible expansion-work magnitude?",
     solution:
-      "The higher-temperature isotherm has higher pressure at every volume. Since |w| = nRT ln(V2/V1), the higher-temperature path gives larger magnitude.",
+      "The higher-temperature isotherm has higher pressure at every volume. Since |w| = nRT ln(V₂/V₁), the higher-temperature path gives larger magnitude.",
   },
   {
     title: "Concept Application 13 — consistency audit",
@@ -1038,7 +1038,7 @@ export default function ThermodynamicsPart12() {
           <GraphAreaCases />
         </Section>
 
-        <Section index="06" title="Retained three-state cycle example">
+        <Section index="06" title="Three-state cycle example">
           <RetainedCycleExample />
         </Section>
 

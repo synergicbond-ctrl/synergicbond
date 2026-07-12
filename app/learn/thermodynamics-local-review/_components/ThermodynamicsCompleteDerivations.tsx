@@ -2187,20 +2187,20 @@ function RelationGraph({ part, graph }: { part: number; graph: PartData["graph"]
   const [pathA, pathB] = variants[part % variants.length];
   return (
     <figure className="my-6 min-w-0 border-y border-white/10 py-5">
-      <svg viewBox="0 0 1120 560" role="img" aria-labelledby={`${id}-title ${id}-desc`} className="h-auto w-full max-w-5xl">
+      <svg viewBox="0 0 1120 560" role="img" aria-labelledby={`${id}-title ${id}-desc`} className="mx-auto h-auto w-full max-w-4xl">
         <title id={`${id}-title`}>{title}</title>
         <desc id={`${id}-desc`}>Original thermodynamic relation graph comparing {curveA} and {curveB}.</desc>
         <rect width="1120" height="560" rx="28" fill="#020617" />
         <line x1="90" y1="470" x2="1055" y2="470" stroke="#64748b" strokeWidth="3" />
         <line x1="90" y1="470" x2="90" y2="55" stroke="#64748b" strokeWidth="3" />
-        <path d={pathA} fill="none" stroke="#22d3ee" strokeWidth="8" />
-        <path d={pathB} fill="none" stroke="#fbbf24" strokeWidth="7" strokeDasharray="16 11" />
+        <path d={pathA} fill="none" stroke="#22d3ee" strokeWidth="5" />
+        <path d={pathB} fill="none" stroke="#fbbf24" strokeWidth="4" strokeDasharray="16 11" />
         <text x="570" y="530" fill="#cbd5e1" fontSize="23" textAnchor="middle">{xLabel}</text>
         <text x="28" y="270" fill="#cbd5e1" fontSize="23" textAnchor="middle" transform="rotate(-90 28 270)">{yLabel}</text>
         <circle cx="760" cy="82" r="7" fill="#22d3ee" />
-        <text x="778" y="90" fill="#a5f3fc" fontSize="19">{curveA}</text>
+        <text x="778" y="90" fill="#a5f3fc" fontSize="21">{curveA}</text>
         <circle cx="760" cy="118" r="7" fill="#fbbf24" />
-        <text x="778" y="126" fill="#fde68a" fontSize="19">{curveB}</text>
+        <text x="778" y="126" fill="#fde68a" fontSize="21">{curveB}</text>
       </svg>
       <figcaption className="mt-2 text-sm leading-6 text-slate-400">{title}. The curves are schematic; equations and validity conditions determine the quantitative result.</figcaption>
     </figure>

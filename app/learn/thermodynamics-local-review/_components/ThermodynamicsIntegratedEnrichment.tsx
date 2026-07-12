@@ -1104,7 +1104,7 @@ const ENRICHMENT: Record<number, Entry> = {
 function FlowGraphic({ entry, part }: { entry: Entry; part: number }) {
   const [left, center, right] = entry.flow;
   return (
-    <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-4 md:p-6">
+    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-4 md:p-6">
       <svg viewBox="0 0 1200 620" role="img" aria-label={`${entry.title} concept flow`} className="h-auto w-full">
         <defs>
           <linearGradient id={`integrated-bg-${part}`} x1="0" x2="1">
@@ -1123,16 +1123,16 @@ function FlowGraphic({ entry, part }: { entry: Entry; part: number }) {
         <text x="600" y="58" fill="#f8fafc" fontSize="29" fontWeight="900" textAnchor="middle">
           INTEGRATED ADVANCED CONCEPT MAP
         </text>
-        <rect x="65" y="165" width="300" height="250" rx="34" fill="#0f172a" stroke="#22d3ee" strokeWidth="7" />
-        <circle cx="600" cy="290" r="116" fill="#0f172a" stroke="#fbbf24" strokeWidth="8" />
-        <rect x="835" y="165" width="300" height="250" rx="34" fill="#0f172a" stroke="#a78bfa" strokeWidth="7" />
+        <rect x="65" y="165" width="300" height="250" rx="34" fill="#0f172a" stroke="#22d3ee" strokeWidth="4" />
+        <circle cx="600" cy="290" r="116" fill="#0f172a" stroke="#fbbf24" strokeWidth="5" />
+        <rect x="835" y="165" width="300" height="250" rx="34" fill="#0f172a" stroke="#a78bfa" strokeWidth="4" />
         <text x="215" y="300" fill="#a5f3fc" fontSize="22" fontWeight="900" textAnchor="middle">{left}</text>
         <text x="600" y="300" fill="#fde68a" fontSize="21" fontWeight="900" textAnchor="middle">{center}</text>
         <text x="985" y="300" fill="#ddd6fe" fontSize="22" fontWeight="900" textAnchor="middle">{right}</text>
-        <path d="M385 290 H475" stroke="#fbbf24" strokeWidth="12" markerEnd={`url(#integrated-arrow-${part})`} filter={`url(#integrated-glow-${part})`} />
-        <path d="M725 290 H815" stroke="#fbbf24" strokeWidth="12" markerEnd={`url(#integrated-arrow-${part})`} filter={`url(#integrated-glow-${part})`} />
+        <path d="M385 290 H475" stroke="#fbbf24" strokeWidth="5" markerEnd={`url(#integrated-arrow-${part})`} filter={`url(#integrated-glow-${part})`} />
+        <path d="M725 290 H815" stroke="#fbbf24" strokeWidth="5" markerEnd={`url(#integrated-arrow-${part})`} filter={`url(#integrated-glow-${part})`} />
         <rect x="230" y="485" width="740" height="60" rx="24" fill="#0f172a" stroke="#34d399" strokeWidth="4" />
-        <text x="600" y="522" fill="#a7f3d0" fontSize="18" fontWeight="900" textAnchor="middle">
+        <text x="600" y="522" fill="#a7f3d0" fontSize="20" fontWeight="900" textAnchor="middle">
           original integration • no duplicated source wording or figures
         </text>
       </svg>

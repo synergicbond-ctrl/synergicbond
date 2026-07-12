@@ -85,7 +85,7 @@ function Formula({
 
 function CoordinateMapAnimation() {
   return (
-    <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
+    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
       <svg
         viewBox="0 0 1200 760"
         role="img"
@@ -119,7 +119,7 @@ function CoordinateMapAnimation() {
           <text x="535" y="572" fill="#e2e8f0" fontSize="21">V</text>
           <text x="72" y="155" fill="#e2e8f0" fontSize="21">T</text>
 
-          <path id="tvPath" d="M165 480 C260 390 365 315 465 220" fill="none" stroke="#22d3ee" strokeWidth="10" markerEnd="url(#cmCyan)" />
+          <path id="tvPath" d="M165 480 C260 390 365 315 465 220" fill="none" stroke="#22d3ee" strokeWidth="5" markerEnd="url(#cmCyan)" />
           <circle cx="165" cy="480" r="14" fill="#fde047" />
           <circle cx="465" cy="220" r="14" fill="#fde047" />
           <text x="135" y="510" fill="#f8fafc" fontSize="20" fontWeight="900">1</text>
@@ -132,10 +132,10 @@ function CoordinateMapAnimation() {
           </circle>
 
           <rect x="110" y="600" width="380" height="80" rx="22" fill="#0f172a" stroke="#22d3ee" strokeWidth="4" />
-          <text x="300" y="635" fill="#a5f3fc" fontSize="18" fontWeight="900" textAnchor="middle">
+          <text x="300" y="635" fill="#a5f3fc" fontSize="20" fontWeight="900" textAnchor="middle">
             ΔS = n∫Cv,m(T)dT/T
           </text>
-          <text x="300" y="665" fill="#f8fafc" fontSize="18" fontWeight="900" textAnchor="middle">
+          <text x="300" y="665" fill="#f8fafc" fontSize="20" fontWeight="900" textAnchor="middle">
             + nR ln(V₂/V₁)
           </text>
         </g>
@@ -149,7 +149,7 @@ function CoordinateMapAnimation() {
           <text x="1120" y="572" fill="#e2e8f0" fontSize="21">P</text>
           <text x="657" y="155" fill="#e2e8f0" fontSize="21">T</text>
 
-          <path id="tpPath" d="M760 480 C865 410 935 315 1035 220" fill="none" stroke="#fbbf24" strokeWidth="10" markerEnd="url(#cmAmber)" />
+          <path id="tpPath" d="M760 480 C865 410 935 315 1035 220" fill="none" stroke="#fbbf24" strokeWidth="5" markerEnd="url(#cmAmber)" />
           <circle cx="760" cy="480" r="14" fill="#fde047" />
           <circle cx="1035" cy="220" r="14" fill="#fde047" />
           <text x="730" y="510" fill="#f8fafc" fontSize="20" fontWeight="900">1</text>
@@ -162,15 +162,15 @@ function CoordinateMapAnimation() {
           </circle>
 
           <rect x="695" y="600" width="380" height="80" rx="22" fill="#0f172a" stroke="#fbbf24" strokeWidth="4" />
-          <text x="885" y="635" fill="#fde68a" fontSize="18" fontWeight="900" textAnchor="middle">
+          <text x="885" y="635" fill="#fde68a" fontSize="20" fontWeight="900" textAnchor="middle">
             ΔS = n∫Cp,m(T)dT/T
           </text>
-          <text x="885" y="665" fill="#f8fafc" fontSize="18" fontWeight="900" textAnchor="middle">
+          <text x="885" y="665" fill="#f8fafc" fontSize="20" fontWeight="900" textAnchor="middle">
             − nR ln(P₂/P₁)
           </text>
         </g>
 
-        <text x="600" y="730" fill="#94a3b8" fontSize="18" textAnchor="middle">
+        <text x="600" y="730" fill="#94a3b8" fontSize="20" textAnchor="middle">
           The two formulas give exactly the same endpoint entropy change when PV = nRT.
         </text>
       </svg>
@@ -180,7 +180,7 @@ function CoordinateMapAnimation() {
 
 function HeatCapacityIntegralAnimation() {
   return (
-    <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
+    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
       <svg
         viewBox="0 0 1200 720"
         role="img"
@@ -190,7 +190,7 @@ function HeatCapacityIntegralAnimation() {
         <title id="capacity-int-title">Entropy as the area under heat capacity divided by temperature</title>
         <desc id="capacity-int-description">
           A temperature-dependent heat capacity curve is divided by temperature.
-          The shaded area under C over T from T1 to T2 equals the thermal contribution to entropy change.
+          The shaded area under C over T from T₁ to T₂ equals the thermal contribution to entropy change.
         </desc>
 
         <defs>
@@ -213,19 +213,19 @@ function HeatCapacityIntegralAnimation() {
           d="M200 500 C360 430 500 330 680 280 C820 240 930 215 1020 200 L1020 610 L200 610 Z"
           fill="url(#hcHatch)"
           stroke="#22d3ee"
-          strokeWidth="8"
+          strokeWidth="5"
         />
 
         <line x1="300" y1="610" x2="300" y2="440" stroke="#fbbf24" strokeWidth="4" strokeDasharray="12 10" />
         <line x1="900" y1="610" x2="900" y2="225" stroke="#f472b6" strokeWidth="4" strokeDasharray="12 10" />
-        <text x="300" y="650" fill="#fde68a" fontSize="19" textAnchor="middle">T₁</text>
-        <text x="900" y="650" fill="#f9a8d4" fontSize="19" textAnchor="middle">T₂</text>
+        <text x="300" y="650" fill="#fde68a" fontSize="21" textAnchor="middle">T₁</text>
+        <text x="900" y="650" fill="#f9a8d4" fontSize="21" textAnchor="middle">T₂</text>
 
         <rect x="280" y="135" width="640" height="90" rx="26" fill="#0f172a" stroke="#a78bfa" strokeWidth="5" />
         <text x="600" y="173" fill="#ddd6fe" fontSize="21" fontWeight="900" textAnchor="middle">
           C(T) = a + bT + cT²
         </text>
-        <text x="600" y="205" fill="#f8fafc" fontSize="19" fontWeight="900" textAnchor="middle">
+        <text x="600" y="205" fill="#f8fafc" fontSize="21" fontWeight="900" textAnchor="middle">
           ∫C(T)dT/T = a ln(T₂/T₁) + b(T₂−T₁) + c(T₂²−T₁²)/2
         </text>
 
@@ -234,7 +234,7 @@ function HeatCapacityIntegralAnimation() {
           <animate attributeName="cy" values="440;225;440" dur="5s" repeatCount="indefinite" />
         </circle>
 
-        <text x="600" y="690" fill="#94a3b8" fontSize="18" textAnchor="middle">
+        <text x="600" y="690" fill="#94a3b8" fontSize="20" textAnchor="middle">
           Use CV,m for the T–V form and CP,m for the T–P form.
         </text>
       </svg>
@@ -244,7 +244,7 @@ function HeatCapacityIntegralAnimation() {
 
 function IsothermalRoutesAnimation() {
   return (
-    <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
+    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
       <svg
         viewBox="0 0 1200 790"
         role="img"
@@ -279,9 +279,9 @@ function IsothermalRoutesAnimation() {
         <text x="1110" y="602" fill="#e2e8f0" fontSize="22">V</text>
         <text x="90" y="95" fill="#e2e8f0" fontSize="22">P</text>
 
-        <path id="revRoute" d="M210 170 C390 260 640 390 980 505" fill="none" stroke="#34d399" strokeWidth="10" markerEnd="url(#irGreen)" />
-        <path id="stepRoute" d="M210 170 V505 H980" fill="none" stroke="#fbbf24" strokeWidth="9" markerEnd="url(#irAmber)" />
-        <path id="freeRoute" d="M210 170 C410 560 720 565 980 505" fill="none" stroke="#fb7185" strokeWidth="9" strokeDasharray="18 12" markerEnd="url(#irRose)" />
+        <path id="revRoute" d="M210 170 C390 260 640 390 980 505" fill="none" stroke="#34d399" strokeWidth="5" markerEnd="url(#irGreen)" />
+        <path id="stepRoute" d="M210 170 V505 H980" fill="none" stroke="#fbbf24" strokeWidth="5" markerEnd="url(#irAmber)" />
+        <path id="freeRoute" d="M210 170 C410 560 720 565 980 505" fill="none" stroke="#fb7185" strokeWidth="5" strokeDasharray="18 12" markerEnd="url(#irRose)" />
 
         <circle r="12" fill="#86efac">
           <animateMotion dur="5.2s" repeatCount="indefinite">
@@ -319,7 +319,7 @@ function IsothermalRoutesAnimation() {
 
 function AdiabaticCancellationAnimation() {
   return (
-    <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
+    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
       <svg
         viewBox="0 0 1200 750"
         role="img"
@@ -341,7 +341,7 @@ function AdiabaticCancellationAnimation() {
           <text x="300" y="115" fill="#a7f3d0" fontSize="26" fontWeight="900" textAnchor="middle">
             REVERSIBLE EXPANSION
           </text>
-          <rect x="65" y="150" width="470" height="430" rx="32" fill="#0f172a" stroke="#34d399" strokeWidth="8" />
+          <rect x="65" y="150" width="470" height="430" rx="32" fill="#0f172a" stroke="#34d399" strokeWidth="5" />
 
           <rect x="130" y="230" width="140" height="230" rx="18" fill="#164e63" />
           <rect x="330" y="230" width="140" height="230" rx="18" fill="#7c2d12" />
@@ -356,8 +356,8 @@ function AdiabaticCancellationAnimation() {
             <animate attributeName="y" values="260;330;260" dur="3.2s" repeatCount="indefinite" />
           </rect>
 
-          <text x="200" y="495" fill="#a5f3fc" fontSize="18" fontWeight="900" textAnchor="middle">+nR ln(V₂/V₁)</text>
-          <text x="400" y="495" fill="#fda4af" fontSize="18" fontWeight="900" textAnchor="middle">nCv ln(T₂/T₁)</text>
+          <text x="200" y="495" fill="#a5f3fc" fontSize="20" fontWeight="900" textAnchor="middle">+nR ln(V₂/V₁)</text>
+          <text x="400" y="495" fill="#fda4af" fontSize="20" fontWeight="900" textAnchor="middle">nCv ln(T₂/T₁)</text>
           <text x="300" y="545" fill="#a7f3d0" fontSize="22" fontWeight="900" textAnchor="middle">sum = 0</text>
         </g>
 
@@ -367,7 +367,7 @@ function AdiabaticCancellationAnimation() {
           <text x="900" y="115" fill="#fda4af" fontSize="26" fontWeight="900" textAnchor="middle">
             IRREVERSIBLE EXPANSION
           </text>
-          <rect x="665" y="150" width="470" height="430" rx="32" fill="#0f172a" stroke="#fb7185" strokeWidth="8" />
+          <rect x="665" y="150" width="470" height="430" rx="32" fill="#0f172a" stroke="#fb7185" strokeWidth="5" />
 
           <rect x="730" y="220" width="140" height="240" rx="18" fill="#164e63" />
           <rect x="930" y="285" width="140" height="175" rx="18" fill="#7c2d12" />
@@ -382,8 +382,8 @@ function AdiabaticCancellationAnimation() {
             <animate attributeName="y" values="330;300;330" dur="3s" repeatCount="indefinite" />
           </rect>
 
-          <text x="800" y="495" fill="#a5f3fc" fontSize="18" fontWeight="900" textAnchor="middle">volume increase</text>
-          <text x="1000" y="495" fill="#fda4af" fontSize="18" fontWeight="900" textAnchor="middle">smaller cooling term</text>
+          <text x="800" y="495" fill="#a5f3fc" fontSize="20" fontWeight="900" textAnchor="middle">volume increase</text>
+          <text x="1000" y="495" fill="#fda4af" fontSize="20" fontWeight="900" textAnchor="middle">smaller cooling term</text>
           <text x="900" y="545" fill="#fda4af" fontSize="22" fontWeight="900" textAnchor="middle">sum &gt; 0</text>
         </g>
 
@@ -520,7 +520,7 @@ function WorkedExamples() {
       problem:
         "Two moles of an ideal diatomic gas with constant Cv,m = 5R/2 change from 300 K, 5.00 L to 450 K, 12.0 L. Find ΔS.",
       solution:
-        "ΔS = nCv,m ln(T2/T1) + nR ln(V2/V1) = 2(5R/2)ln(1.5) + 2Rln(2.4) ≈ 31.41 J K⁻¹.",
+        "ΔS = nCv,m ln(T₂/T₁) + nR ln(V₂/V₁) = 2(5R/2)ln(1.5) + 2Rln(2.4) ≈ 31.41 J K⁻¹.",
     },
     {
       title: "Temperature-dependent Cv",
@@ -546,9 +546,9 @@ function WorkedExamples() {
     {
       title: "Irreversible adiabatic expansion",
       problem:
-        "One mole of monatomic ideal gas at 300 K expands adiabatically from 10.0 L to 20.0 L against a constant external pressure equal to the final gas pressure. Find T2 and ΔSsys.",
+        "One mole of monatomic ideal gas at 300 K expands adiabatically from 10.0 L to 20.0 L against a constant external pressure equal to the final gas pressure. Find T₂ and ΔSsys.",
       solution:
-        "Energy balance gives (3R/2)(T2−300) = −(RT2/20)(20−10), so T2 = 225 K. Then ΔS = (3R/2)ln(225/300) + Rln2 ≈ +2.18 J K⁻¹. Since q = 0, this equals entropy generated.",
+        "Energy balance gives (3R/2)(T₂−300) = −(RT2/20)(20−10), so T₂ = 225 K. Then ΔS = (3R/2)ln(225/300) + Rln2 ≈ +2.18 J K⁻¹. Since q = 0, this equals entropy generated.",
     },
     {
       title: "Irreversible isochoric heating",
@@ -598,28 +598,28 @@ const problems = [
     question:
       "An ideal gas cools at constant volume. What determines the sign of ΔS?",
     solution:
-      "ΔS = n∫Cv,m(T)dT/T. Since Cv,m > 0 and T2 < T1, the integral is negative.",
+      "ΔS = n∫Cv,m(T)dT/T. Since Cv,m > 0 and T₂ < T₁, the integral is negative.",
   },
   {
     title: "Concept Application 4 — isobaric heating",
     question:
-      "For constant Cp,m and constant pressure heating from T1 to T2, write ΔS.",
+      "For constant Cp,m and constant pressure heating from T₁ to T₂, write ΔS.",
     solution:
-      "ΔS = nCp,m ln(T2/T1), positive when T2 > T1.",
+      "ΔS = nCp,m ln(T₂/T₁), positive when T₂ > T₁.",
   },
   {
     title: "Concept Application 5 — pressure drop at constant temperature",
     question:
-      "One mole of ideal gas undergoes an isothermal pressure drop from P1 to P2. Write ΔS.",
+      "One mole of ideal gas undergoes an isothermal pressure drop from P₁ to P₂. Write ΔS.",
     solution:
-      "ΔS = −R ln(P2/P1) = R ln(P1/P2). It is positive when P2 < P1.",
+      "ΔS = −R ln(P₂/P₁) = R ln(P₁/P₂). It is positive when P₂ < P₁.",
   },
   {
     title: "Concept Application 6 — isothermal compression",
     question:
       "What is the sign of the system entropy change during isothermal compression?",
     solution:
-      "Negative: ΔSsys = nR ln(V2/V1), and V2 < V1.",
+      "Negative: ΔSsys = nR ln(V₂/V₁), and V₂ < V₁.",
   },
   {
     title: "Concept Application 7 — route independence",
@@ -633,21 +633,21 @@ const problems = [
     question:
       "During free expansion qactual = 0. Why is ΔSsystem not zero?",
     solution:
-      "The defining integral uses reversible heat along a reversible reference path, not the actual irreversible heat. For ideal-gas isothermal free expansion, ΔSsystem = nR ln(V2/V1) > 0.",
+      "The defining integral uses reversible heat along a reversible reference path, not the actual irreversible heat. For ideal-gas isothermal free expansion, ΔSsystem = nR ln(V₂/V₁) > 0.",
   },
   {
     title: "Concept Application 9 — one-step expansion proof",
     question:
-      "For isothermal one-step expansion ending at Pext = P2, prove ΔSuniverse > 0.",
+      "For isothermal one-step expansion ending at Pext = P₂, prove ΔSuniverse > 0.",
     solution:
-      "Let x = V2/V1 > 1. Then ΔSuniv/(nR) = ln x − (1−1/x). This is positive for x > 1.",
+      "Let x = V₂/V₁ > 1. Then ΔSuniv/(nR) = ln x − (1−1/x). This is positive for x > 1.",
   },
   {
     title: "Concept Application 10 — reversible adiabat",
     question:
       "Use TV^(γ−1) = constant to prove ΔS = 0.",
     solution:
-      "ΔS = nCv,m ln(T2/T1) + nR ln(V2/V1). Since ln(T2/T1) = −(γ−1)ln(V2/V1) and R = (γ−1)Cv,m, the two terms cancel.",
+      "ΔS = nCv,m ln(T₂/T₁) + nR ln(V₂/V₁). Since ln(T₂/T₁) = −(γ−1)ln(V₂/V₁) and R = (γ−1)Cv,m, the two terms cancel.",
   },
   {
     title: "Concept Application 11 — irreversible adiabat",
@@ -673,14 +673,14 @@ const problems = [
   {
     title: "Concept Application 14 — variable heat capacity",
     question:
-      "If C(T) = a + bT + cT², evaluate ∫T1^T2 C(T)dT/T.",
+      "If C(T) = a + bT + cT², evaluate ∫T₁^T₂ C(T)dT/T.",
     solution:
-      "The result is a ln(T2/T1) + b(T2−T1) + (c/2)(T2²−T1²).",
+      "The result is a ln(T₂/T₁) + b(T₂−T₁) + (c/2)(T2²−T1²).",
   },
   {
     title: "Concept Application 15 — identical endpoints",
     question:
-      "Two ideal-gas processes connect identical T1,V1 and T2,V2 endpoints. One is reversible and one irreversible. Compare ΔSsystem.",
+      "Two ideal-gas processes connect identical T₁,V₁ and T₂,V₂ endpoints. One is reversible and one irreversible. Compare ΔSsystem.",
     solution:
       "They are equal because system entropy depends only on endpoints. The universe entropy distinguishes the paths.",
   },
@@ -689,7 +689,7 @@ const problems = [
     question:
       "A colder ideal gas is suddenly placed in contact with a hotter reservoir. Why is ΔSuniverse positive?",
     solution:
-      "The gas gains entropy nC ln(T2/T1), while the reservoir loses q/Treservoir. Because heat crosses a finite temperature difference, the gas gain exceeds the reservoir loss.",
+      "The gas gains entropy nC ln(T₂/T₁), while the reservoir loses q/Treservoir. Because heat crosses a finite temperature difference, the gas gain exceeds the reservoir loss.",
   },
 ];
 

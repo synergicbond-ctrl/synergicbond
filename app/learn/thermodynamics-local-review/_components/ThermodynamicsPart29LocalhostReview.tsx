@@ -45,7 +45,7 @@ function Lens({ title, children, tone = "cyan" }: { title: string; children: Rea
 // SVG 1: G vs reaction coordinate showing minimum at equilibrium
 function GvsXiSVG() {
   return (
-    <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
+    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
       <svg viewBox="0 0 1200 620" role="img" aria-labelledby="p29-gxi-title p29-gxi-desc" className="h-auto w-full">
         <title id="p29-gxi-title">Total Gibbs energy versus extent of reaction showing equilibrium minimum</title>
         <desc id="p29-gxi-desc">
@@ -71,37 +71,37 @@ function GvsXiSVG() {
 
         <line x1="130" y1="530" x2="1080" y2="530" stroke="#e2e8f0" strokeWidth="4" markerEnd="url(#p29axArrow)" />
         <line x1="130" y1="530" x2="130" y2="80" stroke="#e2e8f0" strokeWidth="4" markerEnd="url(#p29axArrow)" />
-        <text x="1095" y="544" fill="#e2e8f0" fontSize="18" fontWeight="900">ξ →</text>
-        <text x="80" y="68" fill="#e2e8f0" fontSize="18" fontWeight="900">G</text>
-        <text x="130" y="556" fill="#94a3b8" fontSize="15" textAnchor="middle">0 (pure R)</text>
-        <text x="1070" y="556" fill="#94a3b8" fontSize="15" textAnchor="middle">1 (pure P)</text>
+        <text x="1095" y="544" fill="#e2e8f0" fontSize="20" fontWeight="900">ξ →</text>
+        <text x="80" y="68" fill="#e2e8f0" fontSize="20" fontWeight="900">G</text>
+        <text x="130" y="556" fill="#94a3b8" fontSize="18" textAnchor="middle">0 (pure R)</text>
+        <text x="1070" y="556" fill="#94a3b8" fontSize="18" textAnchor="middle">1 (pure P)</text>
 
         {/* G curve: starts high left, dips to minimum, rises right */}
         <path d="M130 300 C220 250 330 195 480 168 C580 150 680 152 800 172 C900 190 1000 240 1070 290"
-          fill="none" stroke="#34d399" strokeWidth="10" />
+          fill="none" stroke="#34d399" strokeWidth="5" />
 
         {/* Equilibrium minimum */}
         <circle cx="590" cy="148" r="14" fill="#fbbf24" />
         <line x1="590" y1="148" x2="590" y2="530" stroke="#fbbf24" strokeWidth="3" strokeDasharray="12 8" />
-        <text x="590" y="558" fill="#fde68a" fontSize="17" fontWeight="900" textAnchor="middle">ξ_eq (equilibrium)</text>
-        <text x="590" y="580" fill="#fde68a" fontSize="13" textAnchor="middle">ΔrG = 0, Q = K</text>
+        <text x="590" y="558" fill="#fde68a" fontSize="19" fontWeight="900" textAnchor="middle">ξ_eq (equilibrium)</text>
+        <text x="590" y="580" fill="#fde68a" fontSize="17" textAnchor="middle">ΔrG = 0, Q = K</text>
 
         {/* Forward arrow (Q < K region) */}
-        <path d="M300 250 L500 200" stroke="#22d3ee" strokeWidth="7" markerEnd="url(#p29fwdArrow)" />
-        <text x="310" y="235" fill="#a5f3fc" fontSize="15" fontWeight="900">Q &lt; K</text>
-        <text x="310" y="255" fill="#a5f3fc" fontSize="13">ΔrG &lt; 0 → forward</text>
+        <path d="M300 250 L500 200" stroke="#22d3ee" strokeWidth="4" markerEnd="url(#p29fwdArrow)" />
+        <text x="310" y="235" fill="#a5f3fc" fontSize="18" fontWeight="900">Q &lt; K</text>
+        <text x="310" y="255" fill="#a5f3fc" fontSize="17">ΔrG &lt; 0 → forward</text>
 
         {/* Reverse arrow (Q > K region) */}
-        <path d="M900 190 L700 175" stroke="#fb7185" strokeWidth="7" markerEnd="url(#p29revArrow)" />
-        <text x="850" y="175" fill="#fda4af" fontSize="15" fontWeight="900">Q &gt; K</text>
-        <text x="850" y="195" fill="#fda4af" fontSize="13">ΔrG &gt; 0 → reverse</text>
+        <path d="M900 190 L700 175" stroke="#fb7185" strokeWidth="4" markerEnd="url(#p29revArrow)" />
+        <text x="850" y="175" fill="#fda4af" fontSize="18" fontWeight="900">Q &gt; K</text>
+        <text x="850" y="195" fill="#fda4af" fontSize="17">ΔrG &gt; 0 → reverse</text>
 
         {/* ΔrG = 0 annotation */}
-        <text x="590" y="100" fill="#fbbf24" fontSize="16" fontWeight="900" textAnchor="middle">ΔrG = (∂G/∂ξ)_&#123;T,P&#125; = 0</text>
-        <text x="590" y="122" fill="#fbbf24" fontSize="13" textAnchor="middle">G minimum at equilibrium</text>
+        <text x="590" y="100" fill="#fbbf24" fontSize="19" fontWeight="900" textAnchor="middle">ΔrG = (∂G/∂ξ)_&#123;T,P&#125; = 0</text>
+        <text x="590" y="122" fill="#fbbf24" fontSize="17" textAnchor="middle">G minimum at equilibrium</text>
 
         <rect x="160" y="578" width="880" height="35" rx="14" fill="#0f172a" />
-        <text x="600" y="600" fill="#cbd5e1" fontSize="14" textAnchor="middle">
+        <text x="600" y="600" fill="#cbd5e1" fontSize="18" textAnchor="middle">
           ΔrG = ΔrG° + RT ln Q. At equilibrium: ΔrG = 0 → ΔrG° = −RT ln K.
         </text>
       </svg>
@@ -112,7 +112,7 @@ function GvsXiSVG() {
 // SVG 2: Q vs K direction indicator
 function QvsKSVG() {
   return (
-    <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
+    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
       <svg viewBox="0 0 1200 420" role="img" aria-labelledby="p29-qk-title p29-qk-desc" className="h-auto w-full">
         <title id="p29-qk-title">Reaction direction determined by comparing Q with K</title>
         <desc id="p29-qk-desc">
@@ -137,31 +137,31 @@ function QvsKSVG() {
         {/* Three regions */}
         <rect x="40" y="80" width="330" height="250" rx="24" fill="#0c4a6e" stroke="#22d3ee" strokeWidth="4" />
         <text x="205" y="135" fill="#22d3ee" fontSize="26" fontWeight="900" textAnchor="middle">Q &lt; K</text>
-        <text x="205" y="170" fill="#a5f3fc" fontSize="17" textAnchor="middle">ΔrG &lt; 0</text>
-        <text x="205" y="200" fill="#a5f3fc" fontSize="17" textAnchor="middle">RT ln(Q/K) &lt; 0</text>
-        <path d="M80 275 L330 275" stroke="#22d3ee" strokeWidth="8" markerEnd="url(#p29fArrow)" />
-        <text x="205" y="305" fill="#cffafe" fontSize="15" textAnchor="middle">forward reaction</text>
-        <text x="205" y="325" fill="#cffafe" fontSize="13" textAnchor="middle">spontaneous</text>
+        <text x="205" y="170" fill="#a5f3fc" fontSize="19" textAnchor="middle">ΔrG &lt; 0</text>
+        <text x="205" y="200" fill="#a5f3fc" fontSize="19" textAnchor="middle">RT ln(Q/K) &lt; 0</text>
+        <path d="M80 275 L330 275" stroke="#22d3ee" strokeWidth="5" markerEnd="url(#p29fArrow)" />
+        <text x="205" y="305" fill="#cffafe" fontSize="18" textAnchor="middle">forward reaction</text>
+        <text x="205" y="325" fill="#cffafe" fontSize="17" textAnchor="middle">spontaneous</text>
 
         <rect x="435" y="80" width="330" height="250" rx="24" fill="#022c22" stroke="#34d399" strokeWidth="4" />
         <text x="600" y="135" fill="#34d399" fontSize="26" fontWeight="900" textAnchor="middle">Q = K</text>
-        <text x="600" y="170" fill="#a7f3d0" fontSize="17" textAnchor="middle">ΔrG = 0</text>
-        <text x="600" y="200" fill="#a7f3d0" fontSize="17" textAnchor="middle">RT ln(Q/K) = 0</text>
-        <line x1="480" y1="275" x2="570" y2="275" stroke="#34d399" strokeWidth="6" />
-        <line x1="630" y1="275" x2="720" y2="275" stroke="#34d399" strokeWidth="6" />
-        <text x="600" y="305" fill="#d1fae5" fontSize="15" textAnchor="middle">equilibrium</text>
-        <text x="600" y="325" fill="#d1fae5" fontSize="13" textAnchor="middle">no net reaction</text>
+        <text x="600" y="170" fill="#a7f3d0" fontSize="19" textAnchor="middle">ΔrG = 0</text>
+        <text x="600" y="200" fill="#a7f3d0" fontSize="19" textAnchor="middle">RT ln(Q/K) = 0</text>
+        <line x1="480" y1="275" x2="570" y2="275" stroke="#34d399" strokeWidth="4" />
+        <line x1="630" y1="275" x2="720" y2="275" stroke="#34d399" strokeWidth="4" />
+        <text x="600" y="305" fill="#d1fae5" fontSize="18" textAnchor="middle">equilibrium</text>
+        <text x="600" y="325" fill="#d1fae5" fontSize="17" textAnchor="middle">no net reaction</text>
 
         <rect x="830" y="80" width="330" height="250" rx="24" fill="#450a0a" stroke="#fb7185" strokeWidth="4" />
         <text x="995" y="135" fill="#fb7185" fontSize="26" fontWeight="900" textAnchor="middle">Q &gt; K</text>
-        <text x="995" y="170" fill="#fda4af" fontSize="17" textAnchor="middle">ΔrG &gt; 0</text>
-        <text x="995" y="200" fill="#fda4af" fontSize="17" textAnchor="middle">RT ln(Q/K) &gt; 0</text>
-        <path d="M1160 275 L920 275" stroke="#fb7185" strokeWidth="8" markerEnd="url(#p29rArrow)" />
-        <text x="995" y="305" fill="#ffe4e6" fontSize="15" textAnchor="middle">reverse reaction</text>
-        <text x="995" y="325" fill="#ffe4e6" fontSize="13" textAnchor="middle">spontaneous</text>
+        <text x="995" y="170" fill="#fda4af" fontSize="19" textAnchor="middle">ΔrG &gt; 0</text>
+        <text x="995" y="200" fill="#fda4af" fontSize="19" textAnchor="middle">RT ln(Q/K) &gt; 0</text>
+        <path d="M1160 275 L920 275" stroke="#fb7185" strokeWidth="5" markerEnd="url(#p29rArrow)" />
+        <text x="995" y="305" fill="#ffe4e6" fontSize="18" textAnchor="middle">reverse reaction</text>
+        <text x="995" y="325" fill="#ffe4e6" fontSize="17" textAnchor="middle">spontaneous</text>
 
         <rect x="180" y="358" width="840" height="40" rx="16" fill="#0f172a" />
-        <text x="600" y="382" fill="#cbd5e1" fontSize="15" textAnchor="middle" fontWeight="700">
+        <text x="600" y="382" fill="#cbd5e1" fontSize="18" textAnchor="middle" fontWeight="700">
           ΔrG = ΔrG° + RT ln Q = RT ln(Q/K)
         </text>
       </svg>

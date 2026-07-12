@@ -85,7 +85,7 @@ function Formula({
 
 function ReversedEngineAnimation() {
   return (
-    <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
+    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
       <svg
         viewBox="0 0 1200 780"
         role="img"
@@ -120,35 +120,35 @@ function ReversedEngineAnimation() {
           REVERSED HEAT ENGINE: WORK DRIVES HEAT FROM COLD TO HOT
         </text>
 
-        <rect x="350" y="115" width="500" height="110" rx="28" fill="#7c2d12" stroke="#f97316" strokeWidth="8" />
+        <rect x="350" y="115" width="500" height="110" rx="28" fill="#7c2d12" stroke="#f97316" strokeWidth="5" />
         <text x="600" y="162" fill="#fed7aa" fontSize="28" fontWeight="900" textAnchor="middle">WARM SURROUNDINGS / HEATED SPACE</text>
         <text x="600" y="197" fill="#f8fafc" fontSize="22" fontWeight="900" textAnchor="middle">T<tspan baselineShift="sub">H</tspan></text>
 
-        <circle cx="600" cy="405" r="128" fill="url(#reverseCore)" stroke="#a78bfa" strokeWidth="9" />
+        <circle cx="600" cy="405" r="128" fill="url(#reverseCore)" stroke="#a78bfa" strokeWidth="5" />
         <text x="600" y="390" fill="#f8fafc" fontSize="29" fontWeight="900" textAnchor="middle">REFRIGERATOR</text>
         <text x="600" y="430" fill="#ddd6fe" fontSize="21" fontWeight="900" textAnchor="middle">or heat pump</text>
 
         <g transform="translate(600 405)">
           <animateTransform attributeName="transform" type="rotate" from="360 600 405" to="0 600 405" dur="5s" repeatCount="indefinite" />
-          <line x1="-72" y1="0" x2="72" y2="0" stroke="#67e8f9" strokeWidth="12" />
-          <line x1="0" y1="-72" x2="0" y2="72" stroke="#67e8f9" strokeWidth="12" />
+          <line x1="-72" y1="0" x2="72" y2="0" stroke="#67e8f9" strokeWidth="6" />
+          <line x1="0" y1="-72" x2="0" y2="72" stroke="#67e8f9" strokeWidth="6" />
         </g>
 
-        <rect x="350" y="595" width="500" height="110" rx="28" fill="#164e63" stroke="#22d3ee" strokeWidth="8" />
+        <rect x="350" y="595" width="500" height="110" rx="28" fill="#164e63" stroke="#22d3ee" strokeWidth="5" />
         <text x="600" y="642" fill="#a5f3fc" fontSize="28" fontWeight="900" textAnchor="middle">COLD SPACE / COLD RESERVOIR</text>
         <text x="600" y="677" fill="#f8fafc" fontSize="22" fontWeight="900" textAnchor="middle">T<tspan baselineShift="sub">C</tspan></text>
 
-        <path d="M600 580 V535" stroke="#22d3ee" strokeWidth="12" markerEnd="url(#reCyan)">
+        <path d="M600 580 V535" stroke="#22d3ee" strokeWidth="5" markerEnd="url(#reCyan)">
           <animate attributeName="stroke-dasharray" values="0 140;70 70;140 0" dur="2s" repeatCount="indefinite" />
         </path>
         <text x="655" y="565" fill="#a5f3fc" fontSize="24" fontWeight="900">Q<tspan baselineShift="sub">C</tspan></text>
 
-        <path d="M600 270 V235" stroke="#fbbf24" strokeWidth="12" markerEnd="url(#reAmber)">
+        <path d="M600 270 V235" stroke="#fbbf24" strokeWidth="5" markerEnd="url(#reAmber)">
           <animate attributeName="stroke-dasharray" values="140 0;70 70;0 140" dur="2s" repeatCount="indefinite" />
         </path>
         <text x="655" y="260" fill="#fde68a" fontSize="24" fontWeight="900">Q<tspan baselineShift="sub">H</tspan></text>
 
-        <path d="M1000 405 H745" stroke="#fb7185" strokeWidth="12" markerEnd="url(#reRose)">
+        <path d="M1000 405 H745" stroke="#fb7185" strokeWidth="5" markerEnd="url(#reRose)">
           <animate attributeName="stroke-dasharray" values="0 270;135 135;270 0" dur="2.3s" repeatCount="indefinite" />
         </path>
         <text x="880" y="370" fill="#fda4af" fontSize="25" fontWeight="900" textAnchor="middle">W<tspan baselineShift="sub">in</tspan></text>
@@ -156,10 +156,10 @@ function ReversedEngineAnimation() {
         <rect x="55" y="300" width="300" height="215" rx="28" fill="#0f172a" stroke="#34d399" strokeWidth="5" />
         <text x="205" y="345" fill="#a7f3d0" fontSize="21" fontWeight="900" textAnchor="middle">ENERGY BALANCE</text>
         <text x="205" y="400" fill="#f8fafc" fontSize="25" fontWeight="900" textAnchor="middle">QH = QC + Win</text>
-        <text x="205" y="452" fill="#cbd5e1" fontSize="18" textAnchor="middle">more heat leaves at the hot side</text>
-        <text x="205" y="485" fill="#cbd5e1" fontSize="18" textAnchor="middle">than was extracted from cold side</text>
+        <text x="205" y="452" fill="#cbd5e1" fontSize="20" textAnchor="middle">more heat leaves at the hot side</text>
+        <text x="205" y="485" fill="#cbd5e1" fontSize="20" textAnchor="middle">than was extracted from cold side</text>
 
-        <text x="600" y="755" fill="#94a3b8" fontSize="18" textAnchor="middle">
+        <text x="600" y="755" fill="#94a3b8" fontSize="20" textAnchor="middle">
           Same machine, different desired effect: cooling defines a refrigerator; heating defines a heat pump.
         </text>
       </svg>
@@ -169,7 +169,7 @@ function ReversedEngineAnimation() {
 
 function ReversedCarnotStagesAnimation() {
   return (
-    <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
+    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
       <svg
         viewBox="0 0 1200 820"
         role="img"
@@ -229,7 +229,7 @@ function ReversedCarnotStagesAnimation() {
             <text x={item.x + 110} y="120" fill={item.stroke} fontSize="28" fontWeight="900" textAnchor="middle">
               {item.title}
             </text>
-            <text x={item.x + 110} y="154" fill="#cbd5e1" fontSize="17" textAnchor="middle">
+            <text x={item.x + 110} y="154" fill="#cbd5e1" fontSize="19" textAnchor="middle">
               {item.subtitle}
             </text>
 
@@ -237,7 +237,7 @@ function ReversedCarnotStagesAnimation() {
               d={`M${item.x + 10} 510 V200 H${item.x + 210} V510`}
               fill="none"
               stroke={item.stroke}
-              strokeWidth="8"
+              strokeWidth="5"
             />
             <rect x={item.x + 32} y="345" width="156" height="24" rx="8" fill={item.stroke}>
               <animate attributeName="y" values={item.piston} dur={`${4.4 + index * 0.3}s`} repeatCount="indefinite" />
@@ -248,7 +248,7 @@ function ReversedCarnotStagesAnimation() {
               x2={item.x + 110}
               y2="345"
               stroke={item.stroke}
-              strokeWidth="14"
+              strokeWidth="6"
               strokeLinecap="round"
             >
               <animate attributeName="y2" values={item.piston} dur={`${4.4 + index * 0.3}s`} repeatCount="indefinite" />
@@ -279,19 +279,19 @@ function ReversedCarnotStagesAnimation() {
             <text x={item.x + 110} y="582" fill={item.stroke} fontSize="20" fontWeight="900" textAnchor="middle">
               {item.temp}
             </text>
-            <text x={item.x + 110} y="620" fill="#e2e8f0" fontSize="18" textAnchor="middle">
+            <text x={item.x + 110} y="620" fill="#e2e8f0" fontSize="20" textAnchor="middle">
               {item.heat}
             </text>
           </g>
         ))}
 
-        <path d="M1040 705 H160" stroke="#a78bfa" strokeWidth="9" />
+        <path d="M1040 705 H160" stroke="#a78bfa" strokeWidth="5" />
         <polygon points="160,705 190,687 190,723" fill="#a78bfa" />
         <text x="600" y="750" fill="#ddd6fe" fontSize="21" fontWeight="900" textAnchor="middle">
           The reversed loop is anticlockwise on a P–V diagram: net work is supplied to the device.
         </text>
 
-        <text x="600" y="795" fill="#94a3b8" fontSize="18" textAnchor="middle">
+        <text x="600" y="795" fill="#94a3b8" fontSize="20" textAnchor="middle">
           Every leg is reversible only in the ideal Carnot limit.
         </text>
       </svg>
@@ -301,7 +301,7 @@ function ReversedCarnotStagesAnimation() {
 
 function COPGraph() {
   return (
-    <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
+    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
       <svg
         viewBox="0 0 1200 720"
         role="img"
@@ -332,8 +332,8 @@ function COPGraph() {
         <text x="1115" y="632" fill="#e2e8f0" fontSize="24">ΔT = TH − TC</text>
         <text x="95" y="90" fill="#e2e8f0" fontSize="24">COP</text>
 
-        <path id="copRPath" d="M190 145 C280 235 430 365 1025 565" fill="none" stroke="#22d3ee" strokeWidth="10" markerEnd="url(#copCyan)" />
-        <path id="copHPPath" d="M190 105 C320 195 500 320 1025 515" fill="none" stroke="#fbbf24" strokeWidth="10" markerEnd="url(#copAmber)" />
+        <path id="copRPath" d="M190 145 C280 235 430 365 1025 565" fill="none" stroke="#22d3ee" strokeWidth="5" markerEnd="url(#copCyan)" />
+        <path id="copHPPath" d="M190 105 C320 195 500 320 1025 515" fill="none" stroke="#fbbf24" strokeWidth="5" markerEnd="url(#copAmber)" />
 
         <circle r="12" fill="#67e8f9">
           <animateMotion dur="5.5s" repeatCount="indefinite">
@@ -350,7 +350,7 @@ function COPGraph() {
         <text x="730" y="405" fill="#a5f3fc" fontSize="22" fontWeight="900">COPR</text>
 
         <rect x="235" y="650" width="730" height="45" rx="20" fill="#0f172a" stroke="#a78bfa" strokeWidth="4" />
-        <text x="600" y="680" fill="#ddd6fe" fontSize="19" fontWeight="900" textAnchor="middle">
+        <text x="600" y="680" fill="#ddd6fe" fontSize="21" fontWeight="900" textAnchor="middle">
           Small temperature gap → high ideal COP; large temperature gap → high work demand
         </text>
       </svg>
@@ -360,7 +360,7 @@ function COPGraph() {
 
 function EntropyBridgeAnimation() {
   return (
-    <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
+    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
       <svg
         viewBox="0 0 1200 720"
         role="img"
@@ -382,16 +382,16 @@ function EntropyBridgeAnimation() {
           <text x="310" y="115" fill="#a7f3d0" fontSize="27" fontWeight="900" textAnchor="middle">
             REVERSIBLE LIMIT
           </text>
-          <rect x="90" y="155" width="440" height="390" rx="32" fill="#0f172a" stroke="#34d399" strokeWidth="8" />
+          <rect x="90" y="155" width="440" height="390" rx="32" fill="#0f172a" stroke="#34d399" strokeWidth="5" />
           <rect x="150" y="195" width="320" height="70" rx="20" fill="#7c2d12" />
           <text x="310" y="238" fill="#fed7aa" fontSize="21" fontWeight="900" textAnchor="middle">HOT RESERVOIR</text>
           <rect x="150" y="435" width="320" height="70" rx="20" fill="#164e63" />
           <text x="310" y="478" fill="#a5f3fc" fontSize="21" fontWeight="900" textAnchor="middle">COLD RESERVOIR</text>
           <circle cx="310" cy="350" r="65" fill="#312e81" stroke="#a78bfa" strokeWidth="5" />
           <text x="310" y="358" fill="#f8fafc" fontSize="20" fontWeight="900" textAnchor="middle">DEVICE</text>
-          <text x="310" y="295" fill="#fde68a" fontSize="18" textAnchor="middle">+QH/TH</text>
-          <text x="310" y="420" fill="#a5f3fc" fontSize="18" textAnchor="middle">−QC/TC</text>
-          <text x="310" y="535" fill="#a7f3d0" fontSize="19" fontWeight="900" textAnchor="middle">ΔSuniverse = 0</text>
+          <text x="310" y="295" fill="#fde68a" fontSize="20" textAnchor="middle">+QH/TH</text>
+          <text x="310" y="420" fill="#a5f3fc" fontSize="20" textAnchor="middle">−QC/TC</text>
+          <text x="310" y="535" fill="#a7f3d0" fontSize="21" fontWeight="900" textAnchor="middle">ΔSuniverse = 0</text>
         </g>
 
         <line x1="600" y1="100" x2="600" y2="580" stroke="#334155" strokeWidth="4" />
@@ -400,7 +400,7 @@ function EntropyBridgeAnimation() {
           <text x="890" y="115" fill="#fda4af" fontSize="27" fontWeight="900" textAnchor="middle">
             REAL DEVICE
           </text>
-          <rect x="670" y="155" width="440" height="390" rx="32" fill="#0f172a" stroke="#fb7185" strokeWidth="8" />
+          <rect x="670" y="155" width="440" height="390" rx="32" fill="#0f172a" stroke="#fb7185" strokeWidth="5" />
           <rect x="730" y="195" width="320" height="70" rx="20" fill="#7c2d12" />
           <text x="890" y="238" fill="#fed7aa" fontSize="21" fontWeight="900" textAnchor="middle">HOT RESERVOIR</text>
           <rect x="730" y="435" width="320" height="70" rx="20" fill="#164e63" />
@@ -414,7 +414,7 @@ function EntropyBridgeAnimation() {
             </circle>
           ))}
 
-          <text x="890" y="535" fill="#fda4af" fontSize="19" fontWeight="900" textAnchor="middle">ΔSuniverse &gt; 0</text>
+          <text x="890" y="535" fill="#fda4af" fontSize="21" fontWeight="900" textAnchor="middle">ΔSuniverse &gt; 0</text>
         </g>
 
         <rect x="230" y="620" width="740" height="58" rx="22" fill="#0f172a" stroke="#a78bfa" strokeWidth="4" />
@@ -554,7 +554,7 @@ function EngineRefrigeratorRelations() {
 
 function RealRefrigeratorAnimation() {
   return (
-    <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
+    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
       <svg
         viewBox="0 0 1200 760"
         role="img"
@@ -578,36 +578,36 @@ function RealRefrigeratorAnimation() {
           PRACTICAL REFRIGERATOR: A REAL, IRREVERSIBLE CYCLE
         </text>
 
-        <rect x="80" y="210" width="250" height="250" rx="30" fill="#164e63" stroke="#22d3ee" strokeWidth="8" />
+        <rect x="80" y="210" width="250" height="250" rx="30" fill="#164e63" stroke="#22d3ee" strokeWidth="5" />
         <text x="205" y="270" fill="#a5f3fc" fontSize="24" fontWeight="900" textAnchor="middle">EVAPORATOR</text>
-        <text x="205" y="315" fill="#cbd5e1" fontSize="18" textAnchor="middle">inside cold space</text>
+        <text x="205" y="315" fill="#cbd5e1" fontSize="20" textAnchor="middle">inside cold space</text>
         <text x="205" y="365" fill="#a5f3fc" fontSize="21" fontWeight="900" textAnchor="middle">absorbs QC</text>
 
-        <rect x="475" y="100" width="250" height="180" rx="30" fill="#4c1d95" stroke="#f472b6" strokeWidth="8" />
+        <rect x="475" y="100" width="250" height="180" rx="30" fill="#4c1d95" stroke="#f472b6" strokeWidth="5" />
         <text x="600" y="160" fill="#f9a8d4" fontSize="24" fontWeight="900" textAnchor="middle">COMPRESSOR</text>
-        <text x="600" y="205" fill="#cbd5e1" fontSize="18" textAnchor="middle">requires electrical work</text>
+        <text x="600" y="205" fill="#cbd5e1" fontSize="20" textAnchor="middle">requires electrical work</text>
         <text x="600" y="240" fill="#fda4af" fontSize="20" fontWeight="900" textAnchor="middle">pressure and temperature rise</text>
 
-        <rect x="870" y="210" width="250" height="250" rx="30" fill="#7c2d12" stroke="#f97316" strokeWidth="8" />
+        <rect x="870" y="210" width="250" height="250" rx="30" fill="#7c2d12" stroke="#f97316" strokeWidth="5" />
         <text x="995" y="270" fill="#fed7aa" fontSize="24" fontWeight="900" textAnchor="middle">CONDENSER</text>
-        <text x="995" y="315" fill="#cbd5e1" fontSize="18" textAnchor="middle">rear heat exchanger</text>
+        <text x="995" y="315" fill="#cbd5e1" fontSize="20" textAnchor="middle">rear heat exchanger</text>
         <text x="995" y="365" fill="#fde68a" fontSize="21" fontWeight="900" textAnchor="middle">rejects QH</text>
 
-        <rect x="475" y="505" width="250" height="160" rx="30" fill="#0f172a" stroke="#34d399" strokeWidth="8" />
+        <rect x="475" y="505" width="250" height="160" rx="30" fill="#0f172a" stroke="#34d399" strokeWidth="5" />
         <text x="600" y="565" fill="#a7f3d0" fontSize="23" fontWeight="900" textAnchor="middle">EXPANSION DEVICE</text>
-        <text x="600" y="610" fill="#cbd5e1" fontSize="18" textAnchor="middle">pressure drops irreversibly</text>
+        <text x="600" y="610" fill="#cbd5e1" fontSize="20" textAnchor="middle">pressure drops irreversibly</text>
 
-        <path d="M330 290 C420 160 430 160 475 180" fill="none" stroke="#a78bfa" strokeWidth="9" markerEnd="url(#rfArrow)" />
-        <path d="M725 180 C810 155 835 245 870 290" fill="none" stroke="#a78bfa" strokeWidth="9" markerEnd="url(#rfArrow)" />
-        <path d="M995 460 C920 580 820 600 725 585" fill="none" stroke="#a78bfa" strokeWidth="9" markerEnd="url(#rfArrow)" />
-        <path d="M475 585 C375 600 275 540 205 460" fill="none" stroke="#a78bfa" strokeWidth="9" markerEnd="url(#rfArrow)" />
+        <path d="M330 290 C420 160 430 160 475 180" fill="none" stroke="#a78bfa" strokeWidth="5" markerEnd="url(#rfArrow)" />
+        <path d="M725 180 C810 155 835 245 870 290" fill="none" stroke="#a78bfa" strokeWidth="5" markerEnd="url(#rfArrow)" />
+        <path d="M995 460 C920 580 820 600 725 585" fill="none" stroke="#a78bfa" strokeWidth="5" markerEnd="url(#rfArrow)" />
+        <path d="M475 585 C375 600 275 540 205 460" fill="none" stroke="#a78bfa" strokeWidth="5" markerEnd="url(#rfArrow)" />
 
         <circle r="11" fill="#fde047">
           <animateMotion dur="7s" repeatCount="indefinite" path="M330 290 C420 160 430 160 475 180 C620 80 780 130 870 290 C950 470 790 620 725 585 C520 650 320 580 205 460 C120 360 190 250 330 290" />
         </circle>
 
         <rect x="310" y="690" width="580" height="44" rx="20" fill="#0f172a" stroke="#a78bfa" strokeWidth="4" />
-        <text x="600" y="719" fill="#ddd6fe" fontSize="19" fontWeight="900" textAnchor="middle">
+        <text x="600" y="719" fill="#ddd6fe" fontSize="21" fontWeight="900" textAnchor="middle">
           Real COP is lower because of friction, finite temperature gaps and throttling.
         </text>
       </svg>

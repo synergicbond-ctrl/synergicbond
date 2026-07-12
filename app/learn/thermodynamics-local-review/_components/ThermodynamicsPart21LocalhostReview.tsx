@@ -86,7 +86,7 @@ function Formula({
 
 function AbsoluteEntropyLadderAnimation() {
   return (
-    <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
+    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
       <svg
         viewBox="0 0 1200 760"
         role="img"
@@ -115,7 +115,7 @@ function AbsoluteEntropyLadderAnimation() {
           { x: 825, title: "GAS", stroke: "#f472b6", subtitle: "large translational volume" },
         ].map((state, index) => (
           <g key={state.title}>
-            <rect x={state.x} y="155" width="310" height="370" rx="32" fill="#0f172a" stroke={state.stroke} strokeWidth="8" />
+            <rect x={state.x} y="155" width="310" height="370" rx="32" fill="#0f172a" stroke={state.stroke} strokeWidth="5" />
             <text x={state.x + 155} y="205" fill={state.stroke} fontSize="28" fontWeight="900" textAnchor="middle">
               {state.title}
             </text>
@@ -140,13 +140,13 @@ function AbsoluteEntropyLadderAnimation() {
                 </circle>
               );
             })}
-            <text x={state.x + 155} y="570" fill="#cbd5e1" fontSize="18" textAnchor="middle">
+            <text x={state.x + 155} y="570" fill="#cbd5e1" fontSize="20" textAnchor="middle">
               {state.subtitle}
             </text>
           </g>
         ))}
 
-        <path d="M205 640 H995" stroke="#34d399" strokeWidth="10" markerEnd="url(#aeArrow)" />
+        <path d="M205 640 H995" stroke="#34d399" strokeWidth="5" markerEnd="url(#aeArrow)" />
         <text x="600" y="620" fill="#a7f3d0" fontSize="21" fontWeight="900" textAnchor="middle">
           increasing accessible microstates
         </text>
@@ -162,7 +162,7 @@ function AbsoluteEntropyLadderAnimation() {
 
 function SolvationEntropyAnimation() {
   return (
-    <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
+    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
       <svg
         viewBox="0 0 1200 760"
         role="img"
@@ -184,7 +184,7 @@ function SolvationEntropyAnimation() {
           <text x="300" y="120" fill="#a7f3d0" fontSize="26" fontWeight="900" textAnchor="middle">
             CRYSTAL OR LIQUID → AQUEOUS
           </text>
-          <rect x="70" y="160" width="460" height="400" rx="32" fill="#0f172a" stroke="#34d399" strokeWidth="8" />
+          <rect x="70" y="160" width="460" height="400" rx="32" fill="#0f172a" stroke="#34d399" strokeWidth="5" />
 
           <rect x="120" y="235" width="135" height="135" rx="20" fill="#164e63" />
           {Array.from({ length: 9 }).map((_, i) => (
@@ -200,7 +200,7 @@ function SolvationEntropyAnimation() {
           <text x="300" y="450" fill="#a7f3d0" fontSize="20" fontWeight="900" textAnchor="middle">
             dispersion often raises S°
           </text>
-          <text x="300" y="500" fill="#cbd5e1" fontSize="17" textAnchor="middle">
+          <text x="300" y="500" fill="#cbd5e1" fontSize="19" textAnchor="middle">
             but strong hydration can oppose the increase
           </text>
         </g>
@@ -211,7 +211,7 @@ function SolvationEntropyAnimation() {
           <text x="900" y="120" fill="#fda4af" fontSize="26" fontWeight="900" textAnchor="middle">
             GAS → AQUEOUS
           </text>
-          <rect x="670" y="160" width="460" height="400" rx="32" fill="#0f172a" stroke="#fb7185" strokeWidth="8" />
+          <rect x="670" y="160" width="460" height="400" rx="32" fill="#0f172a" stroke="#fb7185" strokeWidth="5" />
 
           {Array.from({ length: 10 }).map((_, i) => (
             <circle
@@ -235,10 +235,10 @@ function SolvationEntropyAnimation() {
           ))}
 
           <rect x="760" y="385" width="280" height="105" rx="24" fill="#164e63" stroke="#22d3ee" strokeWidth="4" />
-          <text x="900" y="430" fill="#a5f3fc" fontSize="19" fontWeight="900" textAnchor="middle">
+          <text x="900" y="430" fill="#a5f3fc" fontSize="21" fontWeight="900" textAnchor="middle">
             dissolved molecules
           </text>
-          <text x="900" y="465" fill="#cbd5e1" fontSize="16" textAnchor="middle">
+          <text x="900" y="465" fill="#cbd5e1" fontSize="19" textAnchor="middle">
             restricted translational freedom
           </text>
         </g>
@@ -257,7 +257,7 @@ function SolvationEntropyAnimation() {
 
 function ReactionEntropyLedgerAnimation() {
   return (
-    <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
+    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
       <svg
         viewBox="0 0 1200 740"
         role="img"
@@ -275,44 +275,44 @@ function ReactionEntropyLedgerAnimation() {
           REACTION ENTROPY = STOICHIOMETRIC PRODUCT TOTAL − REACTANT TOTAL
         </text>
 
-        <rect x="70" y="135" width="445" height="385" rx="32" fill="#0f172a" stroke="#fb7185" strokeWidth="8" />
+        <rect x="70" y="135" width="445" height="385" rx="32" fill="#0f172a" stroke="#fb7185" strokeWidth="5" />
         <text x="292" y="190" fill="#fda4af" fontSize="26" fontWeight="900" textAnchor="middle">REACTANTS</text>
 
         <rect x="120" y="245" width="150" height="120" rx="22" fill="#4c1d95" stroke="#a78bfa" strokeWidth="4" />
         <text x="195" y="290" fill="#f8fafc" fontSize="24" fontWeight="900" textAnchor="middle">aA(m)</text>
-        <text x="195" y="330" fill="#ddd6fe" fontSize="18" textAnchor="middle">aS°A</text>
+        <text x="195" y="330" fill="#ddd6fe" fontSize="20" textAnchor="middle">aS°A</text>
 
         <rect x="315" y="245" width="150" height="120" rx="22" fill="#4c1d95" stroke="#a78bfa" strokeWidth="4" />
         <text x="390" y="290" fill="#f8fafc" fontSize="24" fontWeight="900" textAnchor="middle">bB(n)</text>
-        <text x="390" y="330" fill="#ddd6fe" fontSize="18" textAnchor="middle">bS°B</text>
+        <text x="390" y="330" fill="#ddd6fe" fontSize="20" textAnchor="middle">bS°B</text>
 
         <text x="292" y="445" fill="#f9a8d4" fontSize="22" fontWeight="900" textAnchor="middle">
           aS°A + bS°B
         </text>
 
-        <rect x="685" y="135" width="445" height="385" rx="32" fill="#0f172a" stroke="#34d399" strokeWidth="8" />
+        <rect x="685" y="135" width="445" height="385" rx="32" fill="#0f172a" stroke="#34d399" strokeWidth="5" />
         <text x="907" y="190" fill="#a7f3d0" fontSize="26" fontWeight="900" textAnchor="middle">PRODUCTS</text>
 
         <rect x="735" y="245" width="150" height="120" rx="22" fill="#164e63" stroke="#22d3ee" strokeWidth="4" />
         <text x="810" y="290" fill="#f8fafc" fontSize="24" fontWeight="900" textAnchor="middle">cC(o)</text>
-        <text x="810" y="330" fill="#a5f3fc" fontSize="18" textAnchor="middle">cS°C</text>
+        <text x="810" y="330" fill="#a5f3fc" fontSize="20" textAnchor="middle">cS°C</text>
 
         <rect x="930" y="245" width="150" height="120" rx="22" fill="#164e63" stroke="#22d3ee" strokeWidth="4" />
         <text x="1005" y="290" fill="#f8fafc" fontSize="24" fontWeight="900" textAnchor="middle">dD(p)</text>
-        <text x="1005" y="330" fill="#a5f3fc" fontSize="18" textAnchor="middle">dS°D</text>
+        <text x="1005" y="330" fill="#a5f3fc" fontSize="20" textAnchor="middle">dS°D</text>
 
         <text x="907" y="445" fill="#a7f3d0" fontSize="22" fontWeight="900" textAnchor="middle">
           cS°C + dS°D
         </text>
 
-        <path d="M530 330 H670" stroke="#fbbf24" strokeWidth="10" />
+        <path d="M530 330 H670" stroke="#fbbf24" strokeWidth="5" />
         <polygon points="670,330 640,312 640,348" fill="#fbbf24" />
 
         <rect x="185" y="580" width="830" height="92" rx="28" fill="#0f172a" stroke="#a78bfa" strokeWidth="5" />
         <text x="600" y="620" fill="#ddd6fe" fontSize="24" fontWeight="900" textAnchor="middle">
           ΔrS° = ΣνS°m(products) − ΣνS°m(reactants)
         </text>
-        <text x="600" y="655" fill="#cbd5e1" fontSize="17" textAnchor="middle">
+        <text x="600" y="655" fill="#cbd5e1" fontSize="19" textAnchor="middle">
           Physical states m, n, o, p and the chosen temperature and pressure are part of the data.
         </text>
       </svg>
@@ -322,7 +322,7 @@ function ReactionEntropyLedgerAnimation() {
 
 function UniverseGibbsAnimation() {
   return (
-    <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
+    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
       <svg
         viewBox="0 0 1200 780"
         role="img"
@@ -346,21 +346,21 @@ function UniverseGibbsAnimation() {
           CONSTANT T, P: THE UNIVERSE CRITERION BECOMES THE GIBBS CRITERION
         </text>
 
-        <rect x="80" y="145" width="300" height="195" rx="28" fill="#0f172a" stroke="#22d3ee" strokeWidth="7" />
+        <rect x="80" y="145" width="300" height="195" rx="28" fill="#0f172a" stroke="#22d3ee" strokeWidth="4" />
         <text x="230" y="195" fill="#a5f3fc" fontSize="24" fontWeight="900" textAnchor="middle">SYSTEM</text>
         <text x="230" y="255" fill="#f8fafc" fontSize="25" fontWeight="900" textAnchor="middle">ΔSsys = ΔrS</text>
-        <text x="230" y="300" fill="#cbd5e1" fontSize="17" textAnchor="middle">from third-law molar entropies</text>
+        <text x="230" y="300" fill="#cbd5e1" fontSize="19" textAnchor="middle">from third-law molar entropies</text>
 
-        <rect x="820" y="145" width="300" height="195" rx="28" fill="#0f172a" stroke="#f97316" strokeWidth="7" />
+        <rect x="820" y="145" width="300" height="195" rx="28" fill="#0f172a" stroke="#f97316" strokeWidth="4" />
         <text x="970" y="195" fill="#fed7aa" fontSize="24" fontWeight="900" textAnchor="middle">SURROUNDINGS</text>
         <text x="970" y="255" fill="#f8fafc" fontSize="25" fontWeight="900" textAnchor="middle">ΔSsurr = −ΔrH/T</text>
-        <text x="970" y="300" fill="#cbd5e1" fontSize="17" textAnchor="middle">ideal reservoir at temperature T</text>
+        <text x="970" y="300" fill="#cbd5e1" fontSize="19" textAnchor="middle">ideal reservoir at temperature T</text>
 
-        <path d="M400 242 H790" stroke="#a78bfa" strokeWidth="9" />
+        <path d="M400 242 H790" stroke="#a78bfa" strokeWidth="5" />
         <polygon points="790,242 760,224 760,260" fill="#a78bfa" />
         <text x="595" y="210" fill="#ddd6fe" fontSize="20" fontWeight="900" textAnchor="middle">heat exchange links the ledgers</text>
 
-        <rect x="260" y="430" width="680" height="125" rx="30" fill="#0f172a" stroke="#34d399" strokeWidth="7" />
+        <rect x="260" y="430" width="680" height="125" rx="30" fill="#0f172a" stroke="#34d399" strokeWidth="4" />
         <text x="600" y="475" fill="#a7f3d0" fontSize="23" fontWeight="900" textAnchor="middle">
           ΔSuniv = ΔrS − ΔrH/T
         </text>
@@ -368,7 +368,7 @@ function UniverseGibbsAnimation() {
           TΔSuniv = −(ΔrH − TΔrS) = −ΔrG
         </text>
 
-        <path d="M600 570 V635" stroke="#34d399" strokeWidth="10" markerEnd="url(#ugArrow)" />
+        <path d="M600 570 V635" stroke="#34d399" strokeWidth="5" markerEnd="url(#ugArrow)" />
 
         <rect x="285" y="650" width="630" height="78" rx="26" fill="#0f172a" stroke="#fbbf24" strokeWidth="5" />
         <text x="600" y="684" fill="#fde68a" fontSize="21" fontWeight="900" textAnchor="middle">
@@ -384,7 +384,7 @@ function UniverseGibbsAnimation() {
 
 function SpontaneityQuadrantGraphic() {
   return (
-    <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
+    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
       <svg
         viewBox="0 0 1200 820"
         role="img"
@@ -401,40 +401,40 @@ function SpontaneityQuadrantGraphic() {
           ΔG = ΔH − TΔS: ALL FOUR SIGN COMBINATIONS
         </text>
 
-        <line x1="600" y1="125" x2="600" y2="710" stroke="#e2e8f0" strokeWidth="6" />
-        <line x1="130" y1="415" x2="1070" y2="415" stroke="#e2e8f0" strokeWidth="6" />
+        <line x1="600" y1="125" x2="600" y2="710" stroke="#e2e8f0" strokeWidth="4" />
+        <line x1="130" y1="415" x2="1070" y2="415" stroke="#e2e8f0" strokeWidth="4" />
 
         <text x="1090" y="427" fill="#e2e8f0" fontSize="22">ΔS &gt; 0</text>
         <text x="75" y="427" fill="#e2e8f0" fontSize="22">ΔS &lt; 0</text>
         <text x="615" y="115" fill="#e2e8f0" fontSize="22">ΔH &gt; 0</text>
         <text x="615" y="750" fill="#e2e8f0" fontSize="22">ΔH &lt; 0</text>
 
-        <rect x="145" y="145" width="420" height="235" rx="30" fill="#4c0519" stroke="#fb7185" strokeWidth="7" />
+        <rect x="145" y="145" width="420" height="235" rx="30" fill="#4c0519" stroke="#fb7185" strokeWidth="4" />
         <text x="355" y="195" fill="#fda4af" fontSize="26" fontWeight="900" textAnchor="middle">ΔH &gt; 0, ΔS &lt; 0</text>
         <text x="355" y="250" fill="#f8fafc" fontSize="24" fontWeight="900" textAnchor="middle">ΔG &gt; 0 at all T</text>
         <text x="355" y="300" fill="#fda4af" fontSize="21" fontWeight="900" textAnchor="middle">never spontaneous forward</text>
-        <text x="355" y="345" fill="#cbd5e1" fontSize="17" textAnchor="middle">under the stated standard conditions</text>
+        <text x="355" y="345" fill="#cbd5e1" fontSize="19" textAnchor="middle">under the stated standard conditions</text>
 
-        <rect x="635" y="145" width="420" height="235" rx="30" fill="#422006" stroke="#fbbf24" strokeWidth="7" />
+        <rect x="635" y="145" width="420" height="235" rx="30" fill="#422006" stroke="#fbbf24" strokeWidth="4" />
         <text x="845" y="195" fill="#fde68a" fontSize="26" fontWeight="900" textAnchor="middle">ΔH &gt; 0, ΔS &gt; 0</text>
         <text x="845" y="250" fill="#f8fafc" fontSize="24" fontWeight="900" textAnchor="middle">spontaneous at high T</text>
         <text x="845" y="300" fill="#fde68a" fontSize="21" fontWeight="900" textAnchor="middle">T &gt; ΔH/ΔS</text>
-        <text x="845" y="345" fill="#cbd5e1" fontSize="17" textAnchor="middle">entropy term must dominate</text>
+        <text x="845" y="345" fill="#cbd5e1" fontSize="19" textAnchor="middle">entropy term must dominate</text>
 
-        <rect x="145" y="450" width="420" height="235" rx="30" fill="#172554" stroke="#60a5fa" strokeWidth="7" />
+        <rect x="145" y="450" width="420" height="235" rx="30" fill="#172554" stroke="#60a5fa" strokeWidth="4" />
         <text x="355" y="500" fill="#bfdbfe" fontSize="26" fontWeight="900" textAnchor="middle">ΔH &lt; 0, ΔS &lt; 0</text>
         <text x="355" y="555" fill="#f8fafc" fontSize="24" fontWeight="900" textAnchor="middle">spontaneous at low T</text>
         <text x="355" y="605" fill="#bfdbfe" fontSize="21" fontWeight="900" textAnchor="middle">T &lt; ΔH/ΔS</text>
-        <text x="355" y="650" fill="#cbd5e1" fontSize="17" textAnchor="middle">both ratio terms are positive</text>
+        <text x="355" y="650" fill="#cbd5e1" fontSize="19" textAnchor="middle">both ratio terms are positive</text>
 
-        <rect x="635" y="450" width="420" height="235" rx="30" fill="#052e16" stroke="#34d399" strokeWidth="7" />
+        <rect x="635" y="450" width="420" height="235" rx="30" fill="#052e16" stroke="#34d399" strokeWidth="4" />
         <text x="845" y="500" fill="#a7f3d0" fontSize="26" fontWeight="900" textAnchor="middle">ΔH &lt; 0, ΔS &gt; 0</text>
         <text x="845" y="555" fill="#f8fafc" fontSize="24" fontWeight="900" textAnchor="middle">ΔG &lt; 0 at all T</text>
         <text x="845" y="605" fill="#a7f3d0" fontSize="21" fontWeight="900" textAnchor="middle">always spontaneous forward</text>
-        <text x="845" y="650" fill="#cbd5e1" fontSize="17" textAnchor="middle">thermodynamically favourable</text>
+        <text x="845" y="650" fill="#cbd5e1" fontSize="19" textAnchor="middle">thermodynamically favourable</text>
 
         <rect x="305" y="755" width="590" height="42" rx="18" fill="#0f172a" stroke="#a78bfa" strokeWidth="3" />
-        <text x="600" y="783" fill="#ddd6fe" fontSize="18" fontWeight="900" textAnchor="middle">
+        <text x="600" y="783" fill="#ddd6fe" fontSize="20" fontWeight="900" textAnchor="middle">
           Thermodynamic spontaneity does not predict reaction rate.
         </text>
       </svg>

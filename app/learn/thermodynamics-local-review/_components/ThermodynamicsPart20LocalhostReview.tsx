@@ -86,7 +86,7 @@ function Formula({
 
 function MultistageEntropyRouteAnimation() {
   return (
-    <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
+    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
       <svg
         viewBox="0 0 1200 790"
         role="img"
@@ -123,27 +123,27 @@ function MultistageEntropyRouteAnimation() {
           { x: 925, title: "STATE 2", line1: "H₂O(g)", line2: "400 K, 5 atm", stroke: "#fb7185" },
         ].map((state) => (
           <g key={state.title}>
-            <rect x={state.x} y="245" width="205" height="180" rx="28" fill="#0f172a" stroke={state.stroke} strokeWidth="7" />
+            <rect x={state.x} y="245" width="205" height="180" rx="28" fill="#0f172a" stroke={state.stroke} strokeWidth="4" />
             <text x={state.x + 102.5} y="292" fill={state.stroke} fontSize="21" fontWeight="900" textAnchor="middle">
               {state.title}
             </text>
             <text x={state.x + 102.5} y="342" fill="#f8fafc" fontSize="25" fontWeight="900" textAnchor="middle">
               {state.line1}
             </text>
-            <text x={state.x + 102.5} y="385" fill="#cbd5e1" fontSize="18" textAnchor="middle">
+            <text x={state.x + 102.5} y="385" fill="#cbd5e1" fontSize="20" textAnchor="middle">
               {state.line2}
             </text>
           </g>
         ))}
 
-        <path d="M280 335 H340" stroke="#22d3ee" strokeWidth="10" markerEnd="url(#mrCyan)" />
-        <path d="M565 335 H625" stroke="#fbbf24" strokeWidth="10" markerEnd="url(#mrAmber)" />
-        <path d="M850 335 H910" stroke="#fb7185" strokeWidth="10" markerEnd="url(#mrRose)" />
+        <path d="M280 335 H340" stroke="#22d3ee" strokeWidth="5" markerEnd="url(#mrCyan)" />
+        <path d="M565 335 H625" stroke="#fbbf24" strokeWidth="5" markerEnd="url(#mrAmber)" />
+        <path d="M850 335 H910" stroke="#fb7185" strokeWidth="5" markerEnd="url(#mrRose)" />
 
-        <text x="310" y="295" fill="#a5f3fc" fontSize="18" fontWeight="900" textAnchor="middle">heat liquid</text>
-        <text x="595" y="295" fill="#fde68a" fontSize="18" fontWeight="900" textAnchor="middle">vaporise</text>
-        <text x="880" y="285" fill="#fda4af" fontSize="18" fontWeight="900" textAnchor="middle">heat +</text>
-        <text x="880" y="310" fill="#fda4af" fontSize="18" fontWeight="900" textAnchor="middle">compress</text>
+        <text x="310" y="295" fill="#a5f3fc" fontSize="20" fontWeight="900" textAnchor="middle">heat liquid</text>
+        <text x="595" y="295" fill="#fde68a" fontSize="20" fontWeight="900" textAnchor="middle">vaporise</text>
+        <text x="880" y="285" fill="#fda4af" fontSize="20" fontWeight="900" textAnchor="middle">heat +</text>
+        <text x="880" y="310" fill="#fda4af" fontSize="20" fontWeight="900" textAnchor="middle">compress</text>
 
         <path id="mrPath" d="M170 220 C335 115 535 120 742 170 C930 215 1010 190 1035 220" fill="none" />
         <circle r="13" fill="#fde047">
@@ -163,7 +163,7 @@ function MultistageEntropyRouteAnimation() {
           ΔSsystem ≈ 27.34 cal mol⁻¹ K⁻¹ ≈ 114.4 J mol⁻¹ K⁻¹
         </text>
 
-        <text x="600" y="735" fill="#94a3b8" fontSize="18" textAnchor="middle">
+        <text x="600" y="735" fill="#94a3b8" fontSize="20" textAnchor="middle">
           Entropy is path independent; the chosen route is only a convenient reversible calculation route.
         </text>
       </svg>
@@ -173,7 +173,7 @@ function MultistageEntropyRouteAnimation() {
 
 function MixingParticlesAnimation() {
   return (
-    <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
+    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
       <svg
         viewBox="0 0 1200 720"
         role="img"
@@ -191,8 +191,8 @@ function MixingParticlesAnimation() {
           IDEAL-GAS MIXING: EACH COMPONENT EXPANDS INTO THE TOTAL VOLUME
         </text>
 
-        <rect x="90" y="145" width="1020" height="390" rx="34" fill="#0f172a" stroke="#a78bfa" strokeWidth="8" />
-        <line x1="600" y1="145" x2="600" y2="535" stroke="#e2e8f0" strokeWidth="10">
+        <rect x="90" y="145" width="1020" height="390" rx="34" fill="#0f172a" stroke="#a78bfa" strokeWidth="5" />
+        <line x1="600" y1="145" x2="600" y2="535" stroke="#e2e8f0" strokeWidth="6">
           <animate attributeName="opacity" values="1;1;0;0;1" keyTimes="0;0.24;0.34;0.88;1" dur="7s" repeatCount="indefinite" />
         </line>
 
@@ -240,7 +240,7 @@ function MixingParticlesAnimation() {
 
 function BinaryMixingEntropyGraph() {
   return (
-    <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
+    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
       <svg
         viewBox="0 0 1200 720"
         role="img"
@@ -267,7 +267,7 @@ function BinaryMixingEntropyGraph() {
           d="M145 600 C280 465 390 245 600 185 C810 245 920 465 1065 600"
           fill="none"
           stroke="#34d399"
-          strokeWidth="11"
+          strokeWidth="5"
         />
 
         <circle r="13" fill="#fde047">
@@ -277,16 +277,16 @@ function BinaryMixingEntropyGraph() {
         </circle>
 
         <line x1="600" y1="185" x2="600" y2="610" stroke="#a78bfa" strokeWidth="4" strokeDasharray="14 11" />
-        <text x="600" y="650" fill="#ddd6fe" fontSize="19" textAnchor="middle">1/2</text>
-        <text x="145" y="650" fill="#cbd5e1" fontSize="19" textAnchor="middle">0</text>
-        <text x="1065" y="650" fill="#cbd5e1" fontSize="19" textAnchor="middle">1</text>
+        <text x="600" y="650" fill="#ddd6fe" fontSize="21" textAnchor="middle">1/2</text>
+        <text x="145" y="650" fill="#cbd5e1" fontSize="21" textAnchor="middle">0</text>
+        <text x="1065" y="650" fill="#cbd5e1" fontSize="21" textAnchor="middle">1</text>
 
         <rect x="360" y="105" width="480" height="58" rx="22" fill="#0f172a" stroke="#fbbf24" strokeWidth="4" />
         <text x="600" y="143" fill="#fde68a" fontSize="21" fontWeight="900" textAnchor="middle">
           ΔSmix,m,max = R ln2
         </text>
 
-        <text x="600" y="690" fill="#94a3b8" fontSize="18" textAnchor="middle">
+        <text x="600" y="690" fill="#94a3b8" fontSize="20" textAnchor="middle">
           This maximum assumes a fixed total number of moles and two distinct ideal gases.
         </text>
       </svg>
@@ -296,7 +296,7 @@ function BinaryMixingEntropyGraph() {
 
 function ThermalEquilibrationAnimation() {
   return (
-    <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
+    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
       <svg
         viewBox="0 0 1200 760"
         role="img"
@@ -320,7 +320,7 @@ function ThermalEquilibrationAnimation() {
           THERMAL EQUILIBRATION: ENERGY BALANCE FIRST, ENTROPY BALANCE SECOND
         </text>
 
-        <rect x="90" y="150" width="430" height="360" rx="32" fill="#0f172a" stroke="#22d3ee" strokeWidth="8" />
+        <rect x="90" y="150" width="430" height="360" rx="32" fill="#0f172a" stroke="#22d3ee" strokeWidth="5" />
         <text x="305" y="205" fill="#a5f3fc" fontSize="27" fontWeight="900" textAnchor="middle">COLDER BODY A</text>
         <rect x="175" y="265" width="260" height="120" rx="28" fill="#164e63">
           <animate attributeName="fill" values="#164e63;#0e7490;#164e63" dur="5s" repeatCount="indefinite" />
@@ -328,7 +328,7 @@ function ThermalEquilibrationAnimation() {
         <text x="305" y="335" fill="#f8fafc" fontSize="28" fontWeight="900" textAnchor="middle">300 K → 320 K</text>
         <text x="305" y="455" fill="#a7f3d0" fontSize="20" fontWeight="900" textAnchor="middle">ΔSA &gt; 0</text>
 
-        <rect x="680" y="150" width="430" height="360" rx="32" fill="#0f172a" stroke="#f97316" strokeWidth="8" />
+        <rect x="680" y="150" width="430" height="360" rx="32" fill="#0f172a" stroke="#f97316" strokeWidth="5" />
         <text x="895" y="205" fill="#fed7aa" fontSize="27" fontWeight="900" textAnchor="middle">HOTTER BODY B</text>
         <rect x="765" y="265" width="260" height="120" rx="28" fill="#7c2d12">
           <animate attributeName="fill" values="#7c2d12;#c2410c;#7c2d12" dur="5s" repeatCount="indefinite" />
@@ -336,7 +336,7 @@ function ThermalEquilibrationAnimation() {
         <text x="895" y="335" fill="#f8fafc" fontSize="28" fontWeight="900" textAnchor="middle">360 K → 320 K</text>
         <text x="895" y="455" fill="#fda4af" fontSize="20" fontWeight="900" textAnchor="middle">ΔSB &lt; 0</text>
 
-        <path d="M665 330 H535" stroke="#fbbf24" strokeWidth="12" markerEnd="url(#teArrow)">
+        <path d="M665 330 H535" stroke="#fbbf24" strokeWidth="5" markerEnd="url(#teArrow)">
           <animate attributeName="stroke-dasharray" values="0 150;75 75;150 0" dur="2s" repeatCount="indefinite" />
         </path>
         <text x="600" y="295" fill="#fde68a" fontSize="22" fontWeight="900" textAnchor="middle">heat</text>
@@ -349,7 +349,7 @@ function ThermalEquilibrationAnimation() {
           isolated spontaneous equilibration ⇒ ΔStotal &gt; 0
         </text>
 
-        <text x="600" y="725" fill="#94a3b8" fontSize="18" textAnchor="middle">
+        <text x="600" y="725" fill="#94a3b8" fontSize="20" textAnchor="middle">
           The hot body loses entropy, but the cold body gains a larger amount.
         </text>
       </svg>
@@ -359,7 +359,7 @@ function ThermalEquilibrationAnimation() {
 
 function NeonPathAnimation() {
   return (
-    <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
+    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
       <svg
         viewBox="0 0 1200 760"
         role="img"
@@ -387,11 +387,11 @@ function NeonPathAnimation() {
             <text x={item.x + 150} y="130" fill={item.stroke} fontSize="24" fontWeight="900" textAnchor="middle">
               {item.title}
             </text>
-            <path d={`M${item.x+35} 490 V190 H${item.x+265} V490`} fill="none" stroke={item.stroke} strokeWidth="8" />
+            <path d={`M${item.x+35} 490 V190 H${item.x+265} V490`} fill="none" stroke={item.stroke} strokeWidth="5" />
             <rect x={item.x + 60} y="350" width="180" height="24" rx="8" fill={item.stroke}>
               <animate attributeName="y" values={item.piston} dur={`${4.5+index*0.35}s`} repeatCount="indefinite" />
             </rect>
-            <line x1={item.x + 150} y1="190" x2={item.x + 150} y2="350" stroke={item.stroke} strokeWidth="14" strokeLinecap="round">
+            <line x1={item.x + 150} y1="190" x2={item.x + 150} y2="350" stroke={item.stroke} strokeWidth="6" strokeLinecap="round">
               <animate attributeName="y2" values={item.piston} dur={`${4.5+index*0.35}s`} repeatCount="indefinite" />
             </line>
 
@@ -408,10 +408,10 @@ function NeonPathAnimation() {
             ))}
 
             <rect x={item.x + 35} y="530" width="230" height="105" rx="22" fill="#0f172a" stroke={item.stroke} strokeWidth="4" />
-            <text x={item.x + 150} y="570" fill={item.stroke} fontSize="19" fontWeight="900" textAnchor="middle">
+            <text x={item.x + 150} y="570" fill={item.stroke} fontSize="21" fontWeight="900" textAnchor="middle">
               {item.temp}
             </text>
-            <text x={item.x + 150} y="607" fill="#f8fafc" fontSize="18" fontWeight="900" textAnchor="middle">
+            <text x={item.x + 150} y="607" fill="#f8fafc" fontSize="20" fontWeight="900" textAnchor="middle">
               {item.entropy}
             </text>
           </g>
@@ -466,7 +466,7 @@ function MultistageWaterExample() {
       <div className="flex flex-wrap items-center justify-between gap-3">
         <div>
           <p className="text-xs font-black uppercase tracking-[0.2em] text-cyan-300">
-            Retained chapter multistage problem
+            Chapter multistage problem
           </p>
           <h3 className="mt-2 text-xl font-black text-white">
             One mole of liquid water at 27 °C and 1 atm to vapour at 127 °C and 5 atm
@@ -524,7 +524,7 @@ function RetainedGasMixingExample() {
   return (
     <article className="rounded-[2rem] border border-violet-300/25 bg-violet-300/[0.06] p-5 md:p-7">
       <p className="text-xs font-black uppercase tracking-[0.2em] text-violet-300">
-        Retained chapter ideal-gas mixing problem
+        Chapter ideal-gas mixing problem
       </p>
       <h3 className="mt-2 text-xl font-black text-white">
         Mix 5 mol of ideal gas A with 10 mol of ideal gas B at the same temperature and pressure
@@ -559,7 +559,7 @@ function RetainedThermalMixingExample() {
   return (
     <article className="rounded-[2rem] border border-amber-300/25 bg-amber-300/[0.06] p-5 md:p-7">
       <p className="text-xs font-black uppercase tracking-[0.2em] text-amber-300">
-        Retained chapter thermal-equilibration problem
+        Chapter thermal-equilibration problem
       </p>
       <h3 className="mt-2 text-xl font-black text-white">
         400 g of liquid A at 27 °C mixed thermally with 100 g of liquid B at 87 °C
@@ -604,7 +604,7 @@ function RetainedReservoirExample() {
   return (
     <article className="rounded-[2rem] border border-rose-300/25 bg-rose-300/[0.06] p-5 md:p-7">
       <p className="text-xs font-black uppercase tracking-[0.2em] text-rose-300">
-        Retained chapter constant-temperature block problem
+        Chapter constant-temperature block problem
       </p>
       <h3 className="mt-2 text-xl font-black text-white">
         A 400 K block transfers 1000 cal to a 300 K block
@@ -634,7 +634,7 @@ function RetainedNeonExample() {
   return (
     <article className="rounded-[2rem] border border-emerald-300/25 bg-emerald-300/[0.06] p-5 md:p-7">
       <p className="text-xs font-black uppercase tracking-[0.2em] text-emerald-300">
-        Retained chapter adiabatic expansion problem
+        Chapter adiabatic expansion problem
       </p>
       <h3 className="mt-2 text-xl font-black text-white">
         10 g neon at 473 K expands from 506.25 kPa to 202.65 kPa
@@ -693,7 +693,7 @@ function RetainedVanDerWaalsExample() {
   return (
     <article className="rounded-[2rem] border border-sky-300/25 bg-sky-300/[0.06] p-5 md:p-7">
       <p className="text-xs font-black uppercase tracking-[0.2em] text-sky-300">
-        Retained chapter van der Waals numerical
+        Chapter van der Waals numerical
       </p>
       <h3 className="mt-2 text-xl font-black text-white">
         One mole changes from 298 K, 1 dm³ to 373 K, 10 dm³
@@ -815,14 +815,14 @@ const problems = [
   {
     title: "Concept Application 7 — thermal equilibrium temperature",
     question:
-      "Two insulated bodies with constant heat capacities C1 and C2 start at T1 and T2. Derive Tf.",
+      "Two insulated bodies with constant heat capacities C₁ and C₂ start at T₁ and T₂. Derive Tf.",
     solution:
-      "Energy conservation gives C1(Tf−T1)+C2(Tf−T2)=0, hence Tf=(C1T1+C2T2)/(C1+C2).",
+      "Energy conservation gives C₁(Tf−T₁)+C₂(Tf−T₂)=0, hence Tf=(C1T1+C2T2)/(C₁+C₂).",
   },
   {
     title: "Concept Application 8 — positivity of thermal mixing entropy",
     question:
-      "Why is C1ln(Tf/T1)+C2ln(Tf/T2) positive when T1 ≠ T2?",
+      "Why is C1ln(Tf/T₁)+C2ln(Tf/T₂) positive when T₁ ≠ T₂?",
     solution:
       "The final temperature is the heat-capacity-weighted arithmetic mean, while the entropy expression compares it with a corresponding weighted geometric mean. The arithmetic mean exceeds the geometric mean for unequal temperatures.",
   },
@@ -845,7 +845,7 @@ const problems = [
     question:
       "In the retained water problem, why does compression from 1 atm to 5 atm lower the vapour entropy?",
     solution:
-      "For an ideal gas at fixed temperature, ΔS = −Rln(P2/P1). Raising pressure reduces accessible volume.",
+      "For an ideal gas at fixed temperature, ΔS = −Rln(P₂/P₁). Raising pressure reduces accessible volume.",
   },
   {
     title: "Concept Application 12 — system versus surroundings",
@@ -1144,14 +1144,14 @@ export default function ThermodynamicsPart20() {
 
         <Section
           index="05"
-          title="Retained neon adiabatic comparison"
+          title="Neon adiabatic comparison"
           subtitle="Reversibility controls work, cooling, and entropy generation."
         >
           <NeonPathAnimation />
           <RetainedNeonExample />
         </Section>
 
-        <Section index="06" title="Retained van der Waals numerical">
+        <Section index="06" title="Van der Waals numerical">
           <RetainedVanDerWaalsExample />
 
           <ConceptLens title="Why the attraction parameter a is absent" tone="violet">

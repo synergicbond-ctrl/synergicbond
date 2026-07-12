@@ -85,7 +85,7 @@ function Formula({
 
 function StateFunctionCycleAnimation() {
   return (
-    <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
+    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
       <svg
         viewBox="0 0 1200 760"
         role="img"
@@ -114,7 +114,7 @@ function StateFunctionCycleAnimation() {
           CLAUSIUS THEOREM CREATES A NEW STATE FUNCTION
         </text>
 
-        <circle cx="400" cy="365" r="210" fill="none" stroke="url(#scRing)" strokeWidth="12" markerEnd="url(#scGreen)" />
+        <circle cx="400" cy="365" r="210" fill="none" stroke="url(#scRing)" strokeWidth="6" markerEnd="url(#scGreen)" />
         <path id="scPath" d="M400 155 A210 210 0 1 1 399.9 155" fill="none" />
 
         {[
@@ -138,7 +138,7 @@ function StateFunctionCycleAnimation() {
           </animateMotion>
         </circle>
 
-        <rect x="705" y="135" width="385" height="145" rx="28" fill="#0f172a" stroke="#22d3ee" strokeWidth="6" />
+        <rect x="705" y="135" width="385" height="145" rx="28" fill="#0f172a" stroke="#22d3ee" strokeWidth="4" />
         <text x="898" y="185" fill="#a5f3fc" fontSize="23" fontWeight="900" textAnchor="middle">
           REVERSIBLE CYCLE
         </text>
@@ -146,17 +146,17 @@ function StateFunctionCycleAnimation() {
           ∮ δq<tspan baselineShift="sub">rev</tspan>/T = 0
         </text>
 
-        <path d="M700 335 H1090" stroke="#a78bfa" strokeWidth="8" />
+        <path d="M700 335 H1090" stroke="#a78bfa" strokeWidth="5" />
         <polygon points="1090,335 1060,317 1060,353" fill="#a78bfa" />
 
-        <rect x="705" y="390" width="385" height="175" rx="28" fill="#0f172a" stroke="#34d399" strokeWidth="6" />
+        <rect x="705" y="390" width="385" height="175" rx="28" fill="#0f172a" stroke="#34d399" strokeWidth="4" />
         <text x="898" y="440" fill="#a7f3d0" fontSize="23" fontWeight="900" textAnchor="middle">
           EXACT DIFFERENTIAL
         </text>
         <text x="898" y="495" fill="#f8fafc" fontSize="30" fontWeight="900" textAnchor="middle">
           dS = δq<tspan baselineShift="sub">rev</tspan>/T
         </text>
-        <text x="898" y="535" fill="#cbd5e1" fontSize="18" textAnchor="middle">
+        <text x="898" y="535" fill="#cbd5e1" fontSize="20" textAnchor="middle">
           therefore ∮dS = 0
         </text>
 
@@ -171,7 +171,7 @@ function StateFunctionCycleAnimation() {
 
 function ReversiblePathAnimation() {
   return (
-    <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
+    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
       <svg
         viewBox="0 0 1200 720"
         role="img"
@@ -200,17 +200,17 @@ function ReversiblePathAnimation() {
           ACTUAL PATH MAY BE IRREVERSIBLE • ENTROPY REMAINS AN ENDPOINT PROPERTY
         </text>
 
-        <circle cx="180" cy="350" r="70" fill="#0f172a" stroke="#22d3ee" strokeWidth="8" />
+        <circle cx="180" cy="350" r="70" fill="#0f172a" stroke="#22d3ee" strokeWidth="5" />
         <text x="180" y="340" fill="#a5f3fc" fontSize="27" fontWeight="900" textAnchor="middle">STATE A</text>
-        <text x="180" y="382" fill="#cbd5e1" fontSize="17" textAnchor="middle">initial</text>
+        <text x="180" y="382" fill="#cbd5e1" fontSize="19" textAnchor="middle">initial</text>
 
-        <circle cx="1020" cy="350" r="70" fill="#0f172a" stroke="#34d399" strokeWidth="8" />
+        <circle cx="1020" cy="350" r="70" fill="#0f172a" stroke="#34d399" strokeWidth="5" />
         <text x="1020" y="340" fill="#a7f3d0" fontSize="27" fontWeight="900" textAnchor="middle">STATE B</text>
-        <text x="1020" y="382" fill="#cbd5e1" fontSize="17" textAnchor="middle">final</text>
+        <text x="1020" y="382" fill="#cbd5e1" fontSize="19" textAnchor="middle">final</text>
 
-        <path id="actualOne" d="M255 315 C420 110 760 120 945 315" fill="none" stroke="#fb7185" strokeWidth="10" markerEnd="url(#rpRose)" />
-        <path id="actualTwo" d="M255 385 C420 585 760 590 945 385" fill="none" stroke="#a78bfa" strokeWidth="10" strokeDasharray="16 12" />
-        <path id="revEval" d="M255 350 C475 300 735 300 945 350" fill="none" stroke="#34d399" strokeWidth="10" markerEnd="url(#rpGreen)" />
+        <path id="actualOne" d="M255 315 C420 110 760 120 945 315" fill="none" stroke="#fb7185" strokeWidth="5" markerEnd="url(#rpRose)" />
+        <path id="actualTwo" d="M255 385 C420 585 760 590 945 385" fill="none" stroke="#a78bfa" strokeWidth="5" strokeDasharray="16 12" />
+        <path id="revEval" d="M255 350 C475 300 735 300 945 350" fill="none" stroke="#34d399" strokeWidth="5" markerEnd="url(#rpGreen)" />
 
         <circle r="12" fill="#fda4af">
           <animateMotion dur="4.2s" repeatCount="indefinite">
@@ -244,7 +244,7 @@ function ReversiblePathAnimation() {
 
 function EnergyDispersalAnimation() {
   return (
-    <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
+    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
       <svg
         viewBox="0 0 1200 760"
         role="img"
@@ -265,8 +265,8 @@ function EnergyDispersalAnimation() {
         <text x="300" y="115" fill="#fda4af" fontSize="26" fontWeight="900" textAnchor="middle">INITIAL CONSTRAINT</text>
         <text x="900" y="115" fill="#a7f3d0" fontSize="26" fontWeight="900" textAnchor="middle">THERMAL EQUILIBRIUM</text>
 
-        <rect x="70" y="155" width="460" height="390" rx="30" fill="#0f172a" stroke="#f472b6" strokeWidth="8" />
-        <line x1="300" y1="155" x2="300" y2="545" stroke="#e2e8f0" strokeWidth="8" />
+        <rect x="70" y="155" width="460" height="390" rx="30" fill="#0f172a" stroke="#f472b6" strokeWidth="5" />
+        <line x1="300" y1="155" x2="300" y2="545" stroke="#e2e8f0" strokeWidth="5" />
 
         {[0,1,2,3,4,5,6,7].map((i) => (
           <circle
@@ -310,7 +310,7 @@ function EnergyDispersalAnimation() {
           </circle>
         ))}
 
-        <rect x="670" y="155" width="460" height="390" rx="30" fill="#0f172a" stroke="#34d399" strokeWidth="8" />
+        <rect x="670" y="155" width="460" height="390" rx="30" fill="#0f172a" stroke="#34d399" strokeWidth="5" />
         {Array.from({ length: 16 }).map((_, i) => (
           <circle
             key={`mix-${i}`}
@@ -332,7 +332,7 @@ function EnergyDispersalAnimation() {
           </circle>
         ))}
 
-        <path d="M545 350 H655" stroke="#34d399" strokeWidth="10" />
+        <path d="M545 350 H655" stroke="#34d399" strokeWidth="5" />
         <polygon points="655,350 625,332 625,368" fill="#34d399" />
 
         <text x="300" y="600" fill="#f9a8d4" fontSize="20" fontWeight="900" textAnchor="middle">
@@ -353,7 +353,7 @@ function EnergyDispersalAnimation() {
 
 function UnavailableEnergyAnimation() {
   return (
-    <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
+    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
       <svg
         viewBox="0 0 1200 720"
         role="img"
@@ -380,22 +380,22 @@ function UnavailableEnergyAnimation() {
           ENTROPY GENERATION DESTROYS AVAILABLE WORK
         </text>
 
-        <rect x="80" y="145" width="460" height="385" rx="32" fill="#0f172a" stroke="#34d399" strokeWidth="8" />
+        <rect x="80" y="145" width="460" height="385" rx="32" fill="#0f172a" stroke="#34d399" strokeWidth="5" />
         <text x="310" y="200" fill="#a7f3d0" fontSize="26" fontWeight="900" textAnchor="middle">REVERSIBLE LIMIT</text>
         <rect x="150" y="255" width="320" height="80" rx="22" fill="#164e63" />
         <text x="310" y="305" fill="#f8fafc" fontSize="22" fontWeight="900" textAnchor="middle">maximum useful work</text>
-        <path d="M310 350 V430" stroke="#34d399" strokeWidth="10" markerEnd="url(#ueGreen)" />
+        <path d="M310 350 V430" stroke="#34d399" strokeWidth="5" markerEnd="url(#ueGreen)" />
         <text x="310" y="475" fill="#a7f3d0" fontSize="21" fontWeight="900" textAnchor="middle">Sgen = 0</text>
 
-        <rect x="660" y="145" width="460" height="385" rx="32" fill="#0f172a" stroke="#fb7185" strokeWidth="8" />
+        <rect x="660" y="145" width="460" height="385" rx="32" fill="#0f172a" stroke="#fb7185" strokeWidth="5" />
         <text x="890" y="200" fill="#fda4af" fontSize="26" fontWeight="900" textAnchor="middle">IRREVERSIBLE PROCESS</text>
         <rect x="730" y="255" width="210" height="80" rx="22" fill="#164e63" />
         <text x="835" y="305" fill="#f8fafc" fontSize="20" fontWeight="900" textAnchor="middle">useful work</text>
         <rect x="955" y="255" width="105" height="80" rx="22" fill="#7c2d12" />
-        <text x="1007" y="292" fill="#fed7aa" fontSize="15" fontWeight="900" textAnchor="middle">lost</text>
-        <text x="1007" y="316" fill="#fed7aa" fontSize="15" fontWeight="900" textAnchor="middle">potential</text>
+        <text x="1007" y="292" fill="#fed7aa" fontSize="18" fontWeight="900" textAnchor="middle">lost</text>
+        <text x="1007" y="316" fill="#fed7aa" fontSize="18" fontWeight="900" textAnchor="middle">potential</text>
 
-        <path d="M890 350 V430" stroke="#fb7185" strokeWidth="10" markerEnd="url(#ueRose)" />
+        <path d="M890 350 V430" stroke="#fb7185" strokeWidth="5" markerEnd="url(#ueRose)" />
         <text x="890" y="475" fill="#fda4af" fontSize="21" fontWeight="900" textAnchor="middle">Sgen &gt; 0</text>
 
         <rect x="285" y="580" width="630" height="70" rx="25" fill="#0f172a" stroke="#fbbf24" strokeWidth="5" />
@@ -406,7 +406,7 @@ function UnavailableEnergyAnimation() {
           W<tspan baselineShift="sub">lost</tspan> = T<tspan baselineShift="sub">0</tspan>S<tspan baselineShift="sub">gen</tspan>
         </text>
 
-        <text x="600" y="690" fill="#94a3b8" fontSize="18" textAnchor="middle">
+        <text x="600" y="690" fill="#94a3b8" fontSize="20" textAnchor="middle">
           T0 is the environment temperature used to define available work.
         </text>
       </svg>
@@ -416,7 +416,7 @@ function UnavailableEnergyAnimation() {
 
 function RubberAlignmentGraphic() {
   return (
-    <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
+    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
       <svg
         viewBox="0 0 1200 650"
         role="img"
@@ -433,22 +433,22 @@ function RubberAlignmentGraphic() {
           STRETCHING RUBBER REDUCES CHAIN-CONFORMATION ENTROPY
         </text>
 
-        <rect x="80" y="130" width="430" height="360" rx="30" fill="#0f172a" stroke="#22d3ee" strokeWidth="8" />
+        <rect x="80" y="130" width="430" height="360" rx="30" fill="#0f172a" stroke="#22d3ee" strokeWidth="5" />
         <text x="295" y="180" fill="#a5f3fc" fontSize="24" fontWeight="900" textAnchor="middle">UNSTRETCHED</text>
         {[
           "M120 250 C170 175 220 335 270 250 C320 165 365 340 440 240",
           "M120 330 C180 400 210 230 290 335 C355 420 390 255 450 335",
           "M135 410 C205 330 250 490 320 395 C380 315 410 445 455 390",
         ].map((d, i) => (
-          <path key={i} d={d} fill="none" stroke={i === 0 ? "#f472b6" : i === 1 ? "#fde047" : "#34d399"} strokeWidth="10" strokeLinecap="round" />
+          <path key={i} d={d} fill="none" stroke={i === 0 ? "#f472b6" : i === 1 ? "#fde047" : "#34d399"} strokeWidth="5" strokeLinecap="round" />
         ))}
-        <text x="295" y="535" fill="#cbd5e1" fontSize="19" textAnchor="middle">many accessible coil conformations</text>
+        <text x="295" y="535" fill="#cbd5e1" fontSize="21" textAnchor="middle">many accessible coil conformations</text>
 
-        <path d="M540 315 H650" stroke="#fbbf24" strokeWidth="10" />
+        <path d="M540 315 H650" stroke="#fbbf24" strokeWidth="5" />
         <polygon points="650,315 620,297 620,333" fill="#fbbf24" />
         <text x="595" y="280" fill="#fde68a" fontSize="21" fontWeight="900" textAnchor="middle">stretch</text>
 
-        <rect x="690" y="130" width="430" height="360" rx="30" fill="#0f172a" stroke="#f472b6" strokeWidth="8" />
+        <rect x="690" y="130" width="430" height="360" rx="30" fill="#0f172a" stroke="#f472b6" strokeWidth="5" />
         <text x="905" y="180" fill="#f9a8d4" fontSize="24" fontWeight="900" textAnchor="middle">STRETCHED</text>
         {[245, 325, 405].map((y, i) => (
           <path
@@ -456,11 +456,11 @@ function RubberAlignmentGraphic() {
             d={`M735 ${y} C825 ${y-20} 985 ${y+20} 1075 ${y}`}
             fill="none"
             stroke={i === 0 ? "#f472b6" : i === 1 ? "#fde047" : "#34d399"}
-            strokeWidth="10"
+            strokeWidth="5"
             strokeLinecap="round"
           />
         ))}
-        <text x="905" y="535" fill="#cbd5e1" fontSize="19" textAnchor="middle">fewer aligned conformations</text>
+        <text x="905" y="535" fill="#cbd5e1" fontSize="21" textAnchor="middle">fewer aligned conformations</text>
 
         <rect x="340" y="580" width="520" height="44" rx="20" fill="#0f172a" stroke="#a78bfa" strokeWidth="4" />
         <text x="600" y="609" fill="#ddd6fe" fontSize="20" fontWeight="900" textAnchor="middle">
@@ -643,7 +643,7 @@ function ComplexityExamples() {
         <thead className="bg-slate-900">
           <tr>
             <th className="px-4 py-3 font-black text-white">Comparison</th>
-            <th className="px-4 py-3 font-black text-white">Retained trend</th>
+            <th className="px-4 py-3 font-black text-white">Observed trend</th>
             <th className="px-4 py-3 font-black text-white">Physical basis</th>
           </tr>
         </thead>
@@ -812,7 +812,7 @@ const problems = [
     question:
       "At constant temperature, one mole of ideal gas is reversibly compressed. What is the sign of ΔS?",
     solution:
-      "Negative. Compression reduces accessible volume. Quantitatively, ΔS = nR ln(V2/V1) = −nR ln(P2/P1).",
+      "Negative. Compression reduces accessible volume. Quantitatively, ΔS = nR ln(V₂/V₁) = −nR ln(P₂/P₁).",
   },
   {
     title: "Concept Application 5 — gas mixing",
@@ -880,9 +880,9 @@ const problems = [
   {
     title: "Concept Application 14 — low-temperature heat",
     question:
-      "The same reversible heat q is absorbed at T1 and T2 with T2 > T1. Which entropy increase is larger?",
+      "The same reversible heat q is absorbed at T₁ and T₂ with T₂ > T₁. Which entropy increase is larger?",
     solution:
-      "q/T1 is larger. Heat transfer at lower temperature produces a larger entropy change for the same q.",
+      "q/T₁ is larger. Heat transfer at lower temperature produces a larger entropy change for the same q.",
   },
   {
     title: "Concept Application 15 — micelle formation",
@@ -1214,7 +1214,7 @@ export default function ThermodynamicsPart16() {
           <TrendGrid />
         </Section>
 
-        <Section index="08" title="Retained molecular-complexity comparisons">
+        <Section index="08" title="Molecular-complexity comparisons">
           <ComplexityExamples />
 
           <ConceptLens title="Comparison conditions matter" tone="rose">
@@ -1222,7 +1222,7 @@ export default function ThermodynamicsPart16() {
           </ConceptLens>
         </Section>
 
-        <Section index="09" title="Retained structural and chemical examples">
+        <Section index="09" title="Structural and chemical examples">
           <RubberAlignmentGraphic />
           <RetainedExamplesAtlas />
         </Section>

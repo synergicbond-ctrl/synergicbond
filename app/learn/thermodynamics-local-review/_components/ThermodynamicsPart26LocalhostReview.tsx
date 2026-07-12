@@ -48,7 +48,7 @@ function Lens({ title, children, tone = "cyan" }: { title: string; children: Rea
 // SVG 1: G vs T showing phase crossing
 function GvsTSVG() {
   return (
-    <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
+    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
       <svg viewBox="0 0 1200 680" role="img" aria-labelledby="p26-gT-title p26-gT-desc" className="h-auto w-full">
         <title id="p26-gT-title">Molar Gibbs energy versus temperature for solid, liquid and gas phases</title>
         <desc id="p26-gT-desc">
@@ -73,39 +73,39 @@ function GvsTSVG() {
         <text x="70" y="68" fill="#e2e8f0" fontSize="20" fontWeight="900">G_m</text>
 
         {/* Solid line: shallowest slope */}
-        <path d="M120 520 L900 220" fill="none" stroke="#a78bfa" strokeWidth="9" />
-        <text x="700" y="255" fill="#c4b5fd" fontSize="18" fontWeight="900">solid (slope = −S_solid, least negative)</text>
+        <path d="M120 520 L900 220" fill="none" stroke="#a78bfa" strokeWidth="5" />
+        <text x="700" y="255" fill="#c4b5fd" fontSize="20" fontWeight="900">solid (slope = −S_solid, least negative)</text>
 
         {/* Liquid line: medium slope */}
-        <path d="M120 540 L900 100" fill="none" stroke="#22d3ee" strokeWidth="9" />
-        <text x="450" y="145" fill="#a5f3fc" fontSize="18" fontWeight="900">liquid (slope = −S_liquid)</text>
+        <path d="M120 540 L900 100" fill="none" stroke="#22d3ee" strokeWidth="5" />
+        <text x="450" y="145" fill="#a5f3fc" fontSize="20" fontWeight="900">liquid (slope = −S_liquid)</text>
 
         {/* Gas line: steepest slope */}
-        <path d="M400 560 L1090 90" fill="none" stroke="#fb7185" strokeWidth="9" strokeDasharray="20 10" />
-        <text x="950" y="100" fill="#fda4af" fontSize="18" fontWeight="900">gas (slope = −S_gas, most negative)</text>
+        <path d="M400 560 L1090 90" fill="none" stroke="#fb7185" strokeWidth="5" strokeDasharray="20 10" />
+        <text x="950" y="100" fill="#fda4af" fontSize="20" fontWeight="900">gas (slope = −S_gas, most negative)</text>
 
         {/* Intersection 1: melting point Tm */}
         <circle cx="600" cy="338" r="14" fill="#fbbf24" />
         <line x1="600" y1="338" x2="600" y2="560" stroke="#fbbf24" strokeWidth="3" strokeDasharray="12 8" />
-        <text x="600" y="590" fill="#fde68a" fontSize="18" fontWeight="900" textAnchor="middle">T_m (melting)</text>
-        <text x="600" y="612" fill="#fde68a" fontSize="14" textAnchor="middle">G_solid = G_liquid</text>
+        <text x="600" y="590" fill="#fde68a" fontSize="20" fontWeight="900" textAnchor="middle">T_m (melting)</text>
+        <text x="600" y="612" fill="#fde68a" fontSize="18" textAnchor="middle">G_solid = G_liquid</text>
 
         {/* Intersection 2: boiling point Tb */}
         <circle cx="840" cy="166" r="14" fill="#34d399" />
         <line x1="840" y1="166" x2="840" y2="560" stroke="#34d399" strokeWidth="3" strokeDasharray="12 8" />
-        <text x="840" y="590" fill="#a7f3d0" fontSize="18" fontWeight="900" textAnchor="middle">T_b (boiling)</text>
-        <text x="840" y="612" fill="#a7f3d0" fontSize="14" textAnchor="middle">G_liquid = G_gas</text>
+        <text x="840" y="590" fill="#a7f3d0" fontSize="20" fontWeight="900" textAnchor="middle">T_b (boiling)</text>
+        <text x="840" y="612" fill="#a7f3d0" fontSize="18" textAnchor="middle">G_liquid = G_gas</text>
 
         {/* Stable phase labels */}
         <rect x="135" y="460" width="130" height="32" rx="12" fill="#3b0764" />
-        <text x="200" y="481" fill="#e9d5ff" fontSize="14" fontWeight="900" textAnchor="middle">solid stable</text>
+        <text x="200" y="481" fill="#e9d5ff" fontSize="18" fontWeight="900" textAnchor="middle">solid stable</text>
         <rect x="640" y="420" width="130" height="32" rx="12" fill="#064e3b" />
-        <text x="705" y="441" fill="#a7f3d0" fontSize="14" fontWeight="900" textAnchor="middle">liquid stable</text>
+        <text x="705" y="441" fill="#a7f3d0" fontSize="18" fontWeight="900" textAnchor="middle">liquid stable</text>
         <rect x="900" y="320" width="120" height="32" rx="12" fill="#450a0a" />
-        <text x="960" y="341" fill="#fda4af" fontSize="14" fontWeight="900" textAnchor="middle">gas stable</text>
+        <text x="960" y="341" fill="#fda4af" fontSize="18" fontWeight="900" textAnchor="middle">gas stable</text>
 
         <rect x="150" y="625" width="900" height="35" rx="14" fill="#0f172a" />
-        <text x="600" y="648" fill="#cbd5e1" fontSize="14" textAnchor="middle">
+        <text x="600" y="648" fill="#cbd5e1" fontSize="18" textAnchor="middle">
           Slope = (∂G_m/∂T)_P = −S_m. Gas has the largest molar entropy, so steepest slope.
         </text>
       </svg>
@@ -116,7 +116,7 @@ function GvsTSVG() {
 // SVG 2: G vs P
 function GvsPSVG() {
   return (
-    <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
+    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
       <svg viewBox="0 0 1200 560" role="img" aria-labelledby="p26-gP-title p26-gP-desc" className="h-auto w-full">
         <title id="p26-gP-title">Molar Gibbs energy versus pressure for gas and condensed phases</title>
         <desc id="p26-gP-desc">
@@ -140,22 +140,22 @@ function GvsPSVG() {
         <text x="72" y="68" fill="#e2e8f0" fontSize="20" fontWeight="900">G_m</text>
 
         {/* Gas: logarithmic rise */}
-        <path d="M200 420 C280 370 380 280 500 220 C640 155 780 120 1080 95" fill="none" stroke="#fb7185" strokeWidth="9" />
-        <text x="1000" y="85" fill="#fda4af" fontSize="17" fontWeight="900">gas: G_m = G°_m + RTln(P/P°)</text>
-        <text x="1000" y="108" fill="#fda4af" fontSize="14">steep at low P</text>
+        <path d="M200 420 C280 370 380 280 500 220 C640 155 780 120 1080 95" fill="none" stroke="#fb7185" strokeWidth="5" />
+        <text x="1000" y="85" fill="#fda4af" fontSize="19" fontWeight="900">gas: G_m = G°_m + RTln(P/P°)</text>
+        <text x="1000" y="108" fill="#fda4af" fontSize="18">steep at low P</text>
 
         {/* Condensed: nearly linear, shallow */}
-        <path d="M200 340 L1080 300" fill="none" stroke="#a78bfa" strokeWidth="7" />
-        <text x="780" y="290" fill="#c4b5fd" fontSize="17" fontWeight="900">condensed: G_m ≈ G°_m + V_m(P−P°)</text>
-        <text x="780" y="313" fill="#c4b5fd" fontSize="14">nearly flat (V_m small)</text>
+        <path d="M200 340 L1080 300" fill="none" stroke="#a78bfa" strokeWidth="4" />
+        <text x="780" y="290" fill="#c4b5fd" fontSize="19" fontWeight="900">condensed: G_m ≈ G°_m + V_m(P−P°)</text>
+        <text x="780" y="313" fill="#c4b5fd" fontSize="18">nearly flat (V_m small)</text>
 
         {/* P° mark */}
         <line x1="500" y1="220" x2="500" y2="460" stroke="#fbbf24" strokeWidth="3" strokeDasharray="12 8" />
         <line x1="500" y1="340" x2="500" y2="460" stroke="#fbbf24" strokeWidth="3" strokeDasharray="12 8" />
-        <text x="500" y="488" fill="#fde68a" fontSize="17" fontWeight="900" textAnchor="middle">P° (standard)</text>
+        <text x="500" y="488" fill="#fde68a" fontSize="19" fontWeight="900" textAnchor="middle">P° (standard)</text>
 
         <rect x="150" y="495" width="900" height="35" rx="14" fill="#0f172a" />
-        <text x="600" y="518" fill="#cbd5e1" fontSize="14" textAnchor="middle">
+        <text x="600" y="518" fill="#cbd5e1" fontSize="18" textAnchor="middle">
           At P°, gas and condensed curves need not coincide — their difference is determined by standard-state Gibbs energy.
         </text>
       </svg>

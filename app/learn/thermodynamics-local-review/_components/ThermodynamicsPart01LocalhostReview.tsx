@@ -105,7 +105,7 @@ function Formula({
 
 function GlossySystemUniverseGraphic() {
   return (
-    <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 shadow-2xl shadow-cyan-950/30 md:p-5">
+    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 shadow-2xl shadow-cyan-950/30 md:p-5">
       <svg
         viewBox="0 0 1200 760"
         role="img"
@@ -194,16 +194,16 @@ function GlossySystemUniverseGraphic() {
 
         <rect width="1200" height="760" rx="36" fill="url(#universeGlow)" />
         <circle cx="600" cy="380" r="285" fill="#0f172a" stroke="#475569" strokeWidth="3" strokeDasharray="16 14" />
-        <circle cx="600" cy="380" r="180" fill="url(#systemCore)" stroke="#67e8f9" strokeWidth="8" filter="url(#softGlow)" />
+        <circle cx="600" cy="380" r="180" fill="url(#systemCore)" stroke="#67e8f9" strokeWidth="5" filter="url(#softGlow)" />
         <ellipse cx="545" cy="315" rx="88" ry="54" fill="#ffffff" fillOpacity="0.16" />
 
         <text x="600" y="335" fill="#ecfeff" fontSize="31" fontWeight="900" textAnchor="middle">
           SYSTEM
         </text>
-        <text x="600" y="376" fill="#cffafe" fontSize="19" fontWeight="700" textAnchor="middle">
+        <text x="600" y="376" fill="#cffafe" fontSize="21" fontWeight="700" textAnchor="middle">
           selected matter or region
         </text>
-        <text x="600" y="412" fill="#a5f3fc" fontSize="17" textAnchor="middle">
+        <text x="600" y="412" fill="#a5f3fc" fontSize="19" textAnchor="middle">
           chosen for thermodynamic study
         </text>
 
@@ -223,21 +223,21 @@ function GlossySystemUniverseGraphic() {
           d="M395 290 C305 245 245 225 170 230"
           fill="none"
           stroke="url(#matterGradient)"
-          strokeWidth="11"
+          strokeWidth="5"
           markerEnd="url(#matterArrow)"
         />
         <path
           d="M805 310 C900 265 965 250 1040 260"
           fill="none"
           stroke="url(#heatGradient)"
-          strokeWidth="11"
+          strokeWidth="5"
           markerEnd="url(#heatArrow)"
         />
         <path
           d="M805 450 C910 490 965 515 1040 520"
           fill="none"
           stroke="url(#workGradient)"
-          strokeWidth="11"
+          strokeWidth="5"
           markerEnd="url(#workArrow)"
         />
 
@@ -245,7 +245,7 @@ function GlossySystemUniverseGraphic() {
         <text x="192" y="207" fill="#a7f3d0" fontSize="22" fontWeight="900" textAnchor="middle">
           MATTER
         </text>
-        <text x="192" y="245" fill="#d1fae5" fontSize="16" textAnchor="middle">
+        <text x="192" y="245" fill="#d1fae5" fontSize="19" textAnchor="middle">
           molecules or bulk flow
         </text>
 
@@ -253,7 +253,7 @@ function GlossySystemUniverseGraphic() {
         <text x="1027" y="232" fill="#fde68a" fontSize="22" fontWeight="900" textAnchor="middle">
           HEAT
         </text>
-        <text x="1027" y="270" fill="#fef3c7" fontSize="16" textAnchor="middle">
+        <text x="1027" y="270" fill="#fef3c7" fontSize="19" textAnchor="middle">
           energy transfer due to ΔT
         </text>
 
@@ -261,7 +261,7 @@ function GlossySystemUniverseGraphic() {
         <text x="1027" y="532" fill="#ddd6fe" fontSize="22" fontWeight="900" textAnchor="middle">
           WORK
         </text>
-        <text x="1027" y="570" fill="#ede9fe" fontSize="16" textAnchor="middle">
+        <text x="1027" y="570" fill="#ede9fe" fontSize="19" textAnchor="middle">
           organized energy transfer
         </text>
       </svg>
@@ -298,7 +298,7 @@ function BoundaryMatrixGraphic() {
   ];
 
   return (
-    <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-4 md:p-6">
+    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-4 md:p-6">
       <svg
         viewBox="0 0 1200 900"
         role="img"
@@ -336,7 +336,7 @@ function BoundaryMatrixGraphic() {
         <text x="600" y="58" fill="#f8fafc" fontSize="31" fontWeight="900" textAnchor="middle">
           BOUNDARY PROPERTY MATRIX
         </text>
-        <text x="600" y="92" fill="#94a3b8" fontSize="18" textAnchor="middle">
+        <text x="600" y="92" fill="#94a3b8" fontSize="20" textAnchor="middle">
           These four classifications are independent—not interchangeable.
         </text>
 
@@ -348,7 +348,7 @@ function BoundaryMatrixGraphic() {
               <text x="205" y={y + 45} fill={row.accent} fontSize="22" fontWeight="900" textAnchor="middle">
                 {row.title}
               </text>
-              <text x="205" y={y + 90} fill="#e2e8f0" fontSize="17" textAnchor="middle">
+              <text x="205" y={y + 90} fill="#e2e8f0" fontSize="19" textAnchor="middle">
                 independent descriptor
               </text>
 
@@ -356,7 +356,7 @@ function BoundaryMatrixGraphic() {
               <text x="510" y={y + 64} fill="#f8fafc" fontSize="21" fontWeight="900" textAnchor="middle">
                 {row.left}
               </text>
-              <text x="510" y={y + 94} fill="#cbd5e1" fontSize="16" textAnchor="middle">
+              <text x="510" y={y + 94} fill="#cbd5e1" fontSize="19" textAnchor="middle">
                 option A
               </text>
 
@@ -364,7 +364,7 @@ function BoundaryMatrixGraphic() {
               <text x="905" y={y + 64} fill="#f8fafc" fontSize="21" fontWeight="900" textAnchor="middle">
                 {row.right}
               </text>
-              <text x="905" y={y + 94} fill="#cbd5e1" fontSize="16" textAnchor="middle">
+              <text x="905" y={y + 94} fill="#cbd5e1" fontSize="19" textAnchor="middle">
                 option B
               </text>
 
@@ -406,7 +406,7 @@ function SystemExchangeGraphic() {
   ];
 
   return (
-    <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-4 md:p-6">
+    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-4 md:p-6">
       <svg
         viewBox="0 0 1200 700"
         role="img"
@@ -446,20 +446,20 @@ function SystemExchangeGraphic() {
 
         {systems.map((s) => (
           <g key={s.title}>
-            <rect x={s.x} y="125" width="350" height="460" rx="34" fill="url(#exGlass)" stroke={s.stroke} strokeWidth="6" filter="url(#exShadow)" />
+            <rect x={s.x} y="125" width="350" height="460" rx="34" fill="url(#exGlass)" stroke={s.stroke} strokeWidth="4" filter="url(#exShadow)" />
             <text x={s.x + 175} y="185" fill={s.stroke} fontSize="30" fontWeight="900" textAnchor="middle">
               {s.title}
             </text>
-            <circle cx={s.x + 175} cy="320" r="95" fill="#0f172a" stroke={s.stroke} strokeWidth="7" />
+            <circle cx={s.x + 175} cy="320" r="95" fill="#0f172a" stroke={s.stroke} strokeWidth="4" />
             <text x={s.x + 175} y="312" fill="#f8fafc" fontSize="21" fontWeight="900" textAnchor="middle">
               SYSTEM
             </text>
-            <text x={s.x + 175} y="344" fill="#cbd5e1" fontSize="15" textAnchor="middle">
+            <text x={s.x + 175} y="344" fill="#cbd5e1" fontSize="18" textAnchor="middle">
               defined boundary
             </text>
 
             <rect x={s.x + 40} y="445" width="125" height="80" rx="18" fill="#0f172a" stroke="#34d399" strokeWidth="3" />
-            <text x={s.x + 102} y="476" fill="#a7f3d0" fontSize="15" fontWeight="900" textAnchor="middle">
+            <text x={s.x + 102} y="476" fill="#a7f3d0" fontSize="18" fontWeight="900" textAnchor="middle">
               MATTER
             </text>
             <text x={s.x + 102} y="505" fill={s.matter === "YES" ? "#86efac" : "#fda4af"} fontSize="20" fontWeight="900" textAnchor="middle">
@@ -467,25 +467,25 @@ function SystemExchangeGraphic() {
             </text>
 
             <rect x={s.x + 185} y="445" width="125" height="80" rx="18" fill="#0f172a" stroke="#fbbf24" strokeWidth="3" />
-            <text x={s.x + 247} y="476" fill="#fde68a" fontSize="15" fontWeight="900" textAnchor="middle">
+            <text x={s.x + 247} y="476" fill="#fde68a" fontSize="18" fontWeight="900" textAnchor="middle">
               ENERGY
             </text>
             <text x={s.x + 247} y="505" fill={s.energy === "YES" ? "#fde047" : "#fda4af"} fontSize="20" fontWeight="900" textAnchor="middle">
               {s.energy}
             </text>
 
-            <text x={s.x + 175} y="562" fill="#cbd5e1" fontSize="16" textAnchor="middle">
+            <text x={s.x + 175} y="562" fill="#cbd5e1" fontSize="19" textAnchor="middle">
               {s.note}
             </text>
           </g>
         ))}
 
-        <path d="M15 320 H145" stroke="#34d399" strokeWidth="8" markerEnd="url(#exArrow)" />
-        <path d="M300 320 H410" stroke="#fbbf24" strokeWidth="8" markerEnd="url(#exArrow)" />
-        <path d="M675 320 H790" stroke="#fbbf24" strokeWidth="8" markerEnd="url(#exArrow)" />
+        <path d="M15 320 H145" stroke="#34d399" strokeWidth="5" markerEnd="url(#exArrow)" />
+        <path d="M300 320 H410" stroke="#fbbf24" strokeWidth="5" markerEnd="url(#exArrow)" />
+        <path d="M675 320 H790" stroke="#fbbf24" strokeWidth="5" markerEnd="url(#exArrow)" />
 
         <rect x="220" y="625" width="760" height="48" rx="20" fill="#0f172a" stroke="#64748b" strokeWidth="3" />
-        <text x="600" y="656" fill="#cbd5e1" fontSize="18" fontWeight="800" textAnchor="middle">
+        <text x="600" y="656" fill="#cbd5e1" fontSize="20" fontWeight="800" textAnchor="middle">
           Energy may cross as heat, work, radiation, electrical transfer, or other recognized modes.
         </text>
       </svg>
@@ -495,7 +495,7 @@ function SystemExchangeGraphic() {
 
 function AdiabaticPistonGraphic() {
   return (
-    <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-4 md:p-6">
+    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-4 md:p-6">
       <svg
         viewBox="0 0 1200 630"
         role="img"
@@ -541,32 +541,32 @@ function AdiabaticPistonGraphic() {
           ADIABATIC ≠ AUTOMATICALLY ISOLATED
         </text>
 
-        <rect x="85" y="120" width="470" height="410" rx="32" fill="#0f172a" stroke="#f97316" strokeWidth="8" filter="url(#apShadow)" />
+        <rect x="85" y="120" width="470" height="410" rx="32" fill="#0f172a" stroke="#f97316" strokeWidth="5" filter="url(#apShadow)" />
         <text x="320" y="170" fill="#fdba74" fontSize="23" fontWeight="900" textAnchor="middle">
           MOVABLE ADIABATIC PISTON
         </text>
-        <path d="M175 455 V245 H465 V455" fill="url(#apGas)" stroke="#f97316" strokeWidth="9" />
+        <path d="M175 455 V245 H465 V455" fill="url(#apGas)" stroke="#f97316" strokeWidth="5" />
         <rect x="185" y="285" width="270" height="26" rx="9" fill="url(#apMetal)" />
-        <line x1="320" y1="285" x2="320" y2="220" stroke="#cbd5e1" strokeWidth="16" strokeLinecap="round" />
-        <path d="M320 270 V210" stroke="#a78bfa" strokeWidth="8" markerEnd="url(#apArrow)" />
-        <text x="320" y="500" fill="#a5f3fc" fontSize="19" fontWeight="900" textAnchor="middle">
+        <line x1="320" y1="285" x2="320" y2="220" stroke="#cbd5e1" strokeWidth="6" strokeLinecap="round" />
+        <path d="M320 270 V210" stroke="#a78bfa" strokeWidth="5" markerEnd="url(#apArrow)" />
+        <text x="320" y="500" fill="#a5f3fc" fontSize="21" fontWeight="900" textAnchor="middle">
           q = 0, but wₚᵥ may be non-zero
         </text>
 
-        <rect x="645" y="120" width="470" height="410" rx="32" fill="#0f172a" stroke="#34d399" strokeWidth="8" filter="url(#apShadow)" />
+        <rect x="645" y="120" width="470" height="410" rx="32" fill="#0f172a" stroke="#34d399" strokeWidth="5" filter="url(#apShadow)" />
         <text x="880" y="170" fill="#a7f3d0" fontSize="23" fontWeight="900" textAnchor="middle">
           RIGID + SEALED + ADIABATIC
         </text>
-        <rect x="745" y="245" width="270" height="210" rx="22" fill="url(#apGas)" stroke="#34d399" strokeWidth="13" />
-        <line x1="705" y1="350" x2="740" y2="350" stroke="#fb7185" strokeWidth="8" />
-        <line x1="720" y1="332" x2="742" y2="368" stroke="#fb7185" strokeWidth="7" />
-        <line x1="742" y1="332" x2="720" y2="368" stroke="#fb7185" strokeWidth="7" />
-        <text x="880" y="500" fill="#a7f3d0" fontSize="19" fontWeight="900" textAnchor="middle">
+        <rect x="745" y="245" width="270" height="210" rx="22" fill="url(#apGas)" stroke="#34d399" strokeWidth="6" />
+        <line x1="705" y1="350" x2="740" y2="350" stroke="#fb7185" strokeWidth="5" />
+        <line x1="720" y1="332" x2="742" y2="368" stroke="#fb7185" strokeWidth="4" />
+        <line x1="742" y1="332" x2="720" y2="368" stroke="#fb7185" strokeWidth="4" />
+        <text x="880" y="500" fill="#a7f3d0" fontSize="21" fontWeight="900" textAnchor="middle">
           matter = 0, q = 0, wₚᵥ = 0
         </text>
 
         <rect x="250" y="565" width="700" height="42" rx="18" fill="#0f172a" stroke="#a78bfa" strokeWidth="3" />
-        <text x="600" y="593" fill="#ddd6fe" fontSize="17" fontWeight="900" textAnchor="middle">
+        <text x="600" y="593" fill="#ddd6fe" fontSize="19" fontWeight="900" textAnchor="middle">
           Isolation requires no matter transfer and no energy transfer of any kind.
         </text>
       </svg>
@@ -965,7 +965,7 @@ export default function ThermodynamicsPart01LocalhostReview() {
           <div className="flex flex-wrap gap-2">
             <Chip tone="cyan">SYNERGIC BOND MASTER NOTES</Chip>
             <Chip tone="violet">COMPLETE THEORY</Chip>
-            <Chip tone="amber">LOCALHOST REVIEW BUILD</Chip>
+            <Chip tone="amber">PREMIUM MASTER EDITION</Chip>
           </div>
 
           <div className="mt-8 grid gap-10 lg:grid-cols-[1.15fr_0.85fr] lg:items-center">

@@ -85,7 +85,7 @@ function Formula({
 
 function FirstLawBoundaryAnimation() {
   return (
-    <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
+    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
       <svg
         viewBox="0 0 1200 720"
         role="img"
@@ -111,27 +111,27 @@ function FirstLawBoundaryAnimation() {
           ENERGY BALANCE IS NECESSARY—BUT NOT SUFFICIENT
         </text>
 
-        <rect x="415" y="145" width="370" height="180" rx="32" fill="#0f172a" stroke="#22d3ee" strokeWidth="8" />
+        <rect x="415" y="145" width="370" height="180" rx="32" fill="#0f172a" stroke="#22d3ee" strokeWidth="5" />
         <text x="600" y="205" fill="#a5f3fc" fontSize="29" fontWeight="900" textAnchor="middle">FIRST LAW</text>
         <text x="600" y="255" fill="#f8fafc" fontSize="28" fontWeight="900" textAnchor="middle">ΔU = q + w</text>
-        <text x="600" y="295" fill="#cbd5e1" fontSize="18" textAnchor="middle">conservation and bookkeeping</text>
+        <text x="600" y="295" fill="#cbd5e1" fontSize="20" textAnchor="middle">conservation and bookkeeping</text>
 
-        <path d="M430 345 L260 465" stroke="#34d399" strokeWidth="9" markerEnd="url(#flGreen)" />
-        <path d="M770 345 L940 465" stroke="#fb7185" strokeWidth="9" markerEnd="url(#flRose)" />
+        <path d="M430 345 L260 465" stroke="#34d399" strokeWidth="5" markerEnd="url(#flGreen)" />
+        <path d="M770 345 L940 465" stroke="#fb7185" strokeWidth="5" markerEnd="url(#flRose)" />
 
-        <rect x="80" y="465" width="390" height="180" rx="30" fill="#0f172a" stroke="#34d399" strokeWidth="7" />
+        <rect x="80" y="465" width="390" height="180" rx="30" fill="#0f172a" stroke="#34d399" strokeWidth="4" />
         <text x="275" y="515" fill="#a7f3d0" fontSize="24" fontWeight="900" textAnchor="middle">IT CAN DETERMINE</text>
-        <text x="275" y="560" fill="#cbd5e1" fontSize="19" textAnchor="middle">• missing q, w or ΔU</text>
-        <text x="275" y="595" fill="#cbd5e1" fontSize="19" textAnchor="middle">• energy conservation</text>
-        <text x="275" y="630" fill="#cbd5e1" fontSize="19" textAnchor="middle">• impossibility of PMM-I</text>
+        <text x="275" y="560" fill="#cbd5e1" fontSize="21" textAnchor="middle">• missing q, w or ΔU</text>
+        <text x="275" y="595" fill="#cbd5e1" fontSize="21" textAnchor="middle">• energy conservation</text>
+        <text x="275" y="630" fill="#cbd5e1" fontSize="21" textAnchor="middle">• impossibility of PMM-I</text>
 
-        <rect x="730" y="465" width="390" height="180" rx="30" fill="#0f172a" stroke="#fb7185" strokeWidth="7" />
+        <rect x="730" y="465" width="390" height="180" rx="30" fill="#0f172a" stroke="#fb7185" strokeWidth="4" />
         <text x="925" y="515" fill="#fda4af" fontSize="24" fontWeight="900" textAnchor="middle">IT CANNOT DETERMINE</text>
-        <text x="925" y="560" fill="#cbd5e1" fontSize="19" textAnchor="middle">• natural direction</text>
-        <text x="925" y="595" fill="#cbd5e1" fontSize="19" textAnchor="middle">• irreversibility</text>
-        <text x="925" y="630" fill="#cbd5e1" fontSize="19" textAnchor="middle">• maximum heat-to-work conversion</text>
+        <text x="925" y="560" fill="#cbd5e1" fontSize="21" textAnchor="middle">• natural direction</text>
+        <text x="925" y="595" fill="#cbd5e1" fontSize="21" textAnchor="middle">• irreversibility</text>
+        <text x="925" y="630" fill="#cbd5e1" fontSize="21" textAnchor="middle">• maximum heat-to-work conversion</text>
 
-        <text x="600" y="690" fill="#94a3b8" fontSize="18" textAnchor="middle">
+        <text x="600" y="690" fill="#94a3b8" fontSize="20" textAnchor="middle">
           The Second Law supplies the missing direction criterion.
         </text>
       </svg>
@@ -141,7 +141,7 @@ function FirstLawBoundaryAnimation() {
 
 function HeatWorkAsymmetryAnimation() {
   return (
-    <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
+    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
       <svg
         viewBox="0 0 1200 740"
         role="img"
@@ -175,12 +175,12 @@ function HeatWorkAsymmetryAnimation() {
           <text x="300" y="115" fill="#a5f3fc" fontSize="27" fontWeight="900" textAnchor="middle">
             WORK → THERMAL ENERGY
           </text>
-          <rect x="90" y="150" width="420" height="390" rx="34" fill="#0f172a" stroke="#22d3ee" strokeWidth="8" />
+          <rect x="90" y="150" width="420" height="390" rx="34" fill="#0f172a" stroke="#22d3ee" strokeWidth="5" />
           <rect x="155" y="260" width="290" height="70" rx="14" fill="#334155" />
           <rect x="205" y="200" width="190" height="65" rx="14" fill="#64748b">
             <animate attributeName="x" values="165;245;165" dur="1.6s" repeatCount="indefinite" />
           </rect>
-          <path d="M170 360 C210 320 250 400 290 360 C330 320 370 400 410 360" fill="none" stroke="#fbbf24" strokeWidth="10">
+          <path d="M170 360 C210 320 250 400 290 360 C330 320 370 400 410 360" fill="none" stroke="#fbbf24" strokeWidth="5">
             <animate attributeName="stroke-dasharray" values="0 300;150 150;300 0" dur="1.5s" repeatCount="indefinite" />
           </path>
           <text x="300" y="435" fill="#fde68a" fontSize="23" fontWeight="900" textAnchor="middle">frictional heating</text>
@@ -193,30 +193,30 @@ function HeatWorkAsymmetryAnimation() {
           <text x="900" y="115" fill="#f9a8d4" fontSize="27" fontWeight="900" textAnchor="middle">
             HEAT ENGINE
           </text>
-          <rect x="690" y="150" width="420" height="390" rx="34" fill="#0f172a" stroke="#f472b6" strokeWidth="8" />
+          <rect x="690" y="150" width="420" height="390" rx="34" fill="#0f172a" stroke="#f472b6" strokeWidth="5" />
           <rect x="760" y="180" width="280" height="70" rx="20" fill="#7c2d12" stroke="#f97316" strokeWidth="5" />
           <text x="900" y="224" fill="#fed7aa" fontSize="22" fontWeight="900" textAnchor="middle">HOT RESERVOIR</text>
 
-          <circle cx="900" cy="350" r="78" fill="#4c1d95" stroke="#a78bfa" strokeWidth="6" />
+          <circle cx="900" cy="350" r="78" fill="#4c1d95" stroke="#a78bfa" strokeWidth="4" />
           <text x="900" y="360" fill="#f8fafc" fontSize="24" fontWeight="900" textAnchor="middle">ENGINE</text>
 
           <rect x="760" y="455" width="280" height="70" rx="20" fill="#164e63" stroke="#22d3ee" strokeWidth="5" />
           <text x="900" y="499" fill="#a5f3fc" fontSize="22" fontWeight="900" textAnchor="middle">COLD RESERVOIR</text>
 
-          <path d="M900 250 V265" stroke="#fbbf24" strokeWidth="10" markerEnd="url(#hwaAmber)" />
-          <path d="M900 428 V445" stroke="#22d3ee" strokeWidth="10" markerEnd="url(#hwaCyan)" />
-          <path d="M980 350 H1070" stroke="#fb7185" strokeWidth="10" markerEnd="url(#hwaRose)" />
+          <path d="M900 250 V265" stroke="#fbbf24" strokeWidth="5" markerEnd="url(#hwaAmber)" />
+          <path d="M900 428 V445" stroke="#22d3ee" strokeWidth="5" markerEnd="url(#hwaCyan)" />
+          <path d="M980 350 H1070" stroke="#fb7185" strokeWidth="5" markerEnd="url(#hwaRose)" />
 
-          <text x="840" y="285" fill="#fde68a" fontSize="18">qH</text>
-          <text x="840" y="445" fill="#a5f3fc" fontSize="18">qC</text>
-          <text x="1045" y="325" fill="#fda4af" fontSize="18">work</text>
+          <text x="840" y="285" fill="#fde68a" fontSize="20">qH</text>
+          <text x="840" y="445" fill="#a5f3fc" fontSize="20">qC</text>
+          <text x="1045" y="325" fill="#fda4af" fontSize="20">work</text>
         </g>
 
         <rect x="205" y="610" width="790" height="78" rx="26" fill="#0f172a" stroke="#a78bfa" strokeWidth="4" />
         <text x="600" y="642" fill="#ddd6fe" fontSize="21" fontWeight="900" textAnchor="middle">
           No cyclic engine can take heat from one reservoir and convert all of it into work.
         </text>
-        <text x="600" y="673" fill="#cbd5e1" fontSize="17" textAnchor="middle">
+        <text x="600" y="673" fill="#cbd5e1" fontSize="19" textAnchor="middle">
           Some energy must be rejected as heat to a lower-temperature sink.
         </text>
       </svg>
@@ -226,7 +226,7 @@ function HeatWorkAsymmetryAnimation() {
 
 function StabilityLandscapeAnimation() {
   return (
-    <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
+    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
       <svg
         viewBox="0 0 1200 720"
         role="img"
@@ -262,7 +262,7 @@ function StabilityLandscapeAnimation() {
           d="M190 455 C300 455 350 175 540 155 C735 135 735 505 1000 515"
           fill="none"
           stroke="#a78bfa"
-          strokeWidth="11"
+          strokeWidth="5"
         />
 
         <circle r="15" fill="#fde047">
@@ -271,10 +271,10 @@ function StabilityLandscapeAnimation() {
           </animateMotion>
         </circle>
 
-        <line x1="260" y1="450" x2="260" y2="205" stroke="#fbbf24" strokeWidth="8" markerEnd="url(#slAmber)" />
+        <line x1="260" y1="450" x2="260" y2="205" stroke="#fbbf24" strokeWidth="5" markerEnd="url(#slAmber)" />
         <text x="285" y="330" fill="#fde68a" fontSize="20" fontWeight="900">activation barrier</text>
 
-        <line x1="245" y1="470" x2="920" y2="520" stroke="#34d399" strokeWidth="8" markerEnd="url(#slGreen)" />
+        <line x1="245" y1="470" x2="920" y2="520" stroke="#34d399" strokeWidth="5" markerEnd="url(#slGreen)" />
         <text x="600" y="560" fill="#a7f3d0" fontSize="20" fontWeight="900" textAnchor="middle">
           thermodynamic downhill direction
         </text>
@@ -293,7 +293,7 @@ function StabilityLandscapeAnimation() {
 
 function DiffusionAnimation() {
   return (
-    <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
+    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
       <svg
         viewBox="0 0 1200 650"
         role="img"
@@ -311,8 +311,8 @@ function DiffusionAnimation() {
           SPONTANEOUS MIXING HAS A PREFERRED DIRECTION
         </text>
 
-        <rect x="100" y="145" width="1000" height="330" rx="32" fill="#0f172a" stroke="#22d3ee" strokeWidth="8" />
-        <line x1="600" y1="145" x2="600" y2="475" stroke="#e2e8f0" strokeWidth="10">
+        <rect x="100" y="145" width="1000" height="330" rx="32" fill="#0f172a" stroke="#22d3ee" strokeWidth="5" />
+        <line x1="600" y1="145" x2="600" y2="475" stroke="#e2e8f0" strokeWidth="6">
           <animate attributeName="opacity" values="1;1;0;0" keyTimes="0;0.25;0.35;1" dur="6s" repeatCount="indefinite" />
         </line>
 
@@ -347,7 +347,7 @@ function DiffusionAnimation() {
         <text x="350" y="530" fill="#a5f3fc" fontSize="21" fontWeight="900" textAnchor="middle">initially separated</text>
         <text x="850" y="530" fill="#f9a8d4" fontSize="21" fontWeight="900" textAnchor="middle">mixed equilibrium</text>
 
-        <path d="M400 570 H800" stroke="#34d399" strokeWidth="8" />
+        <path d="M400 570 H800" stroke="#34d399" strokeWidth="5" />
         <polygon points="800,570 775,555 775,585" fill="#34d399" />
         <text x="600" y="615" fill="#a7f3d0" fontSize="20" fontWeight="900" textAnchor="middle">
           natural direction after the constraint is removed
@@ -455,7 +455,7 @@ function RetainedFiveRouteExample() {
       <div className="flex flex-wrap items-center justify-between gap-3">
         <div>
           <p className="text-xs font-black uppercase tracking-[0.2em] text-amber-300">
-            Retained chapter comparison
+            Chapter comparison
           </p>
           <h3 className="mt-2 text-xl font-black text-white">
             One initial state, one final pressure, five different paths
@@ -1080,7 +1080,7 @@ export default function ThermodynamicsPart13() {
           </ConceptLens>
         </Section>
 
-        <Section index="08" title="Retained five-route ideal-gas comparison">
+        <Section index="08" title="Five-route ideal-gas comparison">
           <RetainedFiveRouteExample />
         </Section>
 

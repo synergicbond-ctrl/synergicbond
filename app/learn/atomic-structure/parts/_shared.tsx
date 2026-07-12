@@ -139,7 +139,7 @@ export function SummaryStrip({ items }: { items: ReactNode[] }) {
 
 export function FormulaLine({ math }: { math: string }) {
   return (
-    <div className="overflow-x-auto rounded-lg border border-cyan-400/15 bg-[#07101e] px-4 py-3 text-cyan-100">
+    <div className="overflow-x-auto text-cyan-100 [&_.katex-display]:my-1">
       <BlockMath math={math} />
     </div>
   );
@@ -203,7 +203,7 @@ export function DiagramBox({ title, children }: { title: string; children: React
       <figcaption className="mb-3 text-xs font-black uppercase tracking-[0.2em] text-cyan-200">
         Diagram: {title}
       </figcaption>
-      {children}
+      <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-3 [&>p]:w-full [&>div]:w-full [&>figure]:w-full">{children}</div>
     </figure>
   );
 }

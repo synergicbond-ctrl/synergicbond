@@ -2,9 +2,11 @@ import type { ReactNode, SVGProps } from "react";
 
 type VisualProps = SVGProps<SVGSVGElement> & { title: string; description: string; children: ReactNode };
 
-export function ScientificVisual({ title, description, children, ...props }: VisualProps) {
+export function ScientificVisual({ title, description, children, style, ...props }: VisualProps) {
   const id = title.toLowerCase().replace(/[^a-z0-9]+/g, "-");
-  return <svg role="img" aria-labelledby={`${id}-title ${id}-desc`} {...props}>
+  const designWidth = Number(String(props.viewBox ?? "0 0 760 400").split(/\s+/)[2]) || 760;
+  const sizing = { maxWidth: `${Math.min(Math.max(Math.round(designWidth * 1.02), 320), 780)}px`, flex: "1 1 300px", margin: "0 auto", ...style };
+  return <svg role="img" aria-labelledby={`${id}-title ${id}-desc`} style={sizing} {...props}>
     <title id={`${id}-title`}>{title}</title><desc id={`${id}-desc`}>{description}</desc>{children}
   </svg>;
 }
@@ -68,7 +70,7 @@ export function GoldFoilVisual() {
 }
 
 export function CathodeRayTubeVisual() {
-  return <ScientificVisual title="Cathode-ray discharge tube" description="A low-pressure gas discharge tube with a negative cathode on the left, a positive anode on the right, and an electron beam travelling to a zinc-sulphide fluorescent screen." viewBox="0 0 700 250" className="h-auto w-full"><defs><marker id="crt-arrow" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3z" fill="#67e8f9" /></marker></defs><rect x="95" y="65" width="500" height="105" rx="52" fill="none" stroke="#94a3b8" strokeWidth="3"/><path d="M65 118H120M580 118H640" stroke="#cbd5e1" strokeWidth="3"/><path d="M165 86V150M510 86V150" stroke="#facc15" strokeWidth="7"/><text x="144" y="78" fill="#fde68a" fontSize="15">cathode (−)</text><text x="480" y="78" fill="#fde68a" fontSize="15">anode (+)</text><path d="M185 118H475" stroke="#67e8f9" strokeWidth="3" strokeDasharray="8 6" markerEnd="url(#crt-arrow)"/><text x="285" y="106" fill="#a5f3fc" fontSize="15">cathode rays (e⁻)</text><rect x="530" y="84" width="12" height="68" fill="#a78bfa"/><text x="504" y="198" fill="#c4b5fd" fontSize="14">ZnS screen</text><text x="230" y="230" fill="#94a3b8" fontSize="13">low pressure gas · high potential difference</text></ScientificVisual>;
+  return <ScientificVisual title="Cathode-ray discharge tube" description="A low-pressure gas discharge tube with a negative cathode on the left, a positive anode on the right, and an electron beam travelling to a zinc-sulphide fluorescent screen." viewBox="0 0 700 250" className="h-auto w-full"><defs><marker id="crt-arrow" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3z" fill="#67e8f9" /></marker></defs><rect x="95" y="65" width="500" height="105" rx="52" fill="none" stroke="#94a3b8" strokeWidth="3"/><path d="M330 65V38M348 65V38M339 36V16M334 22l5 -7l5 7" fill="none" stroke="#cbd5e1" strokeWidth="2.4"/><text x="356" y="26" fill="#cbd5e1" fontSize="13">to vacuum pump</text><path d="M65 118H120M580 118H640M65 118V205H320M640 118V205H392M320 196v18M332 201v8M344 196v18M356 201v8M368 196v18M380 201v8M392 196v18" fill="none" stroke="#cbd5e1" strokeWidth="2.2"/><text x="300" y="238" fill="#cbd5e1" fontSize="13">high voltage</text><path d="M165 86V150M510 86V150" stroke="#facc15" strokeWidth="7"/><text x="144" y="78" fill="#fde68a" fontSize="15">cathode (−)</text><text x="480" y="78" fill="#fde68a" fontSize="15">anode (+)</text><path d="M185 118H475" stroke="#67e8f9" strokeWidth="3" strokeDasharray="8 6" markerEnd="url(#crt-arrow)"/><text x="285" y="106" fill="#a5f3fc" fontSize="15">cathode rays (e⁻)</text><rect x="530" y="84" width="12" height="68" fill="#a78bfa"/><text x="504" y="198" fill="#c4b5fd" fontSize="14">ZnS screen</text><text x="230" y="230" fill="#94a3b8" fontSize="13">low pressure gas · high potential difference</text></ScientificVisual>;
 }
 
 export function MillikanOilDropVisual() {

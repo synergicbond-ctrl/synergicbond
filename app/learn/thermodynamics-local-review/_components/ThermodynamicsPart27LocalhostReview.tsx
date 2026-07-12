@@ -46,7 +46,7 @@ function Lens({ title, children, tone = "cyan" }: { title: string; children: Rea
 function MuVsPSVG() {
   return (
     <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
-      <svg viewBox="0 0 1200 600" role="img" aria-labelledby="p27-mu-title p27-mu-desc" className="h-auto w-full">
+      <svg viewBox="0 0 1200 600" role="img" aria-labelledby="p27-mu-title p27-mu-desc" className="h-auto w-full overflow-visible rounded-2xl border border-cyan-300/20 bg-slate-950/80 p-2 sm:p-3 shadow-[0_24px_90px_-42px_rgba(34,211,238,0.75)] transition-[border-color,box-shadow] duration-300 hover:border-cyan-300/35 hover:shadow-[0_28px_100px_-42px_rgba(34,211,238,0.9)]" focusable="false" preserveAspectRatio="xMidYMid meet" shapeRendering="geometricPrecision" textRendering="geometricPrecision">
         <title id="p27-mu-title">Chemical potential of an ideal gas versus pressure</title>
         <desc id="p27-mu-desc">
           μ = μ° + RT ln(P/P°) rises logarithmically with pressure, passing through μ° at P = P°.
@@ -95,7 +95,7 @@ function MuVsPSVG() {
 function MuVsMoleFracSVG() {
   return (
     <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
-      <svg viewBox="0 0 1200 520" role="img" aria-labelledby="p27-yx-title p27-yx-desc" className="h-auto w-full">
+      <svg viewBox="0 0 1200 520" role="img" aria-labelledby="p27-yx-title p27-yx-desc" className="h-auto w-full overflow-visible rounded-2xl border border-cyan-300/20 bg-slate-950/80 p-2 sm:p-3 shadow-[0_24px_90px_-42px_rgba(34,211,238,0.75)] transition-[border-color,box-shadow] duration-300 hover:border-cyan-300/35 hover:shadow-[0_28px_100px_-42px_rgba(34,211,238,0.9)]" focusable="false" preserveAspectRatio="xMidYMid meet" shapeRendering="geometricPrecision" textRendering="geometricPrecision">
         <title id="p27-yx-title">Chemical potential of a mixture component versus mole fraction</title>
         <desc id="p27-yx-desc">
           For an ideal-gas component i in a mixture, μ_i = μ_i° + RT ln(y_i P/P°). As mole fraction

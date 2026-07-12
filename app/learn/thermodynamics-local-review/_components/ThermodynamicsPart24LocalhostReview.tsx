@@ -75,7 +75,7 @@ function Lens({
 function FreeEnergyMapSVG() {
   return (
     <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
-      <svg viewBox="0 0 1200 780" role="img" aria-labelledby="fe-title fe-desc" className="h-auto w-full">
+      <svg viewBox="0 0 1200 780" role="img" aria-labelledby="fe-title fe-desc" className="h-auto w-full overflow-visible rounded-2xl border border-cyan-300/20 bg-slate-950/80 p-2 sm:p-3 shadow-[0_24px_90px_-42px_rgba(34,211,238,0.75)] transition-[border-color,box-shadow] duration-300 hover:border-cyan-300/35 hover:shadow-[0_28px_100px_-42px_rgba(34,211,238,0.9)]" focusable="false" preserveAspectRatio="xMidYMid meet" shapeRendering="geometricPrecision" textRendering="geometricPrecision">
         <title id="fe-title">Map connecting entropy criteria to Helmholtz and Gibbs free energies</title>
         <desc id="fe-desc">
           Isolated-system entropy criteria transform into Helmholtz energy at constant temperature and volume,
@@ -126,7 +126,7 @@ function FreeEnergyMapSVG() {
 function WorkExtractionSVG() {
   return (
     <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
-      <svg viewBox="0 0 1200 760" role="img" aria-labelledby="work-title work-desc" className="h-auto w-full">
+      <svg viewBox="0 0 1200 760" role="img" aria-labelledby="work-title work-desc" className="h-auto w-full overflow-visible rounded-2xl border border-cyan-300/20 bg-slate-950/80 p-2 sm:p-3 shadow-[0_24px_90px_-42px_rgba(34,211,238,0.75)] transition-[border-color,box-shadow] duration-300 hover:border-cyan-300/35 hover:shadow-[0_28px_100px_-42px_rgba(34,211,238,0.9)]" focusable="false" preserveAspectRatio="xMidYMid meet" shapeRendering="geometricPrecision" textRendering="geometricPrecision">
         <title id="work-title">Maximum useful work from Helmholtz and Gibbs energy decreases</title>
         <desc id="work-desc">
           Helmholtz energy decrease gives maximum total work at constant temperature and volume;

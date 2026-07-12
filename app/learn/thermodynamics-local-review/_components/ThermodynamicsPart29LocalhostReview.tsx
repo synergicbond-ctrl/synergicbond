@@ -46,7 +46,7 @@ function Lens({ title, children, tone = "cyan" }: { title: string; children: Rea
 function GvsXiSVG() {
   return (
     <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
-      <svg viewBox="0 0 1200 620" role="img" aria-labelledby="p29-gxi-title p29-gxi-desc" className="h-auto w-full">
+      <svg viewBox="0 0 1200 620" role="img" aria-labelledby="p29-gxi-title p29-gxi-desc" className="h-auto w-full overflow-visible rounded-2xl border border-cyan-300/20 bg-slate-950/80 p-2 sm:p-3 shadow-[0_24px_90px_-42px_rgba(34,211,238,0.75)] transition-[border-color,box-shadow] duration-300 hover:border-cyan-300/35 hover:shadow-[0_28px_100px_-42px_rgba(34,211,238,0.9)]" focusable="false" preserveAspectRatio="xMidYMid meet" shapeRendering="geometricPrecision" textRendering="geometricPrecision">
         <title id="p29-gxi-title">Total Gibbs energy versus extent of reaction showing equilibrium minimum</title>
         <desc id="p29-gxi-desc">
           G decreases when Q &lt; K (forward reaction favoured), passes through a minimum at
@@ -113,7 +113,7 @@ function GvsXiSVG() {
 function QvsKSVG() {
   return (
     <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
-      <svg viewBox="0 0 1200 420" role="img" aria-labelledby="p29-qk-title p29-qk-desc" className="h-auto w-full">
+      <svg viewBox="0 0 1200 420" role="img" aria-labelledby="p29-qk-title p29-qk-desc" className="h-auto w-full overflow-visible rounded-2xl border border-cyan-300/20 bg-slate-950/80 p-2 sm:p-3 shadow-[0_24px_90px_-42px_rgba(34,211,238,0.75)] transition-[border-color,box-shadow] duration-300 hover:border-cyan-300/35 hover:shadow-[0_28px_100px_-42px_rgba(34,211,238,0.9)]" focusable="false" preserveAspectRatio="xMidYMid meet" shapeRendering="geometricPrecision" textRendering="geometricPrecision">
         <title id="p29-qk-title">Reaction direction determined by comparing Q with K</title>
         <desc id="p29-qk-desc">
           When Q &lt; K: ΔrG &lt; 0, forward reaction spontaneous.

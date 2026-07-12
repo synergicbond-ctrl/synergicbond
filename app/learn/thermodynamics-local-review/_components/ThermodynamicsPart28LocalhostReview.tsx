@@ -46,7 +46,7 @@ function Lens({ title, children, tone = "cyan" }: { title: string; children: Rea
 function MixingGibbsSVG() {
   return (
     <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
-      <svg viewBox="0 0 1200 620" role="img" aria-labelledby="p28-mix-title p28-mix-desc" className="h-auto w-full">
+      <svg viewBox="0 0 1200 620" role="img" aria-labelledby="p28-mix-title p28-mix-desc" className="h-auto w-full overflow-visible rounded-2xl border border-cyan-300/20 bg-slate-950/80 p-2 sm:p-3 shadow-[0_24px_90px_-42px_rgba(34,211,238,0.75)] transition-[border-color,box-shadow] duration-300 hover:border-cyan-300/35 hover:shadow-[0_28px_100px_-42px_rgba(34,211,238,0.9)]" focusable="false" preserveAspectRatio="xMidYMid meet" shapeRendering="geometricPrecision" textRendering="geometricPrecision">
         <title id="p28-mix-title">Gibbs energy of ideal mixing versus mole fraction</title>
         <desc id="p28-mix-desc">
           ΔG_mix = RT(x₁ ln x₁ + x₂ ln x₂) is always negative for any genuine mixture.
@@ -107,7 +107,7 @@ function MixingGibbsSVG() {
 function RaoultSVG() {
   return (
     <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
-      <svg viewBox="0 0 1200 560" role="img" aria-labelledby="p28-raoult-title p28-raoult-desc" className="h-auto w-full">
+      <svg viewBox="0 0 1200 560" role="img" aria-labelledby="p28-raoult-title p28-raoult-desc" className="h-auto w-full overflow-visible rounded-2xl border border-cyan-300/20 bg-slate-950/80 p-2 sm:p-3 shadow-[0_24px_90px_-42px_rgba(34,211,238,0.75)] transition-[border-color,box-shadow] duration-300 hover:border-cyan-300/35 hover:shadow-[0_28px_100px_-42px_rgba(34,211,238,0.9)]" focusable="false" preserveAspectRatio="xMidYMid meet" shapeRendering="geometricPrecision" textRendering="geometricPrecision">
         <title id="p28-raoult-title">Raoult&apos;s law: partial and total vapour pressure versus liquid mole fraction</title>
         <desc id="p28-raoult-desc">
           For ideal solution, P_A = x_A P*_A (linear) and P_B = x_B P*_B (linear). Total pressure P

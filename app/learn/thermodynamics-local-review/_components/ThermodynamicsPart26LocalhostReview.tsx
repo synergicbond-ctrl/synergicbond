@@ -49,7 +49,7 @@ function Lens({ title, children, tone = "cyan" }: { title: string; children: Rea
 function GvsTSVG() {
   return (
     <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
-      <svg viewBox="0 0 1200 680" role="img" aria-labelledby="p26-gT-title p26-gT-desc" className="h-auto w-full">
+      <svg viewBox="0 0 1200 680" role="img" aria-labelledby="p26-gT-title p26-gT-desc" className="h-auto w-full overflow-visible rounded-2xl border border-cyan-300/20 bg-slate-950/80 p-2 sm:p-3 shadow-[0_24px_90px_-42px_rgba(34,211,238,0.75)] transition-[border-color,box-shadow] duration-300 hover:border-cyan-300/35 hover:shadow-[0_28px_100px_-42px_rgba(34,211,238,0.9)]" focusable="false" preserveAspectRatio="xMidYMid meet" shapeRendering="geometricPrecision" textRendering="geometricPrecision">
         <title id="p26-gT-title">Molar Gibbs energy versus temperature for solid, liquid and gas phases</title>
         <desc id="p26-gT-desc">
           Three G_m vs T lines with slopes −S_m. Gas has the steepest negative slope. Phase transitions
@@ -117,7 +117,7 @@ function GvsTSVG() {
 function GvsPSVG() {
   return (
     <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
-      <svg viewBox="0 0 1200 560" role="img" aria-labelledby="p26-gP-title p26-gP-desc" className="h-auto w-full">
+      <svg viewBox="0 0 1200 560" role="img" aria-labelledby="p26-gP-title p26-gP-desc" className="h-auto w-full overflow-visible rounded-2xl border border-cyan-300/20 bg-slate-950/80 p-2 sm:p-3 shadow-[0_24px_90px_-42px_rgba(34,211,238,0.75)] transition-[border-color,box-shadow] duration-300 hover:border-cyan-300/35 hover:shadow-[0_28px_100px_-42px_rgba(34,211,238,0.9)]" focusable="false" preserveAspectRatio="xMidYMid meet" shapeRendering="geometricPrecision" textRendering="geometricPrecision">
         <title id="p26-gP-title">Molar Gibbs energy versus pressure for gas and condensed phases</title>
         <desc id="p26-gP-desc">
           Gas G_m rises steeply as RTln(P) at constant temperature. Liquid and solid G_m rise nearly

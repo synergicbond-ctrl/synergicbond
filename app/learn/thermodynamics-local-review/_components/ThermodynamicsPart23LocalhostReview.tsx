@@ -55,7 +55,7 @@ function Lens({ title, children, tone = "cyan" }: { title: string; children: Rea
 function EntropyRouteSVG() {
   return (
     <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
-      <svg viewBox="0 0 1200 760" role="img" aria-labelledby="route-title route-desc" className="h-auto w-full">
+      <svg viewBox="0 0 1200 760" role="img" aria-labelledby="route-title route-desc" className="h-auto w-full overflow-visible rounded-2xl border border-cyan-300/20 bg-slate-950/80 p-2 sm:p-3 shadow-[0_24px_90px_-42px_rgba(34,211,238,0.75)] transition-[border-color,box-shadow] duration-300 hover:border-cyan-300/35 hover:shadow-[0_28px_100px_-42px_rgba(34,211,238,0.9)]" focusable="false" preserveAspectRatio="xMidYMid meet" shapeRendering="geometricPrecision" textRendering="geometricPrecision">
         <title id="route-title">Five-step Third-Law entropy route</title>
         <desc id="route-desc">A substance is heated as solid, melted, heated as liquid, vaporised, and heated as gas.</desc>
         <rect width="1200" height="760" rx="34" fill="#020617" />
@@ -89,7 +89,7 @@ function EntropyRouteSVG() {
 function MicrostateSVG() {
   return (
     <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
-      <svg viewBox="0 0 1200 820" role="img" aria-labelledby="micro-title micro-desc" className="h-auto w-full">
+      <svg viewBox="0 0 1200 820" role="img" aria-labelledby="micro-title micro-desc" className="h-auto w-full overflow-visible rounded-2xl border border-cyan-300/20 bg-slate-950/80 p-2 sm:p-3 shadow-[0_24px_90px_-42px_rgba(34,211,238,0.75)] transition-[border-color,box-shadow] duration-300 hover:border-cyan-300/35 hover:shadow-[0_28px_100px_-42px_rgba(34,211,238,0.9)]" focusable="false" preserveAspectRatio="xMidYMid meet" shapeRendering="geometricPrecision" textRendering="geometricPrecision">
         <title id="micro-title">Microstate counting for particles in quantised levels</title>
         <desc id="micro-desc">Distinct and indistinguishable particles distributed among equally spaced energy levels.</desc>
         <rect width="1200" height="820" rx="34" fill="#020617"/>

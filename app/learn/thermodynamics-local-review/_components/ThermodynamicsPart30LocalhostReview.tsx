@@ -46,7 +46,7 @@ function Lens({ title, children, tone = "cyan" }: { title: string; children: Rea
 function VantHoffPlotSVG() {
   return (
     <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
-      <svg viewBox="0 0 1200 600" role="img" aria-labelledby="p30-vh-title p30-vh-desc" className="h-auto w-full">
+      <svg viewBox="0 0 1200 600" role="img" aria-labelledby="p30-vh-title p30-vh-desc" className="h-auto w-full overflow-visible rounded-2xl border border-cyan-300/20 bg-slate-950/80 p-2 sm:p-3 shadow-[0_24px_90px_-42px_rgba(34,211,238,0.75)] transition-[border-color,box-shadow] duration-300 hover:border-cyan-300/35 hover:shadow-[0_28px_100px_-42px_rgba(34,211,238,0.9)]" focusable="false" preserveAspectRatio="xMidYMid meet" shapeRendering="geometricPrecision" textRendering="geometricPrecision">
         <title id="p30-vh-title">van&apos;t Hoff plot: ln K versus 1/T</title>
         <desc id="p30-vh-desc">
           For an exothermic reaction (ΔrH° &lt; 0), ln K decreases as 1/T decreases (T increases).
@@ -108,7 +108,7 @@ function VantHoffPlotSVG() {
 function ClapeyronSVG() {
   return (
     <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
-      <svg viewBox="0 0 1200 640" role="img" aria-labelledby="p30-clap-title p30-clap-desc" className="h-auto w-full">
+      <svg viewBox="0 0 1200 640" role="img" aria-labelledby="p30-clap-title p30-clap-desc" className="h-auto w-full overflow-visible rounded-2xl border border-cyan-300/20 bg-slate-950/80 p-2 sm:p-3 shadow-[0_24px_90px_-42px_rgba(34,211,238,0.75)] transition-[border-color,box-shadow] duration-300 hover:border-cyan-300/35 hover:shadow-[0_28px_100px_-42px_rgba(34,211,238,0.9)]" focusable="false" preserveAspectRatio="xMidYMid meet" shapeRendering="geometricPrecision" textRendering="geometricPrecision">
         <title id="p30-clap-title">Pressure–temperature phase diagram with coexistence curves and Clapeyron slopes</title>
         <desc id="p30-clap-desc">
           Solid–liquid boundary (steep, positive or negative depending on ΔV_fus),

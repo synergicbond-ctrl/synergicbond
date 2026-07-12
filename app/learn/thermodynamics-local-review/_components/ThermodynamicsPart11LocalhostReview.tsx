@@ -90,8 +90,8 @@ function PolytropicFamilyAnimation() {
         viewBox="0 0 1200 760"
         role="img"
         aria-labelledby="family-title family-description"
-        className="h-auto w-full"
-      >
+        className="h-auto w-full overflow-visible rounded-2xl border border-cyan-300/20 bg-slate-950/80 p-2 sm:p-3 shadow-[0_24px_90px_-42px_rgba(34,211,238,0.75)] transition-[border-color,box-shadow] duration-300 hover:border-cyan-300/35 hover:shadow-[0_28px_100px_-42px_rgba(34,211,238,0.9)]"
+       focusable="false" preserveAspectRatio="xMidYMid meet" shapeRendering="geometricPrecision" textRendering="geometricPrecision">
         <title id="family-title">Animated family of polytropic curves</title>
         <desc id="family-description">
           Pressure-volume curves are shown for isobaric, isothermal, intermediate polytropic,
@@ -172,8 +172,8 @@ function HeatCapacityRegimeAnimation() {
         viewBox="0 0 1200 720"
         role="img"
         aria-labelledby="capacity-title capacity-description"
-        className="h-auto w-full"
-      >
+        className="h-auto w-full overflow-visible rounded-2xl border border-cyan-300/20 bg-slate-950/80 p-2 sm:p-3 shadow-[0_24px_90px_-42px_rgba(34,211,238,0.75)] transition-[border-color,box-shadow] duration-300 hover:border-cyan-300/35 hover:shadow-[0_28px_100px_-42px_rgba(34,211,238,0.9)]"
+       focusable="false" preserveAspectRatio="xMidYMid meet" shapeRendering="geometricPrecision" textRendering="geometricPrecision">
         <title id="capacity-title">Effective molar heat capacity versus polytropic index</title>
         <desc id="capacity-description">
           The effective molar heat capacity passes through Cp at x equals zero, diverges at x equals one,

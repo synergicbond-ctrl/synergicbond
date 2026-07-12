@@ -388,7 +388,7 @@ export default function StoichiometryPart9() {
           tex={String.raw`PV=\frac{w}{M}RT`}
         />
         <h4 className="text-lg font-semibold">
-          Graham's Law of Diffusion / Effusion
+          Graham&apos;s Law of Diffusion / Effusion
         </h4>
         <FormulaLine
           tex={String.raw`\frac{r_1}{r_2}=\sqrt{\frac{M_2}{M_1}}`}
@@ -406,7 +406,7 @@ export default function StoichiometryPart9() {
           2. For Volatile Solids / Liquids — Victor Meyer Method
         </h3>
         <p>
-          In Victor Meyer's method, vapour density is measured with respect to
+          In Victor Meyer&apos;s method, vapour density is measured with respect to
           air.
         </p>
         <DiagramBlock title="Victor Meyer method apparatus">

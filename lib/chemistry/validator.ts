@@ -25,6 +25,9 @@ const CHEMISTRY_ANCHORS = [
   "mole", "atom", "molecule", "reaction", "reagent", "exception", "compound",
   "bond", "orbital", "hybridisation", "spin", "element", "catalysis", "acid", "base",
   "equilibrium", "thermodynamics", "electrochemistry", "kinetic", "solution",
+  "gas", "gas laws", "pressure", "volume", "gaseous", "root mean square",
+  "hydrogen", "hydronium", "dihydrogen", "isotope",
+  "crystal", "crystalline", "defect", "schottky", "frenkel",
   "oxidation", "reduction", "organic", "inorganic", "complex", "ligand", "pH",
   "buffer", "hydrocarbon", "ether", "ester", "ketone", "aldehyde", "alkene",
   "alkyne", "alkane", "amine", "biomolecule", "polymer", "solubility", "salt",
@@ -36,7 +39,8 @@ const CHEMISTRY_ANCHORS = [
   "carbanion", "radical", "resonance", "nucleophile", "electrophile", "isomer", "chirality",
   "enantiomer", "aldol", "cannizzaro", "wurtz", "grignard", "sugar", "peptide", "protein",
   "vitamin", "nucleic", "monomer", "copolymer", "viva", "laboratory", "experiment", "titration",
-  "react", "metal", "oxide", "anhydrous", "hydrated", "precipitate"
+  "react", "metal", "oxide", "anhydrous", "hydrated", "precipitate",
+  "drug", "antibiotic", "analgesic", "tranquilizer", "soap", "antiseptic"
 ];
 
 /**
@@ -50,6 +54,9 @@ export function validateChemistryQuestion(q: PYQQuestion): boolean {
   for (const term of PHYSICS_MATH_BLACKLIST) {
     // Exception: quantum is allowed in structure of atom / quantum chemistry
     if (term === "quantum mechanics" && q.chapter === "Atomic Structure") {
+      continue;
+    }
+    if (term === "derivative" && ["General Organic Chemistry", "Hydrocarbons", "Haloalkanes and Haloarenes", "Alcohols Phenols Ethers", "Aldehydes Ketones", "Carboxylic Acids", "Amines"].includes(q.chapter)) {
       continue;
     }
     if (text.includes(term)) {
@@ -81,8 +88,8 @@ export function auditQuestionBank(questions: PYQQuestion[]): {
   for (const q of questions) {
     try {
       validateChemistryQuestion(q);
-    } catch (err: any) {
-      errors.push(err.message);
+    } catch (err: unknown) {
+      errors.push(err instanceof Error ? err.message : String(err));
     }
   }
   return {

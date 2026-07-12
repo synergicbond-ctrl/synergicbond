@@ -29,7 +29,7 @@ export function getBoardChapters(board: BoardSlug, cls: ClassSlug): BoardChapter
   if (board === "icse") {
     return getIscUnits(cls).map((u) => ({
       id: u.id, unit: u.unit, title: u.title, class: u.class,
-      category: u.category, masterId: u.masterId, pyqChapters: u.pyqChapters, topics: u.topics,
+      category: u.category, masterId: u.masterId, learnHref: u.learnHref, pyqChapters: u.pyqChapters, topics: u.topics,
     }));
   }
   // cbse + state-boards (NCERT-aligned common core)

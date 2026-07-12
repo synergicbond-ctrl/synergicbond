@@ -4,6 +4,7 @@ export const dynamic = "force-dynamic";
 import { NextResponse } from "next/server";
 import { generateJSON } from "@/lib/gemini";
 import { createClient } from "@/lib/supabase/server";
+import { guardAiRequest } from "@/lib/ai/guardAiRequest";
 import { getBlueprint } from "@/lib/examBlueprints";
 import { ALL_PYQ_QUESTIONS, getByExam } from "@/lib/pyq";
 import type { PYQExam } from "@/lib/pyq";
@@ -108,6 +109,8 @@ function normalizeAiPaper(raw: string, exam: string): PaperQuestion[] {
 
 export async function POST(request: Request) {
   try {
+    const gate = await guardAiRequest(request, { bucket: "exam" });
+    if (!gate.ok) return gate.response;
     const supabase = await createClient();
     const { data: { user } } = await supabase.auth.getUser();
     if (!user) return NextResponse.json({ error: "Sign in to generate an exam." }, { status: 401 });

@@ -5,6 +5,7 @@ import { NextResponse } from "next/server";
 import { generateText } from "@/lib/gemini";
 import { fetchSyllabusContext } from "@/lib/aiTutor";
 import { createClient } from "@/lib/supabase/server";
+import { guardAiRequest } from "@/lib/ai/guardAiRequest";
 
 const DIFFICULTY_INSTRUCTIONS: Record<string, string> = {
   ncert: "NCERT level — simple language, NCERT textbook only, suitable for NEET basic preparation.",
@@ -24,6 +25,8 @@ const LANG_INSTRUCTIONS: Record<string, string> = {
 
 export async function POST(req: Request) {
   try {
+    const gate = await guardAiRequest(req, { bucket: "notes-generate" });
+    if (!gate.ok) return gate.response;
     const supabase = await createClient();
     const { data: { user } } = await supabase.auth.getUser();
     if (!user) return NextResponse.json({ error: "Sign in to generate notes." }, { status: 401 });

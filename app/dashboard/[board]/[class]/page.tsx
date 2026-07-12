@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import {
   BOARDS, CLASSES, getBoard, getClass, CLASS_DASHBOARD_SECTIONS, TEST_QUESTION_TYPES, SECTION_ROUTES,
 } from "@/lib/boardDashboard";
+import { getBoardChapters } from "@/lib/boards";
 
 // /dashboard/[board]/[class] — Class Dashboard (six sections). Board-aware and
 // board-separated. Available items reuse the live platform; new sub-systems are
@@ -25,6 +26,7 @@ export default async function ClassDashboard({ params }: { params: Promise<{ boa
   if (!b || !c) notFound();
 
   const base = `/dashboard/${b.slug}/${c.slug}`;
+  const basicConcepts = getBoardChapters(b.slug, c.slug).find((chapter) => chapter.id === "some-basic-concepts");
 
   // Program isolation: keep board quick-links inside board-scoped surfaces.
   // Global entrance routes (/pyq, /tests, /ncert, /performance, /analytics,
@@ -70,6 +72,20 @@ export default async function ClassDashboard({ params }: { params: Promise<{ boa
           </div>
           <span className="text-2xl text-cyan-300">→</span>
         </Link>
+
+        {basicConcepts?.learnHref && (
+          <Link
+            href={basicConcepts.learnHref}
+            className="flex items-center justify-between rounded-2xl border border-amber-400/30 bg-gradient-to-r from-amber-500/[0.08] to-transparent p-5 transition hover:border-amber-400/60"
+          >
+            <div>
+              <div className="text-xs font-bold uppercase tracking-wider text-amber-300">Class 11 chapter notes</div>
+              <div className="mt-0.5 text-lg font-black text-white">{basicConcepts.title}</div>
+              <p className="text-sm text-white/55">Open the complete theory dashboard and 50-question searchable answer key.</p>
+            </div>
+            <span className="text-2xl text-amber-300">→</span>
+          </Link>
+        )}
 
         {CLASS_DASHBOARD_SECTIONS.map((section) => {
           const route = SECTION_ROUTES[section.key]?.(base);

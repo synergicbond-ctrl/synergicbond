@@ -289,6 +289,13 @@ export default function PricingPage() {
         </div>
       </div>
 
+      <div className="mx-auto max-w-3xl px-4 pb-12 text-center text-xs text-zinc-500">
+        By purchasing you agree to our{" "}
+        <a href="/terms" className="text-cyan-400 hover:text-cyan-300 underline">Terms of Service</a>,{" "}
+        <a href="/privacy" className="text-cyan-400 hover:text-cyan-300 underline">Privacy Policy</a> and{" "}
+        <a href="/refund" className="text-cyan-400 hover:text-cyan-300 underline">Refund &amp; Cancellation Policy</a>.
+      </div>
+
       <StudentDetailsForm
         open={detailsOpen}
         programKey={selectedBaseKey}

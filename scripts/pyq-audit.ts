@@ -72,14 +72,11 @@ const auditChapter = (chapterName: string) => {
 };
 
 import * as fs from "fs";
-import * as path from "path";
-
-const reportPath = "/Users/mritunjayshukla/workspace/synergicbond/scripts/audit_report.json";
+const reportPath = new URL("./audit_report.json", import.meta.url);
 fs.writeFileSync(reportPath, JSON.stringify({
   physical: physicalChapters.map(auditChapter),
   inorganic: inorganicChapters.map(auditChapter),
   organic: organicChapters.map(auditChapter),
 }, null, 2));
 
-console.log("Report written to:", reportPath);
-
+console.log("Report written to:", reportPath.pathname);

@@ -11,6 +11,18 @@ export function ScientificVisual({ title, description, children, style, ...props
   </svg>;
 }
 
+const LOBE_DEFS = <defs>
+  <radialGradient id="lgCyan" cx="35%" cy="30%" r="85%"><stop offset="0%" stopColor="#f0fdff" stopOpacity=".95" /><stop offset="45%" stopColor="#5eead4" stopOpacity=".8" /><stop offset="100%" stopColor="#0e7490" stopOpacity=".78" /></radialGradient>
+  <radialGradient id="lgPink" cx="35%" cy="30%" r="85%"><stop offset="0%" stopColor="#fdf2f8" stopOpacity=".95" /><stop offset="45%" stopColor="#f472b6" stopOpacity=".8" /><stop offset="100%" stopColor="#9d174d" stopOpacity=".8" /></radialGradient>
+  <radialGradient id="lgGreen" cx="35%" cy="30%" r="85%"><stop offset="0%" stopColor="#f0fdf4" stopOpacity=".95" /><stop offset="45%" stopColor="#4ade80" stopOpacity=".8" /><stop offset="100%" stopColor="#166534" stopOpacity=".8" /></radialGradient>
+  <radialGradient id="lgWhite" cx="35%" cy="30%" r="85%"><stop offset="0%" stopColor="#ffffff" stopOpacity=".92" /><stop offset="55%" stopColor="#e2e8f0" stopOpacity=".6" /><stop offset="100%" stopColor="#64748b" stopOpacity=".5" /></radialGradient>
+  <filter id="lobeGlow" x="-45%" y="-45%" width="190%" height="190%"><feGaussianBlur stdDeviation="2.6" result="b" /><feMerge><feMergeNode in="b" /><feMergeNode in="SourceGraphic" /></feMerge></filter>
+</defs>;
+
+function OrbitalLabel({ x, y, shell, sub }: { x: number; y: number; shell: string; sub: string }) {
+  return <text x={x} y={y} textAnchor="middle" fill="#f1f5f9" fontSize="16" fontWeight="700">{shell}<tspan dy="5" fontSize="12" fill="#cbd5e1">{sub}</tspan></text>;
+}
+
 export function HighAngularOrbitalVisual({ n, l, family, labels, radialNodes }: { n: number; l: number; family: string; labels: string[]; radialNodes: number }) {
   const cols = Math.min(labels.length, 4);
   const width = 168 * cols;
@@ -336,10 +348,11 @@ export function RadialDistributionVisual() {
 
 export function Dz2OrbitalVisual() {
   return <ScientificVisual title="d z squared orbital and its nodal cones" description="Cross-section of the real d z squared angular function. Positive lobes lie on the z axis, a negative toroidal region surrounds the origin in the x y plane, and two conical nodal surfaces make an angle 54.7 degrees with the positive and negative z axes." viewBox="0 0 500 310" className="mx-auto h-auto w-full max-w-lg">
+    {LOBE_DEFS}
     <path d="M250 22V274M56 155H446" stroke="#94a3b8" strokeWidth="1.6" /><text x="258" y="33" fill="#e2e8f0" fontSize="14">z</text><text x="425" y="147" fill="#e2e8f0" fontSize="14">r⊥</text>
-    <path d="M250 150 C190 124 193 55 250 40 C307 55 310 124 250 150Z" fill="#67e8f9" fillOpacity=".32" stroke="#67e8f9" strokeWidth="2" />
-    <path d="M250 160 C190 186 193 255 250 270 C307 255 310 186 250 160Z" fill="#67e8f9" fillOpacity=".32" stroke="#67e8f9" strokeWidth="2" />
-    <ellipse cx="250" cy="155" rx="112" ry="31" fill="#f472b6" fillOpacity=".25" stroke="#f472b6" strokeWidth="2" /><ellipse cx="250" cy="155" rx="45" ry="12" fill="#08111f" stroke="#f472b6" strokeWidth="1.5" />
+    <path d="M250 150 C190 124 193 55 250 40 C307 55 310 124 250 150Z" fill="url(#lgCyan)" stroke="#a5f3fc" strokeWidth="1.8" filter="url(#lobeGlow)" />
+    <path d="M250 160 C190 186 193 255 250 270 C307 255 310 186 250 160Z" fill="url(#lgCyan)" stroke="#a5f3fc" strokeWidth="1.8" filter="url(#lobeGlow)" />
+    <ellipse cx="250" cy="155" rx="112" ry="31" fill="url(#lgPink)" stroke="#f9a8d4" strokeWidth="1.8" filter="url(#lobeGlow)" /><ellipse cx="250" cy="155" rx="45" ry="12" fill="#08111f" stroke="#f472b6" strokeWidth="1.5" />
     <path d="M250 155L109 252M250 155L391 252M250 155L109 58M250 155L391 58" stroke="#facc15" strokeWidth="1.5" strokeDasharray="6 5" /><text x="82" y="48" fill="#fde68a" fontSize="13">nodal cones: θ = 54.7°</text>
     <text x="258" y="88" fill="#a5f3fc" fontSize="18">+</text><text x="258" y="238" fill="#a5f3fc" fontSize="18">+</text><text x="342" y="160" fill="#f9a8d4" fontSize="18">−</text><circle cx="250" cy="155" r="4" fill="#fbbf24" /><path d="M118 108L244 150" stroke="#fde68a" strokeWidth="1" strokeDasharray="3 3" opacity=".8" /><text x="60" y="104" fill="#fde68a" fontSize="12">nucleus</text>
     <text x="18" y="296" fill="#94a3b8" fontSize="12">signs refer to Y₂,₀; rotating this section gives the torus and cones</text>
@@ -557,11 +570,12 @@ export function BohrOrbitsVisual() {
 export function OrbitalNodeSeriesVisual({ kind = "p" }: { kind?: "s" | "p" }) {
   const labels = kind === "s" ? ["1s", "2s", "3s"] : ["2p", "3p", "4p", "5p"];
   return <ScientificVisual title={`${kind}-orbital radial-node sequence`} description={`Conceptual ${kind}-orbital boundary surfaces arranged by increasing principal quantum number. Nested outlines mark radial nodes; colour indicates the sign of a real wavefunction across a node. The outer angular shape is preserved.`} viewBox="0 0 760 230" className="h-auto w-full">
+    {LOBE_DEFS}
     {labels.map((label, i) => {
       const x = 95 + i * (kind === "s" ? 240 : 175);
       const radial = i;
       return <g key={label}>
-        {kind === "s" ? Array.from({ length: radial + 1 }, (_, shell) => <circle key={shell} cx={x} cy="108" r={26 + shell * 22} fill={shell % 2 ? "#f472b6" : "#67e8f9"} fillOpacity={shell === radial ? ".22" : ".08"} stroke={shell % 2 ? "#f472b6" : "#67e8f9"} strokeWidth="2" />) : Array.from({ length: radial + 1 }, (_, shell) => { const rx = 13 + shell * 8; const ry = 24 + shell * 12; const colour = shell % 2 ? "#f472b6" : "#67e8f9"; return <g key={shell}><ellipse cx={x - rx} cy="108" rx={rx} ry={ry} fill={colour} fillOpacity={shell === radial ? ".22" : ".08"} stroke={colour} strokeWidth="1.8" /><ellipse cx={x + rx} cy="108" rx={rx} ry={ry} fill={colour} fillOpacity={shell === radial ? ".22" : ".08"} stroke={colour} strokeWidth="1.8" /></g>; })}
+        {kind === "s" ? Array.from({ length: radial + 1 }, (_, shell) => <circle key={shell} cx={x} cy="108" r={26 + shell * 22} fill={shell % 2 ? "url(#lgPink)" : "url(#lgCyan)"} fillOpacity={shell === radial ? "1" : ".45"} stroke={shell % 2 ? "#f9a8d4" : "#a5f3fc"} strokeWidth="1.8" filter="url(#lobeGlow)" />) : Array.from({ length: radial + 1 }, (_, shell) => { const grad = shell % 2 ? "url(#lgPink)" : "url(#lgCyan)"; const edge = shell % 2 ? "#f9a8d4" : "#a5f3fc"; const rx = 13 + shell * 8; const ry = 24 + shell * 12; return <g key={shell}><ellipse cx={x - rx} cy="108" rx={rx} ry={ry} fill={grad} fillOpacity={shell === radial ? "1" : ".45"} stroke={edge} strokeWidth="1.6" filter="url(#lobeGlow)" /><ellipse cx={x + rx} cy="108" rx={rx} ry={ry} fill={grad} fillOpacity={shell === radial ? "1" : ".45"} stroke={edge} strokeWidth="1.6" filter="url(#lobeGlow)" /></g>; })}
         <circle cx={x} cy="108" r="3" fill="#fbbf24" /><text x={x} y="190" textAnchor="middle" fill="#e2e8f0" fontSize="16" fontWeight="700">{label}</text><text x={x} y="211" textAnchor="middle" fill="#94a3b8" fontSize="13">{radial} radial node{radial === 1 ? "" : "s"}</text>
       </g>;
     })}
@@ -571,16 +585,19 @@ export function OrbitalNodeSeriesVisual({ kind = "p" }: { kind?: "s" | "p" }) {
 
 export function DOrbitalNodalMapVisual() {
   const orbitals = [["dxy", "between x, y", "zx and yz", 45], ["dyz", "between y, z", "xy and zx", 45], ["dzx", "between z, x", "xy and yz", 45], ["dx²−y²", "along x, y", "x = y; x = −y", 0]] as const;
-  return <ScientificVisual title="Four real d orbitals and their nodal planes" description="A four-panel schematic of real d orbitals. The first three have lobes between the coordinate axes, so the axes themselves lie in the two nodal planes. The d x squared minus y squared orbital has lobes on the x and y axes with nodal planes along the diagonals. Dashed yellow lines mark the nodal planes in each panel and colours mark opposite signs of the angular function." viewBox="0 0 760 245" className="h-auto w-full">
+  return <ScientificVisual title="Four real d orbitals and their nodal planes with labelled axes" description="A four-panel schematic of real d orbitals. The first three have lobes between the coordinate axes, so the axes themselves lie in the two nodal planes. The d x squared minus y squared orbital has lobes on the x and y axes with nodal planes along the diagonals. Dashed yellow lines mark the nodal planes in each panel and colours mark opposite signs of the angular function." viewBox="0 0 760 245" className="h-auto w-full">
+    {LOBE_DEFS}
     {orbitals.map(([name, placement, nodes, offset], i) => {
       const x = 98 + i * 190; const y = 104;
       const nodalOnAxes = offset === 45;
       return <g key={name}>
         <path d={`M${x - 70} ${y}H${x + 70}M${x} ${y - 70}V${y + 70}`} stroke={nodalOnAxes ? "#facc15" : "#64748b"} strokeWidth={nodalOnAxes ? 1.4 : 1.1} strokeDasharray={nodalOnAxes ? "5 4" : undefined} opacity={nodalOnAxes ? .85 : 1} />
         <path d={`M${x - 55} ${y - 55}L${x + 55} ${y + 55}M${x - 55} ${y + 55}L${x + 55} ${y - 55}`} stroke={nodalOnAxes ? "#64748b" : "#facc15"} strokeWidth={nodalOnAxes ? 1 : 1.4} strokeDasharray={nodalOnAxes ? undefined : "5 4"} opacity={nodalOnAxes ? .6 : .9} />
-        {[0, 1, 2, 3].map((j) => { const deg = offset + j * 90; const a = deg * Math.PI / 180; const lx = x + Math.cos(a) * 41; const ly = y + Math.sin(a) * 41; return <ellipse key={j} cx={lx} cy={ly} rx="26" ry="12" transform={`rotate(${deg} ${lx} ${ly})`} fill={j % 2 ? "#f472b6" : "#67e8f9"} fillOpacity=".3" stroke={j % 2 ? "#f472b6" : "#67e8f9"} strokeWidth="1.7" />; })}
+        {[0, 1, 2, 3].map((j) => { const deg = offset + j * 90; const a = deg * Math.PI / 180; const lx = x + Math.cos(a) * 41; const ly = y + Math.sin(a) * 41; return <ellipse key={j} cx={lx} cy={ly} rx="26" ry="12" transform={`rotate(${deg} ${lx} ${ly})`} fill={j % 2 ? "url(#lgPink)" : "url(#lgCyan)"} stroke={j % 2 ? "#f9a8d4" : "#a5f3fc"} strokeWidth="1.6" filter="url(#lobeGlow)" />; })}
         <circle cx={x} cy={y} r="3" fill="#fbbf24" />
-        <text x={x} y="199" textAnchor="middle" fill="#e2e8f0" fontSize="15" fontWeight="700">{name}</text>
+        <text x={x + 74} y={y + 4} fill="#94a3b8" fontSize="12">{["x", "y", "z", "x"][i]}</text>
+        <text x={x + 6} y={y - 62} fill="#94a3b8" fontSize="12">{["y", "z", "x", "y"][i]}</text>
+        <OrbitalLabel x={x} y={199} shell="d" sub={name.slice(1)} />
         <text x={x} y="219" textAnchor="middle" fill="#94a3b8" fontSize="12">{placement}; nodes: {nodes}</text>
       </g>;
     })}
@@ -1176,14 +1193,17 @@ export function Dz2SumVisual() {
 export function POrbitalTrioVisual() {
   const lobes = (x: number, angle: number, positive: string, negative: string, label: string, node: string) => <g key={label} transform={`translate(${x} 110)`}>
     <path d="M-70 0H70M0 -70V70" stroke="#475569" strokeWidth="1.1" />
+    <text x="74" y="4" fill="#94a3b8" fontSize="12">{label === "2pᵧ" ? "y" : "x"}</text>
+    <text x="5" y="-60" fill="#94a3b8" fontSize="12">{label === "2p_z" ? "z" : "y"}</text>
     <path d="M-74 0H74" stroke="#f8fafc" strokeOpacity=".55" strokeWidth="1.3" strokeDasharray="5 5" transform={`rotate(${angle + 90})`} />
-    <ellipse cx="-37" cy="0" rx="36" ry="22" fill={negative} fillOpacity=".22" stroke={negative} strokeWidth="1.7" transform={`rotate(${angle})`} />
-    <ellipse cx="37" cy="0" rx="36" ry="22" fill={positive} fillOpacity=".26" stroke={positive} strokeWidth="1.7" transform={`rotate(${angle})`} />
+    <ellipse cx="-37" cy="0" rx="36" ry="22" fill="url(#lgPink)" stroke={negative} strokeWidth="1.6" transform={`rotate(${angle})`} filter="url(#lobeGlow)" />
+    <ellipse cx="37" cy="0" rx="36" ry="22" fill="url(#lgCyan)" stroke={positive} strokeWidth="1.6" transform={`rotate(${angle})`} filter="url(#lobeGlow)" />
     <circle r="3.5" fill="#fbbf24" />
     <text x="0" y="92" textAnchor="middle" fill="#e2e8f0" fontSize="15" fontWeight="700">{label}</text>
     <text x="0" y="112" textAnchor="middle" fill="#94a3b8" fontSize="12">nodal plane: {node}</text>
   </g>;
   return <ScientificVisual title="The three 2p orbitals" description="Three panels show the mutually perpendicular 2p dumbbells. 2p x lies along the x axis with the y z nodal plane, 2p y along y with the z x nodal plane, and 2p z along z with the x y nodal plane. Colours mark the opposite signs of the wave function on either side of each nodal plane." viewBox="0 0 760 250" className="h-auto w-full">
+    {LOBE_DEFS}
     {lobes(130, 0, "#67e8f9", "#f472b6", "2pₓ", "yz")}
     {lobes(380, -45, "#a78bfa", "#fbbf24", "2pᵧ", "zx")}
     {lobes(630, 90, "#34d399", "#fb7185", "2p_z", "xy")}
@@ -1194,68 +1214,73 @@ export function POrbitalTrioVisual() {
 export function DOrbitalGalleryVisual({ n }: { n: number }) {
   const rings = Math.max(0, n - 3);
   const tiles = [
-    { label: `${n}d z²`, kind: "axial" as const },
-    { label: `${n}d xy`, kind: "clover" as const, offset: 45 },
-    { label: `${n}d yz`, kind: "clover" as const, offset: 45 },
-    { label: `${n}d zx`, kind: "clover" as const, offset: 45 },
-    { label: `${n}d x²−y²`, kind: "clover" as const, offset: 0 },
+    { sub: "z²", kind: "axial" as const, ax: ["x", "z"] },
+    { sub: "xy", kind: "clover" as const, offset: 45, ax: ["x", "y"] },
+    { sub: "yz", kind: "clover" as const, offset: 45, ax: ["y", "z"] },
+    { sub: "zx", kind: "clover" as const, offset: 45, ax: ["x", "z"] },
+    { sub: "x²−y²", kind: "clover" as const, offset: 0, ax: ["x", "y"] },
   ];
-  return <ScientificVisual title={`The five ${n}d orbitals`} description={`A gallery of the five real ${n}d orbitals: d z squared with two axial lobes and an equatorial ring, then the four cloverleaf orbitals d xy, d yz, d zx and d x squared minus y squared. Opposite colours mark opposite signs of the wave function. ${rings ? `Dashed inner circles indicate the ${rings} radial node${rings > 1 ? "s" : ""} of the ${n}d set.` : "The 3d set has no radial node."}`} viewBox="0 0 940 250" className="h-auto w-full">
+  return <ScientificVisual title={`The five ${n}d orbitals`} description={`A glossy gallery of the five real ${n}d orbitals with labelled axes: d z squared with two axial lobes and an equatorial ring, then the four cloverleaf orbitals d xy, d yz, d zx and d x squared minus y squared. Cyan and pink mark opposite signs of the wave function. ${rings ? `Dashed inner circles indicate the ${rings} radial node${rings > 1 ? "s" : ""} of the ${n}d set.` : "The 3d set has no radial node."}`} viewBox="0 0 940 250" className="h-auto w-full">
+    {LOBE_DEFS}
     {tiles.map((tile, i) => {
       const x = 98 + i * 187; const y = 108;
-      return <g key={tile.label}>
+      return <g key={tile.sub}>
         <path d={`M${x - 72} ${y}H${x + 72}M${x} ${y - 72}V${y + 72}`} stroke="#475569" strokeWidth="1.1" />
+        <text x={x + 76} y={y + 4} fill="#94a3b8" fontSize="12">{tile.ax[0]}</text>
+        <text x={x + 6} y={y - 62} fill="#94a3b8" fontSize="12">{tile.ax[1]}</text>
         {tile.kind === "axial" ? <>
-          {[-90, 90].map((a) => { const rad = a * Math.PI / 180; const cx = x + Math.cos(rad) * 42; const cy = y + Math.sin(rad) * 42; return <ellipse key={a} cx={cx} cy={cy} rx="15" ry="28" fill="#67e8f9" fillOpacity=".3" stroke="#67e8f9" strokeWidth="1.7" />; })}
-          <ellipse cx={x} cy={y} rx="42" ry="12" fill="#f472b6" fillOpacity=".28" stroke="#f472b6" strokeWidth="1.7" />
-        </> : [0, 1, 2, 3].map((j) => { const a = (tile.offset + j * 90) * Math.PI / 180; const deg = tile.offset + j * 90; const cx = x + Math.cos(a) * 43; const cy = y + Math.sin(a) * 43; return <ellipse key={j} cx={cx} cy={cy} rx="27" ry="13" transform={`rotate(${deg} ${cx} ${cy})`} fill={j % 2 ? "#f472b6" : "#67e8f9"} fillOpacity=".3" stroke={j % 2 ? "#f472b6" : "#67e8f9"} strokeWidth="1.7" />; })}
-        {Array.from({ length: rings }, (_, r) => <circle key={r} cx={x} cy={y} r={11 + r * 8} fill="none" stroke="#fde68a" strokeWidth="1" strokeDasharray="3 3" opacity=".8" />)}
+          {[-90, 90].map((a) => { const rad = a * Math.PI / 180; const cx = x + Math.cos(rad) * 42; const cy = y + Math.sin(rad) * 42; return <ellipse key={a} cx={cx} cy={cy} rx="15" ry="28" fill="url(#lgCyan)" stroke="#a5f3fc" strokeWidth="1.6" filter="url(#lobeGlow)" />; })}
+          <ellipse cx={x} cy={y} rx="42" ry="12" fill="url(#lgPink)" stroke="#f9a8d4" strokeWidth="1.6" filter="url(#lobeGlow)" />
+        </> : [0, 1, 2, 3].map((j) => { const deg = (tile.offset ?? 0) + j * 90; const a = deg * Math.PI / 180; const cx = x + Math.cos(a) * 43; const cy = y + Math.sin(a) * 43; return <ellipse key={j} cx={cx} cy={cy} rx="27" ry="13" transform={`rotate(${deg} ${cx} ${cy})`} fill={j % 2 ? "url(#lgPink)" : "url(#lgCyan)"} stroke={j % 2 ? "#f9a8d4" : "#a5f3fc"} strokeWidth="1.6" filter="url(#lobeGlow)" />; })}
+        {Array.from({ length: rings }, (_, r) => <circle key={r} cx={x} cy={y} r={11 + r * 8} fill="none" stroke="#fde68a" strokeWidth="1" strokeDasharray="3 3" opacity=".85" />)}
         <circle cx={x} cy={y} r="3" fill="#fbbf24" />
-        <text x={x} y="212" textAnchor="middle" fill="#e2e8f0" fontSize="15" fontWeight="700">{tile.label}</text>
+        <OrbitalLabel x={x} y={212} shell={`${n}d`} sub={tile.sub} />
       </g>;
     })}
-    <text x="20" y="240" fill="#94a3b8" fontSize="12">colours mark opposite signs; {rings ? `dashed circles = ${rings} radial node${rings > 1 ? "s" : ""} (n − l − 1 = ${rings})` : "no radial node (n − l − 1 = 0)"}</text>
+    <text x="20" y="243" fill="#94a3b8" fontSize="12">cyan/pink mark opposite signs; {rings ? `dashed circles = ${rings} radial node${rings > 1 ? "s" : ""} (n − l − 1 = ${rings})` : "no radial node (n − l − 1 = 0)"}</text>
   </ScientificVisual>;
 }
 
 export function FOrbitalGalleryVisual({ n, set }: { n: number; set: "general" | "cubic" }) {
-  const POS = "#4ade80"; const NEG = "#e2e8f0";
   const rings = Math.max(0, n - 4);
-  type Shape = { label: string; kind: "axial" | "rosette"; angle?: number; petals?: number; offset?: number };
+  type Shape = { sub: string; kind: "axial" | "rosette"; angle?: number; petals?: number; offset?: number; ax: [string, string] };
   const shapes: Shape[] = set === "general" ? [
-    { label: "z³", kind: "axial", angle: -90 },
-    { label: "xz²", kind: "axial", angle: 0 },
-    { label: "yz²", kind: "axial", angle: 42 },
-    { label: "xyz", kind: "rosette", petals: 8, offset: 22.5 },
-    { label: "z(x²−y²)", kind: "rosette", petals: 8, offset: 0 },
-    { label: "x(x²−3y²)", kind: "rosette", petals: 6, offset: 0 },
-    { label: "y(3x²−y²)", kind: "rosette", petals: 6, offset: 30 },
+    { sub: "z³", kind: "axial", angle: -90, ax: ["x", "z"] },
+    { sub: "xz²", kind: "axial", angle: 0, ax: ["x", "z"] },
+    { sub: "yz²", kind: "axial", angle: 42, ax: ["y", "z"] },
+    { sub: "xyz", kind: "rosette", petals: 8, offset: 22.5, ax: ["x", "y"] },
+    { sub: "z(x²−y²)", kind: "rosette", petals: 8, offset: 0, ax: ["x", "z"] },
+    { sub: "x(x²−3y²)", kind: "rosette", petals: 6, offset: 0, ax: ["x", "y"] },
+    { sub: "y(3x²−y²)", kind: "rosette", petals: 6, offset: 30, ax: ["x", "y"] },
   ] : [
-    { label: "z³", kind: "axial", angle: -90 },
-    { label: "x³", kind: "axial", angle: 0 },
-    { label: "y³", kind: "axial", angle: 42 },
-    { label: "xyz", kind: "rosette", petals: 8, offset: 22.5 },
-    { label: "z(x²−y²)", kind: "rosette", petals: 8, offset: 0 },
-    { label: "x(z²−y²)", kind: "rosette", petals: 8, offset: 11 },
-    { label: "y(z²−x²)", kind: "rosette", petals: 8, offset: 34 },
+    { sub: "z³", kind: "axial", angle: -90, ax: ["x", "z"] },
+    { sub: "x³", kind: "axial", angle: 0, ax: ["x", "y"] },
+    { sub: "y³", kind: "axial", angle: 42, ax: ["y", "z"] },
+    { sub: "xyz", kind: "rosette", petals: 8, offset: 22.5, ax: ["x", "y"] },
+    { sub: "z(x²−y²)", kind: "rosette", petals: 8, offset: 0, ax: ["x", "z"] },
+    { sub: "x(z²−y²)", kind: "rosette", petals: 8, offset: 11, ax: ["y", "z"] },
+    { sub: "y(z²−x²)", kind: "rosette", petals: 8, offset: 34, ax: ["x", "z"] },
   ];
-  return <ScientificVisual title={`The seven ${n}f orbitals (${set} set)`} description={`A gallery of the seven real ${n}f orbitals in the ${set} set. The axial members show two large opposite-phase lobes with a double collar of rings around the waist, and the remaining members are multi-lobed rosettes with alternating phase. Green marks the positive phase and white the negative phase of the wave function.${rings ? ` Dashed inner circles indicate the ${rings} spherical radial node${rings > 1 ? "s" : ""} of the ${n}f set.` : ""}`} viewBox="0 0 780 470" className="h-auto w-full">
+  return <ScientificVisual title={`The seven ${n}f orbitals (${set} set)`} description={`A glossy gallery of the seven real ${n}f orbitals in the ${set} set with labelled axes. The axial members show two large opposite-phase lobes with a double collar of rings around the waist, and the remaining members are multi-lobed rosettes with alternating phase. Green marks the positive phase and white the negative phase.${rings ? ` Dashed inner circles indicate the ${rings} spherical radial node${rings > 1 ? "s" : ""}.` : ""}`} viewBox="0 0 780 470" className="h-auto w-full">
+    {LOBE_DEFS}
     {shapes.map((sh, i) => {
       const x = 100 + (i % 4) * 195; const y = 100 + Math.floor(i / 4) * 210;
-      return <g key={sh.label}>
+      return <g key={sh.sub}>
         <path d={`M${x - 76} ${y}H${x + 76}M${x} ${y - 76}V${y + 76}`} stroke="#475569" strokeWidth="1" />
+        <text x={x + 80} y={y + 4} fill="#94a3b8" fontSize="11">{sh.ax[0]}</text>
+        <text x={x + 5} y={y - 66} fill="#94a3b8" fontSize="11">{sh.ax[1]}</text>
         {sh.kind === "axial" ? (() => { const a = (sh.angle ?? -90) * Math.PI / 180; const deg = sh.angle ?? -90; return <>
-          {[1, -1].map((s) => { const cx = x + Math.cos(a) * 45 * s; const cy = y + Math.sin(a) * 45 * s; return <ellipse key={s} cx={cx} cy={cy} rx="30" ry="15" transform={`rotate(${deg} ${cx} ${cy})`} fill={s > 0 ? POS : NEG} fillOpacity={s > 0 ? ".35" : ".18"} stroke={s > 0 ? POS : NEG} strokeWidth="1.7" />; })}
-          {[1, -1].map((s) => { const cx = x + Math.cos(a) * 13 * s; const cy = y + Math.sin(a) * 13 * s; return <ellipse key={`c${s}`} cx={cx} cy={cy} rx="10" ry="32" transform={`rotate(${deg} ${cx} ${cy})`} fill={s > 0 ? NEG : POS} fillOpacity={s > 0 ? ".14" : ".3"} stroke={s > 0 ? NEG : POS} strokeWidth="1.5" />; })}
-        </>; })() : Array.from({ length: sh.petals ?? 8 }, (_, j) => { const k = sh.petals ?? 8; const deg = (sh.offset ?? 0) + j * (360 / k); const a = deg * Math.PI / 180; const cx = x + Math.cos(a) * 42; const cy = y + Math.sin(a) * 42; return <ellipse key={j} cx={cx} cy={cy} rx={k === 6 ? 26 : 23} ry={k === 6 ? 12 : 10} transform={`rotate(${deg} ${cx} ${cy})`} fill={j % 2 ? NEG : POS} fillOpacity={j % 2 ? ".16" : ".32"} stroke={j % 2 ? NEG : POS} strokeWidth="1.6" />; })}
+          {[1, -1].map((s) => { const cx = x + Math.cos(a) * 45 * s; const cy = y + Math.sin(a) * 45 * s; return <ellipse key={s} cx={cx} cy={cy} rx="30" ry="15" transform={`rotate(${deg} ${cx} ${cy})`} fill={s > 0 ? "url(#lgGreen)" : "url(#lgWhite)"} stroke={s > 0 ? "#86efac" : "#f1f5f9"} strokeWidth="1.6" filter="url(#lobeGlow)" />; })}
+          {[1, -1].map((s) => { const cx = x + Math.cos(a) * 13 * s; const cy = y + Math.sin(a) * 13 * s; return <ellipse key={`c${s}`} cx={cx} cy={cy} rx="10" ry="32" transform={`rotate(${deg} ${cx} ${cy})`} fill={s > 0 ? "url(#lgWhite)" : "url(#lgGreen)"} stroke={s > 0 ? "#f1f5f9" : "#86efac"} strokeWidth="1.4" filter="url(#lobeGlow)" />; })}
+        </>; })() : Array.from({ length: sh.petals ?? 8 }, (_, j) => { const k = sh.petals ?? 8; const deg = (sh.offset ?? 0) + j * (360 / k); const a = deg * Math.PI / 180; const cx = x + Math.cos(a) * 42; const cy = y + Math.sin(a) * 42; return <ellipse key={j} cx={cx} cy={cy} rx={k === 6 ? 26 : 23} ry={k === 6 ? 12 : 10} transform={`rotate(${deg} ${cx} ${cy})`} fill={j % 2 ? "url(#lgWhite)" : "url(#lgGreen)"} stroke={j % 2 ? "#f1f5f9" : "#86efac"} strokeWidth="1.5" filter="url(#lobeGlow)" />; })}
         {Array.from({ length: rings }, (_, r) => <circle key={r} cx={x} cy={y} r={10 + r * 7} fill="none" stroke="#67e8f9" strokeWidth="1" strokeDasharray="3 3" opacity=".85" />)}
         <circle cx={x} cy={y} r="2.5" fill="#fbbf24" />
-        <text x={x} y={y + 96} textAnchor="middle" fill="#e2e8f0" fontSize="14" fontWeight="700">{`${n}f`}<tspan fontSize="12" dy="2"> {sh.label}</tspan></text>
+        <OrbitalLabel x={x} y={y + 96} shell={`${n}f`} sub={sh.sub} />
       </g>;
     })}
-    <text x="530" y="380" fill={POS} fontSize="13">green = + phase</text>
-    <text x="530" y="400" fill={NEG} fontSize="13">white = − phase</text>
-    <text x="20" y="458" fill="#94a3b8" fontSize="12">stylised cross-sections of boundary surfaces{rings ? `; dashed circles = ${rings} spherical node${rings > 1 ? "s" : ""} (n − l − 1 = ${rings})` : " (n − l − 1 = 0: no radial node)"}</text>
+    <text x="540" y="380" fill="#86efac" fontSize="13">green = + phase</text>
+    <text x="540" y="400" fill="#e2e8f0" fontSize="13">white = − phase</text>
+    <text x="20" y="458" fill="#94a3b8" fontSize="12">glossy boundary-surface cross-sections{rings ? `; dashed circles = ${rings} spherical node${rings > 1 ? "s" : ""} (n − l − 1 = ${rings})` : " (n − l − 1 = 0: no radial node)"}</text>
   </ScientificVisual>;
 }
 

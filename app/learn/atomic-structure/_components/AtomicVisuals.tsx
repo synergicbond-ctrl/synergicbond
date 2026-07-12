@@ -977,14 +977,62 @@ export function SubshellOrderVisual({ degenerate = false }: { degenerate?: boole
 }
 
 export function SubshellZCrossingVisual() {
-  const curves = [["1s", "#67e8f9", "M60 60 C160 130 300 216 500 236"], ["2s", "#facc15", "M78 44 C190 108 320 196 500 216"], ["2p", "#fde68a", "M90 40 C210 96 330 186 500 210"], ["3s", "#f472b6", "M116 34 C240 82 360 166 500 188"], ["3d", "#f9a8d4", "M160 28 C300 60 380 132 500 156"], ["4s", "#a78bfa", "M170 26 C296 68 396 140 500 170"]] as const;
-  return <ScientificVisual title="Subshell energies against atomic number" description="Qualitative curves of subshell energy against atomic number from zero to one hundred. All subshells fall as the nuclear charge grows, but at different rates, so curves such as four s and three d approach and cross; the filling order therefore changes along the periodic table." viewBox="0 0 560 300" className="h-auto w-full">
-    <path d="M60 20V250H520" fill="none" stroke="#94a3b8" strokeWidth="2" />
-    <text x="16" y="34" fill="#e2e8f0" fontSize="13">energy</text><text x="440" y="274" fill="#e2e8f0" fontSize="13">Z →</text>
-    {[20, 40, 60, 80, 100].map((z) => <g key={z}><path d={`M${60 + z * 4.4} 250v5`} stroke="#94a3b8" /><text x={50 + z * 4.4} y="268" fill="#94a3b8" fontSize="11">{z}</text></g>)}
-    {curves.map(([label, colour, d], i) => <g key={label}><path d={d} fill="none" stroke={colour} strokeWidth="2" /><text x={[36, 58, 92, 112, 158, 176][i]} y={[64, 46, 34, 26, 20, 14][i]} fill={colour} fontSize="12">{label}</text></g>)}
-    <circle cx="330" cy="106" r="14" fill="none" stroke="#fde68a" strokeWidth="1.6" strokeDasharray="4 3" /><text x="350" y="102" fill="#fde68a" fontSize="12">crossings: order depends on Z</text>
-    <text x="60" y="294" fill="#94a3b8" fontSize="12">qualitative sketch — energy scale compressed; lower on the plot = more tightly bound</text>
+  const PLOT_L = 84, PLOT_R = 566, PLOT_T = 48, PLOT_B = 712, V_MAX = 7.3;
+  const X = (z: number) => PLOT_L + (z / 100) * (PLOT_R - PLOT_L);
+  const Y = (v: number) => PLOT_B - (v / V_MAX) * (PLOT_B - PLOT_T);
+  const style: Record<string, { c: string; dash?: string; w: number }> = {
+    s: { c: "#67e8f9", w: 2 },
+    p: { c: "#fbbf24", dash: "7 5", w: 1.7 },
+    d: { c: "#f472b6", w: 1.4 },
+    f: { c: "#a78bfa", dash: "3 5", w: 1.6 },
+  };
+  const curves: Array<{ l: string; t: "s" | "p" | "d" | "f"; p: number[][] }> = [
+    { l: "1s", t: "s", p: [[0, 1.0], [25, 0.66], [50, 0.5], [75, 0.42], [100, 0.36]] },
+    { l: "2s", t: "s", p: [[0, 2.0], [20, 1.35], [40, 1.0], [60, 0.82], [80, 0.71], [100, 0.64]] },
+    { l: "2p", t: "p", p: [[0, 1.94], [20, 1.42], [40, 1.06], [60, 0.88], [80, 0.77], [100, 0.7]] },
+    { l: "3s", t: "s", p: [[0, 3.0], [18, 2.15], [35, 1.6], [55, 1.25], [75, 1.05], [100, 0.9]] },
+    { l: "3p", t: "p", p: [[0, 2.9], [18, 2.22], [35, 1.68], [55, 1.32], [75, 1.1], [100, 0.95]] },
+    { l: "3d", t: "d", p: [[0, 2.8], [12, 2.6], [20, 2.3], [24, 2.22], [32, 2.02], [48, 1.66], [68, 1.32], [100, 1.02]] },
+    { l: "4s", t: "s", p: [[0, 4.0], [12, 3.05], [19, 2.5], [23, 2.3], [30, 2.15], [48, 1.9], [68, 1.65], [100, 1.44]] },
+    { l: "4p", t: "p", p: [[0, 3.9], [18, 3.1], [35, 2.35], [55, 1.9], [75, 1.65], [100, 1.5]] },
+    { l: "4d", t: "d", p: [[0, 3.8], [18, 3.2], [38, 2.5], [58, 2.0], [78, 1.72], [100, 1.6]] },
+    { l: "4f", t: "f", p: [[0, 3.92], [30, 3.85], [50, 3.72], [57, 3.5], [62, 3.0], [68, 2.4], [76, 2.0], [88, 1.82], [100, 1.72]] },
+    { l: "5s", t: "s", p: [[0, 5.0], [20, 3.95], [40, 3.15], [60, 2.78], [80, 2.58], [100, 2.5]] },
+    { l: "5p", t: "p", p: [[0, 4.9], [20, 4.05], [40, 3.3], [60, 2.92], [80, 2.72], [100, 2.62]] },
+    { l: "5d", t: "d", p: [[0, 4.8], [22, 4.15], [45, 3.5], [65, 3.05], [85, 2.85], [100, 2.75]] },
+    { l: "5f", t: "f", p: [[0, 4.85], [30, 4.62], [55, 4.2], [78, 3.9], [92, 3.72], [100, 3.6]] },
+    { l: "6s", t: "s", p: [[0, 6.0], [20, 5.0], [42, 4.15], [62, 3.65], [82, 3.32], [100, 3.15]] },
+    { l: "6p", t: "p", p: [[0, 5.9], [22, 5.05], [45, 4.35], [65, 3.82], [85, 3.48], [100, 3.32]] },
+    { l: "6d", t: "d", p: [[0, 5.8], [25, 5.0], [50, 4.4], [72, 3.9], [90, 3.68], [100, 3.52]] },
+    { l: "7s", t: "s", p: [[0, 7.0], [25, 5.9], [50, 4.7], [72, 4.0], [90, 3.75], [100, 3.65]] },
+    { l: "7p", t: "p", p: [[0, 6.94], [25, 5.96], [50, 4.82], [72, 4.1], [90, 3.85], [100, 3.78]] },
+  ];
+  const smooth = (pts: number[][]) => {
+    const P = pts.map(([z, v]) => [X(z), Y(v)]);
+    let d = `M${P[0][0].toFixed(1)} ${P[0][1].toFixed(1)}`;
+    for (let i = 0; i < P.length - 1; i++) {
+      const p0 = P[i - 1] || P[i], p1 = P[i], p2 = P[i + 1], p3 = P[i + 2] || P[i + 1];
+      const c1x = p1[0] + (p2[0] - p0[0]) / 6, c1y = p1[1] + (p2[1] - p0[1]) / 6;
+      const c2x = p2[0] - (p3[0] - p1[0]) / 6, c2y = p2[1] - (p3[1] - p1[1]) / 6;
+      d += `C${c1x.toFixed(1)} ${c1y.toFixed(1)} ${c2x.toFixed(1)} ${c2y.toFixed(1)} ${p2[0].toFixed(1)} ${p2[1].toFixed(1)}`;
+    }
+    return d;
+  };
+  const labels = curves.map((cu) => ({ l: cu.l, c: style[cu.t].c, ey: Y(cu.p[cu.p.length - 1][1]), y: Y(cu.p[cu.p.length - 1][1]) }));
+  labels.sort((a, b) => a.y - b.y);
+  const GAP = 14.5;
+  for (let i = 1; i < labels.length; i++) if (labels[i].y - labels[i - 1].y < GAP) labels[i].y = labels[i - 1].y + GAP;
+  return <ScientificVisual title="Subshell energy against atomic number" description="A screened-energy diagram after Latter. The vertical axis is an effective principal quantum number from one to seven and the horizontal axis is atomic number from zero to one hundred. Nineteen curves, one for each subshell from one s up to seven p, all start near their principal quantum number at low Z and fall as the nuclear charge grows. Because they fall at different rates the curves cross: four s dips toward three d near Z twenty, and the four f curve stays near four until about Z sixty then plunges steeply, reproducing the lanthanide contraction. The vertical order of the curves at any atomic number gives the orbital filling order there." viewBox="0 0 660 772" className="mx-auto h-auto w-full max-w-2xl">
+    <rect x={PLOT_L} y={PLOT_T} width={PLOT_R - PLOT_L} height={PLOT_B - PLOT_T} fill="none" stroke="#334155" strokeWidth="1.4" />
+    {[1, 2, 3, 4, 5, 6, 7].map((v) => <g key={v}><path d={`M${PLOT_L - 6} ${Y(v)}H${PLOT_L}`} stroke="#94a3b8" strokeWidth="1.4" /><text x={PLOT_L - 14} y={Y(v) + 5} textAnchor="end" fill="#cbd5e1" fontSize="15">{v}</text></g>)}
+    {[0, 25, 50, 75, 100].map((z) => <g key={z}><path d={`M${X(z)} ${PLOT_B}V${PLOT_B + 6}`} stroke="#94a3b8" strokeWidth="1.4" /><text x={X(z)} y={PLOT_B + 24} textAnchor="middle" fill="#cbd5e1" fontSize="14">{z}</text></g>)}
+    <text x="26" y={(PLOT_T + PLOT_B) / 2} transform={`rotate(-90 26 ${(PLOT_T + PLOT_B) / 2})`} textAnchor="middle" fill="#e2e8f0" fontSize="16">Principal Quantum number</text>
+    <text x={(PLOT_L + PLOT_R) / 2} y={PLOT_B + 52} textAnchor="middle" fill="#e2e8f0" fontSize="16">Atomic number</text>
+    {curves.map((cu) => { const st = style[cu.t]; return <path key={cu.l} d={smooth(cu.p)} fill="none" stroke={st.c} strokeWidth={st.w} strokeDasharray={st.dash} strokeLinecap="round" />; })}
+    {labels.map((lab) => <g key={lab.l}><path d={`M${PLOT_R} ${lab.ey}L${PLOT_R + 24} ${lab.y}`} stroke={lab.c} strokeWidth="0.8" opacity=".7" /><text x={PLOT_R + 28} y={lab.y + 4} fill={lab.c} fontSize="13" fontStyle="italic">{lab.l}</text></g>)}
+    <g transform="translate(96 60)">
+      {([["s", "s"], ["p", "p"], ["d", "d"], ["f", "f"]] as const).map(([lbl, t], i) => <g key={lbl} transform={`translate(${i * 60} 0)`}><path d="M0 0H26" stroke={style[t].c} strokeWidth={style[t].w} strokeDasharray={style[t].dash} /><text x="32" y="4" fill={style[t].c} fontSize="13" fontStyle="italic">{lbl}</text></g>)}
+    </g>
   </ScientificVisual>;
 }
 

@@ -137,8 +137,10 @@ export default function Part31() {
           <DiagramBox title="Subshell energies versus atomic number">
             <SubshellZCrossingVisual />
             <p>
-              Principal quantum number (1–7) against atomic number (0–100): curves for 1s up to 7p cross as Z grows, showing
-              how subshell order changes with atomic number.
+              Screened-energy (Latter) diagram: effective principal quantum number (1–7) against atomic number (0–100), one
+              curve per subshell from 1s to 7p. Every curve starts near its principal quantum number and falls as Z grows, but
+              at different rates — so they cross. Read the vertical order at any Z to get the filling order there: note how 4s
+              dips toward 3d near Z ≈ 20, and how the 4f curve hugs n = 4 until Z ≈ 60 then plunges (the lanthanide contraction).
             </p>
           </DiagramBox>
         </NoteBlock>

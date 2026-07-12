@@ -22,7 +22,7 @@ export default function Part42() {
               radial node.
             </p>
           </DiagramBox>
-          <FormulaLine math="R(r)=K\,e^{-\sigma/2}\,\sigma^{l}\quad\begin{cases}l=0\\l\neq0\end{cases}\qquad \sigma=\frac{2Z}{n a_0}\,r" />
+          <FormulaLine math="R(r)=K\,e^{-\sigma/2}\,\sigma^{l}\quad\begin{cases}l=0\l\neq0\end{cases}\qquad \sigma=\frac{2Z}{n a_0}\,r" />
           <DiagramBox title="R(r) vs r for one-node orbitals (diagram)">
             <RadialFunctionCurvesVisual nodes={1} />
             <p>

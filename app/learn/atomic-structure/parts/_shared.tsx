@@ -119,7 +119,7 @@ export function SourcePage({ page: _page, children }: { page: number; children: 
 export function NoteBlock({ title, children }: { title?: string; children: ReactNode }) {
   return (
     <div className="rounded-2xl border border-white/[0.09] bg-white/[0.045] p-5 shadow-lg shadow-black/10 sm:p-6">
-      {title ? <h2 className="mb-3 text-lg font-black text-white">{title}</h2> : null}
+      {title ? <h2 className="mb-3 text-lg font-black text-cyan-200">{title}</h2> : null}
       <div className="space-y-3 text-sm leading-relaxed text-white/78 sm:text-base">{children}</div>
     </div>
   );

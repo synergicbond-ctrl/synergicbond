@@ -6,7 +6,7 @@ export function LearningObjectives({ items }: { items: string[] }) {
 }
 
 export function ConceptCard({ title, children }: { title: string; children: ReactNode }) {
-  return <section className="rounded-2xl border border-white/10 bg-slate-950/45 p-5 shadow-lg shadow-black/10"><h2 className="text-lg font-black text-white">{title}</h2><div className="mt-3 space-y-3 text-sm leading-relaxed text-slate-200 sm:text-base">{children}</div></section>;
+  return <section className="rounded-2xl border border-sky-300/20 bg-slate-950/45 p-5 shadow-lg shadow-black/10"><h2 className="text-lg font-black text-sky-200">{title}</h2><div className="mt-3 space-y-3 text-sm leading-relaxed text-slate-200 sm:text-base">{children}</div></section>;
 }
 
 export function DefinitionCard({ term, children }: { term: string; children: ReactNode }) {
@@ -38,7 +38,7 @@ export function ImportantNote({ title = "Important note", children }: { title?: 
 }
 
 export function PracticeQuestion({ prompt, answer }: { prompt: ReactNode; answer?: ReactNode }) {
-  return <section className="rounded-2xl border border-violet-300/20 bg-violet-300/[0.06] p-5"><p className="text-xs font-black uppercase tracking-[0.18em] text-violet-200">Check your understanding</p><div className="mt-2 text-sm leading-relaxed text-white sm:text-base">{prompt}</div>{answer ? <div className="mt-3 border-t border-white/10 pt-3 text-sm text-violet-100"><span className="font-bold">Answer: </span>{answer}</div> : null}</section>;
+  return <section className="rounded-2xl border border-violet-300/20 bg-violet-300/[0.06] p-5"><p className="text-xs font-black uppercase tracking-[0.18em] text-violet-200">Check your understanding</p><div className="mt-2 text-sm leading-relaxed text-white sm:text-base">{prompt}</div>{answer ? <div className="mt-3 border-t border-white/10 pt-3 text-sm text-violet-100"><span className="font-bold text-emerald-300">Answer: </span><span className="text-emerald-100">{answer}</span></div> : null}</section>;
 }
 
 export function SummaryStrip({ items }: { items: string[] }) {

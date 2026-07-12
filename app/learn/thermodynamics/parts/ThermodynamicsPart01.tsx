@@ -107,167 +107,730 @@ function GlossySystemUniverseGraphic() {
   return (
     <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 shadow-2xl shadow-cyan-950/30 md:p-5">
       <svg
-        viewBox="0 0 1200 760"
-        role="img"
-        aria-labelledby="system-universe-title system-universe-desc"
-        className="h-auto w-full"
-      >
-        <title id="system-universe-title">
-          System, surroundings, boundary and universe
-        </title>
-        <desc id="system-universe-desc">
-          A glossy original visual showing a selected system inside a boundary,
-          interacting with nearby surroundings through heat, work and matter.
-        </desc>
+  viewBox="0 0 1200 760"
+  role="img"
+  aria-labelledby="thermo-system-title thermo-system-description"
+  className="h-auto w-full"
+  style={{
+    fontFamily:
+      "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, sans-serif",
+  }}
+>
+  <title id="thermo-system-title">
+    Thermodynamic system, boundary, surroundings, matter, heat and work
+  </title>
 
-        <defs>
-          <radialGradient id="universeGlow" cx="50%" cy="45%" r="70%">
-            <stop offset="0" stopColor="#172554" />
-            <stop offset="0.55" stopColor="#0f172a" />
-            <stop offset="1" stopColor="#020617" />
-          </radialGradient>
-          <radialGradient id="systemCore" cx="35%" cy="28%" r="78%">
-            <stop offset="0" stopColor="#67e8f9" />
-            <stop offset="0.38" stopColor="#0891b2" />
-            <stop offset="1" stopColor="#164e63" />
-          </radialGradient>
-          <linearGradient id="glassPanel" x1="0" x2="1" y1="0" y2="1">
-            <stop offset="0" stopColor="#ffffff" stopOpacity="0.14" />
-            <stop offset="1" stopColor="#ffffff" stopOpacity="0.025" />
-          </linearGradient>
-          <linearGradient id="heatGradient" x1="0" x2="1">
-            <stop offset="0" stopColor="#fb7185" />
-            <stop offset="1" stopColor="#fbbf24" />
-          </linearGradient>
-          <linearGradient id="workGradient" x1="0" x2="1">
-            <stop offset="0" stopColor="#a78bfa" />
-            <stop offset="1" stopColor="#60a5fa" />
-          </linearGradient>
-          <linearGradient id="matterGradient" x1="0" x2="1">
-            <stop offset="0" stopColor="#34d399" />
-            <stop offset="1" stopColor="#22d3ee" />
-          </linearGradient>
-          <filter id="softGlow" x="-30%" y="-30%" width="160%" height="160%">
-            <feGaussianBlur stdDeviation="10" result="blur" />
-            <feMerge>
-              <feMergeNode in="blur" />
-              <feMergeNode in="SourceGraphic" />
-            </feMerge>
-          </filter>
-          <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%">
-            <feDropShadow dx="0" dy="14" stdDeviation="16" floodColor="#000000" floodOpacity="0.55" />
-          </filter>
-          <marker
-            id="heatArrow"
-            viewBox="0 0 10 10"
-            refX="8"
-            refY="5"
-            markerWidth="8"
-            markerHeight="8"
-            markerUnits="strokeWidth"
-            orient="auto-start-reverse"
-          >
-            <path d="M0 0 L10 5 L0 10 Z" fill="#fbbf24" />
-          </marker>
-          <marker
-            id="workArrow"
-            viewBox="0 0 10 10"
-            refX="8"
-            refY="5"
-            markerWidth="8"
-            markerHeight="8"
-            markerUnits="strokeWidth"
-            orient="auto-start-reverse"
-          >
-            <path d="M0 0 L10 5 L0 10 Z" fill="#a78bfa" />
-          </marker>
-          <marker
-            id="matterArrow"
-            viewBox="0 0 10 10"
-            refX="8"
-            refY="5"
-            markerWidth="8"
-            markerHeight="8"
-            markerUnits="strokeWidth"
-            orient="auto-start-reverse"
-          >
-            <path d="M0 0 L10 5 L0 10 Z" fill="#34d399" />
-          </marker>
-        </defs>
+  <desc id="thermo-system-description">
+    A thermodynamic system is separated from its surroundings by a boundary.
+    Matter, heat and work can cross the boundary depending on whether the
+    system is open, closed or isolated.
+  </desc>
 
-        <rect width="1200" height="760" rx="36" fill="url(#universeGlow)" />
-        <circle cx="600" cy="380" r="285" fill="#0f172a" stroke="#475569" strokeWidth="3" strokeDasharray="16 14" />
-        <circle cx="600" cy="380" r="180" fill="url(#systemCore)" stroke="#67e8f9" strokeWidth="4.5" />
-        <ellipse cx="545" cy="315" rx="88" ry="54" fill="#ffffff" fillOpacity="0.16" />
+  <defs>
+    <linearGradient
+      id="thermo-background"
+      x1="0"
+      y1="0"
+      x2="1"
+      y2="1"
+    >
+      <stop offset="0%" stopColor="#07111f" />
+      <stop offset="100%" stopColor="#111c35" />
+    </linearGradient>
 
-        <text x="600" y="335" fill="#ecfeff" fontSize="31" fontWeight="900" textAnchor="middle">
-          SYSTEM
-        </text>
-        <text x="600" y="376" fill="#cffafe" fontSize="19" fontWeight="700" textAnchor="middle">
-          selected matter or region
-        </text>
-        <text x="600" y="412" fill="#a5f3fc" fontSize="17" textAnchor="middle">
-          chosen for thermodynamic study
-        </text>
+    <linearGradient
+      id="thermo-system-fill"
+      x1="0"
+      y1="0"
+      x2="1"
+      y2="1"
+    >
+      <stop offset="0%" stopColor="#12395a" />
+      <stop offset="100%" stopColor="#0d6073" />
+    </linearGradient>
 
-        <text x="600" y="150" fill="#cbd5e1" fontSize="24" fontWeight="900" textAnchor="middle">
-          BOUNDARY
-        </text>
-        <path d="M520 165 C540 198 560 215 600 220" fill="none" stroke="#94a3b8" strokeWidth="4" />
+    <linearGradient
+      id="thermo-open-fill"
+      x1="0"
+      y1="0"
+      x2="1"
+      y2="1"
+    >
+      <stop offset="0%" stopColor="#0f3e43" />
+      <stop offset="100%" stopColor="#102f3d" />
+    </linearGradient>
 
-        <text x="600" y="690" fill="#f8fafc" fontSize="27" fontWeight="900" textAnchor="middle">
-          UNIVERSE = SYSTEM + SURROUNDINGS
-        </text>
-        <text x="600" y="642" fill="#cbd5e1" fontSize="22" fontWeight="800" textAnchor="middle">
-          SURROUNDINGS: the interacting remainder relevant to the model
-        </text>
+    <linearGradient
+      id="thermo-closed-fill"
+      x1="0"
+      y1="0"
+      x2="1"
+      y2="1"
+    >
+      <stop offset="0%" stopColor="#3b3213" />
+      <stop offset="100%" stopColor="#2c2918" />
+    </linearGradient>
 
-        <path
-          d="M395 290 C305 245 245 225 170 230"
-          fill="none"
-          stroke="url(#matterGradient)"
-          strokeWidth="5"
-          markerEnd="url(#matterArrow)"
-        />
-        <path
-          d="M805 310 C900 265 965 250 1040 260"
-          fill="none"
-          stroke="url(#heatGradient)"
-          strokeWidth="5"
-          markerEnd="url(#heatArrow)"
-        />
-        <path
-          d="M805 450 C910 490 965 515 1040 520"
-          fill="none"
-          stroke="url(#workGradient)"
-          strokeWidth="5"
-          markerEnd="url(#workArrow)"
-        />
+    <linearGradient
+      id="thermo-isolated-fill"
+      x1="0"
+      y1="0"
+      x2="1"
+      y2="1"
+    >
+      <stop offset="0%" stopColor="#342751" />
+      <stop offset="100%" stopColor="#28243d" />
+    </linearGradient>
 
-        <rect x="70" y="165" width="245" height="120" rx="26" fill="url(#glassPanel)" stroke="#34d399" strokeWidth="3" filter="url(#shadow)" />
-        <text x="192" y="207" fill="#a7f3d0" fontSize="22" fontWeight="900" textAnchor="middle">
-          MATTER
-        </text>
-        <text x="192" y="245" fill="#d1fae5" fontSize="16" textAnchor="middle">
-          molecules or bulk flow
-        </text>
+    <marker
+      id="thermo-matter-arrow"
+      markerWidth="12"
+      markerHeight="12"
+      refX="10"
+      refY="6"
+      orient="auto"
+      markerUnits="strokeWidth"
+    >
+      <path d="M0 0 L12 6 L0 12 Z" fill="#34d399" />
+    </marker>
 
-        <rect x="905" y="190" width="245" height="120" rx="26" fill="url(#glassPanel)" stroke="#fbbf24" strokeWidth="3" filter="url(#shadow)" />
-        <text x="1027" y="232" fill="#fde68a" fontSize="22" fontWeight="900" textAnchor="middle">
-          HEAT
-        </text>
-        <text x="1027" y="270" fill="#fef3c7" fontSize="16" textAnchor="middle">
-          energy transfer due to ΔT
-        </text>
+    <marker
+      id="thermo-heat-arrow"
+      markerWidth="12"
+      markerHeight="12"
+      refX="10"
+      refY="6"
+      orient="auto"
+      markerUnits="strokeWidth"
+    >
+      <path d="M0 0 L12 6 L0 12 Z" fill="#fbbf24" />
+    </marker>
 
-        <rect x="905" y="490" width="245" height="120" rx="26" fill="url(#glassPanel)" stroke="#a78bfa" strokeWidth="3" filter="url(#shadow)" />
-        <text x="1027" y="532" fill="#ddd6fe" fontSize="22" fontWeight="900" textAnchor="middle">
-          WORK
-        </text>
-        <text x="1027" y="570" fill="#ede9fe" fontSize="16" textAnchor="middle">
-          organized energy transfer
-        </text>
-      </svg>
+    <marker
+      id="thermo-work-arrow"
+      markerWidth="12"
+      markerHeight="12"
+      refX="10"
+      refY="6"
+      orient="auto"
+      markerUnits="strokeWidth"
+    >
+      <path d="M0 0 L12 6 L0 12 Z" fill="#a78bfa" />
+    </marker>
+  </defs>
+
+  <rect
+    x="10"
+    y="10"
+    width="1180"
+    height="740"
+    rx="30"
+    fill="url(#thermo-background)"
+    stroke="#24324d"
+    strokeWidth="2"
+  />
+
+  <text
+    x="600"
+    y="52"
+    textAnchor="middle"
+    fill="#f8fafc"
+    fontSize="30"
+    fontWeight="800"
+  >
+    THERMODYNAMIC SYSTEM AND SURROUNDINGS
+  </text>
+
+  <text
+    x="600"
+    y="82"
+    textAnchor="middle"
+    fill="#9fb0ca"
+    fontSize="16"
+    fontWeight="500"
+  >
+    The boundary determines what may pass between the system and its surroundings
+  </text>
+
+  <rect
+    x="250"
+    y="112"
+    width="700"
+    height="396"
+    rx="54"
+    fill="#0c172b"
+    fillOpacity="0.72"
+    stroke="#61708b"
+    strokeWidth="3"
+    strokeDasharray="12 10"
+  />
+
+  <rect
+    x="518"
+    y="98"
+    width="164"
+    height="34"
+    rx="17"
+    fill="#18243a"
+    stroke="#71809b"
+    strokeWidth="2"
+  />
+
+  <text
+    x="600"
+    y="121"
+    textAnchor="middle"
+    fill="#d8e2f1"
+    fontSize="16"
+    fontWeight="800"
+    letterSpacing="1.5"
+  >
+    BOUNDARY
+  </text>
+
+  <text
+    x="284"
+    y="158"
+    fill="#90a4c2"
+    fontSize="15"
+    fontWeight="800"
+    letterSpacing="1.4"
+  >
+    SURROUNDINGS
+  </text>
+
+  <text
+    x="910"
+    y="158"
+    textAnchor="end"
+    fill="#90a4c2"
+    fontSize="14"
+    fontWeight="600"
+  >
+    everything outside the system
+  </text>
+
+  <rect
+    x="390"
+    y="202"
+    width="420"
+    height="220"
+    rx="42"
+    fill="url(#thermo-system-fill)"
+    stroke="#67e8f9"
+    strokeWidth="4"
+  />
+
+  <text
+    x="600"
+    y="257"
+    textAnchor="middle"
+    fill="#ffffff"
+    fontSize="34"
+    fontWeight="900"
+    letterSpacing="1"
+  >
+    SYSTEM
+  </text>
+
+  <text
+    x="600"
+    y="292"
+    textAnchor="middle"
+    fill="#d9fbff"
+    fontSize="21"
+    fontWeight="700"
+  >
+    selected matter or region under study
+  </text>
+
+  <line
+    x1="474"
+    y1="319"
+    x2="726"
+    y2="319"
+    stroke="#68d8e8"
+    strokeOpacity="0.55"
+    strokeWidth="2"
+  />
+
+  <text
+    x="600"
+    y="351"
+    textAnchor="middle"
+    fill="#c8edf4"
+    fontSize="16"
+    fontWeight="600"
+  >
+    described by state variables
+  </text>
+
+  <g>
+    <rect
+      x="478"
+      y="367"
+      width="48"
+      height="28"
+      rx="14"
+      fill="#082b3b"
+      stroke="#58d6e7"
+      strokeWidth="1.5"
+    />
+    <text
+      x="502"
+      y="387"
+      textAnchor="middle"
+      fill="#e9fcff"
+      fontSize="15"
+      fontWeight="800"
+    >
+      P
+    </text>
+
+    <rect
+      x="540"
+      y="367"
+      width="48"
+      height="28"
+      rx="14"
+      fill="#082b3b"
+      stroke="#58d6e7"
+      strokeWidth="1.5"
+    />
+    <text
+      x="564"
+      y="387"
+      textAnchor="middle"
+      fill="#e9fcff"
+      fontSize="15"
+      fontWeight="800"
+    >
+      V
+    </text>
+
+    <rect
+      x="602"
+      y="367"
+      width="48"
+      height="28"
+      rx="14"
+      fill="#082b3b"
+      stroke="#58d6e7"
+      strokeWidth="1.5"
+    />
+    <text
+      x="626"
+      y="387"
+      textAnchor="middle"
+      fill="#e9fcff"
+      fontSize="15"
+      fontWeight="800"
+    >
+      T
+    </text>
+
+    <rect
+      x="664"
+      y="367"
+      width="48"
+      height="28"
+      rx="14"
+      fill="#082b3b"
+      stroke="#58d6e7"
+      strokeWidth="1.5"
+    />
+    <text
+      x="688"
+      y="387"
+      textAnchor="middle"
+      fill="#e9fcff"
+      fontSize="15"
+      fontWeight="800"
+    >
+      n
+    </text>
+  </g>
+
+  <rect
+    x="34"
+    y="190"
+    width="210"
+    height="142"
+    rx="24"
+    fill="#12263a"
+    stroke="#34d399"
+    strokeWidth="3"
+  />
+
+  <text
+    x="139"
+    y="231"
+    textAnchor="middle"
+    fill="#6ee7b7"
+    fontSize="22"
+    fontWeight="900"
+  >
+    MATTER
+  </text>
+
+  <text
+    x="139"
+    y="261"
+    textAnchor="middle"
+    fill="#d9fbea"
+    fontSize="15"
+    fontWeight="600"
+  >
+    molecules or bulk flow
+  </text>
+
+  <rect
+    x="86"
+    y="282"
+    width="106"
+    height="27"
+    rx="13.5"
+    fill="#0b392f"
+  />
+
+  <text
+    x="139"
+    y="301"
+    textAnchor="middle"
+    fill="#9ff3cd"
+    fontSize="13"
+    fontWeight="800"
+  >
+    MASS TRANSFER
+  </text>
+
+  <path
+    d="M244 270 C300 270 334 270 382 270"
+    fill="none"
+    stroke="#34d399"
+    strokeWidth="7"
+    strokeLinecap="round"
+    markerEnd="url(#thermo-matter-arrow)"
+  />
+
+  <rect
+    x="956"
+    y="160"
+    width="210"
+    height="142"
+    rx="24"
+    fill="#302914"
+    stroke="#fbbf24"
+    strokeWidth="3"
+  />
+
+  <text
+    x="1061"
+    y="201"
+    textAnchor="middle"
+    fill="#fde68a"
+    fontSize="22"
+    fontWeight="900"
+  >
+    HEAT
+  </text>
+
+  <text
+    x="1061"
+    y="231"
+    textAnchor="middle"
+    fill="#fff5cf"
+    fontSize="15"
+    fontWeight="600"
+  >
+    transfer caused by
+  </text>
+
+  <text
+    x="1061"
+    y="253"
+    textAnchor="middle"
+    fill="#fff5cf"
+    fontSize="15"
+    fontWeight="600"
+  >
+    temperature difference
+  </text>
+
+  <rect
+    x="1008"
+    y="270"
+    width="106"
+    height="27"
+    rx="13.5"
+    fill="#4a3a08"
+  />
+
+  <text
+    x="1061"
+    y="289"
+    textAnchor="middle"
+    fill="#fde68a"
+    fontSize="13"
+    fontWeight="800"
+  >
+    ENERGY IN
+  </text>
+
+  <path
+    d="M956 235 C900 235 860 235 818 235"
+    fill="none"
+    stroke="#fbbf24"
+    strokeWidth="7"
+    strokeLinecap="round"
+    markerEnd="url(#thermo-heat-arrow)"
+  />
+
+  <rect
+    x="956"
+    y="337"
+    width="210"
+    height="142"
+    rx="24"
+    fill="#28203f"
+    stroke="#a78bfa"
+    strokeWidth="3"
+  />
+
+  <text
+    x="1061"
+    y="378"
+    textAnchor="middle"
+    fill="#d8ccff"
+    fontSize="22"
+    fontWeight="900"
+  >
+    WORK
+  </text>
+
+  <text
+    x="1061"
+    y="408"
+    textAnchor="middle"
+    fill="#eee9ff"
+    fontSize="15"
+    fontWeight="600"
+  >
+    organized energy transfer
+  </text>
+
+  <text
+    x="1061"
+    y="430"
+    textAnchor="middle"
+    fill="#eee9ff"
+    fontSize="15"
+    fontWeight="600"
+  >
+    through force or motion
+  </text>
+
+  <rect
+    x="1004"
+    y="447"
+    width="114"
+    height="27"
+    rx="13.5"
+    fill="#3e2867"
+  />
+
+  <text
+    x="1061"
+    y="466"
+    textAnchor="middle"
+    fill="#ddd1ff"
+    fontSize="13"
+    fontWeight="800"
+  >
+    ENERGY OUT
+  </text>
+
+  <path
+    d="M818 375 C860 375 900 375 948 375"
+    fill="none"
+    stroke="#a78bfa"
+    strokeWidth="7"
+    strokeLinecap="round"
+    markerEnd="url(#thermo-work-arrow)"
+  />
+
+  <rect
+    x="250"
+    y="450"
+    width="700"
+    height="40"
+    rx="20"
+    fill="#131f34"
+    stroke="#31415d"
+    strokeWidth="1.5"
+  />
+
+  <text
+    x="600"
+    y="476"
+    textAnchor="middle"
+    fill="#c9d5e7"
+    fontSize="15"
+    fontWeight="700"
+  >
+    System + surroundings together form the thermodynamic universe
+  </text>
+
+  <g>
+    <rect
+      x="50"
+      y="542"
+      width="346"
+      height="126"
+      rx="24"
+      fill="url(#thermo-open-fill)"
+      stroke="#34d399"
+      strokeWidth="2.5"
+    />
+
+    <text
+      x="223"
+      y="578"
+      textAnchor="middle"
+      fill="#6ee7b7"
+      fontSize="21"
+      fontWeight="900"
+    >
+      OPEN SYSTEM
+    </text>
+
+    <text
+      x="223"
+      y="609"
+      textAnchor="middle"
+      fill="#d9fbea"
+      fontSize="15"
+      fontWeight="700"
+    >
+      matter and energy may cross
+    </text>
+
+    <text
+      x="223"
+      y="640"
+      textAnchor="middle"
+      fill="#8de9c0"
+      fontSize="14"
+      fontWeight="800"
+    >
+      MATTER ✓   HEAT ✓   WORK ✓
+    </text>
+  </g>
+
+  <g>
+    <rect
+      x="427"
+      y="542"
+      width="346"
+      height="126"
+      rx="24"
+      fill="url(#thermo-closed-fill)"
+      stroke="#fbbf24"
+      strokeWidth="2.5"
+    />
+
+    <text
+      x="600"
+      y="578"
+      textAnchor="middle"
+      fill="#fde68a"
+      fontSize="21"
+      fontWeight="900"
+    >
+      CLOSED SYSTEM
+    </text>
+
+    <text
+      x="600"
+      y="609"
+      textAnchor="middle"
+      fill="#fff5cf"
+      fontSize="15"
+      fontWeight="700"
+    >
+      energy may cross; matter cannot
+    </text>
+
+    <text
+      x="600"
+      y="640"
+      textAnchor="middle"
+      fill="#f7d96f"
+      fontSize="14"
+      fontWeight="800"
+    >
+      MATTER ✕   HEAT ✓   WORK ✓
+    </text>
+  </g>
+
+  <g>
+    <rect
+      x="804"
+      y="542"
+      width="346"
+      height="126"
+      rx="24"
+      fill="url(#thermo-isolated-fill)"
+      stroke="#a78bfa"
+      strokeWidth="2.5"
+    />
+
+    <text
+      x="977"
+      y="578"
+      textAnchor="middle"
+      fill="#d8ccff"
+      fontSize="21"
+      fontWeight="900"
+    >
+      ISOLATED SYSTEM
+    </text>
+
+    <text
+      x="977"
+      y="609"
+      textAnchor="middle"
+      fill="#eee9ff"
+      fontSize="15"
+      fontWeight="700"
+    >
+      neither matter nor energy crosses
+    </text>
+
+    <text
+      x="977"
+      y="640"
+      textAnchor="middle"
+      fill="#cbbcff"
+      fontSize="14"
+      fontWeight="800"
+    >
+      MATTER ✕   HEAT ✕   WORK ✕
+    </text>
+  </g>
+
+  <text
+    x="600"
+    y="716"
+    textAnchor="middle"
+    fill="#ffffff"
+    fontSize="28"
+    fontWeight="900"
+    letterSpacing="0.6"
+  >
+    UNIVERSE = SYSTEM + SURROUNDINGS
+  </text>
+</svg>
     </div>
   );
 }

@@ -14,7 +14,7 @@ export function DefinitionCard({ term, children }: { term: string; children: Rea
 }
 
 export function FormulaCard({ label, children }: { label: string; children: ReactNode }) {
-  return <section className="overflow-hidden rounded-2xl border border-violet-300/25 bg-[#0a1324] shadow-lg shadow-black/15"><div className="border-b border-violet-300/15 bg-violet-300/[0.07] px-4 py-2 text-xs font-black uppercase tracking-[0.17em] text-violet-100">{label}</div><div className="overflow-x-auto px-4 py-4 text-cyan-100">{children}</div></section>;
+  return <section className="border-l-2 border-violet-300/40 pl-4"><div className="text-[11px] font-black uppercase tracking-[0.15em] text-violet-200">{label}</div><div className="overflow-x-auto text-cyan-100 [&_.katex-display]:my-1">{children}</div></section>;
 }
 
 export function ComparisonTable({ headers, rows }: { headers: ReactNode[]; rows: ReactNode[][] }) {
@@ -26,7 +26,7 @@ export function WorkedExample({ title, children }: { title: string; children: Re
 }
 
 export function DerivationPanel({ title, children }: { title: string; children: ReactNode }) {
-  return <section className="rounded-2xl border border-fuchsia-300/20 bg-fuchsia-300/[0.045] p-5"><p className="text-[11px] font-black uppercase tracking-[0.18em] text-fuchsia-200">Derivation · retain every step</p><h2 className="mt-1 text-lg font-black text-white">{title}</h2><div className="mt-4 space-y-3 text-sm leading-relaxed text-slate-100 sm:text-base">{children}</div></section>;
+  return <section className="border-l-2 border-fuchsia-300/40 pl-4"><h2 className="text-base font-black text-fuchsia-100">{title}</h2><div className="mt-2 space-y-1.5 text-sm leading-relaxed text-slate-100 sm:text-base [&_.katex-display]:my-1">{children}</div></section>;
 }
 
 export function FigureCaption({ children }: { children: ReactNode }) {

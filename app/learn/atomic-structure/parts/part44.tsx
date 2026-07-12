@@ -2,7 +2,7 @@
 
 import { AtomicPartShell, AuditComment, DiagramBox, FormulaLine, MathText, NoteBlock, SourcePage } from "./_shared";
 import { DefinitionCard, FigureCaption, ImportantNote, LearningObjectives, SummaryStrip } from "../_components/AtomicLearning";
-import { DotDensityOrbitalVisual, ElectronDensityGridVisual, RadialDistributionVisual } from "../_components/AtomicVisuals";
+import { DotDensityOrbitalVisual, ElectronDensityGridVisual, RadialDistributionVisual, RadialFunctionGridVisual } from "../_components/AtomicVisuals";
 
 export default function Part44() {
   return (
@@ -59,6 +59,14 @@ export default function Part44() {
       </SourcePage>
 
       <SourcePage page={140}>
+        <NoteBlock title="Radial function and radial probability distribution, 1s through 4f">
+          <p>Plotting R(r) and the radial probability distribution 4πr²R(r)² together for every subshell up to n = 4 shows the same pattern: each extra radial node adds one more crossing to R(r) and one more hump to 4πr²R(r)², while the outermost, tallest peak always marks the most probable radius.</p>
+          <DiagramBox title="R(r) and 4πr²R(r)² for 1s–4f">
+            <RadialFunctionGridVisual />
+            <FigureCaption>Ten rows (1s, 2s, 2p, 3s, 3p, 3d, 4s, 4p, 4d, 4f). Left: R(r) vs r — the number of axis-crossings equals the radial-node count n − l − 1. Right: 4πr²R(r)² vs r — the number of humps equals n − l, with the tallest peak at the most probable radius.</FigureCaption>
+          </DiagramBox>
+          <FormulaLine math="r_{\text{most probable}}=\frac{a_0}{Z}\ \ (\text{for the } 1s \text{ state})" />
+        </NoteBlock>
         <NoteBlock title="Electron-density distribution in 2pₓ, 3pₓ and 4pₓ orbitals">
           <DiagramBox title="pₓ sequence: radial nodes increase with n">
             <svg role="img" aria-labelledby="px-density-title px-density-desc" viewBox="0 0 700 230" className="h-auto w-full"><title id="px-density-title">2p x, 3p x and 4p x radial-node sequence</title><desc id="px-density-desc">Three p x dumbbell diagrams show zero, one and two radial nodes as the principal quantum number increases.</desc>{[[125,"2pₓ",0,"#67e8f9"],[350,"3pₓ",1,"#facc15"],[575,"4pₓ",2,"#f472b6"]].map(([cx,label,nodes,col])=><g key={label as string}><text x={cx as number} y="25" textAnchor="middle" fill={col as string} fontSize="16" fontWeight="700">{label as string}</text><ellipse cx={(cx as number)-48} cy="95" rx="43" ry="25" fill={col as string} fillOpacity=".3" stroke={col as string} strokeWidth="2"/><ellipse cx={(cx as number)+48} cy="95" rx="43" ry="25" fill={col as string} fillOpacity=".3" stroke={col as string} strokeWidth="2"/><path d={`M${cx} 48V142`} stroke="#94a3b8" strokeDasharray="4 4"/>{Array.from({length:nodes as number},(_,i)=><ellipse key={i} cx={(cx as number)-48} cy="95" rx={18+i*9} ry={10+i*5} fill="none" stroke="#08111f" strokeWidth="5"/>)}<text x={cx as number} y="165" textAnchor="middle" fill="#e2e8f0" fontSize="13">{nodes as number} radial node{nodes===1?"":"s"}</text></g>)}<text x="18" y="215" fill="#94a3b8" fontSize="12">all pₓ orbitals retain the yz angular nodal plane; added nodes are spherical radial surfaces</text></svg>

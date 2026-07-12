@@ -34,10 +34,8 @@ export default function Part44() {
             at certain distances from the nucleus. The spherical surfaces around the nucleus at which{" "}
             <MathText math="\psi^{2}" /> is zero are called nodes.
           </p>
-          <DiagramBox title="1s, 2s and 3s density and radial-distribution comparison">
+          <DiagramBox title="1s, 2s and 3s: ψ, ψ² and radial distribution">
             <ElectronDensityGridVisual />
-            <DotDensityOrbitalVisual orbitals={["1s", "2s", "3s", "4s", "5s"]} />
-            <RadialDistributionVisual />
             <FigureCaption>
               Three columns (1s: n=1,l=0; 2s: n=2,l=0; 3s: n=3,l=0). Top row: dot-density clouds — 1s a single ball, 2s a
               core plus one shell, 3s a core plus two shells. Middle row: ψ(r) vs r — 1s decays monotonically; 2s crosses
@@ -45,6 +43,14 @@ export default function Part44() {
               nodes marked where the curve touches zero. Bottom row: 4πr²ψ²(r) vs r — 1s one hump, 2s two humps, 3s three
               humps, each tallest peak at r_max.
             </FigureCaption>
+          </DiagramBox>
+          <DiagramBox title="Dot-density photographs: 1s through 5s">
+            <DotDensityOrbitalVisual orbitals={["1s", "2s", "3s", "4s", "5s"]} />
+            <FigureCaption>Bright rings mark where the electron is most often found; dark gaps between rings are the radial nodes (count = n − 1 for s orbitals).</FigureCaption>
+          </DiagramBox>
+          <DiagramBox title="Radial distribution function, 1s vs 2s vs 3s">
+            <RadialDistributionVisual />
+            <FigureCaption>Each curve is scaled to the same peak height; the number of humps equals n, and each tallest peak marks the most probable radius r_max.</FigureCaption>
           </DiagramBox>
           <p>For H:</p>
           <FormulaLine math="r_{mp}=0.529\ \text{Å}" />

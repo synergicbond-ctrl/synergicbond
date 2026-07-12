@@ -40,8 +40,10 @@ export default function Part43() {
 
       <SourcePage page={137}>
         <NoteBlock title="Radial part solution table">
-          <DiagramBox title="Hydrogen radial wave functions">
+          <DiagramBox title="Radial functions with no radial node">
             <RadialFunctionCurvesVisual nodes={0} />
+          </DiagramBox>
+          <DiagramBox title="Radial functions with one radial node">
             <RadialFunctionCurvesVisual nodes={1} />
             <FigureCaption>The following ψ values are radial parts, using a<sub>0</sub> as the Bohr radius.</FigureCaption>
           </DiagramBox>

@@ -94,14 +94,16 @@ export default function Part28() {
             </p>
           </DiagramBox>
 
-          <DiagramBox title="3d orbitals — double-dumbbell and conical shapes">
+          <DiagramBox title="3d cloverleaf orbitals: dxy, dyz, dzx, dx²−y²">
             <DOrbitalNodalMapVisual />
-            <Dz2OrbitalVisual />
             <p className="text-sm text-white/75">
               <MathText math="3d_{xy},\ 3d_{xz},\ 3d_{yz}" /> — four-lobed, each with two perpendicular nodal planes.<br />
               <MathText math="3d_{x^2-y^2}" /> — four lobes along ±x and ±y, nodal planes at 45°.<br />
               <MathText math="3d_{z^2}" /> — dumbbell along z with a torus (doughnut ring) in the xy-plane; two conical nodal surfaces at ≈ 54.7°.
             </p>
+          </DiagramBox>
+          <DiagramBox title="3d z² orbital and its nodal cones">
+            <Dz2OrbitalVisual />
           </DiagramBox>
 
           <DiagramBox title="f orbitals — complex multi-lobed shapes">

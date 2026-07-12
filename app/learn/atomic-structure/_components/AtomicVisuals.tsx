@@ -5,7 +5,7 @@ type VisualProps = SVGProps<SVGSVGElement> & { title: string; description: strin
 export function ScientificVisual({ title, description, children, style, ...props }: VisualProps) {
   const id = title.toLowerCase().replace(/[^a-z0-9]+/g, "-");
   const designWidth = Number(String(props.viewBox ?? "0 0 760 400").split(/\s+/)[2]) || 760;
-  const sizing = { maxWidth: `${Math.min(Math.max(Math.round(designWidth * 1.02), 320), 780)}px`, flex: "1 1 300px", margin: "0 auto", ...style };
+  const sizing = { maxWidth: `${Math.min(Math.max(Math.round(designWidth * 1.02), 320), 780)}px`, flex: "1 1 300px", margin: "0 auto", filter: "saturate(1.3) brightness(1.06) drop-shadow(0 0 7px rgba(103,232,249,.16))", ...style };
   return <svg role="img" aria-labelledby={`${id}-title ${id}-desc`} style={sizing} {...props}>
     <title id={`${id}-title`}>{title}</title><desc id={`${id}-desc`}>{description}</desc>{children}
   </svg>;

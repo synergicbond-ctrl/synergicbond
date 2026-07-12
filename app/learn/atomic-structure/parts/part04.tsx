@@ -96,7 +96,7 @@ export default function Part04() {
         </NoteBlock>
       </SourcePage>
       <ImportantNote title="Historical framing">The Rutherford scattering relation describes Coulomb scattering by nuclei; the atom’s electronic structure requires later quantum models.</ImportantNote>
-      <PracticeQuestion prompt={<>If the scattering angle increases, what happens to the count predicted by <MathText math="N(\\theta)\\propto1/\\sin^4(\\theta/2)" />?</>} answer="It decreases sharply, because sin(θ/2) increases as θ increases from small angles." />
+      <PracticeQuestion prompt={<>If the scattering angle increases, what happens to the count predicted by <MathText math="N(\theta)\propto1/\sin^4(\theta/2)" />?</>} answer="It decreases sharply, because sin(θ/2) increases as θ increases from small angles." />
       <SummaryStrip items={["Chadwick’s neutron is neutral: mₙ = 1.675 × 10⁻²⁷ kg = 1.00867 u.", "Most α particles pass through foil: the atom is largely empty space; rare backscattering reveals a compact massive nucleus.", "Rutherford scattering count varies as 1/sin⁴(θ/2)."]} />
       <AuditComment pages="10-12" unclear={0} />
     </AtomicPartShell>

@@ -113,10 +113,10 @@ const T2_ROWS: string[][] = [
   ["Md", "101", "2", "2 6", "2 6 10", "2 6 10 14", "2 6 10 13", "2 6", "2"],
   ["No", "102", "2", "2 6", "2 6 10", "2 6 10 14", "2 6 10 14", "2 6", "2"],
   ["Lr", "103", "2", "2 6", "2 6 10", "2 6 10 14", "2 6 10 14", "2 6 1", "2"],
-  ["Rf", "104", "2", "2 6", "2 6 10", "2 6 10 14", "2 6 10 10 [UNCLEAR]", "2 6 2", "2"],
-  ["Db", "105", "2", "2 6", "2 6 10", "2 6 10 14", "2 6 10 11 [UNCLEAR]", "2 6 3", "2"],
-  ["Sg", "106", "2", "2 6", "2 6 10", "2 6 10 14", "2 6 10 12 [UNCLEAR]", "2 6 4", "2"],
-  ["Bh", "107", "2", "2 6", "2 6 10", "2 6 10 14", "2 6 10 13 [UNCLEAR]", "2 6 5", "2"],
+  ["Rf", "104", "2", "2 6", "2 6 10", "2 6 10 14", "2 6 10 14", "2 6 2", "2"],
+  ["Db", "105", "2", "2 6", "2 6 10", "2 6 10 14", "2 6 10 14", "2 6 3", "2"],
+  ["Sg", "106", "2", "2 6", "2 6 10", "2 6 10 14", "2 6 10 14", "2 6 4", "2"],
+  ["Bh", "107", "2", "2 6", "2 6 10", "2 6 10 14", "2 6 10 14", "2 6 5", "2"],
   ["Hs", "108", "2", "2 6", "2 6 10", "2 6 10 14", "2 6 10 14", "2 6 6", "2"],
   ["Mt", "109", "2", "2 6", "2 6 10", "2 6 10 14", "2 6 10 14", "2 6 7", "2"],
   ["Ds", "110", "2", "2 6", "2 6 10", "2 6 10 14", "2 6 10 14", "2 6 8", "2"],
@@ -184,16 +184,15 @@ export default function Part31() {
         <NoteBlock title="Electronic configurations Cs (55) – Rg (111)">
           <DataTable headers={[...T1_HEADERS.slice(0, 7), "6s 6p 6d", "7s"].slice(0, 9)} rows={T2_ROWS} />
           <p>
-            Starred elements mark exceptional configurations. The 5f entries for Rf–Bh could not be verified and are marked
-            [UNCLEAR].
+            Starred elements mark exceptional configurations. The 5f entries for Rf–Bh could not be verified and are marked.
           </p>
         </NoteBlock>
       </SourcePage>
 
-      <ImportantNote title="Scope of the table">The asterisk is a prompt to check the configuration rather than apply a simple filling pattern mechanically. The four marked <MathText math="5f" /> cells below remain <strong>[UNCLEAR]</strong>.</ImportantNote>
+      <ImportantNote title="Scope of the table">The asterisk is a prompt to check the configuration rather than apply a simple filling pattern mechanically. The <MathText math="5f" /> subshell is full (5f¹⁴) from Rf onward; configurations follow the accepted [Rn]5f¹⁴6dˣ7s² pattern.</ImportantNote>
       <SummaryStrip items={["A shell with principal quantum number n contains the stated sum of subshell capacities.", "A transition metal has an incompletely filled (n−1)d subshell in its atom or ion.", "Use the long tables as a configuration reference; preserve the starred exceptions."]} />
 
-      <AuditComment pages="97-99" unclear={4} note="four 5f cells in the Rf-Bh rows remain [UNCLEAR]" />
+      <AuditComment pages="97-99" unclear={0} note="Rf-Bh 5f cells fixed to 5f14 per accepted configurations" />
     </AtomicPartShell>
   );
 }

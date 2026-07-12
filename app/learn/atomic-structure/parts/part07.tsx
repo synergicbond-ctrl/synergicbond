@@ -75,7 +75,6 @@ export default function Part07() {
             <p>Increasing Wavelength (λ): visible spectrum 400-700 nm.</p>
             <p>Order from low to high frequency: radio waves, microwaves, infrared, visible light, ultraviolet, X-rays, γ rays.</p>
           </DiagramBox>
-          <p>[UNCLEAR] The original note contains an unverified statement about x-ray guns; no scientific inference is made from it.</p>
           <DiagramBox title="Visible Range">
             <VisibleSpectrumStripVisual />
             <p>Visible Range → V I B G Y O R</p>

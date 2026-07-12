@@ -56,7 +56,7 @@ export default function Part33() {
           <FormulaLine math="L=\sum m_l=(-3)+(-2)+(-1)+0+1+2+3=0" />
           <FormulaLine math="S=\sum m_s=\frac{7}{2}" />
           <FormulaLine math="g=\frac{3}{2}+\frac{\frac{7}{2}\left(\frac{9}{2}\right)-0}{2\cdot\frac{7}{2}\cdot\frac{9}{2}}=2" />
-          <FormulaLine math="\mu=2\sqrt{J(J+1)}=2\sqrt{\frac{7}{2}\cdot\frac{9}{2}}=\sqrt{63}=7.93\ \text{BM}" />
+          <FormulaLine math="\mu=2\sqrt{S(S+1)}=2\sqrt{\frac{7}{2}\cdot\frac{9}{2}}=\sqrt{63}=7.93\ \text{BM}" />
         </DerivationPanel>
       </SourcePage>
 

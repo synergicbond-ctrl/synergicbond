@@ -15,7 +15,6 @@ export default function Part20() {
           <FormulaLine math="n=2\ \leftarrow\ n=4\quad486\ \text{nm}\quad\text{blue-Green}" />
           <FormulaLine math="n=2\ \leftarrow\ n=5\quad434\ \text{nm}\quad\text{Blue}" />
           <FormulaLine math="n=2\ \leftarrow\ n=6\quad410\ \text{nm}\quad\text{Violet}" />
-          <p>A solid highlight band follows in the source with no legible text. [UNCLEAR]</p>
         </NoteBlock>
         <NoteBlock title="e.g. — atoms in the 5th energy state">
           <p>Single hydrogen atom in 5th energy state</p>

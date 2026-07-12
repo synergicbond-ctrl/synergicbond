@@ -34,8 +34,8 @@ export default function Part13() {
               <MathText math="V_0" /> on the potential axis and flattens.
             </FigureCaption>
             <p>
-              [UNCLEAR] The axis labels of this sketch are ambiguous; the shape matches photoelectric current rising
-              from the stopping potential and levelling off at saturation.
+              Photoelectric current rises from zero at the stopping potential −V₀ and levels off at the saturation
+              current once every emitted electron reaches the collector.
             </p>
           </DiagramBox>
           <DiagramBox title="Stopping potential v/s frequency">

@@ -2,7 +2,7 @@
 
 import { AtomicPartShell, AuditComment, DiagramBox, FormulaLine, MathText, NoteBlock, SourcePage } from "./_shared";
 import { DefinitionCard, FigureCaption, ImportantNote, LearningObjectives, SummaryStrip } from "../_components/AtomicLearning";
-import { ElectronDensityGridVisual, RadialDistributionVisual } from "../_components/AtomicVisuals";
+import { DotDensityOrbitalVisual, ElectronDensityGridVisual, RadialDistributionVisual } from "../_components/AtomicVisuals";
 
 export default function Part44() {
   return (
@@ -36,6 +36,7 @@ export default function Part44() {
           </p>
           <DiagramBox title="1s, 2s and 3s density and radial-distribution comparison">
             <ElectronDensityGridVisual />
+            <DotDensityOrbitalVisual orbitals={["1s", "2s", "3s", "4s", "5s"]} />
             <RadialDistributionVisual />
             <FigureCaption>
               Three columns (1s: n=1,l=0; 2s: n=2,l=0; 3s: n=3,l=0). Top row: dot-density clouds — 1s a single ball, 2s a

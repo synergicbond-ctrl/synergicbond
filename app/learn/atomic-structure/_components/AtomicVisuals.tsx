@@ -1352,3 +1352,41 @@ export function ElectronDensityGridVisual() {
     <text x="20" y="630" fill="#94a3b8" fontSize="12">computed from the exact hydrogen radial functions; humps = n − l, radial nodes = n − l − 1; tallest RDF peak = most probable radius</text>
   </ScientificVisual>;
 }
+
+export function DotDensityOrbitalVisual({ orbitals }: { orbitals: string[] }) {
+  const rnd = (i: number) => { const v = Math.sin(i * 12.9898) * 43758.5453; return v - Math.floor(v); };
+  const laguerre = (k: number, a: number, x: number): number => { if (k === 0) return 1; if (k === 1) return 1 + a - x; let p0 = 1, p1 = 1 + a - x; for (let j = 2; j <= k; j++) { const p2 = ((2 * j - 1 + a - x) * p1 - (j - 1 + a) * p0) / j; p0 = p1; p1 = p2; } return p1; };
+  const R = (n: number, l: number, r: number) => Math.pow(r, l) * Math.exp(-r / n) * laguerre(n - l - 1, 2 * l + 1, (2 * r) / n);
+  const cols = Math.min(orbitals.length, 3);
+  const rows = Math.ceil(orbitals.length / cols);
+  const T = 208; const W = cols * T + 20; const H = rows * (T + 26) + 16;
+  return <ScientificVisual title={`Dot-density pictures: ${orbitals.join(", ")}`} description={`Monte-Carlo style dot-density cross-sections of the ${orbitals.join(", ")} hydrogen orbitals computed from the exact radial functions. Bright inner rings appear where the probability density peaks; dark gaps between rings are the radial nodes. For p orbitals the density vanishes on the horizontal nodal plane, giving two lobes.`} viewBox={`0 0 ${W} ${H}`} className="h-auto w-full" style={{ filter: "none" }}>
+    {orbitals.map((name, oi) => {
+      const n = Number(name[0]); const l = name[1] === "s" ? 0 : 1;
+      const x0 = 10 + (oi % cols) * T; const y0 = 10 + Math.floor(oi / cols) * (T + 26);
+      const cx = x0 + T / 2 - 4; const cy = y0 + T / 2 - 4; const rad = T / 2 - 14;
+      const rMax = 4 * n + 3;
+      const grid = 300;
+      const w: number[] = []; let acc = 0;
+      for (let g = 0; g < grid; g++) { const r = ((g + 0.5) / grid) * rMax; const v = R(n, l, r); acc += r * r * v * v; w.push(acc); }
+      const dots: string[] = [];
+      for (let i = 0; i < 850; i++) {
+        const t = ((i + 0.5) / 850) * acc;
+        let lo = 0, hi = grid - 1;
+        while (lo < hi) { const mid = (lo + hi) >> 1; if (w[mid] < t) lo = mid + 1; else hi = mid; }
+        const r = (((lo + rnd(i * 3 + oi * 7717)) / grid) * rMax / rMax) * rad;
+        const u = rnd(i * 5 + oi * 131);
+        let px: number, py: number;
+        if (l === 0) { const a = i * 2.399963 + rnd(i * 7 + oi * 17); px = cx + r * Math.cos(a); py = cy + r * Math.sin(a); }
+        else { const c = Math.cbrt(2 * u - 1); const s = Math.sqrt(Math.max(0, 1 - c * c)); const phi = rnd(i * 11 + oi * 41) * Math.PI * 2; px = cx + r * s * Math.cos(phi); py = cy - r * c; }
+        dots.push(`M${px.toFixed(1)} ${py.toFixed(1)}h.01`);
+      }
+      return <g key={name}>
+        <rect x={x0} y={y0} width={T - 8} height={T - 8} fill="#000" stroke="#1e293b" strokeWidth="1" />
+        <path d={dots.join("")} stroke="#f8fafc" strokeWidth="1.7" strokeLinecap="round" opacity=".9" />
+        <rect x={x0 + 8} y={y0 + 8} width="34" height="20" rx="2" fill="#cbd5e1" /><text x={x0 + 25} y={y0 + 22} textAnchor="middle" fill="#0f172a" fontSize="13" fontWeight="700">{name.toUpperCase()}</text>
+      </g>;
+    })}
+    <text x="12" y={H - 2} fill="#94a3b8" fontSize="12">computed from exact hydrogen R(r); bright rings = density maxima, dark gaps = radial nodes (Born: |ψ|²)</text>
+  </ScientificVisual>;
+}

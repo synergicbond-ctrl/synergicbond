@@ -107,9 +107,9 @@ function GlossySystemUniverseGraphic() {
   return (
     <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 shadow-2xl shadow-cyan-950/30 md:p-5">
       <svg
-  viewBox="0 0 1200 680"
+  viewBox="0 0 1200 720"
   role="img"
-  aria-label="Thermodynamic system, boundary, surroundings, and possible transfers of matter, heat, and work"
+  aria-labelledby="glossy-thermo-title glossy-thermo-description"
   preserveAspectRatio="xMidYMid meet"
   className="h-auto w-full"
   style={{
@@ -117,54 +117,236 @@ function GlossySystemUniverseGraphic() {
       "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, sans-serif",
   }}
 >
-  <desc>
-    The system lies inside its boundary. The surroundings lie outside.
-    Matter can cross only for an open system, while heat and work may cross
-    depending on the process.
+  <title id="glossy-thermo-title">
+    Thermodynamic system, boundary and surroundings
+  </title>
+
+  <desc id="glossy-thermo-description">
+    A glossy scientific diagram showing a selected thermodynamic system,
+    its boundary and surroundings, with possible transfers of matter,
+    heat and work.
   </desc>
 
   <defs>
-    <linearGradient id="thermo-clean-bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stopColor="#07101f" />
-      <stop offset="100%" stopColor="#0d1830" />
+    <linearGradient id="gs-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stopColor="#030712" />
+      <stop offset="48%" stopColor="#08142a" />
+      <stop offset="100%" stopColor="#101a35" />
     </linearGradient>
 
-    <linearGradient id="thermo-clean-system" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stopColor="#123b55" />
-      <stop offset="100%" stopColor="#0d5264" />
+    <radialGradient id="gs-bg-glow" cx="50%" cy="38%" r="62%">
+      <stop offset="0%" stopColor="#155e75" stopOpacity="0.3" />
+      <stop offset="42%" stopColor="#0e7490" stopOpacity="0.09" />
+      <stop offset="100%" stopColor="#020617" stopOpacity="0" />
+    </radialGradient>
+
+    <linearGradient id="gs-frame" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stopColor="#67e8f9" stopOpacity="0.72" />
+      <stop offset="45%" stopColor="#334155" stopOpacity="0.28" />
+      <stop offset="100%" stopColor="#a78bfa" stopOpacity="0.52" />
     </linearGradient>
+
+    <linearGradient id="gs-system-fill" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stopColor="#164e63" stopOpacity="0.97" />
+      <stop offset="45%" stopColor="#0e7490" stopOpacity="0.88" />
+      <stop offset="100%" stopColor="#12365e" stopOpacity="0.97" />
+    </linearGradient>
+
+    <linearGradient id="gs-system-border" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stopColor="#cffafe" />
+      <stop offset="34%" stopColor="#22d3ee" />
+      <stop offset="72%" stopColor="#38bdf8" />
+      <stop offset="100%" stopColor="#a5f3fc" />
+    </linearGradient>
+
+    <linearGradient id="gs-system-shine" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stopColor="#ffffff" stopOpacity="0.34" />
+      <stop offset="45%" stopColor="#ffffff" stopOpacity="0.07" />
+      <stop offset="100%" stopColor="#ffffff" stopOpacity="0" />
+    </linearGradient>
+
+    <linearGradient id="gs-glass" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stopColor="#ffffff" stopOpacity="0.15" />
+      <stop offset="50%" stopColor="#ffffff" stopOpacity="0.055" />
+      <stop offset="100%" stopColor="#ffffff" stopOpacity="0.025" />
+    </linearGradient>
+
+    <linearGradient id="gs-matter-fill" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stopColor="#064e3b" stopOpacity="0.92" />
+      <stop offset="100%" stopColor="#0f2537" stopOpacity="0.96" />
+    </linearGradient>
+
+    <linearGradient id="gs-heat-fill" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stopColor="#713f12" stopOpacity="0.82" />
+      <stop offset="100%" stopColor="#241d18" stopOpacity="0.97" />
+    </linearGradient>
+
+    <linearGradient id="gs-work-fill" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stopColor="#4c1d95" stopOpacity="0.74" />
+      <stop offset="100%" stopColor="#211a39" stopOpacity="0.97" />
+    </linearGradient>
+
+    <linearGradient id="gs-open-fill" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stopColor="#065f46" stopOpacity="0.82" />
+      <stop offset="100%" stopColor="#102536" stopOpacity="0.96" />
+    </linearGradient>
+
+    <linearGradient id="gs-closed-fill" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stopColor="#854d0e" stopOpacity="0.7" />
+      <stop offset="100%" stopColor="#2b2418" stopOpacity="0.96" />
+    </linearGradient>
+
+    <linearGradient id="gs-isolated-fill" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stopColor="#5b21b6" stopOpacity="0.64" />
+      <stop offset="100%" stopColor="#26203d" stopOpacity="0.96" />
+    </linearGradient>
+
+    <linearGradient id="gs-matter-stroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stopColor="#6ee7b7" />
+      <stop offset="50%" stopColor="#34d399" />
+      <stop offset="100%" stopColor="#a7f3d0" />
+    </linearGradient>
+
+    <linearGradient id="gs-heat-stroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stopColor="#fde68a" />
+      <stop offset="50%" stopColor="#fbbf24" />
+      <stop offset="100%" stopColor="#fef3c7" />
+    </linearGradient>
+
+    <linearGradient id="gs-work-stroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stopColor="#ddd6fe" />
+      <stop offset="50%" stopColor="#a78bfa" />
+      <stop offset="100%" stopColor="#ede9fe" />
+    </linearGradient>
+
+    <filter
+      id="gs-panel-shadow"
+      x="-25%"
+      y="-30%"
+      width="150%"
+      height="170%"
+    >
+      <feDropShadow
+        dx="0"
+        dy="12"
+        stdDeviation="15"
+        floodColor="#020617"
+        floodOpacity="0.72"
+      />
+    </filter>
+
+    <filter
+      id="gs-cyan-glow"
+      x="-30%"
+      y="-35%"
+      width="160%"
+      height="170%"
+    >
+      <feDropShadow
+        dx="0"
+        dy="0"
+        stdDeviation="9"
+        floodColor="#22d3ee"
+        floodOpacity="0.48"
+      />
+      <feDropShadow
+        dx="0"
+        dy="9"
+        stdDeviation="14"
+        floodColor="#020617"
+        floodOpacity="0.65"
+      />
+    </filter>
+
+    <filter
+      id="gs-green-glow"
+      x="-40%"
+      y="-40%"
+      width="180%"
+      height="180%"
+    >
+      <feDropShadow
+        dx="0"
+        dy="0"
+        stdDeviation="7"
+        floodColor="#34d399"
+        floodOpacity="0.42"
+      />
+    </filter>
+
+    <filter
+      id="gs-amber-glow"
+      x="-40%"
+      y="-40%"
+      width="180%"
+      height="180%"
+    >
+      <feDropShadow
+        dx="0"
+        dy="0"
+        stdDeviation="7"
+        floodColor="#fbbf24"
+        floodOpacity="0.44"
+      />
+    </filter>
+
+    <filter
+      id="gs-violet-glow"
+      x="-40%"
+      y="-40%"
+      width="180%"
+      height="180%"
+    >
+      <feDropShadow
+        dx="0"
+        dy="0"
+        stdDeviation="7"
+        floodColor="#a78bfa"
+        floodOpacity="0.46"
+      />
+    </filter>
+
+    <filter
+      id="gs-soft-blur"
+      x="-40%"
+      y="-40%"
+      width="180%"
+      height="180%"
+    >
+      <feGaussianBlur stdDeviation="28" />
+    </filter>
 
     <marker
-      id="thermo-clean-green-arrow"
+      id="gs-matter-arrow"
       markerWidth="9"
       markerHeight="9"
       refX="7"
       refY="4.5"
       orient="auto-start-reverse"
     >
-      <path d="M0 0 L9 4.5 L0 9 Z" fill="#34d399" />
+      <path d="M0 0 L9 4.5 L0 9 Z" fill="#6ee7b7" />
     </marker>
 
     <marker
-      id="thermo-clean-amber-arrow"
+      id="gs-heat-arrow"
       markerWidth="9"
       markerHeight="9"
       refX="7"
       refY="4.5"
       orient="auto-start-reverse"
     >
-      <path d="M0 0 L9 4.5 L0 9 Z" fill="#fbbf24" />
+      <path d="M0 0 L9 4.5 L0 9 Z" fill="#fde68a" />
     </marker>
 
     <marker
-      id="thermo-clean-violet-arrow"
+      id="gs-work-arrow"
       markerWidth="9"
       markerHeight="9"
       refX="7"
       refY="4.5"
       orient="auto-start-reverse"
     >
-      <path d="M0 0 L9 4.5 L0 9 Z" fill="#a78bfa" />
+      <path d="M0 0 L9 4.5 L0 9 Z" fill="#ddd6fe" />
     </marker>
   </defs>
 
@@ -172,450 +354,963 @@ function GlossySystemUniverseGraphic() {
     x="8"
     y="8"
     width="1184"
-    height="664"
-    rx="28"
-    fill="url(#thermo-clean-bg)"
-    stroke="#24324b"
+    height="704"
+    rx="34"
+    fill="url(#gs-bg)"
+    stroke="url(#gs-frame)"
     strokeWidth="2"
+  />
+
+  <rect
+    x="16"
+    y="16"
+    width="1168"
+    height="688"
+    rx="29"
+    fill="none"
+    stroke="#ffffff"
+    strokeOpacity="0.055"
+    strokeWidth="1"
+  />
+
+  <ellipse
+    cx="600"
+    cy="276"
+    rx="405"
+    ry="270"
+    fill="#0891b2"
+    fillOpacity="0.13"
+    filter="url(#gs-soft-blur)"
+  />
+
+  <ellipse
+    cx="930"
+    cy="260"
+    rx="210"
+    ry="175"
+    fill="#7c3aed"
+    fillOpacity="0.07"
+    filter="url(#gs-soft-blur)"
   />
 
   <text
     x="600"
-    y="48"
+    y="51"
     textAnchor="middle"
     fill="#f8fafc"
     fontSize="29"
-    fontWeight="800"
+    fontWeight="850"
+    letterSpacing="0.5"
   >
     THERMODYNAMIC SYSTEM AND SURROUNDINGS
   </text>
 
   <text
     x="600"
-    y="77"
+    y="79"
     textAnchor="middle"
-    fill="#94a3b8"
-    fontSize="16"
-    fontWeight="500"
+    fill="#9fb2cb"
+    fontSize="15"
+    fontWeight="550"
   >
-    Transfers are defined relative to the selected system
+    Matter and energy transfers are defined relative to the selected system
+  </text>
+
+  <rect
+    x="312"
+    y="124"
+    width="576"
+    height="330"
+    rx="52"
+    fill="#061225"
+    fillOpacity="0.54"
+    stroke="#8190aa"
+    strokeOpacity="0.72"
+    strokeWidth="2.5"
+    strokeDasharray="11 10"
+  />
+
+  <rect
+    x="502"
+    y="103"
+    width="196"
+    height="43"
+    rx="21.5"
+    fill="#14223d"
+    fillOpacity="0.95"
+    stroke="#94a3b8"
+    strokeOpacity="0.78"
+    strokeWidth="2"
+    filter="url(#gs-panel-shadow)"
+  />
+
+  <path
+    d="M521 110 H679"
+    stroke="#ffffff"
+    strokeOpacity="0.2"
+    strokeWidth="2"
+    strokeLinecap="round"
+  />
+
+  <text
+    x="600"
+    y="131"
+    textAnchor="middle"
+    fill="#e2e8f0"
+    fontSize="16"
+    fontWeight="850"
+    letterSpacing="1.8"
+  >
+    BOUNDARY
   </text>
 
   <text
-    x="48"
-    y="126"
-    fill="#a9b9d2"
-    fontSize="18"
+    x="344"
+    y="163"
+    fill="#9eafc8"
+    fontSize="15"
     fontWeight="800"
-    letterSpacing="1.5"
+    letterSpacing="1.45"
   >
     SURROUNDINGS
   </text>
 
   <text
-    x="48"
-    y="152"
+    x="855"
+    y="163"
+    textAnchor="end"
     fill="#7184a3"
-    fontSize="14"
+    fontSize="13.5"
     fontWeight="600"
   >
-    everything outside the system boundary
+    everything outside the boundary
   </text>
 
   <rect
-    x="364"
-    y="132"
-    width="472"
-    height="280"
-    rx="42"
-    fill="#0a1426"
-    stroke="#71809a"
-    strokeWidth="3"
-    strokeDasharray="11 9"
+    x="367"
+    y="181"
+    width="466"
+    height="226"
+    rx="48"
+    fill="url(#gs-system-fill)"
+    stroke="url(#gs-system-border)"
+    strokeWidth="4"
+    filter="url(#gs-cyan-glow)"
   />
 
   <rect
-    x="500"
-    y="111"
-    width="200"
-    height="42"
-    rx="21"
-    fill="#152139"
-    stroke="#71809a"
-    strokeWidth="2"
+    x="375"
+    y="189"
+    width="450"
+    height="210"
+    rx="41"
+    fill="url(#gs-glass)"
+    stroke="#ffffff"
+    strokeOpacity="0.09"
+    strokeWidth="1.5"
+  />
+
+  <path
+    d="M400 218
+       C470 179 713 178 800 218
+       L800 267
+       C716 228 485 228 400 270 Z"
+    fill="url(#gs-system-shine)"
+    opacity="0.65"
+  />
+
+  <ellipse
+    cx="510"
+    cy="225"
+    rx="95"
+    ry="34"
+    fill="#ffffff"
+    fillOpacity="0.055"
+    transform="rotate(-8 510 225)"
+  />
+
+  <circle
+    cx="425"
+    cy="213"
+    r="5"
+    fill="#ffffff"
+    fillOpacity="0.62"
+  />
+
+  <circle
+    cx="441"
+    cy="207"
+    r="2.5"
+    fill="#ffffff"
+    fillOpacity="0.34"
   />
 
   <text
     x="600"
-    y="139"
-    textAnchor="middle"
-    fill="#d7e0ee"
-    fontSize="16"
-    fontWeight="800"
-    letterSpacing="1.5"
-  >
-    BOUNDARY
-  </text>
-
-  <rect
-    x="405"
-    y="174"
-    width="390"
-    height="196"
-    rx="32"
-    fill="url(#thermo-clean-system)"
-    stroke="#67e8f9"
-    strokeWidth="3"
-  />
-
-  <text
-    x="600"
-    y="228"
+    y="267"
     textAnchor="middle"
     fill="#ffffff"
-    fontSize="34"
+    fontSize="36"
     fontWeight="900"
+    letterSpacing="0.8"
   >
     SYSTEM
   </text>
 
   <text
     x="600"
-    y="263"
+    y="305"
     textAnchor="middle"
-    fill="#d9f8fc"
+    fill="#ddfbff"
     fontSize="20"
-    fontWeight="700"
+    fontWeight="750"
   >
     selected matter or region under study
   </text>
 
   <line
-    x1="476"
-    y1="292"
-    x2="724"
-    y2="292"
-    stroke="#69d4e4"
-    strokeOpacity="0.6"
+    x1="472"
+    y1="330"
+    x2="728"
+    y2="330"
+    stroke="#9ff3ff"
+    strokeOpacity="0.43"
     strokeWidth="2"
   />
 
   <text
     x="600"
-    y="324"
+    y="359"
     textAnchor="middle"
-    fill="#c2e8ef"
-    fontSize="16"
+    fill="#c7edf4"
+    fontSize="14.5"
     fontWeight="600"
   >
-    described by state variables such as P, V, T and n
+    characterised by state variables
   </text>
 
-  <rect
-    x="38"
-    y="204"
-    width="230"
-    height="118"
-    rx="22"
-    fill="#102638"
-    stroke="#34d399"
-    strokeWidth="2.5"
+  <g>
+    <rect
+      x="472"
+      y="371"
+      width="52"
+      height="25"
+      rx="12.5"
+      fill="#031b2b"
+      fillOpacity="0.72"
+      stroke="#67e8f9"
+      strokeOpacity="0.72"
+      strokeWidth="1.4"
+    />
+    <text
+      x="498"
+      y="389"
+      textAnchor="middle"
+      fill="#ecfeff"
+      fontSize="14"
+      fontWeight="850"
+    >
+      P
+    </text>
+
+    <rect
+      x="540"
+      y="371"
+      width="52"
+      height="25"
+      rx="12.5"
+      fill="#031b2b"
+      fillOpacity="0.72"
+      stroke="#67e8f9"
+      strokeOpacity="0.72"
+      strokeWidth="1.4"
+    />
+    <text
+      x="566"
+      y="389"
+      textAnchor="middle"
+      fill="#ecfeff"
+      fontSize="14"
+      fontWeight="850"
+    >
+      V
+    </text>
+
+    <rect
+      x="608"
+      y="371"
+      width="52"
+      height="25"
+      rx="12.5"
+      fill="#031b2b"
+      fillOpacity="0.72"
+      stroke="#67e8f9"
+      strokeOpacity="0.72"
+      strokeWidth="1.4"
+    />
+    <text
+      x="634"
+      y="389"
+      textAnchor="middle"
+      fill="#ecfeff"
+      fontSize="14"
+      fontWeight="850"
+    >
+      T
+    </text>
+
+    <rect
+      x="676"
+      y="371"
+      width="52"
+      height="25"
+      rx="12.5"
+      fill="#031b2b"
+      fillOpacity="0.72"
+      stroke="#67e8f9"
+      strokeOpacity="0.72"
+      strokeWidth="1.4"
+    />
+    <text
+      x="702"
+      y="389"
+      textAnchor="middle"
+      fill="#ecfeff"
+      fontSize="14"
+      fontWeight="850"
+    >
+      n
+    </text>
+  </g>
+
+  <g filter="url(#gs-panel-shadow)">
+    <rect
+      x="39"
+      y="196"
+      width="235"
+      height="154"
+      rx="28"
+      fill="url(#gs-matter-fill)"
+      stroke="#34d399"
+      strokeWidth="2.8"
+    />
+
+    <rect
+      x="47"
+      y="204"
+      width="219"
+      height="138"
+      rx="21"
+      fill="url(#gs-glass)"
+      stroke="#ffffff"
+      strokeOpacity="0.075"
+    />
+
+    <path
+      d="M63 216 H250"
+      stroke="#ffffff"
+      strokeOpacity="0.2"
+      strokeWidth="2.2"
+      strokeLinecap="round"
+    />
+
+    <circle
+      cx="88"
+      cy="246"
+      r="13"
+      fill="#34d399"
+      fillOpacity="0.21"
+      stroke="#6ee7b7"
+      strokeWidth="1.6"
+    />
+
+    <circle
+      cx="107"
+      cy="235"
+      r="8"
+      fill="#34d399"
+      fillOpacity="0.29"
+      stroke="#a7f3d0"
+      strokeWidth="1.4"
+    />
+
+    <circle
+      cx="111"
+      cy="258"
+      r="6"
+      fill="#34d399"
+      fillOpacity="0.38"
+      stroke="#d1fae5"
+      strokeWidth="1.2"
+    />
+
+    <line
+      x1="98"
+      y1="241"
+      x2="102"
+      y2="239"
+      stroke="#a7f3d0"
+      strokeWidth="2"
+    />
+
+    <line
+      x1="97"
+      y1="252"
+      x2="105"
+      y2="256"
+      stroke="#a7f3d0"
+      strokeWidth="2"
+    />
+
+    <text
+      x="174"
+      y="248"
+      textAnchor="middle"
+      fill="#8df2c7"
+      fontSize="22"
+      fontWeight="900"
+    >
+      MATTER
+    </text>
+
+    <text
+      x="156.5"
+      y="282"
+      textAnchor="middle"
+      fill="#e0fff1"
+      fontSize="14.5"
+      fontWeight="650"
+    >
+      mass may enter or leave
+    </text>
+
+    <rect
+      x="83"
+      y="302"
+      width="147"
+      height="29"
+      rx="14.5"
+      fill="#052e2b"
+      fillOpacity="0.82"
+      stroke="#34d399"
+      strokeOpacity="0.36"
+    />
+
+    <text
+      x="156.5"
+      y="322"
+      textAnchor="middle"
+      fill="#9ff3cd"
+      fontSize="12.5"
+      fontWeight="850"
+      letterSpacing="0.6"
+    >
+      OPEN SYSTEMS
+    </text>
+  </g>
+
+  <path
+    d="M286 272 C312 272 329 272 353 272"
+    fill="none"
+    stroke="url(#gs-matter-stroke)"
+    strokeWidth="5"
+    strokeLinecap="round"
+    markerStart="url(#gs-matter-arrow)"
+    markerEnd="url(#gs-matter-arrow)"
+    filter="url(#gs-green-glow)"
+  />
+
+  <g filter="url(#gs-panel-shadow)">
+    <rect
+      x="926"
+      y="164"
+      width="235"
+      height="132"
+      rx="28"
+      fill="url(#gs-heat-fill)"
+      stroke="#fbbf24"
+      strokeWidth="2.8"
+    />
+
+    <rect
+      x="934"
+      y="172"
+      width="219"
+      height="116"
+      rx="21"
+      fill="url(#gs-glass)"
+      stroke="#ffffff"
+      strokeOpacity="0.075"
+    />
+
+    <path
+      d="M950 184 H1137"
+      stroke="#ffffff"
+      strokeOpacity="0.2"
+      strokeWidth="2.2"
+      strokeLinecap="round"
+    />
+
+    <path
+      d="M966 231
+         C976 217 986 245 996 231
+         C1006 217 1016 245 1026 231"
+      fill="none"
+      stroke="#fde68a"
+      strokeWidth="3"
+      strokeLinecap="round"
+    />
+
+    <text
+      x="1080"
+      y="222"
+      textAnchor="middle"
+      fill="#fde68a"
+      fontSize="22"
+      fontWeight="900"
+    >
+      HEAT, Q
+    </text>
+
+    <text
+      x="1043.5"
+      y="256"
+      textAnchor="middle"
+      fill="#fff7d6"
+      fontSize="14.5"
+      fontWeight="650"
+    >
+      may enter or leave
+    </text>
+
+    <rect
+      x="985"
+      y="265"
+      width="117"
+      height="24"
+      rx="12"
+      fill="#4b3607"
+      fillOpacity="0.76"
+    />
+
+    <text
+      x="1043.5"
+      y="282"
+      textAnchor="middle"
+      fill="#fde68a"
+      fontSize="11.5"
+      fontWeight="850"
+    >
+      ENERGY TRANSFER
+    </text>
+  </g>
+
+  <path
+    d="M846 229 C872 229 889 229 913 229"
+    fill="none"
+    stroke="url(#gs-heat-stroke)"
+    strokeWidth="5"
+    strokeLinecap="round"
+    markerStart="url(#gs-heat-arrow)"
+    markerEnd="url(#gs-heat-arrow)"
+    filter="url(#gs-amber-glow)"
+  />
+
+  <g filter="url(#gs-panel-shadow)">
+    <rect
+      x="926"
+      y="325"
+      width="235"
+      height="132"
+      rx="28"
+      fill="url(#gs-work-fill)"
+      stroke="#a78bfa"
+      strokeWidth="2.8"
+    />
+
+    <rect
+      x="934"
+      y="333"
+      width="219"
+      height="116"
+      rx="21"
+      fill="url(#gs-glass)"
+      stroke="#ffffff"
+      strokeOpacity="0.075"
+    />
+
+    <path
+      d="M950 345 H1137"
+      stroke="#ffffff"
+      strokeOpacity="0.2"
+      strokeWidth="2.2"
+      strokeLinecap="round"
+    />
+
+    <rect
+      x="966"
+      y="381"
+      width="48"
+      height="20"
+      rx="5"
+      fill="#a78bfa"
+      fillOpacity="0.21"
+      stroke="#ddd6fe"
+      strokeWidth="1.5"
+    />
+
+    <line
+      x1="990"
+      y1="367"
+      x2="990"
+      y2="381"
+      stroke="#ddd6fe"
+      strokeWidth="3"
+      strokeLinecap="round"
+    />
+
+    <text
+      x="1080"
+      y="383"
+      textAnchor="middle"
+      fill="#ddd6fe"
+      fontSize="22"
+      fontWeight="900"
+    >
+      WORK, W
+    </text>
+
+    <text
+      x="1043.5"
+      y="417"
+      textAnchor="middle"
+      fill="#f3efff"
+      fontSize="14.5"
+      fontWeight="650"
+    >
+      may enter or leave
+    </text>
+
+    <rect
+      x="985"
+      y="426"
+      width="117"
+      height="24"
+      rx="12"
+      fill="#3b2362"
+      fillOpacity="0.77"
+    />
+
+    <text
+      x="1043.5"
+      y="443"
+      textAnchor="middle"
+      fill="#ddd6fe"
+      fontSize="11.5"
+      fontWeight="850"
+    >
+      ENERGY TRANSFER
+    </text>
+  </g>
+
+  <path
+    d="M846 389 C872 389 889 389 913 389"
+    fill="none"
+    stroke="url(#gs-work-stroke)"
+    strokeWidth="5"
+    strokeLinecap="round"
+    markerStart="url(#gs-work-arrow)"
+    markerEnd="url(#gs-work-arrow)"
+    filter="url(#gs-violet-glow)"
   />
 
   <text
-    x="153"
-    y="242"
+    x="600"
+    y="480"
     textAnchor="middle"
-    fill="#6ee7b7"
-    fontSize="22"
-    fontWeight="900"
-  >
-    MATTER
-  </text>
-
-  <text
-    x="153"
-    y="270"
-    textAnchor="middle"
-    fill="#d8fbea"
-    fontSize="15"
-    fontWeight="650"
-  >
-    crosses only in an open system
-  </text>
-
-  <text
-    x="153"
-    y="298"
-    textAnchor="middle"
-    fill="#94eac3"
+    fill="#91a4bf"
     fontSize="14"
-    fontWeight="800"
+    fontWeight="650"
   >
-    MASS TRANSFER
+    Permitted boundary transfers define the type of thermodynamic system
   </text>
+
+  <g filter="url(#gs-panel-shadow)">
+    <rect
+      x="39"
+      y="509"
+      width="348"
+      height="119"
+      rx="27"
+      fill="url(#gs-open-fill)"
+      stroke="#34d399"
+      strokeWidth="2.5"
+    />
+
+    <rect
+      x="47"
+      y="517"
+      width="332"
+      height="103"
+      rx="20"
+      fill="url(#gs-glass)"
+      stroke="#ffffff"
+      strokeOpacity="0.065"
+    />
+
+    <path
+      d="M64 529 H362"
+      stroke="#ffffff"
+      strokeOpacity="0.18"
+      strokeWidth="2"
+      strokeLinecap="round"
+    />
+
+    <circle
+      cx="89"
+      cy="557"
+      r="15"
+      fill="#34d399"
+      fillOpacity="0.18"
+      stroke="#6ee7b7"
+      strokeWidth="1.5"
+    />
+
+    <text
+      x="89"
+      y="563"
+      textAnchor="middle"
+      fill="#b7f7d7"
+      fontSize="16"
+      fontWeight="900"
+    >
+      O
+    </text>
+
+    <text
+      x="225"
+      y="558"
+      textAnchor="middle"
+      fill="#8df2c7"
+      fontSize="20"
+      fontWeight="900"
+    >
+      OPEN SYSTEM
+    </text>
+
+    <text
+      x="213"
+      y="587"
+      textAnchor="middle"
+      fill="#e0fff1"
+      fontSize="14"
+      fontWeight="650"
+    >
+      matter and energy may cross
+    </text>
+
+    <text
+      x="213"
+      y="612"
+      textAnchor="middle"
+      fill="#9ff3cd"
+      fontSize="12.5"
+      fontWeight="850"
+    >
+      MATTER  •  HEAT  •  WORK
+    </text>
+  </g>
+
+  <g filter="url(#gs-panel-shadow)">
+    <rect
+      x="426"
+      y="509"
+      width="348"
+      height="119"
+      rx="27"
+      fill="url(#gs-closed-fill)"
+      stroke="#fbbf24"
+      strokeWidth="2.5"
+    />
+
+    <rect
+      x="434"
+      y="517"
+      width="332"
+      height="103"
+      rx="20"
+      fill="url(#gs-glass)"
+      stroke="#ffffff"
+      strokeOpacity="0.065"
+    />
+
+    <path
+      d="M451 529 H749"
+      stroke="#ffffff"
+      strokeOpacity="0.18"
+      strokeWidth="2"
+      strokeLinecap="round"
+    />
+
+    <circle
+      cx="476"
+      cy="557"
+      r="15"
+      fill="#fbbf24"
+      fillOpacity="0.17"
+      stroke="#fde68a"
+      strokeWidth="1.5"
+    />
+
+    <text
+      x="476"
+      y="563"
+      textAnchor="middle"
+      fill="#fff2aa"
+      fontSize="16"
+      fontWeight="900"
+    >
+      C
+    </text>
+
+    <text
+      x="612"
+      y="558"
+      textAnchor="middle"
+      fill="#fde68a"
+      fontSize="20"
+      fontWeight="900"
+    >
+      CLOSED SYSTEM
+    </text>
+
+    <text
+      x="600"
+      y="587"
+      textAnchor="middle"
+      fill="#fff7d6"
+      fontSize="14"
+      fontWeight="650"
+    >
+      energy may cross; matter cannot
+    </text>
+
+    <text
+      x="600"
+      y="612"
+      textAnchor="middle"
+      fill="#fde68a"
+      fontSize="12.5"
+      fontWeight="850"
+    >
+      HEAT  •  WORK
+    </text>
+  </g>
+
+  <g filter="url(#gs-panel-shadow)">
+    <rect
+      x="813"
+      y="509"
+      width="348"
+      height="119"
+      rx="27"
+      fill="url(#gs-isolated-fill)"
+      stroke="#a78bfa"
+      strokeWidth="2.5"
+    />
+
+    <rect
+      x="821"
+      y="517"
+      width="332"
+      height="103"
+      rx="20"
+      fill="url(#gs-glass)"
+      stroke="#ffffff"
+      strokeOpacity="0.065"
+    />
+
+    <path
+      d="M838 529 H1136"
+      stroke="#ffffff"
+      strokeOpacity="0.18"
+      strokeWidth="2"
+      strokeLinecap="round"
+    />
+
+    <circle
+      cx="863"
+      cy="557"
+      r="15"
+      fill="#a78bfa"
+      fillOpacity="0.18"
+      stroke="#ddd6fe"
+      strokeWidth="1.5"
+    />
+
+    <text
+      x="863"
+      y="563"
+      textAnchor="middle"
+      fill="#eee9ff"
+      fontSize="16"
+      fontWeight="900"
+    >
+      I
+    </text>
+
+    <text
+      x="999"
+      y="558"
+      textAnchor="middle"
+      fill="#ddd6fe"
+      fontSize="20"
+      fontWeight="900"
+    >
+      ISOLATED SYSTEM
+    </text>
+
+    <text
+      x="987"
+      y="587"
+      textAnchor="middle"
+      fill="#f3efff"
+      fontSize="14"
+      fontWeight="650"
+    >
+      neither matter nor energy crosses
+    </text>
+
+    <text
+      x="987"
+      y="612"
+      textAnchor="middle"
+      fill="#cfc3ff"
+      fontSize="12.5"
+      fontWeight="850"
+    >
+      NO TRANSFER
+    </text>
+  </g>
 
   <line
-    x1="278"
-    y1="263"
-    x2="394"
-    y2="263"
-    stroke="#34d399"
-    strokeWidth="5"
-    strokeLinecap="round"
-    markerStart="url(#thermo-clean-green-arrow)"
-    markerEnd="url(#thermo-clean-green-arrow)"
-  />
-
-  <rect
-    x="932"
-    y="180"
-    width="230"
-    height="104"
-    rx="22"
-    fill="#302912"
-    stroke="#fbbf24"
-    strokeWidth="2.5"
-  />
-
-  <text
-    x="1047"
-    y="218"
-    textAnchor="middle"
-    fill="#fde68a"
-    fontSize="22"
-    fontWeight="900"
-  >
-    HEAT, Q
-  </text>
-
-  <text
-    x="1047"
-    y="249"
-    textAnchor="middle"
-    fill="#fff3c7"
-    fontSize="15"
-    fontWeight="650"
-  >
-    may enter or leave
-  </text>
-
-  <line
-    x1="806"
-    y1="232"
-    x2="922"
-    y2="232"
-    stroke="#fbbf24"
-    strokeWidth="5"
-    strokeLinecap="round"
-    markerStart="url(#thermo-clean-amber-arrow)"
-    markerEnd="url(#thermo-clean-amber-arrow)"
-  />
-
-  <rect
-    x="932"
-    y="306"
-    width="230"
-    height="104"
-    rx="22"
-    fill="#29203f"
-    stroke="#a78bfa"
-    strokeWidth="2.5"
-  />
-
-  <text
-    x="1047"
-    y="344"
-    textAnchor="middle"
-    fill="#ddd3ff"
-    fontSize="22"
-    fontWeight="900"
-  >
-    WORK, W
-  </text>
-
-  <text
-    x="1047"
-    y="375"
-    textAnchor="middle"
-    fill="#efeaff"
-    fontSize="15"
-    fontWeight="650"
-  >
-    may enter or leave
-  </text>
-
-  <line
-    x1="806"
-    y1="358"
-    x2="922"
-    y2="358"
-    stroke="#a78bfa"
-    strokeWidth="5"
-    strokeLinecap="round"
-    markerStart="url(#thermo-clean-violet-arrow)"
-    markerEnd="url(#thermo-clean-violet-arrow)"
+    x1="314"
+    y1="662"
+    x2="886"
+    y2="662"
+    stroke="#334155"
+    strokeOpacity="0.72"
+    strokeWidth="1.5"
   />
 
   <text
     x="600"
-    y="438"
-    textAnchor="middle"
-    fill="#8799b5"
-    fontSize="15"
-    fontWeight="650"
-  >
-    The permitted transfers determine whether the system is open, closed or isolated
-  </text>
-
-  <rect
-    x="38"
-    y="468"
-    width="350"
-    height="118"
-    rx="22"
-    fill="#0f292d"
-    stroke="#34d399"
-    strokeWidth="2.5"
-  />
-
-  <text
-    x="213"
-    y="507"
-    textAnchor="middle"
-    fill="#6ee7b7"
-    fontSize="21"
-    fontWeight="900"
-  >
-    OPEN SYSTEM
-  </text>
-
-  <text
-    x="213"
-    y="540"
-    textAnchor="middle"
-    fill="#dcfbea"
-    fontSize="15"
-    fontWeight="650"
-  >
-    matter and energy may cross
-  </text>
-
-  <text
-    x="213"
-    y="567"
-    textAnchor="middle"
-    fill="#8de6bd"
-    fontSize="13"
-    fontWeight="800"
-  >
-    matter • heat • work
-  </text>
-
-  <rect
-    x="425"
-    y="468"
-    width="350"
-    height="118"
-    rx="22"
-    fill="#302a15"
-    stroke="#fbbf24"
-    strokeWidth="2.5"
-  />
-
-  <text
-    x="600"
-    y="507"
-    textAnchor="middle"
-    fill="#fde68a"
-    fontSize="21"
-    fontWeight="900"
-  >
-    CLOSED SYSTEM
-  </text>
-
-  <text
-    x="600"
-    y="540"
-    textAnchor="middle"
-    fill="#fff4ca"
-    fontSize="15"
-    fontWeight="650"
-  >
-    energy may cross; matter cannot
-  </text>
-
-  <text
-    x="600"
-    y="567"
-    textAnchor="middle"
-    fill="#f5d66a"
-    fontSize="13"
-    fontWeight="800"
-  >
-    heat • work
-  </text>
-
-  <rect
-    x="812"
-    y="468"
-    width="350"
-    height="118"
-    rx="22"
-    fill="#29223c"
-    stroke="#a78bfa"
-    strokeWidth="2.5"
-  />
-
-  <text
-    x="987"
-    y="507"
-    textAnchor="middle"
-    fill="#ddd3ff"
-    fontSize="21"
-    fontWeight="900"
-  >
-    ISOLATED SYSTEM
-  </text>
-
-  <text
-    x="987"
-    y="540"
-    textAnchor="middle"
-    fill="#efeaff"
-    fontSize="15"
-    fontWeight="650"
-  >
-    neither matter nor energy crosses
-  </text>
-
-  <text
-    x="987"
-    y="567"
-    textAnchor="middle"
-    fill="#c6b8f4"
-    fontSize="13"
-    fontWeight="800"
-  >
-    no transfer
-  </text>
-
-  <line
-    x1="310"
-    y1="616"
-    x2="890"
-    y2="616"
-    stroke="#263650"
-    strokeWidth="2"
-  />
-
-  <text
-    x="600"
-    y="648"
+    y="692"
     textAnchor="middle"
     fill="#f8fafc"
     fontSize="25"
     fontWeight="900"
+    letterSpacing="0.45"
   >
     UNIVERSE = SYSTEM + SURROUNDINGS
   </text>

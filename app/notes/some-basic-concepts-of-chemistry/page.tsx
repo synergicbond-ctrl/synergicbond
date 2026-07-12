@@ -153,7 +153,7 @@ function AccuracyDartboard({ type }: { type: "accurate-precise" | "precise-not-a
 // QUESTION DATABASE (45 NCERT + 5 CONCEPT CHECKS = 50 QUESTIONS)
 // ============================================================================
 
-export const ALL_QUESTIONS: ProblemData[] = [
+const ALL_QUESTIONS: ProblemData[] = [
   // --- CONCEPT CHECKS (CUSTOM) ---
   {
     id: "CQ1", qNumber: "C1", section: "foundations", type: "Concept Check",

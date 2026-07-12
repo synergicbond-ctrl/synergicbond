@@ -4,7 +4,7 @@ export const dynamic = "force-dynamic";
 import { NextResponse } from "next/server";
 import { createClient } from "@/lib/supabase/server";
 
-export const BADGES = [
+const BADGES = [
   { id: "first_quiz", name: "Quiz Starter", icon: "🧪", description: "Complete your first quiz", xpRequired: 0, condition: "quiz_count >= 1" },
   { id: "mole_master", name: "Mole Master", icon: "⚗️", description: "Score 100% on Mole Concept", xpRequired: 100, condition: "topic_perfect:mole-concept" },
   { id: "organic_genius", name: "Organic Genius", icon: "🔬", description: "Complete 10 Organic Chemistry quizzes", xpRequired: 200, condition: "quiz_count >= 10" },
@@ -22,7 +22,7 @@ export const BADGES = [
   { id: "top_10", name: "Top 10", icon: "🥇", description: "Reach top 10 on leaderboard", xpRequired: 500, condition: "rank <= 10" },
 ];
 
-export const LEVELS = [
+const LEVELS = [
   { level: 1, name: "Atom", minXP: 0, maxXP: 99, color: "#6B7280" },
   { level: 2, name: "Ion", minXP: 100, maxXP: 249, color: "#3B82F6" },
   { level: 3, name: "Molecule", minXP: 250, maxXP: 499, color: "#10B981" },
@@ -35,11 +35,11 @@ export const LEVELS = [
   { level: 10, name: "Nobel Laureate", minXP: 32000, maxXP: Infinity, color: "#FFD700" },
 ];
 
-export function getLevelInfo(xp: number) {
+function getLevelInfo(xp: number) {
   return LEVELS.find(l => xp >= l.minXP && xp <= l.maxXP) || LEVELS[0];
 }
 
-export function getEarnedBadges(xp: number, streak: number) {
+function getEarnedBadges(xp: number, streak: number) {
   const earned: typeof BADGES = [];
   if (xp >= 0) earned.push(BADGES[0]); // first_quiz always
   if (streak >= 3) earned.push(BADGES.find(b => b.id === "streak_3")!);

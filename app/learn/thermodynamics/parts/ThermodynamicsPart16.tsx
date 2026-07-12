@@ -196,7 +196,7 @@ function ReversiblePathAnimation() {
         </defs>
 
         <rect width="1200" height="720" rx="34" fill="#020617" />
-        <text x="600" y="55" fill="#f8fafc" fontSize="31" fontWeight="900" textAnchor="middle">
+        <text x="600" y="55" fill="#f8fafc" fontSize="23" fontWeight="900" textAnchor="middle">
           ACTUAL PATH MAY BE IRREVERSIBLE • ENTROPY REMAINS AN ENDPOINT PROPERTY
         </text>
 
@@ -258,7 +258,7 @@ function EnergyDispersalAnimation() {
         </desc>
 
         <rect width="1200" height="760" rx="34" fill="#020617" />
-        <text x="600" y="55" fill="#f8fafc" fontSize="31" fontWeight="900" textAnchor="middle">
+        <text x="600" y="55" fill="#f8fafc" fontSize="23" fontWeight="900" textAnchor="middle">
           ENTROPY TRACKS ENERGY DISPERSAL AND ACCESSIBLE MICROSCOPIC ARRANGEMENTS
         </text>
 

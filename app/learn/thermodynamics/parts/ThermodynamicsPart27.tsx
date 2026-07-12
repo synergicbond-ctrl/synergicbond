@@ -113,7 +113,7 @@ function MuVsMoleFracSVG() {
         <text x="600" y="46" fill="#f8fafc" fontSize="24" fontWeight="900" textAnchor="middle">MIXING LOWERS CHEMICAL POTENTIAL: μ_i = μ_i(pure) + RT ln y_i</text>
         <line x1="150" y1="400" x2="1100" y2="400" stroke="#e2e8f0" strokeWidth="4" markerEnd="url(#p27yxArrow)" />
         <line x1="150" y1="400" x2="150" y2="80" stroke="#e2e8f0" strokeWidth="4" markerEnd="url(#p27yxArrow)" />
-        <text x="1115" y="414" fill="#e2e8f0" fontSize="18">y_i →</text>
+        <text x="1085" y="414" fill="#e2e8f0" fontSize="18" textAnchor="end">y_i →</text>
         <text x="122" y="68" fill="#e2e8f0" fontSize="18">μ_i</text>
         {/* Label y=0 and y=1 on axis */}
         <text x="150" y="430" fill="#94a3b8" fontSize="15" textAnchor="middle">0</text>
@@ -122,8 +122,8 @@ function MuVsMoleFracSVG() {
         <path d="M240 400 C270 370 320 310 420 250 C520 195 650 165 780 145 C880 130 980 118 1080 110"
           fill="none" stroke="#a78bfa" strokeWidth="5" />
         <circle cx="1080" cy="110" r="12" fill="#a78bfa" />
-        <text x="1090" y="100" fill="#c4b5fd" fontSize="15" fontWeight="900">y_i = 1 (pure)</text>
-        <text x="1090" y="118" fill="#c4b5fd" fontSize="13">μ = μ°_i + RT ln(P/P°)</text>
+        <text x="1060" y="100" fill="#c4b5fd" fontSize="15" fontWeight="900" textAnchor="end">y_i = 1 (pure)</text>
+        <text x="1060" y="118" fill="#c4b5fd" fontSize="13" textAnchor="end">μ = μ°_i + RT ln(P/P°)</text>
         {/* Asymptote arrow at y→0 */}
         <path d="M240 395 L200 400" stroke="#fb7185" strokeWidth="4" />
         <text x="155" y="370" fill="#fda4af" fontSize="14" fontWeight="900">μ → −∞</text>

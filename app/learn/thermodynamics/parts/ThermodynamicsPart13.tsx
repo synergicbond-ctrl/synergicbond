@@ -254,8 +254,8 @@ function StabilityLandscapeAnimation() {
 
         <line x1="125" y1="615" x2="1090" y2="615" stroke="#e2e8f0" strokeWidth="5" />
         <line x1="125" y1="615" x2="125" y2="95" stroke="#e2e8f0" strokeWidth="5" />
-        <text x="1115" y="627" fill="#e2e8f0" fontSize="24">reaction coordinate</text>
-        <text x="85" y="88" fill="#e2e8f0" fontSize="24">energy</text>
+        <text x="1080" y="627" fill="#e2e8f0" fontSize="24" textAnchor="end">reaction coordinate</text>
+        <text x="105" y="88" fill="#e2e8f0" fontSize="24" textAnchor="end">energy</text>
 
         <path
           id="energyPath"

@@ -82,7 +82,7 @@ function GvsTSVG() {
 
         {/* Gas line: steepest slope */}
         <path d="M400 560 L1090 90" fill="none" stroke="#fb7185" strokeWidth="5" strokeDasharray="20 10" />
-        <text x="950" y="100" fill="#fda4af" fontSize="18" fontWeight="900">gas (slope = −S_gas, most negative)</text>
+        <text x="1110" y="100" fill="#fda4af" fontSize="18" fontWeight="900" textAnchor="end">gas (slope = −S_gas, most negative)</text>
 
         {/* Intersection 1: melting point Tm */}
         <circle cx="600" cy="338" r="14" fill="#fbbf24" />
@@ -141,8 +141,8 @@ function GvsPSVG() {
 
         {/* Gas: logarithmic rise */}
         <path d="M200 420 C280 370 380 280 500 220 C640 155 780 120 1080 95" fill="none" stroke="#fb7185" strokeWidth="5" />
-        <text x="1000" y="85" fill="#fda4af" fontSize="17" fontWeight="900">gas: G_m = G°_m + RTln(P/P°)</text>
-        <text x="1000" y="108" fill="#fda4af" fontSize="14">steep at low P</text>
+        <text x="1090" y="85" fill="#fda4af" fontSize="17" fontWeight="900" textAnchor="end">gas: G_m = G°_m + RTln(P/P°)</text>
+        <text x="1090" y="108" fill="#fda4af" fontSize="14" textAnchor="end">steep at low P</text>
 
         {/* Condensed: nearly linear, shallow */}
         <path d="M200 340 L1080 300" fill="none" stroke="#a78bfa" strokeWidth="4" />

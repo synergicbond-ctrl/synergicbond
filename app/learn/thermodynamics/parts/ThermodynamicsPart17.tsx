@@ -264,7 +264,7 @@ function ExpansionCompressionAnimation() {
         </desc>
 
         <rect width="1200" height="850" rx="34" fill="#020617" />
-        <text x="600" y="58" fill="#f8fafc" fontSize="31" fontWeight="900" textAnchor="middle">
+        <text x="600" y="58" fill="#f8fafc" fontSize="23" fontWeight="900" textAnchor="middle">
           EXPANSION AND COMPRESSION: SAME ENDPOINT ΔS, DIFFERENT UNIVERSE ENTROPY
         </text>
 
@@ -350,7 +350,7 @@ function MaximumEntropyAnimation() {
 
         <line x1="125" y1="620" x2="1090" y2="620" stroke="#e2e8f0" strokeWidth="5" />
         <line x1="125" y1="620" x2="125" y2="100" stroke="#e2e8f0" strokeWidth="5" />
-        <text x="1115" y="632" fill="#e2e8f0" fontSize="24">extent coordinate ξ</text>
+        <text x="1080" y="632" fill="#e2e8f0" fontSize="24" textAnchor="end">extent coordinate ξ</text>
         <text x="95" y="90" fill="#e2e8f0" fontSize="24">S</text>
 
         <path id="maxSPath" d="M180 555 C340 455 500 175 690 145 C845 120 970 300 1040 500" fill="none" stroke="#34d399" strokeWidth="5" markerEnd="url(#msGreen)" />

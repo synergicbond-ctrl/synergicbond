@@ -82,7 +82,7 @@ function FreeEnergyMapSVG() {
           and Gibbs energy at constant temperature and pressure.
         </desc>
         <rect width="1200" height="780" rx="34" fill="#020617" />
-        <text x="600" y="55" fill="#f8fafc" fontSize="31" fontWeight="900" textAnchor="middle">
+        <text x="600" y="55" fill="#f8fafc" fontSize="24" fontWeight="900" textAnchor="middle">
           FREE ENERGY PACKAGES THE UNIVERSE TEST INTO A SYSTEM-ONLY CRITERION
         </text>
 

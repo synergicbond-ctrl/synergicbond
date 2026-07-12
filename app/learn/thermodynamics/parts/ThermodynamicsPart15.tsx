@@ -329,7 +329,7 @@ function COPGraph() {
 
         <line x1="130" y1="620" x2="1090" y2="620" stroke="#e2e8f0" strokeWidth="5" />
         <line x1="130" y1="620" x2="130" y2="100" stroke="#e2e8f0" strokeWidth="5" />
-        <text x="1115" y="632" fill="#e2e8f0" fontSize="24">ΔT = TH − TC</text>
+        <text x="1080" y="632" fill="#e2e8f0" fontSize="24" textAnchor="end">ΔT = TH − TC</text>
         <text x="95" y="90" fill="#e2e8f0" fontSize="24">COP</text>
 
         <path id="copRPath" d="M190 145 C280 235 430 365 1025 565" fill="none" stroke="#22d3ee" strokeWidth="5" markerEnd="url(#copCyan)" />

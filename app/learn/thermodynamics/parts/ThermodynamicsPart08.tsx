@@ -276,10 +276,17 @@ function EquivalentRoutesAnimation() {
           <rect x="110" y="150" width="380" height="360" rx="34" fill="#0f172a" stroke="#22d3ee" strokeWidth="8" />
           <path d="M145 270 H455 V475 H145 Z" fill="#164e63" opacity="0.85" />
           <line x1="300" y1="145" x2="300" y2="350" stroke="#e2e8f0" strokeWidth="14" />
-          <g transform="translate(300 350)">
-            <animateTransform attributeName="transform" type="rotate" from="0 300 350" to="360 300 350" dur="1.4s" repeatCount="indefinite" />
-            <line x1="-80" y1="0" x2="80" y2="0" stroke="#fbbf24" strokeWidth="15" />
-            <line x1="0" y1="-80" x2="0" y2="80" stroke="#fbbf24" strokeWidth="15" />
+          <g>
+            <animateTransform
+              attributeName="transform"
+              type="rotate"
+              from="0 300 350"
+              to="360 300 350"
+              dur="1.4s"
+              repeatCount="indefinite"
+            />
+            <line x1="220" y1="350" x2="380" y2="350" stroke="#fbbf24" strokeWidth="15" />
+            <line x1="300" y1="270" x2="300" y2="430" stroke="#fbbf24" strokeWidth="15" />
           </g>
           <text x="300" y="550" fill="#cbd5e1" fontSize="20" textAnchor="middle">paddle work on insulated water</text>
         </g>

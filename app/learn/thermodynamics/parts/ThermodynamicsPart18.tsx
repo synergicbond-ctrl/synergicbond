@@ -305,7 +305,7 @@ function TroutonRuleGraphic() {
 
         <line x1="130" y1="570" x2="1080" y2="570" stroke="#e2e8f0" strokeWidth="5" />
         <line x1="130" y1="570" x2="130" y2="115" stroke="#e2e8f0" strokeWidth="5" />
-        <text x="1100" y="582" fill="#e2e8f0" fontSize="22">liquid family</text>
+        <text x="1060" y="582" fill="#e2e8f0" fontSize="22" textAnchor="end">liquid family</text>
         <text x="88" y="105" fill="#e2e8f0" fontSize="22">ΔSvap/R</text>
 
         <line x1="150" y1="315" x2="1050" y2="315" stroke="#34d399" strokeWidth="6" strokeDasharray="16 12" />
@@ -426,7 +426,7 @@ function VanDerWaalsEntropyAnimation() {
         </defs>
 
         <rect width="1200" height="760" rx="34" fill="#020617" />
-        <text x="600" y="55" fill="#f8fafc" fontSize="31" fontWeight="900" textAnchor="middle">
+        <text x="600" y="55" fill="#f8fafc" fontSize="24" fontWeight="900" textAnchor="middle">
           VAN DER WAALS ENTROPY: ATTRACTION CANCELS, EXCLUDED VOLUME REMAINS
         </text>
 

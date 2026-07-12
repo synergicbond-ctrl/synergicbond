@@ -2,7 +2,7 @@
 
 import { AtomicPartShell, AuditComment, DataTable, DiagramBox, FormulaLine, MathText, NoteBlock, SourcePage } from "./_shared";
 import { FormulaCard, ImportantNote, LearningObjectives, SummaryStrip } from "../_components/AtomicLearning";
-import { DOrbitalNodalMapVisual, Dz2OrbitalVisual, HighAngularOrbitalVisual, OrbitalShapesBasicVisual, POrbitalTrioVisual, SubshellBoxesVisual } from "../_components/AtomicVisuals";
+import { DOrbitalNodalMapVisual, Dz2OrbitalVisual, FOrbitalGalleryVisual, OrbitalShapesBasicVisual, POrbitalTrioVisual, SubshellBoxesVisual } from "../_components/AtomicVisuals";
 
 export default function Part28() {
   return (
@@ -105,7 +105,7 @@ export default function Part28() {
           </DiagramBox>
 
           <DiagramBox title="f orbitals — complex multi-lobed shapes">
-            <HighAngularOrbitalVisual n={4} l={3} family="f" labels={["z³", "xz²", "yz²", "xyz", "z(x²−y²)", "x(x²−3y²)", "y(3x²−y²)"]} radialNodes={0} />
+            <FOrbitalGalleryVisual n={4} set="general" />
             <p className="text-sm text-white/75">
               Seven f orbitals with complex multi-lobed boundary surfaces:
               <MathText math="f_{xyz},\ f_{z(x^2-y^2)},\ f_{x(y^2-z^2)},\ f_{z^3},\ f_{y(z^2-x^2)},\ f_{x^3},\ f_{y^3}" />.

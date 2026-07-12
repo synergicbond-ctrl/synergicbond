@@ -282,22 +282,21 @@ export function OrbitalShapesBasicVisual() {
 export function AufbauFillingVisual() {
   const cells: Array<[number, number]> = [[1, 0], [2, 0], [2, 1], [3, 0], [3, 1], [3, 2], [4, 0], [4, 1], [4, 2], [4, 3], [5, 0], [5, 1], [5, 2], [5, 3], [6, 0], [6, 1], [6, 2], [7, 0], [7, 1], [8, 0]];
   const names = ["s", "p", "d", "f"];
-  const cx = (l: number) => 100 + l * 90;
-  const cy = (n: number) => 48 + (n - 1) * 34;
-  const diagonals = Array.from({ length: 8 }, (_, i) => i + 1).map((sum) => cells.filter(([n, l]) => n + l === sum));
-  return <ScientificVisual title="Aufbau diagonal filling order" description="Chart of subshells one s through eight s arranged by shell and subshell, with diagonal arrows sweeping through equal n plus l groups to show the filling order one s, two s, two p, three s, three p, four s, three d and so on." viewBox="0 0 480 320" className="h-auto w-full">
-    {cells.map(([n, l]) => <text key={`${n}${l}`} x={cx(l) - 14} y={cy(n) + 5} fill="#e2e8f0" fontSize="15">{`${n}${names[l]}`}</text>)}
-    {diagonals.map((group, index) => {
+  const cx = (l: number) => 118 + l * 104;
+  const cy = (n: number) => 58 + (n - 1) * 44;
+  const groups = Array.from({ length: 8 }, (_, i) => cells.filter(([nn, ll]) => nn + ll === i + 1));
+  return <ScientificVisual title="Aufbau diagonal filling order" description="Chart of subshells one s through eight s arranged by shell and subshell, with red diagonal arrows sweeping through equal n plus l groups from the top right to the bottom left to show the filling order one s, two s, two p, three s, three p, four s, three d and so on." viewBox="0 0 560 460" className="mx-auto h-auto w-full max-w-lg">
+    <defs><marker id="aufbau-head" markerWidth="9" markerHeight="9" refX="7" refY="3.5" orient="auto"><path d="M0 0L0 7L8 3.5Z" fill="#fb7185" /></marker></defs>
+    {groups.map((group, gi) => {
       if (group.length === 0) return null;
-      const start = group[0];
-      const end = group[group.length - 1];
-      const x1 = cx(start[1]) + 16;
-      const y1 = cy(start[0]) - 12;
-      const x2 = cx(end[1]) - 22;
-      const y2 = cy(end[0]) + 12;
-      return <g key={index}><path d={`M${x1} ${y1}L${x2} ${y2}`} stroke="#fb7185" strokeWidth="1.8" opacity=".85" /><path d={`M${x2} ${y2}l10 -3l-4 9z`} fill="#fb7185" /></g>;
+      const top = group[0];
+      const bottom = group[group.length - 1];
+      const x1 = cx(top[1]) + 30, y1 = cy(top[0]) - 22;
+      const x2 = cx(bottom[1]) - 32, y2 = cy(bottom[0]) + 18;
+      return <path key={gi} d={`M${x1} ${y1}L${x2} ${y2}`} stroke="#fb7185" strokeWidth="2.2" opacity=".9" markerEnd="url(#aufbau-head)" />;
     })}
-    <text x="12" y="310" fill="#94a3b8" fontSize="13">follow the arrows top to bottom: lower n+l fills first; equal n+l fills lower n first</text>
+    {cells.map(([nn, ll]) => <text key={`${nn}${ll}`} x={cx(ll)} y={cy(nn) + 6} textAnchor="middle" fill="#e2e8f0" fontSize="19" fontWeight="700" paintOrder="stroke" stroke="#0b1728" strokeWidth="6">{`${nn}${names[ll]}`}</text>)}
+    <text x="30" y="446" fill="#94a3b8" fontSize="13">follow the arrows top to bottom: lower n+l fills first; equal n+l fills lower n first</text>
   </ScientificVisual>;
 }
 
@@ -334,14 +333,14 @@ export function RadialDistributionVisual() {
 }
 
 export function Dz2OrbitalVisual() {
-  return <ScientificVisual title="d z squared orbital and its nodal cones" description="Cross-section of the real d z squared angular function. Positive lobes lie on the z axis, a negative toroidal region surrounds the origin in the x y plane, and two conical nodal surfaces make an angle 54.7 degrees with the positive and negative z axes." viewBox="0 0 500 310" className="h-auto w-full">
+  return <ScientificVisual title="d z squared orbital and its nodal cones" description="Cross-section of the real d z squared angular function. Positive lobes lie on the z axis, a negative toroidal region surrounds the origin in the x y plane, and two conical nodal surfaces make an angle 54.7 degrees with the positive and negative z axes." viewBox="0 0 500 310" className="mx-auto h-auto w-full max-w-lg">
     <path d="M250 22V274M56 155H446" stroke="#94a3b8" strokeWidth="1.6" /><text x="258" y="33" fill="#e2e8f0" fontSize="14">z</text><text x="425" y="147" fill="#e2e8f0" fontSize="14">r⊥</text>
     <path d="M250 150 C190 124 193 55 250 40 C307 55 310 124 250 150Z" fill="#67e8f9" fillOpacity=".32" stroke="#67e8f9" strokeWidth="2" />
     <path d="M250 160 C190 186 193 255 250 270 C307 255 310 186 250 160Z" fill="#67e8f9" fillOpacity=".32" stroke="#67e8f9" strokeWidth="2" />
     <ellipse cx="250" cy="155" rx="112" ry="31" fill="#f472b6" fillOpacity=".25" stroke="#f472b6" strokeWidth="2" /><ellipse cx="250" cy="155" rx="45" ry="12" fill="#08111f" stroke="#f472b6" strokeWidth="1.5" />
     <path d="M250 155L109 252M250 155L391 252M250 155L109 58M250 155L391 58" stroke="#facc15" strokeWidth="1.5" strokeDasharray="6 5" /><text x="82" y="48" fill="#fde68a" fontSize="13">nodal cones: θ = 54.7°</text>
-    <text x="258" y="88" fill="#a5f3fc" fontSize="18">+</text><text x="258" y="238" fill="#a5f3fc" fontSize="18">+</text><text x="342" y="160" fill="#f9a8d4" fontSize="18">−</text><circle cx="250" cy="155" r="4" fill="#fbbf24" /><text x="258" y="176" fill="#fde68a" fontSize="12">nucleus</text>
-    <text x="18" y="296" fill="#94a3b8" fontSize="12">signs refer to Y₂,₀; rotation of this cross-section gives the toroidal region and conical nodes</text>
+    <text x="258" y="88" fill="#a5f3fc" fontSize="18">+</text><text x="258" y="238" fill="#a5f3fc" fontSize="18">+</text><text x="342" y="160" fill="#f9a8d4" fontSize="18">−</text><circle cx="250" cy="155" r="4" fill="#fbbf24" /><path d="M118 108L244 150" stroke="#fde68a" strokeWidth="1" strokeDasharray="3 3" opacity=".8" /><text x="60" y="104" fill="#fde68a" fontSize="12">nucleus</text>
+    <text x="18" y="296" fill="#94a3b8" fontSize="12">signs refer to Y₂,₀; rotating this section gives the torus and cones</text>
   </ScientificVisual>;
 }
 
@@ -560,7 +559,7 @@ export function OrbitalNodeSeriesVisual({ kind = "p" }: { kind?: "s" | "p" }) {
       const x = 95 + i * (kind === "s" ? 240 : 175);
       const radial = i;
       return <g key={label}>
-        {kind === "s" ? Array.from({ length: radial + 1 }, (_, shell) => <circle key={shell} cx={x} cy="108" r={26 + shell * 22} fill={shell % 2 ? "#f472b6" : "#67e8f9"} fillOpacity={shell === radial ? ".22" : ".08"} stroke={shell % 2 ? "#f472b6" : "#67e8f9"} strokeWidth="2" />) : Array.from({ length: radial + 1 }, (_, shell) => { const rx = 22 + shell * 15; const ry = 40 + shell * 19; const colour = shell % 2 ? "#f472b6" : "#67e8f9"; return <g key={shell}><ellipse cx={x - rx} cy="108" rx={rx} ry={ry} fill={colour} fillOpacity={shell === radial ? ".22" : ".08"} stroke={colour} strokeWidth="1.8" /><ellipse cx={x + rx} cy="108" rx={rx} ry={ry} fill={colour} fillOpacity={shell === radial ? ".22" : ".08"} stroke={colour} strokeWidth="1.8" /></g>; })}
+        {kind === "s" ? Array.from({ length: radial + 1 }, (_, shell) => <circle key={shell} cx={x} cy="108" r={26 + shell * 22} fill={shell % 2 ? "#f472b6" : "#67e8f9"} fillOpacity={shell === radial ? ".22" : ".08"} stroke={shell % 2 ? "#f472b6" : "#67e8f9"} strokeWidth="2" />) : Array.from({ length: radial + 1 }, (_, shell) => { const rx = 13 + shell * 8; const ry = 24 + shell * 12; const colour = shell % 2 ? "#f472b6" : "#67e8f9"; return <g key={shell}><ellipse cx={x - rx} cy="108" rx={rx} ry={ry} fill={colour} fillOpacity={shell === radial ? ".22" : ".08"} stroke={colour} strokeWidth="1.8" /><ellipse cx={x + rx} cy="108" rx={rx} ry={ry} fill={colour} fillOpacity={shell === radial ? ".22" : ".08"} stroke={colour} strokeWidth="1.8" /></g>; })}
         <circle cx={x} cy="108" r="3" fill="#fbbf24" /><text x={x} y="190" textAnchor="middle" fill="#e2e8f0" fontSize="16" fontWeight="700">{label}</text><text x={x} y="211" textAnchor="middle" fill="#94a3b8" fontSize="13">{radial} radial node{radial === 1 ? "" : "s"}</text>
       </g>;
     })}
@@ -569,10 +568,21 @@ export function OrbitalNodeSeriesVisual({ kind = "p" }: { kind?: "s" | "p" }) {
 }
 
 export function DOrbitalNodalMapVisual() {
-  const orbitals = [["dxy", "between x, y", "zx and yz"], ["dyz", "between y, z", "xy and zx"], ["dzx", "between z, x", "xy and yz"], ["dx²−y²", "along x, y", "x = y; x = −y"]] as const;
-  return <ScientificVisual title="Four real d orbitals and their nodal planes" description="A four-panel schematic of real d orbitals. The first three have lobes between coordinate axes. The d x squared minus y squared orbital has lobes on the x and y axes. Dashed lines identify the two angular nodal planes in each case." viewBox="0 0 760 245" className="h-auto w-full">
-    {orbitals.map(([name, placement, nodes], i) => { const x = 98 + i * 190; const rotate = i === 3 ? 0 : 45; return <g key={name}><path d={`M${x - 68} 108H${x + 68}M${x} 40V176`} stroke="#64748b" strokeWidth="1.2" /><path d={`M${x - 60} 168L${x + 60} 48M${x - 60} 48L${x + 60} 168`} stroke="#facc15" strokeWidth="1.4" strokeDasharray="5 4" opacity={i === 3 ? .95 : .55} />{[45, 135, 225, 315].map((a, j) => { const r = a * Math.PI / 180; const cx = x + Math.cos(r) * 35; const cy = 108 + Math.sin(r) * 35; return <ellipse key={j} cx={cx} cy={cy} rx="19" ry="34" transform={`rotate(${a + rotate} ${cx} ${cy})`} fill={j % 2 ? "#f472b6" : "#67e8f9"} fillOpacity=".28" stroke={j % 2 ? "#f472b6" : "#67e8f9"} strokeWidth="1.7" />; })}<circle cx={x} cy="108" r="3" fill="#fbbf24" /><text x={x} y="199" textAnchor="middle" fill="#e2e8f0" fontSize="15" fontWeight="700">{name}</text><text x={x} y="219" textAnchor="middle" fill="#94a3b8" fontSize="12">{placement}; nodes: {nodes}</text></g>; })}
-    <text x="16" y="24" fill="#94a3b8" fontSize="13">each real d orbital has l = 2 angular nodes; colours indicate opposite signs of the angular function</text>
+  const orbitals = [["dxy", "between x, y", "zx and yz", 45], ["dyz", "between y, z", "xy and zx", 45], ["dzx", "between z, x", "xy and yz", 45], ["dx²−y²", "along x, y", "x = y; x = −y", 0]] as const;
+  return <ScientificVisual title="Four real d orbitals and their nodal planes" description="A four-panel schematic of real d orbitals. The first three have lobes between the coordinate axes, so the axes themselves lie in the two nodal planes. The d x squared minus y squared orbital has lobes on the x and y axes with nodal planes along the diagonals. Dashed yellow lines mark the nodal planes in each panel and colours mark opposite signs of the angular function." viewBox="0 0 760 245" className="h-auto w-full">
+    {orbitals.map(([name, placement, nodes, offset], i) => {
+      const x = 98 + i * 190; const y = 104;
+      const nodalOnAxes = offset === 45;
+      return <g key={name}>
+        <path d={`M${x - 70} ${y}H${x + 70}M${x} ${y - 70}V${y + 70}`} stroke={nodalOnAxes ? "#facc15" : "#64748b"} strokeWidth={nodalOnAxes ? 1.4 : 1.1} strokeDasharray={nodalOnAxes ? "5 4" : undefined} opacity={nodalOnAxes ? .85 : 1} />
+        <path d={`M${x - 55} ${y - 55}L${x + 55} ${y + 55}M${x - 55} ${y + 55}L${x + 55} ${y - 55}`} stroke={nodalOnAxes ? "#64748b" : "#facc15"} strokeWidth={nodalOnAxes ? 1 : 1.4} strokeDasharray={nodalOnAxes ? undefined : "5 4"} opacity={nodalOnAxes ? .6 : .9} />
+        {[0, 1, 2, 3].map((j) => { const deg = offset + j * 90; const a = deg * Math.PI / 180; const lx = x + Math.cos(a) * 41; const ly = y + Math.sin(a) * 41; return <ellipse key={j} cx={lx} cy={ly} rx="26" ry="12" transform={`rotate(${deg} ${lx} ${ly})`} fill={j % 2 ? "#f472b6" : "#67e8f9"} fillOpacity=".3" stroke={j % 2 ? "#f472b6" : "#67e8f9"} strokeWidth="1.7" />; })}
+        <circle cx={x} cy={y} r="3" fill="#fbbf24" />
+        <text x={x} y="199" textAnchor="middle" fill="#e2e8f0" fontSize="15" fontWeight="700">{name}</text>
+        <text x={x} y="219" textAnchor="middle" fill="#94a3b8" fontSize="12">{placement}; nodes: {nodes}</text>
+      </g>;
+    })}
+    <text x="16" y="240" fill="#94a3b8" fontSize="13">each real d orbital has l = 2 angular nodes (dashed); colours indicate opposite signs of the angular function</text>
   </ScientificVisual>;
 }
 
@@ -1176,5 +1186,142 @@ export function POrbitalTrioVisual() {
     {lobes(380, -45, "#a78bfa", "#fbbf24", "2pᵧ", "zx")}
     {lobes(630, 90, "#34d399", "#fb7185", "2p_z", "xy")}
     <text x="20" y="244" fill="#94a3b8" fontSize="13">each 2p orbital has one angular nodal plane through the nucleus; the dashed line marks it in cross-section</text>
+  </ScientificVisual>;
+}
+
+export function DOrbitalGalleryVisual({ n }: { n: number }) {
+  const rings = Math.max(0, n - 3);
+  const tiles = [
+    { label: `${n}d z²`, kind: "axial" as const },
+    { label: `${n}d xy`, kind: "clover" as const, offset: 45 },
+    { label: `${n}d yz`, kind: "clover" as const, offset: 45 },
+    { label: `${n}d zx`, kind: "clover" as const, offset: 45 },
+    { label: `${n}d x²−y²`, kind: "clover" as const, offset: 0 },
+  ];
+  return <ScientificVisual title={`The five ${n}d orbitals`} description={`A gallery of the five real ${n}d orbitals: d z squared with two axial lobes and an equatorial ring, then the four cloverleaf orbitals d xy, d yz, d zx and d x squared minus y squared. Opposite colours mark opposite signs of the wave function. ${rings ? `Dashed inner circles indicate the ${rings} radial node${rings > 1 ? "s" : ""} of the ${n}d set.` : "The 3d set has no radial node."}`} viewBox="0 0 940 250" className="h-auto w-full">
+    {tiles.map((tile, i) => {
+      const x = 98 + i * 187; const y = 108;
+      return <g key={tile.label}>
+        <path d={`M${x - 72} ${y}H${x + 72}M${x} ${y - 72}V${y + 72}`} stroke="#475569" strokeWidth="1.1" />
+        {tile.kind === "axial" ? <>
+          {[-90, 90].map((a) => { const rad = a * Math.PI / 180; const cx = x + Math.cos(rad) * 42; const cy = y + Math.sin(rad) * 42; return <ellipse key={a} cx={cx} cy={cy} rx="15" ry="28" fill="#67e8f9" fillOpacity=".3" stroke="#67e8f9" strokeWidth="1.7" />; })}
+          <ellipse cx={x} cy={y} rx="42" ry="12" fill="#f472b6" fillOpacity=".28" stroke="#f472b6" strokeWidth="1.7" />
+        </> : [0, 1, 2, 3].map((j) => { const a = (tile.offset + j * 90) * Math.PI / 180; const deg = tile.offset + j * 90; const cx = x + Math.cos(a) * 43; const cy = y + Math.sin(a) * 43; return <ellipse key={j} cx={cx} cy={cy} rx="27" ry="13" transform={`rotate(${deg} ${cx} ${cy})`} fill={j % 2 ? "#f472b6" : "#67e8f9"} fillOpacity=".3" stroke={j % 2 ? "#f472b6" : "#67e8f9"} strokeWidth="1.7" />; })}
+        {Array.from({ length: rings }, (_, r) => <circle key={r} cx={x} cy={y} r={11 + r * 8} fill="none" stroke="#fde68a" strokeWidth="1" strokeDasharray="3 3" opacity=".8" />)}
+        <circle cx={x} cy={y} r="3" fill="#fbbf24" />
+        <text x={x} y="212" textAnchor="middle" fill="#e2e8f0" fontSize="15" fontWeight="700">{tile.label}</text>
+      </g>;
+    })}
+    <text x="20" y="240" fill="#94a3b8" fontSize="12">colours mark opposite signs; {rings ? `dashed circles = ${rings} radial node${rings > 1 ? "s" : ""} (n − l − 1 = ${rings})` : "no radial node (n − l − 1 = 0)"}</text>
+  </ScientificVisual>;
+}
+
+export function FOrbitalGalleryVisual({ n, set }: { n: number; set: "general" | "cubic" }) {
+  const POS = "#4ade80"; const NEG = "#e2e8f0";
+  const rings = Math.max(0, n - 4);
+  type Shape = { label: string; kind: "axial" | "rosette"; angle?: number; petals?: number; offset?: number };
+  const shapes: Shape[] = set === "general" ? [
+    { label: "z³", kind: "axial", angle: -90 },
+    { label: "xz²", kind: "axial", angle: 0 },
+    { label: "yz²", kind: "axial", angle: 42 },
+    { label: "xyz", kind: "rosette", petals: 8, offset: 22.5 },
+    { label: "z(x²−y²)", kind: "rosette", petals: 8, offset: 0 },
+    { label: "x(x²−3y²)", kind: "rosette", petals: 6, offset: 0 },
+    { label: "y(3x²−y²)", kind: "rosette", petals: 6, offset: 30 },
+  ] : [
+    { label: "z³", kind: "axial", angle: -90 },
+    { label: "x³", kind: "axial", angle: 0 },
+    { label: "y³", kind: "axial", angle: 42 },
+    { label: "xyz", kind: "rosette", petals: 8, offset: 22.5 },
+    { label: "z(x²−y²)", kind: "rosette", petals: 8, offset: 0 },
+    { label: "x(z²−y²)", kind: "rosette", petals: 8, offset: 11 },
+    { label: "y(z²−x²)", kind: "rosette", petals: 8, offset: 34 },
+  ];
+  return <ScientificVisual title={`The seven ${n}f orbitals (${set} set)`} description={`A gallery of the seven real ${n}f orbitals in the ${set} set. The axial members show two large opposite-phase lobes with a double collar of rings around the waist, and the remaining members are multi-lobed rosettes with alternating phase. Green marks the positive phase and white the negative phase of the wave function.${rings ? ` Dashed inner circles indicate the ${rings} spherical radial node${rings > 1 ? "s" : ""} of the ${n}f set.` : ""}`} viewBox="0 0 780 470" className="h-auto w-full">
+    {shapes.map((sh, i) => {
+      const x = 100 + (i % 4) * 195; const y = 100 + Math.floor(i / 4) * 210;
+      return <g key={sh.label}>
+        <path d={`M${x - 76} ${y}H${x + 76}M${x} ${y - 76}V${y + 76}`} stroke="#475569" strokeWidth="1" />
+        {sh.kind === "axial" ? (() => { const a = (sh.angle ?? -90) * Math.PI / 180; const deg = sh.angle ?? -90; return <>
+          {[1, -1].map((s) => { const cx = x + Math.cos(a) * 45 * s; const cy = y + Math.sin(a) * 45 * s; return <ellipse key={s} cx={cx} cy={cy} rx="30" ry="15" transform={`rotate(${deg} ${cx} ${cy})`} fill={s > 0 ? POS : NEG} fillOpacity={s > 0 ? ".35" : ".18"} stroke={s > 0 ? POS : NEG} strokeWidth="1.7" />; })}
+          {[1, -1].map((s) => { const cx = x + Math.cos(a) * 13 * s; const cy = y + Math.sin(a) * 13 * s; return <ellipse key={`c${s}`} cx={cx} cy={cy} rx="10" ry="32" transform={`rotate(${deg} ${cx} ${cy})`} fill={s > 0 ? NEG : POS} fillOpacity={s > 0 ? ".14" : ".3"} stroke={s > 0 ? NEG : POS} strokeWidth="1.5" />; })}
+        </>; })() : Array.from({ length: sh.petals ?? 8 }, (_, j) => { const k = sh.petals ?? 8; const deg = (sh.offset ?? 0) + j * (360 / k); const a = deg * Math.PI / 180; const cx = x + Math.cos(a) * 42; const cy = y + Math.sin(a) * 42; return <ellipse key={j} cx={cx} cy={cy} rx={k === 6 ? 26 : 23} ry={k === 6 ? 12 : 10} transform={`rotate(${deg} ${cx} ${cy})`} fill={j % 2 ? NEG : POS} fillOpacity={j % 2 ? ".16" : ".32"} stroke={j % 2 ? NEG : POS} strokeWidth="1.6" />; })}
+        {Array.from({ length: rings }, (_, r) => <circle key={r} cx={x} cy={y} r={10 + r * 7} fill="none" stroke="#67e8f9" strokeWidth="1" strokeDasharray="3 3" opacity=".85" />)}
+        <circle cx={x} cy={y} r="2.5" fill="#fbbf24" />
+        <text x={x} y={y + 96} textAnchor="middle" fill="#e2e8f0" fontSize="14" fontWeight="700">{`${n}f`}<tspan fontSize="12" dy="2"> {sh.label}</tspan></text>
+      </g>;
+    })}
+    <text x="530" y="380" fill={POS} fontSize="13">green = + phase</text>
+    <text x="530" y="400" fill={NEG} fontSize="13">white = − phase</text>
+    <text x="20" y="458" fill="#94a3b8" fontSize="12">stylised cross-sections of boundary surfaces{rings ? `; dashed circles = ${rings} spherical node${rings > 1 ? "s" : ""} (n − l − 1 = ${rings})` : " (n − l − 1 = 0: no radial node)"}</text>
+  </ScientificVisual>;
+}
+
+export function ElectronDensityGridVisual() {
+  const rnd = (i: number) => { const v = Math.sin(i * 12.9898) * 43758.5453; return v - Math.floor(v); };
+  const cols = [
+    { label: "1s", sub: "n=1, l=0", psi: (r: number) => 2 * Math.exp(-r), rMax: 5.5, nodes: [] as number[] },
+    { label: "2s", sub: "n=2, l=0", psi: (r: number) => (2 - r) * Math.exp(-r / 2), rMax: 11, nodes: [2] },
+    { label: "3s", sub: "n=3, l=0", psi: (r: number) => (27 - 18 * r + 2 * r * r) * Math.exp(-r / 3), rMax: 17, nodes: [1.902, 7.098] },
+  ];
+  const X0 = [55, 300, 545]; const W = 180;
+  const CLOUD_Y = 128; const CLOUD_R = 86;
+  const rows = [
+    { y0: 265, h: 72, label: "ψ(r)", signed: true },
+    { y0: 392, h: 78, label: "ψ²(r)", signed: false },
+    { y0: 512, h: 82, label: "4πr²ψ²(r)", signed: false },
+  ];
+  return <ScientificVisual title="Electron density in the 1s, 2s and 3s orbitals" description="A three-column comparison of the 1s, 2s and 3s orbitals computed from the exact hydrogen radial functions. Top row: dot-density clouds — 1s is a single ball, 2s shows a core plus one outer shell, 3s a core plus two shells, with dashed circles at the radial nodes. Second row: the radial wave function, which decays monotonically for 1s, crosses zero once for 2s and twice for 3s. Third row: its square, which is never negative and touches zero at each node. Bottom row: the radial distribution function with one, two and three humps; the tallest peak marks the most probable radius." viewBox="0 0 770 640" className="h-auto w-full">
+    {cols.map((c, ci) => {
+      const cx = X0[ci] + W / 2; const scale = CLOUD_R / c.rMax;
+      const grid = 420;
+      const weights = Array.from({ length: grid }, (_, g) => { const r = ((g + 0.5) / grid) * c.rMax; const p = c.psi(r); return r * r * p * p; });
+      const total = weights.reduce((a, b) => a + b, 0);
+      const cum: number[] = []; let acc = 0;
+      for (const w of weights) { acc += w; cum.push(acc / total); }
+      const dots = Array.from({ length: 300 }, (_, i) => {
+        const t = (i + 0.55 * rnd(i * 3 + ci * 7919)) / 300;
+        let lo = 0, hi = grid - 1;
+        while (lo < hi) { const mid = (lo + hi) >> 1; if (cum[mid] < t) lo = mid + 1; else hi = mid; }
+        const r = ((lo + rnd(i * 5 + ci * 131)) / grid) * c.rMax * scale;
+        const ang = i * 2.399963 + rnd(i * 7 + ci * 17) * 0.5;
+        return [cx + r * Math.cos(ang), CLOUD_Y + r * Math.sin(ang)];
+      });
+      const maxAbs = (f: (r: number) => number) => { let m = 0; for (let g = 1; g <= grid; g++) { const v = Math.abs(f((g / grid) * c.rMax)); if (v > m) m = v; } return m; };
+      const curve = (f: (r: number) => number, y0: number, h: number, signed: boolean) => {
+        const m = maxAbs(f); const base = signed ? y0 + h * 0.55 : y0 + h;
+        const amp = signed ? h * 0.55 : h;
+        return Array.from({ length: 161 }, (_, g) => { const r = (g / 160) * c.rMax; const v = f(Math.max(r, 0.02)) / m; return `${(X0[ci] + (r / c.rMax) * W).toFixed(1)},${(base - v * amp).toFixed(1)}`; }).join(" ");
+      };
+      const rdf = (r: number) => { const p = c.psi(r); return r * r * p * p; };
+      let rPeak = 0, best = 0;
+      for (let g = 1; g <= 600; g++) { const r = (g / 600) * c.rMax; const v = rdf(r); if (v > best) { best = v; rPeak = r; } }
+      return <g key={c.label}>
+        <text x={cx} y="24" textAnchor="middle" fill="#e2e8f0" fontSize="16" fontWeight="700">{c.label}</text>
+        <text x={cx} y="42" textAnchor="middle" fill="#94a3b8" fontSize="12">{c.sub}</text>
+        <path d={`M${cx - CLOUD_R - 6} ${CLOUD_Y}H${cx + CLOUD_R + 6}M${cx} ${CLOUD_Y - CLOUD_R - 6}V${CLOUD_Y + CLOUD_R + 6}`} stroke="#475569" strokeWidth="1" />
+        {dots.map(([dx, dy], i) => <circle key={i} cx={dx.toFixed(1)} cy={dy.toFixed(1)} r="1.15" fill="#bae6fd" opacity=".8" />)}
+        {c.nodes.map((nr) => <circle key={nr} cx={cx} cy={CLOUD_Y} r={nr * scale} fill="none" stroke="#f472b6" strokeWidth="1.1" strokeDasharray="4 4" opacity=".9" />)}
+        {rows.map((row, ri) => {
+          const f = ri === 0 ? c.psi : ri === 1 ? (r: number) => c.psi(r) ** 2 : rdf;
+          const base = row.signed ? row.y0 + row.h * 0.55 : row.y0 + row.h;
+          return <g key={ri}>
+            <path d={`M${X0[ci]} ${row.y0 - 8}V${row.y0 + row.h + 4}M${X0[ci]} ${base}H${X0[ci] + W + 4}`} stroke="#94a3b8" strokeWidth="1.2" />
+            <polyline points={curve(f, row.y0, row.h, row.signed)} fill="none" stroke="#67e8f9" strokeWidth="1.9" />
+            <text x={X0[ci] + W + 2} y={base + 14} fill="#94a3b8" fontSize="11">r</text>
+            {ri < 2 ? c.nodes.map((nr) => { const nx = X0[ci] + (nr / c.rMax) * W; return <circle key={nr} cx={nx} cy={base} r="3" fill="none" stroke="#f472b6" strokeWidth="1.4" />; }) : <>
+              <path d={`M${X0[ci] + (rPeak / c.rMax) * W} ${base}V${row.y0 + 8}`} stroke="#fde68a" strokeWidth="1" strokeDasharray="3 3" />
+              <text x={X0[ci] + (rPeak / c.rMax) * W + 4} y={row.y0 + 16} fill="#fde68a" fontSize="11">r max</text>
+            </>}
+          </g>;
+        })}
+      </g>;
+    })}
+    <text x="8" y="300" fill="#e2e8f0" fontSize="13" transform="rotate(-90 8 300)" />
+    <text x="55" y="248" fill="#a5f3fc" fontSize="13" fontWeight="700">ψ(r) — radial wave function</text>
+    <text x="55" y="375" fill="#a5f3fc" fontSize="13" fontWeight="700">ψ²(r) — probability density</text>
+    <text x="55" y="495" fill="#a5f3fc" fontSize="13" fontWeight="700">4πr²ψ²(r) — radial distribution</text>
+    <text x="330" y="248" fill="#f9a8d4" fontSize="12">pink circles/rings = radial nodes (ψ = 0)</text>
+    <text x="20" y="630" fill="#94a3b8" fontSize="12">computed from the exact hydrogen radial functions; humps = n − l, radial nodes = n − l − 1; tallest RDF peak = most probable radius</text>
   </ScientificVisual>;
 }

@@ -1,7 +1,7 @@
 "use client";
 
 import { AtomicPartShell, AuditComment, DataTable, DiagramBox, FormulaLine, MathText, NoteBlock, SourcePage } from "./_shared";
-import { DerivationPanel, FigureCaption, LearningObjectives, SummaryStrip } from "../_components/AtomicLearning";
+import { DerivationPanel, FigureCaption, LearningObjectives, PracticeQuestion, SummaryStrip } from "../_components/AtomicLearning";
 import { OrbitalBoxVisual, RadialFunctionCurvesVisual } from "../_components/AtomicVisuals";
 
 export default function Part43() {
@@ -83,6 +83,15 @@ export default function Part43() {
       </SourcePage>
       <SummaryStrip items={["For hydrogen-like 1s, differentiation gives r_mp = a₀/Z.", "For 2p, the r⁴ exponential distribution peaks at 4a₀/Z.", "Radial-node count is n − l − 1; s, p, d contain 1, 3, 5 orbitals."]} />
 
+      <NoteBlock title="Practice set — reading wave functions (original problems)">
+        <PracticeQuestion prompt={<>The 2s radial function of hydrogen contains the factor <MathText math="\left(2-\dfrac{r}{a_0}\right)e^{-r/2a_0}" />. Without any calculation beyond setting the bracket to zero, state the radius of the spherical surface on which a 2s electron is never found.</>} answer={<>The bracket vanishes at <MathText math="r=2a_0" /> — the single radial node of 2s.</>} />
+        <PracticeQuestion prompt={<>A one-electron ion of carbon (C⁵⁺, Z = 6) occupies a state whose radial function carries the factor <MathText math="(4-\sigma)\,\sigma\,e^{-\sigma/2}" /> with <MathText math="\sigma=Zr/a_0" />. Locate its radial node in ångström (a₀ = 0.529 Å).</>} answer={<><MathText math="\sigma=4\Rightarrow r=4a_0/6=0.353\ \text{Å}" />. The σ factor's zero at the origin is not a node.</>} />
+        <PracticeQuestion prompt={<>An electron in hydrogen has <MathText math="\psi\propto\left(6-\dfrac{r}{a_0}\right)\dfrac{r}{a_0}\,e^{-r/3a_0}\,\sin\theta\cos\phi" />. Read off n and l and name the orbital.</>} answer={<>One radial node (at <MathText math="r=6a_0" />) and l = 1 give n = 3: a 3p orbital (the <MathText math="\sin\theta\cos\phi" /> factor is the pₓ angular form).</>} />
+        <PracticeQuestion prompt={<>For the ground state <MathText math="\psi_{1s}\propto e^{-r/a_0}" />, at what distance from the nucleus is an electron most likely to be detected, and why is that not r = 0 even though ψ² is largest there?</>} answer={<>The radial distribution 4πr²ψ² peaks at <MathText math="r=a_0=52.9\ \text{pm}" />; the r² shell factor suppresses the origin.</>} />
+        <PracticeQuestion prompt={<>A hydrogen state has <MathText math="\psi\propto\left(27-18\sigma+2\sigma^{2}\right)e^{-\sigma/3}" /> with <MathText math="\sigma=Zr/a_0" /> and no angular dependence. How many radial and angular nodes does it possess, and which orbital is it?</>} answer={<>No angular factor ⇒ l = 0; the quadratic gives 2 radial nodes, so n = 3: the 3s orbital (2, 0).</>} />
+        <PracticeQuestion prompt={<>For the same 3s state with Z = 1, derive the two node radii by solving <MathText math="2\sigma^{2}-18\sigma+27=0" />.</>} answer={<><MathText math="\sigma=\dfrac{9\pm3\sqrt{3}}{2}\Rightarrow r=\dfrac{3}{2}\left(3\pm\sqrt{3}\right)a_0" />.</>} />
+        <PracticeQuestion prompt={<>In a dot-density photograph of the 5s orbital, how many dark gaps separate the bright rings, and what does each gap represent?</>} answer={<>Four gaps (n − l − 1 = 4), each a spherical surface where ψ² = 0 — a radial node.</>} />
+      </NoteBlock>
       <AuditComment pages="135-137" unclear={0} />
     </AtomicPartShell>
   );

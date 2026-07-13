@@ -72,7 +72,7 @@ export function Card({
   style?: React.CSSProperties;
 }) {
   return (
-    <div
+    <div className="lessonCard"
       style={{
         background: T.surface,
         border: `1px solid ${T.border}`,
@@ -137,7 +137,7 @@ export function P({ children }: { children: React.ReactNode }) {
 
 export function Formula({ children }: { children: React.ReactNode }) {
   return (
-    <div
+    <div className="formulaBox"
       style={{
         fontFamily: T.mono,
         fontSize: 15,
@@ -450,7 +450,7 @@ export function SectionIntro({
   accent?: string;
 }) {
   return (
-    <div
+    <div className="sectionIntro"
       style={{
         position: "relative",
         overflow: "hidden",
@@ -527,7 +527,7 @@ export function ConceptGrid({
   columns?: number;
 }) {
   return (
-    <div
+    <div className="conceptGrid"
       style={{
         display: "grid",
         gridTemplateColumns: `repeat(auto-fit, minmax(${columns >= 3 ? 220 : 280}px, 1fr))`,
@@ -582,7 +582,7 @@ export function WorkedExample({
   accent?: string;
 }) {
   return (
-    <div
+    <div className="workedExample"
       style={{
         border: `1px solid ${T.border}`,
         borderRadius: 14,
@@ -2071,7 +2071,7 @@ const commonConfigSpecialCases = [
   ["Au", "[Xe] 4f¹⁴ 5d¹⁰ 6s¹", "filled d¹⁰ and relativistic effects"],
 ];
 
-export function SectionConfiguration() {
+export function SectionConfigurationOverview() {
   return (
     <div>
       <SectionIntro
@@ -2172,6 +2172,580 @@ export function SectionConfiguration() {
         answer="Period 4, group 9; the element is cobalt."
         accent={T.d}
       />
+    </div>
+  );
+}
+
+/* =============================================================================
+   ELECTRONIC CONFIGURATION — IN-DEPTH MOBILE-FIRST ADDITION
+   Integrated from the verified professional notes supplied for this chapter.
+   Student-facing content only: theory, derivations, tables, examples and uses.
+   ========================================================================== */
+
+const ecCapacityRows = [
+  ["s", "0", "1", "2"],
+  ["p", "1", "3", "6"],
+  ["d", "2", "5", "10"],
+  ["f", "3", "7", "14"],
+];
+
+const ecPBoxRows = [
+  ["p¹", "[↑][ ][ ]", "1", "0", "partly occupied"],
+  ["p²", "[↑][↑][ ]", "2", "0", "partly occupied"],
+  ["p³", "[↑][↑][↑]", "3", "0", "exactly half-filled"],
+  ["p⁴", "[↑↓][↑][↑]", "2", "1", "pairing begins"],
+  ["p⁵", "[↑↓][↑↓][↑]", "1", "2", "one vacancy remains"],
+  ["p⁶", "[↑↓][↑↓][↑↓]", "0", "3", "completely filled"],
+];
+
+const ecPairingRows = [
+  ["p¹", "[↑][ ][ ]", "0", "1"],
+  ["p²", "[↑][↑][ ]", "0", "2"],
+  ["p³", "[↑][↑][↑]", "0", "3"],
+  ["p⁴", "[↑↓][↑][↑]", "1", "2"],
+  ["p⁵", "[↑↓][↑↓][↑]", "2", "1"],
+  ["p⁶", "[↑↓][↑↓][↑↓]", "3", "0"],
+  ["d⁴", "[↑][↑][↑][↑][ ]", "0", "4"],
+  ["d⁵", "[↑][↑][↑][↑][↑]", "0", "5"],
+  ["d⁶", "[↑↓][↑][↑][↑][↑]", "1", "4"],
+  ["d⁸", "[↑↓][↑↓][↑↓][↑][↑]", "3", "2"],
+  ["d¹⁰", "[↑↓][↑↓][↑↓][↑↓][↑↓]", "5", "0"],
+];
+
+const ecPExchangeRows = [
+  ["p¹", "1", "0", "0", "0", "0"],
+  ["p²", "2", "0", "0", "1", "−K"],
+  ["p³", "3", "0", "0", "3", "−3K"],
+  ["p⁴", "3", "1", "1", "3", "P − 3K"],
+  ["p⁵", "3", "2", "2", "4", "2P − 4K"],
+  ["p⁶", "3", "3", "3", "6", "3P − 6K"],
+];
+
+const ecDExchangeRows = [
+  ["d¹", "1 single", "1", "0", "0", "0", "0"],
+  ["d²", "2 singles", "2", "0", "0", "1", "−K"],
+  ["d³", "3 singles", "3", "0", "0", "3", "−3K"],
+  ["d⁴", "4 singles", "4", "0", "0", "6", "−6K"],
+  ["d⁵", "5 singles", "5", "0", "0", "10", "−10K"],
+  ["d⁶", "1 pair + 4 singles", "5", "1", "1", "10", "P − 10K"],
+  ["d⁷", "2 pairs + 3 singles", "5", "2", "2", "11", "2P − 11K"],
+  ["d⁸", "3 pairs + 2 singles", "5", "3", "3", "13", "3P − 13K"],
+  ["d⁹", "4 pairs + 1 single", "5", "4", "4", "16", "4P − 16K"],
+  ["d¹⁰", "5 pairs", "5", "5", "5", "20", "5P − 20K"],
+];
+
+const ecSpecialRows = [
+  ["Cr, 24", "[Ar] 3d⁴ 4s²", "[Ar] 3d⁵ 4s¹", "near-degenerate 3d/4s; lower total energy"],
+  ["Cu, 29", "[Ar] 3d⁹ 4s²", "[Ar] 3d¹⁰ 4s¹", "filled 3d subshell and total-energy balance"],
+  ["Nb, 41", "[Kr] 4d³ 5s²", "[Kr] 4d⁴ 5s¹", "close 4d/5s energies"],
+  ["Mo, 42", "[Kr] 4d⁴ 5s²", "[Kr] 4d⁵ 5s¹", "close 4d/5s energies"],
+  ["Ru, 44", "[Kr] 4d⁶ 5s²", "[Kr] 4d⁷ 5s¹", "actual orbital-energy balance"],
+  ["Rh, 45", "[Kr] 4d⁷ 5s²", "[Kr] 4d⁸ 5s¹", "actual orbital-energy balance"],
+  ["Pd, 46", "[Kr] 4d⁸ 5s²", "[Kr] 4d¹⁰ 5s⁰", "closed 4d subshell; empty 5s"],
+  ["Ag, 47", "[Kr] 4d⁹ 5s²", "[Kr] 4d¹⁰ 5s¹", "filled 4d subshell"],
+  ["Pt, 78", "[Xe] 4f¹⁴ 5d⁸ 6s²", "[Xe] 4f¹⁴ 5d⁹ 6s¹", "orbital and relativistic effects"],
+  ["Au, 79", "[Xe] 4f¹⁴ 5d⁹ 6s²", "[Xe] 4f¹⁴ 5d¹⁰ 6s¹", "filled 5d and relativistic effects"],
+  ["Rg, 111", "[Rn] 5f¹⁴ 6d⁹ 7s²", "[Rn] 5f¹⁴ 6d¹⁰ 7s¹", "commonly tabulated predicted configuration"],
+];
+
+const ecFBlockRows = [
+  ["La, 57", "[Xe] 5d¹ 6s²", "5d occupation before regular 4f sequence"],
+  ["Ce, 58", "[Xe] 4f¹ 5d¹ 6s²", "mixed 4f/5d occupation"],
+  ["Gd, 64", "[Xe] 4f⁷ 5d¹ 6s²", "4f⁷ plus one 5d electron"],
+  ["Ac, 89", "[Rn] 6d¹ 7s²", "5f⁰"],
+  ["Th, 90", "[Rn] 6d² 7s²", "5f⁰"],
+  ["Pa, 91", "[Rn] 5f² 6d¹ 7s²", "mixed 5f/6d occupation"],
+  ["U, 92", "[Rn] 5f³ 6d¹ 7s²", "mixed 5f/6d occupation"],
+  ["Np, 93", "[Rn] 5f⁴ 6d¹ 7s²", "mixed 5f/6d occupation"],
+  ["Cm, 96", "[Rn] 5f⁷ 6d¹ 7s²", "5f⁷ plus one 6d electron"],
+];
+
+const ecIonRows = [
+  ["Mg → Mg⁺ → Mg²⁺", "12 → 11 → 10", "[Ne]3s² → [Ne]3s¹ → [Ne]"],
+  ["Al → Al⁺ → Al²⁺ → Al³⁺", "13 → 12 → 11 → 10", "[Ne]3s²3p¹ → [Ne]3s² → [Ne]3s¹ → [Ne]"],
+  ["Fe → Fe²⁺ → Fe³⁺", "26 → 24 → 23", "[Ar]3d⁶4s² → [Ar]3d⁶ → [Ar]3d⁵"],
+  ["Cr → Cr⁺ → Cr²⁺ → Cr³⁺", "24 → 23 → 22 → 21", "[Ar]3d⁵4s¹ → [Ar]3d⁵ → [Ar]3d⁴ → [Ar]3d³"],
+  ["Cu → Cu⁺ → Cu²⁺", "29 → 28 → 27", "[Ar]3d¹⁰4s¹ → [Ar]3d¹⁰ → [Ar]3d⁹"],
+  ["N → N³⁻", "7 → 10", "1s²2s²2p³ → 1s²2s²2p⁶ = [Ne]"],
+  ["O → O⁻ → O²⁻", "8 → 9 → 10", "1s²2s²2p⁴ → 2p⁵ → 2p⁶"],
+  ["Cl → Cl⁻", "17 → 18", "[Ne]3s²3p⁵ → [Ar]"],
+];
+
+const ecIsoelectronicRows = [
+  ["N³⁻", "7 + 3", "10", "[Ne]"],
+  ["O²⁻", "8 + 2", "10", "[Ne]"],
+  ["F⁻", "9 + 1", "10", "[Ne]"],
+  ["Ne", "10", "10", "[Ne]"],
+  ["Na⁺", "11 − 1", "10", "[Ne]"],
+  ["Mg²⁺", "12 − 2", "10", "[Ne]"],
+  ["Al³⁺", "13 − 3", "10", "[Ne]"],
+];
+
+const ecMagneticRows = [
+  ["N", "2p³", "[↑][↑][↑]", "3", "paramagnetic"],
+  ["O", "2p⁴", "[↑↓][↑][↑]", "2", "paramagnetic"],
+  ["F⁻", "2p⁶", "[↑↓][↑↓][↑↓]", "0", "diamagnetic"],
+  ["Fe²⁺ (free ion)", "3d⁶", "[↑↓][↑][↑][↑][↑]", "4", "paramagnetic"],
+  ["Fe³⁺ (free ion)", "3d⁵", "[↑][↑][↑][↑][↑]", "5", "paramagnetic"],
+  ["Cu⁺", "3d¹⁰", "five paired d orbitals", "0", "diamagnetic"],
+  ["Cu²⁺", "3d⁹", "four pairs + one single", "1", "paramagnetic"],
+];
+
+export function OrbitalBoxStrip({
+  label,
+  boxes,
+  accent = T.cyan,
+}: {
+  label: string;
+  boxes: string[];
+  accent?: string;
+}) {
+  return (
+    <div
+      style={{
+        display: "flex",
+        alignItems: "center",
+        gap: 9,
+        flexWrap: "wrap",
+        margin: "8px 0",
+      }}
+    >
+      <span style={{ minWidth: 44, color: accent, fontFamily: T.mono, fontWeight: 800 }}>{label}</span>
+      <div style={{ display: "flex", gap: 5, flexWrap: "wrap" }}>
+        {boxes.map((box, index) => (
+          <span
+            key={`${label}-${index}`}
+            style={{
+              width: 42,
+              minHeight: 32,
+              display: "grid",
+              placeItems: "center",
+              border: `1.5px solid ${accent}`,
+              borderRadius: 7,
+              background: `${accent}10`,
+              color: T.text,
+              fontFamily: T.mono,
+              fontSize: 15,
+              fontWeight: 800,
+            }}
+          >
+            {box}
+          </span>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+export function ElectronicConfigurationDeepDive() {
+  const jumpLinks = [
+    ["ec-foundations", "Foundations"],
+    ["ec-rules", "Filling rules"],
+    ["ec-capacity", "Capacity"],
+    ["ec-energy", "Orbital energy"],
+    ["ec-ions", "Atoms & ions"],
+    ["ec-stability", "Half/filled"],
+    ["ec-pairing", "Pairing"],
+    ["ec-exchange", "Exchange"],
+    ["ec-special", "Special ground states"],
+    ["ec-applications", "Applications"],
+    ["ec-revision", "Rapid revision"],
+  ];
+
+  return (
+    <section data-ec-deep-dive="periodicity-mobile-ec-v13" style={{ marginTop: 26 }}>
+      <SectionIntro
+        eyebrow="Electronic configuration · complete in-depth module"
+        title="From Orbital Filling to Chemical Prediction"
+        summary="This extended module develops electronic configuration from first principles, distinguishes filling order from actual orbital energy, explains pairing and exchange counting, treats chromium and copper correctly, lists important special ground states, and applies configuration to ions, size, magnetism, oxidation-state reasoning and periodic position."
+        accent={T.f}
+      />
+
+      <nav
+        className="ecJumpNav"
+        aria-label="Electronic configuration section links"
+        style={{
+          display: "flex",
+          gap: 8,
+          overflowX: "auto",
+          padding: "4px 2px 12px",
+          marginBottom: 10,
+          scrollbarWidth: "thin",
+        }}
+      >
+        {jumpLinks.map(([id, label]) => (
+          <a
+            key={id}
+            href={`#${id}`}
+            style={{
+              flex: "0 0 auto",
+              textDecoration: "none",
+              border: `1px solid ${T.border}`,
+              background: T.surface,
+              color: T.textDim,
+              borderRadius: 999,
+              padding: "8px 11px",
+              fontFamily: T.sans,
+              fontSize: 11.5,
+              fontWeight: 800,
+              whiteSpace: "nowrap",
+            }}
+          >
+            {label}
+          </a>
+        ))}
+      </nav>
+
+      <Card accent={T.cyan}>
+        <H2 id="ec-foundations">1 · Meaning and Ways of Representation</H2>
+        <P>
+          <b style={{ color: T.cyan }}>Electronic configuration</b> is the distribution of electrons among the shells,
+          subshells and orbitals of an atom or ion. A term such as 3p⁴ identifies the principal shell
+          (<i>n</i> = 3), the subshell (<i>p</i>) and the number of electrons in that subshell (4).
+        </P>
+        <DataTable
+          columns={["Representation", "Sodium, Z = 11"]}
+          rows={[
+            ["Expanded configuration", "1s² 2s² 2p⁶ 3s¹"],
+            ["Noble-gas configuration", "[Ne] 3s¹"],
+            ["Orbital-box form", "1s[↑↓] 2s[↑↓] 2p[↑↓][↑↓][↑↓] 3s[↑]"],
+            ["Shell distribution", "2, 8, 1"],
+          ]}
+          accent={T.cyan}
+        />
+        <Callout kind="note" title="Reliable writing sequence">
+          Count the electrons, choose the filling sequence, apply Pauli and Hund, check the observed ground state where
+          close-energy subshells are involved, and only then abbreviate the inner core with a noble-gas symbol.
+        </Callout>
+      </Card>
+
+      <Card accent={T.gold}>
+        <H2 id="ec-rules">2 · Principles Governing the Ground-State Arrangement</H2>
+        <H3>Aufbau principle and the Madelung guide</H3>
+        <P>
+          In the ground state, electrons occupy available orbitals in the arrangement that minimises the
+          <b style={{ color: T.gold }}> total energy of the atom</b>, while obeying Pauli exclusion and Hund&apos;s rule.
+          For introductory prediction, the Madelung rule orders orbitals by <i>n</i> + ℓ.
+        </P>
+        <Formula>Larger (n + ℓ) → later filling; for equal (n + ℓ), larger n → later filling</Formula>
+        <DataTable
+          columns={["Orbital", "n", "ℓ", "n + ℓ", "Predicted order comment"]}
+          rows={[
+            ["2s", "2", "0", "2", "first among these"],
+            ["2p", "2", "1", "3", "before 3s because n is smaller"],
+            ["3s", "3", "0", "3", "after 2p"],
+            ["3p", "3", "1", "4", "before 4s because n is smaller"],
+            ["4s", "4", "0", "4", "after 3p"],
+            ["3d", "3", "2", "5", "after 4s in the usual filling sequence"],
+          ]}
+          accent={T.gold}
+        />
+        <Formula>
+          1s &lt; 2s &lt; 2p &lt; 3s &lt; 3p &lt; 4s &lt; 3d &lt; 4p &lt; 5s &lt; 4d &lt; 5p &lt; 6s &lt; 4f &lt; 5d &lt; 6p &lt; 7s &lt; 5f &lt; 6d &lt; 7p
+        </Formula>
+        <Callout kind="warn" title="Scientific limitation">
+          The (n + ℓ) rule is a filling heuristic, not a universal orbital-energy law. Cross-shell ordering changes
+          with nuclear charge, electron population and ion formation.
+        </Callout>
+        <H3>Pauli exclusion principle</H3>
+        <P>
+          No two electrons in one atom can possess the same four quantum numbers
+          (<i>n</i>, ℓ, <i>m</i><sub>ℓ</sub>, <i>m</i><sub>s</sub>). One orbital therefore holds at most two electrons,
+          and the two spin projections must be opposite.
+        </P>
+        <Formula>1s² → (1, 0, 0, +½) and (1, 0, 0, −½)</Formula>
+        <H3>Hund&apos;s rule of maximum multiplicity</H3>
+        <P>
+          Within degenerate orbitals, electrons occupy separate orbitals with parallel spins before pairing begins.
+          Reversing every arrow gives an equivalent diagram, and left-to-right box placement is only a drawing choice.
+        </P>
+        <OrbitalBoxStrip label="p⁴" boxes={["↑↓", "↑", "↑"]} accent={T.p} />
+        <Formula>Spin multiplicity: M = 2S + 1</Formula>
+        <P>
+          For p⁴ in its Hund arrangement, two electrons are unpaired, so <i>S</i> = 1 and <i>M</i> = 3:
+          the spin multiplicity is triplet.
+        </P>
+      </Card>
+
+      <Card accent={T.d}>
+        <H2 id="ec-capacity">3 · Orbitals, Subshells and Electron Capacity</H2>
+        <DataTable
+          columns={["Subshell", "ℓ", "Number of orbitals, 2ℓ + 1", "Maximum electrons, 2(2ℓ + 1)"]}
+          rows={ecCapacityRows}
+          accent={T.d}
+        />
+        <div style={{ display: "grid", gap: 8, marginTop: 12 }}>
+          <Formula>Orbitals in a subshell = 2ℓ + 1</Formula>
+          <Formula>Maximum electrons in a subshell = 2(2ℓ + 1)</Formula>
+          <Formula>Subshells in the nth shell = n</Formula>
+          <Formula>Orbitals in the nth shell = n²</Formula>
+          <Formula>Maximum electrons in the nth shell = 2n²</Formula>
+        </div>
+      </Card>
+
+      <Card accent={T.s}>
+        <H2 id="ec-energy">4 · Orbital Energy: One-Electron and Multi-Electron Species</H2>
+        <H3>Hydrogen-like species</H3>
+        <P>
+          H, He⁺, Li²⁺ and Be³⁺ contain one electron. In the non-relativistic Coulomb model, energy depends only on
+          <i> n</i>; orbitals with the same <i>n</i> are degenerate.
+        </P>
+        <Formula>E<sub>n</sub> = −13.6 Z²/n² eV</Formula>
+        <Formula>1s &lt; 2s = 2p &lt; 3s = 3p = 3d &lt; 4s = 4p = 4d = 4f</Formula>
+        <H3>Multi-electron atoms and ions</H3>
+        <P>
+          Electron–electron repulsion, shielding and penetration remove hydrogen-like degeneracy. For orbitals within
+          one principal shell, the usual penetration-based order is approximately:
+        </P>
+        <Formula>ns &lt; np &lt; nd &lt; nf</Formula>
+        <P>
+          Cross-shell order is not fixed. The 4s subshell may be populated before 3d in a neutral atom, but common
+          transition-metal cations normally lose 4s electrons before 3d electrons because the relative orbital energies
+          have changed after occupation.
+        </P>
+      </Card>
+
+      <Card accent={T.p}>
+        <H2 id="ec-ions">5 · Writing Configurations of Neutral Atoms and Ions</H2>
+        <H3>Neutral atoms</H3>
+        <DataTable
+          columns={["Species", "Ground-state electronic configuration"]}
+          rows={[
+            ["Mn", "[Ar] 3d⁵ 4s²"],
+            ["Fe", "[Ar] 3d⁶ 4s²"],
+            ["P", "[Ne] 3s² 3p³"],
+            ["O", "[He] 2s² 2p⁴"],
+          ]}
+          accent={T.p}
+        />
+        <H3>Cations: remove from the occupied subshell with highest n first</H3>
+        <P>
+          For common transition-metal ions, remove <i>ns</i> electrons before (<i>n</i> − 1)d electrons. The order used
+          to write a neutral configuration is not automatically the order of ionisation.
+        </P>
+        <DataTable columns={["Sequence", "Electron count", "Configuration sequence"]} rows={ecIonRows.slice(0, 5)} accent={T.gold} />
+        <H3>Anions: add to the lowest available orbital</H3>
+        <P>Add electrons one at a time while maintaining Pauli exclusion and Hund&apos;s rule at every stage.</P>
+        <DataTable columns={["Sequence", "Electron count", "Configuration sequence"]} rows={ecIonRows.slice(5)} accent={T.d} />
+      </Card>
+
+      <Card accent={T.f}>
+        <H2 id="ec-stability">6 · Half-Filled and Completely Filled Subshells</H2>
+        <P>
+          Half-filled and completely filled subshells often appear in favourable ground-state arrangements.
+          Their behaviour reflects the combined influence of orbital energies, pairing cost, exchange, shielding,
+          penetration and electron correlation. Visual symmetry is useful, but it is not an independent universal law.
+        </P>
+        <DataTable
+          columns={["Subshell", "Half-filled form", "Completely filled form", "Box pattern"]}
+          rows={[
+            ["p", "p³", "p⁶", "p³: [↑][↑][↑] · p⁶: [↑↓][↑↓][↑↓]"],
+            ["d", "d⁵", "d¹⁰", "d⁵: five singles · d¹⁰: five pairs"],
+            ["f", "f⁷", "f¹⁴", "f⁷: seven singles · f¹⁴: seven pairs"],
+          ]}
+          accent={T.f}
+        />
+        <DataTable columns={["Configuration", "Orbital boxes", "Unpaired e⁻", "Pairs", "Description"]} rows={ecPBoxRows} accent={T.p} />
+      </Card>
+
+      <Card accent={T.gold}>
+        <H2 id="ec-pairing">7 · Pairing Energy: Meaning and Correct Counting</H2>
+        <P>
+          Pairing energy, <i>P</i>, is the positive energetic cost associated with placing a second electron in an
+          already occupied orbital. It reflects added interelectronic repulsion and loss of some exchange advantage.
+        </P>
+        <Formula>Pairing contribution = N<sub>pair</sub> × P</Formula>
+        <P>
+          <b style={{ color: T.gold }}>N<sub>pair</sub></b> counts doubly occupied orbitals—not electrons.
+          Three doubly occupied orbitals mean N<sub>pair</sub> = 3 and six paired electrons. The value of <i>P</i>
+          is not identical for every atom, ion, subshell or chemical environment.
+        </P>
+        <DataTable columns={["Configuration", "Hund distribution", "Npair", "Unpaired e⁻"]} rows={ecPairingRows} accent={T.gold} />
+      </Card>
+
+      <Card accent={T.cyan}>
+        <H2 id="ec-exchange">8 · Exchange Stabilisation: Derivation and Complete Counting</H2>
+        <P>
+          Exchange stabilisation is associated with same-spin electron pairs in different orbitals of the same
+          degenerate subshell. In the elementary model, every possible same-spin pair contributes one exchange pair.
+        </P>
+        <Formula>N<sub>exchange</sub> = C(n↑, 2) + C(n↓, 2)</Formula>
+        <Formula>N<sub>exchange</sub> = n↑(n↑ − 1)/2 + n↓(n↓ − 1)/2</Formula>
+        <Formula>E<sub>approx</sub> = N<sub>pair</sub>P − N<sub>exchange</sub>K</Formula>
+        <Callout kind="warn" title="Do not over-interpret">
+          This expression is qualitative bookkeeping, not exact total atomic energy. Actual energy also includes
+          orbital terms, Coulomb repulsion, unequal exchange integrals, correlation and relativistic contributions.
+        </Callout>
+        <H3>Complete pⁿ exchange table</H3>
+        <DataTable columns={["pⁿ", "n↑", "n↓", "Npair", "Nexchange", "Approximate term"]} rows={ecPExchangeRows} accent={T.p} />
+        <H3>Complete dⁿ exchange table</H3>
+        <DataTable columns={["dⁿ", "Hund distribution", "n↑", "n↓", "Npair", "Nexchange", "Approximate term"]} rows={ecDExchangeRows} accent={T.d} />
+        <WorkedExample
+          number="A"
+          title="Exchange count for 3d⁴"
+          question="Find the pairing count, exchange count and elementary bookkeeping term for the Hund arrangement of 3d⁴."
+          reasoning={[
+            "Hund distribution is [↑][↑][↑][↑][ ].",
+            "No orbital is doubly occupied, so Npair = 0.",
+            "n↑ = 4 and n↓ = 0.",
+            "Nexchange = 4(4 − 1)/2 + 0 = 6.",
+          ]}
+          answer="Eapprox = 0P − 6K = −6K."
+          accent={T.cyan}
+        />
+        <WorkedExample
+          number="B"
+          title="Exchange count for 3d⁸"
+          question="Find the pairing count, exchange count and elementary bookkeeping term for 3d⁸."
+          reasoning={[
+            "Hund distribution is [↑↓][↑↓][↑↓][↑][↑].",
+            "Three orbitals are doubly occupied, so Npair = 3.",
+            "n↑ = 5 and n↓ = 3.",
+            "Nexchange = 5(5 − 1)/2 + 3(3 − 1)/2 = 10 + 3 = 13.",
+          ]}
+          answer="Eapprox = 3P − 13K."
+          accent={T.d}
+        />
+      </Card>
+
+      <Card accent={T.p}>
+        <H2 id="ec-special">9 · Correct Interpretation of Special Ground-State Configurations</H2>
+        <P>
+          Do not declare p³ absolutely &quot;more stable&quot; than p⁴ or d⁵ absolutely &quot;more stable&quot; than d⁶
+          without qualification. The safe statement is relative stabilisation within a comparable sequence.
+        </P>
+        <DataTable
+          columns={["Comparison", "Elementary bookkeeping", "Safe conclusion"]}
+          rows={[
+            ["p³ vs p⁴", "p³: −3K; p⁴: P − 3K", "The fourth electron begins pairing; p³ is locally favourable."],
+            ["d⁵ vs d⁶", "d⁵: −10K; d⁶: P − 10K", "The sixth d electron begins pairing; d⁵ is locally favourable."],
+            ["d⁹ vs d¹⁰", "d⁹: 4P − 16K; d¹⁰: 5P − 20K", "Completion adds a pair and four exchanges; total energy decides."],
+          ]}
+          accent={T.p}
+        />
+        <Callout kind="note" title="High-value check">
+          A half-filled label is not universal. W is [Xe] 4f¹⁴ 5d⁴ 6s², not 5d⁵ 6s¹; Tc is [Kr] 4d⁵ 5s².
+        </Callout>
+        <H3>Chromium, Z = 24</H3>
+        <DataTable
+          columns={["Model", "Configuration", "3d boxes", "Valence pairs", "d exchanges"]}
+          rows={[
+            ["Simple prediction", "[Ar] 3d⁴ 4s²", "[↑][↑][↑][↑][ ]", "1 (4s²)", "C(4,2) = 6"],
+            ["Observed ground state", "[Ar] 3d⁵ 4s¹", "[↑][↑][↑][↑][↑]", "0", "C(5,2) = 10"],
+          ]}
+          accent={T.cyan}
+        />
+        <P>
+          Moving one 4s electron into 3d removes the 4s pair and raises the elementary d exchange count from 6 to 10.
+          The exact ground state follows from the complete total-energy balance—not exchange counting alone.
+        </P>
+        <H3>Copper, Z = 29</H3>
+        <DataTable
+          columns={["Model", "Configuration", "3d boxes", "Total valence pairs", "d exchanges"]}
+          rows={[
+            ["Simple prediction", "[Ar] 3d⁹ 4s²", "[↑↓][↑↓][↑↓][↑↓][↑]", "5", "16"],
+            ["Observed ground state", "[Ar] 3d¹⁰ 4s¹", "[↑↓][↑↓][↑↓][↑↓][↑↓]", "5", "20"],
+          ]}
+          accent={T.gold}
+        />
+        <P>
+          Copper keeps five total valence pairs, but completing 3d raises the d exchange count from 16 to 20.
+          Actual 3d/4s energies and electron correlation are also essential.
+        </P>
+        <Callout kind="warn" title="No invented numerical total energy">
+          Terms such as −6K or −10K are qualitative. Do not present them as measured aggregate energies without P, K
+          and the orbital-energy difference.
+        </Callout>
+        <H3>Important special ground states</H3>
+        <DataTable columns={["Element", "Simple prediction", "Ground-state configuration", "Reason / status"]} rows={ecSpecialRows} accent={T.f} />
+        <H3>Selected f-block configurations</H3>
+        <DataTable columns={["Element", "Ground-state configuration", "Memory cue"]} rows={ecFBlockRows} accent={T.f} />
+        <Callout kind="note" title="Compact memory chains">
+          d-block: Cr–Cu | Nb–Mo–Ru–Rh–Pd–Ag | Pt–Au | Rg*. f-block: La–Ce–Gd | Ac–Th–Pa–U–Np–Cm.
+          Learn the actual configuration first; use the chain only for recall.
+        </Callout>
+      </Card>
+
+      <Card accent={T.d}>
+        <H2 id="ec-applications">10 · Applications of Electronic Configuration</H2>
+        <H3>Electron count for ions</H3>
+        <Formula>Electrons in a cation = Z − positive charge</Formula>
+        <Formula>Electrons in an anion = Z + magnitude of negative charge</Formula>
+        <H3>Isoelectronic species and ionic radius</H3>
+        <P>
+          Isoelectronic species have the same electron count and configuration but different nuclear charge. Within a
+          simple isoelectronic series, greater Z attracts the same cloud more strongly and generally gives smaller radius.
+        </P>
+        <DataTable columns={["Species", "Electron calculation", "Total e⁻", "Configuration"]} rows={ecIsoelectronicRows} accent={T.d} />
+        <Formula>N³⁻ &gt; O²⁻ &gt; F⁻ &gt; Ne &gt; Na⁺ &gt; Mg²⁺ &gt; Al³⁺ (decreasing radius)</Formula>
+        <H3>Paired, unpaired and magnetic electrons</H3>
+        <DataTable columns={["Species", "Outer configuration", "Orbital pattern", "Unpaired e⁻", "Nature"]} rows={ecMagneticRows} accent={T.cyan} />
+        <Formula>μ<sub>so</sub> = √[n(n + 2)] BM</Formula>
+        <Callout kind="warn" title="Coordination-compound caution">
+          Ligand-field splitting can change the number of unpaired electrons. A free-ion Hund diagram must not be
+          transferred blindly to every complex.
+        </Callout>
+        <H3>Configuration-based deductions</H3>
+        <ul style={{ margin: "8px 0 0", paddingLeft: 22, display: "grid", gap: 7, color: T.textDim, lineHeight: 1.65 }}>
+          <li>Valence configuration helps predict oxidation states and bonding tendencies.</li>
+          <li>Noble-gas configurations rationalise simple ions such as Na⁺, Mg²⁺, F⁻ and O²⁻.</li>
+          <li>Unpaired-electron count predicts magnetic behaviour and the spin-only moment.</li>
+          <li>Isoelectronic comparison combines electron count with nuclear charge to predict size order.</li>
+          <li>Transition-metal ions must be written after removing ns electrons.</li>
+          <li>The neutral atom—not its temporary ion—determines permanent periodic-table position.</li>
+        </ul>
+      </Card>
+
+      <Card accent={T.gold}>
+        <H2 id="ec-revision">11 · Highest-Priority Revision Capsule</H2>
+        <div style={{ display: "grid", gap: 9 }}>
+          {[
+            "The (n + ℓ) rule predicts a common filling order; it is not a universal orbital-energy law.",
+            "For equal (n + ℓ), the orbital with smaller n fills first.",
+            "One orbital contains at most two electrons with opposite spin projections.",
+            "Degenerate orbitals are singly occupied with parallel spins before pairing.",
+            "Orbitals in a subshell = 2ℓ + 1; maximum electrons = 2(2ℓ + 1).",
+            "Orbitals in the nth shell = n²; maximum electrons = 2n².",
+            "Common transition-metal cations lose ns electrons before (n − 1)d electrons.",
+            "Cr = [Ar] 3d⁵ 4s¹; Cu = [Ar] 3d¹⁰ 4s¹.",
+            "Pd = [Kr] 4d¹⁰ 5s⁰; Pt = [Xe] 4f¹⁴ 5d⁹ 6s¹.",
+            "Tc = [Kr] 4d⁵ 5s²; Ce = [Xe] 4f¹ 5d¹ 6s².",
+            "Nexchange = C(n↑,2) + C(n↓,2); it counts same-spin pairs, not exact energy.",
+            "Npair counts doubly occupied orbitals; paired electrons = 2Npair.",
+            "μso = √[n(n + 2)] BM; the square root is essential.",
+            "A d⁵ species has five unpaired electrons only when high spin is allowed.",
+            "In an isoelectronic series, radius generally decreases as nuclear charge increases.",
+          ].map((line, index) => (
+            <div
+              key={line}
+              style={{
+                display: "grid",
+                gridTemplateColumns: "30px minmax(0,1fr)",
+                gap: 10,
+                alignItems: "start",
+                border: `1px solid ${T.borderSoft}`,
+                borderRadius: 10,
+                padding: "10px 12px",
+                background: index % 2 ? `${T.cyan}08` : `${T.gold}08`,
+              }}
+            >
+              <span style={{ color: index % 2 ? T.cyan : T.gold, fontFamily: T.mono, fontWeight: 900 }}>
+                {String(index + 1).padStart(2, "0")}
+              </span>
+              <span style={{ color: T.text, fontFamily: T.sans, fontSize: 13.5, lineHeight: 1.6 }}>{line}</span>
+            </div>
+          ))}
+        </div>
+      </Card>
+    </section>
+  );
+}
+
+export function SectionConfiguration() {
+  return (
+    <div>
+      <SectionConfigurationOverview />
+      <ElectronicConfigurationDeepDive />
     </div>
   );
 }
@@ -4870,7 +5444,7 @@ const NAV: { key: NavKey; label: string; group: string }[] = [
   { key: "compendium", label: "NCERT-First Reference Compendium", group: "Start Here" },
   { key: "notebook", label: "Rapid Student Notebook", group: "Start Here" },
   { key: "history", label: "History & Modern Law", group: "Foundations" },
-  { key: "configuration", label: "Configuration & Position", group: "Foundations" },
+  { key: "configuration", label: "Electronic Configuration", group: "Foundations" },
   { key: "map", label: "Master Trend Map", group: "Foundations" },
   { key: "radius", label: "Atomic & Ionic Radius", group: "Core Periodic Trends" },
   { key: "ionization", label: "Ionization Enthalpy · Full Notes", group: "Core Periodic Trends" },
@@ -5044,7 +5618,134 @@ export default function PeriodicTableMasterNotes() {
           minWidth: 0,
         }}
       >
-        {renderSection()}
+        <>
+          <span data-release="periodicity-mobile-ec-v13r2" hidden />
+          {renderSection()}
+          <nav className="bottomPageNav" aria-label="Page return controls">
+            <button
+              type="button"
+              onClick={() => {
+                if (typeof window !== "undefined" && window.history.length > 1) {
+                  window.history.back();
+                } else if (typeof window !== "undefined") {
+                  window.location.assign("/learn/periodic-table");
+                }
+              }}
+            >
+              ← Back / Return
+            </button>
+            <button
+              type="button"
+              onClick={() => {
+                if (typeof window !== "undefined") {
+                  window.scrollTo({ top: 0, behavior: "smooth" });
+                }
+              }}
+            >
+              ↑ Back to top
+            </button>
+          </nav>
+          <style>{`/* V13R2: mobile-first reading and bottom navigation */
+.notesSidebar { display: none !important; }
+.notesShell {
+  display: block !important;
+  width: 100% !important;
+  max-width: 1500px !important;
+  margin: 0 auto !important;
+}
+.notesMain {
+  width: 100% !important;
+  max-width: 1500px !important;
+  margin: 0 auto !important;
+  padding: 28px 24px 92px !important;
+}
+.mobileTabs {
+  display: flex !important;
+  overflow-x: auto !important;
+  overscroll-behavior-inline: contain;
+  gap: 8px;
+  padding: 10px 14px;
+  position: sticky;
+  top: 57px;
+  z-index: 15;
+  background: rgba(10, 22, 34, 0.96);
+  border-bottom: 1px solid #24405c;
+  backdrop-filter: blur(12px);
+  scrollbar-width: thin;
+}
+.mobileTabs button { flex: 0 0 auto; min-height: 40px; }
+.tableScroll {
+  max-width: 100%;
+  overflow-x: auto !important;
+  -webkit-overflow-scrolling: touch;
+  border-radius: 10px;
+}
+.tableScroll::after {
+  content: "Swipe horizontally for the full table →";
+  display: none;
+  padding: 7px 10px 2px;
+  color: #8fa8bf;
+  font-size: 10.5px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+.tableScroll table { min-width: 680px; }
+.formulaBox {
+  max-width: 100% !important;
+  overflow-x: auto !important;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+}
+.bottomPageNav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin: 30px auto 0;
+  padding: 20px 0 2px;
+  width: 100%;
+  border-top: 1px solid #24405c;
+}
+.bottomPageNav button {
+  min-height: 46px;
+  border: 1px solid #24405c;
+  border-radius: 12px;
+  padding: 10px 15px;
+  background: linear-gradient(135deg, #182b3e, #122232);
+  color: #eef3f8;
+  font: 800 13px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  cursor: pointer;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.18);
+}
+.bottomPageNav button:first-child {
+  color: #5fd4ea;
+  border-color: rgba(95, 212, 234, 0.5);
+}
+.bottomPageNav button:last-child {
+  color: #e8b84b;
+  border-color: rgba(232, 184, 75, 0.5);
+}
+
+@media (max-width: 900px) {
+  .notesMain { padding: 20px 15px 78px !important; }
+  .chapterHero { margin: 12px 12px 6px !important; padding: 20px 16px !important; }
+  .heroGrid, .twoCol { grid-template-columns: 1fr !important; }
+  .sectionIntro { padding: 19px 16px 18px !important; border-radius: 15px !important; }
+  .lessonCard, .workedExample { padding: 15px 14px !important; border-radius: 14px !important; }
+  .conceptGrid { grid-template-columns: 1fr !important; gap: 11px !important; }
+  .tableScroll::after { display: block; }
+  .ecJumpNav { margin-inline: -2px; }
+}
+
+@media (max-width: 560px) {
+  .notesMain { padding-inline: 13px !important; }
+  .chapterHero h1 { font-size: 31px !important; line-height: 1.04 !important; }
+  .sectionIntro h1 { font-size: 27px !important; line-height: 1.08 !important; }
+  .lessonCard, .workedExample { padding: 14px 13px !important; }
+  .tableScroll table { min-width: 640px; }
+  .bottomPageNav { display: grid; grid-template-columns: 1fr; }
+  .bottomPageNav button { width: 100%; }
+}`}</style>
+        </>
       </main>
     </div>
   );

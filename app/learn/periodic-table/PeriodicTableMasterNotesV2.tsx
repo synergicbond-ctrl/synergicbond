@@ -4,7 +4,7 @@
 
 import React, { useMemo, useState } from "react";
 import * as katex from "katex";
-import { SectionElectronegativityV11 } from "./PeriodicTableElectronegativityV11";
+import { SectionElectronegativityV12 } from "./PeriodicTableElectronegativityV12";
 import {
   V9TelluricScrewSVG,
   V9AtomicVolumeSVG,
@@ -4827,7 +4827,7 @@ export function SectionElectronGain() {
 }
 
 export function SectionElectronegativity() {
-  return <SectionElectronegativityV11 />;
+  return <SectionElectronegativityV12 />;
 }
 
 /* Legacy implementation retained for source comparison; not rendered. */

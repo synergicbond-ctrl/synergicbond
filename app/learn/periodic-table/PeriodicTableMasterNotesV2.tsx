@@ -647,7 +647,7 @@ export function ChapterHero() {
             A concept-first chapter for Boards, NEET, JEE Main and JEE Advanced: classification, electronic configuration, effective nuclear charge, size, ionization enthalpy, electron gain enthalpy, electronegativity, chemical periodicity, special relationships and original worked examples.
           </p>
           <div style={{ display: "flex", flexWrap: "wrap", gap: 8, marginTop: 16 }}>
-            {["14 student-note modules", "Original responsive SVGs", "Worked reasoning", "Special-case revision"].map((x, i) => (
+            {["15 student-note modules", "Original responsive SVGs", "Worked reasoning", "Special-case revision"].map((x, i) => (
               <span key={x} style={{ border: `1px solid ${i % 2 ? T.gold + "55" : T.cyan + "55"}`, background: "rgba(255,255,255,0.025)", borderRadius: 999, padding: "6px 10px", fontFamily: T.sans, color: T.textDim, fontSize: 11.5 }}>
                 {x}
               </span>
@@ -3813,6 +3813,285 @@ export function SectionWorkshop() {
 }
 
 
+
+/* =============================================================================
+   SECTION — BLOCK-WISE NUMERICAL DATA ATLAS
+   ========================================================================== */
+
+const groupDataRows: React.ReactNode[][] = [
+  ["Group 1", <MathInline tex={String.raw`ns^1`} />, "H, Li, Na, K, Rb, Cs, Fr", "+1; H also −1", "radius increases; IE and EN decrease", "strongly electropositive metals; Li shows strong hydration effects"],
+  ["Group 2", <MathInline tex={String.raw`ns^2`} />, "Be, Mg, Ca, Sr, Ba, Ra", "+2", "radius increases; IE and EN decrease", "Be is strongly polarising; hydroxide basicity generally increases downward"],
+  ["Group 13", <MathInline tex={String.raw`ns^2np^1`} />, "B, Al, Ga, In, Tl", "+3 and +1", "irregular size/IE because of d- and f-contraction", "+1 state becomes more stable downward"],
+  ["Group 14", <MathInline tex={String.raw`ns^2np^2`} />, "C, Si, Ge, Sn, Pb", "+4, +2 and −4", "metallic character increases downward", "+2 state becomes more stable downward"],
+  ["Group 15", <MathInline tex={String.raw`ns^2np^3`} />, "N, P, As, Sb, Bi", "−3, +3, +5", "radius increases; IE and EN generally decrease", "+3 state becomes more stable; +5 becomes less stable downward"],
+  ["Group 16", <MathInline tex={String.raw`ns^2np^4`} />, "O, S, Se, Te, Po", "−2, +2, +4, +6", "electron gain is strongly favourable but O is a special case", "hydride acidity and reducing strength increase downward"],
+  ["Group 17", <MathInline tex={String.raw`ns^2np^5`} />, "F, Cl, Br, I, At", "−1; positive states except F", "radius increases; IE and EN decrease", "Cl has the most exothermic first electron gain among the family"],
+  ["Group 18", <MathInline tex={String.raw`ns^2np^6`} />, "He, Ne, Ar, Kr, Xe, Rn", "0; Xe/Kr form compounds", "very high IE; positive first electron gain enthalpy", "van der Waals radius and polarizability increase downward"],
+];
+
+
+const mainGroupPhysicalRows: React.ReactNode[][] = [
+  ["Group 1", "Li < Na < K < Rb < Cs", "Li > Na > K > Rb > Cs", "H −73; Li −60; Na −53; K −48; Rb −47; Cs −46", "Li 1.0; Na 0.9; K 0.8; Rb 0.8; Cs 0.7"],
+  ["Group 2", "Be < Mg < Ca < Sr < Ba", "Be > Mg > Ca > Sr > Ba", "small or positive/weakly negative because addition begins an np subshell", "Be > Mg > Ca ≈ Sr > Ba"],
+  ["Group 13", "B < Ga < Al < In < Tl (approx.)", "B highest; Al/Ga/In/Tl irregular", "irregular; no smooth group order", "B highest; heavier members close and irregular"],
+  ["Group 14", "C < Si < Ge < Sn ≲ Pb", "C > Si > Ge ≳ Pb > Sn (approx.)", "moderately exothermic but irregular", "C highest; Si, Ge, Sn and Pb close"],
+  ["Group 15", "N < P < As < Sb < Bi", "N > P > As > Sb > Bi", "N is unusually unfavourable because np³ is half-filled", "N > P > As > Sb ≈ Bi"],
+  ["Group 16", "O < S < Se < Te < Po", "O > S > Se > Te > Po", "O −141; S −200; Se −195; Te −190; Po −174", "O > S > Se > Te > Po"],
+  ["Group 17", "F < Cl < Br < I < At", "F > Cl > Br > I", "F −328; Cl −349; Br −325; I −295; At −270", "F 4.0; Cl 3.0; Br 2.8; I 2.5; At 2.2"],
+  ["Group 18", "van der Waals radius increases downward", "He > Ne > Ar > Kr > Xe > Rn", "He +48; Ne +116; Ar +96; Kr +96; Xe +77; Rn +68", "usually not assigned in elementary Pauling tables"],
+];
+
+const mainGroupChemicalRows: React.ReactNode[][] = [
+  ["Group 1", "+1", "MH", "M₂O / peroxides / superoxides", "hydroxide basicity and water reactivity increase downward", "Li forms nitride and shows strong diagonal similarity with Mg"],
+  ["Group 2", "+2", "MH₂", "MO", "hydroxide basicity generally increases; sulfate solubility decreases", "BeO and Be(OH)₂ are amphoteric and Be compounds are highly covalent"],
+  ["Group 13", "+3, +1", "EH₃ units; B₂H₆ important", "E₂O₃", "acidic B₂O₃ → amphoteric Al₂O₃/Ga₂O₃ → more basic heavier oxides", "inert-pair effect stabilises Tl(I)"],
+  ["Group 14", "+4, +2, −4", "EH₄", "EO₂ and EO", "EO₂ becomes less acidic/more amphoteric downward", "catenation: C ≫ Si > Ge ≈ Sn > Pb"],
+  ["Group 15", "−3, +3, +5", "EH₃", "E₂O₃ and E₂O₅", "hydride basicity and thermal stability decrease downward", "+3 state gains stability; +5 state loses stability"],
+  ["Group 16", "−2, +2, +4, +6", "H₂E", "EO₂ and EO₃", "hydride acidity and reducing character increase downward", "O cannot show +6; sulfur and heavier members show expanded oxidation-state chemistry"],
+  ["Group 17", "−1; +1,+3,+5,+7 except F", "HX", "X₂O, X₂O₃, X₂O₅, X₂O₇", "HX acidity: HF < HCl < HBr < HI", "F shows only −1 in ordinary compounds and is the strongest electronegative element"],
+  ["Group 18", "0; positive states mainly Xe/Kr", "no stable ordinary hydride series", "XeO₃, XeO₄ and xenon oxofluorides", "reactivity increases downward as IE falls and polarizability rises", "Xe forms the widest range of compounds"],
+];
+
+const dSeriesConfigurations: React.ReactNode[][] = [
+  ["3d series · period 4", "Sc", "Ti", "V", "Cr", "Mn", "Fe", "Co", "Ni", "Cu", "Zn"],
+  ["Outer configuration", "3d¹4s²", "3d²4s²", "3d³4s²", "3d⁵4s¹", "3d⁵4s²", "3d⁶4s²", "3d⁷4s²", "3d⁸4s²", "3d¹⁰4s¹", "3d¹⁰4s²"],
+  ["4d series · period 5", "Y", "Zr", "Nb", "Mo", "Tc", "Ru", "Rh", "Pd", "Ag", "Cd"],
+  ["Outer configuration", "4d¹5s²", "4d²5s²", "4d⁴5s¹", "4d⁵5s¹", "4d⁶5s¹", "4d⁷5s¹", "4d⁸5s¹", "4d¹⁰5s⁰", "4d¹⁰5s¹", "4d¹⁰5s²"],
+  ["5d series · period 6", "La", "Hf", "Ta", "W", "Re", "Os", "Ir", "Pt", "Au", "Hg"],
+  ["Outer configuration", "5d¹6s²", "5d²6s²", "5d³6s²", "5d⁴6s²", "5d⁵6s²", "5d⁶6s²", "5d⁷6s²", "5d⁹6s¹", "5d¹⁰6s¹", "5d¹⁰6s²"],
+  ["6d series · period 7", "Ac", "Rf", "Db", "Sg", "Bh", "Hs", "Mt", "Ds", "Rg", "Cn"],
+  ["Outer configuration", "6d¹7s²", "6d²7s²", "6d³7s²", "6d⁴7s²", "6d⁵7s²", "6d⁶7s²", "6d⁷7s²", "6d⁸7s²", "6d¹⁰7s¹", "6d¹⁰7s²"],
+];
+
+const firstTransitionDataRows: React.ReactNode[][] = [
+  ["Atomic number", 21, 22, 23, 24, 25, 26, 27, 28, 29, 30],
+  ["M", "3d¹4s²", "3d²4s²", "3d³4s²", "3d⁵4s¹", "3d⁵4s²", "3d⁶4s²", "3d⁷4s²", "3d⁸4s²", "3d¹⁰4s¹", "3d¹⁰4s²"],
+  ["M⁺", "3d¹4s¹", "3d²4s¹", "3d³4s¹", "3d⁵", "3d⁵4s¹", "3d⁶4s¹", "3d⁷4s¹", "3d⁸4s¹", "3d¹⁰", "3d¹⁰4s¹"],
+  ["M²⁺", "3d¹", "3d²", "3d³", "3d⁴", "3d⁵", "3d⁶", "3d⁷", "3d⁸", "3d⁹", "3d¹⁰"],
+  ["M³⁺", "[Ar]", "3d¹", "3d²", "3d³", "3d⁴", "3d⁵", "3d⁶", "3d⁷", "—", "—"],
+  ["ΔₐH° / kJ mol⁻¹", 326, 473, 515, 397, 281, 416, 425, 430, 339, 126],
+  ["IE₁ / kJ mol⁻¹", 631, 656, 650, 653, 717, 762, 758, 736, 745, 906],
+  ["IE₂ / kJ mol⁻¹", 1235, 1309, 1414, 1592, 1509, 1561, 1644, 1752, 1958, 1734],
+  ["IE₃ / kJ mol⁻¹", 2393, 2657, 2833, 2990, 3260, 2962, 3243, 3402, 3556, 3837],
+  ["Metallic radius M / pm", 164, 147, 135, 129, 137, 126, 125, 125, 128, 137],
+  ["Ionic radius M²⁺ / pm", "—", "—", 79, 82, 82, 77, 74, 70, 73, 75],
+  ["Ionic radius M³⁺ / pm", 73, 67, 64, 62, 65, 65, 61, 60, "—", "—"],
+  ["E°(M²⁺/M) / V", "—", -1.63, -1.18, -0.90, -1.18, -0.44, -0.28, -0.25, "+0.34", -0.76],
+  ["E°(M³⁺/M²⁺) / V", "—", -0.37, -0.26, -0.41, "+1.57", "+0.77", "+1.97", "—", "—", "—"],
+  ["Density / g cm⁻³", 3.43, 4.1, 6.07, 7.19, 7.21, 7.8, 8.7, 8.9, 8.9, 7.1],
+];
+
+const transitionThermochemicalRows: React.ReactNode[][] = [
+  ["Ti", 469, 656, 1309, -1866, -1.63],
+  ["V", 515, 650, 1414, -1895, -1.18],
+  ["Cr", 398, 653, 1592, -1925, -0.90],
+  ["Mn", 279, 717, 1509, -1862, -1.18],
+  ["Fe", 418, 762, 1561, -1998, -0.44],
+  ["Co", 427, 758, 1644, -2079, -0.28],
+  ["Ni", 431, 736, 1752, -2121, -0.25],
+  ["Cu", 339, 745, 1958, -2121, "+0.34"],
+  ["Zn", 130, 906, 1734, -2059, -0.76],
+];
+
+const transitionOxideRows: React.ReactNode[][] = [
+  ["+7", "—", "—", "—", "—", "Mn₂O₇", "—", "—", "—", "—", "—"],
+  ["+6", "—", "—", "—", "CrO₃", "—", "—", "—", "—", "—", "—"],
+  ["+5", "—", "—", "V₂O₅", "—", "—", "—", "—", "—", "—", "—"],
+  ["+4", "—", "TiO₂", "V₂O₄", "CrO₂", "MnO₂", "—", "—", "—", "—", "—"],
+  ["+3", "Sc₂O₃", "Ti₂O₃", "V₂O₃", "Cr₂O₃", "Mn₂O₃", "Fe₂O₃", "—", "—", "—", "—"],
+  ["Mixed", "—", "—", "—", "—", "Mn₃O₄", "Fe₃O₄", "Co₃O₄", "—", "—", "—"],
+  ["+2", "—", "TiO", "VO", "(CrO)", "MnO", "FeO", "CoO", "NiO", "CuO", "ZnO"],
+  ["+1", "—", "—", "—", "—", "—", "—", "—", "—", "Cu₂O", "—"],
+];
+
+const magneticMomentRows: React.ReactNode[][] = [
+  ["Sc³⁺", "3d⁰", 0, "0", "0"],
+  ["Ti³⁺", "3d¹", 1, "1.73", "1.75"],
+  ["Ti²⁺", "3d²", 2, "2.84", "2.76"],
+  ["V²⁺", "3d³", 3, "3.87", "3.86"],
+  ["Cr²⁺", "3d⁴", 4, "4.90", "4.80"],
+  ["Mn²⁺", "3d⁵", 5, "5.92", "5.96"],
+  ["Fe²⁺", "3d⁶", 4, "4.90", "5.3–5.5"],
+  ["Co²⁺", "3d⁷", 3, "3.87", "4.4–5.2"],
+  ["Ni²⁺", "3d⁸", 2, "2.84", "2.9–3.4"],
+  ["Cu²⁺", "3d⁹", 1, "1.73", "1.8–2.2"],
+  ["Zn²⁺", "3d¹⁰", 0, "0", "0"],
+];
+
+const lanthanoidRows: React.ReactNode[][] = [
+  [57, "Lanthanum", "La", "5d¹6s²", "5d¹", "4f⁰", "—", 187, 106],
+  [58, "Cerium", "Ce", "4f¹5d¹6s²", "4f²", "4f¹", "4f⁰", 183, 103],
+  [59, "Praseodymium", "Pr", "4f³6s²", "4f³", "4f²", "4f¹", 182, 101],
+  [60, "Neodymium", "Nd", "4f⁴6s²", "4f⁴", "4f³", "4f²", 181, 99],
+  [61, "Promethium", "Pm", "4f⁵6s²", "4f⁵", "4f⁴", "—", 181, 98],
+  [62, "Samarium", "Sm", "4f⁶6s²", "4f⁶", "4f⁵", "—", 180, 96],
+  [63, "Europium", "Eu", "4f⁷6s²", "4f⁷", "4f⁶", "—", 199, 95],
+  [64, "Gadolinium", "Gd", "4f⁷5d¹6s²", "4f⁷5d¹", "4f⁷", "—", 180, 94],
+  [65, "Terbium", "Tb", "4f⁹6s²", "4f⁹", "4f⁸", "4f⁷", 178, 92],
+  [66, "Dysprosium", "Dy", "4f¹⁰6s²", "4f¹⁰", "4f⁹", "4f⁸", 177, 91],
+  [67, "Holmium", "Ho", "4f¹¹6s²", "4f¹¹", "4f¹⁰", "—", 176, 89],
+  [68, "Erbium", "Er", "4f¹²6s²", "4f¹²", "4f¹¹", "—", 175, 88],
+  [69, "Thulium", "Tm", "4f¹³6s²", "4f¹³", "4f¹²", "—", 174, 87],
+  [70, "Ytterbium", "Yb", "4f¹⁴6s²", "4f¹⁴", "4f¹³", "—", 173, 86],
+  [71, "Lutetium", "Lu", "4f¹⁴5d¹6s²", "4f¹⁴5d¹", "4f¹⁴", "—", "—", "—"],
+];
+
+const actinoidRows: React.ReactNode[][] = [
+  [89, "Actinium", "Ac", "6d¹7s²", "5f⁰", "—", 111, "—"],
+  [90, "Thorium", "Th", "6d²7s²", "5f¹", "5f⁰", "—", 99],
+  [91, "Protactinium", "Pa", "5f²6d¹7s²", "5f²", "5f¹", "—", 96],
+  [92, "Uranium", "U", "5f³6d¹7s²", "5f³", "5f²", 103, 93],
+  [93, "Neptunium", "Np", "5f⁴6d¹7s²", "5f⁴", "5f³", 101, 92],
+  [94, "Plutonium", "Pu", "5f⁶7s²", "5f⁵", "5f⁴", 100, 90],
+  [95, "Americium", "Am", "5f⁷7s²", "5f⁶", "5f⁵", 99, 89],
+  [96, "Curium", "Cm", "5f⁷6d¹7s²", "5f⁷", "5f⁶", 99, 88],
+  [97, "Berkelium", "Bk", "5f⁹7s²", "5f⁸", "5f⁷", 98, 87],
+  [98, "Californium", "Cf", "5f¹⁰7s²", "5f⁹", "5f⁸", 98, 86],
+  [99, "Einsteinium", "Es", "5f¹¹7s²", "5f¹⁰", "5f⁹", "—", "—"],
+  [100, "Fermium", "Fm", "5f¹²7s²", "5f¹¹", "5f¹⁰", "—", "—"],
+  [101, "Mendelevium", "Md", "5f¹³7s²", "5f¹²", "5f¹¹", "—", "—"],
+  [102, "Nobelium", "No", "5f¹⁴7s²", "5f¹³", "5f¹²", "—", "—"],
+  [103, "Lawrencium", "Lr", "5f¹⁴6d¹7s²", "5f¹⁴", "5f¹³", "—", "—"],
+];
+
+const actinoidOxidationRows: React.ReactNode[][] = [
+  ["Ac", "+3"], ["Th", "+3, +4"], ["Pa", "+3, +4, +5"], ["U", "+3, +4, +5, +6"],
+  ["Np", "+3, +4, +5, +6, +7"], ["Pu", "+3, +4, +5, +6, +7"], ["Am", "+3, +4, +5, +6"],
+  ["Cm", "+3, +4"], ["Bk", "+3, +4"], ["Cf", "+3, +4"], ["Es", "+3"], ["Fm", "+3"],
+  ["Md", "+3"], ["No", "+3"], ["Lr", "+3"],
+];
+
+export function SectionBlockDataAtlas() {
+  return (
+    <div>
+      <SectionIntro
+        eyebrow="NCERT numerical reference organised for note-making"
+        title="Block-Wise and Group-Wise Data Atlas"
+        summary="This module puts main-group families first, then arranges d-block data period-wise and f-block data series-wise. Numerical tables are kept separate from theory so students can copy, compare and revise without mixing unlike quantities."
+        accent={T.d}
+      />
+
+      <Callout kind="note" title="How to read the atlas">
+        Every quantity keeps its original unit. A dash means that the cited table does not report a value; it does not automatically mean that the species cannot exist. Trends should be inferred only after comparing the complete row and the electronic configuration.
+      </Callout>
+
+      <H2 id="main-group-atlas">1 · Main-Group Families: Groups 1, 2 and 13–18</H2>
+      <DataTable columns={["Group", "Valence configuration", "Members", "Important oxidation states", "Dominant trend", "High-yield note"]} rows={groupDataRows} accent={T.s} />
+      <H3>Family-by-family physical-property sheet</H3>
+      <DataTable columns={["Group", "Radius order", "IE₁ order", "First electron-gain data / behaviour", "Electronegativity"]} rows={mainGroupPhysicalRows} accent={T.cyan} />
+      <H3>Family-by-family chemical-property sheet</H3>
+      <DataTable columns={["Group", "Oxidation states", "Hydride pattern", "Oxide pattern", "Down-group relation", "Special case"]} rows={mainGroupChemicalRows} accent={T.p} />
+
+      <H3>NCERT atomic-radius data used for direct comparison</H3>
+      <DataTable columns={["Set", "Li", "Be", "B", "C", "N", "O", "F"]} rows={[["Period 2 radius / pm", 152, 111, 88, 77, 74, 66, 64]]} accent={T.cyan} />
+      <DataTable columns={["Set", "Na", "Mg", "Al", "Si", "P", "S", "Cl"]} rows={[["Period 3 radius / pm", 186, 160, 143, 117, 110, 104, 99]]} accent={T.cyan} />
+      <DataTable columns={["Family", "Member-wise atomic radius / pm"]} rows={[
+        ["Group 1", "Li 152; Na 186; K 231; Rb 244; Cs 262"],
+        ["Group 17", "F 64; Cl 99; Br 114; I 133; At 140"],
+      ]} accent={T.cyan} />
+      <RelationBox title="Direct radius relations" relations={[
+        <><MathInline tex={String.raw`r_{\mathrm{cation}}<r_{\mathrm{atom}}<r_{\mathrm{anion}}`} /></>,
+        <><MathInline tex={String.raw`\mathrm{O^{2-}>F^->Na^+>Mg^{2+}}`} /> for the ten-electron isoelectronic series.</>,
+        <>NCERT illustrations: <MathInline tex={String.raw`r(\mathrm{F^-})=136\,pm`} />, <MathInline tex={String.raw`r(\mathrm{F})=64\,pm`} />, <MathInline tex={String.raw`r(\mathrm{Na^+})=95\,pm`} /> and <MathInline tex={String.raw`r(\mathrm{Na})=186\,pm`} />.</>,
+      ]} />
+
+      <H3>First electron-gain enthalpy: numerical family data</H3>
+      <DataTable columns={["Group", "Values / kJ mol⁻¹"]} rows={[
+        ["Group 1", "H −73; Li −60; Na −53; K −48; Rb −47; Cs −46"],
+        ["Group 16", "O −141; S −200; Se −195; Te −190; Po −174"],
+        ["Group 17", "F −328; Cl −349; Br −325; I −295; At −270"],
+        ["Group 18", "He +48; Ne +116; Ar +96; Kr +96; Xe +77; Rn +68"],
+      ]} accent={T.p} />
+      <Callout kind="special" title="Special cases visible in the numbers">
+        Chlorine is more exothermic than fluorine, and sulfur is more exothermic than oxygen, because addition to the compact 2p shell produces stronger electron–electron repulsion. Noble-gas values are positive because the incoming electron must enter the next principal shell.
+      </Callout>
+
+      <H3>Pauling electronegativity data</H3>
+      <DataTable columns={["Set", "Values"]} rows={[
+        ["Period 2", "Li 1.0; Be 1.5; B 2.0; C 2.5; N 3.0; O 3.5; F 4.0"],
+        ["Period 3", "Na 0.9; Mg 1.2; Al 1.5; Si 1.8; P 2.1; S 2.5; Cl 3.0"],
+        ["Group 1", "Li 1.0; Na 0.9; K 0.8; Rb 0.8; Cs 0.7"],
+        ["Group 17", "F 4.0; Cl 3.0; Br 2.8; I 2.5; At 2.2"],
+      ]} accent={T.gold} />
+
+      <H2 id="d-block-atlas">2 · d-Block Data, Arranged Period-Wise</H2>
+      <P>
+        The d block contains four horizontal series. Their general outer configuration is <MathInline tex={String.raw`(n-1)d^{1-10}ns^{0-2}`} />. The actual configuration must be used for Nb, Mo, Ru, Rh, Pd, Pt, Au and related elements because the d and s levels are close in energy.
+      </P>
+      <DataTable columns={["Series / row", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]} rows={dSeriesConfigurations} accent={T.d} />
+
+      <H3>Complete first-transition-series reference table</H3>
+      <DataTable columns={["Property", "Sc", "Ti", "V", "Cr", "Mn", "Fe", "Co", "Ni", "Cu", "Zn"]} rows={firstTransitionDataRows} accent={T.d} />
+      <Callout kind="note" title="Why the 3d rows are irregular">
+        Added nuclear charge, d-electron shielding, exchange stabilization, pairing, atomization, successive ionization and hydration all contribute simultaneously. Therefore, exact 3d numerical orders should be learnt from the data table rather than forced into one smooth arrow.
+      </Callout>
+
+      <H3>Thermochemical cycle for formation of aqueous M²⁺</H3>
+      <MathBlock tex={String.raw`\Delta H^\circ_{\mathrm{overall}}=\Delta_aH^\circ+\Delta_iH_1^\circ+\Delta_iH_2^\circ+\Delta_{hyd}H^\circ(\mathrm{M^{2+}})`} label="Energy balance controlling M²⁺/M electrode potential" />
+      <DataTable columns={["Metal", "ΔₐH°", "IE₁", "IE₂", "ΔhydH°(M²⁺)", "E°(M²⁺/M) / V"]} rows={transitionThermochemicalRows} accent={T.cyan} />
+      <ConceptGrid items={[
+        { title: "Copper", tag: "POSITIVE E°", accent: T.gold, body: "Cu has E° = +0.34 V. The energy needed to form Cu²⁺(aq) is not fully compensated by hydration, so Cu does not liberate H₂ from ordinary non-oxidising acids." },
+        { title: "Manganese", tag: "d⁵ STABILITY", accent: T.p, body: "Mn²⁺ is 3d⁵ and unusually stable; this contributes to the strongly negative M²⁺/M value and the oxidising behaviour of Mn³⁺." },
+        { title: "Zinc", tag: "d¹⁰ STABILITY", accent: T.s, body: "Zn²⁺ is 3d¹⁰. Its low atomization enthalpy and filled d shell contribute to its distinctive electrode potential." },
+        { title: "Nickel", tag: "HYDRATION", accent: T.d, body: "The strongly negative hydration enthalpy helps stabilise Ni²⁺(aq), so a complete thermochemical cycle is essential." },
+      ]} />
+
+      <H3>Oxides of 3d metals arranged by oxidation number</H3>
+      <DataTable columns={["Oxidation number", "G3", "G4", "G5", "G6", "G7", "G8", "G9", "G10", "G11", "G12"]} rows={transitionOxideRows} accent={T.p} />
+      <Callout kind="note">
+        The highest oxidation state rises from Sc toward Mn and then falls. High oxidation-state oxides such as <MathInline tex={String.raw`\mathrm{V_2O_5,CrO_3,Mn_2O_7}`} /> are more covalent and acidic, whereas low oxidation-state oxides such as <MathInline tex={String.raw`\mathrm{MnO,FeO,CoO,NiO}`} /> are predominantly basic. <MathInline tex={String.raw`\mathrm{Mn_3O_4,Fe_3O_4,Co_3O_4}`} /> are mixed-valence oxides.
+      </Callout>
+
+      <H3>Magnetic moments of common aqueous 3d ions</H3>
+      <MathBlock tex={String.raw`\mu_{so}=\sqrt{n(n+2)}\ \mathrm{BM}`} label="Spin-only magnetic moment" />
+      <DataTable columns={["Ion", "d configuration", "Unpaired e⁻", "Calculated / BM", "Observed / BM"]} rows={magneticMomentRows} accent={T.f} />
+      <WorkedExample number="DA" title="Magnetic moment of Mn²⁺" question="Calculate the spin-only magnetic moment of a divalent ion of atomic number 25." reasoning={[
+        "Z = 25 is Mn: [Ar]3d⁵4s².",
+        "Mn²⁺ loses the two 4s electrons and becomes 3d⁵.",
+        "A high-spin 3d⁵ ion has five unpaired electrons.",
+      ]} answer="μ = √[5(5+2)] = √35 = 5.92 BM." accent={T.f} />
+      <Callout kind="special" title="Calculated and observed values need not match exactly">
+        The spin-only expression neglects orbital contribution. Departures are particularly visible for Fe²⁺, Co²⁺, Ni²⁺ and Cu²⁺, and the measured value also depends on ligand field, geometry and temperature.
+      </Callout>
+
+      <H2 id="f-block-atlas">3 · f-Block Data, Arranged Series-Wise</H2>
+      <P>
+        Period 6 contains the 4f series (lanthanoids), while period 7 contains the 5f series (actinoids). Their general configurations are represented by <MathInline tex={String.raw`[\mathrm{Xe}]4f^{1-14}5d^{0-1}6s^2`} /> and <MathInline tex={String.raw`[\mathrm{Rn}]5f^{1-14}6d^{0-1}7s^2`} /> respectively.
+      </P>
+
+      <H3>Period 6: lanthanum and lanthanoids</H3>
+      <DataTable columns={["Z", "Name", "Symbol", "Ln configuration", "Ln²⁺", "Ln³⁺", "Ln⁴⁺", "Ln radius / pm", "Ln³⁺ radius / pm"]} rows={lanthanoidRows} accent={T.f} />
+      <RelationBox title="Lanthanoid contraction" relations={[
+        <>The <MathInline tex={String.raw`\mathrm{Ln^{3+}}`} /> radius falls fairly regularly from La³⁺ 106 pm toward the heavier ions because one 4f electron shields another 4f electron poorly.</>,
+        <>Eu has a larger metallic radius in the table because the stable half-filled 4f⁷ arrangement changes metallic bonding.</>,
+        <>The cumulative contraction makes Zr and Hf nearly equal in radius and contributes to their close occurrence and difficult separation.</>,
+        <>As Ln³⁺ radius decreases, charge density and complex-forming tendency generally increase, while the basicity of Ln(OH)₃ generally decreases.</>,
+      ]} />
+
+      <H3>Period 7: actinium and actinoids</H3>
+      <DataTable columns={["Z", "Name", "Symbol", "M configuration", "M³⁺", "M⁴⁺", "r(M³⁺) / pm", "r(M⁴⁺) / pm"]} rows={actinoidRows} accent={T.p} />
+      <H3>Observed oxidation states of actinium and actinoids</H3>
+      <DataTable columns={["Element", "Reported oxidation states"]} rows={actinoidOxidationRows} accent={T.gold} />
+      <ConceptGrid items={[
+        { title: "Early actinoids", tag: "MANY OXIDATION STATES", accent: T.p, body: "The 5f, 6d and 7s levels are close in energy, so Th through Pu display several oxidation states." },
+        { title: "Later actinoids", tag: "+3 DOMINATES", accent: T.f, body: "As 5f orbitals contract and become less available for bonding, the +3 state becomes increasingly dominant." },
+        { title: "Actinoid contraction", tag: "5f SHIELDING", accent: T.cyan, body: "Poor shielding by 5f electrons produces a progressive decrease in M³⁺ and M⁴⁺ radii, though the pattern is less smooth than in lanthanoids." },
+        { title: "Radioactivity", tag: "ALL ACTINOIDS", accent: T.gold, body: "Every actinoid is radioactive; many later members are available only in very small synthetic quantities, so some physical data remain unreported." },
+      ]} />
+
+      <H2>4 · What Must Be Memorised and What Must Be Derived</H2>
+      <DataTable columns={["Derive from configuration/trend", "Memorise as data"]} rows={[
+        ["period, block and approximate group", "exact 3d atomization, IE₂/IE₃ and electrode-potential values"],
+        ["isoelectronic radius order", "specific ionic radii and observed magnetic moments"],
+        ["direction of radius, IE and EN in a normal group", "O/S and F/Cl electron-gain numerical special cases"],
+        ["spin-only moment from unpaired electrons", "observed moment ranges when orbital contribution is important"],
+        ["highest oxidation state rises toward Mn", "complete oxide matrix and mixed oxides"],
+        ["lanthanoid/actinoid contraction from poor f shielding", "individual f-block configurations and tabulated radii"],
+      ]} accent={T.d} />
+    </div>
+  );
+}
+
 /* =============================================================================
    MAIN APP — Navigation shell
    ========================================================================== */
@@ -3830,6 +4109,7 @@ type NavKey =
   | "special"
   | "families"
   | "dblock"
+  | "atlas"
   | "workshop";
 
 const NAV: { key: NavKey; label: string; group: string }[] = [
@@ -3846,6 +4126,7 @@ const NAV: { key: NavKey; label: string; group: string }[] = [
   { key: "special", label: "Special Relationships", group: "Advanced Connections" },
   { key: "families", label: "Family-Wise Orders", group: "Reference Data" },
   { key: "dblock", label: "3d-Series & Ion Colours", group: "Reference Data" },
+  { key: "atlas", label: "Block-Wise Data Atlas", group: "Reference Data" },
   { key: "workshop", label: "Worked Example Workshop", group: "Practice" },
 ];
 
@@ -3876,6 +4157,7 @@ export default function PeriodicTableMasterNotes() {
       case "special": return <SectionSpecialEffects />;
       case "families": return <SectionFamilies />;
       case "dblock": return <SectionDBlockTrends />;
+      case "atlas": return <SectionBlockDataAtlas />;
       case "workshop": return <SectionWorkshop />;
     }
   };

@@ -743,37 +743,412 @@ export function RadialDistributionSVG() {
 
 
 export function AtomicVolumeSVG() {
+  // Modern quantitative reconstruction of one complete Meyer-curve segment.
+  // Vm = M / rho, using representative room-temperature condensed-phase densities.
+  // Kr is deliberately omitted from the connected condensed-phase curve because it is a gas at 20 °C.
   const data = [
-    { e: "Li", m: 6.94, v: 13.0, family: "alkali" }, { e: "Be", m: 9.01, v: 4.9 }, { e: "B", m: 10.81, v: 4.6 }, { e: "C", m: 12.01, v: 3.4 },
-    { e: "Na", m: 22.99, v: 23.7, family: "alkali" }, { e: "Mg", m: 24.31, v: 14.0 }, { e: "Al", m: 26.98, v: 10.0 }, { e: "Si", m: 28.09, v: 12.1 }, { e: "P", m: 30.97, v: 17.0 }, { e: "S", m: 32.06, v: 15.5 },
-    { e: "K", m: 39.10, v: 45.3, family: "alkali" }, { e: "Ca", m: 40.08, v: 26.0 }, { e: "Sc", m: 44.96, v: 15.0 }, { e: "Ti", m: 47.87, v: 10.6 }, { e: "V", m: 50.94, v: 8.4 }, { e: "Cr", m: 52.00, v: 7.2 }, { e: "Mn", m: 54.94, v: 7.4 }, { e: "Fe", m: 55.85, v: 7.1 }, { e: "Co", m: 58.93, v: 6.6 }, { e: "Ni", m: 58.69, v: 6.6 }, { e: "Cu", m: 63.55, v: 7.1 }, { e: "Zn", m: 65.38, v: 9.2 }, { e: "Ga", m: 69.72, v: 11.8 }, { e: "Ge", m: 72.63, v: 13.6 }, { e: "As", m: 74.92, v: 13.1 }, { e: "Se", m: 78.97, v: 16.5 }, { e: "Br", m: 79.90, v: 23.5, family: "halogen" },
-    { e: "Rb", m: 85.47, v: 55.9, family: "alkali" }, { e: "Sr", m: 87.62, v: 33.7 }, { e: "Y", m: 88.91, v: 19.9 }, { e: "Zr", m: 91.22, v: 14.0 }, { e: "Nb", m: 92.91, v: 10.8 }, { e: "Mo", m: 95.95, v: 9.4 }, { e: "Ru", m: 101.07, v: 8.2 }, { e: "Rh", m: 102.91, v: 8.3 }, { e: "Pd", m: 106.42, v: 8.9 }, { e: "Ag", m: 107.87, v: 10.3 }, { e: "Cd", m: 112.41, v: 13.0 }, { e: "In", m: 114.82, v: 15.7 }, { e: "Sn", m: 118.71, v: 16.3 }, { e: "Sb", m: 121.76, v: 18.4 }, { e: "I", m: 126.90, v: 25.7, family: "halogen" },
-    { e: "Cs", m: 132.91, v: 70.0, family: "alkali" }, { e: "Ba", m: 137.33, v: 39.0 },
-  ].sort((a, b) => a.m - b.m);
-  const w = 820, h = 390, left = 64, right = 28, top = 34, bottom = 56;
-  const x = (m: number) => left + (m / 140) * (w - left - right);
-  const y = (v: number) => top + (1 - v / 75) * (h - top - bottom);
-  const d = data.map((p, i) => `${i ? "L" : "M"} ${x(p.m).toFixed(1)} ${y(p.v).toFixed(1)}`).join(" ");
+    { e: "K",  z: 19, m: 39.098, rho: 0.8620, v: 45.36, kind: "alkali" },
+    { e: "Ca", z: 20, m: 40.078, rho: 1.5400, v: 26.02 },
+    { e: "Sc", z: 21, m: 44.956, rho: 2.9900, v: 15.04 },
+    { e: "Ti", z: 22, m: 47.867, rho: 4.5060, v: 10.62 },
+    { e: "V",  z: 23, m: 50.942, rho: 6.0000, v: 8.49 },
+    { e: "Cr", z: 24, m: 51.996, rho: 7.1500, v: 7.27 },
+    { e: "Mn", z: 25, m: 54.938, rho: 7.3000, v: 7.53 },
+    { e: "Fe", z: 26, m: 55.845, rho: 7.8740, v: 7.09 },
+    { e: "Co", z: 27, m: 58.933, rho: 8.8600, v: 6.65 },
+    { e: "Ni", z: 28, m: 58.693, rho: 8.9080, v: 6.59 },
+    { e: "Cu", z: 29, m: 63.546, rho: 8.9600, v: 7.09 },
+    { e: "Zn", z: 30, m: 65.380, rho: 7.1340, v: 9.17 },
+    { e: "Ga", z: 31, m: 69.723, rho: 5.9100, v: 11.80 },
+    { e: "Ge", z: 32, m: 72.630, rho: 5.3230, v: 13.64 },
+    { e: "As", z: 33, m: 74.922, rho: 5.7270, v: 13.08 },
+    { e: "Se", z: 34, m: 78.971, rho: 4.8090, v: 16.42 },
+    { e: "Br", z: 35, m: 79.904, rho: 3.1028, v: 25.75, kind: "halogen" },
+    { e: "Rb", z: 37, m: 85.468, rho: 1.5300, v: 55.86, kind: "alkali" },
+    { e: "Sr", z: 38, m: 87.620, rho: 2.6400, v: 33.19 },
+  ] as const;
+
+  const kryptonMass = 83.798;
+  const w = 940;
+  const h = 470;
+  const left = 78;
+  const right = 30;
+  const top = 54;
+  const bottom = 104;
+  const xMin = 38;
+  const xMax = 90;
+  const yMax = 60;
+
+  const x = (mass: number) =>
+    left + ((mass - xMin) / (xMax - xMin)) * (w - left - right);
+  const y = (volume: number) =>
+    top + (1 - volume / yMax) * (h - top - bottom);
+
+  const period4 = data.filter((p) => p.z <= 35);
+  const period5Start = data.filter((p) => p.z >= 37);
+  const pathFor = (points: readonly (typeof data)[number][]) =>
+    points
+      .map(
+        (p, i) =>
+          `${i === 0 ? "M" : "L"} ${x(p.m).toFixed(1)} ${y(p.v).toFixed(1)}`,
+      )
+      .join(" ");
+
+  const yTicks = [0, 10, 20, 30, 40, 50, 60];
+  const xTicks = [40, 50, 60, 70, 80, 90];
+
   return (
-    <MotionFigure title="Lothar Meyer atomic-volume curve — selected-element reconstruction" status="Data-backed quantitative" note="Atomic volume is Vₘ ≈ M/ρ in cm³ mol⁻¹. Values are rounded from standard atomic masses and room-temperature densities; allotrope and phase choice can shift individual points. The repeated alkali-metal maxima are the chemically important pattern.">
-      <svg viewBox={`0 0 ${w} ${h}`} role="img" aria-label="Quantitative selected-element reconstruction of Lothar Meyer atomic volume curve" style={{ width: "100%", background: T.bgGrid, borderRadius: 12, border: `1px solid ${T.borderSoft}` }}>
-        {[0, 15, 30, 45, 60, 75].map((v) => <g key={v}><line x1={left} y1={y(v)} x2={w-right} y2={y(v)} stroke={T.borderSoft} /><text x={left-10} y={y(v)+4} textAnchor="end" fill={T.textFaint} fontSize="10.5">{v}</text></g>)}
-        {[0, 20, 40, 60, 80, 100, 120, 140].map((m) => <g key={m}><line x1={x(m)} y1={top} x2={x(m)} y2={h-bottom} stroke={T.borderSoft} /><text x={x(m)} y={h-bottom+18} textAnchor="middle" fill={T.textFaint} fontSize="10.5">{m}</text></g>)}
-        <line x1={left} y1={h-bottom} x2={w-right} y2={h-bottom} stroke={T.textFaint} />
-        <line x1={left} y1={top} x2={left} y2={h-bottom} stroke={T.textFaint} />
-        <path className="sb-path" pathLength="1" d={d} stroke={T.gold} strokeWidth="3" fill="none" />
-        {data.map((p, i) => <g key={`${p.e}-${p.m}`} className="sb-point" style={{ animationDelay: `${0.25 + i * 0.025}s` }}>
-          <circle cx={x(p.m)} cy={y(p.v)} r={p.family === "alkali" ? 5.5 : 3.2} fill={p.family === "alkali" ? T.cyan : p.family === "halogen" ? T.p : T.textDim} className={p.family === "alkali" ? "sb-pulse" : undefined}><title>{`${p.e}: atomic mass ${p.m}, atomic volume ≈ ${p.v} cm³ mol⁻¹`}</title></circle>
-          {(p.family || ["Fe","Cu","Zn"].includes(p.e)) ? <text x={x(p.m)+(p.family === "alkali" ? 7 : 5)} y={y(p.v)-7} fill={p.family === "alkali" ? T.cyan : p.family === "halogen" ? T.p : T.text} fontSize="10.5" fontWeight="800">{p.e}</text> : null}
-        </g>)}
-        <text x={(left+w-right)/2} y={h-12} textAnchor="middle" fill={T.textDim} fontSize="12">relative atomic mass / g mol⁻¹</text>
-        <text x="18" y={(top+h-bottom)/2} textAnchor="middle" transform={`rotate(-90 18 ${(top+h-bottom)/2})`} fill={T.textDim} fontSize="12">atomic volume, Vₘ / cm³ mol⁻¹</text>
-        <g transform={`translate(${w-250} ${top+12})`}><circle cx="0" cy="0" r="5" fill={T.cyan}/><text x="10" y="4" fill={T.text} fontSize="10.5">alkali-metal maxima</text><circle cx="128" cy="0" r="4" fill={T.p}/><text x="138" y="4" fill={T.text} fontSize="10.5">halogens on rising limbs</text></g>
-      </svg>
-    </MotionFigure>
+    <svg
+      viewBox={`0 0 ${w} ${h}`}
+      role="img"
+      aria-labelledby="meyer-title meyer-desc"
+      data-visual-version="atomic-volume-v8"
+      style={{
+        width: "100%",
+        height: "auto",
+        display: "block",
+        overflow: "visible",
+      }}
+    >
+      <title id="meyer-title">
+        Quantitative Lothar Meyer atomic-volume curve segment from potassium to strontium
+      </title>
+      <desc id="meyer-desc">
+        Atomic volume in cubic centimetres per mole is plotted against relative atomic mass.
+        Potassium and rubidium are local maxima. The period-four transition metals form a broad
+        minimum. Krypton is omitted because its gas-state molar volume is not comparable with
+        the condensed-phase values used for the connected curve.
+      </desc>
+
+      <defs>
+        <linearGradient id="meyer-line-v8" x1="0" x2="1">
+          <stop offset="0%" stopColor={T.gold} />
+          <stop offset="55%" stopColor={T.cyan} />
+          <stop offset="100%" stopColor={T.d} />
+        </linearGradient>
+        <filter id="meyer-glow-v8" x="-30%" y="-30%" width="160%" height="160%">
+          <feGaussianBlur stdDeviation="4" result="blur" />
+          <feMerge>
+            <feMergeNode in="blur" />
+            <feMergeNode in="SourceGraphic" />
+          </feMerge>
+        </filter>
+      </defs>
+
+      <style>{`
+        @keyframes meyerDrawV8 {
+          from { stroke-dashoffset: 1; }
+          to { stroke-dashoffset: 0; }
+        }
+        @keyframes meyerPointV8 {
+          0% { opacity: 0; transform: scale(0.2); }
+          70% { opacity: 1; transform: scale(1.18); }
+          100% { opacity: 1; transform: scale(1); }
+        }
+        @keyframes meyerPeakV8 {
+          0%, 100% { opacity: 0.62; transform: scale(0.9); }
+          50% { opacity: 1; transform: scale(1.2); }
+        }
+      `}</style>
+
+      <rect
+        x="0"
+        y="0"
+        width={w}
+        height={h}
+        rx="22"
+        fill="rgba(9, 25, 39, 0.92)"
+        stroke={T.border}
+      />
+
+      <g aria-hidden="true">
+        {yTicks.map((tick) => (
+          <g key={`yv8-${tick}`}>
+            <line
+              x1={left}
+              x2={w - right}
+              y1={y(tick)}
+              y2={y(tick)}
+              stroke={T.borderSoft}
+              strokeWidth="1"
+              strokeDasharray={tick === 0 ? undefined : "4 8"}
+            />
+            <text
+              x={left - 14}
+              y={y(tick) + 4}
+              textAnchor="end"
+              fill={T.textFaint}
+              fontSize="12"
+              fontFamily={T.mono}
+            >
+              {tick}
+            </text>
+          </g>
+        ))}
+
+        {xTicks.map((tick) => (
+          <g key={`xv8-${tick}`}>
+            <line
+              x1={x(tick)}
+              x2={x(tick)}
+              y1={top}
+              y2={h - bottom}
+              stroke={T.borderSoft}
+              strokeWidth="1"
+              opacity="0.35"
+            />
+            <text
+              x={x(tick)}
+              y={h - bottom + 24}
+              textAnchor="middle"
+              fill={T.textFaint}
+              fontSize="12"
+              fontFamily={T.mono}
+            >
+              {tick}
+            </text>
+          </g>
+        ))}
+      </g>
+
+      <line
+        x1={left}
+        x2={left}
+        y1={top}
+        y2={h - bottom}
+        stroke={T.textDim}
+        strokeWidth="1.5"
+      />
+      <line
+        x1={left}
+        x2={w - right}
+        y1={h - bottom}
+        y2={h - bottom}
+        stroke={T.textDim}
+        strokeWidth="1.5"
+      />
+
+      <path
+        d={pathFor(period4)}
+        fill="none"
+        stroke="url(#meyer-line-v8)"
+        strokeWidth="4"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        pathLength={1}
+        strokeDasharray={1}
+        strokeDashoffset={1}
+        style={{ animation: "meyerDrawV8 2.2s ease forwards" }}
+      />
+
+      <path
+        d={pathFor(period5Start)}
+        fill="none"
+        stroke="url(#meyer-line-v8)"
+        strokeWidth="4"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        pathLength={1}
+        strokeDasharray={1}
+        strokeDashoffset={1}
+        style={{ animation: "meyerDrawV8 0.7s 2.15s ease forwards" }}
+      />
+
+      <line
+        x1={x(period4[period4.length - 1].m)}
+        y1={y(period4[period4.length - 1].v)}
+        x2={x(period5Start[0].m)}
+        y2={y(period5Start[0].v)}
+        stroke={T.textFaint}
+        strokeWidth="2.2"
+        strokeDasharray="7 7"
+        opacity="0.72"
+      />
+
+      <g aria-label="Krypton omitted because it is gaseous at room temperature">
+        <line
+          x1={x(kryptonMass)}
+          x2={x(kryptonMass)}
+          y1={top + 10}
+          y2={h - bottom}
+          stroke={T.p}
+          strokeWidth="1.5"
+          strokeDasharray="3 6"
+          opacity="0.8"
+        />
+        <path
+          d={`M ${x(kryptonMass) - 8} ${h - bottom - 8} l 6 -7 l 6 7 l 6 -7`}
+          fill="none"
+          stroke={T.p}
+          strokeWidth="2"
+        />
+        <text
+          x={x(kryptonMass)}
+          y={top + 2}
+          textAnchor="middle"
+          fill={T.p}
+          fontSize="12"
+          fontWeight="800"
+          fontFamily={T.sans}
+        >
+          Kr omitted — gas at 20 °C
+        </text>
+      </g>
+
+      {data.map((p, i) => {
+        const kind = "kind" in p ? p.kind : undefined;
+        const peak = kind === "alkali";
+        const pointColor = peak ? T.cyan : kind === "halogen" ? T.p : T.textDim;
+        return (
+          <g
+            key={`meyer-v8-${p.e}`}
+            style={{
+              transformOrigin: `${x(p.m)}px ${y(p.v)}px`,
+              animation: `meyerPointV8 0.42s ${0.12 + i * 0.08}s both`,
+            }}
+          >
+            <title>
+              {`${p.e} (Z=${p.z}): M=${p.m.toFixed(3)} g mol⁻¹, ρ≈${p.rho} g cm⁻³, Vₘ≈${p.v.toFixed(2)} cm³ mol⁻¹`}
+            </title>
+
+            {peak ? (
+              <circle
+                cx={x(p.m)}
+                cy={y(p.v)}
+                r="13"
+                fill="none"
+                stroke={T.cyan}
+                strokeWidth="2"
+                opacity="0.8"
+                style={{
+                  transformOrigin: `${x(p.m)}px ${y(p.v)}px`,
+                  animation: "meyerPeakV8 2s ease-in-out infinite",
+                }}
+              />
+            ) : null}
+
+            <circle
+              cx={x(p.m)}
+              cy={y(p.v)}
+              r={peak ? 7 : 4.5}
+              fill={pointColor}
+              stroke={T.bg}
+              strokeWidth="2"
+              filter={peak ? "url(#meyer-glow-v8)" : undefined}
+            />
+
+            <text
+              x={x(p.m)}
+              y={h - bottom + 45 + (i % 2) * 16}
+              textAnchor="middle"
+              fill={peak ? T.cyan : T.textDim}
+              fontSize={peak ? "13" : "11"}
+              fontWeight={peak ? "900" : "700"}
+              fontFamily={T.sans}
+              transform={`rotate(-55 ${x(p.m)} ${h - bottom + 45 + (i % 2) * 16})`}
+            >
+              {p.e}
+            </text>
+          </g>
+        );
+      })}
+
+      {[
+        { p: data[0], dx: 18, dy: -18, anchor: "start" as const },
+        { p: data[17], dx: -18, dy: -18, anchor: "end" as const },
+      ].map(({ p, dx, dy, anchor }) => (
+        <g key={`peak-label-v8-${p.e}`}>
+          <line
+            x1={x(p.m)}
+            y1={y(p.v) - 10}
+            x2={x(p.m) + dx}
+            y2={y(p.v) + dy + 5}
+            stroke={T.cyan}
+            strokeWidth="1.5"
+          />
+          <text
+            x={x(p.m) + dx}
+            y={y(p.v) + dy}
+            textAnchor={anchor}
+            fill={T.cyan}
+            fontSize="13"
+            fontWeight="900"
+            fontFamily={T.sans}
+          >
+            {`${p.e}: local maximum, ${p.v.toFixed(1)} cm³ mol⁻¹`}
+          </text>
+        </g>
+      ))}
+
+      <g transform={`translate(${left + 12} ${top + 16})`}>
+        <rect
+          x="0"
+          y="0"
+          width="230"
+          height="48"
+          rx="12"
+          fill="rgba(232,184,75,0.10)"
+          stroke={`${T.gold}88`}
+        />
+        <text
+          x="14"
+          y="19"
+          fill={T.gold}
+          fontSize="12"
+          fontWeight="900"
+          fontFamily={T.sans}
+        >
+          QUANTITATIVE MODERN RECONSTRUCTION
+        </text>
+        <text
+          x="14"
+          y="36"
+          fill={T.textDim}
+          fontSize="12"
+          fontFamily={T.mono}
+        >
+          Vₘ = M / ρ
+        </text>
+      </g>
+
+      <text
+        x={(left + w - right) / 2}
+        y={h - 18}
+        textAnchor="middle"
+        fill={T.textDim}
+        fontSize="15"
+        fontWeight="700"
+        fontFamily={T.sans}
+      >
+        relative atomic mass, M / g mol⁻¹
+      </text>
+
+      <text
+        x="22"
+        y={(top + h - bottom) / 2}
+        textAnchor="middle"
+        fill={T.textDim}
+        fontSize="15"
+        fontWeight="700"
+        fontFamily={T.sans}
+        transform={`rotate(-90 22 ${(top + h - bottom) / 2})`}
+      >
+        atomic volume, Vₘ / cm³ mol⁻¹
+      </text>
+
+      <text
+        x={w - right}
+        y={top + 18}
+        textAnchor="end"
+        fill={T.textFaint}
+        fontSize="12"
+        fontFamily={T.sans}
+      >
+        Period-4 minimum → rising p-block → next alkali-metal maximum
+      </text>
+    </svg>
   );
 }
-
 
 export function DBlockRadiusChartSVG() {
   const data = [

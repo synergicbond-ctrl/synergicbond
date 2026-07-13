@@ -201,6 +201,57 @@ export function StudentNote({ heading, children, accent = T.cyan }: { heading: s
   );
 }
 
+
+export function FactorStudyCard({
+  number,
+  title,
+  relation,
+  explanation,
+  examples,
+  special,
+  accent = T.cyan,
+}: {
+  number: number | string;
+  title: string;
+  relation?: React.ReactNode;
+  explanation: React.ReactNode;
+  examples: { label: string; body: React.ReactNode }[];
+  special?: React.ReactNode;
+  accent?: string;
+}) {
+  return (
+    <div
+      style={{
+        background: "linear-gradient(145deg, rgba(255,255,255,0.028), rgba(255,255,255,0.01))",
+        border: `1px solid ${T.border}`,
+        borderLeft: `4px solid ${accent}`,
+        borderRadius: 14,
+        padding: "16px 18px",
+        margin: "14px 0",
+      }}
+    >
+      <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 8 }}>
+        <div style={{ width: 30, height: 30, borderRadius: 9, display: "grid", placeItems: "center", background: `${accent}18`, border: `1px solid ${accent}66`, color: accent, fontFamily: T.mono, fontSize: 12, fontWeight: 900, flexShrink: 0 }}>{number}</div>
+        <div style={{ fontFamily: T.serif, color: T.text, fontSize: 18, fontWeight: 800 }}>{title}</div>
+      </div>
+      {relation ? <div style={{ fontFamily: T.mono, color: accent, fontSize: 13.5, fontWeight: 800, lineHeight: 1.55, marginBottom: 8 }}>{relation}</div> : null}
+      <div style={{ fontFamily: T.sans, color: T.text, fontSize: 14, lineHeight: 1.72 }}>{explanation}</div>
+      <div style={{ marginTop: 11, borderTop: `1px dashed ${T.borderSoft}`, paddingTop: 10 }}>
+        <div style={{ fontFamily: T.sans, color: accent, fontSize: 10.5, fontWeight: 900, letterSpacing: 0.7, textTransform: "uppercase", marginBottom: 7 }}>Examples and direct applications</div>
+        <div style={{ display: "grid", gap: 7 }}>
+          {examples.map((example) => (
+            <div key={example.label} style={{ display: "grid", gridTemplateColumns: "minmax(90px,0.26fr) minmax(0,0.74fr)", gap: 10, alignItems: "start" }}>
+              <div style={{ fontFamily: T.mono, color: accent, fontSize: 11.5, fontWeight: 800 }}>{example.label}</div>
+              <div style={{ fontFamily: T.sans, color: T.textDim, fontSize: 13.2, lineHeight: 1.6 }}>{example.body}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+      {special ? <div style={{ marginTop: 11, padding: "9px 11px", borderRadius: 9, background: `${T.gold}10`, border: `1px solid ${T.gold}44`, color: T.text, fontFamily: T.sans, fontSize: 13, lineHeight: 1.6 }}><b style={{ color: T.gold }}>Special case:</b> {special}</div> : null}
+    </div>
+  );
+}
+
 export function Callout({
   kind = "note",
   title,
@@ -1570,147 +1621,192 @@ export function SectionZeffSlater() {
   return (
     <div>
       <SectionIntro
-        eyebrow="The net nuclear pull felt by an electron"
-        title="Effective Nuclear Charge, Penetration and Slater's Rule"
-        summary="Shielding prevents an electron from experiencing the full nuclear charge. Radial penetration explains why electrons in the same principal shell are not equivalent, while Slater's rules give a useful semi-empirical estimate of the shielding constant."
+        eyebrow="The actual nuclear attraction experienced by each electron"
+        title="Effective Nuclear Charge, Shielding, Penetration and Slater's Rules — Complete Notes"
+        summary="This module develops effective nuclear charge from first principles, explains every factor with multiple examples, applies Slater's rules to s-, p- and d-electrons, and connects Zeff with radius, ionization enthalpy, electron gain enthalpy, electronegativity and chemical behaviour."
         accent={T.f}
       />
-      <H2 id="zeff">1 · Shielding and Effective Nuclear Charge</H2>
-      <P>
-        A test electron is attracted by the positive nucleus and repelled by every other electron. The combined reduction in nuclear attraction is described by the shielding constant σ. The net charge experienced by the test electron is the effective nuclear charge.
-      </P>
-      <Formula>Zeff = Z − σ</Formula>
-      <ConceptGrid
-        items={[
-          { title: "Nuclear charge Z", tag: "PROTON COUNT", accent: T.gold, body: "Increases by one from one element to the next and is the ultimate source of attraction." },
-          { title: "Shielding constant σ", tag: "ELECTRON REPULSION", accent: T.p, body: "Represents the average screening produced by all other electrons; it is not simply the number of inner electrons." },
-          { title: "Effective nuclear charge", tag: "NET ATTRACTION", accent: T.cyan, body: "Controls size, orbital energy, ionization enthalpy and many periodic trends." },
-          { title: "Penetration", tag: "NEAR-NUCLEUS PROBABILITY", accent: T.d, body: "An orbital that spends more probability density near the nucleus feels larger Zeff and generally has lower energy." },
+
+      <H2 id="zeff">1 · Definition, Meaning and Governing Relation</H2>
+      <DefinitionBox term="Effective nuclear charge">
+        Effective nuclear charge is the net positive nuclear attraction experienced by a particular electron in a multi-electron atom after allowing for shielding by the remaining electrons. It is orbital-dependent; different electrons in the same atom can experience different effective nuclear charges.
+      </DefinitionBox>
+      <MathBlock tex={String.raw`Z_{\mathrm{eff}}=Z-\sigma`} label="Central relation" />
+      <DataTable
+        columns={["Symbol", "Meaning", "Important note"]}
+        rows={[
+          ["Z", "actual nuclear charge = number of protons", "fixed for a given element"],
+          ["σ", "shielding or screening constant", "depends on electron distribution and the orbital being examined"],
+          ["Zeff", "net attraction experienced by the selected electron", "always less than Z in an ordinary multi-electron atom"],
         ]}
+        accent={T.f}
+      />
+      <Callout kind="note" title="Do not assign one Zeff to the whole atom">
+        A 3d electron and a 4s electron in iron do not experience the same shielding or penetration. Effective nuclear charge must always be attached to a specified electron or orbital.
+      </Callout>
+
+      <H2>2 · Factors Controlling Effective Nuclear Charge</H2>
+      <FactorStudyCard
+        number="1"
+        title="Magnitude of the actual nuclear charge"
+        relation={<MathInline tex={String.raw`Z\uparrow\Rightarrow Z_{\mathrm{eff}}\uparrow\quad(\text{when shielding does not rise equally})`} />}
+        explanation="Each additional proton increases the attractive force exerted by the nucleus. Across a period, the added electron usually enters the same principal shell, so shielding rises only slightly while Z rises by one at every step. The net result is a steady rise in effective nuclear charge."
+        examples={[
+          { label: "Li → F", body: "Valence electrons remain in n = 2 while proton number rises from 3 to 9; the outer cloud contracts strongly." },
+          { label: "Na → Cl", body: "The 3s/3p valence shell is common to the period; increasing Z dominates the small increase in same-shell screening." },
+          { label: "Isoelectronic", body: <><MathInline tex={String.raw`\mathrm{O^{2-}>F^->Na^+>Mg^{2+}>Al^{3+}}`} /> in radius because the same ten electrons are pulled by progressively larger Z.</> },
+          { label: "Cations", body: <><MathInline tex={String.raw`\mathrm{Fe^{3+}}`} /> binds its remaining electrons more strongly than <MathInline tex={String.raw`\mathrm{Fe^{2+}}`} /> because the electron count is smaller for the same nucleus.</> },
+        ]}
+        accent={T.gold}
+      />
+      <FactorStudyCard
+        number="2"
+        title="Number and position of shielding electrons"
+        relation={<MathInline tex={String.raw`\sigma\uparrow\Rightarrow Z_{\mathrm{eff}}\downarrow`} />}
+        explanation="Electrons between the nucleus and the selected electron repel it and partially screen nuclear attraction. Inner-shell electrons shield much more efficiently than electrons in the same shell because they spend more time between the nucleus and the outer electron."
+        examples={[
+          { label: "Li 2s", body: "The 1s² core screens the 2s electron strongly; it therefore feels much less than the full nuclear charge +3." },
+          { label: "Na 3s", body: "Ten core electrons shield the valence electron, making sodium easy to ionize despite Z = 11." },
+          { label: "K vs Na", body: "K has more protons, but its 4s electron is screened by three occupied inner shells; shell addition and shielding dominate." },
+          { label: "Ga", body: "The filled 3d¹⁰ subshell shields the 4p electron imperfectly, so Ga is more contracted than a simple down-group rule predicts." },
+        ]}
+        special="Same-shell electrons do shield one another, but less efficiently than inner-shell electrons. Shielding is therefore not equal to a simple count of all other electrons."
+        accent={T.p}
+      />
+      <FactorStudyCard
+        number="3"
+        title="Penetration of the selected orbital"
+        relation={<MathInline tex={String.raw`\text{penetration: }s>p>d>f`} />}
+        explanation="A penetrating orbital has appreciable electron density close to the nucleus. Such an electron passes inside the screening cloud more often and experiences greater effective nuclear attraction. For the same principal shell, orbital energy normally follows the opposite order."
+        examples={[
+          { label: "Be vs B", body: "A 2s electron penetrates more than a 2p electron; therefore the electron removed from B(2p¹) is less tightly held than that from Be(2s²)." },
+          { label: "Mg vs Al", body: "Al loses a 3p electron more readily than Mg loses a 3s electron for the same penetration reason." },
+          { label: "Orbital energy", body: <><MathInline tex={String.raw`E(ns)<E(np)<E(nd)<E(nf)`} /> in a many-electron atom of the same n, because penetration decreases.</> },
+          { label: "Transition ions", body: "Once 3d occupation begins, 4s electrons are generally removed first because the energetic ordering changes after electron occupation and ion formation." },
+        ]}
+        accent={T.d}
+      />
+      <FactorStudyCard
+        number="4"
+        title="Principal shell and average distance from the nucleus"
+        relation={<MathInline tex={String.raw`n\uparrow\Rightarrow r_{\mathrm{avg}}\uparrow\Rightarrow Z_{\mathrm{eff}}\text{ felt at the valence region generally weakens}`} />}
+        explanation="A valence electron in a higher principal shell is farther from the nucleus and is screened by more inner shells. Even when the calculated Zeff changes only moderately, the electrostatic attraction falls strongly because distance increases."
+        examples={[
+          { label: "Group 1", body: <><MathInline tex={String.raw`\mathrm{Li>Na>K>Rb>Cs}`} /> in first ionization enthalpy; the valence electron moves to successively higher shells.</> },
+          { label: "Halogens", body: "Atomic radius increases F → Cl → Br → I although nuclear charge rises, because each step adds an occupied shell." },
+          { label: "Hydrides", body: "H–X bond length increases down group 17 because the valence orbital of X becomes larger and more diffuse." },
+          { label: "Noble gases", body: "Polarizability increases He → Rn because the outer electron cloud becomes larger and more easily distorted." },
+        ]}
+        accent={T.s}
+      />
+      <FactorStudyCard
+        number="5"
+        title="Shielding efficiency of s, p, d and f electrons"
+        relation={<MathInline tex={String.raw`\text{shielding efficiency (approx.)}:s>p>d>f`} />}
+        explanation="More penetrating electrons are better positioned between the nucleus and outer electrons and therefore shield them more effectively. d and especially f electrons are poor shields; this produces important contraction effects."
+        examples={[
+          { label: "d contraction", body: "Poor shielding by 3d electrons makes Ga only slightly larger—and often quoted smaller—than Al." },
+          { label: "Lanthanoid", body: "Poor 4f shielding causes a steady contraction from La to Lu and makes Zr and Hf nearly equal in size." },
+          { label: "Actinoid", body: "Poor 5f shielding contributes to actinoid contraction, although the pattern is less regular because 5f, 6d and 7s energies are close." },
+          { label: "Tl / Pb / Bi", body: "Poor d and f shielding and relativistic stabilization increase the attraction on the outer ns² pair, contributing to the inert-pair effect." },
+        ]}
+        accent={T.f}
+      />
+      <FactorStudyCard
+        number="6"
+        title="Charge and electron count of the species"
+        relation={<MathInline tex={String.raw`\text{same nucleus: }Z_{\mathrm{eff}}(\text{cation})>Z_{\mathrm{eff}}(\text{atom})>Z_{\mathrm{eff}}(\text{anion})`} />}
+        explanation="Removing electrons reduces electron–electron repulsion and screening; adding electrons increases both. Therefore cations contract and anions expand relative to the parent atom."
+        examples={[
+          { label: "Chlorine", body: <><MathInline tex={String.raw`r(\mathrm{Cl^+})<r(\mathrm{Cl})<r(\mathrm{Cl^-})`} />.</> },
+          { label: "Iron", body: <><MathInline tex={String.raw`r(\mathrm{Fe^{3+}})<r(\mathrm{Fe^{2+}})`} /> because the same nucleus attracts fewer electrons more strongly.</> },
+          { label: "Oxygen", body: <><MathInline tex={String.raw`r(\mathrm{O^{2-}})>r(\mathrm{O^-})>r(\mathrm{O})`} /> because repulsion rises with added electrons.</> },
+          { label: "Successive IE", body: <><MathInline tex={String.raw`IE_1<IE_2<IE_3<\cdots`} /> because every successive electron is removed from an increasingly positive species.</> },
+        ]}
+        accent={T.cyan}
+      />
+      <FactorStudyCard
+        number="7"
+        title="Electron–electron repulsion and orbital occupancy"
+        relation={<MathInline tex={String.raw`\text{pairing repulsion}\uparrow\Rightarrow\text{selected electron is held less tightly}`} />}
+        explanation="Zeff is an average one-electron idea. Actual removal and addition energies also depend on how electrons occupy orbitals, including pairing repulsion and exchange stabilization."
+        examples={[
+          { label: "N vs O", body: "O has one paired 2p orbital; repulsion makes one electron easier to remove, so IE₁(O) < IE₁(N)." },
+          { label: "P vs S", body: "The same p³ versus p⁴ pairing effect gives IE₁(S) < IE₁(P)." },
+          { label: "N electron gain", body: "Adding an electron to N forces pairing in a half-filled 2p³ set, making electron gain unfavourable." },
+          { label: "Cr / Cu", body: "Near-degenerate 3d and 4s levels and exchange/pairing energies help produce [Ar]3d⁵4s¹ and [Ar]3d¹⁰4s¹ configurations." },
+        ]}
+        accent={T.gold}
       />
 
-      <H2>2 · Penetration and Shielding Efficiency</H2>
+      <H2>3 · Penetration and Radial Distribution</H2>
       <div style={{ display: "grid", gridTemplateColumns: "minmax(300px,0.9fr) minmax(0,1.1fr)", gap: 18, alignItems: "start" }} className="twoCol">
         <RadialDistributionSVG />
         <div>
-          <P>
-            For orbitals with the same principal quantum number, s orbitals penetrate closest to the nucleus, followed by p, d and f. Greater penetration means the electron itself feels a stronger nuclear attraction. Inner penetrating electrons also screen more effectively than diffuse electrons.
-          </P>
-          <Formula>Same-shell penetration: s &gt; p &gt; d &gt; f</Formula>
-          <Formula>Approximate shielding effectiveness: s &gt; p &gt; d &gt; f</Formula>
-          <Callout kind="note">
-            First-row 3d orbitals are less radially extended than 4d and 5d orbitals, but they certainly participate in metal–ligand bonding. The difference is relative radial extension, not an absence of covalent bonding.
-          </Callout>
+          <P>Penetration is judged from the probability of finding an electron close to the nucleus. Radial nodes do not prevent an s orbital from penetrating; inner lobes of an s orbital can place significant probability inside p, d or f distributions.</P>
+          <MathBlock tex={String.raw`\text{same }n:\quad s>p>d>f\quad\text{in penetration and shielding efficiency}`} />
+          <MathBlock tex={String.raw`\text{same }n:\quad E_s<E_p<E_d<E_f\quad\text{in a many-electron atom}`} />
         </div>
       </div>
 
-      <H2 id="slater">3 · Slater Grouping</H2>
-      <P>Write the electron configuration in the following groups before calculating σ:</P>
-      <Formula>(1s) (2s,2p) (3s,3p) (3d) (4s,4p) (4d) (4f) (5s,5p) ...</Formula>
-      <P>
-        Electrons in groups to the right of the test electron do not contribute to shielding in the Slater approximation. The test electron itself is never counted.
-      </P>
-
-      <H3>Rule A · Test electron in ns or np</H3>
-      <DataTable columns={["Shielding source", "Contribution per electron"]} rows={[
-        ["Other electrons in the same (ns,np) group", "0.35; for 1s, the other electron contributes 0.30"],
-        ["Electrons in the (n−1) shell", "0.85"],
-        ["Electrons in (n−2) and lower shells", "1.00"],
+      <H2 id="slater">4 · Slater Grouping and Rules</H2>
+      <MathBlock tex={String.raw`(1s)\,(2s,2p)\,(3s,3p)\,(3d)\,(4s,4p)\,(4d)\,(4f)\,(5s,5p)\cdots`} label="Write the configuration in Slater groups" />
+      <H3>For an ns or np test electron</H3>
+      <DataTable columns={["Shielding electrons", "Contribution per electron", "Illustration"]} rows={[
+        ["other electrons in the same (ns,np) group", "0.35", "for a 3p electron, other 3s and 3p electrons each count 0.35"],
+        ["other electron in 1s", "0.30", "special 1s coefficient"],
+        ["electrons in shell (n−1)", "0.85", "2s²2p⁶ screens a 3s/3p electron by 8 × 0.85"],
+        ["electrons in (n−2) and lower shells", "1.00", "1s² screens a 3s/3p electron by 2 × 1.00"],
       ]} accent={T.cyan} />
-
-      <H3>Rule B · Test electron in nd or nf</H3>
-      <DataTable columns={["Shielding source", "Contribution per electron"]} rows={[
-        ["Other electrons in the same nd or nf group", "0.35"],
-        ["Every electron in groups to the left", "1.00"],
-        ["Electrons in groups to the right", "0"],
+      <H3>For an nd or nf test electron</H3>
+      <DataTable columns={["Shielding electrons", "Contribution per electron", "Illustration"]} rows={[
+        ["other electrons in the same nd or nf group", "0.35", "nine companion 3d electrons screen a 3d test electron by 9 × 0.35"],
+        ["all electrons in groups to the left", "1.00", "1s through 3p electrons fully count for a 3d test electron"],
+        ["electrons in groups to the right", "0", "4s electrons are not counted for a 3d test electron in the simplified rule"],
       ]} accent={T.f} />
 
-      <H2>4 · Worked Slater Calculations</H2>
-      <WorkedExample
-        number="1"
-        title="Helium: a two-electron species"
-        question="Estimate Zeff for one 1s electron in He."
-        reasoning={[
-          "The other 1s electron contributes 0.30.",
-          "Therefore σ = 0.30.",
-          "Zeff = 2 − 0.30.",
-        ]}
-        answer="Zeff = 1.70."
-        accent={T.cyan}
-      />
-      <WorkedExample
-        number="2"
-        title="Magnesium: a 3s electron"
-        question="Estimate Zeff for a 3s electron in Mg, Z = 12."
-        reasoning={[
-          "Group Mg as (1s²)(2s²2p⁶)(3s²).",
-          "The other 3s electron contributes 1 × 0.35.",
-          "Eight electrons in n−1 = 2 contribute 8 × 0.85.",
-          "Two 1s electrons contribute 2 × 1.00.",
-        ]}
-        answer="σ = 0.35 + 6.80 + 2.00 = 9.15; Zeff = 12 − 9.15 = 2.85."
-        accent={T.gold}
-      />
-      <WorkedExample
-        number="3"
-        title="Chlorine: a 3p electron"
-        question="Estimate Zeff for a 3p electron in Cl, Z = 17."
-        reasoning={[
-          "Group Cl as (1s²)(2s²2p⁶)(3s²3p⁵).",
-          "Six other electrons in the 3s/3p group contribute 6 × 0.35.",
-          "Eight n−1 electrons contribute 8 × 0.85.",
-          "Two lower-shell electrons contribute 2 × 1.00.",
-        ]}
-        answer="σ = 2.10 + 6.80 + 2.00 = 10.90; Zeff = 17 − 10.90 = 6.10."
-        accent={T.p}
-      />
-      <WorkedExample
-        number="4"
-        title="Gallium: compare a 3d and a 4p electron"
-        question="Use the simplified Slater rules to estimate Zeff for a 3d electron and for the 4p electron in Ga, Z = 31."
-        reasoning={[
-          "Ga = (1s²)(2s²2p⁶)(3s²3p⁶)(3d¹⁰)(4s²4p¹).",
-          "For a 3d test electron: nine other 3d electrons contribute 9 × 0.35, and all 18 electrons to the left contribute 18 × 1.00.",
-          "For the 4p test electron: two same-group electrons contribute 2 × 0.35, eighteen n−1 electrons contribute 18 × 0.85, and ten lower-shell electrons contribute 10 × 1.00.",
-        ]}
-        answer="For 3d: σ = 21.15, Zeff = 9.85. For 4p: σ = 26.00, Zeff = 5.00."
-        accent={T.f}
-      />
-      <WorkedExample
-        number="5"
-        title="Tin: compare outer and inner electrons"
-        question="Estimate Zeff for a 5p electron and a 4d electron in Sn, Z = 50."
-        reasoning={[
-          "Sn = (1s²)(2s²2p⁶)(3s²3p⁶)(3d¹⁰)(4s²4p⁶)(4d¹⁰)(5s²5p²).",
-          "For a 5p electron: 3 × 0.35 + 18 × 0.85 + 28 × 1.00 = 44.35.",
-          "For a 4d electron: 9 × 0.35 + 36 × 1.00 = 39.15.",
-        ]}
-        answer="Zeff(5p) = 5.65; Zeff(4d) = 10.85. Inner electrons experience much larger effective attraction."
-        accent={T.d}
-      />
+      <H2>5 · Slater Calculations — From Basic to JEE Advanced</H2>
+      <WorkedExample number="Z1" title="Helium 1s electron" question="Estimate Zeff for one 1s electron of He." reasoning={["Only the other 1s electron shields the test electron.", "For 1s, its contribution is 0.30.", "Zeff = 2 − 0.30."]} answer="Zeff = 1.70." accent={T.cyan} />
+      <WorkedExample number="Z2" title="Lithium 2s electron" question="Estimate Zeff for the valence electron of Li." reasoning={["Li = (1s²)(2s¹).", "There is no same-group companion electron.", "The two 1s electrons contribute 2 × 0.85 = 1.70."]} answer="Zeff = 3 − 1.70 = 1.30." accent={T.s} />
+      <WorkedExample number="Z3" title="Carbon 2p electron" question="Estimate Zeff for one 2p electron in C." reasoning={["C = (1s²)(2s²2p²).", "Three other n = 2 electrons contribute 3 × 0.35 = 1.05.", "Two 1s electrons contribute 2 × 0.85 = 1.70."]} answer="σ = 2.75; Zeff = 6 − 2.75 = 3.25." accent={T.gold} />
+      <WorkedExample number="Z4" title="Sodium 3s electron" question="Estimate Zeff for the 3s electron of Na." reasoning={["Na = (1s²)(2s²2p⁶)(3s¹).", "Eight n−1 electrons contribute 8 × 0.85 = 6.80.", "Two n−2 electrons contribute 2 × 1.00 = 2.00."]} answer="σ = 8.80; Zeff = 11 − 8.80 = 2.20." accent={T.cyan} />
+      <WorkedExample number="Z5" title="Chlorine 3p electron" question="Estimate Zeff for one 3p electron of Cl." reasoning={["Cl = (1s²)(2s²2p⁶)(3s²3p⁵).", "Six same-group electrons contribute 6 × 0.35 = 2.10.", "Eight n−1 electrons contribute 6.80 and two lower electrons contribute 2.00."]} answer="σ = 10.90; Zeff = 17 − 10.90 = 6.10." accent={T.p} />
+      <WorkedExample number="Z6" title="Potassium 4s electron" question="Estimate Zeff for the 4s electron of K." reasoning={["K = [Ar]4s¹.", "Eight n−1 (3s,3p) electrons contribute 6.80.", "Ten n−2 and lower electrons contribute 10.00."]} answer="σ = 16.80; Zeff = 19 − 16.80 = 2.20." accent={T.s} />
+      <WorkedExample number="Z7" title="Iron: 3d electron" question="Estimate Zeff for one 3d electron in Fe, [Ar]3d⁶4s²." reasoning={["Five other 3d electrons contribute 5 × 0.35 = 1.75.", "All 18 electrons in groups to the left contribute 18.00.", "The 4s electrons to the right are not counted for this test electron."]} answer="σ = 19.75; Zeff(3d) = 26 − 19.75 = 6.25." accent={T.d} />
+      <WorkedExample number="Z8" title="Iron: 4s electron" question="Estimate Zeff for one 4s electron in Fe using the simplified ns/np rule." reasoning={["One other 4s electron contributes 0.35.", "Fourteen electrons in the n−1 shell (3s²3p⁶3d⁶) contribute 14 × 0.85 = 11.90.", "Ten lower-shell electrons contribute 10.00."]} answer="σ = 22.25; Zeff(4s) = 3.75. The estimate helps show why the outer 4s electron is more weakly held." accent={T.d} />
+      <WorkedExample number="Z9" title="Gallium 4p electron" question="Estimate Zeff for the 4p electron in Ga." reasoning={["Ga = (1s²)(2s²2p⁶)(3s²3p⁶)(3d¹⁰)(4s²4p¹).", "Two same-group 4s electrons contribute 0.70.", "Eighteen n−1 electrons contribute 15.30; ten lower electrons contribute 10.00."]} answer="σ = 26.00; Zeff = 31 − 26.00 = 5.00." accent={T.f} />
 
-      <H2>5 · Periodic Variation of Zeff</H2>
-      <DataTable columns={["Movement", "General behaviour", "Consequence"]} rows={[
-        ["Across an s/p period", "Zeff rises appreciably", "atomic radius decreases and ionization enthalpy generally rises"],
-        ["Across a d series", "Zeff rises more slowly because added d electrons also shield", "radii contract at first, then change only slightly"],
-        ["Across an f series", "f electrons shield poorly", "lanthanide or actinide contraction"],
-        ["Down a main group", "outer-electron Zeff changes much less than Z itself", "new shells and shielding dominate, so size increases"],
+      <H2>6 · Approximate Valence-Electron Zeff Across Period 2</H2>
+      <DataTable columns={["Element", "Li", "Be", "B", "C", "N", "O", "F", "Ne"]} rows={[
+        ["Slater Zeff", "1.30", "1.95", "2.60", "3.25", "3.90", "4.55", "5.20", "5.85"],
+        ["Broad result", "largest radius", "contracts", "contracts", "contracts", "high IE", "pairing special case", "highest EN", "closed shell"],
       ]} accent={T.gold} />
-      <Callout kind="note" title="Slater values are estimates">
-        Zeff is orbital-dependent and cannot be represented by one exact number for an entire atom. Slater's rules are a compact approximation, useful for trends and classroom calculations rather than high-accuracy quantum chemistry.
-      </Callout>
 
-      <H2>6 · Limitations of Slater's Rule</H2>
-      <DataTable columns={["Limitation", "Why it matters"]} rows={[
-        ["Uses fixed empirical coefficients", "real shielding changes continuously with orbital shape and occupancy"],
-        ["Treats electrons within a group too uniformly", "s and p orbitals of the same shell have different penetration"],
-        ["Poor for f-block details", "cannot reproduce the full pattern of f contraction and heavy-element effects"],
-        ["Neglects explicit electron correlation", "multi-electron repulsion is more complex than additive constants"],
-        ["Limited relativistic treatment", "heavy atoms require relativistic quantum calculations for accurate orbital energies"],
+      <H2>7 · Applications of Effective Nuclear Charge</H2>
+      <DataTable columns={["Application", "How Zeff is used", "Example"]} rows={[
+        ["Atomic radius", "greater Zeff contracts electrons in the same shell", "Li > Be > B > C > N > O > F"],
+        ["Ionic radius", "same electron count plus larger Z gives smaller ion", "O²⁻ > F⁻ > Na⁺ > Mg²⁺ > Al³⁺"],
+        ["Ionization enthalpy", "greater attraction increases electron-removal energy", "IE generally rises across a period"],
+        ["Electron gain enthalpy", "greater attraction can make electron addition more exothermic", "trend becomes more negative toward halogens, subject to crowding"],
+        ["Electronegativity", "stronger attraction for valence density raises χ", "F > Cl > Br > I"],
+        ["d- and f-block contraction", "poor d/f shielding permits Zeff to rise", "Ga contraction; La→Lu contraction; Zr≈Hf"],
+        ["Acidity and polarizing power", "small high-Zeff cations polarize anions strongly", "Al³⁺ compounds are more covalent and acidic than Na⁺ compounds"],
+        ["Orbital energy", "greater Zeff stabilizes and lowers an orbital", "penetrating s orbitals lie below p orbitals of the same n"],
+      ]} accent={T.cyan} />
+
+      <H2>8 · Limitations — Where the Simple Zeff Model Fails</H2>
+      <DataTable columns={["Limitation", "Why the model is incomplete", "Practical rule"]} rows={[
+        ["Zeff is not directly observable as one unique number", "it depends on the chosen orbital and the computational definition", "state the method, such as Slater, when quoting a number"],
+        ["Fixed coefficients are empirical", "real shielding changes continuously with radial distribution", "use Slater values for trends, not high-precision prediction"],
+        ["Electron correlation is simplified", "electrons do not repel one another as independent average clouds", "pairing and exchange effects must be discussed separately"],
+        ["Poor heavy-element treatment", "relativistic effects strongly alter 6s, 6p, 5d and 4f/5f orbitals", "use measured data or relativistic calculations for heavy atoms"],
+        ["Chemical environment is omitted", "oxidation state, ligands and bonding change orbital populations", "atomic Slater Zeff is not automatically the Zeff inside every compound"],
+        ["No single-property prediction", "radius, IE and reactivity also depend on distance, configuration and medium", "combine Zeff with shell number, pairing, hydration and bonding"],
       ]} accent={T.p} />
     </div>
   );
 }
+
 
 /* =============================================================================
    SECTION 4 — Periodic Properties: Family-wise Orders (s & p block)
@@ -2150,121 +2246,220 @@ export function SectionIonization() {
   return (
     <div>
       <SectionIntro
-        eyebrow="Removing electrons from isolated gaseous species"
-        title="Ionization Enthalpy: Definition, Successive Values, Trends and Special Cases"
-        summary="Ionization enthalpy measures how strongly an isolated gaseous atom or ion holds an electron. It is always endothermic, but the magnitude depends on size, effective nuclear charge, penetration, shielding and the configuration left behind."
+        eyebrow="Energy required for electron removal"
+        title="Ionization Enthalpy — Complete Theory, Factors, IE₁–IE₄ Data, Applications and Solved Examples"
+        summary="Ionization enthalpy is developed here as a quantitative property of isolated gaseous atoms and ions. Every controlling factor is followed by multiple examples, successive-ionization data, special cases, applications and limitations of simple trend rules."
         accent={T.gold}
       />
-      <H2 id="ionization">1 · Definition and Successive Ionizations</H2>
-      <Formula>M(g) → M⁺(g) + e⁻ &nbsp;&nbsp; ΔᵢH₁ &gt; 0</Formula>
-      <Formula>M⁺(g) → M²⁺(g) + e⁻ &nbsp;&nbsp; ΔᵢH₂ &gt; ΔᵢH₁</Formula>
-      <P>
-        The first ionization enthalpy is the enthalpy required to remove the most loosely held electron from one mole of isolated gaseous atoms. Successive values increase because the same nucleus attracts progressively fewer electrons and the species becomes more positively charged.
-      </P>
-      <Callout kind="note" title="Units and terminology">
-        Standard thermochemical notation uses kJ mol⁻¹ and calls the quantity ionization enthalpy. Older problems may quote ionization energy or ionization potential in eV per atom; 1 eV per particle corresponds to about 96.5 kJ mol⁻¹.
-      </Callout>
-      <DataTable columns={["Factor", "Effect on ionization enthalpy"]} rows={ieFactors} accent={T.gold} />
 
-      <H2>2 · Across a Period</H2>
-      <P>
-        The first ionization enthalpy normally rises from left to right because atomic size decreases and effective nuclear charge increases. The rise is not smooth: a new p subshell and the onset of pairing create characteristic dips.
-      </P>
-      <IonizationLandscapeSVG />
-      <DataTable
-        columns={["Pair", "Observed order", "Configuration argument"]}
-        rows={[
-          ["Be and B", "Be > B", "Be loses a 2s electron only after breaking stable 2s²; B loses the higher-energy 2p¹ electron."],
-          ["Mg and Al", "Mg > Al", "Al loses a 3p¹ electron more easily than Mg loses a 3s electron."],
-          ["N and O", "N > O", "N has half-filled 2p³; O has one paired 2p electron with extra repulsion."],
-          ["P and S", "P > S", "The same p³ versus p⁴ pairing argument operates in period 3."],
+      <H2 id="ionization">1 · NCERT-Aligned Definition and Successive Processes</H2>
+      <DefinitionBox term="First ionization enthalpy">
+        First ionization enthalpy is the enthalpy required to remove the most loosely bound electron from one mole of isolated gaseous atoms in their ground state to form one mole of gaseous unipositive ions.
+      </DefinitionBox>
+      <MathBlock tex={String.raw`\mathrm{X(g)\rightarrow X^+(g)+e^-}\qquad \Delta_iH_1>0`} />
+      <MathBlock tex={String.raw`\mathrm{X^+(g)\rightarrow X^{2+}(g)+e^-}\qquad \Delta_iH_2>\Delta_iH_1`} />
+      <MathBlock tex={String.raw`\mathrm{X^{2+}(g)\rightarrow X^{3+}(g)+e^-}\qquad \Delta_iH_3>\Delta_iH_2`} />
+      <RelationBox title="Meaning of the defining words" relations={[
+        <React.Fragment key="isolated"><b>Isolated:</b> neighbouring atoms, bonds, lattice forces and solvent interactions are excluded.</React.Fragment>,
+        <React.Fragment key="gaseous"><b>Gaseous:</b> atomization or sublimation energy is not mixed with the electron-removal step.</React.Fragment>,
+        <React.Fragment key="ground"><b>Ground state:</b> all elements are compared from their lowest-energy electronic state.</React.Fragment>,
+        <React.Fragment key="molar"><b>Enthalpy:</b> values are quoted per mole, normally in kJ mol⁻¹; all ionization enthalpies are positive.</React.Fragment>,
+      ]} />
+      <MathBlock tex={String.raw`\Delta_iH_1<\Delta_iH_2<\Delta_iH_3<\Delta_iH_4<\cdots`} label="General successive-ionization order" />
+
+      <H2>2 · Factors Affecting Ionization Enthalpy</H2>
+      <FactorStudyCard
+        number="1"
+        title="Effective nuclear charge"
+        relation={<MathInline tex={String.raw`Z_{\mathrm{eff}}\uparrow\Rightarrow \Delta_iH\uparrow`} />}
+        explanation="A larger net nuclear attraction binds the selected electron more strongly. Across a period, Z rises while the added electrons enter the same principal shell; shielding does not compensate fully, so first ionization enthalpy usually rises."
+        examples={[
+          { label: "Li → Ne", body: "The broad increase ends at the closed-shell maximum Ne." },
+          { label: "Na → Ar", body: "The same trend repeats in period 3, with local dips at Al and S." },
+          { label: "Isoelectronic", body: <><MathInline tex={String.raw`\mathrm{Na^+}`} /> is harder to ionize than Ne because its larger Z attracts the same ten-electron cloud more strongly.</> },
+          { label: "Cation charge", body: <><MathInline tex={String.raw`IE(\mathrm{Fe^{2+}\rightarrow Fe^{3+}})>IE(\mathrm{Fe^+\rightarrow Fe^{2+}})`} /> in general because positive charge rises.</> },
         ]}
-        accent={T.p}
+        accent={T.gold}
       />
-
-      <H2>3 · Down a Group and Heavy-Element Anomalies</H2>
-      <P>
-        Ionization enthalpy usually decreases down a group because size and shielding increase. The decrease can flatten or reverse when poor d/f shielding and relativistic contraction increase the effective attraction in heavier atoms.
-      </P>
-      <DataTable
-        columns={["Family", "Useful order / observation", "Why it is not perfectly smooth"]}
-        rows={[
-          ["Group 1", "Li > Na > K > Rb > Cs", "new shells dominate; values become progressively closer"],
-          ["Group 2", "Be > Mg > Ca ≳ Sr > Ba", "general fall with minor irregularity from orbital and shielding effects"],
-          ["Group 13", "B is highest; Al, Ga, In and Tl show an irregular sequence", "d-block and lanthanide contraction make Ga and Tl unexpectedly compact"],
-          ["Group 14", "C > Si > Ge ≳ Pb > Sn (approx.)", "heavy-element contraction and relativistic effects disturb a simple fall"],
-          ["Noble gases", "He > Ne > Ar > Kr > Xe > Rn", "closed shells remain difficult to ionize"],
+      <FactorStudyCard
+        number="2"
+        title="Atomic size and distance of the valence electron"
+        relation={<MathInline tex={String.raw`r\uparrow\Rightarrow \Delta_iH\downarrow`} />}
+        explanation="Electrostatic attraction falls rapidly as the average nucleus–electron distance increases. Down a group, the valence electron occupies a higher shell and is therefore easier to remove."
+        examples={[
+          { label: "Group 1", body: <><MathInline tex={String.raw`\mathrm{Li>Na>K>Rb>Cs}`} /> in IE₁.</> },
+          { label: "Group 17", body: <><MathInline tex={String.raw`\mathrm{F>Cl>Br>I}`} /> in IE₁.</> },
+          { label: "Group 18", body: <><MathInline tex={String.raw`\mathrm{He>Ne>Ar>Kr>Xe>Rn}`} /> in IE₁.</> },
+          { label: "Na vs Mg", body: "Mg is smaller within period 3 and therefore has higher IE₁ than Na." },
         ]}
         accent={T.cyan}
       />
-
-      <H2>4 · Successive Ionization Enthalpy and Valence</H2>
-      <P>
-        A very large jump occurs after all valence electrons have been removed. The next electron would come from an inner closed shell, so its removal is dramatically more difficult. This jump is a direct clue to the number of valence electrons and the likely simple cation charge.
-      </P>
-      <DataTable
-        columns={["Pattern", "Inference", "Illustration"]}
-        rows={[
-          ["IE₂ ≫ IE₁", "one valence electron", "Na: Na⁺ is strongly favoured; Na²⁺ is not"],
-          ["IE₃ ≫ IE₂", "two valence electrons", "Mg: Mg²⁺ is favoured"],
-          ["IE₄ ≫ IE₃", "three valence electrons", "Al: Al³⁺ is a common simple oxidation state"],
-          ["No early giant jump", "transition-metal d electrons are also accessible", "variable oxidation states become possible"],
+      <FactorStudyCard
+        number="3"
+        title="Shielding or screening by inner electrons"
+        relation={<MathInline tex={String.raw`\sigma\uparrow\Rightarrow \Delta_iH\downarrow`} />}
+        explanation="Core electrons reduce the nuclear attraction felt by a valence electron. Down a group, more filled inner shells are introduced and shielding usually outweighs the increase in Z."
+        examples={[
+          { label: "Na", body: "The 3s electron is screened by a [Ne] core and is removed at only about 496 kJ mol⁻¹." },
+          { label: "K", body: "The 4s electron is even more strongly screened and has a lower IE₁ than Na." },
+          { label: "Ga", body: "Poor screening by 3d¹⁰ prevents the expected large fall from Al to Ga; IE₁(Ga) is slightly greater than IE₁(Al)." },
+          { label: "Tl", body: "Poor 4f/5d shielding and relativistic 6s stabilization raise IE₁ relative to a simple down-group prediction." },
+        ]}
+        accent={T.p}
+      />
+      <FactorStudyCard
+        number="4"
+        title="Penetration and subshell type"
+        relation={<MathInline tex={String.raw`\text{same }n:\quad IE(ns)>IE(np)>IE(nd)>IE(nf)\text{, broadly}`} />}
+        explanation="A penetrating s electron spends more time close to the nucleus and is less shielded than a p, d or f electron of the same principal shell. An electron in a newly started p subshell can therefore be easier to remove than an s electron from the preceding element."
+        examples={[
+          { label: "Be / B", body: <><MathInline tex={String.raw`IE_1(\mathrm{Be})>IE_1(\mathrm{B})`} /> because B loses 2p¹ while Be loses a 2s electron.</> },
+          { label: "Mg / Al", body: <><MathInline tex={String.raw`IE_1(\mathrm{Mg})>IE_1(\mathrm{Al})`} /> because Al loses 3p¹.</> },
+          { label: "Zn / Ga", body: "Ga begins 4p occupation after Zn; the 4p electron is easier to remove than a compact filled-shell electron would be." },
+          { label: "Transition ions", body: "4s electrons are generally lost before 3d electrons when transition-metal cations form." },
         ]}
         accent={T.d}
       />
-
-      <H2>5 · Applications and Limits</H2>
-      <ConceptGrid
-        items={[
-          { title: "Metallic character", tag: "LOW IE", accent: T.s, body: "Elements that lose electrons easily are more electropositive and more metallic, although lattice and hydration energies also affect real reactions." },
-          { title: "Reducing tendency", tag: "ELECTRON LOSS", accent: T.d, body: "Low gas-phase ionization enthalpy generally favours reducing behaviour. In solution, hydration and atomization can reverse the simple order." },
-          { title: "Stable oxidation states", tag: "LARGE JUMP", accent: T.gold, body: "A large successive-ionization jump discourages removal beyond a particular charge and helps identify stable ionic oxidation states." },
-          { title: "Bonding character", tag: "IONIC VS COVALENT", accent: T.p, body: "A high sum of ionization enthalpies makes formation of a highly charged cation expensive and can promote covalent bonding instead." },
+      <FactorStudyCard
+        number="5"
+        title="Stable half-filled and fully filled subshells"
+        relation={<MathInline tex={String.raw`\text{extra stability of }ns^2,\ np^3,\ d^5,\ d^{10}\Rightarrow\Delta_iH\text{ may rise}`} />}
+        explanation="Symmetrical occupancy, exchange energy and reduced pairing can make particular configurations unusually stable. Removing an electron that destroys such a configuration requires additional energy; removal that creates a stable configuration may be easier."
+        examples={[
+          { label: "N / O", body: <><MathInline tex={String.raw`IE_1(\mathrm{N})>IE_1(\mathrm{O})`} /> because N has half-filled 2p³ while O has paired 2p⁴.</> },
+          { label: "P / S", body: <><MathInline tex={String.raw`IE_1(\mathrm{P})>IE_1(\mathrm{S})`} /> for the analogous 3p³/3p⁴ reason.</> },
+          { label: "Be / Li", body: "Be has a stable 2s² subshell and a much higher IE₁ than Li." },
+          { label: "Zn", body: "The filled 3d¹⁰4s² arrangement contributes to the relatively high IE₁ of Zn among 3d elements." },
         ]}
+        accent={T.f}
       />
-      <Callout kind="special" title="Lithium in water is not ranked by IE alone">
-        Lithium has the highest first ionization enthalpy among alkali metals, yet Li is a very strong reducing agent in aqueous solution because the unusually large hydration enthalpy of Li⁺ strongly stabilizes the products.
-      </Callout>
-
-      <WorkedExample
-        number="D"
-        title="Explain a local anomaly"
-        question="Why is the first ionization enthalpy of oxygen lower than that of nitrogen?"
-        reasoning={[
-          "Nitrogen is 1s²2s²2p³, with one electron in each 2p orbital and no pairing.",
-          "Oxygen is 1s²2s²2p⁴, so one 2p orbital contains a pair.",
-          "Repulsion within the paired orbital makes one oxygen electron easier to remove, while removal from nitrogen destroys a half-filled p³ arrangement.",
+      <FactorStudyCard
+        number="6"
+        title="Electron pairing and interelectronic repulsion"
+        relation={<MathInline tex={String.raw`\text{pairing repulsion}\uparrow\Rightarrow\Delta_iH\downarrow\text{ for the paired electron}`} />}
+        explanation="When two electrons occupy the same orbital, their mutual repulsion makes either one easier to remove. This effect can outweigh the increase in nuclear charge across a period."
+        examples={[
+          { label: "O", body: "The fourth 2p electron pairs, so O has lower IE₁ than N." },
+          { label: "S", body: "The fourth 3p electron pairs, so S has lower IE₁ than P." },
+          { label: "p⁴ ions", body: "Removal from p⁴ produces the comparatively stable p³ state and is often facilitated." },
+          { label: "d series", body: "Irregular ionization energies arise partly from changes in d-electron pairing and exchange stabilization." },
         ]}
-        answer="IE₁(N) > IE₁(O)."
         accent={T.p}
       />
-      <WorkedExample
-        number="E"
-        title="Use successive ionization data"
-        question="An element has successive ionization enthalpies 738, 1451, 7733 and 10540 kJ mol⁻¹. What simple ion is most likely?"
-        reasoning={[
-          "The first two values are moderate, but the third is dramatically larger.",
-          "After two electrons are removed, the next electron belongs to an inner shell.",
-          "The atom therefore has two valence electrons.",
+      <FactorStudyCard
+        number="7"
+        title="Charge on the species and successive ionization"
+        relation={<MathInline tex={String.raw`q^+\uparrow\Rightarrow\Delta_iH\uparrow`} />}
+        explanation="After each electron is removed, the remaining electrons experience a stronger attraction from the same nucleus. A very large jump occurs when all valence electrons have been removed and the next electron must come from an inner closed shell."
+        examples={[
+          { label: "Na", body: <><MathInline tex={String.raw`IE_2\gg IE_1`} /> because Na⁺ is [Ne].</> },
+          { label: "Mg", body: <><MathInline tex={String.raw`IE_3\gg IE_2`} /> because Mg²⁺ is [Ne].</> },
+          { label: "Al", body: <><MathInline tex={String.raw`IE_4\gg IE_3`} /> because Al³⁺ is [Ne].</> },
+          { label: "C", body: "The giant jump appears after IE₄, consistent with four valence electrons." },
         ]}
-        answer="A stable M²⁺ ion is expected; the pattern is characteristic of a group-2 element such as Mg."
         accent={T.gold}
       />
-      <WorkedExample
-        number="F"
-        title="Compare second ionization enthalpy"
-        question="Which has the larger second ionization enthalpy, Na or Mg?"
-        reasoning={[
-          "After first ionization, Na⁺ has the closed-shell configuration [Ne].",
-          "The second electron from Na⁺ must be removed from the noble-gas core.",
-          "After first ionization, Mg⁺ is [Ne]3s¹, so its second electron is still a valence electron.",
+      <FactorStudyCard
+        number="8"
+        title="Relativistic and contraction effects in heavy atoms"
+        relation={<MathInline tex={String.raw`\text{orbital contraction and stabilization}\Rightarrow\Delta_iH\text{ may exceed a simple trend}`} />}
+        explanation="In heavy atoms, relativistic stabilization of ns and np₁/₂ orbitals and poor d/f shielding can raise ionization enthalpy or flatten the expected decrease down a group."
+        examples={[
+          { label: "Tl", body: "IE₁(Tl) is higher than IE₁(In), contrary to a smooth decrease down group 13." },
+          { label: "Pb", body: "The 6s² pair is stabilized, helping Pb(II) become more stable than Pb(IV)." },
+          { label: "Au", body: "Relativistic 6s stabilization contributes to gold's high electronegativity and unusual chemistry." },
+          { label: "Hg", body: "Strong 6s stabilization weakens Hg–Hg metallic bonding and contributes to mercury's low melting point." },
         ]}
-        answer="IE₂(Na) is much larger than IE₂(Mg)."
-        accent={T.cyan}
+        accent={T.f}
       />
+
+      <H2>3 · First, Second and Third Ionization-Enthalpy Data</H2>
+      <P>Values below are rounded reference values in kJ mol⁻¹. Exact values vary slightly among data compilations; use the values supplied in an examination when numerical precision is required.</P>
+      <DataTable
+        columns={["Element", "Configuration", "IE₁", "IE₂", "IE₃", "Main inference"]}
+        rows={[
+          ["H", "1s¹", "1312", "—", "—", "one-electron atom"],
+          ["He", "1s²", "2372", "5251", "—", "closed shell; very high IE₁"],
+          ["Li", "[He]2s¹", "520", "7298", "11815", "giant jump after IE₁"],
+          ["Be", "[He]2s²", "900", "1757", "14849", "giant jump after IE₂"],
+          ["B", "[He]2s²2p¹", "801", "2427", "3660", "2p electron gives lower IE₁ than Be"],
+          ["C", "[He]2s²2p²", "1086", "2353", "4621", "four valence electrons"],
+          ["N", "[He]2s²2p³", "1402", "2856", "4578", "half-filled p³ raises IE₁"],
+          ["O", "[He]2s²2p⁴", "1314", "3388", "5301", "pairing lowers IE₁ below N"],
+          ["F", "[He]2s²2p⁵", "1681", "3374", "6050", "high Zeff and small radius"],
+          ["Ne", "[He]2s²2p⁶", "2081", "3952", "6122", "closed-shell maximum"],
+          ["Na", "[Ne]3s¹", "496", "4562", "6910", "giant jump after IE₁"],
+          ["Mg", "[Ne]3s²", "738", "1451", "7733", "giant jump after IE₂"],
+          ["Al", "[Ne]3s²3p¹", "578", "1817", "2745", "3p electron lowers IE₁"],
+          ["Si", "[Ne]3s²3p²", "787", "1577", "3232", "four valence electrons"],
+          ["P", "[Ne]3s²3p³", "1012", "1907", "2914", "half-filled p³"],
+          ["S", "[Ne]3s²3p⁴", "1000", "2252", "3357", "pairing lowers IE₁ below P"],
+          ["Cl", "[Ne]3s²3p⁵", "1251", "2298", "3822", "high electron attraction"],
+          ["Ar", "[Ne]3s²3p⁶", "1521", "2666", "3931", "closed-shell maximum"],
+          ["K", "[Ar]4s¹", "419", "3052", "4420", "giant jump after IE₁"],
+          ["Ca", "[Ar]4s²", "590", "1145", "4912", "giant jump after IE₂"],
+        ]}
+        accent={T.gold}
+      />
+
+      <H2>4 · Giant-Jump Method for Group and Valency</H2>
+      <DataTable columns={["Element", "IE₁", "IE₂", "IE₃", "IE₄", "Largest early jump", "Conclusion"]} rows={[
+        ["Na", "496", "4562", "6910", "9543", "IE₁ → IE₂", "one valence electron; Na⁺ favoured"],
+        ["Mg", "738", "1451", "7733", "10543", "IE₂ → IE₃", "two valence electrons; Mg²⁺ favoured"],
+        ["Al", "578", "1817", "2745", "11577", "IE₃ → IE₄", "three valence electrons; Al³⁺ favoured"],
+        ["Si", "787", "1577", "3232", "4356", "jump occurs after IE₄", "four valence electrons"],
+      ]} accent={T.cyan} />
+      <Callout kind="special" title="Successive IE is better than IE₁ for identifying valence count">
+        First ionization enthalpy alone only measures the easiest electron removal. The position of the giant jump reveals how many valence electrons can be removed before the noble-gas core is reached.
+      </Callout>
+
+      <H2>5 · Periodic Trends and High-Yield Special Cases</H2>
+      <DataTable columns={["Comparison", "Observed order", "Complete cause"]} rows={[
+        ["Second period", "Li < B < Be < C < O < N < F < Ne", "overall Zeff rise with dips at B (2p start) and O (pairing)"],
+        ["Third period", "Na < Al < Mg < Si < S < P < Cl < Ar", "overall rise with dips at Al and S"],
+        ["Be and B", "Be > B", "2s penetration and stable 2s² versus higher-energy 2p¹"],
+        ["Mg and Al", "Mg > Al", "3p¹ electron of Al is easier to remove"],
+        ["N and O", "N > O", "half-filled 2p³ versus paired 2p⁴"],
+        ["P and S", "P > S", "half-filled 3p³ versus paired 3p⁴"],
+        ["Group 13", "B > Tl > Ga ≳ Al > In", "d/f shielding and relativistic effects disturb the simple fall"],
+        ["Na IE₂ vs Mg IE₂", "Na ≫ Mg", "Na⁺ is [Ne], while Mg⁺ still has a 3s valence electron"],
+      ]} accent={T.p} />
+
+      <H2>6 · Applications of Ionization Enthalpy</H2>
+      <DataTable columns={["Application", "Use", "Example"]} rows={[
+        ["Metallic character", "low IE favours electron loss and electropositive behaviour", "Cs is more metallic than Li"],
+        ["Reducing tendency in gas phase", "low IE facilitates oxidation of the atom", "K loses an electron more readily than Na"],
+        ["Stable oxidation states", "a giant jump limits further electron removal", "Mg²⁺ is common; Mg³⁺ is not"],
+        ["Group determination", "jump after n removals indicates n valence electrons", "IE₃ ≫ IE₂ identifies a group-2 pattern"],
+        ["Ionic versus covalent bonding", "very high total IE makes formation of a highly charged cation expensive", "C⁴⁺ is not a normal simple ion; carbon forms covalent bonds"],
+        ["Born–Haber cycles", "successive IE terms are included in lattice-formation energetics", "formation of MgCl₂ requires IE₁ + IE₂ of Mg"],
+        ["Reactivity of s-block metals", "low IE contributes to vigorous oxidation", "reactivity generally increases Li → Cs"],
+        ["Photoelectron spectra", "electron binding energies identify subshells and configurations", "large core/valence energy separation reveals shell structure"],
+      ]} accent={T.d} />
+
+      <H2>7 · Limitations — What Ionization Enthalpy Alone Cannot Predict</H2>
+      <DataTable columns={["Incorrect shortcut", "Why it fails", "Needed additional factor"]} rows={[
+        ["Lowest IE means strongest aqueous reducing agent", "hydration enthalpy can reverse the order", "complete electrode or thermochemical cycle; Li is the classic case"],
+        ["Lower IE always means faster reaction", "kinetic barriers and surface films may dominate", "activation energy and physical state"],
+        ["IE alone predicts ionic-compound stability", "lattice enthalpy and electron gain terms are equally important", "Born–Haber cycle"],
+        ["IE follows a perfectly smooth periodic curve", "subshell start, pairing, poor shielding and relativistic effects create local changes", "actual configuration and data"],
+        ["First IE gives every oxidation state", "later electrons can be d or core electrons with very different energies", "successive IE plus bond/lattice/solvation energies"],
+        ["Atomic IE equals bond ionization energy", "molecules reorganize and bonds break when ionized", "molecular orbital and spectroscopic data"],
+      ]} accent={T.p} />
+
+      <H2>8 · Solved Examples</H2>
+      <WorkedExample number="I1" title="Be–B order" question="Why is IE₁(Be) greater than IE₁(B)?" reasoning={["Be is 1s²2s²; B is 1s²2s²2p¹.", "A 2p electron is less penetrating and more shielded than a 2s electron.", "Removal from B also leaves the stable 2s² configuration."]} answer="IE₁(Be) > IE₁(B)." accent={T.gold} />
+      <WorkedExample number="I2" title="N–O order" question="Why is IE₁(O) lower than IE₁(N)?" reasoning={["N has the half-filled 2p³ arrangement.", "O has one paired 2p orbital.", "Pairing repulsion makes one O electron easier to remove."]} answer="IE₁(N) > IE₁(O)." accent={T.p} />
+      <WorkedExample number="I3" title="Na versus Mg second IE" question="Compare IE₂ of Na and Mg." reasoning={["Na⁺ = [Ne], so IE₂ removes a core electron.", "Mg⁺ = [Ne]3s¹, so IE₂ removes a valence electron.", "Core-electron removal requires far more energy."]} answer="IE₂(Na) ≫ IE₂(Mg)." accent={T.cyan} />
+      <WorkedExample number="I4" title="Identify a group from data" question="IE values are 590, 1145, 4912 and 6491 kJ mol⁻¹. Identify the likely group." reasoning={["The giant jump is between IE₂ and IE₃.", "Two electrons are removable before a core is reached.", "The atom has two valence electrons."]} answer="Group 2; the values are characteristic of Ca." accent={T.d} />
+      <WorkedExample number="I5" title="Order in period 3" question="Arrange Al, Mg, S and P in increasing IE₁." reasoning={["Al has a removable 3p¹ electron and is lowest.", "Mg has stable 3s² but lies left of P and S.", "S is below P because of pairing in 3p⁴."]} answer="Al < Mg < S < P." accent={T.gold} />
+      <WorkedExample number="I6" title="Cation formation" question="Why is Al³⁺ common but Al⁴⁺ not a normal simple ion?" reasoning={["Al has three valence electrons.", "After three removals, Al³⁺ has the [Ne] configuration.", "IE₄ removes a core electron and is extremely large."]} answer="The giant jump after IE₃ stabilizes the +3 limit for simple ionic formation." accent={T.p} />
+      <WorkedExample number="I7" title="Aqueous reducing power" question="Why can Li be a very strong reducing agent in water despite its high IE₁?" reasoning={["IE refers to gas-phase electron removal.", "Li⁺ is very small and is hydrated special caseally strongly.", "The hydration term strongly stabilizes the products."]} answer="A complete aqueous thermodynamic cycle, not IE₁ alone, controls reducing strength." accent={T.cyan} />
+      <WorkedExample number="I8" title="Closed-shell maximum" question="Why are noble gases local maxima in IE₁?" reasoning={["Their valence shells are completely filled.", "They have compact, stable configurations and high effective attraction.", "Removal destroys a closed shell."]} answer="Noble gases possess the highest IE₁ values in their periods." accent={T.f} />
     </div>
   );
 }
+
 
 /* =============================================================================
    SECTION — Electron Gain Enthalpy
@@ -2273,103 +2468,197 @@ export function SectionElectronGain() {
   return (
     <div>
       <SectionIntro
-        eyebrow="Adding an electron to an isolated gaseous atom"
-        title="Electron Gain Enthalpy: Attraction, Crowding and Configuration"
-        summary="Electron gain enthalpy records the enthalpy change when an isolated gaseous atom accepts an electron. A negative value means energy is released; a positive value means the incoming electron is energetically unfavourable."
+        eyebrow="Energy change when an isolated atom accepts an electron"
+        title="Electron Gain Enthalpy — Complete Theory, Data, Factors, Applications and Solved Examples"
+        summary="This module distinguishes electron gain enthalpy from electron affinity and electronegativity, explains every controlling factor with several examples, includes NCERT reference data, successive electron-addition steps, special cases and the limits of simple periodic rules."
         accent={T.d}
       />
-      <H2 id="electron-gain">1 · Definition and Sign Convention</H2>
-      <Formula>X(g) + e⁻ → X⁻(g) &nbsp;&nbsp; ΔₑgH₁</Formula>
-      <P>
-        The first electron gain enthalpy is often negative because nucleus–electron attraction releases energy. The older term electron affinity is frequently reported as the positive magnitude of the released energy, so always inspect the sign convention used in a question.
-      </P>
-      <Callout kind="warn" title="Do not confuse the terms">
-        “More negative electron gain enthalpy” means a more exothermic electron-addition process. If a source quotes electron affinity as a positive released-energy magnitude, the numerical order is reversed in sign but not in physical favourability.
+
+      <H2 id="electron-gain">1 · Definition, Sign and Thermodynamic Convention</H2>
+      <DefinitionBox term="Electron gain enthalpy">
+        Electron gain enthalpy is the enthalpy change accompanying the addition of an electron to one mole of isolated gaseous atoms in their ground state to form one mole of gaseous anions.
+      </DefinitionBox>
+      <MathBlock tex={String.raw`\mathrm{X(g)+e^-\rightarrow X^-(g)}\qquad \Delta_{eg}H_1`} />
+      <DataTable columns={["Sign", "Meaning", "Illustration"]} rows={[
+        ["negative", "electron addition releases energy; process is exothermic", "Cl(g) + e⁻ → Cl⁻(g)"],
+        ["positive", "energy must be supplied; process is endothermic", "noble-gas electron addition"],
+        ["more negative", "electron addition is thermodynamically more favourable for the isolated atom", "Cl is more negative than F"],
+      ]} accent={T.d} />
+      <Callout kind="warn" title="Electron affinity and electron gain enthalpy may use opposite signs">
+        In the common electron-affinity convention, released energy is written as a positive magnitude. In thermodynamic electron-gain-enthalpy notation, the same exothermic process has a negative sign. Always check the convention before comparing numbers.
       </Callout>
+      <MathBlock tex={String.raw`\Delta_{eg}H\approx -A_e\quad\text{(sign comparison; temperature convention may add a correction)}`} />
 
-      <H2>2 · Factors Governing Electron Addition</H2>
-      <ConceptGrid
-        items={[
-          { title: "Nuclear attraction", tag: "Zeff", accent: T.gold, body: "A higher effective nuclear charge pulls the incoming electron more strongly and usually makes addition more exothermic." },
-          { title: "Atomic size", tag: "DISTANCE", accent: T.cyan, body: "In a larger atom the incoming electron remains farther from the nucleus, so energy release generally decreases." },
-          { title: "Electron–electron repulsion", tag: "CROWDING", accent: T.p, body: "Very compact orbitals can oppose electron addition even when nuclear attraction is strong; F versus Cl is the classic case." },
-          { title: "Resulting configuration", tag: "STABILITY", accent: T.d, body: "Addition that completes a subshell can be favourable; addition that begins a new subshell or disrupts half-filled stability can be unfavourable." },
+      <H2>2 · Factors Affecting Electron Gain Enthalpy</H2>
+      <FactorStudyCard
+        number="1"
+        title="Effective nuclear charge"
+        relation={<MathInline tex={String.raw`Z_{\mathrm{eff}}\uparrow\Rightarrow \Delta_{eg}H\text{ generally becomes more negative}`} />}
+        explanation="A stronger net positive attraction stabilizes the incoming electron. Across a period, effective nuclear charge generally rises, so electron addition tends to become more exothermic toward the halogens."
+        examples={[
+          { label: "Na → Cl", body: "The broad trend becomes more negative from the electropositive metal toward chlorine." },
+          { label: "C vs F", body: "F attracts an incoming electron much more strongly and reaches a closed shell." },
+          { label: "Halogens", body: "Their high Zeff and ns²np⁵ configuration make the first electron addition strongly exothermic." },
+          { label: "Noble gases", body: "Despite high Z, the incoming electron must enter a new shell; configuration overrides the simple Zeff argument." },
         ]}
+        accent={T.gold}
       />
-
-      <H2>3 · Periodic Trend and Major Special Cases</H2>
-      <P>
-        Across a period, the value generally becomes more negative as size decreases and effective nuclear charge rises. Down a group it usually becomes less negative because the incoming electron enters a larger, more shielded shell. The trend is much less regular than ionization enthalpy.
-      </P>
-      <ElectronGainSVG />
-      <DataTable
-        columns={["Species / family", "Characteristic behaviour", "Reason"]}
-        rows={[
-          ["Halogens", "very negative; Cl is more negative than F", "one electron completes np⁶; F suffers intense crowding in compact 2p"],
-          ["Chalcogens", "S is more negative than O", "compact 2p shell of O gives greater incoming-electron repulsion"],
-          ["Group 15", "N is unusually unfavourable", "incoming electron must pair in a half-filled 2p³ set"],
-          ["Group 2", "Be and Mg are near zero or positive", "electron must enter a higher-energy p subshell after stable ns²"],
-          ["Noble gases", "positive", "electron would have to occupy the next principal shell"],
-          ["Alkali metals", "moderately negative", "addition converts ns¹ to stable ns², but low Zeff and large size limit release"],
+      <FactorStudyCard
+        number="2"
+        title="Atomic size and distance of the incoming electron"
+        relation={<MathInline tex={String.raw`r\uparrow\Rightarrow |\Delta_{eg}H|\text{ generally decreases}`} />}
+        explanation="In a larger atom, the incoming electron occupies a region farther from the nucleus. Nuclear attraction is weaker, so electron addition usually releases less energy down a group."
+        examples={[
+          { label: "Cl → I", body: <><MathInline tex={String.raw`|\Delta_{eg}H|:\ \mathrm{Cl>Br>I}`} />.</> },
+          { label: "S → Te", body: "The magnitude generally falls as the valence p shell becomes larger." },
+          { label: "Group 1", body: <><MathInline tex={String.raw`\mathrm{Li>Na>K>Rb>Cs}`} /> in magnitude of first electron gain enthalpy.</> },
+          { label: "Special pair", body: "F and O do not follow the simple small-size argument because their compact 2p orbitals are too crowded." },
         ]}
-        accent={T.d}
-      />
-      <Formula>Common magnitude order for halogens: Cl &gt; F &gt; Br &gt; I</Formula>
-      <Formula>Common magnitude order for O/S family start: S &gt; O</Formula>
-
-      <H2>4 · Successive Electron Gain Enthalpies</H2>
-      <P>
-        Adding an electron to a neutral atom may release energy. Adding a second electron to an already negative ion always requires work because the incoming electron is repelled by the anion.
-      </P>
-      <Formula>O(g) + e⁻ → O⁻(g) &nbsp;&nbsp; ΔₑgH₁ may be negative</Formula>
-      <Formula>O⁻(g) + e⁻ → O²⁻(g) &nbsp;&nbsp; ΔₑgH₂ is positive</Formula>
-      <P>
-        Stable oxide ions nevertheless exist in crystals because lattice enthalpy and, in solution, hydration enthalpy can more than compensate for the unfavourable second electron-addition step.
-      </P>
-
-      <H2>5 · Relation to Oxidizing Power</H2>
-      <P>
-        A favourable electron gain contributes to oxidizing ability, but it is only one step in a complete thermochemical or electrochemical cycle. Bond dissociation, atomization, hydration, lattice enthalpy and entropy can change the final order. This is why fluorine is the strongest aqueous oxidizing halogen even though chlorine has the more negative atomic electron gain enthalpy.
-      </P>
-
-      <WorkedExample
-        number="G"
-        title="Why chlorine beats fluorine in electron gain enthalpy"
-        question="Fluorine is smaller and more electronegative than chlorine. Why is electron addition to Cl more exothermic than to F?"
-        reasoning={[
-          "The incoming electron enters a 2p orbital in F but a more spacious 3p orbital in Cl.",
-          "In F, the compact 2p shell already contains seven valence electrons and produces strong electron–electron repulsion.",
-          "Chlorine retains strong nuclear attraction while offering enough volume to reduce crowding.",
-        ]}
-        answer="The magnitude of electron gain enthalpy follows Cl > F despite the higher electronegativity of F."
-        accent={T.d}
-      />
-      <WorkedExample
-        number="H"
-        title="Predict the sign of the second electron gain enthalpy"
-        question="What is the sign of ΔₑgH₂ for formation of S²⁻ from S⁻ in the gas phase?"
-        reasoning={[
-          "The incoming electron approaches a negatively charged ion.",
-          "Electrostatic repulsion must be overcome before the electron can be added.",
-          "The process therefore absorbs energy even though S²⁻ may be stabilized in an ionic solid.",
-        ]}
-        answer="ΔₑgH₂ is positive."
-        accent={T.p}
-      />
-      <WorkedExample
-        number="I"
-        title="Separate electron gain from electronegativity"
-        question="Which statement is meaningful: electron gain enthalpy of Cl(g), or electronegativity of isolated Cl(g)?"
-        reasoning={[
-          "Electron gain enthalpy is defined for an isolated gaseous atom accepting an electron.",
-          "Electronegativity describes attraction for shared electron density by an atom already participating in a bond.",
-        ]}
-        answer="Electron gain enthalpy of Cl(g) is meaningful; electronegativity is not a property of an isolated free atom."
         accent={T.cyan}
       />
+      <FactorStudyCard
+        number="3"
+        title="Shielding by inner electrons"
+        relation={<MathInline tex={String.raw`\sigma\uparrow\Rightarrow\text{incoming electron feels less attraction}`} />}
+        explanation="Core electrons shield the incoming electron from the nucleus. Down a group, additional inner shells increase screening and usually make electron gain less exothermic."
+        examples={[
+          { label: "Li vs Na", body: "Na has a larger [Ne] core and a less negative value than Li." },
+          { label: "Cl vs Br", body: "Br has an extra filled shell; its electron gain is less exothermic than Cl." },
+          { label: "Cs", body: "Strong shielding and large size make its electron gain only moderately exothermic." },
+          { label: "d/f effects", body: "Poor d/f shielding can increase Zeff and create deviations in heavier p-block elements." },
+        ]}
+        accent={T.p}
+      />
+      <FactorStudyCard
+        number="4"
+        title="Subshell and electronic configuration produced"
+        relation={<MathInline tex={String.raw`\text{formation of a stable subshell}\Rightarrow\Delta_{eg}H\text{ more negative}`} />}
+        explanation="Electron addition is favourable when it completes a valence subshell, but unfavourable when it begins a higher-energy subshell or disturbs a half-filled arrangement."
+        examples={[
+          { label: "Halogens", body: <><MathInline tex={String.raw`ns^2np^5+e^-\rightarrow ns^2np^6`} /> gives a noble-gas configuration.</> },
+          { label: "Group 1", body: <><MathInline tex={String.raw`ns^1+e^-\rightarrow ns^2`} /> gives a filled s subshell, so values are moderately negative.</> },
+          { label: "Group 2", body: "Be and Mg already have ns²; the added electron must enter np, making the process near zero or positive." },
+          { label: "Noble gases", body: "A closed shell is followed by occupation of the next principal shell, so electron gain is positive." },
+        ]}
+        accent={T.f}
+      />
+      <FactorStudyCard
+        number="5"
+        title="Electron–electron repulsion and orbital crowding"
+        relation={<MathInline tex={String.raw`\text{crowding}\uparrow\Rightarrow\Delta_{eg}H\text{ becomes less negative}`} />}
+        explanation="The incoming electron is repelled by electrons already present in the target orbital. Very compact 2p orbitals can therefore accept an electron less favourably than the larger 3p orbitals below them."
+        examples={[
+          { label: "F vs Cl", body: <><MathInline tex={String.raw`\Delta_{eg}H(\mathrm{Cl})<\Delta_{eg}H(\mathrm{F})`} />; chlorine is more exothermic.</> },
+          { label: "O vs S", body: <><MathInline tex={String.raw`\Delta_{eg}H(\mathrm{S})<\Delta_{eg}H(\mathrm{O})`} /> for the same compact-2p reason.</> },
+          { label: "N", body: "The incoming electron must pair in a half-filled 2p³ set, so electron gain is positive or only weakly favourable depending on convention/data." },
+          { label: "P", body: "3p orbitals are more spacious than 2p, but pairing still makes P less favourable than S and Cl." },
+        ]}
+        accent={T.gold}
+      />
+      <FactorStudyCard
+        number="6"
+        title="Charge already present on the species"
+        relation={<MathInline tex={String.raw`\mathrm{X^-(g)+e^-\rightarrow X^{2-}(g)}\quad\Delta_{eg}H_2>0`} />}
+        explanation="The second electron approaches a negatively charged ion and must overcome strong electrostatic repulsion. Hence the second electron gain enthalpy is always positive for an isolated gaseous monoanion."
+        examples={[
+          { label: "O²⁻", body: "Formation of gaseous O²⁻ from O⁻ requires energy even though oxide is stable in crystals." },
+          { label: "S²⁻", body: "The second electron-addition step is endothermic; lattice energy stabilizes sulfide salts." },
+          { label: "N³⁻", body: "Second and third electron additions are highly endothermic in the gas phase." },
+          { label: "Ionic solids", body: "Large lattice enthalpy can compensate positive successive electron-gain terms." },
+        ]}
+        accent={T.p}
+      />
+      <FactorStudyCard
+        number="7"
+        title="Spin arrangement, pairing and exchange stabilization"
+        relation={<MathInline tex={String.raw`p^3\text{ half-filled stability opposes electron addition}`} />}
+        explanation="Hund-rule arrangements have additional exchange stabilization. Adding an electron may force pairing and reduce this stability, so the measured trend is not a smooth function of Z or radius."
+        examples={[
+          { label: "N", body: "2p³ is half-filled; the fourth electron must pair, giving an unfavourable value." },
+          { label: "P", body: "3p³ also resists pairing, so its value is much less negative than S or Cl." },
+          { label: "C", body: "Addition gives 2p³, a half-filled product, so C has a fairly favourable electron gain." },
+          { label: "Si", body: "Addition gives 3p³, contributing to a more negative value than Al or P." },
+        ]}
+        accent={T.d}
+      />
+
+      <H2>3 · NCERT Reference Data</H2>
+      <DataTable columns={["Family", "Element", "ΔegH₁ / kJ mol⁻¹", "Interpretation"]} rows={[
+        ["Group 1", "H", "−73", "moderately exothermic"],
+        ["Group 1", "Li", "−60", "ns¹ → ns²"],
+        ["Group 1", "Na", "−53", "less exothermic down group"],
+        ["Group 1", "K", "−48", "larger and more shielded"],
+        ["Group 1", "Rb", "−47", "small change"],
+        ["Group 1", "Cs", "−46", "smallest magnitude in listed group"],
+        ["Group 16", "O", "−141", "compact 2p crowding"],
+        ["Group 16", "S", "−200", "more exothermic than O"],
+        ["Group 16", "Se", "−195", "magnitude begins to fall"],
+        ["Group 16", "Te", "−190", "larger size"],
+        ["Group 16", "Po", "−174", "large and strongly shielded"],
+        ["Group 17", "F", "−328", "strongly exothermic but less than Cl"],
+        ["Group 17", "Cl", "−349", "most negative listed value"],
+        ["Group 17", "Br", "−325", "less negative down group"],
+        ["Group 17", "I", "−295", "larger radius"],
+        ["Group 17", "At", "−270", "estimated/representative heavy value"],
+        ["Group 18", "He", "+48", "electron enters a new shell"],
+        ["Group 18", "Ne", "+116", "strongly unfavourable"],
+        ["Group 18", "Ar", "+96", "unfavourable"],
+        ["Group 18", "Kr", "+96", "unfavourable"],
+        ["Group 18", "Xe", "+77", "unfavourable but less positive down group"],
+        ["Group 18", "Rn", "+68", "unfavourable"],
+      ]} accent={T.d} />
+      <DataTable columns={["Element", "Li", "Be", "B", "C", "N", "O", "F", "Ne"]} rows={[
+        ["Period-2 ΔegH₁", "−60", "+48", "−27", "−122", "+31", "−141", "−328", "+116"],
+      ]} accent={T.cyan} />
+      <DataTable columns={["Element", "Na", "Mg", "Al", "Si", "P", "S", "Cl", "Ar"]} rows={[
+        ["Period-3 ΔegH₁", "−53", "+48", "−44", "−134", "−72", "−200", "−349", "+96"],
+      ]} accent={T.gold} />
+
+      <H2>4 · First, Second and Third Electron-Gain Steps</H2>
+      <MathBlock tex={String.raw`\mathrm{O(g)+e^-\rightarrow O^-(g)}\qquad \Delta_{eg}H_1<0`} />
+      <MathBlock tex={String.raw`\mathrm{O^-(g)+e^-\rightarrow O^{2-}(g)}\qquad \Delta_{eg}H_2>0`} />
+      <MathBlock tex={String.raw`\mathrm{N^{2-}(g)+e^-\rightarrow N^{3-}(g)}\qquad \Delta_{eg}H_3>0\ \text{and very large}`} />
+      <RelationBox title="Why multiply charged anions still exist" relations={[
+        <React.Fragment key="lattice">In an ionic crystal, large lattice enthalpy stabilizes ions such as <MathInline tex={String.raw`\mathrm{O^{2-}}`} />, <MathInline tex={String.raw`\mathrm{S^{2-}}`} /> and <MathInline tex={String.raw`\mathrm{N^{3-}}`} />.</React.Fragment>,
+        <React.Fragment key="hydration">In aqueous solution, hydration enthalpy can also stabilize charged ions.</React.Fragment>,
+        <React.Fragment key="cycle">The stability of a compound is decided by the complete thermochemical cycle, not by one gas-phase electron-addition step.</React.Fragment>,
+      ]} />
+
+      <H2>5 · Applications</H2>
+      <DataTable columns={["Application", "How electron gain enthalpy helps", "Example / caution"]} rows={[
+        ["Tendency to form anions", "a more negative first value favours gaseous anion formation", "halogens readily form X⁻"],
+        ["Oxidizing behaviour", "favourable electron uptake contributes to oxidizing power", "full bond/hydration cycle is still required"],
+        ["Born–Haber cycles", "electron-gain terms enter ionic-solid formation enthalpy", "formation of O²⁻ requires both ΔegH₁ and positive ΔegH₂"],
+        ["Periodic classification", "large negative values identify strongly electron-attracting p-block families", "groups 16 and 17"],
+        ["Configuration analysis", "sign and magnitude reveal stable or crowded subshells", "Be/Mg, N/P and noble gases"],
+        ["Comparison with IE", "together they form the basis of Mulliken electronegativity", "χM ≈ (IE + EA)/2 using a consistent sign convention"],
+        ["Ionic-compound feasibility", "combined with IE and lattice enthalpy it estimates stability", "NaCl formation is favourable despite separate energy costs"],
+        ["Redox thermodynamics", "electron addition is one part of reduction", "F₂ versus Cl₂ requires X–X bond and hydration terms"],
+      ]} accent={T.d} />
+
+      <H2>6 · Limitations — Where a Simple Electron-Gain Rule Fails</H2>
+      <DataTable columns={["Incorrect shortcut", "Why it fails", "Correct treatment"]} rows={[
+        ["Smallest atom must have the most negative value", "compact orbitals can create severe electron repulsion", "Cl is more negative than F; S more negative than O"],
+        ["More negative value means strongest oxidizing element in every medium", "bond breaking, hydration and entropy are omitted", "F₂ is strongest aqueous halogen oxidant despite Cl atom having more negative ΔegH"],
+        ["Electron gain enthalpy equals electronegativity", "one is a measurable gas-phase enthalpy; the other is a bonded-atom scale", "keep the concepts separate"],
+        ["First value predicts stable dianions", "second electron addition to an anion is endothermic", "include lattice or hydration stabilization"],
+        ["Trend is perfectly smooth", "configuration and pairing create strong local changes", "inspect ns², np³ and np⁶ states"],
+        ["A tabulated atomic value applies inside every compound", "bonding environment changes electron distribution", "use molecular/solid-state energetics for compounds"],
+      ]} accent={T.p} />
+
+      <H2>7 · Solved Examples</H2>
+      <WorkedExample number="E1" title="Cl versus F" question="Why is electron gain by Cl more exothermic than by F?" reasoning={["Both additions complete an np⁶ shell.", "F accepts the electron into a compact 2p orbital with strong repulsion.", "Cl accepts it into a more spacious 3p orbital while retaining strong nuclear attraction."]} answer="ΔegH(Cl) is more negative than ΔegH(F)." accent={T.d} />
+      <WorkedExample number="E2" title="S versus O" question="Which has the more negative first electron gain enthalpy, O or S?" reasoning={["O is smaller, which normally favours electron gain.", "However, the incoming electron enters the crowded 2p shell of O.", "The larger 3p shell of S has less interelectronic repulsion."]} answer="S has the more negative value." accent={T.gold} />
+      <WorkedExample number="E3" title="Second electron addition" question="Predict the sign of ΔegH₂ for O⁻(g) + e⁻ → O²⁻(g)." reasoning={["The electron approaches a negatively charged ion.", "Strong electrostatic repulsion must be overcome.", "The isolated gaseous process requires energy."]} answer="ΔegH₂ is positive." accent={T.p} />
+      <WorkedExample number="E4" title="Most and least negative" question="Among P, S, Cl and F, identify the most and least negative first electron gain enthalpy." reasoning={["Across period 3 the value generally becomes more negative P → S → Cl.", "Cl is more negative than F because 3p is less crowded than 2p.", "P resists pairing in the half-filled 3p³ set."]} answer="Most negative: Cl; least negative: P." accent={T.cyan} />
+      <WorkedExample number="E5" title="Noble gas sign" question="Why is ΔegH₁ of Ne positive?" reasoning={["Ne already has a closed 2s²2p⁶ shell.", "The incoming electron must enter the n = 3 shell.", "The product is higher in energy and poorly stabilized."]} answer="Electron addition to Ne is endothermic; ΔegH₁ is positive." accent={T.f} />
+      <WorkedExample number="E6" title="Be and Mg" question="Why are the first electron gain enthalpies of Be and Mg near zero or positive?" reasoning={["Both atoms have stable ns² configurations.", "The incoming electron must begin the higher-energy np subshell.", "The gain in nuclear attraction is not enough to offset the energetic cost."]} answer="Electron addition is weakly favourable or unfavourable." accent={T.gold} />
+      <WorkedExample number="E7" title="F₂ versus Cl₂ oxidizing power" question="Why is F₂ the stronger aqueous oxidant although Cl has the more negative atomic ΔegH?" reasoning={["Atomic ΔegH describes X(g), not X₂(aq).", "The redox process includes X–X bond dissociation and hydration of X⁻.", "The very favourable hydration of F⁻ makes the complete aqueous reduction of F₂ more favourable."]} answer="Oxidizing power is a full thermodynamic-cycle property." accent={T.cyan} />
+      <WorkedExample number="E8" title="Formation of MgO" question="Does the positive second electron gain enthalpy of oxygen prevent MgO formation?" reasoning={["Formation of O²⁻(g) includes a positive ΔegH₂.", "MgO releases very large lattice enthalpy when Mg²⁺ and O²⁻ form the crystal.", "The complete Born–Haber cycle is favourable."]} answer="No. Lattice stabilization compensates for the positive second electron-gain step." accent={T.d} />
     </div>
   );
 }
+
 
 /* =============================================================================
    SECTION — Electronegativity
@@ -2378,109 +2667,204 @@ export function SectionElectronegativity() {
   return (
     <div>
       <SectionIntro
-        eyebrow="Attraction for shared electron density"
-        title="Electronegativity: Scales, Trends, Hybridization and Applications"
-        summary="Electronegativity is a relative property of a bonded atom, not a directly measured energy of a free atom. It depends on effective nuclear charge, size, oxidation state, hybridization and the chemical environment."
+        eyebrow="Attraction exerted by a bonded atom on shared electron density"
+        title="Electronegativity — Complete Scales, Factors, Data, Applications, Limitations and Examples"
+        summary="Electronegativity is treated as a bonded-atom property rather than a free-atom energy. The module develops Pauling, Mulliken and Allred–Rochow ideas, explains every controlling factor with several examples, and applies electronegativity to polarity, oxidation state, acidity, bonding and organic effects."
         accent={T.cyan}
       />
-      <H2 id="electronegativity">1 · Meaning and Periodic Variation</H2>
-      <P>
-        In a covalent bond A–B, the more electronegative atom draws the bonding electron pair closer to itself and acquires partial negative charge. Electronegativity generally rises across a period and falls down a group. Fluorine is the highest on the Pauling scale.
-      </P>
-      <ElectronegativitySpectrumSVG />
-      <Callout kind="note" title="Relative, not absolute">
-        Electronegativity has no universal unit and no single exact value independent of bonding. Different scales use different physical models but give broadly similar trends.
-      </Callout>
 
-      <H2>2 · Important Scales</H2>
-      <DataTable
-        columns={["Scale", "Core idea", "Useful expression / note"]}
-        rows={[
-          ["Pauling", "extra stabilization of a heteronuclear bond", "derived from bond energies; F assigned 4.0"],
-          ["Mulliken", "average tendency to lose and gain an electron", "χᴹ ≈ (IE + EA)/2 when both are in eV"],
-          ["Allred–Rochow", "electrostatic attraction at covalent radius", "χ depends approximately on Zeff / r²"],
-        ]}
-        accent={T.cyan}
-      />
-      <Callout kind="warn" title="Use formulas with their stated units">
-        Different textbooks use slightly different constants and calibrations for conversion between scales. In numerical problems, use the exact expression and units supplied in the question.
+      <H2 id="electronegativity">1 · NCERT-Aligned Definition and Essential Features</H2>
+      <DefinitionBox term="Electronegativity">
+        Electronegativity is a qualitative measure of the ability of an atom in a chemical compound to attract the shared electron pair or bonding electron density towards itself.
+      </DefinitionBox>
+      <DataTable columns={["Feature", "Electronegativity", "Contrast"]} rows={[
+        ["Species considered", "atom already present in a bond", "IE and electron gain enthalpy refer to isolated gaseous species"],
+        ["Nature", "relative and scale-dependent", "not a directly measurable thermodynamic quantity"],
+        ["Units", "dimensionless on common scales", "IE and ΔegH are in kJ mol⁻¹"],
+        ["Constancy", "changes with oxidation state, hybridization and bonding partner", "not one immutable number for an element"],
+        ["Highest common value", "F = 4.0 on the Pauling scale", "noble-gas values are often omitted in elementary tables"],
+      ]} accent={T.cyan} />
+      <ElectronegativitySpectrumSVG />
+
+      <H2>2 · Major Electronegativity Scales and Equations</H2>
+      <H3>Pauling scale — bond-energy method</H3>
+      <MathBlock tex={String.raw`\Delta=D_{A-B}-\sqrt{D_{A-A}D_{B-B}}`} label="Extra heteronuclear bond stabilization" />
+      <MathBlock tex={String.raw`|\chi_A-\chi_B|=0.102\sqrt{\Delta}\quad\text{when bond energies are in kJ mol}^{-1}`} />
+      <P>The numerical constant changes with the energy unit. Pauling fixed fluorine at 4.0 and generated relative values from bond-energy differences.</P>
+      <H3>Mulliken scale — average electron-removal and electron-gain tendency</H3>
+      <MathBlock tex={String.raw`\chi_M=\frac{IE+EA}{2}`} label="Use IE and electron affinity in the same energy unit, commonly eV" />
+      <Callout kind="warn" title="Sign convention">
+        In the Mulliken expression, EA is normally the positive energy released on electron attachment. If thermodynamic electron gain enthalpy is used, convert the sign consistently before substitution.
       </Callout>
+      <H3>Allred–Rochow scale — electrostatic attraction at the covalent radius</H3>
+      <MathBlock tex={String.raw`\chi_{AR}=0.359\frac{Z_{\mathrm{eff}}}{r_{\mathrm{cov}}^2}+0.744\qquad(r_{\mathrm{cov}}\text{ in \AA})`} />
+      <DataTable columns={["Scale", "Physical basis", "Strength", "Limitation"]} rows={[
+        ["Pauling", "bond-energy stabilization", "directly useful for bond polarity", "requires bond-energy data and calibration"],
+        ["Mulliken", "average of ionization and electron-attachment tendencies", "links atomic energy data to χ", "gas-phase values and sign conventions must be consistent"],
+        ["Allred–Rochow", "electrostatic attraction using Zeff and covalent radius", "shows χ ∝ Zeff/r² clearly", "depends on chosen radius and approximate Zeff"],
+      ]} accent={T.gold} />
 
       <H2>3 · Factors Affecting Electronegativity</H2>
-      <ConceptGrid
-        items={[
-          { title: "Effective nuclear charge", tag: "Zeff ↑ ⇒ χ ↑", accent: T.gold, body: "A stronger net nuclear pull attracts shared electron density more strongly." },
-          { title: "Covalent radius", tag: "r ↓ ⇒ χ ↑", accent: T.cyan, body: "A compact valence shell places bonding electrons nearer the nucleus." },
-          { title: "Oxidation state", tag: "MORE POSITIVE ⇒ χ ↑", accent: T.p, body: "For the same element, a higher positive oxidation state generally increases electron-attracting power." },
-          { title: "Hybridization", tag: "s CHARACTER ↑ ⇒ χ ↑", accent: T.d, body: "An orbital with more s character keeps electron density closer to the nucleus: sp > sp² > sp³." },
-          { title: "Charge", tag: "CATION > ATOM > ANION", accent: T.f, body: "Positive charge contracts the electron cloud and raises attraction for bonding density; negative charge does the opposite." },
-          { title: "Substituent environment", tag: "INDUCTIVE EFFECT", accent: T.s, body: "Electron-withdrawing groups can raise the effective electronegativity of an atom within a molecule." },
-        ]}
-      />
-      <Formula>For carbon hybrid orbitals: χ(sp) &gt; χ(sp²) &gt; χ(sp³)</Formula>
-
-      <H2>4 · Applications</H2>
-      <DataTable
-        columns={["Application", "How electronegativity helps", "Caution"]}
-        rows={[
-          ["Bond polarity", "larger Δχ gives larger bond dipole tendency", "molecular shape decides the net dipole moment"],
-          ["Ionic character", "large Δχ increases ionic contribution", "bonding is a continuum; no universal sharp boundary"],
-          ["Acid–base character of oxides", "greater non-metallic character and high oxidation state favour acidic oxides", "structure and solvent also matter"],
-          ["Oxidation number assignment", "bonding electrons are formally assigned to the more electronegative atom", "oxidation number is bookkeeping, not actual charge"],
-          ["Bond direction", "δ⁺ and δ⁻ are assigned from relative χ", "do not confuse polarity with bond strength"],
-          ["Organic acidity", "greater s character stabilizes negative charge", "resonance, induction and solvation may dominate"],
+      <FactorStudyCard
+        number="1"
+        title="Effective nuclear charge"
+        relation={<MathInline tex={String.raw`Z_{\mathrm{eff}}\uparrow\Rightarrow\chi\uparrow`} />}
+        explanation="A bonded atom with a greater net nuclear attraction pulls the shared electron cloud more strongly. Across a period, Zeff generally rises and is the main reason electronegativity increases."
+        examples={[
+          { label: "Period 2", body: <><MathInline tex={String.raw`\mathrm{Li<Be<B<C<N<O<F}`} />.</> },
+          { label: "Period 3", body: <><MathInline tex={String.raw`\mathrm{Na<Mg<Al<Si<P<S<Cl}`} />.</> },
+          { label: "C vs N", body: "N is more electronegative because it has larger Zeff in the same n = 2 shell." },
+          { label: "Al³⁺", body: "High effective attraction makes Al³⁺ a strong Lewis acid toward ligand electron pairs." },
         ]}
         accent={T.gold}
       />
-
-      <H2>5 · Representative Orders</H2>
-      <DataTable
-        columns={["Set", "Order", "Reason"]}
-        rows={[
-          ["Period 2", "Li < Be < B < C < N < O < F", "Zeff rises and size falls"],
-          ["Halogens", "F > Cl > Br > I", "size and shielding increase down the group"],
-          ["Carbon hybridization", "sp > sp² > sp³", "s character places bonding density nearer the nucleus"],
-          ["Same central atom", "higher oxidation state generally has higher χ", "greater positive charge contracts and polarizes the valence shell"],
-          ["Common Pauling values", "F > O > Cl ≳ N > Br > I ≈ S > C ≈ H", "use exact values only when provided"],
+      <FactorStudyCard
+        number="2"
+        title="Covalent radius and bond distance"
+        relation={<MathInline tex={String.raw`r_{\mathrm{cov}}\downarrow\Rightarrow\chi\uparrow`} />}
+        explanation="A small atom holds bonding electron density closer to the nucleus. Down a group, radius and shielding rise, so electronegativity generally decreases."
+        examples={[
+          { label: "Halogens", body: <><MathInline tex={String.raw`\mathrm{F>Cl>Br>I}`} />.</> },
+          { label: "Chalcogens", body: <><MathInline tex={String.raw`\mathrm{O>S>Se>Te}`} />.</> },
+          { label: "Group 1", body: <><MathInline tex={String.raw`\mathrm{Li>Na>K\approx Rb>Cs}`} />.</> },
+          { label: "H–X polarity", body: "H–F is more polar than H–Cl because F is smaller and more electronegative." },
         ]}
         accent={T.cyan}
       />
-
-      <WorkedExample
-        number="J"
-        title="Rank carbon atoms by hybridization"
-        question="Arrange the electronegativity of carbon in HC≡CH, H₂C=CH₂ and H₃C–CH₃."
-        reasoning={[
-          "The carbon hybridizations are sp, sp² and sp³ respectively.",
-          "s character is 50%, about 33% and 25%.",
-          "More s character keeps the hybrid orbital closer to the nucleus and increases electronegativity.",
+      <FactorStudyCard
+        number="3"
+        title="Shielding and number of occupied shells"
+        relation={<MathInline tex={String.raw`\sigma\uparrow,\ n\uparrow\Rightarrow\chi\downarrow`} />}
+        explanation="Inner electrons reduce the attraction exerted on bonding density. Each new shell places the valence region farther from the nucleus and increases screening."
+        examples={[
+          { label: "F → I", body: "Additional shells and shielding lower electronegativity down group 17." },
+          { label: "O → Te", body: "The same effect lowers electronegativity down group 16." },
+          { label: "Na vs Li", body: "Na has a new n = 3 shell and is less electronegative than Li." },
+          { label: "Ga", body: "Poor 3d shielding keeps Ga relatively electronegative and compact compared with a simple down-group prediction." },
         ]}
-        answer="C(sp) > C(sp²) > C(sp³)."
+        accent={T.p}
+      />
+      <FactorStudyCard
+        number="4"
+        title="Oxidation state of the same element"
+        relation={<MathInline tex={String.raw`\text{positive oxidation state}\uparrow\Rightarrow\chi\uparrow\text{ generally}`} />}
+        explanation="A more positively charged or electron-deficient centre attracts ligand electron density more strongly. This is closely related to Lewis acidity and polarizing power."
+        examples={[
+          { label: "Fe", body: <><MathInline tex={String.raw`\mathrm{Fe^{3+}>Fe^{2+}}`} /> in effective electron-attracting power.</> },
+          { label: "Sn", body: "Sn(IV) is more electron-attracting and more strongly polarizing than Sn(II)." },
+          { label: "Cl oxides", body: "Chlorine in +7 oxidation state in Cl₂O₇ strongly withdraws electron density and gives a strongly acidic oxide." },
+          { label: "Mn", body: "Mn(VII) in permanganate is strongly electron-deficient compared with Mn(II)." },
+        ]}
+        special="Oxidation-state effects are environment-dependent; a single tabulated elemental Pauling value cannot represent every compound."
+        accent={T.gold}
+      />
+      <FactorStudyCard
+        number="5"
+        title="Hybridization and percentage s character"
+        relation={<MathInline tex={String.raw`\chi(sp)>\chi(sp^2)>\chi(sp^3)`} />}
+        explanation="s orbitals penetrate closer to the nucleus than p orbitals. A hybrid orbital with more s character holds its bonding electron density nearer the nucleus and behaves as more electronegative."
+        examples={[
+          { label: "Carbon", body: "C(sp) in an alkyne is more electronegative than C(sp²) in an alkene and C(sp³) in an alkane." },
+          { label: "C–H acidity", body: <><MathInline tex={String.raw`\mathrm{HC\equiv CH>H_2C{=}CH_2>H_3C-CH_3}`} /> in acidity because the conjugate carbon has increasing s character.</> },
+          { label: "Bond length", body: "Greater s character also contracts the hybrid orbital, helping make sp bonds shorter." },
+          { label: "Lone pairs", body: "A lone pair in an orbital with more s character is held closer and can show altered basicity." },
+        ]}
         accent={T.d}
       />
-      <WorkedExample
-        number="K"
-        title="Polarity versus molecular dipole"
-        question="CO₂ contains polar C=O bonds. Why is the molecule non-polar?"
-        reasoning={[
-          "Oxygen is more electronegative than carbon, so each C=O bond has a dipole.",
-          "CO₂ is linear and the two equal bond dipoles point in opposite directions.",
-          "Vector cancellation gives zero net molecular dipole moment.",
+      <FactorStudyCard
+        number="6"
+        title="Formal charge and ionic charge"
+        relation={<MathInline tex={String.raw`\chi(\text{cation})>\chi(\text{neutral atom})>\chi(\text{anion})`} />}
+        explanation="Positive charge contracts the electron cloud and increases attraction for additional electron density. Negative charge expands the cloud and increases electron–electron repulsion."
+        examples={[
+          { label: "Ammonium", body: "The positively charged N in NH₄⁺ withdraws electron density more strongly than neutral amine nitrogen." },
+          { label: "Carbanion", body: "A negatively charged carbon centre is less electronegative and more electron-releasing than neutral carbon." },
+          { label: "Fe ions", body: "Fe³⁺ has greater Lewis acidity than Fe²⁺." },
+          { label: "O species", body: "O⁻ is less electron-attracting than neutral O in a comparable environment." },
         ]}
-        answer="Polar bonds do not guarantee a polar molecule; geometry controls the vector sum."
-        accent={T.cyan}
+        accent={T.f}
       />
-      <WorkedExample
-        number="L"
-        title="Predict bond polarity"
-        question="Which bond is expected to be more polar: H–F or H–Cl?"
-        reasoning={[
-          "Fluorine is more electronegative than chlorine.",
-          "The electronegativity difference from hydrogen is therefore larger for H–F.",
+      <FactorStudyCard
+        number="7"
+        title="Nature of bonded atoms and substituent environment"
+        relation={<MathInline tex={String.raw`\chi\text{ is environment-dependent, not a fixed atomic constant}`} />}
+        explanation="Electron-withdrawing or electron-donating groups alter the electron density and effective attraction at a bonded atom. Electronegativity equalization also shifts charge until chemical potentials become more compatible."
+        examples={[
+          { label: "CF₃ group", body: "Three F atoms withdraw electron density strongly and make adjacent centres more electron-poor." },
+          { label: "CH₃ group", body: "Alkyl groups usually release electron density inductively relative to strongly electronegative substituents." },
+          { label: "Acids", body: "ClCH₂COOH is stronger than CH₃COOH because Cl withdraws electron density and stabilizes the conjugate base." },
+          { label: "Multiple F", body: "The −I effect generally increases with the number and proximity of fluorine substituents." },
         ]}
-        answer="H–F has the larger bond polarity, though bond strength and acidity in water require additional factors."
-        accent={T.gold}
+        accent={T.p}
       />
+      <FactorStudyCard
+        number="8"
+        title="d/f contraction and relativistic effects"
+        relation={<MathInline tex={String.raw`\text{contraction}\Rightarrow r\downarrow\Rightarrow\chi\uparrow\text{ relative to a simple down-group rule}`} />}
+        explanation="Poor d/f shielding and relativistic stabilization can make heavy atoms smaller or more electron-attracting than expected."
+        examples={[
+          { label: "Ga", body: "Ga is not dramatically less electronegative than Al because 3d shielding is poor." },
+          { label: "Au", body: "Gold has unusually high electronegativity for a metal, aided by relativistic 6s stabilization." },
+          { label: "Pb", body: "Relativistic 6s stabilization contributes to the inert-pair effect and oxidation-state behaviour." },
+          { label: "Zr / Hf", body: "Lanthanoid contraction gives nearly equal radii and very similar electronegativities/chemistry." },
+        ]}
+        accent={T.f}
+      />
+
+      <H2>4 · NCERT Pauling-Scale Data</H2>
+      <DataTable columns={["Period 2", "Li", "Be", "B", "C", "N", "O", "F"]} rows={[
+        ["Pauling χ", "1.0", "1.5", "2.0", "2.5", "3.0", "3.5", "4.0"],
+      ]} accent={T.cyan} />
+      <DataTable columns={["Period 3", "Na", "Mg", "Al", "Si", "P", "S", "Cl"]} rows={[
+        ["Pauling χ", "0.9", "1.2", "1.5", "1.8", "2.1", "2.5", "3.0"],
+      ]} accent={T.gold} />
+      <DataTable columns={["Group", "Top → bottom", "Pauling values"]} rows={[
+        ["Group 1", "Li, Na, K, Rb, Cs", "1.0, 0.9, 0.8, 0.8, 0.7"],
+        ["Group 17", "F, Cl, Br, I, At", "4.0, 3.0, 2.8, 2.5, 2.2"],
+      ]} accent={T.p} />
+      <Callout kind="note" title="Values are approximate and scale-specific">
+        Modern tables may quote slightly different decimals, such as C = 2.55 or Cl = 3.16. Use one consistent scale within a calculation and use the values supplied in the problem when provided.
+      </Callout>
+
+      <H2>5 · Applications of Electronegativity</H2>
+      <H3>Bond polarity and partial charge</H3>
+      <MathBlock tex={String.raw`\mathrm{H^{\delta+}-F^{\delta-}}\qquad \chi_F>\chi_H`} />
+      <H3>Approximate percentage ionic character</H3>
+      <MathBlock tex={String.raw`\%\,\text{ionic character}\approx\left(1-e^{-0.25(\Delta\chi)^2}\right)\times100`} />
+      <DataTable columns={["Application", "Use", "Example / caution"]} rows={[
+        ["Bond polarity", "assign δ⁺ and δ⁻ and estimate bond-dipole direction", "Hδ⁺–Clδ⁻"],
+        ["Molecular polarity", "combine bond dipoles as vectors", "CO₂ has polar bonds but zero net dipole; H₂O does not"],
+        ["Ionic character", "larger Δχ generally means greater ionic contribution", "LiF is more ionic than LiI"],
+        ["Oxidation-number assignment", "bond electrons are formally assigned to the more electronegative atom", "O is +2 in OF₂ because F is more electronegative"],
+        ["Acidic/basic oxide character", "high χ and high oxidation state favour covalent acidic oxides", "Na₂O basic; Al₂O₃ amphoteric; SO₃ acidic"],
+        ["Hydride acidity", "electronegativity controls acidity across a period, while bond strength dominates down a group", "CH₄ < NH₃ < H₂O < HF across period 2"],
+        ["Inductive effect", "electron-withdrawing substituents stabilize nearby negative charge", "ClCH₂COOH stronger than CH₃COOH"],
+        ["Lewis acidity", "small positively charged high-χ centres accept electron pairs", "AlCl₃ and BF₃"],
+        ["Bond type prediction", "Δχ gives a first estimate of covalent/polar/ionic character", "boundaries are descriptive, not absolute"],
+        ["Metallic character", "low χ correlates with electron loss and metallic behaviour", "Cs strongly metallic; F strongly non-metallic"],
+      ]} accent={T.cyan} />
+
+      <H2>6 · Limitations — What Electronegativity Cannot Decide Alone</H2>
+      <DataTable columns={["Limitation", "Why it matters", "Example"]} rows={[
+        ["Not directly measurable", "values depend on the chosen scale and calibration", "Pauling, Mulliken and Allred–Rochow numbers differ"],
+        ["Not constant for an element", "oxidation state, hybridization and bonding partner change the value", "C(sp) > C(sp²) > C(sp³)"],
+        ["Does not determine molecular dipole alone", "geometry controls vector addition", "CO₂ non-polar; H₂O polar"],
+        ["Does not give bond strength", "a polar bond may be strong or weak depending on overlap and bond order", "H–F is both polar and strong; HI is less polar but much weaker"],
+        ["Does not sharply classify bond type", "ionic and covalent descriptions form a continuum", "AlCl₃ has major covalent character despite metal + non-metal"],
+        ["Does not equal electron gain enthalpy", "χ concerns bonded electron density; ΔegH concerns isolated atoms", "F has highest χ, while Cl has more negative atomic ΔegH"],
+        ["Noble-gas values are context-sensitive", "ordinary closed-shell atoms rarely form bonds", "Xe values depend strongly on compound and scale"],
+        ["Reactivity needs complete energetics and kinetics", "bond energies, solvation and activation barriers also matter", "F₂/Cl₂ oxidizing behaviour cannot be ranked from χ alone"],
+      ]} accent={T.p} />
+
+      <H2>7 · Solved Examples</H2>
+      <WorkedExample number="EN1" title="Hybridization order" question="Arrange the electronegativity of carbon in HC≡CH, H₂C=CH₂ and H₃C–CH₃." reasoning={["The hybridizations are sp, sp² and sp³.", "s character is 50%, about 33% and 25%.", "Greater s character holds electron density closer to the nucleus."]} answer="C(sp) > C(sp²) > C(sp³)." accent={T.d} />
+      <WorkedExample number="EN2" title="Bond polarity" question="Which bond is more polar: H–F or H–Cl?" reasoning={["F has higher electronegativity than Cl.", "The electronegativity difference from H is therefore larger for H–F."]} answer="H–F is more polar." accent={T.cyan} />
+      <WorkedExample number="EN3" title="Polar bonds but non-polar molecule" question="Why is CO₂ non-polar?" reasoning={["Each C=O bond is polar toward O.", "CO₂ is linear.", "The two equal bond-dipole vectors cancel."]} answer="Net dipole moment is zero despite polar bonds." accent={T.gold} />
+      <WorkedExample number="EN4" title="Oxidation number in OF₂" question="Find the oxidation number of oxygen in OF₂." reasoning={["F is more electronegative than O and is assigned −1.", "Two F atoms contribute −2 in total.", "The neutral molecule requires oxygen to be +2."]} answer="Oxidation number of O = +2." accent={T.p} />
+      <WorkedExample number="EN5" title="Acid strength by induction" question="Why is ClCH₂COOH stronger than CH₃COOH?" reasoning={["Cl withdraws electron density through the σ framework.", "The carboxylate conjugate base is stabilized.", "Greater conjugate-base stabilization increases acidity."]} answer="The −I effect of chlorine increases acid strength." accent={T.cyan} />
+      <WorkedExample number="EN6" title="Ionic character" question="Which has greater covalent character, LiF or LiI?" reasoning={["The cation is the same.", "I⁻ is larger and more polarizable than F⁻.", "Li⁺ distorts I⁻ more strongly, increasing covalent character."]} answer="LiI is more covalent; LiF has greater ionic character." accent={T.gold} />
+      <WorkedExample number="EN7" title="Oxide character" question="Arrange Na₂O, Al₂O₃ and SO₃ in increasing acidic character." reasoning={["Na is strongly electropositive, so Na₂O is basic.", "Al₂O₃ is amphoteric.", "S is more electronegative and in a high oxidation state, so SO₃ is acidic."]} answer="Na₂O < Al₂O₃ < SO₃." accent={T.p} />
+      <WorkedExample number="EN8" title="Pauling ionic-character estimate" question="Estimate the qualitative ionic character when Δχ increases from 0.5 to 2.0." reasoning={["The exponential Pauling expression increases with (Δχ)².", "A fourfold increase in Δχ produces a much larger ionic contribution.", "The relation remains approximate and does not create a sharp boundary."]} answer="The bond with Δχ = 2.0 has much greater ionic character." accent={T.d} />
     </div>
   );
 }
@@ -3454,10 +3838,10 @@ const NAV: { key: NavKey; label: string; group: string }[] = [
   { key: "configuration", label: "Configuration & Position", group: "Foundations" },
   { key: "map", label: "Master Trend Map", group: "Foundations" },
   { key: "radius", label: "Atomic & Ionic Radius", group: "Core Periodic Trends" },
-  { key: "ionization", label: "Ionization Enthalpy", group: "Core Periodic Trends" },
-  { key: "electronGain", label: "Electron Gain Enthalpy", group: "Core Periodic Trends" },
-  { key: "electronegativity", label: "Electronegativity", group: "Core Periodic Trends" },
-  { key: "zeff", label: "Zeff & Slater's Rule", group: "Core Periodic Trends" },
+  { key: "ionization", label: "Ionization Enthalpy · Full Notes", group: "Core Periodic Trends" },
+  { key: "electronGain", label: "Electron Gain Enthalpy · Full Notes", group: "Core Periodic Trends" },
+  { key: "electronegativity", label: "Electronegativity · Full Notes", group: "Core Periodic Trends" },
+  { key: "zeff", label: "Zeff & Slater · Full Notes", group: "Core Periodic Trends" },
   { key: "chemistry", label: "Chemical Periodicity", group: "Advanced Connections" },
   { key: "special", label: "Special Relationships", group: "Advanced Connections" },
   { key: "families", label: "Family-Wise Orders", group: "Reference Data" },

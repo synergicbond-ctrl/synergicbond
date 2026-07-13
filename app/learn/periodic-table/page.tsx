@@ -4,7 +4,7 @@ import PeriodicTableMasterNotes from "./PeriodicTableMasterNotesV2";
 export const metadata: Metadata = {
   title: "Classification of Elements and Periodicity in Properties — JEE Advanced | Synergic Bond",
   description:
-    "Complete JEE Advanced student notes with NCERT-aligned main-group data for Groups 1, 2 and 13–18; period-wise d-block configurations; complete first-row transition data; electrode, oxide and magnetic tables; and series-wise lanthanoid and actinoid configurations, radii and oxidation states.",
+    "NCERT-first world-reference notes for JEE Advanced: complete classification history, Moseley and modern law, electronic position, Zeff and Slater rules, radii, IE, EGE, electronegativity, chemical periodicity, lattice/hydration/Born-Haber theory, factor-wise examples, corrected special cases, and period-wise s/p/d/f-block data.",
 };
 
 export default function PeriodicTableNotesPage() {

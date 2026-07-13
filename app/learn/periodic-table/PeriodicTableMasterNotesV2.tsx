@@ -4,6 +4,7 @@
 
 import React, { useMemo, useState } from "react";
 import * as katex from "katex";
+import { ElectronegativityFactorsApplicationsV14 } from "./PeriodicTableElectronegativityV14Additions";
 import { SectionElectronegativityV12 } from "./PeriodicTableElectronegativityV12";
 import {
   V9TelluricScrewSVG,
@@ -4827,7 +4828,12 @@ export function SectionElectronGain() {
 }
 
 export function SectionElectronegativity() {
-  return <SectionElectronegativityV12 />;
+  return (
+    <>
+      <SectionElectronegativityV12 />
+      <ElectronegativityFactorsApplicationsV14 />
+    </>
+  );
 }
 
 /* Legacy implementation retained for source comparison; not rendered. */
@@ -4880,7 +4886,7 @@ const NAV: { key: NavKey; label: string; group: string }[] = [
 ];
 
 export default function PeriodicTableMasterNotes() {
-  const [active, setActive] = useState<NavKey>("compendium");
+  const [active, setActive] = useState<NavKey>("history");
 
   const groups = useMemo(() => {
     const g: Record<string, typeof NAV> = {};
@@ -4913,123 +4919,133 @@ export default function PeriodicTableMasterNotes() {
   };
 
   return (
-    <div style={{ minHeight: "100vh", background: `radial-gradient(1400px 700px at 8% -10%, #12283b 0%, ${T.bg} 55%), ${T.bg}`, color: T.text, fontFamily: T.sans }}>
-      <style>{`
-        .mobileTabs { display: none; }
-
-        .sb-katex-block .katex-display { margin: 0 !important; }
-        .sb-katex-block .katex, .sb-katex-inline .katex { color: inherit; }
-        .sb-katex-inline { display: inline-flex; align-items: baseline; max-width: 100%; }
-        .sb-animate .sb-path { stroke-dasharray: 1; stroke-dashoffset: 1; animation: sbDraw 1.8s cubic-bezier(.2,.7,.2,1) forwards; }
-        .sb-animate .sb-point { opacity: 0; transform-box: fill-box; transform-origin: center; animation: sbPop .45s ease-out forwards; }
-        .sb-animate .sb-water { opacity: 0; transform-box: fill-box; transform-origin: center; animation: sbWater .55s ease-out forwards; }
-        .sb-animate .sb-pulse { transform-box: fill-box; transform-origin: center; animation: sbPulse 1.8s ease-in-out 2.2s infinite; }
-        @keyframes sbDraw { to { stroke-dashoffset: 0; } }
-        @keyframes sbPop { from { opacity: 0; transform: scale(.25); } to { opacity: 1; transform: scale(1); } }
-        @keyframes sbWater { from { opacity: 0; transform: scale(.3) rotate(-20deg); } to { opacity: 1; transform: scale(1) rotate(0deg); } }
-        @keyframes sbPulse { 0%,100% { transform: scale(1); filter: drop-shadow(0 0 0 rgba(95,212,234,0)); } 50% { transform: scale(1.55); filter: drop-shadow(0 0 7px rgba(95,212,234,.85)); } }
-        @media (prefers-reduced-motion: reduce) {
-          .sb-animate .sb-path, .sb-animate .sb-point, .sb-animate .sb-water, .sb-animate .sb-pulse { animation: none !important; opacity: 1 !important; stroke-dashoffset: 0 !important; }
-        }
-
-        @media (max-width: 900px) {
-          .notesSidebar { display: none !important; }
-          .notesShell { display: block !important; }
-          .notesMain { padding: 22px 15px 70px !important; }
-          .mobileTabs { display: flex; overflow-x: auto; gap: 8px; padding: 10px 14px; position: sticky; top: 57px; z-index: 15; background: rgba(10,22,34,0.96); border-bottom: 1px solid #24405c; backdrop-filter: blur(12px); }
-          .mobileTabs button { flex: 0 0 auto; }
-          .chapterHero { margin: 14px 14px 6px !important; padding: 22px 18px !important; }
-          .heroGrid, .twoCol { grid-template-columns: 1fr !important; }
-        }
-        @media (max-width: 560px) {
-          .chapterHero h1 { font-size: 34px !important; }
-        }
-      `}</style>
-      {/* Top bar (mobile) */}
-      <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "14px 18px", borderBottom: `1px solid ${T.border}`, position: "sticky", top: 0, background: T.bg, zIndex: 20 }}>
-        <div style={{ fontFamily: T.serif, fontWeight: 700, color: T.gold, fontSize: 17 }}>
-          Classification<span style={{ color: T.text }}> & Periodicity</span>
-        </div>
-      </div>
-
-      <ChapterHero />
-      <div className="mobileTabs" aria-label="Periodic table notes sections">
-        {NAV.map((n) => (
-          <button
-            key={n.key}
-            onClick={() => setActive(n.key)}
-            style={{
-              border: `1px solid ${active === n.key ? T.gold : T.border}`,
-              background: active === n.key ? "rgba(232,184,75,0.12)" : T.surface,
-              color: active === n.key ? T.gold : T.textDim,
-              borderRadius: 999,
-              padding: "7px 10px",
-              fontFamily: T.sans,
-              fontSize: 11.5,
-              fontWeight: 700,
-              cursor: "pointer",
-            }}
-          >
-            {n.label}
-          </button>
-        ))}
-      </div>
-
-      <div className="notesShell" style={{ display: "flex", maxWidth: 1280, margin: "0 auto" }}>
-        {/* Sidebar */}
-        <aside
-          className="notesSidebar"
+    <div
+      data-layout-version="periodicity-top-nav-v14"
+      style={{
+        minHeight: "100vh",
+        background: T.bg,
+        color: T.text,
+      }}
+    >
+      <header
+        style={{
+          width: "100%",
+          borderBottom: `1px solid ${T.border}`,
+          background: `linear-gradient(180deg, ${T.surface2}, ${T.bg})`,
+          padding: "clamp(18px, 3vw, 34px) clamp(14px, 3vw, 42px)",
+        }}
+      >
+        <div
           style={{
-            width: 250,
-            flexShrink: 0,
-            borderRight: `1px solid ${T.border}`,
-            padding: "24px 14px",
-            position: "sticky",
-            top: 57,
-            height: "calc(100vh - 57px)",
-            overflowY: "auto",
+            maxWidth: 1560,
+            margin: "0 auto",
           }}
         >
-          <div style={{ fontFamily: T.serif, fontSize: 13, color: T.textDim, marginBottom: 18, lineHeight: 1.5 }}>
-            JEE Inorganic Chemistry<br />
-            <span style={{ color: T.cyan }}>Synergic Bond Student Notes</span>
-          </div>
-          {Object.entries(groups).map(([group, items]) => (
-            <div key={group} style={{ marginBottom: 20 }}>
-              <div style={{ fontFamily: T.sans, fontSize: 10.5, fontWeight: 700, letterSpacing: 0.6, textTransform: "uppercase", color: T.textFaint, marginBottom: 8, paddingLeft: 10 }}>
-                {group}
+          <div
+            style={{
+              display: "flex",
+              flexWrap: "wrap",
+              alignItems: "baseline",
+              justifyContent: "space-between",
+              gap: 10,
+              marginBottom: 18,
+            }}
+          >
+            <div>
+              <div
+                style={{
+                  color: T.text,
+                  fontFamily: T.serif,
+                  fontSize: "clamp(1.35rem, 2.4vw, 2rem)",
+                  fontWeight: 900,
+                }}
+              >
+                JEE Inorganic Chemistry
               </div>
-              {items.map((n) => (
+              <div
+                style={{
+                  marginTop: 4,
+                  color: T.cyan,
+                  fontFamily: T.sans,
+                  fontSize: "clamp(.95rem, 1.4vw, 1.08rem)",
+                  fontWeight: 750,
+                }}
+              >
+                Classification of Elements and Periodicity in Properties
+              </div>
+            </div>
+            <div
+              style={{
+                color: T.gold,
+                fontFamily: T.mono,
+                fontSize: 12,
+                fontWeight: 900,
+                letterSpacing: ".1em",
+              }}
+            >
+              TOP CHAPTER NAVIGATION
+            </div>
+          </div>
+
+          <nav
+            aria-label="Periodic table chapter sections"
+            style={{
+              display: "flex",
+              flexWrap: "wrap",
+              gap: 9,
+              alignItems: "center",
+            }}
+          >
+            {NAV.filter(
+              (item) =>
+                item.key !== "compendium" &&
+                item.key !== "notebook" &&
+                item.key !== "map",
+            ).map((item) => {
+              const selected = active === item.key;
+              return (
                 <button
-                  key={n.key}
-                  onClick={() => setActive(n.key)}
+                  key={item.key}
+                  type="button"
+                  onClick={() => {
+                    setActive(item.key);
+                    window.scrollTo({ top: 0, behavior: "smooth" });
+                  }}
                   style={{
-                    display: "block",
-                    width: "100%",
-                    textAlign: "left",
-                    padding: "9px 10px",
-                    borderRadius: 8,
-                    border: "none",
-                    background: active === n.key ? "rgba(232,184,75,0.12)" : "transparent",
-                    color: active === n.key ? T.gold : T.textDim,
+                    border: `1px solid ${selected ? T.gold : T.border}`,
+                    borderLeft: `4px solid ${selected ? T.gold : T.cyan}`,
+                    borderRadius: 13,
+                    padding: "10px 13px",
+                    background: selected
+                      ? "rgba(232,184,75,.15)"
+                      : "rgba(18,34,50,.9)",
+                    color: selected ? T.gold : T.textDim,
                     fontFamily: T.sans,
-                    fontSize: 13.5,
-                    fontWeight: active === n.key ? 700 : 500,
+                    fontSize: "clamp(.82rem, 1.1vw, .96rem)",
+                    fontWeight: selected ? 900 : 700,
+                    lineHeight: 1.25,
                     cursor: "pointer",
-                    marginBottom: 2,
-                    borderLeft: active === n.key ? `2px solid ${T.gold}` : "2px solid transparent",
+                    boxShadow: selected
+                      ? "0 8px 24px rgba(232,184,75,.12)"
+                      : "none",
                   }}
                 >
-                  {n.label}
+                  {item.label}
                 </button>
-              ))}
-            </div>
-          ))}
-        </aside>
+              );
+            })}
+          </nav>
+        </div>
+      </header>
 
-        {/* Content */}
-        <main className="notesMain" style={{ flex: 1, minWidth: 0, padding: "32px 28px 80px" }}>{renderSection()}</main>
-      </div>
-</div>
+      <main
+        style={{
+          width: "100%",
+          minWidth: 0,
+        }}
+      >
+        {renderSection()}
+      </main>
+    </div>
   );
 }

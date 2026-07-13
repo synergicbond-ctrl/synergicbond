@@ -72,7 +72,7 @@ export function Card({
   style?: React.CSSProperties;
 }) {
   return (
-    <div className="lessonCard"
+    <div className="lessonCard periodicityCard"
       style={{
         background: T.surface,
         border: `1px solid ${T.border}`,
@@ -258,7 +258,7 @@ export function FactorStudyCard({
         padding: "16px 18px",
         margin: "14px 0",
       }}
-    >
+     className="periodicityFactorCard">
       <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 8 }}>
         <div style={{ width: 30, height: 30, borderRadius: 9, display: "grid", placeItems: "center", background: `${accent}18`, border: `1px solid ${accent}66`, color: accent, fontFamily: T.mono, fontSize: 12, fontWeight: 900, flexShrink: 0 }}>{number}</div>
         <div style={{ fontFamily: T.serif, color: T.text, fontSize: 18, fontWeight: 800 }}>{title}</div>
@@ -326,7 +326,7 @@ export function DataTable({
   return (
     <div style={{ overflowX: "auto",
         maxWidth: "100%",
-        WebkitOverflowScrolling: "touch", margin: "12px 0" }}>
+        WebkitOverflowScrolling: "touch", margin: "12px 0" }} className="periodicityTableHost">
       <table style={{ borderCollapse: "collapse", width: "100%", fontFamily: T.sans, fontSize: 13.5 }}>
         <thead>
           <tr>
@@ -450,7 +450,7 @@ export function SectionIntro({
   accent?: string;
 }) {
   return (
-    <div className="sectionIntro"
+    <div className="sectionIntro periodicitySectionIntro"
       style={{
         position: "relative",
         overflow: "hidden",
@@ -527,7 +527,7 @@ export function ConceptGrid({
   columns?: number;
 }) {
   return (
-    <div className="conceptGrid"
+    <div className="conceptGrid periodicityConceptGrid"
       style={{
         display: "grid",
         gridTemplateColumns: `repeat(auto-fit, minmax(${columns >= 3 ? 220 : 280}px, 1fr))`,
@@ -582,7 +582,7 @@ export function WorkedExample({
   accent?: string;
 }) {
   return (
-    <div className="workedExample"
+    <div className="workedExample periodicityWorkedExample"
       style={{
         border: `1px solid ${T.border}`,
         borderRadius: 14,
@@ -5459,6 +5459,115 @@ const NAV: { key: NavKey; label: string; group: string }[] = [
   { key: "workshop", label: "Worked Example Workshop", group: "Practice" },
 ];
 
+const PERIODICITY_READING_LAYOUT_V15_CSS = `
+.periodicityContentShell {
+  width: min(1120px, calc(100% - 64px));
+  margin-inline: auto;
+  padding: 30px 0 104px;
+  box-sizing: border-box;
+  overflow-x: clip;
+}
+.periodicityContentShell > * { max-width: 100%; min-width: 0; }
+.periodicityContentShell :where(h1, h2, h3, h4) {
+  text-wrap: balance;
+}
+.periodicityContentShell :where(p, li) {
+  max-width: 78ch;
+  text-wrap: pretty;
+}
+.periodicitySectionIntro :where(p, li) { max-width: 86ch; }
+.periodicityCard,
+.periodicityFactorCard,
+.periodicitySectionIntro,
+.periodicityWorkedExample {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+.periodicityConceptGrid { width: 100%; max-width: 100%; min-width: 0; }
+.periodicityTableHost {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto !important;
+  overscroll-behavior-inline: contain;
+  -webkit-overflow-scrolling: touch;
+}
+.periodicityTableHost table { min-width: 700px; }
+.periodicityContentShell .katex-display,
+.periodicityContentShell [class*="formula" i] {
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  overscroll-behavior-inline: contain;
+  -webkit-overflow-scrolling: touch;
+}
+.periodicityContentShell svg { max-width: 100%; height: auto; }
+.periodicityBottomNav {
+  width: min(1120px, calc(100% - 64px));
+  margin-inline: auto;
+  padding: 22px 0 36px;
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  box-sizing: border-box;
+  border-top: 1px solid rgba(95, 212, 234, 0.22);
+}
+.periodicityBottomNav button {
+  min-height: 46px;
+  padding: 10px 15px;
+  border-radius: 12px;
+  border: 1px solid #24405c;
+  background: linear-gradient(135deg, #182b3e, #122232);
+  color: #eef3f8;
+  font: 800 13px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  cursor: pointer;
+}
+.periodicityBottomNav button:first-child { color: #5fd4ea; border-color: rgba(95,212,234,.5); }
+.periodicityBottomNav button:last-child { color: #e8b84b; border-color: rgba(232,184,75,.5); }
+
+@media (min-width: 1500px) {
+  .periodicityContentShell,
+  .periodicityBottomNav { width: min(1080px, calc(100% - 160px)); }
+}
+
+@media (max-width: 1100px) {
+  .periodicityContentShell,
+  .periodicityBottomNav { width: calc(100% - 40px); }
+  .periodicityContentShell { padding-top: 22px; }
+}
+
+@media (max-width: 900px) {
+  .periodicityContentShell,
+  .periodicityBottomNav { width: calc(100% - 32px); }
+  .periodicityContentShell { padding: 18px 0 88px; }
+  .periodicitySectionIntro,
+  .periodicityCard,
+  .periodicityFactorCard,
+  .periodicityWorkedExample { padding: 16px !important; border-radius: 15px !important; }
+  .periodicityConceptGrid { grid-template-columns: 1fr !important; gap: 12px !important; }
+  .periodicityFactorCard > div,
+  .periodicityWorkedExample > div { min-width: 0; }
+  .periodicityFactorCard div[style*="grid-template-columns"] { grid-template-columns: 1fr !important; }
+}
+
+@media (max-width: 600px) {
+  .periodicityContentShell,
+  .periodicityBottomNav { width: calc(100% - 26px); }
+  .periodicityContentShell { padding: 14px 0 82px; }
+  .periodicitySectionIntro,
+  .periodicityCard,
+  .periodicityFactorCard,
+  .periodicityWorkedExample { padding: 14px 13px !important; }
+  .periodicityContentShell h1 { font-size: clamp(1.8rem, 8vw, 2.35rem) !important; line-height: 1.08 !important; }
+  .periodicityContentShell h2 { font-size: clamp(1.35rem, 6.3vw, 1.8rem) !important; line-height: 1.15 !important; }
+  .periodicityContentShell p,
+  .periodicityContentShell li { max-width: none; font-size: 15px !important; line-height: 1.68 !important; }
+  .periodicityTableHost table { min-width: 640px; }
+  .periodicityBottomNav { display: grid; grid-template-columns: 1fr; padding: 18px 0 30px; }
+  .periodicityBottomNav button { width: 100%; }
+}
+`;
+
 export default function PeriodicTableMasterNotes() {
   const [active, setActive] = useState<NavKey>("history");
 
@@ -5620,7 +5729,10 @@ export default function PeriodicTableMasterNotes() {
       >
         <>
           <span data-release="periodicity-mobile-ec-v13r2" hidden />
+          <main className="periodicityContentShell" data-layout-version="periodicity-reading-layout-v15">
+          <style>{PERIODICITY_READING_LAYOUT_V15_CSS}</style>
           {renderSection()}
+        </main>
           <nav className="bottomPageNav" aria-label="Page return controls">
             <button
               type="button"

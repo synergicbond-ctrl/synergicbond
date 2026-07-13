@@ -362,3 +362,286 @@ a[href*="/learn/chemical-equilibrium/part"] {
     margin-left: 0;
   }
 }
+
+/* CE FINAL PALETTE START */
+
+.chemical-equilibrium-scope {
+  --ce-card-accent: #38bdf8;
+  --ce-card-rgb: 56, 189, 248;
+
+  background:
+    radial-gradient(
+      circle at 8% -6%,
+      rgba(14, 165, 233, 0.18),
+      transparent 36rem
+    ),
+    radial-gradient(
+      circle at 94% 0%,
+      rgba(124, 58, 237, 0.16),
+      transparent 40rem
+    ),
+    radial-gradient(
+      circle at 50% 108%,
+      rgba(245, 158, 11, 0.055),
+      transparent 34rem
+    ),
+    linear-gradient(
+      180deg,
+      #020617 0%,
+      #06101f 47%,
+      #020617 100%
+    ) !important;
+}
+
+/* High-contrast chapter typography */
+
+.chemical-equilibrium-content :is(p, li, dd, figcaption) {
+  color: #d3deec !important;
+}
+
+.chemical-equilibrium-content h1 {
+  color: #f8fafc !important;
+}
+
+.chemical-equilibrium-content h2 {
+  color: #c4b5fd !important;
+}
+
+.chemical-equilibrium-content h3 {
+  color: #7dd3fc !important;
+}
+
+.chemical-equilibrium-content :is(h4, h5, h6) {
+  color: #93c5fd !important;
+}
+
+.chemical-equilibrium-content :is(strong, b) {
+  color: #fda4af !important;
+}
+
+/* Shared card treatment */
+
+.chemical-equilibrium-content
+a[href*="/learn/chemical-equilibrium/part"] {
+  --ce-card-accent: #38bdf8;
+  --ce-card-rgb: 56, 189, 248;
+
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+
+  color: #f8fafc !important;
+
+  background:
+    radial-gradient(
+      circle at 102% -5%,
+      rgba(var(--ce-card-rgb), 0.18),
+      transparent 16rem
+    ),
+    linear-gradient(
+      145deg,
+      rgba(9, 25, 47, 0.99) 0%,
+      rgba(8, 20, 39, 0.99) 54%,
+      rgba(12, 17, 38, 0.99) 100%
+    ) !important;
+
+  border:
+    1px solid rgba(var(--ce-card-rgb), 0.28) !important;
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.055),
+    0 16px 42px rgba(0, 0, 0, 0.3) !important;
+
+  transition:
+    transform 180ms ease,
+    border-color 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.chemical-equilibrium-content
+a[href*="/learn/chemical-equilibrium/part"]::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 2rem;
+  right: 2rem;
+  height: 2px;
+  border-radius: 999px;
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      var(--ce-card-accent),
+      transparent
+    );
+  opacity: 0.9;
+}
+
+/* Cyan cards: 01, 04, 07, 10, 13, 16 */
+
+.chemical-equilibrium-content :is(
+  a[href$="/part01"],
+  a[href$="/part04"],
+  a[href$="/part07"],
+  a[href$="/part10"],
+  a[href$="/part13"],
+  a[href$="/part16"]
+) {
+  --ce-card-accent: #38bdf8;
+  --ce-card-rgb: 56, 189, 248;
+}
+
+/* Violet cards: 02, 05, 08, 11, 14, 17 */
+
+.chemical-equilibrium-content :is(
+  a[href$="/part02"],
+  a[href$="/part05"],
+  a[href$="/part08"],
+  a[href$="/part11"],
+  a[href$="/part14"],
+  a[href$="/part17"]
+) {
+  --ce-card-accent: #a78bfa;
+  --ce-card-rgb: 167, 139, 250;
+}
+
+/* Gold cards: 03, 06, 09, 12, 15, 18 */
+
+.chemical-equilibrium-content :is(
+  a[href$="/part03"],
+  a[href$="/part06"],
+  a[href$="/part09"],
+  a[href$="/part12"],
+  a[href$="/part15"],
+  a[href$="/part18"]
+) {
+  --ce-card-accent: #fbbf24;
+  --ce-card-rgb: 251, 191, 36;
+}
+
+/* Card titles */
+
+.chemical-equilibrium-content
+a[href*="/learn/chemical-equilibrium/part"]
+:is(h1, h2, h3, h4, h5, h6),
+.chemical-equilibrium-content
+a[href*="/learn/chemical-equilibrium/part"]
+:is(
+  [class*="text-xl"],
+  [class*="text-2xl"],
+  [class*="text-3xl"],
+  [class*="font-semibold"]
+) {
+  color: #f1f5f9 !important;
+  font-weight: 780 !important;
+  letter-spacing: -0.022em;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.28);
+}
+
+/* Part labels */
+
+.chemical-equilibrium-content
+a[href*="/learn/chemical-equilibrium/part"]
+:is(
+  [class*="uppercase"],
+  [class*="tracking-wide"],
+  [class*="tracking-wider"],
+  [class*="tracking-widest"]
+) {
+  color: var(--ce-card-accent) !important;
+  font-weight: 850 !important;
+  letter-spacing: 0.13em !important;
+  text-shadow:
+    0 0 18px rgba(var(--ce-card-rgb), 0.22);
+}
+
+/* Hover hierarchy */
+
+.chemical-equilibrium-content
+a[href*="/learn/chemical-equilibrium/part"]:hover {
+  transform: translateY(-5px);
+
+  border-color:
+    rgba(var(--ce-card-rgb), 0.64) !important;
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.075),
+    0 0 0 1px rgba(var(--ce-card-rgb), 0.09),
+    0 22px 54px rgba(0, 0, 0, 0.35),
+    0 10px 34px rgba(var(--ce-card-rgb), 0.12)
+    !important;
+}
+
+/* Header balance */
+
+.ce-header-inner,
+.ce-topic-header__inner {
+  background:
+    radial-gradient(
+      circle at 100% 0%,
+      rgba(56, 189, 248, 0.15),
+      transparent 24rem
+    ),
+    radial-gradient(
+      circle at 0% 100%,
+      rgba(167, 139, 250, 0.1),
+      transparent 22rem
+    ),
+    linear-gradient(
+      135deg,
+      rgba(9, 26, 49, 0.99),
+      rgba(11, 17, 38, 0.99)
+    ) !important;
+
+  border-color: rgba(125, 211, 252, 0.28) !important;
+}
+
+.ce-header h1,
+.ce-topic-header__chapter {
+  color: #f8fafc !important;
+}
+
+.ce-breadcrumb,
+.ce-topic-header__eyebrow {
+  color: #7dd3fc !important;
+}
+
+.ce-current-topic strong,
+.ce-topic-header__topic strong {
+  color: #fbbf24 !important;
+}
+
+/* Navigation balance */
+
+.ce-button-secondary,
+.ce-nav-button--secondary {
+  color: #dbeafe !important;
+  background: rgba(15, 30, 52, 0.96) !important;
+  border-color: rgba(125, 211, 252, 0.24) !important;
+}
+
+.ce-button-primary,
+.ce-nav-button--primary {
+  color: #ffffff !important;
+  background:
+    linear-gradient(135deg, #0284c7, #4f46e5) !important;
+}
+
+.ce-button-return,
+.ce-nav-button--return {
+  color: #ffffff !important;
+  background:
+    linear-gradient(135deg, #6d28d9, #9333ea) !important;
+}
+
+@media (max-width: 720px) {
+  .chemical-equilibrium-content
+  a[href*="/learn/chemical-equilibrium/part"] {
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.045),
+      0 10px 28px rgba(0, 0, 0, 0.27) !important;
+  }
+}
+
+/* CE FINAL PALETTE END */

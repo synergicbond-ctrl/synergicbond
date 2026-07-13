@@ -1,0 +1,62 @@
+[
+  {
+    "id": "corpus-01",
+    "status": "readable",
+    "sha256": "184e94a4366c0d001e5d2eca53ceabf13141a4bdcae2d95eceeb07406ed63632",
+    "characters": 120400,
+    "words": 17726,
+    "text_file": "corpus-01.txt"
+  },
+  {
+    "id": "corpus-02",
+    "status": "readable",
+    "sha256": "3551a7b19ba7c8bd499342221749d06ca1c755a2e7eaf8c9307a95876791a76d",
+    "characters": 51420,
+    "words": 7566,
+    "text_file": "corpus-02.txt"
+  },
+  {
+    "id": "corpus-03",
+    "status": "readable",
+    "sha256": "e4be8bb9b55c0ef310f3310f2998e6c07c5cba73d820ba1d09eb664d6d530c96",
+    "characters": 48276,
+    "words": 7555,
+    "text_file": "corpus-03.txt"
+  },
+  {
+    "id": "corpus-04",
+    "status": "readable",
+    "sha256": "3d280683ad75f433189661f9e3e01f4ffca439fe6471eb09931935ae2dac4aa4",
+    "characters": 21761,
+    "words": 3561,
+    "text_file": "corpus-04.txt"
+  },
+  {
+    "id": "corpus-05",
+    "status": "readable",
+    "sha256": "f04307115c11f4d1a9a38b135af65a89fbda40920fdf283107c8169ee5065069",
+    "characters": 2493,
+    "words": 336,
+    "text_file": "corpus-05.txt"
+  },
+  {
+    "id": "corpus-06",
+    "status": "readable",
+    "sha256": "4dbb0ee5378d390db6c4dd94267441bb70c5157e13dbbce403fceeba72df573f",
+    "characters": 48179,
+    "words": 8863,
+    "text_file": "corpus-06.txt"
+  },
+  {
+    "id": "corpus-07",
+    "status": "exact-file-duplicate",
+    "duplicate_of": "corpus-06",
+    "sha256": "4dbb0ee5378d390db6c4dd94267441bb70c5157e13dbbce403fceeba72df573f"
+  },
+  {
+    "id": "corpus-08",
+    "status": "exact-file-duplicate",
+    "duplicate_of": "corpus-06",
+    "sha256": "4dbb0ee5378d390db6c4dd94267441bb70c5157e13dbbce403fceeba72df573f"
+  }
+]

@@ -21,6 +21,7 @@ import {
   V10SecondaryPeriodicityPanel,
   V10OlympiadEnrichmentPanel,
 } from "./PeriodicTableV10WorldAdditions";
+import PeriodicTableDeepAdditions from "./PeriodicTableDeepAdditions";
 
 
 /* =============================================================================
@@ -1252,130 +1253,138 @@ export function MiniPeriodicTable() {
    ========================================================================== */
 export function SectionHistory() {
   return (
-    <div>
-      <SectionIntro
-        eyebrow="How periodic classification evolved"
-        title="From Isolated Facts to the Modern Periodic Law"
-        summary="The periodic table emerged through a sequence of increasingly powerful classification schemes. Each proposal captured part of the repeating pattern; atomic number and recurring valence configurations finally supplied the correct basis and explanation."
-        accent={T.gold}
-      />
-      <H2 id="history">1 · Why Classification Became Necessary</H2>
-      <P>
-        As the number of known elements grew, memorising each element separately became impractical. Chemists therefore searched for a fundamental ordering variable that would bring chemically similar elements together and make properties recur at regular intervals. A successful classification had to organise known elements, expose trends and predict the behaviour of elements not yet discovered.
-      </P>
-      <Timeline items={timelineData} />
+    <>
+      <div>
+            <SectionIntro
+              eyebrow="How periodic classification evolved"
+              title="From Isolated Facts to the Modern Periodic Law"
+              summary="The periodic table emerged through a sequence of increasingly powerful classification schemes. Each proposal captured part of the repeating pattern; atomic number and recurring valence configurations finally supplied the correct basis and explanation."
+              accent={T.gold}
+            />
+            <H2 id="history">1 · Why Classification Became Necessary</H2>
+            <P>
+              As the number of known elements grew, memorising each element separately became impractical. Chemists therefore searched for a fundamental ordering variable that would bring chemically similar elements together and make properties recur at regular intervals. A successful classification had to organise known elements, expose trends and predict the behaviour of elements not yet discovered.
+            </P>
+            <Timeline items={timelineData} />
 
-      <H2>2 · Early Attempts</H2>
-      <H3>Lavoisier: metals and non-metals</H3>
-      <DataTable columns={["Class", "Typical observations"]} rows={[
-        ["Metals", "lustrous, conducting, malleable; many oxides basic"],
-        ["Non-metals", "generally poor conductors; many oxides acidic"],
-      ]} />
-      <Callout kind="warn">The split was too broad and could not accommodate metalloids or reveal detailed family relationships.</Callout>
+            <H2>2 · Early Attempts</H2>
+            <H3>Lavoisier: metals and non-metals</H3>
+            <DataTable columns={["Class", "Typical observations"]} rows={[
+              ["Metals", "lustrous, conducting, malleable; many oxides basic"],
+              ["Non-metals", "generally poor conductors; many oxides acidic"],
+            ]} />
+            <Callout kind="warn">The split was too broad and could not accommodate metalloids or reveal detailed family relationships.</Callout>
 
-      <H3>Prout and Pettenkofer: numerical patterns in atomic weights</H3>
-      <P>
-        Prout proposed that atomic weights were whole-number multiples of hydrogen. More accurate measurements and the later understanding of isotopes showed that ordinary atomic weights need not be whole numbers. Pettenkofer noticed that several related elements differed by integral multiples of roughly eight, but this was only a limited pattern rather than a general law.
-      </P>
+            <H3>Prout and Pettenkofer: numerical patterns in atomic weights</H3>
+            <P>
+              Prout proposed that atomic weights were whole-number multiples of hydrogen. More accurate measurements and the later understanding of isotopes showed that ordinary atomic weights need not be whole numbers. Pettenkofer noticed that several related elements differed by integral multiples of roughly eight, but this was only a limited pattern rather than a general law.
+            </P>
 
-      <H3>Döbereiner's triads</H3>
-      <P>
-        In a triad of chemically similar elements arranged by increasing atomic weight, the middle atomic weight was approximately the arithmetic mean of the other two.
-      </P>
-      <DataTable columns={["Triad", "First", "Middle", "Last", "Mean check"]} rows={triads.map(t => [t.name, t.a, t.b, t.c, t.mean])} />
-      <Callout kind="warn">Only a small fraction of the known elements could be fitted into convincing triads.</Callout>
+            <H3>Döbereiner's triads</H3>
+            <P>
+              In a triad of chemically similar elements arranged by increasing atomic weight, the middle atomic weight was approximately the arithmetic mean of the other two.
+            </P>
+            <DataTable columns={["Triad", "First", "Middle", "Last", "Mean check"]} rows={triads.map(t => [t.name, t.a, t.b, t.c, t.mean])} />
+            <Callout kind="warn">Only a small fraction of the known elements could be fitted into convincing triads.</Callout>
 
-      <H3>Chancourtois' telluric screw</H3>
-      <P>
-        Elements were placed by increasing atomic weight on a helix around a cylinder. Elements appearing vertically above one another often showed similar chemistry, making this one of the earliest explicit geometric demonstrations of periodicity. The scheme worked mainly for lighter elements and attracted little attention because its original publication did not present the chemical pattern clearly.
-      </P>
+            <H3>Chancourtois' telluric screw</H3>
+            <P>
+              Elements were placed by increasing atomic weight on a helix around a cylinder. Elements appearing vertically above one another often showed similar chemistry, making this one of the earliest explicit geometric demonstrations of periodicity. The scheme worked mainly for lighter elements and attracted little attention because its original publication did not present the chemical pattern clearly.
+            </P>
 
-      <H3>Newlands' law of octaves</H3>
-      <P>
-        Newlands observed that, for lighter elements arranged by increasing atomic weight, every eighth element often resembled the first, analogous to the repetition of a musical note after an octave.
-      </P>
-      <Callout kind="warn">
-        The pattern failed beyond calcium, left no systematic gaps for undiscovered elements and sometimes forced unlike elements into the same position.
-      </Callout>
+            <H3>Newlands' law of octaves</H3>
+            <P>
+              Newlands observed that, for lighter elements arranged by increasing atomic weight, every eighth element often resembled the first, analogous to the repetition of a musical note after an octave.
+            </P>
+            <Callout kind="warn">
+              The pattern failed beyond calcium, left no systematic gaps for undiscovered elements and sometimes forced unlike elements into the same position.
+            </Callout>
 
-      <H2>3 · Lothar Meyer's Atomic-Volume Curve</H2>
-      <P>
-        Meyer plotted atomic volume—approximately molar mass divided by density—against atomic weight. The repeating peaks and valleys demonstrated that a physical property changes periodically. Alkali metals appeared near major peaks, transition metals near broad minima and halogens on rising sections before the next alkali-metal maximum.
-      </P>
-      <AtomicVolumeSVG />
-      <Callout kind="note">The curve demonstrated periodicity visually, but Mendeleev's table became more influential because it organised chemical relationships and made testable predictions.</Callout>
+            <H2>3 · Lothar Meyer's Atomic-Volume Curve</H2>
+            <P>
+              Meyer plotted atomic volume—approximately molar mass divided by density—against atomic weight. The repeating peaks and valleys demonstrated that a physical property changes periodically. Alkali metals appeared near major peaks, transition metals near broad minima and halogens on rising sections before the next alkali-metal maximum.
+            </P>
+            <AtomicVolumeSVG />
+            <Callout kind="note">The curve demonstrated periodicity visually, but Mendeleev's table became more influential because it organised chemical relationships and made testable predictions.</Callout>
 
-      <H2>4 · Mendeleev's Periodic Law and Predictive Table</H2>
-      <MathBlock tex={String.raw`\text{Properties of the elements are periodic functions of their atomic weights.}`} />
-      <P>
-        Mendeleev arranged elements primarily by increasing atomic weight while giving chemical similarity priority when the two conflicted. He left gaps rather than forcing every known element into a continuous sequence and used neighbouring trends to predict the properties of missing elements.
-      </P>
-      <Card accent={T.gold}>
-        <div style={{ fontFamily: T.serif, color: T.gold, fontSize: 18, fontWeight: 700, marginBottom: 8 }}>Major achievements</div>
-        <ul style={{ margin: 0, paddingLeft: 20, display: "grid", gap: 7 }}>
-          <li style={{ color: T.text, fontFamily: T.sans, fontSize: 13.7, lineHeight: 1.55 }}>Brought chemically similar elements into families and made comparative study practical.</li>
-          <li style={{ color: T.text, fontFamily: T.sans, fontSize: 13.7, lineHeight: 1.55 }}>Left deliberate gaps and predicted the existence and properties of several undiscovered elements.</li>
-          <li style={{ color: T.text, fontFamily: T.sans, fontSize: 13.7, lineHeight: 1.55 }}>Used periodic placement to correct doubtful atomic weights and valencies.</li>
-          <li style={{ color: T.text, fontFamily: T.sans, fontSize: 13.7, lineHeight: 1.55 }}>Allowed the noble gases to be added later without destroying the basic arrangement.</li>
-        </ul>
-        <DataTable columns={["Predicted name", "Element discovered", "Symbol", "Year"]} rows={ekaPredictions.map(e => [e.predicted, e.found, e.sym, e.year])} />
-        <div style={{ fontFamily: T.sans, color: T.textDim, fontSize: 12.5, marginTop: 10 }}>Example: predicted eka-silicon compared with germanium</div>
-        <DataTable columns={["Property", "Prediction", "Observed for Ge"]} rows={ekaSiliconCompare.map(e => [e.prop, e.predicted, e.measured])} />
-      </Card>
-      <Card accent={T.p}>
-        <div style={{ fontFamily: T.serif, color: T.p, fontSize: 18, fontWeight: 700, marginBottom: 8 }}>Limitations</div>
-        <div style={{ display: "grid", gap: 10 }}>
-          {mendeleevDemerits.map((d, i) => (
-            <div key={d.title}>
-              <div style={{ color: T.text, fontFamily: T.sans, fontSize: 13.6, fontWeight: 800 }}>{i + 1}. {d.title}</div>
-              <div style={{ color: T.textDim, fontFamily: T.sans, fontSize: 13.2, lineHeight: 1.55 }}>{d.body}</div>
+            <H2>4 · Mendeleev's Periodic Law and Predictive Table</H2>
+            <MathBlock tex={String.raw`\text{Properties of the elements are periodic functions of their atomic weights.}`} />
+            <P>
+              Mendeleev arranged elements primarily by increasing atomic weight while giving chemical similarity priority when the two conflicted. He left gaps rather than forcing every known element into a continuous sequence and used neighbouring trends to predict the properties of missing elements.
+            </P>
+            <Card accent={T.gold}>
+              <div style={{ fontFamily: T.serif, color: T.gold, fontSize: 18, fontWeight: 700, marginBottom: 8 }}>Major achievements</div>
+              <ul style={{ margin: 0, paddingLeft: 20, display: "grid", gap: 7 }}>
+                <li style={{ color: T.text, fontFamily: T.sans, fontSize: 13.7, lineHeight: 1.55 }}>Brought chemically similar elements into families and made comparative study practical.</li>
+                <li style={{ color: T.text, fontFamily: T.sans, fontSize: 13.7, lineHeight: 1.55 }}>Left deliberate gaps and predicted the existence and properties of several undiscovered elements.</li>
+                <li style={{ color: T.text, fontFamily: T.sans, fontSize: 13.7, lineHeight: 1.55 }}>Used periodic placement to correct doubtful atomic weights and valencies.</li>
+                <li style={{ color: T.text, fontFamily: T.sans, fontSize: 13.7, lineHeight: 1.55 }}>Allowed the noble gases to be added later without destroying the basic arrangement.</li>
+              </ul>
+              <DataTable columns={["Predicted name", "Element discovered", "Symbol", "Year"]} rows={ekaPredictions.map(e => [e.predicted, e.found, e.sym, e.year])} />
+              <div style={{ fontFamily: T.sans, color: T.textDim, fontSize: 12.5, marginTop: 10 }}>Example: predicted eka-silicon compared with germanium</div>
+              <DataTable columns={["Property", "Prediction", "Observed for Ge"]} rows={ekaSiliconCompare.map(e => [e.prop, e.predicted, e.measured])} />
+            </Card>
+            <Card accent={T.p}>
+              <div style={{ fontFamily: T.serif, color: T.p, fontSize: 18, fontWeight: 700, marginBottom: 8 }}>Limitations</div>
+              <div style={{ display: "grid", gap: 10 }}>
+                {mendeleevDemerits.map((d, i) => (
+                  <div key={d.title}>
+                    <div style={{ color: T.text, fontFamily: T.sans, fontSize: 13.6, fontWeight: 800 }}>{i + 1}. {d.title}</div>
+                    <div style={{ color: T.textDim, fontFamily: T.sans, fontSize: 13.2, lineHeight: 1.55 }}>{d.body}</div>
+                  </div>
+                ))}
+              </div>
+            </Card>
+
+            <H2>5 · Moseley's X-Ray Evidence</H2>
+            <div style={{ display: "grid", gridTemplateColumns: "minmax(260px,0.7fr) minmax(0,1.3fr)", gap: 18, alignItems: "center" }} className="twoCol">
+              <MoseleyPlotSVG />
+              <div>
+                <P>
+                  Characteristic X-ray frequencies from different elements followed a simple linear relationship when the square root of frequency was plotted against atomic number. Atomic weight did not give the same clean sequence. This established nuclear charge, represented by atomic number Z, as the fundamental ordering variable.
+                </P>
+                <MathBlock tex={String.raw`\sqrt{\nu}=a(Z-b)`} />
+                <Callout kind="note" title="Modern Periodic Law">
+                  The physical and chemical properties of elements are periodic functions of their atomic numbers.
+                </Callout>
+              </div>
             </div>
-          ))}
-        </div>
-      </Card>
+            <P>
+              Ordering by atomic number resolves the anomalous pairs of the weight-based table: Ar precedes K because 18 precedes 19, Co precedes Ni because 27 precedes 28, and Te precedes I because 52 precedes 53. Isotopes also occupy one position because they share the same atomic number.
+            </P>
 
-      <H2>5 · Moseley's X-Ray Evidence</H2>
-      <div style={{ display: "grid", gridTemplateColumns: "minmax(260px,0.7fr) minmax(0,1.3fr)", gap: 18, alignItems: "center" }} className="twoCol">
-        <MoseleyPlotSVG />
-        <div>
-          <P>
-            Characteristic X-ray frequencies from different elements followed a simple linear relationship when the square root of frequency was plotted against atomic number. Atomic weight did not give the same clean sequence. This established nuclear charge, represented by atomic number Z, as the fundamental ordering variable.
-          </P>
-          <MathBlock tex={String.raw`\sqrt{\nu}=a(Z-b)`} />
-          <Callout kind="note" title="Modern Periodic Law">
-            The physical and chemical properties of elements are periodic functions of their atomic numbers.
-          </Callout>
-        </div>
+            <H2>6 · Cause of Periodicity</H2>
+            <P>
+              As atomic number increases, electrons fill orbitals in a recurring sequence. Valence-shell configurations therefore repeat after characteristic intervals. Since chemical behaviour is governed mainly by valence electrons, elements with analogous outer configurations appear in the same group and show related properties.
+            </P>
+            <DataTable columns={["Family", "Recurring outer configuration", "Consequence"]} rows={[
+              ["Group 1", "ns¹", "readily forms +1 state; strongly electropositive metals except H"],
+              ["Group 2", "ns²", "commonly forms +2 state"],
+              ["Group 17", "ns²np⁵", "one electron short of a noble-gas shell"],
+              ["Group 18", "ns²np⁶, except He = 1s²", "closed-shell atoms with very high ionization enthalpy"],
+            ]} />
+
+            <H2>7 · The Modern Long-Form Table at a Glance</H2>
+            <MiniPeriodicTable />
+            <DataTable columns={["Feature", "Modern table"]} rows={[
+              ["Ordering basis", "increasing atomic number"],
+              ["Periods", "7 horizontal rows"],
+              ["Groups", "18 vertical columns"],
+              ["Blocks", "s, p, d and f according to the differentiating subshell"],
+              ["Displayed f block", "lanthanoids and actinoids are shown below to keep the table compact"],
+              ["Known elements", "118, ending with oganesson"],
+            ]} />
+            <Callout kind="note" title="Next module">
+              The exact method for obtaining period, group and block from an electronic configuration is developed separately in “Configuration & Position” to avoid repetition.
+            </Callout>
+          </div>
+      <div
+        data-integration="SectionHistory-periodicity-generated-corpus-phd-v9"
+        style={{ marginTop: 34 }}
+      >
+        <PeriodicTableDeepAdditions topic="history" />
       </div>
-      <P>
-        Ordering by atomic number resolves the anomalous pairs of the weight-based table: Ar precedes K because 18 precedes 19, Co precedes Ni because 27 precedes 28, and Te precedes I because 52 precedes 53. Isotopes also occupy one position because they share the same atomic number.
-      </P>
-
-      <H2>6 · Cause of Periodicity</H2>
-      <P>
-        As atomic number increases, electrons fill orbitals in a recurring sequence. Valence-shell configurations therefore repeat after characteristic intervals. Since chemical behaviour is governed mainly by valence electrons, elements with analogous outer configurations appear in the same group and show related properties.
-      </P>
-      <DataTable columns={["Family", "Recurring outer configuration", "Consequence"]} rows={[
-        ["Group 1", "ns¹", "readily forms +1 state; strongly electropositive metals except H"],
-        ["Group 2", "ns²", "commonly forms +2 state"],
-        ["Group 17", "ns²np⁵", "one electron short of a noble-gas shell"],
-        ["Group 18", "ns²np⁶, except He = 1s²", "closed-shell atoms with very high ionization enthalpy"],
-      ]} />
-
-      <H2>7 · The Modern Long-Form Table at a Glance</H2>
-      <MiniPeriodicTable />
-      <DataTable columns={["Feature", "Modern table"]} rows={[
-        ["Ordering basis", "increasing atomic number"],
-        ["Periods", "7 horizontal rows"],
-        ["Groups", "18 vertical columns"],
-        ["Blocks", "s, p, d and f according to the differentiating subshell"],
-        ["Displayed f block", "lanthanoids and actinoids are shown below to keep the table compact"],
-        ["Known elements", "118, ending with oganesson"],
-      ]} />
-      <Callout kind="note" title="Next module">
-        The exact method for obtaining period, group and block from an electronic configuration is developed separately in “Configuration & Position” to avoid repetition.
-      </Callout>
-    </div>
+    </>
   );
 }
 
@@ -1609,191 +1618,199 @@ function SectionAtomicRadiusLegacyV9() {
    ========================================================================== */
 export function SectionZeffSlater() {
   return (
-    <div>
-      <SectionIntro
-        eyebrow="The actual nuclear attraction experienced by each electron"
-        title="Effective Nuclear Charge, Shielding, Penetration and Slater's Rules — Complete Notes"
-        summary="This module develops effective nuclear charge from first principles, explains every factor with multiple examples, applies Slater's rules to s-, p- and d-electrons, and connects Zeff with radius, ionization enthalpy, electron gain enthalpy, electronegativity and chemical behaviour."
-        accent={T.f}
-      />
+    <>
+      <div>
+            <SectionIntro
+              eyebrow="The actual nuclear attraction experienced by each electron"
+              title="Effective Nuclear Charge, Shielding, Penetration and Slater's Rules — Complete Notes"
+              summary="This module develops effective nuclear charge from first principles, explains every factor with multiple examples, applies Slater's rules to s-, p- and d-electrons, and connects Zeff with radius, ionization enthalpy, electron gain enthalpy, electronegativity and chemical behaviour."
+              accent={T.f}
+            />
 
-      <H2 id="zeff">1 · Definition, Meaning and Governing Relation</H2>
-      <DefinitionBox term="Effective nuclear charge">
-        Effective nuclear charge is the net positive nuclear attraction experienced by a particular electron in a multi-electron atom after allowing for shielding by the remaining electrons. It is orbital-dependent; different electrons in the same atom can experience different effective nuclear charges.
-      </DefinitionBox>
-      <MathBlock tex={String.raw`Z_{\mathrm{eff}}=Z-\sigma`} label="Central relation" />
-      <DataTable
-        columns={["Symbol", "Meaning", "Important note"]}
-        rows={[
-          ["Z", "actual nuclear charge = number of protons", "fixed for a given element"],
-          ["σ", "shielding or screening constant", "depends on electron distribution and the orbital being examined"],
-          ["Zeff", "net attraction experienced by the selected electron", "always less than Z in an ordinary multi-electron atom"],
-        ]}
-        accent={T.f}
-      />
-      <Callout kind="note" title="Do not assign one Zeff to the whole atom">
-        A 3d electron and a 4s electron in iron do not experience the same shielding or penetration. Effective nuclear charge must always be attached to a specified electron or orbital.
-      </Callout>
+            <H2 id="zeff">1 · Definition, Meaning and Governing Relation</H2>
+            <DefinitionBox term="Effective nuclear charge">
+              Effective nuclear charge is the net positive nuclear attraction experienced by a particular electron in a multi-electron atom after allowing for shielding by the remaining electrons. It is orbital-dependent; different electrons in the same atom can experience different effective nuclear charges.
+            </DefinitionBox>
+            <MathBlock tex={String.raw`Z_{\mathrm{eff}}=Z-\sigma`} label="Central relation" />
+            <DataTable
+              columns={["Symbol", "Meaning", "Important note"]}
+              rows={[
+                ["Z", "actual nuclear charge = number of protons", "fixed for a given element"],
+                ["σ", "shielding or screening constant", "depends on electron distribution and the orbital being examined"],
+                ["Zeff", "net attraction experienced by the selected electron", "always less than Z in an ordinary multi-electron atom"],
+              ]}
+              accent={T.f}
+            />
+            <Callout kind="note" title="Do not assign one Zeff to the whole atom">
+              A 3d electron and a 4s electron in iron do not experience the same shielding or penetration. Effective nuclear charge must always be attached to a specified electron or orbital.
+            </Callout>
 
-      <H2>2 · Factors Controlling Effective Nuclear Charge</H2>
-      <FactorStudyCard
-        number="1"
-        title="Magnitude of the actual nuclear charge"
-        relation={<MathInline tex={String.raw`Z\uparrow\Rightarrow Z_{\mathrm{eff}}\uparrow\quad(\text{when shielding does not rise equally})`} />}
-        explanation="Each additional proton increases the attractive force exerted by the nucleus. Across a period, the added electron usually enters the same principal shell, so shielding rises only slightly while Z rises by one at every step. The net result is a steady rise in effective nuclear charge."
-        examples={[
-          { label: "Li → F", body: "Valence electrons remain in n = 2 while proton number rises from 3 to 9; the outer cloud contracts strongly." },
-          { label: "Na → Cl", body: "The 3s/3p valence shell is common to the period; increasing Z dominates the small increase in same-shell screening." },
-          { label: "Isoelectronic", body: <><MathInline tex={String.raw`\mathrm{O^{2-}>F^->Na^+>Mg^{2+}>Al^{3+}}`} /> in radius because the same ten electrons are pulled by progressively larger Z.</> },
-          { label: "Cations", body: <><MathInline tex={String.raw`\mathrm{Fe^{3+}}`} /> binds its remaining electrons more strongly than <MathInline tex={String.raw`\mathrm{Fe^{2+}}`} /> because the electron count is smaller for the same nucleus.</> },
-        ]}
-        accent={T.gold}
-      />
-      <FactorStudyCard
-        number="2"
-        title="Number and position of shielding electrons"
-        relation={<MathInline tex={String.raw`\sigma\uparrow\Rightarrow Z_{\mathrm{eff}}\downarrow`} />}
-        explanation="Electrons between the nucleus and the selected electron repel it and partially screen nuclear attraction. Inner-shell electrons shield much more efficiently than electrons in the same shell because they spend more time between the nucleus and the outer electron."
-        examples={[
-          { label: "Li 2s", body: "The 1s² core screens the 2s electron strongly; it therefore feels much less than the full nuclear charge +3." },
-          { label: "Na 3s", body: "Ten core electrons shield the valence electron, making sodium easy to ionize despite Z = 11." },
-          { label: "K vs Na", body: "K has more protons, but its 4s electron is screened by three occupied inner shells; shell addition and shielding dominate." },
-          { label: "Ga", body: "The filled 3d¹⁰ subshell shields the 4p electron imperfectly, so Ga is more contracted than a simple down-group rule predicts." },
-        ]}
-        special="Same-shell electrons do shield one another, but less efficiently than inner-shell electrons. Shielding is therefore not equal to a simple count of all other electrons."
-        accent={T.p}
-      />
-      <FactorStudyCard
-        number="3"
-        title="Penetration of the selected orbital"
-        relation={<MathInline tex={String.raw`\text{penetration: }s>p>d>f`} />}
-        explanation="A penetrating orbital has appreciable electron density close to the nucleus. Such an electron passes inside the screening cloud more often and experiences greater effective nuclear attraction. For the same principal shell, orbital energy normally follows the opposite order."
-        examples={[
-          { label: "Be vs B", body: "A 2s electron penetrates more than a 2p electron; therefore the electron removed from B(2p¹) is less tightly held than that from Be(2s²)." },
-          { label: "Mg vs Al", body: "Al loses a 3p electron more readily than Mg loses a 3s electron for the same penetration reason." },
-          { label: "Orbital energy", body: <><MathInline tex={String.raw`E(ns)<E(np)<E(nd)<E(nf)`} /> in a many-electron atom of the same n, because penetration decreases.</> },
-          { label: "Transition ions", body: "Once 3d occupation begins, 4s electrons are generally removed first because the energetic ordering changes after electron occupation and ion formation." },
-        ]}
-        accent={T.d}
-      />
-      <FactorStudyCard
-        number="4"
-        title="Principal shell and average distance from the nucleus"
-        relation={<MathInline tex={String.raw`n\uparrow\Rightarrow r_{\mathrm{avg}}\uparrow\Rightarrow Z_{\mathrm{eff}}\text{ felt at the valence region generally weakens}`} />}
-        explanation="A valence electron in a higher principal shell is farther from the nucleus and is screened by more inner shells. Even when the calculated Zeff changes only moderately, the electrostatic attraction falls strongly because distance increases."
-        examples={[
-          { label: "Group 1", body: <><MathInline tex={String.raw`\mathrm{Li>Na>K>Rb>Cs}`} /> in first ionization enthalpy; the valence electron moves to successively higher shells.</> },
-          { label: "Halogens", body: "Atomic radius increases F → Cl → Br → I although nuclear charge rises, because each step adds an occupied shell." },
-          { label: "Hydrides", body: "H–X bond length increases down group 17 because the valence orbital of X becomes larger and more diffuse." },
-          { label: "Noble gases", body: "Polarizability increases He → Rn because the outer electron cloud becomes larger and more easily distorted." },
-        ]}
-        accent={T.s}
-      />
-      <FactorStudyCard
-        number="5"
-        title="Shielding efficiency of s, p, d and f electrons"
-        relation={<MathInline tex={String.raw`\text{shielding efficiency (approx.)}:s>p>d>f`} />}
-        explanation="More penetrating electrons are better positioned between the nucleus and outer electrons and therefore shield them more effectively. d and especially f electrons are poor shields; this produces important contraction effects."
-        examples={[
-          { label: "d contraction", body: "Poor shielding by 3d electrons makes Ga only slightly larger—and often quoted smaller—than Al." },
-          { label: "Lanthanoid", body: "Poor 4f shielding causes a steady contraction from La to Lu and makes Zr and Hf nearly equal in size." },
-          { label: "Actinoid", body: "Poor 5f shielding contributes to actinoid contraction, although the pattern is less regular because 5f, 6d and 7s energies are close." },
-          { label: "Tl / Pb / Bi", body: "Poor d and f shielding and relativistic stabilization increase the attraction on the outer ns² pair, contributing to the inert-pair effect." },
-        ]}
-        accent={T.f}
-      />
-      <FactorStudyCard
-        number="6"
-        title="Charge and electron count of the species"
-        relation={<MathInline tex={String.raw`\text{same nucleus: }Z_{\mathrm{eff}}(\text{cation})>Z_{\mathrm{eff}}(\text{atom})>Z_{\mathrm{eff}}(\text{anion})`} />}
-        explanation="Removing electrons reduces electron–electron repulsion and screening; adding electrons increases both. Therefore cations contract and anions expand relative to the parent atom."
-        examples={[
-          { label: "Chlorine", body: <><MathInline tex={String.raw`r(\mathrm{Cl^+})<r(\mathrm{Cl})<r(\mathrm{Cl^-})`} />.</> },
-          { label: "Iron", body: <><MathInline tex={String.raw`r(\mathrm{Fe^{3+}})<r(\mathrm{Fe^{2+}})`} /> because the same nucleus attracts fewer electrons more strongly.</> },
-          { label: "Oxygen", body: <><MathInline tex={String.raw`r(\mathrm{O^{2-}})>r(\mathrm{O^-})>r(\mathrm{O})`} /> because repulsion rises with added electrons.</> },
-          { label: "Successive IE", body: <><MathInline tex={String.raw`IE_1<IE_2<IE_3<\cdots`} /> because every successive electron is removed from an increasingly positive species.</> },
-        ]}
-        accent={T.cyan}
-      />
-      <FactorStudyCard
-        number="7"
-        title="Electron–electron repulsion and orbital occupancy"
-        relation={<MathInline tex={String.raw`\text{pairing repulsion}\uparrow\Rightarrow\text{selected electron is held less tightly}`} />}
-        explanation="Zeff is an average one-electron idea. Actual removal and addition energies also depend on how electrons occupy orbitals, including pairing repulsion and exchange stabilization."
-        examples={[
-          { label: "N vs O", body: "O has one paired 2p orbital; repulsion makes one electron easier to remove, so IE₁(O) < IE₁(N)." },
-          { label: "P vs S", body: "The same p³ versus p⁴ pairing effect gives IE₁(S) < IE₁(P)." },
-          { label: "N electron gain", body: "Adding an electron to N forces pairing in a half-filled 2p³ set, making electron gain unfavourable." },
-          { label: "Cr / Cu", body: "Near-degenerate 3d and 4s levels and exchange/pairing energies help produce [Ar]3d⁵4s¹ and [Ar]3d¹⁰4s¹ configurations." },
-        ]}
-        accent={T.gold}
-      />
+            <H2>2 · Factors Controlling Effective Nuclear Charge</H2>
+            <FactorStudyCard
+              number="1"
+              title="Magnitude of the actual nuclear charge"
+              relation={<MathInline tex={String.raw`Z\uparrow\Rightarrow Z_{\mathrm{eff}}\uparrow\quad(\text{when shielding does not rise equally})`} />}
+              explanation="Each additional proton increases the attractive force exerted by the nucleus. Across a period, the added electron usually enters the same principal shell, so shielding rises only slightly while Z rises by one at every step. The net result is a steady rise in effective nuclear charge."
+              examples={[
+                { label: "Li → F", body: "Valence electrons remain in n = 2 while proton number rises from 3 to 9; the outer cloud contracts strongly." },
+                { label: "Na → Cl", body: "The 3s/3p valence shell is common to the period; increasing Z dominates the small increase in same-shell screening." },
+                { label: "Isoelectronic", body: <><MathInline tex={String.raw`\mathrm{O^{2-}>F^->Na^+>Mg^{2+}>Al^{3+}}`} /> in radius because the same ten electrons are pulled by progressively larger Z.</> },
+                { label: "Cations", body: <><MathInline tex={String.raw`\mathrm{Fe^{3+}}`} /> binds its remaining electrons more strongly than <MathInline tex={String.raw`\mathrm{Fe^{2+}}`} /> because the electron count is smaller for the same nucleus.</> },
+              ]}
+              accent={T.gold}
+            />
+            <FactorStudyCard
+              number="2"
+              title="Number and position of shielding electrons"
+              relation={<MathInline tex={String.raw`\sigma\uparrow\Rightarrow Z_{\mathrm{eff}}\downarrow`} />}
+              explanation="Electrons between the nucleus and the selected electron repel it and partially screen nuclear attraction. Inner-shell electrons shield much more efficiently than electrons in the same shell because they spend more time between the nucleus and the outer electron."
+              examples={[
+                { label: "Li 2s", body: "The 1s² core screens the 2s electron strongly; it therefore feels much less than the full nuclear charge +3." },
+                { label: "Na 3s", body: "Ten core electrons shield the valence electron, making sodium easy to ionize despite Z = 11." },
+                { label: "K vs Na", body: "K has more protons, but its 4s electron is screened by three occupied inner shells; shell addition and shielding dominate." },
+                { label: "Ga", body: "The filled 3d¹⁰ subshell shields the 4p electron imperfectly, so Ga is more contracted than a simple down-group rule predicts." },
+              ]}
+              special="Same-shell electrons do shield one another, but less efficiently than inner-shell electrons. Shielding is therefore not equal to a simple count of all other electrons."
+              accent={T.p}
+            />
+            <FactorStudyCard
+              number="3"
+              title="Penetration of the selected orbital"
+              relation={<MathInline tex={String.raw`\text{penetration: }s>p>d>f`} />}
+              explanation="A penetrating orbital has appreciable electron density close to the nucleus. Such an electron passes inside the screening cloud more often and experiences greater effective nuclear attraction. For the same principal shell, orbital energy normally follows the opposite order."
+              examples={[
+                { label: "Be vs B", body: "A 2s electron penetrates more than a 2p electron; therefore the electron removed from B(2p¹) is less tightly held than that from Be(2s²)." },
+                { label: "Mg vs Al", body: "Al loses a 3p electron more readily than Mg loses a 3s electron for the same penetration reason." },
+                { label: "Orbital energy", body: <><MathInline tex={String.raw`E(ns)<E(np)<E(nd)<E(nf)`} /> in a many-electron atom of the same n, because penetration decreases.</> },
+                { label: "Transition ions", body: "Once 3d occupation begins, 4s electrons are generally removed first because the energetic ordering changes after electron occupation and ion formation." },
+              ]}
+              accent={T.d}
+            />
+            <FactorStudyCard
+              number="4"
+              title="Principal shell and average distance from the nucleus"
+              relation={<MathInline tex={String.raw`n\uparrow\Rightarrow r_{\mathrm{avg}}\uparrow\Rightarrow Z_{\mathrm{eff}}\text{ felt at the valence region generally weakens}`} />}
+              explanation="A valence electron in a higher principal shell is farther from the nucleus and is screened by more inner shells. Even when the calculated Zeff changes only moderately, the electrostatic attraction falls strongly because distance increases."
+              examples={[
+                { label: "Group 1", body: <><MathInline tex={String.raw`\mathrm{Li>Na>K>Rb>Cs}`} /> in first ionization enthalpy; the valence electron moves to successively higher shells.</> },
+                { label: "Halogens", body: "Atomic radius increases F → Cl → Br → I although nuclear charge rises, because each step adds an occupied shell." },
+                { label: "Hydrides", body: "H–X bond length increases down group 17 because the valence orbital of X becomes larger and more diffuse." },
+                { label: "Noble gases", body: "Polarizability increases He → Rn because the outer electron cloud becomes larger and more easily distorted." },
+              ]}
+              accent={T.s}
+            />
+            <FactorStudyCard
+              number="5"
+              title="Shielding efficiency of s, p, d and f electrons"
+              relation={<MathInline tex={String.raw`\text{shielding efficiency (approx.)}:s>p>d>f`} />}
+              explanation="More penetrating electrons are better positioned between the nucleus and outer electrons and therefore shield them more effectively. d and especially f electrons are poor shields; this produces important contraction effects."
+              examples={[
+                { label: "d contraction", body: "Poor shielding by 3d electrons makes Ga only slightly larger—and often quoted smaller—than Al." },
+                { label: "Lanthanoid", body: "Poor 4f shielding causes a steady contraction from La to Lu and makes Zr and Hf nearly equal in size." },
+                { label: "Actinoid", body: "Poor 5f shielding contributes to actinoid contraction, although the pattern is less regular because 5f, 6d and 7s energies are close." },
+                { label: "Tl / Pb / Bi", body: "Poor d and f shielding and relativistic stabilization increase the attraction on the outer ns² pair, contributing to the inert-pair effect." },
+              ]}
+              accent={T.f}
+            />
+            <FactorStudyCard
+              number="6"
+              title="Charge and electron count of the species"
+              relation={<MathInline tex={String.raw`\text{same nucleus: }Z_{\mathrm{eff}}(\text{cation})>Z_{\mathrm{eff}}(\text{atom})>Z_{\mathrm{eff}}(\text{anion})`} />}
+              explanation="Removing electrons reduces electron–electron repulsion and screening; adding electrons increases both. Therefore cations contract and anions expand relative to the parent atom."
+              examples={[
+                { label: "Chlorine", body: <><MathInline tex={String.raw`r(\mathrm{Cl^+})<r(\mathrm{Cl})<r(\mathrm{Cl^-})`} />.</> },
+                { label: "Iron", body: <><MathInline tex={String.raw`r(\mathrm{Fe^{3+}})<r(\mathrm{Fe^{2+}})`} /> because the same nucleus attracts fewer electrons more strongly.</> },
+                { label: "Oxygen", body: <><MathInline tex={String.raw`r(\mathrm{O^{2-}})>r(\mathrm{O^-})>r(\mathrm{O})`} /> because repulsion rises with added electrons.</> },
+                { label: "Successive IE", body: <><MathInline tex={String.raw`IE_1<IE_2<IE_3<\cdots`} /> because every successive electron is removed from an increasingly positive species.</> },
+              ]}
+              accent={T.cyan}
+            />
+            <FactorStudyCard
+              number="7"
+              title="Electron–electron repulsion and orbital occupancy"
+              relation={<MathInline tex={String.raw`\text{pairing repulsion}\uparrow\Rightarrow\text{selected electron is held less tightly}`} />}
+              explanation="Zeff is an average one-electron idea. Actual removal and addition energies also depend on how electrons occupy orbitals, including pairing repulsion and exchange stabilization."
+              examples={[
+                { label: "N vs O", body: "O has one paired 2p orbital; repulsion makes one electron easier to remove, so IE₁(O) < IE₁(N)." },
+                { label: "P vs S", body: "The same p³ versus p⁴ pairing effect gives IE₁(S) < IE₁(P)." },
+                { label: "N electron gain", body: "Adding an electron to N forces pairing in a half-filled 2p³ set, making electron gain unfavourable." },
+                { label: "Cr / Cu", body: "Near-degenerate 3d and 4s levels and exchange/pairing energies help produce [Ar]3d⁵4s¹ and [Ar]3d¹⁰4s¹ configurations." },
+              ]}
+              accent={T.gold}
+            />
 
-      <H2>3 · Penetration and Radial Distribution</H2>
-      <div style={{ display: "grid", gridTemplateColumns: "minmax(300px,0.9fr) minmax(0,1.1fr)", gap: 18, alignItems: "start" }} className="twoCol">
-        <RadialDistributionSVG />
-        <div>
-          <P>Penetration is judged from the probability of finding an electron close to the nucleus. Radial nodes do not prevent an s orbital from penetrating; inner lobes of an s orbital can place significant probability inside p, d or f distributions.</P>
-          <MathBlock tex={String.raw`\text{same }n:\quad s>p>d>f\quad\text{in penetration and shielding efficiency}`} />
-          <MathBlock tex={String.raw`\text{same }n:\quad E_s<E_p<E_d<E_f\quad\text{in a many-electron atom}`} />
-        </div>
+            <H2>3 · Penetration and Radial Distribution</H2>
+            <div style={{ display: "grid", gridTemplateColumns: "minmax(300px,0.9fr) minmax(0,1.1fr)", gap: 18, alignItems: "start" }} className="twoCol">
+              <RadialDistributionSVG />
+              <div>
+                <P>Penetration is judged from the probability of finding an electron close to the nucleus. Radial nodes do not prevent an s orbital from penetrating; inner lobes of an s orbital can place significant probability inside p, d or f distributions.</P>
+                <MathBlock tex={String.raw`\text{same }n:\quad s>p>d>f\quad\text{in penetration and shielding efficiency}`} />
+                <MathBlock tex={String.raw`\text{same }n:\quad E_s<E_p<E_d<E_f\quad\text{in a many-electron atom}`} />
+              </div>
+            </div>
+
+            <H2 id="slater">4 · Slater Grouping and Rules</H2>
+            <MathBlock tex={String.raw`(1s)\,(2s,2p)\,(3s,3p)\,(3d)\,(4s,4p)\,(4d)\,(4f)\,(5s,5p)\cdots`} label="Write the configuration in Slater groups" />
+            <H3>For an ns or np test electron</H3>
+            <DataTable columns={["Shielding electrons", "Contribution per electron", "Illustration"]} rows={[
+              ["other electrons in the same (ns,np) group", "0.35", "for a 3p electron, other 3s and 3p electrons each count 0.35"],
+              ["other electron in 1s", "0.30", "special 1s coefficient"],
+              ["electrons in shell (n−1)", "0.85", "2s²2p⁶ screens a 3s/3p electron by 8 × 0.85"],
+              ["electrons in (n−2) and lower shells", "1.00", "1s² screens a 3s/3p electron by 2 × 1.00"],
+            ]} accent={T.cyan} />
+            <H3>For an nd or nf test electron</H3>
+            <DataTable columns={["Shielding electrons", "Contribution per electron", "Illustration"]} rows={[
+              ["other electrons in the same nd or nf group", "0.35", "nine companion 3d electrons screen a 3d test electron by 9 × 0.35"],
+              ["all electrons in groups to the left", "1.00", "1s through 3p electrons fully count for a 3d test electron"],
+              ["electrons in groups to the right", "0", "4s electrons are not counted for a 3d test electron in the simplified rule"],
+            ]} accent={T.f} />
+
+            <H2>5 · Slater Calculations — From Basic to JEE Advanced</H2>
+            <WorkedExample number="Z1" title="Helium 1s electron" question="Estimate Zeff for one 1s electron of He." reasoning={["Only the other 1s electron shields the test electron.", "For 1s, its contribution is 0.30.", "Zeff = 2 − 0.30."]} answer="Zeff = 1.70." accent={T.cyan} />
+            <WorkedExample number="Z2" title="Lithium 2s electron" question="Estimate Zeff for the valence electron of Li." reasoning={["Li = (1s²)(2s¹).", "There is no same-group companion electron.", "The two 1s electrons contribute 2 × 0.85 = 1.70."]} answer="Zeff = 3 − 1.70 = 1.30." accent={T.s} />
+            <WorkedExample number="Z3" title="Carbon 2p electron" question="Estimate Zeff for one 2p electron in C." reasoning={["C = (1s²)(2s²2p²).", "Three other n = 2 electrons contribute 3 × 0.35 = 1.05.", "Two 1s electrons contribute 2 × 0.85 = 1.70."]} answer="σ = 2.75; Zeff = 6 − 2.75 = 3.25." accent={T.gold} />
+            <WorkedExample number="Z4" title="Sodium 3s electron" question="Estimate Zeff for the 3s electron of Na." reasoning={["Na = (1s²)(2s²2p⁶)(3s¹).", "Eight n−1 electrons contribute 8 × 0.85 = 6.80.", "Two n−2 electrons contribute 2 × 1.00 = 2.00."]} answer="σ = 8.80; Zeff = 11 − 8.80 = 2.20." accent={T.cyan} />
+            <WorkedExample number="Z5" title="Chlorine 3p electron" question="Estimate Zeff for one 3p electron of Cl." reasoning={["Cl = (1s²)(2s²2p⁶)(3s²3p⁵).", "Six same-group electrons contribute 6 × 0.35 = 2.10.", "Eight n−1 electrons contribute 6.80 and two lower electrons contribute 2.00."]} answer="σ = 10.90; Zeff = 17 − 10.90 = 6.10." accent={T.p} />
+            <WorkedExample number="Z6" title="Potassium 4s electron" question="Estimate Zeff for the 4s electron of K." reasoning={["K = [Ar]4s¹.", "Eight n−1 (3s,3p) electrons contribute 6.80.", "Ten n−2 and lower electrons contribute 10.00."]} answer="σ = 16.80; Zeff = 19 − 16.80 = 2.20." accent={T.s} />
+            <WorkedExample number="Z7" title="Iron: 3d electron" question="Estimate Zeff for one 3d electron in Fe, [Ar]3d⁶4s²." reasoning={["Five other 3d electrons contribute 5 × 0.35 = 1.75.", "All 18 electrons in groups to the left contribute 18.00.", "The 4s electrons to the right are not counted for this test electron."]} answer="σ = 19.75; Zeff(3d) = 26 − 19.75 = 6.25." accent={T.d} />
+            <WorkedExample number="Z8" title="Iron: 4s electron" question="Estimate Zeff for one 4s electron in Fe using the simplified ns/np rule." reasoning={["One other 4s electron contributes 0.35.", "Fourteen electrons in the n−1 shell (3s²3p⁶3d⁶) contribute 14 × 0.85 = 11.90.", "Ten lower-shell electrons contribute 10.00."]} answer="σ = 22.25; Zeff(4s) = 3.75. The estimate helps show why the outer 4s electron is more weakly held." accent={T.d} />
+            <WorkedExample number="Z9" title="Gallium 4p electron" question="Estimate Zeff for the 4p electron in Ga." reasoning={["Ga = (1s²)(2s²2p⁶)(3s²3p⁶)(3d¹⁰)(4s²4p¹).", "Two same-group 4s electrons contribute 0.70.", "Eighteen n−1 electrons contribute 15.30; ten lower electrons contribute 10.00."]} answer="σ = 26.00; Zeff = 31 − 26.00 = 5.00." accent={T.f} />
+
+            <H2>6 · Approximate Valence-Electron Zeff Across Period 2</H2>
+            <DataTable columns={["Element", "Li", "Be", "B", "C", "N", "O", "F", "Ne"]} rows={[
+              ["Slater Zeff", "1.30", "1.95", "2.60", "3.25", "3.90", "4.55", "5.20", "5.85"],
+              ["Broad result", "largest radius", "contracts", "contracts", "contracts", "high IE", "pairing special case", "highest EN", "closed shell"],
+            ]} accent={T.gold} />
+
+            <H2>7 · Applications of Effective Nuclear Charge</H2>
+            <DataTable columns={["Application", "How Zeff is used", "Example"]} rows={[
+              ["Atomic radius", "greater Zeff contracts electrons in the same shell", "Li > Be > B > C > N > O > F"],
+              ["Ionic radius", "same electron count plus larger Z gives smaller ion", "O²⁻ > F⁻ > Na⁺ > Mg²⁺ > Al³⁺"],
+              ["Ionization enthalpy", "greater attraction increases electron-removal energy", "IE generally rises across a period"],
+              ["Electron gain enthalpy", "greater attraction can make electron addition more exothermic", "trend becomes more negative toward halogens, subject to crowding"],
+              ["Electronegativity", "stronger attraction for valence density raises χ", "F > Cl > Br > I"],
+              ["d- and f-block contraction", "poor d/f shielding permits Zeff to rise", "Ga contraction; La→Lu contraction; Zr≈Hf"],
+              ["Acidity and polarizing power", "small high-Zeff cations polarize anions strongly", "Al³⁺ compounds are more covalent and acidic than Na⁺ compounds"],
+              ["Orbital energy", "greater Zeff stabilizes and lowers an orbital", "penetrating s orbitals lie below p orbitals of the same n"],
+            ]} accent={T.cyan} />
+
+            <H2>8 · Limitations — Where the Simple Zeff Model Fails</H2>
+            <DataTable columns={["Limitation", "Why the model is incomplete", "Practical rule"]} rows={[
+              ["Zeff is not directly observable as one unique number", "it depends on the chosen orbital and the computational definition", "state the method, such as Slater, when quoting a number"],
+              ["Fixed coefficients are empirical", "real shielding changes continuously with radial distribution", "use Slater values for trends, not high-precision prediction"],
+              ["Electron correlation is simplified", "electrons do not repel one another as independent average clouds", "pairing and exchange effects must be discussed separately"],
+              ["Poor heavy-element treatment", "relativistic effects strongly alter 6s, 6p, 5d and 4f/5f orbitals", "use measured data or relativistic calculations for heavy atoms"],
+              ["Chemical environment is omitted", "oxidation state, ligands and bonding change orbital populations", "atomic Slater Zeff is not automatically the Zeff inside every compound"],
+              ["No single-property prediction", "radius, IE and reactivity also depend on distance, configuration and medium", "combine Zeff with shell number, pairing, hydration and bonding"],
+            ]} accent={T.p} />
+          </div>
+      <div
+        data-integration="SectionZeffSlater-periodicity-generated-corpus-phd-v9"
+        style={{ marginTop: 34 }}
+      >
+        <PeriodicTableDeepAdditions topic="zeff" />
       </div>
-
-      <H2 id="slater">4 · Slater Grouping and Rules</H2>
-      <MathBlock tex={String.raw`(1s)\,(2s,2p)\,(3s,3p)\,(3d)\,(4s,4p)\,(4d)\,(4f)\,(5s,5p)\cdots`} label="Write the configuration in Slater groups" />
-      <H3>For an ns or np test electron</H3>
-      <DataTable columns={["Shielding electrons", "Contribution per electron", "Illustration"]} rows={[
-        ["other electrons in the same (ns,np) group", "0.35", "for a 3p electron, other 3s and 3p electrons each count 0.35"],
-        ["other electron in 1s", "0.30", "special 1s coefficient"],
-        ["electrons in shell (n−1)", "0.85", "2s²2p⁶ screens a 3s/3p electron by 8 × 0.85"],
-        ["electrons in (n−2) and lower shells", "1.00", "1s² screens a 3s/3p electron by 2 × 1.00"],
-      ]} accent={T.cyan} />
-      <H3>For an nd or nf test electron</H3>
-      <DataTable columns={["Shielding electrons", "Contribution per electron", "Illustration"]} rows={[
-        ["other electrons in the same nd or nf group", "0.35", "nine companion 3d electrons screen a 3d test electron by 9 × 0.35"],
-        ["all electrons in groups to the left", "1.00", "1s through 3p electrons fully count for a 3d test electron"],
-        ["electrons in groups to the right", "0", "4s electrons are not counted for a 3d test electron in the simplified rule"],
-      ]} accent={T.f} />
-
-      <H2>5 · Slater Calculations — From Basic to JEE Advanced</H2>
-      <WorkedExample number="Z1" title="Helium 1s electron" question="Estimate Zeff for one 1s electron of He." reasoning={["Only the other 1s electron shields the test electron.", "For 1s, its contribution is 0.30.", "Zeff = 2 − 0.30."]} answer="Zeff = 1.70." accent={T.cyan} />
-      <WorkedExample number="Z2" title="Lithium 2s electron" question="Estimate Zeff for the valence electron of Li." reasoning={["Li = (1s²)(2s¹).", "There is no same-group companion electron.", "The two 1s electrons contribute 2 × 0.85 = 1.70."]} answer="Zeff = 3 − 1.70 = 1.30." accent={T.s} />
-      <WorkedExample number="Z3" title="Carbon 2p electron" question="Estimate Zeff for one 2p electron in C." reasoning={["C = (1s²)(2s²2p²).", "Three other n = 2 electrons contribute 3 × 0.35 = 1.05.", "Two 1s electrons contribute 2 × 0.85 = 1.70."]} answer="σ = 2.75; Zeff = 6 − 2.75 = 3.25." accent={T.gold} />
-      <WorkedExample number="Z4" title="Sodium 3s electron" question="Estimate Zeff for the 3s electron of Na." reasoning={["Na = (1s²)(2s²2p⁶)(3s¹).", "Eight n−1 electrons contribute 8 × 0.85 = 6.80.", "Two n−2 electrons contribute 2 × 1.00 = 2.00."]} answer="σ = 8.80; Zeff = 11 − 8.80 = 2.20." accent={T.cyan} />
-      <WorkedExample number="Z5" title="Chlorine 3p electron" question="Estimate Zeff for one 3p electron of Cl." reasoning={["Cl = (1s²)(2s²2p⁶)(3s²3p⁵).", "Six same-group electrons contribute 6 × 0.35 = 2.10.", "Eight n−1 electrons contribute 6.80 and two lower electrons contribute 2.00."]} answer="σ = 10.90; Zeff = 17 − 10.90 = 6.10." accent={T.p} />
-      <WorkedExample number="Z6" title="Potassium 4s electron" question="Estimate Zeff for the 4s electron of K." reasoning={["K = [Ar]4s¹.", "Eight n−1 (3s,3p) electrons contribute 6.80.", "Ten n−2 and lower electrons contribute 10.00."]} answer="σ = 16.80; Zeff = 19 − 16.80 = 2.20." accent={T.s} />
-      <WorkedExample number="Z7" title="Iron: 3d electron" question="Estimate Zeff for one 3d electron in Fe, [Ar]3d⁶4s²." reasoning={["Five other 3d electrons contribute 5 × 0.35 = 1.75.", "All 18 electrons in groups to the left contribute 18.00.", "The 4s electrons to the right are not counted for this test electron."]} answer="σ = 19.75; Zeff(3d) = 26 − 19.75 = 6.25." accent={T.d} />
-      <WorkedExample number="Z8" title="Iron: 4s electron" question="Estimate Zeff for one 4s electron in Fe using the simplified ns/np rule." reasoning={["One other 4s electron contributes 0.35.", "Fourteen electrons in the n−1 shell (3s²3p⁶3d⁶) contribute 14 × 0.85 = 11.90.", "Ten lower-shell electrons contribute 10.00."]} answer="σ = 22.25; Zeff(4s) = 3.75. The estimate helps show why the outer 4s electron is more weakly held." accent={T.d} />
-      <WorkedExample number="Z9" title="Gallium 4p electron" question="Estimate Zeff for the 4p electron in Ga." reasoning={["Ga = (1s²)(2s²2p⁶)(3s²3p⁶)(3d¹⁰)(4s²4p¹).", "Two same-group 4s electrons contribute 0.70.", "Eighteen n−1 electrons contribute 15.30; ten lower electrons contribute 10.00."]} answer="σ = 26.00; Zeff = 31 − 26.00 = 5.00." accent={T.f} />
-
-      <H2>6 · Approximate Valence-Electron Zeff Across Period 2</H2>
-      <DataTable columns={["Element", "Li", "Be", "B", "C", "N", "O", "F", "Ne"]} rows={[
-        ["Slater Zeff", "1.30", "1.95", "2.60", "3.25", "3.90", "4.55", "5.20", "5.85"],
-        ["Broad result", "largest radius", "contracts", "contracts", "contracts", "high IE", "pairing special case", "highest EN", "closed shell"],
-      ]} accent={T.gold} />
-
-      <H2>7 · Applications of Effective Nuclear Charge</H2>
-      <DataTable columns={["Application", "How Zeff is used", "Example"]} rows={[
-        ["Atomic radius", "greater Zeff contracts electrons in the same shell", "Li > Be > B > C > N > O > F"],
-        ["Ionic radius", "same electron count plus larger Z gives smaller ion", "O²⁻ > F⁻ > Na⁺ > Mg²⁺ > Al³⁺"],
-        ["Ionization enthalpy", "greater attraction increases electron-removal energy", "IE generally rises across a period"],
-        ["Electron gain enthalpy", "greater attraction can make electron addition more exothermic", "trend becomes more negative toward halogens, subject to crowding"],
-        ["Electronegativity", "stronger attraction for valence density raises χ", "F > Cl > Br > I"],
-        ["d- and f-block contraction", "poor d/f shielding permits Zeff to rise", "Ga contraction; La→Lu contraction; Zr≈Hf"],
-        ["Acidity and polarizing power", "small high-Zeff cations polarize anions strongly", "Al³⁺ compounds are more covalent and acidic than Na⁺ compounds"],
-        ["Orbital energy", "greater Zeff stabilizes and lowers an orbital", "penetrating s orbitals lie below p orbitals of the same n"],
-      ]} accent={T.cyan} />
-
-      <H2>8 · Limitations — Where the Simple Zeff Model Fails</H2>
-      <DataTable columns={["Limitation", "Why the model is incomplete", "Practical rule"]} rows={[
-        ["Zeff is not directly observable as one unique number", "it depends on the chosen orbital and the computational definition", "state the method, such as Slater, when quoting a number"],
-        ["Fixed coefficients are empirical", "real shielding changes continuously with radial distribution", "use Slater values for trends, not high-precision prediction"],
-        ["Electron correlation is simplified", "electrons do not repel one another as independent average clouds", "pairing and exchange effects must be discussed separately"],
-        ["Poor heavy-element treatment", "relativistic effects strongly alter 6s, 6p, 5d and 4f/5f orbitals", "use measured data or relativistic calculations for heavy atoms"],
-        ["Chemical environment is omitted", "oxidation state, ligands and bonding change orbital populations", "atomic Slater Zeff is not automatically the Zeff inside every compound"],
-        ["No single-property prediction", "radius, IE and reactivity also depend on distance, configuration and medium", "combine Zeff with shell number, pairing, hydration and bonding"],
-      ]} accent={T.p} />
-    </div>
+    </>
   );
 }
 
@@ -1908,28 +1925,36 @@ const families: Fam[] = [
 
 export function SectionFamilies() {
   return (
-    <div>
-      <SectionIntro eyebrow="Exact family orders for rapid revision" title="Family-Wise Property Orders" summary="These compact data cards collect useful group-specific orders after the underlying theory has been developed. Irregular melting points, densities and electron-gain values are treated as data rather than forced into false universal rules." accent={T.cyan} />
-      <H2 id="families">Periodic Properties — Family-Wise Orders (s & p Block)</H2>
-      <P>High-yield increasing/decreasing orders for s- and p-block families, with irregular properties clearly separated from dependable periodic trends.</P>
-      <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: 16 }}>
-        {families.map((f) => (
-          <Card key={f.key} accent={f.color}>
-            <div style={{ fontFamily: T.serif, fontSize: 18, fontWeight: 700, marginBottom: 8 }}>{f.name}</div>
-            <div style={{ display: "flex", flexWrap: "wrap", marginBottom: 4 }}>
-              {f.elements.map((e) => <ElementChip key={e} symbol={e} color={f.color} />)}
+    <>
+      <div>
+            <SectionIntro eyebrow="Exact family orders for rapid revision" title="Family-Wise Property Orders" summary="These compact data cards collect useful group-specific orders after the underlying theory has been developed. Irregular melting points, densities and electron-gain values are treated as data rather than forced into false universal rules." accent={T.cyan} />
+            <H2 id="families">Periodic Properties — Family-Wise Orders (s & p Block)</H2>
+            <P>High-yield increasing/decreasing orders for s- and p-block families, with irregular properties clearly separated from dependable periodic trends.</P>
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: 16 }}>
+              {families.map((f) => (
+                <Card key={f.key} accent={f.color}>
+                  <div style={{ fontFamily: T.serif, fontSize: 18, fontWeight: 700, marginBottom: 8 }}>{f.name}</div>
+                  <div style={{ display: "flex", flexWrap: "wrap", marginBottom: 4 }}>
+                    {f.elements.map((e) => <ElementChip key={e} symbol={e} color={f.color} />)}
+                  </div>
+                  {f.rows.map((r, i) => (
+                    <div key={i} style={{ padding: "8px 0", borderBottom: `1px dashed ${T.borderSoft}` }}>
+                      <div style={{ fontFamily: T.sans, fontSize: 11, fontWeight: 700, color: f.color, textTransform: "uppercase", letterSpacing: 0.4 }}>{r.label}</div>
+                      <div style={{ fontFamily: T.mono, fontSize: 14, color: T.text }}>{r.order}</div>
+                      {r.note && <div style={{ fontFamily: T.sans, fontSize: 12, color: T.textDim, fontStyle: "italic" }}>{r.note}</div>}
+                    </div>
+                  ))}
+                </Card>
+              ))}
             </div>
-            {f.rows.map((r, i) => (
-              <div key={i} style={{ padding: "8px 0", borderBottom: `1px dashed ${T.borderSoft}` }}>
-                <div style={{ fontFamily: T.sans, fontSize: 11, fontWeight: 700, color: f.color, textTransform: "uppercase", letterSpacing: 0.4 }}>{r.label}</div>
-                <div style={{ fontFamily: T.mono, fontSize: 14, color: T.text }}>{r.order}</div>
-                {r.note && <div style={{ fontFamily: T.sans, fontSize: 12, color: T.textDim, fontStyle: "italic" }}>{r.note}</div>}
-              </div>
-            ))}
-          </Card>
-        ))}
+          </div>
+      <div
+        data-integration="SectionFamilies-periodicity-generated-corpus-phd-v9"
+        style={{ marginTop: 34 }}
+      >
+        <PeriodicTableDeepAdditions topic="families" />
       </div>
-    </div>
+    </>
   );
 }
 
@@ -1968,36 +1993,44 @@ const ionColours = [
 
 export function SectionDBlockTrends() {
   return (
-    <div>
-      <SectionIntro eyebrow="Irregular trends in near-degenerate orbitals" title="3d-Series Energetics, Radius and Ion Colours" summary="Transition-metal trends are less regular than s- and p-block trends because 3d and 4s energies are close, multiple oxidation states are accessible and crystal-field effects influence colour and stability." accent={T.d} />
-      <H2 id="dblock-trends">3d-Series — Energetics & Ion Colours</H2>
-      <Card accent={T.d}>
-        <div style={{ display: "flex", flexWrap: "wrap", marginBottom: 8 }}>
-          {["Sc", "Ti", "V", "Cr", "Mn", "Fe", "Co", "Ni", "Cu", "Zn"].map((e) => <ElementChip key={e} symbol={e} color={T.d} />)}
-        </div>
-        {dBlockRows.map((r, i) => (
-          <div key={i} style={{ padding: "9px 0", borderBottom: `1px dashed ${T.borderSoft}` }}>
-            <div style={{ fontFamily: T.sans, fontSize: 11, fontWeight: 700, color: T.d, textTransform: "uppercase", letterSpacing: 0.4 }}>{r.label}</div>
-            <div style={{ fontFamily: T.mono, fontSize: 14, color: T.text }} dangerouslySetInnerHTML={{ __html: r.order }} />
-          </div>
-        ))}
-      </Card>
-      <H3>Common Colours of 3d-Series Species</H3>
-      <Callout kind="note" title="Colour depends on chemical environment">
-        The entries below describe common aqueous or familiar oxo species. Ligand identity, geometry, concentration and oxidation state can change the observed colour; for example aqueous Co²⁺ is pink, while chloride-rich tetrahedral complexes are blue.
-      </Callout>
-      <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(150px, 1fr))", gap: 10 }}>
-        {ionColours.map((c) => (
-          <div key={c.ion} style={{ display: "flex", alignItems: "center", gap: 10, border: `1px solid ${T.border}`, borderRadius: 10, padding: "8px 10px", background: T.surface }}>
-            <span style={{ width: 18, height: 18, borderRadius: "50%", border: `1.5px solid ${T.textDim}`, background: c.swatch, flexShrink: 0 }} />
-            <div>
-              <div style={{ fontFamily: T.sans, fontSize: 13.5, fontWeight: 700, color: T.text }}>{c.ion}</div>
-              <div style={{ fontFamily: T.sans, fontSize: 11.5, color: T.textDim }}>{c.colour}</div>
+    <>
+      <div>
+            <SectionIntro eyebrow="Irregular trends in near-degenerate orbitals" title="3d-Series Energetics, Radius and Ion Colours" summary="Transition-metal trends are less regular than s- and p-block trends because 3d and 4s energies are close, multiple oxidation states are accessible and crystal-field effects influence colour and stability." accent={T.d} />
+            <H2 id="dblock-trends">3d-Series — Energetics & Ion Colours</H2>
+            <Card accent={T.d}>
+              <div style={{ display: "flex", flexWrap: "wrap", marginBottom: 8 }}>
+                {["Sc", "Ti", "V", "Cr", "Mn", "Fe", "Co", "Ni", "Cu", "Zn"].map((e) => <ElementChip key={e} symbol={e} color={T.d} />)}
+              </div>
+              {dBlockRows.map((r, i) => (
+                <div key={i} style={{ padding: "9px 0", borderBottom: `1px dashed ${T.borderSoft}` }}>
+                  <div style={{ fontFamily: T.sans, fontSize: 11, fontWeight: 700, color: T.d, textTransform: "uppercase", letterSpacing: 0.4 }}>{r.label}</div>
+                  <div style={{ fontFamily: T.mono, fontSize: 14, color: T.text }} dangerouslySetInnerHTML={{ __html: r.order }} />
+                </div>
+              ))}
+            </Card>
+            <H3>Common Colours of 3d-Series Species</H3>
+            <Callout kind="note" title="Colour depends on chemical environment">
+              The entries below describe common aqueous or familiar oxo species. Ligand identity, geometry, concentration and oxidation state can change the observed colour; for example aqueous Co²⁺ is pink, while chloride-rich tetrahedral complexes are blue.
+            </Callout>
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(150px, 1fr))", gap: 10 }}>
+              {ionColours.map((c) => (
+                <div key={c.ion} style={{ display: "flex", alignItems: "center", gap: 10, border: `1px solid ${T.border}`, borderRadius: 10, padding: "8px 10px", background: T.surface }}>
+                  <span style={{ width: 18, height: 18, borderRadius: "50%", border: `1.5px solid ${T.textDim}`, background: c.swatch, flexShrink: 0 }} />
+                  <div>
+                    <div style={{ fontFamily: T.sans, fontSize: 13.5, fontWeight: 700, color: T.text }}>{c.ion}</div>
+                    <div style={{ fontFamily: T.sans, fontSize: 11.5, color: T.textDim }}>{c.colour}</div>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
-        ))}
+      <div
+        data-integration="SectionDBlockTrends-periodicity-generated-corpus-phd-v9"
+        style={{ marginTop: 34 }}
+      >
+        <PeriodicTableDeepAdditions topic="dblock" />
       </div>
-    </div>
+    </>
   );
 }
 
@@ -2706,10 +2739,18 @@ export function ElectronicConfigurationDeepDive() {
 
 export function SectionConfiguration() {
   return (
-    <div>
-      <SectionConfigurationOverview />
-      <ElectronicConfigurationDeepDive />
-    </div>
+    <>
+      <div>
+            <SectionConfigurationOverview />
+            <ElectronicConfigurationDeepDive />
+          </div>
+      <div
+        data-integration="SectionConfiguration-periodicity-generated-corpus-phd-v9"
+        style={{ marginTop: 34 }}
+      >
+        <PeriodicTableDeepAdditions topic="configuration" />
+      </div>
+    </>
   );
 }
 
@@ -2727,69 +2768,77 @@ const trendDrivers = [
 
 export function SectionTrendMap() {
   return (
-    <div>
-      <SectionIntro
-        eyebrow="The logic behind every order"
-        title="Master Trend Map: Five Competing Effects, Not Blind Arrows"
-        summary="Periodic trends are not separate facts. They are consequences of the competition among effective nuclear charge, shell number, shielding, penetration, electron pairing and charge density. Learn the drivers first; the orders become predictable."
-        accent={T.gold}
-      />
-      <div style={{ display: "grid", gridTemplateColumns: "minmax(0,0.95fr) minmax(340px,1.05fr)", gap: 18, alignItems: "start" }} className="twoCol">
-        <div>
-          <H2 id="trend-map">1 · The Six Drivers</H2>
-          <ConceptGrid items={trendDrivers} columns={2} />
-        </div>
-        <TrendCompassSVG />
+    <>
+      <div>
+            <SectionIntro
+              eyebrow="The logic behind every order"
+              title="Master Trend Map: Five Competing Effects, Not Blind Arrows"
+              summary="Periodic trends are not separate facts. They are consequences of the competition among effective nuclear charge, shell number, shielding, penetration, electron pairing and charge density. Learn the drivers first; the orders become predictable."
+              accent={T.gold}
+            />
+            <div style={{ display: "grid", gridTemplateColumns: "minmax(0,0.95fr) minmax(340px,1.05fr)", gap: 18, alignItems: "start" }} className="twoCol">
+              <div>
+                <H2 id="trend-map">1 · The Six Drivers</H2>
+                <ConceptGrid items={trendDrivers} columns={2} />
+              </div>
+              <TrendCompassSVG />
+            </div>
+
+            <H2>2 · Normal Direction of Major Properties</H2>
+            <DataTable
+              columns={["Property", "Across a period →", "Down a group ↓", "Dominant explanation"]}
+              rows={[
+                ["Atomic / covalent radius", "decreases", "increases", "Zeff across; new shell down"],
+                ["Ionic radius for comparable ions", "generally decreases", "increases", "same-shell contraction; shell addition"],
+                ["First ionization enthalpy", "generally increases", "generally decreases", "size and Zeff"],
+                ["Electron gain enthalpy", "generally becomes more negative", "usually less negative", "attraction versus crowding"],
+                ["Electronegativity", "increases", "decreases", "ability of a bonded atom to attract electron density"],
+                ["Metallic character", "decreases", "increases", "ease of electron loss"],
+                ["Non-metallic character", "increases", "decreases", "electron attraction and gain"],
+                ["Basic character of oxides", "decreases", "increases for a group of metals", "ionic character and M–O bond cleavage"],
+                ["Acidic character of oxides", "increases", "often decreases within a p-block group", "covalency and oxidation state"],
+              ]}
+              accent={T.gold}
+            />
+
+            <H2>3 · A Reliable Ranking Algorithm</H2>
+            <ConceptGrid
+              items={[
+                { title: "Step 1: classify the comparison", tag: "ATOM / ION / BONDED ATOM", accent: T.cyan, body: "Do not mix atomic radius with ionic radius, electron affinity with electronegativity, or gas-phase reducing power with aqueous reducing power." },
+                { title: "Step 2: compare shell number", tag: "PRIMARY SIZE TEST", accent: T.s, body: "A species with an extra occupied shell is usually larger unless a strong contraction effect or very different charge overrides it." },
+                { title: "Step 3: compare nuclear charge", tag: "SAME ELECTRON COUNT", accent: T.gold, body: "Within an isoelectronic series, more protons always mean a smaller radius and stronger electron binding." },
+                { title: "Step 4: inspect configuration", tag: "LOCAL SPECIAL-CASE TEST", accent: T.d, body: "Check whether removal or addition creates or destroys ns², np³, d⁵ or d¹⁰ stability and whether electron pairing changes." },
+                { title: "Step 5: identify the medium", tag: "GAS VS AQUEOUS", accent: T.p, body: "Hydration enthalpy can reverse gas-phase trends. Lithium is the classic example in aqueous redox chemistry." },
+                { title: "Step 6: use data only when needed", tag: "FINAL TIE-BREAK", accent: T.f, body: "For irregular d-block orders and exact melting/boiling points, qualitative trends may be insufficient; rely on accepted data rather than forcing a false rule." },
+              ]}
+            />
+
+            <H2>4 · Normal Trend versus Special Case</H2>
+            <DataTable
+              columns={["Normal expectation", "Important special case", "Reason"]}
+              rows={[
+                ["IE rises across a period", "Be > B; Mg > Al", "electron removed from higher-energy p orbital in B/Al"],
+                ["IE rises across a period", "N > O; P > S", "pairing repulsion in p⁴ makes removal easier"],
+                ["Electron gain becomes more favourable across", "Cl more negative than F", "very compact 2p shell of F has stronger electron–electron repulsion"],
+                ["Radius decreases steadily across", "Ga is not much larger than Al", "poor shielding by 3d electrons contracts Ga"],
+                ["Radius increases down a group", "Zr ≈ Hf", "lanthanide contraction offsets the added shell"],
+                ["Heavier p-block element favours high oxidation state", "Tl(I), Pb(II), Bi(III) become more stable", "inert-pair effect stabilizes the lower oxidation state"],
+              ]}
+              accent={T.p}
+            />
+
+            <Callout kind="note" title="Isoelectronic shortcut">
+              When electron count is identical, the species with more protons is smaller. The full derivation, graphic and examples appear once in the Atomic & Ionic Radius module.
+            </Callout>
+
+          </div>
+      <div
+        data-integration="SectionTrendMap-periodicity-generated-corpus-phd-v9"
+        style={{ marginTop: 34 }}
+      >
+        <PeriodicTableDeepAdditions topic="map" />
       </div>
-
-      <H2>2 · Normal Direction of Major Properties</H2>
-      <DataTable
-        columns={["Property", "Across a period →", "Down a group ↓", "Dominant explanation"]}
-        rows={[
-          ["Atomic / covalent radius", "decreases", "increases", "Zeff across; new shell down"],
-          ["Ionic radius for comparable ions", "generally decreases", "increases", "same-shell contraction; shell addition"],
-          ["First ionization enthalpy", "generally increases", "generally decreases", "size and Zeff"],
-          ["Electron gain enthalpy", "generally becomes more negative", "usually less negative", "attraction versus crowding"],
-          ["Electronegativity", "increases", "decreases", "ability of a bonded atom to attract electron density"],
-          ["Metallic character", "decreases", "increases", "ease of electron loss"],
-          ["Non-metallic character", "increases", "decreases", "electron attraction and gain"],
-          ["Basic character of oxides", "decreases", "increases for a group of metals", "ionic character and M–O bond cleavage"],
-          ["Acidic character of oxides", "increases", "often decreases within a p-block group", "covalency and oxidation state"],
-        ]}
-        accent={T.gold}
-      />
-
-      <H2>3 · A Reliable Ranking Algorithm</H2>
-      <ConceptGrid
-        items={[
-          { title: "Step 1: classify the comparison", tag: "ATOM / ION / BONDED ATOM", accent: T.cyan, body: "Do not mix atomic radius with ionic radius, electron affinity with electronegativity, or gas-phase reducing power with aqueous reducing power." },
-          { title: "Step 2: compare shell number", tag: "PRIMARY SIZE TEST", accent: T.s, body: "A species with an extra occupied shell is usually larger unless a strong contraction effect or very different charge overrides it." },
-          { title: "Step 3: compare nuclear charge", tag: "SAME ELECTRON COUNT", accent: T.gold, body: "Within an isoelectronic series, more protons always mean a smaller radius and stronger electron binding." },
-          { title: "Step 4: inspect configuration", tag: "LOCAL SPECIAL-CASE TEST", accent: T.d, body: "Check whether removal or addition creates or destroys ns², np³, d⁵ or d¹⁰ stability and whether electron pairing changes." },
-          { title: "Step 5: identify the medium", tag: "GAS VS AQUEOUS", accent: T.p, body: "Hydration enthalpy can reverse gas-phase trends. Lithium is the classic example in aqueous redox chemistry." },
-          { title: "Step 6: use data only when needed", tag: "FINAL TIE-BREAK", accent: T.f, body: "For irregular d-block orders and exact melting/boiling points, qualitative trends may be insufficient; rely on accepted data rather than forcing a false rule." },
-        ]}
-      />
-
-      <H2>4 · Normal Trend versus Special Case</H2>
-      <DataTable
-        columns={["Normal expectation", "Important special case", "Reason"]}
-        rows={[
-          ["IE rises across a period", "Be > B; Mg > Al", "electron removed from higher-energy p orbital in B/Al"],
-          ["IE rises across a period", "N > O; P > S", "pairing repulsion in p⁴ makes removal easier"],
-          ["Electron gain becomes more favourable across", "Cl more negative than F", "very compact 2p shell of F has stronger electron–electron repulsion"],
-          ["Radius decreases steadily across", "Ga is not much larger than Al", "poor shielding by 3d electrons contracts Ga"],
-          ["Radius increases down a group", "Zr ≈ Hf", "lanthanide contraction offsets the added shell"],
-          ["Heavier p-block element favours high oxidation state", "Tl(I), Pb(II), Bi(III) become more stable", "inert-pair effect stabilizes the lower oxidation state"],
-        ]}
-        accent={T.p}
-      />
-
-      <Callout kind="note" title="Isoelectronic shortcut">
-        When electron count is identical, the species with more protons is smaller. The full derivation, graphic and examples appear once in the Atomic & Ionic Radius module.
-      </Callout>
-
-    </div>
+    </>
   );
 }
 
@@ -3439,167 +3488,175 @@ function SectionElectronegativityLegacyV9() {
    ========================================================================== */
 export function SectionChemicalPeriodicity() {
   return (
-    <div>
-      <SectionIntro
-        eyebrow="From atomic trends to chemical behaviour"
-        title="Chemical Periodicity: Valency, Oxidation States, Oxides, Hydrides and Ionic Energetics"
-        summary="Atomic trends become chemically useful only when they are connected to bond formation, oxidation state, oxide character, hydride stability, lattice enthalpy, hydration and polarizing power."
-        accent={T.p}
-      />
+    <>
+      <div>
+            <SectionIntro
+              eyebrow="From atomic trends to chemical behaviour"
+              title="Chemical Periodicity: Valency, Oxidation States, Oxides, Hydrides and Ionic Energetics"
+              summary="Atomic trends become chemically useful only when they are connected to bond formation, oxidation state, oxide character, hydride stability, lattice enthalpy, hydration and polarizing power."
+              accent={T.p}
+            />
 
-      <H2 id="chemical-periodicity">1 · Valency Across a Representative Period</H2>
-      <P>
-        The number of valence electrons rises from one to eight across a main-group period. With respect to hydrogen, the classical covalency usually rises from 1 to 4 and then falls from 3 to 0 because atoms tend to complete an octet by sharing the smaller of the numbers v and 8−v.
-      </P>
-      <DataTable
-        columns={["Group", "Valence configuration", "Typical simple valency", "Representative hydride"]}
-        rows={[
-          ["1", "ns¹", "1", "LiH / NaH"],
-          ["2", "ns²", "2", "BeH₂ / MgH₂"],
-          ["13", "ns²np¹", "3", "BH₃ units / B₂H₆"],
-          ["14", "ns²np²", "4", "CH₄ / SiH₄"],
-          ["15", "ns²np³", "3", "NH₃ / PH₃"],
-          ["16", "ns²np⁴", "2", "H₂O / H₂S"],
-          ["17", "ns²np⁵", "1", "HF / HCl"],
-          ["18", "closed shell", "0 in ordinary compounds", "—"],
-        ]}
-        accent={T.p}
-      />
+            <H2 id="chemical-periodicity">1 · Valency Across a Representative Period</H2>
+            <P>
+              The number of valence electrons rises from one to eight across a main-group period. With respect to hydrogen, the classical covalency usually rises from 1 to 4 and then falls from 3 to 0 because atoms tend to complete an octet by sharing the smaller of the numbers v and 8−v.
+            </P>
+            <DataTable
+              columns={["Group", "Valence configuration", "Typical simple valency", "Representative hydride"]}
+              rows={[
+                ["1", "ns¹", "1", "LiH / NaH"],
+                ["2", "ns²", "2", "BeH₂ / MgH₂"],
+                ["13", "ns²np¹", "3", "BH₃ units / B₂H₆"],
+                ["14", "ns²np²", "4", "CH₄ / SiH₄"],
+                ["15", "ns²np³", "3", "NH₃ / PH₃"],
+                ["16", "ns²np⁴", "2", "H₂O / H₂S"],
+                ["17", "ns²np⁵", "1", "HF / HCl"],
+                ["18", "closed shell", "0 in ordinary compounds", "—"],
+              ]}
+              accent={T.p}
+            />
 
-      <H2>2 · Oxidation States in the p Block</H2>
-      <P>
-        The maximum positive oxidation state of a main-group element often equals its group number minus 10. Negative oxidation states are common when an element is more electronegative than its bonding partner. Down groups 13–16, lower oxidation states become increasingly stable because the ns² pair is less available for bonding.
-      </P>
-      <DataTable
-        columns={["Group", "Maximum positive state", "Important lower state", "Down-group tendency"]}
-        rows={[
-          ["13", "+3", "+1", "+1 becomes increasingly stable; Tl(I) is especially important"],
-          ["14", "+4", "+2", "+2 becomes more stable from Sn to Pb"],
-          ["15", "+5", "+3", "+3 becomes more stable from Sb to Bi"],
-          ["16", "+6", "+4", "higher states become less stable in the heavier members"],
-          ["17", "+7 except F", "+1, +3, +5", "F shows only −1 in ordinary compounds because it lacks accessible d orbitals and is most electronegative"],
-        ]}
-        accent={T.gold}
-      />
-      <Callout kind="special" title="Maximum oxidation state is not the same as maximum covalency">
-        Oxidation state is formal electron bookkeeping, whereas covalency counts shared electron pairs or bonds. Modern bonding descriptions do not require literal use of vacant d orbitals to explain hypervalent main-group molecules.
-      </Callout>
+            <H2>2 · Oxidation States in the p Block</H2>
+            <P>
+              The maximum positive oxidation state of a main-group element often equals its group number minus 10. Negative oxidation states are common when an element is more electronegative than its bonding partner. Down groups 13–16, lower oxidation states become increasingly stable because the ns² pair is less available for bonding.
+            </P>
+            <DataTable
+              columns={["Group", "Maximum positive state", "Important lower state", "Down-group tendency"]}
+              rows={[
+                ["13", "+3", "+1", "+1 becomes increasingly stable; Tl(I) is especially important"],
+                ["14", "+4", "+2", "+2 becomes more stable from Sn to Pb"],
+                ["15", "+5", "+3", "+3 becomes more stable from Sb to Bi"],
+                ["16", "+6", "+4", "higher states become less stable in the heavier members"],
+                ["17", "+7 except F", "+1, +3, +5", "F shows only −1 in ordinary compounds because it lacks accessible d orbitals and is most electronegative"],
+              ]}
+              accent={T.gold}
+            />
+            <Callout kind="special" title="Maximum oxidation state is not the same as maximum covalency">
+              Oxidation state is formal electron bookkeeping, whereas covalency counts shared electron pairs or bonds. Modern bonding descriptions do not require literal use of vacant d orbitals to explain hypervalent main-group molecules.
+            </Callout>
 
-      <H2>3 · Metallic and Non-metallic Character</H2>
-      <ConceptGrid
-        items={[
-          { title: "Across a period", tag: "METAL → METALLOID → NON-METAL", accent: T.gold, body: "Ionization enthalpy and electronegativity rise, so electron loss becomes harder and electron sharing/gain becomes more important." },
-          { title: "Down a group", tag: "METALLIC CHARACTER ↑", accent: T.s, body: "Larger size and lower ionization enthalpy favour electron loss. In group 14, for example, C is non-metallic, Si/Ge are metalloids and Sn/Pb are metals." },
-          { title: "Transition region", tag: "METALLOIDS", accent: T.d, body: "B, Si, Ge, As, Sb and Te lie near the zig-zag boundary and show mixed conductivity and oxide behaviour." },
-          { title: "Electropositive extremes", tag: "LOW IE", accent: T.cyan, body: "Alkali metals are strongly electropositive, while halogens are strongly electron-attracting. Noble gases are closed-shell rather than simply 'most non-metallic'." },
-        ]}
-      />
+            <H2>3 · Metallic and Non-metallic Character</H2>
+            <ConceptGrid
+              items={[
+                { title: "Across a period", tag: "METAL → METALLOID → NON-METAL", accent: T.gold, body: "Ionization enthalpy and electronegativity rise, so electron loss becomes harder and electron sharing/gain becomes more important." },
+                { title: "Down a group", tag: "METALLIC CHARACTER ↑", accent: T.s, body: "Larger size and lower ionization enthalpy favour electron loss. In group 14, for example, C is non-metallic, Si/Ge are metalloids and Sn/Pb are metals." },
+                { title: "Transition region", tag: "METALLOIDS", accent: T.d, body: "B, Si, Ge, As, Sb and Te lie near the zig-zag boundary and show mixed conductivity and oxide behaviour." },
+                { title: "Electropositive extremes", tag: "LOW IE", accent: T.cyan, body: "Alkali metals are strongly electropositive, while halogens are strongly electron-attracting. Noble gases are closed-shell rather than simply 'most non-metallic'." },
+              ]}
+            />
 
-      <H2>4 · Oxides Across a Period</H2>
-      <P>
-        As metallic character decreases and oxidation state rises across a period, oxide bonding changes from predominantly ionic to increasingly covalent. Ionic oxides readily furnish O²⁻ or OH⁻ in water and are basic; covalent oxides often form oxyacids and are acidic. Intermediate oxides may be amphoteric.
-      </P>
-      <OxideTrendSVG />
-      <DataTable
-        columns={["Oxide", "Character", "Illustrative reaction"]}
-        rows={[
-          ["Na₂O", "strongly basic", "Na₂O + H₂O → 2NaOH"],
-          ["MgO", "basic", "MgO + 2HCl → MgCl₂ + H₂O"],
-          ["Al₂O₃", "amphoteric", "reacts with both acids and strong bases"],
-          ["SiO₂", "acidic network oxide", "SiO₂ + 2NaOH → Na₂SiO₃ + H₂O"],
-          ["P₄O₁₀", "acidic", "P₄O₁₀ + 6H₂O → 4H₃PO₄"],
-          ["SO₃", "strongly acidic", "SO₃ + H₂O → H₂SO₄"],
-          ["Cl₂O₇", "strongly acidic", "Cl₂O₇ + H₂O → 2HClO₄"],
-        ]}
-        accent={T.p}
-      />
-      <MathBlock tex={String.raw`\mathrm{CrO<Cr_2O_3<CrO_3}\quad\text{in acidic character}`} />
-      <Callout kind="note" title="Common amphoteric oxides">
-        BeO, Al₂O₃, ZnO, SnO, SnO₂, PbO and PbO₂ are frequent examples. Amphoterism depends on the reaction medium and should be demonstrated by actual acid/base reactions.
-      </Callout>
+            <H2>4 · Oxides Across a Period</H2>
+            <P>
+              As metallic character decreases and oxidation state rises across a period, oxide bonding changes from predominantly ionic to increasingly covalent. Ionic oxides readily furnish O²⁻ or OH⁻ in water and are basic; covalent oxides often form oxyacids and are acidic. Intermediate oxides may be amphoteric.
+            </P>
+            <OxideTrendSVG />
+            <DataTable
+              columns={["Oxide", "Character", "Illustrative reaction"]}
+              rows={[
+                ["Na₂O", "strongly basic", "Na₂O + H₂O → 2NaOH"],
+                ["MgO", "basic", "MgO + 2HCl → MgCl₂ + H₂O"],
+                ["Al₂O₃", "amphoteric", "reacts with both acids and strong bases"],
+                ["SiO₂", "acidic network oxide", "SiO₂ + 2NaOH → Na₂SiO₃ + H₂O"],
+                ["P₄O₁₀", "acidic", "P₄O₁₀ + 6H₂O → 4H₃PO₄"],
+                ["SO₃", "strongly acidic", "SO₃ + H₂O → H₂SO₄"],
+                ["Cl₂O₇", "strongly acidic", "Cl₂O₇ + H₂O → 2HClO₄"],
+              ]}
+              accent={T.p}
+            />
+            <MathBlock tex={String.raw`\mathrm{CrO<Cr_2O_3<CrO_3}\quad\text{in acidic character}`} />
+            <Callout kind="note" title="Common amphoteric oxides">
+              BeO, Al₂O₃, ZnO, SnO, SnO₂, PbO and PbO₂ are frequent examples. Amphoterism depends on the reaction medium and should be demonstrated by actual acid/base reactions.
+            </Callout>
 
-      <H2>5 · Hydrides: Bonding, Stability and Acid–Base Trends</H2>
-      <DataTable
-        columns={["Family", "General hydride", "Key down-group trend"]}
-        rows={[
-          ["Group 14", "EH₄", "thermal stability falls: CH₄ > SiH₄ > GeH₄ > SnH₄; reducing character rises"],
-          ["Group 15", "EH₃", "basicity generally falls: NH₃ > PH₃ > AsH₃ > SbH₃; thermal stability falls"],
-          ["Group 16", "H₂E", "acid strength rises: H₂O < H₂S < H₂Se < H₂Te; bond strength falls"],
-          ["Group 17", "HX", "acid strength in water rises: HF < HCl < HBr < HI; H–X bond strength falls"],
-        ]}
-        accent={T.d}
-      />
-      <P>
-        HF is a weak acid in water relative to HCl, HBr and HI despite fluorine's high electronegativity because the H–F bond is unusually strong and extensive hydrogen bonding affects the solution chemistry.
-      </P>
+            <H2>5 · Hydrides: Bonding, Stability and Acid–Base Trends</H2>
+            <DataTable
+              columns={["Family", "General hydride", "Key down-group trend"]}
+              rows={[
+                ["Group 14", "EH₄", "thermal stability falls: CH₄ > SiH₄ > GeH₄ > SnH₄; reducing character rises"],
+                ["Group 15", "EH₃", "basicity generally falls: NH₃ > PH₃ > AsH₃ > SbH₃; thermal stability falls"],
+                ["Group 16", "H₂E", "acid strength rises: H₂O < H₂S < H₂Se < H₂Te; bond strength falls"],
+                ["Group 17", "HX", "acid strength in water rises: HF < HCl < HBr < HI; H–X bond strength falls"],
+              ]}
+              accent={T.d}
+            />
+            <P>
+              HF is a weak acid in water relative to HCl, HBr and HI despite fluorine's high electronegativity because the H–F bond is unusually strong and extensive hydrogen bonding affects the solution chemistry.
+            </P>
 
-      <H2>6 · Lattice Enthalpy, Hydration Enthalpy and Solubility</H2>
-      <P>
-        The stability of an ionic solid depends strongly on electrostatic attraction between gaseous ions. A simple model predicts that lattice enthalpy magnitude increases with ionic charge and decreases with interionic distance. Hydration enthalpy is released when gaseous ions become surrounded by water molecules and similarly grows with charge density.
-      </P>
-      <MathBlock tex={String.raw`|U|\propto\frac{|z_+z_-|}{r_++r_-}`} />
-      <MathBlock tex={String.raw`|\Delta H_{\mathrm{hyd}}|\text{ generally increases with }\frac{|z|}{r_{\mathrm{ion}}}`} />
-      <DataTable
-        columns={["Comparison", "Expected magnitude order", "Reason"]}
-        rows={[
-          ["Al³⁺, Mg²⁺, Na⁺", "Al³⁺ > Mg²⁺ > Na⁺ hydration", "charge density rises strongly"],
-          ["Li⁺, Na⁺, K⁺, Rb⁺, Cs⁺", "Li⁺ > Na⁺ > K⁺ > Rb⁺ > Cs⁺ hydration", "ionic size increases down the group"],
-          ["NaF, NaCl, NaBr, NaI", "NaF > NaCl > NaBr > NaI lattice magnitude", "anion size increases"],
-          ["MgO and NaF", "MgO much larger", "product of ionic charges is 4 versus 1"],
-        ]}
-        accent={T.cyan}
-      />
-      <Callout kind="special" title="Solubility is a competition">
-        A large lattice enthalpy opposes dissolution, while large hydration enthalpy favours it. Entropy and crystal structure also matter, so solubility cannot be predicted from a single radius trend alone.
-      </Callout>
+            <H2>6 · Lattice Enthalpy, Hydration Enthalpy and Solubility</H2>
+            <P>
+              The stability of an ionic solid depends strongly on electrostatic attraction between gaseous ions. A simple model predicts that lattice enthalpy magnitude increases with ionic charge and decreases with interionic distance. Hydration enthalpy is released when gaseous ions become surrounded by water molecules and similarly grows with charge density.
+            </P>
+            <MathBlock tex={String.raw`|U|\propto\frac{|z_+z_-|}{r_++r_-}`} />
+            <MathBlock tex={String.raw`|\Delta H_{\mathrm{hyd}}|\text{ generally increases with }\frac{|z|}{r_{\mathrm{ion}}}`} />
+            <DataTable
+              columns={["Comparison", "Expected magnitude order", "Reason"]}
+              rows={[
+                ["Al³⁺, Mg²⁺, Na⁺", "Al³⁺ > Mg²⁺ > Na⁺ hydration", "charge density rises strongly"],
+                ["Li⁺, Na⁺, K⁺, Rb⁺, Cs⁺", "Li⁺ > Na⁺ > K⁺ > Rb⁺ > Cs⁺ hydration", "ionic size increases down the group"],
+                ["NaF, NaCl, NaBr, NaI", "NaF > NaCl > NaBr > NaI lattice magnitude", "anion size increases"],
+                ["MgO and NaF", "MgO much larger", "product of ionic charges is 4 versus 1"],
+              ]}
+              accent={T.cyan}
+            />
+            <Callout kind="special" title="Solubility is a competition">
+              A large lattice enthalpy opposes dissolution, while large hydration enthalpy favours it. Entropy and crystal structure also matter, so solubility cannot be predicted from a single radius trend alone.
+            </Callout>
 
-      <H2>7 · Polarization and Fajans-Type Reasoning</H2>
-      <ConceptGrid
-        items={[
-          { title: "Polarizing power of cation", tag: "SMALL + HIGH CHARGE", accent: T.gold, body: "A compact highly charged cation strongly distorts the electron cloud of a neighbouring anion and increases covalent character." },
-          { title: "Polarizability of anion", tag: "LARGE + HIGH CHARGE", accent: T.p, body: "A diffuse anion is more easily distorted. I⁻ is more polarizable than F⁻; S²⁻ is more polarizable than O²⁻." },
-          { title: "Pseudo-noble-gas cations", tag: "d¹⁰ CORE", accent: T.f, body: "Cations such as Cu⁺ and Ag⁺ can polarize more strongly than similarly sized noble-gas-core ions because d electrons shield imperfectly." },
-          { title: "Consequence", tag: "COVALENCY ↑", accent: T.d, body: "Greater polarization often lowers melting point, decreases water solubility and favours molecular or polymeric structures, but each comparison needs context." },
-        ]}
-      />
+            <H2>7 · Polarization and Fajans-Type Reasoning</H2>
+            <ConceptGrid
+              items={[
+                { title: "Polarizing power of cation", tag: "SMALL + HIGH CHARGE", accent: T.gold, body: "A compact highly charged cation strongly distorts the electron cloud of a neighbouring anion and increases covalent character." },
+                { title: "Polarizability of anion", tag: "LARGE + HIGH CHARGE", accent: T.p, body: "A diffuse anion is more easily distorted. I⁻ is more polarizable than F⁻; S²⁻ is more polarizable than O²⁻." },
+                { title: "Pseudo-noble-gas cations", tag: "d¹⁰ CORE", accent: T.f, body: "Cations such as Cu⁺ and Ag⁺ can polarize more strongly than similarly sized noble-gas-core ions because d electrons shield imperfectly." },
+                { title: "Consequence", tag: "COVALENCY ↑", accent: T.d, body: "Greater polarization often lowers melting point, decreases water solubility and favours molecular or polymeric structures, but each comparison needs context." },
+              ]}
+            />
 
-      <WorkedExample
-        number="M"
-        title="Rank oxide acidity"
-        question="Arrange Na₂O, Al₂O₃ and SO₃ in increasing acidic character."
-        reasoning={[
-          "Na is highly metallic, so Na₂O is strongly ionic and basic.",
-          "Al₂O₃ lies near the metal–non-metal boundary and is amphoteric.",
-          "S is a non-metal in a high oxidation state; SO₃ is covalent and strongly acidic.",
-        ]}
-        answer="Na₂O < Al₂O₃ < SO₃ in acidic character."
-        accent={T.p}
-      />
-      <WorkedExample
-        number="N"
-        title="Compare hydration enthalpy"
-        question="Which has the larger magnitude of hydration enthalpy: Mg²⁺ or Ca²⁺?"
-        reasoning={[
-          "Both ions have the same charge.",
-          "Mg²⁺ is smaller because it has one fewer occupied shell.",
-          "Its higher charge density gives stronger ion–dipole attraction to water.",
-        ]}
-        answer="|ΔHhydr(Mg²⁺)| > |ΔHhydr(Ca²⁺)|."
-        accent={T.cyan}
-      />
-      <WorkedExample
-        number="O"
-        title="Use polarization to compare covalency"
-        question="Which is expected to have greater covalent character, LiF or LiI?"
-        reasoning={[
-          "The cation is the same in both salts.",
-          "I⁻ is much larger and more polarizable than F⁻.",
-          "Li⁺ distorts the diffuse electron cloud of I⁻ more strongly.",
-        ]}
-        answer="LiI has greater covalent character than LiF."
-        accent={T.gold}
-      />
-    </div>
+            <WorkedExample
+              number="M"
+              title="Rank oxide acidity"
+              question="Arrange Na₂O, Al₂O₃ and SO₃ in increasing acidic character."
+              reasoning={[
+                "Na is highly metallic, so Na₂O is strongly ionic and basic.",
+                "Al₂O₃ lies near the metal–non-metal boundary and is amphoteric.",
+                "S is a non-metal in a high oxidation state; SO₃ is covalent and strongly acidic.",
+              ]}
+              answer="Na₂O < Al₂O₃ < SO₃ in acidic character."
+              accent={T.p}
+            />
+            <WorkedExample
+              number="N"
+              title="Compare hydration enthalpy"
+              question="Which has the larger magnitude of hydration enthalpy: Mg²⁺ or Ca²⁺?"
+              reasoning={[
+                "Both ions have the same charge.",
+                "Mg²⁺ is smaller because it has one fewer occupied shell.",
+                "Its higher charge density gives stronger ion–dipole attraction to water.",
+              ]}
+              answer="|ΔHhydr(Mg²⁺)| > |ΔHhydr(Ca²⁺)|."
+              accent={T.cyan}
+            />
+            <WorkedExample
+              number="O"
+              title="Use polarization to compare covalency"
+              question="Which is expected to have greater covalent character, LiF or LiI?"
+              reasoning={[
+                "The cation is the same in both salts.",
+                "I⁻ is much larger and more polarizable than F⁻.",
+                "Li⁺ distorts the diffuse electron cloud of I⁻ more strongly.",
+              ]}
+              answer="LiI has greater covalent character than LiF."
+              accent={T.gold}
+            />
+          </div>
+      <div
+        data-integration="SectionChemicalPeriodicity-periodicity-generated-corpus-phd-v9"
+        style={{ marginTop: 34 }}
+      >
+        <PeriodicTableDeepAdditions topic="chemistry" />
+      </div>
+    </>
   );
 }
 
@@ -4330,49 +4387,57 @@ const workshopExamples = [
 
 export function SectionWorkshop() {
   return (
-    <div>
-      <SectionIntro
-        eyebrow="Original application set"
-        title="Worked Example Workshop: From Rules to Multi-Factor Reasoning"
-        summary="These examples are newly written and arranged by concept. Each solution identifies the controlling variable instead of relying on memorised arrows, so the same method transfers to unfamiliar questions."
-        accent={T.d}
-      />
-      <H2 id="workshop">Mixed Worked Examples</H2>
-      <P>
-        Before ranking any set, label the species, count shells and electrons, compare nuclear charge, inspect the configuration and note the physical medium. Exact numerical d-block orders should be treated as data rather than forced into an oversimplified trend.
-      </P>
-      {workshopExamples.map((ex) => (
-        <WorkedExample key={ex.number} {...ex} />
-      ))}
+    <>
+      <div>
+            <SectionIntro
+              eyebrow="Original application set"
+              title="Worked Example Workshop: From Rules to Multi-Factor Reasoning"
+              summary="These examples are newly written and arranged by concept. Each solution identifies the controlling variable instead of relying on memorised arrows, so the same method transfers to unfamiliar questions."
+              accent={T.d}
+            />
+            <H2 id="workshop">Mixed Worked Examples</H2>
+            <P>
+              Before ranking any set, label the species, count shells and electrons, compare nuclear charge, inspect the configuration and note the physical medium. Exact numerical d-block orders should be treated as data rather than forced into an oversimplified trend.
+            </P>
+            {workshopExamples.map((ex) => (
+              <WorkedExample key={ex.number} {...ex} />
+            ))}
 
-      <H2>High-Yield Comparison Matrix</H2>
-      <DataTable
-        columns={["Question asks for", "First comparison", "Second comparison", "Common trap"]}
-        rows={[
-          ["Atomic / ionic radius", "shell count", "Z for isoelectronic species", "mixing atom and ion radii"],
-          ["Ionization enthalpy", "size and Zeff", "subshell / pairing stability", "assuming a perfectly smooth period"],
-          ["Electron gain enthalpy", "resulting configuration", "crowding and size", "equating it directly with electronegativity"],
-          ["Electronegativity", "bonded-atom environment", "Zeff, radius, hybridization", "assigning a value to an isolated atom"],
-          ["Reducing power in water", "complete redox cycle", "hydration and atomization", "using gas-phase IE alone"],
-          ["Solubility of ionic solid", "lattice enthalpy", "hydration + entropy", "using only ionic size"],
-          ["Covalent character", "cation polarizing power", "anion polarizability", "assuming all metal–nonmetal bonds are purely ionic"],
-          ["Oxide acidity", "metallic character", "oxidation state", "ignoring amphoteric behaviour"],
-        ]}
-        accent={T.d}
-      />
+            <H2>High-Yield Comparison Matrix</H2>
+            <DataTable
+              columns={["Question asks for", "First comparison", "Second comparison", "Common trap"]}
+              rows={[
+                ["Atomic / ionic radius", "shell count", "Z for isoelectronic species", "mixing atom and ion radii"],
+                ["Ionization enthalpy", "size and Zeff", "subshell / pairing stability", "assuming a perfectly smooth period"],
+                ["Electron gain enthalpy", "resulting configuration", "crowding and size", "equating it directly with electronegativity"],
+                ["Electronegativity", "bonded-atom environment", "Zeff, radius, hybridization", "assigning a value to an isolated atom"],
+                ["Reducing power in water", "complete redox cycle", "hydration and atomization", "using gas-phase IE alone"],
+                ["Solubility of ionic solid", "lattice enthalpy", "hydration + entropy", "using only ionic size"],
+                ["Covalent character", "cation polarizing power", "anion polarizability", "assuming all metal–nonmetal bonds are purely ionic"],
+                ["Oxide acidity", "metallic character", "oxidation state", "ignoring amphoteric behaviour"],
+              ]}
+              accent={T.d}
+            />
 
-      <H2>Final One-Page Logic Chain</H2>
-      <ConceptGrid
-        items={[
-          { title: "Across a period", tag: "Zeff ↑", accent: T.gold, body: "radius ↓ → IE generally ↑ → EN ↑ → metallic character ↓ → oxide acidity ↑" },
-          { title: "Down a group", tag: "SHELLS ↑", accent: T.cyan, body: "radius ↑ → IE generally ↓ → EN ↓ → metallic character ↑; heavy-element contractions may interrupt" },
-          { title: "Isoelectronic series", tag: "ELECTRONS FIXED", accent: T.p, body: "higher Z → smaller radius → stronger electron binding" },
-          { title: "Successive ionization", tag: "GIANT JUMP", accent: T.s, body: "jump after n electrons → n valence electrons removed before core exposure" },
-          { title: "Electron addition", tag: "ATTRACTION − REPULSION", accent: T.d, body: "favourability depends on Zeff, size, crowding and resulting configuration" },
-          { title: "Ionic energetics", tag: "CHARGE DENSITY", accent: T.f, body: "small/high-charge ions give large lattice and hydration magnitudes and stronger polarization" },
-        ]}
-      />
-    </div>
+            <H2>Final One-Page Logic Chain</H2>
+            <ConceptGrid
+              items={[
+                { title: "Across a period", tag: "Zeff ↑", accent: T.gold, body: "radius ↓ → IE generally ↑ → EN ↑ → metallic character ↓ → oxide acidity ↑" },
+                { title: "Down a group", tag: "SHELLS ↑", accent: T.cyan, body: "radius ↑ → IE generally ↓ → EN ↓ → metallic character ↑; heavy-element contractions may interrupt" },
+                { title: "Isoelectronic series", tag: "ELECTRONS FIXED", accent: T.p, body: "higher Z → smaller radius → stronger electron binding" },
+                { title: "Successive ionization", tag: "GIANT JUMP", accent: T.s, body: "jump after n electrons → n valence electrons removed before core exposure" },
+                { title: "Electron addition", tag: "ATTRACTION − REPULSION", accent: T.d, body: "favourability depends on Zeff, size, crowding and resulting configuration" },
+                { title: "Ionic energetics", tag: "CHARGE DENSITY", accent: T.f, body: "small/high-charge ions give large lattice and hydration magnitudes and stronger polarization" },
+              ]}
+            />
+          </div>
+      <div
+        data-integration="SectionWorkshop-periodicity-generated-corpus-phd-v9"
+        style={{ marginTop: 34 }}
+      >
+        <PeriodicTableDeepAdditions topic="workshop" />
+      </div>
+    </>
   );
 }
 
@@ -5353,22 +5418,60 @@ export function SectionWorldReference() {
 
 /* PERIODICITY_WORLD_V10_SECTION_WRAPPERS */
 export function SectionAtomicRadius() {
-  return <><SectionAtomicRadiusLegacyV9 /><V9RadiusSourcePanel /></>;
+  return (
+    <>
+      <><SectionAtomicRadiusLegacyV9 /><V9RadiusSourcePanel /></>
+      <div
+        data-integration="SectionAtomicRadius-periodicity-generated-corpus-phd-v9"
+        style={{ marginTop: 34 }}
+      >
+        <PeriodicTableDeepAdditions topic="radius" />
+      </div>
+    </>
+  );
 }
 
 export function SectionIonization() {
-  return <><SectionIonizationLegacyV9 /><V9IonizationSourcePanel /></>;
+  return (
+    <>
+      <><SectionIonizationLegacyV9 /><V9IonizationSourcePanel /></>
+      <div
+        data-integration="SectionIonization-periodicity-generated-corpus-phd-v9"
+        style={{ marginTop: 34 }}
+      >
+        <PeriodicTableDeepAdditions topic="ionization" />
+      </div>
+    </>
+  );
 }
 
 export function SectionElectronGain() {
-  return <><SectionElectronGainLegacyV9 /><V9ElectronGainSourcePanel /></>;
+  return (
+    <>
+      <><SectionElectronGainLegacyV9 /><V9ElectronGainSourcePanel /></>
+      <div
+        data-integration="SectionElectronGain-periodicity-generated-corpus-phd-v9"
+        style={{ marginTop: 34 }}
+      >
+        <PeriodicTableDeepAdditions topic="electronGain" />
+      </div>
+    </>
+  );
 }
 
 export function SectionElectronegativity() {
   return (
     <>
-      <SectionElectronegativityV12 />
-      <ElectronegativityFactorsApplicationsV14 />
+      <>
+            <SectionElectronegativityV12 />
+            <ElectronegativityFactorsApplicationsV14 />
+          </>
+      <div
+        data-integration="SectionElectronegativity-periodicity-generated-corpus-phd-v9"
+        style={{ marginTop: 34 }}
+      >
+        <PeriodicTableDeepAdditions topic="electronegativity" />
+      </div>
     </>
   );
 }
@@ -5379,7 +5482,17 @@ function SectionElectronegativityLegacy() {
 }
 
 export function SectionSpecialEffects() {
-  return <><SectionSpecialEffectsLegacyV9 /><V9SpecialSourcePanel /><V10SecondaryPeriodicityPanel /><V10CohesiveAndMeltingPanel /><V10OlympiadEnrichmentPanel /></>;
+  return (
+    <>
+      <><SectionSpecialEffectsLegacyV9 /><V9SpecialSourcePanel /><V10SecondaryPeriodicityPanel /><V10CohesiveAndMeltingPanel /><V10OlympiadEnrichmentPanel /></>
+      <div
+        data-integration="SectionSpecialEffects-periodicity-generated-corpus-phd-v9"
+        style={{ marginTop: 34 }}
+      >
+        <PeriodicTableDeepAdditions topic="special" />
+      </div>
+    </>
+  );
 }
 
 /* =============================================================================

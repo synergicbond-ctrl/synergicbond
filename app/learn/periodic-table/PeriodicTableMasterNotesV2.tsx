@@ -1,8 +1,9 @@
 "use client";
 
-/* eslint-disable react/no-unescaped-entities, @typescript-eslint/no-unused-vars */
+/* eslint-disable react/no-unescaped-entities, react/jsx-key, @typescript-eslint/no-unused-vars */
 
 import React, { useMemo, useState } from "react";
+import * as katex from "katex";
 
 /* =============================================================================
    PERIODIC TABLE & PERIODIC PROPERTIES — MASTER NOTES
@@ -23,8 +24,8 @@ const T = {
   border: "#24405c",
   borderSoft: "#1c3049",
   text: "#eef3f8",
-  textDim: "#8fa8bf",
-  textFaint: "#5f7a92",
+  textDim: "#c3d1dd",
+  textFaint: "#91a9bc",
   gold: "#e8b84b",
   cyan: "#5fd4ea",
   s: "#7fb2e5",
@@ -34,7 +35,7 @@ const T = {
   danger: "#e8896b",
   ok: "#7fd9b8",
   serif: "Georgia, 'Iowan Old Style', 'Times New Roman', serif",
-  mono: "'JetBrains Mono','SF Mono','Courier New', ui-monospace, monospace",
+  mono: "'SFMono-Regular',Consolas,'Liberation Mono',monospace",
   sans: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
 };
 
@@ -134,19 +135,85 @@ export function Formula({ children }: { children: React.ReactNode }) {
   );
 }
 
+
+export function MathBlock({ tex, label }: { tex: string; label?: string }) {
+  const html = katex.renderToString(tex, {
+    throwOnError: false,
+    displayMode: true,
+    output: "mathml",
+    strict: "ignore",
+  });
+  return (
+    <div
+      style={{
+        background: "linear-gradient(135deg, rgba(95,212,234,0.08), rgba(232,184,75,0.04))",
+        border: `1px solid ${T.border}`,
+        borderLeft: `4px solid ${T.cyan}`,
+        borderRadius: 10,
+        padding: "12px 16px",
+        margin: "12px 0",
+        overflowX: "auto",
+      }}
+    >
+      {label ? <div style={{ color: T.textDim, fontSize: 11.5, fontWeight: 800, marginBottom: 6, textTransform: "uppercase", letterSpacing: 0.5 }}>{label}</div> : null}
+      <div style={{ color: T.text, fontSize: 18 }} dangerouslySetInnerHTML={{ __html: html }} />
+    </div>
+  );
+}
+
+export function MathInline({ tex }: { tex: string }) {
+  const html = katex.renderToString(tex, {
+    throwOnError: false,
+    displayMode: false,
+    output: "mathml",
+    strict: "ignore",
+  });
+  return <span style={{ color: T.cyan, fontWeight: 700 }} dangerouslySetInnerHTML={{ __html: html }} />;
+}
+
+export function DefinitionBox({ term, children }: { term: string; children: React.ReactNode }) {
+  return (
+    <div style={{ background: "rgba(127,217,184,0.07)", border: `1px solid ${T.d}66`, borderRadius: 12, padding: "14px 16px", margin: "12px 0" }}>
+      <div style={{ fontFamily: T.sans, fontSize: 11, fontWeight: 900, letterSpacing: 0.7, textTransform: "uppercase", color: T.d, marginBottom: 6 }}>NCERT-aligned definition</div>
+      <div style={{ fontFamily: T.serif, fontSize: 18, fontWeight: 800, color: T.text, marginBottom: 5 }}>{term}</div>
+      <div style={{ fontFamily: T.sans, fontSize: 14.2, lineHeight: 1.7, color: T.text }}>{children}</div>
+    </div>
+  );
+}
+
+export function RelationBox({ title, relations }: { title: string; relations: React.ReactNode[] }) {
+  return (
+    <div style={{ background: "rgba(232,184,75,0.06)", border: `1px solid ${T.gold}66`, borderRadius: 12, padding: "14px 16px", margin: "12px 0" }}>
+      <div style={{ fontFamily: T.serif, color: T.gold, fontWeight: 800, fontSize: 17, marginBottom: 9 }}>{title}</div>
+      <div style={{ display: "grid", gap: 7 }}>
+        {relations.map((r, i) => <div key={i} style={{ fontFamily: T.sans, color: T.text, fontSize: 14, lineHeight: 1.6, paddingLeft: 14, position: "relative" }}><span style={{ position: "absolute", left: 0, color: T.gold }}>•</span>{r}</div>)}
+      </div>
+    </div>
+  );
+}
+
+export function StudentNote({ heading, children, accent = T.cyan }: { heading: string; children: React.ReactNode; accent?: string }) {
+  return (
+    <div style={{ background: T.surface, border: `1px solid ${T.border}`, borderTop: `3px solid ${accent}`, borderRadius: 12, padding: "16px 18px", margin: "14px 0" }}>
+      <div style={{ fontFamily: T.serif, color: T.text, fontWeight: 800, fontSize: 18, marginBottom: 8 }}>{heading}</div>
+      <div style={{ fontFamily: T.sans, color: T.text, fontSize: 14, lineHeight: 1.7 }}>{children}</div>
+    </div>
+  );
+}
+
 export function Callout({
   kind = "note",
   title,
   children,
 }: {
-  kind?: "note" | "warn" | "exception";
+  kind?: "note" | "warn" | "special";
   title?: string;
   children: React.ReactNode;
 }) {
   const map = {
     note: { color: T.cyan, label: title ?? "Note" },
     warn: { color: T.p, label: title ?? "Limitation" },
-    exception: { color: T.gold, label: title ?? "Exception" },
+    special: { color: T.gold, label: title ?? "Special case" },
   } as const;
   const c = map[kind];
   return (
@@ -173,12 +240,12 @@ export function DataTable({
   accent = T.gold,
 }: {
   columns: string[];
-  rows: (string | number)[][];
+  rows: React.ReactNode[][];
   accent?: string;
 }) {
   return (
     <div style={{ overflowX: "auto", margin: "12px 0" }}>
-      <table style={{ borderCollapse: "collapse", width: "100%", fontFamily: T.mono, fontSize: 13 }}>
+      <table style={{ borderCollapse: "collapse", width: "100%", fontFamily: T.sans, fontSize: 13.5 }}>
         <thead>
           <tr>
             {columns.map((c, i) => (
@@ -210,9 +277,11 @@ export function DataTable({
                   style={{
                     padding: "7px 12px",
                     borderBottom: `1px solid ${T.borderSoft}`,
-                    color: ci === 0 ? T.text : T.textDim,
+                    color: T.text,
                     fontWeight: ci === 0 ? 700 : 400,
-                    whiteSpace: "nowrap",
+                    whiteSpace: ci === 0 ? "nowrap" : "normal",
+                    lineHeight: 1.55,
+                    minWidth: ci === 0 ? 145 : 120,
                   }}
                 >
                   {cell}
@@ -521,13 +590,13 @@ export function ChapterHero() {
             Synergic Bond · Inorganic Chemistry
           </div>
           <h1 style={{ fontFamily: T.serif, color: T.text, fontSize: "clamp(32px,5vw,58px)", lineHeight: 0.98, margin: "0 0 14px", maxWidth: 760 }}>
-            Periodic Table &amp; Periodic Properties
+            Classification of Elements and Periodicity in Properties
           </h1>
           <p style={{ fontFamily: T.sans, color: T.textDim, fontSize: 14.5, lineHeight: 1.7, margin: 0, maxWidth: 760 }}>
             A concept-first chapter for Boards, NEET, JEE Main and JEE Advanced: classification, electronic configuration, effective nuclear charge, size, ionization enthalpy, electron gain enthalpy, electronegativity, chemical periodicity, special relationships and original worked examples.
           </p>
           <div style={{ display: "flex", flexWrap: "wrap", gap: 8, marginTop: 16 }}>
-            {["13 concept modules", "Original responsive SVGs", "Worked reasoning", "Exception-first revision"].map((x, i) => (
+            {["14 student-note modules", "Original responsive SVGs", "Worked reasoning", "Special-case revision"].map((x, i) => (
               <span key={x} style={{ border: `1px solid ${i % 2 ? T.gold + "55" : T.cyan + "55"}`, background: "rgba(255,255,255,0.025)", borderRadius: 999, padding: "6px 10px", fontFamily: T.sans, color: T.textDim, fontSize: 11.5 }}>
                 {x}
               </span>
@@ -1391,14 +1460,14 @@ export function SectionAtomicRadius() {
       <P>Within a period, the group-2 atom is smaller than the group-1 atom because it has the same occupied shells but greater nuclear charge. Down either group, addition of a new shell increases size.</P>
       <Formula>Within a period: r(group 1) &gt; r(group 2)</Formula>
 
-      <H2 id="radius-exceptions">7 · Special / Anomalous Cases in Groups</H2>
+      <H2 id="radius-special-cases">7 · Special / Anomalous Cases in Groups</H2>
       <P>Boron family radii (pm) — note Ga &lt; Al:</P>
       <MiniBarChart data={boronFamilyRadii} color={T.p} />
-      <Callout kind="exception" title="Ga < Al (scandide / d-block contraction)">
+      <Callout kind="special" title="Ga < Al (scandide / d-block contraction)">
         ₃₁Ga = 3d¹⁰4s²4p¹ vs Al = [Ne]3s²3p¹. The filled 3d¹⁰ subshell shields poorly, so Ga's outer electron feels a
         stronger pull → Ga ends up smaller than Al despite being one period below it.
       </Callout>
-      <Callout kind="exception" title="In → Tl — only a tiny increase (lanthanide contraction)">
+      <Callout kind="special" title="In → Tl — only a tiny increase (lanthanide contraction)">
         ₈₁Tl = 4f¹⁴5d¹⁰6s²6p¹ vs In = [Kr]5s²4d¹⁰5p¹. Poor shielding by the filled 4f electrons contracts Tl's size,
         nearly cancelling the expected increase from adding a new shell.
       </Callout>
@@ -1407,7 +1476,7 @@ export function SectionAtomicRadius() {
       <Callout kind="note">Si→Ge gap is small (poor d-shielding in Ge); Sn→Pb gap is small (poor f-shielding in Pb, i.e. lanthanide contraction).</Callout>
       <P>Nitrogen family radii (pm) — small Sb→Bi gap (poor f-shielding in Bi):</P>
       <MiniBarChart data={nitrogenFamilyRadii} color={T.f} />
-      <Callout kind="exception" title="Key exceptions to remember">
+      <Callout kind="special" title="Key special cases to remember">
         (1) Noble gases have the largest sizes as van der Waals radii, but smaller covalent radii where measurable (e.g. Xe).
         (2) Al &gt; Ga (Zeff rises due to poor 3d shielding). (3) Hf ≈ Zr (lanthanide contraction). (4) Sc &lt; Y &lt; La (La has no 4f electron yet).
       </Callout>
@@ -1433,7 +1502,7 @@ export function SectionAtomicRadius() {
 
       <H2 id="radius-fblock">10 · Inner-Transition (f-Block) — Lanthanide Contraction</H2>
       <P>Atomic and ionic radius decrease steadily across the lanthanide series (Zeff rises due to poor f-electron
-        shielding) — regular in ions, less regular in atoms. Exceptions: Eu and Yb are larger (stable half-filled
+        shielding) — regular in ions, less regular in atoms. Special cases: Eu and Yb are larger (stable half-filled
         4f⁷ and fully-filled 4f¹⁴). Special oxidation states to reach half/full 4f: Ce⁴⁺(4f⁰), Eu²⁺(4f⁷), Yb²⁺(4f¹⁴).
         Actinoids show an overall contraction from Th to Lr, but the pattern is less regular because 5f, 6d and 7s energies are close.</P>
       <DataTable columns={["Z", "Ln", "Ln (pm)", "Ln³⁺ (pm)"]} rows={lanthanideTable} />
@@ -1464,7 +1533,7 @@ export function SectionAtomicRadius() {
       <Callout kind="note">
         Other useful isoelectronic sets include S²⁻, Cl⁻, K⁺, Ca²⁺, Sc³⁺ and H⁻, He, Li⁺. Within each set, increasing proton number contracts the shared electron count more strongly.
       </Callout>
-      <Callout kind="exception" title="Hydride radius is strongly environment-dependent">
+      <Callout kind="special" title="Hydride radius is strongly environment-dependent">
         H⁻ has only one proton holding two electrons and is much more diffuse than a neutral hydrogen atom. Numerical ionic radii depend on the crystal model and coordination number, so avoid treating one quoted H⁻ value as a universal radius.
       </Callout>
 
@@ -1482,9 +1551,9 @@ export function SectionAtomicRadius() {
         ["Carbon family", "C < Si < Ge < Sn < Pb (poor d-shield Ge; poor f-shield Pb)"],
         ["Nitrogen family", "N < P < As < Sb < Bi (poor f-shield Bi)"],
         ["d-block across period", "Decreases, then ~constant, then increases (Cu, Zn)"],
-        ["d-block down a group", "r(3d) < r(4d) ≈ r(5d); exception Sc < Y < La"],
+        ["d-block down a group", "r(3d) < r(4d) ≈ r(5d); special case Sc < Y < La"],
         ["Chemical twins (4d/5d)", "Zr≈Hf, Nb≈Ta, Mo≈W, Tc≈Re (lanthanide contraction)"],
-        ["f-block (lanthanoids)", "Radius decreases La→Lu; exceptions Eu, Yb (larger)"],
+        ["f-block (lanthanoids)", "Radius decreases La→Lu; special cases Eu, Yb (larger)"],
         ["Bond length vs order", "Bond length ∝ 1/bond order; N–N > N=N > N≡N"],
         ["+ve / −ve charge", "+ve charge ↑ ⇒ radius ↓; −ve charge ↑ ⇒ radius ↑"],
         ["Isoelectronic species", "Higher Z (more protons) ⇒ smaller radius"],
@@ -1660,7 +1729,7 @@ const families: Fam[] = [
       { label: "Melting point", order: "generally Li > Na > K > Rb > Cs" },
       { label: "Density", order: "generally rises; K is less dense than Na" },
       { label: "Reaction with water", order: "Li < Na < K < Rb < Cs" },
-      { label: "Aqueous reducing behaviour", order: "Li is exceptionally strong because Li⁺ is very strongly hydrated", note: "do not rank from gas-phase IE alone" },
+      { label: "Aqueous reducing behaviour", order: "Li is unusually strong because Li⁺ is very strongly hydrated", note: "do not rank from gas-phase IE alone" },
     ],
   },
   {
@@ -1836,7 +1905,7 @@ export function SectionDBlockTrends() {
           <div key={c.ion} style={{ display: "flex", alignItems: "center", gap: 10, border: `1px solid ${T.border}`, borderRadius: 10, padding: "8px 10px", background: T.surface }}>
             <span style={{ width: 18, height: 18, borderRadius: "50%", border: `1.5px solid ${T.textDim}`, background: c.swatch, flexShrink: 0 }} />
             <div>
-              <div style={{ fontFamily: T.mono, fontSize: 13.5, fontWeight: 700, color: T.text }}>{c.ion}</div>
+              <div style={{ fontFamily: T.sans, fontSize: 13.5, fontWeight: 700, color: T.text }}>{c.ion}</div>
               <div style={{ fontFamily: T.sans, fontSize: 11.5, color: T.textDim }}>{c.colour}</div>
             </div>
           </div>
@@ -1852,7 +1921,7 @@ export function SectionDBlockTrends() {
 const configurationRules = [
   { title: "Period", body: "The largest principal quantum number n present in the ground-state configuration gives the period. Ions are located from the parent atom, not from the ion configuration.", accent: T.cyan, tag: "HIGHEST n" },
   { title: "Block", body: "The subshell receiving the differentiating electron identifies the s, p, d or f block. Helium is structurally s-block but chemically placed with noble gases.", accent: T.f, tag: "LAST SUBSHELL" },
-  { title: "s-block group", body: "ns¹ gives group 1 and ns² gives group 2. Hydrogen is exceptional because its chemistry is not that of an alkali metal.", accent: T.s, tag: "GROUP 1–2" },
+  { title: "s-block group", body: "ns¹ gives group 1 and ns² gives group 2. Hydrogen is a special case because its chemistry is not that of an alkali metal.", accent: T.s, tag: "GROUP 1–2" },
   { title: "p-block group", body: "For ns²npˣ, group number = 12 + x, equivalently 10 + total valence electrons. Thus np¹→13 and np⁶→18.", accent: T.p, tag: "GROUP 13–18" },
   { title: "d-block group", body: "For most transition elements, add electrons in (n−1)d and ns. The sum 3–12 gives the IUPAC group number, with configuration anomalies handled from the actual configuration.", accent: T.d, tag: "GROUP 3–12" },
   { title: "f-block", body: "The differentiating electron enters (n−2)f. Lanthanoids belong to period 6 and actinoids to period 7; they are displayed separately only to keep the table compact.", accent: T.f, tag: "INNER TRANSITION" },
@@ -1867,7 +1936,7 @@ const positionExamples = [
   ["Tm: [Xe]4f¹³6s²", "Period 6", "f-block", "Lanthanoid"],
 ];
 
-const commonConfigExceptions = [
+const commonConfigSpecialCases = [
   ["Cr", "[Ar] 3d⁵ 4s¹", "half-filled d⁵ stabilization"],
   ["Cu", "[Ar] 3d¹⁰ 4s¹", "filled d¹⁰ stabilization"],
   ["Nb", "[Kr] 4d⁴ 5s¹", "near-degenerate 4d and 5s levels"],
@@ -1898,7 +1967,7 @@ export function SectionConfiguration() {
 
       <H3>Worked position decoding</H3>
       <DataTable columns={["Configuration", "Period", "Block", "Position"]} rows={positionExamples} accent={T.cyan} />
-      <Callout kind="exception" title="Do not locate an ion from the ion configuration">
+      <Callout kind="special" title="Do not locate an ion from the ion configuration">
         Na⁺ has the configuration of Ne, but sodium remains a period-3, group-1 element. Periodic position belongs to the neutral atom because atomic number, not temporary electron count, defines the element.
       </Callout>
 
@@ -1933,13 +2002,13 @@ export function SectionConfiguration() {
         ]}
       />
 
-      <H2>4 · Configuration Exceptions: Use Actual Configurations, Not Memorised Aufbau Alone</H2>
+      <H2>4 · Configuration Special Cases: Use Actual Configurations, Not Memorised Aufbau Alone</H2>
       <P>
-        The Aufbau order is a powerful first approximation. In transition and inner-transition atoms, nearby subshells differ only slightly in energy, so exchange energy, pairing, relativistic effects and the final multi-electron balance can produce exceptions.
+        The Aufbau order is a powerful first approximation. In transition and inner-transition atoms, nearby subshells differ only slightly in energy, so exchange energy, pairing, relativistic effects and the final multi-electron balance can produce special cases.
       </P>
-      <DataTable columns={["Element", "Observed ground state", "Main reason"]} rows={commonConfigExceptions} accent={T.gold} />
+      <DataTable columns={["Element", "Observed ground state", "Main reason"]} rows={commonConfigSpecialCases} accent={T.gold} />
       <Callout kind="note" title="Exam-safe rule">
-        For position and oxidation-state questions, always use the accepted ground-state configuration given in standard data. Avoid inventing a universal “half-filled/full-filled” explanation for every exception; several heavier elements require a more complete orbital-energy explanation.
+        For position and oxidation-state questions, always use the accepted ground-state configuration given in standard data. Avoid inventing a universal “half-filled/full-filled” explanation for every special case; several heavier elements require a more complete orbital-energy explanation.
       </Callout>
 
       <H2>5 · Special Positions of Hydrogen and Helium</H2>
@@ -1947,7 +2016,7 @@ export function SectionConfiguration() {
         <Card accent={T.s}>
           <H3>Hydrogen</H3>
           <P>Configuration 1s¹ resembles group 1, and H can form H⁺. Yet it is a non-metal, exists as H₂, forms H⁻ with electropositive metals and needs one electron for a noble-gas configuration—features reminiscent of group 17.</P>
-          <Callout kind="exception">Hydrogen is placed above group 1 for configuration convenience, but it is chemically unique and should not be treated as a normal alkali metal.</Callout>
+          <Callout kind="special">Hydrogen is placed above group 1 for configuration convenience, but it is chemically unique and should not be treated as a normal alkali metal.</Callout>
         </Card>
         <Card accent={T.f}>
           <H3>Helium</H3>
@@ -2036,15 +2105,15 @@ export function SectionTrendMap() {
           { title: "Step 1: classify the comparison", tag: "ATOM / ION / BONDED ATOM", accent: T.cyan, body: "Do not mix atomic radius with ionic radius, electron affinity with electronegativity, or gas-phase reducing power with aqueous reducing power." },
           { title: "Step 2: compare shell number", tag: "PRIMARY SIZE TEST", accent: T.s, body: "A species with an extra occupied shell is usually larger unless a strong contraction effect or very different charge overrides it." },
           { title: "Step 3: compare nuclear charge", tag: "SAME ELECTRON COUNT", accent: T.gold, body: "Within an isoelectronic series, more protons always mean a smaller radius and stronger electron binding." },
-          { title: "Step 4: inspect configuration", tag: "LOCAL EXCEPTION TEST", accent: T.d, body: "Check whether removal or addition creates or destroys ns², np³, d⁵ or d¹⁰ stability and whether electron pairing changes." },
+          { title: "Step 4: inspect configuration", tag: "LOCAL SPECIAL-CASE TEST", accent: T.d, body: "Check whether removal or addition creates or destroys ns², np³, d⁵ or d¹⁰ stability and whether electron pairing changes." },
           { title: "Step 5: identify the medium", tag: "GAS VS AQUEOUS", accent: T.p, body: "Hydration enthalpy can reverse gas-phase trends. Lithium is the classic example in aqueous redox chemistry." },
           { title: "Step 6: use data only when needed", tag: "FINAL TIE-BREAK", accent: T.f, body: "For irregular d-block orders and exact melting/boiling points, qualitative trends may be insufficient; rely on accepted data rather than forcing a false rule." },
         ]}
       />
 
-      <H2>4 · Normal Trend versus Exception</H2>
+      <H2>4 · Normal Trend versus Special Case</H2>
       <DataTable
-        columns={["Normal expectation", "Important exception", "Reason"]}
+        columns={["Normal expectation", "Important special case", "Reason"]}
         rows={[
           ["IE rises across a period", "Be > B; Mg > Al", "electron removed from higher-energy p orbital in B/Al"],
           ["IE rises across a period", "N > O; P > S", "pairing repulsion in p⁴ makes removal easier"],
@@ -2082,7 +2151,7 @@ export function SectionIonization() {
     <div>
       <SectionIntro
         eyebrow="Removing electrons from isolated gaseous species"
-        title="Ionization Enthalpy: Definition, Successive Values, Trends and Exceptions"
+        title="Ionization Enthalpy: Definition, Successive Values, Trends and Special Cases"
         summary="Ionization enthalpy measures how strongly an isolated gaseous atom or ion holds an electron. It is always endothermic, but the magnitude depends on size, effective nuclear charge, penetration, shielding and the configuration left behind."
         accent={T.gold}
       />
@@ -2153,8 +2222,8 @@ export function SectionIonization() {
           { title: "Bonding character", tag: "IONIC VS COVALENT", accent: T.p, body: "A high sum of ionization enthalpies makes formation of a highly charged cation expensive and can promote covalent bonding instead." },
         ]}
       />
-      <Callout kind="exception" title="Lithium in water is not ranked by IE alone">
-        Lithium has the highest first ionization enthalpy among alkali metals, yet Li is a very strong reducing agent in aqueous solution because the exceptionally large hydration enthalpy of Li⁺ strongly stabilizes the products.
+      <Callout kind="special" title="Lithium in water is not ranked by IE alone">
+        Lithium has the highest first ionization enthalpy among alkali metals, yet Li is a very strong reducing agent in aqueous solution because the unusually large hydration enthalpy of Li⁺ strongly stabilizes the products.
       </Callout>
 
       <WorkedExample
@@ -2228,7 +2297,7 @@ export function SectionElectronGain() {
         ]}
       />
 
-      <H2>3 · Periodic Trend and Major Exceptions</H2>
+      <H2>3 · Periodic Trend and Major Special Cases</H2>
       <P>
         Across a period, the value generally becomes more negative as size decreases and effective nuclear charge rises. Down a group it usually becomes less negative because the incoming electron enters a larger, more shielded shell. The trend is much less regular than ionization enthalpy.
       </P>
@@ -2464,7 +2533,7 @@ export function SectionChemicalPeriodicity() {
         ]}
         accent={T.gold}
       />
-      <Callout kind="exception" title="Maximum oxidation state is not the same as maximum covalency">
+      <Callout kind="special" title="Maximum oxidation state is not the same as maximum covalency">
         Oxidation state is formal electron bookkeeping, whereas covalency counts shared electron pairs or bonds. Modern bonding descriptions do not require literal use of vacant d orbitals to explain hypervalent main-group molecules.
       </Callout>
 
@@ -2513,7 +2582,7 @@ export function SectionChemicalPeriodicity() {
         accent={T.d}
       />
       <P>
-        HF is a weak acid in water relative to HCl, HBr and HI despite fluorine's high electronegativity because the H–F bond is exceptionally strong and extensive hydrogen bonding affects the solution chemistry.
+        HF is a weak acid in water relative to HCl, HBr and HI despite fluorine's high electronegativity because the H–F bond is unusually strong and extensive hydrogen bonding affects the solution chemistry.
       </P>
 
       <H2>6 · Lattice Enthalpy, Hydration Enthalpy and Solubility</H2>
@@ -2532,7 +2601,7 @@ export function SectionChemicalPeriodicity() {
         ]}
         accent={T.cyan}
       />
-      <Callout kind="exception" title="Solubility is a competition">
+      <Callout kind="special" title="Solubility is a competition">
         A large lattice enthalpy opposes dissolution, while large hydration enthalpy favours it. Entropy and crystal structure also matter, so solubility cannot be predicted from a single radius trend alone.
       </Callout>
 
@@ -2595,7 +2664,7 @@ export function SectionSpecialEffects() {
       <SectionIntro
         eyebrow="Why simple vertical trends sometimes fail"
         title="Special Relationships: Second-Period Anomalies, Diagonal Similarity and Contraction Effects"
-        summary="The first member of a group often behaves differently from the rest. Small size, high charge density, strong multiple bonding, poor d/f shielding and heavy-atom relativistic effects create the most important advanced exceptions."
+        summary="The first member of a group often behaves differently from the rest. Small size, high charge density, strong multiple bonding, poor d/f shielding and heavy-atom relativistic effects create the most important advanced special cases."
         accent={T.f}
       />
 
@@ -2727,13 +2796,463 @@ export function SectionSpecialEffects() {
           "Strong pπ–pπ overlap produces a very strong triple bond.",
           "Larger 3p, 4p and 5p orbitals overlap less effectively, so P, As and Sb favour single bonds and extended structures.",
         ]}
-        answer="The exceptional efficiency of 2p–2p π overlap makes N≡N uniquely strong."
+        answer="The unusually effective of 2p–2p π overlap makes N≡N uniquely strong."
         accent={T.d}
       />
     </div>
   );
 }
 
+
+
+/* =============================================================================
+   SECTION — Complete Student Notebook (NCERT-aligned + JEE Advanced enrichment)
+   ========================================================================== */
+export function SectionStudentNotebook() {
+  return (
+    <div>
+      <SectionIntro
+        eyebrow="Write-ready theory, equations, data and applications"
+        title="Complete Student Notebook: Classification of Elements and Periodicity in Properties"
+        summary="This module is arranged exactly in the order in which a student can prepare handwritten notes: definition, governing relation, explanation, data table, special case, application and solved example. Definitions follow the NCERT meaning; advanced data and reasoning are added in original language for JEE Advanced."
+        accent={T.gold}
+      />
+
+      <Callout kind="note" title="How to copy these notes">
+        Write every green definition first, then the equation, then the trend with its cause. Put every gold special case in a margin box. Numerical values are reference data; learn the reason before memorising the order.
+      </Callout>
+
+      <H2 id="notebook-core-definitions">1 · Core Definitions</H2>
+      <DefinitionBox term="Classification of elements">
+        Classification is the systematic arrangement of elements into groups so that elements with related physical and chemical behaviour are studied together and recurring trends become visible.
+      </DefinitionBox>
+      <DefinitionBox term="Periodicity">
+        Periodicity is the recurrence of similar physical and chemical properties at regular intervals when elements are arranged in increasing atomic number. The recurrence originates from the repetition of similar valence-shell electronic configurations.
+      </DefinitionBox>
+      <DefinitionBox term="Modern periodic law">
+        The physical and chemical properties of elements are periodic functions of their atomic numbers.
+      </DefinitionBox>
+      <DefinitionBox term="Atomic radius">
+        Because an isolated atom has no sharp boundary, atomic size is estimated from internuclear distances in bonded or condensed states. For non-metals the covalent radius is used; for metals the metallic radius is used.
+      </DefinitionBox>
+      <DefinitionBox term="Ionic radius">
+        Ionic radius is an effective radius assigned to an ion from measured internuclear distances between neighbouring cations and anions in an ionic crystal. Its value depends on charge, coordination number and crystal environment.
+      </DefinitionBox>
+      <DefinitionBox term="Ionization enthalpy">
+        Ionization enthalpy is the enthalpy required to remove the most loosely bound electron from an isolated gaseous atom in its ground state. It is always positive for electron removal.
+      </DefinitionBox>
+      <DefinitionBox term="Electron gain enthalpy">
+        Electron gain enthalpy is the enthalpy change when an isolated gaseous atom accepts an electron to form a gaseous anion. A negative value means that energy is released.
+      </DefinitionBox>
+      <DefinitionBox term="Electronegativity">
+        Electronegativity is a qualitative measure of the ability of an atom in a chemical compound to attract the shared electron pair towards itself. It is not a directly measurable property of an isolated atom.
+      </DefinitionBox>
+
+      <H2 id="notebook-history">2 · Historical Development: Complete Note Sequence</H2>
+      <DataTable
+        columns={["Scientist / scheme", "Basis", "Main observation", "Contribution", "Failure / limitation"]}
+        rows={[
+          ["Lavoisier", "metallic character", "elements divided broadly into metals and non-metals", "first simple chemical classification", "could not place metalloids or reveal detailed family relationships"],
+          ["Döbereiner", "atomic weight and similar properties", "middle member of a triad had atomic weight close to the mean of the other two", "showed a numerical relation inside chemical families", "worked for only a small number of elements"],
+          ["de Chancourtois", "increasing atomic weight on a cylinder", "similar elements appeared vertically on a telluric helix", "first geometrical display of periodic recurrence", "chemical meaning was not communicated clearly and the scheme mainly fitted lighter elements"],
+          ["Newlands", "increasing atomic weight", "every eighth element often resembled the first", "introduced the law of octaves", "worked mainly up to calcium; no gaps were left for undiscovered elements; unlike elements were sometimes grouped"],
+          ["Lothar Meyer", "atomic weight versus physical properties", "atomic volume and several physical properties varied periodically", "gave strong graphical evidence for periodicity", "did not provide a powerful predictive table or detailed chemical placement"],
+          ["Mendeleev", "atomic weight with chemical similarity", "properties recurred periodically and gaps could be left", "systematic table, predictions and correction of doubtful data", "could not explain isotopes, anomalous pairs, hydrogen or the electronic cause of periodicity"],
+          ["Moseley", "atomic number", "X-ray frequency established atomic number as the fundamental ordering variable", "resolved mass-order anomalies and produced modern periodic law", "electronic structure was still needed to explain the detailed recurrence"],
+        ]}
+        accent={T.gold}
+      />
+
+      <H3>Lothar Meyer: theory, relation, observations and significance</H3>
+      <MathBlock tex={String.raw`\text{Atomic volume}=\frac{\text{molar mass}}{\text{density}}`} label="Definition used in the curve" />
+      <RelationBox
+        title="What the atomic-volume curve shows"
+        relations={[
+          <>Alkali metals such as <MathInline tex={String.raw`\mathrm{Li,Na,K,Rb,Cs}`} /> lie near major peaks because their atoms have large volumes.</>,
+          <>Alkaline-earth metals lie on descending branches after the alkali-metal peaks.</>,
+          <>Halogens lie on ascending branches immediately before the next alkali-metal maximum.</>,
+          <>Transition elements occupy broad minima because their atomic volumes change only gradually across a series.</>,
+          <>Within a period, atomic volume generally falls to a broad minimum and then rises; down a family it increases.</>,
+          <>Melting point, boiling point, density and thermal expansion also display periodic variation.</>,
+        ]}
+      />
+      <StudentNote heading="Why Meyer was important" accent={T.d}>
+        Meyer demonstrated periodicity through measurable physical data. Mendeleev became more influential because he converted periodicity into a chemical classification system, deliberately left gaps and predicted properties of missing elements.
+      </StudentNote>
+
+      <H3>Mendeleev: law, construction, merits and failures</H3>
+      <DefinitionBox term="Mendeleev periodic law">
+        The physical and chemical properties of elements are periodic functions of their atomic weights.
+      </DefinitionBox>
+      <DataTable
+        columns={["Merit", "Detailed meaning", "Representative illustration"]}
+        rows={[
+          ["Systematic study", "elements with similar chemistry were brought into the same vertical family", "alkali metals, halogens and chalcogens became easier to compare"],
+          ["Prediction of missing elements", "gaps were retained and approximate properties were inferred from neighbouring elements", "eka-boron → scandium; eka-aluminium → gallium; eka-silicon → germanium; eka-manganese → technetium"],
+          ["Correction of doubtful atomic masses", "chemical valency and group behaviour were used to reconsider incorrect atomic-mass assignments", "beryllium was placed with group 2 rather than group 13"],
+          ["Priority to properties", "strict mass order was reversed when chemical similarity demanded it", "tellurium before iodine; cobalt before nickel"],
+          ["Accommodation of noble gases", "a new zero group could be inserted without disturbing the established families", "He, Ne, Ar, Kr, Xe and Rn"],
+        ]}
+        accent={T.d}
+      />
+      <DataTable
+        columns={["Failure / limitation", "Why the old table could not solve it", "Modern resolution"]}
+        rows={[
+          ["Position of hydrogen", "hydrogen resembles both alkali metals and halogens", "treated as a special case because of its unique 1s¹ configuration"],
+          ["Isotopes", "isotopes have different masses but essentially the same chemistry", "same atomic number gives one position"],
+          ["Anomalous mass pairs", "Ar–K, Co–Ni and Te–I violate increasing atomic-mass order", "atomic number restores the correct sequence"],
+          ["Rare-earth placement", "lanthanoids and actinoids could not be accommodated cleanly", "f-block is shown separately while preserving periodic relationships"],
+          ["No explanation of recurrence", "atomic weight alone did not explain why properties repeat", "valence-shell electronic configurations provide the cause"],
+        ]}
+        accent={T.p}
+      />
+
+      <H2 id="notebook-modern-table">3 · Modern Periodic Table and Electronic Basis</H2>
+      <MathBlock tex={String.raw`\text{Period number}=\text{highest principal quantum number }(n)\text{ in the ground-state configuration}`} />
+      <DataTable
+        columns={["Block", "General outer configuration", "Groups / location", "Characteristic idea"]}
+        rows={[
+          ["s-block", <MathInline tex={String.raw`ns^{1-2}`} />, "groups 1 and 2", "electropositive metals; low ionization enthalpy; mainly +1 or +2 ions"],
+          ["p-block", <MathInline tex={String.raw`ns^2np^{1-6}`} />, "groups 13 to 18", "metals, metalloids and non-metals; wide oxidation-state chemistry"],
+          ["d-block", <MathInline tex={String.raw`(n-1)d^{1-10}ns^{0-2}`} />, "groups 3 to 12", "variable oxidation states, coloured ions, magnetism and catalysis"],
+          ["f-block", <MathInline tex={String.raw`(n-2)f^{1-14}(n-1)d^{0-1}ns^2`} />, "lanthanoids and actinoids", "inner-transition elements; gradual contraction and closely related chemistry"],
+        ]}
+        accent={T.cyan}
+      />
+      <RelationBox
+        title="Number of elements in a period"
+        relations={[
+          <>Each orbital holds two electrons.</>,
+          <><MathInline tex={String.raw`s,p,d,f`} /> subshells contain 1, 3, 5 and 7 orbitals, so they hold 2, 6, 10 and 14 electrons.</>,
+          <>Period 1 has 2 elements; periods 2 and 3 have 8 each; periods 4 and 5 have 18 each; periods 6 and 7 can contain 32 each.</>,
+        ]}
+      />
+      <Callout kind="special" title="Hydrogen and helium">
+        Hydrogen is a special case: its <MathInline tex={String.raw`1s^1`} /> configuration resembles group 1, while its ability to gain one electron resembles group 17. Helium has an s-block configuration <MathInline tex={String.raw`1s^2`} />, but its complete valence shell and inert behaviour justify placement in group 18.
+      </Callout>
+
+      <H2 id="notebook-radius">4 · Atomic, Covalent, Metallic, van der Waals and Ionic Radii</H2>
+      <MathBlock tex={String.raw`r_{\mathrm{covalent}}=\frac{1}{2}d(A-A)`} label="Homonuclear single bond" />
+      <MathBlock tex={String.raw`r_{\mathrm{metallic}}=\frac{1}{2}d(M-M)`} label="Nearest neighbours in a metal crystal" />
+      <MathBlock tex={String.raw`r_{\mathrm{vdW}}=\frac{1}{2}d_{\mathrm{closest\ nonbonded\ contact}}`} />
+      <RelationBox
+        title="Fundamental size relations"
+        relations={[
+          <><MathInline tex={String.raw`r_{\mathrm{vdW}}>r_{\mathrm{metallic}}>r_{\mathrm{covalent}}`} /> when the three quantities are meaningful for the same element.</>,
+          <><MathInline tex={String.raw`r(\mathrm{cation})<r(\mathrm{atom})<r(\mathrm{anion})`} /> for the same nucleus.</>,
+          <>Across a period: effective nuclear charge rises while the principal shell remains the same, so radius generally decreases.</>,
+          <>Down a group: a new principal shell is added and shielding rises, so radius generally increases.</>,
+          <>In an isoelectronic series, radius decreases as nuclear charge increases.</>,
+        ]}
+      />
+      <MathBlock tex={String.raw`\mathrm{O^{2-}>F^->Na^+>Mg^{2+}>Al^{3+}}`} label="Isoelectronic order: ten electrons" />
+      <MathBlock tex={String.raw`\mathrm{S^{2-}>Cl^->K^+>Ca^{2+}>Sc^{3+}}`} label="Isoelectronic order: eighteen electrons" />
+
+      <H3>NCERT atomic-radius data</H3>
+      <DataTable
+        columns={["Series", "Atomic radii / pm"]}
+        rows={[
+          ["Period 2", <MathInline tex={String.raw`\mathrm{Li\ 152>Be\ 111>B\ 88>C\ 77>N\ 74>O\ 66>F\ 64}`} />],
+          ["Period 3", <MathInline tex={String.raw`\mathrm{Na\ 186>Mg\ 160>Al\ 143>Si\ 117>P\ 110>S\ 104>Cl\ 99}`} />],
+          ["Group 1", <MathInline tex={String.raw`\mathrm{Li\ 152<Na\ 186<K\ 231<Rb\ 244<Cs\ 262}`} />],
+          ["Group 17", <MathInline tex={String.raw`\mathrm{F\ 64<Cl\ 99<Br\ 114<I\ 133<At\ 140}`} />],
+        ]}
+        accent={T.gold}
+      />
+
+      <H3>Representative covalent-radius data / Å</H3>
+      <DataTable
+        columns={["Family", "Values", "Important special case"]}
+        rows={[
+          ["Group 13", "B 0.80; Al 1.43; Ga 1.35; In 1.67; Tl 1.70", "Ga is smaller than Al because 3d electrons shield poorly; In → Tl increase is small because of lanthanoid contraction"],
+          ["Group 14", "C 0.77; Si 1.17; Ge 1.22; Sn 1.41; Pb 1.44", "Sn and Pb are close because of lanthanoid contraction and relativistic effects"],
+          ["Group 15", "N 0.74; P 1.10; As 1.21; Sb 1.41; Bi 1.52", "the increase is not perfectly uniform"],
+          ["Group 16", "O 0.66; S 1.04; Se 1.14; Te 1.37", "O is unusually small because it uses the compact n = 2 shell"],
+          ["Group 17", "F 0.64; Cl 0.99; Br 1.14; I 1.33", "size increases down the family"],
+        ]}
+        accent={T.cyan}
+      />
+      <Callout kind="special" title="Noble-gas radius">
+        Noble gases are monatomic and normally do not form covalent bonds. Their quoted atomic radii are usually van der Waals radii and must not be compared directly with covalent radii of neighbouring elements.
+      </Callout>
+
+      <H2 id="notebook-ionization">5 · Ionization Enthalpy: IE₁, IE₂, IE₃ and the Giant Jump</H2>
+      <MathBlock tex={String.raw`\mathrm{X(g)\rightarrow X^+(g)+e^-}\qquad \Delta_iH_1>0`} />
+      <MathBlock tex={String.raw`\mathrm{X^+(g)\rightarrow X^{2+}(g)+e^-}\qquad \Delta_iH_2>\Delta_iH_1`} />
+      <MathBlock tex={String.raw`\mathrm{X^{2+}(g)\rightarrow X^{3+}(g)+e^-}\qquad \Delta_iH_3>\Delta_iH_2`} />
+      <RelationBox
+        title="Factors controlling ionization enthalpy"
+        relations={[
+          <>Smaller atomic radius and larger effective nuclear charge increase ionization enthalpy.</>,
+          <>Greater shielding decreases ionization enthalpy.</>,
+          <>For electrons in the same shell, penetration and attraction generally follow <MathInline tex={String.raw`s>p>d>f`} />.</>,
+          <>Removal that destroys a half-filled or completely filled stable subshell is relatively difficult.</>,
+          <>Down a group, increased distance and shielding usually outweigh increased nuclear charge, so IE decreases.</>,
+        ]}
+      />
+      <H3>First ionization enthalpy of the second period / kJ mol⁻¹</H3>
+      <DataTable
+        columns={["Li", "Be", "B", "C", "N", "O", "F", "Ne"]}
+        rows={[[520, 899, 801, 1086, 1402, 1314, 1681, 2080]]}
+        accent={T.gold}
+      />
+      <Callout kind="special" title="B–Be and O–N special cases">
+        <MathInline tex={String.raw`\mathrm{IE_1(B)<IE_1(Be)}`} /> because the electron removed from B is a more shielded 2p electron, while Be loses a penetrating 2s electron. <MathInline tex={String.raw`\mathrm{IE_1(O)<IE_1(N)}`} /> because O contains one paired 2p electron with extra repulsion, whereas N has the stable half-filled <MathInline tex={String.raw`2p^3`} /> arrangement.
+      </Callout>
+      <H3>Successive ionization data and valence-electron diagnosis / kJ mol⁻¹</H3>
+      <DataTable
+        columns={["Element", "IE₁", "IE₂", "IE₃", "IE₄", "First giant jump", "Inference"]}
+        rows={[
+          ["Na", 496, 4562, 6910, 9543, "after IE₁", <MathInline tex={String.raw`\mathrm{Na\rightarrow Na^+}`} />],
+          ["Mg", 738, 1451, 7733, 10542, "after IE₂", <MathInline tex={String.raw`\mathrm{Mg\rightarrow Mg^{2+}}`} />],
+          ["Al", 578, 1817, 2745, 11577, "after IE₃", <MathInline tex={String.raw`\mathrm{Al\rightarrow Al^{3+}}`} />],
+          ["Si", 787, 1577, 3232, 4356, "after IE₄ (IE₅ ≈ 16091)", "four valence electrons"],
+        ]}
+        accent={T.d}
+      />
+      <MathBlock tex={String.raw`\text{A large jump after }\mathrm{IE_n}\Rightarrow n\text{ valence electrons were removed before a core electron was reached}`} />
+      <DataTable
+        columns={["Group 13 element", "B", "Al", "Ga", "In", "Tl"]}
+        rows={[["IE₁ / kJ mol⁻¹", 801, 577, 579, 558, 589]]}
+        accent={T.p}
+      />
+      <Callout kind="special" title="Irregular group-13 order">
+        Poor shielding by d and f electrons and relativistic contraction prevent a smooth decrease. Therefore, exact d-block and heavy p-block ionization orders must be treated as data, not forced into a simple arrow.
+      </Callout>
+
+      <H2 id="notebook-electron-gain">6 · Electron Gain Enthalpy: Sign, Data and Special Cases</H2>
+      <MathBlock tex={String.raw`\mathrm{X(g)+e^-\rightarrow X^-(g)}\qquad \Delta_{eg}H_1`} />
+      <MathBlock tex={String.raw`\mathrm{X^-(g)+e^-\rightarrow X^{2-}(g)}\qquad \Delta_{eg}H_2>0`} />
+      <P>The second electron is added to an already negative ion, so electrostatic repulsion must be overcome. Thus the second electron gain enthalpy is positive even when the dianion is stable inside a crystal lattice.</P>
+      <DataTable
+        columns={["Family", "Electron gain enthalpy / kJ mol⁻¹"]}
+        rows={[
+          ["Group 1", "H −73; Li −60; Na −53; K −48; Rb −47; Cs −46"],
+          ["Group 16", "O −141; S −200; Se −195; Te −190; Po −174"],
+          ["Group 17", "F −328; Cl −349; Br −325; I −295; At −270"],
+          ["Group 18", "He +48; Ne +116; Ar +96; Kr +96; Xe +77; Rn +68"],
+        ]}
+        accent={T.d}
+      />
+      <Callout kind="special" title="Why Cl is more exothermic than F, and S more exothermic than O">
+        In F and O the incoming electron enters a compact 2p shell, where electron–electron repulsion is large. The 3p shell of Cl and S is more spacious, so addition is more exothermic despite the larger atomic size.
+      </Callout>
+      <RelationBox
+        title="Do not confuse electron gain enthalpy with oxidizing power"
+        relations={[
+          <>Electron gain enthalpy is one gas-phase atomic step.</>,
+          <>Aqueous oxidizing strength also depends on bond dissociation, atomization, hydration, entropy and electrode potential.</>,
+          <>Therefore <MathInline tex={String.raw`\mathrm{F_2}`} /> is the strongest aqueous oxidizing halogen even though atomic Cl has the more negative electron gain enthalpy.</>,
+        ]}
+      />
+
+      <H2 id="notebook-electronegativity">7 · Electronegativity: Scales, Equations and Applications</H2>
+      <DataTable
+        columns={["Scale", "Physical basis", "Equation / relation", "Use"]}
+        rows={[
+          ["Pauling", "extra stabilization of a heteronuclear bond", <MathInline tex={String.raw`|\chi_A-\chi_B|\propto\sqrt{\Delta}`} />, "bond polarity and relative values; F = 4.0"],
+          ["Mulliken", "average of ionization energy and electron affinity", <MathInline tex={String.raw`\chi_M=\frac{IE+EA}{2}`} />, "use IE and EA in eV per atom"],
+          ["Allred–Rochow", "electrostatic attraction at covalent radius", <MathInline tex={String.raw`\chi_{AR}=0.359\frac{Z_{eff}}{r^2}+0.744`} />, "r in Å; relates χ to effective nuclear charge and size"],
+        ]}
+        accent={T.cyan}
+      />
+      <H3>NCERT Pauling values</H3>
+      <DataTable
+        columns={["Series", "Electronegativity order and values"]}
+        rows={[
+          ["Period 2", "Li 1.0 < Be 1.5 < B 2.0 < C 2.5 < N 3.0 < O 3.5 < F 4.0"],
+          ["Period 3", "Na 0.9 < Mg 1.2 < Al 1.5 < Si 1.8 < P 2.1 < S 2.5 < Cl 3.0"],
+          ["Group 1", "Li 1.0 > Na 0.9 > K 0.8 ≈ Rb 0.8 > Cs 0.7"],
+          ["Group 17", "F 4.0 > Cl 3.0 > Br 2.8 > I 2.5 > At 2.2"],
+        ]}
+        accent={T.gold}
+      />
+      <MathBlock tex={String.raw`\%\,\text{ionic character}\approx16\Delta\chi+3.5(\Delta\chi)^2`} label="Hannay–Smith relation" />
+      <RelationBox
+        title="Major applications of electronegativity"
+        relations={[
+          <>Predict the direction of bond polarization and assign <MathInline tex={String.raw`\delta^+`} /> and <MathInline tex={String.raw`\delta^-`} />.</>,
+          <>Estimate the relative ionic character of a bond.</>,
+          <>Assign oxidation numbers by giving the shared pair formally to the more electronegative atom.</>,
+          <>Compare acidic/basic character of oxides and hydroxides.</>,
+          <>Compare effective electronegativity with hybridization: <MathInline tex={String.raw`\chi(\mathrm{sp})>\chi(\mathrm{sp^2})>\chi(\mathrm{sp^3})`} />.</>,
+          <>Predict bond type cautiously; molecular geometry, lattice energy and polarization can modify the simple Δχ prediction.</>,
+        ]}
+      />
+      <MathBlock tex={String.raw`\mathrm{Na_2O<MgO<Al_2O_3<SiO_2<P_4O_{10}<SO_3<Cl_2O_7}`} label="Acidic character generally increases across period 3" />
+      <Callout kind="special" title="Electronegativity is environment-dependent">
+        An element does not possess one exact electronegativity in every compound. Oxidation state, hybridization, substituents and the bonded partner modify its effective value.
+      </Callout>
+
+      <H2 id="notebook-aqueous-mobility">8 · Conductivity and Mobility of Ions in Aqueous Solution</H2>
+      <DefinitionBox term="Ionic mobility">
+        Ionic mobility is the drift velocity acquired by an ion per unit electric field. In water it depends on charge, solvation, hydrated radius, viscosity, temperature and ion–solvent interactions.
+      </DefinitionBox>
+      <MathBlock tex={String.raw`u_i=\frac{v_i}{E}\qquad\text{and}\qquad \lambda_i^0=|z_i|Fu_i`} />
+      <RelationBox
+        title="Bare radius versus hydrated radius"
+        relations={[
+          <>A small, high-charge ion has high charge density and attracts a thick, strongly bound hydration shell.</>,
+          <>Therefore the smallest bare ion may behave as the largest hydrated species and move more slowly through water.</>,
+          <>For ions of the same charge, hydration enthalpy magnitude generally decreases as bare ionic radius increases.</>,
+        ]}
+      />
+      <DataTable
+        columns={["Series in water", "Hydration strength", "Hydrated size", "Mobility / limiting conductivity trend"]}
+        rows={[
+          ["Alkali-metal ions", <MathInline tex={String.raw`\mathrm{Li^+>Na^+>K^+>Rb^+>Cs^+}`} />, <MathInline tex={String.raw`\mathrm{Li^+>Na^+>K^+>Rb^+\approx Cs^+}`} />, <MathInline tex={String.raw`\mathrm{Li^+<Na^+<K^+<Rb^+\approx Cs^+}`} />],
+          ["Alkaline-earth ions", <MathInline tex={String.raw`\mathrm{Mg^{2+}>Ca^{2+}>Sr^{2+}>Ba^{2+}}`} />, "decreases from Mg²⁺ to Ba²⁺", <MathInline tex={String.raw`\mathrm{Mg^{2+}<Ca^{2+}<Sr^{2+}<Ba^{2+}}`} />],
+          ["Halide ions", <MathInline tex={String.raw`\mathrm{F^->Cl^->Br^->I^-}`} />, "decreases from F⁻ to I⁻", <MathInline tex={String.raw`\mathrm{F^-<Cl^-<Br^-\approx I^-}`} />],
+        ]}
+        accent={T.f}
+      />
+      <Callout kind="special" title="Why aqueous reducing power is not predicted from IE alone">
+        Gas-phase ionization favours the heavier alkali metals, but the very large hydration enthalpy of <MathInline tex={String.raw`\mathrm{Li^+}`} /> strongly stabilizes the aqueous product. Therefore a complete thermochemical cycle is required; a single periodic property is insufficient.
+      </Callout>
+
+      <H2 id="notebook-chemical-reactivity">9 · Chemical Reactivity, Oxides, Hydrides and Energetic Relations</H2>
+      <RelationBox
+        title="Across a representative period"
+        relations={[
+          <>Metallic character decreases and non-metallic character increases.</>,
+          <>Oxides change broadly from basic → amphoteric → acidic.</>,
+          <>Highest oxidation state in the main group generally follows the number of valence electrons up to group 17.</>,
+          <>Reducing character of elements generally decreases while oxidizing character increases.</>,
+        ]}
+      />
+      <MathBlock tex={String.raw`\mathrm{Na_2O\ (basic)\rightarrow MgO\ (basic)\rightarrow Al_2O_3\ (amphoteric)\rightarrow SiO_2,P_4O_{10},SO_3,Cl_2O_7\ (acidic)}`} />
+      <DataTable
+        columns={["Property", "Down a group", "Reason"]}
+        rows={[
+          ["Hydration enthalpy magnitude", "decreases", "ionic radius increases and charge density falls"],
+          ["Lattice enthalpy magnitude for analogous salts", "generally decreases", "interionic distance increases"],
+          ["Acidity of binary hydrides", "generally increases", "E–H bond becomes longer and weaker"],
+          ["Thermal stability of many covalent hydrides", "generally decreases", "E–H bond strength decreases"],
+          ["Basicity of metallic oxides / hydroxides", "generally increases", "metallic and ionic character increase"],
+        ]}
+        accent={T.p}
+      />
+      <MathBlock tex={String.raw`\mathrm{HF<HCl<HBr<HI}`} label="Acid strength in water" />
+      <Callout kind="special" title="HF is a weak hydrohalic acid">
+        The high electronegativity of fluorine alone does not control aqueous acidity. The H–F bond is unusually strong and extensive hydrogen bonding affects ionization.
+      </Callout>
+
+      <H2 id="notebook-family-data">10 · Family-wise Reference Orders</H2>
+      <DataTable
+        columns={["Family", "Important orders", "Reason / note"]}
+        rows={[
+          ["Alkali metals", "IE: Li > Na > K > Rb > Cs; radius: Li < Na < K < Rb < Cs; hydration: Li⁺ > Na⁺ > K⁺ > Rb⁺ > Cs⁺", "aqueous reducing power needs the complete hydration cycle"],
+          ["Alkaline earth metals", "radius: Be < Mg < Ca < Sr < Ba; hydration: Be²⁺ > Mg²⁺ > Ca²⁺ > Sr²⁺ > Ba²⁺", "Be compounds are unusually covalent because Be²⁺ is very small"],
+          ["Group 13", "IE₁: B > Tl > Ga ≳ Al > In; radius: B < Ga < Al < In < Tl", "d- and f-block contraction disturb smooth trends"],
+          ["Group 14", "IE₁: C > Si > Ge > Sn > Pb; radius: C < Si < Ge < Sn < Pb", "inert-pair effect increases down the group"],
+          ["Group 15", "IE₁: N > P > As > Sb > Bi; radius increases down the group", "N is unusually small and forms strong pπ–pπ multiple bonds"],
+          ["Group 16", "EGE magnitude: S > Se > Te > Po > O; EN: O > S > Se > Te > Po", "O is compact; electron addition suffers high 2p crowding"],
+          ["Group 17", "IE: F > Cl > Br > I; EGE magnitude: Cl > F > Br > I; EN: F > Cl > Br > I", "F is most electronegative, but Cl has the most exothermic atomic electron addition"],
+          ["Noble gases", "IE decreases He → Rn; size, melting point, boiling point and polarizability increase down the group", "electron gain enthalpy is positive because the next electron enters a new shell"],
+        ]}
+        accent={T.gold}
+      />
+
+      <H2 id="notebook-special-cases">11 · High-Yield Special Cases and Their Causes</H2>
+      <DataTable
+        columns={["Observed special case", "Correct explanation"]}
+        rows={[
+          [<MathInline tex={String.raw`\mathrm{Ga<Al}`} />, "poor shielding by filled 3d electrons increases effective nuclear attraction in Ga"],
+          [<MathInline tex={String.raw`\mathrm{Zr\approx Hf}`} />, "lanthanoid contraction makes 5d Hf nearly the same size as 4d Zr"],
+          [<MathInline tex={String.raw`\mathrm{IE_1(B)<IE_1(Be)}`} />, "2p electron of B is easier to remove than the penetrating 2s electron of Be"],
+          [<MathInline tex={String.raw`\mathrm{IE_1(O)<IE_1(N)}`} />, "paired-electron repulsion in O versus half-filled 2p³ stability of N"],
+          [<MathInline tex={String.raw`\Delta_{eg}H(\mathrm{Cl})<\Delta_{eg}H(\mathrm{F})`} />, "electron addition to compact F 2p shell suffers greater crowding"],
+          ["Li is a powerful aqueous reducing agent", "large hydration enthalpy of Li⁺ stabilizes the product"],
+          ["Al₂O₃ and BeO are amphoteric", "high charge density and polarization give intermediate ionic/covalent behaviour"],
+          ["Second-period elements differ strongly from heavier congeners", "small size, high electronegativity, absence of low-energy d orbitals and strong pπ–pπ bonding"],
+        ]}
+        accent={T.p}
+      />
+
+      <H2 id="notebook-worked-examples">12 · Worked Examples for Student Notes</H2>
+      <WorkedExample
+        number="N1"
+        title="Identify valence electrons from successive IE"
+        question="The first four ionization enthalpies are 738, 1451, 7733 and 10542 kJ mol⁻¹. Predict the group and stable simple ion."
+        reasoning={[
+          "The large jump occurs between IE₂ and IE₃.",
+          "Two valence electrons are removed before a core electron is reached.",
+          "The element belongs to group 2 and preferentially forms M²⁺.",
+        ]}
+        answer="Group 2; the data are characteristic of Mg and the stable ion is Mg²⁺."
+        accent={T.gold}
+      />
+      <WorkedExample
+        number="N2"
+        title="Radius of an isoelectronic series"
+        question="Arrange O²⁻, F⁻, Na⁺, Mg²⁺ and Al³⁺ in decreasing radius."
+        reasoning={[
+          "All five species contain ten electrons.",
+          "Nuclear charge increases from O (Z = 8) to Al (Z = 13).",
+          "For a fixed electron count, higher nuclear charge contracts the cloud.",
+        ]}
+        answer="O²⁻ > F⁻ > Na⁺ > Mg²⁺ > Al³⁺."
+        accent={T.cyan}
+      />
+      <WorkedExample
+        number="N3"
+        title="Bare ion versus hydrated ion"
+        question="Why does Li⁺ move more slowly than K⁺ in water although bare Li⁺ is smaller?"
+        reasoning={[
+          "Li⁺ has much higher charge density.",
+          "It binds water molecules much more strongly and carries a larger hydration shell.",
+          "The effective hydrated radius is therefore larger and its mobility is lower.",
+        ]}
+        answer="In water: mobility Li⁺ < K⁺ because hydrated size, not bare crystal radius alone, controls motion."
+        accent={T.f}
+      />
+      <WorkedExample
+        number="N4"
+        title="Electron gain enthalpy and oxidizing power"
+        question="Why can F₂ be a stronger oxidizing agent in water even though Cl has more negative atomic electron gain enthalpy?"
+        reasoning={[
+          "Electron gain enthalpy refers to isolated gaseous atoms.",
+          "Oxidation by X₂ includes X–X bond breaking and hydration of X⁻.",
+          "The unusually favourable hydration of F⁻ and the complete electrode cycle make F₂ the stronger aqueous oxidant.",
+        ]}
+        answer="Aqueous oxidizing strength is a complete thermodynamic-cycle property, not an atomic-EGE ranking."
+        accent={T.d}
+      />
+      <WorkedExample
+        number="N5"
+        title="Oxide character across a period"
+        question="Classify Na₂O, Al₂O₃ and SO₃ as basic, amphoteric or acidic."
+        reasoning={[
+          "Na is strongly electropositive, so Na₂O is highly ionic and basic.",
+          "Al³⁺ has high charge density, giving Al₂O₃ intermediate amphoteric behaviour.",
+          "S in a high oxidation state forms a covalent oxide that produces an acid with water.",
+        ]}
+        answer="Na₂O basic; Al₂O₃ amphoteric; SO₃ acidic."
+        accent={T.p}
+      />
+
+      <H2 id="notebook-final-relations">13 · Final Relation Sheet</H2>
+      <DataTable
+        columns={["Change", "Direct effect", "Common consequence"]}
+        rows={[
+          [<MathInline tex={String.raw`Z_{eff}\uparrow`} />, <MathInline tex={String.raw`r\downarrow`} />, "IE and electronegativity generally increase"],
+          ["Number of shells ↑", <MathInline tex={String.raw`r\uparrow`} />, "IE and electronegativity generally decrease"],
+          ["Positive charge ↑ for isoelectronic species", <MathInline tex={String.raw`r\downarrow`} />, "hydration and polarizing power increase"],
+          ["Negative charge ↑ for same nucleus", <MathInline tex={String.raw`r\uparrow`} />, "electron–electron repulsion increases"],
+          ["Cation charge density ↑", "polarizing power ↑", "covalent character in its compounds increases"],
+          ["Anion size / polarizability ↑", "distortion ↑", "covalent character increases"],
+          ["Bond order ↑", "bond length ↓", "bond strength usually increases"],
+          ["Hydration enthalpy magnitude ↑", "aqueous ion stabilization ↑", "can reverse a gas-phase trend"],
+        ]}
+        accent={T.cyan}
+      />
+
+      <Callout kind="note" title="Final exam rule">
+        Never rank a property by one arrow alone. First identify the species and physical medium; then compare shell number, electron count, nuclear charge, shielding, subshell stability, hydration and lattice effects. Use exact numerical data where d- and f-block behaviour is irregular.
+      </Callout>
+    </div>
+  );
+}
 
 /* =============================================================================
    SECTION — Original Worked Example Workshop
@@ -2789,7 +3308,7 @@ const workshopExamples = [
     answer: "Al < Mg < S < P.",
   },
   {
-    number: "X", title: "Electron gain enthalpy exception", accent: T.d,
+    number: "X", title: "Electron gain enthalpy special case", accent: T.d,
     question: "Choose the most exothermic first electron-addition process among O, F, S and Cl.",
     reasoning: [
       "Halogens are generally more favourable than chalcogens because addition completes np⁶.",
@@ -2833,7 +3352,7 @@ const workshopExamples = [
     reasoning: [
       "Oxidation in water includes atomization, ionization and hydration of the cation.",
       "Li has a high ionization enthalpy, which opposes oxidation.",
-      "However, Li⁺ has exceptionally large hydration enthalpy because of its very small radius.",
+      "However, Li⁺ has unusually large hydration enthalpy because of its very small radius.",
       "The hydration gain can dominate the overall free-energy change.",
     ],
     answer: "The strong hydration of Li⁺ makes formation of aqueous Li⁺ highly favourable, so gas-phase IE alone gives the wrong intuition.",
@@ -2914,6 +3433,7 @@ export function SectionWorkshop() {
    MAIN APP — Navigation shell
    ========================================================================== */
 type NavKey =
+  | "notebook"
   | "history"
   | "configuration"
   | "map"
@@ -2929,6 +3449,7 @@ type NavKey =
   | "workshop";
 
 const NAV: { key: NavKey; label: string; group: string }[] = [
+  { key: "notebook", label: "Complete Student Notes", group: "Start Here" },
   { key: "history", label: "History & Modern Law", group: "Foundations" },
   { key: "configuration", label: "Configuration & Position", group: "Foundations" },
   { key: "map", label: "Master Trend Map", group: "Foundations" },
@@ -2945,7 +3466,7 @@ const NAV: { key: NavKey; label: string; group: string }[] = [
 ];
 
 export default function PeriodicTableMasterNotes() {
-  const [active, setActive] = useState<NavKey>("configuration");
+  const [active, setActive] = useState<NavKey>("notebook");
 
   const groups = useMemo(() => {
     const g: Record<string, typeof NAV> = {};
@@ -2958,6 +3479,7 @@ export default function PeriodicTableMasterNotes() {
 
   const renderSection = () => {
     switch (active) {
+      case "notebook": return <SectionStudentNotebook />;
       case "history": return <SectionHistory />;
       case "configuration": return <SectionConfiguration />;
       case "map": return <SectionTrendMap />;
@@ -2994,7 +3516,7 @@ export default function PeriodicTableMasterNotes() {
       {/* Top bar (mobile) */}
       <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "14px 18px", borderBottom: `1px solid ${T.border}`, position: "sticky", top: 0, background: T.bg, zIndex: 20 }}>
         <div style={{ fontFamily: T.serif, fontWeight: 700, color: T.gold, fontSize: 17 }}>
-          Periodic<span style={{ color: T.text }}>Properties</span>
+          Classification<span style={{ color: T.text }}> & Periodicity</span>
         </div>
       </div>
 
@@ -3038,7 +3560,7 @@ export default function PeriodicTableMasterNotes() {
         >
           <div style={{ fontFamily: T.serif, fontSize: 13, color: T.textDim, marginBottom: 18, lineHeight: 1.5 }}>
             JEE Inorganic Chemistry<br />
-            <span style={{ color: T.cyan }}>Synergic Bond</span>
+            <span style={{ color: T.cyan }}>Synergic Bond Student Notes</span>
           </div>
           {Object.entries(groups).map(([group, items]) => (
             <div key={group} style={{ marginBottom: 20 }}>
@@ -3077,7 +3599,7 @@ export default function PeriodicTableMasterNotes() {
         <main className="notesMain" style={{ flex: 1, minWidth: 0, padding: "32px 28px 80px" }}>{renderSection()}</main>
       </div>
 
-      <footer style={{ borderTop: `1px solid ${T.border}`, padding: "20px 18px", textAlign: "center", fontFamily: T.sans, fontSize: 11.5, color: T.textFaint }}>Synergic Bond · Original periodic-table learning notes · Theory, diagrams, examples and revision data in one chapter.</footer>
+      <footer style={{ borderTop: `1px solid ${T.border}`, padding: "20px 18px", textAlign: "center", fontFamily: T.sans, fontSize: 11.5, color: T.textFaint }}>Synergic Bond · Student-ready periodicity notes · Theory, diagrams, examples and revision data in one chapter.</footer>
     </div>
   );
 }

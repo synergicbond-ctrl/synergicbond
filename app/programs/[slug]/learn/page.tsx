@@ -116,8 +116,8 @@ export default async function ProgramLearnPage({ params }: { params: Promise<{ s
                 href="/programs/jee-advanced/chapter/periodic-table"
                 className={`group block rounded-xl border bg-white/[0.02] p-4 transition hover:bg-white/[0.04] ${accent.card}`}
               >
-                <div className="text-[11px] font-bold uppercase tracking-wider text-white/40">⚗️ Physical</div>
-                <div className="mt-1.5 text-sm font-bold text-white">Periodic Table & Periodic Properties</div>
+                <div className="text-[11px] font-bold uppercase tracking-wider text-white/40">🧪 Inorganic</div>
+                <div className="mt-1.5 text-sm font-bold text-white">Classification of Elements and Periodicity in Properties</div>
                 <div className="mt-1 text-xs text-white/45">Complete JEE Advanced theory with periodic trends, exceptions, original SVG diagrams, tables, and worked examples.</div>
                 <div className={`mt-3 text-sm font-semibold ${accent.text}`}>Explore Lessons <span className="inline-block transition group-hover:translate-x-1">→</span></div>
               </Link>

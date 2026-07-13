@@ -140,11 +140,14 @@ export function MathBlock({ tex, label }: { tex: string; label?: string }) {
   const html = katex.renderToString(tex, {
     throwOnError: false,
     displayMode: true,
-    output: "mathml",
-    strict: "ignore",
+    output: "htmlAndMathml",
+    strict: "warn",
+    trust: false,
   });
   return (
     <div
+      className="sb-katex-block"
+      aria-label={tex}
       style={{
         background: "linear-gradient(135deg, rgba(95,212,234,0.08), rgba(232,184,75,0.04))",
         border: `1px solid ${T.border}`,
@@ -165,10 +168,11 @@ export function MathInline({ tex }: { tex: string }) {
   const html = katex.renderToString(tex, {
     throwOnError: false,
     displayMode: false,
-    output: "mathml",
-    strict: "ignore",
+    output: "htmlAndMathml",
+    strict: "warn",
+    trust: false,
   });
-  return <span style={{ color: T.cyan, fontWeight: 700 }} dangerouslySetInnerHTML={{ __html: html }} />;
+  return <span className="sb-katex-inline" aria-label={tex} style={{ color: T.cyan, fontWeight: 700 }} dangerouslySetInnerHTML={{ __html: html }} />;
 }
 
 export function DefinitionBox({ term, children }: { term: string; children: React.ReactNode }) {
@@ -647,7 +651,7 @@ export function ChapterHero() {
             A world-reference chapter for Boards, NEET, JEE Main, JEE Advanced and Olympiad study: NCERT-first definitions, complete historical development, electronic classification, effective nuclear charge, radii, ionization and electron-gain data, electronegativity scales, chemical periodicity, thermochemical cycles, block-wise tables and original worked examples.
           </p>
           <div style={{ display: "flex", flexWrap: "wrap", gap: 8, marginTop: 16 }}>
-            {["16 student-note modules", "Original responsive SVGs", "Worked reasoning", "Special-case revision"].map((x, i) => (
+            {["16 student-note modules", "Replayable verified SVGs", "Worked reasoning", "Special-case revision"].map((x, i) => (
               <span key={x} style={{ border: `1px solid ${i % 2 ? T.gold + "55" : T.cyan + "55"}`, background: "rgba(255,255,255,0.025)", borderRadius: 999, padding: "6px 10px", fontFamily: T.sans, color: T.textDim, fontSize: 11.5 }}>
                 {x}
               </span>
@@ -661,102 +665,155 @@ export function ChapterHero() {
 }
 
 
+
+export function MotionFigure({
+  children,
+  title,
+  status,
+  note,
+}: {
+  children: React.ReactNode;
+  title: string;
+  status: "Data-backed quantitative" | "Law-based schematic" | "Calculated orbital model";
+  note: string;
+}) {
+  const [run, setRun] = useState(0);
+  return (
+    <figure style={{ margin: "0 0 16px" }}>
+      <div key={run} className="sb-animate" style={{ width: "100%" }}>{children}</div>
+      <figcaption style={{ display: "flex", gap: 10, alignItems: "flex-start", justifyContent: "space-between", flexWrap: "wrap", marginTop: 8 }}>
+        <div style={{ minWidth: 240, flex: 1 }}>
+          <div style={{ color: T.d, fontFamily: T.sans, fontSize: 10.5, fontWeight: 900, letterSpacing: 0.65, textTransform: "uppercase" }}>✓ {status}</div>
+          <div style={{ color: T.text, fontFamily: T.serif, fontSize: 14.5, fontWeight: 800, marginTop: 2 }}>{title}</div>
+          <div style={{ color: T.textDim, fontFamily: T.sans, fontSize: 11.5, lineHeight: 1.55, marginTop: 2 }}>{note}</div>
+        </div>
+        <button type="button" onClick={() => setRun((v) => v + 1)} style={{ border: `1px solid ${T.cyan}66`, background: "rgba(95,212,234,0.08)", color: T.cyan, borderRadius: 999, padding: "6px 10px", fontSize: 11, fontWeight: 800, cursor: "pointer" }} aria-label={`Replay animation: ${title}`}>
+          ↻ Replay animation
+        </button>
+      </figcaption>
+    </figure>
+  );
+}
+
 // -----------------------------------------------------------------------------
 // SVG Diagrams
 // -----------------------------------------------------------------------------
 export function RadialDistributionSVG() {
-  // Qualitative RDF curves for 3s, 3p, 3d
-  const w = 460, h = 220, pad = 36;
-  const curve = (peak: number, spread: number, amp: number) => {
-    let d = `M ${pad} ${h - pad}`;
-    for (let x = 0; x <= 100; x++) {
-      const xx = pad + (x / 100) * (w - 2 * pad);
-      const t = x / 100;
-      const y = amp * Math.exp(-Math.pow((t - peak) / spread, 2)) * (1 + 0.15 * Math.sin(t * 18));
-      d += ` L ${xx} ${h - pad - y}`;
-    }
-    return d;
+  const w = 560, h = 300, left = 52, right = 22, top = 30, bottom = 48;
+  const factorial = (n: number) => Array.from({ length: Math.max(0, n) }, (_, i) => i + 1).reduce((a, b) => a * b, 1);
+  const probability = (r: number, l: 0 | 1 | 2) => {
+    const n = 3;
+    const rho = (2 * r) / n;
+    const laguerre = l === 0 ? 0.5 * (rho * rho - 6 * rho + 6) : l === 1 ? 4 - rho : 1;
+    const norm = Math.pow(2 / n, 1.5) * Math.sqrt(factorial(n - l - 1) / (2 * n * factorial(n + l)));
+    const R = norm * Math.exp(-rho / 2) * Math.pow(rho, l) * laguerre;
+    return r * r * R * R;
   };
+  const rs = Array.from({ length: 241 }, (_, i) => (i / 240) * 24);
+  const series = [
+    { key: "3s", l: 0 as const, color: T.s, nodes: [1.90, 7.10] },
+    { key: "3p", l: 1 as const, color: T.p, nodes: [6.00] },
+    { key: "3d", l: 2 as const, color: T.d, nodes: [] as number[] },
+  ].map((item) => {
+    const raw = rs.map((r) => probability(r, item.l));
+    const max = Math.max(...raw);
+    return { ...item, values: raw.map((v) => v / max) };
+  });
+  const x = (r: number) => left + (r / 24) * (w - left - right);
+  const y = (v: number) => top + (1 - v) * (h - top - bottom);
+  const path = (values: number[]) => values.map((v, i) => `${i === 0 ? "M" : "L"} ${x(rs[i]).toFixed(2)} ${y(v).toFixed(2)}`).join(" ");
   return (
-    <svg viewBox={`0 0 ${w} ${h}`} style={{ width: "100%", maxWidth: 460, background: T.bgGrid, borderRadius: 10, border: `1px solid ${T.borderSoft}` }}>
-      <line x1={pad} y1={h - pad} x2={w - pad} y2={h - pad} stroke={T.textFaint} strokeWidth={1} />
-      <line x1={pad} y1={pad} x2={pad} y2={h - pad} stroke={T.textFaint} strokeWidth={1} />
-      <path d={curve(0.14, 0.09, 95)} stroke={T.s} strokeWidth={2} fill="none" />
-      <path d={curve(0.32, 0.11, 78)} stroke={T.p} strokeWidth={2} fill="none" />
-      <path d={curve(0.55, 0.14, 60)} stroke={T.d} strokeWidth={2} fill="none" />
-      <text x={pad + 18} y={h - pad - 100} fill={T.s} fontSize={12} fontFamily={T.mono}>3s</text>
-      <text x={pad + 70} y={h - pad - 85} fill={T.p} fontSize={12} fontFamily={T.mono}>3p</text>
-      <text x={pad + 150} y={h - pad - 68} fill={T.d} fontSize={12} fontFamily={T.mono}>3d</text>
-      <text x={w / 2 - 40} y={h - 8} fill={T.textDim} fontSize={11} fontFamily={T.sans}>distance from nucleus (r) →</text>
-      <text x={10} y={pad - 6} fill={T.textDim} fontSize={11} fontFamily={T.sans}>P(r)</text>
-    </svg>
+    <MotionFigure title="Hydrogenic 3s, 3p and 3d radial-probability distributions" status="Calculated orbital model" note="Each curve is calculated from the hydrogenic radial wavefunction and normalized to its own maximum. Node positions are quantitative in units of a₀; the figure compares penetration and radial nodes, not multielectron orbital energies.">
+      <svg viewBox={`0 0 ${w} ${h}`} role="img" aria-label="Calculated hydrogenic radial probability curves for 3s 3p and 3d" style={{ width: "100%", maxWidth: 760, background: T.bgGrid, borderRadius: 12, border: `1px solid ${T.borderSoft}` }}>
+        {[0, 0.25, 0.5, 0.75, 1].map((v) => <g key={v}><line x1={left} y1={y(v)} x2={w-right} y2={y(v)} stroke={T.borderSoft} strokeWidth="1" /><text x={left-10} y={y(v)+4} textAnchor="end" fill={T.textFaint} fontSize="10">{v.toFixed(2)}</text></g>)}
+        {[0, 4, 8, 12, 16, 20, 24].map((v) => <g key={v}><line x1={x(v)} y1={top} x2={x(v)} y2={h-bottom} stroke={T.borderSoft} strokeWidth="1" /><text x={x(v)} y={h-bottom+18} textAnchor="middle" fill={T.textFaint} fontSize="10">{v}</text></g>)}
+        <line x1={left} y1={h-bottom} x2={w-right} y2={h-bottom} stroke={T.textFaint} />
+        <line x1={left} y1={top} x2={left} y2={h-bottom} stroke={T.textFaint} />
+        {series.map((ser, si) => <g key={ser.key}>
+          <path className="sb-path" pathLength="1" d={path(ser.values)} stroke={ser.color} strokeWidth="2.8" fill="none" style={{ animationDelay: `${si * 0.45}s` }} />
+          {ser.nodes.map((node) => <g key={node}><line x1={x(node)} y1={h-bottom} x2={x(node)} y2={h-bottom-18} stroke={ser.color} strokeDasharray="3 3" /><text x={x(node)} y={h-bottom-23} textAnchor="middle" fill={ser.color} fontSize="9.5">node</text></g>)}
+        </g>)}
+        <g transform={`translate(${w-126} ${top+10})`}>{series.map((ser, i) => <g key={ser.key} transform={`translate(0 ${i*20})`}><line x1="0" y1="0" x2="22" y2="0" stroke={ser.color} strokeWidth="3" /><text x="30" y="4" fill={T.text} fontSize="11.5">{ser.key}</text></g>)}</g>
+        <text x={(left+w-right)/2} y={h-10} textAnchor="middle" fill={T.textDim} fontSize="11.5">distance from nucleus, r / a₀</text>
+        <text x="15" y={(top+h-bottom)/2} textAnchor="middle" transform={`rotate(-90 15 ${(top+h-bottom)/2})`} fill={T.textDim} fontSize="11.5">normalized radial probability, P(r)</text>
+      </svg>
+    </MotionFigure>
   );
 }
+
 
 export function AtomicVolumeSVG() {
-  const w = 480, h = 220, pad = 40;
-  const pts = [
-    [0, 25], [8, 90], [16, 45], [24, 20], [32, 95], [40, 55], [48, 22],
-    [56, 88], [64, 60], [72, 28], [80, 70], [88, 50], [96, 30], [100, 92],
-  ];
-  const path = pts
-    .map(([x, y], i) => `${i === 0 ? "M" : "L"} ${pad + (x / 100) * (w - 2 * pad)} ${h - pad - (y / 100) * (h - 2 * pad)}`)
-    .join(" ");
-  const peaks = [1, 4, 9, 13];
+  const data = [
+    { e: "Li", m: 6.94, v: 13.0, family: "alkali" }, { e: "Be", m: 9.01, v: 4.9 }, { e: "B", m: 10.81, v: 4.6 }, { e: "C", m: 12.01, v: 3.4 },
+    { e: "Na", m: 22.99, v: 23.7, family: "alkali" }, { e: "Mg", m: 24.31, v: 14.0 }, { e: "Al", m: 26.98, v: 10.0 }, { e: "Si", m: 28.09, v: 12.1 }, { e: "P", m: 30.97, v: 17.0 }, { e: "S", m: 32.06, v: 15.5 },
+    { e: "K", m: 39.10, v: 45.3, family: "alkali" }, { e: "Ca", m: 40.08, v: 26.0 }, { e: "Sc", m: 44.96, v: 15.0 }, { e: "Ti", m: 47.87, v: 10.6 }, { e: "V", m: 50.94, v: 8.4 }, { e: "Cr", m: 52.00, v: 7.2 }, { e: "Mn", m: 54.94, v: 7.4 }, { e: "Fe", m: 55.85, v: 7.1 }, { e: "Co", m: 58.93, v: 6.6 }, { e: "Ni", m: 58.69, v: 6.6 }, { e: "Cu", m: 63.55, v: 7.1 }, { e: "Zn", m: 65.38, v: 9.2 }, { e: "Ga", m: 69.72, v: 11.8 }, { e: "Ge", m: 72.63, v: 13.6 }, { e: "As", m: 74.92, v: 13.1 }, { e: "Se", m: 78.97, v: 16.5 }, { e: "Br", m: 79.90, v: 23.5, family: "halogen" },
+    { e: "Rb", m: 85.47, v: 55.9, family: "alkali" }, { e: "Sr", m: 87.62, v: 33.7 }, { e: "Y", m: 88.91, v: 19.9 }, { e: "Zr", m: 91.22, v: 14.0 }, { e: "Nb", m: 92.91, v: 10.8 }, { e: "Mo", m: 95.95, v: 9.4 }, { e: "Ru", m: 101.07, v: 8.2 }, { e: "Rh", m: 102.91, v: 8.3 }, { e: "Pd", m: 106.42, v: 8.9 }, { e: "Ag", m: 107.87, v: 10.3 }, { e: "Cd", m: 112.41, v: 13.0 }, { e: "In", m: 114.82, v: 15.7 }, { e: "Sn", m: 118.71, v: 16.3 }, { e: "Sb", m: 121.76, v: 18.4 }, { e: "I", m: 126.90, v: 25.7, family: "halogen" },
+    { e: "Cs", m: 132.91, v: 70.0, family: "alkali" }, { e: "Ba", m: 137.33, v: 39.0 },
+  ].sort((a, b) => a.m - b.m);
+  const w = 820, h = 390, left = 64, right = 28, top = 34, bottom = 56;
+  const x = (m: number) => left + (m / 140) * (w - left - right);
+  const y = (v: number) => top + (1 - v / 75) * (h - top - bottom);
+  const d = data.map((p, i) => `${i ? "L" : "M"} ${x(p.m).toFixed(1)} ${y(p.v).toFixed(1)}`).join(" ");
   return (
-    <svg viewBox={`0 0 ${w} ${h}`} style={{ width: "100%", maxWidth: 480, background: T.bgGrid, borderRadius: 10, border: `1px solid ${T.borderSoft}` }}>
-      <line x1={pad} y1={h - pad} x2={w - pad} y2={h - pad} stroke={T.textFaint} strokeWidth={1} />
-      <line x1={pad} y1={pad} x2={pad} y2={h - pad} stroke={T.textFaint} strokeWidth={1} />
-      <path d={path} stroke={T.gold} strokeWidth={2} fill="none" />
-      {pts.map(([x, y], i) => (
-        <circle key={i} cx={pad + (x / 100) * (w - 2 * pad)} cy={h - pad - (y / 100) * (h - 2 * pad)} r={peaks.includes(i) ? 4 : 2.4}
-          fill={peaks.includes(i) ? T.cyan : T.textDim} />
-      ))}
-      <text x={pad + 4} y={38} fill={T.cyan} fontSize={11} fontFamily={T.sans}>peaks = alkali metals</text>
-      <text x={w / 2 - 70} y={h - 8} fill={T.textDim} fontSize={11} fontFamily={T.sans}>atomic mass (increasing) →</text>
-      <text x={8} y={pad - 8} fill={T.textDim} fontSize={11} fontFamily={T.sans}>atomic volume</text>
-    </svg>
+    <MotionFigure title="Lothar Meyer atomic-volume curve — selected-element reconstruction" status="Data-backed quantitative" note="Atomic volume is Vₘ ≈ M/ρ in cm³ mol⁻¹. Values are rounded from standard atomic masses and room-temperature densities; allotrope and phase choice can shift individual points. The repeated alkali-metal maxima are the chemically important pattern.">
+      <svg viewBox={`0 0 ${w} ${h}`} role="img" aria-label="Quantitative selected-element reconstruction of Lothar Meyer atomic volume curve" style={{ width: "100%", background: T.bgGrid, borderRadius: 12, border: `1px solid ${T.borderSoft}` }}>
+        {[0, 15, 30, 45, 60, 75].map((v) => <g key={v}><line x1={left} y1={y(v)} x2={w-right} y2={y(v)} stroke={T.borderSoft} /><text x={left-10} y={y(v)+4} textAnchor="end" fill={T.textFaint} fontSize="10.5">{v}</text></g>)}
+        {[0, 20, 40, 60, 80, 100, 120, 140].map((m) => <g key={m}><line x1={x(m)} y1={top} x2={x(m)} y2={h-bottom} stroke={T.borderSoft} /><text x={x(m)} y={h-bottom+18} textAnchor="middle" fill={T.textFaint} fontSize="10.5">{m}</text></g>)}
+        <line x1={left} y1={h-bottom} x2={w-right} y2={h-bottom} stroke={T.textFaint} />
+        <line x1={left} y1={top} x2={left} y2={h-bottom} stroke={T.textFaint} />
+        <path className="sb-path" pathLength="1" d={d} stroke={T.gold} strokeWidth="3" fill="none" />
+        {data.map((p, i) => <g key={`${p.e}-${p.m}`} className="sb-point" style={{ animationDelay: `${0.25 + i * 0.025}s` }}>
+          <circle cx={x(p.m)} cy={y(p.v)} r={p.family === "alkali" ? 5.5 : 3.2} fill={p.family === "alkali" ? T.cyan : p.family === "halogen" ? T.p : T.textDim} className={p.family === "alkali" ? "sb-pulse" : undefined}><title>{`${p.e}: atomic mass ${p.m}, atomic volume ≈ ${p.v} cm³ mol⁻¹`}</title></circle>
+          {(p.family || ["Fe","Cu","Zn"].includes(p.e)) ? <text x={x(p.m)+(p.family === "alkali" ? 7 : 5)} y={y(p.v)-7} fill={p.family === "alkali" ? T.cyan : p.family === "halogen" ? T.p : T.text} fontSize="10.5" fontWeight="800">{p.e}</text> : null}
+        </g>)}
+        <text x={(left+w-right)/2} y={h-12} textAnchor="middle" fill={T.textDim} fontSize="12">relative atomic mass / g mol⁻¹</text>
+        <text x="18" y={(top+h-bottom)/2} textAnchor="middle" transform={`rotate(-90 18 ${(top+h-bottom)/2})`} fill={T.textDim} fontSize="12">atomic volume, Vₘ / cm³ mol⁻¹</text>
+        <g transform={`translate(${w-250} ${top+12})`}><circle cx="0" cy="0" r="5" fill={T.cyan}/><text x="10" y="4" fill={T.text} fontSize="10.5">alkali-metal maxima</text><circle cx="128" cy="0" r="4" fill={T.p}/><text x="138" y="4" fill={T.text} fontSize="10.5">halogens on rising limbs</text></g>
+      </svg>
+    </MotionFigure>
   );
 }
+
 
 export function DBlockRadiusChartSVG() {
-  const elems = ["Sc", "Ti", "V", "Cr", "Mn", "Fe", "Co", "Ni", "Cu", "Zn"];
-  const vals3d = [162, 147, 134, 127, 127, 126, 124, 124, 124, 138];
-  const vals4d = [182, 160, 147, 140, 135, 134, 134, 137, 144, 152];
-  const vals5d = [188, 159, 147, 141, 137, 135, 136, 139, 144, 155];
-  const w = 520, h = 260, pad = 44;
-  const min = 110, max = 200;
-  const xFor = (i: number) => pad + (i / (elems.length - 1)) * (w - 2 * pad);
-  const yFor = (v: number) => h - pad - ((v - min) / (max - min)) * (h - 2 * pad);
-  const pathFor = (vals: number[]) => vals.map((v, i) => `${i === 0 ? "M" : "L"} ${xFor(i)} ${yFor(v)}`).join(" ");
+  const data = [
+    { e: "Sc", r: 164 }, { e: "Ti", r: 147 }, { e: "V", r: 135 }, { e: "Cr", r: 129 }, { e: "Mn", r: 137 },
+    { e: "Fe", r: 126 }, { e: "Co", r: 125 }, { e: "Ni", r: 125 }, { e: "Cu", r: 128 }, { e: "Zn", r: 137 },
+  ];
+  const w = 700, h = 330, left = 58, right = 24, top = 34, bottom = 58;
+  const min = 118, max = 170;
+  const x = (i: number) => left + (i / (data.length - 1)) * (w - left - right);
+  const y = (v: number) => top + (1 - (v - min) / (max - min)) * (h - top - bottom);
+  const d = data.map((p, i) => `${i ? "L" : "M"} ${x(i)} ${y(p.r)}`).join(" ");
   return (
-    <svg viewBox={`0 0 ${w} ${h}`} style={{ width: "100%", maxWidth: 520, background: T.bgGrid, borderRadius: 10, border: `1px solid ${T.borderSoft}` }}>
-      <line x1={pad} y1={h - pad} x2={w - pad} y2={h - pad} stroke={T.textFaint} strokeWidth={1} />
-      <line x1={pad} y1={pad} x2={pad} y2={h - pad} stroke={T.textFaint} strokeWidth={1} />
-      <path d={pathFor(vals3d)} stroke={T.s} strokeWidth={2} fill="none" />
-      <path d={pathFor(vals4d)} stroke={T.d} strokeWidth={2} fill="none" />
-      <path d={pathFor(vals5d)} stroke={T.f} strokeWidth={2} fill="none" strokeDasharray="4 3" />
-      {elems.map((e, i) => (
-        <text key={e} x={xFor(i) - 7} y={h - pad + 16} fill={T.textDim} fontSize={10.5} fontFamily={T.mono}>{e}</text>
-      ))}
-      <text x={w - pad - 90} y={pad + 10} fill={T.s} fontSize={11} fontFamily={T.mono}>● 3d series</text>
-      <text x={w - pad - 90} y={pad + 24} fill={T.d} fontSize={11} fontFamily={T.mono}>● 4d series</text>
-      <text x={w - pad - 90} y={pad + 38} fill={T.f} fontSize={11} fontFamily={T.mono}>- - 5d series</text>
-      <text x={8} y={pad - 10} fill={T.textDim} fontSize={11} fontFamily={T.sans}>radius / pm</text>
-    </svg>
+    <MotionFigure title="Metallic radii across the first transition series" status="Data-backed quantitative" note="The plotted values are the NCERT 3d-series metallic radii in pm. The x-axis uses the correct element labels Sc–Zn; 4d and 5d comparisons are kept in separate tables rather than being falsely labelled with 3d symbols.">
+      <svg viewBox={`0 0 ${w} ${h}`} role="img" aria-label="NCERT metallic radii of Sc Ti V Cr Mn Fe Co Ni Cu Zn" style={{ width: "100%", maxWidth: 820, background: T.bgGrid, borderRadius: 12, border: `1px solid ${T.borderSoft}` }}>
+        {[120, 130, 140, 150, 160, 170].map((v) => <g key={v}><line x1={left} y1={y(v)} x2={w-right} y2={y(v)} stroke={T.borderSoft}/><text x={left-10} y={y(v)+4} textAnchor="end" fill={T.textFaint} fontSize="10.5">{v}</text></g>)}
+        <line x1={left} y1={h-bottom} x2={w-right} y2={h-bottom} stroke={T.textFaint}/><line x1={left} y1={top} x2={left} y2={h-bottom} stroke={T.textFaint}/>
+        <path className="sb-path" pathLength="1" d={d} stroke={T.d} strokeWidth="3" fill="none" />
+        {data.map((p, i) => <g key={p.e} className="sb-point" style={{ animationDelay: `${0.25+i*0.08}s` }}><circle cx={x(i)} cy={y(p.r)} r="5" fill={T.d}><title>{`${p.e}: ${p.r} pm`}</title></circle><text x={x(i)} y={h-bottom+19} textAnchor="middle" fill={T.text} fontSize="11">{p.e}</text><text x={x(i)} y={y(p.r)-10} textAnchor="middle" fill={T.textDim} fontSize="9.5">{p.r}</text></g>)}
+        <text x={(left+w-right)/2} y={h-10} textAnchor="middle" fill={T.textDim} fontSize="11.5">first transition series</text><text x="17" y={(top+h-bottom)/2} textAnchor="middle" transform={`rotate(-90 17 ${(top+h-bottom)/2})`} fill={T.textDim} fontSize="11.5">metallic radius / pm</text>
+      </svg>
+    </MotionFigure>
   );
 }
 
+
 export function MoseleyPlotSVG() {
-  const w = 320, h = 200, pad = 36;
+  const points = Array.from({ length: 21 }, (_, i) => ({ z: 10 + i * 2, y: 5.2 + i * 0.72 }));
+  const w = 520, h = 300, left = 58, right = 26, top = 30, bottom = 54;
+  const x = (z: number) => left + ((z - 8) / 46) * (w-left-right);
+  const y = (v: number) => top + (1 - (v - 4) / 17) * (h-top-bottom);
   return (
-    <svg viewBox={`0 0 ${w} ${h}`} style={{ width: "100%", maxWidth: 320, background: T.bgGrid, borderRadius: 10, border: `1px solid ${T.borderSoft}` }}>
-      <line x1={pad} y1={h - pad} x2={w - pad} y2={h - pad} stroke={T.textFaint} strokeWidth={1} />
-      <line x1={pad} y1={pad} x2={pad} y2={h - pad} stroke={T.textFaint} strokeWidth={1} />
-      <line x1={pad} y1={h - pad} x2={w - pad} y2={pad} stroke={T.gold} strokeWidth={2} />
-      <text x={w / 2 - 55} y={h - 8} fill={T.textDim} fontSize={11} fontFamily={T.sans}>atomic number (Z) →</text>
-      <text x={8} y={pad - 8} fill={T.textDim} fontSize={11} fontFamily={T.sans}>√ν</text>
-    </svg>
+    <MotionFigure title="Moseley's law: √ν varies linearly with atomic number" status="Law-based schematic" note="The straight-line relationship is the verified scientific content. The points are a clean schematic for one characteristic X-ray series, not a claim to reproduce a particular experimental dataset.">
+      <svg viewBox={`0 0 ${w} ${h}`} role="img" aria-label="Schematic straight line plot of square root X ray frequency against atomic number" style={{ width: "100%", maxWidth: 620, background: T.bgGrid, borderRadius: 12, border: `1px solid ${T.borderSoft}` }}>
+        <line x1={left} y1={h-bottom} x2={w-right} y2={h-bottom} stroke={T.textFaint}/><line x1={left} y1={top} x2={left} y2={h-bottom} stroke={T.textFaint}/>
+        <path className="sb-path" pathLength="1" d={`M ${x(points[0].z)} ${y(points[0].y)} L ${x(points.at(-1)!.z)} ${y(points.at(-1)!.y)}`} stroke={T.gold} strokeWidth="3" fill="none" />
+        {points.map((p,i)=><circle key={p.z} className="sb-point" style={{animationDelay:`${0.2+i*0.045}s`}} cx={x(p.z)} cy={y(p.y)} r="3.6" fill={T.cyan}><title>{`Z = ${p.z}`}</title></circle>)}
+        <text x={(left+w-right)/2} y={h-12} textAnchor="middle" fill={T.textDim} fontSize="11.5">atomic number, Z</text><text x="17" y={(top+h-bottom)/2} textAnchor="middle" transform={`rotate(-90 17 ${(top+h-bottom)/2})`} fill={T.textDim} fontSize="11.5">√ν</text>
+        <text x={w-210} y={top+24} fill={T.gold} fontSize="12" fontWeight="800">√ν = a(Z − b)</text>
+      </svg>
+    </MotionFigure>
   );
 }
 
@@ -1316,7 +1373,7 @@ export function SectionHistory() {
       <Callout kind="note">The curve demonstrated periodicity visually, but Mendeleev's table became more influential because it organised chemical relationships and made testable predictions.</Callout>
 
       <H2>4 · Mendeleev's Periodic Law and Predictive Table</H2>
-      <Formula>Properties of the elements are periodic functions of their atomic weights.</Formula>
+      <MathBlock tex={String.raw`\text{Properties of the elements are periodic functions of their atomic weights.}`} />
       <P>
         Mendeleev arranged elements primarily by increasing atomic weight while giving chemical similarity priority when the two conflicted. He left gaps rather than forcing every known element into a continuous sequence and used neighbouring trends to predict the properties of missing elements.
       </P>
@@ -1351,7 +1408,7 @@ export function SectionHistory() {
           <P>
             Characteristic X-ray frequencies from different elements followed a simple linear relationship when the square root of frequency was plotted against atomic number. Atomic weight did not give the same clean sequence. This established nuclear charge, represented by atomic number Z, as the fundamental ordering variable.
           </P>
-          <Formula>√ν = a(Z − b)</Formula>
+          <MathBlock tex={String.raw`\sqrt{\nu}=a(Z-b)`} />
           <Callout kind="note" title="Modern Periodic Law">
             The physical and chemical properties of elements are periodic functions of their atomic numbers.
           </Callout>
@@ -1457,21 +1514,21 @@ export function SectionAtomicRadius() {
 
       <H3>1 · Covalent Radius</H3>
       <P>Half the internuclear distance between two covalently bonded atoms of the same element (used for H₂, Cl₂, etc.):</P>
-      <Formula>r_C = d(A–A) / 2</Formula>
+      <MathBlock tex={String.raw`r_{\mathrm{cov}}=\frac{d(A-A)}{2}`} />
       <P>For a heteronuclear bond A–B, a first estimate is d(A–B) ≈ r_A + r_B. Empirical corrections can account for polarity and the fact that tabulated radii depend on bond order and chemical environment:</P>
-      <Formula>Schomaker–Stevenson: d(A–B) = r_A + r_B − 0.09Δχ (Å) &nbsp;|&nbsp; −9Δχ (pm)</Formula>
-      <Formula>Pauling (modified by Stevenson): d(A–B) = r_A + r_B − |C₁χ_A − C₂χ_B|</Formula>
+      <MathBlock tex={String.raw`d(A-B)=r_A+r_B-0.09\,\Delta\chi\;(\text{Å})=r_A+r_B-9\,\Delta\chi\;(\mathrm{pm})`} label="Schomaker–Stevenson relation" />
+      <MathBlock tex={String.raw`d(A-B)=r_A+r_B-\left|C_1\chi_A-C_2\chi_B\right|`} label="Pauling–Stevenson form" />
 
       <H3>2 · Metallic Radius</H3>
       <P>Half the internuclear distance between two closest metal atoms in a metallic lattice (metals modelled as
         close-packed spheres of positive nuclei in a "sea" of electrons):</P>
-      <Formula>r_M = d(M–M) / 2</Formula>
+      <MathBlock tex={String.raw`r_{\mathrm{metallic}}=\frac{d(M-M)}{2}`} />
       <Callout kind="note">Metallic radius &gt; covalent radius for the same element — e.g. K: metallic 2.3 Å vs covalent 2.03 Å.</Callout>
 
       <H3>3 · van der Waals Radius (Collision Radius)</H3>
       <P>Half the shortest internuclear distance between two non-bonded neighbouring atoms of adjacent molecules
         (or, for monoatomic noble gases, between two atoms at closest approach):</P>
-      <Formula>r_vw = d / 2</Formula>
+      <MathBlock tex={String.raw`r_{\mathrm{vdW}}=\frac{d}{2}`} />
       <Callout kind="note">Order: r_vw &gt; r_metallic &gt; r_covalent. e.g. Cl: covalent = 0.99 Å, van der Waals = 1.80 Å.
         Noble-gas radii are usually quoted as van der Waals radii (Xe, Kr compounds with O/F instead use covalent radii).</Callout>
 
@@ -1509,7 +1566,7 @@ export function SectionAtomicRadius() {
       ]} />
       <H3>Comparing neighbouring s-block families</H3>
       <P>Within a period, the group-2 atom is smaller than the group-1 atom because it has the same occupied shells but greater nuclear charge. Down either group, addition of a new shell increases size.</P>
-      <Formula>Within a period: r(group 1) &gt; r(group 2)</Formula>
+      <MathBlock tex={String.raw`r(\mathrm{Group\ 1})>r(\mathrm{Group\ 2})\quad\text{within the same period}`} />
 
       <H2 id="radius-special-cases">7 · Special / Anomalous Cases in Groups</H2>
       <P>Boron family radii (pm) — note Ga &lt; Al:</P>
@@ -1559,7 +1616,7 @@ export function SectionAtomicRadius() {
       <DataTable columns={["Z", "Ln", "Ln (pm)", "Ln³⁺ (pm)"]} rows={lanthanideTable} />
 
       <H2 id="ionic-radius">11 · Ionic Radius — Detailed Trends</H2>
-      <Formula>Overall order for one element: A⁻ &gt; A &gt; A⁺</Formula>
+      <MathBlock tex={String.raw`r(A^-)>r(A)>r(A^+)`} label="same element" />
       <H3>Trend 1 — Down a Group (radius increases with shell number)</H3>
       <DataTable columns={["Series", "Order"]} rows={[
         ["Halide anions", "F⁻ < Cl⁻ < Br⁻ < I⁻"],
@@ -1580,7 +1637,7 @@ export function SectionAtomicRadius() {
         ["Electrons", 10, 10, 10, 10, 10, 10, 10],
         ["Protons (Z)", 7, 8, 9, 11, 12, 13, 14],
       ]} />
-      <Formula>Radius order: N³⁻ &gt; O²⁻ &gt; F⁻ &gt; Na⁺ &gt; Mg²⁺ &gt; Al³⁺ &gt; Si⁴⁺</Formula>
+      <MathBlock tex={String.raw`\mathrm{N^{3-}>O^{2-}>F^->Na^+>Mg^{2+}>Al^{3+}>Si^{4+}}`} label="isoelectronic radius order" />
       <Callout kind="note">
         Other useful isoelectronic sets include S²⁻, Cl⁻, K⁺, Ca²⁺, Sc³⁺ and H⁻, He, Li⁺. Within each set, increasing proton number contracts the shared electron count more strongly.
       </Callout>
@@ -2949,7 +3006,7 @@ export function SectionChemicalPeriodicity() {
         ]}
         accent={T.p}
       />
-      <Formula>For one element, higher oxidation state usually gives a more acidic oxide: CrO &lt; Cr₂O₃ &lt; CrO₃</Formula>
+      <MathBlock tex={String.raw`\mathrm{CrO<Cr_2O_3<CrO_3}\quad\text{in acidic character}`} />
       <Callout kind="note" title="Common amphoteric oxides">
         BeO, Al₂O₃, ZnO, SnO, SnO₂, PbO and PbO₂ are frequent examples. Amphoterism depends on the reaction medium and should be demonstrated by actual acid/base reactions.
       </Callout>
@@ -2973,8 +3030,8 @@ export function SectionChemicalPeriodicity() {
       <P>
         The stability of an ionic solid depends strongly on electrostatic attraction between gaseous ions. A simple model predicts that lattice enthalpy magnitude increases with ionic charge and decreases with interionic distance. Hydration enthalpy is released when gaseous ions become surrounded by water molecules and similarly grows with charge density.
       </P>
-      <Formula>|U| ∝ |z⁺z⁻| / (r⁺ + r⁻)</Formula>
-      <Formula>|ΔHₕyd| generally increases with |charge| / ionic radius</Formula>
+      <MathBlock tex={String.raw`|U|\propto\frac{|z_+z_-|}{r_++r_-}`} />
+      <MathBlock tex={String.raw`|\Delta H_{\mathrm{hyd}}|\text{ generally increases with }\frac{|z|}{r_{\mathrm{ion}}}`} />
       <DataTable
         columns={["Comparison", "Expected magnitude order", "Reason"]}
         rows={[
@@ -3078,7 +3135,7 @@ export function SectionSpecialEffects() {
         ]}
         accent={T.f}
       />
-      <Formula>Ionic potential / charge density indicator: φ ≈ |charge| / radius</Formula>
+      <MathBlock tex={String.raw`\phi\approx\frac{|z|}{r_{\mathrm{ion}}}`} label="ionic potential / charge-density indicator" />
       <Callout kind="note" title="Selective resemblance">
         A diagonal relationship predicts clusters of similarities, not complete identity. Always compare the specific property asked.
       </Callout>
@@ -4129,6 +4186,7 @@ export function BornHaberNaClSVG() {
     { y: 286, label: "NaCl(s)", note: "lattice formation" },
   ];
   return (
+    <MotionFigure title="Born–Haber energy cycle for NaCl" status="Law-based schematic" note="Animated arrows reveal the Hess-law path step by step. Energy levels are conceptual unless numerical enthalpies are supplied beside the cycle.">
     <svg viewBox="0 0 620 320" role="img" aria-label="Original Born Haber cycle for sodium chloride" style={{ width: "100%", height: "auto", display: "block" }}>
       <defs><marker id="bh-arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill={T.cyan} /></marker></defs>
       <rect x="12" y="12" width="596" height="296" rx="18" fill="#0d1c2b" stroke={T.border} />
@@ -4137,14 +4195,15 @@ export function BornHaberNaClSVG() {
       {levels.slice(0, 5).map((l, i) => <g key={l.label}><line x1="120" y1={l.y} x2="438" y2={l.y} stroke={i === 4 ? T.gold : T.cyan} strokeWidth="2" /><text x="128" y={l.y - 8} fill={T.text} fontSize="13" fontWeight="750">{l.label}</text><text x="450" y={l.y + 4} fill={T.textDim} fontSize="11">{l.note}</text></g>)}
       <line x1="120" y1="286" x2="438" y2="286" stroke={T.p} strokeWidth="3" />
       <text x="128" y="278" fill={T.text} fontSize="13" fontWeight="800">NaCl(s)</text>
-      <path d="M438 70 C520 82 520 254 438 286" fill="none" stroke={T.gold} strokeWidth="3" markerEnd="url(#bh-arrow)" />
+      <path className="sb-path" pathLength="1" d="M438 70 C520 82 520 254 438 286" fill="none" stroke={T.gold} strokeWidth="3" markerEnd="url(#bh-arrow)" />
       <text x="500" y="178" fill={T.gold} fontSize="12" textAnchor="middle">large lattice</text><text x="500" y="194" fill={T.gold} fontSize="12" textAnchor="middle">enthalpy release</text>
-      <path d="M100 258 L100 218" stroke={T.cyan} strokeWidth="2" markerEnd="url(#bh-arrow)" />
-      <path d="M100 218 L100 166" stroke={T.cyan} strokeWidth="2" markerEnd="url(#bh-arrow)" />
-      <path d="M100 166 L100 112" stroke={T.cyan} strokeWidth="2" markerEnd="url(#bh-arrow)" />
-      <path d="M100 112 L100 70" stroke={T.cyan} strokeWidth="2" markerEnd="url(#bh-arrow)" />
-      <path d="M88 258 C50 270 50 286 120 286" fill="none" stroke={T.p} strokeWidth="2" markerEnd="url(#bh-arrow)" />
+      <path className="sb-path" pathLength="1" d="M100 258 L100 218" stroke={T.cyan} strokeWidth="2" markerEnd="url(#bh-arrow)" />
+      <path className="sb-path" pathLength="1" d="M100 218 L100 166" stroke={T.cyan} strokeWidth="2" markerEnd="url(#bh-arrow)" />
+      <path className="sb-path" pathLength="1" d="M100 166 L100 112" stroke={T.cyan} strokeWidth="2" markerEnd="url(#bh-arrow)" />
+      <path className="sb-path" pathLength="1" d="M100 112 L100 70" stroke={T.cyan} strokeWidth="2" markerEnd="url(#bh-arrow)" />
+      <path className="sb-path" pathLength="1" d="M88 258 C50 270 50 286 120 286" fill="none" stroke={T.p} strokeWidth="2" markerEnd="url(#bh-arrow)" />
     </svg>
+    </MotionFigure>
   );
 }
 
@@ -4154,19 +4213,21 @@ export function HydrationMobilitySVG() {
     return { x: cx + Math.cos(a) * r, y: cy + Math.sin(a) * r, a };
   });
   return (
+    <MotionFigure title="Hydration shell and aqueous mobility" status="Law-based schematic" note="The animation visualises solvent orientation and the inverse relation between hydrated size and mobility. Shell sizes are explanatory, not crystallographic measurements.">
     <svg viewBox="0 0 620 250" role="img" aria-label="Original comparison of strongly and weakly hydrated ions" style={{ width: "100%", height: "auto", display: "block" }}>
       <rect x="12" y="12" width="596" height="226" rx="18" fill="#0d1c2b" stroke={T.border} />
       {[{ cx: 178, ion: "Li⁺", shell: 78, count: 10, caption: "strong hydration · large hydrated radius" }, { cx: 445, ion: "Cs⁺", shell: 54, count: 7, caption: "weak hydration · smaller hydrated shell" }].map((g) => <g key={g.ion}>
         <circle cx={g.cx} cy="112" r={g.shell} fill="rgba(95,212,234,0.055)" stroke={T.cyan} strokeDasharray="5 5" />
         <circle cx={g.cx} cy="112" r={g.ion === "Li⁺" ? 24 : 38} fill={g.ion === "Li⁺" ? T.s : T.gold} opacity="0.92" />
         <text x={g.cx} y="118" textAnchor="middle" fill="#07131e" fontSize="16" fontWeight="900">{g.ion}</text>
-        {waters(g.cx, 112, g.shell - 10, g.count).map((w, i) => <g key={i} transform={`translate(${w.x} ${w.y}) rotate(${(w.a * 180) / Math.PI + 90})`}><ellipse rx="15" ry="8" fill="#e8f7ff" opacity="0.92" /><text x="0" y="4" textAnchor="middle" fill="#123" fontSize="7" fontWeight="800">H₂O</text></g>)}
+        {waters(g.cx, 112, g.shell - 10, g.count).map((w, i) => <g key={i} className="sb-water" style={{ animationDelay: `${i * 0.08}s` }} transform={`translate(${w.x} ${w.y}) rotate(${(w.a * 180) / Math.PI + 90})`}><ellipse rx="15" ry="8" fill="#e8f7ff" opacity="0.92" /><text x="0" y="4" textAnchor="middle" fill="#123" fontSize="7" fontWeight="800">H₂O</text></g>)}
         <text x={g.cx} y="218" textAnchor="middle" fill={T.textDim} fontSize="11.5">{g.caption}</text>
       </g>)}
       <path d="M278 112 L342 112" stroke={T.gold} strokeWidth="3" markerEnd="url(#bh-arrow)" />
       <text x="310" y="98" textAnchor="middle" fill={T.gold} fontSize="11">mobility in water</text>
       <text x="310" y="132" textAnchor="middle" fill={T.gold} fontSize="11">Li⁺ &lt; Cs⁺</text>
     </svg>
+    </MotionFigure>
   );
 }
 
@@ -4207,7 +4268,7 @@ export function SectionWorldReference() {
     <div>
       <SectionIntro
         eyebrow="NCERT-first · JEE Advanced depth · source-complete synthesis"
-        title="World Reference Compendium: Complete Student-Writable Notes"
+        title="NCERT-First Reference Compendium: Complete Student-Writable Notes"
         summary="This is the full theory layer of the chapter. Definitions and core data follow NCERT first; advanced relations, factor-wise examples, historical detail, block-wise data and cross-chapter applications are added only after reconciliation with the primary framework. Every relation is explained, every factor carries examples, and disputed or convention-dependent claims are labelled carefully."
         accent={T.gold}
       />
@@ -4215,6 +4276,18 @@ export function SectionWorldReference() {
       <StudentNote heading="How a student should use this module" accent={T.gold}>
         Read each numbered subsection once as theory, copy the boxed definition and relation into your notebook, then learn the data tables only after understanding the cause. A trend is never memorised as an arrow alone: write the controlling competition between shell number, effective nuclear charge, shielding, penetration, electronic stability, interelectronic repulsion and thermochemical stabilization.
       </StudentNote>
+
+      <StudentNote heading="Scientific visual trust system" accent={T.d}>
+        Every repaired scientific figure now states what kind of evidence it represents. <strong>Data-backed quantitative</strong> figures carry numerical axes, units and point tooltips. <strong>Calculated orbital model</strong> figures are generated from equations and state their normalization. <strong>Law-based schematic</strong> figures explain a relation but are explicitly not numerical datasets. Use the replay control to watch the mechanism or trend build in sequence. Any SVG without one of these visible badges is decorative or qualitative and must not be used to read numerical values.
+      </StudentNote>
+      <DataTable columns={["Repaired V7 visual", "Verification status", "New student value"]} rows={[
+        ["Lothar Meyer atomic-volume curve", "Data-backed quantitative", "real axes and units; labelled Li, Na, K, Rb, Cs peaks; point tooltips; replayable curve"],
+        ["3d metallic-radius graph", "Data-backed quantitative", "NCERT values for Sc-Zn; correct labels; no false 4d/5d labels"],
+        ["3s/3p/3d radial probability", "Calculated orbital model", "hydrogenic equations, correct radial-node count and node positions"],
+        ["Moseley plot", "Law-based schematic", "linear √ν-Z relation clearly separated from experimental data"],
+        ["Born-Haber cycle", "Law-based schematic", "animated Hess-law path with formation/dissociation sign caution"],
+        ["Hydration and mobility", "Law-based schematic", "animated solvent orientation and hydrated-radius/mobility distinction"],
+      ]} accent={T.d} />
 
       <H2 id="wr-history">1 · Complete Genesis of Periodic Classification</H2>
       <P>
@@ -4812,7 +4885,7 @@ type NavKey =
   | "workshop";
 
 const NAV: { key: NavKey; label: string; group: string }[] = [
-  { key: "compendium", label: "World Reference Compendium", group: "Start Here" },
+  { key: "compendium", label: "NCERT-First Reference Compendium", group: "Start Here" },
   { key: "notebook", label: "Rapid Student Notebook", group: "Start Here" },
   { key: "history", label: "History & Modern Law", group: "Foundations" },
   { key: "configuration", label: "Configuration & Position", group: "Foundations" },
@@ -4867,6 +4940,22 @@ export default function PeriodicTableMasterNotes() {
     <div style={{ minHeight: "100vh", background: `radial-gradient(1400px 700px at 8% -10%, #12283b 0%, ${T.bg} 55%), ${T.bg}`, color: T.text, fontFamily: T.sans }}>
       <style>{`
         .mobileTabs { display: none; }
+
+        .sb-katex-block .katex-display { margin: 0 !important; }
+        .sb-katex-block .katex, .sb-katex-inline .katex { color: inherit; }
+        .sb-katex-inline { display: inline-flex; align-items: baseline; max-width: 100%; }
+        .sb-animate .sb-path { stroke-dasharray: 1; stroke-dashoffset: 1; animation: sbDraw 1.8s cubic-bezier(.2,.7,.2,1) forwards; }
+        .sb-animate .sb-point { opacity: 0; transform-box: fill-box; transform-origin: center; animation: sbPop .45s ease-out forwards; }
+        .sb-animate .sb-water { opacity: 0; transform-box: fill-box; transform-origin: center; animation: sbWater .55s ease-out forwards; }
+        .sb-animate .sb-pulse { transform-box: fill-box; transform-origin: center; animation: sbPulse 1.8s ease-in-out 2.2s infinite; }
+        @keyframes sbDraw { to { stroke-dashoffset: 0; } }
+        @keyframes sbPop { from { opacity: 0; transform: scale(.25); } to { opacity: 1; transform: scale(1); } }
+        @keyframes sbWater { from { opacity: 0; transform: scale(.3) rotate(-20deg); } to { opacity: 1; transform: scale(1) rotate(0deg); } }
+        @keyframes sbPulse { 0%,100% { transform: scale(1); filter: drop-shadow(0 0 0 rgba(95,212,234,0)); } 50% { transform: scale(1.55); filter: drop-shadow(0 0 7px rgba(95,212,234,.85)); } }
+        @media (prefers-reduced-motion: reduce) {
+          .sb-animate .sb-path, .sb-animate .sb-point, .sb-animate .sb-water, .sb-animate .sb-pulse { animation: none !important; opacity: 1 !important; stroke-dashoffset: 0 !important; }
+        }
+
         @media (max-width: 900px) {
           .notesSidebar { display: none !important; }
           .notesShell { display: block !important; }
@@ -4966,7 +5055,7 @@ export default function PeriodicTableMasterNotes() {
         <main className="notesMain" style={{ flex: 1, minWidth: 0, padding: "32px 28px 80px" }}>{renderSection()}</main>
       </div>
 
-      <footer style={{ borderTop: `1px solid ${T.border}`, padding: "20px 18px", textAlign: "center", fontFamily: T.sans, fontSize: 11.5, color: T.textFaint }}>Synergic Bond · World-reference periodicity notes · NCERT-first theory, verified data, original diagrams, examples and revision systems.</footer>
+      <footer style={{ borderTop: `1px solid ${T.border}`, padding: "20px 18px", textAlign: "center", fontFamily: T.sans, fontSize: 11.5, color: T.textFaint }}>Synergic Bond · NCERT-first periodicity notes · data-backed graphs, labelled schematics, accessible KaTeX and replayable scientific SVGs.</footer>
     </div>
   );
 }

@@ -72,6 +72,10 @@ const SECTIONS = [
 
 export default async function ChapterEnginePage({ params }: { params: Promise<{ slug: string; id: string }> }) {
   const { slug, id } = await params;
+  if (slug === "jee-advanced" && id === "periodic-table") {
+    permanentRedirect("/learn/periodic-table");
+  }
+
   if (slug === "jee-advanced" && id === "thermodynamics") {
     permanentRedirect("/learn/thermodynamics");
   }

@@ -1,4 +1,5 @@
 "use client";
+import { InteractivePeriodicTableV16 } from "./InteractivePeriodicTableV16";
 
 /* eslint-disable react/no-unescaped-entities, react/jsx-key, @typescript-eslint/no-unused-vars */
 
@@ -1243,45 +1244,7 @@ const actinides: PTEntry[] = [
 const allPtEntries = [...ptEntries, ...lanthanides, ...actinides];
 
 export function MiniPeriodicTable() {
-  return (
-    <div style={{ overflowX: "auto", padding: "10px 0" }}>
-      <div style={{ display: "grid", gridTemplateColumns: "repeat(18, 30px)", gridTemplateRows: "repeat(10, 30px)", gap: 2, minWidth: 560 }}>
-        {allPtEntries.map(([sym, z, row, col, block]) => (
-          <div
-            key={sym}
-            style={{
-              gridRow: row === 9 ? 9 : row === 10 ? 10 : row,
-              gridColumn: col,
-              background: "rgba(255,255,255,0.03)",
-              border: `1px solid ${blockColor(block)}`,
-              borderRadius: 4,
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-              justifyContent: "center",
-              fontFamily: T.mono,
-              fontSize: 9.5,
-              color: blockColor(block),
-              lineHeight: 1,
-              position: "relative",
-            }}
-            title={`${sym} (Z=${z})`}
-          >
-            <span style={{ fontSize: 6.5, position: "absolute", top: 1, left: 2, opacity: 0.6 }}>{z}</span>
-            <span style={{ fontWeight: 700 }}>{sym}</span>
-          </div>
-        ))}
-      </div>
-      <div style={{ display: "flex", gap: 16, marginTop: 10, flexWrap: "wrap" }}>
-        {(["s", "p", "d", "f"] as const).map((b) => (
-          <div key={b} style={{ display: "flex", alignItems: "center", gap: 6, fontFamily: T.sans, fontSize: 11.5, color: T.textDim }}>
-            <span style={{ width: 12, height: 12, borderRadius: 3, border: `1.5px solid ${blockColor(b)}`, display: "inline-block" }} />
-            {b}-block
-          </div>
-        ))}
-      </div>
-    </div>
-  );
+  return <InteractivePeriodicTableV16 />;
 }
 
 /* =============================================================================

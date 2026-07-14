@@ -1,350 +1,884 @@
 "use client";
-import React, { useState } from "react";
 
-const K={bg:"#0a1622",panel:"#102538",panel2:"#153149",line:"#294b67",text:"#eef4f8",dim:"#a5bbcb",gold:"#f2bd48",cyan:"#60d8ef",violet:"#bd9cff",mint:"#75dfb7",coral:"#f28d76",s:"#7fb7ed",p:"#f29a7b",d:"#78d8b6",f:"#c8a3e5",serif:"Georgia,'Iowan Old Style','Times New Roman',serif",sans:"-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif",mono:"'SFMono-Regular',Consolas,monospace"};
-type Block="s"|"p"|"d"|"f";
-type E={z:number;symbol:string;name:string;period:number;group:number;block:Block};
-const ELEMENTS:E[]=[
-  {z:1,symbol:"H",name:"Hydrogen",period:1,group:1,block:"s" as const},
-  {z:2,symbol:"He",name:"Helium",period:1,group:18,block:"s" as const},
-  {z:3,symbol:"Li",name:"Lithium",period:2,group:1,block:"s" as const},
-  {z:4,symbol:"Be",name:"Beryllium",period:2,group:2,block:"s" as const},
-  {z:5,symbol:"B",name:"Boron",period:2,group:13,block:"p" as const},
-  {z:6,symbol:"C",name:"Carbon",period:2,group:14,block:"p" as const},
-  {z:7,symbol:"N",name:"Nitrogen",period:2,group:15,block:"p" as const},
-  {z:8,symbol:"O",name:"Oxygen",period:2,group:16,block:"p" as const},
-  {z:9,symbol:"F",name:"Fluorine",period:2,group:17,block:"p" as const},
-  {z:10,symbol:"Ne",name:"Neon",period:2,group:18,block:"p" as const},
-  {z:11,symbol:"Na",name:"Sodium",period:3,group:1,block:"s" as const},
-  {z:12,symbol:"Mg",name:"Magnesium",period:3,group:2,block:"s" as const},
-  {z:13,symbol:"Al",name:"Aluminium",period:3,group:13,block:"p" as const},
-  {z:14,symbol:"Si",name:"Silicon",period:3,group:14,block:"p" as const},
-  {z:15,symbol:"P",name:"Phosphorus",period:3,group:15,block:"p" as const},
-  {z:16,symbol:"S",name:"Sulfur",period:3,group:16,block:"p" as const},
-  {z:17,symbol:"Cl",name:"Chlorine",period:3,group:17,block:"p" as const},
-  {z:18,symbol:"Ar",name:"Argon",period:3,group:18,block:"p" as const},
-  {z:19,symbol:"K",name:"Potassium",period:4,group:1,block:"s" as const},
-  {z:20,symbol:"Ca",name:"Calcium",period:4,group:2,block:"s" as const},
-  {z:21,symbol:"Sc",name:"Scandium",period:4,group:3,block:"d" as const},
-  {z:22,symbol:"Ti",name:"Titanium",period:4,group:4,block:"d" as const},
-  {z:23,symbol:"V",name:"Vanadium",period:4,group:5,block:"d" as const},
-  {z:24,symbol:"Cr",name:"Chromium",period:4,group:6,block:"d" as const},
-  {z:25,symbol:"Mn",name:"Manganese",period:4,group:7,block:"d" as const},
-  {z:26,symbol:"Fe",name:"Iron",period:4,group:8,block:"d" as const},
-  {z:27,symbol:"Co",name:"Cobalt",period:4,group:9,block:"d" as const},
-  {z:28,symbol:"Ni",name:"Nickel",period:4,group:10,block:"d" as const},
-  {z:29,symbol:"Cu",name:"Copper",period:4,group:11,block:"d" as const},
-  {z:30,symbol:"Zn",name:"Zinc",period:4,group:12,block:"d" as const},
-  {z:31,symbol:"Ga",name:"Gallium",period:4,group:13,block:"p" as const},
-  {z:32,symbol:"Ge",name:"Germanium",period:4,group:14,block:"p" as const},
-  {z:33,symbol:"As",name:"Arsenic",period:4,group:15,block:"p" as const},
-  {z:34,symbol:"Se",name:"Selenium",period:4,group:16,block:"p" as const},
-  {z:35,symbol:"Br",name:"Bromine",period:4,group:17,block:"p" as const},
-  {z:36,symbol:"Kr",name:"Krypton",period:4,group:18,block:"p" as const},
-  {z:37,symbol:"Rb",name:"Rubidium",period:5,group:1,block:"s" as const},
-  {z:38,symbol:"Sr",name:"Strontium",period:5,group:2,block:"s" as const},
-  {z:39,symbol:"Y",name:"Yttrium",period:5,group:3,block:"d" as const},
-  {z:40,symbol:"Zr",name:"Zirconium",period:5,group:4,block:"d" as const},
-  {z:41,symbol:"Nb",name:"Niobium",period:5,group:5,block:"d" as const},
-  {z:42,symbol:"Mo",name:"Molybdenum",period:5,group:6,block:"d" as const},
-  {z:43,symbol:"Tc",name:"Technetium",period:5,group:7,block:"d" as const},
-  {z:44,symbol:"Ru",name:"Ruthenium",period:5,group:8,block:"d" as const},
-  {z:45,symbol:"Rh",name:"Rhodium",period:5,group:9,block:"d" as const},
-  {z:46,symbol:"Pd",name:"Palladium",period:5,group:10,block:"d" as const},
-  {z:47,symbol:"Ag",name:"Silver",period:5,group:11,block:"d" as const},
-  {z:48,symbol:"Cd",name:"Cadmium",period:5,group:12,block:"d" as const},
-  {z:49,symbol:"In",name:"Indium",period:5,group:13,block:"p" as const},
-  {z:50,symbol:"Sn",name:"Tin",period:5,group:14,block:"p" as const},
-  {z:51,symbol:"Sb",name:"Antimony",period:5,group:15,block:"p" as const},
-  {z:52,symbol:"Te",name:"Tellurium",period:5,group:16,block:"p" as const},
-  {z:53,symbol:"I",name:"Iodine",period:5,group:17,block:"p" as const},
-  {z:54,symbol:"Xe",name:"Xenon",period:5,group:18,block:"p" as const},
-  {z:55,symbol:"Cs",name:"Caesium",period:6,group:1,block:"s" as const},
-  {z:56,symbol:"Ba",name:"Barium",period:6,group:2,block:"s" as const},
-  {z:57,symbol:"La",name:"Lanthanum",period:6,group:3,block:"f" as const},
-  {z:58,symbol:"Ce",name:"Cerium",period:6,group:3,block:"f" as const},
-  {z:59,symbol:"Pr",name:"Praseodymium",period:6,group:3,block:"f" as const},
-  {z:60,symbol:"Nd",name:"Neodymium",period:6,group:3,block:"f" as const},
-  {z:61,symbol:"Pm",name:"Promethium",period:6,group:3,block:"f" as const},
-  {z:62,symbol:"Sm",name:"Samarium",period:6,group:3,block:"f" as const},
-  {z:63,symbol:"Eu",name:"Europium",period:6,group:3,block:"f" as const},
-  {z:64,symbol:"Gd",name:"Gadolinium",period:6,group:3,block:"f" as const},
-  {z:65,symbol:"Tb",name:"Terbium",period:6,group:3,block:"f" as const},
-  {z:66,symbol:"Dy",name:"Dysprosium",period:6,group:3,block:"f" as const},
-  {z:67,symbol:"Ho",name:"Holmium",period:6,group:3,block:"f" as const},
-  {z:68,symbol:"Er",name:"Erbium",period:6,group:3,block:"f" as const},
-  {z:69,symbol:"Tm",name:"Thulium",period:6,group:3,block:"f" as const},
-  {z:70,symbol:"Yb",name:"Ytterbium",period:6,group:3,block:"f" as const},
-  {z:71,symbol:"Lu",name:"Lutetium",period:6,group:3,block:"f" as const},
-  {z:72,symbol:"Hf",name:"Hafnium",period:6,group:4,block:"d" as const},
-  {z:73,symbol:"Ta",name:"Tantalum",period:6,group:5,block:"d" as const},
-  {z:74,symbol:"W",name:"Tungsten",period:6,group:6,block:"d" as const},
-  {z:75,symbol:"Re",name:"Rhenium",period:6,group:7,block:"d" as const},
-  {z:76,symbol:"Os",name:"Osmium",period:6,group:8,block:"d" as const},
-  {z:77,symbol:"Ir",name:"Iridium",period:6,group:9,block:"d" as const},
-  {z:78,symbol:"Pt",name:"Platinum",period:6,group:10,block:"d" as const},
-  {z:79,symbol:"Au",name:"Gold",period:6,group:11,block:"d" as const},
-  {z:80,symbol:"Hg",name:"Mercury",period:6,group:12,block:"d" as const},
-  {z:81,symbol:"Tl",name:"Thallium",period:6,group:13,block:"p" as const},
-  {z:82,symbol:"Pb",name:"Lead",period:6,group:14,block:"p" as const},
-  {z:83,symbol:"Bi",name:"Bismuth",period:6,group:15,block:"p" as const},
-  {z:84,symbol:"Po",name:"Polonium",period:6,group:16,block:"p" as const},
-  {z:85,symbol:"At",name:"Astatine",period:6,group:17,block:"p" as const},
-  {z:86,symbol:"Rn",name:"Radon",period:6,group:18,block:"p" as const},
-  {z:87,symbol:"Fr",name:"Francium",period:7,group:1,block:"s" as const},
-  {z:88,symbol:"Ra",name:"Radium",period:7,group:2,block:"s" as const},
-  {z:89,symbol:"Ac",name:"Actinium",period:7,group:3,block:"f" as const},
-  {z:90,symbol:"Th",name:"Thorium",period:7,group:3,block:"f" as const},
-  {z:91,symbol:"Pa",name:"Protactinium",period:7,group:3,block:"f" as const},
-  {z:92,symbol:"U",name:"Uranium",period:7,group:3,block:"f" as const},
-  {z:93,symbol:"Np",name:"Neptunium",period:7,group:3,block:"f" as const},
-  {z:94,symbol:"Pu",name:"Plutonium",period:7,group:3,block:"f" as const},
-  {z:95,symbol:"Am",name:"Americium",period:7,group:3,block:"f" as const},
-  {z:96,symbol:"Cm",name:"Curium",period:7,group:3,block:"f" as const},
-  {z:97,symbol:"Bk",name:"Berkelium",period:7,group:3,block:"f" as const},
-  {z:98,symbol:"Cf",name:"Californium",period:7,group:3,block:"f" as const},
-  {z:99,symbol:"Es",name:"Einsteinium",period:7,group:3,block:"f" as const},
-  {z:100,symbol:"Fm",name:"Fermium",period:7,group:3,block:"f" as const},
-  {z:101,symbol:"Md",name:"Mendelevium",period:7,group:3,block:"f" as const},
-  {z:102,symbol:"No",name:"Nobelium",period:7,group:3,block:"f" as const},
-  {z:103,symbol:"Lr",name:"Lawrencium",period:7,group:3,block:"f" as const},
-  {z:104,symbol:"Rf",name:"Rutherfordium",period:7,group:4,block:"d" as const},
-  {z:105,symbol:"Db",name:"Dubnium",period:7,group:5,block:"d" as const},
-  {z:106,symbol:"Sg",name:"Seaborgium",period:7,group:6,block:"d" as const},
-  {z:107,symbol:"Bh",name:"Bohrium",period:7,group:7,block:"d" as const},
-  {z:108,symbol:"Hs",name:"Hassium",period:7,group:8,block:"d" as const},
-  {z:109,symbol:"Mt",name:"Meitnerium",period:7,group:9,block:"d" as const},
-  {z:110,symbol:"Ds",name:"Darmstadtium",period:7,group:10,block:"d" as const},
-  {z:111,symbol:"Rg",name:"Roentgenium",period:7,group:11,block:"d" as const},
-  {z:112,symbol:"Cn",name:"Copernicium",period:7,group:12,block:"d" as const},
-  {z:113,symbol:"Nh",name:"Nihonium",period:7,group:13,block:"p" as const},
-  {z:114,symbol:"Fl",name:"Flerovium",period:7,group:14,block:"p" as const},
-  {z:115,symbol:"Mc",name:"Moscovium",period:7,group:15,block:"p" as const},
-  {z:116,symbol:"Lv",name:"Livermorium",period:7,group:16,block:"p" as const},
-  {z:117,symbol:"Ts",name:"Tennessine",period:7,group:17,block:"p" as const},
-  {z:118,symbol:"Og",name:"Oganesson",period:7,group:18,block:"p" as const}
-];
-const BC:Record<Block,string>={s:K.s,p:K.p,d:K.d,f:K.f};
+import { useEffect, useState, type ReactNode } from "react";
 
-
-type Accent = "gold"|"cyan"|"violet"|"mint"|"coral";
-const A:Record<Accent,string>={gold:K.gold,cyan:K.cyan,violet:K.violet,mint:K.mint,coral:K.coral};
-const css=`
-.hmla-v2{--line:#2a506d;--panel:#0d2233;--panel2:#123149;max-width:1160px;margin:0 auto;padding:0 4px 64px;color:${K.text}}
-.hmla-v2 *{box-sizing:border-box}.hmla-v2 button{font:inherit}.hmla-v2 .hero{position:relative;overflow:hidden;border:1px solid var(--line);border-radius:18px;padding:24px 26px;background:radial-gradient(circle at 88% 8%,rgba(96,216,239,.18),transparent 30%),radial-gradient(circle at 8% 100%,rgba(189,156,255,.12),transparent 34%),linear-gradient(135deg,#14344c,#0b1d2b 72%);box-shadow:0 18px 55px rgba(0,0,0,.22)}
-.hmla-v2 .hero:after{content:"";position:absolute;inset:auto -80px -100px auto;width:280px;height:280px;border-radius:50%;border:1px solid rgba(255,255,255,.08)}
-.hmla-v2 .eyebrow{color:${K.gold};font:800 11px ${K.sans};letter-spacing:1.5px;text-transform:uppercase}.hmla-v2 h1{margin:8px 0 9px;max-width:880px;font:700 clamp(30px,4.4vw,49px)/1.06 ${K.serif};color:${K.text}}.hmla-v2 .hero p{max-width:900px;margin:0;color:${K.dim};font:400 15px/1.65 ${K.sans}}
-.hmla-v2 .section{padding:27px 0 2px;border-top:1px solid rgba(96,216,239,.16)}.hmla-v2 .section:first-of-type{border-top:0}.hmla-v2 .section-head{display:flex;gap:10px;align-items:center;margin-bottom:10px}.hmla-v2 .num{width:32px;height:32px;border-radius:10px;display:grid;place-items:center;color:#07131d;font:900 12px ${K.mono};box-shadow:0 6px 20px rgba(0,0,0,.22)}.hmla-v2 h2{margin:0;font:700 clamp(22px,2.8vw,30px)/1.12 ${K.serif};color:${K.text}}.hmla-v2 h3{margin:18px 0 8px;font:700 19px ${K.serif}}
-.hmla-v2 p{margin:0 0 10px;color:${K.text};font:400 15px/1.68 ${K.sans}}.hmla-v2 .muted{color:${K.dim}}
-.hmla-v2 .grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px;align-items:start}.hmla-v2 .grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}.hmla-v2 .figure{position:relative;overflow:hidden;border:1px solid var(--line);border-radius:14px;padding:11px;background:radial-gradient(circle at 88% 10%,rgba(96,216,239,.10),transparent 32%),linear-gradient(145deg,#123149,#0b1e2d 76%);box-shadow:0 12px 35px rgba(0,0,0,.18)}.hmla-v2 .figure:before{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(115deg,rgba(255,255,255,.04),transparent 26%,transparent 72%,rgba(255,255,255,.025))}.hmla-v2 .figure-title{position:relative;margin:0 0 7px;color:${K.text};font:800 13px ${K.sans};letter-spacing:.1px}.hmla-v2 .figure-caption{position:relative;margin:7px 2px 0;color:${K.dim};font:400 11.5px/1.48 ${K.sans}}.hmla-v2 .figure svg{position:relative;width:100%;height:auto;display:block;max-height:275px}.hmla-v2 .figure.full svg{max-height:430px}.hmla-v2 .figure.compact svg{max-height:225px}
-.hmla-v2 .note{border-left:3px solid currentColor;border-radius:0 10px 10px 0;padding:9px 11px;margin:10px 0;background:rgba(255,255,255,.025);font:400 13.5px/1.55 ${K.sans};color:${K.text}}.hmla-v2 .note b{display:block;margin-bottom:3px;font-size:11px;letter-spacing:.8px;text-transform:uppercase}
-.hmla-v2 .table-wrap{overflow:auto;border:1px solid var(--line);border-radius:12px;background:#0b1f2e;margin:10px 0 14px}.hmla-v2 table{border-collapse:collapse;width:100%;font-family:${K.sans}}.hmla-v2 th,.hmla-v2 td{padding:8px 9px;border-bottom:1px solid #23455f;text-align:left;vertical-align:top;font-size:12.5px;line-height:1.4}.hmla-v2 th{position:sticky;top:0;z-index:1;background:#102a3e;color:${K.gold};font-weight:800}.hmla-v2 td{color:${K.dim}}.hmla-v2 td:first-child{color:${K.text};font-weight:650}.hmla-v2 tr:last-child td{border-bottom:0}
-.hmla-v2 .law{display:grid;grid-template-columns:1fr auto 1fr;gap:10px;align-items:center;margin:11px 0}.hmla-v2 .lawbox{border:1px solid var(--line);border-radius:12px;padding:12px;background:linear-gradient(145deg,#14334a,#0b1e2d);font:700 15px/1.45 ${K.serif};color:${K.text}}.hmla-v2 .arrow{color:${K.gold};font-size:22px}.hmla-v2 .chiprow{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0}.hmla-v2 .chip{border:1px solid var(--line);border-radius:999px;padding:5px 8px;background:#0b2030;color:${K.dim};font:700 10.5px ${K.sans}}
-.hmla-v2 .timeline{display:grid;grid-template-columns:repeat(8,minmax(110px,1fr));gap:6px;min-width:920px}.hmla-v2 .timeline-card{border:1px solid var(--line);border-top:3px solid var(--accent);border-radius:11px;padding:9px;background:linear-gradient(155deg,#143149,#0b1e2d);min-height:88px}.hmla-v2 .timeline-year{color:var(--accent);font:900 10.5px ${K.mono}}.hmla-v2 .timeline-name{color:${K.text};font:700 13px ${K.serif};margin:4px 0}.hmla-v2 .timeline-idea{color:${K.dim};font:400 10.5px/1.35 ${K.sans}}
-.hmla-v2 .newlands{min-width:620px}.hmla-v2 .newlands th,.hmla-v2 .newlands td{text-align:center;white-space:nowrap}.hmla-v2 .newlands .note-row td{color:${K.violet};font-weight:800}.hmla-v2 .newlands .match{background:rgba(242,189,72,.09);color:${K.gold};font-weight:800}
-.hmla-v2 .mendeleev{min-width:1000px}.hmla-v2 .mendeleev th,.hmla-v2 .mendeleev td{text-align:center;padding:6px 5px;font-size:10.5px;white-space:pre-line}.hmla-v2 .mendeleev td{min-width:88px}.hmla-v2 .mendeleev td.viii{min-width:170px;color:${K.mint}}.hmla-v2 .formula-band{display:grid;grid-template-columns:repeat(8,minmax(78px,1fr));gap:5px;min-width:720px;padding:8px}.hmla-v2 .formula-cell{border:1px solid #294d68;border-radius:8px;padding:7px;text-align:center;background:#10293d;color:${K.cyan};font:700 11px ${K.mono}}
-.hmla-v2 .modern-scroll{overflow:auto;padding-bottom:2px}.hmla-v2 .modern-grid{display:grid;grid-template-columns:26px repeat(18,minmax(38px,1fr));grid-template-rows:20px repeat(7,42px);gap:3px;min-width:850px}.hmla-v2 .group-label,.hmla-v2 .period-label{display:grid;place-items:center;color:${K.dim};font:700 9px ${K.sans}}.hmla-v2 .element{position:relative;border:1px solid var(--ec);border-radius:7px;background:linear-gradient(145deg,color-mix(in srgb,var(--ec) 18%,#10283a),#0b1f2e);color:var(--ec);cursor:pointer;box-shadow:inset 0 1px rgba(255,255,255,.08);font-family:${K.mono}}.hmla-v2 .element:hover{transform:translateY(-1px);filter:brightness(1.18)}.hmla-v2 .element .z{position:absolute;top:2px;left:3px;color:${K.dim};font-size:7px}.hmla-v2 .element b{font-size:13px}.hmla-v2 .frow{display:grid;grid-template-columns:70px repeat(15,minmax(38px,1fr));gap:3px;min-width:850px;margin-top:3px}.hmla-v2 .frow-label{display:grid;place-items:center;color:${K.f};font:800 9px ${K.sans}}.hmla-v2 .selected{margin-top:8px;border:1px solid var(--ec);border-radius:10px;padding:9px 11px;background:#0b2030;display:flex;gap:10px;align-items:center}.hmla-v2 .selected .symbol{width:48px;height:48px;border:2px solid var(--ec);border-radius:10px;display:grid;place-items:center;color:var(--ec);font:900 20px ${K.mono}}.hmla-v2 .selected strong{display:block;color:${K.text};font:700 15px ${K.serif}}.hmla-v2 .selected span{color:${K.dim};font:400 11.5px ${K.sans}}
-.hmla-v2 .facts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}.hmla-v2 .fact{border:1px solid var(--line);border-radius:10px;padding:9px 10px;background:#0b2030;color:${K.dim};font:400 12.5px/1.45 ${K.sans}}.hmla-v2 .fact b{color:${K.text}}
-
-.hmla-v2 .subhead{margin:16px 0 7px;color:${K.gold};font:700 18px ${K.serif}}
-.hmla-v2 .formula{margin:8px 0;padding:9px 12px;border-left:3px solid ${K.cyan};border-radius:0 9px 9px 0;background:#0b2030;color:${K.text};font:700 14px/1.5 ${K.mono}}
-.hmla-v2 .compact-list{margin:7px 0 12px;padding-left:19px;color:${K.text};font:400 13.8px/1.58 ${K.sans}}
-.hmla-v2 .compact-list li{margin:4px 0}.hmla-v2 .compact-list li::marker{color:${K.gold}}
-.hmla-v2 .mini-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;margin:8px 0 12px}
-.hmla-v2 .mini-card{border:1px solid var(--line);border-radius:10px;padding:9px 11px;background:#0b2030;color:${K.dim};font:400 12.8px/1.48 ${K.sans}}
-.hmla-v2 .mini-card b{display:block;color:${K.text};margin-bottom:3px}
-.hmla-v2 .memory{border:1px dashed ${K.violet};border-radius:10px;padding:9px 11px;margin:9px 0;background:rgba(189,156,255,.05);color:${K.text};font:600 12.8px/1.45 ${K.sans}}
-.hmla-v2 .equation-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin:8px 0 12px}
-.hmla-v2 .equation-cell{border:1px solid var(--line);border-radius:9px;padding:9px;background:#0b2030;text-align:center;color:${K.cyan};font:750 12px/1.5 ${K.mono}}
-.hmla-v2 .dense td,.hmla-v2 .dense th{font-size:11.7px;padding:7px 8px}
-.hmla-v2 .sequence{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0 12px}.hmla-v2 .sequence span{border:1px solid var(--line);border-radius:8px;padding:6px 8px;background:#0b2030;color:${K.dim};font:700 11px ${K.sans}}
-.hmla-v2 .section-end{margin:11px 0 0;padding-top:9px;border-top:1px dashed #2a506d;color:${K.dim};font:500 12.3px/1.5 ${K.sans}}
-@media(max-width:820px){.hmla-v2 .mini-grid,.hmla-v2 .equation-grid{grid-template-columns:1fr}}
-
-@media(max-width:820px){.hmla-v2 .grid2,.hmla-v2 .grid3,.hmla-v2 .facts{grid-template-columns:1fr}.hmla-v2 .hero{padding:20px}.hmla-v2 .law{grid-template-columns:1fr}.hmla-v2 .arrow{transform:rotate(90deg);text-align:center}.hmla-v2 .figure svg{max-height:none}.hmla-v2 .section{padding-top:23px}}
-`;
-
-function Section({n,title,accent="gold",children}:{n:number;title:string;accent?:Accent;children:React.ReactNode}){const c=A[accent];return <section className="section"><div className="section-head"><span className="num" style={{background:c}}>{n}</span><h2>{title}</h2></div>{children}</section>}
-function Figure({title,caption,children,full=false,compact=false}:{title:string;caption?:string;children:React.ReactNode;full?:boolean;compact?:boolean}){return <figure className={`figure${full?" full":""}${compact?" compact":""}`}><figcaption className="figure-title">{title}</figcaption>{children}{caption&&<div className="figure-caption">{caption}</div>}</figure>}
-function Note({title,children,color=K.cyan}:{title:string;children:React.ReactNode;color?:string}){return <div className="note" style={{color}}><b style={{color}}>{title}</b><span style={{color:K.text}}>{children}</span></div>}
-function DataTable({headers,rows,min=620}:{headers:string[];rows:React.ReactNode[][];min?:number}){return <div className="table-wrap"><table style={{minWidth:min}}><thead><tr>{headers.map(h=><th key={h}>{h}</th>)}</tr></thead><tbody>{rows.map((r,i)=><tr key={i}>{r.map((x,j)=><td key={j}>{x}</td>)}</tr>)}</tbody></table></div>}
-
-const timeline=[
-  ["1789","Lavoisier","broad classes","coral"],["1817–29","Döbereiner","triads","gold"],["1862","de Chancourtois","telluric screw","violet"],["1865","Newlands","octaves","cyan"],["1869","Lothar Meyer","periodic curves","mint"],["1869–71","Mendeleev","prediction","gold"],["1913","Moseley","atomic number","cyan"],["1944 onward","Seaborg","actinoid concept","violet"],
-] as [string,string,string,Accent][];
-
-function ClassificationMini(){return <svg viewBox="0 0 600 210" role="img" aria-label="Classification transforms isolated facts into families trends and predictions"><defs><linearGradient id="funnel" x1="0" x2="1"><stop stopColor={K.cyan}/><stop offset=".5" stopColor={K.violet}/><stop offset="1" stopColor={K.gold}/></linearGradient><filter id="glow"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>{Array.from({length:18},(_,i)=><circle key={i} cx={35+(i%6)*30} cy={42+Math.floor(i/6)*45} r={6+(i%3)} fill={[K.gold,K.cyan,K.mint,K.violet,K.coral][i%5]} opacity=".9"/>)}<text x="105" y="185" fill={K.dim} textAnchor="middle" fontFamily={K.sans} fontSize="13">isolated facts</text><path d="M215 105H292" stroke="url(#funnel)" strokeWidth="7" strokeLinecap="round"/><path d="M288 88L315 105L288 122Z" fill={K.violet}/><circle cx="390" cy="105" r="70" fill="#14364f" stroke={K.cyan} strokeWidth="3" filter="url(#glow)"/><text x="390" y="82" fill={K.gold} textAnchor="middle" fontFamily={K.sans} fontWeight="800" fontSize="17">families</text><text x="390" y="108" fill={K.mint} textAnchor="middle" fontFamily={K.sans} fontWeight="800" fontSize="17">trends</text><text x="390" y="134" fill={K.violet} textAnchor="middle" fontFamily={K.sans} fontWeight="800" fontSize="17">predictions</text><path d="M464 105H535" stroke={K.gold} strokeWidth="6" strokeLinecap="round"/><path d="M530 89L558 105L530 121Z" fill={K.gold}/><text x="548" y="82" fill={K.gold} textAnchor="middle" fontFamily={K.sans} fontWeight="800" fontSize="13">unknown</text><text x="548" y="145" fill={K.text} textAnchor="middle" fontFamily={K.sans} fontSize="12">becomes testable</text></svg>}
-
-function TriadCompact(){return <svg viewBox="0 0 520 230" role="img" aria-label="Döbereiner triad arithmetic and chemical similarity"><defs><linearGradient id="beam" x1="0" x2="1"><stop stopColor={K.cyan}/><stop offset=".5" stopColor={K.gold}/><stop offset="1" stopColor={K.coral}/></linearGradient></defs><line x1="75" x2="445" y1="126" y2="126" stroke="url(#beam)" strokeWidth="6" strokeLinecap="round"/>{[["Li","7",120,K.cyan],["Na","23",260,K.gold],["K","39",400,K.coral]].map(([s,m,x,c])=><g key={String(s)}><circle cx={Number(x)} cy="92" r={41} fill="#143149" stroke={String(c)} strokeWidth="3"/><text x={Number(x)} y="89" fill={String(c)} textAnchor="middle" fontFamily={K.mono} fontSize="21" fontWeight="900">{s}</text><text x={Number(x)} y="111" fill={K.dim} textAnchor="middle" fontFamily={K.sans} fontSize="11">A ≈ {m}</text></g>)}<path d="M260 126V183" stroke={K.gold} strokeWidth="5"/><path d="M230 183H290L260 218Z" fill={K.gold}/><text x="260" y="158" fill={K.text} textAnchor="middle" fontFamily={K.mono} fontSize="15">(7 + 39) / 2 = 23</text></svg>}
-
-function TelluricScrew(){const labs=["H","Li","Be","B","C","N","O","F","Na","Mg","Al","Si","P","S","Cl","K","Ca"];return <svg viewBox="0 0 520 270" role="img" aria-label="de Chancourtois telluric screw original teaching diagram"><defs><linearGradient id="cyl" x1="0" x2="1"><stop stopColor="#0b1d2c"/><stop offset=".5" stopColor="#26516f"/><stop offset="1" stopColor="#0b1d2c"/></linearGradient></defs><ellipse cx="260" cy="35" rx="122" ry="25" fill="#173b55" stroke={K.cyan}/><rect x="138" y="35" width="244" height="188" fill="url(#cyl)" stroke={K.cyan}/><ellipse cx="260" cy="223" rx="122" ry="25" fill="#0b1f2e" stroke={K.cyan}/><path d="M145 42C370 65 150 89 375 112C150 136 370 159 145 183C370 206 150 225 375 244" fill="none" stroke={K.mint} strokeWidth="3"/>{labs.map((lab,i)=>{const t=i/(labs.length-1),x=260+112*Math.sin(t*Math.PI*6),y=44+t*190;return <g key={lab}><circle cx={x} cy={y} r="8" fill="#0c2030" stroke={i%2?K.gold:K.violet}/><text x={x} y={y+3} fill={K.text} textAnchor="middle" fontFamily={K.mono} fontSize="7.5">{lab}</text></g>})}<text x="260" y="261" fill={K.dim} textAnchor="middle" fontFamily={K.sans} fontSize="11">~16 mass-unit circumference</text></svg>}
-
-type MeyerKind="alkali"|"alkaline"|"halogen"|"noble"|"transition"|"main";
-type MeyerPoint={m:number;v:number;s:string;k:MeyerKind;dx?:number;dy?:number;a?:"start"|"middle"|"end"};
-const meyerPointsUnsorted:MeyerPoint[]=[
-  {m:1.0,v:14.0,s:"H",k:"main",dx:-6,dy:-9,a:"end"},{m:4.0,v:12.0,s:"He",k:"noble",dx:2,dy:-9,a:"start"},{m:6.94,v:13.1,s:"Li",k:"alkali",dx:4,dy:-10,a:"start"},
-  {m:9.01,v:5.0,s:"Be",k:"alkaline",dx:-5,dy:18,a:"end"},{m:10.81,v:4.1,s:"B",k:"main",dx:-5,dy:-8,a:"end"},{m:12.01,v:3.4,s:"C",k:"main",dx:3,dy:18,a:"start"},
-  {m:14.01,v:19.0,s:"N",k:"main",dx:-5,dy:-10,a:"end"},{m:16.0,v:13.0,s:"O",k:"main",dx:0,dy:19,a:"middle"},{m:19.0,v:17.0,s:"F",k:"halogen",dx:-4,dy:-10,a:"end"},{m:20.18,v:21.0,s:"Ne",k:"noble",dx:-4,dy:-10,a:"end"},
-  {m:22.99,v:30.0,s:"Na",k:"alkali",dx:0,dy:-12,a:"middle"},{m:24.31,v:13.5,s:"Mg",k:"alkaline",dx:2,dy:18,a:"start"},{m:26.98,v:10.0,s:"Al",k:"main",dx:-2,dy:18,a:"end"},{m:28.09,v:12.1,s:"Si",k:"main",dx:2,dy:18,a:"start"},
-  {m:30.97,v:20.0,s:"P",k:"main",dx:-5,dy:-10,a:"end"},{m:32.06,v:21.0,s:"S",k:"main",dx:2,dy:18,a:"start"},{m:35.45,v:23.5,s:"Cl",k:"halogen",dx:-2,dy:-11,a:"end"},
-  {m:39.10,v:45.0,s:"K",k:"alkali",dx:0,dy:-13,a:"middle"},{m:39.95,v:30.0,s:"Ar",k:"noble",dx:8,dy:4,a:"start"},{m:40.08,v:24.0,s:"Ca",k:"alkaline",dx:5,dy:18,a:"start"},
-  {m:44.96,v:15.0,s:"Sc",k:"transition",dx:-5,dy:18,a:"end"},{m:47.87,v:10.6,s:"Ti",k:"transition",dx:-5,dy:17,a:"end"},{m:50.94,v:8.3,s:"V",k:"transition",dx:-4,dy:18,a:"end"},
-  {m:52.00,v:7.2,s:"Cr",k:"transition",dx:0,dy:-10,a:"middle"},{m:54.94,v:7.4,s:"Mn",k:"transition",dx:-3,dy:20,a:"end"},{m:55.85,v:7.1,s:"Fe",k:"transition",dx:4,dy:-10,a:"start"},
-  {m:58.69,v:6.6,s:"Ni",k:"transition",dx:-3,dy:20,a:"end"},{m:58.93,v:6.7,s:"Co",k:"transition",dx:4,dy:-10,a:"start"},{m:63.55,v:7.1,s:"Cu",k:"transition",dx:2,dy:18,a:"start"},{m:65.38,v:9.2,s:"Zn",k:"transition",dx:4,dy:18,a:"start"},
-  {m:69.72,v:11.8,s:"Ga",k:"main",dx:-2,dy:-10,a:"end"},{m:72.63,v:13.6,s:"Ge",k:"main",dx:3,dy:18,a:"start"},{m:74.92,v:13.1,s:"As",k:"main",dx:3,dy:18,a:"start"},{m:78.97,v:16.5,s:"Se",k:"main",dx:-4,dy:-10,a:"end"},
-  {m:79.90,v:28.0,s:"Br",k:"halogen",dx:-5,dy:-11,a:"end"},{m:83.80,v:37.0,s:"Kr",k:"noble",dx:-8,dy:-10,a:"end"},{m:85.47,v:56.0,s:"Rb",k:"alkali",dx:0,dy:-13,a:"middle"},{m:87.62,v:34.0,s:"Sr",k:"alkaline",dx:4,dy:18,a:"start"},
-  {m:91.22,v:22.0,s:"Zr",k:"transition",dx:4,dy:-9,a:"start"},{m:92.91,v:14.0,s:"Nb",k:"transition",dx:4,dy:17,a:"start"},{m:95.95,v:10.0,s:"Mo",k:"transition",dx:-4,dy:18,a:"end"},
-  {m:101.07,v:8.4,s:"Ru",k:"transition",dx:-3,dy:18,a:"end"},{m:102.91,v:8.3,s:"Rh",k:"transition",dx:0,dy:-10,a:"middle"},{m:106.42,v:8.9,s:"Pd",k:"transition",dx:3,dy:18,a:"start"},{m:107.87,v:10.3,s:"Ag",k:"transition",dx:4,dy:-10,a:"start"},
-  {m:112.41,v:13.0,s:"Cd",k:"transition",dx:4,dy:18,a:"start"},{m:114.82,v:25.0,s:"In",k:"main",dx:0,dy:-11,a:"middle"},{m:118.71,v:16.0,s:"Sn",k:"main",dx:2,dy:18,a:"start"},{m:121.76,v:20.0,s:"Sb",k:"main",dx:4,dy:-10,a:"start"},
-  {m:126.90,v:35.0,s:"I",k:"halogen",dx:-5,dy:18,a:"end"},{m:127.60,v:19.0,s:"Te",k:"main",dx:3,dy:18,a:"start"},{m:131.29,v:37.0,s:"Xe",k:"noble",dx:5,dy:-10,a:"start"},{m:132.91,v:71.0,s:"Cs",k:"alkali",dx:0,dy:-13,a:"middle"}
-];
-const meyerPoints=[...meyerPointsUnsorted].sort((a,b)=>a.m-b.m);
-function MeyerGraph(){
-  const W=1120,H=540,L=70,R=30,T=24,B=64;
-  const x=(m:number)=>L+(m/140)*(W-L-R), y=(v:number)=>H-B-(v/80)*(H-T-B);
-  const d=meyerPoints.map((p,i)=>`${i?"L":"M"}${x(p.m).toFixed(1)},${y(p.v).toFixed(1)}`).join(" ");
-  const colour=(k:MeyerKind)=>k==="alkali"?K.gold:k==="alkaline"?K.cyan:k==="halogen"?K.violet:k==="noble"?K.coral:k==="transition"?K.mint:K.text;
-  return <svg viewBox={`0 0 ${W} ${H}`} role="img" aria-labelledby="meyerTitle meyerDesc">
-    <title id="meyerTitle">Lothar Meyer atomic-volume curve from hydrogen to caesium</title>
-    <desc id="meyerDesc">A detailed historical teaching curve with atomic weights on the horizontal axis, atomic volumes on the vertical axis, individual element labels, recurring alkali-metal peaks, alkaline-earth descents and transition-metal minima.</desc>
-    <defs>
-      <linearGradient id="meyerFullLine" x1="0" x2="1"><stop stopColor={K.cyan}/><stop offset=".28" stopColor={K.gold}/><stop offset=".58" stopColor={K.mint}/><stop offset=".82" stopColor={K.violet}/><stop offset="1" stopColor={K.gold}/></linearGradient>
-      <filter id="meyerFullGlow" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="2.2" result="g"/><feMerge><feMergeNode in="g"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
-      <radialGradient id="meyerDot"><stop stopColor="#ffffff"/><stop offset=".45" stopColor="#dff7ff"/><stop offset="1" stopColor="#8adff1"/></radialGradient>
-    </defs>
-    <rect x="0" y="0" width={W} height={H} rx="18" fill="#0b2030"/>
-    {[0,10,20,30,40,50,60,70,80].map(v=><g key={`y${v}`}><line x1={L} x2={W-R} y1={y(v)} y2={y(v)} stroke="#2a4d67" strokeWidth="1"/><text x={L-11} y={y(v)+4} fill={K.dim} textAnchor="end" fontFamily={K.mono} fontSize="10">{v}</text></g>)}
-    {[0,10,20,30,40,50,60,70,80,90,100,110,120,130,140].map(m=><g key={`x${m}`}><line x1={x(m)} x2={x(m)} y1={T} y2={H-B} stroke="#213f56" strokeWidth="1"/><text x={x(m)} y={H-B+22} fill={K.dim} textAnchor="middle" fontFamily={K.mono} fontSize="10">{m}</text></g>)}
-    <line x1={L} x2={W-R} y1={H-B} y2={H-B} stroke={K.text} strokeWidth="1.6"/><line x1={L} x2={L} y1={T} y2={H-B} stroke={K.text} strokeWidth="1.6"/>
-    <path d={d} fill="none" stroke="url(#meyerFullLine)" strokeWidth="4.2" strokeLinejoin="round" strokeLinecap="round" filter="url(#meyerFullGlow)"/>
-    {meyerPoints.map(p=><g key={`${p.s}-${p.m}`}><circle cx={x(p.m)} cy={y(p.v)} r={p.k==="alkali"?5.4:3.4} fill="url(#meyerDot)" stroke={colour(p.k)} strokeWidth={p.k==="alkali"?2.2:1.5}/><text x={x(p.m)+(p.dx||0)} y={y(p.v)+(p.dy||-8)} fill={colour(p.k)} textAnchor={p.a||"middle"} fontFamily={K.sans} fontSize={p.k==="alkali"?11:8.8} fontWeight={p.k==="alkali"?900:750} paintOrder="stroke" stroke="#0b2030" strokeWidth="3" strokeLinejoin="round">{p.s}</text></g>)}
-    <text x={W/2} y={H-16} fill={K.text} textAnchor="middle" fontFamily={K.serif} fontSize="15" fontWeight="700">Atomic weights →</text>
-    <text x="20" y={H/2} fill={K.text} textAnchor="middle" fontFamily={K.serif} fontSize="15" fontWeight="700" transform={`rotate(-90 20 ${H/2})`}>Atomic volumes / cm³ mol⁻¹</text>
-    <g fontFamily={K.sans} fontSize="10.5" fontWeight="800"><text x={x(23)} y={y(30)-28} fill={K.gold} textAnchor="middle">Na peak</text><text x={x(39.1)} y={y(45)-30} fill={K.gold} textAnchor="middle">K peak</text><text x={x(85.47)} y={y(56)-30} fill={K.gold} textAnchor="middle">Rb peak</text><text x={x(132.91)-3} y={y(71)-28} fill={K.gold} textAnchor="middle">Cs peak</text></g>
-  </svg>
+type Accent = "cyan" | "gold" | "violet" | "mint";
+type MeyerKind = "alkali" | "alkalineEarth" | "transition" | "halogen" | "noble" | "other";
+interface MeyerPoint {
+  m: number;
+  v: number;
+  s: string;
+  k: MeyerKind;
+  dx: number;
+  dy: number;
+  a: string;
 }
 
+type ElementBlock = "s" | "p" | "d" | "f";
+type ElementCategory =
+  | "alkali"
+  | "alkalineEarth"
+  | "transition"
+  | "postTransition"
+  | "metalloid"
+  | "reactiveNonmetal"
+  | "halogen"
+  | "noble"
+  | "lanthanoid"
+  | "actinoid"
+  | "unknown";
 
-const mRows:[string,Record<string,string>][]=[
-  ["1",{"I":"H\n1.008"}],
-  ["2",{"0":"He\n4.0","I":"Li\n7.03","II":"Be\n9.1","III":"B\n11.0","IV":"C\n12.0","V":"N\n14.04","VI":"O\n16.00","VII":"F\n19.0"}],
-  ["3",{"0":"Ne\n19.9","I":"Na\n23.5","II":"Mg\n24.3","III":"Al\n27.0","IV":"Si\n28.4","V":"P\n31.0","VI":"S\n32.06","VII":"Cl\n35.45"}],
-  ["4",{"0":"Ar\n38","I":"K\n39.1","II":"Ca\n40.1","III":"Sc\n44.1","IV":"Ti\n48.1","V":"V\n51.4","VI":"Cr\n52.1","VII":"Mn\n55.0","VIII":"Fe 55.9 · Co 59 · Ni 59\n(Cu)"}],
-  ["5",{"I":"Cu\n63.6","II":"Zn\n65.4","III":"Ga\n70.0","IV":"Ge\n72.3","V":"As\n75","VI":"Se\n79","VII":"Br\n79.95"}],
-  ["6",{"0":"Kr\n81.8","I":"Rb\n85.4","II":"Sr\n87.6","III":"Y\n89.0","IV":"Zr\n90.6","V":"Nb\n94.0","VI":"Mo\n96.0","VII":"—","VIII":"Ru 101.7 · Rh 103.0 · Pd 106.5\n(Ag)"}],
-  ["7",{"I":"Ag\n107.9","II":"Cd\n112.4","III":"In\n114.0","IV":"Sn\n119.0","V":"Sb\n120.0","VI":"Te\n127.6","VII":"I\n126.9"}],
-  ["8",{"0":"Xe\n128","I":"Cs\n132.9","II":"Ba\n137.4","III":"La\n139","IV":"Ce\n140","V":"—","VI":"—","VII":"—"}],
-  ["9",{}],
-  ["10",{"III":"Yb\n173","V":"Ta\n183","VI":"W\n184","VIII":"Os 191 · Ir 193 · Pt 194.9\n(Au)"}],
-  ["11",{"I":"Au\n197.2","II":"Hg\n200.0","III":"Tl\n204.1","IV":"Pb\n206.9","V":"Bi\n208"}],
-  ["12",{"II":"Ra\n224","IV":"Th\n232","VI":"U\n239"}],
+interface ElementInfo {
+  z: number;
+  symbol: string;
+  name: string;
+  group: number | null;
+  period: number;
+  block: ElementBlock;
+  category: ElementCategory;
+  note?: string;
+}
+
+interface HistoricalRow {
+  series: string;
+  g0: string;
+  g1: string;
+  g2: string;
+  g3: string;
+  g4: string;
+  g5: string;
+  g6: string;
+  g7: string;
+  g8: string;
+}
+
+const palette = {
+  navy: "#0B1C2C",
+  cyan: "#5DD6F2",
+  gold: "#F5C34D",
+  violet: "#B99AFF",
+  mint: "#7CE6BE",
+};
+
+const accentClasses: Record<Accent, { border: string; text: string; glow: string }> = {
+  cyan: {
+    border: "border-cyan-300/25",
+    text: "text-cyan-200",
+    glow: "shadow-[0_0_38px_rgba(93,214,242,0.08)]",
+  },
+  gold: {
+    border: "border-amber-300/25",
+    text: "text-amber-200",
+    glow: "shadow-[0_0_38px_rgba(245,195,77,0.08)]",
+  },
+  violet: {
+    border: "border-violet-300/25",
+    text: "text-violet-200",
+    glow: "shadow-[0_0_38px_rgba(185,154,255,0.08)]",
+  },
+  mint: {
+    border: "border-emerald-300/25",
+    text: "text-emerald-200",
+    glow: "shadow-[0_0_38px_rgba(124,230,190,0.08)]",
+  },
+};
+
+const meyerPointsUnsorted: MeyerPoint[] = [
+  { m: 132.9, v: 70.9, s: "Cs", k: "alkali", dx: -10, dy: -14, a: "alkali-metal peak" },
+  { m: 1.0, v: 14.0, s: "H", k: "other", dx: 0, dy: -12, a: "hydrogen boundary point" },
+  { m: 7.0, v: 13.1, s: "Li", k: "alkali", dx: 0, dy: -14, a: "first alkali peak" },
+  { m: 9.0, v: 4.9, s: "Be", k: "alkalineEarth", dx: 0, dy: 18, a: "descending branch" },
+  { m: 12.0, v: 5.3, s: "C", k: "other", dx: 0, dy: 18, a: "compact non-metal" },
+  { m: 19.0, v: 17.1, s: "F", k: "halogen", dx: 0, dy: -12, a: "halogen rise" },
+  { m: 20.2, v: 16.8, s: "Ne", k: "noble", dx: 2, dy: 18, a: "noble-gas endpoint" },
+  { m: 23.0, v: 23.7, s: "Na", k: "alkali", dx: 0, dy: -14, a: "alkali-metal peak" },
+  { m: 24.3, v: 14.0, s: "Mg", k: "alkalineEarth", dx: 0, dy: 18, a: "descending branch" },
+  { m: 27.0, v: 10.0, s: "Al", k: "other", dx: 0, dy: 18, a: "contracted region" },
+  { m: 28.1, v: 12.1, s: "Si", k: "other", dx: 0, dy: -12, a: "metalloid region" },
+  { m: 35.5, v: 22.7, s: "Cl", k: "halogen", dx: 0, dy: -14, a: "ascending branch" },
+  { m: 39.9, v: 28.5, s: "Ar", k: "noble", dx: -2, dy: -14, a: "noble-gas endpoint" },
+  { m: 39.1, v: 45.3, s: "K", k: "alkali", dx: 0, dy: -14, a: "strong alkali peak" },
+  { m: 40.1, v: 25.9, s: "Ca", k: "alkalineEarth", dx: 0, dy: 18, a: "descending branch" },
+  { m: 45.0, v: 15.0, s: "Sc", k: "transition", dx: 0, dy: -12, a: "transition descent" },
+  { m: 47.9, v: 10.6, s: "Ti", k: "transition", dx: 0, dy: 18, a: "broad minimum" },
+  { m: 52.0, v: 7.2, s: "Cr", k: "transition", dx: 0, dy: 18, a: "compact transition metal" },
+  { m: 55.8, v: 7.1, s: "Fe", k: "transition", dx: 0, dy: -12, a: "broad minimum" },
+  { m: 58.9, v: 6.7, s: "Co", k: "transition", dx: 0, dy: 18, a: "broad minimum" },
+  { m: 58.7, v: 6.6, s: "Ni", k: "transition", dx: -5, dy: -12, a: "broad minimum" },
+  { m: 63.5, v: 7.1, s: "Cu", k: "transition", dx: 0, dy: 18, a: "minimum begins to rise" },
+  { m: 65.4, v: 9.2, s: "Zn", k: "transition", dx: 0, dy: -12, a: "filled d-shell region" },
+  { m: 72.6, v: 13.6, s: "Ge", k: "other", dx: 0, dy: 18, a: "compact metalloid" },
+  { m: 79.9, v: 23.5, s: "Br", k: "halogen", dx: 0, dy: -14, a: "ascending branch" },
+  { m: 83.8, v: 27.9, s: "Kr", k: "noble", dx: 0, dy: 18, a: "noble-gas endpoint" },
+  { m: 85.5, v: 55.9, s: "Rb", k: "alkali", dx: 0, dy: -14, a: "alkali-metal peak" },
+  { m: 87.6, v: 33.7, s: "Sr", k: "alkalineEarth", dx: 0, dy: 18, a: "descending branch" },
+  { m: 91.2, v: 14.0, s: "Zr", k: "transition", dx: 0, dy: -12, a: "transition-metal descent" },
+  { m: 95.9, v: 9.4, s: "Mo", k: "transition", dx: 0, dy: 18, a: "broad minimum" },
+  { m: 101.1, v: 8.3, s: "Ru", k: "transition", dx: 0, dy: -12, a: "broad minimum" },
+  { m: 106.4, v: 8.9, s: "Pd", k: "transition", dx: 0, dy: 18, a: "minimum begins to rise" },
+  { m: 127.0, v: 25.7, s: "I", k: "halogen", dx: 0, dy: -14, a: "ascending branch" },
+  { m: 131.3, v: 37.3, s: "Xe", k: "noble", dx: -2, dy: 18, a: "noble-gas endpoint" },
 ];
-function MendeleevTable(){const groups=["0","I","II","III","IV","V","VI","VII","VIII"];return <><div className="table-wrap"><table className="mendeleev"><thead><tr><th>Series</th>{groups.map(g=><th key={g}>Group {g}</th>)}</tr></thead><tbody>{mRows.map(([s,c])=><tr key={s}><td>{s}</td>{groups.map(g=><td key={g} className={g==="VIII"?"viii":""}>{c[g]||""}</td>)}</tr>)}</tbody></table></div><div className="table-wrap"><div className="formula-band">{[["I","R₂O · RH"],["II","RO · RH₂"],["III","R₂O₃ · RH₃"],["IV","RO₂ · RH₄"],["V","R₂O₅ · RH₃"],["VI","RO₃ · RH₂"],["VII","R₂O₇ · RH"],["VIII","RO₄"]].map(([g,f])=><div className="formula-cell" key={g}><b style={{color:K.gold}}>G {g}</b><br/>{f}</div>)}</div></div></>}
 
-function AnomalousPairs(){const pairs=[["Ar 39.95","K 39.10","18 < 19"],["Co 58.93","Ni 58.69","27 < 28"],["Te 127.60","I 126.90","52 < 53"]];return <svg viewBox="0 0 580 250" role="img" aria-label="Atomic number resolves anomalous mass pairs"><defs><marker id="pairArrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill={K.gold}/></marker></defs>{pairs.map(([a,b,z],i)=>{const y=48+i*70;return <g key={a}><rect x="25" y={y-26} width="205" height="48" rx="11" fill="#143149" stroke={K.coral}/><text x="127" y={y+4} fill={K.text} textAnchor="middle" fontFamily={K.mono} fontSize="13" fontWeight="700">{a} → {b}</text><path d={`M245 ${y-2}H325`} stroke={K.gold} strokeWidth="4" markerEnd="url(#pairArrow)"/><rect x="345" y={y-26} width="205" height="48" rx="11" fill="#143149" stroke={K.mint}/><text x="447" y={y+4} fill={K.mint} textAnchor="middle" fontFamily={K.mono} fontSize="15" fontWeight="800">Z: {z}</text></g>})}</svg>}
+const meyerPoints = [...meyerPointsUnsorted].sort((a, b) => a.m - b.m);
 
-function MoseleyExperiment(){return <svg viewBox="0 0 560 245" role="img" aria-label="Moseley characteristic X-ray experiment"><defs><marker id="beamA" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill={K.cyan}/></marker></defs><rect x="25" y="83" width="110" height="65" rx="14" fill="#143149" stroke={K.cyan} strokeWidth="2"/><text x="80" y="112" fill={K.cyan} textAnchor="middle" fontFamily={K.sans} fontWeight="800" fontSize="14">electron gun</text><text x="80" y="133" fill={K.text} textAnchor="middle" fontFamily={K.sans} fontSize="10">fast e⁻ beam</text><path d="M140 116H235" stroke={K.cyan} strokeWidth="5" markerEnd="url(#beamA)"/><rect x="235" y="67" width="82" height="98" rx="12" fill="#4a2b31" stroke={K.coral} strokeWidth="3" transform="rotate(10 276 116)"/><text x="276" y="119" fill={K.coral} textAnchor="middle" fontFamily={K.sans} fontWeight="800" fontSize="13" transform="rotate(10 276 116)">metal target</text><path d="M317 116L405 62M317 116L405 116M317 116L405 174" stroke={K.gold} strokeWidth="3"/><path d="M408 50L468 116L408 182Z" fill="#143149" stroke={K.gold} strokeWidth="3"/><text x="426" y="120" fill={K.gold} fontFamily={K.sans} fontWeight="800" fontSize="12">crystal</text><path d="M470 116Q515 78 542 48M470 116Q515 155 542 190" stroke={K.violet} strokeWidth="3" fill="none"/><text x="520" y="31" fill={K.gold} textAnchor="middle" fontFamily={K.sans} fontSize="11">detector</text><text x="520" y="218" fill={K.violet} textAnchor="middle" fontFamily={K.sans} fontSize="11">detector</text></svg>}
-function MoseleyGraph(){const W=560,H=245,L=53,R=20,T=32,B=45,pts=[20,25,30,35,40,45,50,55,60,65,70].map(z=>({z,v:.62*z-7})),x=(z:number)=>L+((z-18)/55)*(W-L-R),y=(v:number)=>H-B-((v-3)/38)*(H-T-B),d=pts.map((p,i)=>`${i?"L":"M"}${x(p.z)},${y(p.v)}`).join(" ");return <svg viewBox={`0 0 ${W} ${H}`} role="img" aria-label="Moseley graph square root frequency versus atomic number"><defs><filter id="lineGlow"><feGaussianBlur stdDeviation="2" result="g"/><feMerge><feMergeNode in="g"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs><line x1={L} x2={W-R} y1={H-B} y2={H-B} stroke={K.dim}/><line x1={L} x2={L} y1={T} y2={H-B} stroke={K.dim}/><path d={d} fill="none" stroke={K.gold} strokeWidth="4" filter="url(#lineGlow)"/>{pts.map((p,i)=><circle key={p.z} cx={x(p.z)} cy={y(p.v)} r="5" fill={i%2?K.mint:K.cyan} stroke="#07131d" strokeWidth="2"/>)}<text x={W-155} y="48" fill={K.gold} textAnchor="middle" fontFamily={K.serif} fontSize="21" fontWeight="800">√ν = a(Z − b)</text><text x={W/2} y={H-10} fill={K.text} textAnchor="middle" fontFamily={K.sans} fontSize="11">atomic number, Z →</text><text x="16" y={H/2} fill={K.text} textAnchor="middle" fontFamily={K.sans} fontSize="11" transform={`rotate(-90 16 ${H/2})`}>√ν</text></svg>}
+const historicalRows: HistoricalRow[] = [
+  { series: "1", g0: "—", g1: "H", g2: "—", g3: "—", g4: "—", g5: "—", g6: "—", g7: "—", g8: "—" },
+  { series: "2", g0: "—", g1: "Li", g2: "Be", g3: "B", g4: "C", g5: "N", g6: "O", g7: "F", g8: "—" },
+  { series: "3", g0: "Ne", g1: "Na", g2: "Mg", g3: "Al", g4: "Si", g5: "P", g6: "S", g7: "Cl", g8: "—" },
+  { series: "4", g0: "Ar", g1: "K", g2: "Ca", g3: "Sc", g4: "Ti", g5: "V", g6: "Cr", g7: "Mn", g8: "Fe · Co · Ni" },
+  { series: "5", g0: "Kr", g1: "Cu", g2: "Zn", g3: "Ga", g4: "Ge", g5: "As", g6: "Se", g7: "Br", g8: "—" },
+  { series: "6", g0: "—", g1: "Rb", g2: "Sr", g3: "Y", g4: "Zr", g5: "Nb", g6: "Mo", g7: "Tc", g8: "Ru · Rh · Pd" },
+  { series: "7", g0: "Xe", g1: "Ag", g2: "Cd", g3: "In", g4: "Sn", g5: "Sb", g6: "Te", g7: "I", g8: "—" },
+  { series: "8", g0: "—", g1: "Cs", g2: "Ba", g3: "La*", g4: "Hf", g5: "Ta", g6: "W", g7: "Re", g8: "Os · Ir · Pt" },
+  { series: "9", g0: "Rn", g1: "Au", g2: "Hg", g3: "Tl", g4: "Pb", g5: "Bi", g6: "Po", g7: "At", g8: "—" },
+  { series: "10", g0: "—", g1: "Fr", g2: "Ra", g3: "Ac*", g4: "Rf", g5: "Db", g6: "Sg", g7: "Bh", g8: "Hs · Mt · Ds" },
+  { series: "11", g0: "—", g1: "—", g2: "—", g3: "Ce–Lu", g4: "—", g5: "—", g6: "—", g7: "—", g8: "inner series" },
+  { series: "12", g0: "—", g1: "—", g2: "—", g3: "Th–Lr", g4: "—", g5: "—", g6: "—", g7: "—", g8: "inner series" },
+];
 
-function ModernTable(){const [sel,setSel]=useState<E|null>(null),main=ELEMENTS.filter(e=>e.block!=="f"),f=ELEMENTS.filter(e=>e.block==="f");return <div><div className="modern-scroll"><div className="modern-grid">{Array.from({length:18},(_,i)=><div className="group-label" key={i} style={{gridColumn:i+2,gridRow:1}}>{i+1}</div>)}{Array.from({length:7},(_,i)=><div className="period-label" key={i} style={{gridColumn:1,gridRow:i+2}}>{i+1}</div>)}{main.map(e=><button className="element" key={e.z} onClick={()=>setSel(e)} aria-label={`${e.name}, atomic number ${e.z}`} style={{gridColumn:e.group+1,gridRow:e.period+1,"--ec":BC[e.block]} as React.CSSProperties}><span className="z">{e.z}</span><b>{e.symbol}</b></button>)}<button className="element" onClick={()=>setSel(ELEMENTS[56])} style={{gridColumn:4,gridRow:7,"--ec":K.f} as React.CSSProperties}>57–71</button><button className="element" onClick={()=>setSel(ELEMENTS[88])} style={{gridColumn:4,gridRow:8,"--ec":K.f} as React.CSSProperties}>89–103</button></div>{[f.slice(0,15),f.slice(15)].map((row,i)=><div className="frow" key={i}><div className="frow-label">{i?"Actinoids":"Lanthanoids"}</div>{row.map(e=><button className="element" key={e.z} onClick={()=>setSel(e)} style={{height:40,"--ec":K.f} as React.CSSProperties}><span className="z">{e.z}</span><b>{e.symbol}</b></button>)}</div>)}</div>{sel&&<div className="selected" style={{"--ec":BC[sel.block]} as React.CSSProperties}><div className="symbol">{sel.symbol}</div><div><strong>{sel.name}</strong><span>Z = {sel.z} · Period {sel.period} · {sel.block==="f"?"inner-transition series":`Group ${sel.group}`} · {sel.block}-block</span></div><button onClick={()=>setSel(null)} style={{marginLeft:"auto",border:`1px solid ${K.line}`,borderRadius:8,padding:"5px 8px",background:"transparent",color:K.dim,cursor:"pointer"}}>Close</button></div>}</div>}
+const mainElements: ElementInfo[] = [
+  { z: 1, symbol: "H", name: "Hydrogen", group: 1, period: 1, block: "s", category: "reactiveNonmetal", note: "1s¹; resembles Group 1 by electron count, yet can form both H⁺ and H⁻." },
+  { z: 2, symbol: "He", name: "Helium", group: 18, period: 1, block: "s", category: "noble", note: "1s²; placed with Group 18 because its valence shell is complete and it is exceptionally inert." },
+  { z: 3, symbol: "Li", name: "Lithium", group: 1, period: 2, block: "s", category: "alkali" },
+  { z: 4, symbol: "Be", name: "Beryllium", group: 2, period: 2, block: "s", category: "alkalineEarth" },
+  { z: 5, symbol: "B", name: "Boron", group: 13, period: 2, block: "p", category: "metalloid" },
+  { z: 6, symbol: "C", name: "Carbon", group: 14, period: 2, block: "p", category: "reactiveNonmetal" },
+  { z: 7, symbol: "N", name: "Nitrogen", group: 15, period: 2, block: "p", category: "reactiveNonmetal" },
+  { z: 8, symbol: "O", name: "Oxygen", group: 16, period: 2, block: "p", category: "reactiveNonmetal" },
+  { z: 9, symbol: "F", name: "Fluorine", group: 17, period: 2, block: "p", category: "halogen" },
+  { z: 10, symbol: "Ne", name: "Neon", group: 18, period: 2, block: "p", category: "noble" },
+  { z: 11, symbol: "Na", name: "Sodium", group: 1, period: 3, block: "s", category: "alkali" },
+  { z: 12, symbol: "Mg", name: "Magnesium", group: 2, period: 3, block: "s", category: "alkalineEarth" },
+  { z: 13, symbol: "Al", name: "Aluminium", group: 13, period: 3, block: "p", category: "postTransition" },
+  { z: 14, symbol: "Si", name: "Silicon", group: 14, period: 3, block: "p", category: "metalloid" },
+  { z: 15, symbol: "P", name: "Phosphorus", group: 15, period: 3, block: "p", category: "reactiveNonmetal" },
+  { z: 16, symbol: "S", name: "Sulfur", group: 16, period: 3, block: "p", category: "reactiveNonmetal" },
+  { z: 17, symbol: "Cl", name: "Chlorine", group: 17, period: 3, block: "p", category: "halogen" },
+  { z: 18, symbol: "Ar", name: "Argon", group: 18, period: 3, block: "p", category: "noble" },
+  { z: 19, symbol: "K", name: "Potassium", group: 1, period: 4, block: "s", category: "alkali" },
+  { z: 20, symbol: "Ca", name: "Calcium", group: 2, period: 4, block: "s", category: "alkalineEarth" },
+  { z: 21, symbol: "Sc", name: "Scandium", group: 3, period: 4, block: "d", category: "transition" },
+  { z: 22, symbol: "Ti", name: "Titanium", group: 4, period: 4, block: "d", category: "transition" },
+  { z: 23, symbol: "V", name: "Vanadium", group: 5, period: 4, block: "d", category: "transition" },
+  { z: 24, symbol: "Cr", name: "Chromium", group: 6, period: 4, block: "d", category: "transition", note: "Ground state [Ar] 3d⁵4s¹: half-filled d stability modifies the simple filling forecast." },
+  { z: 25, symbol: "Mn", name: "Manganese", group: 7, period: 4, block: "d", category: "transition" },
+  { z: 26, symbol: "Fe", name: "Iron", group: 8, period: 4, block: "d", category: "transition" },
+  { z: 27, symbol: "Co", name: "Cobalt", group: 9, period: 4, block: "d", category: "transition" },
+  { z: 28, symbol: "Ni", name: "Nickel", group: 10, period: 4, block: "d", category: "transition" },
+  { z: 29, symbol: "Cu", name: "Copper", group: 11, period: 4, block: "d", category: "transition", note: "Ground state [Ar] 3d¹⁰4s¹: a filled d subshell is especially stable." },
+  { z: 30, symbol: "Zn", name: "Zinc", group: 12, period: 4, block: "d", category: "transition", note: "A d-block element, but not a transition element in its common atom and Zn²⁺ ion because the d subshell is complete." },
+  { z: 31, symbol: "Ga", name: "Gallium", group: 13, period: 4, block: "p", category: "postTransition" },
+  { z: 32, symbol: "Ge", name: "Germanium", group: 14, period: 4, block: "p", category: "metalloid" },
+  { z: 33, symbol: "As", name: "Arsenic", group: 15, period: 4, block: "p", category: "metalloid" },
+  { z: 34, symbol: "Se", name: "Selenium", group: 16, period: 4, block: "p", category: "reactiveNonmetal" },
+  { z: 35, symbol: "Br", name: "Bromine", group: 17, period: 4, block: "p", category: "halogen" },
+  { z: 36, symbol: "Kr", name: "Krypton", group: 18, period: 4, block: "p", category: "noble" },
+  { z: 37, symbol: "Rb", name: "Rubidium", group: 1, period: 5, block: "s", category: "alkali" },
+  { z: 38, symbol: "Sr", name: "Strontium", group: 2, period: 5, block: "s", category: "alkalineEarth" },
+  { z: 39, symbol: "Y", name: "Yttrium", group: 3, period: 5, block: "d", category: "transition" },
+  { z: 40, symbol: "Zr", name: "Zirconium", group: 4, period: 5, block: "d", category: "transition" },
+  { z: 41, symbol: "Nb", name: "Niobium", group: 5, period: 5, block: "d", category: "transition" },
+  { z: 42, symbol: "Mo", name: "Molybdenum", group: 6, period: 5, block: "d", category: "transition" },
+  { z: 43, symbol: "Tc", name: "Technetium", group: 7, period: 5, block: "d", category: "transition" },
+  { z: 44, symbol: "Ru", name: "Ruthenium", group: 8, period: 5, block: "d", category: "transition" },
+  { z: 45, symbol: "Rh", name: "Rhodium", group: 9, period: 5, block: "d", category: "transition" },
+  { z: 46, symbol: "Pd", name: "Palladium", group: 10, period: 5, block: "d", category: "transition", note: "Ground state [Kr] 4d¹⁰5s⁰, an important filling irregularity." },
+  { z: 47, symbol: "Ag", name: "Silver", group: 11, period: 5, block: "d", category: "transition" },
+  { z: 48, symbol: "Cd", name: "Cadmium", group: 12, period: 5, block: "d", category: "transition", note: "A d-block element whose common Cd²⁺ ion retains d¹⁰; therefore it is not classed as a transition element by the incomplete-d criterion." },
+  { z: 49, symbol: "In", name: "Indium", group: 13, period: 5, block: "p", category: "postTransition" },
+  { z: 50, symbol: "Sn", name: "Tin", group: 14, period: 5, block: "p", category: "postTransition" },
+  { z: 51, symbol: "Sb", name: "Antimony", group: 15, period: 5, block: "p", category: "metalloid" },
+  { z: 52, symbol: "Te", name: "Tellurium", group: 16, period: 5, block: "p", category: "metalloid" },
+  { z: 53, symbol: "I", name: "Iodine", group: 17, period: 5, block: "p", category: "halogen" },
+  { z: 54, symbol: "Xe", name: "Xenon", group: 18, period: 5, block: "p", category: "noble" },
+  { z: 55, symbol: "Cs", name: "Caesium", group: 1, period: 6, block: "s", category: "alkali" },
+  { z: 56, symbol: "Ba", name: "Barium", group: 2, period: 6, block: "s", category: "alkalineEarth" },
+  { z: 57, symbol: "La", name: "Lanthanum", group: 3, period: 6, block: "f", category: "lanthanoid", note: "Often placed in Group 3 and used as the entry marker for the 4f series; block labels and Group 3 membership require careful distinction." },
+  { z: 72, symbol: "Hf", name: "Hafnium", group: 4, period: 6, block: "d", category: "transition" },
+  { z: 73, symbol: "Ta", name: "Tantalum", group: 5, period: 6, block: "d", category: "transition" },
+  { z: 74, symbol: "W", name: "Tungsten", group: 6, period: 6, block: "d", category: "transition" },
+  { z: 75, symbol: "Re", name: "Rhenium", group: 7, period: 6, block: "d", category: "transition" },
+  { z: 76, symbol: "Os", name: "Osmium", group: 8, period: 6, block: "d", category: "transition" },
+  { z: 77, symbol: "Ir", name: "Iridium", group: 9, period: 6, block: "d", category: "transition" },
+  { z: 78, symbol: "Pt", name: "Platinum", group: 10, period: 6, block: "d", category: "transition" },
+  { z: 79, symbol: "Au", name: "Gold", group: 11, period: 6, block: "d", category: "transition" },
+  { z: 80, symbol: "Hg", name: "Mercury", group: 12, period: 6, block: "d", category: "transition", note: "A d-block element with a complete d¹⁰ arrangement in Hg and Hg²⁺; not a transition element by the incomplete-d criterion." },
+  { z: 81, symbol: "Tl", name: "Thallium", group: 13, period: 6, block: "p", category: "postTransition" },
+  { z: 82, symbol: "Pb", name: "Lead", group: 14, period: 6, block: "p", category: "postTransition" },
+  { z: 83, symbol: "Bi", name: "Bismuth", group: 15, period: 6, block: "p", category: "postTransition" },
+  { z: 84, symbol: "Po", name: "Polonium", group: 16, period: 6, block: "p", category: "postTransition" },
+  { z: 85, symbol: "At", name: "Astatine", group: 17, period: 6, block: "p", category: "halogen" },
+  { z: 86, symbol: "Rn", name: "Radon", group: 18, period: 6, block: "p", category: "noble" },
+  { z: 87, symbol: "Fr", name: "Francium", group: 1, period: 7, block: "s", category: "alkali" },
+  { z: 88, symbol: "Ra", name: "Radium", group: 2, period: 7, block: "s", category: "alkalineEarth" },
+  { z: 89, symbol: "Ac", name: "Actinium", group: 3, period: 7, block: "f", category: "actinoid", note: "Commonly used as the entry marker for the 5f series and often placed in Group 3." },
+  { z: 104, symbol: "Rf", name: "Rutherfordium", group: 4, period: 7, block: "d", category: "transition" },
+  { z: 105, symbol: "Db", name: "Dubnium", group: 5, period: 7, block: "d", category: "transition" },
+  { z: 106, symbol: "Sg", name: "Seaborgium", group: 6, period: 7, block: "d", category: "transition" },
+  { z: 107, symbol: "Bh", name: "Bohrium", group: 7, period: 7, block: "d", category: "transition" },
+  { z: 108, symbol: "Hs", name: "Hassium", group: 8, period: 7, block: "d", category: "transition" },
+  { z: 109, symbol: "Mt", name: "Meitnerium", group: 9, period: 7, block: "d", category: "unknown" },
+  { z: 110, symbol: "Ds", name: "Darmstadtium", group: 10, period: 7, block: "d", category: "unknown" },
+  { z: 111, symbol: "Rg", name: "Roentgenium", group: 11, period: 7, block: "d", category: "unknown" },
+  { z: 112, symbol: "Cn", name: "Copernicium", group: 12, period: 7, block: "d", category: "unknown" },
+  { z: 113, symbol: "Nh", name: "Nihonium", group: 13, period: 7, block: "p", category: "unknown" },
+  { z: 114, symbol: "Fl", name: "Flerovium", group: 14, period: 7, block: "p", category: "unknown" },
+  { z: 115, symbol: "Mc", name: "Moscovium", group: 15, period: 7, block: "p", category: "unknown" },
+  { z: 116, symbol: "Lv", name: "Livermorium", group: 16, period: 7, block: "p", category: "unknown" },
+  { z: 117, symbol: "Ts", name: "Tennessine", group: 17, period: 7, block: "p", category: "halogen" },
+  { z: 118, symbol: "Og", name: "Oganesson", group: 18, period: 7, block: "p", category: "noble" },
+];
 
+const fElements: ElementInfo[] = [
+  { z: 58, symbol: "Ce", name: "Cerium", group: null, period: 6, block: "f", category: "lanthanoid" },
+  { z: 59, symbol: "Pr", name: "Praseodymium", group: null, period: 6, block: "f", category: "lanthanoid" },
+  { z: 60, symbol: "Nd", name: "Neodymium", group: null, period: 6, block: "f", category: "lanthanoid" },
+  { z: 61, symbol: "Pm", name: "Promethium", group: null, period: 6, block: "f", category: "lanthanoid" },
+  { z: 62, symbol: "Sm", name: "Samarium", group: null, period: 6, block: "f", category: "lanthanoid" },
+  { z: 63, symbol: "Eu", name: "Europium", group: null, period: 6, block: "f", category: "lanthanoid" },
+  { z: 64, symbol: "Gd", name: "Gadolinium", group: null, period: 6, block: "f", category: "lanthanoid" },
+  { z: 65, symbol: "Tb", name: "Terbium", group: null, period: 6, block: "f", category: "lanthanoid" },
+  { z: 66, symbol: "Dy", name: "Dysprosium", group: null, period: 6, block: "f", category: "lanthanoid" },
+  { z: 67, symbol: "Ho", name: "Holmium", group: null, period: 6, block: "f", category: "lanthanoid" },
+  { z: 68, symbol: "Er", name: "Erbium", group: null, period: 6, block: "f", category: "lanthanoid" },
+  { z: 69, symbol: "Tm", name: "Thulium", group: null, period: 6, block: "f", category: "lanthanoid" },
+  { z: 70, symbol: "Yb", name: "Ytterbium", group: null, period: 6, block: "f", category: "lanthanoid" },
+  { z: 71, symbol: "Lu", name: "Lutetium", group: null, period: 6, block: "f", category: "lanthanoid", note: "Ground state [Xe] 4f¹⁴5d¹6s². It completes the lanthanoid sequence chemically, although its differentiating electron and possible Group 3 placement make the block label nuanced." },
+  { z: 90, symbol: "Th", name: "Thorium", group: null, period: 7, block: "f", category: "actinoid", note: "Ground state [Rn] 6d²7s²; chemically associated with the actinoid series even before extensive 5f occupation develops." },
+  { z: 91, symbol: "Pa", name: "Protactinium", group: null, period: 7, block: "f", category: "actinoid" },
+  { z: 92, symbol: "U", name: "Uranium", group: null, period: 7, block: "f", category: "actinoid" },
+  { z: 93, symbol: "Np", name: "Neptunium", group: null, period: 7, block: "f", category: "actinoid" },
+  { z: 94, symbol: "Pu", name: "Plutonium", group: null, period: 7, block: "f", category: "actinoid" },
+  { z: 95, symbol: "Am", name: "Americium", group: null, period: 7, block: "f", category: "actinoid" },
+  { z: 96, symbol: "Cm", name: "Curium", group: null, period: 7, block: "f", category: "actinoid" },
+  { z: 97, symbol: "Bk", name: "Berkelium", group: null, period: 7, block: "f", category: "actinoid" },
+  { z: 98, symbol: "Cf", name: "Californium", group: null, period: 7, block: "f", category: "actinoid" },
+  { z: 99, symbol: "Es", name: "Einsteinium", group: null, period: 7, block: "f", category: "actinoid" },
+  { z: 100, symbol: "Fm", name: "Fermium", group: null, period: 7, block: "f", category: "actinoid" },
+  { z: 101, symbol: "Md", name: "Mendelevium", group: null, period: 7, block: "f", category: "actinoid" },
+  { z: 102, symbol: "No", name: "Nobelium", group: null, period: 7, block: "f", category: "actinoid" },
+  { z: 103, symbol: "Lr", name: "Lawrencium", group: null, period: 7, block: "f", category: "actinoid", note: "It completes the actinoid sequence chemically. Modern calculations favor [Rn] 5f¹⁴7s²7p¹, while older compact schemes often wrote a 6d¹ form; its Group 3 placement remains a structural discussion." },
+];
 
-function LavoisierSplit(){return <svg viewBox="0 0 560 210" role="img" aria-label="Lavoisier broad classification into metals and non-metals, with metalloids unresolved"><defs><linearGradient id="lavTop" x1="0" x2="1"><stop stopColor={K.gold}/><stop offset="1" stopColor={K.violet}/></linearGradient></defs><rect x="185" y="18" width="190" height="48" rx="12" fill="#17364e" stroke="url(#lavTop)" strokeWidth="3"/><text x="280" y="48" fill={K.gold} textAnchor="middle" fontFamily={K.serif} fontSize="20" fontWeight="800">simple substances</text><path d="M280 66V92M280 92H115V112M280 92H445V112" stroke={K.dim} strokeWidth="3" fill="none"/><rect x="30" y="112" width="170" height="72" rx="13" fill="#123149" stroke={K.cyan} strokeWidth="3"/><text x="115" y="142" fill={K.cyan} textAnchor="middle" fontFamily={K.serif} fontSize="22" fontWeight="800">metals</text><text x="115" y="165" fill={K.text} textAnchor="middle" fontFamily={K.sans} fontSize="11">lustrous · conducting · basic oxides</text><rect x="360" y="112" width="170" height="72" rx="13" fill="#123149" stroke={K.coral} strokeWidth="3"/><text x="445" y="142" fill={K.coral} textAnchor="middle" fontFamily={K.serif} fontSize="22" fontWeight="800">non-metals</text><text x="445" y="165" fill={K.text} textAnchor="middle" fontFamily={K.sans} fontSize="11">poor conductors · often acidic oxides</text><rect x="205" y="118" width="150" height="54" rx="12" fill="#2d2439" stroke={K.violet} strokeDasharray="7 5" strokeWidth="2.5"/><text x="280" y="142" fill={K.violet} textAnchor="middle" fontFamily={K.sans} fontSize="14" fontWeight="800">metalloids?</text><text x="280" y="160" fill={K.dim} textAnchor="middle" fontFamily={K.sans} fontSize="10">no clean category</text></svg>}
+const categoryStyles: Record<ElementCategory, string> = {
+  alkali: "border-cyan-300/40 bg-cyan-300/10 text-cyan-50",
+  alkalineEarth: "border-emerald-300/40 bg-emerald-300/10 text-emerald-50",
+  transition: "border-violet-300/40 bg-violet-300/10 text-violet-50",
+  postTransition: "border-amber-300/40 bg-amber-300/10 text-amber-50",
+  metalloid: "border-fuchsia-300/40 bg-fuchsia-300/10 text-fuchsia-50",
+  reactiveNonmetal: "border-sky-300/40 bg-sky-300/10 text-sky-50",
+  halogen: "border-rose-300/40 bg-rose-300/10 text-rose-50",
+  noble: "border-indigo-300/40 bg-indigo-300/10 text-indigo-50",
+  lanthanoid: "border-teal-300/40 bg-teal-300/10 text-teal-50",
+  actinoid: "border-orange-300/40 bg-orange-300/10 text-orange-50",
+  unknown: "border-slate-400/40 bg-slate-400/10 text-slate-100",
+};
 
-function NumericalProposals(){return <svg viewBox="0 0 600 220" role="img" aria-label="Prout and Pettenkofer numerical proposals"><rect x="15" y="18" width="270" height="184" rx="15" fill="#122f46" stroke={K.violet} strokeWidth="2.5"/><text x="150" y="50" fill={K.violet} textAnchor="middle" fontFamily={K.serif} fontSize="22" fontWeight="800">Prout</text><text x="150" y="78" fill={K.text} textAnchor="middle" fontFamily={K.mono} fontSize="15">A ≈ n × A(H)</text>{[1,2,3,4,5].map((n,i)=><rect key={n} x={65+i*35} y={130-n*10} width="24" height={n*10} rx="5" fill={K.violet} opacity={.55+i*.09}/>)}<text x="150" y="180" fill={K.coral} textAnchor="middle" fontFamily={K.sans} fontSize="13" fontWeight="800">Cl ≈ 35.5 breaks exact integrality</text><rect x="315" y="18" width="270" height="184" rx="15" fill="#122f46" stroke={K.gold} strokeWidth="2.5"/><text x="450" y="50" fill={K.gold} textAnchor="middle" fontFamily={K.serif} fontSize="22" fontWeight="800">Pettenkofer</text><text x="450" y="78" fill={K.text} textAnchor="middle" fontFamily={K.mono} fontSize="15">ΔA ≈ m × 8</text>{[["7",365,K.cyan],["23",450,K.mint],["39",535,K.coral]].map(([v,x,c])=><g key={String(v)}><circle cx={Number(x)} cy="132" r="28" fill={String(c)} opacity=".95"/><text x={Number(x)} y="138" fill="#07131d" textAnchor="middle" fontFamily={K.mono} fontSize="17" fontWeight="900">{v}</text></g>)}<line x1="393" x2="422" y1="132" y2="132" stroke={K.gold} strokeWidth="4"/><line x1="478" x2="507" y1="132" y2="132" stroke={K.gold} strokeWidth="4"/><text x="407" y="114" fill={K.gold} textAnchor="middle" fontFamily={K.sans} fontSize="11">+16</text><text x="492" y="114" fill={K.gold} textAnchor="middle" fontFamily={K.sans} fontSize="11">+16</text><text x="450" y="183" fill={K.dim} textAnchor="middle" fontFamily={K.sans} fontSize="12">suggestive, not universal</text></svg>}
+const categoryLabels: Record<ElementCategory, string> = {
+  alkali: "alkali metal",
+  alkalineEarth: "alkaline-earth metal",
+  transition: "d-block metal",
+  postTransition: "post-transition metal",
+  metalloid: "metalloid",
+  reactiveNonmetal: "reactive non-metal",
+  halogen: "halogen",
+  noble: "noble gas",
+  lanthanoid: "lanthanoid",
+  actinoid: "actinoid",
+  unknown: "predicted heavy-element behavior",
+};
 
-function GroupVIIIStrip(){const rows=[["Fe","Co","Ni"],["Ru","Rh","Pd"],["Os","Ir","Pt"]];return <svg viewBox="0 0 620 170" role="img" aria-label="Mendeleev group eight transition triads"><text x="310" y="25" fill={K.gold} textAnchor="middle" fontFamily={K.serif} fontSize="18" fontWeight="800">Group VIII contained three horizontal triads</text>{rows.map((r,i)=><g key={r[0]}>{r.map((e,j)=><g key={e}><rect x={80+j*170} y={45+i*38} width="120" height="28" rx="8" fill="#143149" stroke={[K.coral,K.mint,K.violet][i]}/><text x={140+j*170} y={64+i*38} fill={[K.coral,K.mint,K.violet][i]} textAnchor="middle" fontFamily={K.mono} fontSize="15" fontWeight="900">{e}</text></g>)}</g>)}</svg>}
+const mainPosition = (element: ElementInfo): { column: number; row: number } => ({
+  column: element.group ?? 3,
+  row: element.period,
+});
 
-function PredictionStrip(){const rows=[["eka-Al","1875","Ga",K.gold],["eka-B","1879","Sc",K.mint],["eka-Si","1886","Ge",K.cyan]];return <svg viewBox="0 0 620 230" role="img" aria-label="Mendeleev prediction confirmations for gallium scandium and germanium"><defs><marker id="predArrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill={K.gold}/></marker></defs>{rows.map(([a,y,b,c],i)=>{const yy=55+i*68;return <g key={String(a)}><rect x="25" y={yy-24} width="170" height="48" rx="12" fill="#143149" stroke={String(c)} strokeWidth="2.5"/><text x="110" y={yy+6} fill={String(c)} textAnchor="middle" fontFamily={K.serif} fontSize="20" fontWeight="800">{a}</text><path d={`M205 ${yy}H410`} stroke={String(c)} strokeWidth="4" markerEnd="url(#predArrow)"/><circle cx="305" cy={yy} r="26" fill={String(c)}/><text x="305" y={yy+5} fill="#07131d" textAnchor="middle" fontFamily={K.mono} fontSize="13" fontWeight="900">{y}</text><rect x="430" y={yy-24} width="165" height="48" rx="12" fill="#17364e" stroke={String(c)} strokeWidth="2.5"/><text x="512" y={yy+7} fill={K.text} textAnchor="middle" fontFamily={K.mono} fontSize="24" fontWeight="900">{b}</text></g>})}</svg>}
+function Section({
+  number,
+  kicker,
+  title,
+  accent = "cyan",
+  children,
+}: {
+  number: string;
+  kicker: string;
+  title: string;
+  accent?: Accent;
+  children: ReactNode;
+}) {
+  const theme = accentClasses[accent];
+  return (
+    <section className={`rounded-[28px] border ${theme.border} ${theme.glow} bg-white/[0.035] p-4 sm:p-6 lg:p-8`}>
+      <div className="mb-5 flex flex-wrap items-center gap-3">
+        <span className={`rounded-full border ${theme.border} bg-white/5 px-3 py-1 text-xs font-black tracking-[0.2em] ${theme.text}`}>
+          {number}
+        </span>
+        <span className="text-xs font-bold uppercase tracking-[0.18em] text-slate-400">{kicker}</span>
+      </div>
+      <h2 className="max-w-[860px] text-balance text-2xl font-black leading-tight text-white sm:text-3xl">{title}</h2>
+      <div className="mt-5 space-y-5 text-[15px] leading-7 text-slate-200 sm:text-base">{children}</div>
+    </section>
+  );
+}
 
-function BerylliumFlow(){return <svg viewBox="0 0 620 190" role="img" aria-label="Beryllium atomic weight correction using equivalent weight and valency"><text x="310" y="27" fill={K.gold} textAnchor="middle" fontFamily={K.serif} fontSize="18" fontWeight="800">Atomic weight = equivalent weight × valency</text><rect x="25" y="55" width="255" height="105" rx="14" fill="#173149" stroke={K.coral} strokeWidth="2.5"/><text x="152" y="86" fill={K.coral} textAnchor="middle" fontFamily={K.mono} fontSize="18" fontWeight="900">4.5 × 3 = 13.5</text><text x="152" y="114" fill={K.text} textAnchor="middle" fontFamily={K.sans} fontSize="12">trivalent assumption</text><text x="152" y="138" fill={K.coral} textAnchor="middle" fontFamily={K.sans} fontSize="13" fontWeight="800">no suitable position</text><rect x="340" y="55" width="255" height="105" rx="14" fill="#173149" stroke={K.mint} strokeWidth="2.5"/><text x="467" y="86" fill={K.mint} textAnchor="middle" fontFamily={K.mono} fontSize="18" fontWeight="900">4.5 × 2 = 9</text><text x="467" y="114" fill={K.text} textAnchor="middle" fontFamily={K.sans} fontSize="12">divalent beryllium</text><text x="467" y="138" fill={K.mint} textAnchor="middle" fontFamily={K.sans} fontSize="13" fontWeight="800">fits between Li and B</text></svg>}
+function GlossCard({
+  title,
+  accent = "cyan",
+  children,
+}: {
+  title: string;
+  accent?: Accent;
+  children: ReactNode;
+}) {
+  const theme = accentClasses[accent];
+  return (
+    <article className={`rounded-2xl border ${theme.border} bg-slate-950/35 p-4 ${theme.glow}`}>
+      <h3 className={`text-sm font-black uppercase tracking-[0.14em] ${theme.text}`}>{title}</h3>
+      <div className="mt-3 space-y-2 text-sm leading-6 text-slate-200">{children}</div>
+    </article>
+  );
+}
 
-function PeriodLengthStrip(){const values=[2,8,8,18,18,32,32];return <svg viewBox="0 0 680 185" role="img" aria-label="Seven period lengths"><text x="340" y="25" fill={K.gold} textAnchor="middle" fontFamily={K.serif} fontSize="18" fontWeight="800">Period lengths: 2, 8, 8, 18, 18, 32, 32</text>{values.map((v,i)=>{const x=42+i*90,h=25+v*3;return <g key={i}><rect x={x} y={155-h} width="56" height={h} rx="9" fill={[K.gold,K.cyan,K.violet,K.mint,K.coral,K.cyan,K.violet][i]} opacity=".82"/><text x={x+28} y={149-h} fill={K.text} textAnchor="middle" fontFamily={K.mono} fontSize="12" fontWeight="900">{v}</text><text x={x+28} y="176" fill={K.dim} textAnchor="middle" fontFamily={K.sans} fontSize="10">P{i+1}</text></g>})}</svg>}
+function Formula({ children }: { children: ReactNode }) {
+  return (
+    <span className="inline-flex items-center rounded-lg border border-cyan-300/20 bg-cyan-300/[0.07] px-2 py-0.5 font-mono text-[0.94em] text-cyan-100">
+      {children}
+    </span>
+  );
+}
 
-function BlockArchitecture(){return <svg viewBox="0 0 680 185" role="img" aria-label="Compact s p d f block architecture"><rect x="22" y="35" width="95" height="100" rx="13" fill={`${K.s}22`} stroke={K.s} strokeWidth="2.5"/><text x="70" y="80" fill={K.s} textAnchor="middle" fontFamily={K.serif} fontSize="31" fontWeight="800">s</text><text x="70" y="108" fill={K.text} textAnchor="middle" fontFamily={K.sans} fontSize="12">2 columns</text><rect x="132" y="69" width="315" height="66" rx="13" fill={`${K.d}22`} stroke={K.d} strokeWidth="2.5"/><text x="290" y="103" fill={K.d} textAnchor="middle" fontFamily={K.serif} fontSize="31" fontWeight="800">d</text><text x="290" y="123" fill={K.text} textAnchor="middle" fontFamily={K.sans} fontSize="12">10 columns</text><rect x="462" y="35" width="195" height="100" rx="13" fill={`${K.p}22`} stroke={K.p} strokeWidth="2.5"/><text x="560" y="80" fill={K.p} textAnchor="middle" fontFamily={K.serif} fontSize="31" fontWeight="800">p</text><text x="560" y="108" fill={K.text} textAnchor="middle" fontFamily={K.sans} fontSize="12">6 columns</text><rect x="182" y="145" width="315" height="30" rx="10" fill={`${K.f}22`} stroke={K.f} strokeWidth="2"/><text x="340" y="165" fill={K.f} textAnchor="middle" fontFamily={K.sans} fontSize="14" fontWeight="800">f block · two 14-position rows</text></svg>}
+function MeritDemerit({ merits, demerits }: { merits: string[]; demerits: string[] }) {
+  return (
+    <div className="grid gap-3 md:grid-cols-2">
+      <div className="rounded-xl border border-emerald-300/20 bg-emerald-300/[0.06] p-3">
+        <h4 className="font-black text-emerald-200">Merits</h4>
+        <ul className="mt-2 space-y-1.5 pl-5 text-sm text-slate-200 marker:text-emerald-300">
+          {merits.map((item) => (
+            <li key={item}>{item}</li>
+          ))}
+        </ul>
+      </div>
+      <div className="rounded-xl border border-amber-300/20 bg-amber-300/[0.06] p-3">
+        <h4 className="font-black text-amber-200">Demerits / limits</h4>
+        <ul className="mt-2 space-y-1.5 pl-5 text-sm text-slate-200 marker:text-amber-300">
+          {demerits.map((item) => (
+            <li key={item}>{item}</li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  );
+}
 
-function SeaborgPlacement(){return <svg viewBox="0 0 620 170" role="img" aria-label="Actinoids placed beneath lanthanoids"><text x="310" y="24" fill={K.gold} textAnchor="middle" fontFamily={K.serif} fontSize="18" fontWeight="800">The two inner-transition series are displayed below the main table</text><rect x="35" y="45" width="550" height="38" rx="9" fill="#143149" stroke={K.cyan}/><text x="310" y="69" fill={K.text} textAnchor="middle" fontFamily={K.sans} fontSize="13" fontWeight="800">period 6 main row · lanthanoid positions included</text><path d="M235 83V105M385 83V105" stroke={K.gold} strokeWidth="3"/><rect x="105" y="105" width="185" height="42" rx="9" fill={`${K.f}20`} stroke={K.f}/><text x="197" y="131" fill={K.f} textAnchor="middle" fontFamily={K.sans} fontSize="14" fontWeight="800">lanthanoids</text><rect x="330" y="105" width="185" height="42" rx="9" fill={`${K.violet}20`} stroke={K.violet}/><text x="422" y="131" fill={K.violet} textAnchor="middle" fontFamily={K.sans} fontSize="14" fontWeight="800">actinoids</text></svg>}
+function MeyerCurve() {
+  const width = 980;
+  const height = 390;
+  const left = 62;
+  const right = 28;
+  const top = 28;
+  const bottom = 50;
+  const plotWidth = width - left - right;
+  const plotHeight = height - top - bottom;
+  const x = (mass: number) => left + (mass / 135) * plotWidth;
+  const y = (volume: number) => top + plotHeight - (volume / 75) * plotHeight;
+  const path = meyerPoints.map((point, index) => `${index === 0 ? "M" : "L"}${x(point.m).toFixed(1)},${y(point.v).toFixed(1)}`).join(" ");
+  const pointColor: Record<MeyerKind, string> = {
+    alkali: palette.cyan,
+    alkalineEarth: palette.mint,
+    transition: palette.violet,
+    halogen: palette.gold,
+    noble: "#93A4FF",
+    other: "#CBD5E1",
+  };
 
-function FinalFlow(){const nodes=[["pattern",K.gold],["recurrence",K.cyan],["prediction",K.violet],["atomic number",K.mint],["valence pattern",K.coral]];return <svg viewBox="0 0 760 135" role="img" aria-label="Causal flow from pattern recognition to modern explanation"><defs><marker id="flowArrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill={K.gold}/></marker></defs>{nodes.map(([t,c],i)=>{const x=18+i*148;return <g key={String(t)}><rect x={x} y="35" width="120" height="54" rx="12" fill="#143149" stroke={String(c)} strokeWidth="2.2"/><text x={x+60} y="67" fill={String(c)} textAnchor="middle" fontFamily={K.sans} fontSize="13" fontWeight="900">{t}</text>{i<nodes.length-1&&<path d={`M${x+122} 62H${x+145}`} stroke={K.gold} strokeWidth="3" markerEnd="url(#flowArrow)"/>}</g>})}<text x="380" y="119" fill={K.dim} textAnchor="middle" fontFamily={K.sans} fontSize="12">description → recurrence → testable prediction → exact order → electronic explanation</text></svg>}
+  return (
+    <div className="overflow-x-auto rounded-2xl border border-cyan-300/20 bg-[#071522] p-3">
+      <svg viewBox={`0 0 ${width} ${height}`} className="min-w-[820px]" role="img" aria-labelledby="meyer-title meyer-desc">
+        <title id="meyer-title">Lothar Meyer atomic-volume curve from hydrogen to caesium</title>
+        <desc id="meyer-desc">A periodic curve with alkali metals at peaks, alkaline-earth metals on descending branches, transition metals near broad minima, and halogens on rising branches.</desc>
+        <defs>
+          <linearGradient id="meyer-line" x1="0" x2="1">
+            <stop offset="0" stopColor={palette.cyan} />
+            <stop offset="0.48" stopColor={palette.violet} />
+            <stop offset="1" stopColor={palette.gold} />
+          </linearGradient>
+          <filter id="meyer-glow" x="-30%" y="-30%" width="160%" height="160%">
+            <feGaussianBlur stdDeviation="3" result="blur" />
+            <feMerge>
+              <feMergeNode in="blur" />
+              <feMergeNode in="SourceGraphic" />
+            </feMerge>
+          </filter>
+        </defs>
+        {[0, 15, 30, 45, 60, 75].map((tick) => (
+          <g key={tick}>
+            <line x1={left} x2={width - right} y1={y(tick)} y2={y(tick)} stroke="#284052" strokeWidth="1" strokeDasharray="5 7" />
+            <text x={left - 10} y={y(tick) + 4} textAnchor="end" fill="#94A3B8" fontSize="12">{tick}</text>
+          </g>
+        ))}
+        {[0, 20, 40, 60, 80, 100, 120, 140].map((tick) => (
+          <g key={tick}>
+            <line x1={x(tick)} x2={x(tick)} y1={top} y2={height - bottom} stroke="#1F3546" strokeWidth="1" />
+            <text x={x(tick)} y={height - 24} textAnchor="middle" fill="#94A3B8" fontSize="12">{tick}</text>
+          </g>
+        ))}
+        <line x1={left} x2={left} y1={top} y2={height - bottom} stroke="#A8C2D8" strokeWidth="1.5" />
+        <line x1={left} x2={width - right} y1={height - bottom} y2={height - bottom} stroke="#A8C2D8" strokeWidth="1.5" />
+        <path d={path} fill="none" stroke="url(#meyer-line)" strokeWidth="4" strokeLinejoin="round" strokeLinecap="round" filter="url(#meyer-glow)" />
+        {meyerPoints.map((point) => (
+          <g key={`${point.s}-${point.m}`}>
+            <circle cx={x(point.m)} cy={y(point.v)} r="5" fill={pointColor[point.k]} stroke="#071522" strokeWidth="2">
+              <title>{`${point.s}: atomic weight ${point.m}, atomic volume ≈ ${point.v} cm³ mol⁻¹; ${point.a}`}</title>
+            </circle>
+            <text x={x(point.m) + point.dx} y={y(point.v) + point.dy} textAnchor="middle" fill={pointColor[point.k]} fontSize="11" fontWeight="800">
+              {point.s}
+            </text>
+          </g>
+        ))}
+        <text x={width / 2} y={height - 5} textAnchor="middle" fill="#DCEAF3" fontSize="14" fontWeight="700">Atomic weight</text>
+        <text x="16" y={height / 2} transform={`rotate(-90 16 ${height / 2})`} textAnchor="middle" fill="#DCEAF3" fontSize="14" fontWeight="700">
+          Atomic volume, Vₘ / cm³ mol⁻¹
+        </text>
+      </svg>
+    </div>
+  );
+}
 
+function MoseleyDiagram() {
+  return (
+    <div className="grid gap-4 lg:grid-cols-2">
+      <div className="overflow-x-auto rounded-2xl border border-violet-300/20 bg-[#071522] p-3">
+        <svg viewBox="0 0 760 330" className="min-w-[650px]" role="img" aria-labelledby="moseley-apparatus-title moseley-apparatus-desc">
+          <title id="moseley-apparatus-title">Moseley characteristic X-ray experiment</title>
+          <desc id="moseley-apparatus-desc">High-speed electrons strike a metal target. Characteristic X-rays are diffracted by a crystal and measured by a detector.</desc>
+          <defs>
+            <linearGradient id="beam" x1="0" x2="1"><stop stopColor={palette.cyan} /><stop offset="1" stopColor="#FFFFFF" /></linearGradient>
+            <filter id="xglow" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="4" result="b" /><feMerge><feMergeNode in="b" /><feMergeNode in="SourceGraphic" /></feMerge></filter>
+            <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10Z" fill={palette.cyan} /></marker>
+          </defs>
+          <rect x="34" y="110" width="150" height="95" rx="22" fill="#102A3D" stroke={palette.cyan} strokeWidth="2" />
+          <text x="109" y="142" textAnchor="middle" fill="#EAF9FF" fontSize="17" fontWeight="800">electron gun</text>
+          <text x="109" y="170" textAnchor="middle" fill="#9FB5C4" fontSize="13">accelerating voltage</text>
+          <line x1="184" y1="158" x2="300" y2="158" stroke="url(#beam)" strokeWidth="8" markerEnd="url(#arrow)" filter="url(#xglow)" />
+          <g fill={palette.cyan}>{[205, 230, 255, 280].map((cx) => <circle key={cx} cx={cx} cy="158" r="4" />)}</g>
+          <rect x="314" y="95" width="40" height="126" rx="8" fill="#F5C34D22" stroke={palette.gold} strokeWidth="3" />
+          <text x="334" y="72" textAnchor="middle" fill={palette.gold} fontSize="15" fontWeight="800">metal target</text>
+          {[0, 1, 2, 3, 4].map((i) => <path key={i} d={`M354 158 Q${420 + i * 8} ${96 - i * 10} ${486 + i * 10} ${86 - i * 4}`} fill="none" stroke={palette.violet} strokeWidth="3" opacity={0.95 - i * 0.1} />)}
+          <text x="432" y="53" textAnchor="middle" fill={palette.violet} fontSize="15" fontWeight="800">characteristic X-rays</text>
+          <polygon points="493,74 558,106 520,168 455,136" fill="#7CE6BE22" stroke={palette.mint} strokeWidth="3" />
+          <text x="510" y="197" textAnchor="middle" fill={palette.mint} fontSize="15" fontWeight="800">analyzing crystal</text>
+          <path d="M529 124 Q610 145 665 220" fill="none" stroke={palette.gold} strokeWidth="4" markerEnd="url(#arrow)" />
+          <rect x="626" y="224" width="100" height="58" rx="15" fill="#251C3D" stroke={palette.violet} strokeWidth="2" />
+          <text x="676" y="258" textAnchor="middle" fill="#F3EEFF" fontSize="15" fontWeight="800">detector</text>
+          <text x="380" y="305" textAnchor="middle" fill="#AFC1CE" fontSize="14">Each target gives a characteristic frequency pattern determined by nuclear charge Z.</text>
+        </svg>
+      </div>
+      <div className="overflow-x-auto rounded-2xl border border-cyan-300/20 bg-[#071522] p-3">
+        <svg viewBox="0 0 600 330" className="min-w-[520px]" role="img" aria-labelledby="moseley-graph-title moseley-graph-desc">
+          <title id="moseley-graph-title">Moseley straight-line plot</title>
+          <desc id="moseley-graph-desc">The square root of characteristic X-ray frequency increases linearly with atomic number after a screening correction.</desc>
+          <line x1="70" y1="270" x2="560" y2="270" stroke="#A8C2D8" strokeWidth="2" />
+          <line x1="70" y1="270" x2="70" y2="35" stroke="#A8C2D8" strokeWidth="2" />
+          {[20, 30, 40, 50, 60, 70, 80].map((z) => {
+            const px = 70 + ((z - 15) / 70) * 470;
+            const py = 270 - ((z - 15) / 70) * 205;
+            return <circle key={z} cx={px} cy={py} r="6" fill={palette.cyan} stroke="#081521" strokeWidth="2" />;
+          })}
+          <line x1="92" y1="250" x2="535" y2="52" stroke={palette.violet} strokeWidth="4" />
+          <text x="345" y="42" textAnchor="middle" fill={palette.violet} fontSize="17" fontWeight="900">√ν = a(Z − b)</text>
+          <text x="320" y="312" textAnchor="middle" fill="#DCEAF3" fontSize="15" fontWeight="700">Atomic number, Z</text>
+          <text x="20" y="160" transform="rotate(-90 20 160)" textAnchor="middle" fill="#DCEAF3" fontSize="15" fontWeight="700">√ν</text>
+        </svg>
+      </div>
+    </div>
+  );
+}
 
-export default function HistoryModernLawAuthority(){return <div className="hmla-v2" data-implementation="history-modern-law-final-authority-v3"><style>{css}</style><span style={{display:"none"}}>history-modern-law-final-authority-v3</span>
-<header className="hero"><div className="eyebrow">History, periodic law and modern architecture</div><h1>From isolated facts to a predictive periodic system</h1><p>A complete chronological treatment of classification, periodic laws, historical tables, verified numerical examples, the atomic-number resolution and the present long-form arrangement.</p></header>
+function ElementTile({ element, onSelect, compact = false }: { element: ElementInfo; onSelect: (element: ElementInfo) => void; compact?: boolean }) {
+  return (
+    <button
+      type="button"
+      onClick={() => onSelect(element)}
+      className={`group relative min-h-[56px] rounded-lg border p-1 text-left transition hover:-translate-y-0.5 hover:border-white/70 hover:bg-white/15 focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300 ${categoryStyles[element.category]} ${compact ? "min-w-[52px]" : "min-w-[58px]"}`}
+      aria-label={`${element.name}, atomic number ${element.z}`}
+    >
+      <span className="block text-[9px] font-bold leading-none opacity-75">{element.z}</span>
+      <span className="mt-1 block text-center text-lg font-black leading-none">{element.symbol}</span>
+      <span className="mt-1 block truncate text-center text-[8px] font-semibold leading-none opacity-80">{element.name}</span>
+    </button>
+  );
+}
 
-<Section n={1} title="Why classification became necessary" accent="gold">
-<div className="grid2"><div><p>As the number of known elements increased, studying every element and every compound as an unrelated fact became impractical. Around 1800 only about 31 elements were known; by 1865 the number had risen to 63; the present system contains 118 named elements.</p><p><b>Identification</b> tells us which element is present. <b>Classification</b> reveals relationships, recurring behaviour and the likely properties of an unfamiliar element.</p><div className="formula">Periodicity = recurrence of related physical and chemical behaviour at regular stages of an ordered sequence.</div></div><Figure title="Classification as scientific compression" caption="Families and trends turn a list into a model that can compare and predict." compact><ClassificationMini/></Figure></div>
-<h3 className="subhead">Lavoisier’s broad classification</h3><div className="grid2"><Figure title="Metals, non-metals and the unresolved middle" compact><LavoisierSplit/></Figure><div><p>In 1789, a list of 33 simple substances was broadly separated into metals and non-metals. The scheme began systematic comparison but was too broad to show recurring chemical families.</p><ul className="compact-list"><li>Metals were associated with lustre, conductivity, malleability and commonly basic oxides.</li><li>Non-metals were generally poor conductors and commonly formed acidic oxides.</li><li>Metalloids such as silicon and arsenic showed mixed behaviour and had no clean position.</li></ul></div></div>
-<div className="table-wrap"><div className="timeline">{timeline.map(([year,name,idea,accent])=><div className="timeline-card" key={name} style={{"--accent":A[accent]} as React.CSSProperties}><div className="timeline-year">{year}</div><div className="timeline-name">{name}</div><div className="timeline-idea">{idea}</div></div>)}</div></div>
-<div className="section-end">The historical sequence advances from description to numerical recurrence, from recurrence to prediction, and finally from prediction to an atomic explanation.</div>
-</Section>
+function PeriodicTable() {
+  const [selected, setSelected] = useState<ElementInfo | null>(null);
 
-<Section n={2} title="Early numerical proposals and Döbereiner’s triads" accent="mint">
-<div className="grid2"><Figure title="Prout and Pettenkofer: useful clues, not universal laws" compact><NumericalProposals/></Figure><div><h3 className="subhead">Prout’s hypothesis</h3><p>Atomic weights were proposed to be whole-number multiples of the atomic weight of hydrogen. The idea encouraged the search for numerical order, but ordinary atomic weights such as chlorine near 35.5 contradicted exact integrality.</p><h3 className="subhead">Pettenkofer’s observation</h3><p>Some chemically related elements showed atomic-weight differences close to integral multiples of eight. For Li, Na and K, successive differences are 16 = 2 × 8, but the pattern is not universal.</p></div></div>
-<h3 className="subhead">Döbereiner’s Law of Triads</h3><p>When three chemically similar elements are arranged in increasing atomic weight, the atomic weight and several properties of the middle element are approximately intermediate between those of the first and third members.</p><div className="formula">Atomic weight of middle member ≈ (atomic weight of first + atomic weight of third) / 2</div>
-<div className="grid2"><Figure title="Triad balance: arithmetic plus chemical resemblance" compact><TriadCompact/></Figure><DataTable headers={["Triad","Atomic weights","Mean test","Chemical family"]} rows={[["Li–Na–K","7, 23, 39","(7+39)/2 = 23","alkali metals"],["Ca–Sr–Ba","40, 88, 137","(40+137)/2 = 88.5 ≈ 88","alkaline-earth metals"],["Cl–Br–I","35.5, 80, 127","(35.5+127)/2 = 81.25 ≈ 80","halogens"],["S–Se–Te","32, 79, 127.6","(32+127.6)/2 = 79.8 ≈ 79","chalcogens"]]} min={660}/></div>
-<Note title="Essential condition" color={K.coral}>A numerical mean alone does not establish a triad. The three elements must also show related chemistry. Equal spacing of atomic numbers is only a modern recognition aid, not the original law.</Note>
-<div className="memory"><b>Memory anchor:</b> Similar family → sort by mass → test the mean.</div>
-<p><b>Limitation:</b> only a limited number of convincing triads could be formed, so the method could not classify all known elements.</p>
-</Section>
+  useEffect(() => {
+    if (!selected) return undefined;
+    const closeOnEscape = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setSelected(null);
+    };
+    window.addEventListener("keydown", closeOnEscape);
+    return () => window.removeEventListener("keydown", closeOnEscape);
+  }, [selected]);
 
-<Section n={3} title="de Chancourtois and Newlands: recurrence becomes visible" accent="cyan">
-<div className="grid2"><div><h3 className="subhead">The telluric screw, 1862</h3><p>Elements were written in increasing atomic-weight order along a helix on a cylinder whose circumference represented approximately 16 mass units. Elements that approached the same vertical line often showed related properties.</p><ul className="compact-list"><li>It was an early geometrical display of periodic recurrence.</li><li>The cylindrical format was difficult to read and communicate.</li><li>Many heavier families did not align consistently.</li></ul></div><Figure title="Telluric screw" caption="A helical arrangement makes recurrence visible through approximate vertical alignment." compact><TelluricScrew/></Figure></div>
-<h3 className="subhead">Newlands’ Law of Octaves, 1865</h3><p>Elements were arranged in increasing atomic weight. Counting the first element as position 1, the element at position 8 often resembled it, like the repeated note at the start of the next musical octave.</p>
-<div className="table-wrap"><table className="newlands"><tbody><tr className="note-row"><td>Count</td>{[1,2,3,4,5,6,7,8].map(n=><td key={n}>{n}</td>)}</tr><tr className="note-row"><td>Musical cue</td>{["Sa","Re","Ga","Ma","Pa","Dha","Ni","Sa"].map((x,i)=><td key={`${x}${i}`}>{x}</td>)}</tr><tr><td>First window</td>{[["Li","7"],["Be","9"],["B","11"],["C","12"],["N","14"],["O","16"],["F","19"],["Na","23"]].map(([e,m],i)=><td className={i===0||i===7?"match":""} key={e}><b>{e}</b><br/><span className="muted">{m}</span></td>)}</tr><tr><td>Next window</td>{[["Na","23"],["Mg","24"],["Al","27"],["Si","29"],["P","31"],["S","32"],["Cl","35.5"],["K","39"]].map(([e,m],i)=><td className={i===0||i===7?"match":""} key={e}><b>{e}</b><br/><span className="muted">{m}</span></td>)}</tr><tr><td>Continuation</td><td><b>K</b><br/><span className="muted">39</span></td><td><b>Ca</b><br/><span className="muted">40</span></td>{Array.from({length:6},(_,i)=><td key={i}></td>)}</tr></tbody></table></div>
-<div className="mini-grid"><div className="mini-card"><b>Successful matches</b>Li–Na, Be–Mg, B–Al and F–Cl show related behaviour in the light-element region.</div><div className="mini-card"><b>Range</b>The relation worked mainly up to calcium; a fixed eight-position rhythm could not accommodate transition elements.</div><div className="mini-card"><b>No reliable vacancies</b>The arrangement did not preserve systematic gaps for elements that had not yet been discovered.</div><div className="mini-card"><b>Forced placements</b>Some unlike elements were paired or grouped together; the extended arrangement associated Fe with O and S.</div></div>
-<Note title="Later difficulty" color={K.coral}>The discovery and insertion of noble gases disturbed the simple octave count.</Note>
-<div className="memory"><b>Memory anchor:</b> the eighth position echoes the first; the pattern is useful for light elements, not a universal period length.</div>
-</Section>
+  return (
+    <div className="space-y-4">
+      <div className="flex flex-wrap gap-2 text-[11px] font-bold">
+        {(Object.keys(categoryLabels) as ElementCategory[]).map((category) => (
+          <span key={category} className={`rounded-full border px-2.5 py-1 ${categoryStyles[category]}`}>{categoryLabels[category]}</span>
+        ))}
+      </div>
+      <div className="overflow-x-auto rounded-2xl border border-cyan-300/20 bg-[#071522] p-3">
+        <div className="min-w-[1120px]">
+          <div className="grid grid-cols-[repeat(18,minmax(0,1fr))] gap-1">
+            {Array.from({ length: 18 }, (_, index) => (
+              <div key={index} className="pb-1 text-center text-[10px] font-black text-slate-500">{index + 1}</div>
+            ))}
+          </div>
+          <div className="grid grid-cols-[repeat(18,minmax(0,1fr))] grid-rows-[repeat(7,minmax(0,1fr))] gap-1">
+            {mainElements.map((element) => {
+              const position = mainPosition(element);
+              return (
+                <div key={element.z} style={{ gridColumnStart: position.column, gridRowStart: position.row }}>
+                  <ElementTile element={element} onSelect={setSelected} />
+                </div>
+              );
+            })}
+          </div>
+          <div className="mt-4 grid grid-cols-[110px_repeat(14,minmax(52px,1fr))] gap-1">
+            <div className="flex items-center text-xs font-black text-teal-200">4f · Ce–Lu</div>
+            {fElements.filter((element) => element.period === 6).map((element) => <ElementTile key={element.z} element={element} onSelect={setSelected} compact />)}
+            <div className="flex items-center text-xs font-black text-orange-200">5f · Th–Lr</div>
+            {fElements.filter((element) => element.period === 7).map((element) => <ElementTile key={element.z} element={element} onSelect={setSelected} compact />)}
+          </div>
+        </div>
+      </div>
+      <p className="max-w-[860px] text-sm text-slate-400">Select any element for its atomic number, period, group position, block, family, and a placement note where the classification needs special care.</p>
+      {selected ? (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-[#02080e]/80 p-4 backdrop-blur-sm" onMouseDown={() => setSelected(null)}>
+          <div
+            role="dialog"
+            aria-modal="true"
+            aria-label={`${selected.name} details`}
+            className="w-full max-w-md rounded-[28px] border border-cyan-300/30 bg-[#0B1C2C] p-5 shadow-[0_0_80px_rgba(93,214,242,0.18)]"
+            onMouseDown={(event: { stopPropagation: () => void }) => event.stopPropagation()}
+          >
+            <div className="flex items-start justify-between gap-4">
+              <div>
+                <div className="text-xs font-black uppercase tracking-[0.2em] text-cyan-300">Element {selected.z}</div>
+                <h3 className="mt-1 text-3xl font-black text-white">{selected.symbol} · {selected.name}</h3>
+              </div>
+              <button type="button" onClick={() => setSelected(null)} className="rounded-full border border-white/15 px-3 py-1 text-sm font-black text-slate-300 hover:bg-white/10" aria-label="Close element details">×</button>
+            </div>
+            <dl className="mt-5 grid grid-cols-2 gap-3 text-sm">
+              <div className="rounded-xl border border-white/10 bg-white/5 p-3"><dt className="text-slate-400">Period</dt><dd className="mt-1 text-lg font-black text-white">{selected.period}</dd></div>
+              <div className="rounded-xl border border-white/10 bg-white/5 p-3"><dt className="text-slate-400">Group</dt><dd className="mt-1 text-lg font-black text-white">{selected.group ?? "inner series"}</dd></div>
+              <div className="rounded-xl border border-white/10 bg-white/5 p-3"><dt className="text-slate-400">Block</dt><dd className="mt-1 text-lg font-black text-white">{selected.block}</dd></div>
+              <div className="rounded-xl border border-white/10 bg-white/5 p-3"><dt className="text-slate-400">Family</dt><dd className="mt-1 font-black text-white">{categoryLabels[selected.category]}</dd></div>
+            </dl>
+            <div className="mt-4 rounded-xl border border-violet-300/20 bg-violet-300/[0.06] p-3 text-sm leading-6 text-slate-200">
+              {selected.note ?? (selected.block === "s" ? "The differentiating electron enters an s subshell." : selected.block === "p" ? "The differentiating electron enters a p subshell." : selected.block === "d" ? "The differentiating electron enters the (n−1)d subshell." : "The differentiating electron belongs to the inner (n−2)f region of the long-period architecture.")}
+            </div>
+          </div>
+        </div>
+      ) : null}
+    </div>
+  );
+}
 
-<Section n={4} title="Lothar Meyer’s periodic curves" accent="gold">
-<p>Lothar Meyer demonstrated that several physical properties vary periodically when elements are ordered by atomic weight. Atomic volume, melting point and boiling point all produce recurring patterns, and the length of the repeating pattern changes as heavier elements are reached. Density, thermal expansion, compressibility and related physical properties also show periodic variation.</p>
-<div className="formula">Atomic volume, Vₘ = molar mass / density &nbsp; (cm³ mol⁻¹)</div>
-<Figure title="Atomic volume versus atomic weight" caption="The complete wave shows analogous positions occupied by related families in successive cycles." full><MeyerGraph/></Figure>
-<div className="mini-grid"><div className="mini-card"><b>Sharp peaks</b>Li, Na, K, Rb and Cs — the alkali metals.</div><div className="mini-card"><b>Descending branches</b>Be, Mg, Ca, Sr and Ba — the alkaline-earth metals.</div><div className="mini-card"><b>Broad minima</b>Transition-region elements occupy the compact middle of each cycle.</div><div className="mini-card"><b>Rising branches</b>Halogens occur on the rising side before the next alkali-metal peak.</div></div>
-<ul className="compact-list"><li>Elements with similar properties occupy analogous portions of successive waves.</li><li>Atomic volume generally increases down a family, while it falls and then rises across a period.</li><li>The curves supplied strong evidence for periodicity, but they did not provide the same predictive gap system as Mendeleev’s table.</li></ul>
-<div className="memory"><b>Meyer map:</b> Peak → descent → broad minimum → rise.</div>
-</Section>
+export default function HistoryModernLawAuthority() {
+  return (
+    <main className="min-h-screen bg-[#0B1C2C] text-slate-100">
+      <div className="mx-auto max-w-[1220px] px-4 py-8 sm:px-6 lg:px-8 lg:py-12">
+        <header className="relative overflow-hidden rounded-[34px] border border-cyan-300/25 bg-[radial-gradient(circle_at_top_left,rgba(93,214,242,0.18),transparent_36%),radial-gradient(circle_at_88%_18%,rgba(185,154,255,0.16),transparent_32%),linear-gradient(145deg,rgba(255,255,255,0.055),rgba(255,255,255,0.018))] p-5 shadow-[0_0_90px_rgba(93,214,242,0.08)] sm:p-8 lg:p-10">
+          <div className="absolute -right-20 -top-20 h-56 w-56 rounded-full border border-violet-300/20 bg-violet-300/5 blur-2xl" />
+          <div className="relative">
+            <div className="inline-flex rounded-full border border-cyan-300/30 bg-cyan-300/10 px-3 py-1 text-xs font-black uppercase tracking-[0.2em] text-cyan-200">Synergic Bond · Classification Authority</div>
+            <h1 className="mt-5 max-w-[900px] text-balance text-3xl font-black leading-[1.06] text-white sm:text-5xl lg:text-6xl">From isolated facts to the modern periodic law</h1>
+            <p className="mt-5 max-w-[860px] text-base leading-7 text-slate-200 sm:text-lg">A rigorous historical reconstruction of the ideas, numerical patterns, successful predictions, failed assumptions, X-ray evidence, quantum architecture, and classification logic that produced the long-form periodic table.</p>
+            <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+              {[
+                ["1789 → 1865", "early numerical patterns"],
+                ["1869 → 1871", "Meyer and Mendeleev"],
+                ["1913", "Moseley establishes Z"],
+                ["118 elements", "modern long form"],
+              ].map(([value, label]) => (
+                <div key={value} className="rounded-2xl border border-white/10 bg-black/15 p-3"><div className="text-lg font-black text-cyan-200">{value}</div><div className="mt-1 text-xs font-bold uppercase tracking-[0.12em] text-slate-400">{label}</div></div>
+              ))}
+            </div>
+          </div>
+        </header>
 
-<Section n={5} title="Mendeleev’s periodic law and historical table" accent="violet">
-<div className="law"><div className="lawbox" style={{borderColor:K.violet}}>The physical and chemical properties of the elements are periodic functions of their atomic weights.</div><div className="arrow">→</div><div><p>Mendeleev used atomic weight together with valency, chemical resemblance and the formulas of oxides and hydrides. The law was framed when 63 elements were known and noble gases were not yet recognized; a zero group was inserted later. When rigid mass order conflicted with established chemistry, chemical similarity received priority.</p></div></div>
-<DataTable headers={["Feature","Historical arrangement"]} rows={[["Initial context","63 known elements; noble gases not yet discovered"],["Basis","Increasing atomic weight, moderated by chemical evidence"],["Horizontal organization","Twelve series in the published form shown below"],["Vertical organization","Groups 0–VIII; related elements placed together"],["Compound evidence","Higher oxides and gaseous hydrides helped identify group relationships"],["Vacancies","Blank positions were retained when no known element fit"],["Group VIII","Three horizontal triads of transition metals"]]} min={720}/>
-<Figure title="Mendeleev’s periodic table: groups and series" caption="The table preserves the historical series, groups 0–VIII, deliberate blanks, transition-metal triads and the oxide–hydride pattern band." full><MendeleevTable/></Figure>
-<div className="grid2"><Figure title="Group VIII transition-metal triads" compact><GroupVIIIStrip/></Figure><div><h3 className="subhead">Oxide and hydride evidence</h3><div className="equation-grid">{[["Group I","R₂O · RH"],["Group II","RO · RH₂"],["Group III","R₂O₃ · RH₃"],["Group IV","RO₂ · RH₄"],["Group V","R₂O₅ · RH₃"],["Group VI","RO₃ · RH₂"],["Group VII","R₂O₇ · RH"],["Group VIII","selected highest oxide RO₄"]].map(([g,f])=><div className="equation-cell" key={g}><b style={{color:K.gold}}>{g}</b><br/>{f}</div>)}</div></div></div>
-</Section>
+        <div className="mt-6 space-y-6">
+          <Section number="01" kicker="Genesis" title="Why classification became necessary: compression, comparison, prediction" accent="cyan">
+            <p className="max-w-[860px]">As the number of known elements increased, chemistry could no longer remain a catalogue of unrelated colors, densities, oxide formulas, and reactivities. A useful classification had to perform three tasks at once: <strong className="text-white">compress</strong> many facts into a few patterns, <strong className="text-white">compare</strong> chemically similar elements, and <strong className="text-white">predict</strong> properties not yet measured.</p>
+            <div className="grid gap-4 lg:grid-cols-3">
+              <GlossCard title="Lavoisier · 1789" accent="cyan">
+                <p>He separated many simple substances into broad families, prominently metals and non-metals, using observable behavior such as metallic conductivity, luster, and the character of oxides.</p>
+                <p><strong className="text-emerald-200">Merit:</strong> the first influential systematic division linked physical behavior with chemical behavior.</p>
+                <p><strong className="text-amber-200">Limit:</strong> the division was too broad. Borderline elements such as Si and As could not be described adequately by a strict metal/non-metal split.</p>
+              </GlossCard>
+              <GlossCard title="Prout’s hypothesis · 1815" accent="gold">
+                <p>Atomic weights were proposed to be integral multiples of hydrogen:</p>
+                <p><Formula>A ≈ n × A(H)</Formula></p>
+                <p>The idea was attractive because it suggested a common building unit. It failed as a universal law when carefully measured fractional values appeared; chlorine near <strong className="text-white">35.5</strong> is the standard counterexample. The later discovery of isotopic mixtures explained why many average atomic masses are non-integral.</p>
+              </GlossCard>
+              <GlossCard title="Pettenkofer’s rule · 1850" accent="violet">
+                <p>Chemically similar elements were noticed to differ in atomic weight by approximately integral multiples of eight:</p>
+                <p><Formula>ΔA ≈ m × 8</Formula></p>
+                <p>For Li–Na–K, <Formula>23 − 7 = 16 = 2 × 8</Formula>. The rule was an empirical clue, not a universal periodic law, but it directed attention toward numerical spacing inside chemical families.</p>
+              </GlossCard>
+            </div>
+          </Section>
 
-<Section n={6} title="Why Mendeleev’s table succeeded" accent="mint">
-<DataTable headers={["Achievement","Scientific value","Concrete illustration"]} rows={[["Systematic families","Related elements could be studied together.","Li, Na and K occupy one family; halogens occupy another."],["Deliberate gaps","A vacancy was preferred to a chemically incorrect placement.","Positions were left for eka-boron, eka-aluminium and eka-silicon."],["Testable predictions","Properties of missing elements were forecast.","Mass range, density, valency, oxide and chloride formulas were predicted."],["Correction of doubtful data","Masses and valencies were reconsidered when placement failed.","Beryllium was corrected from an assumed 13.5 to about 9."],["Chemical priority","A few pairs were placed against strict mass order.","Ar before K, Co before Ni and Te before I."],["Noble-gas accommodation","A new zero group could be inserted without destroying the system.","He, Ne, Ar, Kr and Xe formed an inert family."]]} min={910}/>
-<h3 className="subhead">Prediction laboratory</h3><div className="grid2"><Figure title="Predictions become experimental confirmations" compact><PredictionStrip/></Figure><DataTable headers={["Property","Eka-Al predicted","Gallium found","Eka-Si predicted","Germanium found"]} rows={[["Atomic weight","68","70","72","72.6"],["Density / g cm⁻³","5.9","5.94","5.5","5.36"],["Melting point / K","low","302.93","high","1231"],["Oxide","E₂O₃","Ga₂O₃","EO₂","GeO₂"],["Chloride","ECl₃","GaCl₃","ECl₄","GeCl₄"]]} min={760}/></div>
-<Note title="Three classic confirmations" color={K.mint}>Eka-aluminium was identified with gallium, eka-boron with scandium and eka-silicon with germanium. The close agreement between predicted and measured properties converted classification into a testable theory.</Note>
-<h3 className="subhead">Correction of beryllium</h3><div className="grid2"><Figure title="Equivalent weight and valency correction" compact><BerylliumFlow/></Figure><div><p>The relation used was:</p><div className="formula">Atomic weight = equivalent weight × valency</div><p>Using equivalent weight 4.5 and an assumed valency of 3 gave 13.5, which had no satisfactory position. Treating beryllium as divalent gave 9, placing it between Li and B and agreeing with the formula BeO.</p><p>Periodic reasoning also helped reconsider doubtful data for elements such as uranium, indium, gold and platinum.</p></div></div>
-</Section>
+          <Section number="02" kicker="Triads, helix, octaves" title="Early periodic patterns became progressively more structural" accent="gold">
+            <div className="grid gap-4 lg:grid-cols-2">
+              <GlossCard title="Döbereiner’s law of triads · 1829" accent="gold">
+                <p>Three elements form a valid triad only when both conditions hold:</p>
+                <ol className="list-decimal space-y-1 pl-5 marker:text-amber-300">
+                  <li>their chemical properties are closely related;</li>
+                  <li>the atomic weight of the middle element is approximately the arithmetic mean of the first and third.</li>
+                </ol>
+                <div className="overflow-x-auto">
+                  <table className="mt-3 min-w-[540px] w-full border-collapse text-xs">
+                    <thead><tr className="text-left text-amber-200"><th className="border-b border-white/10 p-2">Triad</th><th className="border-b border-white/10 p-2">Atomic weights</th><th className="border-b border-white/10 p-2">Mean test</th></tr></thead>
+                    <tbody className="text-slate-200">
+                      <tr><td className="border-b border-white/5 p-2">Li–Na–K</td><td className="border-b border-white/5 p-2">7, 23, 39</td><td className="border-b border-white/5 p-2">(7 + 39)/2 = 23</td></tr>
+                      <tr><td className="border-b border-white/5 p-2">Ca–Sr–Ba</td><td className="border-b border-white/5 p-2">40, 88, 137</td><td className="border-b border-white/5 p-2">(40 + 137)/2 = 88.5 ≈ 88</td></tr>
+                      <tr><td className="border-b border-white/5 p-2">Cl–Br–I</td><td className="border-b border-white/5 p-2">35.5, 80, 127</td><td className="border-b border-white/5 p-2">(35.5 + 127)/2 = 81.25 ≈ 80</td></tr>
+                      <tr><td className="p-2">S–Se–Te</td><td className="p-2">32, 79, 127.6</td><td className="p-2">(32 + 127.6)/2 = 79.8 ≈ 79</td></tr>
+                    </tbody>
+                  </table>
+                </div>
+                <p className="rounded-xl border border-rose-300/20 bg-rose-300/[0.06] p-3"><strong className="text-rose-200">False-triad warning:</strong> a numerical mean alone is insufficient. Three unrelated elements do not become a triad merely because their masses happen to fit an arithmetic relation.</p>
+              </GlossCard>
+              <GlossCard title="de Chancourtois · telluric screw · 1862" accent="violet">
+                <p>Elements were arranged by increasing atomic weight on a helix drawn around a cylinder whose circumference represented roughly <strong className="text-white">16 mass units</strong>. Elements appearing vertically above one another often showed related chemistry.</p>
+                <div className="rounded-xl border border-violet-300/20 bg-[#071522] p-3">
+                  <svg viewBox="0 0 560 300" role="img" aria-labelledby="helix-title helix-desc">
+                    <title id="helix-title">Telluric screw concept</title>
+                    <desc id="helix-desc">A helical path around a cylinder aligns chemically related elements vertically after repeated mass intervals.</desc>
+                    <defs><linearGradient id="cyl" x1="0" x2="1"><stop stopColor="#5DD6F222" /><stop offset="0.5" stopColor="#FFFFFF10" /><stop offset="1" stopColor="#B99AFF22" /></linearGradient></defs>
+                    <ellipse cx="280" cy="52" rx="118" ry="30" fill="url(#cyl)" stroke={palette.cyan} strokeWidth="2" />
+                    <rect x="162" y="52" width="236" height="190" fill="url(#cyl)" stroke={palette.cyan} strokeWidth="2" />
+                    <ellipse cx="280" cy="242" rx="118" ry="30" fill="#081722" stroke={palette.cyan} strokeWidth="2" />
+                    <path d="M166 76 C220 116 343 116 394 76 C344 36 220 36 166 76 M166 122 C220 162 343 162 394 122 C344 82 220 82 166 122 M166 168 C220 208 343 208 394 168 C344 128 220 128 166 168 M166 214 C220 254 343 254 394 214" fill="none" stroke={palette.gold} strokeWidth="4" />
+                    {[190, 235, 280, 325, 370].map((cx, i) => <circle key={cx} cx={cx} cy={80 + i * 34} r="7" fill={i % 2 ? palette.violet : palette.mint} />)}
+                    <line x1="280" y1="34" x2="280" y2="260" stroke="#CBD5E1" strokeDasharray="6 7" />
+                    <text x="280" y="288" textAnchor="middle" fill="#BFCED8" fontSize="14">vertical alignment reveals recurring chemical families</text>
+                  </svg>
+                </div>
+                <p><strong className="text-emerald-200">Merit:</strong> the first three-dimensional periodic arrangement. <strong className="text-amber-200">Limit:</strong> the cylindrical presentation was difficult to read and did not become a practical predictive table.</p>
+              </GlossCard>
+            </div>
+            <GlossCard title="Newlands’ law of octaves · 1865" accent="cyan">
+              <p>When elements were arranged by increasing atomic weight, every eighth element was proposed to resemble the first, like recurrence in a musical scale:</p>
+              <div className="rounded-xl border border-cyan-300/25 bg-cyan-300/[0.07] p-4 text-center text-lg font-black tracking-wide text-cyan-100">Sa–Re–Ga–Ma–Pa–Dha–Ni–Sa</div>
+              <p><strong className="text-white">Rule:</strong> property similarity reappears at the eighth position. The pattern was especially persuasive among lighter elements.</p>
+              <MeritDemerit
+                merits={["Established a genuine repeating structural pattern rather than isolated three-element families.", "Encouraged continuous ordering by atomic weight and direct comparison of recurring properties."]}
+                demerits={["Worked reliably only up to calcium (Z = 20).", "Forced dissimilar elements into the same position, such as Fe with O/S in early layouts.", "Left no deliberate gaps for undiscovered elements.", "The later insertion of noble gases disrupted the literal eighth-position count, although periodic recurrence itself survived."]}
+              />
+            </GlossCard>
+          </Section>
 
-<Section n={7} title="Limitations of the mass-based table" accent="coral">
-<DataTable headers={["Limitation","Why it was a problem","Modern resolution"]} rows={[["Hydrogen position","H has one electron like Group I, forms H⁺, but also gains one electron and forms H⁻ like a halogen.","Hydrogen remains a special case; no single position captures every resemblance."],["Isotopes","Different isotopic masses would demand different positions although their chemistry is essentially the same.","All isotopes share the same atomic number and one position."],["Anomalous mass pairs","Strict mass order contradicted established family relationships.","Atomic-number order resolves Ar–K, Co–Ni and Te–I exactly."],["Similar elements separated","Pt and Au showed important similarities but occupied different historical groups.","The long form expresses homologous columns more clearly."],["Dissimilar elements together","Alkali metals and coinage metals both appeared under historical Group I.","Modern Groups 1 and 11 separate them."],["No mechanism","The table displayed recurrence but could not explain why it occurred.","Recurring valence-shell configurations provide the mechanism."]]} min={930}/>
-<div className="grid2"><Figure title="Mass-order reversals resolved by atomic number" compact><AnomalousPairs/></Figure><div><h3 className="subhead">Why chemical order was preserved</h3><ul className="compact-list"><li>Ar was placed before K although 39.95 &gt; 39.10, because Ar closes an inert family and K begins the alkali family.</li><li>Co was placed before Ni although 58.93 &gt; 58.69, preserving transition-series relationships.</li><li>Te was placed before I although 127.60 &gt; 126.90, keeping Te with chalcogens and I with halogens.</li></ul><div className="memory"><b>Limits mnemonic:</b> H–I–A–S–D–M = Hydrogen, Isotopes, Anomalous pairs, Similar separated, Dissimilar together, Mechanism missing.</div></div></div>
-</Section>
+          <Section number="03" kicker="Lothar Meyer" title="Physical periodicity became visible as a repeating curve" accent="violet">
+            <p className="max-w-[860px]">Meyer used <strong className="text-white">atomic volume</strong>, defined as <Formula>Vₘ = molar mass / density</Formula>, and plotted it against atomic weight. The resulting wave-like graph did not merely group similar elements: it displayed the continuous contraction and expansion of matter across successive chemical families.</p>
+            <h3 className="text-xl font-black text-violet-200">Lothar Meyer atomic-volume curve from hydrogen to caesium</h3>
+            <MeyerCurve />
+            <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+              <GlossCard title="Peaks" accent="cyan"><p>Li, Na, K, Rb, and Cs occupy major maxima. These alkali metals combine large atomic volume with strong electropositive character.</p></GlossCard>
+              <GlossCard title="Descending branches" accent="mint"><p>Be, Mg, Ca, Sr, and Ba appear after the peaks as the volume falls with increasing effective nuclear attraction.</p></GlossCard>
+              <GlossCard title="Broad minima" accent="violet"><p>Transition metals and compact metalloids cluster in low-volume regions where increasing nuclear charge contracts the structure.</p></GlossCard>
+              <GlossCard title="Ascending branches" accent="gold"><p>Halogens F, Cl, Br, and I occur on rising regions before the next alkali-metal maximum and represent strongly electronegative families.</p></GlossCard>
+            </div>
+            <MeritDemerit
+              merits={["Made periodicity of a measurable physical property visually undeniable.", "Connected chemical families with repeating maxima, minima, and branch positions.", "Showed that periodic behavior is continuous rather than a collection of accidental arithmetic matches."]}
+              demerits={["The curve alone did not provide a uniquely organized table for routine chemical comparison.", "It offered no equally concrete prediction laboratory for the properties of missing elements.", "Atomic-volume values depend on physical state, density data, and measurement conditions, so the graph is empirical rather than fundamental."]}
+            />
+          </Section>
 
-<Section n={8} title="Moseley and the modern periodic law" accent="cyan">
-<div className="grid2"><div><p>In 1913, high-speed electrons were directed at different metal targets. The characteristic X-ray frequency changed in a regular sequence from one element to the next.</p><Figure title="Characteristic X-ray experiment" compact><MoseleyExperiment/></Figure></div><div><p>For a selected X-ray series, the square root of frequency varies linearly with atomic number:</p><div className="formula">√ν = a(Z − b)</div><Figure title="Straight-line relation between √ν and Z" compact><MoseleyGraph/></Figure></div></div>
-<div className="law"><div className="lawbox" style={{borderColor:K.violet}}>Mass-based law: properties are periodic functions of atomic weight.</div><div className="arrow">→</div><div className="lawbox" style={{borderColor:K.cyan}}>Modern Periodic Law: physical and chemical properties are periodic functions of atomic number.</div></div>
-<p>Atomic number is the nuclear charge and, for a neutral atom, also fixes the electron count. As atomic number increases, outer electronic patterns recur; therefore related chemical behaviour recurs.</p>
-<div className="sequence"><span>Z increases</span><span>electron count changes</span><span>outer configuration develops</span><span>valence pattern recurs</span><span>chemical families recur</span></div>
-</Section>
+          <Section number="04" kicker="Mendeleev · 1869–1871" title="A predictive table: chemical identity took priority over mechanical mass order" accent="gold">
+            <div className="rounded-2xl border border-amber-300/25 bg-amber-300/[0.07] p-4 text-lg font-black text-amber-100">Periodic law: the physical and chemical properties of elements are periodic functions of their atomic weights.</div>
+            <p className="max-w-[860px]">The decisive advance was not merely placing known elements in rows. Mendeleev treated the table as a scientific model: a chemically unreasonable position could signal an incorrect atomic weight, and a vacant position could represent a real element whose properties were calculable from neighboring trends.</p>
+            <h3 className="text-xl font-black text-amber-200">Mendeleev’s periodic table: groups and series</h3>
+            <div className="overflow-x-auto rounded-2xl border border-amber-300/20 bg-[#071522] p-3">
+              <table className="min-w-[940px] w-full border-collapse text-center text-xs">
+                <thead>
+                  <tr className="text-amber-200">
+                    <th className="border border-white/10 p-2">Series</th><th className="border border-white/10 p-2">Group 0</th><th className="border border-white/10 p-2">I</th><th className="border border-white/10 p-2">II</th><th className="border border-white/10 p-2">III</th><th className="border border-white/10 p-2">IV</th><th className="border border-white/10 p-2">V</th><th className="border border-white/10 p-2">VI</th><th className="border border-white/10 p-2">VII</th><th className="border border-white/10 p-2">VIII</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {historicalRows.map((row) => (
+                    <tr key={row.series} className="text-slate-200 odd:bg-white/[0.025]">
+                      <th className="border border-white/10 p-2 text-cyan-200">{row.series}</th>
+                      {[row.g0, row.g1, row.g2, row.g3, row.g4, row.g5, row.g6, row.g7, row.g8].map((cell, index) => <td key={`${row.series}-${index}`} className={`border border-white/10 p-2 ${index === 8 ? "font-black text-violet-100" : ""}`}>{cell}</td>)}
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <p className="max-w-[860px] text-sm text-slate-400">Compact teaching reconstruction of the short-form group/series logic. Group 0 was appended after noble gases became known; Group VIII used horizontal triads such as Fe–Co–Ni, Ru–Rh–Pd, and Os–Ir–Pt. Asterisks mark the entry positions of inner series.</p>
 
-<Section n={9} title="Present long-form periodic table" accent="mint">
-<p>The long form contains 7 periods, 18 IUPAC groups and 118 elements. The lanthanoid and actinoid positions belong to periods 6 and 7 but are displayed below the main body to keep the table compact.</p>
-<div className="grid2"><Figure title="Seven period lengths" compact><PeriodLengthStrip/></Figure><Figure title="Electronic block architecture" compact><BlockArchitecture/></Figure></div>
-<Figure title="Live 118-element long form — click any element" caption="Colour indicates the differentiating block. Helium is electronically associated with the s subshell but is placed in Group 18 because its shell is complete and its chemistry is noble-gas-like." full><ModernTable/></Figure>
-<div className="grid2"><DataTable headers={["Block","General differentiating pattern","Location"]} rows={[["s","ns¹–²","Groups 1–2; He is placed in Group 18"],["p","ns²np¹–⁶","Groups 13–18"],["d","(n−1)d¹–¹⁰ns⁰–²","Groups 3–12"],["f","(n−2)f⁰–¹⁴(n−1)d⁰–²ns²","inner-transition portions of periods 6 and 7"]]} min={650}/><DataTable headers={["Older designation","IUPAC group"]} rows={[["IA","1"],["IIA","2"],["IIIB–VIIB","3–7"],["VIII","8, 9, 10"],["IB","11"],["IIB","12"],["IIIA–VIIA","13–17"],["0","18"]]} min={400}/></div>
-<div className="grid2"><Figure title="Placement of the two inner-transition series" compact><SeaborgPlacement/></Figure><div><h3 className="subhead">Special positions</h3><ul className="compact-list"><li><b>Hydrogen:</b> placed above Group 1 but chemically distinct from alkali metals and capable of both H⁺ and H⁻ formation.</li><li><b>Helium:</b> configuration 1s², yet placed in Group 18 because its only shell is complete and it is chemically inert.</li><li><b>f block:</b> displayed separately only for compactness; it does not create extra periods.</li></ul></div></div>
-<div className="memory"><b>Memory anchors:</b> period lengths 2–8–8–18–18–32–32; block positions s = 1–2, d = 3–12, p = 13–18, f = two 14-position rows.</div>
-</Section>
+            <div className="overflow-x-auto rounded-2xl border border-violet-300/20 bg-[#071522] p-3">
+              <table className="min-w-[900px] w-full border-collapse text-center text-xs">
+                <thead><tr className="text-violet-200"><th className="border border-white/10 p-2">Group</th><th className="border border-white/10 p-2">I</th><th className="border border-white/10 p-2">II</th><th className="border border-white/10 p-2">III</th><th className="border border-white/10 p-2">IV</th><th className="border border-white/10 p-2">V</th><th className="border border-white/10 p-2">VI</th><th className="border border-white/10 p-2">VII</th><th className="border border-white/10 p-2">VIII</th></tr></thead>
+                <tbody>
+                  <tr><th className="border border-white/10 p-2 text-amber-200">Highest oxide</th><td className="border border-white/10 p-2">R₂O</td><td className="border border-white/10 p-2">RO</td><td className="border border-white/10 p-2">R₂O₃</td><td className="border border-white/10 p-2">RO₂</td><td className="border border-white/10 p-2">R₂O₅</td><td className="border border-white/10 p-2">RO₃</td><td className="border border-white/10 p-2">R₂O₇</td><td className="border border-white/10 p-2">RO₄ for selected members</td></tr>
+                  <tr><th className="border border-white/10 p-2 text-cyan-200">Characteristic hydride band</th><td className="border border-white/10 p-2">—</td><td className="border border-white/10 p-2">—</td><td className="border border-white/10 p-2">—</td><td className="border border-white/10 p-2">RH₄</td><td className="border border-white/10 p-2">RH₃</td><td className="border border-white/10 p-2">RH₂</td><td className="border border-white/10 p-2">RH</td><td className="border border-white/10 p-2">—</td></tr>
+                </tbody>
+              </table>
+            </div>
 
-<Section n={10} title="High-yield facts, examples and final reasoning" accent="gold">
-<div className="grid3">{[["Chronology","classify → triads → helix → octaves → curves → predictions → atomic number → two-row f block"],["Triads","Similar – Sort – Mean"],["Octaves","count the first as 1; the matching element appears at position 8"],["Meyer curve","peak – descent – broad minimum – rise"],["Mendeleev achievements","families – gaps – predictions – corrections – reversals – noble gases"],["Modern mechanism","Z → electrons → valence pattern → properties"]].map(([a,b],i)=><div className="fact" key={a} style={{borderTop:`3px solid ${[K.gold,K.cyan,K.violet,K.mint,K.coral,K.cyan][i]}`}}><b>{a}</b><br/>{b}</div>)}</div>
-<h3 className="subhead">Worked reasoning</h3><DataTable headers={["Task","Resolution"]} rows={[["1. Why classify when every element has a unique atomic number?","Atomic number identifies an element; classification reveals relationships, trends and predictive behaviour."],["2. Test 40, 88 and 137 as a triad","(40+137)/2 = 88.5 ≈ 88, and Ca–Sr–Ba are chemically related."],["3. Reject a false triad","Even an exact numerical mean is insufficient when the three elements do not show related chemistry."],["4. Interpret Newlands’ sequence","Li aligns with Na and Be with Mg, but a fixed eight-position recurrence fails when transition elements enter."],["5. Read Meyer’s curve","Locate alkali peaks, alkaline-earth descents, broad transition minima and halogen-side rises."],["6. Infer a missing Group III element","A Group III gap suggests a trivalent element forming E₂O₃ and ECl₃."],["7. Correct beryllium","4.5×3 = 13.5 fails; 4.5×2 = 9 fits the position and BeO."],["8. Resolve Ar–K","Masses appear reversed, but Z(Ar)=18 and Z(K)=19 provide exact order."],["9. Interpret Moseley’s line","A straight-line relation between √ν and successive integer Z values identifies atomic number as fundamental."],["10. Explain unequal period lengths","Successive periods involve different sets of subshells, so their capacities are 2, 8, 8, 18, 18, 32 and 32 rather than a universal octave."]]} min={920}/>
-<h3 className="subhead">Misconception clinic</h3><DataTable headers={["Incorrect claim","Correction"]} rows={[["Every eighth element works throughout the table.","Newlands’ pattern was mainly successful only through calcium."],["Lothar Meyer and Mendeleev made the same contribution.","Meyer demonstrated periodic physical curves; Mendeleev built a gap-containing predictive classification."],["Mendeleev followed increasing mass without any departure.","He prioritized chemical similarity when strict mass order conflicted with family behaviour."],["The f block creates additional periods.","The lanthanoid and actinoid positions belong to periods 6 and 7."],["A numerical average alone proves a triad.","Chemical resemblance is an essential part of the triad criterion."],["Atomic number merely renames atomic mass order.","Atomic number is nuclear charge and resolves isotope and reversed-pair difficulties."]]} min={840}/>
-<Figure title="The complete causal chain" compact><FinalFlow/></Figure>
-<div className="section-end">The modern table is not a list imposed on chemistry: it is the visible consequence of increasing nuclear charge and recurring valence-shell structures.</div>
-</Section>
-</div>}
+            <div className="grid gap-4 lg:grid-cols-2">
+              <GlossCard title="Prediction laboratory" accent="gold">
+                <div className="overflow-x-auto">
+                  <table className="min-w-[610px] w-full border-collapse text-xs">
+                    <thead><tr className="text-amber-200"><th className="border-b border-white/10 p-2 text-left">Predicted placeholder</th><th className="border-b border-white/10 p-2 text-left">Discovered element</th><th className="border-b border-white/10 p-2 text-left">Year</th></tr></thead>
+                    <tbody><tr><td className="border-b border-white/5 p-2">Eka-aluminium</td><td className="border-b border-white/5 p-2">Gallium</td><td className="border-b border-white/5 p-2">1875</td></tr><tr><td className="border-b border-white/5 p-2">Eka-boron</td><td className="border-b border-white/5 p-2">Scandium</td><td className="border-b border-white/5 p-2">1879</td></tr><tr><td className="border-b border-white/5 p-2">Eka-silicon</td><td className="border-b border-white/5 p-2">Germanium</td><td className="border-b border-white/5 p-2">1886</td></tr><tr><td className="p-2">Eka-manganese</td><td className="p-2">Technetium</td><td className="p-2">1937</td></tr></tbody>
+                  </table>
+                </div>
+              </GlossCard>
+              <GlossCard title="Eka-silicon versus germanium" accent="violet">
+                <div className="overflow-x-auto">
+                  <table className="min-w-[520px] w-full border-collapse text-xs"><thead><tr className="text-violet-200"><th className="border-b border-white/10 p-2 text-left">Property</th><th className="border-b border-white/10 p-2 text-left">Predicted E</th><th className="border-b border-white/10 p-2 text-left">Observed Ge</th></tr></thead><tbody><tr><td className="border-b border-white/5 p-2">Atomic mass</td><td className="border-b border-white/5 p-2">72</td><td className="border-b border-white/5 p-2">72.6</td></tr><tr><td className="border-b border-white/5 p-2">Density / g cm⁻³</td><td className="border-b border-white/5 p-2">5.5</td><td className="border-b border-white/5 p-2">5.36</td></tr><tr><td className="border-b border-white/5 p-2">Oxide</td><td className="border-b border-white/5 p-2">EO₂</td><td className="border-b border-white/5 p-2">GeO₂</td></tr><tr><td className="p-2">Chloride</td><td className="p-2">ECl₄</td><td className="p-2">GeCl₄</td></tr></tbody></table>
+                </div>
+              </GlossCard>
+            </div>
+
+            <GlossCard title="Atomic-weight corrections" accent="mint">
+              <p>Valency and chemical analogies could expose a mistaken equivalent-weight interpretation. Beryllium had been treated as if its mass were <Formula>4.5 × 3 = 13.5</Formula>, which placed it badly. Recognizing divalency gave <Formula>4.5 × 2 = 9</Formula>, placing Be naturally between Li and B. Values associated with U, In, Au, and Pt were also reconsidered so that chemical behavior and formula stoichiometry became mutually consistent.</p>
+            </GlossCard>
+
+            <MeritDemerit
+              merits={["Created a systematic framework for studying entire groups rather than isolated elements.", "Left deliberate gaps and predicted masses, densities, oxides, chlorides, and valencies with striking accuracy.", "Allowed chemical similarity to overrule a rigid mass sequence when evidence demanded it.", "Provided a method for correcting doubtful atomic weights."]}
+              demerits={["Hydrogen had no unique position because it resembles both alkali metals and halogens.", "Isotopes require one chemical position despite different masses, contradicting mass as the primary coordinate.", "Mass-order anomalies include Ar/K, Co/Ni, Te/I, and the later Th/Pa ordering problem.", "Some dissimilar elements appeared together, such as alkali and coinage metals in the old Group I.", "Some related heavy metals, including Pt and Au in older layouts, were separated by the group architecture.", "The table supplied no fundamental explanation for why periodicity occurs."]}
+            />
+          </Section>
+
+          <Section number="05" kicker="Moseley · 1913" title="Characteristic X-rays identify atomic number as the fundamental coordinate" accent="violet">
+            <p className="max-w-[860px]">A beam of high-speed electrons struck a metal target and ejected inner-shell electrons. When higher electrons fell into the vacancies, the target emitted characteristic X-rays. Measuring corresponding spectral lines across many elements gave a linear relation:</p>
+            <div className="rounded-2xl border border-violet-300/25 bg-violet-300/[0.07] p-4 text-center text-xl font-black text-violet-100">√ν = a(Z − b) &nbsp; or &nbsp; ν = a²(Z − b)²</div>
+            <p className="max-w-[860px]">Here <strong className="text-white">ν</strong> is the characteristic X-ray frequency, <strong className="text-white">Z</strong> is atomic number, <strong className="text-white">b</strong> represents screening by inner electrons, and <strong className="text-white">a</strong> is constant for a chosen spectral series. The straight line showed that Z is not merely a serial label; it measures nuclear charge.</p>
+            <MoseleyDiagram />
+            <div className="overflow-x-auto rounded-2xl border border-cyan-300/20 bg-[#071522] p-3">
+              <table className="min-w-[760px] w-full border-collapse text-sm"><thead><tr className="text-cyan-200"><th className="border-b border-white/10 p-2 text-left">Mass-order difficulty</th><th className="border-b border-white/10 p-2 text-left">Atomic-number resolution</th><th className="border-b border-white/10 p-2 text-left">Chemical consequence</th></tr></thead><tbody><tr><td className="border-b border-white/5 p-2">Ar appears heavier than K</td><td className="border-b border-white/5 p-2">Z<sub>Ar</sub> = 18 &lt; Z<sub>K</sub> = 19</td><td className="border-b border-white/5 p-2">Ar remains Group 18; K begins Group 1 of the next period.</td></tr><tr><td className="border-b border-white/5 p-2">Co/Ni mass order is irregular</td><td className="border-b border-white/5 p-2">Z<sub>Co</sub> = 27 &lt; Z<sub>Ni</sub> = 28</td><td className="border-b border-white/5 p-2">The chemical sequence is restored without adjustment.</td></tr><tr><td className="p-2">Te is heavier than I</td><td className="p-2">Z<sub>Te</sub> = 52 &lt; Z<sub>I</sub> = 53</td><td className="p-2">Te precedes I exactly as their Group 16 and Group 17 chemistry requires.</td></tr></tbody></table>
+            </div>
+          </Section>
+
+          <Section number="06" kicker="Bohr / long form" title="Atomic number plus electronic structure explains the architecture" accent="cyan">
+            <div className="rounded-2xl border border-cyan-300/25 bg-cyan-300/[0.07] p-4 text-lg font-black text-cyan-100">Modern periodic law: the physical and chemical properties of elements are periodic functions of atomic number, Z.</div>
+            <p className="max-w-[860px]">Periodicity occurs because similar valence-shell configurations recur as Z increases. The long form contains <strong className="text-white">7 periods</strong> and <strong className="text-white">18 groups</strong>. The 1–18 group system removes ambiguity among older A/B notations: old IA–VIIA largely map onto Groups 1, 2, and 13–17; noble gases form Group 18; transition columns occupy Groups 3–12.</p>
+
+            <GlossCard title="Period capacity from available orbitals" accent="cyan">
+              <div className="overflow-x-auto">
+                <table className="min-w-[900px] w-full border-collapse text-sm">
+                  <thead><tr className="text-cyan-200"><th className="border-b border-white/10 p-2 text-left">Period</th><th className="border-b border-white/10 p-2 text-left">Subshell sequence represented</th><th className="border-b border-white/10 p-2 text-left">Orbitals</th><th className="border-b border-white/10 p-2 text-left">Capacity</th><th className="border-b border-white/10 p-2 text-left">Observed length</th></tr></thead>
+                  <tbody>
+                    <tr><td className="border-b border-white/5 p-2">P₁</td><td className="border-b border-white/5 p-2">1s</td><td className="border-b border-white/5 p-2">1</td><td className="border-b border-white/5 p-2">1 × 2e⁻</td><td className="border-b border-white/5 p-2">2</td></tr>
+                    <tr><td className="border-b border-white/5 p-2">P₂</td><td className="border-b border-white/5 p-2">2s, 2p</td><td className="border-b border-white/5 p-2">1 + 3 = 4</td><td className="border-b border-white/5 p-2">4 × 2e⁻</td><td className="border-b border-white/5 p-2">8</td></tr>
+                    <tr><td className="border-b border-white/5 p-2">P₃</td><td className="border-b border-white/5 p-2">3s, 3p</td><td className="border-b border-white/5 p-2">1 + 3 = 4</td><td className="border-b border-white/5 p-2">4 × 2e⁻</td><td className="border-b border-white/5 p-2">8</td></tr>
+                    <tr><td className="border-b border-white/5 p-2">P₄</td><td className="border-b border-white/5 p-2">4s, 3d, 4p</td><td className="border-b border-white/5 p-2">1 + 5 + 3 = 9</td><td className="border-b border-white/5 p-2">9 × 2e⁻</td><td className="border-b border-white/5 p-2">18</td></tr>
+                    <tr><td className="border-b border-white/5 p-2">P₅</td><td className="border-b border-white/5 p-2">5s, 4d, 5p</td><td className="border-b border-white/5 p-2">1 + 5 + 3 = 9</td><td className="border-b border-white/5 p-2">9 × 2e⁻</td><td className="border-b border-white/5 p-2">18</td></tr>
+                    <tr><td className="border-b border-white/5 p-2">P₆</td><td className="border-b border-white/5 p-2">6s, 4f, 5d, 6p</td><td className="border-b border-white/5 p-2">1 + 7 + 5 + 3 = 16</td><td className="border-b border-white/5 p-2">16 × 2e⁻</td><td className="border-b border-white/5 p-2">32</td></tr>
+                    <tr><td className="p-2">P₇</td><td className="p-2">7s, 5f, 6d, 7p</td><td className="p-2">1 + 7 + 5 + 3 = 16</td><td className="p-2">16 × 2e⁻</td><td className="p-2">32</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </GlossCard>
+
+            <div className="grid gap-4 lg:grid-cols-2 xl:grid-cols-4">
+              <GlossCard title="s-block" accent="cyan"><p><Formula>ns¹–²</Formula></p><p>Groups 1–2. The differentiating electron enters the outer s subshell. Hydrogen and helium require separate chemical interpretation.</p></GlossCard>
+              <GlossCard title="p-block" accent="gold"><p><Formula>ns²np¹–⁶</Formula></p><p>Groups 13–18. It spans metals, metalloids, non-metals, halogens, and noble gases.</p></GlossCard>
+              <GlossCard title="d-block" accent="violet"><p><Formula>(n−1)d¹–¹⁰ ns⁰–²</Formula></p><p>Groups 3–12. Zn, Cd, and Hg belong to the d-block but are not transition elements under the incomplete-d definition.</p></GlossCard>
+              <GlossCard title="f-block" accent="mint"><p><Formula>(n−2)f¹–¹⁴ (n−1)d⁰–¹ ns²</Formula></p><p>Inner transition series associated with Group 3: 4f lanthanoids and 5f actinoids.</p></GlossCard>
+            </div>
+
+            <div className="grid gap-4 lg:grid-cols-2">
+              <GlossCard title="Hydrogen and helium" accent="gold">
+                <p><strong className="text-white">H:</strong> <Formula>1s¹</Formula> supports placement above Group 1, yet H also gains one electron to form H⁻ and forms covalent bonds like non-metals. Its position remains chemically debatable.</p>
+                <p><strong className="text-white">He:</strong> <Formula>1s²</Formula> is formally s-block by differentiating subshell, but its complete shell, monatomic state, and very low reactivity justify Group 18.</p>
+              </GlossCard>
+              <GlossCard title="Lu, Th, and Lr: series versus block" accent="violet">
+                <p><strong className="text-white">Lu</strong> completes the lanthanoid chemical series but has <Formula>4f¹⁴5d¹6s²</Formula>. <strong className="text-white">Th</strong> is chemically actinoid though its ground state is dominated by <Formula>6d²7s²</Formula>. <strong className="text-white">Lr</strong> completes the actinoids; modern calculations favor a 7p¹ outer electron. Thus chemical-series membership, differentiating-electron block, and Group 3 placement are related but not identical questions.</p>
+              </GlossCard>
+            </div>
+
+            <GlossCard title="Seaborg’s actinide hypothesis · 1944" accent="mint">
+              <p>Elements 89–103 were relocated as a 5f inner-transition series below the lanthanoids rather than being forced into ordinary d-block columns. This explained recurring oxidation states, contraction, and the chemistry of transuranium elements.</p>
+              <div className="overflow-x-auto rounded-xl border border-emerald-300/20 bg-[#071522] p-3">
+                <svg viewBox="0 0 920 220" className="min-w-[780px]" role="img" aria-labelledby="seaborg-title seaborg-desc">
+                  <title id="seaborg-title">Seaborg actinide relocation</title><desc id="seaborg-desc">The 4f and 5f series are shown as parallel inner rows connected to periods 6 and 7.</desc>
+                  <rect x="40" y="30" width="840" height="54" rx="14" fill="#5DD6F20D" stroke={palette.cyan} />
+                  <text x="65" y="63" fill="#DDF8FF" fontWeight="800">Period 6 main body</text><text x="265" y="63" fill={palette.cyan}>Cs · Ba</text><text x="420" y="63" fill="#94A3B8">→ 4f insertion →</text><text x="610" y="63" fill={palette.violet}>Hf … Rn</text>
+                  <rect x="40" y="106" width="840" height="54" rx="14" fill="#7CE6BE0D" stroke={palette.mint} />
+                  <text x="65" y="139" fill="#E5FFF7" fontWeight="800">Period 7 main body</text><text x="265" y="139" fill={palette.mint}>Fr · Ra</text><text x="420" y="139" fill="#94A3B8">→ 5f insertion →</text><text x="610" y="139" fill={palette.gold}>Rf … Og</text>
+                  <path d="M338 84 C338 103 338 103 338 106" stroke={palette.cyan} strokeWidth="3" strokeDasharray="5 5" />
+                  <text x="460" y="198" textAnchor="middle" fill="#C8D6DF" fontSize="14">Separate display preserves a compact 18-column body; it does not imply weak chemical membership.</text>
+                </svg>
+              </div>
+            </GlossCard>
+
+            <GlossCard title="Systematic temporary nomenclature for Z > 100" accent="gold">
+              <div className="overflow-x-auto">
+                <table className="min-w-[880px] w-full border-collapse text-sm"><thead><tr className="text-amber-200"><th className="border-b border-white/10 p-2 text-left">Digit</th>{[0,1,2,3,4,5,6,7,8,9].map((digit) => <th key={digit} className="border-b border-white/10 p-2">{digit}</th>)}</tr></thead><tbody><tr><th className="border-b border-white/5 p-2 text-left text-cyan-200">Root</th>{["nil","un","bi","tri","quad","pent","hex","sept","oct","enn"].map((root) => <td key={root} className="border-b border-white/5 p-2 text-center">{root}</td>)}</tr><tr><th className="p-2 text-left text-violet-200">Symbol letter</th>{["n","u","b","t","q","p","h","s","o","e"].map((letter) => <td key={letter} className="p-2 text-center">{letter}</td>)}</tr></tbody></table>
+              </div>
+              <p>Concatenate digit roots in order, then add <strong className="text-white">-ium</strong>; the symbol uses the initial letters with normal capitalization. These are systematic placeholders, not replacements for approved permanent names.</p>
+              <div className="overflow-x-auto"><table className="min-w-[760px] w-full border-collapse text-sm"><thead><tr className="text-amber-200"><th className="border-b border-white/10 p-2 text-left">Z</th><th className="border-b border-white/10 p-2 text-left">Generated name</th><th className="border-b border-white/10 p-2 text-left">Generated symbol</th><th className="border-b border-white/10 p-2 text-left">Permanent name</th></tr></thead><tbody><tr><td className="border-b border-white/5 p-2">101</td><td className="border-b border-white/5 p-2">Unnilunium</td><td className="border-b border-white/5 p-2">Unu</td><td className="border-b border-white/5 p-2">Mendelevium</td></tr><tr><td className="border-b border-white/5 p-2">114</td><td className="border-b border-white/5 p-2">Ununquadium</td><td className="border-b border-white/5 p-2">Uuq</td><td className="border-b border-white/5 p-2">Flerovium</td></tr><tr><td className="p-2">118</td><td className="p-2">Ununoctium</td><td className="p-2">Uuo</td><td className="p-2">Oganesson</td></tr></tbody></table></div>
+            </GlossCard>
+
+            <h3 className="text-2xl font-black text-cyan-200">Live 118-element long form</h3>
+            <PeriodicTable />
+
+            <MeritDemerit
+              merits={["Uses atomic number, a fundamental nuclear property, so isotopes occupy one chemically correct position.", "Explains periodicity through recurrence of outer-shell valence configurations.", "Separates s, p, d, and f regions and clarifies main-group, transition, and inner-transition chemistry.", "Naturally resolves the Ar/K, Co/Ni, and Te/I anomalies.", "Provides the structural basis for diagonal relationships, transition series, oxidation-state patterns, and periodic trends."]}
+              demerits={["Hydrogen still has no completely satisfactory single-group identity.", "The f-block is displayed outside the main body for compactness, obscuring its continuous insertion into periods 6 and 7.", "A simple Aufbau sketch does not reproduce every exact ground-state configuration; Cr, Cu, and Pd are standard examples.", "Group 3 boundaries and the placement of La/Ac versus Lu/Lr require conventions beyond a single visual rule."]}
+            />
+          </Section>
+
+          <Section number="07" kicker="Solved workshop" title="Ten reasoning problems that connect history, arithmetic, and electronic structure" accent="mint">
+            <div className="grid gap-4 lg:grid-cols-2">
+              {[
+                ["1 · Verify Ca–Sr–Ba", <><p>Mean of terminal masses: <Formula>(40 + 137)/2 = 88.5</Formula>.</p><p>Observed Sr ≈ 88, and all three form alkaline-earth M²⁺ chemistry. Therefore the triad passes both the numerical and chemical tests.</p></>],
+                ["2 · Reject a false triad", <><p>Suppose three masses accidentally satisfy an arithmetic mean. That is not enough.</p><p>Check valency, oxide type, hydride type, and reactivity. If the chemical family differs, the set is a numerical coincidence, not a Döbereiner triad.</p></>],
+                ["3 · Test Newlands’ octave", <><p>Starting from Li in the early mass sequence, the eighth position reaches Na, which resembles Li in valency +1, oxide type, and high reactivity.</p><p>The recurrence is meaningful for light elements but cannot be forced indefinitely.</p></>],
+                ["4 · Calculate atomic volume", <><p>For Ga, using molar mass 69.7 g mol⁻¹ and density 5.91 g cm⁻³:</p><p><Formula>Vₘ = 69.7/5.91 ≈ 11.8 cm³ mol⁻¹</Formula>.</p><p>This places Ga well below alkali-metal peaks.</p></>],
+                ["5 · Resolve Ar/K", <><p>Mass order alone suggests K before Ar because K is slightly lighter.</p><p>Atomic numbers give <Formula>18 &lt; 19</Formula>, so Ar closes period 3 and K opens period 4. Chemical placement is restored.</p></>],
+                ["6 · Configuration [Ne]3s²3p⁵", <><p>Largest n = 3, so period = 3. A p⁵ valence shell has seven valence electrons.</p><p>Group = 17, block = p, element = Cl, Z = 17.</p></>],
+                ["7 · Configuration [Ar]3d⁶4s²", <><p>Largest n = 4, so period = 4. For a d-block atom, group number is commonly <Formula>d + s = 6 + 2 = 8</Formula>.</p><p>The element is Fe, Z = 26.</p></>],
+                ["8 · Derive period-4 length", <><p>Period 4 spans 4s, 3d, and 4p: <Formula>1 + 5 + 3 = 9 orbitals</Formula>.</p><p>At two electrons per orbital, capacity = <Formula>9 × 2 = 18</Formula>.</p></>],
+                ["9 · Find Z from period 3, group 16", <><p>Period 3 sequence is Na(11), Mg(12), Al(13), Si(14), P(15), S(16), Cl(17), Ar(18).</p><p>Group 16 therefore gives sulfur, <Formula>Z = 16</Formula>.</p></>],
+                ["10 · Name hypothetical Z = 120", <><p>Digits 1–2–0 give un + bi + nil + ium.</p><p>Temporary systematic name = <strong className="text-white">unbinilium</strong>; symbol = <strong className="text-white">Ubn</strong>.</p></>],
+              ].map(([title, content]) => <GlossCard key={String(title)} title={String(title)} accent={String(title).startsWith("1") || String(title).startsWith("6") ? "cyan" : String(title).startsWith("2") || String(title).startsWith("7") ? "gold" : String(title).startsWith("3") || String(title).startsWith("8") ? "violet" : "mint"}>{content}</GlossCard>)}
+            </div>
+
+            <h3 className="text-2xl font-black text-rose-200">Misconception clinic</h3>
+            <div className="overflow-x-auto rounded-2xl border border-rose-300/20 bg-[#071522] p-3">
+              <table className="min-w-[980px] w-full border-collapse text-sm">
+                <thead><tr className="text-rose-200"><th className="border-b border-white/10 p-2 text-left">False claim</th><th className="border-b border-white/10 p-2 text-left">Scientific correction</th></tr></thead>
+                <tbody>
+                  {[
+                    ["Any three masses with a middle mean form a triad.", "Chemical similarity is compulsory; arithmetic alone is insufficient."],
+                    ["Newlands proved that every eighth element is always similar.", "The rule worked mainly among lighter elements and failed as the list expanded."],
+                    ["Meyer’s peaks are transition metals.", "Major peaks are alkali metals; transition metals lie near broad minima."],
+                    ["Mendeleev followed atomic weight without deviation.", "He deliberately privileged chemical similarity and corrected doubtful masses."],
+                    ["Isotopes need separate boxes because their masses differ.", "They share one Z and essentially the same electron structure, so they occupy one position."],
+                    ["Atomic number is merely the row serial number.", "Moseley linked it to nuclear charge through characteristic X-ray frequencies."],
+                    ["All d-block elements are transition elements.", "Zn, Cd, and Hg are d-block but lack an incomplete d subshell in their common atomic/ionic states."],
+                    ["Helium belongs chemically in Group 2 because it is 1s².", "Its complete shell and inert chemistry justify Group 18, while its differentiating subshell remains s."],
+                    ["The f-block is chemically detached from periods 6 and 7.", "It is drawn below only to preserve width; it is inserted continuously after the s-block."],
+                    ["Every electron configuration follows the simplest filling order exactly.", "Subshell-energy differences produce configurations such as Cr 3d⁵4s¹, Cu 3d¹⁰4s¹, and Pd 4d¹⁰5s⁰."],
+                    ["Hydrogen has a completely settled position.", "Its 1s¹ count supports Group 1, but H⁻ formation and non-metal chemistry preserve ambiguity."],
+                    ["Temporary systematic names are the current names of elements 114 and 118.", "Flerovium and Oganesson are permanent names; ununquadium and ununoctium illustrate the temporary construction rule."],
+                  ].map(([claim, correction]) => <tr key={claim}><td className="border-b border-white/5 p-2 text-rose-100">{claim}</td><td className="border-b border-white/5 p-2 text-slate-200">{correction}</td></tr>)}
+                </tbody>
+              </table>
+            </div>
+          </Section>
+        </div>
+      </div>
+    </main>
+  );
+}

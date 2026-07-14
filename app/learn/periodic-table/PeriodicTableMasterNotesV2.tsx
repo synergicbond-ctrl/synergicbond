@@ -5527,7 +5527,7 @@ export default function PeriodicTableMasterNotes() {
     switch (active) {
       case "compendium": return <SectionWorldReference />;
       case "notebook": return <SectionStudentNotebook />;
-      case "history": return <SectionHistory />;
+      case "history": return <HistoryModernLawAuthority />;
       case "configuration": return <SectionConfiguration />;
       case "map": return <SectionTrendMap />;
       case "radius": return <SectionAtomicRadius />;

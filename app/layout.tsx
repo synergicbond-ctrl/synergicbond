@@ -6,6 +6,7 @@ import { LanguageProvider } from "@/lib/i18n";
 import Navbar from "@/components/Navbar";
 import BetaTracker from "@/components/BetaTracker";
 import FeedbackButton from "@/components/FeedbackButton";
+import AutoTranslateBridge from "@/components/AutoTranslateBridge";
 
 const siteUrl = new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "https://synergicbond.vercel.app");
 
@@ -49,6 +50,7 @@ export default function RootLayout({
       <body className="min-h-screen bg-[#0B0F19] text-white flex flex-col m-0 p-0 w-full antialiased">
         <ThemeProvider>
           <LanguageProvider>
+            <AutoTranslateBridge />
             <Navbar />
             {children}
             <BetaTracker />

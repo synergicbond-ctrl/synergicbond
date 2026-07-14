@@ -195,3 +195,19 @@ video {
     animation: none;
   }
 }
+
+/* ── Google auto-translate bridge (components/AutoTranslateBridge.tsx) ──
+   Hide Google's default banner/iframe and the top-offset it injects on
+   <body>, so translated pages keep the site's own layout untouched. */
+#google_translate_element,
+.goog-te-banner-frame,
+.goog-te-balloon-frame,
+.skiptranslate:not(font) {
+  display: none !important;
+}
+body {
+  top: 0 !important;
+}
+body.notranslate .goog-te-spinner-pos {
+  display: none !important;
+}

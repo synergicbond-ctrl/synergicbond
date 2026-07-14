@@ -1,4 +1,5 @@
 "use client";
+import ElectronicConfigurationMasterV2 from "./ElectronicConfigurationMasterV2";
 import { InteractivePeriodicTableV16 } from "./InteractivePeriodicTableV16";
 
 /* eslint-disable react/no-unescaped-entities, react/jsx-key, @typescript-eslint/no-unused-vars */
@@ -2605,20 +2606,7 @@ export function ElectronicConfigurationDeepDive() {
 }
 
 export function SectionConfiguration() {
-  return (
-    <>
-      <div>
-            <SectionConfigurationOverview />
-            <ElectronicConfigurationDeepDive />
-          </div>
-      <div
-        data-integration="SectionConfiguration-periodicity-generated-corpus-phd-v9"
-        style={{ marginTop: 34 }}
-      >
-        <PeriodicTableDeepAdditions topic="configuration" />
-      </div>
-    </>
-  );
+  return <ElectronicConfigurationMasterV2 />;
 }
 
 /* =============================================================================

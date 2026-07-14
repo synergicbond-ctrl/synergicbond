@@ -10,8 +10,8 @@ const C = {
   surface2: "#182b3e",
   border: "#24405c",
   text: "#eef3f8",
-  dim: "#c3d1dd",
-  faint: "#91a9bc",
+  dim: "#dbe6ee",
+  faint: "#bfd0dd",
   gold: "#e8b84b",
   cyan: "#5fd4ea",
   blue: "#7fb2e5",
@@ -93,7 +93,7 @@ function H3({ children }: { children: React.ReactNode }) {
 
 function P({ children }: { children: React.ReactNode }) {
   return (
-    <p style={{ color: C.dim, lineHeight: 1.72, margin: "8px 0 12px" }}>
+    <p style={{ color: C.dim, fontSize: "clamp(1rem, 1.4vw, 1.08rem)", lineHeight: 1.76, margin: "8px 0 12px" }}>
       {children}
     </p>
   );
@@ -123,15 +123,15 @@ function Callout({
           color: accent,
           fontFamily: C.mono,
           fontWeight: 800,
-          fontSize: ".78rem",
-          letterSpacing: ".08em",
+          fontSize: ".86rem",
+          letterSpacing: ".075em",
           textTransform: "uppercase",
           marginBottom: 6,
         }}
       >
         {title}
       </div>
-      <div style={{ color: C.dim, lineHeight: 1.65 }}>{children}</div>
+      <div style={{ color: C.dim, fontSize: "1.02rem", lineHeight: 1.7 }}>{children}</div>
     </aside>
   );
 }
@@ -171,7 +171,7 @@ function MiniCard({
       }}
     >
       <strong style={{ color: C.text, display: "block", marginBottom: 7 }}>{title}</strong>
-      <div style={{ color: C.dim, lineHeight: 1.6 }}>{children}</div>
+      <div style={{ color: C.dim, fontSize: "1rem", lineHeight: 1.66 }}>{children}</div>
     </div>
   );
 }
@@ -193,7 +193,7 @@ function DataTable({
           minWidth: 620,
           borderCollapse: "collapse",
           color: C.dim,
-          fontSize: ".94rem",
+          fontSize: "1rem",
         }}
       >
         <thead>
@@ -206,7 +206,7 @@ function DataTable({
                   textAlign: "left",
                   padding: "10px 12px",
                   borderBottom: `2px solid ${accent}`,
-                  fontSize: ".78rem",
+                  fontSize: ".84rem",
                   letterSpacing: ".06em",
                   textTransform: "uppercase",
                 }}
@@ -249,20 +249,110 @@ function OrbitalBoxes({ boxes }: { boxes: string[] }) {
           style={{
             display: "inline-grid",
             placeItems: "center",
-            minWidth: 34,
-            height: 34,
+            minWidth: 38,
+            height: 38,
             padding: "0 4px",
             border: `1px solid ${C.coral}`,
             borderRadius: 6,
             color: C.text,
             fontFamily: C.mono,
-            fontWeight: 700,
+            fontWeight: 800,
+            fontSize: "1rem",
           }}
         >
           {box || " "}
         </span>
       ))}
     </span>
+  );
+}
+
+function EnergyLevelLadder({
+  title,
+  subtitle,
+  levels,
+  accent,
+}: {
+  title: string;
+  subtitle: string;
+  levels: string[];
+  accent: string;
+}) {
+  return (
+    <div
+      style={{
+        border: `1px solid ${C.border}`,
+        borderRadius: 16,
+        background: C.surface2,
+        padding: "18px 18px 16px",
+        minWidth: 0,
+      }}
+    >
+      <div style={{ color: C.text, fontSize: "1.2rem", fontWeight: 800, marginBottom: 5 }}>{title}</div>
+      <div style={{ color: C.dim, fontSize: "1rem", lineHeight: 1.55, marginBottom: 16 }}>{subtitle}</div>
+      <div style={{ display: "grid", gridTemplateColumns: "36px 1fr", gap: 10, alignItems: "stretch" }}>
+        <div
+          aria-hidden="true"
+          style={{
+            color: accent,
+            fontFamily: C.mono,
+            fontWeight: 900,
+            fontSize: "1rem",
+            writingMode: "vertical-rl",
+            transform: "rotate(180deg)",
+            textAlign: "center",
+            borderLeft: `2px solid ${accent}`,
+            paddingLeft: 8,
+          }}
+        >
+          ENERGY INCREASES ↑
+        </div>
+        <div style={{ display: "flex", flexDirection: "column", gap: 12, justifyContent: "space-between" }}>
+          {levels.map((level, index) => (
+            <div key={level} style={{ display: "grid", gridTemplateColumns: "minmax(120px, auto) 1fr", gap: 12, alignItems: "center" }}>
+              <strong style={{ color: C.text, fontFamily: C.mono, fontSize: "1.04rem", whiteSpace: "nowrap" }}>{level}</strong>
+              <span style={{ height: 2, borderRadius: 2, background: accent, opacity: 1 - index * 0.07 }} />
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function EnergyLevelComparison() {
+  return (
+    <figure style={{ margin: "18px 0" }}>
+      <div style={{ color: C.text, fontFamily: C.serif, fontSize: "clamp(1.25rem, 2.2vw, 1.55rem)", fontWeight: 800, marginBottom: 6 }}>
+        One-electron versus multi-electron orbital energies
+      </div>
+      <div style={{ color: C.dim, fontSize: "1.02rem", lineHeight: 1.65, marginBottom: 14 }}>
+        The same principal shell remains degenerate in the non-relativistic one-electron Coulomb model, whereas shielding, penetration and electron–electron repulsion split subshell energies in many-electron species.
+      </div>
+      <div
+        style={{
+          display: "grid",
+          gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 330px), 1fr))",
+          gap: 14,
+        }}
+      >
+        <EnergyLevelLadder
+          title="Hydrogen-like species"
+          subtitle="Energy depends only on n; all orbitals with the same n are degenerate."
+          accent={C.cyan}
+          levels={["4s = 4p = 4d = 4f", "3s = 3p = 3d", "2s = 2p", "1s"]}
+        />
+        <EnergyLevelLadder
+          title="Multi-electron species"
+          subtitle="Subshells split. This is a schematic local order, not a universal cross-shell law."
+          accent={C.gold}
+          levels={["3d", "4s", "3p", "3s", "2p", "2s", "1s"]}
+        />
+      </div>
+      <figcaption style={{ color: C.dim, fontSize: ".98rem", lineHeight: 1.6, marginTop: 10 }}>
+        The comparison clarifies why the simple n-only degeneracy of H, He⁺, Li²⁺ … does not survive unchanged in ordinary many-electron atoms.
+      </figcaption>
+    </figure>
   );
 }
 
@@ -276,49 +366,110 @@ function AufbauDiagram() {
     ["6s", "6p", "6d"],
     ["7s", "7p"],
   ];
+  const paths = [
+    "M270 28 L80 116",
+    "M270 113 L80 201",
+    "M450 140 L80 307",
+    "M450 225 L80 392",
+    "M640 225 L80 477",
+    "M640 310 L80 562",
+    "M830 310 L80 647",
+    "M830 395 L270 647",
+  ];
+
   return (
-    <figure style={{ margin: "18px 0" }}>
-      <svg
-        role="img"
-        aria-labelledby="ec-aufbau-title ec-aufbau-desc"
-        viewBox="0 0 760 480"
-        style={{ width: "100%", height: "auto", borderRadius: 16, background: C.surface2 }}
+    <figure style={{ margin: "20px 0" }}>
+      <div style={{ color: C.text, fontFamily: C.serif, fontSize: "clamp(1.3rem, 2.3vw, 1.65rem)", fontWeight: 800, marginBottom: 6 }}>
+        Madelung diagonal guide
+      </div>
+      <div style={{ color: C.dim, fontSize: "1.04rem", lineHeight: 1.65, marginBottom: 12 }}>
+        Read every cyan arrow from its upper-right end toward its lower-left arrowhead. Each orbital label is kept large and fully opaque for clear desktop and mobile reading.
+      </div>
+      <div
+        style={{
+          overflowX: "auto",
+          border: `1px solid ${C.border}`,
+          borderRadius: 18,
+          background: C.surface2,
+          padding: "10px 10px 4px",
+        }}
       >
-        <title id="ec-aufbau-title">Diagonal orbital filling guide</title>
-        <desc id="ec-aufbau-desc">
-          Original diagram showing shells and subshells arranged in rows with diagonal arrows that generate the usual Madelung filling sequence.
-        </desc>
-        <defs>
-          <marker id="ecArrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
-            <path d="M 0 0 L 10 5 L 0 10 z" fill={C.cyan} />
-          </marker>
-        </defs>
-        <text x="28" y="42" fill={C.text} fontSize="24" fontWeight="700">Madelung diagonal guide</text>
-        <text x="28" y="70" fill={C.faint} fontSize="15">Read each cyan diagonal from upper right to lower left.</text>
-        {labels.map((row, r) =>
-          row.map((label, c) => {
-            const x = 105 + c * 120;
-            const y = 112 + r * 52;
-            return (
-              <g key={label}>
-                <circle cx={x} cy={y} r="22" fill={C.bg} stroke={C.blue} strokeWidth="2" />
-                <text x={x} y={y + 6} textAnchor="middle" fill={C.text} fontSize="16" fontWeight="700">{label}</text>
-              </g>
-            );
-          }),
-        )}
-        {[
-          [135, 90, 72, 142], [255, 90, 72, 194], [375, 90, 72, 246], [495, 90, 72, 298],
-          [615, 90, 72, 350], [615, 142, 72, 402], [495, 246, 72, 454],
-        ].map(([x1, y1, x2, y2], i) => (
-          <line key={i} x1={x1} y1={y1} x2={x2} y2={y2} stroke={C.cyan} strokeWidth="2" markerEnd="url(#ecArrow)" opacity=".9" />
-        ))}
-        <text x="355" y="442" fill={C.gold} fontFamily={C.mono} fontSize="14" textAnchor="middle">
-          1s → 2s → 2p → 3s → 3p → 4s → 3d → 4p → 5s …
-        </text>
-      </svg>
-      <figcaption style={{ color: C.faint, fontSize: ".86rem", lineHeight: 1.5, marginTop: 8 }}>
-        The arrows are a filling guide, not a universal fixed orbital-energy diagram for every atom, ion or excited state.
+        <svg
+          role="img"
+          aria-labelledby="ec-aufbau-title ec-aufbau-desc"
+          viewBox="0 0 920 680"
+          style={{ display: "block", width: "100%", minWidth: 760, height: "auto" }}
+        >
+          <title id="ec-aufbau-title">Large high-contrast Madelung diagonal orbital-filling guide</title>
+          <desc id="ec-aufbau-desc">
+            Orbitals from 1s through 7p are arranged by principal shell and subshell. Bright cyan arrows run from upper right to lower left and generate the ordinary Madelung filling sequence.
+          </desc>
+          <defs>
+            <marker id="ecArrowV2" viewBox="0 0 12 12" refX="10" refY="6" markerWidth="10" markerHeight="10" orient="auto">
+              <path d="M 0 0 L 12 6 L 0 12 z" fill={C.cyan} />
+            </marker>
+            <filter id="ecNodeGlow" x="-30%" y="-30%" width="160%" height="160%">
+              <feDropShadow dx="0" dy="2" stdDeviation="3" floodColor="#000000" floodOpacity="0.45" />
+            </filter>
+          </defs>
+
+          {paths.map((d, index) => (
+            <path
+              key={d}
+              d={d}
+              fill="none"
+              stroke={C.cyan}
+              strokeWidth="4"
+              strokeLinecap="round"
+              markerEnd="url(#ecArrowV2)"
+              opacity={index < 2 ? 0.92 : 1}
+            />
+          ))}
+
+          {labels.map((row, r) =>
+            row.map((label, c) => {
+              const x = 170 + c * 190;
+              const y = 95 + r * 85;
+              return (
+                <g key={label} filter="url(#ecNodeGlow)">
+                  <circle cx={x} cy={y} r="34" fill={C.bg} stroke={C.blue} strokeWidth="4" />
+                  <text
+                    x={x}
+                    y={y + 9}
+                    textAnchor="middle"
+                    fill="#ffffff"
+                    fontSize="25"
+                    fontFamily={C.sans}
+                    fontWeight="850"
+                  >
+                    {label}
+                  </text>
+                </g>
+              );
+            }),
+          )}
+        </svg>
+      </div>
+
+      <div
+        style={{
+          marginTop: 12,
+          padding: "14px 16px",
+          border: `1px solid ${C.gold}`,
+          borderRadius: 12,
+          background: `${C.gold}12`,
+          color: "#ffd36a",
+          fontFamily: C.mono,
+          fontSize: "clamp(1rem, 1.8vw, 1.16rem)",
+          fontWeight: 800,
+          lineHeight: 1.75,
+          overflowWrap: "anywhere",
+        }}
+      >
+        1s → 2s → 2p → 3s → 3p → 4s → 3d → 4p → 5s → 4d → 5p → 6s → 4f → 5d → 6p → 7s → 5f → 6d → 7p
+      </div>
+      <figcaption style={{ color: C.dim, fontSize: ".98rem", lineHeight: 1.6, marginTop: 10 }}>
+        This is a build-up guide. It is not a permanently fixed energy diagram for every atom, ion or excited state.
       </figcaption>
     </figure>
   );
@@ -480,6 +631,7 @@ export default function ElectronicConfigurationMasterV2() {
         <Callout title="Penetration and shielding" accent={C.violet}>
           Greater penetration means more time close to the nucleus, a larger effective nuclear attraction and usually lower orbital energy. Cross-shell order is not fixed and can change after electrons are added or removed.
         </Callout>
+        <EnergyLevelComparison />
       </Shell>
 
       <Shell>

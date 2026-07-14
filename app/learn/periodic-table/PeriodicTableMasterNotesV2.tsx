@@ -4,6 +4,7 @@ import { InteractivePeriodicTableV16 } from "./InteractivePeriodicTableV16";
 /* eslint-disable react/no-unescaped-entities, react/jsx-key, @typescript-eslint/no-unused-vars */
 
 import React, { useMemo, useState } from "react";
+import HistoryModernLawAuthority from "./HistoryModernLawAuthority";
 import * as katex from "katex";
 import { ElectronegativityFactorsApplicationsV14 } from "./PeriodicTableElectronegativityV14Additions";
 import { SectionElectronegativityV12 } from "./PeriodicTableElectronegativityV12";
@@ -1246,7 +1247,10 @@ const allPtEntries = [...ptEntries, ...lanthanides, ...actinides];
 export function MiniPeriodicTable() {
   return <InteractivePeriodicTableV16 />;
 }
-export function SectionHistory() {
+/* history-modern-law-authority-v2: other periodicity modules untouched */
+export function SectionHistory(){ return <HistoryModernLawAuthority />; }
+
+export function SectionHistoryLegacy() {
   return <PeriodicHistoryMasterV2 />;
 }
 

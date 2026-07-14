@@ -1,4 +1,5 @@
 import React, { type ReactNode } from "react";
+import { LotharMeyerNCERTCurveV3, MendeleevNCERTTableV3 } from "./PeriodicityNCERTExactFiguresV3";
 
 type TimelineItem = { year: string; scientist: string; idea: string };
 type TableColumn<T> = { key: keyof T; label: string; align?: "left" | "center" | "right" };
@@ -161,33 +162,6 @@ function DataTable<T extends Record<string, ReactNode>>({ rows, columns }: { row
   );
 }
 
-function MeyerCurve() {
-  return (
-    <figure className="my-6 rounded-2xl border border-cyan-300/20 bg-slate-950/55 p-3 md:p-5">
-      <svg viewBox="0 0 920 390" className="h-auto w-full" role="img" aria-labelledby="meyer-title meyer-desc">
-        <title id="meyer-title">Lothar Meyer atomic-volume curve</title>
-        <desc id="meyer-desc">A repeating wave of atomic volume versus atomic mass, with alkali metals near peaks and transition elements near valleys.</desc>
-        <defs>
-          <linearGradient id="meyerFill" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#22d3ee" stopOpacity="0.26"/><stop offset="1" stopColor="#22d3ee" stopOpacity="0"/></linearGradient>
-        </defs>
-        <g stroke="#475569" strokeWidth="1" opacity="0.45">
-          {[70,130,190,250,310].map((y) => <line key={y} x1="78" y1={y} x2="875" y2={y}/>) }
-          {[150,270,390,510,630,750,870].map((x) => <line key={x} x1={x} y1="40" x2={x} y2="320"/>) }
-        </g>
-        <path d="M85 300 L115 245 L145 300 L180 230 L215 265 L245 315 L275 205 L300 315 L335 292 L365 220 L395 310 L425 320 L455 300 L485 265 L515 250 L545 90 L580 180 L620 280 L655 315 L690 302 L720 310 L745 265 L770 50 L795 265 L820 315 L855 320" fill="url(#meyerFill)"/>
-        <path d="M85 300 L115 245 L145 300 L180 230 L215 265 L245 315 L275 205 L300 315 L335 292 L365 220 L395 310 L425 320 L455 300 L485 265 L515 250 L545 90 L580 180 L620 280 L655 315 L690 302 L720 310 L745 265 L770 50 L795 265 L820 315 L855 320" fill="none" stroke="#38bdf8" strokeWidth="4" strokeLinejoin="round"/>
-        {[{x:115,y:245,t:"Li"},{x:180,y:230,t:"Na"},{x:275,y:205,t:"K"},{x:545,y:90,t:"Rb"},{x:770,y:50,t:"Cs"},{x:795,y:265,t:"Ba"}].map((p) => <g key={p.t}><circle cx={p.x} cy={p.y} r="6" fill="#facc15"/><text x={p.x+8} y={p.y-8} fill="#f8fafc" fontSize="16" fontWeight="700">{p.t}</text></g>)}
-        <line x1="78" y1="320" x2="875" y2="320" stroke="#cbd5e1" strokeWidth="2"/><line x1="78" y1="320" x2="78" y2="40" stroke="#cbd5e1" strokeWidth="2"/>
-        <text x="470" y="372" fill="#cbd5e1" textAnchor="middle" fontSize="16">Atomic mass →</text>
-        <text x="25" y="180" fill="#cbd5e1" textAnchor="middle" fontSize="16" transform="rotate(-90 25 180)">Atomic volume →</text>
-        <text x="535" y="60" fill="#fde68a" fontSize="16" fontWeight="700">alkali-metal peaks</text>
-        <text x="360" y="345" fill="#a7f3d0" fontSize="15">transition-region valleys</text>
-      </svg>
-      <figcaption className="mt-2 text-center text-xs text-slate-400">Chemically related families occupy corresponding positions in successive waves.</figcaption>
-    </figure>
-  );
-}
-
 function TelluricScrew() {
   return (
     <figure className="mx-auto my-5 max-w-xl rounded-2xl border border-violet-300/20 bg-slate-950/55 p-4">
@@ -284,13 +258,14 @@ export default function HistoryModernLawAuthority() {
       <SectionTitle code="E">Lothar Meyer’s atomic-volume curve</SectionTitle>
       <div className="mt-4 rounded-2xl border border-cyan-300/20 bg-cyan-400/5 p-5 text-center text-lg font-black text-cyan-100">Atomic volume = gram atomic mass / density &nbsp; (cm³ mol⁻¹)</div>
       <p className="mt-4 leading-7 text-slate-300">Meyer plotted atomic volume against atomic weight and obtained a recurring wave. Alkali metals appeared near sharp peaks, alkaline-earth metals on descending sections, transition elements and several metalloids near broad valleys, and halogens on rising sections toward the next alkali-metal maximum.</p>
-      <MeyerCurve />
+      <LotharMeyerNCERTCurveV3 />
       <DataTable rows={[{position:"Sharp peaks",family:"Alkali metals",reason:"Large atomic volume and strongly electropositive character"},{position:"Descending slopes",family:"Alkaline-earth metals",reason:"Lower volume than the neighbouring alkali metal"},{position:"Broad valleys",family:"Transition elements and metalloids",reason:"More compact structures and smaller atomic volumes"},{position:"Rising slopes",family:"Halogens",reason:"Approach the next major maximum while remaining strongly electronegative"}]} columns={[{key:"position",label:"Position on wave"},{key:"family",label:"Family"},{key:"reason",label:"Interpretation"}]} />
       <Note tone="green"><b>Conclusion:</b> physical properties of elements are periodic functions of atomic weight. Meyer also recognised recurrence in properties such as melting point, boiling point, thermal expansion, malleability and compressibility.</Note>
 
       <SectionTitle code="F">Mendeleev’s periodic table, 1869–1871</SectionTitle>
       <Note tone="blue"><b>Mendeleev’s periodic law:</b> the physical and chemical properties of elements are periodic functions of their atomic weights.</Note>
       <p className="leading-7 text-slate-300">Mendeleev’s decisive advance was predictive flexibility. He retained chemically similar elements in the same column, deliberately left gaps for unknown elements and occasionally reversed strict atomic-weight order when chemical evidence demanded it.</p>
+      <MendeleevNCERTTableV3 />
       <DataTable rows={mendeleevCharacteristics} columns={[{key:"feature",label:"Feature"},{key:"detail",label:"Description"}]} />
       <Note tone="amber"><b>Valency clue:</b> for the principal groups, the group number tracked the highest valency toward oxygen: group I → R₂O, group II → RO, group III → R₂O₃, continuing to group VII → R₂O₇.</Note>
 

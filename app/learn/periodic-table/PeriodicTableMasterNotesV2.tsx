@@ -22,10 +22,7 @@ import {
   V10OlympiadEnrichmentPanel,
 } from "./PeriodicTableV10WorldAdditions";
 import PeriodicTableDeepAdditions from "./PeriodicTableDeepAdditions";
-import PeriodicHistoryClean from "./PeriodicHistoryClean";
-
-
-
+import PeriodicHistoryMasterV2 from "./PeriodicHistoryMasterV2";
 /* =============================================================================
    PERIODIC TABLE & PERIODIC PROPERTIES — MASTER NOTES
    Original educational synthesis for Synergic Bond.
@@ -1250,7 +1247,7 @@ export function MiniPeriodicTable() {
   return <InteractivePeriodicTableV16 />;
 }
 export function SectionHistory() {
-  return <PeriodicHistoryClean />;
+  return <PeriodicHistoryMasterV2 />;
 }
 
 

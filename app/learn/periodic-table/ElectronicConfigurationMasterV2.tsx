@@ -3,6 +3,7 @@
 /* eslint-disable react/no-unescaped-entities */
 import React from "react";
 import * as katex from "katex";
+import { ExchangeCountingGuideV4, MadelungGuideV4 } from "./ElectronicConfigurationVisualFixV4";
 
 const C = {
   bg: "#0a1622",
@@ -357,171 +358,7 @@ function EnergyLevelComparison() {
 }
 
 function AufbauDiagram() {
-  const labels = [
-    ["1s"],
-    ["2s", "2p"],
-    ["3s", "3p", "3d"],
-    ["4s", "4p", "4d", "4f"],
-    ["5s", "5p", "5d", "5f"],
-    ["6s", "6p", "6d"],
-    ["7s", "7p"],
-  ];
-
-  const paths = [
-    "M222 32 L62 108",
-    "M380 100 L62 176",
-    "M538 100 L62 244",
-    "M694 168 L62 312",
-    "M694 236 L62 380",
-    "M694 304 L62 448",
-    "M694 372 L62 516",
-    "M380 516 L694 440",
-  ];
-
-  const sequence = [
-    "1s","2s","2p","3s","3p","4s","3d","4p","5s","4d","5p","6s","4f","5d","6p","7s","5f","6d","7p"
-  ];
-
-  return (
-    <figure style={{ margin: "18px 0" }}>
-      <div
-        style={{
-          color: C.text,
-          fontFamily: C.serif,
-          fontSize: "clamp(1.22rem, 2.1vw, 1.52rem)",
-          fontWeight: 800,
-          marginBottom: 6,
-        }}
-      >
-        Madelung diagonal guide
-      </div>
-
-      <div
-        style={{
-          color: C.dim,
-          fontSize: "1rem",
-          lineHeight: 1.65,
-          marginBottom: 12,
-          maxWidth: 960,
-        }}
-      >
-        Read each cyan arrow from upper right to lower left. The figure is intentionally more compact so the orbital labels stay visible on both desktop and mobile screens.
-      </div>
-
-      <div
-        style={{
-          maxWidth: 900,
-          margin: "0 auto",
-          overflowX: "auto",
-          border: `1px solid ${C.border}`,
-          borderRadius: 18,
-          background: C.surface2,
-          padding: "12px 12px 8px",
-        }}
-      >
-        <svg
-          role="img"
-          aria-labelledby="ec-aufbau-title ec-aufbau-desc"
-          viewBox="0 0 760 560"
-          style={{
-            display: "block",
-            width: "100%",
-            minWidth: 620,
-            maxWidth: 820,
-            height: "auto",
-            margin: "0 auto",
-          }}
-        >
-          <title id="ec-aufbau-title">Compact high-contrast Madelung diagonal orbital-filling guide</title>
-          <desc id="ec-aufbau-desc">
-            Orbitals from 1s through 7p are arranged by principal shell and subshell. Cyan arrows indicate the ordinary filling sequence used by the Madelung guide.
-          </desc>
-
-          <defs>
-            <marker id="ecArrowCompact" viewBox="0 0 12 12" refX="10" refY="6" markerWidth="10" markerHeight="10" orient="auto">
-              <path d="M 0 0 L 12 6 L 0 12 z" fill={C.cyan} />
-            </marker>
-            <filter id="ecNodeGlowCompact" x="-30%" y="-30%" width="160%" height="160%">
-              <feDropShadow dx="0" dy="1.5" stdDeviation="2.5" floodColor="#000000" floodOpacity="0.45" />
-            </filter>
-          </defs>
-
-          {paths.map((d) => (
-            <path
-              key={d}
-              d={d}
-              fill="none"
-              stroke={C.cyan}
-              strokeWidth="3.5"
-              strokeLinecap="round"
-              markerEnd="url(#ecArrowCompact)"
-              opacity="0.95"
-            />
-          ))}
-
-          {labels.map((row, r) =>
-            row.map((label, c) => {
-              const x = 160 + c * 158;
-              const y = 78 + r * 68;
-              return (
-                <g key={label} filter="url(#ecNodeGlowCompact)">
-                  <circle cx={x} cy={y} r="28" fill={C.bg} stroke={C.blue} strokeWidth="3.5" />
-                  <text
-                    x={x}
-                    y={y + 8}
-                    textAnchor="middle"
-                    fill="#ffffff"
-                    fontSize="21"
-                    fontFamily={C.sans}
-                    fontWeight="850"
-                  >
-                    {label}
-                  </text>
-                </g>
-              );
-            }),
-          )}
-        </svg>
-      </div>
-
-      <div
-        style={{
-          marginTop: 12,
-          padding: "12px 14px",
-          border: `1px solid ${C.gold}`,
-          borderRadius: 12,
-          background: `${C.gold}12`,
-          display: "flex",
-          flexWrap: "wrap",
-          gap: "8px 10px",
-          alignItems: "center",
-          justifyContent: "center",
-        }}
-      >
-        {sequence.map((item, i) => (
-          <React.Fragment key={item + i}>
-            <span
-              style={{
-                color: "#ffd36a",
-                fontFamily: C.mono,
-                fontSize: "clamp(.98rem, 1.6vw, 1.08rem)",
-                fontWeight: 800,
-              }}
-            >
-              {item}
-            </span>
-            {i < sequence.length - 1 ? (
-              <span style={{ color: C.gold, fontWeight: 900 }}>→</span>
-            ) : null}
-          </React.Fragment>
-        ))}
-      </div>
-
-      <figcaption style={{ color: C.dim, fontSize: ".96rem", lineHeight: 1.6, marginTop: 10 }}>
-        The Madelung diagram is a practical filling guide, not a universal fixed energy diagram for every atom, ion or excited state.
-      </figcaption>
-    </figure>
-  );
+  return <MadelungGuideV4 />;
 }
 
 
@@ -779,23 +616,7 @@ export default function ElectronicConfigurationMasterV2() {
           accent={C.violet}
         />
         <P>Half-filled and completely filled patterns can receive relative stabilisation from symmetrical occupation, exchange and the complete multi-electron energy balance. They are useful clues, not universal commands.</P>
-        <H3>Pairing energy</H3>
-        <P>Pairing energy is the cost, in a simplified orbital model, of placing a second electron in an already occupied orbital rather than keeping electrons unpaired in separate degenerate orbitals.</P>
-        <MathBlock tex={String.raw`N_{\mathrm{pair}}=\text{number of doubly occupied orbitals}`} />
-        <H3>Exchange counting</H3>
-        <P>If n↑ and n↓ are the numbers of spin-up and spin-down electrons in a degenerate subshell, the elementary same-spin pair count is:</P>
-        <MathBlock tex={String.raw`N_{\mathrm{ex}}=\binom{n_\uparrow}{2}+\binom{n_\downarrow}{2}`} />
-        <Grid>
-          <MiniCard title="Example: 3d⁴" accent={C.green}>
-            <OrbitalBoxes boxes={["↑", "↑", "↑", "↑", ""]} />. Npair = 0, n↑ = 4, n↓ = 0 and Nex = C(4,2) = 6.
-          </MiniCard>
-          <MiniCard title="Example: 3d⁸" accent={C.cyan}>
-            <OrbitalBoxes boxes={["↑↓", "↑↓", "↑↓", "↑", "↑"]} />. Npair = 3, n↑ = 5, n↓ = 3 and Nex = C(5,2) + C(3,2) = 13.
-          </MiniCard>
-        </Grid>
-        <Callout title="Do not use bookkeeping as an exact total-energy formula" accent={C.coral}>
-          “Pairing cost minus exchange stabilisation” is only a qualitative model. Actual ground states depend on orbital energies, Coulomb repulsion, exchange integrals, correlation and—for heavy atoms—relativistic effects. Do not assign invented numerical values and present the result as an exact aggregate energy.
-        </Callout>
+        <ExchangeCountingGuideV4 />
       </Shell>
 
       <Shell>

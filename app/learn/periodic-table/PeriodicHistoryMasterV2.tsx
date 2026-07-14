@@ -1,6 +1,7 @@
 "use client";
 
 import type { CSSProperties, ReactNode } from "react";
+import PeriodicityHistoryVisualsV4 from "./PeriodicityHistoryVisualsV4";
 
 const P = {
   ink: "#eef7ff",
@@ -1076,7 +1077,7 @@ function ChapterRoadmap() {
 }
 
 export default function PeriodicHistoryMasterV2() {
-  return (
+  return (<><PeriodicityHistoryVisualsV4 />{(
     <article data-notes-version="periodic-history-master-v2" style={styles.page}>
       <header style={styles.hero}>
         <div style={styles.heroGlowA} />
@@ -1499,7 +1500,7 @@ export default function PeriodicHistoryMasterV2() {
         </p>
       </Callout>
     </article>
-  );
+  )}</>);
 }
 
 const styles: Record<string, CSSProperties> = {

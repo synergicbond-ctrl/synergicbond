@@ -25,6 +25,7 @@ import {
 } from "./PeriodicTableV10WorldAdditions";
 import PeriodicTableDeepAdditions from "./PeriodicTableDeepAdditions";
 import PeriodicHistoryMasterV2 from "./PeriodicHistoryMasterV2";
+import PeriodicityQuestionBank from "./PeriodicityQuestionBank";
 /* =============================================================================
    PERIODIC TABLE & PERIODIC PROPERTIES — MASTER NOTES
    Original educational synthesis for Synergic Bond.
@@ -4241,59 +4242,7 @@ const workshopExamples = [
 ];
 
 export function SectionWorkshop() {
-  return (
-    <>
-      <div>
-            <SectionIntro
-              eyebrow="Original application set"
-              title="Worked Example Workshop: From Rules to Multi-Factor Reasoning"
-              summary="These examples are newly written and arranged by concept. Each solution identifies the controlling variable instead of relying on memorised arrows, so the same method transfers to unfamiliar questions."
-              accent={T.d}
-            />
-            <H2 id="workshop">Mixed Worked Examples</H2>
-            <P>
-              Before ranking any set, label the species, count shells and electrons, compare nuclear charge, inspect the configuration and note the physical medium. Exact numerical d-block orders should be treated as data rather than forced into an oversimplified trend.
-            </P>
-            {workshopExamples.map((ex) => (
-              <WorkedExample key={ex.number} {...ex} />
-            ))}
-
-            <H2>High-Yield Comparison Matrix</H2>
-            <DataTable
-              columns={["Question asks for", "First comparison", "Second comparison", "Common trap"]}
-              rows={[
-                ["Atomic / ionic radius", "shell count", "Z for isoelectronic species", "mixing atom and ion radii"],
-                ["Ionization enthalpy", "size and Zeff", "subshell / pairing stability", "assuming a perfectly smooth period"],
-                ["Electron gain enthalpy", "resulting configuration", "crowding and size", "equating it directly with electronegativity"],
-                ["Electronegativity", "bonded-atom environment", "Zeff, radius, hybridization", "assigning a value to an isolated atom"],
-                ["Reducing power in water", "complete redox cycle", "hydration and atomization", "using gas-phase IE alone"],
-                ["Solubility of ionic solid", "lattice enthalpy", "hydration + entropy", "using only ionic size"],
-                ["Covalent character", "cation polarizing power", "anion polarizability", "assuming all metal–nonmetal bonds are purely ionic"],
-                ["Oxide acidity", "metallic character", "oxidation state", "ignoring amphoteric behaviour"],
-              ]}
-              accent={T.d}
-            />
-
-            <H2>Final One-Page Logic Chain</H2>
-            <ConceptGrid
-              items={[
-                { title: "Across a period", tag: "Zeff ↑", accent: T.gold, body: "radius ↓ → IE generally ↑ → EN ↑ → metallic character ↓ → oxide acidity ↑" },
-                { title: "Down a group", tag: "SHELLS ↑", accent: T.cyan, body: "radius ↑ → IE generally ↓ → EN ↓ → metallic character ↑; heavy-element contractions may interrupt" },
-                { title: "Isoelectronic series", tag: "ELECTRONS FIXED", accent: T.p, body: "higher Z → smaller radius → stronger electron binding" },
-                { title: "Successive ionization", tag: "GIANT JUMP", accent: T.s, body: "jump after n electrons → n valence electrons removed before core exposure" },
-                { title: "Electron addition", tag: "ATTRACTION − REPULSION", accent: T.d, body: "favourability depends on Zeff, size, crowding and resulting configuration" },
-                { title: "Ionic energetics", tag: "CHARGE DENSITY", accent: T.f, body: "small/high-charge ions give large lattice and hydration magnitudes and stronger polarization" },
-              ]}
-            />
-          </div>
-      <div
-        data-integration="SectionWorkshop-periodicity-generated-corpus-phd-v9"
-        style={{ marginTop: 34 }}
-      >
-        <PeriodicTableDeepAdditions topic="workshop" />
-      </div>
-    </>
-  );
+  return <PeriodicityQuestionBank />;
 }
 
 

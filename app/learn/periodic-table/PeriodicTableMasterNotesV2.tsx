@@ -24,7 +24,6 @@ import {
   V10OlympiadEnrichmentPanel,
 } from "./PeriodicTableV10WorldAdditions";
 import PeriodicTableDeepAdditions from "./PeriodicTableDeepAdditions";
-import PeriodicHistoryMasterV2 from "./PeriodicHistoryMasterV2";
 import PeriodicityQuestionBank from "./PeriodicityQuestionBank";
 /* =============================================================================
    PERIODIC TABLE & PERIODIC PROPERTIES — MASTER NOTES
@@ -1251,10 +1250,6 @@ export function MiniPeriodicTable() {
 }
 /* history-modern-law-authority-v2: other periodicity modules untouched */
 export function SectionHistory(){ return <HistoryModernLawAuthority />; }
-
-export function SectionHistoryLegacy() {
-  return <PeriodicHistoryMasterV2 />;
-}
 
 
 /* =============================================================================

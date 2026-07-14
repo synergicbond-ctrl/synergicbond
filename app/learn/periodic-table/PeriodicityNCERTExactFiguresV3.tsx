@@ -399,7 +399,7 @@ export function LotharMeyerNCERTCurveV3() {
             height: "auto",
           }}
         >
-          <rect x="0" y="0" width={width} height={height} fill="#f0edb9" rx="24" />
+          <rect x="0" y="0" width={width} height={height} fill={C.paper} rx="24" />
 
           <text
             x={width / 2}

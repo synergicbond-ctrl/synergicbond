@@ -22,6 +22,8 @@ import {
   V10OlympiadEnrichmentPanel,
 } from "./PeriodicTableV10WorldAdditions";
 import PeriodicTableDeepAdditions from "./PeriodicTableDeepAdditions";
+import PeriodicHistoryClean from "./PeriodicHistoryClean";
+
 
 
 /* =============================================================================
@@ -1247,146 +1249,10 @@ const allPtEntries = [...ptEntries, ...lanthanides, ...actinides];
 export function MiniPeriodicTable() {
   return <InteractivePeriodicTableV16 />;
 }
-
-/* =============================================================================
-   SECTION 1 — History & Classification (renderer)
-   ========================================================================== */
 export function SectionHistory() {
-  return (
-    <>
-      <div>
-            <SectionIntro
-              eyebrow="How periodic classification evolved"
-              title="From Isolated Facts to the Modern Periodic Law"
-              summary="The periodic table emerged through a sequence of increasingly powerful classification schemes. Each proposal captured part of the repeating pattern; atomic number and recurring valence configurations finally supplied the correct basis and explanation."
-              accent={T.gold}
-            />
-            <H2 id="history">1 · Why Classification Became Necessary</H2>
-            <P>
-              As the number of known elements grew, memorising each element separately became impractical. Chemists therefore searched for a fundamental ordering variable that would bring chemically similar elements together and make properties recur at regular intervals. A successful classification had to organise known elements, expose trends and predict the behaviour of elements not yet discovered.
-            </P>
-            <Timeline items={timelineData} />
-
-            <H2>2 · Early Attempts</H2>
-            <H3>Lavoisier: metals and non-metals</H3>
-            <DataTable columns={["Class", "Typical observations"]} rows={[
-              ["Metals", "lustrous, conducting, malleable; many oxides basic"],
-              ["Non-metals", "generally poor conductors; many oxides acidic"],
-            ]} />
-            <Callout kind="warn">The split was too broad and could not accommodate metalloids or reveal detailed family relationships.</Callout>
-
-            <H3>Prout and Pettenkofer: numerical patterns in atomic weights</H3>
-            <P>
-              Prout proposed that atomic weights were whole-number multiples of hydrogen. More accurate measurements and the later understanding of isotopes showed that ordinary atomic weights need not be whole numbers. Pettenkofer noticed that several related elements differed by integral multiples of roughly eight, but this was only a limited pattern rather than a general law.
-            </P>
-
-            <H3>Döbereiner's triads</H3>
-            <P>
-              In a triad of chemically similar elements arranged by increasing atomic weight, the middle atomic weight was approximately the arithmetic mean of the other two.
-            </P>
-            <DataTable columns={["Triad", "First", "Middle", "Last", "Mean check"]} rows={triads.map(t => [t.name, t.a, t.b, t.c, t.mean])} />
-            <Callout kind="warn">Only a small fraction of the known elements could be fitted into convincing triads.</Callout>
-
-            <H3>Chancourtois' telluric screw</H3>
-            <P>
-              Elements were placed by increasing atomic weight on a helix around a cylinder. Elements appearing vertically above one another often showed similar chemistry, making this one of the earliest explicit geometric demonstrations of periodicity. The scheme worked mainly for lighter elements and attracted little attention because its original publication did not present the chemical pattern clearly.
-            </P>
-
-            <H3>Newlands' law of octaves</H3>
-            <P>
-              Newlands observed that, for lighter elements arranged by increasing atomic weight, every eighth element often resembled the first, analogous to the repetition of a musical note after an octave.
-            </P>
-            <Callout kind="warn">
-              The pattern failed beyond calcium, left no systematic gaps for undiscovered elements and sometimes forced unlike elements into the same position.
-            </Callout>
-
-            <H2>3 · Lothar Meyer's Atomic-Volume Curve</H2>
-            <P>
-              Meyer plotted atomic volume—approximately molar mass divided by density—against atomic weight. The repeating peaks and valleys demonstrated that a physical property changes periodically. Alkali metals appeared near major peaks, transition metals near broad minima and halogens on rising sections before the next alkali-metal maximum.
-            </P>
-            <AtomicVolumeSVG />
-            <Callout kind="note">The curve demonstrated periodicity visually, but Mendeleev's table became more influential because it organised chemical relationships and made testable predictions.</Callout>
-
-            <H2>4 · Mendeleev's Periodic Law and Predictive Table</H2>
-            <MathBlock tex={String.raw`\text{Properties of the elements are periodic functions of their atomic weights.}`} />
-            <P>
-              Mendeleev arranged elements primarily by increasing atomic weight while giving chemical similarity priority when the two conflicted. He left gaps rather than forcing every known element into a continuous sequence and used neighbouring trends to predict the properties of missing elements.
-            </P>
-            <Card accent={T.gold}>
-              <div style={{ fontFamily: T.serif, color: T.gold, fontSize: 18, fontWeight: 700, marginBottom: 8 }}>Major achievements</div>
-              <ul style={{ margin: 0, paddingLeft: 20, display: "grid", gap: 7 }}>
-                <li style={{ color: T.text, fontFamily: T.sans, fontSize: 13.7, lineHeight: 1.55 }}>Brought chemically similar elements into families and made comparative study practical.</li>
-                <li style={{ color: T.text, fontFamily: T.sans, fontSize: 13.7, lineHeight: 1.55 }}>Left deliberate gaps and predicted the existence and properties of several undiscovered elements.</li>
-                <li style={{ color: T.text, fontFamily: T.sans, fontSize: 13.7, lineHeight: 1.55 }}>Used periodic placement to correct doubtful atomic weights and valencies.</li>
-                <li style={{ color: T.text, fontFamily: T.sans, fontSize: 13.7, lineHeight: 1.55 }}>Allowed the noble gases to be added later without destroying the basic arrangement.</li>
-              </ul>
-              <DataTable columns={["Predicted name", "Element discovered", "Symbol", "Year"]} rows={ekaPredictions.map(e => [e.predicted, e.found, e.sym, e.year])} />
-              <div style={{ fontFamily: T.sans, color: T.textDim, fontSize: 12.5, marginTop: 10 }}>Example: predicted eka-silicon compared with germanium</div>
-              <DataTable columns={["Property", "Prediction", "Observed for Ge"]} rows={ekaSiliconCompare.map(e => [e.prop, e.predicted, e.measured])} />
-            </Card>
-            <Card accent={T.p}>
-              <div style={{ fontFamily: T.serif, color: T.p, fontSize: 18, fontWeight: 700, marginBottom: 8 }}>Limitations</div>
-              <div style={{ display: "grid", gap: 10 }}>
-                {mendeleevDemerits.map((d, i) => (
-                  <div key={d.title}>
-                    <div style={{ color: T.text, fontFamily: T.sans, fontSize: 13.6, fontWeight: 800 }}>{i + 1}. {d.title}</div>
-                    <div style={{ color: T.textDim, fontFamily: T.sans, fontSize: 13.2, lineHeight: 1.55 }}>{d.body}</div>
-                  </div>
-                ))}
-              </div>
-            </Card>
-
-            <H2>5 · Moseley's X-Ray Evidence</H2>
-            <div style={{ display: "grid", gridTemplateColumns: "minmax(260px,0.7fr) minmax(0,1.3fr)", gap: 18, alignItems: "center" }} className="twoCol">
-              <MoseleyPlotSVG />
-              <div>
-                <P>
-                  Characteristic X-ray frequencies from different elements followed a simple linear relationship when the square root of frequency was plotted against atomic number. Atomic weight did not give the same clean sequence. This established nuclear charge, represented by atomic number Z, as the fundamental ordering variable.
-                </P>
-                <MathBlock tex={String.raw`\sqrt{\nu}=a(Z-b)`} />
-                <Callout kind="note" title="Modern Periodic Law">
-                  The physical and chemical properties of elements are periodic functions of their atomic numbers.
-                </Callout>
-              </div>
-            </div>
-            <P>
-              Ordering by atomic number resolves the anomalous pairs of the weight-based table: Ar precedes K because 18 precedes 19, Co precedes Ni because 27 precedes 28, and Te precedes I because 52 precedes 53. Isotopes also occupy one position because they share the same atomic number.
-            </P>
-
-            <H2>6 · Cause of Periodicity</H2>
-            <P>
-              As atomic number increases, electrons fill orbitals in a recurring sequence. Valence-shell configurations therefore repeat after characteristic intervals. Since chemical behaviour is governed mainly by valence electrons, elements with analogous outer configurations appear in the same group and show related properties.
-            </P>
-            <DataTable columns={["Family", "Recurring outer configuration", "Consequence"]} rows={[
-              ["Group 1", "ns¹", "readily forms +1 state; strongly electropositive metals except H"],
-              ["Group 2", "ns²", "commonly forms +2 state"],
-              ["Group 17", "ns²np⁵", "one electron short of a noble-gas shell"],
-              ["Group 18", "ns²np⁶, except He = 1s²", "closed-shell atoms with very high ionization enthalpy"],
-            ]} />
-
-            <H2>7 · The Modern Long-Form Table at a Glance</H2>
-            <MiniPeriodicTable />
-            <DataTable columns={["Feature", "Modern table"]} rows={[
-              ["Ordering basis", "increasing atomic number"],
-              ["Periods", "7 horizontal rows"],
-              ["Groups", "18 vertical columns"],
-              ["Blocks", "s, p, d and f according to the differentiating subshell"],
-              ["Displayed f block", "lanthanoids and actinoids are shown below to keep the table compact"],
-              ["Known elements", "118, ending with oganesson"],
-            ]} />
-            <Callout kind="note" title="Next module">
-              The exact method for obtaining period, group and block from an electronic configuration is developed separately in “Configuration & Position” to avoid repetition.
-            </Callout>
-          </div>
-      <div
-        data-integration="SectionHistory-periodicity-generated-corpus-phd-v9"
-        style={{ marginTop: 34 }}
-      >
-        <PeriodicTableDeepAdditions topic="history" />
-      </div>
-    </>
-  );
+  return <PeriodicHistoryClean />;
 }
+
 
 /* =============================================================================
    SECTION 2 — Atomic Radius (data + renderer)

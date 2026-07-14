@@ -391,65 +391,222 @@ function NewlandsOctaveFigure() {
 }
 
 function MeyerCurveFigure() {
-  const pts = [
-    [90, 82], [130, 175], [190, 230], [260, 270], [330, 292], [405, 286], [480, 268], [555, 230], [625, 175], [690, 115], [755, 74], [825, 220],
-  ];
+  const data = [
+    ["Li", 13.1], ["Be", 5.0], ["B", 4.6], ["C", 5.3], ["N", 17.3], ["O", 14.0], ["F", 17.1], ["Ne", 16.8],
+    ["Na", 23.7], ["Mg", 14.0], ["Al", 10.0], ["Si", 12.1], ["P", 17.0], ["S", 15.5], ["Cl", 18.7], ["Ar", 22.4],
+    ["K", 45.3], ["Ca", 29.9], ["Ga", 11.8], ["Ge", 13.6], ["As", 13.1], ["Se", 16.5], ["Br", 23.5], ["Kr", 27.1],
+    ["Rb", 55.9], ["Sr", 33.7], ["In", 15.7], ["Sn", 16.3], ["Sb", 18.4], ["Te", 20.5], ["I", 25.7], ["Xe", 37.3],
+    ["Cs", 70.0], ["Ba", 39.0],
+  ] as const;
+
+  const width = 980;
+  const height = 430;
+  const left = 66;
+  const right = 24;
+  const top = 36;
+  const bottom = 54;
+  const plotW = width - left - right;
+  const plotH = height - top - bottom;
+  const vmax = 75;
+
+  const pts = data.map(([symbol, value], i) => {
+    const x = left + (i / (data.length - 1)) * plotW;
+    const y = top + (1 - value / vmax) * plotH;
+    return { symbol, value, x, y };
+  });
+
+  const path = pts.map((p, i) => `${i === 0 ? "M" : "L"} ${p.x.toFixed(2)} ${p.y.toFixed(2)}`).join(" ");
+
+  const labels = new Set(["Li","Na","K","Rb","Cs","Be","Mg","Ca","Sr","Ba","Ne","Ar","Kr","Xe"]);
+
   return (
-    <FigureShell
-      title="Lothar Meyer's atomic-volume curve"
-      description="A wave-like plot with alkali-metal maxima, alkaline-earth descents, transition-metal minima and halogen-side rises."
-      caption="Atomic volume is approximately molar mass divided by density; repeating wave shape demonstrates physical periodicity."
-    >
-      <defs>
-        <linearGradient id="meyerLine" x1="0" y1="0" x2="1" y2="0">
-          <stop offset="0" stopColor={P.gold} />
-          <stop offset="0.45" stopColor={P.mint} />
-          <stop offset="1" stopColor={P.cyan} />
-        </linearGradient>
-      </defs>
-      <line x1="70" y1="340" x2="885" y2="340" stroke={P.muted} strokeWidth="2" />
-      <line x1="70" y1="45" x2="70" y2="340" stroke={P.muted} strokeWidth="2" />
-      {[100, 160, 220, 280].map((y) => <line key={y} x1="70" y1={y} x2="885" y2={y} stroke={P.line} strokeWidth="1" strokeDasharray="6 8" />)}
-      <path d={`M${pts.map(([x, y]) => `${x} ${y}`).join(" L")}`} fill="none" stroke="url(#meyerLine)" strokeWidth="7" strokeLinejoin="round" strokeLinecap="round" />
-      {pts.map(([x, y], index) => <circle key={index} cx={x} cy={y} r={index === 0 || index === 10 ? 10 : 6} fill={index === 0 || index === 10 ? P.cyan : P.ink} stroke={P.page} strokeWidth="3" />)}
-      <text x="90" y="56" fill={P.gold} fontSize="17" fontWeight="900">K / alkali peak</text>
-      <text x="255" y="320" fill={P.mint} fontSize="17" fontWeight="900">transition-metal minimum</text>
-      <text x="640" y="140" fill={P.pink} fontSize="16" fontWeight="800">halogen-side rise</text>
-      <text x="755" y="52" fill={P.cyan} fontSize="17" fontWeight="900">Rb / next peak</text>
-      <text x="430" y="400" fill={P.muted} fontSize="18">increasing relative atomic mass</text>
-      <text x="25" y="255" fill={P.muted} fontSize="18" transform="rotate(-90 25 255)">molar volume, Vₘ</text>
-    </FigureShell>
+    <figure style={{ margin: "16px 0 22px" }}>
+      <div style={{ color: P.ink, fontWeight: 800, fontSize: "1.04rem", marginBottom: 6 }}>
+        Lothar Meyer’s atomic-volume curve
+      </div>
+      <div style={{ color: P.muted, lineHeight: 1.62, marginBottom: 10 }}>
+        Original SVG reconstruction for the chapter: peaks occur near alkali metals, while minima occur in the middle of long periods. The repeating wave pattern supported the idea of periodic recurrence.
+      </div>
+
+      <div style={{ overflowX: "auto", border: `1px solid ${P.line}`, borderRadius: 16, background: "linear-gradient(180deg, #10263a, #0a1a29)", padding: 10 }}>
+        <svg
+          role="img"
+          aria-labelledby="meyer-title meyer-desc"
+          viewBox={`0 0 ${width} ${height}`}
+          style={{ display: "block", width: "100%", minWidth: 820, height: "auto" }}
+        >
+          <title id="meyer-title">Lothar Meyer curve of atomic volume versus increasing relative atomic mass</title>
+          <desc id="meyer-desc">
+            A repeating line graph of atomic volume showing high peaks for alkali metals such as sodium, potassium, rubidium and caesium, and lower values through the middle of each period.
+          </desc>
+
+          <defs>
+            <linearGradient id="meyerLineV2" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stopColor={P.gold} />
+              <stop offset="55%" stopColor={P.cyan} />
+              <stop offset="100%" stopColor={P.violet} />
+            </linearGradient>
+          </defs>
+
+          {[0,15,30,45,60,75].map((v) => {
+            const y = top + (1 - v / vmax) * plotH;
+            return (
+              <g key={v}>
+                <line x1={left} y1={y} x2={width - right} y2={y} stroke={P.line} strokeDasharray="5 5" />
+                <text x={left - 10} y={y + 5} textAnchor="end" fill={P.muted} fontSize="14">{v}</text>
+              </g>
+            );
+          })}
+
+          <line x1={left} y1={height - bottom} x2={width - right} y2={height - bottom} stroke={P.ink} strokeWidth="2.2" />
+          <line x1={left} y1={height - bottom} x2={left} y2={top} stroke={P.ink} strokeWidth="2.2" />
+
+          <path d={path} fill="none" stroke="url(#meyerLineV2)" strokeWidth="4.5" strokeLinejoin="round" strokeLinecap="round" />
+
+          {pts.map((p) => (
+            <g key={p.symbol}>
+              <circle cx={p.x} cy={p.y} r="4.5" fill={P.gold} stroke={P.page} strokeWidth="1.5" />
+              {labels.has(p.symbol) ? (
+                <text x={p.x} y={p.y - 10} textAnchor="middle" fill={P.ink} fontSize="15" fontWeight="700">
+                  {p.symbol}
+                </text>
+              ) : null}
+            </g>
+          ))}
+
+          <text x={(left + width - right) / 2} y={height - 14} textAnchor="middle" fill={P.ink} fontSize="15" fontWeight="700">
+            Increasing relative atomic mass / progression through known elements
+          </text>
+
+          <text
+            x="18"
+            y={(top + height - bottom) / 2}
+            transform={`rotate(-90 18 ${(top + height - bottom) / 2})`}
+            textAnchor="middle"
+            fill={P.ink}
+            fontSize="15"
+            fontWeight="700"
+          >
+            Atomic volume (relative units)
+          </text>
+        </svg>
+      </div>
+
+      <figcaption style={{ color: P.muted, fontSize: ".95rem", lineHeight: 1.6, marginTop: 10 }}>
+        The important lesson is the repeating wave pattern, not the memorisation of every plotted point. Meyer’s graph strengthened the idea that properties recur periodically.
+      </figcaption>
+    </figure>
   );
 }
 
+
+
 function MendeleevArchitectureFigure() {
-  const groups = ["I", "II", "III", "IV", "V", "VI", "VII", "VIII"];
+  const groups = ["0","I","II","III","IV","V","VI","VII","VIII"];
+  const rows = [
+    ["He","H","-","-","-","-","-","F","-"],
+    ["Ne","Li","Be","B","C","N","O","Cl","-"],
+    ["Ar","Na","Mg","Al","Si","P","S","Br","Fe Co Ni"],
+    ["Kr","K","Ca","Sc","Ti","V","Cr","Mn","Cu Zn"],
+    ["Xe","Rb","Sr","Y","Zr","Nb","Mo","I","Ru Rh Pd"],
+    ["-","Cs","Ba","La","Ce","-","-","-","-"],
+    ["-","Au","Hg","Tl","Pb","Bi","Po","-","Pt Ir Os"],
+  ];
+
   return (
-    <FigureShell
-      title="Mendeleev's predictive architecture"
-      description="A short-form table organised by recurring valency, oxide formulae, chemical families and deliberate gaps."
-      caption="The scientific leap was not merely ordering known elements—it was leaving chemically justified vacancies and predicting their occupants."
-    >
-      <text x="480" y="45" textAnchor="middle" fill={P.gold} fontSize="25" fontWeight="900">chemical similarity can override rigid mass order</text>
-      {groups.map((group, i) => {
-        const x = 50 + i * 112;
-        const color = [P.cyan, P.mint, P.violet, P.gold, P.coral, P.pink, P.lime, P.blue][i];
-        return (
-          <g key={group}>
-            <rect x={x} y="90" width="92" height="250" rx="16" fill={P.panel2} stroke={color} strokeWidth="3" />
-            <text x={x + 46} y="122" textAnchor="middle" fill={color} fontSize="21" fontWeight="900">{group}</text>
-            {[0, 1, 2, 3].map((r) => (
-              <rect key={r} x={x + 12} y={145 + r * 45} width="68" height="31" rx="8" fill={r === 2 && (i === 2 || i === 3) ? "transparent" : color} opacity={r === 2 && (i === 2 || i === 3) ? 1 : 0.28 + r * 0.12} stroke={r === 2 && (i === 2 || i === 3) ? P.gold : "none"} strokeWidth="3" strokeDasharray="6 5" />
-            ))}
-            {i === 2 || i === 3 ? <text x={x + 46} y="270" textAnchor="middle" fill={P.gold} fontSize="13" fontWeight="900">gap</text> : null}
-          </g>
-        );
-      })}
-      <path d="M160 375 H800" stroke={P.gold} strokeWidth="4" strokeDasharray="10 8" />
-      <text x="480" y="410" textAnchor="middle" fill={P.muted} fontSize="18">groups encoded comparable valency, oxide and hydride patterns</text>
-    </FigureShell>
+    <figure style={{ margin: "16px 0 24px" }}>
+      <div style={{ color: P.ink, fontWeight: 800, fontSize: "1.04rem", marginBottom: 6 }}>
+        Mendeleev periodic table — school-friendly reconstruction
+      </div>
+      <div style={{ color: P.muted, lineHeight: 1.62, marginBottom: 10 }}>
+        This original reconstruction keeps the spirit of the classical grouped table: vertical families, series-based rows and clear emphasis on chemical similarity, valency, and oxide–hydride relationships.
+      </div>
+
+      <div style={{ overflowX: "auto", border: `1px solid ${P.line}`, borderRadius: 16, background: "linear-gradient(180deg, #11283b, #0b1d2c)", padding: 12 }}>
+        <svg
+          role="img"
+          aria-labelledby="mendeleev-title mendeleev-desc"
+          viewBox="0 0 1120 560"
+          style={{ display: "block", width: "100%", minWidth: 900, height: "auto" }}
+        >
+          <title id="mendeleev-title">Reconstructed Mendeleev periodic table arranged in groups and series</title>
+          <desc id="mendeleev-desc">
+            A schematic classical periodic table with groups 0 to VIII, series down the left side, representative elements in each cell, and a concluding row showing typical higher oxides and hydrides.
+          </desc>
+
+          <text x="560" y="34" textAnchor="middle" fill={P.ink} fontSize="28" fontWeight="800">
+            Periodic system of the elements in groups and series
+          </text>
+
+          <rect x="20" y="70" width="90" height="52" fill="#cfd7e6" opacity="0.92" stroke={P.line} />
+          <text x="65" y="102" textAnchor="middle" fill="#172531" fontSize="18" fontWeight="800">Series</text>
+
+          <rect x="110" y="70" width="990" height="26" fill="#d8deef" opacity="0.92" stroke={P.line} />
+          <text x="605" y="88" textAnchor="middle" fill="#172531" fontSize="18" fontWeight="800">Groups of elements</text>
+
+          {groups.map((g, i) => {
+            const x = 110 + i * 110;
+            return (
+              <g key={g}>
+                <rect x={x} y={96} width="110" height="26" fill="#cfd7e6" opacity="0.92" stroke={P.line} />
+                <text x={x + 55} y={114} textAnchor="middle" fill="#172531" fontSize="17" fontWeight="800">{g}</text>
+              </g>
+            );
+          })}
+
+          {rows.map((row, r) => {
+            const y = 122 + r * 60;
+            return (
+              <g key={r}>
+                <rect x="20" y={y} width="90" height="60" fill="#d7e4c2" opacity="0.95" stroke={P.line} />
+                <text x="65" y={y + 36} textAnchor="middle" fill="#172531" fontSize="18" fontWeight="800">{r + 1}</text>
+
+                {row.map((cell, c) => {
+                  const x = 110 + c * 110;
+                  const fill = c % 2 === 0 ? "#ead7e8" : "#d9e8ca";
+                  return (
+                    <g key={`${r}-${c}`}>
+                      <rect x={x} y={y} width="110" height="60" fill={fill} opacity="0.95" stroke={P.line} />
+                      <text
+                        x={x + 55}
+                        y={y + 34}
+                        textAnchor="middle"
+                        fill="#1e2a36"
+                        fontSize={cell.length > 8 ? "13" : "16"}
+                        fontWeight="700"
+                      >
+                        {cell}
+                      </text>
+                    </g>
+                  );
+                })}
+              </g>
+            );
+          })}
+
+          <rect x="20" y="482" width="1080" height="50" fill="#d8e4c0" opacity="0.95" stroke={P.line} />
+          <text x="560" y="506" textAnchor="middle" fill="#172531" fontSize="18" fontWeight="800">
+            Higher saline oxides and gaseous hydrogen compounds
+          </text>
+          <text x="165" y="525" textAnchor="middle" fill="#172531" fontSize="16">R₂O</text>
+          <text x="275" y="525" textAnchor="middle" fill="#172531" fontSize="16">RO</text>
+          <text x="385" y="525" textAnchor="middle" fill="#172531" fontSize="16">R₂O₃</text>
+          <text x="495" y="525" textAnchor="middle" fill="#172531" fontSize="16">RO₂</text>
+          <text x="605" y="525" textAnchor="middle" fill="#172531" fontSize="16">R₂O₅</text>
+          <text x="715" y="525" textAnchor="middle" fill="#172531" fontSize="16">RO₃</text>
+          <text x="825" y="525" textAnchor="middle" fill="#172531" fontSize="16">R₂O₇</text>
+          <text x="935" y="525" textAnchor="middle" fill="#172531" fontSize="16">RO₄</text>
+        </svg>
+      </div>
+
+      <figcaption style={{ color: P.muted, fontSize: ".95rem", lineHeight: 1.6, marginTop: 10 }}>
+        This is a teaching reconstruction rather than a museum facsimile. The key idea is that Mendeleev prioritised family resemblance and predictive power over rigid mass order.
+      </figcaption>
+    </figure>
   );
 }
+
+
 
 function PredictionMatchFigure() {
   const pairs = [
@@ -637,26 +794,155 @@ function ValenceRibbonFigure() {
 }
 
 function LongFormBlockMapFigure() {
+  const legend = {
+    metal: "#8fc7ff",
+    metalloid: "#f3b37a",
+    nonmetal: "#bfe8a7",
+    noble: "#f3a7c3",
+    lanth: "#ecd3bf",
+    act: "#d9b2d4",
+  } as const;
+
+  const noble = new Set(["He","Ne","Ar","Kr","Xe","Rn","Og"]);
+  const metalloids = new Set(["B","Si","Ge","As","Sb","Te","Po"]);
+  const nonmetals = new Set(["H","C","N","O","F","P","S","Se","Cl","Br","I","At","Ts"]);
+  const lanth = new Set(["La","Ce","Pr","Nd","Pm","Sm","Eu","Gd","Tb","Dy","Ho","Er","Tm","Yb","Lu"]);
+  const act = new Set(["Ac","Th","Pa","U","Np","Pu","Am","Cm","Bk","Cf","Es","Fm","Md","No","Lr"]);
+
+  const periods = [
+    ["H","","","","","","","","","","","","","","","","","He"],
+    ["Li","Be","","","","","","","","","","","B","C","N","O","F","Ne"],
+    ["Na","Mg","","","","","","","","","","","Al","Si","P","S","Cl","Ar"],
+    ["K","Ca","Sc","Ti","V","Cr","Mn","Fe","Co","Ni","Cu","Zn","Ga","Ge","As","Se","Br","Kr"],
+    ["Rb","Sr","Y","Zr","Nb","Mo","Tc","Ru","Rh","Pd","Ag","Cd","In","Sn","Sb","Te","I","Xe"],
+    ["Cs","Ba","La","Hf","Ta","W","Re","Os","Ir","Pt","Au","Hg","Tl","Pb","Bi","Po","At","Rn"],
+    ["Fr","Ra","Ac","Rf","Db","Sg","Bh","Hs","Mt","Ds","Rg","Cn","Nh","Fl","Mc","Lv","Ts","Og"],
+  ];
+
+  const lanthRow = ["Ce","Pr","Nd","Pm","Sm","Eu","Gd","Tb","Dy","Ho","Er","Tm","Yb","Lu"];
+  const actRow = ["Th","Pa","U","Np","Pu","Am","Cm","Bk","Cf","Es","Fm","Md","No","Lr"];
+
+  const colorOf = (s: string) =>
+    noble.has(s) ? legend.noble :
+    lanth.has(s) ? legend.lanth :
+    act.has(s) ? legend.act :
+    metalloids.has(s) ? legend.metalloid :
+    nonmetals.has(s) ? legend.nonmetal :
+    legend.metal;
+
   return (
-    <FigureShell
-      title="Electronic block architecture of the long-form table"
-      description="The s, d and p blocks form the main table, while the f block belongs inside periods six and seven but is displayed below."
-      caption="Block width follows subshell capacity: s = 2, p = 6, d = 10 and f = 14 columns."
-    >
-      <rect x="60" y="80" width="145" height="245" rx="20" fill={P.blue} opacity="0.42" stroke={P.blue} strokeWidth="4" />
-      <rect x="205" y="175" width="430" height="150" rx="20" fill={P.mint} opacity="0.34" stroke={P.mint} strokeWidth="4" />
-      <rect x="635" y="80" width="265" height="245" rx="20" fill={P.coral} opacity="0.35" stroke={P.coral} strokeWidth="4" />
-      <rect x="275" y="355" width="410" height="55" rx="18" fill={P.violet} opacity="0.38" stroke={P.violet} strokeWidth="4" />
-      <text x="132" y="205" textAnchor="middle" fill={P.blue} fontSize="42" fontWeight="900">s</text>
-      <text x="420" y="265" textAnchor="middle" fill={P.mint} fontSize="42" fontWeight="900">d</text>
-      <text x="768" y="205" textAnchor="middle" fill={P.coral} fontSize="42" fontWeight="900">p</text>
-      <text x="480" y="393" textAnchor="middle" fill={P.violet} fontSize="29" fontWeight="900">f block: 14 positions</text>
-      <text x="132" y="290" textAnchor="middle" fill={P.ink} fontSize="18">2 columns</text>
-      <text x="420" y="300" textAnchor="middle" fill={P.ink} fontSize="18">10 columns</text>
-      <text x="768" y="290" textAnchor="middle" fill={P.ink} fontSize="18">6 columns</text>
-    </FigureShell>
+    <figure style={{ margin: "16px 0 24px" }}>
+      <div style={{ color: P.ink, fontWeight: 800, fontSize: "1.04rem", marginBottom: 6 }}>
+        Modern periodic table with category colouring
+      </div>
+      <div style={{ color: P.muted, lineHeight: 1.62, marginBottom: 10 }}>
+        The long form below keeps the modern 18-group layout but now uses clear colours for <strong style={{ color: P.ink }}>metals</strong>, <strong style={{ color: P.ink }}>metalloids</strong>, <strong style={{ color: P.ink }}>non-metals</strong>, <strong style={{ color: P.ink }}>noble gases</strong>, <strong style={{ color: P.ink }}>lanthanoids</strong> and <strong style={{ color: P.ink }}>actinoids</strong>.
+      </div>
+
+      <div style={{ display: "flex", flexWrap: "wrap", gap: 10, marginBottom: 12 }}>
+        {[
+          ["Metal", legend.metal],
+          ["Metalloid", legend.metalloid],
+          ["Non-metal", legend.nonmetal],
+          ["Noble gas", legend.noble],
+          ["Lanthanoid", legend.lanth],
+          ["Actinoid", legend.act],
+        ].map(([label, color]) => (
+          <span
+            key={label}
+            style={{
+              display: "inline-flex",
+              alignItems: "center",
+              gap: 8,
+              padding: "7px 10px",
+              borderRadius: 999,
+              background: "#10283b",
+              border: `1px solid ${P.line}`,
+              color: P.ink,
+              fontSize: ".92rem",
+              fontWeight: 700,
+            }}
+          >
+            <span style={{ width: 16, height: 16, borderRadius: 4, background: color as string, border: "1px solid #445a69" }} />
+            {label}
+          </span>
+        ))}
+      </div>
+
+      <div style={{ overflowX: "auto", border: `1px solid ${P.line}`, borderRadius: 16, background: "linear-gradient(180deg, #101f30, #0a1623)", padding: 12 }}>
+        <svg
+          role="img"
+          aria-labelledby="modern-table-title modern-table-desc"
+          viewBox="0 0 1120 660"
+          style={{ display: "block", width: "100%", minWidth: 980, height: "auto" }}
+        >
+          <title id="modern-table-title">Modern long-form periodic table coloured by broad element categories</title>
+          <desc id="modern-table-desc">
+            A modern periodic table with categories indicated by colour: metals, metalloids, non-metals, noble gases, lanthanoids and actinoids.
+          </desc>
+
+          {Array.from({ length: 18 }, (_, i) => (
+            <text key={`g-${i+1}`} x={70 + i * 56} y="24" textAnchor="middle" fill={P.ink} fontSize="16" fontWeight="800">
+              {i + 1}
+            </text>
+          ))}
+
+          {periods.map((row, r) =>
+            row.map((symbol, c) => {
+              if (!symbol) return null;
+              const x = 42 + c * 56;
+              const y = 42 + r * 58;
+              return (
+                <g key={`${r}-${c}-${symbol}`}>
+                  <rect x={x} y={y} width="52" height="52" rx="8" fill={colorOf(symbol)} stroke="#4b6070" />
+                  <text x={x + 26} y={y + 31} textAnchor="middle" fill="#1e2a36" fontSize="21" fontWeight="800">{symbol}</text>
+                </g>
+              );
+            }),
+          )}
+
+          <text x="24" y="74" fill={P.ink} fontSize="16" fontWeight="800">1</text>
+          <text x="24" y="132" fill={P.ink} fontSize="16" fontWeight="800">2</text>
+          <text x="24" y="190" fill={P.ink} fontSize="16" fontWeight="800">3</text>
+          <text x="24" y="248" fill={P.ink} fontSize="16" fontWeight="800">4</text>
+          <text x="24" y="306" fill={P.ink} fontSize="16" fontWeight="800">5</text>
+          <text x="24" y="364" fill={P.ink} fontSize="16" fontWeight="800">6</text>
+          <text x="24" y="422" fill={P.ink} fontSize="16" fontWeight="800">7</text>
+
+          <text x="140" y="500" fill={P.ink} fontSize="18" fontWeight="800">Lanthanoids</text>
+          {lanthRow.map((symbol, i) => {
+            const x = 300 + i * 56;
+            const y = 468;
+            return (
+              <g key={`lanth-${symbol}`}>
+                <rect x={x} y={y} width="52" height="52" rx="8" fill={legend.lanth} stroke="#4b6070" />
+                <text x={x + 26} y={y + 31} textAnchor="middle" fill="#1e2a36" fontSize="20" fontWeight="800">{symbol}</text>
+              </g>
+            );
+          })}
+
+          <text x="152" y="558" fill={P.ink} fontSize="18" fontWeight="800">Actinoids</text>
+          {actRow.map((symbol, i) => {
+            const x = 300 + i * 56;
+            const y = 526;
+            return (
+              <g key={`act-${symbol}`}>
+                <rect x={x} y={y} width="52" height="52" rx="8" fill={legend.act} stroke="#4b6070" />
+                <text x={x + 26} y={y + 31} textAnchor="middle" fill="#1e2a36" fontSize="20" fontWeight="800">{symbol}</text>
+              </g>
+            );
+          })}
+        </svg>
+      </div>
+
+      <figcaption style={{ color: P.muted, fontSize: ".95rem", lineHeight: 1.6, marginTop: 10 }}>
+        This colour scheme is pedagogical: the purpose is to help students visually separate metals, metalloids and non-metals while still recognising the special positions of noble gases and the f-block series.
+      </figcaption>
+    </figure>
   );
 }
+
+
 
 function PeriodLengthFigure() {
   const lengths = [2, 8, 8, 18, 18, 32, 32];

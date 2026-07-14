@@ -366,79 +366,112 @@ function AufbauDiagram() {
     ["6s", "6p", "6d"],
     ["7s", "7p"],
   ];
+
   const paths = [
-    "M270 28 L80 116",
-    "M270 113 L80 201",
-    "M450 140 L80 307",
-    "M450 225 L80 392",
-    "M640 225 L80 477",
-    "M640 310 L80 562",
-    "M830 310 L80 647",
-    "M830 395 L270 647",
+    "M222 32 L62 108",
+    "M380 100 L62 176",
+    "M538 100 L62 244",
+    "M694 168 L62 312",
+    "M694 236 L62 380",
+    "M694 304 L62 448",
+    "M694 372 L62 516",
+    "M380 516 L694 440",
+  ];
+
+  const sequence = [
+    "1s","2s","2p","3s","3p","4s","3d","4p","5s","4d","5p","6s","4f","5d","6p","7s","5f","6d","7p"
   ];
 
   return (
-    <figure style={{ margin: "20px 0" }}>
-      <div style={{ color: C.text, fontFamily: C.serif, fontSize: "clamp(1.3rem, 2.3vw, 1.65rem)", fontWeight: 800, marginBottom: 6 }}>
-        Madelung diagonal guide
-      </div>
-      <div style={{ color: C.dim, fontSize: "1.04rem", lineHeight: 1.65, marginBottom: 12 }}>
-        Read every cyan arrow from its upper-right end toward its lower-left arrowhead. Each orbital label is kept large and fully opaque for clear desktop and mobile reading.
-      </div>
+    <figure style={{ margin: "18px 0" }}>
       <div
         style={{
+          color: C.text,
+          fontFamily: C.serif,
+          fontSize: "clamp(1.22rem, 2.1vw, 1.52rem)",
+          fontWeight: 800,
+          marginBottom: 6,
+        }}
+      >
+        Madelung diagonal guide
+      </div>
+
+      <div
+        style={{
+          color: C.dim,
+          fontSize: "1rem",
+          lineHeight: 1.65,
+          marginBottom: 12,
+          maxWidth: 960,
+        }}
+      >
+        Read each cyan arrow from upper right to lower left. The figure is intentionally more compact so the orbital labels stay visible on both desktop and mobile screens.
+      </div>
+
+      <div
+        style={{
+          maxWidth: 900,
+          margin: "0 auto",
           overflowX: "auto",
           border: `1px solid ${C.border}`,
           borderRadius: 18,
           background: C.surface2,
-          padding: "10px 10px 4px",
+          padding: "12px 12px 8px",
         }}
       >
         <svg
           role="img"
           aria-labelledby="ec-aufbau-title ec-aufbau-desc"
-          viewBox="0 0 920 680"
-          style={{ display: "block", width: "100%", minWidth: 760, height: "auto" }}
+          viewBox="0 0 760 560"
+          style={{
+            display: "block",
+            width: "100%",
+            minWidth: 620,
+            maxWidth: 820,
+            height: "auto",
+            margin: "0 auto",
+          }}
         >
-          <title id="ec-aufbau-title">Large high-contrast Madelung diagonal orbital-filling guide</title>
+          <title id="ec-aufbau-title">Compact high-contrast Madelung diagonal orbital-filling guide</title>
           <desc id="ec-aufbau-desc">
-            Orbitals from 1s through 7p are arranged by principal shell and subshell. Bright cyan arrows run from upper right to lower left and generate the ordinary Madelung filling sequence.
+            Orbitals from 1s through 7p are arranged by principal shell and subshell. Cyan arrows indicate the ordinary filling sequence used by the Madelung guide.
           </desc>
+
           <defs>
-            <marker id="ecArrowV2" viewBox="0 0 12 12" refX="10" refY="6" markerWidth="10" markerHeight="10" orient="auto">
+            <marker id="ecArrowCompact" viewBox="0 0 12 12" refX="10" refY="6" markerWidth="10" markerHeight="10" orient="auto">
               <path d="M 0 0 L 12 6 L 0 12 z" fill={C.cyan} />
             </marker>
-            <filter id="ecNodeGlow" x="-30%" y="-30%" width="160%" height="160%">
-              <feDropShadow dx="0" dy="2" stdDeviation="3" floodColor="#000000" floodOpacity="0.45" />
+            <filter id="ecNodeGlowCompact" x="-30%" y="-30%" width="160%" height="160%">
+              <feDropShadow dx="0" dy="1.5" stdDeviation="2.5" floodColor="#000000" floodOpacity="0.45" />
             </filter>
           </defs>
 
-          {paths.map((d, index) => (
+          {paths.map((d) => (
             <path
               key={d}
               d={d}
               fill="none"
               stroke={C.cyan}
-              strokeWidth="4"
+              strokeWidth="3.5"
               strokeLinecap="round"
-              markerEnd="url(#ecArrowV2)"
-              opacity={index < 2 ? 0.92 : 1}
+              markerEnd="url(#ecArrowCompact)"
+              opacity="0.95"
             />
           ))}
 
           {labels.map((row, r) =>
             row.map((label, c) => {
-              const x = 170 + c * 190;
-              const y = 95 + r * 85;
+              const x = 160 + c * 158;
+              const y = 78 + r * 68;
               return (
-                <g key={label} filter="url(#ecNodeGlow)">
-                  <circle cx={x} cy={y} r="34" fill={C.bg} stroke={C.blue} strokeWidth="4" />
+                <g key={label} filter="url(#ecNodeGlowCompact)">
+                  <circle cx={x} cy={y} r="28" fill={C.bg} stroke={C.blue} strokeWidth="3.5" />
                   <text
                     x={x}
-                    y={y + 9}
+                    y={y + 8}
                     textAnchor="middle"
                     fill="#ffffff"
-                    fontSize="25"
+                    fontSize="21"
                     fontFamily={C.sans}
                     fontWeight="850"
                   >
@@ -454,26 +487,44 @@ function AufbauDiagram() {
       <div
         style={{
           marginTop: 12,
-          padding: "14px 16px",
+          padding: "12px 14px",
           border: `1px solid ${C.gold}`,
           borderRadius: 12,
           background: `${C.gold}12`,
-          color: "#ffd36a",
-          fontFamily: C.mono,
-          fontSize: "clamp(1rem, 1.8vw, 1.16rem)",
-          fontWeight: 800,
-          lineHeight: 1.75,
-          overflowWrap: "anywhere",
+          display: "flex",
+          flexWrap: "wrap",
+          gap: "8px 10px",
+          alignItems: "center",
+          justifyContent: "center",
         }}
       >
-        1s → 2s → 2p → 3s → 3p → 4s → 3d → 4p → 5s → 4d → 5p → 6s → 4f → 5d → 6p → 7s → 5f → 6d → 7p
+        {sequence.map((item, i) => (
+          <React.Fragment key={item + i}>
+            <span
+              style={{
+                color: "#ffd36a",
+                fontFamily: C.mono,
+                fontSize: "clamp(.98rem, 1.6vw, 1.08rem)",
+                fontWeight: 800,
+              }}
+            >
+              {item}
+            </span>
+            {i < sequence.length - 1 ? (
+              <span style={{ color: C.gold, fontWeight: 900 }}>→</span>
+            ) : null}
+          </React.Fragment>
+        ))}
       </div>
-      <figcaption style={{ color: C.dim, fontSize: ".98rem", lineHeight: 1.6, marginTop: 10 }}>
-        This is a build-up guide. It is not a permanently fixed energy diagram for every atom, ion or excited state.
+
+      <figcaption style={{ color: C.dim, fontSize: ".96rem", lineHeight: 1.6, marginTop: 10 }}>
+        The Madelung diagram is a practical filling guide, not a universal fixed energy diagram for every atom, ion or excited state.
       </figcaption>
     </figure>
   );
 }
+
+
 
 const firstThirty: React.ReactNode[][] = [
   ["1 H", "1s¹", "16 S", "[Ne] 3s² 3p⁴"],

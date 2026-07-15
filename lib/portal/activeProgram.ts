@@ -92,7 +92,7 @@ export async function getActiveProgramContext(): Promise<ActiveProgramContext> {
     getRole(supabase, user.id),
   ]);
   const privileged = isPrivileged({ id: user.id, role });
-  const isAllAccess = entitlements.isPro; // includes privileged (isProActive short-circuits on role)
+  const isAllAccess = entitlements.isPro || privileged; // authoritative owner/admin all-access
 
   const source: ActiveProgramSource = privileged
     ? "owner-admin"

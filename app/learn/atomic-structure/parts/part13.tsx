@@ -1,4 +1,3 @@
-"use client";
 
 import { AtomicPartShell, AuditComment, DiagramBox, FormulaLine, MathText, NoteBlock, SourcePage } from "./_shared";
 import { PhotocurrentPotentialGraph, PhotocurrentSingleCurveGraph, SaturationCurrentIntensityGraph, StoppingPotentialFrequencyGraph, V0FrequencyGraph, V0InverseLambdaGraph } from "../_components/AtomicVisuals";

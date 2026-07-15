@@ -1,4 +1,3 @@
-"use client";
 import { AtomicPartShell, AuditComment, DiagramBox, FormulaLine, ImportantNote, LearningObjectives, NoteBlock, SourcePage, SummaryStrip } from "./_shared";
 import { DOrbitalGalleryVisual, OrbitalNodeSeriesVisual, PenetrationComparisonVisual } from "../_components/AtomicVisuals";
 export default function Part49() { return <AtomicPartShell part={49} title="Orbital Reach, Bonding and Higher-Series Galleries" pages="154-156">

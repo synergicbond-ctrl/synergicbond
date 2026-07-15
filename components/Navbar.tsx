@@ -281,14 +281,14 @@ export default function Navbar() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-white/[0.06] bg-[#0B0F19]/90 backdrop-blur-2xl">
-      <div className="mx-auto flex h-16 max-w-[1400px] items-center justify-between px-4 md:px-6 gap-4">
+      <div className="mx-auto flex h-16 max-w-[1400px] items-center justify-between gap-2 px-3 sm:gap-4 sm:px-4 md:px-6">
 
         {/* Brand Logo — animated network molecule in top-left corner */}
-        <Link href="/" className="flex items-center gap-3 flex-shrink-0 group">
+        <Link href="/" aria-label="SYNERGIC BOND Chemistry OS" className="group flex shrink-0 items-center gap-2 sm:gap-3">
           <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-cyan-400/30 bg-cyan-950/40 shadow-[0_0_16px_rgba(34,211,238,0.2)] transition group-hover:shadow-[0_0_24px_rgba(34,211,238,0.35)]">
             <MoleculeLogo size={40} />
           </div>
-          <div>
+          <div className="hidden min-[360px]:block">
             <p className="text-lg font-extrabold tracking-widest bg-gradient-to-r from-[#00F5D4] via-[#00BBF9] to-[#9B5DE5] bg-clip-text text-transparent leading-none">
               SYNERGIC BOND
             </p>
@@ -434,7 +434,7 @@ export default function Navbar() {
         )}
 
         {/* Right Utilities */}
-        <div className="flex items-center gap-2 flex-shrink-0">
+        <div className="flex shrink-0 items-center gap-1 sm:gap-2">
           {/* Active Program control — portal chrome only */}
           {portalMode && portal && (
             <div className="hidden md:block">
@@ -535,14 +535,14 @@ export default function Navbar() {
               <span className="hidden sm:flex items-center gap-1.5 rounded-xl border border-white/[0.08] bg-white/[0.04] px-2.5 py-1.5 text-[11px] font-semibold text-white/60">
                 <UserCircle className="h-3.5 w-3.5" /> Guest
               </span>
-              <Link href="/auth/signup" className="rounded-xl bg-gradient-to-r from-cyan-400 to-sky-500 px-3 py-1.5 text-xs font-semibold text-black shadow-lg shadow-cyan-500/20 transition hover:-translate-y-0.5">
+              <Link href="/auth/signup" className="rounded-xl bg-gradient-to-r from-cyan-400 to-sky-500 px-2 py-1.5 text-xs font-semibold text-black shadow-lg shadow-cyan-500/20 transition hover:-translate-y-0.5 sm:px-3">
                 Sign Up →
               </Link>
             </div>
           ) : (
             <Link
               href="/auth/signin"
-              className="rounded-xl bg-gradient-to-r from-cyan-400 to-sky-500 px-3 py-1.5 text-xs font-semibold text-black shadow-lg shadow-cyan-500/20 transition hover:-translate-y-0.5"
+              className="rounded-xl bg-gradient-to-r from-cyan-400 to-sky-500 px-2 py-1.5 text-xs font-semibold text-black shadow-lg shadow-cyan-500/20 transition hover:-translate-y-0.5 sm:px-3"
             >
               {t("nav.signIn")} →
             </Link>
@@ -550,7 +550,7 @@ export default function Navbar() {
 
           <button
             onClick={() => setMenuOpen(!menuOpen)}
-            className="flex h-11 w-11 items-center justify-center rounded-xl text-gray-400 transition hover:bg-white/[0.05] hover:text-white lg:hidden"
+            className="flex h-10 w-10 items-center justify-center rounded-xl text-gray-400 transition hover:bg-white/[0.05] hover:text-white sm:h-11 sm:w-11 lg:hidden"
             aria-label="Menu"
           >
             {menuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}

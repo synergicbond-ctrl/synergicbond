@@ -3,14 +3,10 @@
 import { useState } from "react";
 import Link from "next/link";
 import {
-  NOTES_CHAPTERS,
-  NOTES_ENGINE_STATS,
   type NotesChapter,
   type NoteLink,
 } from "@/lib/notesEngine";
 import { masterSyllabus } from "@/lib/masterSyllabus/all";
-import { isFreeChapter } from "@/lib/freeChapters";
-import { useUnlocked } from "@/components/monetization/useUnlocked";
 import UnlockBanner from "@/components/monetization/UnlockBanner";
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -247,23 +243,37 @@ interface SyllabusLite {
 const SYLLABUS_CHAPTERS = masterSyllabus as unknown as SyllabusLite[];
 const NOTES_ID_FOR_SYLLABUS: Record<string, string> = { goc: "general-organic-chemistry" };
 
-function authoredFor(syllabusId: string): NotesChapter | undefined {
-  const notesId = NOTES_ID_FOR_SYLLABUS[syllabusId] ?? syllabusId;
-  return NOTES_CHAPTERS.find((c) => c.id === notesId);
+function notesIdFor(syllabusId: string): string {
+  return NOTES_ID_FOR_SYLLABUS[syllabusId] ?? syllabusId;
 }
 
-export default function NotesExplorer() {
+function authoredFor(syllabusId: string, chapters: readonly NotesChapter[]): NotesChapter | undefined {
+  return chapters.find((chapter) => chapter.id === notesIdFor(syllabusId));
+}
+
+interface NotesExplorerProps {
+  /** Server-authorized note payload only; never the full registry for free users. */
+  chapters: NotesChapter[];
+  /** IDs may be shown as locked, but their note bodies are never sent here. */
+  restrictedChapterIds: string[];
+  freeNoteCount: number;
+  totalNoteCount: number;
+}
+
+export default function NotesExplorer({
+  chapters,
+  restrictedChapterIds,
+  freeNoteCount,
+  totalNoteCount,
+}: NotesExplorerProps) {
   const [chapterId, setChapterId] = useState<string>(SYLLABUS_CHAPTERS[0].id);
   const [section, setSection] = useState<StrictNoteSectionKey>("detailed");
-  const unlocked = useUnlocked();
 
   const syllabusChapter = SYLLABUS_CHAPTERS.find((c) => c.id === chapterId) ?? SYLLABUS_CHAPTERS[0];
-  const chapter = authoredFor(syllabusChapter.id);
+  const chapter = authoredFor(syllabusChapter.id, chapters);
+  const chapterLocked = !chapter && restrictedChapterIds.includes(notesIdFor(syllabusChapter.id));
   const activeSection = STRICT_NOTE_SECTIONS.find((s) => s.key === section) ?? STRICT_NOTE_SECTIONS[0];
-  const authoredCount = SYLLABUS_CHAPTERS.filter((c) => authoredFor(c.id)).length;
-
-  const chapterLocked = !!chapter && !unlocked && !isFreeChapter(chapter.id);
-  const freeCount = NOTES_CHAPTERS.filter((c) => isFreeChapter(c.id)).length;
+  const authoredCount = SYLLABUS_CHAPTERS.filter((c) => authoredFor(c.id, chapters)).length;
 
   return (
     <div className="space-y-6">
@@ -272,7 +282,7 @@ export default function NotesExplorer() {
         <p className="mb-2 text-xs font-bold uppercase tracking-[0.4em] text-cyan-300">Notes Engine</p>
         <h1 className="text-3xl font-black md:text-4xl">Chapter Notes Explorer</h1>
         <p className="mt-2 text-sm text-white/55">
-          {authoredCount} of {SYLLABUS_CHAPTERS.length} chapters have full verified notes
+          {authoredCount} of {SYLLABUS_CHAPTERS.length} chapters have full verified notes available to you
           ({STRICT_NOTE_SECTIONS.length} strict categories each) — every chapter shows its official syllabus.
         </p>
       </div>
@@ -435,7 +445,8 @@ export default function NotesExplorer() {
       <div className="flex flex-wrap gap-2">
         {SYLLABUS_CHAPTERS.map((c) => {
           const active = c.id === chapterId;
-          const authored = authoredFor(c.id);
+          const authored = authoredFor(c.id, chapters);
+          const locked = !authored && restrictedChapterIds.includes(notesIdFor(c.id));
           return (
             <button
               key={c.id}
@@ -448,7 +459,7 @@ export default function NotesExplorer() {
             >
               <span className={`block text-[13px] font-bold ${active ? "text-white" : "text-white/80"}`}>
                 {c.title}
-                {authored && !unlocked && !isFreeChapter(authored.id) && <span className="ml-1.5 text-[11px]" title="Pro chapter">🔒</span>}
+                {locked && <span className="ml-1.5 text-[11px]" title="Pro chapter">🔒</span>}
               </span>
               <span className="mt-0.5 block text-[10px] capitalize text-white/45">
                 {c.category} · {authored ? "✓ full notes" : "syllabus"}
@@ -499,21 +510,21 @@ export default function NotesExplorer() {
 
           {/* Active section */}
           <section className="min-h-[200px]">
-            {chapterLocked ? (
-              <UnlockBanner available={freeCount} total={NOTES_ENGINE_STATS.chapters} itemLabel="notes chapters" />
-            ) : (
-              <div className="space-y-4">
-                <div className="border-b border-white/[0.06] pb-3">
-                  <h2 className="flex items-center gap-2 text-lg font-black text-white">
-                    <span>{activeSection.icon}</span> {activeSection.label}
-                  </h2>
-                  <p className="text-xs text-white/45 mt-1">{activeSection.description}</p>
-                </div>
-                <StrictSectionBody chapter={chapter} section={section} />
+            <div className="space-y-4">
+              <div className="border-b border-white/[0.06] pb-3">
+                <h2 className="flex items-center gap-2 text-lg font-black text-white">
+                  <span>{activeSection.icon}</span> {activeSection.label}
+                </h2>
+                <p className="text-xs text-white/45 mt-1">{activeSection.description}</p>
               </div>
-            )}
+              <StrictSectionBody chapter={chapter} section={section} />
+            </div>
           </section>
         </>
+      ) : chapterLocked ? (
+        <section className="min-h-[200px]">
+          <UnlockBanner available={freeNoteCount} total={totalNoteCount} itemLabel="notes chapters" />
+        </section>
       ) : (
         /* Syllabus-only state */
         <section className="min-h-[200px] space-y-4">

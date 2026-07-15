@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import ChapterHero from "@/components/notes/ChapterHero";
 
 export const metadata = {
   title: "Mole Concept Notes Hub — SYNERGIC BOND",
@@ -152,30 +153,15 @@ export default function MoleConceptNotesHub() {
     <main className="min-h-screen bg-slate-950 px-4 py-12 text-slate-100 md:px-10">
       <div className="mx-auto max-w-6xl space-y-12">
         {/* Top Header */}
-        <div className="flex flex-col gap-4 border-b border-slate-800 pb-8 md:flex-row md:items-center md:justify-between">
-          <div>
-            <div className="flex items-center gap-3">
-              <span className="rounded-full bg-cyan-500/20 px-3 py-1 text-xs font-bold uppercase tracking-widest text-cyan-300">
-                Quantitative Chemistry OS
-              </span>
-              <span className="text-xs font-bold text-slate-400">Exact Chapter Order</span>
-            </div>
-            <h1 className="mt-3 text-4xl font-black text-white md:text-5xl tracking-tight">
-              Some Basic Concepts of Chemistry
-            </h1>
-            <p className="mt-3 max-w-2xl text-base text-slate-300 leading-relaxed">
-              Complete physical chemistry lessons organized into 4 comprehensive chapters: Mole Concept, Stoichiometry, Concentration Terms, and Eudiometry.
-            </p>
-          </div>
-          <div className="flex items-center gap-3">
-            <Link
-              href="/programs/jee-main/chapter/mole-concept"
-              className="rounded-xl border border-cyan-400/30 bg-cyan-500/10 px-5 py-3 text-sm font-bold text-cyan-300 shadow-lg hover:bg-cyan-500/20 transition"
-            >
-              Open Chapter Engine →
-            </Link>
-          </div>
-        </div>
+        <ChapterHero
+          eyebrow="Quantitative Chemistry OS"
+          category="Exact Chapter Order"
+          title="Some Basic Concepts of Chemistry"
+          description="Complete physical chemistry lessons organized into 4 comprehensive chapters: Mole Concept, Stoichiometry, Concentration Terms, and Eudiometry."
+          backHref="/programs/jee-main/chapter/mole-concept"
+          backLabel="Open Chapter Engine →"
+          accent="cyan"
+        />
 
         {/* 4 Core Chapters Overview Grid */}
         <div>

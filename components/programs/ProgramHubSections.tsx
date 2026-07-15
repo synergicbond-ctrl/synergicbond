@@ -114,16 +114,21 @@ export default function ProgramHubSections({
         </div>
       </div>
 
-      {current && (
-        <>
-          <p className="mb-5 text-sm text-zinc-500">{current.blurb}</p>
-          <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-            {current.cards.map((card) => (
-              <Card key={card.title} card={card} accentText={accentText} accentCard={accentCard} />
-            ))}
-          </div>
-        </>
-      )}
+      {current && (() => {
+        // Unfinished modules never show as dead cards in the main workflow —
+        // filtered here so the grid never has an empty gap where one was.
+        const visibleCards = current.cards.filter((c) => c.status !== "coming-soon");
+        return (
+          <>
+            <p className="mb-5 text-sm text-zinc-500">{current.blurb}</p>
+            <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+              {visibleCards.map((card) => (
+                <Card key={card.title} card={card} accentText={accentText} accentCard={accentCard} />
+              ))}
+            </div>
+          </>
+        );
+      })()}
     </section>
   );
 }

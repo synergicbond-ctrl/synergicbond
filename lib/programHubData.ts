@@ -1,18 +1,26 @@
 import type { Program } from "./programs";
-import { ENGINE_PROGRAMS, isEngineSlug } from "./engine/programSpec";
 
 // ─────────────────────────────────────────────────────────────────────────────
-// Program Hub SSOT (Program Hub Scaffold pass).
+// Program Hub SSOT (Dashboard Simplification pass).
 //
-// One source of truth for the 7-section hub shown on /programs/[slug]:
-//   Learn · Memory System · Practice · Testing · Revision · Analytics ·
-//   Intelligence / Premium.
+// One source of truth for the 6-section hub shown on /programs/[slug]:
+//   Learn · Practice · Tests · Revision · Progress · AI Tools.
 //
-// Sections/cards are derived from the program (slug drives program-scoped
-// hrefs). Every `available` card points at a REAL existing route; unbuilt
-// features are `coming-soon` (no href) — never a fake page. `iconKey` is a
-// string mapped to a lucide icon in the hub page, so this file stays a pure
-// data module with no React imports.
+// Every card's `status` is honest: "available" cards point at a REAL existing
+// route; "coming-soon" cards are filtered out of the rendered nav entirely
+// (ProgramHubSections drops them) so unfinished features never show as dead
+// cards in the main student workflow. "premium" cards render but gate on
+// entitlement — premium is an access status, not a navigation category, so it
+// never gets its own top-level section.
+//
+// Six destinations, one obvious canonical entry point per feature:
+//   - Learn: Chapter Notes · Syllabus · Formula Cards · Chemistry Tools
+//   - Practice: PYQ Center · Topic Practice · Snap & Solve
+//   - Tests: Chapter & Topic Tests · Mock Exams · Test History
+//   - Revision: Revision Queue (merged Memory System + Revision Engine) ·
+//     Recall Decks · Mistake Journal
+//   - Progress: one Progress Dashboard (replaces 6 separate analytics cards)
+//   - AI Tools: AI Tutor · AI Notes · AI Board Examiner · Study Planner
 // ─────────────────────────────────────────────────────────────────────────────
 
 export type CardStatus = "available" | "coming-soon" | "premium";
@@ -37,61 +45,33 @@ export interface HubSection {
 
 export const HUB_SECTION_KEYS = [
   "learn",
-  "memory",
   "practice",
-  "testing",
+  "tests",
   "revision",
-  "analytics",
-  "intelligence",
+  "progress",
+  "ai-tools",
 ] as const;
 
 export function getProgramSections(program: Program): HubSection[] {
   const base = `/programs/${program.slug}`;
-  const sections = buildBaseSections(program, base);
-
-  // Learning-engine layer (NEET / JEE Main / JEE Advanced only) — ADDITIVE
-  // cards on the existing hub, never a redesign. Every href is a live route.
-  if (isEngineSlug(program.slug)) {
-    const engine = ENGINE_PROGRAMS[program.slug];
-    const add = (key: string, card: HubCard) => {
-      sections.find((s) => s.key === key)?.cards.push(card);
-    };
-    add("learn", { title: "Full Syllabus Dashboard", description: "Whole-course tools — notes, NCERT, formula/exception/trick books, timers, prediction.", status: "available", href: `${base}/full-syllabus`, iconKey: "book" });
-    add("learn", { title: "Chapter Engine", description: "11-section chapter experience — mastery, NCERT intelligence, question bank, innovation lab, tutor.", status: "available", href: `${base}/learn`, iconKey: "sparkles" });
-    add("testing", { title: "Smart Timers", description: "Pomodoro · deep work · exam simulation · custom.", status: "available", href: "/timers", iconKey: "calendar" });
-    if (engine.hasSpeedAnalysis) {
-      add("analytics", { title: "Speed Analysis", description: "Real per-question pace vs difficulty benchmarks — rushing & slow chapters.", status: "available", href: `${base}/speed`, iconKey: "activity" });
-    }
-  }
-  return sections;
+  return buildBaseSections(program, base);
 }
 
 function buildBaseSections(program: Program, base: string): HubSection[] {
+  const { pyqExam } = program;
+  const pyqCenterHref = pyqExam ? `/pyq?exam=${encodeURIComponent(pyqExam)}` : "/pyq";
+
   return [
     {
       key: "learn",
       label: "Learn",
       iconKey: "book",
-      blurb: "Chapters, notes, formulas and the verified concept library.",
+      blurb: "Chapters, the official syllabus, formula cards and chemistry tools.",
       cards: [
-        { title: "Program Learn Hub", description: "Chapters + modules scoped to this program.", status: "available", href: `${base}/learn`, iconKey: "book" },
-        { title: "Chapter Notes", description: "Verified exam notes with solved examples.", status: "available", href: "/learn", iconKey: "notes" },
+        { title: "Chapter Notes", description: "Verified exam notes, chapter browsing, exam filters and access badges.", status: "available", href: `${base}/learn`, iconKey: "notes" },
+        { title: "Syllabus", description: "The complete official syllabus — every unit, topic and question format.", status: "available", href: `${base}/syllabus`, iconKey: "book" },
         { title: "Formula Cards", description: "Physical-chemistry formulas with units & PYQ links.", status: "available", href: "/formula-cards", iconKey: "sigma" },
-        { title: "Knowledge Vault", description: "Saved concepts, exceptions and quick facts.", status: "available", href: "/vault", iconKey: "vault" },
-        { title: "Periodic Table", description: "Interactive element data and trends.", status: "available", href: "/periodic-table", iconKey: "table" },
-      ],
-    },
-    {
-      key: "memory",
-      label: "Memory System",
-      iconKey: "brain",
-      blurb: "Active-recall decks scheduled with SM-2 spaced repetition.",
-      cards: [
-        { title: "Daily Revision Queue", description: "Every card due today, across all decks.", status: "available", href: "/memory?deck=daily", iconKey: "repeat" },
-        { title: "Formula Recall", description: "Rapid drill on expressions, variables and units.", status: "available", href: "/memory?deck=formula", iconKey: "sigma" },
-        { title: "Reagent Recall", description: "What each reagent does, and its selectivity.", status: "available", href: "/memory?deck=reagent", iconKey: "flask" },
-        { title: "Fact & Order Recall", description: "NCERT exceptions and verified ranking orders.", status: "available", href: "/memory?deck=fact", iconKey: "brain" },
-        { title: "Reaction Recall", description: "Mechanism recall decks — building next.", status: "coming-soon", iconKey: "reaction" },
+        { title: "Chemistry Tools", description: "Periodic table, knowledge vault, molecule explorer, reagents, orders and colours.", status: "available", href: "/chemistry-tools", iconKey: "flask" },
       ],
     },
     {
@@ -100,58 +80,52 @@ function buildBaseSections(program: Program, base: string): HubSection[] {
       iconKey: "target",
       blurb: "Previous-year questions with chapter, topic and difficulty filters.",
       cards: [
-        { title: "Program Practice", description: "PYQs filtered to this program's exam.", status: "available", href: `${base}/practice`, iconKey: "target" },
-        { title: "PYQ Center", description: "Full previous-year intelligence and search.", status: "available", href: "/pyq", iconKey: "target" },
+        { title: "PYQ Center", description: `Full previous-year intelligence and search${pyqExam ? `, filtered to ${pyqExam}` : ""}.`, status: "available", href: pyqCenterHref, iconKey: "target" },
+        { title: "Topic Practice", description: pyqExam ? `PYQs filtered to this program's exam, by chapter and topic.` : "Question practice by chapter and topic.", status: "available", href: `${base}/practice`, iconKey: "repeat" },
         { title: "Snap & Solve", description: "Photo a question → verified step-by-step solution.", status: "available", href: "/snap-solve", iconKey: "camera" },
       ],
     },
     {
-      key: "testing",
-      label: "Testing",
+      key: "tests",
+      label: "Tests",
       iconKey: "clipboard",
-      blurb: "Chapter, topic and full-paper tests with saved attempts.",
+      blurb: "Chapter, topic and mock tests, plus every attempt you've submitted.",
       cards: [
-        { title: "Program Tests", description: "Chapter · topic · full-paper tests for this program.", status: "available", href: `${base}/tests`, iconKey: "clipboard" },
-        { title: "Mock Exam", description: "Real-pattern mock papers with scoring & review.", status: "available", href: "/exam", iconKey: "clipboard" },
-        { title: "Quiz", description: "Quick chapter quizzes for fast practice.", status: "available", href: "/quiz", iconKey: "quiz" },
-        { title: "Custom Test Builder", description: "Pick chapters, difficulty and length.", status: "coming-soon", iconKey: "sliders" },
+        { title: "Chapter & Topic Tests", description: "Chapter and topic tests for this program, built from real PYQs.", status: "available", href: `${base}/tests`, iconKey: "clipboard" },
+        { title: "Mock Exams", description: "Real-pattern mock papers with scoring & review.", status: "available", href: "/exam", iconKey: "clipboard" },
+        { title: "Test History", description: "Reopen and review any submitted exam or test.", status: "available", href: "/tests/history", iconKey: "history" },
       ],
     },
     {
       key: "revision",
       label: "Revision",
       iconKey: "history",
-      blurb: "Saved attempts, targeted revision and mistake review.",
+      blurb: "Scheduled recall and your mistake queue — memory decks and revision sessions, merged.",
       cards: [
-        { title: "Revision Engine", description: "High-yield revision sessions.", status: "available", href: "/revision", iconKey: "history" },
-        { title: "Saved Attempts", description: "Reopen and review any submitted exam or test.", status: "available", href: "/revision", iconKey: "history" },
+        { title: "Revision Queue", description: "Daily spaced-repetition due cards plus high-yield revision sessions, in one place.", status: "available", href: "/revision", iconKey: "repeat" },
+        { title: "Recall Decks", description: "Formula, reagent and fact/order recall — pick a deck inside.", status: "available", href: "/memory", iconKey: "brain" },
         { title: "Mistake Journal", description: "Auto-collected wrong questions with reattempt queue.", status: "available", href: "/mistakes", iconKey: "alert" },
       ],
     },
     {
-      key: "analytics",
-      label: "Analytics",
+      key: "progress",
+      label: "Progress",
       iconKey: "activity",
-      blurb: "Performance signals and exam-readiness — from real attempts only.",
+      blurb: "Every performance signal in one dashboard — from real attempts only.",
       cards: [
-        { title: "Performance", description: "Accuracy and weak-topic breakdown.", status: "available", href: "/performance", iconKey: "activity" },
-        { title: "Exam Predictor", description: "Likely high-yield topics from PYQ trends.", status: "available", href: "/exam-predictor", iconKey: "predict" },
-        { title: "Syllabus Mastery Map", description: "Chapter-by-chapter R/Y/G mastery from your attempts.", status: "available", href: "/analytics", iconKey: "gauge" },
-        { title: "NCERT Blind Spots", description: "Line-level NCERT coverage — mastered, weak and unseen.", status: "available", href: "/ncert", iconKey: "predict" },
-        { title: "Readiness Report", description: "One explainable readiness score with what to fix next.", status: "available", href: "/readiness", iconKey: "gauge" },
+        { title: "Progress Dashboard", description: "Overview, mastery map, readiness score, speed analysis and NCERT gaps — one dashboard.", status: "available", href: `${base}/progress`, iconKey: "gauge" },
       ],
     },
     {
-      key: "intelligence",
-      label: "Intelligence / Premium",
+      key: "ai-tools",
+      label: "AI Tools",
       iconKey: "sparkles",
-      blurb: "AI tutoring, planning and the personalised study twin.",
+      blurb: "AI tutoring, notes, grading and planning.",
       cards: [
         { title: "AI Tutor", description: "Step-by-step conceptual doubt solving.", status: "available", href: "/tutor", iconKey: "bot" },
         { title: "AI Notes", description: "Generate exam-focused notes for any topic.", status: "available", href: "/ai-lab/notes", iconKey: "notes" },
         { title: "AI Board Examiner", description: "Grade a written answer to the marking scheme.", status: "available", href: "/board-examiner", iconKey: "clipboard" },
         { title: "Study Planner", description: "Week-by-week syllabus plan in the AI Lab.", status: "available", href: "/ai-lab", iconKey: "calendar" },
-        { title: "Digital Twin", description: "A personalised model of your prep that adapts your plan.", status: "premium", iconKey: "sparkles" },
       ],
     },
   ];

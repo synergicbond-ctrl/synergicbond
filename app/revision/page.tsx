@@ -1,59 +1,13 @@
 import Link from "next/link";
-import { getUserAttempts } from "@/lib/attempts/store";
 import SavedRevisionList from "@/components/revision/SavedRevisionList";
 
-// Saved attempts (Week 5A Attempt Layer) — real sessions only; signed-out
-// users see an honest sign-in hint instead of an empty fake list.
-async function SavedAttempts() {
-  const result = await getUserAttempts({ limit: 20 });
-  const error = result.error;
-  const attempts = result.data ?? [];
-
-  return (
-    <section className="bg-white border border-slate-100 rounded-2xl p-6 shadow-sm">
-      <h2 className="text-2xl font-bold text-slate-800">Saved Attempts</h2>
-      <p className="text-slate-600 text-sm mt-1">
-        Your submitted exams and test answers — open any attempt to review every question.
-      </p>
-
-      {error === "Unauthorized" ? (
-        <p className="mt-4 text-sm text-slate-600">
-          <Link href="/auth/signin" className="font-bold text-indigo-600 hover:underline">Sign in</Link>{" "}
-          to save and review your attempts.
-        </p>
-      ) : error ? (
-        <p className="mt-4 text-sm text-slate-500">Attempts are unavailable right now — try again shortly.</p>
-      ) : attempts.length === 0 ? (
-        <p className="mt-4 text-sm text-slate-600">
-          No attempts yet — take a{" "}
-          <Link href="/exam" className="font-bold text-indigo-600 hover:underline">mock exam</Link> or a{" "}
-          <Link href="/tests" className="font-bold text-indigo-600 hover:underline">practice test</Link> to start.
-        </p>
-      ) : (
-        <ul className="mt-4 divide-y divide-slate-100">
-          {attempts.map((a) => (
-            <li key={a.attemptId}>
-              <Link
-                href={`/revision/attempt/${a.attemptId}`}
-                className="flex flex-wrap items-center gap-x-4 gap-y-1 py-3 hover:bg-slate-50 rounded-lg px-2 -mx-2 transition"
-              >
-                <span className="font-bold text-slate-900">{a.title ?? `${a.exam} ${a.source}`}</span>
-                <span className="text-xs uppercase tracking-wide text-slate-400">{a.source}</span>
-                <span className="text-sm text-slate-600">
-                  {a.correctCount}/{a.totalQuestions} correct · score {a.score}/{a.maxScore}
-                </span>
-                <span className="ml-auto text-xs text-slate-400">
-                  {new Date(a.submittedAt).toLocaleDateString("en-IN", { day: "numeric", month: "short", year: "numeric" })}
-                </span>
-                <span className="text-indigo-600 font-semibold text-sm">Review →</span>
-              </Link>
-            </li>
-          ))}
-        </ul>
-      )}
-    </section>
-  );
-}
+// ─────────────────────────────────────────────────────────────────────────────
+// /revision — Revision Queue (Dashboard Simplification pass: Memory System +
+// Revision Engine merged here). Saved Attempts moved to /tests/history (now
+// "Test History", under Tests where it belongs). Daily Revision Queue
+// (SM-2 spaced repetition, /memory) is cross-linked below instead of
+// duplicated — one data store, reachable from one destination.
+// ─────────────────────────────────────────────────────────────────────────────
 
 export default function RevisionPage() {
   const revisionModules = [
@@ -92,9 +46,23 @@ export default function RevisionPage() {
       
       {/* Header */}
       <header>
-        <h1 className="text-4xl font-extrabold tracking-tight text-slate-900">Revision Engine</h1>
-        <p className="text-slate-600 mt-1">Targeted, high-yield revision sessions to retain concepts and patch weak spots.</p>
+        <h1 className="text-4xl font-extrabold tracking-tight text-slate-900">Revision Queue</h1>
+        <p className="text-slate-600 mt-1">Daily spaced-repetition due cards plus targeted, high-yield revision sessions — in one place.</p>
       </header>
+
+      {/* Daily Revision Queue (Memory Engine, SM-2) — merged in here, not duplicated */}
+      <Link
+        href="/memory?deck=daily"
+        className="flex items-center justify-between gap-4 rounded-2xl border border-cyan-200 bg-cyan-50 p-6 shadow-sm transition hover:border-cyan-300"
+      >
+        <div>
+          <h2 className="text-2xl font-bold text-cyan-900">Daily Revision Queue →</h2>
+          <p className="mt-1 text-sm text-cyan-800/80">
+            Every spaced-repetition card due today, across all decks — graded with SM-2 so weak cards come back sooner.
+          </p>
+        </div>
+        <span className="text-3xl">🧠</span>
+      </Link>
 
       {/* Revision Modules Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -137,9 +105,6 @@ export default function RevisionPage() {
       {/* One-Tap Revision saved items (Week 7) */}
       <SavedRevisionList />
 
-      {/* Saved attempts (Attempt Layer) */}
-      <SavedAttempts />
-
       {/* Weak Topic Custom Search */}
       <section className="bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
         <h2 className="text-2xl font-bold text-slate-800 mb-2">Drill a Custom Weak Topic</h2>
@@ -157,6 +122,13 @@ export default function RevisionPage() {
           </button>
         </form>
       </section>
+
+      {/* Smart Timers — a study utility, not a test type, so it lives here not under Tests */}
+      <p className="text-center text-sm text-slate-500">
+        <Link href="/timers" className="font-semibold text-indigo-600 hover:underline">
+          ⏱ Smart Timers — Pomodoro, deep work & exam simulation →
+        </Link>
+      </p>
 
     </div>
   );

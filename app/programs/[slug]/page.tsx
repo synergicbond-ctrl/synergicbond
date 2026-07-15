@@ -1,20 +1,18 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import ProgramSyllabusTree from "@/components/programs/ProgramSyllabusTree";
 import ProgramHubSections from "@/components/programs/ProgramHubSections";
 import { getProgram, PROGRAMS } from "@/lib/programs";
 import { getProgramSections } from "@/lib/programHubData";
-import { getProgramSyllabus, HUB_SYLLABUS_MAP } from "@/lib/programSyllabus";
+import { HUB_SYLLABUS_MAP } from "@/lib/programSyllabus";
 
 // ─────────────────────────────────────────────────────────────────────────────
-// /programs/[slug] — Program hub (Program Hub Scaffold pass).
+// /programs/[slug] — Program hub (Dashboard Simplification pass).
 //
 // One dynamic hub for every program, driven by the programs SSOT + the
-// programHubData SSOT (7 sections: Learn · Memory · Practice · Testing ·
-// Revision · Analytics · Intelligence). Available cards link to real routes;
-// unbuilt features render as honest coming-soon. Programs with verified
-// master-syllabus data (NEET / JEE Main / JEE Advanced) also render the
-// official syllabus; the rest stay honest structure-only until mapped.
+// programHubData SSOT (6 sections: Learn · Practice · Tests · Revision ·
+// Progress · AI Tools). Available cards link to real routes; unbuilt features
+// never render in primary nav. The complete official syllabus lives only at
+// Learn → Syllabus — this page shows at most a small link to it.
 // ─────────────────────────────────────────────────────────────────────────────
 
 export function generateStaticParams() {
@@ -38,12 +36,9 @@ export default async function ProgramHubPage({ params }: { params: Promise<{ slu
   const program = getProgram(slug);
   if (!program) notFound();
 
-  const { name, kicker, tagline, chips, legacyHub, accent } = program;
+  const { name, kicker, tagline, chips, accent } = program;
   const sections = getProgramSections(program);
-  // Program-isolated official syllabus trees (never another program's names).
-  const syllabuses = (HUB_SYLLABUS_MAP[slug] ?? [])
-    .map((id) => getProgramSyllabus(id))
-    .filter((s): s is NonNullable<typeof s> => Boolean(s));
+  const hasSyllabus = (HUB_SYLLABUS_MAP[slug] ?? []).length > 0;
 
   return (
     <main className="min-h-screen bg-black text-white">
@@ -89,38 +84,14 @@ export default async function ProgramHubPage({ params }: { params: Promise<{ slu
 
         <div className="mb-12">
           <ProgramHubSections sections={sections} accentText={accent.text} accentCard={accent.card} />
-          <p className="mt-6 text-sm text-zinc-500">
-            Global library:{" "}
-            <Link href="/learn" className="underline-offset-4 hover:underline hover:text-white">Learn</Link>
-            {" · "}
-            <Link href="/pyq" className="underline-offset-4 hover:underline hover:text-white">PYQ Center</Link>
-            {" · "}
-            <Link href="/tests" className="underline-offset-4 hover:underline hover:text-white">Tests</Link>
-            {legacyHub && (
-              <>
-                {" — or the AI toolset: "}
-                <Link href={legacyHub.href} className={`font-semibold underline-offset-4 hover:underline ${accent.text}`}>
-                  {legacyHub.label} →
-                </Link>
-              </>
-            )}
-          </p>
-        </div>
-
-        {syllabuses.length > 0 ? (
-          <div className="space-y-6">
-            {syllabuses.map((s) => <ProgramSyllabusTree key={s.programId} syllabus={s} />)}
-          </div>
-        ) : (
-          <div className="rounded-2xl border border-white/10 bg-white/[0.02] p-8 text-center">
-            <h2 className="text-xl font-bold">Verified syllabus mapping in progress</h2>
-            <p className="mx-auto mt-2 max-w-lg text-sm leading-relaxed text-zinc-400">
-              The chapter-by-chapter {name} syllabus is being mapped from official sources — no
-              unverified content ships here. Meanwhile the full chemistry library above covers the
-              core Class 11–12 concepts this program builds on.
+          {hasSyllabus && (
+            <p className="mt-6 text-sm text-zinc-500">
+              <Link href={`/programs/${slug}/syllabus`} className={`font-semibold underline-offset-4 hover:underline ${accent.text}`}>
+                View official syllabus →
+              </Link>
             </p>
-          </div>
-        )}
+          )}
+        </div>
 
         <div className="mt-12 text-center">
           <Link href="/programs" className="text-sm text-zinc-500 transition hover:text-white">

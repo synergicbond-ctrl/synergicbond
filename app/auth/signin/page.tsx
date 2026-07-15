@@ -161,7 +161,7 @@ export default function SignInPage() {
             ⚡ Try as Guest — No Login Needed
           </button>
           <p className="text-center text-xs text-white/30">
-            Guest access: Notes, Assignments, Quiz — no account required
+            Guest access: Free Notes chapters, Assignments, Quiz — no account required
           </p>
 
           <div className="text-center pt-4">

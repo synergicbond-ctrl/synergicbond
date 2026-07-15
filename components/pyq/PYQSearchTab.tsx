@@ -8,9 +8,9 @@ import QuestionCard from "./QuestionCard";
 const EXAMS: PYQExam[] = ["JEE Main", "JEE Advanced", "NEET"];
 const DIFFICULTIES: PYQDifficulty[] = ["Easy", "Moderate", "Hard", "Olympiad"];
 
-export default function PYQSearchTab() {
+export default function PYQSearchTab({ initialExam }: { initialExam?: PYQExam | null }) {
   const [searchQuery, setSearchQuery] = useState("");
-  const [selectedExam, setSelectedExam] = useState<PYQExam | null>(null);
+  const [selectedExam, setSelectedExam] = useState<PYQExam | null>(initialExam ?? null);
   const [selectedChapter, setSelectedChapter] = useState<PYQChapter | "">("");
   const [selectedDifficulty, setSelectedDifficulty] = useState<PYQDifficulty | null>(null);
   const [selectedYear, setSelectedYear] = useState<number | "">("");

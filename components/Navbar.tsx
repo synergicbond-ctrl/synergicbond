@@ -2,8 +2,9 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import MoleculeLogo from "@/components/MoleculeLogo";
+import ProgramSwitcher, { type SwitcherProgram } from "@/components/portal/ProgramSwitcher";
 import { useT, LANGS, type Lang } from "@/lib/i18n";
 import { supabase } from "@/lib/supabase";
 import type { Session } from "@supabase/supabase-js";
@@ -111,7 +112,7 @@ const MEGA_MENUS: MegaMenu[] = [
         title: "📊 Performance Ecosystem",
         items: [
           { href: "/dashboard",   label: "Mission Control", desc: "Your study command centre",  icon: LayoutDashboard },
-          { href: "/performance", label: "Analytics",       desc: "Readiness · weak topics",    icon: Activity },
+          { href: "/performance", label: "Progress",        desc: "Readiness · weak topics",    icon: Activity },
           { href: "/revision",    label: "Revision Queue",  desc: "What to revise next",        icon: History },
         ],
       },
@@ -142,11 +143,53 @@ const mainLinks: { href: string; label: string; icon: LucideIcon }[] = [
   { href: "/tests",            label: "Practice Tests",   icon: ClipboardList },
   { href: "/ai-lab",           label: "AI Lab",           icon: Bot },
   { href: "/dashboard",        label: "Mission Control",  icon: LayoutDashboard },
-  { href: "/performance",      label: "Analytics",        icon: Activity },
+  { href: "/performance",      label: "Progress",         icon: Activity },
   { href: "/pricing",          label: "Pricing",          icon: Gem },
   { href: "/support",          label: "Support",          icon: Heart },
   { href: "/about",            label: "About",            icon: Info },
 ];
+
+// ─────────────────────────────────────────────────────────────────────────────
+// Authenticated portal chrome (Portal Reorganisation pass).
+//
+// Signed-in students working inside the portal get ONE compact header —
+// Home · Learn · Practice · Tests · Revision · Progress · AI Tools + the
+// Active Program control + profile menu — instead of the public marketing
+// menus (which stay untouched for signed-out visitors and marketing pages).
+// Naming is canonical here: Tests (not Testing), Progress (not Analytics),
+// AI Tools (not Intelligence/Premium); Memory System is folded into Revision.
+// ─────────────────────────────────────────────────────────────────────────────
+
+const PORTAL_PREFIXES = [
+  "/dashboard", "/programs/", "/pyq", "/tests", "/revision", "/memory",
+  "/mistakes", "/ai-lab", "/tutor", "/performance", "/analytics", "/notes",
+  "/exam", "/chapter", "/chemistry-tools", "/formula-cards", "/snap-solve",
+  "/board-examiner", "/learn", "/readiness", "/ncert", "/exam-predictor",
+  "/timers", "/achievements",
+];
+
+function isPortalPath(pathname: string | null): boolean {
+  if (!pathname) return false;
+  return PORTAL_PREFIXES.some((p) =>
+    p.endsWith("/") ? pathname.startsWith(p) : pathname === p || pathname.startsWith(`${p}/`)
+  );
+}
+
+interface PortalContext {
+  entitledPrograms: SwitcherProgram[];
+  activeProgram: SwitcherProgram | null;
+  isAllAccess: boolean;
+  canSwitchPrograms: boolean;
+  destinations: {
+    home: string; learn: string; practice: string; tests: string;
+    revision: string; progress: string; aiTools: string;
+  };
+}
+
+const FREE_DESTINATIONS: PortalContext["destinations"] = {
+  home: "/dashboard", learn: "/notes", practice: "/pyq", tests: "/tests",
+  revision: "/revision", progress: "/performance", aiTools: "/ai-lab",
+};
 
 export default function Navbar() {
   const pathname = usePathname();
@@ -159,6 +202,42 @@ export default function Navbar() {
   const [isGuest, setIsGuest] = useState(
     () => typeof window !== "undefined" && localStorage.getItem("sb_guest") === "1"
   );
+  const [portal, setPortal] = useState<PortalContext | null>(null);
+
+  // Portal context — server-verified entitled programs + active program for
+  // the header. Only fetched for signed-in users; the endpoint returns 401
+  // otherwise. Re-fetched after a program switch (custom event from the
+  // switcher) so the nav links re-scope without a full reload.
+  const fetchPortal = useCallback(async () => {
+    try {
+      const res = await fetch("/api/portal/active-program", { cache: "no-store" });
+      if (!res.ok) { setPortal(null); return; }
+      const data = await res.json();
+      setPortal({
+        entitledPrograms: data.entitledPrograms ?? [],
+        activeProgram: data.activeProgram ?? null,
+        isAllAccess: Boolean(data.isAllAccess),
+        canSwitchPrograms: Boolean(data.canSwitchPrograms),
+        destinations: data.destinations ?? FREE_DESTINATIONS,
+      });
+    } catch {
+      setPortal(null);
+    }
+  }, []);
+
+  // Only fetch on sign-in; render already gates all portal chrome on `email`,
+  // so a stale context after sign-out is never shown. Deferred a tick so the
+  // effect itself never sets state synchronously.
+  useEffect(() => {
+    if (!email) return;
+    const t = setTimeout(fetchPortal, 0);
+    return () => clearTimeout(t);
+  }, [email, fetchPortal]);
+
+  useEffect(() => {
+    window.addEventListener("sb-program-switched", fetchPortal);
+    return () => window.removeEventListener("sb-program-switched", fetchPortal);
+  }, [fetchPortal]);
 
   // Auth state — show the signed-in student in the navbar
   useEffect(() => {
@@ -186,6 +265,20 @@ export default function Navbar() {
     setLangOpen(false);
   }
 
+  // Authenticated portal chrome — signed-in users inside the portal get the
+  // canonical 7-destination header instead of the marketing menus.
+  const portalMode = Boolean(email) && isPortalPath(pathname);
+  const dest = portal?.destinations ?? FREE_DESTINATIONS;
+  const portalLinks: { href: string; label: string; icon: LucideIcon }[] = [
+    { href: dest.home,     label: "Home",     icon: Home },
+    { href: dest.learn,    label: "Learn",    icon: BookOpen },
+    { href: dest.practice, label: "Practice", icon: Target },
+    { href: dest.tests,    label: "Tests",    icon: ClipboardList },
+    { href: dest.revision, label: "Revision", icon: History },
+    { href: dest.progress, label: "Progress", icon: Activity },
+    { href: dest.aiTools,  label: "AI Tools", icon: Bot },
+  ];
+
   return (
     <header className="sticky top-0 z-50 border-b border-white/[0.06] bg-[#0B0F19]/90 backdrop-blur-2xl">
       <div className="mx-auto flex h-16 max-w-[1400px] items-center justify-between px-4 md:px-6 gap-4">
@@ -205,7 +298,28 @@ export default function Navbar() {
           </div>
         </Link>
 
-        {/* Desktop Nav — WEEK 13 final IA: Home · Programs · Features · Pricing · Support */}
+        {/* Desktop Nav — portal chrome for signed-in students, WEEK 13
+            marketing IA (Home · Programs · Features · Pricing · Support)
+            for everyone else. */}
+        {portalMode ? (
+          <nav className="hidden lg:flex items-center justify-center flex-1 gap-1" aria-label="Portal">
+            {portalLinks.map((l) => {
+              const Icon = l.icon;
+              const active = pathname === l.href || (l.href !== "/dashboard" && pathname?.startsWith(`${l.href}/`));
+              return (
+                <Link
+                  key={l.label}
+                  href={l.href}
+                  className={`flex items-center gap-1.5 px-3 py-2 rounded-lg text-sm font-medium transition ${
+                    active ? "text-cyan-300 bg-cyan-500/10" : "text-gray-300 hover:text-white hover:bg-white/[0.05]"
+                  }`}
+                >
+                  <Icon className="h-4 w-4" /> {l.label}
+                </Link>
+              );
+            })}
+          </nav>
+        ) : (
         <nav className="hidden lg:flex items-center justify-center flex-1 gap-1">
           {/* Home */}
           <Link
@@ -317,9 +431,20 @@ export default function Navbar() {
             <Search className="h-4 w-4" /> {t("nav.search")}
           </Link>
         </nav>
+        )}
 
         {/* Right Utilities */}
         <div className="flex items-center gap-2 flex-shrink-0">
+          {/* Active Program control — portal chrome only */}
+          {portalMode && portal && (
+            <div className="hidden md:block">
+              <ProgramSwitcher
+                entitledPrograms={portal.entitledPrograms}
+                activeProgram={portal.activeProgram}
+                isAllAccess={portal.isAllAccess}
+              />
+            </div>
+          )}
           {/* Language dropdown */}
           <div className="hidden sm:block relative">
             <button
@@ -383,10 +508,16 @@ export default function Navbar() {
                       <p className="text-xs font-semibold text-white truncate">{email}</p>
                     </div>
                     <Link href="/dashboard" onClick={() => setAcctOpen(false)} className="flex items-center gap-2.5 w-full px-3 py-2 rounded-lg text-xs font-medium text-gray-300 hover:text-white hover:bg-white/5 transition">
-                      <LayoutDashboard className="h-4 w-4 text-cyan-400" /> My Dashboard
+                      <LayoutDashboard className="h-4 w-4 text-cyan-400" /> Home
+                    </Link>
+                    <Link href="/dashboard/profile" onClick={() => setAcctOpen(false)} className="flex items-center gap-2.5 w-full px-3 py-2 rounded-lg text-xs font-medium text-gray-300 hover:text-white hover:bg-white/5 transition">
+                      <UserCircle className="h-4 w-4 text-cyan-400" /> My Profile
+                    </Link>
+                    <Link href="/dashboard/programs" onClick={() => setAcctOpen(false)} className="flex items-center gap-2.5 w-full px-3 py-2 rounded-lg text-xs font-medium text-gray-300 hover:text-white hover:bg-white/5 transition">
+                      <GraduationCap className="h-4 w-4 text-cyan-400" /> My Programs
                     </Link>
                     <Link href="/dashboard/subscription" onClick={() => setAcctOpen(false)} className="flex items-center gap-2.5 w-full px-3 py-2 rounded-lg text-xs font-medium text-gray-300 hover:text-white hover:bg-white/5 transition">
-                      <CreditCard className="h-4 w-4 text-cyan-400" /> Manage Subscriptions
+                      <CreditCard className="h-4 w-4 text-cyan-400" /> Subscription &amp; Billing
                     </Link>
                     <Link href="/achievements" onClick={() => setAcctOpen(false)} className="flex items-center gap-2.5 w-full px-3 py-2 rounded-lg text-xs font-medium text-gray-300 hover:text-white hover:bg-white/5 transition">
                       <Medal className="h-4 w-4 text-yellow-400" /> Achievements
@@ -445,8 +576,18 @@ export default function Navbar() {
               </button>
             ))}
           </div>
+          {portalMode && portal && (
+            <div className="mb-4 flex items-center justify-between gap-2">
+              <span className="text-[10px] font-bold uppercase tracking-wider text-white/40">Active program</span>
+              <ProgramSwitcher
+                entitledPrograms={portal.entitledPrograms}
+                activeProgram={portal.activeProgram}
+                isAllAccess={portal.isAllAccess}
+              />
+            </div>
+          )}
           <div className="grid grid-cols-2 gap-2">
-            {mainLinks.map((link) => {
+            {(portalMode ? portalLinks : mainLinks).map((link) => {
               const Icon = link.icon;
               const active = pathname === link.href;
               return (

@@ -30,7 +30,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22
           cache: npm
 
       - name: Install dependencies (clean, from lockfile)
@@ -57,7 +57,9 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          # validate-neet-pyq imports a generated .ts module with Node's
+          # type-stripping support, which requires Node 22.6 or newer.
+          node-version: 22
           cache: npm
 
       - name: Install dependencies (clean, from lockfile)

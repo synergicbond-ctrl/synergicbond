@@ -1,9 +1,10 @@
 "use client";
 
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState, type KeyboardEvent as ReactKeyboardEvent } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { Check, ChevronDown, GraduationCap, Sparkles } from "lucide-react";
+import { getNextProgramOptionIndex } from "@/lib/portal/programSwitcherKeyboard";
 
 // ─────────────────────────────────────────────────────────────────────────────
 // Active Program switcher (Portal Reorganisation pass).
@@ -29,25 +30,32 @@ export default function ProgramSwitcher({
   entitledPrograms,
   activeProgram,
   isAllAccess,
+  onProgramChange,
 }: {
   entitledPrograms: SwitcherProgram[];
   activeProgram: SwitcherProgram | null;
   isAllAccess: boolean;
+  /** Safe fixture seam; production callers omit this and use the guarded API. */
+  onProgramChange?: (programKey: string) => void | Promise<void>;
 }) {
   const router = useRouter();
   const [open, setOpen] = useState(false);
   const [busyKey, setBusyKey] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
   const rootRef = useRef<HTMLDivElement>(null);
+  const triggerRef = useRef<HTMLButtonElement>(null);
   const listRef = useRef<HTMLDivElement>(null);
 
   const close = useCallback(() => setOpen(false), []);
 
-  // Esc closes; clicks outside close.
+  // Esc closes and returns focus to the trigger; clicks outside just close.
   useEffect(() => {
     if (!open) return;
     function onKey(e: KeyboardEvent) {
-      if (e.key === "Escape") close();
+      if (e.key === "Escape") {
+        close();
+        window.requestAnimationFrame(() => triggerRef.current?.focus());
+      }
     }
     function onClick(e: MouseEvent) {
       if (rootRef.current && !rootRef.current.contains(e.target as Node)) close();
@@ -74,6 +82,11 @@ export default function ProgramSwitcher({
     setBusyKey(key);
     setError(null);
     try {
+      if (onProgramChange) {
+        await onProgramChange(key);
+        close();
+        return;
+      }
       const res = await fetch("/api/portal/active-program", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -88,6 +101,18 @@ export default function ProgramSwitcher({
     } finally {
       setBusyKey(null);
     }
+  }
+
+  function handleListKeyDown(event: ReactKeyboardEvent<HTMLDivElement>) {
+    if (busyKey) return;
+    const options = Array.from(
+      listRef.current?.querySelectorAll<HTMLButtonElement>("[role='option']") ?? [],
+    );
+    const currentIndex = options.findIndex((option) => option === document.activeElement);
+    const nextIndex = getNextProgramOptionIndex(event.key, currentIndex, options.length);
+    if (nextIndex === null) return;
+    event.preventDefault();
+    options[nextIndex]?.focus();
   }
 
   // ── Free workspace (no entitled programs) ──────────────────────────────────
@@ -124,6 +149,7 @@ export default function ProgramSwitcher({
   return (
     <div ref={rootRef} className="relative">
       <button
+        ref={triggerRef}
         type="button"
         aria-haspopup="listbox"
         aria-expanded={open}
@@ -141,6 +167,7 @@ export default function ProgramSwitcher({
           ref={listRef}
           role="listbox"
           aria-label="Switch active program"
+          onKeyDown={handleListKeyDown}
           className="absolute right-0 z-50 mt-2 w-72 rounded-xl border border-white/[0.08] bg-[#111827] p-1.5 shadow-2xl shadow-black/50"
         >
           <p className="px-3 pb-1 pt-2 text-[10px] font-bold uppercase tracking-wider text-white/35">

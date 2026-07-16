@@ -5,8 +5,6 @@ import Link from "next/link";
 import { physical } from "@/lib/masterSyllabus/physical";
 import { organic } from "@/lib/masterSyllabus/organic";
 import { inorganic } from "@/lib/masterSyllabus/inorganic";
-import { NOTES_CHAPTERS } from "@/lib/notesEngine";
-import { getChapterGraph } from "@/lib/knowledge/graph";
 
 // ─────────────────────────────────────────────────────────────────────────────
 // Week 10–11 — AI Lab hub (foundation)
@@ -191,12 +189,24 @@ function StudyPlanner() {
   );
 }
 
-// ── Revision Generator (Notes Engine SSOT + knowledge-graph links) ────────────
+// ── Revision Generator (server-authorized note subset + graph links) ─────────
 
-function RevisionGenerator() {
+export type RevisionChapter = {
+  id: string;
+  title: string;
+  revisionNotes: string[];
+  graphNodes: {
+    kind: string;
+    refId: string;
+    label: string;
+    href: string;
+    count?: number;
+  }[];
+};
+
+function RevisionGenerator({ chapters }: { chapters: RevisionChapter[] }) {
   const [chapterId, setChapterId] = useState<string | null>(null);
-  const chapter = chapterId ? NOTES_CHAPTERS.find((c) => c.id === chapterId) : null;
-  const graph = chapterId ? getChapterGraph(chapterId) : undefined;
+  const chapter = chapterId ? chapters.find((candidate) => candidate.id === chapterId) : null;
 
   return (
     <div className="space-y-4">
@@ -205,7 +215,7 @@ function RevisionGenerator() {
         content, not AI output) with linked practice from the knowledge graph.
       </p>
       <div className="flex flex-wrap gap-2">
-        {NOTES_CHAPTERS.map((c) => (
+        {chapters.map((c) => (
           <button
             key={c.id}
             onClick={() => setChapterId(c.id)}
@@ -233,9 +243,9 @@ function RevisionGenerator() {
               ))}
             </ul>
           </div>
-          {graph && graph.nodes.length > 0 && (
+          {chapter.graphNodes.length > 0 && (
             <div className="flex flex-wrap gap-2">
-              {graph.nodes.map((n) => (
+              {chapter.graphNodes.map((n) => (
                 <Link
                   key={`${n.kind}-${n.refId}`}
                   href={n.href}
@@ -256,7 +266,7 @@ function RevisionGenerator() {
 
 type BuiltinTool = "planner" | "revision" | null;
 
-export default function AILabHub() {
+export default function AILabHub({ revisionChapters }: { revisionChapters: RevisionChapter[] }) {
   const [open, setOpen] = useState<BuiltinTool>(null);
 
   return (
@@ -288,7 +298,7 @@ export default function AILabHub() {
       {open === "revision" && (
         <section className="rounded-2xl border border-cyan-500/15 bg-cyan-500/[0.04] p-4 md:p-5">
           <h2 className="mb-3 text-sm font-bold uppercase tracking-wider text-white/70">🔁 Revision Generator</h2>
-          <RevisionGenerator />
+          <RevisionGenerator chapters={revisionChapters} />
         </section>
       )}
     </div>

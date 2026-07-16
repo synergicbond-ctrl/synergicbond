@@ -1,4 +1,3 @@
-"use client";
 import { AtomicPartShell, AuditComment, DiagramBox, FormulaLine, MathText, SourcePage } from "./_shared";
 import { ConceptCard, DefinitionCard, LearningObjectives, SummaryStrip } from "../_components/AtomicLearning";
 import { PsiProbabilityVisual, SphericalCoordinatesVisual } from "../_components/AtomicVisuals";

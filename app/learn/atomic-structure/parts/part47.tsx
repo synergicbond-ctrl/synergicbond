@@ -1,4 +1,3 @@
-"use client";
 import { AtomicPartShell, AuditComment, DataTable, DiagramBox, FormulaLine, ImportantNote, LearningObjectives, NoteBlock, SourcePage, SummaryStrip } from "./_shared";
 import { DOrbitalGalleryVisual, DOrbitalNodalMapVisual, DotDensityOrbitalVisual, Dz2OrbitalVisual, OrbitalNodeSeriesVisual } from "../_components/AtomicVisuals";
 

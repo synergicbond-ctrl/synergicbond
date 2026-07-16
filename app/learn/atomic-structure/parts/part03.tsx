@@ -1,4 +1,3 @@
-"use client";
 
 import { AtomicPartShell, AuditComment, BulletList, DiagramBox, FormulaLine, MathText, NoteBlock, SourcePage } from "./_shared";
 import { LearningObjectives, PracticeQuestion, SummaryStrip } from "../_components/AtomicLearning";

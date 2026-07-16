@@ -1,4 +1,3 @@
-"use client";
 
 import { AtomicPartShell, AuditComment, DiagramBox, FormulaLine, MathText, NoteBlock, SourcePage } from "./_shared";
 import { LevelDiagramVisual } from "../_components/AtomicVisuals";

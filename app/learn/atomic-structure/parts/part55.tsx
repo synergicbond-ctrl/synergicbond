@@ -1,4 +1,3 @@
-"use client";
 
 import { AtomicPartShell, AuditComment, FormulaLine, ImportantNote, LearningObjectives, MathText, NoteBlock, SourcePage, SummaryStrip } from "./_shared";
 

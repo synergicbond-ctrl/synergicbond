@@ -1,4 +1,3 @@
-"use client";
 
 import { renderChemistry } from "@/lib/renderChemistry";
 import {

@@ -1,4 +1,3 @@
-"use client";
 import { AtomicPartShell, AuditComment, DiagramBox, ImportantNote, LearningObjectives, MathText, NoteBlock, SourcePage, SummaryStrip } from "./_shared";
 import { DOrbitalGalleryVisual, FOrbitalGalleryVisual } from "../_components/AtomicVisuals";
 const general = (n: number) => <><MathText math={`${n}f_{z^{3}}`} />; <MathText math={`${n}f_{yz^{2}}`} />, <MathText math={`${n}f_{xz^{2}}`} />; <MathText math={`${n}f_{xyz}`} />, <MathText math={`${n}f_{z(x^{2}-y^{2})}`} />; <MathText math={`${n}f_{y(3x^{2}-y^{2})}`} />, <MathText math={`${n}f_{x(x^{2}-3y^{2})}`} />.</>;

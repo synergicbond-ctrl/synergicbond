@@ -5311,8 +5311,6 @@ type NavKey =
   | "chemistry"
   | "special"
   | "families"
-  | "dblock"
-  | "atlas"
   | "workshop";
 
 const NAV: { key: NavKey; label: string; group: string }[] = [
@@ -5328,9 +5326,7 @@ const NAV: { key: NavKey; label: string; group: string }[] = [
   { key: "zeff", label: "Zeff & Slater · Full Notes", group: "Core Periodic Trends" },
   { key: "chemistry", label: "Chemical Periodicity", group: "Advanced Connections" },
   { key: "special", label: "Special Relationships", group: "Advanced Connections" },
-  { key: "families", label: "Family-Wise Orders", group: "Reference Data" },
-  { key: "dblock", label: "3d-Series & Ion Colours", group: "Reference Data" },
-  { key: "atlas", label: "Block-Wise Data Atlas", group: "Reference Data" },
+  { key: "families", label: "Family-Wise Orders, 3d-Series & Block Atlas", group: "Reference Data" },
   { key: "workshop", label: "Worked Example Workshop", group: "Practice" },
 ];
 
@@ -5469,9 +5465,7 @@ export default function PeriodicTableMasterNotes() {
       case "zeff": return <SectionZeffSlater />;
       case "chemistry": return <SectionChemicalPeriodicity />;
       case "special": return <SectionSpecialEffects />;
-      case "families": return <SectionFamilies />;
-      case "dblock": return <SectionDBlockTrends />;
-      case "atlas": return <SectionBlockDataAtlas />;
+      case "families": return <><SectionFamilies /><SectionDBlockTrends /><SectionBlockDataAtlas /></>;
       case "workshop": return <SectionWorkshop />;
     }
   };

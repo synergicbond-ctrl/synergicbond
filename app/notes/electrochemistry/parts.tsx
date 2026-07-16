@@ -2355,10 +2355,7 @@ function Lesson({
   return (
     <div className="space-y-5" data-source-pages={spec.sourcePages}>
       <Card tone="emerald">
-        <p className="text-xs font-black uppercase tracking-[.16em] text-emerald-200">
-          Detailed theory · source coverage pages {spec.sourcePages}
-        </p>
-        <p className="mt-3 text-base leading-8 text-slate-100">{spec.overview}</p>
+        <p className="text-base leading-8 text-slate-100">{spec.overview}</p>
       </Card>
 
       {spec.sections.map((section) => (
@@ -2404,28 +2401,12 @@ function CombinedLesson({ group }: { group: PartGroup }) {
 
   return (
     <div className="space-y-8">
-      <section className="rounded-2xl border border-violet-300/20 bg-violet-400/[.05] p-5 sm:p-6">
-        <p className="text-xs font-black uppercase tracking-[.18em] text-violet-200">
-          Structured lesson {group.number} of {PART_GROUPS.length}
-        </p>
-        <h2 className="mt-2 text-2xl font-black text-white">{group.title}</h2>
-        <p className="mt-3 text-sm leading-7 text-slate-300">
-          This lesson combines original detailed source part
-          {group.sourceParts.length > 1 ? "s" : ""}{" "}
-          {group.sourceParts.join(", ")}. No theory, formula, solved example,
-          JEE trap or practice check has been removed.
-        </p>
-      </section>
-
       {specs.map((spec, index) => (
         <section key={spec.number} className="space-y-5">
           {specs.length > 1 ? (
-            <div className="flex items-center gap-3 border-b border-white/10 pb-3">
-              <span className="rounded-full border border-cyan-300/25 bg-cyan-300/[.08] px-3 py-1 text-xs font-black text-cyan-200">
-                SOURCE PART {spec.number}
-              </span>
-              <h2 className="text-lg font-black text-white">{spec.title}</h2>
-            </div>
+            <h2 className="border-b border-white/10 pb-3 text-xl font-black text-white">
+              {spec.title}
+            </h2>
           ) : null}
           <Lesson spec={spec} />
           {index < specs.length - 1 ? (

@@ -1,0 +1,43 @@
+import type { ReactNode } from "react";
+import { BlockMath } from "@/components/math/react-katex";
+
+export type ElectroPart = { number: number; title: string; body: ReactNode };
+type Spec = readonly [string, string, string, string];
+
+function Lesson({ spec }: { spec: Spec }) {
+  const [title, core, formula, trap] = spec;
+  return <>
+    <section className="rounded-2xl border border-cyan-300/20 bg-cyan-400/[.045] p-5"><h2 className="text-xl font-black text-cyan-100">{title}</h2><p className="mt-3 text-sm leading-7 text-slate-200">{core}</p></section>
+    <section className="rounded-2xl border border-violet-300/20 bg-violet-400/[.05] p-5"><h2 className="text-lg font-black text-violet-100">Equation and conditions</h2><div className="mt-3 overflow-x-auto"><BlockMath math={formula} /></div><p className="text-sm leading-7 text-slate-300">Define every symbol, balance the electron transfer, and keep unit systems consistent before calculating.</p></section>
+    <aside className="rounded-2xl border border-amber-300/20 bg-amber-300/[.06] p-5 text-sm leading-7 text-amber-50"><strong>Common trap.</strong> {trap}</aside>
+  </>;
+}
+
+const specs: Spec[] = [
+  ["Electrogenetic and electrolytic reactions", "Galvanic cells convert spontaneous redox change into electrical work. Electrolytic cells consume external electrical work. Oxidation is always at the anode and reduction always at the cathode.", "\\Delta_rG=-nFE_{\\rm cell}", "Electrode names follow the reaction, while their signs depend on cell type."],
+  ["Galvanic cells and conventions", "A Daniell cell separates zinc oxidation from copper-ion reduction. Electrons leave the zinc electrode through the wire; conventional current is opposite.", "\\mathrm{Zn|Zn^{2+}||Cu^{2+}|Cu}", "Do not call an electrode positive or negative before identifying whether the cell is galvanic or electrolytic."],
+  ["Reversible electrodes", "A reversible electrode is at equilibrium with its ionic or gaseous redox partner and gives a reproducible potential when activity changes slightly.", "\\mathrm{M^{z+}+ze^-\\rightleftharpoons M(s)}", "Reversible means equilibrium-responsive, not merely inert."],
+  ["Salt bridge and junction potential", "The bridge provides ionic conduction, maintains bulk neutrality and reduces direct mixing. Unequal diffusion speeds cause liquid-junction potential.", "\\text{anions}\\to\\text{anode};\\quad\\text{cations}\\to\\text{cathode}", "The salt bridge carries ions, not external-circuit electrons."],
+  ["Electrode potential and SHE", "A half-cell potential is measured against a reference. SHE is defined as zero with Pt, hydrogen at 1 bar, unit hydrogen-ion activity and 298 K.", "2\\mathrm{H^+}+2e^-\\rightleftharpoons\\mathrm{H_2};\\quad E^\\circ=0", "Standard conditions require stated activities, not a casual assumption about every concentration."],
+  ["Cell EMF and Gibbs energy", "Cell potential is the cathode reduction potential minus anode reduction potential. Positive Ecell corresponds to negative Gibbs energy for the reaction written.", "E^\\circ_{\\rm cell}=E^\\circ_{\\rm cathode}-E^\\circ_{\\rm anode};\\quad\\Delta_rG^\\circ=-nFE^\\circ_{\\rm cell}", "Never multiply an electrode potential when multiplying a half-reaction."],
+  ["Nernst equation", "Nernst links potential to reaction quotient. It is obtained by combining the Gibbs-energy composition relation with electrical work.", "E=E^\\circ-\\frac{RT}{nF}\\ln Q=E^\\circ-\\frac{0.05916}{n}\\log Q\\;(298\\,K)", "Use natural log with RT/nF and common log only with its 2.303 factor."],
+  ["Nonstandard potential numericals", "Write the balanced overall reaction first, then construct Q from activities. Pure solids and pure liquids have activity near one and are omitted.", "Q=\\prod a_{\\rm products}^{\\nu}/\\prod a_{\\rm reactants}^{\\nu}", "Reversing the reaction reverses Q and changes the potential sign convention."],
+  ["Electrochemical series", "Standard reduction potentials rank redox couples. More positive values favour reduction and correspond to stronger oxidising agents under standard conditions.", "E^\\circ_{\\rm cell}>0\\Rightarrow\\text{spontaneous as written}", "Complexation, concentration and kinetic barriers can modify a simple series prediction."],
+  ["Cell diagrams and balancing", "Cell notation puts anode on the left and cathode on the right. One vertical line separates phases; a double line represents the junction.", "\\mathrm{Pt|Fe^{2+},Fe^{3+}||Ag^+|Ag}", "Balance electrons before using n in Nernst, Gibbs-energy or Faraday calculations."],
+  ["EMF, equilibrium and concentration cells", "At equilibrium Ecell is zero and Q equals K. Concentration cells use identical couples at unequal activity and reduce that difference.", "\\log K=\\frac{nE^\\circ}{0.05916}\\;(298\\,K)", "A large K indicates thermodynamic favourability, not reaction speed."],
+  ["Commercial cells and fuel cells", "Primary cells are essentially single-use; secondary cells are rechargeable. Fuel cells generate electricity from continuously supplied reactants.", "2\\mathrm{H_2}+\\mathrm{O_2}\\to2\\mathrm{H_2O}", "A fuel cell is not a storage battery."],
+  ["Electrolysis fundamentals", "An external supply drives a nonspontaneous reaction. The electrolytic cathode receives electrons and reduces cations; the anode withdraws electrons and oxidises anions.", "Q=It", "Anode/cathode labels still follow oxidation/reduction."],
+  ["Discharge potential and overvoltage", "Actual discharge depends on thermodynamics, concentration, electrode material and kinetic overvoltage.", "E_{\\rm applied}\\gtrsim E_{\\rm decomposition}+\\eta", "Ion charge alone does not determine the product."],
+  ["Electrolysis products and refining", "Aqueous electrolysis can involve water competing with solute ions. Electrorefining dissolves impure anode metal and plates pure metal at the cathode.", "\\mathrm{Cu\\to Cu^{2+}+2e^-};\\quad\\mathrm{Cu^{2+}+2e^-\\to Cu}", "Always state solution and electrode materials before predicting products."],
+  ["Faraday laws", "Deposited mass is proportional to charge. One faraday is approximately 96485 C mol⁻¹ of electrons.", "m=ZIt=\\frac{MIt}{nF}", "Time is seconds when current is amperes."],
+  ["Electrolysis numericals and efficiency", "Current efficiency compares useful deposition with the theoretical amount. Gas calculations combine Faraday stoichiometry with the specified temperature and pressure.", "\\%\\eta=100\\frac{m_{\\rm actual}}{m_{\\rm theoretical}}", "Find electron count before applying molar mass."],
+  ["Resistance, conductance and cell constant", "Conductance is reciprocal resistance. Conductivity removes cell geometry from a measured conductance; calibration supplies cell constant.", "G=1/R;\\quad\\kappa=G(l/A)", "Conductance has unit S; conductivity has a length factor."],
+  ["Molar and equivalent conductivity", "Molar conductivity normalises conductivity to one mole of electrolyte and rises on dilution; equivalent conductivity is normalised to one equivalent.", "\\Lambda_m=\\frac{1000\\kappa}{c}", "Do not mix centimetre and metre forms."],
+  ["Dilution and Kohlrausch law", "κ falls on dilution because fewer ions occupy a volume, while Λm rises. At infinite dilution each ion makes an independent contribution.", "\\Lambda_m^\\circ=\\nu_+\\lambda_+^\\circ+\\nu_-\\lambda_-^\\circ", "Strong-electrolyte curves are not perfectly linear at all concentrations."],
+  ["Ionic mobility and transport number", "Mobility is drift speed per unit field. Transport number is the fraction of current carried by an ion; Hittorf changes reveal it.", "t_++t_-=1", "Transport number is not the fraction of ions present."],
+  ["Conductometric titrations", "Conductance changes as ions are removed and introduced. The endpoint is the intersection of the appropriate trend lines.", "G=1/R", "Use dilution correction when the experiment needs it."],
+  ["Potentiometric titrations", "An indicator/reference electrode pair measures potential with negligible current and reveals a sharp endpoint change.", "E=E^\\circ-\\frac{RT}{nF}\\ln Q", "The indicator electrode responds to activity ratio; it is not consumed."],
+  ["Formula and problem-solving companion", "Classify a problem as redox/EMF, equilibrium, Nernst, conductance or electrolysis before calculation. This organizes signs, units and n-factor.", "\\Delta G=-nFE;\\quad E=E^\\circ-\\frac{RT}{nF}\\ln Q;\\quad m=\\frac{MIt}{nF}", "A correct equation with an unbalanced reaction produces a wrong n-factor."],
+];
+
+export const electroParts: ElectroPart[] = specs.map((spec, index) => ({ number: index + 1, title: spec[0], body: <Lesson spec={spec} /> }));

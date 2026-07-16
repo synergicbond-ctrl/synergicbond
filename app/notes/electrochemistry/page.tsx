@@ -2,6 +2,7 @@ import React from "react";
 import Link from "next/link";
 import { InlineMath, BlockMath } from "@/components/math/react-katex";
 import { getNotesChapter } from "@/lib/notesEngine";
+import { electroParts } from "./parts";
 
 export const metadata = {
   title: "Electrochemistry Chapter Notes — SYNERGIC BOND",
@@ -50,8 +51,43 @@ export default function ElectrochemistryNotesPage() {
           </div>
         </header>
 
-        <section className="grid gap-3 sm:grid-cols-2">
-          {Array.from({ length: 24 }, (_, index) => index + 1).map((part) => <Link key={part} href={`/notes/electrochemistry/part${part}`} className="rounded-2xl border border-white/10 bg-white/[.035] p-4 transition hover:border-cyan-300/40"><span className="text-xs font-black text-violet-200">PART {part}</span><h2 className="mt-1 font-bold text-white">Open detailed lesson</h2></Link>)}
+        <section className="space-y-4">
+          <div className="flex flex-wrap items-end justify-between gap-3">
+            <div>
+              <p className="text-xs font-black uppercase tracking-[.18em] text-violet-200">
+                16 structured lessons
+              </p>
+              <h2 className="mt-1 text-2xl font-black text-white">
+                Complete Electrochemistry Notes
+              </h2>
+            </div>
+            <p className="max-w-md text-sm leading-6 text-slate-400">
+              All 24 original detailed content sections are preserved and grouped
+              into fewer, better-organised lessons.
+            </p>
+          </div>
+
+          <div className="grid gap-3 sm:grid-cols-2">
+            {electroParts.map((part) => (
+              <Link
+                key={part.number}
+                href={`/notes/electrochemistry/part${part.number}`}
+                className="group rounded-2xl border border-white/10 bg-white/[.035] p-5 transition hover:border-cyan-300/40 hover:bg-white/[.055]"
+              >
+                <div className="flex items-center justify-between gap-3">
+                  <span className="text-xs font-black text-violet-200">
+                    LESSON {part.number}
+                  </span>
+                  <span className="text-xs font-bold text-slate-500">
+                    Source {part.sourceParts.join(" + ")}
+                  </span>
+                </div>
+                <h3 className="mt-2 text-base font-black leading-6 text-white transition group-hover:text-cyan-100">
+                  {part.title}
+                </h3>
+              </Link>
+            ))}
+          </div>
         </section>
 
         {/* Section Cards */}

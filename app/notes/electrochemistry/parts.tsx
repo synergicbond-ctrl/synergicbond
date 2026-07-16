@@ -4,6 +4,7 @@ import { BlockMath } from "@/components/math/react-katex";
 export type ElectroPart = {
   number: number;
   title: string;
+  sourceParts: number[];
   body: ReactNode;
 };
 
@@ -2165,6 +2166,91 @@ const PART_SPECS: PartSpec[] = [
   }
 ];
 
+const PART_GROUPS = [
+  {
+    number: 1,
+    title: "Electrochemical Cells: Foundations & Conventions",
+    sourceParts: [1, 2],
+  },
+  {
+    number: 2,
+    title: "Reversible Electrodes and Their Classification",
+    sourceParts: [3],
+  },
+  {
+    number: 3,
+    title: "Salt Bridge, Electrode Potential and SHE",
+    sourceParts: [4, 5],
+  },
+  {
+    number: 4,
+    title: "Cell EMF, Gibbs Energy and Reversible Work",
+    sourceParts: [6],
+  },
+  {
+    number: 5,
+    title: "Nernst Equation and Non-Standard Numericals",
+    sourceParts: [7, 8],
+  },
+  {
+    number: 6,
+    title: "Electrochemical Series, Cell Notation and Balancing",
+    sourceParts: [9, 10],
+  },
+  {
+    number: 7,
+    title: "Equilibrium Constants and Concentration Cells",
+    sourceParts: [11],
+  },
+  {
+    number: 8,
+    title: "Commercial Cells, Batteries and Fuel Cells",
+    sourceParts: [12],
+  },
+  {
+    number: 9,
+    title: "Electrolysis Fundamentals",
+    sourceParts: [13],
+  },
+  {
+    number: 10,
+    title: "Preferential Discharge and Products of Electrolysis",
+    sourceParts: [14, 15],
+  },
+  {
+    number: 11,
+    title: "Faraday Laws and Electrolysis Numericals",
+    sourceParts: [16, 17],
+  },
+  {
+    number: 12,
+    title: "Resistance, Conductance and Cell Constant",
+    sourceParts: [18],
+  },
+  {
+    number: 13,
+    title: "Molar and Equivalent Conductivity",
+    sourceParts: [19],
+  },
+  {
+    number: 14,
+    title: "Kohlrausch Law and Weak Electrolytes",
+    sourceParts: [20],
+  },
+  {
+    number: 15,
+    title: "Ionic Mobility, Transport Number and Hittorf Method",
+    sourceParts: [21],
+  },
+  {
+    number: 16,
+    title: "Conductometric & Potentiometric Titrations + Formula Revision",
+    sourceParts: [22, 23, 24],
+  },
+] as const;
+
+type PartGroup = (typeof PART_GROUPS)[number];
+
 function Card({
   children,
   tone = "cyan",
@@ -2311,8 +2397,49 @@ function Lesson({
   );
 }
 
-export const electroParts: ElectroPart[] = PART_SPECS.map((spec) => ({
-  number: spec.number,
-  title: spec.title,
-  body: <Lesson spec={spec} />,
+function CombinedLesson({ group }: { group: PartGroup }) {
+  const specs = group.sourceParts
+    .map((sourcePart) => PART_SPECS.find((spec) => spec.number === sourcePart))
+    .filter((spec): spec is PartSpec => Boolean(spec));
+
+  return (
+    <div className="space-y-8">
+      <section className="rounded-2xl border border-violet-300/20 bg-violet-400/[.05] p-5 sm:p-6">
+        <p className="text-xs font-black uppercase tracking-[.18em] text-violet-200">
+          Structured lesson {group.number} of {PART_GROUPS.length}
+        </p>
+        <h2 className="mt-2 text-2xl font-black text-white">{group.title}</h2>
+        <p className="mt-3 text-sm leading-7 text-slate-300">
+          This lesson combines original detailed source part
+          {group.sourceParts.length > 1 ? "s" : ""}{" "}
+          {group.sourceParts.join(", ")}. No theory, formula, solved example,
+          JEE trap or practice check has been removed.
+        </p>
+      </section>
+
+      {specs.map((spec, index) => (
+        <section key={spec.number} className="space-y-5">
+          {specs.length > 1 ? (
+            <div className="flex items-center gap-3 border-b border-white/10 pb-3">
+              <span className="rounded-full border border-cyan-300/25 bg-cyan-300/[.08] px-3 py-1 text-xs font-black text-cyan-200">
+                SOURCE PART {spec.number}
+              </span>
+              <h2 className="text-lg font-black text-white">{spec.title}</h2>
+            </div>
+          ) : null}
+          <Lesson spec={spec} />
+          {index < specs.length - 1 ? (
+            <div className="border-t border-dashed border-white/15" />
+          ) : null}
+        </section>
+      ))}
+    </div>
+  );
+}
+
+export const electroParts: ElectroPart[] = PART_GROUPS.map((group) => ({
+  number: group.number,
+  title: group.title,
+  sourceParts: [...group.sourceParts],
+  body: <CombinedLesson group={group} />,
 }));

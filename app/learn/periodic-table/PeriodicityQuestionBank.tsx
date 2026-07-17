@@ -161,6 +161,44 @@ function renderPlainSegment(text: string, keyPrefix: string): React.ReactNode[] 
   });
 }
 
+function splitTopLevelCommas(latex: string): string[] {
+  const parts: string[] = [];
+  let depth = 0;
+  let current = "";
+  for (let i = 0; i < latex.length; i += 1) {
+    const ch = latex[i];
+    if (ch === "{" || ch === "(") depth += 1;
+    else if (ch === "}" || ch === ")") depth = Math.max(0, depth - 1);
+    if (ch === "," && depth === 0) {
+      parts.push(current);
+      current = "";
+    } else {
+      current += ch;
+    }
+  }
+  parts.push(current);
+  return parts;
+}
+
+function MathChunk({ latex, keyPrefix }: { latex: string; keyPrefix: string }) {
+  if (latex.length > 50 && latex.includes(",")) {
+    const parts = splitTopLevelCommas(latex).map((p) => p.trim()).filter(Boolean);
+    if (parts.length > 1) {
+      return (
+        <span className="qbankMathGroup">
+          {parts.map((part, pi) => (
+            <React.Fragment key={`${keyPrefix}-p-${pi}`}>
+              <span className="qbankMath" dangerouslySetInnerHTML={{ __html: renderMath(part) }} />
+              {pi < parts.length - 1 ? ", " : ""}
+            </React.Fragment>
+          ))}
+        </span>
+      );
+    }
+  }
+  return <span className="qbankMath" dangerouslySetInnerHTML={{ __html: renderMath(latex) }} />;
+}
+
 function InlineContent({ text }: { text: string }) {
   const chunks = text.split(/(\$[^$\n]+\$)/g).filter(Boolean);
   return (
@@ -168,13 +206,7 @@ function InlineContent({ text }: { text: string }) {
       {chunks.map((chunk, index) => {
         const key = `inline-${index}`;
         if (chunk.startsWith("$") && chunk.endsWith("$")) {
-          return (
-            <span
-              key={key}
-              className="qbankMath"
-              dangerouslySetInnerHTML={{ __html: renderMath(chunk.slice(1, -1)) }}
-            />
-          );
+          return <MathChunk key={key} latex={chunk.slice(1, -1)} keyPrefix={key} />;
         }
         return <React.Fragment key={key}>{renderPlainSegment(chunk, key)}</React.Fragment>;
       })}
@@ -342,7 +374,7 @@ export default function PeriodicityQuestionBank() {
   return (
     <section className="qbankRoot" data-release={RELEASE}>
       <style>{`
-        .qbankRoot { color: #eef3f8; max-width: 1120px; margin: 0 auto; }
+        .qbankRoot { color: #eef3f8; max-width: 1320px; margin: 0 auto; }
         .qbankHero { border: 1px solid #2d4b69; border-radius: 18px; padding: 24px; margin-bottom: 22px; background: radial-gradient(circle at top right, rgba(95,212,234,.13), transparent 40%), linear-gradient(145deg, #112235, #0d1b2a); }
         .qbankKicker { margin: 0 0 8px; color: #e8b84b; font: 800 12px/1.2 ui-monospace, SFMono-Regular, Menlo, monospace; letter-spacing: .12em; text-transform: uppercase; }
         .qbankHero h2 { margin: 0; font: 700 clamp(28px, 5vw, 46px)/1.05 Georgia, serif; }
@@ -363,6 +395,8 @@ export default function PeriodicityQuestionBank() {
         .qbankSLabel { color: #6bffb0; font-weight: 900; margin-right: 3px; }
         .qbankOptionLabel { color: #ff6b9d; font-weight: 900; margin-right: 3px; }
         .qbankMath { display: inline-block; max-width: 100%; vertical-align: middle; overflow-x: auto; overflow-y: hidden; }
+        .qbankMathGroup { display: inline; }
+        .qbankMathGroup .qbankMath { overflow-x: visible; }
         .qbankRule { border: 0; border-top: 1px solid #294762; margin: 20px 0; }
         .qbankTableWrap { overflow-x: auto; border: 1px solid #2c4b65; border-radius: 13px; margin: 13px 0 20px; background: #0d1b29; }
         .qbankTable { width: 100%; min-width: 620px; border-collapse: collapse; }

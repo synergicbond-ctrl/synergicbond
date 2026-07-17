@@ -356,7 +356,7 @@ export default function PeriodicityQuestionBank() {
         .qbankContent h2 { margin: 34px 0 12px; font: 700 clamp(21px, 3vw, 29px)/1.25 Georgia, serif; color: #8adff0; border-bottom: 1px solid #294762; padding-bottom: 9px; }
         .qbankContent h3 { margin: 26px 0 9px; font: 800 18px/1.3 system-ui, sans-serif; color: #e8b84b; }
         .qbankContent h4 { margin: 20px 0 7px; color: #b9d4e8; }
-        .qbankContent p { margin: 0 0 11px; padding: 13px 15px; border-left: 2px solid #2e526f; border-radius: 0 10px 10px 0; background: rgba(18,34,50,.65); color: #d9e5ee; line-height: 1.75; overflow-wrap: anywhere; }
+        .qbankContent p { margin: 0 0 10px; padding: 13px 15px; min-height: 48px; box-sizing: border-box; display: flex; flex-wrap: wrap; align-items: center; align-content: center; row-gap: 2px; border-left: 2px solid #2e526f; border-radius: 0 10px 10px 0; background: rgba(18,34,50,.65); color: #d9e5ee; line-height: 1.65; overflow-wrap: anywhere; }
         .qbankContent p strong { color: #fff2ba; }
         .qbankContent code { border: 1px solid #35536c; border-radius: 5px; padding: 1px 5px; background: #091521; color: #9de8f5; }
         .qbankQLabel { color: #ffd166; font-weight: 900; margin-right: 3px; }

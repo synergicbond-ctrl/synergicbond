@@ -1,5 +1,3 @@
-"use client";
-
 import { AtomicPartShell, AuditComment, DataTable, DiagramBox, FormulaLine, NoteBlock, SourcePage } from "./_shared";
 import { ConceptCard, DefinitionCard, FigureCaption, LearningObjectives, SummaryStrip } from "../_components/AtomicLearning";
 import { Dz2OrbitalVisual } from "../_components/AtomicVisuals";

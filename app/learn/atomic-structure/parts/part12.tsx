@@ -1,5 +1,3 @@
-"use client";
-
 import { AtomicPartShell, AuditComment, DiagramBox, FormulaLine, MathText, NoteBlock, SourcePage } from "./_shared";
 import { KmaxFrequencyGraph, PhotocurrentPotentialGraph, PhotoelectronEnergyDistributionVisual } from "../_components/AtomicVisuals";
 import { DefinitionCard, FigureCaption, ImportantNote, LearningObjectives, PracticeQuestion, SummaryStrip } from "../_components/AtomicLearning";

@@ -45,6 +45,9 @@ jobs:
       - name: Build
         run: npm run build
 
+      - name: Protected lesson bundle check
+        run: npm run verify:portal-bundle
+
   content-validation:
     name: content · PYQ validation
     runs-on: ubuntu-latest
@@ -66,6 +69,9 @@ jobs:
         run: npm ci
 
       # Deterministic, secret-free validators over the local content SSOTs.
+      - name: Portal entitlement regression matrix
+        run: npm run test:portal-entitlements
+
       - name: Launch-safety regression checks
         run: npm run launch-safety
 

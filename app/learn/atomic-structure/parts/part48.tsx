@@ -1,5 +1,3 @@
-"use client";
-
 import { AtomicPartShell, FormulaLine, ImportantNote, LearningObjectives, MathText, NoteBlock, SourcePage, SummaryStrip } from "./_shared";
 import { PenetrationComparisonVisual } from "../_components/AtomicVisuals";
 

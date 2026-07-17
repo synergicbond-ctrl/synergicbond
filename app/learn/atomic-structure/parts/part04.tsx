@@ -1,5 +1,3 @@
-"use client";
-
 import { AtomicPartShell, AuditComment, DiagramBox, FormulaLine, MathText, NoteBlock, SourcePage } from "./_shared";
 import { LearningObjectives, ImportantNote, PracticeQuestion, SummaryStrip } from "../_components/AtomicLearning";
 import { GoldFoilVisual, RutherfordAtomVisual, ThomsonModelVisual } from "../_components/AtomicVisuals";

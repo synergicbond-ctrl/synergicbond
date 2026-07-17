@@ -1,5 +1,3 @@
-"use client";
-
 import { AtomicPartShell, AuditComment, DataTable, DiagramBox, FormulaLine, MathText, NoteBlock, SourcePage } from "./_shared";
 import { CircularOrbitVisual, HydrogenLevelGapsVisual } from "../_components/AtomicVisuals";
 import { DefinitionCard, DerivationPanel, LearningObjectives, PracticeQuestion, SummaryStrip } from "../_components/AtomicLearning";

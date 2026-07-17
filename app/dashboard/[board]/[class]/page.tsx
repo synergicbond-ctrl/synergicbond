@@ -42,6 +42,7 @@ export default async function ClassDashboard({ params }: { params: Promise<{ boa
     "/analytics": `${base}/analytics`,
     "/mistakes": `${base}/analytics`,
     "/readiness": `${base}/analytics`,
+    "/revision": `${base}/revision`,
   };
   const scopedHref = (href: string) => BOARD_SCOPE_REMAP[href] ?? href;
 

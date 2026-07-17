@@ -144,6 +144,7 @@ export const AUTHORED_NOTES: Record<string, string> = {
   "chemical-bonding": "/learn/chemical-bonding",
   "periodic-table": "/learn/periodic-table",
   "thermodynamics": "/learn/thermodynamics",
+  "electrochemistry": "/notes/electrochemistry",
 };
 
 // ── Expected-time heuristic (labelled as derived wherever shown) ──────────────

@@ -32,7 +32,7 @@ type Props = {
   subscription: UserSub | null;
   entitlements: UserEntitlement[];
   nowMs: number;
-  /** Owner/admin role → unrestricted all-access preview (no purchase prompts). */
+  /** Owner role; used only to label a role-based all-access card. */
   isOwner?: boolean;
   /** Owner/admin role → may open the admin console. */
   isStaff?: boolean;
@@ -62,7 +62,8 @@ export default function SubscriptionDashboardClient({ user, subscription, entitl
   const isPro = subscription?.status === "active" && subscription?.expires_at && new Date(subscription.expires_at).getTime() > nowMs;
   // Owner/admin get unrestricted all-access at the application layer — treated
   // exactly like Pro here, but never shown purchase/upgrade prompts.
-  const allAccess = isOwner || Boolean(isPro);
+  const roleAllAccess = isStaff;
+  const allAccess = roleAllAccess || Boolean(isPro);
   const proDaysRemaining = isPro && subscription?.expires_at
     ? Math.max(0, Math.ceil((new Date(subscription.expires_at).getTime() - nowMs) / 86_400_000))
     : 0;
@@ -155,7 +156,7 @@ export default function SubscriptionDashboardClient({ user, subscription, entitl
 
   // One row in the "Upgrade & Add Programs" catalogue. Handles three states:
   //  • comingSoon (State Boards) → neutral badge + note, never purchasable.
-  //  • owner all-access          → "Preview" (unlocked), no purchase prompt.
+  //  • role all-access           → "Preview" (unlocked), no purchase prompt.
   //  • normal user               → price + Add Plan / Owned.
   const renderProgramRow = (p: (typeof PROGRAMS_LIST)[number], blurb: string) => {
     const active = isProgramActive(p.key);
@@ -169,7 +170,7 @@ export default function SubscriptionDashboardClient({ user, subscription, entitl
           {p.comingSoon ? (
             // State Boards: owner may open the dashboard shell to preview safely;
             // normal users see an inert Coming Soon badge (no route, no checkout).
-            isOwner ? (
+            roleAllAccess ? (
               <Link
                 href={programKeyToHref(p.key)}
                 className="inline-block px-3 py-1 rounded-lg text-[10px] font-black uppercase tracking-wider bg-white/[0.06] text-white/60 hover:bg-white/10 hover:text-white/80 transition"
@@ -181,7 +182,7 @@ export default function SubscriptionDashboardClient({ user, subscription, entitl
                 Coming Soon
               </span>
             )
-          ) : isOwner ? (
+          ) : roleAllAccess ? (
             // Owner/admin: no checkout — open the same experience a subscriber gets.
             <Link
               href={programKeyToHref(p.key)}
@@ -278,13 +279,13 @@ export default function SubscriptionDashboardClient({ user, subscription, entitl
         ) : (
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {/* Owner / Admin all-access card (role-based, no subscription needed) */}
-            {isOwner && !isPro && (
+            {roleAllAccess && !isPro && (
               <div className="relative overflow-hidden rounded-2xl border border-cyan-500/30 bg-gradient-to-br from-cyan-950/20 to-sky-950/20 p-5 shadow-lg">
                 <div className="absolute top-0 right-0 bg-cyan-500 text-black text-[9px] font-black px-3 py-1 rounded-bl-xl uppercase tracking-wider">
                   All-Access
                 </div>
                 <h3 className="font-black text-cyan-300 text-lg uppercase tracking-wide">
-                  Owner Access
+                  {isOwner ? "Owner Access" : "Admin Access"}
                 </h3>
                 <div className="mt-3 space-y-2 text-xs text-white/70">
                   <div className="flex justify-between">
@@ -405,9 +406,9 @@ export default function SubscriptionDashboardClient({ user, subscription, entitl
           <Sparkles className="h-5 w-5 text-cyan-400" /> Upgrade & Add Programs
         </h2>
 
-        {isOwner ? (
+        {roleAllAccess ? (
           <div className="p-5 rounded-2xl border border-cyan-400/20 bg-cyan-500/5 mb-6 text-sm text-cyan-300 leading-relaxed">
-            ✨ You have <strong>Owner all-access</strong>. Every program and tool is unlocked for you at the application layer — nothing to purchase. Programs below are shown for preview only.
+            ✨ You have <strong>{isOwner ? "Owner" : "Admin"} all-access</strong>. Every program and tool is unlocked for you at the application layer — nothing to purchase. Programs below are shown for preview only.
           </div>
         ) : isPro && (
           <div className="p-5 rounded-2xl border border-cyan-400/20 bg-cyan-500/5 mb-6 text-sm text-cyan-300 leading-relaxed">

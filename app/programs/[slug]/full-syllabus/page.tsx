@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { getProgram, PROGRAMS } from "@/lib/programs";
 import { getProgramSyllabus, HUB_SYLLABUS_MAP, BRANCH_LABELS } from "@/lib/programSyllabus";
 import FullSyllabusDashboard from "@/components/dashboard/FullSyllabusDashboard";
+import { requireProgramEntitlement } from "@/lib/auth/guards";
 
 // ─────────────────────────────────────────────────────────────────────────────
 // /programs/[slug]/full-syllabus — the program Full Syllabus Dashboard
@@ -25,6 +26,10 @@ export default async function ProgramFullSyllabusPage({ params }: { params: Prom
   const { slug } = await params;
   const program = getProgram(slug);
   if (!program) notFound();
+  // This dashboard contains the enrolled programme's complete chapter plan;
+  // the catalogue hub remains browsable, but the dashboard itself is not a
+  // preview and must verify the exact entitlement server-side.
+  await requireProgramEntitlement(slug, `/programs/${slug}/full-syllabus`);
 
   // Retrieve official verified syllabus units for this program
   const syllabusKeys = HUB_SYLLABUS_MAP[slug] || [];

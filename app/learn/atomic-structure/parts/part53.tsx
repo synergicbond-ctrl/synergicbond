@@ -1,5 +1,3 @@
-"use client";
-
 import { HighAngularOrbitalVisual, HybridAngleVisual } from "../_components/AtomicVisuals";
 import { AtomicPartShell, AuditComment, DiagramBox, FormulaLine, ImportantNote, LearningObjectives, MathText, NoteBlock, SourcePage, SummaryStrip } from "./_shared";
 

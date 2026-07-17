@@ -1,5 +1,3 @@
-"use client";
-
 import { AtomicPartShell, AuditComment, DataTable, DiagramBox, FormulaLine, MathText, NoteBlock, SourcePage } from "./_shared";
 import { PenultimateShellVisual, SubshellZCrossingVisual } from "../_components/AtomicVisuals";
 import { ConceptCard, ImportantNote, LearningObjectives, SummaryStrip } from "../_components/AtomicLearning";

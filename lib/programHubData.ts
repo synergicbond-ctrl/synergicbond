@@ -102,7 +102,7 @@ function buildBaseSections(program: Program, base: string): HubSection[] {
       iconKey: "history",
       blurb: "Scheduled recall and your mistake queue — memory decks and revision sessions, merged.",
       cards: [
-        { title: "Revision Queue", description: "Daily spaced-repetition due cards plus high-yield revision sessions, in one place.", status: "available", href: "/revision", iconKey: "repeat" },
+        { title: "Revision Queue", description: "Daily spaced-repetition due cards plus high-yield revision sessions, in one place.", status: "available", href: `${base}/revision`, iconKey: "repeat" },
         { title: "Recall Decks", description: "Formula, reagent and fact/order recall — pick a deck inside.", status: "available", href: "/memory", iconKey: "brain" },
         { title: "Mistake Journal", description: "Auto-collected wrong questions with reattempt queue.", status: "available", href: "/mistakes", iconKey: "alert" },
       ],

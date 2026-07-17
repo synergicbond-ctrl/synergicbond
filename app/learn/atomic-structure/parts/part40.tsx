@@ -1,4 +1,3 @@
-"use client";
 import { AtomicPartShell, AuditComment, DataTable, DiagramBox, FormulaLine, SourcePage } from "./_shared";
 import { ConceptCard, DefinitionCard, DerivationPanel, FormulaCard, ImportantNote, LearningObjectives, SummaryStrip } from "../_components/AtomicLearning";
 import { PzAngularPolarVisual, RadialShellVisual } from "../_components/AtomicVisuals";

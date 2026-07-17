@@ -1,5 +1,3 @@
-"use client";
-
 import { AtomicPartShell, AuditComment, DiagramBox, FormulaLine, MathText, NoteBlock, SourcePage } from "./_shared";
 import { ConceptCard, ImportantNote, LearningObjectives, SummaryStrip } from "../_components/AtomicLearning";
 import { PhotonFluxGeometryVisual } from "../_components/AtomicVisuals";

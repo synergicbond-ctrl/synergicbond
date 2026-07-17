@@ -1,4 +1,3 @@
-"use client";
 import { AtomicPartShell, AuditComment, FormulaLine, MathText, SourcePage } from "./_shared";
 import { ConceptCard, DefinitionCard, DerivationPanel, FormulaCard, LearningObjectives, SummaryStrip } from "../_components/AtomicLearning";
 export default function Part37() { return <AtomicPartShell part={37} title="Deriving the Wave Equation from a Sine Wave and Eigenvalues" pages="116-118">

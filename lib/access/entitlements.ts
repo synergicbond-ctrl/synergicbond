@@ -2,6 +2,7 @@ import { createClient } from "@/lib/supabase/server";
 import { isProActive } from "@/lib/subscription";
 import { ENGINE_SLUGS } from "@/lib/engine/programSpec";
 import { BOARDS, CLASSES, type BoardSlug, type ClassSlug, type PurchasedProgram } from "@/lib/boardDashboard";
+import { addActiveEntitlementRows, type ActiveEntitlementRow } from "@/lib/access/entitlementRows";
 
 // ─────────────────────────────────────────────────────────────────────────────
 // Purchased-program entitlements — SERVER-ONLY (imports the cookie Supabase
@@ -37,11 +38,7 @@ export const ALL_PROGRAM_KEYS: ProgramKey[] = Array.from(new Set([
 ]));
 
 
-interface EntitlementRow {
-  program_key: string;
-  status: string;
-  expires_at: string | null;
-}
+export type EntitlementRow = ActiveEntitlementRow;
 
 export async function getUserEntitlements(): Promise<EntitlementSet> {
   const supabase = await createClient();
@@ -59,11 +56,7 @@ export async function getUserEntitlements(): Promise<EntitlementSet> {
       .eq("user_id", user.id)
       .eq("status", "active");
     if (!error && data) {
-      const now = Date.now();
-      for (const row of data as EntitlementRow[]) {
-        if (row.expires_at && new Date(row.expires_at).getTime() < now) continue;
-        keys.add(row.program_key);
-      }
+      addActiveEntitlementRows(keys, data as EntitlementRow[]);
     }
   } catch {
     // Table missing / transient error → Pro-derived set only.

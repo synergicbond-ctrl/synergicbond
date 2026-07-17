@@ -1,5 +1,3 @@
-"use client";
-
 import { renderChemistry } from "@/lib/renderChemistry";
 import {
   PremiumNotes, Glass, Hero, Section, FormulaCard, Step, CalloutList, JeeFocus, RevisionSheet, type NoteSection,

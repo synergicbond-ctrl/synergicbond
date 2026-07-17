@@ -1,5 +1,3 @@
-"use client";
-
 import { AtomicPartShell, AuditComment, DiagramBox, FormulaLine, MathText, NoteBlock, SourcePage } from "./_shared";
 import { DefinitionCard, FigureCaption, ImportantNote, LearningObjectives, SummaryStrip } from "../_components/AtomicLearning";
 import { DotDensityOrbitalVisual, ElectronDensityGridVisual, RadialDistributionVisual, RadialFunctionGridVisual } from "../_components/AtomicVisuals";

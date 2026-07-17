@@ -15,6 +15,7 @@ import { buildReadiness } from "@/lib/attempts/readiness";
 import { buildNcertReport, type NcertStatus } from "@/lib/attempts/ncert";
 import { buildSpeedReport } from "@/lib/engine/speed";
 import { ENGINE_PROGRAMS, isEngineSlug } from "@/lib/engine/programSpec";
+import { requireProgramEntitlement } from "@/lib/auth/guards";
 
 // ─────────────────────────────────────────────────────────────────────────────
 // /programs/[slug]/progress — Progress Dashboard (Dashboard Simplification
@@ -88,6 +89,7 @@ export default async function ProgressDashboardPage({ params }: { params: Promis
   const { slug } = await params;
   const program = getProgram(slug);
   if (!program) notFound();
+  await requireProgramEntitlement(slug, `/programs/${slug}/progress`);
   const { name } = program;
 
   // One shared fetch — Mastery, Readiness and NCERT Gaps all read the same

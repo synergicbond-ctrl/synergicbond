@@ -1,5 +1,3 @@
-"use client";
-
 import { AtomicPartShell, AuditComment, DataTable, DiagramBox, FormulaLine, MathText, NoteBlock, SourcePage } from "./_shared";
 import { LearningObjectives, ImportantNote, PracticeQuestion, SummaryStrip } from "../_components/AtomicLearning";
 import { BlackBodyCurvesVisual, BulbHeatingSequenceVisual, EnergyBandStripVisual } from "../_components/AtomicVisuals";

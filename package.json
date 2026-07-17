@@ -10,6 +10,8 @@
     "typecheck": "tsc --noEmit",
     "audit-pyq": "npx tsx scripts/pyq-audit.ts",
     "test-chemistry": "npx tsx scripts/run-audit.ts",
+    "test:portal-entitlements": "node --experimental-strip-types --test tests/portal-entitlements.test.ts",
+    "verify:portal-bundle": "node scripts/verify-portal-entitlement-bundle.mjs",
     "validate-neet-pyq": "node --experimental-strip-types scripts/validate-neet-chemistry-pyq.mjs",
     "launch-safety": "node scripts/launch-safety-checks.mjs"
   },

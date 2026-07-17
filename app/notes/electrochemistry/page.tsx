@@ -50,6 +50,10 @@ export default function ElectrochemistryNotesPage() {
           </div>
         </header>
 
+        <section className="grid gap-3 sm:grid-cols-2">
+          {Array.from({ length: 24 }, (_, index) => index + 1).map((part) => <Link key={part} href={`/notes/electrochemistry/part${part}`} className="rounded-2xl border border-white/10 bg-white/[.035] p-4 transition hover:border-cyan-300/40"><span className="text-xs font-black text-violet-200">PART {part}</span><h2 className="mt-1 font-bold text-white">Open detailed lesson</h2></Link>)}
+        </section>
+
         {/* Section Cards */}
         <section className="space-y-6">
           <div className="flex items-center justify-between border-b border-slate-800 pb-3">

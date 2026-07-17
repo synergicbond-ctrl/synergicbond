@@ -54,6 +54,14 @@ function slugify(value: string): string {
     .replace(/^-+|-+$/g, "");
 }
 
+function shortenPageTitle(text: string): string {
+  const psTopic = /^Practice Set 2.*?\(Topic\s*([^):]+)[^)]*\)/i.exec(text);
+  if (psTopic) return `Practice Set 2 (Topic ${psTopic[1].trim()})`;
+  if (/^Extra Practice/i.test(text)) return "Extra Practice";
+  if (text.length > 30) return `${text.slice(0, 28).trimEnd()}…`;
+  return text;
+}
+
 function parseMarkdown(source: string): Block[] {
   const lines = source.replace(/\r\n/g, "\n").split("\n");
   const blocks: Block[] = [];
@@ -282,7 +290,7 @@ export default function PeriodicityQuestionBank() {
     for (const block of zoned.questions) {
       if (block.kind === "heading" && block.level <= 2) {
         if (current.length) pages.push({ title, blocks: current });
-        title = block.text;
+        title = shortenPageTitle(block.text);
         current = [block];
       } else {
         current.push(block);
@@ -362,18 +370,18 @@ export default function PeriodicityQuestionBank() {
         .qbankTable th, .qbankTable td { padding: 11px 12px; border-bottom: 1px solid #29465e; border-right: 1px solid #223e55; vertical-align: top; line-height: 1.55; }
         .qbankTable tr:last-child td { border-bottom: 0; }
         .qbankTable th:last-child, .qbankTable td:last-child { border-right: 0; }
-        .qbankTabs { display: flex; gap: 9px; flex-wrap: wrap; margin-top: 16px; }
-        .qbankTabs button { border: 1px solid #355977; background: #14283b; color: #cfe0ee; border-radius: 12px; padding: 10px 14px; font-weight: 750; font-size: 13.5px; cursor: pointer; display: inline-flex; align-items: center; gap: 7px; }
+        .qbankTabs { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 9px; margin-top: 16px; }
+        .qbankTabs button { border: 1px solid #355977; background: #14283b; color: #cfe0ee; border-radius: 12px; padding: 10px 14px; font-weight: 750; font-size: 13.5px; cursor: pointer; display: flex; align-items: center; gap: 7px; width: 100%; box-sizing: border-box; height: 44px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
         .qbankTabs button:hover { border-color: #5fd4ea; color: #eef3f8; }
         .qbankTabs button.qbankTabActive { border-color: #e8b84b; background: linear-gradient(135deg, rgba(232,184,75,.22), rgba(95,212,234,.10)); color: #fff4cc; }
-        .qbankTabNum { display: inline-flex; align-items: center; justify-content: center; min-width: 20px; height: 20px; border-radius: 999px; background: rgba(95,212,234,.18); color: #8adff0; font-size: 11.5px; font-weight: 800; }
+        .qbankTabNum { display: inline-flex; align-items: center; justify-content: center; min-width: 20px; height: 20px; flex: none; border-radius: 999px; background: rgba(95,212,234,.18); color: #8adff0; font-size: 11.5px; font-weight: 800; }
         .qbankTabActive .qbankTabNum { background: rgba(232,184,75,.28); color: #fff4cc; }
-        .qbankViewTabs { display: flex; gap: 8px; margin: 18px 0 10px; border-bottom: 1px solid #24425c; padding-bottom: 12px; }
-        .qbankViewTabs button { border: 1px solid #355977; background: #101f30; color: #cfe0ee; border-radius: 10px; padding: 9px 18px; font-weight: 800; font-size: 14px; cursor: pointer; }
+        .qbankViewTabs { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 8px; margin: 18px 0 10px; border-bottom: 1px solid #24425c; padding-bottom: 12px; max-width: 460px; }
+        .qbankViewTabs button { border: 1px solid #355977; background: #101f30; color: #cfe0ee; border-radius: 10px; padding: 9px 18px; font-weight: 800; font-size: 14px; cursor: pointer; height: 42px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
         .qbankViewTabs button:hover { border-color: #5fd4ea; color: #eef3f8; }
         .qbankViewTabs button.qbankViewActive { border-color: #e8b84b; background: linear-gradient(135deg, rgba(232,184,75,.22), rgba(95,212,234,.10)); color: #fff4cc; }
-        .qbankPageTabs { display: flex; gap: 7px; flex-wrap: wrap; margin-bottom: 18px; }
-        .qbankPageTabs button { border: 1px solid #2c4b65; background: #0f1e2c; color: #b9d4e8; border-radius: 999px; padding: 7px 12px; font-weight: 700; font-size: 12.5px; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; }
+        .qbankPageTabs { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 7px; margin-bottom: 18px; }
+        .qbankPageTabs button { border: 1px solid #2c4b65; background: #0f1e2c; color: #b9d4e8; border-radius: 999px; padding: 7px 12px; font-weight: 700; font-size: 12.5px; cursor: pointer; display: flex; align-items: center; gap: 6px; width: 100%; box-sizing: border-box; height: 34px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
         .qbankPageTabs button:hover { border-color: #5fd4ea; color: #eef3f8; }
         .qbankPageTabs button.qbankPageActive { border-color: #e8b84b; background: rgba(232,184,75,.14); color: #fff4cc; }
         .qbankPageNum { display: inline-flex; align-items: center; justify-content: center; min-width: 17px; height: 17px; border-radius: 999px; background: rgba(95,212,234,.18); color: #8adff0; font-size: 10.5px; font-weight: 800; }

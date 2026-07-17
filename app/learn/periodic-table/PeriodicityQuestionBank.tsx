@@ -304,11 +304,26 @@ export default function PeriodicityQuestionBank() {
       solutions: [],
     };
     let zone: ViewKey = "questions";
+    let zoneLevel = 0;
     for (const block of blocks) {
       if (block.kind === "heading") {
-        if (/Answer Key\s*$/i.test(block.text)) zone = "answerKey";
-        else if (/Worked Solutions\s*$/i.test(block.text)) zone = "solutions";
-        else zone = "questions";
+        if (/Answer Key\s*$/i.test(block.text)) {
+          zone = "answerKey";
+          zoneLevel = block.level;
+        } else if (/Worked Solutions\s*$/i.test(block.text)) {
+          zone = "solutions";
+          zoneLevel = block.level;
+        } else if (block.level <= zoneLevel) {
+          // A heading at the same level (or shallower) as the one that
+          // opened the current Answer Key / Worked Solutions zone marks a
+          // genuinely new top-level section (e.g. "Extra Practice"), so
+          // hand control back to the Questions zone. A *deeper* heading
+          // (e.g. a "Section 2.1" sub-heading inside "Part II --
+          // Consolidated Answer Key") is still part of that zone's content
+          // and must not bounce back to Questions.
+          zone = "questions";
+          zoneLevel = 0;
+        }
       }
       out[zone].push(block);
     }

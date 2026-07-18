@@ -111,6 +111,7 @@ export default function LearnPage() {
               { href: "/learn/chemical-bonding", title: "Chemical Bonding", tag: "Physical · Class 11" },
               { href: "/learn/thermodynamics", title: "Thermodynamics", tag: "Physical · Class 11" },
               { href: "/learn/periodic-table", title: "Periodic Table", tag: "Inorganic · Class 11" },
+              { href: "/learn/isomerism", title: "Isomerism", tag: "Organic · JEE Main + Advanced" },
             ].map((c) => (
               <Link key={c.href} href={c.href}
                 className="group flex flex-col justify-between rounded-lg border border-white/[0.08] bg-gradient-to-br from-cyan-500/[0.06] to-white/[0.02] p-5 transition hover:-translate-y-0.5 hover:border-cyan-400/40">

@@ -19,6 +19,10 @@ export const PREMIUM_LEARN_ELIGIBLE_PROGRAM_KEYS = {
   // The direct 18-part Chemical Equilibrium route is only linked from the JEE
   // Advanced chapter engine. Other programmes retain their own scoped route.
   "chemical-equilibrium": ["jee-advanced"],
+  isomerism: [
+    "neet", "jee-main", "jee-advanced",
+    "cbse:class-11", "isc:class-11", "icse:class-11", "state-boards:class-11",
+  ],
 } as const;
 
 export type PremiumLearnChapter = keyof typeof PREMIUM_LEARN_ELIGIBLE_PROGRAM_KEYS;

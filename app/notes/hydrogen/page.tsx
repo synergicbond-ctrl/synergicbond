@@ -98,15 +98,15 @@ export default function HydrogenMasterNotesPage() {
           <div className="absolute -right-20 -top-20 h-72 w-72 rounded-full bg-cyan-400/10 blur-3xl" />
           <div className="relative z-10">
             <div className="flex flex-wrap gap-2">
-              <span className="rounded-full border border-red-400/25 bg-red-500/10 px-3 py-1 text-xs font-black text-red-200">NCERT PRIMARY</span>
+              <span className="rounded-full border border-red-400/25 bg-red-500/10 px-3 py-1 text-xs font-black text-red-200">CORE THEORY</span>
               <span className="rounded-full border border-violet-400/25 bg-violet-500/10 px-3 py-1 text-xs font-black text-violet-200">JEE ADVANCED</span>
               <span className="rounded-full border border-emerald-400/25 bg-emerald-500/10 px-3 py-1 text-xs font-black text-emerald-200">26 ORIGINAL DIAGRAMS</span>
             </div>
             <h1 className="mt-5 text-4xl font-black tracking-tight sm:text-6xl">Hydrogen</h1>
-            <p className="mt-4 max-w-3xl text-base font-medium leading-7 text-slate-300 sm:text-lg">Master notes combining complete NCERT coverage with advanced treatment of isotopes, dihydrogen, ortho–para hydrogen, hydrides, hydrogen bonding, water, heavy water, hydrogen peroxide and hydrogen economy.</p>
+            <p className="mt-4 max-w-3xl text-base font-medium leading-7 text-slate-300 sm:text-lg">Complete Hydrogen master notes covering core theory, advanced inorganic chemistry, isotopes, dihydrogen, ortho–para hydrogen, hydrides, hydrogen bonding, water, heavy water, hydrogen peroxide and hydrogen economy.</p>
             <div className="mt-6 flex flex-wrap gap-3 text-xs font-bold text-slate-300">
               <span className="rounded-xl bg-white/[.06] px-3 py-2">61+ structured sections</span>
-              <span className="rounded-xl bg-white/[.06] px-3 py-2">Verified NCERT data anchors</span>
+              <span className="rounded-xl bg-white/[.06] px-3 py-2">Verified data + reaction anchors</span>
               <span className="rounded-xl bg-white/[.06] px-3 py-2">Reaction bank + JEE traps</span>
             </div>
           </div>

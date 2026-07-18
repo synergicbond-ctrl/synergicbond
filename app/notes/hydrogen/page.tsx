@@ -34,12 +34,17 @@ function slugify(value: string) {
     .replace(/^-+|-+$/g, "");
 }
 
+/**
+ * Convert only COMPLETE LaTeX delimiter pairs.
+ *
+ * The old code replaced every raw delimiter independently. One stray or
+ * escaped delimiter could make the rest of the chapter become one giant
+ * KaTeX block, making headings/tables appear as raw red Markdown.
+ */
 function normaliseMath(markdown: string) {
   return markdown
-    .replace(/\\\[/g, () => "$$\n")
-    .replace(/\\\]/g, () => "\n$$")
-    .replace(/\\\(/g, () => "$")
-    .replace(/\\\)/g, () => "$");
+    .replace(/\\\[\s*([\s\S]*?)\s*\\\]/g, (_match, expression: string) => `\n$$\n${expression.trim()}\n$$\n`)
+    .replace(/\\\(([^\n]*?)\\\)/g, (_match, expression: string) => `$${expression.trim()}$`);
 }
 
 const markdownComponents: Components = {
@@ -54,7 +59,7 @@ const markdownComponents: Components = {
   h3: ({ children }) => <h4 className="pt-2 text-xl font-black text-violet-100">{children}</h4>,
   h4: ({ children }) => <h5 className="text-base font-black text-amber-100">{children}</h5>,
   p: ({ children }) => <p className="text-[15px] leading-7 text-slate-300 sm:text-base">{children}</p>,
-  ul: ({ children }) => <ul className="ml-1 space-y-2.5 text-slate-300">{children}</ul>,
+  ul: ({ children }) => <ul className="ml-5 list-disc space-y-2.5 text-slate-300 marker:text-cyan-300">{children}</ul>,
   ol: ({ children }) => <ol className="ml-6 list-decimal space-y-2 text-slate-300 marker:font-bold marker:text-cyan-300">{children}</ol>,
   li: ({ children }) => <li className="pl-1 leading-7 marker:text-cyan-300">{children}</li>,
   strong: ({ children }) => <strong className="font-black text-white">{children}</strong>,
@@ -100,7 +105,7 @@ export default function HydrogenMasterNotesPage() {
             <h1 className="mt-5 text-4xl font-black tracking-tight sm:text-6xl">Hydrogen</h1>
             <p className="mt-4 max-w-3xl text-base font-medium leading-7 text-slate-300 sm:text-lg">Master notes combining complete NCERT coverage with advanced treatment of isotopes, dihydrogen, ortho–para hydrogen, hydrides, hydrogen bonding, water, heavy water, hydrogen peroxide and hydrogen economy.</p>
             <div className="mt-6 flex flex-wrap gap-3 text-xs font-bold text-slate-300">
-              <span className="rounded-xl bg-white/[.06] px-3 py-2">61 structured sections</span>
+              <span className="rounded-xl bg-white/[.06] px-3 py-2">61+ structured sections</span>
               <span className="rounded-xl bg-white/[.06] px-3 py-2">Verified NCERT data anchors</span>
               <span className="rounded-xl bg-white/[.06] px-3 py-2">Reaction bank + JEE traps</span>
             </div>
@@ -118,7 +123,7 @@ export default function HydrogenMasterNotesPage() {
           </aside>
 
           <article className="min-w-0 space-y-5 rounded-3xl border border-white/[.07] bg-slate-950/30 px-5 py-8 sm:px-8 lg:px-10">
-            <ReactMarkdown remarkPlugins={[remarkGfm, remarkMath]} rehypePlugins={[rehypeKatex]} components={markdownComponents}>
+            <ReactMarkdown remarkPlugins={[remarkGfm, remarkMath]} rehypePlugins={[[rehypeKatex, { throwOnError: false, strict: false }]]} components={markdownComponents}>
               {markdown}
             </ReactMarkdown>
           </article>

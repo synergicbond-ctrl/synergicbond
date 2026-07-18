@@ -8,6 +8,7 @@ import rehypeKatex from "rehype-katex";
 import "katex/dist/katex.min.css";
 
 import { HYDROGEN_MASTER_MARKDOWN } from "./content";
+import { CanonicalNotesStyles } from "@/components/notes/canonical";
 
 export const metadata = {
   title: "Hydrogen Master Notes — NCERT + JEE Advanced | SYNERGIC BOND",
@@ -86,7 +87,7 @@ export default function HydrogenMasterNotesPage() {
     .map((line) => line.replace(/^# /, ""));
 
   return (
-    <main className="min-h-screen bg-[#0B0F19] text-white selection:bg-cyan-400 selection:text-black">
+    <main className="min-h-screen bg-[#0a1622] text-white selection:bg-cyan-400 selection:text-black">
       <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
         <nav className="mb-7 flex items-center gap-2 text-xs font-semibold text-slate-400 sm:text-sm">
           <Link href="/" className="hover:text-white">Home</Link><span>/</span>
@@ -112,17 +113,21 @@ export default function HydrogenMasterNotesPage() {
           </div>
         </header>
 
-        <div className="mt-10 grid gap-8 lg:grid-cols-[250px_minmax(0,1fr)]">
-          <aside className="hidden lg:block">
-            <div className="sticky top-20 max-h-[calc(100vh-6rem)] overflow-y-auto rounded-2xl border border-white/10 bg-white/[.035] p-4">
-              <p className="mb-3 text-xs font-black uppercase tracking-[.18em] text-slate-400">Chapter Map</p>
-              <nav className="space-y-1.5">
-                {toc.map((title) => <a key={title} href={`#${slugify(title)}`} className="block rounded-lg px-2 py-1.5 text-xs leading-5 text-slate-400 transition hover:bg-white/[.06] hover:text-cyan-200">{title}</a>)}
-              </nav>
-            </div>
-          </aside>
+        {/* Canonical top chapter navigation (Periodic-Table language) */}
+        <div className="mt-8">
+          <CanonicalNotesStyles />
+          <div className="sbnHeaderTag" style={{ marginBottom: 10 }}>Top chapter navigation</div>
+          <nav className="sbnTabs" aria-label="Hydrogen chapter sections">
+            {toc.map((title) => (
+              <a key={title} href={`#${slugify(title)}`} className="sbnTab">
+                {title}
+              </a>
+            ))}
+          </nav>
+        </div>
 
-          <article className="min-w-0 space-y-5 rounded-3xl border border-white/[.07] bg-slate-950/30 px-5 py-8 sm:px-8 lg:px-10">
+        <div className="mt-8">
+          <article className="min-w-0 space-y-5 rounded-3xl border border-[#24405c] bg-[#122232]/60 px-5 py-8 sm:px-8 lg:px-10">
             <ReactMarkdown remarkPlugins={[remarkGfm, remarkMath]} rehypePlugins={[[rehypeKatex, { throwOnError: false, strict: false }]]} components={markdownComponents}>
               {markdown}
             </ReactMarkdown>

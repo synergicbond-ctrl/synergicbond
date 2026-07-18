@@ -7,17 +7,22 @@ import {
   type NoteLink,
 } from "@/lib/notesEngine";
 import { masterSyllabus } from "@/lib/masterSyllabus/all";
+import { AUTHORED_COURSES, coursesForSyllabusChapter, type AuthoredCourse } from "@/lib/notes/chapterCatalog";
 import UnlockBanner from "@/components/monetization/UnlockBanner";
 
 // ─────────────────────────────────────────────────────────────────────────────
-// Notes Explorer — strict separation architecture.
-// Tab split:
-// 1. Detailed Notes (full theory, examples, derivations, exceptions & NCERT highlights)
-// 2. Short Notes (revision summary only)
-// 3. Formula Sheets (equations only)
-// 4. PYQ Section (questions only)
-// 5. Practice Section (practice only)
-// 6. Mock Tests (tests only)
+// Notes Explorer — uniform chapter card system.
+//
+// ONE canonical card component for every JEE chapter: chapters with authored
+// full-notes courses, premium chapters (visible, badge + gated route) and
+// syllabus-only chapters all share identical card geometry. Card data comes
+// from the safe metadata catalog (lib/notes/chapterCatalog) + masterSyllabus;
+// premium note BODIES are never serialized here — the server page only passes
+// authorized notesEngine chapters.
+//
+// Detail tabs (per selected chapter):
+// 1. Detailed Notes 2. Short Notes 3. Formula Sheets 4. PYQ Section
+// 5. Practice Section 6. Mock Tests
 // ─────────────────────────────────────────────────────────────────────────────
 
 export const STRICT_NOTE_SECTIONS = [
@@ -251,6 +256,152 @@ function authoredFor(syllabusId: string, chapters: readonly NotesChapter[]): Not
   return chapters.find((chapter) => chapter.id === notesIdFor(syllabusId));
 }
 
+// ─────────────────────────────────────────────────────────────────────────────
+// Uniform chapter card
+// ─────────────────────────────────────────────────────────────────────────────
+
+const CATEGORY_LABEL: Record<SyllabusLite["category"], string> = {
+  physical: "Physical Chemistry",
+  organic: "Organic Chemistry",
+  inorganic: "Inorganic Chemistry",
+};
+
+interface ChapterCardData {
+  key: string;
+  syllabusId: string;
+  title: string;
+  category: SyllabusLite["category"];
+  /** Shown above the title when a syllabus chapter has several courses. */
+  groupLabel?: string;
+  sectionLabel?: string;
+  description: string;
+  status: "full" | "full-inline" | "syllabus";
+  statusLine: string;
+  premium: boolean;
+  /** Authored course route (server-gated when premium). */
+  href?: string;
+}
+
+function PremiumBadge() {
+  return (
+    <span className="shrink-0 rounded-full border border-[#e8b84b66] bg-[#e8b84b1f] px-2.5 py-0.5 text-[10px] font-black uppercase tracking-wider text-[#e8b84b]">
+      Premium
+    </span>
+  );
+}
+
+function FreeBadge() {
+  return (
+    <span className="shrink-0 rounded-full border border-emerald-400/40 bg-emerald-400/10 px-2.5 py-0.5 text-[10px] font-black uppercase tracking-wider text-emerald-300">
+      Free
+    </span>
+  );
+}
+
+/** ONE canonical chapter card — identical geometry for every state. */
+function ChapterCard({
+  card,
+  selected,
+  onSelect,
+}: {
+  card: ChapterCardData;
+  selected: boolean;
+  onSelect: () => void;
+}) {
+  const statusTone =
+    card.status === "syllabus" ? "text-[#91a9bc]" : "text-[#5fd4ea]";
+
+  return (
+    <div
+      role="button"
+      tabIndex={0}
+      onClick={onSelect}
+      onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); onSelect(); } }}
+      aria-pressed={selected}
+      className={`group flex min-h-[190px] cursor-pointer flex-col rounded-[13px] border p-5 text-left transition ${
+        selected
+          ? "border-[#e8b84b] bg-[#e8b84b1f] shadow-[0_8px_24px_rgba(232,184,75,0.12)]"
+          : "border-[#24405c] bg-[#122232] hover:border-[#5fd4ea] hover:bg-[#182b3e]"
+      } border-l-4 ${selected ? "border-l-[#e8b84b]" : "border-l-[#5fd4ea]"}`}
+    >
+      <div className="flex items-start justify-between gap-2">
+        <span className="min-w-0 text-[10.5px] font-black uppercase tracking-[0.16em] text-[#91a9bc]">
+          {card.groupLabel ? `${card.groupLabel}${card.sectionLabel ? ` · ${card.sectionLabel}` : ""}` : CATEGORY_LABEL[card.category]}
+        </span>
+        {card.premium ? <PremiumBadge /> : card.status !== "syllabus" ? <FreeBadge /> : null}
+      </div>
+      <h3 className={`mt-2 text-base font-black leading-snug ${selected ? "text-[#e8b84b]" : "text-[#eef3f8]"}`}>
+        {card.title}
+      </h3>
+      <p className="mt-1.5 line-clamp-3 flex-1 text-xs leading-relaxed text-[#c3d1dd]/90">
+        {card.description}
+      </p>
+      <div className="mt-3 flex flex-wrap items-center justify-between gap-2 border-t border-[#24405c]/70 pt-3">
+        <span className={`text-[11px] font-bold ${statusTone}`}>{card.statusLine}</span>
+        {card.href ? (
+          <Link
+            href={card.href}
+            onClick={(e) => e.stopPropagation()}
+            className="text-xs font-black text-[#5fd4ea] transition group-hover:translate-x-0.5 hover:text-[#e8b84b]"
+          >
+            Explore lessons →
+          </Link>
+        ) : (
+          <span className="text-xs font-black text-[#91a9bc]">
+            {card.status === "syllabus" ? "View syllabus ↓" : "Open notes ↓"}
+          </span>
+        )}
+      </div>
+    </div>
+  );
+}
+
+function buildCards(
+  chapters: readonly NotesChapter[],
+  restrictedChapterIds: readonly string[],
+): ChapterCardData[] {
+  const cards: ChapterCardData[] = [];
+  for (const syllabusChapter of SYLLABUS_CHAPTERS) {
+    const courses = coursesForSyllabusChapter(syllabusChapter.id);
+    if (courses.length > 0) {
+      const grouped = courses.length > 1;
+      for (const course of courses) {
+        cards.push({
+          key: course.id,
+          syllabusId: syllabusChapter.id,
+          title: course.title,
+          category: syllabusChapter.category,
+          groupLabel: grouped ? syllabusChapter.title : undefined,
+          sectionLabel: grouped ? course.sectionLabel : undefined,
+          description: course.description,
+          status: "full",
+          statusLine: `Full notes · ${course.lessonLabel}`,
+          premium: course.premium,
+          href: course.href,
+        });
+      }
+      continue;
+    }
+    const authored = authoredFor(syllabusChapter.id, chapters);
+    const locked = !authored && restrictedChapterIds.includes(notesIdFor(syllabusChapter.id));
+    cards.push({
+      key: syllabusChapter.id,
+      syllabusId: syllabusChapter.id,
+      title: syllabusChapter.title,
+      category: syllabusChapter.category,
+      description: `${syllabusChapter.concepts.length} syllabus topics · difficulty ${syllabusChapter.difficulty} · ~${syllabusChapter.estimatedHours}h of study.`,
+      status: authored ? "full-inline" : "syllabus",
+      statusLine: authored
+        ? "Full notes · in-page"
+        : locked
+          ? "Full notes · Premium"
+          : "Syllabus only",
+      premium: locked,
+    });
+  }
+  return cards;
+}
+
 interface NotesExplorerProps {
   /** Server-authorized note payload only; never the full registry for free users. */
   chapters: NotesChapter[];
@@ -271,299 +422,175 @@ export default function NotesExplorer({
 
   const syllabusChapter = SYLLABUS_CHAPTERS.find((c) => c.id === chapterId) ?? SYLLABUS_CHAPTERS[0];
   const chapter = authoredFor(syllabusChapter.id, chapters);
-  const chapterLocked = !chapter && restrictedChapterIds.includes(notesIdFor(syllabusChapter.id));
+  const chapterCourses = coursesForSyllabusChapter(syllabusChapter.id);
+  const chapterLocked =
+    !chapter && chapterCourses.length === 0 && restrictedChapterIds.includes(notesIdFor(syllabusChapter.id));
   const activeSection = STRICT_NOTE_SECTIONS.find((s) => s.key === section) ?? STRICT_NOTE_SECTIONS[0];
-  const authoredCount = SYLLABUS_CHAPTERS.filter((c) => authoredFor(c.id, chapters)).length;
+
+  const cards = buildCards(chapters, restrictedChapterIds);
+  const fullCardCount = cards.filter((c) => c.status !== "syllabus").length;
+
+  const selectChapter = (syllabusId: string) => {
+    setChapterId(syllabusId);
+    setSection("detailed");
+  };
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-8">
       {/* Header */}
       <div>
         <p className="mb-2 text-xs font-bold uppercase tracking-[0.4em] text-cyan-300">Notes Engine</p>
         <h1 className="text-3xl font-black md:text-4xl">Chapter Notes Explorer</h1>
         <p className="mt-2 text-sm text-white/55">
-          {authoredCount} of {SYLLABUS_CHAPTERS.length} chapters have full verified notes available to you
-          ({STRICT_NOTE_SECTIONS.length} strict categories each) — every chapter shows its official syllabus.
+          {AUTHORED_COURSES.length} authored full-notes courses across the JEE syllabus — {fullCardCount} chapter
+          cards with verified full notes, every other chapter with its official syllabus. Premium chapters stay
+          visible; their content unlocks with your plan.
         </p>
       </div>
 
-      {/* Chapter 1: Some Basic Concepts of Chemistry */}
-      <div className="rounded-3xl border border-cyan-400/30 bg-slate-900/90 p-6 shadow-2xl space-y-4">
-        <div className="flex items-center justify-between border-b border-slate-800 pb-3">
-          <span className="rounded-full bg-cyan-500/20 px-3 py-1 text-xs font-bold uppercase tracking-widest text-cyan-300">
-            1. Some Basic Concepts of Chemistry
-          </span>
-          <span className="text-xs font-bold text-slate-400">Physical Chemistry Core</span>
-        </div>
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          <Link
-            href="/notes/mole-concept"
-            className="group flex flex-col justify-between rounded-2xl border border-lime-400/30 bg-slate-950 p-4 transition hover:border-lime-400 hover:shadow-lg hover:shadow-lime-500/10"
-          >
-            <div>
-              <span className="rounded-full bg-lime-500/20 px-2.5 py-0.5 text-[10px] font-bold text-lime-300">Section 1</span>
-              <h3 className="mt-2 text-base font-black text-white group-hover:text-lime-300 transition">Mole Concept</h3>
-              <p className="mt-1 text-xs text-slate-400">Complete 15-topic foundation course.</p>
-            </div>
-            <span className="mt-4 text-xs font-bold text-lime-400 group-hover:translate-x-1 transition-transform">Explore Topics →</span>
-          </Link>
-
-          <Link
-            href="/notes/stoichiometry"
-            className="group flex flex-col justify-between rounded-2xl border border-amber-400/30 bg-slate-950 p-4 transition hover:border-amber-400 hover:shadow-lg hover:shadow-amber-500/10"
-          >
-            <div>
-              <span className="rounded-full bg-amber-500/20 px-2.5 py-0.5 text-[10px] font-bold text-amber-300">Section 2</span>
-              <h3 className="mt-2 text-base font-black text-white group-hover:text-amber-300 transition">Stoichiometry</h3>
-              <p className="mt-1 text-xs text-slate-400">Complete 9-part reaction analysis course.</p>
-            </div>
-            <span className="mt-4 text-xs font-bold text-amber-400 group-hover:translate-x-1 transition-transform">Explore Lessons →</span>
-          </Link>
-
-          <Link
-            href="/notes/concentration-terms"
-            className="group flex flex-col justify-between rounded-2xl border border-red-400/30 bg-slate-950 p-4 transition hover:border-red-400 hover:shadow-lg hover:shadow-red-500/10"
-          >
-            <div>
-              <span className="rounded-full bg-red-500/20 px-2.5 py-0.5 text-[10px] font-bold text-red-300">Section 3</span>
-              <h3 className="mt-2 text-base font-black text-white group-hover:text-red-300 transition">Concentration Terms</h3>
-              <p className="mt-1 text-xs text-slate-400">Complete 6-part solution analysis course.</p>
-            </div>
-            <span className="mt-4 text-xs font-bold text-red-400 group-hover:translate-x-1 transition-transform">Explore Lessons →</span>
-          </Link>
-
-          <Link
-            href="/notes/eudiometry"
-            className="group flex flex-col justify-between rounded-2xl border border-cyan-400/30 bg-slate-950 p-4 transition hover:border-cyan-400 hover:shadow-lg hover:shadow-cyan-500/10"
-          >
-            <div>
-              <span className="rounded-full bg-cyan-500/20 px-2.5 py-0.5 text-[10px] font-bold text-cyan-300">Section 4</span>
-              <h3 className="mt-2 text-base font-black text-white group-hover:text-cyan-300 transition">Eudiometry</h3>
-              <p className="mt-1 text-xs text-slate-400">Complete 6-part gas volume course.</p>
-            </div>
-            <span className="mt-4 text-xs font-bold text-cyan-400 group-hover:translate-x-1 transition-transform">Explore Lessons →</span>
-          </Link>
-        </div>
-      </div>
-
-      {/* Chapter 2: Redox Reactions */}
-      <div className="rounded-3xl border border-purple-400/30 bg-slate-900/90 p-6 shadow-2xl space-y-4">
-        <div className="flex items-center justify-between border-b border-slate-800 pb-3">
-          <Link href="/notes/redox-reactions" className="rounded-full bg-purple-500/20 px-3 py-1 text-xs font-bold uppercase tracking-widest text-purple-300 hover:bg-purple-500/30 transition">
-            2. Redox Reactions
-          </Link>
-          <Link href="/notes/redox-reactions" className="text-xs font-bold text-slate-400 hover:text-purple-300 transition">
-            Chapter Hub →
-          </Link>
-        </div>
-        <div className="grid gap-4 sm:grid-cols-2">
-          <Link
-            href="/notes/redox-reactions/equivalent-weight"
-            className="group flex flex-col justify-between rounded-2xl border border-pink-400/30 bg-slate-950 p-4 transition hover:border-pink-400 hover:shadow-lg hover:shadow-pink-500/10"
-          >
-            <div>
-              <span className="rounded-full bg-pink-500/20 px-2.5 py-0.5 text-[10px] font-bold text-pink-300">Section 1</span>
-              <h3 className="mt-2 text-base font-black text-white group-hover:text-pink-300 transition">Equivalent Weight</h3>
-              <p className="mt-1 text-xs text-slate-400">Equivalent concept, n-factor & redox changes.</p>
-            </div>
-            <span className="mt-4 text-xs font-bold text-pink-400 group-hover:translate-x-1 transition-transform">Open Section →</span>
-          </Link>
-
-          <Link
-            href="/notes/redox-reactions/titration"
-            className="group flex flex-col justify-between rounded-2xl border border-blue-400/30 bg-slate-950 p-4 transition hover:border-blue-400 hover:shadow-lg hover:shadow-blue-500/10"
-          >
-            <div>
-              <span className="rounded-full bg-blue-500/20 px-2.5 py-0.5 text-[10px] font-bold text-blue-300">Section 2</span>
-              <h3 className="mt-2 text-base font-black text-white group-hover:text-blue-300 transition">Titration</h3>
-              <p className="mt-1 text-xs text-slate-400">Volumetric analysis, indicators & calculations.</p>
-            </div>
-            <span className="mt-4 text-xs font-bold text-blue-400 group-hover:translate-x-1 transition-transform">Open Section →</span>
-          </Link>
-        </div>
-      </div>
-
-      <div className="rounded-3xl border border-cyan-400/30 bg-slate-900/90 p-6 shadow-2xl space-y-4">
-        <div className="flex items-center justify-between border-b border-slate-800 pb-3">
-          <span className="rounded-full bg-cyan-500/20 px-3 py-1 text-xs font-bold uppercase tracking-widest text-cyan-300">
-            Thermodynamics
-          </span>
-          <span className="text-xs font-bold text-slate-400">Physical Chemistry Core</span>
-        </div>
-        <div className="grid gap-4 sm:grid-cols-2">
-          <Link
-            href="/learn/thermodynamics"
-            className="group flex flex-col justify-between rounded-2xl border border-cyan-400/30 bg-slate-950 p-4 transition hover:border-cyan-400 hover:shadow-lg hover:shadow-cyan-500/10"
-          >
-            <div>
-              <span className="rounded-full bg-cyan-500/20 px-2.5 py-0.5 text-[10px] font-bold text-cyan-300">30 Parts</span>
-              <h3 className="mt-2 text-base font-black text-white transition group-hover:text-cyan-300">Thermodynamics</h3>
-              <p className="mt-1 text-xs text-slate-400">Complete 30-part visual theory, derivations, graphs, tables, worked examples, and solutions.</p>
-            </div>
-            <span className="mt-4 text-xs font-bold text-cyan-400 transition-transform group-hover:translate-x-1">Explore Lessons →</span>
-          </Link>
-        </div>
-      </div>
-
-      <div className="rounded-3xl border border-cyan-400/30 bg-slate-900/90 p-6 shadow-2xl space-y-4">
-        <div className="flex items-center justify-between border-b border-slate-800 pb-3">
-          <Link href="/notes/electrochemistry" className="rounded-full bg-cyan-500/20 px-3 py-1 text-xs font-bold uppercase tracking-widest text-cyan-300 hover:bg-cyan-500/30 transition">
-            5. Electrochemistry
-          </Link>
-          <Link href="/notes/electrochemistry" className="text-xs font-bold text-slate-400 hover:text-cyan-300 transition">
-            Chapter Hub →
-          </Link>
-        </div>
-        <div className="grid gap-4 sm:grid-cols-2">
-          <Link
-            href="/notes/electrochemistry"
-            className="group flex flex-col justify-between rounded-2xl border border-cyan-400/30 bg-slate-950 p-4 transition hover:border-cyan-400 hover:shadow-lg hover:shadow-cyan-500/10"
-          >
-            <div>
-              <span className="rounded-full bg-cyan-500/20 px-2.5 py-0.5 text-[10px] font-bold text-cyan-300">Section 1</span>
-              <h3 className="mt-2 text-base font-black text-white group-hover:text-cyan-300 transition">Galvanic Cells & Nernst Equation</h3>
-              <p className="mt-1 text-xs text-slate-400">Electrochemical series, EMF & thermodynamics.</p>
-            </div>
-            <span className="mt-4 text-xs font-bold text-cyan-400 group-hover:translate-x-1 transition-transform">Open Section →</span>
-          </Link>
-
-          <Link
-            href="/notes/electrochemistry"
-            className="group flex flex-col justify-between rounded-2xl border border-lime-400/30 bg-slate-950 p-4 transition hover:border-lime-400 hover:shadow-lg hover:shadow-lime-500/10"
-          >
-            <div>
-              <span className="rounded-full bg-lime-500/20 px-2.5 py-0.5 text-[10px] font-bold text-lime-300">Section 2</span>
-              <h3 className="mt-2 text-base font-black text-white group-hover:text-lime-300 transition">Conductance & Kohlrausch&apos;s Law</h3>
-              <p className="mt-1 text-xs text-slate-400">Molar conductivity & Faraday electrolysis laws.</p>
-            </div>
-            <span className="mt-4 text-xs font-bold text-lime-400 group-hover:translate-x-1 transition-transform">Open Section →</span>
-          </Link>
-        </div>
-      </div>
-
-      {/* Chapter selector */}
-      <div className="flex flex-wrap gap-2">
-        {SYLLABUS_CHAPTERS.map((c) => {
-          const active = c.id === chapterId;
-          const authored = authoredFor(c.id, chapters);
-          const locked = !authored && restrictedChapterIds.includes(notesIdFor(c.id));
-          return (
-            <button
-              key={c.id}
-              onClick={() => { setChapterId(c.id); setSection("detailed"); }}
-              className={`rounded-xl border px-3.5 py-2 text-left transition ${
-                active
-                  ? "border-cyan-400/50 bg-cyan-500/10"
-                  : "border-white/10 bg-white/[0.03] hover:border-white/20 hover:bg-white/[0.06]"
-              }`}
-            >
-              <span className={`block text-[13px] font-bold ${active ? "text-white" : "text-white/80"}`}>
-                {c.title}
-                {locked && <span className="ml-1.5 text-[11px]" title="Pro chapter">🔒</span>}
-              </span>
-              <span className="mt-0.5 block text-[10px] capitalize text-white/45">
-                {c.category} · {authored ? "✓ full notes" : "syllabus"}
-              </span>
-            </button>
-          );
-        })}
-      </div>
-
-      {chapter ? (
-        <>
-          {/* Chapter meta */}
-          <div className="rounded-2xl border border-white/[0.07] bg-gradient-to-b from-white/[0.05] to-transparent p-4">
-            <div className="flex flex-wrap items-center gap-2">
-              <span className={`rounded-full border px-2.5 py-0.5 text-[11px] font-bold capitalize ${CATEGORY_STYLE[chapter.category]}`}>
-                {chapter.category}
-              </span>
-              {chapter.exams.map((e) => (
-                <span key={e} className="rounded-full border border-white/10 bg-white/[0.05] px-2.5 py-0.5 text-[11px] font-semibold text-white/70">
-                  {e === "jeeMain" ? "JEE Main" : e === "jeeAdvanced" ? "JEE Advanced" : "NEET"}
-                </span>
+      {/* Uniform chapter card system, grouped by branch */}
+      {(["physical", "organic", "inorganic"] as const).map((category) => {
+        const categoryCards = cards.filter((c) => c.category === category);
+        if (categoryCards.length === 0) return null;
+        return (
+          <section key={category}>
+            <h2 className="mb-3 border-b-2 border-[#24405c] pb-2 font-serif text-xl font-bold text-[#e8b84b]">
+              {CATEGORY_LABEL[category]}
+            </h2>
+            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              {categoryCards.map((card) => (
+                <ChapterCard
+                  key={card.key}
+                  card={card}
+                  selected={card.syllabusId === chapterId}
+                  onSelect={() => selectChapter(card.syllabusId)}
+                />
               ))}
-            </div>
-            <p className="mt-2.5 text-[13.5px] text-white/70">{chapter.tagline}</p>
-          </div>
-
-          {/* Section nav */}
-          <div className="-mx-4 overflow-x-auto px-4 md:mx-0 md:px-0">
-            <div className="flex gap-2 md:flex-wrap">
-              {STRICT_NOTE_SECTIONS.map((s) => {
-                const active = s.key === section;
-                return (
-                  <button
-                    key={s.key}
-                    onClick={() => setSection(s.key)}
-                    className={`shrink-0 whitespace-nowrap rounded-lg border px-3 py-2 text-xs font-semibold transition ${
-                      active
-                        ? "border-cyan-400/50 bg-cyan-500/15 text-white"
-                        : "border-white/10 bg-white/[0.03] text-white/60 hover:text-white/85"
-                    }`}
-                  >
-                    <span className="mr-1">{s.icon}</span>{s.label}
-                  </button>
-                );
-              })}
-            </div>
-          </div>
-
-          {/* Active section */}
-          <section className="min-h-[200px]">
-            <div className="space-y-4">
-              <div className="border-b border-white/[0.06] pb-3">
-                <h2 className="flex items-center gap-2 text-lg font-black text-white">
-                  <span>{activeSection.icon}</span> {activeSection.label}
-                </h2>
-                <p className="text-xs text-white/45 mt-1">{activeSection.description}</p>
-              </div>
-              <StrictSectionBody chapter={chapter} section={section} />
             </div>
           </section>
-        </>
-      ) : chapterLocked ? (
-        <section className="min-h-[200px]">
-          <UnlockBanner available={freeNoteCount} total={totalNoteCount} itemLabel="notes chapters" />
-        </section>
-      ) : (
-        /* Syllabus-only state */
-        <section className="min-h-[200px] space-y-4">
-          <div className="rounded-2xl border border-white/[0.07] bg-gradient-to-b from-white/[0.05] to-transparent p-4">
-            <div className="flex flex-wrap items-center gap-2">
-              <span className={`rounded-full border px-2.5 py-0.5 text-[11px] font-bold capitalize ${CATEGORY_STYLE[syllabusChapter.category]}`}>
-                {syllabusChapter.category}
-              </span>
-              {syllabusChapter.exams.map((e) => (
-                <span key={e} className="rounded-full border border-white/10 bg-white/[0.05] px-2.5 py-0.5 text-[11px] font-semibold text-white/70">
-                  {e}
-                </span>
-              ))}
-              <span className="text-[11px] text-white/40">D{syllabusChapter.difficulty} · ~{syllabusChapter.estimatedHours}h</span>
-            </div>
-            <p className="mt-2.5 text-[13.5px] text-white/60">
-              Detailed notes not added yet. Official syllabus available below.
-            </p>
-          </div>
+        );
+      })}
 
-          <div className="rounded-2xl border border-white/[0.08] bg-[#111827] p-4">
-            <h2 className="mb-3 flex items-center gap-2 text-lg font-black text-white">📋 Official Syllabus</h2>
-            <ul className="space-y-2.5">
-              {syllabusChapter.concepts.map((c) => (
-                <li key={c.id} className="text-sm leading-relaxed">
-                  <span className="font-semibold text-white/90">{c.title}</span>
-                  {c.description && <span className="text-white/55"> — {c.description}</span>}
-                </li>
-              ))}
-            </ul>
-            <div className="mt-4 flex flex-wrap gap-2 text-[11px]">
-              <Link href={`/chapter/${syllabusChapter.id}`} className="rounded-lg border border-cyan-400/30 bg-cyan-500/10 px-2.5 py-1 font-bold text-cyan-300 transition hover:bg-cyan-500/20">Open chapter page →</Link>
-              <Link href="/pyq" className="rounded-lg border border-white/10 bg-white/[0.04] px-2.5 py-1 text-white/60 transition hover:border-cyan-400/40 hover:text-cyan-300">🎯 PYQs</Link>
-              <Link href="/tests" className="rounded-lg border border-white/10 bg-white/[0.04] px-2.5 py-1 text-white/60 transition hover:border-cyan-400/40 hover:text-cyan-300">🧪 Tests</Link>
-              <Link href="/snap-solve" className="rounded-lg border border-white/10 bg-white/[0.04] px-2.5 py-1 text-white/60 transition hover:border-cyan-400/40 hover:text-cyan-300">📸 Snap & Solve</Link>
-            </div>
+      {/* Selected chapter detail */}
+      <div className="border-t border-[#24405c] pt-6">
+        <p className="mb-3 text-xs font-bold uppercase tracking-[0.3em] text-[#91a9bc]">
+          Selected chapter · {syllabusChapter.title}
+        </p>
+
+        {/* Authored course shortcuts for the selected chapter */}
+        {chapterCourses.length > 0 && (
+          <div className="mb-5 flex flex-wrap gap-2">
+            {chapterCourses.map((course: AuthoredCourse) => (
+              <Link
+                key={course.id}
+                href={course.href}
+                className="rounded-[13px] border border-[#24405c] border-l-4 border-l-[#5fd4ea] bg-[#122232] px-3.5 py-2 text-[13px] font-bold text-[#c3d1dd] transition hover:border-[#5fd4ea] hover:text-white"
+              >
+                {course.title} · {course.lessonLabel}
+                {course.premium && <span className="ml-1.5 text-[10px] font-black uppercase text-[#e8b84b]">Premium</span>}
+              </Link>
+            ))}
           </div>
-        </section>
-      )}
+        )}
+
+        {chapter ? (
+          <div className="space-y-6">
+            {/* Chapter meta */}
+            <div className="rounded-2xl border border-white/[0.07] bg-gradient-to-b from-white/[0.05] to-transparent p-4">
+              <div className="flex flex-wrap items-center gap-2">
+                <span className={`rounded-full border px-2.5 py-0.5 text-[11px] font-bold capitalize ${CATEGORY_STYLE[chapter.category]}`}>
+                  {chapter.category}
+                </span>
+                {chapter.exams.map((e) => (
+                  <span key={e} className="rounded-full border border-white/10 bg-white/[0.05] px-2.5 py-0.5 text-[11px] font-semibold text-white/70">
+                    {e === "jeeMain" ? "JEE Main" : e === "jeeAdvanced" ? "JEE Advanced" : "NEET"}
+                  </span>
+                ))}
+              </div>
+              <p className="mt-2.5 text-[13.5px] text-white/70">{chapter.tagline}</p>
+            </div>
+
+            {/* Section nav */}
+            <div className="-mx-4 overflow-x-auto px-4 md:mx-0 md:px-0">
+              <div className="flex gap-2 md:flex-wrap">
+                {STRICT_NOTE_SECTIONS.map((s) => {
+                  const active = s.key === section;
+                  return (
+                    <button
+                      key={s.key}
+                      onClick={() => setSection(s.key)}
+                      className={`shrink-0 whitespace-nowrap rounded-lg border px-3 py-2 text-xs font-semibold transition ${
+                        active
+                          ? "border-cyan-400/50 bg-cyan-500/15 text-white"
+                          : "border-white/10 bg-white/[0.03] text-white/60 hover:text-white/85"
+                      }`}
+                    >
+                      <span className="mr-1">{s.icon}</span>{s.label}
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
+
+            {/* Active section */}
+            <section className="min-h-[200px]">
+              <div className="space-y-4">
+                <div className="border-b border-white/[0.06] pb-3">
+                  <h2 className="flex items-center gap-2 text-lg font-black text-white">
+                    <span>{activeSection.icon}</span> {activeSection.label}
+                  </h2>
+                  <p className="text-xs text-white/45 mt-1">{activeSection.description}</p>
+                </div>
+                <StrictSectionBody chapter={chapter} section={section} />
+              </div>
+            </section>
+          </div>
+        ) : chapterLocked ? (
+          <section className="min-h-[200px]">
+            <UnlockBanner available={freeNoteCount} total={totalNoteCount} itemLabel="notes chapters" />
+          </section>
+        ) : (
+          /* Syllabus state (also shown under authored-course chapters without inline notes) */
+          <section className="min-h-[200px] space-y-4">
+            <div className="rounded-2xl border border-white/[0.07] bg-gradient-to-b from-white/[0.05] to-transparent p-4">
+              <div className="flex flex-wrap items-center gap-2">
+                <span className={`rounded-full border px-2.5 py-0.5 text-[11px] font-bold capitalize ${CATEGORY_STYLE[syllabusChapter.category]}`}>
+                  {syllabusChapter.category}
+                </span>
+                {syllabusChapter.exams.map((e) => (
+                  <span key={e} className="rounded-full border border-white/10 bg-white/[0.05] px-2.5 py-0.5 text-[11px] font-semibold text-white/70">
+                    {e}
+                  </span>
+                ))}
+                <span className="text-[11px] text-white/40">D{syllabusChapter.difficulty} · ~{syllabusChapter.estimatedHours}h</span>
+              </div>
+              <p className="mt-2.5 text-[13.5px] text-white/60">
+                {chapterCourses.length > 0
+                  ? "Open the full authored course above — the official syllabus is listed below."
+                  : "Detailed notes not added yet. Official syllabus available below."}
+              </p>
+            </div>
+
+            <div className="rounded-2xl border border-white/[0.08] bg-[#111827] p-4">
+              <h2 className="mb-3 flex items-center gap-2 text-lg font-black text-white">📋 Official Syllabus</h2>
+              <ul className="space-y-2.5">
+                {syllabusChapter.concepts.map((c) => (
+                  <li key={c.id} className="text-sm leading-relaxed">
+                    <span className="font-semibold text-white/90">{c.title}</span>
+                    {c.description && <span className="text-white/55"> — {c.description}</span>}
+                  </li>
+                ))}
+              </ul>
+              <div className="mt-4 flex flex-wrap gap-2 text-[11px]">
+                <Link href={`/chapter/${syllabusChapter.id}`} className="rounded-lg border border-cyan-400/30 bg-cyan-500/10 px-2.5 py-1 font-bold text-cyan-300 transition hover:bg-cyan-500/20">Open chapter page →</Link>
+                <Link href="/pyq" className="rounded-lg border border-white/10 bg-white/[0.04] px-2.5 py-1 text-white/60 transition hover:border-cyan-400/40 hover:text-cyan-300">🎯 PYQs</Link>
+                <Link href="/tests" className="rounded-lg border border-white/10 bg-white/[0.04] px-2.5 py-1 text-white/60 transition hover:border-cyan-400/40 hover:text-cyan-300">🧪 Tests</Link>
+                <Link href="/snap-solve" className="rounded-lg border border-white/10 bg-white/[0.04] px-2.5 py-1 text-white/60 transition hover:border-cyan-400/40 hover:text-cyan-300">📸 Snap & Solve</Link>
+              </div>
+            </div>
+          </section>
+        )}
+      </div>
     </div>
   );
 }

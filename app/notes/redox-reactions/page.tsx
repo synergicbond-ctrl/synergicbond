@@ -13,7 +13,7 @@ export default function RedoxReactionsHubPage() {
   const chapter = getNotesChapter("redox-reactions");
 
   return (
-    <main className="min-h-screen bg-[#0B0F19] text-white">
+    <main className="min-h-screen bg-[#0a1622] text-white">
       <div className="mx-auto max-w-5xl px-4 py-8 sm:px-6 md:py-12 space-y-8">
         {/* Breadcrumb Navigation */}
         <nav className="flex items-center gap-2 text-xs font-semibold text-slate-400">

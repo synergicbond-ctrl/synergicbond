@@ -1,8 +1,14 @@
 
-import Link from "next/link";
 import type { ReactNode } from "react";
 import { BlockMath, InlineMath } from "@/components/math/react-katex";
-import { PartNavigator } from "../_components/AtomicLearning";
+import {
+  ChapterShell,
+  ChapterLessonPager,
+  ChapterPartStrip,
+  type ChapterTab,
+  type LessonRef,
+} from "@/components/notes/canonical";
+import { ATOMIC_CONCEPT_GROUPS } from "./groups";
 
 export type AtomicPartMeta = {
   part: number;
@@ -69,6 +75,28 @@ export const atomicPartMeta: AtomicPartMeta[] = [
   { part: 55, title: "Olympiad Problems — Uncertainty and Relativistic Wavelength (2.7–2.14)", pages: "173-175", href: "/learn/atomic-structure/part55" },
 ];
 
+function atomicLessonRef(index: number): LessonRef | undefined {
+  const entry = atomicPartMeta[index];
+  if (!entry) return undefined;
+  return {
+    href: entry.href,
+    number: `Part ${String(entry.part).padStart(2, "0")}`,
+    title: entry.title,
+    meta: `Source pages ${entry.pages}`,
+  };
+}
+
+export function atomicTabs(currentPart?: number): ChapterTab[] {
+  return [
+    { label: "All 55 parts", href: "/learn/atomic-structure", active: currentPart === undefined },
+    ...ATOMIC_CONCEPT_GROUPS.map((group, index) => ({
+      label: group.label,
+      href: `/learn/atomic-structure#group-${index + 1}`,
+      active: currentPart !== undefined && currentPart >= group.from && currentPart <= group.to,
+    })),
+  ];
+}
+
 export function AtomicPartShell({
   part,
   title,
@@ -81,29 +109,45 @@ export function AtomicPartShell({
   children: ReactNode;
 }) {
   const currentIndex = atomicPartMeta.findIndex((entry) => entry.part === part);
-  const previousPart = currentIndex > 0 ? atomicPartMeta[currentIndex - 1] : undefined;
-  const nextPart = currentIndex >= 0 ? atomicPartMeta[currentIndex + 1] : undefined;
 
   return (
-    <article className="min-h-screen bg-[#08111f] px-4 py-8 text-white sm:px-6 sm:py-12">
-      <div className="mx-auto max-w-6xl">
-        <Link
-          href="/learn/atomic-structure"
-          className="inline-flex rounded-full border border-cyan-300/30 bg-cyan-300/10 px-4 py-2 text-sm font-semibold text-cyan-100 transition hover:bg-cyan-300/20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-300"
+    <ChapterShell
+      kicker="JEE Physical Chemistry"
+      subtitle="Atomic Structure"
+      tabs={atomicTabs(part)}
+    >
+      <ChapterPartStrip
+        hubHref="/learn/atomic-structure"
+        hubLabel="Atomic Structure — all parts"
+        positionLabel={`Part ${String(part).padStart(2, "0")} of ${atomicPartMeta.length}`}
+      />
+      <article className="mx-auto max-w-6xl text-white">
+        <header
+          style={{
+            background: "#122232",
+            border: "1px solid #24405c",
+            borderLeft: "4px solid #5fd4ea",
+            borderRadius: 13,
+            padding: "18px 20px",
+          }}
         >
-          Atomic Structure
-        </Link>
-        <header className="mt-6 overflow-hidden rounded-3xl border border-cyan-300/15 bg-[radial-gradient(circle_at_top_right,_rgba(34,211,238,.18),_transparent_32%),linear-gradient(135deg,rgba(34,211,238,.12),rgba(2,6,23,.6),rgba(139,92,246,.1))] p-6 shadow-2xl shadow-cyan-950/30 sm:p-9">
-          <p className="text-[11px] font-bold uppercase tracking-[0.3em] text-cyan-200">Atomic Structure · Part {String(part).padStart(2, "0")}</p>
-          <h1 className="mt-3 text-3xl font-black tracking-tight sm:text-5xl">{title}</h1>
-          <div className="mt-6 h-1.5 overflow-hidden rounded-full bg-white/10" aria-label={`Chapter progress: part ${part} of 55`}><div className="h-full rounded-full bg-gradient-to-r from-cyan-300 to-violet-400" style={{ width: `${(part / 55) * 100}%` }} /></div>
-          <p className="mt-2 text-sm text-slate-300">Study sequence {part} of 55 · approximately 8–12 minutes</p>
+          <p className="text-[11px] font-bold uppercase tracking-[0.3em] text-[#5fd4ea]">
+            Atomic Structure · Part {String(part).padStart(2, "0")}
+          </p>
+          <h1 className="mt-3 text-3xl font-black tracking-tight sm:text-4xl" style={{ fontFamily: "Georgia, 'Iowan Old Style', 'Times New Roman', serif" }}>{title}</h1>
+          <p className="mt-2 text-sm" style={{ color: "#91a9bc" }}>
+            Study sequence {part} of 55 · source pages {pages} · approximately 8–12 minutes
+          </p>
         </header>
-        <div className="mt-6 hidden rounded-xl border border-white/10 bg-slate-950/55 p-3 lg:block lg:sticky lg:top-3 lg:z-10"><nav aria-label="Part shortcuts" className="flex items-center gap-2 overflow-x-auto"><span className="shrink-0 text-xs font-bold uppercase tracking-wider text-slate-400">Chapter</span>{atomicPartMeta.slice(Math.max(0, currentIndex - 2), currentIndex + 3).map((entry) => <Link key={entry.href} href={entry.href} aria-current={entry.part === part ? "page" : undefined} className={`shrink-0 rounded-lg px-3 py-2 text-xs font-bold transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-cyan-300 ${entry.part === part ? "bg-cyan-300 text-slate-950" : "text-slate-300 hover:bg-white/10"}`}>Part {String(entry.part).padStart(2, "0")}</Link>)}</nav></div>
         <div className="mt-8 space-y-8">{children}</div>
-        <PartNavigator previous={previousPart ? { href: previousPart.href, label: `Part ${String(previousPart.part).padStart(2, "0")}` } : undefined} next={nextPart ? { href: nextPart.href, label: `Part ${String(nextPart.part).padStart(2, "0")}` } : undefined} />
-      </div>
-    </article>
+        <ChapterLessonPager
+          prev={atomicLessonRef(currentIndex - 1)}
+          next={atomicLessonRef(currentIndex + 1)}
+          hubHref="/learn/atomic-structure"
+          hubLabel="All lessons"
+        />
+      </article>
+    </ChapterShell>
   );
 }
 

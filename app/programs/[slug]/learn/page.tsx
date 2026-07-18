@@ -4,7 +4,7 @@ import ProgramPageHeader from "@/components/programs/ProgramPageHeader";
 import { examChapters } from "@/components/syllabus/ExamSyllabus";
 import { getProgram, PROGRAMS } from "@/lib/programs";
 import { formulaCards } from "@/lib/chemistry/formulas";
-import { isEngineSlug } from "@/lib/engine/programSpec";
+import { isEngineSlug, AUTHORED_NOTES } from "@/lib/engine/programSpec";
 
 // ─────────────────────────────────────────────────────────────────────────────
 // /programs/[slug]/learn — Learn Engine V1 (Roadmap V2 · Week 2).
@@ -55,9 +55,6 @@ export default async function ProgramLearnPage({ params }: { params: Promise<{ s
 
   const { name, examTags, accent } = program;
   const chapters = examTags.length > 0 ? examChapters(examTags) : [];
-  const displayedChapters = slug === "jee-advanced"
-    ? chapters.filter((chapter) => chapter.id !== "thermodynamics")
-    : chapters;
 
   return (
     <main className="min-h-screen bg-black text-white">
@@ -94,65 +91,59 @@ export default async function ProgramLearnPage({ params }: { params: Promise<{ s
 
         <section>
           <h2 className="mb-2 text-2xl font-bold">Chapters</h2>
-          {slug === "jee-advanced" && (
-            <div className="mb-6">
-              <p className="mb-3 text-[11px] font-bold uppercase tracking-wider text-cyan-300">Physical Chemistry</p>
-              <Link
-                href="/programs/jee-advanced/chapter/thermodynamics"
-                className={`group block rounded-xl border bg-white/[0.02] p-4 transition hover:bg-white/[0.04] ${accent.card}`}
-              >
-                <div className="text-[11px] font-bold uppercase tracking-wider text-white/40">⚗️ Physical</div>
-                <div className="mt-1.5 text-sm font-bold text-white">Thermodynamics</div>
-                <div className="mt-1 text-xs text-white/45">Complete 30-part visual theory, derivations, graphs, tables, worked examples, and solutions.</div>
-                <div className={`mt-3 text-sm font-semibold ${accent.text}`}>Explore Lessons <span className="inline-block transition group-hover:translate-x-1">→</span></div>
-              </Link>
-            </div>
-          )}
-
-          {slug === "jee-advanced" && (
-            <div className="mb-6">
-              <p className="mb-3 text-[11px] font-bold uppercase tracking-wider text-cyan-300">Inorganic Chemistry</p>
-              <Link
-                href="/programs/jee-advanced/chapter/periodic-table"
-                className={`group block rounded-xl border bg-white/[0.02] p-4 transition hover:bg-white/[0.04] ${accent.card}`}
-              >
-                <div className="text-[11px] font-bold uppercase tracking-wider text-white/40">🧪 Inorganic</div>
-                <div className="mt-1.5 text-sm font-bold text-white">Classification of Elements and Periodicity in Properties</div>
-                <div className="mt-1 text-xs text-white/45">Complete JEE Advanced theory with periodic trends, exceptions, original SVG diagrams, tables, and worked examples.</div>
-                <div className={`mt-3 text-sm font-semibold ${accent.text}`}>Explore Lessons <span className="inline-block transition group-hover:translate-x-1">→</span></div>
-              </Link>
-            </div>
-          )}
-          {displayedChapters.length > 0 ? (
+          {chapters.length > 0 ? (
             <>
               <p className="mb-6 text-zinc-500">
-                {chapters.length} chapters from the verified {name} syllabus — open any chapter for notes, formulas and PYQs
+                {chapters.length} chapters from the verified {name} syllabus — authored chapters open their full
+                notes; every chapter keeps its Chapter Engine (mastery, PYQs, tests, error analysis, AI tutor)
               </p>
               <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-                {displayedChapters.map((chapter) => (
-                  <Link
-                    key={chapter.id}
-                    // Engine programs open the full 11-section Chapter Engine;
-                    // others keep the classic chapter workspace.
-                    href={slug === "jee-advanced" && chapter.id === "atomic-structure"
-                      ? "/learn/atomic-structure"
-                      : isEngineSlug(slug) ? `/programs/${slug}/chapter/${chapter.id}` : `/chapter/${chapter.id}`}
-                    className={`group rounded-xl border bg-white/[0.02] p-4 transition hover:bg-white/[0.04] ${accent.card}`}
-                  >
-                    <div className="flex items-start justify-between gap-2">
-                      <div className="text-[11px] font-bold uppercase tracking-wider text-white/40">
-                        {BRANCH_LABEL[chapter.category] ?? chapter.category}
+                {chapters.map((chapter) => {
+                  // Authored chapters open the canonical full-notes experience;
+                  // the Chapter Engine stays one tap away. Others open the
+                  // engine (engine programs) or the classic chapter workspace.
+                  const notesHref = AUTHORED_NOTES[chapter.id];
+                  const engineHref = isEngineSlug(slug)
+                    ? `/programs/${slug}/chapter/${chapter.id}`
+                    : `/chapter/${chapter.id}`;
+                  return (
+                    <div
+                      key={chapter.id}
+                      className={`group relative flex flex-col rounded-xl border bg-white/[0.02] p-4 transition hover:bg-white/[0.04] ${accent.card}`}
+                    >
+                      <div className="flex items-start justify-between gap-2">
+                        <div className="text-[11px] font-bold uppercase tracking-wider text-white/40">
+                          {BRANCH_LABEL[chapter.category] ?? chapter.category}
+                        </div>
+                        {notesHref ? (
+                          <span className="rounded-full border border-[#e8b84b4d] bg-[#e8b84b1a] px-1.5 py-0.5 text-[9px] font-bold uppercase text-[#e8b84b]">Full Notes</span>
+                        ) : isEngineSlug(slug) ? (
+                          <span className="rounded-full border border-cyan-400/30 bg-cyan-400/10 px-1.5 py-0.5 text-[9px] font-bold uppercase text-cyan-300">Engine</span>
+                        ) : null}
                       </div>
-                      {isEngineSlug(slug) && (
-                        <span className="rounded-full border border-cyan-400/30 bg-cyan-400/10 px-1.5 py-0.5 text-[9px] font-bold uppercase text-cyan-300">Engine</span>
-                      )}
+                      <Link href={notesHref ?? engineHref} className="mt-1.5 flex-1 after:absolute after:inset-0">
+                        <span className="text-sm font-bold text-white">{chapter.title}</span>
+                        <span className="mt-1 block text-xs text-white/45">
+                          D{chapter.difficulty} · ~{chapter.estimatedHours}h · {chapter.concepts.length} syllabus points
+                        </span>
+                      </Link>
+                      <div className="mt-3 flex items-center justify-between gap-2">
+                        <span className={`text-sm font-semibold ${accent.text}`}>
+                          {notesHref ? "Explore lessons" : "Open chapter"}{" "}
+                          <span className="inline-block transition group-hover:translate-x-1">→</span>
+                        </span>
+                        {notesHref && (
+                          <Link
+                            href={engineHref}
+                            className="relative z-10 rounded-md border border-white/10 bg-white/[0.04] px-2 py-1 text-[10px] font-bold uppercase tracking-wide text-white/55 transition hover:border-cyan-400/40 hover:text-cyan-300"
+                          >
+                            Chapter Engine
+                          </Link>
+                        )}
+                      </div>
                     </div>
-                    <div className="mt-1.5 text-sm font-bold text-white">{chapter.title}</div>
-                    <div className="mt-1 text-xs text-white/45">
-                      D{chapter.difficulty} · ~{chapter.estimatedHours}h · {chapter.concepts.length} syllabus points
-                    </div>
-                  </Link>
-                ))}
+                  );
+                })}
               </div>
             </>
           ) : (

@@ -1,6 +1,6 @@
 import React from "react";
-import ChapterPartNav from "@/components/notes/ChapterPartNav";
 import MoleConceptPart11 from "../part11";
+import { SbcCoursePartFrame } from "@/components/notes/SbcCourseChrome";
 
 export const metadata = {
   title: "Mole Concept — Gas Density and Vapour Density — SYNERGIC BOND",
@@ -9,17 +9,8 @@ export const metadata = {
 
 export default function Page() {
   return (
-    <div className="bg-slate-950 min-h-screen">
-      <ChapterPartNav
-        engineHref="/programs/jee-main/chapter/mole-concept"
-        hubHref="/notes/mole-concept"
-        hubLabel="Mole Concept Hub"
-        badgeLabel="Gas & Vapour Density"
-        accent="cyan"
-        prev={{ href: "/notes/mole-concept/part10", label: "← Ideal Gas Applications" }}
-        next={{ href: "/notes/mole-concept/part12", label: "Next: Isotopes & Atomic Mass →" }}
-      />
+    <SbcCoursePartFrame courseId="mole-concept" part={11}>
       <MoleConceptPart11 />
-    </div>
+    </SbcCoursePartFrame>
   );
 }

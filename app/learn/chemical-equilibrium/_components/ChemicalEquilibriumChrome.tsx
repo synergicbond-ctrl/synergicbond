@@ -1,10 +1,17 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname, useRouter } from "next/navigation";
-import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
+import {
+  CanonicalNotesStyles,
+  ChapterTopTabs,
+  ChapterLessonPager,
+  type ChapterTab,
+  type LessonRef,
+} from "@/components/notes/canonical";
+import { CE_GROUPS, CE_LESSONS, ceHref } from "./meta";
 
-const TOTAL_PARTS = 18;
+const TOTAL_PARTS = CE_LESSONS.length;
 
 function getPart(pathname: string): number | null {
   const match = pathname.match(/\/part(\d{2})\/?$/);
@@ -14,64 +21,42 @@ function getPart(pathname: string): number | null {
   return value >= 1 && value <= TOTAL_PARTS ? value : null;
 }
 
-function partHref(part: number): string {
-  return `/learn/chemical-equilibrium/part${String(part).padStart(2, "0")}`;
+function ceLessonRef(index: number): LessonRef | undefined {
+  const lesson = CE_LESSONS[index];
+  if (!lesson) return undefined;
+  return { href: ceHref(lesson.part), number: `Part ${lesson.part}`, title: lesson.title };
+}
+
+function ceTabs(currentPart: number | null): ChapterTab[] {
+  return [
+    { label: "All 18 parts", href: "/learn/chemical-equilibrium", active: currentPart === null },
+    ...CE_GROUPS.map((group, index) => ({
+      label: group.label,
+      href: `/learn/chemical-equilibrium#group-${index + 1}`,
+      active: currentPart !== null && currentPart >= group.from && currentPart <= group.to,
+    })),
+  ];
 }
 
 export function ChemicalEquilibriumHeader() {
   const pathname = usePathname();
   const part = getPart(pathname);
-
-  const [topic, setTopic] = useState(
-    part ? `Part ${String(part).padStart(2, "0")}` : "Complete Chapter",
-  );
-
-  useEffect(() => {
-    const detectTopic = () => {
-      const headings = Array.from(
-        document.querySelectorAll<HTMLElement>(
-          "#chemical-equilibrium-content h1, " +
-            "#chemical-equilibrium-content h2, " +
-            "#chemical-equilibrium-content h3",
-        ),
-      );
-
-      const title = headings
-        .map((heading) => heading.textContent?.trim() ?? "")
-        .find(
-          (text) =>
-            text.length > 2 &&
-            !/^chemical equilibrium$/i.test(text) &&
-            !/^part\s*\d+/i.test(text),
-        );
-
-      setTopic(
-        title ||
-          (part
-            ? `Part ${String(part).padStart(2, "0")}`
-            : "Complete Chapter"),
-      );
-    };
-
-    detectTopic();
-    const timer = window.setTimeout(detectTopic, 250);
-
-    return () => window.clearTimeout(timer);
-  }, [pathname, part]);
+  const lesson = part ? CE_LESSONS[part - 1] : undefined;
 
   return (
-    <header className="ce-header">
-      <div className="ce-header-inner">
-        <p className="ce-breadcrumb">
-          JEE Advanced · Chemistry · Physical Chemistry
-        </p>
-
-        <h1>Chemical Equilibrium</h1>
-
-        <div className="ce-current-topic">
-          <span>Current topic</span>
-          <strong>{topic}</strong>
+    <header className="sbnHeader">
+      <CanonicalNotesStyles />
+      <div className="sbnHeaderInner">
+        <div className="sbnHeaderRow">
+          <div>
+            <div className="sbnKicker">JEE Physical Chemistry</div>
+            <div className="sbnSubtitle">Chemical Equilibrium</div>
+          </div>
+          <div className="sbnHeaderTag">
+            {lesson ? `Lesson ${lesson.part} of ${TOTAL_PARTS}` : "Top chapter navigation"}
+          </div>
         </div>
+        <ChapterTopTabs tabs={ceTabs(part)} ariaLabel="Chemical Equilibrium sections" />
       </div>
     </header>
   );
@@ -79,56 +64,23 @@ export function ChemicalEquilibriumHeader() {
 
 export function ChemicalEquilibriumFooter() {
   const pathname = usePathname();
-  const router = useRouter();
   const part = getPart(pathname);
 
   return (
-    <footer className="ce-footer">
-      <p className="ce-footer-label">
-        Chemical Equilibrium navigation
-      </p>
-
-      <nav className="ce-footer-nav" aria-label="Chapter navigation">
-        <button
-          type="button"
-          className="ce-button ce-button-secondary"
-          onClick={() => router.back()}
-        >
-          ← Back
-        </button>
-
-        <Link
-          href="/learn/chemical-equilibrium"
-          className="ce-button ce-button-secondary"
-        >
-          ⌂ Chapter contents
-        </Link>
-
-        {part && part > 1 ? (
-          <Link
-            href={partHref(part - 1)}
-            className="ce-button ce-button-secondary"
-          >
-            ‹ Previous topic
-          </Link>
-        ) : null}
-
-        {part && part < TOTAL_PARTS ? (
-          <Link
-            href={partHref(part + 1)}
-            className="ce-button ce-button-primary"
-          >
-            Next topic ›
-          </Link>
-        ) : null}
-
-        <Link
-          href="/programs/jee-advanced/learn"
-          className="ce-button ce-button-return"
-        >
+    <footer className="sbnPartChrome">
+      {part ? (
+        <ChapterLessonPager
+          prev={ceLessonRef(part - 2)}
+          next={ceLessonRef(part)}
+          hubHref="/learn/chemical-equilibrium"
+          hubLabel="All lessons"
+        />
+      ) : null}
+      <div style={{ display: "flex", justifyContent: "center", marginTop: 18 }}>
+        <Link href="/programs/jee-advanced/learn" className="sbnTab">
           Return to JEE Advanced ↗
         </Link>
-      </nav>
+      </div>
     </footer>
   );
 }

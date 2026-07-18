@@ -137,14 +137,21 @@ export const CHAPTER_PYQ_MAP: Record<string, PYQChapter[]> = {
   "chemistry-in-everyday-life": ["Chemistry in Everyday Life"],
 };
 
-/** Chapters with authored premium visual notes (the /learn template). */
+/**
+ * Chapters with authored full-notes courses → their canonical notes route.
+ * Audited against the live route tree (2026-07-18); access control stays with
+ * each route's own server gate — this map is navigation metadata only.
+ */
 export const AUTHORED_NOTES: Record<string, string> = {
-  "mole-concept": "/learn/mole-concept",
+  "mole-concept": "/notes/mole-concept",
   "atomic-structure": "/learn/atomic-structure",
   "chemical-bonding": "/learn/chemical-bonding",
   "periodic-table": "/learn/periodic-table",
   "thermodynamics": "/learn/thermodynamics",
+  "chemical-equilibrium": "/learn/chemical-equilibrium",
   "electrochemistry": "/notes/electrochemistry",
+  "redox-reactions": "/notes/redox-reactions",
+  "hydrogen": "/notes/hydrogen",
 };
 
 // ── Expected-time heuristic (labelled as derived wherever shown) ──────────────

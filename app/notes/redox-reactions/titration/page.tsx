@@ -1,11 +1,11 @@
 "use client";
 
 import React, { useState } from "react";
-import Link from "next/link";
 import {
   ChemistryNotesShell,
   NotesChapterHeader,
   NumberedSectionHeader,
+  NumberedSectionFooter,
   NotesContentCard,
   NumberedSectionItem,
 } from "@/components/notes/chemistry";
@@ -61,40 +61,15 @@ export default function TitrationHubPage() {
         </div>
       </NotesContentCard>
 
-      {/* Clean Numbered Section Navigation Footer */}
-      <footer className="flex flex-col sm:flex-row items-center justify-between gap-4 rounded-2xl border border-slate-800 bg-slate-900/40 p-6 backdrop-blur-sm shadow-xl">
-        <button
-          disabled={activeSection <= 1}
-          onClick={() => setActiveSection((prev) => Math.max(1, prev - 1))}
-          className={`rounded-xl px-5 py-2.5 text-sm font-bold transition-all ${
-            activeSection <= 1
-              ? "opacity-30 cursor-not-allowed bg-slate-800/40 text-slate-500 border border-slate-850"
-              : "bg-slate-800/80 hover:bg-slate-700/80 border border-slate-700/60 text-slate-300 shadow-sm"
-          }`}
-        >
-          ← Previous ({activeSection > 1 ? `${activeSection - 1}` : ""})
-        </button>
-
-        <span className="text-sm font-bold text-slate-400">
-          Section {activeSection} of {SECTIONS.length}
-        </span>
-
-        {activeSection < SECTIONS.length ? (
-          <button
-            onClick={() => setActiveSection((prev) => Math.min(SECTIONS.length, prev + 1))}
-            className="rounded-xl bg-purple-600 px-6 py-2.5 text-sm font-bold text-white shadow-lg hover:bg-purple-700 border border-purple-500/20 transition-all"
-          >
-            Next Section ({activeSection + 1}) →
-          </button>
-        ) : (
-          <Link
-            href="/notes/redox-reactions/equivalent-weight"
-            className="rounded-xl bg-slate-800/80 px-6 py-2.5 text-sm font-extrabold text-slate-300 shadow-sm hover:bg-slate-700/80 border border-slate-750 transition-all text-center"
-          >
-            ← Return to Equivalent Weight & n-Factor
-          </Link>
-        )}
-      </footer>
+      {/* Canonical section pager with real titles */}
+      <NumberedSectionFooter
+        sections={SECTIONS}
+        activeSection={activeSection}
+        onSelectSection={setActiveSection}
+        hubHref="/notes/redox-reactions"
+        hubLabel="Redox Reactions hub"
+        endLink={{ href: "/notes/redox-reactions/equivalent-weight", label: "Equivalent Weight & n-Factor" }}
+      />
     </ChemistryNotesShell>
   );
 }

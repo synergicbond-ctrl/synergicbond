@@ -1,8 +1,8 @@
 import React from "react";
-import Link from "next/link";
 import { InlineMath, BlockMath } from "@/components/math/react-katex";
 import { getNotesChapter } from "@/lib/notesEngine";
-import { electroParts } from "./parts";
+import { ChapterShell, ChapterLessonGroups } from "@/components/notes/canonical";
+import { electroLessonGroups, electroTabs } from "./_chapter";
 
 export const metadata = {
   title: "Electrochemistry Chapter Notes — SYNERGIC BOND",
@@ -14,58 +14,20 @@ export default function ElectrochemistryNotesPage() {
   const chapter = getNotesChapter("electrochemistry");
 
   return (
-    <main className="min-h-screen bg-[#0B0F19] text-white selection:bg-cyan-500 selection:text-black">
-      <div className="mx-auto max-w-5xl px-4 py-8 sm:px-6 md:py-12 space-y-12">
-        {/* Navigation & Breadcrumb */}
-        <nav className="flex items-center gap-2 text-xs sm:text-sm font-semibold text-slate-400">
-          <Link href="/" className="hover:text-white transition">
-            Home
-          </Link>
-          <span>/</span>
-          <Link href="/notes" className="hover:text-white transition">
-            Chapter Notes
-          </Link>
-          <span>/</span>
-          <span className="text-cyan-400">Electrochemistry</span>
-        </nav>
+    <ChapterShell
+      kicker="JEE Physical Chemistry"
+      subtitle="Electrochemistry"
+      tabs={electroTabs()}
+    >
+      <div className="space-y-12 text-white">
+        <p style={{ margin: "4px 0 0", maxWidth: 860, color: "#c3d1dd", fontSize: 14.5, lineHeight: 1.7 }}>
+          Complete foundation covering galvanic and electrolytic cells, standard electrode potentials, Nernst
+          equation calculations, electrolytic conductance, Kohlrausch&apos;s law, and Faraday&apos;s laws of
+          electrolysis — 24 authored lessons.
+        </p>
 
-        {/* Hero Banner */}
-        <header className="relative overflow-hidden rounded-3xl border border-cyan-500/30 bg-gradient-to-br from-slate-900 via-slate-900/90 to-cyan-950/40 p-6 sm:p-10 shadow-2xl">
-          <div className="absolute -right-10 -top-10 h-64 w-64 rounded-full bg-cyan-500/10 blur-3xl pointer-events-none" />
-          
-          <div className="relative z-10 space-y-4">
-            <div className="flex flex-wrap items-center gap-2">
-              <span className="rounded-full bg-cyan-500/20 px-3 py-1 text-xs font-bold uppercase tracking-wider text-cyan-300 border border-cyan-500/30">
-                Chapter 5 • Physical Chemistry
-              </span>
-              <span className="rounded-full bg-lime-500/20 px-3 py-1 text-xs font-bold uppercase tracking-wider text-lime-300 border border-lime-500/30">
-                JEE & NEET Core
-              </span>
-            </div>
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-black tracking-tight text-white">
-              Electrochemistry
-            </h1>
-            <p className="max-w-2xl text-base sm:text-lg text-slate-300 font-medium leading-relaxed">
-              Complete foundation covering galvanic and electrolytic cells, standard electrode potentials, Nernst equation calculations, electrolytic conductance, Kohlrausch&apos;s law, and Faraday&apos;s laws of electrolysis.
-            </p>
-          </div>
-        </header>
-
-        <section className="grid gap-3 sm:grid-cols-2">
-          {electroParts.map((part) => (
-            <Link
-              key={part.number}
-              href={`/notes/electrochemistry/part${part.number}`}
-              className="group rounded-2xl border border-white/10 bg-white/[.035] p-5 transition hover:border-cyan-300/40 hover:bg-white/[.055]"
-            >
-              <span className="text-xs font-black text-violet-200">
-                LESSON {part.number}
-              </span>
-              <h2 className="mt-2 text-base font-black leading-6 text-white transition group-hover:text-cyan-100">
-                {part.title}
-              </h2>
-            </Link>
-          ))}
+        <section>
+          <ChapterLessonGroups groups={electroLessonGroups()} />
         </section>
 
         {/* Section Cards */}
@@ -135,6 +97,6 @@ export default function ElectrochemistryNotesPage() {
           </section>
         )}
       </div>
-    </main>
+    </ChapterShell>
   );
 }

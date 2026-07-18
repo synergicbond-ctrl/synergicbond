@@ -1,27 +1,26 @@
+import { ChapterLessonGroups, type LessonGroup } from "@/components/notes/canonical";
+import { CE_GROUPS, CE_LESSONS, ceHref } from "./_components/meta";
+
 export default function ChemicalEquilibriumIndex() {
+  const groups: LessonGroup[] = CE_GROUPS.map((group) => ({
+    label: group.label,
+    lessons: CE_LESSONS
+      .filter((lesson) => Number(lesson.part) >= group.from && Number(lesson.part) <= group.to)
+      .map((lesson) => ({
+        href: ceHref(lesson.part),
+        number: `Part ${lesson.part}`,
+        title: lesson.title,
+      })),
+  }));
+
   return (
-    <main className="mx-auto max-w-6xl px-4 py-10 sm:px-6">
-      <header className="mb-8"><p className="text-sm font-bold uppercase tracking-[.18em] text-indigo-700">JEE Advanced Chemistry · Physical Chemistry</p><h1 className="mt-2 text-4xl font-black text-slate-950">Chemical Equilibrium</h1><p className="mt-3 max-w-3xl text-slate-600">A dedicated JEE Advanced Physical Chemistry chapter in eighteen continuous microscopic parts, covering all instructional pages, derivations, equilibrium algebra, Le Chatelier applications, phase equilibria, and numerical methods.</p></header>
-      <section className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-        <a href="/learn/chemical-equilibrium/part01" className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"><span className="text-xs font-bold uppercase tracking-wider text-indigo-700">Part 01</span><h2 className="mt-2 text-lg font-extrabold text-slate-950">Meaning and Types of Equilibrium</h2></a>
-        <a href="/learn/chemical-equilibrium/part02" className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"><span className="text-xs font-bold uppercase tracking-wider text-indigo-700">Part 02</span><h2 className="mt-2 text-lg font-extrabold text-slate-950">Kinetic and Thermodynamic Basis of Equilibrium</h2></a>
-        <a href="/learn/chemical-equilibrium/part03" className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"><span className="text-xs font-bold uppercase tracking-wider text-indigo-700">Part 03</span><h2 className="mt-2 text-lg font-extrabold text-slate-950">Rate of Reaction and Law of Mass Action</h2></a>
-        <a href="/learn/chemical-equilibrium/part04" className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"><span className="text-xs font-bold uppercase tracking-wider text-indigo-700">Part 04</span><h2 className="mt-2 text-lg font-extrabold text-slate-950">Rate Constant, Active Mass, Activation Energy and Activated Complex</h2></a>
-        <a href="/learn/chemical-equilibrium/part05" className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"><span className="text-xs font-bold uppercase tracking-wider text-indigo-700">Part 05</span><h2 className="mt-2 text-lg font-extrabold text-slate-950">Attainment of Equilibrium and Concentration–Time Graphs</h2></a>
-        <a href="/learn/chemical-equilibrium/part06" className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"><span className="text-xs font-bold uppercase tracking-wider text-indigo-700">Part 06</span><h2 className="mt-2 text-lg font-extrabold text-slate-950">Equilibrium Constant Kc: Derivation and Interpretation</h2></a>
-        <a href="/learn/chemical-equilibrium/part07" className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"><span className="text-xs font-bold uppercase tracking-wider text-indigo-700">Part 07</span><h2 className="mt-2 text-lg font-extrabold text-slate-950">Kp, Kc and Kx; Relations among Equilibrium Constants</h2></a>
-        <a href="/learn/chemical-equilibrium/part08" className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"><span className="text-xs font-bold uppercase tracking-wider text-indigo-700">Part 08</span><h2 className="mt-2 text-lg font-extrabold text-slate-950">Thermodynamic Equilibrium Constant, Reaction Gibbs Energy and van ’t Hoff Relation</h2></a>
-        <a href="/learn/chemical-equilibrium/part09" className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"><span className="text-xs font-bold uppercase tracking-wider text-indigo-700">Part 09</span><h2 className="mt-2 text-lg font-extrabold text-slate-950">Catalyst Independence and Transformation of Equilibrium Constants</h2></a>
-        <a href="/learn/chemical-equilibrium/part10" className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"><span className="text-xs font-bold uppercase tracking-wider text-indigo-700">Part 10</span><h2 className="mt-2 text-lg font-extrabold text-slate-950">Magnitude of Keq, Extent of Reaction and Prediction of Direction</h2></a>
-        <a href="/learn/chemical-equilibrium/part11" className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"><span className="text-xs font-bold uppercase tracking-wider text-indigo-700">Part 11</span><h2 className="mt-2 text-lg font-extrabold text-slate-950">Degree of Dissociation and General Gaseous-Equilibrium Algebra</h2></a>
-        <a href="/learn/chemical-equilibrium/part12" className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"><span className="text-xs font-bold uppercase tracking-wider text-indigo-700">Part 12</span><h2 className="mt-2 text-lg font-extrabold text-slate-950">Characteristics of Chemical Equilibrium and Le Chatelier Principle</h2></a>
-        <a href="/learn/chemical-equilibrium/part13" className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"><span className="text-xs font-bold uppercase tracking-wider text-indigo-700">Part 13</span><h2 className="mt-2 text-lg font-extrabold text-slate-950">Effects of Temperature, Pressure, Volume, Concentration and Inert Gas</h2></a>
-        <a href="/learn/chemical-equilibrium/part14" className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"><span className="text-xs font-bold uppercase tracking-wider text-indigo-700">Part 14</span><h2 className="mt-2 text-lg font-extrabold text-slate-950">Mixed Equilibrium Numericals and Partial-Pressure Methods</h2></a>
-        <a href="/learn/chemical-equilibrium/part15" className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"><span className="text-xs font-bold uppercase tracking-wider text-indigo-700">Part 15</span><h2 className="mt-2 text-lg font-extrabold text-slate-950">Physical Equilibrium and Clausius–Clapeyron Equation</h2></a>
-        <a href="/learn/chemical-equilibrium/part16" className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"><span className="text-xs font-bold uppercase tracking-wider text-indigo-700">Part 16</span><h2 className="mt-2 text-lg font-extrabold text-slate-950">Melting Point, Boiling Point and Vapour-Pressure Calculations</h2></a>
-        <a href="/learn/chemical-equilibrium/part17" className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"><span className="text-xs font-bold uppercase tracking-wider text-indigo-700">Part 17</span><h2 className="mt-2 text-lg font-extrabold text-slate-950">Phase Diagrams, Triple Point, Critical Point and Sublimation</h2></a>
-        <a href="/learn/chemical-equilibrium/part18" className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"><span className="text-xs font-bold uppercase tracking-wider text-indigo-700">Part 18</span><h2 className="mt-2 text-lg font-extrabold text-slate-950">Allotropic Transitions and Latent-Heat Numericals</h2></a>
-      </section>
+    <main className="sbnMain">
+      <p style={{ margin: "4px 0 6px", maxWidth: 860, color: "#c3d1dd", fontSize: 14.5, lineHeight: 1.7 }}>
+        A dedicated JEE Advanced Physical Chemistry chapter in eighteen continuous parts, covering all
+        instructional pages, derivations, equilibrium algebra, Le Chatelier applications, phase equilibria,
+        and numerical methods.
+      </p>
+      <ChapterLessonGroups groups={groups} />
     </main>
   );
 }

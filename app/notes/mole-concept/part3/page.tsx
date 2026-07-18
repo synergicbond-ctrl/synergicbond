@@ -1,6 +1,6 @@
 import React from "react";
-import ChapterPartNav from "@/components/notes/ChapterPartNav";
 import MoleConceptPart3 from "../part3";
+import { SbcCoursePartFrame } from "@/components/notes/SbcCourseChrome";
 
 export const metadata = {
   title: "Mole Concept — Atomic Mass and Mass Scale — SYNERGIC BOND",
@@ -9,17 +9,8 @@ export const metadata = {
 
 export default function Page() {
   return (
-    <div className="bg-slate-950 min-h-screen">
-      <ChapterPartNav
-        engineHref="/programs/jee-main/chapter/mole-concept"
-        hubHref="/notes/mole-concept"
-        hubLabel="Mole Concept Hub"
-        badgeLabel="Atomic Mass & Scale"
-        accent="cyan"
-        prev={{ href: "/notes/mole-concept/part2", label: "← Avogadro Constant & Counting" }}
-        next={{ href: "/notes/mole-concept/part4", label: "Next: Gram Atomic Mass →" }}
-      />
+    <SbcCoursePartFrame courseId="mole-concept" part={3}>
       <MoleConceptPart3 />
-    </div>
+    </SbcCoursePartFrame>
   );
 }

@@ -1,9 +1,9 @@
-import Link from "next/link";
 import { renderChemistry } from "@/lib/renderChemistry";
 import {
   PremiumNotes, Glass, Hero, Section, FormulaCard, Step, CalloutList, JeeFocus, RevisionSheet, type NoteSection,
 } from "@/components/notes/premium";
-import { chemBondPartMeta } from "./parts/_shared";
+import { CanonicalNotesStyles, ChapterLessonGrid } from "@/components/notes/canonical";
+import { chemBondPartMeta, CHEM_BOND_GROUPS } from "./parts/_shared";
 
 // /learn/chemical-bonding — premium visual chapter on the shared notes template.
 
@@ -136,18 +136,27 @@ export default function ChemicalBondingNotes() {
 
       <Section id="parts" eyebrow="Study sequence" title="Chemical Bonding — All 13 Parts">
         <p className="mb-5 max-w-2xl text-white/65">The full deep chapter, audited part by part: Lewis theory and the octet rule through metallic bonding, closing with a 13-part-spanning integrated question bank.</p>
-        <div className="grid gap-2 sm:grid-cols-2">
-          {chemBondPartMeta.map((p) => (
-            <Link key={p.href} href={p.href} className="group">
-              <Glass className="flex items-center gap-4 p-3.5 transition group-hover:border-cyan-400/30 group-hover:bg-cyan-500/[0.05]">
-                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-[#0B1220] text-sm font-black text-cyan-200">{String(p.part).padStart(2, "0")}</span>
-                <div className="min-w-0 flex-1">
-                  <span className="block truncate font-bold text-white">{p.title}</span>
-                  <span className="text-xs text-white/45">{p.tag}</span>
-                </div>
-                <span className="shrink-0 text-cyan-400 opacity-0 transition group-hover:opacity-100">→</span>
-              </Glass>
-            </Link>
+        <CanonicalNotesStyles />
+        <div className="space-y-7">
+          {CHEM_BOND_GROUPS.map((group, index) => (
+            <div key={group.label} id={`bond-group-${index + 1}`} style={{ scrollMarginTop: 90 }}>
+              <h3 className="sbnLessonGroupLabel" style={{ fontFamily: "Georgia, 'Iowan Old Style', 'Times New Roman', serif" }}>
+                {group.label}
+                <span className="ml-2 text-sm font-semibold normal-case tracking-normal" style={{ color: "#91a9bc" }}>
+                  Parts {String(group.from).padStart(2, "0")}–{String(group.to).padStart(2, "0")}
+                </span>
+              </h3>
+              <ChapterLessonGrid
+                lessons={chemBondPartMeta
+                  .filter((p) => p.part >= group.from && p.part <= group.to)
+                  .map((p) => ({
+                    href: p.href,
+                    number: `Part ${String(p.part).padStart(2, "0")}`,
+                    title: p.title,
+                    meta: p.tag,
+                  }))}
+              />
+            </div>
           ))}
         </div>
       </Section>

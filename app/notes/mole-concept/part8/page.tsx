@@ -1,6 +1,6 @@
 import React from "react";
-import ChapterPartNav from "@/components/notes/ChapterPartNav";
 import MoleConceptPart8 from "../part8";
+import { SbcCoursePartFrame } from "@/components/notes/SbcCourseChrome";
 
 export const metadata = {
   title: "Mole Concept — Compound Composition Problems — SYNERGIC BOND",
@@ -9,17 +9,8 @@ export const metadata = {
 
 export default function Page() {
   return (
-    <div className="bg-slate-950 min-h-screen">
-      <ChapterPartNav
-        engineHref="/programs/jee-main/chapter/mole-concept"
-        hubHref="/notes/mole-concept"
-        hubLabel="Mole Concept Hub"
-        badgeLabel="Compound Composition"
-        accent="cyan"
-        prev={{ href: "/notes/mole-concept/part7", label: "← Charge Counting" }}
-        next={{ href: "/notes/mole-concept/part9", label: "Next: Gaseous Molar Volume →" }}
-      />
+    <SbcCoursePartFrame courseId="mole-concept" part={8}>
       <MoleConceptPart8 />
-    </div>
+    </SbcCoursePartFrame>
   );
 }

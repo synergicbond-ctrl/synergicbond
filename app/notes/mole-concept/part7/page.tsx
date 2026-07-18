@@ -1,6 +1,6 @@
 import React from "react";
-import ChapterPartNav from "@/components/notes/ChapterPartNav";
 import MoleConceptPart7 from "../part7";
+import { SbcCoursePartFrame } from "@/components/notes/SbcCourseChrome";
 
 export const metadata = {
   title: "Mole Concept — Charge Counting in Ions — SYNERGIC BOND",
@@ -9,17 +9,8 @@ export const metadata = {
 
 export default function Page() {
   return (
-    <div className="bg-slate-950 min-h-screen">
-      <ChapterPartNav
-        engineHref="/programs/jee-main/chapter/mole-concept"
-        hubHref="/notes/mole-concept"
-        hubLabel="Mole Concept Hub"
-        badgeLabel="Charge Counting in Ions"
-        accent="cyan"
-        prev={{ href: "/notes/mole-concept/part6", label: "← Formula Units & Hydrates" }}
-        next={{ href: "/notes/mole-concept/part8", label: "Next: Compound Composition →" }}
-      />
+    <SbcCoursePartFrame courseId="mole-concept" part={7}>
       <MoleConceptPart7 />
-    </div>
+    </SbcCoursePartFrame>
   );
 }

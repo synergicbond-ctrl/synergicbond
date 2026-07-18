@@ -1,6 +1,6 @@
 import React from "react";
-import ChapterPartNav from "@/components/notes/ChapterPartNav";
 import MoleConceptPart12 from "../part12";
+import { SbcCoursePartFrame } from "@/components/notes/SbcCourseChrome";
 
 export const metadata = {
   title: "Mole Concept — Isotopes and Average Atomic Mass — SYNERGIC BOND",
@@ -9,17 +9,8 @@ export const metadata = {
 
 export default function Page() {
   return (
-    <div className="bg-slate-950 min-h-screen">
-      <ChapterPartNav
-        engineHref="/programs/jee-main/chapter/mole-concept"
-        hubHref="/notes/mole-concept"
-        hubLabel="Mole Concept Hub"
-        badgeLabel="Isotopes & Atomic Mass"
-        accent="cyan"
-        prev={{ href: "/notes/mole-concept/part11", label: "← Gas & Vapour Density" }}
-        next={{ href: "/notes/mole-concept/part13", label: "Next: Gas Mixtures →" }}
-      />
+    <SbcCoursePartFrame courseId="mole-concept" part={12}>
       <MoleConceptPart12 />
-    </div>
+    </SbcCoursePartFrame>
   );
 }

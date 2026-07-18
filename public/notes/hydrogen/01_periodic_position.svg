@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="530" viewBox="0 0 600 530">
+<title>Hydrogen periodic position</title>
+<style>
+    .title { font: 700 26px Arial, sans-serif; fill: #111; }
+    .subtitle { font: 600 16px Arial, sans-serif; fill: #333; }
+    .label { font: 14px Arial, sans-serif; fill: #222; }
+    .small { font: 12px Arial, sans-serif; fill: #333; }
+    .tiny { font: 11px Arial, sans-serif; fill: #444; }
+    .box { fill: #f6f8fb; stroke: #30445f; stroke-width: 2; rx: 12; ry: 12; }
+    .box2 { fill: #eef4ff; stroke: #355c9a; stroke-width: 2; rx: 12; ry: 12; }
+    .box3 { fill: #fef6ea; stroke: #b8740b; stroke-width: 2; rx: 12; ry: 12; }
+    .green { fill: #eefaf0; stroke: #39814f; stroke-width: 2; rx: 12; ry: 12; }
+    .red { fill: #fff1f1; stroke: #b24848; stroke-width: 2; rx: 12; ry: 12; }
+    .arrow { stroke: #333; stroke-width: 2.4; fill: none; marker-end: url(#arrowhead); }
+    .thin { stroke: #666; stroke-width: 1.4; fill: none; }
+    .dash { stroke: #666; stroke-width: 2; fill: none; stroke-dasharray: 6 6; }
+    .bond { stroke: #222; stroke-width: 3; fill: none; }
+    .hbond { stroke: #2e6da4; stroke-width: 2.5; fill: none; stroke-dasharray: 4 5; }
+    .axis { stroke: #333; stroke-width: 2; }
+    .tick { stroke: #444; stroke-width: 1.5; }
+</style>
+<defs>
+  <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+    <polygon points="0 0, 10 3.5, 0 7" fill="#333"/>
+  </marker>
+</defs>
+
+<text x="30" y="38" class="title">Hydrogen: Unique Position in the Periodic Table</text>
+<rect x="40" y="80" width="95" height="75" class="box2"/>
+<text x="74" y="108" class="subtitle">H</text>
+<text x="57" y="130" class="small">1s¹</text>
+<text x="48" y="145" class="tiny">Can form H⁺, H⁻,</text>
+<text x="56" y="158" class="tiny">and covalent bonds</text>
+
+<rect x="180" y="80" width="150" height="75" class="green"/>
+<text x="198" y="108" class="subtitle">Resembles Group 1</text>
+<text x="196" y="128" class="small">• ns¹ valence shell</text>
+<text x="196" y="145" class="small">• can show +1 state</text>
+
+<rect x="380" y="80" width="160" height="75" class="box3"/>
+<text x="399" y="108" class="subtitle">Resembles Group 17</text>
+<text x="396" y="128" class="small">• needs one electron</text>
+<text x="396" y="145" class="small">• forms H⁻ and H₂</text>
+
+<line x1="135" y1="117" x2="180" y2="117" class="arrow"/>
+<line x1="135" y1="117" x2="380" y2="117" class="arrow"/>
+
+<text x="44" y="212" class="subtitle">Mini schematic</text>
+<g transform="translate(40,225)">
+  <rect x="0" y="0" width="55" height="45" class="green"/>
+  <text x="20" y="25" class="label">H</text>
+  <rect x="0" y="60" width="55" height="45" class="green"/>
+  <text x="20" y="86" class="label">Li</text>
+  <rect x="0" y="115" width="55" height="45" class="green"/>
+  <text x="18" y="141" class="label">Na</text>
+
+  <rect x="420" y="60" width="55" height="45" class="box3"/>
+  <text x="440" y="86" class="label">F</text>
+  <rect x="420" y="115" width="55" height="45" class="box3"/>
+  <text x="438" y="141" class="label">Cl</text>
+
+  <rect x="480" y="60" width="55" height="45" class="box"/>
+  <text x="497" y="86" class="label">Ne</text>
+  <rect x="480" y="115" width="55" height="45" class="box"/>
+  <text x="497" y="141" class="label">Ar</text>
+
+  <line x1="55" y1="22" x2="420" y2="82" class="dash"/>
+  <text x="145" y="42" class="small">Placed separately because it shares features with both sides</text>
+</g>
+
+<rect x="50" y="420" width="500" height="80" class="red"/>
+<text x="68" y="447" class="subtitle">Takeaway</text>
+<text x="68" y="470" class="small">Hydrogen resembles both alkali metals and halogens, but is not identical to either.</text>
+<text x="68" y="489" class="small">Its very high ionisation enthalpy and the unique behaviour of H⁺ justify a special position.</text>
+
+</svg>

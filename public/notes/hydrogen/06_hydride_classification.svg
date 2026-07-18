@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="500" viewBox="0 0 600 500">
+<title>Hydride classification</title>
+<style>
+    .title { font: 700 26px Arial, sans-serif; fill: #111; }
+    .subtitle { font: 600 16px Arial, sans-serif; fill: #333; }
+    .label { font: 14px Arial, sans-serif; fill: #222; }
+    .small { font: 12px Arial, sans-serif; fill: #333; }
+    .tiny { font: 11px Arial, sans-serif; fill: #444; }
+    .box { fill: #f6f8fb; stroke: #30445f; stroke-width: 2; rx: 12; ry: 12; }
+    .box2 { fill: #eef4ff; stroke: #355c9a; stroke-width: 2; rx: 12; ry: 12; }
+    .box3 { fill: #fef6ea; stroke: #b8740b; stroke-width: 2; rx: 12; ry: 12; }
+    .green { fill: #eefaf0; stroke: #39814f; stroke-width: 2; rx: 12; ry: 12; }
+    .red { fill: #fff1f1; stroke: #b24848; stroke-width: 2; rx: 12; ry: 12; }
+    .arrow { stroke: #333; stroke-width: 2.4; fill: none; marker-end: url(#arrowhead); }
+    .thin { stroke: #666; stroke-width: 1.4; fill: none; }
+    .dash { stroke: #666; stroke-width: 2; fill: none; stroke-dasharray: 6 6; }
+    .bond { stroke: #222; stroke-width: 3; fill: none; }
+    .hbond { stroke: #2e6da4; stroke-width: 2.5; fill: none; stroke-dasharray: 4 5; }
+    .axis { stroke: #333; stroke-width: 2; }
+    .tick { stroke: #444; stroke-width: 1.5; }
+</style>
+<defs>
+  <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+    <polygon points="0 0, 10 3.5, 0 7" fill="#333"/>
+  </marker>
+</defs>
+
+<text x="25" y="38" class="title">Classification of Hydrides</text>
+
+<rect x="35" y="85" width="165" height="245" class="green"/>
+<text x="77" y="112" class="subtitle">Ionic / Saline</text>
+<text x="54" y="142" class="small">Typical elements: highly</text>
+<text x="54" y="160" class="small">electropositive s-block</text>
+<text x="54" y="190" class="small">Examples: LiH, NaH,</text>
+<text x="54" y="208" class="small">CaH₂, BaH₂</text>
+<text x="54" y="238" class="small">Contain H⁻</text>
+<text x="54" y="256" class="small">Strong reducing agents</text>
+<text x="54" y="274" class="small">React violently with water</text>
+
+<rect x="218" y="85" width="165" height="245" class="box2"/>
+<text x="251" y="112" class="subtitle">Covalent / Molecular</text>
+<text x="236" y="142" class="small">Typical elements: p-block</text>
+<text x="236" y="172" class="small">Examples: CH₄, NH₃,</text>
+<text x="236" y="190" class="small">H₂O, HF, B₂H₆</text>
+<text x="236" y="220" class="small">May be electron-deficient,</text>
+<text x="236" y="238" class="small">electron-precise or rich</text>
+<text x="236" y="268" class="small">Often volatile and molecular</text>
+
+<rect x="401" y="85" width="165" height="245" class="box3"/>
+<text x="430" y="112" class="subtitle">Metallic / Non-stoich.</text>
+<text x="420" y="142" class="small">Many d- and f-block metals</text>
+<text x="420" y="172" class="small">Examples: TiHₓ, LaHₓ,</text>
+<text x="420" y="190" class="small">PdHₓ</text>
+<text x="420" y="220" class="small">Variable composition</text>
+<text x="420" y="238" class="small">Hydrogen storage media</text>
+<text x="420" y="268" class="small">Metal-like conductivity</text>
+
+<rect x="36" y="360" width="530" height="105" class="red"/>
+<text x="56" y="389" class="subtitle">JEE exceptions</text>
+<text x="56" y="414" class="small">BeH₂ is polymeric and covalent; MgH₂ is intermediate. Groups 7–9 show a textbook hydride gap.</text>
+<text x="56" y="437" class="small">Group 13 hydrides are often electron-deficient; Group 14 hydrides are electron-precise.</text>
+
+</svg>

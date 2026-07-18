@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="500" viewBox="0 0 600 500">
+<title>Isotopes of hydrogen</title>
+<style>
+    .title { font: 700 26px Arial, sans-serif; fill: #111; }
+    .subtitle { font: 600 16px Arial, sans-serif; fill: #333; }
+    .label { font: 14px Arial, sans-serif; fill: #222; }
+    .small { font: 12px Arial, sans-serif; fill: #333; }
+    .tiny { font: 11px Arial, sans-serif; fill: #444; }
+    .box { fill: #f6f8fb; stroke: #30445f; stroke-width: 2; rx: 12; ry: 12; }
+    .box2 { fill: #eef4ff; stroke: #355c9a; stroke-width: 2; rx: 12; ry: 12; }
+    .box3 { fill: #fef6ea; stroke: #b8740b; stroke-width: 2; rx: 12; ry: 12; }
+    .green { fill: #eefaf0; stroke: #39814f; stroke-width: 2; rx: 12; ry: 12; }
+    .red { fill: #fff1f1; stroke: #b24848; stroke-width: 2; rx: 12; ry: 12; }
+    .arrow { stroke: #333; stroke-width: 2.4; fill: none; marker-end: url(#arrowhead); }
+    .thin { stroke: #666; stroke-width: 1.4; fill: none; }
+    .dash { stroke: #666; stroke-width: 2; fill: none; stroke-dasharray: 6 6; }
+    .bond { stroke: #222; stroke-width: 3; fill: none; }
+    .hbond { stroke: #2e6da4; stroke-width: 2.5; fill: none; stroke-dasharray: 4 5; }
+    .axis { stroke: #333; stroke-width: 2; }
+    .tick { stroke: #444; stroke-width: 1.5; }
+</style>
+<defs>
+  <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+    <polygon points="0 0, 10 3.5, 0 7" fill="#333"/>
+  </marker>
+</defs>
+
+<text x="28" y="38" class="title">Isotopes of Hydrogen</text>
+
+<rect x="35" y="80" width="165" height="240" class="box2"/>
+<text x="84" y="112" class="subtitle">Protium (¹H)</text>
+<circle cx="117" cy="165" r="32" fill="#dbeafe" stroke="#355c9a" stroke-width="2"/>
+<circle cx="117" cy="165" r="9" fill="#355c9a"/>
+<circle cx="158" cy="165" r="7" fill="#f4b183"/>
+<text x="86" y="222" class="small">1 proton</text>
+<text x="86" y="240" class="small">0 neutron</text>
+<text x="86" y="258" class="small">1 electron</text>
+<text x="86" y="286" class="small">Stable; most abundant</text>
+
+<rect x="218" y="80" width="165" height="240" class="green"/>
+<text x="262" y="112" class="subtitle">Deuterium (²H or D)</text>
+<circle cx="300" cy="165" r="32" fill="#e7f8eb" stroke="#39814f" stroke-width="2"/>
+<circle cx="292" cy="161" r="8" fill="#355c9a"/>
+<circle cx="308" cy="171" r="8" fill="#7a7a7a"/>
+<circle cx="341" cy="165" r="7" fill="#f4b183"/>
+<text x="268" y="222" class="small">1 proton</text>
+<text x="268" y="240" class="small">1 neutron</text>
+<text x="268" y="258" class="small">1 electron</text>
+<text x="244" y="286" class="small">Stable; forms D₂ and D₂O</text>
+
+<rect x="401" y="80" width="165" height="240" class="box3"/>
+<text x="449" y="112" class="subtitle">Tritium (³H or T)</text>
+<circle cx="483" cy="165" r="32" fill="#fff3e0" stroke="#b8740b" stroke-width="2"/>
+<circle cx="475" cy="157" r="7" fill="#355c9a"/>
+<circle cx="491" cy="157" r="7" fill="#7a7a7a"/>
+<circle cx="483" cy="175" r="7" fill="#7a7a7a"/>
+<circle cx="524" cy="165" r="7" fill="#f4b183"/>
+<text x="451" y="222" class="small">1 proton</text>
+<text x="451" y="240" class="small">2 neutrons</text>
+<text x="451" y="258" class="small">1 electron</text>
+<text x="430" y="286" class="small">Radioactive; β⁻ emitter</text>
+
+<rect x="35" y="360" width="531" height="110" class="box"/>
+<text x="55" y="390" class="subtitle">NCERT-style summary</text>
+<text x="55" y="415" class="small">Chemical properties are similar because all three isotopes have the same electronic configuration (1s¹).</text>
+<text x="55" y="437" class="small">Physical properties and reaction rates differ because their masses differ substantially.</text>
+
+</svg>

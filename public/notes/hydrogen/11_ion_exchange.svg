@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="450" viewBox="0 0 600 450">
+<title>Ion exchange demineralisation</title>
+<style>
+    .title { font: 700 26px Arial, sans-serif; fill: #111; }
+    .subtitle { font: 600 16px Arial, sans-serif; fill: #333; }
+    .label { font: 14px Arial, sans-serif; fill: #222; }
+    .small { font: 12px Arial, sans-serif; fill: #333; }
+    .tiny { font: 11px Arial, sans-serif; fill: #444; }
+    .box { fill: #f6f8fb; stroke: #30445f; stroke-width: 2; rx: 12; ry: 12; }
+    .box2 { fill: #eef4ff; stroke: #355c9a; stroke-width: 2; rx: 12; ry: 12; }
+    .box3 { fill: #fef6ea; stroke: #b8740b; stroke-width: 2; rx: 12; ry: 12; }
+    .green { fill: #eefaf0; stroke: #39814f; stroke-width: 2; rx: 12; ry: 12; }
+    .red { fill: #fff1f1; stroke: #b24848; stroke-width: 2; rx: 12; ry: 12; }
+    .arrow { stroke: #333; stroke-width: 2.4; fill: none; marker-end: url(#arrowhead); }
+    .thin { stroke: #666; stroke-width: 1.4; fill: none; }
+    .dash { stroke: #666; stroke-width: 2; fill: none; stroke-dasharray: 6 6; }
+    .bond { stroke: #222; stroke-width: 3; fill: none; }
+    .hbond { stroke: #2e6da4; stroke-width: 2.5; fill: none; stroke-dasharray: 4 5; }
+    .axis { stroke: #333; stroke-width: 2; }
+    .tick { stroke: #444; stroke-width: 1.5; }
+</style>
+<defs>
+  <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+    <polygon points="0 0, 10 3.5, 0 7" fill="#333"/>
+  </marker>
+</defs>
+
+<text x="24" y="38" class="title">Demineralisation by Ion-Exchange Resins</text>
+
+<rect x="70" y="100" width="130" height="250" fill="#fef6ea" stroke="#b8740b" stroke-width="2" rx="12"/>
+<text x="92" y="128" class="subtitle">Cation resin</text>
+<text x="110" y="148" class="tiny">(H⁺ form)</text>
+<line x1="135" y1="70" x2="135" y2="100" class="arrow"/>
+<text x="76" y="84" class="small">Hard water in</text>
+<circle cx="110" cy="195" r="12" fill="#d9d9d9"/><text x="104" y="199" class="tiny">Ca²⁺</text>
+<circle cx="165" cy="230" r="12" fill="#d9d9d9"/><text x="159" y="234" class="tiny">Mg²⁺</text>
+<text x="84" y="284" class="small">2RH + Ca²⁺ → R₂Ca + 2H⁺</text>
+
+<rect x="250" y="100" width="130" height="250" fill="#eefaf0" stroke="#39814f" stroke-width="2" rx="12"/>
+<text x="275" y="128" class="subtitle">Anion resin</text>
+<text x="290" y="148" class="tiny">(OH⁻ form)</text>
+<circle cx="300" cy="195" r="12" fill="#d9d9d9"/><text x="295" y="199" class="tiny">Cl⁻</text>
+<circle cx="340" cy="235" r="12" fill="#d9d9d9"/><text x="330" y="239" class="tiny">SO₄²⁻</text>
+<text x="260" y="284" class="small">R'OH + Cl⁻ → R'Cl + OH⁻</text>
+
+<rect x="430" y="145" width="115" height="145" class="box2"/>
+<text x="447" y="172" class="subtitle">Neutralisation</text>
+<text x="452" y="205" class="small">H⁺ + OH⁻</text>
+<text x="475" y="228" class="small">→</text>
+<text x="460" y="252" class="small">H₂O</text>
+
+<line x1="200" y1="225" x2="250" y2="225" class="arrow"/>
+<line x1="380" y1="225" x2="430" y2="225" class="arrow"/>
+<line x1="487" y1="290" x2="487" y2="345" class="arrow"/>
+
+<rect x="430" y="355" width="120" height="60" class="green"/>
+<text x="450" y="391" class="subtitle">Demineralised water</text>
+
+</svg>

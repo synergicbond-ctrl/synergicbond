@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="530" viewBox="0 0 600 530">
+<title>Hydrogen economy</title>
+<style>
+    .title { font: 700 26px Arial, sans-serif; fill: #111; }
+    .subtitle { font: 600 16px Arial, sans-serif; fill: #333; }
+    .label { font: 14px Arial, sans-serif; fill: #222; }
+    .small { font: 12px Arial, sans-serif; fill: #333; }
+    .tiny { font: 11px Arial, sans-serif; fill: #444; }
+    .box { fill: #f6f8fb; stroke: #30445f; stroke-width: 2; rx: 12; ry: 12; }
+    .box2 { fill: #eef4ff; stroke: #355c9a; stroke-width: 2; rx: 12; ry: 12; }
+    .box3 { fill: #fef6ea; stroke: #b8740b; stroke-width: 2; rx: 12; ry: 12; }
+    .green { fill: #eefaf0; stroke: #39814f; stroke-width: 2; rx: 12; ry: 12; }
+    .red { fill: #fff1f1; stroke: #b24848; stroke-width: 2; rx: 12; ry: 12; }
+    .arrow { stroke: #333; stroke-width: 2.4; fill: none; marker-end: url(#arrowhead); }
+    .thin { stroke: #666; stroke-width: 1.4; fill: none; }
+    .dash { stroke: #666; stroke-width: 2; fill: none; stroke-dasharray: 6 6; }
+    .bond { stroke: #222; stroke-width: 3; fill: none; }
+    .hbond { stroke: #2e6da4; stroke-width: 2.5; fill: none; stroke-dasharray: 4 5; }
+    .axis { stroke: #333; stroke-width: 2; }
+    .tick { stroke: #444; stroke-width: 1.5; }
+</style>
+<defs>
+  <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+    <polygon points="0 0, 10 3.5, 0 7" fill="#333"/>
+  </marker>
+</defs>
+
+<text x="25" y="38" class="title">Hydrogen Economy and Fuel Cell Idea</text>
+
+<rect x="45" y="92" width="170" height="95" class="box2"/>
+<text x="73" y="118" class="subtitle">Hydrogen source</text>
+<text x="63" y="144" class="small">Reforming / electrolysis /</text>
+<text x="88" y="163" class="small">other production</text>
+
+<rect x="245" y="92" width="120" height="95" class="green"/>
+<text x="277" y="118" class="subtitle">Storage</text>
+<text x="258" y="144" class="small">Compressed, liquid,</text>
+<text x="272" y="163" class="small">or hydride-based</text>
+
+<rect x="395" y="92" width="160" height="95" class="box3"/>
+<text x="440" y="118" class="subtitle">Use phase</text>
+<text x="420" y="144" class="small">Fuel cell or combustion</text>
+<text x="440" y="163" class="small">for energy release</text>
+
+<line x1="215" y1="140" x2="245" y2="140" class="arrow"/>
+<line x1="365" y1="140" x2="395" y2="140" class="arrow"/>
+
+<rect x="80" y="235" width="430" height="180" class="box"/>
+<text x="105" y="263" class="subtitle">Simplified fuel cell concept</text>
+<rect x="110" y="290" width="95" height="70" fill="#eef4ff" stroke="#355c9a" stroke-width="2" rx="10"/>
+<text x="135" y="322" class="subtitle">Anode</text>
+<text x="122" y="342" class="tiny">H₂ → 2H⁺ + 2e⁻</text>
+
+<rect x="390" y="290" width="95" height="70" fill="#eefaf0" stroke="#39814f" stroke-width="2" rx="10"/>
+<text x="414" y="322" class="subtitle">Cathode</text>
+<text x="399" y="342" class="tiny">O₂ + 4H⁺ + 4e⁻ → 2H₂O</text>
+
+<line x1="205" y1="325" x2="390" y2="325" class="arrow"/>
+<text x="250" y="315" class="small">electrons through circuit</text>
+<text x="260" y="348" class="small">electrical energy</text>
+
+<text x="110" y="392" class="small">Overall: 2H₂ + O₂ → 2H₂O</text>
+
+<rect x="45" y="435" width="510" height="70" class="red"/>
+<text x="63" y="462" class="subtitle">Remember</text>
+<text x="63" y="485" class="small">Hydrogen has high energy per mass, but storage and transport remain the major engineering challenge.</text>
+
+</svg>

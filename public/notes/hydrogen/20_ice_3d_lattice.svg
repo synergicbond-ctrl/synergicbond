@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="700" height="480" viewBox="0 0 700 480">
+<title>3D ice lattice</title>
+<style>
+.title{font:700 25px Arial,sans-serif;fill:#111} .subtitle{font:600 16px Arial,sans-serif;fill:#222}
+.label{font:14px Arial,sans-serif;fill:#222} .small{font:12px Arial,sans-serif;fill:#333} .tiny{font:11px Arial,sans-serif;fill:#444}
+.box{fill:#f6f8fb;stroke:#30445f;stroke-width:2;rx:12;ry:12}
+.blue{fill:#eef4ff;stroke:#355c9a;stroke-width:2;rx:12;ry:12}
+.green{fill:#eefaf0;stroke:#39814f;stroke-width:2;rx:12;ry:12}
+.orange{fill:#fef6ea;stroke:#b8740b;stroke-width:2;rx:12;ry:12}
+.red{fill:#fff1f1;stroke:#b24848;stroke-width:2;rx:12;ry:12}
+.arrow{stroke:#333;stroke-width:2.2;fill:none;marker-end:url(#a)}
+.bond{stroke:#222;stroke-width:3;fill:none} .dash{stroke:#596b7d;stroke-width:2;fill:none;stroke-dasharray:5 5}
+.hbond{stroke:#2e6da4;stroke-width:2.3;fill:none;stroke-dasharray:4 5}
+</style>
+<defs><marker id="a" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#333"/></marker></defs>
+
+<text x="24" y="38" class="title">Ice: Open 3-D Hydrogen-Bonded Network</text>
+<g transform="translate(90,100)">
+<circle cx="110" cy="80" r="16" fill="#cfe2ff" stroke="#355c9a" stroke-width="2"/>
+<circle cx="260" cy="80" r="16" fill="#cfe2ff" stroke="#355c9a" stroke-width="2"/>
+<circle cx="185" cy="10" r="16" fill="#cfe2ff" stroke="#355c9a" stroke-width="2"/>
+<circle cx="185" cy="155" r="16" fill="#cfe2ff" stroke="#355c9a" stroke-width="2"/>
+<circle cx="40" cy="155" r="16" fill="#cfe2ff" stroke="#355c9a" stroke-width="2"/>
+<circle cx="330" cy="155" r="16" fill="#cfe2ff" stroke="#355c9a" stroke-width="2"/>
+<circle cx="110" cy="230" r="16" fill="#cfe2ff" stroke="#355c9a" stroke-width="2"/>
+<circle cx="260" cy="230" r="16" fill="#cfe2ff" stroke="#355c9a" stroke-width="2"/>
+<line x1="120" y1="70" x2="175" y2="20" class="hbond"/><line x1="250" y1="70" x2="195" y2="20" class="hbond"/>
+<line x1="120" y1="90" x2="175" y2="145" class="hbond"/><line x1="250" y1="90" x2="195" y2="145" class="hbond"/>
+<line x1="55" y1="150" x2="100" y2="90" class="hbond"/><line x1="315" y1="150" x2="270" y2="90" class="hbond"/>
+<line x1="55" y1="165" x2="100" y2="220" class="hbond"/><line x1="315" y1="165" x2="270" y2="220" class="hbond"/>
+<line x1="120" y1="230" x2="250" y2="230" class="hbond"/>
+</g>
+<rect x="470" y="110" width="190" height="220" class="green"/>
+<text x="505" y="142" class="subtitle">Structural result</text>
+<text x="490" y="178" class="small">Each H₂O is approximately</text><text x="490" y="197" class="small">tetrahedrally connected.</text>
+<text x="490" y="235" class="small">Open cavities lower density.</text><text x="490" y="270" class="small">O···O ≈ 276 pm (NCERT).</text>
+<text x="490" y="305" class="small">Therefore ice floats on water.</text>
+<text x="95" y="430" class="small">Schematic 3-D perspective: dashed links represent the hydrogen-bond network, not covalent O–O bonds.</text>
+</svg>

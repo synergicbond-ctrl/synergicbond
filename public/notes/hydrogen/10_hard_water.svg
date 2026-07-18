@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="470" viewBox="0 0 600 470">
+<title>Hard water</title>
+<style>
+    .title { font: 700 26px Arial, sans-serif; fill: #111; }
+    .subtitle { font: 600 16px Arial, sans-serif; fill: #333; }
+    .label { font: 14px Arial, sans-serif; fill: #222; }
+    .small { font: 12px Arial, sans-serif; fill: #333; }
+    .tiny { font: 11px Arial, sans-serif; fill: #444; }
+    .box { fill: #f6f8fb; stroke: #30445f; stroke-width: 2; rx: 12; ry: 12; }
+    .box2 { fill: #eef4ff; stroke: #355c9a; stroke-width: 2; rx: 12; ry: 12; }
+    .box3 { fill: #fef6ea; stroke: #b8740b; stroke-width: 2; rx: 12; ry: 12; }
+    .green { fill: #eefaf0; stroke: #39814f; stroke-width: 2; rx: 12; ry: 12; }
+    .red { fill: #fff1f1; stroke: #b24848; stroke-width: 2; rx: 12; ry: 12; }
+    .arrow { stroke: #333; stroke-width: 2.4; fill: none; marker-end: url(#arrowhead); }
+    .thin { stroke: #666; stroke-width: 1.4; fill: none; }
+    .dash { stroke: #666; stroke-width: 2; fill: none; stroke-dasharray: 6 6; }
+    .bond { stroke: #222; stroke-width: 3; fill: none; }
+    .hbond { stroke: #2e6da4; stroke-width: 2.5; fill: none; stroke-dasharray: 4 5; }
+    .axis { stroke: #333; stroke-width: 2; }
+    .tick { stroke: #444; stroke-width: 1.5; }
+</style>
+<defs>
+  <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+    <polygon points="0 0, 10 3.5, 0 7" fill="#333"/>
+  </marker>
+</defs>
+
+<text x="24" y="38" class="title">Hard Water: Causes and Removal</text>
+
+<rect x="45" y="85" width="160" height="110" class="box2"/>
+<text x="77" y="112" class="subtitle">Temporary hardness</text>
+<text x="61" y="138" class="small">Ca(HCO₃)₂, Mg(HCO₃)₂</text>
+<text x="71" y="160" class="small">Removed by boiling</text>
+
+<rect x="225" y="85" width="160" height="110" class="green"/>
+<text x="257" y="112" class="subtitle">Permanent hardness</text>
+<text x="241" y="138" class="small">CaCl₂, MgCl₂, CaSO₄, MgSO₄</text>
+<text x="255" y="160" class="small">Not removed by boiling</text>
+
+<rect x="405" y="85" width="150" height="110" class="box3"/>
+<text x="433" y="112" class="subtitle">Problem</text>
+<text x="420" y="138" class="small">Soap forms scum with</text>
+<text x="425" y="156" class="small">Ca²⁺ and Mg²⁺ ions</text>
+
+<rect x="55" y="245" width="120" height="80" class="box"/>
+<text x="87" y="270" class="subtitle">Boiling</text>
+<text x="75" y="292" class="small">For temporary hardness</text>
+
+<rect x="195" y="245" width="120" height="80" class="box"/>
+<text x="215" y="270" class="subtitle">Clark's method</text>
+<text x="219" y="292" class="small">Add Ca(OH)₂</text>
+
+<rect x="335" y="245" width="120" height="80" class="box"/>
+<text x="351" y="270" class="subtitle">Washing soda</text>
+<text x="365" y="292" class="small">Add Na₂CO₃</text>
+
+<rect x="475" y="245" width="90" height="80" class="box"/>
+<text x="494" y="270" class="subtitle">Calgon</text>
+<text x="491" y="292" class="small">Sequesters</text>
+
+<rect x="125" y="360" width="150" height="80" class="green"/>
+<text x="169" y="385" class="subtitle">Zeolite</text>
+<text x="143" y="407" class="small">Na⁺ exchange for Ca²⁺/Mg²⁺</text>
+
+<rect x="325" y="360" width="175" height="80" class="box2"/>
+<text x="350" y="385" class="subtitle">Synthetic resins</text>
+<text x="342" y="407" class="small">For deionised/demineralised water</text>
+
+<line x1="125" y1="195" x2="115" y2="245" class="arrow"/>
+<line x1="305" y1="195" x2="255" y2="245" class="arrow"/>
+<line x1="305" y1="195" x2="395" y2="245" class="arrow"/>
+<line x1="480" y1="195" x2="520" y2="245" class="arrow"/>
+
+</svg>

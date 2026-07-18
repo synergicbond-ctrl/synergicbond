@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="430" viewBox="0 0 600 430">
+<title>Hydrogen bonding</title>
+<style>
+    .title { font: 700 26px Arial, sans-serif; fill: #111; }
+    .subtitle { font: 600 16px Arial, sans-serif; fill: #333; }
+    .label { font: 14px Arial, sans-serif; fill: #222; }
+    .small { font: 12px Arial, sans-serif; fill: #333; }
+    .tiny { font: 11px Arial, sans-serif; fill: #444; }
+    .box { fill: #f6f8fb; stroke: #30445f; stroke-width: 2; rx: 12; ry: 12; }
+    .box2 { fill: #eef4ff; stroke: #355c9a; stroke-width: 2; rx: 12; ry: 12; }
+    .box3 { fill: #fef6ea; stroke: #b8740b; stroke-width: 2; rx: 12; ry: 12; }
+    .green { fill: #eefaf0; stroke: #39814f; stroke-width: 2; rx: 12; ry: 12; }
+    .red { fill: #fff1f1; stroke: #b24848; stroke-width: 2; rx: 12; ry: 12; }
+    .arrow { stroke: #333; stroke-width: 2.4; fill: none; marker-end: url(#arrowhead); }
+    .thin { stroke: #666; stroke-width: 1.4; fill: none; }
+    .dash { stroke: #666; stroke-width: 2; fill: none; stroke-dasharray: 6 6; }
+    .bond { stroke: #222; stroke-width: 3; fill: none; }
+    .hbond { stroke: #2e6da4; stroke-width: 2.5; fill: none; stroke-dasharray: 4 5; }
+    .axis { stroke: #333; stroke-width: 2; }
+    .tick { stroke: #444; stroke-width: 1.5; }
+</style>
+<defs>
+  <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+    <polygon points="0 0, 10 3.5, 0 7" fill="#333"/>
+  </marker>
+</defs>
+
+<text x="26" y="38" class="title">Hydrogen Bonding</text>
+
+<rect x="45" y="82" width="235" height="190" class="box2"/>
+<text x="85" y="108" class="subtitle">Intermolecular hydrogen bonding</text>
+<circle cx="115" cy="170" r="18" fill="#cfe2ff" stroke="#355c9a" stroke-width="2"/><text x="109" y="176" class="label">O</text>
+<circle cx="90" cy="210" r="12" fill="#fff4cf" stroke="#b8740b" stroke-width="2"/><text x="85" y="215" class="tiny">H</text>
+<circle cx="140" cy="210" r="12" fill="#fff4cf" stroke="#b8740b" stroke-width="2"/><text x="135" y="215" class="tiny">H</text>
+<line x1="107" y1="185" x2="95" y2="199" class="bond"/>
+<line x1="123" y1="185" x2="136" y2="199" class="bond"/>
+
+<circle cx="220" cy="170" r="18" fill="#cfe2ff" stroke="#355c9a" stroke-width="2"/><text x="214" y="176" class="label">O</text>
+<circle cx="195" cy="210" r="12" fill="#fff4cf" stroke="#b8740b" stroke-width="2"/><text x="190" y="215" class="tiny">H</text>
+<circle cx="245" cy="210" r="12" fill="#fff4cf" stroke="#b8740b" stroke-width="2"/><text x="240" y="215" class="tiny">H</text>
+<line x1="212" y1="185" x2="198" y2="199" class="bond"/>
+<line x1="228" y1="185" x2="241" y2="199" class="bond"/>
+<line x1="152" y1="210" x2="205" y2="170" class="hbond"/>
+<text x="134" y="238" class="tiny">H···O hydrogen bond</text>
+
+<rect x="320" y="82" width="235" height="190" class="green"/>
+<text x="365" y="108" class="subtitle">Intramolecular hydrogen bonding</text>
+<circle cx="380" cy="170" r="35" fill="none" stroke="#444" stroke-width="2"/>
+<text x="345" y="173" class="small">aromatic ring</text>
+<circle cx="420" cy="135" r="11" fill="#fff4cf" stroke="#b8740b" stroke-width="2"/><text x="416" y="139" class="tiny">H</text>
+<circle cx="438" cy="120" r="12" fill="#cfe2ff" stroke="#355c9a" stroke-width="2"/><text x="433" y="124" class="tiny">O</text>
+<circle cx="420" cy="205" r="12" fill="#cfe2ff" stroke="#355c9a" stroke-width="2"/><text x="415" y="209" class="tiny">O</text>
+<line x1="426" y1="142" x2="433" y2="129" class="bond"/>
+<line x1="419" y1="146" x2="420" y2="194" class="hbond"/>
+<text x="355" y="236" class="tiny">Classic exam idea: o-nitrophenol-type intramolecular H-bond</text>
+
+<rect x="45" y="305" width="510" height="95" class="box"/>
+<text x="65" y="333" class="subtitle">Effect</text>
+<text x="65" y="357" class="small">Hydrogen bonding raises boiling point, viscosity and association. In water and ice it controls many anomalous properties.</text>
+<text x="65" y="379" class="small">Strong classical hydrogen bonding is especially important when H is attached to N, O or F.</text>
+
+</svg>

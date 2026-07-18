@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="480" viewBox="0 0 600 480">
+<title>Diborane structure</title>
+<style>
+    .title { font: 700 26px Arial, sans-serif; fill: #111; }
+    .subtitle { font: 600 16px Arial, sans-serif; fill: #333; }
+    .label { font: 14px Arial, sans-serif; fill: #222; }
+    .small { font: 12px Arial, sans-serif; fill: #333; }
+    .tiny { font: 11px Arial, sans-serif; fill: #444; }
+    .box { fill: #f6f8fb; stroke: #30445f; stroke-width: 2; rx: 12; ry: 12; }
+    .box2 { fill: #eef4ff; stroke: #355c9a; stroke-width: 2; rx: 12; ry: 12; }
+    .box3 { fill: #fef6ea; stroke: #b8740b; stroke-width: 2; rx: 12; ry: 12; }
+    .green { fill: #eefaf0; stroke: #39814f; stroke-width: 2; rx: 12; ry: 12; }
+    .red { fill: #fff1f1; stroke: #b24848; stroke-width: 2; rx: 12; ry: 12; }
+    .arrow { stroke: #333; stroke-width: 2.4; fill: none; marker-end: url(#arrowhead); }
+    .thin { stroke: #666; stroke-width: 1.4; fill: none; }
+    .dash { stroke: #666; stroke-width: 2; fill: none; stroke-dasharray: 6 6; }
+    .bond { stroke: #222; stroke-width: 3; fill: none; }
+    .hbond { stroke: #2e6da4; stroke-width: 2.5; fill: none; stroke-dasharray: 4 5; }
+    .axis { stroke: #333; stroke-width: 2; }
+    .tick { stroke: #444; stroke-width: 1.5; }
+</style>
+<defs>
+  <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+    <polygon points="0 0, 10 3.5, 0 7" fill="#333"/>
+  </marker>
+</defs>
+
+<text x="26" y="38" class="title">Diborane (B₂H₆): 3-Centre–2-Electron Bonds</text>
+<circle cx="220" cy="190" r="24" fill="#e8eef8" stroke="#355c9a" stroke-width="2"/>
+<circle cx="380" cy="190" r="24" fill="#e8eef8" stroke="#355c9a" stroke-width="2"/>
+<text x="212" y="196" class="label">B</text>
+<text x="372" y="196" class="label">B</text>
+
+<!-- terminal hydrogens -->
+<circle cx="150" cy="120" r="17" fill="#fff4cf" stroke="#b8740b" stroke-width="2"/><text x="144" y="126" class="label">H</text>
+<circle cx="150" cy="260" r="17" fill="#fff4cf" stroke="#b8740b" stroke-width="2"/><text x="144" y="266" class="label">H</text>
+<circle cx="450" cy="120" r="17" fill="#fff4cf" stroke="#b8740b" stroke-width="2"/><text x="444" y="126" class="label">H</text>
+<circle cx="450" cy="260" r="17" fill="#fff4cf" stroke="#b8740b" stroke-width="2"/><text x="444" y="266" class="label">H</text>
+
+<line x1="202" y1="174" x2="164" y2="132" class="bond"/>
+<line x1="202" y1="206" x2="164" y2="248" class="bond"/>
+<line x1="398" y1="174" x2="436" y2="132" class="bond"/>
+<line x1="398" y1="206" x2="436" y2="248" class="bond"/>
+
+<!-- bridge hydrogens -->
+<circle cx="300" cy="120" r="18" fill="#fff4cf" stroke="#b8740b" stroke-width="2"/>
+<text x="294" y="126" class="label">H</text>
+<circle cx="300" cy="260" r="18" fill="#fff4cf" stroke="#b8740b" stroke-width="2"/>
+<text x="294" y="266" class="label">H</text>
+
+<line x1="241" y1="174" x2="286" y2="132" class="dash"/>
+<line x1="359" y1="174" x2="314" y2="132" class="dash"/>
+<line x1="241" y1="206" x2="286" y2="248" class="dash"/>
+<line x1="359" y1="206" x2="314" y2="248" class="dash"/>
+
+<text x="232" y="98" class="small">bridging H</text>
+<text x="233" y="293" class="small">bridging H</text>
+
+<rect x="65" y="335" width="470" height="110" class="box"/>
+<text x="86" y="364" class="subtitle">Key idea</text>
+<text x="86" y="390" class="small">Diborane is electron-deficient. The two bridge hydrogens participate in B–H–B three-centre–two-electron bonds.</text>
+<text x="86" y="413" class="small">This is why B₂H₆ cannot be represented correctly using only simple 2-centre–2-electron bonds.</text>
+
+</svg>

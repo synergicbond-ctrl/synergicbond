@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="700" height="420" viewBox="0 0 700 420">
+<title>Steam reforming and shift</title>
+<style>
+.title{font:700 25px Arial,sans-serif;fill:#111} .subtitle{font:600 16px Arial,sans-serif;fill:#222}
+.label{font:14px Arial,sans-serif;fill:#222} .small{font:12px Arial,sans-serif;fill:#333} .tiny{font:11px Arial,sans-serif;fill:#444}
+.box{fill:#f6f8fb;stroke:#30445f;stroke-width:2;rx:12;ry:12}
+.blue{fill:#eef4ff;stroke:#355c9a;stroke-width:2;rx:12;ry:12}
+.green{fill:#eefaf0;stroke:#39814f;stroke-width:2;rx:12;ry:12}
+.orange{fill:#fef6ea;stroke:#b8740b;stroke-width:2;rx:12;ry:12}
+.red{fill:#fff1f1;stroke:#b24848;stroke-width:2;rx:12;ry:12}
+.arrow{stroke:#333;stroke-width:2.2;fill:none;marker-end:url(#a)}
+.bond{stroke:#222;stroke-width:3;fill:none} .dash{stroke:#596b7d;stroke-width:2;fill:none;stroke-dasharray:5 5}
+.hbond{stroke:#2e6da4;stroke-width:2.3;fill:none;stroke-dasharray:4 5}
+</style>
+<defs><marker id="a" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#333"/></marker></defs>
+
+<text x="25" y="38" class="title">Steam Reforming + Water-Gas Shift</text>
+<rect x="35" y="85" width="150" height="75" class="blue"/><text x="70" y="115" class="subtitle">Feed</text><text x="55" y="139" class="small">CH₄ + H₂O(g)</text>
+<rect x="230" y="75" width="190" height="95" class="green"/><text x="252" y="105" class="subtitle">Steam reformer</text><text x="246" y="131" class="small">CH₄ + H₂O ⇌ CO + 3H₂</text><text x="262" y="151" class="tiny">high T, catalyst</text>
+<rect x="475" y="75" width="185" height="95" class="orange"/><text x="500" y="105" class="subtitle">Shift converter</text><text x="490" y="131" class="small">CO + H₂O ⇌ CO₂ + H₂</text><text x="515" y="151" class="tiny">raises H₂ yield</text>
+<line x1="185" y1="123" x2="230" y2="123" class="arrow"/><line x1="420" y1="123" x2="475" y2="123" class="arrow"/>
+<rect x="475" y="225" width="185" height="85" class="blue"/><text x="505" y="255" class="subtitle">CO₂ removal</text><text x="492" y="281" class="small">absorption / scrubbing</text>
+<line x1="568" y1="170" x2="568" y2="225" class="arrow"/>
+<rect x="230" y="225" width="190" height="85" class="green"/><text x="290" y="255" class="subtitle">H₂-rich gas</text><text x="252" y="281" class="small">purify for required application</text>
+<line x1="475" y1="267" x2="420" y2="267" class="arrow"/>
+<rect x="35" y="225" width="150" height="85" class="box"/><text x="62" y="255" class="subtitle">Coal route</text><text x="48" y="281" class="small">C + H₂O → CO + H₂</text>
+<line x1="185" y1="267" x2="230" y2="267" class="arrow"/>
+<text x="36" y="365" class="small">Exam distinction: water gas = CO + H₂; “syngas” is the synthesis feed concept, often based on CO/H₂ mixtures.</text>
+</svg>

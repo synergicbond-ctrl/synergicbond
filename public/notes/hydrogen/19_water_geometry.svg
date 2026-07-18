@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="650" height="420" viewBox="0 0 650 420">
+<title>Water geometry</title>
+<style>
+.title{font:700 25px Arial,sans-serif;fill:#111} .subtitle{font:600 16px Arial,sans-serif;fill:#222}
+.label{font:14px Arial,sans-serif;fill:#222} .small{font:12px Arial,sans-serif;fill:#333} .tiny{font:11px Arial,sans-serif;fill:#444}
+.box{fill:#f6f8fb;stroke:#30445f;stroke-width:2;rx:12;ry:12}
+.blue{fill:#eef4ff;stroke:#355c9a;stroke-width:2;rx:12;ry:12}
+.green{fill:#eefaf0;stroke:#39814f;stroke-width:2;rx:12;ry:12}
+.orange{fill:#fef6ea;stroke:#b8740b;stroke-width:2;rx:12;ry:12}
+.red{fill:#fff1f1;stroke:#b24848;stroke-width:2;rx:12;ry:12}
+.arrow{stroke:#333;stroke-width:2.2;fill:none;marker-end:url(#a)}
+.bond{stroke:#222;stroke-width:3;fill:none} .dash{stroke:#596b7d;stroke-width:2;fill:none;stroke-dasharray:5 5}
+.hbond{stroke:#2e6da4;stroke-width:2.3;fill:none;stroke-dasharray:4 5}
+</style>
+<defs><marker id="a" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#333"/></marker></defs>
+
+<text x="24" y="38" class="title">Molecular Geometry of Water</text>
+<circle cx="325" cy="170" r="34" fill="#cfe2ff" stroke="#355c9a" stroke-width="2"/><text x="314" y="178" class="subtitle">O</text>
+<circle cx="205" cy="290" r="22" fill="#fff4cf" stroke="#b8740b" stroke-width="2"/><text x="198" y="297" class="label">H</text>
+<circle cx="445" cy="290" r="22" fill="#fff4cf" stroke="#b8740b" stroke-width="2"/><text x="438" y="297" class="label">H</text>
+<line x1="300" y1="195" x2="220" y2="273" class="bond"/><line x1="350" y1="195" x2="430" y2="273" class="bond"/>
+<path d="M270 235 A80 80 0 0 0 380 235" fill="none" stroke="#b24848" stroke-width="2"/>
+<text x="292" y="260" class="subtitle">104.5°</text>
+<text x="80" y="175" class="small">O–H ≈ 95.7 pm</text><line x1="185" y1="180" x2="275" y2="180" class="arrow"/>
+<rect x="75" y="335" width="500" height="55" class="blue"/><text x="95" y="368" class="small">Bent geometry + polar O–H bonds → non-zero molecular dipole moment.</text>
+</svg>

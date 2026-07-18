@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="470" viewBox="0 0 600 470">
+<title>Hydrogen peroxide</title>
+<style>
+    .title { font: 700 26px Arial, sans-serif; fill: #111; }
+    .subtitle { font: 600 16px Arial, sans-serif; fill: #333; }
+    .label { font: 14px Arial, sans-serif; fill: #222; }
+    .small { font: 12px Arial, sans-serif; fill: #333; }
+    .tiny { font: 11px Arial, sans-serif; fill: #444; }
+    .box { fill: #f6f8fb; stroke: #30445f; stroke-width: 2; rx: 12; ry: 12; }
+    .box2 { fill: #eef4ff; stroke: #355c9a; stroke-width: 2; rx: 12; ry: 12; }
+    .box3 { fill: #fef6ea; stroke: #b8740b; stroke-width: 2; rx: 12; ry: 12; }
+    .green { fill: #eefaf0; stroke: #39814f; stroke-width: 2; rx: 12; ry: 12; }
+    .red { fill: #fff1f1; stroke: #b24848; stroke-width: 2; rx: 12; ry: 12; }
+    .arrow { stroke: #333; stroke-width: 2.4; fill: none; marker-end: url(#arrowhead); }
+    .thin { stroke: #666; stroke-width: 1.4; fill: none; }
+    .dash { stroke: #666; stroke-width: 2; fill: none; stroke-dasharray: 6 6; }
+    .bond { stroke: #222; stroke-width: 3; fill: none; }
+    .hbond { stroke: #2e6da4; stroke-width: 2.5; fill: none; stroke-dasharray: 4 5; }
+    .axis { stroke: #333; stroke-width: 2; }
+    .tick { stroke: #444; stroke-width: 1.5; }
+</style>
+<defs>
+  <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+    <polygon points="0 0, 10 3.5, 0 7" fill="#333"/>
+  </marker>
+</defs>
+
+<text x="25" y="38" class="title">Hydrogen Peroxide: Structure and Redox Role</text>
+
+<rect x="45" y="85" width="245" height="220" class="box2"/>
+<text x="83" y="112" class="subtitle">Skew (non-planar) structure</text>
+<circle cx="110" cy="200" r="16" fill="#cfe2ff" stroke="#355c9a" stroke-width="2"/><text x="104" y="206" class="tiny">O</text>
+<circle cx="170" cy="170" r="16" fill="#cfe2ff" stroke="#355c9a" stroke-width="2"/><text x="164" y="176" class="tiny">O</text>
+<circle cx="70" cy="150" r="12" fill="#fff4cf" stroke="#b8740b" stroke-width="2"/><text x="66" y="154" class="tiny">H</text>
+<circle cx="220" cy="220" r="12" fill="#fff4cf" stroke="#b8740b" stroke-width="2"/><text x="216" y="224" class="tiny">H</text>
+<line x1="80" y1="157" x2="98" y2="191" class="bond"/>
+<line x1="124" y1="193" x2="156" y2="177" class="bond"/>
+<line x1="184" y1="179" x2="208" y2="213" class="bond"/>
+<text x="80" y="258" class="small">H–O–O–H framework</text>
+<text x="80" y="278" class="small">Oxygen oxidation state = –1</text>
+
+<rect x="320" y="85" width="235" height="220" class="green"/>
+<text x="388" y="112" class="subtitle">Why H₂O₂ is dual-role</text>
+<text x="340" y="150" class="small">If O goes from –1 to –2</text>
+<text x="340" y="173" class="small">H₂O₂ acts as an oxidising agent</text>
+<line x1="342" y1="188" x2="525" y2="188" class="arrow"/>
+<text x="420" y="182" class="tiny">reduction of oxygen</text>
+
+<text x="340" y="225" class="small">If O goes from –1 to 0</text>
+<text x="340" y="248" class="small">H₂O₂ acts as a reducing agent</text>
+<line x1="342" y1="263" x2="525" y2="263" class="arrow"/>
+<text x="423" y="257" class="tiny">oxidation of oxygen</text>
+
+<rect x="45" y="340" width="510" height="105" class="box"/>
+<text x="64" y="369" class="subtitle">Classic examples</text>
+<text x="64" y="392" class="small">Oxidising: H₂O₂ + 2Fe²⁺ + 2H⁺ → 2Fe³⁺ + 2H₂O</text>
+<text x="64" y="415" class="small">Reducing: 2MnO₄⁻ + 5H₂O₂ + 6H⁺ → 2Mn²⁺ + 5O₂ + 8H₂O</text>
+
+</svg>

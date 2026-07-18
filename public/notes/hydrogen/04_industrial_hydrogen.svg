@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="540" viewBox="0 0 600 540">
+<title>Industrial preparation of hydrogen</title>
+<style>
+    .title { font: 700 26px Arial, sans-serif; fill: #111; }
+    .subtitle { font: 600 16px Arial, sans-serif; fill: #333; }
+    .label { font: 14px Arial, sans-serif; fill: #222; }
+    .small { font: 12px Arial, sans-serif; fill: #333; }
+    .tiny { font: 11px Arial, sans-serif; fill: #444; }
+    .box { fill: #f6f8fb; stroke: #30445f; stroke-width: 2; rx: 12; ry: 12; }
+    .box2 { fill: #eef4ff; stroke: #355c9a; stroke-width: 2; rx: 12; ry: 12; }
+    .box3 { fill: #fef6ea; stroke: #b8740b; stroke-width: 2; rx: 12; ry: 12; }
+    .green { fill: #eefaf0; stroke: #39814f; stroke-width: 2; rx: 12; ry: 12; }
+    .red { fill: #fff1f1; stroke: #b24848; stroke-width: 2; rx: 12; ry: 12; }
+    .arrow { stroke: #333; stroke-width: 2.4; fill: none; marker-end: url(#arrowhead); }
+    .thin { stroke: #666; stroke-width: 1.4; fill: none; }
+    .dash { stroke: #666; stroke-width: 2; fill: none; stroke-dasharray: 6 6; }
+    .bond { stroke: #222; stroke-width: 3; fill: none; }
+    .hbond { stroke: #2e6da4; stroke-width: 2.5; fill: none; stroke-dasharray: 4 5; }
+    .axis { stroke: #333; stroke-width: 2; }
+    .tick { stroke: #444; stroke-width: 1.5; }
+</style>
+<defs>
+  <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+    <polygon points="0 0, 10 3.5, 0 7" fill="#333"/>
+  </marker>
+</defs>
+
+<text x="25" y="38" class="title">Industrial Preparation of Hydrogen</text>
+<rect x="35" y="85" width="150" height="70" class="box2"/>
+<text x="58" y="112" class="subtitle">Natural gas / CH₄</text>
+<text x="55" y="134" class="small">+ steam</text>
+
+<rect x="230" y="85" width="155" height="70" class="green"/>
+<text x="250" y="111" class="subtitle">Steam reforming</text>
+<text x="247" y="133" class="small">CH₄ + H₂O → CO + 3H₂</text>
+
+<rect x="430" y="85" width="135" height="70" class="box3"/>
+<text x="463" y="111" class="subtitle">Syngas</text>
+<text x="448" y="133" class="small">CO + H₂ mixture</text>
+
+<line x1="185" y1="120" x2="230" y2="120" class="arrow"/>
+<line x1="385" y1="120" x2="430" y2="120" class="arrow"/>
+
+<rect x="230" y="210" width="155" height="80" class="box2"/>
+<text x="251" y="237" class="subtitle">Water-gas shift</text>
+<text x="245" y="260" class="small">CO + H₂O → CO₂ + H₂</text>
+<text x="246" y="280" class="tiny">Increases H₂ yield</text>
+
+<line x1="497" y1="155" x2="497" y2="210" class="arrow"/>
+<line x1="497" y1="210" x2="385" y2="250" class="arrow"/>
+
+<rect x="430" y="330" width="140" height="75" class="green"/>
+<text x="468" y="356" class="subtitle">Purification</text>
+<text x="452" y="379" class="small">Remove CO₂ and impurities</text>
+
+<rect x="230" y="330" width="155" height="75" class="box3"/>
+<text x="259" y="356" class="subtitle">Electrolysis</text>
+<text x="242" y="378" class="small">2H₂O → 2H₂ + O₂</text>
+
+<rect x="35" y="330" width="150" height="75" class="box"/>
+<text x="69" y="356" class="subtitle">Chlor-alkali</text>
+<text x="53" y="378" class="small">Brine electrolysis gives H₂</text>
+
+<line x1="385" y1="370" x2="430" y2="370" class="arrow"/>
+
+<rect x="35" y="440" width="535" height="70" class="red"/>
+<text x="56" y="467" class="subtitle">Exam focus</text>
+<text x="56" y="490" class="small">Know syngas, water-gas shift, electrolysis, and H₂ as a by-product of the chlor-alkali process.</text>
+
+</svg>

@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="650" height="450" viewBox="0 0 650 450">
+<title>Zeolite column</title>
+<style>
+.title{font:700 25px Arial,sans-serif;fill:#111} .subtitle{font:600 16px Arial,sans-serif;fill:#222}
+.label{font:14px Arial,sans-serif;fill:#222} .small{font:12px Arial,sans-serif;fill:#333} .tiny{font:11px Arial,sans-serif;fill:#444}
+.box{fill:#f6f8fb;stroke:#30445f;stroke-width:2;rx:12;ry:12}
+.blue{fill:#eef4ff;stroke:#355c9a;stroke-width:2;rx:12;ry:12}
+.green{fill:#eefaf0;stroke:#39814f;stroke-width:2;rx:12;ry:12}
+.orange{fill:#fef6ea;stroke:#b8740b;stroke-width:2;rx:12;ry:12}
+.red{fill:#fff1f1;stroke:#b24848;stroke-width:2;rx:12;ry:12}
+.arrow{stroke:#333;stroke-width:2.2;fill:none;marker-end:url(#a)}
+.bond{stroke:#222;stroke-width:3;fill:none} .dash{stroke:#596b7d;stroke-width:2;fill:none;stroke-dasharray:5 5}
+.hbond{stroke:#2e6da4;stroke-width:2.3;fill:none;stroke-dasharray:4 5}
+</style>
+<defs><marker id="a" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#333"/></marker></defs>
+
+<text x="24" y="38" class="title">Zeolite / Permutit Water-Softening Column</text>
+<line x1="170" y1="70" x2="170" y2="110" class="arrow"/><text x="95" y="84" class="small">Hard water: Ca²⁺, Mg²⁺</text>
+<rect x="95" y="110" width="150" height="240" class="orange"/>
+<text x="130" y="140" class="subtitle">Na-zeolite bed</text>
+<circle cx="135" cy="190" r="13" fill="#c9d2dc"/><text x="129" y="194" class="tiny">Na</text>
+<circle cx="190" cy="220" r="13" fill="#c9d2dc"/><text x="184" y="224" class="tiny">Na</text>
+<circle cx="140" cy="270" r="13" fill="#d9d9d9"/><text x="131" y="274" class="tiny">Ca</text>
+<circle cx="195" cy="300" r="13" fill="#d9d9d9"/><text x="184" y="304" class="tiny">Mg</text>
+<line x1="170" y1="350" x2="170" y2="395" class="arrow"/><text x="105" y="420" class="small">Softened water out</text>
+<rect x="315" y="105" width="290" height="130" class="blue"/><text x="340" y="135" class="subtitle">Exchange</text><text x="340" y="165" class="small">Na₂Z + Ca²⁺ → CaZ + 2Na⁺</text><text x="340" y="190" class="small">Na₂Z + Mg²⁺ → MgZ + 2Na⁺</text>
+<rect x="315" y="260" width="290" height="110" class="green"/><text x="340" y="290" class="subtitle">Regeneration</text><text x="340" y="320" class="small">CaZ + 2NaCl → Na₂Z + CaCl₂</text><text x="340" y="345" class="small">Use concentrated brine to restore Na-form.</text>
+</svg>

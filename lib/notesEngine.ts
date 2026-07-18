@@ -815,6 +815,123 @@ const ELECTROCHEMISTRY: NotesChapter = {
   ],
 };
 
+const HYDROGEN: NotesChapter = {
+  id: "hydrogen",
+  title: "Hydrogen",
+  category: "inorganic",
+  exams: ["jeeAdvanced"],
+  tagline: "NCERT-complete Hydrogen chemistry with advanced isotope, hydride, water and peroxide treatment.",
+  syllabus: [
+    "Position of hydrogen; occurrence, isotopes and preparation/properties of dihydrogen.",
+    "Ionic, covalent, complex and metallic/non-stoichiometric hydrides.",
+    "Water and ice; hydrogen bonding; hard/soft water and water-softening methods.",
+    "Heavy water, hydrogen peroxide and hydrogen as an energy carrier.",
+  ],
+  subtopics: [
+    "H/D/T isotopes and isotope effect",
+    "Dihydrogen preparation and reactions",
+    "Ortho- and para-hydrogen",
+    "Hydride classification and hydride gap",
+    "Hydrogen bonding",
+    "Water, ice and anomalous density",
+    "Hardness and ion exchange",
+    "Heavy water",
+    "Hydrogen peroxide",
+    "Hydrogen economy and fuel cells",
+  ],
+  detailedNotes: [
+    {
+      heading: "Complete master note",
+      points: [
+        "The dedicated Hydrogen master chapter contains 61 structured sections and 26 original diagrams, with NCERT used as the primary exam-data backbone.",
+        "Advanced enrichment includes zero-point energy and isotope effects, ortho/para nuclear-spin isomerism, diborane 3-centre–2-electron bonding, metallic hydrides, hydrogen bonding and H₂O₂ redox logic.",
+        "Open the complete chapter from the Learn Modules link below; premium content remains server-gated and is not serialized to unauthorised clients.",
+      ],
+    },
+    {
+      heading: "Core classification",
+      points: [
+        "Hydrogen can form H⁺, H⁻ and covalent bonds, explaining its unique position relative to Groups 1 and 17.",
+        "Hydrides are classified as ionic/saline, covalent/molecular and metallic/non-stoichiometric, with important complex and intermediate cases.",
+        "Covalent hydrides are usefully classified as electron-deficient (Group 13), electron-precise (Group 14) and electron-rich (Groups 15–17).",
+      ],
+    },
+  ],
+  shortNotes: [
+    "H: 1s¹; unique periodic position; H⁺ is strongly solvated in condensed phases.",
+    "H, D, T have the same electronic configuration but differ strongly in mass-dependent physical properties and reaction rates.",
+    "High H–H bond dissociation enthalpy explains kinetic inertness of H₂ at room temperature.",
+    "Para-H₂ is lower in energy; high-temperature ortho:para limit is approximately 3:1.",
+    "H₂O is bent (104.5°); open hydrogen-bonded ice is less dense than liquid water.",
+    "H₂O₂ is non-planar; O is at −1, so it can act as both oxidising and reducing agent.",
+  ],
+  ncertHighlights: [
+    "NCERT H⁻ ionic radius: 208 pm.",
+    "H–H bond dissociation enthalpy: 435.88 kJ mol⁻¹; internuclear distance: 74.14 pm.",
+    "Water bond angle: 104.5°; O–H bond length: 95.7 pm; O···O separation in ice: about 276 pm.",
+    "H₂O₂ gas-phase dihedral angle: 111.5°; solid-phase value at 110 K: 90.2°.",
+    "Temporary hardness is due mainly to Ca/Mg hydrogencarbonates; permanent hardness to soluble Ca/Mg chlorides and sulphates.",
+  ],
+  solvedExamples: [
+    {
+      q: "Why is D–D effectively stronger than H–H?",
+      steps: [
+        "D₂ has a larger reduced mass than H₂.",
+        "Its vibrational frequency and zero-point energy are therefore lower.",
+        "The lower zero-point level lies farther below the dissociation limit.",
+      ],
+      answer: "D–D has a larger effective bond dissociation energy; this also contributes to kinetic isotope effects.",
+      tag: "jeeAdvanced",
+    },
+    {
+      q: "Why can H₂O₂ act as both an oxidising and a reducing agent?",
+      steps: [
+        "Oxygen in H₂O₂ has oxidation state −1.",
+        "It can be reduced to −2, so H₂O₂ acts as an oxidising agent.",
+        "It can also be oxidised to 0 as O₂, so H₂O₂ acts as a reducing agent.",
+      ],
+      answer: "Its intermediate oxygen oxidation state (−1) permits redox change in either direction.",
+      tag: "NCERT",
+    },
+  ],
+  derivations: [
+    {
+      title: "Zero-point-energy basis of the isotope effect",
+      steps: [
+        "For an approximately harmonic vibration, E₀ = ½hν.",
+        "Vibrational frequency varies approximately as 1/√μ, where μ is reduced mass.",
+        "Replacing H by D increases μ, lowering ν and therefore the zero-point energy.",
+      ],
+      result: "X–D bonds generally have lower zero-point energy and are effectively harder to break than corresponding X–H bonds.",
+    },
+  ],
+  commonMistakes: [
+    "Do not write free H⁺ as an actually isolated species in water; H⁺(aq) represents a hydrated proton.",
+    "Do not classify BeH₂ as a typical ionic Group-2 hydride; it is polymeric and covalent.",
+    "Do not draw H₂O₂ as a planar molecule.",
+    "Do not confuse hydration (solvation/association) with hydrolysis (chemical reaction with water).",
+    "Do not use boiling to remove permanent hardness.",
+  ],
+  revisionNotes: [
+    "Ionic hydrides contain H⁻ and liberate H₂ with water.",
+    "Group 13 hydrides are electron-deficient; Group 14 electron-precise; Groups 15–17 electron-rich.",
+    "Ice has an open tetrahedral hydrogen-bonded network, hence lower density than liquid water.",
+    "H₂O₂: O = −1; −1→−2 means H₂O₂ is oxidant; −1→0 means it is reductant.",
+  ],
+  formulaLinks: [
+    { label: "Hydrogen master reaction & data bank", href: "/notes/hydrogen", note: "Verified constants, reactions and comparison tables" },
+  ],
+  pyqLinks: [
+    { label: "Hydrogen & Hydrides PYQs", href: "/pyq", note: "Search Hydrogen, Hydrides, H₂O₂ and Water" },
+  ],
+  tests: [
+    { label: "Hydrogen — JEE Advanced Mastery", questions: 25, status: "coming-soon" },
+  ],
+  learnLinks: [
+    { label: "Open complete Hydrogen Master Notes", href: "/notes/hydrogen", note: "61 sections · 26 original diagrams · NCERT + JEE Advanced" },
+  ],
+};
+
 // ── Registry & lookups ────────────────────────────────────────────────────────
 
 export const NOTES_CHAPTERS: NotesChapter[] = [
@@ -823,6 +940,7 @@ export const NOTES_CHAPTERS: NotesChapter[] = [
   PERIODIC_TABLE,
   GENERAL_ORGANIC_CHEMISTRY,
   ELECTROCHEMISTRY,
+  HYDROGEN,
 ];
 
 export function getNotesChapter(id: string): NotesChapter | undefined {

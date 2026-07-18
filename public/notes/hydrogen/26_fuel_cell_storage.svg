@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="460" viewBox="0 0 760 460">
+<title>Fuel cell and storage</title>
+<style>
+.title{font:700 25px Arial,sans-serif;fill:#111} .subtitle{font:600 16px Arial,sans-serif;fill:#222}
+.label{font:14px Arial,sans-serif;fill:#222} .small{font:12px Arial,sans-serif;fill:#333} .tiny{font:11px Arial,sans-serif;fill:#444}
+.box{fill:#f6f8fb;stroke:#30445f;stroke-width:2;rx:12;ry:12}
+.blue{fill:#eef4ff;stroke:#355c9a;stroke-width:2;rx:12;ry:12}
+.green{fill:#eefaf0;stroke:#39814f;stroke-width:2;rx:12;ry:12}
+.orange{fill:#fef6ea;stroke:#b8740b;stroke-width:2;rx:12;ry:12}
+.red{fill:#fff1f1;stroke:#b24848;stroke-width:2;rx:12;ry:12}
+.arrow{stroke:#333;stroke-width:2.2;fill:none;marker-end:url(#a)}
+.bond{stroke:#222;stroke-width:3;fill:none} .dash{stroke:#596b7d;stroke-width:2;fill:none;stroke-dasharray:5 5}
+.hbond{stroke:#2e6da4;stroke-width:2.3;fill:none;stroke-dasharray:4 5}
+</style>
+<defs><marker id="a" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#333"/></marker></defs>
+
+<text x="24" y="38" class="title">Hydrogen Storage + Fuel Cell System</text>
+<rect x="40" y="90" width="170" height="105" class="blue"/><text x="85" y="120" class="subtitle">H₂ storage</text><text x="57" y="148" class="small">compressed gas / liquid H₂</text><text x="66" y="170" class="small">or reversible hydrides</text>
+<rect x="295" y="90" width="170" height="105" class="green"/><text x="335" y="120" class="subtitle">Fuel-cell stack</text><text x="310" y="148" class="small">electrochemical conversion</text><text x="324" y="170" class="small">H₂ + O₂ → H₂O</text>
+<rect x="550" y="90" width="170" height="105" class="orange"/><text x="598" y="120" class="subtitle">Outputs</text><text x="577" y="148" class="small">electric power + heat</text><text x="595" y="170" class="small">water product</text>
+<line x1="210" y1="142" x2="295" y2="142" class="arrow"/><line x1="465" y1="142" x2="550" y2="142" class="arrow"/>
+<rect x="60" y="255" width="640" height="130" class="box"/>
+<text x="82" y="285" class="subtitle">Storage trade-offs</text>
+<text x="82" y="315" class="small">Compressed H₂: simple concept but requires high-pressure vessels.</text>
+<text x="82" y="340" class="small">Liquid H₂: high density relative to gas but requires cryogenic cooling near 20 K.</text>
+<text x="82" y="365" class="small">Metal-hydride/material storage: compact chemical uptake but adds mass and heat-management issues.</text>
+</svg>

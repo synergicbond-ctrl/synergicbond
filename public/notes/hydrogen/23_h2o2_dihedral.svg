@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="700" height="450" viewBox="0 0 700 450">
+<title>H2O2 dihedral</title>
+<style>
+.title{font:700 25px Arial,sans-serif;fill:#111} .subtitle{font:600 16px Arial,sans-serif;fill:#222}
+.label{font:14px Arial,sans-serif;fill:#222} .small{font:12px Arial,sans-serif;fill:#333} .tiny{font:11px Arial,sans-serif;fill:#444}
+.box{fill:#f6f8fb;stroke:#30445f;stroke-width:2;rx:12;ry:12}
+.blue{fill:#eef4ff;stroke:#355c9a;stroke-width:2;rx:12;ry:12}
+.green{fill:#eefaf0;stroke:#39814f;stroke-width:2;rx:12;ry:12}
+.orange{fill:#fef6ea;stroke:#b8740b;stroke-width:2;rx:12;ry:12}
+.red{fill:#fff1f1;stroke:#b24848;stroke-width:2;rx:12;ry:12}
+.arrow{stroke:#333;stroke-width:2.2;fill:none;marker-end:url(#a)}
+.bond{stroke:#222;stroke-width:3;fill:none} .dash{stroke:#596b7d;stroke-width:2;fill:none;stroke-dasharray:5 5}
+.hbond{stroke:#2e6da4;stroke-width:2.3;fill:none;stroke-dasharray:4 5}
+</style>
+<defs><marker id="a" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#333"/></marker></defs>
+
+<text x="24" y="38" class="title">H₂O₂: Non-Planar “Open-Book” Geometry</text>
+<circle cx="280" cy="205" r="20" fill="#cfe2ff" stroke="#355c9a" stroke-width="2"/><text x="273" y="212" class="label">O</text>
+<circle cx="410" cy="205" r="20" fill="#cfe2ff" stroke="#355c9a" stroke-width="2"/><text x="403" y="212" class="label">O</text>
+<line x1="300" y1="205" x2="390" y2="205" class="bond"/>
+<circle cx="215" cy="130" r="14" fill="#fff4cf" stroke="#b8740b" stroke-width="2"/><text x="210" y="135" class="tiny">H</text>
+<circle cx="475" cy="285" r="14" fill="#fff4cf" stroke="#b8740b" stroke-width="2"/><text x="470" y="290" class="tiny">H</text>
+<line x1="267" y1="190" x2="225" y2="142" class="bond"/><line x1="423" y1="220" x2="465" y2="274" class="bond"/>
+<path d="M325 175 A70 70 0 0 1 390 250" fill="none" stroke="#b24848" stroke-width="2" stroke-dasharray="5 4"/>
+<text x="315" y="280" class="subtitle">dihedral angle</text>
+<rect x="70" y="330" width="560" height="82" class="box"/>
+<text x="95" y="360" class="small">Gas phase: ≈111.5° &#160;&#160;&#160; | &#160;&#160;&#160; Solid phase at 110 K: ≈90.2°</text>
+<text x="95" y="388" class="small">The molecule is non-planar and polar; oxygen has oxidation state –1.</text>
+</svg>

@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="470" viewBox="0 0 600 470">
+<title>Water and ice</title>
+<style>
+    .title { font: 700 26px Arial, sans-serif; fill: #111; }
+    .subtitle { font: 600 16px Arial, sans-serif; fill: #333; }
+    .label { font: 14px Arial, sans-serif; fill: #222; }
+    .small { font: 12px Arial, sans-serif; fill: #333; }
+    .tiny { font: 11px Arial, sans-serif; fill: #444; }
+    .box { fill: #f6f8fb; stroke: #30445f; stroke-width: 2; rx: 12; ry: 12; }
+    .box2 { fill: #eef4ff; stroke: #355c9a; stroke-width: 2; rx: 12; ry: 12; }
+    .box3 { fill: #fef6ea; stroke: #b8740b; stroke-width: 2; rx: 12; ry: 12; }
+    .green { fill: #eefaf0; stroke: #39814f; stroke-width: 2; rx: 12; ry: 12; }
+    .red { fill: #fff1f1; stroke: #b24848; stroke-width: 2; rx: 12; ry: 12; }
+    .arrow { stroke: #333; stroke-width: 2.4; fill: none; marker-end: url(#arrowhead); }
+    .thin { stroke: #666; stroke-width: 1.4; fill: none; }
+    .dash { stroke: #666; stroke-width: 2; fill: none; stroke-dasharray: 6 6; }
+    .bond { stroke: #222; stroke-width: 3; fill: none; }
+    .hbond { stroke: #2e6da4; stroke-width: 2.5; fill: none; stroke-dasharray: 4 5; }
+    .axis { stroke: #333; stroke-width: 2; }
+    .tick { stroke: #444; stroke-width: 1.5; }
+</style>
+<defs>
+  <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+    <polygon points="0 0, 10 3.5, 0 7" fill="#333"/>
+  </marker>
+</defs>
+
+<text x="26" y="38" class="title">Water: Bent Molecule and Open Ice Structure</text>
+
+<rect x="45" y="82" width="240" height="250" class="box2"/>
+<text x="105" y="108" class="subtitle">H₂O molecule</text>
+<circle cx="165" cy="180" r="22" fill="#cfe2ff" stroke="#355c9a" stroke-width="2"/><text x="158" y="186" class="label">O</text>
+<circle cx="115" cy="235" r="14" fill="#fff4cf" stroke="#b8740b" stroke-width="2"/><text x="110" y="240" class="tiny">H</text>
+<circle cx="215" cy="235" r="14" fill="#fff4cf" stroke="#b8740b" stroke-width="2"/><text x="210" y="240" class="tiny">H</text>
+<line x1="151" y1="197" x2="124" y2="224" class="bond"/>
+<line x1="179" y1="197" x2="206" y2="224" class="bond"/>
+<text x="118" y="285" class="small">Bond angle ≈ 104.5°</text>
+<text x="95" y="305" class="small">Highly polar, bent geometry</text>
+
+<rect x="315" y="82" width="240" height="250" class="green"/>
+<text x="378" y="108" class="subtitle">Ice network</text>
+<g transform="translate(340,135)">
+  <circle cx="30" cy="30" r="10" fill="#cfe2ff" stroke="#355c9a" stroke-width="2"/>
+  <circle cx="90" cy="30" r="10" fill="#cfe2ff" stroke="#355c9a" stroke-width="2"/>
+  <circle cx="120" cy="82" r="10" fill="#cfe2ff" stroke="#355c9a" stroke-width="2"/>
+  <circle cx="90" cy="134" r="10" fill="#cfe2ff" stroke="#355c9a" stroke-width="2"/>
+  <circle cx="30" cy="134" r="10" fill="#cfe2ff" stroke="#355c9a" stroke-width="2"/>
+  <circle cx="0" cy="82" r="10" fill="#cfe2ff" stroke="#355c9a" stroke-width="2"/>
+  <line x1="40" y1="30" x2="80" y2="30" class="hbond"/>
+  <line x1="95" y1="38" x2="115" y2="74" class="hbond"/>
+  <line x1="115" y1="90" x2="95" y2="126" class="hbond"/>
+  <line x1="80" y1="134" x2="40" y2="134" class="hbond"/>
+  <line x1="25" y1="126" x2="5" y2="90" class="hbond"/>
+  <line x1="5" y1="74" x2="25" y2="38" class="hbond"/>
+</g>
+<text x="341" y="284" class="small">Open hexagonal-like hydrogen-bonded framework</text>
+<text x="341" y="304" class="small">Explains why ice is less dense than water</text>
+
+<rect x="45" y="360" width="510" height="85" class="red"/>
+<text x="65" y="387" class="subtitle">Why ice floats</text>
+<text x="65" y="410" class="small">The open lattice in ice contains extra empty space, so the solid is less dense than liquid water.</text>
+
+</svg>

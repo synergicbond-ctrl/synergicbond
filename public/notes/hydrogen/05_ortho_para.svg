@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="480" viewBox="0 0 600 480">
+<title>Ortho and para hydrogen</title>
+<style>
+    .title { font: 700 26px Arial, sans-serif; fill: #111; }
+    .subtitle { font: 600 16px Arial, sans-serif; fill: #333; }
+    .label { font: 14px Arial, sans-serif; fill: #222; }
+    .small { font: 12px Arial, sans-serif; fill: #333; }
+    .tiny { font: 11px Arial, sans-serif; fill: #444; }
+    .box { fill: #f6f8fb; stroke: #30445f; stroke-width: 2; rx: 12; ry: 12; }
+    .box2 { fill: #eef4ff; stroke: #355c9a; stroke-width: 2; rx: 12; ry: 12; }
+    .box3 { fill: #fef6ea; stroke: #b8740b; stroke-width: 2; rx: 12; ry: 12; }
+    .green { fill: #eefaf0; stroke: #39814f; stroke-width: 2; rx: 12; ry: 12; }
+    .red { fill: #fff1f1; stroke: #b24848; stroke-width: 2; rx: 12; ry: 12; }
+    .arrow { stroke: #333; stroke-width: 2.4; fill: none; marker-end: url(#arrowhead); }
+    .thin { stroke: #666; stroke-width: 1.4; fill: none; }
+    .dash { stroke: #666; stroke-width: 2; fill: none; stroke-dasharray: 6 6; }
+    .bond { stroke: #222; stroke-width: 3; fill: none; }
+    .hbond { stroke: #2e6da4; stroke-width: 2.5; fill: none; stroke-dasharray: 4 5; }
+    .axis { stroke: #333; stroke-width: 2; }
+    .tick { stroke: #444; stroke-width: 1.5; }
+</style>
+<defs>
+  <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+    <polygon points="0 0, 10 3.5, 0 7" fill="#333"/>
+  </marker>
+</defs>
+
+<text x="26" y="38" class="title">Ortho- and Para-Hydrogen</text>
+
+<rect x="55" y="85" width="220" height="160" class="box2"/>
+<text x="125" y="112" class="subtitle">Ortho-hydrogen</text>
+<circle cx="125" cy="170" r="28" fill="#dbeafe" stroke="#355c9a" stroke-width="2"/>
+<circle cx="205" cy="170" r="28" fill="#dbeafe" stroke="#355c9a" stroke-width="2"/>
+<text x="118" y="175" class="label">↑</text>
+<text x="198" y="175" class="label">↑</text>
+<text x="84" y="220" class="small">Nuclear spins parallel</text>
+
+<rect x="325" y="85" width="220" height="160" class="green"/>
+<text x="398" y="112" class="subtitle">Para-hydrogen</text>
+<circle cx="395" cy="170" r="28" fill="#e7f8eb" stroke="#39814f" stroke-width="2"/>
+<circle cx="475" cy="170" r="28" fill="#e7f8eb" stroke="#39814f" stroke-width="2"/>
+<text x="388" y="175" class="label">↑</text>
+<text x="468" y="175" class="label">↓</text>
+<text x="355" y="220" class="small">Nuclear spins antiparallel</text>
+
+<rect x="55" y="285" width="490" height="165" class="box"/>
+<text x="75" y="315" class="subtitle">Temperature dependence</text>
+<text x="75" y="342" class="small">• Para-hydrogen is lower in energy.</text>
+<text x="75" y="365" class="small">• At very low temperature: almost all H₂ becomes para.</text>
+<text x="75" y="388" class="small">• At high temperature: equilibrium tends toward about 75% ortho and 25% para.</text>
+<text x="75" y="411" class="small">• Conversion is slow without catalysts, but accelerated by charcoal or paramagnetic substances.</text>
+
+<rect x="76" y="430" width="300" height="12" fill="#bcd7ff" stroke="#355c9a"/>
+<rect x="76" y="430" width="225" height="12" fill="#6fa8ff" stroke="#355c9a"/>
+<text x="385" y="441" class="tiny">High-T equilibrium: ortho ≈ 75%, para ≈ 25%</text>
+
+</svg>

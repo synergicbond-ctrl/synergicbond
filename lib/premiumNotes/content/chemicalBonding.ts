@@ -93,6 +93,16 @@ export const CHEMICAL_BONDING_NOTES: PremiumChapterNotes = {
                 { wrong: "Using formal charge and oxidation number interchangeably.", right: "For the S in SO₄²⁻: oxidation state +6, but formal charge in the expanded-octet structure is 0 — different bookkeeping, different answers." },
               ],
             },
+            {
+              kind: "illustration",
+              level: "intermediate",
+              exams: ["JEE Advanced"],
+              question: "Draw the major Lewis structure of the thiocyanate ion, SCN⁻, and assign formal charges.",
+              thinking: "16 valence electrons (S 6 + C 4 + N 5 + 1 for the negative charge). Carbon is central; compare the candidate skeletons by formal charge, remembering the ion is singly charged overall.",
+              solution: "Major contributor: [S=C=N]⁻. FC(S) = 6 − 4 − 2 = 0; FC(C) = 4 − 0 − 4 = 0; FC(N) = 5 − 4 − 2 = −1. Net charge = 0 + 0 + (−1) = −1 ✓, matching the ion's actual 1− charge — the negative formal charge sits on N, the more electronegative terminal atom, which is why this is the major canonical form over [S–C≡N]⁻ (−1 on S) or [S≡C–N]²⁻-type placements.",
+              fastMethod: "Sum every atom's formal charge and check it equals the ion's stated charge FIRST — a quick way to catch a mislabelled overall charge before ranking canonical forms.",
+              commonMistakes: ["Writing the ion as 2− instead of 1− (SCN⁻ takes exactly one extra electron, from S 6 + C 4 + N 5 + 1 = 16 valence e⁻, not 17).", "Placing the negative formal charge on S instead of N in the major contributor."],
+            },
           ],
         },
         {
@@ -117,6 +127,7 @@ export const CHEMICAL_BONDING_NOTES: PremiumChapterNotes = {
               items: [
                 { trap: "\"The molecule flickers between the resonance structures.\"", reality: "Canonical forms have NO independent existence — there is only ever one real structure, the hybrid. 'Oscillating double bonds' is an auto-wrong phrase in board answers." },
                 { trap: "\"More resonance structures always means more stable.\"", reality: "Only significant (low-energy, similar-energy) canonical forms stabilise strongly; equivalent forms stabilise the most." },
+                { trap: "\"NO₂'s odd electron sits on an oxygen, so N₂O₄ dimerises through the terminal oxygens.\"", reality: "The two equivalent canonical forms delocalise NO₂'s −1 charge and π bond over the oxygens, but the unpaired electron itself resides principally on N. Dimerisation is N–N bond formation — N₂O₄ is planar O₂N–NO₂ (N–N ≈ 178 pm), not an O–O linkage." },
               ],
             },
             {
@@ -532,7 +543,7 @@ export const CHEMICAL_BONDING_NOTES: PremiumChapterNotes = {
               exams: ["JEE Advanced"],
               question: "Between NO and NO⁺, which has the shorter bond, and why is CO's bond barely affected on forming CO⁺?",
               thinking: "Locate which MO loses the electron in each ionisation: antibonding loss strengthens, bonding loss weakens.",
-              solution: "NO (15 e⁻) has one π* electron; removing it gives NO⁺ (order 2.5 → 3.0) → NO⁺ is shorter and stronger. In CO the HOMO is the (weakly bonding, largely carbon lone-pair) σ2p — removing it changes order only slightly (3 → 2.5 formally, but the orbital's bonding contribution is small), so CO⁺ has nearly the same bond length; experimentally it even contracts marginally.",
+              solution: "NO (11 valence e⁻: N 5 + O 6) has one π* electron; removing it gives NO⁺ (order 2.5 → 3.0) → NO⁺ is shorter and stronger. In CO the HOMO is the (weakly bonding, largely carbon lone-pair) σ2p — removing it changes order only slightly (3 → 2.5 formally, but the orbital's bonding contribution is small), so CO⁺ has nearly the same bond length; experimentally it even contracts marginally.",
               commonMistakes: ["Assuming every cation of a diatomic has a stronger bond — it depends on whether the lost electron was bonding or antibonding (N₂⁺ is weaker than N₂; O₂⁺ is stronger than O₂)."],
             },
             {

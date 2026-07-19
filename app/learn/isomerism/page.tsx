@@ -1,6 +1,33 @@
-import Link from "next/link";
-import { isomerismParts } from "./parts";
+import { ChapterLessonGroups, ChapterShell, type LessonGroup } from "@/components/notes/canonical";
+import { ISOMERISM_GROUPS, isomerismParts, isomerismTabs } from "./parts";
 
 export const metadata = { title: "Isomerism | Synergic Bond", description: "Premium JEE Main and JEE Advanced Isomerism course." };
 
-export default function IsomerismPage() { return <main className="min-h-screen bg-[#08111f] px-4 py-10 text-white sm:px-6"><div className="mx-auto max-w-6xl"><header className="rounded-3xl border border-cyan-300/20 bg-[radial-gradient(circle_at_top_right,_rgba(34,211,238,.18),_transparent_34%),linear-gradient(135deg,rgba(34,211,238,.1),rgba(2,6,23,.8),rgba(139,92,246,.1))] p-7 sm:p-10"><p className="text-xs font-black uppercase tracking-[.28em] text-cyan-200">Organic Chemistry · JEE Main + Advanced</p><h1 className="mt-3 text-4xl font-black tracking-tight sm:text-6xl">Isomerism</h1><p className="mt-4 max-w-3xl text-base leading-7 text-slate-300">A 40-part premium route from constitutional isomerism to conformations, chirality, optical activity, R/S assignment and special stereochemical cases.</p></header><section className="mt-8"><h2 className="text-xl font-black">Chapter parts</h2><div className="mt-4 grid gap-3 sm:grid-cols-2">{isomerismParts.map((part) => <Link key={part.number} href={`/learn/isomerism/${part.number}`} className="rounded-2xl border border-white/10 bg-white/[.035] p-5 transition hover:border-cyan-300/40 hover:bg-cyan-300/[.05]"><p className="text-xs font-black uppercase tracking-wider text-cyan-300">Part {part.number}</p><h3 className="mt-2 text-lg font-black">{part.title}</h3><p className="mt-2 text-sm text-slate-400">{part.topics.join(" · ")}</p></Link>)}</div></section></div></main>; }
+export default function IsomerismPage() {
+  const groups: LessonGroup[] = ISOMERISM_GROUPS.map((group) => ({
+    label: group.label,
+    lessons: isomerismParts
+      .filter((part) => part.number >= group.from && part.number <= group.to)
+      .map((part) => ({
+        href: `/learn/isomerism/${part.number}`,
+        number: `Part ${part.number}`,
+        title: part.title,
+        meta: part.topics.join(" · "),
+      })),
+  }));
+
+  return (
+    <ChapterShell
+      kicker="JEE Organic Chemistry"
+      subtitle="Isomerism"
+      headerTag="40-part premium course"
+      tabs={isomerismTabs()}
+    >
+      <p style={{ margin: "4px 0 6px", maxWidth: 860, color: "#c3d1dd", fontSize: 14.5, lineHeight: 1.7 }}>
+        A 40-part premium route from constitutional isomerism to conformations, chirality, optical
+        activity, R/S assignment and special stereochemical cases.
+      </p>
+      <ChapterLessonGroups groups={groups} />
+    </ChapterShell>
+  );
+}

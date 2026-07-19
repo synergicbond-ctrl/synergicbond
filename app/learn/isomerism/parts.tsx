@@ -1,3 +1,4 @@
+import type { ChapterTab, LessonRef } from "@/components/notes/canonical";
 import IsomerismMergedPart01 from "./merged-parts/part01";
 import IsomerismMergedPart02 from "./merged-parts/part02";
 import IsomerismMergedPart03 from "./merged-parts/part03";
@@ -88,6 +89,49 @@ export const isomerismParts: IsomerismPart[] = [
   { number: 39, title: 'Optical chirality exercise bank II', source: "Merged source modules 35, 36, 37, 38, 39, 40, 41", topics: ['rings', 'cages', 'Fischer'] },
   { number: 40, title: 'Optical chirality exercise bank III & final answer key', source: "Merged source modules 42, 43, 44, 45, 46, 47, 48", topics: ['constrained systems', 'carbohydrates', 'answer key'] },
 ];
+
+export interface IsomerismGroup {
+  label: string;
+  from: number;
+  to: number;
+}
+
+// Real topic clusters over the 40-part sequence, in source order — shared by
+// the hub's lesson groups and the canonical part-page tabs.
+export const ISOMERISM_GROUPS: IsomerismGroup[] = [
+  { label: "Constitutional isomerism & structural counting", from: 1, to: 5 },
+  { label: "Tautomerism & enolisation", from: 6, to: 9 },
+  { label: "Geometrical isomerism fundamentals", from: 10, to: 13 },
+  { label: "GI exercise banks, nomenclature & properties", from: 14, to: 19 },
+  { label: "Acyclic conformational isomerism", from: 20, to: 24 },
+  { label: "Cyclic conformations, cyclohexane & anomeric effects", from: 25, to: 32 },
+  { label: "Optical activity, chirality & symmetry", from: 33, to: 34 },
+  { label: "R/S nomenclature & stereoisomer counting", from: 35, to: 36 },
+  { label: "Fischer, wedge-dash & Newman conversions", from: 37, to: 37 },
+  { label: "Chirality without a chiral centre", from: 38, to: 38 },
+  { label: "Optical chirality exercise banks & answer key", from: 39, to: 40 },
+];
+
+export function isomerismTabs(currentPart?: number): ChapterTab[] {
+  return [
+    { label: "All 40 parts", href: "/learn/isomerism", active: currentPart === undefined },
+    ...ISOMERISM_GROUPS.map((group, index) => ({
+      label: group.label,
+      href: `/learn/isomerism#group-${index + 1}`,
+      active: currentPart !== undefined && currentPart >= group.from && currentPart <= group.to,
+    })),
+  ];
+}
+
+export function isomerismLessonRef(index: number): LessonRef | undefined {
+  const entry = isomerismParts[index];
+  if (!entry) return undefined;
+  return {
+    href: `/learn/isomerism/${entry.number}`,
+    number: `Part ${entry.number}`,
+    title: entry.title,
+  };
+}
 
 const mergedPartComponents = {
   1: IsomerismMergedPart01,

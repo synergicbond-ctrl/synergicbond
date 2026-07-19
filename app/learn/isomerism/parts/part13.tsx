@@ -28,7 +28,7 @@ function FischerPair({ top, bottom, left1, right1, left2, right2, label1, label2
     </g>
   );
   return (
-    <svg viewBox="0 0 340 195" className="min-w-[300px] w-full text-slate-100" role="img" aria-label={`Fischer projection pair ${label1} and ${label2}`}>
+    <svg fill="currentColor" viewBox="0 0 340 195" className="min-w-[300px] w-full text-slate-100" role="img" aria-label={`Fischer projection pair ${label1} and ${label2}`}>
       {col(90, left1, right1, label1)}
       {col(250, left2, right2, label2)}
     </svg>
@@ -52,7 +52,7 @@ function RingSVG({ n, subs }: { n: 3 | 4 | 5 | 6; subs: { angle: number; label: 
     return { x: 50 + Math.cos(a) * 26, y: 40 + Math.sin(a) * 26 };
   });
   return (
-    <svg viewBox="0 0 100 90" className="h-full w-full text-slate-200">
+    <svg fill="currentColor" viewBox="0 0 100 90" className="h-full w-full text-slate-200">
       <path d={`M ${pts.map((p) => `${p.x} ${p.y}`).join(" L ")} Z`} fill="none" stroke="currentColor" strokeWidth="1.8" />
       {subs.map((s, i) => {
         const a = (s.angle * Math.PI) / 180;
@@ -66,7 +66,7 @@ function RingSVG({ n, subs }: { n: 3 | 4 | 5 | 6; subs: { angle: number; label: 
 
 function AlleneOrbital({ odd }: { odd: boolean }) {
   return (
-    <svg viewBox="0 0 260 110" className="h-auto w-full text-slate-100" role="img" aria-label={odd ? "Allene with odd number of cumulated double bonds shows geometrical isomerism" : "Allene with even number of cumulated double bonds shows optical isomerism"}>
+    <svg fill="currentColor" viewBox="0 0 260 110" className="h-auto w-full text-slate-100" role="img" aria-label={odd ? "Allene with odd number of cumulated double bonds shows geometrical isomerism" : "Allene with even number of cumulated double bonds shows optical isomerism"}>
       <line x1="20" y1="55" x2="240" y2="55" stroke="currentColor" strokeWidth="2" />
       {(odd ? [40, 100, 160, 220] : [40, 130, 220]).map((x, i, arr) => (
         <g key={x}>
@@ -82,7 +82,7 @@ function AlleneOrbital({ odd }: { odd: boolean }) {
 
 function BiphenylOrtho({ ortho }: { ortho: boolean }) {
   return (
-    <svg viewBox="0 0 260 140" className="h-auto w-full text-slate-100" role="img" aria-label={ortho ? "Biphenyl with bulky ortho substituents restricting rotation" : "Biphenyl with free rotation about the single bond"}>
+    <svg fill="currentColor" viewBox="0 0 260 140" className="h-auto w-full text-slate-100" role="img" aria-label={ortho ? "Biphenyl with bulky ortho substituents restricting rotation" : "Biphenyl with free rotation about the single bond"}>
       <circle cx="80" cy="70" r="42" fill="none" stroke="currentColor" strokeWidth="2" />
       <circle cx="180" cy="70" r="42" fill="none" stroke="currentColor" strokeWidth="2" transform={ortho ? "rotate(90 180 70)" : undefined} />
       <line x1="122" y1="70" x2="138" y2="70" stroke="currentColor" strokeWidth="2.4" />
@@ -97,7 +97,7 @@ function BiphenylOrtho({ ortho }: { ortho: boolean }) {
 
 function AmineInversion() {
   return (
-    <svg viewBox="0 0 480 160" className="min-w-[420px] w-full text-slate-100" role="img" aria-label="Amine pyramidal inversion through a planar sp2 transition state">
+    <svg fill="currentColor" viewBox="0 0 480 160" className="min-w-[420px] w-full text-slate-100" role="img" aria-label="Amine pyramidal inversion through a planar sp2 transition state">
       {[60, 240, 420].map((cx, i) => (
         <g key={cx}>
           <path d={i === 1 ? `M ${cx - 30} 100 L ${cx + 30} 100 L ${cx} 100` : `M ${cx} 40 L ${cx - 30} 100 L ${cx + 30} 100 Z`} fill="none" stroke="currentColor" strokeWidth="2" />
@@ -118,7 +118,7 @@ function BridgeheadCage() {
   const edges: [number, number][] = [[0, 1], [0, 4], [1, 5], [4, 6], [5, 7], [6, 7], [2, 3], [2, 6], [3, 7], [0, 2], [1, 3], [4, 5]];
   const labels: [number, string][] = [[0, "F"], [1, "Cl"], [4, "I"], [5, "Br"], [6, "D"], [7, "OH"], [2, ""], [3, "T"]];
   return (
-    <svg viewBox="0 0 220 180" className="h-auto w-full text-slate-100" role="img" aria-label="Rigid bicyclic cage with eight different bridgehead substituents F Cl I Br T D OH">
+    <svg fill="currentColor" viewBox="0 0 220 180" className="h-auto w-full text-slate-100" role="img" aria-label="Rigid bicyclic cage with eight different bridgehead substituents F Cl I Br T D OH">
       {edges.map(([a, b], i) => <line key={i} x1={V[a].x} y1={V[a].y} x2={V[b].x} y2={V[b].y} stroke="currentColor" strokeWidth="1.6" />)}
       {V.map((p, i) => <circle key={i} cx={p.x} cy={p.y} r="3" fill="#c4b5fd" />)}
       {labels.map(([i, l]) => l && <text key={i} x={V[i].x + (V[i].x < 90 ? -8 : 6)} y={V[i].y - 4} fontSize="12" textAnchor={V[i].x < 90 ? "end" : "start"}>{l}</text>)}
@@ -137,7 +137,7 @@ function HelixPair() {
     );
   };
   return (
-    <svg viewBox="0 0 220 170" className="h-auto w-full text-slate-100" role="img" aria-label="Right handed and left handed helices as non-superimposable mirror images">
+    <svg fill="currentColor" viewBox="0 0 220 170" className="h-auto w-full text-slate-100" role="img" aria-label="Right handed and left handed helices as non-superimposable mirror images">
       {helix(60, 1)}
       <line x1="110" y1="0" x2="110" y2="170" stroke="currentColor" strokeWidth="10" strokeDasharray="1 6" opacity="0.5" />
       {helix(160, -1)}

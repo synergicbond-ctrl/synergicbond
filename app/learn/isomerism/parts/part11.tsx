@@ -10,7 +10,7 @@ import { BlockMath, InlineMath } from "@/components/math/react-katex";
 
 function Polarimeter() {
   return (
-    <svg viewBox="0 0 860 300" className="min-w-[680px] w-full text-slate-100" role="img" aria-label="Polarimeter with polariser sample tube analyser and rotated plane">
+    <svg fill="currentColor" viewBox="0 0 860 300" className="min-w-[680px] w-full text-slate-100" role="img" aria-label="Polarimeter with polariser sample tube analyser and rotated plane">
       <defs><marker id="light-arrow" markerWidth="9" markerHeight="9" refX="8" refY="4" orient="auto"><path d="M0 0 L0 8 L9 4 Z" fill="#67e8f9" /></marker></defs>
       <g fill="none" stroke="currentColor" strokeWidth="3.5" strokeLinecap="round">
         <path d="M72 150 H190 M255 150 H330 M530 150 H605 M670 150 H794" markerEnd="url(#light-arrow)" />
@@ -44,7 +44,7 @@ function Polarimeter() {
  *  and two bright-field zones — the origin of the α = θ or π−θ ambiguity. */
 function ProbePrismZones() {
   return (
-    <svg viewBox="0 0 640 260" className="min-w-[560px] w-full text-slate-100" role="img" aria-label="Compound tested through a movable prism into dark field and two bright field zones">
+    <svg fill="currentColor" viewBox="0 0 640 260" className="min-w-[560px] w-full text-slate-100" role="img" aria-label="Compound tested through a movable prism into dark field and two bright field zones">
       <defs><marker id="pz-arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 L0 8 L8 4 Z" fill="currentColor" /></marker></defs>
       <rect x="20" y="95" width="120" height="55" rx="8" fill="none" stroke="#86efac" strokeWidth="2.5" />
       <text x="80" y="118" textAnchor="middle" fontSize="15" fontWeight="700">Compound</text>
@@ -81,7 +81,7 @@ function FresnelCircularComponents() {
     </g>
   );
   return (
-    <svg viewBox="-90 -80 720 220" className="min-w-[600px] w-full text-slate-100" role="img" aria-label="Fresnel circular component diagram equal speed versus retarded component">
+    <svg fill="currentColor" viewBox="-90 -80 720 220" className="min-w-[600px] w-full text-slate-100" role="img" aria-label="Fresnel circular component diagram equal speed versus retarded component">
       <defs>
         <marker id="fc-arrow" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0 0 L0 7 L7 3.5 Z" fill="currentColor" /></marker>
         <marker id="fc-arrow-y" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0 0 L0 7 L7 3.5 Z" fill="#facc15" /></marker>
@@ -99,7 +99,7 @@ function FresnelCircularComponents() {
  *  into two oppositely circularly polarised beams L and D. */
 function QuartzPrismSplit() {
   return (
-    <svg viewBox="0 0 420 200" className="min-w-[360px] w-full text-slate-100" role="img" aria-label="Beam of plane polarised light through alternating dextro and laevo quartz prisms splitting into L and D beams">
+    <svg fill="currentColor" viewBox="0 0 420 200" className="min-w-[360px] w-full text-slate-100" role="img" aria-label="Beam of plane polarised light through alternating dextro and laevo quartz prisms splitting into L and D beams">
       <rect x="70" y="40" width="230" height="120" fill="none" stroke="currentColor" strokeWidth="2.5" />
       <path d="M70 40 L185 100 L70 160" fill="none" stroke="currentColor" strokeWidth="2" />
       <path d="M300 40 L185 100 L300 160" fill="none" stroke="currentColor" strokeWidth="2" />
@@ -130,7 +130,7 @@ function Ca2bdMirrorPair() {
     </g>
   );
   return (
-    <svg viewBox="-90 -90 440 200" className="min-w-[380px] w-full text-slate-100" role="img" aria-label="Molecule Ca2bd and its mirror image with a shared plane of symmetry">
+    <svg fill="currentColor" viewBox="-90 -90 440 200" className="min-w-[380px] w-full text-slate-100" role="img" aria-label="Molecule Ca2bd and its mirror image with a shared plane of symmetry">
       {tetra(0, false)}
       <line x1="130" y1="-80" x2="130" y2="90" stroke="#c4b5fd" strokeWidth="2" strokeDasharray="6 5" />
       {tetra(260, true)}
@@ -161,7 +161,7 @@ function MesotartaricConformers() {
     </g>
   );
   return (
-    <svg viewBox="-80 -20 620 300" className="min-w-[560px] w-full text-slate-100" role="img" aria-label="Mesotartaric acid staggered eclipsed and asymmetric conformers">
+    <svg fill="currentColor" viewBox="-80 -20 620 300" className="min-w-[560px] w-full text-slate-100" role="img" aria-label="Mesotartaric acid staggered eclipsed and asymmetric conformers">
       {col(0, [H, "OH"], ["OH", H], "(a) staggered", "centre i · individually inactive")}
       {col(220, [H, "OH"], [H, "OH"], "(b) eclipsed", "σ plane · external compensation")}
       {col(440, [H, "OH"], ["OH", H], "(c) skewed", "no symmetry · would rotate if isolated")}
@@ -324,7 +324,7 @@ export default function IsomerismPart11() {
             <p className="mt-4 text-sm leading-7 text-slate-300"><b className="text-white">Chirality</b> — the phenomenon of right-handedness, or non-superimposability of a molecule on its mirror image.</p>
             <p className="mt-2 text-sm leading-7 text-slate-300"><b className="text-white">Chiral (asymmetric) carbon</b> — a carbon atom attached to four different atoms or groups.</p>
             <div className="mt-3 overflow-x-auto rounded-xl border border-cyan-300/20 bg-[#050b16] p-3">
-              <svg viewBox="0 0 260 130" className="mx-auto h-auto w-64 text-slate-100" role="img" aria-label="Chiral carbon with four different groups a b d e">
+              <svg fill="currentColor" viewBox="0 0 260 130" className="mx-auto h-auto w-64 text-slate-100" role="img" aria-label="Chiral carbon with four different groups a b d e">
                 <defs><marker id="cc-arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 L0 8 L8 4 Z" fill="#c4b5fd" /></marker></defs>
                 <g stroke="currentColor" strokeWidth="2.4" fill="none"><line x1="130" y1="65" x2="130" y2="20" /><line x1="130" y1="65" x2="75" y2="105" /><line x1="130" y1="65" x2="150" y2="112" /></g>
                 <line x1="130" y1="65" x2="185" y2="88" stroke="#c4b5fd" strokeWidth="2.4" markerEnd="url(#cc-arrow)" />

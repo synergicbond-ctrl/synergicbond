@@ -23,7 +23,7 @@ function Pyranose({ c5, c4, c3, c2, c1, c5Arm, c1Arm, label }: {
 }) {
   const C5 = { x: 148, y: 100 }, C1 = { x: 306, y: 152 }, C2 = { x: 246, y: 210 }, C3 = { x: 140, y: 210 }, C4 = { x: 70, y: 152 };
   return (
-    <svg viewBox="0 0 392 300" className="h-auto w-full text-slate-100" role="img" aria-label={label}>
+    <svg fill="currentColor" viewBox="0 0 392 300" className="h-auto w-full text-slate-100" role="img" aria-label={label}>
       <g fill="none" stroke="currentColor" strokeWidth="2">
         <line x1={C4.x} y1={C4.y} x2={C5.x} y2={C5.y} />
         <line x1={C5.x} y1={C5.y} x2={242} y2={97} />
@@ -93,7 +93,7 @@ function Newman({ front, rear, label }: { front: NewmanBond[]; rear: NewmanBond[
     return <line x1={p.x} y1={p.y} x2={q1.x} y2={q1.y} stroke="currentColor" strokeWidth="2" />;
   };
   return (
-    <svg viewBox="0 0 260 250" className="h-auto w-full text-slate-100" role="img" aria-label={label}>
+    <svg fill="currentColor" viewBox="0 0 260 250" className="h-auto w-full text-slate-100" role="img" aria-label={label}>
       <circle cx="130" cy="122" r="50" fill="none" stroke="currentColor" strokeWidth="2" />
       <circle cx="130" cy="122" r="4" fill="currentColor" />
       {rear.map((bond, i) => {
@@ -131,7 +131,7 @@ function Diene({ subs, doubles, tall, label }: {
     return <line x1={s1.x} y1={s1.y} x2={s2.x} y2={s2.y} stroke="currentColor" strokeWidth="2" />;
   };
   return (
-    <svg viewBox="-40 0 320 250" className="h-auto w-full text-slate-100" role="img" aria-label={label}>
+    <svg fill="currentColor" viewBox="-40 0 320 250" className="h-auto w-full text-slate-100" role="img" aria-label={label}>
       <path d={`M ${V.map((p) => `${p.x} ${p.y}`).join(" L ")} Z`} fill="none" stroke="currentColor" strokeWidth="2.2" />
       {doubles.map(([a, b], i) => <g key={i}>{inner(V[a], V[b])}</g>)}
       {subs.map((sub, i) => {
@@ -152,7 +152,7 @@ function Diene({ subs, doubles, tall, label }: {
  *  C–C bond printed BOLD as a distractor — no charge in the source. */
 function Item224() {
   return (
-    <svg viewBox="0 0 300 175" className="h-auto w-full text-slate-100" role="img" aria-label="3-ethylpentane with a bold bond distractor, as printed">
+    <svg fill="currentColor" viewBox="0 0 300 175" className="h-auto w-full text-slate-100" role="img" aria-label="3-ethylpentane with a bold bond distractor, as printed">
       <g fill="none" stroke="currentColor" strokeWidth="2.3" strokeLinecap="round">
         <path d="M52 118 88 138 124 110" />
         <path d="M162 138 198 118" />
@@ -169,7 +169,7 @@ function Item224() {
 /** (225) 3-ethylhexane exactly as printed: propyl up, two ethyl arms, H at C3. */
 function Item225() {
   return (
-    <svg viewBox="0 0 300 210" className="h-auto w-full text-slate-100" role="img" aria-label="3-ethylhexane, as printed">
+    <svg fill="currentColor" viewBox="0 0 300 210" className="h-auto w-full text-slate-100" role="img" aria-label="3-ethylhexane, as printed">
       <g fill="none" stroke="currentColor" strokeWidth="2.3" strokeLinecap="round">
         <path d="M56 160 92 178 128 152 164 178 200 154" />
         <path d="M128 152 142 112 122 74 138 38" />
@@ -184,7 +184,7 @@ function Item225() {
 /** (226) 5-chlorocyclopenta-1,3-diene: wedge Cl on the single sp³ carbon. */
 function Item226() {
   return (
-    <svg viewBox="0 0 200 190" className="h-auto w-full text-slate-100" role="img" aria-label="5-chlorocyclopenta-1,3-diene, as printed">
+    <svg fill="currentColor" viewBox="0 0 200 190" className="h-auto w-full text-slate-100" role="img" aria-label="5-chlorocyclopenta-1,3-diene, as printed">
       <path d="M100 48 148 88 129 148 71 148 52 88 Z" fill="none" stroke="currentColor" strokeWidth="2.2" />
       <line x1="60" y1="92" x2="76" y2="141" stroke="currentColor" strokeWidth="2" />
       <line x1="140" y1="92" x2="124" y2="141" stroke="currentColor" strokeWidth="2" />

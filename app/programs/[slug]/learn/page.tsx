@@ -102,7 +102,9 @@ export default async function ProgramLearnPage({ params }: { params: Promise<{ s
                   // Authored chapters open the canonical full-notes experience;
                   // the Chapter Engine stays one tap away. Others open the
                   // engine (engine programs) or the classic chapter workspace.
-                  const notesHref = AUTHORED_NOTES[chapter.id];
+                  const notesHref = chapter.id === "solid-state" && slug === "jee-advanced"
+                    ? "/learn/solid-state"
+                    : AUTHORED_NOTES[chapter.id];
                   const engineHref = isEngineSlug(slug)
                     ? `/programs/${slug}/chapter/${chapter.id}`
                     : `/chapter/${chapter.id}`;

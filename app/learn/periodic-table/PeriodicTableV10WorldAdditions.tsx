@@ -592,13 +592,13 @@ const egeG1: Datum[] = [
   { label: "Li", value: -60 }, { label: "Na", value: -53 }, { label: "K", value: -48 }, { label: "Rb", value: -47 }, { label: "Cs", value: -46 },
 ];
 const egeG13: Datum[] = [
-  { label: "B", value: -27 }, { label: "Al", value: -43 }, { label: "Ga", value: -29 }, { label: "In", value: -29 }, { label: "Tl", value: -30 },
+  { label: "B", value: -27 }, { label: "Al", value: -43 }, { label: "Ga", value: -29 }, { label: "In", value: -29 }, { label: "Tl", value: -19 },
 ];
 const egeG14: Datum[] = [
   { label: "C", value: -122 }, { label: "Si", value: -134 }, { label: "Ge", value: -119 }, { label: "Sn", value: -107 }, { label: "Pb", value: -35 },
 ];
 const egeG15: Datum[] = [
-  { label: "N", value: 7, note: "endothermic" }, { label: "P", value: -72 }, { label: "As", value: -78 }, { label: "Sb", value: -101 }, { label: "Bi", value: -91 },
+  { label: "N", value: 7, note: "endothermic" }, { label: "P", value: -72 }, { label: "As", value: -78 }, { label: "Sb", value: -103 }, { label: "Bi", value: -91 },
 ];
 const egeG16: Datum[] = [
   { label: "O", value: -141 }, { label: "S", value: -200 }, { label: "Se", value: -195 }, { label: "Te", value: -190 }, { label: "Po", value: -174 },

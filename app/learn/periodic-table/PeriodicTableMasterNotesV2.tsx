@@ -3046,7 +3046,7 @@ function SectionElectronGainLegacyV9() {
         accent={T.d}
       />
 
-      <H2>3 · NCERT Reference Data</H2>
+      <H2 id="electron-gain-ncert">3 · NCERT Reference Data — Table 3.7 (Groups 1, 16, 17, 18)</H2>
       <DataTable columns={["Family", "Element", "ΔegH₁ / kJ mol⁻¹", "Interpretation"]} rows={[
         ["Group 1", "H", "−73", "moderately exothermic"],
         ["Group 1", "Li", "−60", "ns¹ → ns²"],
@@ -3071,14 +3071,29 @@ function SectionElectronGainLegacyV9() {
         ["Group 18", "Xe", "+77", "unfavourable but less positive down group"],
         ["Group 18", "Rn", "+68", "unfavourable"],
       ]} accent={T.d} />
-      <DataTable columns={["Element", "Li", "Be", "B", "C", "N", "O", "F", "Ne"]} rows={[
-        ["Period-2 ΔegH₁", "−60", "+48", "−27", "−122", "+31", "−141", "−328", "+116"],
-      ]} accent={T.cyan} />
-      <DataTable columns={["Element", "Na", "Mg", "Al", "Si", "P", "S", "Cl", "Ar"]} rows={[
-        ["Period-3 ΔegH₁", "−53", "+48", "−44", "−134", "−72", "−200", "−349", "+96"],
-      ]} accent={T.gold} />
+      <Callout kind="note" title="NCERT-stated exception — O and F">
+        Δ<sub>eg</sub>H of O and F is less negative than the element that follows them (S, Cl). Reason: the incoming electron enters the compact n = 2 level and suffers strong inter-electronic repulsion; in the larger n = 3 level (S, Cl) this repulsion is much weaker.
+      </Callout>
+      <Callout kind="note" title="Scope of NCERT Table 3.7">
+        NCERT Table 3.7 deliberately restricts its tabulated values to Groups 1, 16, 17 and 18 — it does not tabulate Groups 2, 13, 14 or 15, stating the trend there is "less systematic." The extended table below sources those groups separately from the CRC Handbook.
+      </Callout>
 
-      <H2>4 · First, Second and Third Electron-Gain Steps</H2>
+      <H2 id="electron-gain-extended">4 · Extended Data (CRC Handbook) — Groups 2, 13, 14, 15</H2>
+      <DataTable columns={["Group 2", "ΔegH₁", "Group 13", "ΔegH₁", "Group 14", "ΔegH₁", "Group 15", "ΔegH₁"]} rows={[
+        ["Be", "0 (unbound)", "B", "−27", "C", "−122", "N", "+7"],
+        ["Mg", "0 (unbound)", "Al", "−43", "Si", "−134", "P", "−72"],
+        ["Ca", "−2.37", "Ga", "−29", "Ge", "−119", "As", "−78"],
+        ["Sr", "−5.03", "In", "−29", "Sn", "−107", "Sb", "−103"],
+        ["Ba", "−13.95", "Tl", "−19", "Pb", "−35", "Bi", "−91"],
+      ]} accent={T.cyan} />
+      <Callout kind="note" title="Sourcing — not merged with Table 3.7 above">
+        CRC Handbook of Chemistry and Physics electron-affinity compilation, converted to Δ<sub>eg</sub>H (Δ<sub>eg</sub>H = −EA convention, consistent with NCERT's footnote on the EA/Δ<sub>eg</sub>H sign relationship). Shown as a distinct "Extended Data (CRC)" block — deliberately kept separate from the NCERT table rather than merged into one table.
+      </Callout>
+      <Callout kind="special" title="Be and Mg: no stable gaseous anion">
+        Be ([He] 2s²) and Mg ([Ne] 3s²) have fully-filled, extra-stable ns² subshells. Adding an electron forces it into the next subshell (2p / 3p), which is higher in energy, so the process is endothermic — the same underlying reason as the noble gases, just far less extreme. Experimentally, Be⁻ and Mg⁻ do not exist as bound gas-phase anions at all — there is no stable state to measure, so CRC lists their electron affinity as effectively zero, not a specific positive number. This is different from Ca, Sr and Ba (also Group 2, also ns²-filled), which do have a very weakly bound anion (small positive Δ<sub>eg</sub>H: 2.37, 5.03, 13.95 kJ/mol respectively) — so the whole group should not be treated identically.
+      </Callout>
+
+      <H2>5 · First, Second and Third Electron-Gain Steps</H2>
       <MathBlock tex={String.raw`\mathrm{O(g)+e^-\rightarrow O^-(g)}\qquad \Delta_{eg}H_1<0`} />
       <MathBlock tex={String.raw`\mathrm{O^-(g)+e^-\rightarrow O^{2-}(g)}\qquad \Delta_{eg}H_2>0`} />
       <MathBlock tex={String.raw`\mathrm{N^{2-}(g)+e^-\rightarrow N^{3-}(g)}\qquad \Delta_{eg}H_3>0\ \text{and very large}`} />
@@ -3088,7 +3103,7 @@ function SectionElectronGainLegacyV9() {
         <React.Fragment key="cycle">The stability of a compound is decided by the complete thermochemical cycle, not by one gas-phase electron-addition step.</React.Fragment>,
       ]} />
 
-      <H2>5 · Applications</H2>
+      <H2>6 · Applications</H2>
       <DataTable columns={["Application", "How electron gain enthalpy helps", "Example / caution"]} rows={[
         ["Tendency to form anions", "a more negative first value favours gaseous anion formation", "halogens readily form X⁻"],
         ["Oxidizing behaviour", "favourable electron uptake contributes to oxidizing power", "full bond/hydration cycle is still required"],
@@ -3100,7 +3115,7 @@ function SectionElectronGainLegacyV9() {
         ["Redox thermodynamics", "electron addition is one part of reduction", "F₂ versus Cl₂ requires X–X bond and hydration terms"],
       ]} accent={T.d} />
 
-      <H2>6 · Limitations — Where a Simple Electron-Gain Rule Fails</H2>
+      <H2>7 · Limitations — Where a Simple Electron-Gain Rule Fails</H2>
       <DataTable columns={["Incorrect shortcut", "Why it fails", "Correct treatment"]} rows={[
         ["Smallest atom must have the most negative value", "compact orbitals can create severe electron repulsion", "Cl is more negative than F; S more negative than O"],
         ["More negative value means strongest oxidizing element in every medium", "bond breaking, hydration and entropy are omitted", "F₂ is strongest aqueous halogen oxidant despite Cl atom having more negative ΔegH"],
@@ -3110,7 +3125,7 @@ function SectionElectronGainLegacyV9() {
         ["A tabulated atomic value applies inside every compound", "bonding environment changes electron distribution", "use molecular/solid-state energetics for compounds"],
       ]} accent={T.p} />
 
-      <H2>7 · Solved Examples</H2>
+      <H2>8 · Solved Examples</H2>
       <WorkedExample number="E1" title="Cl versus F" question="Why is electron gain by Cl more exothermic than by F?" reasoning={["Both additions complete an np⁶ shell.", "F accepts the electron into a compact 2p orbital with strong repulsion.", "Cl accepts it into a more spacious 3p orbital while retaining strong nuclear attraction."]} answer="ΔegH(Cl) is more negative than ΔegH(F)." accent={T.d} />
       <WorkedExample number="E2" title="S versus O" question="Which has the more negative first electron gain enthalpy, O or S?" reasoning={["O is smaller, which normally favours electron gain.", "However, the incoming electron enters the crowded 2p shell of O.", "The larger 3p shell of S has less interelectronic repulsion."]} answer="S has the more negative value." accent={T.gold} />
       <WorkedExample number="E3" title="Second electron addition" question="Predict the sign of ΔegH₂ for O⁻(g) + e⁻ → O²⁻(g)." reasoning={["The electron approaches a negatively charged ion.", "Strong electrostatic repulsion must be overcome.", "The isolated gaseous process requires energy."]} answer="ΔegH₂ is positive." accent={T.p} />

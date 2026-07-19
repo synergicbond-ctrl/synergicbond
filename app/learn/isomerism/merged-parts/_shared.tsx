@@ -35,10 +35,10 @@ export function MergedSourceSection({
   children: ReactNode;
 }) {
   return (
-    <section className="overflow-hidden rounded-3xl border border-white/10 bg-white/[.025]">
-      <div className="border-b border-white/10 bg-slate-950/50 px-4 py-2 text-xs font-black uppercase tracking-[.18em] text-slate-400">
-        Internal source module {sourcePart}
-      </div>
+    <section
+      data-source-part={sourcePart}
+      className="overflow-hidden rounded-3xl border border-white/10 bg-white/[.025]"
+    >
       <div className="[&_nav]:!hidden [&>main]:!min-h-0 [&>main]:!bg-transparent [&>main]:!px-0 [&>main]:!py-0 [&>main>article]:!max-w-none">
         {children}
       </div>

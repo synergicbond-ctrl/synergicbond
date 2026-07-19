@@ -1,0 +1,13 @@
+app/learn/chemical-bonding/[part]/page.tsx
+app/learn/chemical-bonding/_components/ChemicalBondingDeepVisuals.tsx
+app/learn/chemical-bonding/_components/ChemicalBondingVisuals.tsx
+app/learn/chemical-bonding/layout.tsx
+app/learn/chemical-bonding/page.tsx
+app/learn/chemical-bonding/parts/_shared.tsx
+app/learn/chemical-bonding/parts/lesson.tsx
+app/learn/chemical-bonding/parts/practice.tsx
+app/learn/chemical-bonding/parts/topicData.ts
+components/premiumNotes/visuals/chemicalBonding.tsx
+docs/chemical-bonding-189-audit-before.md
+docs/chemical-bonding-189-coverage.md
+docs/chemical-bonding-189-rebuild-report.md

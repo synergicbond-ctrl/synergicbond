@@ -1,0 +1,1 @@
+PR #7: feat(chemical-bonding): complete authoritative 189-topic notes · merged 2026-07-19T06:05:50Z · merge commit 8238df90

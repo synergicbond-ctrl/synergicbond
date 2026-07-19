@@ -10,7 +10,7 @@
 // server-filtered notesEngine payload in app/notes/page.tsx.
 //
 // Counts audited against the live route tree on 2026-07-19:
-//   atomic-structure 25 lessons (55 sections) · chemical-bonding 13 ·
+//   atomic-structure 25 lessons (55 sections) · chemical-bonding 24 lessons (189 topics) ·
 //   thermodynamics 30 · chemical-equilibrium 18 · electrochemistry 24 ·
 //   mole-concept 15 · stoichiometry 9 · concentration-terms 6 · eudiometry 6 ·
 //   redox 10 lessons (15 sections) · hydrogen 8 lessons (72 sections) ·
@@ -124,9 +124,9 @@ export const AUTHORED_COURSES: AuthoredCourse[] = [
     syllabusId: "chemical-bonding",
     title: "Chemical Bonding",
     href: "/learn/chemical-bonding",
-    lessonLabel: "13 parts",
+    lessonLabel: "24 lessons · 189 topics",
     premium: true,
-    description: "Lewis theory, Born–Haber, Fajans' rules, dipole moment, VBT and hybridisation, VSEPR, MOT, hydrogen bonding and metallic bonding.",
+    description: "Authoritative 189-topic course — Lewis theory, lattice energy, VBT and hybridisation, VSEPR, back bonding, MOT, hydrogen bonding, silicates and integrated JEE Advanced practice.",
   },
   // ── Electrochemistry ───────────────────────────────────────────────────────
   {

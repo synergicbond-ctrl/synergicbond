@@ -1,0 +1,30 @@
+commit 8238df9042edafdcbfcc53d09d61800c9692c649
+Author: synergicbond-ctrl <synergicbond@gmail.com>
+Date:   Sun Jul 19 11:35:50 2026 +0530
+
+    feat(chemical-bonding): complete authoritative 189-topic notes (#7)
+
+ app/learn/chemical-bonding/[part]/page.tsx         |   49 +-
+ .../_components/ChemicalBondingDeepVisuals.tsx     |  293 +++
+ app/learn/chemical-bonding/page.tsx                |  165 +-
+ app/learn/chemical-bonding/parts/_shared.tsx       |  235 +-
+ app/learn/chemical-bonding/parts/lesson.tsx        |   54 +
+ app/learn/chemical-bonding/parts/part01.tsx        |   61 -
+ app/learn/chemical-bonding/parts/part02.tsx        |   68 -
+ app/learn/chemical-bonding/parts/part03.tsx        |   50 -
+ app/learn/chemical-bonding/parts/part04.tsx        |   55 -
+ app/learn/chemical-bonding/parts/part05.tsx        |   53 -
+ app/learn/chemical-bonding/parts/part06.tsx        |   48 -
+ app/learn/chemical-bonding/parts/part07.tsx        |   40 -
+ app/learn/chemical-bonding/parts/part08.tsx        |   60 -
+ app/learn/chemical-bonding/parts/part09.tsx        |   69 -
+ app/learn/chemical-bonding/parts/part10.tsx        |   76 -
+ app/learn/chemical-bonding/parts/part11.tsx        |   52 -
+ app/learn/chemical-bonding/parts/part12.tsx        |   48 -
+ app/learn/chemical-bonding/parts/part13.tsx        |   99 -
+ app/learn/chemical-bonding/parts/practice.tsx      |   58 +
+ app/learn/chemical-bonding/parts/topicData.ts      | 2448 ++++++++++++++++++++
+ docs/chemical-bonding-189-audit-before.md          |  207 ++
+ docs/chemical-bonding-189-coverage.md              |  206 ++
+ docs/chemical-bonding-189-rebuild-report.md        |   54 +
+ 23 files changed, 3460 insertions(+), 1088 deletions(-)

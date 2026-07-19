@@ -1,0 +1,17 @@
+import Link from "next/link";
+
+function StrainDiagram({kind}:{kind:"vdw"|"torsional"}) {
+  const torsional=kind==="torsional";
+  return <svg viewBox="0 0 280 180" className="w-full" role="img" aria-label={`${kind} strain in an eclipsed conformation`}>
+    <circle cx="110" cy="93" r="38" fill="none" stroke="#e2e8f0" strokeWidth="2" /><circle cx="110" cy="93" r="7" fill="#f0abfc" />
+    <path d="M110 93V38M110 93 58 123M110 93 162 123" stroke="#f0abfc" strokeWidth="3" />
+    <path d="M110 93V38M110 93 58 123M110 93 162 123" stroke="#67e8f9" strokeWidth="2" />
+    <text x="104" y="30" fill="#f9a8d4" fontSize="17">Z</text><text x="43" y="143" fill="#f9a8d4" fontSize="16">H</text><text x="164" y="143" fill="#f9a8d4" fontSize="16">H</text>
+    <text x="118" y="30" fill="#a5f3fc" fontSize="17">Z</text><text x="56" y="130" fill="#a5f3fc" fontSize="16">H</text><text x="151" y="130" fill="#a5f3fc" fontSize="16">H</text>
+    {torsional ? <><path d="M119 36V75M125 36V75" stroke="#0f172a" strokeWidth="4" strokeDasharray="3 3" /><text x="183" y="74" fill="#fcd34d" fontSize="15">bond-pair</text><text x="183" y="94" fill="#fcd34d" fontSize="15">repulsion</text></> : <><ellipse cx="112" cy="35" rx="35" ry="19" fill="none" stroke="#22c55e" strokeDasharray="3 3" /><text x="175" y="52" fill="#86efac" fontSize="15">steric overlap</text></>}
+  </svg>;
+}
+
+export default function IsomerismPart110() {
+ return <main className="min-h-screen bg-[#08111f] px-4 py-8 text-white sm:px-6 sm:py-12"><article className="mx-auto max-w-5xl"><Link href="/learn/isomerism" className="rounded-full border border-cyan-300/30 bg-cyan-300/10 px-4 py-2 text-sm font-bold text-cyan-100">Isomerism</Link><header className="mt-6 rounded-3xl border border-cyan-300/15 bg-[#08111f] p-6 sm:p-9"><p className="text-xs font-black uppercase tracking-[.24em] text-cyan-200">Isomerism source · page 100 · Part 110</p><h1 className="mt-3 text-3xl font-black sm:text-5xl">van der Waals strain and torsional strain</h1></header><section className="mt-7 grid gap-5 md:grid-cols-2"><article className="rounded-2xl border border-white/10 bg-white/[.035] p-5"><h2 className="text-2xl font-black text-cyan-100">van der Waals strain</h2><p className="mt-3 text-sm leading-7 text-slate-300">Strain due to steric repulsion between front and back atom valencies is called <b>van der Waals strain</b>. It increases as non-bonded groups are brought closer in the eclipsing direction.</p><StrainDiagram kind="vdw"/><p className="text-sm leading-7 text-slate-300"><b>Source repulsion order:</b> anti &lt; gauche &lt; partially eclipsed &lt; fully eclipsed.</p></article><article className="rounded-2xl border border-white/10 bg-white/[.035] p-5"><h2 className="text-2xl font-black text-cyan-100">Torsional strain</h2><p className="mt-3 text-sm leading-7 text-slate-300">The repulsion between bond-pair electrons is torsional strain. The source emphasizes that it is independent of the type of atom; it depends on the eclipsing alignment of bonds.</p><StrainDiagram kind="torsional"/><p className="text-sm leading-7 text-slate-300"><b>Source repulsion order:</b> anti = gauche &lt; partially eclipsed = fully eclipsed.</p></article></section><aside className="mt-7 rounded-2xl border border-amber-300/25 bg-amber-300/[.07] p-5 text-sm leading-7 text-amber-50"><b>Exam distinction:</b> anti is lower than gauche when steric/van der Waals interaction matters, but those two staggered forms have the same torsional relationship because their bonds are equally offset.</aside></article></main>;
+}

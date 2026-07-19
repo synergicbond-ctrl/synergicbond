@@ -6,6 +6,8 @@ const STROKE = "currentColor";
 const CYAN = "#67e8f9";
 const VIOLET = "#c4b5fd";
 const GREEN = "#86efac";
+const AMBER = "#fbbf24";
+const PINK = "#f472b6";
 
 function SolidWedge({
   from,
@@ -122,6 +124,63 @@ function PlaneOfSymmetryExamples() {
   );
 }
 
+function TetrahedralCenter({
+  cx,
+  top,
+  left,
+  right,
+  frontLabel,
+  posCount,
+}: {
+  cx: number;
+  top: string;
+  left: string;
+  right: string;
+  frontLabel: string;
+  posCount: string;
+}) {
+  const cy = 90;
+  return (
+    <g transform={`translate(${cx} 0)`}>
+      <line x1="0" y1={cy} x2="0" y2={cy - 65} stroke={STROKE} strokeWidth="3" />
+      <line x1="0" y1={cy} x2="-58" y2={cy + 40} stroke={STROKE} strokeWidth="3" />
+      <line x1="0" y1={cy} x2="58" y2={cy + 40} stroke={STROKE} strokeWidth="3" />
+      <line x1="0" y1={cy} x2="0" y2={cy + 55} stroke={STROKE} strokeWidth="2" strokeDasharray="4 4" />
+      <circle cx="0" cy={cy} r="4" fill={STROKE} />
+      <text x="0" y={cy - 78} textAnchor="middle" fontSize="16">{top}</text>
+      <text x="-70" y={cy + 58} textAnchor="middle" fontSize="16">{left}</text>
+      <text x="70" y={cy + 58} textAnchor="middle" fontSize="16">{right}</text>
+      <text x="0" y={cy + 90} textAnchor="middle" fontSize="15">{frontLabel}</text>
+      <text
+        x="0"
+        y={cy + 118}
+        textAnchor="middle"
+        fontSize="16"
+        fontWeight="700"
+        fill={posCount === "0" ? "#fca5a5" : CYAN}
+      >
+        POS = {posCount}
+      </text>
+    </g>
+  );
+}
+
+function POSCountingGallery() {
+  return (
+    <svg fill="currentColor"
+      viewBox="0 0 720 240"
+      className="h-auto w-full text-slate-100"
+      role="img"
+      aria-label="Counting planes of symmetry on a tetrahedral centre as substituents change"
+    >
+      <TetrahedralCenter cx={90} top="H" left="H" right="H" frontLabel="H (4th, front)" posCount="6" />
+      <TetrahedralCenter cx={270} top="F" left="D" right="T" frontLabel="H (4th, front)" posCount="0" />
+      <TetrahedralCenter cx={450} top="F" left="Cl" right="F" frontLabel="F (4th, front)" posCount="3" />
+      <TetrahedralCenter cx={630} top="F" left="Cl" right="Cl" frontLabel="F (4th, front)" posCount="2" />
+    </svg>
+  );
+}
+
 function ProperAxes() {
   return (
     <svg fill="currentColor"
@@ -219,6 +278,175 @@ function ProperAxes() {
   );
 }
 
+function RealMoleculeCnGallery() {
+  return (
+    <svg fill="currentColor"
+      viewBox="0 0 760 260"
+      className="h-auto w-full text-slate-100"
+      role="img"
+      aria-label="Cn axes in BF3, benzene and the cyclopentadienyl anion"
+    >
+      {/* BF3 trigonal planar, C3 */}
+      <g transform="translate(90 130)">
+        <circle cx="0" cy="0" r="6" fill={VIOLET} />
+        {[ -90, 30, 150 ].map((angle) => {
+          const r = (angle * Math.PI) / 180;
+          const ex = Math.cos(r) * 78;
+          const ey = Math.sin(r) * 78;
+          return (
+            <g key={angle}>
+              <line x1="0" y1="0" x2={ex} y2={ey} stroke={STROKE} strokeWidth="3" />
+              <text
+                x={ex * 1.28}
+                y={ey * 1.28}
+                textAnchor="middle"
+                fontSize="16"
+                fontWeight="700"
+              >
+                F
+              </text>
+            </g>
+          );
+        })}
+        <line x1="0" y1="-118" x2="0" y2="118" stroke={CYAN} strokeWidth="3" strokeDasharray="6 5" />
+        <text x="0" y="150" textAnchor="middle" fill={CYAN} fontSize="16">BF₃ · C₃</text>
+      </g>
+
+      {/* Benzene hexagon, C6 */}
+      <g transform="translate(360 30)">
+        <path
+          d="M60 0 L120 33 L120 100 L60 133 L0 100 L0 33 Z"
+          fill="none"
+          stroke={STROKE}
+          strokeWidth="3"
+        />
+        <circle cx="60" cy="66" r="30" fill="none" stroke={STROKE} strokeWidth="3" />
+        <line x1="60" y1="-30" x2="60" y2="163" stroke={CYAN} strokeWidth="3" strokeDasharray="6 5" />
+        <text x="60" y="188" textAnchor="middle" fill={CYAN} fontSize="16">
+          benzene · C₆
+        </text>
+      </g>
+
+      {/* Cyclopentadienyl anion pentagon, C5 */}
+      <g transform="translate(600 25)">
+        <path
+          d="M65 0 L124 40 L101 108 L29 108 L6 40 Z"
+          fill="none"
+          stroke={STROKE}
+          strokeWidth="3"
+        />
+        <circle cx="65" cy="10" r="14" fill="none" stroke={STROKE} strokeWidth="2" />
+        <text x="65" y="15" textAnchor="middle" fontSize="13" fontWeight="700">−</text>
+        <line x1="65" y1="-38" x2="65" y2="165" stroke={CYAN} strokeWidth="3" strokeDasharray="6 5" />
+        <text x="65" y="195" textAnchor="middle" fill={CYAN} fontSize="15">
+          Cp⁻ · C₅
+        </text>
+      </g>
+    </svg>
+  );
+}
+
+function CubeFrame({ children }: { children?: React.ReactNode }) {
+  const FBL = { x: 0, y: 100 };
+  const FBR = { x: 100, y: 100 };
+  const FTL = { x: 0, y: 0 };
+  const FTR = { x: 100, y: 0 };
+  const BBL = { x: 40, y: 70 };
+  const BBR = { x: 140, y: 70 };
+  const BTL = { x: 40, y: -30 };
+  const BTR = { x: 140, y: -30 };
+
+  const edge = (a: Point, b: Point, dashed = false) => (
+    <line
+      x1={a.x}
+      y1={a.y}
+      x2={b.x}
+      y2={b.y}
+      stroke={PINK}
+      strokeWidth="2.5"
+      strokeDasharray={dashed ? "4 4" : undefined}
+    />
+  );
+
+  return (
+    <g>
+      {edge(FTL, FTR)}
+      {edge(FTR, FBR)}
+      {edge(FBR, FBL)}
+      {edge(FBL, FTL, true)}
+      {edge(FTL, BTL)}
+      {edge(FTR, BTR)}
+      {edge(FBR, BBR)}
+      {edge(FBL, BBL, true)}
+      {edge(BTL, BTR)}
+      {edge(BTR, BBR)}
+      {edge(BBR, BBL, true)}
+      {edge(BBL, BTL, true)}
+      {children}
+    </g>
+  );
+}
+
+function CubePOSDiagram() {
+  return (
+    <svg fill="currentColor"
+      viewBox="-20 -60 380 200"
+      className="h-auto w-full text-slate-100"
+      role="img"
+      aria-label="Rectangular and diagonal planes of symmetry in a cube"
+    >
+      <g transform="translate(0 30)">
+        <CubeFrame>
+          <polygon points="50,-30 50,100 90,70 90,-60" fill={GREEN} fillOpacity="0.25" stroke={GREEN} strokeWidth="2" />
+        </CubeFrame>
+        <text x="70" y="130" textAnchor="middle" fontSize="15" fill={GREEN}>3 rectangular POS</text>
+      </g>
+      <g transform="translate(220 30)">
+        <CubeFrame>
+          <polygon points="0,100 140,-30 140,70 0,100" fill={VIOLET} fillOpacity="0.22" stroke={VIOLET} strokeWidth="2" />
+        </CubeFrame>
+        <text x="70" y="130" textAnchor="middle" fontSize="15" fill={VIOLET}>6 diagonal POS</text>
+      </g>
+      <text x="170" y="-40" textAnchor="middle" fontSize="17" fontWeight="700" fill={CYAN}>
+        total POS in a cube = 3 + 6 = 9
+      </text>
+    </svg>
+  );
+}
+
+function CubeAOSDiagram() {
+  return (
+    <svg fill="currentColor"
+      viewBox="-20 -60 380 210"
+      className="h-auto w-full text-slate-100"
+      role="img"
+      aria-label="C4 C3 and C2 axes counted on a cube"
+    >
+      <g transform="translate(0 30)">
+        <CubeFrame>
+          <line x1="70" y1="-70" x2="70" y2="120" stroke={AMBER} strokeWidth="3" strokeDasharray="6 4" />
+        </CubeFrame>
+        <text x="70" y="140" textAnchor="middle" fontSize="14" fill={AMBER}>C₄ × 3 (face–face)</text>
+      </g>
+      <g transform="translate(140 30)">
+        <CubeFrame>
+          <line x1="0" y1="100" x2="140" y2="-30" stroke={VIOLET} strokeWidth="3" strokeDasharray="6 4" />
+        </CubeFrame>
+        <text x="70" y="140" textAnchor="middle" fontSize="14" fill={VIOLET}>C₃ × 4 (corner–corner)</text>
+      </g>
+      <g transform="translate(280 30)">
+        <CubeFrame>
+          <line x1="20" y1="118" x2="120" y2="-58" stroke={CYAN} strokeWidth="3" strokeDasharray="6 4" />
+        </CubeFrame>
+        <text x="70" y="140" textAnchor="middle" fontSize="14" fill={CYAN}>C₂ × 6 (edge–edge)</text>
+      </g>
+      <text x="170" y="-40" textAnchor="middle" fontSize="17" fontWeight="700" fill={GREEN}>
+        total AOS in a cube = 3 + 4 + 6 = 13
+      </text>
+    </svg>
+  );
+}
+
 function ImproperAxisS4() {
   return (
     <svg fill="currentColor"
@@ -271,6 +499,80 @@ function ImproperAxisS4() {
       </text>
       <text x="320" y="320" textAnchor="middle" fill={CYAN} fontSize="18">
         S₄ operation
+      </text>
+    </svg>
+  );
+}
+
+function SnCyclobutaneDemo() {
+  const diamond = (cx: number, labels: [string, string, string, string]) => (
+    <g transform={`translate(${cx} 0)`}>
+      <line x1="-85" y1="0" x2="0" y2="55" stroke={STROKE} strokeWidth="3" />
+      <line x1="0" y1="55" x2="85" y2="0" stroke={STROKE} strokeWidth="3" />
+      <line x1="85" y1="0" x2="0" y2="-55" stroke={STROKE} strokeWidth="3" />
+      <line x1="0" y1="-55" x2="-85" y2="0" stroke={STROKE} strokeWidth="3" />
+      <line x1="-85" y1="0" x2="-85" y2="-58" stroke={STROKE} strokeWidth="2.5" />
+      <line x1="85" y1="0" x2="85" y2="58" stroke={STROKE} strokeWidth="2.5" />
+      <line x1="0" y1="-55" x2="0" y2="-113" stroke={STROKE} strokeWidth="2.5" />
+      <line x1="0" y1="55" x2="0" y2="113" stroke={STROKE} strokeWidth="2.5" />
+      <text x="-85" y="-72" textAnchor="middle" fontSize="15">{labels[0]}</text>
+      <text x="85" y="80" textAnchor="middle" fontSize="15">{labels[1]}</text>
+      <text x="0" y="-128" textAnchor="middle" fontSize="15">{labels[2]}</text>
+      <text x="0" y="132" textAnchor="middle" fontSize="15">{labels[3]}</text>
+    </g>
+  );
+
+  return (
+    <svg fill="currentColor"
+      viewBox="0 0 620 300"
+      className="h-auto w-full text-slate-100"
+      role="img"
+      aria-label="S2 and S4 alternating axes on substituted cyclobutanes"
+    >
+      <g transform="translate(150 150)">
+        {diamond(0, ["H", "H", "CH₃", "CH₃"])}
+        <line x1="0" y1="-135" x2="0" y2="140" stroke={AMBER} strokeWidth="2.5" strokeDasharray="5 4" />
+        <text x="0" y="175" textAnchor="middle" fill={AMBER} fontSize="17">S₂</text>
+      </g>
+      <g transform="translate(460 150)">
+        {diamond(0, ["H", "H", "CH₃", "CH₃"])}
+        <text x="0" y="-95" textAnchor="middle" fontSize="13">(CH₃, H interchanged front/back)</text>
+        <line x1="0" y1="-135" x2="0" y2="140" stroke={VIOLET} strokeWidth="2.5" strokeDasharray="5 4" />
+        <text x="0" y="175" textAnchor="middle" fill={VIOLET} fontSize="17">S₄</text>
+      </g>
+    </svg>
+  );
+}
+
+function SpiroAAOSExample() {
+  return (
+    <svg fill="currentColor"
+      viewBox="0 0 560 260"
+      className="h-auto w-full text-slate-100"
+      role="img"
+      aria-label="Spiro dipyrrolidinium ion showing AAOS without POS or COS"
+    >
+      <g transform="translate(280 130)">
+        <circle cx="0" cy="0" r="7" fill={AMBER} />
+        <text x="0" y="5" textAnchor="middle" fontSize="12" fontWeight="700">N⁺</text>
+
+        <path d="M0 0 L-95 -35 L-115 -95 L-55 -120 L20 -75 Z" fill="none" stroke={STROKE} strokeWidth="2.5" />
+        <path d="M0 0 L95 35 L115 95 L55 120 L-20 75 Z" fill="none" stroke={STROKE} strokeWidth="2.5" />
+
+        <text x="-100" y="-100" fontSize="14">CH₃</text>
+        <text x="-30" y="-88" fontSize="14">H</text>
+        <text x="-135" y="-40" fontSize="14">H</text>
+        <text x="-60" y="-30" fontSize="14">CH₃</text>
+
+        <text x="100" y="100" fontSize="14">CH₃</text>
+        <text x="30" y="90" fontSize="14">H</text>
+        <text x="135" y="45" fontSize="14">H</text>
+        <text x="60" y="35" fontSize="14">CH₃</text>
+
+        <line x1="-130" y1="-10" x2="130" y2="10" stroke={VIOLET} strokeWidth="2.5" strokeDasharray="5 4" />
+      </g>
+      <text x="280" y="245" textAnchor="middle" fontSize="16">
+        3,4,3′,4′-tetramethyl-[4.4]spirodipyrrolidinium: <tspan fill="#fca5a5">POS ✗</tspan> · <tspan fill="#fca5a5">COS ✗</tspan> · <tspan fill={GREEN}>S₄ (AAOS) ✓</tspan>
       </text>
     </svg>
   );
@@ -356,6 +658,110 @@ function CentreOfInversion() {
         <text x="117" y="215" textAnchor="middle" fill={CYAN} fontSize="17">
           inversion centre i
         </text>
+      </g>
+    </svg>
+  );
+}
+
+function CubeCOSDiagram() {
+  return (
+    <svg fill="currentColor"
+      viewBox="-20 -60 260 210"
+      className="h-auto w-full text-slate-100"
+      role="img"
+      aria-label="Single centre of symmetry at the centroid of a cube"
+    >
+      <g transform="translate(0 30)">
+        <CubeFrame>
+          <line x1="0" y1="100" x2="140" y2="-30" stroke={PINK} strokeWidth="1.5" strokeDasharray="3 4" opacity="0.6" />
+          <line x1="140" y1="100" x2="0" y2="-30" stroke={PINK} strokeWidth="1.5" strokeDasharray="3 4" opacity="0.6" />
+          <line x1="0" y1="0" x2="140" y2="70" stroke={PINK} strokeWidth="1.5" strokeDasharray="3 4" opacity="0.6" />
+          <line x1="100" y1="0" x2="40" y2="70" stroke={PINK} strokeWidth="1.5" strokeDasharray="3 4" opacity="0.6" />
+          <circle cx="70" cy="35" r="6" fill={AMBER} />
+        </CubeFrame>
+        <text x="70" y="140" textAnchor="middle" fontSize="15" fill={AMBER}>
+          1 centre of symmetry
+        </text>
+      </g>
+      <text x="110" y="-40" textAnchor="middle" fontSize="16" fontWeight="700" fill={CYAN}>
+        POS(9) + COS(1) + AOS(13) = 23 total symmetry elements
+      </text>
+    </svg>
+  );
+}
+
+function AllenePOSDemo() {
+  return (
+    <svg fill="currentColor"
+      viewBox="0 0 700 190"
+      className="h-auto w-full text-slate-100"
+      role="img"
+      aria-label="Centre of symmetry test on allene-type molecules"
+    >
+      {[
+        { cx: 110, l: ["H", "H"], r: ["H", "H"], ok: true },
+        { cx: 380, l: ["H", "CH₃"], r: ["CH₃", "H"], ok: true },
+        { cx: 610, l: ["H", "CH₃"], r: ["CH₃", "Cl"], ok: false },
+      ].map(({ cx, l, r, ok }) => (
+        <g key={cx} transform={`translate(${cx} 95)`}>
+          <line x1="-70" y1="-45" x2="0" y2="0" stroke={STROKE} strokeWidth="3" />
+          <line x1="-70" y1="45" x2="0" y2="0" stroke={STROKE} strokeWidth="3" />
+          <line x1="70" y1="-45" x2="0" y2="0" stroke={STROKE} strokeWidth="3" />
+          <line x1="70" y1="45" x2="0" y2="0" stroke={STROKE} strokeWidth="3" />
+          <circle cx="0" cy="0" r="5" fill={VIOLET} />
+          <text x="-88" y="-50" fontSize="15">{l[0]}</text>
+          <text x="-88" y="58" fontSize="15">{l[1]}</text>
+          <text x="88" y="-50" fontSize="15">{r[0]}</text>
+          <text x="88" y="58" fontSize="15">{r[1]}</text>
+          <text x="0" y="88" textAnchor="middle" fontSize="16" fontWeight="700" fill={ok ? GREEN : "#fca5a5"}>
+            COS {ok ? "✓" : "✗"}
+          </text>
+        </g>
+      ))}
+    </svg>
+  );
+}
+
+function COSRealMoleculeGallery() {
+  return (
+    <svg fill="currentColor"
+      viewBox="0 0 760 230"
+      className="h-auto w-full text-slate-100"
+      role="img"
+      aria-label="Centre of symmetry present or absent in real molecules"
+    >
+      {/* 1,4-disubstituted cyclohexane, COS present */}
+      <g transform="translate(100 35)">
+        <path d="M60 0 L120 33 L120 100 L60 133 L0 100 L0 33 Z" fill="none" stroke={STROKE} strokeWidth="3" />
+        <line x1="60" y1="0" x2="60" y2="-35" stroke={STROKE} strokeWidth="4" />
+        <line x1="60" y1="133" x2="60" y2="168" stroke={STROKE} strokeWidth="2" strokeDasharray="4 3" />
+        <circle cx="60" cy="66" r="6" fill={VIOLET} />
+        <text x="60" y="-45" textAnchor="middle" fontSize="15">Cl</text>
+        <text x="60" y="188" textAnchor="middle" fontSize="15">Cl</text>
+        <text x="60" y="215" textAnchor="middle" fill={GREEN} fontSize="16" fontWeight="700">COS ✓</text>
+      </g>
+
+      {/* equilateral triangle, COS absent */}
+      <g transform="translate(340 55)">
+        <path d="M60 0 L120 105 L0 105 Z" fill="none" stroke={STROKE} strokeWidth="3" />
+        <text x="60" y="-12" textAnchor="middle" fontSize="15">H</text>
+        <text x="-14" y="122" textAnchor="middle" fontSize="15">H</text>
+        <text x="134" y="122" textAnchor="middle" fontSize="15">H</text>
+        <text x="60" y="185" textAnchor="middle" fill="#fca5a5" fontSize="16" fontWeight="700">COS ✗</text>
+      </g>
+
+      {/* alternating hexasubstituted benzene, COS present */}
+      <g transform="translate(560 25)">
+        <path d="M65 0 L124 33 L124 99 L65 132 L6 99 L6 33 Z" fill="none" stroke={STROKE} strokeWidth="3" />
+        <circle cx="65" cy="66" r="26" fill="none" stroke={STROKE} strokeWidth="2" />
+        {[
+          [65, -20, "Cl"], [140, 20, "Br"], [140, 112, "F"],
+          [65, 152, "Cl"], [-10, 112, "Br"], [-10, 20, "F"],
+        ].map(([x, y, label]) => (
+          <text key={`${x}-${y}`} x={x as number} y={y as number} textAnchor="middle" fontSize="14">{label}</text>
+        ))}
+        <circle cx="65" cy="66" r="5" fill={VIOLET} />
+        <text x="65" y="200" textAnchor="middle" fill={GREEN} fontSize="16" fontWeight="700">COS ✓</text>
       </g>
     </svg>
   );
@@ -581,6 +987,41 @@ function MesoVsEnantiomer() {
   );
 }
 
+function GlyceraldehydeMirrorTest() {
+  return (
+    <svg fill="currentColor"
+      viewBox="0 0 620 300"
+      className="h-auto w-full text-slate-100"
+      role="img"
+      aria-label="Glyceraldehyde and cyclopropane mirror pair relationship tests"
+    >
+      <line x1="310" y1="20" x2="310" y2="280" stroke={VIOLET} strokeWidth="3" strokeDasharray="8 6" />
+      {[130, 490].map((x, i) => (
+        <g key={x}>
+          <line x1={x} y1="60" x2={x} y2="200" stroke={STROKE} strokeWidth="3" />
+          <line x1={x - 60} y1="130" x2={x + 60} y2="130" stroke={STROKE} strokeWidth="3" />
+          <text x={x - 22} y="42" fontSize="17">CHO</text>
+          <text x={x - 35} y="222" fontSize="17">CH₂OH</text>
+          {i === 0 ? (
+            <>
+              <text x={x - 100} y="136" fontSize="17">H</text>
+              <text x={x + 75} y="136" fontSize="17">OH</text>
+            </>
+          ) : (
+            <>
+              <text x={x - 108} y="136" fontSize="17">HO</text>
+              <text x={x + 78} y="136" fontSize="17">H</text>
+            </>
+          )}
+        </g>
+      ))}
+      <text x="310" y="270" textAnchor="middle" fontSize="17" fill={GREEN} fontWeight="700">
+        non-superimposable mirror images → enantiomers
+      </text>
+    </svg>
+  );
+}
+
 export default function IsomerismPart12() {
   return (
     <main className="min-h-screen bg-[#08111f] px-4 py-8 text-white sm:px-6 sm:py-12">
@@ -614,6 +1055,22 @@ export default function IsomerismPart12() {
             <div className="mt-4 overflow-x-auto rounded-xl border border-cyan-300/20 bg-[#050b16] p-3">
               <PlaneOfSymmetryExamples />
             </div>
+            <p className="mt-4 text-sm font-bold text-cyan-200">
+              Counting POS on a substituted tetrahedral centre CXYZW
+            </p>
+            <div className="mt-3 overflow-x-auto rounded-xl border border-cyan-300/20 bg-[#050b16] p-3">
+              <POSCountingGallery />
+            </div>
+            <ul className="mt-4 list-disc space-y-2 pl-5 text-sm leading-6 text-slate-300">
+              <li>CH₄ (4 identical groups): 6 planes of symmetry.</li>
+              <li>CHDTF (4 completely different groups): 0 planes — this is the chiral test case.</li>
+              <li>CX₃Y (3 identical + 1 different): 3 planes.</li>
+              <li>CX₂Y₂ (2 identical pairs): 2 planes.</li>
+              <li>A rectangle contributes exactly 1 diagonal POS; a cube contributes 9 (3 rectangular + 6 diagonal).</li>
+            </ul>
+            <div className="mt-4 overflow-x-auto rounded-xl border border-violet-300/20 bg-[#050b16] p-3">
+              <CubePOSDiagram />
+            </div>
           </section>
 
           <section className="rounded-2xl border border-white/10 bg-white/[.035] p-5">
@@ -626,30 +1083,77 @@ export default function IsomerismPart12() {
             <p className="mt-3 text-sm leading-7 text-slate-300">
               Rotation through 360°/n must return an indistinguishable
               orientation. A Cₙ axis by itself does not make a molecule
-              achiral.
+              achiral — it merely relabels equivalent atoms.
+            </p>
+            <div className="mt-4 overflow-x-auto rounded-xl border border-violet-300/20 bg-[#050b16] p-3">
+              <RealMoleculeCnGallery />
+            </div>
+            <div className="mt-4 overflow-x-auto rounded-xl border border-cyan-300/20 bg-[#050b16] p-3">
+              <CubeAOSDiagram />
+            </div>
+            <p className="mt-3 text-sm leading-7 text-slate-300">
+              <span className="font-bold text-cyan-200">Rule:</span> if a
+              molecule possesses a Cₙ axis, it either has exactly n perpendicular
+              C₂ axes, or none at all — never a number in between. XeF₄ (C₄) has
+              4×C₂, benzene (C₆) has 6×C₂, and the cyclopentadienyl anion (C₅)
+              has 5×C₂.
             </p>
           </section>
 
           <section className="rounded-2xl border border-white/10 bg-white/[.035] p-5">
             <h2 className="text-xl font-black text-cyan-200">
-              Alternating / improper axis Sₙ
+              Alternating / improper axis Sₙ (AAOS)
             </h2>
             <div className="mt-4 overflow-x-auto rounded-xl border border-violet-300/20 bg-[#050b16] p-3">
               <ImproperAxisS4 />
             </div>
             <p className="mt-3 text-sm leading-7 text-slate-300">
-              An Sₙ operation is a rotation by 360°/n followed by reflection in
-              a plane perpendicular to that axis. Presence of an improper
-              rotation axis is incompatible with molecular chirality.
+              A molecule possesses an n-fold AAOS if rotation by 360°/n about
+              the axis, followed by reflection in the plane perpendicular to
+              that axis, reproduces a molecule indistinguishable from the
+              original. Generally, compounds that possess POS or COS also
+              possess an AAOS — but the converse is not guaranteed to be
+              needed, since AAOS is the most general symmetry test.
             </p>
+            <div className="mt-4 overflow-x-auto rounded-xl border border-cyan-300/20 bg-[#050b16] p-3">
+              <SnCyclobutaneDemo />
+            </div>
+            <p className="mt-3 text-sm leading-7 text-slate-300">
+              The decisive example is the 3,4,3′,4′-tetramethyl-[4.4]spirodipyrrolidinium
+              ion: it has no plane of symmetry and no centre of symmetry, yet it
+              is achiral because it possesses an S₄ axis through the spiro
+              nitrogen.
+            </p>
+            <div className="mt-4 overflow-x-auto rounded-xl border border-amber-300/20 bg-[#050b16] p-3">
+              <SpiroAAOSExample />
+            </div>
           </section>
 
           <section className="rounded-2xl border border-white/10 bg-white/[.035] p-5">
             <h2 className="text-xl font-black text-cyan-200">
-              Centre of inversion (i)
+              Centre of symmetry (i) — inversion centre
             </h2>
+            <p className="mt-2 text-sm leading-7 text-slate-300">
+              A centre of symmetry is a point from which lines drawn to one
+              side and produced an equal distance on the other side meet an
+              identical point of the molecule. A compound can have{" "}
+              <span className="font-bold text-cyan-200">at most one</span>{" "}
+              centre of symmetry.
+            </p>
             <div className="mt-4 overflow-x-auto rounded-xl border border-cyan-300/20 bg-[#050b16] p-3">
               <CentreOfInversion />
+            </div>
+            <p className="mt-4 text-sm leading-7 text-slate-300">
+              Testing symmetric versus unsymmetric allene-type centres:
+            </p>
+            <div className="mt-3 overflow-x-auto rounded-xl border border-violet-300/20 bg-[#050b16] p-3">
+              <AllenePOSDemo />
+            </div>
+            <div className="mt-4 overflow-x-auto rounded-xl border border-cyan-300/20 bg-[#050b16] p-3">
+              <CubeCOSDiagram />
+            </div>
+            <div className="mt-4 overflow-x-auto rounded-xl border border-violet-300/20 bg-[#050b16] p-3">
+              <COSRealMoleculeGallery />
             </div>
           </section>
 
@@ -693,6 +1197,46 @@ export default function IsomerismPart12() {
 
           <section className="rounded-2xl border border-white/10 bg-white/[.035] p-5">
             <h2 className="text-xl font-black text-cyan-200">
+              Enantiomers
+            </h2>
+            <p className="mt-2 text-sm leading-7 text-slate-300">
+              Optically active compounds that are non-superimposable mirror
+              images of each other are called enantiomers.
+            </p>
+            <div className="mt-4 overflow-x-auto rounded-xl border border-violet-300/20 bg-[#050b16] p-3">
+              <GlyceraldehydeMirrorTest />
+            </div>
+            <p className="mt-4 text-sm font-bold text-cyan-200">Properties of enantiomers</p>
+            <ul className="mt-3 list-disc space-y-3 pl-5 text-sm leading-6 text-slate-300">
+              <li>
+                Identical physical and chemical properties (m.p., b.p., density,
+                refractive index) except optical rotation, which is equal in
+                magnitude but opposite in sign.{" "}
+                <span className="text-slate-400">
+                  e.g. (+)-limonene smells of orange, (−)-limonene smells of lemon.
+                </span>
+              </li>
+              <li>
+                Identical chemical behaviour except in the presence of a chiral
+                reagent or chiral solvent, where their rates of reaction differ.
+              </li>
+              <li>
+                May differ physiologically — (−)-nicotine is more poisonous than
+                (+)-nicotine; (+)-histidine tastes sweet while (−)-histidine is
+                tasteless.
+              </li>
+            </ul>
+            <p className="mt-4 text-sm leading-7 text-slate-300">
+              There are three equivalent ways to draw an enantiomeric pair,
+              because the mirror can conceptually be placed at any of three
+              positions around the stereocentre — the molecule and its
+              reflection are always related the same way regardless of where
+              the mirror is imagined to sit.
+            </p>
+          </section>
+
+          <section className="rounded-2xl border border-white/10 bg-white/[.035] p-5">
+            <h2 className="text-xl font-black text-cyan-200">
               Enantiomer versus meso relationship
             </h2>
             <div className="mt-4 overflow-x-auto rounded-xl border border-cyan-300/20 bg-[#050b16] p-3">
@@ -705,7 +1249,9 @@ export default function IsomerismPart12() {
               </li>
               <li>
                 Meso compounds contain stereogenic centres but are achiral by
-                internal symmetry.
+                internal symmetry — the same molecule can display a POS in its
+                eclipsed Fischer form and a COS in an anti-periplanar
+                conformer.
               </li>
               <li>
                 A stereogenic carbon alone does not guarantee net optical

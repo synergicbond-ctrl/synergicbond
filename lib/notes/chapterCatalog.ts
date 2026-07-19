@@ -14,7 +14,7 @@
 //   thermodynamics 30 · chemical-equilibrium 18 · electrochemistry 24 ·
 //   mole-concept 15 · stoichiometry 9 · concentration-terms 6 · eudiometry 6 ·
 //   redox 10 lessons (15 sections) · hydrogen 8 lessons (72 sections) ·
-//   periodic-table master notes.
+//   periodic-table master notes · isomerism 40 parts (169 source modules).
 // ─────────────────────────────────────────────────────────────────────────────
 
 export interface AuthoredCourse {
@@ -117,6 +117,16 @@ export const AUTHORED_COURSES: AuthoredCourse[] = [
     lessonLabel: "18 parts",
     premium: false,
     description: "Eighteen continuous parts covering mass action, Kc/Kp/Kx, reaction Gibbs energy, Le Chatelier applications and phase equilibria.",
+  },
+  // ── Isomerism ──────────────────────────────────────────────────────────────
+  {
+    id: "isomerism",
+    syllabusId: "isomerism",
+    title: "Isomerism",
+    href: "/learn/isomerism",
+    lessonLabel: "40 parts",
+    premium: true,
+    description: "A 40-part route from constitutional isomerism and tautomerism through geometrical and conformational isomerism to optical activity, chirality, R/S assignment and stereoisomer counting.",
   },
   // ── Chemical Bonding ───────────────────────────────────────────────────────
   {

@@ -72,6 +72,48 @@ export const organic = [
   },
 
   {
+    id: "isomerism",
+    title: "Isomerism",
+    category: "organic",
+    difficulty: 4,
+    estimatedHours: 16,
+    exams: ["JEE MAIN", "JEE ADVANCED"],
+    pyqTags: ["Structural isomerism", "Geometrical isomerism", "Conformations", "Optical isomerism", "R/S nomenclature", "Meso compounds"],
+    concepts: [
+      {
+        id: "structural-isomerism",
+        title: "Constitutional Isomerism, Tautomerism & Enolisation",
+        description: "Chain, position, functional, ring-chain and metameric isomerism with systematic counting; keto-enol tautomerism, enol-content comparisons and 1,3-dicarbonyl enolisation with intramolecular hydrogen bonding.",
+        animations: ["Keto to enol proton-transfer tautomeric equilibrium."]
+      },
+      {
+        id: "geometrical-isomerism",
+        title: "Geometrical (cis–trans / E–Z) Isomerism",
+        description: "Restricted rotation about C=C, C=N and N=N; E/Z assignment by CIP priority; cyclic, cumulated (cumulene) and spirane geometrical isomerism; dipole moment and stability comparisons.",
+        animations: ["cis and trans substituent arrangement across a rigid double bond."]
+      },
+      {
+        id: "conformational-isomerism",
+        title: "Conformational Isomerism",
+        description: "Newman, sawhorse and Fischer projections; ethane, propane and butane rotational-energy profiles; cyclohexane chair/boat/twist-boat interconversion, A-values and the anomeric effect in heterocycles.",
+        animations: ["Newman projection dihedral-angle rotation from staggered to eclipsed."]
+      },
+      {
+        id: "optical-isomerism",
+        title: "Optical Isomerism, Chirality & Symmetry",
+        description: "Elements of symmetry (plane, axis, centre and alternating axis); enantiomers, diastereomers and meso compounds; CIP R/S nomenclature; chirality without a chiral centre (axial chirality, atropisomerism, spiranes).",
+        animations: ["Non-superimposable mirror-image pair rotating to test chirality."]
+      },
+      {
+        id: "stereoisomer-counting",
+        title: "Stereoisomer Counting",
+        description: "Systematic 2ⁿ counting with corrections for meso forms and pseudoasymmetric centres; worked Fischer, wedge-dash and Newman/sawhorse interconversions across multi-stereocentre molecules.",
+        animations: ["Fischer projection rotated 180° to confirm identical configuration."]
+      }
+    ]
+  },
+
+  {
     id: "aldehydes-ketones",
     title: "Aldehydes, Ketones and Carboxylic Acids",
     category: "organic",

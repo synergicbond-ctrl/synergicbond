@@ -1,38 +1,27 @@
 import { renderChemistry } from "@/lib/renderChemistry";
-import {
-  PremiumNotes, Glass, Hero, Section, FormulaCard, Step, CalloutList, JeeFocus, RevisionSheet, type NoteSection,
-} from "@/components/notes/premium";
+import { PremiumNotes, Glass, Hero, Section, FormulaCard, Step, CalloutList, JeeFocus, RevisionSheet, type NoteSection } from "@/components/notes/premium";
 import { CanonicalNotesStyles, ChapterLessonGrid } from "@/components/notes/canonical";
 import { chemBondPartMeta, CHEM_BOND_GROUPS } from "./parts/_shared";
 
-// /learn/chemical-bonding — premium visual chapter on the shared notes template.
-
 const SECTIONS: NoteSection[] = [
   { id: "why", label: "Why it matters" },
-  { id: "types", label: "Types of Bonds" },
-  { id: "shapes", label: "VSEPR Shapes" },
-  { id: "formulas", label: "Formula Cards" },
-  { id: "example", label: "Solved Example" },
-  { id: "mistakes", label: "Common Mistakes" },
-  { id: "ncert", label: "NCERT Highlights" },
-  { id: "jee", label: "JEE Focus" },
-  { id: "parts", label: "Chapter Parts" },
-  { id: "revision", label: "Revision Sheet" },
-];
-
-const BONDS = [
-  { name: "Ionic", idea: "Full electron transfer; metal + non-metal (NaCl)." },
-  { name: "Covalent", idea: "Shared electron pairs; non-metals (H₂O, CH₄)." },
-  { name: "Coordinate", idea: "Both shared electrons from one atom (NH₄⁺)." },
-  { name: "Metallic", idea: "Cations in a sea of delocalised electrons." },
+  { id: "coverage", label: "189-topic coverage" },
+  { id: "shapes", label: "VSEPR map" },
+  { id: "formulas", label: "Formula cards" },
+  { id: "example", label: "Solved example" },
+  { id: "mistakes", label: "Common mistakes" },
+  { id: "jee", label: "JEE Advanced focus" },
+  { id: "parts", label: "Chapter parts" },
+  { id: "revision", label: "Revision sheet" },
 ];
 
 const SHAPES = [
   { sn: "2", shape: "Linear", ex: "BeCl₂, CO₂", ang: "180°" },
   { sn: "3", shape: "Trigonal planar", ex: "BF₃", ang: "120°" },
-  { sn: "4", shape: "Tetrahedral", ex: "CH₄", ang: "109.5°" },
-  { sn: "5", shape: "Trigonal bipyramidal", ex: "PCl₅", ang: "120°/90°" },
-  { sn: "6", shape: "Octahedral", ex: "SF₆", ang: "90°" },
+  { sn: "4", shape: "Tetrahedral family", ex: "CH₄, NH₃, H₂O", ang: "109.5° base" },
+  { sn: "5", shape: "Trigonal-bipyramidal family", ex: "PCl₅, SF₄, ClF₃, XeF₂", ang: "90°/120°" },
+  { sn: "6", shape: "Octahedral family", ex: "SF₆, BrF₅, XeF₄", ang: "90°" },
+  { sn: "7", shape: "Pentagonal-bipyramidal", ex: "IF₇", ang: "72°/90°" },
 ];
 
 export default function ChemicalBondingNotes() {
@@ -40,35 +29,37 @@ export default function ChemicalBondingNotes() {
     <PremiumNotes sections={SECTIONS}>
       <div id="why" className="scroll-mt-10">
         <Hero
-          eyebrow="Physical / Inorganic · Class 11"
-          title="Chemical"
-          accent="Bonding"
-          lead="Atoms bond for one reason: to reach a lower-energy, more stable arrangement of electrons. From the salt on your table to the DNA in your cells, every structure is a negotiation over electrons. Learn the handful of rules — octet, VSEPR, hybridization, MOT — and you can predict the shape, polarity and magnetism of almost any molecule."
+          eyebrow="JEE Advanced · Authoritative master sequence"
+          title="Chemical Bonding &"
+          accent="Molecular Structure"
+          lead="A 189-topic deep chapter: energetic origin of bonding → ionic thermochemistry → orbitals/VBT/hybridisation/VSEPR → inorganic structures and special bonding → dipoles/resonance/hydrogen bonding → full MOT → Fajans/intermolecular forces → carbon allotropes and silicates. Historical exam models are retained, but modern bonding caveats are stated explicitly."
           stats={[
-            { v: "Octet", k: "the driving rule" },
-            { v: "Shape → property", k: "geometry decides behaviour", tone: "text-emerald-300" },
-            { v: "High yield", k: "shapes, MOT & polarity", tone: "text-amber-300" },
+            { v: "189/189", k: "master topics mapped" },
+            { v: `${chemBondPartMeta.length}`, k: "balanced study parts", tone: "text-emerald-300" },
+            { v: "JEE Adv", k: "derivations + traps + modern caveats", tone: "text-amber-300" },
           ]}
         />
       </div>
 
-      <Section id="types" eyebrow="The four kinds" title="Types of Bonds">
-        <div className="space-y-2.5">
-          {BONDS.map((b, i) => (
-            <Glass key={b.name} className="flex items-center gap-4 p-4">
-              <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-cyan-500/15 text-sm font-black text-cyan-300">{i + 1}</span>
-              <div><span className="font-bold text-white">{b.name}</span><span className="ml-2 text-sm text-white/60">{renderChemistry(b.idea)}</span></div>
-            </Glass>
+      <Section id="coverage" eyebrow="No heading-only padding" title="Coverage Architecture">
+        <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+          {[
+            ["1–27", "Bond formation, octet, maximum covalency, ionic/Lewis foundations"],
+            ["28–57", "Atomic orbitals, nodes, symmetry, VBT, overlap and hybridisation"],
+            ["58–104", "VSEPR, inorganic structures, bond angle/back bonding, multicentre bonding"],
+            ["105–130", "Dipoles, formal charge, resonance, periodic effects and hydrogen bonding"],
+            ["131–178", "Full MOT, pseudohalides, Fajans, intermolecular forces, carbon and ionic-solubility thermodynamics"],
+            ["179–189", "Silicate tetrahedra → isolated/dimer/ring/chain/sheet/framework → aluminosilicates/zeolites/uses"],
+          ].map(([range, text]) => (
+            <Glass key={range} className="p-4"><div className="text-sm font-black text-cyan-200">Topics {range}</div><p className="mt-1 text-sm leading-relaxed text-white/65">{text}</p></Glass>
           ))}
         </div>
-        <Glass className="mt-4 border-cyan-400/20 bg-cyan-500/[0.05] p-4">
-          <div className="text-xs font-bold uppercase tracking-wider text-cyan-300">Fajans&apos; rule (covalent character in ionic bonds)</div>
-          <p className="mt-1 text-sm text-white/75">{renderChemistry("Small cation + large anion + high charge → more covalent character (more polarisation).")}</p>
+        <Glass className="mt-4 border-violet-300/20 bg-violet-300/[0.05] p-4 text-sm leading-relaxed text-white/75">
+          Traditional labels such as expanded-octet d-orbital hybridisation and pπ–dπ bonding are taught for exam literacy, then separated from the more defensible modern delocalised/3c–4e/MO interpretation. The chapter never asks you to choose between scoring in an exam and learning accurate chemistry.
         </Glass>
       </Section>
 
-      <Section id="shapes" eyebrow="Visual map" title="VSEPR — Steric Number to Shape">
-        <p className="mb-5 max-w-2xl text-white/65">Count the steric number (bond pairs + lone pairs) around the central atom; it fixes the electron geometry. Lone pairs then bend the observed shape.</p>
+      <Section id="shapes" eyebrow="Visual map" title="VSEPR — Steric Number to Shape Family">
         <div className="space-y-2">
           {SHAPES.map((s) => (
             <Glass key={s.sn} className="flex items-center gap-4 p-3.5">
@@ -80,95 +71,65 @@ export default function ChemicalBondingNotes() {
         </div>
       </Section>
 
-      <Section id="formulas" eyebrow="Toolbox" title="Formula Cards">
+      <Section id="formulas" eyebrow="Toolbox" title="Core Formula Cards">
         <div className="grid gap-4 sm:grid-cols-2">
           <FormulaCard name="Formal charge" formula="FC = V - N - B/2" vars={[{ sym: "V", mean: "valence electrons" }, { sym: "N", mean: "non-bonding electrons" }, { sym: "B", mean: "bonding electrons" }]} />
-          <FormulaCard name="Bond order (MOT)" formula="B.O. = (N_b - N_a) / 2" vars={[{ sym: "N_b", mean: "bonding electrons" }, { sym: "N_a", mean: "antibonding electrons" }]} />
-          <FormulaCard name="Dipole moment" formula="μ = q × d" vars={[{ sym: "q", mean: "charge magnitude" }, { sym: "d", mean: "distance between charges" }]} />
-          <FormulaCard name="% ionic character" formula="= (μ_obs / μ_ionic) × 100" vars={[{ sym: "μ_obs", mean: "measured dipole" }, { sym: "μ_ionic", mean: "100% ionic dipole" }]} />
+          <FormulaCard name="MOT bond order" formula="B.O. = (N_b - N_a) / 2" vars={[{ sym: "N_b", mean: "bonding electrons" }, { sym: "N_a", mean: "antibonding electrons" }]} />
+          <FormulaCard name="Dipole moment" formula="μ = q × d" vars={[{ sym: "q", mean: "charge magnitude" }, { sym: "d", mean: "separation" }]} />
+          <FormulaCard name="Ionic dissolution" formula="ΔG_soln = ΔH_soln - TΔS_soln" vars={[{ sym: "ΔH", mean: "lattice + hydration/solvation" }, { sym: "ΔS", mean: "system + solvent entropy" }]} />
         </div>
       </Section>
 
-      <Section id="example" eyebrow="Worked out" title="Solved Example">
+      <Section id="example" eyebrow="Integrated reasoning" title="Solved Example — O₂ Family">
         <Glass className="p-5">
-          <p className="text-sm font-semibold text-white">{renderChemistry("Find the bond order and magnetic nature of O₂ using MOT.")}</p>
+          <p className="text-sm font-semibold text-white">Rank O₂⁺, O₂, O₂⁻ and O₂²⁻ by bond length and state their magnetism.</p>
           <div className="mt-4 space-y-3">
-            <Step n={1}>{renderChemistry("O₂ has 16 electrons. Fill MOs: bonding N_b = 10, antibonding N_a = 6.")}</Step>
-            <Step n={2}>{renderChemistry("Bond order = (N_b − N_a)/2 = (10 − 6)/2 = 2.")}</Step>
-            <Step n={3}>{renderChemistry("Two unpaired electrons sit in the π* orbitals → paramagnetic.")}</Step>
-          </div>
-          <div className="mt-4 rounded-xl border border-emerald-500/25 bg-emerald-500/[0.08] px-4 py-3">
-            <span className="text-xs font-bold uppercase text-emerald-300">Final answer</span>
-            <div className="mt-0.5 font-black text-emerald-200">{renderChemistry("Bond order = 2, and O₂ is paramagnetic")}</div>
-          </div>
-          <div className="mt-3 rounded-xl border border-amber-400/25 bg-amber-400/[0.07] px-4 py-2.5">
-            <span className="text-xs font-bold uppercase text-amber-300">JEE shortcut</span>
-            <p className="mt-0.5 text-sm text-white/75">MOT is the only model that predicts O₂&apos;s paramagnetism — a favourite trap where Lewis/VBT fail.</p>
+            <Step n={1}>Start from O₂: two electrons occupy degenerate π* orbitals → BO = 2 and two unpaired electrons.</Step>
+            <Step n={2}>Removing one π* electron gives O₂⁺, BO = 2.5. Adding one gives O₂⁻, BO = 1.5; adding two gives O₂²⁻, BO = 1.</Step>
+            <Step n={3}>Bond length is inverse to BO within this related series: O₂⁺ &lt; O₂ &lt; O₂⁻ &lt; O₂²⁻. O₂⁺, O₂ and O₂⁻ are paramagnetic; peroxide O₂²⁻ is diamagnetic.</Step>
           </div>
         </Glass>
       </Section>
 
-      <Section id="mistakes" eyebrow="Exam traps" title="Common Mistakes">
+      <Section id="mistakes" eyebrow="Audit-protected" title="High-Risk Corrections">
         <CalloutList variant="mistake" items={[
-          "Counting lone pairs into the shape name — steric number gives electron geometry; lone pairs bend it (H₂O is bent, not tetrahedral).",
-          "Assuming all symmetrical molecules are non-polar without checking bond dipoles cancel (CO₂ non-polar, H₂O polar).",
-          "Using VBT for O₂ magnetism — only MOT predicts it correctly.",
-          "Forgetting coordinate bonds when counting bond pairs (NH₄⁺, O₃).",
+          "NO has 11 valence electrons (5 + 6), not 15; 15 is its total electron count including core electrons.",
+          "SCN⁻ is singly charged. Always total formal charges to −1.",
+          "r(N₂) < r(N₂⁺): ionising N₂ removes a bonding electron and lowers BO 3 → 2.5.",
+          "Hypervalent main-group bonding should not be taught as compulsory literal d-orbital expansion; retain the exam label but state the modern caveat.",
+          "Ionic solubility requires lattice + hydration/solvation + entropy; do not invert the alkali-perchlorate trend by a one-factor slogan.",
         ]} />
       </Section>
 
-      <Section id="ncert" eyebrow="Straight from the book" title="NCERT Highlights">
-        <CalloutList variant="ncert" items={[
-          "A polar molecule needs polar bonds AND an asymmetric shape so dipoles don't cancel.",
-          "Bond order ∝ bond strength and stability, and is inversely related to bond length.",
-          "Hydrogen bonding (in HF, H₂O, NH₃) explains their abnormally high boiling points.",
-        ]} />
-      </Section>
-
-      <Section id="jee" eyebrow="Weightage" title="JEE Main Focus">
+      <Section id="jee" eyebrow="Depth target" title="JEE Advanced Focus">
         <JeeFocus items={[
-          { t: "Hybridization, shape & bond angle", tag: "Most repeated" },
-          { t: "MOT — bond order & magnetism", tag: "High weightage" },
-          { t: "Dipole moment & polarity", tag: "Frequent" },
-          { t: "Fajans' rule & covalent character", tag: "Recurring" },
+          { t: "VSEPR + stereochemically active/inactive lone pairs + state dependence", tag: "High yield" },
+          { t: "MOT: ordering, s–p mixing, O₂ family, CO/NO and ligand view", tag: "Core" },
+          { t: "Lattice/Born–Landé/Kapustinskii + hydration/solubility thermodynamics", tag: "Advanced" },
+          { t: "Back bonding, multicentre bonds, inorganic structures and silicate topology", tag: "Differentiator" },
         ]} />
       </Section>
 
-      <Section id="parts" eyebrow="Study sequence" title="Chemical Bonding — All 13 Parts">
-        <p className="mb-5 max-w-2xl text-white/65">The full deep chapter, audited part by part: Lewis theory and the octet rule through metallic bonding, closing with a 13-part-spanning integrated question bank.</p>
+      <Section id="parts" eyebrow="Authoritative sequence" title={`Chemical Bonding — All ${chemBondPartMeta.length} Parts`}>
+        <p className="mb-5 max-w-3xl text-white/65">Parts 1–23 follow Topics 1–189 in exact master order; Part 24 is integrated JEE Advanced practice. Topic numbers remain visible inside every lesson for auditability.</p>
         <CanonicalNotesStyles />
         <div className="space-y-7">
           {CHEM_BOND_GROUPS.map((group, index) => (
             <div key={group.label} id={`bond-group-${index + 1}`} style={{ scrollMarginTop: 90 }}>
               <h3 className="sbnLessonGroupLabel" style={{ fontFamily: "Georgia, 'Iowan Old Style', 'Times New Roman', serif" }}>
-                {group.label}
-                <span className="ml-2 text-sm font-semibold normal-case tracking-normal" style={{ color: "#91a9bc" }}>
-                  Parts {String(group.from).padStart(2, "0")}–{String(group.to).padStart(2, "0")}
-                </span>
+                {group.label}<span className="ml-2 text-sm font-semibold normal-case tracking-normal" style={{ color: "#91a9bc" }}>Parts {String(group.from).padStart(2, "0")}–{String(group.to).padStart(2, "0")}</span>
               </h3>
-              <ChapterLessonGrid
-                lessons={chemBondPartMeta
-                  .filter((p) => p.part >= group.from && p.part <= group.to)
-                  .map((p) => ({
-                    href: p.href,
-                    number: `Part ${String(p.part).padStart(2, "0")}`,
-                    title: p.title,
-                    meta: p.tag,
-                  }))}
-              />
+              <ChapterLessonGrid lessons={chemBondPartMeta.filter((p) => p.part >= group.from && p.part <= group.to).map((p) => ({ href: p.href, number: `Part ${String(p.part).padStart(2, "0")}`, title: p.title, meta: p.tag }))} />
             </div>
           ))}
         </div>
       </Section>
 
       <Section id="revision" eyebrow="One screen" title="Revision Sheet">
-        <RevisionSheet
-          points={[
-            "FC = V − N − B/2", "Bond order = (N_b − N_a)/2", "μ = q × d", "SN 2→6: linear→octahedral",
-            "Lone pairs bend the observed shape", "Bond order ↑ → length ↓, strength ↑", "MOT explains O₂ paramagnetism", "Fajans: small cation + large anion → covalent",
-          ]}
-          ctas={[{ href: "/pyq", label: "Practise PYQs" }, { href: "/memory?deck=formula", label: "Recall these formulas" }]}
-        />
+        <RevisionSheet points={[
+          "Bonding = net energy lowering; octet is a model, not the cause", "Lattice |U| ↑ with charge and ↓ with distance", "FC = V − N − B/2", "SN 2→7 maps electron-domain geometries",
+          "LP–LP > LP–BP > BP–BP, but real angles also depend on electronegativity/π bonding", "BO = (Nb − Na)/2; inspect unpaired electrons for magnetism", "NO = 11 valence e⁻", "Silicates: 0→4 shared O gives isolated→3-D framework",
+        ]} ctas={[{ href: "/pyq", label: "Practise PYQs" }, { href: "/memory?deck=formula", label: "Recall formulas" }]} />
       </Section>
     </PremiumNotes>
   );

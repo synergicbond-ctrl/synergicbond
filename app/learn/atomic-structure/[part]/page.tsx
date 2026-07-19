@@ -1,4 +1,5 @@
-import { notFound } from "next/navigation";
+import { notFound, permanentRedirect } from "next/navigation";
+import { AtomicLessonShell, atomicPartMeta, lessonForOldSection } from "../parts/_shared";
 import Part01 from "../parts/part01";
 import Part02 from "../parts/part02";
 import Part03 from "../parts/part03";
@@ -55,75 +56,44 @@ import Part53 from "../parts/part53";
 import Part54 from "../parts/part54";
 import Part55 from "../parts/part55";
 
-const parts = {
-  part01: Part01,
-  part02: Part02,
-  part03: Part03,
-  part04: Part04,
-  part05: Part05,
-  part06: Part06,
-  part07: Part07,
-  part08: Part08,
-  part09: Part09,
-  part10: Part10,
-  part11: Part11,
-  part12: Part12,
-  part13: Part13,
-  part14: Part14,
-  part15: Part15,
-  part16: Part16,
-  part17: Part17,
-  part18: Part18,
-  part19: Part19,
-  part20: Part20,
-  part21: Part21,
-  part22: Part22,
-  part23: Part23,
-  part24: Part24,
-  part25: Part25,
-  part26: Part26,
-  part27: Part27,
-  part28: Part28,
-  part29: Part29,
-  part30: Part30,
-  part31: Part31,
-  part32: Part32,
-  part33: Part33,
-  part34: Part34,
-  part35: Part35,
-  part36: Part36,
-  part37: Part37,
-  part38: Part38,
-  part39: Part39,
-  part40: Part40,
-  part41: Part41,
-  part42: Part42,
-  part43: Part43,
-  part44: Part44,
-  part45: Part45,
-  part46: Part46,
-  part47: Part47,
-  part48: Part48,
-  part49: Part49,
-  part50: Part50,
-  part51: Part51,
-  part52: Part52,
-  part53: Part53,
-  part54: Part54,
-  part55: Part55,
+// All 55 authored study sections, in original order. Lessons render 2–3 of
+// them each, per atomicPartMeta.sections — nothing is dropped or reordered.
+const SECTION_COMPONENTS: Record<number, React.ComponentType> = {
+  1: Part01, 2: Part02, 3: Part03, 4: Part04, 5: Part05, 6: Part06, 7: Part07,
+  8: Part08, 9: Part09, 10: Part10, 11: Part11, 12: Part12, 13: Part13,
+  14: Part14, 15: Part15, 16: Part16, 17: Part17, 18: Part18, 19: Part19,
+  20: Part20, 21: Part21, 22: Part22, 23: Part23, 24: Part24, 25: Part25,
+  26: Part26, 27: Part27, 28: Part28, 29: Part29, 30: Part30, 31: Part31,
+  32: Part32, 33: Part33, 34: Part34, 35: Part35, 36: Part36, 37: Part37,
+  38: Part38, 39: Part39, 40: Part40, 41: Part41, 42: Part42, 43: Part43,
+  44: Part44, 45: Part45, 46: Part46, 47: Part47, 48: Part48, 49: Part49,
+  50: Part50, 51: Part51, 52: Part52, 53: Part53, 54: Part54, 55: Part55,
 };
 
 export function generateStaticParams() {
-  return Object.keys(parts).map((part) => ({ part }));
+  return atomicPartMeta.map((entry) => ({ part: `part${String(entry.part).padStart(2, "0")}` }));
 }
 
 export default async function AtomicStructurePartPage({ params }: { params: Promise<{ part: string }> }) {
   const { part } = await params;
-  const Part = parts[part as keyof typeof parts];
+  const match = /^part(\d{2})$/.exec(part);
+  if (!match) notFound();
+  const number = Number(match[1]);
 
-  if (!Part) {
+  const lesson = atomicPartMeta.find((entry) => entry.part === number);
+  if (!lesson) {
+    // Old 55-section URLs (part26…part55) → the lesson that now carries them.
+    const target = number >= 26 && number <= 55 ? lessonForOldSection(number) : undefined;
+    if (target) permanentRedirect(target.href);
     notFound();
   }
 
-  return <Part />;
+  return (
+    <AtomicLessonShell lesson={lesson.part}>
+      {lesson.sections.map((section) => {
+        const Section = SECTION_COMPONENTS[section];
+        return Section ? <Section key={section} /> : null;
+      })}
+    </AtomicLessonShell>
+  );
 }

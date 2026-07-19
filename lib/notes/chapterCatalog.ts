@@ -9,11 +9,12 @@
 // layouts (requirePaidContent / requirePremiumLearnAccess) and the
 // server-filtered notesEngine payload in app/notes/page.tsx.
 //
-// Counts audited against the live route tree on 2026-07-18:
-//   atomic-structure 55 · chemical-bonding 13 · thermodynamics 30 ·
-//   chemical-equilibrium 18 · electrochemistry 24 · mole-concept 15 ·
-//   stoichiometry 9 · concentration-terms 6 · eudiometry 6 ·
-//   redox 8+7 sections · hydrogen master notes · periodic-table master notes.
+// Counts audited against the live route tree on 2026-07-19:
+//   atomic-structure 25 lessons (55 sections) · chemical-bonding 13 ·
+//   thermodynamics 30 · chemical-equilibrium 18 · electrochemistry 24 ·
+//   mole-concept 15 · stoichiometry 9 · concentration-terms 6 · eudiometry 6 ·
+//   redox 10 lessons (15 sections) · hydrogen 8 lessons (72 sections) ·
+//   periodic-table master notes.
 // ─────────────────────────────────────────────────────────────────────────────
 
 export interface AuthoredCourse {
@@ -83,7 +84,7 @@ export const AUTHORED_COURSES: AuthoredCourse[] = [
     syllabusId: "redox-reactions",
     title: "Redox Reactions",
     href: "/notes/redox-reactions",
-    lessonLabel: "2 sections · 15 lessons",
+    lessonLabel: "10 lessons",
     premium: false,
     description: "Equivalent weight and n-factor across all species classes, principle of equivalence, and volumetric titration analysis.",
   },
@@ -93,7 +94,7 @@ export const AUTHORED_COURSES: AuthoredCourse[] = [
     syllabusId: "atomic-structure",
     title: "Atomic Structure",
     href: "/learn/atomic-structure",
-    lessonLabel: "55 parts",
+    lessonLabel: "25 lessons",
     premium: true,
     description: "From Dalton and cathode rays through Bohr, spectra, quantum numbers, the Schrödinger equation, orbitals and olympiad problem sets.",
   },
@@ -153,11 +154,39 @@ export const AUTHORED_COURSES: AuthoredCourse[] = [
     syllabusId: "hydrogen",
     title: "Hydrogen",
     href: "/notes/hydrogen",
-    lessonLabel: "Master notes · 61+ sections",
+    lessonLabel: "8 lessons · 72 sections",
     premium: true,
     description: "Isotopes, dihydrogen, ortho–para hydrogen, hydrides, water, heavy water, hydrogen peroxide, hydrogen bonding and hydrogen economy.",
   },
 ];
+
+/**
+ * Chapter-level card metadata for syllabus chapters whose authored courses are
+ * SECTIONS of one chapter (e.g. Some Basic Concepts of Chemistry). The Notes
+ * Explorer shows ONE card for the whole chapter; the individual sections stay
+ * reachable from the selected-chapter shortcuts and the course chrome tabs.
+ */
+export interface CourseGroupCard {
+  /** Entry route for the chapter card CTA — a free section when access is mixed. */
+  href: string;
+  description: string;
+}
+
+export const COURSE_GROUP_CARDS: Record<string, CourseGroupCard> = {
+  "mole-concept": {
+    href: "/notes/mole-concept",
+    description:
+      "One chapter in four sections — Mole Concept (free), Stoichiometry, Concentration Terms and Eudiometry: from the mole and Avogadro constant to limiting reagent, concentration units and gas-phase analysis.",
+  },
+};
+
+/** Honest lesson total across a chapter's sections, parsed from lessonLabel. */
+export function groupLessonTotal(courses: AuthoredCourse[]): number {
+  return courses.reduce((sum, course) => {
+    const count = /^(\d+)\s+lessons?/.exec(course.lessonLabel);
+    return sum + (count ? Number(count[1]) : 0);
+  }, 0);
+}
 
 const BY_SYLLABUS = new Map<string, AuthoredCourse[]>();
 for (const course of AUTHORED_COURSES) {

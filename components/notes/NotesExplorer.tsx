@@ -7,7 +7,7 @@ import {
   type NoteLink,
 } from "@/lib/notesEngine";
 import { masterSyllabus } from "@/lib/masterSyllabus/all";
-import { AUTHORED_COURSES, coursesForSyllabusChapter, type AuthoredCourse } from "@/lib/notes/chapterCatalog";
+import { AUTHORED_COURSES, COURSE_GROUP_CARDS, coursesForSyllabusChapter, groupLessonTotal, type AuthoredCourse } from "@/lib/notes/chapterCatalog";
 import UnlockBanner from "@/components/monetization/UnlockBanner";
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -278,6 +278,8 @@ interface ChapterCardData {
   status: "full" | "full-inline" | "syllabus";
   statusLine: string;
   premium: boolean;
+  /** True when a chapter's sections mix free and premium access. */
+  mixedAccess?: boolean;
   /** Authored course route (server-gated when premium). */
   href?: string;
 }
@@ -286,6 +288,14 @@ function PremiumBadge() {
   return (
     <span className="shrink-0 rounded-full border border-[#e8b84b66] bg-[#e8b84b1f] px-2.5 py-0.5 text-[10px] font-black uppercase tracking-wider text-[#e8b84b]">
       Premium
+    </span>
+  );
+}
+
+function MixedBadge() {
+  return (
+    <span className="shrink-0 rounded-full border border-[#e8b84b66] bg-[#e8b84b14] px-2.5 py-0.5 text-[10px] font-black uppercase tracking-wider text-[#c3d1dd]">
+      Free + Premium
     </span>
   );
 }
@@ -328,7 +338,7 @@ function ChapterCard({
         <span className="min-w-0 text-[10.5px] font-black uppercase tracking-[0.16em] text-[#91a9bc]">
           {card.groupLabel ? `${card.groupLabel}${card.sectionLabel ? ` · ${card.sectionLabel}` : ""}` : CATEGORY_LABEL[card.category]}
         </span>
-        {card.premium ? <PremiumBadge /> : card.status !== "syllabus" ? <FreeBadge /> : null}
+        {card.mixedAccess ? <MixedBadge /> : card.premium ? <PremiumBadge /> : card.status !== "syllabus" ? <FreeBadge /> : null}
       </div>
       <h3 className={`mt-2 text-base font-black leading-snug ${selected ? "text-[#e8b84b]" : "text-[#eef3f8]"}`}>
         {card.title}
@@ -363,23 +373,37 @@ function buildCards(
   const cards: ChapterCardData[] = [];
   for (const syllabusChapter of SYLLABUS_CHAPTERS) {
     const courses = coursesForSyllabusChapter(syllabusChapter.id);
-    if (courses.length > 0) {
-      const grouped = courses.length > 1;
-      for (const course of courses) {
-        cards.push({
-          key: course.id,
-          syllabusId: syllabusChapter.id,
-          title: course.title,
-          category: syllabusChapter.category,
-          groupLabel: grouped ? syllabusChapter.title : undefined,
-          sectionLabel: grouped ? course.sectionLabel : undefined,
-          description: course.description,
-          status: "full",
-          statusLine: `Full notes · ${course.lessonLabel}`,
-          premium: course.premium,
-          href: course.href,
-        });
-      }
+    if (courses.length > 1) {
+      // Sections of ONE chapter (e.g. Some Basic Concepts) → one chapter card.
+      const group = COURSE_GROUP_CARDS[syllabusChapter.id];
+      const lessonTotal = groupLessonTotal(courses);
+      cards.push({
+        key: syllabusChapter.id,
+        syllabusId: syllabusChapter.id,
+        title: syllabusChapter.title,
+        category: syllabusChapter.category,
+        description: group?.description ?? courses.map((course) => course.title).join(" · "),
+        status: "full",
+        statusLine: `Full notes · ${courses.length} sections${lessonTotal > 0 ? ` · ${lessonTotal} lessons` : ""}`,
+        premium: courses.every((course) => course.premium),
+        mixedAccess: courses.some((course) => course.premium) && courses.some((course) => !course.premium),
+        href: group?.href ?? courses[0].href,
+      });
+      continue;
+    }
+    if (courses.length === 1) {
+      const course = courses[0];
+      cards.push({
+        key: course.id,
+        syllabusId: syllabusChapter.id,
+        title: course.title,
+        category: syllabusChapter.category,
+        description: course.description,
+        status: "full",
+        statusLine: `Full notes · ${course.lessonLabel}`,
+        premium: course.premium,
+        href: course.href,
+      });
       continue;
     }
     const authored = authoredFor(syllabusChapter.id, chapters);

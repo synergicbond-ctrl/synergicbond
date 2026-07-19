@@ -23,7 +23,7 @@ export function AtomicStructurePartNavigator({ parts }: { parts: readonly Atomic
           part.title.toLowerCase().includes(needle) ||
           group.label.toLowerCase().includes(needle) ||
           group.keywords.includes(needle) ||
-          `part ${String(part.part).padStart(2, "0")}`.includes(needle) ||
+          `lesson ${String(part.part).padStart(2, "0")}`.includes(needle) ||
           String(part.part) === needle
         );
       }),
@@ -45,16 +45,16 @@ export function AtomicStructurePartNavigator({ parts }: { parts: readonly Atomic
           />
         </label>
         <label className="sm:hidden">
-          <span className="sr-only">Jump to a part</span>
+          <span className="sr-only">Jump to a lesson</span>
           <select
             defaultValue=""
             onChange={(event) => { if (event.target.value) router.push(event.target.value); }}
             className="w-full rounded-xl border border-cyan-400/30 bg-[#0B1220] px-4 py-2.5 text-sm font-semibold text-cyan-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-300"
           >
-            <option value="" disabled>Jump to part…</option>
+            <option value="" disabled>Jump to lesson…</option>
             {parts.map((part) => (
               <option key={part.href} value={part.href}>
-                Part {String(part.part).padStart(2, "0")} — {part.title}
+                Lesson {String(part.part).padStart(2, "0")} — {part.title}
               </option>
             ))}
           </select>
@@ -74,13 +74,13 @@ export function AtomicStructurePartNavigator({ parts }: { parts: readonly Atomic
               >
                 {group.label}
                 <span className="ml-2 text-sm font-semibold normal-case tracking-normal" style={{ color: "#91a9bc" }}>
-                  Parts {String(group.from).padStart(2, "0")}–{String(group.to).padStart(2, "0")}
+                  Lessons {String(group.from).padStart(2, "0")}–{String(group.to).padStart(2, "0")}
                 </span>
               </h3>
               <ChapterLessonGrid
                 lessons={parts.map((part) => ({
                   href: part.href,
-                  number: `Part ${String(part.part).padStart(2, "0")}`,
+                  number: `Lesson ${String(part.part).padStart(2, "0")}`,
                   title: part.title,
                   meta: `Source pages ${part.pages}`,
                 }))}

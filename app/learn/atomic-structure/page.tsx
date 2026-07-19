@@ -64,10 +64,11 @@ export default function AtomicStructureNotes() {
         </Glass>
       </Section>
 
-      <Section id="source-parts" eyebrow="Study sequence" title="Atomic Structure Parts">
+      <Section id="source-parts" eyebrow="Study sequence" title="Atomic Structure Lessons">
         <p className="mb-5 max-w-2xl leading-relaxed text-white/65">
-          Follow the complete 55-part Atomic Structure learning sequence, from foundational atomic models through quantum
-          mechanics. Search by topic, formula name or part number, or jump straight to a part.
+          Follow the complete 25-lesson Atomic Structure sequence — all 55 original study sections merged 2–3 per
+          lesson, from foundational atomic models through quantum mechanics. Search by topic, formula name or lesson
+          number, or jump straight to a lesson.
         </p>
         <AtomicStructurePartNavigator parts={atomicPartMeta} />
       </Section>

@@ -21,7 +21,7 @@ function PyridineTautomer({ kind }: { kind: Tautomer }) {
   const bondStart = isFour ? "100 42" : "126 67";
   const bondEnd = isFour ? "100 24" : "145 56";
   return <figure className="rounded-2xl border border-white/10 bg-slate-950/50 p-3">
-    <svg viewBox="0 0 200 145" className="h-auto w-full text-slate-100" role="img" aria-label={labels[kind]}>
+    <svg fill="currentColor" viewBox="0 0 200 145" className="h-auto w-full text-slate-100" role="img" aria-label={labels[kind]}>
       <path d="M70 104 47 64 70 24 116 24 140 64 116 104Z" fill="none" stroke="currentColor" strokeWidth="2.5" />
       <path d="M51 61 69 30M75 101 110 101M121 29 136 57" fill="none" stroke="currentColor" strokeWidth="1.6" />
       <text x="61" y="109" fontSize="17" fill="#a5f3fc">N</text>

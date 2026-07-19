@@ -69,7 +69,7 @@ function HashedWedge({
 
 function PlaneOfSymmetryExamples() {
   return (
-    <svg
+    <svg fill="currentColor"
       viewBox="0 0 760 340"
       className="h-auto w-full text-slate-100"
       role="img"
@@ -124,7 +124,7 @@ function PlaneOfSymmetryExamples() {
 
 function ProperAxes() {
   return (
-    <svg
+    <svg fill="currentColor"
       viewBox="0 0 760 350"
       className="h-auto w-full text-slate-100"
       role="img"
@@ -221,7 +221,7 @@ function ProperAxes() {
 
 function ImproperAxisS4() {
   return (
-    <svg
+    <svg fill="currentColor"
       viewBox="0 0 640 340"
       className="h-auto w-full text-slate-100"
       role="img"
@@ -278,7 +278,7 @@ function ImproperAxisS4() {
 
 function CentreOfInversion() {
   return (
-    <svg
+    <svg fill="currentColor"
       viewBox="0 0 650 280"
       className="h-auto w-full text-slate-100"
       role="img"
@@ -363,7 +363,7 @@ function CentreOfInversion() {
 
 function FischerMirrorPair() {
   return (
-    <svg
+    <svg fill="currentColor"
       viewBox="0 0 700 315"
       className="h-auto w-full text-slate-100"
       role="img"
@@ -412,7 +412,7 @@ function WedgeDashMirrorPair() {
   const right = { x: 525, y: 145 };
 
   return (
-    <svg
+    <svg fill="currentColor"
       viewBox="0 0 700 300"
       className="h-auto w-full text-slate-100"
       role="img"
@@ -470,7 +470,7 @@ function NewmanStaggered() {
   const rearAngles = [-30, 90, 210];
 
   return (
-    <svg
+    <svg fill="currentColor"
       viewBox="0 0 620 310"
       className="h-auto w-full text-slate-100"
       role="img"
@@ -532,7 +532,7 @@ function NewmanStaggered() {
 
 function MesoVsEnantiomer() {
   return (
-    <svg
+    <svg fill="currentColor"
       viewBox="0 0 760 350"
       className="h-auto w-full text-slate-100"
       role="img"

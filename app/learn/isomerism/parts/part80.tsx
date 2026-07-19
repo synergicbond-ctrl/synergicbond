@@ -20,7 +20,7 @@ const cases: RingPiCase[] = [
 function RingPiStructure({ item }: { item: RingPiCase }) {
   const points = item.ring === 4 ? "88,28 132,68 88,108 44,68" : "62,30 112,30 142,68 112,106 62,106 32,68";
   const centreX = item.ring === 4 ? 88 : 142;
-  return <svg viewBox="0 0 250 145" className="mt-3 w-full" role="img" aria-label={item.label}>
+  return <svg fill="currentColor" viewBox="0 0 250 145" className="mt-3 w-full" role="img" aria-label={item.label}>
     <polygon points={points} fill="none" stroke="currentColor" strokeWidth="2.8" />
     {item.kind === "oxime" ? <><path d={`M${centreX} 68H205M${centreX} 74H205`} stroke="#67e8f9" strokeWidth="2.5" /><text x="210" y="76" fill="#f0abfc">N−OH</text></> : item.kind === "sulfone" ? <><text x="51" y="71" fill="#f0abfc">S</text><text x="118" y="71" fill="#f0abfc">S</text><text x="20" y="61" fill="#f0abfc">O</text><text x="130" y="61" fill="#f0abfc">O</text><path d="M34 65H49M34 71H49M119 65H134M119 71H134" stroke="#67e8f9" strokeWidth="2" /></> : <><path d={`M${centreX} 65H184M${centreX} 71H184`} stroke="#67e8f9" strokeWidth="2.5" />{item.kind === "diene" && <><path d="M184 65H213M184 71H213" stroke="#67e8f9" strokeWidth="2.5" /><text x="215" y="50" fill="#f0abfc">F</text><text x="215" y="96" fill="#f0abfc">Cl</text></>}<text x="191" y="51" fill="#f0abfc">F</text><text x="191" y="96" fill="#f0abfc">Cl</text></>}
     {item.substituents.filter(x => x === "CH₃" || x === "Et").map((x, index) => <g key={`${x}-${index}`}><path d={`M${60 + index * 32} ${item.ring === 4 ? 42 : 31}L${60 + index * 32} 12`} stroke="#f0abfc" strokeWidth="2.3" /><text x={48 + index * 32} y="12" fill="#f0abfc" fontSize="13">{x}</text></g>)}

@@ -2,7 +2,7 @@ import Link from "next/link";
 
 function StrainDiagram({kind}:{kind:"vdw"|"torsional"}) {
   const torsional=kind==="torsional";
-  return <svg viewBox="0 0 280 180" className="w-full" role="img" aria-label={`${kind} strain in an eclipsed conformation`}>
+  return <svg fill="currentColor" viewBox="0 0 280 180" className="w-full" role="img" aria-label={`${kind} strain in an eclipsed conformation`}>
     <circle cx="110" cy="93" r="38" fill="none" stroke="#e2e8f0" strokeWidth="2" /><circle cx="110" cy="93" r="7" fill="#f0abfc" />
     <path d="M110 93V38M110 93 58 123M110 93 162 123" stroke="#f0abfc" strokeWidth="3" />
     <path d="M110 93V38M110 93 58 123M110 93 162 123" stroke="#67e8f9" strokeWidth="2" />

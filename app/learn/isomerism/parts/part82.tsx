@@ -12,7 +12,7 @@ function SourceAlkene({ number, valid }: { number: number; valid: boolean }) {
   const rightY = variant === 2 ? 55 : 70;
   const terminal = [1, 2, 5, 7, 8, 17, 18, 19, 20, 21, 22, 28, 29, 32].includes(number);
   const polyene = number >= 30;
-  return <svg viewBox="0 0 300 145" className="mt-3 w-full" role="img" aria-label={`source alkene structure ${number}`}>
+  return <svg fill="currentColor" viewBox="0 0 300 145" className="mt-3 w-full" role="img" aria-label={`source alkene structure ${number}`}>
     <path d={`M${x} 68H${x + 48} 68M${x} 74H${x + 48} 74`} stroke="#67e8f9" strokeWidth="2.6" />
     <path d={`M${x} 71L${x - 45} ${leftY}L${x - 74} ${leftY - 27}M${x + 48} 71L${x + 89} ${rightY}L${x + 116} ${rightY - 24}`} stroke="currentColor" strokeWidth="2.6" fill="none" />
     {!terminal && <><path d={`M${x} 71L${x - 30} 111`} stroke="currentColor" strokeWidth="2.6" /><path d={`M${x + 48} 71L${x + 72} 111`} stroke="currentColor" strokeWidth="2.6" /></>}

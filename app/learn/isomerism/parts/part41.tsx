@@ -10,7 +10,7 @@ function NewmanCase({ number, front, rear, rotation = 0 }: { number: 90 | 91 | 9
   const point = (angle: number, radius: number) => ({ x: 105 + radius * Math.cos((angle * Math.PI) / 180), y: 75 + radius * Math.sin((angle * Math.PI) / 180) });
   const frontAngles = [-90, 30, 150];
   const rearAngles = frontAngles.map((angle) => angle + 60 + rotation);
-  return <svg viewBox="0 0 210 150" className="h-auto w-full text-slate-100" role="img" aria-label={`Newman projection ${number}`}>
+  return <svg fill="currentColor" viewBox="0 0 210 150" className="h-auto w-full text-slate-100" role="img" aria-label={`Newman projection ${number}`}>
     <circle cx="105" cy="75" r="31" fill="none" stroke="currentColor" strokeWidth="2" />
     {rearAngles.map((angle, index) => { const end = point(angle, 55); return <g key={`r${angle}`}><Bond from={point(angle, 31)} to={end} /><text x={end.x + (end.x < 105 ? -4 : 4)} y={end.y + 5} textAnchor={end.x < 90 ? "end" : "start"} fontSize="13">{rear[index]}</text></g>; })}
     {frontAngles.map((angle, index) => { const end = point(angle, 47); return <g key={`f${angle}`}><Bond from={{ x: 105, y: 75 }} to={end} width={2.6} /><text x={end.x + (end.x < 105 ? -4 : 4)} y={end.y + 5} textAnchor={end.x < 90 ? "end" : "start"} fontSize="13" fontWeight="700">{front[index]}</text></g>; })}
@@ -41,7 +41,7 @@ function Carboxyl({ x, y, flip = false }: { x: number; y: number; flip?: boolean
 function Fischer({ item }: { item: FischerData }) {
   const ys = item.rows.map((_, index) => 52 + index * 30);
   const terminalBottom = ys.at(-1)! + 30;
-  return <svg viewBox="0 0 180 205" className="h-auto w-full text-slate-100" role="img" aria-label={`Fischer projection ${item.number}`}>
+  return <svg fill="currentColor" viewBox="0 0 180 205" className="h-auto w-full text-slate-100" role="img" aria-label={`Fischer projection ${item.number}`}>
     {item.top === "CHO" ? <Aldehyde x={90} y={14} /> : <Carboxyl x={78} y={18} />}
     <Bond from={{ x: 90, y: item.top === "CHO" ? 32 : 35 }} to={{ x: 90, y: 52 }} />
     {ys.map((y, index) => <g key={y}><Bond from={{ x: 90, y }} to={{ x: 90, y: y + 30 }} /><Bond from={{ x: 57, y }} to={{ x: 123, y }} /><text x="47" y={y + 5} textAnchor="end" fontSize="13">{item.rows[index] === "OH" ? "HO" : "H"}</text><text x="133" y={y + 5} fontSize="13">{item.rows[index] === "OH" ? "H" : "OH"}</text></g>)}
@@ -55,12 +55,12 @@ function AromaticRing({ cx, cy }: { cx: number; cy: number }) {
 }
 
 function Atropisomer({ number }: { number: 99 | 100 | 101 }) {
-  if(number===101)return <svg viewBox="0 0 320 155" className="h-auto w-full text-slate-100" role="img" aria-label="source hindered terphenyl 101 with nitro group"><AromaticRing cx={56} cy={80}/><AromaticRing cx={160} cy={80}/><AromaticRing cx={264} cy={80}/><Bond from={{x:80,y:68}} to={{x:136,y:92}} width={3}/><Bond from={{x:184,y:68}} to={{x:240,y:92}} width={3}/><text x="76" y="42" fontSize="13">Cl</text><text x="74" y="129" fontSize="13">Br</text><text x="132" y="40" fontSize="13">Cl</text><text x="136" y="132" fontSize="13">Br</text><Bond from={{x:78,y:57}} to={{x:80,y:45}}/><Bond from={{x:78,y:102}} to={{x:80,y:120}}/><Bond from={{x:139,y:55}} to={{x:134,y:43}}/><Bond from={{x:139,y:104}} to={{x:139,y:121}}/><Bond from={{x:288,y:80}} to={{x:308,y:80}}/><text x="307" y="84" fontSize="17">N</text><text x="317" y="68" fontSize="12">O</text><text x="317" y="100" fontSize="12">O</text><text x="316" y="82" fontSize="13">+</text><text x="316" y="111" fontSize="12">−</text></svg>;
+  if(number===101)return <svg fill="currentColor" viewBox="0 0 320 155" className="h-auto w-full text-slate-100" role="img" aria-label="source hindered terphenyl 101 with nitro group"><AromaticRing cx={56} cy={80}/><AromaticRing cx={160} cy={80}/><AromaticRing cx={264} cy={80}/><Bond from={{x:80,y:68}} to={{x:136,y:92}} width={3}/><Bond from={{x:184,y:68}} to={{x:240,y:92}} width={3}/><text x="76" y="42" fontSize="13">Cl</text><text x="74" y="129" fontSize="13">Br</text><text x="132" y="40" fontSize="13">Cl</text><text x="136" y="132" fontSize="13">Br</text><Bond from={{x:78,y:57}} to={{x:80,y:45}}/><Bond from={{x:78,y:102}} to={{x:80,y:120}}/><Bond from={{x:139,y:55}} to={{x:134,y:43}}/><Bond from={{x:139,y:104}} to={{x:139,y:121}}/><Bond from={{x:288,y:80}} to={{x:308,y:80}}/><text x="307" y="84" fontSize="17">N</text><text x="317" y="68" fontSize="12">O</text><text x="317" y="100" fontSize="12">O</text><text x="316" y="82" fontSize="13">+</text><text x="316" y="111" fontSize="12">−</text></svg>;
   const leftTop = number === 100 ? "Cl" : "Cl";
   const rightTop = number === 100 ? "Br" : "Cl";
   const leftBottom = number === 100 ? "Cl" : "Br";
   const rightBottom = number === 100 ? "Br" : "Br";
-  return <svg viewBox="0 0 260 155" className="h-auto w-full text-slate-100" role="img" aria-label={`hindered biaryl ${number}`}>
+  return <svg fill="currentColor" viewBox="0 0 260 155" className="h-auto w-full text-slate-100" role="img" aria-label={`hindered biaryl ${number}`}>
     <AromaticRing cx={78} cy={80} /><AromaticRing cx={182} cy={80} /><Bond from={{x:102,y:68}} to={{x:158,y:92}} width={3}/>
     <text x="98" y="42" fontSize="13">{leftTop}</text><text x="151" y="40" fontSize="13">{rightTop}</text><text x="96" y="129" fontSize="13">{leftBottom}</text><text x="157" y="132" fontSize="13">{rightBottom}</text>
     <Bond from={{x:99,y:57}} to={{x:101,y:45}} /><Bond from={{x:160,y:55}} to={{x:155,y:43}} /><Bond from={{x:99,y:102}} to={{x:101,y:120}} /><Bond from={{x:160,y:104}} to={{x:160,y:121}} />

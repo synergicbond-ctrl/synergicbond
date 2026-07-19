@@ -203,7 +203,7 @@ function CyclobutanePerspective() {
 
 function TruxilicDiagram({ isomer }: { isomer: Isomer }) {
   return (
-    <svg
+    <svg fill="currentColor"
       viewBox="0 0 390 320"
       className="h-auto w-full text-slate-100"
       role="img"
@@ -272,7 +272,7 @@ function TruxilicDiagram({ isomer }: { isomer: Isomer }) {
 
 function ParentPhotodimerSkeleton() {
   return (
-    <svg
+    <svg fill="currentColor"
       viewBox="0 0 760 260"
       className="h-auto w-full text-slate-100"
       role="img"

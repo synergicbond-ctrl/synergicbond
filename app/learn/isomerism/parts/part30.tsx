@@ -11,11 +11,11 @@ function Benzene({ x, y, n = false, nOuter = false }: { x: number; y: number; n?
 function Biaryl({ item }: { item: BiphenylItem }) {
   const label = (value: string | undefined, x: number, y: number) => value ? <text x={x} y={y} textAnchor="middle" fontSize="12" fontWeight="800">{value}</text> : null;
   const bridgePath = item.bridge === "top" ? "M64 49 85 25 111 25 140 48 169 25 195 25 216 49" : item.bridge === "bottom" ? "M64 101 85 125 111 125 140 102 169 125 195 125 216 101" : "M64 49 85 25 111 25 140 48 169 25 195 25 216 49 M64 101 85 125 111 125 140 102 169 125 195 125 216 101";
-  return <svg viewBox="0 0 280 158" className="h-auto w-full text-slate-100" role="img" aria-label={`item ${item.n}: ${item.active ? "optically active" : "optically inactive"} biaryl structure`}><Benzene x={90} y={75} n={item.leftN}/><Benzene x={190} y={75} n={item.rightN} nOuter={item.rightNOuter}/><line x1="121" y1="75" x2="159" y2="75" stroke="currentColor" strokeWidth="4"/>{label(item.leftTop,65,22)}{label(item.leftBottom,65,142)}{label(item.rightTop,215,22)}{label(item.rightBottom,215,142)}{item.bridge && <path d={bridgePath} fill="none" stroke="#c4b5fd" strokeWidth="3" strokeLinejoin="round"/>}{item.label && <text x="140" y="151" textAnchor="middle" fontSize="11" fill="#c4b5fd">{item.label}</text>}</svg>;
+  return <svg fill="currentColor" viewBox="0 0 280 158" className="h-auto w-full text-slate-100" role="img" aria-label={`item ${item.n}: ${item.active ? "optically active" : "optically inactive"} biaryl structure`}><Benzene x={90} y={75} n={item.leftN}/><Benzene x={190} y={75} n={item.rightN} nOuter={item.rightNOuter}/><line x1="121" y1="75" x2="159" y2="75" stroke="currentColor" strokeWidth="4"/>{label(item.leftTop,65,22)}{label(item.leftBottom,65,142)}{label(item.rightTop,215,22)}{label(item.rightBottom,215,142)}{item.bridge && <path d={bridgePath} fill="none" stroke="#c4b5fd" strokeWidth="3" strokeLinejoin="round"/>}{item.label && <text x="140" y="151" textAnchor="middle" fontSize="11" fill="#c4b5fd">{item.label}</text>}</svg>;
 }
 function Terphenyl({ item }: { item: BiphenylItem }) {
   const label = (value: string | undefined, x: number, y: number) => value ? <text x={x} y={y} textAnchor="middle" fontSize="12" fontWeight="800">{value}</text> : null;
-  return <svg viewBox="0 0 280 150" className="h-auto w-full text-slate-100" role="img" aria-label={`item ${item.n}: substituted terphenyl or heteroaryl system`}><Benzene x={140} y={76}/><Benzene x={58} y={76} n={item.leftN}/><Benzene x={222} y={76} n={item.rightN} nOuter={item.rightNOuter}/><line x1="89" y1="76" x2="109" y2="76" stroke="currentColor" strokeWidth="3"/><line x1="171" y1="76" x2="191" y2="76" stroke="currentColor" strokeWidth="3"/>{label(item.leftTop,42,20)}{label(item.leftBottom,42,143)}{label(item.rightTop,238,20)}{label(item.rightBottom,238,143)}{item.n >= 17 && item.n <= 21 && <><text x="113" y="28" fontSize="11" fontWeight="800">Me</text><text x="167" y="28" fontSize="11" fontWeight="800">Me</text><text x="113" y="141" fontSize="11" fontWeight="800">Me</text><text x="167" y="141" fontSize="11" fontWeight="800">Me</text></>}{item.n === 22 && <><text x="130" y="27" fontSize="12" fontWeight="800">Cl</text><text x="145" y="27" fontSize="12" fontWeight="800">Cl</text><text x="130" y="142" fontSize="12" fontWeight="800">Br</text><text x="145" y="142" fontSize="12" fontWeight="800">Br</text></>}</svg>;
+  return <svg fill="currentColor" viewBox="0 0 280 150" className="h-auto w-full text-slate-100" role="img" aria-label={`item ${item.n}: substituted terphenyl or heteroaryl system`}><Benzene x={140} y={76}/><Benzene x={58} y={76} n={item.leftN}/><Benzene x={222} y={76} n={item.rightN} nOuter={item.rightNOuter}/><line x1="89" y1="76" x2="109" y2="76" stroke="currentColor" strokeWidth="3"/><line x1="171" y1="76" x2="191" y2="76" stroke="currentColor" strokeWidth="3"/>{label(item.leftTop,42,20)}{label(item.leftBottom,42,143)}{label(item.rightTop,238,20)}{label(item.rightBottom,238,143)}{item.n >= 17 && item.n <= 21 && <><text x="113" y="28" fontSize="11" fontWeight="800">Me</text><text x="167" y="28" fontSize="11" fontWeight="800">Me</text><text x="113" y="141" fontSize="11" fontWeight="800">Me</text><text x="167" y="141" fontSize="11" fontWeight="800">Me</text></>}{item.n === 22 && <><text x="130" y="27" fontSize="12" fontWeight="800">Cl</text><text x="145" y="27" fontSize="12" fontWeight="800">Cl</text><text x="130" y="142" fontSize="12" fontWeight="800">Br</text><text x="145" y="142" fontSize="12" fontWeight="800">Br</text></>}</svg>;
 }
 type ArylSubstituent = { position: number; label?: string };
 
@@ -49,7 +49,7 @@ function CrowdedHeteroAryl({ n }: { n: 18 | 19 | 20 | 21 }) {
     21: [[5], [3]],
   };
   const [leftN, rightN] = nitrogenVertices[n];
-  return <svg viewBox="0 0 300 154" className="h-auto w-full text-slate-100" role="img" aria-label={`item ${n}: source-matched crowded heteroaryl system`}>
+  return <svg fill="currentColor" viewBox="0 0 300 154" className="h-auto w-full text-slate-100" role="img" aria-label={`item ${n}: source-matched crowded heteroaryl system`}>
     <FlatAryl x={150} y={77} substituents={[{ position: 0 }, { position: 1 }, { position: 3 }, { position: 4 }]} />
     <FlatAryl x={64} y={77} nitrogens={leftN} substituents={[{ position: 1 }, { position: 3 }]} />
     <FlatAryl x={236} y={77} nitrogens={rightN} substituents={[{ position: 0 }, { position: 4 }]} />
@@ -60,7 +60,7 @@ function CrowdedHeteroAryl({ n }: { n: 18 | 19 | 20 | 21 }) {
 
 /** Source item 22, including the paired NO₂/Me and Cl/Br substitution pattern. */
 function HalogenArylItem() {
-  return <svg viewBox="0 0 300 164" className="h-auto w-full text-slate-100" role="img" aria-label="item 22: source-matched nitro methyl and halogen crowded terphenyl">
+  return <svg fill="currentColor" viewBox="0 0 300 164" className="h-auto w-full text-slate-100" role="img" aria-label="item 22: source-matched nitro methyl and halogen crowded terphenyl">
     <FlatAryl x={150} y={82} substituents={[{ position: 0, label: "Cl" }, { position: 1, label: "Cl" }, { position: 3, label: "Br" }, { position: 4, label: "Br" }]} />
     <FlatAryl x={64} y={82} substituents={[{ position: 1, label: "NO₂" }, { position: 3 }]} />
     <FlatAryl x={236} y={82} substituents={[{ position: 0 }, { position: 4, label: "NO₂" }]} />
@@ -71,7 +71,7 @@ function HalogenArylItem() {
 
 /** Source item 23: a methyl-substituted cyclopropylidene allene, not a generic cage. */
 function ConstrainedAllene() {
-  return <svg viewBox="0 0 280 150" className="h-auto w-full text-slate-100" role="img" aria-label="item 23 methyl-substituted cyclopropylidene allene with stereogenic axis">
+  return <svg fill="currentColor" viewBox="0 0 280 150" className="h-auto w-full text-slate-100" role="img" aria-label="item 23 methyl-substituted cyclopropylidene allene with stereogenic axis">
     <path d="M96 36V93L145 65Z" fill="none" stroke="currentColor" strokeWidth="3.5" strokeLinejoin="round" />
     <line x1="145" y1="59" x2="202" y2="59" stroke="currentColor" strokeWidth="3" />
     <line x1="145" y1="71" x2="202" y2="71" stroke="currentColor" strokeWidth="3" />
@@ -81,10 +81,10 @@ function ConstrainedAllene() {
 function FusedAryl({ n }: { n: 14 | 15 | 16 }) {
   const bridge = n === 14 ? "M121 75 107 111 132 139 162 139 176 104" : n === 15 ? "M121 75 112 111 140 137 168 111 159 75" : "M121 75 111 108 140 136 169 108 159 75";
   const label = n === 14 ? "source three-atom lower bridge" : n === 15 ? "source fluorene-type fused five-member ring" : "source fused indane-type lower ring";
-  return <svg viewBox="0 0 280 160" className="h-auto w-full text-slate-100" role="img" aria-label={`item ${n} ${label}`}><Benzene x={90} y={75}/><Benzene x={190} y={75}/><line x1="121" y1="75" x2="159" y2="75" stroke="currentColor" strokeWidth="4"/><path d={bridge} fill="none" stroke="#c4b5fd" strokeWidth="3.5" strokeLinejoin="round"/><text x="140" y="154" textAnchor="middle" fontSize="12" fill="#c4b5fd">{label}</text></svg>;
+  return <svg fill="currentColor" viewBox="0 0 280 160" className="h-auto w-full text-slate-100" role="img" aria-label={`item ${n} ${label}`}><Benzene x={90} y={75}/><Benzene x={190} y={75}/><line x1="121" y1="75" x2="159" y2="75" stroke="currentColor" strokeWidth="4"/><path d={bridge} fill="none" stroke="#c4b5fd" strokeWidth="3.5" strokeLinejoin="round"/><text x="140" y="154" textAnchor="middle" fontSize="12" fill="#c4b5fd">{label}</text></svg>;
 }
 function Cage({ n, kind }: { n: number; kind: "star" | "polycycle" }) {
-  return <svg viewBox="0 0 280 150" className="h-auto w-full text-slate-100" role="img" aria-label={`item ${n} ${kind} structure`}><path d={kind === "star" ? "M76 75 140 38 204 75 140 112Z M108 20v110 M172 20v110 M76 75 140 20 204 75 140 130 76 75 M76 75 140 130 204 75 140 20" : "M109 39 140 20 171 39 194 70 171 111 140 130 109 111 86 70Z M109 39 82 20 60 37 76 69 86 70 M171 39 198 20 220 37 204 69 194 70 M109 111 82 130 60 113 76 71 86 70 M171 111 198 130 220 113 204 71 194 70"} fill="none" stroke="currentColor" strokeWidth="3" strokeLinejoin="round"/><text x="45" y="138" fontSize="18" fill="#67e8f9">{n}</text></svg>;
+  return <svg fill="currentColor" viewBox="0 0 280 150" className="h-auto w-full text-slate-100" role="img" aria-label={`item ${n} ${kind} structure`}><path d={kind === "star" ? "M76 75 140 38 204 75 140 112Z M108 20v110 M172 20v110 M76 75 140 20 204 75 140 130 76 75 M76 75 140 130 204 75 140 20" : "M109 39 140 20 171 39 194 70 171 111 140 130 109 111 86 70Z M109 39 82 20 60 37 76 69 86 70 M171 39 198 20 220 37 204 69 194 70 M109 111 82 130 60 113 76 71 86 70 M171 111 198 130 220 113 204 71 194 70"} fill="none" stroke="currentColor" strokeWidth="3" strokeLinejoin="round"/><text x="45" y="138" fontSize="18" fill="#67e8f9">{n}</text></svg>;
 }
 
 const biaryls: BiphenylItem[] = [

@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 function DihedralAngle() {
-  return <svg viewBox="0 0 520 230" className="mt-4 w-full" role="img" aria-label="Dihedral angle between front and rear carbon valency planes">
+  return <svg fill="currentColor" viewBox="0 0 520 230" className="mt-4 w-full" role="img" aria-label="Dihedral angle between front and rear carbon valency planes">
     <path d="M115 170 260 80 405 170M260 80V205" fill="none" stroke="#67e8f9" strokeWidth="3" />
     <path d="M115 170 260 145 405 170" fill="none" stroke="#c084fc" strokeWidth="3" />
     <circle cx="260" cy="145" r="7" fill="#f0abfc" /><circle cx="260" cy="80" r="7" fill="#67e8f9" />
@@ -14,7 +14,7 @@ function DihedralAngle() {
 }
 
 function EnergyProfile() {
-  return <svg viewBox="0 0 720 360" className="mt-4 w-full" role="img" aria-label="Potential energy profile over a 360 degree bond rotation">
+  return <svg fill="currentColor" viewBox="0 0 720 360" className="mt-4 w-full" role="img" aria-label="Potential energy profile over a 360 degree bond rotation">
     <path d="M70 30V300H680" fill="none" stroke="#e2e8f0" strokeWidth="2" />
     <text x="20" y="165" fill="#cbd5e1" fontSize="16" transform="rotate(-90 20 165)">potential energy</text>
     <text x="610" y="340" fill="#cbd5e1" fontSize="16">angle rotated</text>

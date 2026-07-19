@@ -123,7 +123,7 @@ function Cyclobutane({
 
 function Structure5() {
   return (
-    <svg viewBox="0 0 760 180" className="h-auto w-full text-slate-100">
+    <svg fill="currentColor" viewBox="0 0 760 180" className="h-auto w-full text-slate-100">
       <text x="20" y="95" fontSize="20">CH₃</text>
       <line x1="75" y1="90" x2="135" y2="55" stroke={BOND} strokeWidth="3" />
       <DoubleBond x1={135} y1={55} x2={205} y2={90} />
@@ -145,7 +145,7 @@ function Structure5() {
 
 function Structure6() {
   return (
-    <svg viewBox="0 0 760 180" className="h-auto w-full text-slate-100">
+    <svg fill="currentColor" viewBox="0 0 760 180" className="h-auto w-full text-slate-100">
       <text x="20" y="100" fontSize="20">CH₃</text>
       <line x1="75" y1="95" x2="145" y2="60" stroke={BOND} strokeWidth="3" />
       <DoubleBond x1={145} y1={60} x2={215} y2={95} />
@@ -163,7 +163,7 @@ function Structure6() {
 
 function Structure7() {
   return (
-    <svg viewBox="0 0 650 180" className="h-auto w-full text-slate-100">
+    <svg fill="currentColor" viewBox="0 0 650 180" className="h-auto w-full text-slate-100">
       <text x="20" y="100" fontSize="20">CH₃</text>
       <line x1="75" y1="95" x2="150" y2="55" stroke={BOND} strokeWidth="3" />
       <DoubleBond x1={150} y1={55} x2={230} y2={95} />
@@ -178,7 +178,7 @@ function Structure7() {
 
 function Structure8() {
   return (
-    <svg viewBox="0 0 840 240" className="h-auto w-full text-slate-100">
+    <svg fill="currentColor" viewBox="0 0 840 240" className="h-auto w-full text-slate-100">
       <Cyclobutane cx={95} cy={120} size={48} />
       <line x1="143" y1="72" x2="205" y2="45" stroke={BOND} strokeWidth="3" />
       <DoubleBond x1={205} y1={45} x2={275} y2={80} />
@@ -202,7 +202,7 @@ function Structure8() {
 
 function Structure9() {
   return (
-    <svg viewBox="0 0 820 235" className="h-auto w-full text-slate-100">
+    <svg fill="currentColor" viewBox="0 0 820 235" className="h-auto w-full text-slate-100">
       <text x="20" y="123" fontSize="20">CH₃</text>
       <line x1="75" y1="118" x2="135" y2="80" stroke={BOND} strokeWidth="3" />
       <DoubleBond x1={135} y1={80} x2={205} y2={118} />
@@ -226,7 +226,7 @@ function Structure9() {
 
 function Structure10() {
   return (
-    <svg viewBox="0 0 980 260" className="h-auto w-full text-slate-100">
+    <svg fill="currentColor" viewBox="0 0 980 260" className="h-auto w-full text-slate-100">
       <text x="15" y="130" fontSize="20">CH₃</text>
       <line x1="70" y1="125" x2="125" y2="90" stroke={BOND} strokeWidth="3" />
       <DoubleBond x1={125} y1={90} x2={190} y2={125} />
@@ -261,7 +261,7 @@ function Structure10() {
 
 function Structure11() {
   return (
-    <svg viewBox="0 0 840 245" className="h-auto w-full text-slate-100">
+    <svg fill="currentColor" viewBox="0 0 840 245" className="h-auto w-full text-slate-100">
       <path
         d="M125 120 L200 55 L275 120 L200 185 Z
            M275 120 L350 55 L425 120 L350 185 Z

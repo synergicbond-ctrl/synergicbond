@@ -11,11 +11,11 @@ function Phenyl({ x, y, r = 28 }: { x: number; y: number; r?: number }) {
 }
 
 function Heteroaryl({ n }: { n: 153 | 154 }) {
-  return <svg viewBox="0 0 170 130" className={svgClass} role="img" aria-label={`source heteroarene ${n}`}><Phenyl x={85} y={65}/>{n === 153 ? <text x="77" y="98" fontSize="17">N</text> : <><text x="102" y="54" fontSize="17">N</text><text x="77" y="98" fontSize="17">N</text></>}</svg>;
+  return <svg fill="currentColor" viewBox="0 0 170 130" className={svgClass} role="img" aria-label={`source heteroarene ${n}`}><Phenyl x={85} y={65}/>{n === 153 ? <text x="77" y="98" fontSize="17">N</text> : <><text x="102" y="54" fontSize="17">N</text><text x="77" y="98" fontSize="17">N</text></>}</svg>;
 }
 
 function FusedTerpene() {
-  return <svg viewBox="0 0 330 240" className={svgClass} role="img" aria-label="source fused terpene 155 with four defined methyl wedges"><g fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinejoin="round">
+  return <svg fill="currentColor" viewBox="0 0 330 240" className={svgClass} role="img" aria-label="source fused terpene 155 with four defined methyl wedges"><g fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinejoin="round">
     <path d="M44 115 70 95 99 113 130 94 160 112 160 149 130 168 99 150 70 172 44 154Z"/>
     <path d="M160 112 191 94 221 112 221 149 191 168 160 149"/>
     <path d="M130 168 160 149 191 168 191 205 160 224 130 205Z"/>
@@ -26,7 +26,7 @@ function FusedTerpene() {
 }
 
 function Dinitrile() {
-  return <svg viewBox="0 0 205 145" className={svgClass} role="img" aria-label="source ortho-benzenedicarbonitrile 156"><Phenyl x={85} y={72}/><g fill="none" stroke="currentColor"><line x1="109" y1="58" x2="154" y2="30" strokeWidth="2"/><line x1="112" y1="64" x2="157" y2="36" strokeWidth="1.35"/><line x1="106" y1="52" x2="151" y2="24" strokeWidth="1.35"/><line x1="109" y1="86" x2="154" y2="114" strokeWidth="2"/><line x1="112" y1="80" x2="157" y2="108" strokeWidth="1.35"/><line x1="106" y1="92" x2="151" y2="120" strokeWidth="1.35"/></g><text x="160" y="35" fontSize="16">N</text><text x="160" y="120" fontSize="16">N</text></svg>;
+  return <svg fill="currentColor" viewBox="0 0 205 145" className={svgClass} role="img" aria-label="source ortho-benzenedicarbonitrile 156"><Phenyl x={85} y={72}/><g fill="none" stroke="currentColor"><line x1="109" y1="58" x2="154" y2="30" strokeWidth="2"/><line x1="112" y1="64" x2="157" y2="36" strokeWidth="1.35"/><line x1="106" y1="52" x2="151" y2="24" strokeWidth="1.35"/><line x1="109" y1="86" x2="154" y2="114" strokeWidth="2"/><line x1="112" y1="80" x2="157" y2="108" strokeWidth="1.35"/><line x1="106" y1="92" x2="151" y2="120" strokeWidth="1.35"/></g><text x="160" y="35" fontSize="16">N</text><text x="160" y="120" fontSize="16">N</text></svg>;
 }
 
 function RingFive({ n }: { n: 161 | 162 | 163 | 164 | 165 }) {
@@ -34,11 +34,11 @@ function RingFive({ n }: { n: 161 | 162 | 163 | 164 | 165 }) {
   const lowerPlain = n === 162;
   const lowerHashed = n === 165;
   const ethyl = n === 164 || n === 165;
-  return <svg viewBox="0 0 190 135" className={svgClass} role="img" aria-label={`source cyclopentane face structure ${n}`}><path d="M42 88 28 46 65 19 105 47 91 88Z" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinejoin="round"/>{upperHashed ? <HashedWedge from={{ x: 105, y: 47 }} to={{ x: 139, y: 34 }} width={8}/> : <SolidWedge from={{ x: 105, y: 47 }} to={{ x: 139, y: 34 }} width={8}/>}<text x="141" y="38" fontSize="15">CH₃</text>{lowerPlain ? <line x1="91" y1="88" x2="122" y2="106" stroke="currentColor" strokeWidth="2"/> : lowerHashed ? <HashedWedge from={{ x: 91, y: 88 }} to={{ x: 122, y: 106 }} width={8}/> : <SolidWedge from={{ x: 91, y: 88 }} to={{ x: 122, y: 106 }} width={8}/>} {ethyl ? <><line x1="122" y1="106" x2="151" y2="94" stroke="currentColor" strokeWidth="2"/><text x="153" y="99" fontSize="15">CH₃</text></> : <text x="124" y="113" fontSize="15">CH₃</text>}</svg>;
+  return <svg fill="currentColor" viewBox="0 0 190 135" className={svgClass} role="img" aria-label={`source cyclopentane face structure ${n}`}><path d="M42 88 28 46 65 19 105 47 91 88Z" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinejoin="round"/>{upperHashed ? <HashedWedge from={{ x: 105, y: 47 }} to={{ x: 139, y: 34 }} width={8}/> : <SolidWedge from={{ x: 105, y: 47 }} to={{ x: 139, y: 34 }} width={8}/>}<text x="141" y="38" fontSize="15">CH₃</text>{lowerPlain ? <line x1="91" y1="88" x2="122" y2="106" stroke="currentColor" strokeWidth="2"/> : lowerHashed ? <HashedWedge from={{ x: 91, y: 88 }} to={{ x: 122, y: 106 }} width={8}/> : <SolidWedge from={{ x: 91, y: 88 }} to={{ x: 122, y: 106 }} width={8}/>} {ethyl ? <><line x1="122" y1="106" x2="151" y2="94" stroke="currentColor" strokeWidth="2"/><text x="153" y="99" fontSize="15">CH₃</text></> : <text x="124" y="113" fontSize="15">CH₃</text>}</svg>;
 }
 
 function FixedCyclopentane() {
-  return <svg viewBox="0 0 285 200" className={svgClass} role="img" aria-label="source 157 cyclopentane with two solid-wedge n-propyl substituents"><path d="M111 30 151 59 137 105 89 105 75 59Z" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinejoin="round"/><SolidWedge from={{ x: 89, y: 105 }} to={{ x: 45, y: 133 }} width={10}/><path d="M45 133 58 167 34 191" fill="none" stroke="currentColor" strokeWidth="2.2"/><text x="3" y="199" fontSize="17">H₃C</text><SolidWedge from={{ x: 137, y: 105 }} to={{ x: 162, y: 140 }} width={10}/><path d="M162 140 207 150 219 187 251 199" fill="none" stroke="currentColor" strokeWidth="2.2"/><text x="252" y="204" fontSize="17">CH₃</text></svg>;
+  return <svg fill="currentColor" viewBox="0 0 285 200" className={svgClass} role="img" aria-label="source 157 cyclopentane with two solid-wedge n-propyl substituents"><path d="M111 30 151 59 137 105 89 105 75 59Z" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinejoin="round"/><SolidWedge from={{ x: 89, y: 105 }} to={{ x: 45, y: 133 }} width={10}/><path d="M45 133 58 167 34 191" fill="none" stroke="currentColor" strokeWidth="2.2"/><text x="3" y="199" fontSize="17">H₃C</text><SolidWedge from={{ x: 137, y: 105 }} to={{ x: 162, y: 140 }} width={10}/><path d="M162 140 207 150 219 187 251 199" fill="none" stroke="currentColor" strokeWidth="2.2"/><text x="252" y="204" fontSize="17">CH₃</text></svg>;
 }
 
 function Nitro({ x, y }: { x: number; y: number }) {
@@ -46,12 +46,12 @@ function Nitro({ x, y }: { x: number; y: number }) {
 }
 
 function CrowdedBiaryl({ n }: { n: 158 | 159 }) {
-  if (n === 159) return <svg viewBox="0 0 250 225" className={svgClass} role="img" aria-label="source 159 ortho-cyano ortho-nitro biphenyl"><Phenyl x={128} y={61}/><Phenyl x={128} y={153}/><line x1="128" y1="89" x2="128" y2="125" stroke="currentColor" strokeWidth="2.4"/><g fill="none" stroke="currentColor"><line x1="104" y1="139" x2="63" y2="116" strokeWidth="2"/><line x1="100" y1="144" x2="59" y2="121" strokeWidth="1.3"/><line x1="108" y1="134" x2="67" y2="111" strokeWidth="1.3"/></g><text x="35" y="119" fontSize="16">N</text><Nitro x={152} y={76}/></svg>;
-  return <svg viewBox="0 0 300 250" className={svgClass} role="img" aria-label="source 158 crowded nitro sulfonic-acid biaryl"><Phenyl x={150} y={63}/><Phenyl x={150} y={170}/><line x1="150" y1="91" x2="150" y2="142" stroke="currentColor" strokeWidth="2.4"/><line x1="126" y1="77" x2="83" y2="102" stroke="currentColor" strokeWidth="2"/><text x="42" y="104" fontSize="15">S</text><text x="25" y="92" fontSize="14">O</text><text x="25" y="120" fontSize="14">HO</text><line x1="42" y1="97" x2="31" y2="84" stroke="currentColor" strokeWidth="1.6"/><line x1="43" y1="105" x2="31" y2="118" stroke="currentColor" strokeWidth="1.6"/><Nitro x={174} y={76}/><path d="M150 113 108 141 74 137" fill="none" stroke="currentColor" strokeWidth="2"/><line x1="108" y1="141" x2="78" y2="164" stroke="currentColor" strokeWidth="1.3"/><text x="34" y="172" fontSize="16">H₃C</text><path d="M150 113 191 137 217 125 251 132" fill="none" stroke="currentColor" strokeWidth="2"/><text x="254" y="137" fontSize="16">CH₃</text></svg>;
+  if (n === 159) return <svg fill="currentColor" viewBox="0 0 250 225" className={svgClass} role="img" aria-label="source 159 ortho-cyano ortho-nitro biphenyl"><Phenyl x={128} y={61}/><Phenyl x={128} y={153}/><line x1="128" y1="89" x2="128" y2="125" stroke="currentColor" strokeWidth="2.4"/><g fill="none" stroke="currentColor"><line x1="104" y1="139" x2="63" y2="116" strokeWidth="2"/><line x1="100" y1="144" x2="59" y2="121" strokeWidth="1.3"/><line x1="108" y1="134" x2="67" y2="111" strokeWidth="1.3"/></g><text x="35" y="119" fontSize="16">N</text><Nitro x={152} y={76}/></svg>;
+  return <svg fill="currentColor" viewBox="0 0 300 250" className={svgClass} role="img" aria-label="source 158 crowded nitro sulfonic-acid biaryl"><Phenyl x={150} y={63}/><Phenyl x={150} y={170}/><line x1="150" y1="91" x2="150" y2="142" stroke="currentColor" strokeWidth="2.4"/><line x1="126" y1="77" x2="83" y2="102" stroke="currentColor" strokeWidth="2"/><text x="42" y="104" fontSize="15">S</text><text x="25" y="92" fontSize="14">O</text><text x="25" y="120" fontSize="14">HO</text><line x1="42" y1="97" x2="31" y2="84" stroke="currentColor" strokeWidth="1.6"/><line x1="43" y1="105" x2="31" y2="118" stroke="currentColor" strokeWidth="1.6"/><Nitro x={174} y={76}/><path d="M150 113 108 141 74 137" fill="none" stroke="currentColor" strokeWidth="2"/><line x1="108" y1="141" x2="78" y2="164" stroke="currentColor" strokeWidth="1.3"/><text x="34" y="172" fontSize="16">H₃C</text><path d="M150 113 191 137 217 125 251 132" fill="none" stroke="currentColor" strokeWidth="2"/><text x="254" y="137" fontSize="16">CH₃</text></svg>;
 }
 
 function Oligophenyl() {
-  return <svg viewBox="0 0 170 350" className={svgClass} role="img" aria-label="source linear para-quinquephenyl 160">{[42, 108, 174, 240, 306].map((y, index) => <g key={y}><Phenyl x={85} y={y}/>{index < 4 && <line x1="85" y1={y+28} x2="85" y2={y+38} stroke="currentColor" strokeWidth="2.2"/>}</g>)}</svg>;
+  return <svg fill="currentColor" viewBox="0 0 170 350" className={svgClass} role="img" aria-label="source linear para-quinquephenyl 160">{[42, 108, 174, 240, 306].map((y, index) => <g key={y}><Phenyl x={85} y={y}/>{index < 4 && <line x1="85" y1={y+28} x2="85" y2={y+38} stroke="currentColor" strokeWidth="2.2"/>}</g>)}</svg>;
 }
 
 function Structural({ n }: { n: number }) {

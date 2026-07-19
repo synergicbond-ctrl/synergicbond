@@ -12,8 +12,8 @@ function CarbonylFramework({ molecule }: { molecule: Molecule }) {
     malonate: ["EtO", "OEt", "CH₂"], acetone: ["CH₃", "CH₃", ""], acetoacetate: ["CH₃", "OCH₃", "CH₂"], acetylacetone: ["CH₃", "CH₃", "CH₂"], dibenzoyl: ["Ph", "Ph", "CH₂"],
   };
   const [left, right, middle] = labels[molecule];
-  if (molecule === "acetone") return <svg viewBox="0 0 250 135" className="h-auto w-full" role="img" aria-label="acetone structure"><path d="M36 100L110 62L184 100" {...b}/>{double(110, 62, 110, 20)}{tx(20,108,left)}{tx(110,70,"C")}{tx(110,16,"O")}{tx(204,108,right)}</svg>;
-  return <svg viewBox="0 0 300 135" className="h-auto w-full" role="img" aria-label={`${names[molecule]} structure`}><path d="M24 100L78 62L132 100L186 62L240 100" {...b}/>{double(78,62,78,20)}{double(186,62,186,20)}{tx(10,108,left)}{tx(78,70,"C")}{tx(78,16,"O")}{tx(132,108,middle)}{tx(186,70,"C")}{tx(186,16,"O")}{tx(260,108,right)}</svg>;
+  if (molecule === "acetone") return <svg fill="currentColor" viewBox="0 0 250 135" className="h-auto w-full" role="img" aria-label="acetone structure"><path d="M36 100L110 62L184 100" {...b}/>{double(110, 62, 110, 20)}{tx(20,108,left)}{tx(110,70,"C")}{tx(110,16,"O")}{tx(204,108,right)}</svg>;
+  return <svg fill="currentColor" viewBox="0 0 300 135" className="h-auto w-full" role="img" aria-label={`${names[molecule]} structure`}><path d="M24 100L78 62L132 100L186 62L240 100" {...b}/>{double(78,62,78,20)}{double(186,62,186,20)}{tx(10,108,left)}{tx(78,70,"C")}{tx(78,16,"O")}{tx(132,108,middle)}{tx(186,70,"C")}{tx(186,16,"O")}{tx(260,108,right)}</svg>;
 }
 
 const pairs = [

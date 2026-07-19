@@ -15,7 +15,7 @@ function CumulatedStructure({ chain, active }: { chain: string; active: boolean 
   const start = 65;
   const spacing = 38;
   const end = start + segments * spacing;
-  return <svg viewBox="0 0 310 145" className="mt-3 w-full" role="img" aria-label={chain}>
+  return <svg fill="currentColor" viewBox="0 0 310 145" className="mt-3 w-full" role="img" aria-label={chain}>
     {Array.from({ length: segments }, (_, index) => <g key={index}><path d={`M${start + index * spacing} 65H${start + (index + 1) * spacing} 65`} stroke="#67e8f9" strokeWidth="2.5" /><path d={`M${start + index * spacing} 71H${start + (index + 1) * spacing} 71`} stroke="#67e8f9" strokeWidth="2.5" /></g>)}
     <path d={`M${start} 68L30 35M${start} 68L30 105M${end} 68L${end + 35} 35M${end} 68L${end + 35} 105`} stroke="currentColor" strokeWidth="2.5" fill="none" />
     <text x="19" y="33" fontSize="15">{chain.startsWith("O") ? "O" : "a"}</text><text x="19" y="117" fontSize="15">{chain.startsWith("O") ? "O" : "b"}</text>
@@ -43,7 +43,7 @@ function SpiraneStructure({ item }: { item: SpiraneCase }) {
     return <path key={i} d={`M${x} 72L${x + width / 2} 45L${x + width} 72L${x + width / 2} 99Z`} fill="none" stroke="currentColor" strokeWidth="2.5" />;
   });
   const right = start + item.rings * width;
-  return <svg viewBox="0 0 300 150" className="mt-3 w-full" role="img" aria-label={item.label}>
+  return <svg fill="currentColor" viewBox="0 0 300 150" className="mt-3 w-full" role="img" aria-label={item.label}>
     {points}
     {item.substituents && <><path d={`M${start} 72L18 40M${start} 72L18 105M${right} 72L${right + 24} 40M${right} 72L${right + 24} 105`} stroke="#f0abfc" strokeWidth="2.5" /><text x="5" y="39" fill="#f0abfc">a</text><text x="5" y="118" fill="#f0abfc">b</text><text x={right + 27} y="39" fill="#f0abfc">a</text><text x={right + 27} y="118" fill="#f0abfc">b</text></>}
     {item.label.includes("F/Cl") && <><text x="5" y="39" fill="#f0abfc">F</text><text x={right + 27} y="39" fill="#f0abfc">Cl</text></>}

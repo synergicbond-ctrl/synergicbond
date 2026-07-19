@@ -7,7 +7,7 @@ function Card({ children, caption }: { children: ReactNode; caption: string }) {
 }
 
 function EtherMetamers() {
-  return <svg viewBox="0 0 760 150" className="min-w-[580px] w-full text-slate-100" role="img" aria-label="Methyl butyl ether and ethyl propyl ether metamer pair"><g stroke="currentColor" strokeWidth="3"><path d="M65 85H150M150 85H235M235 85H320M435 85H520M520 85H605M605 85H690"/></g><g fontSize="20"><text x="34" y="113">CH₃</text><text x="134" y="90">O</text><text x="211" y="113">CH₂</text><text x="296" y="113">CH₂CH₃</text><text x="350" y="90" fill="#67e8f9">and</text><text x="405" y="113">CH₃CH₂</text><text x="505" y="90">O</text><text x="580" y="113">CH₂CH₂CH₃</text></g></svg>;
+  return <svg fill="currentColor" viewBox="0 0 760 150" className="min-w-[580px] w-full text-slate-100" role="img" aria-label="Methyl butyl ether and ethyl propyl ether metamer pair"><g stroke="currentColor" strokeWidth="3"><path d="M65 85H150M150 85H235M235 85H320M435 85H520M520 85H605M605 85H690"/></g><g fontSize="20"><text x="34" y="113">CH₃</text><text x="134" y="90">O</text><text x="211" y="113">CH₂</text><text x="296" y="113">CH₂CH₃</text><text x="350" y="90" fill="#67e8f9">and</text><text x="405" y="113">CH₃CH₂</text><text x="505" y="90">O</text><text x="580" y="113">CH₂CH₂CH₃</text></g></svg>;
 }
 
 function KetoEnol() { return <ButanoneEnolPair />; }

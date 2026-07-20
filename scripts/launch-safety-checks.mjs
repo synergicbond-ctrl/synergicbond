@@ -107,9 +107,9 @@ section("6. Atomic Structure part & route counts");
     (p) => /parts\/part\d{2}\.tsx$/.test(p));
   assert(partFiles.length === EXPECTED, `${EXPECTED} part TSX files present (found ${partFiles.length})`);
   const route = read("app/learn/atomic-structure/[part]/page.tsx");
-  const registered = (route.match(/part\d{2}:\s*Part\d{2}/g) || []).length;
+  const registered = (route.match(/\b\d{1,2}:\s*Part\d{2}\b/g) || []).length;
   assert(registered === EXPECTED, `${EXPECTED} parts registered in the [part] route map (found ${registered})`);
-  assert(route.includes("generateStaticParams") && route.includes("Object.keys(parts)"),
+  assert(route.includes("generateStaticParams") && route.includes("atomicPartMeta"),
     "generateStaticParams enumerates every registered part");
   notes.push(`Atomic Structure: ${partFiles.length} part files, ${registered} routed.`);
 }

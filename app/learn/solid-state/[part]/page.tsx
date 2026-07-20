@@ -39,8 +39,8 @@ export default async function SolidStatePartRoute({ params }: { params: Promise<
   if (!Number.isInteger(number) || currentIndex < 0) notFound();
 
   const definition = SOLID_STATE_PARTS[currentIndex];
-  const module = await definition.load();
-  const PartComponent = module.default;
+  const loaded = await definition.load();
+  const PartComponent = loaded.default;
 
   return (
     <ChapterShell

@@ -750,6 +750,11 @@ function TestRunner({ session, restore, onExit, onRestart }: { session: TestSess
     });
     setSubmitState(result ? "saved" : "local");
   };
+  // Latest-ref pattern: keep the timer's finish callback pointing at the current
+  // closure so the interval always sees up-to-date state. This assignment sits
+  // after conditional returns, so it cannot live in an effect; the ref is only
+  // read later from the timer, never during this render.
+  // eslint-disable-next-line react-hooks/refs
   finishRef.current = (force?: boolean) => { void finishTest(Boolean(force)); };
 
   if (finished) {
@@ -901,6 +906,10 @@ export default function CompleteTestExperience({ exam }: { exam?: PYQExam } = {}
   const [run, setRun] = useState<{ session: TestSession; restore?: PersistedRun } | null>(null);
   const [resume, setResume] = useState<PersistedRun | null>(null);
 
+  // Client-only read of a persisted run from localStorage on mount. A lazy
+  // useState initializer would run during SSR (no localStorage) and cause a
+  // hydration mismatch, so the mount effect is the correct SSR-safe pattern.
+  // eslint-disable-next-line react-hooks/set-state-in-effect
   useEffect(() => { setResume(loadPersistedRun()); }, []);
 
   const startQuick = () => {

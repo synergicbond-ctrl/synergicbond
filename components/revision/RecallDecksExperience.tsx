@@ -79,7 +79,11 @@ export default function RecallDecksExperience() {
   const [done, setDone] = useState(false);
   const [paletteOpen, setPaletteOpen] = useState(false);
 
+  // Client-only initialization from localStorage progress and the URL query on
+  // mount. Deferring to a lazy initializer would run during SSR (no window) and
+  // risk a hydration mismatch, so the mount effect is the correct pattern.
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setProgress(loadProgress());
     const rawDeck = new URLSearchParams(window.location.search).get("deck");
     const found = RECALL_DECKS.find((deck) => deck.key === rawDeck);

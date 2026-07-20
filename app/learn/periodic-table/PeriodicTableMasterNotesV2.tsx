@@ -1455,6 +1455,36 @@ function SectionAtomicRadiusLegacyV9() {
         H⁻ has only one proton holding two electrons and is much more diffuse than a neutral hydrogen atom. Numerical ionic radii depend on the crystal model and coordination number, so avoid treating one quoted H⁻ value as a universal radius.
       </Callout>
 
+      <H3>Reference Table — Sizes of Atoms and Their Common Ions (pm)</H3>
+      <Callout kind="note" title="Which convention these values use">
+        The figures below are <b>crystal (Shannon-type) radii</b>, the set most common on quick-reference charts. They use a different reference point than the <b>Pauling</b> ionic radii quoted elsewhere in this chapter — e.g. here F⁻ = 133 pm and Na⁺ = 102 pm, whereas the Pauling values are F⁻ = 136 pm and Na⁺ = 95 pm. Both are valid; only ever compare radii taken from the <i>same</i> convention.
+      </Callout>
+      <DataTable columns={["Group", "Element", "Atom (pm)", "Common ion", "Ion (pm)"]} rows={[
+        ["1", "Li", "134", "Li⁺", "76"],
+        ["1", "Na", "154", "Na⁺", "102"],
+        ["1", "K", "196", "K⁺", "138"],
+        ["1", "Rb", "211", "Rb⁺", "152"],
+        ["2", "Be", "90", "Be²⁺", "45"],
+        ["2", "Mg", "130", "Mg²⁺", "72"],
+        ["2", "Ca", "174", "Ca²⁺", "100"],
+        ["2", "Sr", "192", "Sr²⁺", "118"],
+        ["13", "B", "82", "B³⁺", "41"],
+        ["13", "Al", "118", "Al³⁺", "68"],
+        ["13", "Ga", "126", "Ga³⁺", "76"],
+        ["13", "In", "144", "In³⁺", "94"],
+        ["16", "O", "73", "O²⁻", "140"],
+        ["16", "S", "102", "S²⁻", "184"],
+        ["16", "Se", "116", "Se²⁻", "198"],
+        ["16", "Te", "135", "Te²⁻", "221"],
+        ["17", "F", "71", "F⁻", "133"],
+        ["17", "Cl", "99", "Cl⁻", "181"],
+        ["17", "Br", "114", "Br⁻", "196"],
+        ["17", "I", "133", "I⁻", "220"],
+      ]} accent={T.s} />
+      <Callout kind="note">
+        The pattern confirms the general rules: across groups 1, 2 and 13 the <b>cation</b> is much smaller than its atom (loss of the valence shell + rising Zeff), while across groups 16 and 17 the <b>anion</b> is much larger than its atom (added electron + increased repulsion). Hydrogen is a special case — H = 37 pm but the diffuse H⁻ ≈ 208 pm.
+      </Callout>
+
       <H2 id="radius-summary">12 · Master Summary of Size Orders</H2>
       <DataTable columns={["Comparison", "Order / Rule"]} rows={[
         ["Four types of radii", "van der Waals > Metallic > Covalent (r_V > r_M > r_C)"],

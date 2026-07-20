@@ -1444,6 +1444,10 @@ function SectionAtomicRadiusLegacyV9() {
         ["Protons (Z)", 7, 8, 9, 11, 12, 13, 14],
       ]} />
       <MathBlock tex={String.raw`\mathrm{N^{3-}>O^{2-}>F^->Na^+>Mg^{2+}>Al^{3+}>Si^{4+}}`} label="isoelectronic radius order" />
+      <DataTable columns={["Isoelectronic set", "Electron count", "Radius order"]} rows={[
+        ["S²⁻, Cl⁻, K⁺, Ca²⁺", "18", "S²⁻ > Cl⁻ > K⁺ > Ca²⁺"],
+        ["Na⁺, Ne, F⁻", "10", "F⁻ > Ne > Na⁺ (equivalently Na⁺ < Ne < F⁻)"],
+      ]} accent={T.cyan} />
       <Callout kind="note">
         Other useful isoelectronic sets include S²⁻, Cl⁻, K⁺, Ca²⁺, Sc³⁺ and H⁻, He, Li⁺. Within each set, increasing proton number contracts the shared electron count more strongly.
       </Callout>
@@ -3093,6 +3097,22 @@ function SectionElectronGainLegacyV9() {
         Be ([He] 2s²) and Mg ([Ne] 3s²) have fully-filled, extra-stable ns² subshells. Adding an electron forces it into the next subshell (2p / 3p), which is higher in energy, so the process is endothermic — the same underlying reason as the noble gases, just far less extreme. Experimentally, Be⁻ and Mg⁻ do not exist as bound gas-phase anions at all — there is no stable state to measure, so CRC lists their electron affinity as effectively zero, not a specific positive number. This is different from Ca, Sr and Ba (also Group 2, also ns²-filled), which do have a very weakly bound anion (small positive Δ<sub>eg</sub>H: 2.37, 5.03, 13.95 kJ/mol respectively) — so the whole group should not be treated identically.
       </Callout>
 
+      <H3>Representative Δ<sub>eg</sub>H Trend Orders</H3>
+      <P>
+        Sign conventions differ, so always state whether an order is written by <b>magnitude</b> |Δ<sub>eg</sub>H| (electron-affinity style, larger = more exothermic) or by <b>signed</b> value (thermodynamic style, more negative = more exothermic). The two give the same physical ranking but read in opposite directions.
+      </P>
+      <DataTable columns={["Family / set", "By magnitude |ΔegH| — most exothermic first", "By signed ΔegH — most negative first"]} rows={[
+        ["Halogens (Group 17)", "Cl > F > Br > I", "Cl < F < Br < I"],
+        ["Chalcogens (Group 16)", "S > Se > Te > Po > O", "S < Se < Te < Po < O"],
+        ["Group 1", "H > Li > Na > K > Rb > Cs", "H < Li < Na < K < Rb < Cs"],
+        ["Period-2 vs period-3 pairs", "Cl > F ; S > O ; Si > C ; P > N ; Al > B", "third-period congener is more negative"],
+        ["Noble gases (least favourable)", "Ne > Ar ≈ Kr > Xe > Rn > He (most positive)", "all positive (endothermic)"],
+      ]} accent={T.d} />
+      <MathBlock tex={String.raw`\text{Halogens:}\quad |\Delta_{eg}H|:\ \mathrm{Cl>F>Br>I}\qquad\text{signed}:\ \mathrm{Cl<F<Br<I}`} />
+      <Callout kind="special" title="The two famous reversals">
+        Cl is more exothermic than F, and S is more exothermic than O. In each case the compact 2p shell of the period-2 head atom raises electron–electron repulsion enough to offset its higher nuclear charge, so the period-3 element below it accepts an electron more favourably.
+      </Callout>
+
       <H2>5 · First, Second and Third Electron-Gain Steps</H2>
       <MathBlock tex={String.raw`\mathrm{O(g)+e^-\rightarrow O^-(g)}\qquad \Delta_{eg}H_1<0`} />
       <MathBlock tex={String.raw`\mathrm{O^-(g)+e^-\rightarrow O^{2-}(g)}\qquad \Delta_{eg}H_2>0`} />
@@ -3102,6 +3122,11 @@ function SectionElectronGainLegacyV9() {
         <React.Fragment key="hydration">In aqueous solution, hydration enthalpy can also stabilize charged ions.</React.Fragment>,
         <React.Fragment key="cycle">The stability of a compound is decided by the complete thermochemical cycle, not by one gas-phase electron-addition step.</React.Fragment>,
       ]} />
+
+      <H3>Relation to Ionization Energy</H3>
+      <P>Electron addition to X is the exact reverse of ionizing X⁻, so with consistent thermodynamic reference states the two quantities are equal in magnitude and opposite in sign:</P>
+      <MathBlock tex={String.raw`\mathrm{IE(X^-)=-\Delta_{eg}H(X)}`} label="reverse-process relation" />
+      <P>The energy needed to detach an electron from Cl⁻ therefore equals the magnitude of the energy released when a neutral Cl atom gains that electron.</P>
 
       <H2>6 · Applications</H2>
       <DataTable columns={["Application", "How electron gain enthalpy helps", "Example / caution"]} rows={[
@@ -3134,6 +3159,8 @@ function SectionElectronGainLegacyV9() {
       <WorkedExample number="E6" title="Be and Mg" question="Why are the first electron gain enthalpies of Be and Mg near zero or positive?" reasoning={["Both atoms have stable ns² configurations.", "The incoming electron must begin the higher-energy np subshell.", "The gain in nuclear attraction is not enough to offset the energetic cost."]} answer="Electron addition is weakly favourable or unfavourable." accent={T.gold} />
       <WorkedExample number="E7" title="F₂ versus Cl₂ oxidizing power" question="Why is F₂ the stronger aqueous oxidant although Cl has the more negative atomic ΔegH?" reasoning={["Atomic ΔegH describes X(g), not X₂(aq).", "The redox process includes X–X bond dissociation and hydration of X⁻.", "The very favourable hydration of F⁻ makes the complete aqueous reduction of F₂ more favourable."]} answer="Oxidizing power is a full thermodynamic-cycle property." accent={T.cyan} />
       <WorkedExample number="E8" title="Formation of MgO" question="Does the positive second electron gain enthalpy of oxygen prevent MgO formation?" reasoning={["Formation of O²⁻(g) includes a positive ΔegH₂.", "MgO releases very large lattice enthalpy when Mg²⁺ and O²⁻ form the crystal.", "The complete Born–Haber cycle is favourable."]} answer="No. Lattice stabilization compensates for the positive second electron-gain step." accent={T.d} />
+      <WorkedExample number="E9" title="Arrange the whole of period 2" question="Rank Be, B, C, N, O, F and Ne by general favourability of first electron addition, and name every anomaly." reasoning={["F and O are strongly favourable (near-complete 2p shell, high Zeff).", "C then B are progressively less favourable as the product shell is less complete.", "Be is weak/unfavourable because the added electron must start the empty 2p above a filled 2s².", "N is anomalously weak because addition disturbs the stable half-filled 2p³.", "Ne is strongly unfavourable — the electron must begin the n = 3 shell."]} answer="F > O > C > B > Li, with Be, N and Ne as the three configuration-driven anomalies (near-zero or positive)." accent={T.gold} />
+      <WorkedExample number="E10" title="Reverse-process link to ionization" question="Relate the electron affinity of Cl to the ionization energy of Cl⁻." reasoning={["Cl(g) + e⁻ → Cl⁻(g) is the exact reverse of Cl⁻(g) → Cl(g) + e⁻.", "With consistent reference states the two energy changes are equal and opposite.", "So IE(Cl⁻) = −ΔegH(Cl)."]} answer="The energy to detach an electron from Cl⁻ equals the magnitude of energy released when Cl gains that electron." accent={T.cyan} />
     </div>
   );
 }
@@ -5262,13 +5289,8 @@ export function SectionIonization() {
 export function SectionElectronGain() {
   return (
     <>
-      <><SectionElectronGainLegacyV9 /><V9ElectronGainSourcePanel /></>
-      <div
-        data-integration="SectionElectronGain-periodicity-generated-corpus-phd-v9"
-        style={{ marginTop: 34 }}
-      >
-        <PeriodicTableDeepAdditions topic="electronGain" />
-      </div>
+      <SectionElectronGainLegacyV9 />
+      <V9ElectronGainSourcePanel />
     </>
   );
 }

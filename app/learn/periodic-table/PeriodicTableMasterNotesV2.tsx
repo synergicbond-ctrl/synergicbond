@@ -587,33 +587,39 @@ export function WorkedExample({
   return (
     <div className="workedExample periodicityWorkedExample"
       style={{
-        border: `1px solid ${T.border}`,
-        borderRadius: 14,
-        padding: "16px 18px",
-        background: T.surface,
+        border: `1px solid ${accent}55`,
+        borderTop: `4px solid ${accent}`,
+        borderLeft: `7px solid ${accent}`,
+        borderRadius: 20,
+        padding: "18px 20px",
+        background: `linear-gradient(145deg, ${accent}1f 0%, ${T.surface2} 32%, ${T.surface} 100%)`,
+        boxShadow: "0 16px 42px rgba(0,0,0,.26)",
         marginBottom: 14,
+        height: "100%",
+        boxSizing: "border-box",
+        overflow: "hidden",
       }}
     >
-      <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 9 }}>
+      <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 12 }}>
         <div
           style={{
-            width: 30,
-            height: 30,
-            borderRadius: 9,
+            width: 38,
+            height: 38,
+            borderRadius: 12,
             display: "grid",
             placeItems: "center",
-            background: `${accent}18`,
-            border: `1px solid ${accent}66`,
-            color: accent,
+            background: accent,
+            color: T.bg,
             fontFamily: T.mono,
-            fontWeight: 800,
-            fontSize: 12,
+            fontWeight: 950,
+            fontSize: 13,
             flexShrink: 0,
+            boxShadow: `0 4px 14px ${accent}55`,
           }}
         >
           {number}
         </div>
-        <div style={{ fontFamily: T.serif, color: T.text, fontSize: 17, fontWeight: 700 }}>{title}</div>
+        <div style={{ fontFamily: T.serif, color: accent, fontSize: "clamp(1.2rem, 1.9vw, 1.42rem)", fontWeight: 800, lineHeight: 1.14 }}>{title}</div>
       </div>
       <div
         style={{
@@ -1664,6 +1670,7 @@ export function SectionZeffSlater() {
             ]} accent={T.f} />
 
             <H2>5 · Slater Calculations — From Basic to JEE Advanced</H2>
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", gap: 16, alignItems: "stretch", margin: "12px 0" }}>
             <WorkedExample number="Z1" title="Helium 1s electron" question="Estimate Zeff for one 1s electron of He." reasoning={["Only the other 1s electron shields the test electron.", "For 1s, its contribution is 0.30.", "Zeff = 2 − 0.30."]} answer="Zeff = 1.70." accent={T.cyan} />
             <WorkedExample number="Z2" title="Lithium 2s electron" question="Estimate Zeff for the valence electron of Li." reasoning={["Li = (1s²)(2s¹).", "There is no same-group companion electron.", "The two 1s electrons contribute 2 × 0.85 = 1.70."]} answer="Zeff = 3 − 1.70 = 1.30." accent={T.s} />
             <WorkedExample number="Z3" title="Carbon 2p electron" question="Estimate Zeff for one 2p electron in C." reasoning={["C = (1s²)(2s²2p²).", "Three other n = 2 electrons contribute 3 × 0.35 = 1.05.", "Two 1s electrons contribute 2 × 0.85 = 1.70."]} answer="σ = 2.75; Zeff = 6 − 2.75 = 3.25." accent={T.gold} />
@@ -1674,6 +1681,7 @@ export function SectionZeffSlater() {
             <WorkedExample number="Z8" title="Iron: 4s electron" question="Estimate Zeff for one 4s electron in Fe using the simplified ns/np rule." reasoning={["One other 4s electron contributes 0.35.", "Fourteen electrons in the n−1 shell (3s²3p⁶3d⁶) contribute 14 × 0.85 = 11.90.", "Ten lower-shell electrons contribute 10.00."]} answer="σ = 22.25; Zeff(4s) = 3.75. The estimate helps show why the outer 4s electron is more weakly held." accent={T.d} />
             <WorkedExample number="Z9" title="Gallium 4p electron" question="Estimate Zeff for the 4p electron in Ga." reasoning={["Ga = (1s²)(2s²2p⁶)(3s²3p⁶)(3d¹⁰)(4s²4p¹).", "Two same-group 4s electrons contribute 0.70.", "Eighteen n−1 electrons contribute 15.30; ten lower electrons contribute 10.00."]} answer="σ = 26.00; Zeff = 31 − 26.00 = 5.00." accent={T.f} />
             <WorkedExample number="Z10" title="Fluorine 2p electron" question="Estimate Zeff for a valence 2p electron in F, 1s²2s²2p⁵." reasoning={["Six other n = 2 electrons (2s²2p⁴ companions) contribute 6 × 0.35 = 2.10.", "Two 1s electrons contribute 2 × 0.85 = 1.70.", "σ = 2.10 + 1.70 = 3.80."]} answer="Zeff = 9 − 3.80 = 5.20 — the large value explains F's high electronegativity and small radius." accent={T.p} />
+            </div>
             <Callout kind="note" title="Mnemonic — penetration and shielding order">
               For orbitals of the same shell, penetration follows s &gt; p &gt; d &gt; f, so shielding effectiveness follows the same order. Memory line: <b>S P D F — Strongest Penetration Drops Fast.</b> A more penetrating orbital feels a larger Zeff and sits lower in energy (why 3s is held more strongly than 3p).
             </Callout>
@@ -2944,6 +2952,7 @@ function SectionIonizationLegacyV9() {
       ]} accent={T.p} />
 
       <H2>8 · Solved Examples</H2>
+      <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", gap: 16, alignItems: "stretch", margin: "12px 0" }}>
       <WorkedExample number="I1" title="Be–B order" question="Why is IE₁(Be) greater than IE₁(B)?" reasoning={["Be is 1s²2s²; B is 1s²2s²2p¹.", "A 2p electron is less penetrating and more shielded than a 2s electron.", "Removal from B also leaves the stable 2s² configuration."]} answer="IE₁(Be) > IE₁(B)." accent={T.gold} />
       <WorkedExample number="I2" title="N–O order" question="Why is IE₁(O) lower than IE₁(N)?" reasoning={["N has the half-filled 2p³ arrangement.", "O has one paired 2p orbital.", "Pairing repulsion makes one O electron easier to remove."]} answer="IE₁(N) > IE₁(O)." accent={T.p} />
       <WorkedExample number="I3" title="Na versus Mg second IE" question="Compare IE₂ of Na and Mg." reasoning={["Na⁺ = [Ne], so IE₂ removes a core electron.", "Mg⁺ = [Ne]3s¹, so IE₂ removes a valence electron.", "Core-electron removal requires far more energy."]} answer="IE₂(Na) ≫ IE₂(Mg)." accent={T.cyan} />
@@ -2952,6 +2961,7 @@ function SectionIonizationLegacyV9() {
       <WorkedExample number="I6" title="Cation formation" question="Why is Al³⁺ common but Al⁴⁺ not a normal simple ion?" reasoning={["Al has three valence electrons.", "After three removals, Al³⁺ has the [Ne] configuration.", "IE₄ removes a core electron and is extremely large."]} answer="The giant jump after IE₃ stabilizes the +3 limit for simple ionic formation." accent={T.p} />
       <WorkedExample number="I7" title="Aqueous reducing power" question="Why can Li be a very strong reducing agent in water despite its high IE₁?" reasoning={["IE refers to gas-phase electron removal.", "Li⁺ is very small and is hydrated special caseally strongly.", "The hydration term strongly stabilizes the products."]} answer="A complete aqueous thermodynamic cycle, not IE₁ alone, controls reducing strength." accent={T.cyan} />
       <WorkedExample number="I8" title="Closed-shell maximum" question="Why are noble gases local maxima in IE₁?" reasoning={["Their valence shells are completely filled.", "They have compact, stable configurations and high effective attraction.", "Removal destroys a closed shell."]} answer="Noble gases possess the highest IE₁ values in their periods." accent={T.f} />
+      </div>
     </div>
   );
 }
@@ -3179,6 +3189,7 @@ function SectionElectronGainLegacyV9() {
       ]} accent={T.p} />
 
       <H2>8 · Solved Examples</H2>
+      <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", gap: 16, alignItems: "stretch", margin: "12px 0" }}>
       <WorkedExample number="E1" title="Cl versus F" question="Why is electron gain by Cl more exothermic than by F?" reasoning={["Both additions complete an np⁶ shell.", "F accepts the electron into a compact 2p orbital with strong repulsion.", "Cl accepts it into a more spacious 3p orbital while retaining strong nuclear attraction."]} answer="ΔegH(Cl) is more negative than ΔegH(F)." accent={T.d} />
       <WorkedExample number="E2" title="S versus O" question="Which has the more negative first electron gain enthalpy, O or S?" reasoning={["O is smaller, which normally favours electron gain.", "However, the incoming electron enters the crowded 2p shell of O.", "The larger 3p shell of S has less interelectronic repulsion."]} answer="S has the more negative value." accent={T.gold} />
       <WorkedExample number="E3" title="Second electron addition" question="Predict the sign of ΔegH₂ for O⁻(g) + e⁻ → O²⁻(g)." reasoning={["The electron approaches a negatively charged ion.", "Strong electrostatic repulsion must be overcome.", "The isolated gaseous process requires energy."]} answer="ΔegH₂ is positive." accent={T.p} />
@@ -3189,6 +3200,7 @@ function SectionElectronGainLegacyV9() {
       <WorkedExample number="E8" title="Formation of MgO" question="Does the positive second electron gain enthalpy of oxygen prevent MgO formation?" reasoning={["Formation of O²⁻(g) includes a positive ΔegH₂.", "MgO releases very large lattice enthalpy when Mg²⁺ and O²⁻ form the crystal.", "The complete Born–Haber cycle is favourable."]} answer="No. Lattice stabilization compensates for the positive second electron-gain step." accent={T.d} />
       <WorkedExample number="E9" title="Arrange the whole of period 2" question="Rank Be, B, C, N, O, F and Ne by general favourability of first electron addition, and name every anomaly." reasoning={["F and O are strongly favourable (near-complete 2p shell, high Zeff).", "C then B are progressively less favourable as the product shell is less complete.", "Be is weak/unfavourable because the added electron must start the empty 2p above a filled 2s².", "N is anomalously weak because addition disturbs the stable half-filled 2p³.", "Ne is strongly unfavourable — the electron must begin the n = 3 shell."]} answer="F > O > C > B > Li, with Be, N and Ne as the three configuration-driven anomalies (near-zero or positive)." accent={T.gold} />
       <WorkedExample number="E10" title="Reverse-process link to ionization" question="Relate the electron affinity of Cl to the ionization energy of Cl⁻." reasoning={["Cl(g) + e⁻ → Cl⁻(g) is the exact reverse of Cl⁻(g) → Cl(g) + e⁻.", "With consistent reference states the two energy changes are equal and opposite.", "So IE(Cl⁻) = −ΔegH(Cl)."]} answer="The energy to detach an electron from Cl⁻ equals the magnitude of energy released when Cl gains that electron." accent={T.cyan} />
+      </div>
     </div>
   );
 }

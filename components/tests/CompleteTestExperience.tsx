@@ -687,6 +687,12 @@ function TestRunner({ session, restore, onExit, onRestart }: { session: TestSess
     });
   }, [session, answers, marked, current, finished]);
 
+  // Latest-ref pattern: keeps the timer interval calling the current
+  // finishTest (hoisted declaration below) without touching the ref in render.
+  useEffect(() => {
+    finishRef.current = (force?: boolean) => { void finishTest(Boolean(force)); };
+  });
+
   if (questions.length === 0) return <EmptyState title="No questions available" message="Return to Tests and change the filters." />;
 
   const question = questions[current];
@@ -720,7 +726,7 @@ function TestRunner({ session, restore, onExit, onRestart }: { session: TestSess
     });
   };
 
-  const finishTest = async (force = false) => {
+  async function finishTest(force = false) {
     if (finished) return;
     if (!force && unansweredCount > 0 && !window.confirm(`${unansweredCount} question${unansweredCount === 1 ? " is" : "s are"} unanswered. Submit the test?`)) return;
     bankCurrent();
@@ -749,8 +755,7 @@ function TestRunner({ session, restore, onExit, onRestart }: { session: TestSess
       })),
     });
     setSubmitState(result ? "saved" : "local");
-  };
-  finishRef.current = (force?: boolean) => { void finishTest(Boolean(force)); };
+  }
 
   if (finished) {
     return (
@@ -901,7 +906,12 @@ export default function CompleteTestExperience({ exam }: { exam?: PYQExam } = {}
   const [run, setRun] = useState<{ session: TestSession; restore?: PersistedRun } | null>(null);
   const [resume, setResume] = useState<PersistedRun | null>(null);
 
-  useEffect(() => { setResume(loadPersistedRun()); }, []);
+  useEffect(() => {
+    // Deferred so hydration paints the server markup before the client-only
+    // persisted run is read from localStorage.
+    const id = window.setTimeout(() => setResume(loadPersistedRun()), 0);
+    return () => window.clearTimeout(id);
+  }, []);
 
   const startQuick = () => {
     const questions = shuffle(pool.filter((question) => question.authenticityStatus !== "NEEDS_MANUAL_REVIEW")).slice(0, 10);

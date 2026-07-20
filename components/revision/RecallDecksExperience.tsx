@@ -80,10 +80,15 @@ export default function RecallDecksExperience() {
   const [paletteOpen, setPaletteOpen] = useState(false);
 
   useEffect(() => {
-    setProgress(loadProgress());
-    const rawDeck = new URLSearchParams(window.location.search).get("deck");
-    const found = RECALL_DECKS.find((deck) => deck.key === rawDeck);
-    if (found) setSelectedDeck(found.key);
+    // Deferred so hydration paints the server markup before the client-only
+    // localStorage/URL state is applied.
+    const id = window.setTimeout(() => {
+      setProgress(loadProgress());
+      const rawDeck = new URLSearchParams(window.location.search).get("deck");
+      const found = RECALL_DECKS.find((deck) => deck.key === rawDeck);
+      if (found) setSelectedDeck(found.key);
+    }, 0);
+    return () => window.clearTimeout(id);
   }, []);
 
   const searchMatches = useMemo(() => {

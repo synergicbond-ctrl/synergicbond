@@ -1643,6 +1643,10 @@ export function SectionZeffSlater() {
             <WorkedExample number="Z7" title="Iron: 3d electron" question="Estimate Zeff for one 3d electron in Fe, [Ar]3d⁶4s²." reasoning={["Five other 3d electrons contribute 5 × 0.35 = 1.75.", "All 18 electrons in groups to the left contribute 18.00.", "The 4s electrons to the right are not counted for this test electron."]} answer="σ = 19.75; Zeff(3d) = 26 − 19.75 = 6.25." accent={T.d} />
             <WorkedExample number="Z8" title="Iron: 4s electron" question="Estimate Zeff for one 4s electron in Fe using the simplified ns/np rule." reasoning={["One other 4s electron contributes 0.35.", "Fourteen electrons in the n−1 shell (3s²3p⁶3d⁶) contribute 14 × 0.85 = 11.90.", "Ten lower-shell electrons contribute 10.00."]} answer="σ = 22.25; Zeff(4s) = 3.75. The estimate helps show why the outer 4s electron is more weakly held." accent={T.d} />
             <WorkedExample number="Z9" title="Gallium 4p electron" question="Estimate Zeff for the 4p electron in Ga." reasoning={["Ga = (1s²)(2s²2p⁶)(3s²3p⁶)(3d¹⁰)(4s²4p¹).", "Two same-group 4s electrons contribute 0.70.", "Eighteen n−1 electrons contribute 15.30; ten lower electrons contribute 10.00."]} answer="σ = 26.00; Zeff = 31 − 26.00 = 5.00." accent={T.f} />
+            <WorkedExample number="Z10" title="Fluorine 2p electron" question="Estimate Zeff for a valence 2p electron in F, 1s²2s²2p⁵." reasoning={["Six other n = 2 electrons (2s²2p⁴ companions) contribute 6 × 0.35 = 2.10.", "Two 1s electrons contribute 2 × 0.85 = 1.70.", "σ = 2.10 + 1.70 = 3.80."]} answer="Zeff = 9 − 3.80 = 5.20 — the large value explains F's high electronegativity and small radius." accent={T.p} />
+            <Callout kind="note" title="Mnemonic — penetration and shielding order">
+              For orbitals of the same shell, penetration follows s &gt; p &gt; d &gt; f, so shielding effectiveness follows the same order. Memory line: <b>S P D F — Strongest Penetration Drops Fast.</b> A more penetrating orbital feels a larger Zeff and sits lower in energy (why 3s is held more strongly than 3p).
+            </Callout>
 
             <H2>6 · Approximate Valence-Electron Zeff Across Period 2</H2>
             <DataTable columns={["Element", "Li", "Be", "B", "C", "N", "O", "F", "Ne"]} rows={[
@@ -1672,12 +1676,6 @@ export function SectionZeffSlater() {
               ["No single-property prediction", "radius, IE and reactivity also depend on distance, configuration and medium", "combine Zeff with shell number, pairing, hydration and bonding"],
             ]} accent={T.p} />
           </div>
-      <div
-        data-integration="SectionZeffSlater-periodicity-generated-corpus-phd-v9"
-        style={{ marginTop: 34 }}
-      >
-        <PeriodicTableDeepAdditions topic="zeff" />
-      </div>
     </>
   );
 }

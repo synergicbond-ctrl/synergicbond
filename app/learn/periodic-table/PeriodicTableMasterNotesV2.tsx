@@ -7,7 +7,6 @@ import { InteractivePeriodicTableV16 } from "./InteractivePeriodicTableV16";
 import React, { useMemo, useState } from "react";
 import HistoryModernLawAuthority from "./HistoryModernLawAuthority";
 import * as katex from "katex";
-import { ElectronegativityFactorsApplicationsV14 } from "./PeriodicTableElectronegativityV14Additions";
 import { SectionElectronegativityV12 } from "./PeriodicTableElectronegativityV12";
 import {
   V9TelluricScrewSVG,
@@ -5204,12 +5203,12 @@ export function SectionElectronGain() {
 }
 
 export function SectionElectronegativity() {
-  return (
-    <>
-      <SectionElectronegativityV12 />
-      <ElectronegativityFactorsApplicationsV14 />
-    </>
-  );
+  // V12 alone is the complete treatment: definition, factors (§02 + §08),
+  // trends (§03), all three scales, applications (§10), summary, worked
+  // examples, drills and error traps. The V14 module repeated factors,
+  // trends and applications a second time and is intentionally no longer
+  // rendered — one topic, one place.
+  return <SectionElectronegativityV12 />;
 }
 
 /* Legacy implementation retained for source comparison; not rendered. */

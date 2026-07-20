@@ -301,10 +301,8 @@ export function SectionElectronegativityV12() {
     <Panel accent={T.cyan}><PanelTitle>Derivation from the two ionic resonance forms</PanelTitle><P>For A–B, compare A⁺B⁻ and A⁻B⁺. Their energies involve ionisation energy and electron affinity. Equal contribution occurs when the sums IE + EA are equal for A and B. Therefore Mulliken defined:</P><MathX tex={String.raw`\chi_M=\frac{IE+EA}{2}`}/></Panel>
     <Grid>
       <FormulaCard title="IE and EA in eV per atom" tex={String.raw`\chi_M=\frac{IE+EA}{2}`}/>
-      <FormulaCard title="IE and EA in kJ mol⁻¹" tex={String.raw`\chi_M=\frac{IE+EA}{2\times 96.5}` } accent={T.gold}/>
-      <FormulaCard title="IE and EA in kcal mol⁻¹" tex={String.raw`\chi_M=\frac{IE+EA}{2\times 23.06}` } accent={T.mint}/>
-      <FormulaCard title="Convert to Pauling scale" tex={String.raw`\chi_P\approx0.336\chi_M-0.20` } accent={T.violet}/>
-      <FormulaCard title="Alternative empirical conversion" tex={String.raw`\chi_P\approx1.35\sqrt{\chi_M}-1.37` } accent={T.coral}/>
+      <FormulaCard title="IE and EA in kJ mol⁻¹" tex={String.raw`\chi_M=\frac{IE+EA}{2\times 96.5}` } note="Divide by 2 × 23.06 instead when the data are in kcal mol⁻¹." accent={T.gold}/>
+      <FormulaCard title="Convert to Pauling scale" tex={String.raw`\chi_P\approx0.336\chi_M-0.20` } note="One standard fitted conversion is enough; other empirical fits exist but differ only slightly." accent={T.violet}/>
       <FormulaCard title="Absolute hardness" tex={String.raw`\eta=\frac{IE-EA}{2}\qquad \chi_{\mathrm{abs}}=\frac{IE+EA}{2}` } accent={T.blue}/>
     </Grid>
     <Note title="Valence-state refinement" accent={T.mint}>The best Mulliken value uses valence-state ionisation energy and valence-state electron affinity. This is why orbital hybridisation matters: a carbon atom in sp, sp² and sp³ states does not have exactly the same electronegativity.</Note>
@@ -312,9 +310,7 @@ export function SectionElectronegativityV12() {
     <SectionTitle n="07" title="Allred–Rochow scale: electrostatic force at the covalent radius" lead="This scale turns the intuitive idea ‘stronger effective nucleus and smaller radius means stronger pull’ into an equation."/>
     <Grid>
       <FormulaCard title="Electrostatic starting point" tex={String.raw`F\propto\frac{Z^*e^2}{r_{\mathrm{cov}}^2}` } note="The bonding electron feels effective nuclear charge Z* at approximately the covalent radius."/>
-      <FormulaCard title="Allred–Rochow equation, r in Å" tex={String.raw`\chi_{AR}=0.359\frac{Z^*_{\mathrm{cov}}}{r_{\mathrm{cov}}^2}+0.744` } accent={T.gold}/>
-      <FormulaCard title="Using isolated-atom Z*" tex={String.raw`\chi_{AR}=0.359\frac{Z^*-0.35}{r_{\mathrm{cov}}^2}+0.744` } note="Subtract 0.35 because the incoming bonding electron adds one more same-shell shielding electron." accent={T.mint}/>
-      <FormulaCard title="If radius is in pm" tex={String.raw`\chi_{AR}=3590\frac{Z^*_{\mathrm{cov}}}{r_{\mathrm{cov}}^2}+0.744` } note="Using 0.360 instead of 0.359 gives the familiar 3600 coefficient." accent={T.violet}/>
+      <FormulaCard title="Allred–Rochow equation — the one formula to learn (r in Å)" tex={String.raw`\chi_{AR}=0.359\frac{Z^*}{r_{\mathrm{cov}}^2}+0.744` } note="If a problem supplies the isolated-atom Z*, use Z* − 0.35 in the numerator: the incoming bonding electron adds one more same-shell shielding electron. No other variant of this equation is needed." accent={T.gold}/>
     </Grid>
     <ReplayFigure title="Why the formula has a slope and an intercept" caption="The empirical line was fitted so that electrostatic values match the Pauling scale as closely as possible.">{()=><AllredGraphSVG/>}</ReplayFigure>
     <Grid>
@@ -394,7 +390,7 @@ export function SectionElectronegativityV12() {
       ["9","Why do f-block χ values occupy a narrow range?","The f electrons are inner and the outer bonding environment changes only gradually."],
       ["10","What physical idea does b represent in χ=a+bq?","Charge sensitivity / hardness; smaller b means larger polarisability and charge capacity."],
       ["11","Which has larger χ: Fe²⁺ or Fe³⁺?","Fe³⁺, because greater positive charge raises electron-attracting power."],
-      ["12","Why can χP values from two empirical conversion equations differ slightly?","Both are fitted approximations based on different datasets and scaling choices."],
+      ["12","Why can a Pauling value obtained by converting from the Mulliken scale differ slightly from the tabulated one?","Every scale conversion is a fitted approximation based on a particular dataset and scaling choice."],
       ["13","Why does Pauling use the geometric mean for the covalent reference?","It avoids unphysical negative resonance energies found with the arithmetic mean for some bonds."],
       ["14","What is the sign of Δ in a normal polar A–B bond?","Positive, because observed bond energy exceeds the chosen purely covalent reference."],
       ["15","If r doubles at constant Z*, how does the Allred–Rochow force term change?","It becomes one-fourth."],

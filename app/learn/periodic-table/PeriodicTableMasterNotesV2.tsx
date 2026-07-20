@@ -5336,7 +5336,6 @@ type NavKey =
   | "electronegativity"
   | "zeff"
   | "chemistry"
-  | "special"
   | "families"
   | "workshop";
 
@@ -5351,8 +5350,7 @@ const NAV: { key: NavKey; label: string; group: string }[] = [
   { key: "electronGain", label: "Electron Gain Enthalpy · Full Notes", group: "Core Periodic Trends" },
   { key: "electronegativity", label: "Electronegativity · Full Notes", group: "Core Periodic Trends" },
   { key: "zeff", label: "Zeff & Slater · Full Notes", group: "Core Periodic Trends" },
-  { key: "chemistry", label: "Chemical Periodicity", group: "Advanced Connections" },
-  { key: "special", label: "Special Relationships", group: "Advanced Connections" },
+  { key: "chemistry", label: "Chemical Periodicity & Special Relationships", group: "Advanced Connections" },
   { key: "families", label: "Family-Wise Orders, 3d-Series & Block Atlas", group: "Reference Data" },
   { key: "workshop", label: "Worked Example Workshop", group: "Practice" },
 ];
@@ -5490,8 +5488,7 @@ export default function PeriodicTableMasterNotes() {
       case "electronGain": return <SectionElectronGain />;
       case "electronegativity": return <SectionElectronegativity />;
       case "zeff": return <SectionZeffSlater />;
-      case "chemistry": return <SectionChemicalPeriodicity />;
-      case "special": return <SectionSpecialEffects />;
+      case "chemistry": return <><SectionChemicalPeriodicity /><SectionSpecialEffects /></>;
       case "families": return <><SectionFamilies /><SectionDBlockTrends /><SectionBlockDataAtlas /></>;
       case "workshop": return <SectionWorkshop />;
     }

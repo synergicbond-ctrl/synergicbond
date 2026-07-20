@@ -90,6 +90,43 @@ export default async function ProgramLearnPage({ params }: { params: Promise<{ s
           </div>
         </section>
 
+        {/* JEE_ADVANCED_NOTES_SPOTLIGHT */}
+        {slug === "jee-advanced" && (
+          <section className="mb-12">
+            <div className="mb-5">
+              <div className="text-xs font-black uppercase tracking-[0.25em] text-sky-400">
+                Full JEE Advanced Notes
+              </div>
+              <h2 className="mt-1 text-2xl font-black">Inorganic Chemistry Notes</h2>
+              <p className="mt-2 text-sm text-zinc-500">
+                P-Block and Qualitative Analysis are two independent chapters.
+              </p>
+            </div>
+
+            <div className="grid gap-4 md:grid-cols-2">
+              <Link
+                href="/programs/jee-advanced/chapter/p-block-elements#learn"
+                className="rounded-2xl border border-cyan-400/30 bg-cyan-500/[0.08] p-5 transition hover:border-cyan-300/60"
+              >
+                <span className="text-[10px] font-black uppercase text-cyan-300">Full Notes</span>
+                <h3 className="mt-3 text-xl font-black">P-Block Elements</h3>
+                <p className="mt-2 text-sm text-zinc-400">Groups 15–18 complete notes.</p>
+                <div className="mt-4 font-bold text-cyan-300">Open full notes →</div>
+              </Link>
+
+              <Link
+                href="/programs/jee-advanced/chapter/qualitative-analysis#learn"
+                className="rounded-2xl border border-violet-400/30 bg-violet-500/[0.08] p-5 transition hover:border-violet-300/60"
+              >
+                <span className="text-[10px] font-black uppercase text-violet-300">Full Notes</span>
+                <h3 className="mt-3 text-xl font-black">Salt Analysis / Qualitative Analysis</h3>
+                <p className="mt-2 text-sm text-zinc-400">Complete qualitative analysis notes.</p>
+                <div className="mt-4 font-bold text-violet-300">Open full notes →</div>
+              </Link>
+            </div>
+          </section>
+        )}
+
         <section>
           <h2 className="mb-2 text-2xl font-bold">Chapters</h2>
           {chapters.length > 0 ? (

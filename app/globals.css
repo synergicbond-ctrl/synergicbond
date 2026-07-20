@@ -174,6 +174,37 @@ video {
   display: none;                /* Chrome/Safari */
 }
 
+/* KaTeX renders math with ~1px of sub-pixel overflow, so any overflow:auto
+   wrapper around it shows a spurious dark horizontal scrollbar "pill" beneath
+   every inline formula and display equation. Hide the visual scrollbar on math
+   containers site-wide — genuinely wide equations still scroll via
+   touch/trackpad, but short formulas no longer sprout a stray slider. */
+.qbankMath,
+.katex,
+.katex-display {
+  scrollbar-width: none;        /* Firefox */
+  -ms-overflow-style: none;     /* IE/Edge */
+}
+.qbankMath::-webkit-scrollbar,
+.katex::-webkit-scrollbar,
+.katex-display::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  display: none;                /* Chrome/Safari */
+}
+/* Also cover the case where a display equation's overflow lives on its direct
+   wrapper (e.g. a Tailwind overflow-x-auto div around <BlockMath>). Scoped to
+   math wrappers only, so real wide-table scrollers keep their scrollbars. */
+:where(div, p, span):has(> .katex-display) {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+:where(div, p, span):has(> .katex-display)::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  display: none;
+}
+
 /* ── Modal open animations (no external plugin needed) ──────────── */
 @keyframes sb-overlay-in {
   from { opacity: 0; }

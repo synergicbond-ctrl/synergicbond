@@ -1,12 +1,10 @@
 import "@/app/globals.css";
-import { Analytics } from "@vercel/analytics/react";
 import type { Metadata } from "next";
 import { ThemeProvider } from "@/components/ThemeContext";
 import { LanguageProvider } from "@/lib/i18n";
 import Navbar from "@/components/Navbar";
-import BetaTracker from "@/components/BetaTracker";
-import FeedbackButton from "@/components/FeedbackButton";
 import AutoTranslateBridge from "@/components/AutoTranslateBridge";
+import GlobalEnhancements from "@/components/GlobalEnhancements";
 
 const siteUrl = new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "https://synergicbond.vercel.app");
 
@@ -53,11 +51,9 @@ export default function RootLayout({
             <AutoTranslateBridge />
             <Navbar />
             {children}
-            <BetaTracker />
-            <FeedbackButton />
+            <GlobalEnhancements />
           </LanguageProvider>
         </ThemeProvider>
-        <Analytics />
       </body>
     </html>
   );

@@ -45,8 +45,12 @@ function writeGoogTransCookie(value: string | null) {
 export default function AutoTranslateBridge() {
   const { lang } = useT();
   const scriptLoaded = useRef(false);
+  const target = GOOGLE_LANG_MAP[lang] ?? null;
 
   useEffect(() => {
+    // Most visits use English/Hinglish. Do not download Google's third-party
+    // translation runtime unless a language that needs it is selected.
+    if (!target) return;
     if (scriptLoaded.current || document.getElementById("google_translate_element")) return;
     scriptLoaded.current = true;
 
@@ -68,10 +72,9 @@ export default function AutoTranslateBridge() {
     script.src = "https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit";
     script.async = true;
     document.body.appendChild(script);
-  }, []);
+  }, [target]);
 
   useEffect(() => {
-    const target = GOOGLE_LANG_MAP[lang] ?? null;
     const desired = target ? `/en/${target}` : null;
     const current = readGoogTransCookie();
     if (current === desired) return;

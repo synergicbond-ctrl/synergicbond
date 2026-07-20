@@ -13,13 +13,19 @@ function signinRedirect(request: NextRequest): NextResponse {
 }
 
 export async function proxy(request: NextRequest) {
-  let supabaseResponse = NextResponse.next({ request });
   const isProtected = requiresAuth(request.nextUrl.pathname);
+
+  // Public pages use the browser Supabase client for optional navbar state.
+  // Refreshing a session with getUser() here would add a network round trip to
+  // every document/RSC request, even for anonymous visitors. Keep the proxy
+  // limited to the authorization boundary it actually enforces.
+  if (!isProtected) return NextResponse.next({ request });
+
+  let supabaseResponse = NextResponse.next({ request });
   const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
   const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
 
   if (!supabaseUrl || !supabaseAnonKey) {
-    if (!isProtected) return supabaseResponse;
     return signinRedirect(request);
   }
 
@@ -48,7 +54,7 @@ export async function proxy(request: NextRequest) {
     data: { user },
   } = await supabase.auth.getUser();
 
-  if (!user && isProtected) {
+  if (!user) {
     return signinRedirect(request);
   }
 

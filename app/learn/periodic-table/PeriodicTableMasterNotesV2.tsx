@@ -1670,7 +1670,7 @@ export function SectionZeffSlater() {
             ]} accent={T.f} />
 
             <H2>5 · Slater Calculations — From Basic to JEE Advanced</H2>
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", gap: 16, alignItems: "stretch", margin: "12px 0" }}>
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 430px), 1fr))", gap: 16, alignItems: "stretch", margin: "12px 0" }}>
             <WorkedExample number="Z1" title="Helium 1s electron" question="Estimate Zeff for one 1s electron of He." reasoning={["Only the other 1s electron shields the test electron.", "For 1s, its contribution is 0.30.", "Zeff = 2 − 0.30."]} answer="Zeff = 1.70." accent={T.cyan} />
             <WorkedExample number="Z2" title="Lithium 2s electron" question="Estimate Zeff for the valence electron of Li." reasoning={["Li = (1s²)(2s¹).", "There is no same-group companion electron.", "The two 1s electrons contribute 2 × 0.85 = 1.70."]} answer="Zeff = 3 − 1.70 = 1.30." accent={T.s} />
             <WorkedExample number="Z3" title="Carbon 2p electron" question="Estimate Zeff for one 2p electron in C." reasoning={["C = (1s²)(2s²2p²).", "Three other n = 2 electrons contribute 3 × 0.35 = 1.05.", "Two 1s electrons contribute 2 × 0.85 = 1.70."]} answer="σ = 2.75; Zeff = 6 − 2.75 = 3.25." accent={T.gold} />
@@ -2952,7 +2952,7 @@ function SectionIonizationLegacyV9() {
       ]} accent={T.p} />
 
       <H2>8 · Solved Examples</H2>
-      <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", gap: 16, alignItems: "stretch", margin: "12px 0" }}>
+      <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 430px), 1fr))", gap: 16, alignItems: "stretch", margin: "12px 0" }}>
       <WorkedExample number="I1" title="Be–B order" question="Why is IE₁(Be) greater than IE₁(B)?" reasoning={["Be is 1s²2s²; B is 1s²2s²2p¹.", "A 2p electron is less penetrating and more shielded than a 2s electron.", "Removal from B also leaves the stable 2s² configuration."]} answer="IE₁(Be) > IE₁(B)." accent={T.gold} />
       <WorkedExample number="I2" title="N–O order" question="Why is IE₁(O) lower than IE₁(N)?" reasoning={["N has the half-filled 2p³ arrangement.", "O has one paired 2p orbital.", "Pairing repulsion makes one O electron easier to remove."]} answer="IE₁(N) > IE₁(O)." accent={T.p} />
       <WorkedExample number="I3" title="Na versus Mg second IE" question="Compare IE₂ of Na and Mg." reasoning={["Na⁺ = [Ne], so IE₂ removes a core electron.", "Mg⁺ = [Ne]3s¹, so IE₂ removes a valence electron.", "Core-electron removal requires far more energy."]} answer="IE₂(Na) ≫ IE₂(Mg)." accent={T.cyan} />
@@ -3189,7 +3189,7 @@ function SectionElectronGainLegacyV9() {
       ]} accent={T.p} />
 
       <H2>8 · Solved Examples</H2>
-      <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", gap: 16, alignItems: "stretch", margin: "12px 0" }}>
+      <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 430px), 1fr))", gap: 16, alignItems: "stretch", margin: "12px 0" }}>
       <WorkedExample number="E1" title="Cl versus F" question="Why is electron gain by Cl more exothermic than by F?" reasoning={["Both additions complete an np⁶ shell.", "F accepts the electron into a compact 2p orbital with strong repulsion.", "Cl accepts it into a more spacious 3p orbital while retaining strong nuclear attraction."]} answer="ΔegH(Cl) is more negative than ΔegH(F)." accent={T.d} />
       <WorkedExample number="E2" title="S versus O" question="Which has the more negative first electron gain enthalpy, O or S?" reasoning={["O is smaller, which normally favours electron gain.", "However, the incoming electron enters the crowded 2p shell of O.", "The larger 3p shell of S has less interelectronic repulsion."]} answer="S has the more negative value." accent={T.gold} />
       <WorkedExample number="E3" title="Second electron addition" question="Predict the sign of ΔegH₂ for O⁻(g) + e⁻ → O²⁻(g)." reasoning={["The electron approaches a negatively charged ion.", "Strong electrostatic repulsion must be overcome.", "The isolated gaseous process requires energy."]} answer="ΔegH₂ is positive." accent={T.p} />

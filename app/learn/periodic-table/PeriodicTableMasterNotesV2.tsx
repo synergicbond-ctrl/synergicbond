@@ -3250,114 +3250,11 @@ function SectionElectronegativityLegacyV9() {
         ["Allred–Rochow", "electrostatic attraction using Zeff and covalent radius", "shows χ ∝ Zeff/r² clearly", "depends on chosen radius and approximate Zeff"],
       ]} accent={T.gold} />
 
-      <H2>3 · Factors Affecting Electronegativity</H2>
-      <FactorStudyCard
-        number="1"
-        title="Effective nuclear charge"
-        relation={<MathInline tex={String.raw`Z_{\mathrm{eff}}\uparrow\Rightarrow\chi\uparrow`} />}
-        explanation="A bonded atom with a greater net nuclear attraction pulls the shared electron cloud more strongly. Across a period, Zeff generally rises and is the main reason electronegativity increases."
-        examples={[
-          { label: "Period 2", body: <><MathInline tex={String.raw`\mathrm{Li<Be<B<C<N<O<F}`} />.</> },
-          { label: "Period 3", body: <><MathInline tex={String.raw`\mathrm{Na<Mg<Al<Si<P<S<Cl}`} />.</> },
-          { label: "C vs N", body: "N is more electronegative because it has larger Zeff in the same n = 2 shell." },
-          { label: "Al³⁺", body: "High effective attraction makes Al³⁺ a strong Lewis acid toward ligand electron pairs." },
-        ]}
-        accent={T.gold}
-      />
-      <FactorStudyCard
-        number="2"
-        title="Covalent radius and bond distance"
-        relation={<MathInline tex={String.raw`r_{\mathrm{cov}}\downarrow\Rightarrow\chi\uparrow`} />}
-        explanation="A small atom holds bonding electron density closer to the nucleus. Down a group, radius and shielding rise, so electronegativity generally decreases."
-        examples={[
-          { label: "Halogens", body: <><MathInline tex={String.raw`\mathrm{F>Cl>Br>I}`} />.</> },
-          { label: "Chalcogens", body: <><MathInline tex={String.raw`\mathrm{O>S>Se>Te}`} />.</> },
-          { label: "Group 1", body: <><MathInline tex={String.raw`\mathrm{Li>Na>K\approx Rb>Cs}`} />.</> },
-          { label: "H–X polarity", body: "H–F is more polar than H–Cl because F is smaller and more electronegative." },
-        ]}
-        accent={T.cyan}
-      />
-      <FactorStudyCard
-        number="3"
-        title="Shielding and number of occupied shells"
-        relation={<MathInline tex={String.raw`\sigma\uparrow,\ n\uparrow\Rightarrow\chi\downarrow`} />}
-        explanation="Inner electrons reduce the attraction exerted on bonding density. Each new shell places the valence region farther from the nucleus and increases screening."
-        examples={[
-          { label: "F → I", body: "Additional shells and shielding lower electronegativity down group 17." },
-          { label: "O → Te", body: "The same effect lowers electronegativity down group 16." },
-          { label: "Na vs Li", body: "Na has a new n = 3 shell and is less electronegative than Li." },
-          { label: "Ga", body: "Poor 3d shielding keeps Ga relatively electronegative and compact compared with a simple down-group prediction." },
-        ]}
-        accent={T.p}
-      />
-      <FactorStudyCard
-        number="4"
-        title="Oxidation state of the same element"
-        relation={<MathInline tex={String.raw`\text{positive oxidation state}\uparrow\Rightarrow\chi\uparrow\text{ generally}`} />}
-        explanation="A more positively charged or electron-deficient centre attracts ligand electron density more strongly. This is closely related to Lewis acidity and polarizing power."
-        examples={[
-          { label: "Fe", body: <><MathInline tex={String.raw`\mathrm{Fe^{3+}>Fe^{2+}}`} /> in effective electron-attracting power.</> },
-          { label: "Sn", body: "Sn(IV) is more electron-attracting and more strongly polarizing than Sn(II)." },
-          { label: "Cl oxides", body: "Chlorine in +7 oxidation state in Cl₂O₇ strongly withdraws electron density and gives a strongly acidic oxide." },
-          { label: "Mn", body: "Mn(VII) in permanganate is strongly electron-deficient compared with Mn(II)." },
-        ]}
-        special="Oxidation-state effects are environment-dependent; a single tabulated elemental Pauling value cannot represent every compound."
-        accent={T.gold}
-      />
-      <FactorStudyCard
-        number="5"
-        title="Hybridization and percentage s character"
-        relation={<MathInline tex={String.raw`\chi(sp)>\chi(sp^2)>\chi(sp^3)`} />}
-        explanation="s orbitals penetrate closer to the nucleus than p orbitals. A hybrid orbital with more s character holds its bonding electron density nearer the nucleus and behaves as more electronegative."
-        examples={[
-          { label: "Carbon", body: "C(sp) in an alkyne is more electronegative than C(sp²) in an alkene and C(sp³) in an alkane." },
-          { label: "C–H acidity", body: <><MathInline tex={String.raw`\mathrm{HC\equiv CH>H_2C{=}CH_2>H_3C-CH_3}`} /> in acidity because the conjugate carbon has increasing s character.</> },
-          { label: "Bond length", body: "Greater s character also contracts the hybrid orbital, helping make sp bonds shorter." },
-          { label: "Lone pairs", body: "A lone pair in an orbital with more s character is held closer and can show altered basicity." },
-        ]}
-        accent={T.d}
-      />
-      <FactorStudyCard
-        number="6"
-        title="Formal charge and ionic charge"
-        relation={<MathInline tex={String.raw`\chi(\text{cation})>\chi(\text{neutral atom})>\chi(\text{anion})`} />}
-        explanation="Positive charge contracts the electron cloud and increases attraction for additional electron density. Negative charge expands the cloud and increases electron–electron repulsion."
-        examples={[
-          { label: "Ammonium", body: "The positively charged N in NH₄⁺ withdraws electron density more strongly than neutral amine nitrogen." },
-          { label: "Carbanion", body: "A negatively charged carbon centre is less electronegative and more electron-releasing than neutral carbon." },
-          { label: "Fe ions", body: "Fe³⁺ has greater Lewis acidity than Fe²⁺." },
-          { label: "O species", body: "O⁻ is less electron-attracting than neutral O in a comparable environment." },
-        ]}
-        accent={T.f}
-      />
-      <FactorStudyCard
-        number="7"
-        title="Nature of bonded atoms and substituent environment"
-        relation={<MathInline tex={String.raw`\chi\text{ is environment-dependent, not a fixed atomic constant}`} />}
-        explanation="Electron-withdrawing or electron-donating groups alter the electron density and effective attraction at a bonded atom. Electronegativity equalization also shifts charge until chemical potentials become more compatible."
-        examples={[
-          { label: "CF₃ group", body: "Three F atoms withdraw electron density strongly and make adjacent centres more electron-poor." },
-          { label: "CH₃ group", body: "Alkyl groups usually release electron density inductively relative to strongly electronegative substituents." },
-          { label: "Acids", body: "ClCH₂COOH is stronger than CH₃COOH because Cl withdraws electron density and stabilizes the conjugate base." },
-          { label: "Multiple F", body: "The −I effect generally increases with the number and proximity of fluorine substituents." },
-        ]}
-        accent={T.p}
-      />
-      <FactorStudyCard
-        number="8"
-        title="d/f contraction and relativistic effects"
-        relation={<MathInline tex={String.raw`\text{contraction}\Rightarrow r\downarrow\Rightarrow\chi\uparrow\text{ relative to a simple down-group rule}`} />}
-        explanation="Poor d/f shielding and relativistic stabilization can make heavy atoms smaller or more electron-attracting than expected."
-        examples={[
-          { label: "Ga", body: "Ga is not dramatically less electronegative than Al because 3d shielding is poor." },
-          { label: "Au", body: "Gold has unusually high electronegativity for a metal, aided by relativistic 6s stabilization." },
-          { label: "Pb", body: "Relativistic 6s stabilization contributes to the inert-pair effect and oxidation-state behaviour." },
-          { label: "Zr / Hf", body: "Lanthanoid contraction gives nearly equal radii and very similar electronegativities/chemistry." },
-        ]}
-        accent={T.f}
-      />
+      <Callout kind="note" title="Factors and applications — one detailed treatment below">
+        Every factor affecting electronegativity (radius, Z<sub>eff</sub>, shielding, charge and oxidation state, hybridisation, substituents, d/f contraction) and every chemical application is developed once, in the detailed study cards further down this page — with examples in the same card, so nothing is repeated.
+      </Callout>
 
-      <H2>4 · NCERT Pauling-Scale Data</H2>
+      <H2>3 · NCERT Pauling-Scale Data</H2>
       <DataTable columns={["Period 2", "Li", "Be", "B", "C", "N", "O", "F"]} rows={[
         ["Pauling χ", "1.0", "1.5", "2.0", "2.5", "3.0", "3.5", "4.0"],
       ]} accent={T.cyan} />
@@ -3372,37 +3269,8 @@ function SectionElectronegativityLegacyV9() {
         Modern tables may quote slightly different decimals, such as C = 2.55 or Cl = 3.16. Use one consistent scale within a calculation and use the values supplied in the problem when provided.
       </Callout>
 
-      <H2>5 · Applications of Electronegativity</H2>
-      <H3>Bond polarity and partial charge</H3>
-      <MathBlock tex={String.raw`\mathrm{H^{\delta+}-F^{\delta-}}\qquad \chi_F>\chi_H`} />
-      <H3>Approximate percentage ionic character</H3>
-      <MathBlock tex={String.raw`\%\,\text{ionic character}\approx\left(1-e^{-0.25(\Delta\chi)^2}\right)\times100`} />
-      <DataTable columns={["Application", "Use", "Example / caution"]} rows={[
-        ["Bond polarity", "assign δ⁺ and δ⁻ and estimate bond-dipole direction", "Hδ⁺–Clδ⁻"],
-        ["Molecular polarity", "combine bond dipoles as vectors", "CO₂ has polar bonds but zero net dipole; H₂O does not"],
-        ["Ionic character", "larger Δχ generally means greater ionic contribution", "LiF is more ionic than LiI"],
-        ["Oxidation-number assignment", "bond electrons are formally assigned to the more electronegative atom", "O is +2 in OF₂ because F is more electronegative"],
-        ["Acidic/basic oxide character", "high χ and high oxidation state favour covalent acidic oxides", "Na₂O basic; Al₂O₃ amphoteric; SO₃ acidic"],
-        ["Hydride acidity", "electronegativity controls acidity across a period, while bond strength dominates down a group", "CH₄ < NH₃ < H₂O < HF across period 2"],
-        ["Inductive effect", "electron-withdrawing substituents stabilize nearby negative charge", "ClCH₂COOH stronger than CH₃COOH"],
-        ["Lewis acidity", "small positively charged high-χ centres accept electron pairs", "AlCl₃ and BF₃"],
-        ["Bond type prediction", "Δχ gives a first estimate of covalent/polar/ionic character", "boundaries are descriptive, not absolute"],
-        ["Metallic character", "low χ correlates with electron loss and metallic behaviour", "Cs strongly metallic; F strongly non-metallic"],
-      ]} accent={T.cyan} />
-
-      <H2>6 · Limitations — What Electronegativity Cannot Decide Alone</H2>
-      <DataTable columns={["Limitation", "Why it matters", "Example"]} rows={[
-        ["Not directly measurable", "values depend on the chosen scale and calibration", "Pauling, Mulliken and Allred–Rochow numbers differ"],
-        ["Not constant for an element", "oxidation state, hybridization and bonding partner change the value", "C(sp) > C(sp²) > C(sp³)"],
-        ["Does not determine molecular dipole alone", "geometry controls vector addition", "CO₂ non-polar; H₂O polar"],
-        ["Does not give bond strength", "a polar bond may be strong or weak depending on overlap and bond order", "H–F is both polar and strong; HI is less polar but much weaker"],
-        ["Does not sharply classify bond type", "ionic and covalent descriptions form a continuum", "AlCl₃ has major covalent character despite metal + non-metal"],
-        ["Does not equal electron gain enthalpy", "χ concerns bonded electron density; ΔegH concerns isolated atoms", "F has highest χ, while Cl has more negative atomic ΔegH"],
-        ["Noble-gas values are context-sensitive", "ordinary closed-shell atoms rarely form bonds", "Xe values depend strongly on compound and scale"],
-        ["Reactivity needs complete energetics and kinetics", "bond energies, solvation and activation barriers also matter", "F₂/Cl₂ oxidizing behaviour cannot be ranked from χ alone"],
-      ]} accent={T.p} />
-
-      <H2>7 · Solved Examples</H2>
+      <H2>4 · Solved Examples</H2>
+      <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 430px), 1fr))", gap: 16, alignItems: "stretch", margin: "12px 0" }}>
       <WorkedExample number="EN1" title="Hybridization order" question="Arrange the electronegativity of carbon in HC≡CH, H₂C=CH₂ and H₃C–CH₃." reasoning={["The hybridizations are sp, sp² and sp³.", "s character is 50%, about 33% and 25%.", "Greater s character holds electron density closer to the nucleus."]} answer="C(sp) > C(sp²) > C(sp³)." accent={T.d} />
       <WorkedExample number="EN2" title="Bond polarity" question="Which bond is more polar: H–F or H–Cl?" reasoning={["F has higher electronegativity than Cl.", "The electronegativity difference from H is therefore larger for H–F."]} answer="H–F is more polar." accent={T.cyan} />
       <WorkedExample number="EN3" title="Polar bonds but non-polar molecule" question="Why is CO₂ non-polar?" reasoning={["Each C=O bond is polar toward O.", "CO₂ is linear.", "The two equal bond-dipole vectors cancel."]} answer="Net dipole moment is zero despite polar bonds." accent={T.gold} />
@@ -3410,7 +3278,7 @@ function SectionElectronegativityLegacyV9() {
       <WorkedExample number="EN5" title="Acid strength by induction" question="Why is ClCH₂COOH stronger than CH₃COOH?" reasoning={["Cl withdraws electron density through the σ framework.", "The carboxylate conjugate base is stabilized.", "Greater conjugate-base stabilization increases acidity."]} answer="The −I effect of chlorine increases acid strength." accent={T.cyan} />
       <WorkedExample number="EN6" title="Ionic character" question="Which has greater covalent character, LiF or LiI?" reasoning={["The cation is the same.", "I⁻ is larger and more polarizable than F⁻.", "Li⁺ distorts I⁻ more strongly, increasing covalent character."]} answer="LiI is more covalent; LiF has greater ionic character." accent={T.gold} />
       <WorkedExample number="EN7" title="Oxide character" question="Arrange Na₂O, Al₂O₃ and SO₃ in increasing acidic character." reasoning={["Na is strongly electropositive, so Na₂O is basic.", "Al₂O₃ is amphoteric.", "S is more electronegative and in a high oxidation state, so SO₃ is acidic."]} answer="Na₂O < Al₂O₃ < SO₃." accent={T.p} />
-      <WorkedExample number="EN8" title="Pauling ionic-character estimate" question="Estimate the qualitative ionic character when Δχ increases from 0.5 to 2.0." reasoning={["The exponential Pauling expression increases with (Δχ)².", "A fourfold increase in Δχ produces a much larger ionic contribution.", "The relation remains approximate and does not create a sharp boundary."]} answer="The bond with Δχ = 2.0 has much greater ionic character." accent={T.d} />
+      </div>
     </div>
   );
 }

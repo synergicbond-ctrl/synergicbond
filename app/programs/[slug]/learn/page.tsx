@@ -4,7 +4,8 @@ import ProgramPageHeader from "@/components/programs/ProgramPageHeader";
 import { examChapters } from "@/components/syllabus/ExamSyllabus";
 import { getProgram, PROGRAMS } from "@/lib/programs";
 import { formulaCards } from "@/lib/chemistry/formulas";
-import { isEngineSlug, AUTHORED_NOTES } from "@/lib/engine/programSpec";
+import { isEngineSlug, AUTHORED_NOTES, ENGINE_PROGRAMS } from "@/lib/engine/programSpec";
+import { getPremiumNotesForExam } from "@/lib/premiumNotes";
 
 // ─────────────────────────────────────────────────────────────────────────────
 // /programs/[slug]/learn — Learn Engine V1 (Roadmap V2 · Week 2).
@@ -105,9 +106,14 @@ export default async function ProgramLearnPage({ params }: { params: Promise<{ s
                   const notesHref = chapter.id === "solid-state" && slug === "jee-advanced"
                     ? "/learn/solid-state"
                     : AUTHORED_NOTES[chapter.id];
+                  const inlineNotes = isEngineSlug(slug)
+                    ? getPremiumNotesForExam(chapter.id, ENGINE_PROGRAMS[slug].exam)
+                    : undefined;
+                  const hasFullNotes = Boolean(notesHref || inlineNotes);
                   const engineHref = isEngineSlug(slug)
                     ? `/programs/${slug}/chapter/${chapter.id}`
                     : `/chapter/${chapter.id}`;
+                  const primaryHref = notesHref ?? (inlineNotes ? `${engineHref}#learn` : engineHref);
                   return (
                     <div
                       key={chapter.id}
@@ -117,13 +123,13 @@ export default async function ProgramLearnPage({ params }: { params: Promise<{ s
                         <div className="text-[11px] font-bold uppercase tracking-wider text-white/40">
                           {BRANCH_LABEL[chapter.category] ?? chapter.category}
                         </div>
-                        {notesHref ? (
+                        {hasFullNotes ? (
                           <span className="rounded-full border border-[#e8b84b4d] bg-[#e8b84b1a] px-1.5 py-0.5 text-[9px] font-bold uppercase text-[#e8b84b]">Full Notes</span>
                         ) : isEngineSlug(slug) ? (
                           <span className="rounded-full border border-cyan-400/30 bg-cyan-400/10 px-1.5 py-0.5 text-[9px] font-bold uppercase text-cyan-300">Engine</span>
                         ) : null}
                       </div>
-                      <Link href={notesHref ?? engineHref} className="mt-1.5 flex-1 after:absolute after:inset-0">
+                      <Link href={primaryHref} className="mt-1.5 flex-1 after:absolute after:inset-0">
                         <span className="text-sm font-bold text-white">{chapter.title}</span>
                         <span className="mt-1 block text-xs text-white/45">
                           D{chapter.difficulty} · ~{chapter.estimatedHours}h · {chapter.concepts.length} syllabus points
@@ -131,10 +137,10 @@ export default async function ProgramLearnPage({ params }: { params: Promise<{ s
                       </Link>
                       <div className="mt-3 flex items-center justify-between gap-2">
                         <span className={`text-sm font-semibold ${accent.text}`}>
-                          {notesHref ? "Explore lessons" : "Open chapter"}{" "}
+                          {notesHref ? "Explore lessons" : inlineNotes ? "Open full notes" : "Open chapter"}{" "}
                           <span className="inline-block transition group-hover:translate-x-1">→</span>
                         </span>
-                        {notesHref && (
+                        {hasFullNotes && (
                           <Link
                             href={engineHref}
                             className="relative z-10 rounded-md border border-white/10 bg-white/[0.04] px-2 py-1 text-[10px] font-bold uppercase tracking-wide text-white/55 transition hover:border-cyan-400/40 hover:text-cyan-300"

@@ -18,7 +18,7 @@ import IllustrationLab from "@/components/engine/IllustrationLab";
 import TutorActions from "@/components/engine/TutorActions";
 import QuestionCard from "@/components/pyq/QuestionCard";
 import NotesRenderer from "@/components/premiumNotes/NotesRenderer";
-import { getPremiumNotes } from "@/lib/premiumNotes";
+import { getPremiumNotesForExam } from "@/lib/premiumNotes";
 
 // ─────────────────────────────────────────────────────────────────────────────
 // /programs/[slug]/chapter/[id] — the premium Chapter Experience (learning
@@ -103,7 +103,7 @@ export default async function ChapterEnginePage({ params }: { params: Promise<{ 
   const ncert = buildNcertIntel(pyqChapters);
   const topics = chapter.concepts.map((c) => c.title).slice(0, 10);
   const authoredHref = AUTHORED_NOTES[id];
-  const premiumNotes = getPremiumNotes(id);
+  const premiumNotes = getPremiumNotesForExam(id, engine.exam);
 
   // Per-user layers (route is auth-protected; degrade gracefully regardless).
   const { data: answers } = await getAllUserAnswers();

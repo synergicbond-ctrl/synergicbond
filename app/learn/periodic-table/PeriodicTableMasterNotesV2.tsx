@@ -5298,16 +5298,8 @@ export function SectionElectronGain() {
 export function SectionElectronegativity() {
   return (
     <>
-      <>
-            <SectionElectronegativityV12 />
-            <ElectronegativityFactorsApplicationsV14 />
-          </>
-      <div
-        data-integration="SectionElectronegativity-periodicity-generated-corpus-phd-v9"
-        style={{ marginTop: 34 }}
-      >
-        <PeriodicTableDeepAdditions topic="electronegativity" />
-      </div>
+      <SectionElectronegativityV12 />
+      <ElectronegativityFactorsApplicationsV14 />
     </>
   );
 }

@@ -913,6 +913,43 @@ export function ElectronegativityFactorsApplicationsV14() {
           />
         </DetailCard>
       </div>
+
+      <SectionHeading
+        number="QUICK-REFERENCE ORDERS"
+        title="High-yield electronegativity and derived orders"
+        lead="Consolidated sequences for fast recall. Read them as dominant trends; local anomalies from configuration, oxidation state and heavy-atom effects still apply."
+        accent={C.gold}
+      />
+      <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: 14 }}>
+        <OrderBox title="Across period 2 (χ increases)" order="Li < Be < B < C < N < O < F" note="Zₑff rises and radius falls left → right." accent={C.cyan} />
+        <OrderBox title="Across period 3 (χ increases)" order="Na < Mg < Al < Si < P < S < Cl" note="Same driver as period 2; Ar is not assigned an ordinary value." accent={C.cyan} />
+        <OrderBox title="Halogens (down group, χ decreases)" order="F > Cl > Br > I" note="F is the most electronegative element on the Pauling scale (≈ 4.0)." accent={C.mint} />
+        <OrderBox title="Alkali metals (χ decreases)" order="Li > Na > K ≈ Rb > Cs" note="Cs/Fr are among the least electronegative; exact placement is scale-dependent." accent={C.mint} />
+        <OrderBox title="Hybridisation of carbon" order="χ: C(sp) > C(sp²) > C(sp³)" note="More s-character holds bonding density closer to the nucleus → higher χ and greater C–H acidity." accent={C.gold} />
+        <OrderBox title="Charge on the same atom" order="χ(cation) > χ(neutral) > χ(anion)" note="A positive charge contracts the cloud and pulls shared electrons harder; e.g. χ(Fe³⁺) > χ(Fe²⁺)." accent={C.gold} />
+        <OrderBox title="Oxide character across a period" order="basic → amphoteric → acidic" note="Na₂O < MgO < Al₂O₃ < SiO₂ < P₄O₁₀ < SO₃ < Cl₂O₇ (increasingly acidic)." accent={C.coral} />
+        <OrderBox title="Chlorine oxyacid strength" order="HClO < HClO₂ < HClO₃ < HClO₄" note="More terminal O and higher oxidation state stabilise the conjugate base." accent={C.coral} />
+      </div>
+
+      <SectionHeading
+        number="WORKED NUMERICAL EXAMPLES"
+        title="Applying the electronegativity equations"
+        lead="Two representative JEE-style calculations using the Pauling difference relation and Pauling's percentage-ionic-character estimate."
+        accent={C.mint}
+      />
+      <div style={{ display: "grid", gridTemplateColumns: "minmax(0, 1fr)", gap: 18 }}>
+        <DetailCard number="N1" title="Pauling electronegativity difference from bond energies" rule="Given D(A–B)=400, D(A–A)=300, D(B–B)=200 kJ mol⁻¹, estimate |χA − χB|." accent={C.cyan}>
+          <P>Use the geometric-mean covalent reference and the excess-stabilisation Δ:</P>
+          <MathX tex={String.raw`\Delta = D_{A-B} - \sqrt{D_{A-A}\,D_{B-B}} = 400 - \sqrt{300\times200} = 400 - 244.95 = 155.05\ \mathrm{kJ\,mol^{-1}}`} />
+          <MathX tex={String.raw`|\chi_A-\chi_B| = 0.102\sqrt{\Delta} = 0.102\sqrt{155.05} \approx 1.27`} />
+          <P>The bond therefore has appreciable polarity, consistent with a Δχ near 1.3.</P>
+        </DetailCard>
+        <DetailCard number="N2" title="Percentage ionic character" rule="Estimate the ionic character of a bond with Δχ = 1.5 using Pauling's exponential relation." accent={C.gold}>
+          <MathX tex={String.raw`\%\text{ ionic} = \left[1 - e^{-0.25(\Delta\chi)^2}\right]\times 100 = \left[1 - e^{-0.25(1.5)^2}\right]\times 100`} />
+          <MathX tex={String.raw`= \left[1 - e^{-0.5625}\right]\times 100 \approx 43\%`} />
+          <P>Substantially polar but far from fully ionic — no ordinary bond becomes 100% ionic at a sharp cut-off.</P>
+        </DetailCard>
+      </div>
     </section>
   );
 }

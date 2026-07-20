@@ -149,59 +149,29 @@ video {
   color: white;
 }
 
-::-webkit-scrollbar {
-  width: 10px;
-}
-
-::-webkit-scrollbar-track {
-  background: #080808;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #222;
-  border-radius: 999px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #333;
-}
-/* Hide scrollbars on horizontal tab containers (swipeable on mobile) */
-.scrollbar-none {
+/* No visible scrollbars anywhere on the site.
+   Scrollable regions (wide tables, formula overflow, tab strips, modals) still
+   scroll normally by wheel, trackpad, touch and keyboard — only the visual
+   scrollbar is hidden. This removes the dark pill-shaped bars that KaTeX's
+   sub-pixel overflow used to render beneath formulas and content blocks. */
+*,
+*::before,
+*::after {
   scrollbar-width: none;        /* Firefox */
   -ms-overflow-style: none;     /* IE/Edge */
 }
-.scrollbar-none::-webkit-scrollbar {
-  display: none;                /* Chrome/Safari */
-}
-
-/* KaTeX renders math with ~1px of sub-pixel overflow, so any overflow:auto
-   wrapper around it shows a spurious dark horizontal scrollbar "pill" beneath
-   every inline formula and display equation. Hide the visual scrollbar on math
-   containers site-wide — genuinely wide equations still scroll via
-   touch/trackpad, but short formulas no longer sprout a stray slider. */
-.qbankMath,
-.katex,
-.katex-display {
-  scrollbar-width: none;        /* Firefox */
-  -ms-overflow-style: none;     /* IE/Edge */
-}
-.qbankMath::-webkit-scrollbar,
-.katex::-webkit-scrollbar,
-.katex-display::-webkit-scrollbar {
+*::-webkit-scrollbar {
   width: 0;
   height: 0;
   display: none;                /* Chrome/Safari */
 }
-/* Also cover the case where a display equation's overflow lives on its direct
-   wrapper (e.g. a Tailwind overflow-x-auto div around <BlockMath>). Scoped to
-   math wrappers only, so real wide-table scrollers keep their scrollbars. */
-:where(div, p, span):has(> .katex-display) {
+
+/* Retained for components that reference it explicitly. */
+.scrollbar-none {
   scrollbar-width: none;
   -ms-overflow-style: none;
 }
-:where(div, p, span):has(> .katex-display)::-webkit-scrollbar {
-  width: 0;
-  height: 0;
+.scrollbar-none::-webkit-scrollbar {
   display: none;
 }
 

@@ -619,12 +619,12 @@ export function ElectronegativityFactorsApplicationsV14() {
           rule="Greater Δχ generally gives greater charge separation, but no ordinary bond becomes perfectly ionic by a sharp cut-off."
           accent={C.cyan}
         >
-          <MathX tex="\%\ \text{ionic character}\approx16|\Delta\chi|+3.5(\Delta\chi)^2" />
           <MathX tex="\%\ \text{ionic character}\approx100\left(1-e^{-0.25(\Delta\chi)^2}\right)" />
           <P>
-            The first expression is the modified Hanny–Smyth classroom
-            estimate; the second is Pauling’s exponential estimate. They are
-            approximate models and need not give identical percentages.
+            This is Pauling’s exponential estimate — the one relation to
+            remember. (An older classroom alternative, the Hanny–Smyth
+            expression 16|Δχ| + 3.5(Δχ)², gives similar but not identical
+            percentages; use whichever a problem specifies.)
           </P>
           <ExampleList
             items={[
@@ -906,9 +906,12 @@ export function ElectronegativityFactorsApplicationsV14() {
             items={[
               <>Aqueous acid strength of HX depends strongly on H–X bond strength and solvation, not only bond polarity.</>,
               <>Melting point depends on structure, packing and cohesive forces.</>,
-              <>Electron affinity is an isolated gaseous-atom energy change; it is not the same quantity as electronegativity.</>,
+              <>Electron affinity is an isolated gaseous-atom energy change; it is not the same quantity as electronegativity — F has the highest χ while Cl has the more negative atomic Δ<sub>eg</sub>H.</>,
               <>Noble-gas bond electronegativity has no ordinary meaning when no bond exists.</>,
               <>Oxide and oxyacid orders can change when structure, resonance or the number of ionisable O–H groups changes.</>,
+              <>χ is not directly measurable — Pauling, Mulliken and Allred–Rochow assign different numbers, so never mix scales inside one calculation.</>,
+              <>Geometry, not bond polarity alone, decides molecular dipole — CO₂ is non-polar with polar bonds; H₂O is polar.</>,
+              <>Polarity is not bond strength — H–F is both polar and strong, while H–I is less polar yet much weaker.</>,
             ]}
           />
         </DetailCard>

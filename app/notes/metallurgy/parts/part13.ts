@@ -4,15 +4,13 @@ const content = String.raw`
 > **Complete-source reconstruction:** theory is preserved at full teaching depth; diagrams are used only where they explain mechanism, apparatus, phase movement or decision logic.
 
 
-![Copper extraction flow](/notes/metallurgy/copper-flow.svg)
+![Copper extraction flow](/notes/metallurgy/reference/copper-self-reduction.webp)
 
 Chalcopyrite is commonly treated conceptually as a mixed Cu–Fe sulphide system; older notes often represent matte chemistry using $Cu_2S$ and $FeS$ components.
 
-![Copper extraction flow](/notes/metallurgy/copper-flow.svg)
 
-![Copper converter stages](/notes/metallurgy/copper-converter.svg)
 
-![Copper electrorefining](/notes/metallurgy/electrorefining.svg)
+![Copper electrorefining](/notes/metallurgy/reference/electrorefining.webp)
 
 
 ## Copper source details restored

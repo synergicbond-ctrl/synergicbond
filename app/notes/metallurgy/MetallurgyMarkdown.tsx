@@ -15,7 +15,7 @@ export default function MetallurgyMarkdown({ content }: { content: string }) {
           table: ({ children }) => <div className="table-scroll"><table>{children}</table></div>,
           blockquote: ({ children }) => <aside className="concept-box">{children}</aside>,
           img: ({ src = "", alt = "" }) => (
-            // Source diagrams are redrawn as local SVGs in /public/notes/metallurgy.
+            // High-quality teaching graphics are rendered directly from the supplied reference PDFs.
             // eslint-disable-next-line @next/next/no-img-element
             <img className="edu-diagram" src={src} alt={alt} loading="lazy" />
           ),

@@ -35,7 +35,7 @@ $$Zn\rightarrow Zn^{2+}+2e^-$$
 
 ---
 
-![Zinc extraction flow](/notes/metallurgy/zinc-flow.svg)
+![Zinc extraction flow](/notes/metallurgy/reference/carbon-reduction.webp)
 
 
 ## Zinc details restored from pages 61–63

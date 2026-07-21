@@ -19,11 +19,12 @@ The handwritten notation $Al_2O_3\cdot2H_2O$ is a useful older shorthand for hyd
 
 # 2. Bayer Process — Purification of Bauxite
 
-![Bayer process flow](/notes/metallurgy/bayer-process.svg)
+![Bayer process flow](/notes/metallurgy/reference/bayer-leaching.webp)
 
 Modern alumina refining is based on caustic digestion.
 
 ## Step 1 — digestion in NaOH
+
 Aluminium hydroxide dissolves as aluminate species. A convenient ionic representation is:
 
 $$Al(OH)_3+OH^-\rightarrow[Al(OH)_4]^-$$
@@ -100,7 +101,7 @@ This is historically important for exams, though the Bayer process dominates mod
 
 # 5. Hall–Héroult Process — Electrolytic Reduction of Alumina
 
-![Hall-Héroult cell](/notes/metallurgy/hall-heroult.svg)
+![Hall-Héroult cell](/notes/metallurgy/reference/hall-heroult.webp)
 
 Aluminium is too electropositive to be produced by aqueous electrolysis or ordinary carbon reduction. $Al_2O_3$ is dissolved in a molten fluoride bath and electrolysed.
 
@@ -148,7 +149,6 @@ Anhydrous $AlCl_3$ is molecular/covalent and highly volatile (sublimes readily),
 
 # 7. Hoopes Process — Electrolytic Refining of Aluminium
 
-![Hoopes three-layer cell](/notes/metallurgy/hoopes.svg)
 
 Hoopes refining uses three molten layers separated by density:
 
@@ -184,13 +184,9 @@ To reduce oxidation and contamination of the hot aluminium/electrolyte system.
 
 > **Authoritative cross-check:** modern bauxite → alumina uses the Bayer process, followed by Hall–Héroult electrolytic aluminium production. This sequence is the industrial backbone and should be prioritised over historical side routes.
 
-![Bauxite purification routes](/notes/metallurgy/aluminium-beneficiation.svg)
 
-![Bayer process](/notes/metallurgy/bayer-process.svg)
 
-![Hall-Heroult cell](/notes/metallurgy/hall-heroult.svg)
 
-![Hoopes refining](/notes/metallurgy/hoopes.svg)
 
 
 ## Additional source details restored

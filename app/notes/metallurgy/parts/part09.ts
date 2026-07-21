@@ -8,7 +8,7 @@ const content = String.raw`
 
 # A. Extraction of Tin from Cassiterite
 
-![Tin extraction flow](/notes/metallurgy/tin-flow.svg)
+![Tin extraction flow](/notes/metallurgy/reference/carbon-reduction.webp)
 
 
 ## Cassiterite source flow restored

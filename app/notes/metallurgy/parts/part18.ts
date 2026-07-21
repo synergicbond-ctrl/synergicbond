@@ -111,9 +111,10 @@ These questions are excellent redox-equilibrium exercises and are retained inten
 ---
 
 ## Final Appendix Takeaway
+![Metallurgy synthesis matrix](/notes/metallurgy/reference/master-matrix.webp)
+
 Pages 72–81 are best understood as a **reaction-chemistry extension**, not as part of the metallurgy teaching sequence. Keeping them in a separate appendix prevents the website chapter from becoming pedagogically disordered while still satisfying full-source coverage.
 
-![Redox reaction map](/notes/metallurgy/reaction-appendix-map.svg)
 
 
 ## Nitric-acid and redox details from source pages 77–81

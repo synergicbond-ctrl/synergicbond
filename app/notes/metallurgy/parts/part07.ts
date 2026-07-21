@@ -8,7 +8,7 @@ const content = String.raw`
 
 # 9. Ellingham Diagram — Thermodynamic Backbone of Metallurgy
 
-![Ellingham diagram principle](/notes/metallurgy/ellingham.svg)
+![Ellingham diagram principle](/notes/metallurgy/reference/ellingham.webp)
 
 An Ellingham diagram plots approximately:
 
@@ -70,9 +70,8 @@ Hydrogen can reduce oxides whose formation lines lie above the $H_2/H_2O$ line u
 
 ---
 
-![Ellingham diagram](/notes/metallurgy/ellingham.svg)
 
-![Thermodynamic reduction selection](/notes/metallurgy/reduction-method-map.svg)
+![Thermodynamic reduction selection](/notes/metallurgy/reference/reduction-spectrum.webp)
 
 
 ## Ellingham details restored from source pages 33–39

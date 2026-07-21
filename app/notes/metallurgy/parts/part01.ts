@@ -29,7 +29,7 @@ The unwanted earthy, rocky or mineral impurities associated with an ore are call
 
 ## 2. The General Metallurgical Route
 
-![General metallurgy flowchart](/notes/metallurgy/metallurgy-flow.svg)
+![General metallurgy flowchart](/notes/metallurgy/reference/universal-framework.webp)
 
 A useful master sequence is:
 
@@ -44,6 +44,8 @@ Different ores may skip, combine or reorder these steps. For example, noble meta
 ---
 
 ## 3. Concentration of Ores — Choosing the Method
+![Four pillars of ore beneficiation](/notes/metallurgy/reference/concentration-spectrum.webp)
+
 
 The method depends on a **physical or chemical difference** between the valuable mineral and the gangue.
 
@@ -63,7 +65,7 @@ It is most useful when:
 - particles are sufficiently liberated,
 - the ore does not dissolve/react undesirably with water.
 
-![Gravity separation on a shaking table](/notes/metallurgy/gravity-separation.svg)
+![Gravity separation on a shaking table](/notes/metallurgy/reference/gravity-separation.webp)
 
 ### Shaking / Wilfley-type table idea
 Finely divided ore is fed onto an inclined, continuously vibrating table with riffles/barriers. Water flows across the surface.
@@ -80,7 +82,7 @@ Finely divided ore is fed onto an inclined, continuously vibrating table with ri
 
 **Principle:** either the ore or the gangue must respond differently to a magnetic field.
 
-![Magnetic separation conveyor](/notes/metallurgy/magnetic-separation.svg)
+![Magnetic separation conveyor](/notes/metallurgy/reference/magnetic-separation.webp)
 
 A crushed ore is carried on a conveyor over a magnetic pulley/roller:
 - magnetic particles remain attracted longer and fall nearer the roller,
@@ -93,13 +95,10 @@ Cassiterite $SnO_2$ may contain magnetic wolframite-type impurities, commonly re
 
 ---
 
-![General metallurgy flow](/notes/metallurgy/metallurgy-flow.svg)
 
-![Gravity separation](/notes/metallurgy/gravity-separation.svg)
 
-![Magnetic separation](/notes/metallurgy/magnetic-separation.svg)
 
-![Ore and concentration decision map](/notes/metallurgy/ore-classification.svg)
+![Ore and concentration decision map](/notes/metallurgy/reference/ore-foundations.webp)
 
 
 ## Source-detail restoration

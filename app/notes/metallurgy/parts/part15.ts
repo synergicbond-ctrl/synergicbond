@@ -30,7 +30,7 @@ which can carry iron into slag.
 
 # 2. Blast Furnace — Extraction of Iron
 
-![Blast furnace zones](/notes/metallurgy/blast-furnace.svg)
+![Blast furnace zones](/notes/metallurgy/reference/blast-furnace.webp)
 
 A classical charge contains:
 - iron oxide/sinter/pellets,
@@ -54,7 +54,6 @@ Thus **pig iron** contains appreciable C plus Si, Mn, P, S and other impurities.
 
 ---
 
-![Blast furnace zones](/notes/metallurgy/blast-furnace.svg)
 
 
 ## Source-specific blast-furnace details restored

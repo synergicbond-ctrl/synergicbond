@@ -55,9 +55,7 @@ $\text{pig iron}\xrightarrow{\text{oxidative refining}}\text{low-impurity iron/s
 
 This sequence links extraction metallurgy with materials science—exactly the connection the source’s final pages are trying to build.
 
-![Steelmaking routes](/notes/metallurgy/steelmaking-map.svg)
 
-![Steel heat treatment map](/notes/metallurgy/heat-treatment.svg)
 
 
 ## Steelmaking details restored from pages 67–71

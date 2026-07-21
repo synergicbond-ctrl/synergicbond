@@ -29,6 +29,8 @@ $$Fe+CuSO_4\rightarrow FeSO_4+Cu$$
 ---
 
 ## 8. Electrometallurgical Reduction
+![Electrolytic reduction for highly electropositive metals](/notes/metallurgy/reference/electrolytic-reduction.webp)
+
 
 Very electropositive metals such as Na, K, Mg, Ca and Al cannot normally be obtained by ordinary carbon reduction of their stable compounds under convenient commercial conditions. They are produced by **electrolysis of molten salts/oxides**.
 
@@ -47,7 +49,7 @@ A CaCl₂-containing molten mixture is used industrially to lower the operating 
 
 ---
 
-![Reduction routes by metal reactivity](/notes/metallurgy/reduction-method-map.svg)
+![Reduction routes by metal reactivity](/notes/metallurgy/reference/reduction-spectrum.webp)
 
 
 ## Hydrometallurgy — complete logic retained

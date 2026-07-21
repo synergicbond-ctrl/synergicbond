@@ -14,7 +14,7 @@ Froth flotation is primarily used for **sulphide ores**.
 
 Air bubbles carry hydrophobic mineral particles upward into a froth that can be skimmed off.
 
-![Froth flotation cell](/notes/metallurgy/froth-flotation.svg)
+![Froth flotation cell](/notes/metallurgy/reference/froth-flotation.webp)
 
 ### Main components in the source notes
 
@@ -66,6 +66,8 @@ The actual mineral-surface chemistry is more complex than a bulk stoichiometric 
 ---
 
 ## 8. Depressants — Selective Flotation
+![Activator and depressant selectivity in flotation](/notes/metallurgy/reference/activator-depressant.webp)
+
 
 A **depressant** prevents one mineral from floating while allowing another to float.
 
@@ -77,6 +79,8 @@ In classical JEE metallurgy, **NaCN** is described as depressing $ZnS$ during se
 ---
 
 ## 9. Chemical Concentration — Leaching
+![Leaching as selective chemical dissolution](/notes/metallurgy/reference/leaching.webp)
+
 
 **Leaching** means selectively dissolving the desired component (or sometimes an impurity) from a solid using a suitable liquid reagent.
 
@@ -90,9 +94,8 @@ Important examples developed later in the chapter:
 
 ---
 
-![Froth flotation cell](/notes/metallurgy/froth-flotation.svg)
 
-![Collector, activator and depressant chemistry](/notes/metallurgy/froth-chemistry.svg)
+![Collector, activator and depressant chemistry](/notes/metallurgy/reference/froth-chemistry.webp)
 
 
 ## Full reagent logic from the source

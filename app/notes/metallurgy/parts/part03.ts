@@ -32,7 +32,7 @@ This selection logic is more useful than memorising isolated methods because JEE
 
 ## 1. Calcination vs Roasting
 
-![Calcination versus roasting](/notes/metallurgy/calcination-roasting.svg)
+![Calcination versus roasting](/notes/metallurgy/reference/calcination-roasting.webp)
 
 | Feature | Calcination | Roasting |
 |---|---|---|
@@ -65,7 +65,6 @@ The next reduction step is a heterogeneous reaction. A porous oxide offers a lar
 
 ---
 
-![Calcination and roasting comparison](/notes/metallurgy/calcination-roasting.svg)
 
 
 ## Source comparison restored in full
@@ -93,6 +92,8 @@ $$4FeO+O_2\rightarrow2Fe_2O_3$$
 Reduction is a heterogeneous solid–gas/solid–solid process. Porosity increases accessible surface and gas diffusion.
 
 ### Sintering warning from the source
+![Porosity and sintering architecture](/notes/metallurgy/reference/porosity-sintering.webp)
+
 **Sintering** = partial fusion/neck formation at particle contact points followed by solidification. If overheating causes excessive sintering, particles stick and pores close. Therefore roasting/calcination conditions are chosen to remove volatiles **without destroying porosity**.
 
 `;

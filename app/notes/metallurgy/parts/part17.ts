@@ -75,7 +75,6 @@ Modern industrial importance varies by region and resource type, but the princip
 
 ---
 
-![Reaction appendix map](/notes/metallurgy/reaction-appendix-map.svg)
 
 
 ## Coverage note for the merged source

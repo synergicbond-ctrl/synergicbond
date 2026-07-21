@@ -9,9 +9,8 @@ The source organises Mg extraction in three major steps:
 2. conversion to **anhydrous $MgCl_2$** without hydrolysis,
 3. fused-salt electrolysis.
 
-![Magnesium from seawater and carnallite](/notes/metallurgy/magnesium-seawater.svg)
 
-![Fused magnesium chloride electrolysis](/notes/metallurgy/magnesium-cell.svg)
+![Fused magnesium chloride electrolysis](/notes/metallurgy/reference/molten-electrolysis.webp)
 
 
 ## Magnesium route — source details restored

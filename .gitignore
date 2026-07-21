@@ -51,3 +51,9 @@ tmp/
 
 # nested working clone — must never be tracked (carried committed node_modules)
 synergic-bond-clone/
+
+# Local session artifacts - generated reports and extracted source material
+# (docs/notes-source contains third-party source text; never publish)
+docs/notes-source/
+docs/thermodynamics-local-review/
+docs/ui-audit/

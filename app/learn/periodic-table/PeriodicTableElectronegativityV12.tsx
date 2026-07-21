@@ -118,6 +118,53 @@ function BondPullSVG() {
   </svg>;
 }
 
+const HUD = { navy: "#0d1321", teal: "#00f0ff", gold: "#ffaa00", grid: "#16233a", dim: "#7d93b2" };
+
+function ElectronegativityTugOfWarSVG() {
+  return (
+    <svg viewBox="0 0 800 450" role="img" aria-label="Electronegativity tug of war between hydrogen and fluorine in a covalent bond" style={{ width: "100%", height: "auto", display: "block" }}>
+      <style>{`.hud-mono{font-family:'SFMono-Regular',Consolas,monospace}`}</style>
+      <defs>
+        <pattern id="hud-grid-en" width="26" height="26" patternUnits="userSpaceOnUse"><path d="M26 0H0V26" fill="none" stroke={HUD.grid} strokeWidth="1" /></pattern>
+        <marker id="hud-arrow-en" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill={HUD.gold} /></marker>
+        <radialGradient id="hud-cloud-en" cx="50%" cy="50%" r="50%"><stop offset="0%" stopColor={HUD.gold} stopOpacity="0.55" /><stop offset="100%" stopColor={HUD.gold} stopOpacity="0" /></radialGradient>
+      </defs>
+      <rect x="0" y="0" width="800" height="450" fill={HUD.navy} />
+      <rect x="0" y="0" width="800" height="450" fill="url(#hud-grid-en)" />
+      <rect x="16" y="16" width="768" height="418" rx="14" fill="none" stroke={HUD.dim} strokeOpacity="0.5" strokeWidth="1" />
+      <text x="400" y="50" textAnchor="middle" className="hud-mono" fill="#eaf6ff" fontSize="18" fontWeight="700">BOND POLARITY // H–F ELECTRON-DENSITY MAP</text>
+
+      <g>
+        <circle cx="220" cy="240" r="60" fill="none" stroke={HUD.teal} strokeWidth="1.5" strokeDasharray="3 4" opacity="0.5" />
+        <circle cx="220" cy="240" r="30" fill={HUD.teal} opacity="0.9" />
+        <text x="220" y="248" textAnchor="middle" className="hud-mono" fill={HUD.navy} fontSize="20" fontWeight="900">H</text>
+        <text x="220" y="322" textAnchor="middle" className="hud-mono" fill={HUD.teal} fontSize="13">χ(H) = 2.20</text>
+        <text x="220" y="188" textAnchor="middle" className="hud-mono" fill={HUD.teal} fontSize="15" fontWeight="800">δ+</text>
+      </g>
+
+      <g>
+        <circle cx="580" cy="240" r="205" fill="url(#hud-cloud-en)" />
+        <circle cx="580" cy="240" r="72" fill="none" stroke={HUD.gold} strokeWidth="1.5" strokeDasharray="3 4" opacity="0.6" />
+        <circle cx="580" cy="240" r="40" fill={HUD.gold} opacity="0.92" />
+        <text x="580" y="250" textAnchor="middle" className="hud-mono" fill={HUD.navy} fontSize="22" fontWeight="900">F</text>
+        <text x="580" y="336" textAnchor="middle" className="hud-mono" fill={HUD.gold} fontSize="13">χ(F) = 3.98</text>
+        <text x="580" y="180" textAnchor="middle" className="hud-mono" fill={HUD.gold} fontSize="15" fontWeight="800">δ−</text>
+      </g>
+
+      {[0, 1, 2].map((i) => (
+        <ellipse key={i} cx={330 + i * 60} cy="240" rx="18" ry="10" fill={i < 1 ? HUD.teal : HUD.gold} opacity={0.35 + i * 0.2} />
+      ))}
+      <path d="M330 200 L500 200" stroke={HUD.gold} strokeWidth="2" markerEnd="url(#hud-arrow-en)" opacity="0.85" />
+      <text x="415" y="188" textAnchor="middle" className="hud-mono" fill={HUD.gold} fontSize="12">electron density pulled toward F</text>
+
+      <rect x="40" y="380" width="330" height="46" rx="8" fill="rgba(0,240,255,0.06)" stroke={HUD.teal} strokeWidth="1" />
+      <text x="205" y="408" textAnchor="middle" className="hud-mono" fill={HUD.teal} fontSize="13">Δχ = χ(F) − χ(H) = 1.78 → strongly polar</text>
+      <rect x="430" y="380" width="330" height="46" rx="8" fill="rgba(255,170,0,0.06)" stroke={HUD.gold} strokeWidth="1" />
+      <text x="595" y="408" textAnchor="middle" className="hud-mono" fill={HUD.gold} fontSize="13">% ionic ≈ 100(1 − e^(−0.25Δχ²)) ≈ 60%</text>
+    </svg>
+  );
+}
+
 function FactorWheelSVG() {
   const items = [
     { a: -90, t: "smaller radius", c: T.cyan }, { a: -30, t: "higher Zₑff", c: T.gold }, { a: 30, t: "positive charge", c: T.coral },
@@ -251,6 +298,7 @@ export function SectionElectronegativityV12() {
       <Panel accent={T.gold}><PanelTitle>Do not mix these three</PanelTitle><TableX minWidth={570} columns={["Quantity","Meaning","Applies to","Unit"]} rows={[["Electronegativity","Pull on shared bond electrons","Bonded atom","No unit"],["Electron affinity","Energy change when a gaseous atom gains e⁻","Isolated gaseous atom","kJ mol⁻¹ or eV"],["Ionisation energy","Energy required to remove e⁻ from gaseous atom","Isolated gaseous atom","kJ mol⁻¹ or eV"]]}/></Panel>
     </Grid>
     <ReplayFigure title="Electron cloud shift in a polar bond" caption="The shared cloud moves toward the more electronegative atom, creating partial charges and a bond dipole.">{()=><BondPullSVG/>}</ReplayFigure>
+    <ReplayFigure title="Worked example: H–F bond polarity" caption="A concrete case of the same effect using real χ values, with the resulting Δχ and estimated percentage ionic character.">{()=><ElectronegativityTugOfWarSVG/>}</ReplayFigure>
     <Note title="Memory line" accent={T.mint}><b>Electronegativity is a bond property; electron affinity and ionisation energy are isolated-atom energy properties.</b></Note>
 
     <SectionTitle n="02" title="Factors controlling electronegativity" lead="An atom pulls more strongly when its nucleus is effectively stronger and the bonding electrons can come closer to it."/>

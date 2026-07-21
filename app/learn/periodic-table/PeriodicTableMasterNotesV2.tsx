@@ -2759,6 +2759,7 @@ function SectionIonizationLegacyV9() {
       <DefinitionBox term="First ionization enthalpy">
         First ionization enthalpy is the enthalpy required to remove the most loosely bound electron from one mole of isolated gaseous atoms in their ground state to form one mole of gaseous unipositive ions.
       </DefinitionBox>
+      <IonizationPotentialWellSVG />
       <MathBlock tex={String.raw`\mathrm{X(g)\rightarrow X^+(g)+e^-}\qquad \Delta_iH_1>0`} />
       <MathBlock tex={String.raw`\mathrm{X^+(g)\rightarrow X^{2+}(g)+e^-}\qquad \Delta_iH_2>\Delta_iH_1`} />
       <MathBlock tex={String.raw`\mathrm{X^{2+}(g)\rightarrow X^{3+}(g)+e^-}\qquad \Delta_iH_3>\Delta_iH_2`} />
@@ -2983,6 +2984,7 @@ function SectionElectronGainLegacyV9() {
       <DefinitionBox term="Electron gain enthalpy">
         Electron gain enthalpy is the enthalpy change accompanying the addition of an electron to one mole of isolated gaseous atoms in their ground state to form one mole of gaseous anions.
       </DefinitionBox>
+      <ElectronGainEnthalpyDropSVG />
       <MathBlock tex={String.raw`\mathrm{X(g)+e^-\rightarrow X^-(g)}\qquad \Delta_{eg}H_1`} />
       <DataTable columns={["Sign", "Meaning", "Illustration"]} rows={[
         ["negative", "electron addition releases energy; process is exothermic", "Cl(g) + e⁻ → Cl⁻(g)"],
@@ -4513,6 +4515,137 @@ export function SectionBlockDataAtlas() {
    ========================================================================== */
 export function TelluricScrewSVG() {
   return <V9TelluricScrewSVG />;
+}
+
+const HUD = { navy: "#0d1321", teal: "#00f0ff", gold: "#ffaa00", grid: "#16233a", dim: "#7d93b2" };
+
+export function ElectronegativityTugOfWarSVG() {
+  return (
+    <MotionFigure title="Bond polarity: the tug-of-war for shared electrons" status="Law-based schematic" note="In H–F, fluorine's higher effective nuclear charge and smaller radius pull the shared electron pair toward itself, leaving H partially positive and F partially negative.">
+    <svg viewBox="0 0 800 450" role="img" aria-label="Electronegativity tug of war between hydrogen and fluorine in a covalent bond" style={{ width: "100%", height: "auto", display: "block" }}>
+      <style>{`.hud-mono{font-family:'SFMono-Regular',Consolas,monospace}`}</style>
+      <defs>
+        <pattern id="hud-grid" width="26" height="26" patternUnits="userSpaceOnUse"><path d="M26 0H0V26" fill="none" stroke={HUD.grid} strokeWidth="1" /></pattern>
+        <marker id="hud-arrow-teal" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill={HUD.teal} /></marker>
+        <radialGradient id="hud-cloud" cx="50%" cy="50%" r="50%"><stop offset="0%" stopColor={HUD.gold} stopOpacity="0.55" /><stop offset="100%" stopColor={HUD.gold} stopOpacity="0" /></radialGradient>
+      </defs>
+      <rect x="0" y="0" width="800" height="450" fill={HUD.navy} />
+      <rect x="0" y="0" width="800" height="450" fill="url(#hud-grid)" />
+      <rect x="16" y="16" width="768" height="418" rx="14" fill="none" stroke={HUD.dim} strokeOpacity="0.5" strokeWidth="1" />
+      <text x="400" y="50" textAnchor="middle" className="hud-mono" fill="#eaf6ff" fontSize="18" fontWeight="700">BOND POLARITY // H–F ELECTRON-DENSITY MAP</text>
+
+      <g>
+        <circle cx="220" cy="240" r="60" fill="none" stroke={HUD.teal} strokeWidth="1.5" strokeDasharray="3 4" opacity="0.5" />
+        <circle cx="220" cy="240" r="30" fill={HUD.teal} opacity="0.9" />
+        <text x="220" y="248" textAnchor="middle" className="hud-mono" fill={HUD.navy} fontSize="20" fontWeight="900">H</text>
+        <text x="220" y="322" textAnchor="middle" className="hud-mono" fill={HUD.teal} fontSize="13">χ(H) = 2.20</text>
+        <text x="220" y="188" textAnchor="middle" className="hud-mono" fill={HUD.teal} fontSize="15" fontWeight="800">δ+</text>
+      </g>
+
+      <g>
+        <circle cx="580" cy="240" r="205" fill="url(#hud-cloud)" />
+        <circle cx="580" cy="240" r="72" fill="none" stroke={HUD.gold} strokeWidth="1.5" strokeDasharray="3 4" opacity="0.6" />
+        <circle cx="580" cy="240" r="40" fill={HUD.gold} opacity="0.92" />
+        <text x="580" y="250" textAnchor="middle" className="hud-mono" fill={HUD.navy} fontSize="22" fontWeight="900">F</text>
+        <text x="580" y="336" textAnchor="middle" className="hud-mono" fill={HUD.gold} fontSize="13">χ(F) = 3.98</text>
+        <text x="580" y="180" textAnchor="middle" className="hud-mono" fill={HUD.gold} fontSize="15" fontWeight="800">δ−</text>
+      </g>
+
+      {[0, 1, 2].map((i) => (
+        <ellipse key={i} cx={330 + i * 60} cy="240" rx="18" ry="10" fill={i < 1 ? HUD.teal : HUD.gold} opacity={0.35 + i * 0.2} />
+      ))}
+      <path d="M260 240 H500" stroke={HUD.teal} strokeWidth="2" strokeDasharray="1 0" opacity="0.4" />
+      <path d="M330 200 L500 200" stroke={HUD.gold} strokeWidth="2" markerEnd="url(#hud-arrow-teal)" opacity="0.85" />
+      <text x="415" y="188" textAnchor="middle" className="hud-mono" fill={HUD.gold} fontSize="12">electron density pulled toward F</text>
+
+      <rect x="40" y="380" width="330" height="46" rx="8" fill="rgba(0,240,255,0.06)" stroke={HUD.teal} strokeWidth="1" />
+      <text x="205" y="408" textAnchor="middle" className="hud-mono" fill={HUD.teal} fontSize="13">Δχ = χ(F) − χ(H) = 1.78 → strongly polar</text>
+      <rect x="430" y="380" width="330" height="46" rx="8" fill="rgba(255,170,0,0.06)" stroke={HUD.gold} strokeWidth="1" />
+      <text x="595" y="408" textAnchor="middle" className="hud-mono" fill={HUD.gold} fontSize="13">% ionic ≈ 100(1 − e^(−0.25Δχ²)) ≈ 60%</text>
+    </svg>
+    </MotionFigure>
+  );
+}
+
+export function IonizationPotentialWellSVG() {
+  return (
+    <MotionFigure title="Ionization enthalpy: escaping the nuclear potential well" status="Law-based schematic" note="The outermost electron sits in a potential-energy well created by nuclear attraction. Ionization enthalpy is the energy that must be supplied to lift it out to a free, stationary electron at infinity.">
+    <svg viewBox="0 0 800 450" role="img" aria-label="Potential energy well diagram for ionization enthalpy" style={{ width: "100%", height: "auto", display: "block" }}>
+      <style>{`.hud-mono{font-family:'SFMono-Regular',Consolas,monospace}`}</style>
+      <defs>
+        <pattern id="hud-grid2" width="26" height="26" patternUnits="userSpaceOnUse"><path d="M26 0H0V26" fill="none" stroke={HUD.grid} strokeWidth="1" /></pattern>
+        <marker id="hud-arrow-gold" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill={HUD.gold} /></marker>
+      </defs>
+      <rect x="0" y="0" width="800" height="450" fill={HUD.navy} />
+      <rect x="0" y="0" width="800" height="450" fill="url(#hud-grid2)" />
+      <rect x="16" y="16" width="768" height="418" rx="14" fill="none" stroke={HUD.dim} strokeOpacity="0.5" strokeWidth="1" />
+      <text x="400" y="46" textAnchor="middle" className="hud-mono" fill="#eaf6ff" fontSize="18" fontWeight="700">IONIZATION ENTHALPY // NUCLEAR POTENTIAL WELL</text>
+
+      <line x1="90" y1="70" x2="90" y2="380" stroke={HUD.dim} strokeWidth="1.5" markerEnd="url(#hud-arrow-gold)" />
+      <text x="70" y="70" className="hud-mono" fill={HUD.dim} fontSize="12" transform="rotate(-90 70 70)">potential energy</text>
+      <line x1="90" y1="90" x2="740" y2="90" stroke={HUD.teal} strokeWidth="1.5" strokeDasharray="4 4" opacity="0.6" />
+      <text x="748" y="94" className="hud-mono" fill={HUD.teal} fontSize="12">E = 0 (free e⁻, at rest)</text>
+
+      <path d="M140 370 C 250 370, 260 110, 400 108 C 540 106, 550 370, 660 370" fill="none" stroke={HUD.gold} strokeWidth="2.5" />
+      <circle cx="400" cy="330" r="9" fill={HUD.teal} />
+      <text x="400" y="356" textAnchor="middle" className="hud-mono" fill={HUD.teal} fontSize="12">e⁻ (bound)</text>
+      <text x="400" y="392" textAnchor="middle" className="hud-mono" fill="#eaf6ff" fontSize="13" fontWeight="700">X(g)</text>
+
+      <path d="M400 322 L400 108" stroke={HUD.gold} strokeWidth="3" strokeDasharray="6 5" markerEnd="url(#hud-arrow-gold)" />
+      <rect x="430" y="180" width="180" height="52" rx="8" fill="rgba(255,170,0,0.08)" stroke={HUD.gold} strokeWidth="1" />
+      <text x="520" y="202" textAnchor="middle" className="hud-mono" fill={HUD.gold} fontSize="13" fontWeight="800">ΔᵢH₁ &gt; 0</text>
+      <text x="520" y="220" textAnchor="middle" className="hud-mono" fill={HUD.gold} fontSize="11">energy supplied</text>
+
+      <circle cx="400" cy="100" r="8" fill={HUD.teal} opacity="0.5" />
+      <text x="400" y="72" textAnchor="middle" className="hud-mono" fill={HUD.teal} fontSize="12">e⁻ escapes: X⁺(g) + e⁻</text>
+
+      <rect x="230" y="400" width="340" height="34" rx="8" fill="rgba(255,255,255,0.03)" stroke={HUD.dim} strokeOpacity="0.5" />
+      <text x="400" y="422" textAnchor="middle" className="hud-mono" fill="#eaf6ff" fontSize="12">X(g) → X⁺(g) + e⁻(g, at rest)</text>
+    </svg>
+    </MotionFigure>
+  );
+}
+
+export function ElectronGainEnthalpyDropSVG() {
+  return (
+    <MotionFigure title="Electron gain enthalpy: dropping into the valence shell" status="Law-based schematic" note="A free electron approaching from infinity falls into the atom's valence shell under nuclear attraction, releasing energy as it settles — the process is usually exothermic.">
+    <svg viewBox="0 0 800 450" role="img" aria-label="Incoming electron falling into an atomic valence shell releasing energy" style={{ width: "100%", height: "auto", display: "block" }}>
+      <style>{`.hud-mono{font-family:'SFMono-Regular',Consolas,monospace}`}</style>
+      <defs>
+        <pattern id="hud-grid3" width="26" height="26" patternUnits="userSpaceOnUse"><path d="M26 0H0V26" fill="none" stroke={HUD.grid} strokeWidth="1" /></pattern>
+        <marker id="hud-arrow-teal2" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill={HUD.teal} /></marker>
+      </defs>
+      <rect x="0" y="0" width="800" height="450" fill={HUD.navy} />
+      <rect x="0" y="0" width="800" height="450" fill="url(#hud-grid3)" />
+      <rect x="16" y="16" width="768" height="418" rx="14" fill="none" stroke={HUD.dim} strokeOpacity="0.5" strokeWidth="1" />
+      <text x="400" y="46" textAnchor="middle" className="hud-mono" fill="#eaf6ff" fontSize="18" fontWeight="700">ELECTRON GAIN ENTHALPY // INCOMING ELECTRON CAPTURE</text>
+
+      <line x1="90" y1="70" x2="90" y2="380" stroke={HUD.dim} strokeWidth="1.5" markerEnd="url(#hud-arrow-teal2)" />
+      <text x="70" y="70" className="hud-mono" fill={HUD.dim} fontSize="12" transform="rotate(-90 70 70)">potential energy</text>
+      <line x1="90" y1="120" x2="740" y2="120" stroke={HUD.teal} strokeWidth="1.5" strokeDasharray="4 4" opacity="0.6" />
+      <text x="748" y="124" className="hud-mono" fill={HUD.teal} fontSize="12">E = 0 (free e⁻, at rest)</text>
+
+      <path d="M140 370 C 250 370, 260 140, 400 138 C 540 136, 550 370, 660 370" fill="none" stroke={HUD.gold} strokeWidth="2.5" />
+      <text x="400" y="392" textAnchor="middle" className="hud-mono" fill="#eaf6ff" fontSize="13" fontWeight="700">X(g)</text>
+
+      <circle cx="620" cy="126" r="8" fill={HUD.teal}>
+        <animateMotion dur="2.4s" repeatCount="indefinite" path="M0 0 C -60 40, -180 190, -220 210" />
+      </circle>
+      <path d="M650 126 C 560 190, 460 250, 400 208" fill="none" stroke={HUD.teal} strokeWidth="2" strokeDasharray="5 5" markerEnd="url(#hud-arrow-teal2)" />
+      <text x="590" y="150" className="hud-mono" fill={HUD.teal} fontSize="12">e⁻ (incoming, free)</text>
+
+      <circle cx="400" cy="220" r="9" fill={HUD.teal} />
+      <text x="400" y="246" textAnchor="middle" className="hud-mono" fill={HUD.teal} fontSize="12">e⁻ captured</text>
+
+      <rect x="430" y="255" width="190" height="52" rx="8" fill="rgba(0,240,255,0.08)" stroke={HUD.teal} strokeWidth="1" />
+      <text x="525" y="277" textAnchor="middle" className="hud-mono" fill={HUD.teal} fontSize="13" fontWeight="800">Δ_egH &lt; 0</text>
+      <text x="525" y="295" textAnchor="middle" className="hud-mono" fill={HUD.teal} fontSize="11">energy released</text>
+
+      <rect x="230" y="400" width="340" height="34" rx="8" fill="rgba(255,255,255,0.03)" stroke={HUD.dim} strokeOpacity="0.5" />
+      <text x="400" y="422" textAnchor="middle" className="hud-mono" fill="#eaf6ff" fontSize="12">X(g) + e⁻(g, at rest) → X⁻(g)</text>
+    </svg>
+    </MotionFigure>
+  );
 }
 
 export function BornHaberNaClSVG() {

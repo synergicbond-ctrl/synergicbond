@@ -1,7 +1,10 @@
 const content = String.raw`
-# Part 1 — Foundations & Concentration of Ores
+# Part 1 — Foundations, Ores, Gangue & Physical Concentration
 
-> **Scope:** Source pages 1–10. Every academically useful point is retained, but OCR errors and scientifically inaccurate wording are corrected.
+> **Complete-source reconstruction:** theory is preserved at full teaching depth; diagrams are used only where they explain mechanism, apparatus, phase movement or decision logic.
+
+
+> **Scope:** Source pages 1–4. Every academically useful point is retained, with OCR errors and scientifically inaccurate wording corrected.
 
 ## 1. Mineral, Ore, Gangue and Metallurgy
 
@@ -90,116 +93,40 @@ Cassiterite $SnO_2$ may contain magnetic wolframite-type impurities, commonly re
 
 ---
 
-## 6. Froth Flotation — Core Principle
+![General metallurgy flow](/notes/metallurgy/metallurgy-flow.svg)
 
-Froth flotation is primarily used for **sulphide ores**.
+![Gravity separation](/notes/metallurgy/gravity-separation.svg)
 
-**Principle:** it exploits selective differences in **wettability**:
-- sulphide mineral particles are made preferentially **oil/collector-wet (hydrophobic)**,
-- gangue is preferentially **water-wet (hydrophilic)**.
+![Magnetic separation](/notes/metallurgy/magnetic-separation.svg)
 
-Air bubbles carry hydrophobic mineral particles upward into a froth that can be skimmed off.
+![Ore and concentration decision map](/notes/metallurgy/ore-classification.svg)
 
-![Froth flotation cell](/notes/metallurgy/froth-flotation.svg)
 
-### Main components in the source notes
+## Source-detail restoration
+- **Mineral vs ore is economic, not purely chemical.** A mineral may contain a metal yet fail to be an ore if extraction is uneconomic or creates difficult impurities.
+- The source uses **pyrite, $FeS_2$ (“fool’s gold”)** to stress this distinction: iron can be obtained in principle after oxidation/reduction, but sulphur removal is a major burden and sulphur makes iron brittle.
+- **Gangue / matrix** means the unwanted material accompanying the valuable mineral, not simply “soil”. It may be silica, silicate, clay, carbonate, oxide or another sulphide.
+- The complete route in the source is: **beneficiation → calcination/roasting if required → reduction/metal winning → refining**. Crushing/grinding precede concentration because liberation is necessary.
+- **Gravity separation:** the source sketch uses an inclined vibrating/flow table with adjustable barriers/riffles. Heavy particles respond differently from lighter particles under water flow; wet processing also suppresses dust.
+- **Magnetic separation:** either the ore or the impurity may be magnetic. In cassiterite treatment, magnetic wolframite-type impurity $(Fe,Mn)WO_4$ is removed from non-magnetic $SnO_2$ concentrate.
 
-| Component | Function |
-|---|---|
-| Water | Creates slurry/pulp and carries hydrophilic gangue |
-| Pine oil / eucalyptus-type frother | Produces and maintains a workable froth |
-| Xanthate collector, e.g. sodium ethyl xanthate | Adsorbs on many sulphide surfaces and increases hydrophobicity |
-| Cresol / aniline-type froth stabiliser in classical descriptions | Improves froth persistence |
-| Air | Bubbles transport hydrophobic ore particles to the surface |
-
-### Why pine oil works as a frother
-A frother lowers interfacial tension sufficiently to help form a stable dispersion of bubbles. It does **not** replace the collector: collector and frother have different roles.
-
-### Collector orientation — xanthate concept
-A collector molecule has:
-- a polar/ionic end that interacts with the mineral surface,
-- a non-polar hydrocarbon group that prefers the non-aqueous/air side.
-
-Once adsorbed, the mineral surface becomes more hydrophobic and attaches more easily to air bubbles.
-
-> **Better language than the handwritten “like attracts like”:** non-polar groups favour the low-polarity air/oil environment, while polar/ionic groups interact with the mineral/water interface. The useful result is selective bubble attachment.
-
-### Froth junction idea from the source diagram
-At points where bubbles meet, thin liquid films remain. Collectors coat mineral particles; frothers/stabilisers help prevent premature bubble coalescence. This allows the mineral-loaded froth to be removed before collapse.
-
----
-
-## 7. Activators — Improving Flotation
-
-An **activator** modifies a mineral surface so that a collector can adsorb more effectively.
-
-### Example: malachite-type copper mineral
-The source uses malachite, approximately $Cu_2CO_3(OH)_2$, to illustrate **sulphidisation**. A sulphide reagent such as $Na_2S$ can create a sulphide-rich copper surface, which then interacts more strongly with xanthate collectors.
-
-This demonstrates an important general rule:
-
-> A non-sulphide mineral can sometimes be floated after suitable chemical surface activation.
-
-### Activation of $ZnS$ by $CuSO_4$
-Zinc sulphide often floats less readily than copper sulphides under comparable conditions. $Cu^{2+}$ can activate the $ZnS$ surface by forming a copper-rich sulphide-like surface layer, improving xanthate adsorption.
-
-A simplified surface-exchange representation is:
-
-$$ZnS(s) + Cu^{2+}(aq) \rightarrow CuS_{surface} + Zn^{2+}(aq)$$
-
-The actual mineral-surface chemistry is more complex than a bulk stoichiometric precipitation reaction, but this representation captures the JEE-level concept.
-
----
-
-## 8. Depressants — Selective Flotation
-
-A **depressant** prevents one mineral from floating while allowing another to float.
-
-### Separation of $PbS$ and $ZnS$
-In classical JEE metallurgy, **NaCN** is described as depressing $ZnS$ during separation of galena ($PbS$) and zinc blende ($ZnS$). It alters the zinc-mineral surface/complexes metal species so that collector action on $ZnS$ is suppressed, while $PbS$ remains floatable.
-
-> **Safety/science note:** cyanide chemistry is highly toxic and industrial flotation practice is tightly controlled. The website note presents the textbook principle, not an operational procedure.
-
----
-
-## 9. Chemical Concentration — Leaching
-
-**Leaching** means selectively dissolving the desired component (or sometimes an impurity) from a solid using a suitable liquid reagent.
-
-The basic logic is:
-
-$$\text{Powdered ore} + \text{selective leachant} \rightarrow \text{solution of desired species} + \text{insoluble residue}$$
-
-Important examples developed later in the chapter:
-- **Bayer process:** caustic leaching of bauxite to obtain soluble aluminate species.
-- **Cyanide process:** formation of soluble dicyano complexes of Au/Ag under oxidising conditions.
-
----
-
-## 10. Ore–Mineral Name Bank from the Source
-
-| Formula | Mineral / ore name | Main metal relevance |
+### Ore/mineral names explicitly appearing in the source
+| Name | Formula / representation | Metallurgical relevance |
 |---|---|---|
-| $ZnS$ | Zinc blende / sphalerite | Zn |
-| $MnO_2$ | Pyrolusite | Mn |
-| $MgCO_3\cdot CaCO_3$ | Dolomite | Mg/Ca |
-| $FeCr_2O_4$ (often written $FeO\cdot Cr_2O_3$) | Chromite | Cr |
-| $Ca_2B_6O_{11}\cdot 5H_2O$ | Colemanite | B compounds |
-| $FeCO_3$ | Siderite | Fe |
-| $PbSO_4$ | Anglesite | Pb |
-| $PbCO_3$ | Cerussite | Pb |
-| $Cu_2S$ | Chalcocite / copper glance | Cu |
-| $Cu_2Cl(OH)_3$ | Atacamite | Cu |
+| Pyrite / iron pyrites | $FeS_2$ | Example of mineral not preferred as iron ore |
+| Chalcopyrite / copper pyrites | $CuFeS_2$ | Major Cu ore |
+| Cassiterite | $SnO_2$ | Tin ore |
+| Wolframite | $(Fe,Mn)WO_4$ | Magnetic impurity associated with cassiterite |
+| Zinc blende / sphalerite | $ZnS$ | Zinc ore |
+| Pyrolusite | $MnO_2$ | Manganese mineral |
+| Dolomite | $CaCO_3\cdot MgCO_3$ | Carbonate mineral / flux source |
+| Chromite | $FeCr_2O_4$ | Chromium ore |
+| Colemanite | $Ca_2B_6O_{11}\cdot5H_2O$ | Boron mineral |
+| Siderite | $FeCO_3$ | Iron carbonate ore |
+| Anglesite | $PbSO_4$ | Lead mineral |
+| Cerussite | $PbCO_3$ | Lead carbonate ore |
+| Chalcocite / copper glance | $Cu_2S$ | Copper sulphide mineral |
+| Atacamite | $Cu_2Cl(OH)_3$ | Basic copper chloride mineral |
 
-> **Formula correction:** chromite is best written $FeCr_2O_4$; the older oxide-component notation $FeO\cdot Cr_2O_3$ expresses the same stoichiometry.
-
-## 11. Quick Selection Map
-
-- **Large density difference?** → gravity separation.
-- **One component magnetic?** → magnetic separation.
-- **Sulphide mineral with surface-wettability contrast?** → froth flotation.
-- **Selective soluble complex/compound available?** → leaching.
-
-This selection logic is more useful than memorising isolated methods because JEE Advanced frequently asks *why a process works* rather than only its name.
 `;
 export default content;

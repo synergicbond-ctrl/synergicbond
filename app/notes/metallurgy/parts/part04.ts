@@ -1,143 +1,190 @@
 const content = String.raw`
-# Part 4 — Extraction of Tin & Magnesium
+# Part 4 — Carbon/CO Reduction, Flux–Slag, Self-Reduction & Thermite
 
-> **Scope:** Source pages 44–48.
+> **Complete-source reconstruction:** theory is preserved at full teaching depth; diagrams are used only where they explain mechanism, apparatus, phase movement or decision logic.
 
-# A. Extraction of Tin from Cassiterite
 
-## 1. Ore and impurities
-Principal ore: **cassiterite**, $SnO_2$.
+## 2. Coal, Coke and Carbon Monoxide
 
-The source lists:
-- silica/silicates,
-- sulphides of Fe and Cu,
-- wolframite-type magnetic impurity $(Fe,Mn)WO_4$.
+Coal contains carbon plus volatile matter and mineral impurities. Heating suitable coking coal in the absence of air gives **coke** and volatile products (coal gas/tar).
 
-## 2. Concentration sequence
+Coke in a furnace may serve two distinct roles:
+1. **Fuel** — supplies heat.
+2. **Reducing-agent source** — generates CO.
 
-![Tin extraction flow](/notes/metallurgy/tin-flow.svg)
+Key reactions:
 
-### Step 1 — gravity separation / levigation
-Crushed ore is washed to remove lighter earthy gangue.
+$$C+O_2\rightarrow CO_2 \qquad \text{(strongly exothermic)}$$
 
-### Step 2 — controlled roasting
-Sulphide impurities are oxidised; where soluble sulphates form, they can be removed by hot-water washing. The valuable $SnO_2$ remains largely unchanged.
+$$C+CO_2\rightleftharpoons2CO \qquad \text{(endothermic; Boudouard reaction)}$$
 
-A generic sulphide oxidation is:
-$$MS+2O_2\rightarrow MSO_4$$
-
-The exact product depends on the sulphide and roasting conditions.
-
-### Step 3 — magnetic separation
-Magnetic wolframite-type material is removed from non-magnetic cassiterite concentrate.
-
-The concentrated product is traditionally called **black tin**.
-
-## 3. Smelting
-Concentrated $SnO_2$ is heated with coke and a basic flux such as limestone.
-
-Important reactions:
-
-$$C+O_2\rightarrow CO_2$$
-$$C+CO_2\rightarrow2CO$$
-
-Reduction can be represented by:
-$$SnO_2+2C\rightarrow Sn+2CO$$
-
-and/or stepwise through $SnO$ with carbon/CO depending on conditions.
-
-Flux formation:
-$$CaCO_3\rightarrow CaO+CO_2$$
-$$CaO+SiO_2\rightarrow CaSiO_3$$
-
-### Tin loss into slag
-Tin(II) oxide can react with silica:
-$$SnO+SiO_2\rightarrow SnSiO_3$$
-
-This causes tin loss in the slag. Re-smelting with a stronger basic flux converts silicate gangue toward calcium silicate and recovers more tin.
-
-## 4. Refining of tin
-The source sequence is:
-1. **liquation** — low-melting Sn drains away from higher-melting impurities,
-2. **poling** — removes oxidisable impurities and recovers oxidised Sn,
-3. **electrorefining** — very high purity.
-
-A suitable Sn(II)-containing acidic electrolyte is used in textbook descriptions; exact industrial electrolyte composition varies.
+In many blast-furnace zones, **CO is the chief direct reducing gas**, even though coke is the ultimate carbon source.
 
 ---
 
-# B. Extraction of Magnesium
+## 3. Carbon Reduction / Smelting
 
-The source organises Mg extraction in three major steps:
-1. preparation of hydrated $MgCl_2\cdot6H_2O$,
-2. conversion to **anhydrous $MgCl_2$** without hydrolysis,
-3. fused-salt electrolysis.
+**Smelting** is high-temperature extraction in which a charge containing ore/oxide, reducing agent and flux is heated so that metal and slag phases can separate.
 
-## 1. Preparation of $MgCl_2\cdot6H_2O$
+General forms:
 
-### From carnallite
-Carnallite is a natural double salt, approximately:
-$$KCl\cdot MgCl_2\cdot6H_2O$$
+$$MO+C\rightarrow M+CO$$
+$$MO+CO\rightarrow M+CO_2$$
 
-Fractional crystallisation exploits solubility differences so KCl-rich material and MgCl₂-rich liquor can be separated; concentration/crystallisation yields $MgCl_2\cdot6H_2O$.
+The source lists Fe, Sn, Pb and Zn as important textbook examples of carbon-based reduction. The exact mechanism differs strongly among these metals; Zn is obtained as vapour at furnace temperature.
 
-### Dow seawater route
-Seawater contains dissolved $Mg^{2+}$ salts. Lime is added:
+### Flux and slag
+A **flux** reacts with gangue to form a fusible **slag**.
 
-$$Mg^{2+}+2OH^-\rightarrow Mg(OH)_2\downarrow$$
+$$\text{Gangue}+\text{Flux}\rightarrow\text{Slag}$$
 
-or, using lime explicitly:
-$$MgCl_2+Ca(OH)_2\rightarrow Mg(OH)_2\downarrow+CaCl_2$$
+Choice rule:
+- acidic gangue (e.g. $SiO_2$) → basic flux (e.g. $CaO$),
+- basic gangue (metal oxides) → acidic flux (e.g. $SiO_2$).
 
-The precipitate is filtered and treated with HCl:
-$$Mg(OH)_2+2HCl\rightarrow MgCl_2+2H_2O$$
+Classic reaction:
 
-Crystallisation gives hydrated magnesium chloride.
+$$CaO+SiO_2\rightarrow CaSiO_3(l)$$
 
-> **Scientific correction:** the source’s “65 ppm MgCl₂” is not a reliable composition statement for seawater. Seawater contains magnesium at the order of **grams of Mg²⁺ per litre**, varying with salinity; do not memorise 65 ppm.
+### Lux–Flood acid–base idea
+At high temperature:
+- **Lux–Flood acid:** oxide-ion acceptor.
+- **Lux–Flood base:** oxide-ion donor.
 
-## 2. Why direct heating of $MgCl_2\cdot6H_2O$ fails
-Hydrated MgCl₂ undergoes **hydrolysis** during dehydration:
+This is useful for interpreting slag chemistry beyond aqueous Brønsted acid–base ideas.
 
-$$MgCl_2+H_2O\rightleftharpoons MgOHCl+HCl$$
+### Desirable slag properties
+A good slag generally:
+- melts at a workable temperature,
+- is less dense than molten metal and forms a separate layer,
+- dissolves/retains gangue and unwanted oxides,
+- protects molten metal from excessive reoxidation.
 
-and further heating can produce $MgO$. Thus simple heating does not cleanly yield anhydrous $MgCl_2$.
+---
 
-### Remedy
-Dehydrate in a **dry HCl atmosphere** so hydrolysis is suppressed and HCl loss is countered.
+## 4. Self-Reduction / Auto-Reduction
 
-### Alternative chlorination route
-A textbook route is:
-$$MgCO_3\xrightarrow{\Delta}MgO+CO_2$$
+Some sulphide ores can supply their own reducing species after **partial oxidation**. No external carbon reducing agent is required in the decisive metal-forming step.
 
-then carbothermic chlorination:
-$$MgO+C+Cl_2\rightarrow MgCl_2+CO$$
+### Lead example
+Partial roasting:
+$$2PbS+3O_2\rightarrow2PbO+2SO_2$$
 
-Analogous chlorination principles apply to other refractory oxides; the source mentions BeCl₂/AlCl₃ preparation analogies.
+Self-reduction:
+$$2PbO+PbS\rightarrow3Pb+SO_2$$
 
-## 3. Electrolysis of fused $MgCl_2$
+A parallel route can involve sulphate:
+$$PbS+2O_2\rightarrow PbSO_4$$
+$$PbS+PbSO_4\rightarrow2Pb+2SO_2$$
 
-![Magnesium fused-salt electrolysis](/notes/metallurgy/magnesium-cell.svg)
+**Oxidation-state insight:** sulphide sulphur is oxidised toward $SO_2$, and $Pb^{2+}$ is reduced to $Pb^0$.
 
-A molten mixture of anhydrous $MgCl_2$ with alkali/alkaline-earth chlorides is electrolysed.
+> The handwritten multiple-choice prompt asks for the “true reducing agent” in the self-reduction reaction. At the redox-species level, **sulphide sulphur ($S^{2-}$ in $PbS$)** is the species that is oxidised and therefore acts as the reducing component.
 
-Cathode:
-$$Mg^{2+}+2e^-\rightarrow Mg(l)$$
+---
 
-Anode:
-$$2Cl^-\rightarrow Cl_2(g)+2e^-$$
+## 5. Thermite / Aluminothermic Reduction
 
-### Why add NaCl / other chlorides?
-- lowers the working melting temperature of the bath,
-- improves fluidity and practical conductivity,
-- reduces energy demand.
+![Thermite reaction concept](/notes/metallurgy/thermite.svg)
 
-### Why Mg floats
-Molten Mg is less dense than the molten salt bath, so it collects at the top and can be separated.
+Aluminium has a very high affinity for oxygen and can reduce certain refractory metal oxides.
 
-### Why exclude air?
-Hot Mg oxidises readily. The source shows the cell covered with a protective reducing/inert gas atmosphere (historically coal-gas-type protection) to limit oxidation/burning.
+Examples:
 
-> **Correction:** pure $MgCl_2$ melts near $714^\circ C$, not $1200^\circ C$ as one handwritten annotation implies. Electrolyte mixtures are chosen to operate efficiently at lower practical temperatures.
+$$Cr_2O_3+2Al\rightarrow2Cr+Al_2O_3$$
+
+$$3Mn_3O_4+8Al\rightarrow9Mn+4Al_2O_3$$
+
+A common thermite welding reaction is:
+
+$$Fe_2O_3+2Al\rightarrow2Fe+Al_2O_3+\text{large heat}$$
+
+### Why no external fuel is needed after ignition
+Formation of $Al_2O_3$ is extremely favourable and strongly exothermic. The reaction mixture reaches a temperature high enough to produce molten iron in welding applications.
+
+### Why not use thermite for bulk iron manufacture?
+Aluminium is far more expensive than coke/CO for producing the enormous quantities of iron required commercially.
+
+### Ignition concept retained from source
+Thermite requires an ignition system because ordinary heating is insufficient to start it conveniently. Classical demonstrations use a highly exothermic ignition mixture; exact formulations vary and should not be treated as a preparation instruction.
+
+---
+
+## 6. Reduction by Thermal Decomposition
+
+Some less stable metal compounds decompose directly on heating.
+
+Examples used in the source:
+
+$$2Ag_2O\xrightarrow{\Delta}4Ag+O_2$$
+
+$$2HgO\xrightarrow{\Delta}2Hg+O_2$$
+
+Mercury extraction can involve roasting cinnabar followed by decomposition/reduction of mercury oxide:
+
+$$2HgS+3O_2\rightarrow2HgO+2SO_2$$
+$$2HgO\rightarrow2Hg+O_2$$
+
+These are examples of **pyrometallurgical** operations because strong heating is central.
+
+---
+
+![Flux, gangue and slag](/notes/metallurgy/slag-lux-flood.svg)
+
+![Thermite reaction](/notes/metallurgy/thermite.svg)
+
+![Reduction method decision map](/notes/metallurgy/reduction-method-map.svg)
+
+
+## Carbon reduction — source-specific points
+The source lists Fe, Sn, Pb and Zn among metals whose extraction may involve carbon/CO at appropriate temperatures.
+
+### Coke has two functions
+1. **Fuel:** $C+O_2\rightarrow CO_2$ (strongly exothermic).
+2. **Reducing atmosphere / CO source:** $C+CO_2\rightleftharpoons2CO$ (endothermic).
+
+### Flux selection and Lux–Flood concept
+$$\text{Gangue}+\text{Flux}\rightarrow\text{Slag}$$
+- Acidic gangue such as $SiO_2$ requires basic flux such as $CaO$.
+- Basic oxide gangue can require acidic flux.
+- In Lux–Flood language: oxide-ion acceptor = acid; oxide-ion donor = base.
+
+Example:
+$$CaO+SiO_2\rightarrow CaSiO_3(l)$$
+
+### Desired slag properties in the source
+- fluid at furnace temperature,
+- less dense than metal so phases separate,
+- chemically able to dissolve targeted gangue,
+- can shield molten metal from reoxidation.
+
+## Self-reduction — lead model with parallel reactions
+Primary textbook sequence:
+$$2PbS+3O_2\rightarrow2PbO+2SO_2$$
+$$2PbO+PbS\rightarrow3Pb+SO_2$$
+The **true reductant** in the second equation is sulphide sulphur, which is oxidised from $-2$ to $+4$.
+
+A parallel sulphate route may occur during roasting:
+$$PbS+2O_2\rightarrow PbSO_4$$
+$$PbS+PbSO_4\rightarrow2Pb+2SO_2$$
+
+## Thermite / aluminothermy — retained examples
+Representative reductions:
+$$Cr_2O_3+2Al\rightarrow2Cr+Al_2O_3$$
+$$3Mn_3O_4+8Al\rightarrow9Mn+4Al_2O_3$$
+$$Fe_2O_3+2Al\rightarrow2Fe+Al_2O_3$$
+The source also lists Ti oxide in the conceptual class, but modern Ti is not commercially produced by simple thermite reduction of $TiO_2$.
+
+### Why Al works
+The formation of $Al_2O_3$ is highly exergonic. Once ignited, thermite is strongly self-heating; temperatures can exceed the melting point of the produced metal.
+
+### Ignition mixture shown in the source
+A local high-temperature igniter (historically mixtures involving Mg and oxygen-releasing salts/oxides) initiates the thermite charge. This is an **ignition device**, not the main reducing reagent.
+
+## Thermal decomposition
+Very unreactive-metal oxides can decompose on heating:
+$$2Ag_2O\xrightarrow{\Delta}4Ag+O_2$$
+$$2HgO\xrightarrow{\Delta}2Hg+O_2$$
+
 `;
 export default content;

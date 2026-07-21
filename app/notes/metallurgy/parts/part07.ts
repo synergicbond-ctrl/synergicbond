@@ -1,242 +1,126 @@
 const content = String.raw`
-# Part 7 — Iron, Steel & Heat Treatment
+# Part 7 — Ellingham Diagram — Full Thermodynamic Treatment
 
-> **Scope:** Source pages 64–71.
+> **Complete-source reconstruction:** theory is preserved at full teaching depth; diagrams are used only where they explain mechanism, apparatus, phase movement or decision logic.
 
-# 1. Iron Ores and Their Preparation
 
-Major iron-bearing minerals represented in the source:
+> **Scope:** Source pages 33–39. Full Ellingham-diagram theory, line slopes, phase changes, reduction criteria, carbon/CO/H₂ logic and limitations are retained and corrected.
 
-| Ore/mineral | Formula / approximate representation | Comment |
-|---|---|---|
-| Hematite | $Fe_2O_3$ | Major high-grade iron ore |
-| Magnetite | $Fe_3O_4$ | Magnetic ore |
-| Limonite / hydrated iron oxide | variable, often written $Fe_2O_3\cdot xH_2O$ | Hydrated mixture, not one fixed compound |
-| Siderite | $FeCO_3$ | Carbonate ore |
+# 9. Ellingham Diagram — Thermodynamic Backbone of Metallurgy
 
-After concentration, calcination/roasting converts the charge largely toward oxide suitable for blast-furnace reduction.
+![Ellingham diagram principle](/notes/metallurgy/ellingham.svg)
 
-Examples:
-$$FeCO_3\xrightarrow{\Delta}FeO+CO_2$$
-$$4FeO+O_2\rightarrow2Fe_2O_3$$
+An Ellingham diagram plots approximately:
 
-Hydrated oxide loses water on heating.
+$$\Delta G^\circ \text{ for oxide formation versus } T$$
 
-The source’s preference for avoiding large FeO content reflects slag chemistry:
-$$FeO+SiO_2\rightarrow FeSiO_3$$
+For a general oxidation:
+$$M+\frac12O_2\rightarrow MO$$
 
-which can carry iron into slag.
+Using:
+$$\Delta G^\circ=\Delta H^\circ-T\Delta S^\circ$$
 
----
+the slope of a line is approximately $-\Delta S^\circ$.
 
-# 2. Blast Furnace — Extraction of Iron
+### Why most metal-oxide lines slope upward
+Gas-phase $O_2$ is consumed to form condensed oxide, so entropy usually decreases:
+$$\Delta S^\circ<0\Rightarrow -\Delta S^\circ>0$$
+Hence a positive slope is common.
 
-![Blast furnace zones](/notes/metallurgy/blast-furnace.svg)
-
-A classical charge contains:
-- iron oxide/sinter/pellets,
-- coke,
-- limestone/dolomite flux.
-
-The handwritten “8 : 4 : 1 by mass” charge ratio is a classroom simplification, not a universal industrial recipe.
-
-## Key furnace reactions
-
-### Combustion near tuyeres
+### Carbon lines
+For:
 $$C+O_2\rightarrow CO_2$$
 
-### Generation of CO
-$$C+CO_2\rightarrow2CO$$
+the gas mole count changes little, so $\Delta S^\circ$ is relatively small and the line is nearly flat.
 
-### Indirect reduction — dominant upper/middle-zone logic
-$$Fe_2O_3+3CO\rightarrow2Fe+3CO_2$$
+For:
+$$2C+O_2\rightarrow2CO$$
 
-Reduction actually proceeds through intermediate oxides ($Fe_3O_4$, FeO) as temperature rises.
+gas moles increase, so $\Delta S^\circ$ is positive and the line has a **negative slope**.
 
-### Direct carbon reduction — hotter zones
-A simplified form:
-$$FeO+C\rightarrow Fe+CO$$
+### Zero-line crossing
+Where an oxide-formation line crosses $\Delta G^\circ=0$, oxide formation ceases to be thermodynamically favourable under standard-state assumptions above that temperature; the reverse decomposition becomes favourable in the idealised sense.
 
-### Flux decomposition
-$$CaCO_3\rightarrow CaO+CO_2$$
+The source uses Ag₂O and HgO to illustrate comparatively low thermal stability. Exact decomposition behaviour depends on oxygen pressure and kinetics, so handwritten temperatures should not be treated as universal constants.
 
-### Slag
-$$CaO+SiO_2\rightarrow CaSiO_3(l)$$
+### Kinks / slope changes
+A sudden slope change commonly reflects a **phase transition** (melting, boiling or allotropy) of a reactant/product, because entropy changes discontinuously.
 
-Molten slag, being less dense, floats above molten iron and is tapped separately.
+### Reduction criterion
+At a given temperature, a reducing agent can reduce a metal oxide when oxidation of the reducing agent gives a sufficiently more negative $\Delta G^\circ$.
 
-## Furnace zones
-The source sketch includes:
-- upper preheating/reduction region,
-- **bosh** high-temperature reduction zone,
-- tuyeres with hot-air blast,
-- **hearth** collecting molten pig iron and slag.
+Graphically: the oxidation line of the reducing agent lies **below** the oxide-formation line of the metal being reduced at that temperature.
 
-Exact temperatures vary continuously; zone values in handwritten notes are approximate teaching ranges.
+For aluminothermy:
+$$Fe_2O_3+2Al\rightarrow Al_2O_3+2Fe$$
 
----
+$$\Delta G^\circ_{rxn}=\Delta G^\circ_f(Al_2O_3)-\Delta G^\circ_f(Fe_2O_3)$$
 
-# 3. Why Pig Iron Contains Impurities
+A negative value means thermodynamic feasibility.
 
-At very high temperature, molten iron dissolves carbon and can reduce other oxides in the hearth/bosh region.
+> **Critical JEE distinction:** Ellingham predicts **thermodynamic feasibility**, not reaction rate, mechanism, phase separation, reagent cost or industrial profitability.
 
-Examples from the source:
-$$SiO_2+2C\rightarrow Si+2CO$$
+### Why carbon becomes powerful at high temperature
+The downward-sloping CO-formation line crosses many metal-oxide lines as temperature rises. This is why carbon/CO can reduce many oxides at sufficiently high temperature.
 
-$$Mn_3O_4+4C\rightarrow3Mn+4CO$$
+The source highlights the approximate $\sim700^\circ C$ region where the relative preference for CO vs $CO_2$ formation changes. Use the diagram qualitatively rather than memorising one universal crossing temperature.
 
-Phosphate species can also be reduced under strongly reducing high-temperature conditions, introducing P into iron.
-
-Thus **pig iron** contains appreciable C plus Si, Mn, P, S and other impurities. It is hard/brittle compared with low-carbon wrought iron/steel.
+### Hydrogen
+Hydrogen can reduce oxides whose formation lines lie above the $H_2/H_2O$ line under the chosen conditions, e.g. oxides such as CuO and PbO are readily reduced. Feasibility varies with temperature and steam/hydrogen partial pressures.
 
 ---
 
-# 4. From Pig Iron to Wrought Iron / Steel
+![Ellingham diagram](/notes/metallurgy/ellingham.svg)
 
-The common idea is **oxidative refining**:
-- oxidise excess C, Si, Mn, P and other impurities,
-- transfer oxides to gas/slag,
-- then add controlled alloying elements/carbon to obtain the required steel.
+![Thermodynamic reduction selection](/notes/metallurgy/reduction-method-map.svg)
 
-## A. Puddling process — historical
-Molten/semimolten iron is stirred in an oxidising furnace. An iron-oxide-rich lining/added oxide oxidises impurities.
 
-Representative reactions:
-$$C+Fe_2O_3\rightarrow Fe+CO/CO_2$$
-$$Si+O_2\rightarrow SiO_2$$
-$$Mn+\frac12O_2\rightarrow MnO$$
+## Ellingham details restored from source pages 33–39
+### Definition
+An Ellingham diagram plots standard Gibbs free-energy change for formation of oxides (or analogous compounds) against temperature.
+$$\Delta G^\circ=\Delta H^\circ-T\Delta S^\circ$$
+Slope $=-\Delta S^\circ$.
 
-Puddling is historically important but obsolete for modern bulk steelmaking.
+### Why most metal→oxide lines rise
+For
+$$M(s)+\frac12O_2(g)\rightarrow MO(s)$$
+oxygen gas is consumed, so $\Delta S^\circ<0$ and slope is positive.
 
-## B. Bessemer process
-Air is blown through molten iron.
+### Carbon lines
+- $C+O_2\rightarrow CO_2$: gas moles roughly unchanged → slope near zero in idealised treatment.
+- $2C+O_2\rightarrow2CO$: gas moles increase → $\Delta S^\circ>0$ → negative slope.
 
-Impurities oxidise rapidly:
-$$C+O_2\rightarrow CO_2\;(\text{and }CO)$$
-$$Si+O_2\rightarrow SiO_2$$
-$$Mn+\frac12O_2\rightarrow MnO$$
+### Zero-line intercept / thermal decomposition
+Where an oxide-formation line crosses $\Delta G^\circ=0$, formation ceases to be spontaneous under standard-state assumptions; above that temperature thermal decomposition becomes feasible. Classroom source examples:
+- $Ag_2O$ around $300^\circ C$
+- $HgO$ around $400^\circ C$ (approximate teaching values; decomposition depends on conditions).
 
-### Basic Bessemer / Thomas process
-For phosphorus-rich iron, a **basic lining** (CaO/MgO/dolomite) permits phosphorus oxide to enter a basic phosphate slag.
+### Kinks and slope changes
+A melting/boiling/phase transition changes entropy, so the Ellingham slope changes suddenly. Source examples mark Hg boiling near $356^\circ C$ and Mg boiling near $1091^\circ C$ (older note rounded higher).
 
-A simplified slag product:
-$$3CaO+P_2O_5\rightarrow Ca_3(PO_4)_2$$
+### Reduction criterion
+At a given $T$, an element/reaction represented by a **lower oxidation line** has greater oxygen affinity and can thermodynamically reduce an oxide whose formation line lies above it, provided kinetics/activities are favourable.
 
-Thomas slag was historically used as a phosphate fertiliser.
+### Source comparison examples
+- Al can reduce many oxides such as $Fe_2O_3$ thermodynamically.
+- Mg vs Al oxide stability can switch relative interpretation with temperature/phase changes.
+- Carbon becomes increasingly useful at high T because the $C\rightarrow CO$ line slopes downward.
 
-### Acid Bessemer
-Silica-rich acidic lining is used only when the impurity chemistry is compatible; it cannot effectively remove high phosphorus because a basic slag is needed.
+### CO vs CO₂ preference in carbothermic reduction
+The source uses the intersection of carbon oxidation lines near the Boudouard crossover (often taught around 700–710°C as a simplified guide):
+- higher T favours CO formation,
+- lower T makes CO$_2$ relatively more important.
+This is an equilibrium trend, not a universal sharp switch for every furnace.
 
-## C. Open-hearth process — historical
-A regenerative furnace oxidises impurities more slowly with better control than early Bessemer practice. It is now largely obsolete.
+### Hydrogen
+Only oxides whose formation line lies above the $H_2/H_2O$ line are reducible by H$_2$ at that temperature. Examples often include CuO/PbO and some Zn/Fe oxides depending on T and gas ratio.
 
-## D. LD / Basic Oxygen Process
-Modern basic oxygen steelmaking blows **high-purity $O_2$**, not air, into molten iron.
+## Limitations of Ellingham diagrams
+1. They are thermodynamic, not kinetic: a feasible reaction may be slow.
+2. Standard-state lines do not automatically include real activities, partial pressures, slag chemistry or mass transfer.
+3. They do not choose the most economical industrial process.
+4. Carbides/intermetallics/volatile products may alter the actual route.
+5. Phase changes and non-standard gas ratios shift practical conditions.
 
-Advantages emphasised by the source:
-- much faster refining,
-- avoids introducing large amounts of atmospheric nitrogen,
-- better control of steel quality.
-
----
-
-# 5. Carbon Content and Steel Classes
-
-Approximate educational ranges (boundaries vary by standard):
-
-| Class | Approx. carbon mass % | General trend |
-|---|---:|---|
-| Mild / low-carbon steel | ~0.05–0.30% | ductile, weldable |
-| Medium-carbon steel | ~0.30–0.60% | higher strength/hardness |
-| High-carbon steel | ~0.60–1.0% | hard, wear-resistant |
-| Tool/high-carbon speciality steels | often ~0.8–1.5% C plus alloying | cutting/wear applications |
-
-The source’s exact handwritten ranges are retained conceptually but should not be treated as universal specification limits.
-
----
-
-# 6. Alloy Additions and Deoxidation
-
-The source mentions:
-- **spiegeleisen** (historical Fe–Mn–C alloy) to restore Mn/C and assist deoxidation,
-- **ferrosilicon** as a Si-bearing deoxidiser/alloy addition,
-- **ferrochrome** for Cr addition.
-
-Using ferroalloys rather than pure elements often gives better dissolution, distribution and process control.
-
----
-
-# 7. Blast-Furnace By-products
-
-## Slag
-Calcium-silicate-rich slag is used in construction/cement applications and aggregate/ballast after suitable processing.
-
-## Blast-furnace gas
-Contains mainly $N_2$, CO, $CO_2$ and smaller H₂ fractions. It has fuel value because of CO/H₂ and is reused for heating/preheating.
-
-> The source gives one illustrative composition. Actual composition changes with furnace operation; do not memorise a single percentage set as universal.
-
----
-
-# 8. Heat Treatment of Steel
-
-## Annealing
-Steel is heated to a suitable temperature, held, then **slowly cooled**.
-
-Effects depend on composition and cycle, but generally:
-- relieves internal stress,
-- reduces hardness,
-- improves ductility/machinability,
-- refines/equilibrates microstructure.
-
-The source associates soft magnetic iron/steel with annealed condition for electromagnet applications.
-
-## Quenching / hardening
-Steel is heated into the austenitising range and cooled rapidly in water/oil or another quenchant.
-
-Result:
-- high hardness/strength,
-- increased brittleness/residual stress if not tempered.
-
-## Tempering
-Quenched steel is reheated below the critical transformation range and cooled in a controlled way.
-
-Result:
-- reduces brittleness and stress,
-- improves toughness,
-- adjusts hardness to the application.
-
-> The handwritten “200–300°C” is one tempering range, not the only possible one.
-
----
-
-# 9. Case Hardening
-
-Goal: **hard wear-resistant surface + tough/ductile core**.
-
-## Carburising
-Low-carbon steel is heated in a carbon-rich environment so carbon diffuses into the surface. Subsequent heat treatment produces a hard case.
-
-The source links the hard surface with carbide/cementite ($Fe_3C$) formation; actual hardened microstructure also involves martensite depending on the heat-treatment cycle.
-
-## Cyaniding / related historical salt-bath hardening
-The source mentions NaCN and ferrocyanide-type materials as carbon/nitrogen sources. These are historically important but highly toxic; modern notes should state the concept without operational instructions.
-
-## Nitriding
-Alloy steel is heated in a nitrogen-supplying atmosphere (classically ammonia) at relatively moderate temperature. Nitrogen diffuses inward and forms very hard alloy nitrides (especially with Al, Cr, Mo, V-containing steels).
-
-Applications: gears, shafts, dies, drilling/wear components.
-
-> **Correction:** nitriding hardness is due to a fine dispersion of alloy nitrides, not simply “the respective nitride” as a single bulk layer.
-
----
-
-## 10. One-Page Iron Logic
-
-$\text{Iron ore}\rightarrow\text{oxide preparation}\rightarrow\text{blast furnace}\rightarrow\text{pig iron}$
-
-$\text{pig iron}\xrightarrow{\text{oxidative refining}}\text{low-impurity iron/steel melt}\xrightarrow{\text{controlled C + alloying + heat treatment}}\text{engineering steel}$
-
-This sequence links extraction metallurgy with materials science—exactly the connection the source’s final pages are trying to build.
 `;
 export default content;

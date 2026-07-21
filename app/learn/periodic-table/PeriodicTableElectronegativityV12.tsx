@@ -205,7 +205,7 @@ const orderQuestions = [
 
 const integerQuestions = [
   ["How many major factors in the memory rule Small–Strong–Positive–s-rich–Low shielding–−I?", "6"],
-  ["How many unit forms are given for Pauling Δχ (eV, kJ mol⁻¹, kcal mol⁻¹)?", "3"],
+  ["How many bond-energy terms (E_A-B, E_A-A, E_B-B) appear inside the geometric-mean Δ formula?", "3"],
   ["How many electrons are used in the valence-shell shielding count for covalently bonded Br?", "7"],
   ["How many O–H bond dipoles add in H₂O?", "2"],
   ["How many variables define the Ketelaar triangle coordinates used here?", "2"],
@@ -275,50 +275,40 @@ export function SectionElectronegativityV12() {
     <Note title="Noble-gas correction" accent={T.coral}>Do not write “electronegativity of all noble gases is zero.” For a noble gas that does not form a bond, ordinary bond electronegativity has no direct physical meaning. Theoretical Mulliken or Allred–Rochow values can still be calculated, and xenon has meaningful values in its compounds.</Note>
     <TableX columns={["Element","χP","Element","χP","Element","χP","Element","χP"]} rows={Array.from({length:Math.ceil(paulingValues.length/4)},(_,i)=>[...(paulingValues[i]??["—","—"]),...(paulingValues[i+10]??["—","—"]),...(paulingValues[i+20]??["—","—"]),...(paulingValues[i+30]??["—","—"])])}/>
 
-    <SectionTitle n="04" title="Pauling scale: complete derivation" lead="Pauling connected electronegativity difference with the extra stability of a heteronuclear bond compared with a hypothetical purely covalent bond."/>
+    <SectionTitle n="04" title="Pauling scale: the one formula to learn" lead="Pauling connected electronegativity difference with the extra stability of a heteronuclear bond compared with a hypothetical purely covalent bond."/>
     <Grid>
-      <FormulaCard title="Covalent reference: arithmetic mean" tex={String.raw`E_{A-B}^{\mathrm{cov}}=\frac{E_{A-A}+E_{B-B}}{2}` } note="Historically useful, but it can give an impossible negative extra-stabilisation for some bonds."/>
-      <FormulaCard title="Preferred covalent reference: geometric mean" tex={String.raw`E_{A-B}^{\mathrm{cov}}=\sqrt{E_{A-A}E_{B-B}}`} note="This avoids the common negative-Δ problem." accent={T.gold}/>
-      <FormulaCard title="Covalent–ionic resonance energy" tex={String.raw`\Delta_{A-B}=E_{A-B}-\sqrt{E_{A-A}E_{B-B}}`} note="The observed A–B bond is stronger because ionic resonance forms add stability." accent={T.mint}/>
+      <FormulaCard title="Step 1 — resonance (extra stabilisation) energy" tex={String.raw`\Delta_{A-B}=E_{A-B}-\sqrt{E_{A-A}\,E_{B-B}}`} note="Geometric-mean covalent reference — this is the version to use; the older arithmetic-mean reference can give an impossible negative Δ for some bonds." accent={T.gold}/>
+      <FormulaCard title="Step 2 — electronegativity difference (Δ in kJ mol⁻¹)" tex={String.raw`|\chi_A-\chi_B|=0.102\sqrt{\Delta_{A-B}}`} note="The standard JEE form. (If Δ happens to be given in kcal mol⁻¹, use 0.208√Δ instead — same relation, different unit.)" accent={T.gold}/>
     </Grid>
-    <Panel accent={T.violet} style={{ marginTop: 13 }}><PanelTitle>Why Δ is related to (Δχ)²</PanelTitle><P>The partial charge produced in a polar bond is roughly proportional to electronegativity difference. Electrostatic stabilisation depends on the product of the positive and negative partial charges, so it is proportional to the square of the difference.</P><MathX tex={String.raw`\delta\propto \Delta\chi\qquad E_{\mathrm{ionic}}\propto \delta^2\qquad \therefore\quad \Delta_{A-B}=K(\Delta\chi)^2`}/><P>With the chosen energy unit, <MathX display={false} tex={String.raw`K=96.5\ \mathrm{kJ\,mol^{-1}}`}/> per electron volt.</P></Panel>
-    <Grid>
-      <FormulaCard title="Δ in eV per bond" tex={String.raw`|\chi_A-\chi_B|=\sqrt{\Delta_{A-B}}` } note="Use only when Δ is in eV per molecule."/>
-      <FormulaCard title="Δ in kJ mol⁻¹" tex={String.raw`|\chi_A-\chi_B|=0.102\sqrt{\Delta_{A-B}}` } note="The most common JEE form." accent={T.gold}/>
-      <FormulaCard title="Δ in kcal mol⁻¹" tex={String.raw`|\chi_A-\chi_B|=0.208\sqrt{\Delta_{A-B}}` } note="Because 1 eV per molecule = 23.06 kcal mol⁻¹." accent={T.mint}/>
-    </Grid>
-    <Note title="Additivity idea" accent={T.cyan}><MathX tex={String.raw`\sqrt{\Delta(A-B)}+\sqrt{\Delta(B-C)}\approx\sqrt{\Delta(A-C)}`}/><span>It is the square root of the resonance energy, not Δ itself, that approximately follows the electronegativity-difference scale.</span></Note>
+    <Note title="What each symbol means" accent={T.cyan}>
+      <b>E<sub>A−B</sub></b> = measured bond dissociation energy of the real A–B bond. <b>E<sub>A−A</sub>, E<sub>B−B</sub></b> = bond dissociation energies of the homonuclear reference bonds A–A and B–B. <b>Δ<sub>A−B</sub></b> = resonance (ionic-stabilisation) energy — the “extra” bond strength beyond a purely covalent bond. <b>χ<sub>A</sub>, χ<sub>B</sub></b> = Pauling electronegativities of atoms A and B.
+    </Note>
+    <Note title="Why √Δ, not Δ itself" accent={T.violet}>The partial charge in a polar bond is roughly proportional to Δχ, and electrostatic stabilisation goes as charge², so Δ ∝ (Δχ)². Taking the square root recovers Δχ. It is √Δ, not Δ, that is roughly additive along a chain of bonds: √Δ(A–B) + √Δ(B–C) ≈ √Δ(A–C).</Note>
 
-    <SectionTitle n="05" title="Thermochemical form of Pauling electronegativity" lead="When bond energies are unavailable, a useful approximate relation connects electronegativity difference with enthalpy of formation."/>
+    <SectionTitle n="05" title="Mulliken scale: average of losing and gaining tendencies" lead="A strongly electronegative atom is difficult to ionise and also favourable toward accepting an electron. Mulliken combines both ideas."/>
     <Grid>
-      <FormulaCard title="Simple AB molecule" tex={String.raw`-\Delta H_f(AB)=96.5\,[\chi_A-\chi_B]^2` } note="Approximate relation based on arithmetic-mean covalent reference."/>
-      <FormulaCard title="Compound ABₙ" tex={String.raw`|\chi_A-\chi_B|=\sqrt{\frac{-\Delta H_f(AB_n)}{96.5\,n}}=\frac{0.102}{\sqrt n}\sqrt{-\Delta H_f(AB_n)}` } note="Use only when the formation reaction preserves the counted single bonds and the compound has no multiple bond." accent={T.gold}/>
-      <FormulaCard title="Correction for single-bonded N or O" tex={String.raw`-\Delta H_f=96.5\sum(\Delta\chi)^2-226n_N-110n_O` } note="The correction accounts for the unusual stability of N≡N and O=O compared with independent single bonds." accent={T.coral}/>
+      <FormulaCard title="The one formula to learn (IE and EA in eV per atom)" tex={String.raw`\chi_M=\frac{IE+EA}{2}`} note="If IE and EA are in kJ mol⁻¹, divide the whole expression by 96.5 to convert to eV first." accent={T.gold}/>
+      <FormulaCard title="Convert to Pauling scale" tex={String.raw`\chi_P\approx0.336\chi_M-0.20` } accent={T.violet}/>
     </Grid>
-    <Note title="Meaning of the correction" accent={T.violet}>Single-bonded N or O compounds need enough ionic-resonance stabilisation to compensate for the strong multiple bonds present in elemental N₂ and O₂. This helps explain why NCl₃ and OF₂ are energetically less favourable than a naive single-bond picture suggests.</Note>
-
-    <SectionTitle n="06" title="Mulliken scale: average of losing and gaining tendencies" lead="A strongly electronegative atom is difficult to ionise and also favourable toward accepting an electron. Mulliken combines both ideas."/>
-    <Panel accent={T.cyan}><PanelTitle>Derivation from the two ionic resonance forms</PanelTitle><P>For A–B, compare A⁺B⁻ and A⁻B⁺. Their energies involve ionisation energy and electron affinity. Equal contribution occurs when the sums IE + EA are equal for A and B. Therefore Mulliken defined:</P><MathX tex={String.raw`\chi_M=\frac{IE+EA}{2}`}/></Panel>
-    <Grid>
-      <FormulaCard title="IE and EA in eV per atom" tex={String.raw`\chi_M=\frac{IE+EA}{2}`}/>
-      <FormulaCard title="IE and EA in kJ mol⁻¹" tex={String.raw`\chi_M=\frac{IE+EA}{2\times 96.5}` } note="Divide by 2 × 23.06 instead when the data are in kcal mol⁻¹." accent={T.gold}/>
-      <FormulaCard title="Convert to Pauling scale" tex={String.raw`\chi_P\approx0.336\chi_M-0.20` } note="One standard fitted conversion is enough; other empirical fits exist but differ only slightly." accent={T.violet}/>
-      <FormulaCard title="Absolute hardness" tex={String.raw`\eta=\frac{IE-EA}{2}\qquad \chi_{\mathrm{abs}}=\frac{IE+EA}{2}` } accent={T.blue}/>
-    </Grid>
+    <Note title="What each symbol means" accent={T.cyan}>
+      <b>IE</b> = ionisation energy of the atom. <b>EA</b> = electron affinity of the atom (energy released on gaining an electron). <b>χ<sub>M</sub></b> = Mulliken electronegativity; <b>χ<sub>P</sub></b> = its equivalent on the Pauling scale.
+    </Note>
     <Note title="Valence-state refinement" accent={T.mint}>The best Mulliken value uses valence-state ionisation energy and valence-state electron affinity. This is why orbital hybridisation matters: a carbon atom in sp, sp² and sp³ states does not have exactly the same electronegativity.</Note>
 
-    <SectionTitle n="07" title="Allred–Rochow scale: electrostatic force at the covalent radius" lead="This scale turns the intuitive idea ‘stronger effective nucleus and smaller radius means stronger pull’ into an equation."/>
+    <SectionTitle n="06" title="Allred–Rochow scale: electrostatic force at the covalent radius" lead="This scale turns the intuitive idea ‘stronger effective nucleus and smaller radius means stronger pull’ into an equation."/>
     <Grid>
-      <FormulaCard title="Electrostatic starting point" tex={String.raw`F\propto\frac{Z^*e^2}{r_{\mathrm{cov}}^2}` } note="The bonding electron feels effective nuclear charge Z* at approximately the covalent radius."/>
-      <FormulaCard title="Allred–Rochow equation — the one formula to learn (r in Å)" tex={String.raw`\chi_{AR}=0.359\frac{Z^*}{r_{\mathrm{cov}}^2}+0.744` } note="If a problem supplies the isolated-atom Z*, use Z* − 0.35 in the numerator: the incoming bonding electron adds one more same-shell shielding electron. No other variant of this equation is needed." accent={T.gold}/>
+      <FormulaCard title="The one formula to learn (r in Å)" tex={String.raw`\chi_{AR}=0.359\frac{Z^*}{r_{\mathrm{cov}}^2}+0.744` } note="If a problem supplies the isolated-atom Z*, use Z* − 0.35 in the numerator: the incoming bonding electron adds one more same-shell shielding electron. No other variant of this equation is needed." accent={T.gold}/>
     </Grid>
+    <Note title="What each symbol means" accent={T.cyan}>
+      <b>Z*</b> = effective nuclear charge felt by the bonding electron. <b>r<sub>cov</sub></b> = covalent radius of the atom, in ångström. <b>χ<sub>AR</sub></b> = Allred–Rochow electronegativity. The constants 0.359 and 0.744 are empirical, fitted so this scale tracks the Pauling scale.
+    </Note>
     <ReplayFigure title="Why the formula has a slope and an intercept" caption="The empirical line was fitted so that electrostatic values match the Pauling scale as closely as possible.">{()=><AllredGraphSVG/>}</ReplayFigure>
     <Grid>
       <Panel accent={T.cyan}><PanelTitle>Advantages</PanelTitle><Bullets items={["Easy to calculate once Z* and covalent radius are known.","Useful when bond-energy data are missing.","Explains periodic trends through Z* and radius.","Rationalises high χ of post-transition elements after d- and f-contraction."]}/></Panel>
       <Panel accent={T.coral}><PanelTitle>Limitations</PanelTitle><Bullets items={["Reliable covalent radii are not always available.","The chosen radius depends on bonding environment.","It is still an approximate scale, not a directly measured force.","Theoretical noble-gas values need careful interpretation."]}/></Panel>
     </Grid>
 
-    <SectionTitle n="08" title="Environment dependence: charge, oxidation state and hybridisation" lead="A single permanent electronegativity number is a useful shortcut, but a real atom changes its pulling power when its charge and valence state change."/>
+    <SectionTitle n="07" title="Environment dependence: charge, oxidation state and hybridisation" lead="A single permanent electronegativity number is a useful shortcut, but a real atom changes its pulling power when its charge and valence state change."/>
     <Grid>
       <Panel accent={T.coral}><PanelTitle>Charge rule</PanelTitle><MathX tex={String.raw`\chi=a+bq`}/><P>Positive q increases χ; negative q decreases χ. The slope b tells how strongly χ responds to charge.</P><MathX tex={String.raw`b=IE-EA=2\eta`}/></Panel>
       <Panel accent={T.mint}><PanelTitle>Polarisability and hardness</PanelTitle><MathX tex={String.raw`b\propto\frac{1}{\text{polarisability}}`}/><P>Small, hard atoms have large b and limited charge capacity. Large, soft atoms have small b and spread charge more easily.</P></Panel>
@@ -327,11 +317,11 @@ export function SectionElectronegativityV12() {
     <ReplayFigure title="Jaffé–Hinze charge-dependent electronegativity" caption="Olympiad enrichment only. The neutral value is a; the slope b is larger for small hard atoms such as F.">{()=><ChargeDependenceSVG/>}</ReplayFigure>
     <Note title="Useful crossing idea" accent={T.violet}>Because F has a steeper χ-versus-charge line than Cl, their lines can cross at sufficiently negative charge. This does not mean neutral chlorine is more electronegative than neutral fluorine; it shows that charge state matters.</Note>
 
-    <SectionTitle n="09" title="Electronegativity equalisation and charge separation" lead="When two atoms bond, charge shifts until their effective electronegativities become equal. This gives an approximate way to estimate partial charge."/>
+    <SectionTitle n="08" title="Electronegativity equalisation and charge separation" lead="When two atoms bond, charge shifts until their effective electronegativities become equal. This gives an approximate way to estimate partial charge."/>
     <Panel accent={T.cyan}><P>For A becoming negative and B becoming positive:</P><MathX tex={String.raw`\chi_A=a_A-b_Aq\qquad \chi_B=a_B+b_Bq`}/><MathX tex={String.raw`\chi_A=\chi_B\quad\Rightarrow\quad q=\frac{a_A-a_B}{b_A+b_B}`}/><P>The method is approximate because it ignores some overlap, exchange and electrostatic contributions, but it gives a useful first estimate.</P></Panel>
     <TableX columns={["Species / orbital","a (eV)","b (eV)","Meaning"]} rows={[["H 1s","7.15","12.85","small, hard"],["C sp³","8.15","11.40","tetrahedral carbon"],["C sp²","8.90","11.50","trigonal carbon"],["C sp","10.40","11.70","linear carbon"],["O p","9.65","15.30","hard electronegative centre"],["F p","12.20","17.60","very hard; steep charge response"],["Cl p","10.90","11.30","more polarisable than F"],["Br p","8.60","10.20","softer"],["I p","8.10","9.15","largest charge capacity"]]}/>
 
-    <SectionTitle n="10" title="Applications: how electronegativity predicts chemistry" lead="Use electronegativity as a guide, not as the only factor. Bond energy, size, solvation, lattice energy, resonance and molecular shape can also control the final result."/>
+    <SectionTitle n="09" title="Applications: how electronegativity predicts chemistry" lead="Use electronegativity as a guide, not as the only factor. Bond energy, size, solvation, lattice energy, resonance and molecular shape can also control the final result."/>
     <Grid>
       <Panel accent={T.cyan}><PanelTitle>1. Bond polarity and bond type</PanelTitle><P>Small Δχ gives nearly nonpolar covalent bonding. Moderate Δχ gives polar covalent bonding. Large Δχ favours ionic character.</P><MathX tex={String.raw`\Delta\chi=|\chi_A-\chi_B|`}/><Note title="Caution">A single cut-off such as 1.7 is only a classroom guide. Real bond type also depends on mean electronegativity and structure.</Note></Panel>
       <Panel accent={T.gold}><PanelTitle>2. Percentage ionic character</PanelTitle><MathX tex={String.raw`\%\,\text{ionic}=16\Delta\chi+3.5(\Delta\chi)^2`}/><P>This is the modified Hanny–Smyth expression. A second common estimate is Pauling’s exponential form:</P><MathX tex={String.raw`\%\,\text{ionic}=\left(1-e^{-0.25(\Delta\chi)^2}\right)\times100`}/></Panel>
@@ -359,7 +349,7 @@ export function SectionElectronegativityV12() {
     <TableX columns={["Group","Approx. χG","aG (eV)","bG (eV)","Behaviour"]} rows={[["CH₃","2.30","7.42","3.10","electron-pushing in many σ-bond frameworks"],["C₂H₅","2.32","7.50","1.77","greater charge capacity than CH₃"],["CF₃","3.46","12.85","3.90","strong electron-withdrawing group"],["CCl₃","2.95","10.25","2.90","electron-withdrawing"],["NH₂","2.47","8.10","4.30","context-dependent donor/withdrawer"],["OH","2.81","9.60","7.00","strongly electronegative but limited charge capacity"],["CN","3.30","12.00","6.25","strong electron-withdrawing group"],["CO₂H","3.05","10.70","3.40","electron-withdrawing group"]]}/>
     <Note title="Pair-memory values" accent={T.cyan}>Useful rough pairs: H and P ≈ 2.1; Be and Al ≈ 1.5–1.6; C, S and I ≈ 2.5–2.7; N and Cl ≈ 3.0–3.2. Use the data table for calculations, not the mnemonic.</Note>
 
-    <SectionTitle n="11" title="Scale comparison and high-yield summary" lead="Different scales use different experimental or theoretical inputs, but they mostly agree on the broad periodic pattern."/>
+    <SectionTitle n="10" title="Scale comparison and high-yield summary" lead="Different scales use different experimental or theoretical inputs, but they mostly agree on the broad periodic pattern."/>
     <TableX columns={["Scale","Core idea","Main equation","Best use","Main limitation"]} rows={[["Pauling","extra heteronuclear bond stabilisation",<MathX key="pauling-equation" display={false} tex={String.raw`\Delta\chi=0.102\sqrt\Delta`}/>,"bond-energy numericals","relative scale; reference choice"],["Mulliken","average of electron loss and gain energies",<MathX key="mulliken-equation" display={false} tex={String.raw`\chi_M=(IE+EA)/2`}/>,"orbital/valence-state interpretation","EA data may be uncertain"],["Allred–Rochow","electrostatic pull at covalent radius",<MathX key="allred-rochow-equation" display={false} tex={String.raw`\chi=0.359Z^*/r^2+0.744`}/>,"periodic trend and Z* reasoning","radius choice"],["Jaffé–Hinze","charge-dependent chemical potential",<MathX key="jaffe-hinze-equation" display={false} tex={String.raw`\chi=a+bq`}/>,"Olympiad charge and hardness problems","requires a and b parameters"],["Sanderson equalisation","charge flows until χ values equal",<MathX key="sanderson-equation" display={false} tex={String.raw`q=(a_A-a_B)/(b_A+b_B)`}/>,"partial-charge estimate","approximate"]]}/>
     <Grid>
       <Panel accent={T.gold}><PanelTitle>Fast memory map</PanelTitle><Bullets items={["Across a period: χ generally increases.","Down a main group: χ generally decreases.","More positive charge: higher χ.","More s-character: higher χ.","Smaller radius and higher Z* raise χ.","Electron affinity is not the same as electronegativity."]}/></Panel>
@@ -367,17 +357,17 @@ export function SectionElectronegativityV12() {
       <Panel accent={T.mint}><PanelTitle>Scope of this chapter</PanelTitle><P>The focus stays on chemically useful bond-energy, ionisation/electron-affinity, electrostatic, charge-dependent and equalisation models used in periodicity and bonding problems.</P></Panel>
     </Grid>
 
-    <SectionTitle n="12" title="Worked examples" lead="Each example shows the smallest correct chain of reasoning. Keep units with every energy value."/>
+    <SectionTitle n="11" title="Worked examples" lead="Each example shows the smallest correct chain of reasoning. Keep units with every energy value."/>
     <Grid min={330}>{worked.map((w,i)=><WorkedExample key={i} n={i+1} q={w.q} steps={w.steps}/>)}</Grid>
 
-    <SectionTitle n="13" title="Practice bank with answers" lead="Use these as rapid drills. Try each question first, then compare with the visible answer."/>
+    <SectionTitle n="12" title="Practice bank with answers" lead="Use these as rapid drills. Try each question first, then compare with the visible answer."/>
     <Grid min={360}>
       <QuestionTable title="Correct-order drills" rows={orderQuestions} accent={T.cyan}/>
       <QuestionTable title="Integer-type drills" rows={integerQuestions} accent={T.gold}/>
       <QuestionTable title="Calculation drills" rows={calculationQuestions} accent={T.mint}/>
     </Grid>
 
-    <SectionTitle n="14" title="JEE Advanced mixed questions" lead="The questions below combine scale conversion, trend reasoning and applications. Answers are given immediately after each question so the section remains useful for self-study."/>
+    <SectionTitle n="13" title="JEE Advanced mixed questions" lead="The questions below combine scale conversion, trend reasoning and applications. Answers are given immediately after each question so the section remains useful for self-study."/>
     <TableX minWidth={900} columns={["No.","Question","Answer / key idea"]} rows={[
       ["1","Which is more electronegative: carbon in CH₄ or carbon in HC≡CH?","Carbon in HC≡CH; sp has greater s-character."],
       ["2","Why can χ(Ga) exceed χ(Al)?","Poor shielding by filled 3d electrons contracts the valence shell and raises Z* felt by bonding electrons."],
@@ -401,7 +391,7 @@ export function SectionElectronegativityV12() {
       ["20","Why is a 1.7 Δχ cut-off not a law?","Bond character is continuous and also depends on mean χ, lattice structure, polarisation and environment."],
     ]}/>
 
-    <SectionTitle n="15" title="Error traps to avoid"/>
+    <SectionTitle n="14" title="Error traps to avoid"/>
     <Grid>
       <Panel accent={T.red}><PanelTitle>Wrong: “noble-gas electronegativity is always zero”</PanelTitle><P>Correct statement: for a noble gas that does not form a bond, ordinary bond electronegativity has no direct meaning. Theoretical values can be calculated; Xe has meaningful values in compounds.</P></Panel>
       <Panel accent={T.red}><PanelTitle>Wrong: χAR = 0.359Z*/r² only</PanelTitle><P>The standard fitted equation contains the intercept +0.744. When isolated-atom Z* is used, the numerator commonly becomes Z*−0.35.</P></Panel>

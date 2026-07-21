@@ -3387,6 +3387,7 @@ export function SectionChemicalPeriodicity() {
             <P>
               The stability of an ionic solid depends strongly on electrostatic attraction between gaseous ions. A simple model predicts that lattice enthalpy magnitude increases with ionic charge and decreases with interionic distance. Hydration enthalpy is released when gaseous ions become surrounded by water molecules and similarly grows with charge density.
             </P>
+            <SolubilityTugOfWarSVG />
             <MathBlock tex={String.raw`|U|\propto\frac{|z_+z_-|}{r_++r_-}`} />
             <MathBlock tex={String.raw`|\Delta H_{\mathrm{hyd}}|\text{ generally increases with }\frac{|z|}{r_{\mathrm{ion}}}`} />
             <DataTable
@@ -3536,6 +3537,7 @@ function SectionSpecialEffectsLegacyV9() {
         From La to Lu, protons are added to the nucleus while electrons enter 4f orbitals. Because 4f electrons shield one another poorly, effective nuclear charge rises steadily and atomic/ionic radii decrease gradually across the series.
       </P>
       <ContractionSVG />
+      <FBlockContractionSVG />
       <DataTable
         columns={["Consequence", "Explanation / example"]}
         rows={[
@@ -4539,6 +4541,82 @@ export function BornHaberNaClSVG() {
       <path className="sb-path" pathLength="1" d="M100 166 L100 112" stroke={T.cyan} strokeWidth="2" markerEnd="url(#bh-arrow)" />
       <path className="sb-path" pathLength="1" d="M100 112 L100 70" stroke={T.cyan} strokeWidth="2" markerEnd="url(#bh-arrow)" />
       <path className="sb-path" pathLength="1" d="M88 258 C50 270 50 286 120 286" fill="none" stroke={T.p} strokeWidth="2" markerEnd="url(#bh-arrow)" />
+    </svg>
+    </MotionFigure>
+  );
+}
+
+export function SolubilityTugOfWarSVG() {
+  return (
+    <MotionFigure title="Ionic energetics: the solubility tug-of-war" status="Law-based schematic" note="Lattice enthalpy pulls the ions toward the solid; hydration enthalpy pulls them toward solution. Neither term alone predicts solubility — their balance, plus entropy, decides it.">
+    <svg viewBox="0 0 640 320" role="img" aria-label="Balance beam contrasting lattice enthalpy and hydration enthalpy" style={{ width: "100%", height: "auto", display: "block" }}>
+      <defs>
+        <pattern id="bp-grid" width="24" height="24" patternUnits="userSpaceOnUse"><path d="M24 0H0V24" fill="none" stroke={T.border} strokeWidth="0.5" opacity="0.4" /></pattern>
+      </defs>
+      <rect x="12" y="12" width="616" height="296" rx="18" fill="#0d1c2b" stroke={T.border} />
+      <rect x="12" y="12" width="616" height="296" rx="18" fill="url(#bp-grid)" />
+      <text x="320" y="42" textAnchor="middle" fill={T.text} fontFamily={T.serif} fontSize="17" fontWeight="800">Lattice Enthalpy vs Hydration Enthalpy</text>
+
+      <line x1="320" y1="200" x2="320" y2="260" stroke={T.textFaint} strokeWidth="4" />
+      <path d="M270 260 L370 260 L360 275 L280 275 Z" fill={T.surface2} stroke={T.textFaint} />
+      <circle cx="320" cy="196" r="6" fill={T.textFaint} />
+      <line x1="150" y1="150" x2="490" y2="150" stroke={T.textFaint} strokeWidth="4" transform="rotate(-4 320 196)" />
+
+      <g transform="rotate(-4 320 196) translate(150 150)">
+        <line x1="0" y1="0" x2="0" y2="42" stroke={T.gold} strokeWidth="2" />
+        <rect x="-70" y="42" width="140" height="46" rx="6" fill="rgba(232,184,75,0.08)" stroke={T.gold} strokeWidth="1.5" />
+        {[0, 1, 2].map((r) => [0, 1, 2, 3].map((c) => (
+          <circle key={`${r}-${c}`} cx={-52 + c * 35} cy={50 + r * 14} r="6" fill={(r + c) % 2 === 0 ? T.p : T.cyan} opacity="0.9" />
+        )))}
+      </g>
+      <text x="150" y="330" textAnchor="middle" fill={T.gold} fontFamily={T.sans} fontSize="13" fontWeight="900">LATTICE ENTHALPY</text>
+
+      <g transform="rotate(-4 320 196) translate(490 150)">
+        <line x1="0" y1="0" x2="0" y2="42" stroke={T.cyan} strokeWidth="2" />
+        <circle cx="0" cy="66" r="10" fill={T.gold} />
+        {Array.from({ length: 8 }, (_, i) => {
+          const a = (2 * Math.PI * i) / 8;
+          const x = Math.cos(a) * 34; const y = 66 + Math.sin(a) * 34;
+          return <g key={i}><line x1={Math.cos(a) * 14} y1={66 + Math.sin(a) * 14} x2={x} y2={y} stroke={T.cyan} strokeWidth="1.5" markerEnd="url(#bh-arrow)" /><circle cx={x} cy={y} r="5" fill="#e8f7ff" /></g>;
+        })}
+      </g>
+      <text x="490" y="330" textAnchor="middle" fill={T.cyan} fontFamily={T.sans} fontSize="13" fontWeight="900">HYDRATION ENTHALPY</text>
+
+      <rect x="40" y="230" width="230" height="34" rx="8" fill="rgba(232,184,75,0.06)" stroke={T.gold} strokeWidth="1" opacity="0.85" />
+      <text x="155" y="252" textAnchor="middle" fill={T.gold} fontFamily={T.mono} fontSize="12">|U| ∝ |z₊z₋| / (r₊ + r₋)</text>
+      <rect x="370" y="230" width="230" height="34" rx="8" fill="rgba(95,212,234,0.06)" stroke={T.cyan} strokeWidth="1" opacity="0.85" />
+      <text x="485" y="252" textAnchor="middle" fill={T.cyan} fontFamily={T.mono} fontSize="12">|ΔH_hyd| ∝ z² / r</text>
+
+      <rect x="30" y="280" width="580" height="30" rx="6" fill="rgba(255,255,255,0.03)" stroke={T.borderSoft} />
+      <text x="320" y="300" textAnchor="middle" fill={T.textDim} fontFamily={T.sans} fontSize="11.5">MgO's much larger charge product gives it far greater lattice enthalpy than NaF; Li⁺'s high charge density hydrates far more strongly than Cs⁺.</text>
+    </svg>
+    </MotionFigure>
+  );
+}
+
+export function FBlockContractionSVG() {
+  return (
+    <MotionFigure title="f-block shielding and the great contractions" status="Law-based schematic" note="4f and 5f orbitals are compact and shield poorly, so effective nuclear charge outpaces shielding and pulls the whole atom inward across each series.">
+    <svg viewBox="0 0 640 300" role="img" aria-label="Concentric shielding diagram with lanthanide and actinide contraction comparison" style={{ width: "100%", height: "auto", display: "block" }}>
+      <rect x="12" y="12" width="616" height="276" rx="18" fill="#0d1c2b" stroke={T.border} />
+      <rect x="12" y="12" width="616" height="276" rx="18" fill="url(#bp-grid)" />
+      <text x="180" y="40" textAnchor="middle" fill={T.text} fontFamily={T.serif} fontSize="15" fontWeight="800">Porous 4f / 5f Shield</text>
+      <circle cx="180" cy="160" r="90" fill="none" stroke={T.gold} strokeWidth="2.5" />
+      <circle cx="180" cy="160" r="58" fill="rgba(200,215,230,0.06)" stroke={T.textFaint} strokeWidth="1.5" strokeDasharray="4 4" />
+      <circle cx="180" cy="160" r="14" fill={T.cyan} />
+      {Array.from({ length: 8 }, (_, i) => {
+        const a = (2 * Math.PI * i) / 8;
+        return <line key={i} x1={180 + Math.cos(a) * 30} y1={160 + Math.sin(a) * 30} x2={180 + Math.cos(a) * 82} y2={160 + Math.sin(a) * 82} stroke={T.gold} strokeWidth="1.5" markerEnd="url(#bh-arrow)" />;
+      })}
+      <text x="180" y="266" textAnchor="middle" fill={T.textDim} fontFamily={T.sans} fontSize="11">Zeff outpaces shielding — the whole atom is dragged inward</text>
+
+      <rect x="330" y="26" width="284" height="98" rx="10" fill="rgba(232,184,75,0.06)" stroke={T.gold} strokeWidth="1.2" />
+      <text x="346" y="48" fill={T.gold} fontFamily={T.sans} fontSize="12.5" fontWeight="900">THE Zr ≈ Hf TWIN EFFECT</text>
+      <text x="346" y="68" fill={T.textDim} fontFamily={T.sans} fontSize="11" width="250"><tspan x="346" dy="0">Hf follows all 14 lanthanides, so the</tspan><tspan x="346" dy="15">4f contraction cancels the expected</tspan><tspan x="346" dy="15">down-group size increase — Zr and Hf</tspan><tspan x="346" dy="15">end up nearly identical in size.</tspan></text>
+
+      <rect x="330" y="134" width="284" height="140" rx="10" fill="rgba(95,212,234,0.06)" stroke={T.cyan} strokeWidth="1.2" />
+      <text x="346" y="156" fill={T.cyan} fontFamily={T.sans} fontSize="12.5" fontWeight="900">LANTHANIDES vs ACTINIDES</text>
+      <text x="346" y="178" fill={T.textDim} fontFamily={T.sans} fontSize="11"><tspan x="346" dy="0">4f electrons: deeply buried,</tspan><tspan x="346" dy="15">largely restricted to the +3 state.</tspan><tspan x="346" dy="24">5f electrons: more spatially</tspan><tspan x="346" dy="15">extended and bonding-active —</tspan><tspan x="346" dy="15">+4 to +7 states common early</tspan><tspan x="346" dy="15">in the actinide series.</tspan></text>
     </svg>
     </MotionFigure>
   );

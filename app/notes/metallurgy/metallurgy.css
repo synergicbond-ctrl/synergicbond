@@ -1,1 +1,48 @@
 .metallurgy-shell{min-height:100vh;background:#0b0f19;color:#f8fbff;padding:clamp(18px,4vw,54px);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}.metallurgy-hero,.metallurgy-notes,.part-grid,.part-nav{max-width:1120px;margin:0 auto}.metallurgy-hero{padding:28px 0 22px;border-bottom:1px solid rgba(96,165,250,.28)}.eyebrow{font-size:.76rem;letter-spacing:.16em;color:#38e8ff;font-weight:900;text-shadow:0 0 24px rgba(56,232,255,.34)}.metallurgy-hero h1{font-size:clamp(2.5rem,7vw,5.6rem);line-height:.95;margin:.25rem 0 1rem;background:linear-gradient(90deg,#ffffff 0%,#59efff 42%,#a78bfa 72%,#ffad42 100%);-webkit-background-clip:text;background-clip:text;color:transparent}.metallurgy-hero>p:last-child{max-width:760px;color:#d3def0;font-size:1.08rem}.part-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px;padding:24px 0}.part-card{display:flex;gap:16px;padding:19px;border:1px solid rgba(96,165,250,.26);background:linear-gradient(145deg,rgba(18,28,46,.58),rgba(11,15,25,.18));border-radius:18px;color:inherit;text-decoration:none;transition:.18s;box-shadow:0 12px 32px rgba(0,0,0,.18)}.part-card:hover{transform:translateY(-3px);border-color:#41e7ff;box-shadow:0 18px 44px rgba(34,211,238,.13)}.part-card>span{font-variant-numeric:tabular-nums;color:#45efff;font-weight:900;text-shadow:0 0 16px rgba(69,239,255,.35)}.part-card h2{font-size:1rem;margin:0 0 6px;color:#ffffff}.part-card p{color:#b8c7dc;font-size:.9rem;line-height:1.5;margin:0}.part-nav{display:flex;justify-content:space-between;gap:16px;padding:14px 0 20px;color:#62e9ff}.part-nav a{color:#62e9ff;text-decoration:none;font-weight:700}.part-nav a:hover{color:#ffffff}.part-nav.bottom{padding-top:26px;border-top:1px solid rgba(96,165,250,.24);margin-top:30px}.metallurgy-notes{line-height:1.72;background:transparent}.metallurgy-notes h1{font-size:clamp(2rem,5vw,3.7rem);line-height:1.05;margin:18px 0 10px;background:linear-gradient(90deg,#ffffff 0%,#57eaff 50%,#a78bfa 100%);-webkit-background-clip:text;background-clip:text;color:transparent}.metallurgy-notes h2{font-size:clamp(1.35rem,3vw,2rem);margin:54px 0 12px;padding-bottom:8px;border-bottom:1px solid rgba(96,165,250,.25);position:relative;color:#ffffff}.metallurgy-notes h2:after{content:"";display:block;width:92px;height:3px;margin-top:8px;background:linear-gradient(90deg,#21e6ff,#8b5cf6,#ff9f32);border-radius:999px;box-shadow:0 0 18px rgba(33,230,255,.28)}.metallurgy-notes h3{font-size:1.12rem;margin:34px 0 8px;color:#73f2ff}.metallurgy-notes p,.metallurgy-notes li{color:#d2dceb}.metallurgy-notes strong{color:#ffffff}.metallurgy-notes code{background:rgba(36,50,75,.48);color:#f6fbff;padding:.12em .4em;border:1px solid rgba(96,165,250,.18);border-radius:6px}.concept-box{margin:20px 0;padding:15px 18px;border-left:4px solid #26e7ff;background:linear-gradient(90deg,rgba(34,211,238,.10),rgba(139,92,246,.05),transparent 72%);border-radius:0 12px 12px 0;box-shadow:inset 0 0 0 1px rgba(103,232,249,.07)}.concept-box p{margin:0;color:#e5edf8}.table-scroll{overflow-x:auto;margin:18px 0;border:1px solid rgba(96,165,250,.24);border-radius:12px;background:transparent;box-shadow:0 16px 48px rgba(0,0,0,.16)}.table-scroll table{border-collapse:collapse;width:100%;min-width:620px;background:transparent}.table-scroll th,.table-scroll td{padding:10px 12px;text-align:left;border-bottom:1px solid rgba(96,165,250,.18);vertical-align:top}.table-scroll th{background:linear-gradient(90deg,rgba(34,211,238,.12),rgba(139,92,246,.10));color:#ffffff}.table-scroll td{background:rgba(11,15,25,.12)}.edu-diagram{display:block;width:min(100%,1100px)!important;height:auto;aspect-ratio:auto!important;object-fit:contain!important;margin:22px auto;border:0!important;border-radius:18px!important;background:transparent!important;padding:0!important;overflow:hidden!important;box-shadow:0 24px 74px rgba(0,0,0,.33)!important}.katex-display{overflow-x:auto;overflow-y:hidden;padding:8px 0}.metallurgy-notes hr{border:0;border-top:1px solid rgba(96,165,250,.22);margin:34px 0}.metallurgy-notes a{color:#49eaff}.metallurgy-notes a:hover{color:#ffffff}.coverage-strip{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}.coverage-strip>*{border:1px solid rgba(56,232,255,.34);background:linear-gradient(135deg,rgba(34,211,238,.10),rgba(139,92,246,.08));padding:8px 12px;border-radius:999px;color:#8ff5ff;font-size:.82rem;font-weight:700}.metallurgy-notes img{width:100%;height:auto;display:block;border-radius:18px!important;box-shadow:0 24px 70px rgba(0,0,0,.34)!important;border:1px solid rgba(96,165,250,.22)!important}.metallurgy-notes p:has(>img){margin:28px 0 38px;background:transparent!important}.metallurgy-notes table{box-shadow:0 16px 48px rgba(0,0,0,.16)}.metallurgy-cover-art{display:block;width:100%;max-width:1120px;height:auto;margin:24px auto 4px;border-radius:22px;box-shadow:0 28px 80px rgba(0,0,0,.38);border:1px solid rgba(96,165,250,.24)}@media(max-width:700px){.metallurgy-shell{padding:16px}.metallurgy-notes{font-size:.95rem}.part-grid{grid-template-columns:1fr}.metallurgy-notes h2{margin-top:38px}.metallurgy-notes .edu-diagram{border-radius:12px!important}.metallurgy-notes p:has(>img){margin:18px -4px 28px}}
+
+/* FINAL METALLURGY VISUAL POLISH — dark, glossy, brighter, more compact graphics */
+.metallurgy-shell{
+  background:
+    radial-gradient(circle at 14% 0%,rgba(0,185,255,.10),transparent 30%),
+    radial-gradient(circle at 88% 18%,rgba(139,92,246,.08),transparent 28%),
+    linear-gradient(180deg,#050811 0%,#070b14 46%,#05070d 100%)!important;
+  color:#f8fbff!important;
+}
+.metallurgy-notes{background:transparent!important}
+.metallurgy-notes p,.metallurgy-notes li{color:#dce7f6!important}
+.metallurgy-notes strong{color:#ffffff!important}
+.metallurgy-notes h2{color:#ffffff!important;text-shadow:0 0 26px rgba(61,220,255,.09)}
+.metallurgy-notes h3{color:#7cf3ff!important}
+.concept-box{
+  background:linear-gradient(120deg,rgba(10,23,40,.78),rgba(7,11,20,.48))!important;
+  border-left-color:#2ee9ff!important;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.035),0 18px 46px rgba(0,0,0,.18)!important;
+}
+.table-scroll{background:rgba(5,9,17,.32)!important;backdrop-filter:blur(10px)}
+.table-scroll th{background:linear-gradient(90deg,rgba(14,55,79,.62),rgba(42,24,73,.44))!important}
+.part-card{
+  background:linear-gradient(145deg,rgba(14,29,48,.74),rgba(6,10,18,.56))!important;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.035),0 18px 50px rgba(0,0,0,.22)!important;
+}
+.metallurgy-notes .edu-diagram{
+  width:min(92%,980px)!important;
+  max-width:980px!important;
+  margin:28px auto 44px!important;
+  border-radius:18px!important;
+  border:1px solid rgba(83,205,255,.24)!important;
+  box-shadow:
+    0 30px 90px rgba(0,0,0,.50),
+    0 0 38px rgba(38,181,255,.08),
+    inset 0 1px 0 rgba(255,255,255,.04)!important;
+  filter:contrast(1.045) saturate(1.06)!important;
+}
+.metallurgy-cover-art{
+  width:min(92%,1040px)!important;
+  max-width:1040px!important;
+  border:1px solid rgba(83,205,255,.25)!important;
+  box-shadow:0 34px 100px rgba(0,0,0,.52),0 0 42px rgba(38,181,255,.08)!important;
+  filter:contrast(1.04) saturate(1.05)!important;
+}
+@media(max-width:700px){
+  .metallurgy-notes .edu-diagram,.metallurgy-cover-art{width:100%!important}
+}

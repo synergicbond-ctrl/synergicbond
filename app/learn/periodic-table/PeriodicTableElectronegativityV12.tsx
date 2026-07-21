@@ -281,7 +281,7 @@ export function SectionElectronegativityV12() {
       <FormulaCard title="Step 2 — electronegativity difference (Δ in kJ mol⁻¹)" tex={String.raw`|\chi_A-\chi_B|=0.102\sqrt{\Delta_{A-B}}`} note="The standard JEE form. (If Δ happens to be given in kcal mol⁻¹, use 0.208√Δ instead — same relation, different unit.)" accent={T.gold}/>
     </Grid>
     <Note title="What each symbol means" accent={T.cyan}>
-      <b>E<sub>A−B</sub></b> = measured bond dissociation energy of the real A–B bond. <b>E<sub>A−A</sub>, E<sub>B−B</sub></b> = bond dissociation energies of the homonuclear reference bonds A–A and B–B. <b>Δ<sub>A−B</sub></b> = resonance (ionic-stabilisation) energy — the "extra" bond strength beyond a purely covalent bond. <b>χ<sub>A</sub>, χ<sub>B</sub></b> = Pauling electronegativities of atoms A and B.
+      <b>E<sub>A−B</sub></b> = measured bond dissociation energy of the real A–B bond. <b>E<sub>A−A</sub>, E<sub>B−B</sub></b> = bond dissociation energies of the homonuclear reference bonds A–A and B–B. <b>Δ<sub>A−B</sub></b> = resonance (ionic-stabilisation) energy — the “extra” bond strength beyond a purely covalent bond. <b>χ<sub>A</sub>, χ<sub>B</sub></b> = Pauling electronegativities of atoms A and B.
     </Note>
     <Note title="Why √Δ, not Δ itself" accent={T.violet}>The partial charge in a polar bond is roughly proportional to Δχ, and electrostatic stabilisation goes as charge², so Δ ∝ (Δχ)². Taking the square root recovers Δχ. It is √Δ, not Δ, that is roughly additive along a chain of bonds: √Δ(A–B) + √Δ(B–C) ≈ √Δ(A–C).</Note>
 

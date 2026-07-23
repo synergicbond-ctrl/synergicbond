@@ -3,7 +3,6 @@ const content = String.raw`
 
 > **Complete-source reconstruction:** theory is preserved at full teaching depth; diagrams are used only where they explain mechanism, apparatus, phase movement or decision logic.
 
-
 > **Scope:** Source pages 1–4. Every academically useful point is retained, with OCR errors and scientifically inaccurate wording corrected.
 
 ## 1. Mineral, Ore, Gangue and Metallurgy
@@ -46,35 +45,96 @@ Different ores may skip, combine or reorder these steps. For example, noble meta
 ## 3. Concentration of Ores — Choosing the Method
 ![Four pillars of ore beneficiation](/notes/metallurgy/reference/concentration-spectrum.webp)
 
-
 The method depends on a **physical or chemical difference** between the valuable mineral and the gangue.
 
 | Method | Property exploited | Typical use |
 |---|---|---|
-| Gravity separation / hydraulic washing | Density difference | Heavy oxide/carbonate ores with lighter gangue |
+| Gravity separation / hydraulic washing | Density difference | Dense mineral with lighter gangue |
 | Magnetic separation | Difference in magnetic behaviour | One component magnetic, the other non-magnetic |
 | Froth flotation | Difference in surface wettability | Mainly sulphide ores |
 | Leaching | Selective chemical solubility | Bauxite, Au/Ag cyanide processes and other selective systems |
 
-## 4. Gravity Separation / Hydraulic Washing
+## 4. Gravity Separation / Hydraulic Washing / Levigation
 
-**Principle:** separation is based mainly on the difference in **specific gravity/density** of ore particles and gangue.
+### Principle
+**Gravity separation** concentrates an ore by exploiting the difference in **density (specific gravity)** between the valuable mineral and gangue. In a moving stream of water, lighter particles are carried away more readily, whereas denser mineral grains settle or remain behind.
 
-It is most useful when:
-- the valuable mineral is appreciably denser than gangue,
-- particles are sufficiently liberated,
-- the ore does not dissolve/react undesirably with water.
+> **Core idea:** **denser ore particles → retained / settled; lighter gangue → washed away.**
 
-![Gravity separation on a shaking table](/notes/metallurgy/reference/gravity-separation.webp)
+The method is mainly associated in elementary metallurgy with certain **oxide ores**, but oxide character itself is not the deciding principle. The essential requirement is a sufficiently useful difference in **density and settling behaviour** between the valuable mineral and the gangue.
 
-### Shaking / Wilfley-type table idea
-Finely divided ore is fed onto an inclined, continuously vibrating table with riffles/barriers. Water flows across the surface.
+### Hydraulic washing
+Finely crushed or powdered ore is treated with a controlled stream of running water.
 
-- **Heavier particles** remain close to the riffles and move along a different path.
-- **Lighter gangue** is more readily carried away by water.
-- The source sketch shows an inclined vibrating table and adjustable barriers; this is preserved in the redrawn diagram.
+- **Lighter gangue particles** are washed away more readily.
+- **Heavier ore particles** settle or remain behind and are collected as the concentrated fraction.
+- Efficient separation requires adequate **liberation**, a useful **density contrast**, and properly controlled **particle size and water flow**.
 
-**Additional role of water:** wet operation suppresses dust, improving the working environment.
+The source hydraulic-washing description also uses an **upward stream of water**. The upward drag carries fine/light particles more readily, while denser or coarser particles have a greater tendency to settle.
+
+### Suitable examples
+
+| Mineral / ore | Formula | Why gravity treatment can work |
+|---|---|---|
+| Cassiterite | $SnO_2$ | Dense oxide; separable from lighter siliceous gangue |
+| Iron oxide ores | e.g. $Fe_2O_3$ | Useful where a sufficient density contrast exists with siliceous gangue |
+| Chromite | $FeCr_2O_4$ | Dense mineral amenable to gravity treatment in suitable feeds |
+
+The source specifically illustrates $SnO_2$, $Fe_2O_3$ and $FeCr_2O_4$ being concentrated from **lighter siliceous impurities**.
+
+![Gravity separation using a Wilfley-type shaking table](/notes/metallurgy/reference/gravity-separation.webp)
+
+### Wilfley / shaking-table mechanism
+A **Wilfley-type table** is a slightly inclined, continuously vibrating or reciprocating table fitted with raised strips, corrugations or **riffles/barriers**.
+
+1. **Feeding:** finely divided ore is fed onto the inclined table.
+2. **Water flow:** a controlled cross-flow/current of water moves over the surface.
+3. **Vibration:** continuous vibration helps stratify particles and separates them according to their hydraulic behaviour.
+4. **Riffle action:** denser particles remain closer to the table surface and are hindered or guided by the riffles; lighter particles are displaced farther by the water.
+5. **Separate collection:** heavy mineral and lighter gangue follow different paths and are removed separately.
+
+> **Wilfley table = density difference + water flow + inclination + vibration + riffles.**
+
+### Why continuous removal of heavy material is essential
+The heavy fraction must be removed continuously or at a suitable rate. If dense material accumulates excessively behind the riffles/barriers, the bed becomes overloaded. Eventually heavy and light particles may begin to pass the barriers together, causing a sharp fall in separation efficiency.
+
+The **height/geometry of barriers and operating conditions** must therefore be adjusted to suit the feed.
+
+### Additional functions of water
+Water does more than provide the separating flow:
+
+- it carries away lighter gangue,
+- it can wash out some **water-soluble impurities**,
+- it **suppresses dust**, improving the working environment.
+
+### Hydraulic classifier concept
+A **hydraulic classifier** sends an upward or otherwise controlled stream of water through a bed or suspension of particles. The upward drag acts more effectively on particles that are fine and/or light, while coarse and/or dense particles tend to settle.
+
+Thus hydraulic classification depends on **settling velocity**, which is influenced by:
+
+- density,
+- particle size,
+- particle shape,
+- water-flow velocity.
+
+> **Fine/light particles → carried upward more easily; coarse/dense particles → tend to settle.**
+
+### Gravity separation vs hydraulic classification
+
+| Gravity separation | Hydraulic classification |
+|---|---|
+| Main emphasis: density / specific-gravity difference | Main emphasis: settling velocity in a fluid |
+| Typical device: Wilfley/shaking table | Uses upward or controlled water flow |
+| Dense mineral is retained or follows a separate path | Coarse/dense particles settle; fine/light particles are carried farther/upward |
+
+### Factors controlling efficiency
+- **Density difference:** a larger useful density contrast generally makes separation easier.
+- **Liberation and particle size:** crushing/grinding must free valuable mineral from gangue without producing an unnecessarily difficult ultrafine feed.
+- **Water-flow rate:** too low gives poor gangue removal; too high may carry valuable mineral away.
+- **Table inclination and vibration:** must be adjusted for proper stratification and transport.
+- **Feed rate and riffle loading:** overloading reduces selectivity.
+
+> **JEE / NEET exam trap:** do not write “all oxide ores are concentrated by gravity separation.” The correct criterion is a sufficient difference in density/settling behaviour between the valuable mineral and gangue.
 
 ---
 
@@ -95,11 +155,7 @@ Cassiterite $SnO_2$ may contain magnetic wolframite-type impurities, commonly re
 
 ---
 
-
-
-
 ![Ore and concentration decision map](/notes/metallurgy/reference/ore-foundations.webp)
-
 
 ## Source-detail restoration
 - **Mineral vs ore is economic, not purely chemical.** A mineral may contain a metal yet fail to be an ore if extraction is uneconomic or creates difficult impurities.

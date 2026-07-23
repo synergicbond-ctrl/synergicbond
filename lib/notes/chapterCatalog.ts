@@ -158,6 +158,17 @@ export const AUTHORED_COURSES: AuthoredCourse[] = [
     premium: false,
     description: "NCERT-first periodicity master notes with animated SVGs, verified data tables, Zeff and Slater rules, trends and worked examples.",
   },
+  // ── Metallurgy / Isolation of Metals ─────────────────────────────────────
+  {
+    id: "metallurgy",
+    syllabusId: "metallurgy",
+    title: "Isolation of Metals (Metallurgy)",
+    href: "/notes/metallurgy",
+    lessonLabel: "8 lessons",
+    premium: true,
+    description:
+      "Complete JEE Advanced metallurgy covering minerals and ores, beneficiation, gravity and magnetic separation, froth flotation, leaching, calcination, roasting, reduction, Ellingham diagrams, extraction of metals and refining.",
+  },
   // ── Hydrogen ───────────────────────────────────────────────────────────────
   {
     id: "hydrogen",

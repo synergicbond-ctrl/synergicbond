@@ -325,8 +325,23 @@ function ChapterCard({
     <div
       role="button"
       tabIndex={0}
-      onClick={onSelect}
-      onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); onSelect(); } }}
+      onClick={() => {
+        if (card.href) {
+          window.location.assign(card.href);
+          return;
+        }
+        onSelect();
+      }}
+      onKeyDown={(e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          if (card.href) {
+            window.location.assign(card.href);
+            return;
+          }
+          onSelect();
+        }
+      }}
       aria-pressed={selected}
       className={`group flex min-h-[190px] cursor-pointer flex-col rounded-[13px] border p-5 text-left transition ${
         selected

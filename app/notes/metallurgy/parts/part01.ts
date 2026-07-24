@@ -82,7 +82,7 @@ The source hydraulic-washing description also uses an **upward stream of water**
 
 The source specifically illustrates $SnO_2$, $Fe_2O_3$ and $FeCr_2O_4$ being concentrated from **lighter siliceous impurities**.
 
-![Gravity separation using a Wilfley-type shaking table](/notes/metallurgy/reference/gravity-separation.webp)
+![Gravity separation using a Wilfley-type shaking table](/notes/metallurgy/reference/gravity-separation-v2.webp)
 
 ### Wilfley / shaking-table mechanism
 A **Wilfley-type table** is a slightly inclined, continuously vibrating or reciprocating table fitted with raised strips, corrugations or **riffles/barriers**.

@@ -4,22 +4,13 @@ const content = String.raw`
 > **Complete-source reconstruction:** theory is preserved at full teaching depth; diagrams are used only where they explain mechanism, apparatus, phase movement or decision logic.
 
 
-## 10. Ore–Mineral Name Bank from the Source
+## 10. Classification of Important Ores and Minerals
 
-| Formula | Mineral / ore name | Main metal relevance |
-|---|---|---|
-| $ZnS$ | Zinc blende / sphalerite | Zn |
-| $MnO_2$ | Pyrolusite | Mn |
-| $MgCO_3\cdot CaCO_3$ | Dolomite | Mg/Ca |
-| $FeCr_2O_4$ (often written $FeO\cdot Cr_2O_3$) | Chromite | Cr |
-| $Ca_2B_6O_{11}\cdot 5H_2O$ | Colemanite | B compounds |
-| $FeCO_3$ | Siderite | Fe |
-| $PbSO_4$ | Anglesite | Pb |
-| $PbCO_3$ | Cerussite | Pb |
-| $Cu_2S$ | Chalcocite / copper glance | Cu |
-| $Cu_2Cl(OH)_3$ | Atacamite | Cu |
+> **Visual ore atlas:** Every ore is grouped by chemical class. The coloured dot sits directly before the ore name and represents a **typical specimen colour**; natural samples can vary because of impurities, weathering and crystal habit.
 
-> **Formula correction:** chromite is best written $FeCr_2O_4$; the older oxide-component notation $FeO\cdot Cr_2O_3$ expresses the same stoichiometry.
+[[ORE_CLASSIFICATION_GRID]]
+
+> **Exam-use note:** The grid includes the complete high-value source list plus a small set of additional standard ores/minerals useful for JEE/NEET revision. Names are presented as a modern primary-name + alias identity rather than as a conventional four-column textbook table.
 
 ## 11. Quick Selection Map
 

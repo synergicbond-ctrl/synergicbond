@@ -14,6 +14,10 @@ function MarkdownBlock({ content }: { content: string }) {
       remarkPlugins={[remarkGfm, remarkMath]}
       rehypePlugins={[rehypeKatex]}
       components={{
+        h1: ({ children }) => <h1 className="metallurgy-title">{children}</h1>,
+        h2: ({ children }) => <h2 className="metallurgy-topic-title">{children}</h2>,
+        h3: ({ children }) => <h3 className="metallurgy-subtopic-title">{children}</h3>,
+        p: ({ children }) => <p className="metallurgy-body-copy">{children}</p>,
         table: ({ children }) => <div className="table-scroll"><table>{children}</table></div>,
         blockquote: ({ children }) => <aside className="concept-box">{children}</aside>,
         img: ({ src = "", alt = "" }) => (

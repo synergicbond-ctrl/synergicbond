@@ -1,4 +1,5 @@
 import { ChemicalBondingDeepVisual } from "../_components/ChemicalBondingDeepVisuals";
+import Image from "next/image";
 import { ChemBondPartShell, DataTable, DiagramBox, FormulaLine, ImportantNote, LearningObjectives, MathText, PracticeQuestion, SummaryStrip, TopicBlock, TrapCallout } from "./_shared";
 
 const I = ({ math }: { math: string }) => <MathText math={math} />;
@@ -57,6 +58,7 @@ export default function FajansPart() {
       <DiagramBox title="Ligand-to-metal charge transfer"><ChemicalBondingDeepVisual kind="fajans-lmct" /></DiagramBox>
       <p><strong>LMCT.</strong> An anion-centred occupied orbital transfers into a metal-centred acceptor orbital. Better overlap/energy matching lowers the excitation into the visible: PbCl₂ is white while PbI₂ is golden yellow; SnS₂ yellow vs white SnO₂; Sb₂S₃ coloured vs white Sb₂O₃; ZnO white vs HgO coloured.</p>
       <T h={["Pale chloride","Coloured iodide","Related insight"]} r={[["HgCl₂","HgI₂ red","iodide excitation is easier"],["AgCl","AgI yellow","higher polarisability"],["PbCl₂","PbI₂ golden yellow","I HOMO → Pb acceptor lower energy"],["SnCl₄","SnI₄ deep red","heavy-centre/iodide matching"],["GeCl₄","GeI₄ orange","same trend"],["ZnS white","CdS yellow; HgS red/black polymorphs","cinnabar red; metacinnabar black"]]} />
+      <figure className="overflow-hidden rounded-2xl border border-amber-300/20 bg-amber-300/[0.04]"><Image src="/images/chemical-bonding/fajans/halide-colour-series.png" alt="Original laboratory appearance comparison of silver halides, lead iodide and lead sulfide" width={1536} height={1024} className="h-auto w-full object-cover" /><figcaption className="p-4 text-sm leading-relaxed text-amber-100"><strong>Appearance is chemical evidence.</strong> The yellow-to-golden iodide solids and black PbS connect polarisability with lower-energy charge-transfer or band-gap absorption; actual colour still depends on electronic structure and crystal form.</figcaption></figure>
       <p>Source orbital shorthand: Cd²⁺(5s) ← S²⁻(π), Hg²⁺(6s) ← S²⁻(π), and Fe³⁺(3d, e*g) ← O²⁻(π) for red iron(III) oxide. CrO₄²⁻ and MnO₄⁻ are intensely coloured through O→metal charge transfer. PbS is black both because Pb²⁺ strongly polarises S²⁻ and because the covalent crystal has a small band gap/broad visible absorption; PbCl₂ has chiefly UV transitions.</p>
       <ImportantNote title="When polarisation becomes redox">Pb⁴⁺ + I⁻: <I math={String.raw`2I^-\to I_2+2e^-`} />, <I math={String.raw`Pb^{4+}+2e^-\to Pb^{2+}`} />, overall <I math={String.raw`PbI_4\to PbI_2+I_2`} />. Likewise Fe³⁺ oxidises iodide, so simple FeI₃ is unstable, while FeCl₃ exists.</ImportantNote>
     </TopicBlock>

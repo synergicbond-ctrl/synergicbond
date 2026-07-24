@@ -61,7 +61,6 @@ The method depends on a **physical or chemical difference** between the valuable
 
 > **Core idea:** **denser ore particles → retained / settled; lighter gangue → washed away.**
 
-![Action of flowing water in gravity separation](/notes/metallurgy/reference/gravity-separation/flowing-water-action-dark.webp)
 
 The method is mainly associated in elementary metallurgy with certain **oxide ores**, but oxide character itself is not the deciding principle. The essential requirement is a sufficiently useful difference in **density and settling behaviour** between the valuable mineral and the gangue.
 

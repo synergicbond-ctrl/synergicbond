@@ -13,8 +13,10 @@ import {
   chemBondPartMeta,
 } from "./_shared";
 import { topicsForPart } from "./topicData";
+import FajansPart from "./fajansPart";
 
 export default function ChemicalBondingLesson({ part }: { part: number }) {
+  if (part === 20) return <FajansPart />;
   const meta = chemBondPartMeta.find((entry) => entry.part === part);
   const topics = topicsForPart(part);
   if (!meta || !topics.length) return null;

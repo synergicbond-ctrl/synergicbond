@@ -143,6 +143,15 @@ export function FajansVisual(){
   </Frame>;
 }
 
+export function FajansStructuresVisual(){
+  const oct=(x:number,y:number,colour:string)=><g><polygon points={`${x},${y-28} ${x+30},${y-10} ${x+30},${y+22} ${x},${y+38} ${x-30},${y+22} ${x-30},${y-10}`} fill="rgba(103,232,249,.07)" stroke={colour}/><text x={x} y={y+5} textAnchor="middle" style={{...font,fill:colour,fontWeight:800}}>M</text></g>;
+  return <Frame label="Structural evolution from aluminium fluoride network to aluminium halide dimer" viewBox="0 0 900 340"><text x="450" y="28" textAnchor="middle" style={{...font,fontWeight:800}}>Connectivity controls melting point as much as polarisation</text><g transform="translate(30 75)">{[0,1,2,3,4,5].map((n)=><g key={n}>{oct(55+(n%3)*68,45+Math.floor(n/3)*75,C)}</g>)}<text x="125" y="210" textAnchor="middle" style={{...small,fill:C}}>AlF₃ · 3D corner-sharing network</text></g><path d="M290 165h70" stroke={A} strokeWidth="3"/><polygon points="365,165 355,159 355,171" fill={A}/><g transform="translate(385 80)">{[0,1,2].map((n)=><g key={n}>{oct(55+n*72,65,V)}</g>)}<text x="125" y="210" textAnchor="middle" style={{...small,fill:V}}>AlCl₃ · layered edge-sharing polymer</text></g><path d="M630 165h70" stroke={A} strokeWidth="3"/><polygon points="705,165 695,159 695,171" fill={A}/><g transform="translate(730 105)"><circle cx="45" cy="60" r="24" fill="rgba(196,181,253,.1)" stroke={V}/><circle cx="105" cy="60" r="24" fill="rgba(196,181,253,.1)" stroke={V}/><text x="45" y="65" textAnchor="middle" style={font}>Al</text><text x="105" y="65" textAnchor="middle" style={font}>Al</text><line x1="65" y1="60" x2="85" y2="60" stroke={C} strokeWidth="4"/><text x="75" y="42" textAnchor="middle" style={{...small,fill:C}}>X bridges</text><text x="75" y="135" textAnchor="middle" style={{...small,fill:R}}>Al₂Br₆ / Al₂I₆ · molecular dimer</text></g><text x="450" y="315" textAnchor="middle" style={{...small,fill:A}}>SnF₄/PbF₄: 2D MF₆ layers; SnCl₄/SnBr₄/SnI₄: molecular. Do not force a monotonic m.p. trend.</text></Frame>;
+}
+
+export function FajansLmctVisual(){
+  return <Frame label="Ligand to metal charge transfer diagram" viewBox="0 0 760 280"><text x="380" y="26" textAnchor="middle" style={{...font,fontWeight:800}}>LMCT: polarisable anion HOMO → metal-centred LUMO</text><ellipse cx="190" cy="145" rx="110" ry="65" fill="rgba(252,165,165,.08)" stroke={R}/><text x="190" y="142" textAnchor="middle" style={{...font,fill:R,fontWeight:800}}>I⁻ / S²⁻ occupied orbital</text><text x="190" y="162" textAnchor="middle" style={small}>diffuse, higher-energy donor</text><circle cx="565" cy="145" r="65" fill="rgba(103,232,249,.08)" stroke={C} strokeWidth="2"/><text x="565" y="142" textAnchor="middle" style={{...font,fill:C,fontWeight:800}}>metal acceptor</text><text x="565" y="162" textAnchor="middle" style={small}>Pb²⁺ / Hg²⁺ / high-valent M</text>{arrow(315,145,490,145,V)}<text x="400" y="115" textAnchor="middle" style={{...small,fill:V}}>visible-energy excitation</text><text x="380" y="245" textAnchor="middle" style={{...small,fill:A}}>PbCl₂: transition mainly UV → white · PbI₂: lower gap → golden yellow</text></Frame>;
+}
+
 export function ImfVisual(){
   return <Frame label="Intermolecular force families" viewBox="0 0 780 300">
     {[{x:105,t:"Keesom",s:"permanent ↔ permanent",c:C},{x:295,t:"Debye",s:"permanent → induced",c:V},{x:485,t:"London",s:"instantaneous ↔ induced",c:A},{x:675,t:"Ion–dipole",s:"charge ↔ permanent",c:G}].map((q,i)=><g key={q.t}><circle cx={q.x-35} cy="125" r="25" fill="#0b1728" stroke={q.c}/><circle cx={q.x+35} cy="125" r="25" fill="#0b1728" stroke={q.c}/><line x1={q.x-8} y1="125" x2={q.x+8} y2="125" stroke={q.c} strokeDasharray="4 3"/><text x={q.x} y="55" textAnchor="middle" style={{...font,fontWeight:800,fill:q.c}}>{q.t}</text><text x={q.x} y="205" textAnchor="middle" style={small}>{q.s}</text></g>)}
@@ -286,6 +295,8 @@ export function ChemicalBondingDeepVisual({ kind }: { kind: ChemicalBondingVisua
     case "mo-co-no": return <MoCoNoVisual/>;
     case "mo-ligand": return <MoLigandVisual/>;
     case "fajans": return <FajansVisual/>;
+    case "fajans-structures": return <FajansStructuresVisual/>;
+    case "fajans-lmct": return <FajansLmctVisual/>;
     case "imf": return <ImfVisual/>;
     case "carbon": return <CarbonVisual/>;
     case "silicate": return <SilicateVisual/>;

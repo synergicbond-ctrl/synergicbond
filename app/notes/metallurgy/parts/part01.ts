@@ -164,7 +164,7 @@ Cassiterite $SnO_2$ may contain magnetic wolframite-type impurities, commonly re
 
 ---
 
-![Ore and concentration decision map](/notes/metallurgy/reference/ore-foundations.webp)
+![Ore and concentration decision map](/notes/metallurgy/reference/ore-foundations-dark-v2.webp)
 
 ## Source-detail restoration
 - **Mineral vs ore is economic, not purely chemical.** A mineral may contain a metal yet fail to be an ore if extraction is uneconomic or creates difficult impurities.

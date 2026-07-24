@@ -61,6 +61,10 @@ The method depends on a **physical or chemical difference** between the valuable
 
 > **Core idea:** **denser ore particles → retained / settled; lighter gangue → washed away.**
 
+![Gravity separation process flow](/notes/metallurgy/reference/gravity-separation/gravity-process-dark.webp)
+
+![Action of flowing water in gravity separation](/notes/metallurgy/reference/gravity-separation/flowing-water-action-dark.webp)
+
 The method is mainly associated in elementary metallurgy with certain **oxide ores**, but oxide character itself is not the deciding principle. The essential requirement is a sufficiently useful difference in **density and settling behaviour** between the valuable mineral and the gangue.
 
 ### Hydraulic washing
@@ -72,6 +76,8 @@ Finely crushed or powdered ore is treated with a controlled stream of running wa
 
 The source hydraulic-washing description also uses an **upward stream of water**. The upward drag carries fine/light particles more readily, while denser or coarser particles have a greater tendency to settle.
 
+![Hydraulic washing and levigation](/notes/metallurgy/reference/gravity-separation/hydraulic-washing-dark.webp)
+
 ### Suitable examples
 
 | Mineral / ore | Formula | Why gravity treatment can work |
@@ -82,10 +88,11 @@ The source hydraulic-washing description also uses an **upward stream of water**
 
 The source specifically illustrates $SnO_2$, $Fe_2O_3$ and $FeCr_2O_4$ being concentrated from **lighter siliceous impurities**.
 
-![Gravity separation using a Wilfley-type shaking table](/notes/metallurgy/reference/gravity-separation-v2.webp)
 
 ### Wilfley / shaking-table mechanism
 A **Wilfley-type table** is a slightly inclined, continuously vibrating or reciprocating table fitted with raised strips, corrugations or **riffles/barriers**.
+
+![The Wilfley table](/notes/metallurgy/reference/gravity-separation/gravity-wilfley-table-dark.webp)
 
 1. **Feeding:** finely divided ore is fed onto the inclined table.
 2. **Water flow:** a controlled cross-flow/current of water moves over the surface.
@@ -94,6 +101,8 @@ A **Wilfley-type table** is a slightly inclined, continuously vibrating or recip
 5. **Separate collection:** heavy mineral and lighter gangue follow different paths and are removed separately.
 
 > **Wilfley table = density difference + water flow + inclination + vibration + riffles.**
+
+![Stratification on a Wilfley table](/notes/metallurgy/reference/gravity-separation/wilfley-stratification-dark.webp)
 
 ### Why continuous removal of heavy material is essential
 The heavy fraction must be removed continuously or at a suitable rate. If dense material accumulates excessively behind the riffles/barriers, the bed becomes overloaded. Eventually heavy and light particles may begin to pass the barriers together, causing a sharp fall in separation efficiency.
@@ -109,6 +118,8 @@ Water does more than provide the separating flow:
 
 ### Hydraulic classifier concept
 A **hydraulic classifier** sends an upward or otherwise controlled stream of water through a bed or suspension of particles. The upward drag acts more effectively on particles that are fine and/or light, while coarse and/or dense particles tend to settle.
+
+![Hydraulic classifier](/notes/metallurgy/reference/gravity-separation/hydraulic-classifier-dark.webp)
 
 Thus hydraulic classification depends on **settling velocity**, which is influenced by:
 
@@ -133,6 +144,8 @@ Thus hydraulic classification depends on **settling velocity**, which is influen
 - **Water-flow rate:** too low gives poor gangue removal; too high may carry valuable mineral away.
 - **Table inclination and vibration:** must be adjusted for proper stratification and transport.
 - **Feed rate and riffle loading:** overloading reduces selectivity.
+
+![Factors affecting gravity separation efficiency](/notes/metallurgy/reference/gravity-separation/gravity-efficiency-dark.webp)
 
 > **JEE / NEET exam trap:** do not write “all oxide ores are concentrated by gravity separation.” The correct criterion is a sufficient difference in density/settling behaviour between the valuable mineral and gangue.
 

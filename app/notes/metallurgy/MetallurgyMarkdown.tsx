@@ -17,8 +17,11 @@ function MarkdownBlock({ content }: { content: string }) {
         table: ({ children }) => <div className="table-scroll"><table>{children}</table></div>,
         blockquote: ({ children }) => <aside className="concept-box">{children}</aside>,
         img: ({ src = "", alt = "" }) => (
-          // eslint-disable-next-line @next/next/no-img-element
-          <img className="edu-diagram" src={src} alt={alt} loading="lazy" />
+          <figure className="metallurgy-visual">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img className="edu-diagram" src={src} alt={alt} loading="lazy" />
+            {alt && <figcaption>{alt}</figcaption>}
+          </figure>
         ),
       }}
     >

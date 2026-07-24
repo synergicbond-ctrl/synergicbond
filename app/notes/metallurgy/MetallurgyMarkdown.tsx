@@ -7,6 +7,8 @@ import "./metallurgy.css";
 import OreClassificationGrid from "./OreClassificationGrid";
 
 const ORE_GRID_MARKER = "[[ORE_CLASSIFICATION_GRID]]";
+const titleGradient = { backgroundImage: "linear-gradient(90deg, #0ee7e7 0%, #54a8ff 48%, #a76cf3 100%)", WebkitBackgroundClip: "text", backgroundClip: "text", color: "transparent" } as const;
+const topicGradient = { backgroundImage: "linear-gradient(90deg, #62e9ff 0%, #7ca9ff 48%, #9d71ec 100%)", WebkitBackgroundClip: "text", backgroundClip: "text", color: "transparent" } as const;
 
 function MarkdownBlock({ content }: { content: string }) {
   return (
@@ -14,16 +16,18 @@ function MarkdownBlock({ content }: { content: string }) {
       remarkPlugins={[remarkGfm, remarkMath]}
       rehypePlugins={[rehypeKatex]}
       components={{
-        h1: ({ children }) => <h1 className="metallurgy-title">{children}</h1>,
-        h2: ({ children }) => <h2 className="metallurgy-topic-title">{children}</h2>,
+        h1: ({ children }) => <h1 className="metallurgy-title" style={titleGradient}>{children}</h1>,
+        h2: ({ children }) => <h2 className="metallurgy-topic-title" style={topicGradient}>{children}</h2>,
         h3: ({ children }) => <h3 className="metallurgy-subtopic-title">{children}</h3>,
         p: ({ children }) => <p className="metallurgy-body-copy">{children}</p>,
+        strong: ({ children }) => <strong className="metallurgy-key-term">{children}</strong>,
+        th: ({ children }) => <th className="metallurgy-table-heading">{children}</th>,
         table: ({ children }) => <div className="table-scroll"><table>{children}</table></div>,
         blockquote: ({ children }) => <aside className="concept-box">{children}</aside>,
         img: ({ src = "", alt = "" }) => (
           <figure className="metallurgy-visual">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img className="edu-diagram" src={src} alt={alt} loading="lazy" />
+            <img className="edu-diagram" src={src} alt={alt} loading="lazy" style={{ maxHeight: "560px", objectFit: "contain" }} />
             {alt && <figcaption>{alt}</figcaption>}
           </figure>
         ),

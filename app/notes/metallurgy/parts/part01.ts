@@ -61,8 +61,6 @@ The method depends on a **physical or chemical difference** between the valuable
 
 > **Core idea:** **denser ore particles → retained / settled; lighter gangue → washed away.**
 
-![Gravity separation process flow](/notes/metallurgy/reference/gravity-separation/gravity-process-dark.webp)
-
 ![Action of flowing water in gravity separation](/notes/metallurgy/reference/gravity-separation/flowing-water-action-dark.webp)
 
 The method is mainly associated in elementary metallurgy with certain **oxide ores**, but oxide character itself is not the deciding principle. The essential requirement is a sufficiently useful difference in **density and settling behaviour** between the valuable mineral and the gangue.
@@ -87,7 +85,6 @@ The source hydraulic-washing description also uses an **upward stream of water**
 | Chromite | $FeCr_2O_4$ | Dense mineral amenable to gravity treatment in suitable feeds |
 
 The source specifically illustrates $SnO_2$, $Fe_2O_3$ and $FeCr_2O_4$ being concentrated from **lighter siliceous impurities**.
-
 
 ### Wilfley / shaking-table mechanism
 A **Wilfley-type table** is a slightly inclined, continuously vibrating or reciprocating table fitted with raised strips, corrugations or **riffles/barriers**.

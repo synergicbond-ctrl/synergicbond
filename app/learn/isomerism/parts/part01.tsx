@@ -1,6 +1,33 @@
 import Link from "next/link";
+import type { ReactNode } from "react";
 import { Molecule2D } from "@/components/chemistry/Molecule2D";
 import { ISOMERISM_MOLECULES as M } from "../molecules";
+
+function Section({ title, children }: { title: string; children: ReactNode }) {
+  return (
+    <div className="rounded-2xl border border-white/10 bg-white/[.035] p-5">
+      <h2 className="text-xl font-black text-cyan-200">{title}</h2>
+      {children}
+    </div>
+  );
+}
+
+function Example({ n, cols = 2, children }: { n: string; cols?: number; children: ReactNode }) {
+  return (
+    <div className="mt-5">
+      <p className="text-sm font-bold text-violet-200">Example {n}</p>
+      <div className={`mt-3 grid gap-4 ${cols === 4 ? "md:grid-cols-4" : cols === 3 ? "md:grid-cols-3" : "md:grid-cols-2"}`}>{children}</div>
+    </div>
+  );
+}
+
+function Note({ children }: { children: ReactNode }) {
+  return <p className="mt-4 rounded-xl border border-violet-300/20 bg-violet-300/[.06] p-4 text-sm text-violet-50">{children}</p>;
+}
+
+function Pending({ children }: { children: ReactNode }) {
+  return <p className="mt-4 rounded-xl border border-amber-300/25 bg-amber-300/[.06] p-4 text-xs leading-6 text-amber-100">{children}</p>;
+}
 
 export default function IsomerismPart01() {
   return (
@@ -10,56 +37,172 @@ export default function IsomerismPart01() {
           Isomerism
         </Link>
         <header className="mt-6 rounded-3xl border border-cyan-300/15 bg-[radial-gradient(circle_at_top_right,_rgba(34,211,238,.18),_transparent_35%),linear-gradient(135deg,rgba(34,211,238,.08),rgba(2,6,23,.7),rgba(139,92,246,.1))] p-6 sm:p-9">
-          <p className="text-xs font-black uppercase tracking-[.24em] text-cyan-200">Isomerism source · pages 1–7 · Part 1</p>
-          <h1 className="mt-3 text-3xl font-black sm:text-5xl">Structural isomerism: source examples</h1>
-          <p className="mt-3 max-w-3xl text-slate-300">Same molecular formula, different structural formula. The pairs below are separately rendered instances; connectivity is compared before naming the relationship.</p>
+          <p className="text-xs font-black uppercase tracking-[.24em] text-cyan-200">Isomerism source · pages 2–5 · Part 1</p>
+          <h1 className="mt-3 text-3xl font-black sm:text-5xl">Structural isomerism: chain, position and ring–chain</h1>
+          <p className="mt-3 max-w-3xl text-slate-300">
+            Structural (constitutional) isomers share a molecular formula but have a different structural formula. This part works through the source&rsquo;s
+            worked examples for chain, position and ring–chain isomerism.
+          </p>
         </header>
 
         <section className="mt-7 space-y-6">
-          <div className="rounded-2xl border border-white/10 bg-white/[.035] p-5">
-            <h2 className="text-xl font-black text-cyan-200">1. Chain isomerism</h2>
-            <p className="mt-3 leading-7 text-slate-200">Compounds with the same molecular formula but a different carbon skeleton or parent-chain length are chain isomers. The source notes that alkanes require at least four carbon atoms to show this type.</p>
-            <div className="mt-5 grid gap-4 md:grid-cols-2">
+          <Section title="1. Chain isomerism">
+            <p className="mt-3 leading-7 text-slate-200">
+              Compounds with the same molecular formula but a different carbon chain length (parent chain or side chain) are chain isomers.
+              Methane, ethane and propane cannot show chain isomerism — an alkane needs at least four carbons.
+            </p>
+
+            <Example n="1">
               <Molecule2D molecule={M.nButane} priority />
               <Molecule2D molecule={M.isobutane} priority />
-            </div>
-            <p className="mt-4 rounded-xl border border-violet-300/20 bg-violet-300/[.06] p-4 text-sm text-violet-50"><b>Conclusion:</b> both structures have C₄H₁₀, but the longest chain is four carbons in the first and three carbons in the second; therefore they are chain isomers.</p>
-          </div>
+            </Example>
+            <Note><b>Conclusion:</b> both structures are C₄H₁₀, but the longest chain is four carbons in the first and three in the second — they are chain isomers.</Note>
 
-          <div className="rounded-2xl border border-white/10 bg-white/[.035] p-5">
-            <h2 className="text-xl font-black text-cyan-200">2. Position isomerism</h2>
-            <p className="mt-3 leading-7 text-slate-200">Position isomers retain the same molecular formula and carbon skeleton; the position of a functional group, substituent or multiple bond changes.</p>
-            <div className="mt-5 grid gap-4 md:grid-cols-2">
-              <Molecule2D molecule={M.propan1ol} />
-              <Molecule2D molecule={M.propan2ol} />
-            </div>
-            <p className="mt-4 text-sm leading-7 text-slate-300"><b>Check:</b> the oxygen remains an alcohol –OH in both structures; only its position changes. This is not functional isomerism.</p>
-          </div>
+            <Example n="2">
+              <Molecule2D molecule={M.cyclobutane} />
+              <Molecule2D molecule={M.methylcyclopropane} />
+            </Example>
+            <p className="mt-2 text-sm leading-6 text-slate-300">Both are C₄H₈: a four-membered ring versus a three-membered ring with a methyl branch.</p>
 
-          <div className="rounded-2xl border border-white/10 bg-white/[.035] p-5">
-            <h2 className="text-xl font-black text-cyan-200">3. Ring–chain isomerism</h2>
-            <p className="mt-3 leading-7 text-slate-200">One member is open-chain while the other is cyclic. The molecular formula remains the same but one degree of unsaturation is expressed as a double bond in the chain member and as a ring in the cyclic member.</p>
-            <div className="mt-5 grid gap-4 md:grid-cols-2">
-              <Molecule2D molecule={M.propene} />
+            <Example n="3" cols={4}>
+              <Molecule2D molecule={M.propylcyclopropane} />
+              <Molecule2D molecule={M.ethylcyclobutane} />
+              <Molecule2D molecule={M.methylcyclopentane} />
+              <Molecule2D molecule={M.cyclohexane} />
+            </Example>
+            <p className="mt-2 text-sm leading-6 text-slate-300">All four are C₆H₁₂: the ring size shrinks from six down to three carbons as the side chain lengthens to compensate — chain isomers of one another.</p>
+
+            <Example n="4">
+              <Molecule2D molecule={M.chlorobutane1} />
+              <Molecule2D molecule={M.tertButylChloride} />
+            </Example>
+            <p className="mt-2 text-sm leading-6 text-slate-300">Both C₄H₉Cl: an unbranched chain versus a branched chain, each bearing chlorine.</p>
+
+            <Example n="6">
+              <Molecule2D molecule={M.butanenitrile} />
+              <Molecule2D molecule={M.isobutyronitrile} />
+            </Example>
+            <Example n="7">
+              <Molecule2D molecule={M.butanoicAcid} />
+              <Molecule2D molecule={M.isobutyricAcid} />
+            </Example>
+            <Example n="8">
+              <Molecule2D molecule={M.butanamide} />
+              <Molecule2D molecule={M.isobutyramide} />
+            </Example>
+            <p className="mt-2 text-sm leading-6 text-slate-300">Examples 6–8 repeat the same unbranched-versus-branched C₄ skeleton with a nitrile, a carboxylic acid and an amide in place of chlorine.</p>
+
+            <Example n="9">
+              <Molecule2D molecule={M.dimethylmalononitrile} />
+              <Molecule2D molecule={M.methylpentanedinitrile} />
+            </Example>
+            <p className="mt-2 text-sm leading-6 text-slate-300">Both C₅H₆N₂: two nitrile groups on one quaternary carbon versus the two nitrile groups spread along the chain.</p>
+
+            <Pending>
+              <b>Source examples pending closer transcription:</b> examples 5, 10 and 11 (alkene and diene chain-isomer pairs, including the 4C/5C/6C
+              positional-diene series) are drawn as small freehand sketches in the source and need a higher-fidelity re-check before publishing exact
+              double-bond positions here.
+            </Pending>
+          </Section>
+
+          <Section title="2. Position isomerism">
+            <p className="mt-3 leading-7 text-slate-200">
+              Compounds with the same molecular formula and the same chain length, but differing in the position of a double bond, triple bond,
+              functional group or substituent, are position isomers.
+            </p>
+
+            <Example n="1">
+              <Molecule2D molecule={M.bromopropane1} />
+              <Molecule2D molecule={M.bromopropane2} />
+            </Example>
+
+            <div className="mt-6 rounded-xl border border-cyan-300/15 bg-[#050b16] p-4">
+              <p className="text-sm font-bold text-violet-200">Example 2 — counting isomers by (main-chain, branch) split</p>
+              <p className="mt-2 text-sm leading-6 text-slate-300">An alkane needs six or more carbons before position isomerism can appear among its chain isomers.</p>
+
+              <p className="mt-4 text-xs font-black uppercase tracking-widest text-cyan-300">Butane, C₄H₁₀</p>
+              <div className="mt-3 grid gap-4 md:grid-cols-2">
+                <div><p className="text-xs text-slate-400">(4,0)</p><Molecule2D molecule={M.nButane} /></div>
+                <div><p className="text-xs text-slate-400">(3,1)</p><Molecule2D molecule={M.isobutane} /></div>
+              </div>
+              <p className="mt-2 text-sm text-slate-300">They are chain isomers.</p>
+
+              <p className="mt-5 text-xs font-black uppercase tracking-widest text-cyan-300">Pentane, C₅H₁₂</p>
+              <div className="mt-3 grid gap-4 md:grid-cols-3">
+                <div><p className="text-xs text-slate-400">(5,0)</p><Molecule2D molecule={M.nPentane} /></div>
+                <div><p className="text-xs text-slate-400">(4,1)</p><Molecule2D molecule={M.isopentane} /></div>
+                <div><p className="text-xs text-slate-400">(3,2)</p><Molecule2D molecule={M.neopentane} /></div>
+              </div>
+              <p className="mt-2 text-sm text-slate-300">They are chain isomers.</p>
+
+              <p className="mt-5 text-xs font-black uppercase tracking-widest text-cyan-300">Hexane, C₆H₁₄</p>
+              <div className="mt-3 grid gap-4 md:grid-cols-3">
+                <div><p className="text-xs text-slate-400">(6,0) — a</p><Molecule2D molecule={M.nHexane} /></div>
+                <div><p className="text-xs text-slate-400">(5,1) — b</p><Molecule2D molecule={M.methylpentane2} /></div>
+                <div><p className="text-xs text-slate-400">(5,1) — c</p><Molecule2D molecule={M.methylpentane3} /></div>
+              </div>
+              <p className="mt-2 text-sm text-slate-300"><b>b, c</b> are position isomers of each other (same 5-carbon main chain, methyl on C2 versus C3); each is a chain isomer of <b>a</b>.</p>
+
+              <p className="mt-5 text-xs font-black uppercase tracking-widest text-cyan-300">Heptane, C₇H₁₆ (partial)</p>
+              <div className="mt-3 grid gap-4 md:grid-cols-3">
+                <div><p className="text-xs text-slate-400">(7,0) — a</p><Molecule2D molecule={M.nHeptane} /></div>
+                <div><p className="text-xs text-slate-400">(6,1) — b</p><Molecule2D molecule={M.methylhexane2} /></div>
+                <div><p className="text-xs text-slate-400">(6,1) — c</p><Molecule2D molecule={M.methylhexane3} /></div>
+              </div>
+              <p className="mt-2 text-sm text-slate-300"><b>b, c</b> are position isomers.</p>
+              <Pending>
+                The source continues the heptane table with a (5,2) group of four more isomers (labelled d–h) and a (4,3) isomer (labelled i),
+                stating &ldquo;e, f, g, h position isomer.&rdquo; The exact branch placement in that group needs a higher-fidelity re-check before it is
+                published here, since misreading a dimethyl position would misclassify chain versus position isomers.
+              </Pending>
+            </div>
+
+            <Example n="(alkyne)">
+              <Molecule2D molecule={M.but1yne} />
+              <Molecule2D molecule={M.but2yne} />
+            </Example>
+            <Example n="(alcohol)">
+              <Molecule2D molecule={M.pentan1ol} />
+              <Molecule2D molecule={M.pentan2ol} />
+            </Example>
+            <Example n="(dihydroxybenzene)" cols={3}>
+              <Molecule2D molecule={M.catechol} />
+              <Molecule2D molecule={M.resorcinol} />
+              <Molecule2D molecule={M.quinol} />
+            </Example>
+            <Note>Catechol (1,2-), resorcinol (1,3-) and quinol (1,4-) are position isomers of benzenediol. The source notes they are soluble in NaOH but not in NaHCO₃.</Note>
+
+            <Pending>
+              <b>Source examples pending closer transcription:</b> the ring-methylcyclohexane set, the methylphenol (cresol) set, the 1,2- versus
+              1,1-dibromoethane pair, and the two branched-nonane comparisons need a higher-fidelity re-check of the source sketch before publishing here.
+            </Pending>
+          </Section>
+
+          <Section title="3. Ring–chain isomerism">
+            <p className="mt-3 leading-7 text-slate-200">
+              One isomer exists in open-chain form and the other in ring (cyclic) form, while the molecular formula stays the same — one degree of
+              unsaturation is expressed as a π bond in the chain form and as a ring in the cyclic form.
+            </p>
+
+            <Example n="1">
+              <Molecule2D molecule={M.propene2} />
               <Molecule2D molecule={M.cyclopropane} />
-            </div>
-            <p className="mt-4 text-sm leading-7 text-slate-300">Propene and cyclopropane are both C₃H₆, but one is acyclic with C=C and the other is a three-membered ring.</p>
-          </div>
+            </Example>
+            <p className="mt-2 text-sm leading-6 text-slate-300">One degree of unsaturation: a C=C π bond versus a three-membered ring.</p>
 
-          <div className="rounded-2xl border border-white/10 bg-white/[.035] p-5">
-            <h2 className="text-xl font-black text-cyan-200">4. Functional isomerism</h2>
-            <p className="mt-3 leading-7 text-slate-200">Functional isomers have the same molecular formula but different functional groups. The source lists alcohol/ether, carboxylic acid/ester, aldehyde/ketone, nitrile/isonitrile, and primary/secondary/tertiary amine cases.</p>
-            <div className="mt-5 grid gap-4 md:grid-cols-2">
-              <Molecule2D molecule={M.ethanol} />
-              <Molecule2D molecule={M.dimethylEther} />
-            </div>
-            <p className="mt-4 text-sm leading-7 text-slate-300">Ethanol (alcohol) and dimethyl ether (ether) are each C₂H₆O, yet the oxygen has different connectivity and therefore a different functional group.</p>
-            <ul className="mt-4 list-disc space-y-2 pl-5 text-sm leading-6 text-slate-300">
-              <li>Aldehyde and ketone may share CₙH₂ₙO.</li>
-              <li>Carboxylic acid and ester have –COOH versus –COOR connectivity.</li>
-              <li>Nitrile R–C≡N and isonitrile R–N≡C are functional isomers.</li>
-            </ul>
-          </div>
+            <Example n="2">
+              <Molecule2D molecule={M.but2yneRingChain} />
+              <Molecule2D molecule={M.cyclobutene} />
+            </Example>
+            <p className="mt-2 text-sm leading-6 text-slate-300">Two degrees of unsaturation: a C≡C triple bond versus a ring plus one π bond.</p>
+
+            <Example n="3" cols={3}>
+              <Molecule2D molecule={M.but3en1ol} />
+              <Molecule2D molecule={M.methyloxetane2} />
+              <Molecule2D molecule={M.cyclobutanol} />
+            </Example>
+            <p className="mt-2 text-sm leading-6 text-slate-300">But-3-en-1-ol (open chain, labelled a in the source) shares its degree of unsaturation with two cyclic forms: a cyclic ether (b) and a cyclic alcohol (c).</p>
+          </Section>
         </section>
 
         <nav className="mt-8 flex justify-end border-t border-white/10 pt-6">

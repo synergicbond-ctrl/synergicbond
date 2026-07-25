@@ -2,6 +2,14 @@
 
 Primary sources: `Isomerism Kohinoor .pdf` (160 pages) and `Optical isomerism .pdf` (119 pages).
 
+## Isomerism Kohinoor source checkpoint (2026-07-25)
+
+- Actual PDF pages visually inspected in this pass: Isomerism Kohinoor pp. 1–5 (cover + 4 content pages). Cumulative Isomerism Kohinoor independent inspection: 5/160 (was 0/160).
+- `part01.tsx` was rebuilt from a one-example-per-concept summary into a full worked-example transcription of source pp. 2–5, adding 13 new molecule entries to `molecules.ts`. Chain isomerism now carries source examples 1–4 and 6–9 (butane/isobutane; C₄H₈ ring pair; four C₆H₁₂ ring-size isomers; chlorobutane pair; nitrile/acid/amide pairs; dinitrile pair). Position isomerism now carries the full (main-chain, branch) counting exercise for butane, pentane, hexane and the (7,0)/(6,1) part of heptane, plus the bromopropane, alkyne, pentanol and catechol/resorcinol/quinol examples. Ring–chain isomerism now carries all three source examples (propene/cyclopropane; but-2-yne/cyclobutene; but-3-en-1-ol/cyclic ether/cyclobutanol).
+- Deliberately deferred pending a higher-fidelity re-read (small/compressed freehand sketches, real risk of misreading exact substitution pattern): chain-isomerism examples 5, 10, 11 (alkene/diene pairs); the heptane (5,2)/(4,3) portion of the position-isomerism counting table; the methylcyclohexane set, methylphenol (cresol) set, 1,2-/1,1-dibromoethane pair and two branched-nonane comparisons from the position-isomerism section (page 5, items 6, 7, 9, 10, 11).
+- `npm run typecheck` and scoped `eslint` on `part01.tsx` + `molecules.ts` both pass. Not visually verified in-browser: `/learn/isomerism` is gated by `requirePremiumLearnAccess`, which was not bypassed.
+- Next incomplete source page: Isomerism Kohinoor p. 6 (chain isomerism continuation / start of functional isomerism, per `part01.tsx`'s existing "pages 1–7" scope) — not yet visually inspected in this pass.
+
 ## Source-driven forensic checkpoint (2026-07-18)
 
 - Actual PDF pages visually inspected in this source-driven pass: Optical pp. 83, 86, 91–97 (9 pages); Isomerism pp. none.

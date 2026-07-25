@@ -99,7 +99,7 @@ export function TopicBlock({ number, title, children }: { number: number; title:
     <section id={`topic-${number}`} className="scroll-mt-24 rounded-2xl border border-cyan-300/[0.12] bg-[linear-gradient(135deg,rgba(17,34,49,.9),rgba(12,21,35,.94))] p-5 shadow-lg shadow-black/20 sm:p-6">
       <div className="mb-3 flex items-start gap-3">
         <span className="flex h-8 min-w-8 items-center justify-center rounded-lg border border-cyan-300/25 bg-cyan-300/[0.08] px-2 text-xs font-black text-cyan-200">{number}</span>
-        <h2 className="text-lg font-black leading-snug text-cyan-100 sm:text-xl">{title}</h2>
+        <h2 className="bg-gradient-to-r from-cyan-100 via-sky-200 to-violet-200 bg-clip-text text-lg font-black leading-snug text-transparent sm:text-xl">{title}</h2>
       </div>
       <div className="space-y-3 text-[15px] leading-7 text-slate-100 sm:text-base sm:leading-7">{children}</div>
     </section>

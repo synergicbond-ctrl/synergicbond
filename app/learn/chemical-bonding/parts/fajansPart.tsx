@@ -1,14 +1,8 @@
 import Image from "next/image";
-import type { ReactNode } from "react";
 import { ChemBondPartShell, DataTable, FormulaLine, ImportantNote, LearningObjectives, MathText, PracticeQuestion, SummaryStrip, TopicBlock, TrapCallout } from "./_shared";
 
 const I = ({ math }: { math: string }) => <MathText math={math} />;
-const T = ({ h, r }: { h: string[]; r: string[][] }) => {
-  const table = <div className="[&_thead_th:nth-child(3n+1)]:text-cyan-200 [&_thead_th:nth-child(3n+2)]:text-violet-200 [&_thead_th:nth-child(3n)]:text-amber-200 [&_tbody_td:first-child]:font-medium [&_tbody_td:first-child]:text-cyan-100"><DataTable headers={h} rows={r} /></div>;
-  const orderHeads = ["Property", "More melting-point orders", "Thermal stability family", "Thermal-stability order set", "Solubility context", "Aqueous-solubility order set", "Known reversal / exception"];
-  return orderHeads.includes(h[0]) ? <OrderReference title={h[0]}>{table}</OrderReference> : table;
-};
-const OrderReference = ({ title, children }: { title: string; children: ReactNode }) => <details className="group rounded-2xl border border-white/10 bg-black/15"><summary className="flex cursor-pointer list-none items-center justify-between gap-4 px-4 py-3 text-sm font-black text-cyan-100 marker:content-none"><span>Reference orders · {title}</span><span className="rounded-full border border-cyan-300/30 px-2 py-0.5 text-[10px] uppercase tracking-wider text-cyan-200 group-open:hidden">Open</span><span className="hidden rounded-full border border-cyan-300/30 px-2 py-0.5 text-[10px] uppercase tracking-wider text-cyan-200 group-open:inline">Close</span></summary><div className="border-t border-white/10 p-3 pt-3">{children}</div></details>;
+const T = ({ h, r }: { h: string[]; r: string[][] }) => <div className="[&_thead_th:nth-child(3n+1)]:text-cyan-200 [&_thead_th:nth-child(3n+2)]:text-violet-200 [&_thead_th:nth-child(3n)]:text-amber-200 [&_tbody_td:first-child]:font-medium [&_tbody_td:first-child]:text-cyan-100"><DataTable headers={h} rows={r} /></div>;
 const compactVisualStyle = { maxWidth: "896px", marginInline: "auto" } as const;
 
 export default function FajansPart() {

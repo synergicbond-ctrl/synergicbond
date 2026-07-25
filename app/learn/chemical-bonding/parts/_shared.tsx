@@ -111,6 +111,10 @@ export function LearningObjectives({ items }: { items: ReactNode[] }) {
   return <aside aria-label="Learning objectives" className="rounded-2xl border border-violet-300/20 bg-violet-400/[0.06] p-5"><p className="text-xs font-black uppercase tracking-[0.18em] text-violet-200">In this part</p><ul className="mt-3 grid gap-2 text-sm leading-relaxed text-slate-200 sm:grid-cols-2">{items.map((item, index) => <li key={index} className="border-l-2 border-violet-300/60 pl-3">{item}</li>)}</ul></aside>;
 }
 
+export function TextbookExamples({ items }: { items: { title: string; body: string }[] }) {
+  return <section className="rounded-2xl border border-emerald-300/20 bg-emerald-300/[0.045] p-4 sm:p-5"><p className="text-xs font-black uppercase tracking-[0.18em] text-emerald-200">Textbook examples</p><div className="mt-3 grid gap-3 md:grid-cols-2">{items.map((item) => <article key={item.title} className="rounded-xl border border-emerald-200/15 bg-black/15 p-4"><h3 className="text-sm font-black text-emerald-100">{item.title}</h3><p className="mt-1 text-sm leading-relaxed text-slate-100">{item.body}</p></article>)}</div></section>;
+}
+
 export function WorkedExample({ title, children }: { title: string; children: ReactNode }) {
   return <section className="rounded-2xl border border-amber-300/20 bg-amber-300/[0.045] p-5"><p className="text-[11px] font-black uppercase tracking-[0.18em] text-amber-200">Worked example</p><h2 className="mt-1 text-lg font-black text-white">{title}</h2><div className="mt-4 space-y-3 text-sm leading-relaxed text-slate-100 sm:text-base">{children}</div></section>;
 }

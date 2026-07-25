@@ -8,6 +8,7 @@ import {
   LearningObjectives,
   ModernNote,
   SummaryStrip,
+  TextbookExamples,
   TopicBlock,
   TrapCallout,
   chemBondPartMeta,
@@ -38,6 +39,7 @@ export default function ChemicalBondingLesson({ part }: { part: number }) {
             {topic.formula ? <FormulaLine math={topic.formula} /> : null}
             {topic.modern ? <ModernNote>{topic.modern}</ModernNote> : null}
             {topic.exam ? <ImportantNote title="JEE Advanced focus">{topic.exam}</ImportantNote> : null}
+            {topic.examples?.length ? <TextbookExamples items={topic.examples} /> : null}
             {topic.number === 4 ? (
               <TrapCallout trap={<>Confusing NO’s total electron count with its valence-electron count.</>} reality={<>Neutral NO has <strong>11 valence electrons</strong>: 5 from N + 6 from O. Fifteen is the total electron count including core 1s electrons.</>} />
             ) : null}

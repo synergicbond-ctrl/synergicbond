@@ -10,6 +10,7 @@ export type ChemicalBondingTopic = {
   exam?: string;
   modern?: string;
   visual?: ChemicalBondingVisualKey;
+  examples?: { title: string; body: string }[];
 };
 
 export const chemicalBondingTopics: ChemicalBondingTopic[] = [
@@ -24,7 +25,11 @@ export const chemicalBondingTopics: ChemicalBondingTopic[] = [
       "Bond formation must lower the total energy relative to separated fragments.",
       "Bonding ranges continuously from highly ionic to highly covalent/metallic; labels describe limiting models."
     ],
-    "exam": "Do not define a bond only as ‘sharing of electrons’: ionic, metallic and multicentre bonds require broader language."
+    "exam": "Do not define a bond only as ‘sharing of electrons’: ionic, metallic and multicentre bonds require broader language.",
+    "examples": [
+      { "title": "H₂: a finite-distance minimum", "body": "Two H atoms are more stable only at a particular internuclear distance. Too far apart gives negligible interaction; too close brings a steep repulsive rise." },
+      { "title": "NaCl: not a discrete molecule", "body": "NaCl(s) is an extended array of Na⁺ and Cl⁻. Its formula gives the simplest charge-balanced ratio, not an isolated two-atom unit." }
+    ]
   },
   {
     "number": 2,
@@ -37,7 +42,11 @@ export const chemicalBondingTopics: ChemicalBondingTopic[] = [
       "Octet attainment is often a useful consequence for main-group species, not the fundamental thermodynamic cause.",
       "Entropy and the environment also matter for whether a process is spontaneous, especially in solution or the gas phase."
     ],
-    "exam": "In JEE reasoning, ‘lower energy’ is the universal answer; octet is a model that works only for selected species."
+    "exam": "In JEE reasoning, ‘lower energy’ is the universal answer; octet is a model that works only for selected species.",
+    "examples": [
+      { "title": "NaCl formation", "body": "Ion formation is only part of the accounting. The extended Na⁺/Cl⁻ lattice supplies the crucial collective stabilisation." },
+      { "title": "H₂ bond formation", "body": "At the optimum H-H separation, nucleus-electron attractions outweigh the combined repulsions; at smaller separation repulsion dominates." }
+    ]
   },
   {
     "number": 3,
@@ -50,7 +59,11 @@ export const chemicalBondingTopics: ChemicalBondingTopic[] = [
       "Count electrons around an atom in a Lewis structure: a bonding pair contributes two electrons to each bonded atom for octet bookkeeping.",
       "The rule predicts formulas and Lewis patterns but not energies, magnetic behaviour or many hypervalent/electron-deficient structures."
     ],
-    "exam": "Use the octet rule as a first Lewis-structure filter, then test formal charge, resonance and known exceptions."
+    "exam": "Use the octet rule as a first Lewis-structure filter, then test formal charge, resonance and known exceptions.",
+    "examples": [
+      { "title": "Sharing route: Cl₂", "body": "Each Cl contributes one electron to a shared pair; each then has one bond and three lone pairs in the Lewis description." },
+      { "title": "Transfer route: MgO", "body": "Mg²⁺ and O²⁻ satisfy closed-shell counting, but the stable solid is explained by the very large 2+/2- lattice stabilisation." }
+    ]
   },
   {
     "number": 4,
@@ -65,7 +78,12 @@ export const chemicalBondingTopics: ChemicalBondingTopic[] = [
       "Odd-electron: radicals usually show paramagnetism and require resonance/MO thinking."
     ],
     "exam": "NO has 11 valence electrons (5 from N + 6 from O), not 15.",
-    "modern": "Modern descriptions of hypervalent molecules do not require literal valence-shell d-orbital expansion. Three-centre-four-electron bonding, delocalisation and largely ionic resonance structures often give a better picture."
+    "modern": "Modern descriptions of hypervalent molecules do not require literal valence-shell d-orbital expansion. Three-centre-four-electron bonding, delocalisation and largely ionic resonance structures often give a better picture.",
+    "examples": [
+      { "title": "Electron-deficient: BF₃", "body": "Boron is drawn with six electrons around it. This helps explain why BF₃ accepts a lone pair and behaves as a Lewis acid." },
+      { "title": "Odd electron: NO", "body": "NO has 11 valence electrons, so no Lewis drawing gives every electron paired while retaining ordinary octets." },
+      { "title": "Classical hypervalency: SF₆", "body": "The familiar Lewis diagram places twelve electrons around sulfur; retain it for exam bookkeeping while keeping the modern model separate." }
+    ]
   },
   {
     "number": 5,
@@ -74,7 +92,10 @@ export const chemicalBondingTopics: ChemicalBondingTopic[] = [
     "paragraphs": [
       "An inert-gas configuration is the closed-shell electron configuration of a noble gas: He = 1s² and, for heavier noble gases, ns²np⁶. Simple s- and p-block ions often form by losing or gaining electrons to reach the nearest closed shell, e.g. Na⁺ = [Ne] and Cl⁻ = [Ar]. Closed shells are especially stable because all occupied subshells are filled and the next available orbital is significantly higher in energy."
     ],
-    "exam": "Do not assume every species with a noble-gas configuration is chemically inert: charge density and environment still control reactivity."
+    "exam": "Do not assume every species with a noble-gas configuration is chemically inert: charge density and environment still control reactivity.",
+    "examples": [
+      { "title": "Nearest noble-gas counts", "body": "Na⁺ and Mg²⁺ are [Ne]; Cl⁻ and O²⁻ are [Ar] and [Ne] respectively. Equal closed-shell status does not make their salts equally stable." }
+    ]
   },
   {
     "number": 6,
@@ -87,7 +108,11 @@ export const chemicalBondingTopics: ChemicalBondingTopic[] = [
       "Filled d electrons increase core size but do not shield outer regions as efficiently as an ideal spherical noble-gas core.",
       "Pseudo-noble-gas cations therefore often promote covalent character in their compounds."
     ],
-    "exam": "This idea connects directly to Fajans’ rule; compare Na⁺ and Cu⁺ chlorides/iodides."
+    "exam": "This idea connects directly to Fajans’ rule; compare Na⁺ and Cu⁺ chlorides/iodides.",
+    "examples": [
+      { "title": "AgCl versus NaCl", "body": "Ag⁺ has a d¹⁰ pseudo-noble-gas core and can polarise chloride more strongly than the true noble-gas-type Na⁺ ion." },
+      { "title": "Iodide warning", "body": "A d¹⁰ cation paired with large I⁻ can show substantially enhanced covalent character because both polarisation and orbital softness matter." }
+    ]
   },
   {
     "number": 7,
@@ -107,7 +132,10 @@ export const chemicalBondingTopics: ChemicalBondingTopic[] = [
       "Sidgwick’s rule of maximum covalency relates maximum covalency to the number of energetically accessible valence orbitals available for bond formation in the classical model. For second-period p-block elements, only 2s and three 2p orbitals are available, so classical covalency does not exceed four. Heavier main-group elements were historically assigned higher covalencies by invoking additional orbitals."
     ],
     "exam": "Maximum covalency is not the same as oxidation state: the two numbers can differ dramatically.",
-    "modern": "The old ‘use vacant d orbitals to expand covalency’ picture is not a literal modern mechanism for many hypervalent molecules. Retain the classical counting rule for exam bookkeeping, but describe real bonding using delocalised/3c–4e and ionic resonance contributions where appropriate."
+    "modern": "The old ‘use vacant d orbitals to expand covalency’ picture is not a literal modern mechanism for many hypervalent molecules. Retain the classical counting rule for exam bookkeeping, but describe real bonding using delocalised/3c–4e and ionic resonance contributions where appropriate.",
+    "examples": [
+      { "title": "Period 2 versus period 3", "body": "Carbon is classically limited to covalency four in CH₄, while phosphorus and sulfur appear in PF₅ and SF₆ in the traditional high-covalency treatment." }
+    ]
   },
   {
     "number": 9,
@@ -121,7 +149,10 @@ export const chemicalBondingTopics: ChemicalBondingTopic[] = [
       "Use VBT/hybridisation/VSEPR for local geometry and directional bonding.",
       "Use MOT for diatomic bond order, magnetism, delocalisation and frontier orbitals."
     ],
-    "exam": "A strong solution chooses the simplest model that directly answers the property being asked."
+    "exam": "A strong solution chooses the simplest model that directly answers the property being asked.",
+    "examples": [
+      { "title": "Choose the model", "body": "Use Lewis structures and formal charge for connectivity, VSEPR for shape, and MOT for the bond order and paramagnetism of O₂ or NO." }
+    ]
   },
   {
     "number": 10,
@@ -135,7 +166,10 @@ export const chemicalBondingTopics: ChemicalBondingTopic[] = [
       "It is an approximation, but extremely accurate for most ground-state molecular structure problems."
     ],
     "formula": "\\Psi_{total}\\approx\\Psi_{electronic}(r;R)\\,\\chi_{nuclear}(R)",
-    "exam": "In a bond-energy curve, electronic energy is evaluated at effectively fixed internuclear distance R."
+    "exam": "In a bond-energy curve, electronic energy is evaluated at effectively fixed internuclear distance R.",
+    "examples": [
+      { "title": "Fixed nuclei thought experiment", "body": "Hold the nuclei at a chosen separation, calculate the electronic energy, then repeat at new separations to build the potential-energy curve." }
+    ]
   },
   {
     "number": 11,
@@ -149,7 +183,10 @@ export const chemicalBondingTopics: ChemicalBondingTopic[] = [
       "Near equilibrium Rₑ: attraction and repulsion balance; force = 0 and energy is minimum.",
       "At very small R: Pauli/electrostatic repulsion dominates and energy rises steeply."
     ],
-    "visual": "potential"
+    "visual": "potential",
+    "examples": [
+      { "title": "Approach sequence", "body": "From far separation, energy first falls when attractive terms win. At Rₑ the net force is zero; on further compression the repulsive wall rises sharply." }
+    ]
   },
   {
     "number": 12,
@@ -164,7 +201,10 @@ export const chemicalBondingTopics: ChemicalBondingTopic[] = [
     ],
     "formula": "F(R)=-\\frac{dV}{dR},\\qquad \\left.\\frac{dV}{dR}\\right|_{R_e}=0",
     "exam": "At R < Rₑ repulsion drives atoms apart; at R > Rₑ attraction pulls them together.",
-    "visual": "potential"
+    "visual": "potential",
+    "examples": [
+      { "title": "Reading a curve", "body": "The depth of the energy well gives a qualitative measure of bond strength; the position of the minimum gives bond length; the local curvature indicates stiffness." }
+    ]
   },
   {
     "number": 13,
@@ -177,7 +217,10 @@ export const chemicalBondingTopics: ChemicalBondingTopic[] = [
       "Primary bonds generally define molecular/crystal connectivity.",
       "Secondary interactions strongly control boiling point, solubility, crystal packing, biomolecular structure and supramolecular recognition."
     ],
-    "exam": "Do not treat ‘weak’ as ‘unimportant’: collective intermolecular forces can dominate bulk properties."
+    "exam": "Do not treat ‘weak’ as ‘unimportant’: collective intermolecular forces can dominate bulk properties.",
+    "examples": [
+      { "title": "Bulk-property check", "body": "A molecule may have strong internal covalent bonds yet a low boiling point when intermolecular attractions are weak; do not confuse primary and secondary bonding." }
+    ]
   },
   {
     "number": 14,
@@ -191,7 +234,12 @@ export const chemicalBondingTopics: ChemicalBondingTopic[] = [
       "Real ionic compounds often retain some covalent character because ions polarise each other."
     ],
     "formula": "E_{Coulomb}\\propto -\\frac{z_+z_-}{r}",
-    "exam": "Use ‘formula unit’ for an ionic crystal, not ‘molecule’."
+    "exam": "Use ‘formula unit’ for an ionic crystal, not ‘molecule’.",
+    "examples": [
+      { "title": "NaCl", "body": "Na loses one electron and Cl gains one, so charge balance gives NaCl. In the solid every ion interacts with many opposite ions." },
+      { "title": "CaCl₂", "body": "Ca²⁺ requires two Cl⁻ ions for neutrality. The subscript 2 follows charge balance, not a pair of individual Ca-Cl molecules." },
+      { "title": "MgO", "body": "Mg²⁺ with O²⁻ gives a 1:1 formula, but its 2+/2- charge product makes lattice stabilisation much stronger than for NaCl." }
+    ]
   },
   {
     "number": 15,
@@ -204,7 +252,11 @@ export const chemicalBondingTopics: ChemicalBondingTopic[] = [
       "Electron affinity alone never decides ionic stability.",
       "Formation of O²⁻(g) requires an endothermic second electron addition, yet MgO is stable because its 2+/2− lattice energy is enormous."
     ],
-    "exam": "For MgO vs NaCl, emphasise charge product and lattice energy rather than claiming O²⁻ formation is intrinsically easy."
+    "exam": "For MgO vs NaCl, emphasise charge product and lattice energy rather than claiming O²⁻ formation is intrinsically easy.",
+    "examples": [
+      { "title": "Why O²⁻ can occur in MgO", "body": "Adding a second electron to gaseous oxygen is unfavourable, yet MgO is stable because the 2+/2- crystal compensates with a very large lattice-energy contribution." },
+      { "title": "Formula prediction", "body": "Combine Al³⁺ and O²⁻ by the lowest whole-number ratio: 2 Al³⁺ balances 3 O²⁻, giving Al₂O₃." }
+    ]
   },
   {
     "number": 16,
@@ -218,7 +270,11 @@ export const chemicalBondingTopics: ChemicalBondingTopic[] = [
       "Crystal structure enters through the Madelung constant."
     ],
     "exam": "JEE may quote ‘lattice energy’ as a positive magnitude; infer the convention from wording.",
-    "visual": "lattice"
+    "visual": "lattice",
+    "examples": [
+      { "title": "Two sign conventions", "body": "MX(s) → M⁺(g) + X⁻(g) is positive lattice dissociation enthalpy. The reverse formation process is negative by the same magnitude." },
+      { "title": "LiF versus CsI", "body": "Both are 1+/1- salts, but LiF has much smaller interionic separation. Its lattice-energy magnitude is therefore much larger." }
+    ]
   },
   {
     "number": 17,
@@ -233,7 +289,11 @@ export const chemicalBondingTopics: ChemicalBondingTopic[] = [
       "n reflects steepness of repulsion and depends on ion electron configurations."
     ],
     "formula": "U=-\\frac{N_A A z_+z_- e^2}{4\\pi\\varepsilon_0 r_0}\\left(1-\\frac{1}{n}\\right)",
-    "exam": "A good numerical fit does not prove a crystal is 100% ionic; covalency and model approximations can partly compensate."
+    "exam": "A good numerical fit does not prove a crystal is 100% ionic; covalency and model approximations can partly compensate.",
+    "examples": [
+      { "title": "What the Madelung constant means", "body": "It is not a charge. It summarises the net electrostatic contribution from the full repeating crystal geometry." },
+      { "title": "Trend use", "body": "For similar structures, increasing ionic charge or decreasing r₀ makes the attractive term more negative in the Born-Landé model." }
+    ]
   },
   {
     "number": 18,
@@ -247,7 +307,10 @@ export const chemicalBondingTopics: ChemicalBondingTopic[] = [
       "K and d are empirical constants whose numerical values depend on the unit convention."
     ],
     "formula": "U\\approx K\\frac{\\nu |z_+z_-|}{r_++r_-}\\left(1-\\frac{d}{r_++r_-}\\right)",
-    "exam": "Use Kapustinskii for estimation/trends; Born–Landé is structure-specific."
+    "exam": "Use Kapustinskii for estimation/trends; Born–Landé is structure-specific.",
+    "examples": [
+      { "title": "Unknown structure", "body": "When the exact crystal arrangement is unavailable, Kapustinskii uses charge, ion count and radius sum to make a rapid lattice-energy estimate." }
+    ]
   },
   {
     "number": 19,
@@ -261,7 +324,11 @@ export const chemicalBondingTopics: ChemicalBondingTopic[] = [
       "For same charges, smaller r₊ + r₋ generally means larger lattice-energy magnitude.",
       "Do not confuse lattice energy with hydration energy; both favour small/high-charge ions but enter different processes."
     ],
-    "visual": "lattice"
+    "visual": "lattice",
+    "examples": [
+      { "title": "Charge effect", "body": "A 2+/2- lattice such as MgO has a much larger charge product than a 1+/1- lattice such as NaCl; charge normally dominates the comparison." },
+      { "title": "Size effect", "body": "For comparable 1+/1- salts, the smaller LiF pair has a stronger lattice than the more widely separated CsI pair." }
+    ]
   },
   {
     "number": 20,
@@ -274,7 +341,12 @@ export const chemicalBondingTopics: ChemicalBondingTopic[] = [
       "Brittleness arises because shear can bring like charges adjacent, producing strong repulsion and cleavage.",
       "Volatility is usually low; vapour may contain ion pairs or molecular species at very high temperature."
     ],
-    "exam": "AgCl, CaF₂ and many carbonates show why ‘all ionic compounds are water soluble’ is false."
+    "exam": "AgCl, CaF₂ and many carbonates show why ‘all ionic compounds are water soluble’ is false.",
+    "examples": [
+      { "title": "Conductivity test", "body": "Solid NaCl has fixed ions and does not conduct. Molten NaCl or aqueous NaCl can conduct because ions become mobile." },
+      { "title": "Brittleness", "body": "On shearing an ionic lattice, like charges can become adjacent. Their strong repulsion causes cleavage rather than ductile flow." },
+      { "title": "Solubility is a balance", "body": "BaSO₄ remains sparingly soluble because hydration of separated ions does not compensate sufficiently for lattice disruption." }
+    ]
   },
   {
     "number": 21,
@@ -287,7 +359,11 @@ export const chemicalBondingTopics: ChemicalBondingTopic[] = [
       "Same crystal form does not imply identical chemistry.",
       "A common empirical clue is similar ionic radius and identical charge/coordination requirements."
     ],
-    "exam": "Do not confuse isomorphism (same crystal type) with isoelectronicity (same electron count) or polymorphism (one substance, multiple crystal forms)."
+    "exam": "Do not confuse isomorphism (same crystal type) with isoelectronicity (same electron count) or polymorphism (one substance, multiple crystal forms).",
+    "examples": [
+      { "title": "An analogous pair", "body": "K₂SO₄ and K₂SeO₄ can adopt related structures because the ions have the same charges and similar size/coordination demands." },
+      { "title": "Mixed-crystal clue", "body": "Similar size, charge and stoichiometry can permit one ion to replace another in a lattice without destroying the overall crystal pattern." }
+    ]
   },
   {
     "number": 22,
@@ -301,7 +377,12 @@ export const chemicalBondingTopics: ChemicalBondingTopic[] = [
       "Third-period and heavier centres may be shown hypervalent in classical Lewis structures.",
       "Bracket ions and write the total charge."
     ],
-    "exam": "Electron count is the first checksum: a beautiful drawing with the wrong total electrons is invalid."
+    "exam": "Electron count is the first checksum: a beautiful drawing with the wrong total electrons is invalid.",
+    "examples": [
+      { "title": "CO₂ procedure", "body": "Count 16 valence electrons, use O-C-O, complete terminal O octets, then form two C=O bonds so carbon also reaches an octet." },
+      { "title": "NH₄⁺ procedure", "body": "N contributes 5 electrons, four H atoms contribute 4, and the + charge removes one: total = 8. Draw four N-H bonds, bracket the ion and write +." },
+      { "title": "Lewis-structure checksum", "body": "After drawing, total the electrons shown and then check that the sum of formal charges equals the overall charge." }
+    ]
   },
   {
     "number": 23,
@@ -314,7 +395,12 @@ export const chemicalBondingTopics: ChemicalBondingTopic[] = [
       "Bond order and overlap affect length and strength.",
       "Electronegativity difference shifts electron density but does not create a sharp ionic/covalent boundary."
     ],
-    "exam": "Coordinate bonds become ordinary covalent bonds after formation; origin of the electron pair does not create a permanently different bond type."
+    "exam": "Coordinate bonds become ordinary covalent bonds after formation; origin of the electron pair does not create a permanently different bond type.",
+    "examples": [
+      { "title": "H₂ and Cl₂", "body": "A single shared pair gives each atom access to the needed duplet or octet count in the Lewis picture." },
+      { "title": "Coordinate formation: NH₄⁺", "body": "NH₃ donates a lone pair to H⁺ during formation. In tetrahedral NH₄⁺, all four N-H bonds are equivalent." },
+      { "title": "Multiple bonds", "body": "O₂ is represented with two shared pairs and N₂ with three. The actual electron distribution is refined later by MO theory." }
+    ]
   },
   {
     "number": 24,
@@ -323,7 +409,11 @@ export const chemicalBondingTopics: ChemicalBondingTopic[] = [
     "paragraphs": [
       "Covalency is the number of covalent linkages an atom forms in a chosen classical structure. Maximum covalency is a model-dependent upper limit based on available valence orbitals/electron pairs and should not be equated blindly with oxidation state or coordination number. Multiple bonds count as multiple shared electron pairs in classical covalency counting."
     ],
-    "exam": "For resonance/delocalised molecules, covalency is a Lewis-model descriptor rather than a directly measurable integer property."
+    "exam": "For resonance/delocalised molecules, covalency is a Lewis-model descriptor rather than a directly measurable integer property.",
+    "examples": [
+      { "title": "Classical counting", "body": "Carbon in CH₄ has covalency 4. In CO₂, carbon is classically assigned four shared-pair units through two double bonds." },
+      { "title": "Keep concepts separate", "body": "Covalency, oxidation state and coordination number answer different questions; do not swap them in an exam response." }
+    ]
   },
   {
     "number": 25,
@@ -333,7 +423,11 @@ export const chemicalBondingTopics: ChemicalBondingTopic[] = [
       "For second-period p-block elements, the valence shell contains one s and three p orbitals, so the classical maximum covalency is four (e.g. carbon in CH₄). Heavier p-block elements form species with coordination/covalency above four such as PF₅, SF₆ and IF₇; traditional exam treatments invoke ‘expanded octets’."
     ],
     "exam": "Remember the exam distinction: period-2 elements cannot expand the octet in ordinary Lewis structures.",
-    "modern": "Modern bonding descriptions of hypervalent p-block compounds generally do not require energetically high d-orbital hybridisation. Delocalised 3c–4e bonding and ionic resonance contributions are more realistic."
+    "modern": "Modern bonding descriptions of hypervalent p-block compounds generally do not require energetically high d-orbital hybridisation. Delocalised 3c–4e bonding and ionic resonance contributions are more realistic.",
+    "examples": [
+      { "title": "Second-period ceiling", "body": "C, N, O and F are not given expanded octets in ordinary Lewis structures. Carbon cannot be assigned five ordinary two-centre bonds." },
+      { "title": "Heavier p-block examples", "body": "PF₅, SF₆ and IF₇ appear in classical high-covalency bookkeeping; label this clearly as an exam model when explaining it." }
+    ]
   },
   {
     "number": 26,
@@ -343,7 +437,10 @@ export const chemicalBondingTopics: ChemicalBondingTopic[] = [
       "Transition metals can display high coordination numbers and apparent covalencies because five d, one s and three p valence-region orbitals are close enough in energy to participate in ligand bonding descriptions. Values depend strongly on oxidation state, ligand size and metal radius; coordination numbers 4, 6, 7, 8 and 9 are common in suitable complexes."
     ],
     "exam": "Maximum covalency in d-block chemistry is not a single universal number fixed only by group number.",
-    "modern": "Avoid interpreting ‘d²sp³ hybridisation’ as a literal measurable rearrangement in every complex. Ligand-field/MO theory provides the more rigorous description."
+    "modern": "Avoid interpreting ‘d²sp³ hybridisation’ as a literal measurable rearrangement in every complex. Ligand-field/MO theory provides the more rigorous description.",
+    "examples": [
+      { "title": "Coordination is context-dependent", "body": "Six-coordinate complexes are common, but metal radius, ligand size and oxidation state can also allow coordination numbers 4, 7, 8 or 9." }
+    ]
   },
   {
     "number": 27,
@@ -356,7 +453,12 @@ export const chemicalBondingTopics: ChemicalBondingTopic[] = [
       "CO₂: C central; SO₄²⁻: S central; HCN: C central.",
       "Peroxides contain O–O; do not force every oxygen terminal if the known connectivity requires an O–O bond."
     ],
-    "exam": "After choosing the centre, verify formal charges and chemically known connectivity."
+    "exam": "After choosing the centre, verify formal charges and chemically known connectivity.",
+    "examples": [
+      { "title": "Central-atom rule in action", "body": "CO₂ is O-C-O, HCN is H-C-N and sulfate is centred on S. H and F are normally terminal atoms." },
+      { "title": "Topology check: N₂O", "body": "N-N-O gives lower and more sensible formal-charge arrangements than an N-O-N skeleton, where oxygen would carry an unfavourable +2 formal charge." },
+      { "title": "Known connectivity wins", "body": "Peroxides contain an O-O link. Do not force every oxygen to be terminal merely because oxygen is electronegative." }
+    ]
   },
   {
     "number": 28,

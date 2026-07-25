@@ -13,11 +13,13 @@
     "test:portal-entitlements": "node --experimental-strip-types --test tests/portal-entitlements.test.ts",
     "verify:portal-bundle": "node scripts/verify-portal-entitlement-bundle.mjs",
     "validate-neet-pyq": "node --experimental-strip-types scripts/validate-neet-chemistry-pyq.mjs",
-    "launch-safety": "node scripts/launch-safety-checks.mjs"
+    "launch-safety": "node scripts/launch-safety-checks.mjs",
+    "postinstall": "node scripts/copy-rdkit-assets.mjs"
   },
   "dependencies": {
     "@google/genai": "^2.10.0",
     "@google/generative-ai": "^0.24.1",
+    "@rdkit/rdkit": "2025.3.4-1.0.0",
     "@supabase/ssr": "^0.12.0",
     "@supabase/supabase-js": "^2.108.2",
     "@vercel/analytics": "^2.0.1",

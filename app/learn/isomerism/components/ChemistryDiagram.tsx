@@ -1,3 +1,6 @@
+import { ReactionScheme } from "@/components/chemistry/ReactionScheme";
+import { ISOMERISM_MOLECULES as M } from "../molecules";
+
 type Point = { x: number; y: number };
 const ink = "currentColor";
 
@@ -29,15 +32,32 @@ export function ChairDiagram({ title, substituents = [] }: { title: string; subs
   return <svg fill="currentColor" viewBox="0 0 330 225" className="h-auto w-full text-slate-100" role="img" aria-label={title}><path d="M42 132 L92 70 L160 112 L226 52 L276 120 L210 160 Z" fill="none" stroke={ink} strokeWidth="4" strokeLinejoin="round"/>{points.map((point, i) => <text key={i} x={point.x} y={point.y - 9} textAnchor="middle" fontSize="11" fill="#94a3b8">C{i + 1}</text>)}{substituents.map((sub, i) => { const start = points[sub.carbon - 1]; const axialEnd = {x:start.x, y:start.y + (sub.orientation === "up" ? -46 : 46)}; const equatorialEnd = {x:equatorialX[sub.carbon], y:start.y + (sub.orientation === "up" ? -38 : 38)}; const end = sub.position === "axial" ? axialEnd : equatorialEnd; return <g key={i}><line x1={start.x} y1={start.y} x2={end.x} y2={end.y} stroke={sub.position === "axial" ? "#67e8f9" : "#c4b5fd"} strokeWidth="3"/><text x={end.x + (end.x < start.x ? -4 : 4)} y={end.y + (end.y < start.y ? -5 : 15)} textAnchor={end.x < start.x ? "end" : "start"} fontSize="16" fontWeight="600">{sub.label}</text></g>; })}<text x="165" y="216" textAnchor="middle" fontSize="13" fill="#94a3b8">cyan = axial · violet = equatorial</text></svg>;
 }
 
+// Retained as a semantic CIP teaching diagram: the priority badges and
+// same-side/opposite-side guide are annotations, not ordinary molecule layout.
 export function EZAlkene({ configuration }: { configuration: "E" | "Z" }) {
   const rightHighY = configuration === "Z" ? 49 : 171; const rightLowY = configuration === "Z" ? 171 : 49;
   return <svg fill="currentColor" viewBox="0 0 420 230" className="h-auto w-full text-slate-100" role="img" aria-label={`${configuration} but 2 ene with CIP priorities`}><g stroke={ink} strokeWidth="4" strokeLinecap="round"><line x1="166" y1="112" x2="254" y2="112"/><line x1="166" y1="105" x2="254" y2="105"/><line x1="166" y1="119" x2="254" y2="119"/><line x1="166" y1="112" x2="83" y2="49"/><line x1="166" y1="112" x2="83" y2="171"/><line x1="254" y1="112" x2="337" y2={rightHighY}/><line x1="254" y1="112" x2="337" y2={rightLowY}/></g><g fontSize="18" fontWeight="600"><text x="45" y="44">CH₃</text><text x="58" y="187">H</text><text x="345" y={rightHighY - 5}>CH₃</text><text x="345" y={rightLowY + 18}>H</text></g><PriorityBadge n={1} x={92} y={72}/><PriorityBadge n={2} x={92} y={151}/><PriorityBadge n={1} x={328} y={rightHighY + (rightHighY < 112 ? 23 : -23)}/><PriorityBadge n={2} x={328} y={rightLowY + (rightLowY < 112 ? 23 : -23)}/><path d={configuration === "Z" ? "M110 30 H310" : "M110 30 C180 5 240 205 310 190"} fill="none" stroke="#67e8f9" strokeWidth="2.5" strokeDasharray="5 4"/><text x="210" y="214" textAnchor="middle" fontSize="15" fill="#67e8f9">{configuration}: priority-1 groups are {configuration === "Z" ? "on the same side" : "on opposite sides"}</text></svg>;
 }
 
 export function AcetylacetoneTautomers() {
-  return <svg fill="currentColor" viewBox="0 0 800 270" className="min-w-[640px] w-full text-slate-100" role="img" aria-label="Acetylacetone keto enol tautomeric pair with intramolecular hydrogen bond"><g stroke={ink} strokeWidth="3.5" strokeLinecap="round" fill="none"><line x1="65" y1="150" x2="140" y2="108"/><line x1="140" y1="108" x2="215" y2="150"/><line x1="215" y1="150" x2="290" y2="108"/><line x1="290" y1="108" x2="365" y2="150"/><line x1="140" y1="108" x2="140" y2="50"/><line x1="147" y1="108" x2="147" y2="50"/><line x1="290" y1="108" x2="290" y2="50"/><line x1="297" y1="108" x2="297" y2="50"/><line x1="455" y1="150" x2="530" y2="108"/><line x1="530" y1="108" x2="605" y2="150"/><line x1="537" y1="108" x2="612" y2="150"/><line x1="605" y1="150" x2="680" y2="108"/><line x1="680" y1="108" x2="755" y2="150"/><line x1="680" y1="108" x2="680" y2="50"/><line x1="687" y1="108" x2="687" y2="50"/></g><path d="M530 78 Q604 32 680 50" fill="none" stroke="#c4b5fd" strokeWidth="2.5" strokeDasharray="6 5"/><g fontSize="20" fontWeight="600"><text x="17" y="170">CH₃</text><text x="130" y="38">O</text><text x="198" y="170">CH₂</text><text x="280" y="38">O</text><text x="342" y="170">CH₃</text><text x="407" y="170">CH₃</text><text x="518" y="82">OH</text><text x="588" y="170">CH</text><text x="670" y="38">O</text><text x="732" y="170">CH₃</text></g><text x="395" y="135" fontSize="32" fill="#67e8f9">⇌</text><text x="205" y="224" textAnchor="middle" fontSize="16" fill="#67e8f9">diketo form</text><text x="605" y="224" textAnchor="middle" fontSize="16" fill="#67e8f9">chelated enol form</text><text x="635" y="28" textAnchor="middle" fontSize="13" fill="#c4b5fd">O···H–O intramolecular H bond</text></svg>;
+  return (
+    <ReactionScheme
+      reactants={[M.acetylacetoneKeto]}
+      products={[M.acetylacetoneEnol]}
+      reagentAbove="keto–enol tautomerism"
+      conditionBelow="O···H–O intramolecular hydrogen bonding stabilises the chelated enol"
+      arrow="equilibrium"
+    />
+  );
 }
 
 export function ButanoneEnolPair() {
-  return <svg fill="currentColor" viewBox="0 0 760 220" className="min-w-[580px] w-full text-slate-100" role="img" aria-label="Butan 2 one keto enol tautomeric pair"><g stroke={ink} strokeWidth="3.5" strokeLinecap="round"><line x1="55" y1="130" x2="130" y2="88"/><line x1="130" y1="88" x2="205" y2="130"/><line x1="205" y1="130" x2="280" y2="88"/><line x1="130" y1="88" x2="130" y2="35"/><line x1="137" y1="88" x2="137" y2="35"/><line x1="435" y1="130" x2="510" y2="88"/><line x1="442" y1="130" x2="517" y2="88"/><line x1="510" y1="88" x2="585" y2="130"/><line x1="585" y1="130" x2="660" y2="88"/><line x1="510" y1="88" x2="510" y2="35"/></g><g fontSize="20" fontWeight="600"><text x="10" y="149">CH₃</text><text x="120" y="24">O</text><text x="187" y="149">CH₂</text><text x="262" y="82">CH₃</text><text x="390" y="149">CH₂</text><text x="498" y="24">OH</text><text x="567" y="149">CH₂</text><text x="642" y="82">CH₃</text></g><text x="350" y="114" fontSize="30" fill="#67e8f9">⇌</text><text x="152" y="192" textAnchor="middle" fontSize="15" fill="#67e8f9">butan-2-one</text><text x="552" y="192" textAnchor="middle" fontSize="15" fill="#67e8f9">but-1-en-2-ol</text></svg>;
+  return (
+    <ReactionScheme
+      reactants={[M.butan2one]}
+      products={[M.but1en2ol]}
+      reagentAbove="keto–enol tautomerism"
+      arrow="equilibrium"
+    />
+  );
 }

@@ -237,13 +237,36 @@ export default function IsomerismPart02() {
               </div>
             </div>
 
-            <Pending>
-              <b>Source example pending closer transcription:</b> part a, the dichloro derivatives of C₄H₁₀, shows 7 structures in the source, but a
-              full symmetry count gives 9 distinct dichlorobutanes (6 from n-butane + 3 from isobutane) — the mismatch needs a closer source re-check
-              before publishing a specific 7- or 9-structure answer. The alkene-hydrogenation problem immediately after this exercise (&ldquo;how many
-              alkenes on hydrogenation can produce the following alkane?&rdquo;) is also deferred: identifying the exact target alkane and both alkene
-              precursors precisely from the freehand sketch needs a closer pass.
-            </Pending>
+            <div className="mt-6 rounded-xl border border-cyan-300/15 bg-[#050b16] p-4">
+              <p className="text-sm font-bold text-violet-200">a. Total dichloro derivatives of C₄H₁₀ (9)</p>
+              <p className="mt-2 text-sm leading-6 text-slate-300">n-Butane gives 6 (1,1-; 1,2-; 1,3-; 1,4-; 2,2-; 2,3-); 2-methylpropane gives 3 (1,1-; 1,2-; 1,3- relative to the branch carbon) — 6 + 3 = 9.</p>
+              <p className="mt-3 text-xs uppercase tracking-widest text-cyan-300">From n-butane</p>
+              <div className="mt-3 grid gap-4 md:grid-cols-3">
+                <Molecule2D molecule={M.dichlorobutane11} />
+                <Molecule2D molecule={M.dichlorobutane12} />
+                <Molecule2D molecule={M.dichlorobutane13} />
+                <Molecule2D molecule={M.dichlorobutane14} />
+                <Molecule2D molecule={M.dichlorobutane22} />
+                <Molecule2D molecule={M.dichlorobutane23} />
+              </div>
+              <p className="mt-4 text-xs uppercase tracking-widest text-cyan-300">From 2-methylpropane (isobutane)</p>
+              <div className="mt-3 grid gap-4 md:grid-cols-3">
+                <Molecule2D molecule={M.dichloroMethylpropane11} />
+                <Molecule2D molecule={M.dichloroMethylpropane12} />
+                <Molecule2D molecule={M.dichloroMethylpropane13} />
+              </div>
+            </div>
+
+            <div className="mt-6 rounded-xl border border-cyan-300/15 bg-[#050b16] p-4">
+              <p className="text-sm font-bold text-violet-200">How many alkenes hydrogenate to 2,2,4-trimethylpentane (isooctane)?</p>
+              <p className="mt-2 text-sm leading-6 text-slate-300">The quaternary C2 has no hydrogen, so it cannot be part of a C=C formed by simple dehydrogenation — leaving exactly two adjacent-carbon sites with an available H on each side.</p>
+              <div className="mt-4 grid gap-4 md:grid-cols-3">
+                <div><p className="text-xs text-slate-400">Target</p><Molecule2D molecule={M.trimethylpentane224} /></div>
+                <div><p className="text-xs text-slate-400">Terminal alkene</p><Molecule2D molecule={M.trimethylpentene1} /></div>
+                <div><p className="text-xs text-slate-400">Internal alkene</p><Molecule2D molecule={M.trimethylpentene2} /></div>
+              </div>
+              <Note>Both 2,4,4-trimethylpent-1-ene and 2,4,4-trimethylpent-2-ene hydrogenate to 2,2,4-trimethylpentane — two alkene precursors.</Note>
+            </div>
           </Section>
 
           <Section title="6. Tautomerism">

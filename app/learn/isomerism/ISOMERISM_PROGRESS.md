@@ -2,6 +2,16 @@
 
 Primary sources: `Isomerism Kohinoor .pdf` (160 pages) and `Optical isomerism .pdf` (119 pages).
 
+## Isomerism Kohinoor source checkpoint (2026-07-26, batch 2)
+
+- Actual PDF pages visually inspected in this pass: Isomerism Kohinoor pp. 6–10. Cumulative Isomerism Kohinoor independent inspection: 10/160.
+- `part01.tsx` extended with source pp. 6–7: the remaining ring–chain examples (thiol/thietane pair; glucose cyclic-versus-open-chain, the latter rendered as a new `GlucoseOpenChainFischer` Fischer-projection component in `ChemistryDiagram.tsx`), and a full 10-example Functional Isomerism section (alcohol/ether, acid/ester, aldehyde/ketone, nitrile/isonitrile, amine classes, aliphatic/aromatic alcohol, amide classes, nitro/nitrito, amide/oxime, diene/alkyne family).
+- `part02.tsx` rebuilt: the single old ether example (previously mislabeled — corrected from an unverified "methyl butyl / ethyl propyl ether" pair to the source's actual methyl propyl ether / diethyl ether pair) is now a full Metamerism section: the six-structure ether pairwise-classification exercise (with the source's identical/chain/position/metamer answer key), 8 more metamer examples (amine, thioether with its two "too few carbons" non-examples, ester, amide, anhydride, ketone, sulphonate ×2), the four "problems" (i–iv), and the C₃H₆/C₄H₈ complete structural-isomer enumeration exercise. Existing Tautomerism section kept as-is.
+- Added 60 new molecule entries to `molecules.ts` and one new hand-coded SVG component (`GlucoseOpenChainFischer`) for this batch.
+- Deliberately deferred: a complex polycyclic methyl/vinyl-cyclopentane structure pair (page 6, too compressed to transcribe safely) and two unlabeled isolated hexagons on the same page; the C₅H₁₀ part (c) of the isomer-counting exercise, which continues past page 10 (not yet read).
+- `npm run typecheck` and scoped `eslint` on all four changed files pass; every molecule reference cross-checked against `molecules.ts`.
+- Next incomplete source page: Isomerism Kohinoor p. 11 (continuation of the C₅H₁₀ isomer-counting exercise).
+
 ## Isomerism Kohinoor source checkpoint (2026-07-25)
 
 - Actual PDF pages visually inspected in this pass: Isomerism Kohinoor pp. 1–5 (cover + 4 content pages). Cumulative Isomerism Kohinoor independent inspection: 5/160 (was 0/160).

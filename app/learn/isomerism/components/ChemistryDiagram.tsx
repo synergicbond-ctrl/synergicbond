@@ -61,3 +61,33 @@ export function ButanoneEnolPair() {
     />
   );
 }
+
+export function GlucoseOpenChainFischer() {
+  const rows: { y: number; left: string; right: string }[] = [
+    { y: 74, left: "H", right: "OH" },
+    { y: 112, left: "HO", right: "H" },
+    { y: 150, left: "H", right: "OH" },
+    { y: 188, left: "H", right: "OH" },
+  ];
+  return (
+    <svg fill="currentColor" viewBox="0 0 260 260" className="h-auto w-full text-slate-100" role="img" aria-label="Open-chain Fischer projection of D-glucose">
+      <g stroke={ink} strokeWidth="3.5" strokeLinecap="round">
+        <line x1="130" y1="36" x2="130" y2="226" />
+        {rows.map((row) => (
+          <line key={row.y} x1="76" y1={row.y} x2="184" y2={row.y} />
+        ))}
+      </g>
+      <g fontSize="15" fontWeight="600">
+        <text x="130" y="24" textAnchor="middle">CHO</text>
+        {rows.map((row) => (
+          <g key={row.y}>
+            <text x="66" y={row.y + 5} textAnchor="end">{row.left}</text>
+            <text x="194" y={row.y + 5}>{row.right}</text>
+          </g>
+        ))}
+        <text x="130" y="244" textAnchor="middle">CH₂OH</text>
+      </g>
+      <text x="130" y="256" textAnchor="middle" fontSize="11" fill="#67e8f9">D-glucose · open-chain (aldehyde) form</text>
+    </svg>
+  );
+}

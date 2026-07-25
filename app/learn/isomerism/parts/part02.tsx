@@ -1,17 +1,192 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
+import { Molecule2D } from "@/components/chemistry/Molecule2D";
 import { ButanoneEnolPair } from "../components/ChemistryDiagram";
+import { ISOMERISM_MOLECULES as M } from "../molecules";
 
-function Card({ children, caption }: { children: ReactNode; caption: string }) {
-  return <figure className="rounded-xl border border-cyan-300/20 bg-[#050b16] p-4"><div className="overflow-x-auto">{children}</div><figcaption className="mt-3 border-t border-white/10 pt-2 text-xs leading-5 text-slate-400">{caption}</figcaption></figure>;
+function Section({ title, children }: { title: string; children: ReactNode }) {
+  return (
+    <div className="rounded-2xl border border-white/10 bg-white/[.035] p-5">
+      <h2 className="text-xl font-black text-cyan-200">{title}</h2>
+      {children}
+    </div>
+  );
 }
 
-function EtherMetamers() {
-  return <svg fill="currentColor" viewBox="0 0 760 150" className="min-w-[580px] w-full text-slate-100" role="img" aria-label="Methyl butyl ether and ethyl propyl ether metamer pair"><g stroke="currentColor" strokeWidth="3"><path d="M65 85H150M150 85H235M235 85H320M435 85H520M520 85H605M605 85H690"/></g><g fontSize="20"><text x="34" y="113">CH₃</text><text x="134" y="90">O</text><text x="211" y="113">CH₂</text><text x="296" y="113">CH₂CH₃</text><text x="350" y="90" fill="#67e8f9">and</text><text x="405" y="113">CH₃CH₂</text><text x="505" y="90">O</text><text x="580" y="113">CH₂CH₂CH₃</text></g></svg>;
+function Example({ n, cols = 2, children }: { n: string; cols?: number; children: ReactNode }) {
+  return (
+    <div className="mt-5">
+      <p className="text-sm font-bold text-violet-200">Example {n}</p>
+      <div className={`mt-3 grid gap-4 ${cols === 4 ? "md:grid-cols-4" : cols === 3 ? "md:grid-cols-3" : "md:grid-cols-2"}`}>{children}</div>
+    </div>
+  );
+}
+
+function Note({ children }: { children: ReactNode }) {
+  return <p className="mt-4 rounded-xl border border-violet-300/20 bg-violet-300/[.06] p-4 text-sm text-violet-50">{children}</p>;
+}
+
+function Pending({ children }: { children: ReactNode }) {
+  return <p className="mt-4 rounded-xl border border-amber-300/25 bg-amber-300/[.06] p-4 text-xs leading-6 text-amber-100">{children}</p>;
 }
 
 function KetoEnol() { return <ButanoneEnolPair />; }
 
 export default function IsomerismPart02() {
-  return <main className="min-h-screen bg-[#08111f] px-4 py-8 text-white sm:px-6 sm:py-12"><article className="mx-auto max-w-6xl"><Link href="/learn/isomerism" className="rounded-full border border-cyan-300/30 bg-cyan-300/10 px-4 py-2 text-sm font-bold text-cyan-100">Isomerism</Link><header className="mt-6 rounded-3xl border border-cyan-300/15 bg-[radial-gradient(circle_at_top_right,_rgba(34,211,238,.18),_transparent_35%),linear-gradient(135deg,rgba(34,211,238,.08),rgba(2,6,23,.7),rgba(139,92,246,.1))] p-6 sm:p-9"><p className="text-xs font-black uppercase tracking-[.24em] text-cyan-200">Isomerism source · pages 8–16 · Part 2</p><h1 className="mt-3 text-3xl font-black sm:text-5xl">Metamerism and tautomerism</h1></header><section className="mt-7 space-y-6"><section className="rounded-2xl border border-white/10 bg-white/[.035] p-5"><h2 className="text-xl font-black text-cyan-200">Page 8: Metamerism</h2><p className="mt-3 leading-7 text-slate-200">Metamers have the same molecular formula and functional group, but differ in the alkyl substituents on the two sides of a bivalent or polyvalent functional group. The source lists ether, thioether, amine, ketone, amide, ester, sulphonate and acid anhydride cases.</p><Card caption="Methyl butyl ether and ethyl propyl ether: both are ethers of formula C₅H₁₂O. Oxygen remains the same bivalent functional group; the carbon distribution changes from 1+4 to 2+3."><EtherMetamers /></Card><ol className="mt-4 list-decimal space-y-2 pl-5 text-sm leading-6 text-slate-300"><li>Verify formula: each structure contains five carbon atoms, twelve hydrogen atoms and one oxygen atom.</li><li>Verify functional group: both have C–O–C connectivity.</li><li>Compare alkyl groups: methyl/butyl versus ethyl/propyl.</li><li><b>Conclusion:</b> the pair is metameric, not functional isomeric.</li></ol><aside className="mt-4 rounded-xl border border-amber-300/25 bg-amber-300/[.07] p-4 text-sm text-amber-50"><b>Restriction:</b> monovalent functional groups cannot give metamerism because there is no group on each side to redistribute.</aside></section><section className="rounded-2xl border border-white/10 bg-white/[.035] p-5"><h2 className="text-xl font-black text-cyan-200">Pages 14–16: Tautomerism</h2><p className="mt-3 leading-7 text-slate-200">Tautomerism is the dynamic interconversion of constitutional isomers by migration of an acidic hydrogen and displacement of a π bond. The forms are in equilibrium, are functional isomers, and are not resonance forms because an atom changes position. The source also uses desmotropism, cryptomerism, allelotropy and prototropy for this phenomenon.</p><Card caption="Keto–enol tautomerism. An α-hydrogen from the carbon adjacent to the carbonyl is transferred to oxygen while the C=O π bond becomes C=C."><KetoEnol /></Card><ul className="mt-4 list-disc space-y-2 pl-5 text-sm leading-6 text-slate-300"><li>Base catalysis begins with removal of α-H to give an enolate; protonation at oxygen gives the enol.</li><li>Acid catalysis proceeds by carbonyl activation followed by α-deprotonation.</li><li>Acid and base act as catalysts and are regenerated.</li><li>The more stable tautomer is favoured; the source begins its stability discussion after these mechanism pages.</li></ul></section></section><nav className="mt-8 flex justify-between border-t border-white/10 pt-6"><Link href="/learn/isomerism/1" className="rounded-xl border border-white/15 px-4 py-3 text-sm font-bold text-slate-200">← 1</Link><Link href="/learn/isomerism/3" className="rounded-xl border border-cyan-300/30 bg-cyan-300/10 px-4 py-3 text-sm font-bold text-cyan-100">3 →</Link></nav></article></main>;
+  return (
+    <main className="min-h-screen bg-[#08111f] px-4 py-8 text-white sm:px-6 sm:py-12">
+      <article className="mx-auto max-w-6xl">
+        <Link href="/learn/isomerism" className="rounded-full border border-cyan-300/30 bg-cyan-300/10 px-4 py-2 text-sm font-bold text-cyan-100">Isomerism</Link>
+        <header className="mt-6 rounded-3xl border border-cyan-300/15 bg-[radial-gradient(circle_at_top_right,_rgba(34,211,238,.18),_transparent_35%),linear-gradient(135deg,rgba(34,211,238,.08),rgba(2,6,23,.7),rgba(139,92,246,.1))] p-6 sm:p-9">
+          <p className="text-xs font-black uppercase tracking-[.24em] text-cyan-200">Isomerism source · pages 8–16 · Part 2</p>
+          <h1 className="mt-3 text-3xl font-black sm:text-5xl">Metamerism, complete-isomer counting and tautomerism</h1>
+        </header>
+
+        <section className="mt-7 space-y-6">
+          <Section title="5. Metamerism">
+            <p className="mt-3 leading-7 text-slate-200">
+              Compounds with the same molecular formula and the same functional group, but differing in the alkyl substituents present on the two
+              sides of a bivalent or polyvalent functional group, show metamerism. It appears only for bivalent/polyvalent groups — ether, thioether,
+              amine, ketone, amide, ester, sulphonate and acid anhydride — never for a monovalent group, since there is no second side to redistribute.
+            </p>
+
+            <Example n="1a — ether">
+              <Molecule2D molecule={M.methoxypropane} />
+              <Molecule2D molecule={M.ethoxyethane} />
+            </Example>
+            <p className="mt-2 text-sm leading-6 text-slate-300">Methyl propyl ether and diethyl ether: both C₄H₁₀O, carbon distribution 1+3 versus 2+2.</p>
+
+            <div className="mt-6 rounded-xl border border-cyan-300/15 bg-[#050b16] p-4">
+              <p className="text-sm font-bold text-violet-200">Example 1b — classifying six C₅H₁₂O ethers pairwise</p>
+              <div className="mt-3 grid gap-4 md:grid-cols-3">
+                <div><p className="text-xs text-slate-400">1</p><Molecule2D molecule={M.ethoxypropane1} /></div>
+                <div><p className="text-xs text-slate-400">2</p><Molecule2D molecule={M.ethoxypropane1} /></div>
+                <div><p className="text-xs text-slate-400">3</p><Molecule2D molecule={M.methoxybutane} /></div>
+                <div><p className="text-xs text-slate-400">4</p><Molecule2D molecule={M.methoxybutane2} /></div>
+                <div><p className="text-xs text-slate-400">5</p><Molecule2D molecule={M.methoxyisobutane} /></div>
+                <div><p className="text-xs text-slate-400">6</p><Molecule2D molecule={M.ethoxypropane2} /></div>
+              </div>
+              <p className="mt-3 text-sm leading-6 text-slate-300">The source classifies every pair from this set of six:</p>
+              <div className="mt-2 grid grid-cols-2 gap-x-6 gap-y-1 text-sm text-slate-300 sm:grid-cols-3">
+                <p>1,2 — identical</p><p>2,3 — metamer</p><p>3,4 — position</p>
+                <p>4,5 — chain</p><p>5,6 — metamer</p><p>2,6 — position</p>
+                <p>4,6 — metamer</p><p>1,3 — metamer</p><p>1,5 — metamer</p>
+                <p>1,6 — position</p>
+              </div>
+              <Note>Structures 1 and 2 are drawn from opposite ends but are the same molecule (1-ethoxypropane) — a reminder to check for identical structures before classifying a pair.</Note>
+            </div>
+
+            <Example n="2 — amine">
+              <Molecule2D molecule={M.diethylamineMeta} />
+              <Molecule2D molecule={M.nMethylpropan1amine} />
+            </Example>
+            <p className="mt-2 text-sm leading-6 text-slate-300">Diethylamine and N-methylpropan-1-amine: both C₄H₁₁N, 2+2 versus 1+3.</p>
+
+            <Example n="3 — thioether" cols={4}>
+              <div><p className="text-xs text-slate-400">✗ too few C</p><Molecule2D molecule={M.dimethylSulfide} /></div>
+              <div><p className="text-xs text-slate-400">✗ too few C</p><Molecule2D molecule={M.methylEthylSulfide} /></div>
+              <div><p className="text-xs text-slate-400">✓</p><Molecule2D molecule={M.diethylSulfide} /></div>
+              <div><p className="text-xs text-slate-400">✓</p><Molecule2D molecule={M.methylPropylSulfide} /></div>
+            </Example>
+            <p className="mt-2 text-sm leading-6 text-slate-300">Dimethyl sulfide and methyl ethyl sulfide have too few total carbons for a second alkyl distribution. Diethyl sulfide and methyl propyl sulfide (both C₄H₁₀S) are metamers.</p>
+
+            <Example n="4 — ester">
+              <Molecule2D molecule={M.methylButanoate} />
+              <Molecule2D molecule={M.ethylPropanoate} />
+            </Example>
+            <Example n="5 — amide">
+              <Molecule2D molecule={M.nMethylbutanamide} />
+              <Molecule2D molecule={M.nEthylpropanamide} />
+            </Example>
+            <Example n="6 — acid anhydride">
+              <Molecule2D molecule={M.aceticButanoicAnhydride} />
+              <Molecule2D molecule={M.propanoicAnhydride} />
+            </Example>
+            <Example n="7 — ketone">
+              <Molecule2D molecule={M.heptan2one} />
+              <Molecule2D molecule={M.heptan4one} />
+            </Example>
+            <p className="mt-2 text-sm leading-6 text-slate-300">Heptan-2-one and heptan-4-one: both C₇H₁₄O, carbon distribution 1+5 versus 3+3 around the carbonyl.</p>
+
+            <Example n="8 — sulphonate">
+              <Molecule2D molecule={M.ethylEthanesulfonate} />
+              <Molecule2D molecule={M.methylPropanesulfonate} />
+            </Example>
+            <Example n="9 — sulphonate (ring pair)">
+              <Molecule2D molecule={M.cyclobutylCyclopropanesulfonate} />
+              <Molecule2D molecule={M.cyclopropylCyclobutanesulfonate} />
+            </Example>
+
+            <div className="mt-6 rounded-xl border border-cyan-300/15 bg-[#050b16] p-4">
+              <p className="text-sm font-bold text-violet-200">Problems</p>
+              <div className="mt-3 space-y-5">
+                <div>
+                  <p className="text-xs text-slate-400">i — same molecule, two orientations</p>
+                  <div className="mt-2 grid gap-4 md:grid-cols-2"><Molecule2D molecule={M.phenylCyclohexylEther} /><Molecule2D molecule={M.phenylCyclohexylEther} /></div>
+                  <p className="mt-1 text-sm text-slate-300">Phenyl cyclohexyl ether drawn two ways — same structure, not a metamer pair.</p>
+                </div>
+                <div>
+                  <p className="text-xs text-slate-400">ii — metamer</p>
+                  <div className="mt-2 grid gap-4 md:grid-cols-2"><Molecule2D molecule={M.cyclohexylBenzoate} /><Molecule2D molecule={M.phenylCyclohexanecarboxylate} /></div>
+                </div>
+                <div>
+                  <p className="text-xs text-slate-400">iii — metamer</p>
+                  <div className="mt-2 grid gap-4 md:grid-cols-2"><Molecule2D molecule={M.mTolylBenzenesulfonate} /><Molecule2D molecule={M.phenylMToluenesulfonate} /></div>
+                </div>
+                <div>
+                  <p className="text-xs text-slate-400">iv — 2° vs 3° amine (functional isomers, not metamers — different amine class)</p>
+                  <div className="mt-2 grid gap-4 md:grid-cols-2"><Molecule2D molecule={M.nEthylpropan1amine} /><Molecule2D molecule={M.nnDimethylpropan1amine} /></div>
+                </div>
+              </div>
+            </div>
+          </Section>
+
+          <Section title="Structural-isomer counting exercise">
+            <p className="mt-3 leading-7 text-slate-200">Draw all possible structural isomers of the given formula.</p>
+            <Example n="a — C₃H₆, DU = 1">
+              <Molecule2D molecule={M.propene} />
+              <Molecule2D molecule={M.cyclopropane} />
+            </Example>
+            <div className="mt-6 rounded-xl border border-cyan-300/15 bg-[#050b16] p-4">
+              <p className="text-sm font-bold text-violet-200">b — C₄H₈, DU = 1</p>
+              <p className="mt-2 text-xs uppercase tracking-widest text-cyan-300">Acyclic isomers</p>
+              <div className="mt-3 grid gap-4 md:grid-cols-3">
+                <Molecule2D molecule={M.but1ene} />
+                <Molecule2D molecule={M.but2ene} />
+                <Molecule2D molecule={M.isobutylene} />
+              </div>
+              <p className="mt-4 text-xs uppercase tracking-widest text-cyan-300">Cyclic isomers</p>
+              <div className="mt-3 grid gap-4 md:grid-cols-2">
+                <Molecule2D molecule={M.cyclobutane} />
+                <Molecule2D molecule={M.methylcyclopropane} />
+              </div>
+            </div>
+            <Pending>
+              <b>Source example pending closer transcription:</b> part c (C₅H₁₀) begins on the same source page but its full acyclic-plus-cyclic isomer
+              set continues onto the next page, which has not yet been transcribed in this pass.
+            </Pending>
+          </Section>
+
+          <Section title="6. Tautomerism">
+            <p className="mt-3 leading-7 text-slate-200">Tautomerism is the dynamic interconversion of constitutional isomers by migration of an acidic hydrogen and displacement of a π bond. The forms are in equilibrium, are functional isomers, and are not resonance forms because an atom changes position. The source also uses desmotropism, cryptomerism, allelotropy and prototropy for this phenomenon.</p>
+            <div className="mt-5 rounded-xl border border-cyan-300/20 bg-[#050b16] p-4">
+              <div className="overflow-x-auto"><KetoEnol /></div>
+              <p className="mt-3 border-t border-white/10 pt-2 text-xs leading-5 text-slate-400">Keto–enol tautomerism. An α-hydrogen from the carbon adjacent to the carbonyl is transferred to oxygen while the C=O π bond becomes C=C.</p>
+            </div>
+            <ul className="mt-4 list-disc space-y-2 pl-5 text-sm leading-6 text-slate-300">
+              <li>Base catalysis begins with removal of α-H to give an enolate; protonation at oxygen gives the enol.</li>
+              <li>Acid catalysis proceeds by carbonyl activation followed by α-deprotonation.</li>
+              <li>Acid and base act as catalysts and are regenerated.</li>
+              <li>The more stable tautomer is favoured; the source begins its stability discussion after these mechanism pages.</li>
+            </ul>
+          </Section>
+        </section>
+
+        <nav className="mt-8 flex justify-between border-t border-white/10 pt-6">
+          <Link href="/learn/isomerism/1" className="rounded-xl border border-white/15 px-4 py-3 text-sm font-bold text-slate-200">← 1</Link>
+          <Link href="/learn/isomerism/3" className="rounded-xl border border-cyan-300/30 bg-cyan-300/10 px-4 py-3 text-sm font-bold text-cyan-100">3 →</Link>
+        </nav>
+      </article>
+    </main>
+  );
 }

@@ -630,6 +630,13 @@ export const ISOMERISM_MOLECULES = {
     label: "But-2-yne: same C₄H₆ formula as the butadienes — functional isomer of each.",
     theme: "dark",
   }),
+  tertButylMethylEther: molecule({
+    id: "tert-butyl-methyl-ether",
+    structure: { kind: "smiles", value: "COC(C)(C)C" },
+    alt: "Skeletal structure of tert-butyl methyl ether",
+    label: "tert-Butyl methyl ether: one of the four methyl-ether-side C₅H₁₂O isomers.",
+    theme: "dark",
+  }),
   ethoxypropane1: molecule({
     id: "ethoxypropane-metamer-1",
     structure: { kind: "smiles", value: "CCOCCC" },

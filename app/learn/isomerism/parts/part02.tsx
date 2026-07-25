@@ -57,23 +57,26 @@ export default function IsomerismPart02() {
             <p className="mt-2 text-sm leading-6 text-slate-300">Methyl propyl ether and diethyl ether: both C₄H₁₀O, carbon distribution 1+3 versus 2+2.</p>
 
             <div className="mt-6 rounded-xl border border-cyan-300/15 bg-[#050b16] p-4">
-              <p className="text-sm font-bold text-violet-200">Example 1b — classifying six C₅H₁₂O ethers pairwise</p>
-              <div className="mt-3 grid gap-4 md:grid-cols-3">
-                <div><p className="text-xs text-slate-400">1</p><Molecule2D molecule={M.ethoxypropane1} /></div>
-                <div><p className="text-xs text-slate-400">2</p><Molecule2D molecule={M.ethoxypropane1} /></div>
-                <div><p className="text-xs text-slate-400">3</p><Molecule2D molecule={M.methoxybutane} /></div>
-                <div><p className="text-xs text-slate-400">4</p><Molecule2D molecule={M.methoxybutane2} /></div>
-                <div><p className="text-xs text-slate-400">5</p><Molecule2D molecule={M.methoxyisobutane} /></div>
-                <div><p className="text-xs text-slate-400">6</p><Molecule2D molecule={M.ethoxypropane2} /></div>
+              <p className="text-sm font-bold text-violet-200">Example 1b — all six C₅H₁₂O ether isomers</p>
+              <p className="mt-2 text-sm leading-6 text-slate-300">Split as a methyl ether or an ethyl ether, the count is 4 + 2 = 6:</p>
+              <p className="mt-3 text-xs uppercase tracking-widest text-cyan-300">Methyl ethers, C₄H₉–O–CH₃ (4)</p>
+              <div className="mt-3 grid gap-4 md:grid-cols-4">
+                <Molecule2D molecule={M.methoxybutane} />
+                <Molecule2D molecule={M.methoxybutane2} />
+                <Molecule2D molecule={M.methoxyisobutane} />
+                <Molecule2D molecule={M.tertButylMethylEther} />
               </div>
-              <p className="mt-3 text-sm leading-6 text-slate-300">The source classifies every pair from this set of six:</p>
-              <div className="mt-2 grid grid-cols-2 gap-x-6 gap-y-1 text-sm text-slate-300 sm:grid-cols-3">
-                <p>1,2 — identical</p><p>2,3 — metamer</p><p>3,4 — position</p>
-                <p>4,5 — chain</p><p>5,6 — metamer</p><p>2,6 — position</p>
-                <p>4,6 — metamer</p><p>1,3 — metamer</p><p>1,5 — metamer</p>
-                <p>1,6 — position</p>
+              <p className="mt-4 text-xs uppercase tracking-widest text-cyan-300">Ethyl ethers, C₃H₇–O–C₂H₅ (2)</p>
+              <div className="mt-3 grid gap-4 md:grid-cols-2">
+                <Molecule2D molecule={M.ethoxypropane1} />
+                <Molecule2D molecule={M.ethoxypropane2} />
               </div>
-              <Note>Structures 1 and 2 are drawn from opposite ends but are the same molecule (1-ethoxypropane) — a reminder to check for identical structures before classifying a pair.</Note>
+              <Note>All six are metamers of one another (same ether functional group, same C₅H₁₂O formula, different alkyl split around the oxygen).</Note>
+              <Pending>
+                An earlier pass of this pass had attempted a pairwise identical/chain/position/metamer classification table for this set from a more
+                compressed sketch on p.8, but that structure numbering doesn&rsquo;t line up with this clearer p.12 derivation, so the table was removed
+                rather than published against a possibly-mismatched set. Worth a source re-check if that classification table is wanted back.
+              </Pending>
             </div>
 
             <Example n="2 — amine">

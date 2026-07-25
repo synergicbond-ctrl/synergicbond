@@ -2,6 +2,15 @@
 
 Primary sources: `Isomerism Kohinoor .pdf` (160 pages) and `Optical isomerism .pdf` (119 pages).
 
+## Isomerism Kohinoor source checkpoint (2026-07-26, batch 3 — correction pass)
+
+- Actual PDF pages visually inspected in this pass: Isomerism Kohinoor pp. 11–15 (inspected, not all transcribed — see below).
+- **Correction to batch 2**: p.12 gives a clearer, explicitly-arithmetic derivation of the six C₅H₁₂O ether isomers ("4 + 2 = 6": four methyl ethers split by branch position, plus two ethyl ethers) that does not match the six structures built into `part02.tsx` from the more compressed p.8 sketch — that earlier version duplicated one structure (calling it "identical" to itself) and was missing tert-butyl methyl ether entirely. `part02.tsx`'s Example 1b was rebuilt against the p.12 derivation (added `tertButylMethylEther` to `molecules.ts`), and the unverified pairwise identical/chain/position/metamer classification table was removed rather than kept against a structure set it may not correspond to.
+- Deliberately deferred, not transcribed this pass: p.11's C₆H₁₂ (DU=1) complete isomer enumeration — a dense freehand grid of roughly 20 near-identical alkene/cyclic sketches, high risk of transcription error at that density; the C₅H₁₂O alcohol enumeration on p.12 (6 structures drawn against 8 mathematically possible — which 6 needs a closer look before publishing); the "total monochloro derivatives of pentane" exercise (p.12–13); the "total dichloro derivatives of C₄H₁₀ / benzene / cyclohexane / toluene" exercise (p.13–14, four dense structure grids); the alkene-hydrogenation problem (p.14); the alkyl-group-fragment glossary (p.11–12, reference table, not itself a worked example).
+- p.15's "Isomers of Alkane" count table (n=1–33, excluding stereoisomers) is the same table already partially represented in Part 1's position-isomerism counting section (n=1–7) — confirms that earlier transcription is consistent with the fuller source table; no new content needed there yet.
+- `npm run typecheck` and scoped `eslint` on `part02.tsx` + `molecules.ts` pass; every molecule reference cross-checked.
+- Next incomplete source page: Isomerism Kohinoor p.11 (the deferred C₆H₁₂ grid) — needs a slower, more careful pass given its density, or the alcohol/dichloro/monochloro exercises on pp.12–14 could be tackled first instead.
+
 ## Isomerism Kohinoor source checkpoint (2026-07-26, batch 2)
 
 - Actual PDF pages visually inspected in this pass: Isomerism Kohinoor pp. 6–10. Cumulative Isomerism Kohinoor independent inspection: 10/160.

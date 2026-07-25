@@ -23,7 +23,7 @@ In many blast-furnace zones, **CO is the chief direct reducing gas**, even thoug
 ---
 
 ## 3. Carbon Reduction / Smelting
-![Carbon reduction of Fe, Zn and Sn oxides](/notes/metallurgy/reference/carbon-reduction.webp)
+![Carbon reduction of Fe, Zn and Sn oxides](/notes/metallurgy/reference/carbon-reduction-dark-v4.webp)
 
 
 **Smelting** is high-temperature extraction in which a charge containing ore/oxide, reducing agent and flux is heated so that metal and slag phases can separate.
@@ -65,7 +65,7 @@ A good slag generally:
 ---
 
 ## 4. Self-Reduction / Auto-Reduction
-![Self-reduction loop](/notes/metallurgy/reference/self-reduction.webp)
+![Self-reduction loop](/notes/metallurgy/reference/self-reduction-dark-v4.webp)
 
 
 Some sulphide ores can supply their own reducing species after **partial oxidation**. No external carbon reducing agent is required in the decisive metal-forming step.

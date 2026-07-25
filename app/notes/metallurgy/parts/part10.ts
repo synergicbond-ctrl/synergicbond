@@ -10,7 +10,7 @@ The source organises Mg extraction in three major steps:
 3. fused-salt electrolysis.
 
 
-![Fused magnesium chloride electrolysis](/notes/metallurgy/reference/molten-electrolysis.webp)
+![Fused magnesium chloride electrolysis](/notes/metallurgy/reference/molten-electrolysis-dark-v4.webp)
 
 
 ## Magnesium route — source details restored

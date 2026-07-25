@@ -111,7 +111,7 @@ These questions are excellent redox-equilibrium exercises and are retained inten
 ---
 
 ## Final Appendix Takeaway
-![Metallurgy synthesis matrix](/notes/metallurgy/reference/master-matrix.webp)
+![Metallurgy synthesis matrix](/notes/metallurgy/reference/master-matrix-dark-v4.webp)
 
 Pages 72–81 are best understood as a **reaction-chemistry extension**, not as part of the metallurgy teaching sequence. Keeping them in a separate appendix prevents the website chapter from becoming pedagogically disordered while still satisfying full-source coverage.
 

@@ -51,9 +51,9 @@ The borate enters the slag phase.
 
 > **Source-preservation note:** exact historical reagent sequences vary by process and era. The website keeps the conceptual purification steps without presenting unsafe operating instructions.
 
-![Cyanide process for silver and gold](/notes/metallurgy/reference/cyanide-process.webp)
+![Cyanide process for silver and gold](/notes/metallurgy/reference/cyanide-process-dark-v4.webp)
 
-![Parkes desilverisation](/notes/metallurgy/reference/parkes-process.webp)
+![Parkes desilverisation](/notes/metallurgy/reference/parkes-process-dark-v4.webp)
 
 
 ## Source-page details restored

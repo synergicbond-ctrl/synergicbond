@@ -30,7 +30,7 @@ which can carry iron into slag.
 
 # 2. Blast Furnace — Extraction of Iron
 
-![Blast furnace zones](/notes/metallurgy/reference/blast-furnace.webp)
+![Blast furnace zones](/notes/metallurgy/reference/blast-furnace-dark-v4.webp)
 
 A classical charge contains:
 - iron oxide/sinter/pellets,

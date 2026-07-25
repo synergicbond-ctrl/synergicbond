@@ -140,7 +140,7 @@ Heating drives off Hg because of its much greater volatility, leaving Ag/Au behi
 
 ## 8. Electrorefining — General Principle
 
-![Electrorefining cell](/notes/metallurgy/reference/electrorefining.webp)
+![Electrorefining cell](/notes/metallurgy/reference/electrorefining-dark-v4.webp)
 
 - **Anode:** impure metal.
 - **Cathode:** thin sheet/starting surface of pure metal.

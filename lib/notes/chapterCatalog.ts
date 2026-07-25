@@ -14,7 +14,8 @@
 //   thermodynamics 30 · chemical-equilibrium 18 · electrochemistry 24 ·
 //   mole-concept 15 · stoichiometry 9 · concentration-terms 6 · eudiometry 6 ·
 //   redox 10 lessons (15 sections) · hydrogen 8 lessons (72 sections) ·
-//   periodic-table master notes · isomerism 40 parts (169 source modules).
+//   periodic-table master notes · p-block-elements 20 lessons ·
+//   isomerism 40 parts (169 source modules).
 // ─────────────────────────────────────────────────────────────────────────────
 
 export interface AuthoredCourse {
@@ -178,6 +179,16 @@ export const AUTHORED_COURSES: AuthoredCourse[] = [
     lessonLabel: "8 lessons · 72 sections",
     premium: true,
     description: "Isotopes, dihydrogen, ortho–para hydrogen, hydrides, water, heavy water, hydrogen peroxide, hydrogen bonding and hydrogen economy.",
+  },
+  // ── P-block Elements ──────────────────────────────────────────────────────
+  {
+    id: "p-block-elements",
+    syllabusId: "p-block-elements",
+    title: "P-block Elements",
+    href: "/notes/p-block",
+    lessonLabel: "20 lessons",
+    premium: true,
+    description: "NCERT-first JEE Advanced notes for Groups 13–18: trends, boron and carbon chemistry, nitrogen and sulphur oxoacids, halogens, interhalogens and xenon compounds.",
   },
 ];
 

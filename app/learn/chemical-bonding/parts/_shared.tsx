@@ -78,10 +78,10 @@ export function ChemBondPartShell({ part, title, children }: { part: number; tit
     <ChapterShell kicker="JEE Advanced Chemistry" subtitle="Chemical Bonding & Molecular Structure" tabs={chemBondTabs(part)}>
       <ChapterPartStrip hubHref="/learn/chemical-bonding" hubLabel="Chemical Bonding — all parts" positionLabel={`Part ${String(part).padStart(2, "0")} of ${chemBondPartMeta.length}`} />
       <article className="mx-auto max-w-6xl text-white">
-        <header style={{ background: "#122232", border: "1px solid #24405c", borderLeft: "4px solid #5fd4ea", borderRadius: 13, padding: "18px 20px" }}>
+        <header className="relative overflow-hidden bg-[linear-gradient(118deg,#07141f_0%,#10283a_48%,#16142e_100%)]" style={{ border: "1px solid #285273", borderLeft: "4px solid #38d8f0", borderRadius: 13, padding: "20px 22px" }}>
           <p className="text-[11px] font-bold uppercase tracking-[0.3em] text-[#5fd4ea]">Chemical Bonding · Part {String(part).padStart(2, "0")}</p>
-          <h1 className="mt-3 text-3xl font-black tracking-tight sm:text-4xl" style={{ fontFamily: "Georgia, 'Iowan Old Style', 'Times New Roman', serif" }}>{title}</h1>
-          <p className="mt-2 text-sm" style={{ color: "#91a9bc" }}>Authoritative 189-topic JEE Advanced sequence · part {part} of {chemBondPartMeta.length}</p>
+          <h1 className="mt-3 bg-gradient-to-r from-cyan-200 via-blue-300 to-violet-300 bg-clip-text text-3xl font-black tracking-tight text-transparent sm:text-4xl" style={{ fontFamily: "Georgia, 'Iowan Old Style', 'Times New Roman', serif" }}>{title}</h1>
+          <p className="mt-2 text-sm text-slate-300">Authoritative 189-topic JEE Advanced sequence · part {part} of {chemBondPartMeta.length}</p>
         </header>
         <div className="mt-8 space-y-8">{children}</div>
         <ChapterLessonPager prev={chemBondLessonRef(currentIndex - 1)} next={chemBondLessonRef(currentIndex + 1)} hubHref="/learn/chemical-bonding" hubLabel="All lessons" />
@@ -91,17 +91,17 @@ export function ChemBondPartShell({ part, title, children }: { part: number; tit
 }
 
 export function NoteBlock({ title, children }: { title?: string; children: ReactNode }) {
-  return <div className="rounded-2xl border border-white/[0.09] bg-white/[0.045] p-5 shadow-lg shadow-black/10 sm:p-6">{title ? <h2 className="mb-3 text-lg font-black text-cyan-200">{title}</h2> : null}<div className="space-y-3 text-sm leading-relaxed text-white/78 sm:text-base">{children}</div></div>;
+  return <div className="rounded-2xl border border-cyan-300/[0.12] bg-[linear-gradient(135deg,rgba(16,33,48,.88),rgba(12,20,35,.9))] p-5 shadow-lg shadow-black/20 sm:p-6">{title ? <h2 className="mb-3 text-lg font-black text-cyan-200">{title}</h2> : null}<div className="space-y-3 text-sm leading-relaxed text-slate-100 sm:text-base">{children}</div></div>;
 }
 
 export function TopicBlock({ number, title, children }: { number: number; title: string; children: ReactNode }) {
   return (
-    <section id={`topic-${number}`} className="scroll-mt-24 rounded-2xl border border-white/[0.09] bg-white/[0.045] p-5 shadow-lg shadow-black/10 sm:p-6">
+    <section id={`topic-${number}`} className="scroll-mt-24 rounded-2xl border border-cyan-300/[0.12] bg-[linear-gradient(135deg,rgba(17,34,49,.9),rgba(12,21,35,.94))] p-5 shadow-lg shadow-black/20 sm:p-6">
       <div className="mb-3 flex items-start gap-3">
         <span className="flex h-8 min-w-8 items-center justify-center rounded-lg border border-cyan-300/25 bg-cyan-300/[0.08] px-2 text-xs font-black text-cyan-200">{number}</span>
         <h2 className="text-lg font-black leading-snug text-cyan-100 sm:text-xl">{title}</h2>
       </div>
-      <div className="space-y-3 text-sm leading-relaxed text-white/78 sm:text-base">{children}</div>
+      <div className="space-y-3 text-[15px] leading-7 text-slate-100 sm:text-base sm:leading-7">{children}</div>
     </section>
   );
 }

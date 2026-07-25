@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
 import { Molecule2D } from "@/components/chemistry/Molecule2D";
+import { GlucoseOpenChainFischer } from "../components/ChemistryDiagram";
 import { ISOMERISM_MOLECULES as M } from "../molecules";
 
 function Section({ title, children }: { title: string; children: ReactNode }) {
@@ -37,8 +38,8 @@ export default function IsomerismPart01() {
           Isomerism
         </Link>
         <header className="mt-6 rounded-3xl border border-cyan-300/15 bg-[radial-gradient(circle_at_top_right,_rgba(34,211,238,.18),_transparent_35%),linear-gradient(135deg,rgba(34,211,238,.08),rgba(2,6,23,.7),rgba(139,92,246,.1))] p-6 sm:p-9">
-          <p className="text-xs font-black uppercase tracking-[.24em] text-cyan-200">Isomerism source · pages 2–5 · Part 1</p>
-          <h1 className="mt-3 text-3xl font-black sm:text-5xl">Structural isomerism: chain, position and ring–chain</h1>
+          <p className="text-xs font-black uppercase tracking-[.24em] text-cyan-200">Isomerism source · pages 2–7 · Part 1</p>
+          <h1 className="mt-3 text-3xl font-black sm:text-5xl">Structural isomerism: chain, position, ring–chain and functional</h1>
           <p className="mt-3 max-w-3xl text-slate-300">
             Structural (constitutional) isomers share a molecular formula but have a different structural formula. This part works through the source&rsquo;s
             worked examples for chain, position and ring–chain isomerism.
@@ -201,7 +202,91 @@ export default function IsomerismPart01() {
               <Molecule2D molecule={M.methyloxetane2} />
               <Molecule2D molecule={M.cyclobutanol} />
             </Example>
-            <p className="mt-2 text-sm leading-6 text-slate-300">But-3-en-1-ol (open chain, labelled a in the source) shares its degree of unsaturation with two cyclic forms: a cyclic ether (b) and a cyclic alcohol (c).</p>
+            <p className="mt-2 text-sm leading-6 text-slate-300">But-3-en-1-ol (open chain, labelled a in the source) shares its degree of unsaturation with two cyclic forms: a cyclic ether (b) and a cyclic alcohol (c). The source states a,b and a,c are both ring–chain isomer pairs.</p>
+
+            <Example n="4">
+              <Molecule2D molecule={M.allylMercaptan} />
+              <Molecule2D molecule={M.thietane} />
+            </Example>
+            <p className="mt-2 text-sm leading-6 text-slate-300">Prop-2-ene-1-thiol (allyl mercaptan) versus thietane: the same C₃H₆S degree of unsaturation as a π bond or as a ring.</p>
+
+            <Example n="5 — glucose">
+              <Molecule2D molecule={M.glucopyranose} />
+              <div className="rounded-xl border border-cyan-300/20 bg-[#050b16] p-4"><GlucoseOpenChainFischer /></div>
+            </Example>
+            <p className="mt-2 text-sm leading-6 text-slate-300">Glucose exists predominantly as the cyclic hemiacetal (pyranose) form, in equilibrium with a small proportion of the open-chain aldehyde form drawn as a Fischer projection.</p>
+
+            <Pending>
+              <b>Source example pending closer transcription:</b> a complex polycyclic structure pair with methyl and vinyl-substituted cyclopentane rings
+              (immediately after example 4 in the source) is too compressed in the freehand sketch to transcribe its exact connectivity with confidence.
+            </Pending>
+          </Section>
+
+          <Section title="4. Functional isomerism">
+            <p className="mt-3 leading-7 text-slate-200">Compounds having the same molecular formula but a different functional group are called functional isomers.</p>
+
+            <Example n="1 — alcohol / ether">
+              <Molecule2D molecule={M.propan1ol} />
+              <Molecule2D molecule={M.methoxyethane} />
+            </Example>
+            <Example n="2 — carboxylic acid / ester">
+              <Molecule2D molecule={M.butanoicAcid} />
+              <Molecule2D molecule={M.methylPropanoate} />
+            </Example>
+            <Example n="3 — aldehyde / ketone">
+              <Molecule2D molecule={M.propanal} />
+              <Molecule2D molecule={M.acetone} />
+            </Example>
+            <p className="mt-2 text-sm leading-6 text-slate-300">Both are CₙH₂ₙO; the source also notes the enol tautomer of the aldehyde sits alongside this pair.</p>
+
+            <Example n="4 — nitrile / isonitrile">
+              <Molecule2D molecule={M.propanenitrile} />
+              <Molecule2D molecule={M.propylIsocyanide} />
+            </Example>
+            <p className="mt-2 text-sm leading-6 text-slate-300">R–C≡N versus R–N≡C.</p>
+
+            <Example n="5 — amine classes" cols={3}>
+              <Molecule2D molecule={M.butan1amine} />
+              <Molecule2D molecule={M.nMethylpropan1amine} />
+              <Molecule2D molecule={M.nnDimethylethanamine} />
+            </Example>
+            <p className="mt-2 text-sm leading-6 text-slate-300">1°, 2° and 3° amines are functional isomers of one another (all C₄H₁₁N here).</p>
+
+            <Example n="6 — aliphatic / aromatic alcohol" cols={3}>
+              <Molecule2D molecule={M.benzylAlcohol} />
+              <Molecule2D molecule={M.oCresol} />
+              <Molecule2D molecule={M.anisole} />
+            </Example>
+            <p className="mt-2 text-sm leading-6 text-slate-300">Benzyl alcohol (aliphatic alcohol), o-cresol (aromatic alcohol) and anisole (ether) are all C₇H₈O.</p>
+
+            <Example n="7 — amide classes" cols={3}>
+              <Molecule2D molecule={M.butanamide} />
+              <Molecule2D molecule={M.nMethylpropanamide} />
+              <Molecule2D molecule={M.nnDimethylacetamide} />
+            </Example>
+            <p className="mt-2 text-sm leading-6 text-slate-300">1°, 2° and 3° amides, all C₄H₉NO.</p>
+
+            <Example n="8 — nitro / nitrito">
+              <Molecule2D molecule={M.nitrobenzene} />
+              <Molecule2D molecule={M.phenylNitrite} />
+            </Example>
+
+            <Example n="9 — amide / oxime">
+              <Molecule2D molecule={M.butanamide} />
+              <Molecule2D molecule={M.butanalOxime} />
+            </Example>
+
+            <Example n="10a — diene / alkyne">
+              <Molecule2D molecule={M.allene} />
+              <Molecule2D molecule={M.propyne} />
+            </Example>
+            <Example n="10b — diene / alkyne family" cols={4}>
+              <Molecule2D molecule={M.buta12diene} />
+              <Molecule2D molecule={M.buta13diene} />
+              <Molecule2D molecule={M.but1yneFunc} />
+              <Molecule2D molecule={M.but2yneFunc} />
+            </Example>
+            <Note>All four are C₄H₆. The source marks each diene/alkyne cross-pair as functional isomers: (buta-1,2-diene, but-1-yne), (buta-1,2-diene, but-2-yne), (buta-1,3-diene, but-1-yne) and (buta-1,3-diene, but-2-yne).</Note>
           </Section>
         </section>
 

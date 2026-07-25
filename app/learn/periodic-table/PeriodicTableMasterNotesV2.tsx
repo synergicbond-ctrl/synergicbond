@@ -3403,6 +3403,33 @@ export function SectionChemicalPeriodicity() {
               A large lattice enthalpy opposes dissolution, while large hydration enthalpy favours it. Entropy and crystal structure also matter, so solubility cannot be predicted from a single radius trend alone.
             </Callout>
 
+            <H3>Born-Haber cycle for NaCl</H3>
+            <BornHaberNaClSVG />
+            <MathBlock tex={String.raw`\Delta_fH^\circ=\Delta_{sub}H+IE_1+\tfrac12D(\mathrm{Cl_2})+\Delta_{eg}H+\Delta_{latt}H`} label="Hess-law equation for NaCl formation" />
+            <DataTable columns={["Term", "Meaning", "Sign in the forward NaCl formation cycle"]} rows={[
+              ["ΔsubH", "Na(s) → Na(g)", "positive"],
+              ["IE₁", "Na(g) → Na⁺(g) + e⁻", "positive"],
+              ["½D(Cl₂)", "½Cl₂(g) → Cl(g)", "positive"],
+              ["ΔegH", "Cl(g) + e⁻ → Cl⁻(g)", "negative"],
+              ["ΔlattH", "Na⁺(g) + Cl⁻(g) → NaCl(s)", "large negative"],
+              ["ΔfH°", "Na(s) + ½Cl₂(g) → NaCl(s)", "measured overall value"],
+            ]} accent={T.gold} />
+            <Callout kind="note">
+              The Born-Haber cycle is not a separate physical path followed by atoms; it is a Hess-law bookkeeping cycle. It can be rearranged to estimate lattice enthalpy, electron affinity or another inaccessible term from measured quantities.
+            </Callout>
+            <WorkedExample
+              number="BH"
+              title="Finding lattice enthalpy from a Born-Haber cycle"
+              question="Given ΔsubH(Na) = +108, IE₁(Na) = +496, ½D(Cl₂) = +121, ΔegH(Cl) = −349 and ΔfH°(NaCl) = −411 (all kJ mol⁻¹), find ΔlattH(NaCl)."
+              reasoning={[
+                "Write the Hess-law sum: ΔfH° = ΔsubH + IE₁ + ½D(Cl₂) + ΔegH + ΔlattH.",
+                "Add the four known terms: 108 + 496 + 121 − 349 = 376 kJ mol⁻¹.",
+                "Solve for the unknown: ΔlattH = ΔfH° − 376 = −411 − 376.",
+              ]}
+              answer="ΔlattH(NaCl) = −787 kJ mol⁻¹ — the large negative value is what drives NaCl formation despite the endothermic sublimation and ionization steps."
+              accent={T.gold}
+            />
+
             <H2>7 · Polarization and Fajans-Type Reasoning</H2>
             <ConceptGrid
               items={[
@@ -4390,6 +4417,16 @@ export function SectionBlockDataAtlas() {
         ["Group 1", "Li 1.0; Na 0.9; K 0.8; Rb 0.8; Cs 0.7"],
         ["Group 17", "F 4.0; Cl 3.0; Br 2.8; I 2.5; At 2.2"],
       ]} accent={T.gold} />
+      <Callout kind="note" title="Two NCERT tables, two slightly different value sets">
+        The row above is NCERT's simplified classification-chapter table (Table 3.8). The p-block chapters' own physical-property tables (used below for Groups 13–16) are measured more precisely and don't always match the rounded 3.8 values — e.g. Table 3.8 gives Cl = 3.0, the Group 17 physical-property table gives Cl = 3.2. Both are genuine NCERT values; use whichever table a question is drawn from.
+      </Callout>
+      <DataTable columns={["Group", "Values (Pauling scale)"]} rows={[
+        ["13", "B 2.0; Al 1.5; Ga 1.6; In 1.7; Tl 1.8"],
+        ["14", "C 2.5; Si 1.8; Ge 1.8; Sn 1.8; Pb 1.9"],
+        ["15", "N 3.0; P 2.1; As 2.0; Sb 1.9; Bi 1.9"],
+        ["16", "O 3.50; S 2.58; Se 2.55; Te 2.01; Po 1.76"],
+        ["17 (physical-property table)", "F 4.0; Cl 3.2; Br 3.0; I 2.7; At 2.2"],
+      ]} accent={T.p} />
 
       <H2 id="d-block-atlas">2 · d-Block Data, Arranged Period-Wise</H2>
       <P>
@@ -5217,17 +5254,12 @@ function SectionElectronegativityLegacy() {
 }
 
 export function SectionSpecialEffects() {
-  return (
-    <>
-      <><SectionSpecialEffectsLegacyV9 /><V9SpecialSourcePanel /><V10SecondaryPeriodicityPanel /><V10CohesiveAndMeltingPanel /><V10OlympiadEnrichmentPanel /></>
-      <div
-        data-integration="SectionSpecialEffects-periodicity-generated-corpus-phd-v9"
-        style={{ marginTop: 34 }}
-      >
-        <PeriodicTableDeepAdditions topic="special" />
-      </div>
-    </>
-  );
+  // The generated "special" topic block (PeriodicTableDeepAdditions) covered
+  // only Ga/Al d-block contraction, lanthanoid contraction and actinoid
+  // contraction - the exact same three cases already in
+  // SectionSpecialEffectsLegacyV9 sections 2-4. Dropped to avoid teaching the
+  // same three special cases twice on one tab.
+  return <><SectionSpecialEffectsLegacyV9 /><V9SpecialSourcePanel /><V10SecondaryPeriodicityPanel /><V10CohesiveAndMeltingPanel /><V10OlympiadEnrichmentPanel /></>;
 }
 
 /* =============================================================================
@@ -5344,7 +5376,7 @@ const PERIODICITY_READING_LAYOUT_V15_CSS = `
 @media (max-width: 900px) {
   .periodicityContentShell,
   .periodicityBottomNav { width: calc(100% - 32px); }
-  .periodicityContentShell { padding: 18px 0 88px; }
+  .periodicityContentShell { padding: 18px 0 128px; }
   .periodicitySectionIntro,
   .periodicityCard,
   .periodicityFactorCard,
@@ -5358,7 +5390,10 @@ const PERIODICITY_READING_LAYOUT_V15_CSS = `
 @media (max-width: 600px) {
   .periodicityContentShell,
   .periodicityBottomNav { width: calc(100% - 26px); }
-  .periodicityContentShell { padding: 14px 0 82px; }
+  /* Extra bottom clearance: the site-wide fixed feedback button collapses to
+     an icon at this width and sits at bottom-left with little horizontal
+     margin, so the last card on a tab needs real vertical room beneath it. */
+  .periodicityContentShell { padding: 14px 0 136px; }
   .periodicitySectionIntro,
   .periodicityCard,
   .periodicityFactorCard,

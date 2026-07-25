@@ -1,4 +1,4 @@
-export type ChemicalBondingVisualKey = "potential" | "lattice" | "orbitals" | "overlap" | "hybrid" | "vsepr" | "inorganic" | "backbond" | "diborane" | "dipole" | "resonance" | "hbond" | "mo" | "mo-foundation" | "mo-h2" | "mo-bcn" | "mo-o2" | "mo-f2" | "mo-hetero" | "mo-co-no" | "mo-ligand" | "fajans" | "imf" | "carbon" | "silicate";
+export type ChemicalBondingVisualKey = "potential" | "lattice" | "orbitals" | "overlap" | "hybrid" | "vsepr" | "inorganic" | "backbond" | "diborane" | "dipole" | "resonance" | "hbond" | "mo" | "mo-foundation" | "mo-h2" | "mo-bcn" | "mo-o2" | "mo-f2" | "mo-hetero" | "mo-co-no" | "mo-ligand" | "fajans" | "fajans-structures" | "fajans-lmct" | "imf" | "carbon" | "silicate";
 
 export type ChemicalBondingTopic = {
   number: number;

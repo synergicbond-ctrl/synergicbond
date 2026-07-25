@@ -56,7 +56,7 @@ export default function TitrationPart5() {
             </WorkingLine>
 
             <NoteBox>
-              The source highlights “??” at this stage because HCl is behaving
+              highlights “??” at this stage because HCl is behaving
               differently in two reactions. The next lines split HCl into two
               parts.
             </NoteBox>

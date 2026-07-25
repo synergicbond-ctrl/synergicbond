@@ -1,9 +1,6 @@
 const content = String.raw`
 # Part 5 — Hydrometallurgy & Electrometallurgical Reduction
 
-> **Complete-source reconstruction:** theory is preserved at full teaching depth; diagrams are used only where they explain mechanism, apparatus, phase movement or decision logic.
-
-
 ## 7. Hydrometallurgical Reduction
 
 Hydrometallurgy carries out extraction reactions in aqueous solution. Temperatures are therefore much lower than in pyrometallurgy.
@@ -31,7 +28,6 @@ $$Fe+CuSO_4\rightarrow FeSO_4+Cu$$
 ## 8. Electrometallurgical Reduction
 ![Electrolytic reduction for highly electropositive metals](/notes/metallurgy/reference/electrolytic-reduction.webp)
 
-
 Very electropositive metals such as Na, K, Mg, Ca and Al cannot normally be obtained by ordinary carbon reduction of their stable compounds under convenient commercial conditions. They are produced by **electrolysis of molten salts/oxides**.
 
 ### Downs cell — sodium
@@ -51,9 +47,8 @@ A CaCl₂-containing molten mixture is used industrially to lower the operating 
 
 ![Reduction routes by metal reactivity](/notes/metallurgy/reference/reduction-spectrum.webp)
 
-
 ## Hydrometallurgy — complete logic retained
-The source emphasises an aqueous route, so temperature is limited by the solvent/pressure regime and fuel demand can be lower than in pyrometallurgy.
+emphasises an aqueous route, so temperature is limited by the solvent/pressure regime and fuel demand can be lower than in pyrometallurgy.
 
 ### Cementation from cyanide complexes
 For $M=Ag$ or Au, a schematic displacement is:

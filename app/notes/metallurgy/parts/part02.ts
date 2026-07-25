@@ -1,9 +1,6 @@
 const content = String.raw`
 # Part 2 — Froth Flotation, Activators, Depressants & Leaching
 
-> **Complete-source reconstruction:** theory is preserved at full teaching depth; diagrams are used only where they explain mechanism, apparatus, phase movement or decision logic.
-
-
 ## 6. Froth Flotation — Core Principle
 
 Froth flotation is primarily used for **sulphide ores**.
@@ -16,7 +13,7 @@ Air bubbles carry hydrophobic mineral particles upward into a froth that can be 
 
 ![Froth flotation cell](/notes/metallurgy/reference/froth-flotation.webp)
 
-### Main components in the source notes
+### Main components in notes
 
 | Component | Function |
 |---|---|
@@ -38,7 +35,7 @@ Once adsorbed, the mineral surface becomes more hydrophobic and attaches more ea
 
 > **Better language than the handwritten “like attracts like”:** non-polar groups favour the low-polarity air/oil environment, while polar/ionic groups interact with the mineral/water interface. The useful result is selective bubble attachment.
 
-### Froth junction idea from the source diagram
+### Froth junction idea from diagram
 At points where bubbles meet, thin liquid films remain. Collectors coat mineral particles; frothers/stabilisers help prevent premature bubble coalescence. This allows the mineral-loaded froth to be removed before collapse.
 
 ---
@@ -48,7 +45,7 @@ At points where bubbles meet, thin liquid films remain. Collectors coat mineral 
 An **activator** modifies a mineral surface so that a collector can adsorb more effectively.
 
 ### Example: malachite-type copper mineral
-The source uses malachite, approximately $Cu_2CO_3(OH)_2$, to illustrate **sulphidisation**. A sulphide reagent such as $Na_2S$ can create a sulphide-rich copper surface, which then interacts more strongly with xanthate collectors.
+uses malachite, approximately $Cu_2CO_3(OH)_2$, to illustrate **sulphidisation**. A sulphide reagent such as $Na_2S$ can create a sulphide-rich copper surface, which then interacts more strongly with xanthate collectors.
 
 This demonstrates an important general rule:
 
@@ -68,7 +65,6 @@ The actual mineral-surface chemistry is more complex than a bulk stoichiometric 
 ## 8. Depressants — Selective Flotation
 ![Activator and depressant selectivity in flotation](/notes/metallurgy/reference/activator-depressant.webp)
 
-
 A **depressant** prevents one mineral from floating while allowing another to float.
 
 ### Separation of $PbS$ and $ZnS$
@@ -80,7 +76,6 @@ In classical JEE metallurgy, **NaCN** is described as depressing $ZnS$ during se
 
 ## 9. Chemical Concentration — Leaching
 ![Leaching as selective chemical dissolution](/notes/metallurgy/reference/leaching.webp)
-
 
 **Leaching** means selectively dissolving the desired component (or sometimes an impurity) from a solid using a suitable liquid reagent.
 
@@ -94,12 +89,9 @@ Important examples developed later in the chapter:
 
 ---
 
-
 ![Collector, activator and depressant chemistry](/notes/metallurgy/reference/froth-chemistry.webp)
 
-
-## Full reagent logic from the source
-### Frother
+## Full reagent logic from ### Frother
 Pine oil (and classical aromatic frothers/stabilisers mentioned in older texts) lowers surface tension and helps create a persistent froth. **Frother ≠ collector.**
 
 ### Collector — sodium ethyl xanthate idea
@@ -110,7 +102,7 @@ A xanthate has a polar sulphur-containing head that binds/adsorbs on suitable mi
 2. **Activation of ZnS:** $CuSO_4$ can activate sphalerite by creating a Cu-rich surface; the collector then adsorbs more effectively.
 
 ### Depressant example retained — PbS/ZnS separation
-When galena $PbS$ contains $ZnS$, a cyanide depressant can suppress ZnS flotation so PbS rises preferentially. The source represents complex formation schematically as:
+When galena $PbS$ contains $ZnS$, a cyanide depressant can suppress ZnS flotation so PbS rises preferentially. represents complex formation schematically as:
 $$Zn^{2+}+4CN^-\rightleftharpoons[Zn(CN)_4]^{2-}$$
 The practical surface chemistry is more complex than a single bulk-solution equation; for JEE the key idea is **selective depression of ZnS**.
 

@@ -1,9 +1,6 @@
 const content = String.raw`
 # Part 11 — Aluminium — Complete Bauxite to 99.99% Al
 
-> **Complete-source reconstruction:** theory is preserved at full teaching depth; diagrams are used only where they explain mechanism, apparatus, phase movement or decision logic.
-
-
 > **Scope:** Source pages 49–55.
 
 ## 1. Bauxite — Real Composition vs Textbook Shorthand
@@ -11,8 +8,7 @@ Bauxite is not a single pure hydrate with fixed formula. It is a heterogeneous o
 
 The handwritten notation $Al_2O_3\cdot2H_2O$ is a useful older shorthand for hydrated alumina but should not be treated as a unique bauxite formula.
 
-### “Red” and “white” bauxite in the source
-- **Red bauxite:** significant iron oxide gives reddish-brown colour.
+### “Red” and “white” bauxite in - **Red bauxite:** significant iron oxide gives reddish-brown colour.
 - **Silica-rich / pale bauxite:** lower Fe but more silica; needs different beneficiation because silica dissolves in strong alkali.
 
 ---
@@ -35,7 +31,7 @@ Iron oxide and TiO₂ remain largely in the insoluble residue (“red mud”) un
 Silica can react with alkali:
 $$SiO_2+2OH^-\rightarrow SiO_3^{2-}+H_2O$$
 
-and can form sodium aluminosilicate products, consuming caustic and alumina. This explains the source statement that strongly silica-rich ore is unsuitable for the simplest Bayer treatment.
+and can form sodium aluminosilicate products, consuming caustic and alumina. This explains statement that strongly silica-rich ore is unsuitable for the simplest Bayer treatment.
 
 ## Step 2 — clarification
 Insoluble residue is separated from the sodium aluminate liquor.
@@ -65,7 +61,7 @@ The product is purified **alumina**.
 
 # 3. Hall Process — Historical Alkali Fusion Route
 
-The source retains a classical Hall-type purification scheme:
+retains a classical Hall-type purification scheme:
 - bauxite fused with $Na_2CO_3$,
 - sodium aluminate becomes water-soluble,
 - insoluble impurities are filtered,
@@ -77,13 +73,13 @@ $$Al_2O_3+Na_2CO_3\rightarrow2NaAlO_2+CO_2$$
 Silica also reacts:
 $$SiO_2+Na_2CO_3\rightarrow Na_2SiO_3+CO_2$$
 
-Therefore silica-rich bauxite causes contamination/loss, matching the source warning.
+Therefore silica-rich bauxite causes contamination/loss, matching warning.
 
 ---
 
 # 4. Serpek Process — Silica-Rich Bauxite (Historical Textbook Route)
 
-The source presents Serpek’s process as:
+presents Serpek’s process as:
 
 $$Al_2O_3+3C+N_2\rightarrow2AlN+3CO$$
 
@@ -110,7 +106,7 @@ Aluminium is too electropositive to be produced by aqueous electrolysis or ordin
 - consumable graphite/carbon blocks act as **anodes**,
 - electrolyte is a cryolite-rich fluoride melt containing dissolved alumina; CaF₂ may be added to adjust operating properties.
 
-> The source gives 60% cryolite, 20% CaF₂, 20% alumina as a teaching mixture. Industrial bath composition is not fixed at these exact percentages; treat them as historical classroom values, not a universal specification.
+> gives 60% cryolite, 20% CaF₂, 20% alumina as a teaching mixture. Industrial bath composition is not fixed at these exact percentages; treat them as historical classroom values, not a universal specification.
 
 ### Why cryolite ($Na_3AlF_6$) / CaF₂ are used
 - lower operating/melting temperature compared with pure alumina,
@@ -133,7 +129,7 @@ Some CO can also form depending on conditions.
 Oxygen generated from alumina oxidises carbon to CO₂/CO, so anodes must be replaced periodically.
 
 ### Coke/carbon cover on bath
-The source notes a surface carbon layer that:
+notes a surface carbon layer that:
 - reduces radiative heat loss,
 - helps shield the hot bath/interface from air.
 
@@ -148,7 +144,6 @@ Anhydrous $AlCl_3$ is molecular/covalent and highly volatile (sublimes readily),
 ---
 
 # 7. Hoopes Process — Electrolytic Refining of Aluminium
-
 
 Hoopes refining uses three molten layers separated by density:
 
@@ -165,7 +160,7 @@ $$Al^{3+}+3e^-\rightarrow Al$$
 Pure aluminium accumulates in the top layer.
 
 ### Why density adjustment matters
-The entire process depends on maintaining three stable, immiscible/stratified layers. The source mentions $BaF_2$ as a density-adjusting component in the electrolyte.
+The entire process depends on maintaining three stable, immiscible/stratified layers. mentions $BaF_2$ as a density-adjusting component in the electrolyte.
 
 ### Why cover the furnace?
 To reduce oxidation and contamination of the hot aluminium/electrolyte system.
@@ -184,19 +179,13 @@ To reduce oxidation and contamination of the hot aluminium/electrolyte system.
 
 > **Authoritative cross-check:** modern bauxite → alumina uses the Bayer process, followed by Hall–Héroult electrolytic aluminium production. This sequence is the industrial backbone and should be prioritised over historical side routes.
 
-
-
-
-
-
 ## Additional source details restored
 ### Red vs white bauxite in the handwritten classification
 - **Red bauxite:** Fe$_2$O$_3$ significant; SiO$_2$, TiO$_2$ also present.
 - **White bauxite:** Fe$_2$O$_3$ small; silica may be more troublesome.
 “$Al_2O_3\cdot2H_2O$” is only a classroom shorthand; real bauxite contains gibbsite/boehmite/diaspore mixtures plus impurities.
 
-### Bayer classroom route in the source
-- Calcination/conditioning optional depending on mineralogy.
+### Bayer classroom route in - Calcination/conditioning optional depending on mineralogy.
 - Digestion in strong NaOH (source uses ~40% as a classroom value).
 - Insoluble Fe/Ti residue = red mud-type residue.
 - Al enters solution as aluminate, represented as $[Al(OH)_4]^-$.
@@ -206,14 +195,14 @@ To reduce oxidation and contamination of the hot aluminium/electrolyte system.
 - Calcination: $2Al(OH)_3\rightarrow Al_2O_3+3H_2O$.
 
 ### Hall process (historical alkali-fusion route)
-The source fuses bauxite/alumina-bearing material with $Na_2CO_3$ to form soluble sodium aluminate, followed by leaching and precipitation. It is historical/classroom context, not the dominant modern route.
+fuses bauxite/alumina-bearing material with $Na_2CO_3$ to form soluble sodium aluminate, followed by leaching and precipitation. It is historical/classroom context, not the dominant modern route.
 
 ### Serpek process (historical, silica-rich bauxite)
 At high temperature in N$_2$/carbon:
 $$Al_2O_3+3C+N_2\rightarrow2AlN+3CO$$
 Silica is reduced toward volatile/elemental Si-containing products under the teaching model. $AlN$ is hydrolysed to $Al(OH)_3/NH_3$ and then calcined. Historical significance only.
 
-### Hall–Héroult details from the source sketch
+### Hall–Héroult details from sketch
 The class note represents electrolyte roughly as cryolite 60%, CaF$_2$ 20%, alumina 20% — **not a universal industrial composition**, but useful to remember the roles:
 - cryolite dissolves alumina and lowers operating temperature,
 - CaF$_2$ modifies melting point/fluidity/conductivity,
@@ -226,7 +215,7 @@ A coke/carbon cover reduces heat loss and protects bath surface; it does not sto
 $AlCl_3$ is highly covalent/volatile and sublimes; a simple fused-AlCl$_3$ bath is impractical compared with oxide dissolved in fluoride melt.
 
 ### Hoopes refining source detail
-Three liquid layers are density-engineered; the source mentions BaF$_2$ as one possible density-modifying fluoride in older formulations. Impure Al alloy acts as lower anode layer, fluoride electrolyte is middle, pure Al forms upper cathodic layer.
+Three liquid layers are density-engineered; mentions BaF$_2$ as one possible density-modifying fluoride in older formulations. Impure Al alloy acts as lower anode layer, fluoride electrolyte is middle, pure Al forms upper cathodic layer.
 
 `;
 export default content;

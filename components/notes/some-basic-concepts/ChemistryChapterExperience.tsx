@@ -546,7 +546,7 @@ export function ChemistryChapterExperience() {
       </section>
 
       <section id="practice" className={styles.section}>
-        <SectionHeading eyebrow="Board mastery" title="Complete chapter notes and solved exercise library">Open only the concept you need. The visual chapter stays compact, while the complete source material remains available below.</SectionHeading>
+        <SectionHeading eyebrow="Board mastery" title="Chapter Notes and Solved Exercises">Open the concept you need, then continue to the complete notes and solved exercises below.</SectionHeading>
         <div className={styles.practiceBanner}><Calculator/><div><strong>Recommended revision loop</strong><p>Visual concept → formula recall → solved example → exercise without notes → error review.</p></div></div>
         <FullNotesLibrary/>
       </section>

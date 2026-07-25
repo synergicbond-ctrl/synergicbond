@@ -1,9 +1,6 @@
 const content = String.raw`
 # Part 3 — Ore Formula Bank, Calcination, Roasting & Sintering
 
-> **Complete-source reconstruction:** theory is preserved at full teaching depth; diagrams are used only where they explain mechanism, apparatus, phase movement or decision logic.
-
-
 ## 10. Classification of Important Ores and Minerals
 
 > **Visual ore atlas:** Every ore is grouped by chemical class. The coloured dot sits directly before the ore name and represents a **typical specimen colour**; natural samples can vary because of impurities, weathering and crystal habit.
@@ -56,8 +53,6 @@ The next reduction step is a heterogeneous reaction. A porous oxide offers a lar
 
 ---
 
-
-
 ## Source comparison restored in full
 ### Calcination
 - Heating concentrated ore **in absence or limited supply of air**, generally below fusion temperature.
@@ -76,14 +71,13 @@ $$Al_2O_3\cdot xH_2O\xrightarrow{\Delta}Al_2O_3+xH_2O\uparrow$$
 $$2MS+3O_2\rightarrow2MO+2SO_2$$
 
 ### Lower oxide → higher oxide
-The source notes that roasting can convert a lower oxide to a higher oxidation state, e.g.
+notes that roasting can convert a lower oxide to a higher oxidation state, e.g.
 $$4FeO+O_2\rightarrow2Fe_2O_3$$
 
 ## Why calcined/roasted mass should be porous
 Reduction is a heterogeneous solid–gas/solid–solid process. Porosity increases accessible surface and gas diffusion.
 
-### Sintering warning from the source
-![Porosity and sintering architecture](/notes/metallurgy/reference/porosity-sintering.webp)
+### Sintering warning from ![Porosity and sintering architecture](/notes/metallurgy/reference/porosity-sintering.webp)
 
 **Sintering** = partial fusion/neck formation at particle contact points followed by solidification. If overheating causes excessive sintering, particles stick and pores close. Therefore roasting/calcination conditions are chosen to remove volatiles **without destroying porosity**.
 

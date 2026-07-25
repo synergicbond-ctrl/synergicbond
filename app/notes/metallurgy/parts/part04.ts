@@ -1,9 +1,6 @@
 const content = String.raw`
 # Part 4 — Carbon/CO Reduction, Flux–Slag, Self-Reduction & Thermite
 
-> **Complete-source reconstruction:** theory is preserved at full teaching depth; diagrams are used only where they explain mechanism, apparatus, phase movement or decision logic.
-
-
 ## 2. Coal, Coke and Carbon Monoxide
 
 Coal contains carbon plus volatile matter and mineral impurities. Heating suitable coking coal in the absence of air gives **coke** and volatile products (coal gas/tar).
@@ -25,7 +22,6 @@ In many blast-furnace zones, **CO is the chief direct reducing gas**, even thoug
 ## 3. Carbon Reduction / Smelting
 ![Carbon reduction of Fe, Zn and Sn oxides](/notes/metallurgy/reference/carbon-reduction-dark-v4.webp)
 
-
 **Smelting** is high-temperature extraction in which a charge containing ore/oxide, reducing agent and flux is heated so that metal and slag phases can separate.
 
 General forms:
@@ -33,7 +29,7 @@ General forms:
 $$MO+C\rightarrow M+CO$$
 $$MO+CO\rightarrow M+CO_2$$
 
-The source lists Fe, Sn, Pb and Zn as important textbook examples of carbon-based reduction. The exact mechanism differs strongly among these metals; Zn is obtained as vapour at furnace temperature.
+lists Fe, Sn, Pb and Zn as important textbook examples of carbon-based reduction. The exact mechanism differs strongly among these metals; Zn is obtained as vapour at furnace temperature.
 
 ### Flux and slag
 A **flux** reacts with gangue to form a fusible **slag**.
@@ -66,7 +62,6 @@ A good slag generally:
 
 ## 4. Self-Reduction / Auto-Reduction
 ![Self-reduction loop](/notes/metallurgy/reference/self-reduction-dark-v4.webp)
-
 
 Some sulphide ores can supply their own reducing species after **partial oxidation**. No external carbon reducing agent is required in the decisive metal-forming step.
 
@@ -135,12 +130,10 @@ These are examples of **pyrometallurgical** operations because strong heating is
 
 ![Flux, gangue and slag](/notes/metallurgy/reference/slag.webp)
 
-
 ![Reduction method decision map](/notes/metallurgy/reference/reduction-spectrum.webp)
 
-
 ## Carbon reduction — source-specific points
-The source lists Fe, Sn, Pb and Zn among metals whose extraction may involve carbon/CO at appropriate temperatures.
+lists Fe, Sn, Pb and Zn among metals whose extraction may involve carbon/CO at appropriate temperatures.
 
 ### Coke has two functions
 1. **Fuel:** $C+O_2\rightarrow CO_2$ (strongly exothermic).
@@ -155,8 +148,7 @@ $$\text{Gangue}+\text{Flux}\rightarrow\text{Slag}$$
 Example:
 $$CaO+SiO_2\rightarrow CaSiO_3(l)$$
 
-### Desired slag properties in the source
-- fluid at furnace temperature,
+### Desired slag properties in - fluid at furnace temperature,
 - less dense than metal so phases separate,
 - chemically able to dissolve targeted gangue,
 - can shield molten metal from reoxidation.
@@ -176,13 +168,12 @@ Representative reductions:
 $$Cr_2O_3+2Al\rightarrow2Cr+Al_2O_3$$
 $$3Mn_3O_4+8Al\rightarrow9Mn+4Al_2O_3$$
 $$Fe_2O_3+2Al\rightarrow2Fe+Al_2O_3$$
-The source also lists Ti oxide in the conceptual class, but modern Ti is not commercially produced by simple thermite reduction of $TiO_2$.
+also lists Ti oxide in the conceptual class, but modern Ti is not commercially produced by simple thermite reduction of $TiO_2$.
 
 ### Why Al works
 The formation of $Al_2O_3$ is highly exergonic. Once ignited, thermite is strongly self-heating; temperatures can exceed the melting point of the produced metal.
 
-### Ignition mixture shown in the source
-A local high-temperature igniter (historically mixtures involving Mg and oxygen-releasing salts/oxides) initiates the thermite charge. This is an **ignition device**, not the main reducing reagent.
+### Ignition mixture shown in A local high-temperature igniter (historically mixtures involving Mg and oxygen-releasing salts/oxides) initiates the thermite charge. This is an **ignition device**, not the main reducing reagent.
 
 ## Thermal decomposition
 Very unreactive-metal oxides can decompose on heating:

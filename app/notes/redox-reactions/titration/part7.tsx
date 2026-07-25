@@ -112,7 +112,7 @@ export default function TitrationPart7() {
           </QuestionBox>
 
           <NoteBox>
-            NaCl is circled/cross-marked in the source because it does not
+            NaCl is circled/cross-marked in because it does not
             contribute to hardness.
           </NoteBox>
 

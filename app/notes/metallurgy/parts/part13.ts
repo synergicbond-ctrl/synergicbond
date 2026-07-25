@@ -1,17 +1,11 @@
 const content = String.raw`
 # Part 13 — Copper — Chalcopyrite to Blister Copper & Electrolytic Cu
 
-> **Complete-source reconstruction:** theory is preserved at full teaching depth; diagrams are used only where they explain mechanism, apparatus, phase movement or decision logic.
-
-
 ![Copper extraction flow](/notes/metallurgy/reference/copper-self-reduction-dark-v4.webp)
 
 Chalcopyrite is commonly treated conceptually as a mixed Cu–Fe sulphide system; older notes often represent matte chemistry using $Cu_2S$ and $FeS$ components.
 
-
-
 ![Copper electrorefining](/notes/metallurgy/reference/electrorefining-dark-v4.webp)
-
 
 ## Copper source details restored
 ### Chalcopyrite constitution
@@ -26,7 +20,7 @@ Much of Cu remains as Cu$_2$S; a little Cu$_2$O may form. Unreacted FeS can redu
 Coke supplies heat; silica flux removes FeO:
 $$FeO+SiO_2\rightarrow FeSiO_3\;(slag)$$
 Molten **matte** contains mainly Cu$_2$S + FeS.
-The source stresses that direct carbon reduction of sulphides is not the desired route; FeO preferentially enters slag.
+stresses that direct carbon reduction of sulphides is not the desired route; FeO preferentially enters slag.
 
 ### Bessemer/converter stage 1 — iron removal
 Air + silica:

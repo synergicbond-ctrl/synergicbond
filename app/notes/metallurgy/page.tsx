@@ -1,12 +1,50 @@
 import Link from "next/link";
 import "./metallurgy.css";
 
-const parts = [["Foundations, Ores, Gangue & Physical Concentration", "Mineral/ore/gangue, master metallurgy flow, gravity and magnetic separation"], ["Froth Flotation, Activators, Depressants & Leaching", "Collector/frother chemistry, activation, depression and selective dissolution"], ["Ore Formula Bank, Calcination, Roasting & Sintering", "Complete ore-name bank, thermal conversion, porosity and sintering"], ["Carbon/CO Reduction, Flux–Slag, Self-Reduction & Thermite", "Smelting, Lux–Flood, lead self-reduction, aluminothermy, thermal decomposition"], ["Hydrometallurgy & Electrometallurgical Reduction", "Cementation, low-grade Cu, fused-salt electrolysis and Downs logic"], ["Complete Refining Toolkit: Poling to Electrorefining", "Poling, liquation, distillation, zone/Mond/van Arkel, cupellation, amalgamation, electrorefining"], ["Ellingham Diagram — Full Thermodynamic Treatment", "Slopes, phase changes, decomposition, carbon/H2 reduction criteria and limitations"], ["Silver, Gold, Cyanide Leaching & Parkes Process", "MacArthur–Forrest, Zn displacement, desilverisation, parting and purification"], ["Extraction & Refining of Tin", "Cassiterite beneficiation, black tin, smelting losses and refining"], ["Extraction of Magnesium", "Carnallite, Dow seawater route, dehydration problem and fused MgCl2 electrolysis"], ["Aluminium — Complete Bauxite to 99.99% Al", "Bayer/Hall/Serpek, Hall–Héroult, electrolyte roles, anode chemistry and Hoopes"], ["Lead — Galena to Refined Pb", "Flotation, roasting, carbon/self reduction, slag and refining"], ["Copper — Chalcopyrite to Pure Cu", "Roasting, matte, converter stages, blister Cu, poling and electrorefining"], ["Zinc — Sphalerite to Pure Zn", "Selective flotation, roasting, high-T reduction, vapour condensation and refining"], ["Iron — Blast Furnace & Pig Iron Chemistry", "Ore preparation, furnace zones, CO reduction, slag, bosh/hearth impurity pickup"], ["Steelmaking & Heat Treatment", "Puddling/Bessemer/open hearth/LD, carbon classes, ferroalloys, anneal/quench/temper/case hardening"], ["Source Appendix I — Reaction Chemistry", "Precipitation, lithopone, disproportionation, halogens and Frasch sulphur"], ["Source Appendix II — Redox & Nitric Acid", "Manganate, comproportionation, acid redox, HNO3 products, passivation and Cu(I)"]] as const;
+const parts = [
+  { number: 1, slug: "part-1", title: "Foundations, Ores, Gangue & Physical Concentration", description: "Mineral, ore, gangue, gravity separation and magnetic separation" },
+  { number: 2, slug: "part-2", title: "Froth Flotation, Activators, Depressants & Leaching", description: "Surface chemistry, selective flotation and hydrometallurgy" },
+  { number: 3, slug: "part-3", title: "Ore Formula Bank, Calcination, Roasting & Sintering", description: "Important ores, thermal conversion and agglomeration" },
+  { number: 4, slug: "part-4", title: "Carbon/CO Reduction, Flux–Slag, Self-Reduction & Thermite", description: "Smelting, slag chemistry, self-reduction and aluminothermy" },
+  { number: 5, slug: "part-5", title: "Hydrometallurgy & Electrometallurgical Reduction", description: "Cementation, electrowinning and fused-salt electrolysis" },
+  { number: 6, slug: "part-6", title: "Complete Refining Toolkit", description: "Liquation, distillation, poling, zone, vapour-phase and electrolytic refining" },
+  { number: 7, slug: "part-7", title: "Ellingham Diagram", description: "Oxide stability, slopes, intersections, reduction criteria and limitations" },
+  { number: 8, slug: "part-8", title: "Silver, Gold, Cyanide Leaching & Parkes Process", description: "Cyanide extraction, displacement and desilverisation" },
+  { number: 9, slug: "part-9", title: "Extraction & Refining of Tin", description: "Cassiterite concentration, smelting and purification" },
+  { number: 10, slug: "part-10", title: "Extraction of Magnesium", description: "Carnallite, seawater route and fused magnesium chloride electrolysis" },
+  { number: 11, slug: "part-11", title: "Aluminium — Bauxite to High-Purity Metal", description: "Bayer, Serpek, Hall–Héroult and Hoopes processes" },
+  { number: 12, slug: "part-12", title: "Lead — Galena to Refined Pb", description: "Flotation, roasting, reduction and refining" },
+  { number: 13, slug: "part-13", title: "Copper — Chalcopyrite to Pure Cu", description: "Matte, converter, blister copper, poling and electrorefining" },
+  { number: 14, slug: "part-14", title: "Zinc — Sphalerite to Pure Zn", description: "Selective flotation, roasting, reduction and condensation" },
+  { number: 15, slug: "part-15", title: "Iron Extraction, Steelmaking & Heat Treatment", description: "Blast furnace, pig iron, steelmaking, alloys and heat treatment" },
+  { number: 17, slug: "part-17", title: "Reaction Chemistry, Redox & Nitric Acid", description: "Precipitation, sulphur, disproportionation, nitric acid and passivation" }
+] as const;
 
 export const metadata = {
- title: "Metallurgy — Complete 81-Page JEE Advanced Notes",
- description: "Full-source metallurgy reconstruction: complete 81-page content, rigorous theory, corrected chemistry and teaching graphics."
+  title: "Metallurgy — JEE Advanced Notes",
+  description: "Comprehensive metallurgy notes covering concentration, extraction, reduction, refining, iron, steel and reaction chemistry."
 };
 
-export default function MetallurgyPage(){return <main className="metallurgy-shell"><section className="metallurgy-hero"><p className="eyebrow">INORGANIC CHEMISTRY · COMPLETE SOURCE REBUILD</p><h1>Metallurgy</h1><p>81-page source rebuilt at full theory depth with selective high-value graphics. No summary compression.</p><img className="metallurgy-cover-art" src="/notes/metallurgy/reference/metallurgy-hero-dark-v4.webp" alt="Extractive metallurgy elemental blueprint" /><div className="coverage-strip"><b>81/81 source pages mapped</b><span>18 focused parts</span><span>Images, diagrams and SVGs restored</span></div></section><section className="part-grid">{parts.map(([title,description],i)=>{const slug=`part-${i+1}`;return <Link key={slug} href={`/notes/metallurgy/${slug}`} className="part-card"><span>{String(i+1).padStart(2,"0")}</span><div><h2>{title}</h2><p>{description}</p></div></Link>})}</section></main>}
-
+export default function MetallurgyPage() {
+  return (
+    <main className="metallurgy-shell">
+      <section className="metallurgy-hero">
+        <p className="eyebrow">INORGANIC CHEMISTRY · JEE ADVANCED</p>
+        <h1>Metallurgy</h1>
+        <img
+          className="metallurgy-cover-art"
+          src="/notes/metallurgy/reference/metallurgy-hero-dark-v4.webp"
+          alt="Extractive metallurgy elemental blueprint"
+        />
+      </section>
+      <section className="part-grid">
+        {parts.map(({ number, slug, title, description }) => (
+          <Link key={slug} href={`/notes/metallurgy/${slug}`} className="part-card">
+            <span>{String(number).padStart(2, "0")}</span>
+            <div><h2>{title}</h2><p>{description}</p></div>
+          </Link>
+        ))}
+      </section>
+    </main>
+  );
+}

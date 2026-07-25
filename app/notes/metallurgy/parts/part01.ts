@@ -1,8 +1,6 @@
 const content = String.raw`
 # Part 1 — Foundations, Ores, Gangue & Physical Concentration
 
-> **Complete-source reconstruction:** theory is preserved at full teaching depth; diagrams are used only where they explain mechanism, apparatus, phase movement or decision logic.
-
 > **Scope:** Source pages 1–4. Every academically useful point is retained, with OCR errors and scientifically inaccurate wording corrected.
 
 ## 1. Mineral, Ore, Gangue and Metallurgy
@@ -61,7 +59,6 @@ The method depends on a **physical or chemical difference** between the valuable
 
 > **Core idea:** **denser ore particles → retained / settled; lighter gangue → washed away.**
 
-
 The method is mainly associated in elementary metallurgy with certain **oxide ores**, but oxide character itself is not the deciding principle. The essential requirement is a sufficiently useful difference in **density and settling behaviour** between the valuable mineral and the gangue.
 
 ### Hydraulic washing
@@ -71,7 +68,7 @@ Finely crushed or powdered ore is treated with a controlled stream of running wa
 - **Heavier ore particles** settle or remain behind and are collected as the concentrated fraction.
 - Efficient separation requires adequate **liberation**, a useful **density contrast**, and properly controlled **particle size and water flow**.
 
-The source hydraulic-washing description also uses an **upward stream of water**. The upward drag carries fine/light particles more readily, while denser or coarser particles have a greater tendency to settle.
+hydraulic-washing description also uses an **upward stream of water**. The upward drag carries fine/light particles more readily, while denser or coarser particles have a greater tendency to settle.
 
 ![Hydraulic washing and levigation](/notes/metallurgy/reference/gravity-separation/hydraulic-washing-dark.webp)
 
@@ -83,7 +80,7 @@ The source hydraulic-washing description also uses an **upward stream of water**
 | Iron oxide ores | e.g. $Fe_2O_3$ | Useful where a sufficient density contrast exists with siliceous gangue |
 | Chromite | $FeCr_2O_4$ | Dense mineral amenable to gravity treatment in suitable feeds |
 
-The source specifically illustrates $SnO_2$, $Fe_2O_3$ and $FeCr_2O_4$ being concentrated from **lighter siliceous impurities**.
+specifically illustrates $SnO_2$, $Fe_2O_3$ and $FeCr_2O_4$ being concentrated from **lighter siliceous impurities**.
 
 ### Wilfley / shaking-table mechanism
 A **Wilfley-type table** is a slightly inclined, continuously vibrating or reciprocating table fitted with raised strips, corrugations or **riffles/barriers**.
@@ -168,14 +165,13 @@ Cassiterite $SnO_2$ may contain magnetic wolframite-type impurities, commonly re
 
 ## Source-detail restoration
 - **Mineral vs ore is economic, not purely chemical.** A mineral may contain a metal yet fail to be an ore if extraction is uneconomic or creates difficult impurities.
-- The source uses **pyrite, $FeS_2$ (“fool’s gold”)** to stress this distinction: iron can be obtained in principle after oxidation/reduction, but sulphur removal is a major burden and sulphur makes iron brittle.
+- uses **pyrite, $FeS_2$ (“fool’s gold”)** to stress this distinction: iron can be obtained in principle after oxidation/reduction, but sulphur removal is a major burden and sulphur makes iron brittle.
 - **Gangue / matrix** means the unwanted material accompanying the valuable mineral, not simply “soil”. It may be silica, silicate, clay, carbonate, oxide or another sulphide.
-- The complete route in the source is: **beneficiation → calcination/roasting if required → reduction/metal winning → refining**. Crushing/grinding precede concentration because liberation is necessary.
-- **Gravity separation:** the source sketch uses an inclined vibrating/flow table with adjustable barriers/riffles. Heavy particles respond differently from lighter particles under water flow; wet processing also suppresses dust.
+- The complete route in is: **beneficiation → calcination/roasting if required → reduction/metal winning → refining**. Crushing/grinding precede concentration because liberation is necessary.
+- **Gravity separation:** sketch uses an inclined vibrating/flow table with adjustable barriers/riffles. Heavy particles respond differently from lighter particles under water flow; wet processing also suppresses dust.
 - **Magnetic separation:** either the ore or the impurity may be magnetic. In cassiterite treatment, magnetic wolframite-type impurity $(Fe,Mn)WO_4$ is removed from non-magnetic $SnO_2$ concentrate.
 
-### Ore/mineral names explicitly appearing in the source
-| Name | Formula / representation | Metallurgical relevance |
+### Ore/mineral names explicitly appearing in | Name | Formula / representation | Metallurgical relevance |
 |---|---|---|
 | Pyrite / iron pyrites | $FeS_2$ | Example of mineral not preferred as iron ore |
 | Chalcopyrite / copper pyrites | $CuFeS_2$ | Major Cu ore |

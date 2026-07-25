@@ -53,4 +53,3 @@ export default function MetallurgyMarkdown({ content }: { content: string }) {
     </article>
   );
 }
-

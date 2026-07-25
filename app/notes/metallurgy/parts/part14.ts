@@ -1,9 +1,6 @@
 const content = String.raw`
 # Part 14 — Zinc — Calamine/Sphalerite, Roasting, Vaporisation & Refining
 
-> **Complete-source reconstruction:** theory is preserved at full teaching depth; diagrams are used only where they explain mechanism, apparatus, phase movement or decision logic.
-
-
 > **Scope:** Source pages 61–63.
 
 # C. Zinc
@@ -13,7 +10,7 @@ Important ores:
 - **zinc blende / sphalerite:** $ZnS$.
 
 ## 2. Zinc blende route — concentration and roasting
-The source shows selective/double froth flotation when PbS is present, followed by roasting.
+shows selective/double froth flotation when PbS is present, followed by roasting.
 
 $$2ZnS+3O_2\rightarrow2ZnO+2SO_2$$
 
@@ -23,7 +20,7 @@ $$2ZnSO_4\xrightarrow{\Delta}2ZnO+2SO_2+O_2$$
 This is why roasting conditions are selected to obtain ZnO before reduction.
 
 ## 5. Electrorefining zinc
-Acidified $ZnSO_4$ electrolyte is used. Industrial electrode details vary; the source illustrates zinc deposition on a removable sheet.
+Acidified $ZnSO_4$ electrolyte is used. Industrial electrode details vary; illustrates zinc deposition on a removable sheet.
 
 Cathode:
 $$Zn^{2+}+2e^-\rightarrow Zn$$
@@ -37,13 +34,12 @@ $$Zn\rightarrow Zn^{2+}+2e^-$$
 
 ![Zinc extraction flow](/notes/metallurgy/reference/carbon-reduction-dark-v4.webp)
 
-
 ## Zinc details restored from pages 61–63
 ### Calamine route
 $$ZnCO_3\xrightarrow{\Delta}ZnO+CO_2$$
 
 ### Zinc blende / sphalerite route
-Ore $ZnS$ often contains PbS and siliceous gangue. The source describes **double/selective flotation** because PbS and ZnS have different flotation behaviour; depressant/activator control is used to obtain ZnS concentrate.
+Ore $ZnS$ often contains PbS and siliceous gangue. describes **double/selective flotation** because PbS and ZnS have different flotation behaviour; depressant/activator control is used to obtain ZnS concentrate.
 
 ### Roasting condition
 $$2ZnS+3O_2\rightarrow2ZnO+2SO_2$$
@@ -57,7 +53,7 @@ Zn boils near 907°C, so zinc leaves as vapour with volatile impurities such as 
 
 ### Why excess coke helps
 $$C+CO_2\rightarrow2CO$$
-consumes CO$_2$ that could reoxidise Zn and maintains strongly reducing conditions. At these high temperatures the source correctly rejects simple $ZnO+CO\rightarrow Zn+CO_2$ as the preferred overall route under its Ellingham interpretation.
+consumes CO$_2$ that could reoxidise Zn and maintains strongly reducing conditions. At these high temperatures correctly rejects simple $ZnO+CO\rightarrow Zn+CO_2$ as the preferred overall route under its Ellingham interpretation.
 
 ### Spelter and refining sequence
 Crude/spelter Zn contains Cd, Fe, Pb etc.

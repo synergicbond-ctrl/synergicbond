@@ -1196,7 +1196,6 @@ function ConcentrationDashboard() {
   );
 }
 
-
 function ImportanceOfChemistry() {
   const items = [
     {
@@ -1504,7 +1503,6 @@ function TemperatureDependencePanel() {
     </section>
   );
 }
-
 
 // ============================================================================
 // MAIN PAGE COMPONENT

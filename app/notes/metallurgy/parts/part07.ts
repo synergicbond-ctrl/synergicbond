@@ -1,9 +1,6 @@
 const content = String.raw`
 # Part 7 — Ellingham Diagram — Full Thermodynamic Treatment
 
-> **Complete-source reconstruction:** theory is preserved at full teaching depth; diagrams are used only where they explain mechanism, apparatus, phase movement or decision logic.
-
-
 > **Scope:** Source pages 33–39. Full Ellingham-diagram theory, line slopes, phase changes, reduction criteria, carbon/CO/H₂ logic and limitations are retained and corrected.
 
 # 9. Ellingham Diagram — Thermodynamic Backbone of Metallurgy
@@ -41,7 +38,7 @@ gas moles increase, so $\Delta S^\circ$ is positive and the line has a **negativ
 ### Zero-line crossing
 Where an oxide-formation line crosses $\Delta G^\circ=0$, oxide formation ceases to be thermodynamically favourable under standard-state assumptions above that temperature; the reverse decomposition becomes favourable in the idealised sense.
 
-The source uses Ag₂O and HgO to illustrate comparatively low thermal stability. Exact decomposition behaviour depends on oxygen pressure and kinetics, so handwritten temperatures should not be treated as universal constants.
+uses Ag₂O and HgO to illustrate comparatively low thermal stability. Exact decomposition behaviour depends on oxygen pressure and kinetics, so handwritten temperatures should not be treated as universal constants.
 
 ### Kinks / slope changes
 A sudden slope change commonly reflects a **phase transition** (melting, boiling or allotropy) of a reactant/product, because entropy changes discontinuously.
@@ -63,16 +60,14 @@ A negative value means thermodynamic feasibility.
 ### Why carbon becomes powerful at high temperature
 The downward-sloping CO-formation line crosses many metal-oxide lines as temperature rises. This is why carbon/CO can reduce many oxides at sufficiently high temperature.
 
-The source highlights the approximate $\sim700^\circ C$ region where the relative preference for CO vs $CO_2$ formation changes. Use the diagram qualitatively rather than memorising one universal crossing temperature.
+highlights the approximate $\sim700^\circ C$ region where the relative preference for CO vs $CO_2$ formation changes. Use the diagram qualitatively rather than memorising one universal crossing temperature.
 
 ### Hydrogen
 Hydrogen can reduce oxides whose formation lines lie above the $H_2/H_2O$ line under the chosen conditions, e.g. oxides such as CuO and PbO are readily reduced. Feasibility varies with temperature and steam/hydrogen partial pressures.
 
 ---
 
-
 ![Thermodynamic reduction selection](/notes/metallurgy/reference/reduction-spectrum.webp)
-
 
 ## Ellingham details restored from source pages 33–39
 ### Definition
@@ -106,7 +101,7 @@ At a given $T$, an element/reaction represented by a **lower oxidation line** ha
 - Carbon becomes increasingly useful at high T because the $C\rightarrow CO$ line slopes downward.
 
 ### CO vs CO₂ preference in carbothermic reduction
-The source uses the intersection of carbon oxidation lines near the Boudouard crossover (often taught around 700–710°C as a simplified guide):
+uses the intersection of carbon oxidation lines near the Boudouard crossover (often taught around 700–710°C as a simplified guide):
 - higher T favours CO formation,
 - lower T makes CO$_2$ relatively more important.
 This is an equilibrium trend, not a universal sharp switch for every furnace.

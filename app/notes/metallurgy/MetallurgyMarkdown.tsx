@@ -5,7 +5,6 @@ import rehypeKatex from "rehype-katex";
 import "katex/dist/katex.min.css";
 import "./metallurgy.css";
 import OreClassificationGrid from "./OreClassificationGrid";
-import MetallurgyVisual from "./MetallurgyVisual";
 
 const ORE_GRID_MARKER = "[[ORE_CLASSIFICATION_GRID]]";
 const titleGradient = { backgroundImage: "linear-gradient(90deg, #0ee7e7 0%, #54a8ff 48%, #a76cf3 100%)", WebkitBackgroundClip: "text", backgroundClip: "text", color: "transparent" } as const;
@@ -25,19 +24,13 @@ function MarkdownBlock({ content }: { content: string }) {
         th: ({ children }) => <th className="metallurgy-table-heading">{children}</th>,
         table: ({ children }) => <div className="table-scroll"><table>{children}</table></div>,
         blockquote: ({ children }) => <aside className="concept-box">{children}</aside>,
-        img: ({ src = "", alt = "" }) => {
-          const imageSrc = String(src);
-          if (imageSrc.includes("/notes/metallurgy/reference/")) {
-            return <MetallurgyVisual src={imageSrc} alt={alt} />;
-          }
-          return (
-            <figure className="metallurgy-visual">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img className="edu-diagram" src={imageSrc} alt={alt} loading="lazy" style={{ maxHeight: "560px", objectFit: "contain" }} />
-              {alt && <figcaption>{alt}</figcaption>}
-            </figure>
-          );
-        },
+        img: ({ src = "", alt = "" }) => (
+          <figure className="metallurgy-visual">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img className="edu-diagram" src={String(src)} alt={alt} loading="lazy" style={{ maxHeight: "560px", objectFit: "contain" }} />
+            {alt && <figcaption>{alt}</figcaption>}
+          </figure>
+        ),
       }}
     >
       {content}

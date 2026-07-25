@@ -50,6 +50,24 @@ export default function IsomerismPart02() {
               amine, ketone, amide, ester, sulphonate and acid anhydride — never for a monovalent group, since there is no second side to redistribute.
             </p>
 
+            <div className="mt-5 rounded-xl border border-cyan-300/15 bg-[#050b16] p-4">
+              <p className="text-sm font-bold text-violet-200">Worked problem — draw all isomers of C₅H₁₂O (DU = 0): alcohol and ether</p>
+              <p className="mt-2 text-xs uppercase tracking-widest text-cyan-300">Alcohols</p>
+              <div className="mt-3 grid gap-4 md:grid-cols-4">
+                <Molecule2D molecule={M.pentan1ol} />
+                <Molecule2D molecule={M.methylbutan1ol3} />
+                <Molecule2D molecule={M.neopentylAlcohol} />
+                <Molecule2D molecule={M.pentan2ol} />
+                <Molecule2D molecule={M.methylbutan2ol2} />
+                <Molecule2D molecule={M.methylbutan1ol2} />
+                <Molecule2D molecule={M.methylbutan2ol3} />
+              </div>
+              <Pending>
+                Seven alcohols are drawn in the source at this point; the eighth mathematically possible C₅H₁₂O alcohol, pentan-3-ol, doesn&rsquo;t appear
+                in the sketch here (it may simply be omitted, or grouped visually with pentan-2-ol) — noted rather than silently added.
+              </Pending>
+            </div>
+
             <Example n="1a — ether">
               <Molecule2D molecule={M.methoxypropane} />
               <Molecule2D molecule={M.ethoxyethane} />
@@ -167,6 +185,64 @@ export default function IsomerismPart02() {
             <Pending>
               <b>Source example pending closer transcription:</b> part c (C₅H₁₀) begins on the same source page but its full acyclic-plus-cyclic isomer
               set continues onto the next page, which has not yet been transcribed in this pass.
+            </Pending>
+          </Section>
+
+          <Section title="Monochloro and dichloro substitution counting">
+            <div className="rounded-xl border border-cyan-300/15 bg-[#050b16] p-4">
+              <p className="text-sm font-bold text-violet-200">Total monochloro derivatives of pentane (8)</p>
+              <p className="mt-2 text-sm leading-6 text-slate-300">n-Pentane gives 3 (its three distinct carbon environments); 2-methylbutane gives 4; neopentane gives 1 — 3 + 4 + 1 = 8.</p>
+              <div className="mt-3 grid gap-4 md:grid-cols-4">
+                <Molecule2D molecule={M.chloropentane1} />
+                <Molecule2D molecule={M.chloropentane2} />
+                <Molecule2D molecule={M.chloropentane3} />
+                <Molecule2D molecule={M.chloromethylbutane1_2} />
+                <Molecule2D molecule={M.chloromethylbutane2_2} />
+                <Molecule2D molecule={M.chloromethylbutane2_3} />
+                <Molecule2D molecule={M.chloromethylbutane1_3} />
+                <Molecule2D molecule={M.neopentylChloride} />
+              </div>
+            </div>
+
+            <div className="mt-6 rounded-xl border border-cyan-300/15 bg-[#050b16] p-4">
+              <p className="text-sm font-bold text-violet-200">Total dichloro derivatives of b. benzene (3), c. cyclohexane (4), d. toluene (10)</p>
+              <p className="mt-3 text-xs uppercase tracking-widest text-cyan-300">b. Dichlorobenzene</p>
+              <div className="mt-3 grid gap-4 md:grid-cols-3">
+                <Molecule2D molecule={M.dichlorobenzene12} />
+                <Molecule2D molecule={M.dichlorobenzene13} />
+                <Molecule2D molecule={M.dichlorobenzene14} />
+              </div>
+              <p className="mt-5 text-xs uppercase tracking-widest text-cyan-300">c. Dichlorocyclohexane</p>
+              <div className="mt-3 grid gap-4 md:grid-cols-4">
+                <Molecule2D molecule={M.dichlorocyclohexane11} />
+                <Molecule2D molecule={M.dichlorocyclohexane12} />
+                <Molecule2D molecule={M.dichlorocyclohexane13} />
+                <Molecule2D molecule={M.dichlorocyclohexane14} />
+              </div>
+              <p className="mt-5 text-xs uppercase tracking-widest text-cyan-300">d. Dichlorotoluene — one Cl on the benzylic carbon (4)</p>
+              <div className="mt-3 grid gap-4 md:grid-cols-4">
+                <Molecule2D molecule={M.dichloromethylbenzene} />
+                <Molecule2D molecule={M.chloromethylChlorobenzeneOrtho} />
+                <Molecule2D molecule={M.chloromethylChlorobenzeneMeta} />
+                <Molecule2D molecule={M.chloromethylChlorobenzenePara} />
+              </div>
+              <p className="mt-5 text-xs uppercase tracking-widest text-cyan-300">d. Dichlorotoluene — both Cl on the ring (6)</p>
+              <div className="mt-3 grid gap-4 md:grid-cols-3">
+                <Molecule2D molecule={M.dichlorotoluene23} />
+                <Molecule2D molecule={M.dichlorotoluene24} />
+                <Molecule2D molecule={M.dichlorotoluene25} />
+                <Molecule2D molecule={M.dichlorotoluene26} />
+                <Molecule2D molecule={M.dichlorotoluene34} />
+                <Molecule2D molecule={M.dichlorotoluene35} />
+              </div>
+            </div>
+
+            <Pending>
+              <b>Source example pending closer transcription:</b> part a, the dichloro derivatives of C₄H₁₀, shows 7 structures in the source, but a
+              full symmetry count gives 9 distinct dichlorobutanes (6 from n-butane + 3 from isobutane) — the mismatch needs a closer source re-check
+              before publishing a specific 7- or 9-structure answer. The alkene-hydrogenation problem immediately after this exercise (&ldquo;how many
+              alkenes on hydrogenation can produce the following alkane?&rdquo;) is also deferred: identifying the exact target alkane and both alkene
+              precursors precisely from the freehand sketch needs a closer pass.
             </Pending>
           </Section>
 

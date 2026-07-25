@@ -2,6 +2,15 @@
 
 Primary sources: `Isomerism Kohinoor .pdf` (160 pages) and `Optical isomerism .pdf` (119 pages).
 
+## Isomerism Kohinoor source checkpoint (2026-07-26, batch 4)
+
+- Actual PDF pages visually inspected in this pass: Isomerism Kohinoor pp. 12–14 (re-read at full detail; p.11 remains deferred).
+- `part02.tsx` gains, all within the Metamerism/counting sections: the C₅H₁₂O alcohol enumeration (7 structures — the 8th mathematically possible isomer, pentan-3-ol, isn't drawn in the source and is noted as such rather than silently added); a new "Monochloro and dichloro substitution counting" section with the complete 8-structure monochloropentane set (verified correct by carbon-environment symmetry: 3 from n-pentane + 4 from 2-methylbutane + 1 from neopentane = 8, matching the source's own drawn count exactly) and the dichlorobenzene (3), dichlorocyclohexane (4) and dichlorotoluene (10, split into 4 benzylic + 6 ring-only) exercises.
+- Deliberately deferred: part (a) of the dichloro-derivatives exercise, C₄H₁₀ — the source draws 7 structures but a full symmetry count gives 9 distinct dichlorobutanes (6 from n-butane + 3 from isobutane), and this mismatch needs a source re-check before publishing either number as the source's actual answer. The alkene-hydrogenation problem right after it ("how many alkenes on hydrogenation can produce the following alkane") is also deferred — identifying the exact target alkane and both alkene precursors from the freehand sketch needs a slower pass. p.11's dense C₆H₁₂ isomer grid remains deferred from the previous checkpoint.
+- Added 32 new molecule entries to `molecules.ts` for this batch.
+- `npm run typecheck` and scoped `eslint` on `part02.tsx` + `molecules.ts` pass; every molecule reference cross-checked.
+- Next incomplete source page: Isomerism Kohinoor p.11 (deferred C₆H₁₂ grid) or the deferred p.14 items above; p.15 onward (tautomerism proper, then geometrical isomerism) has not been read yet.
+
 ## Isomerism Kohinoor source checkpoint (2026-07-26, batch 3 — correction pass)
 
 - Actual PDF pages visually inspected in this pass: Isomerism Kohinoor pp. 11–15 (inspected, not all transcribed — see below).

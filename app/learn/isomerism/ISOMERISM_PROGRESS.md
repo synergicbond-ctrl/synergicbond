@@ -2,6 +2,21 @@
 
 Primary sources: `Isomerism Kohinoor .pdf` (160 pages) and `Optical isomerism .pdf` (119 pages).
 
+## Duplication remediation (2026-07-26, batch 5)
+
+**What happened:** batches 1-4 rebuilt `parts/part01.tsx` and `part02.tsx` (which feed only Merged Part 1, "Foundations") to cover source pp. 2-14 sequentially, without first checking that pp. 8-14 were *already* built into `parts/part49.tsx`-`part55.tsx` in an earlier session, feeding Merged Parts 2-4 under different titles. Result: the same source content existed twice on the live site, in two different merged parts, with at least one inconsistency (the p.8 vs p.12 ether-classification discrepancy already logged in batch 3).
+
+**Resolution — keep the new Part 1/2 content (more thorough, closer-read, catches real errors), retire the old duplicates:**
+- `merged-parts/part02.tsx`: dropped `SourcePart049`/`SourcePart050` (pp. 8-9, duplicate of new Part 1 content); kept `SourcePart003` (tautomerism, pp. 17-28 — genuinely distinct, not covered anywhere yet). Retitled to match its actual remaining content.
+- `merged-parts/part03.tsx`: dropped `SourcePart051` (p.10, duplicate); kept `SourcePart052` (p.11, C₅H₁₀/C₆H₁₂ enumeration — this was *never duplicated*, since batch 1-4 deliberately deferred p.11 as too dense to transcribe safely. It stays as the only source for that page).
+- `merged-parts/part04.tsx`: all three of its sources (53, 54, 55 — pp. 12-14) were duplicates, so it now redirects to Part 1 rather than rendering empty content.
+- `parts/part49.tsx`, `part50.tsx`, `part51.tsx`, `part53.tsx`, `part54.tsx`, `part55.tsx` deleted (dead code once un-imported). `part52.tsx` kept.
+- `parts.tsx`: updated Part 2/3/4 titles and `source` strings; updated `legacyPartToMergedPart` so legacy numbers 49-51 and 53-55 now redirect to Part 1 (where their content actually lives) instead of the now-thinner Parts 2-4.
+- **Bonus resolution**: the retired `part54.tsx`/`part55.tsx` stated facts I'd deferred as uncertain in batch 4 — the C₄H₁₀ dichloro exercise has **9** structures (not 7; confirms the symmetry-based count over my visual read of the compressed sketch) and the alkene-hydrogenation problem has **2** precursors with a confirmed target of **2,2,4-trimethylpentane**. Both are now built into `part02.tsx` with full structures, resolving those two "pending" items from batch 4.
+- `npm run typecheck` and scoped `eslint` all pass; the redirect component needed `return redirect(...)` (not a bare statement) to satisfy the shared `mergedPartComponents` union type.
+
+**Lesson for future batches**: before transcribing any new page range into `parts/partNN.tsx`, first check `isomerismParts` / `legacyPartToMergedPart` in `parts.tsx` for whether that page range already has a legacy part number assigned elsewhere in the 169-file structure.
+
 ## Isomerism Kohinoor source checkpoint (2026-07-26, batch 4)
 
 - Actual PDF pages visually inspected in this pass: Isomerism Kohinoor pp. 12–14 (re-read at full detail; p.11 remains deferred).

@@ -1807,6 +1807,26 @@ Common states are **−3, +3 and +5**.
 - **Nitrogen alone shows +1, +2 and +4** as well, in its oxides; phosphorus shows +1 and +4 in some oxoacids.
 - **Nitrogen's covalency is capped at 4** — only one s and three p orbitals are available. The heavier elements use vacant d orbitals to expand covalency, as in **[PF₆]⁻**.
 
+~~~viz
+{
+  "type": "OxidationStateMap",
+  "caption": "Nitrogen spans every oxidation state from -III to +V - a range no other Group 15 element approaches.",
+  "describe": "A ladder of nine rungs. From the top: +V nitric acid and dinitrogen pentoxide; +IV nitrogen dioxide and dinitrogen tetroxide; +III nitrous acid and dinitrogen trioxide; +II nitric oxide; +I nitrous oxide; 0 dinitrogen; -I hydroxylamine; -II hydrazine; -III ammonia.",
+  "element": "N",
+  "rungs": [
+    { "state": "+V",   "species": ["HNO3", "N2O5"],  "tone": "good",   "note": "most oxidised" },
+    { "state": "+IV",  "species": ["NO2", "N2O4"],   "tone": "warn",   "note": "disproportionates in acid" },
+    { "state": "+III", "species": ["HNO2", "N2O3"],  "tone": "warn",   "note": "both oxidant and reductant" },
+    { "state": "+II",  "species": ["NO"],            "tone": "accent", "note": "odd electron, paramagnetic" },
+    { "state": "+I",   "species": ["N2O"],           "tone": "accent", "note": "neutral oxide" },
+    { "state": "0",    "species": ["N2"],            "tone": "good",   "note": "941 kJ/mol triple bond" },
+    { "state": "-I",   "species": ["NH2OH"],         "tone": "warn",   "note": "disproportionates" },
+    { "state": "-II",  "species": ["N2H4"],          "tone": "accent", "note": "reducing agent" },
+    { "state": "-III", "species": ["NH3", "N3-"],    "tone": "good",   "note": "most reduced" }
+  ]
+}
+~~~
+
 **Disproportionation is the signature reaction of the intermediate states**, and the two cases to know are:
 
 \[\mathrm{3HNO_2\rightarrow HNO_3+H_2O+2NO}\qquad(\text{all N states }+1\text{ to }+4\text{ disproportionate in acid})\]
@@ -1842,6 +1862,21 @@ Read four separate trends off it:
 - **Stability falls NH₃ → BiH₃** (bond dissociation enthalpy falls; ΔfH° goes from negative to strongly positive — only NH₃ is thermodynamically stable with respect to its elements).
 - **Reducing character therefore rises**: NH₃ is only a mild reducing agent, **BiH₃ is the strongest reducing agent of the series.**
 - **Basicity falls: NH₃ > PH₃ > AsH₃ > SbH₃ ≥ BiH₃.**
+~~~viz
+{
+  "type": "TrendChart",
+  "caption": "The H-E-H angle collapses down Group 15: only ammonia is near-tetrahedral, and the heavier hydrides bond through almost pure p orbitals.",
+  "describe": "Line plot of bond angle against hydride. Ammonia 107.8 degrees, phosphine 93.6, arsine 91.8, stibine 91.3. Ammonia is highlighted as the outlier.",
+  "yLabel": "angle H-E-H / degrees",
+  "points": [
+    { "x": "NH3",  "y": 107.8, "anomaly": true, "note": "sp3, true lone pair" },
+    { "x": "PH3",  "y": 93.6 },
+    { "x": "AsH3", "y": 91.8 },
+    { "x": "SbH3", "y": 91.3, "note": "~ pure p" }
+  ]
+}
+~~~
+
 - **The bond angle collapses from 107.8° to ≈ 91°.** As the central atom grows and its electronegativity falls, the bonding pairs move further out and repel each other less, so lone-pair/bond-pair repulsion squeezes the angle down toward 90° — i.e. the heavier hydrides use almost pure p orbitals for bonding.
 - **NH₃ boils higher than PH₃** despite being lighter, because of **hydrogen bonding** — the same anomaly as H₂O versus H₂S. From PH₃ onward boiling point rises normally with molar mass.
 
@@ -2026,6 +2061,30 @@ Nitrogen forms an oxide in every state from +1 to +5 — a range no other Group 
 | NO₂ | **angular** | N–O 120 pm, ∠O–N–O 134° |
 | N₂O₄ | **planar**, N–N bonded | N–N 175 pm, N–O 121 pm, ∠ 135° |
 | N₂O₅ | **planar**, O-bridged | N–O(bridge) 151 pm, N–O 119 pm |
+
+~~~viz
+{
+  "type": "MODiagram",
+  "caption": "Nitric oxide has 11 valence electrons, so one must occupy an antibonding pi*2p orbital - which fixes the bond order at two and a half and makes NO paramagnetic.",
+  "describe": "Molecular orbital energy diagram for NO. From the bottom: sigma 2s filled, sigma star 2s filled, the degenerate pi 2p pair filled with four electrons, sigma 2p filled, then a single unpaired electron in one of the degenerate pi star 2p orbitals, and sigma star 2p empty.",
+  "left": "N",
+  "right": "O",
+  "centre": "NO",
+  "levels": [
+    { "label": "\u03c32s",  "energy": 1, "electrons": 2 },
+    { "label": "\u03c3*2s", "energy": 2, "electrons": 2, "anti": true },
+    { "label": "\u03c02p",  "energy": 3, "electrons": 2, "degenerate": { "electrons": 2 } },
+    { "label": "\u03c32p",  "energy": 4, "electrons": 2 },
+    { "label": "\u03c0*2p", "energy": 5, "electrons": 1, "degenerate": { "electrons": 0 }, "anti": true, "mark": true },
+    { "label": "\u03c3*2p", "energy": 6, "electrons": 0, "anti": true }
+  ],
+  "results": [
+    "bonding 8, antibonding 3  \u2192  bond order 2\u00bd",
+    "one unpaired electron  \u2192  NO is paramagnetic",
+    "remove it (NO\u207a): order 3, N-O contracts 1.15 \u2192 1.06 \u00c5"
+  ]
+}
+~~~
 
 **The anhydride relationships** are the single most useful thing in this section:
 

@@ -65,7 +65,12 @@ Last updated: 2026-07-26.
 - **Destination:** Sections 7–19 — **PENDING**
 
 ### File 8 — `151716181314.pdf` (J.D. Lee adapted ed., Ch. 10 — **all six groups**)
-- **Pages:** 172 · **Inspected:** **~2 / 172 (Text — contents + section index only)**
+- **Pages:** 172 · **Inspected:** **~25 / 172 (Text)** — contents, full section index, and a
+  **deep read of pp. 448–470** (extracted lines 4003–5421) = Part 3 Group 15, sections
+  10.35–10.43 inclusive, through nitric acid. Harvest recorded in `MASTER_REGISTERS.md`:
+  30 topics, ~120 species, ~60 reactions, 22 structures, 10 MO cases, 17 visuals, 6 contradictions.
+- **Still to read in this file:** lines 5421–11169 (P oxides/oxoacids, Groups 16, 17, 18) and
+  lines 107–4003 (Groups 13–14).
 - **Structure mapped** (extracted-line anchors): Part 1 G13 @107 · Part 2 G14 @1749 · Part 3 G15 @4003 · Part 4 G16 @6221 · Part 5 G17 @8089 · Part 6 G18 @9992; sections 10.1–10.74
 - **Sections that cover topics absent from the course today:**
   - **10.38 Hydrogen azide and the azides** — not in the course at all
@@ -99,8 +104,8 @@ Last updated: 2026-07-26.
 | | Pages | Inspected | % |
 |---|---|---|---|
 | Files 1–6 (original six) | 437 | **325** | 74 % |
-| Files 7–11 (new five) | 1294 | **21** | 1.6 % |
-| **Total project** | **1731** | **346** | **20 %** |
+| Files 7–11 (new five) | 1294 | **44** | 3.4 % |
+| **Total project** | **1731** | **369** | **21 %** |
 
 **The project has NOT been fully reviewed.** No statement in the course may claim otherwise.
 
@@ -120,9 +125,11 @@ cross-references resolving, all 20 lessons non-empty.
 3. Full mandatory compound profiles (spec §6) — identity, occurrence, every
    preparation with conditions and reasons, physical properties. Current
    coverage is trend- and mechanism-led, not profile-led.
-4. **Diagrams.** The course is text and tables only. Spec asks for MO diagrams,
-   structure galleries, reaction maps, oxidation-state ladders, decision trees,
-   industrial-process diagrams. None exist.
+4. ~~**Diagrams.**~~ **DONE — infrastructure shipped.** `app/notes/p-block/_visuals/`
+   provides a themed SVG system (theme, Frame, MoleculeDiagram, StructureGallery,
+   MODiagram, OxidationStateMap, TrendChart, ProcessFlow/ReactionNetwork/HydrolysisMap,
+   ComparisonGraphic) plus a registry and a `~~~viz` fence bridge in the p-block renderer.
+   Three visuals are live. Remaining: author the other 14 registered visuals.
 5. Molecular Orbital Theory depth beyond the O₂ paramagnetism case.
 
 ## 4a. A twelfth file exists that was not attached

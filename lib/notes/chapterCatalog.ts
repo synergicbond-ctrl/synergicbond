@@ -15,7 +15,7 @@
 //   mole-concept 15 · stoichiometry 9 · concentration-terms 6 · eudiometry 6 ·
 //   redox 10 lessons (15 sections) · hydrogen 8 lessons (72 sections) ·
 //   periodic-table master notes · s-block-elements 18 lessons ·
-//   p-block-elements 20 lessons ·
+//   p-block-elements 20 lessons · d-block-elements 10 theory parts ·
 //   isomerism 40 parts (169 source modules).
 // ─────────────────────────────────────────────────────────────────────────────
 
@@ -190,6 +190,16 @@ export const AUTHORED_COURSES: AuthoredCourse[] = [
     lessonLabel: "18 lessons",
     premium: true,
     description: "JEE Advanced notes for Groups 1 and 2: periodic trends, lithium and beryllium anomalies, diagonal relationships, hydrides, halides, oxoanion salts and named sodium and calcium compounds.",
+  },
+  // ── D-block Elements ──────────────────────────────────────────────────────
+  {
+    id: "d-block-elements",
+    syllabusId: "d-and-f-block-elements",
+    title: "D-block Elements",
+    href: "/notes/d-block",
+    lessonLabel: "10 theory parts",
+    premium: true,
+    description: "JEE Advanced theory covering transition-element configurations, periodic trends, oxidation states, colour, magnetism, chromium, manganese and detailed Ag, Zn, Cu and Fe chemistry.",
   },
   // ── P-block Elements ──────────────────────────────────────────────────────
   {

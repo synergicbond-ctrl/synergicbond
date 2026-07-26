@@ -117,7 +117,7 @@ The five trends worth being able to *derive*, not memorise:
 2. **Ionisation enthalpy: B > Tl > Ga > Al > In.** The fall from B to Al is the ordinary size effect; the rises at Ga (d-block contraction) and at Tl (lanthanide contraction) interrupt it. ΣIE₁₊₂₊₃ for boron is enormous (6887 kJ mol⁻¹), which is *why* B³⁺ has no existence under ordinary conditions and boron is invariably covalent.
 3. **Electronegativity falls B → Al then rises slightly Al → Tl**, tracking the same size irregularity.
 4. **Melting point: B > Al > Tl > In > Ga**, but **boiling point: B > Al > Ga > In > Tl**. Boron's value is huge because it is a covalent network of B₁₂ icosahedra. Gallium's melting point of 303 K (it melts in the hand) is the anomaly: solid gallium is built from discrete Ga₂ units, so relatively little energy destroys the lattice — yet its bp is 2676 K, giving it the widest liquid range of any of these metals and making it a high-temperature thermometric fluid. Gallium also *expands on freezing* (the liquid is denser than the solid), as water does.
-5. **Structures.** Boron: polymeric icosahedral B₁₂ units (α-rhombohedral boron is the simplest; β-rhombohedral is built on a B₈₄ = B₁₂ + B₁₂ + B₆₀ unit). Al, In, Tl: close-packed metal lattices. Ga: discrete diatomic Ga₂ units. Density rises monotonically B → Tl with atomic mass.
+5. **Structures — and why boron is not a metal.** Boron is built from **icosahedral B₁₂ units**: each boron is bonded to **five equivalent neighbours at 1.77 Å** within its icosahedron, and in the simplest form (α-rhombohedral boron) each icosahedron is bonded to six others at 2.03 Å. β-rhombohedral boron is built on a larger B₈₄ = B₁₂ + B₁₂ + B₆₀ unit. The decisive point: **icosahedra pack space very inefficiently — only 37 % of space is occupied, against 74 % for a close-packed metal.** Boron therefore has a rigid, directional, covalent lattice rather than a metallic one, which is exactly why it is hard, extremely high-melting and non-metallic. Al, In and Tl have ordinary close-packed metal structures. Gallium is the oddity: each Ga has **one** nearest neighbour at 2.70 Å and six more distant ones at 2.73 and 2.79 Å, i.e. **discrete Ga₂ molecules embedded in a metallic lattice**. Density rises monotonically B → Tl with atomic mass.
 
 ## 2.3 Oxidation states: the inert-pair effect, quantified
 
@@ -133,7 +133,38 @@ Consequences to have ready:
 - Compounds in the +1 state are *more ionic* than those in the +3 state (lower charge, larger cation, less polarising).
 - A quantitative handle: the ns → np promotion gap ΔE = E(np) − E(ns) in eV is B 4.5, Al 4.5, **Ga 6.0**, In 5.3, **Tl 7.0** (continuing to Pb 9.0, Bi 10.0, Po 12.0, At 16.0). The jumps at Ga and Tl are the energetic signature of the effect.
 
-> **Read the effect honestly.** "Inert pair" is a label, not a mechanism. The real reason the higher state is abandoned is that the M–X bond energy falls steadily down the group, so the energy released by forming two extra bonds no longer repays the energy needed to unpair and promote the ns² electrons. Poor d/f shielding and (for the sixth period) relativistic contraction of the 6s orbital reinforce this. Never write "because the inert pair is inert."
+> **Read the effect honestly.** "Inert pair" is a label, not a mechanism — it merely *describes* what happens, namely that two electrons do not take part in bonding. The reason they do not is **energy**: the mean M–Cl bond energy falls steadily down the group,
+>
+> \[\mathrm{GaCl_3\ 242\ >\ InCl_3\ 206\ >\ TlCl_3\ 153\ kJ\ mol^{-1}}\]
+>
+> so by thallium the energy released on forming two extra bonds no longer repays the energy needed to unpair and promote the ns² electrons — and the pair is "most likely to be inert in thallium." Poor d/f shielding and (for the sixth period) relativistic contraction of the 6s orbital reinforce this. Never write "because the inert pair is inert."
+
+Note also that the group state being **covalent** is itself an energy argument, and Fajans' rules say why: the ions would be small and carry a high 3+ charge (both favouring covalency), ΣIE₁₊₂₊₃ is very large, and the electronegativities are higher than in Groups 1 and 2, so the electronegativity difference to most partners is too small for ionic bonding. The apparent exception proves the rule — **anhydrous AlCl₃ is covalent, but it ionises in water** because hydration pays the bill:
+
+\[\Delta H_{\mathrm{hyd}}(\mathrm{Al^{3+}})=-4665,\quad \Delta H_{\mathrm{hyd}}(\mathrm{Cl^-})=-381\ \Rightarrow\ -4665+3(-381)=\mathbf{-5808\ kJ\ mol^{-1}}\]
+
+which **exceeds ΣIE₁₊₂₊₃ = 5137 kJ mol⁻¹**. This is why Al³⁺ compounds are ionic when hydrated and covalent when anhydrous.
+
+## 2.3a Thallium(I): the element that behaves like an alkali metal
+
+Because the +1 state dominates for thallium, Tl⁺ deserves separate treatment — and it is examined precisely because it sits between two other groups in behaviour.
+
+**Tl⁺ resembles the Group 1 metals.** Its ionic radius, **1.50 Å, lies between K⁺ (1.38 Å) and Rb⁺ (1.52 Å)**, so:
+
+- **TlOH and Tl₂O are water-soluble and strongly basic** — quite unlike the amphoteric Al(OH)₃ or the trivalent Tl(OH)₃. They **absorb CO₂ from the air**, forming Tl₂CO₃, exactly as KOH does.
+- Most Tl(I) salts have solubilities a little lower than the corresponding Group 1 salts.
+- **Tl⁺ can replace K⁺ in some enzymes**, and is used as a biological tracer for that reason.
+- Differences: **TlOH is yellow**, and on heating to 100 °C it turns into black Tl₂O; the coordination number of Tl⁺ is usually 6 or 8 rather than 6.
+
+**But Tl⁺ also resembles Ag⁺** — and the discriminating test is worth memorising:
+
+- **TlF is soluble in water, but TlCl, TlBr and TlI are almost insoluble** (compare AgCl, AgBr, AgI).
+- **TlCl darkens on exposure to light**, just as AgCl does.
+- **The separation: TlCl is *not* soluble in NH₄OH, whereas AgCl *is*** (AgCl dissolves as [Ag(NH₃)₂]⁺).
+
+**A general principle falls out of this**, and it applies right across the p-block: *where an element exists in more than one valency state, the lowest valency state gives the most basic oxide and hydroxide.* Hence TlOH (strong base) versus Tl(OH)₃, and In₂O₃/Tl₂O being purely basic while Al₂O₃/Ga₂O₃ are amphoteric — indeed **Tl₂O₃ and In₂O₃ form neither hydrates nor hydroxides at all**.
+
+Thallium(I) compounds are typically colourless and **extremely poisonous**: traces turn the hair white, and larger doses cause loss of hair and death, because they disrupt enzyme systems. Thallium(III) acetate and trifluoroacetate, made by dissolving the oxide in the appropriate acid, are reagents for making organothallium compounds.
 
 ## 2.4 Reactivity of the free elements
 
@@ -226,6 +257,10 @@ Boron resembles **silicon** (Group 14, one period down and one group across) far
 - "TlI₃" is **Tl⁺[I₃]⁻**, and "GaCl₂"/"InCl₂" are **Ga⁺[GaCl₄]⁻ / In⁺[InCl₄]⁻** — mixed-valence compounds, not M(II).
 - B³⁺ does **not** exist as a free ion. Every boron compound in this chapter is covalent.
 - Do not push the B–Si diagonal into identity: covalency 4 vs 6 is the hard limit that separates them.
+- **Gallium's melting-point anomaly is a solid-state effect only.** Its *boiling* point is perfectly in line with the group, because the Ga₂ structure no longer exists in the liquid. Quote the right property.
+- **Tl⁺ resembles K⁺/Rb⁺** (TlOH a water-soluble strong base that absorbs CO₂) **and Ag⁺** (insoluble, light-sensitive halides). The one test that separates it from silver: **TlCl does not dissolve in NH₄OH; AgCl does.**
+- Tl₂O₃ and In₂O₃ form **no hydroxides or hydrates**. Do not write "Tl(OH)₃ is basic" — write that Tl₂O/TlOH is.
+- The inert-pair effect is an **energy** argument (falling M–Cl bond energy: 242 → 206 → 153 kJ mol⁻¹), not a property of the electrons themselves.
 
 # 3. Group 13: boron–oxygen chemistry — B₂O₃, borax, boric acid and the borates
 
@@ -278,7 +313,7 @@ Because the solution contains comparable amounts of a weak acid and its salt, **
 \[\mathrm{[B_4O_5(OH)_4]^{2-}+5H_2O\rightleftharpoons 2B(OH)_3+2[B(OH)_4]^-}\]
 \[\mathrm{2[B(OH)_4]^-+2H_3O^+\rightarrow 2B(OH)_3+4H_2O}\]
 
-Overall: \(\mathrm{Na_2[B_4O_5(OH)_4]\cdot 8H_2O+2HCl\rightarrow 2NaCl+4H_3BO_3+5H_2O}\); on cooling, white flakes of boric acid separate. **Use methyl orange (pH 3.1–4.4), never phenolphthalein**, because the H₃BO₃ produced is itself a weak acid and would keep phenolphthalein from turning.
+Overall: \(\mathrm{Na_2[B_4O_5(OH)_4]\cdot 8H_2O+2HCl\rightarrow 2NaCl+4H_3BO_3+5H_2O}\); on cooling, white flakes of boric acid separate. **Use methyl orange (pH 3.1–4.4), never phenolphthalein.** The quantitative reason: the second reaction above titrates at **pH 9.2**, so the indicator must have pKₐ below about 8 — otherwise it would respond to the weak H₃BO₃ being produced rather than to the end point.
 
 **The borax-bead test.** The molten bead is essentially NaBO₂ + B₂O₃; the boric anhydride dissolves transition-metal oxides as coloured metaborates:
 
@@ -340,6 +375,8 @@ Metaboric acid is HO–B=O; four such units condense: \(\mathrm{4HBO_2\rightarro
 
 \[\mathrm{B(OH)_3+4HF\rightleftharpoons H_3O^+ +[BF_4]^- +2H_2O}\]
 
+The tetrahedral **[BF₄]⁻ ion closely resembles ClO₄⁻ and SO₄²⁻** in both structure and solubility — KBF₄ and KClO₄ are both only sparingly soluble in water. Like perchlorate, **[BF₄]⁻ has very little tendency to form complexes in aqueous solution**, which is precisely why both are used as "innocent", weakly coordinating counter-ions.
+
 **Detecting the borate radical.** Warm the sample with concentrated H₂SO₄ and ethanol (or methanol); the volatile ester burns with a **green-edged flame**:
 
 \[\mathrm{H_3BO_3+3C_2H_5OH\rightarrow B(OC_2H_5)_3\ (volatile)+3H_2O}\]
@@ -366,8 +403,26 @@ In *simple* borates each boron is bonded to three oxygens at the corners of an e
 | Metaborate | BO₂⁻, cyclic [B₃O₆]³⁻ | NaBO₂ ≡ Na₃[B₃O₆], KBO₂ ≡ K₃[B₃O₆] |
 | Pyroborate | B₂O₅⁴⁻ (two triangles, one shared O) | Mg₂B₂O₅ |
 | Chain metaborate | [(BO₂)ₙ]ⁿ⁻ | infinite corner-shared chains |
-| Complex borate (3- **and** 4-coordinate B) | [B₄O₅(OH)₄]²⁻, [B₅O₆(OH)₄]⁻ | borax; pentaborate |
+| Complex borate (3- **and** 4-coordinate B) | [B₄O₅(OH)₄]²⁻, [B₅O₆(OH)₄]⁻ | borax; K[B₅O₆(OH)₄], a **spiro** compound of one tetrahedral + four triangular units |
 | Peroxoborate | [(OH)₂B(O–O)₂B(OH)₂]²⁻ | sodium peroxoborate |
+
+Worked examples of the polymerisation: **two** triangles sharing one corner give the pyroborates Mg₂[B₂O₅] and Co[B₂O₅] (named by analogy with pyrophosphates); **three** triangles sharing corners close into a ring in NaBO₂ and KBO₂, better written **Na₃[B₃O₆]** and **K₃[B₃O₆]**; many triangles polymerise into an infinite chain, as in calcium metaborate **[Ca(BO₂)₂]ₙ**. Discrete *tetrahedral* units occur in Na₂[B(OH)₄]Cl, and two tetrahedra share a corner in Mg[(HO)₃B·O·B(OH)₃].
+
+### The structural rules — and the one contrast that matters most
+
+Borate structures follow five principles (Christ and Clark):
+
+1. Boron often forms **triangular BO₃** units; these may stay monomeric or polymerise by sharing corner oxygens into chains, rings and **flat two-dimensional sheets**.
+2. Boron sometimes forms **tetrahedral BO₄** units; complex polynuclear borates contain **both** BO₃ and BO₄ linked by shared corners, and these structures are **not flat**.
+3. Hydrated borates may accept protons, in the order: O²⁻ → OH⁻ first, then tetrahedral boron, then oxygen in planar triangles, and finally free OH⁻ → H₂O.
+4. Hydrated borates may polymerise by eliminating water, sometimes followed by breaking and rearranging B–O bonds.
+5. B₂O₃ often exists alongside the more complex polyanions.
+
+> **The high-yield contrast.** Boron, silicon and phosphorus all form polymeric oxo-anions — these are the **isopolyacids** ("iso" = only one kind of acidic ion polymerises; when two different ions polymerise together, as in phosphomolybdate, you get a **heteropolyacid**). But their behaviour in water is completely different:
+>
+> **Borate polymers break up when dissolved in water. Silicate and phosphate polymers do not.**
+>
+> The reason is structural: silicates and phosphates are built *exclusively* on tetrahedral SiO₄ and PO₄ units, which polymerise into chains, rings and three-dimensional frameworks that are rather stable. Borate polymers mix three- and four-coordinate boron and are held together far more loosely. This is why you can speak of a silicate *mineral* but must speak of borate *equilibria* — and it is exactly why borax dissolves to give a mixture of B(OH)₃ and [B(OH)₄]⁻ rather than an intact [B₄O₅(OH)₄]²⁻ ion.
 
 **Sodium peroxoborate** is made either by electrolysing sodium borate solution or by oxidising boric acid / sodium metaborate with H₂O₂:
 
@@ -386,8 +441,10 @@ The anion contains **two genuine peroxide O–O bridges** linking two tetrahedra
 - Planar B(OH)₃ ↔ tetrahedral [B(OH)₄]⁻: two different species, two different geometries.
 - **Ag⁺ gives no borax-bead colour** (AgBO₂ is white). Mn(II) is violet only in the oxidising flame.
 - B₂O₃ is acidic, but with P₄O₁₀ or SO₃ it behaves as a **base** (→ BPO₄, B₂(SO₄)₃).
-- HBF₄ is a **strong** acid even though H₃BO₃ is very weak — fluoride completes boron's octet and delocalises the charge over four F.
-- Boric acid on heating gives HBO₂ then H₂B₄O₇ then B₂O₃ — three products, in that order, at three different temperatures.
+- HBF₄ is a **strong** acid even though H₃BO₃ is very weak — fluoride completes boron's octet and delocalises the charge over four F. [BF₄]⁻ behaves like ClO₄⁻: tetrahedral, poorly complexing, KBF₄ sparingly soluble.
+- Boric acid on heating gives HBO₂ then H₂B₄O₇ then B₂O₃ — three products, in that order, at three different temperatures. Balance it correctly: **4HBO₂ → H₂B₄O₇ + H₂O** (one water, not two).
+- **Borate polymers break up in water; silicate and phosphate polymers do not.** Borates mix BO₃ and BO₄ units; silicates and phosphates are built only on tetrahedra. Never reason about borate solutions as though the solid anion survived intact.
+- Both borates and silicates are **isopolyacids** (one kind of ion polymerising). A *hetero*polyacid needs two different ions, e.g. phosphomolybdate.
 
 # 4. Group 13: halides, boranes, borazine and the aluminium compounds
 
@@ -452,6 +509,14 @@ Gallium and indium form things written "GaCl₂" and "InCl₂" — **but these a
 
 Similarly Ga[AlCl₄] ("gallous tetrachloroaluminate") contains gallium in the **+1** state, not +2.
 
+**Monohalides.** Pushing further, boron forms a series of stable polymeric **monohalides (BX)ₙ**. Electric discharge through B₂Cl₄ gives B₄Cl₄, B₈Cl₈, B₉Cl₉, B₁₀Cl₁₀, B₁₁Cl₁₁ and B₁₂Cl₁₂. In the crystalline members (B₄Cl₄, B₈Cl₈, B₉Cl₉) the boron atoms form a **closed cage or polyhedron, each boron bonded to three other borons and one chlorine.** With only three valence electrons per boron there are nowhere near enough electrons for normal pairs, so **multi-centre σ bonds spread over the whole cage** — the same principle as the boranes, applied to halides.
+
+Al, Ga and In also form monohalides MX, but only **in the gas phase at high temperature**, and they are covalent and not very stable:
+
+\[\mathrm{AlCl_3+2Al\xrightarrow{high\ T}3AlCl}\]
+
+Thallium is the exception that proves the inert-pair rule: **thallous (Tl(I)) halides are more stable than the thallic (Tl(III)) trihalides, and TlF is ionic.**
+
 ## 4.3 Aluminium halides: ionic AlF₃ versus bridged Al₂Cl₆
 
 **AlF₃ is ionic** with a high melting point; AlCl₃, AlBr₃ and AlI₃ are essentially **covalent** when anhydrous. Coordination number tells the whole story:
@@ -464,7 +529,17 @@ Similarly Ga[AlCl₄] ("gallous tetrachloroaluminate") contains gallium in the *
 
 So AlCl₃ passes through **three** structural regimes: an octahedral CN 6 lattice in the cold solid; **Al₂Cl₆ dimers** (CN 4) once it melts or sublimes near 180 °C, with a large jump in volume; and monomeric, trigonal-planar AlCl₃ only on strong heating (≈ 1073 K). That volume jump on heating is a direct sign of how close this compound sits to the ionic/covalent borderline.
 
-**The Al₂Cl₆ bridge is *not* the diborane bridge.** Two chlorines bridge the two aluminiums, each donating a lone pair so that both Al reach a tetrahedral octet. The molecule is **non-planar**, with bridging Al–Cl 221 pm and terminal Al–Cl 206 pm, ∠Al–Cl–Al ≈ 79°, ∠Cl–Al–Cl(bridge) ≈ 101° and terminal ∠Cl–Al–Cl ≈ 118°. Counting bonds: **four normal 2c–2e terminal bonds plus two electron-*rich* 3c–4e bridges.** Diborane's bridges are electron-*deficient* 3c–2e. This contrast — halogen bridges are 3c–4e, hydrogen bridges are 3c–2e — is one of the highest-yield structural distinctions in the chapter.
+**The Al₂Cl₆ bridge is *not* the diborane bridge.** Two chlorines bridge the two aluminiums, each donating a lone pair so that both Al reach a tetrahedral octet. The molecule is **non-planar**, with bridging Al–Cl 221 pm and terminal Al–Cl 206 pm, ∠Al–Cl–Al ≈ 79°, ∠Cl–Al–Cl(bridge) ≈ 101° and terminal ∠Cl–Al–Cl ≈ 118°. Counting bonds: **four normal 2c–2e terminal bonds plus two electron-*rich* 3c–4e bridges** (each Cl brings a lone pair to the bridge).
+
+> **Learn the three bridges together — this is the single highest-yield structural set in the chapter.**
+>
+> | Dimer | Bridging atom | Bridge type | Why |
+> |---|---|---|---|
+> | **Al₂Cl₆** | Cl | **3c–4e** (electron-**rich**) | chlorine donates a full lone pair |
+> | **B₂H₆** | H | **3c–2e** (electron-**deficient**) | hydrogen has only one electron to give |
+> | **Al₂(CH₃)₆** | CH₃ | **3c–2e** (electron-**deficient**) | carbon has no lone pair to donate |
+>
+> Aluminium trimethyl is genuinely dimeric, with three-centre bonds using **sp³ hybrid orbitals on both Al and C in the Al–C–Al bridges**. So the bridge type is decided by *what the bridging atom brings*, not by which metal is bridged. Asking "is this bridge 3c–2e or 3c–4e?" is a standard JEE Advanced discriminator.
 
 Maximum coordination number and which halide satisfies it is also examinable: **B and Al reach their maximum CN only with fluoride** ([BF₄]⁻, [AlF₆]³⁻), while the larger **Ga and In reach CN 6 with both F and Cl** ([GaX₆]³⁻, [InX₆]³⁻, X = F, Cl).
 
@@ -514,18 +589,38 @@ A related bonding point: **hydrated Al³⁺ compounds are ionic, anhydrous ones 
 
 | | α-Al₂O₃ | γ-Al₂O₃ |
 |---|---|---|
-| Made by | Al(OH)₃ at ≈ 1000 °C | Al(OH)₃ at ≈ 450–720 K |
-| Structure | hexagonal — **corundum** | non-hexagonal, defect spinel |
-| Hardness | very hard (Mohs 9) | soft |
+| Made by | Al(OH)₃ or γ-Al₂O₃ **above 1000 °C** | Al(OH)₃ **below 450 °C** |
+| Structure | hexagonal — **corundum**: hcp O²⁻ with **two-thirds of the octahedral holes filled by Al³⁺** | non-hexagonal, defect spinel |
+| Hardness | very hard (**Mohs 9**), mp above 2000 °C | soft |
 | Surface area | low | **high, porous** |
-| Uses | abrasive (grinding wheels, sandpaper), refractory furnace linings, jewellers' rouge | **dehydrating agent, adsorbent, chromatography, catalyst support** |
+| Acids | **unaffected by acids** | **dissolves in acids**, and absorbs water |
+| Uses | abrasive (grinding wheels, sandpaper), refractory furnace linings, jewellers' rouge for polishing glass | **dehydrating agent, adsorbent, chromatography, catalyst support** |
 
-γ-Al₂O₃ converts irreversibly to α-Al₂O₃ at ≈ 1000 °C. Traces of transition-metal oxides give the gemstones: **ruby** (Cr³⁺), **blue sapphire** (Fe²⁺/Fe³⁺ + Ti⁴⁺), white sapphire (pure corundum), oriental topaz (Fe³⁺), oriental emerald (Cr³⁺/V³⁺).
+The α ↔ γ distinction is examined through the acid test: **α-Al₂O₃ resists acid, γ-Al₂O₃ dissolves in it.** **Emery** is an impure corundum contaminated with iron oxide and silica — the abrasive on emery paper. A third, **fibrous** form (Saffil) is made commercially by heating alumina/zirconia sols: hollow, flexible, chemically inert fibres that survive prolonged heating to 1400 °C, woven into rope and fabric and used to stiffen metals — **aluminium reinforced with 50 % Saffil fibres is five times stiffer than pure aluminium.**
+
+Traces of transition-metal oxides give the gemstones, all of them **mixed oxides**: **ruby** (Cr³⁺, made synthetically by heating Al₂O₃ + Cr₂O₃ in an oxy-hydrogen flame; hard enough for watch and instrument bearings as well as jewellery), **blue sapphire** (Fe²⁺, Fe³⁺ *and* Ti⁴⁺ together), white sapphire (gem-quality pure corundum), oriental topaz (Fe³⁺), oriental emerald (Cr³⁺/V³⁺). The general mixed-oxide type is Mᴵᴵ Mᴵᴵᴵ₂O₄, the **spinel** structure named after MgAl₂O₄.
 
 **Al(OH)₃ is amphoteric**, but its acidic side is very weak — and the proof is that **CO₂ reprecipitates it from aluminate solution**:
 
 \[\mathrm{Al_2O_3+6HCl\rightarrow 2AlCl_3+3H_2O};\qquad \mathrm{Al_2O_3+2NaOH+3H_2O\rightarrow 2Na[Al(OH)_4]}\]
 \[\mathrm{Na[Al(OH)_4]\xrightarrow{CO_2}Al(OH)_3\downarrow}\]
+
+**What "aluminate" actually is** depends on pH and concentration — the formula NaAlO₂·2H₂O is a convenient fiction, and Raman spectra show three regimes:
+
+1. **pH 8–12:** the ions **polymerise through OH bridges**, and each aluminium is **octahedrally** coordinated.
+2. **Dilute solution above pH 13:** the tetrahedral **[Al(OH)₄]⁻** ion exists.
+3. **Concentrated (above 1.5 M) and above pH 13:** it exists as the **dimer [(HO)₃Al–O–Al(OH)₃]²⁻**.
+
+**Qualitative analysis for aluminium.** Al(OH)₃ is precipitated as a **white gelatinous** solid by adding NH₄OH (after removing acid-insoluble sulphides with H₂S). Distinguish it from its neighbours by colour and by the excess-reagent tests:
+
+| Hydroxide | Appearance | In excess NH₄OH |
+|---|---|---|
+| Fe(OH)₃ | red-brown | insoluble |
+| Cr(OH)₃ | grey-green / grey-blue | insoluble |
+| **Zn(OH)₂** | white | **dissolves** |
+| **Al(OH)₃** | **white gelatinous** | **does not dissolve** |
+
+The **confirmatory test for aluminium is the formation of a red precipitate (lake) from Al(OH)₃ and the dye alizarin.** For quantitative work, **8-hydroxyquinoline** gives the standard gravimetric determination of aluminium.
 
 **Alums.** General formula **M₂SO₄·M′₂(SO₄)₃·24H₂O**, equivalently **MM′(SO₄)₂·12H₂O**.
 
@@ -569,7 +664,41 @@ The BF₃ + NaBH₄ route in diglyme is the one used when diborane is wanted *in
 
 **Structure.** Twelve valence electrons; each boron sp³. **Four terminal B–H bonds** (119 pm, ∠H–B–H = 121.5°) lie with the two borons in **one plane — six atoms coplanar**. **Two bridging hydrogens** sit above and below that plane (bridging B–H = 133–134 pm, ∠H–B–H at the bridge = 97°, B···B = 177 pm). The bridges are **3-centre–2-electron "banana" bonds**: one electron pair spread over B–H–B, so the bond order per B–H contact is only ½. This is why B₂H₆ is called **electron deficient** — seven bonding contacts would need 14 electrons in a normal 2c–2e picture and only 12 are available.
 
-**STYX bookkeeping.** s = number of B–H–B bridges, t = number of B–B–B three-centre bonds, y = number of B–B bonds, x = number of BH₂ groups. For **B₂H₆: s = 2, t = 0, y = 0, x = 2.**
+**How we know the bridges are different from the terminal bonds** — three independent pieces of evidence, and this is exactly the kind of "justify the structure" question that gets asked:
+
+1. The two bridging H lie in a plane **perpendicular** to the rest of the molecule and **prevent rotation** about the B···B axis; **specific-heat measurements confirm the rotation is hindered.**
+2. **Raman spectra** show four of the hydrogens are in a different environment from the other two.
+3. **Diborane cannot be methylated beyond Me₄B₂H₂ without breaking the molecule into BMe₃.** Exactly the **four terminal** hydrogens are substitutable; the **two bridging** hydrogens are not. Nothing could distinguish the two environments more cleanly.
+
+**The five bond types in the boranes.** Higher boranes have open-cage structures needing both normal and multi-centre bonds, and every borane structure is assembled from just these five:
+
+1. terminal B–H — normal **2c–2e**
+2. B–B — normal **2c–2e**
+3. B–H–B hydrogen bridge — **3c–2e**
+4. **open** B–B–B bridge ("open boron bridge bond") — **3c–2e**
+5. **closed** 3c–2e bond between three B atoms
+
+**STYX bookkeeping** counts exactly these: s = number of B–H–B bridges, t = number of B–B–B three-centre bonds, y = number of B–B bonds, x = number of BH₂ groups. For **B₂H₆: s = 2, t = 0, y = 0, x = 2.**
+
+**Physical data for the two series** (useful for "which is a solid?" questions):
+
+| nido BₙHₙ₊₄ | mp / °C | bp / °C | arachno BₙHₙ₊₆ | mp / °C | bp / °C |
+|---|---|---|---|---|---|
+| B₂H₆ diborane | −165 | −93 | B₄H₁₀ tetraborane | −120 | 18 |
+| B₅H₉ pentaborane-9 | −47 | 60 | B₅H₁₁ pentaborane-11 | −122 | 65 |
+| B₆H₁₀ hexaborane-10 | −62 | 108 | B₆H₁₂ hexaborane-12 | −82 | — |
+| B₁₀H₁₄ decaborane | −100 | 213 | B₉H₁₅ nonaborane | 3 | — |
+
+Most higher boranes are liquids; **B₄H₁₀ and B₁₀H₁₄ are solids.** As molecular weight rises they become more stable and **less sensitive to water — B₁₀H₁₄ can even be recovered from aqueous solution.** They were developed as high-energy rocket fuels to replace hydrocarbons in military aircraft and missiles, and over a tonne of B₁₀H₁₄ was made; the programme collapsed when combustion to B₂O₃ proved incomplete and **an involatile BO polymer blocked the rocket nozzles.**
+
+Heating diborane in a sealed tube builds the higher boranes through the transient BH₃ intermediate; the exact product depends on the conditions:
+
+\[\mathrm{B_2H_6\xrightarrow[200\ atm]{5\ h,\ 80-90^{\circ}C}B_4H_{10}};\quad \mathrm{B_2H_6+H_2\xrightarrow{200-250^{\circ}C}B_5H_9};\quad \mathrm{B_2H_6\xrightarrow[\text{sealed tube}]{slow,\ 150^{\circ}C}B_{10}H_{14}}\]
+
+**Carboranes.** Decaborane-14 has ten borons — **two short of the twelve corners of a regular icosahedron** (12 corners, 20 faces), which is a particularly stable closed cage. Supplying the two missing vertices completes it, either with two carbons from an alkyne or with two more borons:
+
+\[\mathrm{B_{10}H_{14}+RC{\equiv}CR\rightarrow B_{10}C_2H_{10}R_2}\qquad(\textbf{orthocarborane})\]
+\[\mathrm{B_{10}H_{14}+2Me_3N{\rightarrow}BH_3\rightarrow 2[Me_3NH]^+[B_{12}H_{12}]^{2-}}\qquad(\textbf{closo}\ [B_{12}H_{12}]^{2-})\]
 
 **Reactions of diborane.**
 
@@ -601,7 +730,16 @@ It catches fire spontaneously in air (as do most higher boranes) and was a rocke
 
 Stability rises with cation size — **LiBH₄ < NaBH₄ < KBH₄** — because the large [BH₄]⁻ anion is better stabilised by a large cation. Li[BH₄] reacts violently with water; Na[BH₄] can be recrystallised from cold water; K[BH₄] is quite stable. \(\mathrm{Li[BH_4]+2H_2O\rightarrow LiBO_2+4H_2}\). NaBH₄ is a **nucleophilic** reducing agent that attacks sites of low electron density, reducing aldehydes to primary and ketones to secondary alcohols while leaving C=C, COOH and NO₂ untouched.
 
-**Covalent borohydrides.** Be(BH₄)₂ and Al(BH₄)₃ are volatile and covalent: [BH₄]⁻ acts as a **bidentate ligand through two 3c–2e H bridges**, so in Al(BH₄)₃ the coordination number of Al is **6**. \(\mathrm{BeCl_2+2LiBH_4\rightarrow Be(BH_4)_2+2LiCl}\). (AlH₃)ₙ is a white involatile polymer held together by 3-centre hydrogen bridges like diborane's; (GaH₃)₂ is dimeric in the vapour and decomposes above 253 K; (InH₃)ₙ is polymeric in both vapour and solid. Li[AlH₄] is made from LiH + AlCl₃ with excess LiH and, unlike Na[BH₄], cannot be used in water.
+> **B₂H₆ and NaBH₄ reduce in opposite senses — do not confuse them.**
+>
+> - **NaBH₄ is nucleophilic**: the hydride attacks sites of **low** electron density. C=C, COOH and NO₂ survive.
+> - **B₂H₆ is electrophilic**: boron is electron-deficient, so it attacks sites of **high** electron density — the nitrogen of cyanides and nitriles, and the oxygen of carbonyls.
+>
+> \[\mathrm{R{-}C{\equiv}N\rightarrow RCH_2NH_2};\qquad \mathrm{R{-}NO_2\rightarrow RNH_2};\qquad \mathrm{R{-}CHO\rightarrow RCH_2OH}\]
+>
+> So diborane reduces a nitro group and a nitrile, which NaBH₄ leaves alone. That difference is the whole reason diborane is a distinct reagent in organic synthesis rather than a clumsy substitute for borohydride.
+
+**Covalent borohydrides.** Be(BH₄)₂, Al(BH₄)₃ and Zr(BH₄)₄ are volatile and covalent, because [BH₄]⁻ stops being an anion and becomes a **ligand**: one or more of its hydrogens bridges to the metal in a **3c–2e bond**. The number of bridges varies — **one, two or three** — and the count is examinable: **in the Al and Zr compounds each [BH₄]⁻ uses two hydrogen bridges, whereas in Be(BH₄)₂ two of the three [BH₄]⁻ groups use three bridges each.** With two bridges per ligand in Al(BH₄)₃ the coordination number of Al is **6**. \(\mathrm{BeCl_2+2LiBH_4\rightarrow Be(BH_4)_2+2LiCl}\). (AlH₃)ₙ is a white involatile polymer held together by 3-centre hydrogen bridges like diborane's; (GaH₃)₂ is dimeric in the vapour and decomposes above 253 K; (InH₃)ₙ is polymeric in both vapour and solid. Li[AlH₄] is made from LiH + AlCl₃ with excess LiH and, unlike Na[BH₄], cannot be used in water.
 
 **Hydroboration.** Diborane (or BF₃ + NaBH₄, generated *in situ*) adds across alkenes and alkynes in dry ether under N₂:
 
@@ -652,7 +790,13 @@ On strong heating under vacuum it polymerises to biborazinyl and naphthazine, th
 
 The **B–N bond order in (BN)ₓ is 1.33**. The decisive contrast with graphite: both are soft layered solids, but **h-BN does not conduct electricity** — the B/N electronegativity difference localises the π electrons on nitrogen instead of delocalising them over the sheet. h-BN is also chemically inert, hydrophobic, biocompatible and transparent from the UV through the IR.
 
-**Boron carbide, B₄C (norbide).** \(\mathrm{2B_2O_3+7C\rightarrow B_4C+6CO}\); or \(\mathrm{4BCl_3+6H_2+C_{fibre}\xrightarrow{1700-1900^{\circ}C}B_4C+12HCl}\). Extremely hard, used in bullet-proof clothing and armour. Because **¹⁰B is a powerful thermal-neutron absorber**, metal borides and B₄C serve as control rods and shielding in nuclear reactors, and boron fibres reinforce aircraft composites.
+**Borides and boron carbide.** Over 200 binary metal borides are known, with stoichiometries as varied as M₂B, MB, MB₂, MB₄, MB₆ and even M₅B and MB₆₆; many are **non-stoichiometric** and, like the boranes, can only be explained by multi-centre bonding. The metal-rich borides are mostly with transition metals, and they are startling materials: **ZrB₂, HfB₂, NbB₂ and TaB₂ all melt above 3000 °C**, and both melting point and electrical conductivity are often *higher* than for the parent metal — **TiB₂ conducts five times as well as titanium metal.** They are chemically inert, and are powder-fabricated into turbine blades and rocket nozzles.
+
+**Boron carbide, B₄C (norbide)**, is made by reducing B₂O₃ with carbon, or as fibres of enormous tensile strength for bullet-proof clothing:
+
+\[\mathrm{2B_2O_3+7C\xrightarrow{1600^{\circ}C}B_4C+6CO};\qquad \mathrm{4BCl_3+6H_2+C_{fibre}\xrightarrow{1700-1900^{\circ}C}B_4C_{(fibre)}+12HCl}\]
+
+The formula is conventional only: **B₄C is more correctly B₁₃C₂**, and the composition varies towards B₁₂C₃. The structure is again **B₁₂ icosahedra**, each linked to six others through either four B–C–B plus two B–B linkages, or through six B–C–B linkages — a cluster compound explicable only by multi-centre bonding. Because **¹⁰B has a very high thermal-neutron capture cross-section**, boron steel and B₄C are used for reactor control rods and shielding; B₄C is also an abrasive and is used for brake linings, and boron fibres reinforce aircraft composites.
 
 Practical hardness ranking among the industrial abrasives: **diamond > cubic BN > B₄C > SiC** (some nanostructured c-BN rivals or exceeds diamond, which is why a few textbooks place BN first — treat "BN is harder than diamond" as a claim about special nanostructured c-BN, not about BN in general).
 
@@ -660,7 +804,14 @@ Practical hardness ranking among the industrial abrasives: **diamond > cubic BN 
 
 - Lewis acidity **BF₃ < BCl₃ < BBr₃ < BI₃** — the *reverse* of electronegativity. The reason is back-bonding and the π stabilisation lost on adduct formation, never electronegativity.
 - **BF₃ hydrolyses only partially** (→ H₃BO₃ + HBF₄); BCl₃/BBr₃/BI₃ hydrolyse completely. In moist air BF₃ fumes but is not fully hydrolysed.
-- **Al₂Cl₆ bridges are 3c–4e** (chlorine lone-pair donation); **B₂H₆ bridges are 3c–2e**. Do not swap the descriptions.
+- **Al₂Cl₆ bridges are 3c–4e** (chlorine lone-pair donation); **B₂H₆ bridges are 3c–2e**; **Al₂(CH₃)₆ bridges are 3c–2e** (carbon has no lone pair to give). The bridging *atom* decides, not the metal.
+- **B₂H₆ is electrophilic and attacks high electron density** (reduces nitriles and nitro groups); **NaBH₄ is nucleophilic and attacks low electron density** (leaves C=C, COOH, NO₂ alone). Opposite senses.
+- α-Al₂O₃ is **unaffected by acids**; γ-Al₂O₃ **dissolves** in them. And γ forms below 450 °C, α above 1000 °C.
+- Al(OH)₃'s confirmatory test is the **red alizarin lake**; the gravimetric reagent is **8-hydroxyquinoline**.
+- "NaAlO₂·2H₂O" is shorthand. The real species is octahedral and polymeric at pH 8–12, tetrahedral [Al(OH)₄]⁻ in dilute solution above pH 13, and a **dimer** when concentrated.
+- **B₄C is really B₁₃C₂**, built from B₁₂ icosahedra — not a simple stoichiometric carbide.
+- In covalent borohydrides [BH₄]⁻ is a **ligand** bonding through 3c–2e H bridges: **two** bridges in Al(BH₄)₃ and Zr(BH₄)₄, **three** for two of the ligands in Be(BH₄)₂.
+- "GaCl₂"-type formulas and the monohalides are traps: (BX)ₙ are **cage clusters**, AlCl exists only as a hot gas, and **thallous halides are more stable than thallic**.
 - Boron trihalides are **monomeric**; aluminium trihalides (except AlF₃) are **dimeric**. B cures deficiency by π bonding, Al by bridging.
 - AlF₃ is ionic; solid AlCl₃ has CN 6, molten/vapour AlCl₃ has CN 4 (Al₂Cl₆), monomer only on strong heating.
 - AlCl₃·6H₂O cannot be dehydrated by heat — you get Al₂O₃ + HCl.
@@ -714,6 +865,8 @@ The trends to be able to justify:
 | Bond energy / kJ mol⁻¹ | 346 | 222 | 188 | 146 | 98 |
 
 \[\mathrm{catenation:\ C\gg Si>Ge\approx Sn\gg Pb}\]
+
+> **A note on the numbers.** Textbooks disagree here. The set above (Si–Si 222, Ge–Ge 188, Sn–Sn 146) is the one used across JEE coaching material and is what you should quote. J. D. Lee gives a different set — **C–C 348, Si–Si 297, Ge–Ge 260, Sn–Sn 240 kJ mol⁻¹** — with the practical remark that Si forms chains only up to about Si₆H₁₄ in the hydrides, Ge up to Ge₉H₂₀, and Sn only the dimer Sn₂H₆. **The trend and its consequences are identical either way; only the absolute values differ.** Reason with the trend, not the digits.
 
 Carbon chains can be indefinitely long; **silicon manages chains of at most about six atoms; Sn and Pb only one or two.** The deeper reason is comparative: C–C (346) is about the same as C–O (358), so carbon has no thermodynamic incentive to abandon C–C for C–O — whereas **Si–O (452) is far stronger than Si–Si (222)**, so silicon abandons homo-catenation for **hetero-catenation through oxygen**. That single inequality is why the whole silicate and silicone world exists.
 
@@ -779,12 +932,46 @@ Every member except Pb shows allotropy. Carbon exists as **crystalline** forms (
 
 **Graphite.**
 
-- **Layered**: each layer a plane of fused hexagons, every carbon **sp²**, three σ bonds to neighbours at **C–C = 141.5 pm** within the layer, with the fourth electron in a delocalised π system spread over the whole sheet.
-- Layers held only by **van der Waals forces**, separated by **340 pm** (values of 335 pm are also quoted), so they slide over one another: graphite is **soft, slippery and lustrous**, density 2.22 g cm⁻³.
+- **Layered**: each layer a plane of fused hexagons — "a fused system of benzene rings" — every carbon **sp²**, three σ bonds to neighbours at **C–C = 141 pm** within the layer (compare benzene, 140 pm), with the fourth electron in a delocalised π system spread over the whole sheet.
+- Layers held only by **van der Waals forces**, separated by **335 pm** (340 pm is also quoted) — appreciably more than twice the covalent radius of carbon (2 × 154 = 308 pm) — so they slide over one another: graphite is **soft, slippery and lustrous**, density 2.22 g cm⁻³. The atoms **do not pack together to fill space very effectively**, which is why graphite is less dense than diamond (3.51 g cm⁻³).
+- **Two forms, distinguished by how the sheets stack** — and the interconversion is a neat exam point:
+  - **α-graphite: hexagonal, ABAB stacking** (every third layer eclipses the first).
+  - **β-graphite: rhombohedral, ABCABC stacking.**
+  - **Heating β-graphite converts it to α; grinding α-graphite converts it to β.**
 - **Conducts electricity well within a layer** (mobile π electrons) and poorly between layers. Uses: dry high-temperature lubricant where oil would fail, electrodes for batteries and industrial electrolysis, crucibles (inert to dilute acids and alkalis), pencil "lead", graphite-fibre composites for tennis rackets, fishing rods, aircraft and canoes.
-- **Intercalation compounds.** Heating graphite at ≈ 673 K with K, Rb or Cs vapour pushes metal atoms *between* the sheets, giving bronze-coloured C₈M → C₂₄M → C₃₆M → C₄₈M → C₆₀M of variable composition; the interlayer distance increases and the π electrons become more mobile. **Graphite is diamagnetic but its intercalation compounds are paramagnetic.**
-- Oxidised by conc. HNO₃ to **mellitic acid**, benzene hexacarboxylic acid C₆(COOH)₆ — a striking confirmation of the fused-hexagon skeleton. Unlike diamond, graphite does react with HNO₃/KClO₄.
+- **Diamond is extremely unreactive; graphite is quite reactive** — that asymmetry is the framing to carry into every comparison. Graphite is oxidised by hot conc. HNO₃ to **mellitic acid**, benzene hexacarboxylic acid C₆(COOH)₆ — a striking confirmation of the fused-hexagon skeleton — and by hot conc. HF/HNO₃ to graphite oxide. Diamond is unaffected by concentrated acids.
 - **Its lubricating action depends on adsorbed gas.** In high vacuum, or with the adsorbed layer stripped, graphite is a *poor* lubricant — the interlayer interactions are not weak enough on their own.
+
+### 5.4a Graphite compounds — three classes, and what each does to the conductivity
+
+Because the interlayer gap is wide and the interlayer bonding weak, a remarkable range of species can **invade the space between the sheets** without destroying them. Whether the product conducts better or worse than graphite is decided entirely by what happens to the delocalised π system, and that is the question worth being able to answer.
+
+**(i) Electron-donor (alkali-metal) intercalation compounds — conductivity *increases*.**
+
+Heating graphite above 300 °C with the vapour of the heavier Group 1 metals (K, Rb, Cs) — or treating it with the metal in liquid ammonia — gives a bronze compound **C₈M**. Heating C₈K to 350 °C progressively expels metal, giving a series in which fewer and fewer layers are occupied:
+
+| Compound | C₈M | C₂₄M | C₃₆M | C₄₈M | C₆₀M |
+|---|---|---|---|---|---|
+| Colour | bronze | steel-blue | blue | black | black |
+| Layers invaded | every layer | every 2nd | every 3rd | every 4th | every 5th |
+
+Li and Na are much harder to intercalate, giving C₆Li, C₁₂Li, C₁₈Li… and C₆₄Na, C₁₂₈Na. The structural consequences:
+
+- The sheets stay **intact and flat**, so the delocalised π system survives, **but the gap widens from 335 pm to as much as 10 Å**, and the stacking changes to **AAAA** — carbon atoms sit directly above one another — rather than α-graphite's ABAB.
+- **C₈K conducts better than graphite itself** (resistivity at 285 K: α-graphite 28.4 Ω cm, **C₈K 1.02 Ω cm**), because the metal donates an electron into the graphite conduction band: K → K⁺ + e⁻.
+- **Graphite is diamagnetic; C₈K is paramagnetic** — direct evidence for that electron transfer.
+- These compounds are **highly reactive: they may explode in water and react vigorously in air.**
+
+**(ii) Electron-acceptor intercalation compounds — conductivity also *increases*, by the opposite mechanism.**
+
+A large range of electron acceptors intercalate: the halogens **Cl₂ and Br₂**; **HF**; halides such as FeCl₃, AlCl₃, CdCl₂, CuBr₂, ClF₃, TiF₄, MoCl₅ and WCl₆; oxides such as CrO₃, MoO₃, SO₃, N₂O₅ and Cl₂O₇; and sulphides FeS₂, PdS, V₂S₅. Here the guest **removes** electrons from graphite (Cl + e⁻ → Cl⁻), leaving a **mobile "positive hole" in the valence band** — and a migrating positive hole carries current just as a migrating electron does, so conductivity rises again, by up to a factor of ten. In C₂₄FeCl₃ the Fe³⁺ builds its own layer lattice *inside* the graphite host, mirroring the layer lattice of FeCl₃ itself.
+
+**(iii) Covalent compounds — conductivity *destroyed*.**
+
+Here the guest bonds covalently to carbon, the sheets pucker, and the π system is lost.
+
+- **Graphite oxide**, from strong oxidants (conc. HNO₃, HClO₄ or KMnO₄): pale brown, non-stoichiometric and unstable — it decomposes slowly at 70 °C and **catches fire at 200 °C**; the C : O ratio approaches 1 : 2. Interlayer spacing rises to **6–7 Å**, and up to **19 Å** once water, alcohols or acetone are absorbed. The sheets are **puckered**, mostly in the chair conformation, with oxygen forming **ether-like C–O–C bridges** and **C–OH groups** that can undergo keto–enol tautomerism. **All four electrons on each carbon are now in σ bonds**, so the delocalised π system — and the conductivity — is gone.
+- **Graphite fluoride, (CF)ₙ**, from F₂ at 450 °C (faster in the presence of HF — which is why it can form in fluorine cells, destroying the electrode and risking an explosion). Non-stoichiometric with n from 0.7 to 0.98, and the **colour tracks the fluorine content: black → grey → silver → white**. Interlayer spacing ≈ 8 Å; **buckled sheets with tetrahedral carbon**; non-conducting and very unreactive.
 
 **Fullerenes.**
 
@@ -801,7 +988,35 @@ Every member except Pb shows allotropy. Carbon exists as **crystalline** forms (
 - **Coke** — destructive distillation of coal in the absence of air; a fuel and the standard metallurgical reducing agent.
 - **Carbon black / lamp black / soot** — hydrocarbons or petroleum burnt in a **limited supply of air**, 98–99 % carbon: \(\mathrm{CH_4+O_2\rightarrow C+2H_2O}\). Used as black pigment in inks and as filler in automobile tyres.
 
-## 5.5 The anomalous behaviour of carbon, and carbon versus silicon
+### 5.4b Radiocarbon dating
+
+Worth knowing because it is the one place elementary carbon chemistry meets nuclear chemistry. Cosmic neutrons bombard atmospheric nitrogen:
+
+\[\mathrm{^{14}_{7}N+{^1_0}n\rightarrow{^{14}_{6}C}+{^1_1}H}\]
+
+The ¹⁴C is oxidised to CO₂, fixed by photosynthesis, and passed into every plant and animal tissue, so **all living matter maintains a steady state of 15.3 ± 0.1 disintegrations per minute per gram of carbon.** ¹⁴C is a weak β-emitter with a **half-life of 5668 years**. When the organism dies, intake stops but decay continues, so measuring the present activity dates the death. The technique gives an absolute scale for objects of plant or animal origin between roughly **1000 and 10 000 years** old, and was used on the Turin shroud. **W. F. Libby received the 1960 Nobel Prize in Chemistry** for developing it.
+
+## 5.5 Chemical reactivity across the group
+
+Reactivity is low overall but **increases down the group**, and the pattern of *which* reagent attacks *which* element is heavily examined. Lead deserves a special note first.
+
+> **Why lead looks more noble than it is.** E°(Pb²⁺/Pb) = −0.13 V predicts that lead should dissolve in acid and liberate hydrogen, yet it largely does not. Two reasons, and the second is the interesting one: a surface coating of oxide, **plus a high overpotential for the reduction of H⁺ to H₂ at a lead surface.** Producing H₂ on lead is *kinetically* unfavourable, so a much larger potential is needed than the standard reduction potential suggests. This is a **kinetic**, not thermodynamic, explanation — and the same principle underlies the lead–acid accumulator.
+
+| Reagent | Behaviour |
+|---|---|
+| **Water** | C, Si, Ge unaffected. **Sn reacts with steam → SnO₂ + H₂.** Pb unaffected (protective oxide). |
+| **Dilute acid** | C, Si, Ge unaffected. **Sn dissolves in dilute HNO₃ → Sn(NO₃)₂.** Pb dissolves slowly in dilute HCl (sparingly soluble PbCl₂) and readily in dilute HNO₃; also in organic acids (acetic, citric, oxalic). **Pb does not dissolve in dilute H₂SO₄** — a PbSO₄ coating forms. |
+| **Conc. acid** | **Diamond unaffected**; **graphite → mellitic acid** with hot conc. HNO₃ and **graphite oxide** with hot conc. HF/HNO₃. Si oxidised and fluorinated by conc. HF/HNO₃. Ge dissolves slowly in hot conc. H₂SO₄ and HNO₃. Sn dissolves in several. **Pb does not dissolve in conc. HCl** (PbCl₂ coating). |
+| **Alkali** | **C unaffected.** Si slowly with cold NaOH, readily with hot → silicates. **Sn and Pb slowly attacked cold, rapidly hot, giving Na₂[Sn(OH)₆] and Na₂[Pb(OH)₆] — so Sn and Pb are amphoteric.** |
+| **Halogens** | **Diamond does not react.** **Graphite reacts with F₂ at 500 °C** → intercalation compounds or (CF)ₙ. Si and Ge react readily with all halogens → SiX₄, GeX₄. Sn: Cl₂ and Br₂ in the cold, F₂ and I₂ on warming → SnX₄. **Pb gives the *di*halide directly: PbF₂ with F₂ in the cold, PbCl₂ with Cl₂ on heating.** |
+
+The standard reduction potentials make the redox roles quantitative, and the PbO₂ figure is the one to remember:
+
+\[\text{acid: }\mathrm{Sn^{4+}\xrightarrow{+0.15}Sn^{2+}\xrightarrow{-0.14}Sn};\qquad \mathrm{PbO_2\xrightarrow{\mathbf{+1.46}}Pb^{2+}\xrightarrow{-0.13}Pb}\]
+
+**+1.46 V is why PbO₂ oxidises HCl to chlorine and Mn²⁺ to permanganate.**
+
+## 5.6 The anomalous behaviour of carbon, and carbon versus silicon
 
 Carbon's anomalies all trace to five facts: **small size, high ionisation energy, high electronegativity, no vacant d orbital, and maximal catenation.**
 
@@ -824,7 +1039,7 @@ Carbon's anomalies all trace to five facts: **small size, high ionisation energy
 
 Other Group 14 anomalies of carbon: it is the **most electronegative** member; it has the **highest ionisation energy**; **CO₂ is a gas while every other dioxide is a solid**; **CO is neutral while all the other monoxides (GeO, SnO, PbO) are amphoteric solids**; and carbon does not form divalent *ionic* compounds because the lattice energy of a hypothetical C²⁺ salt could never repay the ionisation and sublimation energies.
 
-## 5.6 Hydrides
+## 5.7 Hydrides
 
 All the elements form tetravalent covalent hydrides MH₄, and both the *number* and the *stability* of hydrides fall down the group:
 
@@ -842,7 +1057,7 @@ All the elements form tetravalent covalent hydrides MH₄, and both the *number*
 
 Two separate explanations are needed, and mixing them up is a common error:
 
-- **CH₄ vs SiH₄ reactivity** is an *electronegativity* argument. C (2.5) > H (2.1) > Si (1.8), so C–H is polarised Cδ⁻–Hδ⁺ while **Si–H is polarised Siδ⁺–Hδ⁻**. Silicon is therefore open to nucleophilic attack, and SiH₄ is a strong reducing agent and is hydrolysed by alkali while CH₄ is not:
+- **CH₄ vs SiH₄ reactivity** rests on **three** factors, and a complete answer gives all three. (1) *Electronegativity*: C (2.5) > H (2.1) > Si (1.8), so C–H is polarised Cδ⁻–Hδ⁺ while **Si–H is polarised Siδ⁺–Hδ⁻** — silicon is therefore open to nucleophilic attack. (2) *Size*: **the larger silicon atom is simply easier to attack.** (3) *Orbitals*: Si has **low-energy d orbitals** that can host an intermediate and so lower the activation energy. Consequently SiH₄ is a strong reducing agent and is hydrolysed by alkali while CH₄ is not:
 
 \[\mathrm{SiH_4+2NaOH+H_2O\rightarrow Na_2SiO_3+4H_2};\qquad \mathrm{Si_2H_6+4KOH+2H_2O\rightarrow 2K_2SiO_3+7H_2}\]
 
@@ -854,15 +1069,38 @@ Silanes are made by protonating a silicide, or by hydride reduction:
 
 SiH₄ is a colourless, tetrahedral, **spontaneously flammable** gas; its pyrolysis in the absence of H₂ gives silicon and hydrogen and is a route to semiconductor-grade silicon. A SiH₄ + H₂ mixture bubbled through water burns as the bubbles reach the air with a luminous flame, leaving rings of silica: \(\mathrm{SiH_4+2O_2\rightarrow SiO_2+2H_2O}\).
 
-## 5.7 Halides
+The Mg₂Si route gives a **mixture** in decreasing yield — SiH₄ (40 %), Si₂H₆ (30 %), Si₃H₈ (15 %), Si₄H₁₀ (10 %), Si₅H₁₂ (5 %) — which is why the hydride route is preferred: **SiCl₄ + Li[AlH₄] gives SiH₄ essentially quantitatively.** Silanes can also be made directly from silicon or ferrosilicon with HX or RX over a copper catalyst (Si + 3HCl → SiHCl₃ + H₂).
 
-All the elements form **tetrahedral MX₄**, except that **PbBr₄ and PbI₄ do not exist** — Pb⁴⁺ is a strong oxidant and Br⁻/I⁻ are good reductants, so the two would destroy each other and only PbX₂ survives. (PbF₄ and PbCl₄ are known but thermally fragile.)
+**Hydrosilation** is the silicon analogue of hydroboration and is industrially important because it feeds the silicone plants:
+
+\[\mathrm{RCH{=}CH_2+SiHCl_3\xrightarrow{Pt\ catalyst}RCH_2CH_2SiCl_3}\]
+
+Down the group the hydrides get tamer, not wilder, in one specific respect: **germanes are unaffected by water or by aqueous acids or alkalis**, unlike the alkali-sensitive silanes. **SnH₄ is a strong reducing agent**, unaffected by water and dilute acids but attacked slowly by concentrated solutions; Sn₂H₆ is known and no higher stannane is. **PbH₄ has only ever been made in trace amounts at low concentration by cathodic reduction and detected by mass spectrometry** — the ordinary preparative routes all fail.
+
+## 5.8 Halides
+
+All the elements form **tetrahedral MX₄**, except at lead. **PbI₄ does not exist at all**: Pb⁴⁺ is a strong oxidant and I⁻ a good reductant, so the two destroy each other and **PbI₂ always results**. The same argument is usually extended to **PbBr₄**, and most JEE keys list both PbBr₄ and PbI₄ as non-existent; J. D. Lee names only PbI₄. Either way PbF₄ and PbCl₄ are known but thermally fragile, and the reasoning you must give is the **redox incompatibility of Pb(IV) with the heavier halides**.
+
+> **Why is SnI₄ orange when CCl₄ and SnBr₄ are colourless?** A favourite question, and the answer is *not* d–d transitions — the d levels here are full. Instead an electron is promoted from a **halogen p orbital into an empty orbital on the metal**: a **charge-transfer transition**, corresponding to a momentary reduction Sn(IV) → Sn(III). The energy needed falls as the halide becomes larger and more easily oxidised, so it drops out of the ultraviolet and into the visible for the iodides. Hence **SnI₄ and GeI₄ are coloured while the fluorides and chlorides are not**, and the colour deepens with the proportion of iodide. The same effect makes PbI₂ yellow.
+
+The tetrahalides are typically **covalent, tetrahedral and very volatile** — with two named exceptions that get asked about: **SnF₄ and PbF₄ have three-dimensional structures and are high-melting** (SnF₄ sublimes at 705 °C, PbF₄ melts at 600 °C), because fluoride is small enough to bridge and build a lattice.
 
 **Thermal stability** falls two ways:
 
 \[\mathrm{CX_4>SiX_4>GeX_4>SnX_4>PbX_4};\qquad \mathrm{MF_4>MCl_4>MBr_4>MI_4}\]
 
-The second order follows the C–X bond energies (kcal mol⁻¹): **C–F 116, C–Cl 81, C–Br 68, C–I 51**. Volatility runs the opposite way to stability with increasing molar mass. The fluorides of carbon are exceptionally stable and inert (**fluorocarbons**), and the mixed fluoro-chlorocarbons — **freons** — are volatile, non-toxic, non-corrosive refrigerants.
+The second order follows the C–X bond energies (kcal mol⁻¹): **C–F 116, C–Cl 81, C–Br 68, C–I 51**. Volatility runs the opposite way to stability with increasing molar mass. The fluorides of carbon are exceptionally stable and inert (**fluorocarbons**): CF₄ is an exceptionally unreactive gas, and under pressure C₂F₄ polymerises to **PTFE (polytetrafluoroethylene)** — a hard white plastic with a greasy feel, denser than you would expect, a good insulator, chemically inert, with a very low coefficient of friction, used for non-stick pans and razor blades.
+
+The mixed fluoro-chlorocarbons — **freons**, e.g. CFCl₃ and CF₂Cl₂ — are volatile, non-toxic and non-corrosive refrigerants, aerosol propellants and solvents, made by halogen exchange:
+
+\[\mathrm{CCl_4+2HF\xrightarrow[\text{anhydrous}]{SbCl_5}CCl_2F_2+2HCl}\]
+
+> **The ozone problem — worth knowing as chemistry, not just as a fact.** Freons are so unreactive that they survive to the stratosphere, where UV photolysis releases chlorine atoms and a **catalytic chain** destroys ozone:
+>
+> \[\mathrm{CFCl_3\xrightarrow{h\nu}Cl\bullet};\quad \mathrm{Cl\bullet+O_3\rightarrow O_2+ClO};\quad \mathrm{ClO\rightarrow Cl\bullet+O};\quad \mathrm{ClO+O\rightarrow Cl\bullet+O_2}\]
+> \[\text{overall}\qquad \mathrm{2O_3\rightarrow 3O_2}\]
+>
+> The decisive point is **why the chain never stops**: two Cl• radicals cannot simply recombine to Cl₂, because that needs a **three-body collision** to carry away the energy, and such collisions are extremely rare in the thin upper atmosphere. **There is no effective sink for chlorine radicals**, so a handful of them destroys an enormous amount of ozone. The replacements — **HFCs** (e.g. CH₂FCF₃) and **HCFCs** (e.g. CHCl₂CF₃) — still absorb in the infrared and are greenhouse gases, but do far less damage because their **C–H bonds are attacked by hydroxyl radicals in the upper atmosphere**, so they do not survive long enough to reach the ozone layer.
 
 **Hydrolysis is the single most tested item in Group 14.** All the tetrahalides except the carbon halides hydrolyse readily, and the tendency **decreases down the group**:
 
@@ -894,6 +1132,18 @@ The same "no vacant d orbital" limitation explains why **carbon forms no hexahal
 - SiH₄ is more reactive than CH₄ because of **bond polarity (Siδ⁺–Hδ⁻) plus vacant orbitals**, *not* simply because Si–H is weaker.
 - **(SiH₃)₃N is planar and a weak base; (CH₃)₃N is pyramidal and a good base** — the standard dπ–pπ question.
 - In C₆₀: **20 hexagons and 12 pentagons**; pentagons never fuse to each other. Both bond lengths exist (138.3 and 143.5 pm).
+- **α-graphite is ABAB (hexagonal), β-graphite ABCABC (rhombohedral).** Heating β → α; grinding α → β.
+- Graphite intercalation: **electron-donor (C₈K) and electron-acceptor (C₂₄FeCl₃) compounds conduct *better* than graphite**; **covalent graphite oxide and (CF)ₙ do not conduct at all**, because puckering destroys the π system. Know which class does which.
+- **C₈K stacks AAAA, not ABAB**, and graphite is diamagnetic while **C₈K is paramagnetic**.
+- **SnI₄ is orange because of a charge-transfer transition**, not a d–d transition. The d levels are full.
+- **SnF₄ and PbF₄ are high-melting 3-D solids** — the exceptions to "tetrahalides are volatile and molecular".
+- **PbI₄ does not exist** (Pb⁴⁺ oxidises I⁻ → PbI₂). Give the redox reason, not "it is unstable".
+- **Lead's apparent nobility is kinetic**: oxide film **plus a high overpotential for H⁺ → H₂ at lead**. E°(Pb²⁺/Pb) is only −0.13 V.
+- **PbO₂ → Pb²⁺ is +1.46 V** — that number is why PbO₂ oxidises HCl to Cl₂ and Mn²⁺ to MnO₄⁻.
+- **Pb reacts with halogens to give the *di*halide directly** (PbF₂, PbCl₂), while Si, Ge and Sn give the tetrahalide.
+- SiH₄'s reactivity needs **three** reasons: bond polarity, larger size (easier attack), and low-lying d orbitals.
+- **Diamond is unaffected by concentrated acids and by halogens; graphite reacts with both.** Never treat the two as interchangeably inert.
+- The Freon–ozone chain never terminates because **Cl• recombination needs a rare three-body collision** — there is no sink.
 
 # 6. Group 14 compounds: carbon oxides, carbides, silicon materials, tin and lead
 
@@ -982,6 +1232,28 @@ Rising CO₂ from fossil-fuel combustion and limestone calcination for cement is
 
 **A third oxide worth knowing: carbon suboxide, C₃O₂.** A bad-smelling gas (bp 6 °C) obtained by dehydrating malonic acid with P₄O₁₀; it is **linear, O=C=C=C=O**, and decomposes above 200 °C to CO₂ and carbon.
 
+## 6.2a Carbonates, and why CO₄⁴⁻ does not exist
+
+Two series of salts come from carbonic acid: **carbonates CO₃²⁻** and **hydrogencarbonates HCO₃⁻**. The carbonate ion is **flat and trigonal planar (sp² carbon)**, with the π bonding best described as a **delocalised molecular orbital covering all four atoms** — three σ bonds plus one delocalised π system, exactly as in NO₃⁻.
+
+> **The structural trap.** **CO₄⁴⁻ does not exist, even though SiO₄⁴⁻ does.** Carbon is simply too small to accommodate four oxygens. The situation is precisely analogous to Group 15, where **NO₃⁻ is the stable nitrogen oxo-anion while PO₄³⁻ is the stable phosphorus one.** First-row elements stop at three oxygens; their heavier congeners reach four.
+
+**Which structure a carbonate adopts depends on the size of the cation** — small cations give the **calcite** structure, large ones the **aragonite** structure:
+
+| Calcite structure (small M²⁺) | Aragonite structure (large M²⁺) |
+|---|---|
+| Mn²⁺ 0.67, Mg²⁺ 0.72, Co²⁺ 0.74, Zn²⁺ 0.78, Fe²⁺ 0.78, Cd²⁺ 0.97 Å | Ca²⁺ 1.00, Sr²⁺ 1.18, Pb²⁺ 1.21, Ba²⁺ 1.35 Å |
+
+Solubility and colour: Group 1 and 2 carbonates are colourless, but **Ag₂CO₃ is yellow** through the polarising effect of Ag⁺. Group 1 carbonates are readily soluble **except Li₂CO₃**, which is only slightly soluble; Group 2 carbonates are sparingly soluble or insoluble. All carbonates react with acid, liberating CO₂.
+
+**Thermal stability rises with cation size** — the standard Group 2 sequence, and worth having the numbers:
+
+| | BeCO₃ | MgCO₃ | CaCO₃ | SrCO₃ | BaCO₃ |
+|---|---|---|---|---|---|
+| Decomposition temperature / °C | < 100 | 540 | 900 | 1290 | 1360 |
+
+**Group 1 carbonates are stable to heat and melt without decomposing.** And note which bicarbonates you can actually isolate: **the only solid hydrogencarbonates are those of the Group 1 metals and NH₄⁺.** They are colourless, somewhat less soluble than the corresponding carbonates, decompose easily on heating, and in the solid contain **polymeric chains of HCO₃⁻ groups hydrogen-bonded together.**
+
 ## 6.3 Carbides
 
 Carbides are binary compounds of carbon with an element of equal or lower electronegativity — so compounds with N, S, O and Cl are excluded. Three classes, distinguished by bonding and by **what hydrolysis gives you**:
@@ -1002,6 +1274,43 @@ Acetylides have the **NaCl-type structure**. Methanides are not formed by metal 
 **(ii) Covalent carbides** — **SiC and B₄C**. Giant covalent, polymeric, thermally very stable, extremely hard, high-melting, technically ionic-looking but not ionic. Prepared by reducing the oxide with carbon in an electric furnace, or by passing acetylene over heated silicon (\(\mathrm{2Si+C_2H_2\rightarrow 2SiC+H_2}\)).
 
 **(iii) Interstitial / metallic / refractory carbides** — formed by transition and inner-transition elements at ≈ 2000 °C, with carbon atoms occupying holes in the metal lattice. **No new chemical bond forms**, so metallic lustre and electrical conductivity survive; the carbon merely pins the lattice, raising hardness and melting point. TiC and WC are examples. They are chemically inert except to strong oxidising conditions. **Cr₃C₂ and Mn₃C are exceptions**: their radius ratio (0.60–0.61) sits at the borderline, so they *are* hydrolysed by water and dilute acid to a mixture of hydrocarbons and hydrogen — intermediate in behaviour between ionic and covalent carbides. Uses: tungsten carbide for cutting tools and ball-point pen tips; silicon carbide in atomic-reactor construction (high dissociation temperature and good thermal conductivity).
+
+## 6.3a Carbon disulphide, the cyanides and cyanogen
+
+**Carbon disulphide, CS₂.** A colourless, volatile liquid, bp 46 °C, and genuinely dangerous to handle: **very flammable with a flash point of 30 °C, igniting spontaneously at 100 °C**, and **very poisonous, attacking the brain and central nervous system.** Pure samples smell of ether; the foul smell of commercial material is due to organic impurities. Made from natural gas and sulphur:
+
+\[\mathrm{CH_4+4S\xrightarrow[Al_2O_3\ or\ silica\ gel]{600^{\circ}C}CS_2+2H_2S}\]
+
+Linear like CO₂, but it **forms complexes far more readily than CO₂**, binding side-on through one C and one S so that the CS₂ molecule bends. Its reactions and uses:
+
+\[\mathrm{3CS_2+6NaOH\rightarrow Na_2CO_3+2Na_2CS_3+3H_2O}\qquad(\text{trithiocarbonate})\]
+\[\mathrm{CS_2+2NH_3\rightarrow NH_4[H_2NCS_2]}\qquad(\text{ammonium dithiocarbamate})\]
+
+Its main industrial use is **viscose rayon and cellophane**: CS₂ reacts with cellulose and NaOH to give **sodium cellulose xanthate**, dissolved in alkali to the viscous "viscose", then re-acidified back to cellulose as fibre (rayon) or film (cellophane). It is also the feedstock for CCl₄ and a solvent for sulphur in cold vulcanisation. **Sunlight converts CS₂ to CS, which is why it is stored in dark bottles.**
+
+**The cyanides.** HCN has an **abnormally high boiling point of 26 °C** for its mass, because of hydrogen bonding — though the bonding is weaker than in HF. Modern manufacture is by gas-phase ammoxidation of methane:
+
+\[\mathrm{CH_4+NH_3\xrightarrow{Pt}HCN+3H_2}\ (\text{Degussa});\qquad \mathrm{2CH_4+2NH_3+3O_2\xrightarrow{Pt/Rh}2HCN+6H_2O}\ (\text{Andrussow})\]
+
+The older **Castner process** went through sodamide: Na + NH₃ → NaNH₂ + ½H₂, then NaNH₂ + C → NaCN + H₂. HCN is also a **non-aqueous ionising solvent**. Cyanide's great industrial use is extracting gold and silver:
+
+\[\mathrm{4Au+8NaCN+2H_2O+O_2\rightarrow 4Na[Au(CN)_2]+4NaOH}\]
+
+**CN⁻ as a ligand — compare it with CO carefully.** CN⁻ is isoelectronic with CO and N₂, and like CO it is a **σ donor and π acceptor** through carbon. But the negative charge changes the balance: **CN⁻ is a stronger σ donor than CO, and correspondingly a weaker π acceptor.** The orders are exactly opposite:
+
+\[\sigma\text{-donor strength: }\mathrm{CN^->RNC>CO>NO^+};\qquad \pi\text{-acceptor strength: the reverse}\]
+
+Hence ferrocyanides [Fe(CN)₆]⁴⁻ and ferricyanides [Fe(CN)₆]³⁻ are very stable. **Cyanide's toxicity has the same mechanism as carbon monoxide's** — it complexes with enzymes and with haemoglobin, blocking normal metabolism.
+
+**Cyanogen, (CN)₂**, is made by oxidising cyanide with Cu²⁺ — a reaction directly parallel to Cu²⁺ oxidising I⁻ to I₂:
+
+\[\mathrm{2Cu^{2+}+4CN^-\rightarrow (CN)_2+2CuCN}\]
+
+In alkali it **disproportionates**, exactly as a halogen does — which is why cyanide is called a pseudohalide:
+
+\[\mathrm{(CN)_2+2OH^-\rightarrow H_2O+CN^-+NCO^-}\]
+
+**The cyanate ion NCO⁻ is isoelectronic with CO₂, and both are linear** — a clean isoelectronic-analogy question.
 
 ## 6.4 Silicon and silicon carbide
 
@@ -1038,11 +1347,27 @@ Uses: abrasive (grindstones, knife sharpeners, polishing), refractory, and react
 
 **Silica, SiO₂.** Occurs free as sand, quartz, flint and cristobalite, and combined in the silicates. Silicon is **sp³**, bonded to four oxygens, and **each oxygen bridges exactly two silicons**, giving a three-dimensional giant molecule. There are no discrete SiO₂ molecules — which is exactly why silica melts so high while CO₂ is a gas. Pure silica is colourless; sand is yellow-brown from ferric oxide.
 
+**Silica's polymorphs, and the one that matters.** SiO₂ exists in three main crystalline families, each with a low- and a high-temperature form, and the transitions are worth recognising:
+
+\[\mathrm{\alpha\text{-}quartz\xrightarrow{575^{\circ}C}\beta\text{-}quartz\xrightarrow{870^{\circ}C}\beta\text{-}tridymite\xrightarrow{1470^{\circ}C}\beta\text{-}cristobalite\xrightarrow{1710^{\circ}C}liquid}\]
+
+**Quartz is the stable form at room temperature.** In every form silicon is tetrahedral with each corner shared, but the arrangements differ: **in β-quartz the tetrahedra form interlinked helical chains, and because a helix may be left- or right-handed, individual quartz crystals are chiral and can be separated by hand.** In **cristobalite the silicon atoms sit exactly where carbon sits in diamond, with oxygen midway between them** — and the tridymite/cristobalite relationship mirrors that between wurtzite and zinc blende. Heating silica near its softening point, or cooling the melt slowly, gives **amorphous silica glass containing a disordered mixture of rings, chains and three-dimensional units.**
+
+Note also that **SiO exists only at high temperature** (SiO₂ + Si → 2SiO); **its existence at room temperature is doubtful** — the counterpart of the CO/SiO contrast in §5.2.
+
 **Insoluble in water and in every acid except HF** — the one reaction that matters industrially and in the laboratory:
 
 \[\mathrm{SiO_2+4HF\rightarrow SiF_4+2H_2O};\qquad \mathrm{SiO_2+6HF\rightarrow H_2SiF_6+2H_2O}\]
 
-Hence **HF must be stored in polyethylene or wax-lined vessels, never glass**, and HF is used to etch glass. With metal oxides, carbonates and salts at high temperature silica forms silicates, driving off the volatile oxide — the chemistry of glassmaking:
+Hence **HF must be stored in polyethylene or wax-lined vessels, never glass**, and HF is used to etch glass. **Of the halogens, only fluorine attacks silica**: \(\mathrm{SiO_2+2F_2\rightarrow SiF_4+O_2}\).
+
+Silica is an **acidic** oxide, so it dissolves slowly in aqueous alkali and rapidly in fused alkali or fused carbonate — and that has a familiar laboratory consequence: **this is why ground-glass stoppers seize in reagent bottles containing NaOH.**
+
+**Detecting a silicate in qualitative analysis** uses the same HF chemistry in reverse: warm the sample with CaF₂ and conc. H₂SO₄ to generate HF *in situ*, which attacks the silicate to give volatile SiF₄; when the SiF₄ meets a drop of water it hydrolyses to silicic acid, appearing as a **white solid on the surface of the drop**.
+
+\[\mathrm{H_2SO_4+CaF_2\rightarrow 2HF+CaSO_4};\quad \mathrm{SiO_2+4HF\rightarrow SiF_4+2H_2O};\quad \mathrm{SiF_4+H_2O\rightarrow Si(OH)_4+HF}\]
+
+With metal oxides, carbonates and salts at high temperature silica forms silicates, driving off the volatile oxide — the chemistry of glassmaking:
 
 \[\mathrm{SiO_2+CaO\xrightarrow{\Delta}CaSiO_3};\qquad \mathrm{SiO_2+Na_2CO_3\xrightarrow{high\ T}Na_2SiO_3+CO_2}\]
 \[\mathrm{SiO_2+Na_2SO_4\xrightarrow{high\ T}Na_2SiO_3+SO_3};\qquad \mathrm{3SiO_2+Ca_3(PO_4)_2\xrightarrow{high\ T}3CaSiO_3+P_2O_5}\]
@@ -1055,7 +1380,30 @@ Uses: sand for mortar and cement; **quartz is piezoelectric**, which made accura
 
 The fused mass extracted with water gives a syrupy liquid called **water glass**, alkaline through hydrolysis (\(\mathrm{Na_2SiO_3+2H_2O\rightleftharpoons 2NaOH+H_2SiO_3}\)). Dropping crystals of coloured salts of Co, Fe, Ni or Cu into concentrated water glass grows coloured hollow metal-silicate tubes — the **"silica garden" / chemical garden**. Uses: fireproofing wood and textiles, adhesive cement for china clay, egg preservative, paint and calico printing, cheap soap filler, and the source of silica gel.
 
-**Silicates.** Metal derivatives of silicic acid, H₄SiO₄ ≡ Si(OH)₄, made by fusing a metal oxide or carbonate with sand. The universal building block is the **[SiO₄]⁴⁻ tetrahedron**; in every silicate **Si is +4, O is −2, and silicon is sp³ and non-planar**. Silicates are the products of **hetero-catenation of the Si–O bond**, and the entire classification depends on **how many corner oxygens each tetrahedron shares**. Sharing a corner means one oxygen is bonded to two silicons, which lowers both the O : Si ratio and the residual charge per silicon.
+**Silicates.** Metal derivatives of silicic acid, H₄SiO₄ ≡ Si(OH)₄, made by fusing a metal oxide or carbonate with sand. **About 95 % of the earth's crust is silicate minerals, aluminosilicates, silica or oxides**, and the three most abundant elements — **O, Si and Al — make up 81 % of the crust, four atoms out of every five.**
+
+### Why silicates are built the way they are — four principles
+
+Before the classification, the reasoning behind it. Silicate minerals are very insoluble, have infinite structures and are hard, all because of the strength of the Si–O bond.
+
+1. **Bond character.** The electronegativity difference is O 3.5 − Si 1.8 = 1.7, so **Si–O is about 50 % ionic and 50 % covalent** — which is why both ionic (radius-ratio) and covalent (hybridisation) arguments work on it.
+2. **Why tetrahedra, always.** The radius ratio **Si⁴⁺ : O²⁻ = 0.29** puts silicon firmly in the four-coordinate range, surrounded by four oxygens at the corners of a tetrahedron. **Every silicate is therefore based on [SiO₄] tetrahedra** — this is not a convention, it is a consequence.
+3. **Polymerisation.** Those tetrahedra may stay discrete or **share corner oxygens** to build larger units.
+4. **The oxygens are close-packed, and that is what lets aluminium in.** Close-packed oxide arrays have both tetrahedral and octahedral holes, and metal ions occupy whichever fits their size:
+
+| Ion pair | Radius ratio | Coordination number | Hole occupied |
+|---|---|---|---|
+| Be²⁺ : O²⁻ | 0.25 | 4 | tetrahedral |
+| **Si⁴⁺ : O²⁻** | **0.29** | **4** | **tetrahedral** |
+| **Al³⁺ : O²⁻** | **0.42** | **4 or 6** | **tetrahedral *or* octahedral** |
+| Mg²⁺ : O²⁻ | 0.59 | 6 | octahedral |
+| Fe²⁺ : O²⁻ | 0.68 | 6 | octahedral |
+
+> **This is the key to the entire aluminosilicate world.** Most metal ions fit only one kind of hole. **Al³⁺ is the right size for either**, so aluminium can substitute for *a metal* in an octahedral site **or** for *silicon* in a tetrahedral site. Every zeolite, feldspar, mica and clay in this section is a consequence of that single fact.
+
+(The radius-ratio rule is a guide, not a law — silicates are partly covalent, and Na occasionally takes CN 6 rather than 4, while K and Ca may take CN 8 rather than 6.)
+
+The universal building block is the **[SiO₄]⁴⁻ tetrahedron**; in every silicate **Si is +4, O is −2, and silicon is sp³ and non-planar**. Silicates are the products of **hetero-catenation of the Si–O bond**, and the classification depends on **how many corner oxygens each tetrahedron shares**. Sharing a corner means one oxygen is bonded to two silicons, which lowers both the O : Si ratio and the residual charge per silicon.
 
 | Class | O shared per tetrahedron | O contributed per tetrahedron | General formula | Examples |
 |---|---|---|---|---|
@@ -1075,12 +1423,50 @@ Note carefully that **cyclic and single-chain silicates share the same general f
 - *BeₙAl₂Si₆O₁₈ (beryl):* 2n + 3(2) + 4(6) − 2(18) = 0 → **n = 3**.
 - *A four-membered pyroxene fragment:* (SiO₃²⁻)₄ plus one terminal O²⁻ gives **Si₄O₁₃¹⁰⁻**.
 
-**Zeolites.** Replace some Si(IV) tetrahedral sites in a three-dimensional framework by **Al(III)** and the framework acquires one unit of negative charge per substitution — an **aluminosilicate**. That charge is balanced by mobile, **exchangeable cations** (Na⁺, K⁺, Ca²⁺) sitting in the pores. Two features together — a rigid, size-selective pore architecture *plus* mobile cations — give zeolites both of their functions:
+### Detail worth carrying, class by class
 
-- **Ion exchange.** Sodium zeolite, Na₂Al₂Si₂O₈·xH₂O (**permutit**), softens hard water by swapping its Na⁺ for dissolved Ca²⁺/Mg²⁺.
-- **Shape-selective catalysis.** Only molecules of the right size and shape can diffuse to the internal acid sites. **ZSM-5** converts alcohols directly into gasoline; zeolites also catalyse hydrocarbon cracking and isomerisation across the petrochemical industry.
+- **Orthosilicates.** The metal's coordination number decides the structure: in **willemite Zn₂[SiO₄]** and **phenacite Be₂[SiO₄]** the metal has CN 4 (tetrahedral holes); in **forsterite Mg₂[SiO₄]** Mg has CN 6 (octahedral holes). **Olivine (Mg,Fe)₂[SiO₄]** is forsterite with about one tenth of the Mg²⁺ replaced by Fe²⁺ — a textbook case of **isomorphous replacement**, possible because the ions have the same charge, similar radii (Mg²⁺ 0.72, Fe²⁺ 0.78 Å) and occupy the same type of hole; Mn²⁺ may join them. **Zircon ZrSiO₄** is cut as a cheap diamond substitute; **Zr has CN 8 and the structure is not close-packed**. **Garnets** M(II)₃M(III)₂[SiO₄]₃ have eight-coordinate M(II) and six-coordinate M(III), and are used both as gemstones and as "sandpaper".
+- **Pyrosilicates.** In Sc₂[Si₂O₇] the **Si–O–Si angle is 180°**, but in the lanthanide disilicates it bends, **varying from 133° to 180° as the metal's coordination number rises from 6 to 7 to 8** — a nice demonstration that the bridge is flexible.
+- **Cyclic silicates.** Rings of 3, 4, 6 and 8 tetrahedra are known; **3 and 6 are much the commonest.** Si₃O₉⁶⁻ occurs in wollastonite Ca₃[Si₃O₉] and benitoite BaTi[Si₃O₉]; Si₆O₁₈¹²⁻ in **beryl Be₃Al₂[Si₆O₁₈]**. In beryl the Si₆O₁₈ rings stack one above another leaving **open channels**, which hold Na⁺, Li⁺ and Cs⁺ and make the mineral **permeable to small gas molecules such as helium.** **Emerald has beryl's formula plus 1–2 % Cr**, which supplies the green colour.
+- **Chain silicates.** The repeat distance along the chain varies with how the tetrahedra are oriented. Most pyroxenes repeat **every second** tetrahedron (spodumene LiAl[(SiO₃)₂], the main source of lithium; enstatite; diopside), but **wollastonite Ca₃[(SiO₃)₃] repeats every three**, and repeats of 4, 5, 6, 7, 9 and 12 are known.
+- **Double chains and the asbestos minerals.** Joining two chains can give (Si₂O₅)ₙ²ⁿ⁻, **(Si₄O₁₁)ₙ⁶ⁿ⁻** or (Si₆O₁₇)ₙ¹⁰ⁿ⁻. **Amphiboles always contain hydroxyl groups bonded to the metal ions.** Examples: tremolite Ca₂Mg₅[(Si₄O₁₁)₂](OH)₂ and **crocidolite = blue asbestos**, Na₂Fe₃ᴵᴵFe₂ᴵᴵᴵ[(Si₄O₁₁)₂](OH)₂.
 
-Feldspar and chabazite (NaAlSi₂O₆) are natural framework aluminosilicates; **glass and cement are the two great man-made silicates.** The reliable order of attack on any zeolite problem is: **(1) identify the framework and substitution pattern, (2) balance the charge, (3) then reason about pore size, ion exchange or catalysis.**
+> **A real identification tool.** Pyroxenes and amphiboles both cleave parallel to the chains, giving fibres — but at different angles, set by the cross-sectional shape of the chain bundle: **cleavage angle 87° for pyroxenes, 56° for amphiboles.** Measuring that angle identifies the class.
+
+**Asbestos comes from two different silicate classes**, which is worth knowing precisely: the **amphiboles** (crocidolite/blue asbestos, amosite/brown asbestos) make up only about 5 % of asbestos used, while **chrysotile Mg₃(OH)₄[Si₂O₅] — white asbestos, derived from serpentine and a *sheet* silicate — is 93 %.** Chemically inert but a serious hazard: inhaled dust scars the lungs and causes cancer with a **latent period of 20–30 years**; the controls are to minimise dust and handle it wet.
+
+### Sheet silicates: building minerals layer by layer
+
+The sheet silicates are the most satisfying part of the subject, because a whole family of familiar minerals is generated by stacking just two kinds of layer. The trick is that **the unshared oxygens of a (Si₂O₅)ₙ²ⁿ⁻ sheet sit in almost the same relative positions as two-thirds of the OH groups on a layer of gibbsite Al(OH)₃ or brucite Mg(OH)₂** — so the two can be fused, losing OH, with the oxygens coinciding.
+
+| Stack | Mineral | Character |
+|---|---|---|
+| Si₂O₅ + Al(OH)₃ (**two-layer**) | **kaolinite Al₂(OH)₄[Si₂O₅]** | electrically neutral; china clay — paper filler, porcelain, refractory |
+| Si₂O₅ + Al(OH)₃ + Si₂O₅ (**three-layer**) | **pyrophyllite Al₂(OH)₂[(Si₂O₅)₂]** | neutral |
+| Si₂O₅ + Mg(OH)₂ (**two-layer**) | **chrysotile Mg₃(OH)₄[Si₂O₅]** | white asbestos |
+| Si₂O₅ + Mg(OH)₂ + Si₂O₅ (**three-layer**) | **talc / soapstone Mg₃(OH)₂[(Si₂O₅)₂]** | neutral, **no interlayer cations at all** → layers slide freely → very soft, dry lubricant, talcum powder |
+
+Now introduce charge, and hardness follows:
+
+- **Micas.** Replace some tetrahedral Si⁴⁺ by Al³⁺ in pyrophyllite's triple layers and the sheets acquire a **negative charge, balanced by cations sitting between them**. That electrostatic attraction is why **micas are much harder than talc** — but the interlayer is still the weak plane, so micas cleave readily into transparent flexible sheets. **Muscovite KAl₂(OH)₂[AlSi₃O₁₀]**, margarite CaAl₂(OH)₂[Al₂Si₂O₁₀], and with Mg/Fe substitution **biotite (black mica)**. Uses: electrical insulation, formers for heating elements in electric irons, capacitors, furnace windows, and finely ground as filler and in glitter paint.
+- **Montmorillonites (the clay minerals).** Same idea but with **much less charge than the micas**: replacing only some octahedral Al(III) in pyrophyllite by Mg(II) gives (Mg₀.₃₃Al₁.₆₇)(OH)₂[(Si₂O₅)₂]⁰·³³⁻, needing only ⅓ M⁺ or ⅙ M²⁺ between the layers — and those cations can be **hydrated**, hence "hydromicas". Finely divided particles are **thixotropic**: the plates carry negative faces and positive edges, so at rest they arrange + to − into a semi-solid gel, and **stirring breaks the attractions and the suspension turns watery.** That is the chemistry of **non-drip emulsion paint** and of drilling mud. **Fuller's earth** is a calcium montmorillonite (decolourising and deodorising oils and fats, oil-spill absorbent, cat litter, Ca²⁺ ion exchanger); exchanging its Ca²⁺ for Na⁺ gives **bentonite**, which is markedly thixotropic.
+- **Vermiculites.** Substitute in talc's brucite sheet *and* replace Si⁴⁺ by Al³⁺ in the silicate sheet. **Heated, vermiculites dehydrate by extruding little worms — hence the name** — giving a porous, light material used for packing, insulation and as "soil" in ring culture.
+
+### Three-dimensional silicates: feldspars, zeolites, ultramarines
+
+Sharing all four corners gives neutral (SiO₂)ₙ. Frameworks become *silicates* only when Al³⁺ replaces some Si⁴⁺ and a cation is added to balance the charge: replacing **one quarter** of the silicon gives the framework anion **[AlSi₃O₈]⁻**, replacing **one half** gives [Al₂Si₂O₈]²⁻.
+
+> **Why only big cations.** The cavities in a three-dimensional framework are large, so they are filled by **K⁺, Na⁺, Ca²⁺ and Ba²⁺**. The smaller ions Fe³⁺, Cr³⁺ and Mn²⁺ that were common in the chain and sheet silicates **do not occur in the three-dimensional silicates at all** — the holes are too big for them.
+
+- **Feldspars** are the most important rock-forming minerals and make up **two-thirds of igneous rock** (granite is feldspars + micas + quartz). Two classes: **orthoclase** feldspars — orthoclase K[AlSi₃O₈], celsian Ba[Al₂Si₂O₈] — and **plagioclase** feldspars — albite Na[AlSi₃O₈], anorthite Ca[Al₂Si₂O₈]. **The orthoclases are the more symmetrical, because K⁺ and Ba²⁺ are just the right size for the lattice while the smaller Na⁺ and Ca²⁺ let it distort.**
+- **Zeolites** have a **more open framework than the feldspars, penetrated by channels into a honeycomb**, and the channels are wide enough for ions and small molecules to pass. Two functions follow:
+  - **Ion exchange.** Sodium zeolite, Na₂Al₂Si₂O₈·xH₂O (**permutit**), softens hard water by swapping Na⁺ for dissolved Ca²⁺/Mg²⁺; once exhausted it is **regenerated with concentrated NaCl solution, which drives the exchange backwards.** Natural examples: **natrolite Na₂[Al₂Si₃O₁₀]·2H₂O**, chabazite Ca[Al₂Si₄O₁₂]·6H₂O, heulandite, analcite Na[AlSi₂O₆]·H₂O.
+  - **Molecular sieving and shape-selective catalysis.** Zeolites can be **dehydrated by warming without the framework collapsing**, and then absorb only molecules small enough to enter the cavities — used industrially to separate **straight-chain from branched-chain hydrocarbons**, and to dry gases (CO₂, NH₃, EtOH). Catalytically, only the right-shaped molecule reaches the internal acid sites: **ZSM-5** converts alcohols directly to gasoline, and zeolites run cracking and isomerisation across the petrochemical industry.
+- **Ultramarines** contain **no water** but do contain anions — Cl⁻, SO₄²⁻ and **polysulphide Sₙ²⁻**: ultramarine Na₈[(AlSiO₄)₆]S₂, sodalite Na₈[(AlSiO₄)₆]Cl₂, noselite Na₆[(AlSiO₄)₆]SO₄. The mineral **lapis lazuli** owes its magnificent blue — the prized medieval oil pigment — to **the polysulphide ion**. Synthetic ultramarine is made by grinding kaolin, sodium carbonate and sulphur in the absence of air, and before artificial brighteners existed it was the "dolly blue" used to mask yellowness in domestic washing.
+
+**Glass and cement are the two great man-made silicates.** The reliable order of attack on any framework problem is: **(1) identify the framework and substitution pattern, (2) balance the charge, (3) then reason about pore size, ion exchange or catalysis.**
+
+**Bowen's reaction series** records the order in which these minerals crystallised as magma cooled — olivine → pyroxenes → amphiboles → biotite micas → orthoclase feldspars → muscovite micas → quartz → zeolites. The **simpler silicate units crystallised first**; hydroxyl (and sometimes F) appears only in the later minerals; **isomorphous replacement is characteristic of the later minerals**; and orthoclase feldspar, muscovite and quartz are the three major minerals of granite.
 
 ## 6.6 Silicones
 
@@ -1112,7 +1498,25 @@ Two consequences you can be asked to reason with directly:
 - **Adding a controlled proportion of R₃SiCl controls the chain length** (more chain-stopper, shorter chains).
 - **Adding a controlled proportion of RSiCl₃ controls the hardness** (more cross-linker, harder polymer).
 
+**The industrial route is not the Grignard.** Commercially, chlorosilanes come from the **Rochow "Direct Process"**: alkyl or aryl halide passed over a **fluidised bed of silicon with about 10 % copper catalyst**.
+
+\[\mathrm{Si+2CH_3Cl\xrightarrow[280-300^{\circ}C]{Cu}(CH_3)_2SiCl_2}\]
+
+The yield of the wanted difunctional product is about 70 %, with MeSiCl₃ (10 %), Me₃SiCl (5 %) and traces of Me₄Si, SiCl₄ and MeSiHCl₂. **Both the Grignard and the direct route give a mixture, and separating it is the hard part — the boiling points are painfully close: Me₃SiCl 57.7 °C, MeSiCl₃ 66.4 °C, Me₂SiCl₂ 69.6 °C** — so very careful fractionation is essential.
+
+**Why silicones work at all — two bond facts.** (1) The skeleton is silica-like, and the **Si–O bond energy is very high, 502 kJ mol⁻¹**; (2) the **Si–C bond is strong** too. And **water repellency has a simple structural cause: the chain is wrapped in organic side groups, so from the outside a silicone looks like an alkane.**
+
 **Properties.** The lower members are oily liquids; higher members are waxy or rubber-like solids. They are thermally and chemically **stable**, excellent **electrical insulators** (the Si–O–Si backbone is inert), **non-toxic**, strongly **water-repellent**, and — unusually — their **viscosity barely changes with temperature.** All of this follows from the strong, polar Si–O bond plus a flexible, freely rotating backbone.
+
+**The three commercial classes**, with the numbers that make them easy to distinguish:
+
+| Class | Share | Structure | Notes |
+|---|---|---|---|
+| **Fluids / oils** | ≈ 63 % | straight chains of **20–500 Si units** | water repellents, antifoams, dielectric fluid in high-voltage transformers, hydraulic fluids; phenyl-containing ones are the better lubricants |
+| **Rubbers** | ≈ 25 % | straight chains of **6000–600 000 Si units** + filler (finely divided SiO₂, occasionally graphite) | **retain elasticity from −90 °C to +250 °C** — far wider than natural rubber; vulcanised either with a little **benzoyl peroxide** (cross-linking up to ~1 % of Si) or by building a cross-linker into the chain |
+| **Resins** | ≈ 12 % | heavily cross-linked, from PhSiCl₃ + Ph₂SiCl₂ | rigid, rather like bakelite; printed circuit boards, encapsulating chips and resistors, non-stick coatings, moulds for tyres and bread |
+
+**Heat stability of the side group** runs **phenyl > methyl > ethyl > propyl**. On heating in air to 350–400 °C silicones oxidise rapidly and cross-link, becoming brittle and cracking; **heated strongly in the *absence* of air they merely soften and give volatile products, without oxidation or cross-linking.**
 
 **Uses.** High-temperature oil baths and high-vacuum pumps; electrical insulation; waterproofing cloth, paper, masonry and leather (car and shoe polish); paints and enamels resistant to heat, sunlight, chemicals and damp; vaseline-like greases for aircraft; **silicone rubbers** that keep their elasticity over a wide temperature range (used for astronauts' boot soles); **antifoaming agents** in sewage disposal, brewing and frying oil; gearbox and light-machinery lubricants; sealants; and, being biocompatible, **surgical and cosmetic implants**. **Silly putty** is a silicone of composition intermediate between the oils and the rubbers.
 
@@ -1182,6 +1586,8 @@ It also reduces dichromate to Cr³⁺ and decolourises iodine.
 **Stannic chloride, SnCl₄.** From dry Cl₂ over fused tin. A **colourless fuming liquid** with an unpleasant odour, hygroscopic, forming hydrates SnCl₄·3H₂O, ·5H₂O, ·6H₂O, ·8H₂O.
 
 \[\mathrm{SnCl_4+4H_2O\rightarrow Sn(OH)_4\downarrow(white)+4HCl};\qquad \mathrm{SnCl_4+2HCl\rightarrow H_2SnCl_6}\ (\text{hexachlorostannic acid})\]
+
+> **A caution on "Sn(OH)₄".** Indian textbooks write the hydrolysis product as Sn(OH)₄, and you should write it that way in an exam because that is what the keys expect. But **there is in fact no evidence for the existence of Ge(OH)₄, Sn(OH)₄ or Pb(OH)₄.** What precipitates is a **hydrous oxide, SnO₂·xH₂O**, and what exists in alkaline solution is the **hexahydroxo anion [Sn(OH)₆]²⁻** (and [Pb(OH)₆]²⁻) — which is why stannates and plumbates are properly written Na₂[Sn(OH)₆] and Na₂[Pb(OH)₆] rather than Na₂SnO₃ and Na₂PbO₃. Both notations appear in the literature; the hexahydroxo one is the physically accurate one.
 \[\mathrm{SnCl_4+2NH_4Cl\rightarrow (NH_4)_2SnCl_6}\]
 
 **SnCl₄·5H₂O is "butter of tin" (oxymuriate of tin)**, used as a mordant and to deposit a scratch-resistant SnO₂ film on glass; **(NH₄)₂SnCl₆ is "pink salt"**, a mordant in calico printing. SnCl₄ is also made by \(\mathrm{2HgCl_2+SnCl_2\rightarrow 2Hg+SnCl_4}\) and from Sn + aqua regia.
@@ -1212,6 +1618,12 @@ That last reaction is **plumbo-solvency**, and it has a practical twist worth kn
 - With alkali: \(\mathrm{Pb+2NaOH\rightarrow Na_2PbO_2+H_2}\) (sodium plumbite).
 - Directly with halogens and sulphur: PbCl₂, PbS.
 - Uses: telegraph/telephone sheathing, pipes, bullets, lead accumulators, pigments, chambers in the chamber process for H₂SO₄, and **radiation shielding** (lead blocks protect against emissions from radioactive minerals).
+
+> **The pattern behind all the Group 14 oxides — learn this once and it covers C to Pb.**
+>
+> **Dioxides MO₂.** GeO₂, SnO₂ and PbO₂ all take the **rutile (TiO₂) structure with coordination number 6**, unlike molecular CO₂ and network SiO₂. **Basicity increases down the group**: CO₂ and SiO₂ are **purely acidic**, GeO₂ less strongly acidic, and **SnO₂ and PbO₂ are amphoteric.** All dissolve in alkali giving germanates, stannates and plumbates — and note that **the germanates have complicated silicate-like structures, whereas the stannates and plumbates are simply [Sn(OH)₆]²⁻ and [Pb(OH)₆]²⁻.** The dioxides do **not** dissolve in acid unless a complexing agent is present, when [GeF₆]²⁻ or [SnCl₆]²⁻ forms.
+>
+> **Monoxides MO.** GeO, SnO and PbO have **layer lattices**, not typical ionic structures. They are **more basic and more ionic than the corresponding dioxides**: GeO is distinctly acidic, while **SnO and PbO are amphoteric**. And the inert-pair trend shows through in redox behaviour — **Ge(II) and Sn(II) are quite strong reducing agents, whereas Pb(II) is stable.**
 
 **The four oxides of lead.**
 
@@ -1257,11 +1669,19 @@ Used to make chrome yellow and chrome red pigments, as a mordant in dyeing, and 
 
 **White lead, 2PbCO₃·Pb(OH)₂.** Manufactured by the **Dutch**, **Carter** and **electrolytic** processes; a white, heavy, highly poisonous amorphous powder, partially soluble in linseed oil. On thermal decomposition it gives red lead. Used as a white paint with linseed oil (BaSO₄ added to improve brushing power) — **its main drawback is that it blackens to PbS in an atmosphere containing H₂S.**
 
+**Lead tetraacetate, Pb(CH₃COO)₄.** Obtained as a colourless solid by treating Pb₃O₄ with glacial acetic acid. Water-sensitive, and **widely used as a selective oxidising agent in organic chemistry — its best-known application is cleaving 1,2-diols (glycols) to two carbonyl compounds**, which is how it is used on carbohydrates:
+
+\[\mathrm{R_2C(OH){-}C(OH)R_2\xrightarrow{Pb(CH_3COO)_4}2\,R_2C{=}O+Pb(CH_3COO)_2+2CH_3COOH}\]
+
+Do not confuse it with lead(II) acetate, "sugar of lead", above — one is a Pb(IV) oxidant, the other a Pb(II) salt.
+
 **Tetraethyl lead, Pb(C₂H₅)₄.**
 
 \[\mathrm{4NaPb\ (10\%\ Na\ alloy)+4C_2H_5Cl\rightarrow 3Pb+Pb(C_2H_5)_4+4NaCl}\]
 
-The classic **anti-knocking agent** for petrol (now phased out for its toxicity).
+The classic **anti-knocking agent** for petrol, raising the octane number (now phased out for its toxicity — burning leaded petrol was the dominant source of atmospheric lead).
+
+> **An inert-pair curiosity.** The divalent state becomes more stable down the group, **yet the organometallic derivatives of tin and lead all contain M(IV), not M(II)** — PbEt₄, not PbEt₂. Indeed PbCl₂ + LiEt gives PbEt₄ plus lead metal, the Pb(II) organometallic disproportionating away. Organometallic chemistry does not follow the inert-pair trend.
 
 **Tin versus lead.**
 
@@ -1315,6 +1735,19 @@ These recur throughout Group 14 questions because they are all CO-based, and the
 - **Hard water is safer than soft water in lead pipes** — sulphate/phosphate/carbonate films suppress plumbo-solvency.
 - Tin shows allotropy (tin pest below 13.2 °C) and has the most natural isotopes of any element; **lead shows no allotropy**.
 - Water gas beats producer gas on calorific value because **both** its components burn.
+- **CO₄⁴⁻ does not exist although SiO₄⁴⁻ does** — carbon is too small. Same reason NO₃⁻ is nitrogen's oxo-anion but PO₄³⁻ is phosphorus's.
+- CO₃²⁻ is **flat and sp²** with a delocalised π MO over all four atoms. Calcite structure for small cations, **aragonite for large** (Ca²⁺ and above).
+- **Only Group 1 metals and NH₄⁺ form solid bicarbonates**, and the solid contains **H-bonded chains** of HCO₃⁻.
+- **GeO₂, SnO₂ and PbO₂ have the rutile structure, CN 6.** Basicity increases down the group: CO₂/SiO₂ acidic → GeO₂ weakly acidic → **SnO₂, PbO₂ amphoteric**.
+- **There is no evidence for Sn(OH)₄ or Pb(OH)₄.** The real species are the hydrous oxide and the **hexahydroxo anions [Sn(OH)₆]²⁻ / [Pb(OH)₆]²⁻**. Write Sn(OH)₄ in an exam if the key expects it, but know what it stands for.
+- **CN⁻ is a stronger σ donor but weaker π acceptor than CO.** Orders: σ CN⁻ > RNC > CO > NO⁺; π acceptor exactly reversed.
+- **Cyanogen disproportionates in alkali** like a halogen — hence "pseudohalide". **NCO⁻ is isoelectronic with CO₂ and linear.**
+- **Quartz crystals are chiral** because β-quartz is built from helical chains; **in cristobalite the Si atoms sit where C sits in diamond.**
+- **Only F₂ attacks SiO₂** among the halogens. And silica's slow attack by alkali is why **ground-glass stoppers stick in NaOH bottles**.
+- Silicones: **Si–O bond energy 502 kJ mol⁻¹**; industrially made by the **Rochow direct process**, and the hard step is fractionating products whose boiling points differ by ~3 °C.
+- Silicone **rubbers hold elasticity from −90 to +250 °C**; side-group heat stability is **phenyl > methyl > ethyl > propyl**.
+- **Lead tetraacetate is a Pb(IV) oxidant that cleaves 1,2-diols**; lead(II) acetate is "sugar of lead". Different oxidation states, different chemistry.
+- **Organometallics of Sn and Pb are M(IV), not M(II)** — organometallic chemistry runs *against* the inert-pair trend.
 
 # 7. Group 15: nitrogen, ammonia and nitrogen oxides
 

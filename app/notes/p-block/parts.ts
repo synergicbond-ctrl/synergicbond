@@ -10,7 +10,7 @@ export const P_BLOCK_PARTS: PBlockPartDef[] = [
   { slug: "part2", number: 2, title: "Group 13 — Boron family: trends, oxidation states & the elements", fromSection: 2, toSection: 2 },
   { slug: "part3", number: 3, title: "Group 13 — B₂O₃, borax, boric acid & the borates", fromSection: 3, toSection: 3 },
   { slug: "part4", number: 4, title: "Group 13 — Halides, boranes, borazine & Al compounds", fromSection: 4, toSection: 4 },
-  { slug: "part5", number: 5, title: "Group 14 — Trends, catenation, allotropes, hydrides & halides", fromSection: 5, toSection: 5 },
+  { slug: "part5", number: 5, title: "Group 14 — Trends, catenation, allotropes, reactivity & halides", fromSection: 5, toSection: 5 },
   { slug: "part6", number: 6, title: "Group 14 — Carbon oxides, carbides, silicon materials, Sn & Pb", fromSection: 6, toSection: 6 },
   { slug: "part7", number: 7, title: "Group 15 — Nitrogen, ammonia & nitrogen oxides", fromSection: 7, toSection: 7 },
   { slug: "part8", number: 8, title: "Group 15 — Nitrides, ammonia & nitric acid", fromSection: 8, toSection: 8 },

@@ -12,6 +12,11 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // public/ holds static assets served verbatim, never first-party source.
+    // It contains vendored third-party bundles (e.g. the minified RDKit WASM
+    // glue) whose style violations are not ours to fix and which otherwise
+    // fail the lint step.
+    "public/**",
   ]),
 ]);
 

@@ -188,7 +188,7 @@ export const AUTHORED_COURSES: AuthoredCourse[] = [
     href: "/notes/p-block",
     lessonLabel: "20 lessons",
     premium: true,
-    description: "NCERT-first JEE Advanced notes for Groups 13–18: trends, boron and carbon chemistry, nitrogen and sulphur oxoacids, halogens, interhalogens and xenon compounds.",
+    description: "JEE Advanced notes for Groups 13–18: trends, boron and carbon chemistry, nitrogen and sulphur oxoacids, halogens, interhalogens and xenon compounds.",
   },
 ];
 

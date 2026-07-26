@@ -3,14 +3,17 @@
 Topic · Compound · Reaction · Structure · MO-Theory · Visual registers.
 
 **Scope of this file:** a deep read of `151716181314.pdf` (J.D. Lee adapted
-ed., Ch. 10). **Part 3 — Group 15 — is now COMPLETE: pages 448–482**, sections
-10.35–10.45 plus the chapter's Group 15 question sets. The main body below
-covers pp. 448–470; **Addendum 1** at the end covers pp. 471–482.
+ed., Ch. 10).
 
-**Not yet read in this file:** lines 6221–11169 — **Part 4 Group 16, Part 5
-Group 17, Part 6 Group 18** — and lines 107–4003 (Groups 13–14, partly covered
-by other copies of the same author). See the Source Coverage Register for exact
-page accounting.
+- **Part 3 — Group 15 — COMPLETE: pp. 448–482**, §10.35–10.45 + question sets.
+  Main body below = pp. 448–470; **Addendum 1** = pp. 471–482.
+- **Part 4 — Group 16 — COMPLETE: pp. 483–512**, §10.46–10.55 + question sets.
+  **Addendum 2**.
+
+**Not yet read in this file:** lines 8089–11169 — **Part 5 Group 17, Part 6
+Group 18** — and lines 107–4003 (Groups 13–14, partly covered by other copies
+of the same author). See the Source Coverage Register for exact page
+accounting.
 
 `NEW` = absent from the shipped course. `HAVE` = already covered.
 
@@ -338,3 +341,253 @@ These are *concept* traps, extracted and re-expressed — not reproduced questio
 |---|---|---|
 | H₃PO₄ → (HPO₃)ₙ | 316 °C here vs 320 °C earlier in the same chapter | immaterial; quote ≈320 °C |
 | Nylon-6 formula | printed `CO[NH(CH2)3CO]n NH` — nylon-6 has **five** CH₂ | typo; use (CH₂)₅ |
+
+---
+
+# Addendum 2 — Group 16 completed (pp. 483–512, lines 6221–8089)
+
+Part 4 of `151716181314.pdf` read end to end: §10.46 General properties →
+§10.55 Halides, plus the whole Group 16 question apparatus and its answer key.
+Sections covered: 10.46, 10.47, 10.48, 10.49, 10.50, 10.51, 10.52, 10.53,
+10.54, 10.55.
+
+## A. Topic register — additions A43–A62
+
+| # | Topic | Where it belongs | Why it earns a place |
+|---|---|---|---|
+| A43 | The d-block contraction as the reason Se refuses (+VI) | §11 group overview | HNO₃ takes S all the way to H₂SO₄ but stops at H₂SeO₃. One cause — the filled 3d shell shielding badly — explains Ge, As, Se and Br together. |
+| A44 | Why double bonds die down the group: CO₂ → CS₂ → CSe₂ → CTe₂ | §11 group overview | CO₂ discrete, CS₂ less stable, CSe₂ polymerises instead of π-bonding, CTe₂ unknown. A single row of four compounds carrying the whole pπ overlap argument. |
+| A45 | Ozone: structure, preparation, the full oxidation catalogue | §12 (new subsection) | Course had ozone in one paragraph. Source gives ~25 balanced oxidations plus two quantitative estimations. |
+| A46 | Potassium ozonide KO₃ from KOH + O₃ | §12 | A genuine ozonide, not a peroxide or superoxide. Completes the O₂/O₂⁻/O₂²⁻/O₃⁻ ladder. |
+| A47 | Sulphur allotropy as a *physical-property* story | §12 | Density, viscosity and colour all change discontinuously at 160 °C. Not a list of names — a mechanism. |
+| A48 | Engel's ε-sulphur, S₆ in the chair conformation | §12 | Distinct from the S₈ crown. Two preparations given. |
+| A49 | S₂ is paramagnetic and blue, like O₂ | §12 + MO section | Direct transfer of the O₂ MO diagram to the third period. Stable to 2200 °C. |
+| A50 | Classification of oxides: normal / peroxide / superoxide / suboxide | §11 (structural) | The suboxide O=C=C=C=O anchors it. Currently absent from the course. |
+| A51 | Classification of oxides: acidic / basic / amphoteric / neutral | §11 | Includes *why* higher oxidation state ⇒ more acidic (central atom pulls electron density, weakens O–H). |
+| A52 | The three solid forms of SO₃ | §13 | γ cyclic trimer, β helical chains, α cross-linked sheets. Melting points rise in that order. |
+| A53 | Contact process as real process engineering | §13 | Catalyst poisoning by As, electrostatic precipitator, 400 °C floor and 600–650 °C ceiling, 20-year catalyst life. |
+| A54 | The four oxoacid series of sulphur | §13 | sulphurous / sulphuric / thionic / peroxo. Replaces any "other oxoacids" heading. |
+| A55 | pπ–dπ strength as the master control on oxoanion polymerisation | §11 **and** §§12–16 | Silicates polymerise endlessly, phosphates a lot, sulphates barely, perchlorates not at all — one cause, four groups. The single best unifying idea in this part. |
+| A56 | Sulphamic acid NH₂SO₃H | §13 | The only strong acid that is a solid at room temperature. |
+| A57 | Oxohalides: thionyl vs sulphuryl | §13 (fills §10.53 gap) | Named gap in the coverage register. Now has structures, hydrolysis behaviour and the halosulphuric acids. |
+| A58 | Hydride trends H₂O → H₂Te, and which trends are *not* monotonic | §14 | Bond angle falls 104°28′ → 92° → 91°; boiling point is anomalous only at water; acid strength and bond length rise. |
+| A59 | Why covalent solutes are insoluble in water | §14 | Entropy favours mixing; H-bonds must be paid for. Stated as an energy balance, not a rule. |
+| A60 | Ice: wurtzite-like structure, nine polymorphs, 4 °C density maximum | §14 | H positions located by neutron diffraction on D₂O — a nice "how do we know" aside. |
+| A61 | H₂O₂ as the smallest molecule with restricted rotation | §14 (cross-ref hydrogen ch.) | Skew structure, 111°30′ dihedral. Belongs to the hydrogen chapter's H₂O₂ section; cross-reference only. |
+| A62 | Chalcogen halides: the full inventory | §14 | SF₂/S₂F₂/SSF₂/S₂F₄/S₂F₁₀, SCl₄, TeI₂, PoI₂. S₂F₁₀ = two octahedra sharing a corner. |
+
+## B. Compound register — Group 16 additions (~95 species)
+
+**Oxygen allotropes and oxides:** O₂, O₃, and the oxide *classes* — normal
+(H₂O, MgO, Al₂O₃), peroxide (Na₂O₂, BaO₂, H₂O₂), superoxide (KO₂), ozonide
+(KO₃), suboxide (C₃O₂).
+
+**Oxygen fluorides:** OF₂, O₂F₂, O₃F₂, O₄F₂.
+**Chlorine/bromine/iodine oxides listed here, treated in Group 17:** Cl₂O,
+ClO₂, Cl₂O₆, Cl₂O₇, Br₂O, BrO₂, BrO₃, I₂O₄, I₄O₉, I₂O₅.
+
+**Sulphur allotropes:** α-rhombic (2.069 g cm⁻³), β-monoclinic (1.94–2.01),
+γ-monoclinic (2.19, nacreous), ε-Engel's S₆, catena-polymeric Sμ, S₂ gas.
+
+**Sulphur oxides:** SO₂, SO₃ (α, β, γ).
+
+**Sulphur oxoacids and their salts — every one named:**
+H₂SO₃ sulphurous · H₂S₂O₅ disulphurous/pyrosulphurous · H₂S₂O₄ dithionous ·
+H₂SO₄ sulphuric · H₂S₂O₃ thiosulphuric · H₂S₂O₇ pyrosulphuric (oleum) ·
+H₂S₃O₁₀ trisulphuric · H₂S₂O₆ dithionic · H₂SₙO₆ polythionic (n = 1–12) ·
+H₂SO₅ peroxomonosulphuric (Caro's) · H₂S₂O₈ peroxodisulphuric (Marshall's).
+Salts: Na₂SO₃, NaHSO₃, Na₂S₂O₅, CaSO₃, BaSO₃, Ag₂SO₃, RbHSO₃, CsHSO₃,
+Na₂SO₄, NaHSO₄, Na₂S₂O₇, Na₂S₂O₃·5H₂O (hypo), Na₂S₄O₆, Na₂S₂O₆,
+S₃O₆²⁻/S₄O₆²⁻/S₅O₆²⁻/S₆O₆²⁻, (NH₄)₂S₂O₈, K₂S₂O₈, Na₃[Ag(S₂O₃)₂].
+
+**Oxohalides:** SOF₂, SOCl₂, SOBr₂ · SO₂F₂, SO₂Cl₂, SO₂FCl, SO₂FBr ·
+FSO₃H, ClSO₃H, BrSO₃H · NH₂SO₃H sulphamic acid.
+
+**Halides:** SF₆, SF₄, SF₂, S₂F₂, SSF₂, S₂F₄, S₂F₁₀ · SCl₄, SCl₂, S₂Cl₂ ·
+S₂Br₂ · SeF₆, SeF₄, SeCl₄, Se₂Cl₂, SeBr₄, Se₂Br₂ · TeF₆, TeF₄, TeCl₄, TeCl₂,
+TeBr₄, TeBr₂, TeI₄, TeI₂ · PoCl₄, PoCl₂, PoBr₄, PoBr₂, PoI₄, (PoI₂).
+
+**Hydrides and catenates:** H₂O, H₂S, H₂Se, H₂Te, H₂Po · H₂O₂ · H₂S₂, H₂S₃,
+H₂S₄ (polysulphanes to H₂S₈) · NaHS, Na₂S, NH₄HS, (NH₄)₂S₂ ("yellow
+ammonium sulphide"), Na₂S₃, Al₂S₃, Cr₂S₃, FeS, FeS₂, CuS, ZnS, PbS.
+
+**Others met in reactions:** H₆TeO₆ orthotelluric acid · CrO₅ (blue chromium
+peroxide) · Na₂[FeO₄] sodium ferrate(VI) · Na₂[B₂(O₂)₂(OH)₄]·6H₂O sodium
+peroxoborate · H₂TiO₄ (the yellow peroxo-titanium species) · K₂[Hg(SO₃)₂] ·
+S(CH₂CH₂Cl)₂ mustard gas · CS₂, CSe₂ · 2-ethylanthraquinol/anthraquinone.
+
+## C. Reaction register — ~90 additions, all balance-checked
+
+Checked and correct as printed (a sample of the load-bearing ones):
+
+- `MS + 4O₃ → MSO₄ + 4O₂` (M = Pb, Cu, Zn, Cd)
+- `I₂(moist) + 5O₃ + H₂O → 2HIO₃ + 5O₂` and `2I₂(dry) + 9O₃ → I₄O₉ + 9O₂`
+- `2KOH + 5O₃ → 2KO₃ + 5O₂ + H₂O`
+- `2Hg + O₃ → Hg₂O + O₂` — mercury loses its fluidity; the "tailing" test
+- `2FeS₂ + 11/2 O₂ → Fe₂O₃ + 4SO₂`
+- `2SO₂ + 6SnCl₂ + 8HCl → 5SnCl₄ + SnS₂ + 4H₂O`
+- `2KIO₃ + 5SO₂ + 4H₂O → I₂ + 2KHSO₄ + 3H₂SO₄` (starch–iodate paper test)
+- `Na₂S₂O₃ + 4Cl₂ + 5H₂O → 2NaHSO₄ + 8HCl`
+- `3Ca(OH)₂ + 12S → CaS₂O₃ + 2CaS₅ + 3H₂O`
+- `4CrO₅ + 12H⁺ → 4Cr³⁺ + 7O₂ + 6H₂O`
+- `3SF₄ + 4BCl₃ → 4BF₃ + 3Cl₂ + 3SCl₂` and `5SF₄ + I₂O₅ → 2IF₅ + 5OSF₂`
+- `TeF₆ + 6H₂O → 6HF + H₆TeO₆`
+- `2H₂S + SO₂ → 3S + 2H₂O` (flue-gas reduction over activated alumina)
+- `Ca(OH)₂ + SO₂ → CaSO₃ + H₂O` (scrubbing)
+- `HNO₃ + 2H₂SO₄ → NO₂⁺ + H₃O⁺ + 2HSO₄⁻` (nitronium generation)
+
+## D. Structural data register — additions
+
+| Species | Data |
+|---|---|
+| O₃ | ∠O–O–O 116°48′; both O–O 1.28 Å — between O₂ (1.21) and H₂O₂ (1.48) |
+| SO₂ | V-shaped, ∠O–S–O 119°30′, retained in the solid; polar |
+| SO₃ gas | Plane triangular; 3 σ + 3 delocalised π |
+| SO₃²⁻ | Pyramidal, ∠O–S–O 106°, S–O 1.51 Å, **bond order 1.33** |
+| SO₄²⁻ | Tetrahedral, all S–O equal at 1.49 Å, **bond order ≈ 1.5** |
+| S₂O₆²⁻ | Ethane-like but almost *eclipsed*; S–S 2.15 Å, S–O 1.43 Å, ∠S–S–O 103° |
+| S₈ / S₆ | S–S 2.04–2.06 Å, ∠S–S–S 102–108°; crown vs chair |
+| H₂O₂ | O–O 1.48 Å, ∠ 94°48′, dihedral 111°30′ (gas) |
+| H₂O / H₂S / H₂Se | ∠ 104°28′ / 92° / 91° — sp³ giving way to almost pure p |
+| SOX₂ | Tetrahedral with one lone-pair position |
+| SO₂X₂ | Distorted tetrahedral; derivative of H₂SO₄ with both OH replaced |
+| SCl₂ / F₂O / TeBr₂ | ∠ 103° / 101.5° / 98° |
+| S₂Cl₂ | H₂O₂-like skew, ∠ 104° |
+| S₂F₁₀ | Two octahedra sharing a corner across an S–S bond |
+| Ice | Wurtzite-like, O on both Zn²⁺ and S²⁻ sites; H-bond ≈ 20 kJ mol⁻¹ |
+
+## E. MO-theory register — additions E12–E16
+
+- **E12 — S₂ vs O₂.** S₂ is paramagnetic and blue, exactly like O₂, and stable
+  to 2200 °C. The same MO diagram, moved one period down: two electrons in
+  degenerate π* orbitals. The cleanest possible test that a student has
+  understood O₂ rather than memorised it.
+- **E13 — O₃.** Angular, both bonds 1.28 Å, bond order 1.5. Four π electrons
+  delocalised over three oxygen atoms. Six lone pairs in total (the source's
+  own integer answer). The resonance picture and the MO picture agree here,
+  which makes O₃ the right place to show students that they are two
+  descriptions of one thing.
+- **E14 — SO₂ and SO₃: delocalised π, not localised d.** *Examination model:*
+  sp² hybrid σ framework with pπ–dπ double bonds; predicts the geometry and
+  the short bonds correctly. *Modern interpretation:* the π system is
+  delocalised over all the oxygens and calculated 3d occupancy on sulphur is
+  small; the shortening comes mostly from the S⁺–O⁻ charge separation and
+  negative hyperconjugation. **Both are kept.** The examination model earns
+  its place because it gets geometry, bond order and acidity ordering right
+  with arithmetic a student can do in an exam hall.
+- **E15 — pπ–dπ contraction across a period.** The 3d orbital shrinks Si → P
+  → S → Cl, so π overlap with O 2p improves monotonically. Consequence:
+  silicates polymerise without limit, phosphates extensively, sulphates
+  hardly at all, perchlorates never. One diagram; four groups explained.
+- **E16 — SF₆ and the hexafluorides.** *Examination model:* sp³d² with six
+  unpaired electrons after double promotion. *Modern interpretation:* three
+  mutually perpendicular 3-centre 4-electron bonds; fluorine's high
+  electronegativity, not d-orbital availability, is what makes SF₆ possible —
+  which is why SF₆ exists and SH₆ does not, and why SeF₆ and TeF₆ exist while
+  SeCl₆ does not. Reactivity ladder to explain: SF₆ inert, SeF₆ slightly
+  reactive, TeF₆ hydrolysed — Te is large enough to reach the coordination
+  number the first hydrolysis step needs.
+
+## F. Visual register — additions V23–V32
+
+| ID | Type | Subject |
+|---|---|---|
+| V23 | MODiagram | S₂ beside O₂ — the same diagram one period down |
+| V24 | MoleculeDiagram | O₃: 1.28 Å, 116°48′, six lone pairs, bond order 1.5 |
+| V25 | StructureGallery | S₈ crown, S₆ chair, catena-Sμ chain |
+| V26 | TrendChart | Sulphur viscosity vs temperature — the 160 °C discontinuity, maximum near 200 °C, fall to 444 °C |
+| V27 | StructureGallery | α-, β-, γ-SO₃: sheets, helical chains, cyclic trimer |
+| V28 | ProcessFlow | Contact process with its real constraints (400 °C floor, 600–650 °C ceiling, As poisoning, oleum absorber) |
+| V29 | StructureGallery | The four oxoacid series of sulphur, one row each |
+| V30 | ComparisonGraphic | pπ–dπ strength vs oxoanion polymerisation: silicate / phosphate / sulphate / perchlorate |
+| V31 | TrendChart | H₂O → H₂Te: bond angle falling, boiling point anomalous at water |
+| V32 | ComparisonGraphic | SOCl₂ vs SO₂Cl₂ — same tetrahedron, one lone pair apart |
+
+## G. JEE trap bank — Group 16, items 21–40
+
+21. **Conc. H₂SO₄ cannot dry H₂S** — it oxidises it: `H₂SO₄ + H₂S → S + SO₂ +
+    2H₂O`. Only anhydrous CaCl₂ and P₂O₅ will do. Pair this directly with the
+    Group 15 trap where NH₃ fails on CaCl₂ and P₂O₅ and needs CaO. Same
+    question shape, opposite answer.
+22. **O₃ is diamagnetic**, unlike O₂. The commonest single wrong answer in the
+    set.
+23. **Dry I₂ + O₃ → I₄O₉; moist I₂ + O₃ → HIO₃.** Water changes the product,
+    not just the rate.
+24. **Best H₂O₂ yield from BaO₂ needs H₃PO₄, not H₂SO₄** — sulphate catalyses
+    the decomposition of the product you are trying to make.
+25. **H₂O₂ + Ti⁴⁺ gives a yellow peroxo species in which Ti is still +IV.**
+    Peroxo ligands do not raise the metal's oxidation state. The same
+    bookkeeping trap as the peroxoacids.
+26. **S₂O₅²⁻ contains an S–S bond**, not S–O–S. So do S₂O₃²⁻ and S₂O₄²⁻. The
+    S–O–S species are the *pyro* acids: S₂O₇²⁻.
+27. **Na₂S₂O₃ + Cl₂ does not give tetrathionate.** Cl₂ is a stronger oxidant
+    than I₂ and drives it all the way to HSO₄⁻. Only I₂ stops at S₄O₆²⁻.
+28. **From H₂O to H₂Te only two properties increase regularly** — acid strength
+    and bond length. Bond angle falls; boiling point is anomalous at water.
+29. **Pentathionate S₅O₆²⁻: oxidation states sum to +10** — two S at +5, three
+    chain S at 0. Averaging the formula gives nonsense.
+30. **H₂S₂O₅: the two sulphurs are +5 and +3**, not both +4. Sum = +8.
+31. **Thiosulphate has one S at +VI and one at −II.** Averaging gives +2,
+    which no reaction of the ion behaves like.
+32. **SOCl₂ uses exactly one d orbital**, not two.
+33. **Sulphamic acid is the only strong acid that is a solid at room
+    temperature.**
+34. **Fluorosulphuric acid forms many salts; chlorosulphuric acid forms
+    none.** Same formula shape, opposite behaviour.
+35. **SO₂F₂ is not hydrolysed by water; SO₂Cl₂ fumes in moist air.** And
+    among the thionyls, SOF₂ reacts only slowly. Fluorine protects.
+36. **Ozone is absorbed by turpentine oil and oil of cinnamon** — the
+    laboratory absorbents, not olive or mustard oil.
+37. **SO₂ dissolved in water gives three species in ionic equilibrium**
+    (H⁺, HSO₃⁻, SO₃²⁻) — and free H₂SO₃ is essentially absent; the solute is
+    hydrated SO₂.
+38. **S + hot conc. KOH gives two different products** which then release two
+    *different* gases with dilute acid: sulphide → H₂S, thiosulphate → SO₂.
+39. **TeF₆ hydrolyses but SF₆ does not** — size, not bond strength. Te can
+    reach the coordination number the first hydrolysis step demands.
+40. **Attempts to isolate solid hydrogen sulphites usually fail**, giving
+    disulphites instead: `2NaHSO₃ → Na₂S₂O₅ + H₂O`. Only very large cations
+    (Rb⁺, Cs⁺) hold HSO₃⁻ in a lattice.
+
+## H. Contradictions and source errors — items 9–17
+
+9. **Internal contradiction on hydride enthalpies of formation.** Table 10.23
+   gives −242, −20, +81, +154 kJ mol⁻¹ for H₂O, H₂S, H₂Se, H₂Te; the prose
+   three paragraphs later gives −120, −10, +43, +77 for the same four. Both
+   sets cannot be right. Accepted values are ≈ −242, −21, +30, +100
+   (gas phase). **Course will use the table's values and drop the prose set.**
+10. **Oxygen melting point printed as −229 °C** (Table 10.21). O₂ melts at
+    −218.8 °C. Boiling point −183 °C is right. Corrected silently.
+11. **The H₂O₂ rocket-propellant equation is printed with H₂O for H₂O₂:**
+    "N₂H₄(l) + 2H₂O(l) → N₂ + 4H₂O". It must read **N₂H₄ + 2H₂O₂ → N₂ +
+    4H₂O**. Only then does the source's own "3 mol liquid → 5 mol gas" work.
+12. **Three more H₂O₂ equations lose the peroxide subscript:**
+    "Ag₂O + H₂O → 2Ag + H₂O + O₂" and "2K₄[Fe(CN)₆] + H₂O + H₂SO₄ → …" both
+    need H₂O₂. Corrected.
+13. **"MnO₃ + H₂O₂ + H₂SO₄ → MnSO₄ + 2H₂O + O₂"** — MnO₃ is not the reagent
+    meant; with **MnO₂** the equation balances exactly.
+14. **Ba₃(PO₄) is written without its subscript 2** in both barium peroxide
+    equations. Should be Ba₃(PO₄)₂, and the coefficients change with it.
+15. **The anion-exchange equation is nonsense as printed**
+    ("resin-NR₄⁺OH⁻ + OH⁻ → resin-NR₄⁺Cl⁻ + OH⁻"): the incoming ion must be
+    Cl⁻ and the released ion OH⁻. Rewritten.
+16. **Gunpowder given as NaNO₃ 75% / charcoal 15% / S 10%,** and the answer key
+    explicitly rejects KNO₃. Black powder is made with **potassium** nitrate;
+    NaNO₃ is too hygroscopic. The course will teach KNO₃ and note that some
+    texts print NaNO₃.
+17. **"H₂O₂ + Na₂CO₃ → Na₂O₂ + CO₂ + H₂O"** is doubtful — the real product of
+    that combination is sodium percarbonate, not sodium peroxide plus CO₂.
+    Flagged; will not be reproduced.
+
+*Extraction artefacts, not source errors:* Se's configuration renders as
+"3d10 4s2 $p$" and several π/σ symbols come through as quotation marks. The
+PDF's own typesetting is intact.
+
+## I. Named coverage gaps closed by this part
+
+- **§10.53 Oxohalides** — was flagged as a course gap in the coverage
+  register. Now fully registered (thionyl, sulphuryl, mixed halides,
+  halosulphuric acids, sulphamic acid).
+- **§10.50 General properties of oxides** — a section the course did not have
+  at all. It is the natural home for the acidic/basic/amphoteric framework
+  that Groups 13–17 all draw on.

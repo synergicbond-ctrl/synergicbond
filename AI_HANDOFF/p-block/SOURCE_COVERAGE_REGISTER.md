@@ -104,8 +104,8 @@ Last updated: 2026-07-26.
 | | Pages | Inspected | % |
 |---|---|---|---|
 | Files 1–6 (original six) | 437 | **325** | 74 % |
-| Files 7–11 (new five) | 1294 | **56** | 4.3 % |
-| **Total project** | **1731** | **381** | **22 %** |
+| Files 7–11 (new five) | 1294 | **86** | 6.6 % |
+| **Total project** | **1731** | **411** | **24 %** |
 
 **The project has NOT been fully reviewed.** No statement in the course may claim otherwise.
 

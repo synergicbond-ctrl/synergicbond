@@ -2,15 +2,15 @@
 
 Topic · Compound · Reaction · Structure · MO-Theory · Visual registers.
 
-**Scope of this file today:** everything harvested from a deep read of
-`151716181314.pdf` (J.D. Lee adapted ed., Ch. 10) **pages 448–470**, i.e.
-extracted lines 4003–5421 — Part 3 (Group 15) from the electronic-structure
-table through nitric acid. Group 15 sections 10.35–10.43 inclusive.
+**Scope of this file:** a deep read of `151716181314.pdf` (J.D. Lee adapted
+ed., Ch. 10). **Part 3 — Group 15 — is now COMPLETE: pages 448–482**, sections
+10.35–10.45 plus the chapter's Group 15 question sets. The main body below
+covers pp. 448–470; **Addendum 1** at the end covers pp. 471–482.
 
-**Not yet read in this file:** lines 5421–11169 (rest of Group 15 phosphorus
-oxides/oxoacids, all of Groups 16, 17, 18) and lines 107–4003 (Groups 13–14,
-partly covered by other copies of the same author). See the Source Coverage
-Register for exact page accounting.
+**Not yet read in this file:** lines 6221–11169 — **Part 4 Group 16, Part 5
+Group 17, Part 6 Group 18** — and lines 107–4003 (Groups 13–14, partly covered
+by other copies of the same author). See the Source Coverage Register for exact
+page accounting.
 
 `NEW` = absent from the shipped course. `HAVE` = already covered.
 
@@ -234,3 +234,107 @@ Every diagram the Group 15 harvest demands, tagged with the component that will 
 | Haber conditions | 200 atm/380–450 °C here vs 200 atm/700 K in coaching sheet | consistent within rounding |
 | N₂O₄ N–N length | book states **no satisfactory explanation** for 1.64 Å | present as an open question, do not invent a reason |
 | Group 15 Table 10.14 | Sb printed `4d¹⁰5s²5p²` — must be **5p³** | typo; corrected |
+
+---
+
+# Addendum 1 — Group 15 completed (pp. 471–482, lines 5551–6220)
+
+Sections 10.44–10.45 plus the chapter's Group 15 question sets. **Part 3 of
+`151716181314.pdf` is now fully read: pp. 448–482.**
+
+## A. New topics
+
+| # | Topic | Status |
+|---|---|---|
+| A31 | **P₄O₇, P₄O₈, P₄O₉ also exist** — P in both +3 and +5 in one molecule | **NEW** |
+| A32 | P₄O₆/P₄O₁₀ are **not true dimers** — P₂O₃ and P₂O₅ have no structural existence | **NEW** |
+| A33 | **pπ–dπ back bonding** in the terminal P=O, and how it differs from ethene's C=C | **NEW — MO** |
+| A34 | Stepwise Kₐ values for H₃PO₄ and H₃PO₃, and the three/two salt series that follow | **NEW** |
+| A35 | Gravimetric estimation of phosphate as Mg₂P₂O₇ | **NEW** |
+| A36 | Wet process vs furnace process for H₃PO₄ | **NEW** |
+| A37 | Polyphosphate series and basicity by counting OH | partial |
+| A38 | **Metaphosphates = cyclophosphates**; why PO₃⁻ and the dimetaphosphate ion cannot exist | **NEW** |
+| A39 | **H₄P₂O₆ exists in two forms** — tetrabasic hypophosphoric (P–P) and tribasic isohypophosphoric (P–O–P + P–H) | **NEW** |
+| A40 | Pyrophosphorous acid H₄P₂O₅ — dibasic, two P–H | **NEW** |
+| A41 | Bread leavening by Na₂H₂P₂O₇ + NaHCO₃ | **NEW** |
+| A42 | Graham's, Kurrol and Maddrell's salts as distinct long-chain polyphosphates | partial |
+
+## B. New species
+
+P₄O₇ · P₄O₈ · P₄O₉ · **H₅P₃O₁₀** tripolyphosphoric · **H₆P₄O₁₃** tetrapolyphosphoric ·
+**H₄P₂O₅** pyrophosphorous · **H₄P₂O₆** hypophosphoric *and* isohypophosphoric (two
+distinct acids, same formula) · cyclo-triphosphate P₃O₉³⁻ · cyclo-tetraphosphate
+P₄O₁₂⁴⁻ · up to Na₈[P₈O₂₄] · NaH₂PO₄ · Na₂HPO₄ · Na₃PO₄ · NaH₂PO₃ · Na₂HPO₃ ·
+NaH₂PO₂ · Na₂H₂P₂O₇ · Na₄P₂O₇ · MgNH₄PO₄ · **Mg₂P₂O₇** · Na₂[SiF₆] · (EtO)₃PO ·
+Kurrol salt · Maddrell's salt
+
+## C. New reactions
+
+- P₄O₆ + 6H₂O → 4H₃PO₃ · P₄O₆ + 2O₂ → P₄O₁₀
+- P₄O₁₀ + 6EtOH → mixed phosphate esters · P₄O₁₀ + 6Et₂O → 4O=P(OEt)₃
+- P₄ + 20HNO₃ → 4H₃PO₄ + 20NO₂ + 4H₂O
+- Ca₃(PO₄)₂ + 3H₂SO₄ → 2H₃PO₄ + 3CaSO₄ (wet process)
+- Mg²⁺ + NH₄⁺ + PO₄³⁻ → MgNH₄PO₄; 2MgNH₄PO₄ → Mg₂P₂O₇ + 2NH₃ + H₂O
+- **Na₂H₂P₂O₇ + 2NaHCO₃ → Na₄P₂O₇ + 2CO₂ + 2H₂O** (commercial bread leavening)
+- nH₃PO₄ →(316 °C)→ (HPO₃)ₙ + nH₂O
+- P₄ + 3OH⁻ + 3H₂O → PH₃ + 3H₂PO₂⁻
+- 3P₄ + 8NaOH + 8H₂O → 8NaH₂PO₂ + 2P₂H₄ (the **parallel** reaction that makes the gas ignite)
+
+## D. New structural data
+
+| Species | Data |
+|---|---|
+| P₄O₆ | ∠P–O–P **127°**; P–O bridging **1.65 Å**; mp 24 °C, bp 175 °C |
+| P₄O₁₀ | bridging P–O **1.60 Å**; **terminal P=O 1.43 Å** (much shorter — a real double bond) |
+| H₄P₂O₆ | two isomers, distinguished by P–P vs P–O–P |
+
+## E. MO addition
+
+**E11 — the terminal P=O bond in P₄O₁₀.** Formed by **pπ–dπ back bonding**: a full
+p orbital on oxygen overlaps an empty d orbital on phosphorus. It differs from the
+C=C of ethene in **two** ways — p-with-d rather than p-with-p, and **both electrons
+come from one atom**, making it a dative bond. This is the honest account of why
+"P=O" is drawn as a double bond, and it is confirmed by the 1.43 Å vs 1.60 Å length
+difference.
+
+## F. Visual additions
+
+| # | Visual | Component |
+|---|---|---|
+| V18 | P₄O₆ → P₄O₁₀ built from the same tetrahedron, with the two bond lengths marked | `ComparisonGraphic` |
+| V19 | Polyphosphate condensation ladder: ortho → pyro → tripoly → meta | `ProcessFlow` |
+| V20 | H₄P₂O₆ two isomers side by side (P–P vs P–O–P), with basicity | `ComparisonGraphic` |
+| V21 | Phosphorus oxoacid gallery with P–H and P–OH counts marked | `StructureGallery` |
+| V22 | pπ–dπ back bonding in P=O — orbital lobes | `MODiagram` / orbital art |
+
+## G. JEE trap bank harvested from the question sets
+
+These are *concept* traps, extracted and re-expressed — not reproduced questions.
+
+1. **Solid N₂O₅ cation is NO₂⁺ (N–O order 2); solid N₂O₄ cation is NO⁺ (order 3).**
+2. **d(N–N) in [N₂H₆]²⁺ is *shorter* than in N₂H₄** — protonating both lone pairs removes lone-pair/lone-pair repulsion.
+3. **ScN is not a covalent nitride** — it is interstitial. BN, AlN, Ge₃N₄ are covalent.
+4. **SbH₃ is the best reducing agent** of the MH₃ set given (not BiH₃ when Bi is absent from the options).
+5. **In Holme's signal it is P₂H₄, not PH₃, that ignites spontaneously.**
+6. **NH₃ can only be dried over CaO.** Anhydrous CaCl₂ forms CaCl₂·8NH₃; P₂O₅ and conc. H₂SO₄ react with it.
+7. **Phosphorescence of white P is oxidation to P₂O₃** — not P₂O₅, and not enzymatic.
+8. **N₂O does not give HNO₃/HNO₂ with water** — it is a neutral oxide; its N–N and N–O bond orders are fractional.
+9. **PH₄⁺ is harder to form than NH₄⁺ because phosphorus's lone pair sits in an almost pure s orbital** — spherical, undirected, a poor donor.
+10. **Thermal stability PH₄I > PH₄Br > PH₄Cl — the reverse of the ammonium halides.**
+11. **P₄O₁₀ contains 6 P–O–P linkages.**
+12. **Oxidation state of N in [N₂H₆]SO₄ is −2.**
+13. **None of HN₃, FN₃, ClN₃, BrN₃, IN₃ is linear** — all are bent, even though N₃⁻ itself is linear.
+14. **Every one of N₂O, NO₂⁻, NO₃⁻, NOCl, NO₂⁺, NO₂Cl has a longer N–O bond than NO⁺** — NO⁺ has bond order 3 and is the shortest.
+15. **Both nitrogens in N₂O₅ are +5**, cation and anion alike — the difference is zero.
+16. **Only two tribasic acids** among H₃PO₄, H₃PO₂, H₃PO₃, H₄P₂O₇, H₄P₂O₅, H₄P₂O₆: H₃PO₄ and **isohypophosphoric** H₄P₂O₆.
+17. **PF₅ has only 3 equal P–F bond lengths** (the equatorial set) on the electron-diffraction timescale.
+18. **Conc. HNO₃ can be stored in aluminium** — it passivates the surface.
+19. **White phosphorus is stored under water, not kerosene.**
+20. **Only Fe and Zn give N₂O with 20 % HNO₃** among Pb, Cu, Fe, Zn, Sn, Hg, Ag.
+
+## H. Contradiction added
+
+| Item | Issue | Action |
+|---|---|---|
+| H₃PO₄ → (HPO₃)ₙ | 316 °C here vs 320 °C earlier in the same chapter | immaterial; quote ≈320 °C |
+| Nylon-6 formula | printed `CO[NH(CH2)3CO]n NH` — nylon-6 has **five** CH₂ | typo; use (CH₂)₅ |

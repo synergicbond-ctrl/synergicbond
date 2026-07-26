@@ -542,6 +542,26 @@ So AlCl₃ passes through **three** structural regimes: an octahedral CN 6 latti
 
 **The Al₂Cl₆ bridge is *not* the diborane bridge.** Two chlorines bridge the two aluminiums, each donating a lone pair so that both Al reach a tetrahedral octet. The molecule is **non-planar**, with bridging Al–Cl 221 pm and terminal Al–Cl 206 pm, ∠Al–Cl–Al ≈ 79°, ∠Cl–Al–Cl(bridge) ≈ 101° and terminal ∠Cl–Al–Cl ≈ 118°. Counting bonds: **four normal 2c–2e terminal bonds plus two electron-*rich* 3c–4e bridges** (each Cl brings a lone pair to the bridge).
 
+~~~viz
+{
+  "type": "MulticentreBond",
+  "caption": "Al₂Cl₆: the same shape as diborane, but each bridge holds four electrons, not two",
+  "describe": "Two aluminium atoms are bridged by two chlorine atoms, each of which donates a full lone pair. Each bridge cloud carries four electron dots, in contrast to the two dots of a diborane bridge. Bridging Al-Cl is 221 pm against a terminal 206 pm.",
+  "spec": {
+    "left": "Al",
+    "right": "Al",
+    "bridge": ["Cl", "Cl"],
+    "electronsPerBridge": 4,
+    "terminals": { "left": ["Cl", "Cl"], "right": ["Cl", "Cl"] },
+    "lengths": { "bridge": "221 pm", "terminal": "206 pm" }
+  },
+  "results": [
+    "chlorine has lone pairs to give, so the bridge is electron-RICH 3c–4e",
+    "hydrogen and methyl have none, so their bridges are electron-POOR 3c–2e"
+  ]
+}
+~~~
+
 > **Learn the three bridges together — this is the single highest-yield structural set in the chapter.**
 >
 > | Dimer | Bridging atom | Bridge type | Why |
@@ -674,6 +694,38 @@ None of the Group 13 elements reacts directly with H₂. Almost 20 boranes are k
 The BF₃ + NaBH₄ route in diglyme is the one used when diborane is wanted *in situ* for organic synthesis.
 
 **Structure.** Twelve valence electrons; each boron sp³. **Four terminal B–H bonds** (119 pm, ∠H–B–H = 121.5°) lie with the two borons in **one plane — six atoms coplanar**. **Two bridging hydrogens** sit above and below that plane (bridging B–H = 133–134 pm, ∠H–B–H at the bridge = 97°, B···B = 177 pm). The bridges are **3-centre–2-electron "banana" bonds**: one electron pair spread over B–H–B, so the bond order per B–H contact is only ½. This is why B₂H₆ is called **electron deficient** — seven bonding contacts would need 14 electrons in a normal 2c–2e picture and only 12 are available.
+
+~~~viz
+{
+  "type": "MulticentreBond",
+  "caption": "Diborane: four normal terminal bonds and two three-centre two-electron bridges",
+  "describe": "Two boron atoms each carry two terminal hydrogens. Two further hydrogens bridge the borons above and below the BH2 plane. Each bridge is drawn as a shaded cloud holding two electron dots, showing that one electron pair is spread over three atoms. The bridging B-H distance of 133 pm is longer than the terminal 119 pm.",
+  "spec": {
+    "left": "B",
+    "right": "B",
+    "bridge": ["H", "H"],
+    "electronsPerBridge": 2,
+    "terminals": { "left": ["H", "H"], "right": ["H", "H"] },
+    "lengths": { "bridge": "133 pm", "terminal": "119 pm" }
+  },
+  "results": [
+    "12 valence electrons: 8 in four terminal bonds, 4 in two bridges",
+    "bond order per bridging B-H contact = one half"
+  ]
+}
+~~~
+
+~~~viz
+{
+  "type": "OrbitalDiagram",
+  "caption": "Boron cannot reach an octet with three bonds — the deficiency diborane has to cure",
+  "describe": "Ground-state boron has one electron in 2s paired and one unpaired 2p electron. On promotion, three singly occupied orbitals are available for three sigma bonds, leaving the fourth sp3 orbital empty. That empty orbital is what the hydrogen bridge fills.",
+  "rows": [
+    { "title": "B ground state", "shells": [ { "label": "2s", "boxes": [2] }, { "label": "2p", "boxes": [1, 0, 0] } ], "note": "1 unpaired — cannot make 3 bonds" },
+    { "title": "B excited state", "shells": [ { "label": "2s", "boxes": [1] }, { "label": "2p", "boxes": [1, 1, 0], "mark": true } ], "note": "3 unpaired + 1 empty orbital" }
+  ]
+}
+~~~
 
 **How we know the bridges are different from the terminal bonds** — three independent pieces of evidence, and this is exactly the kind of "justify the structure" question that gets asked:
 
@@ -1447,6 +1499,34 @@ Note carefully that **cyclic and single-chain silicates share the same general f
 **Asbestos comes from two different silicate classes**, which is worth knowing precisely: the **amphiboles** (crocidolite/blue asbestos, amosite/brown asbestos) make up only about 5 % of asbestos used, while **chrysotile Mg₃(OH)₄[Si₂O₅] — white asbestos, derived from serpentine and a *sheet* silicate — is 93 %.** Chemically inert but a serious hazard: inhaled dust scars the lungs and causes cancer with a **latent period of 20–30 years**; the controls are to minimise dust and handle it wet.
 
 ### Sheet silicates: building minerals layer by layer
+
+~~~viz
+{
+  "type": "StructureGallery",
+  "caption": "The six silicate classes, set only by how many corners of each SiO₄ tetrahedron are shared",
+  "describe": "Six panels. Zero corners shared gives the discrete orthosilicate ion. One corner shared gives the pyrosilicate. Two corners shared gives either a ring or an infinite single chain. Two and three alternating gives a double chain. Three corners shared gives an infinite sheet. Four corners shared gives a three-dimensional framework.",
+  "items": [
+    { "label": "Ortho (neso)", "sub": "0 shared · SiO₄⁴⁻ · phenacite",
+      "atoms": [ {"id":"si","el":"Si","x":60,"y":86}, {"id":"o1","el":"O","x":60,"y":50,"charge":"−"}, {"id":"o2","el":"O","x":30,"y":106,"charge":"−"}, {"id":"o3","el":"O","x":90,"y":106,"charge":"−"}, {"id":"o4","el":"O","x":60,"y":120,"charge":"−"} ],
+      "bonds": [ {"a":"si","b":"o1"}, {"a":"si","b":"o2"}, {"a":"si","b":"o3"}, {"a":"si","b":"o4"} ] },
+    { "label": "Pyro (soro)", "sub": "1 shared · Si₂O₇⁶⁻ · thortveitite",
+      "atoms": [ {"id":"s1","el":"Si","x":38,"y":86}, {"id":"ob","el":"O","x":68,"y":86}, {"id":"s2","el":"Si","x":98,"y":86}, {"id":"a1","el":"O","x":38,"y":52,"charge":"−"}, {"id":"a2","el":"O","x":16,"y":112,"charge":"−"}, {"id":"b1","el":"O","x":98,"y":52,"charge":"−"}, {"id":"b2","el":"O","x":120,"y":112,"charge":"−"} ],
+      "bonds": [ {"a":"s1","b":"ob","style":"bold"}, {"a":"s2","b":"ob","style":"bold"}, {"a":"s1","b":"a1"}, {"a":"s1","b":"a2"}, {"a":"s2","b":"b1"}, {"a":"s2","b":"b2"} ] },
+    { "label": "Cyclic", "sub": "2 shared, closed · Si₃O₉⁶⁻ · beryl uses Si₆O₁₈¹²⁻",
+      "atoms": [ {"id":"s1","el":"Si","x":60,"y":52}, {"id":"s2","el":"Si","x":32,"y":104}, {"id":"s3","el":"Si","x":88,"y":104}, {"id":"o1","el":"O","x":40,"y":74}, {"id":"o2","el":"O","x":60,"y":112}, {"id":"o3","el":"O","x":80,"y":74} ],
+      "bonds": [ {"a":"s1","b":"o1","style":"bold"}, {"a":"o1","b":"s2","style":"bold"}, {"a":"s2","b":"o2","style":"bold"}, {"a":"o2","b":"s3","style":"bold"}, {"a":"s3","b":"o3","style":"bold"}, {"a":"o3","b":"s1","style":"bold"} ] },
+    { "label": "Single chain", "sub": "2 shared, open · (SiO₃)ₙ²ⁿ⁻ · spodumene",
+      "atoms": [ {"id":"x0","el":"O","x":10,"y":86}, {"id":"s1","el":"Si","x":36,"y":86}, {"id":"o1","el":"O","x":62,"y":86}, {"id":"s2","el":"Si","x":88,"y":86}, {"id":"x1","el":"O","x":114,"y":86}, {"id":"t1","el":"O","x":36,"y":54,"charge":"−"}, {"id":"t2","el":"O","x":88,"y":118,"charge":"−"} ],
+      "bonds": [ {"a":"x0","b":"s1","style":"dashed"}, {"a":"s1","b":"o1","style":"bold"}, {"a":"o1","b":"s2","style":"bold"}, {"a":"s2","b":"x1","style":"dashed"}, {"a":"s1","b":"t1"}, {"a":"s2","b":"t2"} ] },
+    { "label": "Double chain", "sub": "2 and 3 alternating · (Si₄O₁₁)ₙ⁶ⁿ⁻ · asbestos",
+      "atoms": [ {"id":"a1","el":"Si","x":34,"y":64}, {"id":"a2","el":"Si","x":86,"y":64}, {"id":"b1","el":"Si","x":34,"y":112}, {"id":"b2","el":"Si","x":86,"y":112}, {"id":"oa","el":"O","x":60,"y":64}, {"id":"ob","el":"O","x":60,"y":112}, {"id":"oc","el":"O","x":34,"y":88} ],
+      "bonds": [ {"a":"a1","b":"oa","style":"bold"}, {"a":"oa","b":"a2","style":"bold"}, {"a":"b1","b":"ob","style":"bold"}, {"a":"ob","b":"b2","style":"bold"}, {"a":"a1","b":"oc","style":"bold"}, {"a":"oc","b":"b1","style":"bold"} ] },
+    { "label": "Sheet, then framework", "sub": "3 shared · (Si₂O₅)ₙ²ⁿ⁻ talc → 4 shared · SiO₂",
+      "atoms": [ {"id":"s1","el":"Si","x":36,"y":62}, {"id":"s2","el":"Si","x":86,"y":62}, {"id":"s3","el":"Si","x":61,"y":110}, {"id":"o1","el":"O","x":61,"y":62}, {"id":"o2","el":"O","x":46,"y":88}, {"id":"o3","el":"O","x":76,"y":88}, {"id":"up","el":"O","x":61,"y":132,"charge":"−"} ],
+      "bonds": [ {"a":"s1","b":"o1","style":"bold"}, {"a":"o1","b":"s2","style":"bold"}, {"a":"s1","b":"o2","style":"bold"}, {"a":"o2","b":"s3","style":"bold"}, {"a":"s2","b":"o3","style":"bold"}, {"a":"o3","b":"s3","style":"bold"}, {"a":"s3","b":"up"} ] }
+  ]
+}
+~~~
 
 The sheet silicates are the most satisfying part of the subject, because a whole family of familiar minerals is generated by stacking just two kinds of layer. The trick is that **the unshared oxygens of a (Si₂O₅)ₙ²ⁿ⁻ sheet sit in almost the same relative positions as two-thirds of the OH groups on a layer of gibbsite Al(OH)₃ or brucite Mg(OH)₂** — so the two can be fused, losing OH, with the oxygens coinciding.
 

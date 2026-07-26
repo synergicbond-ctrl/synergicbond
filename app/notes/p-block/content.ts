@@ -2879,156 +2879,608 @@ A useful chlorinating reagent comes from it: \(\mathrm{H_2SO_4+2PCl_5\rightarrow
 - Hot conc. H₂SO₄ oxidises and is reduced to **SO₂** — it is **intermediate in oxidising power between H₃PO₄ and HNO₃.**
 - **Conc. H₂SO₄ cannot be used to prepare HBr or HI** from their salts — it oxidises the halide to the halogen. Use H₃PO₄ instead.
 
-# 15. Group 17: halogens, interhalogens and oxoacids
+# 15. Group 17: the halogens — trends, the anomalies of fluorine and oxidising power
 
-Halogens have valence configuration ns²np⁵. Fluorine is anomalous (§1.2): highest electronegativity of any element, very small atomic/ionic size, **no positive oxidation state in any of its compounds** (it is always −1 or 0, since it is the most electronegative element and has no accessible d orbital to support a higher oxidation state), and an unexpectedly weak F–F bond compared with Cl–Cl (small size → strong lone-pair/lone-pair repulsion between the two fluorine atoms across the short bond).
+Members are **F, Cl, Br, I and At** — the **halogens** (Greek *halo* = salt, *genes* = born: "salt producers"). **Astatine is radioactive.** Valence configuration **ns²np⁵** — one electron short of a closed shell, which governs everything about them.
 
-## 15.1 The electron-gain-enthalpy vs electronegativity trap
+## 15.1 Occurrence
 
-**Electron gain enthalpy of Cl is more negative than that of F**, even though **F is more electronegative than Cl** — these are two different, non-interchangeable quantities. Chlorine's larger 3p orbital experiences less electron–electron repulsion when accepting an extra electron than fluorine's compact 2p orbital does, so Cl releases more energy on electron capture. Electronegativity, by contrast, measures the tendency to attract shared bonding electron density within a molecule (a periodic-table-position-based, Pauling/Mulliken-scale property) and F wins that comparison because of its extremely small size and high effective nuclear charge, independent of the isolated-atom electron-gain-enthalpy argument.
+**Fluorine** occurs as insoluble fluorides — **fluorspar CaF₂, cryolite Na₃AlF₆, fluoroapatite 3Ca₃(PO₄)₂·CaF₂** — and in soil, river water, plants and the bones and teeth of animals. **Sea water** contains the chlorides, bromides and iodides of Na, K, Mg and Ca, but is mainly **NaCl (2.5 % by mass)**; dried-up sea beds give NaCl and **carnallite KCl·MgCl₂·6H₂O.** Marine life concentrates iodine — some **seaweeds contain up to 0.5 % iodine**, and **Chile saltpetre contains up to 0.2 % sodium iodate.**
 
-## 15.2 Hydrogen halides
+## 15.2 Periodic trends
 
-Acid strength in water increases HF < HCl < HBr < HI, tracking the fall in H–X bond dissociation enthalpy down the group (weaker bond → easier heterolytic cleavage → stronger acid in the leveling solvent water). HF itself is a comparatively weak acid in water (unlike the other three, which are all fully strong) yet has an unusually high boiling point for its molar mass because of extensive hydrogen bonding, including the formation of the bifluoride ion, [HF₂]⁻, in concentrated solution.
+| Property | Order |
+|---|---|
+| Atomic and ionic radius | **F < Cl < Br < I** |
+| Ionisation enthalpy | **F > Cl > Br > I** |
+| **Most negative electron gain enthalpy** | **Cl > F > Br > I** |
+| Electronegativity | **F > Cl > Br > I** (F is the most electronegative element) |
+| Melting and boiling point | rise steadily with atomic number |
+| **Bond dissociation enthalpy of X₂** | **Cl₂ > Br₂ > F₂ > I₂** |
 
-## 15.3 Chlorine, disproportionation and bleaching powder
+**Two anomalies sit in that table, and both have the same cause.**
 
-Chlorine disproportionates in water and even more so in alkali, with the **product distribution controlled by temperature**:
+> **(i) Electron gain enthalpy: Cl is more negative than F.** Fluorine's 2p orbitals are so small that the incoming electron meets **severe inter-electronic repulsion**, so it is not attracted as strongly as simple electronegativity would suggest. This is the exact counterpart of the **O/S anomaly** in Group 16 (§11.1).
+>
+> **(ii) Bond enthalpy: F₂ is weaker than both Cl₂ and Br₂.** Again the small size — in F₂ the **lone pairs on the two adjacent atoms are forced much closer together than in Cl₂**, and their mutual repulsion destabilises the bond. So the F–F bond is anomalously weak, and that single fact drives a great deal of fluorine's chemistry.
 
-\[\mathrm{Cl_2+H_2O\rightleftharpoons HCl+HOCl}\]
-\[\mathrm{Cl_2+2NaOH\xrightarrow{cold,dilute}NaCl+NaOCl+H_2O}\]
-\[\mathrm{3Cl_2+6NaOH\xrightarrow{hot,conc.}5NaCl+NaClO_3+3H_2O}\]
+**Colour.** All the halogens are coloured, and the colour deepens down the group: **F₂ yellow gas, Cl₂ greenish-yellow gas, Br₂ red liquid, I₂ violet solid.** The reason is the **decreasing HOMO–LUMO gap** — as the gap narrows, the absorbed light moves from the ultraviolet into and across the visible.
 
-Bleaching powder (calcium oxychloride, commonly written CaOCl₂, best regarded as a mixed salt of Ca(OCl)Cl rather than a simple molecular compound) is manufactured by passing Cl₂ over slaked lime. Its bleaching action proceeds via the hypochlorite/HOCl oxidising species released on treatment with dilute acid — treat it through its **"available chlorine"** behaviour in reaction/titration questions rather than as a single pure covalent molecule.
+**Solubility.** F₂ and Cl₂ **react** with water; Br₂ and I₂ are only sparingly soluble in water but dissolve in chloroform, CCl₄, CS₂ and hydrocarbons to give coloured solutions.
 
-## 15.4 Interhalogens
+## 15.3 Oxidation states
 
-Interhalogens (XY, XY₃, XY₅, XY₇, where X is the larger, less electronegative halogen) are generally **more reactive than the parent halogens (except F₂ itself)**, because the X–Y bond is weaker and more polar than the X–X bond in the more electronegative parent halogen, making it easier to cleave. Molecular shapes strictly follow VSEPR (count σ-bond pairs + lone pairs on the central, larger halogen):
+**All the halogens show −1.** Cl, Br and I also show **+1, +3, +5 and +7**, and the reason is orbital promotion: successive excitation of paired electrons into the empty nd orbitals gives **1, 3, 5 and then 7 unpaired electrons.**
 
-| Molecule | Central-atom steric number | Shape |
-|---|---:|---|
-| ClF (XY) | 4 (3 lp + 1 bp) | linear (diatomic — shape is trivially linear) |
-| ClF₃ (XY₃) | 5 (2 lp + 3 bp) | T-shaped |
-| BrF₅ (XY₅) | 6 (1 lp + 5 bp) | square pyramidal |
-| IF₇ (XY₇) | 7 (0 lp + 7 bp) | pentagonal bipyramidal |
+| State | Unpaired electrons | Where it appears |
+|---|---|---|
+| −1 or +1 | 1 (ground state) | halides, hypohalites |
+| +3 | 3 (first excited state) | halites, XX′₃ interhalogens |
+| +5 | 5 (second excited state) | halates, XX′₅ |
+| +7 | 7 (third excited state) | perhalates, IF₇ |
 
-## 15.5 Oxoacid comparison
+**Fluorine shows only −1**, for two independent reasons: it has **no d orbitals in the valence shell** so it cannot expand its octet, and it is **the most electronegative element** so nothing can oxidise it. The higher states of the others are realised **mainly in combination with the small, highly electronegative fluorine and oxygen** — hence in the interhalogens, the oxides and the oxoacids. (The even states **+4 and +6** turn up in some oxides and oxoacids of Cl and Br.)
 
-For the chlorine oxoacid series HOCl < HClO₂ < HClO₃ < HClO₄, **acid strength increases with the number of oxygen atoms (i.e., with the oxidation state of chlorine)** because additional highly electronegative oxygens withdraw electron density and delocalise negative charge over more atoms in the conjugate base, stabilising it. Do not extend this "more oxygens ⇒ stronger acid" rule unconditionally **across different central atoms** without separately checking electronegativity and structure — it is valid only when comparing oxoacids of the *same* central atom.
+## 15.4 The anomalous behaviour of fluorine
 
-### Trap bank — Group 17
+Collect the anomalies in one place, because they are asked as a set:
 
-- F has no positive oxidation state in any compound; Cl, Br, I do (up to +7 in perhalates).
-- Electron gain enthalpy: Cl more negative than F. Electronegativity: F greater than Cl. Never conflate the two.
-- HF is a weak acid in water despite being the most reactive/hydrogen-bonded hydrogen halide; HCl, HBr, HI are all strong.
-- Interhalogens are more reactive than the parent halogens (except F₂, which remains the most reactive elemental halogen).
+- **Higher than the trend predicts:** ionisation enthalpy, electronegativity, **electrode potential**.
+- **Lower than the trend predicts:** ionic and covalent radii, melting and boiling point, **bond dissociation enthalpy**, and **electron gain enthalpy**.
+- **Most reactions of fluorine are exothermic**, because the bonds it forms to other elements are short and strong.
+- **It forms only one oxoacid, HOF**, while the other halogens form several.
+- **HF is a liquid (bp 293 K) because of strong hydrogen bonding**; all the other hydrogen halides are gases.
 
-# 16. Group 17 deep dive: chlorine, HCl and oxyacids
+**The four causes:** small size, highest electronegativity, **low F–F bond dissociation enthalpy**, and **non-availability of d orbitals.**
 
-## 16.1 Chlorine preparation and its temperature-dependent disproportionation
+## 15.5 Oxidising power and reaction with water
 
-Laboratory-scale chlorine is most commonly generated by oxidising concentrated HCl with manganese dioxide (or, on a larger/purer scale, with potassium permanganate or potassium dichromate):
+Ready acceptance of an electron makes the halogens strong oxidants, and **oxidising power falls F₂ > Cl₂ > Br₂ > I₂.** Hence **a halogen oxidises the halide ion of any halogen below it:**
+
+\[\mathrm{F_2+2X^-\rightarrow 2F^-+X_2}\ (X=\mathrm{Cl,\ Br,\ I});\quad \mathrm{Cl_2+2X^-\rightarrow 2Cl^-+X_2}\ (X=\mathrm{Br,\ I});\quad \mathrm{Br_2+2I^-\rightarrow 2Br^-+I_2}\]
+
+> **Why is F₂ the strongest oxidant in water when its electron gain enthalpy is *not* the most negative?** Because the electrode potential is a *sum* of three steps, not one:
+>
+> \[\mathrm{\tfrac{1}{2}X_2(g)\xrightarrow{\tfrac{1}{2}\Delta_{diss}H}X(g)\xrightarrow{\Delta_{eg}H}X^-(g)\xrightarrow{\Delta_{hyd}H}X^-(aq)}\]
+>
+> Fluorine loses on the middle term but **wins decisively on the other two — its bond dissociation enthalpy is anomalously low and the hydration enthalpy of the small F⁻ ion is very high.** Those two outweigh the electron-gain deficit. This is one of the most commonly asked "resolve the apparent contradiction" questions in the chapter, and the answer must name all three terms.
+
+**Reaction with water** is a direct measure of that oxidising power, and each halogen behaves differently:
+
+\[\mathrm{2F_2+2H_2O\rightarrow 4H^++4F^-+O_2}\qquad(\text{fluorine oxidises water to oxygen})\]
+\[\mathrm{X_2+H_2O\rightleftharpoons HX+HOX}\qquad(X=\mathrm{Cl,\ Br}\ \text{— hydrohalic}+\text{hypohalous acid})\]
+\[\mathrm{4I^-+4H^++O_2\rightarrow 2I_2+2H_2O}\qquad(\text{iodine's reaction is non-spontaneous — it runs }\textbf{backwards})\]
+
+Note the full reversal from top to bottom: **fluorine oxidises water, whereas iodide is oxidised *by* atmospheric oxygen.**
+
+## 15.6 The hydrogen halides
+
+| Property | HF | HCl | HBr | HI |
+|---|---|---|---|---|
+| Melting point / K | **190** | 159 | 185 | 222 |
+| Boiling point / K | **293** | 189 | 206 | 238 |
+| Bond length H–X / pm | 91.7 | 127.4 | 141.4 | 160.9 |
+| ΔdissH / kJ mol⁻¹ | **574** | 432 | 363 | 295 |
+| **pKₐ** | **3.2** | −7.0 | −9.5 | **−10.0** |
+
+- **Acid strength: HF ≪ HCl < HBr < HI.** HF is a *weak* acid (pKₐ = 3.2) while the rest are strong — because the **H–F bond is by far the strongest**, and acidity here is about breaking H–X, not about electronegativity. Identical logic to H₂O vs H₂Te (§11.4).
+- **Thermal stability: H–F > H–Cl > H–Br > H–I**, following the same bond enthalpies.
+- **HF's melting and boiling points are out of line** — hydrogen bonding again.
+- **Affinity for hydrogen decreases F → I**, so the ease of direct synthesis falls the same way.
+
+## 15.7 Reactivity towards oxygen and metals
+
+**Oxides.** The halogens form many oxides but **most are unstable.**
+
+- **Fluorine forms OF₂ and O₂F₂**, and **only OF₂ is thermally stable at 298 K.** These are properly called **oxygen fluorides**, not fluorine oxides, because **fluorine is more electronegative than oxygen** — so oxygen carries the positive oxidation state. Both are powerful fluorinating agents; **O₂F₂ oxidises plutonium to PuF₆**, which is used to strip plutonium out of spent nuclear fuel.
+- Cl, Br and I give oxides spanning **+1 to +7**, with stability order **I > Cl > Br** — bromine's oxides are the least stable, an instance of the **middle-row anomaly**, and exist only at low temperature. **Higher oxides are generally more stable than lower ones.**
+- **Chlorine oxides (Cl₂O, ClO₂, Cl₂O₆, Cl₂O₇) are highly reactive oxidants that tend to explode.** **ClO₂ is used to bleach paper pulp and textiles and in water treatment.**
+- **Iodine oxides (I₂O₄, I₂O₅, I₂O₇) are insoluble solids** that decompose on heating; **I₂O₅ is the reagent for estimating CO** (§6.1).
+
+> **ClO₂ has an odd number of electrons yet does not dimerise** — unlike NO₂, which dimerises to N₂O₄ precisely because it is an odd-electron molecule. The reason is that in ClO₂ the odd electron is **delocalised into chlorine's own vacant 3d orbital**, so there is no localised radical centre to pair up. And beware the formula trap: **Cl₂O₆ is not the dimer of ClO₃, and "Cl₂O₄" is actually chlorine perchlorate, Cl–OClO₃ — not a dimer of ClO₂.**
+
+**Metals.** Halogens give metal halides, and **ionic character falls MF > MCl > MBr > MI.** Two rules worth stating:
+
+\[\mathrm{Mg+Br_2\rightarrow MgBr_2}\]
+
+- For a metal in **more than one oxidation state, the halide in the higher state is the more covalent**: SnCl₄, PbCl₄, SbCl₅ and UF₆ are more covalent than SnCl₂, PbCl₂, SbCl₃ and UF₄. (Fajans' rules — §5.3.)
+- **Reactivity of the halogens towards metals and non-metals falls F₂ > Cl₂ > Br₂ > I₂.**
+
+### Trap bank — halogen trends and fluorine's anomalies
+
+- **Electron gain enthalpy: Cl > F** (Cl more negative). Small size means severe inter-electronic repulsion in fluorine's 2p shell. Same anomaly as O vs S.
+- **Bond enthalpy: Cl₂ > Br₂ > F₂ > I₂** — F₂ is anomalously weak because adjacent lone pairs are forced too close.
+- **F₂ is nonetheless the strongest oxidant in water.** The reason needs all three terms: low ΔdissH, very negative ΔhydH of F⁻, against its weaker ΔegH.
+- **Colour deepens down the group because the HOMO–LUMO gap narrows.**
+- **Fluorine shows only −1** — no d orbitals *and* highest electronegativity. Two reasons, not one.
+- **HF is a weak acid; HCl, HBr and HI are strong.** Acidity tracks the **H–X bond enthalpy**, not electronegativity. **HF is a liquid** because of hydrogen bonding.
+- **OF₂ and O₂F₂ are oxygen *fluorides*** — oxygen is positive (+2 and +1) because fluorine is more electronegative.
+- **Fluorine forms only one oxoacid (HOF).**
+- Halogen oxide stability is **I > Cl > Br** — bromine's are the least stable (middle-row anomaly), and **higher oxides beat lower ones.**
+- **ClO₂ does not dimerise** although it has an odd electron, because that electron is delocalised into a vacant 3d orbital. Contrast NO₂ → N₂O₄.
+- **Fluorine oxidises water to O₂; Cl₂ and Br₂ give HX + HOX; iodine's reaction runs backwards** — O₂ oxidises I⁻.
+- **The higher halide of a variable-valency metal is the more covalent** (SnCl₄ vs SnCl₂).
+
+# 16. Group 17: preparing the halogens, chlorine, HCl and the oxoacids
+
+## 16.1 Preparing the elements
+
+**Fluorine — the Moissan process.** Fluorine cannot be made by chemical oxidation, because nothing oxidises F⁻; it must be done **electrolytically**, and even then not from an aqueous solution (water would be oxidised first):
+
+\[\mathrm{CaF_2+H_2SO_4\rightarrow CaSO_4+2HF};\qquad \mathrm{HF+KF\rightarrow KHF_2}\]
+\[\mathrm{KHF_2\xrightarrow{electrolysis}H_2\ (cathode)+F_2\ (anode)}\]
+
+**KF is added to lower the melting point of the mixture** through the formation of KHF₂ — anhydrous HF alone is a poor conductor.
+
+> **The CaF₂ must be free of SiO₂**, and the reason is a nice bit of stoichiometry: silica consumes the HF you are trying to make, and it consumes **six** molecules of it per molecule of SiO₂:
+>
+> \[\mathrm{4HF+SiO_2\rightarrow SiF_4+2H_2O};\qquad \mathrm{SiF_4+2HF\rightarrow H_2[SiF_6]}\]
+>
+> This is the same chemistry that forbids storing HF in glass (§6.5).
+
+**Bromine** — displacement by the halogen above it: \(\mathrm{2NaBr+Cl_2\rightarrow 2NaCl+Br_2}\).
+
+**Iodine** — from **seaweed**: the weed is dried and burnt to ash, the iodide leached out with boiling water, oxidised (H₂O₂ or MnO₂/H₂SO₄), and the iodine recovered by solvent extraction and sublimation.
+
+## 16.2 Chlorine
+
+Discovered by **Scheele in 1774** by the action of HCl on MnO₂; **Davy** established its elementary nature in 1810 and named it from the Greek *chloros*, greenish-yellow.
+
+**Laboratory preparation.**
 
 \[\mathrm{MnO_2+4HCl\rightarrow MnCl_2+Cl_2+2H_2O}\]
+\[\mathrm{4NaCl+MnO_2+4H_2SO_4\rightarrow MnCl_2+4NaHSO_4+2H_2O+Cl_2}\]
+\[\mathrm{2KMnO_4+16HCl\rightarrow 2KCl+2MnCl_2+8H_2O+5Cl_2}\]
 
-Chlorine disproportionates in alkali with the product distribution controlled strictly by temperature and concentration: cold, dilute alkali gives chloride and hypochlorite, while hot, concentrated alkali instead gives chloride and chlorate (chlorine going, respectively, to a mixture of −1/+1 or −1/+5 oxidation states):
+**Manufacture.** Two routes:
 
-\[\mathrm{Cl_2+2OH^-\xrightarrow{cold,\ dilute}Cl^-+ClO^-+H_2O}\]
-\[\mathrm{3Cl_2+6OH^-\xrightarrow{hot,\ conc.}5Cl^-+ClO_3^-+3H_2O}\]
+\[\mathrm{4HCl+O_2\xrightarrow[723\ K]{CuCl_2}2Cl_2+2H_2O}\qquad(\textbf{Deacon's process})\]
+\[\mathrm{2NaCl+2H_2O\xrightarrow{electrolysis}2NaOH+H_2\ (cathode)+Cl_2\ (anode)}\qquad(\text{electrolysis of brine})\]
 
-**The stated reaction conditions are as much a part of the "answer" as the equation itself** for this pair of reactions — a favourite JEE Advanced condition-matching question.
+**Physical properties.** Greenish-yellow gas with a pungent, suffocating odour; **about 2.5 times heavier than air**; easily liquefied to a greenish-yellow liquid boiling at **239 K**; soluble in water.
 
-## 16.2 HCl behaviour and chloride identification
+**Reactions with metals and non-metals.**
 
-HCl is exceptionally soluble in water and behaves there as a strong acid, fully ionised. **Dry HCl gas does not turn dry litmus paper red** — ionisation into H⁺ and Cl⁻ (the species actually responsible for acidic behaviour) requires an ionising medium such as water, so gaseous, moisture-free HCl shows no acidic character to a dry indicator. Chloride ion gives a characteristic white, curdy precipitate of AgCl with silver nitrate solution; this precipitate is distinguished from AgBr (pale yellow) and AgI (yellow) by colour, and dissolves readily in dilute aqueous ammonia through formation of the soluble diammine complex, [Ag(NH₃)₂]⁺ (AgBr dissolves only in concentrated ammonia; AgI is insoluble even in concentrated ammonia) — this solubility gradation in ammonia is the standard confirmatory qualitative-analysis test distinguishing the three silver halides.
+\[\mathrm{2Na+Cl_2\rightarrow 2NaCl};\quad \mathrm{2Al+3Cl_2\rightarrow 2AlCl_3};\quad \mathrm{2Fe+3Cl_2\rightarrow 2FeCl_3};\quad \mathrm{P_4+6Cl_2\rightarrow 4PCl_3};\quad \mathrm{S_8+4Cl_2\rightarrow 4S_2Cl_2}\]
 
-## 16.3 Oxoacid strength: same-central-atom comparisons only
+**Great affinity for hydrogen** — it strips hydrogen out of compounds:
 
-For a series of oxyacids built on the *same* halogen (e.g., HOCl, HClO₂, HClO₃, HClO₄), acid strength rises with the number of oxygen atoms present, because each additional highly electronegative oxygen both withdraws electron density inductively from the O–H bond and delocalises the resulting negative charge over more atoms in the conjugate base, stabilising it. **This "more oxygens ⇒ stronger acid" rule must not be extended unconditionally across oxyacids of different central atoms** (comparing, say, an oxyacid of chlorine against one of sulphur) without separately accounting for the central atom's electronegativity and the acid's actual structure.
+\[\mathrm{H_2+Cl_2\rightarrow 2HCl};\qquad \mathrm{H_2S+Cl_2\rightarrow 2HCl+S};\qquad \mathrm{C_{10}H_{16}+8Cl_2\rightarrow 16HCl+10C}\]
 
-# 17. Interhalogens: structure, hydrolysis and reactivity
+**With ammonia — the excess reagent decides the product**, exactly as in §7.7:
 
-Interhalogens have the general formulae XY, XY₃, XY₅ and XY₇, where X is always the larger, less electronegative halogen (providing the central atom) and Y is the smaller, more electronegative halogen (always F in the XY₅ and XY₇ classes, since only fluorine is small enough to pack five or seven atoms around a single central halogen). They are typically **more reactive than the parent halogens themselves (with the sole exception of F₂, which remains the most reactive elemental halogen)**, because the X–Y bond is both more polar and generally weaker than the X–X bond of the more electronegative parent halogen, making it comparatively easy to cleave homolytically or heterolytically.
+\[\mathrm{8NH_3\ (excess)+3Cl_2\rightarrow 6NH_4Cl+N_2}\]
+\[\mathrm{NH_3+3Cl_2\ (excess)\rightarrow NCl_3+3HCl}\qquad(\mathbf{NCl_3\ is\ explosive})\]
 
-| Molecule | VSEPR steric number (bp + lp) on central halogen | Molecular shape |
+**With hydrocarbons** — substitution with saturated, addition with unsaturated:
+
+\[\mathrm{CH_4+Cl_2\xrightarrow{UV}CH_3Cl+HCl};\qquad \mathrm{C_2H_4+Cl_2\xrightarrow{room\ temp.}C_2H_4Cl_2}\]
+
+**Bleaching action.** Chlorine bleaches **only in the presence of moisture**, and the mechanism is oxidation by nascent oxygen from hypochlorous acid:
+
+\[\mathrm{Cl_2+H_2O\rightarrow HCl+HOCl};\qquad \mathrm{HOCl\rightarrow HCl+[O]};\qquad \text{coloured substance}+[O]\rightarrow\text{colourless}\]
+
+**Chlorine water loses its yellow colour on standing** as this happens. **The bleaching is permanent** — contrast SO₂ (§14.1).
+
+**As an oxidant:**
+
+\[\mathrm{2FeSO_4+H_2SO_4+Cl_2\rightarrow Fe_2(SO_4)_3+2HCl};\qquad \mathrm{SO_2+2H_2O+Cl_2\rightarrow H_2SO_4+2HCl}\]
+\[\mathrm{Na_2SO_3+Cl_2+H_2O\rightarrow Na_2SO_4+2HCl};\qquad \mathrm{I_2+6H_2O+5Cl_2\rightarrow 2HIO_3+10HCl}\]
+
+**Uses.** Bleaching wood pulp (for paper and rayon), cotton and textiles; extraction of gold and platinum; manufacture of dyes, drugs, CCl₄, CHCl₃, DDT and refrigerants; **sterilising drinking water**; and the poison gases **phosgene COCl₂, tear gas CCl₃NO₂ and mustard gas ClCH₂CH₂SCH₂CH₂Cl.**
+
+## 16.3 Disproportionation in alkali — and how to reverse it
+
+The reaction of a halogen with alkali is **temperature- and concentration-dependent**, and it is a disproportionation in both cases:
+
+\[\mathrm{2NaOH+Cl_2\rightarrow NaCl+NaOCl+H_2O}\qquad(\textbf{cold, dilute}\ \to\ \text{chloride}+\text{hypochlorite})\]
+\[\mathrm{6NaOH+3Cl_2\rightarrow 5NaCl+NaClO_3+3H_2O}\qquad(\textbf{hot, concentrated}\ \to\ \text{chloride}+\text{chlorate})\]
+
+In the first, chlorine goes from 0 to **−1 and +1**; in the second, from 0 to **−1 and +5**. Both are textbook disproportionations.
+
+> **And the reaction is reversible on acidification** — the disproportionated products recombine to give the element back:
+>
+> \[\mathrm{X^-+OX^-+2H^+\rightarrow X_2+H_2O};\qquad \mathrm{5X^-+XO_3^-+6H^+\rightarrow 3X_2+3H_2O}\]
+>
+> (X = Cl, Br, I.) This pair is worth memorising as a unit: **alkali disproportionates the halogen; acid puts it back together.**
+
+## 16.4 Bleaching powder
+
+\[\mathrm{Cl_2+Ca(OH)_2\ (dry\ slaked\ lime)\xrightarrow{40^{\circ}C}Ca(OCl)Cl+H_2O}\]
+
+Its **composition is Ca(OCl)₂·CaCl₂·Ca(OH)₂·2H₂O** — bleaching powder is a mixture, not a single compound, which is why it is often written simply as CaOCl₂.
+
+**On long standing it decomposes three ways:**
+
+\[\mathrm{6Ca(OCl)Cl\rightarrow Ca(ClO_3)_2+5CaCl_2}\qquad(\text{auto-oxidation})\]
+\[\mathrm{2Ca(OCl)Cl\xrightarrow{CoCl_2}2CaCl_2+O_2};\qquad \mathrm{Ca(OCl)Cl+H_2O\rightarrow Ca(OH)_2+Cl_2}\]
+
+**With any acid it liberates chlorine** — the basis of its use:
+
+\[\mathrm{CaOCl_2+2HCl\rightarrow CaCl_2+H_2O+Cl_2};\qquad \mathrm{CaOCl_2+H_2SO_4\rightarrow CaSO_4+H_2O+Cl_2}\]
+\[\mathrm{CaOCl_2+CO_2\rightarrow CaCO_3+Cl_2}\qquad(\text{even atmospheric }CO_2\text{ does it})\]
+
+**As an oxidant:**
+
+\[\mathrm{CaOCl_2+H_2S\rightarrow S+CaCl_2+H_2O};\qquad \mathrm{3CaOCl_2+2NH_3\rightarrow 3CaCl_2+3H_2O+N_2}\]
+\[\mathrm{CaOCl_2+2KI+2HCl\rightarrow CaCl_2+2KCl+H_2O+I_2};\qquad \mathrm{CaOCl_2+KNO_2\rightarrow CaCl_2+KNO_3}\]
+
+## 16.5 Hydrogen chloride
+
+First prepared by **Glauber in 1648** by heating common salt with concentrated sulphuric acid; **Davy** showed in 1810 that it is a compound of hydrogen and chlorine.
+
+\[\mathrm{NaCl+H_2SO_4\xrightarrow{420\ K}NaHSO_4+HCl};\qquad \mathrm{NaHSO_4+NaCl\xrightarrow{823\ K}Na_2SO_4+HCl}\]
+
+**HCl gas is dried over concentrated H₂SO₄** — permissible here precisely because HCl is not oxidisable by it, unlike HBr and HI (§14.3).
+
+**Properties.** Colourless, pungent gas; **it fumes in moist air** because its strong affinity for water pulls in moisture and forms droplets. Liquefies at 189 K, freezes at 159 K, **extremely soluble in water**. In water it is a **strong acid, Kₐ ≈ 10⁷**:
+
+\[\mathrm{HCl+H_2O\rightarrow H_3O^++Cl^-};\qquad \mathrm{NH_3+HCl\rightarrow NH_4Cl}\ (\text{white fumes})\]
+
+It **decomposes the salts of weaker acids** — carbonates, hydrogencarbonates and sulphites:
+
+\[\mathrm{Na_2CO_3+2HCl\rightarrow 2NaCl+H_2O+CO_2};\qquad \mathrm{Na_2SO_3+2HCl\rightarrow 2NaCl+H_2O+SO_2}\]
+
+**With finely powdered iron it gives FeCl₂, not FeCl₃** — because the hydrogen liberated in the reaction prevents oxidation to Fe(III):
+
+\[\mathrm{Fe+2HCl\rightarrow FeCl_2+H_2}\]
+
+**Aqua regia** — three parts conc. HCl to one part conc. HNO₃ — dissolves gold and platinum, which neither acid manages alone (§9.4):
+
+\[\mathrm{Au+4H^++NO_3^-+4Cl^-\rightarrow [AuCl_4]^-+NO+2H_2O}\]
+\[\mathrm{3Pt+16H^++4NO_3^-+18Cl^-\rightarrow 3[PtCl_6]^{2-}+4NO+8H_2O}\]
+
+The nitric acid supplies the oxidising power and the chloride supplies the **complexing ligand** that stabilises the dissolved metal — neither works without the other.
+
+## 16.6 The oxoacids of the halogens
+
+**Fluorine forms only one, HOF** (hypofluorous or fluoric(I) acid), because of its high electronegativity and small size. **Most halogen oxoacids cannot be isolated pure** — they exist only in aqueous solution or as their salts.
+
+| Type | F | Cl | Br | I |
+|---|---|---|---|---|
+| **Halic(I)** — hypohalous, HOX | HOF | HOCl | HOBr | HOI |
+| **Halic(III)** — halous, HOXO | — | HOClO | — | — |
+| **Halic(V)** — halic, HOXO₂ | — | HOClO₂ | HOBrO₂ | HOIO₂ |
+| **Halic(VII)** — perhalic, HOXO₃ | — | HOClO₃ | HOBrO₃ | HOIO₃ |
+
+**Structures** are all built the same way — a central halogen with one O–H and an increasing number of terminal X=O bonds:
+
+| Acid | X state | X=O bonds | Shape at X |
+|---|---|---|---|
+| HOCl | +1 | 0 | bent |
+| HOClO | +3 | 1 | pyramidal-derived |
+| HOClO₂ | +5 | 2 | pyramidal |
+| HOClO₃ | +7 | 3 | tetrahedral |
+
+> **Two strength rules, and they must not be mixed up.**
+>
+> **(i) Same central atom, different oxidation state:** acid strength **rises with oxidation state**, because each extra terminal oxygen pulls more electron density off the O–H and stabilises the conjugate base by delocalisation:
+> \[\mathrm{HOCl<HOClO<HOClO_2<HOClO_3}\]
+> **(ii) Same oxidation state, different central atom:** acid strength **rises with electronegativity** of the halogen:
+> \[\mathrm{HOI<HOBr<HOCl}\]
+>
+> Comparisons are only safe *within* one of these two rules. "Is HOCl stronger than HIO₃?" is a badly posed question, because it changes both variables at once.
+
+### Trap bank — chlorine, HCl and the oxoacids
+
+- **Fluorine must be made electrolytically from KHF₂** (Moissan) — nothing chemically oxidises F⁻, and an aqueous route would oxidise water instead. **KF lowers the melting point.**
+- **CaF₂ for HF must be silica-free** — one SiO₂ consumes **six** HF.
+- **Chlorine bleaches only when moist**, by **oxidation**, and the effect is **permanent**. SO₂ bleaches by reduction, temporarily.
+- **Cl₂ + cold dilute alkali → chloride + hypochlorite; hot concentrated alkali → chloride + chlorate.** Both are **disproportionations**, and **acidification reverses them.**
+- **Excess NH₃ + Cl₂ → N₂; excess Cl₂ + NH₃ → explosive NCl₃.** Name the excess reagent.
+- **Bleaching powder is a mixture** (Ca(OCl)₂·CaCl₂·Ca(OH)₂·2H₂O), and **even atmospheric CO₂ liberates chlorine from it.**
+- **HCl can be dried over conc. H₂SO₄; HBr and HI cannot** (they would be oxidised) — the mirror image of the H₂S trap in §13.1.
+- **HCl + Fe gives FeCl₂, not FeCl₃**, because the H₂ evolved prevents oxidation to Fe(III).
+- **Aqua regia is 3 : 1 conc. HCl : conc. HNO₃** — HNO₃ oxidises, Cl⁻ complexes. Both roles are needed.
+- **Acid strength rises with oxidation state for the same halogen** (HOCl < HOClO < HOClO₂ < HOClO₃) **and with electronegativity for the same state** (HOI < HOBr < HOCl). Never vary both at once.
+
+# 17. Interhalogens, polyhalides and pseudohalogens
+
+## 17.1 Interhalogen compounds
+
+Two different halogens combine to give four stoichiometries — **XX′, XX′₃, XX′₅ and XX′₇** — where **X is the larger, more electropositive halogen and X′ the smaller one.**
+
+> **Why IF₇ and nothing bigger.** **As the ratio of the radii of X to X′ increases, the number of X′ atoms that can pack around X increases.** Iodine is the largest halogen and fluorine the smallest, so **I : F gives the largest possible radius ratio — and hence the largest interhalogen, IF₇.** This one argument predicts the whole series, and it also explains why there is no ClF₇ or BrF₇ of comparable stability: **XX′₅ and XX′₇ need a large central atom**, so only Br and I support them.
+
+Also note: **there are never more than two different halogens in one molecule**, the bonds are **essentially covalent**, and **boiling point rises as the electronegativity difference increases.**
+
+**Preparation** — direct combination, or a halogen acting on a lower interhalogen; **the product is fixed by the stoichiometry and conditions**, which is exactly what gets tested:
+
+\[\mathrm{Cl_2+F_2\ (equal\ volumes)\xrightarrow{473\ K}2ClF};\qquad \mathrm{Cl_2+3F_2\ (excess)\xrightarrow{573\ K}2ClF_3}\]
+\[\mathrm{I_2+Cl_2\ (equimolar)\rightarrow 2ICl};\qquad \mathrm{I_2+3Cl_2\ (excess)\rightarrow 2ICl_3}\]
+\[\mathrm{Br_2+3F_2\rightarrow 2BrF_3};\qquad \mathrm{Br_2+5F_2\ (excess)\rightarrow 2BrF_5}\]
+
+Unstable IF disproportionates, and the driving force is bond energy: \(\mathrm{5IF\rightarrow IF_5+2I_2}\), the system gaining about **250 kJ mol⁻¹.**
+
+**Properties and shapes.** All are **covalent and diamagnetic**; all are volatile solids or liquids at 298 K **except ClF, which is a gas**; their physical properties are intermediate between those of the parent halogens, **except that melting and boiling points are a little higher than expected.**
+
+| Type | Examples | State and colour | **Shape (VSEPR)** |
+|---|---|---|---|
+| **XX′** | ClF (colourless gas), BrF (pale brown gas), **ICl** (ruby-red solid, α-form), IBr (black solid) | — | linear |
+| **XX′₃** | **ClF₃** (colourless gas), **BrF₃** (yellow-green liquid), IF₃ (yellow powder), ICl₃ (orange solid) | — | **bent T-shaped** |
+| **XX′₅** | **ClF₅**, **BrF₅** (colourless liquids), **IF₅** (colourless gas, solid below 77 K) | — | **square pyramidal** |
+| **XX′₇** | **IF₇** (colourless gas) | — | **pentagonal bipyramidal** |
+
+**ICl₃ dimerises as a chlorine-bridged dimer, I₂Cl₆.**
+
+**Worked VSEPR — BrF₃.** Bromine has 7 valence electrons; three form bonds to fluorine, leaving 4 electrons as **2 lone pairs**. So there are **3 bond pairs + 2 lone pairs = 5 electron domains → trigonal bipyramidal arrangement.** **Both lone pairs take equatorial positions**, because that minimises the severe lone-pair/lone-pair and lone-pair/bond-pair repulsions. The axial fluorines are then bent slightly towards the equatorial one, giving a **slightly bent T shape.**
+
+> **Interhalogens are more reactive than the halogens themselves — except fluorine.** The reason is bond strength: **the X–X′ bond in an interhalogen is weaker than the X–X bond in the parent halogen**, except that nothing is weaker than F–F (§15.2). So reactivity order puts F₂ first and the interhalogens next.
+
+**Hydrolysis follows one rule, and it is worth learning as a rule rather than four equations:**
+
+\[\mathrm{XX'+H_2O\rightarrow HX'+HOX}\]
+
+**The halide ion always comes from the *smaller* halogen X′, and the oxo-anion always from the *larger* halogen X**, at the oxidation state it held in the interhalogen:
+
+| Interhalogen | Oxo-anion from X |
+|---|---|
+| XX′ | **hypohalite**, XO⁻ |
+| XX′₃ | **halite**, XO₂⁻ |
+| XX′₅ | **halate**, XO₃⁻ |
+| XX′₇ | **perhalate**, XO₄⁻ |
+
+**Uses.** **Non-aqueous solvents**, and — the important one — **powerful fluorinating agents.** **ClF₃ and BrF₃ make UF₆ for uranium-235 enrichment:**
+
+\[\mathrm{U+3ClF_3\rightarrow UF_6+3ClF}\]
+
+## 17.2 Polyhalides
+
+A halide ion can add a halogen or an interhalogen to give a **polyhalide ion**:
+
+\[\mathrm{KI+I_2\rightarrow KI_3};\qquad \mathrm{ICl+KCl\rightarrow K[ICl_2]};\qquad \mathrm{ICl_3+KCl\rightarrow K[ICl_4]}\]
+\[\mathrm{IF_5+CsF\rightarrow Cs[IF_6]};\qquad \mathrm{ICl+KBr\rightarrow K[BrICl]}\]
+
+The **triiodide ion I₃⁻ is why iodine dissolves so freely in KI solution** but barely at all in pure water — a fact used in every iodometric titration.
+
+**Stability of the trihalides: I₃⁻ > Br₃⁻ > Cl₃⁻ > F₃⁻**, which follows the **donating ability of X⁻** — the larger, more polarisable, more weakly hydrated iodide is the best donor. Cl₃⁻ compounds are rare and F₃⁻ essentially unknown. Higher polyiodides **I₅⁻, I₇⁻ and I₈²⁻** are known (e.g. I₇⁻ in [N(CH₃)₄]I₇ and I₈²⁻ in Cs₂I₈).
+
+> **A lattice-energy question that looks like a redox question.** On heating, \(\mathrm{Rb[ICl_2]\rightarrow RbCl+ICl}\) — **not** RbI + Cl₂. Why? **Because the decomposition takes the route that forms the alkali halide of the *smaller* halogen, which has the shorter interatomic distance and therefore the higher lattice energy.** RbCl is more stable than RbI, so RbCl is what forms. Nothing is oxidised or reduced.
+
+## 17.3 Pseudohalogens
+
+**Pseudohalides are univalent ions built from two or more atoms, at least one of which is nitrogen, that behave chemically like halide ions.** The three diagnostic resemblances:
+
+1. Their **sodium salts are water-soluble but their silver salts are insoluble.**
+2. Their **hydrogen compounds are acids**, like HX.
+3. Several of the anions can be **oxidised to a neutral dimer X₂**, like 2X⁻ → X₂.
+
+| Anion | Acid | Dimer |
 |---|---|---|
-| ICl | 1 bp (diatomic) | linear |
-| ClF₃ | 3 bp + 2 lp | T-shaped |
-| BrF₅ | 5 bp + 1 lp | square pyramidal |
-| IF₇ | 7 bp + 0 lp | pentagonal bipyramidal |
+| **CN⁻** (cyanide) | HCN | **(CN)₂** cyanogen |
+| **SCN⁻** (thiocyanate) | HSCN thiocyanic | (SCN)₂ |
+| SeCN⁻ | — | (SeCN)₂ |
+| OCN⁻ (cyanate) | HOCN cyanic | — |
+| NCN²⁻ (bivalent) | H₂NCN cyanamide | — |
+| ONC⁻ | HONC fulminic | — |
+| **N₃⁻** (azide) | **HN₃** hydrazoic | — |
 
-Hydrolysis of any interhalogen must be balanced systematically from atom counts and oxidation-state changes, never guessed by pattern-matching. For example, a fluorinating interhalogen in water can furnish HF together with an oxoacid or oxoanion of the *central* halogen, with the exact product depending sensitively on the quantity of water and the reaction conditions — for instance, ClF₃ hydrolyses to give a mixture including HF, HOCl/chlorate-type species and further redox products depending on conditions, rather than a single universal equation. **Never invent a hydrolysis equation simply by mechanically replacing every terminal F with OH** — always check first whether disproportionation or another redox pathway is operating, since interhalogens frequently disproportionate on hydrolysis rather than undergoing simple substitution.
+**Cyanide is the closest analogue of Cl⁻, Br⁻ and I⁻**, on six counts: it forms the acid HCN; it forms the dimer (CN)₂; **AgCN and Pb(CN)₂ are insoluble**; **interpseudohalogen compounds ClCN, BrCN and ICN exist**; **AgCN is insoluble in water but dissolves in ammonia** (exactly like AgCl, §8.1); and it forms an extensive parallel set of complexes — compare **[Cu(CN)₄]³⁻ with [CuCl₄]³⁻, and [Co(CN)₆]³⁻ with [CoCl₆]³⁻.**
 
-# 18. Group 18: noble gases and xenon compounds
+The cyanogen chemistry that completes the analogy — disproportionation in alkali, just like a halogen (§16.3) — is in §6.3a.
 
-Noble gases have closed-shell ns²np⁶ (He: 1s²) configurations and the highest ionisation enthalpies in their respective periods, which is why they were long considered chemically "inert." Xenon forms the most important class of real, stable compounds because (a) its ionisation enthalpy (1170 kJ mol⁻¹) is markedly lower than that of the lighter noble gases (He, Ne, Ar) and (b) the resulting Xe–F and Xe–O bonds are thermodynamically strong enough to be stabilised at accessible temperatures/pressures. Neil Bartlett's 1962 synthesis of Xe⁺[PtF₆]⁻ (by analogy with O₂⁺[PtF₆]⁻) was the first proof that noble-gas compounds could exist and directly triggered the discovery of the xenon fluorides.
+### Trap bank — interhalogens, polyhalides and pseudohalogens
 
-## 18.1 Preparation of xenon fluorides
+- **IF₇ is the largest interhalogen because I : F is the largest radius ratio.** XX′₅ and XX′₇ need a large central atom, so only Br and I form them.
+- **Never more than two different halogens in one interhalogen molecule.**
+- Shapes: **XX′ linear, XX′₃ bent T, XX′₅ square pyramidal, XX′₇ pentagonal bipyramidal.** In BrF₃ **both lone pairs go equatorial.**
+- **Interhalogens are more reactive than the halogens except F₂**, because X–X′ is weaker than X–X — but nothing is weaker than F–F.
+- **Hydrolysis: the halide comes from the smaller halogen, the oxo-anion from the larger** — hypohalite/halite/halate/perhalate as the stoichiometry rises.
+- **ClF₃ and BrF₃ are the industrial fluorinating agents for UF₆** in uranium enrichment.
+- **I₃⁻ is why I₂ dissolves in KI solution.** Stability **I₃⁻ > Br₃⁻ > Cl₃⁻ > F₃⁻**, following the donor ability of X⁻.
+- **Rb[ICl₂] → RbCl + ICl, not RbI + Cl₂** — decided by **lattice energy**, not by redox.
+- A pseudohalide needs **at least one nitrogen**; its **Ag salt is insoluble** and its **H compound is an acid**. **CN⁻ is the closest analogue** — and **AgCN, like AgCl, dissolves in ammonia.**
 
-Direct combination of Xe and F₂ under varying conditions gives different fluorides, with **higher F₂ ratio, pressure and/or temperature favouring the higher fluoride**:
+# 18. Group 18: the noble gases — trends, and how xenon chemistry was discovered
 
-\[\mathrm{Xe+F_2\xrightarrow{673\ K,\ 1\ bar,\ Xe:F_2=1:5}XeF_2}\]
-\[\mathrm{Xe+2F_2\xrightarrow{573\ K,\ 7\ bar,\ Xe:F_2=1:20}XeF_4}\]
-\[\mathrm{Xe+3F_2\xrightarrow{573\ K,\ 60–70\ bar,\ Xe:F_2=1:20}XeF_6}\]
+Members are **He, Ne, Ar, Kr, Xe and Rn.** Configuration **ns²np⁶**, except **helium, which is 1s²**. They are called *noble* gases because they are gaseous and chemically unreactive, forming very few compounds.
 
-## 18.2 VSEPR precision for xenon species
+## 18.1 Occurrence
 
-| Species | Total electron-pair regions on Xe | Electron-pair geometry | Molecular shape |
-|---|---:|---|---|
-| XeF₂ | 5 (2 bp + 3 lp) | trigonal bipyramidal | linear |
-| XeF₄ | 6 (4 bp + 2 lp) | octahedral | square planar |
-| XeF₆ | 7 (6 bp + 1 lp) | distorted (capped) octahedral | distorted octahedral |
-| XeOF₄ | 6 (5 bp + 1 lp) | octahedral | square pyramidal |
-| XeO₃ | 4 (3 bp + 1 lp) | tetrahedral | trigonal pyramidal |
-| XeO₄ | 4 (4 bp + 0 lp) | tetrahedral | tetrahedral |
+**All the noble gases except radon occur in the atmosphere**, which is about **1 % noble gas by volume — and argon is the major constituent.** The abundance order is **Ar > Ne > Kr > He > Rn.**
 
-For XeF₂: five electron pairs adopt a trigonal-bipyramidal arrangement; placing all **three lone pairs in the equatorial plane** (where lone-pair/lone-pair repulsion is minimised, each 120° apart) leaves the two bonding fluorine atoms axial — hence the molecule is linear. For XeF₆, one lone pair distorts an otherwise regular octahedron; do not force a perfectly symmetric octahedral shape onto it.
+- **Helium and sometimes neon are found in minerals of radioactive origin** — pitchblende, monazite, cleveite — because they are α-decay products.
+- **The main commercial source of helium is natural gas.**
+- **Xenon and radon are the rarest of the group**, and radon is obtained as a decay product of radium:
 
-## 18.3 Hydrolysis reasoning
+\[\mathrm{^{226}_{88}Ra\rightarrow{^{222}_{86}Rn}+{^{4}_{2}He}}\]
 
-Xenon fluorides hydrolyse because forming strong new Xe–O and H–F bonds is thermodynamically very favourable. Balance every hydrolysis systematically by atom count and oxidation-state bookkeeping rather than memorising a half-balanced line:
+## 18.2 Periodic trends
 
-\[\mathrm{2XeF_2+2H_2O\rightarrow2Xe+4HF+O_2}\] (Xe is *reduced* to the element; here water is oxidised)
-\[\mathrm{XeF_4+6H_2O\rightarrow2Xe+XeO_3+12HF+3O_2}\] (a disproportionation among three Xe centres overall)
-\[\mathrm{XeF_6+3H_2O\rightarrow XeO_3+6HF}\] (complete hydrolysis; controlled partial hydrolysis instead gives the oxyfluoride XeOF₄)
+Every trend in this group is monotonic, which makes it easy — but note that **two of them run the *opposite* way to the rest of the p-block**:
 
-## 18.4 Clathrates
+| Property | Order |
+|---|---|
+| Atomic radius | **He < Ne < Ar < Kr < Xe < Rn** |
+| **Ionisation enthalpy** | **He > Ne > Ar > Kr > Xe > Rn** (very high throughout) |
+| Electron gain enthalpy | **large and positive** for all — no tendency to accept an electron |
+| Melting point | He < Ne < Ar < Kr < Xe < Rn |
+| Boiling point | He < Ne < Ar < Kr < Xe < Rn |
+| Density | He < Ne < Ar < Kr < Xe < Rn |
 
-Larger noble-gas atoms (Ar, Kr, Xe) can be **physically trapped** inside cavities of an ice or quinol (hydroquinone) crystal lattice as it forms around them, giving **clathrates**. These are not covalent compounds — no chemical bond forms to the noble gas atom, the oxidation state of the trapped gas remains 0, and the clathrate decomposes back to free gas plus host lattice on melting/dissolving. Do not describe a clathrate as a "xenon compound" in the same sense as XeF₂ or XeO₃.
+**Physical properties.** All are **monatomic** — unique among the non-metals — and colourless, odourless and tasteless. All are **sparingly soluble in water**. Their **melting and boiling points are extremely low because the only interatomic interaction available is weak dispersion (London) forces**, and with monatomic species there is nothing else at all.
 
-### Trap bank — Group 18
+**Helium is exceptional in three ways worth remembering:**
 
-- XeF₂ is linear because three lone pairs occupy the equatorial positions of a trigonal bipyramid, not because Xe "has no lone pairs."
-- Report **molecular shape**, not electron-pair geometry, whenever a question asks for "shape" — XeOF₄ has octahedral electron geometry but square-pyramidal molecular shape.
-- A clathrate involves no bond formation and no oxidation-state change; a true xenon fluoride/oxide does.
-- Xenon's compound-forming ability is due to its comparatively low ionisation enthalpy among noble gases, not to any special reactivity of fluorine alone (fluorine also fails to react with He, Ne, Ar under ordinary conditions).
+- **The lowest boiling point of any known substance, 4.2 K.**
+- It **diffuses through most common laboratory materials** — rubber, glass, plastics.
+- **Liquid helium exists in two forms.** At the **λ-point** helium-I changes to **helium-II**, and several properties change abruptly: the specific heat changes by a factor of 10, **thermal conductivity increases about 10⁶-fold (becoming ~800 times better than copper)**, the **viscosity effectively vanishes**, and **the liquid climbs the walls of its vessel.** This is superfluidity.
 
-# 19. Group 18 deep dive: xenon fluorides, oxides and hydrolysis
+## 18.3 Why they are inert — and how that inertness was broken
 
-## 19.1 Preparation and the bonding context
+Two reasons, and both must be given:
 
-Xenon reacts directly with fluorine gas under carefully controlled temperature, pressure and stoichiometric ratio to give XeF₂, XeF₄ or XeF₆ selectively (§18.1); broadly, higher fluorine partial pressure, higher total pressure and/or higher reaction temperature all favour formation of the higher fluoride. All three are covalent, molecular compounds in the standard textbook treatment (not ionic lattices in the solid state, though XeF₆ shows some ionic character/self-ionisation in the liquid and solid phases, e.g. forming [XeF₅]⁺[F]⁻-type species).
+1. **Completely filled valence shells** — ns²np⁶ (or 1s² for He).
+2. **Very high ionisation enthalpy and large positive electron gain enthalpy** — so they neither lose nor gain electrons willingly.
 
-## 19.2 VSEPR precision, restated with full reasoning
+> **Bartlett's discovery, 1962 — and why it is a beautiful piece of reasoning rather than luck.** Neil Bartlett had prepared a red compound formulated as **O₂⁺[PtF₆]⁻**, showing that PtF₆ was powerful enough to ionise molecular oxygen. He then noticed that
+>
+> \[\mathrm{IE_1(O_2)=1175\ kJ\ mol^{-1}}\quad\text{is almost identical to}\quad \mathrm{IE_1(Xe)=1170\ kJ\ mol^{-1}}\]
+>
+> If PtF₆ could ionise O₂, it should be able to ionise xenon too. Mixing PtF₆ with xenon gave another red compound, **Xe⁺[PtF₆]⁻** — the first real noble-gas compound. **The prediction came from an ionisation-energy comparison, and that is exactly why the question "why xenon and not argon?" has a quantitative answer.**
 
-XeF₂ has five total electron-pair regions around xenon (two bonding pairs to F, three lone pairs); in the trigonal-bipyramidal electron-pair arrangement that minimises repulsion, **all three lone pairs occupy the equatorial positions** (each 120° from the next, where lone-pair/lone-pair repulsion — the strongest of the three repulsion types — is minimised), leaving the two fluorine atoms in the axial positions 180° apart. The resulting **molecular shape is therefore linear**, even though the *electron-pair* arrangement is trigonal bipyramidal — the standard illustration of why electron-pair geometry and molecular shape must be reported separately.
+**Which noble gases actually form compounds:**
 
-XeF₄ has six total electron-pair regions (four bonding pairs, two lone pairs); the two lone pairs occupy mutually *trans* (opposite) positions of the octahedron to minimise their mutual repulsion, leaving the four fluorine atoms in a plane — hence **square planar** molecular shape. XeF₆ has seven total electron-pair regions (six bonding pairs, one lone pair); with no perfectly symmetric seven-region arrangement available, the single lone pair distorts an otherwise regular octahedron, giving a **distorted octahedral** shape that should never be drawn as a perfect, undistorted octahedron.
+- **Xenon** — an extensive chemistry, mainly with the most electronegative elements, **fluorine and oxygen**.
+- **Krypton** — very few; **only KrF₂ has been studied in detail.**
+- **Radon** — compounds such as RnF₂ have been **identified only by radiotracer techniques**, never isolated (radon's half-life is too short).
+- **Argon, neon and helium — no true compounds are known.** Their ionisation enthalpies are simply too high.
 
-## 19.3 Xenon oxyfluorides and oxides
+## 18.4 Clathrates — trapped, not bonded
 
-XeOF₄ has six electron-pair regions (one Xe=O, four Xe–F, one lone pair) in an overall octahedral electron-pair arrangement, with the single lone pair giving a **square-pyramidal** molecular shape. XeO₃ has four electron-pair regions (three Xe=O, one lone pair) in a tetrahedral electron-pair arrangement, giving a **trigonal-pyramidal** molecular shape (directly analogous to NH₃'s shape derivation). XeO₄ has four bonding regions and no lone pair, giving a regular **tetrahedral** molecular shape. In every case, the examiner is asking for the **molecular shape** (what an X-ray structure would actually show), never the underlying electron-pair geometry alone.
+\[\mathrm{Xe\cdot 6H_2O},\quad \mathrm{Ar\cdot 6H_2O},\quad \mathrm{Kr\cdot 6H_2O}\]
 
-## 19.4 Advanced edge: a safe, general hydrolysis workflow
+These **noble-gas hydrates form only when water freezes under high pressure in the presence of the gas.** They are **clathrates** — "cage compounds" — in which the gas atom is **physically trapped inside a cavity of the hydrogen-bonded ice lattice.**
 
-For any xenon fluoride or oxyfluoride hydrolysis, work through this four-step method rather than memorising several superficially similar-looking equations:
+> **The decisive point: there is no chemical bond to the noble gas at all.** A clathrate is a *physical* inclusion compound, held by the host lattice, and the guest can be released by melting the ice without breaking any bond to it.
+>
+> And note **which** gases do it: **Ar, Kr and Xe form clathrates but He and Ne cannot — they are too small** and simply rattle out of the cavity rather than being retained. So clathrate formation is governed by **size matching to the cage**, whereas *chemical* compound formation is governed by **ionisation enthalpy**. Two different criteria, two different lists — and a favourite examiner's trap.
 
-1. **Count** every Xe, F, H and O atom present in the reactants.
-2. **Decide** whether the xenon oxidation state is retained unchanged through to the product, or whether a disproportionation among multiple Xe centres is occurring instead (as happens, for example, in the hydrolysis of XeF₄, where some xenon is reduced all the way to the element while some is oxidised up to XeO₃).
-3. **Include HF explicitly** as the fluorine-containing product of any aqueous hydrolysis (fluorine essentially never survives hydrolysis as F⁻ alone without protonation to HF under these acidic conditions).
-4. **Balance** the remaining H and O atoms using water molecules, and finally verify any residual charge balance if ionic species are written into the equation.
+## 18.5 Uses
 
-This atom-count-and-oxidation-state method is considerably safer under exam pressure than attempting to recall several nearly identical xenon hydrolysis equations by rote, since a single misremembered coefficient in a memorised equation is very easy to produce but very hard to self-detect.
+**Helium.**
+
+- **Non-inflammable and light** — filling balloons for meteorological observation.
+- **Gas-cooled nuclear reactors.**
+- **Cryogenics** (bp 4.2 K) — reaching the low temperatures needed for superconductors and lasers, and sustaining the **superconducting magnets in NMR spectrometers and MRI scanners.**
+- **Diluent for oxygen in diving cylinders.** The reasoning matters: **nitrogen is appreciably soluble in blood, so a sudden pressure drop degasses it and produces N₂ bubbles — the painful condition called "the bends". Helium is only slightly soluble in blood**, so replacing N₂ with He greatly reduces the risk.
+
+**Neon** — discharge tubes and fluorescent bulbs for advertising displays; neon bulbs in botanical gardens and greenhouses.
+
+**Argon** — **an inert atmosphere for high-temperature metallurgy** (arc welding of metals and alloys), filling electric bulbs, and handling air-sensitive substances in the laboratory.
+
+**Xenon and krypton** — no significant uses beyond special-purpose light bulbs.
+
+### Trap bank — noble gas trends and reactivity
+
+- **Argon is the most abundant noble gas in air** (the group is ~1 % of the atmosphere), not helium. **Helium's commercial source is natural gas**, and radon comes from ²²⁶Ra decay.
+- **Electron gain enthalpies are large and *positive*** — these atoms do not accept electrons at all.
+- **Low boiling points arise from weak dispersion forces only**, which is a direct consequence of being **monatomic**.
+- **He has the lowest boiling point of any substance (4.2 K)**, diffuses through glass and rubber, and shows **superfluidity below the λ-point.**
+- **Xenon reacts because its ionisation enthalpy (1170 kJ mol⁻¹) nearly matches that of O₂ (1175)** — Bartlett's actual reasoning. Argon, neon and helium form **no true compounds**.
+- **Only KrF₂ is well characterised for krypton; radon compounds are identified only by radiotracer methods.**
+- **Clathrates involve no chemical bond** — the atom is physically caged in ice.
+- **Ar, Kr and Xe form clathrates; He and Ne are too small and cannot.** Compare with chemical reactivity, which is decided by **ionisation enthalpy** instead — do not conflate the two criteria.
+- **Helium replaces nitrogen in diving gas because N₂ is soluble in blood and causes the bends.** He's low solubility is the whole point.
+
+# 19. Group 18: the xenon compounds — fluorides, oxides and oxyfluorides
+
+## 19.1 The xenon fluorides — the conditions *are* the answer
+
+All three fluorides come from xenon and fluorine directly, and **which one you get is fixed entirely by the F₂ : Xe ratio, the pressure and the temperature.** A question that gives you conditions is asking you to read off the product.
+
+| Product | Conditions |
+|---|---|
+| **XeF₂** | **xenon in excess**, 673 K, **1 bar** |
+| **XeF₄** | **1 : 5** Xe : F₂, 873 K, **7 bar** |
+| **XeF₆** | **1 : 20** Xe : F₂, 573 K, **60–70 bar** |
+
+**Broadly: more fluorine, more pressure → the higher fluoride.** There is also a low-temperature route to XeF₆ using a stronger fluorinating agent:
+
+\[\mathrm{XeF_4+O_2F_2\xrightarrow{143\ K}XeF_6+O_2}\]
+
+All three are **colourless crystalline solids that sublime readily at 298 K.**
+
+## 19.2 Structures — straight VSEPR, every time
+
+Count the electron pairs on xenon and place the lone pairs to minimise repulsion. Xenon brings 8 valence electrons; each bond to fluorine uses one.
+
+| Species | Bond pairs | Lone pairs | Total domains | Arrangement | **Shape** |
+|---|---|---|---|---|---|
+| **XeF₂** | 2 | **3** | 5 | trigonal bipyramidal | **linear** (all 3 lone pairs equatorial) |
+| **XeF₄** | 4 | **2** | 6 | octahedral | **square planar** (lone pairs *trans*) |
+| **XeF₆** | 6 | **1** | 7 | — | **distorted octahedral** |
+| **XeO₃** | 3 | **1** | 4 | tetrahedral | **pyramidal** |
+| **XeOF₄** | 5 | **1** | 6 | octahedral | **square pyramidal** |
+| **XeO₂F₂** | 4 | 1 | 5 | trigonal bipyramidal | see-saw |
+| **XeO₄** | 4 | **0** | 4 | tetrahedral | **tetrahedral** |
+| **XeF₅⁺** | 5 | 1 | 6 | octahedral | square pyramidal |
+| **XeF₈²⁻** | 8 | 0 | 8 | — | square antiprismatic |
+
+> **The two shapes people get wrong.** **XeF₂ is linear, not bent** — with three lone pairs and two bonds in a trigonal bipyramid, all three lone pairs take equatorial positions and the fluorines are forced axial. **XeF₄ is square planar, not tetrahedral** — two lone pairs in an octahedron go *trans* to each other, leaving the four fluorines in a plane. And **XeF₆'s seven pairs give a *distorted* octahedron**, confirmed experimentally in the gas phase, not a regular one.
+>
+> The general habit worth building: **count lone pairs first, then place them where repulsion is least, and only then read off the shape of the atoms.**
+
+## 19.3 Hydrolysis — complete, partial, and in alkali
+
+**The xenon fluorides are hydrolysed by even traces of water**, and the products depend on which fluoride and how much water.
+
+**XeF₂ hydrolyses with reduction of xenon to the free element** — this one *is* a redox reaction:
+
+\[\mathrm{2XeF_2+2H_2O\rightarrow 2Xe+4HF+O_2}\]
+
+**XeF₄ disproportionates:**
+
+\[\mathrm{6XeF_4+12H_2O\rightarrow 4Xe+2XeO_3+24HF+3O_2}\]
+
+**XeF₆ with excess water gives XeO₃ cleanly:**
+
+\[\mathrm{XeF_6+3H_2O\rightarrow XeO_3+6HF}\]
+
+**Partial hydrolysis of XeF₆ gives the oxyfluorides**, and the amount of water decides which:
+
+\[\mathrm{XeF_6+H_2O\rightarrow XeOF_4+2HF}\qquad(\text{one water})\]
+\[\mathrm{XeF_6+2H_2O\rightarrow XeO_2F_2+4HF}\qquad(\text{two waters})\]
+
+> **Is the hydrolysis of XeF₆ a redox reaction?** **No.** In XeF₆ → XeOF₄ → XeO₂F₂ → XeO₃ the xenon stays at **+6** throughout, and fluorine and oxygen keep their usual states. Only the **XeF₂ and XeF₄** hydrolyses involve genuine reduction of xenon to Xe(0). Being able to say *which* hydrolyses are redox and which are not is the point of the question.
+
+**In alkaline medium** the chemistry goes further, to the xenate and then the perxenate:
+
+\[\mathrm{2XeF_2+4OH^-\rightarrow 2Xe+4F^-+2H_2O+O_2}\]
+\[\mathrm{XeF_6+7OH^-\rightarrow HXeO_4^-\ (\textbf{xenate})+3H_2O+6F^-}\]
+\[\mathrm{2HXeO_4^-+2OH^-\rightarrow XeO_6^{4-}\ (\textbf{perxenate})\downarrow+Xe+2H_2O+O_2}\]
+
+That last step is a **disproportionation**: xenate at +6 goes to **perxenate at +8** and **free xenon at 0**. Perxenates are among the strongest oxidising agents known.
+
+## 19.4 The three reaction roles of the xenon fluorides
+
+Organising them this way turns a long list into three ideas.
+
+**(i) Powerful fluorinating agents:**
+
+\[\mathrm{2SF_4+XeF_4\rightarrow 2SF_6+Xe};\qquad \mathrm{Pt+XeF_4\rightarrow PtF_4+Xe};\qquad \mathrm{NO+XeF_2\rightarrow NOF+Xe}\]
+
+**(ii) Fluoride *donors*** — losing F⁻ to a strong fluoride acceptor gives a xenon **cation**:
+
+\[\mathrm{XeF_2+MF_5\rightarrow [XeF]^+[MF_6]^-}\qquad(M=\mathrm{As,\ Sb,\ P})\]
+\[\mathrm{XeF_6+BF_3\rightarrow [XeF_5]^+[BF_4]^-};\qquad \mathrm{XeF_6+HF\rightarrow [XeF_5]^+[HF_2]^-}\]
+
+**(iii) Fluoride *acceptors*** — gaining F⁻ from an alkali fluoride gives a xenon **anion**:
+
+\[\mathrm{XeF_6+MF\rightarrow M[XeF_7]^-}\qquad(M=\mathrm{Na,\ K,\ Rb,\ Cs})\]
+\[\mathrm{2Cs[XeF_7]\xrightarrow{50^{\circ}C}XeF_6+Cs_2[XeF_8]};\qquad \mathrm{XeF_4+MF\rightarrow M[XeF_5]}\]
+
+**The same molecule doing both** — donating fluoride to BF₃ but accepting it from CsF — is the neatest illustration in the chapter that "acid" and "base" are relative roles, not fixed properties.
+
+**Oxidising behaviour.** All the fluorides are reduced to xenon:
+
+\[\mathrm{XeF_2+H_2\rightarrow Xe+2HF};\qquad \mathrm{XeF_2+2HCl\rightarrow 2HF+Xe+Cl_2};\qquad \mathrm{XeF_4+4KI\rightarrow 4KF+Xe+2I_2}\]
+
+**With silica** — worth knowing because it explains why these compounds cannot be handled in glass:
+
+\[\mathrm{2XeF_6+SiO_2\rightarrow SiF_4+2XeOF_4}\]
+
+## 19.5 The xenon–oxygen compounds
+
+**XeO₃** is a **colourless, white, hygroscopic and dangerously explosive solid**, with a **pyramidal** structure (three bond pairs, one lone pair).
+
+**XeOF₄** is a **colourless volatile liquid**, **square pyramidal.**
+
+Both can be made from XeO₃ without going through water:
+
+\[\mathrm{XeO_3+2XeF_6\rightarrow 3XeOF_4};\qquad \mathrm{XeO_3+XeOF_4\rightarrow 2XeO_2F_2}\]
+
+### Trap bank — the xenon compounds
+
+- **The F₂ : Xe ratio and the pressure decide which fluoride forms.** XeF₂ needs excess xenon at 1 bar; XeF₆ needs a 1 : 20 ratio at 60–70 bar. Read the conditions.
+- **XeF₂ is linear** (three lone pairs, all equatorial) and **XeF₄ is square planar** (two lone pairs, *trans*). Neither is bent or tetrahedral. **XeF₆ is a *distorted* octahedron.**
+- **XeO₃ is pyramidal, XeOF₄ square pyramidal, XeO₄ tetrahedral.** Count lone pairs first.
+- **Hydrolysis of XeF₆ is *not* a redox reaction** — xenon stays at +6 through XeOF₄, XeO₂F₂ and XeO₃. **XeF₂ and XeF₄ hydrolyses *are* redox** (xenon reduced to Xe⁰).
+- **The amount of water decides the oxyfluoride**: one H₂O → XeOF₄, two → XeO₂F₂, three → XeO₃.
+- **In alkali, XeF₆ gives xenate HXeO₄⁻, which then disproportionates to perxenate XeO₆⁴⁻ (+8) and free Xe.**
+- **The xenon fluorides act as fluoride donors *and* acceptors** — cations with MF₅/BF₃, anions with alkali fluorides. Same compound, opposite roles.
+- **XeF₆ attacks SiO₂**, giving XeOF₄ — so it cannot be handled in glass.
+- **XeO₃ is explosive.** Do not treat it as a routine oxide.
 
 # 20. JEE Advanced synthesis: decision trees, traps and final recall
 

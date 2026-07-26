@@ -20,11 +20,11 @@ export const P_BLOCK_PARTS: PBlockPartDef[] = [
   { slug: "part12", number: 12, title: "Group 16 — Ozone & the allotropes of sulphur", fromSection: 12, toSection: 12 },
   { slug: "part13", number: 13, title: "Group 16 — H₂S, sulphur oxoacids & thiosulphate", fromSection: 13, toSection: 13 },
   { slug: "part14", number: 14, title: "Group 16 — SO₂, H₂SO₄ & the contact process", fromSection: 14, toSection: 14 },
-  { slug: "part15", number: 15, title: "Group 17 — Halogens & interhalogens", fromSection: 15, toSection: 15 },
-  { slug: "part16", number: 16, title: "Group 17 — Chlorine, HCl & oxyacids", fromSection: 16, toSection: 16 },
-  { slug: "part17", number: 17, title: "Group 17 — Interhalogens: shapes & hydrolysis", fromSection: 17, toSection: 17 },
-  { slug: "part18", number: 18, title: "Group 18 — Noble gases & xenon", fromSection: 18, toSection: 18 },
-  { slug: "part19", number: 19, title: "Group 18 — Xenon fluorides, oxides & hydrolysis", fromSection: 19, toSection: 19 },
+  { slug: "part15", number: 15, title: "Group 17 — Halogen trends & the anomalies of fluorine", fromSection: 15, toSection: 15 },
+  { slug: "part16", number: 16, title: "Group 17 — Chlorine, HCl & the halogen oxoacids", fromSection: 16, toSection: 16 },
+  { slug: "part17", number: 17, title: "Group 17 — Interhalogens, polyhalides & pseudohalogens", fromSection: 17, toSection: 17 },
+  { slug: "part18", number: 18, title: "Group 18 — Noble gas trends & the discovery of Xe chemistry", fromSection: 18, toSection: 18 },
+  { slug: "part19", number: 19, title: "Group 18 — Xenon fluorides, oxides & oxyfluorides", fromSection: 19, toSection: 19 },
   { slug: "part20", number: 20, title: "JEE Advanced synthesis & revision", fromSection: 20, toSection: 20 },
 ];
 

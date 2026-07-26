@@ -6,7 +6,7 @@ organises Mg extraction in three major steps:
 2. conversion to **anhydrous $MgCl_2$** without hydrolysis,
 3. fused-salt electrolysis.
 
-![Fused magnesium chloride electrolysis](/assets/metallurgy/20260726-final/molten-electrolysis-dark-v4.webp)
+![Fused magnesium chloride electrolysis](/assets/metallurgy/restored-889e823/molten-electrolysis-dark-v4.webp)
 
 ## Magnesium route — source details restored
 ### A. From carnallite

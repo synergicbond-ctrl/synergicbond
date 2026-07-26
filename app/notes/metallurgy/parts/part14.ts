@@ -32,7 +32,6 @@ $$Zn\rightarrow Zn^{2+}+2e^-$$
 
 ---
 
-![Zinc extraction flow](/assets/metallurgy/20260726-final/carbon-reduction-dark-v4.webp)
 
 ## Zinc details restored from pages 61–63
 ### Calamine route

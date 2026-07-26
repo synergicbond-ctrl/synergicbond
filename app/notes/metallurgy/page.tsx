@@ -33,7 +33,7 @@ export default function MetallurgyPage() {
         <h1>Metallurgy</h1>
         <img
           className="metallurgy-cover-art"
-          src="/assets/metallurgy/20260726-final/metallurgy-hero-dark-v4.webp"
+          src="/assets/metallurgy/restored-889e823/metallurgy-hero-dark-v4.webp"
           alt="Extractive metallurgy elemental blueprint"
         />
       </section>

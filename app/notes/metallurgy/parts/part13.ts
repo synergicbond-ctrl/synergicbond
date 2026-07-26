@@ -1,11 +1,10 @@
 const content = String.raw`
 # Part 13 — Copper — Chalcopyrite to Blister Copper & Electrolytic Cu
 
-![Copper extraction flow](/assets/metallurgy/20260726-final/copper-self-reduction-dark-v4.webp)
+![Copper extraction flow](/assets/metallurgy/restored-889e823/copper-self-reduction-dark-v4.webp)
 
 Chalcopyrite is commonly treated conceptually as a mixed Cu–Fe sulphide system; older notes often represent matte chemistry using $Cu_2S$ and $FeS$ components.
 
-![Copper electrorefining](/assets/metallurgy/20260726-final/electrorefining-dark-v4.webp)
 
 ## Copper source details restored
 ### Chalcopyrite constitution

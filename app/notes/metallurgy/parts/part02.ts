@@ -11,7 +11,7 @@ Froth flotation is primarily used for **sulphide ores**.
 
 Air bubbles carry hydrophobic mineral particles upward into a froth that can be skimmed off.
 
-![Froth flotation cell](/assets/metallurgy/20260726-final/froth-flotation.webp)
+![Froth flotation cell](/assets/metallurgy/restored-889e823/froth-flotation.webp)
 
 ### Main components in notes
 
@@ -63,7 +63,7 @@ The actual mineral-surface chemistry is more complex than a bulk stoichiometric 
 ---
 
 ## 8. Depressants — Selective Flotation
-![Activator and depressant selectivity in flotation](/assets/metallurgy/20260726-final/activator-depressant.webp)
+![Activator and depressant selectivity in flotation](/assets/metallurgy/restored-889e823/activator-depressant.webp)
 
 A **depressant** prevents one mineral from floating while allowing another to float.
 
@@ -75,7 +75,7 @@ In classical JEE metallurgy, **NaCN** is described as depressing $ZnS$ during se
 ---
 
 ## 9. Chemical Concentration — Leaching
-![Leaching as selective chemical dissolution](/assets/metallurgy/20260726-final/leaching.webp)
+![Leaching as selective chemical dissolution](/assets/metallurgy/restored-889e823/leaching.webp)
 
 **Leaching** means selectively dissolving the desired component (or sometimes an impurity) from a solid using a suitable liquid reagent.
 
@@ -89,7 +89,7 @@ Important examples developed later in the chapter:
 
 ---
 
-![Collector, activator and depressant chemistry](/assets/metallurgy/20260726-final/froth-chemistry.webp)
+![Collector, activator and depressant chemistry](/assets/metallurgy/restored-889e823/froth-chemistry.webp)
 
 ## Full reagent logic from ### Frother
 Pine oil (and classical aromatic frothers/stabilisers mentioned in older texts) lowers surface tension and helps create a persistent froth. **Frother ≠ collector.**

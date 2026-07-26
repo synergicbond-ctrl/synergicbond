@@ -5,9 +5,6 @@ presents two broad routes:
 - **carbon/smelting route** for less pure or more gangue-rich concentrates,
 - **self-reduction route** after partial roasting for high-grade sulphide concentrate.
 
-![Lead extraction and refining](/assets/metallurgy/20260726-final/self-reduction-dark-v4.webp)
-
-![Parkes desilverisation](/assets/metallurgy/20260726-final/parkes-process-dark-v4.webp)
 
 ## Lead source sequence restored
 The notes distinguish two broad routes:

@@ -5,7 +5,6 @@ const content = String.raw`
 
 # A. Extraction of Tin from Cassiterite
 
-![Tin extraction flow](/assets/metallurgy/20260726-final/carbon-reduction-dark-v4.webp)
 
 ## Cassiterite source flow restored
 The handwritten notes treat an ore containing only a few percent $SnO_2$ in gangue and list major impurities:

@@ -15,7 +15,7 @@ The handwritten notation $Al_2O_3\cdot2H_2O$ is a useful older shorthand for hyd
 
 # 2. Bayer Process — Purification of Bauxite
 
-![Bayer process flow](/notes/metallurgy/reference/bayer-leaching-dark-v4.webp)
+![Bayer process flow](/notes/metallurgy/reference/bayer-leaching-dark-v4-r20260726-cachefix.webp)
 
 Modern alumina refining is based on caustic digestion.
 
@@ -97,7 +97,7 @@ This is historically important for exams, though the Bayer process dominates mod
 
 # 5. Hall–Héroult Process — Electrolytic Reduction of Alumina
 
-![Hall-Héroult cell](/notes/metallurgy/reference/hall-heroult-dark-v4.webp)
+![Hall-Héroult cell](/notes/metallurgy/reference/hall-heroult-dark-v4-r20260726-cachefix.webp)
 
 Aluminium is too electropositive to be produced by aqueous electrolysis or ordinary carbon reduction. $Al_2O_3$ is dissolved in a molten fluoride bath and electrolysed.
 

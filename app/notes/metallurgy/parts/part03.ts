@@ -20,7 +20,7 @@ This selection logic is more useful than memorising isolated methods because JEE
 
 ## 1. Calcination vs Roasting
 
-![Calcination versus roasting](/notes/metallurgy/reference/calcination-roasting.webp)
+![Calcination versus roasting](/notes/metallurgy/reference/calcination-roasting-r20260726-cachefix.webp)
 
 | Feature | Calcination | Roasting |
 |---|---|---|
@@ -77,7 +77,7 @@ $$4FeO+O_2\rightarrow2Fe_2O_3$$
 ## Why calcined/roasted mass should be porous
 Reduction is a heterogeneous solid–gas/solid–solid process. Porosity increases accessible surface and gas diffusion.
 
-### Sintering warning from ![Porosity and sintering architecture](/notes/metallurgy/reference/porosity-sintering.webp)
+### Sintering warning from ![Porosity and sintering architecture](/notes/metallurgy/reference/porosity-sintering-r20260726-cachefix.webp)
 
 **Sintering** = partial fusion/neck formation at particle contact points followed by solidification. If overheating causes excessive sintering, particles stick and pores close. Therefore roasting/calcination conditions are chosen to remove volatiles **without destroying porosity**.
 

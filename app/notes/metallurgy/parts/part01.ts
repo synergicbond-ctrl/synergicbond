@@ -26,7 +26,7 @@ The unwanted earthy, rocky or mineral impurities associated with an ore are call
 
 ## 2. The General Metallurgical Route
 
-![General metallurgy flowchart](/notes/metallurgy/reference/universal-framework.webp)
+![General metallurgy flowchart](/notes/metallurgy/reference/universal-framework-r20260726-cachefix.webp)
 
 A useful master sequence is:
 
@@ -41,7 +41,7 @@ Different ores may skip, combine or reorder these steps. For example, noble meta
 ---
 
 ## 3. Concentration of Ores — Choosing the Method
-![Four pillars of ore beneficiation](/notes/metallurgy/reference/concentration-spectrum.webp)
+![Four pillars of ore beneficiation](/notes/metallurgy/reference/concentration-spectrum-r20260726-cachefix.webp)
 
 The method depends on a **physical or chemical difference** between the valuable mineral and the gangue.
 
@@ -54,7 +54,7 @@ The method depends on a **physical or chemical difference** between the valuable
 
 ## 4. Gravity Separation / Hydraulic Washing / Levigation
 
-![Gravity separation overview](/notes/metallurgy/reference/gravity-separation.webp)
+![Gravity separation overview](/notes/metallurgy/reference/gravity-separation-r20260726-cachefix.webp)
 
 ### Principle
 **Gravity separation** concentrates an ore by exploiting the difference in **density (specific gravity)** between the valuable mineral and gangue. In a moving stream of water, lighter particles are carried away more readily, whereas denser mineral grains settle or remain behind.
@@ -150,7 +150,7 @@ Thus hydraulic classification depends on **settling velocity**, which is influen
 
 **Principle:** either the ore or the gangue must respond differently to a magnetic field.
 
-![Magnetic separation conveyor](/notes/metallurgy/reference/magnetic-separation.webp)
+![Magnetic separation conveyor](/notes/metallurgy/reference/magnetic-separation-r20260726-cachefix.webp)
 
 A crushed ore is carried on a conveyor over a magnetic pulley/roller:
 - magnetic particles remain attracted longer and fall nearer the roller,
@@ -163,7 +163,7 @@ Cassiterite $SnO_2$ may contain magnetic wolframite-type impurities, commonly re
 
 ---
 
-![Ore and concentration decision map](/notes/metallurgy/reference/ore-foundations.webp)
+![Ore and concentration decision map](/notes/metallurgy/reference/ore-foundations-r20260726-cachefix.webp)
 
 ## Source-detail restoration
 - **Mineral vs ore is economic, not purely chemical.** A mineral may contain a metal yet fail to be an ore if extraction is uneconomic or creates difficult impurities.

@@ -478,6 +478,17 @@ This is a **comparison among the four boron trihalides only** — BF₃ is still
 
 \[\mathrm{BX_3>AlX_3>GaX_3>InX_3}\ (\text{hard bases});\qquad \mathrm{BX_3<AlX_3<GaX_3<InX_3}\ (\text{soft bases})\]
 
+> **Do not carry the boron order across to silicon — it inverts.** For silicon the halide Lewis acidity runs the *normal* electronegativity way:
+>
+> \[\mathrm{BF_3<BCl_3<BBr_3<BI_3}\qquad\text{but}\qquad \mathrm{SiF_4>SiCl_4>SiBr_4>SiI_4}\]
+>
+> Boron's order is inverted because **π back-donation into a compact 2p orbital is decisive** and is strongest for fluorine. Silicon is larger, its acceptor orbitals are d-type, back-bonding is far less effective, and **steric crowding by the bigger halogens counts against them** — so electronegativity wins and the fluoride is the strongest acid. Related orders that follow the same silicon-type logic:
+>
+> \[\mathrm{SnF_4>SnCl_4>SnBr_4>SnI_4};\quad \mathrm{Me_3SnF>Me_3SnCl>Me_3SnBr};\quad \mathrm{RMX_3>R_2MX_2>R_3MX}\ (M=\mathrm{Si,\ Ge,\ Sn,\ Pb})\]
+> \[\mathrm{PF_5>PCl_5};\qquad \mathrm{BF_3>B_2H_6>Me_3B}\]
+>
+> "Which is the stronger Lewis acid, BF₃ or BI₃? SiF₄ or SiI₄?" asked together is a single question testing whether you know *why* the boron series is anomalous.
+
 **Hydrolysis — and why BF₃ is the exception.** BCl₃, BBr₃ and BI₃ hydrolyse **completely**:
 
 \[\mathrm{BX_3+3H_2O\rightarrow H_3BO_3+3HX}\qquad(X=\mathrm{Cl,\ Br,\ I})\]
@@ -3298,7 +3309,14 @@ Every trend in this group is monotonic, which makes it easy — but note that **
 | Boiling point | He < Ne < Ar < Kr < Xe < Rn |
 | Density | He < Ne < Ar < Kr < Xe < Rn |
 
-**Physical properties.** All are **monatomic** — unique among the non-metals — and colourless, odourless and tasteless. All are **sparingly soluble in water**. Their **melting and boiling points are extremely low because the only interatomic interaction available is weak dispersion (London) forces**, and with monatomic species there is nothing else at all.
+**Physical properties.** All are **monatomic** — unique among the non-metals — and colourless, odourless and tasteless. All are **sparingly soluble in water**. Their **melting and boiling points are extremely low because the only interatomic interaction available is weak dispersion (London) forces**, and with monatomic species there is nothing else at all. **Liquefying a noble gas is correspondingly hard**, and gets harder the lighter the atom.
+
+Two further trends that look alike but have opposite causes, and are therefore an easy trap:
+
+\[\text{thermal conductivity: }\mathrm{He>Ne>Ar>Kr>Xe}\qquad(\text{lighter atom}\Rightarrow\text{higher speed}\Rightarrow\text{faster heat transport})\]
+\[\text{electrical conductivity (low pressure): }\mathrm{He<Ne<Ar<Kr<Xe}\qquad(\text{lower IE}\Rightarrow\text{ionises more readily})\]
+
+Note also that **neon has the highest (most positive) electron gain enthalpy of any noble gas** — i.e. it is the most resistant of all to accepting an electron.
 
 **Helium is exceptional in three ways worth remembering:**
 
@@ -3335,6 +3353,19 @@ These **noble-gas hydrates form only when water freezes under high pressure in t
 > **The decisive point: there is no chemical bond to the noble gas at all.** A clathrate is a *physical* inclusion compound, held by the host lattice, and the guest can be released by melting the ice without breaking any bond to it.
 >
 > And note **which** gases do it: **Ar, Kr and Xe form clathrates but He and Ne cannot — they are too small** and simply rattle out of the cavity rather than being retained. So clathrate formation is governed by **size matching to the cage**, whereas *chemical* compound formation is governed by **ionisation enthalpy**. Two different criteria, two different lists — and a favourite examiner's trap.
+
+**The host does not have to be water.** Passing Ar, Kr or Xe through an **organic liquid such as phenol or hydroquinone (quinol) under pressure** and then crystallising the solution gives solids in which the noble-gas atom is **trapped in the organic crystal lattice with no reaction at all.** These are the same clathrates in a different cage, and the same size rule applies — He and Ne are too small to be held.
+
+> **A structural aside worth carrying into Group 17 and 18 questions.** Compare which high-coordination fluorides exist against the corresponding hydrides:
+>
+> | Exists | Does **not** exist |
+> |---|---|
+> | XeF₂, XeF₄, XeF₆, XeF₈²⁻ | XeH₂, XeH₄, XeH₆, XeH₈²⁻ |
+> | PF₅, PCl₅ | PH₅, PI₅ |
+> | SF₄, SF₆ | SH₄, SH₆ |
+> | IF₅, IF₇ | IH₅, IH₇ |
+>
+> **Fluorine supports high oxidation states and high coordination numbers; hydrogen does not** — fluorine is small and the most electronegative element, so it stabilises the positive central atom, whereas hydrogen can neither withdraw enough density nor pack in the required numbers. One rule explains the whole right-hand column.
 
 ## 18.5 Uses
 
@@ -3381,6 +3412,33 @@ All three fluorides come from xenon and fluorine directly, and **which one you g
 
 All three are **colourless crystalline solids that sublime readily at 298 K.**
 
+**A recently developed route** uses silver(III) fluoride, which is a strong enough oxidant to attack xenon directly at ordinary temperature:
+
+\[\mathrm{KAgF_4+BF_3\rightarrow AgF_3\ (red)+KBF_4};\qquad \mathrm{2AgF_3+Xe\rightarrow 2AgF_2+XeF_2\ (brown)}\]
+
+**Thermochemical and structural data**, which is what turns "XeF₆ is the most reactive" from an assertion into a derivation:
+
+| Property | XeF₂ | XeF₄ | XeF₆ |
+|---|---|---|---|
+| Melting point / K | 413 | 390 | 322 |
+| ΔfH°(s, 298 K) / kJ mol⁻¹ | −163 | −267 | −338 |
+| ΔfH°(g, 298 K) / kJ mol⁻¹ | −107 | −206 | −279 |
+| **Mean Xe–F bond enthalpy / kJ mol⁻¹** | **133** | **131** | **126** |
+| **Xe–F distance / pm** | **200** | **195** | **189** |
+| Shape | linear | square planar | (distorted) octahedral |
+
+> **Read the last two rows together.** As you go XeF₂ → XeF₆ the **bond gets shorter but weaker** (200 → 189 pm, yet 133 → 126 kJ mol⁻¹). Fewer, stronger bonds per Xe would resist attack; more, weaker bonds do not. That is the quantitative reason for the reactivity order
+>
+> \[\mathrm{XeF_6>XeF_4>XeF_2}\]
+>
+> as oxidising **and** fluorinating agents — not merely "higher fluoride, more reactive."
+
+**And XeF₂ alone is a fearsome oxidant in its own right:**
+
+\[\mathrm{XeF_2+2H^++2e^-\rightarrow Xe+2HF}\qquad E^{\circ}=+2.64\ \mathrm{V}\]
+
+That is **above ozone (+2.07 V, §12.3) and close to fluorine itself** — so XeF₂ oxidises Ce³⁺ to Ce⁴⁺ and even **bromate to perbromate**, which few reagents manage.
+
 ## 19.2 Structures — straight VSEPR, every time
 
 Count the electron pairs on xenon and place the lone pairs to minimise repulsion. Xenon brings 8 valence electrons; each bond to fluorine uses one.
@@ -3390,12 +3448,32 @@ Count the electron pairs on xenon and place the lone pairs to minimise repulsion
 | **XeF₂** | 2 | **3** | 5 | trigonal bipyramidal | **linear** (all 3 lone pairs equatorial) |
 | **XeF₄** | 4 | **2** | 6 | octahedral | **square planar** (lone pairs *trans*) |
 | **XeF₆** | 6 | **1** | 7 | — | **distorted octahedral** |
-| **XeO₃** | 3 | **1** | 4 | tetrahedral | **pyramidal** |
+| **XeO₃** | 3 | **1** | 4 | tetrahedral | **pyramidal** (Xe–O 176 pm, ∠O–Xe–O 103°) |
 | **XeOF₄** | 5 | **1** | 6 | octahedral | **square pyramidal** |
 | **XeO₂F₂** | 4 | 1 | 5 | trigonal bipyramidal | see-saw |
 | **XeO₄** | 4 | **0** | 4 | tetrahedral | **tetrahedral** |
+| **XeF₃⁺** | 3 | 2 | 5 | trigonal bipyramidal | **T-shaped** (183/190 pm, 81°) |
 | **XeF₅⁺** | 5 | 1 | 6 | octahedral | square pyramidal |
-| **XeF₈²⁻** | 8 | 0 | 8 | — | square antiprismatic |
+| **XeF₅⁻** | 5 | **2** | 7 | — | **pentagonal planar** (202 pm, 72°) |
+| **XeF₈²⁻** | 8 | 0 | 8 | — | **square antiprismatic** |
+| **XeO₆⁴⁻** | 6 | 0 | 6 | octahedral | **octahedral** |
+
+**A cleaner way to organise all of it** — classify by formal oxidation state, because that fixes the lone-pair count and the lone-pair count fixes the shape:
+
+| Xe oxidation state | Lone pairs on Xe | Species |
+|---|---|---|
+| **+2** | **3** | KrF⁺, KrF₂, XeF⁺, **XeF₂** |
+| **+4** | **2** | XeF₃⁺, **XeF₄**, XeF₅⁻, XeOF₂ |
+| **+6** | **1** | XeF₅⁺, **XeF₆**, XeF₇⁻, XeF₈²⁻, XeOF₄, XeO₂F₂, XeO₃F⁻, **XeO₃** |
+| **+8** | **0** | XeO₃F₂, **XeO₄**, **XeO₆⁴⁻** |
+
+> **Two rare geometries worth knowing by name.** **XeF₅⁻ is *pentagonal planar*** — five bonds plus two lone pairs, the lone pairs going above and below the plane. And **XeF₈²⁻ is *square antiprismatic*** — eight bonds, no lone pair. Neither shape appears anywhere else in the JEE syllabus, which is exactly why they get asked.
+>
+> **Why XeF₃⁻ does *not* exist**, though XeF₃⁺ and XeF₅⁻ do: three bonds plus **three** lone pairs would force lone pairs to sit at **90° to one another**, and lone-pair/lone-pair repulsion at 90° is prohibitive. The ion is not stable.
+
+**Colours — almost everything is colourless, and the exception is the question.** XeF₂, XeF₄, XeF₆, XeOF₂, XeO₃, XeO₂F₂, XeOF₄, Cs[XeF₇], XeO₄, XeO₃F₂ and the perxenates XeO₆⁴⁻ are **all colourless solids**. **Cs₂[XeF₈] is yellow** — and it is also unusually robust, stable to 400 °C, whereas Cs[XeF₇] decomposes above 50 °C.
+
+**A dimeric cation to recognise:** **Xe₂F₃⁺ is [F–Xe···F···Xe–F]⁺**, a fluorine-bridged dimer with bridging Xe–F 214 pm, terminal Xe–F 192 pm, and a bridge angle of **140–160° that varies with the counter-ion.**
 
 > **The two shapes people get wrong.** **XeF₂ is linear, not bent** — with three lone pairs and two bonds in a trigonal bipyramid, all three lone pairs take equatorial positions and the fluorines are forced axial. **XeF₄ is square planar, not tetrahedral** — two lone pairs in an octahedron go *trans* to each other, leaving the four fluorines in a plane. And **XeF₆'s seven pairs give a *distorted* octahedron**, confirmed experimentally in the gas phase, not a regular one.
 >
@@ -3452,6 +3530,37 @@ Organising them this way turns a long list into three ideas.
 
 **The same molecule doing both** — donating fluoride to BF₃ but accepting it from CsF — is the neatest illustration in the chapter that "acid" and "base" are relative roles, not fixed properties.
 
+> **But XeF₂ is the exception: it is a fluoride *donor only*, never an acceptor.** Every other xenon fluoride does both. Compare:
+>
+> \[\mathrm{XeF_4+SbF_5\rightarrow [XeF_3]^+[SbF_6]^-}\ (\textbf{donor});\qquad \mathrm{XeF_4+CsF\rightarrow Cs^+[XeF_5]^-}\ (\textbf{acceptor})\]
+>
+> XeF₂ manages only the donor half, because the acceptor product would be XeF₃⁻ — the ion ruled out above on lone-pair-repulsion grounds.
+
+**How wide the XeF₂ donor chemistry runs** is worth appreciating: \(\mathrm{XeF_2+MF_n\rightarrow [XeF]^+[MF_{n+1}]^-}\) works with **MF₅** (M = As, Sb, Bi, V, Nb, Ta, Ru, Rh, Os, Ir, Pd, Pt), **MF₄** (Zr, Hf, Cr, Mn) and **MF₃** (Al, Ga, Fe, Co). It also gives [XeF]⁺[IF₆]⁻ with IF₅.
+
+**Ranked as Lux–Flood acids** (oxide-ion acceptors), the xenon species order as:
+
+\[\mathrm{XeF_6>XeO_2F_4>XeO_3F_2>XeO_4>XeOF_4>XeF_4>XeO_2F_2>XeO_3>XeF_2}\]
+
+**The XeF₂ reaction fan**, organised by what it is doing rather than as a list:
+
+| Role | Reaction |
+|---|---|
+| Reduced to Xe by any reductant | H₂ → Xe + HF; HCl → Cl₂; HBr → Br₂; HI → I₂ |
+| Oxidises to a higher oxo-anion | **BrO₃⁻ → BrO₄⁻**; Ce³⁺ → Ce⁴⁺ |
+| Fluorinates a metal or non-metal (in anhydrous HF) | Pt → PtF₄; CrF₂ → CrF₃; S₈ → SF₆; MoO₃ → MoF₆; Mo(CO)₆ → MoF₆ + CO |
+| Fluorinates an organic substrate | C₆H₆ → C₆H₅F; Ph–I → C₆H₅IF₂; CH₃–I → CH₃IF₂ |
+| Fluorinates a small molecule | NO₂ → **NO₂F** (nitryl fluoride); 2NO → NOF; NH₃ → N₂ + NH₄F + Xe |
+| Hydrolysis / alkali | H₂O (slow) → Xe + O₂ + HF; NaOH → Xe + O₂ + NaF + H₂O |
+
+With iodine the first product is unstable and disproportionates onward:
+
+\[\mathrm{XeF_2+I_2\rightarrow Xe+2IF};\qquad \mathrm{5IF\rightarrow IF_5+2I_2}\qquad(\text{as in §17.1})\]
+
+**The XeF₆ fan** is the same idea one oxidation state up: **SiO₂ → XeOF₄ + HF**; **Δ → XeF₂ + XeF₄ + F₂**; SbF₅ → [XeF₅]⁺[SbF₆]⁻; BF₃ → [XeF₅]⁺[BF₄]⁻; H₂ → Xe + HF; **XeO₃ → XeOF₄**; MF → M[XeF₇]; HF → [XeF₅]⁺[HF₂]⁻; **NaNO₃ → XeOF₄ + NO₂F + NaF**; OPF₃ → XeOF₄ + PF₅; and CsF → Cs[XeF₇] →Δ→ Cs₂[XeF₈] + XeF₆.
+
+And the **XeF₄ fan**: H₂ → Xe; KI → I₂ + KF + Xe; HCl → Cl₂ + HF + Xe; **SF₄ → SF₆ + Xe**; **BX₃ (X = Cl, Br, I) → Xe + BF₃ + X₂**; NO₂ → NO₂F + Xe; C₆H₆ → C₆H₅F + HF + Xe.
+
 **Oxidising behaviour.** All the fluorides are reduced to xenon:
 
 \[\mathrm{XeF_2+H_2\rightarrow Xe+2HF};\qquad \mathrm{XeF_2+2HCl\rightarrow 2HF+Xe+Cl_2};\qquad \mathrm{XeF_4+4KI\rightarrow 4KF+Xe+2I_2}\]
@@ -3462,7 +3571,13 @@ Organising them this way turns a long list into three ideas.
 
 ## 19.5 The xenon–oxygen compounds
 
-**XeO₃** is a **colourless, white, hygroscopic and dangerously explosive solid**, with a **pyramidal** structure (three bond pairs, one lone pair).
+> **Why only XeO₃ and XeO₄ exist, and not XeO or XeO₂.** Going along the series the **average radial distance of the bonding electrons increases, and so does the hybridisation (promotion) energy** the xenon must pay. That cost is only repaid when enough strong Xe–O bonds are formed. The lower oxides therefore fall apart:
+>
+> \[\mathrm{XeO\rightarrow Xe+\tfrac{1}{2}O_2};\qquad \mathrm{2XeO_2\rightarrow XeO_3+Xe+O_2}\]
+>
+> So **XeO (+2) and XeO₂ (+4) are not obtainable**, **XeO₃ (+6) is the stable oxide**, and **XeO₄ (+8) exists but not at room temperature** — it is a colourless gas, mp −35.9 °C, and **highly explosive.**
+
+**XeO₃** is a **colourless, white, hygroscopic and dangerously explosive solid** (ΔfH° ≈ **+402 kJ mol⁻¹** — the positive value is the explosion hazard in one number), with a **pyramidal, sp³** structure (three bond pairs, one lone pair).
 
 **XeOF₄** is a **colourless volatile liquid**, **square pyramidal.**
 

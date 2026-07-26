@@ -44,9 +44,9 @@ $$CuO+B_2O_3\rightarrow Cu(BO_2)_2$$
 
 The borate enters the slag phase.
 
-![Cyanide process for silver and gold](/notes/metallurgy/reference/cyanide-process-dark-v4-r20260726-cachefix.webp)
+![Cyanide process for silver and gold](/assets/metallurgy/20260726-final/cyanide-process-dark-v4.webp)
 
-![Parkes desilverisation](/notes/metallurgy/reference/parkes-process-dark-v4-r20260726-cachefix.webp)
+![Parkes desilverisation](/assets/metallurgy/20260726-final/parkes-process-dark-v4.webp)
 
 ## Source-page details restored
 ### Silver — MacArthur–Forrest cyanide route

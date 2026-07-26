@@ -26,7 +26,7 @@ The unwanted earthy, rocky or mineral impurities associated with an ore are call
 
 ## 2. The General Metallurgical Route
 
-![General metallurgy flowchart](/notes/metallurgy/reference/universal-framework-r20260726-cachefix.webp)
+![General metallurgy flowchart](/assets/metallurgy/20260726-final/universal-framework.webp)
 
 A useful master sequence is:
 
@@ -41,7 +41,7 @@ Different ores may skip, combine or reorder these steps. For example, noble meta
 ---
 
 ## 3. Concentration of Ores — Choosing the Method
-![Four pillars of ore beneficiation](/notes/metallurgy/reference/concentration-spectrum-r20260726-cachefix.webp)
+![Four pillars of ore beneficiation](/assets/metallurgy/20260726-final/concentration-spectrum.webp)
 
 The method depends on a **physical or chemical difference** between the valuable mineral and the gangue.
 
@@ -54,7 +54,7 @@ The method depends on a **physical or chemical difference** between the valuable
 
 ## 4. Gravity Separation / Hydraulic Washing / Levigation
 
-![Gravity separation overview](/notes/metallurgy/reference/gravity-separation-r20260726-cachefix.webp)
+![Gravity separation overview](/assets/metallurgy/20260726-final/gravity-separation.webp)
 
 ### Principle
 **Gravity separation** concentrates an ore by exploiting the difference in **density (specific gravity)** between the valuable mineral and gangue. In a moving stream of water, lighter particles are carried away more readily, whereas denser mineral grains settle or remain behind.
@@ -72,7 +72,7 @@ Finely crushed or powdered ore is treated with a controlled stream of running wa
 
 hydraulic-washing description also uses an **upward stream of water**. The upward drag carries fine/light particles more readily, while denser or coarser particles have a greater tendency to settle.
 
-![Hydraulic washing and levigation](/notes/metallurgy/reference/gravity-separation/hydraulic-washing-dark.webp)
+![Hydraulic washing and levigation](/assets/metallurgy/20260726-final/gravity-separation.webp)
 
 ### Suitable examples
 
@@ -87,7 +87,7 @@ specifically illustrates $SnO_2$, $Fe_2O_3$ and $FeCr_2O_4$ being concentrated f
 ### Wilfley / shaking-table mechanism
 A **Wilfley-type table** is a slightly inclined, continuously vibrating or reciprocating table fitted with raised strips, corrugations or **riffles/barriers**.
 
-![The Wilfley table](/notes/metallurgy/reference/gravity-separation/gravity-wilfley-table-dark.webp)
+![The Wilfley table](/assets/metallurgy/20260726-final/gravity-separation.webp)
 
 1. **Feeding:** finely divided ore is fed onto the inclined table.
 2. **Water flow:** a controlled cross-flow/current of water moves over the surface.
@@ -97,7 +97,7 @@ A **Wilfley-type table** is a slightly inclined, continuously vibrating or recip
 
 > **Wilfley table = density difference + water flow + inclination + vibration + riffles.**
 
-![Stratification on a Wilfley table](/notes/metallurgy/reference/gravity-separation/wilfley-stratification-dark.webp)
+![Stratification on a Wilfley table](/assets/metallurgy/20260726-final/gravity-separation.webp)
 
 ### Why continuous removal of heavy material is essential
 The heavy fraction must be removed continuously or at a suitable rate. If dense material accumulates excessively behind the riffles/barriers, the bed becomes overloaded. Eventually heavy and light particles may begin to pass the barriers together, causing a sharp fall in separation efficiency.
@@ -114,7 +114,7 @@ Water does more than provide the separating flow:
 ### Hydraulic classifier concept
 A **hydraulic classifier** sends an upward or otherwise controlled stream of water through a bed or suspension of particles. The upward drag acts more effectively on particles that are fine and/or light, while coarse and/or dense particles tend to settle.
 
-![Hydraulic classifier](/notes/metallurgy/reference/gravity-separation/hydraulic-classifier-dark.webp)
+![Hydraulic classifier](/assets/metallurgy/20260726-final/gravity-separation.webp)
 
 Thus hydraulic classification depends on **settling velocity**, which is influenced by:
 
@@ -140,7 +140,7 @@ Thus hydraulic classification depends on **settling velocity**, which is influen
 - **Table inclination and vibration:** must be adjusted for proper stratification and transport.
 - **Feed rate and riffle loading:** overloading reduces selectivity.
 
-![Factors affecting gravity separation efficiency](/notes/metallurgy/reference/gravity-separation/gravity-efficiency-dark.webp)
+![Factors affecting gravity separation efficiency](/assets/metallurgy/20260726-final/gravity-separation.webp)
 
 > **JEE / NEET exam trap:** do not write “all oxide ores are concentrated by gravity separation.” The correct criterion is a sufficient difference in density/settling behaviour between the valuable mineral and gangue.
 
@@ -150,7 +150,7 @@ Thus hydraulic classification depends on **settling velocity**, which is influen
 
 **Principle:** either the ore or the gangue must respond differently to a magnetic field.
 
-![Magnetic separation conveyor](/notes/metallurgy/reference/magnetic-separation-r20260726-cachefix.webp)
+![Magnetic separation conveyor](/assets/metallurgy/20260726-final/magnetic-separation.webp)
 
 A crushed ore is carried on a conveyor over a magnetic pulley/roller:
 - magnetic particles remain attracted longer and fall nearer the roller,
@@ -163,7 +163,7 @@ Cassiterite $SnO_2$ may contain magnetic wolframite-type impurities, commonly re
 
 ---
 
-![Ore and concentration decision map](/notes/metallurgy/reference/ore-foundations-r20260726-cachefix.webp)
+![Ore and concentration decision map](/assets/metallurgy/20260726-final/ore-foundations.webp)
 
 ## Source-detail restoration
 - **Mineral vs ore is economic, not purely chemical.** A mineral may contain a metal yet fail to be an ore if extraction is uneconomic or creates difficult impurities.

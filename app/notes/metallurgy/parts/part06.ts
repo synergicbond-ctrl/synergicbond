@@ -63,7 +63,7 @@ Thus Zn/Cd can be volatilised and condensed while less volatile Pb/Fe remain.
 
 ## 4. Zone Refining — Ultra-Purification
 
-![Zone refining](/notes/metallurgy/reference/zone-refining-r20260726-cachefix.webp)
+![Zone refining](/assets/metallurgy/20260726-final/zone-refining.webp)
 
 **Principle:** an impurity may be more soluble in the **liquid** phase than in the solid phase.
 
@@ -86,7 +86,7 @@ A successful vapour-phase refining route requires an intermediate that is:
 2. readily **decomposed at an achievable temperature** to regenerate pure metal.
 
 ### Mond process — Ni
-![Mond process for nickel](/notes/metallurgy/reference/mond-process-r20260726-cachefix.webp)
+![Mond process for nickel](/assets/metallurgy/20260726-final/mond-process.webp)
 
 At moderate temperature:
 $$Ni+4CO\rightleftharpoons Ni(CO)_4(g)$$
@@ -97,7 +97,7 @@ $$Ni(CO)_4\rightarrow Ni+4CO$$
 Impurities that do not form the same volatile carbonyl are left behind.
 
 ### van Arkel–de Boer / iodide process
-![van Arkel iodide refining](/notes/metallurgy/reference/van-arkel-r20260726-cachefix.webp)
+![van Arkel iodide refining](/assets/metallurgy/20260726-final/van-arkel.webp)
 
 Used for very pure reactive metals such as Ti, Zr and Hf.
 
@@ -137,7 +137,7 @@ Heating drives off Hg because of its much greater volatility, leaving Ag/Au behi
 
 ## 8. Electrorefining — General Principle
 
-![Electrorefining cell](/notes/metallurgy/reference/electrorefining-dark-v4-r20260726-cachefix.webp)
+![Electrorefining cell](/assets/metallurgy/20260726-final/electrorefining-dark-v4.webp)
 
 - **Anode:** impure metal.
 - **Cathode:** thin sheet/starting surface of pure metal.
@@ -158,9 +158,9 @@ Anode mud can contain valuable Ag, Au and Pt-group metals, so it is processed ra
 
 ---
 
-![Master refining methods](/notes/metallurgy/reference/refining-toolkit-r20260726-cachefix.webp)
+![Master refining methods](/assets/metallurgy/20260726-final/refining-toolkit.webp)
 
-![Mond and van Arkel refining](/notes/metallurgy/reference/vapor-phase-refining-r20260726-cachefix.webp)
+![Mond and van Arkel refining](/assets/metallurgy/20260726-final/vapor-phase-refining.webp)
 
 ## Refining data/examples explicitly restored from ### Broad classification in the handwritten notes
 - **Thermal refining:** impurity reduction typically to about the percent level depending on process.

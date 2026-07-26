@@ -190,7 +190,7 @@ Consider the following:
 ---
 
 ## Reaction Map
-![Metallurgy synthesis matrix](/notes/metallurgy/reference/master-matrix-dark-v4-r20260726-cachefix.webp)
+![Metallurgy synthesis matrix](/assets/metallurgy/20260726-final/master-matrix-dark-v4.webp)
 
 ## Nitric-Acid and Redox Details
 ### Manganate disproportionation

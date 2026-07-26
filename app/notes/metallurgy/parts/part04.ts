@@ -20,7 +20,7 @@ In many blast-furnace zones, **CO is the chief direct reducing gas**, even thoug
 ---
 
 ## 3. Carbon Reduction / Smelting
-![Carbon reduction of Fe, Zn and Sn oxides](/notes/metallurgy/reference/carbon-reduction-dark-v4-r20260726-cachefix.webp)
+![Carbon reduction of Fe, Zn and Sn oxides](/assets/metallurgy/20260726-final/carbon-reduction-dark-v4.webp)
 
 **Smelting** is high-temperature extraction in which a charge containing ore/oxide, reducing agent and flux is heated so that metal and slag phases can separate.
 
@@ -61,7 +61,7 @@ A good slag generally:
 ---
 
 ## 4. Self-Reduction / Auto-Reduction
-![Self-reduction loop](/notes/metallurgy/reference/self-reduction-dark-v4-r20260726-cachefix.webp)
+![Self-reduction loop](/assets/metallurgy/20260726-final/self-reduction-dark-v4.webp)
 
 Some sulphide ores can supply their own reducing species after **partial oxidation**. No external carbon reducing agent is required in the decisive metal-forming step.
 
@@ -84,7 +84,7 @@ $$PbS+PbSO_4\rightarrow2Pb+2SO_2$$
 
 ## 5. Thermite / Aluminothermic Reduction
 
-![Thermite reaction concept](/notes/metallurgy/reference/thermite-r20260726-cachefix.webp)
+![Thermite reaction concept](/assets/metallurgy/20260726-final/thermite.webp)
 
 Aluminium has a very high affinity for oxygen and can reduce certain refractory metal oxides.
 
@@ -128,9 +128,9 @@ These are examples of **pyrometallurgical** operations because strong heating is
 
 ---
 
-![Flux, gangue and slag](/notes/metallurgy/reference/slag-r20260726-cachefix.webp)
+![Flux, gangue and slag](/assets/metallurgy/20260726-final/slag.webp)
 
-![Reduction method decision map](/notes/metallurgy/reference/reduction-spectrum-r20260726-cachefix.webp)
+![Reduction method decision map](/assets/metallurgy/20260726-final/reduction-spectrum.webp)
 
 ## Carbon reduction — source-specific points
 lists Fe, Sn, Pb and Zn among metals whose extraction may involve carbon/CO at appropriate temperatures.

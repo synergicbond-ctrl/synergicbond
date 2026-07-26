@@ -1,6 +1,7 @@
 import { MoleculeDiagram, StructureGallery } from "./MoleculeDiagram";
 import { MODiagram } from "./MODiagram";
 import { OxidationStateMap, TrendChart, ProcessFlow, ComparisonGraphic } from "./Charts";
+import { OrbitalDiagram, MulticentreBond, ThermalMap } from "./Bonding";
 import { VIZ } from "./theme";
 
 /**
@@ -17,19 +18,25 @@ import { VIZ } from "./theme";
  * type means adding one entry here — the prose does not need to know anything
  * about React.
  *
- * `ReactionNetwork`, `HydrolysisMap` and `ProcessFlow` share one implementation
- * (a labelled directed graph); they are aliased rather than duplicated so the
- * three read identically on the page.
+ * `ReactionNetwork`, `HydrolysisMap`, `DisproportionationMap` and `ProcessFlow`
+ * share one implementation (a labelled directed graph); they are aliased rather
+ * than duplicated so all four read identically on the page. The alias names are
+ * kept because the visual register refers to them by role, and a lesson author
+ * should be able to write the name that matches the chemistry.
  */
 const REGISTRY = {
   MoleculeDiagram,
   StructureGallery,
   MODiagram,
+  OrbitalDiagram,
+  MulticentreBond,
   OxidationStateMap,
   TrendChart,
+  ThermalMap,
   ProcessFlow,
   ReactionNetwork: ProcessFlow,
   HydrolysisMap: ProcessFlow,
+  DisproportionationMap: ProcessFlow,
   ComparisonGraphic,
 } as const;
 

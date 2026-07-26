@@ -9,13 +9,37 @@ ed., Ch. 10).
   Main body below = pp. 448–470; **Addendum 1** = pp. 471–482.
 - **Part 4 — Group 16 — COMPLETE: pp. 483–512**, §10.46–10.55 + question sets.
   **Addendum 2**.
+- **Part 5 — Group 17 — COMPLETE: pp. 513–541**, §10.56–10.66 + question sets.
+  **Addendum 3**, plus its repair-and-completion pass.
 
-**Not yet read in this file:** lines 8089–11169 — **Part 5 Group 17, Part 6
-Group 18** — and lines 107–4003 (Groups 13–14, partly covered by other copies
-of the same author). See the Source Coverage Register for exact page
-accounting.
+**Not yet read in this file:** lines 9992–11169 — **Part 6, Group 18** — and
+lines 107–4003 (Parts 1–2, Groups 13–14, partly covered by other copies of the
+same author). See the Source Coverage Register for exact page accounting.
 
 `NEW` = absent from the shipped course. `HAVE` = already covered.
+
+## Bonding-model policy for this course
+
+Three rulings, fixed here so that every lesson states them the same way.
+
+1. **The weak F–F bond.** The course explanation is **lone-pair/lone-pair
+   repulsion across an unusually short internuclear distance** (Coulson).
+   Mulliken's p–d hybridisation is recorded as *history only* and must never
+   be presented as the preferred or modern account. The repulsion argument
+   wins because it invokes nothing beyond electrons already present, and
+   because it transfers unchanged to the weak N–N bond in hydrazine and the
+   weak O–O bond in peroxides.
+2. **pπ–dπ in oxoanions.** Historical pπ–dπ descriptions are kept — they are
+   the examination model and they predict geometry, bond order and acidity
+   correctly — but they are **labelled as historical and kept typographically
+   separate** from the modern account, which attributes the short bonds and
+   the stability to π delocalisation over the oxygens plus the Xδ⁺–Oδ⁻ charge
+   distribution, with little real d-orbital occupancy.
+3. **Born–Haber and energy-cycle arguments are thermodynamics, not molecular
+   orbital theory.** The acid-strength cycle for HX, the oxidising-power cycle
+   for X₂, and the lattice-versus-hydration argument for why X⁺ does not form
+   are registered as **topics**, never as MO-theory entries, and lessons must
+   not describe them as bonding models.
 
 ---
 
@@ -591,3 +615,708 @@ PDF's own typesetting is intact.
 - **§10.50 General properties of oxides** — a section the course did not have
   at all. It is the natural home for the acidic/basic/amphoteric framework
   that Groups 13–17 all draw on.
+
+---
+
+# Addendum 3 — Group 17 completed (pp. 513–541, lines 8089–9992)
+
+Part 5 of `151716181314.pdf` read end to end: §10.56 Extraction and uses →
+§10.66 Pseudohalogens, plus the Group 17 question apparatus and answer key.
+Sections covered: 10.56, 10.57, 10.58, 10.59, 10.60, 10.61, 10.62, 10.63,
+10.64, 10.65, 10.66. **Two of these — 10.65 Polyhalides and 10.66
+Pseudohalogens — were named coverage gaps. Both are now closed.**
+
+## A. Topic register — additions A63–A86
+
+| # | Topic | Where it belongs | Why it earns a place |
+|---|---|---|---|
+| A63 | Why halogens do **not** form X⁺ though Cl, Br, I have lower IE than H | §15 | The answer is lattice and hydration energy, not ionisation energy. H⁺ is tiny so its hydration enthalpy (−1091) pays the bill; X⁺ is large and cannot. One argument, and it also explains why `[I(pyridine)₂]⁺NO₃⁻` is the rare exception. |
+| A64 | Fluorine's anomalously weak F–F bond: Mulliken vs Coulson | §15 + MO section | Two competing explanations, and the source picks one. A model-choice teaching moment, not a fact to memorise. |
+| A65 | Why F₂ is the strongest oxidant even though Cl has the highest electron affinity | §15 | A full Born–Haber cycle. Summed ΔH°: F −836, Cl −597.5, Br −552.5, I −466 kJ mol⁻¹. |
+| A66 | The three different fates of X₂ in water | §15 | F₂ oxidises water (ΔG° = −795); Cl₂ could but is kinetically blocked, so it disproportionates instead; I₂ runs backwards (ΔG° = +105) — which is why iodine titrations turn blue again on standing. |
+| A67 | Industrial fluorine: why it is genuinely hard | §15 | KF:HF ratio 1:13 → 1:2, Monel vessels, ungraphitized carbon anodes, diaphragm separation. Real engineering constraints, each traceable to a chemical cause. |
+| A68 | Graphite anodes fail by intercalation | §15 (ties to Group 14) | F atoms force the sheets apart, buckle them, conduction stops, current rises, explosion. Directly reuses the graphite-intercalation idea from the Group 14 lesson. |
+| A69 | Fluorocarbons, PTFE, freons | §15 | Inert to conc. HNO₃, H₂SO₄, KMnO₄, O₃, LiAlH₄ and carbon at 1000 °C; attacked by molten Na; on pyrolysis the C–C bonds break before C–F. |
+| A70 | Fluoride and teeth: hydroxyapatite → fluoroapatite | §15 | 1 ppm protects, >2 ppm mottles. A quantitative dose–response, not a slogan. |
+| A71 | Modified Deacon process | §15 | CuCl₂ with didymium (Pr + Nd) oxide promoter, fed by HCl from vinyl-chloride manufacture. |
+| A72 | Commercial bromine from brine | §15 | pH 3.5, Cl₂ displacement, air blow-out, Na₂CO₃ absorption to NaBr + NaBrO₃, then re-acidify. Four steps, each with a reason. |
+| A73 | Iodine from Chile saltpetre | §15 | The IO₃⁻/I⁻ comproportionation `5I⁻ + IO₃⁻ + 6H⁺ → 3I₂ + 3H₂O` is the heart of it. |
+| A74 | Solid iodine as an intrinsic semiconductor | §15 | Conductivity **rises** with temperature — unlike a metal. Liquid I₂ self-ionises: `3I₂ ⇌ I₃⁺ + I₃⁻`. |
+| A75 | HX boiling points, and why HF breaks the trend | §16 | Zig-zag H-bonded chains in solid and liquid; cyclic (HF)₆, (HF)₂ and HF monomer coexist in the **gas**. |
+| A76 | Why HF is the *weakest* halogen acid | §16 | Full energy cycle. Three causes: the H–F bond is nearly twice as hard to break as H–I, dehydrating aqueous HF costs extra because of H-bonding, and F's electron affinity is unexpectedly low. |
+| A77 | Liquid HF as a non-aqueous solvent | §16 | `2HF ⇌ H₂F⁺ + F⁻`. HNO₃, H₂SO₄ and HCl are all **bases** in it. Only HClO₄ and fluoride acceptors (SbF₅, AsF₅, NbF₅, BF₃) act as acids. |
+| A78 | Halogen oxides: why F gives *fluorides of oxygen* | §15 | Electronegativity ordering decides which element is named as the anion. And I₂O₄ and I₄O₉ are ionic, which is genuinely surprising. |
+| A79 | Bond angles F₂O 103° < Cl₂O 111° < Br₂O 112° | §15 + VSEPR | The angle **widens** down the group because the big halogens crowd each other — the opposite of the naive electronegativity argument. |
+| A80 | Bleaching powder Ca(OCl)Cl as a working reagent | §15 | Auto-oxidation to chlorate, CoCl₂-catalysed O₂ release, and seven distinct oxidations. |
+| A81 | ClO₂ — an odd-electron molecule that refuses to dimerise | §15 + MO section | Paramagnetic, angular 118°, both bonds 1.47 Å. It does not pair up because the odd electron is delocalised. Contrast NO₂, which does dimerise. |
+| A82 | HOF, and oxygen in the **zero** oxidation state | §15 | H(+I), O(0), F(−I). The one compound that breaks every oxidation-state reflex a student has. |
+| A83 | Why acid strength rises HOCl < HClO₂ < HClO₃ < HClO₄ | §15 | Hydration energy predicts the *opposite*; the O–H bond strength decides. Generalises to H₂SO₄ > H₂SO₃ and HNO₃ > HNO₂. |
+| A84 | Interhalogens: which ones exist, and why | §15 | AX and AX₃ need a modest electronegativity gap; AX₅ and AX₇ need a big atom hosting small ones. Hydrolysis always yields the oxoacid of the **larger** halogen. |
+| A85 | Polyhalides (closes §10.65) | §15 | I₃⁻ through I₉⁻ and I₈²⁻; why big anions demand big cations; and why thermal decomposition is decided by lattice energy, so the *smaller* halogen stays on the metal. |
+| A86 | Pseudohalogens (closes §10.66) | §15 | CN⁻, SCN⁻, SeCN⁻, OCN⁻, NCN²⁻, ONC⁻, N₃⁻ and the six specific respects in which CN⁻ behaves like a halide. |
+
+## B. Compound register — Group 17 additions (~130 species)
+
+**Elements and their reagent forms:** F₂, Cl₂, Br₂, I₂, At; tincture of iodine
+(I₂ in aqueous KI), French iodine (alcoholic).
+
+**Hydrogen halides:** HF, HCl, HBr, HI; (HF)₂, cyclic (HF)₆, (HF)ₙ chains;
+H₂F⁺; K[HF₂] (the K⁺[F–H–F]⁻ acid salt); H₂[SiF₆].
+
+**Halogen oxides — every one named:** OF₂, O₂F₂, O₄F₂, O₅F₂, O₆F₂ · Cl₂O,
+ClO₂, Cl₂O₄ (= ClOClO₃, chlorine perchlorate), Cl₂O₆ ⇌ 2ClO₃, Cl₂O₇ ·
+Br₂O, BrO₂, BrO₃ · I₂O₅, I₂O₄, I₄O₉.
+
+**Oxoacids and salts:** HOF · HOCl, HClO₂, HClO₃, HClO₄ · HOBr, HBrO₃, HBrO₄ ·
+HOI, HIO₃, HIO₄. Salts: NaOCl, Ca(OCl)₂, Ca(OCl)Cl (bleaching powder),
+NaClO₂, Ba(ClO₂)₂, NaClO₃, KClO₃, Zn(ClO₃)₂, Ba(ClO₃)₂, Ca(ClO₃)₂, NaClO₄,
+KClO₄, NH₄ClO₄, Mg(ClO₄)₂ ("anhydrone"), NaIO₃, NaIO₄.
+
+**Interhalogens:** ClF, BrF, BrCl, ICl, IBr, (IF) · ClF₃, BrF₃, (ICl₃)₂ =
+I₂Cl₆, (IF₃) · ClF₅, BrF₅, IF₅ · IF₇. Ions: I₂Cl⁺, ICl₂⁻, ICl₄⁻, IF₄⁺, IF₆⁻,
+FClO₂, ClOSO₂F.
+
+**Polyhalides:** I₃⁻, I₅⁻, I₇⁻, I₉⁻, I₈²⁻, Br₃⁻, Cl₃⁻, F₃⁻ · KI₃·H₂O, RbI₃,
+NH₄I₅, [(C₂H₅)₄N]I₇, RbI₉·2C₆H₆, [Me₄N][I₃] · K[ICl₂], K[ICl₄], Cs[IBrF],
+K[IBrCl], Cs[IF₆], Rb[ICl₂], Cs[I₃].
+
+**Pseudohalides and their dimers:** CN⁻/HCN/(CN)₂ · SCN⁻/HSCN/(SCN)₂ ·
+SeCN⁻/(SeCN)₂ · OCN⁻/HOCN · NCN²⁻/H₂NCN · ONC⁻/HONC · N₃⁻/HN₃ ·
+ClCN, BrCN, ICN · AgCN, [Cu(CN)₄]²⁻, [Co(CN)₆]³⁻.
+
+**Fluorine-specific compounds:** ClF₃ (the transport form of F₂), AlF₃,
+Na₃[AlF₆] cryolite, CF₄, CₙF₂ₙ₊₂ perfluoro compounds, CF₂=CF₂, PTFE/Teflon,
+CClF₃, CCl₂F₂, CCl₃F freons, CF₃CHBrCl (Fluothane), SF₆, SbF₅, NbF₅, AsF₅,
+[SbF₆]⁻, NaF, SnF₂, Sn₂P₂O₇, H₂[SiF₆], CaF₂, hydroxyapatite
+3(Ca₃(PO₄)₂)·Ca(OH)₂ → fluoroapatite 3(Ca₃(PO₄)₂)·CaF₂, K[Ag^III F₄], TbF₄.
+
+**Others met in reactions:** HgO·HgCl₂, COCl₂ phosgene, Cl₃CNO₂ tear gas,
+mustard gas, CHI₃ iodoform, CH₃I, AgI, NaI, KI, K₂[HgI₄] Nessler's reagent,
+thyroxine, PbClBr, 1,2-dibromoethane, PbEt₄, UF₄, UF₆, Wij's reagent (ICl).
+
+## C. Reaction register — ~85 additions
+
+Load-bearing entries, all checked:
+
+- `CaF₂ + H₂SO₄ → CaSO₄ + 2HF`; `KF + HF → K[HF₂]`; electrolysis → H₂ + F₂
+- `SiO₂ + 4HF → SiF₄ + 2H₂O`; `SiF₄ + 2HF(aq) → H₂[SiF₆]`
+- `3F₂ + Cl₂ → 2ClF₃` (200–300 °C) — the transportable form of fluorine
+- `2HCl + ½O₂ → H₂O + Cl₂` over CuCl₂/didymium oxide (modified Deacon)
+- `3Br₂ + 3Na₂CO₃ → 5NaBr + NaBrO₃ + 3CO₂`, then acidify:
+  `5HBr + HBrO₃ → 3Br₂ + 3H₂O`
+- `2IO₃⁻ + 6HSO₃⁻ → 2I⁻ + 6SO₄²⁻ + 6H⁺`; `5I⁻ + IO₃⁻ + 6H⁺ → 3I₂ + 3H₂O`
+- `F₂ + 3H₂O → 2H₃O⁺ + 2F⁻ + ½O₂` (ΔG° = −795 kJ mol⁻¹)
+- `I₂ + H₂O → 2H⁺ + 2I⁻ + ½O₂` (ΔG° = **+105**, so it runs backwards)
+- `2I⁻ + ½O₂ + 2H⁺ → I₂ + H₂O` — why the starch indicator returns
+- `2F₂ + 2NaOH(2%) → 2NaF + H₂O + OF₂`
+- `F₂ + H₂O ⇌ HOF + HF` (−40 °C)
+- `2Cl₂ + 2HgO → HgCl₂·HgO + Cl₂O` (300 °C)
+- `3Cl₂O + 10NH₃ → 6NH₄Cl + 2N₂ + 3H₂O`
+- `2NaClO₃ + 2(COOH)₂ → 2ClO₂ + 2CO₂ + (COONa)₂ + 2H₂O` — self-diluting prep
+- `2ClO₂ + 2NaOH + H₂O₂ → 2NaClO₂ + O₂ + 2H₂O`
+- `2ClO₂ + 2O₃ → Cl₂O₆ + 2O₂`
+- `Cl₂O₆ + 2NaOH → NaClO₃ + NaClO₄ + H₂O`; `Cl₂O₆ + HF → FClO₂ + HClO₄`;
+  `Cl₂O₆ + N₂O₄ → ClO₂ + [NO₂]⁺[ClO₄]⁻`
+- `2HClO₄ ⇌ Cl₂O₇` (P₄O₁₀ dehydration / H₂O)
+- `3OX⁻ → 2X⁻ + XO₃⁻` — hot, and the temperature threshold differs per halogen
+- `6NaOH + 3Cl₂ → NaClO₃ + 5NaCl + 3H₂O` (80 °C)
+- `2KClO₃ → 2KCl + 3O₂` **vs** `4KClO₃ → 3KClO₄ + KCl` — same salt, two paths
+- `2Zn(ClO₃)₂ → 2ZnO + 2Cl₂ + 5O₂`
+- `NaClO₃ + H₂O → NaClO₄ + H₂` (electrolysis, Pt anode's high O₂ overpotential)
+- `3UO₂ + 4BrF₃ → 3UF₄ + 2Br₂ + 3O₂`; `UF₄ + ClF₃ → UF₆ + ClF`
+- `BrF₅ + 3H₂O → 5HF + HBrO₃` — the oxoacid of the *larger* halogen
+- `3ICl ⇌ [I₂Cl]⁺ + [ICl₂]⁻`; `I₂Cl₆ ⇌ [ICl₂]⁺ + [ICl₄]⁻`; `2IF₅ ⇌ IF₄⁺ + IF₆⁻`
+- `Cs[I₃] → CsI + I₂`; `Rb[ICl₂] → RbCl + ICl` — lattice energy decides
+- The seven bleaching-powder oxidations, plus
+  `6Ca(OCl)Cl → Ca(ClO₃)₂ + 5CaCl₂` and `Ca(OCl)Cl + CO₂ → CaCO₃ + Cl₂`
+
+## D. Structural and numerical data register — additions
+
+| Species | Data |
+|---|---|
+| X₂ bond energies | F 126, Cl 210, Br 158, I 118 kJ mol⁻¹ — **Cl₂ > Br₂ > F₂ > I₂** |
+| X₂ bond lengths | 1.43, 1.99, 2.28, 2.66 Å |
+| Covalent / ionic radii | F 0.72/1.33, Cl 0.99/1.84, Br 1.14/1.96, I 1.33/2.20 Å |
+| IE₁ | 1681, 1256, 1143, 1009 kJ mol⁻¹ (H = 1311 for comparison) |
+| Electron affinity | −333, −349, −325, −296 — **maximum at Cl, not F** |
+| Hydration energy X⁻ | −513, −370, −339, −274 kJ mol⁻¹ |
+| Σ ΔH° for ½X₂ → X⁻(aq) | −836, −597.5, −552.5, −466 |
+| X₂ m.p./b.p. | −219/−188, −101/−34, −7/60, 114/185 °C |
+| HX m.p./b.p. | HF −83.1/**+19.9**, HCl −114.2/−85.0, HBr −86.9/−66.7, HI −50.8/−35.4 |
+| HX pKa | +3.2, −7, −9, −10 |
+| H–X bond length | H–F 1.0 Å vs H–I 1.7 Å |
+| F–H···F H-bond | 29 kJ mol⁻¹ in HF(g); H-bonds generally 5–35 kJ mol⁻¹ |
+| Bond energies vs C–C (347) | H–F 566, B–F 645, Al–F 582, C–F 439, N–F 272 |
+| O₂F₂ | O–O **1.22 Å** (vs 1.48 in H₂O₂), O–F 1.58 Å; decomposes at −95 °C |
+| F₂O / Cl₂O / Br₂O | ∠ 103° / 111° / 112°; O–F 1.41 Å, O–Cl 1.71 Å |
+| ClO₂ | ∠O–Cl–O 118°, both bonds 1.47 Å; paramagnetic, b.p. 11 °C |
+| Cl₂O₇ | O₃Cl–O–ClO₃, bridge angle 118°36′; six equivalent terminal Cl–O |
+| I₂Cl₆ | Planar; terminal I–Cl 2.38/2.39 Å, bridging 2.68/2.72 Å |
+| I₃⁻ | I–I 2.92 Å in [Me₄N][I₃] vs 2.66 Å in I₂ — a very weak bond |
+| Saturated aqueous X₂ (25 °C) | Cl₂ 0.091 M total / 0.030 M HOCl; Br₂ 0.21 / 1.1×10⁻³; I₂ 0.0013 / 6.4×10⁻⁶ |
+
+## E. MO-theory register — additions E17–E21
+
+- **E17 — The trihalide ions are 3-centre 4-electron σ systems.** The source's
+  own assertion–reasoning item makes the mechanism explicit: **F⁻ donates its
+  lone pair into the vacant σ\*2p orbital of F₂**, which is why F₃⁻ exists at
+  all. The same picture explains I₃⁻ directly: filling an antibonding orbital
+  must weaken the I–I bond, and it does — 2.92 Å against 2.66 Å in I₂. It also
+  explains the stability order I₃⁻ > Br₃⁻ > Cl₃⁻ > F₃⁻ (larger, more
+  polarisable, lower σ\*). This is the same 3c–4e machinery already used for
+  the bridging halides and for SF₆ (E16) — one idea, three applications.
+- **E18 — ClO₂: an odd electron that will not pair.** Odd-electron molecules
+  normally dimerise (NO₂ → N₂O₄). ClO₂ does not, because the unpaired electron
+  is delocalised over the whole molecule rather than localised on chlorine.
+  Both Cl–O bonds are 1.47 Å — shorter than a single bond and *equal*, which
+  is exactly what delocalisation requires. Teach ClO₂ and NO₂ side by side.
+- **E19 — The weak F–F bond: two models, one preferred.** *Mulliken:* Cl₂, Br₂
+  and I₂ gain some multiple-bond character through p–d hybridisation, which F₂
+  cannot; *Coulson:* the F atoms are so small that lone-pair/lone-pair
+  repulsion across the short bond weakens it. The source prefers Coulson
+  because it invokes nothing extra, and the same argument then explains the
+  weak N–N bond in hydrazine and the weak O–O bond in peroxides. Present it as
+  a worked example of choosing between models on grounds of economy — **not**
+  as one model being wrong.
+- **E20 — Halogen colour is a HOMO–LUMO gap.** The gap narrows down the group,
+  so the absorption moves to longer wavelength: F₂ pale yellow → Cl₂
+  yellow-green → Br₂ red-brown → I₂ violet. Visible light, specifically. The
+  same reasoning covers the intensity order F₂ < Cl₂ < Br₂ < I₂.
+- **E21 — Oxoanion stabilisation, revisited for halogens.** *Examination
+  model:* sp³ σ framework plus pπ–dπ donation from filled O 2p into empty
+  halogen d — and the source notes the σ bonds are weak here because s and p
+  differ appreciably in energy. *Modern interpretation:* as with sulphur
+  (E14), the shortening and the stability come mainly from charge separation
+  and π delocalisation over the oxygens. The examination model's genuine
+  payoff: it predicts *why fluorine forms no oxoacids beyond HOF* — no d
+  orbitals, no stabilisation. Keep it for that.
+
+## F. Visual register — additions V33–V44
+
+| ID | Type | Subject |
+|---|---|---|
+| V33 | TrendChart | X₂ bond energy with F₂ flagged as the anomaly |
+| V34 | ComparisonGraphic | Born–Haber cycle for oxidising power: why Cl wins on electron affinity but F wins overall |
+| V35 | ProcessFlow | The three fates of X₂ in water — oxidation, disproportionation, reverse |
+| V36 | ProcessFlow | Fluorine cell with its real constraints labelled |
+| V37 | TrendChart | HX boiling points, HF flagged; inset of the zig-zag chain |
+| V38 | ComparisonGraphic | Energy cycle for acid strength — why HF is weakest |
+| V39 | MoleculeDiagram | F₂O 103° / Cl₂O 111° / Br₂O 112° — the angle widening with size |
+| V40 | MoleculeDiagram | ClO₂: odd electron delocalised, 118°, both bonds 1.47 Å, beside N₂O₄ |
+| V41 | StructureGallery | XO⁻, XO₂⁻, XO₃⁻, XO₄⁻ on one tetrahedral skeleton |
+| V42 | MODiagram | I₃⁻ as 3c–4e: F⁻/I⁻ lone pair entering σ\* of X₂ |
+| V43 | StructureGallery | I₂Cl₆ planar dimer with the two bridging bond lengths called out |
+| V44 | ComparisonGraphic | Interhalogen existence map: which AX, AX₃, AX₅, AX₇ exist and why |
+
+## G. JEE trap bank — Group 17, items 41–65
+
+41. **Electron affinity peaks at chlorine, not fluorine** — yet F₂ is still the
+    strongest oxidising agent. Two separate quantities.
+42. **Bond energy order is Cl₂ > Br₂ > F₂ > I₂.** F₂ is out of place, and that
+    weakness is *why* fluorine is so reactive.
+43. **HF is the weakest of the halogen acids** despite the largest
+    electronegativity difference.
+44. **HF is more toxic than HCN** — 3 ppm against 10 ppm.
+45. **HCl has the highest vapour pressure of the four HX**, because HF is
+    H-bonded and HBr/HI are heavier.
+46. **HF shows hydrogen bonding even in the vapour** — cyclic (HF)₆ and (HF)₂
+    coexist with the monomer. Cyclic (HF)₆ has **six** H-bonds.
+47. **HBr and HI cannot be made with conc. H₂SO₄** — it oxidises them to Br₂
+    and I₂. Use H₃PO₄.
+48. **Br₂ purification gives NaBr + NaBrO₃, not NaOBr.** The source's own
+    assertion–reason item hinges on exactly this.
+49. **I₂ + H₂O is not spontaneous** (ΔG° = +105) — the reverse is, which is
+    why a finished iodine titration turns blue again on standing.
+50. **Electrolysis of *very dilute* NaCl gives O₂, not Cl₂.** Concentration,
+    not just the electrolyte, decides the anode product.
+51. **In HOF, oxygen is in the ZERO oxidation state** (H +I, F −I). The single
+    best oxidation-state trap in the halogens.
+52. **Fluorine forms no oxoacid except HOF** — no d orbitals to stabilise
+    XOₙ⁻.
+53. **Acid strength rises HOCl < HClO₂ < HClO₃ < HClO₄, but oxidising power
+    falls the same way.** Two orders, opposite directions, same series.
+54. **Thermal stability rises HOX < HXO₂ < HXO₃ < HXO₄** — with oxidising
+    power. Do not assume stability and reactivity track together.
+55. **OF₂ gives a neutral solution in water — it is not an acid anhydride.**
+56. **In O₂F₂ the O–O bond (1.22 Å) is much shorter than in H₂O₂ (1.48 Å),
+    while the O–F bonds are longer than in OF₂.** Both anomalies, one molecule.
+57. **Bond angle order ClO₂ (118°) > Cl₂O (111°) > H₂O (104.5°) > Cl₂S.** The
+    halogen oxides open up because of steric crowding, not electronegativity.
+58. **ClO₂ is paramagnetic and does not dimerise; NO₂ does.** Delocalisation.
+59. **KClO₃ has two decomposition routes.** With MnO₂ (or at 400–500 °C) it
+    gives O₂; without a catalyst at lower temperature it disproportionates to
+    KClO₄ + KCl.
+60. **Rb[ICl₂] decomposes to RbCl + ICl, not RbI + Cl₂.** Lattice energy keeps
+    the *smaller* halide on the metal. Likewise Cs[I₃] → CsI + I₂.
+61. **Polyhalide stability is I₃⁻ > Br₃⁻ > Cl₃⁻ > F₃⁻** — the reverse of what
+    "smaller is more stable" instincts suggest. And **F₃⁻ is now known.**
+62. **Interhalogen hydrolysis gives the oxoacid of the LARGER halogen:**
+    ICl → HOI + HCl; BrF₅ → HBrO₃ + HF.
+63. **I⁻ has the highest ionic mobility of the halides in water** — largest
+    ion, smallest hydration sheath.
+64. **Solid Cl₂O₆ is an ion pair, ClO₂⁺ClO₄⁻**, and so are I₂O₄ and I₄O₉.
+    Of the eight common halogen oxides only two are ionic.
+65. **Only two elements are liquid at room temperature in temperate
+    climates — bromine and mercury** (caesium and gallium/thallium in hot
+    ones). And I₂ **sublimes** at atmospheric pressure rather than melting.
+
+## H. Contradictions and source errors — items 18–24
+
+18. **Table 10.25 omits Br(+VII), but §10.63 reports perbromates made in
+    1968.** The table and the text of the same chapter disagree. Br does reach
+    +VII; the course will say so and note that it was unknown before 1968.
+19. **The F–F distance is given twice with different values** — 1.43 Å in
+    Table 10.29 and 1.48 Å in Coulson's argument on the next page. Accepted
+    value ≈ 1.42 Å. Using 1.43.
+20. **The I⁻ hydration enthalpy differs between two tables in the same
+    section:** −274 kJ mol⁻¹ in Table 10.27, −394 in Table 10.35. The accepted
+    value is ≈ −275, so Table 10.35 is the faulty one — and the HI row's total
+    ΔH of −167 inherits the error. **The conclusion (HI is the strongest
+    halogen acid) survives**, because it rests on the dissociation-enthalpy
+    trend, but the arithmetic does not. Course will use −274 and recompute.
+    *Note:* every row of Table 10.35 sums 9 kJ mol⁻¹ below its printed total,
+    so the table carries an unexplained systematic offset as well.
+21. **Electron affinities differ between Table 10.27 (−333/−349/−325/−296) and
+    Table 10.35 (−338/−355/−331/−302).** Using the Table 10.27 set.
+22. **The answer key inverts Comprehension Q5 of the Group 17 set.** It marks
+    (B), (C) and (D) as the incorrect statements, but those three are
+    chemically sound (HI *is* the most acidic HX; HF *is* the only one liquid
+    at room temperature; HF *does* hydrogen-bond in the vapour). The one
+    incorrect statement is (A), "HCl and HBr are liquid at room temperature".
+    Not propagated.
+23. **The answer key says glass etching does not involve SiF₄ formation** —
+    contradicting the chapter's own equation `SiO₂ + 4HF → SiF₄ + 2H₂O`
+    on p. 524. Gaseous HF gives SiF₄; aqueous HF goes on to H₂[SiF₆]. The
+    course will teach both routes and not reproduce the key's claim.
+24. **Minor typography not carried forward:** HX density column headed
+    "g cm⁻¹" for g cm⁻³; a matrix-match entry reading "NaClO₅" for NaClO₃; and
+    the bond-energy order printed as "Cl₂ > Br₂ > F₂ > +2" (the values
+    themselves make the intended I₂ unambiguous).
+
+## Addendum 3 — repair and completion pass
+
+Written while recovering an interrupted commit. Audited Addendum 3 against the
+required category list and found four genuine omissions from pp. 513–541. All
+four are filled here from material already read; **no page was re-read.**
+
+### Gap 1 — §10.61 Halides was not registered at all
+
+| # | Topic | Where it belongs | Content |
+|---|---|---|---|
+| A87 | Ionic halides and their solubility exceptions | §15 | Halides of metals in (+I), (+II), (+III) are typically ionic: Group 1, Group 2 except Be, the lanthanides, several transition metals. Most dissolve to hydrated M^n+ and X⁻. **The exceptions are the whole point:** LiF, CaF₂, SrF₂, BaF₂ are insoluble fluorides, and the chlorides, bromides and iodides of Ag(+I), Cu(+I), Hg(+I) and Pb(+II) are insoluble. Note the pattern — insolubility sits with the *fluorides* of the small hard cations and with the *heavier halides* of the soft polarisable ones. |
+| A88 | Molecular (covalent) halides | §15 | Where a metal shows variable valency the **higher oxidation state is covalent and the lower is ionic** — PbCl₄ covalent, PbCl₂ ionic. The highest oxidation state is generally reached with fluoride. Electronegative non-metals give covalent halides throughout: BCl₃, SiCl₄, PCl₅. |
+| A89 | Bridging halides as 3-centre 4-electron bonds | §15 + MO section | AlCl₃ dimerises; BeF₂ and BeCl₂ form infinite chains. The naive picture is one normal covalent bond plus one dative bond from a halogen lone pair — **but both bridge bonds are identical**, which a dative picture cannot explain. The MO description is a 3c–4e bond, the same machinery as I₃⁻ (E17) and SF₆ (E16). Three-atom bridges are known but uncommon. |
+| A90 | Fluorine as the reagent that forces maximum oxidation state | §15 | Its small size and oxidising power together produce IF₇, PtF₆, SF₆ and the other hexafluorides, BiF₅, SbF₅, TbF₄ and K[Ag^III F₄] — silver in (+III), which no other halide achieves. |
+
+**Reaction-register additions from Table 10.33** (the group reactivity summary,
+previously only partly transcribed): `X₂ + H₂ → 2HX` for all four halogens;
+`nX₂ + 2M → 2MXₙ` for most metals, most vigorous with F; `X₂ + CO → COX₂` for
+Cl and Br only; `3X₂ + 2P → 2PX₃` for all, and `5X₂ + 2P → 2PX₅` for F, Cl, Br
+only — As, Sb and Bi likewise give AsF₅, SbF₅, BiF₅, SbCl₅; `X₂ + 2S → S₂X₂`
+for Cl and Br; `2Cl₂ + S → SCl₄` chlorine only; `3F₂ + S → SF₆` fluorine only;
+`X₂ + H₂S → 2HX + S` — all four oxidise sulphide to sulphur; `X₂ + SO₂ → SO₂X₂`
+for F and Cl; `3X₂ + 8NH₃ → N₂ + 6NH₄X` for F, Cl and Br. **Iodine's absences
+in that list are the examinable content** — it will not take phosphorus to
+PI₅, will not make S₂I₂, and does not combine with S or Se at all.
+
+**Reactivity ordering registered:** F₂ reacts with every element except He, Ne
+and Ar — including xenon under mild conditions. Cu, Ni, Fe and Al survive it
+in massive form only, by growing a protective fluoride film; powdered or
+heated, they burn. Then Cl > Br > I.
+
+### Gap 2 — colour and observation register (Group 17)
+
+| Species | State at 25 °C | Colour / observation |
+|---|---|---|
+| F₂ | gas | light yellow |
+| Cl₂ | gas | yellow-green; detectable by smell at 3 ppm, sore throat at 15 ppm |
+| Br₂ | liquid (one of only two elements liquid at RT) | dark red-brown, gas and liquid alike |
+| I₂ | solid | violet vapour; black flakes with a metallic lustre; **sublimes** at atmospheric pressure |
+| ClF | gas | colourless |
+| BrF | gas | pale brown |
+| BrCl | gas | red-brown |
+| ICl | solid | ruby red |
+| IBr | solid | black |
+| ClF₃ | gas | colourless |
+| BrF₃ | liquid | pale yellow |
+| (ICl₃)₂ = I₂Cl₆ | solid | bright yellow |
+| (IF₃) | solid, unstable | yellow |
+| ClF₅, BrF₅, IF₅, IF₇ | gas / liquid / liquid / gas | all colourless |
+| OF₂ | gas | pale yellow |
+| O₂F₂ | solid | orange-yellow; decomposes at −95 °C |
+| Cl₂O | gas | yellow-brown |
+| ClO₂ | gas → liquid at 11 °C | yellow gas, deep red liquid |
+| Cl₂O₆ | liquid | dark red; freezes yellow at −180 °C |
+| Cl₂O₇ | liquid | colourless, oily |
+| ClO₂ in water | solution | dark green |
+| HClO₄ | liquid | colourless |
+| Technical HCl(aq) | solution | yellow when contaminated by Fe(III) — pure acid is colourless |
+
+Registered with it: the **cause** — colour comes from a HOMO–LUMO transition
+in the visible, the gap narrowing down the group so absorption moves to longer
+wavelength, which also gives the intensity order F₂ < Cl₂ < Br₂ < I₂ (E20).
+
+### Gap 3 — uses and hazards, stated per species rather than in bulk
+
+**F₂ / HF.** Uses: AlF₃ and synthetic cryolite Na₃[AlF₆] for aluminium
+extraction; CFCs; SF₆ as a high-voltage dielectric; the fluorinating agents
+ClF₃, BrF₃, IF₅, SbF₅; pickling steel; etching glass. Hazards: HF is toxic at
+**3 ppm — more toxic than HCN at 10 ppm**; it etches glass; its skin burns
+both dehydrate tissue and act as an acid, and heal slowly because F⁻ strips
+Ca²⁺ out of the tissue. Liquid F₂ as a rocket oxidiser has been discontinued.
+**Cl₂.** Two thirds of world production goes to organic chlorides — chiefly
+1,2-dichloroethane and vinyl chloride monomer for plastics; one fifth to
+bleaching; the rest to bleaching powder, NaOCl, ClO₂, NaClO₃, metal and
+non-metal chlorides, CCl₄, CHCl₃, DDT, and to drinking water. Hazards: used as
+a war gas in 1915; higher exposures cause lung damage and death. It is also
+the feedstock for phosgene COCl₂, tear gas Cl₃CNO₂ and mustard gas.
+**Br₂.** 1,2-dibromoethane as a lead scavenger in leaded petrol, carrying lead
+out of the engine as PbClBr — a use now in decline with PbEt₄ itself.
+**I₂.** Iodoform CHI₃ as an antiseptic; CH₃I; AgI for photographic film and
+cloud seeding; 10 ppm NaI in table salt and KI in animal feed against goitre —
+the thyroid hormone thyroxine contains iodine; tincture of iodine (I₂ in
+aqueous KI) and French iodine (alcoholic); K₂[HgI₄], Nessler's reagent, for
+ammonia; iodides and iodates throughout volumetric analysis.
+**PTFE and freons.** Non-stick coatings, chemically inert labware, electrical
+insulation; CClF₃/CCl₂F₂/CCl₃F as refrigerants and propellants; CF₃CHBrCl
+(Fluothane) as an anaesthetic.
+**ClO₂.** Bleaching wood pulp and cellulose, purifying drinking water, and
+bleaching flour — where it is **30 times as effective as chlorine**. Hazards:
+the liquid explodes above −40 °C, the gas detonates above 50 mmHg partial
+pressure, and it explodes with reducing agents — hence it is always made in
+situ and diluted with air or CO₂.
+**Chlorates and perchlorates.** NaClO₃ as a season-long weedkiller; KClO₃ and
+KClO₄ in fireworks, flares and matches; NH₄ClO₄ oxidising powdered aluminium
+in Space-Shuttle boosters, and formerly a mining blasting compound;
+Mg(ClO₄)₂ ("anhydrone") as a desiccant and dry-cell electrolyte; the sparing
+solubility of KClO₄ as the qualitative test for potassium. Hazards: solid
+chlorates explode on grinding, on heating, or on contact with organic matter
+or sulphur — far safer in solution than as solids; anhydrous HClO₄ explodes on
+contact with wood, paper, cloth, grease or rubber, and sometimes unprovoked.
+**Bleaching powder Ca(OCl)Cl.** Bleaching wood pulp and fabric; disinfectant.
+Hazard-adjacent behaviour: on standing it auto-oxidises to chlorate, and CoCl₂
+catalyses it to CaCl₂ + O₂ — so it loses strength in storage.
+**Fluoride in water.** ~1 ppm converts enamel hydroxyapatite to the harder
+fluoroapatite and cuts caries; **above 2 ppm it mottles teeth brown**, and
+higher still is harmful. NaF and H₂[SiF₆] are dosed into naturally soft water;
+NaF in toothpaste, formerly SnF₂ with Sn₂P₂O₇.
+
+### Gap 4 — visual-requirement classification
+
+Mapping V33–V44 onto the required visual vocabulary, so nothing is built as a
+copy of a textbook figure. **These are the same twelve visuals already
+registered in Addendum 3 §F, re-listed by required visual kind — not twelve
+additional ones.** Group 17's visual count is 12, plus V45–V46 below, so 14.
+
+| ID | Required visual kind | Build note |
+|---|---|---|
+| V33 | Trend graph | X₂ bond energy, F₂ marked as the anomaly |
+| V34 | **Thermodynamic cycle** | Oxidising power; must show the Cl-wins-on-electron-affinity / F-wins-overall crossover explicitly |
+| V35 | **Disproportionation + reaction network** | The three fates of X₂ in water, with ΔG° on each branch |
+| V36 | Reaction network | Fluorine cell drawn as a constraint diagram, not a copied apparatus sketch |
+| V37 | Trend graph + original SVG structure | HX boiling points with a zig-zag H-bond chain inset |
+| V38 | **Thermodynamic cycle** | Acid strength of HX; label it *thermodynamics*, never MO |
+| V39 | Original SVG structure / lone-pair visual | F₂O 103°, Cl₂O 111°, Br₂O 112° with lone pairs drawn to scale |
+| V40 | Lone-pair / electron-density visual | ClO₂'s delocalised odd electron, beside dimerised N₂O₄ |
+| V41 | Structure comparison | XO⁻ → XO₄⁻ on one tetrahedral skeleton |
+| V42 | **MO energy diagram + multicentre-bonding diagram** | I₃⁻ / F₃⁻ as 3c–4e: the donor lone pair entering σ\*(X–X), with the resulting bond lengthening annotated |
+| V43 | Original SVG structure | I₂Cl₆ planar dimer, terminal vs bridging lengths called out |
+| V44 | Structure comparison + JEE trap graphic | Which AX/AX₃/AX₅/AX₇ exist, and the size/electronegativity reason |
+
+Two more registered here: **V45 — oxidation-state ladder** for chlorine, −I
+through +VII with a named species on every rung and the disproportionation
+arrows drawn in; **V46 — hydrolysis map** for the interhalogens, making the
+rule visible that the oxoacid always forms on the *larger* halogen.
+
+---
+
+# Addendum 4 — Group 18 completed (pp. 542–558, lines 9992–11169)
+
+Part 6 of `151716181314.pdf` read end to end: §10.67 Occurrence → §10.74
+Structures of some xenon compounds, the Group 18 question apparatus and answer
+key, **and the chapter-wide Miscellaneous Questions** (pp. 553–558), which
+range over all six groups.
+
+**§10.73 Structure and Bonding in Xenon Compounds — the MOT section flagged as
+a course gap in the very first coverage register — is now read and registered
+in full.** So are §10.65, §10.66, §10.53, §10.50, §10.32, §10.34 having been
+closed earlier.
+
+**File 8 is now COMPLETE for Parts 3–6 and ends at line 11169.** Only Parts 1–2
+(lines 107–4003, Groups 13–14) remain unread in it.
+
+## A. Topic register — additions A91–A112
+
+| # | Topic | Where it belongs | Why it earns a place |
+|---|---|---|---|
+| A91 | "Inert gases" and "rare gases" are both wrong names | §18 | Xenon is not inert (1962) and argon is 0.93 % of the atmosphere. The naming history is the shortest route into why the group was misunderstood for sixty years. |
+| A92 | Cavendish's 1784 isolation | §18 | Remove N₂ with excess O₂ and sparking, absorb NO₂ in NaOH, burn off the excess O₂ with sulphur, absorb the SO₂ in NaOH — a residue is left. A complete separation scheme built only from Group 15–16 chemistry the student already has. |
+| A93 | Atmospheric argon is radiogenic | §18 | ⁴⁰K captures an inner electron to give ⁴⁰Ar. Argon is abundant for a nuclear reason, not a chemical one. |
+| A94 | Noble-gas radii are **non-bonded** radii | §18 | They must be compared with van der Waals radii of other elements, never with covalent radii. Every "why is the noble gas so big?" confusion starts here. |
+| A95 | Enthalpy of vaporisation as a direct measure of dispersion forces | §18 | 0.08 → 18.1 kJ mol⁻¹ down the group, tracking polarisability. The clearest quantitative demonstration of London forces anywhere in the course. |
+| A96 | The noble gases diffuse through glass, rubber, plastics and some metals | §18 | Which is why glass Dewar flasks fail for low-temperature helium work — a practical consequence of atomic size. |
+| A97 | Helium is the only element that will not solidify on cooling alone | §18 | It needs about 25 atm. Everything else freezes if you take enough heat away. |
+| A98 | Helium II, the superfluid | §18 | At the λ-point (2.2 K) the liquid abruptly stops boiling. Specific heat jumps by a factor of 10; thermal conductivity rises by 10⁶ and becomes **800× that of copper**; electrical resistance goes to zero; viscosity becomes effectively zero, one hundredth that of gaseous hydrogen; the liquid creeps up the vessel wall and over the rim until both levels match. Surface tension and compressibility are anomalous too. |
+| A99 | Molecular ions in discharge tubes | §18 + MO section | He₂⁺, HeH⁺, HeH²⁺, Ar₂⁺ — momentary, detected spectroscopically. Neutral He₂ is unstable. Lewis theory forbids all of them; MO theory predicts exactly which can exist. |
+| A100 | Clathrates: trapped, not bonded | §18 | β-quinol crystallised under 10–40 atm of Ar, Kr or Xe traps the gas in ~4 Å cavities; composition ≈ 3 quinol : 1 guest, and not every cavity fills. Dissolving the solid breaks the hydrogen-bonded host and the gas simply leaves. |
+| A101 | Why He and Ne form no clathrate | §18 | They are small enough to escape the cavity. A size argument that runs the opposite way to every other size argument in the course. |
+| A102 | Noble-gas hydrates and zeolite trapping | §18 | ≈ 6H₂O : 1 gas atom; zeolite samples up to 20 % Ar by weight; used to store radioactive Kr and Xe from reactors. |
+| A103 | Bartlett's prediction and what actually formed | §18 | IE(O₂ → O₂⁺) = 1165 kJ mol⁻¹ against IE(Xe) = 1170. PtF₆ had already oxidised O₂ to O₂⁺[PtF₆]⁻, so xenon should follow. **The product was not Xe⁺[PtF₆]⁻** as first reported — it is [XeF]⁺[Pt₂F₁₁]⁻, via [XeF]⁺[PtF₆]⁻ + PtF₅ at 25 °C then 60 °C. A worked example of a right prediction with a wrong product. |
+| A104 | Why xenon and not the others | §18 | He, Ne, Ar have ionisation energies far too high. Kr's is a little lower than Xe's and it manages KrF₂. Rn's is lower still, so it should be *more* reactive — but every isotope is radioactive and short-lived, so only RnF₂ and a few complexes are known. Ease of compound formation and amount of chemistry known are different things. |
+| A105 | Xenon reacts directly only with fluorine | §18 | Every oxygen compound is reached from a fluoride. There is evidence for XeCl₂ and XeCl₄, and one compound with a Xe–N bond. |
+| A106 | The F₂ : Xe ratio decides the product | §18 | 400 °C in a sealed nickel vessel: Xe:F₂ of 2:1 gives XeF₂, 1:5 gives XeF₄, 1:20 gives XeF₆. Stoichiometric control, not different chemistry. |
+| A107 | The three fluorides hydrolyse in three different ways | §18 | XeF₂ dissolves and hydrolyses **slowly** (faster in alkali) with no change in xenon's oxidation state; XeF₄ reacts violently and **disproportionates** to Xe(0) and Xe(+VI); XeF₆ reacts violently straight to XeO₃, and with only a little water stops at XeOF₄. |
+| A108 | XeF₆ attacks glass and silica | §18 | `2XeF₆ + SiO₂ → 2XeOF₄ + SiF₄`. It cannot be handled in glassware — which is why nickel and Monel are used. |
+| A109 | Xenate → perxenate disproportionation | §18 | XeO₃ dissolves without ionising; above pH 10.5 it gives [HXeO₄]⁻ (Xe +VI), which slowly disproportionates to perxenate [XeO₆]⁴⁻ (Xe +VIII) and Xe(0). |
+| A110 | Sodium perxenate as a gravimetric reagent for sodium | §18 | Solubility in 0.5 M NaOH is only 0.2 g L⁻¹. An analytical use for a noble-gas compound. |
+| A111 | XeF₂ and XeF₆ are fluoride donors; XeF₆ is also an acceptor | §18 | Donor: XeF₂·MF₅ → [XeF]⁺[MF₆]⁻; XeF₂·2MF₅ → [XeF]⁺[M₂F₁₁]⁻; 2XeF₂·MF₅ → [Xe₂F₃]⁺[MF₆]⁻. Acceptor: XeF₆ + RbF → Rb[XeF₇], and 2Cs[XeF₇] → XeF₆ + Cs₂[XeF₈] at 50 °C. One molecule, both roles. |
+| A112 | XeF₂ in synthetic organic chemistry | §18 | It fluorinates the hetero element and leaves alkyl and aryl groups alone: CH₃I → CH₃IF₂, C₆H₅I → C₆H₅IF₂, (C₆H₅)₂S → (C₆H₅)₂SF₂. In anhydrous HF its reactivity jumps, probably through XeF⁺ — enough to take platinum to PtF₆ and S₈ to SF₆. |
+
+## B. Compound register — Group 18
+
+**Elements:** He, Ne, Ar, Kr, Xe, Rn. Configurations 1s² for He, ns²np⁶ for the
+rest. Electron affinity zero or slightly negative; the highest ionisation
+energies of any elements.
+
+**Momentary molecular ions:** He₂⁺, HeH⁺, HeH²⁺, Ar₂⁺. (Neutral He₂ unstable.)
+
+**Xenon fluorides:** XeF₂ (+II, m.p. 129 °C, linear), XeF₄ (+IV, m.p. 117 °C,
+square planar), XeF₆ (+VI, m.p. 49.6 °C, distorted octahedron). All three are
+white solids, all sublime at room temperature, all store indefinitely in nickel
+or Monel, all are extremely strong oxidising and fluorinating agents.
+
+**Xenon oxides:** XeO₃ (+VI, explosive white hygroscopic solid), XeO₄ (+VIII,
+m.p. −35.9 °C, tetrahedral, volatile and explosive).
+
+**Xenon oxofluorides:** XeOF₄ (+VI, m.p. −46 °C, square pyramidal), XeO₂F₂
+(+VI, m.p. 30.8 °C, see-saw), XeO₃F₂ (+VIII, m.p. −54.1 °C, trigonal
+bipyramidal), XeOF₂ (T-shaped).
+
+**Xenon oxoanions and their salts:** [HXeO₄]⁻ xenate; [XeO₆]⁴⁻ perxenate;
+Na₄XeO₆·6H₂O and Na₄XeO₆·8H₂O (both structurally determined by X-ray);
+Ba₂[XeO₆] (octahedral, decomposes above 300 °C).
+
+**Xenon fluoro-cations and fluoro-anions:** [XeF]⁺, [XeF₃]⁺, [XeF₅]⁺,
+[Xe₂F₃]⁺, [XeF₇]⁻, [XeF₈]²⁻ (and its caesium salt Cs₂[XeF₈]).
+
+**Xenon complexes with pentafluorides:** XeF₂·PF₅, ·AsF₅, ·SbF₅, ·NbF₅, ·TaF₅,
+·RuF₅, ·OsF₅, ·RhF₅, ·IrF₅, ·PtF₅; XeF₂·2SbF₅; XeF₄·PF₅, ·AsF₅, ·SbF₅;
+XeF₆·BF₃, ·GeF₄, ·2GeF₄, ·4SnF₄, ·AsF₅, ·SbF₅. Also [XeF]⁺[PtF₆]⁻ and
+[XeF]⁺[Pt₂F₁₁]⁻ from the original Bartlett work, with PtF₅ as intermediate.
+
+**Doubtful or limited:** XeCl₂ and XeCl₄ (evidence only); one compound with a
+Xe–N bond; KrF₂; RnF₂ and a few radon complexes.
+
+**Clathrate hosts and guests:** β-quinol (1,4-dihydroxybenzene) with Ar, Kr,
+Xe, and equally with O₂, SO₂, H₂S, MeCN and CH₃OH; water as host in the noble
+gas hydrates; synthetic zeolites.
+
+**Reference species from the same pages:** O₂⁺[PtF₆]⁻, PtF₆, PtF₅, PtF₄, SF₄,
+SF₆, CH₃IF₂, C₆H₅IF₂, (C₆H₅)₂SF₂.
+
+## C. Reaction register — Group 18 additions
+
+- `⁴⁰K + e⁻ → ⁴⁰Ar` (electron capture; see contradiction 25)
+- `PtF₆ + O₂ → O₂⁺[PtF₆]⁻`
+- `Xe[PtF₆] + PtF₆ →(25 °C) [XeF]⁺[PtF₆]⁻ + PtF₅ →(60 °C) [XeF]⁺[Pt₂F₁₁]⁻`
+- `Xe + F₂ →(400 °C, Ni)` XeF₂ / XeF₄ / XeF₆ by ratio
+- `XeF₂ + H₂ → 2HF + Xe`; `XeF₄ + 2H₂ → 4HF + Xe`; `XeF₆ + 3H₂ → 6HF + Xe`
+  — quantitative, and therefore analytically useful
+- `XeF₂ + 2HCl → 2HF + Xe + Cl₂`; `XeF₄ + 4KI → 4KF + Xe + 2I₂`
+- `XeF₄ + 2SF₄ → Xe + 2SF₆`; `XeF₄ + Pt → Xe + PtF₄`
+- `Pt + 3XeF₂/HF → PtF₆ + 3Xe`; `S₈ + 24XeF₂/HF → 8SF₆ + 24Xe`
+- `CH₃I + XeF₂ → CH₃IF₂ + Xe`; `C₆H₅I + XeF₂ → C₆H₅IF₂ + Xe`;
+  `(C₆H₅)₂S + XeF₂ → (C₆H₅)₂SF₂ + Xe`
+- `2XeF₂ + 2H₂O → 2Xe + 4HF + O₂` (slow; faster in alkali)
+- `3XeF₄ + 6H₂O → 2Xe + XeO₃ + 12HF + 1½O₂` — **disproportionation**
+- `XeF₆ + 6H₂O → XeO₃ + 6HF`; `XeF₆ + H₂O → XeOF₄ + 2HF`
+- `2XeF₆ + SiO₂ → 2XeOF₄ + SiF₄` (coefficient repaired — see contradiction 27)
+- `XeO₃ + 2XeF₆ → 3XeOF₄`; `XeO₃ + XeOF₄ → 2XeO₂F₂`
+- `XeO₃ + NaOH → Na[HXeO₄]`
+- `2[HXeO₄]⁻ + 2OH⁻ → [XeO₆]⁴⁻ + Xe + O₂ + 2H₂O`
+- `Na₄XeO₆ + 2H₂SO₄(conc.) →(−5 °C) 2Na₂SO₄ + XeO₄ + 2H₂O`
+- Perxenate oxidations: HCl → Cl₂, H₂O → O₂, **Mn²⁺ → MnO₄⁻**
+- `XeF₆ + RbF → Rb[XeF₇]`; `2Cs[XeF₇] →(50 °C) XeF₆ + Cs₂[XeF₈]`
+
+## D. Structural and numerical data register — Group 18
+
+| Element | IE₁ (kJ mol⁻¹) | ΔH_vap (kJ mol⁻¹) | m.p. (°C) | b.p. (°C) | radius (Å) | atmosphere (% vol) |
+|---|---|---|---|---|---|---|
+| He | 2372 | 0.08 | — (none at 1 atm) | −269.0 | 1.20 | 5.2 × 10⁻⁴ |
+| Ne | 2080 | 1.7 | −248.6 | −246.0 | 1.60 | 1.5 × 10⁻³ |
+| Ar | 1521 | 6.5 | −189.4 | −186.0 | 1.91 | 0.93 |
+| Kr | 1351 | 9.1 | −157.2 | −153.6 | 2.00 | 1.1 × 10⁻⁴ |
+| Xe | 1170 | 12.7 | −111.8 | −108.1 | 2.20 | 8.7 × 10⁻⁶ |
+| Rn | 1037 | 18.1 | −71 | −62 | — | radiogenic only |
+
+**Bond lengths and geometry.** Xe–F in XeF₂ = 2.00 Å (both equal); Xe–F in
+XeF₄ = 1.95 Å. In XeF₂·2SbF₅ the two Xe–F distances are **1.84 Å and 2.35 Å**,
+against a van der Waals Xe···F distance of **3.50 Å**.
+
+**VSEPR bookkeeping (Table 10.43), electron pairs / lone pairs / shape.**
+XeF₂ 5/3 linear (lone pairs equatorial in a trigonal bipyramid) · XeF₄ 6/2
+square planar · XeF₆ 7/1 distorted octahedron (capped octahedron or pentagonal
+bipyramid) · XeO₃ 7/1 pyramidal, three π bonds · XeOF₂ 6/2 T-shaped, one π ·
+XeO₂F₂ 7/1 see-saw, two π · XeOF₄ 7/1 square pyramidal, one π · XeO₄ 8/0
+tetrahedral, four π · XeO₃F₂ 8/0 trigonal bipyramidal, three π ·
+[XeO₆]⁴⁻ 8/0 octahedral, two π.
+
+**The two numbers that sink the valence-bond picture.** The radial electron
+distribution maximum for a Xe 5d orbital lies at **4.9 Å** from the nucleus —
+far outside the bonding region. And the Xe 5p–5d energy separation is about
+**960 kJ mol⁻¹**, far too large for effective hybridisation. Fluorine's
+electronegativity does contract d orbitals, and the source concedes that if
+the contraction were large enough valence bond would suffice — but it does not
+claim that it is.
+
+## E. MO-theory register — additions E22–E26
+
+- **E22 — The discharge-tube ions are the cleanest MO exercise in the course.**
+  Lewis theory says a closed shell cannot bond, and predicts none of these
+  species. MO theory predicts exactly which exist and with what bond order:
+  **He₂ bond order 0 (does not exist); He₂⁺ 0.5; HeH⁺ 1.0; HeH²⁺ 0.5;
+  Ar₂⁺ 0.5.** The source's own question turns on which have *fractional* bond
+  order — HeH⁺ is the odd one out at exactly 1. Removing one electron from an
+  antibonding orbital is what creates the bond, and that is a statement no
+  Lewis structure can make.
+- **E23 — XeF₂ and XeF₄ as 3-centre 4-electron systems.** *Examination model:*
+  promote a 5p electron to 5d, sp³d hybridise, place three lone pairs
+  equatorially, get a linear molecule — and it does give the right answer.
+  *Modern interpretation:* the same 3c–4e σ bonding already used for I₃⁻
+  (E17), the halide bridges (A89) and SF₆ (E16). Both Xe–F bonds are 2.00 Å
+  and equal, which is what a delocalised three-centre orbital requires and
+  what two different hybrid bonds would not guarantee. **The examination model
+  is kept for its predictive convenience, and the two published objections to
+  it are stated openly rather than hidden** — see the numbers in section D.
+- **E24 — XeF₆ is where the simple MO model fails, and that is worth
+  teaching.** Three mutually perpendicular 3c–4e systems predict a **regular**
+  octahedron. XeF₆ is distorted. The valence-bond capped-octahedron picture
+  gets the distortion right by placing a lone pair through an octahedral face.
+  Neither account is complete, and the source says the controversy is not
+  resolved. This is the course's one worked example of a model making a
+  falsifiable prediction and being falsified — do not paper over it.
+- **E25 — XeF₂·2SbF₅ shows bonding as a continuum, not a category.** The two
+  Xe–F distances of 1.84 Å and 2.35 Å suggest the ionic formulation
+  [XeF]⁺[Sb₂F₁₁]⁻. But 2.35 Å is far shorter than the 3.50 Å van der Waals
+  contact, so that fluorine is genuinely bridging. The real structure sits
+  **between** the ionic and the covalent-bridge extremes. The best available
+  demonstration that "ionic" and "covalent" are ends of a scale.
+- **E26 — Why the oxidation states of xenon go up in twos.** Each excitation
+  step unpairs one 5p pair, adding **two** unpaired electrons at a time, so
+  only +II, +IV, +VI and +VIII appear — never +I, +III, +V or +VII. The same
+  parity argument explains why XeO₄ exists at +VIII while **XeF₈ does not**:
+  eight fluorines around one xenon is a steric impossibility, whereas four
+  doubly-bonded oxygens is not.
+
+## F. Visual register — additions V47–V58
+
+| ID | Required visual kind | Subject |
+|---|---|---|
+| V47 | **MO energy diagram** | He₂ / He₂⁺ / HeH⁺ / HeH²⁺ on one axis, bond order printed under each |
+| V48 | Trend graph | ΔH_vap 0.08 → 18.1 kJ mol⁻¹ against polarisability — dispersion forces made quantitative |
+| V49 | Trend graph + JEE trap graphic | IE₁ falling He → Rn, with the "so why is Xe the reactive one?" annotation resolved |
+| V50 | **Original SVG structure** | β-quinol cage with a trapped Xe atom, and the same cage showing He escaping |
+| V51 | Reaction network | The F₂:Xe ratio fan at 400 °C → XeF₂ / XeF₄ / XeF₆ |
+| V52 | **Hydrolysis map** | The three fluorides' three different fates, with XeF₄'s disproportionation branch drawn explicitly |
+| V53 | **Oxidation-state ladder** | Xe 0 → +II → +IV → +VI → +VIII, one named species per rung, showing that the ladder has no odd rungs |
+| V54 | **Disproportionation map** | Xenate → perxenate + Xe(0) + O₂, with oxidation numbers on every arrow |
+| V55 | Structure comparison | All ten species of Table 10.43 on one grid, sorted by electron pairs and lone pairs |
+| V56 | **Multicentre-bonding diagram** | XeF₂ as 3c–4e, drawn to be directly comparable with the I₃⁻ figure (V42) |
+| V57 | **Lone-pair / electron-density visual + JEE trap graphic** | XeF₆: the regular octahedron the simple MO model predicts, beside the distorted one that is observed |
+| V58 | **Original SVG structure** | XeF₂·2SbF₅ with 1.84 Å, 2.35 Å and the 3.50 Å van der Waals contact all drawn to scale on one axis |
+
+## G. JEE trap bank — Group 18 and chapter-wide, items 66–95
+
+66. **Helium has the highest ionisation energy of any element** — above Ne, F
+    and H.
+67. **Argon, not neon or helium, is the most abundant noble gas** in air, and
+    the cheapest.
+68. **Rate of diffusion through glass falls from He to Xe** — it is the one
+    listed property that does not increase down the group.
+69. **He and Ne form no clathrates**, because they are small enough to escape
+    the cavity. Every other size argument in the course runs the other way.
+70. **Helium does not solidify on cooling alone.** It needs about 25 atm.
+71. **Helium II stops boiling** at the λ-point — with any normal liquid that
+    is the moment a solid appears. Here it does not.
+72. **Bartlett's first xenon compound was not Xe⁺[PtF₆]⁻.** The real product
+    is [XeF]⁺[Pt₂F₁₁]⁻.
+73. **The prediction rested on IE(O₂ → O₂⁺) ≈ IE(Xe)**, 1165 against
+    1170 kJ mol⁻¹ — the molecule's ionisation energy, not the oxygen atom's.
+74. **Radon should form compounds more readily than xenon** on ionisation
+    energy alone. Its radioactivity, not its chemistry, is why little is known.
+75. **XeF₄ hydrolysis is a disproportionation** — one xenon goes to Xe(0) and
+    another to Xe(+VI) in the same equation. XeF₂ and XeF₆ hydrolyses are not.
+76. **XeF₆ attacks silica and glass**, giving XeOF₄ and SiF₄. Nickel or Monel
+    only.
+77. **XeO₃ dissolves in water without ionising.** It needs pH above 10.5
+    before any xenate appears.
+78. **Xenon's oxidation states rise in steps of two**, because each excitation
+    unpairs a whole 5p pair. There is no Xe(+I), (+III), (+V) or (+VII).
+79. **XeO₄ exists but XeF₈ does not** — steric crowding, not oxidation state.
+80. **XeF₆ is both a fluoride donor and a fluoride acceptor.** With BF₃ or
+    SbF₅ it gives up F⁻; with RbF or CsF it takes one.
+81. **XeOF₄ has 15 lone pairs in total** (one on Xe, twelve on the fluorines,
+    two on the oxygen) and is square pyramidal, **not planar**.
+82. **XeO₂F₂ has 11 lone pairs** and a see-saw shape.
+83. **XeOF₄ uses three d orbitals** — two for the σ framework and one for the
+    π bond to oxygen.
+84. **Fluorinating Ph₂S with XeF₂ changes the d-orbital count by zero:** XeF₂
+    uses one and Ph₂SF₂ uses one.
+85. **[XeF₈]²⁻ is square antiprismatic**, with eight identical angles.
+86. **XeF₄ donating fluoride to SbF₅ gives [XeF₃]⁺[SbF₆]⁻** — sp³d cation,
+    sp³d² anion. Two different hybridisations in one salt.
+87. **Trigonal-bipyramidal *electronic* geometry belongs to XeO₃F₂, XeF₂ and
+    XeOF₂ — not XeF₄**, which is octahedral electronically and square planar
+    in shape. Electronic geometry and molecular shape are different questions.
+88. **BeF₂ is the soluble alkaline-earth fluoride;** CaF₂, SrF₂ and BaF₂ are
+    not. (Ties to A87.)
+89. **SO₂ bleaches by reduction, so its effect is temporary** — air re-oxidises
+    the substrate. H₂O₂ and Cl₂ bleach by oxidation, and that is permanent.
+90. **P₂O₅ is a stronger dehydrating agent than concentrated H₂SO₄** — it
+    dehydrates H₂SO₄ itself to SO₃. Not because phosphorus is more
+    electronegative than sulphur, which it is not.
+91. **C₃O₂ and N₅⁺ are isosteric but not isostructural** — the first is
+    linear, the second bent.
+92. **HF + SbF₅ protonates *tert*-butane** to the *tert*-butyl cation with loss
+    of H₂. A superacid strong enough to attack a saturated hydrocarbon.
+93. **PbO₂ with hot concentrated HCl gives PbCl₂ and chlorine; with cold
+    concentrated HCl saturated in Cl₂ it gives H₂PbCl₆.** Temperature decides.
+94. **Fe(CO)₅ + NO gives Fe(CO)₂(NO)₂**, not an iron nitrosyl of formula
+    Fe(NO)₅.
+95. **In the AsH₃/SbH₃ mirror test the two deposits land on opposite sides of
+    the hot zone**, because the two hydrides decompose at different
+    temperatures.
+
+## H. Contradictions and source errors — items 25–31
+
+25. **"Electron capture (β⁺ decay)" conflates two different processes.** The
+    equation as printed — ⁴⁰K + e⁻ → ⁴⁰Ar — *is* electron capture; β⁺ decay
+    emits a positron and captures nothing. The course will say electron
+    capture and drop the parenthesis.
+26. **The XeF₂/XeF₄/XeF₆ ratios are stated as "F₂/Xe" but listed as Xe:F₂.**
+    Read as F₂:Xe, a 2:1 excess of fluorine giving XeF₂ makes no sense; read
+    as Xe:F₂ the series 2:1, 1:5, 1:20 is exactly right. Corrected silently.
+27. **`2XeF₆ + SiO₂ → XeOF₄ + SiF₄` does not balance in xenon.** It needs
+    **2XeOF₄** on the right. Repaired in the reaction register above.
+28. **XeO₄'s preparation temperature is given twice with different values** —
+    −5 °C in the equation and −9 °C in the matrix-match item. Using −5 °C.
+29. **The Ce(III) → Ce(IV) oxidation by XeF₂ is printed with F₂ as a product**
+    (and is partly garbled in extraction). If XeF₂ is the oxidant, fluorine
+    must leave as fluoride, not as F₂ — releasing F₂ would leave no oxidising
+    equivalents to move cerium. Not reproduced; the course will write it as
+    fluoride.
+30. **The answer key rules "XeF₆ acts as a Lewis base" false** while accepting
+    in the same item that XeF₆ acts as a fluoride donor. Donating F⁻ to AsF₅
+    *is* Lewis base behaviour. Flagged; not propagated.
+31. **XeO₂F₂ is described two ways in adjacent tables** — "trigonal bipyramid
+    with one position unoccupied" in Table 10.42 and "see-saw" in Table 10.43.
+    These are the same geometry. Not an error, but the course will use one
+    name (see-saw) and mention the other once.
+
+## I. Status of file 8 after this addendum
+
+`151716181314.pdf` runs to extracted line 11169 (p. 558). **Parts 3, 4, 5 and 6
+— Groups 15, 16, 17, 18 — are now read in full, together with every question
+set, every answer key, and the chapter-wide Miscellaneous Questions.** The
+remaining unread portion of this file is **lines 107–4003 = Parts 1 and 2,
+Groups 13 and 14** (pp. ~380–447).

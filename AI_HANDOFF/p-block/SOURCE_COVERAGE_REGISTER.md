@@ -65,12 +65,29 @@ Last updated: 2026-07-26.
 - **Destination:** Sections 7–19 — **PENDING**
 
 ### File 8 — `151716181314.pdf` (J.D. Lee adapted ed., Ch. 10 — **all six groups**)
-- **Pages:** 172 · **Inspected:** **~25 / 172 (Text)** — contents, full section index, and a
-  **deep read of pp. 448–470** (extracted lines 4003–5421) = Part 3 Group 15, sections
-  10.35–10.43 inclusive, through nitric acid. Harvest recorded in `MASTER_REGISTERS.md`:
-  30 topics, ~120 species, ~60 reactions, 22 structures, 10 MO cases, 17 visuals, 6 contradictions.
-- **Still to read in this file:** lines 5421–11169 (P oxides/oxoacids, Groups 16, 17, 18) and
-  lines 107–4003 (Groups 13–14).
+- **Pages:** 172 · **Inspected:** **113 / 172 (Text)** — contents, the full section index,
+  and complete deep reads of **four of the six parts**, each including its question sets
+  and answer key:
+  - **Part 3 — Group 15 — pp. 448–482** (extracted lines 4003–6220), §10.35–10.45.
+  - **Part 4 — Group 16 — pp. 483–512** (extracted lines 6221–8088), §10.46–10.55.
+  - **Part 5 — Group 17 — pp. 513–541** (extracted lines 8089–9991), §10.56–10.66.
+  - **Part 6 — Group 18 — pp. 542–558** (extracted lines 9992–11169), §10.67–10.74,
+    **plus the chapter-wide Miscellaneous Questions** on pp. 553–558, which range over
+    all six groups.
+- **The extracted text ends at line 11169 (p. 558).** Groups 15–18 are therefore read in
+  full; nothing follows Group 18 in this file.
+- **Cumulative harvest** recorded in `MASTER_REGISTERS.md` (main body + Addenda 1–4):
+  **112 topics, ~430 species, ~275 reactions, 72 structures, 26 MO cases, 58 visuals,
+  95 JEE traps, 31 contradictions/source errors.**
+- **Still to read in this file:** extracted lines **107–4003 = Parts 1 and 2, Groups 13
+  and 14** (pp. ~380–447). That is the only remaining unread portion.
+- **All named course gaps in this file are now closed:** §10.32, §10.34, §10.50, §10.53,
+  §10.65, §10.66 and **§10.73 Structure and Bonding in Xenon Compounds** — the MOT
+  section flagged from the outset.
+- **Register-integrity note (2026-07-27):** the two commits that closed Groups 15 and 16
+  updated the summary table at the foot of this file but their scripted edit to *this*
+  block silently no-matched, so the narrative sat at "~25 / 172" for two parts. Repaired
+  here and re-verified by reading the file back. Page counts above are the honest totals.
 - **Structure mapped** (extracted-line anchors): Part 1 G13 @107 · Part 2 G14 @1749 · Part 3 G15 @4003 · Part 4 G16 @6221 · Part 5 G17 @8089 · Part 6 G18 @9992; sections 10.1–10.74
 - **Sections that cover topics absent from the course today:**
   - **10.38 Hydrogen azide and the azides** — not in the course at all
@@ -104,8 +121,8 @@ Last updated: 2026-07-26.
 | | Pages | Inspected | % |
 |---|---|---|---|
 | Files 1–6 (original six) | 437 | **325** | 74 % |
-| Files 7–11 (new five) | 1294 | **86** | 6.6 % |
-| **Total project** | **1731** | **411** | **24 %** |
+| Files 7–11 (new five) | 1294 | **132** | 10.2 % |
+| **Total project** | **1731** | **457** | **26 %** |
 
 **The project has NOT been fully reviewed.** No statement in the course may claim otherwise.
 

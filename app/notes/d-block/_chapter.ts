@@ -1,6 +1,0 @@
-import type { ChapterTab, LessonGroup, LessonRef } from "@/components/notes/canonical";
-import { D_BLOCK_LESSONS, type DBlockLesson } from "./content";
-export const dBlockHref = (number: number) => `/notes/d-block/part${number}`;
-export function dBlockLessonRef(number: number): LessonRef | undefined { const lesson = D_BLOCK_LESSONS.find((item) => item.number === number); return lesson ? { href: dBlockHref(lesson.number), number: `Lesson ${lesson.number}`, title: lesson.title, meta: lesson.group } : undefined; }
-export function dBlockTabs(current?: number): ChapterTab[] { return [{ label: "All 24 lessons", href: "/notes/d-block", active: !current }, ...D_BLOCK_LESSONS.map((lesson) => ({ label: `${lesson.number}. ${lesson.title}`, href: dBlockHref(lesson.number), active: lesson.number === current }))]; }
-export function dBlockGroups(): LessonGroup[] { const order: DBlockLesson["group"][] = ["Foundations", "Trends", "Chemical behaviour", "Chromium", "Manganese", "Element focus", "Mastery"]; return order.map((group) => ({ label: group, lessons: D_BLOCK_LESSONS.filter((lesson) => lesson.group === group).map((lesson) => ({ href: dBlockHref(lesson.number), number: `Lesson ${lesson.number}`, title: lesson.title, meta: group })) })); }

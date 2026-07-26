@@ -191,16 +191,6 @@ export const AUTHORED_COURSES: AuthoredCourse[] = [
     premium: true,
     description: "JEE Advanced notes for Groups 1 and 2: periodic trends, lithium and beryllium anomalies, diagonal relationships, hydrides, halides, oxoanion salts and named sodium and calcium compounds.",
   },
-  // ── D-block Elements ──────────────────────────────────────────────────────
-  {
-    id: "d-and-f-block-elements",
-    syllabusId: "d-and-f-block-elements",
-    title: "D-block Elements",
-    href: "/notes/d-block",
-    lessonLabel: "24 lessons",
-    premium: true,
-    description: "JEE Advanced d-block notes: configurations, periodic trends, oxidation states, magnetism, chromium chemistry and medium-dependent permanganate reactions.",
-  },
   // ── P-block Elements ──────────────────────────────────────────────────────
   {
     id: "p-block-elements",

@@ -117,6 +117,7 @@ export const CHAPTER_PYQ_MAP: Record<string, PYQChapter[]> = {
   "surface-chemistry": ["Surface Chemistry"],
   "periodic-table": ["Periodic Table"],
   "chemical-bonding": ["Chemical Bonding"],
+  "general-inorganic-chemistry": [],
   "coordination-compounds": ["Coordination Compounds"],
   "p-block-elements": ["p-Block Elements"],
   "d-and-f-block-elements": ["d and f Block Elements"],

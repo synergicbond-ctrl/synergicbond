@@ -77,6 +77,30 @@ export const inorganic: Chapter[] = [
     ]
   },
   {
+    id: "general-inorganic-chemistry",
+    title: "General Inorganic Chemistry",
+    category: "inorganic",
+    exams: ["JEE ADVANCED"],
+    difficulty: 4,
+    estimatedHours: 12,
+    prerequisites: ["chemical-bonding", "periodic-table"],
+    searchKeywords: ["general inorganic chemistry", "inorganic nomenclature", "hydrolysis", "thermal decomposition", "amphoteric behaviour", "disproportionation", "solubility rules", "product prediction"],
+    ncert: { class: 11 },
+    pyqTags: ["inorganic nomenclature", "hydrolysis", "thermal stability", "amphoteric reactions", "redox stability", "product prediction"],
+    concepts: [
+      { id: "formula-writing-nomenclature", title: "Formula Writing and Inorganic Nomenclature", description: "Oxidation numbers, valency, binary compounds, oxyacids, salts and systematic inorganic names." },
+      { id: "classification-reaction-behaviour", title: "Classification and General Reaction Behaviour", description: "General behaviour of hydrides, oxides, halides, nitrides, phosphides, carbides and common salts." },
+      { id: "reactions-with-water", title: "Reactions with Water", description: "Water reactions of representative s- and p-block compounds, oxides, hydrides, peroxides and salts." },
+      { id: "covalent-hydrolysis", title: "Hydrolysis of Covalent Compounds", description: "Complete and partial hydrolysis, oxyhalide formation, controlling factors and important exceptions." },
+      { id: "salt-hydrolysis", title: "Hydrolysis of Salts", description: "Cationic and anionic hydrolysis, charge density, polarising power and hydroxo or oxo species." },
+      { id: "thermal-hydroxides-carbonates", title: "Thermal Behaviour of Hydroxides, Carbonates and Bicarbonates", description: "Group trends, lithium and alkaline-earth exceptions, dehydration and polarising power." },
+      { id: "thermal-oxy-salts", title: "Thermal Behaviour of Nitrates and Other Oxy-Salts", description: "Thermal patterns of nitrates, sulfates, chlorates, oxalates, thiosulfates and ammonium salts." },
+      { id: "acid-base-amphoteric", title: "Acid-Base and Amphoteric Reactions", description: "Acidic, basic, neutral and amphoteric oxides and hydroxides, with acid and alkali reactions." },
+      { id: "redox-stability", title: "Redox Stability and Disproportionation", description: "Oxidising and reducing behaviour, oxidation-state stability, inert-pair effect and redox medium." },
+      { id: "solubility-product-prediction", title: "Solubility, Gas Evolution and Product Prediction", description: "Solubility rules, precipitation and gas evolution, observations and systematic product prediction." }
+    ]
+  },
+  {
     id: "coordination-compounds",
     title: "Coordination Compounds",
     category: "inorganic",

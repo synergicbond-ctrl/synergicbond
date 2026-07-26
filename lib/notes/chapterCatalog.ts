@@ -14,7 +14,8 @@
 //   thermodynamics 30 · chemical-equilibrium 18 · electrochemistry 24 ·
 //   mole-concept 15 · stoichiometry 9 · concentration-terms 6 · eudiometry 6 ·
 //   redox 10 lessons (15 sections) · hydrogen 8 lessons (72 sections) ·
-//   periodic-table master notes · p-block-elements 20 lessons ·
+//   periodic-table master notes · s-block-elements 18 lessons ·
+//   p-block-elements 20 lessons ·
 //   isomerism 40 parts (169 source modules).
 // ─────────────────────────────────────────────────────────────────────────────
 
@@ -179,6 +180,16 @@ export const AUTHORED_COURSES: AuthoredCourse[] = [
     lessonLabel: "8 lessons · 72 sections",
     premium: true,
     description: "Isotopes, dihydrogen, ortho–para hydrogen, hydrides, water, heavy water, hydrogen peroxide, hydrogen bonding and hydrogen economy.",
+  },
+  // ── S-block Elements ──────────────────────────────────────────────────────
+  {
+    id: "s-block-elements",
+    syllabusId: "s-block-elements",
+    title: "S-block Elements",
+    href: "/notes/s-block",
+    lessonLabel: "18 lessons",
+    premium: true,
+    description: "JEE Advanced notes for Groups 1 and 2: periodic trends, lithium and beryllium anomalies, diagonal relationships, hydrides, halides, oxoanion salts and named sodium and calcium compounds.",
   },
   // ── P-block Elements ──────────────────────────────────────────────────────
   {

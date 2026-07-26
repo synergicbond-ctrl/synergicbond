@@ -152,6 +152,7 @@ export const AUTHORED_NOTES: Record<string, string> = {
   "electrochemistry": "/notes/electrochemistry",
   "redox-reactions": "/notes/redox-reactions",
   "hydrogen": "/notes/hydrogen",
+  "s-block-elements": "/notes/s-block",
   "p-block-elements": "/notes/p-block",
 };
 

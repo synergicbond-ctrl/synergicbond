@@ -152,6 +152,7 @@ export const AUTHORED_NOTES: Record<string, string> = {
   "electrochemistry": "/notes/electrochemistry",
   "redox-reactions": "/notes/redox-reactions",
   "hydrogen": "/notes/hydrogen",
+  "p-block-elements": "/notes/p-block",
 };
 
 // ── Expected-time heuristic (labelled as derived wherever shown) ──────────────

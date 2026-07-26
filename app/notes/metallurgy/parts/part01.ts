@@ -54,6 +54,8 @@ The method depends on a **physical or chemical difference** between the valuable
 
 ## 4. Gravity Separation / Hydraulic Washing / Levigation
 
+![Gravity separation overview](/notes/metallurgy/reference/gravity-separation.webp)
+
 ### Principle
 **Gravity separation** concentrates an ore by exploiting the difference in **density (specific gravity)** between the valuable mineral and gangue. In a moving stream of water, lighter particles are carried away more readily, whereas denser mineral grains settle or remain behind.
 
@@ -161,7 +163,7 @@ Cassiterite $SnO_2$ may contain magnetic wolframite-type impurities, commonly re
 
 ---
 
-![Ore and concentration decision map](/notes/metallurgy/reference/ore-foundations-dark-v2.webp)
+![Ore and concentration decision map](/notes/metallurgy/reference/ore-foundations.webp)
 
 ## Source-detail restoration
 - **Mineral vs ore is economic, not purely chemical.** A mineral may contain a metal yet fail to be an ore if extraction is uneconomic or creates difficult impurities.

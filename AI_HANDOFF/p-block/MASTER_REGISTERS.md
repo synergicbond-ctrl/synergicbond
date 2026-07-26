@@ -1320,3 +1320,816 @@ claim that it is.
 set, every answer key, and the chapter-wide Miscellaneous Questions.** The
 remaining unread portion of this file is **lines 107–4003 = Parts 1 and 2,
 Groups 13 and 14** (pp. ~380–447).
+
+---
+
+# Addendum 5 — Group 13 completed (pp. 387–412, lines 107–1748)
+
+Part 1 of `151716181314.pdf` read end to end: §10.1 Oxidation states and types
+of bonds → §10.15 Organometallic compounds, plus the Group 13 question
+apparatus and answer key. Sections 10.1–10.15 inclusive.
+
+## A. Topic register — additions A113–A140
+
+| # | Topic | Where it belongs | Content and why it earns a place |
+|---|---|---|---|
+| A113 | Why Group 13 bonds are covalent — three independent arguments | §2 | Fajans' rules (small ion, 3+ charge); the very large sum of the first three ionisation energies; electronegativities higher than Groups 1–2 so the difference from the partner element is small. Three lines of reasoning converging, not one assertion. |
+| A114 | **The quantitative reason AlCl₃ ionises in water** | §2 | Converting Al to Al³⁺ costs 5137 kJ mol⁻¹. Hydration returns −4665 (Al³⁺) + 3 × (−381) (Cl⁻) = **−5808 kJ mol⁻¹**. Hydration wins by 671, so the compound that is covalent when anhydrous ionises in solution. The best worked energy argument in the chapter. |
+| A115 | **The inert pair effect describes, it does not explain** | §2 | The source is explicit: "The inert pair effect is not the explanation of why monovalency occurs… It merely describes what happens." The actual cause is energetic — the mean bond energy of MX₃ falls **GaCl₃ 242 → InCl₃ 206 → TlCl₃ 153 kJ mol⁻¹**, so eventually the energy released by forming two more bonds no longer pays for unpairing the s² pair. |
+| A116 | Where the inert pair effect reaches beyond Group 13 | §2, §6, §11 | Sn²⁺ and Pb²⁺ in Group 14; Sb³⁺ and Bi³⁺ in Group 15. Sn²⁺ is a reducing agent but Pb²⁺ is stable; Sb³⁺ is a reducing agent but Bi³⁺ is stable. The lower state is always **two** below the group state. |
+| A117 | Why p-block valency changes in twos and d-block in ones | §2 | p-block: an s² pair is either used or not. d-block: different numbers of d electrons, so Cu⁺/Cu²⁺ and Fe²⁺/Fe³⁺ differ by one. |
+| A118 | Boron's allotropes are all built from icosahedra | §2 | At least four allotropic forms, every one polymeric icosahedra; the B₁₂ icosahedron and α-rhombohedral boron are the reference structures. This is why boron melts at 2180 °C. |
+| A119 | **Gallium's structure and its 30 °C melting point** | §2 | Ga is not a normal metal in the solid — it forms discrete diatomic Ga₂ molecules, which is why it melts at 30 °C while Al melts at 660 °C. Its **boiling point (2403 °C) is entirely normal**, because the diatomic structure no longer exists in the liquid. Melting point anomalous, boiling point not — the cleanest possible demonstration that melting probes the solid structure only. |
+| A120 | Gallium expands on freezing | §2 | The solid is less dense than the liquid. See contradiction 32 on the source's claim of uniqueness. |
+| A121 | Why the M³⁺ radii do not increase regularly | §2 | Two reasons, both given: **B³⁺ has no evidence for its existence** so its radius is an estimate, and Ga, In and Tl sit immediately after d and f blocks. Shielding runs **s > p > d > f**, so d¹⁰ and f¹⁴ cores shield badly and the outer electrons are held more tightly. |
+| A122 | d-block contraction and lanthanide contraction, named and distinguished | §2 | The ten 3d electrons contract Ga; the fourteen 4f electrons contract Tl still further. |
+| A123 | Electropositive character rises B → Al then **falls** Al → Tl | §2 | Not a monotonic group trend. Confirmed by E°(M³⁺/M): Al −1.66, Ga −0.56, In −0.34, **Tl +1.26** — the sign flips. |
+| A124 | Preparation of elemental boron | §2 | Two steps from borax or colemanite. Acidify to H₃BO₃, dehydrate at 500 °C to B₂O₃, then reduce with Na, K, Mg or Al. |
+| A125 | Crystalline versus amorphous boron | §2 | Pure crystalline boron is very unreactive; **amorphous boron carrying 2–5 % impurities is much more reactive**. Physical form, not chemistry, decides. |
+| A126 | Aluminium's protective oxide film, and three ways to defeat or thicken it | §3 | The natural film is 10⁻⁴–10⁻⁶ mm. **Anodising** (electrolysing dilute H₂SO₄ with Al as anode) thickens it to 10⁻² mm and lets it take pigment. **Amalgamating with mercury** removes it, after which aluminium decomposes even cold water. Concentrated HNO₃ passivates by thickening it. |
+| A127 | The thermite reaction and its consequences | §3 | ΔH° = −1670 kJ mol⁻¹ for 2Al + 3⁄2 O₂. Used in World War II incendiary bombs with Fe₂O₃ or SiO₂, and the reason aluminium-alloy warships burned in the Falklands conflict. Also the basis of metallurgical reduction: `8Al + 3Mn₃O₄ → 4Al₂O₃ + 9Mn` and `2Al + Cr₂O₃ → Al₂O₃ + 2Cr`. |
+| A128 | Alums as double salts | §3 | [M^I(H₂O)₆][M^III(H₂O)₆](SO₄)₂. Large octahedral crystals, extremely pure. **They break up completely in solution** into [M^I(H₂O)₆]⁺, [M^III(H₂O)₆]³⁺ and 2SO₄²⁻ — the ions merely happen to be the right size and charge to crystallise together. **Li⁺ is too small to form an alum.** |
+| A129 | Cement chemistry | §3 | Tricalcium aluminate Ca₃Al₂O₆ is better written **Ca₉[Al₆O₁₈]** — twelve-membered Al–O–Al–O rings from six AlO₄ tetrahedra, with six Al–O–Al linkages. Portland and high-alumina cement compositions, conditions and failure modes registered in §E below. |
+| A130 | B₂O₃ is acidic, but can be forced to behave as a base | §2 | Against a strongly acidic oxide it gives up the acid role: `B₂O₃ + P₂O₅ → 2BPO₄` and the arsenate analogue. Amphoterism demonstrated by choosing a stronger acid, not by adding alkali. |
+| A131 | **Boric acid is a Lewis acid, not a proton donor** | §2 | B(OH)₃ does not donate H⁺; it accepts OH⁻ from water: `B(OH)₃ + 2H₂O ⇌ H₃O⁺ + [B(OH)₄]⁻`, pK = 9.25. It is monobasic despite having three OH groups. |
+| A132 | Why a cis-diol turns boric acid into a strong acid | §2 | The diol chelates [B(OH)₄]⁻ and removes it, driving the equilibrium fully right. The added compound **must** be a cis-diol — OH groups on adjacent carbons, cis. Glycerol, mannitol and sugars work; **ethylene glycol does not**. |
+| A133 | Borax is not Na₂B₄O₇·10H₂O | §2 | Its real formula is **Na₂[B₄O₅(OH)₄]·8H₂O** — two BO₃ triangles and two BO₄ tetrahedra sharing corners, with the remaining water on the sodium ions. |
+| A134 | Why one mole of borax takes two moles of acid | §2 | In water `[B₄O₅(OH)₄]²⁻ + 5H₂O → 2B(OH)₃ + 2[B(OH)₄]⁻`, and only the two [B(OH)₄]⁻ react with HCl. Methyl orange must be used, because the H₃BO₃ produced is itself a weak acid. Borax solution is also a **buffer** — equal amounts of a weak acid and its salt. |
+| A135 | **BF₃ back bonding, with the measurement that proves it** | §2 + MO section | B–F is 1.30 Å against a covalent-radius sum of 1.52 Å, and the bond energy is 646 kJ mol⁻¹ — higher than any other single bond. On forming an adduct the π system is destroyed and the bond **lengthens to 1.38 Å in H₃N→BF₃ and 1.39 Å in Me₃N→BF₃**. A prediction and its measurement, in one page. |
+| A136 | Why BF₃ hydrolyses incompletely | §2 | The HF released immediately attacks the H₃BO₃ formed, so the net reaction is `4BF₃ + 3H₂O → H₃BO₃ + 3H⁺ + 3[BF₄]⁻`. Every other boron halide hydrolyses completely to boric acid. |
+| A137 | **AlCl₃ changes structure on heating** | §2 | At low temperature it is a close-packed Cl⁻ lattice with Al³⁺ in octahedral holes — essentially ionic. On heating, discrete Al₂Cl₆ molecules form and **the volume of the solid greatly increases**. One compound sitting exactly on the ionic/covalent border. |
+| A138 | The "dihalides" of B, Ga and In are three different things | §2 | B₂X₄ is a genuine B(II) compound with a B–B bond. **GaCl₂ and InCl₂ are not** — they are Ga⁺[GaCl₄]⁻ and In⁺[InCl₄]⁻, containing M(I) and M(III). |
+| A139 | The boron–silicon diagonal relationship, in five specific respects | §2 | Acidic oxide; acidic hydroxide; isopolyacid formation by oxygen sharing; gaseous, readily hydrolysed, inflammable hydrides; and vigorously hydrolysed halides. **Aluminium matches none of these.** |
+| A140 | Boranes fall into two named series | §2 | **nido** BₙH₍ₙ₊₄₎ and the less stable **arachno** BₙH₍ₙ₊₆₎. Almost 20 boranes reported, 11 well characterised. |
+
+## B. Compound and species register — Group 13
+
+**Elements and configurations.** B [He]2s²2p¹ (III only) · Al [Ne]3s²3p¹ ((I), III) · Ga [Ar]3d¹⁰4s²4p¹ (I, III) · In [Kr]4d¹⁰5s²5p¹ (I, III) · Tl [Xe]4f¹⁴5d¹⁰6s²6p¹ (**I** dominant, III).
+
+**Boron allotropes and structural units:** B₁₂ icosahedron; α-rhombohedral boron; at least four allotropic forms, all polymeric icosahedra.
+
+**Boron–oxygen compounds:** B₂O₃ boron sesquioxide · H₃BO₃ = B(OH)₃ orthoboric acid · HBO₂ metaboric acid · [B(OH)₄]⁻ tetrahydroxoborate · [B₃O₃(OH)₄]⁻ polymeric metaborate · BO₃³⁻ orthoborate · Mg₃(BO₃)₂ · Ln^III BO₃ lanthanide orthoborates · NaBO₂ and KBO₂, correctly Na₃[B₃O₆] and K₃[B₃O₆] · **borax Na₂[B₄O₅(OH)₄]·8H₂O** with the [B₄O₅(OH)₄]²⁻ ion · colemanite 2CaO·3B₂O₃ · **sodium peroxoborate Na₂[(OH)₂B(O–O)₂B(OH)₂]·6H₂O** · BPO₄ boron phosphate · BAsO₄ boron arsenate · Co(BO₂)₂ cobalt metaborate (blue) · B(OCH₃)₃ methyl borate · B(OMe)₃ trimethylborate.
+
+**Boron halides and derived species:** BF₃, BCl₃, BBr₃, BI₃ · [BF₄]⁻ and HBF₄ fluoroboric acid · B₂Cl₄ and B₂X₄ diboron tetrahalides · B₂H₅Cl · Et₂O·BF₃ etherate · H₃N→BF₃ · Me₃N→BF₃ · NH₄BF₄.
+
+**Boron hydrides.** nido series: **B₂H₆** diborane (m.p. −165, b.p. −93 °C), B₅H₉ pentaborane-9 (−47, 60), B₆H₁₀ hexaborane-10 (−62, 108), B₈H₁₂ octaborane-12 (decomposes), B₁₀H₁₄ decaborane (b.p. 213). arachno series: B₄H₁₀ tetraborane (−120, 18), B₅H₁₁ pentaborane-11 (−122, 65), B₆H₁₂ hexaborane-12 (−82), B₈H₁₄ octaborane-14 (decomposes), B₉H₁₅ nonaborane/enneaborane.
+
+**Borohydrides and related hydrides:** [BH₄]⁻ tetrahydridoborate · Na[BH₄], Li[BH₄], K[BH₄] · Al(BH₄)₃, Be(BH₄)₂ (covalent, volatile, [BH₄]⁻ acting as ligand) · Na[B(OMe)₄] · Na[B₃H₈] · (AlH₃)ₙ · Li[AlH₄] · Li[AlF₄].
+
+**Boron–nitrogen compounds:** BN boron nitride (graphite-like layer form; **borazon**, the cubic hard form) · **borazine B₃N₃H₆** · B₃N₃H₃Cl₃ · B₃N₃H₃(Me)₃ · B₃N₃H₉Cl₃ · B₃N₃H₆·Cr(CO)₃ · B₂H₆·2NH₃ = [H₃N·BH₂·NH₃]⁺[BH₄]⁻ · Me₃N·BH₃ · Et₂S·BH₃.
+
+**Other boron compounds:** B₂S₃ · metal borides MₓB_y (many metals, **not Group 1**, often non-stoichiometric) · Mg₃B₂ magnesium boride · Na₃BO₃.
+
+**Aluminium compounds:** α-Al₂O₃ corundum, γ-Al₂O₃, and a fibrous commercial form · white sapphire (gem corundum), **ruby** (Al₂O₃ + Cr₂O₃, a mixed oxide), **blue sapphire** (traces of Fe²⁺, Fe³⁺, Ti⁴⁺) · Al(OH)₃ · NaAl(OH)₄ = NaAlO₂·2H₂O sodium aluminate · Na₃AlO₃ · Al₂(SO₄)₃ · alums [M^I(H₂O)₆][Al(H₂O)₆](SO₄)₂ with M^I = Na⁺, K⁺, NH₄⁺; potash alum; ammonium alum (NH₄)₂SO₄·Al₂(SO₄)₃·24H₂O · AlF₃ (ionic, high m.p.) · **AlCl₃ / Al₂Cl₆**, AlBr₃ / Al₂Br₆, AlI₃ · [AlCl₄]⁻, [AlBr₄]⁻ · AlN · Al(NH₂)₃ type amides · **Ca₃Al₂O₆ = Ca₉[Al₆O₁₈]** tricalcium aluminate · Al₂(CH₃)₆ aluminium trimethyl dimer.
+
+**Alum-forming trivalent cations named by the source:** Fe³⁺, Cr³⁺, Ti³⁺, V³⁺, Mn³⁺, Co³⁺, In³⁺, Rh³⁺, Ir³⁺, Ga³⁺.
+
+**Gallium, indium and thallium compounds:** Ga₂ (diatomic units in solid gallium) · GaCl₃ · **"GaCl₂" = Ga⁺[GaCl₄]⁻** · InCl₃ · **"InCl₂" = In⁺[InCl₄]⁻** · TlCl₃ · TlI · **Tl⁺[I₃]⁻ thallium(I) triiodide** · Ga₂O₃, In₂O₃, Tl₂O₃ sesquioxides.
+
+**Organometallics:** B(C₂H₅)₃ triethylborane · Al(CH₃)₃ (dimeric) · alkylboranes B(CH₂CH₂R)₃ · B(RC=CHR)₃ · carboranes (named).
+
+## C. Preparation register — Group 13
+
+**Boron (element).** `Na₂B₄O₇ + HCl or H₂SO₄ → NaX + H₂B₄O₇`; `H₂B₄O₇ + 5H₂O → 4H₃BO₃`; `2H₃BO₃ →(500 °C) B₂O₃ + 3H₂O`; then `B₂O₃ + Na/K/Mg/Al → B + Na₂O/K₂O/MgO/Al₂O₃`.
+
+**B₂O₃.** `H₃BO₃ →(100 °C) HBO₂ →(red heat) B₂O₃`.
+
+**Orthoboric acid.** From borax: `Na₂B₄O₇ + 2HCl + 5H₂O → 2NaCl + 4B(OH)₃`. From halides: `BX₃ + 3H₂O → B(OH)₃ + 3HX` (X = Cl, Br, I). From the hydride: `BH₃ + 3H₂O → B(OH)₃ + 3H₂`.
+
+**Borax from colemanite.** `2CaO·3B₂O₃ + 2Na₂CO₃ → 2CaCO₃↓ + Na₂B₄O₇ + 2NaBO₂`; filter off CaCO₃; concentrate and crystallise borax; recover the metaborate in the filtrate with `4NaBO₂ + CO₂ → Na₂B₄O₇ + Na₂CO₃`.
+
+**Sodium peroxoborate.** Two routes: electrolysis of sodium borate solution containing some Na₂CO₃; or `2NaBO₂ + 2H₂O₂ + 6H₂O → Na₂[(OH)₂B(O–O)₂B(OH)₂]·6H₂O`.
+
+**BF₃.** `B₂O₃ + 3CaF₂ + 3H₂SO₄(conc.) →heat 2BF₃ + 3CaSO₄ + 3H₂O`; `B₂O₃ + 6NH₄BF₄ →heat 8BF₃ + 6NH₃ + 3H₂O`; `B₂O₃ + 6HF + 3H₂SO₄ → 2BF₃ + 3H₂SO₄·H₂O`; and from borax via `[Na₂O(BF₃)₄]`.
+
+**B₂Cl₄.** `2BCl₃ + 2Hg →(electric discharge, low pressure) B₂Cl₄ + Hg₂Cl₂`.
+
+**AlCl₃ (anhydrous).** `2Al(overheated) + 6HCl(dry vapour) → 2AlCl₃ + 3H₂`; `Al₂O₃ + 3C + 3Cl₂(dry) →(1500 °C) 2AlCl₃(vapour) + 3CO`, then cooled.
+
+**Al₂O₃.** `2Al(OH)₃ →Δ Al₂O₃ + 3H₂O`; `Al₂(SO₄)₃ →Δ Al₂O₃ + 3SO₃`; `(NH₄)₂SO₄·Al₂(SO₄)₃·24H₂O →Δ Al₂O₃ + 2NH₃ + 4SO₃ + 25H₂O` — **31 moles of gas from one mole of ammonium alum.**
+
+**Na[BH₄].** `4B(OMe)₃ + 4NaH →(250 °C, high pressure, tetrahydrofuran) Na[BH₄] + 3Na[B(OMe)₄]`. Other tetrahydridoborates from Na[BH₄] plus the appropriate metal chloride.
+
+**(AlH₃)ₙ and Li[AlH₄].** `LiH + AlCl₃ → (AlH₃)ₙ`; with **excess** LiH, `→ Li[AlH₄]` instead.
+
+**Diborane — five routes.** Stock's original: `Mg₃B₂ + H₃PO₄ → mixture of boranes (mainly B₄H₁₀) →heat B₂H₆`. Industrial: `B₂O₃ + 3H₂ + 2Al →(750 atm, 150 °C) B₂H₆ + Al₂O₃`; `2BF₃(g) + 6NaH →(180 °C) B₂H₆ + 6NaF`. Laboratory: `4[Et₂O·BF₃] + 3Li[AlH₄] →ether 2B₂H₆ + 3Li[AlF₄] + 4Et₂O`; `2Na[BH₄] + I₂ →diglyme B₂H₆ + H₂ + 2NaI`; `4[Et₂O·BF₃] + 3Na[BH₄] →diglyme 2B₂H₆ + 3Na[BF₄] + 4Et₂O` (see contradiction 38). Diglyme is CH₃OCH₂CH₂OCH₂CH₂OCH₃. Method 3 is preferred when diborane is wanted **in situ** and need not be isolated.
+
+**Borazine.** `3BCl₃ + 3NH₄Cl →(140 °C) B₃N₃H₃Cl₃`, then `→NaBH₄ B₃N₃H₆` or `→MeMgBr B₃N₃H₃Me₃`. Also directly from diborane and ammonia at higher temperature in 2NH₃ : 1B₂H₆ ratio.
+
+**Organometallics.** `BF₃ + 3C₂H₅MgI → B(C₂H₅)₃`; `AlCl₃ + 3CH₃MgI → Al(CH₃)₃`.
+
+## D. Reaction register — Group 13
+
+**Amorphous boron (Table 10.6).** `4B + 3O₂ → 2B₂O₃` at high temperature · `2B + 3S → B₂S₃` at 1200 °C · `2B + N₂ → 2BN` at very high temperature · `2B + 3X₂ → 2BX₃` for F, Cl, Br, I · `2B + 6NaOH → 2Na₃BO₃ + 3H₂` when fused with alkali · `2B + 2NH₃ → 2BN + 3H₂` at very high temperature · `B + M → MₓB_y` for many metals but **not Group 1**, often non-stoichiometric. Crystalline boron is attacked only by hot concentrated H₂SO₄/HNO₃ mixture or sodium peroxide; boron also reduces strong HNO₃ and H₂SO₄ slowly.
+
+**The other metals (Table 10.7).** `4M + 3O₂ → 2M₂O₃` for all at high temperature, Al very strongly exothermic · `2Al + N₂ → 2AlN`, **aluminium only** · `2M + 3F₂/Cl₂/Br₂ → 2MX₃` for all, with Tl also forming them · `2M + 3I₂ → 2MI₃` for **Al, Ga and In only** · `TlI + I₂ → Tl⁺[I₃]⁻` · `2M + 6HCl → 2MCl₃ + 3H₂` with dilute mineral acids, **Al passivated by HNO₃, especially concentrated** · `2Al + 2NaOH + 6H₂O → 2NaAl(OH)₄ + 3H₂`, **Al and Ga only** · `M + NH₃ → MNH₂`, all the metals form amides.
+
+**Boric acid and borates.** `B(OH)₃ + 2H₂O ⇌ H₃O⁺ + [B(OH)₄]⁻` (pK 9.25) · `3B(OH)₃ ⇌ H₃O⁺ + [B₃O₃(OH)₄]⁻ + H₂O` (pK 6.84) · `B(OH)₃ + NaOH ⇌ Na[B(OH)₄] ⇌ NaBO₂ + 2H₂O` · `CoO + B₂O₃ → Co(BO₂)₂` (blue bead) · `B₂O₃ + P₂O₅ → 2BPO₄` · `Na₂[B₄O₅(OH)₄]·8H₂O + 2HCl → 2NaCl + 4H₃BO₃ + 5H₂O` · `[B₄O₅(OH)₄]²⁻ + 5H₂O → 2B(OH)₃ + 2[B(OH)₄]⁻` · `2[B(OH)₄]⁻ + 2H₃O⁺ → 2B(OH)₃ + 4H₂O`.
+
+**Analytical tests for boron.** `conc. H₂SO₄ + CaF₂ → 2HF + CaSO₄`, then `H₃BO₃ + 3HF → BF₃ + 3H₂O` — the BF₃ gives a **green flame**. Or the ester route: `B(OH)₃ + 3CH₃OH → B(OCH₃)₃ + 3H₂O` with concentrated H₂SO₄ removing the water; methyl borate is volatile and burns with a **green flame**.
+
+**Fluoroboric acid.** `H₃BO₃ + 4HF → H⁺ + [BF₄]⁻ + 3H₂O`.
+
+**Boron halide hydrolysis.** `4BF₃ + 12H₂O → 4H₃BO₃ + 12HF`; `12HF + 3H₃BO₃ → 3H⁺ + 3[BF₄]⁻ + 9H₂O`; net `4BF₃ + 3H₂O → H₃BO₃ + 3H⁺ + 3[BF₄]⁻`. Contrast `BCl₃ + 3H₂O → H₃BO₃ + 3HCl`, complete.
+
+**Aluminium.** `2Al + 6HCl → 2Al³⁺ + 6Cl⁻ + 3H₂` · `2Al + 3⁄2 O₂ → Al₂O₃`, ΔH° = −1670 kJ · `8Al + 3Mn₃O₄ → 4Al₂O₃ + 9Mn` · `2Al + Cr₂O₃ → Al₂O₃ + 2Cr` · `Al(OH)₃ + excess NaOH → NaAl(OH)₄`, reversed by passing CO₂ to reprecipitate Al(OH)₃.
+
+**Tetrahydridoborates.** `Li[BH₄] + 2H₂O → LiBO₂ + 4H₂` · Na[BH₄] reduces `R·CHO → R·CH₂OH` and `R₂C=O → R₂CHOH`, leaving C=C, COOH and NO₂ untouched.
+
+**Diborane.** `B₂H₆ + 3O₂ → B₂O₃ + 3H₂O`, ΔH = −2165 kJ mol⁻¹ · `B₂H₆ + 6H₂O → 2B(OH)₃ + 6H₂` · `B₂H₆ + 6MeOH → 2B(OMe)₃ + 6H₂` · `B₂H₆ + 2Et₂S → 2[Et₂S·BH₃]` · `B₂H₆ + 2LiH → 2Li[BH₄]` · `2B₂H₆ + 2Na → Na[BH₄] + Na[B₃H₈]` (slow) · `B₂H₆ + HCl → B₂H₅Cl + H₂` · `B₂H₆ + 3Cl₂ → 2BCl₃ + 6HCl`.
+
+**Hydroboration.** `½B₂H₆ + 3RCH=CH₂ → B(CH₂CH₂R)₃`; `½B₂H₆ + 3RC≡CR → B(RC=CHR)₃`. In dry ether under dinitrogen. Then `BR₃ + 3CH₃COOH → 3RH + B(CH₃COO)₃`; `B(CH₂CH₂R)₃ + H₂O₂/OH⁻ → 3RCH₂CH₂OH + H₃BO₃`; chromic acid gives ketones from secondary alkylboranes and carboxylic acids from primary. The overall process is **cis-hydrogenation or cis-hydration, following the anti-Markovnikov rule** — boron attaches to the least substituted carbon.
+
+**Diborane with nitrogen bases — four different products by condition.** `B₂H₆ + 2Me₃N → 2[Me₃N·BH₃]` · `B₂H₆ + excess NH₃ at low temperature → B₂H₆·2NH₃` · higher temperature with excess NH₃ → `(BN)ₓ` · higher temperature at 2NH₃ : 1B₂H₆ → **B₃N₃H₆ borazine**.
+
+**Symmetric versus unsymmetric cleavage.** NH₃, RNH₂ and R₂NH cleave diborane **unsymmetrically** to `[L₂BH₂]⁺[BH₄]⁻`; B₂H₆·2NH₃ is genuinely ionic, `[H₃N·BH₂·NH₃]⁺[BH₄]⁻`, and gives borazine on heating. R₃N, CO, Et₂O and tetrahydrofuran cleave it **symmetrically** to two `L·BH₃` adducts.
+
+**Borazine.** `B₃N₃H₆ + 3HCl → B₃N₃H₉Cl₃`, **protonation at nitrogen** because nitrogen carries the higher electron density · `B₃N₃H₆ + 9H₂O → 3NH₃ + 3H₃BO₃ + 3H₂`, slow · forms π complexes such as `B₃N₃H₆·Cr(CO)₃`.
+
+**Mixed-valence "dihalides".** `GaCl₃ + Ga → 2"GaCl₂" = 2Ga⁺[GaCl₄]⁻` · `In + 2HCl(g) → "InCl₂" + H₂ = In⁺[InCl₄]⁻`.
+
+**Friedel–Crafts.** `C₆H₆ + CH₃CH₂Cl + AlCl₃ → C₆H₅CH₂CH₃ + H⁺ + [AlCl₄]⁻`; acylation likewise with RCOCl. **Not truly catalytic** — the AlCl₃ is consumed and [AlCl₄]⁻ formation is essential to the mechanism.
+
+## E. Structure, numerical and physical-property register — Group 13
+
+| Quantity | B | Al | Ga | In | Tl |
+|---|---|---|---|---|---|
+| Melting point (°C) | 2180 | 660 | **30** | 157 | 303 |
+| Boiling point (°C) | 3650 | 2467 | 2403 | 2080 | 1457 |
+| Metallic radius (Å) | (0.885) | 1.43 | (1.225) | 1.67 | 1.70 |
+| Ionic radius M³⁺ (Å) | (0.27) | 0.535 | 0.620 | 0.800 | 0.885 |
+| Ionic radius M⁺ (Å) | — | — | 1.20 | 1.40 | 1.50 |
+| Pauling electronegativity | 2.0 | 1.5 | 1.6 | 1.7 | 1.8 |
+| IE₁ / IE₂ / IE₃ (kJ mol⁻¹) | 801/2427/3659 | 577/1816/2744 | 579/1979/2962 | 558/1820/2704 | 589/1971/2877 |
+| Σ of first three IE | **6887** | 5137 | 5520 | **5082** | 5437 |
+| E°(M³⁺/M) (V) | (−0.87) | −1.66 | −0.56 | −0.34 | **+1.26** |
+| E°(M⁺/M) (V) | — | +0.55 | −0.79 | −0.18 | −0.34 |
+
+Bracketed radii are not strictly comparable: boron is not a metal and Ga has an
+unusual structure, so both values are half the closest approach; the B³⁺ radius
+is an estimate because the ion has no evidenced existence.
+
+**Bond lengths and energies.** B–F in BF₃ **1.30 Å** (covalent-radius sum 1.52 Å; B 0.80, F 0.72), bond energy **646 kJ mol⁻¹** · B–F in H₃N→BF₃ **1.38 Å**, in Me₃N→BF₃ **1.39 Å** · diborane bridging B–H **1.33 Å**, terminal B–H **1.19 Å** · orthoboric acid interlayer spacing **3.18 Å** · mean M–Cl bond energies GaCl₃ 242, InCl₃ 206, TlCl₃ 153 kJ mol⁻¹.
+
+**Structures registered.** B₁₂ icosahedron and α-rhombohedral boron · BN graphite-like layer sheets of alternating B and N hexagons · borazine planar six-membered B₃N₃ ring, all **12 atoms coplanar** · diborane with two "banana-shaped" 3-centre 2-electron B–H–B bridges built from approximately sp³ hybrids on B overlapping an H 1s orbital, 12 valence electrons in total · Al₂Cl₆ chloride-bridged dimer · Al₂(CH₃)₆ with 3-centre Al–C–Al bridges from sp³ hybrids on Al and C · Al(BH₄)₃ and Be(BH₄)₂ with [BH₄]⁻ acting as a bridging ligand (**six 3c–2e bridge bonds in Al(BH₄)₃**) · orthoboric acid as hydrogen-bonded sheets of almost hexagonal symmetry · K₃[B₃O₆] metaborate ring of three corner-sharing BO₃ triangles · [B₄O₅(OH)₄]²⁻ from two triangles and two tetrahedra, **at most three boron atoms coplanar** · peroxoborate ion with two O–O bridges · [BF₄]⁻ and [BH₄]⁻ tetrahedral · Na[BH₄] with the **sodium chloride structure** · Ca₉[Al₆O₁₈] twelve-membered ring from six AlO₄ tetrahedra, six Al–O–Al linkages · B₂Cl₄ **non-eclipsed in gas and liquid, planar in the solid**.
+
+**Cement compositions and conditions.** Portland: limestone + sand + clay at **1450–1600 °C** in a rotary kiln, with 2–5 % gypsum CaSO₄·2H₂O added to slow setting, because slow setting greatly increases strength. Typical analysis CaO 70 %, SiO₂ 20 %, Al₂O₃ 5 %, Fe₂O₃ 3 %, CaSO₄·2H₂O 2 %. High alumina: limestone + bauxite with small amounts of SiO₂ and TiO₂ at **1400–1500 °C** in an open-hearth furnace or rotary kiln; more expensive, but sets much faster and reaches high strength within one day; resists sea water and dilute mineral acids and withstands 1500 °C. Typical analysis CaO 40 %, Al₂O₃ 40 %, SiO₂ 10 %, Fe₂O₃ 10 %. Failures arise from prolonged hot wet conditions, or too much water at mixing, which sets it too fast to crystallise properly.
+
+## F. Colour and observation register — Group 13
+
+| Species | Observation |
+|---|---|
+| BF₃ | Colourless gas, b.p. −101 °C |
+| BCl₃, BBr₃ | Liquids |
+| BI₃ | Solid — the only solid boron trihalide, and the highest boiling |
+| Et₂O·BF₃ | Viscous liquid, commercially available |
+| BF₃ or B(OCH₃)₃ in a flame | **Green** — the qualitative test for boron |
+| Co(BO₂)₂ borax bead | **Blue** |
+| Boron nitride (layer form) | White, slippery solid |
+| Borazon (cubic BN) | Hard |
+| B(OH)₃ solid | Fine white powder, cleaving between sheets 3.18 Å apart |
+| Diborane | Colourless gas; catches fire spontaneously in air |
+| Al metal | Silvery white |
+| α-Al₂O₃ | White; coloured by added oxides |
+| Ruby | Red — Al₂O₃ with Cr₂O₃ |
+| White sapphire | Gem-quality corundum |
+| Blue sapphire | Al₂O₃ with traces of Fe²⁺, Fe³⁺ and Ti⁴⁺ |
+| Al(OH)₃ from aluminate + CO₂ | White precipitate |
+| Alum crystals | Large, octahedral, extremely pure |
+| Gallium | Melts at 30 °C — in the hand |
+
+## G. Uses and hazards register — Group 13
+
+**BF₃** — commercially important catalyst; supplied as the gas or the diethyl etherate. **Borax** — primary standard for acid titration (with methyl orange), buffer, borax-bead test for metal identification; the bead test gave the **first proof that vitamin B₁₂ contains cobalt**. **Boric acid** — formerly a mildly antiseptic talcum powder for babies, **discontinued because it sometimes caused a rash**; manufacture of optical glasses. **Sodium peroxoborate** — brightener in washing powders, compatible with the enzymes in "biological" powders; **above 80 °C the O–O linkages break down to give H₂O₂**. **Na[BH₄]** — reducing agent, stable in alcoholic and aqueous solution. **Li[AlH₄]** — organic reducing agent, but **cannot be used in aqueous solution**. **Diborane** — reagent for hydroboration, usually generated in situ; hazards are severe: spontaneously flammable in air, explosive with dioxygen, very high heat of combustion, instantly hydrolysed by water or alkali, and **it attacks the grease used to lubricate taps, so special taps are required**. **Al₂O₃/ruby** — jewellery, and bearings in watches and instruments; abrasive powder. **Al₂(SO₄)₃** — coagulant and precipitant for drinking water and sewage, paper industry, mordant in dyeing. **Potash alum** — mordant (Fe³⁺ must be absent for true bright colours), water purification, coagulant and styptic to stop bleeding, leather tanning, antiseptic. **AlCl₃** — Friedel–Crafts alkylation and acylation, ethyl bromide for PbEt₄, anthraquinone for dyestuffs, dodecylbenzene for detergents, hydrocarbon isomerisation in petroleum refining. **Cements** — Portland for concrete; high alumina for bridge and building beams and for furnace work with refractory bricks. **Thermite** — metallurgical reduction; hazards include incendiary use and ship fires. **8-hydroxyquinoline complex** — gravimetric determination of aluminium.
+
+## H. MO-theory register — additions E27–E31
+
+- **E27 — BF₃: from resonance to a four-centre π orbital.** *Examination model:*
+  resonance among three structures each with one localised B=F double bond.
+  *Modern interpretation, and the source gives it itself:* the four p_z orbitals
+  of B and the three F atoms combine into a **four-centre π molecular orbital
+  containing two bonding electrons**, delocalised over all four atoms. The
+  delocalised description is required because all three bonds are measured
+  equal, which three resonance structures can only mimic. **The measurement
+  that settles it:** destroy the π system by forming an adduct and the bond
+  lengthens from 1.30 Å to 1.38–1.39 Å. This is pπ–pπ bonding between
+  second-row atoms, so it raises none of the d-orbital questions of the
+  policy block — it is registered as sound.
+- **E28 — Diborane's 3-centre 2-electron bridge.** Twelve valence electrons
+  cannot make eight two-electron bonds. Four terminal B–H bonds use eight, and
+  the remaining four electrons form **two B–H–B bridges of two electrons
+  each**. The geometry follows: bridging B–H 1.33 Å is longer than terminal
+  1.19 Å, exactly as a bond order below one demands. The source's own picture —
+  approximately sp³ hybrids on boron overlapping a hydrogen 1s orbital, giving
+  a "banana" — is the examination model; the honest statement is that the
+  three-centre orbital is the primary object and the hybrids are a convenient
+  basis for drawing it.
+- **E29 — Lewis acidity of the boron trihalides runs BI₃ > BBr₃ > BCl₃ >
+  BF₃**, the *reverse* of the electronegativity order. The cause is
+  back-bonding: the source's own matrix-match records that **BF₃ has the most
+  effective back bonding**. Fluorine's 2p orbital matches boron's 2p best, so
+  the π donation that fills boron's empty orbital is strongest exactly where
+  the σ-electronegativity argument would predict the greatest electron
+  deficiency. Accepting a lone pair means giving that π stabilisation up.
+- **E30 — Borazine is not benzene.** Formally isoelectronic, planar, six
+  delocalised π electrons, similar physical properties — and yet **borazine
+  adds HCl readily where benzene does not**. The reason is that the ring atoms
+  are not equivalent: nitrogen is more electronegative, so the π density is
+  polarised onto nitrogen and the ring carries alternating partial charges.
+  Addition therefore has a handle to grip, and **protonation occurs at
+  nitrogen**. Aromatic delocalisation and chemical inertness are separable
+  properties, and borazine is the proof.
+- **E31 — Two bridges that look the same and are not.** Al₂Cl₆ and Al₂(CH₃)₆
+  are drawn identically, but the chlorine bridge is made by a **halogen lone
+  pair donating into an empty aluminium orbital — four electrons across the
+  bridge**, while the methyl bridge is a genuine **3-centre 2-electron bond**
+  with only two electrons, because carbon has no lone pair to give. Teach them
+  side by side; the pair makes electron-counting unavoidable.
+
+## I. Visual register — additions V59–V70
+
+| ID | Required visual kind | Subject |
+|---|---|---|
+| V59 | **Original SVG structure + 3D model** | B₁₂ icosahedron, and how icosahedra link in α-rhombohedral boron |
+| V60 | **Thermodynamic cycle** | The AlCl₃ ionisation balance: 5137 in, −5808 out |
+| V61 | Trend graph + **JEE trap graphic** | Melting points across Group 13 with Ga marked, and its normal boiling point beside it to make the point |
+| V62 | **Oxidation-state ladder** | +I versus +III down Group 13, with the MX₃ bond energies 242 → 206 → 153 annotated as the cause |
+| V63 | **Multicentre-bonding diagram** | Diborane: four terminal bonds, two 3c–2e bridges, 1.19 Å versus 1.33 Å, and the twelve-electron count shown explicitly |
+| V64 | **MO energy diagram** | BF₃'s four-centre π orbital built from four p_z orbitals |
+| V65 | **Structure comparison + JEE trap graphic** | BF₃ before and after adduct formation — 1.30 Å versus 1.38 Å — as the experimental proof of back bonding |
+| V66 | **Comparison graphic** | Al₂Cl₆ versus Al₂(CH₃)₆: four-electron lone-pair bridge against 3c–2e bridge |
+| V67 | Structure gallery | The borate family: BO₃ triangle, BO₄ tetrahedron, the B₃O₆³⁻ ring, and the real borax ion [B₄O₅(OH)₄]²⁻ |
+| V68 | Structure comparison | Borazine against benzene, and layer BN against graphite, with the charge alternation drawn on the borazine ring |
+| V69 | **Reaction network** | Diborane's product fan with ammonia — adduct, ionic salt, borazine, boron nitride — with temperature and ratio on each branch |
+| V70 | **Hydrolysis map** | Why BF₃ stops at [BF₄]⁻ while BCl₃ goes all the way to H₃BO₃ |
+
+## J. JEE trap register — Group 13, items 96–120
+
+96. **The inert pair effect is a description, not a mechanism.** The source
+    says so in as many words. The mechanism is the falling M–X bond energy.
+97. **B has the highest sum of the first three ionisation energies; In has the
+    lowest** — and **Tl, not B, has the highest first ionisation energy** of
+    the metals. Different questions, different answers.
+98. **Boron has the highest melting point in the group and gallium the
+    lowest** — 2180 °C against 30 °C.
+99. **Gallium's boiling point is perfectly normal.** Only the melting point is
+    anomalous, because the Ga₂ structure does not survive melting.
+100. **Aluminium, not boron, is the most electropositive member.** The trend
+     rises B → Al and then falls Al → Tl.
+101. **E°(Tl³⁺/Tl) is positive (+1.26 V)** while every other M³⁺/M in the
+     group is negative.
+102. **Ethylene glycol will not make boric acid titratable.** Glycerol,
+     mannitol, sorbitol and salicylic acid will. The reagent must be a
+     *cis*-diol.
+103. **Boric acid is monobasic despite three OH groups**, and it works by
+     accepting OH⁻ rather than donating H⁺.
+104. **Borax solution is alkaline, not acidic** — and it is a buffer.
+105. **One mole of borax neutralises two moles of acid**, not four, because
+     only two of the four boron centres end up as [B(OH)₄]⁻.
+106. **Methyl orange, not phenolphthalein, for the borax–HCl titration**,
+     because boric acid is itself a weak acid.
+107. **Only aluminium burns in nitrogen** to give the nitride; Ga, In and Tl
+     do not.
+108. **Only Al, Ga and In form triiodides.** With thallium, iodine gives
+     **Tl⁺[I₃]⁻ — thallium(I) triiodide, not thallium(III) iodide.**
+109. **"GaCl₂" and "InCl₂" contain no M(II).** They are Ga⁺[GaCl₄]⁻ and
+     In⁺[InCl₄]⁻ — mixed M(I)/M(III).
+110. **Concentrated HNO₃ passivates aluminium**; dilute mineral acids dissolve
+     it. Amalgamation with mercury strips the film and lets even cold water
+     attack it.
+111. **Lewis acidity of the boron halides is BI₃ > BBr₃ > BCl₃ > BF₃** — the
+     reverse of the electronegativity expectation, because BF₃ has the
+     strongest back bonding.
+112. **BF₃ alone among the boron halides hydrolyses incompletely**, because
+     the HF released attacks the boric acid formed.
+113. **AlCl₃ is ionic when cold and molecular Al₂Cl₆ when heated**, and the
+     solid **expands** on making that change.
+114. **AlCl₃ in Friedel–Crafts is not a catalyst.** It is consumed, and
+     [AlCl₄]⁻ formation is part of the mechanism.
+115. **Li⁺ is too small to form an alum.**
+116. **Alums dissociate completely in solution** — a double salt, not a
+     complex.
+117. **Ammonium alum gives 31 moles of gas per mole on heating**
+     (2 NH₃ + 4 SO₃ + 25 H₂O).
+118. **NH₃, RNH₂ and R₂NH cleave diborane unsymmetrically** to an ionic salt;
+     R₃N, CO, Et₂O and THF cleave it symmetrically to two neutral adducts.
+     Three of the six commonly listed reagents go each way.
+119. **Borazine protonates at nitrogen, not boron**, and is considerably
+     **more** reactive than benzene despite its aromaticity.
+120. **Borazon and layer boron nitride are not the same solid.** Borazon is
+     the cubic, diamond-like, hard form; the slippery graphite-like form is
+     the layer structure. They do **not** share a two-dimensional structure.
+
+## K. Contradictions and source errors — items 32–43
+
+32. **"The solid is less dense than the liquid. This property is unique to Ga,
+    Ge and Bi."** *Source location:* §10.2, p. 389. *Conflicting claim:* the
+    chapter's own multiple-choice answer key marks **H₂O, Ga, Ge and Bi** all
+    correct for expansion on freezing. *Chemical issue:* water is the
+    best-known substance that expands on freezing, so "unique to Ga, Ge and
+    Bi" is false as written. *Possible explanation:* the prose probably meant
+    unique **among metals**. *Verification needed:* none — water's behaviour
+    is settled. *Safe for inclusion:* yes, with the wording corrected.
+33. **"There is no evidence for the existence of B³⁺ under normal conditions,
+    and the value is an estimate."** *Source location:* §10.2, p. 390.
+    *Status:* this is the source being careful, not an error, and it settles
+    the B³⁺ question in the course's favour. The source further warns against
+    arguing quantitatively that Al³⁺ is twice the size of B³⁺ "as B³⁺ does not
+    exist". **Registered as the course's position: the B³⁺ radius is a derived
+    estimate and free B³⁺ is not a chemically realistic species.**
+    *Verification status:* J.D. Lee read directly; no NCERT or Greenwood
+    corroboration available.
+34. **`H₃BO₃ →(500 °C) B₂O₃ + 3H₂O` does not balance.** *Location:* §10.3.
+    It requires **2H₃BO₃**. *Safe for inclusion:* yes, once corrected.
+35. **`H₃BO₃ + 3HF → 2BF₃ + 3H₂O` does not balance in boron.** *Location:*
+    qualitative analysis, p. 398. Should be **BF₃**. *Safe:* yes, corrected.
+36. **`B₂H₆ + 3O₂ → 2B₂O₃ + 3H₂O` does not balance in boron.** *Location:*
+    §10.12. Should be **B₂O₃**; the quoted ΔH of −2165 kJ mol⁻¹ belongs with
+    the balanced form. *Safe:* yes, corrected.
+37. **Diborane hydrolysis is printed two different ways.** *Location:* §10.12
+    gives `B₂H₆ + 6H₂O → 2H₃BO₃ + 3H₂`; §10.13 gives
+    `B₂H₆ + 6H₂O → 2B(OH)₃ + 6H₂`. *Chemical issue:* only the second
+    balances, and the chapter's own integer answer confirms **6 H₂**. *Safe:*
+    yes, using six.
+38. **The third diborane preparation drops a coefficient.** *Location:*
+    §10.12. Printed as one `[Et₂O·BF₃]` with 3Na[BH₄]; it requires **four**.
+    *Safe:* yes, corrected.
+39. **Borazine printed as "B₂N₃H₆"** in the ammonia scheme, §10.13. It is
+    **B₃N₃H₆** everywhere else in the same chapter. Typographical.
+40. **Decaborane's melting point printed as −100 °C.** *Location:* Table 10.8.
+    *Chemical issue:* B₁₀H₁₄ is a solid at room temperature — its boiling
+    point is given in the same row as 213 °C, which is incompatible with
+    melting at −100 °C. *Possible explanation:* a lost or inverted sign for a
+    value near +100 °C. *Verification needed:* an independent physical-data
+    source; **Greenwood unavailable**. *Safe for inclusion:* **no** — the
+    course will state that decaborane is a solid and omit the numeric melting
+    point until it can be checked.
+41. **E°(Al⁺/Al) printed as +0.55 V.** *Location:* Table 10.4. *Chemical
+    issue:* every other M⁺/M in the table is negative (Ga −0.79, In −0.18,
+    Tl −0.34), and a positive value would make Al⁺ nobler than hydrogen,
+    which is irreconcilable with aluminium's chemistry. Aluminium(I) is in any
+    case marginal — the same chapter's Table 10.1 puts Al(I) in parentheses as
+    unstable or in doubt. *Verification needed:* a standard electrode-potential
+    table; **not available in the corpus**. *Safe for inclusion:* **no** —
+    omit the Al⁺/Al entry from the course table and say the (+I) state of
+    aluminium is not well characterised.
+42. **The answer key includes Ce³⁺ among alum-forming cations**, though the
+    text's own list (Fe³⁺, Cr³⁺, Ti³⁺, V³⁺, Mn³⁺, Co³⁺, In³⁺, Rh³⁺, Ir³⁺,
+    Ga³⁺) does not name it. *Verification needed:* whether cerium(III) forms a
+    classical alum. **Not resolvable from the available corpus.** *Safe:*
+    teach the ten cations the text names and do not assert Ce³⁺ either way.
+43. **Borazon and layer BN.** The chapter's assertion–reasoning item correctly
+    rules **false** the claim that both have two-dimensional layer structures.
+    Registered because many texts blur the two forms. **This source does not
+    claim that cubic BN is harder than diamond** — a claim caught and rejected
+    in a different source earlier in this project. No conflict here.
+
+**Bonding-model note for Group 13.** Every π-bonding argument in this Part is
+pπ–pπ between second-row atoms (BF₃, borazine) or genuine multicentre bonding
+(diborane, Al₂(CH₃)₆, Al(BH₄)₃). **No d-orbital participation is invoked
+anywhere in Group 13**, so the policy block's second ruling does not bite here.
+The one place the source itself upgrades an old model — resonance to a
+delocalised four-centre π orbital in BF₃ — it does so explicitly, and the
+course follows it.
+
+---
+
+# Addendum 6 — Group 14 completed (pp. 413–447, lines 1749–4003)
+
+Part 2 of `151716181314.pdf` read end to end: §10.16 Structure and allotropy →
+§10.34 Organic derivatives, plus the Group 14 question apparatus and answer
+key. Sections 10.16–10.34 inclusive. **This closes §10.32 Internal π Bonding
+Using d Orbitals and §10.34 Organic Derivatives, both named coverage gaps.**
+
+**With this addendum, file 8 is read from line 107 to line 11169 — every page.**
+
+## A. Topic register — additions A141–A176
+
+| # | Topic | Where it belongs | Content and why it earns a place |
+|---|---|---|---|
+| A141 | The full allotrope inventory of carbon | §4 | Diamond, α-graphite, β-graphite, a rare hexagonal (wurtzite-like) diamond, and the fullerenes as **discrete molecules** rather than lattices. |
+| A142 | α- versus β-graphite | §4 | α is ABAB stacking, β is ABCABC. **Interconvertible: heating turns β into α, grinding turns α into β.** A mechanical operation changing an allotrope. |
+| A143 | Why graphite is soft and diamond hard, quantitatively | §4 | In-sheet C–C 1.41 Å (benzene is 1.40 Å); interlayer 3.35 Å, appreciably more than twice the covalent radius (2 × 1.54 = 3.08 Å). Densities follow: graphite 2.22, diamond 3.51 g cm⁻³. Mohs >1 against 10. |
+| A144 | **Graphite is thermodynamically more stable than diamond** | §4 | By 1.9 kJ mol⁻¹ at room temperature and pressure. Diamond persists only because the activation energy is high — **diamond-tipped drills do burn out to graphite if they overheat.** The reverse needs 1600 °C and 50 000–60 000 atm. |
+| A145 | Two conductivities that run opposite ways | §4 + MO section | **Electrical conductivity: graphite > diamond. Thermal conductivity: diamond > graphite.** Conduction in graphite occurs within a sheet but not between sheets. |
+| A146 | Fullerene topology as an arithmetic rule | §4 | **Every fullerene has exactly 12 five-membered rings**; the number of six-membered rings is **n/2 − 10**. C₆₀ → 20, C₇₀ → 25, C₈₄ → 32. C₆₀ also has 90 C–C linkages. |
+| A147 | Fullerene chemistry | §4 | Made by striking an electric spark between graphite electrodes **under argon**, to stop CO and CO₂ forming. Extracted from soot with benzene or hydrocarbons — **wine-red solution, mustard-coloured crystals** — and separated chromatographically. C₃₂, C₅₀, C₇₀, C₇₆ and C₈₄ also form. K₃C₆₀ is a **superconductor below 18 K**. C₆₀ adds OsO₄ across a double bond and forms platinum complexes. |
+| A148 | Tin's allotropes | §4 | α-Sn (grey, diamond structure) ⇌ β-Sn (white, metallic) at **13.2 °C**. |
+| A149 | Catenation as a bond-energy argument | §4 | C–C 348, Si–Si 297, Ge–Ge 260, Sn–Sn 240 kJ mol⁻¹, and the longest observed chains fall with it: unlimited for carbon, Si₈H₁₈ and Si₁₆F₃₄ for silicon, Ge₆H₁₄ and Ge₂Cl₆ for germanium, only the dimer Sn₂H₆ for tin. |
+| A150 | Carbon's higher coordination numbers | §4 | The classical limit of four is broken by multicentre bonding: Al₂(CH₃)₆ gives C a coordination number of 5, B₁₀C₂H₁₀R₂ gives 6, Li₄(CH₃)₄ gives 7, and **[Co₈C(CO)₁₈]²⁻ gives 8.** |
+| A151 | Three-way classification of carbides | §5 | **Salt-like** (further split by whether the anion is C, C₂ or C₃), **interstitial or metallic**, and **covalent**. All three are made the same way — heating the metal or its oxide with carbon or a hydrocarbon at about 2000 °C. |
+| A152 | Methanides, acetylides and the C₃ carbide | §5 | Be₂C (red) and Al₄C₃ (pale yellow) hydrolyse to **methane**; the C₂²⁻ carbides give **ethyne**; **Mg₂C₃ contains a C₃ unit and gives propyne.** The source warns that formulating Al₄C₃ as 4Al³⁺ + 3C⁴⁻ is misleading — such charge separation is unlikely. |
+| A153 | Interstitial carbides and the 1.35 Å rule | §5 | C atoms occupy **octahedral holes** in the close-packed metal lattice; if the metal's 12-coordinate radius exceeds **1.35 Å** the holes take carbon without distorting the lattice, and filling them all gives MC. Metallic lustre and electrical conduction are **retained**; hardness and density **rise**; malleability and ductility **fall**. TaC melts at 3900 °C and rates 9–10 on Mohs. |
+| A154 | Covalent carbides | §5 | SiC (carborundum, 9.5 Mohs) and boron carbide, which the source says is **more correctly B₁₃C₂ than B₄C**, and which is harder than SiC and used as a radiation shield. |
+| A155 | Carbon monoxide — preparation, detection and estimation | §6 | Dehydration of formic acid; ferrocyanide with **concentrated** H₂SO₄ (whereas **dilute** H₂SO₄ gives HCN instead). Detected by its **blue flame** and by reducing PdCl₂ to metallic palladium. Estimated with I₂O₅, titrating the liberated iodine against thiosulphate. Absorbed by ammoniacal Cu₂Cl₂. |
+| A156 | The three industrial fuel gases | §6 | **Water gas** (equimolar CO + H₂), **producer gas** (CO + N₂), **coal gas** (CO, H₂, CH₄, CO₂). Water gas is strongly endothermic (ΔH +131, ΔS +134) so the coke cools and air must periodically be blown through; producer gas is exothermic (ΔH −221, ΔS +179) so it does not. Producer gas has the lower calorific value because **only part of it burns** — its composition is about 70 % N₂, 25 % CO, 4 % CO₂. |
+| A157 | Why CO is toxic | §6 | It forms a haemoglobin complex **300 times more stable** than oxyhaemoglobin, blocking oxygen transport. |
+| A158 | **CO as a π-acceptor ligand** | §6 + MO section | Back bonding drives π density from metal to carbon, which makes the ligand more negative and **in turn enhances its σ-donating power** — a self-reinforcing loop. Hence CO binds transition metals strongly (σ and π) but Lewis acids like BF₃ weakly (σ only). σ-donor strength runs CN⁻ > RNC > CO > NO⁺; π-acceptor strength runs in the **reverse** order. |
+| A159 | Metal carbonyls | §6 | Ni(CO)₄, Fe(CO)₅, Fe₂(CO)₉, Fe₃(CO)₁₂, Cr(CO)₆, V(CO)₆, Mn₂(CO)₁₀, Co₂(CO)₈, Co₄(CO)₁₂, Co₆(CO)₁₆. CO can bridge two metals (Fe₂(CO)₉ has **12 Fe–C bonds**), form multicentre bonds to three metals, and use its π\* orbitals to bind further metals. The **Mond process** (now obsolete) purified nickel through Ni(CO)₄ formed at 50 °C and decomposed at 230 °C. |
+| A160 | Carbon suboxides | §6 | **C₃O₂**, b.p. 6 °C, foul-smelling, linear, from dehydrating malonic acid with P₄O₁₀ at 150 °C. Stable at −78 °C; polymerises at room temperature to a yellow solid and at higher temperature to red and purple solids. Gives malonic acid with water, the acid chloride with HCl, the amide with NH₃. **C₁₂O₉** is the anhydride of mellitic acid. C₅O₂ is disputed. |
+| A161 | Why CO₄⁴⁻ does not exist though SiO₄⁴⁻ does | §7 | Carbon is too small. The source draws the parallel with NO₃⁻ against PO₄³⁻ in Group 15. |
+| A162 | Carbonate thermal stability as a size effect | §7 | BeCO₃ decomposes below 100 °C, MgCO₃ at 540, CaCO₃ at 900, SrCO₃ at 1290, BaCO₃ at 1360 °C. Group 1 carbonates melt without decomposing. |
+| A163 | Solid bicarbonates exist only for Group 1 and NH₄⁺ | §7 | And they are **less** soluble than the corresponding carbonates. Their solids contain polymeric hydrogen-bonded HCO₃⁻ chains — and **NaHCO₃ and KHCO₃ hydrogen-bond differently**, chains against dimers. |
+| A164 | Carbon disulphide | §7 | Colourless volatile liquid, b.p. 46 °C, **flash point 30 °C, self-ignites at 100 °C**, very poisonous to brain and central nervous system. Pure samples smell of ether; impurities make it foul. Now made from natural gas and sulphur over Al₂O₃ or silica gel at 600 °C. Sunlight converts it to the radical **CS**, so it is stored in dark bottles; an arc gives C₃S₂, a red liquid. |
+| A165 | The viscose process | §7 | CS₂ + cellulose + NaOH → sodium cellulose xanthate, dissolved in lye to give "viscose", reprecipitated on acidification as rayon fibre or as cellophane film. |
+| A166 | Silica and the qualitative test for silicate | §8 | SiO₂ is acidic and unreactive, but HF attacks it; the SiF₄ produced hydrolyses on a drop of water to leave a **visible white solid of silicic acid on the drop's surface**. Fused alkali or carbonate dissolves silica — **which is why ground-glass stoppers seize in bottles of NaOH**. Of the halogens only fluorine attacks SiO₂. |
+| A167 | Silica gel and kieselguhr | §8 | Silica gel is amorphous, very porous, retains about **4 % water**, and serves as drying agent, catalyst and chromatographic medium. Kieselguhr is a fine white powder used in filtration, as an abrasive and as an inert filler — **gelignite is nitroglycerine absorbed on kieselguhr**. |
+| A168 | Two acidity ladders for the Group 14 oxides | §8 | Dioxides: CO₂ > SiO₂ > GeO₂ > SnO₂ > PbO₂, running purely acidic → acidic → amphoteric. Monoxides: CO > GeO > SnO > PbO, running neutral → distinctly acidic → amphoteric. |
+| A169 | The four oxides of lead | §8 | **PbO** in two forms — yellow *massicot* and red/reddish-yellow *litharge*; **PbO₂** dark brown; **Pb₂O₃**, a mixed oxide PbO·PbO₂, reddish-yellow; **Pb₃O₄** red lead, the mixed oxide 2PbO·PbO₂. Treating either mixed oxide with HNO₃ dissolves only the PbO part and leaves brown PbO₂ — **which is the proof that they are mixed oxides.** |
+| A170 | Sn(II) as reducing agent, Pb(IV) as oxidising agent | §8 | Eight registered Sn(II) reductions and five Pb(IV) oxidations, listed in §D. The pairing is the inert-pair effect made experimental. |
+| A171 | **The complete silicate classification** | §9 | Six classes by how many tetrahedron corners are shared: **ortho (neso)** none, **pyro (soro)** one, **cyclic** two in a ring, **chain (pyroxene)** two in a chain, **double chain (amphibole)** two and three alternating, **sheet (phyllo)** three, **three-dimensional** four. Every class registered below with named minerals. |
+| A172 | Framework silicates and their three families | §9 | Replacing Si⁴⁺ by Al³⁺ plus a counter-cation gives feldspars, zeolites and ultramarines. **The small ions Fe³⁺, Cr³⁺ and Mn²⁺ that are common in chain and sheet silicates cannot occur here — the framework cavities are too large.** |
+| A173 | Glass as a solid solution | §10 | Composition varies continuously. Fining agents (NaNO₃, As₂O₃) sweep out small bubbles by generating large ones; decolorisers remove iron colour; CaF₂ clouds it to opal glass. |
+| A174 | Silicones — chain building, chain stopping, cross-linking | §10 | (CH₃)₂SiCl₂ builds chains, (CH₃)₃SiCl stops them, CH₃SiCl₃ cross-links. **The ratio of the first two sets the average chain length.** Strength comes from the Si–O–Si skeleton (Si–O bond energy **502 kJ mol⁻¹**) and the strong Si–C bond. |
+| A175 | Silanes are far more reactive than alkanes | §10 | Three reasons given: the **polarity is reversed** (C 2.5, H 2.1, Si 1.8, so Cδ⁻–Hδ⁺ but Siδ⁺–Hδ⁻, leaving Si open to nucleophiles); silicon is larger and easier to attack; and — see the policy section — the source invokes low-lying d orbitals to lower the activation energy. Pure silanes survive dilute acid and pure water **in silica apparatus**, but hydrolyse on the trace of alkali leached from glass. |
+| A176 | Organometallics of Sn and Pb are M(IV), not M(II) | §10 | Although the divalent state grows more stable down the group, **every organometallic derivative of tin and lead contains M(IV)** — the source calls this surprising, and it is a genuine exception to the inert-pair trend. |
+
+## B. Compound and species register — Group 14
+
+**Elements and configurations.** C [He]2s²2p² (IV) · Si [Ne]3s²3p² ((II), IV) · Ge [Ar]3d¹⁰4s²4p² (II, IV) · Sn [Kr]4d¹⁰5s²5p² (II, IV) · Pb [Xe]4f¹⁴5d¹⁰6s²6p² (**II**, IV).
+
+**Carbon allotropes.** Diamond (cubic unit cell, C–C 1.54 Å, ~3930 °C melting, Mohs 10, colourless; industrial stones often black; most natural stones carry a trace of nitrogen, **"blue diamonds" carry aluminium instead**); a rare hexagonal wurtzite-like diamond; α-graphite (ABAB); β-graphite (ABCABC); fullerenes C₃₂, C₅₀, **C₆₀ buckminsterfullerene**, C₇₀, C₇₆, C₈₄; carbon black; coke; graphite fluoride (CF)ₙ; graphite oxide; graphite intercalation compounds; K₃C₆₀.
+
+**Other element forms.** Si, Ge and grey α-Sn with the diamond structure; white β-Sn metallic; Pb metallic only; ferrosilicon.
+
+**Carbides.** Be₂C, Al₄C₃ (methanides) · M^I₂C₂, M^II C₂, CaC₂, and the C₂²⁻ carbides of Cu, Ag, Au, Zn, Cd and the lanthanides LnC₂ and Ln₄(C₂)₃ (acetylides) · **Mg₂C₃** (C₃ unit, gives propyne) · TaC, WC and the Cr/Mn/Fe/Co/Ni interstitial carbides · SiC carborundum · B₄C = **B₁₃C₂** · Ca(NCN) calcium cyanamide.
+
+**Carbon–oxygen compounds.** CO · CO₂ · **C₃O₂** carbon suboxide · C₅O₂ (disputed) · **C₁₂O₉** · C₂O and C₂O₃ (less stable) · graphite oxide · H₂CO₃ · CO₂·8H₂O (crystallised at 0 °C under 50 atm) · CO₃²⁻ · HCO₃⁻ · NaHCO₃, KHCO₃, Na₂CO₃, Li₂CO₃, (NH₄)₂CO₃, **Ag₂CO₃ (yellow)**, CaCO₃, BeCO₃, MgCO₃, SrCO₃, BaCO₃, Ca(HCO₃)₂ · NH₄CO₂NH₂ ammonium carbamate · CO(NH₂)₂ urea · (HOCH₂CH₂NH₃)₂CO₃.
+
+**Carbonyl and thio compounds.** COS carbonyl sulphide · **COCl₂ phosgene** · CS₂ · **CS** radical · **C₃S₂** · Na₂CS₃ sodium trithiocarbonate · NH₄[H₂NCS₂] ammonium dithiocarbamate · sodium cellulose xanthate · [CuCl(CO)(H₂O)₂] · tolylene diisocyanate.
+
+**Metal carbonyls.** V(CO)₆, Cr(CO)₆, Mn₂(CO)₁₀, Fe(CO)₅, **Fe₂(CO)₉**, Fe₃(CO)₁₂, Co₂(CO)₈, Co₄(CO)₁₂, Co₆(CO)₁₆, Ni(CO)₄, [Co₈C(CO)₁₈]²⁻.
+
+**Silicon oxides and oxoanions.** SiO (existence at room temperature in doubt) · SiO₂ as quartz, tridymite, cristobalite, flint, sand, silica gel, kieselguhr · Si(OH)₄ = SiO₂·2H₂O silicic acid · SiO₄⁴⁻, Si₂O₇⁶⁻, Si₃O₉⁶⁻, Si₆O₁₈¹²⁻, (SiO₃)ₙ²ⁿ⁻, (Si₄O₁₁)ₙ⁶ⁿ⁻, (Si₆O₁₇)ₙ¹⁰ⁿ⁻, (Si₂O₅)ₙ²ⁿ⁻ · Na₄SiO₄, (Na₂SiO₃)ₙ, Na₂Si₂O₅·6H₂O.
+
+**Named silicate minerals.** *Ortho:* willemite Zn₂[SiO₄], phenacite Be₂[SiO₄], forsterite Mg₂[SiO₄], zircon ZrSiO₄. *Pyro:* thortveitite Sc₂[Si₂O₇], hemimorphite Zn₄(OH)[Si₂O₇], Ln₂[Si₂O₇]. *Cyclic:* wollastonite Ca₃[Si₃O₉], benitoite BaTi[Si₃O₉], **beryl Be₃Al₂[Si₆O₁₈]** and **emerald** (beryl with 1–2 % Cr). *Chain:* spodumene LiAl[(SiO₃)₂] (the main source of lithium), enstatite Mg₂[(SiO₃)₂], diopside CaMg[(SiO₃)₂], wollastonite Ca₃[(SiO₃)₃]. *Double chain:* tremolite Ca₂Mg₅[(Si₄O₁₁)₂](OH)₂, crocidolite Na₂Fe^II₃Fe^III₂[(Si₄O₁₁)₂](OH)₂. *Sheet:* kaolinite, pyrophyllite, **talc Mg₃(OH)₂[(Si₂O₅)₂]**, chrysotile and biotite (white asbestos), muscovite and margarite (micas), Fuller's earth, bentonite, **vermiculite Naₓ(Mg,Al,Fe)₃(OH)₂[((Si,Al)₂O₅)₂]·H₂O**. *Framework:* orthoclase K[AlSi₃O₈], celsian Ba[Al₂Si₂O₈], albite Na[AlSi₃O₈], anorthite Ca[Al₂Si₂O₈], natrolite Na₂[Al₂Si₃O₁₀]·2H₂O, **ultramarine Na₈[(AlSiO₄)₆]S₂** (the blue of lapis lazuli, coloured by the polysulphide ion), sodalite Na₈[(AlSiO₄)₆]Cl₂, nosean Na₈[(AlSiO₄)₆]SO₄, AlSi₃O₈⁻.
+
+**Oxides of Ge, Sn and Pb.** GeO, GeO₂ · **SnO (grey), SnO₂ (white)** · SnC₂O₄, Sn(OH)₂, H₂Sn₅O₁₁·4H₂O · Na₂[Sn(OH)₄] sodium stannite, Na₂SnO₃, Na₂[Sn(OH)₆] · **PbO (massicot yellow / litharge red), PbO₂ (dark brown), Pb₂O₃ (reddish-yellow), Pb₃O₄ red lead** · Na₂[Pb(OH)₄], Na₂[Pb(OH)₆].
+
+**Halides.** CF₄, CCl₄, CBr₄-type tetrahalides · C₂F₆, C₂F₄, PTFE (C₂F₄)ₙ · **Freons CFCl₃, CF₂Cl₂, CF₃Cl** · HFC CH₂FCF₃, HCFC CHCl₂CF₃ · CF₂ClH · SiF₄, SiCl₄, SiBr₄, SiI₄ · Si₂Cl₆, Si₃Cl₈, **Si₁₆F₃₄, Si₆Cl₁₄, Si₄Br₁₀** · (SiF₂)ₙ, (SiCl₂)ₙ, SiF₂ · SiH₂Cl₂, SiHCl₃, CH₃SiHCl₂ · **[SiF₆]²⁻ hexafluorosilicate** · GeX₄, GeX₂ · SnF₄ (sublimes 705 °C), **PbF₄ (m.p. 600 °C)**, SnCl₄, **SnI₄ (bright orange)**, PbCl₄ · **PbI₄ — does not exist** · SnF₂, SnCl₂, Sn(OH)Cl, PbX₂ · [SnCl₆]²⁻, [SnCl₅]⁻, [SnF₃]⁻, [SnCl₃]⁻, H₂[PbCl₆].
+
+**Silicon hydrides.** SiH₄ monosilane, Si₂H₆, Si₃H₈, Si₄H₁₀, Si₅H₁₂, Si₆H₁₄, up to **Si₈H₁₈**; Mg₂Si magnesium silicide; Ge₆H₁₄, Ge₂Cl₆; Sn₂H₆.
+
+**Organosilicon and silicones.** CH₃SiCl₃, (CH₃)₂SiCl₂, (CH₃)₃SiCl, (CH₃)₄Si, SiPh₄, Ph₃SiCl · (CH₃)₃SiOH trimethylsilanol · hexamethyldisiloxane · tris- and tetrakis-cyclo-dimethylsiloxane · dimethylpolysiloxanes 6000–600 000 units long · Me₂Si=SiMeH disilene (matrix-isolated) · (Me₃Si)₂Si=C(OSiMe₃)(C₁₀H₁₅).
+
+**Nitrogen–silicon and complexes.** **N(SiH₃)₃ trisilylamine** and N(CH₃)₃ trimethylamine · Pb(CH₃COO)₄ lead tetraacetate · PbEt₂, **PbEt₄ tetraethyl lead**.
+
+## C. Preparation register — Group 14
+
+**Synthetic diamond.** Graphite at **1600 °C and 50 000–60 000 atm**.
+**Fullerenes.** Electric spark between graphite electrodes under argon; extract the soot with benzene or a hydrocarbon; separate chromatographically.
+**CaC₂.** `CaO + 3C → CaC₂ + CO`, ΔH = +466 kJ mol⁻¹, **2200 °C**. Then `CaC₂ + N₂ →(1100 °C) Ca(NCN) + C`.
+**Be₂C.** Heating C with BeO at 2000 °C. **Al₄C₃.** Heating the elements in an electric furnace.
+**SiC.** `SiO₂ + 2C → Si + 2CO`, then `Si + C → SiC`, in an electric furnace at **2000–2500 °C** from quartz or sand with excess coke.
+**CO.** `HCOOH + conc. H₂SO₄ → CO + H₂O`; `K₄[Fe(CN)₆] + 6H₂SO₄(conc) + 6H₂O → 2K₂SO₄ + FeSO₄ + 3(NH₄)₂SO₄ + 6CO`. With **dilute** H₂SO₄ the same salt gives `2K₂SO₄ + FeSO₄ + 6HCN` instead.
+**Water gas.** `C + H₂O →(red heat) CO + H₂`, ΔH° = +131, ΔS° = +134.
+**Producer gas.** `2C + O₂ → 2CO`, ΔH° = −221, ΔS° = +179, air blown through red-hot coke.
+**Carbonyls.** `Ni + 4CO →(28 °C) Ni(CO)₄`; `Fe + 5CO →(200 °C, pressure) Fe(CO)₅`; `2Fe(CO)₅ →photolysis Fe₂(CO)₉ + CO`; `CrCl₆ + 3Fe(CO)₅ →heat Cr(CO)₆ + 3FeCl₂ + 9CO`.
+**CO₂.** By-product of hydrogen manufacture (`CO + H₂O ⇌ CO₂ + H₂`; `CH₄ + 2H₂O → CO₂ + 4H₂`); brewery fermentation `C₆H₁₂O₆ →yeast, anaerobic 2C₂H₅OH + 2CO₂`; lime kilns `CaCO₃ →strong heat CaO + CO₂`; flue gases; `CaCO₃ + 2HCl → CaCl₂ + CO₂ + H₂O`; `C + O₂ → CO₂`. **Recovery** by aqueous Na₂CO₃ (`Na₂CO₃ + CO₂ + H₂O ⇌ 2NaHCO₃`, cool forward / hot back) or the **Girbotol** ethanolamine process (30–60 °C forward, 100–150 °C back).
+**C₃O₂.** `HOOC·CH₂·COOH →(P₄O₁₀, 150 °C) O=C=C=C=O + 2H₂O`.
+**CS₂.** `CH₄ + 4S →(Al₂O₃ or silica gel, 600 °C) CS₂ + 2H₂S`; formerly charcoal and sulphur vapour at 850 °C.
+**Soluble silicates.** `Na₂CO₃ →(1400 °C) CO₂ + Na₂O`, then with SiO₂ → Na₄SiO₄, (Na₂SiO₃)ₙ and related species; dissolved in hot water under pressure and filtered.
+**SnO and SnO₂.** `SnC₂O₄ →Δ, no air SnO + CO₂ + CO`; `SnC₂O₄ →Δ, in air SnO₂ + 2CO₂`; `Sn(OH)₂ →Δ, no air SnO + H₂O`; `Sn + O₂ →strong heat SnO₂`; `H₂Sn₅O₁₁·4H₂O →strong heat 5SnO₂ + 5H₂O`.
+**PbO.** `Pb(NO₃)₂ →Δ PbO + 2NO₂ + ½O₂` — **not used in practice, because lead nitrate is explosive**; `PbO₂ →(>600 °C) PbO + ½O₂`; `Pb₃O₄ →(>600 °C) 3PbO + ½O₂`; `Pb₂O₃ →(>600 °C) 2PbO + ½O₂`.
+**PbO₂.** `Pb₃O₄ + 4HNO₃ → 2Pb(NO₃)₂ + PbO₂↓ + 2H₂O`; `Pb₂O₃ + 2HNO₃ → Pb(NO₃)₂ + PbO₂↓ + H₂O`; `Pb(OAc)₂ + Ca(OCl)Cl + H₂O → PbO₂↓ + CaCl₂ + 2CH₃COOH`, excess bleaching powder removed by stirring with HNO₃.
+**Pb₂O₃.** `2PbO + NaOCl(limited) →hot alkaline solution Pb₂O₃ + NaCl`.
+**Pb₃O₄.** `6PbO + O₂ ⇌ 2Pb₃O₄`, forward at 350 °C, reverse at 500 °C.
+**Organosilicon.** Grignard stepwise from SiCl₄ with CH₃MgCl; `4LiR + SiCl₄ → SiR₄ + 4LiCl`; and the **Rochow Direct Process** — `Si + 2CH₃Cl →(Cu catalyst 10 %, 280–300 °C, fluidised bed) (CH₃)₂SiCl₂`, ~70 % with MeSiCl₃ 10 % and Me₃SiCl 5 %. **Fractionation is delicate: b.p. 57.7, 66.4 and 69.6 °C.**
+**Silanes.** `2Mg + Si →heat, no air Mg₂Si`, then `Mg₂Si + H₂SO₄ →` SiH₄ 40 %, Si₂H₆ 30 %, Si₃H₈ 15 %, Si₄H₁₀ 10 %, Si₅H₁₂ + Si₆H₁₄ 5 %. Better: `SiCl₄ + Li[AlH₄] → SiH₄ + AlCl₃ + LiCl`, quantitative and single-product; `Si₂Cl₆ + 6LiH → Si₂H₆ + 6LiCl`; `Si₃Cl₈ + 8NaH → Si₃H₈ + 8NaCl`. Direct: `Si + 2HCl → SiH₂Cl₂`; `Si + 3HCl → SiHCl₃ + H₂`; `Si + 2CH₃Cl → CH₃SiHCl₂ + C + H₂`, with a copper catalyst.
+**CF₄.** `CO₂ + SF₄ → CF₄ + SO₂`; `SiC + 4F₂ → SiF₄ + CF₄` (coefficient repaired, contradiction 52); `CF₂Cl₂ + F₂ → CF₄ + Cl₂` industrially.
+**PTFE.** `CHCl₃ + HF →(SbFCl₄) CF₂ClH →heat C₂F₄ →pressure (C₂F₄)ₙ`.
+**CCl₄.** `CS₂ + 3Cl₂ →(FeCl₃, 30 °C) CCl₄ + S₂Cl₂`; `CS₂ + 2S₂Cl₂ →(FeCl₃, 60 °C) CCl₄ + 6S`. Then `CCl₄ + 2HF →(SbCl₅, anhydrous) CCl₂F₂ + 2HCl`.
+**Phosgene.** `CO + Cl₂ →(C catalyst, sunlight) COCl₂`; also from CCl₄ and superheated steam.
+**Silicon halides.** Heating Si or SiC with the halogen; `SiCl₄ + Si → Si₂Cl₆` and higher members; `SiF₄ + Si ⇌ 2SiF₂`, trapped in liquid N₂ and polymerising to Si₁₆F₃₄ on warming.
+**Tin(II) halides.** Heating Sn or SnO in gaseous HF or HCl.
+**PbEt₄.** `PbCl₂ + LiEt → PbEt₂ → Pb + PbEt₄`; commercially `Na/Pb alloy + 4EtCl → PbEt₄ + 4NaCl`.
+**Pb(CH₃COO)₄.** Pb₃O₄ with glacial acetic acid.
+
+## D. Reaction register — Group 14
+
+**Element reactivity.** C, Si, Ge unaffected by water; **Sn + steam → SnO₂ + H₂**; Pb unaffected, probably by a protective oxide film. C, Si, Ge unaffected by dilute acids; Sn dissolves in dilute HNO₃ to Sn(NO₃)₂; Pb dissolves slowly in dilute HCl (sparingly soluble PbCl₂) and readily in dilute HNO₃; Pb also dissolves in acetic, citric and oxalic acids; **Pb does not dissolve in dilute H₂SO₄ (PbSO₄ coating) nor in concentrated HCl (PbCl₂ coating)**. Diamond is unaffected by concentrated acids; **graphite reacts with hot concentrated HNO₃ to mellitic acid** and with hot concentrated HF/HNO₃ to graphite oxide. C is unaffected by alkali; Si reacts slowly with cold NaOH and readily when hot to give [SiO₄]⁴⁻; **Sn and Pb are amphoteric**, giving Na₂[Sn(OH)₆] and Na₂[Pb(OH)₆]. Diamond does not react with halogens; **graphite + F₂ at 500 °C → intercalation compounds or (CF)ₙ**; Si and Ge react readily with all halogens; Sn reacts with Cl₂ and Br₂ cold, F₂ and I₂ on warming; **Pb gives only PbF₂ with F₂ cold and PbCl₂ with Cl₂ on heating.**
+
+**Carbides.** `CaC₂ + 2H₂O → Ca(OH)₂ + HC≡CH` · Be₂C and Al₄C₃ hydrolyse to methane · Mg₂C₃ hydrolyses to propyne · `SiC + 2NaOH + 2O₂ → Na₂SiO₃ + CO₂ + H₂O` · `SiC + 2Cl₂ → SiCl₄ + C` · SiC is unaffected by acids except H₃PO₄ (see contradiction 48).
+
+**Carbon monoxide.** `2CO + O₂ → 2CO₂`, ΔH° = −565 kJ mol⁻¹ · `5CO + I₂O₅ → 5CO₂ + I₂` · `PdCl₂ + CO + H₂O → Pd + CO₂ + 2HCl` · `Fe₂O₃ + 3CO →blast furnace 2Fe + 3CO₂` · `CuO + CO → Cu + CO₂` · `CO + ½O₂ → CO₂` · `CO + S → COS` · `CO + Cl₂ → COCl₂` · `COCl₂ + H₂O → 2HCl + CO₂` · `COCl₂ + 2NH₃ →gas phase CO(NH₂)₂ + 2HCl`.
+
+**Carbon dioxide.** `Ca(OH)₂ + CO₂ → CaCO₃↓ + H₂O`, then `CaCO₃ + CO₂ + H₂O → Ca(HCO₃)₂` and the cloudiness clears · `CO₂ + H₂O ⇌ H₂CO₃` · `CO₂ + 2NH₃ →(180 °C, pressure) NH₄CO₂NH₂ → CO(NH₂)₂ + H₂O` · `6CO₂ + 6H₂O →sunlight C₆H₁₂O₆ + 6O₂` and the reverse in respiration.
+
+**Carbonates.** `Na₂CO₃ + 2HCl → 2NaCl + CO₂ + H₂O` · `CaCO₃ →heat CaO + CO₂`.
+
+**Carbon disulphide.** `3CS₂ + 6NaOH → Na₂CO₃ + 2Na₂CS₃ + 3H₂O` · `CS₂ + 2NH₃ → NH₄[H₂NCS₂]` · CS₂ + cellulose + NaOH → sodium cellulose xanthate.
+
+**Silica.** `H₂SO₄ + CaF₂ → HF`, then `SiO₂ + HF → SiF₄`, then `SiF₄ + H₂O → HF + Si(OH)₄` · `SiO₂ + NaOH → (Na₂SiO₃)ₙ + Na₄SiO₄` · `SiO₂ + 2F₂ → SiF₄ + O₂` · `SiO₂ + 6HF ⇌ 2H⁺ + [SiF₆]²⁻ + 2H₂O`.
+
+**Tin oxides.** `SnO + H₂SO₄ → SnSO₄ + H₂O` · `SnO + 2HCl → SnCl₂ + H₂O` · `SnO₂ + 2H₂SO₄ →Δ Sn(SO₄)₂ + 2H₂O` · `SnO + 2NaOH + H₂O →cold Na₂[Sn(OH)₄]` · `2SnO + 2NaOH →hot Na₂SnO₃ + Sn + H₂O` (**disproportionation**) · `SnO₂ + 2NaOH → Na₂SnO₃ + H₂O` · `SnO₂ + 2NaOH + 2H₂O → Na₂[Sn(OH)₆]`.
+
+**Sn(II) as reducing agent — eight registered reactions.** `Bi(OH)₃ + [Sn(OH)₄]²⁻ → Bi↓(black) + [Sn(OH)₆]²⁻` · `SnCl₂ + 2FeCl₃ → SnCl₄ + 2FeCl₂` · `SnCl₂ + 2CuCl₂ → SnCl₄ + 2CuCl↓(white)` · `SnCl₂ + 2HgCl₂ → SnCl₄ + Hg₂Cl₂↓(white)` and with **excess** SnCl₂, `Hg₂Cl₂ → 2Hg↓(black)` · `SnCl₂ + PhNO₂ + HCl → SnCl₄ + PhNH₂` · `SnCl₂ + K₂Cr₂O₇ + HCl → Cr³⁺ + Sn⁴⁺ + KCl + H₂O` · `SnCl₂ + I₂ → SnCl₂I₂` (used to estimate tin) · `SnCl₂ + AuCl₃ → Au↓(yellow) + SnCl₄`.
+
+**Lead oxides.** `PbO + 2HNO₃ → Pb(NO₃)₂ + H₂O`; `PbO + 2HCl → PbCl₂ + H₂O`; `PbO + H₂SO₄ → PbSO₄ + H₂O`; `PbO + 2NaOH + H₂O → Na₂[Pb(OH)₄]`; `PbO + C → Pb + CO`; `PbO + H₂ → Pb + H₂O` · `PbO₂ + 4HCl →ice cold PbCl₄ + 2H₂O`, then `+2HCl → H₂[PbCl₆]`; `PbO₂ + 4HCl →Δ PbCl₂↓ + Cl₂ + 2H₂O`; `2PbO₂ + 2H₂SO₄ →Δ 2PbSO₄↓ + O₂ + 2H₂O`; **PbO₂ does not react with HNO₃** · `PbO₂ + 2NaOH + 2H₂O → Na₂[Pb(OH)₆]` · `PbO₂ + SO₂ → PbSO₄` (spontaneous) · `PbO₂ + HNO₃ + (CO₂H)₂ → Pb(NO₃)₂ + 2CO₂ + 2H₂O` · `5PbO₂ + 2Mn(NO₃)₂ + 6HNO₃ → 5Pb(NO₃)₂ + 2HMnO₄(purple) + 2H₂O` (coefficient repaired, contradiction 51) — **and neither of the last two may be run in HCl or H₂SO₄, because those acids exhaust PbO₂'s oxidising power first.** · `Pb₂O₃ + 2HNO₃ → Pb(NO₃)₂ + H₂O + PbO₂↓` · `Pb₃O₄ + 4HNO₃ → 2Pb(NO₃)₂ + PbO₂↓ + H₂O` · `2Pb₃O₄ + 6H₂SO₄ → 6PbSO₄ + 6H₂O + O₂` · `Pb₃O₄ + 8HCl → 3PbCl₂ + 4H₂O + Cl₂`.
+
+**Silanes and silicon halides.** `Si₂H₆ + (4+n)H₂O →trace alkali 2SiO₂·nH₂O + 7H₂` · `RCH=CH₂ + SiHCl₃ →Pt RCH₂CH₂SiCl₃` (**hydrosilation**, the analogue of hydroboration) · `SiF₄ + 8OH⁻ → SiO₄⁴⁻ + 4F⁻ + 4H₂O` · `SiCl₄ + 4H₂O → Si(OH)₄ + 4HCl` · `SiF₄ + 2HF → 2H⁺ + [SiF₆]²⁻` · `SiF₄ + 2F⁻ → [SiF₆]²⁻` · `SnCl₄ + 2Cl⁻ → [SnCl₆]²⁻` · `Sn(OH)₄ ⇌ SnCl₄ ⇌ [SnCl₆]²⁻` with HCl driving right and water left · `CCl₄ + H₂O →superheated steam COCl₂ + 2HCl` · `SnF₂ + F⁻ → [SnF₃]⁻` (pK ≈ 1); `SnCl₂ + Cl⁻ → [SnCl₃]⁻` (pK ≈ 2); SnCl₂ partly hydrolyses to **Sn(OH)Cl**.
+
+**Freon ozone chemistry.** `CFCl₃/CF₂Cl₂/CF₃Cl →photolysis Cl·`; `Cl· + O₃ →rapid O₂ + ClO·`; `ClO· → Cl· + O`; `ClO· + O → Cl· + O₂`; overall `2O₃ → 3O₂`. **There is no effective sink for chlorine radicals**, because recombination to Cl₂ needs a three-body collision, which is vanishingly rare in the upper atmosphere.
+
+## E. Structure and numerical register — Group 14
+
+| Quantity | C | Si | Ge | Sn | Pb |
+|---|---|---|---|---|---|
+| Covalent radius (Å) | 0.77 | 1.17 | 1.22 | 1.40 | 1.46 |
+| IE₁ (kJ mol⁻¹) | 1086 | 786 | 760 | **707** | 715 |
+| IE₂ | 2354 | 1573 | 1534 | 1409 | 1447 |
+| IE₃ | 4622 | 3232 | 3300 | 2943 | 3087 |
+| IE₄ | 6223 | 4351 | 4409 | 3821 | 4081 |
+| Melting point (°C) | 4100 (see contradiction 45) | 1420 | 945 | **232** | 327 |
+| Boiling point (°C) | — | 3280 | 2850 | 2623 | 1751 |
+| Electronegativity | 2.5 | 1.8 | 1.8 | 1.8 | 1.8 |
+
+**Bond energies.** C–C 348, Si–Si 297, Ge–Ge 260, Sn–Sn 240 kJ mol⁻¹; **Si–O 502 kJ mol⁻¹**.
+**Diamond.** C–C 1.54 Å, tetrahedral, cubic unit cell, density 3.51 g cm⁻³, Mohs 10, melting about 3930 °C.
+**Graphite.** In-sheet C–C 1.41 Å; interlayer 3.35 Å; density 2.22 g cm⁻³; Mohs >1; ABAB (α) or ABCABC (β).
+**Fullerenes.** 12 pentagons always; hexagons = n/2 − 10; C₆₀ has 90 C–C linkages.
+**Tin transition.** α ⇌ β at 13.2 °C.
+**Interstitial carbides.** Metal 12-coordinate radius must exceed 1.35 Å; TaC melts at 3900 °C, Mohs 9–10.
+**Carbonate decomposition.** BeCO₃ <100, MgCO₃ 540, CaCO₃ 900, SrCO₃ 1290, BaCO₃ 1360 °C.
+**Halide anomalies.** SnF₄ sublimes at 705 °C and PbF₄ melts at 600 °C — both three-dimensional, unlike the volatile molecular tetrahalides. **SnI₄ is bright orange** by charge transfer; every other main-group tetrahalide here is colourless.
+**Chlorosilane boiling points.** Me₃SiCl 57.7, MeSiCl₃ 66.4, Me₂SiCl₂ 69.6 °C.
+**CS₂.** b.p. 46 °C, flash point 30 °C, autoignition 100 °C, linear like CO₂.
+**C₃O₂.** b.p. 6 °C, linear O=C=C=C=O.
+**Silicone rubbers.** 6000–600 000 Si units; elastic from −90 °C to +250 °C.
+**Structures registered.** Diamond cubic and its rare wurtzite-like polymorph · graphite sheets · C₆₀ · CO₃²⁻ trigonal planar, sp², delocalised π over four atoms · CO₂ linear with equal C–O bonds · NaHCO₃ hydrogen-bonded chains against KHCO₃ dimers · Fe₂(CO)₉ with three bridging and six terminal CO, 12 Fe–C bonds · the six silicate classes · **N(SiH₃)₃ planar against N(CH₃)₃ pyramidal** · [SiF₆]²⁻ octahedral · silicone linear, cyclic and cross-linked polymers.
+
+## F. Colour and observation register — Group 14
+
+| Species | Observation |
+|---|---|
+| Diamond | Colourless; industrial stones often black; **"blue diamonds" contain aluminium**, ordinary ones a trace of nitrogen |
+| Graphite | Black, soft, lubricating |
+| Fullerene solution / crystals | **Wine-red solution; mustard-coloured crystals** |
+| Be₂C | Red solid |
+| Al₄C₃ | Pale yellow solid |
+| C₂²⁻ carbides | Colourless ionic solids |
+| SiC | Dark purple, black or dark green from Fe and other impurities; **pure SiC is pale yellow to colourless** |
+| CO | Colourless, odourless, poisonous; **burns with a blue flame** |
+| CO₂ | Colourless, odourless; solid sublimes at −78 °C |
+| C₃O₂ | Foul-smelling gas; polymerises to yellow, then red, then purple solids |
+| CS₂ | Colourless liquid; pure samples smell of ether, impure ones foul |
+| C₃S₂ | Red liquid |
+| Ag₂CO₃ | **Yellow**, though most silver salts are white — strong polarisation by Ag⁺ |
+| SnO / SnO₂ | Grey / white |
+| PbO | **Massicot yellow; litharge red or reddish-yellow** |
+| PbO₂ | Dark brown |
+| Pb₂O₃ | Reddish-yellow |
+| Pb₃O₄ | Red (red lead) |
+| SnI₄ | **Bright orange — charge-transfer** |
+| Other Group 14 tetrahalides | Colourless volatile liquids |
+| CuCl from Sn(II) + Cu(II) | White precipitate |
+| Hg₂Cl₂ then Hg from Sn(II) | White, then black |
+| Au from Sn(II) + AuCl₃ | Yellow precipitate |
+| Bi from Sn(II) + Bi(OH)₃ | Black precipitate |
+| HMnO₄ from PbO₂ + Mn²⁺ | Purple |
+| Emerald | Green — beryl with 1–2 % Cr |
+| Lapis lazuli / ultramarine | Blue — from the **polysulphide ion** |
+| Glass colourants | Fe³⁺ yellow-brown; Fe³⁺ + Fe²⁺ green; Fe²⁺ light blue; Co²⁺ deep blue; colloidal Cu ruby-red; CaF₂ clouds to opal glass |
+
+## G. Uses and hazards register — Group 14
+
+**Diamond** — abrasives, drill tips (which burn out to graphite if overheated). **Graphite** — lubricant, alone or in graphited oil. **K₃C₆₀** — superconductor below 18 K. **CaC₂** — formerly the main source of acetylene for oxy-acetylene welding; now chiefly for calcium cyanamide, itself a nitrogenous fertiliser and a feedstock for urea and melamine. **TaC and WC** — cutting tools for lathes. **SiC** — carborundum abrasive. **Boron carbide** — abrasive and **radiation shield**. **CO** — industrial fuel as water gas, producer gas and coal gas; reducing agent in the blast furnace; ligand. *Hazard:* forms a haemoglobin complex 300× more stable than oxyhaemoglobin. **Phosgene** — *hazard:* extremely toxic, used as a war gas in 1915; now made in quantity for tolylene diisocyanate and polyurethanes. **CO₂** — over half as refrigerant (dry ice, "cardice", for meat, frozen food, ice cream and laboratory cooling); over a quarter for carbonating drinks; urea manufacture, inert atmosphere, neutralising alkalis, fire extinguishers, blasting in coal mines, aerosol propellant, inflating life-rafts. **CS₂** — viscose rayon and cellophane, CCl₄ manufacture, solvent for sulphur in cold vulcanisation. *Hazards:* flash point 30 °C, self-ignites at 100 °C, and poisons brain and central nervous system. **Silica gel** — drying agent, catalyst, chromatography. **Kieselguhr** — filtration, abrasive, inert filler, gelignite. **Sodium silicate** — liquid detergents (keeps the pH high so grease saponifies — **but not in hard water, which precipitates calcium silicate**), adhesive for paper and cardboard, asbestos roof tiles, fireproof paint and putty, silica gel manufacture. **Zeolites** — ion exchange (Permutit water softeners, regenerated with strong NaCl), and molecular sieves that absorb H₂O, CO₂, NH₃ and EtOH and separate straight-chain from branched hydrocarbons. **Lapis lazuli** — prized medieval oil pigment. **Glass** — soda glass for windows and cheap labware; potash glass; **lead glass** for optics and ornaments (higher refractive index); **borosilicate/Pyrex** for laboratory ware (low expansion, less alkali, resists chemical attack). **Silicones** — water repellents for masonry, glassware and fabric, car and shoe polish; antifoams at a few ppm in sewage treatment, textile dyeing, brewing and crisp frying; dielectric fluid in high-voltage transformers; hydraulic fluids; light-duty lubricants (**methyl silicones fail under high pressure — phenyl-containing ones are better**), thickened with lithium stearate to greases; silicone rubbers elastic from −90 to +250 °C. **PTFE** — inert labware, non-stick pans, razor blades; very low friction. **CCl₄** — solvent, Freon feedstock, fire extinguishers (heavy vapour excludes oxygen). **Freons** — refrigerants, aerosol propellants, cleaning computer boards. *Hazards:* far more potent greenhouse gases than CO₂, and they destroy stratospheric ozone; substitutes HFCs and HCFCs still do both but persist for less time. **SiCl₄** — ultra-pure silicon for transistors; flame hydrolysis to ultrafine SiO₂ used as a thixotropic agent in polyester and epoxy paints and as filler in silicone rubber. **Pb(CH₃COO)₄** — selective oxidant, notably for cleaving 1,2-diols in carbohydrates; water-sensitive. **PbEt₄** — anti-knock petrol additive. *Hazard:* lead is poisonous and is released on combustion, hence the ban and the move to unleaded fuel. **Pb(NO₃)₂** — *hazard:* explosive, which is why it is not used to make PbO.
+
+## H. MO-theory register — additions E32–E38
+
+- **E32 — Carbon monoxide, and why carbon is the donor atom.** *Examination
+  model:* a triple bond, `:C≡O:`, with a formal negative charge on carbon.
+  *Modern interpretation, which the source explicitly asks for* ("It is better
+  represented using the molecular orbital theory"): the HOMO is a weakly
+  antibonding σ orbital whose density sits **on carbon**, so despite oxygen's
+  greater electronegativity the molecule donates from carbon. That single fact
+  is what makes every metal carbonyl M–C rather than M–O. Then back donation
+  from filled metal d orbitals into CO's π\* completes the synergic picture —
+  and the source states the feedback loop precisely: π drift to the ligand
+  makes it more negative, which **enhances its σ-donating power**. The
+  experimental discriminator is given too: CO bonds weakly to BF₃, where only
+  σ donation is possible, and strongly to transition metals, where both
+  channels are open.
+- **E33 — CO₂ as a 3-centre 4-electron π system.** The source describes the π
+  bonding as three-centre and four-electron, giving a C–O bond order of two.
+  Its sentence is garbled (contradiction 49), but the physical content — two
+  equal C–O bonds, linear, delocalised π perpendicular to the axis — is sound
+  and is what the course will teach. Contrast SiO₂, which cannot do this and
+  therefore builds an infinite lattice.
+- **E34 — The carbonate ion.** sp² σ framework, one carbon p orbital left, and
+  a **delocalised π molecular orbital over all four atoms**. The source says so
+  directly. Three equal bonds, trigonal planar, and no need for three
+  resonance structures.
+- **E35 — Graphite's two conductivities.** Three of carbon's four valence
+  electrons make sp² σ bonds; the fourth enters a π system **delocalised over
+  the whole sheet**, and its mobility is why graphite conducts electricity in
+  the plane but not between planes. Diamond, with every electron localised in
+  σ bonds, conducts electricity poorly — yet conducts **heat** better than
+  graphite, because heat travels by lattice vibrations through a stiff
+  three-dimensional covalent network. Two conductivities, opposite orders, one
+  structural explanation.
+- **E36 — Internal π bonding using d orbitals (§10.32). Handled under the
+  policy block; see the dedicated section below.**
+- **E37 — Why SnI₄ is orange.** A **charge-transfer** transition: light moves
+  an electron from iodine to tin, momentarily reducing Sn(IV) to Sn(III). It
+  happens because tin and iodine are close in the periodic table, similar in
+  size, and therefore similar in orbital energy. The other tin tetrahalides
+  have too large a gap and stay colourless. This is the same machinery already
+  registered for the coloured chalcogen and halogen species — a main-group
+  compound coloured without any d–d transition.
+- **E38 — Fullerene topology.** Euler's theorem fixes the pentagon count at 12
+  for any closed fullerene cage; hexagons then follow as n/2 − 10. Worth a
+  visual because it is a *derivable* rule, not a remembered fact.
+
+## I. §10.32 and the d-orbital question — the two required treatments
+
+The source devotes a section to internal π bonding using d orbitals, and
+invokes d orbitals in five further places. Recording the source faithfully
+first, then the modern reading, per the policy block.
+
+### What the source actually says (examination / historical model)
+
+1. **§10.32.** N(CH₃)₃ is pyramidal; **N(SiH₃)₃ is planar**. In trisilylamine
+   the nitrogen uses three sp² orbitals for σ bonding and its lone pair sits in
+   the perpendicular p orbital, which **overlaps empty d orbitals on the three
+   silicons**, giving pπ–dπ bonding. This shortens N–Si and — because the lone
+   pair is now engaged — **removes the molecule's donor properties**. Carbon
+   has no d orbitals, so N(CH₃)₃ stays pyramidal. "About 200 compounds are now
+   thought to contain pπ–dπ bonds."
+2. **§10.33.** Si–F, Si–Cl and Si–O bonds are stronger than the corresponding
+   carbon bonds, attributed to donation from F, Cl or O into silicon d
+   orbitals.
+3. **§10.33.** Silicon halide chains (Si₁₆F₃₄, Si₆Cl₁₄, Si₄Br₁₀) are **longer
+   than the hydride chains**, attributed to pπ–dπ from filled halogen p
+   orbitals into Si d orbitals.
+4. **§10.33.** Carbon halides resist hydrolysis "because they have no d
+   orbitals, and cannot form a five-coordinate hydrolysis intermediate", while
+   silicon halides hydrolyse readily because 3d orbitals can coordinate OH⁻ or
+   water as a first step. The source adds the honest qualifier that empty
+   orbitals always exist but are usually too high in energy — and demonstrates
+   the point by hydrolysing CCl₄ with **superheated steam**.
+5. **§10.30.** Silanes are more reactive than alkanes partly because "Si has
+   low energy d orbitals which may be used to form an intermediate compound,
+   and thus lower the activation energy".
+6. **§10.31.** [SiF₆]²⁻ and [SnCl₆]²⁻ are described as sp³d² hybrids — with
+   the source itself noting that "the arguments over hybridizing d orbitals
+   have been discussed in Chapter 3", i.e. flagging the matter as contested.
+
+### Modern interpretation (to be taught alongside, flagged as unverified here)
+
+- **Trisilylamine's planarity** is now generally attributed to **negative
+  hyperconjugation** — donation from the nitrogen lone pair into Si–H **σ\***
+  antibonding orbitals — together with the reduced steric and electrostatic
+  penalty of planarity at nitrogen bonded to electropositive silicon. Calculated
+  3d occupancy on silicon is small. The *observation* (planar, shortened N–Si,
+  no donor power) is not in dispute; the *cause* is.
+- **Strong Si–F, Si–Cl and Si–O bonds** are better explained by the large
+  electronegativity difference and the resulting **ionic contribution** to the
+  bond energy than by d-orbital π donation.
+- **Hydrolysis of SiCl₄ versus CCl₄** is better explained by silicon's larger
+  size and lower steric congestion, and by a low-lying **σ\*(Si–Cl)** acceptor
+  orbital that permits a five-coordinate transition state. The source's own
+  superheated-steam experiment supports an activation-energy explanation
+  rather than an absolute orbital-availability one.
+- **[SiF₆]²⁻ and [SnCl₆]²⁻** are better described as **hypervalent
+  3-centre 4-electron** systems of the same family already registered for I₃⁻
+  (E17), SF₆ (E16) and XeF₂ (E23), with ligand electronegativity rather than d
+  orbitals doing the essential work.
+
+### Verification status
+
+**Every item in the "modern interpretation" list above is recorded as PENDING
+VERIFICATION.** Greenwood & Earnshaw is not present in this project and NCERT
+is not present in this project, so **no claim of Greenwood or NCERT
+corroboration is made anywhere in this addendum.** What is verified is only
+what was read directly in the accessible J.D. Lee text, which is the
+"examination / historical model" column. The course will present both columns
+with that asymmetry stated openly, and will **not** assert substantial
+central-atom d-orbital participation as the preferred modern explanation.
+
+## J. Visual register — additions V71–V84
+
+| ID | Required visual kind | Subject |
+|---|---|---|
+| V71 | **Structure comparison + 3D model** | Diamond against graphite, with 1.54 / 1.41 / 3.35 Å and both conductivity orders annotated |
+| V72 | **Original SVG structure** | C₆₀, with the 12 pentagons highlighted and the n/2 − 10 rule shown as a derivation |
+| V73 | **Thermodynamic cycle + trend graph** | Graphite/diamond: 1.9 kJ mol⁻¹ favouring graphite, and the activation barrier that preserves diamond |
+| V74 | **Comparison graphic** | The three carbide classes and their three hydrolysis products — methane, ethyne, propyne |
+| V75 | **MO energy diagram** | CO, with the HOMO drawn on carbon to show why carbon is the donor |
+| V76 | **Multicentre-bonding diagram** | CO's synergic σ-donation / π\*-back-donation loop |
+| V77 | **Reaction network** | The three fuel gases, with ΔH and ΔS on each and the calorific-value consequence |
+| V78 | **Structure gallery** | **The complete silicate classification** — all six sharing patterns on one page, each with a named mineral |
+| V79 | **Oxidation-state ladder** | Sn(II)/Sn(IV) against Pb(II)/Pb(IV), with reducing and oxidising arrows drawn from the registered reactions |
+| V80 | **Hydrolysis map** | CCl₄ against SiCl₄, including the superheated-steam route that shows the barrier is kinetic |
+| V81 | **Comparison graphic + JEE trap graphic** | N(CH₃)₃ pyramidal against N(SiH₃)₃ planar, drawn twice — once with the pπ–dπ caption and once with the negative-hyperconjugation caption, side by side and clearly labelled |
+| V82 | **Process flow** | Silicone synthesis: chain builder, chain stopper and cross-linker, and how the ratio sets chain length |
+| V83 | **Thermal map** | Carbonate decomposition temperatures BeCO₃ → BaCO₃ against cation size |
+| V84 | **Reaction network** | The four lead oxides and their interconversions, with colours on every node |
+
+## K. JEE trap register — Group 14, items 121–150
+
+121. **Graphite is more stable than diamond**, not the other way round — by
+     1.9 kJ mol⁻¹. Diamond survives on kinetics alone.
+122. **Electrical conductivity: graphite > diamond. Thermal conductivity:
+     diamond > graphite.** Two orders, opposite directions.
+123. **Grinding converts α-graphite to β; heating converts β back to α.**
+124. **Every fullerene has exactly 12 pentagons**, whatever its size; only the
+     hexagon count changes, as n/2 − 10.
+125. **Tin is the lowest-melting solid in the group** at 232 °C — lower than
+     lead's 327 °C.
+126. **IE₁ of Pb is greater than IE₁ of Sn**, breaking the downward trend. Only
+     C, Si and Ge exceed lead.
+127. **Al₄C₃ should not be written as 4Al³⁺ + 3C⁴⁻.** The source rejects that
+     charge separation explicitly.
+128. **Be₂C and Al₄C₃ give methane; C₂²⁻ carbides give ethyne; Mg₂C₃ gives
+     propyne.** Three carbides, three different hydrocarbons.
+129. **Interstitial carbides keep metallic lustre and conductivity but lose
+     malleability and ductility**, while gaining hardness and density.
+130. **Ferrocyanide with concentrated H₂SO₄ gives CO; with dilute H₂SO₄ it
+     gives HCN.** Concentration decides which poison you make.
+131. **CO₄⁴⁻ does not exist although SiO₄⁴⁻ does** — carbon is too small.
+132. **Producer gas has the lower calorific value** because roughly 70 % of it
+     is nitrogen, which does not burn.
+133. **CO is toxic by competitive binding, not by chemical corrosion** — the
+     haemoglobin complex is 300 times more stable than oxyhaemoglobin.
+134. **CO donates through carbon, not oxygen**, in spite of oxygen's higher
+     electronegativity.
+135. **σ-donor order CN⁻ > RNC > CO > NO⁺; π-acceptor order exactly
+     reversed.**
+136. **Solid bicarbonates exist only for Group 1 and ammonium**, and they are
+     *less* soluble than the corresponding carbonates.
+137. **Ag₂CO₃ is yellow** though carbonate is colourless and most silver salts
+     are white.
+138. **Carbonate stability rises with cation size** — BeCO₃ below 100 °C,
+     BaCO₃ at 1360 °C.
+139. **CS₂ has a flash point of 30 °C and self-ignites at 100 °C** — it needs
+     no flame.
+140. **Sunlight converts CS₂ to the CS radical**, so it is kept in dark
+     bottles.
+141. **Only fluorine attacks SiO₂** among the halogens; and NaOH attacks it,
+     which is why ground-glass stoppers seize in alkali bottles.
+142. **SnO disproportionates in hot alkali** to stannate and tin metal, while
+     in cold alkali it simply dissolves as stannite.
+143. **PbO₂ does not react with HNO₃** — which is exactly why HNO₃ is used to
+     dissolve the PbO out of Pb₃O₄ and Pb₂O₃ and leave brown PbO₂ behind.
+144. **PbO₂ oxidations must not be run in HCl or H₂SO₄**, because those acids
+     consume its oxidising power first.
+145. **PbO₂ with ice-cold HCl gives PbCl₄, but with hot HCl gives PbCl₂ and
+     chlorine.** Temperature changes the lead oxidation state of the product.
+146. **PbI₄ does not exist** — Pb(IV) oxidises I⁻, so PbI₂ always forms.
+147. **SnF₄ and PbF₄ are not volatile molecular solids** like the other
+     tetrahalides; they have three-dimensional structures and melt or sublime
+     around 600–705 °C.
+148. **SnI₄ is orange by charge transfer**, with no d–d transition involved.
+149. **The organometallics of Sn and Pb are all M(IV)**, even though the M(II)
+     state is the stable one for the free elements.
+150. **Silicones repel water because alkyl groups face outwards**, not because
+     of the Si–O–Si backbone itself.
+
+## L. Contradictions and source errors — items 44–53
+
+44. **"Ge is unusual because the liquid expands when it forms the solid. This
+    property is unique to Ga, Ge and Bi."** *Location:* §10.16, p. 413. The
+    same claim as contradiction 32, and the chapter's own answer key again
+    marks **H₂O** correct alongside Ga, Ge and Bi. Same resolution: the claim
+    is true among metals, false in general. *Safe with corrected wording.*
+45. **Carbon's melting point is given twice with different values.**
+    *Location:* §10.16 says diamond melts at "about 3930 °C"; Table 10.12 in
+    §10.18 gives 4100 °C, with no boiling point. *Chemical issue:* the two
+    figures are not reconcilable as stated. *Verification needed:* an
+    independent physical-data source; **Greenwood unavailable**. *Safe:* quote
+    "about 3900–4100 °C" as a range and note that carbon sublimes rather than
+    melting at ordinary pressure.
+46. **`SiC + 2F₂ → SiF₄ + CF₄` does not balance in fluorine.** *Location:*
+    §10.33. It needs **4F₂**. *Safe once corrected.*
+47. **`5PbO₂ + 2Mn(NO₃)₂ + 6HNO₃ → 5Pb(NO₃)₂ + 2HMnO₄ + 2H₂O` is printed with
+    one PbO₂.** *Location:* §10.25. Lead does not balance as printed; five are
+    required, and with five every element balances. *Safe once corrected.*
+48. **"SiC is unaffected by acids (except H₃PO₄)."** *Location:* §10.19.
+    *Chemical issue:* phosphoric acid is an unusual singular exception for a
+    material normally described as resistant to all acids but attacked by
+    HF/HNO₃ mixtures. *Verification needed:* a materials reference; **not
+    available in this corpus**. *Safe for inclusion:* **no** — the course will
+    say SiC is chemically inert to acids and will not name H₃PO₄ specifically.
+49. **The CO₂ π-bonding sentence is self-contradictory.** *Location:* §10.21:
+    "There is a three-centre four-electron π bond covering all three atoms.
+    This adds two π bonds to the structure in addition to the two π bonds."
+    *Chemical issue:* the second sentence double-counts. The conclusion — bond
+    order two — is right. *Safe:* rewrite from the conclusion, teach the
+    three-centre π system cleanly.
+50. **Boron carbide is given two formulae in one paragraph** — B₄C in the text
+    and "more correctly B₁₃C₂". *Verification needed:* a structural reference;
+    **unavailable**. *Safe:* teach B₄C as the conventional formula and note
+    that the real stoichiometry is variable and often written B₁₃C₂.
+51. **`CuCl + 2H₂O + CO → [CuCl(CO)(H₂O)₂]₂` carries a stray subscript 2**
+    outside the bracket without matching coefficients on the left.
+    Typographical; the course will write the mononuclear adduct.
+52. **`Be₂[Be₂SiO₄] Phenacite`** in the matrix-match column. Phenacite is
+    **Be₂[SiO₄]**; the extra Be₂ is a typesetting duplication.
+53. **The C₅O₂ suboxide is reported as disputed by the source itself** ("There
+    are disputed reports that C₅O₂ is formed by thermolysis of C₃O₂"). Recorded
+    as the source's own open question, not as an error. **Not safe to assert
+    either way**; the course will mention it as unsettled or omit it.
+
+**Items 25–31 (Group 18) and 32–43 (Group 13) are preserved unchanged above
+and have not been silently amended.**

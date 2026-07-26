@@ -65,25 +65,39 @@ Last updated: 2026-07-26.
 - **Destination:** Sections 7–19 — **PENDING**
 
 ### File 8 — `151716181314.pdf` (J.D. Lee adapted ed., Ch. 10 — **all six groups**)
-- **Pages:** 172 · **Inspected:** **113 / 172 (Text)** — contents, the full section index,
-  and complete deep reads of **four of the six parts**, each including its question sets
-  and answer key:
-  - **Part 3 — Group 15 — pp. 448–482** (extracted lines 4003–6220), §10.35–10.45.
-  - **Part 4 — Group 16 — pp. 483–512** (extracted lines 6221–8088), §10.46–10.55.
-  - **Part 5 — Group 17 — pp. 513–541** (extracted lines 8089–9991), §10.56–10.66.
-  - **Part 6 — Group 18 — pp. 542–558** (extracted lines 9992–11169), §10.67–10.74,
-    **plus the chapter-wide Miscellaneous Questions** on pp. 553–558, which range over
-    all six groups.
-- **The extracted text ends at line 11169 (p. 558).** Groups 15–18 are therefore read in
-  full; nothing follows Group 18 in this file.
-- **Cumulative harvest** recorded in `MASTER_REGISTERS.md` (main body + Addenda 1–4):
-  **112 topics, ~430 species, ~275 reactions, 72 structures, 26 MO cases, 58 visuals,
-  95 JEE traps, 31 contradictions/source errors.**
-- **Still to read in this file:** extracted lines **107–4003 = Parts 1 and 2, Groups 13
-  and 14** (pp. ~380–447). That is the only remaining unread portion.
-- **All named course gaps in this file are now closed:** §10.32, §10.34, §10.50, §10.53,
-  §10.65, §10.66 and **§10.73 Structure and Bonding in Xenon Compounds** — the MOT
-  section flagged from the outset.
+- **Pages:** 172 · **Inspected: 172 / 172 — COMPLETE.**
+- **Page accounting, done properly.** The PDF's 172 pages carry printed page numbers
+  **387 to 558 inclusive**, and 558 − 387 + 1 = **172**, so printed pages map 1:1 onto
+  PDF pages for this file. Earlier revisions of this register counted the contents and
+  section index as extra pages on top of the six Parts, which inflated the total to 113
+  before Groups 13–14 were read. **Corrected here: the six Parts alone account for all
+  172 pages.**
+
+| Part | Group | Printed pages | Extracted lines | Sections | Pages |
+|---|---|---|---|---|---|
+| 1 | 13 | 387–412 | 107–1748 | 10.1–10.15 | 26 |
+| 2 | 14 | 413–447 | 1749–4002 | 10.16–10.34 | 35 |
+| 3 | 15 | 448–482 | 4003–6220 | 10.35–10.45 | 35 |
+| 4 | 16 | 483–512 | 6221–8088 | 10.46–10.55 | 30 |
+| 5 | 17 | 513–541 | 8089–9991 | 10.56–10.66 | 29 |
+| 6 | 18 | 542–558 | 9992–11169 | 10.67–10.74 + chapter-wide Miscellaneous Questions | 17 |
+| | | | | **Total** | **172** |
+
+- **Every Part was read end to end, including its question sets and answer key**, and the
+  chapter-wide Miscellaneous Questions on pp. 553–558, which range over all six groups.
+  The extracted text ends at line 11169; nothing follows.
+- **Cumulative harvest** recorded in `MASTER_REGISTERS.md` (main body + Addenda 1–6):
+  **176 topics, ~600 species, ~430 reactions, 96 structures, 38 MO cases, 84 visuals,
+  150 JEE traps, 53 contradictions/source errors**, plus dedicated colour-and-observation
+  and uses-and-hazards registers for Groups 13, 14, 17 and 18.
+- **All named course gaps in this file are now closed:** §10.32 Internal π Bonding Using
+  d Orbitals, §10.34 Organic Derivatives, §10.50 General Properties of Oxides, §10.53
+  Oxohalides, §10.65 Polyhalides, §10.66 Pseudohalogens, and §10.73 Structure and Bonding
+  in Xenon Compounds — the MOT section flagged at the very start of this project.
+- **Verification status:** everything registered from this file is verified against the
+  accessible J.D. Lee text and nothing else. Modern bonding re-interpretations recorded
+  alongside the source's pπ–dπ and sp³dⁿ language are marked **PENDING VERIFICATION**;
+  no NCERT or Greenwood corroboration is claimed, because neither is in the corpus.
 - **Register-integrity note (2026-07-27):** the two commits that closed Groups 15 and 16
   updated the summary table at the foot of this file but their scripted edit to *this*
   block silently no-matched, so the narrative sat at "~25 / 172" for two parts. Repaired
@@ -121,8 +135,12 @@ Last updated: 2026-07-26.
 | | Pages | Inspected | % |
 |---|---|---|---|
 | Files 1–6 (original six) | 437 | **325** | 74 % |
-| Files 7–11 (new five) | 1294 | **132** | 10.2 % |
-| **Total project** | **1731** | **457** | **26 %** |
+| Files 7–11 (new five) | 1294 | **191** | 14.8 % |
+| **Total project** | **1731** | **516** | **30 %** |
+
+Files 7–11 breakdown: file 7 (JD Lee 5th ed. scan) 5 / 1057 · **file 8 (JD Lee adapted
+Ch. 10) 172 / 172 — COMPLETE** · file 9 (annotated notes) 0 / 40 · file 10 (annotated
+notes) 0 / 11 · file 11 (noble-gas notes) 14 / 14.
 
 **The project has NOT been fully reviewed.** No statement in the course may claim otherwise.
 

@@ -32,21 +32,21 @@ export default function DBlockPartNavigation({ part, position }: DBlockPartNavig
   const headingId = `d-block-part-${part}-${position}-navigation`;
 
   return (
-    <nav className="mt-5 flex items-center justify-between gap-3 sm:mt-6" aria-labelledby={headingId}>
+    <nav className="mt-4 flex items-center justify-between gap-3" aria-labelledby={headingId}>
       <p id={headingId} className="sr-only">
         D-block part navigation
       </p>
       <Link
         href={previous.href}
         aria-label={previous.ariaLabel}
-        className="inline-flex min-h-9 items-center rounded-full border border-cyan-300/30 bg-cyan-300/[0.07] px-3 py-1.5 text-sm font-bold text-cyan-200 transition hover:border-cyan-300/60 hover:bg-cyan-300/[0.14] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300 focus-visible:ring-offset-2 focus-visible:ring-offset-[#071321]"
+        className="inline-flex min-h-8 items-center rounded-full border border-[#17364a] bg-[#071321] px-3 py-1 text-sm font-bold text-[#4ee7ff] transition hover:border-[#4ee7ff] hover:bg-[#17364a]/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#4ee7ff] focus-visible:ring-offset-2 focus-visible:ring-offset-[#02060b]"
       >
         <span aria-hidden="true">← Back</span>
       </Link>
       <Link
         href={next.href}
         aria-label={next.ariaLabel}
-        className="inline-flex min-h-9 items-center rounded-full border border-violet-300/30 bg-violet-300/[0.07] px-3 py-1.5 text-sm font-bold text-violet-200 transition hover:border-violet-300/60 hover:bg-violet-300/[0.14] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-violet-300 focus-visible:ring-offset-2 focus-visible:ring-offset-[#071321]"
+        className="inline-flex min-h-8 items-center rounded-full border border-[#17364a] bg-[#071321] px-3 py-1 text-sm font-bold text-[#b69aff] transition hover:border-[#b69aff] hover:bg-[#17364a]/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#b69aff] focus-visible:ring-offset-2 focus-visible:ring-offset-[#02060b]"
       >
         <span aria-hidden="true">Next →</span>
       </Link>

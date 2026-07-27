@@ -5,6 +5,7 @@ import remarkGfm from "remark-gfm";
 import rehypeKatex from "rehype-katex";
 import { createMarkdownComponents } from "../AnchoredMarkdown";
 import DBlockPartNavigation from "../DBlockPartNavigation";
+import DBlockVisualSystem from "../DBlockVisualSystem";
 
 type VisualProps = { className?: string };
 type PageBlock = { id: string; label: string; visual: string; markdown: string };
@@ -397,7 +398,8 @@ const markdownComponents = {
 
 export default function DBlockPart07() {
   return (
-    <main className="min-h-screen bg-[#050b14] text-slate-100">
+    <main className="dblock-page">
+      <DBlockVisualSystem />
       <div className="mx-auto max-w-6xl px-4 py-8 sm:px-6 lg:px-8">
         <header className="overflow-hidden rounded-[2rem] border border-cyan-400/20 bg-[radial-gradient(circle_at_top_left,rgba(34,211,238,0.18),transparent_34%),linear-gradient(135deg,#07111f,#0b1a2c_55%,#10142a)] px-6 py-9 shadow-[0_30px_100px_rgba(0,0,0,0.35)] sm:px-10 sm:py-12">
           <div className="flex flex-wrap items-center gap-3">

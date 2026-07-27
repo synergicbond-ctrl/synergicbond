@@ -5778,3 +5778,135 @@ naming its denominator explicitly.** **`[UNCLEAR]` count rises from 4 to 5.**
 **6 / 6 pages deeply read**, each with a triage label and a deep-read outcome,
 none read without being registered. **File 12: 56 + 6 = 62 of 184 deeply read.**
 **`FULL — PARTIALLY UNIQUE`: 14 of 99 read, 85 remaining.**
+
+---
+
+# Addendum 24 — file 12 PDF 137–138 (printed 605–606): the halides, and the silver-halide gap partly closed
+
+**Third `FULL — PARTIALLY UNIQUE` range.** Two pages, chosen because the
+Addendum-8 map quoted them as carrying the **kinetic-versus-thermodynamic
+inertness** argument and because they were the likeliest home of the
+**AgNO₃ silver-halide ladder**, the last Group 17 gap still open.
+
+| PDF | Printed | Section | Triage | Deep-read outcome | File-8 equivalent |
+|---|---|---|---|---|---|
+| 137 | 605 | Liquid HF as a solvent; ionic and molecular halides | `FULL — PARTIALLY UNIQUE` | **`DEEP READ — CONTRADICTION FOUND`** + partial additions | §10.61 |
+| 138 | 606 | Maximum covalency; bridging halides; anhydrous preparations | `FULL — PARTIALLY UNIQUE` | **`DEEP READ — CONTRADICTION FOUND`** + partial additions | §10.61 |
+
+**A classification rule, stated once and applied from here on.** The project has
+two registers for printed faults, and the line between them had been drawn case
+by case. **From this addendum: an equation that is written out in full and does
+not balance goes to the contradiction register** — the precedent set by
+contradiction 27 and followed by 67 and 68 — **while a passage written
+schematically without coefficients throughout goes to the source-defect register**
+(D7–D9, the UF₆ set), as does a wrong formula standing outside any equation
+(D1, D6). **Corrections in both registers come from conservation where
+conservation settles them, and neither register is a place to hide a guess.**
+
+## A. Topics
+
+| # | Topic | Content |
+|---|---|---|
+| A351 | **Liquid HF as a solvent system — where the mineral acids become bases** | `2HF ⇌ [H₂F]⁺ + F⁻` (H 2/2, F 2/2, charge 0/0 — **balances**). **The self-ionisation species [H₂F]⁺ appears nowhere else in the corpus.** The consequence is the striking part: **"the solvent itself has a very strong tendency to donate protons. Thus when the familiar mineral acids HNO₃, H₂SO₄ and HCl are dissolved in HF, the mineral acids are forced to accept protons from the HF" — so the mineral acids are behaving as *bases* in this solvent.** **Very few substances act as acids in HF: perchloric acid is an exception, and the only other known acids are fluoride acceptors such as SbF₅, NbF₅, AsF₅ and BF₃.** Many compounds react with HF, which limits its usefulness, but **it is a useful medium for preparing fluoro complexes such as [SbF₆]⁻, and fluorides.** This is the exact counterpart of A18's liquid-ammonia solvent system at the opposite end of the acidity scale, and the pair — **ammonia levels acids, HF inverts them** — is the lesson. It also supplies the *mechanism* behind A321's fluorinating-agent roster: SbF₅ and its relatives act by accepting fluoride. |
+| A352 | **Which halides are ionic, and the insoluble exceptions — including the fluoride exception the question page asked about** | **Most halides in which the metal is (+I), (+II) or (+III) are ionic**: Group 1, Group 2 **except Be**, the lanthanides, and *some* transition metals. **Most ionic halides dissolve in water giving hydrated metal ions and halide ions.** **The insoluble few, named in full: LiF, CaF₂, SrF₂, BaF₂, and the chlorides, bromides and iodides of Ag(+I), Cu(+I), Hg(+I) and Pb(+II).** **This partly closes the AgNO₃ ladder gap that Addendum 20's A306 registered.** What the source establishes: **AgCl, AgBr and AgI are insoluble, and silver fluoride is conspicuously absent from the insoluble list** — the fluoride exception the problem page asked about, stated by omission rather than by assertion. **What the source still does not give: the colours of the three precipitates, and their behaviour towards dilute and concentrated ammonia.** Those remain unregistered and unguessed; **the gap is narrowed, not closed.** |
+| A353 | **Fluorine takes the highest oxidation state; the highest oxidation states are covalent** | **"Among the metals which show variable valency, the highest oxidation state is usually found with the fluorides. Thus osmium forms OsF₆, but only OsCl₄, OsBr₄ and OsI₄."** **OsF₆ appears nowhere else in the corpus** and it is a better example than the ones already registered at A90, because the same metal is shown failing with the other three halogens. The second half is the generalisation: **"For a metal with variable oxidation states, the higher oxidation states will be covalent and the lower ones ionic"** — **UF₆ covalent and gaseous against UF₄ an ionic solid** (which is precisely why the A318 uranium chain ends in a volatile compound and can be separated by gaseous diffusion), and **PbCl₄ covalent against PbCl₂ ionic.** |
+| A354 | **The molecular-halide hydrolysis set, all four balanced** | `BCl₃ + 3H₂O → H₃BO₃ + 3H⁺ + 3Cl⁻` · `SiCl₄ + 4H₂O → Si(OH)₄ + 4H⁺ + 4Cl⁻` · `PCl₃ + 3H₂O → H₃PO₃ + 3H⁺ + 3Cl⁻` · `PCl₅ + 4H₂O → H₃PO₄ + 5H⁺ + 5Cl⁻`. **Every one balances in atoms and charge as printed** — checked individually. The set is worth registering as a set because it is written in **ionic form with H⁺ and Cl⁻ separated**, which is how the source frames hydrolysis throughout this section and is not how the equivalent equations were registered from file 8. Note the products differ in kind: boron and silicon give the **hydroxide/oxoacid**, phosphorus gives the **oxoacid at two different oxidation states** depending on the chloride. |
+| A355 | **Maximum covalency makes a halide inert to water — and the inertness is kinetic** | **"Sometimes when the maximum covalency is obtained, the halides are inert to water. Thus CCl₄ and SF₆ are stable. This is because of kinetic rather than thermodynamic factors, and CCl₄ does hydrolyse with superheated steam to form phosgene COCl₂."** **This is the sentence the Addendum-8 map flagged, and it is the direct experimental support for E16 and for trap 254.** The demonstration is the good part: **the thermodynamics permits the hydrolysis all along, and raising the temperature proves it by producing phosgene.** "Inert" therefore means "slow", not "cannot" — and a student who has learned CCl₄ is unreactive has learned a half-truth the source itself corrects. Related: **molecular halides are usually gases or volatile liquids, because the bonds within the molecule are strong but only weak van der Waals forces hold the molecules together.** |
+| A356 | **The source's multiple-bonding claim for fluorides — held in the historical column** | **Printed as: "A number of fluorides show multiple bonding when the central atom has suitable vacant orbitals. This contributes to the high strength and shortness of many bonds of fluorine (B—F, C—F, N—F and P—F)."** **Handled under the standing three-column policy, and not promoted.** *Experimental:* B—F, C—F, N—F and P—F are shorter and stronger than additive single-bond estimates would predict — the same class of observation as A297's POCl₃ figures. *Historical / examination model:* π donation from a fluorine lone pair into a vacant orbital on the central atom, the pπ–dπ language the book uses throughout — **kept, because examinations use it.** *Modern interpretation:* for **B—F** the acceptor is the vacant **2p** orbital, which needs no d participation at all; for **N—F** and **P—F** a large **electrostatic contribution** from the polarity is the leading modern account; and for **C—F the source's own wording is problematic, because carbon has no accessible d orbitals and its 2p set is full in a saturated fluoride** — so "suitable vacant orbitals" cannot mean what it means in the boron case. **PENDING VERIFICATION — Greenwood would be needed and is absent.** **The course will present the shortening as an observation, give the examination model by name, and say plainly that the single phrase "vacant orbitals" does not cover all four bonds.** |
+| A357 | **Bridging halides — bent or linear, and which halogen decides** | A89 already carries the 3c–4e description, the identical-bond argument and the AlCl₃/BeF₂/BeCl₂ examples. **New geometry: "Halogen bridges involving chlorine and bromine are typically bent, but those involving fluorine may be either bent or linear. Several pentafluorides such as NbF₅ and TaF₅ form cyclic tetramers with linear bridges."** So the bridging halogen sets the geometry, and fluorine is the one with two options — **cyclic tetramers of NbF₅ and TaF₅ are a structure type the corpus did not hold.** The source also notes bridges are **less commonly formed between three atoms**, which is the rarity A89 recorded. |
+| A358 | **Preparing anhydrous halides by direct reaction — and the iron ladder** | **"Most metals react vigorously with F₂ and give fluorides in the highest oxidation states. Some non-metals such as P and S explode. Elevated temperatures are usually required to prepare chlorides, bromides and iodides."** The worked ladder is one metal against three halogens: `2Fe + 3F₂ → 2FeF₃` (**balances**), `Fe + Br₂ → FeBr₂` (**balances**), and the iodide — printed defectively, see contradiction 73. **Fluorine takes iron to (+III); bromine and iodine stop at (+II).** A353's generalisation made concrete in three lines. **"Reactions are easier in a solvent such as tetrahydrofuran, though the products are often solvated"** — a practical caveat, and the reason "anhydrous" preparations are not always as anhydrous as the name suggests. |
+| A359 | **Oxide + carbon + halogen, and the step that feeds the Kroll process** | **"It is assumed that the carbon first reduces the oxide to the metal, followed by reaction of the metal with the halogen"** — the mechanism is stated as an assumption, and is registered as one rather than as fact. `TiO₂ + C + 2Cl₂ → TiCl₄ + CO₂` — Ti 1/1, O 2/2, C 1/1, Cl 4/4, **balances as printed**. **This is the chlorination step that produces the TiCl₄ the Kroll process then reduces under argon (A307)** — so the Group 18 use of argon and the Group 17 halide chemistry meet on this equation, and the course can now teach the Kroll process end to end from registered material. |
+
+## B. Contradiction 72 — printed 605, the halide solubility sequence
+
+**Source form as printed:** *"The solubilities usually increase from F⁻ to Br⁻ to
+Cl⁻ to I⁻ (provided that they are all ionic), because the lattice energy decreases
+as the ionic radii increase."* **Confirmed at 1000 dpi; chloride and bromide are
+transposed.** *The issue:* the sequence contradicts **the reason given in the same
+sentence.** Lattice energy falls as ionic radius grows, and the halide radii run
+**F⁻ < Cl⁻ < Br⁻ < I⁻** — so the solubility sequence must be **F⁻ → Cl⁻ → Br⁻ →
+I⁻.** As printed, bromide is placed before chloride, which would require
+r(Br⁻) < r(Cl⁻). *Correction, from the source's own stated mechanism plus the
+ionic radii already registered in this corpus:* **F⁻ → Cl⁻ → Br⁻ → I⁻.**
+*Verification needed:* none — the sentence refutes itself. *Safe for inclusion:*
+**the trend and its lattice-energy explanation, in the corrected order.**
+
+## C. Contradiction 73 — printed 606, the iron(II) iodide equation
+
+**Source form as printed:** `Fe + I₂ → FeI`. **Confirmed at 1200 dpi — the
+subscript is genuinely absent, and this is not scan degradation: the FeBr₂ on the
+line immediately above renders its subscript 2 cleanly at the same
+magnification.** *The issue:* **iodine does not balance, 2 on the left against 1
+on the right.** *Correction, from conservation and from the iron oxidation state
+the passage is demonstrating:* **`Fe + I₂ → FeI₂`.** The surrounding argument
+requires it — the three-equation ladder exists to show fluorine reaching Fe(+III)
+while bromine and iodine stop at Fe(+II), and FeI would be Fe(+I), which the
+passage nowhere claims and which would break the very point being made.
+*Verification needed:* none. *Safe for inclusion:* **the ladder FeF₃ / FeBr₂ /
+FeI₂, in the corrected form, with the printed FeI recorded beside it.**
+
+## D. Visual register — additions V153–V155
+
+| ID | Required visual kind | Subject |
+|---|---|---|
+| V153 | **Comparison graphic** | The liquid-HF solvent system against liquid ammonia: the two self-ionisations side by side, and the same three mineral acids shown behaving as acids in water, as strong acids in ammonia, and **as bases in HF** — one row of species, three solvents, three verdicts |
+| V154 | **Comparison graphic** | Halide solubility and the insoluble exceptions: the F⁻ → Cl⁻ → Br⁻ → I⁻ trend **drawn in the corrected order (contradiction 72)** with lattice energy on the second axis, and the insoluble set — LiF, CaF₂, SrF₂, BaF₂, and the Cl/Br/I of Ag(+I), Cu(+I), Hg(+I), Pb(+II) — flagged off-trend. **Silver fluoride's absence marked explicitly as the fluoride exception**, and **the colours and ammonia behaviour left blank and labelled "not in source" (A352).** |
+| V155 | **Process flow** | Titanium end to end: `TiO₂ + C + 2Cl₂ → TiCl₄ + CO₂` feeding the Kroll reduction under argon, with the argon's job — excluding **both** O₂ and N₂ — called out. **Joins A359 to A307 and is the first visual in the corpus to cross from Group 17 into Group 18 uses.** |
+
+## E. JEE trap register — items 283–289
+
+283. **In liquid HF, HNO₃, H₂SO₄ and HCl are bases.** They are forced to accept
+     protons. "Acid" is a role in a solvent system, not a property of a bottle.
+284. **CCl₄ and SF₆ are inert to water for kinetic reasons, not thermodynamic
+     ones** — and CCl₄ proves it by hydrolysing to phosgene in superheated
+     steam. "Does not react" and "reacts slowly" are different claims.
+285. **Silver fluoride is the halide missing from the insoluble list.** AgCl,
+     AgBr and AgI are insoluble; AgF is not. The exception is the fluoride,
+     every time.
+286. **Fluorine gives iron(+III), bromine and iodine give iron(+II).** One metal,
+     three halogens, two oxidation states — and osmium makes the same point with
+     OsF₆ against OsCl₄, OsBr₄ and OsI₄.
+287. **UF₆ is covalent and gaseous; UF₄ is an ionic solid.** The higher oxidation
+     state is the covalent one — which is exactly why isotope separation works
+     on UF₆ and not on UF₄.
+288. **Halide solubility rises F⁻ → Cl⁻ → Br⁻ → I⁻**, because lattice energy
+     falls as the anion grows. The parent edition prints this sequence with Cl
+     and Br transposed (contradiction 72) — a printed order that contradicts its
+     own stated reason.
+289. **Chlorine and bromine bridges are bent; fluorine bridges may be bent or
+     linear**, and NbF₅ and TaF₅ use the linear kind to build cyclic tetramers.
+     The bridging atom sets the geometry.
+
+## F. Register-count effects
+
+- **Topics: A350 → A359.** Nine added, **all table rows**, contiguous.
+- **Expanded, IDs kept:** **A18** (paired with the HF solvent system) · **A89**
+  (bridge geometry, bent against linear) · **A90** (OsF₆ as the better example) ·
+  **A306** (the silver-halide gap narrowed, not closed) · **A307** (its feed
+  equation now registered) · **A321** (the fluoride-acceptor mechanism behind the
+  roster) · **E16** (its kinetic-versus-thermodynamic evidence now sourced).
+- **Visuals: V152 → V155.** Three added.
+- **Traps: 282 → 289.** Seven added.
+- **Contradictions: 71 → 73.** Two added — **72**, a solubility sequence that
+  contradicts its own stated reason, and **73**, `Fe + I₂ → FeI`. **Both settled
+  from within the source; neither needs NCERT or Greenwood.**
+- **Source defects: D12 — unchanged.**
+- **MO cases: E45 — unchanged.** A356's multiple-bonding claim is **not** promoted
+  to an MO case; it is held across the three bonding columns with the modern
+  reading marked **PENDING VERIFICATION**.
+- **`[UNCLEAR]`: 5 — unchanged.**
+- **Gap status:** the **AgNO₃ silver-halide ladder is narrowed** — the source
+  establishes which silver halides are insoluble and, by omission, that the
+  fluoride is not among them, **but gives neither the colours nor the ammonia
+  behaviour.** Still open, and still not filled from general chemistry. **The
+  boiling point of helium** and **HF with graphite** also remain open.
+
+---
+
+# Range closure — PDF 137–138
+
+**2 / 2 pages deeply read**, both returning `DEEP READ — CONTRADICTION FOUND`
+alongside partial additions, and neither read without being registered.
+
+**File 12: 62 + 2 = 64 of 184 deeply read.**
+**`FULL — PARTIALLY UNIQUE`: 16 of 99 read, 83 remaining.**

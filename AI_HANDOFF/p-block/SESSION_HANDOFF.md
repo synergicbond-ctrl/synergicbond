@@ -28,17 +28,17 @@ that its dev server is separately broken by an unrelated RSC-manifest fault.
 
 | | |
 |---|---|
-| **Corpus** | **578 / 1915 pages (30 %)** |
+| **Corpus** | **580 / 1915 pages (30 %)** |
 | Files 1–6 | 325 / 437 |
 | File 7 (JD Lee 5th ed., whole book) | 5 / 1057 |
 | **File 8** (JD Lee adapted, Ch. 10, all six groups) | **172 / 172 — COMPLETE** |
 | File 9, 10 (handwritten notes) | 0 / 40, 0 / 11 — vision only, OCR garbled |
 | File 11 (noble gas notes) | 14 / 14 |
-| **File 12** (`15161718.pdf`, JD Lee 5th ed. Ch. 14–17) | 209/209 triaged · **62 / 184 deeply read** |
+| **File 12** (`15161718.pdf`, JD Lee 5th ed. Ch. 14–17) | 209/209 triaged · **64 / 184 deeply read** |
 
-**Register IDs:** Topics **A1–A350** (contiguous, no gaps, no duplicates, every
-one a table row) · Visuals **V152** · MO cases **E45** · Traps and numbered items
-**282** · Contradictions **25–71** · Source defects **D1–D12** · `[UNCLEAR]` **5
+**Register IDs:** Topics **A1–A359** (contiguous, no gaps, no duplicates, every
+one a table row) · Visuals **V155** · MO cases **E45** · Traps and numbered items
+**289** · Contradictions **25–73** · Source defects **D1–D12** · `[UNCLEAR]` **5
 distinct items**.
 
 ---
@@ -95,17 +95,26 @@ AgNO₃ silver-halide ladder with ammonia, and the boiling point of helium.
 
 **Every queue except `FULL — PARTIALLY UNIQUE` is now closed.**
 
-**PDF 117–122 (Addendum 22) and PDF 131–136 (Addendum 23) are done.**
+**PDF 117–122 (Addendum 22), PDF 131–136 (Addendum 23) and PDF 137–138
+(Addendum 24) are done.**
 
-1. **85 remaining `FULL — PARTIALLY UNIQUE` pages**, in section-sized ranges.
-   **Next: PDF 137–138 = printed 605–606, "Halides"** — `FULL — PARTIALLY
-   UNIQUE`, file-8 §10.61. The Addendum-8 map quotes it as carrying **"maximum
-   covalency ⇒ inert to water; CCl₄ and SF₆ stable, for kinetic rather than
-   thermodynamic reasons"** — which bears directly on E16 and on trap 254 — and
-   **it is the likeliest home of the AgNO₃ silver-halide ladder**, the last
-   Group 17 gap still open. **Then PDF 139–144 (printed 607–612, halogen oxides
-   with a distinct "Oxides of bromine" subsection)** and **PDF 123–124 (printed
-   591–592, Table 16.5 electronegativity *and electrode potentials*)**.
+1. **83 remaining `FULL — PARTIALLY UNIQUE` pages**, in section-sized ranges.
+   **Silver-halide gap is narrowed, not closed:** AgCl/AgBr/AgI insoluble and
+   AgF the exception are now registered (A352); colours and ammonia behaviour
+   are still not given by the source and remain open.
+
+   **Next: PDF 139–144 = printed 607–612, halogen oxides**, with a distinct
+   "Oxides of bromine" subsection — `FULL — PARTIALLY UNIQUE`, file-8 §10.62.
+   **Then PDF 123–124 (printed 591–592, Table 16.5 electronegativity *and
+   electrode potentials*)**, and **PDF 145–152 (printed 613–620, standard
+   reduction potentials in acidic and basic solution, plus oxoacids —
+   `FULL — UNIQUE`, absent from file 8 entirely).**
+
+2. **Still open:** the boiling point of helium (PDF 169–170, printed 637–638,
+   triaged `SAMPLED — DUPLICATE OF FILE 8` but never actually read — worth a
+   quick check since the question-gap page needs the figure); HF with
+   graphite (the source gives F₂ with graphite, not HF); the AgNO₃ colour/
+   ammonia ladder (above).
 
 2. **Before teaching from Table 16.13, read contradictions 69–71.** Its
    arithmetic does not close, and the failure is systematic rather than random.

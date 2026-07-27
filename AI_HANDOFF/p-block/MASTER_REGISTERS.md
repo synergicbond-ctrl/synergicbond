@@ -3226,3 +3226,161 @@ Read from 170 dpi renders. This section has **no counterpart in file 8**, so the
 is no same-author duplication to discount — and no second source corroborates it.
 **No NCERT or Greenwood confirmation is claimed.** Items 25–54 preserved; item 55
 added.
+
+---
+
+# Addendum 13 — file 12 PDF 95–96 (printed 563–564): selenium and tellurium oxoacids, and the selenyl oxohalides
+
+**PDF 95 `DEEP READ — PARTIAL ADDITIONS REGISTERED`** — most of printed 563
+duplicates file 8 §10.52 (polythionates S₃O₆²⁻ to S₆O₆²⁻, Wackenroder's work, the
+polythionic acid skeleton, the peroxoacid series, H₂S₂O₈ m.p. 65 °C by
+high-current-density electrolysis, its oxidation of Mn²⁺ to permanganate and Cr³⁺
+to chromate, Caro's acid m.p. 45 °C and explosive, and the chlorosulphuric acid
+route). Those are cross-references, not re-registrations.
+**PDF 96 `DEEP READ — UNIQUE REGISTERED`.** Original triage for both: `FULL —
+UNIQUE`; for 95 that is corrected to partially unique.
+
+## A. New from printed 563 — industrial uses of the persulphates
+
+File 8 named (NH₄)₂S₂O₈ and K₂S₂O₈ as "the most important salts" and stopped.
+This edition says what they are *for*, and they are radical initiators:
+
+| # | Item | Content |
+|---|---|---|
+| A221 | **(NH₄)₂S₂O₈ as a polymerisation initiator** | Initiates the polymerisation of **vinyl acetate** for synthetic rayon, and of **tetrafluoroethylene** in the manufacture of **PTFE**. |
+| A222 | **K₂S₂O₈ as a polymerisation initiator** | Initiating agent for **vinyl chloride → PVC**, and for **styrene–butadiene copolymer rubbers**. |
+
+Registered because they connect a Group 16 oxoacid salt to two polymers the course
+already meets elsewhere (PTFE in Group 14 and 17, PVC in Group 17).
+
+## B. Selenium oxoacids — each species separately (printed 563–564)
+
+**H₂SeO₃, selenious acid.** Se(+IV). Formed when **SeO₂ dissolves in water**.
+**The solid acid can be isolated** — the contrast with tellurium below is the
+point. Gives **two series of salts, the normal and the acid selenites**, i.e.
+salts containing **SeO₃²⁻** and **HSeO₃⁻**, both known. **Converted to selenic
+acid by refluxing with H₂O₂.** A **moderately strong oxidising agent**.
+
+**H₂SeO₄, selenic acid.** Se(+VI). **Like H₂SO₄ it is a strong acid**, and
+**selenates are isomorphous with sulphates** — the same lattice, which is why the
+two are so easily confused. Also a **moderately strong oxidising agent**, which
+sulphuric acid is not in dilute solution. Anion **SeO₄²⁻**.
+
+**Se₂O₇²⁻, pyroselenate — the condensed species.** Made by **heating selenates**.
+**The free acid (H₂Se₂O₇) is not known.** The anion exists, the acid does not — the
+same pattern as several sulphur oxoacids, and worth teaching as a pattern rather
+than a fact.
+
+## C. Tellurium oxoacids — and why they break the pattern
+
+**Tellurous acid — not characterised.** **TeO₂ is almost insoluble in water**, so
+the acid **has not been characterised**. The dioxide nevertheless reacts with
+strong bases to give **tellurites**, **acid tellurites** and **various
+polytellurites**. So the salts exist while the acid does not — the mirror image of
+selenious acid, which can be isolated as a solid.
+
+**H₆TeO₆, telluric acid (orthotelluric acid).** Te(+VI). **Structurally quite
+different from sulphuric and selenic acids**: it exists in the solid as
+**octahedral Te(OH)₆ molecules**, not as a tetrahedral TeO₄ unit with OH groups.
+It is a **fairly strong oxidising agent** but only a **weak dibasic acid** — six
+OH groups and yet only two are removable. It forms **two series of salts**, and
+the source names examples of each: **NaTeO(OH)₅** and **Li₂TeO₂(OH)₄**.
+**Preparation:** the action of **powerful oxidising agents such as KMnO₄ on Te or
+on TeO₂**.
+
+**Why this matters.** Going down Group 16 the +VI oxoacid changes coordination
+number from **4 (H₂SO₄, H₂SeO₄, tetrahedral) to 6 (H₆TeO₆, octahedral)**, and
+loses acid strength while gaining oxidising power. That is a single trend carrying
+structure, acidity and redox behaviour together, and the course does not have it.
+
+## D. Oxohalides — the selenium series, which file 8 omitted
+
+**The source's general statement: "Only S and Se form oxohalides."** They are
+called **thionyl** (S) and **selenyl** (Se) halides.
+
+**Thionyl series** — already registered from file 8 §10.53: SOF₂, SOCl₂, SOBr₂;
+SOCl₂ a colourless fuming liquid b.p. 78 °C from `PCl₅ + SO₂ → SOCl₂ + POCl₃`;
+readily hydrolysed except SOF₂ which reacts only slowly; `SOCl₂ + H₂O → SO₂ +
+2HCl`; tetrahedral with one lone-pair position.
+
+**New — the selenyl halides: SeOF₂, SeOCl₂, SeOBr₂**, and the sulphuryl analogue
+**SeO₂F₂**. None appears in file 8, which listed only the sulphur compounds.
+
+**New — two preparations of the thionyl halides from the chloride:**
+**thionyl bromide from SOCl₂ + HBr**, and **thionyl fluoride from SOCl₂ + SbF₃.**
+A halide-exchange route the course lacks.
+
+**New — the organic uses of SOCl₂:** converting **carboxylic acids to acid
+chlorides**, and making **anhydrous metal chlorides**. The second is the one that
+matters inorganically — it is how you dry a hydrated chloride without hydrolysing
+it.
+
+## E. Species register — additions
+
+**Selenium:** H₂SeO₃ selenious acid · H₂SeO₄ selenic acid · SeO₃²⁻ selenite ·
+HSeO₃⁻ hydrogen selenite · SeO₄²⁻ selenate · **Se₂O₇²⁻ pyroselenate** · SeO₂ ·
+**SeOF₂**, **SeOCl₂**, **SeOBr₂** selenyl halides · **SeO₂F₂**.
+**Tellurium:** TeO₂ · tellurite, acid tellurite and polytellurite anions ·
+**H₆TeO₆ telluric acid** and its solid form **Te(OH)₆** · **NaTeO(OH)₅** ·
+**Li₂TeO₂(OH)₄**.
+**Reagents named:** H₂O₂ (for the selenious → selenic conversion), KMnO₄ (for
+telluric acid), HBr and **SbF₃** (for the thionyl halide exchanges).
+**Expanded, existing IDs kept:** (NH₄)₂S₂O₈ and K₂S₂O₈ — new source page and new
+industrial uses only, not re-counted as new species.
+
+## F. Physical-property and structure register — additions
+
+- **Te(OH)₆ is octahedral in the solid** — a six-coordinate +VI oxoacid, against
+  four-coordinate H₂SO₄ and H₂SeO₄.
+- **H₆TeO₆ is dibasic despite having six OH groups.**
+- **Selenates are isomorphous with sulphates.**
+- **TeO₂ is almost insoluble in water**; SeO₂ dissolves readily.
+- Selenyl and thionyl halides: tetrahedral with one position occupied by a lone
+  pair (same geometry as the sulphur series).
+
+## G. Visual register — additions V104–V106
+
+| ID | Required visual kind | Subject |
+|---|---|---|
+| V104 | **Structure comparison** | The +VI oxoacid down Group 16: tetrahedral H₂SO₄ → tetrahedral H₂SeO₄ → **octahedral Te(OH)₆**, with coordination number, basicity and oxidising power as three labelled rows underneath |
+| V105 | **Comparison graphic + JEE trap graphic** | Acid-versus-salt existence grid: selenious acid isolable / tellurous acid not; pyroselenate salt known / its free acid not. The pattern is "the anion can outlive the acid" |
+| V106 | **Structure gallery** | The oxohalide family extended to selenium: SOX₂ beside SeOX₂, and SO₂F₂ beside SeO₂F₂, with the "only S and Se form oxohalides" statement as the caption |
+
+## H. JEE trap register — items 191–197
+
+191. **Telluric acid is H₆TeO₆ and octahedral**, not H₂TeO₄ by analogy with
+     H₂SO₄ and H₂SeO₄. The +VI oxoacid changes coordination number down the group.
+192. **H₆TeO₆ is only dibasic**, despite six OH groups.
+193. **Tellurous acid has not been characterised**, because TeO₂ is almost
+     insoluble — yet tellurites, acid tellurites and polytellurites all exist.
+194. **Selenious acid *can* be isolated as a solid**; tellurous acid cannot. The
+     two adjacent elements behave oppositely.
+195. **Pyroselenate Se₂O₇²⁻ exists but its free acid does not.** Made by heating
+     selenates, not by dehydrating an acid.
+196. **Both H₂SeO₃ and H₂SeO₄ are moderately strong oxidising agents** — unlike
+     dilute H₂SO₄, which is not. Selenic acid is a strong acid *and* an oxidant.
+197. **Only sulphur and selenium form oxohalides.** Tellurium does not, so there
+     is no "telluryl chloride".
+
+## I. Contradiction register — item 56
+
+56. **`SOCl₂ + R–COOH → R–COCl + SO₂` is unbalanced as printed.** *Location:*
+    PDF 96 / printed 564. *The defect:* hydrogen and one chlorine are unaccounted
+    for — left has H 1 (from COOH) and Cl 2, right has H 0 and Cl 1. **HCl is
+    missing** from the products. *Correction:*
+    `SOCl₂ + R–COOH → R–COCl + SO₂ + HCl`, which balances. *Chemical issue:*
+    none — the reaction is standard and the HCl evolution is exactly why the
+    reagent is convenient (both by-products are gases). *Verification needed:*
+    none; self-checking. *Safe for inclusion:* **yes, corrected.**
+
+## J. `[UNCLEAR]` register — no new items
+
+Both pages fully legible at 170 dpi. Count remains **3**. **None guessed.**
+
+## K. Verification status
+
+Read from 170 dpi renders. The Se/Te oxoacid section and the selenyl halides have
+**no counterpart in file 8**; the polythionate and peroxoacid material on printed
+563 does, and is cross-referenced rather than re-registered — same author, two
+editions, **not independent verification**. **No NCERT or Greenwood confirmation
+is claimed.** Items 25–55 preserved; item 56 added.

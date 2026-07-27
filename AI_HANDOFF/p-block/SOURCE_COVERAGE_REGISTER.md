@@ -136,13 +136,13 @@ Last updated: 2026-07-26.
 |---|---|---|---|
 | Files 1–6 (original six) | 437 | **325** | 74 % |
 | Files 7–11 (new five) | 1294 | **191** | 14.8 % |
-| File 12 (`15161718.pdf`, p-block part only) | 184 | **14** | 7.6 % |
-| **Total project** | **1915** | **530** | **28 %** |
+| File 12 (`15161718.pdf`, p-block part only) | 184 | **16** | 8.7 % |
+| **Total project** | **1915** | **532** | **28 %** |
 
 Files 7–12 breakdown: file 7 (JD Lee 5th ed., whole book) 5 / 1057 · **file 8 (JD Lee
 adapted Ch. 10) 172 / 172 — COMPLETE** · file 9 (annotated notes) 0 / 40 · file 10
 (annotated notes) 0 / 11 · file 11 (noble-gas notes) 14 / 14 · **file 12 (JD Lee 5th ed.
-Ch. 14–17 extract) 14 / 184 deeply read, **209 / 209 triaged**.
+Ch. 14–17 extract) 16 / 184 deeply read, **209 / 209 triaged**.
 
 **Denominator history, so the movement is auditable.** Locating file 12 added its pages to
 a corpus that had been missing them, taking the total from 1731 to 1940 and the completion
@@ -255,6 +255,12 @@ cross-references resolving, all 20 lessons non-empty.
     superacid media**, absent from file 8: 9 topics, ~35 species, 10 reactions,
     the [Br₂]⁺ 2.15 Å / Br₂ 2.27 Å bond-length evidence, 1 MO case (**E43**),
     4 visuals, 9 JEE traps, **1 new contradiction (item 55)**.
+  - **PDF 95–96 = printed 563–564** (Addendum 13). **Selenium and tellurium
+    oxoacids and the selenyl oxohalides**, absent from file 8: 4 topics, ~20
+    species, the coordination-number change from tetrahedral H₂SO₄/H₂SeO₄ to
+    **octahedral Te(OH)₆**, 3 visuals, 7 JEE traps, **1 new contradiction (item
+    56)**. p95's polythionate and peroxoacid material duplicates §10.52 and is
+    cross-referenced, not re-registered.
 
 **Page-status fields for the deeply read pages** (triage label kept visible
 alongside the deep-read outcome, as required):
@@ -271,9 +277,11 @@ alongside the deep-read outcome, as required):
 | 146 | 614 | `FULL — UNIQUE` | `DEEP READ — PARTIAL ADDITIONS REGISTERED` (lower half duplicates §10.63) |
 | 161 | 629 | `FULL — UNIQUE` | `DEEP READ — UNIQUE REGISTERED` |
 | 162 | 630 | `FULL — UNIQUE` | `DEEP READ — UNIQUE REGISTERED` |
+| 95 | 563 | `FULL — UNIQUE` | `DEEP READ — PARTIAL ADDITIONS REGISTERED` (polythionates/peroxoacids duplicate §10.52) |
+| 96 | 564 | `FULL — UNIQUE` | `DEEP READ — UNIQUE REGISTERED` |
 
 **Separate counts, as required.** Pages visually triaged **209** · pages deeply
-inspected **14** · pages yielding unique additions **14** (none yet returned
+inspected **16** · pages yielding unique additions **16** (none yet returned
 `NO NEW CONTENT`) · duplicate pages sampled **32** · non-p-block pages **25**.
 The audited-page denominator is not reduced for any page.
 - **Sections found to be absent from file 8 altogether** — the queue that
@@ -298,13 +306,13 @@ The audited-page denominator is not reduced for any page.
   "disproportionates" meaning as the footnoted asterisks on the basic diagram —
   that page shows no legend. **None is guessed; all three are marked unsafe to
   publish until re-read.**
-- **Next range for deep reading: PDF 95–96 (printed 563–564)** — oxoacids of
-  selenium and tellurium, including the condensed pyroselenate Se₂O₇²⁻. Then
-  68–73 (Group 16 occurrence and extraction), 20–27 (hydrogen azide and nitrogen
-  fixation), 54–57 (phosphorus sulphides), 109–110 (organo derivatives and
-  haemoglobin), 114–116 (halogen occurrence and extraction).
-- **`FULL — UNIQUE` pages remaining: 24 of 38** (14 done). After those: 9
-  `QUESTION GAP`, 2 `VISUAL ONLY`, then 97 of 98 `FULL — PARTIALLY UNIQUE`.
+- **Next range for deep reading: PDF 68–73 (printed 535–540)** — Group 16
+  occurrence, extraction and industrial recovery, six pages, the largest remaining
+  unique block and the one file 8 omits entirely. Then 20–27 (hydrogen azide and
+  the azides, nitrogen fixation), 54–57 (phosphorus sulphides), 109–110 (organo
+  derivatives and haemoglobin), 114–116 (halogen occurrence and extraction).
+- **`FULL — UNIQUE` pages remaining: 22 of 38** (16 done). After those: 9
+  `QUESTION GAP`, 2 `VISUAL ONLY`, then 96 of 98 `FULL — PARTIALLY UNIQUE`.
 - **Destination:** Sections 7–19, as gap-fill on top of Addenda 1–4 — **IN
   PROGRESS**
 

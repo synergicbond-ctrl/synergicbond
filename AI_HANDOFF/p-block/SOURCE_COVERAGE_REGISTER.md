@@ -136,13 +136,13 @@ Last updated: 2026-07-26.
 |---|---|---|---|
 | Files 1–6 (original six) | 437 | **325** | 74 % |
 | Files 7–11 (new five) | 1294 | **191** | 14.8 % |
-| File 12 (`15161718.pdf`, p-block part only) | 184 | **39** | 21.2 % |
-| **Total project** | **1915** | **555** | **29 %** |
+| File 12 (`15161718.pdf`, p-block part only) | 184 | **48** | 26.1 % |
+| **Total project** | **1915** | **564** | **29 %** |
 
 Files 7–12 breakdown: file 7 (JD Lee 5th ed., whole book) 5 / 1057 · **file 8 (JD Lee
 adapted Ch. 10) 172 / 172 — COMPLETE** · file 9 (annotated notes) 0 / 40 · file 10
 (annotated notes) 0 / 11 · file 11 (noble-gas notes) 14 / 14 · **file 12 (JD Lee 5th ed.
-Ch. 14–17 extract) 39 / 184 deeply read, **209 / 209 triaged**.
+Ch. 14–17 extract) 48 / 184 deeply read, **209 / 209 triaged**.
 
 **Denominator history, so the movement is auditable.** Locating file 12 added its pages to
 a corpus that had been missing them, taking the total from 1731 to 1940 and the completion
@@ -229,7 +229,10 @@ cross-references resolving, all 20 lessons non-empty.
   `FULL — PARTIALLY UNIQUE` **98** · `SAMPLED — DUPLICATE OF FILE 8` **32** ·
   `VISUAL ONLY` **2** · `QUESTION GAP` **9** · `NOT RELEVANT` **30** (5
   further-reading/chapter-close + 25 d-block) · `UNCLEAR` **0**.
-- **Deeply inspected and fully registered: 8 / 184 (Vision).**
+- **Deeply inspected and fully registered: 48 / 184 (Vision).** *(This figure had
+  gone stale at "8 / 184" while the addenda accumulated; the authoritative count
+  has always been the recounted-in-code block further down, which read 39 before
+  Addendum 20 and reads 48 after it. Corrected here rather than left to diverge.)*
   - **PDF 1–6 = printed 468–473** (Addenda 7, 7a): 14 topics, ~50 species, 13
     preparations/reactions, a melting/boiling table, 6 colour observations, a
     uses-and-hazards block, 5 visuals, 9 JEE traps, 0 new contradictions.
@@ -303,6 +306,16 @@ cross-references resolving, all 20 lessons non-empty.
     PDF 116 unique (**halogen crustal abundance, fluorspar, why fluoroapatite is
     not used for HF, cryolite, salinity, and why sea water is fluoride-poor**):
     10 topics, 4 visuals, 6 traps, **1 new contradiction (64)**.
+  - **PDF 62–64, 112–113, 165–166, 181–182 = printed 529–531, 580–581, 633–634,
+    649–650** (Addendum 20), the whole **`QUESTION GAP`** queue in one pass. The
+    end-of-chapter `PROBLEMS` sets of Chapters 14–17. **Tested chemistry
+    registered, question wording never.** The book prints **no answer key**, so
+    where a question asks for a product rather than stating one, the pairing is
+    registered and the product is not: 12 topics (A297–A308), 5 visuals,
+    10 traps, **2 new contradictions (65, 66)**, 5 source defects with their
+    corrections, **1 new `[UNCLEAR]`**, 0 new MO cases. **PDF 62 returned
+    `AUDITED — NO NEW CHEMISTRY`** — the second page in the file-12 audit to
+    return nothing new, after PDF 114.
 
 **CLOSURE: `FULL — UNIQUE` = 37 / 37 deeply inspected.** Enumerated page by page
 in `MASTER_REGISTERS.md`, not derived by subtraction. The Addendum-8 triage listed
@@ -357,15 +370,33 @@ figure was 38; **PDF 107 was reclassified to partially unique in Addendum 10**
 once the S–N section turned out to start in its last paragraph) · **fully unique
 pages deeply inspected 37 — COMPLETE** · **fully unique pages remaining 0** · partially
 unique pages compared **2 of 97** · duplicate pages sampled **32** · visual-only
-pages inspected **0 of 2** · question-gap pages audited **0 of 9** ·
-not-relevant pages **30** · pages with unclear content **3**.
+pages inspected **0 of 2** · question-gap pages audited **9 of 9 — COMPLETE** ·
+not-relevant pages **30** · pages with unclear content **4**.
 
-**Total pages deeply inspected 39** = 37 fully unique + 2 partially unique
-(PDF 6 and PDF 107). **38 of the 39 yielded additions; exactly one — PDF 114 —
-returned `DEEP READ — NO NEW CONTENT`.** The audited-page denominator is not
-reduced for any page.
+**Total pages deeply inspected 48** = 37 fully unique + 2 partially unique
+(PDF 6 and PDF 107) + **9 question-gap (Addendum 20)**. **46 of the 48 yielded
+additions; exactly two returned nothing new — PDF 114
+(`DEEP READ — NO NEW CONTENT`) and PDF 62 (`AUDITED — NO NEW CHEMISTRY`).** The
+audited-page denominator is not reduced for any page.
 
 **Zero fully unique pages outstanding. The queue is closed at 37 / 37.**
+**Zero question-gap pages outstanding. That queue is closed at 9 / 9** — PDF 62,
+63, 64, 112, 113, 165, 166, 181, 182, enumerated in `MASTER_REGISTERS.md`
+Addendum 20 and not derived by subtraction.
+
+**Page-status fields for the question-gap pages:**
+
+| PDF | Printed | Triage label | Deep-read outcome |
+|---|---|---|---|
+| 62 | 529 | `QUESTION GAP` | **`AUDITED — NO NEW CHEMISTRY`** |
+| 63 | 530 | `QUESTION GAP` | `AUDITED — CONCEPT REGISTERED` |
+| 64 | 531 | `QUESTION GAP` | `AUDITED — CONCEPT REGISTERED` |
+| 112 | 580 | `QUESTION GAP` | `AUDITED — CONCEPT REGISTERED` |
+| 113 | 581 | `QUESTION GAP` | `AUDITED — CONCEPT REGISTERED` |
+| 165 | 633 | `QUESTION GAP` | `AUDITED — CONCEPT REGISTERED` |
+| 166 | 634 | `QUESTION GAP` | `AUDITED — CONCEPT REGISTERED` |
+| 181 | 649 | `QUESTION GAP` | `AUDITED — CONCEPT REGISTERED` |
+| 182 | 650 | `QUESTION GAP` | `AUDITED — CONCEPT REGISTERED` |
 - **Sections found to be absent from file 8 altogether** — the queue that
   justifies reading this file at all: **Phosphazenes and cyclophosphazenes**
   (PDF 58–59) · **Compounds of sulphur and nitrogen, S₄N₄** (107–108) ·
@@ -381,18 +412,37 @@ reduced for any page.
   Addendum 8 map did not separate. Corrected: **PDF 59–60 = Organometallic
   compounds (`FULL — UNIQUE`), PDF 61 = Further reading (`NOT RELEVANT`)**. Bucket
   totals unchanged.
-- **`[UNCLEAR]` items outstanding — 3.** Two on PDF 108 / printed 576: the four
+- **`[UNCLEAR]` items outstanding — 4.** Two on PDF 108 / printed 576: the four
   larger bicyclo S–N formulae, and the coefficients of the S₄N₄ + NaOH + H₂O
   hydrolysis equation. One on PDF 145 / printed 613: whether the asterisk-like
   marks beside HClO₂, HOBr and HOI in the **acid** Latimer diagram carry the same
   "disproportionates" meaning as the footnoted asterisks on the basic diagram —
-  that page shows no legend. **None is guessed; all three are marked unsafe to
-  publish until re-read.**
+  that page shows no legend. **One new, on PDF 166 / printed 634, problem 16(a):
+  the polyiodide anion's subscript digit is not readable even at 1600 dpi (I₃⁻ or
+  I₅⁻, both in the source's own polyhalide list) and it carries an unexplained
+  superscript "14" with no legend on the page or in the chapter.** **None is
+  guessed; all four are marked unsafe to publish until re-read.**
 - **`FULL — UNIQUE`: 37 / 37 — CLOSED.**
-- **Next work in file 12, in priority order:** the **9 `QUESTION GAP` pages**
-  (PDF 62–64, 112–113, 165–166, 181–182), then the **2 `VISUAL ONLY` pages**
-  (PDF 171–172), then the **95 remaining `FULL — PARTIALLY UNIQUE` pages** in
-  section-sized ranges, highest marginal value first.
+- **`QUESTION GAP`: 9 / 9 — CLOSED (Addendum 20).** 8 pages returned
+  `AUDITED — CONCEPT REGISTERED`, PDF 62 returned `AUDITED — NO NEW CHEMISTRY`.
+  Yield: topics **A297–A308**, visuals **V137–V141**, traps **248–257**,
+  contradictions **65** (printed 530, ammonia with *acidified* hypochlorite
+  against the chapter's own alkaline Raschig conditions) and **66** (printed 650,
+  "fluorides and oxides of Kr, Xe and Rn" — no krypton or radon oxide exists in
+  the source or the registers), **5 source defects** recorded with their
+  corrections, **1 new `[UNCLEAR]`**, and **0 new MO cases** (the OF₆ argument is
+  an extension of **E16**, deliberately not promoted to E46).
+- **Gaps the question pages exposed, recorded and *not* filled by guessing:** the
+  fluorine-cell electrolyte (KHF₂) and Moissan apparatus · the roster of
+  fluorinating agents used instead of F₂ · HF with uranium and with graphite ·
+  the AgNO₃ silver-halide ladder and what ammonia does to each precipitate · the
+  boiling point of helium. All but the last should come from unread
+  `FULL — PARTIALLY UNIQUE` pages of the same chapters.
+- **Next work in file 12, in priority order:** the **2 `VISUAL ONLY` pages**
+  (PDF 171–172, Table 17.3 and the xenon structures), then the **95 remaining
+  `FULL — PARTIALLY UNIQUE` pages** in section-sized ranges, highest marginal
+  value first. **Prioritise PDF 117–120 (fluorine production) and the
+  silver-halide pages**, because five registered gaps point straight at them.
 - **Destination:** Sections 7–19, as gap-fill on top of Addenda 1–4 — **IN
   PROGRESS**
 

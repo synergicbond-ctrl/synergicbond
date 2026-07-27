@@ -3,8 +3,9 @@
 **Read this first, then `SOURCE_COVERAGE_REGISTER.md` for page accounting and
 `MASTER_REGISTERS.md` for the content itself.**
 
-Last updated: 2026-07-27 · Last commit: `8d704ae1` · Branch:
-`feat/p-block-groups-13-14` (PR #22 open) · local and remote in sync.
+Last updated: 2026-07-27 (Addendum 20, `QUESTION GAP` queue closed) · Branch:
+`feat/p-block-groups-13-14` (PR #22 open). **Addendum 20's three edited files are
+not yet committed — see §5 for the isolated-index procedure.**
 
 ---
 
@@ -27,17 +28,17 @@ that its dev server is separately broken by an unrelated RSC-manifest fault.
 
 | | |
 |---|---|
-| **Corpus** | **555 / 1915 pages (29 %)** |
+| **Corpus** | **564 / 1915 pages (29 %)** |
 | Files 1–6 | 325 / 437 |
 | File 7 (JD Lee 5th ed., whole book) | 5 / 1057 |
 | **File 8** (JD Lee adapted, Ch. 10, all six groups) | **172 / 172 — COMPLETE** |
 | File 9, 10 (handwritten notes) | 0 / 40, 0 / 11 — vision only, OCR garbled |
 | File 11 (noble gas notes) | 14 / 14 |
-| **File 12** (`15161718.pdf`, JD Lee 5th ed. Ch. 14–17) | 209/209 triaged · **39 / 184 deeply read** |
+| **File 12** (`15161718.pdf`, JD Lee 5th ed. Ch. 14–17) | 209/209 triaged · **48 / 184 deeply read** |
 
-**Register IDs:** Topics **A1–A296** (contiguous, no gaps, no duplicates) ·
-Visuals **V136** · MO cases **E45** · Traps and numbered items **247** ·
-Contradictions **25–64** · `[UNCLEAR]` **3 distinct items**.
+**Register IDs:** Topics **A1–A308** (contiguous, no gaps, no duplicates, every
+one a table row) · Visuals **V141** · MO cases **E45** · Traps and numbered items
+**257** · Contradictions **25–66** · `[UNCLEAR]` **4 distinct items**.
 
 ---
 
@@ -64,22 +65,37 @@ PDF + 467 early, + 468 from about PDF 90.
 Pages 1–5, 20–27, 54–59, 68–73, 95–96, 108, 109–110, 114–116, 145–146, 161–162.
 Enumerated page by page, not derived by subtraction. PDF 107 was reclassified to
 partially unique mid-audit and was still deeply read, so 38 − 1 = 37.
-**PDF 114 is the only page in the whole audit that returned
-`DEEP READ — NO NEW CONTENT`.**
+
+### `QUESTION GAP` is CLOSED at 9 / 9 (Addendum 20)
+
+Pages 62–64, 112–113, 165–166, 181–182 — enumerated, not subtracted. Eight
+returned `AUDITED — CONCEPT REGISTERED`; **PDF 62 returned
+`AUDITED — NO NEW CHEMISTRY`**. Together with **PDF 114's
+`DEEP READ — NO NEW CONTENT`**, those are the **only two pages in the whole
+file-12 audit that yielded nothing new** — both recorded, neither hidden, and
+neither reduces the audited-page denominator.
+
+**What the problem sets are worth, and what they are not.** They carry **no answer
+key**, so a question proves a fact is examinable without establishing the fact.
+Where a question asks for a product, Addendum 20 registers the **pairing** and
+explicitly does not invent the product. That discipline produced a by-product
+worth acting on: **five gaps in the registers that only the questions exposed** —
+the fluorine-cell electrolyte (KHF₂) and Moissan apparatus, the roster of
+fluorinating agents used instead of F₂, HF with uranium and with graphite, the
+AgNO₃ silver-halide ladder with ammonia, and the boiling point of helium.
 
 ---
 
 ## 4. NEXT WORK — start here
 
-1. **9 `QUESTION GAP` pages** — PDF **62–64, 112–113, 165–166, 181–182**.
-   Register the tested chemistry only, never the question wording. Each page must
-   end as `AUDITED — CONCEPT REGISTERED` or `AUDITED — NO NEW CHEMISTRY`.
-   Answer-key errors become contradiction items.
-2. **2 `VISUAL ONLY` pages** — PDF **171–172** (Table 17.3, xenon structures).
+1. **2 `VISUAL ONLY` pages** — PDF **171–172** (Table 17.3, xenon structures).
    Register what the visual conveys and the original replacement required.
-3. **95 remaining `FULL — PARTIALLY UNIQUE` pages**, in section-sized ranges,
+2. **95 remaining `FULL — PARTIALLY UNIQUE` pages**, in section-sized ranges,
    highest marginal value first: occurrence/extraction → less-common compounds →
    structures → property tables → uses/hazards → numerical data.
+   **Start with PDF 117–120 (fluorine production) and the silver-halide pages** —
+   five of the gaps Addendum 20 registered point straight at them, and closing a
+   registered gap beats opening a new range.
 
 After file 12: the two handwritten sources (vision required), then JD Lee 5th ed.
 Ch. 12–13.
@@ -105,12 +121,20 @@ unset GIT_INDEX_FILE; git update-ref refs/heads/<branch> $C <old>
 `lib/notes/chapterCatalog.ts`. Never commit, unstage, reset, stash, clean or
 checkout them. Never force-push.
 
-**Validate in code, not by hand.** Two counting mistakes were caught this way and
-both are recorded rather than hidden: triage buckets once summed to 204 instead of
-209, and topic IDs A223–A238 and A246–A249 were written as prose paragraphs so the
-row-based check reported a lower maximum than really existed. **Every topic ID must
-be a table row**, and the check must compare the table maximum against the maximum
-appearing anywhere in the file.
+**Validate in code, not by hand.** Four counting mistakes have been caught this way
+and all are recorded rather than hidden: triage buckets once summed to 204 instead
+of 209; topic IDs A223–A238 and A246–A249 were written as prose paragraphs so the
+row-based check reported a lower maximum than really existed; **visual IDs V45, V46
+and V89 had the same prose-only defect** (found and repaired in Addendum 20 §J1 —
+the rule had been applied to topics and never carried over to visuals); and the
+coverage register's "deeply inspected" headline had gone stale at 8 / 184 while the
+authoritative recounted-in-code block said 39. **Every ID in every series must be a
+table row**, and the check must compare the table maximum against the maximum
+appearing anywhere in the file — run it for **A, V and E**, not just A.
+
+**Do not "repair" V33–V44's double rows.** Each appears twice on purpose: the
+original Group 17 set and Addendum 3's refined restatement, which supersedes it.
+Same visual, not an ID collision. Documented in Addendum 20 §J2.
 
 **Never guess a number or a formula.** Use `[UNCLEAR — file, PDF page, printed
 page, location]`. Re-render at higher resolution first — printed 490 was unreadable
@@ -134,6 +158,14 @@ Three separate columns, never merged:
   distribution, negative hyperconjugation, MO theory. **Marked PENDING
   VERIFICATION** wherever Greenwood would be needed.
 
+**The source itself now backs this split.** Chapter 17's problem 7 (printed 650,
+registered as **A308**) asks the reader to discuss the noble-gas compounds "with
+particular reference to … the participation of d orbitals in bonding by elements
+of the s- and p-blocks" — the author treating central-atom d-orbital participation
+as an **open interpretive question**, in his own words, in the parent edition.
+That is the first explicit textual support in the corpus for keeping the three
+columns apart.
+
 Specific rulings already fixed: the weak F–F bond is **lone-pair repulsion**
 (Coulson), with Mulliken's p–d hybridisation as *history only*; Born–Haber and
 energy-cycle arguments are **thermodynamics, registered as topics, never as MO
@@ -149,6 +181,16 @@ verification from either appears anywhere, and it must stay that way. Attaching
 either would let several parked contradictions be resolved instead of flagged —
 notably **54** (phosphazene bonding), **62** ((SN)ₓ resistivity magnitude) and
 **63** (oxyhaemoglobin side-on versus end-on geometry).
+
+**Two more parked by Addendum 20, and one of them is not resolvable by any
+source.** **66** — printed 650's claim that noble-gas binary compounds are
+"fluorides *and oxides* of Kr, Xe and Rn", when no krypton or radon oxide appears
+in the source or the registers — needs Greenwood or a noble-gas review. **65** —
+printed 530 pairing ammonia with an *acidified* hypochlorite solution, against the
+chapter's own alkaline Raschig conditions — is different: **the book prints no
+answer key anywhere**, so this corpus cannot decide whether "acidified" is a slip
+or a deliberate test of condition-dependence. Attaching a reference text will not
+settle it; only an answer key or the author would.
 
 ---
 

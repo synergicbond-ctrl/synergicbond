@@ -4593,3 +4593,435 @@ registered.**
 
 **Remaining in file 12:** 9 `QUESTION GAP` pages, 2 `VISUAL ONLY` pages, and 95
 of 97 `FULL — PARTIALLY UNIQUE` pages.
+
+---
+
+# Addendum 20 — file 12, the 9 `QUESTION GAP` pages (PDF 62–64, 112–113, 165–166, 181–182)
+
+**The whole `QUESTION GAP` queue, closed in one pass.** These are the end-of-chapter
+`PROBLEMS` sets of Chapters 14, 15, 16 and 17, plus the `FURTHER READING`
+bibliographies that share three of the pages.
+
+**Rule applied throughout: the tested chemistry is registered, the question wording
+never is.** Nothing on these pages is transcribed as a question; what is recorded is
+the chemistry each question presumes the reader already has, and whether the
+registers in fact hold it. **The source prints no answer key**, so a question can
+establish that a fact is examinable but can rarely establish the fact itself — where
+a question asks for a product rather than stating one, that is said explicitly and
+the product is *not* invented.
+
+**Page outcomes — eight `AUDITED — CONCEPT REGISTERED`, one `AUDITED — NO NEW
+CHEMISTRY`:**
+
+| PDF | Printed | Chapter | Triage label | Deep-read outcome |
+|---|---|---|---|---|
+| 62 | 529 | 14, G15 | `QUESTION GAP` | **`AUDITED — NO NEW CHEMISTRY`** |
+| 63 | 530 | 14, G15 | `QUESTION GAP` | `AUDITED — CONCEPT REGISTERED` |
+| 64 | 531 | 14, G15 | `QUESTION GAP` | `AUDITED — CONCEPT REGISTERED` |
+| 112 | 580 | 15, G16 | `QUESTION GAP` | `AUDITED — CONCEPT REGISTERED` |
+| 113 | 581 | 15, G16 | `QUESTION GAP` | `AUDITED — CONCEPT REGISTERED` |
+| 165 | 633 | 16, G17 | `QUESTION GAP` | `AUDITED — CONCEPT REGISTERED` |
+| 166 | 634 | 16, G17 | `QUESTION GAP` | `AUDITED — CONCEPT REGISTERED` |
+| 181 | 649 | 17, G18 | `QUESTION GAP` | `AUDITED — CONCEPT REGISTERED` |
+| 182 | 650 | 17, G18 | `QUESTION GAP` | `AUDITED — CONCEPT REGISTERED` |
+
+**Yield:** 12 topics (**A297–A308**), 5 visuals (**V137–V141**), 10 JEE traps
+(**248–257**), **2 new contradictions (65, 66)**, **5 source defects recorded with
+their corrections**, **1 new `[UNCLEAR]` (item 4)**, **0 new MO cases** — the one
+candidate is registered as an extension of **E16** rather than as E46, because it is
+the same argument applied to a second element.
+
+---
+
+## A. PDF 62 (printed 529) — `AUDITED — NO NEW CHEMISTRY`
+
+Three-quarters of the page is Chapter 14's `FURTHER READING` bibliography — 20-odd
+entries, no chemistry. `PROBLEMS` opens at the foot with items 1–4.
+
+Every concept the four questions presume is already registered, and the page is
+recorded as returning nothing new rather than being quietly folded in:
+
+- **Q1, MO description of N₂ and NO with bond orders** → **E1** (NO, 11 outer
+  electrons, π\*2p, order 2½, 1.15 → 1.06 Å on ionisation) and **E4** (N₂ against
+  the isoelectronic CO, CN⁻, NO⁺).
+- **Q2, why nitrogen is N₂ but phosphorus is P₄** → **A4** (P₄ ⇌ 2P₂ above 800 °C;
+  P₂'s bond energy exactly half N₂'s, from poor 3p–3p overlap).
+- **Q3, commercial nitrogen and phosphorus** → Addendum 7 for nitrogen from liquid
+  air, **A185** for the electric-furnace phosphorus route.
+- **Q4, the effect of heat on NaNO₃, NH₄NO₃, NH₄Cl + NaNO₂, Cu(NO₃)₂·2H₂O,
+  Pb(NO₃)₂ and NaN₃** → all six decompositions are already registered individually.
+  What the question adds is only the observation that the chapter treats them as
+  **one examinable block** — six different outcomes from "heat a nitrogen salt".
+  That is recorded as **trap 253's companion**, not as a topic.
+
+This is the **second page in the whole file-12 audit to return no new content**, the
+first being PDF 114. Its audited-page denominator is not reduced.
+
+## B. PDF 63–64 (printed 530–531) — Chapter 14 problems 5–26
+
+### Topics
+
+| # | Topic | Content |
+|---|---|---|
+| A297 | **The P–O bond in POCl₃ is 1.45 Å against a single-bond radius sum of 1.83 Å** | Printed 531, problem 21, which states both numbers. **A shortening of 0.38 Å — about 21 %.** This is the quantitative anchor the registers were missing for the phosphoryl bond: every qualitative claim that P=O is "more than a single bond" now has a measured number attached to a named molecule. **Bonding-model handling, three columns kept separate.** *Experimental:* the bond is 1.45 Å and the additive single-bond estimate is 1.83 Å; that gap is the datum. *Historical / examination model:* the source's own framing throughout Chapter 14 is **pπ–dπ** donation from an oxygen lone pair into phosphorus 3d — kept, because examinations use it. *Modern interpretation:* a highly polarised σ bond with large ionic character (P⁺–O⁻) plus negative hyperconjugation, with **substantial phosphorus 3d participation not promoted to the preferred account** — **PENDING VERIFICATION**, Greenwood absent. |
+| A298 | **Hydrazine sulphate — manufacture, its practical difficulties, and the four reagents it is tested against** | Printed 530, problems 10 and 11. **The salt N₂H₄·H₂SO₄ appears nowhere else in the corpus** — the registers held hydrazine itself and the Raschig synthesis, but not the sulphate, which is how hydrazine is actually isolated and handled. The source asks for its production, the **practical difficulties** of that production, and its uses; then sets its reactions against four reagent systems: **an aqueous solution of I₂ in KI**, **an alkaline solution of copper sulphate**, **an aqueous solution of potassium ferricyanide K₃[Fe(CN)₆]**, and **an ammoniacal solution of silver nitrate**. All four are reducing-agent tests. **The products are asked for, not given, and no answer key exists — so the four pairings are registered and the products are not.** The lesson must source them elsewhere before stating them. |
+| A299 | **Vapour density as the entry point of an identification chain** | Printed 530–531, problem 17. The chain opens "a gas of vapour density 8.5", from which **relative molecular mass = 2 × vapour density = 17**, fixing NH₃ before any chemistry is done. The chain then runs through platinum-catalysed oxidation, a colourless gas browning in air, co-condensation of the two oxides, an acid, an acidified-KI test, an NH₄Cl reaction giving a gas in which magnesium continues to burn, and that gas with calcium carbide in an electric furnace giving a solid that hydrolyses back to the starting gas — closing on **Nessler's reagent turning yellow**. Every individual step is already registered (**A14** for the Nessler test, Addendum 16 for the cyanamide furnace route, §8.3–8.4 for the oxides). **What is new is the technique**: a numeric mass anchor at the head of a chain, which is how this material is examined and which the registers had no entry for. |
+
+### Source defects on printed 531 — recorded, with the correction kept separate
+
+**D1 — problem 26(d) prints `Mg₃Bi`.** *Source form as printed:* Mg₃Bi.
+*Correction:* **Mg₃Bi₂.** Magnesium bismuthide obeys Mg²⁺ / Bi³⁻ charge balance, and
+**Mg₃Bi₂ is already in the registers' nitride/phosphide list, taken from file 8** —
+so the parent edition contradicts its own adapted edition here, and the resolution is
+unambiguous. Not raised to the contradiction register, because nothing external is
+needed to settle it.
+
+**D2 — problem 20 ends "…the chemistry of nitrogen and phospho?".** The word
+*phosphorus* is truncated in the printed text. Typographic only; no chemical content
+affected.
+
+**D3 — problem 4 prints `Pb(NO₃);₂`.** A stray semicolon where the subscript belongs.
+Typographic only.
+
+### Cross-references — registered already, not re-registered
+
+Hydrolysis of Li₃N, **CaNCN** (the author's own formula for calcium cyanamide,
+equivalent to CaCN₂ and used consistently in this chapter), AlN, NO₂, N₂O₅ and NCl₃
+(problem 5) · NH₃ and HNO₃ manufacture and the concentration of HNO₃ (6) · π bonding
+in NO₃⁻ (7) · the nitrogen oxides in full (8) · NF₃ stable against explosive NCl₃ and
+NI₃ (12) · NF₃ without donor properties against PF₃ forming many metal complexes (13)
+· NH₂OH (14) · fertilisers (15) · oxides of N against oxides of P (16) · the
+phosphorus oxides and sulphides compared (18, Addendum 17) · hydrolysis of P₄O₆,
+P₄O₁₀, PCl₃, PCl₅ and Na₃P (19) · pπ–dπ in the phosphorus oxides and oxoacids (20) ·
+phosphates in analysis and industry (22) · phosphates against silicates and borates
+(23) · **PF₅ known but NF₅ not** (24) · phosphazenes (25, Addendum 9 and 17) ·
+hydrolysis of As₄O₆, As₄O₁₀, SbCl₃ and Na₃As (26).
+
+## C. Contradiction 65 — printed 530, problem 9(e)
+
+**"Ammonia and an acidified solution of sodium hypochlorite."** *Location:* file 12,
+PDF 63, printed 530, problem 9(e). *The issue:* the chapter's own Raschig synthesis,
+already registered, is **alkaline** — `NH₃ + NaOCl → NH₂Cl + NaOH` produces alkali in
+the first step and the slow second step `2NH₃ + NH₂Cl → N₂H₄ + NH₄Cl` requires it.
+**Acidified hypochlorite is a different system entirely**: HOCl in acid liberates
+Cl₂, and chlorination of ammonia under those conditions runs towards NCl₃, not
+hydrazine. *The complicating fact, stated rather than suppressed:* the problem's stem
+is "describe the **conditions** under which the following react", so specifying an
+acidic medium may be deliberate — testing that this pairing's outcome is
+condition-dependent — rather than a slip for "alkaline". **The page gives no answer
+and the book prints no answer key, so this corpus cannot decide between the two
+readings.** *Verification needed:* an answer key or a preparative source; **neither
+in this corpus**. *Safe for inclusion:* **the alkaline Raschig conditions, yes —
+they are independently registered. Any claim about what acidified hypochlorite and
+ammonia give, no.** The course will teach Raschig under alkali and will not use this
+pairing.
+
+## D. PDF 112–113 (printed 580–581) — Chapter 15 problems 1–23
+
+### Topics
+
+| # | Topic | Content |
+|---|---|---|
+| A300 | **Hydrogen peroxide oxidises hexacyanoferrate(II) in acid solution** | Printed 580, problem 10(c), alongside the two already-registered H₂O₂ tests (acidified KMnO₄, aqueous HI). **No hexacyanoferrate of any kind appears anywhere else in the corpus.** The source asks for a balanced equation, so it establishes the **pairing** — H₂O₂ with an acidic solution of potassium hexacyanoferrate(II) — as examinable; **it does not print the products, and they are not invented here.** The value of the entry is that it completes the source's own three-test set for H₂O₂ as an oxidant, which the registers previously held only two-thirds of. |
+| A301 | **Liquid oxygen adheres to the poles of a magnet; liquid nitrogen does not** | Printed 580, problem 6(a). Paramagnetism is thoroughly registered as an electronic fact, but **the macroscopic demonstration was not** — and it is the single most vivid consequence of O₂'s two unpaired π\* electrons, an observation a student can be shown rather than told. N₂, with every electron paired, does nothing. Pairs directly with the MO diagram of O₂ already in the visual register. |
+| A302 | **SF₆ is known but OF₆ is not** | Printed 581, problem 23. **OF₆ appears nowhere else in the corpus.** The second-period element cannot exceed an octet — no accessible d orbitals and, on the modern reading the project prefers, simply no room for six fluorines around an atom that small. **Registered as an extension of E16, not as a new MO case E46**, because it is E16's own argument applied to a second element: E16 already explains SF₆ by fluorine's small size and high electronegativity rather than by d-orbital availability, and OF₆ is where that explanation is tested. The same idea is examined one group away as **PF₅ against NF₅** (printed 531, problem 24) — one principle, two groups, and the course should teach them together. |
+
+### Cross-references — printed 580
+
+Preparation of O₂ from six reagents (1) · commercial oxygen and its uses (2) · oxides
+of Na and Ca against those of S and N, melting points, bonding type, reactions with
+water/acid/base (3) · classification of oxides (4) · **MO treatment of O₂, the
+superoxide ion and the peroxide ion with bond orders and magnetic behaviour** (5) ·
+**NO⁺ shorter-bonded than NO despite NO's extra electron** (6(b)) → **E1**, where the
+1.06 Å against 1.15 Å contraction is already the quantitative proof · ozone's
+laboratory preparation, structure, uses and the stratospheric layer (7) · ozone with
+Li, Na, K, C, CH₄, N₂, S, Cl₂, PbS and CuS (8) · O₂ against Sₓ (9) · **the gas-phase
+structure of H₂O₂** (10) → **A61** and the structural table, which already carry the
+skew form with its **111°30′ dihedral** and O–O 1.48 Å · sources of sulphur and the
+two common allotropes (11) · the Frasch process (12, Addendum 14) · the changes on
+heating sulphur (13) · bond angles and boiling points of H₂O against H₂S (14) · π
+bonding in the oxygen and sulphur oxides and the sulphate ion (15) · manufacture and
+uses of H₂SO₄ (16).
+
+### Cross-references — printed 581
+
+SO₂, SO₃, H₂SO₅ and H₂S₂O₈ (17) · gaseous against solid SO₃ (18(a)) · SO₃ with
+H₂SO₄ giving the pyro-acid (18(b), oleum) · **the action of heat on NaHSO₃** (18(c))
+→ already registered as `2NaHSO₃ → Na₂S₂O₅ + H₂O` **with the large-cation caveat** ·
+**SO₄²⁻ against S₂O₃²⁻** (18(d)) → **trap 26**, the S–S bond · Na₂S₂O₃ with I₂ (18(e))
+· why sulphurous acid and sulphites reduce (18(f)) · **sulphuric against selenic
+against telluric acid** (19) → Addendum 13, where the tetrahedral-to-octahedral
+change at Te(OH)₆ is the answer · Na₂S₂O₃ manufacture, photography, volumetry (20) ·
+the sulphur fluorides (21) → **A202** · **TeF₆ hydrolyses, SF₆ does not** (22) →
+**trap 39**, size not bond strength.
+
+### Scan-legibility note — printed 580
+
+**The photocopy of this page has dropped subscript digits across its whole width.**
+"H O" stands for H₂O₂, "Na O" for Na₂O₂, "NaNO," for NaNO₃, "KClO," for KClO₃, and
+bare "O," for O₂ or O₃ depending on position. Re-rendering at 1200 dpi does not
+recover them — the digits are absent from the scan, not merely small. **Every reagent
+involved is nonetheless identifiable from the surrounding words** ("superoxide ion",
+"peroxide ion", "preparation of oxygen from") **and every one is already registered,
+so no new formula or number in this addendum rests on a reconstructed digit.**
+Recorded rather than smoothed over. Printed 581 is clean and needed no such handling.
+
+## E. PDF 165–166 (printed 633–634) — Chapter 16 problems 1–18
+
+### Topics
+
+| # | Topic | Content |
+|---|---|---|
+| A303 | **Why fluorine cannot be obtained by electrolysing aqueous NaF, aqueous HF, or anhydrous HF** | Printed 633, problem 2, which names all three failures together. **The fluorine-cell electrolyte is absent from the registers — KHF₂ and Moissan appear nowhere in the corpus** — and this question is what exposes the gap. Three distinct reasons, and the third is the one students never reach: in **aqueous NaF** and **aqueous HF**, water is oxidised at the anode in preference to fluoride, and any F₂ formed would oxidise water regardless; in **anhydrous HF**, the liquid **barely self-ionises and is effectively a non-conductor**, so there is nothing to electrolyse. That last point is why **KF is added to give the KHF₂ melt** used industrially. **The page states the three failures as the question's premise; it does not print the reasons.** The premise is registered as established; the reasoning above is standard halogen chemistry and must be confirmed against the fluorine-production section — **PDF 117–120, still `FULL — PARTIALLY UNIQUE` and unread** — before the lesson asserts it. |
+| A304 | **Fluorinating agents are routinely used in place of elemental F₂** | Printed 633, problem 3. The source asserts as premise that substitutes for F₂ are "often used" and asks for equations showing their use — establishing that the chapter carries such a list. **The agents are not enumerated on this page.** The registers hold only **A202** (fluorination *strength* selects the sulphur fluoride obtained: AgF gives S₂F₂, direct F₂ gives SF₆, F₂ diluted with N₂ still gives SF₄) — a principle without a roster. **The roster is a known, located gap**, to be filled from the halogen-fluorides pages of this chapter, not guessed here. |
+| A305 | **The six reaction partners the source pairs with HF** | Printed 633, problem 5: **SiO₂, CaO, KF, CCl₄, uranium and graphite.** SiO₂ (etching, and the H₂[SiF₆] route already registered at **A291**), CaO and CCl₄ are covered. **Uranium and graphite are not, in a fluorine context.** HF with uranium sits at the head of the enrichment chain that produces UF₄ and then UF₆ — **UF₆ is registered but its HF origin is not** — and HF with graphite is the entry to graphite fluorides. **Balanced equations are asked for, not supplied.** Registered as the tested pairing set, with the two uncovered partners flagged. |
+| A306 | **The silver-halide ladder with AgNO₃, and what ammonia does to each precipitate** | Printed 634, problem 11: aqueous AgNO₃ added to NaF, NaCl, NaBr and NaI, then ammonia added to each mixture. **This ladder is absent from the corpus — AgNO₃ occurs exactly once anywhere in the registers, and then only inside the formula Ag₃P·3AgNO₃.** It is the standard halide-identification sequence and its absence is a genuine hole in the Group 17 coverage. **The question asks what happens; it does not say.** Registered as an identified gap with the reagent set fixed; **the precipitates, their colours and their behaviour towards dilute and concentrated ammonia must be sourced before the course states them** — most likely from the silver-halide material in the unread `FULL — PARTIALLY UNIQUE` pages of this chapter. |
+
+### Cross-references — printed 633–634
+
+Fluorine production, apparatus and precautions, and whether elemental F₂ is widely
+used (1) · uses of fluorine (4) · sources of Cl, Br and I in salts, and their
+extraction (6) → Addendum 19 · uses of Cl₂ (7) · preparation of HF, HCl, HBr and HI
+in aqueous solution, and **why HF is a weak acid against HI** (8) · **HCl from NaCl +
+H₂SO₄ but HBr and HI not obtainable the same way** (9) → **trap 47**, conc. H₂SO₄
+oxidises Br⁻ and I⁻ · Cl₂ with H₂, CO, P, S, SO₂, Br⁻(aq) and NaOH (10) ·
+**structures of OF₂, Cl₂O, O₂F₂ and I₂O₅** (12(a)) · the OF₂ bond angle against Cl₂O
+(12(b)) · **the O₂F₂ anomaly — O–F longer than in OF₂ while O–O is shorter than in
+H₂O₂** (12(c)) → already registered with numbers, **O–O 1.22 Å against 1.48 Å in
+H₂O₂, O–F 1.58 Å**, and carried as **trap 56**; the question confirms the source
+treats it as examinable and adds nothing · I₂O₅ preparation and its analytical use
+(13) · four types of halogen oxoacid with a salt for each, and the preparation and
+one use of NaOCl, NaClO₂, NaClO₃ and HIO₄ (14) · **I₂ nearly insoluble in water but
+freely soluble in aqueous KI** (15) → the polyhalide entry **A85** · shapes of ClF,
+BrF₃, IF₅, IF₇ and the polyhalide anions, lone pairs shown (17) · fluorine's
+differences from the other halogens (18).
+
+### Trap-bearing cross-reference — printed 634, problem 16(b)
+
+**Solid CsI₃ is stable but solid NaI₃ is not.** **A85** already carries the principle
+— "why big anions demand big cations", and lattice energy deciding thermal
+decomposition — but **neither salt is named there**, and the caesium/sodium pair is
+the cleanest illustration of it in the whole chapter. Registered as **trap 255**
+rather than as a topic, since the principle itself is not new.
+
+### `[UNCLEAR]` item 4 — printed 634, problem 16(a)
+
+**The polyiodide anion in problem 16(a) cannot be read safely.** The species is
+printed as an iodine symbol with a subscript digit and a superscript minus, followed
+by an **unexplained superscript "14"** with no legend anywhere on the page or the
+chapter. Re-rendered at **1600 dpi** and the subscript digit is still not
+distinguishable — it may be I₃⁻ or I₅⁻, and both ions are in the source's own
+polyhalide list. What the "14" denotes is likewise undetermined; it is not a footnote
+marker used anywhere else in these problem sets, and may be a scan artefact.
+*Location:* file 12, PDF 166, printed 634, problem 16(a). **Not guessed.** The tested
+concept — VSEPR treatment of a linear polyiodide — is registered regardless, since
+both candidate ions are linear and both are already in the registers. **`[UNCLEAR]`
+count rises from 3 to 4.**
+
+### Scan-crop note — printed 633
+
+**PDF 165's printed folio reads "63" because the scan crops the right margin** and
+the third digit falls outside the image. The value **633** follows from the
+established printed = PDF + 468 offset and is **confirmed by the facing page, PDF
+166, which prints 634 in full**. Recorded rather than silently corrected.
+
+## F. PDF 181–182 (printed 649–650) — Chapter 17 problems 1–8
+
+Printed 649 is Chapter 17's `FURTHER READING` bibliography above `PROBLEMS` 1–5;
+printed 650 carries 5(c) through 8 and is otherwise blank.
+
+### Topics
+
+| # | Topic | Content |
+|---|---|---|
+| A307 | **Argon's three named uses: the Kroll process, welding, and electric light bulbs** | Printed 649, problem 3. **The Kroll process appears nowhere in the corpus** — the registers had argon as an inert atmosphere in general terms but never named the titanium extraction that is its largest metallurgical use. The three uses share one principle: **argon excludes both O₂ and N₂**, and the nitrogen exclusion is the part students miss, because molten titanium and a hot tungsten filament both attack N₂, so "inert atmosphere" cannot mean nitrogen here. Links Group 18 to the d-block extraction chemistry another session is auditing. |
+| A308 | **The source itself poses d-orbital participation by s- and p-block elements as an open question** | Printed 650, problem 7, which asks the reader to discuss the claim that the noble-gas compounds created more problems than they solved, **"with particular reference to the stability of a closed electron shell and the participation of d orbitals in bonding by elements of the s- and p-blocks."** This matters beyond Group 18: **the author is treating central-atom d-orbital participation as a contested interpretive question rather than as settled fact**, in the author's own words, in the parent edition. That is direct textual support for this project's non-negotiable three-column bonding policy — historical/examination model kept and labelled, modern interpretation held separately and marked pending verification — and it is the first place in the corpus where the source is explicit that the question is open. |
+
+### Contradiction 66 — printed 650, problem 8
+
+**"The only binary compounds of the noble gases are fluorides and oxides of Kr, Xe
+and Rn."** *Location:* file 12, PDF 182, printed 650, problem 8. *The issue:* the
+sentence distributes **"fluorides and oxides"** across all three elements, but the
+chapter's own registered content does not support it. **A104** records that krypton
+"manages KrF₂" and that for radon, because every isotope is short-lived, **"only RnF₂
+and a few complexes are known"**. The oxide entries throughout §18 — **XeO₃, XeO₄,
+XeOF₄, XeO₂F₂, the xenates and perxenates** — are **xenon only**. **No krypton oxide
+and no radon oxide appears anywhere in the source or in the registers.** So the
+problem's premise over-claims against the chapter that sets it. *Verification needed:*
+Greenwood & Earnshaw or a noble-gas review; **neither in this corpus.** *Safe for
+inclusion:* **fluorides of Kr, Xe and Rn, yes. Oxides for Kr and Rn, no — the course
+will say oxides are established for xenon only**, and will use the discrepancy as a
+worked example of reading a question's premise critically.
+
+### Source defects on printed 649 — recorded, with the correction kept separate
+
+**D4 — problems 5(a), 5(b) and 5(c) are printed twice.** *Source form as printed:*
+the block "(a) Draw the structures of XeF₂, XeF₄ and XeF₆. (b) How may these
+compounds be prepared from Xe? (c) Give balanced equations to show how these three
+compounds react with water." appears **once immediately after problem 3** — whose
+subject is argon in the Kroll process, welding and light bulbs, and which cannot own
+xenon sub-parts — and **again as problem 5's own (a) and (b)**, with 5(c) continuing
+onto printed 650. *Correction:* the block belongs to problem 5 alone; the copy
+following problem 3 is a duplicate setting. Verified by reading both pages at 800 dpi
+— the two settings are verbatim identical. A typesetting fault in the parent edition,
+carrying no chemical claim, so **not raised to the contradiction register**.
+
+**D5 — the Bartlett 1962 reference prints the formula as `Xe⁺[PtF]⁻`.** *Source form
+as printed:* Xe⁺[PtF]⁻, the subscript 6 absent. *Correction:* **Xe⁺[PtF₆]⁻** — the
+entry's own title reads "Xenon hexafluoroplatinate(V)", which settles it. **And the
+formula is wrong even when repaired**: **A103** and **trap 72** already record that
+Bartlett's product was **not** Xe⁺[PtF₆]⁻ but **[XeF]⁺[Pt₂F₁₁]⁻**, via
+[XeF]⁺[PtF₆]⁻ with PtF₅ at 25 °C then 60 °C. The bibliography preserves the 1962
+formulation as history, which is correct for a citation.
+
+### Cross-references — printed 649–650
+
+Origin of terrestrial and atmospheric helium, its commercial recovery, its uses, and
+**its boiling point in both °C and K** (1) — **the page asks for the number and does
+not print it, and no boiling point for helium is registered anywhere in the corpus;
+recorded as a gap, not filled** · abundance of argon in the atmosphere, its
+commercial recovery and uses (2) · **structures of XeF₂, XeF₄ and XeF₆, their
+preparation from Xe, and their balanced hydrolyses** (5) → **A107** carries all three
+hydrolyses and the way they differ · **Bartlett's interpretation of Xe + PtF₆ then
+and now** (4) → **A103** and **trap 72**, which is exactly the then-against-now
+reading the question wants · **XeO₃, XeOF₄ and Ba₂XeO₆ — preparation and structures**
+(6) → registered, including **Ba₂[XeO₆] octahedral, decomposing above 300 °C**.
+
+## G. Visual register — additions V137–V141
+
+| ID | Required visual kind | Subject |
+|---|---|---|
+| V137 | **Process flow** | The fluorine cell as a chain of three failures and one fix: aqueous NaF and aqueous HF (water oxidised first), anhydrous HF (no conduction), then KF added → KHF₂ melt. **Content pending A303's verification against PDF 117–120.** |
+| V138 | **Comparison graphic** | POCl₃ drawn to scale: the measured P–O at 1.45 Å against the 1.83 Å additive single-bond estimate, the 0.38 Å gap called out, with the pπ–dπ and polarised-σ readings labelled as separate columns — never merged |
+| V139 | **Reaction map** | The printed-531 identification chain A → G, vapour density 8.5 at the entry and Nessler's yellow at the exit, each arrow labelled with the transformation rather than the answer |
+| V140 | **Comparison graphic** | Silver-halide ladder: AgF, AgCl, AgBr, AgI against dilute and concentrated ammonia. **Flagged — the outcomes are not on printed 634; this visual must not be drawn until A306's gap is filled from a source that states them.** |
+| V141 | **Comparison graphic** | Noble-gas binary compounds actually established — KrF₂ · XeF₂, XeF₄, XeF₆ · XeO₃, XeO₄ · RnF₂ — set against problem 8's "fluorides and oxides of Kr, Xe and Rn", with the two absent boxes empty and labelled (contradiction 66) |
+
+## H. JEE trap register — items 248–257
+
+248. **Anhydrous HF is effectively a non-conductor.** "Electrolyse HF" is the
+     standard wrong answer for making fluorine; the melt is **KHF₂**, and KF is added
+     precisely to supply ions that HF itself does not.
+249. **No aqueous fluoride ever yields F₂.** Water is oxidised at the anode in
+     preference, and F₂ would oxidise water even if it formed. Both halves of the
+     reason matter — quoting only one is a half-mark answer.
+250. **POCl₃'s P–O is 1.45 Å against 1.83 Å for the sum of single-bond covalent
+     radii** — a 0.38 Å, roughly 21 %, shortening. Learn the pair of numbers, not
+     the adjective "shorter".
+251. **Mg₃Bi₂, not Mg₃Bi.** Bismuth is the −3 partner; Mg²⁺ and Bi³⁻ force 3 : 2.
+     The parent edition prints Mg₃Bi and its own adapted edition prints Mg₃Bi₂.
+252. **Noble-gas oxides are xenon's alone.** Krypton and radon give fluorides —
+     KrF₂ and RnF₂ — and no established oxide. A question premise that says
+     otherwise is still a question premise.
+253. **Vapour density 8.5 means M = 17 means NH₃.** Relative molecular mass is
+     twice the vapour density; an identification chain that starts with a number is
+     solved at step zero, not step one. The companion trap is **"heat a nitrogen
+     salt"** — NaNO₃, NH₄NO₃, NH₄Cl + NaNO₂, Cu(NO₃)₂·2H₂O, Pb(NO₃)₂ and NaN₃ give
+     six different outcomes and cannot be answered by one rule.
+254. **SF₆ exists, OF₆ does not — and PF₅ exists, NF₅ does not.** One principle,
+     two groups, examined one page apart in this very book. The second-period
+     element is the one that fails, every time.
+255. **Solid CsI₃ is stable; solid NaI₃ is not.** A lattice-energy and cation-size
+     argument, not a bonding one — the large anion needs the large cation.
+256. **Liquid oxygen adheres to the poles of a magnet; liquid nitrogen does not.**
+     The visible consequence of two unpaired π\* electrons, and the fastest route
+     into the MO diagram.
+257. **NO⁺ is shorter-bonded than NO despite having one electron fewer.** The
+     electron removed is antibonding: 1.15 Å → 1.06 Å. "Fewer electrons, weaker
+     bond" is the trap.
+
+## I. Register-count effects
+
+- **Topics: A296 → A308.** Twelve added: A297–A308. Contiguous, no gaps, no
+  duplicates, **every one a table row**.
+- **Visuals: V136 → V141.** Five added.
+- **MO cases: E45 — unchanged.** The OF₆ argument is registered as an **extension of
+  E16**, deliberately not promoted to E46, because it is the same reasoning applied
+  to a second element rather than a new case.
+- **Traps: 247 → 257.** Ten added.
+- **Contradictions: 64 → 66.** Two added, both flagged and neither resolved.
+- **Source defects: 5 recorded on these pages** (D1–D5), each with the printed form
+  and the correction kept separate. **None is raised to the contradiction register**
+  — D1 is settled by the book's own other edition, and D2–D5 carry no chemical claim.
+- **`[UNCLEAR]`: 3 → 4.** One added, printed 634 problem 16(a).
+- **Identified gaps the questions exposed, recorded as gaps and not filled:** the
+  fluorine-cell electrolyte and Moissan apparatus · the roster of fluorinating agents
+  used in place of F₂ · HF with uranium and with graphite · the silver-halide /
+  ammonia ladder · the boiling point of helium. **Every one is asked for by a
+  question whose answer the book does not print on that page**, and all but the last
+  should be recoverable from `FULL — PARTIALLY UNIQUE` pages of the same chapters.
+
+---
+
+# CLOSURE — file 12 `QUESTION GAP` queue
+
+**Status: 9 / 9 audited.** Enumerated page by page, not derived by subtraction:
+**PDF 62, 63, 64, 112, 113, 165, 166, 181, 182 — count 9.**
+
+**Outcomes: 8 `AUDITED — CONCEPT REGISTERED`, 1 `AUDITED — NO NEW CHEMISTRY`**
+(PDF 62). Every page carries both its triage label and its deep-read outcome in the
+table at the head of this addendum. **No page in the set remains triage-only, and no
+page was read without being registered.**
+
+**Total pages deeply inspected in file 12: 39 + 9 = 48 of 184.**
+
+**Remaining in file 12:** **2 `VISUAL ONLY` pages** (PDF 171–172, Table 17.3 and the
+xenon structures) and **95 of 97 `FULL — PARTIALLY UNIQUE` pages.**
+
+---
+
+## J. Validation pass — two register defects found in code, both pre-existing
+
+**Run after Addendum 20 was appended, comparing the table-row maximum against the
+maximum appearing anywhere in the file, for every ID series.** Topics pass
+cleanly: **308 table rows, maximum A308 both ways, no gaps, no duplicates.** Two
+defects surfaced in the **visual** register, neither introduced by Addendum 20 —
+V137–V141 are one clean row each.
+
+### J1 — three visual IDs existed only as prose, never as table rows
+
+**V45, V46 and V89 were defined in running paragraphs**, so the row-based check
+reported a maximum lower than the register really held. **This is the same
+failure the handoff already records for topic IDs A223–A238 and A246–A249** — the
+rule "every ID must be a table row" had been applied to topics and not carried
+over to visuals. Repaired here by giving the three their rows, transcribed from
+the prose without alteration; the originating paragraphs are left in place.
+
+| ID | Required visual kind | Subject | Prose origin |
+|---|---|---|---|
+| V45 | **Oxidation-state ladder** | Chlorine from −I through +VII, a named species on every rung, disproportionation arrows drawn in | Addendum 3, Gap 4 |
+| V46 | **Hydrolysis map** | The interhalogens, making visible the rule that the oxoacid always forms on the **larger** halogen | Addendum 3, Gap 4 |
+| V89 | **Reaction network** | The nitrogen cycle as a balance sheet — four loss arrows against the gains, **175 million tonnes** and the **>60 %** share labelled, and the NH₃-returns / N₂-does-not asymmetry marked as the reason the cycle leaks | Addendum 7a |
+
+### J2 — V33–V44 appear twice, and that is deliberate, not a collision
+
+Each of **V33 through V44** has two table rows: the original Group 17 set, and a
+**refined restatement in Addendum 3's Gap 4 "visual-requirement classification"**,
+which upgrades the build note (V34 moves from "ComparisonGraphic" to
+"**Thermodynamic cycle**", V35 from "ProcessFlow" to "**Disproportionation +
+reaction network**", and so on). **The Addendum 3 row supersedes the earlier one;
+the two are the same visual, not two visuals sharing an ID.** Recorded explicitly
+so that a future validation pass does not "repair" it by renumbering and break the
+cross-references that point at these IDs.
+
+**Visual register after this pass: maximum V141, no prose-only IDs, no genuine
+duplicate IDs, and 12 intentional supersessions documented.**
+
+### J3 — trap 159 existed only as prose; repaired in place
+
+The trap register runs **1–257 with no missing numbers**, but **trap 159 was the
+one item written as `**JEE trap added — 159:**` inside Addendum 7a's prose**
+rather than as a numbered register entry, so a list-based check reported it as a
+gap when it was not one. **Same defect class as J1**, and repaired the same way:
+the entry is restated below in the standard numbered form, **its original ID and
+its original content preserved verbatim, and no replacement number allocated.**
+The originating paragraph in Addendum 7a is left in place.
+
+159. **Dinitrogen reacts with lithium at room temperature.** Calling N₂ inert
+     without the temperature qualifier is the error; every other direct
+     combination needs heat. *(Formatting repair only — content unchanged from
+     Addendum 7a, where it was first registered against file 12 PDF 6 /
+     printed 473. Not a new trap, and the trap count is unchanged at 257.)*
+
+**Trap register after this pass: 1–257, every ID reachable as a numbered register
+entry, no prose-only IDs, no renumbering, count unchanged.**

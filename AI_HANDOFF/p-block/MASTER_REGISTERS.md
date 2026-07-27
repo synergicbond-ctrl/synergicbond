@@ -2362,3 +2362,165 @@ direct combination needs heat.
 **Contradictions:** none new. Items 25–53 preserved.
 
 **Next unread page: file 12 PDF p. 7 (printed 474).**
+
+---
+
+# Addendum 8 — file 12 complete page map and differential triage (all 209 pages)
+
+Every one of the 209 pages now carries a status. Built by rendering all 209
+pages, cropping the running-header band at 150 dpi, and reading the headers in
+seven stacked montages — so the map is derived from the scan itself, not from
+page-length arithmetic.
+
+## A. Two structural findings
+
+**1. Twenty-five pages are not p-block.** PDF **185–209** (printed 654–678) are
+**Chapter 18, "An Introduction to the Transition Elements"** — metallic
+character, complexes, covalent radii, magnetism (Pascal's constants, Bohr
+magnetons, diamagnetic corrections), catalytic properties, and the abundance of
+the transition elements. These are **`NOT RELEVANT`** to the p-block project.
+**File 12's p-block content is PDF 1–184 only.** The p-block denominator for this
+file is therefore **184, not 209**, and the coverage register now says so.
+*Worth passing on:* those 25 pages are directly relevant to the **d-block** work
+another session is running.
+
+**2. The page offset shifts by one.** printed = PDF + 467 up to about PDF p. 65,
+and printed = PDF + 468 from about PDF p. 90. Confirmed at p3→470, p29→496,
+p65→532 (all +467) and p90→558, p140→608, p175→643 (all +468). One page is
+inserted between p65 and p90. Recorded rather than smoothed over.
+
+## B. Chapter boundaries, confirmed from the scan
+
+| Chapter | Group | PDF pages | Printed pages | Pages |
+|---|---|---|---|---|
+| 14 | 15 | 1–64 | 468–531 | 64 |
+| 15 | 16 | 65–113 | 532–580 | 49 |
+| 16 | 17 | 114–166 | 582–634 | 53 |
+| 17 | 18 | 167–184 | 635–651 | 18 |
+| 18 | **d-block — out of scope** | 185–209 | 654–678 | 25 |
+| | | | **p-block total** | **184** |
+
+## C. Section map with triage status
+
+Status key as specified: `FULL — UNIQUE`, `FULL — PARTIALLY UNIQUE`,
+`SAMPLED — DUPLICATE OF FILE 8`, `VISUAL ONLY`, `QUESTION GAP`, `UNCLEAR`,
+`NOT RELEVANT`.
+
+### Chapter 14 — Group 15 (PDF 1–64)
+
+| PDF | Printed | Section | Status | File-8 equivalent |
+|---|---|---|---|---|
+| 1–5 | 468–472 | Ch. opening; Occurrence, extraction and uses | **FULL — UNIQUE** (done, Addendum 7) | §10.35 partial; extraction absent |
+| 6 | 473 | General properties; the nitrogen cycle | **FULL — PARTIALLY UNIQUE** (done, Addendum 7a) | §10.36 partial |
+| 7–9 | 474–476 | General properties and structures (Haber–Bosch tonnage, *Rhizobium*; Sb high-pressure allotropes; Bi liquid expansion) | **FULL — PARTIALLY UNIQUE** — pending | §10.36 |
+| 10–11 | 477–478 | Metallic and non-metallic character | **FULL — PARTIALLY UNIQUE** — pending | §10.37 partial |
+| 12–19 | 479–486 | Hydrides (NH₃ 110 Mt 1992; N₂H₄ + 2I₂ → 4HI + N₂; N₂H₄ + 2O₂ → 2H₂O₂ + N₂) | **FULL — PARTIALLY UNIQUE** — pending | §10.40–10.41 |
+| 20–21 | 487–488 | **Hydrogen azide and the azides** | **FULL — UNIQUE** — pending | §10.38, flagged absent from the course |
+| 22–27 | 489–494 | **Nitrogen fixation** (Ti(OR)₂N₂ route; nitrate in drinking water → methaemoglobinaemia) | **FULL — UNIQUE** — pending | §10.39, flagged absent from the course |
+| 28–31 | 495–498 | Halides ([SbF₆]⁻, [Sb₂F₇]⁻; PCl₅ ionic/covalent borderline) | **FULL — PARTIALLY UNIQUE** — pending | §10.42 |
+| 32–35 | 499–502 | Oxides of nitrogen (**Birkeland–Eyde process**; NO₂/N₂O₄ para/diamagnetic) | **FULL — PARTIALLY UNIQUE** — pending | §10.43 |
+| 36–40 | 503–507 | Oxoacids of nitrogen (hydroxylamine prep via NH₄NO₂/NH₄HSO₄/SO₂) | **FULL — PARTIALLY UNIQUE** — pending | §10.43–10.44 |
+| 41–43 | 508–510 | Oxides of phosphorus, arsenic **and bismuth**, Table 14.9 | **FULL — PARTIALLY UNIQUE** — pending | §10.44; As/Bi oxides absent |
+| 44–53 | 511–520 | **The phosphoric acid series** (Kₐ₁ 7.5×10⁻³, Kₐ₂ 6.2×10⁻⁸; Na₅P₃O₁₀ at 1200 °C; metaphosphorous acid (HPO₂)ₙ) | **FULL — PARTIALLY UNIQUE** — pending | §10.45, much shorter there |
+| 54–57 | 521–524 | **Sulphides of phosphorus** (Malathion, parathion, acetylcholinesterase) | **FULL — UNIQUE** — pending | absent |
+| 58–59 | 525–526 | **Phosphazenes and cyclophosphazenes** | **FULL — UNIQUE** — pending | **absent entirely** |
+| 60–61 | 527–528 | Further reading | **NOT RELEVANT** | — |
+| 62–64 | 529–531 | Problems | **QUESTION GAP** — pending | Q5 hydrolysis of Li₃N, CaNCN, AlN, NO₂, N₂O₃, NCl₃ |
+
+### Chapter 15 — Group 16 (PDF 65–113)
+
+| PDF | Printed | Section | Status | File-8 equivalent |
+|---|---|---|---|---|
+| 65–67 | 532–534 | Ch. opening; electronic structure and oxidation states | **SAMPLED — DUPLICATE OF FILE 8** | §10.46 |
+| 68–73 | 535–540 | **Extraction and uses of the elements** (Bessemer 6 t vs BOP 100 t; 2CaSO₄ + C → 2SO₂ + 2CaO + CO₂ at 1200 °C; Te 152 t in 1992) | **FULL — UNIQUE** — pending | **absent — file 8 has no Group 16 extraction section** |
+| 74–75 | 541–542 | Structure and allotropy | **SAMPLED — DUPLICATE OF FILE 8** | §10.47 |
+| 76–77 | 543–544 | Ozone; UV and melanoma | **SAMPLED — DUPLICATE OF FILE 8** | §10.47 |
+| 78–79 | 545–546 | Oxidation states (+II), (+IV), (+VI); Po and Te oxidising power | **FULL — PARTIALLY UNIQUE** — pending | §10.49 |
+| 80–82 | 547–550 | General properties of oxides; peroxides | **SAMPLED — DUPLICATE OF FILE 8** | §10.50 |
+| 83–88 | 551–556 | Oxides of sulphur, selenium, tellurium (β/α-SO₃; Teepol detergents) | **FULL — PARTIALLY UNIQUE** — pending | §10.51; Se/Te oxides thin there |
+| 89–94 | 557–562 | Oxoacids of sulphur (NO₂ + SO₂ + H₂O → H₂SO₄ + NO; Na₂SO₃ >1 Mt/yr) | **FULL — PARTIALLY UNIQUE** — pending | §10.52 |
+| 95–96 | 563–564 | **Oxoacids of selenium and tellurium** (SeO₃²⁻, HSeO₃⁻, selenic acid by H₂O₂ reflux, **pyroselenates Se₂O₇²⁻**) | **FULL — UNIQUE** — pending | **absent** |
+| 97–104 | 565–572 | Hydrides (Table 15.8; polysulphanes to eight S; anthraquinol H₂O₂ cycle) | **FULL — PARTIALLY UNIQUE** — pending | §10.54 |
+| 105–106 | 573–574 | Halides (SCl₄ unstable liquid; **TeCl₄ trigonal bipyramidal with one equatorial lone pair**) | **FULL — PARTIALLY UNIQUE** — pending | §10.55 |
+| 107–108 | 575–576 | **Compounds of sulphur and nitrogen** (**S₄N₄ tetrasulphur tetranitride**) | **FULL — UNIQUE** — pending | **absent entirely** |
+| 109–110 | 577–578 | **Organo derivatives; haemoglobin, porphyrin, MW ≈ 65 000, four haem groups** | **FULL — UNIQUE** — pending | **absent** |
+| 111 | 579 | Further reading | **NOT RELEVANT** | — |
+| 112–113 | 580–581 | Problems | **QUESTION GAP** — pending | Q1 preparations of oxygen |
+
+### Chapter 16 — Group 17 (PDF 114–166)
+
+| PDF | Printed | Section | Status | File-8 equivalent |
+|---|---|---|---|---|
+| 114–116 | 582–584 | Ch. opening; **occurrence and abundance**, Table 16.2 | **FULL — UNIQUE** — pending | absent |
+| 117–122 | 585–590 | Extraction and uses (F₂ cylinders → ClF₃; modified Deacon; **brines from Oklahoma, Michigan and Japan**; Chile saltpetre iodate) | **FULL — PARTIALLY UNIQUE** — pending | §10.56 |
+| 123–124 | 591–592 | Ionization energy; Table 16.5 electronegativity **and electrode potentials** | **FULL — PARTIALLY UNIQUE** — pending | §10.57 |
+| 125–126 | 593–594 | Melting and boiling points; Table 16.7 bond energy and length | **SAMPLED — DUPLICATE OF FILE 8** | §10.57 |
+| 127–128 | 595–596 | Oxidizing power | **SAMPLED — DUPLICATE OF FILE 8** | §10.57 |
+| 129–130 | 597–598 | Reactivity; Table 16.10 bond energies HX/BX₃/AlX₃/CX₄/NX₃/X₂ | **SAMPLED — DUPLICATE OF FILE 8** | §10.59, Table 10.32 |
+| 131–136 | 599–604 | Hydrogen halides (**14 % of HF → AlF₃ and cryolite; ~2 % → uranium via UF₆**; Table 16.13 energy cycle with TΔS and ΔG) | **FULL — PARTIALLY UNIQUE** — pending | §10.60 |
+| 137–138 | 605–606 | Halides; **"maximum covalency ⇒ inert to water; CCl₄ and SF₆ stable, for kinetic rather than thermodynamic reasons"** | **FULL — PARTIALLY UNIQUE** — pending | §10.61 |
+| 139–144 | 607–612 | Halogen oxides, incl. a distinct **"Oxides of bromine"** subsection | **FULL — PARTIALLY UNIQUE** — pending | §10.62 |
+| 145–146 | 613–614 | **Standard reduction potentials — acidic AND basic solution diagrams** | **FULL — UNIQUE** — pending | **absent entirely** |
+| 147–152 | 615–620 | Oxoacids (**perbromate first obtained from β decay of ⁸³SeO₄²⁻**) | **FULL — PARTIALLY UNIQUE** — pending | §10.63 |
+| 153–158 | 621–626 | Interhalogens (ClF from equal volumes at 200 °C; **ClF₃ 1.698 Å, 87°45′**) | **FULL — PARTIALLY UNIQUE** — pending | §10.64 |
+| 159–160 | 627–628 | Polyhalides | **SAMPLED — DUPLICATE OF FILE 8** | §10.65 |
+| 161–162 | 629–630 | **Basic properties of the halogens — halogen cations**, `2I₂ + 5SbF₅ → [I₂]⁺[Sb₂F₁₁]⁻ + SbF₃` in SO₂ | **FULL — UNIQUE** — pending | **absent entirely** |
+| 163–164 | 631–632 | Pseudohalogens, Table 16.17 | **SAMPLED — DUPLICATE OF FILE 8** | §10.66 |
+| 165–166 | 633–634 | Problems | **QUESTION GAP** — pending | Q6 commercial sources of Cl, Br, I |
+
+### Chapter 17 — Group 18 (PDF 167–184)
+
+| PDF | Printed | Section | Status | File-8 equivalent |
+|---|---|---|---|---|
+| 167–168 | 635–636 | Ch. opening; occurrence and recovery; Cavendish | **SAMPLED — DUPLICATE OF FILE 8** | §10.67–10.68 |
+| 169–170 | 637–638 | **Special properties of helium**; He I and He II | **SAMPLED — DUPLICATE OF FILE 8** | §10.70 |
+| 171–172 | 639–640 | Table 17.3 structures of xenon compounds | **VISUAL ONLY — STRUCTURE/TABLE CHECK** — pending | §10.72 Table 10.42 |
+| 173–174 | 641–642 | Chemistry of xenon; XeO₃ | **SAMPLED — DUPLICATE OF FILE 8** | §10.72 |
+| 175–180 | 643–648 | Structure and bonding in xenon compounds | **SAMPLED — DUPLICATE OF FILE 8** (verified verbatim at p175 and p178) | §10.73 |
+| 181–182 | 649–650 | Problems | **QUESTION GAP** — pending | — |
+| 183–184 | 651–652 | Chapter close | **NOT RELEVANT** | — |
+
+### Chapter 18 (PDF 185–209)
+| 185–209 | 654–678 | An Introduction to the Transition Elements | **NOT RELEVANT — d-block, outside this project** | — |
+
+## D. Triage totals
+
+| Status | Pages |
+|---|---|
+| `FULL — UNIQUE` | **38** (PDF 1–5 done; 20–27, 54–59, 68–73, 95–96, 107–110, 114–116, 145–146, 161–162 pending) |
+| `FULL — PARTIALLY UNIQUE` | **98** (1 done — p6; 97 pending) |
+| `SAMPLED — DUPLICATE OF FILE 8` | **32** |
+| `VISUAL ONLY` | **2** |
+| `QUESTION GAP` | **9** |
+| `NOT RELEVANT` (further reading, chapter close) | **5** |
+| `NOT RELEVANT` (d-block Ch. 18) | **25** |
+| `UNCLEAR` | **0** — the scan is clean and every header was legible |
+| **Total** | **209** |
+
+Recounted range by range and asserted in code: the six buckets sum to exactly 209,
+no page carries two labels, and no page is unlabelled. An earlier draft of this
+table read 34 / 95 / 34 and summed to 204; the validation step caught it and the
+figures above are the corrected ones.
+
+**Deeply inspected so far: 6 pages** (PDF 1–6). **Triaged: 209.**
+
+## E. Priority queue for deep reading, highest yield first
+
+1. **Phosphazenes and cyclophosphazenes** — PDF 58–59. Absent from file 8 entirely; a whole compound class with pπ–pπ delocalisation the course does not have.
+2. **Compounds of sulphur and nitrogen** — PDF 107–108. S₄N₄ and its derivatives; absent entirely.
+3. **Standard reduction potentials, acidic and basic** — PDF 145–146. The redox diagrams file 8 never carried.
+4. **Basic properties of the halogens** — PDF 161–162. Halogen **cations**, I₂⁺ as a real species.
+5. **Oxoacids of selenium and tellurium** — PDF 95–96. Pyroselenate Se₂O₇²⁻.
+6. **Group 16 extraction and uses** — PDF 68–73. File 8 has no Group 16 extraction at all.
+7. **Nitrogen fixation** — PDF 22–27. Flagged absent from the course from the start.
+8. **Hydrogen azide and the azides** — PDF 20–21. Likewise flagged absent.
+9. **Sulphides of phosphorus** — PDF 54–57, with the organophosphate toxicology.
+10. **Organo derivatives / haemoglobin** — PDF 109–110.
+
+## F. Verification note
+
+File 12 and file 8 are two editions of one author. Every `SAMPLED — DUPLICATE`
+label records **verbatim agreement, which is not independent verification**, and
+no new topic, compound, reaction or visual ID has been created for any duplicated
+page. Items 25–53 in the contradiction register are unchanged, and no NCERT or
+Greenwood corroboration is claimed anywhere.

@@ -136,18 +136,20 @@ Last updated: 2026-07-26.
 |---|---|---|---|
 | Files 1–6 (original six) | 437 | **325** | 74 % |
 | Files 7–11 (new five) | 1294 | **191** | 14.8 % |
-| File 12 (`15161718.pdf`, newly located) | 209 | **6** | 2.9 % |
-| **Total project** | **1940** | **522** | **27 %** |
+| File 12 (`15161718.pdf`, p-block part only) | 184 | **6** | 3.3 % |
+| **Total project** | **1915** | **522** | **27 %** |
 
 Files 7–12 breakdown: file 7 (JD Lee 5th ed., whole book) 5 / 1057 · **file 8 (JD Lee
 adapted Ch. 10) 172 / 172 — COMPLETE** · file 9 (annotated notes) 0 / 40 · file 10
 (annotated notes) 0 / 11 · file 11 (noble-gas notes) 14 / 14 · **file 12 (JD Lee 5th ed.
-Ch. 14–17 extract) 6 / 209**.
+Ch. 14–17 extract) 6 / 184 deeply read, **209 / 209 triaged**.
 
-**The denominator went up, so the percentage went down.** Locating file 12 added 209
-previously uncounted pages to the corpus, which moves the total from 1731 to 1940 and the
-completion figure from 30 % to 27 %. That is a correction, not a regression — the earlier
-30 % was measured against a corpus that was missing a file.
+**Denominator history, so the movement is auditable.** Locating file 12 added its pages to
+a corpus that had been missing them, taking the total from 1731 to 1940 and the completion
+figure from 30 % to 27 %. Triaging the file then showed that **25 of its 209 pages are
+d-block (Ch. 18) and outside this project**, so its p-block contribution is 184 pages and
+the total settles at **1915**. Neither movement is a regression — the first corrected a
+missing file, the second removed out-of-scope pages.
 
 **The project has NOT been fully reviewed.** No statement in the course may claim otherwise.
 
@@ -205,15 +207,45 @@ cross-references resolving, all 20 lessons non-empty.
   occupies ~99 PDF pages here against 35 printed pages in the adapted edition.
   Occurrence, extraction, world production figures and the whole of
   arsenic/antimony/bismuth metallurgy were cut.
-- **Inspected: 6 / 209 (Vision)** — PDF pp. 1–6 = printed 468–473. Complete
-  coherent segment: the Ch. 14 opening (electronic structures and oxidation
-  states), the whole of "Occurrence, extraction and uses" for N, P, As, Sb and
-  Bi, and the nitrogen cycle. Registered in **`MASTER_REGISTERS.md` Addenda 7
-  and 7a**: 14 topics, ~50 species, 13 preparations/reactions, a melting/boiling
-  table, 6 colour observations, a uses-and-hazards block, 5 visuals, 9 JEE traps,
-  0 new contradictions.
-- **Next unread page: PDF p. 7 (printed 474)** — continuing "General properties
-  and structures of the elements" in Chapter 14.
+- **ALL 209 PAGES TRIAGED.** Every page carries a status label, derived from the
+  scan itself: all 209 pages were rendered, the running-header band cropped at
+  150 dpi, and the headers read in seven stacked montages. The full page map,
+  chapter boundaries, section list and per-range status table are in
+  **`MASTER_REGISTERS.md` Addendum 8**.
+- **CORRECTION — only 184 of the 209 pages are p-block.** PDF **185–209**
+  (printed 654–678) are **Chapter 18, "An Introduction to the Transition
+  Elements"** — d-block, and outside this project. The p-block denominator for
+  this file is therefore **184**. *Those 25 pages are directly useful to the
+  d-block work another session is running.*
+- **Chapter boundaries, confirmed from the scan** (not inferred from lengths):
+  Ch. 14 Group 15 = PDF 1–64 (printed 468–531) · Ch. 15 Group 16 = PDF 65–113
+  (printed 532–580) · Ch. 16 Group 17 = PDF 114–166 (printed 582–634) ·
+  Ch. 17 Group 18 = PDF 167–184 (printed 635–651).
+- **Page offset shifts by one.** printed = PDF + 467 up to ≈PDF 65, then
+  printed = PDF + 468 from ≈PDF 90. Confirmed at p3→470, p29→496, p65→532 and
+  at p90→558, p140→608, p175→643. Recorded, not smoothed over.
+- **Triage totals** (recounted range by range and asserted to sum to 209, with no page
+  double-labelled and none unlabelled): `FULL — UNIQUE` **38** ·
+  `FULL — PARTIALLY UNIQUE` **98** · `SAMPLED — DUPLICATE OF FILE 8` **32** ·
+  `VISUAL ONLY` **2** · `QUESTION GAP` **9** · `NOT RELEVANT` **30** (5
+  further-reading/chapter-close + 25 d-block) · `UNCLEAR` **0**.
+- **Deeply inspected and fully registered: 6 / 184 (Vision)** — PDF 1–6 =
+  printed 468–473, in Addenda 7 and 7a: 14 topics, ~50 species, 13
+  preparations/reactions, a melting/boiling table, 6 colour observations, a
+  uses-and-hazards block, 5 visuals, 9 JEE traps, 0 new contradictions.
+- **Sections found to be absent from file 8 altogether** — the queue that
+  justifies reading this file at all: **Phosphazenes and cyclophosphazenes**
+  (PDF 58–59) · **Compounds of sulphur and nitrogen, S₄N₄** (107–108) ·
+  **Standard reduction potentials, acidic and basic diagrams** (145–146) ·
+  **Basic properties of the halogens — halogen cations I₂⁺** (161–162) ·
+  **Oxoacids of selenium and tellurium** (95–96) · **Group 16 extraction and
+  uses** (68–73) · **Sulphides of phosphorus** (54–57) · **Organo derivatives
+  and haemoglobin** (109–110), plus **Nitrogen fixation** (22–27) and
+  **Hydrogen azide and the azides** (20–21), both flagged absent from the course
+  since the first register.
+- **Next page for deep reading: PDF p. 58 (printed 525)** — Phosphazenes and
+  cyclophosphazenes, the highest-yield unique section in the file. Pages 7–57
+  are triaged and queued but not yet deeply read.
 - **Destination:** Sections 7–19, as gap-fill on top of Addenda 1–4 — **IN
   PROGRESS**
 

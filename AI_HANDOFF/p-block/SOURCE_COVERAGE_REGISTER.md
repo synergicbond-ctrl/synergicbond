@@ -136,13 +136,13 @@ Last updated: 2026-07-26.
 |---|---|---|---|
 | Files 1–6 (original six) | 437 | **325** | 74 % |
 | Files 7–11 (new five) | 1294 | **191** | 14.8 % |
-| File 12 (`15161718.pdf`, p-block part only) | 184 | **8** | 4.3 % |
-| **Total project** | **1915** | **524** | **27 %** |
+| File 12 (`15161718.pdf`, p-block part only) | 184 | **10** | 5.4 % |
+| **Total project** | **1915** | **526** | **27 %** |
 
 Files 7–12 breakdown: file 7 (JD Lee 5th ed., whole book) 5 / 1057 · **file 8 (JD Lee
 adapted Ch. 10) 172 / 172 — COMPLETE** · file 9 (annotated notes) 0 / 40 · file 10
 (annotated notes) 0 / 11 · file 11 (noble-gas notes) 14 / 14 · **file 12 (JD Lee 5th ed.
-Ch. 14–17 extract) 8 / 184 deeply read, **209 / 209 triaged**.
+Ch. 14–17 extract) 10 / 184 deeply read, **209 / 209 triaged**.
 
 **Denominator history, so the movement is auditable.** Locating file 12 added its pages to
 a corpus that had been missing them, taking the total from 1731 to 1940 and the completion
@@ -238,6 +238,11 @@ cross-references resolving, all 20 lessons non-empty.
     data, 4 visuals, 7 JEE traps, **1 new contradiction (item 54)**. Adds two
     compound classes (phosphazenes, pnictogen organometallics) and a **third
     back-bonding type, dπ–dπ**, which the registers did not have.
+  - **PDF 107–108 = printed 575–576** (Addendum 10). p107 `FULL — PARTIALLY
+    UNIQUE` (halides tail), p108 `FULL — UNIQUE` (sulphur–nitrogen compounds,
+    absent from file 8): 6 topics, ~20 species, 8 reactions, the S₄N₄ bond-length
+    argument, 1 MO case (E41), 3 visuals, 7 JEE traps, **2 `[UNCLEAR]` items**
+    and 0 new contradictions.
 - **Sections found to be absent from file 8 altogether** — the queue that
   justifies reading this file at all: **Phosphazenes and cyclophosphazenes**
   (PDF 58–59) · **Compounds of sulphur and nitrogen, S₄N₄** (107–108) ·
@@ -253,11 +258,16 @@ cross-references resolving, all 20 lessons non-empty.
   Addendum 8 map did not separate. Corrected: **PDF 59–60 = Organometallic
   compounds (`FULL — UNIQUE`), PDF 61 = Further reading (`NOT RELEVANT`)**. Bucket
   totals unchanged.
-- **Next page for deep reading: PDF p. 107 (printed 575)** — Compounds of sulphur
-  and nitrogen (S₄N₄), the second entry in the unique queue. Then PDF 145–146
-  (standard reduction potentials), 161–162 (halogen cations), 95–96 (Se/Te
-  oxoacids), 68–73 (Group 16 extraction), 20–27, 54–57, 109–110, 114–116.
-  Pages 7–57 remain triaged but not deeply read.
+- **`[UNCLEAR]` items outstanding — 2**, both on PDF 108 / printed 576: the four
+  larger bicyclo S–N formulae, and the coefficients of the S₄N₄ + NaOH + H₂O
+  hydrolysis equation. Neither is guessed; both are marked unsafe to publish until
+  re-read from a cleaner copy or at higher resolution.
+- **Next page for deep reading: PDF p. 145 (printed 613)** — Standard reduction
+  potentials, acidic and basic solution diagrams, third in the unique queue. Then
+  161–162 (halogen cations), 95–96 (Se/Te oxoacids), 68–73 (Group 16 extraction),
+  20–27 (nitrogen fixation and azides), 54–57 (phosphorus sulphides), 109–110
+  (haemoglobin), 114–116 (halogen occurrence). Pages 7–57 remain triaged but not
+  deeply read.
 - **Destination:** Sections 7–19, as gap-fill on top of Addenda 1–4 — **IN
   PROGRESS**
 

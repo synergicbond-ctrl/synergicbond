@@ -2708,3 +2708,150 @@ Read directly from page images of the accessible J.D. Lee 5th-edition scan. Thes
 two sections have **no counterpart in file 8**, so there is no same-author
 duplication to discount here — but equally **no second source corroborates them**,
 and no NCERT or Greenwood confirmation is claimed. Items 25–53 preserved.
+
+---
+
+# Addendum 10 — file 12 PDF 107–108 (printed 575–576): sulphur–nitrogen compounds
+
+**Map refinement.** The S–N section does not begin at the top of PDF 107; printed
+575 is mostly the tail of **Halides** and the S–N section starts in its last
+paragraph. Corrected statuses: **PDF 107 = `FULL — PARTIALLY UNIQUE`** (halides
+tail, new items listed below) and **PDF 108 = `FULL — UNIQUE`**. Bucket totals
+unchanged — both pages already sat in ranges of the same size.
+
+## A. New from the halides tail (printed 575) — beside file 8's §10.55
+
+Already in the registers and confirmed verbatim (not independent verification):
+dihalide angles SCl₂ 103°, F₂O 101.5°, TeBr₂ 98°; S₂F₂'s two isomers FSSF and
+thiothionyl fluoride S=SF₂; S₂F₁₀ as two joined octahedra; S₂Cl₂ mp −76 °C,
+bp 138 °C.
+
+**Genuinely new:**
+
+| # | Item | Content |
+|---|---|---|
+| A199 | Hydrolysis of the dimeric monohalides | `2S₂F₂ + 2H₂O → 4HF + SO₂ + 3S`. The monohalides hydrolyse **slowly** and **tend to disproportionate**. |
+| A200 | **SeCl₂ disproportionates** | `2SeCl₂ → SeCl₄ + Se`, with the source marking the oxidation states +II → +IV and 0 on the page. A clean Group 16 disproportionation the registers lacked. |
+| A201 | **S₂Cl₂ as a ring-building reagent** | `H₂S₈ + S₂Cl₂ → S₁₀ + 2HCl` builds sulphur rings of **7–20 atoms**, and `H₂Sₙ + 2S₂Cl₂ → S₍ₙ₊₄₎Cl₂ + 2HCl` gives the **dichlorosulphanes**. Commercially it matters for **vulcanising rubber and preparing chlorohydrins**. |
+| A202 | **Fluorination strength decides the sulphur fluoride you get** | A *mild* fluorinating agent — **AgF on sulphur** — gives S₂F₂. Direct S + F₂ gives **SF₆**; and **even F₂ diluted with N₂ still gives SF₄**, not S₂F₂. Reagent strength, not stoichiometry, selects the product. |
+| A203 | **The nitrogen–sulphur diagonal relationship** | N and S are **diagonally related**, with similar charge densities and close electronegativities (**N 3.0, S 2.5**), so covalent bonding is expected. The registers had the B–Si diagonal relationship (A139) but not this one. |
+| A204 | **Oxidation states are unhelpful here — the source says so** | Its words: the S–N compounds "have unusual structures which cannot be explained by the usual bonding theories. Attempting to work out oxidation states is unhelpful or misleading." A licence to stop assigning oxidation numbers, from the author. |
+
+## B. Tetrasulphur tetranitride and the S–N family (printed 576) — `FULL — UNIQUE`
+
+**S₄N₄, tetrasulphur tetranitride** — the parent of the class and "the starting
+point for many other S–N compounds".
+
+**Three preparations:**
+`6SCl₂ + 16NH₃ → S₄N₄ + 2S + 14NH₄Cl`
+`6S₂Cl₂ + 16NH₃ →(CCl₄) S₄N₄ + 8S + 12NH₄Cl`
+`6S₂Cl₂ + 4NH₄Cl →(CCl₄) S₄N₄ + 8S + 16HCl`
+
+**Physical behaviour.** A solid, and **thermochromic**: **almost colourless at
+liquid-nitrogen temperature, orange–yellow at room temperature, red at 100 °C**.
+Stable in air, but **may detonate on shock, grinding or sudden heating**.
+
+**Structure, and the numbers that carry the argument.**
+- Heterocyclic eight-membered ring, **cradle-shaped** — and the source contrasts
+  it explicitly with the **crown-shaped S₈ ring**.
+- Mean **S–N 1.62 Å** against a covalent-radius sum of **1.78 Å**, so the bonds
+  have **some double-bond character**; and because **all the S–N bonds are
+  equal**, that character is **delocalised**.
+- **S···S across the cradle 2.58 Å**, sitting between a **single S–S bond
+  (2.08 Å)** and the **van der Waals contact (3.30 Å)**. That intermediate value
+  is the evidence for **weak S–S bonding, making S₄N₄ a cage rather than a
+  simple ring.**
+
+**The rest of the family, individually named.** cyclo-**S₂N₂** · cyclo-**S₃N₃Cl₃**
+· cyclo-**S₄N₄** · bicyclo-**S₄N₂**. The source also lists four larger bicyclic
+species which it describes as two heterocyclic S₃N rings whose nitrogen atoms are
+joined through a chain of **1–5 sulphur atoms**; their exact subscripts are
+**`[UNCLEAR — 15161718.pdf, PDF p. 108 / printed 576, bicyclo formulae in the
+paragraph beginning "Many different sizes of rings exist"]`**. The pattern is
+recorded; the four formulae are not guessed.
+
+**Sulphur imides.** Reduction of S₄N₄ with **SnCl₂ in methanol** gives
+**tetrasulphur tetraimide S₄(NH)₄**. Further imides come from S₄N₄ with sulphur,
+or from S₂Cl₂ with NH₃. All are an **S₈ ring with one or more sulphur atoms
+replaced by imide NH groups**: **S₇NH, S₆(NH)₂, S₅(NH)₃, S₄(NH)₄**.
+
+**Ring-opening chemistry, and what it proves.**
+- **S₄N₄F₄** from S₄N₄ with **AgF in CCl₄**: an eight-membered S–N ring with the
+  **fluorines bonded to sulphur**, formed by **breaking the cross-cage S–S
+  bonds**.
+- Adducts **S₄N₄·BF₃** and **S₄N₄·SbF₅**, in which the added group **bonds to
+  nitrogen**, likewise break the S–S bonds — and **the mean S–N distance
+  lengthens from 1.62 Å to 1.68 Å**. The source's explanation: the
+  electron-attracting power of BF₃ or SbF₅ **withdraws some of the π electron
+  density**. A prediction and its measurement, in one sentence.
+- **Disulphur dinitrogen S₂N₂** from vaporising S₄N₄ under reduced pressure over
+  **silver wool**: `S₄N₄ + 4Ag → S₂N₂ + 2Ag₂S + N₂`.
+
+**Hydrolysis.** S₄N₄ is **very slowly hydrolysed by water but reacts rapidly with
+warm NaOH**, with break-up of the ring. The products are thiosulphate, a second
+sulphur oxoanion, and ammonia, but the printed coefficients defeated the scan:
+**`[UNCLEAR — 15161718.pdf, PDF p. 108 / printed 576, the S₄N₄ + NaOH + H₂O
+equation]`**. Recorded as a qualitative statement only; **the equation is marked
+unsafe to publish until it can be read from a cleaner copy.**
+
+## C. MO-theory register — addition E41
+
+- **E41 — S₄N₄ is a cage held by two different weak interactions.** The ring
+  bonding and the cross-cage bonding are separate questions, and both are settled
+  by bond lengths rather than by theory. *Around the ring:* eight equal S–N bonds
+  at 1.62 Å against a 1.78 Å single-bond expectation — partial double-bond
+  character, **delocalised**, because equality rules out an alternating
+  arrangement. *Across the cage:* S···S at 2.58 Å, between the 2.08 Å single bond
+  and the 3.30 Å van der Waals contact — **a genuine but weak bond**. The
+  falsifiable test is already done in the source: **break those S–S bonds with
+  AgF or with a BF₃/SbF₅ adduct and the S–N bonds lengthen to 1.68 Å**, because
+  withdrawing π density from the ring is what a Lewis acid on nitrogen must do.
+  *Policy note:* the source invokes **no d orbitals anywhere in this section** —
+  it says instead that the usual bonding theories fail and that oxidation states
+  are misleading. So this entry needs no exam-model/modern split; it is an
+  evidence-first case, and it is the best example in the corpus of a structure
+  argued entirely from measured distances.
+
+## D. Visual register — additions V94–V96
+
+| ID | Required visual kind | Subject |
+|---|---|---|
+| V94 | **Original SVG structure + 3D model** | S₄N₄ cradle beside the S₈ crown, with the 2.58 Å cross-cage S···S drawn as a dashed weak bond and 2.08 / 3.30 Å marked on the same scale for comparison |
+| V95 | **Comparison graphic** | The bond-length argument as a single number line: 1.62 (S₄N₄), 1.68 (adduct), 1.78 (single-bond sum) — showing how adduct formation moves the bond toward a single bond |
+| V96 | **Structure gallery** | The S–N family: S₂N₂, S₃N₃Cl₃, S₄N₄, S₄N₄F₄, and the imide series S₇NH → S₄(NH)₄ as progressive NH-for-S substitution in an S₈ ring |
+
+## E. JEE trap register — items 167–173
+
+167. **S₄N₄ is thermochromic** — near-colourless at liquid-nitrogen temperature,
+     orange–yellow at room temperature, red at 100 °C. One compound, three
+     colours.
+168. **S₄N₄ is a cradle; S₈ is a crown.** Same ring size, different shape, and
+     the difference is the weak cross-cage S–S bonding.
+169. **Do not assign oxidation states in S–N compounds.** The source calls the
+     attempt "unhelpful or misleading".
+170. **S₂Cl₂ makes sulphur rings of 7–20 atoms**, not just S₈.
+171. **Reagent strength selects the sulphur fluoride:** AgF gives S₂F₂, direct
+     F₂ gives SF₆, and **F₂ diluted with N₂ still gives SF₄** — dilution does not
+     get you to the lower fluoride.
+172. **SeCl₂ disproportionates to SeCl₄ + Se.** The +II chalcogen dihalide is not
+     a stable resting state for selenium.
+173. **Forming an S₄N₄ adduct lengthens the S–N bonds** from 1.62 to 1.68 Å,
+     because the Lewis acid withdraws ring π density. Adduct formation weakening
+     the *remote* bonds is the same logic as BF₃ lengthening on adduct formation
+     (trap 111 territory), and the two should be taught together.
+
+## F. Contradictions — no new items; two legibility gaps instead
+
+No statement on these two pages conflicts with Addenda 1–9 or with itself. Two
+items are **unreadable rather than contradictory**, and both are recorded as
+`[UNCLEAR]` above with file, PDF page, printed page and location: the four larger
+bicyclo S–N formulae, and the coefficients of the S₄N₄/NaOH hydrolysis equation.
+**Neither is guessed and neither will be published until re-read.** Items 25–54
+preserved unchanged.
+
+## G. Verification status
+
+Read from page images of the accessible J.D. Lee 5th-edition scan. The S₄N₄
+section has **no counterpart in file 8**, so there is no same-author duplication
+to discount — and equally **no second source corroborates it**. No NCERT or
+Greenwood confirmation is claimed.

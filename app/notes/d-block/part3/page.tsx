@@ -399,7 +399,7 @@ export default function DBlockPart03() {
               JEE Advanced Theory
             </span>
           </div>
-          <h1 className="mt-5 max-w-4xl text-4xl font-black tracking-tight text-white sm:text-6xl">Metallic Bonding, Melting Points, Ionisation and Reactivity</h1>
+          <h1 className="mt-5 max-w-4xl text-3xl font-black leading-tight tracking-tight text-white sm:text-4xl lg:text-5xl">Metallic Bonding, Melting Points, Ionisation and Reactivity</h1>
           <p className="mt-5 max-w-4xl text-lg leading-8 text-slate-300">A thermodynamic and electronic explanation of strong transition-metal cohesion, irregular melting patterns, successive ionisation enthalpies, passivity, noble character and standard electrode potentials.</p>
         </header>
 

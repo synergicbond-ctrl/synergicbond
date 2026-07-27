@@ -582,7 +582,7 @@ export default function DBlockPart09() {
               JEE Advanced Theory
             </span>
           </div>
-          <h1 className="mt-5 max-w-4xl text-4xl font-black tracking-tight text-white sm:text-6xl">Manganese, Manganate and Permanganate Chemistry</h1>
+          <h1 className="mt-5 max-w-4xl text-3xl font-black leading-tight tracking-tight text-white sm:text-4xl lg:text-5xl">Manganese, Manganate and Permanganate Chemistry</h1>
           <p className="mt-5 max-w-4xl text-lg leading-8 text-slate-300">A complete route from pyrolusite through green manganate to purple permanganate, followed by structure, storage, thermal decomposition, medium-controlled products, balanced oxidations and autocatalytic titration chemistry.</p>
         </header>
 

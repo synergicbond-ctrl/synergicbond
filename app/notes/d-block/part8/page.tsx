@@ -546,7 +546,7 @@ export default function DBlockPart08() {
               JEE Advanced Theory
             </span>
           </div>
-          <h1 className="mt-5 max-w-4xl text-4xl font-black tracking-tight text-white sm:text-6xl">Chromium, Chromate and Dichromate Chemistry</h1>
+          <h1 className="mt-5 max-w-4xl text-3xl font-black leading-tight tracking-tight text-white sm:text-4xl lg:text-5xl">Chromium, Chromate and Dichromate Chemistry</h1>
           <p className="mt-5 max-w-4xl text-lg leading-8 text-slate-300">A complete source-grounded route from chromite ore to potassium dichromate, including separation logic, tetrahedral structures, pH speciation, sulfur analogies, balanced six-electron oxidations and analytical use.</p>
         </header>
 

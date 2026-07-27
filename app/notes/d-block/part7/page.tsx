@@ -408,7 +408,7 @@ export default function DBlockPart07() {
               JEE Advanced Theory
             </span>
           </div>
-          <h1 className="mt-5 max-w-4xl text-4xl font-black tracking-tight text-white sm:text-6xl">Alloys, Interstitial Compounds, Non-stoichiometry and Abundance</h1>
+          <h1 className="mt-5 max-w-4xl text-3xl font-black leading-tight tracking-tight text-white sm:text-4xl lg:text-5xl">Alloys, Interstitial Compounds, Non-stoichiometry and Abundance</h1>
           <p className="mt-5 max-w-4xl text-lg leading-8 text-slate-300">A solid-state account of substitutional alloys, interstitial carbides and hydrides, vacancy compensation in Fe₁₋ₓO, defect-controlled colour and conductivity, and the highly uneven geochemical abundance of transition elements.</p>
         </header>
 

@@ -457,7 +457,7 @@ export default function DBlockPart05() {
               JEE Advanced Theory
             </span>
           </div>
-          <h1 className="mt-5 max-w-4xl text-4xl font-black tracking-tight text-white sm:text-6xl">Complex Formation and Catalytic Properties</h1>
+          <h1 className="mt-5 max-w-4xl text-3xl font-black leading-tight tracking-tight text-white sm:text-4xl lg:text-5xl">Complex Formation and Catalytic Properties</h1>
           <p className="mt-5 max-w-4xl text-lg leading-8 text-slate-300">A modern, JEE-focused treatment of metal–ligand bonding, coordination geometry, chelation, π back-bonding, heterogeneous surfaces and homogeneous oxidation-state cycles.</p>
         </header>
 

@@ -479,7 +479,7 @@ export default function DBlockPart01() {
               JEE Advanced Theory
             </span>
           </div>
-          <h1 className="mt-5 max-w-4xl text-4xl font-black tracking-tight text-white sm:text-6xl">Definition, Classification and Electronic Configuration</h1>
+          <h1 className="mt-5 max-w-4xl text-3xl font-black leading-tight tracking-tight text-white sm:text-4xl lg:text-5xl">Definition, Classification and Electronic Configuration</h1>
           <p className="mt-5 max-w-4xl text-lg leading-8 text-slate-300">A rigorous foundation for deciding what belongs to the d-block, what qualifies as a transition element, and how near-degenerate ns and (n−1)d orbitals generate the configurations used throughout the chapter.</p>
         </header>
 

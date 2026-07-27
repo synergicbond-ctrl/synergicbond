@@ -413,7 +413,7 @@ export default function DBlockPart02() {
               JEE Advanced Theory
             </span>
           </div>
-          <h1 className="mt-5 max-w-4xl text-4xl font-black tracking-tight text-white sm:text-6xl">Atomic Size, Ionic Size and Density</h1>
+          <h1 className="mt-5 max-w-4xl text-3xl font-black leading-tight tracking-tight text-white sm:text-4xl lg:text-5xl">Atomic Size, Ionic Size and Density</h1>
           <p className="mt-5 max-w-4xl text-lg leading-8 text-slate-300">A data-led account of the modest contraction across a transition row, the powerful lanthanoid contraction between 4d and 5d elements, and the way compact atomic volumes create unusually dense metals.</p>
         </header>
 

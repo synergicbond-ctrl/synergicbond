@@ -28,17 +28,18 @@ that its dev server is separately broken by an unrelated RSC-manifest fault.
 
 | | |
 |---|---|
-| **Corpus** | **564 / 1915 pages (29 %)** |
+| **Corpus** | **566 / 1915 pages (30 %)** |
 | Files 1–6 | 325 / 437 |
 | File 7 (JD Lee 5th ed., whole book) | 5 / 1057 |
 | **File 8** (JD Lee adapted, Ch. 10, all six groups) | **172 / 172 — COMPLETE** |
 | File 9, 10 (handwritten notes) | 0 / 40, 0 / 11 — vision only, OCR garbled |
 | File 11 (noble gas notes) | 14 / 14 |
-| **File 12** (`15161718.pdf`, JD Lee 5th ed. Ch. 14–17) | 209/209 triaged · **48 / 184 deeply read** |
+| **File 12** (`15161718.pdf`, JD Lee 5th ed. Ch. 14–17) | 209/209 triaged · **50 / 184 deeply read** |
 
-**Register IDs:** Topics **A1–A308** (contiguous, no gaps, no duplicates, every
-one a table row) · Visuals **V141** · MO cases **E45** · Traps and numbered items
-**257** · Contradictions **25–66** · `[UNCLEAR]` **4 distinct items**.
+**Register IDs:** Topics **A1–A310** (contiguous, no gaps, no duplicates, every
+one a table row) · Visuals **V142** · MO cases **E45** · Traps and numbered items
+**260** · Contradictions **25–66** · Source defects **D1–D6** · `[UNCLEAR]` **4
+distinct items**.
 
 ---
 
@@ -57,8 +58,12 @@ Chapter boundaries, confirmed from the scan: Ch. 14 G15 = PDF 1–64 · Ch. 15 G
 65–113 · Ch. 16 G17 = 114–166 · Ch. 17 G18 = 167–184. Page offset is printed =
 PDF + 467 early, + 468 from about PDF 90.
 
-**Triage:** 37 fully unique · 97 partially unique · 32 duplicates · 2 visual-only ·
-9 question-gap · 30 not relevant · 0 unclear.
+**Triage, recounted in code from the page-map rows (Addendum 21 §G):** 37 fully
+unique · **99** partially unique · **33** duplicates · **1** visual-only ·
+9 question-gap · 30 not relevant · 0 unclear. **Sums to 209; no page double-
+labelled, none unlabelled.** The long-quoted "97 partially unique" was the
+*pending* count, not the total, and was never incremented when PDF 107 was
+reclassified into the bucket — corrected.
 
 ### `FULL — UNIQUE` is CLOSED at 37 / 37
 
@@ -88,14 +93,15 @@ AgNO₃ silver-halide ladder with ammonia, and the boiling point of helium.
 
 ## 4. NEXT WORK — start here
 
-1. **2 `VISUAL ONLY` pages** — PDF **171–172** (Table 17.3, xenon structures).
-   Register what the visual conveys and the original replacement required.
-2. **95 remaining `FULL — PARTIALLY UNIQUE` pages**, in section-sized ranges,
+**Every queue except `FULL — PARTIALLY UNIQUE` is now closed.**
+
+1. **97 remaining `FULL — PARTIALLY UNIQUE` pages**, in section-sized ranges,
    highest marginal value first: occurrence/extraction → less-common compounds →
    structures → property tables → uses/hazards → numerical data.
-   **Start with PDF 117–120 (fluorine production) and the silver-halide pages** —
-   five of the gaps Addendum 20 registered point straight at them, and closing a
-   registered gap beats opening a new range.
+   **Start with PDF 117–122 = printed 585–590, "Extraction and uses"** — the
+   range that carries fluorine manufacture, the fluorinating agents, HF with
+   uranium, and the halogen recovery routes. Three of the registered gaps point
+   straight at it, and closing a registered gap beats opening a new range.
 
 After file 12: the two handwritten sources (vision required), then JD Lee 5th ed.
 Ch. 12–13.

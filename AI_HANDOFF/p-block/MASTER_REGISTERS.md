@@ -4772,9 +4772,9 @@ Recorded rather than smoothed over. Printed 581 is clean and needed no such hand
 
 | # | Topic | Content |
 |---|---|---|
-| A303 | **Why fluorine cannot be obtained by electrolysing aqueous NaF, aqueous HF, or anhydrous HF** | Printed 633, problem 2, which names all three failures together. **The fluorine-cell electrolyte is absent from the registers — KHF₂ and Moissan appear nowhere in the corpus** — and this question is what exposes the gap. Three distinct reasons, and the third is the one students never reach: in **aqueous NaF** and **aqueous HF**, water is oxidised at the anode in preference to fluoride, and any F₂ formed would oxidise water regardless; in **anhydrous HF**, the liquid **barely self-ionises and is effectively a non-conductor**, so there is nothing to electrolyse. That last point is why **KF is added to give the KHF₂ melt** used industrially. **The page states the three failures as the question's premise; it does not print the reasons.** The premise is registered as established; the reasoning above is standard halogen chemistry and must be confirmed against the fluorine-production section — **PDF 117–120, still `FULL — PARTIALLY UNIQUE` and unread** — before the lesson asserts it. |
+| A303 | **Why fluorine cannot be obtained by electrolysing aqueous NaF, aqueous HF, or anhydrous HF** | Printed 633, problem 2, which names all three failures together. **The fluorine cell's *names* are absent — KHF₂ and Moissan appear nowhere in the corpus — though the cell itself is registered at A67 as KF : HF 1 : 13 → 1 : 2 with Monel vessels, ungraphitized carbon anodes and diaphragm separation; see Addendum 21 §F, which corrects this entry's original over-claim** — and this question is what exposes the gap. Three distinct reasons, and the third is the one students never reach: in **aqueous NaF** and **aqueous HF**, water is oxidised at the anode in preference to fluoride, and any F₂ formed would oxidise water regardless; in **anhydrous HF**, the liquid **barely self-ionises and is effectively a non-conductor**, so there is nothing to electrolyse. That last point is why **KF is added to give the KHF₂ melt** used industrially. **The page states the three failures as the question's premise; it does not print the reasons.** The premise is registered as established; the reasoning above is standard halogen chemistry and must be confirmed against the fluorine-production section — **PDF 117–120, still `FULL — PARTIALLY UNIQUE` and unread** — before the lesson asserts it. |
 | A304 | **Fluorinating agents are routinely used in place of elemental F₂** | Printed 633, problem 3. The source asserts as premise that substitutes for F₂ are "often used" and asks for equations showing their use — establishing that the chapter carries such a list. **The agents are not enumerated on this page.** The registers hold only **A202** (fluorination *strength* selects the sulphur fluoride obtained: AgF gives S₂F₂, direct F₂ gives SF₆, F₂ diluted with N₂ still gives SF₄) — a principle without a roster. **The roster is a known, located gap**, to be filled from the halogen-fluorides pages of this chapter, not guessed here. |
-| A305 | **The six reaction partners the source pairs with HF** | Printed 633, problem 5: **SiO₂, CaO, KF, CCl₄, uranium and graphite.** SiO₂ (etching, and the H₂[SiF₆] route already registered at **A291**), CaO and CCl₄ are covered. **Uranium and graphite are not, in a fluorine context.** HF with uranium sits at the head of the enrichment chain that produces UF₄ and then UF₆ — **UF₆ is registered but its HF origin is not** — and HF with graphite is the entry to graphite fluorides. **Balanced equations are asked for, not supplied.** Registered as the tested pairing set, with the two uncovered partners flagged. |
+| A305 | **The six reaction partners the source pairs with HF** | Printed 633, problem 5: **SiO₂, CaO, KF, CCl₄, uranium and graphite.** SiO₂ (etching, and the H₂[SiF₆] route already registered at **A291**), CaO and CCl₄ are covered. **Uranium and graphite are not, in a fluorine context.** HF with uranium sits at the head of the enrichment chain that produces UF₄ and then UF₆ — **UF₆ is registered but its HF origin is not** — and HF with graphite is the entry to graphite fluorides — **though graphite in a fluorine context is in fact registered at A68 (anode failure by intercalation); see Addendum 21 §F, which narrows this entry to uranium alone**. **Balanced equations are asked for, not supplied.** Registered as the tested pairing set, with the two uncovered partners flagged. |
 | A306 | **The silver-halide ladder with AgNO₃, and what ammonia does to each precipitate** | Printed 634, problem 11: aqueous AgNO₃ added to NaF, NaCl, NaBr and NaI, then ammonia added to each mixture. **This ladder is absent from the corpus — AgNO₃ occurs exactly once anywhere in the registers, and then only inside the formula Ag₃P·3AgNO₃.** It is the standard halide-identification sequence and its absence is a genuine hole in the Group 17 coverage. **The question asks what happens; it does not say.** Registered as an identified gap with the reagent set fixed; **the precipitates, their colours and their behaviour towards dilute and concentrated ammonia must be sourced before the course states them** — most likely from the silver-halide material in the unread `FULL — PARTIALLY UNIQUE` pages of this chapter. |
 
 ### Cross-references — printed 633–634
@@ -5025,3 +5025,262 @@ The originating paragraph in Addendum 7a is left in place.
 
 **Trap register after this pass: 1–257, every ID reachable as a numbered register
 entry, no prose-only IDs, no renumbering, count unchanged.**
+
+---
+
+# Addendum 21 — file 12 PDF 171–172 (printed 639–640): the `VISUAL ONLY` queue, and a correction to Addendum 20
+
+**The `VISUAL ONLY` queue is closed at 2 / 2** — but not in the shape the
+Addendum-8 map predicted, and the map is corrected rather than quietly followed.
+
+## A. Map correction — only one of the two pages carries a visual
+
+The Addendum-8 map recorded **PDF 171–172 = "Table 17.3 structures of xenon
+compounds", `VISUAL ONLY`**. Reading both pages shows that is wrong:
+
+- **PDF 171 (printed 639) contains no table, no diagram and no figure of any
+  kind.** It is continuous prose: the tail of the **clathrate** section and the
+  opening of **CHEMISTRY OF XENON**.
+- **PDF 172 (printed 640) carries Table 17.3 in full**, followed by the xenon
+  fluorination prose.
+
+**Corrected classification, and the bucket arithmetic that follows:**
+
+| PDF | Printed | Original triage | Corrected triage | Final outcome |
+|---|---|---|---|---|
+| 171 | 639 | `VISUAL ONLY` | **`SAMPLED — DUPLICATE OF FILE 8`** | `DEEP READ — PARTIAL ADDITIONS REGISTERED` |
+| 172 | 640 | `VISUAL ONLY` | `VISUAL ONLY` (confirmed) | **`VISUAL AUDITED — REPLACEMENT REGISTERED`** |
+
+**Bucket totals move by one and still sum to 209:** `VISUAL ONLY` **2 → 1**,
+`SAMPLED — DUPLICATE OF FILE 8` **32 → 33**. Recounted in code from the page-map
+rows themselves, not by hand — see §G.
+
+## B. PDF 171 (printed 639) — `DEEP READ — PARTIAL ADDITIONS REGISTERED`
+
+**Almost the whole page duplicates file 8 and is cross-referenced, not
+re-registered.** The clathrate material matches **A100** (β-quinol cage,
+composition 3 quinol : 1 guest, not every cavity filled, dissolving the host
+releases the gas), **A101** (He and Ne form none — small enough to escape) and
+**A102** (noble-gas hydrates ≈ 6H₂O : 1 gas atom, zeolite samples to 20 % Ar by
+weight, storage of reactor-produced radioactive Kr and Xe). The guest list —
+O₂, SO₂, H₂S, MeCN and CH₃OH alongside Ar, Kr and Xe — is already in the species
+register verbatim. The Bartlett narrative matches **A103**, and the
+ionisation-energy argument for Kr, Rn and the lighter gases matches **A104**.
+
+**Equations checked on this page; all three balance as printed:**
+
+- `PtF₆ + O₂ → O₂⁺[PtF₆]⁻` — 1 Pt, 6 F, 2 O each side; charges cancel.
+- `Xe[PtF₆] + PtF₆ →(25 °C) [XeF]⁺[PtF₆]⁻ + PtF₅` — Xe 1/1, Pt 2/2, F 12/12.
+- `[XeF]⁺[PtF₆]⁻ + PtF₅ →(heat, 60 °C) [XeF]⁺[Pt₂F₁₁]⁻` — Xe 1/1, Pt 2/2, F 12/12.
+
+**Additions registered:**
+
+| # | Topic | Content |
+|---|---|---|
+| A309 | **XeF₄ is isoelectronic *and* isostructural with the polyhalide ion [ICl₄]⁻** | Printed 639, stated directly: XeF₄ "has the same number of valency electrons as, and is isostructural with, the polyhalide ion [ICl₄]⁻". **[ICl₄]⁻ is already in the species register as an interhalogen self-ionisation product, and XeF₄'s square-planar geometry is registered — but the link between them is not.** It is the single cheapest way to teach XeF₄'s shape: a student who has done polyhalides already knows it, and the noble-gas compound stops looking exceptional. The count is 8 valency electrons on the central atom in both, giving 4 bond pairs and 2 lone pairs. |
+
+**Observation register — additions to the Bartlett entry (A103), its ID kept:**
+**PtF₆ vapour is deep red**; it was mixed with an **equal volume** of Xe; the
+gases **combined immediately at room temperature**; the product is a **yellow
+solid**. The registers carried the reaction and its reinterpretation but none of
+these four observations, and they are what make the 1962 experiment describable.
+
+**Attribution correction, recorded not silently absorbed:** the source names
+**Bartlett *and Lohman*** as the workers who had previously used PtF₆ to oxidise
+dioxygen. **Lohman's name appears nowhere else in the corpus.** A103 credits
+Bartlett alone. The ID is kept and the co-worker added.
+
+**Confirmation bearing on contradiction 66.** This page states that **"Kr does
+form KrF₂"** and that for radon **"only RnF₂ and a few complexes are known"** —
+the parent edition saying, in its own prose, exactly what the registers hold. It
+strengthens contradiction 66 (printed 650's "fluorides *and oxides* of Kr, Xe and
+Rn") by showing the chapter's own narrative gives Kr and Rn **fluorides only**.
+**This is the same author in a second edition, so it is repetition, not
+independent verification** — but an internal inconsistency needs no outside
+source to be visible.
+
+## C. PDF 172 (printed 640) — `VISUAL AUDITED — REPLACEMENT REGISTERED`
+
+### The source visual
+
+| Field | Value |
+|---|---|
+| **PDF page** | 172 |
+| **Printed page** | 640 |
+| **Chapter** | 17 — Group 18, the noble gases |
+| **Section** | Chemistry of xenon |
+| **Source artefact** | **Table 17.3, "Structures of some xenon compounds"** — 9 rows × 5 columns (formula, name, oxidation state, m.p. °C, structure) |
+| **Scientific subject** | Oxidation state, melting point and molecular geometry across xenon's fluorides, oxides, oxofluorides and one perxenate salt |
+| **File-8 equivalent** | §10.72, Table 10.42 |
+| **Unique information conveyed** | **Almost none.** Every formula, oxidation state, melting point and geometry in the table is already registered from file 8, value for value — XeF₂ 129 °C linear, XeF₄ 117 °C square planar, XeF₆ 49.6 °C distorted octahedron, XeO₃ explodes/pyramidal, XeO₂F₂ 30.8 °C, XeOF₄ −46 °C square pyramidal, XeO₄ −35.9 °C tetrahedral, XeO₃F₂ −54.1 °C trigonal bipyramid, Ba₂[XeO₆] dec > 300 °C octahedral. **Two things are new: the parenthetical structural analogies (§ below), and a charge defect in the last formula (§D).** |
+| **Existing cross-reference** | A105–A110; the xenon fluoride / oxide / oxofluoride species blocks |
+| **Required original replacement** | A **nine-species structure gallery**, geometry drawn rather than named, arranged by oxidation state (+II → +VIII) with melting point on each card and the "parent polyhedron with *n* positions unoccupied" idea shown as a ghosted vertex rather than written out. **Drawn from the registered data, not traced from the source table.** |
+| **Reusable component** | `StructureGallery`, with `ComparisonGraphic` for the oxidation-state banding and `VisualCaption` beneath |
+| **Accessibility title** | "Structures of the xenon compounds, by oxidation state" |
+| **Accessibility description** | "Nine xenon species grouped by oxidation state from +II to +VIII. Each card gives the formula, the melting point in degrees Celsius, and the molecular shape. Shapes shown are linear, square planar, distorted octahedron, pyramidal, trigonal bipyramid, square pyramidal, tetrahedral and octahedral. Where a shape derives from a fuller polyhedron with a position unoccupied, the missing vertex is shown greyed." |
+| **Mobile-layout requirement** | Cards reflow to a single column below 640 px; the oxidation-state banding becomes a sticky section header rather than a colour band, so the grouping survives without relying on colour |
+| **Verification status** | **Values verified against file 8 only — same author, two editions. Repetition, not independent corroboration. No NCERT, no Greenwood.** |
+| **JEE relevance** | High. Shape-from-VSEPR for XeFₙ and XeOₙFₘ is directly examined, and the "parent polyhedron minus a lone-pair position" phrasing is the reasoning students are expected to reproduce. |
+
+### The one genuine addition inside the table
+
+| # | Topic | Content |
+|---|---|---|
+| A310 | **Table 17.3 assigns geometries to three species the prose only names as doubtful** | The XeF₂ row carries "**(RnF₂ and XeCl₂ are similar)**" and the XeF₄ row "**(XeCl₄ is similar)**" — so the source states that **RnF₂ and XeCl₂ are linear** and **XeCl₄ is square planar**. **A105 registers XeCl₂ and XeCl₄ as existing on evidence only, without shapes, and RnF₂'s geometry is registered nowhere in the corpus.** The teaching value is that the isoelectronic argument carries the geometry even where the compound itself is barely characterised — and the honest caveat travels with it: **a predicted shape for a species the same page calls doubtful is a prediction, not a measurement**, and the course will say so. |
+
+### Terminology cross-reference — not a contradiction
+
+Table 17.3 describes **XeO₂F₂** as a "**trigonal bipyramid with one position
+unoccupied**"; the registers, from file 8, describe it as "**see-saw**". **These
+are the same geometry named two ways** — a trigonal bipyramid with one equatorial
+position vacant *is* the see-saw. Recorded so a later pass does not read the two
+editions as disagreeing. The course should give both names, because examinations
+use both.
+
+## D. Source defect — printed 640, Table 17.3, last row
+
+**D6 — the perxenate row prints `Ba₂[XeO₆]⁴`.** *Source form as printed:* **`Ba₂[XeO₆]⁴`**, the salt carrying a superscript 4
+(any minus sign is below the scan's resolution, but the digit is unambiguous at
+2000 dpi). *Correction:* **`Ba₂[XeO₆]`**, with no charge. *Basis of the
+correction — conservation, not authority:* two Ba²⁺ contribute +4 and the
+perxenate ion [XeO₆]⁴⁻ contributes −4, so the salt is neutral and can carry no
+net charge. The superscript is the anion's charge left attached to the complete
+formula. **The registers already hold the correct neutral form `Ba₂[XeO₆]`, taken
+from file 8** — so, exactly as with `Mg₃Bi` in Addendum 20, the parent edition
+contradicts its own adapted edition and the resolution needs nothing external.
+**Not raised to the contradiction register.**
+
+## E. Contradiction 26 — confirmed in the parent edition, not a new item
+
+Printed 640 introduces the xenon fluorination series as depending on "the
+**F₂/Xe ratio**" and then lists **2 : 1 → XeF₂, 1 : 5 → XeF₄, 1 : 20 → XeF₆**.
+Read as F₂ : Xe that is monotonically *decreasing* fluorine producing
+monotonically *higher* fluorides, which is impossible; read as **Xe : F₂** the
+series is exactly right. **This is contradiction 26, already registered from
+file 8 — the identical defect, in the identical words, in the parent edition.**
+
+**No new contradiction is opened.** As with contradiction 18 and PDF 114, seeing
+the same fault in both editions **confirms it is the author's own and rules out a
+transcription error by the adapters — it is repetition, not corroboration.**
+
+**One thing is repaired.** Contradiction 26's original entry ends "**Corrected
+silently.**" That phrasing is against this project's own rule that the printed
+form be preserved beside the correction. The source form is therefore recorded
+here explicitly — *printed:* "F₂/Xe ratio", with 2:1, 1:5, 1:20 → XeF₂, XeF₄,
+XeF₆; *correct reading:* **Xe : F₂** — and contradiction 26 now carries a second
+attestation, file 12 printed 640, alongside its file-8 original.
+
+**Also on printed 640, and balancing as printed:** `XeF₂ + H₂ → 2HF + Xe`
+(Xe 1/1, F 2/2, H 2/2), with the source noting the fluorides "react
+quantitatively with hydrogen". The 400 °C sealed-nickel-vessel condition and the
+white-solid / sublimes / nickel-or-Monel storage properties duplicate **A106** and
+the xenon-fluoride species block.
+
+## F. CORRECTION TO ADDENDUM 20 — two gap claims were overstated
+
+**Found while checking this range against the Group 17 registers, and corrected
+here rather than left standing.** Addendum 20 registered five "gaps the question
+pages exposed". **Two of those five were not gaps.**
+
+**A303 claimed "the fluorine-cell electrolyte is absent from the registers — KHF₂
+and Moissan appear nowhere in the corpus."** The second clause is true; **the
+first is false.** **A67, registered long ago from file 8, already carries the
+cell**: *"Industrial fluorine: why it is genuinely hard — **KF : HF ratio 1 : 13 →
+1 : 2, Monel vessels, ungraphitized carbon anodes, diaphragm separation**."* The
+electrolyte is registered — as KF/HF compositions rather than under the name
+KHF₂. **A303 is corrected to claim only what is actually missing:** the *names*
+KHF₂ and Moissan, and the explicit reason that **anhydrous HF is effectively a
+non-conductor**, which is why KF must be added at all. The grep that produced the
+original claim searched for `KHF₂` and `Moissan` and never searched for `KF:HF` —
+a search-term error, and the lesson is that a gap claim must be tested against the
+*chemistry*, not against one spelling of it.
+
+**A305 claimed HF with graphite is "not covered in a fluorine context."** Also
+false: **A68 registers "Graphite anodes fail by intercalation — F atoms force the
+sheets apart, buckle them, conduction stops, current rises, explosion,"** and ties
+it to the Group 14 graphite-intercalation material. **A305 is corrected to flag
+only HF with *uranium*** as genuinely uncovered.
+
+**The gap list is therefore reduced from five to three:** the *names* KHF₂ and
+Moissan plus the non-conductor reason (partial) · **HF with uranium** · **the
+AgNO₃ silver-halide ladder** · and the **boiling point of helium**. Both
+corrected topics keep their IDs; no ID is retired and none is reissued.
+
+## G. Triage recount, and a propagated arithmetic error corrected
+
+**Recounted in code from the Addendum-8 page-map rows themselves**, parsing each
+range and asserting that every one of the 209 pages carries exactly one label:
+
+| Bucket | Addendum 8 | After PDF 107 reclass (Add. 10) | After this addendum |
+|---|---|---|---|
+| `FULL — UNIQUE` | 38 | **37** | 37 |
+| `FULL — PARTIALLY UNIQUE` | 98 | **99** | 99 |
+| `SAMPLED — DUPLICATE OF FILE 8` | 32 | 32 | **33** |
+| `VISUAL ONLY` | 2 | 2 | **1** |
+| `QUESTION GAP` | 9 | 9 | 9 |
+| `NOT RELEVANT` | 30 | 30 | 30 |
+| **Total** | **209** | **209** | **209** |
+
+The parse confirms **no page is double-labelled and no page is unlabelled**, and
+that the p-block portion (PDF 1–184) sums to exactly 184 with PDF 185–209 the
+25 d-block pages.
+
+**The propagated error.** The coverage register has been carrying
+**`FULL — PARTIALLY UNIQUE` = 97** as the *total*. **97 was never the total — it
+was the number *pending*** after PDF 6 was read out of the original 98. When PDF
+107 was reclassified into this bucket in Addendum 10 the total became **99**, and
+that increment was never applied. **Corrected: 99 total, 2 deeply read (PDF 6 and
+PDF 107), 97 remaining** — so the frequently quoted "95 remaining" was also two
+low. **No page was lost or invented; only the label on the number was wrong.**
+
+## H. Visual register — addition V142
+
+| ID | Required visual kind | Subject |
+|---|---|---|
+| V142 | **Structure gallery + comparison banding** | The nine xenon species of Table 17.3 by oxidation state +II → +VIII, each with formula, melting point and drawn geometry, and the "parent polyhedron with a position unoccupied" shown as a ghosted vertex. **Replaces Table 17.3 without reproducing it**; RnF₂, XeCl₂ and XeCl₄ appear as a separate, visibly-flagged "predicted, compound doubtful" tier (A310). |
+
+## I. JEE trap register — items 258–260
+
+258. **XeF₄ and [ICl₄]⁻ are isoelectronic and isostructural** — both square
+     planar, both 4 bond pairs and 2 lone pairs on the central atom. The
+     noble-gas compound is not a special case; it is a polyhalide the student
+     has already met.
+259. **A shape quoted for XeCl₂, XeCl₄ or RnF₂ is a prediction, not a
+     measurement.** The same page that assigns them geometries calls the
+     chlorides "evidence only". Confidence in a shape and confidence in a
+     compound are different things.
+260. **Ba₂[XeO₆] carries no charge.** Two Ba²⁺ exactly balance [XeO₆]⁴⁻. Writing
+     the salt with the anion's 4− still attached is the error, and the parent
+     edition's own table makes it.
+
+## J. Register-count effects
+
+- **Topics: A308 → A310.** Two added, **both table rows**, contiguous.
+- **Visuals: V141 → V142.** One added.
+- **Traps: 257 → 260.** Three added.
+- **Contradictions: 66 — unchanged.** Contradiction 26 gains a second attestation
+  and an explicit source form; **no new contradiction is opened by this range.**
+- **Source defects: D6 added** (Ba₂[XeO₆]⁴), correction from charge balance
+  alone. Running total across Addenda 20–21: **6**.
+- **MO cases: E45 — unchanged.**
+- **`[UNCLEAR]`: 4 — unchanged.** Nothing on either page was illegible; the
+  decimal points that the scan drops ("49 6", "−35 9") are recoverable because the
+  same values are independently registered from file 8, and they are recorded as
+  scan artefacts rather than as new readings.
+- **Corrections to earlier work: A303 and A305 narrowed** (§F); **partially-unique
+  total corrected 97 → 99** (§G); **contradiction 26's "corrected silently" repaired**
+  with its source form (§E).
+
+---
+
+# CLOSURE — file 12 `VISUAL ONLY` queue
+
+**Status: 2 / 2 audited** — PDF 171 and PDF 172, enumerated, not subtracted.
+**One proved not to be a visual page at all** and was reclassified with the
+bucket arithmetic re-derived in code; **the other yielded a registered original
+replacement (V142) and one source defect.**
+
+**Total pages deeply inspected in file 12: 48 + 2 = 50 of 184.**
+
+**Remaining in file 12: 97 of 99 `FULL — PARTIALLY UNIQUE` pages. Every other
+queue is closed.**

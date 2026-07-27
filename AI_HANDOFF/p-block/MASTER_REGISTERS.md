@@ -6292,3 +6292,103 @@ error (§H) corrected as a direct consequence of this range's own contradiction.
 
 **File 12: 68 + 6 = 74 of 184 deeply read.**
 **`FULL — PARTIALLY UNIQUE`: 22 of 99 read, 77 remaining.**
+
+---
+
+# Addendum 27 — file 12 PDF 123–124 (printed 591–592): electronegativity, electrode potentials, and a Faraday-constant unit error
+
+**Sixth `FULL — PARTIALLY UNIQUE` range.** Two pages. Most of the quantitative
+content (Table 16.3 ionic/covalent radii, Table 16.4 IE/EA/hydration) **is
+already in the corpus** — the electron-affinity and hydration-energy columns
+match A63's Born–Haber data exactly, and the ionisation energies match the
+pre-existing Group 17 structural table. **The two genuinely new items are Table
+16.5 (electronegativity and electrode potential) and a unit error in the
+Faraday-constant aside that supports it.**
+
+| PDF | Printed | Section | Triage | Deep-read outcome | File-8 equivalent |
+|---|---|---|---|---|---|
+| 123 | 591 | Table 16.3 radii; ionisation energy; Table 16.4 | `FULL — PARTIALLY UNIQUE` | `DEEP READ — NO NEW CONTENT` (both tables already registered, values confirmed identical) | §10.57 |
+| 124 | 592 | Table 16.5; bonds and oxidation states; Figure 16.2 | `FULL — PARTIALLY UNIQUE` | **`DEEP READ — CONTRADICTION FOUND`** + partial additions | §10.57, §10.58 |
+
+## A. PDF 123 (printed 591) confirmed against the existing corpus
+
+**Table 16.3 (covalent radius, ionic radius X⁻)** and **Table 16.4 (first
+ionisation energy, electron affinity, hydration energy)**, transcribed and
+checked value-for-value: F 0.72/1.33 Å, Cl 0.99/1.84, Br 1.14/1.96, I 1.33/2.20;
+IE₁ 1681/1256/1143/1009 kJ mol⁻¹, EA −333/−349/−325/−296 (**At −270, new** — the
+Group 17 structural table did not carry astatine's electron affinity), hydration
+−513/−370/−339/−274. **All match the pre-existing registers exactly** (the
+ionisation-energy row and the hydration/EA figures underlying A63). **The one
+addition: At's electron affinity, −270 kJ mol⁻¹**, folded into the existing
+table rather than issuing a new topic ID, since the table itself is unchanged in
+structure. The prose — H⁺'s tiny size giving a huge hydration enthalpy (1091),
+X⁺ being too large to compensate, and `[I(pyridine)₂]⁺NO₃⁻` as the resolving
+exception — **restates A63 and A220 without adding to them.**
+
+## B. Topics — PDF 124 (printed 592)
+
+| # | Topic | Content |
+|---|---|---|
+| A386 | **Table 16.5 — Pauling electronegativity and standard electrode potential, F to At** | **Electronegativity: F 4.0, Cl 3.0, Br 2.8, I 2.5, At 2.2.** **Standard electrode potential E° for X₂\|2X⁻: F +2.87 V, Cl +1.40 V, Br +1.09 V, I +0.62 V, At +0.3 V.** Both series fall monotonically down the group, and the source links them explicitly: **large electronegativity difference against metals gives ionic bonding, and the large (positive) electrode potentials are the same fact expressed as an energy** — "energy is evolved... because of their large positive standard electrode potentials." **At's E°, +0.3 V, is new to the corpus** — the Group 17 electrode-potential material previously registered (A65's Born–Haber cycle) covered F, Cl, Br, I only. |
+| A387 | **The ΔG° = −nFE° conversion, offered as the bridge between electrode potentials and the electron-affinity argument** | **"The standard electrode potentials may be converted to an energy term using the relationship ΔG° = −nFE°, where n is the number of electrons (2 in this case), and F is the Faraday constant."** This is the source's own method for turning Table 16.5's volts into the same kJ mol⁻¹ units as Table 16.4's electron affinities — **the explicit link between "large E°" and "large negative ΔG°, i.e. energy evolved" that A65's Born–Haber cycle already establishes numerically but never named the conversion formula for.** **See contradiction 76 for the printed unit on the Faraday constant.** |
+| A388 | **General bonding and oxidation-state summary for the halogens** | **Most halogen–metal compounds are ionic; covalent halides form where the metal ion is very small and highly charged** (BeCl₂, AlCl₃ named as the unusual cases, cross-referenced to Chapters 11 and 12). **When two halogen atoms bond to each other, or to a non-metal, the bond is covalent.** **F is always univalent and always (−I)**, being the most electronegative element; **Cl, Br and I most commonly show a covalency of one, with oxidation state (−I) or (+I) depending on which partner in the molecule is more electronegative** — the rule that decides, for any given interhalogen or halogen–oxygen bond, which atom is written as the "positive" one. **Cl, Br and I also exhibit higher valencies** (continued onto the next, unread page). |
+| A389 | **CdI₂'s layer structure, and the iodide-melting-point trend, tied to covalency** | **"Many iodides are partly covalent. For example, CdI₂ forms a layer structure, and all the iodides have much lower melting points than the fluorides."** A specific worked example (CdI₂) attached to a trend the corpus had only in general terms — the layer structure is itself evidence of partial covalency, since a purely ionic CdI₂ would form a normal 3-D ionic lattice rather than a 2-D sheet structure. |
+| A390 | **Figure 16.2 — the structures of BeCl₂ and AlCl₃, drawn rather than only described** | A89 already carries the 3c–4e bonding argument and the "BeCl₂ infinite chain, AlCl₃ dimer" fact; **the actual drawn structures were not yet in the visual register.** **(a) BeCl₂: an infinite zig-zag chain**, each Be bridged to its neighbours by two chlorines, drawn as a repeating unit extending in both directions. **(b) AlCl₃: a discrete dimer, Al₂Cl₆**, two AlCl₄ tetrahedra sharing an edge (two bridging chlorines), termed a "butterfly" shape by its four terminal and two bridging chlorines. **Registered as the visual companion to A89**, not as a new bonding argument. |
+
+### Contradiction 76 — printed 592, the Faraday constant's printed unit
+
+**Source form as printed:** *"F is the Faraday constant 96 486 kJ mol⁻¹."*
+**Confirmed at 600 dpi.** *The issue:* **the numerical value, 96 486, is
+essentially correct for the Faraday constant** (accepted value 96 485 C mol⁻¹) —
+**but the unit is wrong.** The Faraday constant is a charge per mole, **coulombs
+per mole (C mol⁻¹)**, not an energy per mole. Using kJ mol⁻¹ in
+`ΔG° = −nFE°` would make the equation dimensionally incoherent: n is a pure
+number, E° is in volts (J C⁻¹), so `nFE°` is only an energy (J mol⁻¹) if F
+carries units of C mol⁻¹ — `(C mol⁻¹)(J C⁻¹) = J mol⁻¹`. **With F in kJ mol⁻¹ as
+printed, the product `nFE°` would carry units of kJ·V·mol⁻¹, which is not an
+energy at all.** *Correction:* **F = 96 486 C mol⁻¹** (the number is kept; only
+the unit changes). *Verification needed:* none — this is settled by dimensional
+analysis of the equation the source states on the very same line, not by an
+outside authority. *Safe for inclusion:* **the value 96 486 and the relationship
+ΔG° = −nFE° itself, both correct; the unit "kJ mol⁻¹" attached to F, no — replaced
+with C mol⁻¹.** |
+
+## C. Visual register — addition V164
+
+| ID | Required visual kind | Subject |
+|---|---|---|
+| V164 | **Structure gallery** | BeCl₂'s infinite zig-zag chain beside AlCl₃'s edge-sharing Al₂Cl₆ dimer (Figure 16.2), both drawn from the bridging-bond description already in A89 rather than traced from the source figure, with the 3c–4e bond label attached to each bridge |
+
+## D. JEE trap register — item 303
+
+303. **The Faraday constant is 96 485 coulombs per mole, not kilojoules per
+     mole.** `ΔG° = −nFE°` only balances dimensionally with F in C mol⁻¹ and E°
+     in volts — check the units before trusting a printed constant, even when
+     the number itself is right.
+
+## E. Register-count effects
+
+- **Topics: A385 → A390.** Five added, **all table rows**, contiguous.
+- **Expanded, IDs kept:** the pre-existing Group 17 structural table (folded in
+  At's electron affinity, −270 kJ mol⁻¹) · **A89** (Figure 16.2 as its visual
+  companion) · **A63, A65, A220** (confirmed, not expanded — PDF 123 restates
+  them without adding data).
+- **Visuals: V163 → V164.** One added.
+- **Traps: 302 → 303.** One added.
+- **Contradictions: 75 → 76.** One added — **76**, the Faraday constant's
+  printed unit. **Settled by dimensional analysis of the source's own equation,
+  needing neither NCERT nor Greenwood.**
+- **Source defects, MO cases: unchanged.**
+- **`[UNCLEAR]`: 5 — unchanged.**
+
+---
+
+# Range closure — PDF 123–124
+
+**2 / 2 pages deeply read.** PDF 123 confirmed the pre-existing registers with
+one small addition (At's electron affinity) and is `DEEP READ — NO NEW CONTENT`
+for everything else; PDF 124 returned `DEEP READ — CONTRADICTION FOUND` plus
+four topic additions and one visual.
+
+**File 12: 74 + 2 = 76 of 184 deeply read.**
+**`FULL — PARTIALLY UNIQUE`: 24 of 99 read, 75 remaining.**

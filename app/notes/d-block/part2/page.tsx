@@ -415,11 +415,6 @@ export default function DBlockPart02() {
           </div>
           <h1 className="mt-5 max-w-4xl text-4xl font-black tracking-tight text-white sm:text-6xl">Atomic Size, Ionic Size and Density</h1>
           <p className="mt-5 max-w-4xl text-lg leading-8 text-slate-300">A data-led account of the modest contraction across a transition row, the powerful lanthanoid contraction between 4d and 5d elements, and the way compact atomic volumes create unusually dense metals.</p>
-          <div className="mt-7 grid gap-3 sm:grid-cols-3">
-            <div className="rounded-2xl border border-white/10 bg-white/[0.045] p-4"><p className="text-xs font-black uppercase tracking-wider text-cyan-300">Format</p><p className="mt-1 font-bold">Source-grounded original notes</p></div>
-            <div className="rounded-2xl border border-white/10 bg-white/[0.045] p-4"><p className="text-xs font-black uppercase tracking-wider text-amber-300">Focus</p><p className="mt-1 font-bold">Cause → trend → exception</p></div>
-            <div className="rounded-2xl border border-white/10 bg-white/[0.045] p-4"><p className="text-xs font-black uppercase tracking-wider text-violet-300">Assessment</p><p className="mt-1 font-bold">Theory only; questions later</p></div>
-          </div>
         </header>
 
         <DBlockPartNavigation part={2} position="top" />
@@ -454,12 +449,6 @@ export default function DBlockPart02() {
             );
           })}
         </div>
-
-
-        <footer className="mt-8 rounded-2xl border border-white/10 bg-white/[0.035] px-5 py-4 text-sm leading-6 text-slate-400">
-          This file contains theory, tables, equations and original scientific visuals only. Practice questions and detailed solutions are intentionally reserved for the later assessment phase.
-        </footer>
-
         <DBlockPartNavigation part={2} position="bottom" />
       </div>
     </main>

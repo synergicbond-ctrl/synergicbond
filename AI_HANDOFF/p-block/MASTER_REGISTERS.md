@@ -716,7 +716,8 @@ Load-bearing entries, all checked:
 - `2ClO₂ + 2NaOH + H₂O₂ → 2NaClO₂ + O₂ + 2H₂O`
 - `2ClO₂ + 2O₃ → Cl₂O₆ + 2O₂`
 - `Cl₂O₆ + 2NaOH → NaClO₃ + NaClO₄ + H₂O`; `Cl₂O₆ + HF → FClO₂ + HClO₄`;
-  `Cl₂O₆ + N₂O₄ → ClO₂ + [NO₂]⁺[ClO₄]⁻`
+  `2Cl₂O₆ + N₂O₄ → 2ClO₂ + 2[NO₂]⁺[ClO₄]⁻` (printed 1:1:1:1 and unbalanced —
+  corrected per contradiction 75, Addendum 26 §F)
 - `2HClO₄ ⇌ Cl₂O₇` (P₄O₁₀ dehydration / H₂O)
 - `3OX⁻ → 2X⁻ + XO₃⁻` — hot, and the temperature threshold differs per halogen
 - `6NaOH + 3Cl₂ → NaClO₃ + 5NaCl + 3H₂O` (80 °C)
@@ -6078,3 +6079,216 @@ time allows, even outside the `FULL — PARTIALLY UNIQUE` queue.
 **File 12: 64 + 4 = 68 of 184 deeply read.**
 **`FULL — PARTIALLY UNIQUE` queue unchanged at 16 of 99 read, 83 remaining**
 — this range was drawn from the `SAMPLED` bucket instead.
+
+---
+
+# Addendum 26 — file 12 PDF 139–144 (printed 607–612): general anhydrous-halide preparation, and the halogen oxides in full
+
+**Fifth `FULL — PARTIALLY UNIQUE` range.** Six pages, and the richest single range
+in this shift: **most individual halogen-oxide species (Cl₂O₆, Cl₂O₇, I₂O₄, I₄O₉,
+I₂O₅) were already registered from file 8**, so this range's yield is concentrated
+in **general preparative chemistry that applies far beyond Group 17**, in
+**Table 16.14** as a comparative structure, in **three genuine structural
+diagrams** (Figures 16.6–16.8), and in **one long-standing unbalanced equation
+that both editions carry and neither previous pass had flagged.**
+
+| PDF | Printed | Section | Triage | Deep-read outcome | File-8 equivalent |
+|---|---|---|---|---|---|
+| 139 | 607 | General anhydrous-halide preparation (four methods); halogen oxides opening | `FULL — PARTIALLY UNIQUE` | `DEEP READ — PARTIAL ADDITIONS REGISTERED` | §10.62 (oxides only; the four general methods are absent) |
+| 140 | 608 | Table 16.14; OF₂; O₂F₂ | `FULL — PARTIALLY UNIQUE` | **`DEEP READ — VISUAL ADDITION REGISTERED`** + partial additions | §10.62 |
+| 141 | 609 | Cl₂O; Figure 16.6 bond angles | `FULL — PARTIALLY UNIQUE` | **`DEEP READ — VISUAL ADDITION REGISTERED`** + partial additions | §10.62 |
+| 142 | 610 | ClO₂ | `FULL — PARTIALLY UNIQUE` | `DEEP READ — PARTIAL ADDITIONS REGISTERED` | §10.62 |
+| 143 | 611 | Chlorine perchlorate; Cl₂O₆; Figure 16.7; Cl₂O₇ | `FULL — PARTIALLY UNIQUE` | **`DEEP READ — CONTRADICTION FOUND`** + visual addition | §10.62 |
+| 144 | 612 | Oxides of bromine; oxides of iodine; Figure 16.8 | `FULL — PARTIALLY UNIQUE` | `DEEP READ — PARTIAL ADDITIONS REGISTERED` | §10.62 |
+
+## A. PDF 139 (printed 607) — four general routes to anhydrous halides
+
+**None of this is Group-17-specific — it is the chapter's general method section
+for making anhydrous halides of any element, and none of it was in the corpus.**
+Every equation checked and balances as printed.
+
+| # | Topic | Content |
+|---|---|---|
+| A370 | **Four named general routes to anhydrous halides, each with a worked example** | **(1) Metal + anhydrous HX**: `2Al + 6HCl → 2AlCl₃ + 3H₂`, `Cr + 2HF → CrF₂ + H₂`, `Fe + 2HCl → FeCl₂ + H₂` — direct extension of A358's iron-halogen ladder to hydrogen halides rather than the free halogens. **(2) Oxide + halogen compound**, heated: `Sc₂O₃ + 6NH₄Cl →(300°C) 2ScCl₃ + 6NH₃ + 3H₂O`, `2BeO + CCl₄ →(800°C) 2BeCl₂ + CO₂`, `3UO₂ + 4BrF₃ → 3UF₄ + 3BrO₂ + ½Br₂`, `3NiO + 2ClF₃ → 3NiF₂ + Cl₂ + 1½O₂` — **NH₄Cl, CCl₄, ClF₃, BrF₃, S₂Cl₂ and SOCl₂ are named as the halogenating agents used this way**, and the UO₂/BrF₃ case is a second, independent uranium-fluorination route alongside A318's HF-based chain. **(3) Halogen exchange**: metal fluorides — **AgF₂, ZnF₂, CoF₃, AsF₃, SbF₃ and SbF₅** — convert other halides to fluorides, `PCl₃ + SbF₃ → PF₃ + SbCl₃`, `CoCl₂ + 2HF → CoF₂ + 2HCl`; **chlorides convert to iodides with KI in acetone, and to bromides with KBr**, `TiCl₄ + 4KI → TiI₄ + 4KCl`. **(4) Dehydrating hydrated halides**: heating (sometimes in vacuum, though oxohalides often form instead), or **distilling with thionyl chloride** for chlorides (`VCl₃·6H₂O + 6SOCl₂ → VCl₃ + 12HCl + 6SO₂`), or **treatment with 2,2-dimethoxypropane** for other halides (`CrF₃·6H₂O + 6CH₃C(OCH₃)₂CH₃ → CrF₃ + 12CH₃OH + 6(CH₃)₂CO`) — the dimethoxypropane method works by consuming the water of hydration in an acetal-hydrolysis side reaction, regenerating acetone and methanol. |
+| A371 | **Why the halogen oxides are the most divergent class in the whole periodic table, and the electronegativity argument behind it** | **"The compounds with oxygen probably show greater differences between the different halogens than any other class of compound."** F, lacking d orbitals and being small and highly electronegative, differs from the rest for the usual reasons; **but the deciding argument is comparative electronegativity: O is less electronegative than F but more electronegative than Cl, Br and I. So F/O binary compounds are named as fluorides of oxygen (A78 already has this), while the O/Cl, O/Br, O/I compounds are oxides** — because the naming convention puts the more electronegative partner as the anion. **The Cl/Br/I–O bonds are "largely covalent" because the electronegativity gap with oxygen is small — yet I₂O₄ and I₄O₉ are stable and ionic anyway (A78's "genuinely surprising" observation), which the source itself flags as the exception to its own rule.** **Stability pattern, stated in full for the first time:** most halogen oxides are unstable, exploding on shock or even light exposure; **iodine oxides are the most stable, then chlorine oxides, while all the bromine oxides decompose below room temperature**; and **higher oxidation states are more stable than lower ones** — the opposite trend from most other halogen chemistry in this course, where higher oxidation states are usually the harder-to-reach, less stable ones. |
+| A372 | **Table 16.14 in full — every halogen/oxygen and halogen/fluorine binary species on one table** | Transcribed by oxidation state, corrected where the scan splits a formula across a line break (§B): **fluorides (−I): OF₂, O₂F₂, and O₄F₂ under "Others"; oxides: (+I) Cl₂O, Br₂O; (+IV) ClO₂, BrO₂; (+V) I₂O₅; (+VI) Cl₂O₆ and its monomer ClO₃; (+VII) Cl₂O₇; "Others": ClOClO₄ (chlorine perchlorate) and I₄O₉, I₂O₄.** The table is the single artefact that shows, at a glance, **which oxidation states exist for which halogen** — chlorine spans every state from +I to +VII, bromine stops at +IV, iodine skips straight to +V. |
+
+## B. Table 16.14 transcription note — a scan-split formula, resolved from the main text
+
+**The (+VI) oxide cell renders across the scan as "Cl O₆" on one line and "ClO₃"
+on the next, with no visible subscript 2 on the first entry.** This is the same
+subscript-dropping defect already documented for other cells in this corpus, not
+a new species. **Resolved from the main text on the same two pages, which is
+unambiguous**: the section heading three lines below is **"Cl₂O₆ Dichlorine
+hexoxide"**, and the prose states directly that **"Cl₂O₆ is in equilibrium with
+the monomer ClO₃."** **Table 16.14 therefore reads Cl₂O₆ over ClO₃ in the (+VI)
+oxides cell — recorded as the corrected reading, with the scan defect noted
+rather than passed through as "ClO₆", a formula that does not correspond to any
+real oxidation state of chlorine (it would require Cl at +12).**
+
+## C. PDF 140 (printed 608) — OF₂ and O₂F₂
+
+**Equation checked:** `2F₂ + 2NaOH → 2NaF + H₂O + OF₂` — F 4/4, Na 2/2, O 2/(1+1)=2,
+H 2/2. **Balances.**
+
+| # | Topic | Content |
+|---|---|---|
+| A373 | **OF₂ — made from dilute alkali, and definitively not an acid anhydride** | **A pale yellow gas**, made by passing F₂ into **dilute (2%) NaOH**. **A strong oxidising agent, formerly used as a rocket fuel.** Reacts vigorously with metals, S, P and the halogens, giving fluorides and oxides. **"It dissolves in water and gives a neutral solution, so it is not an acid anhydride"** — with NaOH it instead gives fluoride ions and dioxygen (a redox reaction, not a hydrolysis), which is the direct proof: an acid anhydride would give an oxoacid or its salt, and OF₂ gives neither. |
+| A374 | **O₂F₂ — bond lengths that expose real structural change from H₂O₂** | **An unstable orange-yellow solid**, made by an **electric discharge through F₂/O₂ at very low pressure and liquid-air temperature**; **decomposes at −95 °C.** **Structurally similar to H₂O₂, but the O–O bond length is 1.22 Å against 1.48 Å in H₂O₂ — much shorter — while the O–F bond lengths, at 1.58 Å, are much longer than in OF₂.** A short O–O bond alongside long O–F bonds is the signature of **π-donation from oxygen lone pairs into the O–O bond, weakened wherever F draws electron density away** — the source does not name the mechanism, but the two bond-length facts placed side by side are exactly the evidence for it. **O₄F₂ is made similarly and apparently contains a chain of four oxygen atoms; O₅F₂ and O₆F₂ have been reported** — a homologous series the corpus did not have at all. |
+
+## D. PDF 141 (printed 609) — Cl₂O and its structural family
+
+**Equations checked:** `2Cl₂ + 2HgO →(300°C) HgCl₂·HgO + Cl₂O` — Cl 4/4, Hg 2/2,
+O 2/2. **Balances.** `3Cl₂O + 10NH₃ → 6NH₄Cl + 2N₂ + 3H₂O` — Cl 6/6, O 3/3,
+N 10/(6+4)=10, H 30/(24+6)=30. **Balances.** `Cl₂O + H₂O ⇌ 2HOCl`,
+`Cl₂O + 2NaOH → 2NaOCl + H₂O` — both **balance** trivially.
+
+| # | Topic | Content |
+|---|---|---|
+| A375 | **Cl₂O — preparation, explosive triggers, and the hypochlorite route** | **A yellow-brown gas, commercially important**, made (both lab and industrial scale) by **heating freshly precipitated yellow HgO with the halogen gas diluted in dry air.** **Explodes in the presence of reducing agents, NH₃, or on heating.** **Very soluble in water — 144 g Cl₂O dissolves in 100 g H₂O at −9 °C** — forming HOCl **in equilibrium**, and dissolves in NaOH to give NaOCl directly. **Most of the Cl₂O produced is used to make hypochlorites**: NaOCl sold in aqueous solution, Ca(OCl)₂ a solid, and **bleaching powder — Ca(OCl)₂ mixed with Ca(OH)₂ and CaCl₂ — also made by passing Cl₂ into Ca(OH)₂ directly**, a second, independent route to bleaching powder the corpus lacked. Uses: bleaching wood pulp and fabrics, disinfectants, chlorinated solvents. |
+| A376 | **The tetrahedral-with-two-lone-pairs model for OF₂, Cl₂O and Br₂O, with the orbital picture the source draws explicitly** | **"The structures of OF₂, Cl₂O and Br₂O are all related to a tetrahedron with two positions occupied by lone pairs of electrons."** The source draws the mechanism, not just the conclusion: oxygen's ground state is 1s²2s²2p⁴ (two paired, two unpaired 2p electrons); **having gained two bonds to halogen atoms, the 2p set becomes three lone/bond pairs plus the 2s lone pair — four electron pairs, tetrahedral, two positions occupied by lone pairs.** **Measured bond angles, Figure 16.6: F₂O 103°, Cl₂O 111°, Br₂O unmeasured ("?").** **Repulsion between the lone pairs reduces F₂O's angle from the tetrahedral 109°28′ down to 103°; in Cl₂O (and "presumably" Br₂O) the angle is instead increased, to 111°, because of steric crowding from the larger halogen atoms** — two opposite structural effects (lone-pair repulsion narrowing, atom-size crowding widening) from the same tetrahedral parent, and the source is explicit that Br₂O's angle is presumed, not measured. **Bond lengths: F–O 1.41 Å, Cl–O 1.71 Å**, both shown in Figure 16.6. |
+
+## E. PDF 142 (printed 610) — ClO₂, the most important halogen oxide
+
+**Equations checked, all balance:** `2NaClO₃ + 2(COOH)₂ →(H₂O, 90°C) 2ClO₂ + 2CO₂ +
+(COONa)₂ + 2H₂O` · `2NaClO₃ + SO₂ + H₂SO₄ →(trace NaCl) 2ClO₂ + 2NaHSO₄` ·
+`2HClO₃ + 2HCl → 2ClO₂ + Cl₂ + 2H₂O` (**confirmed HClO₃ at 1000 dpi, not HClO₄** —
+the O-count only balances with chloric acid) · `ClO₂ → ClO + O` ·
+`2ClO + H₂O → HCl + HClO₃` · `2ClO₂ + 2NaOH + H₂O₂ → 2NaClO₂ + O₂ + 2H₂O` ·
+`2ClO₂ + 2NaOH → NaClO₂ + NaClO₃ + H₂O` · `2ClO₂ + 2O₃ → Cl₂O₆ + 2O₂`
+(**already registered**, confirmed identical).
+
+| # | Topic | Content |
+|---|---|---|
+| A377 | **ClO₂ — the most important halogen oxide, and why it is made in situ** | **A yellow gas condensing to a deep red liquid, b.p. 11 °C.** "In spite of its high reactivity (or perhaps because of this) ClO₂ is of commercial importance, and is the most important of the oxides." **The liquid explodes above −40 °C, and the gas detonates readily above 50 mmHg partial pressure**, or on contact with reducing agents — **so it is always made where it is used and always diluted, with air or CO₂**, which is why total production figures are hard to obtain (**an estimate is 200 000 tonnes per year, half in the USA**). **The safest laboratory preparation, from sodium chlorate and oxalic acid, is safest precisely because the CO₂ by-product dilutes the ClO₂ automatically** — the safety and the stoichiometry are the same fact. **The commercial preparation from NaClO₃ can use SO₂ (pure product) or HCl (Cl₂-contaminated, "unimportant or even useful" since Cl₂ helps bleaching and sterilisation).** |
+| A378 | **ClO₂'s uses, quantified, and its aqueous decomposition** | **Large quantities bleach wood pulp, cellulose and drinking water; it is 30 times as effective as chlorine for bleaching flour (to make white bread).** **Also used to make sodium chlorite NaClO₂**, itself a textile/paper bleach. **Dissolves in water evolving heat, giving a dark green solution that decomposes very slowly in the dark but rapidly if illuminated** — a photolytic decomposition, `ClO₂ → ClO + O` then `2ClO + H₂O → HCl + HClO₃`, disproportionating to chloride and chlorate character. Two further disproportionations with alkali: to chlorite + oxygen (with H₂O₂ present) or to chlorite + chlorate (alkali alone). |
+| A379 | **ClO₂ is an odd-electron molecule that refuses to dimerise, and the reason given** | **"The ClO₂ molecule is paramagnetic and contains an odd number of electrons. Odd electron molecules are generally highly reactive, and ClO₂ is typical. Odd electron molecules often dimerize in order to pair the electrons, but ClO₂ does not. This is thought to be because the odd electron is delocalized."** **Angular, O–Cl–O 118°, both bond lengths 1.47 Å — shorter than single bonds.** The delocalisation argument is the teaching point: it explains an *exception* (a stable odd-electron molecule) by the same mechanism (delocalisation) that explains many *reactivity* patterns elsewhere in the course, applied here to explain *stability* instead. |
+
+## F. PDF 143 (printed 611) — chlorine perchlorate, Cl₂O₆, Cl₂O₇, and a long-standing unbalanced equation
+
+**Equation checked:** `CsClO₄ + ClOSO₂F → Cs(SO₃)F + ClOClO₃` — Cs 1/1, Cl 2/2,
+O 7/7 (left: ClO₄ has 4 + ClOSO₂F has 1+2=3, total 7; right: Cs(SO₃)F has 3 +
+ClOClO₃ has 1+3=4, total 7), S 1/1, F 1/1. **Balances.**
+`Cl₂O₆ + 2NaOH → NaClO₃ + NaClO₄ + H₂O`, `Cl₂O₆ + H₂O → HClO₃ + HClO₄`,
+`Cl₂O₆ + HF ⇌ FClO₂ + HClO₄`, `2HClO₄ ⇌(P₄O₁₀ / H₂O) Cl₂O₇` — **all already
+registered and all balance.**
+
+| # | Topic | Content |
+|---|---|---|
+| A380 | **Chlorine perchlorate ClOClO₃, made at −45 °C** | `CsClO₄ + ClOSO₂F → Cs(SO₃)F + ClOClO₃`, at **−45 °C**. **Less stable than ClO₂**, decomposing at room temperature to O₂, Cl₂ and Cl₂O₆ — a species that decomposes *into* another unstable oxide, underscoring A371's stability ladder. |
+| A381 | **Cl₂O₆'s structure is unknown, and Figure 16.7 shows two rival possibilities** | **A dark red liquid freezing to a yellow solid at −180 °C**, in equilibrium with the monomer ClO₃, made from ClO₂ and O₃. **"The structure of neither the liquid nor the solid is known. Both are diamagnetic, and so have no unpaired electrons."** Two candidate structures, **both drawn in the source and neither asserted as correct**: a **covalent bridged dimer**, O₂Cl–O–ClO₂ (a peroxide-type bridging oxygen linking two ClO₂ units, each already bearing two terminal oxygens); and an **ionic structure, [ClO₂]⁺[ClO₄]⁻** — the same ion pair already registered at trap 64 from file 8. **A strong oxidising agent, explodes on contact with grease.** |
+| A382 | **Dichlorine heptoxide — the only exothermic chlorine oxide, and the mildest** | **A colourless oily liquid, moderately stable, shock sensitive, and the only exothermic oxide of chlorine.** **Made by carefully dehydrating perchloric acid with P₄O₁₀, or with H₃PO₄ at −10 °C, followed by distillation at −35 °C and 1 mmHg** — cross-references the structure already registered (O₃Cl–O–ClO₃, bridge angle 118°36′). **"It is less reactive than the lower oxides, and does not ignite organic materials"** — the stability-versus-oxidation-state trend of A371 stated concretely: the highest oxidation state (+VII) is also the one safest to handle. |
+
+### Contradiction 75 — printed 611, the Cl₂O₆/N₂O₄ equation, present in both editions and never previously flagged
+
+**Source form as printed:** `Cl₂O₆ + N₂O₄ → ClO₂ + [NO₂]⁺[ClO₄]⁻` — **confirmed at
+1000 dpi, no coefficients other than 1 anywhere in the line.** **This identical
+equation is already registered in this corpus at line 719 (main body,
+pre-dating this shift), transcribed from file 8 in exactly this unbalanced
+form** — so **both editions of the book print the same defective equation, and
+neither this project's earlier pass over file 8 nor any addendum since caught
+it until now.** *The issue:* nitrogen does not balance (2 on the left, 1 on the
+right) and oxygen does not balance (10 on the left, 8 on the right); chlorine
+balances only by coincidence (2 = 1 + 1). *Correction, from conservation of Cl,
+N, O and charge, solved as simultaneous equations rather than guessed:*
+**`2Cl₂O₆ + N₂O₄ → 2ClO₂ + 2[NO₂]⁺[ClO₄]⁻`** — Cl 4/4, N 2/2, O 16/16, charge
+0/0. **Verification needed:** none — the correction is the unique solution to
+the conservation equations. **Safe for inclusion:** the corrected, doubled
+equation; **the pre-existing line-719 entry in this document is corrected in
+place to match** (see §H). **This is the first defect in the entire audit found
+in material that predates file 12 and this shift** — the earlier pass that
+transcribed it from file 8 did not run a balance check, which is exactly the
+gap this project's code-validation habit exists to close. |
+
+## G. PDF 144 (printed 612) — oxides of bromine and iodine
+
+**Equations checked:** `Br₂ + 2O₃ → 2BrO₂ + O₂` — Br 2/2, O 6/6. **Balances.**
+`6BrO₂ + 6NaOH → NaBr + 5NaBrO₃ + 3H₂O` — **already registered**, confirmed
+identical and balanced. `2HIO₃ → I₂O₅ + H₂O` — **balances**, already registered.
+`I₂O₅ + 5CO → 5CO₂ + I₂` — **balances**, already registered. `2I₂O₅ + 10F₂ →
+4IF₅ + 5O₂` — I 4/4, O 10/10, F 20/20. **Balances.**
+
+| # | Topic | Content |
+|---|---|---|
+| A383 | **Bromine oxides — the least-known, least-stable, and their two preparations** | **"Less is known about the oxides of bromine, and they are much less important than those of chlorine."** **Br₂O: a dark brown liquid**, made either like Cl₂O (Br₂ + HgO) or **by carefully decomposing BrO₂**. **Does not form HOBr appreciably with water, but gives OBr⁻ with NaOH** — a genuine point of difference from Cl₂O, which does equilibrate with HOCl (A375). **A strong oxidiser, oxidising I₂ to I₂O₅.** **BrO₂: a pale yellow solid**, from an electric discharge on Br₂/O₂, or from Br₂ + O₃ at −78 °C, `Br₂ + 2O₃ → 2BrO₂ + O₂`. **Stable only below −40 °C. Similar structure to ClO₂ but much less important.** Hydrolyses in alkali to bromide and bromate: `6BrO₂ + 6NaOH → NaBr + 5NaBrO₃ + 3H₂O` — **the identical 1:5 disproportionation ratio as ClO₂'s analogous reaction (A378), a direct structural/reactivity parallel the corpus can now draw explicitly.** **With I₂, BrO₂ gives IBrO₂** — an interhalogen oxide species new to the corpus. |
+| A384 | **Iodine pentoxide — the analytical workhorse, made from iodic acid** | **Stable white hygroscopic crystals**, made by **heating iodic acid, HIO₃, to 170 °C: `2HIO₃ → I₂O₅ + H₂O`.** **Very soluble in water and is the anhydride of iodic acid** — the direct contrast with OF₂ (A373), which is explicitly *not* an acid anhydride despite superficial similarity. **Because it is hygroscopic, commercial I₂O₅ usually carries some water, with the formula I₂O₅·HIO₃** — a hydrate-like adduct formula the corpus did not have. **Decomposes to I₂ and O₂ at 300 °C.** **Analytical use: I₂O₅ oxidises CO to CO₂ quantitatively at room temperature, liberating I₂, which is titrated against sodium thiosulphate** — `I₂O₅ + 5CO → 5CO₂ + I₂` — **used for detecting and estimating CO in gas mixtures such as car exhaust or blast-furnace gas.** Also oxidises H₂S to SO₂ and NO to NO₂. **With fluorinating agents (F₂, BrF₃ or SF₄) it forms IF₅**: `2I₂O₅ + 10F₂ → 4IF₅ + 5O₂`. |
+| A385 | **I₂O₅'s structure — a genuine three-dimensional network, not a discrete molecule** | **Figure 16.8: O₂I–O–IO₂, i.e. two IO₂ units bridged by an oxygen, each iodine also bearing a further terminal oxygen — drawn as a simple bridged structure in two dimensions.** But **"the solid is a three-dimensional network, with strong intermolecular I···O interactions linking molecules together"** — the source is explicit that the simple bridged-molecule picture is not the whole structural story, and secondary I···O contacts extend it into a network. This is registered as a genuinely three-dimensional solid-state structure, distinct from the discrete-molecule pictures used for Cl₂O₆ and Cl₂O₇. |
+
+## H. Correction to a pre-existing (pre-shift) registry entry
+
+**Line 719 of this document** (main body, registered from file 8 before this
+audit began) carries `Cl₂O₆ + N₂O₄ → ClO₂ + [NO₂]⁺[ClO₄]⁻` as a plain equation
+with no balance annotation. **Corrected in place, alongside its neighbours, to
+`2Cl₂O₆ + N₂O₄ → 2ClO₂ + 2[NO₂]⁺[ClO₄]⁻`**, with a note that this is contradiction
+75, resolved by conservation. **This is the only edit this addendum makes outside
+its own new material** — justified because leaving a known-defective equation
+standing elsewhere in the same document while registering the correct form here
+would itself be an inconsistency.
+
+## I. Visual register — additions V159–V163
+
+| ID | Required visual kind | Subject |
+|---|---|---|
+| V159 | **Comparison graphic** | Table 16.14 redrawn as an oxidation-state ladder per halogen — F stub (fluorides of oxygen only), Cl spanning +I to +VII, Br stopping at +IV, I appearing only at +V and in the ionic +IV/other cluster — visualising A371's "chlorine goes furthest" claim at a glance |
+| V160 | **Structure gallery** | OF₂, Cl₂O and Br₂O as one tetrahedral family (Figure 16.6 redrawn): bond angles 103° / 111° / "not measured" on a shared tetrahedral scaffold, with the two opposing effects (lone-pair repulsion vs atom-size crowding) labelled on the angle arrows |
+| V161 | **Orbital diagram** | Oxygen's 1s²2s²2p⁴ ground state against its bonded state in Cl₂O/OF₂/Br₂O — the four-electron-pair tetrahedral argument the source draws explicitly, redrawn rather than copied |
+| V162 | **Structure gallery** | Cl₂O₆'s two rival structures (Figure 16.7) side by side, **both flagged "structure not established — diamagnetism is the only constraint"**, alongside the confirmed Cl₂O₇ bridge (O₃Cl–O–ClO₃, 118°36′) for contrast between an unknown and a known bridged structure |
+| V163 | **Structure gallery** | I₂O₅'s bridged-molecule motif (Figure 16.8) with the network-forming I···O contacts drawn as dashed secondary interactions extending the unit in three dimensions — distinguishing "molecular formula" from "actual solid-state structure" |
+
+## J. JEE trap register — items 295–302
+
+295. **OF₂ dissolves in water to give a neutral solution — it is not an acid
+     anhydride**, despite being "oxygen's fluoride". With NaOH it gives F⁻ and
+     O₂ by redox, not an oxoacid salt by hydrolysis.
+296. **O₂F₂'s O–O bond (1.22 Å) is shorter than H₂O₂'s (1.48 Å), and its O–F
+     bonds (1.58 Å) are longer than OF₂'s.** Isoelectronic-looking molecules can
+     have very different bond strengths.
+297. **Cl₂O's bond angle (111°) is wider than the tetrahedral 109°28′; F₂O's
+     (103°) is narrower.** Same tetrahedral parent, opposite distortions —
+     lone-pair repulsion narrows, atom-size crowding widens.
+298. **ClO₂ is a stable odd-electron (paramagnetic) molecule that does not
+     dimerise** — because the odd electron is delocalised, not localised on one
+     atom the way NO₂ or ClO's is.
+299. **Halogen-oxide stability runs opposite to the usual oxidation-state
+     trend**: the *highest* oxidation states (Cl₂O₇, I₂O₅) are the *most*
+     stable, not the least.
+300. **Cl₂O₆'s structure is genuinely unknown** — bridged-covalent and ionic
+     [ClO₂]⁺[ClO₄]⁻ are both offered, distinguished only by "both are
+     diamagnetic", which rules out neither.
+301. **I₂O₅ is the CO-detection reagent** — the analytical use (car-exhaust and
+     blast-furnace gas analysis) is the JEE-relevant fact, not just the
+     structure.
+302. **Br₂O does not form HOBr with water, unlike Cl₂O with HOCl.** A named
+     exception to an otherwise-parallel Cl/Br oxide chemistry.
+
+## K. Register-count effects
+
+- **Topics: A369 → A385.** Sixteen added, **all table rows**, contiguous.
+- **Expanded, IDs kept:** **A78** (the electronegativity-naming rule now has its
+  full comparative statement) · **A318** (a second, BrF₃-based uranium
+  fluorination route) · **A358** (the anhydrous-HX metal reactions extend the
+  iron ladder).
+- **Visuals: V158 → V163.** Five added.
+- **Traps: 294 → 302.** Eight added.
+- **Contradictions: 74 → 75.** One added — **75**, the Cl₂O₆/N₂O₄ equation,
+  unbalanced in both editions and uncaught until this pass. **The only
+  contradiction in this audit that required correcting a pre-existing (pre-shift)
+  line in this same document, done in place per §H.**
+- **Source defects: D13 — unchanged.** The Table 16.14 subscript-split (§B) is a
+  scan-rendering issue resolved from adjacent prose, not logged as a new D-series
+  item — it follows the same pattern as prior subscript-drop cases and is folded
+  into A372's transcription note rather than issuing a new ID.
+- **MO cases: E45 — unchanged.**
+- **`[UNCLEAR]`: 5 — unchanged.**
+
+---
+
+# Range closure — PDF 139–144
+
+**6 / 6 pages deeply read**, one returning `DEEP READ — CONTRADICTION FOUND`,
+two `DEEP READ — VISUAL ADDITION REGISTERED`, three `DEEP READ — PARTIAL
+ADDITIONS REGISTERED` — every page registered, and one pre-existing document
+error (§H) corrected as a direct consequence of this range's own contradiction.
+
+**File 12: 68 + 6 = 74 of 184 deeply read.**
+**`FULL — PARTIALLY UNIQUE`: 22 of 99 read, 77 remaining.**

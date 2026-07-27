@@ -136,13 +136,13 @@ Last updated: 2026-07-26.
 |---|---|---|---|
 | Files 1–6 (original six) | 437 | **325** | 74 % |
 | Files 7–11 (new five) | 1294 | **191** | 14.8 % |
-| File 12 (`15161718.pdf`, p-block part only) | 184 | **68** | 37.0 % |
-| **Total project** | **1915** | **584** | **31 %** |
+| File 12 (`15161718.pdf`, p-block part only) | 184 | **74** | 40.2 % |
+| **Total project** | **1915** | **590** | **31 %** |
 
 Files 7–12 breakdown: file 7 (JD Lee 5th ed., whole book) 5 / 1057 · **file 8 (JD Lee
 adapted Ch. 10) 172 / 172 — COMPLETE** · file 9 (annotated notes) 0 / 40 · file 10
 (annotated notes) 0 / 11 · file 11 (noble-gas notes) 14 / 14 · **file 12 (JD Lee 5th ed.
-Ch. 14–17 extract) 68 / 184 deeply read, **209 / 209 triaged**.
+Ch. 14–17 extract) 74 / 184 deeply read, **209 / 209 triaged**.
 
 **Denominator history, so the movement is auditable.** Locating file 12 added its pages to
 a corpus that had been missing them, taking the total from 1731 to 1940 and the completion
@@ -229,7 +229,7 @@ cross-references resolving, all 20 lessons non-empty.
   `FULL — PARTIALLY UNIQUE` **98** · `SAMPLED — DUPLICATE OF FILE 8` **32** ·
   `VISUAL ONLY` **2** · `QUESTION GAP` **9** · `NOT RELEVANT` **30** (5
   further-reading/chapter-close + 25 d-block) · `UNCLEAR` **0**.
-- **Deeply inspected and fully registered: 68 / 184 (Vision).** *(This figure had
+- **Deeply inspected and fully registered: 74 / 184 (Vision).** *(This figure had
   gone stale at "8 / 184" while the addenda accumulated; the authoritative count
   has always been the recounted-in-code block further down, which read 39 before
   Addendum 20 and reads 48 after it. Corrected here rather than left to diverge.)*
@@ -369,14 +369,14 @@ triaged **209** · p-block pages **184** · **fully unique pages 37** (the Adden
 figure was 38; **PDF 107 was reclassified to partially unique in Addendum 10**
 once the S–N section turned out to start in its last paragraph) · **fully unique
 pages deeply inspected 37 — COMPLETE** · **fully unique pages remaining 0** · partially
-unique pages compared **16 of 99** · duplicate pages sampled **33** · visual-only
+unique pages compared **22 of 99** · duplicate pages sampled **33** · visual-only
 pages inspected **2 of 2 — COMPLETE** · question-gap pages audited **9 of 9 — COMPLETE** ·
 not-relevant pages **30** · pages with unclear content **5**.
 
-**Total pages deeply inspected 68** = 37 fully unique + **16** partially unique
-(PDF 6, 107, **117–122**, **131–136** and **137–138**) + **9 question-gap (Addendum 20)** + **2 visual-only
-(Addendum 21)** + **4 re-read from the `SAMPLED` bucket (PDF 167–170, Addendum
-25)**. **65 of the 68 yielded
+**Total pages deeply inspected 74** = 37 fully unique + **22** partially unique
+(PDF 6, 107, **117–122**, **131–136**, **137–138** and **139–144**) + **9
+question-gap (Addendum 20)** + **2 visual-only (Addendum 21)** + **4 re-read
+from the `SAMPLED` bucket (PDF 167–170, Addendum 25)**. **71 of the 74 yielded
 additions; exactly three returned nothing new — PDF 114
 (`DEEP READ — NO NEW CONTENT`), PDF 62 (`AUDITED — NO NEW CHEMISTRY`), and
 Table 17.2 within PDF 169 (`DEEP READ — NO NEW CONTENT`, already registered
@@ -434,7 +434,17 @@ Addendum 20 and not derived by subtraction.
   superscript "14" with no legend on the page or in the chapter.** **None is
   guessed; all four are marked unsafe to publish until re-read.**
 - **`FULL — UNIQUE`: 37 / 37 — CLOSED.**
-- **`FULL — PARTIALLY UNIQUE`: 16 / 99 read, 83 remaining.** Third post-queue range
+- **`FULL — PARTIALLY UNIQUE`: 22 / 99 read, 77 remaining.** Fourth post-queue
+  range **PDF 139–144 = printed 607–612** (Addendum 26), general anhydrous-halide
+  preparation plus the halogen oxides in full: 16 topics (A370–A385), 5 visuals,
+  8 traps. **One contradiction (75) found in an equation both editions print and
+  no earlier pass had flagged** — `Cl₂O₆ + N₂O₄ → ClO₂ + [NO₂]⁺[ClO₄]⁻` is
+  unbalanced in N, O and (coincidentally not) Cl; corrected to
+  `2Cl₂O₆ + N₂O₄ → 2ClO₂ + 2[NO₂]⁺[ClO₄]⁻` and the pre-existing main-body line
+  fixed to match. Table 16.14 (halogen/oxygen oxidation-state table) registered
+  in full with a scan-split-subscript note (Cl₂O₆, not "ClO₆", resolved from
+  adjacent prose).
+  Third post-queue range
   **PDF 137–138 = printed 605–606** (Addendum 24), halides: 9 topics (A351–A359),
   3 visuals, 7 traps, **2 new contradictions (72, 73 — a solubility sequence that
   contradicts its own stated reason, and `Fe + I₂ → FeI`)**, both settled from

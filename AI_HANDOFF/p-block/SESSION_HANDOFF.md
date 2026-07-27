@@ -28,17 +28,17 @@ that its dev server is separately broken by an unrelated RSC-manifest fault.
 
 | | |
 |---|---|
-| **Corpus** | **584 / 1915 pages (31 %)** |
+| **Corpus** | **590 / 1915 pages (31 %)** |
 | Files 1–6 | 325 / 437 |
 | File 7 (JD Lee 5th ed., whole book) | 5 / 1057 |
 | **File 8** (JD Lee adapted, Ch. 10, all six groups) | **172 / 172 — COMPLETE** |
 | File 9, 10 (handwritten notes) | 0 / 40, 0 / 11 — vision only, OCR garbled |
 | File 11 (noble gas notes) | 14 / 14 |
-| **File 12** (`15161718.pdf`, JD Lee 5th ed. Ch. 14–17) | 209/209 triaged · **68 / 184 deeply read** |
+| **File 12** (`15161718.pdf`, JD Lee 5th ed. Ch. 14–17) | 209/209 triaged · **74 / 184 deeply read** |
 
-**Register IDs:** Topics **A1–A369** (contiguous, no gaps, no duplicates, every
-one a table row) · Visuals **V158** · MO cases **E45** · Traps and numbered items
-**294** · Contradictions **25–74** · Source defects **D1–D13** · `[UNCLEAR]` **5
+**Register IDs:** Topics **A1–A385** (contiguous, no gaps, no duplicates, every
+one a table row) · Visuals **V163** · MO cases **E45** · Traps and numbered items
+**302** · Contradictions **25–75** · Source defects **D1–D13** · `[UNCLEAR]` **5
 distinct items**.
 
 ---
@@ -96,13 +96,12 @@ AgNO₃ silver-halide ladder with ammonia, and the boiling point of helium.
 **Every queue except `FULL — PARTIALLY UNIQUE` is now closed.**
 
 **PDF 117–122 (Addendum 22), PDF 131–136 (Addendum 23), PDF 137–138
-(Addendum 24) and PDF 167–170 (Addendum 25) are done.**
+(Addendum 24), PDF 167–170 (Addendum 25) and PDF 139–144 (Addendum 26) are
+done.**
 
-1. **83 remaining `FULL — PARTIALLY UNIQUE` pages**, in section-sized ranges.
-   **Next: PDF 139–144 = printed 607–612, halogen oxides**, with a distinct
-   "Oxides of bromine" subsection — `FULL — PARTIALLY UNIQUE`, file-8 §10.62.
-   **Then PDF 123–124 (printed 591–592, Table 16.5 electronegativity *and
-   electrode potentials*)**, and **PDF 145–152 (printed 613–620, standard
+1. **77 remaining `FULL — PARTIALLY UNIQUE` pages**, in section-sized ranges.
+   **Next: PDF 123–124 (printed 591–592, Table 16.5 electronegativity *and
+   electrode potentials*)**. **Then PDF 145–152 (printed 613–620, standard
    reduction potentials in acidic and basic solution, plus oxoacids —
    `FULL — UNIQUE`, absent from file 8 entirely).**
 

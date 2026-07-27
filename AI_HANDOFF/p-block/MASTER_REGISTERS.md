@@ -2320,3 +2320,45 @@ Everything above was read directly from page images of the accessible J.D. Lee
 neither is in the corpus. Where this file agrees verbatim with file 8, the
 agreement is recorded as a single source (one author, two editions), **not** as
 independent confirmation.
+
+## Addendum 7a — file 12, PDF p. 6 (printed 473): the nitrogen cycle
+
+Segment extended by one page so that no page is left read but unregistered.
+Printed 473 opens "General properties and structures of the elements" and then
+gives the nitrogen cycle in a detail the adapted edition dropped entirely.
+
+**Already registered from file 8, confirmed here verbatim** (recorded as one
+source in two editions, not as independent confirmation): the N≡N triple bond at
+**1.09 Å** with dissociation energy **945.4 kJ mol⁻¹**; the isoelectronic
+comparison in which CO, CN⁻ and NO⁺ are far more reactive than N₂ **because
+their bonds are partly polar and N₂'s are not**; and active nitrogen from an
+electric spark through low-pressure N₂, giving atomic N and a **yellow–pink
+afterglow** that breaks normally stable molecules. See A2 and A3.
+
+**New in this segment.**
+
+| # | Topic | Where it belongs | Content |
+|---|---|---|---|
+| A187 | What dinitrogen will actually react with, and when | §7 | At **room temperature** it reacts with lithium alone, giving **Li₃N**. At elevated temperature it reacts directly with Groups 2, 13 and 14, with H₂, and with some transition metals. "Inert" is a room-temperature statement only. |
+| A188 | **The nitrogen cycle as a balance sheet** | §7 (new subsection) | Total turnover between atmosphere, soil, sea and living organisms is **10⁸–10⁹ tonnes/year**. Combined soil nitrogen exists as nitrates, nitrites and ammonium compounds, and the cycle is best taught as four loss routes against the gains. |
+| A189 | The four ways soil loses combined nitrogen | §7 | **(1)** Plant uptake into protoplasm, then animals, excreted as **urea or uric acid**, returned by death and decay. **(2) Denitrifying bacteria** — *Pseudomonas* and *Achromobacter* — running `nitrates → nitrites → NO₂ → N₂ → NH₃`. The NH₃ comes back with the first rainstorm; **the N₂ does not**, and that asymmetry is the real loss. The ammonia smell of horse stables is this reaction. **(3)** Drainage of surface water to the sea, where it supports marine plant life. **(4)** Small NO and NO₂ losses from burning plants and coal and from car exhausts — locally unpleasant and smog-forming, but small, and returned when it rains. |
+| A190 | Biological fixation dominates the gains | §7 | **Nitrifying bacteria supply over 60 % of the nitrogen gain**, fixing an estimated **175 million tonnes of N₂ annually** — a figure the source then compares with industrial fixation. |
+
+**Species added:** Li₃N · urea and uric acid as excretory nitrogen · nitrite and
+nitrate as soil species · NO and NO₂ as atmospheric losses.
+**Organisms named:** *Pseudomonas*, *Achromobacter* (denitrifying); nitrifying
+bacteria (unnamed in the source).
+**Reaction pathway added:** `nitrates → nitrites → NO₂ → N₂ → NH₃`.
+
+**Visual added — V89:** a **reaction network** for the nitrogen cycle drawn as a
+balance sheet, four loss arrows against the gains, with the 175 million tonnes
+and the >60 % share labelled, and the NH₃-returns/N₂-does-not asymmetry marked as
+the reason the cycle leaks.
+
+**JEE trap added — 159:** **dinitrogen reacts with lithium at room temperature.**
+Calling N₂ inert without the temperature qualifier is the error; every other
+direct combination needs heat.
+
+**Contradictions:** none new. Items 25–53 preserved.
+
+**Next unread page: file 12 PDF p. 7 (printed 474).**

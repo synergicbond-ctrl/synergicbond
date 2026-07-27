@@ -136,13 +136,13 @@ Last updated: 2026-07-26.
 |---|---|---|---|
 | Files 1–6 (original six) | 437 | **325** | 74 % |
 | Files 7–11 (new five) | 1294 | **191** | 14.8 % |
-| File 12 (`15161718.pdf`, newly located) | 209 | **5** | 2.4 % |
-| **Total project** | **1940** | **521** | **27 %** |
+| File 12 (`15161718.pdf`, newly located) | 209 | **6** | 2.9 % |
+| **Total project** | **1940** | **522** | **27 %** |
 
 Files 7–12 breakdown: file 7 (JD Lee 5th ed., whole book) 5 / 1057 · **file 8 (JD Lee
 adapted Ch. 10) 172 / 172 — COMPLETE** · file 9 (annotated notes) 0 / 40 · file 10
 (annotated notes) 0 / 11 · file 11 (noble-gas notes) 14 / 14 · **file 12 (JD Lee 5th ed.
-Ch. 14–17 extract) 5 / 209**.
+Ch. 14–17 extract) 6 / 209**.
 
 **The denominator went up, so the percentage went down.** Locating file 12 added 209
 previously uncounted pages to the corpus, which moves the total from 1731 to 1940 and the
@@ -205,15 +205,14 @@ cross-references resolving, all 20 lessons non-empty.
   occupies ~99 PDF pages here against 35 printed pages in the adapted edition.
   Occurrence, extraction, world production figures and the whole of
   arsenic/antimony/bismuth metallurgy were cut.
-- **Inspected: 5 / 209 (Vision)** — PDF pp. 1–5 = printed 468–472. Complete
+- **Inspected: 6 / 209 (Vision)** — PDF pp. 1–6 = printed 468–473. Complete
   coherent segment: the Ch. 14 opening (electronic structures and oxidation
-  states) and the whole of "Occurrence, extraction and uses" for N, P, As, Sb
-  and Bi, ending where "General properties and structures of the elements"
-  begins. Registered in **`MASTER_REGISTERS.md` Addendum 7**: 10 topics,
-  ~45 species, 12 preparations/reactions, a melting/boiling table, 6 colour
-  observations, a uses-and-hazards block, 4 visuals, 8 JEE traps, 0 new
-  contradictions.
-- **Next unread page: PDF p. 6 (printed 473)** — continuing "General properties
+  states), the whole of "Occurrence, extraction and uses" for N, P, As, Sb and
+  Bi, and the nitrogen cycle. Registered in **`MASTER_REGISTERS.md` Addenda 7
+  and 7a**: 14 topics, ~50 species, 13 preparations/reactions, a melting/boiling
+  table, 6 colour observations, a uses-and-hazards block, 5 visuals, 9 JEE traps,
+  0 new contradictions.
+- **Next unread page: PDF p. 7 (printed 474)** — continuing "General properties
   and structures of the elements" in Chapter 14.
 - **Destination:** Sections 7–19, as gap-fill on top of Addenda 1–4 — **IN
   PROGRESS**

@@ -4,6 +4,7 @@ import remarkMath from "remark-math";
 import remarkGfm from "remark-gfm";
 import rehypeKatex from "rehype-katex";
 import { createMarkdownComponents } from "../AnchoredMarkdown";
+import DBlockPartNavigation from "../DBlockPartNavigation";
 
 type VisualProps = { className?: string };
 type PageBlock = { id: string; label: string; visual: string; markdown: string };
@@ -590,6 +591,8 @@ export default function DBlockPart09() {
           </div>
         </header>
 
+        <DBlockPartNavigation part={9} position="top" />
+
         <nav className="sticky top-2 z-20 mt-5 overflow-x-auto rounded-2xl border border-white/10 bg-[#07111f]/95 p-2 shadow-xl backdrop-blur">
           <div className="flex min-w-max gap-2">
             {PAGES.map((page, index) => (
@@ -625,6 +628,8 @@ export default function DBlockPart09() {
         <footer className="mt-8 rounded-2xl border border-white/10 bg-white/[0.035] px-5 py-4 text-sm leading-6 text-slate-400">
           This file contains theory, tables, equations and original scientific visuals only. Practice questions and detailed solutions are intentionally reserved for the later assessment phase.
         </footer>
+
+        <DBlockPartNavigation part={9} position="bottom" />
       </div>
     </main>
   );

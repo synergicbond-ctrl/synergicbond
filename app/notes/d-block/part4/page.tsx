@@ -1,11 +1,9 @@
-"use client";
-
 import type { ComponentType, ReactNode } from "react";
 import ReactMarkdown from "react-markdown";
 import remarkMath from "remark-math";
 import remarkGfm from "remark-gfm";
 import rehypeKatex from "rehype-katex";
-import { DBlockInlineVisuals } from "../DBlockInlineVisuals";
+import { createMarkdownComponents } from "../AnchoredMarkdown";
 
 type VisualProps = { className?: string };
 type PageBlock = { id: string; label: string; visual: string; markdown: string };
@@ -456,15 +454,9 @@ export default function DBlockPart04() {
                     <p className="font-bold text-slate-200">{page.label}</p>
                   </div>
                 </div>
-                <ReactMarkdown remarkPlugins={[remarkGfm, remarkMath]} rehypePlugins={[rehypeKatex]} components={markdownComponents}>
+                <ReactMarkdown remarkPlugins={[remarkGfm, remarkMath]} rehypePlugins={[rehypeKatex]} components={createMarkdownComponents(4)}>
                   {page.markdown}
                 </ReactMarkdown>
-                <DBlockInlineVisuals
-                  part={4}
-                  pageId={page.id}
-                  label={page.label}
-                  markdown={page.markdown}
-                />
                 {Visual ? <Visual /> : null}
               </section>
             );

@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { DBlockVisualLibrary } from "./DBlockVisualLibrary";
 
 export const metadata = {
   title: "D-Block Elements — JEE Advanced Theory",
@@ -36,8 +35,6 @@ export default function DBlockHubPage() {
             <span className="rounded-full border border-amber-300/20 bg-amber-300/10 px-4 py-2">Original scientific visuals</span>
           </div>
         </header>
-
-        <DBlockVisualLibrary />
 
         <section className="mt-8 grid gap-5 md:grid-cols-2">
           {parts.map(([number, title, description]) => (

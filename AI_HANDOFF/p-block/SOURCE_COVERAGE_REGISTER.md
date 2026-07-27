@@ -136,13 +136,13 @@ Last updated: 2026-07-26.
 |---|---|---|---|
 | Files 1–6 (original six) | 437 | **325** | 74 % |
 | Files 7–11 (new five) | 1294 | **191** | 14.8 % |
-| File 12 (`15161718.pdf`, p-block part only) | 184 | **22** | 12.0 % |
-| **Total project** | **1915** | **538** | **28 %** |
+| File 12 (`15161718.pdf`, p-block part only) | 184 | **26** | 14.1 % |
+| **Total project** | **1915** | **542** | **28 %** |
 
 Files 7–12 breakdown: file 7 (JD Lee 5th ed., whole book) 5 / 1057 · **file 8 (JD Lee
 adapted Ch. 10) 172 / 172 — COMPLETE** · file 9 (annotated notes) 0 / 40 · file 10
 (annotated notes) 0 / 11 · file 11 (noble-gas notes) 14 / 14 · **file 12 (JD Lee 5th ed.
-Ch. 14–17 extract) 22 / 184 deeply read, **209 / 209 triaged**.
+Ch. 14–17 extract) 26 / 184 deeply read, **209 / 209 triaged**.
 
 **Denominator history, so the movement is auditable.** Locating file 12 added its pages to
 a corpus that had been missing them, taking the total from 1731 to 1940 and the completion
@@ -268,6 +268,16 @@ cross-references resolving, all 20 lessons non-empty.
     the wet-versus-dry deposition distinction, Se/Te recovery from copper anode
     sludge, and a complete **polonium** section. 5 visuals, 11 JEE traps, **0 new
     contradictions** — every printed equation balances.
+  - **PDF 20–23 = printed 487–490** (Addendum 15). Liquid ammonia as a solvent
+    system, **hydrogen azide and the azides in full**, fertilisers, and a **second
+    set of Latimer diagrams — Group 15, acid and basic** — all absent from file 8:
+    11 topics (A239–A249), ~20 species each registered separately, 5 balance-checked
+    equations, **1 MO case (E44)**, 6 visuals, 9 JEE traps, **1 new contradiction
+    (item 57)**. Printed 490 was re-rendered at 300 dpi and rotated because the
+    165 dpi image was not safe to transcribe.
+  - **PDF 24–27 = printed 491–494 — READ NOT YET ATTEMPTED.** The nitrogen-fixation
+    section begins at the foot of printed 489 and continues across these four pages;
+    only its opening paragraph is registered so far.
 
 **Page-status fields for the deeply read pages** (triage label kept visible
 alongside the deep-read outcome, as required):
@@ -286,6 +296,10 @@ alongside the deep-read outcome, as required):
 | 162 | 630 | `FULL — UNIQUE` | `DEEP READ — UNIQUE REGISTERED` |
 | 95 | 563 | `FULL — UNIQUE` | `DEEP READ — PARTIAL ADDITIONS REGISTERED` (polythionates/peroxoacids duplicate §10.52) |
 | 96 | 564 | `FULL — UNIQUE` | `DEEP READ — UNIQUE REGISTERED` |
+| 20 | 487 | `FULL — UNIQUE` | `DEEP READ — UNIQUE REGISTERED` |
+| 21 | 488 | `FULL — UNIQUE` | `DEEP READ — UNIQUE REGISTERED` |
+| 22 | 489 | `FULL — UNIQUE` | `DEEP READ — UNIQUE REGISTERED` |
+| 23 | 490 | `FULL — UNIQUE` | `DEEP READ — UNIQUE REGISTERED` |
 | 68 | 535 | `FULL — UNIQUE` | `DEEP READ — UNIQUE REGISTERED` |
 | 69 | 536 | `FULL — UNIQUE` | `DEEP READ — UNIQUE REGISTERED` |
 | 70 | 537 | `FULL — UNIQUE` | `DEEP READ — UNIQUE REGISTERED` |
@@ -297,20 +311,20 @@ alongside the deep-read outcome, as required):
 triaged **209** · p-block pages **184** · **fully unique pages 37** (the Addendum-8
 figure was 38; **PDF 107 was reclassified to partially unique in Addendum 10**
 once the S–N section turned out to start in its last paragraph) · **fully unique
-pages deeply inspected 20** · **fully unique pages remaining 17** · partially
+pages deeply inspected 24** · **fully unique pages remaining 13** · partially
 unique pages compared **2 of 97** · duplicate pages sampled **32** · visual-only
 pages inspected **0 of 2** · question-gap pages audited **0 of 9** ·
 not-relevant pages **30** · pages with unclear content **3**.
 
-**Total pages deeply inspected 22** = 20 fully unique + 2 partially unique
-(PDF 6 and PDF 107). All 22 yielded additions; **none has returned
+**Total pages deeply inspected 26** = 24 fully unique + 2 partially unique
+(PDF 6 and PDF 107). All 26 yielded additions; **none has returned
 `DEEP READ — NO NEW CONTENT`.** The audited-page denominator is not reduced for
 any page.
 
-**The 17 fully unique pages still outstanding, listed to prove the count:**
-**20, 21, 22, 23, 24, 25, 26, 27** (hydrogen azide and the azides; nitrogen
-fixation) · **54, 55, 56, 57** (phosphorus sulphides) · **109, 110** (organo
-derivatives) · **114, 115, 116** (Group 17 occurrence and extraction).
+**The 13 fully unique pages still outstanding, listed to prove the count:**
+**24, 25, 26, 27** (nitrogen fixation, continuing from printed 489) ·
+**54, 55, 56, 57** (phosphorus sulphides) · **109, 110** (organo derivatives) ·
+**114, 115, 116** (Group 17 occurrence and extraction).
 - **Sections found to be absent from file 8 altogether** — the queue that
   justifies reading this file at all: **Phosphazenes and cyclophosphazenes**
   (PDF 58–59) · **Compounds of sulphur and nitrogen, S₄N₄** (107–108) ·
@@ -333,12 +347,11 @@ derivatives) · **114, 115, 116** (Group 17 occurrence and extraction).
   "disproportionates" meaning as the footnoted asterisks on the basic diagram —
   that page shows no legend. **None is guessed; all three are marked unsafe to
   publish until re-read.**
-- **Next range for deep reading: PDF 20–27 (printed 487–494)** — hydrogen azide
-  and the azides, then nitrogen fixation; eight pages, both sections flagged as
-  missing from the course since the first register. Then 54–57 (phosphorus
-  sulphides), 109–110 (organo derivatives), 114–116 (halogen occurrence and
-  extraction), and finally the remaining scattered `FULL — UNIQUE` pages.
-- **`FULL — UNIQUE`: 20 of 37 done, 17 remaining** — exactly 20–27, 54–57,
+- **Next range for deep reading: PDF 24–27 (printed 491–494)** — the rest of
+  nitrogen fixation, which begins at the foot of printed 489. Then 54–57
+  (phosphorus sulphides), 109–110 (organo derivatives), 114–116 (halogen
+  occurrence and extraction).
+- **`FULL — UNIQUE`: 24 of 37 done, 13 remaining** — exactly 24–27, 54–57,
   109–110 and 114–116. After those: 9 `QUESTION GAP`, 2 `VISUAL ONLY`, then 95 of
   97 `FULL — PARTIALLY UNIQUE`.
 - **Destination:** Sections 7–19, as gap-fill on top of Addenda 1–4 — **IN

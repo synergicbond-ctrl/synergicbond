@@ -3627,19 +3627,30 @@ to a question students ask and textbooks usually dodge.
 
 ## H. Topic register — additions A223–A238
 
-A223 dioxygen manufacture and its argon impurity · A224 the three laboratory and
-special oxygen routes, including the aircraft chlorate candle · A225 why
-steelmaking replaced air with oxygen, and the nitride reason · A226 oxygen in the
-blast furnace enabling naphtha to displace coke · A227 the four named chemical
-uses of dioxygen · A228 the six sulphur extraction routes and their shares ·
-A229 sulphur recovery from natural gas and petroleum as the dominant modern source
-· A230 native sulphur deposits and their **bacterial** origin · A231 the Frasch
-process and its three concentric pipes · A232 **chalcophiles** · A233 sulphur from
-sulphate, and why it is uneconomic · A234 wet versus dry deposition, and why "acid
-rain" is a misnomer · A235 transboundary SO₂ pollution · A236 Se and Te from
-copper-refinery anode sludge and smelter flue dust · A237 selenium in xerography
-and in glass, both decolorising and colouring · A238 **polonium: discovery,
-reactor production, and why its aqueous chemistry is unknown**.
+*Format note (repair, 2026-07-27): this block was first written as a run-on
+prose list rather than as table rows. The IDs and content were correct, but the
+register's own duplicate/sequence check greps for table rows, so it reported the
+maximum topic ID as A222 while the true maximum was A238. Rewritten here in the
+standard table form so the check reads it. No ID or content changed.*
+
+| # | Topic | Where it belongs | Content |
+|---|---|---|---|
+| A223 | Dioxygen manufacture and its argon impurity | §11 | Fractional distillation of liquid air; the commercial gas carries N₂ and the noble gases, **particularly argon**, whose boiling point sits between N₂ and O₂ |
+| A224 | Three laboratory and special oxygen routes | §11 | KClO₃/MnO₂ at 150 °C (impure — traces of Cl₂ or ClO₂); `2HOCl —(Co²⁺)→ 2HCl + O₂`; electrolysis of acidified or baryta water; and **NaClO₃ heated for aircraft emergency breathing oxygen** |
+| A225 | Why steelmaking replaced air with oxygen | §11 | Basic oxygen process, from the Kaldo and LD processes, displacing Bessemer from the late 1950s. Three reasons: quicker conversion; **6 t Bessemer charge against 100 t BOP**; and **no nitride formation**, which is the chemical reason |
+| A226 | Oxygen in the blast furnace | §11 | Introduced with air so **naphtha can partly replace expensive metallurgical coke** |
+| A227 | Four named chemical uses of dioxygen | §11 | TiO₂ from TiCl₄ (pigment and plastics filler) · oxidising NH₃ for HNO₃ · oxirane from ethene · rocket oxidant |
+| A228 | **The six sulphur extraction routes and their shares** | §11 | Gas and petroleum 48 % · Frasch 19 % · pyrites 17 % · smelter gases 12 % · mined ore 4 % · from CaSO₄ 0.03 % |
+| A229 | Sulphur from fuel cleanup is now the dominant source | §11 | Canadian gas up to 20 % H₂S; refineries give 60 % of the USA total. The Claus principle: burn a third of the H₂S, react the SO₂ back with the rest |
+| A230 | Native sulphur deposits are of **bacterial** origin | §11 | Formed by anaerobes metabolising CaSO₄ to H₂S and S; Gulf of Mexico states and the upper Vistula |
+| A231 | The Frasch process and its three concentric pipes | §11 | Superheated steam down the outer, compressed air down the inner, molten sulphur up the middle; ~half an acre per borehole; very high purity |
+| A232 | **Chalcophiles** | §11 | The p-block metals and about half the transition metals form sulphide minerals and are collectively so called |
+| A233 | Sulphur from sulphate, and why it is uneconomic | §11 | `2CaSO₄ + C —(1200 °C)→ 2SO₂ + 2CaO + CO₂`, ~20 000 t/yr in Poland; other sources are cheaper |
+| A234 | **Wet versus dry deposition — "acid rain" is a misnomer** | §11 | SO₂ does not dissolve in raindrops appreciably; it arrives by dry deposition on ground surfaces. UK 1982: 50 dry against 5 wet kg ha⁻¹ yr⁻¹ |
+| A235 | Transboundary SO₂ pollution | §11 | Tall stacks move the problem elsewhere: only 10 % of Sweden's SO₂ is Swedish, 80 % continental European, 10 % British |
+| A236 | Se and Te recovery | §11 | From **copper-refinery anode sludge** (which also carries the platinum metals, Ag and Au) and from smelter flue dust trapped electrostatically; both also occur native with S |
+| A237 | Selenium both decolorises and colours glass | §11 | Most Se output decolorises glass, while **Cd(S,Se)** gives pink and red glass; plus the xerographic photoreceptor and the selenoenzyme glutathione peroxidase |
+| A238 | **Polonium: discovery, production, and why its chemistry is unknown** | §11 | Marie Curie, named for Poland, two Nobel Prizes; the ²¹⁰Pb → ²¹⁰Bi → ²¹⁰Po → ²⁰⁶Pb chain; made from Bi by neutron irradiation and extracted by sublimation; **²¹⁰Po's own α emission decomposes water**, which is why aqueous polonium chemistry is not known |
 
 ## I. Species register — additions
 
@@ -3738,3 +3749,213 @@ Read from 165 dpi renders of the accessible J.D. Lee 5th-edition scan. This rang
 has **no counterpart in file 8**, so there is no same-author duplication to
 discount — and no second source corroborates it. **No NCERT or Greenwood
 confirmation is claimed.**
+
+---
+
+# Addendum 15 — file 12 PDF 20–23 (printed 487–490): liquid ammonia, the azides, fertilisers and the Group 15 redox diagrams
+
+All four pages `DEEP READ — UNIQUE REGISTERED`. **PDF 24–27 of this range remain
+unread**, so the nitrogen-fixation section is registered only as far as its
+opening paragraph on printed 489; the rest continues on 490–494 and is explicitly
+outstanding.
+
+## A. Liquid ammonia as a solvent system (printed 487)
+
+| # | Topic | Where it belongs | Content |
+|---|---|---|---|
+| A239 | **The water/ammonia solvent-system analogy** | §8 | Zn(OH)₂ is amphoteric in water and **Zn(NH₂)₂ is amphoteric in ammonia**, and the two run in exact parallel: `Zn²⁺ + NaOH → Zn(OH)₂↓`, then excess NaOH → soluble `Na₂[Zn(OH)₄]`; against `Zn²⁺ + KNH₂ → Zn(NH₂)₂↓`, then excess KNH₂ → soluble `K₂[Zn(NH₂)₄]`. Amide is to ammonia what hydroxide is to water. |
+| A240 | **Metal solutions in liquid ammonia** | §8 | Liquid NH₃ is an excellent solvent for the alkali metals and for **Ca, Sr and Ba**. The solutions have **conductivity comparable to pure metals**, because `Na → [Na(NH₃)ₙ]⁺ + e⁻` releases **solvated electrons**. Ammonia solvates the cation but **resists reduction by the free electrons**, which is why the solution survives — and why it is such a powerful reducing agent. |
+| A241 | Why sodium residues must be destroyed, and how | §8 | Liquid ammonia dissolves metals well, but surfaces are left wet with NH₃; on evaporation a trace of **finely divided sodium** is left, which is **pyrophoric**. It is destroyed with an acid in liquid ammonia — an ammonium salt: `2NH₄Br + 2Na → 2NaBr + H₂ + 2NH₃`. Ammonium-salt solutions in liquid ammonia are used to clean the cooling systems of some nuclear reactors; **liquid sodium cools fast breeder reactors such as Dounreay**. |
+| A242 | **Ammonia is a levelling solvent** | §8 | Because it accepts protons readily it enhances the ionisation of weak acids: **acetic acid has pKₐ 5 in water but is almost completely ionised in liquid ammonia**. Ammonia therefore *reduces* the differences between acid strengths — the definition of a levelling solvent. |
+
+## B. Hydrogen azide and the azides, each species separately (printed 487–488)
+
+**HN₃, hydrogen azide** (formerly **hydrazoic acid**). Colourless **liquid, b.p.
+37 °C**, **highly poisonous**, **irritating odour**. **Both the liquid and the gas
+explode on heating or with violent shock**: `2HN₃ → H₂ + 3N₂`. Slightly more
+stable in aqueous solution but still to be handled with care; **pKₐ ≈ 5, a weak
+acid of similar strength to acetic acid**. Structure and bonding in §D below.
+
+**The metal reaction that behaves unlike every other acid–metal reaction.**
+`6HN₃ + 4Li → 4LiN₃ + 2NH₃ + 2N₂` — **balance-checked, and it balances** (Li 4,
+N 18, H 6 both sides). **No hydrogen is evolved**, which is what makes it
+anomalous.
+
+**Ionic versus covalent azides — the source's own division.** **Covalent azides
+are used as detonators and explosives; ionic azides are usually much more stable,
+and some are used as organic intermediates and dyestuffs.**
+
+**NaN₃, sodium azide.** The principal preparative route to all the others:
+**nitrous oxide passed into fused sodamide at 190 °C under anhydrous
+conditions**, or N₂O into sodamide dissolved in liquid ammonia.
+`N₂O + NaNH₂ → NaN₃ + H₂O`
+`H₂O + NaNH₂ → NH₃ + NaOH`
+Overall `N₂O + 2NaNH₂ → NaN₃ + NH₃ + NaOH` — **balance-checked, balances.**
+Converted to HN₃ by **H₂SO₄ followed by distillation**.
+
+**LiN₃, lithium azide.** Formed directly from HN₃ and lithium (above).
+
+**Pb(N₃)₂, lead azide.** Precipitated from sodium azide and a **soluble lead salt
+such as Pb(NO₃)₂**. **Shock-sensitive, used as a detonator to set off a high
+explosive charge**; **particularly reliable, and works even in damp conditions** —
+which is precisely why it is the detonator of choice rather than a curiosity.
+
+**Cyanuric triazide.** A triazine ring bearing three N₃ groups (Figure 14.6);
+**a powerful explosive.**
+
+**The halogen azides — fluorazide FN₃, chlorazide ClN₃, bromazide BrN₃ and
+iodazide IN₃.** All **extremely unstable and explosive**. **The dimer N₃–N₃ is
+unknown**, which is a genuine gap in the pseudohalogen analogy: every real
+halogen forms X₂, but azide does not.
+
+**N₃⁻ is classed as a pseudohalide ion** — cross-reference to A86 and the
+pseudohalogen table already registered from file 8, **expanded** here with the
+halogen azides and the missing dimer.
+
+**Analytical reduction of azide.**
+`NaN₃ + H₂S + H₂O → NH₃ + N₂ + S + NaOH` — **balance-checked, balances.**
+
+## C. Fertilisers (printed 489)
+
+The source gives the three nutrients **by function**, which is the part worth
+teaching:
+
+| # | Nutrient | Function | Forms named |
+|---|---|---|---|
+| A243 | **Nitrogen** | Plant growth, **particularly leaves**, because N is in amino acids and proteins, which must be made for new cells | Ammonium nitrate, other ammonium salts, nitrates, or **urea CO(NH₂)₂** |
+| A244 | **Phosphorus** | **Root growth** | A slightly soluble phosphate — **'superphosphate' or 'triple superphosphate'**, made from **fluoroapatite [3Ca₃(PO₄)₂·CaF₂]**; also **basic slag, a by-product of the steel industry** |
+| A245 | **Potassium** | **Flowering** | Often **K₂SO₄** |
+
+**What the source does *not* give:** percentage compositions, oxide-equivalent
+notation (P₂O₅ / K₂O), or NPK grade numbers. **None is guessed.** Those remain
+open for a source that supplies them.
+
+## D. MO-theory register — E44, a complete worked treatment
+
+- **E44 — N₃⁻ against HN₃: why one is linear and symmetric and the other bent and
+  unsymmetrical.** The source works this fully, and it is the best π-system
+  analysis in the Group 15 material.
+  **N₃⁻.** Sixteen outer electrons, **isoelectronic with CO₂**, and linear like
+  it. Four electrons make the two σ bonds; each terminal nitrogen keeps one
+  non-bonding pair. That leaves **16 − 4 − (2 × 2) = 8 electrons for π bonding**.
+  With σ and non-bonding electrons in the 2s and 2p_x orbitals, **six atomic
+  orbitals remain: three 2p_y and three 2p_z**. Each set of three forms **three
+  three-centre π molecular orbitals — one bonding, one non-bonding, one
+  antibonding**. The **eight π electrons fill both bonding and both non-bonding
+  MOs**, giving **two σ and two π bonds overall, N=N=N, bond order 2**, and
+  **both N–N bonds equal at 1.16 Å**.
+  **HN₃.** Adding hydrogen's electron forces **one electron into an antibonding
+  MO**, and the symmetry breaks: **N–N bonds become 1.24 Å and 1.13 Å**, bond
+  orders **about 1.5 and 2**, and **∠H–N–N = 112°** — bent.
+  **Why this matters to the course.** It *derives* the trap already registered as
+  item 51 in Addendum 1 ("N₃⁻ is linear but every halogen azide is bent") instead
+  of asserting it. One electron in an antibonding orbital is the whole
+  explanation. **No d orbitals are invoked, so the bonding-model policy split does
+  not apply here** — this is an evidence-and-MO case throughout.
+
+## E. Group 15 standard reduction potentials (printed 490) — a second Latimer set
+
+**Absent from file 8 entirely**, and the counterpart to the halogen diagrams
+registered in Addendum 11. Both acid and basic versions are given, with a
+footnote marking species that disproportionate. Transcribed from a 300 dpi
+re-render, rotated, after the page proved too small to read safely at 165 dpi.
+
+**Acid solution** (oxidation states +V → −III):
+`NO₃⁻ —0.79→ N₂O₄* —1.07→ HONO —1.00→ NO* —1.59→ N₂O* —1.77→ N₂ —(−1.87)→ NH₂OH —1.41→ N₂H₅⁺* —1.28→ NH₄⁺`
+Skip arcs: **+1.03**, **+0.96**, **+0.94**, **+1.29**, **−0.005**, **−0.23**,
+**+1.35**. Azide branch: **N₂ —(−3.09)→ HN₃**, and **HN₃ —(+0.70)→ NH₄⁺**.
+`H₃PO₄ —(−0.94)→ H₄P₂O₆* —(+0.38)→ H₃PO₃ —(−0.50)→ H₃PO₂ —(−0.51)→ P —(−0.1)→ P₂H₄* —(0.0)→ PH₃`; skips **−0.28**, **−0.50**, **−0.065**.
+`H₃AsO₄ —(+0.56)→ H₃AsO₃ —(+0.25)→ As —(−0.60)→ AsH₃`
+`Sb₂O₅ —(+0.48)→ Sb₂O₄* —(+0.68)→ SbO⁺ —(+0.21)→ Sb —(−0.51)→ SbH₃`; skip **+0.58**.
+`Bi₂O₅ —(+1.6)→ BiO⁺ —(+0.32)→ Bi —(−0.8)→ BiH₃`
+
+**Basic solution:**
+`NO₃⁻ —(−0.86)→ N₂O₄* —(+0.88)→ NO₂⁻ —(−0.46)→ NO* —(+0.76)→ N₂O* —(+0.94)→ N₂ —(−3.04)→ NH₂OH* —(+0.73)→ N₂H₄ —(+0.1)→ NH₃`
+Skips: **+0.01**, **+0.15**, **−1.05**, **−1.16**, **+0.42**.
+`PO₄³⁻ —(−1.12)→ HPO₃²⁻ —(−1.57)→ H₂PO₂⁻ —(−2.05)→ P₄* —(−0.89)→ PH₃`; skips **−1.18**, **−1.31**.
+
+**Species the source marks as disproportionating.** Acid: **N₂O₄, NO, N₂O,
+N₂H₅⁺, H₄P₂O₆, P₂H₄, Sb₂O₄**. Basic: **N₂O₄, NO, N₂O, NH₂OH, P₄**.
+**P₄ disproportionating in alkali is the registered `P₄ + NaOH → PH₃ + NaH₂PO₂`
+reaction seen from the redox side** — expansion of an existing entry, not a new
+one.
+
+**Topics registered from the diagrams.**
+
+| # | Topic | Where it belongs | Content |
+|---|---|---|---|
+| A246 | The Group 15 Latimer diagrams as one disproportionation map | §7–§10 | Acid and basic versions side by side, with the source's own asterisks marking every species unstable to disproportionation |
+| A247 | **Nitrogen is a strong oxidant in acid and a weak one in alkali** | §9 | Its potentials are overwhelmingly positive in acid and mostly negative in base — the same pH dependence already registered for the halogens (A207), now shown to be general |
+| A248 | **N₂ → HN₃ is −3.09 V, the most negative step on the page** | §7 | The thermodynamic statement of why azide is hard to make from dinitrogen, and why azides store so much energy — the redox counterpart of the explosive behaviour in §B |
+| A249 | **Hypophosphite and phosphite are reducers, not oxidants** | §10 | Strongly negative throughout (−1.57 and −2.05 V in base), which is the redox reason H₃PO₂ and H₃PO₃ behave as reducing agents |
+
+*Format note: this block was first written as prose, the same slip repaired
+earlier in this file for A223–A238. Caught by the register's own row-based
+sequence check and rewritten as table rows. No ID or content changed.*
+
+## F. Visual register — additions V112–V117
+
+| ID | Required visual kind | Subject |
+|---|---|---|
+| V112 | **MO energy diagram** | N₃⁻: the two sets of three-centre π MOs from 2p_y and 2p_z, eight electrons filling bonding and non-bonding levels, bond order 2, both bonds 1.16 Å |
+| V113 | **Comparison graphic + MO diagram** | N₃⁻ against HN₃ — one electron into an antibonding MO, and the geometry breaking to 1.24/1.13 Å and 112° |
+| V114 | **Comparison graphic** | Azide stability spectrum: ionic NaN₃/LiN₃ (stable, industrial) → Pb(N₃)₂ (shock-sensitive detonator) → FN₃/ClN₃/BrN₃/IN₃ and cyanuric triazide (extremely explosive), with "covalent = explosive, ionic = stable" as the organising axis |
+| V115 | **Process flow** | NaN₃ manufacture from N₂O and fused sodamide at 190 °C, with the second equation consuming the water, and the branch to HN₃ and to Pb(N₃)₂ |
+| V116 | **Original dark-theme redox map** | Group 15 Latimer diagrams, acid and basic, with the disproportionating species flagged and the −3.09 V N₂→HN₃ step called out |
+| V117 | **Comparison graphic** | Solvent-system analogy: water/hydroxide/Na₂[Zn(OH)₄] beside ammonia/amide/K₂[Zn(NH₂)₄] |
+
+## G. Uses, hazards, colours and observations
+
+**HN₃** — colourless liquid, b.p. 37 °C, **highly poisonous, irritating odour,
+explodes on heating or shock**. **NaN₃** — the industrial azide, precursor to all
+others. **Pb(N₃)₂** — **detonator; reliable even in damp conditions**.
+**Cyanuric triazide, FN₃, ClN₃, BrN₃, IN₃** — extremely unstable explosives.
+**Sodium metal residues from liquid ammonia** — **pyrophoric**, must be destroyed
+with an ammonium salt. **Metal–ammonia solutions** — conduct like metals, powerful
+reducing agents. **Fertilisers** — N for leaves, P for roots, K for flowering;
+basic slag as a steel by-product.
+
+## H. JEE trap register — items 209–217
+
+209. **HN₃ + electropositive metal evolves no hydrogen**, unlike every other
+     acid–metal reaction. It gives NH₃ and N₂ instead.
+210. **Covalent azides explode; ionic azides are comparatively stable.** The
+     ionic/covalent split predicts the hazard.
+211. **N₃⁻ is isoelectronic with CO₂** — 16 outer electrons, linear, bond order 2,
+     both bonds 1.16 Å.
+212. **HN₃ is bent with two different N–N lengths (1.24 and 1.13 Å)** because
+     hydrogen's electron enters an **antibonding** MO. The ion is symmetric; the
+     acid is not.
+213. **The dimer N₃–N₃ does not exist**, even though N₃⁻ is a pseudohalide and
+     every true halogen forms X₂.
+214. **HN₃ is a weak acid, pKₐ ≈ 5 — about as strong as acetic acid.**
+215. **Acetic acid is almost fully ionised in liquid ammonia** though pKₐ 5 in
+     water. Ammonia is a **levelling** solvent.
+216. **Metal–ammonia solutions conduct like metals** because of solvated
+     electrons, and ammonia resists being reduced by them.
+217. **N₂ → HN₃ is −3.09 V**, the most negative step in the Group 15 acid diagram
+     — the thermodynamic reason azides are hard to make and store so much energy.
+
+## I. Contradiction register — item 57
+
+57. **`Zn⁺ + KNH₂ → Zn(NH₂)₂` is printed with the wrong charge.** *Location:*
+    PDF 20 / printed 487, the ammonia half of the solvent-system comparison.
+    *The defect:* the parallel water equation directly above uses **Zn²⁺**, and
+    the products Zn(NH₂)₂ and K₂[Zn(NH₂)₄] both require zinc(II). **Zn⁺ is not a
+    zinc oxidation state in this chemistry.** *Correction:* **Zn²⁺**.
+    *Chemical issue:* none — the chemistry is right and the superscript is
+    wrong. *Verification needed:* none; self-checking against the adjacent
+    equation. *Safe for inclusion:* **yes, corrected.**
+
+## J. `[UNCLEAR]` register — no new items; none resolved
+
+All four pages were legible, printed 490 only after re-rendering at 300 dpi and
+rotating — recorded because the 165 dpi render was **not** safe to transcribe and
+was not guessed from. Count remains **3** (two on PDF 108, one on PDF 145).
+
+## K. Verification status
+
+Read from 165 dpi renders, with printed 490 re-read at 300 dpi rotated. These
+sections have **no counterpart in file 8**, so there is no same-author duplication
+to discount, and no second source corroborates them. **No NCERT or Greenwood
+confirmation is claimed.** Items 25–56 preserved; item 57 added.

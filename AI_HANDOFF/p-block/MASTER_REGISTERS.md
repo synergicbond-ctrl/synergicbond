@@ -2855,3 +2855,374 @@ Read from page images of the accessible J.D. Lee 5th-edition scan. The S₄N₄
 section has **no counterpart in file 8**, so there is no same-author duplication
 to discount — and equally **no second source corroborates it**. No NCERT or
 Greenwood confirmation is claimed.
+
+---
+
+# Addendum 11 — file 12 PDF 145–146 (printed 613–614): halogen standard reduction potentials
+
+Status: **PDF 145 `DEEP READ — UNIQUE REGISTERED`**, **PDF 146 `DEEP READ —
+PARTIAL ADDITIONS REGISTERED`** (its lower half, the Oxoacids section, largely
+duplicates file 8 §10.63). Original triage labels retained: 145 `FULL — UNIQUE`,
+146 `FULL — UNIQUE`.
+
+**Representation identified.** These are **Latimer diagrams** — species arranged
+left to right by falling oxidation state, with the standard reduction potential
+printed on the arrow joining each pair, and additional arcs giving multi-step
+("skip") potentials. They are **not** Frost/Ebsworth diagrams, which would plot
+nE° against oxidation state. Two separate diagrams are given: **acid solution
+(activity of H⁺ = 1)** and **basic solution (activity of OH⁻ = 1)**. Nothing of
+this kind appears anywhere in file 8.
+
+## A. Acid-solution Latimer diagram (printed 613), volts
+
+Oxidation-state columns: +VII, +V, +III, +I, 0, −I.
+
+**Fluorine.** `½F₂ —(+2.87)→ F⁻`. One step only; fluorine has no positive
+oxidation state, so the row is a single arrow — and it is the largest potential on
+the page.
+
+**Chlorine, adjacent steps.**
+`ClO₄⁻ —(+1.19)→ ClO₃⁻ —(+1.21)→ HClO₂ —(+1.65)→ HOCl —(+1.61)→ ½Cl₂ —(+1.36)→ Cl⁻`
+
+**Chlorine, skip-step arcs.** ClO₄⁻ → ½Cl₂ **+1.39** · ClO₃⁻ → ½Cl₂ **+1.47** ·
+HClO₂ → ½Cl₂ **+1.64** · ClO₃⁻ → Cl⁻ **+1.45** · HOCl → Cl⁻ **+1.48**.
+
+**Bromine, adjacent steps.**
+`BrO₄⁻ —(+1.74)→ BrO₃⁻ —(+1.47)→ HOBr —(+1.60)→ ½Br₂(l) —(+1.07)→ Br⁻`
+
+**Bromine, skip-step arcs.** BrO₃⁻ → ½Br₂ **+1.50** · BrO₃⁻ → Br⁻ **+1.42** ·
+HOBr → Br⁻ **+1.33**.
+
+**Bromine, a separate state entry.** `½Br₂(aq) —(+1.09)→ Br⁻`, listed alongside
+`½Br₂(l) —(+1.07)→ Br⁻`. **The diagram distinguishes liquid bromine from aqueous
+bromine and gives them different potentials** — a distinction the course does not
+currently make.
+
+**Iodine, adjacent steps.**
+`IO₄⁻ —(+1.65)→ IO₃⁻ —(+1.34)→ HOI —(+1.44)→ ½I₂(s) —(+0.54)→ I⁻`
+plus a second +VII entry: `H₅IO₆ —(+1.60)→ IO₃⁻`.
+
+**Iodine, skip-step arcs.** IO₃⁻ → ½I₂ **+1.19** · HOI → I⁻ **+0.99**.
+
+## B. Basic-solution Latimer diagram (printed 614), volts
+
+**Chlorine.**
+`ClO₄⁻ —(+0.36)→ ClO₃⁻ —(+0.33)→ ClO₂ —(+0.66)→ OCl⁻ —(+0.40)→ ½Cl₂ —(+1.36)→ Cl⁻`
+Skip arcs: **+0.50** across the ClO₃⁻ → OCl⁻ span, **+0.88** for OCl⁻ → Cl⁻.
+
+**Bromine.**
+`BrO₄⁻ —(+0.92)→ BrO₃⁻ —(+0.54)→ OBr⁻ —(+0.46)→ ½Br₂(l) —(+1.07)→ Br⁻`
+Skip arcs: **+0.52**, **+0.76** (OBr⁻ → Br⁻), **+0.61** (BrO₃⁻ → Br⁻).
+
+**Iodine.**
+`H₃IO₆²⁻ —(+0.7)→ IO₃⁻ —(+0.14)→ OI⁻ —(+0.45)→ ½I₂(s) —(+0.535)→ I⁻`
+Skip arcs: **+0.49**, **+0.26**.
+
+**Species the source marks with an asterisk, footnoted "Disproportionates":**
+**ClO₂**, **½Cl₂**, **BrO₄⁻**, **½Br₂(l)**. The author has done the
+disproportionation analysis and flagged the answers on the diagram.
+
+*Legibility note:* similar small marks appear on the **acid** diagram beside
+HClO₂, HOBr and HOI, but that page carries no visible legend, so whether they
+denote the same thing is **`[UNCLEAR — 15161718.pdf, PDF p. 145 / printed 613,
+asterisk-like marks beside HClO₂, HOBr and HOI in the acid-solution diagram;
+no footnote legend visible on that page]`**. Not assumed to mean
+"disproportionates".
+
+## C. Topic register — additions A205–A211
+
+| # | Topic | Where it belongs | Content |
+|---|---|---|---|
+| A205 | **Latimer diagrams, and how to read one** | §15/§16 (new subsection) | Species by falling oxidation state, E° on each arrow, arcs for multi-step couples. The skip-step value is **not** the sum of the steps — it is the electron-weighted mean, which is why the arcs are printed separately. |
+| A206 | **How a Latimer diagram predicts disproportionation** | §16 | A species is unstable to disproportionation when the potential on its **right** exceeds the potential on its **left**. Worked from this diagram: for HOCl, E°(HOCl→Cl⁻) = **+1.48** against E°(ClO₃⁻→HOCl) = **+1.43** (the electron-weighted mean of +1.21 and +1.65), so **HOCl disproportionates** — which is exactly what hypochlorite solutions do on standing. |
+| A207 | **Medium changes the whole picture** | §16 | Every halogen potential collapses on going from acid to base: ClO₄⁻/ClO₃⁻ falls **+1.19 → +0.36**, ClO₃⁻/HClO₂ **+1.21 → +0.33**, BrO₃⁻/HOBr **+1.47 → +0.54**, IO₃⁻/HOI **+1.34 → +0.14**. Oxidising power of the oxoanions is far weaker in alkali. |
+| A208 | **The X₂/X⁻ couple is the one that does *not* change** | §16 | ½Cl₂/Cl⁻ is **+1.36 in both media**, and ½Br₂(l)/Br⁻ is **+1.07 in both**. Because no H⁺ or OH⁻ appears in `½X₂ + e⁻ → X⁻`, pH cannot shift it. The contrast with A207 is the teaching point: potentials move only when the half-equation contains H⁺ or OH⁻. |
+| A209 | **Liquid bromine and aqueous bromine are different couples** | §16 | ½Br₂(l)/Br⁻ **+1.07**, ½Br₂(aq)/Br⁻ **+1.09**. The state of the oxidant is part of the standard state. |
+| A210 | **Iodine's +VII state is written two ways** | §16 | Acid: **IO₄⁻ (+1.65)** *and* **H₅IO₆ (+1.60)**, both feeding IO₃⁻. Basic: **H₃IO₆²⁻ (+0.7)**. Periodate's speciation is pH-dependent, and the diagram records it. |
+| A211 | **Iodine's oxoanion potentials are the weakest of the halogens** | §16 | IO₃⁻/OI⁻ is only **+0.14** in base, against +0.33 for chlorine and +0.54 for bromine. This is why iodate is a mild oxidant in alkali while chlorate is not. |
+
+## D. Species register — additions and expansions
+
+**New to the registers from these two pages:** **BrO₄⁻ perbromate** as an entry in
+a potential diagram (previously registered only as "discovered 1968") · **ClO₂ as
+an alkaline-solution species that disproportionates** · **OCl⁻, OBr⁻, OI⁻** as
+the basic-medium hypohalites distinct from HOCl/HOBr/HOI · **H₃IO₆²⁻** the
+basic-medium periodate · **½Br₂(aq)** as a couple distinct from ½Br₂(l) ·
+**HClO₂** with its measured potentials.
+
+**Expanded, not re-registered** (same IDs, new source page printed 613): the
+iodine oxides. File 8 recorded only that I₂O₄ and I₄O₉ are "stable and ionic"
+(trap 64); this page gives the **specific formulations** — **I₂O₄ is probably
+IO⁺·IO₃⁻ and I₄O₉ is probably I³⁺·(IO₃⁻)₃** — while stating that **the structures
+of these oxides are not known.** Registered as a *probable* formulation, not a
+fact.
+
+## E. Preparation and reaction register — additions (printed 613, above the diagram)
+
+`2I₂ + 3O₃ → I₄O₉` — already registered from file 8; **expanded** with a second
+route: `HIO₃ —(P₂O₅ or H₃PO₄, −H₂O)→ I₄O₉`.
+`4I₄O₉ → 6I₂O₅ + 2I₂ + 3O₂` — **I₄O₉ decomposes above 75 °C.**
+`5I₂O₄ → 4I₂O₅ + I₂` — **I₂O₄ decomposes above 135 °C**, and I₂O₄ itself is made
+by **dehydrating HIO₃ with concentrated H₂SO₄**.
+
+Both decomposition temperatures and both iodine-oxide preparations are new.
+
+## F. MO-theory / bonding register — E42, with the policy split
+
+- **E42 — the oxoacid stabilisation argument, as this edition states it.**
+  *Historical / examination model, quoted in substance:* all the oxoanion
+  structures are tetrahedral; the **sp³ hybrids form only weak σ bonds because
+  the s and p levels differ appreciably in energy**; and the ions are
+  **stabilised by strong pπ–dπ bonding from full oxygen 2p orbitals into empty d
+  orbitals on the halogen**. The corollary the source draws: **fluorine has no d
+  orbitals, therefore no pπ–dπ, therefore for a long time it was thought to form
+  no oxoacid at all — and in the event only HOF exists, under special conditions
+  and very unstable.**
+  *Modern interpretation:* **PENDING AUTHORITATIVE VERIFICATION** — same standing
+  as E21 and the policy block. The predictive success (no fluorine oxoacids
+  beyond HOF) is retained as the examination model's genuine payoff; substantial
+  halogen d-orbital participation is **not** promoted to the preferred modern
+  explanation. **Greenwood and NCERT are both absent, so no corroboration is
+  claimed.** This duplicates file 8 §10.63 in substance and creates **no new MO
+  ID beyond E42's cross-reference to E21** — recorded here only because the
+  fifth edition states the argument more explicitly.
+
+## G. Visual register — additions V97–V99
+
+| ID | Required visual kind | Subject |
+|---|---|---|
+| V97 | **Original dark-theme redox map** (Latimer, `ComparisonGraphic` or a new component) | Acid-solution halogen Latimer diagram, all four halogens, adjacent and skip potentials, drawn on the chapter's dark surface with F₂'s +2.87 called out as the extreme. **Original layout — must not reproduce the source's box-and-arc arrangement.** |
+| V98 | **Original dark-theme redox map** | Basic-solution counterpart, with the four disproportionating species (ClO₂, ½Cl₂, BrO₄⁻, ½Br₂) marked by the `warn` token and a legend that says so in words |
+| V99 | **Comparison graphic** | Acid against base for the *same* couples: the oxoanion potentials collapsing (+1.19→+0.36, +1.21→+0.33, +1.47→+0.54, +1.34→+0.14) beside the two that do not move at all (Cl₂/Cl⁻ +1.36, Br₂/Br⁻ +1.07). The visual *is* the argument that pH only matters when H⁺ or OH⁻ is in the half-equation. |
+
+## H. JEE trap register — items 174–181
+
+174. **Cl₂/Cl⁻ is +1.36 V in both acid and base**, and Br₂/Br⁻ is +1.07 in both.
+     Potentials shift with pH **only** when H⁺ or OH⁻ appears in the
+     half-equation.
+175. **Halogen oxoanions are much weaker oxidants in alkali** — ClO₃⁻/HClO₂ falls
+     from +1.21 to +0.33 on going from acid to base.
+176. **HOCl disproportionates**, and the Latimer diagram proves it: +1.48 on the
+     right against +1.43 on the left.
+177. **In alkali the source flags ClO₂, Cl₂, BrO₄⁻ and Br₂ as disproportionating.**
+     Chlorine itself disproportionates in base — which is the bleach reaction.
+178. **A skip-step potential is not the sum of the steps.** It is the
+     electron-weighted mean, which is why ClO₄⁻→½Cl₂ is +1.39 and not
+     1.19 + 1.21 + 1.65 + 1.61.
+179. **½Br₂(l) and ½Br₂(aq) have different potentials** (+1.07 and +1.09). The
+     physical state belongs to the standard state.
+180. **Periodate is IO₄⁻ or H₅IO₆ in acid but H₃IO₆²⁻ in base.** Writing IO₄⁻ in
+     alkali misses the speciation.
+181. **F₂/F⁻ at +2.87 V is the only entry in the fluorine row**, because fluorine
+     has no positive oxidation state and therefore no oxoanion series to descend.
+
+## I. Contradictions — no new items; one new `[UNCLEAR]`
+
+No numerical or textual conflict with Addenda 1–10. The acid-diagram asterisk
+legend is recorded as `[UNCLEAR]` in §B above rather than assumed. **Items 25–54
+preserved unchanged.** `[UNCLEAR]` count rises from 2 to 3.
+
+## J. Verification status
+
+Read from a 170 dpi render of the accessible J.D. Lee 5th-edition scan. Every
+potential above was transcribed from the diagram, not computed — the only computed
+figure is the +1.43 electron-weighted mean in A206, which is shown with its
+arithmetic. **No NCERT or Greenwood corroboration is claimed**, and the redox
+values are therefore single-sourced.
+
+---
+
+# Addendum 12 — file 12 PDF 161–162 (printed 629–630): halogen cations and superacid media
+
+Both pages `DEEP READ — UNIQUE REGISTERED`. Triage label was `FULL — UNIQUE` and
+it holds: **file 8 has no halogen-cation section at all.**
+
+## A. The equation the brief asked me to check — it does not balance as printed
+
+The source prints, with SO₂ as solvent:
+
+`2I₂ + 5SbF₅ → [I₂]⁺[Sb₂F₁₁]⁻ + SbF₃`
+
+**Atom balance as printed.** Left: I 4, Sb 5, F 25. Right: I 2, Sb 3, F 14.
+**Iodine, antimony and fluorine all fail.**
+
+**With the product coefficient corrected to 2:**
+
+`2I₂ + 5SbF₅ → 2[I₂]⁺[Sb₂F₁₁]⁻ + SbF₃`
+
+Left I 4, Sb 5, F 25 · Right I 4, Sb (4 + 1) = 5, F (22 + 3) = 25. **Balanced.**
+Electrons also balance: 2I₂ → 2[I₂]⁺ releases 2 e⁻, and one Sb(V) → Sb(III) takes
+2 e⁻.
+
+**Conclusion.** The printed equation is **missing the coefficient 2 on the salt**.
+Registered as **contradiction item 55**, with the corrected form used in the
+course and the source's form recorded. This also **supersedes the provisional
+transcription in Addendum 8 §C**, which took the equation from a header montage
+without balancing it — corrected there by cross-reference rather than by editing
+history.
+
+**Role of SbF₅ — the brief asked, and the source is explicit enough to answer.**
+SbF₅ is doing **two jobs**: it is the **oxidant** (Sb(V) → Sb(III), which is what
+makes SbF₃ a product) and it is the **fluoride acceptor** that builds the
+Sb₂F₁₁⁻ counter-ion, which needs two SbF₅ units per anion. **SO₂ is the solvent
+only.** Five SbF₅ split as four into two Sb₂F₁₁⁻ and one reduced to SbF₃.
+
+## B. Other preparations, transcribed and checked
+
+`2I₂ + S₂O₆F₂ —(HSO₃F)→ 2[I₂]⁺[SO₃F]⁻`, and then **on cooling to −80 °C** the
+cation dimerises: `2[I₂]⁺ → [I₄]²⁺`, giving `[I₄]²⁺ 2[SO₃F]⁻`. **A temperature-
+controlled cation dimerisation.**
+
+`Br₂ + SbF₅ —(BrF₃)→ [Br₂]⁺[Sb₃F₁₆]⁻` — note the counter-ion here is
+**Sb₃F₁₆⁻**, not Sb₂F₁₁⁻. Different halogen, different fluoroantimonate.
+
+`Cl₂ + ClF₃ + AsF₅ → [Cl₃]⁺[AsF₆]⁻ + F₂`
+`Br₂ + BrF₃ + AsF₅ → [Br₃]⁺[AsF₆]⁻ + F₂`
+`I₂ + ICl + AlCl₃ → [I₃]⁺[AlCl₄]⁻`
+`2I₂ + ICl + AlCl₃ → [I₅]⁺[AlCl₄]⁻`
+
+## C. **The bond-length evidence — the best MO argument in the halogen chapter**
+
+- **Br–Br in [Br₂]⁺ is 2.15 Å, against 2.27 Å in Br₂.** The bond in the **cation
+  is shorter and stronger than in the neutral element**, and the source draws the
+  conclusion explicitly: **the electron removed came from an antibonding
+  orbital.** The same holds for [I₂]⁺, whose bond is stronger than in I₂.
+
+## D. Topic register — additions A212–A220
+
+| # | Topic | Where it belongs | Content |
+|---|---|---|---|
+| A212 | **Halogens have basic (cation-forming) properties at the bottom of the group** | §15 (new subsection) | Metallic character rises down a group and falls across a period, so the trend is weakest in Group 17. Astatine would be expected to form cations most readily. **The source insists: iodine is still not a metal.** |
+| A213 | **Fluorine has no basic properties at all** | §15 | Most electronegative element, therefore **no tendency whatever to form positive ions**. The one row of the group with no cation chemistry. |
+| A214 | **Iodine in oleum gives bright blue paramagnetic solutions** | §15 | Long thought to contain I⁺; **now known to contain [I₂]⁺.** The correction of a historical misassignment, and the paramagnetism is the clue. |
+| A215 | **[Br₂]⁺ is bright red and paramagnetic**, also from oleum | §15 | Same chemistry, different colour — a clean colour/species pairing. |
+| A216 | **[Cl₂]⁺ exists but only spectroscopically, in discharge tubes** | §15 | The existence ladder: I₂⁺ crystallisable, Br₂⁺ crystallisable, Cl₂⁺ transient, F₂⁺ absent. |
+| A217 | **The chalcogens do the same thing** | §12/§15 cross-link | S dissolves in oleum giving **blue paramagnetic solutions of [Sₙ]²⁺ cations — [S₄]²⁺, [S₈]²⁺ and [S₁₉]²⁺** — and Se and Te behave similarly. Ties the halogen cation chemistry to Group 16 and gives the course a genuine cross-group pattern. |
+| A218 | **The polyhalogen cations are bent; the polyhalide anions are linear** | §15 | [Br₃]⁺ and [I₃]⁺ structures established by **X-ray crystallography and Raman spectroscopy**, and both are **always bent** — in direct contrast to **linear [I₃]⁻**. Structures of the larger cations are not known with certainty. |
+| A219 | **Molten interhalogens self-ionise, and electrolysis proves it** | §15 | ICl and IBr **conduct when molten**, and electrolysis of molten ICl liberates **I₂ and Cl₂ at both electrodes** — which is only consistent with both a cation and an anion carrying iodine. Molten ICN behaves the same way. |
+| A220 | **Change the solvent and the ionisation mode changes** | §15 | Electrolysis of ICl **dissolved in pyridine** gives I₂ at the **cathode only**, pointing to the simpler `2ICl → [I(pyridine)₂]⁺ + [ICl₂]⁻`. The same substance ionises two different ways depending on medium — and adding **AlCl₃ to molten ICl greatly increases conductivity** by a third route. |
+
+## E. Species register — additions
+
+**Dihalogen cations:** **[I₂]⁺**, **[Br₂]⁺**, **[Cl₂]⁺**.
+**Higher halogen cations:** **[I₃]⁺**, **[Br₃]⁺**, **[Cl₃]⁺**, **[I₅]⁺**,
+**[Br₅]⁺**, **[I₄]²⁺**.
+**Fluoroantimonate and fluoroarsenate counter-ions:** **[Sb₂F₁₁]⁻**,
+**[Sb₃F₁₆]⁻**, **[AsF₆]⁻**, **[SO₃F]⁻**, **[AlCl₄]⁻**.
+**Interhalogen self-ionisation ions:** **[I₂Cl]⁺**, **[ICl₂]⁻**, **[ICl₄]⁻**,
+**[BrF₄]⁻**, **[BrF₂]⁺**, **[I₂CN]⁺**, **[I(CN)₂]⁻**, **[I(pyridine)₂]⁺**,
+**[Br(pyridine)₂]⁺**.
+**Reagents and media:** SbF₅, AsF₅, BrF₃ (as solvent), **S₂O₆F₂ peroxodisulphuryl
+difluoride**, **HSO₃F fluorosulphuric acid**, **oleum**, SO₂ (as solvent), AlCl₃,
+ICN, Br(pyridine)₂NO₃.
+**Chalcogen polycations (cross-registered to Group 16):** **[S₄]²⁺**, **[S₈]²⁺**,
+**[S₁₉]²⁺**.
+**Reported but unresolved:** **I₅SO₃F**, a **black solid** reported as a maximum
+on a phase diagram; **whether it contains [I₇]⁺ is not known** — the source says
+so, and it is registered as an open question, not as a species.
+
+## F. Reaction register — additions
+
+`Br(pyridine)₂NO₃ ⇌ [Br(pyridine)₂]⁺ + NO₃⁻`
+`2BrF₃ ⇌ [BrF₂]⁺ + [BrF₄]⁻`
+`3ICl ⇌ [I₂Cl]⁺ + [ICl₂]⁻` — **expansion** of the entry already registered from
+file 8 §10.64; new here is the **electrolysis evidence** (I₂ and Cl₂ at both
+electrodes).
+`3ICN ⇌ [I₂CN]⁺ + [I(CN)₂]⁻` in the melt.
+`2ICl —(pyridine)→ [I(pyridine)₂]⁺ + [ICl₂]⁻`
+`AlCl₃ + 2ICl → [I₂Cl]⁺ + [AlCl₄]⁻`
+
+## G. Structure register — additions
+
+**[ICl₂]⁻** — five electron pairs, trigonal bipyramidal with **three** lone pairs
+equatorial, therefore **linear**. **[ICl₄]⁻ and [BrF₄]⁻** — six electron pairs,
+octahedral with **two** lone pairs, therefore **square planar** (Figure 16.15).
+**[Br₃]⁺ and [I₃]⁺ — bent.** **[I₃]⁻ — linear.**
+**[Br₂]⁺ — 2.15 Å; Br₂ — 2.27 Å.**
+
+*Terminology note:* the source calls [ICl₄]⁻ and [BrF₄]⁻ "**pentahalide ions**",
+counting five atoms in total rather than four halogen ligands. Recorded so the
+course does not adopt the phrase without explanation.
+
+## H. MO-theory register — addition E43
+
+- **E43 — Ionising a halogen molecule strengthens its bond.** Removing one
+  electron from X₂ takes it out of a **filled π\* antibonding** orbital, so the
+  bond order rises from **1 to 1.5** and the bond **shortens and strengthens**.
+  The source states the antibonding conclusion outright, and the measurement is
+  on the page: **2.15 Å in [Br₂]⁺ against 2.27 Å in Br₂**. This is the exact
+  mirror of E17, where *adding* an electron pair into σ\* lengthened I–I from
+  2.66 Å to 2.92 Å in I₃⁻. **The two together are the cleanest pair of MO
+  predictions in the whole chapter — one bond shortened by removing an
+  antibonding electron, one lengthened by adding antibonding electrons — and both
+  are confirmed by measured distances.** No d orbitals are invoked, so the
+  policy split does not apply. Paramagnetism of the [I₂]⁺ and [Br₂]⁺ solutions is
+  independent confirmation: a bond order of 1.5 requires one unpaired electron.
+
+## I. Colour, magnetism and observation register — additions
+
+| Species / system | Observation |
+|---|---|
+| I₂ in oleum → [I₂]⁺ | **Bright blue**, **paramagnetic** |
+| Br₂ in oleum → [Br₂]⁺ | **Bright red**, **paramagnetic** |
+| [Cl₂]⁺ | Seen only spectroscopically, in discharge tubes |
+| S in oleum → [Sₙ]²⁺ | **Blue**, **paramagnetic** |
+| I₅SO₃F | **Black solid** |
+| Molten ICl, IBr | **Electrically conducting** |
+| Molten ICl + AlCl₃ | Conductivity **greatly increased** |
+
+## J. Visual register — additions V100–V103
+
+| ID | Required visual kind | Subject |
+|---|---|---|
+| V100 | **MO energy diagram** | X₂ → [X₂]⁺: the electron leaving π\*, bond order 1 → 1.5, with 2.27 → 2.15 Å annotated, drawn to sit directly beside V42 (I₃⁻) so the shorten/lengthen pair reads as one argument |
+| V101 | **Process flow / ionisation sequence** | The superacid route: I₂ in SO₂ with SbF₅ acting as both oxidant and fluoride acceptor, showing where SbF₃ and Sb₂F₁₁⁻ each come from — and the −80 °C branch to [I₄]²⁺ |
+| V102 | **Structure gallery** | Polyhalogen cation gallery: bent [I₃]⁺ and [Br₃]⁺ against linear [I₃]⁻, plus [I₅]⁺ and [I₄]²⁺, with the bent/linear contrast as the organising axis |
+| V103 | **Comparison graphic + JEE trap graphic** | Existence ladder down the group: F₂⁺ absent, [Cl₂]⁺ spectroscopic only, [Br₂]⁺ and [I₂]⁺ crystallisable — beside the colour and paramagnetism data |
+
+## K. JEE trap register — items 182–190
+
+182. **The bond in [Br₂]⁺ is *shorter* than in Br₂** (2.15 vs 2.27 Å), because the
+     electron is removed from an antibonding orbital. Ionisation does not always
+     weaken a bond.
+183. **Blue iodine solutions in oleum contain [I₂]⁺, not I⁺.** The I⁺ assignment
+     is the historical error the source corrects.
+184. **[I₃]⁺ is bent but [I₃]⁻ is linear.** Adding or removing electrons changes
+     the lone-pair count on the central atom and therefore the shape.
+185. **Fluorine forms no cations at all**, so the "halogen cation" chemistry has
+     only three members, and [Cl₂]⁺ only spectroscopically.
+186. **Sulphur does the same as iodine in oleum**, giving blue paramagnetic
+     [S₄]²⁺, [S₈]²⁺ and [S₁₉]²⁺.
+187. **Electrolysis of molten ICl gives I₂ *and* Cl₂ at *both* electrodes** —
+     the signature of self-ionisation into [I₂Cl]⁺ and [ICl₂]⁻.
+188. **The same ICl ionises differently in pyridine**, giving I₂ at the cathode
+     only. Solvent decides the ionisation mode.
+189. **SbF₅ is both the oxidant and the fluoride acceptor** in the [I₂]⁺
+     synthesis; SO₂ is only the solvent. Calling SbF₅ "the solvent" is the trap.
+190. **[I₂]⁺ dimerises to [I₄]²⁺ on cooling to −80 °C.** The cation you get
+     depends on temperature.
+
+## L. Contradiction register — item 55
+
+55. **`2I₂ + 5SbF₅ → [I₂]⁺[Sb₂F₁₁]⁻ + SbF₃` is unbalanced as printed.**
+    *Location:* PDF 162 / printed 630, first equation. *The defect:* iodine,
+    antimony and fluorine all fail — left I 4/Sb 5/F 25 against right I 2/Sb 3/F
+    14. *Correction:* the salt needs a coefficient of **2**, after which atoms and
+    electrons both balance and Sb(V) → Sb(III) accounts exactly for the oxidation
+    of two I₂. *Chemical issue:* none — the chemistry is sound, the coefficient is
+    a typesetting loss. *Verification needed:* none; the arithmetic is
+    self-checking. *Safe for inclusion:* **yes, in the corrected form.** Also
+    **supersedes the provisional transcription in Addendum 8 §C.**
+
+## M. `[UNCLEAR]` register — no new items
+
+Both pages were fully legible at 170 dpi. Count remains **3** (two from Addendum
+10 on PDF 108, one from Addendum 11 on PDF 145). **None has been replaced by a
+guess.**
+
+## N. Verification status
+
+Read from 170 dpi renders. This section has **no counterpart in file 8**, so there
+is no same-author duplication to discount — and no second source corroborates it.
+**No NCERT or Greenwood confirmation is claimed.** Items 25–54 preserved; item 55
+added.

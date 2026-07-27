@@ -136,13 +136,13 @@ Last updated: 2026-07-26.
 |---|---|---|---|
 | Files 1–6 (original six) | 437 | **325** | 74 % |
 | Files 7–11 (new five) | 1294 | **191** | 14.8 % |
-| File 12 (`15161718.pdf`, p-block part only) | 184 | **10** | 5.4 % |
-| **Total project** | **1915** | **526** | **27 %** |
+| File 12 (`15161718.pdf`, p-block part only) | 184 | **14** | 7.6 % |
+| **Total project** | **1915** | **530** | **28 %** |
 
 Files 7–12 breakdown: file 7 (JD Lee 5th ed., whole book) 5 / 1057 · **file 8 (JD Lee
 adapted Ch. 10) 172 / 172 — COMPLETE** · file 9 (annotated notes) 0 / 40 · file 10
 (annotated notes) 0 / 11 · file 11 (noble-gas notes) 14 / 14 · **file 12 (JD Lee 5th ed.
-Ch. 14–17 extract) 10 / 184 deeply read, **209 / 209 triaged**.
+Ch. 14–17 extract) 14 / 184 deeply read, **209 / 209 triaged**.
 
 **Denominator history, so the movement is auditable.** Locating file 12 added its pages to
 a corpus that had been missing them, taking the total from 1731 to 1940 and the completion
@@ -243,6 +243,39 @@ cross-references resolving, all 20 lessons non-empty.
     absent from file 8): 6 topics, ~20 species, 8 reactions, the S₄N₄ bond-length
     argument, 1 MO case (E41), 3 visuals, 7 JEE traps, **2 `[UNCLEAR]` items**
     and 0 new contradictions.
+  - **PDF 145–146 = printed 613–614** (Addendum 11). Halogen **standard reduction
+    potentials**, absent from file 8. Identified as **Latimer diagrams**, not
+    Frost/Ebsworth, with separate **acid (H⁺ activity 1)** and **basic (OH⁻
+    activity 1)** versions. Every adjacent and skip-step potential transcribed for
+    F, Cl, Br and I; the four species the source flags as disproportionating in
+    base recorded; 7 topics, ~12 new species, 4 reactions, 1 MO cross-reference
+    (E42, held at pending verification), 3 visuals, 8 JEE traps, **1 new
+    `[UNCLEAR]`** (the acid-diagram asterisk legend), 0 new contradictions.
+  - **PDF 161–162 = printed 629–630** (Addendum 12). **Halogen cations and
+    superacid media**, absent from file 8: 9 topics, ~35 species, 10 reactions,
+    the [Br₂]⁺ 2.15 Å / Br₂ 2.27 Å bond-length evidence, 1 MO case (**E43**),
+    4 visuals, 9 JEE traps, **1 new contradiction (item 55)**.
+
+**Page-status fields for the deeply read pages** (triage label kept visible
+alongside the deep-read outcome, as required):
+
+| PDF | Printed | Triage label | Deep-read outcome |
+|---|---|---|---|
+| 1–5 | 468–472 | `FULL — UNIQUE` | `DEEP READ — UNIQUE REGISTERED` |
+| 6 | 473 | `FULL — PARTIALLY UNIQUE` | `DEEP READ — PARTIAL ADDITIONS REGISTERED` |
+| 58 | 525 | `FULL — UNIQUE` | `DEEP READ — UNIQUE REGISTERED` |
+| 59 | 526 | `FULL — UNIQUE` | `DEEP READ — UNIQUE REGISTERED` |
+| 107 | 575 | `FULL — PARTIALLY UNIQUE` | `DEEP READ — PARTIAL ADDITIONS REGISTERED` |
+| 108 | 576 | `FULL — UNIQUE` | `DEEP READ — UNIQUE REGISTERED` |
+| 145 | 613 | `FULL — UNIQUE` | `DEEP READ — UNIQUE REGISTERED` |
+| 146 | 614 | `FULL — UNIQUE` | `DEEP READ — PARTIAL ADDITIONS REGISTERED` (lower half duplicates §10.63) |
+| 161 | 629 | `FULL — UNIQUE` | `DEEP READ — UNIQUE REGISTERED` |
+| 162 | 630 | `FULL — UNIQUE` | `DEEP READ — UNIQUE REGISTERED` |
+
+**Separate counts, as required.** Pages visually triaged **209** · pages deeply
+inspected **14** · pages yielding unique additions **14** (none yet returned
+`NO NEW CONTENT`) · duplicate pages sampled **32** · non-p-block pages **25**.
+The audited-page denominator is not reduced for any page.
 - **Sections found to be absent from file 8 altogether** — the queue that
   justifies reading this file at all: **Phosphazenes and cyclophosphazenes**
   (PDF 58–59) · **Compounds of sulphur and nitrogen, S₄N₄** (107–108) ·
@@ -258,16 +291,20 @@ cross-references resolving, all 20 lessons non-empty.
   Addendum 8 map did not separate. Corrected: **PDF 59–60 = Organometallic
   compounds (`FULL — UNIQUE`), PDF 61 = Further reading (`NOT RELEVANT`)**. Bucket
   totals unchanged.
-- **`[UNCLEAR]` items outstanding — 2**, both on PDF 108 / printed 576: the four
+- **`[UNCLEAR]` items outstanding — 3.** Two on PDF 108 / printed 576: the four
   larger bicyclo S–N formulae, and the coefficients of the S₄N₄ + NaOH + H₂O
-  hydrolysis equation. Neither is guessed; both are marked unsafe to publish until
-  re-read from a cleaner copy or at higher resolution.
-- **Next page for deep reading: PDF p. 145 (printed 613)** — Standard reduction
-  potentials, acidic and basic solution diagrams, third in the unique queue. Then
-  161–162 (halogen cations), 95–96 (Se/Te oxoacids), 68–73 (Group 16 extraction),
-  20–27 (nitrogen fixation and azides), 54–57 (phosphorus sulphides), 109–110
-  (haemoglobin), 114–116 (halogen occurrence). Pages 7–57 remain triaged but not
-  deeply read.
+  hydrolysis equation. One on PDF 145 / printed 613: whether the asterisk-like
+  marks beside HClO₂, HOBr and HOI in the **acid** Latimer diagram carry the same
+  "disproportionates" meaning as the footnoted asterisks on the basic diagram —
+  that page shows no legend. **None is guessed; all three are marked unsafe to
+  publish until re-read.**
+- **Next range for deep reading: PDF 95–96 (printed 563–564)** — oxoacids of
+  selenium and tellurium, including the condensed pyroselenate Se₂O₇²⁻. Then
+  68–73 (Group 16 occurrence and extraction), 20–27 (hydrogen azide and nitrogen
+  fixation), 54–57 (phosphorus sulphides), 109–110 (organo derivatives and
+  haemoglobin), 114–116 (halogen occurrence and extraction).
+- **`FULL — UNIQUE` pages remaining: 24 of 38** (14 done). After those: 9
+  `QUESTION GAP`, 2 `VISUAL ONLY`, then 97 of 98 `FULL — PARTIALLY UNIQUE`.
 - **Destination:** Sections 7–19, as gap-fill on top of Addenda 1–4 — **IN
   PROGRESS**
 

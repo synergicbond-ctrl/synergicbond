@@ -4139,3 +4139,157 @@ All four pages legible at 165 dpi. Count remains **3**.
 Read from 165 dpi renders. No counterpart in file 8; no second source
 corroborates. **No NCERT or Greenwood confirmation is claimed.** Items 25–57
 preserved; 58 and 59 added.
+
+---
+
+# Addendum 17 — file 12 PDF 54–57 (printed 521–524): phosphoric acid uses, the phosphorus sulphides, and the opening of the phosphazenes
+
+All four pages `DEEP READ — UNIQUE REGISTERED`. **Map refinement:** the
+phosphazene section begins on **printed 524 (PDF 57)**, one page earlier than the
+Addendum 8 map placed it, so Addendum 9 (PDF 58–59) registered only its later
+half. The opening — catenation limits, monophosphazenes, the polymer-forming
+reaction and the ring/chain series — is registered here. Bucket totals unchanged.
+
+## A. Phosphoric acid: what it is actually used for (printed 521)
+
+| # | Topic | Where it belongs | Content |
+|---|---|---|---|
+| A266 | **The H₃PO₄ use breakdown** | §10 | **3 %** food industry — the acid taste in cola (**pH 2**), sarsaparilla and root beer, and as an emulsifier in processed cheese, dried milk and sausages · **2½ %** metal treatment · **1 %** each for industrial uses, phosphorus sulphides, organophosphorus compounds and pharmaceuticals · **½ %** flameproofing |
+| A267 | **Three distinct metal treatments, often confused** | §10 | **(a) Rustproofing** — hot metal dipped in H₃PO₄, or the acid heated to **90–95 °C**, sometimes with Zn²⁺, Mn²⁺ or Cu²⁺ present; the named processes are **Parkerizing and Bonderizing**, used on nuts, bolts, screws, car bodies and refrigerators before painting. **(b) Pickling** — removing scale and oxide from iron and steel in an acid bath. **(c) 'Bright dipping' of aluminium** — the part is made the **anode** and electrolysed in H₃PO₄ with a little HNO₃ and a trace of Cu(NO₃)₂, giving a polished surface protected by clear **Al₂O₃** |
+| A268 | Industrial and consumer phosphates, each named | §10 | Water softening (**calgon**, **Na₃PO₄**) · buffers (**NaH₂PO₄ / Na₂HPO₄**) · paint strippers (Na₃PO₄) · removing H₂S from petroleum gases (**K₃PO₄**) · plasticisers (**triaryl phosphates**), insecticides (**triethyl phosphate**), petrol additives (**tritolyl phosphate**) · toothpaste (**CaHPO₄·2H₂O**, or **Ca₂P₂O₇ in fluoride toothpaste**) · baking powder (**Ca(H₂PO₄)₂ with NaHCO₃**) · flameproofing (ammonium phosphates and **urea phosphate NH₂CONH₂·H₃PO₄**) |
+| A269 | **Phosphate eutrophication — a second, separate pollution story** | §10 | Phosphates from domestic waste water pass through sewage works into rivers and lakes, **nourish bacteria which deplete dissolved dioxygen and kill fish**, and cause a massive overgrowth of water plants **whose decay and putrefaction kills fish again**. Distinct from the nitrate eutrophication registered as A263 — same outcome, different nutrient |
+| A270 | **Condensation ability falls P → As → Sb** | §10 | Phosphates and phosphites resemble arsenates and arsenites, but **condensed As anions are much less stable than the P polyanions and hydrolyse rapidly in water**. **Antimonates and antimonites exist, but Sb has coordination number 6 and the salts contain the octahedral [Sb(OH)₆]⁻ ion** — so the analogy breaks structurally at antimony, not just in stability |
+
+## B. The phosphorus sulphides, each registered separately (printed 521–523)
+
+**How they form.** Heating P and S together **above 100 °C** gives **P₄S₃, P₄S₅,
+P₄S₇ and P₄S₁₀**, depending on the relative amounts of reactants. **Two more,
+P₄S₄ and P₄S₉, have been made by other reactions.**
+
+**The structural principle.** **P₄S₁₀ is structurally the same as P₄O₁₀** — but
+**the other sulphides have no counterparts among the oxides**. They are loosely
+related to P₄O₆ and P₄O₁₀: **a tetrahedron of P atoms, with some S bridging
+between P atoms and others in apical positions attached to a single P**.
+
+**P₄S₃, tetraphosphorus trisulphide.** **The most stable sulphide.** Made by
+heating **red phosphorus with a limited amount of sulphur to 180 °C in an inert
+atmosphere**. **Soluble in toluene and carbon disulphide**; unreacted P is removed
+by **recrystallisation from toluene or by distillation**. Structure (Figure
+14.19): an apical P joined through **three bridging S atoms** to a basal P₃
+triangle **whose P–P bonds are retained** — so P₄S₃ still contains P–P bonding,
+which P₄S₁₀ does not. **Use: matches.** A match head contains **P₄S₃, KClO₃,
+fillers and glue**; friction against the sandpaper strip **initiates a violent
+reaction between P₄S₃ and KClO₃**, and the heat ignites the match.
+
+**P₄S₅, tetraphosphorus pentasulphide.** Formed with P₄S₃, P₄S₇ and P₄S₁₀ on
+direct heating. Structure (Figure 14.19): a P₄ tetrahedron with bridging S and
+**one terminal P=S**.
+
+**P₄S₇, tetraphosphorus heptasulphide.** Direct heating. Structure: more bridging
+S than P₄S₅, with **terminal P=S groups**, and no counterpart among the oxides.
+
+**P₄S₁₀, tetraphosphorus decasulphide.** **The most important sulphide.** Made by
+reacting **liquefied white phosphorus at 300 °C with a slight excess of sulphur**.
+**World production about 250 000 tonnes/year.** **Structurally identical to
+P₄O₁₀** — four terminal P=S and six bridging S, **no P–P bonds**.
+`P₄S₁₀ + 16H₂O → 4H₃PO₄ + 10H₂S` — **balance-checked, balances.**
+**Its most important reaction is alcoholysis**, to dialkyl or diaryl
+dithiophosphoric acids: `P₄S₁₀ + 8EtOH → 4(EtO)₂P(S)SH + 2H₂S` —
+**balance-checked, balances.**
+
+**P₄S₄ and P₄S₉.** Named as existing, **made by other reactions**; no structures,
+preparations or properties are given, and none has been supplied from elsewhere.
+
+**P₄S₆ — the interesting absence.** The source calls it **"surprising"** that
+P₄S₆ does not exist, given that P₄O₆ does. Registered as a gap, not a compound.
+
+## C. The thiophosphate industry (printed 523)
+
+| # | Topic | Content |
+|---|---|---|
+| A271 | **Zinc dialkyldithiophosphates as extreme-pressure lubricant additives** | **[(RO)₂P(S)]₂Zn** — used in high-pressure lubricants such as **gearbox oil** |
+| A272 | **Thiophosphates as flotation agents** | **(EtO)₂P(S)Na** and **(EtO)₂P(S)NH₄** concentrate sulphide ores such as **PbS and ZnS before smelting** — connecting Group 15 chemistry directly to the Group 16 extraction registered in Addendum 14 |
+| A273 | **Organophosphorus pesticides and their mode of action** | The methyl and ethyl derivatives make **malathion and parathion**. They **inhibit acetylcholinesterase**, the enzyme that destroys the neurotransmitter **acetylcholine** after a nerve impulse crosses a synapse, so the insect's nervous system fails. **Malathion and parathion are not toxic to mammals if eaten, because the digestive system breaks the molecule down before it enters the body** — the selectivity has a specific chemical cause |
+
+`(EtO)₂P(S)SH + Cl₂ → (EtO)₂P(S)Cl + HCl + S`
+`(EtO)₂P(S)Cl + NaOC₆H₄NO₂ → (EtO)₂P(S)OC₆H₄NO₂ (parathion)` — **see
+contradiction 60.**
+
+## D. Phosphazenes — the section opening (printed 524)
+
+| # | Topic | Content |
+|---|---|---|
+| A274 | **N and P barely catenate with themselves** | Maximum chain length for **nitrogen is three**, in the **azide ion N₃⁻**; for **phosphorus it is two**, in **P₂H₄** and **(Me₂)(S)P–P(S)(Me₂)**. Ring compounds exist with **four, five or six P or As atoms**. This is the setup for the contrast that follows |
+| A275 | **But N and P catenate readily with each other** | Which is what makes the phosphazenes a large family. **In them P is (+V) and N is (+III)**, and the compounds are **formally unsaturated** |
+| A276 | **Monophosphazenes from an azide** | `PCl₃ + C₆H₅N₃ → Cl₃P=NC₆H₅ + N₂` and `P(C₆H₅)₃ + C₆H₅N₃ → (C₆H₅)₃P=NC₆H₅ + N₂`. Reagents named: **PCl₃, POR₃ and P(C₆H₅)₃** |
+| A277 | **The ring/chain polymer reaction and its product distribution** | `nPCl₅ + nNH₄Cl —(120–150 °C)→ (NPCl₂)ₙ + 4nHCl` — **balance-checked, balances** — giving **rings with n = 3, 4, 5, 6** plus **fairly short linear chains** `Cl₄P(NPCl₂)ₙNPCl₃`. **The most common rings are n = 3 and 4**, i.e. six- and eight-membered |
+| A278 | **Ring conformation depends on ring size** | **The six-membered ring (n = 3) is flat; the eight-membered ring (n = 4) exists in 'chair' and 'boat' conformations.** This is a direct structural addition to the phosphazene material in Addendum 9, and it bears on contradiction 54 — a *flat* six-ring is what invites the benzene comparison the source elsewhere rejects |
+| A279 | **Chain length range** | From short chains **P₂NCl₇, P₃N₂Cl₉, P₄N₃Cl₁₁** up to **10⁴ units** |
+
+`3PCl₅ + 2NH₄Cl → [Cl₃P=N–PCl₂=N–PCl₃]⁺Cl⁻ + 8HCl` — **balance-checked,
+balances** (P 3, N 2, Cl 17, H 8 each side). **See contradiction 61 on its
+label.**
+
+## E. Visual register — additions V123–V128
+
+| ID | Required visual kind | Subject |
+|---|---|---|
+| V123 | **Structure gallery + 3D model** | The four cages side by side — P₄S₃, P₄S₅, P₄S₇, P₄S₁₀ — on one P₄ tetrahedral frame, with **bridging S in one colour and terminal P=S in another**, and the retained P–P bonds of P₄S₃ highlighted |
+| V124 | **Comparison graphic** | P₄S₁₀ against P₄O₁₀ (identical) beside P₄S₃ against P₄O₆ (not identical), with **P₄S₆'s absence marked as a gap in the grid** |
+| V125 | **JEE trap graphic** | Formula-to-cage matching: given a drawing, count P, count bridging S, count terminal S, decide whether a P–P edge survives |
+| V126 | **Reaction network** | P₄S₁₀ downstream: hydrolysis to H₃PO₄, alcoholysis to dithiophosphoric acids, then the branch to Zn lubricant additives, flotation agents and parathion |
+| V127 | **Process flow** | Match-head chemistry: friction → P₄S₃ + KClO₃ → heat → ignition, with the components listed |
+| V128 | **Structure comparison** | Flat six-membered (NPCl₂)₃ ring beside the chair and boat forms of the eight-membered (NPCl₂)₄ |
+
+## F. JEE trap register — items 227–235
+
+227. **P₄S₃ retains the P–P bonds of the basal triangle; P₄S₁₀ has none.** The
+     cage is not simply "P₄ with sulphurs added" in every case.
+228. **P₄S₁₀ is structurally identical to P₄O₁₀, but the other sulphides have no
+     oxide counterparts.** Do not assume a sulphide structure from the oxide.
+229. **P₄S₆ does not exist**, although P₄O₆ does — the source itself calls this
+     surprising.
+230. **P₄S₃, not P₄S₁₀, is the match compound**, and it burns against **KClO₃**,
+     not against oxygen from the air.
+231. **P₄S₃ is the most stable sulphide; P₄S₁₀ is the most important one.** Two
+     different superlatives for two different compounds.
+232. **Malathion and parathion are safe to mammals if eaten** because the
+     digestive system destroys them first — not because they lack the enzyme
+     target.
+233. **In a phosphazene, phosphorus is +V and nitrogen is +III.**
+234. **Nitrogen's self-catenation limit is three atoms (the azide ion) and
+     phosphorus's is two** — yet together they build polymers of 10⁴ units.
+235. **The six-membered phosphazene ring is flat, but the eight-membered ring is
+     not** — it adopts chair and boat forms.
+
+## G. Contradiction register — items 60 and 61
+
+60. **The parathion equation loses NaCl.** *Location:* PDF 56 / printed 523.
+    *As printed:* `(EtO)₂P(S)Cl + NaOC₆H₄NO₂ → (EtO)₂P(S)OC₆H₄NO₂`. *The
+    defect:* sodium and chlorine appear on the left and nowhere on the right.
+    *Correction:* **+ NaCl** on the right, after which it balances.
+    *Chemical issue:* none — a standard nucleophilic displacement with the salt
+    omitted. *Safe for inclusion:* **yes, corrected.**
+61. **A three-phosphorus cation is labelled a "diphosphazene".** *Location:*
+    PDF 57 / printed 524. *As printed:* the heading reads *Diphosphazenes can be
+    made as follows*, and the product is
+    `[Cl₃P=N–PCl₂=N–PCl₃]⁺Cl⁻`, which contains **three P and two N**. *The
+    issue:* by the naming pattern used for monophosphazenes (one P), a cation
+    with three P is not a diphosphazene. **The equation itself balances
+    correctly**, so the chemistry is sound and only the label is in question.
+    *Verification needed:* a nomenclature authority; **none in this corpus**.
+    *Safe for inclusion:* **the equation and the structure yes, the name no.**
+    The course will describe it as a linear phosphazenium cation and give the
+    atom count rather than repeat the label.
+
+## H. `[UNCLEAR]` register — no new items; none resolved
+
+All four pages legible at 170 dpi, including the Figure 14.19 cages, which were
+read atom by atom rather than assumed from a conventional textbook structure.
+Count remains **3**.
+
+## I. Verification status
+
+Read from 170 dpi renders. No counterpart in file 8; no second source
+corroborates. **No NCERT or Greenwood confirmation is claimed.** Items 25–59
+preserved; 60 and 61 added.

@@ -136,13 +136,13 @@ Last updated: 2026-07-26.
 |---|---|---|---|
 | Files 1–6 (original six) | 437 | **325** | 74 % |
 | Files 7–11 (new five) | 1294 | **191** | 14.8 % |
-| File 12 (`15161718.pdf`, p-block part only) | 184 | **16** | 8.7 % |
-| **Total project** | **1915** | **532** | **28 %** |
+| File 12 (`15161718.pdf`, p-block part only) | 184 | **22** | 12.0 % |
+| **Total project** | **1915** | **538** | **28 %** |
 
 Files 7–12 breakdown: file 7 (JD Lee 5th ed., whole book) 5 / 1057 · **file 8 (JD Lee
 adapted Ch. 10) 172 / 172 — COMPLETE** · file 9 (annotated notes) 0 / 40 · file 10
 (annotated notes) 0 / 11 · file 11 (noble-gas notes) 14 / 14 · **file 12 (JD Lee 5th ed.
-Ch. 14–17 extract) 16 / 184 deeply read, **209 / 209 triaged**.
+Ch. 14–17 extract) 22 / 184 deeply read, **209 / 209 triaged**.
 
 **Denominator history, so the movement is auditable.** Locating file 12 added its pages to
 a corpus that had been missing them, taking the total from 1731 to 1940 and the completion
@@ -261,6 +261,13 @@ cross-references resolving, all 20 lessons non-empty.
     **octahedral Te(OH)₆**, 3 visuals, 7 JEE traps, **1 new contradiction (item
     56)**. p95's polythionate and peroxoacid material duplicates §10.52 and is
     cross-referenced, not re-registered.
+  - **PDF 68–73 = printed 535–540** (Addendum 14), the six-page **Group 16
+    occurrence, extraction and industrial recovery** range, absent from file 8
+    entirely: 16 topics, ~30 new species (plus 8 expanded), the six-route sulphur
+    share table, the Frasch three-pipe mechanism, Table 15.3's 17 sulphide ores,
+    the wet-versus-dry deposition distinction, Se/Te recovery from copper anode
+    sludge, and a complete **polonium** section. 5 visuals, 11 JEE traps, **0 new
+    contradictions** — every printed equation balances.
 
 **Page-status fields for the deeply read pages** (triage label kept visible
 alongside the deep-read outcome, as required):
@@ -279,11 +286,31 @@ alongside the deep-read outcome, as required):
 | 162 | 630 | `FULL — UNIQUE` | `DEEP READ — UNIQUE REGISTERED` |
 | 95 | 563 | `FULL — UNIQUE` | `DEEP READ — PARTIAL ADDITIONS REGISTERED` (polythionates/peroxoacids duplicate §10.52) |
 | 96 | 564 | `FULL — UNIQUE` | `DEEP READ — UNIQUE REGISTERED` |
+| 68 | 535 | `FULL — UNIQUE` | `DEEP READ — UNIQUE REGISTERED` |
+| 69 | 536 | `FULL — UNIQUE` | `DEEP READ — UNIQUE REGISTERED` |
+| 70 | 537 | `FULL — UNIQUE` | `DEEP READ — UNIQUE REGISTERED` |
+| 71 | 538 | `FULL — UNIQUE` | `DEEP READ — UNIQUE REGISTERED` |
+| 72 | 539 | `FULL — UNIQUE` | `DEEP READ — UNIQUE REGISTERED` |
+| 73 | 540 | `FULL — UNIQUE` | `DEEP READ — UNIQUE REGISTERED` |
 
-**Separate counts, as required.** Pages visually triaged **209** · pages deeply
-inspected **16** · pages yielding unique additions **16** (none yet returned
-`NO NEW CONTENT`) · duplicate pages sampled **32** · non-p-block pages **25**.
-The audited-page denominator is not reduced for any page.
+**Separate counts, recounted in code rather than tallied by hand.** All pages
+triaged **209** · p-block pages **184** · **fully unique pages 37** (the Addendum-8
+figure was 38; **PDF 107 was reclassified to partially unique in Addendum 10**
+once the S–N section turned out to start in its last paragraph) · **fully unique
+pages deeply inspected 20** · **fully unique pages remaining 17** · partially
+unique pages compared **2 of 97** · duplicate pages sampled **32** · visual-only
+pages inspected **0 of 2** · question-gap pages audited **0 of 9** ·
+not-relevant pages **30** · pages with unclear content **3**.
+
+**Total pages deeply inspected 22** = 20 fully unique + 2 partially unique
+(PDF 6 and PDF 107). All 22 yielded additions; **none has returned
+`DEEP READ — NO NEW CONTENT`.** The audited-page denominator is not reduced for
+any page.
+
+**The 17 fully unique pages still outstanding, listed to prove the count:**
+**20, 21, 22, 23, 24, 25, 26, 27** (hydrogen azide and the azides; nitrogen
+fixation) · **54, 55, 56, 57** (phosphorus sulphides) · **109, 110** (organo
+derivatives) · **114, 115, 116** (Group 17 occurrence and extraction).
 - **Sections found to be absent from file 8 altogether** — the queue that
   justifies reading this file at all: **Phosphazenes and cyclophosphazenes**
   (PDF 58–59) · **Compounds of sulphur and nitrogen, S₄N₄** (107–108) ·
@@ -306,13 +333,14 @@ The audited-page denominator is not reduced for any page.
   "disproportionates" meaning as the footnoted asterisks on the basic diagram —
   that page shows no legend. **None is guessed; all three are marked unsafe to
   publish until re-read.**
-- **Next range for deep reading: PDF 68–73 (printed 535–540)** — Group 16
-  occurrence, extraction and industrial recovery, six pages, the largest remaining
-  unique block and the one file 8 omits entirely. Then 20–27 (hydrogen azide and
-  the azides, nitrogen fixation), 54–57 (phosphorus sulphides), 109–110 (organo
-  derivatives and haemoglobin), 114–116 (halogen occurrence and extraction).
-- **`FULL — UNIQUE` pages remaining: 22 of 38** (16 done). After those: 9
-  `QUESTION GAP`, 2 `VISUAL ONLY`, then 96 of 98 `FULL — PARTIALLY UNIQUE`.
+- **Next range for deep reading: PDF 20–27 (printed 487–494)** — hydrogen azide
+  and the azides, then nitrogen fixation; eight pages, both sections flagged as
+  missing from the course since the first register. Then 54–57 (phosphorus
+  sulphides), 109–110 (organo derivatives), 114–116 (halogen occurrence and
+  extraction), and finally the remaining scattered `FULL — UNIQUE` pages.
+- **`FULL — UNIQUE`: 20 of 37 done, 17 remaining** — exactly 20–27, 54–57,
+  109–110 and 114–116. After those: 9 `QUESTION GAP`, 2 `VISUAL ONLY`, then 95 of
+  97 `FULL — PARTIALLY UNIQUE`.
 - **Destination:** Sections 7–19, as gap-fill on top of Addenda 1–4 — **IN
   PROGRESS**
 

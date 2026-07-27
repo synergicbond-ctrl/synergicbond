@@ -37,6 +37,8 @@ export default function DBlockHubPage() {
           </div>
         </header>
 
+        <DBlockVisualLibrary />
+
         <section className="mt-8 grid gap-5 md:grid-cols-2">
           {parts.map(([number, title, description]) => (
             <Link
@@ -55,7 +57,6 @@ export default function DBlockHubPage() {
             </Link>
           ))}
         </section>
-        <DBlockVisualLibrary />
       </div>
     </main>
   );

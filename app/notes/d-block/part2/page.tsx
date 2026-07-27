@@ -433,6 +433,8 @@ export default function DBlockPart02() {
           </div>
         </nav>
 
+        <DBlockPartVisuals part={2} />
+
         <div className="mt-6 space-y-7">
           {PAGES.map((page, index) => {
             const Visual = page.visual ? VISUALS[page.visual] : undefined;
@@ -454,7 +456,6 @@ export default function DBlockPart02() {
           })}
         </div>
 
-        <DBlockPartVisuals part={2} />
 
         <footer className="mt-8 rounded-2xl border border-white/10 bg-white/[0.035] px-5 py-4 text-sm leading-6 text-slate-400">
           This file contains theory, tables, equations and original scientific visuals only. Practice questions and detailed solutions are intentionally reserved for the later assessment phase.

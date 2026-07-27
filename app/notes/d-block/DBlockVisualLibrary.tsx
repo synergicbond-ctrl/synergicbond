@@ -245,7 +245,7 @@ export function DBlockPartVisuals({ part }: { part: number }) {
       <div className="grid gap-5 lg:grid-cols-2">
         {images.map((image, index) => (
           <figure key={`${image.src}-${index}`} className={index === 0 ? "overflow-hidden rounded-2xl border border-cyan-300/20 bg-[#02060c] lg:col-span-2" : "overflow-hidden rounded-2xl border border-white/10 bg-[#02060c]"}>
-            <div className="relative aspect-video overflow-hidden"><img src={image.src} alt={image.title} width={image.width} height={image.height} loading="lazy" decoding="async" className="h-full w-full object-contain" /></div>
+            <div className="relative aspect-video overflow-hidden"><img src={image.src} alt={image.title} width={image.width} height={image.height} loading={index === 0 ? "eager" : "lazy"} decoding="async" className="h-full w-full object-contain" /></div>
             <figcaption className="border-t border-white/10 px-4 py-4"><h3 className="font-black text-white">{image.title}</h3><p className="mt-1.5 text-sm leading-6 text-slate-400">{image.caption}</p></figcaption>
           </figure>
         ))}

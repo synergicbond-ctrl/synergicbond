@@ -28,17 +28,17 @@ that its dev server is separately broken by an unrelated RSC-manifest fault.
 
 | | |
 |---|---|
-| **Corpus** | **592 / 1915 pages (31 %)** |
+| **Corpus** | **600 / 1915 pages (31 %)** |
 | Files 1–6 | 325 / 437 |
 | File 7 (JD Lee 5th ed., whole book) | 5 / 1057 |
 | **File 8** (JD Lee adapted, Ch. 10, all six groups) | **172 / 172 — COMPLETE** |
 | File 9, 10 (handwritten notes) | 0 / 40, 0 / 11 — vision only, OCR garbled |
 | File 11 (noble gas notes) | 14 / 14 |
-| **File 12** (`15161718.pdf`, JD Lee 5th ed. Ch. 14–17) | 209/209 triaged · **76 / 184 deeply read** |
+| **File 12** (`15161718.pdf`, JD Lee 5th ed. Ch. 14–17) | 209/209 triaged · **84 / 184 deeply read** |
 
-**Register IDs:** Topics **A1–A390** (contiguous, no gaps, no duplicates, every
-one a table row) · Visuals **V164** · MO cases **E45** · Traps and numbered items
-**303** · Contradictions **25–76** · Source defects **D1–D13** · `[UNCLEAR]` **5
+**Register IDs:** Topics **A1–A414** (contiguous, no gaps, no duplicates, every
+one a table row) · Visuals **V168** · MO cases **E45** · Traps and numbered items
+**314** · Contradictions **25–78** · Source defects **D1–D13** · `[UNCLEAR]` **5
 distinct items**.
 
 ---
@@ -96,13 +96,16 @@ AgNO₃ silver-halide ladder with ammonia, and the boiling point of helium.
 **Every queue except `FULL — PARTIALLY UNIQUE` is now closed.**
 
 **PDF 117–122 (Addendum 22), PDF 131–136 (Addendum 23), PDF 137–138
-(Addendum 24), PDF 167–170 (Addendum 25), PDF 139–144 (Addendum 26) and
-PDF 123–124 (Addendum 27) are done.**
+(Addendum 24), PDF 167–170 (Addendum 25), PDF 139–144 (Addendum 26),
+PDF 123–124 (Addendum 27) and PDF 145–152 (Addendum 28) are done.**
 
-1. **75 remaining `FULL — PARTIALLY UNIQUE` pages**, in section-sized ranges.
-   **Next: PDF 145–152 (printed 613–620, standard reduction potentials in
-   acidic and basic solution, plus oxoacids — `FULL — UNIQUE`, absent from
-   file 8 entirely).** **Then PDF 153–158 (printed 621–626, interhalogens).**
+1. **69 remaining `FULL — PARTIALLY UNIQUE` pages**, in section-sized ranges.
+   **Next: PDF 153–158 (printed 621–626, interhalogens).** **Important finding
+   from Addendum 28: a `FULL — UNIQUE`/"absent from file 8" label does not
+   guarantee the content is new to the whole project** — PDF 145–146's
+   Latimer diagrams turned out to already be registered (A205–A211) from
+   elsewhere in the corpus. Check the full registers, not just the file-8
+   equivalent column, before assuming a page is new.
 
 2. **Still-open gaps (only two remain):** **HF with graphite** — the source
    gives F₂ with graphite (A315), not HF, so the question-page pairing stands

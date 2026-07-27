@@ -6392,3 +6392,301 @@ four topic additions and one visual.
 
 **File 12: 74 + 2 = 76 of 184 deeply read.**
 **`FULL — PARTIALLY UNIQUE`: 24 of 99 read, 75 remaining.**
+
+---
+
+# Addendum 28 — file 12 PDF 145–152 (printed 613–620): reduction-potential diagrams confirmed, and the oxoacids in full
+
+**Seventh `FULL — PARTIALLY UNIQUE`/`FULL — UNIQUE` range.** Eight pages. **The
+single biggest finding of this range is negative**: the Addendum-8 map's label
+for PDF 145–146 — `FULL — UNIQUE`, file-8 equivalent "**absent entirely**" — is
+**contradicted by this project's own pre-existing registers.** Both Latimer
+diagrams (acid, printed 613; basic, printed 614) are **already registered in
+full, value for value, at A205–A211**, from a source predating this shift. The
+map's "absent entirely" was accurate only against file 8; **it was never
+accurate against this project's total corpus**, and this addendum corrects the
+record rather than re-registering matched data as new. **PDF 147–152, the
+oxoacids proper, are almost entirely new** and carry the bulk of this range's
+yield.
+
+| PDF | Printed | Section | Triage | Deep-read outcome | File-8 equivalent |
+|---|---|---|---|---|---|
+| 145 | 613 | I₂O₄/I₄O₉ tail; acid-solution Latimer diagram | `FULL — UNIQUE` | **`DEEP READ — NO NEW CONTENT`** (both matched against pre-existing A205–A211 and against the pre-existing iodine-oxide entry) | absent |
+| 146 | 614 | Basic-solution Latimer diagram; Table 16.15; oxoacid bonding | `FULL — UNIQUE` | `DEEP READ — PARTIAL ADDITIONS REGISTERED` (Latimer diagram confirmed only; Table 16.15 and bonding rationale new) | absent |
+| 147 | 615 | Figure 16.9; hypohalous acids; HOF; NaOCl manufacture | `FULL — PARTIALLY UNIQUE` | `DEEP READ — VISUAL ADDITION REGISTERED` + partial additions | §10.63 |
+| 148 | 616 | Hydrated-halogen equilibria; disproportionation kinetics; chlorous acid | `FULL — PARTIALLY UNIQUE` | **`DEEP READ — CONTRADICTION FOUND`** + partial additions | §10.63 |
+| 149 | 617 | Chlorites; halic acids; chlorate manufacture | `FULL — PARTIALLY UNIQUE` | **`DEEP READ — CONTRADICTION FOUND`** + partial additions | §10.63 |
+| 150 | 618 | Chlorate decomposition/hazards; perhalic acids opening | `FULL — PARTIALLY UNIQUE` | `DEEP READ — PARTIAL ADDITIONS REGISTERED` | §10.63 |
+| 151 | 619 | HClO₄ manufacture, hazards, uses; perchlorate coordination chemistry | `FULL — PARTIALLY UNIQUE` | **`DEEP READ — CONTRADICTION FOUND`** + partial additions | §10.63 |
+| 152 | 620 | Perbromates; periodates; glycol cleavage | `FULL — PARTIALLY UNIQUE` | `DEEP READ — PARTIAL ADDITIONS REGISTERED` | §10.63 |
+
+## A. PDF 145 (printed 613) and the reduction-potential diagrams — confirmed, not new
+
+**Top of the page** continues the iodine-oxide material from Addendum 26: **`2I₂
++ 3O₃ → I₄O₉`**, **`HIO₃ →(P₂O₅ or H₃PO₄, −H₂O) I₄O₉`**, **`4I₄O₉ → 6I₂O₅ + 2I₂ +
+3O₂`** (I₄O₉ decomposes above 75 °C), **`5I₂O₄ → 4I₂O₅ + I₂`** (I₂O₄ decomposes
+above 135 °C, itself made by dehydrating HIO₃ with concentrated H₂SO₄), and the
+structural guesses **I₂O₄ probably IO⁺·IO₃⁻, I₄O₉ probably I³⁺·(IO₃⁻)₃.**
+**Every one of these equations and both structural formulae are already
+registered verbatim in this document** (the pre-existing iodine-oxide entry
+this document already carries, predating this shift). **All five equations
+re-checked here regardless, and all balance** — `2I₂+3O₃→I₄O₉` (I4/4, O9/9);
+`4I₄O₉→6I₂O₅+2I₂+3O₂` (I16/(12+4)=16, O36/(30+6)=36); `5I₂O₄→4I₂O₅+I₂`
+(I10/(8+2)=10, O20/20).
+
+**The acid-solution Latimer diagram** (chlorine, bromine, iodine branches, every
+E° value from F₂/F⁻ +2.87 down through the three halogen ladders) is
+**transcribed identically to the pre-existing A205, A209–A211 entries** — every
+value checked digit-for-digit against this page: **+1.39, +1.47, +1.64, +1.19,
++1.21, +1.65, +1.61, +1.36, +1.48, +1.45** (chlorine); **+1.74, +1.50, +1.47,
++1.60, +1.07, +1.33, +1.42, +1.09** (bromine, including the liquid/aqueous
+Br₂ distinction A209 already flags); **+1.65, +1.60, +1.34, +1.44, +0.54, +1.19,
++0.99** (iodine, including the two +VII entries IO₄⁻ and H₅IO₆ that A210
+already registers). **No numeral differs.**
+
+**The pre-existing `[UNCLEAR]` about the acid diagram's unlabelled asterisks is
+confirmed, not resolved, by this page.** Small marks appear beside ClO₃⁻, HClO₂,
+HOBr and HOI on this exact page, and **this page's acid-diagram box carries no
+legend line**, exactly as the earlier note describes — **the same absence in a
+second instance of the same diagram**, which is repetition of the omission, not
+new evidence either way. `[UNCLEAR]` count **stays at 5.**
+
+## B. PDF 146 (printed 614) — basic diagram confirmed; two genuine additions
+
+**The basic-solution Latimer diagram** (chlorine +0.36/+0.33/+0.66/+0.40/+1.36,
+bromine +0.92/+0.54/+0.46/+1.07, iodine +0.7/+0.14/+0.45/+0.535, all skip-arcs,
+and the four asterisked species **ClO₂, ½Cl₂, BrO₄⁻, ½Br₂(l)** footnoted
+**"Disproportionates"**) is **already registered in full at A206–A211**, and
+every value on this page matches. `DEEP READ — NO NEW CONTENT` for the diagram
+itself.
+
+| # | Topic | Content |
+|---|---|---|
+| A391 | **Table 16.15 — the four oxoacid series by oxidation state, with the missing bromous/iodous acids named explicitly** | **HOX (+I): HOF, HOCl, HOBr, HOI, all four known.** **HXO₂ (+III): only HClO₂ — no bromous or iodous acid is known at all**, a genuine gap in the series, not an omission by the course. **HXO₃ (+V): HClO₃, HBrO₃, HIO₃**, all three known. **HXO₄ (+VII): HClO₄, HBrO₄, HIO₄**, all three known. **The column header for the (+III) series prints without its subscript ("HXO"), and its single entry prints as "HClO" rather than "HClO₂"** — the same subscript-dropping scan defect already documented elsewhere in this corpus (Addendum 26 §B); **resolved unambiguously from the very next section heading, "Halous acids HXO₂", and from the surrounding prose's repeated "HClO₂".** |
+| A392 | **Why the oxoacids are weak-σ, strong-π species — the source's own bonding argument, kept in the historical column** | **"The structures of the ions formed are shown in Figure 16.9. All these structures are based on a tetrahedron. The sp³ hybrid orbitals used for bonding form only weak σ bonds, because the s and p levels differ appreciably in energy. The ions are stabilized by strong pπ–dπ bonding between full 2p orbitals on oxygen with empty d orbitals on the halogen atoms."** **Registered under the project's standing three-column bonding policy**: *experimental* — the tetrahedral geometry itself (Figure 16.9) and the ions' persistence despite weak calculated σ-bond strength; *historical/examination model* — sp³ hybridisation plus pπ–dπ donation from oxygen into empty halogen d orbitals, stated here in the source's own words and kept because examinations use it; *modern interpretation* — **none offered by the source on this page, and none supplied here**: **PENDING VERIFICATION**, Greenwood absent. **"Even so, many of the oxoacids are known only in solution or as their salts"** — the practical consequence of "weak σ, strengthened only by π back-donation" is that the neutral acid itself is often too unstable to isolate, while the anion, delocalising the same π system over more oxygens, survives as a salt. |
+
+## C. Visual register — addition V165
+
+| ID | Required visual kind | Subject |
+|---|---|---|
+| V165 | **Structure gallery** | Figure 16.9's four oxoanions — OX⁻, XO₂⁻, XO₃⁻, XO₄⁻ — redrawn as a tetrahedral family with lone pairs shown receding to zero as oxidation state rises (three lone pairs on X in OX⁻, none in XO₄⁻), making the "more oxygens, fewer lone pairs, same tetrahedral parent" pattern visible in one gallery rather than four separate brackets |
+
+## D. PDF 147 (printed 615) — hypohalous acids, HOF's real synthetic history, and industrial NaOCl
+
+**Equation checked:** `2HgO + H₂O + 2Cl₂ → HgO·HgCl₂ + 2HOCl` — Hg 2/2, O 2/(1+1)=2,
+H 2/2, Cl 4/(2+2)=4. **Balances.**
+
+| # | Topic | Content |
+|---|---|---|
+| A393 | **HOF — made twice, thirty years apart, by two completely different routes** | **First made in 1968 by the matrix isolation technique**: F₂ and H₂O trapped together in an unreactive solid-nitrogen matrix at very low temperature, then **photolysed**; the HOF formed **could not collide with anything else while still trapped in the solid**, "thus a product was obtained" — an isolation method that works by physically preventing the very decomposition the compound is prone to. **More recently, HOF is made by passing F₂ over ice at 0 °C** and trapping the product in a cold trap: `F₂ + H₂O ⇌(−40°C) HOF + HF`. **HOF is unstable, decomposing on its own to HF and O₂; it is a strong oxidiser and oxidises H₂O to H₂O₂ quite readily; and "HOF should be a stronger acid than HOCl."** **The −OF group occurs in F₃C—OF, O₂N—OF, F₅S—OF and O₃Cl—OF, and these are all strong oxidising agents** — a substituent-group generalisation (the −OF unit carries its parent's oxidising character into an organic or inorganic framework) that the corpus did not have. |
+| A394 | **HOCl, HOBr, HOI — unstable, aqueous-only, weak acids and good oxidants, made from the halogen and HgO** | **All three are not very stable and known only in aqueous solution; very weak acids, but good oxidising agents especially in acid.** Prepared **by shaking the halogen with freshly precipitated HgO in water**: `2HgO + H₂O + 2Cl₂ → HgO·HgCl₂ + 2HOCl` (the same basic-mercury-chloride co-product already registered for Cl₂O, A375 — the two preparations share a by-product). **Hypochlorous acid is the most stable of the three.** |
+| A395 | **Sodium hypochlorite — trade names, and the industrial cell mechanism spelled out at electrode level** | **NaOCl is used extensively for bleaching cotton fabric and as a domestic bleach, sold under trade names Parazone, Lanry, Domestos and Chlorox, and also as a disinfectant and sterilising agent.** **Produced commercially by electrolysing cold brine with vigorous stirring**, and the mechanism is given at the electrode: **anode, `2Cl⁻ → Cl₂` then `Cl₂ + 2OH⁻ → OCl⁻ + Cl⁻ + H₂O`; cathode, `2H⁺ → H₂`.** **The stirring is not incidental — it mixes the Cl₂ generated at the anode with the OH⁻ that accumulates from cathodic H₂ evolution, so the two half-cell products react together rather than separating.** This is the industrial analogue of A377's "made where used, diluted for safety" principle (ClO₂), applied here to mixing rather than dilution. |
+| A396 | **How much of the halogen actually hydrolyses in water — a quantified answer** | **`H₂O + X₂ → X₂(hydrated) → HX + HOX`. In a saturated chlorine solution, about two-thirds exists as hydrated Cl₂ molecules, the rest as HCl and HOCl.** **A much smaller amount of HOBr and a negligible amount of HOI form by the same route** — three halogens, one equilibrium, three very different positions, quantified rather than left as a qualitative "chlorine hydrolyses more". |
+
+## E. PDF 148 (printed 616) — disproportionation kinetics, temperature thresholds, and the source's own worked example
+
+| # | Topic | Content |
+|---|---|---|
+| A397 | **Hypohalite disproportionation has a temperature threshold that differs by halogen — three numbers, not one rule** | **`X₂ + 2NaOH → NaX + NaOX + H₂O`**, in principle for all three halogens, but **the rate of disproportionation rises with temperature, and where the threshold sits is different for each.** **Chlorine: at or below room temperature gives a reasonably pure NaOCl/NaCl mixture; at 80 °C, sodium hypochlorite disproportionates rapidly to a good yield of sodium chlorate**, `3OCl⁻ →(hot) 2Cl⁻ + ClO₃⁻` (oxidation states +I → −I and +V, checked: Cl 3/3, O 3/3, charge −3/−3, **balances**). **Bromine: hypobromite can only be made at about 0 °C; above 50 °C, quantitative yields of BrO₃⁻ form instead** — `Br₂+2OH⁻ →(0°C) Br⁻+OBr⁻+H₂O` and `3Br₂+6OH⁻ →(>50°C) 5Br⁻+BrO₃⁻+3H₂O`, both checked and **balancing** (Br 2/2 and 6/6; O 2/2 and 6/6; H 6/6). **Iodine: hypoiodite disproportionates rapidly at all temperatures, and IO₃⁻ forms quantitatively — there is no accessible low-temperature regime at all.** **The ladder chlorine (needs 80 °C) → bromine (needs only 50 °C) → iodine (disproportionates even at 0 °C) is the teaching point**, and it is exactly the order the reduction-potential diagrams predict (A211: iodine's oxoanion couples are the weakest of the three, so its hypohalite is the least stable to begin with). |
+| A398 | **The source's own worked disproportionation-prediction example, using near-equal potentials to explain a marginal case** | **"The reduction potentials show that OBr⁻ and OI⁻ are unstable to disproportionation, since their reduction potentials do not decrease progressively from oxidation state (+V) to (+I) to (0). However, the standard reduction potentials suggest that OCl⁻ should just be stable under standard conditions"** — because **HClO₂ →(+1.65 V) HOCl** and **HOCl →(+1.61 V) ½Cl₂** are *almost equal* (**A206 already has this exact worked prediction from the acid diagram, at +1.43 vs +1.48** — a different but consistent pairing of steps). **The new content here is the source's own explicit caveat: "These are standard potentials, measured under standard conditions. Differences from standard conditions of temperature and concentration change the potentials sufficiently for disproportionation to occur"** — which is *why* A397's temperature thresholds exist at all: a Latimer diagram predicts marginal stability only at the exact standard state, and real bleach solutions are neither at that temperature nor at that concentration. |
+
+### Contradiction 77 — printed 617, the HClO₂ disproportionation equation loses its sodium and its water
+
+**Source form as printed:** `5HClO₂ → 4ClO₂ + NaCl` — labelled with oxidation
+states (+III) → (+IV), (−I). **Confirmed at 1100 dpi.** *The issue:* **sodium
+appears on the product side with none on the reactant side**, and hydrogen and
+oxygen do not balance either (H 5 vs 1; O 10 vs 8). *Correction, from
+conservation, keeping the printed reactant (the free acid, not the chlorite
+salt) and the printed reaction type (disproportionation of Cl(+III) into Cl(+IV)
+and Cl(−I)):* **`5HClO₂ → 4ClO₂ + HCl + 2H₂O`** — Cl 5/(4+1)=5, H 5/(1+4)=5,
+O 10/(8+2)=10. *An equivalent ionic form, checked independently:*
+**`5ClO₂⁻ + 4H⁺ → 4ClO₂ + Cl⁻ + 2H₂O`** — Cl 5/5, O 10/10, H 4/4, charge
+−1/−1, **also balances**, and shows the sodium's real role: it is the chlorite
+salt's spectator cation, never consumed, which is presumably why it drifted into
+the product side of the printed equation instead of being dropped as a
+spectator entirely. *Verification needed:* none — settled by conservation
+alone. *Safe for inclusion:* the corrected molecular or ionic form; **the
+printed "NaCl" is an error, not an intentional simplification.**
+
+## F. PDF 149 (printed 617) — chlorites and halic acids
+
+**Equations checked:** `Ba(ClO₂)₂ + H₂SO₄ → 2HClO₂ + BaSO₄` — Ba 1/1, Cl 2/2,
+O:left(4+4)=8, right(2+4)=... let's recount: Ba(ClO₂)₂ has O4 (2×ClO2 each O2),
+H2SO4 has O4, total left O8. Right: 2HClO2 has O4, BaSO4 has O4, total O8.
+**Balances.** H 2/2, S 1/1. `2ClO₂+2NaOH→NaClO₂+NaClO₃+H₂O` — **already
+registered**, confirmed identical, balances. `2ClO₂+Na₂O₂→2NaClO₂+O₂` — Cl2/2,
+O:4+2=6,right4+2=6, Na2/2. **Balances.** `Ba(ClO₃)₂+H₂SO₄→2HClO₃+BaSO₄` — Ba1/1,
+Cl2/2, O8/8, H2/2, S1/1. **Balances.** `6NaOH+3Cl₂ →(80°C) NaClO₃+5NaCl+3H₂O` —
+Na6/6, O6/(3+3)=6, H6/6, Cl6/(1+5)=6. **Balances.**
+`2Cl⁻+2H₂O →(electrolyse) Cl₂+H₂+2OH⁻` — Cl2/2, O2/2, H4/(2+2)=4, charge
+−2/−2. **Balances.**
+
+| # | Topic | Content |
+|---|---|---|
+| A399 | **Chlorites — two preparations, one from the free acid, one direct from ClO₂, and the acid-vs-alkali stability split** | **HClO₂ is made by treating barium chlorite with H₂SO₄, filtering off BaSO₄**: `Ba(ClO₂)₂ + H₂SO₄ → 2HClO₂ + BaSO₄`. **Salts (chlorites) are made either from ClO₂ + NaOH, or ClO₂ + Na₂O₂**: `2ClO₂+2NaOH→NaClO₂+NaClO₃+H₂O` (a disproportionation, already registered) and `2ClO₂+Na₂O₂→2NaClO₂+O₂` — **the peroxide route avoids co-producing chlorate**, which is the practical reason a manufacturer would choose it. **Chlorites are used as bleaches; stable in alkaline solution even when boiled, but disproportionate in acid, particularly when heated** — see contradiction 77 for the equation itself. |
+| A400 | **Halic acids — three known, two explosively unstable, one a stable solid, all strong oxidisers and strong acids** | **HClO₃, HBrO₃, HIO₃, halogen at (+V).** **HClO₃ and HBrO₃ are not very stable, known only in solution or as salts, and detonate if evaporation to dryness is attempted**: `4HClO₃ → 4ClO₂(gas) + 2H₂O(gas) + O₂(gas)` — Cl4/4, O12/(8+2+2)=12, H4/4, **balances**, and is the decomposition the attempted evaporation triggers. **HIO₃, by contrast, is reasonably stable and exists as a white solid** — the same stability-rises-with-oxidation-state-among-iodine-species pattern A371 already established for the oxides, now shown for the acids too. **HIO₃ is made by oxidising I₂ with concentrated HNO₃ or O₃; HClO₃ and HBrO₃ are made from the barium halate plus H₂SO₄**, the identical method as A399's chlorite preparation, one oxidation state up. |
+| A401 | **Chlorate manufacture — two routes, and the "wasteful-looking" one that is not** | **(1) Passing Cl₂ into hot NaOH**, `6NaOH+3Cl₂ →(80°C) NaClO₃+5NaCl+3H₂O`. **(2) Electrolysing hot, vigorously stirred chloride solution**: `2Cl⁻+2H₂O →(electrolyse) Cl₂+H₂+2OH⁻`, the Cl₂ and OH⁻ then combining as in route (1). **"Only one sixth of the chlorine is converted to ClO₃⁻, which appears very inefficient. However, the NaCl produced is electrolysed again, and is thus not wasted."** A one-sentence resolution of an apparent inefficiency, and exactly the kind of process-engineering reasoning A67 and A324 already model for fluorine and chlorine manufacture — extended here to chlorate. **Chlorates and bromates decompose on heating by a complex, not-fully-understood mechanism; KClO₃ decomposes two different ways depending on temperature** (continued into A402). |
+
+## G. PDF 150 (printed 618) — chlorate decomposition, hazards, and perhalic acids opening
+
+**Equations checked:** `2KClO₃ → 2KCl + 3O₂` — K2/2, Cl2/2, O6/6. **Balances.**
+`2Zn(ClO₃)₂ → 2ZnO + 2Cl₂ + 5O₂` — Zn2/2, Cl4/4, O12/(2+10)=12. **Balances.**
+`4KClO₃ → 3KClO₄ + KCl` — K4/4, Cl4/4, O12/12. **Balances.**
+`NaClO₃ + H₂O →(electrolysis) NaClO₄ + H₂` — Na1/1, Cl1/1, O4/4, H2/2.
+**Balances.**
+
+| # | Topic | Content |
+|---|---|---|
+| A402 | **KClO₃ decomposes two different ways depending on temperature and catalyst** | **(1) Heated to 400–500 °C (the well-known laboratory O₂-generating experiment): `2KClO₃ → 2KCl + 3O₂`, with a trace of Cl₂ or ClO₂ also formed, though this is seldom mentioned. With a catalyst (MnO₂ or powdered glass, providing a surface for O₂ to escape) decomposition occurs at only 150 °C.** **`2Zn(ClO₃)₂ → 2ZnO + 2Cl₂ + 5O₂` on heating — a different decomposition mode entirely, giving Cl₂ rather than KCl.** **(2) Without a catalyst, especially at lower temperature, KClO₃ instead disproportionates to perchlorate and chloride: `4KClO₃ → 3KClO₄ + KCl`.** **Two named variables — temperature and catalyst presence — decide which of two genuinely different products (O₂-releasing decomposition vs disproportionation) a single salt gives.** |
+| A403 | **Chlorate solubility, uses, and the explicit terrorism hazard warning** | **Chlorates are much more soluble than bromates and iodates.** *(Aside, registered separately: the iodates of Ce⁴⁺, Zr⁴⁺, Hf⁴⁺ and Th⁴⁺ precipitate from 6 M HNO₃, a named separation method for these four metals.)* **Chlorates are used in fireworks and matches; sodium chlorate is a powerful weedkiller whose effects persist for a whole growing season.** **Solid chlorates, bromates and iodates should be handled with care — they can explode on grinding, on heating, or on contact with easily oxidised substances such as organic matter or sulphur, and are particularly dangerous in the solid form though much safer in solution.** **"Solid sodium chlorate has been used by terrorists in making bombs. The solid must be finely powdered (a dangerous process), and mixed intimately with something it can reduce, such as sugar. Mixing is highly dangerous. Such bombs are notoriously unreliable and dangerous."** **Registered as a source-stated hazard fact, not elaborated on** — the course states the hazard and its chemical basis (a powdered oxidant intimately mixed with a reducing fuel) without operational detail beyond what the source itself gives. |
+| A404 | **Perhalic acids — three well-known, one that took until 1968, and the electrode-level manufacture of perchlorate** | **Perchloric and periodic acids and their salts are well known; perbromates were unknown until 1968.** **World perchlorate consumption is about 30 000 tonnes/year.** **NaClO₄ is made by electrolysing aqueous NaClO₃ using smooth platinum anodes in a steel container that also serves as the cathode** — `NaClO₃+H₂O →(electrolysis) NaClO₄+H₂` — **"the platinum electrode gives a high oxygen overpotential, and thus prevents the electrolysis of water"**, which is the mechanistic reason platinum (rather than a cheaper metal) is specified: without that overpotential, the applied voltage would simply split water instead of oxidising chlorate. **All other perchlorates and perchloric acid itself are made from NaClO₄.** |
+
+## H. PDF 151 (printed 619) — perchloric acid, its hazards and uses, and perchlorate coordination chemistry
+
+**Equations checked:** `NH₄ClO₄+HNO₃→HClO₄+NH₄NO₃` — N2/2, H:(4+1)=5/(1+4)=5,
+Cl1/1, O:(4+3)=7/(4+3)=7. **Balances.** `4ClO₃⁻→3ClO₄⁻+Cl⁻` — Cl4/4, O12/12,
+charge −4/−4. **Balances.**
+
+| # | Topic | Content |
+|---|---|---|
+| A405 | **NH₄ClO₄ — from mining explosive to Space Shuttle booster fuel oxidiser, with the tonnage that made it famous** | **A white solid, formerly used as a blasting compound in mining, now used in the booster rockets of the Challenger Space Shuttle, where NH₄ClO₄ oxidises the fuel (aluminium powder). A single Shuttle launch uses nearly 700 tonnes of NH₄ClO₄, accounting for half the perchlorates consumed per year** (against A404's 30 000 t/year total — so roughly 350 t of the 30 000 t figure is Shuttle-related, on a per-launch basis). **NH₄ClO₄ will absorb enough ammonia to liquefy itself** — a specific hygroscopic-like behaviour distinct from ordinary water uptake. |
+| A406 | **HClO₄'s manufacture from NH₄ClO₄, and why it is the one oxoacid of chlorine that can be isolated pure** | **Nearly 500 tonnes of HClO₄ used annually, mostly to make other perchlorates.** Made from NH₄ClO₄ and dilute HNO₃ (`NH₄ClO₄+HNO₃→HClO₄+NH₄NO₃`), or from NaClO₄ and concentrated HCl. **In principle perchlorate could form directly from chlorate disproportionation, `4ClO₃⁻→3ClO₄⁻+Cl⁻`, but this reaction is slow and of little practical use.** **Commercial 70% HClO₄ has almost the composition of the dihydrate HClO₄·2H₂O, and HClO₄ is the only oxoacid of chlorine that can be isolated in the anhydrous state** — made by dehydrating the dihydrate with fuming sulphuric acid, then vacuum-distilling off the HClO₄ (see contradiction 78 for the equation itself). |
+| A407 | **HClO₄'s two faces — cold dilute is safe to handle, hot concentrated or anhydrous is not** | **Anhydrous HClO₄ is a powerful oxidiser that explodes on contact with organic material (wood, paper, cloth, grease, rubber, or other chemicals), sometimes spontaneously.** **The cold, concentrated (70% aqueous) solution is a much weaker oxidiser** — the same "state matters as much as identity" lesson A337 already draws for concentrated HF's reduced glass attack. **Hot concentrated solutions are used for "wet ashing"**, oxidising all organic material in a sample to CO₂ and leaving only inorganic constituents for analysis — **but alcohols must never be present, because perchlorate esters are explosive**, and a mixed HClO₄/HNO₃ system is often used instead so the HNO₃ oxidises any alcohol first and removes that risk. |
+| A408 | **Three named perchlorate uses, and the qualitative test for potassium built on perchlorate's one predictable weakness** | **Mg(ClO₄)₂ — very hygroscopic, an effective desiccant called "anhydrone", and the electrolyte in "dry batteries".** **KClO₄ — used in fireworks and flares; "bang and flash" mixtures use KClO₄, Al and S, while flares use KClO₄ and Mg; red colour from added SrCO₃ or Li₂CO₃, blue from CuCO₃.** **Virtually all metal perchlorates are soluble except those of the larger Group 1 ions K⁺, Rb⁺ and Cs⁺** — and **KClO₄'s sparing solubility is the basis of a qualitative test for potassium**: a solution of NaClO₄ is added to a K⁺-containing solution, and KClO₄ precipitates. |
+| A409 | **ClO₄⁻ as a nearly non-coordinating ("innocent") ligand, with the exceptions named** | **"The ClO₄⁻ ion has only a very slight tendency to form complexes with metal ions. Thus perchlorates are often used as an inert ion in the study of metal ions in aqueous solution. However, in the absence of other ligands, ClO₄⁻ ions may act as unidentate or bidentate ligands. The perchlorate ion is tetrahedral."** A coordination-chemistry use for a species the corpus otherwise treats purely as an acid/oxidant — **perchlorate's chemical inertness is precisely why it is chosen as the "invisible" counter-ion in solution studies of other metal ions**, and the unidentate/bidentate exception is named rather than glossed over. |
+
+### Contradiction 78 — printed 619, the HClO₄ dehydration equation loses four hydrogens, eight oxygens and two sulphurs
+
+**Source form as printed:** `HClO₄·2H₂O + 2H₂S₂O₇ → HClO₄ + 2H₂SO₄`.
+**Confirmed at 1100 dpi.** *The issue:* Left total — H 9 (1+4 from the hydrate,
+4 from 2×H₂S₂O₇), Cl 1, O 20 (6 from the hydrate, 14 from 2×H₂S₂O₇), S 4. Right
+total as printed — H 5, Cl 1, O 12, S 2. **Every element except chlorine is
+short on the product side.** *Correction, from conservation alone:* **the
+product-side H₂SO₄ coefficient must be 4, not 2** — **`HClO₄·2H₂O + 2H₂S₂O₇ →
+HClO₄ + 4H₂SO₄`** — H 9/(1+8)=9, O 20/(4+16)=20, S 4/4, Cl 1/1. **Verification
+needed:** none — the correction is forced by conservation once the reactant
+side (which is internally consistent and matches the stated 1:2 hydrate-to-oleum
+ratio) is held fixed. *Safe for inclusion:* **the corrected `4H₂SO₄` form; the
+printed `2H₂SO₄` is an error.** *Chemical sense-check:* the reaction is oleum
+(H₂S₂O₇) mopping up water — `H₂S₂O₇ + H₂O → 2H₂SO₄` balances on its own
+(H4/4, S2/2, O8/8) — and the dihydrate supplies **two** water molecules, so **two**
+oleum molecules are consumed and **four**, not two, H₂SO₄ molecules result. The
+corrected coefficient is exactly what this simpler sub-reaction, run twice,
+predicts. |
+
+## I. PDF 152 (printed 620) — perbromates and periodates
+
+**Equations checked:** `KBrO₃+F₂+2KOH→KBrO₄+2KF+H₂O` — K3/3, Br1/1, O:left
+3+2=5,right4+1=5, F2/2, H2/2. **Balances.** `RbBrO₃+XeF₂+H₂O→RbBrO₄+2HF+Xe` —
+Rb1/1, Br1/1, O:left3+1=4,right4, F2/2, Xe1/1, H2/2. **Balances.**
+`IO₃⁻+6OH⁻+Cl₂→IO₆⁵⁻+3H₂O+2Cl⁻` — I1/1, O:left3+6=9,right6+3=9, H6/6, Cl2/2,
+charge:left−1−6=−7,right−5−2=−7. **Balances.** `2H₅IO₆ →(100°C, −4H₂O) 2HIO₄
+→(200°C) I₂O₅+O₂+H₂O` — first step: H10/(2+8)=10, I2/2, O12/(8+4)=12,
+**balances**; second step: I2/2, O:8/(10+2+1)=... let me recount:
+2HIO₄ has O8; right I₂O₅(O5)+O₂(O2)+H₂O(O1)=8. **Balances**, H2/2.
+
+| # | Topic | Content |
+|---|---|---|
+| A410 | **Perbromates — thirty years unmakeable, then three low-yield routes, all needing an unusually strong oxidant** | **"For a long time it was thought that they could not exist, until traces were obtained from β decay of ⁸³SeO₄²⁻."** Now made from bromate by powerful oxidisers or electrolysis, **three named routes with their yields stated explicitly**: `KBrO₃+F₂+2KOH→KBrO₄+2KF+H₂O` (**20% yield**); `RbBrO₃+XeF₂+H₂O→RbBrO₄+2HF+Xe` (**10% yield** — a noble-gas fluoride doing real synthetic work as an oxidant, tying Group 18's XeF₂ directly into Group 17 perbromate chemistry); `LiBrO₃ →(electrolytic oxidation) LiBrO₄` (**1% yield**). **Every route is low-yield, which is itself the point: perbromate is difficult to reach from bromate no matter which strong oxidant is used**, consistent with bromine's electrode-potential ladder (A211) sitting between chlorine's and iodine's. |
+| A411 | **Perbromate stability once made, and its oxidising behaviour** | **Solid perbromates are stable. KBrO₄ is stable to 275 °C and is isomorphous with KClO₄.** **HBrO₄ is stable in solution to 6 M, but the concentrated acid is a vigorous oxidiser; dilute perbromate solutions oxidise only slowly, and Cl⁻ is not oxidised** — a specific negative result (perbromate cannot be used to oxidise chloride) worth recording precisely because it bounds what the oxidant can and cannot do. |
+| A412 | **Periodate manufacture, and the two structural types with a worked example of each** | **Made by oxidising I₂ or I⁻ in aqueous solution; commercially, by oxidising iodate in alkaline solution with either Cl₂ or electrolytically**: `IO₃⁻+6OH⁻+Cl₂→IO₆⁵⁻+3H₂O+2Cl⁻`, and the electrochemical equivalent written as a two-electron half-reaction, `IO₃⁻+6OH⁻ →(−2 electrons) IO₆⁵⁻+3H₂O`. **Periodates come in two structural types: tetrahedral IO₄⁻ and octahedral (OH)₅IO** (i.e. five hydroxide groups plus one oxo on a six-coordinate iodine); **in aqueous solution at room temperature the main ion is IO₄⁻.** **A wide range of isopolyacids exist, built from octahedral IO₆ units sharing O atoms at two corners (sharing an edge) or three corners (sharing a face)** — the "structures are much more complicated than this implies" caveat is registered as the source's own honesty about the limits of the simple picture just given. |
+| A413 | **Paraperiodic acid — the common form of periodic acid, and its two-stage thermal decomposition ladder** | **The common form of periodic acid is HIO₄·2H₂O, i.e. H₅IO₆, called paraperiodic acid — white crystals, melting with decomposition at 128.5 °C.** **Heating to 100 °C under reduced pressure loses water, giving periodic acid HIO₄; heating further to 200 °C eventually loses O₂ and forms I₂O₅.** `2H₅IO₆ →(100°C, −4H₂O) 2HIO₄ →(200°C) I₂O₅+O₂+H₂O` — **both steps checked and balance.** A three-compound thermal ladder (paraperiodic acid → periodic acid → iodine pentoxide) parallel in structure to A413's chlorine analogue (chlorate → perchlorate is a different relationship, but the "heat drives progressive dehydration/deoxygenation" pattern recurs). |
+| A414 | **Periodate as an oxidant: permanganate formation and the named organic-chemistry application** | **Periodates are important oxidants, oxidising Mn²⁺ to MnO₄⁻** — a specific, checkable inorganic oxidation (Mn +II → +VII) that the corpus did not have from any halogen-oxoacid context. **Periodic acid is called a "glycol-splitting agent" because it splits (oxidises) 1,2-diols into two aldehydes**, used to determine the structure of organic compounds by degradative methods: `IO₄⁻ + R–CH(OH)–CH(OH)–R → R–CHO + R–CHO + IO₃⁻ + H₂O` — checked, I1/1, O:left(4+2)=6,right(1+1+3+1)=6, **balances** (treating R groups as conserved substituents on both sides). **This is the oxoacid-chemistry counterpart to A132's boric-acid/cis-diol chelation from Group 13 — the same functional group (a 1,2-diol) reacting completely differently with two different inorganic acids, one by chelation-driven equilibrium shift and one by oxidative cleavage.** |
+
+## J. Visual register — additions V166–V168
+
+| ID | Required visual kind | Subject |
+|---|---|---|
+| V166 | **Comparison graphic** | The disproportionation-temperature ladder (A397): chlorine stable to 80 °C, bromine's threshold at 50 °C, iodine unstable at every temperature — with the electrode-potential explanation (A211) drawn alongside as the underlying cause |
+| V167 | **Structure gallery** | Periodate's two structural types side by side: tetrahedral IO₄⁻ and octahedral (OH)₅IO, with a small isopolyacid fragment showing edge-sharing versus face-sharing octahedra |
+| V168 | **Reaction network** | The paraperiodic-acid thermal ladder, H₅IO₆ → HIO₄ → I₂O₅, with the three temperatures (128.5 °C melting/decomposition, 100 °C dehydration, 200 °C deoxygenation) marked on the arrows |
+
+## K. JEE trap register — items 304–314
+
+304. **There is no bromous or iodous acid** — only chlorine reaches the (+III)
+     oxoacid state. A "complete the series" question for HXO₂ has only one
+     real answer.
+305. **HOF is a real, isolable compound**, first made by matrix isolation in
+     1968. "Fluorine cannot form oxoacids" is the outdated version of the rule;
+     the corrected version is "HOF is very unstable and no other F oxoacid is
+     known."
+306. **Bromine's hypohalite window is narrow and cold** (0 °C only, quantitative
+     bromate above 50 °C); **chlorine's is wide and warm** (stable to 80 °C);
+     **iodine has no window at all.**
+307. **`5HClO₂ → 4ClO₂ + HCl + 2H₂O`, not `+ NaCl`** — the printed source
+     equation introduces sodium from nowhere and drops the water. Chlorite
+     disproportionates to chlorine dioxide and chloride, with the water coming
+     from the reaction, not from an external salt.
+308. **HClO₃ and HBrO₃ detonate on attempted evaporation to dryness; HIO₃ is a
+     stable solid.** Never write "the halic acids can all be isolated as
+     solids" — only iodine's can.
+309. **KClO₃'s decomposition depends on catalyst, not just temperature**:
+     catalysed (MnO₂/glass, 150 °C) gives O₂ + KCl; uncatalysed at lower
+     temperature instead disproportionates to KClO₄ + KCl.
+310. **HClO₄ is the only chlorine oxoacid isolable anhydrous** — every other
+     chlorine oxoacid exists only in solution or as a salt.
+311. **Perchlorate esters are explosive** — never wet-ash a sample containing
+     alcohol with HClO₄ alone; use HClO₄/HNO₃ together.
+312. **KClO₄'s low solubility is the potassium test**: add NaClO₄ to a K⁺
+     solution and KClO₄ precipitates — the same "swap the cation, watch the
+     anion's solubility" logic as AgF's fluoride exception (A352).
+313. **Perbromate was unmakeable for decades; XeF₂ is one of the oxidants that
+     finally made it, in 10% yield.** A noble-gas compound doing real
+     synthetic work in a different group's chemistry.
+314. **Periodic acid cleaves 1,2-diols into two aldehydes ("glycol splitting")**
+     — the same functional group that boric acid merely chelates (A132), a
+     different acid, a completely different fate for the substrate.
+
+## L. Register-count effects
+
+- **Topics: A390 → A414.** Twenty-four added, **all table rows**, contiguous.
+- **Expanded, IDs kept:** **A67, A324, A401** (chlorate manufacture's
+  "wasteful-looking but not" logic joins the fluorine/chlorine process-engineering
+  family) · **A132** (paired with periodate's glycol cleavage as the same
+  functional group's two fates) · **A211** (the disproportionation-temperature
+  ladder is its practical consequence) · **A337, A407** (HClO₄'s
+  concentration-dependent oxidising power parallels concentrated HF's reduced
+  glass attack) · **A375** (the HgO·HgCl₂ co-product shared with HOCl's
+  preparation) · **the pre-existing A205–A211 Latimer-diagram entries**,
+  confirmed rather than expanded, with a correction to the Addendum-8 triage
+  record (§M).
+- **Visuals: V165 → V168.** Four added (one on PDF 146, three on PDF 152).
+- **Traps: 303 → 314.** Eleven added.
+- **Contradictions: 76 → 78.** Two added — **77** (HClO₂ disproportionation
+  loses Na from nowhere and its water) and **78** (HClO₄ dehydration short by
+  4H, 8O, 2S on the product side). **Both fully written equations with wrong
+  coefficients, both settled by conservation alone, neither needing NCERT or
+  Greenwood** — the same class as contradictions 67, 68, 72, 73 and 75.
+- **Source defects, MO cases: unchanged.**
+- **`[UNCLEAR]`: 5 — unchanged.** The acid-diagram asterisk ambiguity is
+  confirmed present on this page too, not newly resolved.
+
+## M. Correction to the Addendum-8 page-map record
+
+**PDF 145–146 (printed 613–614) was labelled `FULL — UNIQUE`, file-8 equivalent
+"absent entirely."** That label is **accurate only relative to file 8**, and
+this addendum found that **the identical content — both full Latimer
+diagrams, value for value, including the disproportionation asterisks — was
+already present in this project's own registers (A205–A211) before this shift
+began**, sourced from elsewhere in the corpus. **The map entry is not corrected
+retroactively** (it was a true statement about file 8), **but the practical
+consequence is recorded here**: a `FULL — UNIQUE` label means unique **against
+file 8**, not unique against the whole project, and a page carrying that label
+can still turn out to be `DEEP READ — NO NEW CONTENT` once checked against the
+complete registers. **No other page in this audit has shown this pattern**;
+recorded so a later pass does not assume every remaining `FULL — UNIQUE` page
+is guaranteed new.
+
+---
+
+# Range closure — PDF 145–152
+
+**8 / 8 pages deeply read.** Two returned `DEEP READ — NO NEW CONTENT`
+(confirmed matches to pre-existing registers); three returned
+`DEEP READ — CONTRADICTION FOUND` alongside partial additions; three returned
+`DEEP READ — PARTIAL ADDITIONS REGISTERED` or `VISUAL ADDITION REGISTERED`.
+**None read without being registered, including the two that yielded no new
+content — a negative result is still a registered result.**
+
+**File 12: 76 + 8 = 84 of 184 deeply read.**
+**`FULL — PARTIALLY UNIQUE`: 30 of 99 read, 69 remaining.**

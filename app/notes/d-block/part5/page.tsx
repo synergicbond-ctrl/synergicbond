@@ -247,7 +247,7 @@ Transition metals are effective catalysts for two major reasons.
 
 A metal ion can accept electrons from one reactant and deliver them to another in separate, lower-energy steps. This avoids a difficult direct electron transfer.
 
-## 2. Surface adsorption and bond activation
+## Surface adsorption and bond activation
 
 Metal surfaces bind reactants through d and s states. Adsorption:
 

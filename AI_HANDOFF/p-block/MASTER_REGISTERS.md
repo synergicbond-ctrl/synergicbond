@@ -3959,3 +3959,183 @@ Read from 165 dpi renders, with printed 490 re-read at 300 dpi rotated. These
 sections have **no counterpart in file 8**, so there is no same-author duplication
 to discount, and no second source corroborates them. **No NCERT or Greenwood
 confirmation is claimed.** Items 25–56 preserved; item 57 added.
+
+---
+
+# Addendum 16 — file 12 PDF 24–27 (printed 491–494): nitrogen fixation, ammonia manufacture and the fertilisers
+
+All four pages `DEEP READ — UNIQUE REGISTERED`. **This closes range PDF 20–27,
+all eight pages.** PDF 27 carries the start of the Halides section in its last
+paragraph; that belongs to the partially unique range 28–31 and is **not**
+registered here.
+
+## A. Biological nitrogen fixation (printed 491)
+
+| # | Topic | Where it belongs | Content |
+|---|---|---|---|
+| A250 | **Symbiotic fixation and its host plants** | §7 | The most important fixing genus is **_Rhizobium_**, living **symbiotically in root nodules of the Leguminosae** — **peas, beans, clover and alder trees** are the four the source names. Other bacteria live free in soil near roots and fix smaller amounts. Crop rotation works for this reason: **clover one year raises the corn yield the next.** |
+| A251 | **Nitrification — the soil converts everything to nitrate** | §7 | Plants need nitrates, and soil bacteria readily oxidise other nitrogenous compounds to them: `NH₄⁺ → NO₂⁻ → NO₃⁻`, the organisms named being **_Nitrosomonas_ and _Nitrobacter_** (see contradiction 58 on how the source assigns them). |
+| A252 | **The central puzzle of fixation, stated plainly** | §7 | **Bacteria fix dinitrogen at room temperature and atmospheric pressure; industry needs expensive plant at high temperature and pressure to do the same.** That contrast is the reason the research in A253 exists. |
+
+**Not present in this source, and therefore not registered:** nitrogenase as a
+named enzyme, the Fe/Mo cofactor, ATP cost, and oxygen sensitivity. The brief
+asked for them; **the pages do not contain them**, and none has been supplied
+from elsewhere.
+
+## B. Dinitrogen complexes — the research route (printed 491–492)
+
+| # | Topic | Content |
+|---|---|---|
+| A253 | **Transition-metal dinitrogen complexes** | The aim is a catalyst that absorbs N₂ and makes ammonia **without high temperature or pressure**. The **first dinitrogen complex, the pentaammine(dinitrogen)ruthenium cation, was made in 1965 by reducing ruthenium trichloride with hydrazine**; the other general route is **replacing a labile ligand by N₂**. **Dinitrogen complexes have now been made for almost all the transition elements.** |
+
+`[Ru(NH₃)₅H₂O]²⁺ + N₂ —(aqueous solution)→ [Ru(NH₃)₅N₂]²⁺`
+
+**The titanium cycle — a complete closed loop, and it branches.** Titanium(II)
+complexes are called the most promising, and reduction of titanium alkoxides
+yields **either ammonia or hydrazine** depending on how far the reduction goes:
+
+`Ti^IV(OR)₄ —(Na)→ Ti^II(OR)₂ + 2NaOR`
+`Ti(OR)₂ + N₂ → [Ti(OR)₂N₂]`
+**Six-electron branch:** `[Ti(OR)₂N₂] —(reduce)→ [Ti(OR)₂N₂]⁶⁻ —(+6H⁺)→ 2NH₃ + Ti(OR)₂`
+**Four-electron branch:** `[Ti(OR)₂N₂] —(reduce)→ [Ti(OR)₂N₂]⁴⁻ —(+4H⁺)→ N₂H₄ + Ti(OR)₂`
+
+Both branches **regenerate Ti(OR)₂**, closing the cycle. The electron count
+decides the product — **six electrons and six protons give ammonia, four give
+hydrazine** — which is a genuinely satisfying redox-bookkeeping point.
+
+## C. The cyanamide process (printed 492)
+
+| # | Topic | Content |
+|---|---|---|
+| A254 | **Calcium cyanamide as a fixation route and a fertiliser** | Production **exceeds 1.3 million tonnes/year and is rising**. Used in large amounts as a **nitrogenous fertiliser** and as a feedstock for organic chemicals **such as melamine**. |
+
+`CaC₂ + N₂ —(1100 °C)→ CaNCN + C`
+`CaNCN + 5H₂O → CaCO₃ + 2NH₄OH` — **balance-checked, balances** (Ca 1, C 1,
+N 2, H 10, O 5 each side).
+
+## D. The Haber–Bosch process, in full (printed 492)
+
+| # | Topic | Content |
+|---|---|---|
+| A255 | **Two Nobel Prizes, two different jobs** | **Fritz Haber** found how to combine N₂ and H₂ directly in the laboratory — **Nobel Prize for Chemistry, 1918**. **Carl Bosch** was the **chemical engineer** who built the industrial plant — **Nobel Prize for Chemistry, 1931, for work on high-pressure reactions.** Discovery and scale-up were separate achievements. |
+| A256 | **The economics beat the thermodynamics** | `N₂ + 3H₂ ⇌ 2NH₃ + heat`, **4 volumes → 2 volumes**. Le Chatelier wants **high pressure and low temperature**. But low temperature is **slow**, so in practice: **200 atmospheres, 380–450 °C, promoted iron catalyst**. It is **more economic to run hotter and reach equilibrium much faster even though conversion is lower** — **about 15 % per pass at 400 °C**. Ammonia is condensed out as liquid and **the unreacted N₂/H₂ is recycled**. Plant built of **steel alloyed with Ni and Cr**. |
+| A257 | **How the promoted iron catalyst is actually made** | **Fe₃O₄ is fused with KOH and a refractory such as MgO, SiO₂ or Al₂O₃**, broken into small lumps, and charged to the converter, **where the Fe₃O₄ is reduced to small crystals of iron in a refractory matrix. That is the active catalyst** — the iron is generated *in situ*, not loaded as iron. |
+| A258 | **Where the hydrogen comes from, and why it matters** | **The cost of the H₂ dominates the economics.** Historically: **electrolysis of water (expensive) → coke and water (water gas, producer gas) → today, hydrocarbons.** Naphtha or CH₄ + steam at **750 °C over a Ni catalyst**, with **all traces of sulphur removed because they poison the catalyst**. |
+
+`CH₄ + 2H₂O ⇌ CO₂ + 4H₂` · `CH₄ + H₂O ⇌ CO + 3H₂`
+**Air is then added so that O₂ burns off some H₂, leaving exactly the N₂ needed
+for a 1 : 3 N₂ : H₂ ratio** — the nitrogen arrives as a by-product of trimming the
+hydrogen: `(4N₂ + O₂)ₐᵢᵣ + 2H₂ ⇌ 4N₂ + 2H₂O`
+`CO + H₂O ⇌ CO₂ + H₂` — **CO must go too, because it also poisons the catalyst.**
+**CO₂ is finally scrubbed out with concentrated K₂CO₃ solution or ethanolamine.**
+
+## E. Ammonia production, scale and uses (printed 493)
+
+| # | Topic | Content |
+|---|---|---|
+| A259 | **NH₃ by moles is the largest chemical of all** | Production rose from **~1 Mt/yr in 1950 to 110 Mt in 1992**. The source's own subtlety: **it is not quite the largest tonnage, but because NH₃ has such a low molecular weight it is the largest amount of substance — the most moles of any chemical made.** |
+| A260 | **Producers and the fertiliser split** | USSR 27 %, China 21 %, USA 18 %, Canada 4 %, Romania 4 %, Netherlands 3 %, Mexico 3 %, West Germany, Poland, Italy and East Germany 2 % each. **About 75 % goes to fertiliser: 30 % direct NH₃ or NH₄OH to soil, 20 % NH₄NO₃, 15 % urea, 10 % ammonium phosphate, 3 % (NH₄)₂SO₄.** |
+| A261 | **Liquid ammonia as a hydrogen carrier** | Cheaper and more convenient than compressed H₂ cylinders; the H₂ is recovered by **heating over finely divided Ni or Fe**. |
+| A262 | **Ammonia as a refrigerant, and why it may return** | Very high heat of vaporisation, convenient boiling and freezing points; **environmental concern over Freons could increase this use.** Links directly to the CFC/ozone material registered in Addendum 6. |
+
+**Other named uses:** HNO₃ (→ NH₄NO₃ fertiliser, or **nitroglycerine,
+nitrocellulose and TNT**) · **caprolactam → nylon-6** · **hexamethylenediamine →
+nylon-6,6, polyurethanes and polyamides** · **hydrazine and hydroxylamine**.
+
+## F. Nitrate in the environment (printed 493–494)
+
+| # | Topic | Content |
+|---|---|---|
+| A263 | **Eutrophication** | Nitrates are soluble, so run-off carries them to lakes and rivers. **Increased growth of algae and other aquatic plants may clog rivers and lakes and turn estuary mudbanks green.** |
+| A264 | **Nitrate in drinking water — two health concerns and a legal limit** | **Methaemoglobinaemia in babies**, which reduces the oxygen carried in the blood and in extreme form causes **'blue baby syndrome'**; and a suspected **link with stomach cancer**. **The EEC set a safety limit of 25 ppm nitrate in drinking water.** |
+| A265 | **Denitrification and the ozone layer** | Concern that denitrification to nitrogen oxides, **particularly N₂O**, may harm the ozone layer — a third, atmospheric consequence of fertiliser use. |
+
+## G. The fertilisers themselves — the percentages the earlier page lacked
+
+**Urea, CO(NH₂)₂.** **Nitrogen content 46 %** — the highest of the common
+nitrogen fertilisers. **Very soluble, hence quick-acting, but easily washed
+away.** Made from ammonia in two stages:
+`2NH₃ + CO₂ —(180–200 °C, high pressure)→ NH₂COONH₄ (ammonium carbamate) → NH₂·CO·NH₂ + H₂O`
+**In soil it slowly hydrolyses to ammonium carbonate:**
+`NH₂CONH₂ + 2H₂O → (NH₄)₂CO₃` — **balance-checked, balances.**
+
+**Superphosphate, Ca(H₂PO₄)₂ + CaSO₄.** Phosphate rock such as **fluoroapatite
+[3Ca₃(PO₄)₂·CaF₂] is very insoluble and of no use to plants**; treating it with
+concentrated H₂SO₄ gives the more soluble acid salt, which **dissolves in soil
+water over a period of weeks**.
+`[3Ca₃(PO₄)₂·CaF₂] + 7H₂SO₄ → 3Ca(H₂PO₄)₂ + 7CaSO₄ + 2HF` — **balance-checked,
+balances** (Ca 10, P 6, F 2, H 14, S 7, O 52 each side).
+**The CaSO₄ is an insoluble waste of no value to plants — and it is not removed
+from the product sold.** That is a genuinely useful commercial fact.
+
+**Triple superphosphate, Ca(H₂PO₄)₂.** Made the same way but with **H₃PO₄ instead
+of H₂SO₄, specifically to avoid the CaSO₄ waste**.
+`[3Ca₃(PO₄)₂·CaF₂] + 14H₃PO₄ → 10Ca(H₂PO₄)₂ + 2HF` — **balance-checked,
+balances** (Ca 10, P 20, H 42, O 80, F 2 each side).
+
+**Expanded, existing IDs kept:** A243–A245 (the fertiliser functions registered
+in Addendum 15) now carry these compositions and equations; **no new fertiliser
+topic IDs were created for material already registered by function.**
+
+**Still not supplied by the source, still not guessed:** oxide-equivalent
+notation (P₂O₅, K₂O) and NPK grade numbers.
+
+## H. Visual register — additions V118–V122
+
+| ID | Required visual kind | Subject |
+|---|---|---|
+| V118 | **Reaction network** | The three fixation routes side by side — biological (*Rhizobium*, ambient), Haber–Bosch (200 atm, 380–450 °C), cyanamide (1100 °C) — with conditions as the comparison axis |
+| V119 | **Process flow** | Haber–Bosch as a whole plant: steam reforming → air addition to set 1 : 3 → shift → CO₂ scrub → converter → condense → **recycle loop drawn as a loop** |
+| V120 | **Reaction network** | The titanium cycle, with the four- and six-electron branches diverging to hydrazine and ammonia and both returning to Ti(OR)₂ |
+| V121 | **Comparison graphic** | Ammonia's end uses as a proportional split — 75 % fertiliser broken into its five parts, then HNO₃, nylons, hydrazine |
+| V122 | **Process flow + hazard map** | Nitrate from fertiliser to run-off, branching to eutrophication, methaemoglobinaemia with the 25 ppm EEC limit, and N₂O to the ozone layer |
+
+## I. JEE trap register — items 218–226
+
+218. **_Rhizobium_ is symbiotic and lives in root nodules of legumes** — peas,
+     beans, clover, alder. Free-living soil bacteria fix far less.
+219. **Plants need nitrate, so soil bacteria oxidise ammonium through nitrite to
+     nitrate.** The fertiliser you add is not necessarily the form taken up.
+220. **Haber–Bosch runs hotter than thermodynamics wants**, because a 15 % pass
+     conversion reached fast beats a higher conversion reached slowly.
+221. **The catalyst is charged as Fe₃O₄ and reduced to iron in the converter** —
+     it is not loaded as metallic iron.
+222. **Sulphur and CO both poison the ammonia catalyst**, which is why the
+     hydrogen stream is desulphurised and shifted before it reaches the converter.
+223. **The nitrogen for the Haber process arrives by burning off surplus hydrogen
+     with air** — the 1 : 3 ratio is set by combustion, not by metering N₂.
+224. **Ammonia is the largest chemical by moles, not by tonnage.**
+225. **Urea is 46 % nitrogen** — the richest common nitrogen fertiliser — but is
+     **easily washed away** because it is so soluble.
+226. **Superphosphate is sold containing its CaSO₄ waste; triple superphosphate
+     uses H₃PO₄ precisely to avoid making it.**
+
+## J. Contradiction register — items 58 and 59
+
+58. **The nitrifying organisms are misassigned.** *Location:* PDF 24 / printed
+    491. *As printed:* the first arrow `NH₄⁺ → NO₂⁻` is labelled **"Nitrosomonas
+    and Nitrobacter"**, and the second `NO₂⁻ → NO₃⁻` is labelled **"Nitrobacter"**.
+    *The issue:* the standard assignment is **_Nitrosomonas_ for NH₄⁺ → NO₂⁻ and
+    _Nitrobacter_ for NO₂⁻ → NO₃⁻**; naming Nitrobacter on the first step as well
+    is at best imprecise. *Verification needed:* a microbiology source; **none is
+    in this corpus**. *Safe for inclusion:* **the two-step chemistry yes, the
+    organism attribution on step one no.** The course will name Nitrosomonas for
+    the first step and Nitrobacter for the second, and say so is the conventional
+    assignment.
+59. **The titanium dinitrogen complex is written two ways on facing pages.**
+    *Location:* PDF 24 / printed 491 and PDF 25 / printed 492. *As printed:*
+    **`[Ti(OR)₂N₂]`** in one line and **`[Ti(OR₂)N₂]`** in others — the bracket
+    moves, which changes the formula from two alkoxide ligands to something
+    undefined. *Correction:* **`[Ti(OR)₂N₂]`** throughout, consistent with the
+    precursor Ti(OR)₂ and with the regenerated product. *Chemical issue:* none —
+    typesetting. *Safe for inclusion:* **yes, in the consistent form.**
+
+## K. `[UNCLEAR]` register — no new items; none resolved
+
+All four pages legible at 165 dpi. Count remains **3**.
+
+## L. Verification status
+
+Read from 165 dpi renders. No counterpart in file 8; no second source
+corroborates. **No NCERT or Greenwood confirmation is claimed.** Items 25–57
+preserved; 58 and 59 added.

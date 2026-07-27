@@ -5,7 +5,7 @@ import ReactMarkdown from "react-markdown";
 import remarkMath from "remark-math";
 import remarkGfm from "remark-gfm";
 import rehypeKatex from "rehype-katex";
-import { DBlockPartVisuals } from "../DBlockVisualLibrary";
+import { DBlockInlineVisuals } from "../DBlockInlineVisuals";
 
 type VisualProps = { className?: string };
 type PageBlock = { id: string; label: string; visual: string; markdown: string };
@@ -433,8 +433,6 @@ export default function DBlockPart02() {
           </div>
         </nav>
 
-        <DBlockPartVisuals part={2} />
-
         <div className="mt-6 space-y-7">
           {PAGES.map((page, index) => {
             const Visual = page.visual ? VISUALS[page.visual] : undefined;
@@ -450,6 +448,12 @@ export default function DBlockPart02() {
                 <ReactMarkdown remarkPlugins={[remarkGfm, remarkMath]} rehypePlugins={[rehypeKatex]} components={markdownComponents}>
                   {page.markdown}
                 </ReactMarkdown>
+                <DBlockInlineVisuals
+                  part={2}
+                  pageId={page.id}
+                  label={page.label}
+                  markdown={page.markdown}
+                />
                 {Visual ? <Visual /> : null}
               </section>
             );

@@ -22,7 +22,10 @@ export function createMarkdownComponents(part: number) {
       const id = headingId(part, props.children);
       return <><h3 className="mt-10 border-l-4 border-cyan-400 pl-4 text-2xl font-black text-white" {...props} id={id} /><AnchoredFigures anchor={id} /></>;
     },
-    h3: (props: any) => <h4 className="mt-8 text-xl font-extrabold text-cyan-200" {...props} id={headingId(part, props.children)} />,
+    h3: (props: any) => {
+      const id = headingId(part, props.children);
+      return <><h4 className="mt-8 text-xl font-extrabold text-cyan-200" {...props} id={id} /><AnchoredFigures anchor={id} /></>;
+    },
     p: (props: any) => <p className="mt-4 text-[1.02rem] leading-8 text-slate-200" {...props} />,
     strong: (props: any) => <strong className="font-extrabold text-white" {...props} />,
     em: (props: any) => <em className="text-cyan-100" {...props} />,

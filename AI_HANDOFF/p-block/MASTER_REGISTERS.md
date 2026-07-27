@@ -2133,3 +2133,190 @@ central-atom d-orbital participation as the preferred modern explanation.
 
 **Items 25–31 (Group 18) and 32–43 (Group 13) are preserved unchanged above
 and have not been silently amended.**
+
+---
+
+# Addendum 7 — file 12 `15161718.pdf`, Group 15 opening (PDF pp. 1–5 = printed 468–472)
+
+**What this file actually is.** 209 pages, a **pure scan** — `pdftotext` returns
+zero characters across the whole document, so every page requires vision. It is
+**J.D. Lee, *Concise Inorganic Chemistry*, 5th edition, Chapters 14–17**, i.e.
+Groups 15, 16, 17 and 18, covering printed pages ≈469–677. The page offset is
+printed = PDF + 467 near the front and + 468 from about PDF p. 140, so one page
+is inserted somewhere in between.
+
+**Why this is a differential pass, not a fresh read.** Spot checks at PDF p. 140
+(printed 608, Table 16.4 and the OF₂/O₂F₂ text) and PDF p. 175 (printed 643,
+XeF₂·2SbF₅ with 1.84/2.35 Å against the 3.50 Å van der Waals contact, the XeF₆
+adduct list, and `2Cs[XeF₇] → XeF₆ + Cs₂[XeF₈]`) match **file 8 almost word for
+word** — those items are already registered in Addenda 3 and 4. File 8 is the
+adapted Indian edition of this same text. So this source is read for **what the
+adapted edition trimmed**, and the entries below are only material that is
+genuinely absent from Addenda 1–6.
+
+**The trimming is heavy where it matters.** Chapter 14 (Group 15) occupies ~99
+PDF pages here against 35 printed pages in the adapted edition. Occurrence,
+extraction, world production and the whole of arsenic/antimony/bismuth
+metallurgy are the parts that were cut.
+
+## A. Topic register — additions A177–A186
+
+| # | Topic | Where it belongs | Content |
+|---|---|---|---|
+| A177 | Crustal abundance of the Group 15 elements | §7 | N 19 ppm (33rd equal), P 1120 ppm (11th), As 1.8 ppm (52nd), Sb 0.20 ppm (64th), Bi 0.008 ppm (71st). **Phosphorus is the 11th most abundant element in the crust; nitrogen is only 33rd** despite being 78 % of the atmosphere — the contrast between crustal and atmospheric abundance is the teaching point. |
+| A178 | The Chilean nitrate deposit, and why it mattered | §7 | NaNO₃ (Chile saltpetre) in a **450-mile belt along the northern Chilean coast**, with small amounts of KNO₃, CaSO₄ and NaIO₄ under a thin layer of sand or soil. **This was the world's main nitrate source until the First World War**, when synthetic fixation replaced it. A separate KNO₃ (saltpetre) deposit occurs in India. Bat guano from limestone caverns in Kentucky, Tennessee and Carlsbad, New Mexico was also important, and has been displaced by synthetic NH₃ and NH₄NO₃. |
+| A179 | Dry-air composition with boiling points | §7, §18 | N₂ 78.08 % (−195.8 °C), O₂ 20.95 % (−183.1), Ar 0.934 % (−186.0), CO₂ 0.025–0.050 % (−78.4, sublimes), Ne 0.0015 % (−246.0), H₂ 0.0010 % (−253.0), He 0.00052 % (−269.0), Kr 0.00011 % (−153.6), Xe 0.0000087 % (−108.1). **Six industrial gases come out of liquid air: N₂, O₂, Ne, Ar, Kr and Xe**, and N₂ distils off first because it boils below O₂. |
+| A180 | Nitrogen purity grades — a real industrial distinction | §7 | Commercial N₂ carries **up to 20 ppm O₂**; "oxy-free" N₂ **up to 2 ppm O₂**; ultrapure N₂ has no O₂ **but may contain up to 10 ppm Ar**. Argon is the impurity you cannot boil away, because its boiling point (−186.0) sits between N₂ and O₂. |
+| A181 | Uses of dinitrogen, and the scale | §7 | World production **>60 million tonnes/year and growing**, largely because modern steelmaking needs liquid O₂ and N₂ comes off the same column. **Two thirds sold as gas** (steel cylinders or piped), **one third as liquid**. Uses: inert atmosphere in iron, steel and other metallurgy; purging catalytic cracking and reforming vessels and pipes in oil refineries; liquid N₂ as refrigerant; feedstock for ammonia and calcium cyanamide. |
+| A182 | **Sodium azide decomposition inflates car air bags** | §7 | `2NaN₃ →(300 °C) 3N₂ + 2Na`. The same reaction, run carefully, is the laboratory route to **very pure** N₂. A safety device built on a Group 15 thermal decomposition. |
+| A183 | Phosphorus in biology, quantified | §10 | **60 % of bones and teeth** is Ca₃(PO₄)₂ or [3Ca₃(PO₄)₂]·CaF₂, and an average person carries **8 lb (3.5 kg)** of calcium phosphate. DNA and RNA are polyester chains of phosphate and sugar carrying adenine, cytosine, thymine and guanine. **ATP → ADP releases 33 kJ mol⁻¹**, which is the energy currency of the cell. Average protein composition by weight: C 50 %, O 25 %, N 17 %, H 7 %, S 0.5 %, P 0.5 %. |
+| A184 | The apatite family, and isomorphous substitution in it | §10 | **Fluoroapatite [3Ca₃(PO₄)₂]·CaF₂**, **hydroxyapatite [3Ca₃(PO₄)₂]·Ca(OH)₂**, **chloroapatite [3Ca₃(PO₄)₂]·CaCl₂** — OH⁻ and Cl⁻ substituting for F⁻ in the same lattice. World phosphate rock production **145 million tonnes in 1992** (USA 32 %, China 18 %, Soviet Union 15 %, Morocco 15 %); **about 90 % is used directly as fertiliser**, the remainder for elemental P and phosphoric acid. |
+| A185 | **Industrial extraction of elemental phosphorus** | §10 | Electric furnace at **1400–1500 °C**, reducing calcium phosphate with carbon. Sand is added for two distinct jobs: it removes calcium as a **fluid slag of calcium silicate**, and it drives the phosphorus off as P₄O₁₀. `2Ca₃(PO₄)₂ + 6SiO₂ → 6CaSiO₃ + P₄O₁₀`, then `P₄O₁₀ + 10C → P₄ + 10CO`. The vapour is **mainly P₄ with some P₂** at that temperature, and is condensed to white phosphorus **by passing the gas through water**. World production about 1 million tonnes/year and **declining**. Of it, **85 % goes to very pure H₃PO₄, 10 % to P₄S₁₀ (organo P–S compounds) and P₄S₃ (matches)**, with POCl₃ and phosphor bronze accounting for the rest. |
+| A186 | **Arsenic, antimony and bismuth metallurgy — absent from the course entirely** | new §10a | All three are recovered as **by-products of roasting sulphide ores in a smelter**, from the flue dust, and all three oxides are reduced with carbon. Full detail in the compound register below. The unifying idea is that none of the three is mined for its own sake. |
+
+## B. Compound and species register — additions
+
+**Nitrogen sources and preparations.** NaNO₃ Chile saltpetre · KNO₃ saltpetre ·
+NaIO₄ (as a minor component of the Chilean deposit) · CaSO₄ · NH₄NO₂ ·
+**NaN₃ sodium azide** · NH₄NO₃ · calcium cyanamide (as an N₂ consumer).
+
+**Phosphorus biology and minerals.** Ca₃(PO₄)₂ · **fluoroapatite
+[3Ca₃(PO₄)₂]·CaF₂** · **hydroxyapatite [3Ca₃(PO₄)₂]·Ca(OH)₂** · **chloroapatite
+[3Ca₃(PO₄)₂]·CaCl₂** · CaSiO₃ calcium silicate slag · **ATP adenosine
+triphosphate** and **ADP adenosine diphosphate** (structure given as Figure
+14.1) · adenine, cytosine, thymine, guanine as the DNA/RNA bases · P₄ · **P₂**
+(present in the furnace vapour alongside P₄) · P₄O₁₀ · **P₄S₁₀** · **P₄S₃** ·
+H₃PO₄ · POCl₃ · phosphor bronze.
+
+**Arsenic species.** **As₄** (the extraction product) · **As₂O₃** — the form in
+which arsenic is actually recovered, 47 000 tonnes worldwide in 1992 ·
+**arsenopyrites FeAsS**, white–grey with a metallic lustre · **realgar As₄S₄**,
+red–orange · **orpiment As₂S₃**, yellow — the last two found in volcanic areas ·
+**arsenides NiAs, NiAs₂, FeAs₂** · FeS (co-product).
+
+**Antimony species.** **Sb₂O₃** — the recovered form, from roasting ZnS ores ·
+**stibnite Sb₂S₃**, iridescent metal-like needles · Sb metal, 84 000 tonnes in
+1992.
+
+**Bismuth species.** **Bi₂O₃** — recovered from the flue dust of roasting PbS,
+ZnS and CuS, and also a mineral in its own right as **bismite Bi₂O₃** ·
+**bismuthinite Bi₂S₃** · Bi metal, 3600 tonnes in 1992.
+
+**Ores roasted as the arsenic source.** CuS, PbS, FeS, CoS, NiS.
+
+## C. Preparation and reaction register — additions
+
+**Dinitrogen, four laboratory routes.**
+`NH₄Cl + NaNO₂ → NaCl + NH₄NO₂`, then `NH₄NO₂ →(warm) N₂ + 2H₂O` ·
+`4NH₃ + 3Ca(OCl)₂ → 2N₂ + 3CaCl₂ + 6H₂O` ·
+`8NH₃ + 3Br₂ → N₂ + 6NH₄Br` ·
+`2NaN₃ →(300 °C) 3N₂ + 2Na` — the route to **very pure** N₂, and the air-bag
+reaction. Ammonia may also be oxidised with calcium hypochlorite, bromine water
+or CuO.
+
+**Elemental phosphorus.** `2Ca₃(PO₄)₂ + 6SiO₂ → 6CaSiO₃ + P₄O₁₀` and
+`P₄O₁₀ + 10C → P₄ + 10CO`, electric furnace, 1400–1500 °C, vapour condensed
+through water.
+**Downstream from P₄.** `P₄ + 5O₂ → P₄O₁₀`, then `P₄O₁₀ + 6H₂O → 4H₃PO₄` ·
+`P₄ + 10S → P₄S₁₀`.
+
+**Arsenic.** `4FeAsS → As₄ + 4FeS` — heating arsenopyrite to about **700 °C in
+the absence of air**, and the arsenic **sublimes out**. As₂O₃ from flue dust is
+alternatively reduced with carbon.
+
+**Antimony.** `Sb₂S₃ + 3Fe → 2Sb + 3FeS` — reduction by **fusing the sulphide
+with iron**, which is a genuinely different strategy from carbon reduction of an
+oxide and is worth teaching beside it. Sb₂O₃ from flue dust is reduced with
+carbon.
+
+**Bismuth.** Bi₂O₃ from flue dust, reduced with carbon.
+
+## D. Physical-property register — additions
+
+| Element | Melting point (°C) | Boiling point (°C) |
+|---|---|---|
+| N₂ | −210 | −195.8 |
+| P₄ | 44 | 281 |
+| α-As | **816 at 38 atmospheres** | **615 (sublimes at 1 atm)** |
+| α-Sb | 631 | 1587 |
+| α-Bi | **271** | 1564 |
+
+**Arsenic needs 38 atmospheres before it will melt at all** — at ordinary
+pressure it sublimes at 615 °C. That is the sharpest physical distinction
+between arsenic and its neighbours and the course does not currently have it.
+
+## E. Colour and observation register — additions
+
+| Species | Observation |
+|---|---|
+| Arsenopyrite FeAsS | White–grey, **metallic lustre** |
+| Realgar As₄S₄ | **Red–orange** |
+| Orpiment As₂S₃ | **Yellow** |
+| Stibnite Sb₂S₃ | **Iridescent, metal-like needles** |
+| Bismuthinite Bi₂S₃ | Mineral form of the sulphide |
+| Bismite Bi₂O₃ | Mineral form of the oxide |
+
+The source states plainly that **the colours of the sulphide ores are
+distinctive**, which is what makes them recognisable in the flue-dust context.
+
+## F. Uses and hazards register — additions
+
+**As metal.** Few uses as the metal. Alloyed with lead **to harden it**; dopant
+in semiconductors; **light-emitting diodes**. *Hazard:* As and Sb compounds are
+poisonous, and the main uses of As₂O₃ — **rat poison, medicines to kill
+parasites, and wood-rot prevention** — all depend on exactly that toxicity.
+**Sb metal.** Alloys with Sn and Pb; **electroplated onto steel to prevent
+rusting**. Sb compounds as **fire retardants in the foam filling of furniture
+and mattresses**.
+**Bi metal.** *Working constraint:* its melting point is so low that it must be
+**cast much as lead is**, and As, Sb and Bi are all **too brittle to work**.
+Used in low-melting alloys — including the **low-melting plug in automatic fire
+sprinkler heads** — and in batteries, bearings, solder and ammunition.
+**N₂.** Inert atmosphere for metallurgy; purging refinery cracking and reforming
+vessels; liquid N₂ as refrigerant.
+**NaN₃.** Car air bags, and pure N₂ generation. *Hazard implied:* a solid that
+evolves three moles of gas per two moles at 300 °C.
+**Phosphate rock.** 90 % straight to fertiliser.
+**P₄S₃.** Matches. **P₄S₁₀.** Organophosphorus–sulphur compounds.
+
+## G. Visual register — additions V85–V88
+
+| ID | Required visual kind | Subject |
+|---|---|---|
+| V85 | **Trend graph + JEE trap graphic** | Crustal abundance against atmospheric abundance for N and P — nitrogen 33rd in the crust yet 78 % of the air |
+| V86 | **Process flow** | Phosphorus extraction, with sand's two separate jobs (slagging the calcium, driving off P₄O₁₀) drawn as two branches rather than one arrow |
+| V87 | **Process flow** | As/Sb/Bi as smelter by-products: one roasting step feeding three flue-dust oxides, then carbon reduction for two and iron fusion for antimony |
+| V88 | **Comparison graphic** | Sulphide ore identification by colour — arsenopyrite, realgar, orpiment, stibnite, bismuthinite |
+
+## H. JEE trap register — items 151–158
+
+151. **Nitrogen is only the 33rd most abundant element in the crust**, though it
+     is 78 % of the atmosphere. Phosphorus, with no atmospheric presence at all,
+     is 11th.
+152. **Argon, not oxygen, is the impurity that survives in ultrapure N₂** — up
+     to 10 ppm — because its boiling point lies between those of N₂ and O₂.
+153. **Sodium azide, not ammonium nitrite, is the route to *very pure* N₂.**
+154. **The phosphorus furnace vapour contains P₂ as well as P₄**, and it is
+     condensed through **water**, not simply cooled.
+155. **Sand in the phosphorus furnace does two jobs**, slagging the calcium and
+     liberating P₄O₁₀. Naming only one is the usual incomplete answer.
+156. **Arsenic sublimes at 615 °C and needs 38 atmospheres to melt at 816 °C.**
+     Quoting a melting point for arsenic without the pressure is meaningless.
+157. **Antimony is reduced by fusing its sulphide with iron**, not by carbon
+     reduction of an oxide like arsenic and bismuth.
+158. **Realgar is As₄S₄, not As₂S₂**, and orpiment is As₂S₃ — the red–orange and
+     the yellow ore respectively.
+
+## I. Contradictions — none new in this segment
+
+Nothing in printed pages 468–472 conflicts with Addenda 1–6 or with itself. The
+overlap that exists is verbatim agreement, which is expected between an edition
+and its adaptation. **Items 25–53 are preserved unchanged.**
+
+## J. Verification status
+
+Everything above was read directly from page images of the accessible J.D. Lee
+5th-edition scan. **No NCERT and no Greenwood corroboration is claimed** —
+neither is in the corpus. Where this file agrees verbatim with file 8, the
+agreement is recorded as a single source (one author, two editions), **not** as
+independent confirmation.

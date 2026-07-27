@@ -136,11 +136,18 @@ Last updated: 2026-07-26.
 |---|---|---|---|
 | Files 1–6 (original six) | 437 | **325** | 74 % |
 | Files 7–11 (new five) | 1294 | **191** | 14.8 % |
-| **Total project** | **1731** | **516** | **30 %** |
+| File 12 (`15161718.pdf`, newly located) | 209 | **5** | 2.4 % |
+| **Total project** | **1940** | **521** | **27 %** |
 
-Files 7–11 breakdown: file 7 (JD Lee 5th ed. scan) 5 / 1057 · **file 8 (JD Lee adapted
-Ch. 10) 172 / 172 — COMPLETE** · file 9 (annotated notes) 0 / 40 · file 10 (annotated
-notes) 0 / 11 · file 11 (noble-gas notes) 14 / 14.
+Files 7–12 breakdown: file 7 (JD Lee 5th ed., whole book) 5 / 1057 · **file 8 (JD Lee
+adapted Ch. 10) 172 / 172 — COMPLETE** · file 9 (annotated notes) 0 / 40 · file 10
+(annotated notes) 0 / 11 · file 11 (noble-gas notes) 14 / 14 · **file 12 (JD Lee 5th ed.
+Ch. 14–17 extract) 5 / 209**.
+
+**The denominator went up, so the percentage went down.** Locating file 12 added 209
+previously uncounted pages to the corpus, which moves the total from 1731 to 1940 and the
+completion figure from 30 % to 27 %. That is a correction, not a regression — the earlier
+30 % was measured against a corpus that was missing a file.
 
 **The project has NOT been fully reviewed.** No statement in the course may claim otherwise.
 
@@ -167,11 +174,49 @@ cross-references resolving, all 20 lessons non-empty.
    Three visuals are live. Remaining: author the other 14 registered visuals.
 5. Molecular Orbital Theory depth beyond the O₂ paramagnetism case.
 
-## 4a. A twelfth file exists that was not attached
+## 4a. File 12 — `15161718.pdf` (now located, identified and entered)
 
-`Downloads/p block/15161718.pdf` sits in the same folder as everything attached
-and covers **Groups 15–18** by its name. It is **not** in the register above
-because it was never attached. Attach it and it goes into the same pipeline.
+- **Actual path:** `/Users/mritunjayshukla/Downloads/p block/15161718.pdf`
+- **Pages: 209.** Verified three ways — `mdls kMDItemNumberOfPages`, a count of
+  `/Type /Page` objects, and the top-level `/Count`. All give 209.
+- **Format: a PURE SCAN.** `pdftotext` over the whole document returns **zero
+  characters** (209 page-break bytes and nothing else). Every page needs vision;
+  there is no OCR text layer to fall back on.
+- **Identity:** **J.D. Lee, *Concise Inorganic Chemistry*, 5th edition,
+  Chapters 14–17** — Groups 15, 16, 17 and 18. The filename is the group list.
+- **Printed page range:** ≈**469–677**. Offset is printed = PDF + 467 at the
+  front and printed = PDF + 468 from about PDF p. 140, so one page is inserted
+  between those points. Chapter starts: Ch. 14 Group 15 at PDF p. 1; Group 16
+  reached by PDF p. 100; Ch. 16 Group 17 by PDF p. 140; Ch. 17 Group 18 by
+  PDF p. 175.
+- **Relationship to file 7 — do not double-count.** File 7 is the *whole*
+  1057-page 5th edition, whose Ch. 14–17 was recorded as unread. **This file is
+  an extract of exactly those chapters.** They are the same printed pages. Pages
+  completed here therefore also discharge file 7's Ch. 14–17 obligation, and
+  file 7's own tally is deliberately left at 5/1057 so the same paper is not
+  counted twice.
+- **Relationship to file 8 — this is a differential pass.** File 8 is the
+  *adapted Indian edition* of this same text. Spot checks at PDF p. 140
+  (printed 608) and PDF p. 175 (printed 643) match file 8 **almost word for
+  word**, and those passages are already registered in Addenda 3 and 4. This
+  source is therefore read for **material the adapted edition trimmed**, and
+  Addendum 7 records only what is genuinely new.
+- **The trimming is heavy in the front matter of each chapter.** Chapter 14
+  occupies ~99 PDF pages here against 35 printed pages in the adapted edition.
+  Occurrence, extraction, world production figures and the whole of
+  arsenic/antimony/bismuth metallurgy were cut.
+- **Inspected: 5 / 209 (Vision)** — PDF pp. 1–5 = printed 468–472. Complete
+  coherent segment: the Ch. 14 opening (electronic structures and oxidation
+  states) and the whole of "Occurrence, extraction and uses" for N, P, As, Sb
+  and Bi, ending where "General properties and structures of the elements"
+  begins. Registered in **`MASTER_REGISTERS.md` Addendum 7**: 10 topics,
+  ~45 species, 12 preparations/reactions, a melting/boiling table, 6 colour
+  observations, a uses-and-hazards block, 4 visuals, 8 JEE traps, 0 new
+  contradictions.
+- **Next unread page: PDF p. 6 (printed 473)** — continuing "General properties
+  and structures of the elements" in Chapter 14.
+- **Destination:** Sections 7–19, as gap-fill on top of Addenda 1–4 — **IN
+  PROGRESS**
 
 ## 5. Points needing NCERT confirmation (source absent)
 

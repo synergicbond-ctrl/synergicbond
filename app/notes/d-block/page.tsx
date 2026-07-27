@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { DBlockVisualLibrary } from "./DBlockVisualLibrary";
 
 export const metadata = {
   title: "D-Block Elements — JEE Advanced Theory",
@@ -54,6 +55,7 @@ export default function DBlockHubPage() {
             </Link>
           ))}
         </section>
+        <DBlockVisualLibrary />
       </div>
     </main>
   );

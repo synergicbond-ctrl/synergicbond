@@ -136,13 +136,13 @@ Last updated: 2026-07-26.
 |---|---|---|---|
 | Files 1–6 (original six) | 437 | **325** | 74 % |
 | Files 7–11 (new five) | 1294 | **191** | 14.8 % |
-| File 12 (`15161718.pdf`, p-block part only) | 184 | **50** | 27.2 % |
-| **Total project** | **1915** | **566** | **30 %** |
+| File 12 (`15161718.pdf`, p-block part only) | 184 | **56** | 30.4 % |
+| **Total project** | **1915** | **572** | **30 %** |
 
 Files 7–12 breakdown: file 7 (JD Lee 5th ed., whole book) 5 / 1057 · **file 8 (JD Lee
 adapted Ch. 10) 172 / 172 — COMPLETE** · file 9 (annotated notes) 0 / 40 · file 10
 (annotated notes) 0 / 11 · file 11 (noble-gas notes) 14 / 14 · **file 12 (JD Lee 5th ed.
-Ch. 14–17 extract) 50 / 184 deeply read, **209 / 209 triaged**.
+Ch. 14–17 extract) 56 / 184 deeply read, **209 / 209 triaged**.
 
 **Denominator history, so the movement is auditable.** Locating file 12 added its pages to
 a corpus that had been missing them, taking the total from 1731 to 1940 and the completion
@@ -229,7 +229,7 @@ cross-references resolving, all 20 lessons non-empty.
   `FULL — PARTIALLY UNIQUE` **98** · `SAMPLED — DUPLICATE OF FILE 8` **32** ·
   `VISUAL ONLY` **2** · `QUESTION GAP` **9** · `NOT RELEVANT` **30** (5
   further-reading/chapter-close + 25 d-block) · `UNCLEAR` **0**.
-- **Deeply inspected and fully registered: 50 / 184 (Vision).** *(This figure had
+- **Deeply inspected and fully registered: 56 / 184 (Vision).** *(This figure had
   gone stale at "8 / 184" while the addenda accumulated; the authoritative count
   has always been the recounted-in-code block further down, which read 39 before
   Addendum 20 and reads 48 after it. Corrected here rather than left to diverge.)*
@@ -369,13 +369,13 @@ triaged **209** · p-block pages **184** · **fully unique pages 37** (the Adden
 figure was 38; **PDF 107 was reclassified to partially unique in Addendum 10**
 once the S–N section turned out to start in its last paragraph) · **fully unique
 pages deeply inspected 37 — COMPLETE** · **fully unique pages remaining 0** · partially
-unique pages compared **2 of 99** · duplicate pages sampled **33** · visual-only
+unique pages compared **8 of 99** · duplicate pages sampled **33** · visual-only
 pages inspected **2 of 2 — COMPLETE** · question-gap pages audited **9 of 9 — COMPLETE** ·
 not-relevant pages **30** · pages with unclear content **4**.
 
-**Total pages deeply inspected 50** = 37 fully unique + 2 partially unique
-(PDF 6 and PDF 107) + **9 question-gap (Addendum 20)** + **2 visual-only
-(Addendum 21)**. **48 of the 50 yielded
+**Total pages deeply inspected 56** = 37 fully unique + **8** partially unique
+(PDF 6, 107 and **117–122**) + **9 question-gap (Addendum 20)** + **2 visual-only
+(Addendum 21)**. **54 of the 56 yielded
 additions; exactly two returned nothing new — PDF 114
 (`DEEP READ — NO NEW CONTENT`) and PDF 62 (`AUDITED — NO NEW CHEMISTRY`).** The
 audited-page denominator is not reduced for any page.
@@ -424,6 +424,14 @@ Addendum 20 and not derived by subtraction.
   superscript "14" with no legend on the page or in the chapter.** **None is
   guessed; all four are marked unsafe to publish until re-read.**
 - **`FULL — UNIQUE`: 37 / 37 — CLOSED.**
+- **`FULL — PARTIALLY UNIQUE`: 8 / 99 read, 91 remaining.** First post-queue range
+  **PDF 117–122 = printed 585–590** (Addendum 22), halogen extraction and uses:
+  24 topics (A311–A334), 6 visuals, 12 traps, **2 new contradictions (67, 68 —
+  both unbalanced equations, both settled by conservation alone)**, **4 source
+  defects (D7–D10)**, 8 existing topics expanded with their IDs kept.
+  **Three registered gaps closed from source prose: the fluorine-cell reason and
+  names, the fluorinating agents, and HF with uranium.**
+- **`VISUAL ONLY`: 2 / 2 — CLOSED (Addendum 21).**
 - **`QUESTION GAP`: 9 / 9 — CLOSED (Addendum 20).** 8 pages returned
   `AUDITED — CONCEPT REGISTERED`, PDF 62 returned `AUDITED — NO NEW CHEMISTRY`.
   Yield: topics **A297–A308**, visuals **V137–V141**, traps **248–257**,

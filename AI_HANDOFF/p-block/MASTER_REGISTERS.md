@@ -5284,3 +5284,288 @@ replacement (V142) and one source defect.**
 
 **Remaining in file 12: 97 of 99 `FULL — PARTIALLY UNIQUE` pages. Every other
 queue is closed.**
+
+---
+
+# Addendum 22 — file 12 PDF 117–122 (printed 585–590): halogen extraction and uses, and three registered gaps closed
+
+**First `FULL — PARTIALLY UNIQUE` range of the post-queue phase**, chosen because
+three of the gaps Addendum 20 registered point directly at it. **All three are
+closed from source prose on these pages** — none is filled by general chemistry.
+
+**Page outcomes:**
+
+| PDF | Printed | Section | Triage label | Deep-read outcome | File-8 equivalent |
+|---|---|---|---|---|---|
+| 117 | 585 | Fluorine manufacture; Figure 16.1 fluorine cell | `FULL — PARTIALLY UNIQUE` | **`DEEP READ — CONTRADICTION FOUND`** + partial additions + visual | §10.56 |
+| 118 | 586 | F₂ transport, uranium, the fluorocarbons | `FULL — PARTIALLY UNIQUE` | `DEEP READ — PARTIAL ADDITIONS REGISTERED` | §10.56 |
+| 119 | 587 | Fluorine uses, fluoridation; chlorine manufacture | `FULL — PARTIALLY UNIQUE` | **`DEEP READ — CONTRADICTION FOUND`** + partial additions | §10.56 |
+| 120 | 588 | Modified Deacon; chlorine hazards and uses; bromine opening | `FULL — PARTIALLY UNIQUE` | `DEEP READ — PARTIAL ADDITIONS REGISTERED` | §10.56 |
+| 121 | 589 | Bromine recovery and uses | `FULL — PARTIALLY UNIQUE` | `DEEP READ — PARTIAL ADDITIONS REGISTERED` | §10.56 |
+| 122 | 590 | Iodine recovery and uses; astatine | `FULL — PARTIALLY UNIQUE` | `DEEP READ — PARTIAL ADDITIONS REGISTERED` | §10.56 |
+
+**Gaps closed:** the **fluorine-cell reason and names** (A312, A313) · the
+**fluorinating agents** (A321) · **HF with uranium** (A318). **Partially closed:**
+graphite with fluorine (A315). **Still open:** the AgNO₃ silver-halide ladder, and
+the boiling point of helium.
+
+## A. PDF 117 (printed 585) — fluorine manufacture
+
+**Source equations, transcribed as printed and each checked:**
+
+- `CaF₂ + H₂SO₄ → CaSO₄ + 2HF` — Ca 1/1, F 2/2, H 2/2, S 1/1, O 4/4. **Balances.**
+- `KF + HF → K[HF₂]` — K 1/1, H 1/1, F 2/2. **Balances.**
+- `HF + K[HF₂] --electrolyse--> H₂ + F₂` — **DOES NOT BALANCE.** See contradiction 67.
+
+| # | Topic | Content |
+|---|---|---|
+| A311 | **Moissan, 1886 — and the whole chain from fluorspar to F₂** | **Fluorine was first obtained by Moissan in 1886, and he was awarded the 1906 Nobel Prize for Chemistry for it.** Neither the name nor the date appears anywhere else in the corpus. The chain in full: **CaF₂ treated with concentrated H₂SO₄** gives an aqueous mixture of HF; this is **distilled to anhydrous liquid HF**; a **cooled solution of KHF₂ in anhydrous HF is then electrolysed**, giving F₂ at the anode and H₂ at the cathode. Three steps, three different physical operations, and the course previously had none of them. |
+| A312 | **Why anhydrous HF cannot simply be electrolysed — it is a poor conductor** | Stated directly: **"Anhydrous HF is only slightly ionized and is therefore a poor conductor of electricity. Thus a mixture of KF and HF is electrolysed to increase the conductivity."** **This is the reason Addendum 20's A303 registered as missing, and it is now closed from source prose.** It is the single fact that makes the whole cell design intelligible: KF is not a reagent, it is there to supply ions. |
+| A313 | **Two electrolyte compositions, historical and industrial, registered separately** | **Moissan's cell: KF in HF at a mole ratio of 1 : 13.** Disadvantage — **the vapour pressure of HF is high**, giving toxicity and corrosion problems **even when the mixture is cooled to −24 °C**. **Modern practice: "medium temperature fluorine generators" at a KF : HF mole ratio of 1 : 2**, where HF's vapour pressure is much lower and **the mixture melts at about 72 °C**, an easier temperature to hold. **The two are not merged.** The source also names the species formed: **KF and HF react to give the acid salt K⁺[F—H—F]⁻** — the bifluoride ion drawn with its symmetric hydrogen bond, which is why the melt conducts. (A67 already carried the bare ratios 1 : 13 → 1 : 2 from file 8; the temperatures, the vapour-pressure reason, the generator name and the acid-salt formula are new.) |
+| A314 | **Cell materials, each with its chemical reason** | **Cathodes steel; anodes carbon; teflon for electrical insulation.** Vessel: **Moissan used a platinum U-tube** because platinum is very unreactive — **but very expensive**; **copper or Monel metal (Cu/Ni alloy) are now used instead because they cost less**, and they survive because **a protective fluoride film forms on the metal surface and slows further attack** — passivation, named as such. **The H₂ liberated at the cathode must be separated from the F₂ at the anode by a diaphragm, or they react explosively.** And **water must be rigorously excluded, or the fluorine produced will oxidize it to dioxygen.** |
+| A315 | **Graphite anodes fail; ungraphitized carbon is made from coke and copper** | **Graphite must not be used as the anode because it reacts with fluorine to form graphite compounds "CF"**, fluorine atoms progressively invading the space between the sheets, forcing them apart and buckling them, so conduction stops, the current needed rises, more heat is produced, and **eventually an explosion may occur**. **A68 already carried this mechanism; what is new is the remedy and its manufacture — ungraphitized carbon, "made from powdered coke compacted and impregnated with copper".** **This partially closes Addendum 20's graphite question (A305): the source does state that fluorine and graphite give a compound "CF", though the reaction described is with F₂ at an anode, not with HF.** The HF-with-graphite pairing the problem page asked about is **still not answered by this range** and remains open. |
+| A316 | **HF's hazards, quantified, and why the burns are special** | **HF is corrosive, etches glass, and causes very painful skin wounds** which arise **partly by dehydrating the tissue and partly from the acidic nature of HF**. **The wounds are slow to heal because F⁻ ions remove Ca²⁺ ions from the tissues** — a chemical mechanism for a clinical fact, and the reason HF burns are treated with calcium gluconate rather than water alone. **Gaseous HF is very toxic at 3 ppm, against 10 ppm for HCN** — the comparison the source itself draws, and the one that makes the number memorable. |
+
+### Contradiction 67 — printed 585, the fluorine-cell electrolysis equation
+
+**Source form as printed:** `HF + K[HF₂] --electrolyse--> H₂ + F₂`.
+*The issue:* **the equation does not balance, and potassium disappears
+altogether.** Left: 1 K, 2 H, 3 F. Right: 2 H, 2 F, **no K**. *Correction, from
+conservation alone:* the cell reaction is **`2HF → H₂ + F₂`**, with **K[HF₂]
+present as the conducting electrolyte and regenerated, not consumed** — which is
+exactly what the same page's own prose says when it explains that KF is added
+"to increase the conductivity". Written as a consumption it would be
+`2K[HF₂] → 2KF + H₂ + F₂` (K 2/2, H 2/2, F 4/4). *Verification needed:* none —
+this is settled by atom balance and by the source's own adjacent sentence.
+*Safe for inclusion:* **the cell chemistry yes, in the balanced form; the printed
+equation no.** This is the same pattern as contradiction 27 — a fully written
+equation with a wrong coefficient set — and is registered as a contradiction
+rather than a source defect for that reason.
+
+### Visual requirement — Figure 16.1
+
+The page carries **Figure 16.1, "Fluorine cell"** — a labelled section through the
+cell showing HF (in), F₂ (out), H₂ (out), a cooling jacket, the carbon anode, the
+steel cathode and the electrolyte. **Not copied, not traced.** Replacement
+registered as **V143**.
+
+## B. PDF 118 (printed 586) — transport, uranium and the fluorocarbons
+
+**Source equations, each checked:**
+
+- `3F₂ + Cl₂ --200–300 °C--> 2ClF₃` — F 6/6, Cl 2/2. **Balances.**
+- `2CHClF₂ --500–1000 °C--> CF₂=CF₂ + 2HCl` — C 2/2, H 2/2, Cl 2/2, F 4/4. **Balances.**
+- The three uranium equations **do not balance as printed** — see defects D7–D9.
+
+| # | Topic | Content |
+|---|---|---|
+| A317 | **Fluorine travels as ClF₃, not as F₂** | Cylinders of F₂ are commercially available, **but for many purposes F₂ is converted to ClF₃ (b.p. 12 °C), which though very reactive is less unpleasant and easier to transport.** A practical fact with a clean chemical reason — a condensable liquid beats a cryogenic oxidising gas — and it sets up the interhalogens as working reagents rather than curiosities. |
+| A318 | **The nuclear industry consumes about 75 % of all fluorine produced** | **It was discovered in the 1940s that the isotopes of uranium could be separated by gaseous diffusion of UF₆**, which was important in preparing enriched uranium for the first atomic bomb, and **gaseous diffusion is still used to make enriched uranium fuel for nuclear reactors**. The 75 % share is the striking number: the largest single use of the element is isotope separation. **This closes Addendum 20's HF-with-uranium gap (A305), and the answer is a chain rather than one reaction** — uranium metal or its dioxide is fluorinated by HF to **UF₄**, and UF₄ is then taken to the volatile **UF₆** either by F₂ or by ClF₃, which is why A317's transport form matters here. *(Fluorine production first became important for a different reason: **AlF₃ and synthetic Na₃[AlF₆]**, both used in aluminium extraction — **the natural cryolite is found only in Greenland and that source is largely exhausted**, which is the commercial half of A292.)* |
+| A319 | **Perfluoro nomenclature, and why perfluoro compounds boil so low** | Fluorocarbons are derived from hydrocarbons by substituting F for H; **CF₄ is tetrafluoromethane**. **Completely fluorinated compounds CₙF₂ₙ₊₂ are called perfluoro compounds, so CF₄ is also perfluoromethane.** **They have very low boiling points for their molecular weight, because the intermolecular forces are very weak** — a dispersion-forces argument that runs against the usual "heavier means higher boiling" intuition and is therefore worth teaching. **Unlike methane, CF₄ can be heated in air without burning.** |
+| A320 | **Tetrafluoroethene and the route to PTFE** | **F₂C=CF₂, b.p. −76.6 °C**, made by pyrolysis: `2CHClF₂ →(500–1000 °C) CF₂=CF₂ + 2HCl`. Fluoroalkenes polymerise **thermally or with a free-radical initiator**, and **the degree of polymerisation decides the product — oils, greases, or a high-molecular-weight solid, polytetrafluoroethylene**, known commercially as **PTFE or Teflon**: inert, completely resistant to chemical attack, an electrical insulator, expensive, used in laboratories and as a non-stick pan coating. **A69 registered PTFE's inertness; the monomer, its boiling point, its synthesis and the oils/greases/solid ladder are new.** |
+
+### Source defects D7–D9 — printed 586, the UF₆ preparation set
+
+The source writes "UF₆ is made as follows" and gives three schemes. **All three
+omit a product, so none balances.** Recorded with the printed form first and the
+correction second, exactly as the project requires.
+
+**D7 — `U or UO₂ + HF → UF₄`, the metal case.** *Printed:* as above.
+*Correction, from conservation:* **`U + 4HF → UF₄ + 2H₂`** (U 1/1, H 4/4, F 4/4).
+Hydrogen has nowhere to go in the printed form.
+
+**D8 — `U or UO₂ + HF → UF₄`, the oxide case.** *Printed:* as above.
+*Correction, from conservation:* **`UO₂ + 4HF → UF₄ + 2H₂O`** (U 1/1, O 2/2,
+H 4/4, F 4/4). Note the two cases need **different** products, which is why one
+line cannot serve both and the source's "U or UO₂" is doing too much work.
+
+**D9 — `UF₄ + ClF₃ → UF₆`.** *Printed:* as above. *Correction, from
+conservation:* **`3UF₄ + 2ClF₃ → 3UF₆ + Cl₂`** (U 3/3, F 18/18, Cl 2/2). The
+printed form loses the chlorine entirely.
+
+**Why these are defects and not contradictions.** Unlike contradiction 67, these
+three carry **no coefficients at all** and omit products rather than mis-count
+them — the passage is written as a schematic outline, not as balanced chemistry.
+**Every correction follows from atom balance alone, with no outside authority
+needed**, which is the same standard used for `Mg₃Bi` and `Ba₂[XeO₆]`. **The middle
+member of the set, `UF₄ + F₂ → UF₆`, balances exactly as printed** (U 1/1,
+F 6/6) — recorded, because a set in which one of three balances is evidence of
+carelessness rather than of a deliberate notation.
+
+## C. PDF 119 (printed 587) — fluorine's uses, fluoridation, and chlorine
+
+**Source equations, each checked:**
+
+- `H₂SO₄ + NaCl → HCl + NaHSO₄` — H 2/2, S 1/1, O 4/4, Na 1/1, Cl 1/1. **Balances.**
+- `4HCl + MnO₂ → MnCl₂ + 2H₂O + Cl₂` — H 4/4, Cl 4/4, Mn 1/1, O 2/2. **Balances.**
+- `2NaCl + 2H₂O --electrolyse--> 2NaOH + Cl₂ + 2H₂` — **DOES NOT BALANCE.** See contradiction 68.
+- `2NaCl --electrolyse--> 2Na + Cl₂` — Na 2/2, Cl 2/2. **Balances.**
+
+| # | Topic | Content |
+|---|---|---|
+| A321 | **The fluorinating agents F₂ is used to make** | Stated as a list: **"F₂ is also used to make other fluorinating agents ClF₃, BrF₃ and IF₅ and SbF₅."** **This closes Addendum 20's A304, which recorded that the chapter must hold such a roster but that the roster was not on the question page.** Four reagents, three of them interhalogens already in the species register and one — **SbF₅** — a metal fluoride whose role is different, as a fluoride-ion acceptor and superacid component rather than an oxidising fluorinator. **The source lists them; it does not on this page give a reaction example, a condition, or an advantage for each, so those fields stay empty rather than being filled from general chemistry.** Alongside them the page names **SF₆, a very inert gas used as a dielectric (insulating) medium for high-voltage equipment**, and records that **the earlier use of liquid F₂ as a rocket-motor oxidiser has been discontinued.** |
+| A322 | **Fluoridation practice, and the toothpaste that changed formula** | Registered already: 1 ppm F⁻ reduces dental caries, hydroxyapatite → the harder fluoroapatite, above 2 ppm causes brown mottling (A70). **New here: in some places NaF and H₂[SiF₆] are added to drinking water where the natural water is very soft and holds too little F⁻** — tying the H₂[SiF₆] by-product of A291 to its actual point of use — and **NaF is now used in fluoride toothpaste, whereas the original fluoride toothpaste contained SnF₂ and Sn₂P₂O₇.** Two tin compounds the corpus did not hold. |
+| A323 | **Scheele's chlorine, and the purification train that follows it** | **Chlorine was first prepared by Scheele by oxidizing HCl with MnO₂** — the name appears nowhere else in the corpus. The laboratory route is a pair: `H₂SO₄ + NaCl → HCl + NaHSO₄`, then `4HCl + MnO₂ → MnCl₂ + 2H₂O + Cl₂`. **The purification is the teachable part: the gas is passed first through water to remove HCl, then through concentrated H₂SO₄ to remove water, and may be dried further over CaO and P₄O₁₀.** Order matters — water first, then the drying agent — and that is exactly the kind of sequencing examinations test. |
+| A324 | **Chlorine stopped being a by-product in 1960** | Chlorine is made commercially by two routes, **electrolysis of aqueous NaCl in the manufacture of NaOH**, and **electrolysis of fused NaCl in the manufacture of sodium**. **Before 1960 chlorine was a by-product of both.** Since then demand has risen sharply, **mainly for plastics such as polyvinyl chloride — 14.9 million tonnes of PVC in 1991 — so chlorine is now the major product** and the alkali the co-product. An economic inversion driven by one polymer, and it explains why chlor-alkali capacity is sized by chlorine demand. |
+
+### Contradiction 68 — printed 587, the chlor-alkali equation
+
+**Source form as printed:** `2NaCl + 2H₂O --electrolyse--> 2NaOH + Cl₂ + 2H₂`.
+**Confirmed at 1100 dpi**, the final coefficient is unambiguously **2**.
+*The issue:* **hydrogen does not balance — 4 on the left, 6 on the right.**
+*Correction, from conservation alone:* **`2NaCl + 2H₂O → 2NaOH + Cl₂ + H₂`**
+(Na 2/2, Cl 2/2, H 4/4, O 2/2). The electron count confirms it: two Cl⁻ lose two
+electrons at the anode, and two electrons at the cathode reduce two H₂O to **one**
+H₂ plus two OH⁻. *Verification needed:* none — atom balance and electron balance
+agree. *Safe for inclusion:* **the balanced form only.** This matters more than
+most defects in this file because **the chlor-alkali equation is core syllabus
+material** and a student copying the printed form would carry the error into
+every stoichiometry question built on it.
+
+## D. PDF 120 (printed 588) — chlorine's hazards, economics and uses
+
+**Source equation, checked:** `CH₂Cl—CH₂Cl --400–450 °C--> CH₂=CHCl + HCl` —
+C 2/2, H 4/4, Cl 2/2. **Balances.**
+
+| # | Topic | Content |
+|---|---|---|
+| A325 | **Chlorine's toxicity, by concentration** | **Used as a poison gas in World War I.** **Detectable by smell at 3 ppm; 15 ppm causes a sore throat and running eyes; higher concentrations cause coughing, lung damage and death.** A graded dose–response rather than a warning label, and it pairs with HF's 3 ppm (A316) to give the course two quantified halogen hazards instead of adjectives. |
+| A326 | **Where chlorine is made and what it is made into** | **World production about 35.3 million tonnes per year: Soviet Union 43 %, USA 24 %, Germany 7 %, Canada and France 3 % each, Japan and the UK 2 % each.** The use split is the part worth memorising: **about two-thirds to organic chloro compounds, one-fifth to bleaching, and the rest to inorganic chemicals.** The two dominant organics are **1,2-dichloroethane and vinyl chloride monomer**, both feeding the plastics industry; the named remainder runs through **chlorinated solvents (methyl and ethyl chlorides), perchloro- and dichloroethene, mono-, di- and trichlorobenzene, benzene hexachloride, the insecticide DDT, chlorinated phenols, and the plant-growth-hormone weedkillers 2,4-dichlorophenoxyacetic acid and 2,4,6-trichlorophenoxyacetic acid.** The inorganic list is **bleaching powder, sodium hypochlorite NaOCl, chlorine dioxide ClO₂, sodium chlorate NaClO₃, and many metal and non-metal chlorides.** Bleaching covers textiles, wood, pulp and paper; chlorine is also used throughout the developed world **to purify drinking water, because it kills bacteria**. |
+
+**Expansion of A71 (modified Deacon), ID kept.** Two additions: **didymium is
+explained** — "an old name meaning *twin*", and it **consists of two lanthanide
+elements, praseodymium and neodymium**; and the modified process **works at a
+slightly lower temperature than the original**. The HCl feed is now sourced
+precisely: **a by-product of the pyrolysis of 1,2-dichloroethane to vinyl
+chloride at 400–450 °C.**
+
+## E. PDF 121 (printed 589) — bromine
+
+**Source equations, each checked:**
+
+- `Cl₂ + 2Br⁻ → 2Cl⁻ + Br₂` — Cl 2/2, Br 2/2, charge −2/−2. **Balances.**
+- `3Br₂ + 3Na₂CO₃ → 5NaBr + NaBrO₃ + 3CO₂` — Br 6/6, Na 6/6, C 3/3, O 9/9. **Balances.**
+- `5NaBr + NaBrO₃ + 3H₂SO₄ → 5HBr + HBrO₃ + 3Na₂SO₄` — Na 6/6, Br 6/6, H 6/6, S 3/3, O 15/15. **Balances.**
+- `5HBr + HBrO₃ → 3Br₂ + 3H₂O` — H 6/6, Br 6/6, O 3/3. **Balances.**
+
+| # | Topic | Content |
+|---|---|---|
+| A327 | **Why bromine is not taken from sea water, in numbers** | **Sea water contains about 65 ppm Br⁻ — so 15 tonnes of sea water hold about 1 kg of bromine.** *(The source's own arithmetic is self-consistent: 65 g per tonne × 15 t = 975 g ≈ 1 kg. Checked, not assumed.)* **Bromine is extracted from sea water, but it is more economic to use more concentrated brine sources — the Dead Sea, and brine from wells in Arkansas and Michigan (USA) and Japan, which contain 2000–5000 ppm Br⁻** — thirty to eighty times richer. A concentration-versus-cost argument, and the direct analogue of A295's fluoride-in-sea-water reasoning. |
+| A328 | **The bromine recovery cycle, every step balanced** | A72 registered the four steps; **the equations were not registered and all four balance as printed.** **H₂SO₄ first adjusts the pH to about 3.5**; then **Cl₂ oxidises Br⁻ to Br₂ — displacement of one element by another higher in the electrochemical series**; **Br₂ is blown out by a stream of air because it is quite volatile**; the gas is **absorbed in Na₂CO₃ solution, giving a mixture of NaBr and NaBrO₃**; and the solution is **finally acidified and distilled to give pure bromine**. The chemistry of the last two steps is a disproportionation followed by its exact reverse — `3Br₂ + 3Na₂CO₃ → 5NaBr + NaBrO₃ + 3CO₂` running 0 → −1 and +5, then `5HBr + HBrO₃ → 3Br₂ + 3H₂O` comproportionating straight back. **Concentrating a dilute element by taking it round a redox loop is the idea worth teaching.** |
+| A329 | **Bromine's largest use was a lead scavenger, and it is disappearing** | **In 1955 about 90 % of bromine went to 1,2-dibromoethane CH₂Br·CH₂Br; the figure is now under 50 %.** The reason it existed: **tetraethyl lead is added to petrol to improve its octane rating, but when it burns it forms lead deposits**, and **1,2-dibromoethane prevents the build-up of those deposits on the sparking plug and in the engine** — **the lead leaves with the exhaust gases, mainly as PbClBr.** **The use of PbEt₄ has already declined and will decline further because of legislation and environmental concern over the toxic effects of lead, so 1,2-dibromoethane has declined with it.** A whole industrial chemistry created and then dismantled by one regulatory decision. |
+| A330 | **The rest of bromine's use split, with shares** | **Almost 20 % goes to organic derivatives — methyl bromide, ethyl bromide and dibromochloropropane — used in agriculture, MeBr as a nematocide (it kills earthworms) and as a pesticide against insects and fungi, the others as pesticides.** **Nearly 10 % goes to flame retardants**: bromo compounds may be built into the polymerisation of acrylic and polyester fibres, but **it is more common to "fireproof" fabrics and carpets by treating them with tris(dibromopropyl)phosphate, (Br₂C₃H₅O)₃PO**, either at spinning or after manufacture. The remainder covers photographic emulsions and pharmaceuticals: **AgBr is light-sensitive and used for photographic films**, also for water sanitation and dyestuffs, and **KBr is used as a sedative and as an anticonvulsant in treating epilepsy.** |
+
+### Source defect — printed 589, the bromine production figure
+
+**D10 — the bromine output is printed as "370 000 million tonnes".** *Source form as printed:* **"World production of bromine was 370 000 million
+tonnes in 1993."** *The issue:* **the word "million" is spurious** — 3.7 × 10¹¹
+tonnes exceeds any plausible annual output of any element by many orders of
+magnitude. *Correction:* **370 000 tonnes.** *Basis:* **the same book contradicts
+itself 26 pages earlier** — printed 583, registered as **A288**, gives
+**"Br₂ 370 000 t (1993)"**. **This is an internal inconsistency inside file 12
+itself, not a cross-edition comparison, so it is settled without any external
+source.** The accompanying shares are recorded as printed: **USA 45 %, Israel
+36 %, the UK 8 %, Japan 4 %.**
+
+## F. PDF 122 (printed 590) — iodine and astatine
+
+**Source equations, each checked:**
+
+- `2IO₃⁻ + 6HSO₃⁻ → 2I⁻ + 6SO₄²⁻ + 6H⁺` — I 2/2, S 6/6, O 24/24, H 6/6, charge −8/−8. **Balances**, and the electron count agrees: I(+V) → I(−I) takes 6e⁻ each, 12 in all; S(+IV) → S(+VI) gives 2e⁻ each, 12 in all.
+- `5I⁻ + IO₃⁻ + 6H⁺ → 3I₂ + 3H₂O` — I 6/6, O 3/3, H 6/6, charge 0/0. **Balances.** (Already registered at A73.)
+- `²⁰⁹₈₃Bi + ⁴₂He → ²¹¹₈₅At + 2¹₀n` — mass 213/213, atomic number 85/85. **Balances.**
+
+| # | Topic | Content |
+|---|---|---|
+| A331 | **The Chile-saltpetre iodine route — a two-stream comproportionation** | **Chile saltpetre is mainly NaNO₃ but carries traces of sodium iodate NaIO₃ and sodium periodate NaIO₄.** Pure NaNO₃ is obtained by dissolving the saltpetre and crystallising it out, so **the iodate residues accumulate and concentrate in the mother liquor** — the process concentrates the impurity for free. **The concentrate is then divided into two parts: one is reduced with NaHSO₃ to give I⁻, and this is mixed back with the untreated part, giving I₂**, which is **filtered off as a solid and purified by sublimation.** Splitting a stream, reducing half of it, and recombining is an elegant industrial trick and the registers had only the second equation of it. |
+| A332 | **The brine route, and the ion-exchange variant** | **Sea water holds only about 0.05 ppm I⁻ — too low for commercial recovery** (against 65 ppm Br⁻, A327, which is why bromine and iodine are won differently). **Natural brine may contain 50–100 ppm** and is **treated with Cl₂ to oxidise I⁻ to I₂, which is blown out with air in the same way as bromine.** **Alternatively, after Cl₂ oxidation the solution may be passed through an ion-exchange resin: the I₂ is adsorbed on the column as the triiodide ion I₃⁻, and is finally removed from the resin by treatment with alkali.** The polyhalide chemistry of A85 turning up as a separation technology. |
+| A333 | **Iodine's production and its uses, including the dietary ones** | **World production 17 500 tonnes in 1992 — Japan 42 %, Chile 35 %, the USA 11 %, the Soviet Union 9 %.** **There is no one dominant use.** **Half** goes to organic compounds including **iodoform CHI₃ as an antiseptic** and **methyl iodide CH₃I**; **AgI is used for photographic films and for seeding clouds to produce rain.** Dietary: **small amounts are required in the human diet, so traces — 10 ppm — of NaI are added to table salt, and KI is added to animal and poultry feeds.** **The thyroid gland produces a growth-regulating hormone, thyroxine, which contains iodine, and deficiency causes goitre.** Iodine has limited use as an antiseptic: **tincture of iodine is an aqueous solution of I₂ in KI, and "French iodine" is a solution in alcohol** — two named preparations, distinguished by solvent. **Iodides and iodates are used in volumetric analysis, and Nessler's reagent K₂[HgI₄] detects ammonia.** |
+| A334 | **Astatine — twenty-plus artificial isotopes, and how the chemistry is done at all** | **Astatine does not occur in nature, but over twenty artificial isotopes have been made and all are radioactive.** **The most stable are ²¹⁰At, half-life 8.3 hours, and ²¹¹At, half-life 7.5 hours.** **²¹¹At was first made in 1940 by bombarding bismuth with high-energy α particles**, `²⁰⁹₈₃Bi + ⁴₂He → ²¹¹₈₅At + 2¹₀n`. **Its chemistry was studied by tracer methods, on quantities of about 10⁻¹⁴ mole** — the answer to "how can anyone know astatine's chemistry?" **The isotope decays by orbital electron capture and by α-emission**, and **astatine appears to resemble iodine quite closely.** *(The decay mode stated here — orbital electron capture — agrees with the correction already recorded as contradiction 25, where the source elsewhere wrote positron emission. **Same author, second passage, so this is internal consistency in the corrected direction, not independent verification.**)* |
+
+## G. Visual register — additions V143–V148
+
+| ID | Required visual kind | Subject |
+|---|---|---|
+| V143 | **Process flow** | The fluorine cell as a set of constraints rather than an apparatus drawing: HF in, F₂ out at a carbon anode, H₂ out at a steel cathode, diaphragm between them, cooling jacket, Monel body with its passivating fluoride film. **Replaces Figure 16.1 without copying it** — the source figure is a sectional sketch; the replacement is a labelled constraint diagram built from A312–A315. |
+| V144 | **Comparison graphic** | The two electrolytes side by side: Moissan's KF : HF 1 : 13 at −24 °C with high HF vapour pressure, against the modern 1 : 2 medium-temperature generator melting at ~72 °C — with K⁺[F—H—F]⁻ drawn once, showing why the melt conducts |
+| V145 | **Comparison graphic** | The fluorinating-agent map: F₂ at the centre with ClF₃, BrF₃, IF₅ and SbF₅ around it, and SF₆ shown separately as a *product* use, not a fluorinator. **Fields for conditions and examples deliberately left blank and visibly marked "not stated on printed 587"** (A321) |
+| V146 | **Process flow** | The uranium chain: U or UO₂ → UF₄ → UF₆ → gaseous diffusion, with the 75 %-of-all-fluorine figure on the trunk, and **the balanced equations of D7–D9 used rather than the printed forms** |
+| V147 | **Comparison graphic** | The halogen concentration ladder, log scale: I⁻ 0.05 ppm and Br⁻ 65 ppm in sea water against 50–100 ppm and 2000–5000 ppm in brines, with "economic to extract" drawn as a threshold line |
+| V148 | **Reaction network** | Bromine's redox loop as a closed cycle: Br⁻ →(Cl₂) Br₂ →(Na₂CO₃) NaBr + NaBrO₃ →(H⁺) Br₂, oxidation numbers on every arrow, showing disproportionation and comproportionation as the same loop run twice |
+
+## H. JEE trap register — items 261–272
+
+261. **Anhydrous HF is a poor conductor because it is only slightly ionised.**
+     KF is added for conductivity, not as a reagent — the potassium is
+     regenerated, which is exactly why the printed cell equation cannot balance.
+262. **The chlor-alkali equation is `2NaCl + 2H₂O → 2NaOH + Cl₂ + H₂`** — one
+     H₂, not two. Two electrons at the cathode make one molecule of hydrogen.
+263. **Graphite anodes explode in a fluorine cell.** Fluorine intercalates,
+     buckles the sheets, conduction stops, current and heat rise. Ungraphitized
+     carbon — coke compacted and impregnated with copper — is used instead.
+264. **Monel and copper survive fluorine because of a passivating fluoride
+     film**, not because they are unreactive. Moissan's platinum worked but was
+     unaffordable.
+265. **HF burns heal slowly because F⁻ strips Ca²⁺ from tissue** — the injury is
+     chemical, not merely acidic. HF is toxic at 3 ppm against HCN's 10 ppm.
+266. **About 75 % of all fluorine produced goes to the nuclear industry**, via
+     UF₆ and gaseous diffusion. The largest use of the most reactive element is
+     isotope separation.
+267. **F₂ is shipped as ClF₃ (b.p. 12 °C).** A condensable liquid beats a
+     cryogenic oxidising gas, even when the liquid is itself ferocious.
+268. **Perfluoro compounds boil low for their mass** — CₙF₂ₙ₊₂, very weak
+     intermolecular forces. "Heavier boils higher" fails here.
+269. **Chlorine is detectable by smell at 3 ppm and injures at 15 ppm.** Learn
+     the ladder, not the adjective.
+270. **Chlorine became the major product in 1960**, not the by-product — PVC
+     demand inverted the chlor-alkali economics.
+271. **Bromine is not taken from sea water when a brine is available**: 65 ppm
+     against 2000–5000 ppm. Iodine's sea-water figure, 0.05 ppm, is too low to
+     use at all.
+272. **Bromine recovery is a redox round trip** — Br₂ disproportionates into
+     Na₂CO₃ and is comproportionated back by acid. The point of the loop is
+     concentration, not conversion.
+
+## I. Register-count effects
+
+- **Topics: A310 → A334.** Twenty-four added (A311–A334), **all table rows**,
+  contiguous, no gaps, no duplicates.
+- **Expanded, IDs kept:** **A71** (didymium explained; lower operating
+  temperature; the 400–450 °C dichloroethane pyrolysis as the HCl source) ·
+  **A72** (all four equations now balanced and registered) · **A73** (the
+  NaHSO₃-reduction half of the Chile route) · **A67** (temperatures,
+  vapour-pressure reason and acid-salt formula added to the bare ratios) ·
+  **A68** (the ungraphitized-carbon remedy) · **A69** (monomer, boiling point and
+  polymerisation ladder) · **A70** (NaF/H₂[SiF₆] dosing; SnF₂ and Sn₂P₂O₇) ·
+  **A288** (its 370 000 t figure now the resolver of defect D10).
+- **Visuals: V142 → V148.** Six added.
+- **Traps: 260 → 272.** Twelve added.
+- **Contradictions: 66 → 68.** Two added — **67** (fluorine-cell equation loses
+  potassium) and **68** (chlor-alkali equation unbalanced in hydrogen). Both are
+  fully written equations with wrong coefficients, and both are resolved by
+  conservation alone; **neither needs NCERT or Greenwood.**
+- **Source defects: D6 → D10.** Four added — D7, D8, D9 (the UF₆ set, products
+  omitted) and D10 (bromine production off by a factor of 10⁶, settled by the
+  same file contradicting itself).
+- **MO cases: E45 — unchanged.**
+- **`[UNCLEAR]`: 4 — unchanged.** Nothing on these six pages was illegible; the
+  chlor-alkali coefficient was re-rendered at 1100 dpi specifically to be sure
+  before a contradiction was opened.
+- **Gaps closed:** fluorine-cell reason and names (A312, A313) · fluorinating
+  agents (A321) · HF with uranium (A318). **Partially closed:** fluorine with
+  graphite (A315) — the source gives F₂ with graphite, **not HF with graphite**,
+  so the question-page pairing is still unanswered. **Still open:** the AgNO₃
+  silver-halide ladder; the boiling point of helium.
+
+---
+
+# Range closure — PDF 117–122
+
+**6 / 6 pages deeply read**, each with a triage label and a deep-read outcome, and
+**none read without being registered.** Two returned `DEEP READ — CONTRADICTION
+FOUND`; four returned `DEEP READ — PARTIAL ADDITIONS REGISTERED`; **none returned
+no new content** — this range was heavily trimmed from the adapted edition, as the
+Addendum-8 note on front-matter trimming predicted.
+
+**File 12: 50 + 6 = 56 of 184 deeply read.**
+**`FULL — PARTIALLY UNIQUE`: 8 of 99 read, 91 remaining.**

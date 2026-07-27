@@ -28,17 +28,17 @@ that its dev server is separately broken by an unrelated RSC-manifest fault.
 
 | | |
 |---|---|
-| **Corpus** | **566 / 1915 pages (30 %)** |
+| **Corpus** | **572 / 1915 pages (30 %)** |
 | Files 1–6 | 325 / 437 |
 | File 7 (JD Lee 5th ed., whole book) | 5 / 1057 |
 | **File 8** (JD Lee adapted, Ch. 10, all six groups) | **172 / 172 — COMPLETE** |
 | File 9, 10 (handwritten notes) | 0 / 40, 0 / 11 — vision only, OCR garbled |
 | File 11 (noble gas notes) | 14 / 14 |
-| **File 12** (`15161718.pdf`, JD Lee 5th ed. Ch. 14–17) | 209/209 triaged · **50 / 184 deeply read** |
+| **File 12** (`15161718.pdf`, JD Lee 5th ed. Ch. 14–17) | 209/209 triaged · **56 / 184 deeply read** |
 
-**Register IDs:** Topics **A1–A310** (contiguous, no gaps, no duplicates, every
-one a table row) · Visuals **V142** · MO cases **E45** · Traps and numbered items
-**260** · Contradictions **25–66** · Source defects **D1–D6** · `[UNCLEAR]` **4
+**Register IDs:** Topics **A1–A334** (contiguous, no gaps, no duplicates, every
+one a table row) · Visuals **V148** · MO cases **E45** · Traps and numbered items
+**272** · Contradictions **25–68** · Source defects **D1–D10** · `[UNCLEAR]` **4
 distinct items**.
 
 ---
@@ -95,13 +95,23 @@ AgNO₃ silver-halide ladder with ammonia, and the boiling point of helium.
 
 **Every queue except `FULL — PARTIALLY UNIQUE` is now closed.**
 
-1. **97 remaining `FULL — PARTIALLY UNIQUE` pages**, in section-sized ranges,
-   highest marginal value first: occurrence/extraction → less-common compounds →
-   structures → property tables → uses/hazards → numerical data.
-   **Start with PDF 117–122 = printed 585–590, "Extraction and uses"** — the
-   range that carries fluorine manufacture, the fluorinating agents, HF with
-   uranium, and the halogen recovery routes. Three of the registered gaps point
-   straight at it, and closing a registered gap beats opening a new range.
+**PDF 117–122 is done (Addendum 22)** and closed three of the registered gaps.
+
+1. **91 remaining `FULL — PARTIALLY UNIQUE` pages**, in section-sized ranges.
+   **Next: PDF 131–136 = printed 599–604, "Hydrogen halides"** — `FULL —
+   PARTIALLY UNIQUE`, file-8 §10.60. The Addendum-8 map flags two things on it
+   the adapted edition lacks: **"14 % of HF → AlF₃ and cryolite; ~2 % → uranium
+   via UF₆"**, which completes the fluorine use-split that A318 opened, and
+   **Table 16.13, an energy cycle carrying TΔS and ΔG** — quantitative data of
+   exactly the kind the registers are thinnest on. **PDF 137–138 (printed
+   605–606, halides, kinetic-vs-thermodynamic inertness) is the natural
+   follow-on**, and the silver-halide ladder should be looked for there.
+
+2. **Still-open gaps:** the **AgNO₃ silver-halide ladder**; the **boiling point
+   of helium** (look in PDF 169–170, printed 637–638, "Special properties of
+   helium", triaged a duplicate but never read); and **HF with graphite** — the
+   source gives F₂ with graphite (A315), not HF, so the question-page pairing
+   stands unanswered.
 
 After file 12: the two handwritten sources (vision required), then JD Lee 5th ed.
 Ch. 12–13.

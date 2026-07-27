@@ -2,6 +2,17 @@ import { createServerClient } from "@supabase/ssr";
 import { NextResponse, type NextRequest } from "next/server";
 import { requiresAuth } from "@/lib/access/contentAccess";
 
+/**
+ * Public-folder assets may share a URL prefix with protected pages (for example
+ * `/notes/d-block/visuals/*.webp`). They must pass through untouched so an
+ * anonymous image, stylesheet, or font request is never redirected to sign-in.
+ */
+const STATIC_FILE_PATH = /\.(?:webp|png|jpe?g|gif|svg|ico|css|js|map|json|wasm|woff2?|ttf|otf)$/i;
+
+function isStaticFileRequest(pathname: string): boolean {
+  return STATIC_FILE_PATH.test(pathname);
+}
+
 /** Build /auth/signin?next=<current path+query> so the user returns after login. */
 function signinRedirect(request: NextRequest): NextResponse {
   const url = request.nextUrl.clone();
@@ -13,7 +24,15 @@ function signinRedirect(request: NextRequest): NextResponse {
 }
 
 export async function proxy(request: NextRequest) {
-  const isProtected = requiresAuth(request.nextUrl.pathname);
+  const { pathname } = request.nextUrl;
+
+  // Keep this runtime check in addition to the matcher below: it protects
+  // static assets if the matcher is later broadened.
+  if (isStaticFileRequest(pathname)) {
+    return NextResponse.next({ request });
+  }
+
+  const isProtected = requiresAuth(pathname);
 
   // Public pages use the browser Supabase client for optional navbar state.
   // Refreshing a session with getUser() here would add a network round trip to
@@ -62,5 +81,7 @@ export async function proxy(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ["/((?!_next/static|_next/image|favicon.ico|api/|auth/).*)"],
+  matcher: [
+    "/((?!_next/static|_next/image|favicon.ico|api/|auth/|.*\\.(?:webp|png|jpe?g|gif|svg|ico|css|js|map|json|wasm|woff2?|ttf|otf)$).*)",
+  ],
 };

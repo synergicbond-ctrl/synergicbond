@@ -5910,3 +5910,171 @@ alongside partial additions, and neither read without being registered.
 
 **File 12: 62 + 2 = 64 of 184 deeply read.**
 **`FULL — PARTIALLY UNIQUE`: 16 of 99 read, 83 remaining.**
+
+---
+
+# Addendum 25 — file 12 PDF 167–170 (printed 635–638): Group 18 opening, occurrence, uses, and the helium-boiling-point gap resolved
+
+**Fourth `FULL/SAMPLED` range**, and the first to revisit pages the Addendum-8 map
+had triaged `SAMPLED — DUPLICATE OF FILE 8`. Read anyway, for two reasons: the
+Group 18 physical-property table was a mandated target, and **the "boiling point
+of helium" gap had been carried forward across four addenda (20–24) without
+anyone checking whether it was still open.** It was not.
+
+| PDF | Printed | Section | Original triage | Deep-read outcome | File-8 equivalent |
+|---|---|---|---|---|---|
+| 167 | 635 | Ch. opening; Table 17.1 electronic structures; naming; occurrence (Ar) | `SAMPLED — DUPLICATE OF FILE 8` | `DEEP READ — PARTIAL ADDITIONS REGISTERED` | §10.67–10.68 |
+| 168 | 636 | Occurrence (He, Rn); uses of the elements | `SAMPLED — DUPLICATE OF FILE 8` | **`DEEP READ — CONTRADICTION FOUND`** + partial additions | §10.67–10.68 |
+| 169 | 637 | Uses (He, Ne); Table 17.2 physical properties; special properties of He | `SAMPLED — DUPLICATE OF FILE 8` | `DEEP READ — PARTIAL ADDITIONS REGISTERED` (Table 17.2 itself: **`DEEP READ — NO NEW CONTENT`**, already registered verbatim) | §10.70 |
+| 170 | 638 | He I / He II; chemical properties opening; molecular ions; clathrates | `SAMPLED — DUPLICATE OF FILE 8` | `DEEP READ — PARTIAL ADDITIONS REGISTERED` | §10.70–10.71 |
+
+**The relabelling this range earns.** All four pages were triaged `SAMPLED —
+DUPLICATE OF FILE 8` in Addendum 8, and for the numerical core of Table 17.2 that
+triage was exactly right — it is registered from file 8 **verbatim, to the last
+decimal.** But the surrounding prose on all four pages carries names, figures and
+one genuine anomaly the table alone does not: **"sampled and found identical"
+was true of one table and not of four pages.**
+
+## A. The helium-boiling-point gap — closed, and closed before this addendum
+
+**Table 17.2, printed 637, gives He's boiling point as −269.0 °C.** Before
+opening this page, the corpus was searched for this exact figure — and it was
+already there: **A179, registered from file 8 long before this shift began,
+already carries "He 0.00052 % (−269.0)" inside the dry-air composition topic.**
+**The gap tracked across Addenda 20, 21, 22, 23 and 24 as "the boiling point of
+helium is still open" was never actually open past A179's registration** — it
+was a bookkeeping failure, not a content gap: the fact existed in the corpus and
+the gap-tracking simply never checked for it. **Corrected here rather than left
+to propagate further.** Table 17.2 additionally gives **melting points and Rn's
+values, which A179 does not carry** (A179 lists only the six gases that
+distil from liquid air, so Rn, radiogenic and never liquefied industrially,
+is absent from it) — recorded as A368 below, cross-referenced to A179 rather
+than duplicated.
+
+## B. Topics
+
+| # | Topic | Content |
+|---|---|---|
+| A360 | **The three group names, and why all three are misnomers** | **"The elements of Group 18 have been called 'the inert gases' and 'the rare gases'. Both are misnomers, since the discovery of the xenon fluorides in 1962 shows that xenon is not inert, and argon makes up 0.9% by volume of the atmosphere."** **"Noble gases" is the name the source keeps, by analogy with the noble metals, which are "often reluctant to react and are the least reactive metals"** — a deliberate parallel between two uses of "noble" in the same course. **A360 also carries the general orbital argument**: He has the complete shell 1s²; the rest have ns²np⁶; **electron affinity is zero or slightly negative and ionisation energies are higher than for any other elements**, so under normal conditions the atoms have little tendency to gain or lose electrons — **which is why they exist as single atoms rather than forming bonds.** Table 17.1's electronic structures (He 1s² through Rn [Xe]4f¹⁴5d¹⁰6s²6p⁶) are transcribed for completeness; **the configurations themselves are standard and were already implicit in the corpus, but the explicit table was not.** |
+| A361 | **Argon: where it comes from, in numbers** | **Argon constitutes 0.93% by volume of air, i.e. 9300 ppm**, recovered by fractional distillation of liquid air. **It originates in the atmosphere mostly from electron capture (β⁺ decay) of potassium**, `⁴⁰₁₉K + ₋₁⁰e → ⁴⁰₁₈Ar` — **the identical equation already registered as contradiction 25 from file 8**, so this is repetition of a fault already on record, not a new one. **World production of Ar is over 700 000 tonnes per year, and of the noble gases it is obtained in the largest amounts and is the cheapest** — the industrial reason argon, not helium or neon, is the "inert atmosphere" gas of choice throughout A307 and A364. |
+| A362 | **Helium: why it comes from gas wells, not from the air** | **He's atmospheric abundance is only about 5 ppm, and recovery from air would be very expensive.** **The practical source is natural gas deposits, where the hydrocarbons are liquefied and He gas is left behind** — the He itself is radiogenic, produced by radioactive decay and trapped underground. **The richest source is southwest USA, where the natural gas contains 0.5–0.8% He, and this provides most of the world's supply**; **other appreciable deposits are in Algeria, Poland, the USSR and Canada. World production was 18 800 tonnes in 1993.** A clean economic-geology explanation for why helium, despite being the second most abundant element in the universe, is scarce and expensive on Earth. |
+| A363 | **Radon: the decay chain that supplies it, and why only tracer chemistry exists** | **Rn is radioactive, produced by the decay of radium and thorium minerals.** **A convenient source is ²²⁶Ra: 100 g of radium yields about 2 mL of radon per day**, via `²²⁶₈₈Ra → ²²²₈₆Rn + ⁴₂He` (see defect D13 for the scan's corrupted rendering of the nuclide numbers, resolved by conservation). **The most stable isotope, ²²²Rn, is itself α-active with a half-life of only 3.8 days, so only tracer studies have been made** — a direct, quantitative reason (rather than a general "it's radioactive") for why Rn chemistry in this course is thin. |
+| A364 | **Argon's uses, in full — the source list behind A307's problem-page answer** | **The largest use of Ar is to provide an inert atmosphere for metallurgical processes**: welding stainless steel, titanium, magnesium and aluminium, and in the production of titanium — **named here in full as "the Kroll and IMI processes"**, which resolves A307's single-named "Kroll process" into the pair the source actually gives. **Smaller amounts: growing silicon and germanium crystals for transistors, and in electric light bulbs, fluorescent lamps, radio valves and Geiger–Müller radiation counters.** |
+| A365 | **Helium's uses, and the safety argument that displaces a cheaper gas twice over** | **He has the lowest boiling point of any liquid and is used in cryoscopy to obtain the very low temperatures required for superconductivity and lasers.** Also: **cooling gas in one type of gas-cooled nuclear reactor; carrier gas in gas–liquid chromatography; weather balloons and airships.** **"Though H₂ has a lower density and is cheaper and more readily available than He, H₂ is highly flammable. Thus on safety grounds He is used in preference to H₂ in airships."** Quantified: **He is much less dense than air, and one cubic metre of He gas at atmospheric pressure can lift 1 kg.** **A second safety application, distinct from the airship case: He is used in preference to N₂ to dilute O₂ in divers' gas cylinders, because N₂ is quite soluble in blood, so a sudden pressure change causes degassing and bubbles of N₂ in the blood — the painful or fatal condition called 'the bends'. Helium is only slightly soluble, so the risk is reduced.** Two independent safety arguments, one about flammability and one about blood solubility, both resolved in helium's favour for reasons that have nothing to do with each other. |
+| A366 | **Neon signs, and the general discharge-tube point** | **Small amounts of Ne are used in neon discharge tubes, which give the familiar reddish-orange glow of "neon signs". The other gases are also used in discharge tubes to give different colours.** A observation the corpus lacked entirely — the everyday object ("a neon sign") tied to the element for the first time. |
+| A367 | **Why the noble gases have such low enthalpies of vaporisation, and why the value rises down the group** | **"The enthalpy of vaporization is a measure of the forces holding the atoms together. The values are very low because the only forces between the atoms are very weak van der Waals forces. The enthalpy of vaporization increases down the group as the polarizability of the atoms increases."** The clean statement of a trend the numbers in Table 17.2 (0.08 → 18.1 kJ mol⁻¹, He to Rn) already carried without the explanation. |
+| A368 | **Table 17.2 in full — cross-referenced to A179, not duplicated** | **Boiling points confirm A179 exactly** (He −269.0, Ne −246.0, Ar −186.0, Kr −153.6, Xe −108.1 °C) **and extend it with Rn (−62 °C) and with melting points throughout** (Ne −248.6, Ar −189.4, Kr −157.2, Xe −111.8, Rn −71 °C; **He has none at 1 atm**, consistent with A369's high-pressure solidification fact). **First ionisation energies, enthalpies of vaporisation and atomic (non-bonded) radii were already registered in full at the Group 18 structural-data table** (line 1145 of this document) **before this session began — this page is the confirmation that the two editions agree, not a new source.** **Because the boiling points, melting points and the Rn row were themselves already covered by A179 plus the pre-existing structural table between them, this page's Table 17.2 is `DEEP READ — NO NEW CONTENT`; the prose around it (A360, A367) is where the additions in this addendum actually come from.** |
+| A369 | **Helium's low-temperature uniqueness — the facts that are safe to teach** | **"Helium has the lowest boiling point of any substance known. All other elements become solids on cooling, but cooling only produces helium liquid. It only forms a solid under high pressure (about 25 atmospheres)."** **Two liquid phases exist: helium I, a normal liquid, and helium II, a superfluid.** **Cooled to 4.2 K, He gas liquefies as helium I; at 2.2 K (the λ-point) the liquid stops boiling — normally the sign of a solid forming, but here helium II forms instead, still a liquid because the interatomic forces remain too weak for a solid, even though the thermal motion of the atoms has effectively stopped.** At the λ-point, several properties change abruptly: **specific heat changes by a factor of 10; thermal conductivity increases by 10⁶ and becomes 800 times that of copper; viscosity becomes effectively zero, 1/100th that of gaseous hydrogen; the liquid spreads to cover all surfaces below the λ-point and can flow up the sides of a vessel and over the edge until the levels on both sides equalise; surface tension and compressibility are also anomalous.** **All of the above is registered as safe; the one clause omitted here is addressed separately as contradiction 74.** |
+
+## C. Contradiction 74 — printed 638, liquid helium is not a superconductor
+
+**Source form as printed:** *"It becomes a superconductor (i.e. shows zero
+electrical resistance)."* — listed among the properties that change abruptly at
+the λ-point. *The issue:* **superconductivity is a charge-transport phenomenon —
+zero resistance to the flow of electric current — and it requires mobile charge
+carriers, ordinarily conduction electrons in a metallic lattice. Liquid helium
+has none: it is a closed-shell atomic liquid with no free electrons or ions, and
+it is an electrical insulator in both the He I and He II phases.** What genuinely
+happens at the λ-point is **superfluidity** — zero *viscosity*, frictionless mass
+flow — and the source has correctly described that phenomenon in the same
+sentence and the ones around it (the film creep, the vanishing viscosity, the
+anomalous thermal conductivity). **"Superconductor" appears to be a slip from
+superfluid to its etymological cousin, made worse by the explicit and specific
+gloss "shows zero electrical resistance", which is a electrical claim liquid
+helium's structure cannot support.** *Verification needed:* none — this is
+settled by the basic distinction between the two phenomena (one mechanical/
+thermal, one electrical) and by liquid helium's atomic, closed-shell, non-ionic
+structure, not by an authoritative source this corpus lacks. *Safe for
+inclusion:* **superfluidity, the λ-point, and every quantitative anomaly the
+source lists (specific heat, thermal conductivity, viscosity, film creep), yes.
+"Liquid helium becomes an electrical superconductor," no — that clause is struck
+and replaced with "superfluid" throughout the course.** |
+
+## D. Source defect — printed 636, the radon decay equation's corrupted nuclide numbers
+
+**D13 — the radium/radon decay equation prints corrupted mass and atomic
+numbers.** *Source form as printed:* `²⁷⁶₈₈Ra → ²²²₈₆Rn + ⁴₇He` (transcribed exactly as the
+glyphs render — re-rendered at 1100 and again at 2200 dpi, with no change: **this
+is font/glyph corruption in the scan itself, not a resolution problem**, the
+first time in this audit that higher DPI has failed to resolve a digit). *The
+issue:* as printed, mass number runs 276 → 222 + 4 (mismatched by 50) and Ra's
+printed atomic number pairing with 88 is plausible but He's subscript renders as
+7, which is not helium's atomic number under any reading. *Correction, from
+conservation of mass number and atomic number — the same standard used for the
+UF₆ set (D7–D9) — and from the chemistry the surrounding prose is unambiguously
+describing (100 g of radium yielding a small daily volume of radon gas, the
+standard radium decay series):* **`²²⁶₈₈Ra → ²²²₈₆Rn + ⁴₂He`** — mass 226 = 222 + 4,
+atomic number 88 = 86 + 2, both close exactly. This is the well-known radium-226
+→ radon-222 α-decay. *Verification needed:* none — mass-number and charge
+conservation determine the unique correct reading. *Safe for inclusion:* **the
+corrected equation, with the printed glyph corruption noted rather than passed
+through.** |
+
+## E. Visual register — additions V156–V158
+
+| ID | Required visual kind | Subject |
+|---|---|---|
+| V156 | **Comparison graphic** | Occurrence and recovery routes for the five non-radiogenic-only noble gases: Ar and Ne/Kr/Xe from liquid-air distillation against He from natural-gas wells (with the 0.5–0.8% southwest-USA figure) against Rn from mineral decay — three different economics for one group |
+| V157 | **Thermal map** | The He I / He II transition at the λ-point (2.2 K), with the abrupt-change properties (specific heat ×10, thermal conductivity ×10⁶, viscosity → ~0) on one side and **superfluidity, not superconductivity, labelled explicitly** per contradiction 74 |
+| V158 | **Comparison graphic** | Two safety substitutions side by side: He replacing H₂ in airships (flammability) and He replacing N₂ in diving gas (blood solubility and the bends) — same element, two unrelated reasons |
+
+## F. JEE trap register — items 290–294
+
+290. **"Inert gases", "rare gases" and "noble gases" are all slightly wrong
+     names.** Xenon is not inert (1962); argon is not rare (0.93% of air, the
+     third most abundant atmospheric gas). "Noble" survives by analogy with the
+     noble metals.
+291. **Argon, not helium, is the cheap inert-atmosphere gas** — because argon is
+     recovered in bulk from liquid-air distillation, while helium must be mined
+     from natural gas. Cheapness tracks the extraction route, not reactivity.
+292. **Liquid helium is a superfluid, not a superconductor.** Zero viscosity and
+     zero electrical resistance are different phenomena, and helium has no
+     mobile charge carriers to be a superconductor with.
+293. **Helium is chosen over both H₂ and N₂ for reasons that share no
+     chemistry** — over H₂ in airships because H₂ burns, over N₂ in diving gas
+     because N₂ dissolves in blood and causes the bends. Two safety arguments,
+     not one.
+294. **Argon reaches the atmosphere by electron capture of ⁴⁰K, forming ⁴⁰Ar —
+     the identical equation the course already flags (contradiction 25) for
+     mislabelling electron capture as "β⁺ decay".** The equation is right; the
+     parenthetical name is not.
+
+## G. Register-count effects
+
+- **Topics: A359 → A369.** Ten added, **all table rows**, contiguous.
+- **Expanded, IDs kept:** **A179** (now explicitly the anchor that closed the
+  helium-boiling-point gap, with Rn and the melting points added from Table
+  17.2) · **A307** (Kroll process resolved into "Kroll and IMI processes").
+- **Visuals: V155 → V158.** Three added.
+- **Traps: 289 → 294.** Five added.
+- **Contradictions: 73 → 74.** One added — **74**, liquid helium called a
+  superconductor. **Settled by the definitional distinction between
+  superfluidity and superconductivity and by helium's electronic structure,
+  needing neither NCERT nor Greenwood.**
+- **Source defects: D12 → D13.** One added — **the first case in this audit
+  where re-rendering at higher DPI did not resolve a digit**, settled instead by
+  mass-number and atomic-number conservation.
+- **Gap-tracking correction:** the **boiling point of helium**, carried as open
+  across Addenda 20–24, is **removed from the open-gap list**: it was closed at
+  A179 before this shift began, and the gap tracking simply failed to check.
+  **Remaining open gaps: HF with graphite; the AgNO₃ colour/ammonia ladder
+  (A352, narrowed but not closed).**
+- **MO cases: E45 — unchanged.**
+- **`[UNCLEAR]`: 5 — unchanged.** D13's corrupted glyphs are resolved by
+  conservation, not left as `[UNCLEAR]` — the distinction the project draws
+  between "ambiguous and undetermined" and "illegible but determinable".
+
+---
+
+# Range closure — PDF 167–170
+
+**4 / 4 pages deeply read**, one returning `DEEP READ — CONTRADICTION FOUND`,
+three `DEEP READ — PARTIAL ADDITIONS REGISTERED`, and Table 17.2 specifically
+`DEEP READ — NO NEW CONTENT` within an otherwise productive page. **None read
+without being registered**, despite all four having been triaged `SAMPLED` —
+demonstrating why the "sampled, not deep-read" pages remain worth a pass when
+time allows, even outside the `FULL — PARTIALLY UNIQUE` queue.
+
+**File 12: 64 + 4 = 68 of 184 deeply read.**
+**`FULL — PARTIALLY UNIQUE` queue unchanged at 16 of 99 read, 83 remaining**
+— this range was drawn from the `SAMPLED` bucket instead.

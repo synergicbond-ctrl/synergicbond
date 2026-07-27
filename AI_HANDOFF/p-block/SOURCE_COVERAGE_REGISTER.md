@@ -136,13 +136,13 @@ Last updated: 2026-07-26.
 |---|---|---|---|
 | Files 1–6 (original six) | 437 | **325** | 74 % |
 | Files 7–11 (new five) | 1294 | **191** | 14.8 % |
-| File 12 (`15161718.pdf`, p-block part only) | 184 | **64** | 34.8 % |
-| **Total project** | **1915** | **580** | **30 %** |
+| File 12 (`15161718.pdf`, p-block part only) | 184 | **68** | 37.0 % |
+| **Total project** | **1915** | **584** | **31 %** |
 
 Files 7–12 breakdown: file 7 (JD Lee 5th ed., whole book) 5 / 1057 · **file 8 (JD Lee
 adapted Ch. 10) 172 / 172 — COMPLETE** · file 9 (annotated notes) 0 / 40 · file 10
 (annotated notes) 0 / 11 · file 11 (noble-gas notes) 14 / 14 · **file 12 (JD Lee 5th ed.
-Ch. 14–17 extract) 64 / 184 deeply read, **209 / 209 triaged**.
+Ch. 14–17 extract) 68 / 184 deeply read, **209 / 209 triaged**.
 
 **Denominator history, so the movement is auditable.** Locating file 12 added its pages to
 a corpus that had been missing them, taking the total from 1731 to 1940 and the completion
@@ -229,7 +229,7 @@ cross-references resolving, all 20 lessons non-empty.
   `FULL — PARTIALLY UNIQUE` **98** · `SAMPLED — DUPLICATE OF FILE 8` **32** ·
   `VISUAL ONLY` **2** · `QUESTION GAP` **9** · `NOT RELEVANT` **30** (5
   further-reading/chapter-close + 25 d-block) · `UNCLEAR` **0**.
-- **Deeply inspected and fully registered: 64 / 184 (Vision).** *(This figure had
+- **Deeply inspected and fully registered: 68 / 184 (Vision).** *(This figure had
   gone stale at "8 / 184" while the addenda accumulated; the authoritative count
   has always been the recounted-in-code block further down, which read 39 before
   Addendum 20 and reads 48 after it. Corrected here rather than left to diverge.)*
@@ -373,12 +373,22 @@ unique pages compared **16 of 99** · duplicate pages sampled **33** · visual-o
 pages inspected **2 of 2 — COMPLETE** · question-gap pages audited **9 of 9 — COMPLETE** ·
 not-relevant pages **30** · pages with unclear content **5**.
 
-**Total pages deeply inspected 64** = 37 fully unique + **16** partially unique
+**Total pages deeply inspected 68** = 37 fully unique + **16** partially unique
 (PDF 6, 107, **117–122**, **131–136** and **137–138**) + **9 question-gap (Addendum 20)** + **2 visual-only
-(Addendum 21)**. **62 of the 64 yielded
-additions; exactly two returned nothing new — PDF 114
-(`DEEP READ — NO NEW CONTENT`) and PDF 62 (`AUDITED — NO NEW CHEMISTRY`).** The
+(Addendum 21)** + **4 re-read from the `SAMPLED` bucket (PDF 167–170, Addendum
+25)**. **65 of the 68 yielded
+additions; exactly three returned nothing new — PDF 114
+(`DEEP READ — NO NEW CONTENT`), PDF 62 (`AUDITED — NO NEW CHEMISTRY`), and
+Table 17.2 within PDF 169 (`DEEP READ — NO NEW CONTENT`, already registered
+verbatim; the rest of that page did yield additions).** The
 audited-page denominator is not reduced for any page.
+
+**Addendum 25 (PDF 167–170, printed 635–638) also resolved a bookkeeping fault:
+the "boiling point of helium" gap, carried as open across Addenda 20–24, had
+in fact been closed since before this shift began — A179 already registered
+He's boiling point at −269.0 °C from file 8. The gap is removed from the open
+list; remaining open gaps are HF with graphite and the AgNO₃ colour/ammonia
+ladder (A352).**
 
 **Zero fully unique pages outstanding. The queue is closed at 37 / 37.**
 **Zero question-gap pages outstanding. That queue is closed at 9 / 9** — PDF 62,

@@ -136,13 +136,13 @@ Last updated: 2026-07-26.
 |---|---|---|---|
 | Files 1–6 (original six) | 437 | **325** | 74 % |
 | Files 7–11 (new five) | 1294 | **191** | 14.8 % |
-| File 12 (`15161718.pdf`, p-block part only) | 184 | **6** | 3.3 % |
-| **Total project** | **1915** | **522** | **27 %** |
+| File 12 (`15161718.pdf`, p-block part only) | 184 | **8** | 4.3 % |
+| **Total project** | **1915** | **524** | **27 %** |
 
 Files 7–12 breakdown: file 7 (JD Lee 5th ed., whole book) 5 / 1057 · **file 8 (JD Lee
 adapted Ch. 10) 172 / 172 — COMPLETE** · file 9 (annotated notes) 0 / 40 · file 10
 (annotated notes) 0 / 11 · file 11 (noble-gas notes) 14 / 14 · **file 12 (JD Lee 5th ed.
-Ch. 14–17 extract) 6 / 184 deeply read, **209 / 209 triaged**.
+Ch. 14–17 extract) 8 / 184 deeply read, **209 / 209 triaged**.
 
 **Denominator history, so the movement is auditable.** Locating file 12 added its pages to
 a corpus that had been missing them, taking the total from 1731 to 1940 and the completion
@@ -229,10 +229,15 @@ cross-references resolving, all 20 lessons non-empty.
   `FULL — PARTIALLY UNIQUE` **98** · `SAMPLED — DUPLICATE OF FILE 8` **32** ·
   `VISUAL ONLY` **2** · `QUESTION GAP` **9** · `NOT RELEVANT` **30** (5
   further-reading/chapter-close + 25 d-block) · `UNCLEAR` **0**.
-- **Deeply inspected and fully registered: 6 / 184 (Vision)** — PDF 1–6 =
-  printed 468–473, in Addenda 7 and 7a: 14 topics, ~50 species, 13
-  preparations/reactions, a melting/boiling table, 6 colour observations, a
-  uses-and-hazards block, 5 visuals, 9 JEE traps, 0 new contradictions.
+- **Deeply inspected and fully registered: 8 / 184 (Vision).**
+  - **PDF 1–6 = printed 468–473** (Addenda 7, 7a): 14 topics, ~50 species, 13
+    preparations/reactions, a melting/boiling table, 6 colour observations, a
+    uses-and-hazards block, 5 visuals, 9 JEE traps, 0 new contradictions.
+  - **PDF 58–59 = printed 525–526** (Addendum 9), `FULL — UNIQUE`, both sections
+    absent from file 8: 8 topics, ~30 species, 8 reactions, phosphazene bond-length
+    data, 4 visuals, 7 JEE traps, **1 new contradiction (item 54)**. Adds two
+    compound classes (phosphazenes, pnictogen organometallics) and a **third
+    back-bonding type, dπ–dπ**, which the registers did not have.
 - **Sections found to be absent from file 8 altogether** — the queue that
   justifies reading this file at all: **Phosphazenes and cyclophosphazenes**
   (PDF 58–59) · **Compounds of sulphur and nitrogen, S₄N₄** (107–108) ·
@@ -243,9 +248,16 @@ cross-references resolving, all 20 lessons non-empty.
   and haemoglobin** (109–110), plus **Nitrogen fixation** (22–27) and
   **Hydrogen azide and the azides** (20–21), both flagged absent from the course
   since the first register.
-- **Next page for deep reading: PDF p. 58 (printed 525)** — Phosphazenes and
-  cyclophosphazenes, the highest-yield unique section in the file. Pages 7–57
-  are triaged and queued but not yet deeply read.
+- **Map refinement from the deep read:** printed 526 carries the tail of the
+  phosphazene section *and* the opening of **Organometallic compounds**, which the
+  Addendum 8 map did not separate. Corrected: **PDF 59–60 = Organometallic
+  compounds (`FULL — UNIQUE`), PDF 61 = Further reading (`NOT RELEVANT`)**. Bucket
+  totals unchanged.
+- **Next page for deep reading: PDF p. 107 (printed 575)** — Compounds of sulphur
+  and nitrogen (S₄N₄), the second entry in the unique queue. Then PDF 145–146
+  (standard reduction potentials), 161–162 (halogen cations), 95–96 (Se/Te
+  oxoacids), 68–73 (Group 16 extraction), 20–27, 54–57, 109–110, 114–116.
+  Pages 7–57 remain triaged but not deeply read.
 - **Destination:** Sections 7–19, as gap-fill on top of Addenda 1–4 — **IN
   PROGRESS**
 

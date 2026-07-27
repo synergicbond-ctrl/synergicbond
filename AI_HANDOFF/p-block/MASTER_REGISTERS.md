@@ -2524,3 +2524,187 @@ label records **verbatim agreement, which is not independent verification**, and
 no new topic, compound, reaction or visual ID has been created for any duplicated
 page. Items 25–53 in the contradiction register are unchanged, and no NCERT or
 Greenwood corroboration is claimed anywhere.
+
+---
+
+# Addendum 9 — file 12 PDF 58–59 (printed 525–526): phosphazenes and P/As/Sb/Bi organometallics
+
+Status `FULL — UNIQUE`. **Both sections are absent from file 8 entirely**, so
+nothing here is a duplicate cross-reference. Two whole compound classes and one
+bonding mode the registers did not have.
+
+**Map refinement.** Printed 526 carries the tail of the phosphazene section *and*
+the opening of **Organometallic compounds**, which Addendum 8 did not separate.
+The organometallic section continues onto PDF 60, which Addendum 8 had labelled
+further-reading. Corrected here: **PDF 59–60 = Organometallic compounds
+(`FULL — UNIQUE`), PDF 61 = Further reading (`NOT RELEVANT`)**. Bucket totals are
+unchanged, because both pages were already inside `FULL — UNIQUE` or
+`NOT RELEVANT` ranges of the same size.
+
+## A. Topic register — additions A191–A198
+
+| # | Topic | Where it belongs | Content |
+|---|---|---|---|
+| A191 | **Phosphazenes as a compound class** | new §10a | Chains and rings of repeating **[–N=PCl₂–]** units. Originally called **phosphonitrilic halides**; the systematic name is **poly(chlorophosphazenes)**. Chlorides, bromides and fluorides all form. **The largest rings hold 34 atoms in the chlorides and 12 atoms in the bromides.** |
+| A192 | Substitution chemistry of the chlorophosphazenes | new §10a | The chlorines are the reactive sites. They are replaced by alkyl, aryl, OH, OR, NCS or NR₂, with alkyl and aryl introduced by lithium or Grignard reagents. **Substitution may be complete or partial, and partial substitution gives many different isomers** — which is the whole reason the class is synthetically useful. |
+| A193 | **The bonding in phosphazenes is openly unresolved** | new §10a + MO section | The source's own words: "the nature of the bonding is not understood." See the dedicated section below — this is the most valuable page in the file so far, because it is a worked example of a structure whose evidence is solid and whose explanation is not. |
+| A194 | Where phosphazenes sit among polymers | new §10a | The source ranks the great polymer families: **carbon-based polymers are the most extensive, then the silicones, then the phosphazenes.** A one-line placement that connects Group 14's silicones to Group 15. |
+| A195 | Uses of the polyphosphazenes, and the reason they are rare | new §10a | High-molecular-weight phosphazenes give **rigid plastics, expanded foam and fibres** that are **waterproof, fireproof and unaffected by petrol, oil and solvents**; and **flexible plastics for fuel hoses and gaskets**, because they keep their elasticity at low temperature. Chains with **perfluoroalkoxy side groups, [NP(OCH₂CF₃)₂]ₙ, resemble polythene**. **They are at present far too expensive for general use** — the source says so plainly, which is worth teaching alongside the property list. |
+| A196 | **Poly(aminophosphazene) burn dressings** | new §10a | Thin films are used in hospitals over severe burns and other extensive wounds, because they **prevent the loss of body fluids while keeping germs out**. A main-group polymer doing a job no small molecule can. |
+| A197 | Organometallic compounds of P, As, Sb and Bi | new §10a | The halides react with lithium and Grignard reagents to give alkyls and aryls, the best known being the **tertiary phosphines**. **MR₃ derivatives are pyramidal — tetrahedral with one position taken by a lone pair, like NH₃.** |
+| A198 | **Trimethyls are air-sensitive, triaryls are not** | new §10a | The trimethyl derivatives of **all four** of P, As, Sb and Bi are attacked by air; the **triaryl compounds are stable**. Same oxidation state, same geometry, opposite handling requirements. |
+
+## B. Compound and species register — additions
+
+**Phosphazene parents and rings.** [–N=PCl₂–] repeating unit ·
+**[NPCl₂]₃** the cyclic trimer, the workhorse starting material · polyphosphazene
+chain compounds of 3, 4, 5 and 6 units (Figure 14.22) · the bromide and fluoride
+analogues · the 34-atom chloride ring and the 12-atom bromide ring as the size
+limits.
+
+**Phosphazene substitution products, each individually named.**
+**[NP(CH₃)₂]₃** hexamethylcyclotriphosphazene · **[NP(C₆H₅)₂]₃** the hexaphenyl
+analogue · **[NP(OR)₂]₃** the alkoxy series · **[NP(SCN)₂]₃** the thiocyanato
+series · **[NP(OCH₂CF₃)₂]ₙ** the perfluoroalkoxy polymer · poly(aminophosphazene)
+(the NR₂-substituted polymer used as burn dressing) · the OH-substituted series.
+
+**Organometallics of the heavier pnictogens.** **PEt₃ triethylphosphine** ·
+**PPh₃ triphenylphosphine** · trimethyl derivatives of P, As, Sb and Bi · the
+triaryl derivatives of the same four · **EtPCl₂** ethyldichlorophosphine ·
+**R₂PCl** the dialkylchlorophosphine · amines RNH₂, R₂NH, R₃N (named as the
+nitrogen analogues).
+
+**Reagents and co-products named:** CH₃MgI, C₆H₅Li, NaOR, NaSCN, LiEt, PhMgCl,
+HgR₂ (as the weaker arylating agent), MgCl₂, MgI₂, LiCl, NaCl, RHgCl.
+
+## C. Reaction register — additions
+
+`[NPCl₂]₃ + 6CH₃MgI → [NP(CH₃)₂]₃ + 3MgCl₂ + 3MgI₂`
+`[NPCl₂]₃ + 6C₆H₅Li → [NP(C₆H₅)₂]₃ + 6LiCl`
+`[NPCl₂]₃ + 6NaOR → [NP(OR)₂]₃ + 6NaCl`
+`[NPCl₂]₃ + 6NaSCN → [NP(SCN)₂]₃ + 6NaCl`
+`PCl₃ + 3LiEt → PEt₃ + 3LiCl`
+`PCl₃ + 3PhMgCl → PPh₃ + 3MgCl₂`
+`PCl₃(excess) + LiEt → EtPCl₂ + LiCl` — **partial substitution by using excess
+halide**
+`PCl₃ + 2HgR₂ → R₂PCl + 2RHgCl` — **partial substitution by using a weaker
+arylating agent**
+
+The last two are a method, not just two equations: **you control how far
+substitution goes either by starving the alkylating agent or by weakening it.**
+
+## D. Structural and numerical register — additions
+
+- **Phosphazene P–N bond lengths 1.56–1.59 Å**, against a **normal P–N single
+  bond of 1.77 Å**. A shortening of roughly 0.2 Å.
+- **All the apparent P–N and P=N bonds in a phosphazene are equivalent.** There
+  is no long/short alternation.
+- **MR₃ geometry (M = P, As, Sb, Bi): pyramidal**, tetrahedral with one position
+  occupied by the lone pair.
+
+## E. MO-theory register — additions E39–E40, and the honest state of the argument
+
+- **E39 — Phosphazenes: a structure with three candidate explanations and no
+  settled one.** The evidence is unambiguous: bonds all equal, and 1.56–1.59 Å
+  against 1.77 Å for a single bond. What that evidence *means* is not settled,
+  and the source says so outright. The three candidates it lists:
+  1. **Alternating single and double bonds** — **ruled out** by the bond
+     equivalence.
+  2. **pπ–pπ delocalisation as in benzene or graphite** — the source **also
+     rejects this** for phosphazenes.
+  3. **A coordinate bond from a filled sp² orbital on N into the empty
+     3d(x²−y²) orbital on P**, i.e. pπ–dπ of the same kind invoked for the
+     phosphorus oxides, but here **delocalised over the whole molecule, giving
+     pseudo-aromatic character**. The source immediately records **objections
+     on the grounds of the size and energy of the d orbitals**.
+  4. A fourth possibility it offers: the **singly occupied p_y orbital on N
+     forming a three-centre bond with the d_xz and d_yz orbitals on the two
+     adjacent phosphorus atoms**.
+  **Course treatment.** *Historical / examination model:* pπ–dπ delocalisation
+  giving pseudo-aromaticity — this is what older texts and examination questions
+  use. *Modern interpretation:* **PENDING AUTHORITATIVE VERIFICATION.** The
+  d-orbital objections the source itself raises are exactly those in the policy
+  block, and the modern literature attributes the shortening largely to ionic
+  character and negative hyperconjugation rather than genuine d participation —
+  but **Greenwood is not in the corpus, so that is recorded as pending, not as
+  fact.** What the course *can* teach without hedging is the evidence and the
+  fact that the explanation is contested. That is more honest and more useful
+  than picking a winner.
+- **E40 — dπ–dπ back bonding: a third kind of back bonding.** In complexes of
+  the trialkyl phosphines and arsines with transition metals, a σ bond forms from
+  the ligand's lone pair, and a π bond forms by **donation from a filled d
+  orbital on the metal into an empty d orbital on P or As**. Because **both ends
+  are d orbitals, the source names this dπ–dπ bonding** — distinct from the
+  pπ–pπ of BF₃ (E27) and the pπ–dπ of the phosphorus and sulphur oxides (E11,
+  E14). The registers had the first two; this is the third, and the three
+  together make a clean teaching sequence. *Same policy caveat applies:*
+  registered as the source's model, with the d-orbital participation question
+  marked pending.
+
+## F. Visual register — additions V90–V93
+
+| ID | Required visual kind | Subject |
+|---|---|---|
+| V90 | **Original SVG structure + structure comparison** | A cyclophosphazene ring with all bonds drawn **equal**, beside the alternating single/double picture it disproves, with 1.56–1.59 Å against 1.77 Å annotated |
+| V91 | **Comparison graphic — three competing models** | The four candidate bonding pictures for phosphazenes side by side, each with the objection to it printed underneath. Must use the `VisualCaption` exam-model / modern variants so no picture is presented as settled |
+| V92 | **Multicentre-bonding diagram** | The N p_y orbital forming a three-centre bond with d_xz and d_yz on the two flanking phosphorus atoms |
+| V93 | **Comparison graphic** | The three back-bonding types on one page: pπ–pπ (BF₃), pπ–dπ (P₄O₁₀ terminal P=O), dπ–dπ (M→PR₃) |
+
+## G. JEE trap register — items 160–166
+
+160. **All the P–N bonds in a phosphazene are equal**, at 1.56–1.59 Å. Drawing
+     alternating single and double bonds is wrong, and the bond equivalence is
+     the evidence that kills it.
+161. **Phosphazene bonding is not benzene-like.** The source rejects pπ–pπ
+     delocalisation for these compounds specifically, even though the result —
+     equal bonds, pseudo-aromatic character — looks the same.
+162. **The largest phosphazene rings differ by halogen:** 34 atoms for the
+     chlorides, only 12 for the bromides.
+163. **Trimethyls of P, As, Sb and Bi are all air-sensitive; the triaryls are
+     stable.** The substituent, not the central atom, decides.
+164. **MR₃ of a heavier pnictogen is pyramidal, not planar** — one position holds
+     the lone pair, exactly as in NH₃.
+165. **Partial substitution of PCl₃ is achieved two ways** — excess PCl₃, or a
+     weaker alkylating agent such as HgR₂. Naming only one is the incomplete
+     answer.
+166. **Metal–phosphine back bonding is dπ–dπ, not pπ–dπ**, because the donor
+     orbital on the metal is itself a d orbital. Three back-bonding types exist
+     and they are told apart by which orbitals sit at each end.
+
+## H. Contradictions — item 54
+
+54. **The source states that phosphazene bonding "is not understood" and then
+    offers two mutually exclusive d-orbital models.** *Location:* printed
+    525–526. *The claims:* (a) a coordinate bond from filled N sp² into empty
+    P 3d(x²−y²), delocalised over the molecule; (b) the singly occupied N p_y
+    orbital forming a three-centre bond with P d_xz and d_yz. *Chemical issue:*
+    both rest on substantial phosphorus 3d participation, and **the source itself
+    records objections "because of the size and energy of the d orbitals"** —
+    the same objection recorded for silicon in contradiction item 48's
+    neighbourhood and in the policy block. *Verification needed:* a modern
+    structural authority. **Greenwood is not in the corpus; NCERT is not in the
+    corpus.** *Safe for inclusion:* **the evidence yes, a preferred explanation
+    no.** The course will teach the bond-length and bond-equivalence data, name
+    the historical pπ–dπ model as the examination model, and state that the
+    explanation remains contested. **Marked PENDING AUTHORITATIVE VERIFICATION.**
+
+## I. Uses and hazards — additions
+
+**Polyphosphazenes.** Rigid plastics, expanded foam, fibres — waterproof,
+fireproof, resistant to petrol, oil and solvents. Flexible plastics for fuel
+hoses and gaskets, retaining elasticity at low temperature. *Commercial
+constraint:* far too expensive for general use at present.
+**Poly(aminophosphazene).** Hospital dressings for severe burns and extensive
+wounds — prevent body-fluid loss, exclude germs.
+**Organophosphorus compounds.** *Hazard:* **many are toxic, and they have been
+used as pesticides, herbicides and nerve gases** — while others are essential to
+life. The source puts both facts in one sentence, and the course should too.
+**Trialkylphosphines and arsines.** Strong donors, hence widely used ligands for
+transition-metal complexes.
+
+## J. Verification status
+
+Read directly from page images of the accessible J.D. Lee 5th-edition scan. These
+two sections have **no counterpart in file 8**, so there is no same-author
+duplication to discount here — but equally **no second source corroborates them**,
+and no NCERT or Greenwood confirmation is claimed. Items 25–53 preserved.

@@ -136,13 +136,13 @@ Last updated: 2026-07-26.
 |---|---|---|---|
 | Files 1–6 (original six) | 437 | **325** | 74 % |
 | Files 7–11 (new five) | 1294 | **191** | 14.8 % |
-| File 12 (`15161718.pdf`, p-block part only) | 184 | **56** | 30.4 % |
-| **Total project** | **1915** | **572** | **30 %** |
+| File 12 (`15161718.pdf`, p-block part only) | 184 | **62** | 33.7 % |
+| **Total project** | **1915** | **578** | **30 %** |
 
 Files 7–12 breakdown: file 7 (JD Lee 5th ed., whole book) 5 / 1057 · **file 8 (JD Lee
 adapted Ch. 10) 172 / 172 — COMPLETE** · file 9 (annotated notes) 0 / 40 · file 10
 (annotated notes) 0 / 11 · file 11 (noble-gas notes) 14 / 14 · **file 12 (JD Lee 5th ed.
-Ch. 14–17 extract) 56 / 184 deeply read, **209 / 209 triaged**.
+Ch. 14–17 extract) 62 / 184 deeply read, **209 / 209 triaged**.
 
 **Denominator history, so the movement is auditable.** Locating file 12 added its pages to
 a corpus that had been missing them, taking the total from 1731 to 1940 and the completion
@@ -229,7 +229,7 @@ cross-references resolving, all 20 lessons non-empty.
   `FULL — PARTIALLY UNIQUE` **98** · `SAMPLED — DUPLICATE OF FILE 8` **32** ·
   `VISUAL ONLY` **2** · `QUESTION GAP` **9** · `NOT RELEVANT` **30** (5
   further-reading/chapter-close + 25 d-block) · `UNCLEAR` **0**.
-- **Deeply inspected and fully registered: 56 / 184 (Vision).** *(This figure had
+- **Deeply inspected and fully registered: 62 / 184 (Vision).** *(This figure had
   gone stale at "8 / 184" while the addenda accumulated; the authoritative count
   has always been the recounted-in-code block further down, which read 39 before
   Addendum 20 and reads 48 after it. Corrected here rather than left to diverge.)*
@@ -369,13 +369,13 @@ triaged **209** · p-block pages **184** · **fully unique pages 37** (the Adden
 figure was 38; **PDF 107 was reclassified to partially unique in Addendum 10**
 once the S–N section turned out to start in its last paragraph) · **fully unique
 pages deeply inspected 37 — COMPLETE** · **fully unique pages remaining 0** · partially
-unique pages compared **8 of 99** · duplicate pages sampled **33** · visual-only
+unique pages compared **14 of 99** · duplicate pages sampled **33** · visual-only
 pages inspected **2 of 2 — COMPLETE** · question-gap pages audited **9 of 9 — COMPLETE** ·
-not-relevant pages **30** · pages with unclear content **4**.
+not-relevant pages **30** · pages with unclear content **5**.
 
-**Total pages deeply inspected 56** = 37 fully unique + **8** partially unique
-(PDF 6, 107 and **117–122**) + **9 question-gap (Addendum 20)** + **2 visual-only
-(Addendum 21)**. **54 of the 56 yielded
+**Total pages deeply inspected 62** = 37 fully unique + **14** partially unique
+(PDF 6, 107, **117–122** and **131–136**) + **9 question-gap (Addendum 20)** + **2 visual-only
+(Addendum 21)**. **60 of the 62 yielded
 additions; exactly two returned nothing new — PDF 114
 (`DEEP READ — NO NEW CONTENT`) and PDF 62 (`AUDITED — NO NEW CHEMISTRY`).** The
 audited-page denominator is not reduced for any page.
@@ -424,7 +424,17 @@ Addendum 20 and not derived by subtraction.
   superscript "14" with no legend on the page or in the chapter.** **None is
   guessed; all four are marked unsafe to publish until re-read.**
 - **`FULL — UNIQUE`: 37 / 37 — CLOSED.**
-- **`FULL — PARTIALLY UNIQUE`: 8 / 99 read, 91 remaining.** First post-queue range
+- **`FULL — PARTIALLY UNIQUE`: 14 / 99 read, 85 remaining.** Second post-queue range
+  **PDF 131–136 = printed 599–604** (Addendum 23), the hydrogen halides: 16 topics
+  (A335–A350), 4 visuals, 10 traps, **3 new contradictions (69, 70, 71 — all three
+  found by running Table 16.13's own arithmetic in code, none resolved)**, 2 source
+  defects (D11, D12), **1 new `[UNCLEAR]`**. **Table 16.13's six components fail to
+  sum to its own totals by exactly 9 kJ mol⁻¹ in all four rows; its iodide hydration
+  enthalpy (−394) contradicts file 8's (−274) and breaks the size trend; and its
+  quoted dissociation constants match neither its ΔG column nor the book's own pKₐ
+  table.** The qualitative three-factor explanation of HF's weakness (A350) is
+  unaffected and is safe to teach.
+  First post-queue range
   **PDF 117–122 = printed 585–590** (Addendum 22), halogen extraction and uses:
   24 topics (A311–A334), 6 visuals, 12 traps, **2 new contradictions (67, 68 —
   both unbalanced equations, both settled by conservation alone)**, **4 source

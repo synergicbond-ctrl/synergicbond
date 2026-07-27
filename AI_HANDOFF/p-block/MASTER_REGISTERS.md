@@ -5569,3 +5569,212 @@ Addendum-8 note on front-matter trimming predicted.
 
 **File 12: 50 + 6 = 56 of 184 deeply read.**
 **`FULL — PARTIALLY UNIQUE`: 8 of 99 read, 91 remaining.**
+
+---
+
+# Addendum 23 — file 12 PDF 131–136 (printed 599–604): the hydrogen halides, and a quantitative table that does not add up
+
+**Second `FULL — PARTIALLY UNIQUE` range.** Chosen for **Table 16.13**, the energy
+cycle carrying TΔS and ΔG that the Addendum-8 map flagged as absent from the
+adapted edition — the kind of quantitative data the registers are thinnest on.
+**Checking it in code turned out to matter: three separate internal
+inconsistencies came out of one table, none of them visible by eye.**
+
+| PDF | Printed | Section | Triage | Deep-read outcome | File-8 equivalent |
+|---|---|---|---|---|---|
+| 131 | 599 | HX opening; HF manufacture and uses | `FULL — PARTIALLY UNIQUE` | `DEEP READ — PARTIAL ADDITIONS REGISTERED` | §10.60 |
+| 132 | 600 | HF use split; HCl manufacture | `FULL — PARTIALLY UNIQUE` | **`DEEP READ — UNCLEAR ITEM RECORDED`** + partial additions | §10.60 |
+| 133 | 601 | HCl properties; HBr and HI; Table 16.12 | `FULL — PARTIALLY UNIQUE` | `DEEP READ — PARTIAL ADDITIONS REGISTERED` | §10.60 |
+| 134 | 602 | Hydrogen bonding; acid strength; Figure 16.4 | `FULL — PARTIALLY UNIQUE` | **`DEEP READ — VISUAL ADDITION REGISTERED`** + partial additions | §10.60 |
+| 135 | 603 | Figure 16.5, the acid-strength energy cycle | `FULL — PARTIALLY UNIQUE` | **`DEEP READ — VISUAL ADDITION REGISTERED`** | §10.60 |
+| 136 | 604 | Table 16.13; why HF is the weakest halogen acid | `FULL — PARTIALLY UNIQUE` | **`DEEP READ — CONTRADICTION FOUND`** ×3 | §10.60 |
+
+## A. Topics
+
+| # | Topic | Content |
+|---|---|---|
+| A335 | **HX naming, and the H₂ + X₂ reactivity ladder** | **"It is usual to refer to pure anhydrous HX compounds as hydrogen halides, and their aqueous solutions as hydrohalic acids or simply halogen acids."** A naming distinction the course had been using loosely. **All the halogens react with hydrogen to form HX, but except for HCl this is not the usual way of preparing them**, and **reactivity towards hydrogen decreases down the group**: **H₂ and F₂ react violently; with chlorine the reaction is slow in the dark, faster in daylight and explosive in sunlight; with iodine it is slow at room temperature.** The chlorine case is the teaching one — the same reaction with three rates set by illumination, which is a photochemical chain in all but name. |
+| A336 | **HF manufacture, and why the fluorspar must be clean** | **Industrially HF is made by heating CaF₂ with strong H₂SO₄. The reaction is endothermic — hence the need for heating** (a detail the registers lacked, and the reason the plant is heated rather than cooled). **It is important that SiO₂ impurities are removed from the CaF₂, as otherwise they consume much of the HF produced** — `SiO₂ + 4HF → SiF₄ + 2H₂O`, then `SiF₄ + 2HF(aq) → H₂[SiF₆]`, six HF lost per SiO₂. This is the quantitative teeth behind A291's qualitative claim that silica-bearing fluorine minerals are unusable for HF. **HF is purified by successive washing, cooling and fractional distillation to 99.95 % pure. World production 1.5 million tonnes in 1994, with over 80 000 tonnes a year made in the UK.** |
+| A337 | **Why HF attacks glass — and why concentrated HF does not attack much at all** | **Hydrofluoric acid is normally handled in metal apparatus of copper or Monel because it attacks glass with the formation of fluorosilicate ions [SiF₆]²⁻**: `SiO₂ + 6HF → [SiF₆]²⁻ + 2H⁺ + 2H₂O` (Si 1/1, O 2/2, H 6/6, F 6/6, charge 0/0 — **balances**). **"Surprisingly little corrosion occurs at concentrations above 80 %."** That last sentence is the memorable one and the registers did not have it: the *dilute* acid is the dangerous one for glass, because the attack needs water. |
+| A338 | **HF's use split — and why it does not contradict the 75 % figure** | **Two-thirds of HF goes to chlorofluorocarbons (Freons, CFCs)** — refrigerants and aerosol propellants, **being phased out because they damage the ozone layer**; **about 14 % to AlF₃ and synthetic cryolite** for aluminium extraction; **about 2 % to uranium processing, through the intermediates UF₄ and UF₆**; **about 4 % as anhydrous HF, an alkylation catalyst in the petrochemical industry** making long-chain alkylbenzenes that are **converted into alkylbenzene sulphonates and used as detergents**; and **aqueous HF for pickling steel (about 4 %)**, etching glass, herbicides, metal fluorides and BF₃. **Read carelessly this contradicts A318's "the nuclear industry uses about 75 % of the fluorine produced" (printed 586). It does not — the denominators differ.** Printed 586 is counting **elemental F₂**; printed 600 is counting **HF**, of which only a small part is ever converted to F₂. The uranium chain uses HF for U → UF₄ and F₂ for UF₄ → UF₆, so it is a small share of the HF and a large share of the F₂. **The source never states this distinction, so it is recorded as a reconciliation the course must make explicit, not as a contradiction — a consistent reading exists.** |
+| A339 | **The CFC synthesis, with its catalyst** | `CCl₄ + 2HF →(anhydrous conditions, + SbCl₅) CCl₂F₂ + 2HCl` — C 1/1, Cl 4/4, H 2/2, F 2/2. **Balances.** The conditions are the point: **anhydrous**, and **antimony(V) chloride as catalyst** — a halide-exchange reaction, not a fluorination by F₂, which is why it can be run at all on an organic substrate. |
+| A340 | **BF₃ and AlF₃ direct from the oxides** | `Al₂O₃ + 6HF → 2AlF₃ + 3H₂O` — Al 2/2, O 3/3, H 6/6, F 6/6. **Balances.** The companion boron reaction is printed in a corrupt form — see defect D11 — but the chemistry it intends, `B₂O₃ + 6HF → 2BF₃ + 3H₂O` **with concentrated H₂SO₄ over the arrow as the dehydrating agent**, balances exactly and parallels the aluminium case. |
+| A341 | **HCl: four preparative routes, and which one now dominates** | **World production 12.3 million tonnes in 1991 — USA 24 %, China 21 %, Germany and Japan 7 % each, France and Italy 5 % each, Belgium 3 %.** (1) **The 'salt cake' method**, once exclusive: concentrated H₂SO₄ on rock salt, **endothermic**, in **two stages at different temperatures**. **The first at about 150 °C** — `NaCl + H₂SO₄ → HCl(g) + NaHSO₄` — and here is the name's origin: **the solid NaCl becomes coated with insoluble NaHSO₄, which prevents further reaction and accounts for the name 'salt cake'.** **The second stage at about 550 °C** — `NaCl + NaHSO₄ → HCl(g) + Na₂SO₄` — **and the Na₂SO₄ by-product was sold, mostly for paper making (the Kraft process).** Both balance. (2) **Impure HCl as a by-product of the heavy organic chemical industry** — from 1,2-dichloroethane → vinyl chloride, and from chlorinated ethanes and chlorinated fluorocarbons — **and this is now the largest source of HCl.** (3) **High-purity HCl by direct combination**: a gaseous H₂/Cl₂ mixture is explosive, **but the reaction proceeds quietly if the gases are burnt in a hydrogen–chlorine flame in a special combustion chamber**, strongly exothermic. (4) **Laboratory: NH₄Cl with concentrated H₂SO₄.** |
+| A342 | **Why the laboratory pays more for NH₄Cl than NaCl** | **"NH₄Cl costs more than NaCl … However, NH₄Cl is preferred because NH₄HSO₄ is soluble, and the reaction does not stop at the halfway stage."** `2NH₄Cl + H₂SO₄ → 2HCl + (NH₄)₂SO₄` (N 2/2, H 10/10, Cl 2/2, S 1/1, O 4/4 — **balances**), one step instead of two. **The direct contrast with the salt-cake NaHSO₄ crust of A341 is the whole lesson: solubility of the intermediate bisulphate decides whether the reaction stalls.** |
+| A343 | **Hydrochloric acid by the numbers** | **A saturated solution at 20 °C contains 42 % HCl by weight; 'concentrated' acid normally contains about 38 % HCl by weight, approximately 12 M.** **Pure hydrochloric acid is colourless, but technical grades are sometimes yellow because of contamination by Fe(III)** — a colour observation with a named cause. **The largest use is 'pickling' metals, that is removing oxide layers from the surface**; also metal chlorides, dyestuffs and the sugar industry. **Gaseous HCl is conveniently prepared in the laboratory from concentrated HCl and concentrated H₂SO₄.** |
+| A344 | **HBr and HI need a non-oxidising acid — and the red-phosphorus route** | **"Note that a non-oxidizing acid such as phosphoric acid must be used. Concentrated H₂SO₄ is a strong oxidizing agent and would oxidize HBr to Br₂ and HI to I₂."** The registers held this as trap 47; **the working alternative was not registered**: `H₃PO₄ + NaBr → HBr + NaH₂PO₄` and `H₃PO₄ + NaI → HI + NaH₂PO₄`, both balancing, both "a similar reaction to the 'salt cake' process". **The usual laboratory preparation instead reduces bromine or iodine with red phosphorus in water**: `2P(red) + 3Br₂ → 2PBr₃ →(+6H₂O) 6HBr + 2H₃PO₃` and `2P(red) + 3I₂ → 2PI₃ →(+6H₂O) 6HI + 2H₃PO₃`, **both balanced at every stage** (P 2/2, Br or I 6/6, then H 12/12, O 6/6). **The order of addition differs between the two and the source says so deliberately: for HBr, bromine is added to a mixture of red phosphorus and water; for HI, water is added to a mixture of phosphorus and iodine.** A practical distinction worth keeping — the reagent added last is the one whose rate you control. |
+| A345 | **Table 16.12 — densities, pKₐ and azeotrope compositions for HX** | Melting and boiling points were already registered; **three columns were not.** **Densities: HF 0.99, HCl 1.19, HBr 2.16, HI 2.80** *(units as printed are wrong — see defect D12; and the page does not state the temperature or the phase at which they were measured, so neither is recorded)*. **pKₐ: HF 3.2, HCl −7, HBr −9, HI −10** — the quantitative form of "HF is the weak one", and the only place in the corpus where halogen-acid strength carries numbers. **Azeotrope composition, weight %: HF 35.37, HCl 20.24, HBr 47.0, HI 57.0.** |
+| A346 | **Why the halogen acids form azeotropes, and what they are good for** | **"The aqueous solutions form azeotropic mixtures with maximum boiling points, because of a negative deviation from Raoult's law."** And the use: **"Azeotropic mixtures are sometimes used as standards for volumetric analysis, because the azeotrope always has the same composition."** A physical-chemistry idea earning its keep in an analytical context, and neither the Raoult explanation nor the standards use was in the registers. |
+| A347 | **HF's hydrogen bonding, phase by phase** | **The unexpectedly high boiling point arises from hydrogen bonds between the F of one molecule and the H of another, linking them as (HF)ₙ in zig-zag chains in both the liquid and the solid.** **Some hydrogen bonding also occurs in the gas, which is a mixture of cyclic (HF)₆ polymers, dimeric (HF)₂ and monomeric HF.** **HCl, HBr and HI are not hydrogen bonded in the gas or the liquid, though HCl and HBr are weakly hydrogen bonded in the solid.** A75 had the gas-phase mixture; **the phase-by-phase contrast across all four hydrides is new**, and it is what makes HF's anomaly a structural claim rather than an assertion. Energetics already registered: H-bonds 5–35 kJ mol⁻¹ against C—C at 347, and F—H···F at 29 kJ mol⁻¹ in HF(g). |
+| A348 | **Acid strength depends on the solvent, and acetic acid separates what water levels** | **"Though HCl, HBr and HI completely ionize in water, the degree of ionization is much less in poorer ionizing solvents such as anhydrous acetic acid. HCl ionizes less than HI in glacial acetic acid as solvent. Thus in acetic acid, HI is the strongest acid, followed by HBr and HCl, and HF is the weakest."** **This is the differentiating-solvent counterpart to A242's levelling solvent**, and the pair belongs together in one lesson: **water levels HCl, HBr and HI to indistinguishable strength; glacial acetic acid separates them.** The registers had levelling for ammonia and nothing for differentiation. |
+| A349 | **The acid-strength energy cycle — thermodynamics, not bonding** | Figure 16.5 sets out the cycle and the source states the sum explicitly: **acid strength = enthalpy of dehydration + enthalpy of dissociation + ionization energy of H⁺ + electron affinity of X⁻ + enthalpy of hydration of H⁺ and X⁻.** The route is HX(hydrated) → HX(gas) → H(gas) + X(gas) → H⁺(gas) + X(gas) → H⁺(gas) + X⁻(gas) → H⁺(hydrated) + X⁻(hydrated), against the direct step HX(hydrated) ⇌ H⁺(hydrated) + X⁻(hydrated) whose constant is k, with `ΔG° = −RT ln k` and `ΔG = ΔH − TΔS`. **Registered as a topic under the project's standing ruling that energy-cycle arguments are thermodynamics and never MO entries.** |
+| A350 | **Why HF is the weakest halogen acid — the three-factor answer** | The source's own decomposition, and **it survives the arithmetic problems of §C because it is qualitative**: **(1) the enthalpies of dissociation show the H—F bond is much stronger than H—Cl, H—Br or H—I — the dissociation energy of HF is nearly twice that needed for HI** (574 against 295 kJ mol⁻¹, and the printed table bears this out), **and the strength also shows in the short bond length, 1.0 Å against 1.7 Å in HI**; **(2) the enthalpy of dehydration for HX(hydrated) → HX(gas) is much higher for HF than the others, because of the strong hydrogen bonding in aqueous HF solutions** (48 against 18, 21, 23); **(3) the unexpectedly low electron affinity of F also contributes, and though the enthalpy of hydration of F⁻ is very high it is not enough to offset the other terms** (−338 for F against −355 for Cl, while F⁻ hydration is the most negative at −513). **All four total ΔH values are negative, so the dissociation is thermodynamically possible in every case; HF's is merely small — "only slightly exothermic in aqueous solution whereas the others evolve a considerable amount of heat."** |
+
+## B. Table 16.13 as printed — recorded before it is criticised
+
+**"Energy cycle (All values in kJ mol⁻¹)", printed 604, transcribed at 1000 dpi:**
+
+| | Enthalpy dehydration | Enthalpy dissociation | Ionization energy H→H⁺ | Electron affinity of X | Enthalpy hydration H⁺ | Enthalpy hydration X | Total δH | TΔS | ΔG = (ΔH − TΔS) |
+|---|---|---|---|---|---|---|---|---|---|
+| HF | 48 | 574 | 1311 | −338 | −1091 | −513 | −18 | 51 | −69 |
+| HCl | 18 | 428 | 1311 | −355 | −1091 | −370 | −68 | 56 | −124 |
+| HBr | 21 | 363 | 1311 | −331 | −1091 | −339 | −75 | 59 | −134 |
+| HI | 23 | 295 | 1311 | −302 | −1091 | −394 | −167 | 62 | −229 |
+
+**Quoted in the following paragraph:** dissociation constants **HF k = 10⁻³,
+HCl k = 10⁸, HBr k = 10¹⁰, HI k = 10¹¹.**
+
+## C. Three contradictions from one table, all found in code
+
+### Contradiction 69 — the six components do not sum to the printed total, and all four rows are wrong by exactly the same amount
+
+*Computed:* HF **−9** against printed −18 · HCl **−59** against −68 · HBr **−66**
+against −75 · HI **−158** against −167. **Every row is short by exactly
+9 kJ mol⁻¹.** *What is not wrong:* **ΔG = ΔH − TΔS reproduces the printed ΔG in
+all four rows exactly** (−18 − 51 = −69, −68 − 56 = −124, −75 − 59 = −134,
+−167 − 62 = −229), so the fault lies between the six components and the Total δH
+column, and nowhere else. *Why a uniform offset matters:* four independent typos
+would not all be 9. **A single systematic cause is far likelier — for instance an
+enthalpy of hydration of H⁺ of −1100 used in the sums against the −1091 printed,
+which reproduces every total exactly.** *Verification needed:* a thermodynamic
+data table, or the book's own source for the cycle. **Neither is in this corpus,
+and the value −1091 is the one the same author uses elsewhere (registered at
+A63).** **The −1100 hypothesis is stated as the arithmetic that fits, not as a
+correction, and is not written into the register as fact.** *Safe for inclusion:*
+**the qualitative three-factor argument of A350, yes — it does not depend on the
+totals. The table as a worked quantitative example, no, until resolved.**
+
+### Contradiction 70 — the iodide hydration enthalpy breaks the trend, and the two editions disagree
+
+*The issue:* the halide hydration enthalpies run **F⁻ −513, Cl⁻ −370, Br⁻ −339,
+I⁻ −394** — monotonically decreasing in magnitude and then **reversing at
+iodide**, which is not what increasing ionic radius predicts. **File 8, already
+registered, gives the same series as −513, −370, −339, −274** — monotonic
+throughout. **The two editions of the same book differ by 120 kJ mol⁻¹ on this one
+number.** *The complication, stated rather than suppressed:* **−394 is the value
+internally consistent with file 12's own table** (it leaves HI's row off by the
+same 9 as every other row, whereas −274 would leave it off by 129), **so file 12
+is self-consistent around a figure that contradicts both its sister edition and
+the physical trend.** *Verification needed:* a hydration-enthalpy data table.
+**Not in this corpus, and the two editions cannot adjudicate each other — same
+author, and their agreement would be repetition in any case.** *Safe for
+inclusion:* **the qualitative statement that hydration enthalpy falls with
+increasing anion size, yes. Either numeric value for I⁻, no, until an
+independent table is available.**
+
+### Contradiction 71 — the quoted dissociation constants match neither the ΔG column nor the book's own pKₐ table
+
+*Computed from the printed ΔG via `ΔG° = −RT ln k` at 298 K:* HF would need
+**k ≈ 10¹²**, HCl **10²¹·⁷**, HBr **10²³·⁵**, HI **10⁴⁰** — against the quoted
+**10⁻³, 10⁸, 10¹⁰, 10¹¹**. *Running it the other way:* the quoted constants
+require **ΔG of +17, −46, −57 and −63 kJ mol⁻¹**, against the table's **−69, −124,
+−134, −229**. **The two are irreconcilable, and note that the quoted HF constant
+is positive-ΔG territory while the table gives HF a negative ΔG.** *And a second,
+smaller inconsistency:* **Table 16.12's own pKₐ column** (HF 3.2, HCl −7, HBr −9,
+HI −10) implies **k = 10⁻³·², 10⁷, 10⁹, 10¹⁰** — **agreeing with the quoted value
+for HF but one log unit adrift for HCl, HBr and HI.** *Verification needed:*
+thermodynamic data, absent here. *Safe for inclusion:* **the pKₐ values of
+Table 16.12, which are self-consistent and standard in form, yes — flagged as
+source-reported. The claim that these constants were "obtained from" the ΔG
+column, no.** The course may teach the cycle as a qualitative explanation and the
+pKₐ values as data, but **must not present one as derived from the other.**
+
+## D. Source defects D11–D12
+
+**D11 — printed 600, the boron trifluoride equation is corrupt.** *Source form as
+printed:* `B₂O₃ + 6HF --conc. H₂SO₄--> 2BF₃ + 3H₂SO₄  H₂O`. *The issue:* **sulphur
+appears only on the right-hand side**, oxygen runs 3 → 13 and hydrogen 6 → 8;
+**the line cannot be balanced as printed under any reading.** *Correction, from
+conservation:* **`B₂O₃ + 6HF → 2BF₃ + 3H₂O`**, with **concentrated H₂SO₄ over the
+arrow as a dehydrating agent** — B 2/2, O 3/3, H 6/6, F 6/6. **Two independent
+supports, both internal:** the arrow already carries "conc. H₂SO₄" as a
+condition, so a second appearance among the products is a duplication; and **the
+immediately following line, `Al₂O₃ + 6HF → 2AlF₃ + 3H₂O`, is the exact structural
+parallel and balances as printed.** No external authority needed.
+
+**D12 — printed 601, Table 16.12's density column is dimensionally impossible.**
+*Source form as printed:* the header reads **`(g cm⁻¹)`**. *The issue:* density is
+mass per volume and must carry cm⁻³. *Correction:* **g cm⁻³.** *Reading caveat,
+recorded honestly:* the superscript reads as **−1** at 900 dpi, but **this scan is
+known to degrade superscripts and subscripts**, so it cannot be excluded that the
+printed original carries a −3 that the scan has thinned. **Either way the course
+uses g cm⁻³, and the correction follows from dimensional necessity alone.**
+
+## E. `[UNCLEAR]` item 5 — printed 600, the HF/F₂ denominator
+
+**Not a legibility problem — a stated-fact problem, and it is placed here rather
+than invented away.** Printed 586 says **"The nuclear industry uses about 75 % of
+the fluorine produced"**; printed 600 says **"About 2 % is used for uranium
+processing"** of HF. **A consistent reading exists** — different denominators, F₂
+against HF — **and A338 records it. But the source never says which quantity
+"the fluorine produced" denotes**, and the two figures are 26 pages apart with no
+cross-reference. *Location:* file 12, PDF 118 / printed 586 and PDF 132 /
+printed 600. **Not guessed, and not promoted to a contradiction because a
+consistent reading exists.** **The course may not quote either percentage without
+naming its denominator explicitly.** **`[UNCLEAR]` count rises from 4 to 5.**
+
+## F. Visual register — additions V149–V152
+
+| ID | Required visual kind | Subject |
+|---|---|---|
+| V149 | **Original SVG structure** | HF's hydrogen bonding phase by phase: the zig-zag (HF)ₙ chain of the solid and liquid beside the gas-phase mixture of cyclic (HF)₆, dimer and monomer, with 29 kJ mol⁻¹ marked on one F—H···F bridge. **Replaces Figure 16.4 without copying it** — the source draws only the solid chain. |
+| V150 | **Thermodynamic cycle** | The acid-strength cycle of Figure 16.5, five labelled steps around and "acid strength" as the direct vertical. **Built from A349's word equation, not traced.** **The numeric columns are deliberately excluded until contradictions 69–71 are resolved**, and the visual carries that caveat in its caption. |
+| V151 | **Comparison graphic** | HX property dashboard — m.p., b.p., density, pKₐ and azeotrope composition on one grid, HF visibly off-trend in boiling point and pKₐ and on-trend in melting point |
+| V152 | **Comparison graphic** | Two pies side by side with their denominators named: **HF's uses** (two-thirds CFCs, 14 % AlF₃/cryolite, 4 % alkylation catalyst, 4 % pickling, 2 % uranium) against **F₂'s uses** (about 75 % nuclear). **The point of the visual is that the two are not in conflict** — see A338 and `[UNCLEAR]` 5. |
+
+## G. JEE trap register — items 273–282
+
+273. **HF is the *weak* halogen acid — the only one.** pKₐ 3.2 against −7, −9 and
+     −10. The greater electronegativity difference makes it *more* ionic and
+     *less* acidic, which is the paradox the energy cycle exists to explain.
+274. **Water levels HCl, HBr and HI; glacial acetic acid separates them.** In
+     acetic acid the order HI > HBr > HCl > HF becomes visible. Acid strength is
+     a property of the acid *and* the solvent.
+275. **HF's high boiling point is hydrogen bonding, and it survives into the
+     gas** — cyclic (HF)₆, dimer and monomer coexist there. HCl and HBr manage
+     weak hydrogen bonds only in the solid.
+276. **HBr and HI cannot be made with concentrated H₂SO₄** — it oxidises them to
+     Br₂ and I₂. Use phosphoric acid, or red phosphorus and water.
+277. **NH₄Cl beats NaCl in the laboratory because NH₄HSO₄ is soluble.** The
+     salt-cake process stalls at NaHSO₄ and needs 550 °C to restart; that crust
+     is where the name comes from.
+278. **Dilute HF attacks glass; above about 80 % it barely corrodes.** The
+     intuition that concentrated is always worse fails here.
+279. **HF is a liquid at room temperature (b.p. 19.9 °C)** and the other three
+     hydrogen halides are gases. Only just — but it changes every handling
+     question.
+280. **The halogen acids form maximum-boiling azeotropes by negative deviation
+     from Raoult's law**, and the fixed composition is why they serve as
+     volumetric standards.
+281. **SiO₂ in fluorspar eats six HF per silica**, via SiF₄ and then H₂[SiF₆].
+     "Impurity" understates it — it is a stoichiometric thief.
+282. **Two-thirds of HF goes to CFCs, but about 75 % of elemental F₂ goes to the
+     nuclear industry.** Different denominators, not a contradiction — and a
+     question that quotes one percentage without naming its base is
+     unanswerable.
+
+## H. Register-count effects
+
+- **Topics: A334 → A350.** Sixteen added, **all table rows**, contiguous.
+- **Expanded, IDs kept:** **A75** (phase-by-phase hydrogen bonding across all
+  four hydrides) · **A63** (its −1091 now load-bearing in contradiction 69) ·
+  **A242** (levelling now paired with differentiation, A348) · **A291** (the
+  six-HF-per-SiO₂ arithmetic) · **A318** (use split completed by A338).
+- **Visuals: V148 → V152.** Four added.
+- **Traps: 272 → 282.** Ten added.
+- **Contradictions: 68 → 71.** Three added, **all three found by running the
+  table's own arithmetic in code rather than by reading it**, and **none
+  resolved** — each needs thermodynamic data this corpus does not hold.
+- **Source defects: D10 → D12.** Two added, both corrected from conservation or
+  dimensional necessity alone.
+- **`[UNCLEAR]`: 4 → 5.** One added — the HF/F₂ denominator.
+- **MO cases: E45 — unchanged.** The energy cycle is thermodynamics and is
+  registered as a topic, per the standing ruling.
+
+---
+
+# Range closure — PDF 131–136
+
+**6 / 6 pages deeply read**, each with a triage label and a deep-read outcome,
+none read without being registered. **File 12: 56 + 6 = 62 of 184 deeply read.**
+**`FULL — PARTIALLY UNIQUE`: 14 of 99 read, 85 remaining.**

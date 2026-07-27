@@ -4293,3 +4293,303 @@ Count remains **3**.
 Read from 170 dpi renders. No counterpart in file 8; no second source
 corroborates. **No NCERT or Greenwood confirmation is claimed.** Items 25–59
 preserved; 60 and 61 added.
+
+---
+
+# Addendum 18 — file 12 PDF 109–110 (printed 577–578): polythiazyl, organosulphur derivatives and dioxygen binding
+
+Both pages `DEEP READ — UNIQUE REGISTERED`. Printed 578 ends in **Further
+Reading**, which is `NOT RELEVANT` and is not registered.
+
+## A. The two `[UNCLEAR]` items from PDF 108 — NOT resolved
+
+The brief directed me to check these pages for a resolution. **Neither page
+resolves either item.** Printed 577 opens partway through the S₂N₂ discussion and
+moves on to polythiazyl; it does **not** repeat the bicyclic sulphur–nitrogen
+formulae, and it does **not** restate the alkaline S₄N₄ hydrolysis equation.
+Printed 578 covers haemoglobin and dioxygen complexes and then the bibliography.
+
+**Both items therefore stand exactly as recorded in Addendum 10, unchanged and
+unguessed:**
+1. `[UNCLEAR — 15161718.pdf, PDF p. 108 / printed 576, the four larger bicyclo
+   S–N formulae]` — **PDF 109–110 did not resolve it.**
+2. `[UNCLEAR — 15161718.pdf, PDF p. 108 / printed 576, the coefficients of the
+   S₄N₄ + NaOH + H₂O hydrolysis equation]` — **PDF 109–110 did not resolve it.**
+
+Both remain **unsafe to publish**. **Distinct outstanding items: 3.**
+
+*Counting note:* a plain text search for the `[UNCLEAR — …]` marker now returns
+**5 hits, not 3**, because the two PDF-108 items are quoted verbatim again in the
+paragraph above when reporting that they were checked for and not found. **The
+number of distinct unresolved items is 3** — two on PDF 108 and one on PDF 145.
+Recorded here so the marker count and the item count are never mistaken for each
+other.
+
+## B. S₂N₂ and polythiazyl (SN)ₓ — the conducting polymer
+
+| # | Topic | Where it belongs | Content |
+|---|---|---|---|
+| A280 | **S₂N₂ properties and structure** | §12 | A crystalline solid, **insoluble in water but soluble in many organic solvents**, which **explodes with shock or heat**. The structure is **cyclic, with the four atoms very nearly square planar** — a four-membered S₂N₂ ring, not a chain |
+| A281 | **Polythiazyl (SN)ₓ — a main-group polymer that behaves as a metal** | §12 (new subsection) | Formed by **slow polymerisation of solid or vapour S₂N₂**. A **bronze-coloured shiny solid that looks like a metal**. **It conducts electricity, and conductivity rises as temperature falls — the signature of a metal, not a semiconductor.** **It becomes a superconductor at 0.26 K.** |
+| A282 | **Why it is a one-dimensional metal** | §12 | The crystal structure shows the **four-membered S₂N₂ rings have opened and polymerised into a long chain**. The atoms sit in a **zig-zag arrangement and the chain is almost flat**. **Conductivity is far greater along the chains than across them**, so the material behaves as a **one-dimensional metal** — direction-dependent conduction, which the course has nowhere else. |
+
+**Resistivity as printed:** about **1 × 10⁹ μohm cm along a chain at room
+temperature**, falling to about **1 × 10⁶ μohm cm at 4 K**. **See contradiction
+62** — the *ratio* is consistent with metallic behaviour, but the absolute values
+are hard to reconcile with the same paragraph's description of a shiny
+metal-like conductor.
+
+**Bonding-policy note.** The source offers **no bonding model at all** for
+(SN)ₓ — it reports the structure, the conductivity and its temperature
+dependence, and stops. That is recorded as it stands. **No modern band-structure
+account has been added, because none is in this corpus**, and inventing one would
+breach the policy. Registered as **experimental evidence only, modern
+interpretation pending verification.**
+
+## C. Organo derivatives of the chalcogens (printed 577)
+
+| # | Topic | Content |
+|---|---|---|
+| A283 | **R₂S and R₄S from Grignard and organolithium reagents** | Oxygen's R₂O are **ethers**; the S, Se and Te analogues are made the same way. `SCl₂ + 2LiR —(ether)→ R₂S + 2LiCl` — **balance-checked, balances.** `SCl₄ + 4RMgCl → R₄S + 4MgCl₂` — **balance-checked, balances.** |
+| A284 | **Dialkyl sulphides are donors, for a structural reason** | **R₂S has the same shape as water — tetrahedral with two positions occupied by lone pairs — and those lone pairs make them useful donor molecules.** This is the ligand-chemistry payoff of a VSEPR shape, and it connects to the Et₂S·BH₃ adduct already registered in Addendum 5. |
+
+## D. Dioxygen binding — registered as a historical model
+
+| # | Topic | Content |
+|---|---|---|
+| A285 | **Haemoglobin, oxygenation and colour** | The blood pigment of most animals, **red when dioxygen is present and blue when it is not**. It absorbs molecular O₂ in the lungs as **oxyhaemoglobin**, which **releases the dioxygen where the body needs it, re-forming (reduced) haemoglobin** — the process is **reversible**, which is the whole point. Molecular weight **about 65 000**, built from **four haem groups** — flat heterocyclic **porphyrin** rings containing iron — plus a **globular protein**. |
+| A286 | **Transition-metal dioxygen complexes** | A few transition-metal complexes also bind molecular O₂ through π bonding: `L₄Pt + O₂ → L₂PtO₂` with **L = P(C₆H₅)₃**, and the reversible uptake by the iridium carbonyl chloride complex `L₂Ir(Cl)(CO) + O₂ ⇌ L₂Ir(Cl)(CO)(O₂)`, drawn side-on. |
+
+**The geometry claim, and why it is registered as historical.** The source states
+that in oxyhaemoglobin **"the O–O axis of the O₂ molecule lies parallel to the
+plane of the porphyrin ring, with two equal Fe–O distances"**, and that **"molecular
+dioxygen is π bonded to the iron"** — i.e. a **symmetric side-on (Griffith)
+binding mode**. Recorded faithfully as the source's model. **See contradiction
+63:** modern crystallography is generally taken to show **end-on, bent (Pauling)
+binding with one Fe–O contact**, not two equal ones. **Greenwood and NCERT are
+both absent from this corpus, so no correction is asserted** — the discrepancy is
+logged for verification.
+
+**Scope note.** Only the p-block-relevant chemistry is registered — O₂ binding,
+reversibility, the oxygenation-versus-oxidation distinction, and the π-bonding
+claim. The biology is not expanded, per the brief.
+
+## E. MO-theory register — addition E45
+
+- **E45 — Reversible O₂ binding is an oxygenation, not an oxidation.** The
+  distinction is the examinable one: haemoglobin **binds** dioxygen and **gives it
+  back**, so the process cannot be a straightforward redox change — a genuinely
+  oxidised iron would not release the O₂. The colour change red ⇌ blue tracks
+  **occupancy, not oxidation state**. The source's own contrast is useful here:
+  the same molecular O₂ that binds reversibly to iron in haem also binds to Pt(0)
+  and Ir(I) centres as a π complex. *Policy:* the **side-on geometry and the π
+  description are the source's historical model** (§D); the **modern end-on bent
+  picture is pending verification**; and **the CO-competition chemistry already
+  registered as A157** — the CO/haemoglobin complex being ~300× more stable than
+  oxyhaemoglobin — is the reactivity evidence that ties the two together.
+
+## F. Visual register — additions V129–V132
+
+| ID | Required visual kind | Subject |
+|---|---|---|
+| V129 | **Original SVG structure** | S₂N₂ square-planar four-ring opening and polymerising into the zig-zag (SN)ₓ chain, with the almost-flat chain drawn to scale |
+| V130 | **Trend graph** | (SN)ₓ resistivity against temperature, falling from RT to 4 K, with the superconducting transition at **0.26 K** marked — and the printed absolute values shown as flagged pending contradiction 62 |
+| V131 | **Comparison graphic** | Conduction along the chain versus across it — the one-dimensional metal, drawn as an anisotropy diagram rather than a number |
+| V132 | **Comparison graphic + `VisualCaption` exam-model/modern pair** | O₂ bound to iron: the source's **side-on, two equal Fe–O** picture beside the **end-on bent** alternative, explicitly labelled historical model and pending-verification modern reading. **Must use the two-caption component so the two are never merged.** |
+
+## G. JEE trap register — items 236–241
+
+236. **(SN)ₓ conductivity *increases* as temperature falls.** That is metallic
+     behaviour; a semiconductor does the opposite.
+237. **(SN)ₓ is a superconductor at 0.26 K** — a main-group polymer with no metal
+     atom in it at all.
+238. **(SN)ₓ conducts far better along the chain than across it** — a
+     one-dimensional metal, so a single conductivity number is meaningless
+     without a direction.
+239. **S₂N₂ is a square-planar four-membered ring**, and it is the *monomer*;
+     the polymer forms by the ring opening.
+240. **R₂S has the same shape as water**, and the two lone pairs are what make
+     dialkyl sulphides useful ligands.
+241. **Haemoglobin binding O₂ is oxygenation, not oxidation** — the process is
+     reversible, and the red/blue change tracks occupancy rather than oxidation
+     state.
+
+## H. Contradiction register — items 62 and 63
+
+62. **(SN)ₓ resistivity values sit oddly with the same paragraph's description.**
+    *Location:* PDF 109 / printed 577. *As printed:* about **1 × 10⁹ μohm cm**
+    along a chain at room temperature, falling to about **1 × 10⁶ μohm cm at
+    4 K**. *The issue:* 1 × 10⁹ μohm cm is 10³ ohm cm, which is a poor
+    semiconductor rather than the **"bronze coloured shiny solid that looks like a
+    metal"** and **"behaves as a one-dimensional metal"** described in the same
+    paragraph. **The 1000-fold fall on cooling is internally consistent with
+    metallic behaviour; the absolute magnitude is what does not fit.**
+    *Possible explanation:* a units or exponent slip. *Verification needed:* a
+    physical-data source; **none in this corpus**. *Safe for inclusion:* **the
+    qualitative behaviour and the 0.26 K superconducting transition yes; the
+    absolute resistivity numbers no.** Marked pending.
+63. **Oxyhaemoglobin geometry: side-on with two equal Fe–O distances.**
+    *Location:* PDF 110 / printed 578. *As printed:* the O–O axis lies **parallel
+    to the porphyrin plane** with **two equal Fe–O distances**, dioxygen **π
+    bonded** to iron. *The issue:* this is the **Griffith side-on model**; modern
+    structural work is generally taken to support the **Pauling end-on bent
+    model** with a single Fe–O contact. *Verification needed:* an authoritative
+    modern structural source; **Greenwood and NCERT are both absent**. *Safe for
+    inclusion:* **the reversibility, the colour change, the composition and the
+    CO competition yes; the specific side-on geometry no.** Registered as the
+    source's **historical model**, with the modern reading **pending
+    verification** and neither asserted over the other.
+
+## I. `[UNCLEAR]` register — no new items; none resolved
+
+Both pages fully legible at 170 dpi. The two outstanding items are on PDF 108 and
+were **checked for here and not found**. Count remains **3**.
+
+## J. Verification status
+
+Read from 170 dpi renders. No counterpart in file 8; no second source
+corroborates. **No NCERT or Greenwood confirmation is claimed.** Items 25–61
+preserved; 62 and 63 added.
+
+---
+
+# Addendum 19 — file 12 PDF 114–116 (printed 582–584): halogen occurrence and abundance — and the closure of the fully unique queue
+
+**PDF 114 `DEEP READ — NO NEW CONTENT`** — the first page in this entire audit to
+return that outcome, and it is recorded rather than quietly folded in.
+**PDF 115 `DEEP READ — PARTIAL ADDITIONS REGISTERED`.**
+**PDF 116 `DEEP READ — UNIQUE REGISTERED`.**
+
+## A. PDF 114 (printed 582) — no new content, and one confirmation
+
+Table 16.1 and the Introduction duplicate file 8's Table 10.25 and Part 5 opening:
+halogen as "salt former", the s²p⁵ configuration one electron short of the next
+noble gas, the first-element anomaly with its two reasons (smaller, holds
+electrons more firmly; no low-lying d orbitals), and the Cl/Br size closeness.
+All already registered.
+
+**One thing this page does establish.** Its oxidation-state table **omits
+Br(+VII) exactly as file 8's does** — Br is given only to +VI. That is
+**contradiction 18**, already registered from file 8, where the same chapter
+elsewhere reports perbromates made in 1968. **Seeing the identical omission in the
+parent edition confirms it is the author's own, carried across both editions —
+which is repetition, not independent corroboration.** Contradiction 18 stands
+unchanged, now with a second source page.
+
+## B. PDF 115 (printed 583) — partial additions
+
+Most of the page duplicates file 8 §10.57 (radii, the 38 % / 6.5 % size steps,
+oxidation states, colours and their HOMO–LUMO origin, I₂ as an intrinsic
+semiconductor, `3I₂ ⇌ I₃⁺ + I₃⁻`). **Cross-referenced, not re-registered.**
+
+| # | Topic | Content |
+|---|---|---|
+| A287 | **The halogen isotopes all have nuclear spin, and ¹⁹F is the NMR workhorse** | Every stable halogen isotope has a nuclear spin, which is what makes them usable in NMR; **chemical shifts are conveniently measured using ¹⁹F**. Absent from file 8 entirely, and it connects the group to a technique the course otherwise never mentions. |
+| A288 | **Commercial production figures for the halogen chemicals** | **Cl₂ 35.3 Mt (1994)** · **anhydrous HCl and hydrochloric acid 12.3 Mt (1991)** · **anhydrous HF and hydrofluoric acid 1.5 Mt (1994)** · **Br₂ 370 000 t (1993)** · **ClO₂ 200 000 t/yr**. The spread — chlorine roughly 100× bromine — is the teaching point. |
+
+**Species expansion, existing IDs kept:** the list of compounds in which fluorine
+forces a maximum oxidation state gains **AgF₂** alongside the already-registered
+IF₇, PtF₆, SF₆, BiF₅, TbF₄ and K[Ag^III F₄].
+
+## C. PDF 116 (printed 584) — halogen occurrence and abundance, all new
+
+**Table 16.2, abundance in the earth's crust by weight:**
+
+| Element | ppm | Relative abundance |
+|---|---|---|
+| F | 544 | 13th |
+| Cl | 126 | 20th |
+| Br | 2.5 | 47th |
+| I | 0.46 | 62nd |
+
+**Fluorine is the 13th most abundant element and chlorine the 20th** — both
+reasonably abundant — **while bromine and iodine are comparatively rare.**
+
+| # | Topic | Content |
+|---|---|---|
+| A289 | **The halogens never occur free** | All are too reactive. **All except astatine occur combined in the crust; astatine does not, because it is radioactive with a short half-life.** |
+| A290 | **Fluorspar / fluorite CaF₂ — the main fluorine source, and the origin of the word** | **The name fluorspar was given because the mineral fluoresces — it emits light when heated.** World production **3.6 Mt in 1992**; producers **China 42 %, Mexico, Mongolia and the Soviet Union 8 % each, South Africa 7 %.** (On the source's use of "fluoresces" for emission on heating, see contradiction 64.) |
+| A291 | **Why fluoroapatite is *not* used to make HF** | It is a well-known fluorine mineral, **[3(Ca₃(PO₄)₂)·CaF₂]**, but it is used **primarily as a phosphorus source**, because it contains appreciable **SiO₂**. The HF produced would attack that SiO₂ to give **fluorosilicic acid H₂[SiF₆]** — and that by-product is itself sold, **used as an alternative to NaF for fluoridating drinking water.** A waste stream turned into a product. |
+| A292 | **Cryolite Na₃[AlF₆] is rare and geographically singular** | **Found only in Greenland**, and used in the electrolytic extraction of aluminium — which is why the synthetic cryolite already registered in Addendum 5 matters commercially. |
+| A293 | **NaCl supplies virtually all chlorine chemistry** | **World consumption 183.5 Mt in 1992.** Some mined, some from **solar evaporation of sea water**. Chlorides and bromides are **leached from the land by rain and washed into the sea**. |
+| A294 | **Salinity, with the numbers** | Sea water is about **15 000 ppm (1.5 %) NaCl**; the **Dead Sea 8 %**; the **Great Salt Lake, Utah 23 %**. Dried-up beds of inland lakes and seas hold large NaCl deposits **mixed with smaller amounts of CaCl₂, KCl and MgCl₂.** |
+| A295 | **Why sea water is rich in chloride but poor in fluoride** | **Fluoride is only 1.2 ppm — because sea water carries a large concentration of Ca²⁺ and CaF₂ is insoluble.** A solubility argument explaining an abundance fact, and the best single line on the page. |
+| A296 | **Bromine and iodine sources** | **Bromides occur in sea water. Iodides occur there only in low concentration but are absorbed and concentrated by seaweed**, which was once the extraction route. **Better sources now exist: natural brines are richer in I⁻, and sodium iodate NaIO₃ and sodium periodate NaIO₄ occur as impurities in the Chilean NaNO₃ deposits.** This expands, with the periodate, the Chile-saltpetre entry registered from file 8. |
+
+## D. Visual register — additions V133–V136
+
+| ID | Required visual kind | Subject |
+|---|---|---|
+| V133 | **Trend graph + comparison graphic** | Halogen crustal abundance (544 / 126 / 2.5 / 0.46 ppm) beside annual production (35.3 Mt Cl₂ down to 370 kt Br₂) — abundance and industrial scale on one axis pair |
+| V134 | **Comparison graphic** | Why sea water is chloride-rich and fluoride-poor: 15 000 ppm against 1.2 ppm, with Ca²⁺ + F⁻ → insoluble CaF₂ drawn as the cause |
+| V135 | **Process flow** | Fluoroapatite's two fates — phosphorus on one branch, and on the other the SiO₂ side-reaction producing H₂[SiF₆] for water fluoridation |
+| V136 | **Comparison graphic** | Salinity ladder: sea water 1.5 %, Dead Sea 8 %, Great Salt Lake 23 %, with the residual-bed mineral mixture noted |
+
+## E. JEE trap register — items 242–247
+
+242. **Fluorine is the 13th most abundant element in the crust** — more abundant
+     than chlorine at 20th, even though chlorine dominates industrially.
+243. **Sea water is fluoride-poor (1.2 ppm) precisely because it is calcium-rich**
+     — CaF₂ is insoluble. Abundance in solution is a solubility question.
+244. **Fluoroapatite is not used to make HF**, despite being a fluorine mineral,
+     because its SiO₂ converts the HF to H₂[SiF₆].
+245. **Cryolite is found only in Greenland** and is rare — which is why the
+     aluminium industry uses synthetic Na₃[AlF₆].
+246. **Iodine was once extracted from seaweed** because seaweed concentrates the
+     iodide that sea water holds only weakly.
+247. **Astatine alone among the halogens does not occur in combined form in the
+     crust**, because it is radioactive with a short half-life.
+
+## F. Contradiction register — item 64
+
+64. **"Fluorspar … fluoresces, that is, it emits light when it is heated."**
+    *Location:* PDF 116 / printed 584. *The issue:* emission of light **on
+    heating** is **thermoluminescence**; **fluorescence** is emission during
+    irradiation, typically by ultraviolet light. Fluorite does both, and the word
+    *fluorescence* was indeed coined from *fluorite* — but the definition as
+    given attaches the term to the wrong phenomenon. *Verification needed:* a
+    mineralogy or photophysics source; **none in this corpus**. *Safe for
+    inclusion:* **the etymology and the mineral's behaviour yes; the definition
+    of fluorescence as heat-induced emission no.** The course will say fluorite
+    gave fluorescence its name and describe both effects correctly.
+
+## G. `[UNCLEAR]` register — no new items; none resolved. Count remains **3**.
+
+---
+
+# CLOSURE — file 12 `FULL — UNIQUE` queue
+
+**Status: 37 / 37 deeply inspected.** Verified by enumerating the page-status
+table rather than by subtraction.
+
+**The exact 37 pages, with deep-read outcome:**
+
+| Pages | Section | Outcome |
+|---|---|---|
+| 1, 2, 3, 4, 5 | Ch. 14 opening; occurrence, extraction and uses | UNIQUE REGISTERED (Addendum 7) |
+| 20, 21 | Hydrogen azide and the azides | UNIQUE REGISTERED (15) |
+| 22, 23 | N₃⁻/HN₃ MO treatment; fertilisers; Group 15 Latimer diagrams | UNIQUE REGISTERED (15) |
+| 24, 25, 26, 27 | Nitrogen fixation, Haber–Bosch, ammonia, fertilisers | UNIQUE REGISTERED (16) |
+| 54, 55, 56, 57 | Phosphoric-acid uses; phosphorus sulphides; phosphazene opening | UNIQUE REGISTERED (17) |
+| 58, 59 | Phosphazenes; pnictogen organometallics | UNIQUE REGISTERED (9) |
+| 68, 69, 70, 71, 72, 73 | Group 16 occurrence, extraction, acid rain, Se/Te, polonium | UNIQUE REGISTERED (14) |
+| 95, 96 | Se/Te oxoacids; selenyl oxohalides | 95 PARTIAL, 96 UNIQUE (13) |
+| 108 | Sulphur–nitrogen compounds, S₄N₄ | UNIQUE REGISTERED (10) |
+| 109, 110 | Polythiazyl; organosulphur; dioxygen binding | UNIQUE REGISTERED (18) |
+| 114, 115, 116 | Group 17 opening; occurrence and abundance | **114 NO NEW CONTENT**, 115 PARTIAL, 116 UNIQUE (19) |
+| 145, 146 | Halogen standard reduction potentials | UNIQUE REGISTERED (11) |
+| 161, 162 | Halogen cations and superacid media | UNIQUE REGISTERED (12) |
+
+**Count: 5 + 2 + 2 + 4 + 4 + 2 + 6 + 2 + 1 + 2 + 3 + 2 + 2 = 37.**
+
+**Reclassification accounted for.** The Addendum-8 triage listed 38 fully unique
+pages. **PDF 107 was reclassified to `FULL — PARTIALLY UNIQUE` in Addendum 10**,
+when the S–N section proved to begin in its last paragraph rather than at its top.
+That page was nonetheless deeply read and registered. **38 − 1 = 37**, and all 37
+are closed.
+
+**No page in this set remains triage-only, and no page was read without being
+registered.**
+
+**Remaining in file 12:** 9 `QUESTION GAP` pages, 2 `VISUAL ONLY` pages, and 95
+of 97 `FULL — PARTIALLY UNIQUE` pages.

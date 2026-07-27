@@ -136,13 +136,13 @@ Last updated: 2026-07-26.
 |---|---|---|---|
 | Files 1–6 (original six) | 437 | **325** | 74 % |
 | Files 7–11 (new five) | 1294 | **191** | 14.8 % |
-| File 12 (`15161718.pdf`, p-block part only) | 184 | **34** | 18.5 % |
-| **Total project** | **1915** | **550** | **29 %** |
+| File 12 (`15161718.pdf`, p-block part only) | 184 | **39** | 21.2 % |
+| **Total project** | **1915** | **555** | **29 %** |
 
 Files 7–12 breakdown: file 7 (JD Lee 5th ed., whole book) 5 / 1057 · **file 8 (JD Lee
 adapted Ch. 10) 172 / 172 — COMPLETE** · file 9 (annotated notes) 0 / 40 · file 10
 (annotated notes) 0 / 11 · file 11 (noble-gas notes) 14 / 14 · **file 12 (JD Lee 5th ed.
-Ch. 14–17 extract) 34 / 184 deeply read, **209 / 209 triaged**.
+Ch. 14–17 extract) 39 / 184 deeply read, **209 / 209 triaged**.
 
 **Denominator history, so the movement is auditable.** Locating file 12 added its pages to
 a corpus that had been missing them, taking the total from 1731 to 1940 and the completion
@@ -291,6 +291,24 @@ cross-references resolving, all 20 lessons non-empty.
     60, 61)**. Five equations balance-checked; all balance. **Map refinement:** the
     phosphazene section starts on printed 524, one page earlier than the Addendum 8
     map placed it, so Addendum 9 covered only its later half.
+  - **PDF 109–110 = printed 577–578** (Addendum 18). **Polythiazyl (SN)ₓ** — a
+    main-group polymer that conducts like a metal and superconducts at **0.26 K** —
+    plus organosulphur derivatives and dioxygen binding: 7 topics, 1 MO case (E45),
+    4 visuals, 6 traps, **2 new contradictions (62, 63)**. **The two PDF-108
+    `[UNCLEAR]` items were checked for here and are NOT resolved.**
+  - **PDF 114–116 = printed 582–584** (Addendum 19). PDF 114 returned
+    **`DEEP READ — NO NEW CONTENT`** — the first such page in the audit — and it
+    confirms the Br(+VII) omission of contradiction 18 is the author's own, present
+    in both editions. PDF 115 partial (NMR-active isotopes, production tonnages),
+    PDF 116 unique (**halogen crustal abundance, fluorspar, why fluoroapatite is
+    not used for HF, cryolite, salinity, and why sea water is fluoride-poor**):
+    10 topics, 4 visuals, 6 traps, **1 new contradiction (64)**.
+
+**CLOSURE: `FULL — UNIQUE` = 37 / 37 deeply inspected.** Enumerated page by page
+in `MASTER_REGISTERS.md`, not derived by subtraction. The Addendum-8 triage listed
+38; **PDF 107 was reclassified to partially unique in Addendum 10** and was still
+deeply read, so 38 − 1 = 37 and all 37 are closed. No page in the set remains
+triage-only and none was read without being registered.
 
 **Page-status fields for the deeply read pages** (triage label kept visible
 alongside the deep-read outcome, as required):
@@ -321,6 +339,11 @@ alongside the deep-read outcome, as required):
 | 55 | 522 | `FULL — UNIQUE` | `DEEP READ — UNIQUE REGISTERED` |
 | 56 | 523 | `FULL — UNIQUE` | `DEEP READ — UNIQUE REGISTERED` |
 | 57 | 524 | `FULL — UNIQUE` | `DEEP READ — UNIQUE REGISTERED` |
+| 109 | 577 | `FULL — UNIQUE` | `DEEP READ — UNIQUE REGISTERED` |
+| 110 | 578 | `FULL — UNIQUE` | `DEEP READ — UNIQUE REGISTERED` |
+| 114 | 582 | `FULL — UNIQUE` | **`DEEP READ — NO NEW CONTENT`** |
+| 115 | 583 | `FULL — UNIQUE` | `DEEP READ — PARTIAL ADDITIONS REGISTERED` |
+| 116 | 584 | `FULL — UNIQUE` | `DEEP READ — UNIQUE REGISTERED` |
 | 68 | 535 | `FULL — UNIQUE` | `DEEP READ — UNIQUE REGISTERED` |
 | 69 | 536 | `FULL — UNIQUE` | `DEEP READ — UNIQUE REGISTERED` |
 | 70 | 537 | `FULL — UNIQUE` | `DEEP READ — UNIQUE REGISTERED` |
@@ -332,22 +355,17 @@ alongside the deep-read outcome, as required):
 triaged **209** · p-block pages **184** · **fully unique pages 37** (the Addendum-8
 figure was 38; **PDF 107 was reclassified to partially unique in Addendum 10**
 once the S–N section turned out to start in its last paragraph) · **fully unique
-pages deeply inspected 32** · **fully unique pages remaining 5** · partially
+pages deeply inspected 37 — COMPLETE** · **fully unique pages remaining 0** · partially
 unique pages compared **2 of 97** · duplicate pages sampled **32** · visual-only
 pages inspected **0 of 2** · question-gap pages audited **0 of 9** ·
 not-relevant pages **30** · pages with unclear content **3**.
 
-**Total pages deeply inspected 34** = 32 fully unique + 2 partially unique
-(PDF 6 and PDF 107). All 34 yielded additions; **none has returned
-`DEEP READ — NO NEW CONTENT`.** The audited-page denominator is not reduced for
-any page.
+**Total pages deeply inspected 39** = 37 fully unique + 2 partially unique
+(PDF 6 and PDF 107). **38 of the 39 yielded additions; exactly one — PDF 114 —
+returned `DEEP READ — NO NEW CONTENT`.** The audited-page denominator is not
+reduced for any page.
 
-**The 5 fully unique pages still outstanding, listed to prove the count:**
-**109, 110** (sulphur–nitrogen follow-up) · **114, 115, 116** (Group 17
-occurrence and extraction).
-
-**Ranges PDF 20–27 and PDF 54–57 are closed — all twelve pages deeply read and
-registered.**
+**Zero fully unique pages outstanding. The queue is closed at 37 / 37.**
 - **Sections found to be absent from file 8 altogether** — the queue that
   justifies reading this file at all: **Phosphazenes and cyclophosphazenes**
   (PDF 58–59) · **Compounds of sulphur and nitrogen, S₄N₄** (107–108) ·
@@ -370,13 +388,11 @@ registered.**
   "disproportionates" meaning as the footnoted asterisks on the basic diagram —
   that page shows no legend. **None is guessed; all three are marked unsafe to
   publish until re-read.**
-- **Next range for deep reading: PDF 109–110 (printed 577–578)** — the
-  sulphur–nitrogen follow-up, where the two PDF-108 `[UNCLEAR]` items are to be
-  checked. Then 114–116 (halogen occurrence and extraction), which closes the
-  fully unique queue at 37/37.
-- **`FULL — UNIQUE`: 32 of 37 done, 5 remaining** — exactly 109–110 and 114–116.
-  After those: 9 `QUESTION GAP`, 2 `VISUAL ONLY`, then 95 of 97
-  `FULL — PARTIALLY UNIQUE`.
+- **`FULL — UNIQUE`: 37 / 37 — CLOSED.**
+- **Next work in file 12, in priority order:** the **9 `QUESTION GAP` pages**
+  (PDF 62–64, 112–113, 165–166, 181–182), then the **2 `VISUAL ONLY` pages**
+  (PDF 171–172), then the **95 remaining `FULL — PARTIALLY UNIQUE` pages** in
+  section-sized ranges, highest marginal value first.
 - **Destination:** Sections 7–19, as gap-fill on top of Addenda 1–4 — **IN
   PROGRESS**
 

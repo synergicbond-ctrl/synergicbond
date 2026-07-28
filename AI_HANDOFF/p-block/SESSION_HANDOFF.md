@@ -28,17 +28,17 @@ that its dev server is separately broken by an unrelated RSC-manifest fault.
 
 | | |
 |---|---|
-| **Corpus** | **600 / 1915 pages (31 %)** |
+| **Corpus** | **606 / 1915 pages (32 %)** |
 | Files 1–6 | 325 / 437 |
 | File 7 (JD Lee 5th ed., whole book) | 5 / 1057 |
 | **File 8** (JD Lee adapted, Ch. 10, all six groups) | **172 / 172 — COMPLETE** |
 | File 9, 10 (handwritten notes) | 0 / 40, 0 / 11 — vision only, OCR garbled |
 | File 11 (noble gas notes) | 14 / 14 |
-| **File 12** (`15161718.pdf`, JD Lee 5th ed. Ch. 14–17) | 209/209 triaged · **84 / 184 deeply read** |
+| **File 12** (`15161718.pdf`, JD Lee 5th ed. Ch. 14–17) | 209/209 triaged · **90 / 184 deeply read** |
 
-**Register IDs:** Topics **A1–A414** (contiguous, no gaps, no duplicates, every
-one a table row) · Visuals **V168** · MO cases **E45** · Traps and numbered items
-**314** · Contradictions **25–78** · Source defects **D1–D13** · `[UNCLEAR]` **5
+**Register IDs:** Topics **A1–A440** (contiguous, no gaps, no duplicates, every
+one a table row) · Visuals **V172** · MO cases **E45** · Traps and numbered items
+**324** · Contradictions **25–80** · Source defects **D1–D14** · `[UNCLEAR]` **5
 distinct items**.
 
 ---
@@ -97,17 +97,26 @@ AgNO₃ silver-halide ladder with ammonia, and the boiling point of helium.
 
 **PDF 117–122 (Addendum 22), PDF 131–136 (Addendum 23), PDF 137–138
 (Addendum 24), PDF 167–170 (Addendum 25), PDF 139–144 (Addendum 26),
-PDF 123–124 (Addendum 27) and PDF 145–152 (Addendum 28) are done.**
+PDF 123–124 (Addendum 27), PDF 145–152 (Addendum 28) and PDF 153–158
+(Addendum 29) are done.**
 
-1. **69 remaining `FULL — PARTIALLY UNIQUE` pages**, in section-sized ranges.
-   **Next: PDF 153–158 (printed 621–626, interhalogens).** **Important finding
-   from Addendum 28: a `FULL — UNIQUE`/"absent from file 8" label does not
-   guarantee the content is new to the whole project** — PDF 145–146's
-   Latimer diagrams turned out to already be registered (A205–A211) from
-   elsewhere in the corpus. Check the full registers, not just the file-8
-   equivalent column, before assuming a page is new.
+1. **63 remaining `FULL — PARTIALLY UNIQUE` pages**, in section-sized ranges.
+   **Next: PDF 159–160 (printed 627–628, polyhalides) — triaged `SAMPLED —
+   DUPLICATE OF FILE 8`, but Addendum 25 showed a `SAMPLED` label doesn't
+   guarantee no new content either, so a quick check is still worthwhile.**
+   **Then PDF 161–162 (printed 629–630, basic properties of the halogens —
+   halogen cations, `FULL — UNIQUE`, absent from file 8 entirely) and
+   PDF 163–164 (printed 631–632, pseudohalogens, `SAMPLED — DUPLICATE OF
+   FILE 8`).** These three ranges close out the rest of Chapter 16 (Group 17)
+   before Chapter 17 (Group 18) resumes.
 
-2. **Still-open gaps (only two remain):** **HF with graphite** — the source
+2. **Important finding from Addendum 28, reinforced by Addendum 29's own
+   `A420`/`A435` cross-references: check the full registers, not just the
+   file-8-equivalent column, before assuming any page is new** — a
+   `FULL — UNIQUE` or `SAMPLED` label describes the relationship to file 8
+   only, not to the whole corpus.
+
+3. **Still-open gaps (only two remain):** **HF with graphite** — the source
    gives F₂ with graphite (A315), not HF, so the question-page pairing stands
    unanswered — and the **AgNO₃ colour/ammonia ladder** — A352 establishes
    AgCl/AgBr/AgI as insoluble and AgF as the exception, but colours and
@@ -115,7 +124,7 @@ PDF 123–124 (Addendum 27) and PDF 145–152 (Addendum 28) are done.**
    closed** — it was already registered at A179 before this shift began; see
    Addendum 25 §A for the bookkeeping correction.
 
-3. **Before teaching from Table 16.13, read contradictions 69–71.** Its
+4. **Before teaching from Table 16.13, read contradictions 69–71.** Its
    arithmetic does not close, and the failure is systematic rather than random.
    The qualitative three-factor account of HF's weakness (A350) is unaffected.
    **Before teaching liquid helium, read contradiction 74** — the source calls
@@ -124,7 +133,11 @@ PDF 123–124 (Addendum 27) and PDF 145–152 (Addendum 28) are done.**
    form is unbalanced (present in both editions); use
    `2Cl₂O₆ + N₂O₄ → 2ClO₂ + 2[NO₂]⁺[ClO₄]⁻`. **Before quoting the Faraday
    constant, read contradiction 76** — the number 96 486 is right, the printed
-   unit "kJ mol⁻¹" is wrong (it is C mol⁻¹).
+   unit "kJ mol⁻¹" is wrong (it is C mol⁻¹). **Before quoting any interhalogen
+   synthesis equation from PDF 154 (printed 622), read contradiction 79** — six
+   equations there under-coefficient the product against an X₂ reactant.
+   **Before quoting `IF₅+KI→[IF₆]⁻`, read contradiction 80** — the reagent
+   should be KF, not KI.
 
 After file 12: the two handwritten sources (vision required), then JD Lee 5th ed.
 Ch. 12–13.

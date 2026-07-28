@@ -6690,3 +6690,239 @@ content — a negative result is still a registered result.**
 
 **File 12: 76 + 8 = 84 of 184 deeply read.**
 **`FULL — PARTIALLY UNIQUE`: 30 of 99 read, 69 remaining.**
+
+---
+
+# Addendum 29 — file 12 PDF 153–158 (printed 621–626): interhalogen compounds, structure by structure
+
+**Eighth `FULL — PARTIALLY UNIQUE` range.** Six pages covering the acid-strength
+bonding argument that closes the oxoacids section, then the interhalogens in
+full — every AX, AX₃ and AX₅ compound the source names, with preparations,
+reactivity, self-ionisation and structure. **The richest structural range so
+far**: two genuine source figures (16.10, 16.11) plus an orbital box diagram,
+none previously in the corpus.
+
+| PDF | Printed | Section | Triage | Deep-read outcome | File-8 equivalent |
+|---|---|---|---|---|---|
+| 153 | 621 | Oxoacid strength; interhalogens opening; Table 16.16 | `FULL — PARTIALLY UNIQUE` | `DEEP READ — PARTIAL ADDITIONS REGISTERED` | §10.64 |
+| 154 | 622 | Synthesis conditions; hydrolysis; AX compounds opening | `FULL — PARTIALLY UNIQUE` | **`DEEP READ — CONTRADICTION FOUND`** ×2 | §10.64 |
+| 155 | 623 | ClF reactivity; ICl/Wij's reagent; self-ionisation; polyhalides; AX₃ opening | `FULL — PARTIALLY UNIQUE` | `DEEP READ — PARTIAL ADDITIONS REGISTERED` | §10.64 |
+| 156 | 624 | ClF₃ synthesis, reactivity, nuclear/rocket uses | `FULL — PARTIALLY UNIQUE` | `DEEP READ — PARTIAL ADDITIONS REGISTERED` | §10.64 |
+| 157 | 625 | BrF₃; reactivity order; self-ionisation; Figure 16.10 orbital diagram | `FULL — PARTIALLY UNIQUE` | **`DEEP READ — VISUAL ADDITION REGISTERED`** + partial additions | §10.64 |
+| 158 | 626 | Figures 16.10–16.11 structures; AX₅ compounds | `FULL — PARTIALLY UNIQUE` | **`DEEP READ — CONTRADICTION FOUND`** + visual additions | §10.64 |
+
+## A. PDF 153 (printed 621) — why HClO₄ is the strongest oxoacid, and Table 16.16
+
+| # | Topic | Content |
+|---|---|---|
+| A415 | **Oxoacid strength — the source's own two-term decomposition, and why the naive hydration argument fails** | Dissociation of an oxoacid involves **two energy terms: breaking the O–H bond, and hydrating both resulting ions.** **"Plainly the ClO₄⁻ ion is larger than the OCl⁻ ion, so the hydration energy of ClO₄⁻ is less than that for OCl⁻. This would suggest that HOCl should ionize more readily than HClO₄. Since we know the reverse to be true, the reason must be the energy required to break the O–H bond."** **The teaching point is the failure of the size/hydration argument, named explicitly before the source moves to the argument that actually works.** The winning argument: **more oxygen atoms bonded to the halogen pull more electron density away from the O–H bond, weakening it — so HClO₄, with the most oxygens, needs the least energy to release H⁺ and is the strongest.** **General rule stated explicitly and extended beyond the halogens**: acid strength rises with oxidation number/oxygen count in any oxoacid series — **H₂SO₄ > H₂SO₃, and HNO₃ > HNO₂** are given as the source's own cross-group examples, tying this range directly to Group 15 and 16 acid-strength material already in the corpus. |
+| A416 | **Interhalogens classified into four stoichiometric types, by direct reaction or by halogenating a lower interhalogen** | **"The halogens react with each other to form interhalogen compounds. These are divided into four types AX, AX₃, AX₅ and AX₇. They can all be prepared by direct reaction between the halogens, or by the action of a halogen on a lower interhalogen. The product formed depends on the conditions."** The four-type classification and the two-route generalisation (direct combination vs. halogenating-up from a lower interhalogen) were not registered as an explicit framework, though individual interhalogen species already were. |
+| A417 | **Table 16.16 — every known interhalogen, by type and physical state at 25 °C, in one place** | **AX: ClF (g, colourless), BrF (g, pale brown), BrCl (g, red-brown), ICl (s, ruby red), IBr (s, black), and (IF)\* (unstable) — asterisked "disproportionates rapidly into IF₅ and I₂".** **AX₃: ClF₃ (g, colourless), BrF₃ (l, pale yellow), (ICl₃)₂ (s, bright yellow), (IF₃)(s, unstable, yellow).** **AX₅: ClF₅ (g, colourless), BrF₅ (l, colourless), IF₅ (l, colourless).** **AX₇: IF₇ (g, colourless).** **The table is the first place in the corpus recording IF's instability quantitatively-by-implication (asterisked, no listed physical state) and BrCl's existence at all** — BrCl had not been separately registered before. |
+
+## B. PDF 154 (printed 622) — synthesis conditions, hydrolysis, and two contradictions
+
+**Nine synthesis equations, checked individually; six require a correction.**
+Printed forms and corrections below; **the pattern — a reactant or product
+written as X₂ but its partner coefficient not doubled to match — recurs six
+times in one block and is registered as a single contradiction rather than six,
+since it is one systematic transcription habit, not six independent errors.**
+
+### Contradiction 79 — printed 622, six interhalogen-synthesis equations under-coefficented against their X₂ reactant
+
+| Printed | Balance failure | Corrected |
+|---|---|---|
+| `I₂ + Cl₂(liquid, equimolar) → ICl` | I 2/1 | **`I₂ + Cl₂ → 2ICl`** |
+| `I₂ + Cl₂(liquid, excess Cl₂) → (ICl₃)₂` | Cl 2/6 | **`I₂ + 3Cl₂ → (ICl₃)₂`** (the product formula already carries 2 I, so only the Cl₂ coefficient needs correcting) |
+| `Br₂ + F₂(diluted with N₂) → BrF₃` | Br 2/1, F 2/3 | **`Br₂ + 3F₂ → 2BrF₃`** |
+| `Br₂ + F₂(excess F₂) → BrF₅` | Br 2/1, F 2/5 | **`Br₂ + 5F₂ → 2BrF₅`** |
+| `I₂(s) + 5F₂ →(30°C) IF₅` | I 2/1 | **`I₂(s) + 5F₂ → 2IF₅`** |
+| `I₂(g) + 7F₂ →(250–300°C) IF₇` | I 2/1 | **`I₂(g) + 7F₂ → 2IF₇`** |
+
+**Two lines in the same block are printed correctly and need no correction**:
+`Cl₂ + F₂(equal volumes) →(200°C) 2ClF` and `Cl₂ + 3F₂(excess F₂) →(300°C) 2ClF₃`
+both already carry the product coefficient of 2. `I₂ + F₂ →(CCl₃F solution,
+−45°C) 2IF` is likewise printed correctly. **Verification needed: none — every
+correction is forced by conservation, and the corrected column is internally
+consistent with the two lines the source got right.** *Safe for inclusion:* the
+corrected six equations; **the printed forms without the doubled coefficient,
+no.**
+
+| # | Topic | Content |
+|---|---|---|
+| A418 | **Synthesis conditions for all nine directly-combined interhalogens, temperature by temperature** | ClF at **200 °C** from equal volumes; ClF₃ at **300 °C** from excess F₂, *or* from ClF + F₂ directly (A419); ICl from equimolar liquid I₂/Cl₂, (ICl₃)₂ from excess liquid Cl₂; BrF₃ from Br₂ + F₂ **diluted with dinitrogen** (moderating an otherwise-violent reaction); BrF₅ from Br₂ + **excess** F₂; IF from I₂ + F₂ **in CCl₃F solution at −45 °C** (a solvent-moderated low-temperature route, the only AX interhalogen needing one); IF₅ from solid I₂ + 5F₂ at a mild **30 °C**; IF₇ from gaseous I₂ + 7F₂ at **250–300 °C**. **The temperature ladder by itself teaches the reactivity-with-F₂ ordering**: IF₅ needs only 30 °C, IF₇ needs 250–300 °C — more fluorine bonded requires more forcing conditions, not less. |
+| A419 | **General principles governing which interhalogen forms** | **"There are never more than two different halogens in a molecule. The bonds are essentially covalent because of the small electronegativity difference, and the melting and boiling points increase as the difference in electronegativity increases."** **AX and AX₃ types form where the electronegativity difference is not too great; the higher valencies AX₅ and AX₇ need a large atom (Br, I) paired with a small one (F), because more small atoms can be packed around a large one.** **Interhalogens are generally more reactive than the halogens themselves (except F₂), because the A–X bond in an interhalogen is weaker than the X–X bond in either parent halogen.** |
+| A420 | **Interhalogen hydrolysis — the oxohalide always comes from the larger halogen, checked on two worked examples** | **"Hydrolysis gives halide and oxohalide ions. Note that the oxohalide ion is always formed from the larger halogen present."** `ICl + H₂O → HCl + HOI` (hypoiodous acid) — I1/1, Cl1/1, H2/2, O1/1, **balances**; the larger halogen (I) becomes the oxoacid, the smaller (Cl) becomes the simple halide. `BrF₅ + 3H₂O → 5HF + HBrO₃` (bromic acid) — **the reactant subscript on Br is illegible in the scan even at 1100/2000 dpi** (a curved, degraded glyph unlike the clean digits elsewhere on the same line) — **resolved by conservation to BrF₅**, since Br1/1, F5/5, H6/6, O3/3 balances only with BrF₅, not BrF₃ (which would leave F short by two). **Registered as source defect D14, not a contradiction**, following the same "illegible, not legibly-wrong" standard already used for D13. |
+| A421 | **Interhalogens fluorinate metal oxides, halides and metals — the uranium chain gains a second entry point** | `3UO₂ + 4BrF₃ → 3UF₄ + 2Br₂ + 3O₂` (**already registered at A358**, confirmed identical and balancing: U3/3, O6/6, Br4/4, F12/12) and `UF₄ + ClF₃ → UF₆ + ClF` — U1/1, F4+3=7/(6+1)=7, Cl1/1, **balances**. **This is a second, independent route from UF₄ to UF₆** alongside A318's F₂-based and A358's BrF₃-based routes — three different fluorinating agents (F₂, BrF₃, ClF₃) all documented for the same industrially critical step. |
+
+## C. PDF 155 (printed 623) — ClF as a fluorinating/chlorinating agent, ICl and Wij's reagent, self-ionisation, polyhalides
+
+**Equations checked, all balance:** `ClF+SF₄→SF₅Cl` (Cl1/1, F5/5, S1/1);
+`ClF+CO→COFCl` (Cl1/1, F1/1, C1/1, O1/1); `ClF+SO₂→ClSO₂F` (Cl1/1, F1/1, S1/1,
+O2/2); `3ICl⇌[I₂Cl]⁺+[ICl₂]⁻` (**already registered** at line 729, confirmed
+identical); `NaBr+ICl→Na⁺[BrICl]⁻` (Na1/1, Br1/1, I1/1, Cl1/1, charge 0/0);
+`KI+ICl→K⁺[I₂Cl]⁻` (K1/1, I2/2, Cl1/1, charge 0/0).
+
+| # | Topic | Content |
+|---|---|---|
+| A422 | **ClF as a simultaneous chlorinating-and-fluorinating agent — three worked examples** | **"It can simultaneously chlorinate and fluorinate a compound either by oxidizing the element or adding to a double bond."** `ClF+SF₄→SF₅Cl`, `ClF+CO→COFCl`, `ClF+SO₂→ClSO₂F` — three products each carrying one atom from each half of ClF, a distinct reaction mode from the plain fluorinating agents already registered (A321). |
+| A423 | **Wij's reagent, expanded from a bare name to the full analytical method** | **A63/A695's species list already names Wij's reagent as ICl; this page supplies the method it belongs to.** **ICl is used to measure the "iodine number" of a fat or oil — a measure of the degree of unsaturation (number of C=C double bonds).** ICl solution is **brown**; added to an unsaturated fat, ICl adds across each double bond (`–CH=CH– + ICl → –CH(I)–CH(Cl)–`, checked: C2/2, H2/2, I1/1, Cl1/1, **balances**) and **the brown colour disappears until all double bonds have reacted.** **The iodine number is simply the volume (mL) of a standard ICl solution that reacts with a fixed weight of fat** — a direct, quantitative definition the corpus previously lacked entirely. |
+| A424 | **ICl on aromatic substrates — chlorination or iodination, decided by solvent, and the mechanistic clue** | **"When ICl reacts with organic compounds it often iodinates them, though chlorination may occur depending on the conditions."** Worked example: **salicylic acid + ICl vapour → chlorination product; salicylic acid + ICl in nitrobenzene solution → iodination product.** Solvent alone flips which halogen ends up on the ring. **"It is thought that the attacking species is I⁺, since the I atoms substitute in positions where there is an excess of electrons"** — an electrophilic-substitution mechanism stated explicitly, tying ICl's organic reactivity to the same electron-rich-position selectivity taught for other electrophilic aromatic substitutions. |
+| A425 | **ICl and IBr both self-ionise as liquids, and by how much** | **"Both ICl and IBr are partially ionized in the fused state. Conductivity measurements show that ICl ionizes to the extent of about 1%. Rather than form the simple ions I⁺ and Cl⁻, the ions are solvated"** — giving the already-registered `3ICl ⇌ [I₂Cl]⁺ + [ICl₂]⁻`. **The 1% figure and the solvation reasoning (why the simple I⁺/Cl⁻ ions are not formed) are new**; both ICl and IBr are usable as non-aqueous ionising solvents. |
+| A426 | **Interhalogens form ionic addition compounds with alkali halides — "polyhalides", with two worked examples using different halogen combinations** | `NaBr+ICl→Na⁺[BrICl]⁻` and `KI+ICl→K⁺[I₂Cl]⁻` — **the first mixes three different halogens in one anion (Br, I, Cl)**, distinct from the homohalogen polyhalides (I₃⁻, I₅⁻, etc.) already in the corpus; the second is a mixed I/Cl anion. **This is the general reaction type — alkali halide + interhalogen → polyhalide salt** — that the pre-existing polyhalide register (7 hits) had populated with specific ions but not with this general synthetic route. |
+
+## D. PDF 156 (printed 624) — ClF₃, nuclear fuel processing and rocket propellant
+
+**Ten equations checked, all balance** (Cl₂+3F₂→2ClF₃; ClF+F₂→ClF₃; ClF₃+Cl₂→
+3ClF; 3XeF₂+I₂→2IF₃+3Xe; I₂Cl₆→2ICl+2Cl₂; 3ClF₃+U→UF₆+3ClF; 4ClF₃+3Pu→3PuF₄+2Cl₂;
+4ClF₃+6MgO→6MgF₂+2Cl₂+3O₂; 4ClF₃+2Al₂O₃→4AlF₃+2Cl₂+3O₂; 2ClF₃+2AgCl→2AgF₂+Cl₂+2ClF;
+2ClF₃+2NH₃→6HF+Cl₂+N₂; ClF₃+BF₃→[ClF₂]⁺[BF₄]⁻; ClF₃+SbF₅→[ClF₂]⁺[SbF₆]⁻;
+ClF₃+PtF₅→[ClF₂]⁺[PtF₆]⁻; 4ClF₃+3N₂H₄→12HF+3N₂+2Cl₂).
+
+| # | Topic | Content |
+|---|---|---|
+| A427 | **Two independent routes to ClF₃, and its reversible reaction with excess Cl₂** | `Cl₂+3F₂ →(200–300°C) 2ClF₃`, or `ClF+F₂→ClF₃`. **`ClF₃+Cl₂→3ClF` with excess Cl₂ — the reverse direction of the first synthesis, run by changing which reagent is in excess.** **BrF₃ behaves similarly.** |
+| A428 | **IF₃ made two ways, one of them using a noble-gas fluoride as the fluorinating agent** | **IF₃ is only stable below −30 °C, and tends to form the more stable IF₅.** Made from the elements, or **`3XeF₂ + I₂ → 2IF₃ + 3Xe`** — **XeF₂ acting as a genuine synthetic fluorinating reagent outside Group 18**, the same role A410 already registered for KBrO₃/RbBrO₃ perbromate synthesis — a second, independent instance of the same cross-group utility. |
+| A429 | **I₂Cl₆ — easy to make, and thermally reverses back to its own precursors** | **Made by adding solid I₂ to liquid Cl₂; on warming to room temperature it dissociates, `I₂Cl₆ → 2ICl + 2Cl₂`** — literally the reverse of A417's `(ICl₃)₂` formation route, a clean forward/reverse pair driven by temperature alone. |
+| A430 | **ClF₃'s extreme reactivity, its WWII incendiary use, and the peacetime industrial scale it reached anyway** | **"ClF₃ is one of the most reactive compounds known, and its properties are aggressive. It catches fire spontaneously with wood and most building materials — even asbestos. It was used in incendiary bombs in World War II. Despite the dangers, peace time production of ClF₃ runs into hundreds of tonnes per year. It is available in steel cylinders."** **Reacts explosively with water, stopcock grease and many organic compounds including cotton and paper.** BrF₃ is "well known as a covalent liquid" alongside it and **less violent but analogous**, manufactured in **multi-tonne quantities** (A431 continues this). |
+| A431 | **ClF₃ (and BrF₃) in the nuclear fuel cycle — the mechanism that makes UF₆ separable from plutonium and fission products** | **"It is mainly used by the nuclear industry for fuel processing. It is used to make gaseous UF₆, which is useful in making enriched ²³⁵U fuel. It is also important in separating the fission products from spent fuel rods. Pu and most of the fission products form involatile tetrafluorides like PuF₄, whilst U forms volatile UF₆."** `3ClF₃+U→UF₆+3ClF` and `4ClF₃+3Pu→3PuF₄+2Cl₂` — **the volatility contrast (UF₆ gas, PuF₄ solid) is the actual separation mechanism**, stated explicitly rather than left as "uranium is treated with fluorine". **This is a fourth register of the same uranium-fluoride theme running through this shift** (A318 F₂, A358 BrF₃, A421 ClF₃, and now this page's direct U/ClF₃ reaction) — the corpus now documents the uranium-enrichment fluorination chemistry from four independent angles. |
+| A432 | **ClF₃ liberates O₂ from oxides quantitatively — an analytical method, and a self-ionisation salt series** | `4ClF₃+6MgO→6MgF₂+2Cl₂+3O₂` and `4ClF₃+2Al₂O₃→4AlF₃+2Cl₂+3O₂` — oxide-fluorination paired with **O₂ evolution usable for analysis**, the ClF₃ analogue of A411's BrF₃-from-oxides method (registered on the very next page, §E). `2ClF₃+2AgCl→2AgF₂+Cl₂+2ClF` — **a halide-exchange fluorination**, distinct from the oxide case. `2ClF₃+2NH₃→6HF+Cl₂+N₂` — ammonia fully decomposed to N₂ and HF, a harsher outcome than the parallel Cl₂O/NH₃ reaction already registered (A375-adjacent material) which stops at NH₄Cl and N₂. **Three fluoride-acceptor salts, one Lewis acid–base series**: `ClF₃+BF₃→[ClF₂]⁺[BF₄]⁻`, `ClF₃+SbF₅→[ClF₂]⁺[SbF₆]⁻`, `ClF₃+PtF₅→[ClF₂]⁺[PtF₆]⁻` — **ClF₃ acting as the fluoride donor (Lewis base) against three different fluoride acceptors (Lewis acids) of increasing strength**, all giving the same [ClF₂]⁺ cation with the anion supplied by the acceptor. |
+| A433 | **ClF₃ as a moderated organic fluorinating agent and as a storable rocket propellant with hydrazine** | **Diluted with dinitrogen, ClF₃ can fluorinate organic compounds without the violence of the neat reagent** (the same dilution-for-moderation principle A427/A418 already show for BrF₃ synthesis, applied here to its use rather than its manufacture). **"ClF₃ has been used as fuel in short range rockets, reacting with hydrazine. This is technically easier than using liquid O₂ or F₂, since the reactants can be stored without refrigeration and they ignite spontaneously on mixing"** — `4ClF₃+3N₂H₄→12HF+3N₂+2Cl₂`, a hypergolic (spontaneous-ignition-on-contact) propellant pairing, valued precisely because it avoids cryogenic storage. |
+
+## E. PDF 157 (printed 625) — BrF₃, the interhalogen reactivity order, and ClF₃'s T-shape derived from first principles
+
+**Equations checked, all balance:** `4BrF₃+3SiO₂→3SiF₄+2Br₂+3O₂` (Br4/4, F12/12,
+Si3/3, O6/6); `4BrF₃+3TiO₂→3TiF₄+2Br₂+3O₂` (Br4/4, F12/12, Ti3/3, O6/6);
+`2BrF₃⇌[BrF₂]⁺+[BrF₄]⁻` (Br2/2, F6/6, charge 0/0).
+
+| # | Topic | Content |
+|---|---|---|
+| A434 | **BrF₃ — multi-tonne manufacture, an explicit reactivity ranking of all nine interhalogens, and its nuclear-industry role** | **A red liquid, made from the elements at or near room temperature, manufactured in multi-tonne quantities; less violent than ClF₃ but analogous in reactivity.** **The full reactivity order, stated by the source for the first time in this corpus: ClF₃ > BrF₅ > IF₇ > ClF > BrF₃ > IF₅ > BrF > IF₃ > IF.** **Like ClF₃, BrF₃ is used in nuclear fuel processing/reprocessing to make UF₆** — the fifth independent register of the uranium-fluorination theme (A318, A358, A421, A431, and now this). |
+| A435 | **BrF₃ liberates O₂ from a wide range of oxides and oxosalts — a general analytical method, not just two worked examples** | **"It liberates dioxygen quantitatively from many oxides (B₂O₃, SiO₂, As₂O₅, I₂O₅, CuO, TiO₂), and also from oxosalts such as carbonates and phosphates. Measuring the O₂ evolved is used as a method of analysis."** `4BrF₃+3SiO₂→3SiF₄+2Br₂+3O₂` and `4BrF₃+3TiO₂→3TiF₄+2Br₂+3O₂` are the two worked examples of a **much broader six-oxide-plus-oxosalt list**, none of which (except the two equations) had been in the corpus. |
+| A436 | **BrF₃ as the preferred non-aqueous ionising solvent, and the three specific reasons the source gives** | **"BrF₃ has been more widely used as a solvent than the others. This is for three main reasons: (1) it has a convenient liquid range (m.p. 8.8 °C, b.p. 126 °C); (2) it is a good, but not too violent, fluorinating agent; (3) it self-ionizes considerably, and much more than ClF₃."** `2BrF₃⇌[BrF₂]⁺+[BrF₄]⁻`, with **[BrF₂]⁺-producing substances defined as acids and [BrF₄]⁻-producing substances as bases in this solvent system** — the interhalogen counterpart to A351's liquid-HF and the corpus's existing liquid-NH₃ solvent systems, now three non-aqueous solvent systems registered with their own acid/base definitions. |
+| A437 | **ClF₃'s T-shape, derived from an explicit excited-state orbital promotion, and confirmed by two independent structural methods** | **Three-column bonding treatment.** *Historical/examination model, given in full via Figure 16.10's orbital-box diagram*: ground-state Cl is [Ne]3s²3p⁵; **the source shows an excited state — 3s² (full), 3p⁴ with configuration ↑↓,↑,↑ (three unpaired electrons) and one 3d electron promoted** — giving **three unpaired electrons forming bonds to three F atoms, plus two lone pairs, five electron pairs total, trigonal bipyramidal parent with two equatorial positions occupied by lone pairs → T-shape.** *Experimental evidence, two independent methods*: **microwave spectroscopy** gives a T-shaped molecule with **bond angle 87°40′**, "close to 90°, and suggests structure 3" (of three candidates in Figure 16.10 — the other two, with lone pairs differently placed, are shown and rejected); **two bond lengths are the same and the third is different**, consistent with a trigonal bipyramid's inequivalent equatorial/apical positions. **X-ray structure of crystalline ClF₃** independently confirms **T-shaped, bond angle 87°0′, bond lengths 1.716 Å and 1.621 Å** — gas-phase (microwave) and solid-state (X-ray) structures agree on shape, with small numeric differences between the two methods, both registered rather than merged into one figure. **BrF₃ (microwave): T-shaped, bond angle 86°12′, bond lengths 1.810 Å and 1.721 Å** — the same structural family, confirmed for the second interhalogen. *Modern interpretation*: **not offered by the source on this page — PENDING VERIFICATION**, Greenwood absent; the lone-pair-repulsion explanation for the sub-90° distortion is registered as the source's own stated reasoning, not re-derived. |
+
+## F. PDF 158 (printed 626) continued — the AX₅ compounds
+
+**Equations checked:** `ClF₅+2H₂O→FClO₂+4HF` (Cl1/1, F5/5, H4/4, O2/2,
+**balances**); `2BrF₅+SiO₂→SiF₄+2BrF₃+O₂` (Br2/2, F10/10, Si1/1, O2/2,
+**balances**); `BrF₅+CsF→Cs⁺[BrF₆]⁻` (Br1/1, F6/6, Cs1/1, charge 0/0,
+**balances**); `2IF₅⇌IF₄⁺+IF₆⁻` (I2/2, F10/10, charge 0/0, **balances**);
+`BrF₅+3H₂O→HBrO₃+5HF` — **already registered at A420** (as the resolved form
+of the illegible-subscript equation, D14), confirmed identical here.
+
+| # | Topic | Content |
+|---|---|---|
+| A438 | **The three AX₅ compounds — reactivity, scale of production, and why IF₅ alone tolerates glass** | **"Three compounds are known: ClF₅, BrF₅ and IF₅. ClF₅ and BrF₅ react extremely vigorously, but they are exceeded in violence by ClF₃"** (consistent with A434's full reactivity order, where ClF₃ outranks both). **"IF₅ is a little less reactive, and unlike the others it can be used in glass apparatus. Production is several hundred tonnes per year."** All three **fluorinate many compounds, react explosively with water, attack silicates, and form polyhalides.** `ClF₅+2H₂O→FClO₂+4HF` and `BrF₅+3H₂O→HBrO₃+5HF` (the latter cross-referenced to A420) are the two worked hydrolyses; `2BrF₅+SiO₂→SiF₄+2BrF₃+O₂` is the silicate-attack case, **notable because the bromine product is BrF₃, not Br₂** — silica reduces the oxidation state of bromine by two rather than fully to the free element, unlike the parallel BrF₃/SiO₂ reaction (A435) which does give Br₂. |
+| A439 | **BrF₅ and IF₅ as fluoride acceptors, and IF₅'s own self-ionisation** | **`BrF₅+CsF→Cs⁺[BrF₆]⁻`** — BrF₅ accepting a fluoride ion from CsF, the AX₅ counterpart to A432's ClF₃/[ClF₂]⁺ salt series, here with BrF₅ as the acid rather than the base. **Liquid IF₅ self-ionises and therefore conducts electricity: `2IF₅⇌IF₄⁺+IF₆⁻`** — a third interhalogen self-ionisation register alongside ClF₃ (A425/A432) and BrF₃ (A436), completing the pattern across all three AX and AX₃/AX₅ types the source treats as ionising solvents. |
+| A440 | **The AX₅ square-pyramidal structure, worked from IF₅ as the reference case** | **"The AX₅ compounds all have structures based on a square-based pyramid that is octahedral with one position unoccupied. The central atom is displaced slightly below the plane."** Worked using IF₅ (I as central atom) as the reference case, continuing onto Figure 16.12 (not fully captured on this page — the source states the structure type and begins the construction from I as central atom, cutting off mid-explanation at the page boundary). **Registered as far as the source gives it on this page**; the lone-pair count and lone-pair-below-plane displacement mechanism, if given on the following page, remain to be picked up in a later range. |
+
+### Contradiction 80 — printed 626, the IF₆⁻ formation equation names the wrong alkali-metal salt
+
+**Source form as printed:** `IF₅ + KI → K⁺[IF₆]⁻`. **Confirmed at 1200 dpi.**
+*The issue:* **[IF₆]⁻ requires a fluoride-ion donor reacting with the
+fluoride-acceptor IF₅**, but **KI supplies iodide (I⁻), not fluoride** — iodine
+balances only by coincidence (I 1+1=2 on the left, but only 1 in the printed
+product, so iodine does not even balance as printed: left 2, right 1).
+*Correction, from conservation and from the reaction type the surrounding
+prose is unambiguously describing (`IF₅` completing to an octahedral fluoride
+anion, exactly parallel to the immediately preceding `BrF₅+CsF→Cs⁺[BrF₆]⁻`):*
+**`IF₅ + KF → K⁺[IF₆]⁻`** — I1/1, F5+1=6/6, K1/1, charge 0/0. **Verification
+needed:** none — settled by conservation and by the parallel BrF₅/CsF equation
+printed one line above it in the same source. *Safe for inclusion:* the
+corrected form with KF; **the printed "KI" is an error**, most plausibly a
+typesetting slip between two potassium halide symbols (KF/KI) rather than a
+conceptual one, since the surrounding prose never suggests iodide as a
+fluoride source anywhere else in this range.
+
+## G. Visual register — additions V169–V172
+
+| ID | Required visual kind | Subject |
+|---|---|---|
+| V169 | **Orbital diagram** | Chlorine's ground-state vs excited-state electron configuration for ClF₃ (Figure 16.10's box diagram, redrawn): 3s²3p⁵ ground state promoting one electron to 3d, giving three unpaired 3p electrons plus two lone pairs, five electron pairs, trigonal bipyramidal parent |
+| V170 | **Structure gallery** | The three candidate T-shaped/related structures for ClF₃ (Figure 16.10's three lone-pair arrangements) beside the measured structure (bond angle 87°40′, unequal bond lengths 1.716/1.621 Å), with the rejected two candidates visibly marked "ruled out by the measured angle" |
+| V171 | **Structure gallery** | I₂Cl₆'s planar bridged dimer (Figure 16.11): terminal I–Cl bonds at 2.38/2.39 Å beside the appreciably longer bridging I–Cl bonds at 2.68/2.72 Å, with the bridge length difference flagged as evidence for delocalised bonding rather than simple coordinate Cl→I bridges |
+| V172 | **Structure gallery** | The AX₅ square-pyramidal family (IF₅ as reference): an octahedron with one vertex removed and the central atom displaced slightly out of the basal plane toward the missing vertex — the shared structural motif behind ClF₅, BrF₅ and IF₅ |
+
+## H. JEE trap register — items 315–324
+
+315. **HClO₄ is the strongest oxoacid because the O–H bond is weakest, not because
+     ClO₄⁻ hydrates least well** — the hydration argument alone predicts the
+     wrong order, and the source says so explicitly before giving the right one.
+316. **`I₂ + Cl₂ → 2ICl`, not `→ ICl`** — six related interhalogen-synthesis
+     equations in the source drop the coefficient that doubles to match an X₂
+     reactant; check every one before quoting it.
+317. **The oxohalide ion in interhalogen hydrolysis always comes from the
+     *larger* halogen** — ICl gives HOI + HCl, never HOCl + HI.
+318. **Wij's reagent (ICl) measures the iodine number by addition across C=C
+     bonds, not by any redox titration** — the brown colour disappearing marks
+     the double bonds being used up.
+319. **ICl's attacking species in electrophilic aromatic substitution is I⁺**,
+     and the solvent (vapour vs nitrobenzene) decides whether the product is
+     chlorinated or iodinated.
+320. **Three different fluorinating agents (F₂, BrF₃, ClF₃) all convert UF₄ to
+     UF₆** — uranium enrichment chemistry does not depend on one reagent.
+321. **The interhalogen reactivity order is ClF₃ > BrF₅ > IF₇ > ClF > BrF₃ >
+     IF₅ > BrF > IF₃ > IF** — memorise the source's own ranking rather than
+     guessing from formula complexity.
+322. **`IF₅ + KI → K⁺[IF₆]⁻` cannot be right** — KI supplies I⁻, not F⁻, and
+     [IF₆]⁻ needs a fluoride donor. The correct reagent is KF.
+323. **ClF₃ and BrF₃ are both non-aqueous ionising solvents with their own
+     acid/base definitions** — [ClF₂]⁺/[BrF₂]⁺ producers are acids,
+     [ClF₄]⁻/[BrF₄]⁻ producers are bases, exactly parallel to liquid HF and
+     liquid NH₃.
+324. **I₂Cl₆'s bridging I–Cl bonds (2.68–2.72 Å) are longer than its terminal
+     ones (2.38–2.39 Å)** — the opposite of what a simple coordinate-bond
+     bridge picture would predict, and the source cites this as evidence for
+     delocalised bonding.
+
+## I. Source defect — printed 622, BrF₅ hydrolysis reactant subscript illegible
+
+**D14 — the BrFₓ hydrolysis reactant's subscript is degraded past legibility,
+even at 2000 dpi.** *Source form as printed:* a curved, blob-like glyph after
+"BrF" that does not resolve to a clean digit at any magnification tried (1100,
+2000 dpi) — unlike the clean "3" on the same line's "3H₂O". *Correction, from
+conservation:* **BrF₅**, since `BrF₅+3H₂O→5HF+HBrO₃` balances exactly
+(Br1/1, F5/5, H6/6, O3/3) while a BrF₃ reading leaves fluorine short by two
+atoms with no possible coefficient fix. *Verification needed:* none — forced by
+conservation. *Safe for inclusion:* BrF₅, in the corrected equation only.
+
+## J. Register-count effects
+
+- **Topics: A414 → A440.** Twenty-six added, **all table rows**, contiguous.
+- **Expanded, IDs kept:** **A358** (BrF₃/UO₂ route, confirmed identical) ·
+  **A318, A421, A431** (uranium-fluorination theme now documented from five
+  independent angles: F₂, BrF₃, ClF₃, plus this range's direct U/ClF₃ reaction
+  and BrF₃'s nuclear role) · **A321** (ClF's simultaneous-halogenation mode
+  distinguished from plain fluorinating-agent use) · **A351** (BrF₃/ClF₃ as
+  non-aqueous ionising solvents joining liquid HF) · **A420** (its resolved
+  BrF₅ hydrolysis equation confirmed identical on this page) · **A435**
+  (BrF₅/SiO₂ contrasted with BrF₃/SiO₂'s different bromine product) · the
+  pre-existing polyhalide register and the `3ICl ⇌ [I₂Cl]⁺+[ICl₂]⁻` entry, both
+  confirmed.
+- **Visuals: V168 → V172.** Four added.
+- **Traps: 314 → 324.** Ten added.
+- **Contradictions: 78 → 80.** Two added — **79**, covering six related
+  under-coefficented equations in one printed block, registered as a single
+  systematic-pattern contradiction rather than six separate numbers, consistent
+  with this project's rule against inflating the count for one recurring
+  transcription habit; **80**, `IF₅+KI→K⁺[IF₆]⁻`, which names iodide where
+  fluoride is required and does not even balance in iodine as printed.
+- **Source defects: D13 → D14.** One added — an illegible subscript resolved
+  by conservation, the second such case in this audit (after D13).
+- **MO cases: E45 — unchanged.** The ClF₃ T-shape is handled under the standing
+  three-column bonding policy (§E, A437) and not promoted to an MO case; modern
+  interpretation is explicitly marked absent and pending.
+- **`[UNCLEAR]`: 5 — unchanged.**
+
+---
+
+# Range closure — PDF 153–158
+
+**6 / 6 pages deeply read.** Two returned `DEEP READ — CONTRADICTION FOUND`
+(154 for the sextet of under-coefficented equations, 158 for the KI/KF error);
+one returned `DEEP READ — VISUAL ADDITION REGISTERED` (157); three returned
+`DEEP READ — PARTIAL ADDITIONS REGISTERED`. **None read without being
+registered.**
+
+**File 12: 84 + 6 = 90 of 184 deeply read.**
+**`FULL — PARTIALLY UNIQUE`: 36 of 99 read, 63 remaining.**

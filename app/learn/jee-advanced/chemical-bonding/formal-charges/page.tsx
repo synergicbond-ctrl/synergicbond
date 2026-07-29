@@ -127,7 +127,7 @@ function slugForHeading(text: string) {
 
   return text
     .toLowerCase()
-    .replace(/[^\p{L}\p{N}]+/gu, "-")
+    .replace(/[^a-z0-9]+/g, "-")
     .replace(/^-|-$/g, "")
     .slice(0, 64);
 }
@@ -177,7 +177,7 @@ function NumberedList({ text }: { text: string }) {
   return (
     <ol className="my-4 grid gap-2">
       {items.map((item, index) => {
-        const match = item.match(/^(\d+)\.\s*(.*)$/s);
+        const match = item.match(/^(\d+)\.\s*([\s\S]*)$/);
         const number = match?.[1] ?? String(index + 1);
         const body = match?.[2] ?? item;
 

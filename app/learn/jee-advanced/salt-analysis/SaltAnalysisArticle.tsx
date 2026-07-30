@@ -1,4 +1,6 @@
+import Link from "next/link";
 import katex from "katex";
+import { saltAnalysisParts } from "./index";
 import { SaltAnalysisStructure } from "./SaltAnalysisStructures";
 import { SaltAnalysisVisual } from "./SaltAnalysisVisuals";
 import { SaltAnalysisFigure } from "./SaltAnalysisFigures";
@@ -120,14 +122,98 @@ function renderBlocks(markdown: string) {
   return nodes;
 }
 
+
+function PartNavigation({
+  part,
+  position,
+}: {
+  part: number;
+  position: "top" | "bottom";
+}) {
+  const currentIndex = saltAnalysisParts.findIndex(
+    (item) => item.id === part
+  );
+
+  const previousPart =
+    currentIndex > 0 ? saltAnalysisParts[currentIndex - 1] : null;
+
+  const nextPart =
+    currentIndex >= 0 && currentIndex < saltAnalysisParts.length - 1
+      ? saltAnalysisParts[currentIndex + 1]
+      : null;
+
+  const backHref =
+    previousPart?.href ?? "/learn/jee-advanced/salt-analysis";
+
+  const backTitle = previousPart
+    ? `${String(previousPart.id).padStart(2, "0")} · ${previousPart.title}`
+    : "Salt Analysis overview";
+
+  const nextHref =
+    nextPart?.href ?? "/learn/jee-advanced/salt-analysis";
+
+  const nextTitle = nextPart
+    ? `${String(nextPart.id).padStart(2, "0")} · ${nextPart.title}`
+    : "Salt Analysis overview";
+
+  return (
+    <nav
+      aria-label={`${
+        position === "top" ? "Top" : "Bottom"
+      } Salt Analysis navigation`}
+      className={`${
+        position === "top"
+          ? "mb-8"
+          : "mt-12 border-t border-cyan-400/20 pt-8"
+      } grid gap-3 sm:grid-cols-2`}
+    >
+      <Link
+        href={backHref}
+        className="group rounded-2xl border border-cyan-300/20 bg-slate-950/70 px-5 py-4 transition hover:border-cyan-300/60 hover:bg-cyan-950/25"
+      >
+        <span className="block text-xs font-bold uppercase tracking-[0.18em] text-cyan-400 transition group-hover:text-cyan-300">
+          ← Back
+        </span>
+
+        <span className="mt-2 block text-sm leading-6 text-slate-300 transition group-hover:text-white">
+          {backTitle}
+        </span>
+      </Link>
+
+      <Link
+        href={nextHref}
+        className="group rounded-2xl border border-cyan-300/20 bg-slate-950/70 px-5 py-4 text-left transition hover:border-cyan-300/60 hover:bg-cyan-950/25 sm:text-right"
+      >
+        <span className="block text-xs font-bold uppercase tracking-[0.18em] text-cyan-400 transition group-hover:text-cyan-300">
+          Next →
+        </span>
+
+        <span className="mt-2 block text-sm leading-6 text-slate-300 transition group-hover:text-white">
+          {nextTitle}
+        </span>
+      </Link>
+    </nav>
+  );
+}
+
 export function SaltAnalysisArticle({ metadata, content }: { metadata: Metadata; content: string }) {
   return (
     <article className="mx-auto max-w-5xl bg-[#07111f] px-5 py-10 text-slate-100 sm:px-8">
       <header className="mb-8 border-b border-cyan-400/20 pb-6">
-        <p className="text-xs font-semibold uppercase tracking-[0.22em] text-cyan-400">{metadata.exam} • {metadata.chapter}</p>
-        <h1 className="mt-3 text-3xl font-bold text-white">{metadata.title}</h1>
+        <p className="text-xs font-semibold uppercase tracking-[0.22em] text-cyan-400">
+          {metadata.exam} • {metadata.chapter}
+        </p>
+
+        <h1 className="mt-3 text-3xl font-bold text-white">
+          {metadata.title}
+        </h1>
       </header>
+
+      <PartNavigation part={metadata.part} position="top" />
+
       {renderBlocks(content)}
+
+      <PartNavigation part={metadata.part} position="bottom" />
     </article>
   );
 }

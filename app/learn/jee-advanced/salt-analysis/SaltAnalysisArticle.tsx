@@ -145,16 +145,24 @@ function PartNavigation({
   const backHref =
     previousPart?.href ?? "/learn/jee-advanced/salt-analysis";
 
-  const backTitle = previousPart
-    ? `${String(previousPart.id).padStart(2, "0")} · ${previousPart.title}`
-    : "Salt Analysis overview";
-
   const nextHref =
     nextPart?.href ?? "/learn/jee-advanced/salt-analysis";
 
-  const nextTitle = nextPart
-    ? `${String(nextPart.id).padStart(2, "0")} · ${nextPart.title}`
+  const backTitle = previousPart
+    ? `Previous: ${previousPart.title}`
     : "Salt Analysis overview";
+
+  const nextTitle = nextPart
+    ? `Next: ${nextPart.title}`
+    : "Salt Analysis overview";
+
+  const backLabel = previousPart
+    ? `← ${String(previousPart.id).padStart(2, "0")} · Back`
+    : "← Overview";
+
+  const nextLabel = nextPart
+    ? `Next · ${String(nextPart.id).padStart(2, "0")} →`
+    : "Overview →";
 
   return (
     <nav
@@ -163,34 +171,26 @@ function PartNavigation({
       } Salt Analysis navigation`}
       className={`${
         position === "top"
-          ? "mb-8"
-          : "mt-12 border-t border-cyan-400/20 pt-8"
-      } grid gap-3 sm:grid-cols-2`}
+          ? "mb-5"
+          : "mt-8 border-t border-cyan-400/15 pt-5"
+      } flex items-center justify-between gap-3`}
     >
       <Link
         href={backHref}
-        className="group rounded-2xl border border-cyan-300/20 bg-slate-950/70 px-5 py-4 transition hover:border-cyan-300/60 hover:bg-cyan-950/25"
+        title={backTitle}
+        aria-label={backTitle}
+        className="inline-flex w-fit items-center whitespace-nowrap rounded-lg border border-cyan-300/25 bg-slate-950/70 px-3 py-2 text-xs font-semibold text-cyan-200 transition hover:border-cyan-300/60 hover:bg-cyan-950/30 hover:text-white sm:text-sm"
       >
-        <span className="block text-xs font-bold uppercase tracking-[0.18em] text-cyan-400 transition group-hover:text-cyan-300">
-          ← Back
-        </span>
-
-        <span className="mt-2 block text-sm leading-6 text-slate-300 transition group-hover:text-white">
-          {backTitle}
-        </span>
+        {backLabel}
       </Link>
 
       <Link
         href={nextHref}
-        className="group rounded-2xl border border-cyan-300/20 bg-slate-950/70 px-5 py-4 text-left transition hover:border-cyan-300/60 hover:bg-cyan-950/25 sm:text-right"
+        title={nextTitle}
+        aria-label={nextTitle}
+        className="inline-flex w-fit items-center whitespace-nowrap rounded-lg border border-cyan-300/25 bg-slate-950/70 px-3 py-2 text-xs font-semibold text-cyan-200 transition hover:border-cyan-300/60 hover:bg-cyan-950/30 hover:text-white sm:text-sm"
       >
-        <span className="block text-xs font-bold uppercase tracking-[0.18em] text-cyan-400 transition group-hover:text-cyan-300">
-          Next →
-        </span>
-
-        <span className="mt-2 block text-sm leading-6 text-slate-300 transition group-hover:text-white">
-          {nextTitle}
-        </span>
+        {nextLabel}
       </Link>
     </nav>
   );

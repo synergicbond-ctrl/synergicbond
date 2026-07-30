@@ -201,6 +201,40 @@ export const AUTHORED_COURSES: AuthoredCourse[] = [
     premium: true,
     description: "JEE Advanced theory covering transition-element configurations, periodic trends, oxidation states, colour, magnetism, chromium, manganese and detailed Ag, Zn, Cu and Fe chemistry.",
   },
+
+  // ── Principles of Qualitative Analysis / Salt Analysis ───────────────────
+  {
+    id: "qualitative-analysis",
+    syllabusId: "qualitative-analysis",
+    title: "Principles of Qualitative Analysis",
+    href: "/learn/jee-advanced/salt-analysis",
+    lessonLabel: "18 parts",
+    premium: false,
+    description:
+      "Complete qualitative analysis course covering preliminary tests, anions, cation groups, confirmatory reactions, interfering radicals and systematic mixture analysis.",
+  },
+  // ── Environmental Chemistry ───────────────────────────────────────────────
+  {
+    id: "environmental-chemistry",
+    syllabusId: "environmental-chemistry",
+    title: "Environmental Chemistry",
+    href: "/learn/jee-advanced/environmental-chemistry",
+    lessonLabel: "15 parts",
+    premium: false,
+    description:
+      "Atmospheric, water and soil chemistry; pollution mechanisms, industrial waste, control strategies, green chemistry and circular chemical design.",
+  },
+  // ── Polymers ──────────────────────────────────────────────────────────────
+  {
+    id: "polymers",
+    syllabusId: "polymers",
+    title: "Polymers",
+    href: "/learn/jee-advanced/polymers",
+    lessonLabel: "26 sections",
+    premium: false,
+    description:
+      "Polymer classification, chain architecture, polymerisation mechanisms, tacticity, molecular mass, plastics, rubbers, fibres, resins, biodegradable and conducting polymers.",
+  },
   // ── P-block Elements ──────────────────────────────────────────────────────
   {
     id: "p-block-elements",

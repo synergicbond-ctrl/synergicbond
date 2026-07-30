@@ -266,6 +266,53 @@ const CATEGORY_LABEL: Record<SyllabusLite["category"], string> = {
   inorganic: "Inorganic Chemistry",
 };
 
+
+interface ChapterCardAccent {
+  main: string;
+  background: string;
+  selected: string;
+  glow: string;
+}
+
+const CHAPTER_CARD_ACCENTS: Record<string, ChapterCardAccent> = {
+  default: {
+    main: "#5fd4ea",
+    background: "linear-gradient(145deg, rgba(18,34,50,.98), rgba(10,20,32,.98))",
+    selected: "linear-gradient(145deg, rgba(22,78,99,.52), rgba(18,34,50,.98))",
+    glow: "rgba(95,212,234,.18)",
+  },
+  hydrogen: {
+    main: "#67e8f9",
+    background: "linear-gradient(145deg, rgba(8,47,73,.72), rgba(49,46,129,.30))",
+    selected: "linear-gradient(145deg, rgba(8,145,178,.36), rgba(76,29,149,.34))",
+    glow: "rgba(103,232,249,.22)",
+  },
+  "s-block-elements": {
+    main: "#a3e635",
+    background: "linear-gradient(145deg, rgba(26,46,5,.72), rgba(69,26,3,.34))",
+    selected: "linear-gradient(145deg, rgba(77,124,15,.40), rgba(180,83,9,.28))",
+    glow: "rgba(163,230,53,.20)",
+  },
+  polymers: {
+    main: "#fbbf24",
+    background: "linear-gradient(145deg, rgba(69,26,3,.70), rgba(76,29,149,.30))",
+    selected: "linear-gradient(145deg, rgba(180,83,9,.36), rgba(109,40,217,.32))",
+    glow: "rgba(251,191,36,.22)",
+  },
+  "environmental-chemistry": {
+    main: "#34d399",
+    background: "linear-gradient(145deg, rgba(6,78,59,.62), rgba(8,47,73,.42))",
+    selected: "linear-gradient(145deg, rgba(5,150,105,.34), rgba(14,116,144,.32))",
+    glow: "rgba(52,211,153,.22)",
+  },
+  "qualitative-analysis": {
+    main: "#60a5fa",
+    background: "linear-gradient(145deg, rgba(23,37,84,.75), rgba(88,28,135,.28))",
+    selected: "linear-gradient(145deg, rgba(37,99,235,.34), rgba(126,34,206,.30))",
+    glow: "rgba(96,165,250,.22)",
+  },
+};
+
 interface ChapterCardData {
   key: string;
   syllabusId: string;
@@ -318,66 +365,88 @@ function ChapterCard({
   selected: boolean;
   onSelect: () => void;
 }) {
-  const statusTone =
-    card.status === "syllabus" ? "text-[#91a9bc]" : "text-[#5fd4ea]";
+  const accent = CHAPTER_CARD_ACCENTS[card.syllabusId] ?? CHAPTER_CARD_ACCENTS.default;
+  const statusColour = card.status === "syllabus" ? "#91a9bc" : accent.main;
 
-  return (
-    <div
-      role="button"
-      tabIndex={0}
-      onClick={() => {
-        if (card.href) {
-          window.location.assign(card.href);
-          return;
-        }
-        onSelect();
-      }}
-      onKeyDown={(e) => {
-        if (e.key === "Enter" || e.key === " ") {
-          e.preventDefault();
-          if (card.href) {
-            window.location.assign(card.href);
-            return;
-          }
-          onSelect();
-        }
-      }}
-      aria-pressed={selected}
-      className={`group flex min-h-[190px] cursor-pointer flex-col rounded-[13px] border p-5 text-left transition ${
-        selected
-          ? "border-[#e8b84b] bg-[#e8b84b1f] shadow-[0_8px_24px_rgba(232,184,75,0.12)]"
-          : "border-[#24405c] bg-[#122232] hover:border-[#5fd4ea] hover:bg-[#182b3e]"
-      } border-l-4 ${selected ? "border-l-[#e8b84b]" : "border-l-[#5fd4ea]"}`}
-    >
+  const cardClass =
+    "group flex min-h-[205px] w-full transform-gpu flex-col rounded-[18px] border border-l-[5px] p-5 text-left font-sans transition duration-200 hover:-translate-y-1 hover:shadow-2xl active:translate-y-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300/80";
+
+  const cardStyle = {
+    borderColor: selected ? accent.main : `${accent.main}66`,
+    borderLeftColor: accent.main,
+    background: selected ? accent.selected : accent.background,
+    boxShadow: selected ? `0 18px 44px ${accent.glow}` : undefined,
+  };
+
+  const content = (
+    <>
       <div className="flex items-start justify-between gap-2">
-        <span className="min-w-0 text-[10.5px] font-black uppercase tracking-[0.16em] text-[#91a9bc]">
-          {card.groupLabel ? `${card.groupLabel}${card.sectionLabel ? ` · ${card.sectionLabel}` : ""}` : CATEGORY_LABEL[card.category]}
+        <span className="min-w-0 text-[10.5px] font-black uppercase tracking-[0.18em] text-[#a8bfd1]">
+          {card.groupLabel
+            ? `${card.groupLabel}${card.sectionLabel ? ` · ${card.sectionLabel}` : ""}`
+            : CATEGORY_LABEL[card.category]}
         </span>
-        {card.mixedAccess ? <MixedBadge /> : card.premium ? <PremiumBadge /> : card.status !== "syllabus" ? <FreeBadge /> : null}
+        {card.mixedAccess ? (
+          <MixedBadge />
+        ) : card.premium ? (
+          <PremiumBadge />
+        ) : card.status !== "syllabus" ? (
+          <FreeBadge />
+        ) : null}
       </div>
-      <h3 className={`mt-2 text-base font-black leading-snug ${selected ? "text-[#e8b84b]" : "text-[#eef3f8]"}`}>
+
+      <h3
+        className="mt-3 text-[17px] font-black leading-snug"
+        style={{ color: selected ? accent.main : "#f4f7fb" }}
+      >
         {card.title}
       </h3>
-      <p className="mt-1.5 line-clamp-3 flex-1 text-xs leading-relaxed text-[#c3d1dd]/90">
+
+      <p className="mt-2 line-clamp-3 flex-1 text-[13px] leading-relaxed text-[#c8d5df]">
         {card.description}
       </p>
-      <div className="mt-3 flex flex-wrap items-center justify-between gap-2 border-t border-[#24405c]/70 pt-3">
-        <span className={`text-[11px] font-bold ${statusTone}`}>{card.statusLine}</span>
-        {card.href ? (
-          <Link
-            href={card.href}
-            onClick={(e) => e.stopPropagation()}
-            className="text-xs font-black text-[#5fd4ea] transition group-hover:translate-x-0.5 hover:text-[#e8b84b]"
-          >
-            Explore lessons →
-          </Link>
-        ) : (
-          <span className="text-xs font-black text-[#91a9bc]">
-            {card.status === "syllabus" ? "View syllabus ↓" : "Open notes ↓"}
-          </span>
-        )}
+
+      <div className="mt-4 flex flex-wrap items-center justify-between gap-2 border-t border-white/10 pt-3.5">
+        <span className="text-[11px] font-bold" style={{ color: statusColour }}>
+          {card.statusLine}
+        </span>
+        <span
+          className="text-xs font-black transition group-hover:translate-x-1"
+          style={{ color: card.href ? accent.main : "#91a9bc" }}
+        >
+          {card.href
+            ? "Open full notes →"
+            : card.status === "syllabus"
+              ? "View syllabus ↓"
+              : "Open notes ↓"}
+        </span>
       </div>
-    </div>
+    </>
+  );
+
+  if (card.href) {
+    return (
+      <Link
+        href={card.href}
+        aria-label={`Open ${card.title} full notes`}
+        className={cardClass}
+        style={cardStyle}
+      >
+        {content}
+      </Link>
+    );
+  }
+
+  return (
+    <button
+      type="button"
+      onClick={onSelect}
+      aria-pressed={selected}
+      className={cardClass}
+      style={cardStyle}
+    >
+      {content}
+    </button>
   );
 }
 
@@ -475,7 +544,13 @@ export default function NotesExplorer({
   };
 
   return (
-    <div className="space-y-8">
+    <div
+      className="space-y-8 font-sans"
+      style={{
+        fontFamily:
+          '-apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", Arial, system-ui, sans-serif',
+      }}
+    >
       {/* Header */}
       <div>
         <p className="mb-2 text-xs font-bold uppercase tracking-[0.4em] text-cyan-300">Notes Engine</p>

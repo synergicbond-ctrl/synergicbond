@@ -293,6 +293,12 @@ const CHAPTER_CARD_ACCENTS: Record<string, ChapterCardAccent> = {
     selected: "linear-gradient(145deg, rgba(77,124,15,.40), rgba(180,83,9,.28))",
     glow: "rgba(163,230,53,.20)",
   },
+  "f-block-elements": {
+    main: "#e879f9",
+    background: "linear-gradient(145deg, rgba(74,20,84,.72), rgba(8,47,73,.38))",
+    selected: "linear-gradient(145deg, rgba(162,28,175,.38), rgba(8,145,178,.28))",
+    glow: "rgba(232,121,249,.22)",
+  },
   polymers: {
     main: "#fbbf24",
     background: "linear-gradient(145deg, rgba(69,26,3,.70), rgba(76,29,149,.30))",

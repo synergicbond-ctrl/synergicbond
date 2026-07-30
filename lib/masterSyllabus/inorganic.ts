@@ -257,6 +257,38 @@ export const inorganic: Chapter[] = [
     ]
   }
   ,
+  {
+    id: "f-block-elements",
+    title: "f-Block Elements (Lanthanoids and Actinoids)",
+    category: "inorganic",
+    exams: ["JEE ADVANCED"],
+    difficulty: 3,
+    estimatedHours: 7,
+    prerequisites: ["atomic-structure", "periodic-table", "d-and-f-block-elements"],
+    searchKeywords: ["f-block", "lanthanoids", "actinoids", "lanthanoid contraction", "actinoid contraction", "inner transition elements"],
+    ncert: { class: 12, unit: "4", chapter: "The d- and f-Block Elements" },
+    pyqTags: ["Lanthanoid Contraction", "Oxidation States", "Colour and Magnetism", "Actinoids", "Inner Transition Elements"],
+    concepts: [
+      {
+        id: "lanthanoids",
+        title: "Lanthanoids",
+        description: "Electronic configurations, oxidation states, colour, magnetic behaviour, reactivity and lanthanoid contraction.",
+        keywords: ["lanthanoids", "4f configuration", "lanthanoid contraction", "cerium", "europium"]
+      },
+      {
+        id: "actinoids",
+        title: "Actinoids",
+        description: "5f configurations, variable oxidation states, actinyl ions, covalency, radioactivity and actinoid contraction.",
+        keywords: ["actinoids", "5f configuration", "uranyl ion", "radioactivity", "actinoid contraction"]
+      },
+      {
+        id: "f-block-comparison-separation",
+        title: "Comparison and Separation",
+        description: "Lanthanoid–actinoid comparison, ion exchange, solvent extraction, applications and JEE Advanced problem solving.",
+        keywords: ["ion exchange", "solvent extraction", "mischmetal", "lanthanoid actinoid comparison"]
+      }
+    ]
+  },
   // ── Added from verified JEE (Advanced) 2026 syllabus PDF (Advanced-only). ──
   {
     id: "metallurgy",

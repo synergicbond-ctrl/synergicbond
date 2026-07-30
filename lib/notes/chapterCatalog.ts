@@ -213,6 +213,18 @@ export const AUTHORED_COURSES: AuthoredCourse[] = [
     description: "JEE Advanced theory covering transition-element configurations, periodic trends, oxidation states, colour, magnetism, chromium, manganese and detailed Ag, Zn, Cu and Fe chemistry.",
   },
 
+  // ── F-block Elements ──────────────────────────────────────────────────────
+  {
+    id: "f-block-elements",
+    syllabusId: "f-block-elements",
+    title: "F-block Elements",
+    href: "/notes/f-block",
+    lessonLabel: "4 parts · approximately 15 pages",
+    premium: true,
+    description:
+      "NCERT-first JEE Advanced notes on lanthanoids and actinoids: configurations, oxidation states, colour, magnetism, contraction, separation, applications, traps and worked problems.",
+  },
+
   // ── Principles of Qualitative Analysis / Salt Analysis ───────────────────
   {
     id: "qualitative-analysis",

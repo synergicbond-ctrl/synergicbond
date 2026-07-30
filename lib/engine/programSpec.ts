@@ -150,6 +150,7 @@ export const AUTHORED_NOTES: Record<string, string> = {
   "periodic-table": "/learn/periodic-table",
   "thermodynamics": "/learn/thermodynamics",
   "chemical-equilibrium": "/learn/chemical-equilibrium",
+  "solutions": "/learn/jee-advanced/solutions",
   "electrochemistry": "/notes/electrochemistry",
   "redox-reactions": "/notes/redox-reactions",
   "solid-state": "/learn/solid-state",

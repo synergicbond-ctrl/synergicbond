@@ -54,6 +54,12 @@ const calloutPattern =
 const tableLeadPattern =
   /^(?:Step\s+What to do|Rule\s+Meaning|Contributor\s+|Representation\s+|Species\s+|Species \/ form|Species \/ resonance family|Quality for Al|Model\s+|Level of application|SO₄²⁻:|CO₃²⁻|NO₃⁻|N₂O [I|w]|Cyanate [A-C]|SCN⁻ [A-C]|CNO⁻ [A-C]|POF₃|SOF₄|SO₃F⁻|BF₃|NH₄⁺|PH₄⁺|PH₃|SF₄|H₂N|HNCS|HNCO|HOCN|S₂O|SNF₃|SO₂Cl₂|XeO₃|H₃PO|H₂SO₄|HSO₄⁻|PO₄³⁻|ClO₄⁻)/i;
 
+const sfProStack =
+  '-apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", system-ui, sans-serif';
+
+const inlineAccentPattern =
+  /(formal charges?|charge separation|overall charge|negative charge|positive charge|electronegative|Lewis structures?|resonance|bond order|octets?|stable|stability|preferred|favourable|important)/gi;
+
 function collapseLines(raw: string) {
   return raw
     .split(/\r?\n/)
@@ -135,7 +141,7 @@ function slugForHeading(text: string) {
 function MathFormula({ expression }: { expression: string }) {
   return (
     <span
-      className="block overflow-x-auto py-1 text-center text-lg text-white sm:text-xl"
+      className="block overflow-x-auto py-1 text-center text-xl font-semibold text-[#eef8ff] sm:text-2xl"
       dangerouslySetInnerHTML={{
         __html: katex.renderToString(expression, {
           displayMode: true,
@@ -147,6 +153,39 @@ function MathFormula({ expression }: { expression: string }) {
   );
 }
 
+function InlineText({ text }: { text: string }) {
+  return (
+    <>
+      {text.split(inlineAccentPattern).map((part, index) => {
+        const value = part.toLowerCase();
+        let accent = "";
+
+        if (
+          /formal charge|charge separation|overall charge|negative charge|positive charge/.test(
+            value
+          )
+        ) {
+          accent = "font-semibold text-[#ffd166]";
+        } else if (/resonance|bond order/.test(value)) {
+          accent = "font-semibold text-[#c6a5ff]";
+        } else if (/stable|stability|preferred|favourable|important/.test(value)) {
+          accent = "font-semibold text-[#7cf6a3]";
+        } else if (/electronegative|lewis structure|octet/.test(value)) {
+          accent = "font-semibold text-[#6fe7f4]";
+        }
+
+        return accent ? (
+          <span key={`${part}-${index}`} className={accent}>
+            {part}
+          </span>
+        ) : (
+          part
+        );
+      })}
+    </>
+  );
+}
+
 function BulletList({ text }: { text: string }) {
   const items = text
     .split(/(?=•)/)
@@ -154,14 +193,16 @@ function BulletList({ text }: { text: string }) {
     .filter(Boolean);
 
   return (
-    <ul className="my-4 grid gap-2 sm:grid-cols-2">
+    <ul className="my-7 grid gap-x-12 gap-y-0 lg:grid-cols-2">
       {items.map((item, index) => (
         <li
           key={`${item.slice(0, 30)}-${index}`}
-          className="flex gap-3 rounded-xl border border-white/8 bg-white/[0.025] px-4 py-3 text-[15px] leading-7 text-slate-200"
+          className="flex gap-4 border-b border-[#152332] py-3.5 text-[17px] leading-[1.75] text-[#d7deea] sm:text-[18px]"
         >
-          <span className="mt-[0.65rem] h-1.5 w-1.5 shrink-0 rounded-full bg-cyan-300" />
-          <span>{item}</span>
+          <span className="mt-[0.72rem] h-2 w-2 shrink-0 rounded-full bg-[#65e8f5] shadow-[0_0_14px_rgba(101,232,245,0.45)]" />
+          <span>
+            <InlineText text={item} />
+          </span>
         </li>
       ))}
     </ul>
@@ -175,7 +216,7 @@ function NumberedList({ text }: { text: string }) {
     .filter(Boolean);
 
   return (
-    <ol className="my-4 grid gap-2">
+    <ol className="my-7 grid gap-0">
       {items.map((item, index) => {
         const match = item.match(/^(\d+)\.\s*([\s\S]*)$/);
         const number = match?.[1] ?? String(index + 1);
@@ -184,12 +225,14 @@ function NumberedList({ text }: { text: string }) {
         return (
           <li
             key={`${number}-${index}`}
-            className="grid grid-cols-[2.25rem_1fr] gap-3 rounded-xl border border-white/8 bg-white/[0.025] p-4 text-[15px] leading-7 text-slate-200"
+            className="grid grid-cols-[2.75rem_1fr] gap-4 border-b border-[#152332] py-4 text-[17px] leading-[1.75] text-[#d7deea] sm:text-[18px]"
           >
-            <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-cyan-400/10 font-semibold text-cyan-200">
+            <span className="flex h-9 w-9 items-center justify-center rounded-full border border-[#4edbea]/35 bg-[#07131c] font-bold text-[#6fe7f4]">
               {number}
             </span>
-            <span>{body}</span>
+            <span>
+              <InlineText text={body} />
+            </span>
           </li>
         );
       })}
@@ -206,38 +249,64 @@ function NoteBlockView({
 }) {
   if (block.kind === "major") {
     return (
-      <h2
+      <div
         id={slugForHeading(block.text)}
-        className="scroll-mt-24 border-t border-cyan-300/15 pt-10 text-2xl font-bold text-white sm:text-3xl"
+        className="scroll-mt-24 border-b border-[#1a3549] pb-4 pt-20"
       >
-        {block.text}
-      </h2>
+        <h2 className="bg-gradient-to-r from-[#64e8f5] via-[#8ab9ff] to-[#c99fff] bg-clip-text text-[32px] font-bold leading-[1.12] tracking-[-0.035em] text-transparent sm:text-[40px] lg:text-[46px]">
+          {block.text}
+        </h2>
+        <div className="mt-5 h-[3px] w-32 rounded-full bg-gradient-to-r from-[#43e6f3] via-[#9f7aea] to-[#ffad4d]" />
+      </div>
     );
   }
 
   if (block.kind === "section") {
     return (
-      <h3
+      <div
         id={slugForHeading(block.text)}
-        className="mt-8 text-xl font-semibold text-cyan-200 sm:text-2xl"
+        className={`${index === 0 ? "pt-2" : "pt-14"} scroll-mt-24 border-b border-[#173047] pb-3`}
       >
-        {block.text}
-      </h3>
+        <h3 className="bg-gradient-to-r from-[#68e9f5] via-[#8cbcff] to-[#bb9cff] bg-clip-text text-[25px] font-bold leading-tight tracking-[-0.02em] text-transparent sm:text-[30px] lg:text-[34px]">
+          {block.text}
+        </h3>
+        <div className="mt-4 h-0.5 w-20 bg-gradient-to-r from-[#44e6f4] to-[#ffb24f]" />
+      </div>
     );
   }
 
   if (block.kind === "subheading") {
+    const text = block.text.toLowerCase();
+    const color = text.startsWith("principle")
+      ? "text-[#64e7f3]"
+      : /example|procedure|cyanate|fulminate/.test(text)
+        ? "text-[#7cf6a3]"
+        : /structure|possibility|contributor|decision/.test(text)
+          ? "text-[#ffd166]"
+          : "text-[#c6a5ff]";
+
     return (
-      <h4 className="mt-6 text-lg font-semibold text-white">{block.text}</h4>
+      <h4
+        className={`mt-10 text-[21px] font-bold leading-snug tracking-[-0.015em] sm:text-[24px] ${color}`}
+      >
+        {block.text}
+      </h4>
     );
   }
 
   if (block.kind === "callout") {
     const [label, ...rest] = block.text.split(":");
     return (
-      <aside className="my-5 rounded-xl border border-cyan-300/20 bg-cyan-300/[0.055] px-5 py-4 text-[15px] leading-7 text-slate-200">
-        <strong className="text-cyan-200">{label}:</strong>
-        {rest.length > 0 ? ` ${rest.join(":").trim()}` : ""}
+      <aside className="my-7 border-l-4 border-[#45e5f2] bg-[linear-gradient(90deg,rgba(7,21,34,0.96),rgba(4,10,18,0.7),rgba(4,8,13,0.2))] px-6 py-5 text-[17px] leading-[1.75] text-[#d9e0eb] sm:px-7 sm:text-[19px]">
+        <strong className="text-[#ffd166]">{label}:</strong>
+        {rest.length > 0 ? (
+          <>
+            {" "}
+            <InlineText text={rest.join(":").trim()} />
+          </>
+        ) : (
+          ""
+        )}
       </aside>
     );
   }
@@ -247,8 +316,8 @@ function NoteBlockView({
 
   if (block.kind === "table") {
     return (
-      <div className="my-4 rounded-xl border border-purple-300/15 bg-purple-300/[0.035] p-4 sm:p-5">
-        <pre className="whitespace-pre-wrap break-words font-sans text-[14px] leading-7 text-slate-200">
+      <div className="my-7 overflow-x-auto border-l-4 border-[#b899ff] bg-[linear-gradient(105deg,rgba(9,17,29,0.98),rgba(4,9,16,0.78))] px-5 py-5 sm:px-7">
+        <pre className="min-w-0 whitespace-pre-wrap break-words font-sans text-[15px] leading-[1.75] text-[#d8dfeb] sm:text-[17px]">
           {readableTable(block.raw)}
         </pre>
       </div>
@@ -257,7 +326,7 @@ function NoteBlockView({
 
   if (block.kind === "formula") {
     return (
-      <div className="my-4 rounded-xl border border-cyan-300/20 bg-slate-950/70 px-4 py-3 font-mono text-[15px] leading-7 text-cyan-100">
+      <div className="my-7 border-y border-[#1b4259] bg-[#06101a] px-5 py-4 font-mono text-[16px] font-semibold leading-[1.8] text-[#ffd166] sm:px-7 sm:text-[18px]">
         {block.text}
       </div>
     );
@@ -266,9 +335,9 @@ function NoteBlockView({
   return (
     <p
       key={`paragraph-${index}`}
-      className="my-3 text-[15.5px] leading-8 text-slate-200"
+      className="my-5 text-[17px] leading-[1.85] tracking-[-0.005em] text-[#d7deea] sm:text-[19px] lg:text-[20px]"
     >
-      {block.text}
+      <InlineText text={block.text} />
     </p>
   );
 }
@@ -277,64 +346,59 @@ export default function FormalChargesPage() {
   const blocks = parseNotes(formalChargeNotes);
 
   return (
-    <main className="min-h-screen bg-[#0b0f19] px-4 py-8 text-slate-100 sm:px-6 lg:px-8">
-      <article className="mx-auto max-w-6xl">
-        <header className="overflow-hidden rounded-3xl border border-white/10 bg-[#111827] shadow-2xl shadow-black/30">
-          <div className="border-b border-white/8 bg-[radial-gradient(circle_at_top_right,rgba(155,93,229,0.18),transparent_34%),radial-gradient(circle_at_top_left,rgba(0,245,212,0.15),transparent_40%)] px-6 py-9 sm:px-10 sm:py-12">
-            <p className="mb-3 text-xs font-semibold uppercase tracking-[0.22em] text-cyan-300 sm:text-sm">
+    <main
+      className="min-h-screen bg-[#020508] px-5 py-10 text-[#d8deea] sm:px-8 lg:px-12 xl:px-16"
+      style={{ fontFamily: sfProStack }}
+    >
+      <article className="mx-auto max-w-[1520px]">
+        <header className="relative overflow-hidden border-b border-[#173047] pb-12 pt-5 sm:pb-16 sm:pt-9">
+          <div className="pointer-events-none absolute -right-40 -top-48 h-[460px] w-[460px] rounded-full bg-[#8d61ff]/10 blur-[130px]" />
+          <div className="pointer-events-none absolute -left-48 top-0 h-[360px] w-[360px] rounded-full bg-[#2de5f3]/8 blur-[120px]" />
+          <div className="relative">
+            <p className="mb-4 text-xs font-bold uppercase tracking-[0.24em] text-[#63e7f4] sm:text-sm">
               JEE Advanced · Chemical Bonding
             </p>
-            <h1 className="text-4xl font-bold tracking-tight text-white sm:text-6xl">
-              Formal Charges
+            <h1 className="max-w-5xl bg-gradient-to-r from-[#5fe8f5] via-[#8dbbff] to-[#cda0ff] bg-clip-text text-[44px] font-bold leading-[1.02] tracking-[-0.05em] text-transparent sm:text-[64px] lg:text-[76px]">
+              Formal Charge
             </h1>
-            <p className="mt-4 max-w-4xl text-base leading-8 text-slate-300 sm:text-lg">
+            <p className="mt-6 max-w-5xl text-[18px] leading-[1.75] text-[#cbd3df] sm:text-[21px] lg:text-[22px]">
               Complete coverage of formal-charge bookkeeping, Lewis-structure
               selection, topology, resonance ranking, charge placement,
               fractional charge and bond order, experimental evidence,
               hypervalency, error detection and advanced reference examples.
             </p>
 
-            <div className="mt-7 grid gap-3 sm:grid-cols-3">
-              {[
-                ["16", "source pages covered"],
-                ["12", "detailed applications"],
-                ["A-H", "advanced reference groups"],
-              ].map(([value, label]) => (
-                <div
-                  key={label}
-                  className="rounded-2xl border border-white/10 bg-black/20 px-5 py-4"
-                >
-                  <div className="text-2xl font-bold text-white">{value}</div>
-                  <div className="mt-1 text-sm text-slate-400">{label}</div>
-                </div>
-              ))}
+            <div className="mt-8 border-l-4 border-[#3be5f2] bg-[linear-gradient(90deg,rgba(7,20,32,0.95),rgba(5,10,17,0.25))] px-5 py-4 text-[14px] leading-7 text-[#cbd4e0] sm:text-[16px]">
+              <strong className="text-[#ffd166]">Scope:</strong> all 16 source
+              pages, 12 detailed applications, advanced reference groups A–H
+              and every substantive example retained.
             </div>
           </div>
 
-          <div className="grid gap-3 p-5 sm:grid-cols-2 sm:p-7 lg:grid-cols-4">
-            <div className="rounded-xl border border-cyan-300/15 bg-cyan-300/[0.04] p-4">
+          <div className="relative mt-10 grid border-y border-[#18364c] sm:grid-cols-2 lg:grid-cols-4">
+            <div className="border-b border-[#18364c] px-3 py-6 sm:border-r lg:border-b-0">
               <MathFormula expression={"FC=V-N-\\frac{B}{2}"} />
-              <p className="text-center text-xs text-slate-400">
+              <p className="mt-1 text-center text-sm text-[#8391a4]">
                 General definition
               </p>
             </div>
-            <div className="rounded-xl border border-cyan-300/15 bg-cyan-300/[0.04] p-4">
+            <div className="border-b border-[#18364c] px-3 py-6 lg:border-b-0 lg:border-r">
               <MathFormula expression={"FC=V-L-\\text{bond lines}"} />
-              <p className="text-center text-xs text-slate-400">
+              <p className="mt-1 text-center text-sm text-[#8391a4]">
                 Bond-line shortcut
               </p>
             </div>
-            <div className="rounded-xl border border-cyan-300/15 bg-cyan-300/[0.04] p-4">
+            <div className="border-b border-[#18364c] px-3 py-6 sm:border-b-0 sm:border-r">
               <MathFormula expression={"\\sum FC=q_{\\mathrm{overall}}"} />
-              <p className="text-center text-xs text-slate-400">
+              <p className="mt-1 text-center text-sm text-[#8391a4]">
                 Charge-sum check
               </p>
             </div>
-            <div className="rounded-xl border border-cyan-300/15 bg-cyan-300/[0.04] p-4">
+            <div className="px-3 py-6">
               <MathFormula
                 expression={"\\text{shared pairs}=\\frac{S_o-N_t}{2}"}
               />
-              <p className="text-center text-xs text-slate-400">
+              <p className="mt-1 text-center text-sm text-[#8391a4]">
                 Electron-sharing shortcut
               </p>
             </div>
@@ -343,20 +407,20 @@ export default function FormalChargesPage() {
 
         <nav
           aria-label="Formal-charge applications"
-          className="my-8 rounded-2xl border border-white/8 bg-[#111827] p-5 sm:p-7"
+          className="border-b border-[#173047] py-12 sm:py-14"
         >
-          <h2 className="text-lg font-semibold text-white">
+          <h2 className="bg-gradient-to-r from-[#64e8f5] via-[#8dbaff] to-[#c39eff] bg-clip-text text-[27px] font-bold tracking-[-0.025em] text-transparent sm:text-[34px]">
             Twelve applications covered
           </h2>
-          <div className="mt-4 grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-7 grid gap-x-10 gap-y-0 sm:grid-cols-2 lg:grid-cols-3">
             {applications.map((title, index) => (
               <a
                 key={title}
                 href={`#application-${index + 1}`}
-                className="group flex gap-3 rounded-xl border border-white/8 bg-white/[0.025] px-4 py-3 text-sm leading-6 text-slate-300 transition hover:border-cyan-300/25 hover:bg-cyan-300/[0.05] hover:text-white"
+                className="group flex gap-4 border-b border-[#152332] py-4 text-[15px] leading-6 text-[#bac5d3] transition-colors hover:text-white sm:text-[16px]"
               >
-                <span className="font-semibold text-cyan-300">
-                  {index + 1}
+                <span className="font-bold text-[#63e7f4] transition-colors group-hover:text-[#ffd166]">
+                  {String(index + 1).padStart(2, "0")}
                 </span>
                 <span>{title}</span>
               </a>
@@ -364,16 +428,14 @@ export default function FormalChargesPage() {
           </div>
         </nav>
 
-        <section className="rounded-2xl border border-white/8 bg-[#111827] px-5 py-7 sm:px-8 sm:py-10 lg:px-12">
-          <div className="mx-auto max-w-4xl">
-            {blocks.map((block, index) => (
-              <NoteBlockView
-                key={`${block.kind}-${block.text.slice(0, 48)}-${index}`}
-                block={block}
-                index={index}
-              />
-            ))}
-          </div>
+        <section className="pb-24 pt-12 sm:pb-32 sm:pt-16">
+          {blocks.map((block, index) => (
+            <NoteBlockView
+              key={`${block.kind}-${block.text.slice(0, 48)}-${index}`}
+              block={block}
+              index={index}
+            />
+          ))}
         </section>
       </article>
     </main>

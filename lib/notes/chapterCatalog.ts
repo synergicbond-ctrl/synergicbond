@@ -90,6 +90,17 @@ export const AUTHORED_COURSES: AuthoredCourse[] = [
     premium: false,
     description: "Equivalent weight and n-factor across all species classes, principle of equivalence, and volumetric titration analysis.",
   },
+  // ── Solution and Colligative Properties ───────────────────────────────────
+  {
+    id: "solutions",
+    syllabusId: "solutions",
+    title: "Solution and Colligative Properties",
+    href: "/learn/jee-advanced/solutions",
+    lessonLabel: "13 sections",
+    premium: false,
+    description:
+      "Complete JEE Advanced treatment of liquid solutions, Henry’s law, Raoult’s law, ideal and non-ideal behaviour, phase diagrams, distillation, azeotropes and all colligative properties.",
+  },
   // ── Atomic Structure ───────────────────────────────────────────────────────
   {
     id: "atomic-structure",

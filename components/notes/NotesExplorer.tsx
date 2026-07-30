@@ -369,7 +369,7 @@ function ChapterCard({
   const statusColour = card.status === "syllabus" ? "#91a9bc" : accent.main;
 
   const cardClass =
-    "group flex min-h-[205px] w-full transform-gpu flex-col rounded-[18px] border border-l-[5px] p-5 text-left font-sans transition duration-200 hover:-translate-y-1 hover:shadow-2xl active:translate-y-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300/80";
+    "group flex min-h-[180px] w-full min-w-0 transform-gpu flex-col overflow-hidden rounded-[18px] border border-l-[5px] p-4 text-left font-sans transition duration-200 hover:-translate-y-1 hover:shadow-2xl active:translate-y-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300/80 sm:min-h-[205px] sm:p-5";
 
   const cardStyle = {
     borderColor: selected ? accent.main : `${accent.main}66`,
@@ -396,22 +396,22 @@ function ChapterCard({
       </div>
 
       <h3
-        className="mt-3 text-[17px] font-black leading-snug"
+        className="mt-3 break-words text-[16px] font-black leading-snug sm:text-[17px]"
         style={{ color: selected ? accent.main : "#f4f7fb" }}
       >
         {card.title}
       </h3>
 
-      <p className="mt-2 line-clamp-3 flex-1 text-[13px] leading-relaxed text-[#c8d5df]">
+      <p className="mt-2 line-clamp-4 min-w-0 flex-1 text-[13px] leading-relaxed text-[#c8d5df] sm:line-clamp-3">
         {card.description}
       </p>
 
-      <div className="mt-4 flex flex-wrap items-center justify-between gap-2 border-t border-white/10 pt-3.5">
-        <span className="text-[11px] font-bold" style={{ color: statusColour }}>
+      <div className="mt-4 flex min-w-0 flex-col items-start gap-2 border-t border-white/10 pt-3.5 sm:flex-row sm:items-center sm:justify-between">
+        <span className="max-w-full break-words text-[11px] font-bold" style={{ color: statusColour }}>
           {card.statusLine}
         </span>
         <span
-          className="text-xs font-black transition group-hover:translate-x-1"
+          className="shrink-0 text-xs font-black transition group-hover:translate-x-1"
           style={{ color: card.href ? accent.main : "#91a9bc" }}
         >
           {card.href

@@ -1,0 +1,17 @@
+export const environmentalChemistryParts = [
+  { id: 1, href: "/learn/jee-advanced/environmental-chemistry/parts/part01", title: "Environment, Pollution and Chemical Fate" },
+  { id: 2, href: "/learn/jee-advanced/environmental-chemistry/parts/part02", title: "Atmosphere and Gaseous Air Pollutants" },
+  { id: 3, href: "/learn/jee-advanced/environmental-chemistry/parts/part03", title: "Acid Rain and Atmospheric Deposition" },
+  { id: 4, href: "/learn/jee-advanced/environmental-chemistry/parts/part04", title: "Smog, Ozone, Radicals and PAN" },
+  { id: 5, href: "/learn/jee-advanced/environmental-chemistry/parts/part05", title: "Greenhouse Effect, Climate Forcing and Inversion" },
+  { id: 6, href: "/learn/jee-advanced/environmental-chemistry/parts/part06", title: "Stratospheric Ozone and the Ozone Hole" },
+  { id: 7, href: "/learn/jee-advanced/environmental-chemistry/parts/part07", title: "Particulate Pollution and Control Devices" },
+  { id: 8, href: "/learn/jee-advanced/environmental-chemistry/parts/part08", title: "Water Pollution, Oxygen Demand and Eutrophication" },
+  { id: 9, href: "/learn/jee-advanced/environmental-chemistry/parts/part09", title: "Drinking-Water Standards and Treatment Chemistry" },
+  { id: 10, href: "/learn/jee-advanced/environmental-chemistry/parts/part10", title: "Soil Pollution, Pesticides and Biomagnification" },
+  { id: 11, href: "/learn/jee-advanced/environmental-chemistry/parts/part11", title: "Industrial, Municipal and Hazardous Waste" },
+  { id: 12, href: "/learn/jee-advanced/environmental-chemistry/parts/part12", title: "Green Chemistry and Circular Molecular Design" },
+  { id: 13, href: "/learn/jee-advanced/environmental-chemistry/parts/part13", title: "Supplied JEE Main PYQs 1–24" },
+  { id: 14, href: "/learn/jee-advanced/environmental-chemistry/parts/part14", title: "Supplied JEE Main PYQs 25–48" },
+  { id: 15, href: "/learn/jee-advanced/environmental-chemistry/parts/part15", title: "JEE Advanced Workshop and Master Revision" },
+] as const;

@@ -5,6 +5,7 @@ import { LanguageProvider } from "@/lib/i18n";
 import Navbar from "@/components/Navbar";
 import AutoTranslateBridge from "@/components/AutoTranslateBridge";
 import GlobalEnhancements from "@/components/GlobalEnhancements";
+import UniversalChapterNavigator from "@/components/notes/UniversalChapterNavigator";
 
 const siteUrl = new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "https://synergicbond.vercel.app");
 
@@ -50,6 +51,7 @@ export default function RootLayout({
           <LanguageProvider>
             <AutoTranslateBridge />
             <Navbar />
+            <UniversalChapterNavigator />
             {children}
             <GlobalEnhancements />
           </LanguageProvider>

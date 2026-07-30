@@ -28,7 +28,7 @@ export const NT = {
   cyan: "#5fd4ea",
   serif: "Georgia, 'Iowan Old Style', 'Times New Roman', serif",
   mono: "'SFMono-Regular',Consolas,'Liberation Mono',monospace",
-  sans: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
+  sans: "-apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'Helvetica Neue', Arial, system-ui, sans-serif",
 } as const;
 
 export interface ChapterTab {

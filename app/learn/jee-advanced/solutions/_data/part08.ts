@@ -1,4 +1,7 @@
 import type { SolutionPart } from "./types";
+import { part08Source } from "./source/part08Source";
+import { part08Reference } from "./reference/part08Reference";
+import { part08ReferenceExtra } from "./referenceExtra/part08ReferenceExtra";
 
 export const part08: SolutionPart = {
   "number": 8,
@@ -15,6 +18,7 @@ export const part08: SolutionPart = {
     "Explain why the more volatile component has the lower boiling point."
   ],
   "blocks": [
+    ...part08Source,
     {
       "kind": "theory",
       "title": "Boiling as a pressure condition",
@@ -155,6 +159,8 @@ export const part08: SolutionPart = {
         "Normal boiling point always means the temperature at which vapour pressure is exactly 1 atm. A problem using 1 bar asks for the standard boiling point, which differs slightly."
       ],
       "sourcePages": "32–34"
-    }
+    },
+    ...part08Reference,
+    ...part08ReferenceExtra
   ]
 };

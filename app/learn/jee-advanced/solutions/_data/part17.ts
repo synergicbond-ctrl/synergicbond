@@ -1,4 +1,8 @@
 import type { SolutionPart } from "./types";
+import { part17Source } from "./source/part17Source";
+import { part17Reference } from "./reference/part17Reference";
+import { part17ReferenceExtra } from "./referenceExtra/part17ReferenceExtra";
+import { part17ReferenceBonus } from "./referenceBonus/part17ReferenceBonus";
 
 export const part17: SolutionPart = {
   "number": 17,
@@ -15,6 +19,7 @@ export const part17: SolutionPart = {
     "Practise JEE Advanced-style reasoning without objective-question formatting."
   ],
   "blocks": [
+    ...part17Source,
     {
       "kind": "theory",
       "title": "How to attack integrated solution problems",
@@ -270,6 +275,9 @@ export const part17: SolutionPart = {
         "Navigation contains all 17 parts and remains horizontally scrollable on small screens.",
         "Reference-depth sections are explicitly separated from source-PDF coverage."
       ]
-    }
+    },
+    ...part17Reference,
+    ...part17ReferenceExtra,
+    ...part17ReferenceBonus
   ]
 };

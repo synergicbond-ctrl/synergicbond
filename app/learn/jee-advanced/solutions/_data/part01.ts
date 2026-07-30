@@ -1,4 +1,7 @@
 import type { SolutionPart } from "./types";
+import { part01Source } from "./source/part01Source";
+import { part01Reference } from "./reference/part01Reference";
+import { part01ReferenceExtra } from "./referenceExtra/part01ReferenceExtra";
 
 export const part01: SolutionPart = {
   "number": 1,
@@ -15,6 +18,7 @@ export const part01: SolutionPart = {
     "Recognise which concentration terms change with temperature."
   ],
   "blocks": [
+    ...part01Source,
     {
       "kind": "theory",
       "title": "What a solution actually is",
@@ -198,6 +202,8 @@ export const part01: SolutionPart = {
         "Check whether the problem asks amount dissolved per amount of solvent or per amount of solution."
       ],
       "sourcePages": "2"
-    }
+    },
+    ...part01Reference,
+    ...part01ReferenceExtra
   ]
 };

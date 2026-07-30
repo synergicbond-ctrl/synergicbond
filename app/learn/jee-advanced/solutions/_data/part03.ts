@@ -1,4 +1,7 @@
 import type { SolutionPart } from "./types";
+import { part03Source } from "./source/part03Source";
+import { part03Reference } from "./reference/part03Reference";
+import { part03ReferenceExtra } from "./referenceExtra/part03ReferenceExtra";
 
 export const part03: SolutionPart = {
   "number": 3,
@@ -15,6 +18,7 @@ export const part03: SolutionPart = {
     "Explain entropy-driven spontaneous mixing."
   ],
   "blocks": [
+    ...part03Source,
     {
       "kind": "theory",
       "title": "Dalton’s law above a liquid mixture",
@@ -227,6 +231,8 @@ export const part03: SolutionPart = {
         "y_B/x_B = p_B°/P"
       ],
       "sourcePages": "9–12"
-    }
+    },
+    ...part03Reference,
+    ...part03ReferenceExtra
   ]
 };

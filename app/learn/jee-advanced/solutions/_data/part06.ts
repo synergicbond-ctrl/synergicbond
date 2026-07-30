@@ -1,4 +1,7 @@
 import type { SolutionPart } from "./types";
+import { part06Source } from "./source/part06Source";
+import { part06Reference } from "./reference/part06Reference";
+import { part06ReferenceExtra } from "./referenceExtra/part06ReferenceExtra";
 
 export const part06: SolutionPart = {
   "number": 6,
@@ -15,6 +18,7 @@ export const part06: SolutionPart = {
     "Interpret pressure–volume behaviour inside the two-phase region."
   ],
   "blocks": [
+    ...part06Source,
     {
       "kind": "theory",
       "title": "The isothermal compression sequence",
@@ -175,6 +179,8 @@ export const part06: SolutionPart = {
         "Only at the dew boundary is z equal to y, and only at the bubble boundary is z equal to x. Between them, z lies between x and y and determines phase amounts."
       ],
       "sourcePages": "20–27"
-    }
+    },
+    ...part06Reference,
+    ...part06ReferenceExtra
   ]
 };

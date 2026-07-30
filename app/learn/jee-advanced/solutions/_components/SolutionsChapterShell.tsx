@@ -195,8 +195,10 @@ export function SolutionsChapterShell({
           <p className="ls-part-line">Part {String(part.number).padStart(2, "0")} · {part.title}</p>
           <p className="ls-subtitle">{part.subtitle}</p>
           <div className="ls-meta-row">
-            <span>Source coverage: {part.sourcePages}</span>
-            <span>{part.blocks.filter((b) => b.kind === "example").length} solved questions</span>
+            <span>Current part source: {part.sourcePages}</span>
+            <span>77-page source reconstructed</span>
+            <span>≈27 pages of added reference depth</span>
+            <span>65 descriptive solved questions</span>
             <span>No objective-question blocks</span>
           </div>
         </div>

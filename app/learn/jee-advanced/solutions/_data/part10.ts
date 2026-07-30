@@ -1,4 +1,7 @@
 import type { SolutionPart } from "./types";
+import { part10Source } from "./source/part10Source";
+import { part10Reference } from "./reference/part10Reference";
+import { part10ReferenceExtra } from "./referenceExtra/part10ReferenceExtra";
 
 export const part10: SolutionPart = {
   "number": 10,
@@ -15,6 +18,7 @@ export const part10: SolutionPart = {
     "Explain why fractional distillation cannot cross an azeotrope."
   ],
   "blocks": [
+    ...part10Source,
     {
       "kind": "theory",
       "title": "What an azeotrope is",
@@ -203,6 +207,8 @@ export const part10: SolutionPart = {
         "An azeotrope distils at constant temperature and composition, but it remains a mixture. Its composition changes when external pressure changes, unlike the fixed stoichiometry of a pure compound."
       ],
       "sourcePages": "40–46"
-    }
+    },
+    ...part10Reference,
+    ...part10ReferenceExtra
   ]
 };

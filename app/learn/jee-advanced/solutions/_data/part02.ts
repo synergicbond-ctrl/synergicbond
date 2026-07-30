@@ -1,4 +1,8 @@
 import type { SolutionPart } from "./types";
+import { part02Source } from "./source/part02Source";
+import { part02Reference } from "./reference/part02Reference";
+import { part02ReferenceExtra } from "./referenceExtra/part02ReferenceExtra";
+import { part02ReferenceBonus } from "./referenceBonus/part02ReferenceBonus";
 
 export const part02: SolutionPart = {
   "number": 2,
@@ -15,6 +19,7 @@ export const part02: SolutionPart = {
     "Recognise when Henry’s law fails."
   ],
   "blocks": [
+    ...part02Source,
     {
       "kind": "theory",
       "title": "Factors governing solubility of a gas in a liquid",
@@ -237,6 +242,9 @@ export const part02: SolutionPart = {
         "Do not apply the simple law to a gas that reacts strongly with the solvent."
       ],
       "sourcePages": "5–8"
-    }
+    },
+    ...part02Reference,
+    ...part02ReferenceExtra,
+    ...part02ReferenceBonus
   ]
 };

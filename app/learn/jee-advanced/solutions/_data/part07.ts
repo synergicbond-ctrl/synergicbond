@@ -1,4 +1,8 @@
 import type { SolutionPart } from "./types";
+import { part07Source } from "./source/part07Source";
+import { part07Reference } from "./reference/part07Reference";
+import { part07ReferenceExtra } from "./referenceExtra/part07ReferenceExtra";
+import { part07ReferenceBonus } from "./referenceBonus/part07ReferenceBonus";
 
 export const part07: SolutionPart = {
   "number": 7,
@@ -15,6 +19,7 @@ export const part07: SolutionPart = {
     "Relate diagram geometry to algebraic equilibrium equations."
   ],
   "blocks": [
+    ...part07Source,
     {
       "kind": "theory",
       "title": "Bubble curve on a P–x diagram",
@@ -159,6 +164,9 @@ export const part07: SolutionPart = {
         "At fixed temperature, the bubble curve is the upper pressure boundary. At fixed pressure, the bubble curve is the lower temperature boundary. Memorising 'upper' or 'lower' without stating the diagram type causes errors."
       ],
       "sourcePages": "29–32"
-    }
+    },
+    ...part07Reference,
+    ...part07ReferenceExtra,
+    ...part07ReferenceBonus
   ]
 };

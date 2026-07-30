@@ -1,4 +1,8 @@
 import type { SolutionPart } from "./types";
+import { part04Source } from "./source/part04Source";
+import { part04Reference } from "./reference/part04Reference";
+import { part04ReferenceExtra } from "./referenceExtra/part04ReferenceExtra";
+import { part04ReferenceBonus } from "./referenceBonus/part04ReferenceBonus";
 
 export const part04: SolutionPart = {
   "number": 4,
@@ -15,6 +19,7 @@ export const part04: SolutionPart = {
     "Distinguish cause from mere correlation."
   ],
   "blocks": [
+    ...part04Source,
     {
       "kind": "theory",
       "title": "Positive deviation: weaker unlike interactions",
@@ -192,6 +197,9 @@ export const part04: SolutionPart = {
         "Many coaching summaries present positive deviation ⇔ expansion and negative deviation ⇔ contraction as exact equivalences. They are reliable trends for common textbook systems, but pressure deviation is fundamentally controlled by chemical potentials and activities. Use directly supplied vapour-pressure or enthalpy information first."
       ],
       "sourcePages": "12–15"
-    }
+    },
+    ...part04Reference,
+    ...part04ReferenceExtra,
+    ...part04ReferenceBonus
   ]
 };

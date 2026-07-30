@@ -1,4 +1,8 @@
 import type { SolutionPart } from "./types";
+import { part16Source } from "./source/part16Source";
+import { part16Reference } from "./reference/part16Reference";
+import { part16ReferenceExtra } from "./referenceExtra/part16ReferenceExtra";
+import { part16ReferenceBonus } from "./referenceBonus/part16ReferenceBonus";
 
 export const part16: SolutionPart = {
   "number": 16,
@@ -15,6 +19,7 @@ export const part16: SolutionPart = {
     "Solve electrolyte and dimerisation problems."
   ],
   "blocks": [
+    ...part16Source,
     {
       "kind": "theory",
       "title": "Why colligative molar masses can appear abnormal",
@@ -232,6 +237,9 @@ export const part16: SolutionPart = {
         "For dimerisation, α is the fraction of initial monomer units that participate, not the fraction of final particles that are dimers. The associated amount in moles of dimers is αn₀/2."
       ],
       "sourcePages": "75–77"
-    }
+    },
+    ...part16Reference,
+    ...part16ReferenceExtra,
+    ...part16ReferenceBonus
   ]
 };

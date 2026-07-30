@@ -1,4 +1,7 @@
 import type { SolutionPart } from "./types";
+import { part12Source } from "./source/part12Source";
+import { part12Reference } from "./reference/part12Reference";
+import { part12ReferenceExtra } from "./referenceExtra/part12ReferenceExtra";
 
 export const part12: SolutionPart = {
   "number": 12,
@@ -15,6 +18,7 @@ export const part12: SolutionPart = {
     "Handle concentration change caused by solvent evaporation."
   ],
   "blocks": [
+    ...part12Source,
     {
       "kind": "theory",
       "title": "Why the boiling point rises",
@@ -172,6 +176,8 @@ export const part12: SolutionPart = {
         "In boiling-concentration questions, nonvolatile solute moles remain fixed while solvent mass decreases. Recalculate molality from the remaining solvent."
       ],
       "sourcePages": "58–59"
-    }
+    },
+    ...part12Reference,
+    ...part12ReferenceExtra
   ]
 };

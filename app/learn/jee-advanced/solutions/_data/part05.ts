@@ -1,4 +1,7 @@
 import type { SolutionPart } from "./types";
+import { part05Source } from "./source/part05Source";
+import { part05Reference } from "./reference/part05Reference";
+import { part05ReferenceExtra } from "./referenceExtra/part05ReferenceExtra";
 
 export const part05: SolutionPart = {
   "number": 5,
@@ -15,6 +18,7 @@ export const part05: SolutionPart = {
     "Handle repeated equilibrium vaporisation and condensation."
   ],
   "blocks": [
+    ...part05Source,
     {
       "kind": "theory",
       "title": "Why the vapour is compositionally different",
@@ -173,6 +177,8 @@ export const part05: SolutionPart = {
         "At equilibrium combine them: yᵢP=xᵢpᵢ°."
       ],
       "sourcePages": "15–20"
-    }
+    },
+    ...part05Reference,
+    ...part05ReferenceExtra
   ]
 };

@@ -1,4 +1,7 @@
 import type { SolutionPart } from "./types";
+import { part15Source } from "./source/part15Source";
+import { part15Reference } from "./reference/part15Reference";
+import { part15ReferenceExtra } from "./referenceExtra/part15ReferenceExtra";
 
 export const part15: SolutionPart = {
   "number": 15,
@@ -15,6 +18,7 @@ export const part15: SolutionPart = {
     "Relate osmotic pressure to vapour-pressure lowering and density."
   ],
   "blocks": [
+    ...part15Source,
     {
       "kind": "derivation",
       "title": "van’t Hoff equation for dilute solutions",
@@ -178,6 +182,8 @@ export const part15: SolutionPart = {
         "The volume in the van’t Hoff equation is solution volume, not solvent volume. When two solutions are mixed, use the final volume unless contraction data are supplied."
       ],
       "sourcePages": "69–73"
-    }
+    },
+    ...part15Reference,
+    ...part15ReferenceExtra
   ]
 };

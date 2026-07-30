@@ -1,4 +1,8 @@
 import type { SolutionPart } from "./types";
+import { part09Source } from "./source/part09Source";
+import { part09Reference } from "./reference/part09Reference";
+import { part09ReferenceExtra } from "./referenceExtra/part09ReferenceExtra";
+import { part09ReferenceBonus } from "./referenceBonus/part09ReferenceBonus";
 
 export const part09: SolutionPart = {
   "number": 9,
@@ -15,6 +19,7 @@ export const part09: SolutionPart = {
     "Recognise practical limitations caused by close boiling points and decomposition."
   ],
   "blocks": [
+    ...part09Source,
     {
       "kind": "theory",
       "title": "Simple distillation as one equilibrium enrichment",
@@ -203,6 +208,9 @@ export const part09: SolutionPart = {
         "For immiscible liquids, each phase contributes approximately its pure vapour pressure. Do not multiply by mole fraction as though the liquids formed one ideal liquid phase."
       ],
       "sourcePages": "39–40"
-    }
+    },
+    ...part09Reference,
+    ...part09ReferenceExtra,
+    ...part09ReferenceBonus
   ]
 };

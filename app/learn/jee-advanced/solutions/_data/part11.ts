@@ -1,4 +1,8 @@
 import type { SolutionPart } from "./types";
+import { part11Source } from "./source/part11Source";
+import { part11Reference } from "./reference/part11Reference";
+import { part11ReferenceExtra } from "./referenceExtra/part11ReferenceExtra";
+import { part11ReferenceBonus } from "./referenceBonus/part11ReferenceBonus";
 
 export const part11: SolutionPart = {
   "number": 11,
@@ -15,6 +19,7 @@ export const part11: SolutionPart = {
     "Separate mass-gain contributions in Ostwald–Walker apparatus."
   ],
   "blocks": [
+    ...part11Source,
     {
       "kind": "theory",
       "title": "Why a nonvolatile solute lowers vapour pressure",
@@ -187,6 +192,9 @@ export const part11: SolutionPart = {
         "The exact expression contains n₁+n₂ in the denominator. The common approximation x₂≈n₂/n₁ can give a significant error when relative lowering is several percent."
       ],
       "sourcePages": "48–52"
-    }
+    },
+    ...part11Reference,
+    ...part11ReferenceExtra,
+    ...part11ReferenceBonus
   ]
 };

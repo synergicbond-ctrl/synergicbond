@@ -1,4 +1,7 @@
 import type { SolutionPart } from "./types";
+import { part13Source } from "./source/part13Source";
+import { part13Reference } from "./reference/part13Reference";
+import { part13ReferenceExtra } from "./referenceExtra/part13ReferenceExtra";
 
 export const part13: SolutionPart = {
   "number": 13,
@@ -15,6 +18,7 @@ export const part13: SolutionPart = {
     "Apply the law to antifreeze and ice–salt systems."
   ],
   "blocks": [
+    ...part13Source,
     {
       "kind": "theory",
       "title": "Freezing equilibrium in a solution",
@@ -166,6 +170,8 @@ export const part13: SolutionPart = {
         "ΔT_f has the same numerical magnitude in kelvin and Celsius. For water, T_f(°C)=0−ΔT_f. Converting the depression itself between scales is unnecessary."
       ],
       "sourcePages": "63–65"
-    }
+    },
+    ...part13Reference,
+    ...part13ReferenceExtra
   ]
 };

@@ -1,4 +1,8 @@
 import type { SolutionPart } from "./types";
+import { part14Source } from "./source/part14Source";
+import { part14Reference } from "./reference/part14Reference";
+import { part14ReferenceExtra } from "./referenceExtra/part14ReferenceExtra";
+import { part14ReferenceBonus } from "./referenceBonus/part14ReferenceBonus";
 
 export const part14: SolutionPart = {
   "number": 14,
@@ -15,6 +19,7 @@ export const part14: SolutionPart = {
     "Connect solvent chemical potential to pressure."
   ],
   "blocks": [
+    ...part14Source,
     {
       "kind": "theory",
       "title": "Diffusion and osmosis are related but not identical",
@@ -194,6 +199,9 @@ export const part14: SolutionPart = {
         "The rigorous driving force is a solvent chemical-potential difference. Pressure, solute activity and membrane selectivity all contribute; the phrase 'water moves from high concentration to low concentration' is only a dilute-solution shortcut."
       ],
       "sourcePages": "65–70"
-    }
+    },
+    ...part14Reference,
+    ...part14ReferenceExtra,
+    ...part14ReferenceBonus
   ]
 };

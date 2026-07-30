@@ -18,7 +18,7 @@ export async function generateMetadata({ params }: { params: Promise<{ part: str
   if (!part) return {};
   return {
     title: `Hydrogen — ${part.title} | SYNERGIC BOND`,
-    description: `Comprehensive Hydrogen chemistry notes, Lesson ${part.number} of ${HYDROGEN_PARTS.length}: ${part.title} (${sectionRangeLabel(part)}).`,
+    description: `Hydrogen chemistry, Lesson ${part.number}: ${part.title}.`,
   };
 }
 
@@ -30,7 +30,7 @@ export default async function HydrogenPartPage({ params }: { params: Promise<{ p
   const visuals = HYDROGEN_VISUALS[part.number] ?? [];
 
   return (
-    <ChapterShell kicker="Comprehensive Chemistry Notes" subtitle="Hydrogen" tabs={hydrogenTabs(part.number)}>
+    <ChapterShell kicker="Chemistry" subtitle="Hydrogen" tabs={hydrogenTabs(part.number)}>
       <ChapterPartStrip
         hubHref="/notes/hydrogen"
         hubLabel="Hydrogen — all lessons"
@@ -45,18 +45,15 @@ export default async function HydrogenPartPage({ params }: { params: Promise<{ p
           <h1 className="mt-4 max-w-5xl bg-gradient-to-r from-cyan-200 via-violet-200 to-amber-200 bg-clip-text font-sans text-3xl font-black leading-tight text-transparent sm:text-4xl lg:text-5xl">
             {part.title}
           </h1>
-          <p className="mt-4 max-w-4xl text-sm font-medium leading-7 text-slate-300 sm:text-base">
-            Complete theory, reactions, conditions, exceptions, mechanisms and molecular-orbital explanations arranged in textbook sequence.
-          </p>
         </header>
 
         <section aria-labelledby="visual-atlas-title" className="rounded-[28px] border border-cyan-300/15 bg-[#050b14] p-4 shadow-2xl shadow-black/25 sm:p-6 lg:p-8">
           <div className="mb-5 flex flex-wrap items-end justify-between gap-3">
             <div>
-              <p className="text-[11px] font-black uppercase tracking-[0.17em] text-cyan-300">Visual teaching atlas</p>
-              <h2 id="visual-atlas-title" className="mt-2 text-2xl font-black text-white sm:text-3xl">Four diagrams before the detailed theory</h2>
+              <p className="text-[11px] font-black uppercase tracking-[0.17em] text-cyan-300">Concept diagrams</p>
+              <h2 id="visual-atlas-title" className="mt-2 text-2xl font-black text-white sm:text-3xl">Core visuals for this lesson</h2>
             </div>
-            <p className="max-w-xl text-sm leading-6 text-slate-400">Use these as a concept map; every diagram is explained rigorously in the lesson below.</p>
+            <p className="max-w-xl text-sm leading-6 text-slate-400">The diagrams introduce the structures, energy relationships and mechanisms developed below.</p>
           </div>
 
           <div className="grid gap-5 lg:grid-cols-2">

@@ -23,7 +23,7 @@ export const HYDROGEN_PARTS: HydrogenPartDef[] = [
   { slug: "part5", number: 5, title: "Hydrated Proton, Hydrogen Bonding, Water & Heavy Water", fromSection: 11, toSection: 14 },
   { slug: "part6", number: 6, title: "Hydrogen Peroxide, Hard Water & Acid–Base Connections", fromSection: 15, toSection: 18 },
   { slug: "part7", number: 7, title: "Complete Reaction Atlas, Mechanisms & Exceptions", fromSection: 19, toSection: 20 },
-  { slug: "part8", number: 8, title: "High-Yield Revision, Advanced Problems & Source Audit", fromSection: 21, toSection: 24 },
+  { slug: "part8", number: 8, title: "High-Yield Revision & Advanced Reaction Problems", fromSection: 21, toSection: 22 },
 ];
 
 interface SplitMarkdown {

@@ -13,7 +13,7 @@
 //   atomic-structure 25 lessons (55 sections) · chemical-bonding 24 lessons (189 topics) ·
 //   thermodynamics 30 · chemical-equilibrium 18 · electrochemistry 24 ·
 //   mole-concept 15 · stoichiometry 9 · concentration-terms 6 · eudiometry 6 ·
-//   redox 10 lessons (15 sections) · hydrogen 8 lessons (72 sections) ·
+//   redox 10 lessons (15 sections) · hydrogen 8 lessons (22 chapters) ·
 //   periodic-table master notes · s-block-elements 18 lessons ·
 //   p-block-elements 20 lessons · d-block-elements 10 theory parts ·
 //   isomerism 40 parts (169 source modules).
@@ -177,9 +177,9 @@ export const AUTHORED_COURSES: AuthoredCourse[] = [
     syllabusId: "hydrogen",
     title: "Hydrogen",
     href: "/notes/hydrogen",
-    lessonLabel: "8 lessons · 72 sections",
+    lessonLabel: "8 lessons · 22 chapters",
     premium: true,
-    description: "Isotopes, dihydrogen, ortho–para hydrogen, hydrides, water, heavy water, hydrogen peroxide, hydrogen bonding and hydrogen economy.",
+    description: "Complete Hydrogen course covering isotopes, H₂ molecular orbitals, ortho–para hydrogen, preparation and reactions, hydrides, diborane, mechanisms, hydrogen bonding, water, heavy water and hydrogen peroxide.",
   },
   // ── S-block Elements ──────────────────────────────────────────────────────
   {

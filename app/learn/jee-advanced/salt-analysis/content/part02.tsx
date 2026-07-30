@@ -2,278 +2,424 @@ import { SaltAnalysisArticle } from "../SaltAnalysisArticle";
 
 export const metadata = {
   part: 2,
-  title: "Preliminary Examination and Dry Tests",
+  title: "Preliminary Examination, Heating Effects and Dry Tests",
   chapter: "Salt Analysis",
   exam: "JEE Advanced",
 };
 
 const content = String.raw`
-## 3. Preliminary Examination of the Original Salt
+# Preliminary Examination, Heating Effects and Dry Tests
 
-## 3.1 Colour of the solid
+> Preliminary tests narrow the possibilities. They do not replace systematic wet analysis. A reliable inference must survive confirmation by a chemically independent test.
 
-Colour is suggestive, not confirmatory.
+## 1. Physical examination of the original salt
 
-| Colour | Possible ion/compound | Important caution |
+Record the following before adding any reagent:
+
+| Feature | Possible indication | Important limitation |
 |---|---|---|
-| Blue | Hydrated $\mathrm{Cu^{2+}}$ salts | Anhydrous salts can differ |
-| Pale green | $\mathrm{Fe^{2+}}$ salts | Often oxidise to $\mathrm{Fe^{3+}}$ |
-| Yellow/brown | $\mathrm{Fe^{3+}}$ salts | Colour depends on hydration/anion |
-| Pink | Hydrated $\mathrm{Co^{2+}}$ salts | Anhydrous cobalt chloride is blue |
-| Green | $\mathrm{Ni^{2+}}$, some $\mathrm{Cr^{3+}}$ salts | Not unique |
-| Purple | $\mathrm{MnO_4^-}$ | Strongly characteristic |
-| Yellow | $\mathrm{CrO_4^{2-}}$ | Acidification gives orange dichromate |
-| Orange | $\mathrm{Cr_2O_7^{2-}}$ | Alkali gives yellow chromate |
-| Black | Sulphides/oxides of several metals | Must be confirmed chemically |
-| White/colourless | Many salts | Gives little preliminary information |
+| Colourless or white | Many main-group salts; $\mathrm{Zn^{2+}}$, $\mathrm{Al^{3+}}$, $\mathrm{Mg^{2+}}$, $\mathrm{Ca^{2+}}$, $\mathrm{Ba^{2+}}$, alkali ions | Most salts are white; not diagnostic |
+| Blue | Hydrated $\mathrm{Cu^{2+}}$ salts | Colour changes with ligand and hydration |
+| Pale green | Many $\mathrm{Fe^{2+}}$ salts | Easily oxidised to $\mathrm{Fe^{3+}}$ |
+| Yellow or brown | $\mathrm{Fe^{3+}}$, chromate, iodide-containing oxidised mixtures | Several unrelated species are yellow |
+| Pink | Hydrated $\mathrm{Co^{2+}}$ or $\mathrm{Mn^{2+}}$ salts | Dilute $\mathrm{Mn^{2+}}$ may appear colourless |
+| Green | $\mathrm{Ni^{2+}}$, $\mathrm{Cr^{3+}}$, some $\mathrm{Cu^{2+}}$ salts | Depends strongly on ligand and hydration |
+| Purple | Permanganate; some chromium(III) salts | Oxidation state must be confirmed |
+| Orange | Dichromate | Chromate-dichromate equilibrium is pH-dependent |
+| Black | Metal sulphides or oxides | Many black solids exist |
 
-### 3.2 Odour
+Other preliminary observations:
 
-| Odour | Possible species |
-|---|---|
-| Ammoniacal/pungent | $\mathrm{NH_3}$ from ammonium salt in alkali |
-| Rotten eggs | $\mathrm{H_2S}$ from sulphide |
-| Vinegar-like | Acetic acid/acetate after acidification |
-| Fruity | Ester formed from acetate + alcohol + acid |
-| Suffocating/burning sulphur | $\mathrm{SO_2}$ from sulphite/thiosulphate |
+- **Crystalline versus amorphous:** may suggest hydration or preparation method but is not specific.
+- **Hygroscopic or deliquescent:** common for chlorides such as $\mathrm{CaCl_2}$, $\mathrm{MgCl_2}$, $\mathrm{FeCl_3}$.
+- **Efflorescent:** hydrated salts may lose water in dry air.
+- **Odour:** never smell directly. Ammonium salts, sulphides, acetates and some halides may give characteristic odours only after treatment.
+- **Solubility in water:** helps select the method for preparing the original solution.
 
-Odour must never be the sole confirmation.
+## 2. Solubility examination
 
-### 3.3 Solubility
+Use a small portion and add water gradually.
 
-Test a small quantity successively, using a fresh portion when necessary:
+1. Test in cold water.
+2. Warm if necessary.
+3. Observe whether dissolution is accompanied by hydrolysis, colour change, gas evolution or turbidity.
+4. If insoluble, test appropriate dilute acids on a fresh portion.
+5. Reserve a separate portion for soda-extract preparation when the anion must be transferred to a soluble sodium salt.
 
-1. water;
-2. dilute HCl;
-3. dilute $\mathrm{HNO_3}$;
-4. concentrated acids or special solvents only if required.
+Solubility is not simply “soluble” or “insoluble.” It depends on temperature, pH, complex formation and concentration.
 
-The solvent chosen for the original solution must not introduce the ion being tested. For example, do not prepare a chloride-containing sample in HCl before testing chloride.
+Examples:
 
----
+- $\mathrm{PbCl_2}$ is sparingly soluble in cold water but appreciably more soluble in hot water.
+- $\mathrm{BiCl_3}$ may appear to “dissolve” in concentrated HCl but hydrolyses on dilution to $\mathrm{BiOCl}$.
+- $\mathrm{Al(OH)_3}$ is insoluble in water but dissolves in acid and in excess strong base.
+- $\mathrm{AgCl}$ dissolves in ammonia by complex formation, not by ordinary hydration.
 
-## 4. Dry Tests for Cations
+## 3. Heating in a dry test tube
 
-## 4.1 Heating in a dry test tube
+Heat gently first, then more strongly. Observe:
 
-Observe water, gases, sublimates, residue colour, and colour changes on cooling.
+- condensation of water;
+- sublimation;
+- colour change;
+- gas colour;
+- odour only by permitted indirect observation;
+- residue colour while hot and after cooling;
+- whether the change is reversible.
 
-### Water of crystallisation
+### 3.1 Water of crystallisation
 
-Hydrated salts may release water droplets:
+Hydrated salts may lose water:
 
-$$\mathrm{CuSO_4\cdot5H_2O\xrightarrow{\Delta}CuSO_4+5H_2O}$$
+$$
+\mathrm{CuSO_4\cdot5H_2O\xrightarrow{\Delta}CuSO_4+5H_2O}
+$$
 
-Blue hydrated copper sulphate becomes white anhydrous copper sulphate. Addition of water restores blue colour.
+Blue hydrated copper(II) sulphate becomes white anhydrous copper(II) sulphate. Addition of water restores the blue hydrated species with heat evolution.
 
-### Ammonium salts
+$$
+\mathrm{CoCl_2\cdot6H_2O\xrightarrow{\Delta}CoCl_2+6H_2O}
+$$
 
-Many ammonium salts decompose on heating and may leave little or no residue. Example:
+Hydrated cobalt chloride is pink; anhydrous cobalt chloride is blue. The colour depends on hydration and ligand environment.
 
-$$\mathrm{NH_4Cl(s)\rightleftharpoons NH_3(g)+HCl(g)}$$
+### 3.2 Hydrolysis during heating
 
-The gases recombine on the cooler part of the tube to give a white sublimate.
+Some hydrated chlorides give basic salts or oxides because the metal ion strongly hydrolyses water.
 
-### Zinc oxide colour change
+A simple “water droplets formed” observation therefore does not by itself prove water of crystallisation.
 
-$$\mathrm{ZnCO_3\xrightarrow{\Delta}ZnO+CO_2}$$
+## 4. Heating effects of carbonates and bicarbonates
 
-ZnO is yellow when hot and white when cold.
+### 4.1 Alkali-metal carbonates
 
-### Lead oxide
+Most alkali-metal carbonates are thermally stable. Lithium carbonate is the important exception:
 
-Lead salts may leave yellow PbO:
+$$
+\mathrm{Li_2CO_3\xrightarrow{\Delta}Li_2O+CO_2\uparrow}
+$$
 
-$$\mathrm{PbCO_3\xrightarrow{\Delta}PbO+CO_2}$$
+The difference reflects the high polarising power of small $\mathrm{Li^+}$.
 
-### Mercury and arsenic sublimates
+### 4.2 Metal carbonates
 
-Volatile compounds of mercury and arsenic can produce sublimates. Their appearance alone is not a safe or final identification.
+Many carbonates decompose to oxides:
 
-## 4.2 Flame test
+$$
+\mathrm{MCO_3\xrightarrow{\Delta}MO+CO_2\uparrow}
+$$
 
-### Procedure principle
+Examples:
 
-Convert the salt into a volatile chloride using HCl and introduce it into the non-luminous flame. Excited atoms emit characteristic wavelengths on returning to lower energy levels.
+$$
+\mathrm{CaCO_3\xrightarrow{\Delta}CaO+CO_2}
+$$
 
-| Ion | Flame colour | Through cobalt glass |
-|---|---|---|
-| $\mathrm{Na^+}$ | Intense golden yellow | Strongly suppressed |
-| $\mathrm{K^+}$ | Lilac/violet | Violet becomes clearer |
-| $\mathrm{Ca^{2+}}$ | Brick red | Greenish appearance may be reported |
-| $\mathrm{Sr^{2+}}$ | Crimson red | Purple |
-| $\mathrm{Ba^{2+}}$ | Apple green | Bluish green |
-| $\mathrm{Cu^{2+}}$ | Bluish green | — |
+$$
+\mathrm{CuCO_3\xrightarrow{\Delta}CuO+CO_2}
+$$
 
-**JEE traps**
+Copper(II) carbonate or basic copper carbonate gives a black $\mathrm{CuO}$ residue.
 
-- Sodium emission is so intense that traces of sodium mask potassium.
-- Cobalt glass absorbs much of the sodium yellow light and helps reveal potassium.
-- Flame colour is not a reliable stand-alone confirmation in mixtures.
-- Chlorides are preferred because many are volatile.
+### 4.3 Silver and mercury carbonates
 
-[VISUAL:flame-colors]
+Silver carbonate ultimately gives metallic silver:
+
+$$
+\mathrm{2Ag_2CO_3\xrightarrow{\Delta}4Ag+2CO_2+O_2}
+$$
+
+Mercury compounds may give mercury vapour or oxide decomposition products and are not to be heated casually.
+
+### 4.4 Bicarbonates
+
+Bicarbonates generally decompose on heating:
+
+$$
+\mathrm{2MHCO_3\xrightarrow{\Delta}M_2CO_3+CO_2+H_2O}
+$$
+
+For alkaline-earth bicarbonates, which usually exist in solution:
+
+$$
+\mathrm{M(HCO_3)_2\xrightarrow{\Delta}MCO_3\downarrow+CO_2+H_2O}
+$$
+
+This is the basis of temporary hardness removal by boiling.
+
+## 5. Heating effects of nitrates
+
+The product depends strongly on the cation.
+
+### 5.1 Alkali-metal nitrates except lithium
+
+$$
+\mathrm{2MNO_3\xrightarrow{\Delta}2MNO_2+O_2}
+$$
+
+where $\mathrm{M=Na,K,Rb,Cs}$.
+
+### 5.2 Lithium nitrate and many metal nitrates
+
+$$
+\mathrm{4LiNO_3\xrightarrow{\Delta}2Li_2O+4NO_2+O_2}
+$$
+
+A general divalent-metal pattern is:
+
+$$
+\mathrm{2M(NO_3)_2\xrightarrow{\Delta}2MO+4NO_2+O_2}
+$$
+
+Brown $\mathrm{NO_2}$ fumes and a glowing-splint-supporting oxygen component may be observed.
+
+Examples:
+
+$$
+\mathrm{2Pb(NO_3)_2\xrightarrow{\Delta}2PbO+4NO_2+O_2}
+$$
+
+$$
+\mathrm{2Cu(NO_3)_2\xrightarrow{\Delta}2CuO+4NO_2+O_2}
+$$
+
+### 5.3 Nitrates of less reactive metals
+
+Silver nitrate can give metal:
+
+$$
+\mathrm{2AgNO_3\xrightarrow{\Delta}2Ag+2NO_2+O_2}
+$$
+
+### 5.4 Ammonium nitrate
+
+Controlled thermal decomposition:
+
+$$
+\mathrm{NH_4NO_3\xrightarrow{\Delta}N_2O+2H_2O}
+$$
+
+Strong or uncontrolled heating can be hazardous. This equation is studied conceptually.
+
+## 6. Heating effects of sulphates
+
+### 6.1 Hydrated sulphates
+
+They first lose water. Further heating may decompose the anhydrous sulphate.
+
+### 6.2 Transition-metal sulphates
+
+Typical patterns include:
+
+$$
+\mathrm{2FeSO_4\xrightarrow{\Delta}Fe_2O_3+SO_2+SO_3}
+$$
+
+Ferrous sulphate crystals first lose water, then the residue becomes brown due to $\mathrm{Fe_2O_3}$ while sulphur oxides evolve.
+
+$$
+\mathrm{CuSO_4\xrightarrow{strong\ \Delta}CuO+SO_3}
+$$
+
+### 6.3 Sulphates of very unreactive metals
+
+Some can give metal or oxide depending on stability. The exact residue must be inferred from metal reactivity and oxide stability, not memorised as one universal rule.
+
+## 7. Heating effects of chlorides and ammonium salts
+
+### 7.1 Ammonium chloride
+
+$$
+\mathrm{NH_4Cl(s)\rightleftharpoons NH_3(g)+HCl(g)}
+$$
+
+The vapours recombine on a cooler part of the tube, producing a white sublimate. This is often described as sublimation, though dissociation and recombination occur.
+
+### 7.2 Ammonium carbonate and bicarbonate
+
+They decompose to volatile products, leaving little or no residue.
+
+### 7.3 Metal chlorides
+
+Many are volatile or hydrolyse. Colours may change with hydration. A chloride should not be identified only from volatility.
+
+## 8. Flame test
 
 [FIGURE:flame-emission-spectrum]
 
-## 4.3 Borax bead test
+### 8.1 Principle
 
-On heating:
+Heat excites electrons to higher energy levels. When they return to lower levels, characteristic wavelengths are emitted.
 
-$$\mathrm{Na_2B_4O_7\cdot10H_2O\xrightarrow{\Delta}Na_2B_4O_7+10H_2O}$$
+$$
+\Delta E=h\nu=\frac{hc}{\lambda}
+$$
 
-$$\mathrm{Na_2B_4O_7\xrightarrow{\Delta}2NaBO_2+B_2O_3}$$
+### 8.2 Procedure logic
 
-The transparent glassy $\mathrm{B_2O_3}$ dissolves metal oxides and forms coloured borates.
+- Clean the wire loop with concentrated HCl until it gives no flame colour.
+- Convert the sample into a volatile chloride where appropriate.
+- Place a small amount in the non-luminous flame.
+- Observe through cobalt glass when sodium contamination may mask potassium.
 
-| Metal ion | Oxidising flame | Reducing flame |
+### 8.3 Important flame colours
+
+| Ion | Flame colour | Notes |
 |---|---|---|
-| Co | Deep blue | Deep blue |
-| Cr | Green | Green |
-| Cu | Blue-green when hot; blue when cold | Red/opaque due to Cu or $\mathrm{Cu_2O}$ |
-| Fe | Yellow/brown hot; pale yellow cold | Bottle green |
-| Mn | Amethyst/violet | Colourless |
-| Ni | Brown/reddish brown | Grey/opaque |
+| $\mathrm{Li^+}$ | Crimson red | Less persistent than sodium |
+| $\mathrm{Na^+}$ | Intense golden yellow | Very sensitive; common contaminant |
+| $\mathrm{K^+}$ | Lilac/violet | Viewed through cobalt glass |
+| $\mathrm{Ca^{2+}}$ | Brick red | Often described as orange-red |
+| $\mathrm{Sr^{2+}}$ | Crimson/scarlet red | More intense red than calcium |
+| $\mathrm{Ba^{2+}}$ | Apple green | Barium chloride is sufficiently volatile |
+| $\mathrm{Cu^{2+}}$ | Blue-green | Especially with halide formation |
 
-**Reasoning cue:** A change between oxidising and reducing flames indicates oxidation-state-dependent colour.
+A flame test is usually a screening test because mixtures and sodium contamination can obscure colours.
+
+## 9. Borax bead test
 
 [FIGURE:borax-bead-cross-section]
 
-## 4.4 Charcoal cavity and cobalt nitrate tests
+### 9.1 Chemistry of bead formation
 
-A salt heated with sodium carbonate on charcoal may form a metal globule, oxide, or incrustation.
+Borax loses water and forms sodium metaborate and boric anhydride:
+
+$$
+\mathrm{Na_2B_4O_7\cdot10H_2O\xrightarrow{\Delta}2NaBO_2+B_2O_3+10H_2O}
+$$
+
+The glassy $\mathrm{B_2O_3}$ dissolves metal oxides to form coloured metaborates.
+
+A simplified representation is:
+
+$$
+\mathrm{MO+B_2O_3\rightarrow M(BO_2)_2}
+$$
+
+### 9.2 Oxidising and reducing flame
+
+The observed colour depends on:
+
+- oxidation state of the metal;
+- oxidising or reducing flame;
+- hot or cold bead;
+- amount of sample;
+- concentration of coloured species.
+
+### 9.3 Common bead colours
+
+| Ion/oxide system | Oxidising flame | Reducing flame |
+|---|---|---|
+| Co | Deep blue | Deep blue |
+| Cu | Blue-green when hot; blue when cold | Red or opaque due to Cu/Cu$_2$O |
+| Cr | Green | Green |
+| Fe | Yellow/brown hot; pale on cooling | Bottle green |
+| Mn | Violet/amethyst in oxidising bead | Colourless or pale |
+| Ni | Brown/reddish-brown | Grey or opaque due to reduced species |
+
+Excess sample may make every bead dark and uninterpretable.
+
+## 10. Microcosmic salt bead test
+
+Microcosmic salt produces sodium ammonium hydrogen phosphate, which on heating gives sodium metaphosphate:
+
+$$
+\mathrm{NaNH_4HPO_4\cdot4H_2O\xrightarrow{\Delta}NaPO_3+NH_3+5H_2O}
+$$
+
+The metaphosphate dissolves metal oxides to form coloured phosphates. The test is chemically similar to the borax bead test but may give clearer colours for some ions.
+
+## 11. Charcoal cavity test
+
+A salt is mixed with sodium carbonate and heated on charcoal in a reducing flame.
 
 General reduction:
 
-$$\mathrm{MO+C\xrightarrow{\Delta}M+CO}$$
+$$
+\mathrm{MO+C\rightarrow M+CO}
+$$
 
-Some characteristic cobalt nitrate residues:
+Possible observations include:
 
-| Oxide | Product after cobalt nitrate treatment and heating | Colour |
-|---|---|---|
-| $\mathrm{Al_2O_3}$ | cobalt aluminate, $\mathrm{CoAl_2O_4}$ | Blue |
-| $\mathrm{ZnO}$ | cobalt zincate/associated cobalt oxide product | Green |
-| $\mathrm{MgO}$ | cobalt-magnesium mixed oxide | Pink/flesh |
+- metallic bead;
+- incrustation of volatile oxide;
+- colour of incrustation hot and cold;
+- malleability or brittleness of the bead.
 
-The test is preliminary because colours depend on heating, concentration, and contamination.
+Examples:
 
----
-
-## 63. Corrected Flame, Borax, Microcosmic and Carbonate-Bead Tests
-
-### 63.1 Complete flame table
-
-| Ion | Naked-eye flame | Through cobalt/double-blue glass |
-|---|---|---|
-| $\mathrm{Li^+}$ | Carmine red | Purple-red shade |
-| $\mathrm{Na^+}$ | Intense golden yellow | Nearly disappears |
-| $\mathrm{K^+}$ | Lilac/violet | Crimson-red/violet appears clearly |
-| $\mathrm{Ca^{2+}}$ | Brick red | Greenish appearance may be reported |
-| $\mathrm{Sr^{2+}}$ | Crimson red | Purple |
-| $\mathrm{Ba^{2+}}$ | Apple green | Bluish green |
-| $\mathrm{Cu^{2+}}$ or volatile copper halide | Blue-green/green | — |
-| Volatile borate ester | Green-edged flame | — |
-
-$\mathrm{Be^{2+}}$ and $\mathrm{Mg^{2+}}$ do not give a useful visible flame colour because their high excitation/ionisation requirements are not met efficiently in an ordinary Bunsen flame.
-
-### 63.2 Correct borax-bead colour table
-
-| Metal | Oxidising flame, hot | Oxidising flame, cold | Reducing flame, hot | Reducing flame, cold |
-|---|---|---|---|---|
-| Cr | Yellow | Green | Green | Green |
-| Mn | Violet/amethyst | Violet/amethyst | Colourless | Colourless |
-| Fe | Yellowish brown | Yellow/pale yellow | Green | Green |
-| Co | Blue | Blue | Blue | Blue |
-| Ni | Violet | Reddish brown | Grey | Grey |
-| Cu | Green | Blue | Colourless | Opaque red from Cu/$\mathrm{Cu_2O}$ |
-
-The oxidation state in the original salt cannot be inferred directly because the bead and flame conditions may oxidise or reduce the metal.
-
-### 63.3 Microcosmic-salt bead test
-
-Microcosmic salt is $\mathrm{NaNH_4HPO_4\cdot4H_2O}$. On heating:
-
-$$\mathrm{NaNH_4HPO_4\cdot4H_2O\xrightarrow{\Delta}NaPO_3+NH_3+5H_2O}$$
-
-Transparent sodium metaphosphate dissolves metal oxides to form coloured orthophosphate/metaphosphate species. Its colours often resemble borax-bead colours, but the metaphosphate bead is less viscous and can give sharper colours for some ions.
-
-### 63.4 Sodium-carbonate bead test
-
-Fuse $\mathrm{Na_2CO_3}$ on a platinum loop, touch it with $\mathrm{KNO_3}$ and sample, then heat in an oxidising flame.
-
-For manganese:
-
-$$\mathrm{2MnO+2Na_2CO_3+3O_2\rightarrow2Na_2MnO_4+2CO_2}$$
-
-Green sodium manganate bead forms.
-
-For chromium:
-
-$$\mathrm{2Cr_2O_3+4Na_2CO_3+3O_2\rightarrow4Na_2CrO_4+4CO_2}$$
-
-Yellow sodium chromate bead forms.
-
-**Mnemonic:** **“Mn makes Green; Cr creates Yellow.”**
-
----
-
-## 64. Heating, Sublimation and Charcoal-Cavity Atlas
-
-### 64.1 Colour changes on heating
-
-| Substance | Cold | Hot/heated product |
-|---|---|---|
-| ZnO | White | Yellow; returns white on cooling |
-| $\mathrm{CuSO_4\cdot5H_2O}$ | Blue | White anhydrous $\mathrm{CuSO_4}$ |
-| $\mathrm{CoCl_2\cdot6H_2O}$ | Pink | Blue anhydrous $\mathrm{CoCl_2}$ |
-| $\mathrm{HgI_2}$ | Scarlet red | Yellow polymorph above transition; returns red on rubbing/cooling history |
-| $\mathrm{CuCO_3\cdot Cu(OH)_2}$ | Green | Black CuO |
-| $\mathrm{PbCO_3}$ | White | Yellow PbO |
-
-### 64.2 White sublimates and their distinction
-
-White sublimates may arise from $\mathrm{HgCl_2}$, $\mathrm{Hg_2Cl_2}$, $\mathrm{As_2O_3}$, $\mathrm{Sb_2O_3}$ and ammonium halides.
-
-Dissolve/treat the sublimate with dilute HCl where appropriate and pass $\mathrm{H_2S}$:
-
-| Original species | Observation with $\mathrm{H_2S}$ |
+| Metal system | Observation |
 |---|---|
-| $\mathrm{HgCl_2}$ | Black HgS |
-| $\mathrm{Hg_2Cl_2}$ | Black mixture containing Hg and HgS |
-| $\mathrm{As_2O_3}$ | Yellow $\mathrm{As_2S_3}$ |
-| $\mathrm{Sb_2O_3}$ | Orange $\mathrm{Sb_2S_3}$ |
-| $\mathrm{NH_4X}$ | No metal sulphide |
+| Pb | Soft malleable bead; yellow PbO incrustation hot, pale on cooling |
+| Bi | Brittle bead; yellow/orange oxide incrustation |
+| Sn | Malleable bead; white oxide incrustation |
+| Zn | No stable bead; ZnO incrustation yellow hot, white cold |
+| Cd | Brown CdO incrustation |
+| Ag | Bright malleable bead; little oxide incrustation |
 
-HgS dissolves in sodium sulphide as a thio complex, whereas the mercury(I)-derived mixture leaves metallic mercury:
+## 12. Cobalt nitrate test
 
-$$\mathrm{HgS+S^{2-}\rightarrow[HgS_2]^{2-}}$$
+The residue on charcoal is moistened with cobalt nitrate and reheated. Characteristic mixed oxides may form.
 
-### 64.3 Coloured sublimates
-
-- Black: HgS/mercury sulphide species may be present.
-- Yellow: yellow $\mathrm{HgI_2}$ or $\mathrm{As_2S_3}$.
-- Mechanical rubbing converts yellow $\mathrm{HgI_2}$ to scarlet red; yellow $\mathrm{As_2S_3}$ does not show this polymorphic change.
-
-### 64.4 Charcoal cavity observations
-
-| Species after reduction/heating | Observation |
+| Oxide | Product/colour |
 |---|---|
-| Pb compound | Soft malleable metallic globule; yellow PbO incrustation |
-| Bi compound | Brittle globule; yellow/brown oxide incrustation |
-| Sn compound | Metallic bead; yellow-hot/white-cold $\mathrm{SnO_2}$ incrustation |
-| Zn compound | No stable metal bead; ZnO incrustation yellow hot, white cold |
-| Cd compound | Brown CdO incrustation |
-| As/Sb compound | Volatile oxide incrustation; hazardous fumes |
+| $\mathrm{Al_2O_3}$ | Cobalt aluminate, blue |
+| $\mathrm{ZnO}$ | Cobalt zincate, green |
+| $\mathrm{MgO}$ | Pink mass |
+| $\mathrm{SnO_2}$ | Bluish-green under suitable conditions |
 
-### 64.5 Cobalt-nitrate residues
+The test is affected by contamination and should support, not replace, wet confirmation.
 
-| Oxide | Colour after cobalt nitrate and ignition | Common name/idea |
+## 13. Fusion tests
+
+Fusion converts an insoluble or unreactive substance into soluble products.
+
+### 13.1 Sodium carbonate fusion
+
+Useful for refractory sulphates, silicates and some oxides.
+
+$$
+\mathrm{MSO_4+Na_2CO_3\rightarrow MCO_3+Na_2SO_4}
+$$
+
+The soluble sodium salt enters the extract while the metal carbonate remains as residue.
+
+### 13.2 Oxidising fusion
+
+Chromium(III) compounds can be oxidised to chromate with sodium carbonate and an oxidant:
+
+$$
+\mathrm{2Cr_2O_3+4Na_2CO_3+3O_2\rightarrow4Na_2CrO_4+4CO_2}
+$$
+
+A yellow chromate extract is obtained.
+
+### 13.3 Reducing fusion
+
+Some higher oxidation-state compounds may be reduced to forms suitable for subsequent tests. The reducing agent and possible side products must be considered.
+
+## 14. Dry-test traps
+
+1. Sodium contamination can mask every flame colour.
+2. A black residue may be an oxide, metal, or sulphide.
+3. Hydrated and anhydrous salts may have different colours.
+4. A borax bead colour depends on flame zone and temperature.
+5. Heating can change the oxidation state that existed in the original salt.
+6. Conc. HCl used to clean a flame-test wire introduces chloride; do not use that portion for chloride analysis.
+7. Dry tests are least reliable in mixtures.
+
+## 15. Preliminary-test decision table
+
+| Observation | Possible species | Required confirmation |
 |---|---|---|
-| $\mathrm{Al_2O_3}$ | Blue | Thenard's blue/cobalt aluminate |
-| ZnO | Green | Rinmann's green/cobalt zincate |
-| MgO | Pink/flesh | Cobalt-magnesium oxide |
-
----
+| Water droplets on heating | Hydrated salt, hydroxide, bicarbonate | Rehydration behaviour; independent ion tests |
+| Brown gas on heating | Nitrate/nitrite; bromide with oxidant | Brown-ring or specific nitrite test |
+| Gas relights glowing splint | Oxygen from nitrate/chlorate/peroxide | Identify accompanying residue and anion |
+| White sublimate | Ammonium chloride or volatile chloride | Ammonium and chloride tests separately |
+| Black residue from blue salt | CuO from copper salt | Copper wet tests |
+| Yellow hot/white cold residue | ZnO | Zinc wet tests |
+| Golden-yellow flame | Sodium | Confirm with a specific sodium reagent if required |
+| Lilac flame through cobalt glass | Potassium | Sodium cobaltinitrite or perchlorate test |
 `;
 
 export default function SaltAnalysisPart02() {

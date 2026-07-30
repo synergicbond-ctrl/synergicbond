@@ -2,211 +2,350 @@ import { SaltAnalysisArticle } from "../SaltAnalysisArticle";
 
 export const metadata = {
   part: 6,
-  title: "Sulphate, Phosphate, Oxalate and Acetate",
+  title: "Acetate, Formate, Oxalate, Sulphate and Phosphate",
   chapter: "Salt Analysis",
   exam: "JEE Advanced",
 };
 
 const content = String.raw`
-## 13. Sulphate
+# Acetate, Formate, Oxalate, Sulphate and Phosphate
 
-Acidify with dilute HCl and add $\mathrm{BaCl_2}$:
+## 1. Acetate ion, $\mathrm{CH_3COO^-}$
 
-$$\mathrm{Ba^{2+}+SO_4^{2-}\rightarrow BaSO_4\downarrow}$$
+### 1.1 Action of dilute acid
 
-The white precipitate is insoluble in dilute HCl and dilute $\mathrm{HNO_3}$.
+A stronger acid liberates volatile acetic acid:
 
-### Why acidification is essential
+$$
+\mathrm{CH_3COO^-+H^+\rightarrow CH_3COOH}
+$$
 
-Barium carbonate, sulphite, phosphate, and oxalate may also be white. Their precipitates dissolve or react in acid, while $\mathrm{BaSO_4}$ remains insoluble.
+On warming, a vinegar-like odour may be noticed indirectly. Odour is only a preliminary clue.
 
-### Lead acetate
-
-$$\mathrm{Pb^{2+}+SO_4^{2-}\rightarrow PbSO_4\downarrow}$$
-
-White $\mathrm{PbSO_4}$ dissolves in concentrated ammonium acetate due to soluble lead acetate/complex formation. This distinguishes it from some other lead salts.
-
----
-
-## 14. Phosphate
-
-## 14.1 Ammonium molybdate test
-
-Acidify with nitric acid, add ammonium molybdate, and warm. A canary-yellow precipitate of ammonium phosphomolybdate forms.
-
-A simplified representation is:
-
-$$\mathrm{PO_4^{3-}+12MoO_4^{2-}+24H^+ +3NH_4^+\rightarrow (NH_4)_3[PMo_{12}O_{40}]\downarrow+12H_2O}$$
-
-## 14.2 Magnesia-mixture test
-
-In ammoniacal medium:
-
-$$\mathrm{Mg^{2+}+NH_4^++PO_4^{3-}\rightarrow MgNH_4PO_4\downarrow}$$
-
-White crystalline $\mathrm{MgNH_4PO_4}$ forms.
-
-On ignition:
-
-$$\mathrm{2MgNH_4PO_4\xrightarrow{\Delta}Mg_2P_2O_7+2NH_3+H_2O}$$
-
-## 14.3 Silver nitrate
-
-$$\mathrm{3Ag^++PO_4^{3-}\rightarrow Ag_3PO_4\downarrow}$$
-
-Silver phosphate is yellow and dissolves in nitric acid and ammonia.
-
-**Interference:** phosphate precipitates cations from later analytical groups in ammoniacal medium and must be removed before systematic cation analysis.
-
----
-
-## 15. Oxalate
-
-### 15.1 Calcium chloride
-
-$$\mathrm{Ca^{2+}+C_2O_4^{2-}\rightarrow CaC_2O_4\downarrow}$$
-
-White calcium oxalate is insoluble in acetic acid but soluble in mineral acids.
-
-### 15.2 Permanganate test
-
-Warm acidified permanganate is decolourised:
-
-$$\mathrm{5C_2O_4^{2-}+2MnO_4^-+16H^+\rightarrow10CO_2+2Mn^{2+}+8H_2O}$$
-
-The reaction is slow initially and becomes faster because $\mathrm{Mn^{2+}}$ acts as an autocatalyst.
-
-**JEE cue:** Heating is required; chloride-containing acid should be avoided because chloride may be oxidised by permanganate under strong conditions.
-
----
-
-## 16. Acetate
-
-### 16.1 Ester test
+### 1.2 Ester test
 
 Warm the salt with ethanol and concentrated sulphuric acid:
 
-$$\mathrm{CH_3COOH+C_2H_5OH\rightleftharpoons CH_3COOC_2H_5+H_2O}$$
+$$
+\mathrm{CH_3COOH+C_2H_5OH\rightleftharpoons CH_3COOC_2H_5+H_2O}
+$$
 
-Ethyl acetate has a pleasant fruity odour.
+Ethyl acetate has a pleasant fruity odour. Concentrated sulphuric acid acts as acid catalyst and dehydrating agent.
 
-### 16.2 Ferric chloride
+Interferences:
 
-Neutral ferric chloride gives a deep red colour due to ferric acetate/acetato complexes. On boiling, a reddish-brown basic ferric acetate precipitate may form.
+- other carboxylates may also form esters;
+- ethanol and concentrated acid must not be confused with a direct test for the original ion;
+- odour-based tests are not fully specific.
 
-### 16.3 Cacodyl oxide test
+### 1.3 Ferric chloride test
 
-Historically, acetate heated with arsenic trioxide forms foul-smelling cacodyl oxide. Because arsenic compounds are extremely toxic, this test is of theoretical interest only and should not be performed in routine teaching laboratories.
+Neutral acetate solution may give a deep red-brown ferric acetate complex. On boiling, hydrolysis produces basic ferric acetate or ferric hydroxide-like precipitate and the colour changes.
 
----
+A simplified representation is:
 
-## 65. Missing Acid-Radical Tests
+$$
+\mathrm{Fe^{3+}+3CH_3COO^-\rightleftharpoons Fe(CH_3COO)_3}
+$$
 
-### 65.1 Carbonate versus bicarbonate by phenolphthalein
+The precise species in solution are hydrolysed and polymeric; the analytical observation is more important than assigning one rigid formula.
 
-Carbonate solution is sufficiently alkaline by hydrolysis to turn phenolphthalein pink:
+### 1.4 Cacodyl oxide test
 
-$$\mathrm{CO_3^{2-}+H_2O\rightleftharpoons HCO_3^-+OH^-}$$
+Heating an acetate with arsenic(III) oxide under classical conditions can produce cacodyl oxide, historically recognised by its powerful odour. The reaction involves toxic organoarsenic compounds and is studied only as classical chemistry, not as a practical recommendation.
 
-Bicarbonate solution is much less alkaline and generally remains colourless with phenolphthalein under the specified dilute conditions. This is a supporting test; concentration and mixed carbonate/bicarbonate systems affect the result.
+The conceptual inference is that acetate supplies methyl groups during decarboxylative transformation.
 
-### 65.2 Formate
+### 1.5 Silver acetate and mercury acetate
 
-Formate is reducing. With mercuric chloride, mercury(II) is reduced through calomel to grey mercury:
+Most acetates are soluble, but silver acetate and mercury(I) acetate are sparingly soluble. This is an exception to the broad “all acetates soluble” rule.
 
-$$\mathrm{2HgCl_2+HCOO^-+H^+\rightarrow Hg_2Cl_2\downarrow+CO_2+2HCl}$$
+## 2. Formate ion, $\mathrm{HCOO^-}$
 
-On further reduction:
+Formate is more easily oxidised than acetate because the carbon can be oxidised from +2 to +4.
 
-$$\mathrm{Hg_2Cl_2+HCOO^-+H^+\rightarrow2Hg\downarrow+CO_2+2HCl}$$
+### 2.1 Action of acid
 
-This distinguishes formate from acetate, which is confirmed more characteristically by ester formation.
+$$
+\mathrm{HCOO^-+H^+\rightarrow HCOOH}
+$$
 
-### 65.3 Bromide by fluorescein
+Concentrated sulphuric acid dehydrates formic acid:
 
-Oxidise bromide to bromine. Bromine converts yellow fluorescein on filter paper into red eosin/tetrabromofluorescein. Chlorine may bleach the reagent and iodine may produce confusing red-violet iodinated material, so the test is performed under controlled conditions after separating interferences.
+$$
+\mathrm{HCOOH\xrightarrow{conc.\ H_2SO_4}CO\uparrow+H_2O}
+$$
 
-### 65.4 Bromide by fuchsin
+Carbon monoxide burns with a blue flame and is toxic. This reaction is theoretical in this context.
 
-Free bromine can convert decolourised fuchsin reagent into a blue/violet brominated dye. The test detects liberated bromine, not bromide directly.
+### 2.2 Reduction of silver ion
 
-### 65.5 Iodide with copper(II)
+Formate can reduce ammoniacal silver ion to metallic silver:
 
-Copper(II) oxidises iodide:
+$$
+\mathrm{HCOO^-+2Ag^++OH^-\rightarrow2Ag\downarrow+CO_2+H_2O}
+$$
 
-$$\mathrm{2Cu^{2+}+4I^-\rightarrow2CuI\downarrow+I_2}$$
+The exact balanced form depends on medium. Acetate does not show the same reducing behaviour.
 
-CuI is white, but brown $\mathrm{I_3^-}$ can mask it. Add thiosulphate:
+### 2.3 Reduction of mercury(II)
 
-$$\mathrm{I_2+2S_2O_3^{2-}\rightarrow2I^-+S_4O_6^{2-}}$$
+Formate can reduce mercury(II) to mercury(I) or metallic mercury through intermediate stages. A grey deposit or calomel formation under specified conditions supports formate.
 
-The iodine colour disappears and white CuI becomes visible.
+### 2.4 Oxidation by permanganate
 
-### 65.6 Sulphate by permanganate adsorption
+$$
+\mathrm{5HCOO^-+2MnO_4^-+11H^+\rightarrow5CO_2+2Mn^{2+}+8H_2O}
+$$
 
-When $\mathrm{BaSO_4}$ is precipitated in the presence of dilute permanganate under controlled conditions, the precipitate may adsorb $\mathrm{MnO_4^-}$ and appear pink/violet. The colour resists ordinary washing because it is associated with adsorption on the freshly formed precipitate. This is a supporting adsorption test, not a replacement for the acidified barium test.
+Formate decolourises acidified permanganate; acetate is much more resistant under ordinary qualitative-test conditions.
 
-### 65.7 Nitrite confirmations beyond the basic set
+## 3. Oxalate ion, $\mathrm{C_2O_4^{2-}}$
 
-- Griess reagent: pink/red azo dye.
-- Acidified KI-starch: blue due to liberated iodine.
-- Acidified permanganate: decolourised.
-- Urea/sulfamic acid: nitrite destroyed with evolution of nitrogen.
-- Indole reagent: red product under specified acidic conditions.
+Oxalate is both a precipitating ligand and a reducing agent.
 
----
+### 3.1 Action of concentrated sulphuric acid
 
-## 83. Acetate, Formate and Oxalate: Full Reaction Set
+Oxalic acid forms and decomposes:
 
-### 83.1 Neutral ferric-chloride comparison
+$$
+\mathrm{H_2C_2O_4\xrightarrow{\Delta}CO+CO_2+H_2O}
+$$
 
-| Anion | Initial FeCl₃ observation | On boiling |
-|---|---|---|
-| Acetate | Deep red ferric acetate/acetato complex | Reddish-brown basic ferric acetate precipitate |
-| Formate | Red coloration | Basic ferric salt may form |
-| Oxalate | Yellow/green ferrioxalate complex | Remains complexed under suitable conditions |
+The gas mixture contains:
 
-The reagent does not by itself distinguish all three; follow-up tests are required.
+- $\mathrm{CO_2}$, which turns lime water milky;
+- $\mathrm{CO}$, which burns with a blue flame but does not turn lime water milky.
 
-### 83.2 Esterification
+### 3.2 Calcium chloride test
 
-Acetate:
+In neutral or weakly acidic solution:
 
-$$\mathrm{CH_3COOH+C_2H_5OH\rightleftharpoons CH_3COOC_2H_5+H_2O}$$
+$$
+\mathrm{Ca^{2+}+C_2O_4^{2-}\rightarrow CaC_2O_4\downarrow}
+$$
 
-Formate:
+White calcium oxalate is insoluble in acetic acid but dissolves in strong mineral acid.
 
-$$\mathrm{HCOOH+C_2H_5OH\rightleftharpoons HCOOC_2H_5+H_2O}$$
+This distinguishes it from calcium carbonate, which dissolves in acetic acid with carbon dioxide evolution.
 
-Ethyl acetate and ethyl formate have pleasant odours. Oxalate can form diethyl oxalate under stronger conditions; smell alone is not a safe distinction.
+### 3.3 Permanganate test
 
-### 83.3 Cacodyl-oxide test
+In warm acidic solution:
 
-**Named test for acetate:** cacodyl-oxide test. Acetate heated with $\mathrm{As_2O_3}$ can form cacodyl oxide, historically recognised by an extremely offensive odour. Because volatile arsenic compounds are highly toxic, this is theory only.
+$$
+\mathrm{5C_2O_4^{2-}+2MnO_4^-+16H^+\rightarrow10CO_2+2Mn^{2+}+8H_2O}
+$$
 
-### 83.4 Mercury(II)-formate test
+Important features:
 
-**Named test for formate:** mercuric-chloride/formate reduction. White calomel forms, then grey mercury:
+- reaction is slow at room temperature;
+- warming accelerates it;
+- $\mathrm{Mn^{2+}}$ acts autocatalytically;
+- permanganate is decolourised;
+- carbon dioxide evolves.
 
-$$\mathrm{2HgCl_2+HCOOH\rightarrow Hg_2Cl_2\downarrow+CO_2+2HCl}$$
+A JEE question may compare induction periods or catalytic effects.
 
-$$\mathrm{Hg_2Cl_2+HCOOH\rightarrow2Hg\downarrow+CO_2+2HCl}$$
+### 3.4 Silver nitrate
 
-### 83.5 Manganese(II)-oxalate test
+$$
+\mathrm{2Ag^++C_2O_4^{2-}\rightarrow Ag_2C_2O_4\downarrow}
+$$
 
-Oxalate gives a pale precipitate with $\mathrm{Mn^{2+}}$ under controlled conditions:
+Silver oxalate is sparingly soluble and can decompose explosively when dry; the chemistry is discussed conceptually.
 
-$$\mathrm{Mn^{2+}+C_2O_4^{2-}\rightarrow MnC_2O_4\downarrow}$$
+### 3.5 Oxalate as an interfering radical
 
-On suitable oxidation, the precipitate/oxalate reduces permanganate.
+Oxalate precipitates calcium and several transition-metal ions, and forms complexes. It can therefore disturb cation-group separation. It must be destroyed or removed before systematic cation analysis.
 
-### 83.6 Permanganate-oxalate reaction
+## 4. Sulphate ion
 
-$$\mathrm{5C_2O_4^{2-}+2MnO_4^-+16H^+\rightarrow10CO_2+2Mn^{2+}+8H_2O}$$
+[FIGURE:solubility-decision-tree-b]
 
-**Named kinetic feature:** autocatalysis by $\mathrm{Mn^{2+}}$.
+### 4.1 Confirmatory barium test
 
----
+Acidify with dilute HCl and add barium chloride:
+
+$$
+\mathrm{Ba^{2+}+SO_4^{2-}\rightarrow BaSO_4\downarrow}
+$$
+
+The white precipitate remains insoluble in dilute mineral acids.
+
+### 4.2 Why acidification is essential
+
+Without acidification, barium ions can also precipitate:
+
+$$
+\mathrm{BaCO_3,\ BaSO_3,\ Ba_3(PO_4)_2,\ BaCrO_4,\ BaC_2O_4}
+$$
+
+Dilute acid removes or suppresses many of these, but $\mathrm{BaSO_4}$ persists.
+
+### 4.3 Test with lead acetate
+
+$$
+\mathrm{Pb^{2+}+SO_4^{2-}\rightarrow PbSO_4\downarrow}
+$$
+
+The white precipitate is less diagnostic because lead also forms precipitates with halides, chromate, carbonate, phosphate and sulphide.
+
+### 4.4 Benzidine-type and adsorption tests
+
+Classical organic-reagent tests exist for sulphate, but JEE-level analysis normally relies on acidified barium precipitation and solubility behaviour.
+
+## 5. Phosphate ion, $\mathrm{PO_4^{3-}}$
+
+Phosphate speciation depends strongly on pH:
+
+$$
+\mathrm{H_3PO_4\rightleftharpoons H^++H_2PO_4^-}
+$$
+
+$$
+\mathrm{H_2PO_4^-\rightleftharpoons H^++HPO_4^{2-}}
+$$
+
+$$
+\mathrm{HPO_4^{2-}\rightleftharpoons H^++PO_4^{3-}}
+$$
+
+Therefore precipitation tests must specify the medium.
+
+### 5.1 Ammonium molybdate test
+
+Warm the phosphate solution with ammonium molybdate in nitric acid. A canary-yellow precipitate of ammonium phosphomolybdate forms.
+
+A simplified representation:
+
+$$
+\mathrm{PO_4^{3-}+12MoO_4^{2-}+24H^++3NH_4^+\rightarrow (NH_4)_3[PMo_{12}O_{40}]\downarrow+12H_2O}
+$$
+
+Conditions:
+
+- strongly nitric-acid medium;
+- warming;
+- absence of arsenate, which can form a related precipitate;
+- sufficient molybdate.
+
+### 5.2 Magnesia mixture test
+
+Magnesia mixture contains $\mathrm{MgCl_2}$, $\mathrm{NH_4Cl}$ and ammonia.
+
+$$
+\mathrm{Mg^{2+}+NH_4^++PO_4^{3-}\rightarrow MgNH_4PO_4\downarrow}
+$$
+
+A white crystalline precipitate forms.
+
+Roles:
+
+- ammonia supplies alkaline conditions;
+- ammonium chloride controls hydroxide concentration and helps prevent $\mathrm{Mg(OH)_2}$ precipitation;
+- phosphate speciation shifts toward precipitating forms.
+
+### 5.3 Silver nitrate
+
+$$
+\mathrm{3Ag^++PO_4^{3-}\rightarrow Ag_3PO_4\downarrow}
+$$
+
+Silver phosphate is yellow and dissolves in nitric acid or ammonia.
+
+This test can be confused with silver chromate, carbonate or arsenate; medium and solubility tests are essential.
+
+### 5.4 Ferric chloride
+
+Phosphate can form ferric phosphate:
+
+$$
+\mathrm{Fe^{3+}+PO_4^{3-}\rightarrow FePO_4\downarrow}
+$$
+
+The precipitate is pale yellow/white depending on conditions. Ferric hydroxide formation competes in alkaline medium.
+
+### 5.5 Interference in cation analysis
+
+Phosphate precipitates many Group IV, V and VI cations when the solution is made ammoniacal. It can produce a false “Group III precipitate” or contaminate later groups.
+
+[FIGURE:interfering-radicals-sabotage]
+
+## 6. Arsenite and arsenate comparison
+
+Although treated mainly with Group II cations in many syllabi, arsenite and arsenate behave as acid radicals and can interfere.
+
+### 6.1 Silver salts
+
+$$
+\mathrm{3Ag^++AsO_3^{3-}\rightarrow Ag_3AsO_3\downarrow}
+$$
+
+Silver arsenite is yellow.
+
+$$
+\mathrm{3Ag^++AsO_4^{3-}\rightarrow Ag_3AsO_4\downarrow}
+$$
+
+Silver arsenate is chocolate brown.
+
+### 6.2 Magnesium ammonium salts
+
+Arsenate can precipitate magnesium ammonium arsenate under conditions analogous to phosphate. Arsenite behaves differently and may require oxidation.
+
+### 6.3 Molybdate test
+
+Arsenate can give a yellow molybdate precipitate similar to phosphate and is a significant interference.
+
+### 6.4 Sulphide test
+
+In acid solution, arsenic gives characteristic yellow sulphides. Oxidation state affects the formula and dissolution behaviour in yellow ammonium sulphide.
+
+## 7. Distinction matrix
+
+| Radical | Key precipitation | Key redox/volatile test | Strong distinction |
+|---|---|---|---|
+| Acetate | Few insoluble salts | Ester formation; ferric acetate colour | Does not readily reduce Ag$^+$ |
+| Formate | Some heavy-metal formates | Reduces Ag$^+$, Hg$^{2+}$, permanganate | Oxidises to CO$_2$ |
+| Oxalate | $\mathrm{CaC_2O_4}$ white | Warm acidified KMnO$_4$ decolourised with CO$_2$ | Calcium oxalate insoluble in acetic acid |
+| Sulphate | $\mathrm{BaSO_4}$ white | No ordinary reducing action | Precipitate acid-resistant |
+| Phosphate | $\mathrm{MgNH_4PO_4}$ white; $\mathrm{Ag_3PO_4}$ yellow | Yellow phosphomolybdate | Strong pH-dependent precipitation |
+| Arsenite | $\mathrm{Ag_3AsO_3}$ yellow | Easily oxidised to arsenate | Sulphide chemistry |
+| Arsenate | $\mathrm{Ag_3AsO_4}$ brown | Molybdate reaction | Can imitate phosphate |
+
+## 8. Mixture-analysis problems
+
+### 8.1 Carbonate and oxalate
+
+Both can precipitate calcium salts. Add acetic acid:
+
+- $\mathrm{CaCO_3}$ dissolves with $\mathrm{CO_2}$;
+- $\mathrm{CaC_2O_4}$ remains.
+
+### 8.2 Sulphate and sulphite
+
+Acidify and boil:
+
+- sulphite is removed as $\mathrm{SO_2}$;
+- sulphate remains and then precipitates as $\mathrm{BaSO_4}$.
+
+### 8.3 Phosphate and arsenate
+
+Both may give yellow molybdate precipitates. Use additional sulphide or silver-salt behaviour and oxidation-state-specific separation.
+
+### 8.4 Acetate and formate
+
+Both liberate volatile acids and can form esters. Formate is reducing; acetate is not under ordinary conditions.
+
+## 9. JEE Advanced traps
+
+1. Calcium chloride precipitates both carbonate and oxalate; acetic-acid behaviour distinguishes them.
+2. Phosphate tests are strongly pH-dependent because multiple protonated species exist.
+3. Ammonium molybdate is not absolutely specific for phosphate; arsenate interferes.
+4. Formate, unlike acetate, readily reduces silver and mercury ions.
+5. Oxalate-permanganate reaction requires warming and becomes faster as $\mathrm{Mn^{2+}}$ accumulates.
+6. Acidifying before the barium sulphate test must not be done with sulphuric acid.
 `;
 
 export default function SaltAnalysisPart06() {

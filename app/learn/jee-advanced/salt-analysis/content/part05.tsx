@@ -2,416 +2,390 @@ import { SaltAnalysisArticle } from "../SaltAnalysisArticle";
 
 export const metadata = {
   part: 5,
-  title: "Nitrite, Nitrate and Halide Analysis",
+  title: "Nitrite, Nitrate and Complete Halide Analysis",
   chapter: "Salt Analysis",
   exam: "JEE Advanced",
 };
 
 const content = String.raw`
-## 10. Nitrite
+# Nitrite, Nitrate and Complete Halide Analysis
 
-### 10.1 Acidification
+## 1. Nitrite ion, $\mathrm{NO_2^-}$
 
-$$\mathrm{2NO_2^-+2H^+\rightarrow NO+NO_2+H_2O}$$
+Nitrite contains nitrogen in the +3 oxidation state. It can be oxidised to nitrate or reduced to lower nitrogen oxides, so it may behave as either a reducing or an oxidising agent.
 
-Colourless NO becomes brown in air:
+### 1.1 Action of dilute acid
 
-$$\mathrm{2NO+O_2\rightarrow2NO_2}$$
+$$
+\mathrm{NO_2^-+H^+\rightleftharpoons HNO_2}
+$$
 
-### 10.2 KI-starch test
+Nitrous acid is unstable:
 
-In acid medium, nitrite oxidises iodide:
+$$
+\mathrm{2HNO_2\rightarrow NO+NO_2+H_2O}
+$$
 
-$$\mathrm{2NO_2^-+2I^-+4H^+\rightarrow I_2+2NO+2H_2O}$$
+or, depending on conditions:
 
-Iodine gives blue colour with starch.
+$$
+\mathrm{3HNO_2\rightarrow HNO_3+2NO+H_2O}
+$$
 
-### 10.3 Permanganate
+Colourless $\mathrm{NO}$ is rapidly oxidised by air:
 
-Nitrite is oxidised to nitrate and decolourises acidified permanganate:
+$$
+\mathrm{2NO+O_2\rightarrow2NO_2}
+$$
 
-$$\mathrm{5NO_2^-+2MnO_4^-+6H^+\rightarrow5NO_3^-+2Mn^{2+}+3H_2O}$$
+Brown fumes therefore appear near the mouth of the tube.
 
-### 10.4 Griess test
+### 1.2 Starch-iodide test
 
-Nitrite diazotises sulphanilic acid in acidic medium; coupling with an aromatic amine gives a pink/red azo dye. This is highly sensitive.
+Acidified nitrite oxidises iodide to iodine:
 
-**Critical interference:** nitrite interferes with nitrate tests. Remove it first, commonly using sulfamic acid:
+$$
+\mathrm{2NO_2^-+2I^-+4H^+\rightarrow2NO+I_2+2H_2O}
+$$
 
-$$\mathrm{HNO_2+NH_2SO_3H\rightarrow N_2\uparrow+H_2SO_4+H_2O}$$
+Iodine gives a blue complex with starch. Other oxidising anions can interfere, so the test is not uniquely specific.
 
----
+### 1.3 Permanganate test
 
-## 11. Nitrate
+Nitrite reduces acidified permanganate and is oxidised to nitrate:
 
-## 11.1 Brown-ring test
-
-Add freshly prepared $\mathrm{FeSO_4}$ solution, then carefully layer concentrated $\mathrm{H_2SO_4}$ down the side of the tube.
-
-Reduction:
-
-$$\mathrm{NO_3^-+3Fe^{2+}+4H^+\rightarrow NO+3Fe^{3+}+2H_2O}$$
-
-Complex formation:
-
-$$\mathrm{[Fe(H_2O)_6]^{2+}+NO\rightarrow[Fe(H_2O)_5(NO)]^{2+}+H_2O}$$
-
-A brown ring of nitrosyl ferrous complex forms at the interface.
-
-**Conditions and traps**
-
-- Use freshly prepared $\mathrm{FeSO_4}$; old solution contains oxidised $\mathrm{Fe^{3+}}$.
-- Do not shake after layering; the ring must form at the interface.
-- Nitrite can also produce NO and interfere.
-- Strong oxidants can oxidise $\mathrm{Fe^{2+}}$ before complex formation.
-
-[FIGURE:brown-ring-phenomenon]
-
-## 11.2 Copper-turnings test
-
-Heating nitrate with concentrated $\mathrm{H_2SO_4}$ liberates $\mathrm{HNO_3}$, which oxidises copper:
-
-$$\mathrm{Cu+4HNO_3(conc.)\rightarrow Cu(NO_3)_2+2NO_2\uparrow+2H_2O}$$
-
-Brown $\mathrm{NO_2}$ fumes and a blue copper(II) solution are observed.
-
-## 11.3 Devarda's alloy test
-
-In strongly alkaline medium, Devarda's alloy reduces nitrate to ammonia:
-
-$$\mathrm{3NO_3^-+8Al+5OH^-+18H_2O\rightarrow3NH_3+8[Al(OH)_4]^-}$$
-
-The evolved ammonia turns moist red litmus blue.
-
-**Not unique unless nitrite and ammonium are absent.** Test ammonium on the original sample before adding nitrogen-containing reagents.
-
----
-
-## 12. Halides: Chloride, Bromide, Iodide
-
-## 12.1 Silver nitrate test
-
-Acidify the aqueous solution with dilute $\mathrm{HNO_3}$, then add $\mathrm{AgNO_3}$.
-
-| Ion | Precipitate | Colour | Behaviour with ammonia |
-|---|---|---|---|
-| $\mathrm{Cl^-}$ | AgCl | White, curdy | Soluble in dilute $\mathrm{NH_3}$ |
-| $\mathrm{Br^-}$ | AgBr | Cream/pale yellow | Sparingly soluble in concentrated $\mathrm{NH_3}$ |
-| $\mathrm{I^-}$ | AgI | Yellow | Insoluble in concentrated $\mathrm{NH_3}$ |
-
-[FIGURE:silver-nitrate-matrix]
-
-$$\mathrm{Ag^+ + X^-\rightarrow AgX\downarrow}$$
-
-Solubility order:
-
-$$\mathrm{AgCl>AgBr>AgI}$$
-
-and:
-
-$$K_{sp}(\mathrm{AgCl})>K_{sp}(\mathrm{AgBr})>K_{sp}(\mathrm{AgI})$$
-
-### Why nitric acid is used
-
-HCl would introduce chloride. Sulphuric acid can introduce sulphate precipitates with some ions. Dilute nitric acid removes interfering carbonate/sulphite without adding a halide:
-
-$$\mathrm{CO_3^{2-}+2H^+\rightarrow CO_2+H_2O}$$
-
-### Photochemical behaviour
-
-Silver halides darken in light due to formation of metallic silver:
-
-$$\mathrm{2AgX\xrightarrow{h\nu}2Ag+X_2}$$
-
-## 12.2 Concentrated sulphuric acid test
-
-### Chloride
-
-$$\mathrm{NaCl+H_2SO_4\rightarrow NaHSO_4+HCl\uparrow}$$
-
-HCl gives dense white fumes with ammonia:
-
-$$\mathrm{NH_3+HCl\rightarrow NH_4Cl}$$
-
-### Bromide
-
-First HBr forms, then concentrated sulphuric acid oxidises it:
-
-$$\mathrm{2HBr+H_2SO_4\rightarrow Br_2+SO_2+2H_2O}$$
-
-Observation: steamy acid fumes and brown bromine vapour.
-
-### Iodide
-
-HI is a stronger reducing agent and reduces sulphuric acid to several products:
-
-$$\mathrm{8HI+H_2SO_4\rightarrow4I_2+H_2S+4H_2O}$$
-
-Intermediate reduction products $\mathrm{SO_2}$ and S may also occur. Violet iodine vapours/black iodine and reducing products are observed.
-
-Reducing power:
-
-$$\mathrm{I^->Br^->Cl^-}$$
-
-## 12.3 Oxidation and organic-layer test
-
-Chlorine water oxidises bromide and iodide:
-
-$$\mathrm{Cl_2+2Br^-\rightarrow2Cl^-+Br_2}$$
-
-$$\mathrm{Cl_2+2I^-\rightarrow2Cl^-+I_2}$$
-
-On shaking with an immiscible organic solvent:
-
-- $\mathrm{Br_2}$: orange/brown organic layer;
-- $\mathrm{I_2}$: violet organic layer.
-
-With **excess** chlorine water, iodine may be further oxidised to colourless iodate, so the violet colour can disappear:
-
-$$\mathrm{I_2+5Cl_2+6H_2O\rightarrow2IO_3^-+10Cl^-+12H^+}$$
-
-This disappearance is a classic JEE observation.
-
-[FIGURE:halide-layer-test]
-
-## 12.4 Chromyl chloride test for chloride
-
-Heat a dry chloride with solid $\mathrm{K_2Cr_2O_7}$ and concentrated $\mathrm{H_2SO_4}$. Deep red vapours of chromyl chloride form:
-
-$$\mathrm{4NaCl+K_2Cr_2O_7+6H_2SO_4\rightarrow2CrO_2Cl_2\uparrow+4NaHSO_4+2KHSO_4+3H_2O}$$
-
-Absorb vapours in NaOH:
-
-$$\mathrm{CrO_2Cl_2+4OH^-\rightarrow CrO_4^{2-}+2Cl^-+2H_2O}$$
-
-The yellow chromate solution gives:
-
-$$\mathrm{Pb^{2+}+CrO_4^{2-}\rightarrow PbCrO_4\downarrow}$$
-
-yellow lead chromate.
-
-**Limitations**
-
-- Bromides and iodides do not give the chromyl chloride test.
-- Fluorides do not give it because $\mathrm{CrO_2F_2}$ is not produced under the ordinary test conditions in the same diagnostic manner.
-- Chlorides of $\mathrm{Hg^{2+}}$, $\mathrm{Ag^+}$, $\mathrm{Pb^{2+}}$, $\mathrm{Sn^{2+}/Sn^{4+}}$, and $\mathrm{Sb^{3+}}$ may be unsuitable or unreliable because they are non-ionic, sparingly soluble, or undergo competing reactions.
-
----
-
-## 46. Expanded Halide Separation in Mixtures
-
-When chloride, bromide and iodide occur together, a single silver nitrate test produces mixed precipitates whose colours overlap. Selective oxidation is more informative.
-
-Add chlorine water gradually and shake with an organic solvent. Iodide is oxidised first because $\mathrm{I^-}$ is the strongest reducing halide:
-
-$$\mathrm{Cl_2+2I^-\rightarrow2Cl^-+I_2}$$
-
-The organic layer becomes violet. Continued addition oxidises bromide, producing orange bromine. In still greater excess, iodine is oxidised to iodate and its violet colour disappears. Interpretation must therefore follow the **order of colour changes**, not only the final colour.
-
-Selective precipitation and ammonia treatment provide another route. Add $\mathrm{AgNO_3}$ under nitric-acid conditions, filter, and treat with dilute ammonia. AgCl dissolves. Concentrated ammonia dissolves much of AgBr, whereas AgI remains. Acidifying each ammine filtrate reprecipitates the corresponding silver halide.
-
-Oxidising contaminants such as nitrite, chlorate and dichromate can liberate halogens without chlorine water. Reducing contaminants such as sulphite and thiosulphate can consume liberated halogen. Therefore these species must be identified or removed before interpreting an organic-layer test.
-
-Chromyl chloride is a special confirmation for many ionic chlorides, not a universal test for every chlorine-containing compound. Covalent chlorides, insoluble chlorides and compounds that hydrolyse or undergo redox reactions may not respond normally.
-
----
-
-## 47. Expanded Nitrogen-Anion Analysis
-
-Ammonium, nitrite and nitrate can interfere with one another because all may ultimately produce ammonia, NO or $\mathrm{NO_2}$ under different conditions.
-
-The correct sequence is:
-
-1. Test ammonium directly with NaOH before adding any ammonium reagent.
-2. Test nitrite using Griess reagent or acidified iodide-starch.
-3. Destroy nitrite with sulfamic acid.
-4. Test the treated portion for nitrate by the brown-ring or Devarda method.
-
-In the brown-ring test, nitrate is not “complexed directly.” It is first reduced to NO by $\mathrm{Fe^{2+}}$. NO then coordinates to another ferrous centre. Excessive heating, shaking or mixing with concentrated acid destroys the sharp interface and may oxidise the complex.
-
-Devarda's alloy contains aluminium with copper and zinc. Aluminium is the principal reducing metal in alkaline solution. Nitrate nitrogen changes from +5 to −3:
-
-$$\mathrm{NO_3^-+8e^-+9H_2O\rightarrow NH_3+9OH^-}$$
-
-Aluminium supplies electrons while forming aluminate. Because nitrite can also be reduced and pre-existing ammonium also gives ammonia, the test is meaningful only after controlling both interferences.
-
-Nitrate is thermally stable in alkali-metal nitrates with different products:
-
-$$\mathrm{2NaNO_3\xrightarrow{\Delta}2NaNO_2+O_2}$$
-
-but many heavy-metal nitrates give metal oxide, $\mathrm{NO_2}$ and $\mathrm{O_2}$. Thermal behaviour can support, but should not replace, a wet confirmation.
-
----
-
-## 81. Complete Nitrite Named-Test Series
-
-### 81.1 Brown-fume test
-
-Cold dilute acid produces nitrous acid, which decomposes:
-
-$$\mathrm{2HNO_2\rightarrow NO+NO_2+H_2O}$$
-
-NO becomes brown $\mathrm{NO_2}$ in air.
-
-### 81.2 Nitrite brown-ring test
-
-Nitrite directly generates NO in mild acid and forms the nitrosyl ferrous complex with $\mathrm{FeSO_4}$. Unlike the nitrate procedure, concentrated sulphuric acid is unnecessary. This similarity is why nitrite interferes with the nitrate brown-ring test.
-
-### 81.3 KI-starch test
-
-$$\mathrm{2NO_2^-+2I^-+4H^+\rightarrow I_2+2NO+2H_2O}$$
-
-Iodine turns starch deep blue.
-
-### 81.4 Acidified permanganate test
-
-$$\mathrm{5NO_2^-+2MnO_4^-+6H^+\rightarrow5NO_3^-+2Mn^{2+}+3H_2O}$$
+$$
+\mathrm{5NO_2^-+2MnO_4^-+6H^+\rightarrow5NO_3^-+2Mn^{2+}+3H_2O}
+$$
 
 Purple colour disappears.
 
-### 81.5 Ammonium-chloride destruction
+### 1.4 Sulphanilic acid and $\alpha$-naphthylamine test
 
-On boiling with excess ammonium ion:
+Nitrite in acid forms nitrous acid, which diazotises sulphanilic acid. Coupling with $\alpha$-naphthylamine produces a red azo dye. This is a sensitive and widely used specific test.
 
-$$\mathrm{NH_4^+ + NO_2^-\rightarrow N_2\uparrow+2H_2O}$$
+Conceptual steps:
 
-This removes nitrite without introducing a strong oxidant.
+1. formation of $\mathrm{HNO_2}$;
+2. diazotisation of an aromatic amine;
+3. azo coupling;
+4. red/pink colour.
 
-### 81.6 Urea test
+### 1.5 Thiourea followed by ferric chloride
 
-Acidified nitrite decomposes urea:
+Nitrite oxidises or nitrosates thiourea under suitable acidic conditions. Subsequent ferric-ion behaviour can produce a characteristic test. Exact procedural conditions matter; in JEE questions the reagent sequence must be preserved.
 
-$$\mathrm{CO(NH_2)_2+2HNO_2\rightarrow CO_2+2N_2+3H_2O}$$
+### 1.6 Nitrite versus nitrate
 
-### 81.7 Thiourea test
+| Property | Nitrite | Nitrate |
+|---|---|---|
+| N oxidation state | +3 | +5 |
+| Dilute acid | Unstable $\mathrm{HNO_2}$; nitrogen oxides | No comparable immediate decomposition |
+| Acidified permanganate | Decolourises | No ordinary reaction |
+| Starch-iodide | Liberates iodine in acid | No ordinary reaction without strong conditions |
+| Azo-dye test | Positive | Negative |
+| Brown-ring test | Can interfere strongly | Characteristic after nitrite removal |
 
-Thiourea reacts with nitrous acid through a more complex redox/decomposition sequence, giving nitrogenous gases and sulphur-containing products. It is used for nitrite destruction/detection under acetic-acid conditions.
+Nitrite must be removed before a nitrate test, often by treatment with ammonium chloride or sulphamic acid under controlled conditions.
 
-### 81.8 Sulfamic-acid test
+## 2. Nitrate ion, $\mathrm{NO_3^-}$
 
-$$\mathrm{NH_2SO_3H+HNO_2\rightarrow N_2\uparrow+H_2SO_4+H_2O}$$
+Nitrate contains nitrogen in the +5 state and is usually an oxidising species under strongly acidic or high-temperature conditions.
 
-This clean, rapid reaction is preferred for removing nitrite before nitrate analysis.
+### 2.1 Brown-ring test
 
-### 81.9 Griess-Ilosvay reaction
+[FIGURE:brown-ring-phenomenon]
 
-Nitrous acid diazotises sulphanilic acid:
+Add freshly prepared ferrous sulphate solution to the nitrate solution. Carefully introduce concentrated sulphuric acid along the side so two layers form. A brown ring appears at the interface.
 
-$$\mathrm{ArNH_2+HNO_2+H^+\rightarrow ArN_2^++2H_2O}$$
+#### Reduction of nitrate
 
-The diazonium ion couples with $\alpha$-naphthylamine or a modern coupling amine to form a pink/red azo dye.
+$$
+\mathrm{NO_3^-+3Fe^{2+}+4H^+\rightarrow NO+3Fe^{3+}+2H_2O}
+$$
 
-**Named reaction:** diazotisation followed by azo coupling.
+#### Complex formation
 
-### 81.10 Indole test
+$$
+\mathrm{[Fe(H_2O)_6]^{2+}+NO\rightarrow[Fe(H_2O)_5(NO)]^{2+}+H_2O}
+$$
 
-Acidified nitrite nitrosates/oxidises indole to a red product. Ferric ion can interfere and is masked by tartrate when required.
+The brown nitrosyl iron complex is often written as $\mathrm{[Fe(H_2O)_5NO]SO_4}$ in the sulphate medium.
 
----
+#### Why the ring is at the interface
 
-## 82. Complete Nitrate Named-Test Series
+- concentrated sulphuric acid provides high acidity;
+- nitrate and ferrous ion are present in the upper aqueous layer;
+- controlled diffusion produces a narrow region where NO is generated and trapped;
+- vigorous mixing overheats the solution and may destroy the sharp ring.
 
-### 82.1 Brown-ring test
+#### Interferences
 
-**Named test:** Brown-ring test.  
-**Reagents:** fresh $\mathrm{FeSO_4}$ and concentrated $\mathrm{H_2SO_4}$.
+Nitrite also produces nitrogen oxides and can give a false result. Oxidising agents may consume $\mathrm{Fe^{2+}}$. Halides and coloured ions can obscure the observation.
 
-$$\mathrm{NO_3^-+3Fe^{2+}+4H^+\rightarrow NO+3Fe^{3+}+2H_2O}$$
+### 2.2 Copper-turnings test
 
-$$\mathrm{Fe^{2+}+NO+5H_2O\rightarrow[Fe(H_2O)_5(NO)]^{2+}}$$
+Warm the sample with copper turnings and concentrated sulphuric acid. Nitrate generates nitric acid in situ, which oxidises copper:
 
-### 82.2 Devarda's-alloy test
+$$
+\mathrm{2NO_3^-+4H^++Cu\rightarrow Cu^{2+}+2NO_2+2H_2O}
+$$
 
-**Named test:** Devarda reduction.  
-**Reagent:** Cu-Al-Zn alloy in strong alkali.  
-**Product:** ammonia.
+Brown $\mathrm{NO_2}$ fumes and a blue copper(II) solution support nitrate. Nitrite and other oxidants interfere.
 
-$$\mathrm{3NO_3^-+8Al+5OH^-+18H_2O\rightarrow3NH_3+8[Al(OH)_4]^-}$$
+### 2.3 Devarda's alloy test
 
-### 82.3 Copper-turnings test
+In strongly alkaline medium, nitrate is reduced by aluminium-containing Devarda's alloy to ammonia:
 
-Concentrated nitric acid generated from nitrate oxidises Cu to blue $\mathrm{Cu^{2+}}$ with brown $\mathrm{NO_2}$:
+$$
+\mathrm{3NO_3^-+8Al+5OH^-+18H_2O\rightarrow3NH_3+8[Al(OH)_4]^-}
+$$
 
-$$\mathrm{Cu+4HNO_3\rightarrow Cu(NO_3)_2+2NO_2+2H_2O}$$
+The evolved ammonia:
 
-### 82.4 Reduction-to-nitrite test
+- turns moist red litmus blue;
+- forms white fumes with HCl;
+- may be confirmed with Nessler's reagent in appropriate analytical contexts.
 
-Nitrate is reduced with zinc or a suitable mild reducing system to nitrite, which is then identified by Griess reagent:
+Ammonium ion must be tested and removed beforehand, otherwise the ammonia is not attributable to nitrate.
 
-$$\mathrm{NO_3^-+2H^++2e^-\rightarrow NO_2^-+H_2O}$$
+### 2.4 Diphenylamine or brucine tests
 
-This indirect test is sensitive but any original nitrite must first be removed or measured separately.
+Nitrate can oxidise organic reagents in strongly acidic medium to coloured products. These tests are sensitive but not uniquely specific because other oxidants interfere.
 
-### 82.5 Diphenylamine test
+## 3. Concentrated sulphuric acid test for halides
 
-In strongly acidic medium, nitrate/other oxidants oxidise diphenylamine to a deep blue quinoid product.
+The behaviour reflects both acid displacement and redox power.
 
-**Limitation:** chlorate, bromate, dichromate, permanganate, nitrite and other oxidants also respond. It is sensitive but not specific.
+### 3.1 Chloride
 
-### 82.6 Brucine test
+$$
+\mathrm{NaCl+H_2SO_4\rightarrow NaHSO_4+HCl\uparrow}
+$$
 
-Nitrate in concentrated sulphuric acid gives a yellow-to-red colour with brucine through nitration/oxidation products.
+Hydrogen chloride is colourless, pungent, gives dense white fumes with ammonia, and turns moist blue litmus red.
 
-**Limitation:** hazardous concentrated acid and poor specificity make it a supporting classical test, not the preferred JEE confirmation.
+Chloride is not a strong enough reducing agent to reduce concentrated sulphuric acid appreciably.
 
----
+### 3.2 Bromide
 
-## 84. Complete Halide Named-Test Series
+Initial displacement:
 
-### 84.1 Manganese-dioxide test
+$$
+\mathrm{NaBr+H_2SO_4\rightarrow NaHSO_4+HBr}
+$$
 
-Heat a halide with $\mathrm{MnO_2}$ and concentrated sulphuric acid:
+Hydrogen bromide reduces sulphuric acid:
 
-$$\mathrm{MnO_2+4H^++2X^-\rightarrow Mn^{2+}+X_2+2H_2O}$$
+$$
+\mathrm{2HBr+H_2SO_4\rightarrow Br_2+SO_2+2H_2O}
+$$
 
-- chloride: greenish-yellow $\mathrm{Cl_2}$;
-- bromide: red-brown $\mathrm{Br_2}$;
-- iodide: violet iodine/black deposit.
+Observations may include red-brown bromine vapour and sulphur dioxide.
 
-### 84.2 Silver-nitrate and ammonia test
+### 3.3 Iodide
 
-**Named analytical sequence:** acidified silver nitrate followed by ammonia-solubility differentiation.
+Initial displacement:
 
-### 84.3 Chromyl-chloride test
+$$
+\mathrm{NaI+H_2SO_4\rightarrow NaHSO_4+HI}
+$$
 
-**Named test for chloride:** chromyl-chloride test. Red $\mathrm{CrO_2Cl_2}$ vapour is absorbed in alkali, forming yellow chromate, then confirmed as yellow $\mathrm{PbCrO_4}$.
+HI is a stronger reducing agent. Possible products of sulphuric-acid reduction include $\mathrm{SO_2}$, sulphur, and $\mathrm{H_2S}$:
 
-### 84.4 Layer test
+$$
+\mathrm{2HI+H_2SO_4\rightarrow I_2+SO_2+2H_2O}
+$$
 
-**Named test for Br⁻ and I⁻:** layer test. Chlorine water liberates halogen, extracted into an immiscible organic solvent:
+$$
+\mathrm{6HI+H_2SO_4\rightarrow3I_2+S+4H_2O}
+$$
 
-- bromine: red/orange-brown layer;
-- iodine: violet layer.
+$$
+\mathrm{8HI+H_2SO_4\rightarrow4I_2+H_2S+4H_2O}
+$$
 
-Excess chlorine can convert bromine partly to pale BrCl-type interhalogen colour under some conditions and oxidise iodine fully to iodate.
+Violet iodine vapour or black solid iodine is observed. The mixture may also contain sulphur and hydrogen sulphide.
 
-### 84.5 Fluorescein-eosin test
+### 3.4 Reducing-power order
 
-**Named test for bromine/bromide:** fluorescein test. Bromination of fluorescein produces red eosin.
+$$
+\mathrm{Cl^-<Br^-<I^-}
+$$
 
-### 84.6 Fuchsin test
+This follows the decreasing ease of oxidation down the group.
 
-Free bromine restores/produces a blue-violet brominated dye from appropriately decolourised fuchsin reagent.
+## 4. Silver nitrate test for halides
 
-### 84.7 Copper-sulphate test for iodide
+Acidify a fresh solution with dilute nitric acid, then add silver nitrate.
 
-$$\mathrm{2Cu^{2+}+4I^-\rightarrow2CuI\downarrow+I_2}$$
+Why nitric acid?
 
-Thiosulphate removes iodine and exposes white CuI.
+- it removes carbonate and sulphite;
+- it does not introduce chloride;
+- nitrate salts are generally soluble.
 
-### 84.8 Mercuric-chloride test for iodide
+[FIGURE:silver-nitrate-matrix]
 
-$$\mathrm{Hg^{2+}+2I^-\rightarrow HgI_2\downarrow}$$
+| Halide | Precipitate | Colour | Solubility in ammonia |
+|---|---|---|---|
+| $\mathrm{Cl^-}$ | $\mathrm{AgCl}$ | White curdy | Soluble in dilute $\mathrm{NH_3}$ |
+| $\mathrm{Br^-}$ | $\mathrm{AgBr}$ | Cream/pale yellow | Sparingly soluble in concentrated $\mathrm{NH_3}$ |
+| $\mathrm{I^-}$ | $\mathrm{AgI}$ | Yellow | Insoluble in ammonia |
 
-Scarlet $\mathrm{HgI_2}$ dissolves in excess iodide:
+Equations:
 
-$$\mathrm{HgI_2+2I^-\rightarrow[HgI_4]^{2-}}$$
+$$
+\mathrm{Ag^++X^-\rightarrow AgX\downarrow}
+$$
 
-### 84.9 Catalytic Ce(IV) test for iodide
+For chloride dissolution:
 
-Iodide catalyses certain Ce(IV)-mediated oxidation reactions, accelerating disappearance of yellow Ce(IV) colour. The test is sensitive but catalytic poisons and other reducing ions interfere.
+$$
+\mathrm{AgCl+2NH_3\rightleftharpoons[Ag(NH_3)_2]^++Cl^-}
+$$
 
----
+Acidification destroys the complex:
+
+$$
+\mathrm{[Ag(NH_3)_2]^++2H^+\rightarrow Ag^++2NH_4^+}
+$$
+
+and $\mathrm{AgCl}$ reprecipitates if chloride remains.
+
+### 4.1 Why ammonia solubility differs
+
+The dissolution tendency depends on:
+
+$$
+K_{sp}(\mathrm{AgX})\times\beta_2(\mathrm{[Ag(NH_3)_2]^+})
+$$
+
+$\mathrm{AgI}$ has such a small $K_{sp}$ that ordinary ammonia cannot drive substantial dissolution.
+
+### 4.2 Thiosulphate dissolution
+
+Silver halides can dissolve in thiosulphate:
+
+$$
+\mathrm{AgX+2S_2O_3^{2-}\rightarrow[Ag(S_2O_3)_2]^{3-}+X^-}
+$$
+
+This is not the standard JEE distinction because all three may dissolve to differing extents under suitable conditions.
+
+## 5. Chlorine-water and organic-layer test
+
+[FIGURE:halide-layer-test]
+
+Chlorine oxidises bromide and iodide:
+
+$$
+\mathrm{Cl_2+2Br^-\rightarrow2Cl^-+Br_2}
+$$
+
+$$
+\mathrm{Cl_2+2I^-\rightarrow2Cl^-+I_2}
+$$
+
+Extraction into an immiscible organic solvent intensifies the colour:
+
+- bromine: orange/red-brown organic layer;
+- iodine: violet/purple organic layer.
+
+Excess chlorine can further oxidise iodine, causing the violet colour to disappear:
+
+$$
+\mathrm{I_2+5Cl_2+6H_2O\rightarrow2HIO_3+10HCl}
+$$
+
+Therefore chlorine water must be added dropwise.
+
+### 5.1 Bromide and iodide together
+
+Add chlorine water gradually and extract after each addition.
+
+1. Iodide is oxidised first because it is the stronger reducing agent.
+2. Iodine gives a violet organic layer.
+3. Further chlorine oxidises iodine to colourless higher oxidation-state products.
+4. Bromide then gives orange bromine.
+
+This sequential colour behaviour is a common JEE Advanced problem.
+
+## 6. Chromyl chloride test for chloride
+
+[FIGURE:chromate-dichromate-redox]
+
+Heat the dry chloride with solid potassium dichromate and concentrated sulphuric acid:
+
+$$
+\mathrm{4Cl^-+Cr_2O_7^{2-}+6H^+\rightarrow2CrO_2Cl_2\uparrow+3H_2O}
+$$
+
+Red vapours of chromyl chloride are produced.
+
+Absorb in sodium hydroxide:
+
+$$
+\mathrm{CrO_2Cl_2+4OH^-\rightarrow CrO_4^{2-}+2Cl^-+2H_2O}
+$$
+
+The yellow chromate solution may be confirmed with lead acetate:
+
+$$
+\mathrm{Pb^{2+}+CrO_4^{2-}\rightarrow PbCrO_4\downarrow}
+$$
+
+Yellow lead chromate forms.
+
+### 6.1 Limitations
+
+- bromide and iodide do not give chromyl bromide/iodide under the same test conditions;
+- fluorides can interfere by forming chromium fluoride species;
+- chlorides of mercury and some covalent chlorides may behave differently;
+- the test is not carried out on a solution already containing added chloride.
+
+## 7. Distinguishing halides in mixtures
+
+### 7.1 Silver-halide separation by ammonia
+
+1. Precipitate all silver halides.
+2. Treat with dilute ammonia: $\mathrm{AgCl}$ dissolves.
+3. Filter.
+4. Treat residue with concentrated ammonia: much $\mathrm{AgBr}$ dissolves.
+5. $\mathrm{AgI}$ remains.
+6. Reprecipitate dissolved halide fractions by acidification if confirmation is required.
+
+### 7.2 Oxidation-extraction sequence
+
+Use carefully controlled chlorine water and an organic solvent. Interpret order of oxidation and disappearance of iodine colour before bromine appears.
+
+### 7.3 Selective oxidation
+
+Stronger oxidants or controlled redox potentials may distinguish halides, but JEE questions must state conditions.
+
+## 8. Fluoride warning
+
+Fluoride does not give a useful silver nitrate precipitate because $\mathrm{AgF}$ is soluble. It requires separate tests based on calcium fluoride precipitation, glass etching chemistry, or zirconium-dye complexes.
+
+## 9. Interference table
+
+| Test | Major interference | Control |
+|---|---|---|
+| Brown ring | Nitrite, oxidants, coloured ions | Remove nitrite; use fresh $\mathrm{FeSO_4}$ |
+| AgNO$_3$ halide test | Carbonate, sulphite, phosphate, chromate | Acidify with dilute $\mathrm{HNO_3}$ |
+| Chromyl chloride | Fluoride, pre-added chloride, reducing anions | Use dry fresh sample; separate portion |
+| Layer test | Other reducing anions, excess chlorine | Remove interferents; add chlorine dropwise |
+| Devarda nitrate test | Ammonium salts | Test/remove ammonium first |
+| Conc. H$_2$SO$_4$ halide test | Mixed halides, nitrate, oxidants | Confirm by wet separation |
+
+## 10. JEE Advanced conclusions
+
+1. $\mathrm{AgCl}$ dissolves in dilute ammonia; $\mathrm{AgBr}$ requires concentrated ammonia; $\mathrm{AgI}$ remains.
+2. Bromide and iodide reduce concentrated sulphuric acid; chloride mainly undergoes acid displacement.
+3. Nitrite must be removed before a nitrate brown-ring test.
+4. In the layer test, excess chlorine can remove iodine colour and reveal bromide later.
+5. The chromyl chloride test converts chloride evidence into a chromate precipitate, providing a two-stage confirmation.
+6. Nitrate reduction to ammonia is valid only if ammonium ion was absent initially.
 `;
 
 export default function SaltAnalysisPart05() {

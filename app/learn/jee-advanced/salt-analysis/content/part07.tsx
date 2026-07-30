@@ -8,267 +8,357 @@ export const metadata = {
 };
 
 const content = String.raw`
-## 17. Borate
+# Borate, Fluoride, Silicate and Coloured Oxoanions
 
-### 17.1 Turmeric paper
+## 1. Borate chemistry
 
-Acidify the borate; boric acid turns turmeric paper reddish brown. Addition of alkali changes the spot to greenish/blue-black.
+“Borate” in qualitative analysis may represent different boron-oxygen species because boric acid is weak and polymeric borates form in concentrated solution. Test equations are therefore often written in simplified form.
 
-### 17.2 Alcohol flame test
+### 1.1 Acidification
 
-Heat with methanol/ethanol and concentrated sulphuric acid to form volatile trialkyl borate:
+Borates give boric acid:
 
-$$\mathrm{H_3BO_3+3CH_3OH\rightleftharpoons B(OCH_3)_3+3H_2O}$$
+$$
+\mathrm{BO_3^{3-}+3H^+\rightarrow H_3BO_3}
+$$
 
-The vapour burns with a green-edged flame.
+A more realistic aqueous description involves $\mathrm{B(OH)_3}$.
 
-**Interference:** copper and barium salts can also impart green shades. Extracting/producing the volatile ester helps distinguish borate.
+Boric acid behaves as a Lewis acid by accepting hydroxide:
 
-### 17.3 Silver nitrate
+$$
+\mathrm{B(OH)_3+2H_2O\rightleftharpoons B(OH)_4^-+H_3O^+}
+$$
 
-Concentrated borax solution may give white silver metaborate:
+### 1.2 Turmeric-paper test
 
-$$\mathrm{Ag^+ + BO_2^-\rightarrow AgBO_2\downarrow}$$
+Acidify the borate solution and apply to turmeric paper. On drying, a reddish-brown colour develops due to a boron-curcumin complex. Addition of alkali changes the colour toward greenish-black or blue-green.
 
----
+Interferences include strong oxidants and highly coloured species.
 
-## 18. Fluoride and Silicate
+### 1.3 Alcohol-flame test
 
-## 18.1 Fluoride
+Treat borate with concentrated sulphuric acid and methanol or ethanol. A volatile borate ester forms:
 
-With calcium chloride:
+$$
+\mathrm{H_3BO_3+3CH_3OH\rightleftharpoons B(OCH_3)_3+3H_2O}
+$$
 
-$$\mathrm{Ca^{2+}+2F^-\rightarrow CaF_2\downarrow}$$
+Trimethyl borate burns with a green-edged flame.
 
-White $\mathrm{CaF_2}$ is sparingly soluble.
+The green flame is due to volatile boron species. Copper salts can also give green flames, so preliminary separation and reagent blanks matter.
 
-On treatment with concentrated sulphuric acid, HF is liberated:
+### 1.4 Borax bead chemistry
 
-$$\mathrm{CaF_2+H_2SO_4\rightarrow CaSO_4+2HF}$$
+Borax gives a glassy bead:
 
-HF attacks glass:
+$$
+\mathrm{Na_2B_4O_7\cdot10H_2O\xrightarrow{\Delta}2NaBO_2+B_2O_3+10H_2O}
+$$
 
-$$\mathrm{SiO_2+4HF\rightarrow SiF_4+2H_2O}$$
+The boric anhydride dissolves metal oxides and is the basis of the borax bead test described in Part 2.
 
-$$\mathrm{SiF_4+2HF\rightarrow H_2SiF_6}$$
+### 1.5 Borate as an interfering radical
 
-This reaction is studied theoretically; HF is exceptionally hazardous.
+Borate can precipitate metal borates in ammoniacal solution and contaminate Group III and later cation precipitates. It is therefore tested before systematic cation separation and removed when necessary.
 
-## 18.2 Silicate
+## 2. Fluoride ion, $\mathrm{F^-}$
 
-Acidification gives gelatinous silicic acid:
+Fluoride differs sharply from the other halides.
 
-$$\mathrm{SiO_3^{2-}+2H^+\rightarrow H_2SiO_3\downarrow}$$
+### 2.1 Silver nitrate
 
-On heating:
+$\mathrm{AgF}$ is soluble in water. Therefore fluoride does not give the normal silver-halide precipitate.
 
-$$\mathrm{H_2SiO_3\rightarrow SiO_2+H_2O}$$
+### 2.2 Calcium chloride test
 
-Silica with fluoride and acid can form volatile $\mathrm{SiF_4}$, which gives a white deposit/gel of silica on hydrolysis:
+$$
+\mathrm{Ca^{2+}+2F^-\rightarrow CaF_2\downarrow}
+$$
 
-$$\mathrm{3SiF_4+2H_2O\rightarrow2H_2SiF_6+SiO_2\downarrow}$$
+White calcium fluoride is sparingly soluble. Calcium oxalate and carbonate can interfere, so the solution and acid treatment must be controlled.
 
----
+### 2.3 Glass-etching chemistry
 
-## 19. Chromate, Dichromate, Manganate, Permanganate
+Concentrated sulphuric acid liberates hydrogen fluoride:
 
-## 19.1 Chromate-dichromate equilibrium
+$$
+\mathrm{CaF_2+H_2SO_4\rightarrow CaSO_4+2HF}
+$$
 
-$$\mathrm{2CrO_4^{2-}+2H^+\rightleftharpoons Cr_2O_7^{2-}+H_2O}$$
+HF attacks silica:
 
-- chromate: yellow;
-- dichromate: orange;
-- acid shifts toward dichromate;
-- alkali shifts toward chromate.
+$$
+\mathrm{SiO_2+4HF\rightarrow SiF_4\uparrow+2H_2O}
+$$
 
-Important precipitates:
+With excess HF:
 
-$$\mathrm{Pb^{2+}+CrO_4^{2-}\rightarrow PbCrO_4\downarrow}\quad\text{yellow}$$
+$$
+\mathrm{SiF_4+2HF\rightarrow H_2SiF_6}
+$$
 
-$$\mathrm{2Ag^++CrO_4^{2-}\rightarrow Ag_2CrO_4\downarrow}\quad\text{brick red}$$
+This chemistry explains glass etching. HF is extremely hazardous; the test is studied conceptually.
 
-$$\mathrm{Ba^{2+}+CrO_4^{2-}\rightarrow BaCrO_4\downarrow}\quad\text{yellow}$$
+### 2.4 Zirconium-alizarin or zirconium dye test
 
-Acidified dichromate oxidises reducing agents and changes orange $\mathrm{Cr(VI)}$ to green $\mathrm{Cr^{3+}}$.
+Fluoride forms a strong complex with zirconium and displaces a coloured dye from a zirconium-dye complex, producing a characteristic colour change. The test illustrates ligand competition.
+
+### 2.5 Interference
+
+Fluoride complexes $\mathrm{Al^{3+}}$, $\mathrm{Fe^{3+}}$, $\mathrm{Zr^{4+}}$ and other hard metal ions. It can prevent or alter precipitation and is therefore an interfering radical.
+
+## 3. Silicate ion
+
+Silicate speciation depends on pH and concentration. A simplified acidification reaction is:
+
+$$
+\mathrm{SiO_3^{2-}+2H^+\rightarrow H_2SiO_3}
+$$
+
+Hydrated silica forms a gelatinous precipitate:
+
+$$
+\mathrm{H_2SiO_3\rightarrow SiO_2\cdot xH_2O}
+$$
+
+### 3.1 Acid-gel test
+
+On acidifying a soluble silicate, a white gelatinous mass of hydrated silica appears. It is insoluble in most acids but dissolves in strong alkali:
+
+$$
+\mathrm{SiO_2+2OH^-\rightarrow SiO_3^{2-}+H_2O}
+$$
+
+### 3.2 Ammonium molybdate
+
+Under controlled acidic conditions, silicate can form yellow silicomolybdic species. Phosphate and arsenate give related reactions and interfere.
+
+### 3.3 Fluoride reaction
+
+Silica dissolves in HF through volatile $\mathrm{SiF_4}$ or hexafluorosilicate formation. This links fluoride and silicate analysis.
+
+### 3.4 Silicate interference
+
+Silicate can form gelatinous precipitates that adsorb ions and clog filters. It may carry down cations and must be removed before systematic separation.
+
+## 4. Chromate and dichromate
 
 [FIGURE:chromate-dichromate-redox]
 
-## 19.2 Manganate and permanganate
+### 4.1 Acid-base equilibrium
 
-- $\mathrm{MnO_4^{2-}}$: green;
-- $\mathrm{MnO_4^-}$: purple.
+$$
+\mathrm{2CrO_4^{2-}+2H^+\rightleftharpoons Cr_2O_7^{2-}+H_2O}
+$$
 
-In acid, manganate disproportionates:
+- chromate: yellow;
+- dichromate: orange.
 
-$$\mathrm{3MnO_4^{2-}+4H^+\rightarrow2MnO_4^-+MnO_2\downarrow+2H_2O}$$
+Adding acid shifts toward dichromate. Adding base shifts toward chromate.
 
-Permanganate reduction products depend on medium:
+### 4.2 Barium chromate
 
-| Medium | Main product |
-|---|---|
-| Strongly acidic | $\mathrm{Mn^{2+}}$ |
-| Neutral/weakly alkaline | $\mathrm{MnO_2}$ |
-| Strongly alkaline | $\mathrm{MnO_4^{2-}}$ |
+$$
+\mathrm{Ba^{2+}+CrO_4^{2-}\rightarrow BaCrO_4\downarrow}
+$$
 
----
+Yellow barium chromate forms. It dissolves in stronger acid as chromate concentration decreases and dichromate/hydrogen chromate species form.
 
-## 20. Interfering Anions
+### 4.3 Lead chromate
 
-### 20.1 Why they interfere
+$$
+\mathrm{Pb^{2+}+CrO_4^{2-}\rightarrow PbCrO_4\downarrow}
+$$
 
-Phosphate, borate, fluoride, oxalate, silicate, and arsenate can precipitate cations of later groups when the solution is made ammoniacal for Group III. The resulting precipitate may be mistaken for hydroxides or may carry cations into the wrong group.
+Yellow lead chromate is a useful confirmatory precipitate.
 
-[FIGURE:interfering-radicals-sabotage]
+In strong base:
 
-### 20.2 Removal by carbonate extraction
+$$
+\mathrm{PbCrO_4+4OH^-\rightarrow[Pb(OH)_4]^{2-}+CrO_4^{2-}}
+$$
 
-A standard approach is to boil the salt with concentrated sodium carbonate:
+The exact lead hydroxo species depends on conditions.
 
-$$\mathrm{MX+Na_2CO_3\rightarrow MCO_3\downarrow+Na\text{-salt of the anion}}$$
+### 4.4 Silver chromate
 
-The cation remains in the residue as carbonate/hydroxide, while interfering anions enter the filtrate as soluble sodium salts. This **sodium carbonate extract** is useful for anion testing.
+$$
+\mathrm{2Ag^++CrO_4^{2-}\rightarrow Ag_2CrO_4\downarrow}
+$$
 
-[FIGURE:soda-extract-pipeline]
+Silver chromate is brick red. It dissolves in nitric acid and ammonia.
 
-### 20.3 Removal before cation analysis
+### 4.5 Hydrogen peroxide test
 
-One classical approach:
+In acidic solution, dichromate reacts with hydrogen peroxide to form a transient blue peroxo chromium species, often written $\mathrm{CrO_5}$:
 
-1. Add concentrated $\mathrm{HNO_3}$ and evaporate to near dryness to oxidise/removal susceptible species.
-2. Add concentrated HCl and evaporate to remove nitrate.
-3. Treat the residue with dilute HCl and filter off insoluble material such as silica.
+$$
+\mathrm{Cr_2O_7^{2-}+4H_2O_2+2H^+\rightarrow2CrO_5+5H_2O}
+$$
 
-The exact method depends on the suspected anion. A method must not remove or introduce the cation being sought.
+The blue species is extractable into ether or another suitable organic solvent and is unstable in water.
 
----
+### 4.6 Oxidising reactions
 
-## 71. Complete Acid-Radical Test Matrix
+Dichromate oxidises iodide:
 
-| Anion | Preliminary test | Confirmatory test | Key observation | Major interference/precaution |
-|---|---|---|---|---|
-| $\mathrm{CO_3^{2-}}$ | Dilute acid | Limewater; MgSO₄; phenolphthalein | CO₂; limewater milky; immediate MgCO₃ | SO₂ also clouds limewater |
-| $\mathrm{HCO_3^-}$ | Dilute acid | MgSO₄ on boiling; phenolphthalein | CO₂; no immediate MgCO₃; colourless indicator | Mixed carbonate changes result |
-| $\mathrm{SO_3^{2-}}$ | Dilute acid | Acidified KMnO₄/dichromate; BaSO₃ acid solubility | SO₂; oxidant decolourised | Thiosulphate also reduces oxidants |
-| $\mathrm{HSO_3^-}$ | Dilute acid | Same as sulphite | SO₂ | Distinguish by acid-base composition, not gas alone |
-| $\mathrm{S^{2-}}$ | Dilute acid | Lead acetate; alkaline nitroprusside | H₂S; black PbS; violet complex | Do not acidify with oxidising HNO₃ |
-| $\mathrm{S_2O_3^{2-}}$ | Dilute acid | Iodine; AgNO₃ darkening | SO₂ + S turbidity | Sulphite decolourises iodine but gives no sulphur |
-| $\mathrm{NO_2^-}$ | Dilute acid | Griess; KI-starch; KMnO₄ | Brown fumes/red azo/blue starch | Must be removed before nitrate tests |
-| $\mathrm{NO_3^-}$ | Conc. acid/copper support | Brown ring; Devarda | Brown ring; NH₃ after reduction | Nitrite, ammonium and oxidants interfere |
-| $\mathrm{Cl^-}$ | Conc. H₂SO₄ gives HCl | AgCl/NH₃; chromyl chloride | White AgCl; deep-red CrO₂Cl₂ | Never use HCl to prepare test solution |
-| $\mathrm{Br^-}$ | Conc. H₂SO₄ gives Br₂ | AgBr; layer; fluorescein | Cream AgBr; orange/red organic layer | Chlorine and iodine affect dye tests |
-| $\mathrm{I^-}$ | Conc. H₂SO₄ gives I₂/H₂S etc. | AgI; layer; CuI after thiosulphate | Yellow AgI; violet organic layer | Excess chlorine destroys I₂ colour |
-| $\mathrm{SO_4^{2-}}$ | No gas with dilute acid | Acidified BaCl₂ | White BaSO₄ insoluble in acid | Acidify before adding Ba²⁺ |
-| $\mathrm{PO_4^{3-}}$ | Solution test | Ammonium molybdate; magnesia mixture | Canary yellow / white crystalline | Arsenate may imitate molybdate test |
-| $\mathrm{BO_3^{3-}/B_4O_7^{2-}}$ | Alkaline solution | Turmeric; volatile ester flame | Reddish-brown turmeric; green flame | Cu/Ba flame interference |
-| $\mathrm{C_2O_4^{2-}}$ | Heating may give CO/CO₂ | CaC₂O₄; warm acidified KMnO₄ | White ppt; decolourisation on warming | Reaction has induction period |
-| $\mathrm{CH_3COO^-}$ | Dilute acid gives vinegar clue | Ester test; FeCl₃ support | Fruity ester; red ferric complex | Smell is not sole evidence |
-| $\mathrm{HCOO^-}$ | Acid/heating gives reducing products | HgCl₂ reduction | White calomel then grey Hg | Other reducing anions interfere |
-| $\mathrm{F^-}$ | CaF₂ | Glass etching/SiF₄ chemistry | White CaF₂; glass attacked | HF hazard; use theoretical treatment |
-| $\mathrm{SiO_3^{2-}}$ | Acidification | Silicic-acid gel; fluoride conversion | Gelatinous H₂SiO₃/SiO₂ | Phosphate gels/precipitates may confuse |
-| $\mathrm{CrO_4^{2-}}$ | Yellow solution | Pb²⁺/Ag⁺/Ba²⁺ precipitates | Yellow/brick-red precipitates | pH controls chromate/dichromate |
-| $\mathrm{Cr_2O_7^{2-}}$ | Orange solution | H₂O₂ blue CrO₅; reduction to Cr³⁺ | Blue ether layer; orange to green | CrO₅ is unstable |
-| $\mathrm{MnO_4^{2-}}$ | Green solution | Acid disproportionation | Purple MnO₄⁻ + brown MnO₂ | Stable mainly at high pH |
-| $\mathrm{MnO_4^-}$ | Purple solution | Medium-dependent reduction | Mn²⁺/MnO₂/manganate | Reducing contaminants rapidly discharge colour |
+$$
+\mathrm{Cr_2O_7^{2-}+6I^-+14H^+\rightarrow2Cr^{3+}+3I_2+7H_2O}
+$$
 
----
+It oxidises sulphite:
 
-## 85. Sulphate, Borate and Phosphate Named Tests
+$$
+\mathrm{Cr_2O_7^{2-}+3SO_3^{2-}+8H^+\rightarrow2Cr^{3+}+3SO_4^{2-}+4H_2O}
+$$
 
-### 85.1 Acidified barium-chloride test
+Orange changes to green.
 
-**Named confirmation for sulphate:** acidify first, then add $\mathrm{BaCl_2}$.
+### 4.7 Chromate versus dichromate is not an oxidation-state change
 
-### 85.2 Lead-acetate test for sulphate
+Chromium remains in the +6 oxidation state in both. The colour change is an acid-base condensation equilibrium, not redox.
 
-$$\mathrm{Pb^{2+}+SO_4^{2-}\rightarrow PbSO_4\downarrow}$$
+## 5. Permanganate and manganate
 
-$\mathrm{PbSO_4}$ dissolves in concentrated ammonium acetate through acetate complexation/medium effects.
+### 5.1 Colours and oxidation states
 
-### 85.3 Mercuric-nitrate test for sulphate
+| Species | Oxidation state of Mn | Colour |
+|---|---:|---|
+| $\mathrm{MnO_4^-}$ | +7 | Purple |
+| $\mathrm{MnO_4^{2-}}$ | +6 | Green |
+| $\mathrm{MnO_2}$ | +4 | Brown/black |
+| $\mathrm{Mn^{2+}}$ | +2 | Very pale pink/nearly colourless |
 
-Mercuric nitrate can give a white basic mercuric sulphate/mercuric sulphate precipitate under controlled conditions. Chloride and other precipitating anions interfere.
+### 5.2 Permanganate reduction products
 
-### 85.4 KMnO₄-BaSO₄ adsorption test
+In acidic medium:
 
-**Named adsorption test:** precipitate BaSO₄ in the presence of dilute permanganate. Fresh BaSO₄ adsorbs $\mathrm{MnO_4^-}$ and becomes pink/violet; the colour is not easily removed by washing.
+$$
+\mathrm{MnO_4^-+8H^++5e^-\rightarrow Mn^{2+}+4H_2O}
+$$
 
-### 85.5 Turmeric-paper test for borate
+In neutral or weakly alkaline medium:
 
-**Named test:** turmeric-paper test. Acidified borate produces a reddish-brown borocurcumin complex (rosocyanine). Alkali changes it to greenish-blue/black.
+$$
+\mathrm{MnO_4^-+2H_2O+3e^-\rightarrow MnO_2\downarrow+4OH^-}
+$$
 
-### 85.6 Methyl-borate flame test
+In strongly alkaline medium:
 
-**Named reaction/test:** esterification of boric acid with methanol:
+$$
+\mathrm{MnO_4^-+e^-\rightarrow MnO_4^{2-}}
+$$
 
-$$\mathrm{H_3BO_3+3CH_3OH\rightleftharpoons B(OCH_3)_3+3H_2O}$$
+The product depends on pH, so a colour observation must include the medium.
 
-Volatile methyl borate burns with a green-edged flame.
+### 5.3 Manganate disproportionation
 
-### 85.7 Bromothymol-blue/polyol test for boric acid
+Green manganate is stable mainly in strong alkali. On acidification or dilution:
 
-Boric acid is a weak Lewis acid. Addition of glycerol or mannitol forms a chelated borate ester complex that releases protons more readily, increasing apparent acidity. Bromothymol blue or phenolphthalein can show the pH change.
+$$
+\mathrm{3MnO_4^{2-}+4H^+\rightarrow2MnO_4^-+MnO_2\downarrow+2H_2O}
+$$
 
-**Named principle:** polyol complexation of boric acid.
+Purple permanganate and brown manganese dioxide appear.
 
-### 85.8 Magnesia-mixture test for phosphate
+### 5.4 Preparation of manganate and permanganate
 
-**Named test:** magnesia-mixture test.
+Oxidising fusion of manganese dioxide in strong alkali gives manganate:
 
-$$\mathrm{Mg^{2+}+NH_4^++PO_4^{3-}\rightarrow MgNH_4PO_4\downarrow}$$
+$$
+\mathrm{2MnO_2+4KOH+O_2\rightarrow2K_2MnO_4+2H_2O}
+$$
 
-### 85.9 Ammonium-molybdate test for phosphate
+Manganate can be converted to permanganate by oxidation or disproportionation under controlled conditions.
 
-**Named test:** canary-yellow phosphomolybdate test. Nitric-acid medium and warming produce ammonium phosphomolybdate. Arsenate gives a related precipitate, commonly more slowly/under stronger heating.
+### 5.5 Analytical tests
 
-### 85.10 Cobalt-nitrate test for phosphate
+A purple solution is strong preliminary evidence for permanganate. Decolourisation by reducing agents must be interpreted with medium-dependent products.
 
-On charcoal, phosphates treated with cobalt nitrate can give a blue mass. Aluminate and silicate can give related blue shades, so it is a preliminary supporting test.
+## 6. Chromate versus permanganate
 
----
+| Property | Chromate/dichromate | Permanganate |
+|---|---|---|
+| Central oxidation state | Cr(+6) | Mn(+7) |
+| Acid-base colour change | Yellow $\leftrightarrow$ orange | No analogous simple condensation |
+| Strong colour | Yellow/orange | Purple |
+| Common reduction product in acid | Green $\mathrm{Cr^{3+}}$ | Nearly colourless $\mathrm{Mn^{2+}}$ |
+| Peroxide test | Blue peroxo species | Peroxide is oxidised and permanganate reduced |
+| Precipitation | Many chromates are coloured precipitates | Permanganates mostly soluble for common ions |
 
-## 86. Chromate, Dichromate, Manganate and Permanganate Named Reactions
+## 7. Arsenite and arsenate
 
-### 86.1 Chromate-dichromate interconversion
+### 7.1 Oxidation-state distinction
 
-**Named equilibrium:** chromate-dichromate equilibrium.
+- arsenite: As(+3), reducing;
+- arsenate: As(+5), more oxidised.
 
-$$\mathrm{2CrO_4^{2-}+2H^+\rightleftharpoons Cr_2O_7^{2-}+H_2O}$$
+Arsenite can reduce iodine:
 
-This is acid-base condensation, not redox.
+$$
+\mathrm{AsO_3^{3-}+I_2+H_2O\rightarrow AsO_4^{3-}+2I^-+2H^+}
+$$
 
-### 86.2 Peroxochromate test
+The exact ionic form depends on pH.
 
-**Named test:** chromyl-peroxide/peroxochromate test. Acidified dichromate with cold $\mathrm{H_2O_2}$ forms intense blue $\mathrm{CrO_5}$, extracted into ether/amyl alcohol.
+### 7.2 Silver salts
 
-$$\mathrm{Cr_2O_7^{2-}+4H_2O_2+2H^+\rightarrow2CrO_5+5H_2O}$$
+$$
+\mathrm{3Ag^++AsO_3^{3-}\rightarrow Ag_3AsO_3\downarrow}
+$$
 
-### 86.3 Chromate precipitation tests
+Yellow.
 
-- $\mathrm{PbCrO_4}$: yellow;
-- $\mathrm{BaCrO_4}$: yellow;
-- $\mathrm{Ag_2CrO_4}$: brick red.
+$$
+\mathrm{3Ag^++AsO_4^{3-}\rightarrow Ag_3AsO_4\downarrow}
+$$
 
-### 86.4 Manganate disproportionation
+Chocolate brown.
 
-**Named reaction:** disproportionation of manganate in acid/neutralisation:
+### 7.3 Sulphide precipitation
 
-$$\mathrm{3MnO_4^{2-}+4H^+\rightarrow2MnO_4^-+MnO_2+2H_2O}$$
+Arsenic(III) gives yellow $\mathrm{As_2S_3}$; arsenic(V) gives yellow $\mathrm{As_2S_5}$ or related mixed products depending on conditions. Both dissolve in yellow ammonium sulphide as thioarsenite/thioarsenate species.
 
-Mn(VI) becomes Mn(VII) and Mn(IV).
+## 8. Complete interfering-radical list
 
-### 86.5 Alkaline conversion of permanganate
+Common interfering radicals in classical cation analysis include:
 
-Hot concentrated alkali can reduce/disproportionate permanganate toward green manganate in the presence of suitable reducing conditions:
+$$
+\mathrm{F^-,\ BO_3^{3-},\ C_2O_4^{2-},\ PO_4^{3-},\ SiO_3^{2-},\ AsO_3^{3-},\ AsO_4^{3-}}
+$$
 
-$$\mathrm{MnO_4^-+e^-\rightarrow MnO_4^{2-}}$$
+They interfere by:
 
-### 86.6 Thermal decomposition of permanganate
+- precipitating cations as salts in ammoniacal medium;
+- forming strong soluble complexes;
+- producing gelatinous precipitates;
+- changing oxidation state;
+- consuming group reagent;
+- carrying other ions by adsorption.
 
-$$\mathrm{2KMnO_4\xrightarrow{\Delta}K_2MnO_4+MnO_2+O_2}$$
+Removal methods vary: acid volatilisation, precipitation, oxidation, reduction, or repeated evaporation. A JEE question should specify the method; do not invent a universal removal reaction.
 
-Green water-soluble manganate and brown-black insoluble $\mathrm{MnO_2}$ are produced.
+## 9. Coloured-anion observation atlas
 
----
+| Original colour | Candidate | Quick chemical check |
+|---|---|---|
+| Yellow | $\mathrm{CrO_4^{2-}}$ | Acid turns orange; lead gives yellow precipitate |
+| Orange | $\mathrm{Cr_2O_7^{2-}}$ | Alkali turns yellow |
+| Purple | $\mathrm{MnO_4^-}$ | Reducing agent decolourises; product depends on pH |
+| Green | $\mathrm{MnO_4^{2-}}$ | Acid gives purple plus brown $\mathrm{MnO_2}$ |
+| Yellow/brown precipitate with Ag$^+$ | Phosphate/arsenite/arsenate/chromate | Use colour, acidity, ammonia solubility and independent test |
+
+## 10. JEE Advanced traps
+
+1. Chromate-dichromate conversion is not redox.
+2. Manganate-permanganate conversion may involve disproportionation and redox.
+3. $\mathrm{AgF}$ is soluble, so fluoride is not detected like chloride.
+4. Green flame from a borate ester can be confused with copper.
+5. Phosphate, silicate and arsenate can all interact with molybdate.
+6. Acidification of silicate gives gelatinous hydrated silica, not a simple crystalline “silicic acid” precipitate.
+7. Peroxide produces a transient blue peroxo-chromium species only under suitable acidity and extraction conditions.
+8. Coloured anions can mask coloured cation tests; separate portions are essential.
 `;
 
 export default function SaltAnalysisPart07() {

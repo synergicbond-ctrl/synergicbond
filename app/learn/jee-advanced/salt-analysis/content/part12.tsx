@@ -2,142 +2,318 @@ import { SaltAnalysisArticle } from "../SaltAnalysisArticle";
 
 export const metadata = {
   part: 12,
-  title: "Group IV: Nickel, Cobalt, Manganese and Zinc",
+  title: "Group IV Cations: Nickel, Cobalt, Manganese and Zinc",
   chapter: "Salt Analysis",
   exam: "JEE Advanced",
 };
 
 const content = String.raw`
-## 27. Group IV — Nickel, Cobalt, Manganese, Zinc
+# Group IV Cations: Nickel, Cobalt, Manganese and Zinc
 
-In ammoniacal medium, the larger $[\mathrm{S^{2-}}]$ precipitates:
+## 1. Group reagent
 
-| Ion | Sulphide | Colour |
-|---|---|---|
-| $\mathrm{Ni^{2+}}$ | NiS | Black |
-| $\mathrm{Co^{2+}}$ | CoS | Black |
-| $\mathrm{Mn^{2+}}$ | MnS | Flesh/buff |
-| $\mathrm{Zn^{2+}}$ | ZnS | White |
+After removing Group III hydroxides, make the filtrate ammoniacal and pass hydrogen sulphide or add ammonium sulphide.
 
-### 27.1 Why ammoniacal medium is used
+The high sulphide-ion concentration precipitates:
 
-Alkalinity increases ionisation of $\mathrm{H_2S}$ and hence $[\mathrm{S^{2-}}]$. $\mathrm{NH_4Cl/NH_4OH}$ buffer controls $[\mathrm{OH^-}]$ and reduces unwanted hydroxide precipitation.
+$$
+\mathrm{Ni^{2+}+S^{2-}\rightarrow NiS\downarrow}
+$$
 
-### 27.2 Nickel
+$$
+\mathrm{Co^{2+}+S^{2-}\rightarrow CoS\downarrow}
+$$
 
-Dimethylglyoxime (DMG) gives a bright rose-red precipitate in ammoniacal medium:
+$$
+\mathrm{Mn^{2+}+S^{2-}\rightarrow MnS\downarrow}
+$$
 
-$$\mathrm{Ni^{2+}+2H_2DMG+2OH^-\rightarrow Ni(DMG)_2\downarrow+2H_2O}$$
+$$
+\mathrm{Zn^{2+}+S^{2-}\rightarrow ZnS\downarrow}
+$$
 
-This is one of the most characteristic tests in salt analysis.
+### 1.1 Colours
 
-### 27.3 Cobalt
+| Sulphide | Colour |
+|---|---|
+| NiS | Black |
+| CoS | Black |
+| MnS | Flesh-coloured/pale pink |
+| ZnS | White |
 
-With thiocyanate in suitable solvent/concentrated conditions, cobalt forms a deep blue thiocyanato complex:
+NiS and CoS cannot be separated by colour. MnS darkens in air because manganese(II) sulphide is readily oxidised.
 
-$$\mathrm{Co^{2+}+4SCN^-\rightleftharpoons[Co(SCN)_4]^{2-}}$$
+## 2. Acid solubility as a first separation
 
-Nitrite in acetic acid can produce yellow potassium cobaltinitrite:
+Treat the mixed sulphides with dilute HCl.
 
-$$\mathrm{3K^+ +[Co(NO_2)_6]^{3-}\rightarrow K_3[Co(NO_2)_6]\downarrow}$$
+MnS and ZnS dissolve:
 
-### 27.4 Manganese
+$$
+\mathrm{MnS+2H^+\rightarrow Mn^{2+}+H_2S}
+$$
 
-Oxidation with sodium bismuthate in nitric acid gives purple permanganate:
+$$
+\mathrm{ZnS+2H^+\rightarrow Zn^{2+}+H_2S}
+$$
 
-$$\mathrm{2Mn^{2+}+5BiO_3^-+14H^+\rightarrow2MnO_4^-+5Bi^{3+}+7H_2O}$$
+NiS and CoS are more resistant and remain as a black residue under the classical conditions.
 
-Alternatively, oxidation may first produce brown/black $\mathrm{MnO_2}$ under milder alkaline conditions.
+Thus:
 
-### 27.5 Zinc
+- residue: NiS + CoS;
+- filtrate: Mn$^{2+}$ + Zn$^{2+}$.
 
-White ZnS:
+The exact acid concentration and freshness of precipitates matter. Aged sulphides can behave differently.
 
-$$\mathrm{Zn^{2+}+S^{2-}\rightarrow ZnS\downarrow}$$
+## 3. Separation of manganese and zinc
 
-Zinc hydroxide is amphoteric:
+### 3.1 Oxidative separation with sodium peroxide or hydrogen peroxide in alkali
 
-$$\mathrm{Zn^{2+}+2OH^-\rightarrow Zn(OH)_2\downarrow}$$
+Zinc forms soluble zincate:
 
-$$\mathrm{Zn(OH)_2+2OH^-\rightarrow[Zn(OH)_4]^{2-}}$$
+$$
+\mathrm{Zn(OH)_2+2OH^-\rightarrow[Zn(OH)_4]^{2-}}
+$$
 
-It also dissolves in excess ammonia:
+Manganese(II) can be oxidised to insoluble hydrated manganese dioxide:
 
-$$\mathrm{Zn^{2+}+4NH_3\rightleftharpoons[Zn(NH_3)_4]^{2+}}$$
+$$
+\mathrm{Mn^{2+}+H_2O_2+2OH^-\rightarrow MnO_2\downarrow+2H_2O}
+$$
 
-With potassium ferrocyanide, zinc gives a white precipitate of zinc ferrocyanide.
+Filter:
 
-### 27.6 Useful sulphide-solubility distinction
+- brown/black residue: MnO$_2$;
+- filtrate: zincate.
 
-Fresh MnS and ZnS dissolve in dilute non-oxidising acids, releasing $\mathrm{H_2S}$. NiS and CoS are much more resistant. This permits subgroup separation.
+### 3.2 Alternative carbonate/hydroxide logic
 
----
+Both ions can precipitate hydroxides, but zinc hydroxide is amphoteric and dissolves in excess NaOH, whereas manganese hydroxide does not form a comparably stable soluble hydroxo complex under ordinary conditions.
 
-## 52. Nickel, Cobalt, Manganese and Zinc: Complete Separation Logic
+## 4. Zinc tests
 
-The black colours of NiS and CoS can mask flesh MnS and white ZnS. Treating the mixed sulphides with dilute non-oxidising acid dissolves MnS and ZnS more readily, leaving NiS and CoS.
+### 4.1 Zinc hydroxide
 
-In the acid-soluble fraction, add excess NaOH. Zinc hydroxide dissolves as zincate, while manganese hydroxide remains and rapidly oxidises in air:
+$$
+\mathrm{Zn^{2+}+2OH^-\rightarrow Zn(OH)_2\downarrow}
+$$
 
-$$\mathrm{Mn(OH)_2+\tfrac12O_2\rightarrow MnO(OH)+\tfrac12H_2O}$$
+White gelatinous precipitate.
 
-The initially pale precipitate becomes brown. Zinc is recovered from zincate by controlled acidification and confirmed as ZnS or zinc ferrocyanide.
+Dissolves in excess NaOH:
 
-Nickel and cobalt require separate complex reactions. In ammoniacal tartrate/citrate conditions, DMG selectively precipitates nickel as the square-planar red chelate. Cobalt remains in solution. Cobalt can then be oxidised and precipitated as cobaltinitrite or extracted as the blue thiocyanato complex.
+$$
+\mathrm{Zn(OH)_2+2OH^-\rightarrow[Zn(OH)_4]^{2-}}
+$$
 
-Strong oxidants convert manganese(II) to permanganate only under suitable acidic conditions. Sodium bismuthate is useful because excess solid reagent can be filtered, leaving purple permanganate in solution. Chloride must be avoided in strongly oxidising acid because it can be oxidised to chlorine and consume reagent.
+Dissolves in excess ammonia:
 
----
+$$
+\mathrm{Zn^{2+}+4NH_3\rightleftharpoons[Zn(NH_3)_4]^{2+}}
+$$
 
-## 88. Named Tests for Groups III and IV Cations
+Thus zinc hydroxide can dissolve by amphoterism in NaOH and by ammine-complex formation in ammonia.
 
-### 88.1 Aluminon lake test
+### 4.2 Zinc sulphide
 
-**Named test:** aluminon test/lake test. Aluminium hydroxide adsorbs the red aluminon dye, producing a red lake. Fe³⁺ and Cr³⁺ must be removed or masked because coloured hydroxides interfere.
+Reacidify or adjust the zinc solution and pass H$_2$S:
 
-### 88.2 Thenard's-blue test
+$$
+\mathrm{Zn^{2+}+S^{2-}\rightarrow ZnS\downarrow}
+$$
 
-**Named test:** Thenard's blue. $\mathrm{Al_2O_3}$ or an aluminium residue treated with cobalt nitrate and ignited gives blue cobalt aluminate:
+White ZnS confirms zinc after separation.
 
-$$\mathrm{CoO+Al_2O_3\rightarrow CoAl_2O_4}$$
+### 4.3 Potassium ferrocyanide
 
-### 88.3 Chromate test for chromium(III)
+$$
+\mathrm{2Zn^{2+}+[Fe(CN)_6]^{4-}\rightarrow Zn_2[Fe(CN)_6]\downarrow}
+$$
 
-Oxidise Cr(III) in alkaline medium to yellow chromate, then confirm with lead acetate.
+White precipitate.
 
-### 88.4 Nickel DMG test
+### 4.4 Cobalt nitrate test
 
-**Named test:** dimethylglyoxime test. Ammoniacal Ni²⁺ gives rosy-red square-planar $\mathrm{Ni(DMG)_2}$.
+Ignite zinc compound to ZnO, moisten with cobalt nitrate and heat:
 
-### 88.5 Cobalt Fischer's-salt test
+$$
+\mathrm{CoO+ZnO\rightarrow CoZnO_2}
+$$
 
-Oxidise cobalt(II) with nitrite in acetic acid in the presence of K⁺:
+A green mass, Rinmann's green, forms.
 
-$$\mathrm{Co^{2+}\xrightarrow[NO_2^-]{oxidation}[Co(NO_2)_6]^{3-}}$$
+### 4.5 Zinc oxide colour
 
-$$\mathrm{3K^+ +[Co(NO_2)_6]^{3-}\rightarrow K_3[Co(NO_2)_6]\downarrow}$$
+ZnO is yellow when hot and white when cold. This reversible change is due to temperature-dependent defect structure and oxygen vacancies, not a change to a different bulk compound under ordinary conditions.
 
-Yellow potassium hexanitritocobaltate(III) is called **Fischer's salt** in classical analysis.
+## 5. Manganese tests
 
-### 88.6 Cobalt thiocyanate test
+### 5.1 Manganese hydroxide and air oxidation
 
-Deep-blue $\mathrm{[Co(SCN)_4]^{2-}}$ forms in concentrated thiocyanate and a low-water organic medium. Fe³⁺ gives blood-red thiocyanate and must be removed/masked.
+$$
+\mathrm{Mn^{2+}+2OH^-\rightarrow Mn(OH)_2\downarrow}
+$$
 
-### 88.7 Rinmann's-green test
+Fresh Mn(OH)$_2$ is white to pale pink and rapidly turns brown due to oxidation:
 
-**Named test for zinc:** cobalt-zinc oxide/cobalt zincate gives a green residue on ignition.
+$$
+\mathrm{2Mn(OH)_2+O_2\rightarrow2MnO(OH)_2}
+$$
 
-### 88.8 Sodium-bismuthate test for manganese
+A simplified product is often represented as hydrated MnO$_2$.
 
-**Named test:** sodium-bismuthate oxidation. Mn²⁺ becomes purple $\mathrm{MnO_4^-}$ in nitric acid.
+### 5.2 Sodium bismuthate test
 
-### 88.9 Persulphate test for manganese
+In nitric acid, sodium bismuthate oxidises Mn(II) to permanganate:
 
-Persulphate oxidises Mn²⁺ to permanganate in acid, commonly catalysed by Ag⁺:
+$$
+\mathrm{2Mn^{2+}+5BiO_3^-+14H^+\rightarrow2MnO_4^-+5Bi^{3+}+7H_2O}
+$$
 
-$$\mathrm{2Mn^{2+}+5S_2O_8^{2-}+8H_2O\rightarrow2MnO_4^-+10SO_4^{2-}+16H^+}$$
+A purple solution forms. This is a highly sensitive confirmation.
 
----
+### 5.3 Lead dioxide test
+
+Strong oxidation in nitric acid can convert Mn(II) to permanganate. The reagent and conditions must be specified because chloride and reducing anions interfere.
+
+### 5.4 Oxidising fusion
+
+Fuse a manganese compound with sodium carbonate and an oxidant:
+
+$$
+\mathrm{2MnO_2+4Na_2CO_3+3O_2\rightarrow4Na_2MnO_4+4CO_2}
+$$
+
+A green manganate melt forms. Acidification gives permanganate plus MnO$_2$ by disproportionation.
+
+### 5.5 Manganese sulphide
+
+Flesh-coloured MnS dissolves in dilute acid with H$_2$S evolution, unlike NiS and CoS.
+
+## 6. Separation of nickel and cobalt
+
+The black residue contains NiS and CoS. Dissolve under suitable oxidising conditions, then use specific complex or precipitation tests.
+
+### 6.1 Dimethylglyoxime test for nickel
+
+[FIGURE:precision-confirmatory-tests]
+
+In ammoniacal solution, Ni(II) forms a bright scarlet-red precipitate with dimethylglyoxime, abbreviated $\mathrm{H_2DMG}$:
+
+$$
+\mathrm{Ni^{2+}+2H_2DMG+2OH^-\rightarrow Ni(DMG)_2\downarrow+2H_2O}
+$$
+
+The square-planar chelate is intensely coloured and highly characteristic.
+
+Conditions:
+
+- ammoniacal medium;
+- absence or masking of interfering metals;
+- sufficient reagent;
+- avoid very strong acid, which protonates the ligand.
+
+### 6.2 Nickel hydroxide
+
+$$
+\mathrm{Ni^{2+}+2OH^-\rightarrow Ni(OH)_2\downarrow}
+$$
+
+Apple-green precipitate, insoluble in excess NaOH but can dissolve in ammonia through ammine-complex formation depending on conditions.
+
+### 6.3 Nickel with cyanide
+
+Nickel forms cyanide complexes and precipitates under controlled conditions. Cyanide chemistry is hazardous and treated only theoretically.
+
+## 7. Cobalt tests
+
+### 7.1 Thiocyanate test
+
+In concentrated thiocyanate and a suitable organic solvent, cobalt forms an intense blue complex, often represented as:
+
+$$
+\mathrm{Co^{2+}+4SCN^-\rightleftharpoons[Co(SCN)_4]^{2-}}
+$$
+
+Extraction into acetone or an organic phase intensifies the blue colour.
+
+Fe(III) gives blood-red thiocyanate complexes and must be removed or masked, often with fluoride.
+
+### 7.2 Cobalt nitrite/cobaltinitrite chemistry
+
+Cobalt can be oxidised and precipitated as a complex nitrite under specified conditions. Potassium and ammonium ions also participate in cobaltinitrite precipitates, so reagent roles must be tracked carefully.
+
+### 7.3 Cobalt hydroxide
+
+$$
+\mathrm{Co^{2+}+2OH^-\rightarrow Co(OH)_2\downarrow}
+$$
+
+Initially blue or pinkish-blue depending on conditions; it darkens on oxidation.
+
+### 7.4 Borax bead
+
+Cobalt gives an intense deep-blue bead in both oxidising and reducing flames. Even a small amount can mask other bead colours.
+
+## 8. Classical Ni-Co separation approaches
+
+Different schemes exploit:
+
+- selective precipitation of nickel with dimethylglyoxime;
+- oxidation of cobalt to Co(III) complexes;
+- selective complexation with cyanide or thiocyanate;
+- differing solubility of nitrite complexes.
+
+For JEE, the reagent sequence given in the problem is authoritative. Do not assume a single universal scheme.
+
+## 9. Amphoterism and complexation matrix
+
+[FIGURE:amphoterism-vs-complexation]
+
+| Hydroxide | Excess NaOH | Excess NH$_3$ | Key confirmation |
+|---|---|---|---|
+| Zn(OH)$_2$ | Dissolves as zincate | Dissolves as ammine | White ZnS; green cobalt-nitrate mass |
+| Mn(OH)$_2$ | Insoluble; oxidises | Mostly insoluble | Purple permanganate after oxidation |
+| Ni(OH)$_2$ | Insoluble | Complexation possible | Red Ni(DMG)$_2$ |
+| Co(OH)$_2$ | Insoluble | Ammine complexes/oxidation possible | Blue thiocyanate or borax bead |
+
+## 10. Group IV separation flow
+
+1. Precipitate NiS, CoS, MnS, ZnS in ammoniacal sulphide medium.
+2. Treat with dilute HCl:
+   - MnS and ZnS dissolve;
+   - NiS and CoS remain.
+3. Mn/Zn filtrate:
+   - add excess NaOH and oxidant;
+   - MnO$_2$ precipitates;
+   - zincate remains.
+4. Confirm Mn by oxidation to permanganate.
+5. Confirm Zn by reprecipitating white ZnS or cobalt nitrate test.
+6. Dissolve NiS/CoS residue under specified oxidising conditions.
+7. Precipitate nickel with dimethylglyoxime.
+8. Confirm cobalt in the remaining solution with thiocyanate or another specified test.
+
+## 11. Colour and oxidation-state complications
+
+- Co(II) solutions may be pink in water and blue in concentrated chloride due to ligand substitution.
+- Ni(II) is usually green, but complexes can be blue or violet.
+- Mn(II) is very pale; permanganate contamination dominates colour.
+- Zn(II) is colourless because it is $d^{10}$.
+- Air oxidation changes Mn(OH)$_2$ and Co(OH)$_2$ quickly.
+- Black sulphides hide original solution colours.
+
+## 12. JEE Advanced traps
+
+1. NiS and CoS are black and acid-resistant; MnS and ZnS dissolve in dilute acid.
+2. Zn(OH)$_2$ dissolves in both NaOH and ammonia, but by different chemical mechanisms.
+3. Mn(OH)$_2$ darkens in air; the brown product is oxidised manganese.
+4. Dimethylglyoxime requires ammoniacal conditions and gives a red nickel chelate.
+5. Cobalt thiocyanate blue is masked by Fe(III) red unless iron is removed or complexed.
+6. Yellow-hot/white-cold ZnO is a temperature-dependent defect-colour phenomenon.
+7. Oxidising Mn(II) to permanganate is a much stronger confirmation than sulphide colour.
+8. Cobalt's deep-blue borax bead can mask other ions.
+9. Cyanide-based separations are theoretically important but hazardous.
 `;
 
 export default function SaltAnalysisPart12() {

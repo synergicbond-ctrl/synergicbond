@@ -8,417 +8,338 @@ export const metadata = {
 };
 
 const content = String.raw`
-# Salt Analysis — JEE Advanced Master Notes
+# Salt Analysis — Foundations, Equilibria and Laboratory Method
 
-> **Scope:** Systematic qualitative inorganic analysis of common anions and cations, with ionic equations, observations, separation logic, interferences, confirmatory tests, exceptions, and JEE Advanced problem-solving cues.
->
-> **Notation:** \`ppt\` = precipitate; \`soln.\` = solution; \`Δ\` = heat; \`↓\` = precipitate; \`↑\` = gas; O.A. = oxidising agent; R.A. = reducing agent.
+> **Purpose of this chapter:** build a complete chemical method for identifying the acid radical and basic radical of an unknown inorganic salt. Every observation must be connected to an equilibrium, a solubility product, a complex-formation reaction, an oxidation-state change, or a thermal decomposition.
 
----
+[FIGURE:master-analytical-algorithm]
 
-## 1. What Salt Analysis Actually Tests
+## 1. What is meant by qualitative salt analysis?
 
-A salt contains:
+An ordinary inorganic salt contains two analytical components:
 
-- a **basic radical**: the cation, such as $\mathrm{Cu^{2+}}$, $\mathrm{Fe^{3+}}$, $\mathrm{NH_4^+}$;
-- an **acid radical**: the anion, such as $\mathrm{Cl^-}$, $\mathrm{SO_4^{2-}}$, $\mathrm{NO_3^-}$.
+- the **basic radical**, which is the cation, for example $\mathrm{Ag^+}$, $\mathrm{Cu^{2+}}$, $\mathrm{Fe^{3+}}$, $\mathrm{NH_4^+}$;
+- the **acid radical**, which is the anion, for example $\mathrm{Cl^-}$, $\mathrm{CO_3^{2-}}$, $\mathrm{SO_4^{2-}}$, $\mathrm{NO_3^-}$.
 
-Qualitative analysis does not merely ask, “Which colour is formed?” It uses four chemical ideas:
+Qualitative analysis answers **what is present**. Quantitative analysis answers **how much is present**. JEE Advanced questions usually test the reasoning behind the classical separation rather than asking a student to carry out an unsafe laboratory procedure.
 
-1. **Acid-base reactions** — release of volatile acids and control of $\mathrm{OH^-}$ or $\mathrm{S^{2-}}$.
-2. **Selective precipitation** — a precipitate appears when ionic product exceeds $K_{sp}$.
-3. **Complex formation** — a precipitate may dissolve when a stable soluble complex forms.
-4. **Redox chemistry** — oxidation state changes produce characteristic colours, gases, or deposits.
+A correct analysis combines:
 
-### 1.1 Solubility-product principle
+1. physical examination;
+2. preliminary dry tests;
+3. preparation of a suitable solution;
+4. systematic acid-radical tests on separate portions;
+5. removal of interfering radicals where required;
+6. systematic cation group separation;
+7. subgroup separation;
+8. confirmatory tests;
+9. cross-checking all observations against possible interferences.
 
-For:
+## 2. Five reaction families used throughout the chapter
 
-$$\mathrm{M_aX_b(s)\rightleftharpoons aM^{b+}+bX^{a-}}$$
+### 2.1 Ion-exchange and precipitation
 
-$$K_{sp}=[\mathrm{M^{b+}}]^a[\mathrm{X^{a-}}]^b$$
+A precipitate forms when the ionic product exceeds the solubility product.
 
-- ionic product $<K_{sp}$: no precipitation;
-- ionic product $=K_{sp}$: saturated solution;
-- ionic product $>K_{sp}$: precipitation begins.
+For a salt $\mathrm{M_aX_b}$:
 
-This is the basis of every cation group separation.
+$$
+\mathrm{M_aX_b(s)\rightleftharpoons aM^{b+}(aq)+bX^{a-}(aq)}
+$$
 
-### 1.2 Common-ion control
+$$
+K_{sp}=[\mathrm{M^{b+}}]^a[\mathrm{X^{a-}}]^b
+$$
 
-For hydrogen sulphide:
+The three cases are:
 
-$$\mathrm{H_2S\rightleftharpoons H^+ + HS^-}$$
+| Ionic product $Q_{sp}$ | Result |
+|---|---|
+| $Q_{sp}<K_{sp}$ | Unsaturated; no precipitation |
+| $Q_{sp}=K_{sp}$ | Saturated; precipitation is just beginning |
+| $Q_{sp}>K_{sp}$ | Supersaturated; precipitation occurs |
 
-$$\mathrm{HS^-\rightleftharpoons H^+ + S^{2-}}$$
+Examples:
 
-Adding dilute HCl increases $[\mathrm{H^+}]$ and suppresses ionisation of $\mathrm{H_2S}$. Therefore $[\mathrm{S^{2-}}]$ remains very low. Only extremely insoluble sulphides precipitate in acidic medium.
+$$
+\mathrm{Ag^+ + Cl^- \rightarrow AgCl(s)}
+$$
 
-In ammoniacal medium, $\mathrm{OH^-}$ removes $\mathrm{H^+}$ and drives both equilibria to the right. The larger $[\mathrm{S^{2-}}]$ now precipitates the more soluble sulphides of the later group.
+$$
+\mathrm{Ba^{2+}+SO_4^{2-}\rightarrow BaSO_4(s)}
+$$
 
-[VISUAL:sulfide-ph-graph]
+A colour alone is never sufficient. The reagent, medium, solubility in excess reagent, and behaviour toward acid or heat must also agree.
 
-### 1.3 Complex formation can reverse precipitation
+### 2.2 Acid-base displacement
 
-Silver chloride dissolves in ammonia because free $\mathrm{Ag^+}$ is consumed:
+A stronger, non-volatile acid liberates a weaker volatile acid or its decomposition product.
 
-$$\mathrm{AgCl(s)+2NH_3(aq)\rightleftharpoons[Ag(NH_3)_2]^+(aq)+Cl^-(aq)}$$
+$$
+\mathrm{CO_3^{2-}+2H^+\rightarrow H_2CO_3\rightarrow CO_2\uparrow+H_2O}
+$$
 
-The equilibrium shifts toward dissolution. Addition of acid destroys the ammine complex and reprecipitates $\mathrm{AgCl}$.
+$$
+\mathrm{S^{2-}+2H^+\rightarrow H_2S\uparrow}
+$$
 
-### 1.4 The correct analytical sequence
+$$
+\mathrm{SO_3^{2-}+2H^+\rightarrow H_2SO_3\rightarrow SO_2\uparrow+H_2O}
+$$
 
-1. Observe the original salt.
-2. Perform preliminary dry tests.
-3. Test anions on separate portions.
-4. Remove interfering anions when necessary.
-5. Prepare the original solution for cation analysis.
-6. Apply group reagents in the correct order.
-7. Separate ions within the precipitated group.
-8. Perform at least one reliable confirmatory test.
+This is why dilute non-oxidising acids are used for the first class of acid radicals.
 
-Never perform every test in the same test tube. Reagents added in an earlier test can create false positives later.
+### 2.3 Complex formation
 
----
+A sparingly soluble precipitate may dissolve when one ion is converted into a stable soluble complex.
 
-## 2. Laboratory Language and Safety
+$$
+\mathrm{AgCl(s)+2NH_3(aq)\rightleftharpoons[Ag(NH_3)_2]^+(aq)+Cl^-(aq)}
+$$
 
-### 2.1 Important operations
+$$
+\mathrm{Cu^{2+}+4NH_3\rightleftharpoons[Cu(NH_3)_4]^{2+}}
+$$
 
-| Operation | Meaning | Analytical purpose |
+The measured solubility increases because the free metal-ion concentration decreases. In general:
+
+$$
+K_{\mathrm{overall}}=K_{sp}\times\beta
+$$
+
+where $\beta$ is the formation constant of the complex. A sufficiently large $\beta$ can drive dissolution even when $K_{sp}$ is very small.
+
+### 2.4 Redox reactions
+
+Redox tests are recognised by a change in oxidation state, often accompanied by a strong colour change.
+
+Examples:
+
+$$
+\mathrm{2MnO_4^-+5SO_2+2H_2O\rightarrow2Mn^{2+}+5SO_4^{2-}+4H^+}
+$$
+
+$$
+\mathrm{Cr_2O_7^{2-}+3SO_2+2H^+\rightarrow2Cr^{3+}+3SO_4^{2-}+H_2O}
+$$
+
+Reduction of permanganate from purple $\mathrm{Mn(VII)}$ to nearly colourless $\mathrm{Mn^{2+}}$, or dichromate from orange $\mathrm{Cr(VI)}$ to green $\mathrm{Cr^{3+}}$, is analytically useful.
+
+### 2.5 Thermal decomposition
+
+Many salts give characteristic gases, colours, or residues on heating.
+
+Examples:
+
+$$
+\mathrm{2Pb(NO_3)_2\xrightarrow{\Delta}2PbO+4NO_2\uparrow+O_2\uparrow}
+$$
+
+$$
+\mathrm{2NaNO_3\xrightarrow{\Delta}2NaNO_2+O_2\uparrow}
+$$
+
+$$
+\mathrm{CuCO_3\xrightarrow{\Delta}CuO+CO_2\uparrow}
+$$
+
+Thermal behaviour is a preliminary clue, not a final identification.
+
+## 3. Selective precipitation and group separation
+
+The cation scheme depends on choosing conditions under which one group precipitates while later groups remain in solution.
+
+### 3.1 Why acidic hydrogen sulphide precipitates Group II
+
+Hydrogen sulphide ionises in two stages:
+
+$$
+\mathrm{H_2S\rightleftharpoons H^+ + HS^-}
+$$
+
+$$
+\mathrm{HS^-\rightleftharpoons H^+ + S^{2-}}
+$$
+
+Combining the equilibria gives approximately:
+
+$$
+[\mathrm{S^{2-}}]=\frac{K_{a1}K_{a2}[\mathrm{H_2S}]}{[\mathrm{H^+}]^2}
+$$
+
+In dilute HCl, the high $[\mathrm{H^+}]$ suppresses both ionisations. The sulphide-ion concentration becomes very small, so only sulphides with extremely low $K_{sp}$ precipitate. These include the classical Group II sulphides.
+
+A hundredfold increase in $[\mathrm{H^+}]$ lowers $[\mathrm{S^{2-}}]$ by approximately $10^4$, provided dissolved $\mathrm{H_2S}$ remains comparable. This squared dependence is why pH control is so powerful.
+
+### 3.2 Why ammoniacal sulphide precipitates Group IV
+
+In ammoniacal medium, $\mathrm{OH^-}$ consumes $\mathrm{H^+}$ and shifts the hydrogen sulphide equilibria toward $\mathrm{S^{2-}}$. The much larger sulphide-ion concentration allows precipitation of the relatively more soluble sulphides of $\mathrm{Ni^{2+}}$, $\mathrm{Co^{2+}}$, $\mathrm{Mn^{2+}}$, and $\mathrm{Zn^{2+}}$.
+
+[FIGURE:common-ion-balance]
+
+### 3.3 Why $\mathrm{NH_4Cl}$ is added before $\mathrm{NH_4OH}$ in Group III
+
+The pair $\mathrm{NH_4Cl/NH_4OH}$ behaves as an ammonium buffer. The common ion $\mathrm{NH_4^+}$ suppresses ionisation of ammonia:
+
+$$
+\mathrm{NH_3+H_2O\rightleftharpoons NH_4^++OH^-}
+$$
+
+A controlled, moderate $[\mathrm{OH^-}]$ is sufficient to precipitate:
+
+$$
+\mathrm{Fe(OH)_3,\ Al(OH)_3,\ Cr(OH)_3}
+$$
+
+but helps keep later-group ions in solution. Adding ammonia without ammonium chloride may precipitate magnesium hydroxide and contaminate the Group III precipitate.
+
+## 4. Competition between precipitation and complex formation
+
+A species precipitates according to free-ion concentrations, not total analytical concentrations.
+
+Suppose:
+
+$$
+\mathrm{M^{n+}+pL\rightleftharpoons ML_p^{n+}}
+$$
+
+$$
+\beta_p=\frac{[\mathrm{ML_p^{n+}}]}{[\mathrm{M^{n+}}][\mathrm{L}]^p}
+$$
+
+A large ligand concentration makes free $[\mathrm{M^{n+}}]$ small. Consequences include:
+
+- dissolution of $\mathrm{AgCl}$ in ammonia;
+- dissolution of $\mathrm{Cu(OH)_2}$ in excess ammonia;
+- prevention of $\mathrm{CuS}$ precipitation after cyanide complex formation in classical Cu-Cd separation;
+- dissolution of amphoteric hydroxides in excess $\mathrm{OH^-}$;
+- dissolution of several iodides in excess $\mathrm{I^-}$ by iodo-complex formation.
+
+[FIGURE:amphoterism-vs-complexation]
+
+## 5. Coprecipitation, digestion and washing
+
+A fresh precipitate may contain impurities even when the intended reaction is correct.
+
+### 5.1 Surface adsorption
+
+Small particles have large surface area and adsorb ions. The precipitate often adsorbs one of its own lattice ions first and then attracts oppositely charged counter-ions.
+
+### 5.2 Occlusion
+
+Rapid crystal growth may trap pockets of mother liquor inside the solid.
+
+### 5.3 Inclusion
+
+An ion of similar size and charge may replace a lattice ion during crystal growth.
+
+### 5.4 Post-precipitation
+
+A second sparingly soluble substance may slowly deposit on an earlier precipitate.
+
+### 5.5 Digestion
+
+Keeping the precipitate warm in contact with its mother liquor allows small particles to dissolve and redeposit on larger particles. The resulting precipitate is easier to filter and usually purer.
+
+### 5.6 Washing
+
+Washing removes soluble reagent and adsorbed mother liquor. Pure water is not always suitable because it can dissolve or peptise the precipitate. A dilute volatile electrolyte or a small amount of common ion is often preferred.
+
+A classical check for complete precipitation is to add one more drop of group reagent to the clear supernatant. New turbidity means precipitation was incomplete.
+
+## 6. Essential laboratory operations
+
+| Operation | Correct meaning | Why it matters |
 |---|---|---|
-| Decantation | Pour off liquid above a settled solid | Rapid separation |
-| Filtration | Separate precipitate from filtrate | Essential between groups |
-| Washing | Pass wash liquid through precipitate | Removes adsorbed ions/reagent |
-| Digestion | Keep precipitate warm in mother liquor | Produces larger, purer particles |
-| Centrifugation | Accelerate settling | Useful in microscale analysis |
-| Acidification | Add acid until required acidic condition | Controls equilibria/interference |
-| Alkalisation | Add base to required basic condition | Controls precipitation/complexes |
+| Decantation | Pour off liquid from a settled solid | Fast preliminary separation |
+| Filtration | Separate precipitate and filtrate through a porous medium | Required before the next group reagent |
+| Centrifugation | Accelerate sedimentation by rotation | Useful in semimicro analysis |
+| Washing | Remove soluble contaminants from a precipitate | Prevents false tests |
+| Digestion | Warm precipitate in mother liquor | Improves particle size and purity |
+| Evaporation | Remove solvent without strong decomposition | Concentrates a solution |
+| Ignition | Strong heating to constant residue | Converts precipitate to stable weighing form |
+| Acidification | Add acid until the required acidity is reached | Controls hydrolysis and sulphide concentration |
+| Alkalisation | Add base to the required basicity | Controls hydroxide precipitation and complexes |
+| Test on a separate portion | Use a fresh sample aliquot | Prevents reagent carry-over |
 
-### 2.2 Safety essentials
+Never infer that the next group reagent is added directly to the unfiltered mixture. In a correct systematic scheme, each group precipitate is removed before the filtrate proceeds to the next stage.
 
-- $\mathrm{H_2S}$ is highly toxic. Use only in a functioning fume hood.
-- Concentrated $\mathrm{H_2SO_4}$, $\mathrm{HNO_3}$, HF-generating tests, cyanides, arsenic compounds, mercury compounds, chromates, and lead salts require strict supervision.
-- Never smell a gas directly. Use wafting only where permitted.
-- Do not heat a closed test tube.
-- Point the mouth of a heated test tube away from every person.
-- In a school/JEE context, hazardous tests are studied as chemical principles; they must not be improvised outside a laboratory.
+## 7. Original sample, stock solution and separate portions
 
----
+The unknown sample should be divided logically.
 
-## 43. Complete Reagent Atlas
+1. A small portion is reserved for dry tests.
+2. A fresh portion is used for volatile acid-radical tests.
+3. A separate portion is used for halide, nitrate, sulphate and other wet anion tests.
+4. A fresh portion is used to prepare the original solution for cation analysis.
+5. Confirmatory tests are carried out on separated fractions, not on the untreated mixture.
 
-### Dilute hydrochloric acid
+This prevents an added reagent from becoming the ion supposedly being tested. Examples:
 
-Dilute HCl has three different analytical roles. It releases volatile products from carbonate, sulphite, thiosulphate, sulphide and nitrite; it precipitates the Group I chlorides; and it creates the acidic medium needed for Group II sulphide precipitation. These roles must not be mixed. A chloride test performed after adding HCl is invalid.
+- chloride cannot be tested after adding HCl;
+- nitrate cannot be tested after acidifying with $\mathrm{HNO_3}$;
+- sulphate cannot be tested after adding $\mathrm{H_2SO_4}$;
+- ammonium cannot be inferred after adding an ammonium salt as group reagent.
 
-### Concentrated sulphuric acid
+## 8. Interfering radicals
 
-Concentrated $\mathrm{H_2SO_4}$ is a non-volatile acid, dehydrating agent and oxidising agent. With chloride it mainly liberates HCl. With bromide and iodide, the initially formed HBr/HI reduces sulphuric acid. Iodide is strong enough to produce S and $\mathrm{H_2S}$ in addition to $\mathrm{SO_2}$. The same reagent helps generate volatile borate esters and chromyl chloride.
+Certain anions precipitate cations under the conditions used for Group III and later groups. Common interfering radicals include:
 
-### Dilute nitric acid
+$$
+\mathrm{PO_4^{3-},\ BO_3^{3-},\ C_2O_4^{2-},\ F^-,\ SiO_3^{2-},\ AsO_3^{3-},\ AsO_4^{3-}}
+$$
 
-Dilute $\mathrm{HNO_3}$ is used before $\mathrm{AgNO_3}$ because it destroys carbonate and sulphite without adding chloride. It must not be used while testing nitrate or when the original oxidation state of iron, tin or sulphur is important.
+For example, when the solution is made ammoniacal, calcium, barium, magnesium or transition-metal phosphates may precipitate along with Group III hydroxides. This may create a precipitate even when $\mathrm{Fe^{3+}}$, $\mathrm{Al^{3+}}$, and $\mathrm{Cr^{3+}}$ are absent.
 
-### Silver nitrate
+The analytical rule is:
 
-Silver nitrate is not merely a “halide reagent.” It also precipitates phosphate, carbonate, arsenate, chromate and several other anions. Correct acidity is therefore essential. Halides are tested after acidification with dilute nitric acid; the colour and ammonia solubility of the precipitate complete the inference.
+> Detect interfering radicals during anion analysis, remove or destroy them by an appropriate standard treatment, and only then begin the cation group separation.
 
-### Barium chloride
+[FIGURE:interfering-radicals-sabotage]
 
-Barium chloride forms white precipitates with sulphate, carbonate, sulphite, phosphate and oxalate. In acidic solution, carbonate and sulphite are destroyed and several other precipitates dissolve, whereas $\mathrm{BaSO_4}$ remains. “White with $\mathrm{BaCl_2}$” alone never proves sulphate.
+## 9. Analytical evidence hierarchy
 
-### Hydrogen sulphide
+Not all observations have equal reliability.
 
-$\mathrm{H_2S}$ supplies sulphide ion through weak stepwise ionisation. Its effective precipitating strength is controlled by pH. Acidic $\mathrm{H_2S}$ separates Group II; ammoniacal $\mathrm{H_2S}$ separates Group IV. This single reagent demonstrates common-ion effect, pH control and selective precipitation.
-
-### Ammonium chloride and ammonium hydroxide
-
-Together they form a buffer. $\mathrm{NH_4OH}$ supplies hydroxide; $\mathrm{NH_4Cl}$ suppresses excessive ionisation and prevents precipitation of later-group hydroxides. Reversing the order or omitting ammonium chloride can give contaminated Group III precipitate.
-
-### Yellow ammonium sulphide
-
-Yellow ammonium sulphide contains polysulphide and dissolves sulphides of arsenic, antimony and tin by producing soluble thio salts. It can also oxidise lower sulphides, such as SnS, toward higher thio species. Acidification decomposes the thio complexes and reprecipitates the sulphides.
-
-### Ammonium carbonate
-
-In an ammonium buffer, it selectively precipitates Ba, Sr and Ca carbonates while leaving Mg mainly in solution. The selectivity is not based on a slogan that “magnesium carbonate is soluble”; it follows from controlled carbonate activity, buffer conditions and relative solubility products.
-
-### Sodium hydroxide
-
-NaOH releases ammonia from ammonium salts, precipitates metal hydroxides and dissolves amphoteric hydroxides. The sequence “precipitate first, dissolve in excess” is important for $\mathrm{Al^{3+}}$, $\mathrm{Zn^{2+}}$, $\mathrm{Cr^{3+}}$, $\mathrm{Pb^{2+}}$ and tin ions.
-
----
-
-## 44. Precipitate Formation, Digestion and Washing
-
-Precipitation is not instantaneous proof of purity. Immediately after nucleation, very small particles have large surface area and adsorb ions strongly. Slow reagent addition with stirring gives fewer nuclei and larger particles. Warming or digesting the precipitate in its mother liquor allows small particles to dissolve and redeposit on larger ones. The precipitate then filters more easily and carries fewer impurities.
-
-Three contamination mechanisms matter:
-
-1. **Surface adsorption:** ions of the precipitate are preferentially adsorbed, followed by oppositely charged counter-ions.
-2. **Occlusion:** pockets of mother liquor become trapped during rapid crystal growth.
-3. **Post-precipitation:** a second sparingly soluble substance deposits on an existing precipitate with time.
-
-Washing removes soluble reagent and mother liquor, but pure water is not always ideal. A precipitate may peptise or dissolve. A wash liquid often contains a volatile electrolyte or a small concentration of common ion. The washings should be tested until the interfering ion is absent.
-
-Complete precipitation is checked by allowing the solid to settle and adding one more drop of group reagent to the clear supernatant. Formation of additional cloudiness means precipitation was incomplete. Excessive group reagent must still be avoided because some precipitates dissolve through complex formation.
-
-In JEE problems, “the precipitate is filtered” implies that the filtrate, not the solid, is used for the next group. If filtration is omitted, the subsequent reagent can alter earlier precipitates and create misleading colours.
-
----
-
-## 58. Numerical Equilibrium Templates
-
-### Onset of precipitation
-
-For $\mathrm{MX}$:
-
-$$[\mathrm{M^+}][\mathrm{X^-}]=K_{sp}$$
-
-If $[\mathrm{M^+}]$ is known, the minimum precipitating-ion concentration is:
-
-$$[\mathrm{X^-}]_{\min}=\frac{K_{sp}}{[\mathrm{M^+}]}$$
-
-For $\mathrm{MX_2}$:
-
-$$K_{sp}=[\mathrm{M^{2+}}][\mathrm{X^-}]^2$$
-
-Therefore:
-
-$$[\mathrm{X^-}]_{\min}=\sqrt{\frac{K_{sp}}{[\mathrm{M^{2+}}]}}$$
-
-### Fractional precipitation
-
-When two ions precipitate with the same counter-ion, the ion requiring the smaller counter-ion concentration begins first. Separation is effective only if most of the first ion precipitates before the second begins.
-
-### Coupled complexation
-
-If $\mathrm{M^{n+}}$ forms $\mathrm{ML_p}$:
-
-$$\beta_p=\frac{[\mathrm{ML_p}]}{[\mathrm{M^{n+}}][\mathrm{L}]^p}$$
-
-High ligand concentration lowers free $[\mathrm{M^{n+}}]$ and may dissolve a precipitate or prevent its formation.
-
-### pH-dependent sulphide concentration
-
-Combining the two dissociation constants of $\mathrm{H_2S}$ gives approximately:
-
-$$[\mathrm{S^{2-}}]\propto\frac{K_{a1}K_{a2}[\mathrm{H_2S}]}{[\mathrm{H^+}]^2}$$
-
-Thus a tenfold decrease in $[\mathrm{H^+}]$ can increase $[\mathrm{S^{2-}}]$ roughly one hundredfold while other conditions remain comparable. This explains the dramatic difference between acidic and ammoniacal sulphide precipitation.
-
----
-
-## 69. Master Solubility Chart
-
-The statements below refer to ordinary room-temperature water unless a special condition is stated. “Insoluble” in qualitative analysis means sufficiently sparingly soluble to form a precipitate at analytical concentrations.
-
-[FIGURE:solubility-funnel]
-
-### 69.1 General rules
-
-| Salt family | General rule | Major exceptions or qualifications |
+| Level | Evidence | Reliability |
 |---|---|---|
-| Alkali-metal salts | Soluble | $\mathrm{Li_3PO_4}$ is sparingly soluble; $\mathrm{Li_2CO_3}$ is much less soluble than other alkali carbonates; $\mathrm{NaHCO_3}$ is only moderately soluble; $\mathrm{KClO_4}$ is sparingly soluble |
-| Ammonium salts | Soluble | Complex salts can behave differently; ammonium salts may decompose on heating |
-| Nitrates | Soluble | No important common exception in classical aqueous analysis |
-| Acetates | Generally soluble | $\mathrm{AgCH_3COO}$ and $\mathrm{Hg_2(CH_3COO)_2}$ are sparingly soluble; basic acetates may precipitate |
-| Formates | Generally soluble | Ag(I), Hg(I) and some heavy-metal formates are sparingly soluble |
-| Chlorides | Soluble | AgCl, $\mathrm{Hg_2Cl_2}$ and PbCl₂ are sparingly soluble; PbCl₂ is much more soluble hot |
-| Bromides | Soluble | AgBr, $\mathrm{Hg_2Br_2}$ and PbBr₂ are sparingly soluble |
-| Iodides | Soluble | AgI, $\mathrm{Hg_2I_2}$, PbI₂, CuI and HgI₂ are sparingly soluble; some dissolve in excess iodide by complex formation |
-| Sulphates | Generally soluble | BaSO₄, SrSO₄ and PbSO₄ are very sparingly soluble; CaSO₄ is sparingly soluble; Ag₂SO₄ and Hg₂SO₄ have limited solubility |
-| Carbonates | Insoluble | Alkali-metal and ammonium carbonates are soluble; bicarbonates are generally soluble in water |
-| Phosphates | Insoluble | Alkali-metal and ammonium phosphates are soluble; many dihydrogen phosphates are soluble |
-| Oxalates | Generally insoluble | Alkali-metal and ammonium oxalates are soluble; $\mathrm{BeC_2O_4}$ is appreciably soluble/complexed |
-| Borates | Generally insoluble | Alkali-metal borates are soluble; hydrolysis makes their solutions alkaline |
-| Chromates | Many are insoluble | Alkali-metal, ammonium, Mg and Ca chromates are soluble; Sr, Ba, Pb and Ag chromates are sparingly soluble |
-| Sulphides | Mostly insoluble | Alkali-metal and ammonium sulphides are soluble; alkaline-earth sulphides hydrolyse and have appreciable/sparing solubility |
-| Hydroxides | Mostly insoluble | Alkali hydroxides are soluble; Ba(OH)₂ is soluble, Sr(OH)₂ moderately soluble, Ca(OH)₂ sparingly soluble; amphoteric hydroxides dissolve in excess strong base |
+| Screening clue | Colour of salt, flame colour, odour, preliminary gas | Low to moderate |
+| Group evidence | Precipitation with a group reagent | Moderate |
+| Separation evidence | Selective dissolution or reprecipitation | High |
+| Specific confirmation | Characteristic complex, redox product, or isolated precipitate | Highest |
 
-[FIGURE:solubility-decision-tree-a]
+A correct answer should combine at least two independent observations where possible.
 
-[FIGURE:solubility-decision-tree-b]
+## 10. Common failure modes in JEE problems
 
-### 69.2 Silver-halide solvent chart
+1. **Ignoring the medium.** The same reagent behaves differently in acidic and alkaline solution.
+2. **Using total concentration instead of free-ion concentration.**
+3. **Forgetting dilution after mixing solutions.**
+4. **Assuming every white precipitate is the same substance.**
+5. **Forgetting amphoterism or complex formation in excess reagent.**
+6. **Failing to filter before adding the next group reagent.**
+7. **Using a reagent that introduces the ion being tested.**
+8. **Confusing a preliminary test with a confirmatory test.**
+9. **Treating smell as a safe or specific test.**
+10. **Ignoring oxidation-state conversion during dissolution or heating.**
 
-| Precipitate | Colour | Dilute NH₃ | Concentrated NH₃ | $\mathrm{Na_2S_2O_3}$ | KCN | Light |
-|---|---|---|---|---|---|---|
-| AgCl | White | Soluble | Soluble | Soluble as $\mathrm{[Ag(S_2O_3)_2]^{3-}}$ | Soluble as $\mathrm{[Ag(CN)_2]^-}$ | Darkens |
-| AgBr | Cream | Very little/partial | Considerably soluble | Soluble | Soluble | Darkens |
-| AgI | Yellow | Insoluble | Insoluble | Soluble only under stronger suitable thiosulphate conditions; much less readily | Soluble | Darkens slowly |
-| $\mathrm{Ag_2S}$ | Black | Insoluble | Insoluble | Insoluble under ordinary test conditions | Resistant/complex redox conditions required | No useful phototest |
+## 11. Safety and modern interpretation
 
-**JEE caution:** Textbooks differ in describing AgBr as “partly soluble” or “soluble in concentrated ammonia.” The safe analytical statement is: AgBr is far less soluble than AgCl and requires concentrated ammonia; AgI remains insoluble.
+Classical qualitative analysis includes toxic gases and hazardous compounds. The chemistry is part of the JEE syllabus, but practical execution requires trained supervision, a fume hood, appropriate protective equipment, and regulated waste disposal.
 
-### 69.3 Sulphide-solubility chart
+Especially hazardous topics include $\mathrm{H_2S}$, cyanides, arsenic and mercury compounds, chromates, lead salts, concentrated acids, and tests that generate HF. Study the chemistry; do not improvise these tests outside a properly equipped laboratory.
 
-| Sulphide family | Dilute HCl | Hot dilute $\mathrm{HNO_3}$ | Yellow ammonium sulphide | Aqua regia |
-|---|---|---|---|---|
-| Group II-A: CuS, CdS, PbS, $\mathrm{Bi_2S_3}$ | Insoluble/very resistant | Generally soluble with sulphur formation; HgS exception | Insoluble | Soluble under suitable treatment |
-| HgS | Insoluble | Insoluble | Insoluble in YAS; soluble in suitable alkali sulphide as thio complex only under specified conditions | Soluble |
-| Group II-B: As/Sb/Sn sulphides | Resistant to dilute HCl | Oxidised/dissolved depending on conditions | Soluble as thio salts | Soluble |
-| NiS, CoS | Resistant to dilute HCl | Soluble in oxidising acid | Insoluble | Soluble |
-| ZnS | Soluble in dilute HCl | Soluble | Insoluble in excess ammonia/NaOH | Soluble |
-| MnS | Soluble even in acetic acid | Soluble | Insoluble in excess ammonia/NaOH | Soluble |
-| FeS | Soluble in non-oxidising acid | Soluble | — | Soluble |
+## 12. Foundation checklist
 
-General acid dissolution:
+Before moving to individual radicals, make sure you can answer:
 
-$$\mathrm{MS+2H^+\rightarrow M^{2+}+H_2S\uparrow}$$
-
-Oxidising nitric acid does not simply release $\mathrm{H_2S}$; it oxidises sulphide, often to S or sulphate while nitrate is reduced to NO/$\mathrm{NO_2}$.
-
-### 69.4 Alkaline-earth selectivity chart
-
-| Reagent in controlled medium | Ba²⁺ | Sr²⁺ | Ca²⁺ | Separation idea |
-|---|---|---|---|---|
-| Chromate in acetic acid | Yellow BaCrO₄ | Normally remains under selected acidity | No ppt | Remove Ba first |
-| Sulphate after Ba removal | BaSO₄ if any Ba remains | White SrSO₄ | CaSO₄ much more soluble | Remove Sr second |
-| Oxalate after Ba/Sr removal | Ba oxalate suppressed/removed | Sr oxalate condition-dependent | White CaC₂O₄ | Confirm Ca last |
-
-Solubility order:
-
-$$\mathrm{CaSO_4>SrSO_4>BaSO_4}$$
-
----
-
-## 73. Complete Experimental Precautions
-
-### 73.1 General sample handling
-
-1. Use a fresh, separate portion for every independent anion test.
-2. Record the original colour before grinding, heating or dissolving.
-3. Use distilled/deionised water; tap water introduces $\mathrm{Cl^-}$, $\mathrm{Ca^{2+}}$ and other ions.
-4. Never return unused sample or reagent to the stock bottle.
-5. Label filtrate and precipitate immediately; retain both until the analysis is secure.
-6. Add reagents dropwise first. A large excess can dissolve the desired precipitate or create a complex.
-7. Check complete precipitation in the supernatant before filtering.
-8. Wash precipitates with an appropriate wash liquid; avoid peptisation and dissolution.
-
-### 73.2 Original-solution precautions
-
-| Suspected/tested species | Avoid | Reason |
-|---|---|---|
-| Chloride | HCl as solvent | Introduces chloride |
-| Nitrate | HNO₃ as solvent | Introduces nitrate |
-| Sulphide/sulphite/Fe²⁺/Sn²⁺ | Oxidising HNO₃ | Changes oxidation state |
-| Ag⁺/Pb²⁺/Hg₂²⁺ | Uncontrolled chloride | Premature Group I precipitation |
-| Redox-sensitive ions | Aqua regia | Strong oxidation plus chloride complexation |
-
-### 73.3 Gas-test precautions
-
-- Use only a small sample.
-- Do not smell directly; waft where permitted.
-- H₂S, HCN, arsine and mercury/arsenic vapours require a fume hood and trained supervision.
-- Keep lead acetate paper moist for gas contact.
-- For limewater, pass gas gently; excess CO₂ or SO₂ can clear the precipitate.
-
-### 73.4 Flame and bead precautions
-
-1. Clean platinum/nichrome wire with concentrated HCl until it gives no flame colour.
-2. Sodium contamination is common; use cobalt glass for potassium.
-3. Use the non-luminous flame and the correct oxidising/reducing zone.
-4. Observe borax beads both hot and cold; some colours change strongly on cooling.
-5. Use only a tiny amount of sample; too much makes the bead opaque.
-6. Never touch a hot loop or bead.
-
-### 73.5 Brown-ring test precautions
-
-1. Use freshly prepared $\mathrm{FeSO_4}$.
-2. Remove nitrite first.
-3. Cool the test mixture.
-4. Add concentrated $\mathrm{H_2SO_4}$ slowly down the wall to form a separate lower layer.
-5. Do not shake or warm after layering; the brown complex decomposes.
-6. Observe the ring at the interface, not a general brown solution.
-
-### 73.6 Chromyl chloride precautions
-
-1. Use a dry salt and dry apparatus.
-2. Do not use a wet chloride solution; hydrolysis prevents the characteristic vapour.
-3. Bromide and iodide must be absent because dichromate oxidises them to coloured halogens.
-4. Absorb vapours in NaOH, then acidify appropriately before lead-chromate confirmation.
-5. Treat the test as theoretical/hood-only because concentrated acid and Cr(VI) are hazardous.
-
-### 73.7 Group-analysis precautions
-
-1. Follow the group order exactly.
-2. Maintain the stated acidity for Group II; too much acid suppresses even desired sulphides, too little precipitates Group IV ions.
-3. Remove H₂S completely before Group III.
-4. Add $\mathrm{NH_4Cl}$ before $\mathrm{NH_4OH}$.
-5. Remove interfering phosphate, borate, fluoride, oxalate and silicate before Group III.
-6. Maintain ammoniacal conditions during Group IV precipitation.
-7. Do not test ammonium after ammonium reagents have been added.
-8. Use acetic-acid control for Ba/Sr/Ca separations.
-
-### 73.8 Waste and safety
-
-Lead, mercury, cadmium, arsenic, antimony, chromium(VI), nickel and cobalt waste must be collected as hazardous heavy-metal waste. It must not be poured into a sink. Cyanide and sulphide waste must never be acidified casually because highly toxic HCN or H₂S can be released.
-
----
-
-## 78. Deeper Theory of Qualitative Analysis
-
-### 78.1 Selectivity and specificity
-
-A **specific test** responds to only one ion under the stated conditions. Truly specific reactions are rare. A **selective test** responds to a small set of ions and becomes useful after group separation or masking. For example, DMG is highly selective for $\mathrm{Ni^{2+}}$ in ammoniacal solution, but Fe(II) and Co(II) can also interact with DMG under other conditions. The chemical environment is therefore part of the test.
-
-### 78.2 Sensitivity, detection limit and dilution limit
-
-- **Detection limit:** smallest mass or concentration that gives a recognisable response under stated conditions.
-- **Dilution limit:** greatest dilution at which the test is still positive.
-- **Sensitivity:** practical ability of a test to reveal a small quantity; it depends on observation method, volume, reagent purity and interferences.
-
-A very sensitive test is not automatically specific. Flame emission for sodium is extremely sensitive but contamination produces false positives.
-
-### 78.3 Macro, semimicro, micro and spot tests
-
-| Scale | Typical sample size | Advantage | Limitation |
-|---|---|---|---|
-| Macro | Hundreds of milligrams or more | Easy handling and visible precipitates | More waste and hazardous reagent |
-| Semimicro | Tens of milligrams | Standard teaching compromise | Requires careful dropwise technique |
-| Micro | Milligrams | Rapid and low waste | Small observations can be missed |
-| Spot test | One/few drops on plate or paper | Very sensitive, fast | Matrix effects; many are only selective |
-
-Spot tests become much more reliable after the interfering group has been separated. A coloured spot on paper may be intensified by adsorption and concentration at the drying edge.
-
-### 78.4 Nucleation and crystal growth
-
-Precipitation begins with formation of tiny nuclei. High supersaturation creates many nuclei and a colloidal precipitate. Lower supersaturation, warm solution, slow addition and stirring favour crystal growth. Relative supersaturation may be represented qualitatively as:
-
-$$\mathrm{\frac{Q-S}{S}}$$
-
-where $Q$ is the instantaneous solute concentration and $S$ is equilibrium solubility. Smaller relative supersaturation generally gives larger, purer particles.
-
-### 78.5 Coagulation and peptisation
-
-Colloidal particles carry surface charge and repel one another. An electrolyte compresses the electrical double layer and promotes coagulation. Washing a coagulated precipitate with pure water can remove electrolyte and redisperse it—**peptisation**. A suitable volatile electrolyte in the wash liquid prevents this.
-
-### 78.6 Coprecipitation
-
-Coprecipitation carries otherwise soluble material with a precipitate through:
-
-- surface adsorption;
-- occlusion of mother liquor;
-- inclusion/isomorphous substitution in the crystal;
-- mechanical entrapment.
-
-Digestion, reprecipitation and correct washing reduce contamination.
-
-### 78.7 Post-precipitation
-
-A second substance slowly precipitates on an already formed solid. Filtering without unnecessary delay prevents this. Coprecipitation occurs during formation of the main precipitate; post-precipitation develops afterward.
-
-### 78.8 Masking versus separation
-
-Separation physically places ions into different fractions. Masking keeps an interfering ion in the same solution but lowers its reactive free concentration by complex formation. Demasking later releases it.
-
-### 78.9 Oxidation-state preservation
-
-Dry tests, nitric acid, aqua regia, peroxide and chlorine water may change oxidation states. A positive test for “iron” after oxidation does not reveal whether the original salt contained Fe(II) or Fe(III). Oxidation-state tests require a fresh portion dissolved without oxidising reagents.
-
----
+- Why does Group II precipitate in acidic $\mathrm{H_2S}$ but Group IV in ammoniacal sulphide?
+- Why is $\mathrm{NH_4Cl}$ added before ammonia in Group III?
+- How can a complexing ligand dissolve a precipitate?
+- Why must every group precipitate be filtered before the next reagent?
+- Why are separate portions required for chloride, nitrate, sulphate and ammonium?
+- Which anions interfere with cation analysis, and why?
+- What is the difference between a screening clue and a confirmatory test?
 `;
 
 export default function SaltAnalysisPart01() {

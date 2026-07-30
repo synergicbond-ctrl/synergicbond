@@ -14,7 +14,7 @@
 //   thermodynamics 30 · chemical-equilibrium 18 · electrochemistry 24 ·
 //   mole-concept 15 · stoichiometry 9 · concentration-terms 6 · eudiometry 6 ·
 //   redox 10 lessons (15 sections) · hydrogen 8 lessons (22 chapters) ·
-//   periodic-table master notes · s-block-elements 18 lessons ·
+//   solid-state 10 parts · periodic-table master notes · s-block-elements 18 lessons ·
 //   p-block-elements 20 lessons · d-block-elements 10 theory parts ·
 //   isomerism 40 parts (169 source modules).
 // ─────────────────────────────────────────────────────────────────────────────
@@ -100,6 +100,17 @@ export const AUTHORED_COURSES: AuthoredCourse[] = [
     premium: false,
     description:
       "Complete JEE Advanced treatment of liquid solutions, Henry’s law, Raoult’s law, ideal and non-ideal behaviour, phase diagrams, distillation, azeotropes and all colligative properties.",
+  },
+  // ── Solid State ────────────────────────────────────────────────────────────
+  {
+    id: "solid-state",
+    syllabusId: "solid-state",
+    title: "Solid State",
+    href: "/learn/solid-state/master",
+    lessonLabel: "10 parts",
+    premium: false,
+    description:
+      "Complete JEE Advanced Solid State notes covering crystal classification, lattices and unit cells, seven crystal systems, packing, voids, radius-ratio rules, important ionic structures, defects, electrical properties and magnetism.",
   },
   // ── Atomic Structure ───────────────────────────────────────────────────────
   {

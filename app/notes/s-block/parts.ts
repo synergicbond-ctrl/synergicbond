@@ -1,48 +1,120 @@
 import "server-only";
+
 import { S_BLOCK_MASTER_MARKDOWN } from "./content";
 
-export interface SBlockPartDef { slug: string; number: number; title: string; fromSection: number; toSection: number; }
+export type SBlockPartDef = {
+  number: number;
+  slug: string;
+  title: string;
+  fromSection: number;
+  toSection: number;
+  focus: string;
+};
 
-export const S_BLOCK_PARTS: SBlockPartDef[] = [
-  // Foundations (1-3) → anomalies and diagonal relationships (4-6) →
-  // properties and reactions (7-9) → compound classes (10-13) →
-  // special topics and named compounds (14-16) → biology and revision (17-18).
-  { slug: "part1", number: 1, title: "S-block position, configuration & overview", fromSection: 1, toSection: 1 },
-  { slug: "part2", number: 2, title: "Radii, ionisation enthalpy & electronegativity", fromSection: 2, toSection: 2 },
-  { slug: "part3", number: 3, title: "Hydration, lattice enthalpy & solubility principles", fromSection: 3, toSection: 3 },
-  { slug: "part4", number: 4, title: "Anomalous behaviour of lithium", fromSection: 4, toSection: 4 },
-  { slug: "part5", number: 5, title: "Anomalous behaviour of beryllium", fromSection: 5, toSection: 5 },
-  { slug: "part6", number: 6, title: "Diagonal relationships: Li–Mg and Be–Al", fromSection: 6, toSection: 6 },
-  { slug: "part7", number: 7, title: "Physical properties, flame colours & identification", fromSection: 7, toSection: 7 },
-  { slug: "part8", number: 8, title: "Oxygen: oxides, peroxides & superoxides", fromSection: 8, toSection: 8 },
-  { slug: "part9", number: 9, title: "Reactions with water, H₂, N₂, halogens, acids & bases", fromSection: 9, toSection: 9 },
-  { slug: "part10", number: 10, title: "Hydrides: preparation, bonding & reactions", fromSection: 10, toSection: 10 },
-  { slug: "part11", number: 11, title: "Halides: bonding, hydrolysis & thermal behaviour", fromSection: 11, toSection: 11 },
-  { slug: "part12", number: 12, title: "Hydroxides: basicity, solubility & decomposition", fromSection: 12, toSection: 12 },
-  { slug: "part13", number: 13, title: "Carbonates, bicarbonates, nitrates & sulphates", fromSection: 13, toSection: 13 },
-  { slug: "part14", number: 14, title: "Liquid ammonia solutions & solvated electrons", fromSection: 14, toSection: 14 },
-  { slug: "part15", number: 15, title: "Sodium compounds: NaCl, NaOH, Na₂CO₃, NaHCO₃", fromSection: 15, toSection: 15 },
-  { slug: "part16", number: 16, title: "Calcium compounds: CaO, Ca(OH)₂, CaCO₃, CaSO₄", fromSection: 16, toSection: 16 },
-  { slug: "part17", number: 17, title: "Biological importance of Na, K, Mg & Ca", fromSection: 17, toSection: 17 },
-  { slug: "part18", number: 18, title: "JEE Advanced exception bank & revision", fromSection: 18, toSection: 18 },
-];
+const PART_TITLES = [
+  "NCERT coverage map and how to use this course",
+  "Position, electronic configuration, occurrence and oxidation states",
+  "Alkali metals: NCERT data table and trend audit",
+  "Alkaline-earth metals: NCERT data table and trend audit",
+  "Periodic orders: size, ionisation, basicity and reactivity",
+  "Hydration enthalpy, lattice enthalpy and solubility",
+  "Standard electrode potentials and reducing character",
+  "Flame colours, emission wavelengths and photoelectric behaviour",
+  "Anomalous behaviour of lithium",
+  "Anomalous behaviour of beryllium",
+  "Diagonal relationship: lithium and magnesium",
+  "Diagonal relationship: beryllium and aluminium",
+  "Oxygen chemistry: oxides, peroxides, superoxides and ozonides",
+  "Reaction atlas of the metals",
+  "Nitrides, carbides, sulphides and polysulphides",
+  "Hydrides: saline, covalent and complex",
+  "Liquid ammonia, solvated electrons, crown ethers and cryptands",
+  "Halides: bonding, structures, hydrolysis and preparation",
+  "Hydroxides: preparation, basicity, solubility and reactions",
+  "Carbonates and hydrogencarbonates",
+  "Nitrates, sulphates and hydrated salts",
+  "Sodium chloride and sodium hydroxide",
+  "Sodium carbonate, sodium hydrogencarbonate and the Solvay process",
+  "Potassium carbonate, Leblanc chemistry and sodium-process extensions",
+  "Magnesium and calcium compounds: reaction network",
+  "Gypsum, plaster of Paris and Portland cement",
+  "Hardness of water and s-block ion removal",
+  "Biological importance, practical uses and data facts",
+  "Master order bank, exception bank and JEE traps",
+  "Worked examples and JEE Advanced challenge laboratory",
+] as const;
 
-function sections() {
-  const lines = S_BLOCK_MASTER_MARKDOWN.split("\n");
-  const preamble: string[] = []; const result: { num: number; text: string }[] = [];
-  let current: { num: number; lines: string[] } | undefined;
-  for (const line of lines) {
-    const match = /^# (\d+)\./.exec(line);
-    if (match) { if (current) result.push({ num: current.num, text: current.lines.join("\n") }); current = { num: Number(match[1]), lines: [line] }; }
-    else if (current) current.lines.push(line); else preamble.push(line);
-  }
-  if (current) result.push({ num: current.num, text: current.lines.join("\n") });
-  return { preamble: preamble.join("\n"), result };
+const PART_FOCUS = [
+  "Complete NCERT scope, lesson map and the six controlling ideas.",
+  "Block position, configurations, oxidation states, occurrence and general character.",
+  "Exact Group 1 data, density anomaly, metallic bonding and hydrated mobility.",
+  "Exact Group 2 data, cross-group comparisons and hydrate formation.",
+  "Core orders, process-dependent reactivity and water-reaction conditions.",
+  "Energetic competition governing hydration, lattice strength and solubility.",
+  "Thermochemical cycle, lithium paradox and gas-versus-aqueous comparisons.",
+  "Flame wavelengths, cobalt glass, identification limits and photoemission.",
+  "Every lithium exception derived from small size and polarising power.",
+  "Covalent, amphoteric, hydrolytic and complex-forming beryllium chemistry.",
+  "Li–Mg similarities, equations and limits of the diagonal analogy.",
+  "Be–Al amphoterism, bridged chlorides, complexes and carbide hydrolysis.",
+  "Oxygen-ion magnetism, product selection, preparations and life support.",
+  "Reactions with water, hydrogen, nitrogen, halogens, sulphur, acids and bases.",
+  "Gas-forming hydrolysis patterns and advanced polysulphide chemistry.",
+  "Saline and covalent hydrides, stability, hydrolysis and complex hydrides.",
+  "Solvated electrons, blue/bronze solutions, ion recognition and electrides.",
+  "Fajans orders, BeCl₂ structures, fluoride lattices and MgCl₂ hydrolysis.",
+  "Basicity and solubility orders, thermal behaviour and CO₂ stoichiometry.",
+  "Solubility, decomposition, polarisation and bicarbonate equilibria.",
+  "Nitrate products, sulphate solubility, hydrate facts and analytical tests.",
+  "NaCl purification, membrane electrolysis, mercury-cell history and NaOH.",
+  "Washing soda, baking soda, complete Solvay cycle, properties and uses.",
+  "Potash, historical Leblanc route, fusion mixture and process comparison.",
+  "MgO, milk of magnesia, quicklime, lime water, carbonate and carbide.",
+  "Controlled dehydration, plaster setting, clinker phases and gypsum control.",
+  "Temporary/permanent hardness, precipitation, complexing and ion exchange.",
+  "NCERT biological data, ion gradients, uses and essential safety distinctions.",
+  "All high-frequency orders, first-member exceptions and corrected traps.",
+  "Twenty worked examples spanning theory, reactions, data and calculations.",
+] as const;
+
+export const S_BLOCK_PARTS: SBlockPartDef[] = PART_TITLES.map((title, index) => {
+  const number = index + 1;
+  return {
+    number,
+    slug: `part${number}`,
+    title,
+    fromSection: number,
+    toSection: number,
+    focus: PART_FOCUS[index] ?? title,
+  };
+});
+
+const SECTION_HEADING = /^#\s+(\d+)\.\s+(.+)$/gm;
+
+type SectionSlice = {
+  number: number;
+  start: number;
+  end: number;
+};
+
+function sectionSlices(markdown: string): SectionSlice[] {
+  const matches = [...markdown.matchAll(SECTION_HEADING)];
+  return matches.map((match, index) => ({
+    number: Number(match[1]),
+    start: match.index ?? 0,
+    end: matches[index + 1]?.index ?? markdown.length,
+  }));
+}
+
+const MASTER_SECTIONS = sectionSlices(S_BLOCK_MASTER_MARKDOWN);
+
+export function sBlockPartBySlug(slug: string) {
+  return S_BLOCK_PARTS.find((part) => part.slug === slug);
 }
 
 export function sBlockPartMarkdown(part: SBlockPartDef) {
-  const split = sections();
-  const body = split.result.filter((item) => item.num >= part.fromSection && item.num <= part.toSection).map((item) => item.text).join("\n");
-  return part.number === 1 ? `${split.preamble}\n${body}` : body;
+  const first = MASTER_SECTIONS.find((section) => section.number === part.fromSection);
+  const last = MASTER_SECTIONS.find((section) => section.number === part.toSection);
+  if (!first || !last) return "";
+  return S_BLOCK_MASTER_MARKDOWN.slice(first.start, last.end).trim();
 }
-export function sBlockPartBySlug(slug: string) { return S_BLOCK_PARTS.find((part) => part.slug === slug); }

@@ -96,7 +96,7 @@ export const AUTHORED_COURSES: AuthoredCourse[] = [
     syllabusId: "solutions",
     title: "Solution and Colligative Properties",
     href: "/learn/jee-advanced/solutions",
-    lessonLabel: "13 sections",
+    lessonLabel: "17 parts",
     premium: false,
     description:
       "Complete JEE Advanced treatment of liquid solutions, Henry’s law, Raoult’s law, ideal and non-ideal behaviour, phase diagrams, distillation, azeotropes and all colligative properties.",

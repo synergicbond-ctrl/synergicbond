@@ -22,6 +22,88 @@ const toneClasses: Record<Tone, string> = {
   rose: "border-rose-400/35 bg-rose-400/[0.07] text-rose-100",
 };
 
+const navLabels: Record<string, string> = {
+  "01": "Polymer Science Overview",
+  "02": "Classification of Polymers",
+  "03": "Chain Architecture",
+  "04": "Homopolymers & Copolymers",
+  "05": "Chain Growth vs Step Growth",
+  "06": "Free-Radical Polymerisation",
+  "07": "Ionic & Coordination Routes",
+  "08": "Tacticity & Geometrical Order",
+  "09": "Molecular Mass & Dispersity",
+  "10": "Functionality in Step Growth",
+  "11": "Forces & Thermal Classes",
+  "12": "Glass Transition & Crystallinity",
+  "13": "The Polyethene Family",
+  "14": "Major Vinyl Polymers",
+  "15": "Synthetic Rubbers",
+  "16": "Natural Rubber & Vulcanisation",
+  "17": "Nylons & Polyamides",
+  "18": "Polyesters & Polyurethanes",
+  "19": "Thermosetting Resins",
+  "20": "Biodegradable Polymers",
+  "21": "Conducting & Functional Polymers",
+  "22": "Additives, Processing & Recycling",
+  "23": "Polymer Identification Matrix",
+  "24": "Solved Examination Problems",
+  "25": "Exceptions & Misconceptions",
+  "26": "Practice & Answer Key",
+};
+
+const navigationTracks = [
+  {
+    label: "Foundations",
+    caption: "Build the language of macromolecules",
+    ids: ["01", "02", "03", "04"],
+    eyebrow: "text-cyan-300",
+    node: "border-cyan-400/35 bg-cyan-400/10 text-cyan-100",
+    hover: "hover:border-cyan-400/35 hover:bg-cyan-400/[0.07]",
+  },
+  {
+    label: "Polymerisation Engine",
+    caption: "Understand how chains are actually built",
+    ids: ["05", "06", "07", "08", "09", "10"],
+    eyebrow: "text-violet-300",
+    node: "border-violet-400/35 bg-violet-400/10 text-violet-100",
+    hover: "hover:border-violet-400/35 hover:bg-violet-400/[0.07]",
+  },
+  {
+    label: "Structure → Properties",
+    caption: "Connect chain motion with material behaviour",
+    ids: ["11", "12"],
+    eyebrow: "text-amber-300",
+    node: "border-amber-400/35 bg-amber-400/10 text-amber-100",
+    hover: "hover:border-amber-400/35 hover:bg-amber-400/[0.07]",
+  },
+  {
+    label: "Plastics & Rubbers",
+    caption: "Decode the high-yield commercial families",
+    ids: ["13", "14", "15", "16"],
+    eyebrow: "text-rose-300",
+    node: "border-rose-400/35 bg-rose-400/10 text-rose-100",
+    hover: "hover:border-rose-400/35 hover:bg-rose-400/[0.07]",
+  },
+  {
+    label: "Fibres, Resins & Smart Materials",
+    caption: "Move from nylons to functional polymers",
+    ids: ["17", "18", "19", "20", "21"],
+    eyebrow: "text-emerald-300",
+    node: "border-emerald-400/35 bg-emerald-400/10 text-emerald-100",
+    hover: "hover:border-emerald-400/35 hover:bg-emerald-400/[0.07]",
+  },
+  {
+    label: "Application & Exam Mastery",
+    caption: "Consolidate, identify and practise",
+    ids: ["22", "23", "24", "25", "26"],
+    eyebrow: "text-fuchsia-300",
+    node: "border-fuchsia-400/35 bg-fuchsia-400/10 text-fuchsia-100",
+    hover: "hover:border-fuchsia-400/35 hover:bg-fuchsia-400/[0.07]",
+  },
+] as const;
+
+const sectionsById = new Map(polymerSections.map((section) => [section.id, section]));
+
 function Latex({ value, block = false }: { value: string; block?: boolean }) {
   const html = katex.renderToString(value, {
     displayMode: block,
@@ -183,16 +265,64 @@ export default function PolymersPage() {
 
       <PolymerVisualGallery />
 
-      <div className="relative z-10 mx-auto grid max-w-7xl gap-8 px-4 py-8 md:px-8 lg:grid-cols-[230px_minmax(0,1fr)]">
+      <div className="relative z-10 mx-auto grid max-w-[1480px] gap-8 px-4 py-8 md:px-8 lg:grid-cols-[340px_minmax(0,1fr)]">
         <aside className="h-fit lg:sticky lg:top-5">
-          <nav className="rounded-2xl border border-slate-800 bg-[#070c16]/95 p-3 backdrop-blur">
-            <p className="px-2 py-2 text-xs font-black uppercase tracking-[0.2em] text-slate-500">Sections</p>
-            <div className="grid max-h-[74vh] grid-cols-4 gap-2 overflow-y-auto pr-1 sm:grid-cols-8 lg:grid-cols-4">
-              {polymerSections.map((section) => (
-                <a key={section.id} href={`#section-${section.id}`} className="flex h-10 items-center justify-center rounded-lg border border-slate-800 bg-slate-900/70 text-sm font-black text-slate-300 transition hover:border-cyan-400/50 hover:bg-cyan-400/10 hover:text-cyan-100">
-                  {Number(section.id)}
-                </a>
+          <nav className="overflow-hidden rounded-[28px] border border-slate-700/70 bg-[#070c16]/95 shadow-[0_24px_90px_rgba(0,0,0,0.32)] backdrop-blur-xl">
+            <div className="relative overflow-hidden border-b border-slate-800 px-5 py-5">
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_10%_20%,rgba(34,211,238,0.12),transparent_36%),radial-gradient(circle_at_88%_15%,rgba(168,85,247,0.12),transparent_38%),radial-gradient(circle_at_70%_100%,rgba(244,63,94,0.08),transparent_42%)]" />
+              <div className="relative">
+                <div className="flex items-center justify-between gap-3">
+                  <p className="text-[11px] font-black uppercase tracking-[0.24em] text-cyan-300">Polymer Atlas</p>
+                  <span className="rounded-full border border-white/10 bg-white/[0.04] px-2.5 py-1 text-[10px] font-bold tracking-[0.12em] text-slate-400">26 TOPICS</span>
+                </div>
+                <h3 className="mt-3 text-xl font-black tracking-tight text-white">Your chapter learning trail</h3>
+                <p className="mt-1.5 text-sm leading-6 text-slate-400">Follow six connected tracks—from molecular foundations to examination mastery.</p>
+              </div>
+            </div>
+
+            <div className="flex snap-x snap-mandatory gap-4 overflow-x-auto p-4 lg:max-h-[74vh] lg:block lg:space-y-6 lg:overflow-y-auto lg:overflow-x-hidden">
+              {navigationTracks.map((track, trackIndex) => (
+                <section key={track.label} className="min-w-[292px] snap-start rounded-2xl border border-slate-800/90 bg-slate-950/40 p-3 lg:min-w-0 lg:border-0 lg:bg-transparent lg:p-0">
+                  <div className="flex items-start justify-between gap-3 px-1">
+                    <div>
+                      <p className={`text-[10px] font-black uppercase tracking-[0.2em] ${track.eyebrow}`}>Track {String(trackIndex + 1).padStart(2, "0")}</p>
+                      <h4 className="mt-1 text-sm font-black leading-5 text-white">{track.label}</h4>
+                      <p className="mt-0.5 text-[11px] leading-4 text-slate-500">{track.caption}</p>
+                    </div>
+                    <span className="mt-1 text-[10px] font-bold text-slate-600">{track.ids.length}</span>
+                  </div>
+
+                  <div className="relative mt-3 space-y-1.5 pl-0.5 before:absolute before:bottom-4 before:left-[19px] before:top-4 before:w-px before:bg-gradient-to-b before:content-[''] before:from-slate-500/55 before:via-slate-700/30 before:to-transparent">
+                    {track.ids.map((id) => {
+                      const section = sectionsById.get(id);
+                      if (!section) return null;
+
+                      return (
+                        <a
+                          key={id}
+                          href={`#section-${id}`}
+                          title={section.title}
+                          className={`group relative grid grid-cols-[38px_minmax(0,1fr)_18px] items-center gap-3 rounded-xl border border-transparent px-1.5 py-2.5 transition duration-200 ${track.hover}`}
+                        >
+                          <span className={`relative z-10 flex h-9 w-9 items-center justify-center rounded-full border text-[10px] font-black tracking-[0.08em] shadow-[0_0_0_5px_#070c16] ${track.node}`}>
+                            {id}
+                          </span>
+                          <span className="min-w-0">
+                            <span className="block text-[13px] font-bold leading-[1.28rem] text-slate-200 transition group-hover:text-white">{navLabels[id] ?? section.title}</span>
+                          </span>
+                          <svg viewBox="0 0 20 20" fill="none" aria-hidden="true" className="h-4 w-4 text-slate-700 transition group-hover:translate-x-0.5 group-hover:text-slate-300">
+                            <path d="M7.5 4.5 13 10l-5.5 5.5" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" />
+                          </svg>
+                        </a>
+                      );
+                    })}
+                  </div>
+                </section>
               ))}
+            </div>
+
+            <div className="hidden border-t border-slate-800 px-5 py-3 text-[11px] leading-5 text-slate-500 lg:block">
+              Select a topic to move directly to that concept.
             </div>
           </nav>
         </aside>

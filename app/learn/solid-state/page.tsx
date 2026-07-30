@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { ChapterLessonGroups, ChapterShell, type LessonGroup } from "@/components/notes/canonical";
 import { SOLID_STATE_PARTS } from "./parts";
 
@@ -49,6 +50,20 @@ export default function SolidStatePage() {
           Exact KOHINOOR-driven sequence from crystalline and amorphous solids through crystal lattices, unit-cell geometry,
           Bravais systems, packing, voids, radius ratio, important structures, defects, electrical properties and magnetism.
         </p>
+      </section>
+      <section className="mb-8 rounded-2xl border border-cyan-400/20 bg-gradient-to-br from-cyan-400/10 via-violet-400/[0.04] to-transparent p-5 md:p-7">
+        <p className="text-xs font-black uppercase tracking-[0.22em] text-cyan-300">Complete single-page edition</p>
+        <h2 className="mt-2 text-2xl font-black tracking-tight text-white md:text-3xl">89-Page Geometry Master + Advanced Extension</h2>
+        <p className="mt-3 max-w-4xl text-sm leading-7 text-[#c3d1dd]">
+          Read the complete source-mapped course as one continuous chapter with a page-by-page audit, modified worked examples,
+          original geometry diagrams, diffraction, polyhedral chemistry, defect thermodynamics and deeper electronic and magnetic theory.
+        </p>
+        <Link
+          href="/learn/solid-state/master"
+          className="mt-5 inline-flex rounded-xl border border-cyan-300/30 bg-cyan-300/10 px-4 py-3 text-sm font-black text-cyan-100 transition hover:bg-cyan-300/15"
+        >
+          Open the Solid State Master →
+        </Link>
       </section>
       <ChapterLessonGroups groups={groups} anchorPrefix="solid-group" />
     </ChapterShell>

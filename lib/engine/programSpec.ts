@@ -152,10 +152,15 @@ export const AUTHORED_NOTES: Record<string, string> = {
   "chemical-equilibrium": "/learn/chemical-equilibrium",
   "electrochemistry": "/notes/electrochemistry",
   "redox-reactions": "/notes/redox-reactions",
+  "solid-state": "/learn/solid-state",
   "hydrogen": "/notes/hydrogen",
   "s-block-elements": "/notes/s-block",
   "p-block-elements": "/notes/p-block",
   "d-and-f-block-elements": "/notes/d-block",
+  "metallurgy": "/notes/metallurgy",
+  "qualitative-analysis": "/learn/jee-advanced/salt-analysis",
+  "environmental-chemistry": "/learn/jee-advanced/environmental-chemistry",
+  "polymers": "/learn/jee-advanced/polymers",
 };
 
 // ── Expected-time heuristic (labelled as derived wherever shown) ──────────────

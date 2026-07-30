@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+<title id="title">Hydrogen Peroxide: Bonding and Reaction Pathways</title><desc id="desc">Peroxide-bond weakness, disproportionation, Fenton chemistry and dual redox behaviour</desc>
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#030712"/><stop offset="0.55" stop-color="#071426"/><stop offset="1" stop-color="#120a24"/></linearGradient>
+  <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#43e6ff"/><stop offset="0.5" stop-color="#9b8cff"/><stop offset="1" stop-color="#ffb65c"/></linearGradient>
+  <filter id="glow"><feGaussianBlur stdDeviation="6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  <style>
+    .title{font:800 52px Inter,Arial,sans-serif;fill:#f8fafc} .sub{font:400 24px Inter,Arial,sans-serif;fill:#b9c6d8}
+    .h{font:750 28px Inter,Arial,sans-serif;fill:#69e7ff} .t{font:400 22px Inter,Arial,sans-serif;fill:#d8e1ee}
+    .small{font:400 18px Inter,Arial,sans-serif;fill:#aebbd0} .gold{fill:#ffc866} .violet{fill:#b9a2ff} .cyan{fill:#62e8ff}
+    .panel{fill:#07111f;stroke:#284563;stroke-width:2} .panel2{fill:#0d1023;stroke:#5f4a88;stroke-width:2}
+    .line{stroke:#63e6ff;stroke-width:4;fill:none} .dash{stroke:#b69cff;stroke-width:4;stroke-dasharray:12 10;fill:none}
+    .bond{stroke:#e8f1fb;stroke-width:5} .thin{stroke:#6f829a;stroke-width:2;fill:none}
+  </style>
+</defs>
+<rect width="1600" height="900" fill="url(#bg)"/>
+<rect x="44" y="34" width="1512" height="832" rx="34" fill="none" stroke="#17324d" stroke-width="2"/>
+<text x="78" y="105" class="title">Hydrogen Peroxide: Bonding and Reaction Pathways</text>
+<rect x="78" y="128" width="430" height="5" rx="3" fill="url(#accent)"/>
+<text x="78" y="172" class="sub">Peroxide-bond weakness, disproportionation, Fenton chemistry and dual redox behaviour</text>
+
+<rect x="78" y="220" width="690" height="540" rx="28" class="panel"/>
+<text x="112" y="270" class="h">Peroxide bond and dual redox character</text>
+<circle cx="290" cy="460" r="72" fill="#7a2632" stroke="#ff9a8b" stroke-width="4"/><circle cx="545" cy="460" r="72" fill="#7a2632" stroke="#ff9a8b" stroke-width="4"/><line x1="362" y1="460" x2="473" y2="460" class="bond"/>
+<text x="264" y="475" class="title" style="font-size:42px">O</text><text x="519" y="475" class="title" style="font-size:42px">O</text>
+<text x="370" y="425" class="t gold">O–O single bond</text><text x="245" y="565" class="t">oxidation state −1 on each O</text>
+<rect x="120" y="640" width="600" height="80" rx="18" class="panel2"/><text x="150" y="675" class="small">Intermediate oxidation state allows H₂O₂ to be oxidised to O₂</text><text x="150" y="705" class="small">or reduced to H₂O, depending on the reacting partner.</text>
+<rect x="805" y="220" width="717" height="540" rx="28" class="panel2"/>
+<text x="842" y="270" class="h">Catalytic decomposition pathways</text>
+<text x="865" y="350" class="t cyan">Overall: 2H₂O₂ → 2H₂O + O₂</text>
+<text x="865" y="415" class="t">Ionic surface route: adsorption → O–O cleavage → O₂ release</text>
+<text x="865" y="475" class="t violet">Radical route (light / Fe²⁺): H₂O₂ → 2 HO•</text>
+<text x="865" y="535" class="t">Fenton step: Fe²⁺ + H₂O₂ → Fe³⁺ + OH⁻ + HO•</text>
+<line x1="860" y1="580" x2="1460" y2="580" class="thin"/>
+<text x="865" y="630" class="small">Oxidising example: H₂O₂ + 2I⁻ + 2H⁺ → I₂ + 2H₂O</text>
+<text x="865" y="675" class="small">Reducing example: 2MnO₄⁻ + 5H₂O₂ + 6H⁺ → 2Mn²⁺ + 5O₂ + 8H₂O</text>
+
+</svg>

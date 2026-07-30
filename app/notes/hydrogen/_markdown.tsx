@@ -1,13 +1,9 @@
-/* eslint-disable @next/next/no-img-element */
 import type { ReactNode } from "react";
 import ReactMarkdown, { type Components } from "react-markdown";
 import remarkGfm from "remark-gfm";
 import remarkMath from "remark-math";
 import rehypeKatex from "rehype-katex";
 import "katex/dist/katex.min.css";
-
-// Shared Hydrogen markdown renderer — moved unchanged from the former
-// single-page renderer so every lesson renders exactly as before.
 
 function flattenText(node: ReactNode): string {
   if (typeof node === "string" || typeof node === "number") return String(node);
@@ -26,13 +22,6 @@ export function slugify(value: string) {
     .replace(/^-+|-+$/g, "");
 }
 
-/**
- * Convert only COMPLETE LaTeX delimiter pairs.
- *
- * The old code replaced every raw delimiter independently. One stray or
- * escaped delimiter could make the rest of the chapter become one giant
- * KaTeX block, making headings/tables appear as raw red Markdown.
- */
 function normaliseMath(markdown: string) {
   return markdown
     .replace(/\\\[\s*([\s\S]*?)\s*\\\]/g, (_match, expression: string) => `\n$$\n${expression.trim()}\n$$\n`)
@@ -42,42 +31,54 @@ function normaliseMath(markdown: string) {
 const markdownComponents: Components = {
   h1: ({ children }) => {
     const text = flattenText(children);
-    return <h2 id={slugify(text)} className="scroll-mt-24 border-t border-white/10 pt-10 text-3xl font-black tracking-tight text-white sm:text-4xl">{children}</h2>;
+    return (
+      <section className="mt-12 first:mt-0">
+        <h2 id={slugify(text)} className="scroll-mt-24 border-t border-cyan-300/20 pt-10 font-sans text-3xl font-black leading-tight tracking-tight text-white sm:text-4xl">
+          <span className="bg-gradient-to-r from-cyan-200 via-violet-200 to-amber-200 bg-clip-text text-transparent">{children}</span>
+        </h2>
+      </section>
+    );
   },
   h2: ({ children }) => {
     const text = flattenText(children);
-    return <h3 id={slugify(text)} className="scroll-mt-24 pt-4 text-2xl font-black tracking-tight text-cyan-100">{children}</h3>;
+    return <h3 id={slugify(text)} className="scroll-mt-24 pt-7 font-sans text-2xl font-black leading-tight text-cyan-200 sm:text-[28px]">{children}</h3>;
   },
-  h3: ({ children }) => <h4 className="pt-2 text-xl font-black text-violet-100">{children}</h4>,
-  h4: ({ children }) => <h5 className="text-base font-black text-amber-100">{children}</h5>,
-  p: ({ children }) => <p className="text-[15px] leading-7 text-slate-300 sm:text-base">{children}</p>,
-  ul: ({ children }) => <ul className="ml-5 list-disc space-y-2.5 text-slate-300 marker:text-cyan-300">{children}</ul>,
-  ol: ({ children }) => <ol className="ml-6 list-decimal space-y-2 text-slate-300 marker:font-bold marker:text-cyan-300">{children}</ol>,
-  li: ({ children }) => <li className="pl-1 leading-7 marker:text-cyan-300">{children}</li>,
-  strong: ({ children }) => <strong className="font-black text-white">{children}</strong>,
-  blockquote: ({ children }) => <blockquote className="rounded-2xl border-l-4 border-cyan-400 bg-cyan-500/[.07] px-5 py-4 text-cyan-50">{children}</blockquote>,
-  hr: () => <hr className="my-8 border-white/10" />,
-  table: ({ children }) => <div className="my-5 overflow-x-auto rounded-2xl border border-white/10"><table className="min-w-full border-collapse text-left text-sm">{children}</table></div>,
-  thead: ({ children }) => <thead className="bg-cyan-500/10 text-cyan-100">{children}</thead>,
-  th: ({ children }) => <th className="border-b border-white/10 px-4 py-3 font-black">{children}</th>,
-  td: ({ children }) => <td className="border-b border-white/[.06] px-4 py-3 align-top leading-6 text-slate-300">{children}</td>,
-  img: ({ src, alt }) => (
-    <span className="my-7 block overflow-hidden rounded-3xl border border-white/10 bg-white p-2 shadow-2xl shadow-black/30">
-      <img src={typeof src === "string" ? src : ""} alt={alt ?? "Hydrogen chemistry diagram"} loading="lazy" className="mx-auto h-auto w-full max-w-4xl rounded-2xl" />
-    </span>
+  h3: ({ children }) => <h4 className="pt-4 font-sans text-xl font-black leading-tight text-violet-200 sm:text-[22px]">{children}</h4>,
+  h4: ({ children }) => <h5 className="pt-2 font-sans text-base font-black text-amber-200 sm:text-lg">{children}</h5>,
+  p: ({ children }) => <p className="max-w-[92ch] text-[15.5px] leading-[1.85] text-slate-300 sm:text-[16.5px]">{children}</p>,
+  ul: ({ children }) => <ul className="ml-5 max-w-[92ch] list-disc space-y-2.5 text-slate-300 marker:text-cyan-300">{children}</ul>,
+  ol: ({ children }) => <ol className="ml-6 max-w-[92ch] list-decimal space-y-2.5 text-slate-300 marker:font-black marker:text-amber-300">{children}</ol>,
+  li: ({ children }) => <li className="pl-1 text-[15.5px] leading-7 sm:text-base">{children}</li>,
+  strong: ({ children }) => <strong className="font-black text-slate-50">{children}</strong>,
+  em: ({ children }) => <em className="text-violet-100">{children}</em>,
+  blockquote: ({ children }) => (
+    <blockquote className="my-5 rounded-2xl border border-cyan-300/20 border-l-4 border-l-cyan-300 bg-[linear-gradient(90deg,rgba(25,116,145,.16),rgba(90,54,138,.1))] px-5 py-4 text-cyan-50 shadow-lg shadow-black/10">
+      {children}
+    </blockquote>
   ),
+  hr: () => <hr className="my-10 border-cyan-200/15" />,
+  table: ({ children }) => (
+    <div className="my-6 overflow-x-auto rounded-2xl border border-cyan-200/15 bg-[#050b14] shadow-xl shadow-black/20">
+      <table className="min-w-full border-collapse text-left text-sm sm:text-[15px]">{children}</table>
+    </div>
+  ),
+  thead: ({ children }) => <thead className="bg-[linear-gradient(90deg,rgba(18,105,137,.28),rgba(83,51,139,.26))] text-cyan-100">{children}</thead>,
+  th: ({ children }) => <th className="border-b border-cyan-100/15 px-4 py-3.5 font-black">{children}</th>,
+  td: ({ children }) => <td className="border-b border-white/[.07] px-4 py-3.5 align-top leading-6 text-slate-300">{children}</td>,
   a: ({ href, children }) => <a href={href} className="font-bold text-cyan-300 underline decoration-cyan-500/30 underline-offset-4 hover:text-cyan-100">{children}</a>,
-  code: ({ children }) => <code className="rounded bg-white/10 px-1.5 py-0.5 font-mono text-[0.9em] text-cyan-100">{children}</code>,
+  code: ({ children }) => <code className="rounded-md border border-cyan-200/10 bg-cyan-300/[.08] px-1.5 py-0.5 font-mono text-[0.9em] text-cyan-100">{children}</code>,
 };
 
 export function HydrogenMarkdown({ markdown }: { markdown: string }) {
   return (
-    <ReactMarkdown
-      remarkPlugins={[remarkGfm, remarkMath]}
-      rehypePlugins={[[rehypeKatex, { throwOnError: false, strict: false }]]}
-      components={markdownComponents}
-    >
-      {normaliseMath(markdown)}
-    </ReactMarkdown>
+    <div className="space-y-5">
+      <ReactMarkdown
+        remarkPlugins={[remarkGfm, remarkMath]}
+        rehypePlugins={[[rehypeKatex, { throwOnError: false, strict: false }]]}
+        components={markdownComponents}
+      >
+        {normaliseMath(markdown)}
+      </ReactMarkdown>
+    </div>
   );
 }

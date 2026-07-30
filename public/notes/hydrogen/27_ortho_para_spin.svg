@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+<title id="title">Ortho- and Para-Hydrogen</title><desc id="desc">Nuclear-spin symmetry, rotational-state restriction and temperature composition</desc>
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#030712"/><stop offset="0.55" stop-color="#071426"/><stop offset="1" stop-color="#120a24"/></linearGradient>
+  <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#43e6ff"/><stop offset="0.5" stop-color="#9b8cff"/><stop offset="1" stop-color="#ffb65c"/></linearGradient>
+  <filter id="glow"><feGaussianBlur stdDeviation="6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  <style>
+    .title{font:800 52px Inter,Arial,sans-serif;fill:#f8fafc} .sub{font:400 24px Inter,Arial,sans-serif;fill:#b9c6d8}
+    .h{font:750 28px Inter,Arial,sans-serif;fill:#69e7ff} .t{font:400 22px Inter,Arial,sans-serif;fill:#d8e1ee}
+    .small{font:400 18px Inter,Arial,sans-serif;fill:#aebbd0} .gold{fill:#ffc866} .violet{fill:#b9a2ff} .cyan{fill:#62e8ff}
+    .panel{fill:#07111f;stroke:#284563;stroke-width:2} .panel2{fill:#0d1023;stroke:#5f4a88;stroke-width:2}
+    .line{stroke:#63e6ff;stroke-width:4;fill:none} .dash{stroke:#b69cff;stroke-width:4;stroke-dasharray:12 10;fill:none}
+    .bond{stroke:#e8f1fb;stroke-width:5} .thin{stroke:#6f829a;stroke-width:2;fill:none}
+  </style>
+</defs>
+<rect width="1600" height="900" fill="url(#bg)"/>
+<rect x="44" y="34" width="1512" height="832" rx="34" fill="none" stroke="#17324d" stroke-width="2"/>
+<text x="78" y="105" class="title">Ortho- and Para-Hydrogen</text>
+<rect x="78" y="128" width="430" height="5" rx="3" fill="url(#accent)"/>
+<text x="78" y="172" class="sub">Nuclear-spin symmetry, rotational-state restriction and temperature composition</text>
+
+<rect x="78" y="220" width="690" height="530" rx="28" class="panel"/>
+<text x="112" y="270" class="h">Nuclear-spin isomers</text>
+<text x="145" y="335" class="t cyan">Ortho-H₂</text><circle cx="230" cy="440" r="62" fill="#123a66" stroke="#62e8ff" stroke-width="4"/><circle cx="505" cy="440" r="62" fill="#123a66" stroke="#62e8ff" stroke-width="4"/><line x1="292" y1="440" x2="443" y2="440" class="bond"/>
+<path d="M230 405 v-88 m0 0 l-12 18 m12-18 l12 18" class="line"/><path d="M505 405 v-88 m0 0 l-12 18 m12-18 l12 18" class="line"/>
+<text x="148" y="540" class="t">Parallel proton spins; total I = 1</text><text x="148" y="580" class="small">Allowed with odd rotational quantum number J.</text>
+<line x1="120" y1="620" x2="725" y2="620" class="thin"/>
+<text x="145" y="680" class="t violet">Para-H₂: antiparallel spins; total I = 0; even J.</text>
+<rect x="805" y="220" width="717" height="530" rx="28" class="panel2"/>
+<text x="842" y="270" class="h">Temperature dependence</text>
+<line x1="900" y1="650" x2="1455" y2="650" class="thin"/><line x1="900" y1="650" x2="900" y2="330" class="thin"/>
+<text x="1320" y="700" class="small">Temperature</text><text x="835" y="350" class="small" transform="rotate(-90 835 350)">% composition</text>
+<path d="M915 355 C1010 360 1110 420 1190 470 S1360 505 1440 505" class="line"/><text x="1320" y="470" class="t cyan">ortho ≈ 75%</text>
+<path d="M915 640 C1010 630 1110 565 1190 530 S1360 500 1440 500" class="dash"/><text x="1310" y="555" class="t violet">para ≈ 25%</text>
+<text x="850" y="770" class="t gold">At very low temperature, para-H₂ predominates.</text>
+
+</svg>

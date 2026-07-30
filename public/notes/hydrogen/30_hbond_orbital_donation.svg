@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+<title id="title">Orbital Interpretation of Hydrogen Bonding</title><desc id="desc">Lone-pair donation into an antibonding σ* orbital complements the electrostatic model</desc>
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#030712"/><stop offset="0.55" stop-color="#071426"/><stop offset="1" stop-color="#120a24"/></linearGradient>
+  <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#43e6ff"/><stop offset="0.5" stop-color="#9b8cff"/><stop offset="1" stop-color="#ffb65c"/></linearGradient>
+  <filter id="glow"><feGaussianBlur stdDeviation="6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  <style>
+    .title{font:800 52px Inter,Arial,sans-serif;fill:#f8fafc} .sub{font:400 24px Inter,Arial,sans-serif;fill:#b9c6d8}
+    .h{font:750 28px Inter,Arial,sans-serif;fill:#69e7ff} .t{font:400 22px Inter,Arial,sans-serif;fill:#d8e1ee}
+    .small{font:400 18px Inter,Arial,sans-serif;fill:#aebbd0} .gold{fill:#ffc866} .violet{fill:#b9a2ff} .cyan{fill:#62e8ff}
+    .panel{fill:#07111f;stroke:#284563;stroke-width:2} .panel2{fill:#0d1023;stroke:#5f4a88;stroke-width:2}
+    .line{stroke:#63e6ff;stroke-width:4;fill:none} .dash{stroke:#b69cff;stroke-width:4;stroke-dasharray:12 10;fill:none}
+    .bond{stroke:#e8f1fb;stroke-width:5} .thin{stroke:#6f829a;stroke-width:2;fill:none}
+  </style>
+</defs>
+<rect width="1600" height="900" fill="url(#bg)"/>
+<rect x="44" y="34" width="1512" height="832" rx="34" fill="none" stroke="#17324d" stroke-width="2"/>
+<text x="78" y="105" class="title">Orbital Interpretation of Hydrogen Bonding</text>
+<rect x="78" y="128" width="430" height="5" rx="3" fill="url(#accent)"/>
+<text x="78" y="172" class="sub">Lone-pair donation into an antibonding σ* orbital complements the electrostatic model</text>
+
+<rect x="78" y="220" width="1444" height="540" rx="28" class="panel"/>
+<text x="112" y="270" class="h">Electrostatic picture plus donor–acceptor orbital interaction</text>
+<circle cx="270" cy="460" r="78" fill="#7a2632" stroke="#ff9a8b" stroke-width="4"/><text x="242" y="475" class="title" style="font-size:44px">O</text>
+<circle cx="470" cy="460" r="48" fill="#d7dce5" stroke="#ffffff" stroke-width="3"/><text x="453" y="472" class="t" style="fill:#18212c">H</text>
+<line x1="348" y1="460" x2="422" y2="460" class="bond"/>
+<circle cx="830" cy="460" r="78" fill="#7a2632" stroke="#ff9a8b" stroke-width="4"/><text x="802" y="475" class="title" style="font-size:44px">O</text>
+<path d="M518 460 H752" class="dash"/><text x="575" y="430" class="t violet">O···H hydrogen bond</text>
+<ellipse cx="740" cy="400" rx="55" ry="28" fill="#563c87" stroke="#b9a2ff" stroke-width="3"/><ellipse cx="740" cy="520" rx="55" ry="28" fill="#563c87" stroke="#b9a2ff" stroke-width="3"/><text x="690" y="575" class="small">lone pair n(O)</text>
+<path d="M785 400 C880 350 970 365 1040 430" class="line"/><path d="M1040 430 l-24 -8 12 22 z" fill="#62e8ff"/>
+<ellipse cx="1140" cy="460" rx="155" ry="70" fill="none" stroke="#62e8ff" stroke-width="4" stroke-dasharray="16 10"/><text x="1060" y="472" class="t cyan">σ*(O–H)</text>
+<rect x="1050" y="600" width="390" height="105" rx="18" class="panel2"/><text x="1080" y="642" class="t">n(O) → σ*(O–H)</text><text x="1080" y="675" class="small">weakens and lengthens donor O–H</text>
+<text x="120" y="725" class="small">Stronger hydrogen bonding requires a polar X–H donor, an available lone pair, short distance and near-linear X–H···Y geometry.</text>
+
+</svg>

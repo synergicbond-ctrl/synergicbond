@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+<title id="title">Diborane and the 3-Centre–2-Electron Bond</title><desc id="desc">Structure and molecular-orbital interpretation of a bridge B–H–B bond</desc>
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#030712"/><stop offset="0.55" stop-color="#071426"/><stop offset="1" stop-color="#120a24"/></linearGradient>
+  <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#43e6ff"/><stop offset="0.5" stop-color="#9b8cff"/><stop offset="1" stop-color="#ffb65c"/></linearGradient>
+  <filter id="glow"><feGaussianBlur stdDeviation="6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  <style>
+    .title{font:800 52px Inter,Arial,sans-serif;fill:#f8fafc} .sub{font:400 24px Inter,Arial,sans-serif;fill:#b9c6d8}
+    .h{font:750 28px Inter,Arial,sans-serif;fill:#69e7ff} .t{font:400 22px Inter,Arial,sans-serif;fill:#d8e1ee}
+    .small{font:400 18px Inter,Arial,sans-serif;fill:#aebbd0} .gold{fill:#ffc866} .violet{fill:#b9a2ff} .cyan{fill:#62e8ff}
+    .panel{fill:#07111f;stroke:#284563;stroke-width:2} .panel2{fill:#0d1023;stroke:#5f4a88;stroke-width:2}
+    .line{stroke:#63e6ff;stroke-width:4;fill:none} .dash{stroke:#b69cff;stroke-width:4;stroke-dasharray:12 10;fill:none}
+    .bond{stroke:#e8f1fb;stroke-width:5} .thin{stroke:#6f829a;stroke-width:2;fill:none}
+  </style>
+</defs>
+<rect width="1600" height="900" fill="url(#bg)"/>
+<rect x="44" y="34" width="1512" height="832" rx="34" fill="none" stroke="#17324d" stroke-width="2"/>
+<text x="78" y="105" class="title">Diborane and the 3-Centre–2-Electron Bond</text>
+<rect x="78" y="128" width="430" height="5" rx="3" fill="url(#accent)"/>
+<text x="78" y="172" class="sub">Structure and molecular-orbital interpretation of a bridge B–H–B bond</text>
+
+<rect x="78" y="220" width="760" height="540" rx="28" class="panel"/>
+<text x="112" y="270" class="h">Bridged structure of B₂H₆</text>
+<circle cx="330" cy="470" r="58" fill="#133c70" stroke="#62e8ff" stroke-width="4"/><circle cx="600" cy="470" r="58" fill="#133c70" stroke="#62e8ff" stroke-width="4"/><text x="311" y="482" class="title" style="font-size:42px">B</text><text x="581" y="482" class="title" style="font-size:42px">B</text>
+<circle cx="465" cy="335" r="42" fill="#3b245f" stroke="#b9a2ff" stroke-width="4"/><circle cx="465" cy="605" r="42" fill="#3b245f" stroke="#b9a2ff" stroke-width="4"/><text x="449" y="345" class="t">H</text><text x="449" y="615" class="t">H</text>
+<path d="M366 435 L430 365 M500 365 L564 435 M366 505 L430 575 M500 575 L564 505" class="dash"/>
+<g fill="#3b2c0f" stroke="#ffc866" stroke-width="4"><circle cx="180" cy="335" r="40"/><circle cx="180" cy="605" r="40"/><circle cx="750" cy="335" r="40"/><circle cx="750" cy="605" r="40"/></g>
+<g class="t"><text x="164" y="345">H</text><text x="164" y="615">H</text><text x="734" y="345">H</text><text x="734" y="615">H</text></g>
+<path d="M220 350 L285 430 M220 590 L285 510 M710 350 L645 430 M710 590 L645 510" stroke="#ffc866" stroke-width="5"/>
+<text x="155" y="720" class="small">4 terminal B–H bonds: ordinary 2c–2e</text><text x="470" y="720" class="small">2 bridge B–H–B bonds: 3c–2e</text>
+<rect x="875" y="220" width="647" height="540" rx="28" class="panel2"/>
+<text x="912" y="270" class="h">Three-orbital MO model</text>
+<text x="930" y="345" class="t">H(1s)</text><text x="1125" y="345" class="t violet">B hybrid</text><text x="1350" y="345" class="t">H(1s)</text>
+<circle cx="970" cy="420" r="42" fill="#0e3b70" stroke="#62e8ff" stroke-width="3"/><ellipse cx="1190" cy="420" rx="75" ry="45" fill="#3b245f" stroke="#b9a2ff" stroke-width="3"/><circle cx="1400" cy="420" r="42" fill="#0e3b70" stroke="#62e8ff" stroke-width="3"/>
+<path d="M920 535 H1470" class="thin"/><text x="930" y="575" class="t cyan">ψ₁ bonding</text><text x="1130" y="575" class="t violet">ψ₂ nonbonding</text><text x="1330" y="575" class="t gold">ψ₃ antibonding</text>
+<line x1="945" y1="625" x2="1060" y2="625" stroke="#62e8ff" stroke-width="6"/><text x="982" y="612" class="t">↑↓</text>
+<line x1="1145" y1="625" x2="1260" y2="625" stroke="#b9a2ff" stroke-width="6"/><line x1="1345" y1="625" x2="1460" y2="625" stroke="#ffc866" stroke-width="6"/>
+<text x="920" y="700" class="small">Two electrons occupy ψ₁ and are delocalized over B–H–B.</text>
+
+</svg>

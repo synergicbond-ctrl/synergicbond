@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+<title id="title">Activation of Dihydrogen on Metal Catalysts</title><desc id="desc">Orbital donation, back-donation, dissociative adsorption and surface hydrogenation</desc>
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#030712"/><stop offset="0.55" stop-color="#071426"/><stop offset="1" stop-color="#120a24"/></linearGradient>
+  <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#43e6ff"/><stop offset="0.5" stop-color="#9b8cff"/><stop offset="1" stop-color="#ffb65c"/></linearGradient>
+  <filter id="glow"><feGaussianBlur stdDeviation="6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  <style>
+    .title{font:800 52px Inter,Arial,sans-serif;fill:#f8fafc} .sub{font:400 24px Inter,Arial,sans-serif;fill:#b9c6d8}
+    .h{font:750 28px Inter,Arial,sans-serif;fill:#69e7ff} .t{font:400 22px Inter,Arial,sans-serif;fill:#d8e1ee}
+    .small{font:400 18px Inter,Arial,sans-serif;fill:#aebbd0} .gold{fill:#ffc866} .violet{fill:#b9a2ff} .cyan{fill:#62e8ff}
+    .panel{fill:#07111f;stroke:#284563;stroke-width:2} .panel2{fill:#0d1023;stroke:#5f4a88;stroke-width:2}
+    .line{stroke:#63e6ff;stroke-width:4;fill:none} .dash{stroke:#b69cff;stroke-width:4;stroke-dasharray:12 10;fill:none}
+    .bond{stroke:#e8f1fb;stroke-width:5} .thin{stroke:#6f829a;stroke-width:2;fill:none}
+  </style>
+</defs>
+<rect width="1600" height="900" fill="url(#bg)"/>
+<rect x="44" y="34" width="1512" height="832" rx="34" fill="none" stroke="#17324d" stroke-width="2"/>
+<text x="78" y="105" class="title">Activation of Dihydrogen on Metal Catalysts</text>
+<rect x="78" y="128" width="430" height="5" rx="3" fill="url(#accent)"/>
+<text x="78" y="172" class="sub">Orbital donation, back-donation, dissociative adsorption and surface hydrogenation</text>
+
+<rect x="78" y="220" width="1444" height="530" rx="28" class="panel"/>
+<text x="112" y="270" class="h">Catalytic activation of H₂ on a metal surface</text>
+<circle cx="250" cy="405" r="48" fill="#0e3b70" stroke="#62e8ff" stroke-width="4"/><circle cx="390" cy="405" r="48" fill="#0e3b70" stroke="#62e8ff" stroke-width="4"/><line x1="298" y1="405" x2="342" y2="405" class="bond"/><text x="292" y="350" class="t">H–H</text>
+<path d="M470 405 H610" class="line"/><path d="M610 405 l-24 -16 v32 z" fill="#62e8ff"/>
+<g fill="#53657c" stroke="#8ba0b8" stroke-width="2"><circle cx="650" cy="565" r="48"/><circle cx="765" cy="565" r="48"/><circle cx="880" cy="565" r="48"/><circle cx="995" cy="565" r="48"/><circle cx="1110" cy="565" r="48"/><circle cx="650" cy="655" r="48"/><circle cx="765" cy="655" r="48"/><circle cx="880" cy="655" r="48"/><circle cx="995" cy="655" r="48"/><circle cx="1110" cy="655" r="48"/></g>
+<circle cx="770" cy="440" r="34" fill="#132f58" stroke="#62e8ff" stroke-width="4"/><circle cx="1115" cy="440" r="34" fill="#132f58" stroke="#62e8ff" stroke-width="4"/>
+<text x="752" y="449" class="t">H</text><text x="1097" y="449" class="t">H</text>
+<path d="M770 474 L765 545 M1115 474 L1110 545" class="line"/>
+<text x="640" y="325" class="t violet">1. adsorption</text><text x="930" y="325" class="t gold">2. dissociation</text><text x="1210" y="325" class="t cyan">3. surface reaction</text>
+<rect x="160" y="690" width="1290" height="58" rx="16" fill="#0a2630" stroke="#2aaec0"/><text x="190" y="726" class="small">Metal orbitals donate into σ* while H₂ donates from σ into vacant metal states; the H–H bond weakens and splits into adsorbed H atoms.</text>
+
+</svg>

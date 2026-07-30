@@ -2,8 +2,6 @@ import "server-only";
 
 import { HYDROGEN_MASTER_MARKDOWN } from "./content";
 
-// The master markdown is the single source of truth. This registry partitions
-// all 24 top-level textbook chapters into eight balanced website lessons.
 export interface HydrogenPartDef {
   slug: string;
   number: number;
@@ -13,15 +11,19 @@ export interface HydrogenPartDef {
   toSection: number;
 }
 
+/**
+ * Eight coherent textbook lessons. Each lesson follows one conceptual arc,
+ * instead of splitting the chapter only by equal section counts.
+ */
 export const HYDROGEN_PARTS: HydrogenPartDef[] = [
-  { slug: "part1", number: 1, title: "Identity, Position, Occurrence & Isotopes", fromSection: 1, toSection: 4 },
-  { slug: "part2", number: 2, title: "Forms, Ortho–Para Hydrogen & Dihydrogen Preparation", fromSection: 5, toSection: 7 },
-  { slug: "part3", number: 3, title: "Dihydrogen Chemistry, Fuel Economy & Hydrides", fromSection: 8, toSection: 10 },
-  { slug: "part4", number: 4, title: "Hydrated Proton, Hydrogen Bonding, Water & Heavy Water", fromSection: 11, toSection: 14 },
-  { slug: "part5", number: 5, title: "Hydrogen Peroxide & Water-Softening Chemistry", fromSection: 15, toSection: 17 },
-  { slug: "part6", number: 6, title: "Acid–Base Bridge, Master Reactions & JEE Traps", fromSection: 18, toSection: 20 },
-  { slug: "part7", number: 7, title: "High-Yield Focus & Reaction-Sequence Problems", fromSection: 21, toSection: 22 },
-  { slug: "part8", number: 8, title: "Visual Blueprints & Complete Source Audit", fromSection: 23, toSection: 24 },
+  { slug: "part1", number: 1, title: "Foundations, Position, Isotopes & H₂ Molecular Orbitals", fromSection: 1, toSection: 4 },
+  { slug: "part2", number: 2, title: "Reactive Forms, Ortho–Para Hydrogen & Preparation", fromSection: 5, toSection: 7 },
+  { slug: "part3", number: 3, title: "Dihydrogen Reactivity, Catalysis, Fuel & Storage", fromSection: 8, toSection: 9 },
+  { slug: "part4", number: 4, title: "Hydrides, Diborane, 3c–2e Bonding & Hydride Transfer", fromSection: 10, toSection: 10 },
+  { slug: "part5", number: 5, title: "Hydrated Proton, Hydrogen Bonding, Water & Heavy Water", fromSection: 11, toSection: 14 },
+  { slug: "part6", number: 6, title: "Hydrogen Peroxide, Hard Water & Acid–Base Connections", fromSection: 15, toSection: 18 },
+  { slug: "part7", number: 7, title: "Complete Reaction Atlas, Mechanisms & Exceptions", fromSection: 19, toSection: 20 },
+  { slug: "part8", number: 8, title: "High-Yield Revision, Advanced Problems & Source Audit", fromSection: 21, toSection: 24 },
 ];
 
 interface SplitMarkdown {
@@ -55,7 +57,16 @@ function splitMaster(): SplitMarkdown {
   return cached;
 }
 
-/** Markdown for one lesson — an untouched contiguous slice of the master notes. */
+/**
+ * Images are rendered in a curated four-visual gallery for every lesson.
+ * Removing inline image markdown prevents repetition and keeps the flow clean.
+ */
+function removeInlineImages(markdown: string): string {
+  return markdown
+    .replace(/^\s*!\[[^\]]*\]\([^\n)]+\)\s*$/gm, "")
+    .replace(/\n{3,}/g, "\n\n");
+}
+
 export function hydrogenPartMarkdown(part: HydrogenPartDef): string {
   const { preamble, sections } = splitMaster();
   const body = sections
@@ -63,7 +74,8 @@ export function hydrogenPartMarkdown(part: HydrogenPartDef): string {
     .map((section) => section.text)
     .join("\n");
 
-  return part.number === 1 && preamble.trim() ? `${preamble}\n${body}` : body;
+  const combined = part.number === 1 && preamble.trim() ? `${preamble}\n${body}` : body;
+  return removeInlineImages(combined);
 }
 
 export function hydrogenPartBySlug(slug: string): HydrogenPartDef | undefined {

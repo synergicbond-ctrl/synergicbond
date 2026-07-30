@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+<title id="title">Hydride Transfer Mechanism</title><desc id="desc">Orbital flow from H⁻ to the carbonyl π* orbital, followed by protonation</desc>
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#030712"/><stop offset="0.55" stop-color="#071426"/><stop offset="1" stop-color="#120a24"/></linearGradient>
+  <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#43e6ff"/><stop offset="0.5" stop-color="#9b8cff"/><stop offset="1" stop-color="#ffb65c"/></linearGradient>
+  <filter id="glow"><feGaussianBlur stdDeviation="6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  <style>
+    .title{font:800 52px Inter,Arial,sans-serif;fill:#f8fafc} .sub{font:400 24px Inter,Arial,sans-serif;fill:#b9c6d8}
+    .h{font:750 28px Inter,Arial,sans-serif;fill:#69e7ff} .t{font:400 22px Inter,Arial,sans-serif;fill:#d8e1ee}
+    .small{font:400 18px Inter,Arial,sans-serif;fill:#aebbd0} .gold{fill:#ffc866} .violet{fill:#b9a2ff} .cyan{fill:#62e8ff}
+    .panel{fill:#07111f;stroke:#284563;stroke-width:2} .panel2{fill:#0d1023;stroke:#5f4a88;stroke-width:2}
+    .line{stroke:#63e6ff;stroke-width:4;fill:none} .dash{stroke:#b69cff;stroke-width:4;stroke-dasharray:12 10;fill:none}
+    .bond{stroke:#e8f1fb;stroke-width:5} .thin{stroke:#6f829a;stroke-width:2;fill:none}
+  </style>
+</defs>
+<rect width="1600" height="900" fill="url(#bg)"/>
+<rect x="44" y="34" width="1512" height="832" rx="34" fill="none" stroke="#17324d" stroke-width="2"/>
+<text x="78" y="105" class="title">Hydride Transfer Mechanism</text>
+<rect x="78" y="128" width="430" height="5" rx="3" fill="url(#accent)"/>
+<text x="78" y="172" class="sub">Orbital flow from H⁻ to the carbonyl π* orbital, followed by protonation</text>
+
+<rect x="78" y="220" width="1444" height="540" rx="28" class="panel"/>
+<text x="112" y="270" class="h">General reduction of a carbonyl by LiAlH₄ or NaBH₄</text>
+<text x="135" y="345" class="t gold">Step 1 — hydride transfer (nucleophilic addition)</text>
+<text x="145" y="475" class="title" style="font-size:44px">R₂C=O</text><text x="380" y="475" class="title" style="font-size:44px">+</text><text x="455" y="475" class="title cyan" style="font-size:44px">H⁻</text>
+<path d="M570 458 H720" class="line"/><path d="M720 458 l-24 -16 v32 z" fill="#62e8ff"/>
+<text x="770" y="475" class="title" style="font-size:44px">R₂CH–O⁻</text>
+<path d="M460 415 C520 345 600 350 675 410" class="dash"/><text x="480" y="335" class="small">H⁻ attacks electrophilic carbon; π electrons move to O</text>
+<line x1="115" y1="565" x2="1485" y2="565" class="thin"/>
+<text x="135" y="625" class="t gold">Step 2 — protonation during aqueous work-up</text>
+<text x="145" y="715" class="title" style="font-size:42px">R₂CH–O⁻ + H₂O / H₃O⁺</text><path d="M730 700 H900" class="line"/><path d="M900 700 l-24 -16 v32 z" fill="#62e8ff"/><text x="960" y="715" class="title cyan" style="font-size:42px">R₂CH–OH</text>
+<rect x="1090" y="330" width="350" height="150" rx="20" class="panel2"/><text x="1120" y="375" class="t violet">Selectivity note</text><text x="1120" y="415" class="small">NaBH₄ is milder.</text><text x="1120" y="448" class="small">LiAlH₄ is more powerful.</text>
+
+</svg>

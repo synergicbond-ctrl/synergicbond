@@ -1,5 +1,54 @@
 import Link from "next/link";
+import { SOLID_STATE_PARTS } from "./_shared";
 
-export const metadata={title:"Solid State — Complete 10-Part JEE Advanced Master | Synergic Bond",description:"All 89 KOHINOOR pages rebuilt in ten separately editable parts with KaTeX equations and original SVG geometry."};
-const parts=[{"n": 1, "title": "Foundations, Classification and Unit Cells", "pages": "Pages 1–9", "desc": "Complete source treatment of pages 1–9: order, anisotropy, solid classes, lattice terminology, unit-cell sharing and centred cells.", "figs": 7}, {"n": 2, "title": "Crystal Systems, Symmetry and Cubic Geometry", "pages": "Pages 10–20", "desc": "Pages 10–20: dimensional lattices, seven crystal systems, fourteen Bravais lattices, cube symmetry, contact relations, neighbour distances and density.", "figs": 10}, {"n": 3, "title": "Stoichiometry, Coordination and Lower-Dimensional Packing", "pages": "Pages 21–30", "desc": "Pages 21–30: formula from site occupancy, atom removal, coordination shells, packing efficiency, 1D/2D layers and repeat-unit selection.", "figs": 9}, {"n": 4, "title": "Three-Dimensional Packing and Close-Packed Layers", "pages": "Pages 31–42", "desc": "Pages 31–42: AAA, BCC layer placement, ABAB and ABCABC stacking, tetrahedral/octahedral holes and close-packed planes.", "figs": 11}, {"n": 5, "title": "Voids, Diamond, HCP Geometry and FCC–CCP Relation", "pages": "Pages 43–59", "desc": "Pages 43–59: exact void locations/counts, BCT, diamond packing, ideal HCP c/a and close-packed planes in FCC.", "figs": 11}, {"n": 6, "title": "Radius-Ratio Derivations and Coordination Polyhedra", "pages": "Pages 60–63", "desc": "Pages 60–63: limiting radius ratios for CN 2, 3, 4, 6 and 8, trigonal-prismatic geometry, higher polyhedra and general cell volumes.", "figs": 8}, {"n": 7, "title": "Important Ionic and Covalent Crystal Structures", "pages": "Pages 64–73", "desc": "Pages 64–73: rock salt, CsCl, zinc blende, wurtzite, fluorite, antifluorite, corundum, diamond and coordination polyhedra.", "figs": 10}, {"n": 8, "title": "Defects, Non-Stoichiometry and NCERT Defect Chemistry", "pages": "Pages 74–80", "desc": "Pages 74–80: vacancy, Schottky, interstitial, Frenkel, F-centres, metal excess/deficiency and impurity defects.", "figs": 9}, {"n": 9, "title": "Electrical Properties, Semiconductors and Superconductivity", "pages": "Pages 81–85", "desc": "Pages 81–85: metallic conduction, bands, Fermi–Dirac statistics, intrinsic/extrinsic semiconductors, p–n devices and Cooper pairing.", "figs": 11}, {"n": 10, "title": "Magnetic Properties of Solids", "pages": "Pages 86–89", "desc": "Pages 86–89: susceptibility, magnetic moment, Curie law, Gouy/SQUID methods, cooperative spin order and magnetic behaviour of superconductors.", "figs": 9}];
-export default function Page(){return <main className="min-h-screen bg-[radial-gradient(circle_at_10%_0%,rgba(0,245,212,.11),transparent_28%),radial-gradient(circle_at_90%_4%,rgba(139,92,246,.12),transparent_30%),linear-gradient(#08111d,#070b12)] text-white"><div className="mx-auto max-w-6xl px-4 py-10 md:px-6 md:py-16"><header className="rounded-[2rem] border border-cyan-400/20 bg-[#0b1a28]/95 p-8 md:p-12"><p className="text-xs font-black uppercase tracking-[.28em] text-cyan-300">JEE Advanced Physical Chemistry</p><h1 className="mt-4 text-4xl font-black tracking-[-.04em] md:text-6xl">Solid State — Complete 10-Part Geometry Textbook</h1><p className="mt-5 max-w-4xl text-lg leading-8 text-zinc-300">All 89 pages of the KOHINOOR handwritten notes are rebuilt as ten independent TSX parts. Equations and derivations use KaTeX; crystal geometry, packing, voids, structures, defects, electrical and magnetic figures are recreated as scalable SVGs.</p><div className="mt-7 grid gap-3 sm:grid-cols-4">{[["89","source pages"],["10","editable parts"],["60+","SVG figure systems"],["100+","worked checks/examples"]].map(([a,b])=><div key={b} className="rounded-2xl border border-white/10 bg-black/25 p-4"><div className="text-2xl font-black text-cyan-200">{a}</div><div className="text-xs uppercase tracking-[.14em] text-zinc-500">{b}</div></div>)}</div></header><section className="mt-8 grid gap-5 md:grid-cols-2">{parts.map(p=><Link key={p.n} href={`/learn/solid-state/master/part${String(p.n).padStart(2,"0")}`} className="group rounded-3xl border border-white/10 bg-[#10202f]/90 p-6 transition hover:-translate-y-1 hover:border-cyan-300/30"><div className="flex items-center justify-between"><span className="rounded-full border border-cyan-300/20 bg-cyan-300/10 px-3 py-1 text-xs font-black text-cyan-200">Part {String(p.n).padStart(2,"0")}</span><span className="text-xs text-zinc-500">{p.pages}</span></div><h2 className="mt-4 text-2xl font-black text-white group-hover:text-cyan-100">{p.title}</h2><p className="mt-3 text-sm leading-7 text-zinc-400">{p.desc}</p><div className="mt-5 text-xs font-bold uppercase tracking-[.14em] text-cyan-300">{p.figs} principal SVG figures →</div></Link>)}</section><div className="mt-8 rounded-2xl border border-amber-300/20 bg-amber-300/[.055] p-5 text-sm leading-7 text-amber-100"><strong>Editorial note:</strong> KOHINOOR is treated as the primary source. Text is cleaned and reorganized, equations are re-typeset, and every diagram is redrawn rather than pasted as a screenshot. NCERT-based examples are clearly labelled.</div></div></main>}
+export const metadata = {
+  title: "Solid State — Complete JEE Advanced Notes | Synergic Bond",
+  description:
+    "Structured JEE Advanced Solid State notes covering crystal lattices, unit cells, packing, voids, radius-ratio rules, crystal structures, defects, electrical properties and magnetism.",
+};
+
+export default function Page() {
+  return (
+    <main className="min-h-screen bg-[radial-gradient(circle_at_10%_0%,rgba(0,245,212,.08),transparent_30%),radial-gradient(circle_at_90%_5%,rgba(139,92,246,.08),transparent_30%),linear-gradient(#08111d,#070b12)] text-white">
+      <div className="mx-auto max-w-7xl px-4 py-10 md:px-6 md:py-14">
+        <header className="border border-cyan-400/20 bg-[#0b1a28]/95 px-6 py-9 md:px-10 md:py-12">
+          <p className="text-xs font-extrabold uppercase tracking-[0.2em] text-cyan-300">
+            JEE Advanced · Physical Chemistry
+          </p>
+          <h1 className="mt-5 text-4xl font-black tracking-[-0.04em] text-white md:text-6xl">Solid State</h1>
+          <p className="mt-5 max-w-4xl text-lg leading-8 text-zinc-300">
+            A complete textbook-style chapter covering the structure, geometry, defects, electrical behaviour and magnetic properties of solids. Each part contains theory, derivations, tables, crystal diagrams, worked examples and JEE Advanced edge cases.
+          </p>
+        </header>
+
+        <section className="mt-10" aria-labelledby="solid-state-contents">
+          <div className="border-l-4 border-cyan-300/60 pl-5 md:pl-7">
+            <h2 id="solid-state-contents" className="text-2xl font-black tracking-tight text-white md:text-3xl">
+              Chapter contents
+            </h2>
+          </div>
+
+          <div className="mt-7 grid gap-5 md:grid-cols-2">
+            {SOLID_STATE_PARTS.map((part) => (
+              <Link
+                key={part.number}
+                href={`/learn/solid-state/master/part${String(part.number).padStart(2, "0")}`}
+                className="group border border-white/10 bg-[#0d1b29]/95 px-6 py-6 transition hover:-translate-y-0.5 hover:border-cyan-300/35 hover:bg-[#102131]"
+              >
+                <div className="text-xs font-extrabold uppercase tracking-[0.16em] text-cyan-300/85">
+                  Part {String(part.number).padStart(2, "0")}
+                </div>
+                <h3 className="mt-3 text-xl font-extrabold leading-7 text-white transition group-hover:text-cyan-100 md:text-2xl">
+                  {part.title}
+                </h3>
+                <p className="mt-3 text-sm leading-7 text-zinc-400 md:text-[15px]">{part.summary}</p>
+                <div className="mt-5 text-sm font-bold text-cyan-300">Open part →</div>
+              </Link>
+            ))}
+          </div>
+        </section>
+      </div>
+    </main>
+  );
+}
+

@@ -1,11 +1,8 @@
 import Link from "next/link";
 
-import {
-  ChapterLessonGrid,
-  ChapterShell,
-} from "@/components/notes/canonical";
+import { ChapterShell } from "@/components/notes/canonical";
 import { S_BLOCK_PARTS } from "./parts";
-import { sBlockHref, sBlockTabs } from "./_chapter";
+import { sBlockHref } from "./_chapter";
 import { SBlockVisual } from "./visuals";
 
 export const metadata = {
@@ -23,12 +20,55 @@ const STATS = [
   ["20", "worked JEE examples"],
 ];
 
+function SBlockPartNavigation() {
+  return (
+    <section
+      aria-labelledby="s-block-parts-heading"
+      className="mb-8 rounded-3xl border border-[#24405c] bg-[#0b1724] p-4 sm:p-5"
+    >
+      <div className="mb-4 flex flex-wrap items-end justify-between gap-2">
+        <div>
+          <p className="text-[11px] font-black uppercase tracking-[.18em] text-cyan-300">
+            Complete chapter navigation
+          </p>
+          <h2
+            id="s-block-parts-heading"
+            className="mt-1 font-serif text-2xl font-black text-white sm:text-3xl"
+          >
+            All 15 parts
+          </h2>
+        </div>
+        <p className="text-xs font-bold text-slate-400">
+          Select any part to begin
+        </p>
+      </div>
+
+      <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
+        {S_BLOCK_PARTS.map((part) => (
+          <Link
+            key={part.number}
+            href={sBlockHref(part.number)}
+            className="group flex min-h-[104px] min-w-0 flex-col rounded-2xl border border-[#2b4a68] border-l-4 border-l-cyan-300 bg-[#122232] p-4 text-decoration-none transition hover:border-cyan-300 hover:bg-[#182b3e]"
+          >
+            <span className="text-[11px] font-black uppercase tracking-[.16em] text-cyan-300">
+              Part {part.number}
+            </span>
+            <span className="mt-2 text-sm font-extrabold leading-5 text-slate-100 group-hover:text-white">
+              {part.title}
+            </span>
+          </Link>
+        ))}
+      </div>
+    </section>
+  );
+}
+
 export default function SBlockHub() {
   return (
     <ChapterShell
       kicker="JEE Inorganic Chemistry"
       subtitle="S-block Elements"
-      tabs={sBlockTabs()}
+      headerTag="15-part complete chapter"
     >
       <nav className="mb-6 flex flex-wrap items-center gap-2 text-xs font-semibold text-slate-400 sm:text-sm">
         <Link href="/" className="hover:text-white">
@@ -41,6 +81,8 @@ export default function SBlockHub() {
         <span>/</span>
         <span className="text-cyan-300">S-block Elements</span>
       </nav>
+
+      <SBlockPartNavigation />
 
       <header className="mb-8 overflow-hidden rounded-3xl border border-cyan-300/15 bg-[radial-gradient(circle_at_top_right,rgba(139,92,246,.18),transparent_35%),linear-gradient(135deg,#0a1624,#07101b_58%,#130d24)] p-5 shadow-2xl shadow-black/25 sm:p-8">
         <div className="flex flex-wrap gap-2">
@@ -80,10 +122,6 @@ export default function SBlockHub() {
         </div>
       </header>
 
-      <div className="mb-8">
-        <SBlockVisual part={1} />
-      </div>
-
       <section className="mb-8 grid gap-3 md:grid-cols-3">
         {[
           [
@@ -109,23 +147,7 @@ export default function SBlockHub() {
         ))}
       </section>
 
-      <section aria-labelledby="s-block-parts-heading">
-        <h2
-          id="s-block-parts-heading"
-          className="mb-4 font-serif text-2xl font-black text-cyan-200 sm:text-3xl"
-        >
-          15 complete parts
-        </h2>
-
-        <ChapterLessonGrid
-          lessons={S_BLOCK_PARTS.map((part) => ({
-            href: sBlockHref(part.number),
-            number: `Part ${part.number}`,
-            title: part.title,
-            meta: part.focus,
-          }))}
-        />
-      </section>
+      <SBlockVisual part={1} />
     </ChapterShell>
   );
 }

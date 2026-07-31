@@ -7,7 +7,6 @@ import {
 } from "@/components/notes/canonical";
 import {
   sBlockLessonRef,
-  sBlockTabs,
   sectionRangeLabel,
 } from "../_chapter";
 import { SBlockMarkdown } from "../_markdown";
@@ -51,11 +50,11 @@ export default async function SBlockPartPage({
     <ChapterShell
       kicker="JEE Inorganic Chemistry"
       subtitle="S-block Elements"
-      tabs={sBlockTabs(part.number)}
+      headerTag={`Part ${part.number} of ${S_BLOCK_PARTS.length}`}
     >
       <ChapterPartStrip
         hubHref="/notes/s-block"
-        hubLabel="S-block — all parts"
+        hubLabel="S-block — all 15 parts"
         positionLabel={`Part ${part.number} of ${S_BLOCK_PARTS.length}`}
       />
 
@@ -74,11 +73,11 @@ export default async function SBlockPartPage({
           </p>
         </header>
 
-        <SBlockVisual part={part.fromSection} />
-
         <div className="min-w-0 space-y-5 overflow-x-auto rounded-3xl border border-[#24405c] bg-[#122232]/60 px-4 py-7 sm:px-8 sm:py-8 lg:px-10">
           <SBlockMarkdown markdown={sBlockPartMarkdown(part)} />
         </div>
+
+        <SBlockVisual part={part.fromSection} />
 
         <ChapterLessonPager
           prev={sBlockLessonRef(part.number - 1)}

@@ -1,15 +1,11 @@
 "use client";
 
-import { PartShell, ChapterSection, FormulaCard, KB } from "../../chemical-kinetics-shared";
+import { ChapterSection, FormulaCard, IntegratedSourcePages, KB, PartShell } from "../../chemical-kinetics-shared";
 
 export default function ChemicalKineticsPart16() {
   return (
-    <PartShell
-      part={16}
-      title={"Formula Atlas and JEE Traps"}
-      description={"High-yield formula map, dimensional checks, limiting cases and common JEE Advanced errors."}
-    >
-<ChapterSection
+    <PartShell part={16} title={"Comprehensive Practice I — Foundations to Integrated Laws"} description={"Formula atlas, dimensional checks, JEE traps and source practice pages 205–215."}>
+      <ChapterSection
             id="formula-atlas"
             index="17"
             eyebrow="Rapid revision"
@@ -76,6 +72,8 @@ export default function ChemicalKineticsPart16() {
               ))}
             </div>
           </ChapterSection>
+      
+      <IntegratedSourcePages start={205} end={215} />
     </PartShell>
   );
 }

@@ -1,23 +1,13 @@
 "use client";
 
-import { PartShell, ChapterSection, ModifiedProblemAtlas } from "../../chemical-kinetics-shared";
+import { ChapterSection, IntegratedSourcePages, ModifiedProblemAtlas, PartShell } from "../../chemical-kinetics-shared";
 
 export default function ChemicalKineticsPart18() {
   return (
-    <PartShell
-      part={18}
-      title={"Additional Modified Problem Bank"}
-      description={"Ninety-six additional solved problems with altered numerical data and complete calculations."}
-    >
-<ChapterSection
-            id="modified-bank"
-            index="19"
-            eyebrow="Complete numerical reinforcement"
-            title="96 additional modified solved problems"
-            intro={<>The source problem families are rebuilt with new numerical data and fully checked calculations. Together with the 35 worked examples above, this produces a 131-example bank spanning rate stoichiometry, integrated laws, order determination, Arrhenius analysis, complex reactions and enzyme kinetics.</>}
-          >
-            <ModifiedProblemAtlas />
-          </ChapterSection>
+    <PartShell part={18} title={"Comprehensive Practice III — Mechanisms and Catalysis"} description={"Modified solved problems 1–48 integrated with source practice pages 227–237."}>
+      <ChapterSection id="practice-bank-one" index="18" eyebrow="Modified worked problems" title="Solved problem bank I" intro={<>Problems 1–48 use altered numerical data while preserving the source concepts and solution methods.</>}><ModifiedProblemAtlas from={1} to={48} /></ChapterSection>
+      
+      <IntegratedSourcePages start={227} end={237} />
     </PartShell>
   );
 }

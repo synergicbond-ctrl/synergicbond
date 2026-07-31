@@ -1,80 +1,127 @@
 "use client";
 
-import { PartShell, ChapterSection, ConceptCard, ConsecutiveFigure, FigureFrame, FormulaCard, K, KB, WorkedExample } from "../../chemical-kinetics-shared";
+import { ChapterSection, ConceptCard, ExamTrap, FigureFrame, IntegratedSourcePages, K, KB, PartShell, ReferenceExpansion, SaltEffectFigure, WorkedExample } from "../../chemical-kinetics-shared";
 
 export default function ChemicalKineticsPart10() {
   return (
-    <PartShell
-      part={10}
-      title={"Consecutive Reactions"}
-      description={"Sequential first-order reactions, intermediate maxima, limiting cases and kinetic profiles."}
-    >
-<ChapterSection
-            id="consecutive"
-            index="11"
-            eyebrow="Intermediates"
-            title="Consecutive reactions and the maximum intermediate"
-            intro={<>In a sequence A → B → C, B is formed from A and destroyed to C. Its concentration therefore rises, reaches a maximum when its formation and consumption rates become equal, and then falls.</>}
+    <PartShell part={10} title={"Advanced Derivations I — Composite Rate Laws"} description={"Olympiad-level derivations and nontrivial applications built directly into the source sequence."}>
+      <ChapterSection
+            id="advanced"
+            index="16"
+            eyebrow="Beyond the core syllabus"
+            title="Solvent effects, kinetic salt effect, isotope effects and photochemical kinetics"
+            intro={<>The source notes extend into topics that sharpen mechanism reasoning. These ideas are presented as advanced enrichment: they are useful for difficult JEE-style inference even when the full formalism lies beyond the standard syllabus.</>}
           >
-            <FigureFrame title="A → B → C concentration profiles" caption={<>At the maximum of B, <K>{String.raw`d[B]/dt=0`}</K>, hence <K>{String.raw`k_1[A]=k_2[B]`}</K>.</>}>
-              <ConsecutiveFigure />
+            <div className="grid gap-5 xl:grid-cols-2">
+              <ConceptCard title="Solvent polarity and ionic transition states" tone="cyan">
+                <p>A solvent changes the relative stabilisation of reactants and the transition-state region. A more polar medium accelerates a reaction when the transition state is more charge-separated than the reactants, and can slow it when charge is destroyed.</p>
+                <p>Specific solvation, hydrogen bonding and viscosity can be as important as bulk dielectric constant.</p>
+              </ConceptCard>
+              <ConceptCard title="Diffusion-controlled reactions" tone="violet">
+                <p>When reaction after encounter is nearly certain, the observed rate is limited by how fast species diffuse together. In liquids, increasing viscosity usually lowers the diffusion-controlled rate constant.</p>
+                <p>The observed constant can be viewed as competition among diffusion into contact, chemical conversion and separation.</p>
+              </ConceptCard>
+            </div>
+            <div className="grid gap-5 xl:grid-cols-2">
+              <ConceptCard title="Lindemann–Hinshelwood unimolecular kinetics" tone="amber">
+                <p>A gas-phase molecule may first acquire energy by collision and then decompose:</p>
+                <KB>{String.raw`A+M\ \mathop{\rightleftharpoons}^{k_1}_{k_{-1}}\ A^*+M,\qquad A^*\xrightarrow{k_2}P`}</KB>
+                <p>Steady state for <K>{String.raw`A^*`}</K> gives</p>
+                <KB>{String.raw`r=\frac{k_1k_2[A][M]}{k_{-1}[M]+k_2}`}</KB>
+                <p>At low pressure the reaction is second order, <K>{String.raw`r\propto[A][M]`}</K>; at high pressure it becomes first order in A. This explains pressure-dependent “unimolecular” kinetics.</p>
+              </ConceptCard>
+              <ConceptCard title="Relaxation experiments" tone="emerald">
+                <p>A temperature jump, pressure jump or electric-field jump rapidly displaces an equilibrium. The return to equilibrium is followed spectroscopically or electrically.</p>
+                <p>For a simple first-order reversible system, the perturbation decays as <K>{String.raw`e^{-(k_f+k_b)t}`}</K>. A pressure jump is useful only when the reaction has a nonzero volume change or pressure-dependent equilibrium.</p>
+              </ConceptCard>
+              <ConceptCard title="Autocatalysis and sigmoidal growth" tone="violet">
+                <p>For <K>{String.raw`A\rightarrow P`}</K> with <K>{String.raw`r=k[A][P]`}</K>, product promotes further product formation. With <K>{String.raw`[A]+[P]=C`}</K>,</p>
+                <KB>{String.raw`\frac{d[P]}{dt}=k[P](C-[P])`}</KB>
+                <p>The integrated profile is logistic and has an induction period, a maximum rate at <K>{String.raw`[P]=C/2`}</K>, and a final plateau.</p>
+              </ConceptCard>
+              <ConceptCard title="Polymerisation kinetics" tone="rose">
+                <p>Chain polymerisation separates initiation, propagation, chain transfer and termination. Radical steady state commonly gives <K>{String.raw`r_p\propto[M][I]^{1/2}`}</K>.</p>
+                <p>Increasing initiator concentration usually raises polymerisation rate but lowers average chain length because more chains are started. Step-growth polymerisation follows functional-group conversion rather than radical-chain kinetics.</p>
+              </ConceptCard>
+            </div>
+            <FigureFrame title="Primary kinetic salt effect in dilute aqueous solution" caption={<>Like-charged reactants are usually accelerated by increasing ionic strength; oppositely charged reactants are retarded. The limiting straight-line form applies only at low ionic strength.</>}>
+              <SaltEffectFigure />
             </FigureFrame>
+            <ConceptCard title="Brønsted–Bjerrum limiting relation" tone="amber">
+              <KB>{String.raw`\log_{10}\left(\frac{k}{k^0}\right)\approx1.02\,z_Az_B\sqrt I\qquad(25^\circ\mathrm C,\ dilute\ water)`}</KB>
+              <p><K>{String.raw`I=\tfrac12\sum_i c_iz_i^2`}</K> is ionic strength. The sign of <K>{String.raw`z_Az_B`}</K> predicts the initial slope.</p>
+              <ExamTrap>A neutral reactant gives no primary salt effect in this limiting model, but secondary salt and activity effects can still occur.</ExamTrap>
+            </ConceptCard>
             <div className="grid gap-5 xl:grid-cols-2">
-              <FormulaCard title="Two consecutive first-order steps">
-                <KB>{String.raw`A\xrightarrow{k_1}B\xrightarrow{k_2}C`}</KB>
-                <KB>{String.raw`[A]_t=[A]_0e^{-k_1t}`}</KB>
-                <KB>{String.raw`[B]_t=[A]_0\frac{k_1}{k_2-k_1}\left(e^{-k_1t}-e^{-k_2t}\right)`}</KB>
-                <KB>{String.raw`[C]_t=[A]_0-[A]_t-[B]_t`}</KB>
-              </FormulaCard>
-              <FormulaCard title="Time and value of B maximum">
-                <KB>{String.raw`t_{max}=\frac{\ln(k_2/k_1)}{k_2-k_1}`}</KB>
-                <KB>{String.raw`[B]_{max}=\frac{k_1}{k_2}[A]_0e^{-k_1t_{max}}`}</KB>
-                <p className="text-center text-sm text-slate-400">Equivalent forms are possible after substituting tmax.</p>
-              </FormulaCard>
-            </div>
-            <div className="grid gap-5 xl:grid-cols-2">
-              <ConceptCard title="Fast second step: k₂ ≫ k₁" tone="cyan">
-                <p>B is consumed almost as soon as it forms. Its concentration stays small and the overall appearance of C is controlled mainly by the slow A → B step.</p>
-                <p>This is the usual basis of a steady-state treatment of B.</p>
+              <ConceptCard title="Kinetic isotope effect" tone="emerald">
+                <p>Replacing a light isotope by a heavier one changes vibrational zero-point energies and sometimes tunnelling probability. A large primary H/D isotope effect suggests that an X–H bond is substantially changed in or before the rate-controlling transition-state region.</p>
+                <p>A small isotope effect does not prove the bond is uninvolved; masking by another slow step is possible.</p>
               </ConceptCard>
-              <ConceptCard title="Slow second step: k₁ ≫ k₂" tone="amber">
-                <p>A rapidly becomes B; B accumulates and then decays approximately as a first-order reactant with constant k₂.</p>
-                <p>A distinct induction or build-up period may be visible.</p>
+              <ConceptCard title="Quantum tunnelling" tone="rose">
+                <p>Light particles can cross a barrier with energy below its classical height. Tunnelling can produce unusually weak temperature dependence, curved Arrhenius plots and enhanced H/D isotope effects.</p>
               </ConceptCard>
             </div>
-            <ConceptCard title="Constant formation plus first-order loss" tone="violet">
-              <p>If an intermediate is generated at constant volumetric rate q and removed by first-order loss k,</p>
-              <KB>{String.raw`\frac{d[I]}{dt}=q-k[I]`}</KB>
-              <KB>{String.raw`[I]_t=\frac{q}{k}\left(1-e^{-kt}\right)+[I]_0e^{-kt}`}</KB>
-              <p>The steady concentration is <K>{String.raw`q/k`}</K>.</p>
+            <div className="grid gap-5 xl:grid-cols-2">
+              <ConceptCard title="Photochemical primary step" tone="cyan">
+                <p>Absorption creates an electronically excited species:</p>
+                <KB>{String.raw`A+h\nu\rightarrow A^*`}</KB>
+                <p>Excited states may fluoresce, undergo nonradiative decay, transfer energy/electrons, dissociate or react. Light absorption, not thermal collision alone, creates the reactive state.</p>
+              </ConceptCard>
+              <ConceptCard title="Quantum yield" tone="violet">
+                <KB>{String.raw`\Phi=\frac{\text{number of specified events}}{\text{number of photons absorbed}}`}</KB>
+                <p><K>{String.raw`\Phi>1`}</K> is possible in a chain reaction; <K>{String.raw`\Phi<1`}</K> occurs when competing deactivation wastes excited states.</p>
+              </ConceptCard>
+            </div>
+            <ConceptCard title="Excited-state lifetime and quenching" tone="amber">
+              <p>For intrinsic first-order decay k₀ and bimolecular quencher Q,</p>
+              <KB>{String.raw`-\frac{d[A^*]}{dt}=(k_0+k_q[Q])[A^*]`}</KB>
+              <KB>{String.raw`\frac{\tau_0}{\tau}=1+k_q\tau_0[Q]`}</KB>
+              <p>The Stern–Volmer slope is <K>{String.raw`k_q\tau_0`}</K>.</p>
+            </ConceptCard>
+            <ConceptCard title="Electron-transfer kinetics" tone="navy">
+              <p>Long-range electron transfer can depend strongly on donor–acceptor distance, reorganisation of the surroundings and reaction free energy. A compact qualitative form is</p>
+              <KB>{String.raw`k_{ET}\propto e^{-\beta r}\exp\left[-\frac{(\lambda+\Delta G^\circ)^2}{4\lambda RT}\right]`}</KB>
+              <p>The exponential distance term reflects electronic coupling; λ is the reorganisation energy. This is enrichment, not a formula to deploy without the assumptions of the model.</p>
             </ConceptCard>
             <WorkedExample
-              number={16}
-              title="Maximum concentration of an intermediate"
-              concept="Exact consecutive first-order kinetics."
-              question={<>For <K>{String.raw`A\xrightarrow{0.030\,\mathrm{min^{-1}}}B\xrightarrow{0.120\,\mathrm{min^{-1}}}C`}</K>, initially [A] = 0.800 M and [B] = [C] = 0. Find the time and concentration at which B is maximum.</>}
+              number={29}
+              title="Primary kinetic salt effect"
+              concept="Use ionic strength and reactant charges in the dilute limiting law."
+              question={<>A reaction between ions of charges +2 and −1 has <K>{String.raw`k^0=4.0\times10^{-3}\ \mathrm{L\,mol^{-1}\,s^{-1}}`}</K>. Estimate k at ionic strength 0.010 M at 25 °C.</>}
               solution={<>
-                <KB>{String.raw`t_{max}=\frac{\ln(0.120/0.030)}{0.120-0.030}=\frac{\ln4}{0.090}=15.40\ \mathrm{min}`}</KB>
-                <p>At the maximum, <K>{String.raw`k_1[A]=k_2[B]`}</K>. First compute A:</p>
-                <KB>{String.raw`[A]_{max}=0.800e^{-(0.030)(15.40)}=0.504\ \mathrm{M}`}</KB>
-                <KB>{String.raw`[B]_{max}=\frac{0.030}{0.120}(0.504)=0.126\ \mathrm{M}`}</KB>
+                <p>Here <K>{String.raw`z_Az_B=(+2)(-1)=-2`}</K> and <K>{String.raw`\sqrt I=0.100`}</K>.</p>
+                <KB>{String.raw`\log_{10}(k/k^0)=1.02(-2)(0.100)=-0.204`}</KB>
+                <KB>{String.raw`k/k^0=10^{-0.204}=0.625`}</KB>
+                <KB>{String.raw`k=(0.625)(4.0\times10^{-3})=2.50\times10^{-3}\ \mathrm{L\,mol^{-1}\,s^{-1}}`}</KB>
               </>}
-              answer={<><K>{String.raw`t_{max}=15.4\ \mathrm{min}`}</K>, <K>{String.raw`[B]_{max}=0.126\ \mathrm{M}`}</K>.</>}
+              answer={<><K>{String.raw`k\approx2.5\times10^{-3}\ \mathrm{L\,mol^{-1}\,s^{-1}}`}</K>; ionic strength retards this oppositely charged pair.</>}
             />
             <WorkedExample
-              number={17}
-              difficulty="JEE Main+"
-              title="Build-up to a steady intermediate concentration"
-              concept="Constant source with first-order sink."
-              question={<>An intermediate is produced uniformly at <K>{String.raw`q=2.5\times10^{-6}\ \mathrm{M\,s^{-1}}`}</K> and removed with <K>{String.raw`k=0.020\ \mathrm{s^{-1}}`}</K>. Initially none is present. Find [I] after 60 s and its steady value.</>}
+              number={30}
+              title="Isotope effect as a mechanistic probe"
+              concept="Compare competing mechanisms rather than treating KIE as a magic label."
+              question={<>A reaction gives <K>{String.raw`k_H/k_D=6.8`}</K> when an X–H bond is replaced by X–D, but only <K>{String.raw`1.15`}</K> when a remote C–H bond is labelled. What is the strongest kinetic inference?</>}
               solution={<>
-                <KB>{String.raw`[I]_{ss}=\frac{q}{k}=\frac{2.5\times10^{-6}}{0.020}=1.25\times10^{-4}\ \mathrm{M}`}</KB>
-                <KB>{String.raw`[I]_{60}=[I]_{ss}(1-e^{-k t})=(1.25\times10^{-4})(1-e^{-1.2})`}</KB>
-                <KB>{String.raw`[I]_{60}=8.74\times10^{-5}\ \mathrm{M}`}</KB>
+                <p>The large effect of 6.8 is characteristic of a primary isotope effect: the labelled X–H bond is substantially broken, formed or strongly weakened in the rate-controlling transition-state region.</p>
+                <p>The remote label gives only a small secondary effect, consistent with modest changes in hybridisation or vibrational environment.</p>
+                <p>This supports, but does not uniquely prove, a mechanism in which X–H transfer contributes to the kinetic bottleneck.</p>
               </>}
-              answer={<>After 60 s: <K>{String.raw`8.74\times10^{-5}\ \mathrm{M}`}</K>; steady value <K>{String.raw`1.25\times10^{-4}\ \mathrm{M}`}</K>.</>}
+              answer={<>X–H bond reorganisation is involved in or before the rate-controlling transition-state region; the remote C–H bond is not directly broken.</>}
+            />
+            <WorkedExample
+              number={31}
+              title="Stern–Volmer quenching"
+              concept="Extract a bimolecular quenching constant from lifetime data."
+              question={<>An excited state has lifetime <K>{String.raw`\tau_0=40.0\ \mathrm{ns}`}</K> without quencher and <K>{String.raw`\tau=10.0\ \mathrm{ns}`}</K> at [Q] = 0.050 M. Find kq.</>}
+              solution={<>
+                <KB>{String.raw`\frac{\tau_0}{\tau}=4.00=1+k_q\tau_0[Q]`}</KB>
+                <KB>{String.raw`k_q=\frac{3.00}{(40.0\times10^{-9})(0.050)}=1.50\times10^9\ \mathrm{L\,mol^{-1}\,s^{-1}}`}</KB>
+              </>}
+              answer={<><K>{String.raw`k_q=1.50\times10^9\ \mathrm{L\,mol^{-1}\,s^{-1}}`}</K>.</>}
             />
           </ChapterSection>
+      <ReferenceExpansion sheets={[32]} />
+      <IntegratedSourcePages start={126} end={138} />
     </PartShell>
   );
 }

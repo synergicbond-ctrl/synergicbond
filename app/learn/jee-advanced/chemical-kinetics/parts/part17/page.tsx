@@ -1,15 +1,11 @@
 "use client";
 
-import { PartShell, ChapterSection, ConceptCard, K, KB, WorkedExample } from "../../chemical-kinetics-shared";
+import { ChapterSection, ConceptCard, IntegratedSourcePages, K, KB, PartShell, WorkedExample } from "../../chemical-kinetics-shared";
 
 export default function ChemicalKineticsPart17() {
   return (
-    <PartShell
-      part={17}
-      title={"Integrated Worked Examples"}
-      description={"Thirty-five fully solved examples connecting rate data, mathematical models and reaction mechanisms."}
-    >
-<ChapterSection
+    <PartShell part={17} title={"Comprehensive Practice II — Complex Reactions and Temperature"} description={"Fully solved examples connected to source practice pages 216–226."}>
+      <ChapterSection
             id="practice"
             index="18"
             eyebrow="Synthesis problems"
@@ -96,6 +92,8 @@ export default function ChemicalKineticsPart17() {
               </div>
             </ConceptCard>
           </ChapterSection>
+      
+      <IntegratedSourcePages start={216} end={226} />
     </PartShell>
   );
 }

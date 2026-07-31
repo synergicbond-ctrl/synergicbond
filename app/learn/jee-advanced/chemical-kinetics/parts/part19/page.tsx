@@ -1,23 +1,13 @@
 "use client";
 
-import { PartShell, ChapterSection, TextbookExtensionAtlas } from "../../chemical-kinetics-shared";
+import { ChapterSection, IntegratedSourcePages, ModifiedProblemAtlas, PartShell } from "../../chemical-kinetics-shared";
 
 export default function ChemicalKineticsPart19() {
   return (
-    <PartShell
-      part={19}
-      title={"Fifty Textbook Extension Sheets"}
-      description={"Print-formatted advanced theory sheets with original dark-background visual systems."}
-    >
-<ChapterSection
-            id="textbook-extension"
-            index="20"
-            eyebrow="Original advanced synthesis"
-            title="Fifty print-formatted textbook extension sheets"
-            intro={<>These sheets add an original, paraphrased layer of physical-chemistry depth corresponding to the advanced material represented in the uploaded compilation: rigorous assumptions, limiting cases, mechanism tests, reaction dynamics, catalysis, enzyme kinetics, photochemistry, isotope effects and electron transfer. Each sheet contains a dark-background SVG and is forced onto its own page in print/PDF output.</>}
-          >
-            <TextbookExtensionAtlas />
-          </ChapterSection>
+    <PartShell part={19} title={"Comprehensive Practice IV — Advanced Numerical Problems"} description={"Modified solved problems 49–96 integrated with source practice pages 238–248."}>
+      <ChapterSection id="practice-bank-two" index="19" eyebrow="Modified worked problems" title="Solved problem bank II" intro={<>Problems 49–96 continue the altered-data problem bank through Arrhenius, mechanisms, complex reactions, catalysis and enzyme kinetics.</>}><ModifiedProblemAtlas from={49} to={96} /></ChapterSection>
+      
+      <IntegratedSourcePages start={238} end={248} />
     </PartShell>
   );
 }

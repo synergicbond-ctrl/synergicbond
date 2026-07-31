@@ -1,108 +1,130 @@
 "use client";
 
-import { PartShell, ChapterSection, ConceptCard, DataTable, ExamTrap, FormulaCard, K, KB, WorkedExample } from "../../chemical-kinetics-shared";
+import { ChapterSection, ConceptCard, DataTable, FormulaCard, IntegratedSourcePages, K, KB, PartShell, ReferenceExpansion, WorkedExample } from "../../chemical-kinetics-shared";
 
 export default function ChemicalKineticsPart04() {
   return (
-    <PartShell
-      part={4}
-      title={"Rate Law, Order and Molecularity"}
-      description={"Experimental rate laws, rate constants, units, order, pseudo-order behaviour and molecularity."}
-    >
-<ChapterSection
-            id="rate-law"
-            index="05"
-            eyebrow="Empirical dependence"
-            title="Rate law, order, molecularity and rate-constant units"
-            intro={<>The rate law is the mathematical statement that reproduces measured composition–rate data under specified conditions. Its exponents are empirical unless the expression belongs to a known elementary step.</>}
+    <PartShell part={4} title={"Order Determination and Experimental Monitoring"} description={"Initial-rate, isolation, half-life, graphical, pressure, optical and instrumental methods."}>
+      <ChapterSection
+            id="order-methods"
+            index="07"
+            eyebrow="Data analysis"
+            title="Experimental methods for determining order"
+            intro={<>No single method is universally best. Initial rates are robust for multireactant laws, integrated plots exploit complete time traces, half-life scaling is compact, and isolation converts a multicomponent law into a pseudo-order form.</>}
           >
-            <div className="grid gap-5 xl:grid-cols-2">
-              <FormulaCard title="General differential rate law">
-                <KB>{String.raw`r=k[A]^\alpha[B]^\beta[C]^\gamma`}</KB>
-                <KB>{String.raw`n=\alpha+\beta+\gamma`}</KB>
-              </FormulaCard>
-              <FormulaCard title="General unit of k" note={<>Here concentration is measured in mol L⁻¹ and time in seconds.</>}>
-                <KB>{String.raw`[k]=(\mathrm{mol\,L^{-1}})^{1-n}\,\mathrm{s^{-1}}`}</KB>
-                <KB>{String.raw`[k]=\mathrm{L^{\,n-1}\,mol^{\,1-n}\,s^{-1}}`}</KB>
-              </FormulaCard>
-            </div>
             <DataTable
-              headers={["Overall order n", "Illustrative rate law", "Unit of k"]}
+              headers={["Method", "Core operation", "Strongest use", "Common failure"]}
               rows={[
-                [0, <K key="order-0-law">{String.raw`r=k`}</K>, <K key="order-0-unit">{String.raw`\mathrm{mol\,L^{-1}\,s^{-1}}`}</K>],
-                [1, <K key="order-1-law">{String.raw`r=k[A]`}</K>, <K key="order-1-unit">{String.raw`\mathrm{s^{-1}}`}</K>],
-                [2, <K key="order-2-law">{String.raw`r=k[A]^2`}</K>, <K key="order-2-unit">{String.raw`\mathrm{L\,mol^{-1}\,s^{-1}}`}</K>],
-                [3, <K key="order-3-law">{String.raw`r=k[A]^2[B]`}</K>, <K key="order-3-unit">{String.raw`\mathrm{L^2\,mol^{-2}\,s^{-1}}`}</K>],
-                [<K key="order-half-value">{String.raw`1/2`}</K>, <K key="order-half-law">{String.raw`r=k[A]^{1/2}`}</K>, <K key="order-half-unit">{String.raw`\mathrm{mol^{1/2}\,L^{-1/2}\,s^{-1}}`}</K>],
+                ["Initial rates", "compare rate ratios", "individual exponents", "initial slope estimated poorly"],
+                ["Integrated plots", "test [A], ln[A], 1/[A] linearity", "0th, 1st, 2nd order", "choosing by visual appearance only"],
+                ["Half-life", <span key="half-life-law"><K>{String.raw`t_{1/2}\propto[A]_0^{1-n}`}</K></span>, "single-reactant order", "side reactions distort later halves"],
+                ["Isolation", "place all but one reactant in excess", "one exponent at a time", "excess species not truly constant"],
+                ["Differential", <span key="differential-law"><K>{String.raw`\ln r=\ln k+n\ln[A]`}</K></span>, "nonintegral orders", "differentiation amplifies noise"],
+                ["Fractional-life", "compare times for fixed fractions", "general nth order", "requires accurate endpoints"],
               ]}
             />
             <div className="grid gap-5 xl:grid-cols-2">
-              <ConceptCard title="Reaction order" tone="cyan">
-                <p>The order with respect to a species is its exponent in the experimentally valid rate law. Overall order is the algebraic sum of the exponents.</p>
-                <p>Order may be zero, positive, negative, integral or fractional, and may change when the dominant mechanism changes.</p>
-              </ConceptCard>
-              <ConceptCard title="Molecularity" tone="violet">
-                <p>Molecularity counts the reacting entities in one elementary event. It is defined only for an elementary step and is a positive integer.</p>
-                <p>Unimolecular and bimolecular events are common. Genuine termolecular events are rare because three-body encounters with suitable energy and orientation are improbable.</p>
-              </ConceptCard>
+              <FormulaCard title="Logarithmic differential method">
+                <KB>{String.raw`r=k[A]^n\quad\Longrightarrow\quad \ln r=\ln k+n\ln[A]`}</KB>
+                <p className="text-center text-sm text-slate-400">Slope of ln r versus ln[A] = n.</p>
+              </FormulaCard>
+              <FormulaCard title="Two-point order formula">
+                <KB>{String.raw`n=\frac{\ln(r_2/r_1)}{\ln([A]_2/[A]_1)}`}</KB>
+                <p className="text-center text-sm text-slate-400">Valid when every other relevant variable is held fixed.</p>
+              </FormulaCard>
             </div>
-            <DataTable
-              headers={["Feature", "Order", "Molecularity"]}
-              rows={[
-                ["Applies to", "experimental rate law", "one elementary step"],
-                ["Allowed values", "zero, fractional, negative or integer", "positive integer"],
-                ["How obtained", "experiment or derived mechanism", "count reactant entities in the step"],
-                ["Relation to stoichiometry", "generally independent", "equals elementary-step reactant coefficients"],
-              ]}
-            />
-            <div className="grid gap-5 xl:grid-cols-2">
-              <ConceptCard title="Pseudo-order kinetics" tone="amber">
-                <p>If B is in such large excess that its concentration is effectively constant,</p>
-                <KB>{String.raw`r=k[A][B]^m=k_{\mathrm{obs}}[A],\qquad k_{\mathrm{obs}}=k[B]^m`}</KB>
-                <p>The observed first-order constant contains the fixed concentration and therefore changes when that concentration changes.</p>
-              </ConceptCard>
-              <ConceptCard title="Complex and non-power laws" tone="rose">
-                <p>Not every mechanism produces a simple monomial. Saturation, inhibition, autocatalysis and competing pathways can give rational or composite expressions.</p>
-                <KB>{String.raw`r=\frac{kK[A]}{1+K[A]}\qquad\text{or}\qquad r=\frac{k[A][B]}{1+K[B]}`}</KB>
-                <ExamTrap>For such expressions, quoting one global “order” may be meaningless. Use limiting orders at low or high concentration.</ExamTrap>
-              </ConceptCard>
-            </div>
+            <ConceptCard title="Choosing among linear plots" tone="cyan">
+              <p>Fit all plausible transformations and compare not only correlation coefficients but also the pattern of residuals. A curved residual pattern means the model misses systematic behaviour even when R² is close to one.</p>
+              <p>The slope must have the correct sign and unit: <K>{String.raw`-k`}</K> for [A] versus t and ln[A] versus t; <K>{String.raw`+k`}</K> for 1/[A] versus t.</p>
+            </ConceptCard>
             <WorkedExample
-              number={3}
-              title="Rate law from initial-rate data"
-              concept="Determine individual orders without assuming stoichiometric exponents."
-              question={<>For a reaction between A and B, the initial data are:</>}
+              number={9}
+              title="Order and k from a time table"
+              concept="Use a diagnostic transformation rather than guessing from raw concentration drops."
+              question={<>The concentration data are: t/s = 0, 100, 250, 500 and [A]/M = 0.400, 0.286, 0.211, 0.143. Identify the order and estimate k.</>}
               solution={<>
-                <DataTable headers={["Run", "[A]₀ / M", "[B]₀ / M", "r₀ / M s⁻¹"]} rows={[
-                  [1, "0.120", "0.080", <K key="r1-rate">{String.raw`1.44\times10^{-4}`}</K>],
-                  [2, "0.240", "0.080", <K key="r2-rate">{String.raw`2.88\times10^{-4}`}</K>],
-                  [3, "0.120", "0.320", <K key="r3-rate">{String.raw`5.76\times10^{-4}`}</K>],
+                <p>Test reciprocal concentration:</p>
+                <DataTable headers={["t / s", "[A] / M", "1/[A] / M⁻¹"]} rows={[
+                  [0, "0.400", "2.500"], [100, "0.286", "3.497"], [250, "0.211", "4.739"], [500, "0.143", "6.993"],
                 ]}/>
-                <p>Assume <K>{String.raw`r=k[A]^\alpha[B]^\beta`}</K>. Compare runs 1 and 2: A doubles while B is fixed, and rate doubles.</p>
-                <KB>{String.raw`2=2^\alpha\Rightarrow\alpha=1`}</KB>
-                <p>Compare runs 1 and 3: B increases fourfold while A is fixed, and rate increases fourfold.</p>
-                <KB>{String.raw`4=4^\beta\Rightarrow\beta=1`}</KB>
-                <p>Thus <K>{String.raw`r=k[A][B]`}</K>. Use run 1:</p>
-                <KB>{String.raw`k=\frac{1.44\times10^{-4}}{(0.120)(0.080)}=1.50\times10^{-2}\ \mathrm{L\,mol^{-1}\,s^{-1}}`}</KB>
+                <p>The increase in <K>{String.raw`1/[A]`}</K> is approximately proportional to time. Use the endpoints:</p>
+                <KB>{String.raw`k=\frac{6.993-2.500}{500}=8.99\times10^{-3}\ \mathrm{L\,mol^{-1}\,s^{-1}}`}</KB>
+                <p>Checking t = 250 s predicts <K>{String.raw`1/[A]=2.500+(8.99\times10^{-3})(250)=4.748`}</K>, in close agreement with 4.739.</p>
               </>}
-              answer={<>First order in A, first order in B, overall second order; <K>{String.raw`k=1.50\times10^{-2}\ \mathrm{L\,mol^{-1}\,s^{-1}}`}</K>.</>}
+              answer={<>Second order; <K>{String.raw`k\approx9.0\times10^{-3}\ \mathrm{L\,mol^{-1}\,s^{-1}}`}</K>.</>}
             />
             <WorkedExample
-              number={4}
+              number={10}
               difficulty="JEE Main+"
-              title="Unit of a fractional-order rate constant"
-              concept="Dimensional analysis of k."
-              question={<>A reaction obeys <K>{String.raw`r=k[A]^{3/2}[B]^{-1/2}`}</K>. State the overall order and the SI-style concentration unit of k when rate is in mol L⁻¹ s⁻¹.</>}
+              title="Order by isolation"
+              concept="Observed constants reveal the hidden exponent of an excess reagent."
+              question={<>With B in large excess, the reaction is pseudo-first-order in A. At [B] = 0.20 M, <K>{String.raw`k_{obs}=1.80\times10^{-3}\ \mathrm{s^{-1}}`}</K>; at [B] = 0.45 M, <K>{String.raw`k_{obs}=6.075\times10^{-3}\ \mathrm{s^{-1}}`}</K>. Find the order in B and the true k if the law is <K>{String.raw`r=k[A][B]^m`}</K>.</>}
               solution={<>
-                <p>The overall order is the algebraic sum:</p>
-                <KB>{String.raw`n=\frac32-\frac12=1`}</KB>
-                <p>For any first-order law, the concentration dimensions cancel from k:</p>
-                <KB>{String.raw`[k]=(\mathrm{mol\,L^{-1}})^{1-1}\mathrm{s^{-1}}=\mathrm{s^{-1}}`}</KB>
-                <p>The negative half-order means increasing B suppresses the rate under the stated conditions; it does not make the overall order negative.</p>
+                <KB>{String.raw`\frac{k_{obs,2}}{k_{obs,1}}=\left(\frac{0.45}{0.20}\right)^m`}</KB>
+                <KB>{String.raw`\frac{6.075}{1.80}=3.375=(2.25)^m`}</KB>
+                <p>Since <K>{String.raw`2.25^{3/2}=3.375`}</K>, <K>{String.raw`m=3/2`}</K>.</p>
+                <KB>{String.raw`k=\frac{1.80\times10^{-3}}{(0.20)^{3/2}}=2.01\times10^{-2}\ \mathrm{M^{-3/2}\,s^{-1}}`}</KB>
               </>}
-              answer={<>Overall order <K>{String.raw`1`}</K>; <K>{String.raw`[k]=\mathrm{s^{-1}}`}</K>.</>}
+              answer={<>Order in B = <K>{String.raw`3/2`}</K>; <K>{String.raw`k=2.01\times10^{-2}\ \mathrm{M^{-3/2}\,s^{-1}}`}</K>.</>}
             />
           </ChapterSection>
+
+<ChapterSection
+            id="special-methods"
+            index="08"
+            eyebrow="Indirect concentration tracking"
+            title="Pressure, volume, titration and optical-rotation methods"
+            intro={<>Many JEE problems provide a measured property rather than concentration. The central skill is to construct a stoichiometric mapping from the signal at time t to the amount of unreacted material.</>}
+          >
+            <div className="grid gap-5 xl:grid-cols-2">
+              <ConceptCard title="Total-pressure method at constant T and V" tone="cyan">
+                <p>For ideal gases, pressure is proportional to total moles. Write an ICE table in pressure units and express the reactant partial pressure in terms of <K>{String.raw`P_0`}</K>, <K>{String.raw`P_t`}</K> and, if needed, <K>{String.raw`P_\infty`}</K>.</p>
+                <p>Never insert total pressure directly into a rate law unless the algebra proves it is proportional to the reacting species.</p>
+              </ConceptCard>
+              <ConceptCard title="Gas-volume method at constant T and P" tone="violet">
+                <p>Volume is proportional to moles. The same ICE-table method applies, with V replacing P.</p>
+                <p>At completion, <K>{String.raw`V_\infty`}</K> often supplies the calibration needed to find the unreacted amount.</p>
+              </ConceptCard>
+              <ConceptCard title="Titration reading" tone="amber">
+                <p>If titrant volume is proportional to unreacted reactant, a first-order equation may appear as</p>
+                <KB>{String.raw`k=\frac{2.303}{t}\log\frac{V_0-V_\infty}{V_t-V_\infty}`}</KB>
+                <p>The precise numerator and denominator depend on what is titrated; derive them rather than memorising blindly.</p>
+              </ConceptCard>
+              <ConceptCard title="Optical rotation" tone="emerald">
+                <p>When rotation is a linear sum of contributions, the distance from the final reading is proportional to unreacted material:</p>
+                <KB>{String.raw`k=\frac{2.303}{t}\log\frac{\alpha_0-\alpha_\infty}{\alpha_t-\alpha_\infty}`}</KB>
+              </ConceptCard>
+            </div>
+            <WorkedExample
+              number={11}
+              title="First-order decomposition from total pressure"
+              concept="Construct the pressure ICE relation before using the integrated law."
+              question={<>A gas A decomposes as <K>{String.raw`A(g)\rightarrow B(g)+2C(g)`}</K> in a constant-volume vessel. The initial pressure is 240 torr and the total pressure after 18.0 min is 372 torr. Find k.</>}
+              solution={<>
+                <p>Let the pressure-equivalent amount decomposed be x. The pressure table is:</p>
+                <KB>{String.raw`A:240-x,\qquad B:x,\qquad C:2x`}</KB>
+                <KB>{String.raw`P_t=(240-x)+x+2x=240+2x`}</KB>
+                <p>At 18.0 min, <K>{String.raw`372=240+2x`}</K>, so <K>{String.raw`x=66`}</K> torr and <K>{String.raw`P_A=174`}</K> torr.</p>
+                <KB>{String.raw`k=\frac1t\ln\frac{P_{A,0}}{P_{A,t}}=\frac1{18.0}\ln\frac{240}{174}=1.79\times10^{-2}\ \mathrm{min^{-1}}`}</KB>
+              </>}
+              answer={<><K>{String.raw`k=1.79\times10^{-2}\ \mathrm{min^{-1}}`}</K>.</>}
+            />
+            <WorkedExample
+              number={12}
+              title="Optical-rotation kinetics"
+              concept="Use displacement from the final rotation, not raw rotation."
+              question={<>In an inversion experiment, the observed rotations are <K>{String.raw`\alpha_0=+28.0^\circ`}</K>, <K>{String.raw`\alpha_{30}=+8.0^\circ`}</K>, and <K>{String.raw`\alpha_\infty=-12.0^\circ`}</K>. Assuming pseudo-first-order kinetics, calculate k.</>}
+              solution={<>
+                <p>The signal proportional to unreacted substrate is <K>{String.raw`\alpha_t-\alpha_\infty`}</K>.</p>
+                <KB>{String.raw`\alpha_0-\alpha_\infty=28-(-12)=40`}</KB>
+                <KB>{String.raw`\alpha_{30}-\alpha_\infty=8-(-12)=20`}</KB>
+                <KB>{String.raw`k=\frac1{30}\ln\frac{40}{20}=\frac{0.6931}{30}=2.31\times10^{-2}\ \mathrm{min^{-1}}`}</KB>
+              </>}
+              answer={<><K>{String.raw`2.31\times10^{-2}\ \mathrm{min^{-1}}`}</K>; the 30 min reading is exactly one half-life.</>}
+            />
+          </ChapterSection>
+      <ReferenceExpansion sheets={[16, 19, 23]} />
+      <IntegratedSourcePages start={47} end={61} />
     </PartShell>
   );
 }

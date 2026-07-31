@@ -4,9 +4,9 @@ import { S_BLOCK_REACTIONS } from "./content/reactions";
 import { S_BLOCK_COMPOUNDS } from "./content/compounds";
 import { S_BLOCK_APPLICATIONS } from "./content/applications";
 
-// Original, source-audited S-block master notes for JEE Advanced.
-// The modules are separated only for maintainability; lessons are assembled
-// into one numbered Markdown stream for the existing lesson engine.
+// Complete S-block master notes for JEE Advanced.
+// The modules are separated only for maintainability and assembled
+// into one numbered Markdown stream for the chapter engine.
 export const S_BLOCK_MASTER_MARKDOWN = [
   S_BLOCK_FOUNDATIONS,
   S_BLOCK_ANOMALIES,

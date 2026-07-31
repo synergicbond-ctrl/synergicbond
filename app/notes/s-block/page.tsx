@@ -8,14 +8,14 @@ import { SBlockVisual } from "./visuals";
 export const metadata = {
   title: "S-block Elements — Complete JEE Advanced Notes | SYNERGIC BOND",
   description:
-    "Complete NCERT and JEE Advanced s-block course in 15 balanced parts: exact Group 1 and Group 2 data, trends, exceptions, reactions, industrial compounds, dark SVG visuals, traps and worked problems.",
+    "Complete JEE Advanced s-block notes in 15 balanced parts: Group 1 and Group 2 data, trends, exceptions, reactions, industrial compounds, dark SVG visuals, traps and worked problems.",
 };
 
 export const dynamic = "force-dynamic";
 
 const STATS = [
   ["15", "complete parts"],
-  ["100%", "NCERT chapter map"],
+  ["100%", "complete chapter coverage"],
   ["16", "dark visual systems"],
   ["20", "worked JEE examples"],
 ];
@@ -90,7 +90,7 @@ export default function SBlockHub() {
             JEE ADVANCED
           </span>
           <span className="rounded-full border border-emerald-400/25 bg-emerald-500/10 px-3 py-1 text-xs font-black text-emerald-200">
-            COMPLETE NCERT COVERAGE
+            COMPLETE CHAPTER COVERAGE
           </span>
           <span className="rounded-full border border-cyan-400/25 bg-cyan-500/10 px-3 py-1 text-xs font-black text-cyan-200">
             15 BALANCED PARTS
@@ -102,7 +102,7 @@ export default function SBlockHub() {
         </h1>
 
         <p className="mt-5 max-w-4xl text-base font-medium leading-7 text-slate-300 sm:text-lg sm:leading-8">
-          Exact NCERT data, Groups 1 and 2 theory, first-member anomalies,
+          Verified quantitative data, Groups 1 and 2 theory, first-member anomalies,
           industrial sodium and calcium chemistry, solubility and thermal
           stability, JEE traps, quantitative examples and a dark visual atlas.
         </p>
@@ -126,7 +126,7 @@ export default function SBlockHub() {
         {[
           [
             "Theory + data",
-            "NCERT values, trend derivations, anomalous behaviour and phase-specific structures.",
+            "Quantitative values, trend derivations, anomalous behaviour and phase-specific structures.",
           ],
           [
             "Reaction atlas",

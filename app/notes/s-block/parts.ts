@@ -13,9 +13,9 @@ export type SBlockPartDef = {
 
 const PARTS = [
   {
-    title: "NCERT scope, electronic architecture and occurrence",
+    title: "Electronic configuration, occurrence and governing principles",
     focus:
-      "Complete NCERT map, position in the periodic table, electronic configurations, oxidation states, occurrence and general physical character.",
+      "Valence-shell patterns, oxidation states, occurrence, physical character and the energetic principles governing s-block chemistry.",
   },
   {
     title: "Group 1 and Group 2 data tables",

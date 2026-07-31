@@ -344,7 +344,7 @@ This one sequence integrates flame testing, water reaction, carbonate–hydrogen
 
 The chapter is mastered when you can:
 
-- reproduce the NCERT tables and named-compound reactions;
+- reproduce the standard textbook tables and named-compound reactions;
 - explain every first-member anomaly through charge density and polarisation;
 - distinguish rate from electrode-potential arguments;
 - derive solubility and thermal-stability trends;

@@ -1,46 +1,39 @@
 export const S_BLOCK_FOUNDATIONS = String.raw`
-# 1. NCERT coverage map and how to use this course
+# 1. S-block overview and governing principles
 
-This course rebuilds the **entire NCERT Class 11 s-block chapter** at JEE Advanced depth. NCERT facts remain the factual baseline; every advanced explanation is added only to explain, connect or apply those facts.
+The s-block contains the highly electropositive metals of Groups 1 and 2. Their chemistry is governed mainly by valence-shell configuration, cation size, charge density, lattice enthalpy, hydration enthalpy and polarising power.
 
-## 1.1 Complete coverage checklist
+## 1.1 Family overview
 
-| NCERT chapter demand | Where covered |
-|---|---|
-| Position of Groups 1 and 2, valence configuration and nomenclature | Lessons 1–2 |
-| Atomic and ionic radii, ionisation enthalpy, hydration enthalpy, density, melting and boiling points | Lessons 3–7 |
-| Flame colours, photoelectric behaviour and qualitative identification | Lesson 8 |
-| Chemical properties of alkali and alkaline-earth metals | Lessons 13–17 |
-| Anomalous behaviour of Li and Be | Lessons 9–10 |
-| Diagonal relationships Li–Mg and Be–Al | Lessons 11–12 |
-| Oxides, peroxides, superoxides, hydroxides, hydrides and halides | Lessons 13–19 |
-| Carbonates, hydrogencarbonates, nitrates and sulphates | Lessons 20–21 |
-| Industrial compounds of sodium | Lessons 22–24 |
-| Industrial compounds of magnesium and calcium | Lessons 25–26 |
-| Plaster of Paris and Portland cement | Lesson 26 |
-| Hardness of water and softening chemistry | Lesson 27 |
-| Biological importance of Na, K, Mg and Ca | Lesson 28 |
-| Orders, exceptions, worked examples and JEE Advanced challenge problems | Lessons 29–30 |
+| Feature | Group 1: alkali metals | Group 2: alkaline-earth metals |
+|---|---|---|
+| General valence configuration | $ns^1$ | $ns^2$ |
+| Dominant oxidation state | +1 | +2 |
+| Ordinary cation | $\mathrm{M^+}$ | $\mathrm{M^{2+}}$ |
+| Metallic character | very high | high |
+| Typical bonding in common salts | mainly ionic | ionic, with greater covalent character for small cations |
+| First-member exception | lithium | beryllium |
 
-## 1.2 The six ideas that control the chapter
+Hydrogen and helium have s-orbital configurations but are not treated as ordinary members of these two metallic families. Hydrogen has unique non-metallic chemistry, while helium belongs to the noble gases because of its closed shell.
 
-1. **Effective nuclear attraction and shell number** control size and ionisation enthalpy.
+## 1.2 Six principles that control s-block chemistry
+
+1. **Effective nuclear attraction and shell number** control atomic size and ionisation enthalpy.
 2. **Charge density** controls hydration, polarising power, hydrolysis and complex formation.
-3. **Lattice enthalpy versus hydration enthalpy** controls solubility.
-4. **Fajans' rule** controls covalent character and the thermal stability of oxo-salts.
+3. **Lattice enthalpy versus hydration enthalpy** controls dissolution and precipitation.
+4. **Fajans' rule** explains covalent character and many first-member anomalies.
 5. **Cation–anion size matching** controls whether oxide, peroxide or superoxide is stabilised.
-6. **Thermodynamics and kinetics are different:** lithium is the strongest aqueous reducing agent, yet it reacts least violently with water among the common alkali metals.
+6. **Thermodynamics and kinetics must be separated:** a reaction may have a large driving force yet proceed slowly because of surface films, phase or activation energy.
 
-> **JEE focus:** Do not memorise fifty disconnected exceptions. In almost every problem, identify which of the six controlling ideas is active, then derive the result.
+> **JEE focus:** Most trends and exceptions can be derived by identifying the dominant principle instead of memorising isolated statements.
 
-## 1.3 Examination conventions
+## 1.3 Analytical conventions
 
-- Unless a phase is stated, discuss the ordinary stable substance under ambient conditions.
+- State the physical phase whenever structure or reaction product depends on phase.
 - For electrode potentials, use the reduction convention $\mathrm{M^{n+}+ne^-\rightarrow M}$.
-- Hydration enthalpy values are negative; order by **magnitude** only when the question explicitly asks for magnitude.
-- Flame colour is a property of the emitting atom/ion in the flame, not proof of a unique compound.
-- Cement is a mixture of phases, not a compound with one molecular formula.
-
+- Hydration enthalpy values are negative; distinguish the numerical value from its magnitude.
+- Flame colour identifies an emitting metal species but is not by itself a unique confirmatory test.
+- Cement is a multiphase material and does not possess one molecular formula.
 # 2. Position, electronic configuration, occurrence and oxidation states
 
 ## 2.1 Why Groups 1 and 2 form the s-block
@@ -88,9 +81,9 @@ Alkali metals are silvery, very soft, low-melting metals. Group 2 metals are har
 
 Simple $\mathrm{M^+}$ and $\mathrm{M^{2+}}$ ions have noble-gas configurations, so their salts are normally colourless or white unless the **anion** is coloured.
 
-# 3. Alkali metals: NCERT data table and trend audit
+# 3. Alkali metals: quantitative data and trend analysis
 
-The following values are the high-yield NCERT data set. Small variation between reference tables is usually due to radius convention or temperature; use the values supplied in the question when calculation is required.
+The following values form the core quantitative data set. Small variation between tables may arise from radius convention or temperature; use the values supplied in a numerical problem when calculation is required.
 
 | Property | Li | Na | K | Rb | Cs | Fr |
 |---|---:|---:|---:|---:|---:|---:|
@@ -133,7 +126,7 @@ Bare-ion size and hydrated-ion size run in opposite directions. $\mathrm{Li^+}$ 
 
 > **JEE trap:** “Smallest bare ion moves fastest through water” is unreliable because the hydration shell travels with the ion.
 
-# 4. Alkaline-earth metals: NCERT data table and trend audit
+# 4. Alkaline-earth metals: quantitative data and trend analysis
 
 | Property | Be | Mg | Ca | Sr | Ba | Ra |
 |---|---:|---:|---:|---:|---:|---:|
@@ -336,7 +329,7 @@ The intense sodium yellow line can mask potassium. Cobalt-blue glass absorbs muc
 
 ## 8.4 Photoelectric effect
 
-Low ionisation enthalpy makes K, Rb and Cs useful photoemissive materials. NCERT particularly highlights K and Cs in photoelectric cells. Light energy can eject the weakly held valence electron from a suitable surface.
+Low ionisation enthalpy makes K, Rb and Cs useful photoemissive materials. Potassium and caesium are especially important in photoelectric cells. Light energy can eject the weakly held valence electron from a suitable surface.
 
 > **JEE trap:** Flame emission is electron excitation followed by emission; photoelectric action is complete electron ejection. They are not the same process.
 

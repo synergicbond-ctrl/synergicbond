@@ -464,7 +464,7 @@ Cement is produced from limestone and clay/shale. A representative oxide composi
 | $\mathrm{Fe_2O_3}$ | 1–2 |
 | $\mathrm{SO_3}$ | 1–2 |
 
-Values vary by grade and standard. In the NCERT quality criteria, the mass ratio $\mathrm{SiO_2/Al_2O_3}$ should lie approximately between 2.5 and 4, while $\mathrm{CaO/(SiO_2+Al_2O_3+Fe_2O_3)}$ should be as close as possible to 2.
+Values vary by cement grade and manufacturing standard. For ordinary Portland cement, the mass ratio $\mathrm{SiO_2/Al_2O_3}$ is commonly maintained between about 2.5 and 4, while $\mathrm{CaO/(SiO_2+Al_2O_3+Fe_2O_3)}$ is kept close to 2.
 
 Major clinker phases are commonly represented as:
 

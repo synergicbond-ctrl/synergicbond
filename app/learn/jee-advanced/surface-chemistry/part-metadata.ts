@@ -13,5 +13,5 @@ export const SURFACE_CHEMISTRY_PARTS: SurfaceChemistryPart[] = [
   { part: 5, slug: "part05", title: "Preparation and Purification of Colloids", description: "Dispersion and condensation methods, peptisation, Bredig arc, dialysis, electrodialysis and ultrafiltration." },
   { part: 6, slug: "part06", title: "Properties, Charge and Stability of Colloids", description: "Optical, kinetic and electrical properties, double layer, zeta potential, electrophoresis and electro-osmosis." },
   { part: 7, slug: "part07", title: "Coagulation, Protection, Gels, Emulsions and Micelles", description: "Hardy–Schulze rule, flocculation, gold number, gels, emulsions, surfactants, CMC, Krafft temperature and cleansing." },
-  { part: 8, slug: "part08", title: "JEE Advanced Mastery and Source Audit", description: "Formula atlas, graph atlas, traps, solved problem archetypes, diagnostic questions and four-PDF coverage ledger." },
+  { part: 8, slug: "part08", title: "JEE Advanced Mastery and Problem Solving", description: "Formula atlas, graph atlas, traps, solved problem archetypes, diagnostic questions and advanced revision." },
 ];

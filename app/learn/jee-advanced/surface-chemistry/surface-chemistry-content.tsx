@@ -35,7 +35,7 @@ export function Part01Content() {
     <Card title="Approach to equilibrium" tone="emerald"><p>Initially many vacant sites exist, so adsorption is fast. As coverage rises, the rate falls. Desorption grows with coverage. Equality of the two rates gives dynamic equilibrium.</p><p>At equilibrium the decrease in enthalpy is exactly balanced by the entropy term, so <K>{String.raw`\Delta G=0`}</K>.</p></Card>
    </div>
    <Card title="Fate of an adsorbed particle" tone="slate"><p>After attachment, an adsorbate may diffuse into the bulk (absorption), migrate along the surface, react at the surface, or escape by desorption. Desorption commonly follows first-order kinetics.</p><KB>{String.raw`k_{\mathrm{des}}=A e^{-E_{\mathrm{des}}/RT},\qquad \tau=\frac{1}{k_{\mathrm{des}}}`}</KB><p><K>{String.raw`\tau`}</K> is the mean residence time on the surface.</p></Card>
-   <Trap>“Adsorption is always exothermic” is the standard ideal statement because surface energy falls. Some source material notes exceptional activated systems with an apparent positive heat; treat those as special cases, not the general rule.</Trap>
+   <Trap>“Adsorption is always exothermic” is the standard ideal statement because surface energy falls. Rare activated systems may show an apparent positive heat; treat these as special cases, not the general rule.</Trap>
   </Section>
   <Section index="04" eyebrow="Quantitative foundations" title="Pressure-drop and surface-area calculations" intro={<>Gas adsorption lowers the gas pressure in a rigid vessel. Monolayer adsorption can also be used to estimate surface area.</>}>
    <Example number={1} title="Mass of gas adsorbed from pressure decrease" question={<>A 12.0 L vessel contains NH₃ at 6.0 atm and 300 K. After adding 8.0 g charcoal, pressure becomes 2.5 atm. Find NH₃ adsorbed per gram charcoal.</>} solution={<><p>At constant <K>{String.raw`V,T`}</K>, the decrease in moles is</p><KB>{String.raw`\Delta n=\frac{(P_i-P_f)V}{RT}=\frac{(3.5)(12.0)}{(0.082057)(300)}=1.706\ \mathrm{mol}`}</KB><p>Mass adsorbed <K>{String.raw`=1.706\times17=29.0\ \mathrm{g}`}</K>.</p><p>Per gram charcoal <K>{String.raw`=29.0/8.0`}</K>.</p></>} answer={<>3.63 g NH₃ per g charcoal.</>}/>
@@ -373,7 +373,7 @@ export function Part07Content() {
   <Section index="04" eyebrow="Liquid–liquid colloids" title="Emulsions, emulsifiers and identification tests" intro={<>An emulsion contains droplets of one liquid dispersed in another immiscible liquid. It requires an interfacial stabiliser.</>}>
    <DataTable headers={["Type","Dispersed phase / medium","Examples","Common emulsifiers"]} rows={[
     ["Oil in water (O/W)","Oil droplets in water","Milk, vanishing cream","Proteins, gums, soaps, many detergents"],
-    ["Water in oil (W/O)","Water droplets in oil","Butter, cold cream, cod-liver-oil preparations","Heavy-metal soaps, long-chain alcohols, lamp black in source examples"],
+    ["Water in oil (W/O)","Water droplets in oil","Butter, cold cream, cod-liver-oil preparations","Heavy-metal soaps, long-chain alcohols, lamp black"],
    ]}/>
    <DataTable headers={["Test","O/W response","W/O response"]} rows={[
     ["Dilution test","Dilutes with water","Dilutes with oil"],
@@ -386,7 +386,7 @@ export function Part07Content() {
   <Section index="05" eyebrow="Associated colloids" title="Surfactants, micelles, CMC and Krafft temperature" intro={<>A surfactant contains a hydrophobic hydrocarbon group and a hydrophilic ionic or polar group. Above characteristic concentration and temperature, molecules aggregate into micelles.</>}>
    <div className="overflow-x-auto"><ParticleFigure mode="micelle"/></div>
    <div className="grid gap-5 xl:grid-cols-2">
-    <Card title="Micelle conditions" tone="violet"><p>Concentration must exceed the critical micelle concentration (CMC), and ionic surfactants must generally be above the Krafft temperature, where solubility becomes sufficient for micellisation.</p><p>Typical soap CMC values in the sources are about <K>{String.raw`10^{-4}`}</K> to <K>{String.raw`10^{-3}\ \mathrm{mol\,L^{-1}}`}</K>, though actual values depend on chain length, counter-ion, salt and temperature.</p></Card>
+    <Card title="Micelle conditions" tone="violet"><p>Concentration must exceed the critical micelle concentration (CMC), and ionic surfactants must generally be above the Krafft temperature, where solubility becomes sufficient for micellisation.</p><p>Typical soap CMC values are about <K>{String.raw`10^{-4}`}</K> to <K>{String.raw`10^{-3}\ \mathrm{mol\,L^{-1}}`}</K>, though actual values depend on chain length, counter-ion, salt and temperature.</p></Card>
     <Card title="Ionic and nonionic surfactants" tone="amber"><p>Anionic: soaps, alkyl sulphates and sulphonates. Cationic: quaternary ammonium salts. Nonionic: polyoxyethylene-type surfactants. Amphoteric: species with both acidic and basic groups.</p></Card>
    </div>
    <Card title="Cleansing action" tone="emerald"><p>Hydrophobic tails embed in grease while hydrophilic heads remain in water. Agitation breaks grease into droplets surrounded by surfactant. Like-charged or strongly hydrated outer surfaces prevent coalescence, so dirt is emulsified and washed away.</p><p>Below CMC, surfactant first adsorbs at interfaces; above CMC, many bulk properties change slope rather than discontinuously jumping.</p></Card>
@@ -395,14 +395,8 @@ export function Part07Content() {
 }
 
 export function Part08Content() {
- const coverage=[
-  ["21. Surface Chemistry.pdf (64 pp handwritten)","Detailed adsorption thermodynamics, residence time, Freundlich/Langmuir derivations, isobars/isosteres, catalysis and Michaelis–Menten, complete colloid/micelle/electrokinetic/coagulation sequence."],
-  ["surface chemistry.pdf (31 pp scan)","Definitions, data tables, preparation reactions, applications, industrial catalysts, enzyme table, 72 conceptual questions, PYQ and analytical exercise patterns."],
-  ["Surface Chem.pdf (32 pp)","IIT-JEE theory, positive/negative adsorption, full classifications, purification, gels/emulsions, extensive solved surface-area and monolayer problem types."],
-  ["Surface.pdf (34 pp JEE Main+Advanced)","Interface treatment, advanced adsorption and catalysis applications, activity/selectivity, zeolites, enzymes, colloids and examination exercises."],
- ];
  return <>
-  <Section index="01" eyebrow="Formula atlas" title="Equations that must be immediately available" intro={<>The chapter is short in the syllabus but graph-heavy and exception-rich. These equations cover the quantitative core found across the four sources.</>}>
+  <Section index="01" eyebrow="Formula atlas" title="Equations that must be immediately available" intro={<>The chapter is short in the syllabus but graph-heavy and exception-rich. These equations cover the quantitative core of the chapter.</>}>
    <div className="grid gap-5 xl:grid-cols-2">
     <FormulaCard title="Adsorption and surfaces">
      <KB>{String.raw`\Delta n=\frac{\Delta P\,V}{RT}`}</KB>
@@ -438,33 +432,20 @@ export function Part08Content() {
     ["Electrophoretic mobility vs pH","Crosses zero at isoelectric pH."],
    ]}/>
   </Section>
-  <Section index="03" eyebrow="Integrated examples" title="Representative JEE Advanced problem archetypes" intro={<>Numerical values are original; the tested concepts reproduce the distinct problem forms found in the supplied PDFs.</>}>
+  <Section index="03" eyebrow="Integrated examples" title="Representative JEE Advanced problem archetypes" intro={<>These examples represent important JEE Advanced problem forms.</>}>
    <Example number={1} title="Freundlich line" question={<>A plot of <K>{String.raw`\log(x/m)`}</K> against <K>{String.raw`\log P`}</K> has slope 0.40 and intercept −0.20. Find <K>{String.raw`n`}</K>, <K>{String.raw`k`}</K> and <K>{String.raw`x/m`}</K> at P = 25.</>} solution={<><p><K>{String.raw`1/n=0.40`}</K>, so <K>{String.raw`n=2.5`}</K>. Also <K>{String.raw`\log k=-0.20`}</K>, so <K>{String.raw`k=10^{-0.20}=0.631`}</K>.</p><KB>{String.raw`x/m=0.631(25)^{0.40}=2.29`}</KB></>} answer={<>n = 2.5, k = 0.631 and x/m ≈ 2.29.</>}/>
    <Example number={2} title="Langmuir half coverage" question={<>For an adsorbate, K = 0.50 bar⁻¹. At what pressure are 20%, 50% and 80% of sites occupied?</>} solution={<><p>From <K>{String.raw`\theta=KP/(1+KP)`}</K>,</p><KB>{String.raw`P=\frac{\theta}{K(1-\theta)}`}</KB><p>Substitute each coverage.</p></>} answer={<>0.50 bar, 2.0 bar and 8.0 bar, respectively.</>}/>
    <Example number={3} title="Hardy–Schulze selection" question={<>A negative As₂S₃ sol is treated separately with equal-molar NaCl, BaCl₂ and AlCl₃. Give coagulating-power order and flocculation-value order.</>} solution={<><p>The effective ions are the cations. Higher cation valency gives greater coagulating power.</p></>} answer={<>Power: AlCl₃ &gt; BaCl₂ &gt; NaCl; flocculation value: NaCl &gt; BaCl₂ &gt; AlCl₃.</>}/>
    <Example number={4} title="Gold number" question={<>0.018 g of a protective colloid is diluted to 60 mL. What volume is required to protect 10 mL gold sol if its gold number is 0.15?</>} solution={<><p>Concentration = 18 mg/60 mL = 0.30 mg mL⁻¹. Required mass = 0.15 mg.</p></>} answer={<>0.50 mL.</>}/>
    <Example number={5} title="Michaelis–Menten comparison" question={<>An enzyme has KM = 2.0 mM. Find v/Vmax at substrate concentrations 0.20, 2.0 and 20 mM.</>} solution={<><KB>{String.raw`\frac{v}{V_{\max}}=\frac{[S]}{K_M+[S]}`}</KB></>} answer={<>0.0909, 0.500 and 0.909.</>}/>
   </Section>
-  <Section index="04" eyebrow="Rapid diagnosis" title="High-yield statements and traps" intro={<>Use these statements to audit conceptual accuracy before attempting mixed questions.</>}>
+  <Section index="04" eyebrow="Rapid diagnosis" title="High-yield statements and traps" intro={<>Use these statements to check conceptual accuracy before attempting mixed questions.</>}>
    <div className="grid gap-5 xl:grid-cols-2">
     <Card title="Adsorption traps" tone="rose"><p>Adsorption is surface, not bulk. Lower temperature favours physisorption but chemisorption may need activation. Freundlich is empirical and fails at high pressure. Langmuir assumes identical independent sites. A catalyst does not shift equilibrium.</p></Card>
     <Card title="Colloid traps" tone="amber"><p>Colloids are heterogeneous despite uniform appearance. Gas in gas is not colloidal. Brownian motion is kinetic; Tyndall effect is optical. Counter-ion, not co-ion, coagulates. Smaller gold number means stronger protection.</p></Card>
     <Card title="Micelle traps" tone="violet"><p>CMC is concentration-dependent aggregation threshold; Krafft temperature is a temperature/solubility threshold. Micelles form only above both relevant limits for ionic surfactants. In water, hydrocarbon tails point inward.</p></Card>
     <Card title="Enzyme traps" tone="cyan"><p>Enzymes are highly specific but not universally limited to exactly one chemical transformation. Optimum pH and temperature are enzyme-dependent. At high substrate concentration, reaction is zero order in substrate.</p></Card>
    </div>
-  </Section>
-  <Section index="05" eyebrow="Coverage audit" title="Four-source consolidation ledger" intro={<>All 161 uploaded pages were reviewed. Repeated explanations were merged; every distinct definition, formula, graph, table category, reaction, application and problem archetype was assigned to one of the eight parts. Source branding and watermarks were not reproduced.</>}>
-   <DataTable headers={["Source","Distinct contribution included"]} rows={coverage}/>
-   <DataTable headers={["Part","Coverage"]} rows={[
-    ["1","Interfaces; surface energy; adsorption/absorption/sorption/desorption; positive/negative adsorption; thermodynamics; residence time; pressure and surface-area calculations."],
-    ["2","Physisorption/chemisorption; complete factor set; critical-temperature trend; Freundlich and Langmuir; limiting laws; adsorption from solution; isobars/isosteres; applications and occlusion context."],
-    ["3","All catalyst classes and terms; homogeneous/heterogeneous examples; mechanisms; activity/selectivity; industrial catalysts; zeolites; enzymes and Michaelis–Menten limits."],
-    ["4","True solution/colloid/suspension; all eight physical-state combinations; lyophilic/lyophobic; multimolecular/macromolecular/associated colloids."],
-    ["5","All preparation routes and representative reactions; peptisation charge cases; dialysis, electrodialysis, ultrafiltration and ultracentrifugation."],
-    ["6","Heterogeneity, filtration, colligative, colour, Tyndall, Brownian, charge lists, double layer, zeta, electrophoresis, electro-osmosis and isoelectric point."],
-    ["7","All coagulation routes; Hardy–Schulze and flocculation value; protection and gold number; gels; emulsion classes/tests; surfactants, CMC, Krafft and cleansing."],
-    ["8","Formula/graph atlas, JEE traps, rewritten solved archetypes and explicit source coverage."],
-   ]}/>
   </Section>
  </>;
 }

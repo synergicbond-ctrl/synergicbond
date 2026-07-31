@@ -11,81 +11,95 @@ export type SBlockPartDef = {
   focus: string;
 };
 
-const PART_TITLES = [
-  "NCERT coverage map and how to use this course",
-  "Position, electronic configuration, occurrence and oxidation states",
-  "Alkali metals: NCERT data table and trend audit",
-  "Alkaline-earth metals: NCERT data table and trend audit",
-  "Periodic orders: size, ionisation, basicity and reactivity",
-  "Hydration enthalpy, lattice enthalpy and solubility",
-  "Standard electrode potentials and reducing character",
-  "Flame colours, emission wavelengths and photoelectric behaviour",
-  "Anomalous behaviour of lithium",
-  "Anomalous behaviour of beryllium",
-  "Diagonal relationship: lithium and magnesium",
-  "Diagonal relationship: beryllium and aluminium",
-  "Oxygen chemistry: oxides, peroxides, superoxides and ozonides",
-  "Reaction atlas of the metals",
-  "Nitrides, carbides, sulphides and polysulphides",
-  "Hydrides: saline, covalent and complex",
-  "Liquid ammonia, solvated electrons, crown ethers and cryptands",
-  "Halides: bonding, structures, hydrolysis and preparation",
-  "Hydroxides: preparation, basicity, solubility and reactions",
-  "Carbonates and hydrogencarbonates",
-  "Nitrates, sulphates and hydrated salts",
-  "Sodium chloride and sodium hydroxide",
-  "Sodium carbonate, sodium hydrogencarbonate and the Solvay process",
-  "Potassium carbonate, Leblanc chemistry and sodium-process extensions",
-  "Magnesium and calcium compounds: reaction network",
-  "Gypsum, plaster of Paris and Portland cement",
-  "Hardness of water and s-block ion removal",
-  "Biological importance, practical uses and data facts",
-  "Master order bank, exception bank and JEE traps",
-  "Worked examples and JEE Advanced challenge laboratory",
+const PARTS = [
+  {
+    title: "NCERT scope, electronic architecture and occurrence",
+    focus:
+      "Complete NCERT map, position in the periodic table, electronic configurations, oxidation states, occurrence and general physical character.",
+  },
+  {
+    title: "Group 1 and Group 2 data tables",
+    focus:
+      "Exact alkali-metal and alkaline-earth-metal data, density and melting-point anomalies, metallic bonding and hydrate formation.",
+  },
+  {
+    title: "Periodic trends, hydration and solubility",
+    focus:
+      "Atomic and ionic size, ionisation enthalpy, basicity, reactivity, lattice enthalpy, hydration enthalpy and solubility logic.",
+  },
+  {
+    title: "Electrode potentials, reducing power and flame chemistry",
+    focus:
+      "Thermochemical interpretation of reducing strength, the lithium paradox, emission wavelengths, flame tests and photoelectric behaviour.",
+  },
+  {
+    title: "Anomalous behaviour of lithium and beryllium",
+    focus:
+      "All first-member exceptions derived from small size, high charge density, polarising power, covalency, amphoterism and complex formation.",
+  },
+  {
+    title: "Diagonal relationships: Li–Mg and Be–Al",
+    focus:
+      "Similarities, balanced equations, structural parallels, amphoterism, complexes and the limits of each diagonal analogy.",
+  },
+  {
+    title: "Oxygen compounds and reaction atlas",
+    focus:
+      "Oxides, peroxides, superoxides, ozonides, magnetism, product selection and reactions of s-block metals with common reagents.",
+  },
+  {
+    title: "Nitrides, carbides, sulphides and hydrides",
+    focus:
+      "Gas-forming hydrolysis, polysulphide chemistry, saline and covalent hydrides, stability, preparation and complex hydrides.",
+  },
+  {
+    title: "Liquid ammonia, ion hosts and halides",
+    focus:
+      "Solvated electrons, blue and bronze solutions, crown ethers, cryptands, electrides, halide bonding, structures, hydrolysis and preparation.",
+  },
+  {
+    title: "Hydroxides, carbonates and hydrogencarbonates",
+    focus:
+      "Preparation, basicity, solubility, thermal behaviour, carbon dioxide stoichiometry, decomposition and bicarbonate equilibria.",
+  },
+  {
+    title: "Nitrates, sulphates, sodium chloride and sodium hydroxide",
+    focus:
+      "Thermal products, sulphate-solubility trends, hydrated salts, analytical facts, NaCl purification and industrial NaOH manufacture.",
+  },
+  {
+    title: "Sodium and potassium carbonates: Solvay and Leblanc",
+    focus:
+      "Washing soda, baking soda, potash, the complete Solvay cycle, historical Leblanc chemistry, properties, reactions and uses.",
+  },
+  {
+    title: "Magnesium and calcium compounds, gypsum and cement",
+    focus:
+      "MgO, milk of magnesia, quicklime, lime water, calcium carbide, gypsum, plaster of Paris, clinker phases and Portland cement.",
+  },
+  {
+    title: "Hardness of water, biology, uses and safety",
+    focus:
+      "Temporary and permanent hardness, treatment methods, ion exchange, biological roles of Na, K, Mg and Ca, practical uses and safety facts.",
+  },
+  {
+    title: "Master order bank, JEE traps and worked examples",
+    focus:
+      "High-frequency orders, first-member exceptions, corrected statement traps and twenty integrated JEE Advanced worked examples.",
+  },
 ] as const;
 
-const PART_FOCUS = [
-  "Complete NCERT scope, lesson map and the six controlling ideas.",
-  "Block position, configurations, oxidation states, occurrence and general character.",
-  "Exact Group 1 data, density anomaly, metallic bonding and hydrated mobility.",
-  "Exact Group 2 data, cross-group comparisons and hydrate formation.",
-  "Core orders, process-dependent reactivity and water-reaction conditions.",
-  "Energetic competition governing hydration, lattice strength and solubility.",
-  "Thermochemical cycle, lithium paradox and gas-versus-aqueous comparisons.",
-  "Flame wavelengths, cobalt glass, identification limits and photoemission.",
-  "Every lithium exception derived from small size and polarising power.",
-  "Covalent, amphoteric, hydrolytic and complex-forming beryllium chemistry.",
-  "Li–Mg similarities, equations and limits of the diagonal analogy.",
-  "Be–Al amphoterism, bridged chlorides, complexes and carbide hydrolysis.",
-  "Oxygen-ion magnetism, product selection, preparations and life support.",
-  "Reactions with water, hydrogen, nitrogen, halogens, sulphur, acids and bases.",
-  "Gas-forming hydrolysis patterns and advanced polysulphide chemistry.",
-  "Saline and covalent hydrides, stability, hydrolysis and complex hydrides.",
-  "Solvated electrons, blue/bronze solutions, ion recognition and electrides.",
-  "Fajans orders, BeCl₂ structures, fluoride lattices and MgCl₂ hydrolysis.",
-  "Basicity and solubility orders, thermal behaviour and CO₂ stoichiometry.",
-  "Solubility, decomposition, polarisation and bicarbonate equilibria.",
-  "Nitrate products, sulphate solubility, hydrate facts and analytical tests.",
-  "NaCl purification, membrane electrolysis, mercury-cell history and NaOH.",
-  "Washing soda, baking soda, complete Solvay cycle, properties and uses.",
-  "Potash, historical Leblanc route, fusion mixture and process comparison.",
-  "MgO, milk of magnesia, quicklime, lime water, carbonate and carbide.",
-  "Controlled dehydration, plaster setting, clinker phases and gypsum control.",
-  "Temporary/permanent hardness, precipitation, complexing and ion exchange.",
-  "NCERT biological data, ion gradients, uses and essential safety distinctions.",
-  "All high-frequency orders, first-member exceptions and corrected traps.",
-  "Twenty worked examples spanning theory, reactions, data and calculations.",
-] as const;
-
-export const S_BLOCK_PARTS: SBlockPartDef[] = PART_TITLES.map((title, index) => {
+export const S_BLOCK_PARTS: SBlockPartDef[] = PARTS.map((part, index) => {
   const number = index + 1;
+  const fromSection = index * 2 + 1;
+
   return {
     number,
     slug: `part${number}`,
-    title,
-    fromSection: number,
-    toSection: number,
-    focus: PART_FOCUS[index] ?? title,
+    title: part.title,
+    fromSection,
+    toSection: fromSection + 1,
+    focus: part.focus,
   };
 });
 
@@ -113,8 +127,13 @@ export function sBlockPartBySlug(slug: string) {
 }
 
 export function sBlockPartMarkdown(part: SBlockPartDef) {
-  const first = MASTER_SECTIONS.find((section) => section.number === part.fromSection);
-  const last = MASTER_SECTIONS.find((section) => section.number === part.toSection);
+  const first = MASTER_SECTIONS.find(
+    (section) => section.number === part.fromSection,
+  );
+  const last = MASTER_SECTIONS.find(
+    (section) => section.number === part.toSection,
+  );
+
   if (!first || !last) return "";
   return S_BLOCK_MASTER_MARKDOWN.slice(first.start, last.end).trim();
 }

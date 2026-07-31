@@ -20,6 +20,15 @@ export function sBlockLessonRef(number: number): LessonRef | undefined {
     : undefined;
 }
 
+const S_BLOCK_NAV_GROUPS = [
+  { label: "Foundations and periodic trends", first: 1, last: 8 },
+  { label: "Lithium and beryllium anomalies", first: 9, last: 12 },
+  { label: "Reactions and compounds", first: 13, last: 21 },
+  { label: "Industrial salts and processes", first: 22, last: 27 },
+  { label: "Biology, uses and safety", first: 28, last: 28 },
+  { label: "JEE traps and worked problems", first: 29, last: 30 },
+] as const;
+
 export function sBlockTabs(currentPart?: number): ChapterTab[] {
   return [
     {
@@ -27,10 +36,13 @@ export function sBlockTabs(currentPart?: number): ChapterTab[] {
       href: "/notes/s-block",
       active: currentPart === undefined,
     },
-    ...S_BLOCK_PARTS.map((part) => ({
-      label: `${part.number}. ${part.title}`,
-      href: sBlockHref(part.number),
-      active: currentPart === part.number,
+    ...S_BLOCK_NAV_GROUPS.map((group) => ({
+      label: group.label,
+      href: sBlockHref(group.first),
+      active:
+        currentPart !== undefined &&
+        currentPart >= group.first &&
+        currentPart <= group.last,
     })),
   ];
 }

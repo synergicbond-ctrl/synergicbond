@@ -44,6 +44,28 @@ export default function SurfaceChemistryIndexPage() {
         </header>
 
         <section className="mx-auto max-w-[1320px] px-4 py-12 sm:px-7 lg:px-10">
+          <a
+            href="/learn/jee-advanced/surface-chemistry/adsorption"
+            className="group mb-10 block overflow-hidden rounded-3xl border border-cyan-300/25 bg-gradient-to-r from-cyan-400/[.10] via-slate-950/85 to-violet-400/[.10] p-6 transition hover:-translate-y-0.5 hover:border-cyan-200/45 sm:p-8"
+          >
+            <div className="flex flex-col gap-5 lg:flex-row lg:items-center lg:justify-between">
+              <div>
+                <div className="text-xs font-black uppercase tracking-[.20em] text-cyan-300">
+                  Exact uploaded edition · 28 pages · every embedded visual
+                </div>
+                <h2 className="mt-3 text-3xl font-black tracking-[-.035em] text-white sm:text-4xl">
+                  Adsorption — Complete JEE Advanced Notes
+                </h2>
+                <p className="mt-3 max-w-4xl text-sm leading-7 text-slate-300 sm:text-base">
+                  Page-for-page presentation of the uploaded master notes without rewriting, reordering, cropping or omitting content.
+                </p>
+              </div>
+              <span className="shrink-0 rounded-2xl border border-cyan-300/25 bg-cyan-300/[.08] px-5 py-3 text-sm font-black text-cyan-100 transition group-hover:bg-cyan-300/[.14]">
+                Open exact notes →
+              </span>
+            </div>
+          </a>
+
           <div className="overflow-x-auto rounded-3xl border border-white/10 bg-slate-950/60 p-3 sm:p-5">
             <SurfaceVisual mode="interface" />
           </div>

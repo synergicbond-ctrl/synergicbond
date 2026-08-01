@@ -1,15 +1,15 @@
 import type { Metadata } from "next";
-import AdsorptionDocumentViewer from "./AdsorptionDocumentViewer";
+import AdsorptionNativeNotes from "./AdsorptionNativeNotes";
 
 export const metadata: Metadata = {
-  title: "Adsorption — Complete JEE Advanced Notes",
+  title: "Adsorption — Verified JEE Advanced Notes",
   description:
-    "Exact page-by-page web edition of the complete JEE Advanced Adsorption notes, including every derivation, worked example, graph, table, JEE trap and embedded visual.",
+    "Native textbook-style JEE Advanced Adsorption notes with verified calculations, KaTeX equations, SF Pro typography, responsive tables and original dark visuals.",
   alternates: {
     canonical: "/learn/jee-advanced/surface-chemistry/adsorption",
   },
 };
 
-export default function AdsorptionCompletePage() {
-  return <AdsorptionDocumentViewer />;
+export default function AdsorptionPage() {
+  return <AdsorptionNativeNotes />;
 }

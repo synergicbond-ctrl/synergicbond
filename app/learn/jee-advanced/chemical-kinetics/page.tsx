@@ -1,4 +1,11 @@
+import type { Metadata } from "next";
 import { CHEMICAL_KINETICS_PARTS } from "./part-metadata";
+
+export const metadata: Metadata = {
+  title: "Chemical Kinetics — Complete JEE Advanced Notes | Synergic Bond",
+  description:
+    "Complete JEE Advanced Chemical Kinetics course: rate laws, order and molecularity, integrated rate equations, half-life, Arrhenius theory, collision and transition-state theory, and complex reactions, in 20 sequential parts.",
+};
 
 export default function ChemicalKineticsIndexPage() {
   return (
@@ -35,7 +42,7 @@ export default function ChemicalKineticsIndexPage() {
                   <span className="text-sm text-slate-600 transition group-hover:text-cyan-300">Open →</span>
                 </div>
                 <h2 className="mt-5 text-xl font-semibold tracking-tight text-white">{item.title}</h2>
-                <p className="mt-3 text-sm leading-7 text-slate-400">{item.description}</p><p className="mt-3 text-xs font-semibold text-emerald-300">Source pages {item.sourceStart}–{item.sourceEnd}</p>
+                <p className="mt-3 text-sm leading-7 text-slate-400">{item.description}</p>
               </a>
             ))}
           </div>

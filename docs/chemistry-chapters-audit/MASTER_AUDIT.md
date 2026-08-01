@@ -24,7 +24,7 @@ means exactly that — no claim of correctness is made either way.
 | 11 | Gaseous State | **Partial fix (this branch)** | Source-note leak + a severe branding leak fixed (see below); full audit not done. |
 | 12 | Solid State | **Partial fix (this branch)** | Severe branding leak fixed across 25 files (see below). The `master/` vs `parts/` situation was investigated and turned out NOT to be a duplicate needing reconciliation — see ROUTE_AUDIT.md (includes a logged self-correction of an incorrect route change that was caught and reverted before being committed). |
 | 13 | F-Block Elements | **Audited, clean** | 4 parts (report of actual count, as the doc requested). See below. |
-| 14 | Cross-chapter navigation | Partially touched | Only the one `UniversalChapterNavigator.tsx` entry for S-Block was updated as a side effect of the S-Block fix. No broader nav audit done. |
+| 14 | Cross-chapter navigation (final audit) | **Done, real gaps found and fixed** | See below. |
 
 ## What "done" means for the two completed items
 
@@ -266,6 +266,45 @@ audited chapters from that sweep.
 - Visuals: original inline SVG components (`visuals.tsx`, 177 lines, e.g. a periodic-position
   diagram showing the detached lanthanoid/actinoid rows) — no external image files, so no
   branding-in-raster-image risk like Adsorption/Environmental Chemistry had.
+
+### Final cross-chapter audit (item 12/14): real navigation gaps found and fixed
+- **`AUTHORED_NOTES` map in `lib/engine/programSpec.ts` was missing 3 chapters** with real,
+  substantial content: `surface-chemistry`, `chemical-kinetics`, and `states-of-matter` (the
+  actual chapter id for Gaseous State, confirmed against `lib/masterSyllabus/physical.ts` — the
+  data source that actually drives the `/programs/[slug]/chapter/[id]` route, not the separate
+  and apparently-unused `lib/programSyllabus/jeeAdvanced.ts`). Consequence, confirmed by reading
+  `app/programs/[slug]/chapter/[id]/page.tsx`: when a chapter id isn't in this map, its
+  "Visual summary page →" and "Open premium visual notes →" links **simply don't render** — so
+  anyone browsing these 3 chapters inside the JEE Advanced program dashboard saw no path at all
+  to the notes content, even though it's fully built (and, in Surface Chemistry's case, is the
+  chapter I'd already fixed the Adsorption branding in). Added all 3. (Formal Charges doesn't
+  need its own entry — it's a subtopic of `chemical-bonding`, which is already mapped.)
+- **Same 3 chapters were also missing from `lib/notes/chapterCatalog.ts`**, the second
+  discoverability path (the /notes explorer grid). Added matching card entries, following the
+  existing file's exact format and the `premium: true` pattern used by peer JEE-Advanced-only
+  chapters (Salt Analysis, Environmental Chemistry, Polymers).
+- **Chemical Kinetics' hub page (`page.tsx`) had zero metadata export** — no `<title>` or
+  description at all, the same class of gap fixed for S-Block earlier. Added one.
+- **Found one more instance of the source-note-leak bug** while looking at that same file: the
+  hub's part-card grid rendered "Source pages {start}–{end}" publicly for every one of the 20
+  cards — missed earlier because I'd only checked `chemical-kinetics-shared.tsx`, not
+  `page.tsx` itself. Removed the render; the `sourceStart`/`sourceEnd` data in
+  `part-metadata.ts` stays.
+- Did a repo-wide grep for the same field names (`sourceStart`, `sourceEnd`, `sourcePages`,
+  `sourceNote`) across all 13 chapters to check for other missed render sites — everything else
+  that matched is inert data (type definitions, unrendered fields), not a live leak.
+- Verified: `/programs/jee-advanced/chapter/*` alias routes (5 exist: chemical-equilibrium,
+  chemical-kinetics, gaseous-state, general-inorganic-chemistry, surface-chemistry) all
+  correctly re-export or redirect to their canonical `/learn/...` route — no duplicated content.
+- Checked `app/sitemap.ts`: intentionally lists only public marketing pages, correctly excludes
+  all gated chapter content (consistent with how every other authored chapter is already
+  treated) — not a gap.
+- Verified metadata exports exist on all 13 chapters' hub pages except the one Chemical
+  Kinetics gap above, now fixed.
+- **Not done**: full desktop/tablet/mobile browser QA on the live, signed-in site (same
+  limitation noted throughout — no credentials used to sign in) and a systematic prev/next-link
+  click-through of every one of the ~180 individual part pages across all 13 chapters (spot
+  checks only).
 
 ## Scope note on "scientific verification"
 

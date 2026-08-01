@@ -16,6 +16,7 @@ type BlockKind =
   | "numbered"
   | "table"
   | "formula"
+  | "structure"
   | "paragraph";
 
 type NoteBlock = {
@@ -99,10 +100,13 @@ function isAlignedTableRow(rawLine: string) {
   return text.length > 0 && /\S\s{3,}\S/.test(text);
 }
 
+const structurePattern = /^\[STRUCTURE:([a-z0-9-]+)\]$/;
+
 function lineKind(rawLine: string): BlockKind | "bullet-item" | "number-item" | null {
   const text = rawLine.trim();
   if (!text || text === "Formal Charge") return null;
 
+  if (structurePattern.test(text)) return "structure";
   if (majorHeadingPattern.test(text)) return "major";
   if (sectionHeadingPattern.test(text) && text.length < 130) return "section";
   if (
@@ -197,7 +201,8 @@ function parseNotes(source: string): NoteBlock[] {
         nextKind === "section" ||
         nextKind === "subheading" ||
         nextKind === "callout" ||
-        nextKind === "formula";
+        nextKind === "formula" ||
+        nextKind === "structure";
       const canContinueTable =
         activeKind === "table" &&
         Boolean(nextLine) &&
@@ -215,6 +220,13 @@ function parseNotes(source: string): NoteBlock[] {
     }
 
     const detected = lineKind(rawLine);
+
+    if (detected === "structure") {
+      flush();
+      const match = text.match(structurePattern);
+      blocks.push({ kind: "structure", text: match?.[1] ?? "" });
+      return;
+    }
 
     if (detected === "major" || detected === "section" || detected === "subheading") {
       flush();
@@ -483,6 +495,132 @@ function Callout({ text }: { text: string }) {
   );
 }
 
+function FormalChargeStructure({ id }: { id: string }) {
+  const entry = FORMAL_CHARGE_STRUCTURES[id];
+  if (!entry) return null;
+
+  return (
+    <figure className="my-9 overflow-hidden rounded-2xl border border-[#213449] bg-[#050b14] shadow-[0_18px_50px_rgba(0,0,0,0.18)]">
+      <div dangerouslySetInnerHTML={{ __html: entry.svg }} />
+      <figcaption className="border-t border-[#213449] px-5 py-4 text-sm leading-6 text-[#9db0c4] sm:px-7">
+        {entry.caption}
+      </figcaption>
+    </figure>
+  );
+}
+
+const FORMAL_CHARGE_STRUCTURES: Record<string, { svg: string; caption: string }> = {
+  "opcl3-comparison": {
+    svg: `<svg viewBox="0 0 800 320" role="img" aria-label="Two Lewis structures of OPCl3 compared by formal charge" style="width:100%;height:auto;display:block"><rect x="4" y="4" width="792" height="312" rx="20" fill="#07131f" stroke="#213449"/>
+<text x="200" y="40" text-anchor="middle" fill="#ffc56f" font-size="18" font-weight="700">Structure I &#8212; charge-separated</text>
+<text x="600" y="40" text-anchor="middle" fill="#8be2a8" font-size="18" font-weight="700">Structure II &#8212; all formal charges zero</text>
+<line x1="400" y1="55" x2="400" y2="290" stroke="#213449" stroke-dasharray="5 5"/>
+
+<!-- Structure I -->
+<text x="200" y="130" text-anchor="middle" fill="#d3dbe6" font-size="26" font-weight="700">P</text>
+<text x="222" y="112" fill="#f4c96b" font-size="15" font-weight="700">+1</text>
+<line x1="200" y1="140" x2="200" y2="85" stroke="#d3dbe6" stroke-width="2.5"/>
+<text x="200" y="72" text-anchor="middle" fill="#d3dbe6" font-size="24" font-weight="700">O</text>
+<text x="222" y="62" fill="#f4c96b" font-size="15" font-weight="700">&#8722;1</text>
+<circle cx="188" cy="50" r="1.8" fill="#76dce8"/><circle cx="188" cy="55" r="1.8" fill="#76dce8"/>
+<circle cx="212" cy="50" r="1.8" fill="#76dce8"/><circle cx="212" cy="55" r="1.8" fill="#76dce8"/>
+<circle cx="176" cy="65" r="1.8" fill="#76dce8"/><circle cx="181" cy="65" r="1.8" fill="#76dce8"/>
+<line x1="200" y1="140" x2="140" y2="180" stroke="#d3dbe6" stroke-width="2"/>
+<text x="122" y="195" text-anchor="middle" fill="#d3dbe6" font-size="20" font-weight="700">Cl</text>
+<line x1="200" y1="140" x2="260" y2="180" stroke="#d3dbe6" stroke-width="2"/>
+<text x="278" y="195" text-anchor="middle" fill="#d3dbe6" font-size="20" font-weight="700">Cl</text>
+<line x1="200" y1="140" x2="200" y2="220" stroke="#d3dbe6" stroke-width="2"/>
+<text x="200" y="245" text-anchor="middle" fill="#d3dbe6" font-size="20" font-weight="700">Cl</text>
+<text x="200" y="280" text-anchor="middle" fill="#7f91a6" font-size="13">FC(P) = 5&#8722;0&#8722;4 = +1 &#183; FC(O) = 6&#8722;6&#8722;1 = &#8722;1</text>
+
+<!-- Structure II -->
+<text x="600" y="130" text-anchor="middle" fill="#d3dbe6" font-size="26" font-weight="700">P</text>
+<line x1="600" y1="140" x2="600" y2="85" stroke="#d3dbe6" stroke-width="2.5"/>
+<line x1="608" y1="140" x2="608" y2="85" stroke="#d3dbe6" stroke-width="2.5"/>
+<text x="600" y="72" text-anchor="middle" fill="#d3dbe6" font-size="24" font-weight="700">O</text>
+<circle cx="588" cy="50" r="1.8" fill="#76dce8"/><circle cx="588" cy="55" r="1.8" fill="#76dce8"/>
+<circle cx="612" cy="50" r="1.8" fill="#76dce8"/><circle cx="612" cy="55" r="1.8" fill="#76dce8"/>
+<line x1="600" y1="140" x2="540" y2="180" stroke="#d3dbe6" stroke-width="2"/>
+<text x="522" y="195" text-anchor="middle" fill="#d3dbe6" font-size="20" font-weight="700">Cl</text>
+<line x1="600" y1="140" x2="660" y2="180" stroke="#d3dbe6" stroke-width="2"/>
+<text x="678" y="195" text-anchor="middle" fill="#d3dbe6" font-size="20" font-weight="700">Cl</text>
+<line x1="600" y1="140" x2="600" y2="220" stroke="#d3dbe6" stroke-width="2"/>
+<text x="600" y="245" text-anchor="middle" fill="#d3dbe6" font-size="20" font-weight="700">Cl</text>
+<text x="600" y="280" text-anchor="middle" fill="#7f91a6" font-size="13">FC(P) = 5&#8722;0&#8722;5 = 0 &#183; FC(O) = 6&#8722;4&#8722;2 = 0</text>
+</svg>`,
+    caption: "Comparing the charge-separated single-bond structure with the neutral double-bond structure for OPCl3 — the lower-charge-separation structure is preferred.",
+  },
+  "n2o-skeleton-comparison": {
+    svg: `<svg viewBox="0 0 800 300" role="img" aria-label="Two candidate skeletons for N2O compared by formal charge" style="width:100%;height:auto;display:block"><rect x="4" y="4" width="792" height="292" rx="20" fill="#07131f" stroke="#213449"/>
+<text x="400" y="40" text-anchor="middle" fill="#d3dbe6" font-size="19" font-weight="700">Which skeleton does N&#8322;O actually have?</text>
+
+<text x="130" y="110" text-anchor="middle" fill="#ffc56f" font-size="16" font-weight="700">Possibility I &#8212; N&#8211;O&#8211;N skeleton</text>
+<text x="90" y="165" text-anchor="middle" fill="#d3dbe6" font-size="24" font-weight="700">N</text>
+<text x="200" y="165" text-anchor="middle" fill="#d3dbe6" font-size="24" font-weight="700">O</text>
+<text x="310" y="165" text-anchor="middle" fill="#d3dbe6" font-size="24" font-weight="700">N</text>
+<line x1="105" y1="160" x2="180" y2="160" stroke="#d3dbe6" stroke-width="2.5"/>
+<line x1="105" y1="167" x2="180" y2="167" stroke="#d3dbe6" stroke-width="2.5"/>
+<line x1="220" y1="160" x2="290" y2="160" stroke="#d3dbe6" stroke-width="2.5"/>
+<line x1="220" y1="167" x2="290" y2="167" stroke="#d3dbe6" stroke-width="2.5"/>
+<text x="200" y="210" text-anchor="middle" fill="#7f91a6" font-size="13">large formal charges on both terminal N atoms</text>
+<text x="200" y="230" text-anchor="middle" fill="#ffc56f" font-size="13" font-weight="700">rejected: not the observed connectivity</text>
+
+<line x1="400" y1="70" x2="400" y2="290" stroke="#213449" stroke-dasharray="5 5"/>
+
+<text x="600" y="110" text-anchor="middle" fill="#8be2a8" font-size="16" font-weight="700">Possibility II &#8212; N&#8211;N&#8211;O skeleton</text>
+<text x="500" y="165" text-anchor="middle" fill="#d3dbe6" font-size="24" font-weight="700">N</text>
+<text x="600" y="165" text-anchor="middle" fill="#d3dbe6" font-size="24" font-weight="700">N</text>
+<text x="700" y="165" text-anchor="middle" fill="#d3dbe6" font-size="24" font-weight="700">O</text>
+<line x1="515" y1="157" x2="580" y2="157" stroke="#d3dbe6" stroke-width="2"/>
+<line x1="515" y1="163" x2="580" y2="163" stroke="#d3dbe6" stroke-width="2"/>
+<line x1="515" y1="169" x2="580" y2="169" stroke="#d3dbe6" stroke-width="2"/>
+<line x1="620" y1="163" x2="685" y2="163" stroke="#d3dbe6" stroke-width="2.5"/>
+<text x="490" y="145" fill="#f4c96b" font-size="14" font-weight="700">&#8722;</text>
+<text x="612" y="145" fill="#f4c96b" font-size="14" font-weight="700">+</text>
+<text x="712" y="150" fill="#f4c96b" font-size="14" font-weight="700">&#8722;</text>
+<text x="600" y="210" text-anchor="middle" fill="#7f91a6" font-size="13">N&#8801;N&#8314;&#8211;O&#8315; &#8212; charges of magnitude 1, terminal N</text>
+<text x="600" y="230" text-anchor="middle" fill="#8be2a8" font-size="13" font-weight="700">preferred: matches the linear, asymmetric N&#8322;O molecule</text>
+</svg>`,
+    caption: "Formal charge reasoning rejects the symmetric N-O-N skeleton for N2O in favour of the observed asymmetric N-N-O skeleton.",
+  },
+  "cyanate-fulminate-comparison": {
+    svg: `<svg viewBox="0 0 800 300" role="img" aria-label="Best Lewis structures of cyanate and fulminate compared" style="width:100%;height:auto;display:block"><rect x="4" y="4" width="792" height="292" rx="20" fill="#07131f" stroke="#213449"/>
+<text x="200" y="40" text-anchor="middle" fill="#8be2a8" font-size="18" font-weight="700">Cyanate, OCN&#8315; &#8212; skeleton O&#8211;C&#8211;N</text>
+<text x="600" y="40" text-anchor="middle" fill="#ffc56f" font-size="18" font-weight="700">Fulminate, CNO&#8315; &#8212; skeleton C&#8211;N&#8211;O</text>
+<line x1="400" y1="55" x2="400" y2="290" stroke="#213449" stroke-dasharray="5 5"/>
+
+<text x="120" y="140" text-anchor="middle" fill="#d3dbe6" font-size="24" font-weight="700">O</text>
+<text x="200" y="140" text-anchor="middle" fill="#d3dbe6" font-size="24" font-weight="700">C</text>
+<text x="280" y="140" text-anchor="middle" fill="#d3dbe6" font-size="24" font-weight="700">N</text>
+<line x1="135" y1="132" x2="180" y2="132" stroke="#d3dbe6" stroke-width="2"/>
+<line x1="135" y1="138" x2="180" y2="138" stroke="#d3dbe6" stroke-width="2"/>
+<line x1="220" y1="132" x2="265" y2="132" stroke="#d3dbe6" stroke-width="2"/>
+<line x1="220" y1="138" x2="265" y2="138" stroke="#d3dbe6" stroke-width="2"/>
+<text x="296" y="118" fill="#f4c96b" font-size="14" font-weight="700">&#8722;1</text>
+<text x="200" y="185" text-anchor="middle" fill="#7f91a6" font-size="13">O=C=N&#8315;</text>
+<text x="200" y="205" text-anchor="middle" fill="#7f91a6" font-size="13">all major contributors keep charge</text>
+<text x="200" y="222" text-anchor="middle" fill="#7f91a6" font-size="13">magnitude &#8804; 1, on the more electronegative N</text>
+
+<text x="530" y="140" text-anchor="middle" fill="#d3dbe6" font-size="24" font-weight="700">C</text>
+<text x="600" y="140" text-anchor="middle" fill="#d3dbe6" font-size="24" font-weight="700">N</text>
+<text x="680" y="140" text-anchor="middle" fill="#d3dbe6" font-size="24" font-weight="700">O</text>
+<line x1="545" y1="132" x2="580" y2="132" stroke="#d3dbe6" stroke-width="1.5"/>
+<line x1="545" y1="137" x2="580" y2="137" stroke="#d3dbe6" stroke-width="1.5"/>
+<line x1="545" y1="142" x2="580" y2="142" stroke="#d3dbe6" stroke-width="1.5"/>
+<line x1="618" y1="135" x2="662" y2="135" stroke="#d3dbe6" stroke-width="2.5"/>
+<text x="512" y="118" fill="#f4c96b" font-size="14" font-weight="700">&#8722;1</text>
+<text x="610" y="118" fill="#f4c96b" font-size="14" font-weight="700">+1</text>
+<text x="696" y="118" fill="#f4c96b" font-size="14" font-weight="700">&#8722;1</text>
+<text x="600" y="185" text-anchor="middle" fill="#7f91a6" font-size="13">&#8315;C&#8801;N&#8314;&#8211;O&#8315;</text>
+<text x="600" y="205" text-anchor="middle" fill="#7f91a6" font-size="13">cannot avoid charge on carbon, which is</text>
+<text x="600" y="222" text-anchor="middle" fill="#7f91a6" font-size="13">the least electronegative atom in the ion</text>
+
+<text x="400" y="270" text-anchor="middle" fill="#bca7f7" font-size="14" font-weight="700">Lewis/formal-charge conclusion: cyanate is more favourably stabilised</text>
+</svg>`,
+    caption: "Cyanate keeps its formal negative charge on nitrogen, the more electronegative terminal atom; fulminate cannot avoid placing charge on the less electronegative carbon.",
+  },
+};
+
 function NoteBlockView({
   block,
   index,
@@ -610,6 +748,10 @@ function NoteBlockView({
         {block.text}
       </div>
     );
+  }
+
+  if (block.kind === "structure") {
+    return <FormalChargeStructure key={`structure-${index}`} id={block.text} />;
   }
 
   return (

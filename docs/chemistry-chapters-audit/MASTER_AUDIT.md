@@ -18,7 +18,7 @@ means exactly that — no claim of correctness is made either way.
 | 5 | Salt Analysis | **Audited — real content gap found, not fixed** | See below. |
 | 6 | Hydrogen | **Audited, clean — minor orphan-asset cleanup only** | See below. |
 | 7 | Polymers | **Audited, clean** | See below. |
-| 8 | Formal Charges | **Audited — real gap found, not fixed** | See below. |
+| 8 | Formal Charges | **Gap fixed (this branch)** | 3 Lewis-structure diagrams added — see below. |
 | 9 | Liquid Solutions | **Fixed (this branch)** | See below. |
 | 10 | Chemical Kinetics | **Partial fix (this branch)** | Source-note leak fixed (see below); full audit not done. |
 | 11 | Gaseous State | **Partial fix (this branch)** | Source-note leak + a severe branding leak fixed (see below); full audit not done. |
@@ -174,21 +174,34 @@ means exactly that — no claim of correctness is made either way.
   content review of this chapter needs to decode it first — a plain read of the `.ts` files in
   the repo won't show the real prose.
 
-### Formal Charges — audited, real gap found, not fixed
+### Formal Charges — structures gap fixed
 - Architecture clean: plain text (not compressed), `katex.renderToString()` server-side, custom
   `parseNotes()` line parser, 0 branding hits.
-- **Real gap**: zero `<svg>` or `<img>` elements anywhere in the 749-line page. Every occurrence
-  of "Structure" is a text label ("Structure I:", "Contributor I:", "Testing Structures with
-  Experimental Bond Lengths") describing a Lewis structure in prose, never an actual drawn
-  diagram — e.g. the cyanate-vs-fulminate resonance comparison, a worked example the file spends
-  real space on, has no accompanying structure image at all. The handover doc explicitly lists
-  Formal Charges among the chapters requiring drawn structures and explicitly says "Do not
-  replace a required chemical structure with plain text alone" — this chapter currently does
-  exactly that.
-- **Not fixed this pass**: drawing chemically accurate Lewis-structure SVGs (correct
-  connectivity, lone pairs, formal-charge labels, resonance arrows) for the examples this
-  chapter actually discusses is real, precision-sensitive work — flagged rather than rushed,
-  same reasoning as the Salt Analysis mnemonics/traps gap.
+- **Real gap, now fixed**: the chapter had zero `<svg>` or `<img>` elements anywhere in its
+  749-line page — every "Structure I:", "Contributor I:" reference was prose-only, violating the
+  handover doc's explicit "do not replace a required chemical structure with plain text alone."
+  Added a `[STRUCTURE:id]` marker mechanism to the parser (new `BlockKind`, a
+  `structurePattern` regex, a `FormalChargeStructure` component reading from a
+  `FORMAL_CHARGE_STRUCTURES` map) and drew 3 original SVG Lewis-structure comparisons for the
+  chapter's three most load-bearing worked examples:
+  1. `opcl3-comparison` — the opening example, Structure I (O⁻–P⁺Cl₃, charge-separated) vs
+     Structure II (O=PCl₃, all formal charges zero).
+  2. `n2o-skeleton-comparison` — Possibility I (rejected N–O–N skeleton) vs Possibility II
+     (preferred N–N–O skeleton) for N₂O.
+  3. `cyanate-fulminate-comparison` — the chapter's flagship comparison: cyanate's O=C=N⁻ vs
+     fulminate's ⁻C≡N⁺–O⁻, with formal charges labelled on every atom.
+- **Caught and fixed a real chemistry error of my own before committing**: my first draft of the
+  fulminate structure drew the N–O bond as a double bond; the source text is explicit
+  (`⁻C≡N⁺−O⁻`) that it's a single bond. Found it during visual QA by re-checking bond order
+  against the source text atom-by-atom for all three diagrams, fixed the one error, then
+  re-verified the corrected render.
+- Verified: `tsc --noEmit` clean, all 3 SVGs well-formed XML, all 3 visually inspected in a
+  standalone render extracted directly from the shipped `page.tsx` (not a separate scratch copy,
+  to make sure the check matches what's actually committed).
+- **Not done**: the other ~15 species this chapter discusses (N₂O's 3-contributor resonance set,
+  carbonate, sulphate, SO₂, SO₃, XeO₃, NH₄⁺, CO, HNCS, HNCO, etc.) still have no diagrams — the 3
+  added cover the chapter's central worked examples, not every formula mentioned. Extending
+  further is straightforward with the same `[STRUCTURE:id]` mechanism now in place.
 
 ### Liquid Solutions (17 parts) — fixed
 - Confirmed exactly **17 parts**, matching the handover doc's expected count.

@@ -1,5 +1,16 @@
 # QA Report
 
+## Whole-branch production build (end of first pass over all 13 chapters)
+
+`npm run build` initially **failed** on a pre-existing, unrelated issue: `react-katex` was in
+`package.json` but not installed in `node_modules` (`Module not found` in
+`surface-chemistry-shared.tsx` and `chemical-kinetics-shared.tsx`). Fixed with `npm install`
+(2 packages added) — not `npm audit fix --force`, which is off-limits. Rebuilt: clean, exit 0,
+zero warnings, every route in the site compiled, including all 13 audited chapters and the new
+canonical S-Block route. This is real evidence beyond `tsc --noEmit`, per the handover doc's own
+"a passing build is not sufficient [alone], but is necessary" framing.
+
+
 ## Adsorption
 
 - `npx tsc --noEmit -p .` — 0 errors, full project, run twice (before and after the SVG swap).

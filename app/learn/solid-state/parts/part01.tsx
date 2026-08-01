@@ -20,7 +20,7 @@ export default function SolidStatePart01() {
         <p className="text-xs font-semibold uppercase tracking-[0.24em] text-cyan-300">JEE Advanced · Solid State · Part 1</p>
         <h1 className="mt-3 text-3xl font-semibold tracking-tight text-white md:text-4xl">Solid State — Entry Point</h1>
         <p className="mt-4 max-w-3xl text-sm leading-7 text-zinc-300">
-          This opening follows the KOHINOOR sequence directly: solids are first divided into crystalline and amorphous solids.
+          This opening follows the same sequence directly: solids are first divided into crystalline and amorphous solids.
           No later lattice, unit-cell, packing, void, defect, electrical, or magnetic theory is introduced here.
         </p>
       </header>
@@ -75,7 +75,7 @@ export default function SolidStatePart01() {
       <aside className="rounded-2xl border border-emerald-400/20 bg-emerald-400/[0.045] p-5">
         <p className="text-xs font-semibold uppercase tracking-[0.2em] text-emerald-300">Sequence Lock</p>
         <p className="mt-2 text-sm leading-7 text-zinc-300">
-          Part 2 develops the exact KOHINOOR opening comparison: arrangement, melting behaviour, cutting/cleavage,
+          Part 2 develops the exact opening comparison: arrangement, melting behaviour, cutting/cleavage,
           long-range vs short-range order, heat of fusion, true/pseudo-solid terminology, anisotropy and isotropy.
         </p>
       </aside>

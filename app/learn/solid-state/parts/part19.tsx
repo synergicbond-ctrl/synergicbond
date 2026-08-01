@@ -11,7 +11,7 @@ const data = {
   "slug": "radius-ratio-and-limiting-geometry",
   "title": "Radius Ratio and Limiting Geometry",
   "sourcePages": "pp. 60–64",
-  "intro": "KOHINOOR introduces the classical radius-ratio rule as a geometrical guide to the coordination environment of an ionic solid, then extends the idea to additional ideal polyhedra.",
+  "intro": "This part introduces the classical radius-ratio rule as a geometrical guide to the coordination environment of an ionic solid, then extends the idea to additional ideal polyhedra.",
   "sections": [
     {
       "title": "1. Classical Radius-Ratio Table",

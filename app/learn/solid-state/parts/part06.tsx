@@ -11,7 +11,7 @@ const data = {
   "slug": "contribution-and-sharing-of-particles-in-unit-cells",
   "title": "Contribution and Sharing of Particles in Unit Cells",
   "sourcePages": "pp. 6–9",
-  "intro": "KOHINOOR next develops the fractional contribution of boundary particles. This is the counting language used throughout unit-cell stoichiometry.",
+  "intro": "This part next develops the fractional contribution of boundary particles. This is the counting language used throughout unit-cell stoichiometry.",
   "sections": [
     {
       "title": "1. Sharing Fractions",

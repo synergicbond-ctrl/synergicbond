@@ -20,7 +20,7 @@ export default function SolidStatePart02() {
         <p className="text-xs font-semibold uppercase tracking-[0.24em] text-violet-300">JEE Advanced · Solid State · Part 2</p>
         <h1 className="mt-3 text-3xl font-semibold tracking-tight text-white md:text-4xl">Crystalline and Amorphous Solids</h1>
         <p className="mt-4 max-w-3xl text-sm leading-7 text-zinc-300">
-          This part follows the opening KOHINOOR comparison only, without leaking later crystal-lattice or unit-cell theory.
+          This part follows the opening comparison only, without leaking later crystal-lattice or unit-cell theory.
         </p>
       </header>
 
@@ -185,7 +185,7 @@ export default function SolidStatePart02() {
       </Section>
 
       <aside className="rounded-2xl border border-fuchsia-400/20 bg-fuchsia-400/[0.045] p-5">
-        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-fuchsia-300">Next in KOHINOOR</p>
+        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-fuchsia-300">Next in this chapter</p>
         <p className="mt-2 text-sm leading-7 text-zinc-300">
           Polycrystalline solids, followed by the examples and then classification of crystalline solids into ionic,
           molecular, metallic, and covalent/network solids.

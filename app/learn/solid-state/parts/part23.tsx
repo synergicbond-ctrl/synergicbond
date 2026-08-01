@@ -11,7 +11,7 @@ const data = {
   "slug": "magnetic-properties-of-solids",
   "title": "Magnetic Properties of Solids",
   "sourcePages": "pp. 86–89",
-  "intro": "KOHINOOR closes with magnetic susceptibility, permanent and induced moments, Curie behaviour, cooperative ferro/antiferromagnetic ordering and magnetic properties of superconductors. Ferrimagnetism is included as the JEE-standard companion classification.",
+  "intro": "This part closes with magnetic susceptibility, permanent and induced moments, Curie behaviour, cooperative ferro/antiferromagnetic ordering and magnetic properties of superconductors. Ferrimagnetism is included as the JEE-standard companion classification.",
   "sections": [
     {
       "title": "1. Magnetization and Susceptibility",

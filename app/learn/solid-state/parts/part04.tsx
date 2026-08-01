@@ -11,7 +11,7 @@ const data = {
   "slug": "classification-of-crystalline-solids",
   "title": "Classification of Crystalline Solids",
   "sourcePages": "pp. 3–5",
-  "intro": "KOHINOOR next classifies crystalline solids by the nature of their constituent particles and dominant bonding: ionic, molecular, metallic and covalent/network solids.",
+  "intro": "This part next classifies crystalline solids by the nature of their constituent particles and dominant bonding: ionic, molecular, metallic and covalent/network solids.",
   "sections": [
     {
       "title": "1. Master Classification Table",

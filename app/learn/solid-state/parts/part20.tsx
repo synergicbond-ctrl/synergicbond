@@ -11,7 +11,7 @@ const data = {
   "slug": "important-crystal-structures",
   "title": "Important Crystal Structures",
   "sourcePages": "pp. 52–53 and 64–73 (plus the structure-type index on p. 14)",
-  "intro": "KOHINOOR treats the standard ionic structure types in detail and also includes diamond packing, corundum and a structure-type index. This part consolidates those source topics into coordinate-resolved JEE Advanced notes.",
+  "intro": "This part treats the standard ionic structure types in detail and also includes diamond packing, corundum and a structure-type index. This part consolidates those topics into coordinate-resolved JEE Advanced notes.",
   "sections": [
     {
       "title": "1. NaCl / Rock-Salt Type — 6:6",
@@ -310,7 +310,7 @@ const data = {
       ]
     },
     {
-      "title": "10. Additional Structure-Type Index Shown in KOHINOOR",
+      "title": "10. Additional Structure-Type Index",
       "blocks": [
         {
           "type": "p",

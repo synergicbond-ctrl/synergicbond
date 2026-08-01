@@ -20,9 +20,9 @@ means exactly that — no claim of correctness is made either way.
 | 7 | Polymers | **Audited, clean** | See below. |
 | 8 | Formal Charges | **Audited — real gap found, not fixed** | See below. |
 | 9 | Liquid Solutions | **Fixed (this branch)** | See below. |
-| 10 | Chemical Kinetics | Not started | |
-| 11 | Gaseous State | Not started | |
-| 12 | Solid State | Not started | Also has a confirmed duplicate-route situation (`master/` 10-part vs `parts/` 23-file legacy) — noted, not yet investigated. |
+| 10 | Chemical Kinetics | **Partial fix (this branch)** | Source-note leak fixed (see below); full audit not done. |
+| 11 | Gaseous State | **Partial fix (this branch)** | Source-note leak + a severe branding leak fixed (see below); full audit not done. |
+| 12 | Solid State | **Partial fix (this branch)** | Severe branding leak fixed across 25 files (see below); the `master/` vs `parts/` duplicate-route reconciliation flagged in ROUTE_AUDIT.md is still not done. |
 | 13 | F-Block Elements | Not started | |
 | 14 | Cross-chapter navigation | Partially touched | Only the one `UniversalChapterNavigator.tsx` entry for S-Block was updated as a side effect of the S-Block fix. No broader nav audit done. |
 
@@ -208,6 +208,52 @@ means exactly that — no claim of correctness is made either way.
   just architecturally simpler than the KaTeX-based chapters.
 - Branding scan: 0 hits across all 17 parts' source data files.
 - Verified: `tsc --noEmit` clean after the fix.
+
+### Source-note leak: same bug found and fixed in 3 more chapters
+After finding this pattern in Environmental Chemistry and Liquid Solutions, swept the remaining
+chapters and found it live in three more places:
+- **Chemical Kinetics**: `chemical-kinetics-shared.tsx` rendered "Source-concept coverage:
+  {problem.sourcePages}" under every problem-bank entry. Fixed.
+- **Gaseous State**: `_components.tsx` and `page.tsx` rendered it in three places — the part-card
+  footer ("Source {part.sourcePages}"), inside worked examples ("Modified data · source concept
+  {block.sourcePages}"), and the part hero ("Source coverage: {data.sourcePages}"). Fixed all
+  three; also removed the now-dead `.sourceTag` CSS rule and fixed `.partFoot`'s
+  `justify-content` (was `space-between` for two children, now `flex-end` for the one remaining).
+- **Solid State (legacy `parts/` routes)**: `_shared.tsx` rendered "Primary KOHINOOR mapping:
+  {data.sourcePages}" — see the branding finding below, this one was worse than a generic page
+  reference.
+
+### Severe branding leak found and fixed: "KOHINOOR" across Solid State and Gaseous State
+While removing the source-page leak above, found that Solid State's legacy `parts/` system uses
+**"KOHINOOR" as a pervasive public-facing label**, not just a citation — in the page
+`description` meta tag, card labels, `headerTag` props, hero prose ("Exact KOHINOOR-driven
+sequence..."), nearly every one of the 23 parts' `intro` field ("KOHINOOR moves from...",
+"KOHINOOR classifies...", etc.), a section title ("Additional Structure-Type Index Shown in
+KOHINOOR"), a worked-example title ("KOHINOOR numerical"), and even an SVG figure caption
+("Diagram reconstructed from the KOHINOOR concept sequence"). Gaseous State's hero also
+described itself as "A complete reconstruction of the 169-page Kohinoor source." 34 occurrences
+across 25 files total. This is a direct match for the handover doc's explicit prohibition on
+"book name" / "institute name" in public content (Section 5) — "Kohinoor" appears to be a
+coaching-material title (compare the doc's own §12 source-file list, which names
+"S Block JEE Kohinoor 2023.pdf" for a different chapter, suggesting the same source material
+family was used here too).
+
+Fixed by rewriting every occurrence to a neutral equivalent ("KOHINOOR moves from..." →
+"This part moves from...", "KOHINOOR sequence · 23 parts" → "Complete sequence · 23 parts",
+etc.) rather than blindly deleting the word, since a blind strip would have left broken grammar
+in several sentences. Verified zero remaining case-insensitive "kohinoor" hits, spot-checked
+~15 of the rewritten sentences for grammatical correctness, and `tsc --noEmit` clean.
+
+**Not done**: this was a targeted branding fix, not a full content/structural audit of Chemical
+Kinetics, Gaseous State, or Solid State — those chapters' broader audits (raw LaTeX, other
+duplicate content, image branding, the Solid State master/legacy route reconciliation) are still
+outstanding.
+
+Also ran a broader repo-wide scan for other coaching-brand names (Allen, FIITJEE, Aakash,
+Narayana, Physics Wallah, Sri Chaitanya, Vibrant, Resonance) across all 13 chapters — every hit
+outside the "Kohinoor" cases above was the legitimate chemistry term "resonance" (resonance
+structures/stabilisation), not the coaching institute. No further branding fixes needed in the
+audited chapters from that sweep.
 
 ## Scope note on "scientific verification"
 

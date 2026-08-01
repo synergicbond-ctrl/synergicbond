@@ -11,7 +11,7 @@ const data = {
   "slug": "atomic-radius-edge-length-relations",
   "title": "Atomic Radius–Edge Length Relations",
   "sourcePages": "p. 18",
-  "intro": "KOHINOOR next derives the contact geometry connecting cube edge length a and atomic radius r for SC, FCC and BCC.",
+  "intro": "This part next derives the contact geometry connecting cube edge length a and atomic radius r for SC, FCC and BCC.",
   "sections": [
     {
       "title": "1. Simple Cubic",

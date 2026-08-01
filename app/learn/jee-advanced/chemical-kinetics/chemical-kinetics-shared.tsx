@@ -655,7 +655,7 @@ function ModifiedProblemAtlas({ from = 1, to = 96 }: { from?: number; to?: numbe
           {selectedProblems.filter((problem) => problem.group === group).map((problem) => (
             <details key={problem.number} className="group overflow-hidden rounded-3xl border border-white/10 bg-slate-950/70">
               <summary className="cursor-pointer list-none px-5 py-5 transition hover:bg-white/[0.025] sm:px-6">
-                <div className="flex items-start gap-4"><div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl border border-cyan-300/20 bg-cyan-300/[0.07] font-bold text-cyan-200">{problem.number}</div><div><h4 className="text-lg font-semibold text-white">{problem.title}</h4><p className="mt-1 text-sm leading-6 text-slate-400">Source-concept coverage: {problem.sourcePages}</p></div></div>
+                <div className="flex items-start gap-4"><div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl border border-cyan-300/20 bg-cyan-300/[0.07] font-bold text-cyan-200">{problem.number}</div><div><h4 className="text-lg font-semibold text-white">{problem.title}</h4></div></div>
                 <p className="mt-4 text-[15px] leading-7 text-slate-200">{problem.question}</p>
                 <div className="mt-3 text-xs font-black uppercase tracking-[0.16em] text-cyan-300 group-open:hidden">Open solution</div>
               </summary>

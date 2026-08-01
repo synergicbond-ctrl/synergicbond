@@ -11,7 +11,7 @@ const data = {
   "slug": "polycrystalline-solids",
   "title": "Polycrystalline Solids",
   "sourcePages": "pp. 2–3",
-  "intro": "KOHINOOR places polycrystalline solids immediately after the crystalline–amorphous comparison. The key idea is that a bulk specimen may be made of many tiny crystals with different orientations while each crystallite remains internally crystalline.",
+  "intro": "This part places polycrystalline solids immediately after the crystalline–amorphous comparison. The key idea is that a bulk specimen may be made of many tiny crystals with different orientations while each crystallite remains internally crystalline.",
   "sections": [
     {
       "title": "1. Crystallites, Grains and Grain Boundaries",

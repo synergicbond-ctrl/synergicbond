@@ -11,7 +11,7 @@ const data = {
   "slug": "coordination-number-and-neighbour-shells",
   "title": "Coordination Number and Neighbour Shells",
   "sourcePages": "pp. 19 and 21–23",
-  "intro": "KOHINOOR first lists nearest-neighbour distances and then develops successive coordination shells for SC, FCC and BCC.",
+  "intro": "This part first lists nearest-neighbour distances and then develops successive coordination shells for SC, FCC and BCC.",
   "sections": [
     {
       "title": "1. Distance from a Lattice Vector",

@@ -11,7 +11,7 @@ const data = {
   "slug": "crystal-lattice-lattice-point-and-unit-cell",
   "title": "Crystal Lattice, Lattice Point and Unit Cell",
   "sourcePages": "pp. 5–6 and the unit-cell illustrations on pp. 28–30",
-  "intro": "KOHINOOR defines the crystal/space lattice, lattice point and unit cell before moving into counting and cell classification.",
+  "intro": "This part defines the crystal/space lattice, lattice point and unit cell before moving into counting and cell classification.",
   "sections": [
     {
       "title": "1. Crystal Lattice / Space Lattice",

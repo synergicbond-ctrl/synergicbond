@@ -140,7 +140,7 @@ function BlockRenderer({ block }: { block: Block }) {
       <details className="workedExample">
         <summary>
           <span className="exampleNumber">{displayNumber}</span>
-          <div><b>{block.title}</b><small>Modified data · source concept {block.sourcePages}</small></div>
+          <div><b>{block.title}</b></div>
           <span className="expandIcon">+</span>
         </summary>
         <div className="exampleBody">
@@ -187,7 +187,6 @@ export function PartPage({ data }: { data: PartData }) {
             <span className="kicker">JEE Advanced · Part {String(data.number).padStart(2, "0")} of {parts.length}</span>
             <h1>{data.title}</h1>
             <p className="heroLead">{data.subtitle}</p>
-            <div className="sourceTag">Source coverage: {data.sourcePages}</div>
           </div>
           <div className="miniToc">
             <span>On this page</span>
@@ -285,14 +284,13 @@ a { color: inherit; }
 .partTopline i { font-style: normal; padding: 5px 9px; border-radius: 999px; background: rgba(167,139,250,.1); color: #c4b5fd; font-size: 10px; text-transform: uppercase; letter-spacing: .1em; }
 .partCard h3 { margin: 22px 0 11px; font-size: 22px; line-height: 1.18; }
 .partCard p { margin: 0; color: var(--muted); line-height: 1.58; }
-.partFoot { display: flex; justify-content: space-between; gap: 12px; align-items: end; margin-top: auto; padding-top: 24px; color: #7f90a8; font-size: 12px; }
+.partFoot { display: flex; justify-content: flex-end; gap: 12px; align-items: end; margin-top: auto; padding-top: 24px; color: #7f90a8; font-size: 12px; }
 .partFoot b { color: #a5f3fc; }
 .partHero { padding: 62px 0 32px; }
 .backLink { display: inline-block; text-decoration: none; color: #8ca0ba; margin-bottom: 18px; font-size: 13px; }
 .backLink:hover { color: var(--cyan); }
 .partHeroGrid { padding: clamp(28px, 5vw, 58px); display: grid; grid-template-columns: 1fr .48fr; gap: 32px; }
 .partHero h1 { font-size: clamp(40px, 6vw, 70px); }
-.sourceTag { margin-top: 22px; display: inline-flex; padding: 9px 12px; border-radius: 12px; border: 1px solid var(--line); color: #9fb0c6; font-size: 12px; }
 .miniToc { display: flex; flex-direction: column; gap: 7px; padding-left: 22px; border-left: 1px solid var(--line); }
 .miniToc > span { color: #7dd3fc; font-size: 11px; font-weight: 850; letter-spacing: .11em; text-transform: uppercase; margin-bottom: 8px; }
 .miniToc a { text-decoration: none; color: #a9b7ca; font-size: 13px; line-height: 1.4; padding: 7px 8px; border-radius: 9px; display: grid; grid-template-columns: 30px 1fr; gap: 7px; }

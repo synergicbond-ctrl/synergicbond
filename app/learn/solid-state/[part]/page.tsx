@@ -18,7 +18,7 @@ function lessonRef(index: number): LessonRef | undefined {
     href: `/learn/solid-state/${item.part}`,
     number: `Part ${String(item.part).padStart(2, "0")}`,
     title: item.title,
-    meta: "KOHINOOR · JEE Advanced",
+    meta: "JEE Advanced",
   };
 }
 
@@ -46,7 +46,7 @@ export default async function SolidStatePartRoute({ params }: { params: Promise<
     <ChapterShell
       kicker="JEE Advanced Physical Chemistry"
       subtitle="Solid State"
-      headerTag="KOHINOOR sequence · 23 parts"
+      headerTag="Complete sequence · 23 parts"
       tabs={[{ label: "All 23 parts", href: "/learn/solid-state" }]}
       bleed
     >

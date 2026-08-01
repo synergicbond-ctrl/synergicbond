@@ -300,9 +300,6 @@ export default function EnvironmentalChemistryPart({ data }: { data: PartData })
               </div>
             ))}
           </div>
-          <p className="relative mt-5 border-t border-white/10 pt-4 text-xs leading-5 text-slate-400">
-            {data.sourceNote}
-          </p>
           {data.heroImage ? (
             <figure className="relative mt-7 overflow-hidden rounded-2xl border border-cyan-300/20 bg-[#050910]">
               <img

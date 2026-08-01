@@ -14,7 +14,7 @@ means exactly that — no claim of correctness is made either way.
 | 1 | Adsorption | **Done (this branch)** | See below. Not yet merged to `main`. |
 | 2 | Surface Chemistry (12-part) | **Audited, clean — no changes needed** | See below. |
 | 3 | S-Block Elements | **Done (this branch)** | Route de-duplication only — see below. Content itself (both old and new versions) not independently fact-checked against a primary source in this pass. |
-| 4 | Environmental Chemistry | Not started | |
+| 4 | Environmental Chemistry | **Fixed (this branch)** | See below. |
 | 5 | Salt Analysis | Not started | |
 | 6 | Hydrogen | Not started | |
 | 7 | Polymers | Not started | |
@@ -83,6 +83,31 @@ means exactly that — no claim of correctness is made either way.
 - The 12-part hub page already cross-links to the dedicated Adsorption deep-dive page.
 - **Not done**: scientific fact-checking against a primary source — same scope note as
   Adsorption applies here too.
+
+### Environmental Chemistry (15-part) — fixed
+- **Real bug found and fixed**: every part's internal `sourceNote` field (e.g. "Source coverage:
+  NCERT pp. 406-407 and summary; Essential Sheet pp. 1-2; Environmental Chemistry Theory pp.
+  181-182.") was being **publicly rendered** in the page header
+  (`EnvironmentalChemistryPart.tsx`, was lines 303-305) — exactly the "source coverage / source
+  note" text the handover doc explicitly says must never reach the public page. The doc's own
+  commit history log shows an earlier commit (`aa6c3a0`, "Remove source coverage text from
+  Environmental Chemistry") that apparently addressed this once before; it had regressed, or
+  only covered a different code path. Fixed by removing the render, not the data — the
+  `sourceNote` field stays in each part's data object (useful for `SOURCE_COVERAGE.md`-style
+  auditing later) but is no longer shown to users.
+- Architecture: clean data-object pattern (`PartData`), no `dangerouslySetInnerHTML`.
+- Branding scan (text): 0 hits. Raw LaTeX scan: 0 hits.
+- 24 hero images, all real `.webp` files present on disk, all referenced, no duplicates,
+  semantic filenames (e.g. `greenhouse-effect.webp`, `bod-oxygen-crisis.webp` — not
+  index-numbered like Adsorption's old figures).
+- Spot-checked 3 of the 24 images directly (not all 24, given time budget): 2 clean, but
+  **`fluoride-concentration.webp` has a real spelling error baked into the image itself** —
+  the heading reads "A Matter of Concenration" (missing the "t" in "Concentration"). This is a
+  raster-image defect, not something fixable by a code edit — it needs the source image
+  regenerated or re-edited with an image tool, which wasn't available/attempted this pass.
+  **Not fixed — flagged for follow-up.** The remaining 21 images were not individually opened;
+  a full image-by-image visual QA pass has not been done for this chapter.
+- No duplicate part titles across the 15 parts.
 
 ## Scope note on "scientific verification"
 

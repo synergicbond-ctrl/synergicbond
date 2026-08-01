@@ -26,7 +26,35 @@ const adsorptionHtml = `<header>
     </div>
   </header>
 
-  <!-- IMAGE: adsorption-catalytic-cycle.png | caption: Diffusion, adsorption, intermediate formation, desorption and diffusion away | position: after-this-paragraph -->
+  <div class="adsorption-figure-group" aria-label="adsorption-catalytic-cycle.png">
+<figure class="adsorption-figure">
+  <img
+    src="/notes/jee-advanced/surface-chemistry/adsorption/adsorption-figure-001.jpg"
+    alt="Diffusion, adsorption, intermediate formation, desorption and diffusion away — figure 1"
+    loading="lazy"
+    decoding="async"
+  />
+  <figcaption>Diffusion, adsorption, intermediate formation, desorption and diffusion away — figure 1</figcaption>
+</figure>
+<figure class="adsorption-figure">
+  <img
+    src="/notes/jee-advanced/surface-chemistry/adsorption/adsorption-figure-002.jpg"
+    alt="Diffusion, adsorption, intermediate formation, desorption and diffusion away — figure 2"
+    loading="lazy"
+    decoding="async"
+  />
+  <figcaption>Diffusion, adsorption, intermediate formation, desorption and diffusion away — figure 2</figcaption>
+</figure>
+<figure class="adsorption-figure">
+  <img
+    src="/notes/jee-advanced/surface-chemistry/adsorption/adsorption-figure-003.jpg"
+    alt="Diffusion, adsorption, intermediate formation, desorption and diffusion away — figure 3"
+    loading="lazy"
+    decoding="async"
+  />
+  <figcaption>Diffusion, adsorption, intermediate formation, desorption and diffusion away — figure 3</figcaption>
+</figure>
+</div>
 
   <section id="active-interface">
     <h2>01 The Active Interface</h2>
@@ -58,7 +86,35 @@ const adsorptionHtml = `<header>
         Adsorption, wetting and many catalytic events are driven by the system’s tendency
         to lower its surface free energy.
       </aside>
-      <!-- IMAGE: residual-forces-surface-energy.png | caption: Bulk forces balanced and surface residual forces | position: after-this-paragraph -->
+      <div class="adsorption-figure-group" aria-label="residual-forces-surface-energy.png">
+<figure class="adsorption-figure">
+  <img
+    src="/notes/jee-advanced/surface-chemistry/adsorption/adsorption-figure-004.jpg"
+    alt="Bulk forces balanced and surface residual forces — figure 1"
+    loading="lazy"
+    decoding="async"
+  />
+  <figcaption>Bulk forces balanced and surface residual forces — figure 1</figcaption>
+</figure>
+<figure class="adsorption-figure">
+  <img
+    src="/notes/jee-advanced/surface-chemistry/adsorption/adsorption-figure-005.jpg"
+    alt="Bulk forces balanced and surface residual forces — figure 2"
+    loading="lazy"
+    decoding="async"
+  />
+  <figcaption>Bulk forces balanced and surface residual forces — figure 2</figcaption>
+</figure>
+<figure class="adsorption-figure">
+  <img
+    src="/notes/jee-advanced/surface-chemistry/adsorption/adsorption-figure-006.jpg"
+    alt="Bulk forces balanced and surface residual forces — figure 3"
+    loading="lazy"
+    decoding="async"
+  />
+  <figcaption>Bulk forces balanced and surface residual forces — figure 3</figcaption>
+</figure>
+</div>
     </section>
 
     <section id="specific-surface-area">
@@ -105,7 +161,35 @@ const adsorptionHtml = `<header>
           </dd>
         </div>
       </dl>
-      <!-- IMAGE: adsorption-absorption-sorption.png | caption: Surface accumulation, bulk penetration and combined sorption | position: after-this-paragraph -->
+      <div class="adsorption-figure-group" aria-label="adsorption-absorption-sorption.png">
+<figure class="adsorption-figure">
+  <img
+    src="/notes/jee-advanced/surface-chemistry/adsorption/adsorption-figure-007.jpg"
+    alt="Surface accumulation, bulk penetration and combined sorption — figure 1"
+    loading="lazy"
+    decoding="async"
+  />
+  <figcaption>Surface accumulation, bulk penetration and combined sorption — figure 1</figcaption>
+</figure>
+<figure class="adsorption-figure">
+  <img
+    src="/notes/jee-advanced/surface-chemistry/adsorption/adsorption-figure-008.jpg"
+    alt="Surface accumulation, bulk penetration and combined sorption — figure 2"
+    loading="lazy"
+    decoding="async"
+  />
+  <figcaption>Surface accumulation, bulk penetration and combined sorption — figure 2</figcaption>
+</figure>
+<figure class="adsorption-figure">
+  <img
+    src="/notes/jee-advanced/surface-chemistry/adsorption/adsorption-figure-009.jpg"
+    alt="Surface accumulation, bulk penetration and combined sorption — figure 3"
+    loading="lazy"
+    decoding="async"
+  />
+  <figcaption>Surface accumulation, bulk penetration and combined sorption — figure 3</figcaption>
+</figure>
+</div>
       <h4>Classic illustrations</h4>
       <ul>
         <li>Chalk retains ink colour on its surface \\(\\rightarrow\\) adsorption.</li>
@@ -196,7 +280,35 @@ const adsorptionHtml = `<header>
           <dd><strong>Chemisorption:</strong> May rise then fall</dd>
         </div>
       </dl>
-      <!-- IMAGE: physisorption-vs-chemisorption.png | caption: Bonding, enthalpy, reversibility and layering behaviour | position: after-this-paragraph -->
+      <div class="adsorption-figure-group" aria-label="physisorption-vs-chemisorption.png">
+<figure class="adsorption-figure">
+  <img
+    src="/notes/jee-advanced/surface-chemistry/adsorption/adsorption-figure-010.jpg"
+    alt="Bonding, enthalpy, reversibility and layering behaviour — figure 1"
+    loading="lazy"
+    decoding="async"
+  />
+  <figcaption>Bonding, enthalpy, reversibility and layering behaviour — figure 1</figcaption>
+</figure>
+<figure class="adsorption-figure">
+  <img
+    src="/notes/jee-advanced/surface-chemistry/adsorption/adsorption-figure-011.jpg"
+    alt="Bonding, enthalpy, reversibility and layering behaviour — figure 2"
+    loading="lazy"
+    decoding="async"
+  />
+  <figcaption>Bonding, enthalpy, reversibility and layering behaviour — figure 2</figcaption>
+</figure>
+<figure class="adsorption-figure">
+  <img
+    src="/notes/jee-advanced/surface-chemistry/adsorption/adsorption-figure-012.jpg"
+    alt="Bonding, enthalpy, reversibility and layering behaviour — figure 3"
+    loading="lazy"
+    decoding="async"
+  />
+  <figcaption>Bonding, enthalpy, reversibility and layering behaviour — figure 3</figcaption>
+</figure>
+</div>
     </section>
 
     <section id="potential-energy-curves">
@@ -210,7 +322,26 @@ const adsorptionHtml = `<header>
         activation barrier may exist. A molecule that first lands in the physisorption well
         must acquire enough energy to cross the barrier before it can enter the chemisorption well.
       </p>
-      <!-- IMAGE: adsorption-potential-energy-curves.png | caption: Shallow physisorption well, deeper chemisorption well and activation barrier | position: after-this-paragraph -->
+      <div class="adsorption-figure-group" aria-label="adsorption-potential-energy-curves.png">
+<figure class="adsorption-figure">
+  <img
+    src="/notes/jee-advanced/surface-chemistry/adsorption/adsorption-figure-013.jpg"
+    alt="Shallow physisorption well, deeper chemisorption well and activation barrier — figure 1"
+    loading="lazy"
+    decoding="async"
+  />
+  <figcaption>Shallow physisorption well, deeper chemisorption well and activation barrier — figure 1</figcaption>
+</figure>
+<figure class="adsorption-figure">
+  <img
+    src="/notes/jee-advanced/surface-chemistry/adsorption/adsorption-figure-014.jpg"
+    alt="Shallow physisorption well, deeper chemisorption well and activation barrier — figure 2"
+    loading="lazy"
+    decoding="async"
+  />
+  <figcaption>Shallow physisorption well, deeper chemisorption well and activation barrier — figure 2</figcaption>
+</figure>
+</div>
       <aside class="key-idea">
         <strong>Key Idea</strong>
         The depth of a well measures thermodynamic stability. The height of the barrier
@@ -390,7 +521,26 @@ const adsorptionHtml = `<header>
         and intercept \\(\\log k\\). The equation has no true finite saturation limit; when
         \\(1/n\\) approaches zero the amount adsorbed becomes almost independent of pressure.
       </p>
-      <!-- IMAGE: freundlich-isotherm.png | caption: Freundlich adsorption isotherms at different temperatures | position: after-this-paragraph -->
+      <div class="adsorption-figure-group" aria-label="freundlich-isotherm.png">
+<figure class="adsorption-figure">
+  <img
+    src="/notes/jee-advanced/surface-chemistry/adsorption/adsorption-figure-015.jpg"
+    alt="Freundlich adsorption isotherms at different temperatures — figure 1"
+    loading="lazy"
+    decoding="async"
+  />
+  <figcaption>Freundlich adsorption isotherms at different temperatures — figure 1</figcaption>
+</figure>
+<figure class="adsorption-figure">
+  <img
+    src="/notes/jee-advanced/surface-chemistry/adsorption/adsorption-figure-016.jpg"
+    alt="Freundlich adsorption isotherms at different temperatures — figure 2"
+    loading="lazy"
+    decoding="async"
+  />
+  <figcaption>Freundlich adsorption isotherms at different temperatures — figure 2</figcaption>
+</figure>
+</div>
       <aside class="jee-trap">
         <strong>JEE Trap</strong>
         The linear plot appears only after the logarithms are taken. A direct plot of
@@ -713,7 +863,26 @@ const adsorptionHtml = `<header>
         the active sites for the next cycle.
       </p>
       <div class="equation">$$\\text{diffusion}\\rightarrow\\text{adsorption}\\rightarrow\\text{reaction}\\rightarrow\\text{desorption}\\rightarrow\\text{diffusion}$$</div>
-      <!-- IMAGE: heterogeneous-catalysis-five-stage-sequence.png | caption: Five-stage heterogeneous catalysis sequence | position: after-this-paragraph -->
+      <div class="adsorption-figure-group" aria-label="heterogeneous-catalysis-five-stage-sequence.png">
+<figure class="adsorption-figure">
+  <img
+    src="/notes/jee-advanced/surface-chemistry/adsorption/adsorption-figure-017.jpg"
+    alt="Five-stage heterogeneous catalysis sequence — figure 1"
+    loading="lazy"
+    decoding="async"
+  />
+  <figcaption>Five-stage heterogeneous catalysis sequence — figure 1</figcaption>
+</figure>
+<figure class="adsorption-figure">
+  <img
+    src="/notes/jee-advanced/surface-chemistry/adsorption/adsorption-figure-018.jpg"
+    alt="Five-stage heterogeneous catalysis sequence — figure 2"
+    loading="lazy"
+    decoding="async"
+  />
+  <figcaption>Five-stage heterogeneous catalysis sequence — figure 2</figcaption>
+</figure>
+</div>
       <h4>Typical industrial examples</h4>
       <ul>
         <li>Haber-Bosch synthesis of ammonia (Fe catalyst, \\(\\mathrm{N_2}\\) and \\(\\mathrm{H_2}\\) adsorb and dissociate).</li>
@@ -733,7 +902,26 @@ const adsorptionHtml = `<header>
         is called shape-selective catalysis and is used in petroleum refining (cracking,
         isomerisation, alkylation) to obtain desired product distributions.
       </p>
-      <!-- IMAGE: shape-selective-catalysis-zeolites.png | caption: Shape-selective catalysis in zeolites and enzyme active-site specificity | position: after-this-paragraph -->
+      <div class="adsorption-figure-group" aria-label="shape-selective-catalysis-zeolites.png">
+<figure class="adsorption-figure">
+  <img
+    src="/notes/jee-advanced/surface-chemistry/adsorption/adsorption-figure-019.jpg"
+    alt="Shape-selective catalysis in zeolites and enzyme active-site specificity — figure 1"
+    loading="lazy"
+    decoding="async"
+  />
+  <figcaption>Shape-selective catalysis in zeolites and enzyme active-site specificity — figure 1</figcaption>
+</figure>
+<figure class="adsorption-figure">
+  <img
+    src="/notes/jee-advanced/surface-chemistry/adsorption/adsorption-figure-020.png"
+    alt="Shape-selective catalysis in zeolites and enzyme active-site specificity — figure 2"
+    loading="lazy"
+    decoding="async"
+  />
+  <figcaption>Shape-selective catalysis in zeolites and enzyme active-site specificity — figure 2</figcaption>
+</figure>
+</div>
     </section>
 
     <section id="medicinal-charcoal">
@@ -836,7 +1024,26 @@ const adsorptionHtml = `<header>
 
     <section id="qualitative-graphs">
       <h3>8.3 Qualitative Graphs (JEE Favourite)</h3>
-      <!-- IMAGE: surface-tension-three-sketches.png | caption: Gradual fall, slight rise and sharp fall followed by a CMC plateau | position: after-this-paragraph -->
+      <div class="adsorption-figure-group" aria-label="surface-tension-three-sketches.png">
+<figure class="adsorption-figure">
+  <img
+    src="/notes/jee-advanced/surface-chemistry/adsorption/adsorption-figure-021.png"
+    alt="Gradual fall, slight rise and sharp fall followed by a CMC plateau — figure 1"
+    loading="lazy"
+    decoding="async"
+  />
+  <figcaption>Gradual fall, slight rise and sharp fall followed by a CMC plateau — figure 1</figcaption>
+</figure>
+<figure class="adsorption-figure">
+  <img
+    src="/notes/jee-advanced/surface-chemistry/adsorption/adsorption-figure-022.png"
+    alt="Gradual fall, slight rise and sharp fall followed by a CMC plateau — figure 2"
+    loading="lazy"
+    decoding="async"
+  />
+  <figcaption>Gradual fall, slight rise and sharp fall followed by a CMC plateau — figure 2</figcaption>
+</figure>
+</div>
       <ul>
         <li><strong>Sketch I:</strong> \\(\\gamma\\) falls gradually then levels - typical of a moderately surface-active organic solute (e.g. \\(\\mathrm{CH_3OH}\\)).</li>
         <li><strong>Sketch II:</strong> \\(\\gamma\\) rises slowly and almost linearly - typical of a strong electrolyte (e.g. KCl).</li>
@@ -881,7 +1088,26 @@ const adsorptionHtml = `<header>
         Addition of salt usually lowers the CMC of ionic surfactants; raising temperature
         can raise or lower it depending on the surfactant.
       </p>
-      <!-- IMAGE: cmc-breakpoint.png | caption: CMC read from the break point where surface tension becomes constant | position: after-this-paragraph -->
+      <div class="adsorption-figure-group" aria-label="cmc-breakpoint.png">
+<figure class="adsorption-figure">
+  <img
+    src="/notes/jee-advanced/surface-chemistry/adsorption/adsorption-figure-023.png"
+    alt="CMC read from the break point where surface tension becomes constant — figure 1"
+    loading="lazy"
+    decoding="async"
+  />
+  <figcaption>CMC read from the break point where surface tension becomes constant — figure 1</figcaption>
+</figure>
+<figure class="adsorption-figure">
+  <img
+    src="/notes/jee-advanced/surface-chemistry/adsorption/adsorption-figure-024.png"
+    alt="CMC read from the break point where surface tension becomes constant — figure 2"
+    loading="lazy"
+    decoding="async"
+  />
+  <figcaption>CMC read from the break point where surface tension becomes constant — figure 2</figcaption>
+</figure>
+</div>
     </section>
 
     <section id="graph-problems">
@@ -1280,6 +1506,63 @@ export default function AdsorptionPage() {
       font-style: italic;
     }
 
+    
+        .adsorption-figure {
+          width: 100%;
+          margin: 1.8rem 0 2.2rem;
+          padding: 12px;
+          overflow: hidden;
+          border: 1px solid rgba(34, 211, 238, 0.2);
+          border-radius: 18px;
+          background:
+            linear-gradient(
+              145deg,
+              rgba(15, 23, 42, 0.96),
+              rgba(8, 15, 30, 0.98)
+            );
+          box-shadow: 0 20px 52px rgba(0, 0, 0, 0.3);
+        }
+
+        .adsorption-figure img {
+          display: block;
+          width: auto;
+          max-width: 100%;
+          max-height: 720px;
+          height: auto;
+          margin: 0 auto;
+          object-fit: contain;
+          border-radius: 12px;
+          background: #050816;
+        }
+
+        .adsorption-figure figcaption {
+          margin-top: 11px;
+          color: #a8b3c7;
+          font-family:
+            "SF Pro Text", "SF Pro Display", -apple-system,
+            BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial,
+            sans-serif;
+          font-size: 0.86rem;
+          line-height: 1.55;
+          text-align: center;
+        }
+
+        .adsorption-figure-group {
+          display: grid;
+          grid-template-columns: repeat(
+            auto-fit,
+            minmax(min(100%, 320px), 1fr)
+          );
+          gap: 16px;
+          margin: 1.8rem 0 2.2rem;
+        }
+
+        .adsorption-figure-group .adsorption-figure {
+          height: 100%;
+          margin: 0;
+        }
+
+
     @media (max-width: 760px) {
       main { width: min(100% - 18px, 1080px); }
       article { padding: 22px 16px; border-radius: 20px; }
@@ -1332,9 +1615,7 @@ export default function AdsorptionPage() {
           text-decoration: none;
         }
 
-        .adsorption-route :global(.image-placeholder) {
-          display: none;
-        }
+        
       `}</style>
     </main>
   );

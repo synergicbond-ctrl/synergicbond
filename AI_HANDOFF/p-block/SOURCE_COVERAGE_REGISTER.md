@@ -136,13 +136,13 @@ Last updated: 2026-07-26.
 |---|---|---|---|
 | Files 1–6 (original six) | 437 | **325** | 74 % |
 | Files 7–11 (new five) | 1294 | **191** | 14.8 % |
-| File 12 (`15161718.pdf`, p-block part only) | 184 | **90** | 48.9 % |
-| **Total project** | **1915** | **606** | **32 %** |
+| File 12 (`15161718.pdf`, p-block part only) | 184 | **92** | 50.0 % |
+| **Total project** | **1915** | **608** | **32 %** |
 
 Files 7–12 breakdown: file 7 (JD Lee 5th ed., whole book) 5 / 1057 · **file 8 (JD Lee
 adapted Ch. 10) 172 / 172 — COMPLETE** · file 9 (annotated notes) 0 / 40 · file 10
 (annotated notes) 0 / 11 · file 11 (noble-gas notes) 14 / 14 · **file 12 (JD Lee 5th ed.
-Ch. 14–17 extract) 90 / 184 deeply read, **209 / 209 triaged**.
+Ch. 14–17 extract) 92 / 184 deeply read, **209 / 209 triaged**.
 
 **Denominator history, so the movement is auditable.** Locating file 12 added its pages to
 a corpus that had been missing them, taking the total from 1731 to 1940 and the completion
@@ -229,7 +229,7 @@ cross-references resolving, all 20 lessons non-empty.
   `FULL — PARTIALLY UNIQUE` **98** · `SAMPLED — DUPLICATE OF FILE 8` **32** ·
   `VISUAL ONLY` **2** · `QUESTION GAP` **9** · `NOT RELEVANT` **30** (5
   further-reading/chapter-close + 25 d-block) · `UNCLEAR` **0**.
-- **Deeply inspected and fully registered: 90 / 184 (Vision).** *(This figure had
+- **Deeply inspected and fully registered: 92 / 184 (Vision).** *(This figure had
   gone stale at "8 / 184" while the addenda accumulated; the authoritative count
   has always been the recounted-in-code block further down, which read 39 before
   Addendum 20 and reads 48 after it. Corrected here rather than left to diverge.)*

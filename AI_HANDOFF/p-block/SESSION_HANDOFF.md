@@ -28,18 +28,18 @@ that its dev server is separately broken by an unrelated RSC-manifest fault.
 
 | | |
 |---|---|
-| **Corpus** | **606 / 1915 pages (32 %)** |
+| **Corpus** | **608 / 1915 pages (32 %)** |
 | Files 1–6 | 325 / 437 |
 | File 7 (JD Lee 5th ed., whole book) | 5 / 1057 |
 | **File 8** (JD Lee adapted, Ch. 10, all six groups) | **172 / 172 — COMPLETE** |
 | File 9, 10 (handwritten notes) | 0 / 40, 0 / 11 — vision only, OCR garbled |
 | File 11 (noble gas notes) | 14 / 14 |
-| **File 12** (`15161718.pdf`, JD Lee 5th ed. Ch. 14–17) | 209/209 triaged · **90 / 184 deeply read** |
+| **File 12** (`15161718.pdf`, JD Lee 5th ed. Ch. 14–17) | 209/209 triaged · **92 / 184 deeply read** |
 
-**Register IDs:** Topics **A1–A440** (contiguous, no gaps, no duplicates, every
-one a table row) · Visuals **V172** · MO cases **E45** · Traps and numbered items
-**324** · Contradictions **25–80** · Source defects **D1–D14** · `[UNCLEAR]` **5
-distinct items**.
+**Register IDs:** Topics **A1–A450** (contiguous, no gaps, no duplicates, every
+one a table row) · Visuals **V175** · MO cases **E45** (E17 expanded) · Traps and numbered
+items **331** · Contradictions **25–80** · Source defects **D1–D14** ·
+`[UNCLEAR]` **5 distinct items**.
 
 ---
 
@@ -97,18 +97,18 @@ AgNO₃ silver-halide ladder with ammonia, and the boiling point of helium.
 
 **PDF 117–122 (Addendum 22), PDF 131–136 (Addendum 23), PDF 137–138
 (Addendum 24), PDF 167–170 (Addendum 25), PDF 139–144 (Addendum 26),
-PDF 123–124 (Addendum 27), PDF 145–152 (Addendum 28) and PDF 153–158
-(Addendum 29) are done.**
+PDF 123–124 (Addendum 27), PDF 145–152 (Addendum 28), PDF 153–158
+(Addendum 29) and PDF 159–160 (Addendum 30) are done.**
 
-1. **63 remaining `FULL — PARTIALLY UNIQUE` pages**, in section-sized ranges.
-   **Next: PDF 159–160 (printed 627–628, polyhalides) — triaged `SAMPLED —
-   DUPLICATE OF FILE 8`, but Addendum 25 showed a `SAMPLED` label doesn't
-   guarantee no new content either, so a quick check is still worthwhile.**
-   **Then PDF 161–162 (printed 629–630, basic properties of the halogens —
-   halogen cations, `FULL — UNIQUE`, absent from file 8 entirely) and
-   PDF 163–164 (printed 631–632, pseudohalogens, `SAMPLED — DUPLICATE OF
-   FILE 8`).** These three ranges close out the rest of Chapter 16 (Group 17)
-   before Chapter 17 (Group 18) resumes.
+1. **63 remaining `FULL — PARTIALLY UNIQUE` pages** (unchanged — PDF 159–160
+   was drawn from the `SAMPLED` bucket), in section-sized ranges.
+   **Next: PDF 161–162 (printed 629–630, basic properties of the halogens —
+   halogen cations, `FULL — UNIQUE`, absent from file 8 entirely) — currently
+   in progress; PDF 161 fully read, PDF 162 (the cation-preparation equations
+   in superacid media) mid-verification.** **Then PDF 163–164 (printed
+   631–632, pseudohalogens, `SAMPLED — DUPLICATE OF FILE 8`).** These two
+   ranges close out the rest of Chapter 16 (Group 17) before Chapter 17
+   (Group 18) resumes.
 
 2. **Important finding from Addendum 28, reinforced by Addendum 29's own
    `A420`/`A435` cross-references: check the full registers, not just the

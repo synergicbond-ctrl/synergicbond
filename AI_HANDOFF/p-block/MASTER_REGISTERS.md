@@ -6926,3 +6926,115 @@ registered.**
 
 **File 12: 84 + 6 = 90 of 184 deeply read.**
 **`FULL — PARTIALLY UNIQUE`: 36 of 99 read, 63 remaining.**
+
+---
+
+# Addendum 30 — file 12 PDF 159–160 (printed 627–628): IF₅/IF₇ continued, and polyhalides in full
+
+**Ninth range, and the second drawn from the `SAMPLED` bucket rather than
+`FULL — PARTIALLY UNIQUE`** — following the precedent Addendum 25 set, since a
+`SAMPLED` triage describes the relationship to file 8 only. **Confirmed worth
+reading**: two genuine structural figures (16.12, 16.13) and a full quantitative
+MO derivation for I₃⁻ that expands, rather than duplicates, the pre-existing E17
+entry.
+
+| PDF | Printed | Section | Original triage | Deep-read outcome | File-8 equivalent |
+|---|---|---|---|---|---|
+| 159 | 627 | IF₅ orbital diagram/Figure 16.12 conclusion; XeFₙ·IF₅ adducts; AX₇ (IF₇), Figure 16.13; polyhalides opening | `SAMPLED — DUPLICATE OF FILE 8` | `DEEP READ — VISUAL ADDITION REGISTERED` + partial additions | §10.65 |
+| 160 | 628 | I₃⁻ MO derivation; higher polyiodides; mixed polyhalides; Figure 16.14 | `SAMPLED — DUPLICATE OF FILE 8` | **`DEEP READ — VISUAL ADDITION REGISTERED`** + partial additions | §10.65 |
+
+## A. PDF 159 (printed 627) — IF₅'s completed orbital derivation, xenon adducts, and IF₇
+
+**Continuation of A440 (registered from PDF 158): the source's IF₅ orbital-box
+derivation, cut off mid-construction at the previous page boundary, is
+completed here.**
+
+**Equations checked, all balance:** `KI+4F₂→IF₇+KF` (K1/1, I1/1, F8/8);
+`PdI₂+8F₂→2IF₇+PdF₂` (Pd1/1, I2/2, F16/16); `IF₇+H₂O→IOF₅+2HF` (I1/1, F7/7,
+H2/2, O1/1); `2IF₇+SiO₂→2IOF₅+SiF₄` (I2/2, F14/14, Si1/1, O2/2);
+`IF₇+CsF→Cs⁺[IF₈]⁻` (I1/1, F8/8, Cs1/1, charge 0/0).
+
+| # | Topic | Content |
+|---|---|---|
+| A441 | **IF₅'s orbital derivation, completed — five bonds, one lone pair, octahedral-with-a-gap** | **Continues A440.** The source's excited-state box diagram for iodine (Figure 16.12's construction): full 5s, and 5p/5d together giving **five unpaired electrons bonding to five F atoms, plus one lone pair — six electron pairs total, an octahedral parent with one position occupied by a lone pair, alternatively described as a square-based pyramid.** **Figure 16.12 itself is a genuine drawn structure** (four basal F atoms, one apical F, and the lone pair shown explicitly as two dots opposite the apical F) — this is the structural confirmation A440 stated in words but did not yet have as a source figure. |
+| A442 | **IF₅ forms adducts with two xenon fluorides — a direct Group 17/Group 18 structural link** | **"Rather surprisingly, IF₅ reacts with the xenon halides, forming adducts XeF₂·2IF₅ and XeF₄·IF₅."** Two specific 1:2 and 1:1 adduct stoichiometries, registered as source-stated facts without a mechanism (none given). **A third instance of interhalogen/noble-gas-fluoride interaction** in this shift, alongside A428 (XeF₂ fluorinating I₂ to IF₃) and A410 (XeF₂ as a perbromate oxidant) — three independent pieces of chemistry crossing the Group 17/18 boundary, none of them previously in the corpus. |
+| A443 | **IF₇ — three preparations, and the source's own claim about its unique bonding** | **Formed by direct combination at 250–300 °C** (already registered, A418), **or by heating IF₅ with F₂, or by treating iodides with F₂**: `KI+4F₂→IF₇+KF` and `PdI₂+8F₂→2IF₇+PdF₂` — two worked examples of the iodide route, one simple salt and one transition-metal diiodide. **"IF₇ is a violent fluorinating agent, and reacts with most elements. It also reacts with water, SiO₂ and CsF"**: `IF₇+H₂O→IOF₅+2HF`, `2IF₇+SiO₂→2IOF₅+SiF₄`, `IF₇+CsF→Cs⁺[IF₈]⁻` — the third and fourth hydrolysis/silicate-attack pattern in this range's family (paralleling ClF₃/BrF₃/BrF₅ on earlier pages), and a fluoride-acceptor salt exactly analogous to A439's `Cs⁺[BrF₆]⁻`. **"The structure of IF₇ is unusual — a pentagonal bipyramid (Figure 16.13). It is probably the only known example of a non-transition element using three d orbitals for bonding."** The orbital-box construction (Figure 16.13, second diagram on this page): **full 5s becomes a single unpaired electron, plus three unpaired 5p and three unpaired 5d — seven unpaired electrons bonding to seven F atoms, seven electron pairs forming a pentagonal bipyramid, with no lone pair at all** (unlike every other interhalogen in this shift, IF₇ leaves no lone pair unaccounted for — the geometry is dictated purely by seven bonding pairs). |
+| A444 | **Polyhalides — opening statement and the solubility mechanism, with the source's exact numbers** | **"Halide ions often react with molecules of halogens or interhalogens and form polyhalide ions. Iodine is only slightly soluble in water (0.34 g L⁻¹). Its solubility is greatly increased if some iodide ions are present in the solution. The increase in solubility is due to the formation of a polyhalide ion, in this case the triiodide ion I₃⁻. This is stable both in aqueous solution and in ionic crystals."** **The 0.34 g L⁻¹ figure is new** — the pre-existing polyhalide register (A85) had the *qualitative* solubility-increase fact but not this quantitative anchor for how poorly soluble I₂ is on its own. |
+
+## B. PDF 160 (printed 628) — the I₃⁻ MO derivation in full, higher polyiodides, and mixed polyhalides
+
+**Equations checked, all balance:** `I₂+I⁻→I₃⁻` (I3/3, charge −1/−1);
+`ICl+KCl→K⁺[ICl₂]⁻` (I1/1, Cl2/2, K1/1); `ICl₃+KCl→K⁺[ICl₄]⁻` (I1/1, Cl4/4,
+K1/1); `IF₅+CsF→Cs⁺[IF₆]⁻` (I1/1, F6/6, Cs1/1); `ICl+KBr→K⁺[BrICl]⁻` (I1/1,
+Cl1/1, Br1/1, K1/1); `Cs[I₃] →(heat) CsI+I₂` (Cs1/1, I3/3); `Rb[ICl₂] →(heat)
+RbCl+ICl` (Rb1/1, Cl2/2, I1/1).
+
+| # | Topic | Content |
+|---|---|---|
+| A445 | **I₃⁻'s bond lengthening and its MO derivation, given with an explicit electron count and bond order — expands E17, does not duplicate it** | **The bond-length pair (2.92 Å in [Me₄N]⁺[I₃]⁻ against 2.66 Å in I₂) is already registered at E17/line 756**, confirmed identical here. **New: the source's full derivation, with an explicit orbital count.** *"Assuming that bonding in I₃⁻ arises from singly occupied 5pz orbitals on two I atoms and a full 5pz orbital on I⁻, then there are three atomic orbitals involved. Thus three molecular orbitals are formed, one bonding, one non-bonding and one antibonding. There are 4 electrons, and 2 occupy the bonding MO and 2 occupy the non-bonding MO. This gives one bond, spread over two positions, i.e. a bond order of 0.5, and explains the very long bonds."* **The explicit bond order (0.5) and the specific 4-electron/3-MO count were not in E17's prose-level statement** — E17 asserted the weakening qualitatively; this page supplies the exact orbital bookkeeping. **Registered as an expansion of E17, keeping its ID**, per this project's standing rule against creating a duplicate MO case for the same physical system. **Also new: the source's own comparison — VSEPR provides no explanation for the weak, elongated bonds in I₃⁻, and "the molecular orbital approach is more helpful"** — an explicit statement, in the source's own words, of exactly the boundary between the examination model and the case where it fails, that this project's bonding-model policy exists to track. |
+| A446 | **Higher polyiodides, and why big anions need big cations** | **Pentaiodide I₅⁻, heptaiodide I₇⁻ and enneaiodide I₉⁻ have also been prepared** (I₅⁻, I₇⁻, I₉⁻ and I₈²⁻ already registered as a set at A85; **the specific names "penta-/hepta-/ennea-iodide" are new**). **"Crystalline compounds containing the larger polyiodide ions generally contain large metal ions such as Cs⁺ or large complex cations such as R₄N⁺. This is because a large anion together with a large cation give a high coordination number and hence a high lattice energy."** **Worked examples of specific named polyhalide salts, all new**: **KI₃·H₂O, RbI₃, NH₄I₅, [(C₂H₅)₄N]I₇, RbI₉·2C₆H₆** — five specific compositions, the last two showing both a large organic cation (tetraethylammonium) and a co-crystallised solvent of crystallisation (benzene) stabilising the largest anion in the list. |
+| A447 | **The polyhalide stability ladder — Br₃⁻ rare, Cl₃⁻ only in concentrated solution, F₃⁻ unknown as any compound** | **A85/trap 61 already registers the qualitative order I₃⁻ > Br₃⁻ > Cl₃⁻ > F₃⁻; this page supplies the specific status of each.** **"The Br₃⁻ ion is much less stable and less common than I₃⁻. A few unstable Cl₃⁻ compounds are known, and the ion is formed in concentrated solution. No F₃⁻ compounds are known."** — Cl₃⁻ is not merely "less stable"; it exists **only transiently in concentrated solution**, and F₃⁻ is not merely rare but **entirely absent as an isolable compound**, a stronger and more specific claim than the qualitative ordering alone conveys. |
+| A448 | **Mixed-halogen polyhalides — four named examples, and the general synthetic route** | **"Many polyhalides are known which contain two or three different halogens, for example K[ICl₂], K[ICl₄], Cs[IBrF] and K[IBrCl]. These metal halides are formed from interhalogens and metal halides"**: `ICl+KCl→K⁺[ICl₂]⁻`, `ICl₃+KCl→K⁺[ICl₄]⁻`, `IF₅+CsF→Cs⁺[IF₆]⁻`. **The third equation independently confirms the correction already made to contradiction 80** (Addendum 29): the source's own analogous reaction on this later page correctly pairs a fluoride-acceptor interhalogen with a fluoride-donor salt (CsF), exactly the pattern `IF₅+KI→[IF₆]⁻` should have followed and did not. `ICl+KBr→K⁺[BrICl]⁻` — **the identical anion and reaction type already registered at A426** (there as `NaBr+ICl`), confirmed with a different alkali cation; expanded, not duplicated. |
+| A449 | **Polyhalide decomposition is governed by lattice energy, and the rule is stated as a mechanism, not an observation** | **"Polyhalides are typical ionic compounds (crystalline, stable and soluble in water, conduct electricity when in solution), though they tend to decompose on heating. The products of the decomposition (that is, which halogen remains attached to the metal) are governed by the lattice energy of the products. The lattice energy of the alkali metal halides is highest for the smaller halide ions, so the smaller halogen remains bonded to the metal."** `Cs[I₃] →(heat) CsI+I₂` and `Rb[ICl₂] →(heat) RbCl+ICl` — **two worked confirmations**: caesium keeps the smaller I⁻ (releasing I₂), rubidium keeps the smaller Cl⁻ (releasing the larger ICl). **A85 already states this rule in summary ("why thermal decomposition is decided by lattice energy, so the smaller halogen stays on the metal"); this page supplies the mechanistic justification (lattice energy scales inversely with ionic radius) and two independent worked equations.** |
+| A450 | **[ICl₂]⁻'s linear geometry, and the source's promise of an orbital explanation** | **"The structures of the polyhalides are known. The trihalides K[I₃], K[ICl₂] and Cs[IBrF] all contain a linear trihalide ion. This may be explained by considering the orbitals used. For example, see [ICl₂]⁻ in Figure 16.14."** Figure 16.14 shows **[ICl₂]⁻ drawn with explicit lone pairs on both terminal Cl atoms and on the central I**, T-shaped-parent-style bracket notation — **the same 3c–4e orbital picture already registered at E17/V42 for I₃⁻, now with a mixed-halogen worked example (Cl at both ends, I central) added to the family.** |
+
+## C. Visual register — additions V173–V175
+
+| ID | Required visual kind | Subject |
+|---|---|---|
+| V173 | **Structure gallery** | IF₅'s square-pyramidal structure (Figure 16.12 redrawn): four basal F, one apical F, lone pair opposite the apical position — completing A440/A441's word description with the actual drawn geometry |
+| V174 | **Structure gallery + orbital diagram** | IF₇'s pentagonal bipyramid (Figure 16.13): five equatorial F in a pentagon, two axial F, paired with the excited-state orbital box (7 unpaired electrons, no lone pair) that the source uses to derive it — the only AXₙ interhalogen in this whole range with zero lone pairs |
+| V175 | **MO energy diagram** | I₃⁻'s three-MO derivation, redrawn to match the source's explicit bookkeeping: three 5pz atomic orbitals (two singly-occupied, one full) combining into bonding/non-bonding/antibonding MOs, 4 electrons filling the lowest two, bond order 0.5 labelled directly on the diagram — expands V42 rather than replacing it |
+
+## D. JEE trap register — items 325–331
+
+325. **IF₅ is octahedral-with-a-lone-pair, equivalently square-pyramidal** — both
+     descriptions are the same structure; the source uses them interchangeably
+     and a question may use either.
+326. **IF₇ has no lone pair at all** — seven bonding pairs, pentagonal
+     bipyramidal, and the only interhalogen in this range where the electron
+     count leaves nothing left over.
+327. **IF₇ is probably the only non-transition-element species using three d
+     orbitals for bonding** — a uniqueness claim worth remembering verbatim,
+     not just "IF₇ uses d orbitals".
+328. **I₃⁻'s bond order is exactly 0.5, from 4 electrons in 3 MOs (bonding +
+     non-bonding filled, antibonding empty)** — not a vague "weak bond", a
+     specific number with a specific derivation.
+329. **VSEPR cannot explain I₃⁻'s bond weakening; MO theory can** — the source
+     states this explicitly as the boundary of the examination model.
+330. **F₃⁻ does not exist as any compound; Cl₃⁻ exists only transiently in
+     concentrated solution** — "less stable down to F" is too weak a
+     statement; two of the four trihalides are barely there at all.
+331. **A polyhalide salt decomposes to keep the smaller halogen on the metal**
+     — CsI₃ gives CsI + I₂, RbICl₂ gives RbCl + ICl — because lattice energy
+     favours the smaller anion, not because of any bond-strength argument.
+
+## E. Register-count effects
+
+- **Topics: A440 → A450.** Ten added, **all table rows**, contiguous.
+- **Expanded, IDs kept:** **A440/A441** (IF₅ orbital derivation completed
+  across the page break) · **A85** (polyiodide names, specific salts, and the
+  lattice-energy mechanism all added under the existing ID) · **A426** (the
+  `[BrICl]⁻` reaction confirmed with a second alkali cation) · **A410, A428**
+  (a third Group 17/18 crossover instance, IF₅'s xenon-fluoride adducts).
+- **MO cases: E17 expanded** (the explicit 3-MO/4-electron/bond-order-0.5
+  derivation and the VSEPR-fails-here statement), **not duplicated**; **E45
+  unchanged otherwise.**
+- **Visuals: V172 → V175.** Three added.
+- **Traps: 324 → 331.** Seven added.
+- **Contradictions, source defects: unchanged.** Every equation on both pages
+  checked and balanced as printed — **the first range since Addendum 22 with
+  zero new contradictions.**
+- **`[UNCLEAR]`: 5 — unchanged.**
+
+---
+
+# Range closure — PDF 159–160
+
+**2 / 2 pages deeply read**, both returning `DEEP READ — VISUAL ADDITION
+REGISTERED` alongside partial additions — **confirms Addendum 25's finding that
+a `SAMPLED` triage is not a guarantee of no new content.**
+
+**File 12: 90 + 2 = 92 of 184 deeply read.**
+**`FULL — PARTIALLY UNIQUE` queue unchanged at 36 of 99 read, 63 remaining**
+— this range was drawn from the `SAMPLED` bucket.

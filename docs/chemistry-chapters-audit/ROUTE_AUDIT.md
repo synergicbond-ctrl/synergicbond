@@ -15,16 +15,28 @@
 | Liquid Solutions | `/learn/jee-advanced/solutions` | dynamic `[part]` route | Doc expects 17 parts — not yet verified. |
 | Chemical Kinetics | `/learn/jee-advanced/chemical-kinetics` | 20 | Matches doc's expected count. |
 | Gaseous State | `/learn/gaseous-state` | 16 (`PART_COUNT = 16` in `_meta.ts`) | Matches doc's expected count; the doc-mentioned "faulty 18-part deployment" is confirmed superseded. |
-| Solid State | `/learn/solid-state` | **duplicate**: `master/` (10 parts) vs `parts/` (23 legacy `.tsx` files) | Not yet reconciled — flagged, not fixed. |
+| Solid State | `/learn/solid-state` | both `master/` (10 parts) and `parts/` (23 legacy `.tsx` files) | Investigated — not a duplicate, both are intentionally live. See below. |
 | F-Block | `/notes/f-block` | 8 content files | Part count not yet fully enumerated. |
 
 ## Duplicate-route findings
 
 1. **S-Block** — resolved this branch (see MASTER_AUDIT.md).
-2. **Solid State** — `app/learn/solid-state/master/` (10 parts, `_content.ts` + `_figures.tsx` +
-   `_shared.tsx`) vs `app/learn/solid-state/parts/` (23 standalone `.tsx` files, `part01.tsx`
-   through `part23.tsx`). Not yet investigated which is canonical/linked from navigation — this
-   is the next likely candidate for the same kind of reconciliation done for S-Block.
+2. **Solid State — investigated, turned out NOT to be a duplicate.** `master/` (10-part single
+   continuous document) and `parts/` (23-part granular course, via the `[part]` dynamic route)
+   are both real and both intentionally live: the hub page (`app/learn/solid-state/page.tsx`)
+   presents the 23 parts as its primary lesson-group navigation, with the master edition offered
+   alongside as a "complete single-page edition" card. `chapterCatalog.ts` links directly to
+   `/master`; `programSpec.ts` links to the hub, which surfaces both. Same pattern as Surface
+   Chemistry's 12-part chapter coexisting with the dedicated Adsorption deep-dive — a deliberate
+   two-track design, not a bug.
+   - **Self-correction, logged for transparency**: an early `grep` for `href=` used a pattern
+     that missed the hub's object-literal `href: \`/learn/solid-state/${part.part}\`` lesson
+     links (they don't use JSX `href="..."` syntax), which made the 23-part system look
+     orphaned. Based on that incomplete read, I replaced `[part]/page.tsx` with a
+     `permanentRedirect()` to `/master` — which would have broken all 23 of the hub's primary
+     lesson links. Caught it by reading the full hub page before committing anything, reverted
+     via `git checkout`, and verified `tsc --noEmit` clean afterward. Nothing from this mistake
+     was ever committed or pushed.
 
 ## Branding scan (scoped to the 13 chapter directories + `public/notes`, `public/images`)
 

@@ -22,7 +22,7 @@ means exactly that — no claim of correctness is made either way.
 | 9 | Liquid Solutions | **Fixed (this branch)** | See below. |
 | 10 | Chemical Kinetics | **Partial fix (this branch)** | Source-note leak fixed (see below); full audit not done. |
 | 11 | Gaseous State | **Partial fix (this branch)** | Source-note leak + a severe branding leak fixed (see below); full audit not done. |
-| 12 | Solid State | **Partial fix (this branch)** | Severe branding leak fixed across 25 files (see below); the `master/` vs `parts/` duplicate-route reconciliation flagged in ROUTE_AUDIT.md is still not done. |
+| 12 | Solid State | **Partial fix (this branch)** | Severe branding leak fixed across 25 files (see below). The `master/` vs `parts/` situation was investigated and turned out NOT to be a duplicate needing reconciliation — see ROUTE_AUDIT.md (includes a logged self-correction of an incorrect route change that was caught and reverted before being committed). |
 | 13 | F-Block Elements | Not started | |
 | 14 | Cross-chapter navigation | Partially touched | Only the one `UniversalChapterNavigator.tsx` entry for S-Block was updated as a side effect of the S-Block fix. No broader nav audit done. |
 

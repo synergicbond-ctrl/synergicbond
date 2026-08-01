@@ -12,7 +12,7 @@ means exactly that — no claim of correctness is made either way.
 | # | Chapter | Status | Notes |
 |---|---|---|---|
 | 1 | Adsorption | **Done (this branch)** | See below. Not yet merged to `main`. |
-| 2 | Surface Chemistry (12-part) | Not started | Adsorption is one sub-route of this chapter; the other 11 parts and the hub page are unaudited. |
+| 2 | Surface Chemistry (12-part) | **Audited, clean — no changes needed** | See below. |
 | 3 | S-Block Elements | **Done (this branch)** | Route de-duplication only — see below. Content itself (both old and new versions) not independently fact-checked against a primary source in this pass. |
 | 4 | Environmental Chemistry | Not started | |
 | 5 | Salt Analysis | Not started | |
@@ -63,6 +63,26 @@ means exactly that — no claim of correctness is made either way.
 - **Not done**: no side-by-side fact check of whether the retired 15-part version contained
   any unique correct chemistry that the new 20-section version omits. This was a routing/duplication
   fix, not a content-coverage audit.
+
+### Surface Chemistry (12-part) — audit, no fixes required
+- Architecture: clean. All 12 parts are thin (14-line) page wrappers around a shared
+  `PartShell` + typed content components (`Card`, `Section`, `FormulaCard`, `SurfaceVisual`,
+  etc. from `surface-chemistry-shared.tsx`) — no `dangerouslySetInnerHTML`, no raw HTML strings.
+- Branding scan: 0 hits across all 4 content modules (`content/adsorption.tsx`,
+  `content/catalysis.tsx`, `content/colloids.tsx`, `content/applications-mastery.tsx`, 2,233
+  lines total).
+- Raw LaTeX scan (`$$`, `\frac`, `\theta`, `\mathrm`, `\ldots`): 0 hits.
+- `<img>` / `<Image>` tags: 0 — all figures are inline `SurfaceVisual` SVG components, already
+  original and unbranded.
+- Duplicate-heading check: no true duplicates within any single part; "Isosteric heat" appears
+  twice across the whole 12-part chapter (once in the Adsorption-topic part, once presumably in
+  the Part 12 mastery/recap) — expected for a recap section, not flagged as a bug.
+- `/programs/jee-advanced/chapter/surface-chemistry/page.tsx` is a one-line re-export of the
+  `/learn/...` page — not a separately maintained duplicate, despite the handover doc flagging
+  this as a risk area to check.
+- The 12-part hub page already cross-links to the dedicated Adsorption deep-dive page.
+- **Not done**: scientific fact-checking against a primary source — same scope note as
+  Adsorption applies here too.
 
 ## Scope note on "scientific verification"
 

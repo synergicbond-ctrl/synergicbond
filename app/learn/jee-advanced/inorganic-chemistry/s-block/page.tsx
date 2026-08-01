@@ -4111,41 +4111,102 @@ function Diagram({ type }: { type: string | null }) {
   return null;
 }
 
-export default function SBlockNCERTHandwrittenMasterV3() {
+const chapterGroups = [
+  { title: "Foundations of the s-Block", keys: ["The s-Block:", "Masterclass A", "Occurrence", "Electronic Configuration", "Atomic and Ionic Radii", "Ionisation", "Electronegativity", "Metallic", "Physical Properties"] },
+  { title: "Group 1 Periodic and Physical Properties", keys: ["Alkali Metals: Periodic", "Standard Electrode", "Flame", "Hydration", "Photoelectric", "Hardness", "Density", "Melting", "Boiling", "Specific Heat"] },
+  { title: "Group 1 Chemical Reactions", keys: ["Reaction with Air", "Reaction with Oxygen", "Reaction with Water", "Reaction with Nitrogen", "Reaction with Halogens", "Reaction with Sulfur", "General Chemical Reactions"] },
+  { title: "Oxides, Peroxides, Superoxides and MO Theory", keys: ["Oxides", "Peroxides", "Superoxides", "Ozonides", "Oxygen Species", "Molecular-Orbital", "Sodium Peroxide", "Potassium Superoxide"] },
+  { title: "Hydrides, Hydroxides, Halides and Oxoacid Salts", keys: ["Hydrides", "Complex Hydrides", "Hydroxides", "Halides", "Polyhalides", "Carbonates", "Hydrogen Carbonates", "Nitrates", "Nitrites", "Sulfates", "Oxoacid Salts"] },
+  { title: "Liquid Ammonia, Crown Ethers and Advanced Group 1", keys: ["Liquid Ammonia", "Solvated", "Crown", "Cryptand", "Electride", "Sodide", "Organolithium", "Compounds with Carbon"] },
+  { title: "Lithium Anomaly and Li–Mg Diagonal Relationship", keys: ["Lithium Anomaly", "Anomalous Behaviour of Lithium", "Diagonal Relationship Between Lithium", "Li-Mg", "Lithium and Magnesium"] },
+  { title: "Sodium Compounds and Industrial Chemistry", keys: ["Sodium Chloride", "Sodium Hydroxide", "Sodium Carbonate", "Sodium Hydrogen Carbonate", "Solvay", "Leblanc", "Downs", "Industrial Sodium", "NCERT Core - Sodium"] },
+  { title: "Group 2 Periodic Properties and Reactions", keys: ["Group 2", "Alkaline-Earth", "Alkaline Earth", "Reaction of Alkaline", "Group 2 Electronic", "Group 2 Atomic", "Group 2 Ionisation", "Group 2 Physical", "NCERT Core - Group 2"] },
+  { title: "Group 2 Compounds and Solubility Trends", keys: ["Group 2 Oxides", "Group 2 Hydroxides", "Group 2 Halides", "Group 2 Carbonates", "Group 2 Sulfates", "Group 2 Nitrates", "Group 2 Hydrides", "Group 2 Nitrides", "Group 2 Carbides", "Hardness of Water"] },
+  { title: "Beryllium Anomaly and Be–Al Relationship", keys: ["Beryllium", "BeCl", "BeH", "Diagonal Relationship Between Beryllium", "Be-Al", "NCERT Core - Beryllium"] },
+  { title: "Magnesium, Calcium, Cement and Biological Roles", keys: ["Magnesium", "Calcium Oxide", "Calcium Hydroxide", "Calcium Carbonate", "Calcium Sulfate", "Plaster", "Cement", "Biological", "NCERT Core - Biological"] },
+  { title: "Integrated Reaction Atlas and JEE Advanced Problems", keys: ["Reaction Map", "Reaction Chart", "Sequence", "Conversion", "JEE Advanced", "Question", "Answer Key", "Detailed Solutions", "Bond Angle", "Bond Length", "NCERT Core Coverage Map"] }
+];
+
+const handwrittenImages: Record<number, string[]> = {
+  1: ["/images/s-block/handwritten-01.png", "/images/s-block/handwritten-02.png"],
+  2: ["/images/s-block/handwritten-03.png", "/images/s-block/handwritten-04.png"],
+  3: ["/images/s-block/handwritten-05.png", "/images/s-block/handwritten-06.png"],
+  4: ["/images/s-block/handwritten-07.png"],
+  5: ["/images/s-block/handwritten-08.png", "/images/s-block/handwritten-09.png"],
+  6: ["/images/s-block/handwritten-10.png"],
+  7: ["/images/s-block/handwritten-11.png"],
+  8: ["/images/s-block/handwritten-12.png", "/images/s-block/handwritten-13.png"],
+  9: ["/images/s-block/handwritten-14.png"],
+  10: ["/images/s-block/handwritten-15.png"],
+  11: ["/images/s-block/handwritten-16.png"],
+  12: ["/images/s-block/handwritten-17.png"],
+  13: ["/images/s-block/handwritten-18.png", "/images/s-block/handwritten-19.png"]
+};
+
+function pagesForGroup(groupIndex: number) {
+  const group = chapterGroups[groupIndex];
+  const matched = notePages.filter((page) => group.keys.some((key) => page.title.toLowerCase().includes(key.toLowerCase())));
+  const assigned = new Set(chapterGroups.flatMap((g, i) => i === groupIndex ? [] : g.keys.map(k => k.toLowerCase())));
+  if (groupIndex === 0) {
+    const unassigned = notePages.filter(page => !chapterGroups.some(g => g.keys.some(k => page.title.toLowerCase().includes(k.toLowerCase()))));
+    return [...matched, ...unassigned];
+  }
+  return matched;
+}
+
+export default function SBlockNCERTHandwrittenMasterCorrected() {
   const [query, setQuery] = useState("");
-  const [active, setActive] = useState(0);
-  const filtered = useMemo(() => notePages.map((p,i)=>({p,i})).filter(({p})=>JSON.stringify(p).toLowerCase().includes(query.toLowerCase())), [query]);
-  const page = notePages[active];
+  const [activeGroup, setActiveGroup] = useState(0);
+  const pages = useMemo(() => {
+    const source = pagesForGroup(activeGroup);
+    if (!query.trim()) return source;
+    const q = query.toLowerCase();
+    return source.filter(page => JSON.stringify(page).toLowerCase().includes(q));
+  }, [activeGroup, query]);
+  const group = chapterGroups[activeGroup];
+  const images = handwrittenImages[activeGroup + 1] || [];
+
   return <main className="shell">
     <aside>
       <div className="brand">SYNERGIC BOND</div>
-      <h1>s-Block NCERT Master Notes</h1>
-      <input aria-label="Search notes" value={query} onChange={(e: { target: { value: string } })=>setQuery(e.target.value)} placeholder="Search reaction, compound, trend..." />
-      <nav>{filtered.map(({p,i})=><button key={p.title} className={i===active?"active":""} onClick={()=>setActive(i)}><span>{String(i+1).padStart(2,"0")}</span>{p.title}</button>)}</nav>
+      <h1>s-Block Master Textbook</h1>
+      <p className="sideNote">13 integrated chapters. NCERT, handwritten notes, reactions, data and JEE extensions are placed inside the relevant chemistry—not repeated as separate cards.</p>
+      <input aria-label="Search notes" value={query} onChange={(e) => setQuery(e.target.value)} placeholder="Search within this chapter..." />
+      <nav>{chapterGroups.map((item, index) => <button key={item.title} className={index === activeGroup ? "active" : ""} onClick={() => { setActiveGroup(index); setQuery(""); }}><span>{String(index + 1).padStart(2, "0")}</span>{item.title}</button>)}</nav>
     </aside>
     <article>
-      <header><span className="eyebrow">JEE ADVANCED • NCERT-CORE • HANDWRITTEN-IMAGE INTEGRATED V3</span><h2>{page.title}</h2><p className="summary">{page.summary}</p></header>
-      {page.paragraphs.map((x,i)=><p key={i} className="theory">{x}</p>)}
-      <Diagram type={page.diagram} />
-      {page.core.length>0 && <section><h3>Core statements</h3><ul>{page.core.map(x=><li key={x}>{x}</li>)}</ul></section>}
-      {page.equations.length>0 && <section><h3>Equations and reaction set</h3><div className="equations">{page.equations.map(x=><code key={x}>{x}</code>)}</div></section>}
-      {page.table && <section><h3>Data / comparison table</h3><div className="tableWrap"><table><thead><tr>{page.table[0].map(x=><th key={x}>{x}</th>)}</tr></thead><tbody>{page.table.slice(1).map((r,i)=><tr key={i}>{r.map((x,j)=><td key={j}>{x}</td>)}</tr>)}</tbody></table></div></section>}
-      {page.jee.length>0 && <section className="jee"><h3>JEE Advanced focus</h3>{page.jee.map(x=><p key={x}>◆ {x}</p>)}</section>}
-      <section className="worked"><h3>Worked checkpoint</h3><p><b>Question.</b> {page.example[0]}</p><p><b>Answer.</b> {page.example[1]}</p></section>
-      <footer><button disabled={active===0} onClick={()=>setActive(active-1)}>Previous</button><span>{active+1} / {notePages.length}</span><button disabled={active===notePages.length-1} onClick={()=>setActive(active+1)}>Next</button></footer>
+      <header><span className="eyebrow">NCERT CORE • YOUR HANDWRITTEN NOTES • JEE ADVANCED</span><h2>{group.title}</h2><p className="summary">All relevant theory, preparations, reactions, data, diagrams, exceptions and sequence-based material are consolidated in this chapter.</p></header>
+
+      {images.length > 0 && <figure className="visualStrip">
+        {images.map((src, index) => <img key={src} src={src} alt={`${group.title} handwritten source ${index + 1}`} loading="lazy" />)}
+        <figcaption>Your handwritten source pages integrated into this chapter. The typed material below expands and organises every usable point.</figcaption>
+      </figure>}
+
+      {pages.length === 0 && <p className="empty">No matching content in this chapter.</p>}
+      {pages.map((page, pageIndex) => <section className="topic" key={`${page.title}-${pageIndex}`}>
+        <h3>{page.title.replace(/^NCERT Core\s*-\s*/i, "")}</h3>
+        <p className="topicSummary">{page.summary}</p>
+        {page.paragraphs.map((text, index) => <p key={index} className="theory">{text}</p>)}
+        <Diagram type={page.diagram} />
+        {page.core.length > 0 && <div className="contentBlock"><h4>Core theory and facts</h4><ul>{page.core.map((text) => <li key={text}>{text}</li>)}</ul></div>}
+        {page.equations.length > 0 && <div className="contentBlock"><h4>Preparations and reactions</h4><div className="equations">{page.equations.map((text) => <code key={text}>{text}</code>)}</div></div>}
+        {page.table && <div className="contentBlock"><h4>Data and comparison</h4><div className="tableWrap"><table><thead><tr>{page.table[0].map((text) => <th key={text}>{text}</th>)}</tr></thead><tbody>{page.table.slice(1).map((row, rowIndex) => <tr key={rowIndex}>{row.map((text, columnIndex) => <td key={columnIndex}>{text}</td>)}</tr>)}</tbody></table></div></div>}
+        {page.jee.length > 0 && <div className="jee"><h4>JEE Advanced focus</h4>{page.jee.map((text) => <p key={text}>◆ {text}</p>)}</div>}
+        <div className="worked"><h4>Checkpoint</h4><p><b>Question.</b> {page.example[0]}</p><p><b>Answer.</b> {page.example[1]}</p></div>
+      </section>)}
+
+      <footer><button disabled={activeGroup === 0} onClick={() => setActiveGroup(activeGroup - 1)}>Previous chapter</button><span>{activeGroup + 1} / {chapterGroups.length}</span><button disabled={activeGroup === chapterGroups.length - 1} onClick={() => setActiveGroup(activeGroup + 1)}>Next chapter</button></footer>
     </article>
     <style jsx>{`
       :global(body){margin:0;background:#07111f;color:#eaf2ff;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
-      .shell{min-height:100vh;display:grid;grid-template-columns:340px 1fr;background:radial-gradient(circle at 85% 5%,#12365b 0,#07111f 34%)}
-      aside{position:sticky;top:0;height:100vh;overflow:hidden;border-right:1px solid #24415f;background:#081522eF;padding:24px;box-sizing:border-box}
-      .brand{font-size:12px;letter-spacing:.22em;color:#66d9ff;font-weight:800} h1{font-size:22px;margin:8px 0 18px} input{width:100%;box-sizing:border-box;border:1px solid #315577;background:#0c2034;color:white;border-radius:10px;padding:12px;margin-bottom:14px}
-      nav{height:calc(100vh - 150px);overflow:auto;display:flex;flex-direction:column;gap:6px} nav button{text-align:left;border:0;background:transparent;color:#aebed0;padding:9px 10px;border-radius:9px;cursor:pointer;display:flex;gap:9px;line-height:1.25} nav button span{color:#59d8ff;font-variant-numeric:tabular-nums} nav button.active,nav button:hover{background:#153453;color:white}
-      article{max-width:1020px;width:100%;margin:0 auto;padding:52px 54px 90px;box-sizing:border-box} .eyebrow{font-size:11px;letter-spacing:.18em;color:#61d9ff;font-weight:800} h2{font-size:38px;line-height:1.12;margin:12px 0 14px} .summary{font-size:18px;line-height:1.65;color:#c7d7e8;border-left:4px solid #61d9ff;padding-left:18px}
-      .theory{font-size:16px;line-height:1.75;color:#d7e4f1} section,.diagram{margin:26px 0;padding:22px;border:1px solid #284967;border-radius:16px;background:#0b1c2e} h3{margin:0 0 14px;color:#7ce4ff} ul{line-height:1.65} li{margin:7px 0} .equations{display:grid;gap:8px} code,.formula{display:block;background:#06101b;border:1px solid #244965;padding:12px;border-radius:9px;color:#fff;font-family:"Cambria Math",ui-monospace,monospace;white-space:pre-wrap}
-      .tableWrap{overflow:auto} table{border-collapse:collapse;width:100%;font-size:14px} th,td{border:1px solid #31516d;padding:9px;vertical-align:top} th{background:#173c5b;color:#fff} td{color:#dce8f4} .jee{border-color:#806b2a;background:#211d0e} .jee h3{color:#ffd76b} .worked{border-color:#285e4f;background:#0d251f}
-      .flow{display:flex;gap:8px;align-items:center;flex-wrap:wrap} .flow span{padding:10px 12px;border:1px solid #3a6688;border-radius:10px;background:#102b43} .flow b{color:#69dfff} .moGrid{display:grid;grid-template-columns:repeat(5,1fr);gap:8px} .moGrid div{padding:12px;border:1px solid #305672;border-radius:10px;text-align:center} .moGrid span,.moGrid small{display:block;margin-top:5px} .electron{width:66px;height:66px;border:2px solid #65e4ff;border-radius:50%;display:grid;place-items:center;margin:12px auto;font-size:22px;font-weight:800;box-shadow:0 0 25px #43c8ff55}
-      article footer{display:flex;justify-content:space-between;align-items:center;margin-top:38px} article footer button{border:1px solid #315577;background:#102941;color:#fff;padding:10px 18px;border-radius:9px} article footer button:disabled{opacity:.35}
-      @media(max-width:900px){.shell{display:block}aside{position:relative;height:auto}nav{height:280px}article{padding:30px 20px}h2{font-size:30px}.moGrid{grid-template-columns:1fr 1fr}}
+      .shell{min-height:100vh;display:grid;grid-template-columns:330px 1fr;background:radial-gradient(circle at 85% 5%,#12365b 0,#07111f 34%)}
+      aside{position:sticky;top:0;height:100vh;overflow:hidden;border-right:1px solid #24415f;background:#081522f2;padding:24px;box-sizing:border-box}.brand{font-size:12px;letter-spacing:.22em;color:#66d9ff;font-weight:800}h1{font-size:22px;margin:8px 0}.sideNote{font-size:12px;line-height:1.5;color:#9eb3c8;margin:0 0 14px}input{width:100%;box-sizing:border-box;border:1px solid #315577;background:#0c2034;color:white;border-radius:10px;padding:12px;margin-bottom:14px}nav{height:calc(100vh - 220px);overflow:auto;display:flex;flex-direction:column;gap:6px}nav button{text-align:left;border:0;background:transparent;color:#aebed0;padding:10px;border-radius:9px;cursor:pointer;display:flex;gap:9px;line-height:1.3}nav button span{color:#59d8ff;font-variant-numeric:tabular-nums}nav button.active,nav button:hover{background:#153453;color:white}
+      article{max-width:1120px;width:100%;margin:0 auto;padding:48px 54px 90px;box-sizing:border-box}.eyebrow{font-size:11px;letter-spacing:.18em;color:#61d9ff;font-weight:800}h2{font-size:40px;line-height:1.12;margin:12px 0 14px}.summary{font-size:18px;line-height:1.65;color:#c7d7e8;border-left:4px solid #61d9ff;padding-left:18px}
+      .visualStrip{margin:30px 0 42px;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px}.visualStrip img{width:100%;height:auto;border-radius:14px;border:1px solid #284967;background:#000}.visualStrip figcaption{grid-column:1/-1;color:#9fb4c8;font-size:13px}
+      .topic{padding:6px 0 42px;margin:0 0 40px;border-bottom:1px solid #29445e;background:transparent}.topic h3{font-size:28px;line-height:1.25;margin:0 0 10px;color:#8be8ff}.topicSummary{font-size:17px;line-height:1.6;color:#c5d5e5;margin:0 0 18px}.theory{font-size:16px;line-height:1.78;color:#d7e4f1}.contentBlock,.diagram,.jee,.worked{margin:22px 0;padding:20px;border:1px solid #284967;border-radius:14px;background:#0b1c2e}.contentBlock h4,.jee h4,.worked h4{margin:0 0 12px;color:#7ce4ff;font-size:17px}ul{line-height:1.65}li{margin:7px 0}.equations{display:grid;gap:8px}code,.formula{display:block;background:#06101b;border:1px solid #244965;padding:12px;border-radius:9px;color:#fff;font-family:"Cambria Math",ui-monospace,monospace;white-space:pre-wrap}.tableWrap{overflow:auto}table{border-collapse:collapse;width:100%;font-size:14px}th,td{border:1px solid #31516d;padding:9px;vertical-align:top}th{background:#173c5b;color:#fff}td{color:#dce8f4}.jee{border-color:#806b2a;background:#211d0e}.jee h4{color:#ffd76b}.worked{border-color:#285e4f;background:#0d251f}
+      .flow{display:flex;gap:8px;align-items:center;flex-wrap:wrap}.flow span{padding:10px 12px;border:1px solid #3a6688;border-radius:10px;background:#102b43}.flow b{color:#69dfff}.moGrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:8px}.moGrid div{padding:12px;border:1px solid #305672;border-radius:10px;text-align:center}.moGrid span,.moGrid small{display:block;margin-top:5px}.electron{width:66px;height:66px;border:2px solid #65e4ff;border-radius:50%;display:grid;place-items:center;margin:12px auto;font-size:22px;font-weight:800;box-shadow:0 0 25px #43c8ff55}
+      article footer{display:flex;justify-content:space-between;align-items:center;margin-top:38px}article footer button{border:1px solid #315577;background:#102941;color:#fff;padding:10px 18px;border-radius:9px}article footer button:disabled{opacity:.35}.empty{padding:30px;border:1px dashed #315577;border-radius:12px}
+      @media(max-width:900px){.shell{display:block}aside{position:relative;height:auto}nav{height:360px}article{padding:30px 20px}h2{font-size:31px}.visualStrip{grid-template-columns:1fr}}
     `}</style>
   </main>;
 }

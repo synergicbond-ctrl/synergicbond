@@ -161,6 +161,20 @@ export default function AdsorptionPage() {
           </p>
         </header>
 
+        
+        <figure className="master-adsorption-infographic">
+          <img
+            src="/notes/jee-advanced/surface-chemistry/adsorption/adsorption-complete-dark-infographic.png"
+            alt="Complete Adsorption and Surface Chemistry infographic covering 24 major concepts"
+            loading="eager"
+            decoding="async"
+          />
+          <figcaption>
+            Adsorption and Surface Chemistry — complete visual concept map
+          </figcaption>
+        </figure>
+
+
         <AdsorptionContent html={adsorptionHtml} />
 
         <footer className="back-link">
@@ -448,6 +462,43 @@ export default function AdsorptionPage() {
           color: #cffafe;
           text-decoration: none;
         }
+
+        
+        .master-adsorption-infographic {
+          width: 100%;
+          margin: 0 0 28px;
+          padding: 12px;
+          overflow: hidden;
+          border: 1px solid rgba(34, 211, 238, 0.28);
+          border-radius: 22px;
+          background: #03070d;
+          box-shadow: 0 28px 72px rgba(0, 0, 0, 0.42);
+        }
+
+        .master-adsorption-infographic img {
+          display: block;
+          width: 100%;
+          height: auto;
+          border-radius: 14px;
+          background: #03070d;
+        }
+
+        .master-adsorption-infographic figcaption {
+          margin-top: 11px;
+          color: #94a3b8;
+          font-size: 0.84rem;
+          line-height: 1.5;
+          text-align: center;
+        }
+
+        /*
+         * Hide old DOCX figures containing external logos.
+         * The new dark infographic replaces them visually.
+         */
+        :global(.adsorption-content .adsorption-figure) {
+          display: none;
+        }
+
 
         @media (max-width: 700px) {
           .adsorption-shell {

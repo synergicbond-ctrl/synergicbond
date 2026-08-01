@@ -18,7 +18,7 @@ means exactly that — no claim of correctness is made either way.
 | 5 | Salt Analysis | **Audited — real content gap found, not fixed** | See below. |
 | 6 | Hydrogen | **Audited, clean — minor orphan-asset cleanup only** | See below. |
 | 7 | Polymers | **Audited, clean** | See below. |
-| 8 | Formal Charges | Not started | |
+| 8 | Formal Charges | **Audited — real gap found, not fixed** | See below. |
 | 9 | Liquid Solutions | Not started | |
 | 10 | Chemical Kinetics | Not started | |
 | 11 | Gaseous State | Not started | |
@@ -173,6 +173,22 @@ means exactly that — no claim of correctness is made either way.
 - **Note for whoever audits content next**: because of the compression, any future manual
   content review of this chapter needs to decode it first — a plain read of the `.ts` files in
   the repo won't show the real prose.
+
+### Formal Charges — audited, real gap found, not fixed
+- Architecture clean: plain text (not compressed), `katex.renderToString()` server-side, custom
+  `parseNotes()` line parser, 0 branding hits.
+- **Real gap**: zero `<svg>` or `<img>` elements anywhere in the 749-line page. Every occurrence
+  of "Structure" is a text label ("Structure I:", "Contributor I:", "Testing Structures with
+  Experimental Bond Lengths") describing a Lewis structure in prose, never an actual drawn
+  diagram — e.g. the cyanate-vs-fulminate resonance comparison, a worked example the file spends
+  real space on, has no accompanying structure image at all. The handover doc explicitly lists
+  Formal Charges among the chapters requiring drawn structures and explicitly says "Do not
+  replace a required chemical structure with plain text alone" — this chapter currently does
+  exactly that.
+- **Not fixed this pass**: drawing chemically accurate Lewis-structure SVGs (correct
+  connectivity, lone pairs, formal-charge labels, resonance arrows) for the examples this
+  chapter actually discusses is real, precision-sensitive work — flagged rather than rushed,
+  same reasoning as the Salt Analysis mnemonics/traps gap.
 
 ## Scope note on "scientific verification"
 

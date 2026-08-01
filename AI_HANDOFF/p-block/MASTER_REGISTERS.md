@@ -3076,6 +3076,9 @@ controlled cation dimerisation.**
 
 `Br₂ + SbF₅ —(BrF₃)→ [Br₂]⁺[Sb₃F₁₆]⁻` — note the counter-ion here is
 **Sb₃F₁₆⁻**, not Sb₂F₁₁⁻. Different halogen, different fluoroantimonate.
+**Correction (Addendum 31): this equation was transcribed but never balance-
+checked. It does not balance as printed — see contradiction 81. Corrected form:
+`2Br₂ + 7SbF₅ → 2[Br₂]⁺[Sb₃F₁₆]⁻ + SbF₃`.**
 
 `Cl₂ + ClF₃ + AsF₅ → [Cl₃]⁺[AsF₆]⁻ + F₂`
 `Br₂ + BrF₃ + AsF₅ → [Br₃]⁺[AsF₆]⁻ + F₂`
@@ -7038,3 +7041,78 @@ a `SAMPLED` triage is not a guarantee of no new content.**
 **File 12: 90 + 2 = 92 of 184 deeply read.**
 **`FULL — PARTIALLY UNIQUE` queue unchanged at 36 of 99 read, 63 remaining**
 — this range was drawn from the `SAMPLED` bucket.
+
+---
+
+# Addendum 31 — correction to pre-existing Addendum 12: the [Br₂]⁺[Sb₃F₁₆]⁻ equation was transcribed but never balance-checked
+
+**No new page read.** While preparing to read PDF 161–162 as the next range,
+cross-checking the current registers first (per this shift's own standing
+practice, reinforced by Addendum 28's finding) showed **the range is already
+fully done — Addendum 12, predating this shift, already covers both pages as
+`DEEP READ — UNIQUE REGISTERED`**, complete with the `2I₂+5SbF₅` equation
+correctly identified and fixed as **contradiction 55**. `SESSION_HANDOFF.md`
+§3 already listed PDF 161–162 correctly among the closed `FULL — UNIQUE` queue;
+**only this shift's own §4 "next work" pointer was wrong**, an error introduced
+when Addendum 29's handoff edit was written — corrected in place, no new
+addendum needed for the page range itself.
+
+**One genuine gap was found on re-inspection, however**, exactly the kind this
+project's code-validation habit exists to catch: **Addendum 12 transcribed a
+second cation-preparation equation on the same page and flagged it as
+noteworthy, but never ran a balance check on it.**
+
+## A. Contradiction 81 — printed 630, the [Br₂]⁺[Sb₃F₁₆]⁻ preparation is missing its coefficients and its by-product
+
+**Source form as printed (confirmed at 1200 dpi, and already transcribed
+identically in the pre-existing Addendum 12 §B):**
+`Br₂ + SbF₅ →(BrF₅) [Br₂]⁺[Sb₃F₁₆]⁻`. **Addendum 12 noted the counter-ion as
+unusual ("Sb₃F₁₆⁻, not Sb₂F₁₁⁻ — different halogen, different
+fluoroantimonate") but did not check whether the equation balances.**
+
+*The issue:* Br 2/2 (coincidentally fine), **Sb 1/3 and F 5/16 — both fail
+badly, and by a ratio (16:3) that no integer multiple of SbF₅'s fixed 5:1
+F:Sb ratio can ever produce alone.** A bare `Br₂ + SbF₅ →` cannot supply enough
+fluorine to build `[Sb₃F₁₆]⁻` (three SbF₅ units contribute only 15 F, one
+short of 16) without either an additional fluoride source or a redox partner
+releasing F⁻.
+
+*Correction, from conservation combined with electron balance — the same
+method that resolved the parallel iodine equation in Addendum 12 §A:* the
+missing fluorine and the missing by-product are the same phenomenon. Each
+`Br₂ → [Br₂]⁺` releases one electron; each `SbF₅ → SbF₃` (releasing 2 F⁻)
+absorbs two. Setting `c` copies of the salt and `d` copies of `SbF₃` with
+`c = 2d` for electron balance, and solving the atom-balance equations
+alongside it, gives a unique integer solution:
+
+**`2Br₂ + 7SbF₅ → 2[Br₂]⁺[Sb₃F₁₆]⁻ + SbF₃`**
+
+Checked: Br 4/4, Sb 7/(6+1)=7, F 35/(32+3)=35. **Balances exactly**, and the
+by-product `SbF₃` this reveals is the same by-product the immediately
+preceding `2I₂+5SbF₅` equation (contradiction 55) already carries — **SbF₅
+plays the identical dual role (oxidant and fluoride-acceptor) in both
+reactions, and the printed Br₂ line simply drops the by-product the printed
+I₂ line correctly kept.** *Verification needed:* none — settled by
+conservation and electron balance together, exactly as contradiction 55 was.
+*Safe for inclusion:* the corrected six-term equation; **the printed two-term
+form is incomplete, not merely under-coefficented.**
+
+## B. Register-count effects
+
+- **Topics, species, visuals: unchanged.** This is a balance correction to
+  existing material, not new content.
+- **Contradictions: 80 → 81.** One added — **81**, following the identical
+  conservation-plus-electron-balance method already used for contradiction 55
+  on the same source page, twelve addenda apart.
+- **A note on how this was found:** re-verifying a page believed already
+  complete, rather than assuming completeness from its addendum number, is
+  what caught this — the same discipline that found contradiction 75
+  (Addendum 26) in material older than this shift.
+
+---
+
+# Correction to `SESSION_HANDOFF.md` §4
+
+**PDF 161–162 requires no further reading.** The "next work" pointer written
+during Addendum 29 was in error; corrected to point at PDF 163–164 instead,
+which remains genuinely unread.

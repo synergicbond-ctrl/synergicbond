@@ -38,7 +38,7 @@ that its dev server is separately broken by an unrelated RSC-manifest fault.
 
 **Register IDs:** Topics **A1–A450** (contiguous, no gaps, no duplicates, every
 one a table row) · Visuals **V175** · MO cases **E45** (E17 expanded) · Traps and numbered
-items **331** · Contradictions **25–80** · Source defects **D1–D14** ·
+items **331** · Contradictions **25–81** · Source defects **D1–D14** ·
 `[UNCLEAR]` **5 distinct items**.
 
 ---
@@ -102,13 +102,14 @@ PDF 123–124 (Addendum 27), PDF 145–152 (Addendum 28), PDF 153–158
 
 1. **63 remaining `FULL — PARTIALLY UNIQUE` pages** (unchanged — PDF 159–160
    was drawn from the `SAMPLED` bucket), in section-sized ranges.
-   **Next: PDF 161–162 (printed 629–630, basic properties of the halogens —
-   halogen cations, `FULL — UNIQUE`, absent from file 8 entirely) — currently
-   in progress; PDF 161 fully read, PDF 162 (the cation-preparation equations
-   in superacid media) mid-verification.** **Then PDF 163–164 (printed
-   631–632, pseudohalogens, `SAMPLED — DUPLICATE OF FILE 8`).** These two
-   ranges close out the rest of Chapter 16 (Group 17) before Chapter 17
-   (Group 18) resumes.
+   **Correction (Addendum 31): PDF 161–162 requires no further reading — it
+   was already `DEEP READ — UNIQUE REGISTERED` in pre-existing Addendum 12,
+   predating this shift.** The previous version of this pointer was wrong.
+   Re-checking it did surface one genuine gap: the `[Br₂]⁺[Sb₃F₁₆]⁻` equation
+   there was transcribed but never balance-checked — now fixed as
+   contradiction 81. **Next: PDF 163–164 (printed 631–632, pseudohalogens,
+   `SAMPLED — DUPLICATE OF FILE 8`).** This range closes out the rest of
+   Chapter 16 (Group 17) before Chapter 17 (Group 18) resumes.
 
 2. **Important finding from Addendum 28, reinforced by Addendum 29's own
    `A420`/`A435` cross-references: check the full registers, not just the
@@ -137,7 +138,9 @@ PDF 123–124 (Addendum 27), PDF 145–152 (Addendum 28), PDF 153–158
    synthesis equation from PDF 154 (printed 622), read contradiction 79** — six
    equations there under-coefficient the product against an X₂ reactant.
    **Before quoting `IF₅+KI→[IF₆]⁻`, read contradiction 80** — the reagent
-   should be KF, not KI.
+   should be KF, not KI. **Before quoting the [Br₂]⁺[Sb₃F₁₆]⁻ preparation,
+   read contradiction 81** — the printed form drops both coefficients and the
+   SbF₃ by-product; use `2Br₂+7SbF₅→2[Br₂]⁺[Sb₃F₁₆]⁻+SbF₃`.
 
 After file 12: the two handwritten sources (vision required), then JD Lee 5th ed.
 Ch. 12–13.

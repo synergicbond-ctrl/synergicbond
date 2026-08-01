@@ -436,7 +436,22 @@ Addendum 20 and not derived by subtraction.
   superscript "14" with no legend on the page or in the chapter.** **None is
   guessed; all four are marked unsafe to publish until re-read.**
 - **`FULL — UNIQUE`: 37 / 37 — CLOSED.**
-- **`FULL — PARTIALLY UNIQUE`: 36 / 99 read, 63 remaining.** Seventh post-queue
+- **`FULL — PARTIALLY UNIQUE`: 36 / 99 read, 63 remaining — unchanged by the
+  two items below, both drawn from outside this bucket.**
+  **Correction (Addendum 31):** re-checking PDF 161–162 before starting a new
+  range found it was **already fully read in pre-existing Addendum 12**
+  (predating this shift); no new reading was needed, but the check surfaced
+  **one new contradiction (81)** — the `[Br₂]⁺[Sb₃F₁₆]⁻` preparation on that
+  page was transcribed in Addendum 12 but never balance-checked; corrected to
+  `2Br₂+7SbF₅→2[Br₂]⁺[Sb₃F₁₆]⁻+SbF₃` by the same conservation-plus-electron-
+  balance method already used for the adjacent, already-known contradiction 55.
+  **PDF 159–160 = printed 627–628** (Addendum 30), the second range drawn from
+  the `SAMPLED` bucket: IF₅/IF₇'s completed orbital derivations (two genuine
+  structural figures) and polyhalides in full — 10 topics (A441–A450), 3
+  visuals, 7 traps, **zero new contradictions** (the first range since
+  Addendum 22 with none), and **E17 expanded** with an explicit MO-derived
+  bond order (0.5) for I₃⁻ rather than a new MO case.
+  Seventh post-queue
   range **PDF 153–158 = printed 621–626** (Addendum 29), interhalogen compounds
   in full: 26 topics (A415–A440), 4 visuals, 10 traps, **2 new contradictions
   (79 — six related interhalogen-synthesis equations under-coefficented against

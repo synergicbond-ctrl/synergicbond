@@ -19,7 +19,7 @@ means exactly that — no claim of correctness is made either way.
 | 6 | Hydrogen | **Audited, clean — minor orphan-asset cleanup only** | See below. |
 | 7 | Polymers | **Audited, clean** | See below. |
 | 8 | Formal Charges | **Audited — real gap found, not fixed** | See below. |
-| 9 | Liquid Solutions | Not started | |
+| 9 | Liquid Solutions | **Fixed (this branch)** | See below. |
 | 10 | Chemical Kinetics | Not started | |
 | 11 | Gaseous State | Not started | |
 | 12 | Solid State | Not started | Also has a confirmed duplicate-route situation (`master/` 10-part vs `parts/` 23-file legacy) — noted, not yet investigated. |
@@ -189,6 +189,25 @@ means exactly that — no claim of correctness is made either way.
   connectivity, lone pairs, formal-charge labels, resonance arrows) for the examples this
   chapter actually discusses is real, precision-sensitive work — flagged rather than rushed,
   same reasoning as the Salt Analysis mnemonics/traps gap.
+
+### Liquid Solutions (17 parts) — fixed
+- Confirmed exactly **17 parts**, matching the handover doc's expected count.
+- **Real bug found and fixed — same failure class as Environmental Chemistry**: a
+  `SourceBadge` component rendered "SOURCE PDF · Page N" / "SOURCE PDF · Pages 2–3" publicly
+  next to every example, derivation, table, and theory card (4 separate call sites in the shared
+  `Block()` renderer, live across all 17 parts — confirmed 92 populated `sourcePages` values in
+  the source data). The chapter hero also publicly showed "Current part source: {page range}"
+  in its meta row. Both removed; the underlying `sourcePages` data field is left in place
+  (unused now, available for an internal source-coverage matrix later). Also removed the
+  now-dead `.ls-source-badge` CSS (2 rules).
+- A `sourceLabel` field exists in the type but is never populated in any of the 17 parts' data —
+  left as-is, genuinely inert, not a live bug.
+- Math/formula rendering doesn't use KaTeX at all — a small custom `ChemText` component handles
+  only `_subscript` / `^superscript` notation via regex. This works for the simple algebraic
+  formulas used here but wouldn't scale to complex LaTeX; not a bug given the current content,
+  just architecturally simpler than the KaTeX-based chapters.
+- Branding scan: 0 hits across all 17 parts' source data files.
+- Verified: `tsc --noEmit` clean after the fix.
 
 ## Scope note on "scientific verification"
 

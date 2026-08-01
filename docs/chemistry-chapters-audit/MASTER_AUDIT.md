@@ -23,7 +23,7 @@ means exactly that — no claim of correctness is made either way.
 | 10 | Chemical Kinetics | **Partial fix (this branch)** | Source-note leak fixed (see below); full audit not done. |
 | 11 | Gaseous State | **Partial fix (this branch)** | Source-note leak + a severe branding leak fixed (see below); full audit not done. |
 | 12 | Solid State | **Partial fix (this branch)** | Severe branding leak fixed across 25 files (see below). The `master/` vs `parts/` situation was investigated and turned out NOT to be a duplicate needing reconciliation — see ROUTE_AUDIT.md (includes a logged self-correction of an incorrect route change that was caught and reverted before being committed). |
-| 13 | F-Block Elements | Not started | |
+| 13 | F-Block Elements | **Audited, clean** | 4 parts (report of actual count, as the doc requested). See below. |
 | 14 | Cross-chapter navigation | Partially touched | Only the one `UniversalChapterNavigator.tsx` entry for S-Block was updated as a side effect of the S-Block fix. No broader nav audit done. |
 
 ## What "done" means for the two completed items
@@ -254,6 +254,18 @@ Narayana, Physics Wallah, Sri Chaitanya, Vibrant, Resonance) across all 13 chapt
 outside the "Kohinoor" cases above was the legitimate chemistry term "resonance" (resonance
 structures/stabilisation), not the coaching institute. No further branding fixes needed in the
 audited chapters from that sweep.
+
+### F-Block Elements — audited, clean
+- Actual part count: **4** (`app/notes/f-block/content/part1.ts` through `part4.ts`, matching
+  `parts.ts`'s definitions). The doc asked to "report actual count" since it didn't know.
+- Same clean architecture as Hydrogen: `remark-gfm` + `remark-math` + `rehype-katex`, zero
+  `dangerouslySetInnerHTML`.
+- Branding scan (including "kohinoor" this time, given what was found elsewhere): 0 hits.
+- Source-note-leak pattern (`sourcePages`/`sourceNote`/"SOURCE PDF"/"Source coverage"): 0 hits —
+  this chapter doesn't have the bug found in 5 other chapters.
+- Visuals: original inline SVG components (`visuals.tsx`, 177 lines, e.g. a periodic-position
+  diagram showing the detached lanthanoid/actinoid rows) — no external image files, so no
+  branding-in-raster-image risk like Adsorption/Environmental Chemistry had.
 
 ## Scope note on "scientific verification"
 

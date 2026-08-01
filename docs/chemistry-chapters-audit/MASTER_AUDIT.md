@@ -16,7 +16,7 @@ means exactly that — no claim of correctness is made either way.
 | 3 | S-Block Elements | **Done (this branch)** | Route de-duplication only — see below. Content itself (both old and new versions) not independently fact-checked against a primary source in this pass. |
 | 4 | Environmental Chemistry | **Fixed (this branch)** | See below. |
 | 5 | Salt Analysis | **Audited — real content gap found, not fixed** | See below. |
-| 6 | Hydrogen | Not started | |
+| 6 | Hydrogen | **Audited, clean — minor orphan-asset cleanup only** | See below. |
 | 7 | Polymers | Not started | |
 | 8 | Formal Charges | Not started | |
 | 9 | Liquid Solutions | Not started | |
@@ -134,6 +134,23 @@ means exactly that — no claim of correctness is made either way.
 - **Not fixed this pass**: writing genuinely good JEE traps, mnemonics, and placing the existing
   structure/visual components at the right points across 18 parts is real content-authoring
   work, not a quick structural fix — flagged rather than rushed.
+
+### Hydrogen (8 parts, 22-section master markdown) — audited, clean
+- Actual part count: **8** (the handover doc asked to "report actual count" since it didn't
+  know). Parts map to a 22-section master markdown (`HYDROGEN_MASTER_MARKDOWN` in `content.ts`).
+- **Best architecture found so far**: `_markdown.tsx` uses `react-markdown` +
+  `remark-gfm` + `remark-math` + `rehype-katex` — exactly the doc's explicitly preferred stack
+  (Section 7 names `remark-math + rehype-katex` directly). Zero `dangerouslySetInnerHTML`
+  anywhere in the renderer.
+- Branding scan: 0 hits. All 26 referenced SVG figures exist on disk, semantic filenames,
+  unique descriptive captions (no index-junk like the old Adsorption figures).
+- **Minor finding, fixed**: 8 SVG files existed in `public/notes/hydrogen/` but were never
+  referenced — `05_ortho_para.svg`, `09_water_ice.svg`, `10_hard_water.svg`,
+  `11_ion_exchange.svg`, `12_h2o2.svg`, `18_metallic_interstitial_hydride.svg`,
+  `19_water_geometry.svg`, `26_fuel_cell_storage.svg`. These were earlier drafts superseded by
+  later-numbered versions of the same topics (e.g. `27_ortho_para_spin.svg` supersedes
+  `05_ortho_para.svg`) — confirmed via `comm` diff that all 26 actually-referenced files were
+  untouched. Deleted; `public/notes/hydrogen/` now contains exactly the 26 referenced files.
 
 ## Scope note on "scientific verification"
 

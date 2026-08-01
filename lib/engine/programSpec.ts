@@ -156,7 +156,7 @@ export const AUTHORED_NOTES: Record<string, string> = {
   "redox-reactions": "/notes/redox-reactions",
   "solid-state": "/learn/solid-state",
   "hydrogen": "/notes/hydrogen",
-  "s-block-elements": "/notes/s-block",
+  "s-block-elements": "/learn/jee-advanced/inorganic-chemistry/s-block",
   "p-block-elements": "/notes/p-block",
   "d-and-f-block-elements": "/notes/d-block",
   "f-block-elements": "/notes/f-block",

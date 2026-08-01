@@ -15,7 +15,7 @@ means exactly that — no claim of correctness is made either way.
 | 2 | Surface Chemistry (12-part) | **Audited, clean — no changes needed** | See below. |
 | 3 | S-Block Elements | **Done (this branch)** | Route de-duplication only — see below. Content itself (both old and new versions) not independently fact-checked against a primary source in this pass. |
 | 4 | Environmental Chemistry | **Fixed (this branch)** | See below. |
-| 5 | Salt Analysis | Not started | |
+| 5 | Salt Analysis | **Audited — real content gap found, not fixed** | See below. |
 | 6 | Hydrogen | Not started | |
 | 7 | Polymers | Not started | |
 | 8 | Formal Charges | Not started | |
@@ -108,6 +108,32 @@ means exactly that — no claim of correctness is made either way.
   **Not fixed — flagged for follow-up.** The remaining 21 images were not individually opened;
   a full image-by-image visual QA pass has not been done for this chapter.
 - No duplicate part titles across the 15 parts.
+
+### Salt Analysis (18-part) — audited, real gap found, not fixed
+- **Architecture is actually solid, contrary to initial suspicion.** All 18 parts share one
+  renderer, `SaltAnalysisArticle.tsx`, which parses a lightweight custom markdown format.
+  `dangerouslySetInnerHTML` appears 7 times in that one file, but every use is fed either
+  `katex.renderToString()` output (both inline `$...$` and block `$$...$$` math, including
+  `\mathrm{}` chemical equations) or an `inlineMarkup()` helper that HTML-entity-escapes first
+  and only then substitutes rendered KaTeX/bold/code spans. This is the doc's *preferred*
+  server-side-KaTeX pattern, not the fragile client-side-scan pattern that caused the Adsorption
+  bugs. No raw-LaTeX-leak risk found.
+- Branding scan: 0 hits in source text. Spot-checked 2 of the ~35 figure images directly
+  (`flame-emission-spectrum.webp` and one other) — clean, no logos, scientifically correct flame
+  colours.
+- **Real gap**: `SaltAnalysisStructures.tsx` (214 lines) and `SaltAnalysisVisuals.tsx` (273
+  lines) are fully built and correctly wired into the renderer via `[STRUCTURE:...]` /
+  `[VISUAL:...]` tags — but **zero** of the 18 content parts actually use either tag. ~487 lines
+  of built-but-unused components.
+- **Real gap, matches the handover doc's own cited founder complaint**: "JEE trap" appears
+  exactly once and "mnemonic" appears zero times across all 18 parts combined. The handover doc
+  explicitly lists "mnemonics" and "JEE traps" among things the founder previously reported
+  missing for this chapter — that complaint appears to still be valid. Colours (199 mentions)
+  and solubility (56 mentions) are well covered, so not everything on that historical list is
+  still missing.
+- **Not fixed this pass**: writing genuinely good JEE traps, mnemonics, and placing the existing
+  structure/visual components at the right points across 18 parts is real content-authoring
+  work, not a quick structural fix — flagged rather than rushed.
 
 ## Scope note on "scientific verification"
 

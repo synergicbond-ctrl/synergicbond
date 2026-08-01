@@ -15,7 +15,7 @@ means exactly that — no claim of correctness is made either way.
 | 2 | Surface Chemistry (12-part) | **Audited, clean — no changes needed** | See below. |
 | 3 | S-Block Elements | **Done (this branch)** | Route de-duplication only — see below. Content itself (both old and new versions) not independently fact-checked against a primary source in this pass. |
 | 4 | Environmental Chemistry | **Fixed (this branch)** | See below. |
-| 5 | Salt Analysis | **Audited — real content gap found, not fixed** | See below. |
+| 5 | Salt Analysis | **Audited — narrower gap than first reported (see logged correction below)** | See below. |
 | 6 | Hydrogen | **Audited, clean — minor orphan-asset cleanup only** | See below. |
 | 7 | Polymers | **Audited, clean** | See below. |
 | 8 | Formal Charges | **Gap fixed (this branch)** | 3 Lewis-structure diagrams added — see below. |
@@ -125,15 +125,25 @@ means exactly that — no claim of correctness is made either way.
   lines) are fully built and correctly wired into the renderer via `[STRUCTURE:...]` /
   `[VISUAL:...]` tags — but **zero** of the 18 content parts actually use either tag. ~487 lines
   of built-but-unused components.
-- **Real gap, matches the handover doc's own cited founder complaint**: "JEE trap" appears
-  exactly once and "mnemonic" appears zero times across all 18 parts combined. The handover doc
-  explicitly lists "mnemonics" and "JEE traps" among things the founder previously reported
-  missing for this chapter — that complaint appears to still be valid. Colours (199 mentions)
-  and solubility (56 mentions) are well covered, so not everything on that historical list is
-  still missing.
-- **Not fixed this pass**: writing genuinely good JEE traps, mnemonics, and placing the existing
+- **Correction to an earlier checkpoint in this same file**: this section originally claimed
+  "JEE trap" appears once and mnemonics are absent, based on a `grep -i "jee trap"` search. That
+  search was wrong — the chapter's actual heading format is `## N. JEE Advanced traps` (with
+  "Advanced" in between, breaking the literal 2-word substring match), so the search produced a
+  false negative. Rechecking properly (`grep "JEE Advanced traps"` / `Dry-test traps`): **11 of
+  the 18 parts have a dedicated traps section, totalling 94 individual numbered trap items**
+  (part02 "Dry-test traps", parts 03/06/07/08/09/10/11/12/13/14 "JEE Advanced traps"). This part
+  of the handover doc's cited founder complaint does **not** hold up — traps are extensive and
+  substantive (sample, from part08: "Test ammonium before adding any ammonium reagent",
+  "Group II uses acidic H₂S; Group IV uses ammoniacal sulphide", "Remove H₂S before Group III
+  and Group V steps"). Apologies for the earlier wrong claim — logging the correction rather than
+  quietly editing it away, same as the Solid State routing mistake earlier in this file.
+- **What genuinely is still missing**: "mnemonic" (and synonyms — "memory aid", "memory device",
+  "acronym") still return zero hits with a corrected, broader search. So the mnemonics half of
+  the founder's complaint holds up; the traps half doesn't.
+- **Not fixed this pass**: writing genuine mnemonic content and placing the existing
   structure/visual components at the right points across 18 parts is real content-authoring
-  work, not a quick structural fix — flagged rather than rushed.
+  work — flagged rather than rushed. Given how much of this chapter already has real trap
+  coverage, the remaining gap is narrower than originally reported.
 
 ### Hydrogen (8 parts, 22-section master markdown) — audited, clean
 - Actual part count: **8** (the handover doc asked to "report actual count" since it didn't

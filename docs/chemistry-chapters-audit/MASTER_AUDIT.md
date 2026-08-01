@@ -17,7 +17,7 @@ means exactly that — no claim of correctness is made either way.
 | 4 | Environmental Chemistry | **Fixed (this branch)** | See below. |
 | 5 | Salt Analysis | **Audited — real content gap found, not fixed** | See below. |
 | 6 | Hydrogen | **Audited, clean — minor orphan-asset cleanup only** | See below. |
-| 7 | Polymers | Not started | |
+| 7 | Polymers | **Audited, clean** | See below. |
 | 8 | Formal Charges | Not started | |
 | 9 | Liquid Solutions | Not started | |
 | 10 | Chemical Kinetics | Not started | |
@@ -151,6 +151,28 @@ means exactly that — no claim of correctness is made either way.
   later-numbered versions of the same topics (e.g. `27_ortho_para_spin.svg` supersedes
   `05_ortho_para.svg`) — confirmed via `comm` diff that all 26 actually-referenced files were
   untouched. Deleted; `public/notes/hydrogen/` now contains exactly the 26 referenced files.
+
+### Polymers (26 sections) — audited, clean
+- Confirmed exactly **26 sections**, matching the handover doc's expected count.
+- **Notable architecture quirk, not a bug**: the actual content isn't in the 8
+  `polymer-data-0N.ts` files as readable text — each contains a fragment of a single
+  brotli-compressed, base64-encoded blob (`polymer-content.ts` concatenates all 8 fragments
+  then calls `brotliDecompressSync`). A plain-text `grep` across these files finds nothing,
+  which would have made a branding/leak scan silently look "clean" for the wrong reason. Decoded
+  the actual JSON (53KB, 26 sections) via a one-off Node script to check the real content: 0
+  branding hits, 0 "source note"/"source coverage" leaks, 18 KaTeX `formula` blocks, 11 worked
+  examples, 1 quiz block.
+- Math rendering: `katex.renderToString()` server-side with `katex/contrib/mhchem` (the doc's
+  explicitly named preferred chemistry-notation extension). `dangerouslySetInnerHTML` is used
+  but only ever fed KaTeX's own render output.
+- Visuals: a modest set of original inline SVGs (`PolymerChainVisual` plus a
+  `PolymerVisualGallery` of `PolymerArchitectureVisual` / `ThermalBehaviourVisual` /
+  `SustainabilityVisual`) rather than one image per section — repeat-unit/monomer structures are
+  instead shown via bracketed KaTeX formula notation (e.g. `[-CH2-CH2-]n` style), which is
+  standard, textbook-correct practice for JEE-level polymer content, not a gap by itself.
+- **Note for whoever audits content next**: because of the compression, any future manual
+  content review of this chapter needs to decode it first — a plain read of the `.ts` files in
+  the repo won't show the real prose.
 
 ## Scope note on "scientific verification"
 

@@ -7116,3 +7116,151 @@ form is incomplete, not merely under-coefficented.**
 **PDF 161–162 requires no further reading.** The "next work" pointer written
 during Addendum 29 was in error; corrected to point at PDF 163–164 instead,
 which remains genuinely unread.
+
+---
+
+# Addendum 32 — file 12 PDF 163–164 (printed 631–632): I⁺ chemistry in full, and pseudohalogens — a genuinely new topic
+
+**Tenth range, and the last of Chapter 16 (Group 17).** PDF 163 completes the
+positive-iodine chemistry begun on PDF 161–162 (Addendum 12, pre-shift) with
+material not covered there at all — an ion-exchange preparation, pyridine
+complexes, ICl₃ self-ionisation, and the I³⁺ electrolysis evidence. **PDF 164
+opens an entirely untouched subject: pseudohalogens and pseudohalides do not
+appear anywhere else in this corpus, in any group, under any name** — not CN⁻,
+not SCN⁻, not N₃⁻, none of it, confirmed by direct search before writing this
+addendum.
+
+| PDF | Printed | Section | Original triage | Deep-read outcome | File-8 equivalent |
+|---|---|---|---|---|---|
+| 163 | 631 | I⁺ chemistry continued: ion-exchange, pyridine complexes, ICl₃ self-ionisation, I³⁺ evidence; pseudohalogens opening | `SAMPLED — DUPLICATE OF FILE 8` | **`DEEP READ — CONTRADICTION FOUND`** + partial additions | §10.65/10.66 |
+| 164 | 632 | Table 16.17; CN⁻'s six halide-like properties; chapter close | `SAMPLED — DUPLICATE OF FILE 8` | `DEEP READ — PARTIAL ADDITIONS REGISTERED` | §10.66 |
+
+**Why both pages were triaged `SAMPLED` despite this yield.** Both map to file-8
+§10.65/10.66, and file 8's own polyhalide/pseudohalogen sections are indeed
+present there — but, as Addendum 25 and Addendum 30 already found for other
+`SAMPLED` pages, **the label describes agreement with file 8, not with the
+whole corpus.** File 8's pseudohalogen coverage evidently did not survive into
+this project's registers when file 8 was originally processed, and this page
+is the first time any of it enters the corpus.
+
+## A. PDF 163 (printed 631) — I⁺ chemistry: ion exchange, pyridine complexes, ICl₃, and I³⁺
+
+**Equations checked:** `H⁺Resin⁻+I₂→I⁺Resin⁻+HI` (H1/1, I2/2, **balances**,
+Resin⁻ a spectator throughout); `I⁺Resin⁻+KI→I₂+K⁺Resin⁻` (I2/2, K1/1,
+**balances**); `I⁺Resin⁻+alcoholic HNO₃→INO₃+H⁺Resin⁻` (I1/1, N1/1, O3/3, H1/1,
+**balances**); `I⁺+OH⁻→HOI` (I1/1, O1/1, H1/1, charge 0/0, **balances**);
+`2HOI+OI⁻→IO₃⁻+2I⁻+2H⁺` (I3/3, O3/3, H2/2, charge −1/−1, **balances**);
+`2ICl₃⇌[ICl₂]⁺+[ICl₄]⁻` (I2/2, Cl6/6, charge 0/0, **balances**);
+`I(acetate)₃⇌I³⁺+3(acetate⁻)` (charge 0/0, **balances**, trivially).
+
+| # | Topic | Content |
+|---|---|---|
+| A451 | **ICl as an electrophilic iodinating agent, with two named organic transformations** | **"ICl behaves as an electrophilic iodinating agent. It converts acetanilide to 4-iodoacetanilide, and salicylic acid to 3,5-diiodosalicylic acid. Because the attacked sites have an electron excess, the iodine must be positive."** Expands A424 (ICl on salicylic acid giving chlorination or iodination depending on solvent) with **two specific, named products** and the general **electron-rich-site selectivity argument**, applied here to acetanilide as a second substrate. |
+| A452 | **I⁺ isolated on an ion-exchange resin — a genuinely novel preparative method** | **Passing I₂ in an inert solvent down a cationic ion-exchange column retains some iodine in the resin**: `H⁺Resin⁻+I₂→I⁺Resin⁻+HI`. **The retained I⁺ can be eluted with KI (to estimate the amount of I⁺ quantitatively) or reacted directly with other reagents while still resin-bound**: `I⁺Resin⁻+KI→I₂+K⁺Resin⁻`; **with anhydrous H₂SO₄, giving I₂SO₄** (see contradiction 82 for the printed coefficient error); **with alcoholic HNO₃, giving INO₃**: `I⁺Resin⁻+alcoholic HNO₃→INO₃+H⁺Resin⁻`. A solid-supported cation reservoir, used both analytically (KI elution) and synthetically (direct reaction) — a preparative method with no analogue elsewhere in the corpus. |
+| A453 | **Why I⁺ cannot survive plain water, and the disproportionation that follows** | **"I⁺ reacts with OH⁻ in aqueous solutions"**: `I⁺+OH⁻→HOI`, and HOI itself is unstable to further disproportionation, `2HOI+OI⁻→IO₃⁻+2I⁻+2H⁺` — **already registered in equation form (A85's polyhalide/disproportionation material), but not previously tied explicitly to I⁺'s hydrolytic instability as the reason it needs a stabilising ligand at all.** **"For this reason I⁺ will only exist in water if it is stabilized by coordination to some other molecule."** |
+| A454 | **I⁺ stabilised by pyridine and other ligands — four named crystalline complexes** | **A large number of compounds contain I⁺ stabilised in a complex ion. Named pyridine complexes: [I(pyridine)₂]NO₃, [I(pyridine)₂]ClO₄, [I(pyridine)]acetate and [I(pyridine)]benzoate.** **[I(pyridine)₂]⁺ itself is already registered** (A220, from ICl's pyridine ionisation) **but these four specific isolable salts, with two different pyridine:I⁺ stoichiometries (2:1 and 1:1) and four different counter-ions, are new.** |
+| A455 | **ICl₃'s own self-ionisation — a second, distinct ionisation from ICl's** | **Molten ICl₃ has a high conductivity, 8.4×10⁻³ Ω⁻¹cm⁻¹. Electrolysing it liberates both I₂ and Cl₂ at both electrodes**, exactly the diagnostic already used for ICl (A219) — **consistent with `2ICl₃⇌[ICl₂]⁺+[ICl₄]⁻`.** **This is a genuinely distinct self-ionisation from ICl's own `3ICl⇌[I₂Cl]⁺+[ICl₂]⁻`** (already registered) — same elements, different stoichiometry, different ion pair, because the starting interhalogen is a different compound. |
+| A456 | **I³⁺ — proposed from a quantitative electrolysis experiment, but with no structural confirmation** | **Treating I₂ with fuming HNO₃ and acetic anhydride gives the ionic compound I(acetate)₃.** **Electrolysing a saturated I(acetate)₃/acetic-anhydride solution with silver electrodes deposits one equivalent of AgI at the cathode for every three Faradays of electricity passed** — a quantitative electrochemical measurement, `I(acetate)₃⇌I³⁺+3(acetate⁻)`, that "would seem to indicate" I³⁺. **"There is no structural evidence for the presence of I³⁺."** The source is explicit about the gap between an electrochemical inference (three electrons per iodine centre) and structural proof — **registered as an open question, not asserted as a confirmed species.** **Two further compounds that may contain I³⁺, named but equally unconfirmed: iodine phosphate IPO₄ and iodine fluorosulphonate I(SO₃F)₃.** |
+
+### Contradiction 82 — printed 631, the I⁺Resin⁻/H₂SO₄ equation is short by a factor of 2
+
+**Source form as printed:** `I⁺Resin⁻ + anhydrous H₂SO₄ → I₂SO₄ + H⁺Resin⁻`.
+**Confirmed at 1200 dpi.** *The issue:* **iodine does not balance** — 1 on the
+left, 2 on the right (I₂SO₄ carries two iodines per formula unit, since it is
+the salt of I⁺ paired with SO₄²⁻, i.e. effectively (I⁺)₂SO₄²⁻). *Correction,
+from conservation, treating Resin⁻ as an inert spectator paired 1:1 with each
+cation throughout — exactly as it is on every other line on this page:*
+**`2I⁺Resin⁻ + H₂SO₄ → I₂SO₄ + 2H⁺Resin⁻`** — I 2/2, H 2/2, S 1/1, O 4/4.
+**Verification needed:** none — settled by conservation once the resin is
+recognised as a spectator, which the surrounding equations on the same page
+already establish as the house convention. *Safe for inclusion:* the corrected
+form with the coefficient 2 on both the reactant and product resin species;
+**the printed 1:1:1:1 form cannot be right given the printed product
+formula.** This is the same "missing factor of 2" pattern already seen at
+contradictions 55, 79 and 81 — **the fourth instance in this audit**, all
+independently found by running the balance check rather than trusting the
+printed coefficients.
+
+## B. PDF 164 (printed 632) — pseudohalogens: an entirely new topic, registered from scratch
+
+**No equations to check beyond the six-point CN⁻ list, which is qualitative.**
+
+| # | Topic | Content |
+|---|---|---|
+| A457 | **Pseudohalide ions defined, and why they earn the name** | **"A few ions are known, consisting of two or more atoms of which at least one is N, that have properties similar to those of the halide ions. They are therefore called pseudohalide ions. Pseudohalide ions are univalent, and these form salts resembling the halide salts. For example, the sodium salts are soluble in water, but the silver salts are insoluble. The hydrogen compounds are acids like the halogen acids HX."** The defining criterion is explicit and narrow: **polyatomic, univalent, at least one nitrogen**, and the analogy is tested against three concrete halide behaviours (Na⁺ salt solubility, Ag⁺ salt insolubility, HX-like acidity) rather than asserted loosely. |
+| A458 | **Table 16.17 — every pseudohalogen family, anion/acid/dimer, six species deep** | Transcribed in full, with connectivity preserved rather than merged (per this project's standing policy against treating isomers as interchangeable): **CN⁻ cyanide ion / HCN hydrogen cyanide / (CN)₂ cyanogen. SCN⁻ thiocyanate ion / HSCN thiocyanic acid / (SCN)₂ thiocyanogen. SeCN⁻ selenocyanate ion / (no acid given) / (SeCN)₂ selenocyanogen. OCN⁻ cyanate ion / HOCN cyanic acid (no dimer). NCN²⁻ cyanamide ion / H₂NCN cyanamide (no dimer). ONC⁻ fulminate ion / HONC fulminic acid (no dimer). N₃⁻ azide ion / HN₃ hydrogen azide (no dimer).** **Cyanate (OCN⁻, O-bonded to C) and fulminate (ONC⁻, connectivity reversed) are two distinct, non-interchangeable ions — registered separately per the source's own distinct rows, not merged as "isomers of the same formula."** Cyanamide is the only ion carrying a 2− charge; every other pseudohalide in the table is univalent, consistent with A457's stated definition — **cyanamide is therefore an edge case the table includes without reconciling against its own stated rule**, recorded as such rather than silently squared away. |
+| A459 | **Three pseudohalogens actually dimerise, matching X₂; four do not** | **"These ions combine to form dimers comparable with the halogen molecules X₂. These include cyanogen (CN)₂, thiocyanogen (SCN)₂ and selenocyanogen (SeCN)₂."** Table 16.17 itself shows **no dimer entry for cyanate, cyanamide, fulminate or azide** — the analogy to X₂ holds for exactly three of the seven pseudohalide families and is not claimed for the rest. |
+| A460 | **CN⁻'s six-point resemblance to Cl⁻, Br⁻ and I⁻ — the source's own checklist, with two genuinely new interhalogen-analogue species** | **"The best known pseudohalide is CN⁻. This resembles Cl⁻, Br⁻ and I⁻ in the following respects: (1) It forms an acid HCN. (2) It can be oxidized to form a molecule cyanogen (CN)₂. (3) It forms insoluble salts with Ag⁺, Pb²⁺ and Hg⁺. (4) Interpseudohalogen compounds ClCN, BrCN and ICN can be formed." **ICN's self-ionisation is already registered** (A425: `3ICN⇌[I₂CN]⁺+[I(CN)₂]⁻`); **ClCN and BrCN, named here as existing alongside it, are new species the corpus did not have.** **(5) AgCN is insoluble in water but soluble in ammonia, as is AgCl** — the pseudohalide silver-salt behaviour runs in exact parallel to A352's silver-halide ladder, closing part of that still-open gap by analogy rather than by new AgX data (the true AgF-exception question A352 leaves open is unaffected — this is a parallel for AgCN, not new information about AgF). **(6) It forms a large number of complexes similar to halide complexes, e.g. [Cu(CN)₄]²⁻ and [CuCl₄]²⁻, and [Co(CN)₆]³⁻ and [CoCl₆]³⁻** — two matched cyanide/chloride complex pairs, the coordination-chemistry capstone of the halide/pseudohalide analogy.** |
+
+## C. Visual register — addition V176
+
+| ID | Required visual kind | Subject |
+|---|---|---|
+| V176 | **Comparison graphic** | Table 16.17 redrawn as a three-column family map (anion → acid → dimer) with the three genuinely X₂-like dimers (cyanogen, thiocyanogen, selenocyanogen) highlighted and the four non-dimerising pseudohalides (cyanate, cyanamide, fulminate, azide) visually distinguished — plus a side panel pairing each of CN⁻'s six halide-resembling properties with its Cl⁻/Br⁻/I⁻ analogue |
+
+## D. JEE trap register — items 332–338
+
+332. **Cyanate (OCN⁻) and fulminate (ONC⁻) are connectivity isomers, not the
+     same ion** — O bonds to C in one and to N in the other, and the source
+     lists them as two separate rows, not one entry with two names.
+333. **Cyanamide (NCN²⁻) is the one pseudohalide in Table 16.17 that is not
+     univalent** — a 2− ion in a table whose defining rule (A457) says
+     pseudohalides are univalent.
+334. **Only three pseudohalogens actually dimerise to an X₂ analogue**
+     (cyanogen, thiocyanogen, selenocyanogen) — cyanate, cyanamide, fulminate
+     and azide have no listed dimer at all.
+335. **I⁺ cannot exist free in water** — it hydrolyses to HOI, which then
+     disproportionates. Every isolable I⁺ compound relies on a stabilising
+     ligand (pyridine, acetate) or a solid support (ion-exchange resin).
+336. **ICl₃'s self-ionisation (`2ICl₃⇌[ICl₂]⁺+[ICl₄]⁻`) is not the same
+     equilibrium as ICl's (`3ICl⇌[I₂Cl]⁺+[ICl₂]⁻`)** — different interhalogen,
+     different stoichiometry, different ions, despite superficially similar
+     notation.
+337. **I³⁺ is a proposal from an electrolysis measurement (3 Faradays per AgI),
+     not a structurally confirmed species** — the source states this
+     limitation explicitly, and a claim of "I³⁺ exists" without that caveat
+     overstates the evidence.
+338. **AgCN, like AgCl, dissolves in ammonia** — the pseudohalide analogy
+     extends to qualitative-analysis behaviour, not just formula and acidity.
+
+## E. Register-count effects
+
+- **Topics: A450 → A460.** Ten added, **all table rows**, contiguous.
+- **Expanded, IDs kept:** **A424** (ICl's electrophilic iodination, two named
+  substrates added) · **A220** ([I(pyridine)₂]⁺ now has four named isolable
+  salts) · **A219** (ICl₃'s distinct self-ionisation alongside ICl's) · **A85**
+  (the HOI disproportionation tied explicitly to I⁺'s instability in water) ·
+  **A425** (ClCN and BrCN join ICN as the interpseudohalogen family) · **A352**
+  (a parallel silver-pseudohalide behaviour, not new silver-halide data).
+- **Visuals: V175 → V176.** One added.
+- **Traps: 331 → 338.** Seven added.
+- **Contradictions: 81 → 82.** One added — **82**, the I⁺Resin⁻/H₂SO₄ equation,
+  the fourth "missing factor of 2" defect found in this audit (after 55, 79,
+  81), settled by conservation alone.
+- **Source defects, MO cases: unchanged.**
+- **`[UNCLEAR]`: 5 — unchanged.**
+- **New topic area opened, not merely expanded:** pseudohalogens/pseudohalides
+  had **zero prior presence anywhere in the corpus** — confirmed by direct
+  search (CN⁻, SCN⁻, N₃⁻, azide, cyanogen: all zero hits) before this addendum
+  was written, so nothing here duplicates or displaces existing material.
+
+---
+
+# Range closure — PDF 163–164, and Chapter 16 (Group 17) complete
+
+**2 / 2 pages deeply read.** PDF 163 returned `DEEP READ — CONTRADICTION FOUND`
+alongside substantial partial additions; PDF 164 returned `DEEP READ — PARTIAL
+ADDITIONS REGISTERED`, opening pseudohalogens as a wholly new subject.
+
+**File 12: 92 + 2 = 94 of 184 deeply read.**
+**`FULL — PARTIALLY UNIQUE` queue unchanged at 36 of 99 read, 63 remaining**
+— this range was drawn from the `SAMPLED` bucket.
+
+**Chapter 16 (Group 17, PDF 114–166) is now closed for deep reading** in every
+bucket except the 63 remaining `FULL — PARTIALLY UNIQUE` pages that fall
+within it. The next unread page after this range is **PDF 165, printed 633**
+— but that page is already accounted for: it is one of the nine `QUESTION GAP`
+pages closed in Addendum 20. **The next genuinely open work in Group 17 is the
+remaining `FULL — PARTIALLY UNIQUE` pages**; Chapter 17 (Group 18, PDF
+167–184) is the natural place to continue once those are exhausted or a
+Group-18-specific range is chosen instead.

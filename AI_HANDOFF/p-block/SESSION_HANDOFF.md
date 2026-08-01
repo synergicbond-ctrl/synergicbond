@@ -28,17 +28,17 @@ that its dev server is separately broken by an unrelated RSC-manifest fault.
 
 | | |
 |---|---|
-| **Corpus** | **608 / 1915 pages (32 %)** |
+| **Corpus** | **610 / 1915 pages (32 %)** |
 | Files 1–6 | 325 / 437 |
 | File 7 (JD Lee 5th ed., whole book) | 5 / 1057 |
 | **File 8** (JD Lee adapted, Ch. 10, all six groups) | **172 / 172 — COMPLETE** |
 | File 9, 10 (handwritten notes) | 0 / 40, 0 / 11 — vision only, OCR garbled |
 | File 11 (noble gas notes) | 14 / 14 |
-| **File 12** (`15161718.pdf`, JD Lee 5th ed. Ch. 14–17) | 209/209 triaged · **92 / 184 deeply read** |
+| **File 12** (`15161718.pdf`, JD Lee 5th ed. Ch. 14–17) | 209/209 triaged · **94 / 184 deeply read** |
 
-**Register IDs:** Topics **A1–A450** (contiguous, no gaps, no duplicates, every
-one a table row) · Visuals **V175** · MO cases **E45** (E17 expanded) · Traps and numbered
-items **331** · Contradictions **25–81** · Source defects **D1–D14** ·
+**Register IDs:** Topics **A1–A460** (contiguous, no gaps, no duplicates, every
+one a table row) · Visuals **V176** · MO cases **E45** (E17 expanded) · Traps and numbered
+items **338** · Contradictions **25–82** · Source defects **D1–D14** ·
 `[UNCLEAR]` **5 distinct items**.
 
 ---
@@ -98,18 +98,26 @@ AgNO₃ silver-halide ladder with ammonia, and the boiling point of helium.
 **PDF 117–122 (Addendum 22), PDF 131–136 (Addendum 23), PDF 137–138
 (Addendum 24), PDF 167–170 (Addendum 25), PDF 139–144 (Addendum 26),
 PDF 123–124 (Addendum 27), PDF 145–152 (Addendum 28), PDF 153–158
-(Addendum 29) and PDF 159–160 (Addendum 30) are done.**
+(Addendum 29), PDF 159–160 (Addendum 30) and PDF 163–164 (Addendum 32) are
+done. Addendum 31 corrected a stale pointer and a pre-shift defect in
+PDF 161–162, already covered by pre-existing Addendum 12 — no new pages.**
+
+**Chapter 16 (Group 17, PDF 114–166) is now closed for deep reading except
+for the remaining `FULL — PARTIALLY UNIQUE` pages within it.**
 
 1. **63 remaining `FULL — PARTIALLY UNIQUE` pages** (unchanged — PDF 159–160
-   was drawn from the `SAMPLED` bucket), in section-sized ranges.
-   **Correction (Addendum 31): PDF 161–162 requires no further reading — it
-   was already `DEEP READ — UNIQUE REGISTERED` in pre-existing Addendum 12,
-   predating this shift.** The previous version of this pointer was wrong.
-   Re-checking it did surface one genuine gap: the `[Br₂]⁺[Sb₃F₁₆]⁻` equation
-   there was transcribed but never balance-checked — now fixed as
-   contradiction 81. **Next: PDF 163–164 (printed 631–632, pseudohalogens,
-   `SAMPLED — DUPLICATE OF FILE 8`).** This range closes out the rest of
-   Chapter 16 (Group 17) before Chapter 17 (Group 18) resumes.
+   and PDF 163–164 were both drawn from the `SAMPLED` bucket), in
+   section-sized ranges. **PDF 161–162 needed no reading at all** — see
+   Addendum 31: already `DEEP READ — UNIQUE REGISTERED` in pre-existing
+   Addendum 12, predating this shift; re-checking it surfaced contradiction 81
+   (an uncaught `[Br₂]⁺[Sb₃F₁₆]⁻` balance error). **PDF 163–164 is now done**
+   (Addendum 32) — completed I⁺ chemistry and opened pseudohalogens as a
+   wholly new topic (contradiction 82).
+
+   **Chapter 16 (Group 17) is closed for deep reading except for its 63
+   remaining `FULL — PARTIALLY UNIQUE` pages.** Pick the next range from
+   those, or move into Chapter 17 (Group 18, PDF 167–184) — PDF 167–170 is
+   already done (Addendum 25); the rest of Group 18 is unread.
 
 2. **Important finding from Addendum 28, reinforced by Addendum 29's own
    `A420`/`A435` cross-references: check the full registers, not just the
@@ -140,7 +148,9 @@ PDF 123–124 (Addendum 27), PDF 145–152 (Addendum 28), PDF 153–158
    **Before quoting `IF₅+KI→[IF₆]⁻`, read contradiction 80** — the reagent
    should be KF, not KI. **Before quoting the [Br₂]⁺[Sb₃F₁₆]⁻ preparation,
    read contradiction 81** — the printed form drops both coefficients and the
-   SbF₃ by-product; use `2Br₂+7SbF₅→2[Br₂]⁺[Sb₃F₁₆]⁻+SbF₃`.
+   SbF₃ by-product; use `2Br₂+7SbF₅→2[Br₂]⁺[Sb₃F₁₆]⁻+SbF₃`. **Before quoting
+   the I⁺Resin⁻/H₂SO₄ equation, read contradiction 82** — it needs a
+   coefficient of 2 on both resin species: `2I⁺Resin⁻+H₂SO₄→I₂SO₄+2H⁺Resin⁻`.
 
 After file 12: the two handwritten sources (vision required), then JD Lee 5th ed.
 Ch. 12–13.

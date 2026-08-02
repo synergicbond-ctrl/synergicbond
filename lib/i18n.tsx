@@ -1,6 +1,6 @@
 "use client";
 
-import { createContext, useContext, useEffect, useState, ReactNode } from "react";
+import { createContext, useContext, useEffect, useSyncExternalStore, ReactNode } from "react";
 
 // Only languages with hand-written translations are selectable. Spanish,
 // Arabic, French and German strings are still carried in DICT below, but they
@@ -188,35 +188,57 @@ function clearStaleGoogTrans() {
   }
 }
 
+const LANG_KEY = "sb_lang";
+
+function isLang(value: string | null): value is Lang {
+  return value !== null && LANGS.some((l) => l.code === value);
+}
+
+// The preference lives in localStorage, which is an external store rather than
+// React state. Subscribing to it keeps the server render and the hydrating
+// client render on English — matching the prerendered HTML — and swaps to the
+// saved language once mounted, with no setState-in-effect cascade.
+const langListeners = new Set<() => void>();
+
+function subscribeLang(onChange: () => void) {
+  langListeners.add(onChange);
+  window.addEventListener("storage", onChange);
+  return () => {
+    langListeners.delete(onChange);
+    window.removeEventListener("storage", onChange);
+  };
+}
+
+function getLangSnapshot(): Lang {
+  const saved = localStorage.getItem(LANG_KEY);
+  return isLang(saved) ? saved : "english";
+}
+
+function getLangServerSnapshot(): Lang {
+  return "english";
+}
+
+function writeLang(l: Lang) {
+  localStorage.setItem(LANG_KEY, l);
+  langListeners.forEach((notify) => notify());
+}
+
 export function LanguageProvider({ children }: { children: ReactNode }) {
-  // Always starts English so the client's first render matches the server HTML;
-  // the saved preference is applied right after mount. Reading localStorage in
-  // the initializer instead would desync hydration.
-  const [lang, setLangState] = useState<Lang>("english");
+  const lang = useSyncExternalStore(subscribeLang, getLangSnapshot, getLangServerSnapshot);
 
   useEffect(() => {
     clearStaleGoogTrans();
-    const saved = localStorage.getItem("sb_lang") as Lang | null;
-    if (saved && LANGS.some((l) => l.code === saved)) {
-      setLangState(saved);
-    } else if (saved) {
-      // A parked language (e.g. spanish) saved by an older build.
-      localStorage.removeItem("sb_lang");
-    }
+    // A preference saved by an older build may name a parked language.
+    if (!isLang(localStorage.getItem(LANG_KEY))) localStorage.removeItem(LANG_KEY);
   }, []);
 
   useEffect(() => {
     document.documentElement.lang = HTML_LANG[lang];
   }, [lang]);
 
-  function setLang(l: Lang) {
-    setLangState(l);
-    localStorage.setItem("sb_lang", l);
-  }
-
   const t = (key: string) => DICT[key]?.[lang] ?? DICT[key]?.english ?? key;
 
-  return <LangContext.Provider value={{ lang, setLang, t }}>{children}</LangContext.Provider>;
+  return <LangContext.Provider value={{ lang, setLang: writeLang, t }}>{children}</LangContext.Provider>;
 }
 
 export const useT = () => useContext(LangContext);

@@ -1,24 +1,24 @@
 "use client";
 
-import { createContext, useContext, useEffect, useState, ReactNode } from "react";
+import { createContext, useContext, useEffect, useSyncExternalStore, ReactNode } from "react";
 
-export type Lang =
-  | "english" | "hindi" | "hinglish"
-  | "spanish" | "arabic" | "french" | "german";
+// Only languages with hand-written translations are selectable. Spanish,
+// Arabic, French and German strings are still carried in DICT below, but they
+// are not offered until their content translations exist.
+export type Lang = "english" | "hindi" | "hinglish";
 
 export const LANGS: { code: Lang; label: string; short: string; flag: string }[] = [
   { code: "english",  label: "English",  short: "EN", flag: "🇬🇧" },
   { code: "hindi",    label: "हिन्दी",     short: "HI", flag: "🇮🇳" },
   { code: "hinglish", label: "Hinglish", short: "HX", flag: "🇮🇳" },
-  { code: "spanish",  label: "Español",  short: "ES", flag: "🇪🇸" },
-  { code: "arabic",   label: "العربية",   short: "AR", flag: "🇸🇦" },
-  { code: "french",   label: "Français", short: "FR", flag: "🇫🇷" },
-  { code: "german",   label: "Deutsch",  short: "DE", flag: "🇩🇪" },
 ];
 
 // Translation dictionary. UI chrome only — technical chemistry content stays English.
-// Order per entry: english, hindi, hinglish, spanish, arabic, french, german
-const DICT: Record<string, Record<Lang, string>> = {
+// Every entry must cover the three selectable languages; the parked ones
+// (spanish, arabic, french, german) are kept so re-enabling them is a one-line change.
+type Entry = Record<Lang, string> & Record<string, string>;
+
+const DICT: Record<string, Entry> = {
   "nav.notes":        { english: "Notes", hindi: "नोट्स", hinglish: "Notes", spanish: "Notas", arabic: "ملاحظات", french: "Notes", german: "Notizen" },
   "nav.assignments":  { english: "Assignments", hindi: "असाइनमेंट", hinglish: "Assignments", spanish: "Tareas", arabic: "واجبات", french: "Devoirs", german: "Aufgaben" },
   "nav.quiz":         { english: "Quiz", hindi: "क्विज़", hinglish: "Quiz", spanish: "Examen", arabic: "اختبار", french: "Quiz", german: "Quiz" },
@@ -166,31 +166,91 @@ type Ctx = { lang: Lang; setLang: (l: Lang) => void; t: (key: string) => string 
 
 const LangContext = createContext<Ctx>({ lang: "english", setLang: () => {}, t: (k) => k });
 
-export function LanguageProvider({ children }: { children: ReactNode }) {
-  const [lang, setLangState] = useState<Lang>(() => {
-    const saved = (typeof window !== "undefined" && localStorage.getItem("sb_lang")) as Lang | null;
-    return saved && LANGS.some((l) => l.code === saved) ? saved : "english";
-  });
+const HTML_LANG: Record<Lang, string> = { english: "en", hindi: "hi", hinglish: "en" };
 
-  // apply direction (RTL for Arabic) + html lang
-  useEffect(() => {
-    if (typeof document === "undefined") return;
-    document.documentElement.dir = lang === "arabic" ? "rtl" : "ltr";
-    const map: Record<Lang, string> = {
-      english: "en", hindi: "hi", hinglish: "en", spanish: "es",
-      arabic: "ar", french: "fr", german: "de",
-    };
-    document.documentElement.lang = map[lang];
-  }, [lang]);
+// A previous build machine-translated the page via Google Translate, which
+// needed a `googtrans` cookie plus a full reload to apply it. Clear any
+// leftover cookie once so stale visitors are not left in a translated DOM.
+//
+// A cookie is only removable from the exact domain it was set on. Google's
+// widget sets googtrans on the registrable domain (.synergicbond.com) while
+// the page runs on www.synergicbond.com, so the parent domain must be tried
+// too — that mismatch is why the old code could never clear its own cookie.
+const SITE_DOMAINS = ["synergicbond.com", "www.synergicbond.com"];
 
-  function setLang(l: Lang) {
-    setLangState(l);
-    if (typeof window !== "undefined") localStorage.setItem("sb_lang", l);
+function clearStaleGoogTrans() {
+  if (!document.cookie.includes("googtrans")) return;
+  const expire = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/";
+  const host = window.location.hostname;
+  const parent = host.split(".").slice(1).join(".");
+
+  // "" is the host-only cookie, which carries no domain attribute at all.
+  const domains = new Set(["", host, `.${host}`]);
+  if (parent.includes(".")) {
+    domains.add(parent);
+    domains.add(`.${parent}`);
   }
+  for (const site of SITE_DOMAINS) {
+    domains.add(site);
+    domains.add(`.${site}`);
+  }
+
+  for (const domain of domains) {
+    document.cookie = domain ? `${expire}; domain=${domain}` : expire;
+  }
+}
+
+const LANG_KEY = "sb_lang";
+
+function isLang(value: string | null): value is Lang {
+  return value !== null && LANGS.some((l) => l.code === value);
+}
+
+// The preference lives in localStorage, which is an external store rather than
+// React state. Subscribing to it keeps the server render and the hydrating
+// client render on English — matching the prerendered HTML — and swaps to the
+// saved language once mounted, with no setState-in-effect cascade.
+const langListeners = new Set<() => void>();
+
+function subscribeLang(onChange: () => void) {
+  langListeners.add(onChange);
+  window.addEventListener("storage", onChange);
+  return () => {
+    langListeners.delete(onChange);
+    window.removeEventListener("storage", onChange);
+  };
+}
+
+function getLangSnapshot(): Lang {
+  const saved = localStorage.getItem(LANG_KEY);
+  return isLang(saved) ? saved : "english";
+}
+
+function getLangServerSnapshot(): Lang {
+  return "english";
+}
+
+function writeLang(l: Lang) {
+  localStorage.setItem(LANG_KEY, l);
+  langListeners.forEach((notify) => notify());
+}
+
+export function LanguageProvider({ children }: { children: ReactNode }) {
+  const lang = useSyncExternalStore(subscribeLang, getLangSnapshot, getLangServerSnapshot);
+
+  useEffect(() => {
+    clearStaleGoogTrans();
+    // A preference saved by an older build may name a parked language.
+    if (!isLang(localStorage.getItem(LANG_KEY))) localStorage.removeItem(LANG_KEY);
+  }, []);
+
+  useEffect(() => {
+    document.documentElement.lang = HTML_LANG[lang];
+  }, [lang]);
 
   const t = (key: string) => DICT[key]?.[lang] ?? DICT[key]?.english ?? key;
 
-  return <LangContext.Provider value={{ lang, setLang, t }}>{children}</LangContext.Provider>;
+  return <LangContext.Provider value={{ lang, setLang: writeLang, t }}>{children}</LangContext.Provider>;
 }
 
 export const useT = () => useContext(LangContext);

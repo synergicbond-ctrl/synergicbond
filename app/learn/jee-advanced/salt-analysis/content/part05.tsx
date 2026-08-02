@@ -110,6 +110,8 @@ $$
 \mathrm{[Fe(H_2O)_6]^{2+}+NO\rightarrow[Fe(H_2O)_5(NO)]^{2+}+H_2O}
 $$
 
+[STRUCTURE:brown-ring]
+
 The brown nitrosyl iron complex is often written as $\mathrm{[Fe(H_2O)_5NO]SO_4}$ in the sulphate medium.
 
 #### Why the ring is at the interface

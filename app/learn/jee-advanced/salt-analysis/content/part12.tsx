@@ -205,6 +205,8 @@ $$
 \mathrm{Ni^{2+}+2H_2DMG+2OH^-\rightarrow Ni(DMG)_2\downarrow+2H_2O}
 $$
 
+[STRUCTURE:ni-dmg]
+
 The square-planar chelate is intensely coloured and highly characteristic.
 
 Conditions:

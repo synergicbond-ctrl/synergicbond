@@ -152,6 +152,8 @@ $$
 \mathrm{2CrO_4^{2-}+2H^+\rightleftharpoons Cr_2O_7^{2-}+H_2O}
 $$
 
+[STRUCTURE:chromate-dichromate]
+
 - chromate: yellow;
 - dichromate: orange.
 

@@ -70,6 +70,8 @@ $$
 \mathrm{[Fe(CN)_5NO]^{2-}+S^{2-}\rightarrow[Fe(CN)_5NOS]^{4-}}
 $$
 
+[STRUCTURE:nitroprusside]
+
 The exact electronic description is complex, but the analytical observation is characteristic.
 
 ### 1.6 Oxidation of sulphide
@@ -110,6 +112,8 @@ Removal of $\mathrm{S^{2-}}$ by protonation drives dissolution. Very insoluble s
 
 ## 2. Thiosulphate ion, $\mathrm{S_2O_3^{2-}}$
 
+[STRUCTURE:thiosulfate]
+
 Thiosulphate contains sulphur atoms in different formal environments. It behaves as a reducing agent and decomposes in acid.
 
 ### 2.1 Acid decomposition
@@ -130,6 +134,8 @@ This simultaneous gas-plus-turbidity observation distinguishes thiosulphate from
 $$
 \mathrm{2S_2O_3^{2-}+I_2\rightarrow S_4O_6^{2-}+2I^-}
 $$
+
+[STRUCTURE:tetrathionate]
 
 Thiosulphate reduces iodine to iodide and is oxidised to tetrathionate. This is the basis of iodometric titration.
 

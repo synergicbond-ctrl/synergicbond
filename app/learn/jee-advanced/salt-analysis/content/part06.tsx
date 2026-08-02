@@ -131,6 +131,8 @@ This distinguishes it from calcium carbonate, which dissolves in acetic acid wit
 
 ### 3.3 Permanganate test
 
+[STRUCTURE:permanganate]
+
 In warm acidic solution:
 
 $$

@@ -3,7 +3,6 @@ import type { Metadata } from "next";
 import { ThemeProvider } from "@/components/ThemeContext";
 import { LanguageProvider } from "@/lib/i18n";
 import Navbar from "@/components/Navbar";
-import AutoTranslateBridge from "@/components/AutoTranslateBridge";
 import GlobalEnhancements from "@/components/GlobalEnhancements";
 import UniversalChapterNavigator from "@/components/notes/UniversalChapterNavigator";
 
@@ -49,7 +48,6 @@ export default function RootLayout({
       <body className="min-h-screen bg-[#0B0F19] text-white flex flex-col m-0 p-0 w-full antialiased">
         <ThemeProvider>
           <LanguageProvider>
-            <AutoTranslateBridge />
             <Navbar />
             <UniversalChapterNavigator />
             {children}

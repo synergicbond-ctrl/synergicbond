@@ -9,6 +9,59 @@ not yet committed — see §5 for the isolated-index procedure.**
 
 ---
 
+## 0. PRODUCTION HAS STARTED — read before doing more auditing
+
+As of 2026-08-02 the project's priority moved from **auditing sources** to
+**writing the student-facing textbook**. Auditing continues, but it is now the
+*second* priority. Anything registered but not yet written into a lesson is
+inventory, not product.
+
+### Production log
+
+| Date | Lesson | Route slug | What it added |
+|---|---|---|---|
+| 2026-08-02 | **§21 — Group 13: molecular orbital theory and multicentre bonding** | `part21` (displayed as lesson 5, immediately after `part4`) | First lesson written from the MO register rather than from source prose. Discharges **E27–E31** in full, plus visuals in the spirit of **V63, V64, V65**. |
+
+### Why §21 exists
+
+Sections 2–4 already covered Group 13 chemistry well, but they *asserted* the
+orbital results (back-bonding, 3c–2e bridges, borazine's polarisation) instead
+of deriving them, and carried **no MO diagrams at all**. §21 is the derivation
+layer. It is deliberately a separate lesson rather than an expansion of §4, so
+that §4 stays a chemistry lesson and §21 stays a bonding lesson.
+
+### Numbering convention adopted here — important
+
+`content.ts` sections are **append-only**. §21 is physically the last section
+in the file, but `parts.ts` places it fifth in reading order and renumbers the
+`number` field of every later part. **Slugs were left untouched** (`part5`
+still resolves to Group 14), so no published URL changed. Follow this pattern
+for every future insertion: append the section, position it in `parts.ts`,
+never renumber a slug.
+
+One thing depends on `number`: `pBlockPartMarkdown` prepends the file preamble
+only when `part.number === 1`. Keep `part1` at number 1.
+
+### Next production targets, in order
+
+1. Group 14 MO/bonding lesson — catenation, the silicon–carbon divergence, and
+   the honest treatment of "d-orbital" claims for Si (register policy §6).
+2. Group 15 — the phosphazene bonding question (contradiction 54 is parked
+   pending; the lesson must present it as open, not resolved).
+3. Group 16 — O₂ paramagnetism and the peroxide/superoxide series as a single
+   MO argument.
+
+### Two claims that must never be made in student-facing pages
+
+- **"100% NCERT coverage."** NCERT is still not in the corpus (§7). Coverage
+  against it is unverified. Keep the NCERT-pending ledger internal.
+- **Examination-year tags on Olympiad questions.** No official NSEC/INChO/IChO
+  papers are in the corpus. §21.11 therefore labels its hardest block
+  **"Extension — Olympiad level"** and attributes it to no year or body. Do
+  the same everywhere until real papers are added.
+
+---
+
 ## 1. What this project is
 
 A commercial JEE Advanced p-block chemistry course for synergicbond.com. Twelve

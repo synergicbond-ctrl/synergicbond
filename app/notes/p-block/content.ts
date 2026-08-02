@@ -3762,4 +3762,311 @@ Both can be made from XeO₃ without going through water:
 ## 20.3 How to use these notes with practice questions
 
 After each group, solve a mixed problem set containing a structure question, a redox question, a reaction/condition question and an ordering (trend) question. For every wrong answer, label the failure as one of exactly four types: **fact recall**, **structure/shape**, **oxidation-state bookkeeping**, or **condition/reagent-excess**. This four-way failure log is a far more efficient revision target than re-reading an entire group from the top, because most repeated errors in this chapter cluster in only one or two of these four categories per student.
+
+# 21. Group 13: molecular orbital theory and multicentre bonding
+
+Three valence electrons, three bonds, six electrons around the central atom. Section 4 catalogued how Group 13 cures that deficiency. This section explains **why each cure works**, in orbital language, and — just as important — **which parts of the standard explanation are measurements, which are examination conventions, and which are modern interpretation**. Those three things are usually blurred together. Keeping them apart is what turns memorised structures into predictive chemistry.
+
+## 21.1 The master tool: count electrons before you draw anything
+
+Every structure in this section is decided by one question asked first: **how many valence electrons does the molecule actually have, and how many two-electron bonds would the drawn structure require?** If the second number exceeds the first, the drawing is wrong, and the shortfall tells you exactly how many multicentre bonds must be present.
+
+| Molecule | Valence electrons | Bonds a classical drawing needs | Verdict |
+|---|---|---|---|
+| BF₃ | 24 | 3 σ (6 e) + 3 F lone-pair sets | σ framework fine; the empty 2p_z is the story |
+| B₂H₆ | **12** | 8 B–H bonds = **16 e** | **4 e short → two 3-centre bonds** |
+| Al₂Cl₆ | 48 | 16 e (σ) + 32 e (lone pairs) = **48 e** | **balances exactly** → bridge is **donation**, not deficiency |
+| Al₂(CH₃)₆ | **12** (skeletal) | 8 Al–C bonds = **16 e** | **4 e short → two 3-centre bonds**, exactly as B₂H₆ |
+| B₁₂ cage | 36 | 30 B–B edges = 60 e | **massively short → cage-wide σ delocalisation** |
+
+Notice that Al₂Cl₆ and Al₂(CH₃)₆ appear in every textbook drawn with the *same* bridge. The electron count says they cannot be the same bond. That single line is the most examinable idea in this section, and §21.6 develops it.
+
+## 21.2 Three columns, never merged
+
+For each system below the treatment is split deliberately:
+
+- **Experimental** — bond lengths, bond energies, spectra, reactivity. These are facts and do not change when the model changes.
+- **Examination model** — the localised, hybrid-orbital, resonance-structure account that examinations expect you to be able to draw and use.
+- **Modern interpretation** — the delocalised molecular-orbital account that actually reproduces the measurements.
+
+The examination model is not "wrong"; it is a *localised basis* chosen because it is easy to draw. It becomes wrong only when it is asserted as physical reality — for example, when three resonance structures are offered as an explanation of three equal bonds, which they cannot be, because no single one of them has three equal bonds.
+
+> **A standing rule for this whole course.** Hybridisation is a *choice of basis functions for drawing*, not an observable. Nothing in this section requires d orbitals on boron or aluminium, and none is invoked. Where a d-orbital story is traditional elsewhere in the p-block, it is flagged there as historical, not assumed here.
+
+## 21.3 BF₃: the four-centre π orbital
+
+**Experimental facts to be explained.**
+
+- All three B–F bonds are **exactly equal**, 1.30 Å.
+- That is far shorter than the sum of covalent radii, 0.80 + 0.72 = **1.52 Å**.
+- The B–F bond energy is **646 kJ mol⁻¹**, higher than any other single bond known.
+- On forming an adduct the bond **lengthens to 1.38 Å** in H₃N→BF₃ and **1.39 Å** in Me₃N→BF₃.
+
+**Examination model.** Three resonance structures, each with one localised B=F double bond; the true molecule is the "average". This gives the right bond order and is fine to draw.
+
+**Modern interpretation.** Build the π system honestly. BF₃ is trigonal planar (D₃ₕ), so take the four orbitals perpendicular to the molecular plane — boron's empty 2p_z and one filled 2p_z on each fluorine.
+
+Four atomic orbitals must produce **four** molecular orbitals. By symmetry, boron's 2p_z and one particular in-phase combination of the three fluorine 2p_z orbitals have matching symmetry and interact, giving one **bonding** and one **antibonding** MO. The remaining two fluorine combinations have no boron partner of the right symmetry at all, and are **strictly non-bonding**.
+
+Now fill them. Boron brings **zero** π electrons (its 2p_z is empty — that is the whole point of a Group 13 element); each fluorine brings **two**. Six π electrons enter: two into the bonding MO, four into the non-bonding pair.
+
+~~~viz
+{
+  "type": "MODiagram",
+  "caption": "The π system of BF₃: four p_z orbitals, four molecular orbitals, one bonding pair delocalised over the whole molecule",
+  "describe": "Energy-level diagram. On the left, boron's empty 2p_z orbital, drawn high in energy. On the right, the three fluorine 2p_z orbitals, drawn low. In the centre, four molecular orbitals: a low-lying four-centre bonding orbital holding one electron pair, a degenerate non-bonding pair holding two electron pairs localised on fluorine, and an empty antibonding orbital at the top.",
+  "left": "B 2p_z (empty)",
+  "right": "3 × F 2p_z (filled)",
+  "centre": "BF₃ π manifold",
+  "levels": [
+    { "label": "π* (4-centre, antibonding)", "energy": 92, "electrons": 0, "anti": true },
+    { "label": "non-bonding (fluorine only)", "energy": 52, "electrons": 2, "degenerate": { "electrons": 2 } },
+    { "label": "π (4-centre, bonding)", "energy": 14, "electrons": 2, "mark": true }
+  ],
+  "results": [
+    "One π bonding pair is shared by three B–F links → π contribution of 1/3 per bond",
+    "Total B–F bond order ≈ 1.33, identical for all three bonds by symmetry",
+    "Four non-bonding electrons stay on fluorine — they are not part of the bond"
+  ]
+}
+~~~
+
+This is the crucial difference from the resonance picture. There is **one** π pair in the molecule, not three; it occupies **one** orbital spread over all four atoms; and because that orbital is symmetric under the molecule's own symmetry, the three bonds come out equal **automatically**, not as an average of unequal ones. The measured B–F bond order of about 1.33 is exactly 1 σ + 1/3 π.
+
+> **This is pπ–pπ bonding between second-row atoms.** Both partners use ordinary 2p orbitals of similar size and energy. No d orbitals appear anywhere in the argument, and none are needed.
+
+## 21.4 Why the Lewis acidity order inverts — read from the diagram
+
+Section 4.1 stated the order BF₃ < BCl₃ < BBr₃ < BI₃ and its cause. The MO diagram lets you *derive* it rather than recall it.
+
+When BF₃ accepts a lone pair, boron rehybridises from planar sp² to pyramidal sp³. The 2p_z orbital is consumed by the incoming donor, and **the four-centre π orbital is destroyed**. Adduct formation therefore has to pay back whatever stabilisation that orbital was providing.
+
+That payment is largest where the π overlap was best. Fluorine's 2p orbital is the closest match to boron's 2p in both size and energy, so the π stabilisation in BF₃ is the greatest of the four — and so is the price of giving it up. Down the series the halogen p orbital grows more diffuse, the overlap with a compact boron 2p degrades, the π stabilisation shrinks, and the acid becomes stronger.
+
+~~~viz
+{
+  "type": "OrbitalDiagram",
+  "caption": "What adduct formation costs boron: the acceptor orbital is spent and the π system is dismantled",
+  "describe": "Three boron valence configurations shown as orbital boxes. Ground-state boron has a filled 2s and one singly occupied 2p. Trigonal planar BF₃ uses three sp² hybrids, each singly occupied, leaving an empty perpendicular 2p_z which carries the four-centre π bond. In the adduct, boron is sp³ with four bonding hybrids and no orbital left for π.",
+  "rows": [
+    {
+      "title": "Free boron atom (ground state)",
+      "shells": [
+        { "label": "2s", "boxes": [2] },
+        { "label": "2p", "boxes": [1, 0, 0] }
+      ],
+      "note": "Three valence electrons only — six-electron chemistry starts here."
+    },
+    {
+      "title": "BF₃, trigonal planar",
+      "shells": [
+        { "label": "sp²", "boxes": [1, 1, 1] },
+        { "label": "2p_z", "boxes": [0], "mark": true }
+      ],
+      "note": "The empty 2p_z is both the Lewis-acid site and the orbital carrying the four-centre π bond. It cannot do both jobs at once."
+    },
+    {
+      "title": "H₃N→BF₃ adduct, pyramidal",
+      "shells": [
+        { "label": "sp³", "boxes": [1, 1, 1, 2] }
+      ],
+      "note": "The donor pair fills the fourth hybrid. No orbital remains perpendicular to a plane — there is no plane. π stabilisation is gone, and B–F lengthens 1.30 Å → 1.38 Å."
+    }
+  ]
+}
+~~~
+
+**The bond length is the experiment that settles it.** If back-bonding were a bookkeeping fiction, breaking it would change nothing. Instead the B–F distance jumps by 0.08–0.09 Å the moment an adduct forms — a large change for a bond of this strength, and precisely what removing a third of a bond order predicts.
+
+> **Honest limitation.** Back-bonding is the dominant term but not the only one. A σ-inductive argument also operates: fluorine withdraws σ density and makes boron more positive, which would make BF₃ the *strongest* acid. That contribution is real; it is simply outweighed by the π term. Any answer that presents back-bonding as the sole effect is oversimplifying, and any answer that presents electronegativity alone gets the order backwards.
+
+> **Do not over-read the order.** BF₃ is the weakest of the four *boron* halides and remains an excellent Lewis acid in absolute terms — BF₃·OEt₂ is a standard bench reagent. The sharper diagnostic is comparative: BCl₃ and BBr₃ form adducts with AsH₃; BF₃ does not.
+
+## 21.5 Diborane: what a 3-centre 2-electron bond actually is
+
+**The count.** Two borons contribute 3 each, six hydrogens 1 each: **12 valence electrons**. The four terminal B–H bonds use **8**. Exactly **4 remain** — two pairs for two bridges. Since each bridge spans three atoms (B, H, B), each is a **3-centre 2-electron bond**.
+
+**Building it.** Take three orbitals: an approximately sp³ hybrid on each boron pointing into the bridge region, and the hydrogen 1s between them. Three atomic orbitals give **three** molecular orbitals — one bonding (all three in phase), one non-bonding (a boron–boron combination with a node at hydrogen), one antibonding. The two available electrons occupy only the bonding orbital.
+
+~~~viz
+{
+  "type": "MODiagram",
+  "caption": "One B–H–B bridge: three orbitals, three molecular orbitals, and only one pair of electrons to fill them",
+  "describe": "Energy-level diagram for a three-centre bridge. Two boron sp³ hybrids on the left, a hydrogen 1s orbital on the right. Three molecular orbitals in the centre: a bonding orbital delocalised over all three atoms holding one electron pair, an empty non-bonding orbital, and an empty antibonding orbital.",
+  "left": "2 × B sp³",
+  "right": "H 1s",
+  "centre": "B–H–B bridge",
+  "levels": [
+    { "label": "σ* (antibonding)", "energy": 90, "electrons": 0, "anti": true },
+    { "label": "non-bonding (node at H)", "energy": 50, "electrons": 0 },
+    { "label": "σ (3-centre bonding)", "energy": 12, "electrons": 2, "mark": true }
+  ],
+  "results": [
+    "One electron pair holds three atoms together → bond order about ½ per B–H link",
+    "A weaker, longer bond is therefore predicted, not excused after the fact",
+    "Two such bridges consume exactly the 4 electrons left over from the terminal bonds"
+  ]
+}
+~~~
+
+**The prediction, and its test.** A pair shared across three atoms gives roughly half a bond order per B–H link, so the bridge bonds must be **longer and weaker** than the terminal ones. Measurement: bridging B–H = **1.33 Å**, terminal B–H = **1.19 Å**. The four terminal hydrogens and both borons are **coplanar**, with the two bridging hydrogens above and below that plane; the terminal H–B–H angle is about **122°** while the bridge H–B–H angle closes to about **97°**.
+
+~~~viz
+{
+  "type": "MulticentreBond",
+  "caption": "Diborane: the electron budget drawn out",
+  "describe": "Two boron centres each carrying two terminal hydrogens, joined by two bridging hydrogen atoms. Each bridge is drawn carrying a single electron pair, marking it as a three-centre two-electron bond. Bridge bond length 1.33 ångström, terminal 1.19 ångström.",
+  "spec": {
+    "left": "B",
+    "right": "B",
+    "bridge": ["H", "H"],
+    "electronsPerBridge": 2,
+    "terminals": { "left": ["H", "H"], "right": ["H", "H"] },
+    "lengths": { "bridge": "1.33 Å", "terminal": "1.19 Å" }
+  },
+  "results": [
+    "12 valence electrons total — 8 spent on four terminal B–H bonds",
+    "4 electrons left, shared as two 3-centre 2-electron bridges",
+    "B₂H₆ is electron-deficient: it has fewer electrons than a classical structure requires"
+  ]
+}
+~~~
+
+**Examination model.** The "banana bond" — two sp³ hybrids and a hydrogen 1s curving into a crescent of electron density. Draw it; it is the standard picture and it is a fair localised sketch of the bonding MO above.
+
+**Modern interpretation.** The three-centre orbital is the primary object. The sp³ hybrids are a convenient basis for drawing it, not separate physical entities that then combine. The difference matters when you are asked *why* the bridge is weak: the honest answer is "one pair over two linkages", not "banana bonds are strained".
+
+> **Do not say diborane breaks the octet rule.** It does not. Each boron in B₂H₆ has a share of eight electrons; what it lacks is **enough electrons to form the number of two-electron bonds the drawing implies**. "Electron-deficient" is a statement about the electron-to-bond ratio, not about a violated octet. This distinction is examined more often than the structure itself.
+
+## 21.6 Al₂Cl₆ and Al₂(CH₃)₆: two bridges drawn identically that are not the same bond
+
+Both are dimers. Both are drawn as two tetrahedral metal centres sharing two bridging atoms. Both look like diborane. **Only one of them is electron-deficient.**
+
+**Aluminium chloride.** Count: aluminium 3 valence electrons each, chlorine 7 each — **48 electrons**. Now count what the drawing demands: eight Al–Cl σ bonds (16 e), three lone pairs on each of the four terminal chlorines (24 e), and two lone pairs left on each of the two bridging chlorines (8 e). That is **exactly 48**. The books balance with nothing missing. Each bridging chlorine still has lone pairs after forming its two σ bonds, and the bridge is built by a **chlorine lone pair donating into an empty aluminium orbital**. Across the bridging region there are **four** electrons, not two. This is ordinary dative bonding, not electron deficiency.
+
+~~~viz
+{
+  "type": "MulticentreBond",
+  "caption": "Aluminium chloride: the same shape as diborane, twice the electrons in the bridge",
+  "describe": "Two aluminium centres each carrying two terminal chlorines, joined by two bridging chlorine atoms. Each bridge is drawn carrying two electron pairs, marking it as lone-pair donation rather than a three-centre two-electron bond. Bridge Al–Cl 2.21 ångström, terminal 2.06 ångström.",
+  "spec": {
+    "left": "Al",
+    "right": "Al",
+    "bridge": ["Cl", "Cl"],
+    "electronsPerBridge": 4,
+    "terminals": { "left": ["Cl", "Cl"], "right": ["Cl", "Cl"] },
+    "lengths": { "bridge": "2.21 Å", "terminal": "2.06 Å" }
+  },
+  "results": [
+    "Chlorine has lone pairs to give; carbon and hydrogen do not",
+    "Bridge = 4 electrons, a normal σ bond plus a dative bond — not electron-deficient",
+    "A donor solvent can supply the same pair, so ether or water cleaves the dimer to AlCl₃·L"
+  ]
+}
+~~~
+
+**Trimethylaluminium.** A methyl group, like a hydrogen atom, contributes exactly **one** electron to the skeleton. So the count is aluminium 3 each plus six methyls at 1 each — **12 skeletal electrons**, the *same number as diborane*, distributed over the same eight linkages. The four terminal Al–C bonds take **8**; **4 remain for two bridges**. Carbon in a methyl group has **no lone pair to donate**. The only possibility left is a genuine **3-centre 2-electron Al–C–Al bond**, exactly as in diborane. The bridging carbon is formally five-coordinate, and the bridging Al–C distance (about 2.14 Å) is correspondingly longer than the terminal one (about 1.97 Å).
+
+~~~viz
+{
+  "type": "ComparisonGraphic",
+  "caption": "The same picture, two different bonds — decide by counting, never by looking",
+  "describe": "Three-column comparison of diborane, aluminium chloride and trimethylaluminium across bridge electron count, bridging species, origin of the bridge, cleavage behaviour and whether the molecule is electron-deficient.",
+  "columns": [
+    { "title": "B₂H₆", "tone": "bad" },
+    { "title": "Al₂Cl₆", "tone": "good" },
+    { "title": "Al₂(CH₃)₆", "tone": "bad" }
+  ],
+  "rows": [
+    { "label": "Electrons per bridge", "cells": ["2", "4", "2"] },
+    { "label": "Bridge type", "cells": ["3-centre 2-electron", "σ + dative", "3-centre 2-electron"] },
+    { "label": "Bridging atom has lone pair?", "cells": ["No", "Yes", "No"] },
+    { "label": "Electron-deficient?", "cells": ["Yes", "No", "Yes"] },
+    { "label": "Cleaved by a donor?", "cells": ["Cleaved by NH₃", "Cleaved by ether", "Resists — no pair to replace"] }
+  ]
+}
+~~~
+
+> **The trap, stated plainly.** "Al₂Cl₆ contains 3-centre 2-electron bonds like diborane" is **false**, and it is a favourite distractor precisely because the two structures are drawn the same way. The test is never the shape. It is whether the bridging atom brings a lone pair. Chlorine does; hydrogen and methyl carbon do not.
+
+## 21.7 Borazine: isoelectronic is not the same as identical
+
+Borazine, B₃N₃H₆, is planar, six-membered, formally isoelectronic with benzene, and has six π electrons. Its melting point, boiling point and density sit remarkably close to benzene's. The nickname "inorganic benzene" comes from this genuine resemblance — and then does real damage, because the chemistry diverges sharply.
+
+**Experimental fact.** Borazine **adds HCl readily**; benzene does not. Under addition, H attaches at **nitrogen** and Cl at **boron**.
+
+**Why.** Delocalisation is present, but the ring atoms are **not equivalent**. Nitrogen is considerably more electronegative than boron, and the π density supplied by nitrogen's lone pair is pulled back toward nitrogen rather than being shared evenly. The ring therefore carries **alternating partial charges** — δ− on nitrogen, δ+ on boron. An electrophile has a nucleophilic site waiting for it, and a nucleophile has an electrophilic one. Benzene, with six identical carbons, offers neither: its π cloud is uniform and there is no polarised handle to grip.
+
+The B–N distance, about 1.44 Å, sits between a B–N single bond (≈1.51 Å) and a B=N double bond (≈1.31 Å), confirming partial π character — real delocalisation, just unevenly distributed.
+
+> **The transferable idea.** *Aromatic delocalisation and chemical inertness are separable properties.* Benzene's resistance to addition comes from delocalisation **plus** the equivalence of its atoms. Borazine has the delocalisation and lacks the equivalence, and loses the inertness. Any question that offers "borazine is aromatic, therefore it resists addition" is testing exactly this conflation.
+
+## 21.8 The boron cages: where localised bonding gives up completely
+
+Elemental boron is built from **B₁₂ icosahedra**, each boron bonded to five neighbours within its own icosahedron and further bonded to neighbouring units. An icosahedron has twelve vertices and **thirty edges**; two-electron bonds along every edge would need **60 electrons**, and twelve borons supply only **36** — before any electrons are spent linking one icosahedron to the next. The deficit is far worse than diborane's.
+
+The resolution is the same in kind but larger in degree: **σ bonding delocalised over the whole polyhedron**. The same principle governs the closed-cage boron monohalides (B₄Cl₄, B₈Cl₈, B₉Cl₉ and heavier), in which each boron carries one terminal chlorine and bonds to three other borons through cage-wide multicentre σ orbitals.
+
+This is the endpoint of the section's logic. Localised two-electron bonds are an approximation that works when electrons are plentiful. Group 13 is the part of the periodic table where they are not, and the approximation fails visibly — first as one bridge in B₂H₆, then as an entire cage.
+
+## 21.9 Where these models stop
+
+Stating limits is part of using a model correctly.
+
+- **Molecular orbital theory gives you no localised bonds at all.** Every MO here is delocalised by construction. "Bond order 1.33" is extracted from the orbital picture; it is not something the theory contains natively.
+- **Hybridisation is a drawing convenience.** sp², sp³ and the "banana" are choices of basis. Different bases reproduce the same measurements. Treating them as physically distinct objects leads to unanswerable questions.
+- **Back-bonding is a competition, not a fact in isolation.** Its dominance over the inductive effect in BX₃ is an experimental finding — established by the adduct bond lengths — not something derivable from the orbital diagram alone.
+- **The three-column separation is not academic hygiene.** The examination model and the modern interpretation give the same *answers* in Group 13 but different *reasons*, and questions increasingly ask for reasons.
+
+## 21.10 Worked examples
+
+**1. Explain, using electron counting alone, why B₂H₆ dimerises but BF₃ does not.**
+
+BH₃ has 6 valence electrons and only three σ bonds to make; boron's 2p_z stays empty and there is **no substituent lone pair available to fill it** — hydrogen has none. The only route to relieving the deficiency is to share electrons already in B–H bonds with a second boron, which is what the 3-centre bridge does. BF₃ also has an empty 2p_z, but fluorine **does** carry lone pairs, so the deficiency is relieved internally by π donation into that orbital. Internal relief needs no partner; BF₃ therefore stays monomeric. *The general rule: a Group 13 centre dimerises only when it cannot fix itself.*
+
+**2. Al₂Cl₆ is cleaved by diethyl ether; Al₂(CH₃)₆ is not cleaved nearly so readily. Why?**
+
+In Al₂Cl₆ the bridge is a chlorine lone pair donated into aluminium. Ether supplies an equivalent oxygen lone pair, so the donor is simply **substituted** — the dimer opens to two AlCl₃·OEt₂ units with no bonding type destroyed. In Al₂(CH₃)₆ the bridge is a 3-centre 2-electron bond and there is no donated pair to replace; cleaving it means **destroying a bond outright**, which is far more costly.
+
+**3. Why is the B–F bond in BF₃ (646 kJ mol⁻¹) stronger than the C–F bond, despite carbon being the more electronegative partner in the usual sense?**
+
+Because B–F is **not a single bond**. The four-centre π orbital adds about one-third of a bond order to each B–F link, shortening it to 1.30 Å against a covalent-radius sum of 1.52 Å. Carbon, having no empty p orbital in CF₄, gets no such π contribution. Compare a single bond with a bond of order 1.33 and the strength difference follows.
+
+**4. Predict, with reasoning, whether BCl₃ or SiCl₄ is the stronger Lewis acid relative to its own fluoride.**
+
+Opposite conclusions, for the same underlying reason. In boron, back-donation into a compact 2p orbital is decisive and is strongest for fluorine, so losing it on adduct formation costs BF₃ most and **BCl₃ > BF₃**. In silicon the acceptor orbital is larger and more diffuse, π back-donation is far weaker, and steric crowding by the bigger halogens counts against them; electronegativity therefore wins and **SiF₄ > SiCl₄**. Asked together, these two are a single question about *when* back-bonding dominates.
+
+**5. Borazine and benzene both have six delocalised π electrons. Predict which adds HBr, and justify from orbital reasoning rather than from a memorised fact.**
+
+**Borazine.** Six π electrons are delocalised in both, but delocalisation over *equivalent* centres (benzene) produces a uniform π cloud with no site preference, whereas delocalisation over *inequivalent* centres (borazine) polarises the density toward nitrogen. That leaves nitrogen electron-rich and boron electron-poor. HBr adds with **H to nitrogen and Br to boron**, and the driving force is the pre-existing charge alternation, which benzene lacks entirely.
+
+## 21.11 Question set
+
+**Structure and counting**
+
+1. Show by explicit electron counting that B₂H₆ requires exactly two multicentre bonds, and state how many electrons each contains.
+2. Al₂Cl₆ and Al₂(CH₃)₆ are drawn identically. Determine the number of electrons in each bridge and explain what makes the two different.
+3. B₄Cl₄ has four borons in a closed tetrahedral cage, each carrying one terminal chlorine. Count the valence electrons and show that classical two-electron B–B bonds along every cage edge are impossible.
+
+**Orbital reasoning**
+
+4. Construct the π manifold of BF₃ from its four p_z orbitals. State how many MOs result, how many are bonding, how many electrons occupy each, and deduce the B–F π bond order.
+5. Explain why two of the four π MOs of BF₃ are strictly non-bonding, and what that implies about where four of the six π electrons actually reside.
+6. Using an orbital argument, explain why the bridging B–H bond in diborane must be longer than the terminal one — before quoting any measured value.
+
+**Trends and traps**
+
+7. Account for the order BF₃ < BCl₃ < BBr₃ < BI₃ in Lewis acidity, and identify the one experimental measurement that distinguishes the back-bonding explanation from an inductive one.
+8. "Diborane violates the octet rule." Criticise this statement precisely.
+9. "Borazine is aromatic, so like benzene it resists addition reactions." Identify the error and give the correct reasoning.
+10. Predict the product of adding one equivalent of HCl to borazine, stating which atom receives H and which receives Cl, with justification.
+
+**Extension — Olympiad level**
+
+11. On adduct formation, B–F lengthens from 1.30 Å to 1.38 Å. Estimate the change in B–F π bond order implied, and comment on whether the observed shift is consistent with complete loss of the four-centre π bond.
+12. Trimethylaluminium is dimeric while trimethylboron is monomeric. Explain, given that neither methyl group carries a lone pair.
+13. Predict the relative ease of bridge cleavage in B₂H₆ by NH₃ versus by N(CH₃)₃, and explain why the two amines might give products of different composition.
+14. The bridging carbon in Al₂(CH₃)₆ is formally five-coordinate. Explain why this does not violate carbon's bonding capacity, using the same reasoning applied to bridging hydrogen in diborane.
+
+> **How to use this section.** Every question above is answerable from an electron count plus one orbital diagram. If you find yourself recalling a structure instead of deriving it, return to §21.1 and count first. The counting is what generalises to Group 14 and beyond; the structures are only its output.
 `;

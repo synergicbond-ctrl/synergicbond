@@ -347,6 +347,8 @@ each equivalent atom may be fractional.
 
 
 Example 1: Carbonate ion, CO₃²⁻
+
+[STRUCTURE:carbonate-resonance]
   Each of the three equivalent contributors contains one C=O bond and two C-O⁻ bonds. In one contributor, one
 oxygen has formal charge zero and two oxygens have formal charge -1.
    Follow one labelled oxygen through all three contributors. It has formal charge zero in one structure and -1 in the
@@ -357,6 +359,8 @@ other two.
 draws one oxygen differently from the other two.
 
 Example 2: Sulphate ion, SO₄²⁻
+
+[STRUCTURE:sulphate-resonance]
   In the classical two-double-bond representation, each contributor contains two S=O bonds and two S-O⁻ bonds.
 Any two of the four oxygens may be selected as the double-bonded pair, giving C(4,2) = 6 equivalent contributors.
    For any one oxygen, it is double bonded with formal charge zero in three of the six forms and singly bonded with

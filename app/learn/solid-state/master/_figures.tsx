@@ -157,5 +157,5 @@ export function MasterFigure({ kind }: { kind: string }) {
     "dia-para-lines":"Field lines in dia- and paramagnets","gouy":"Gouy balance","squid":"SQUID magnetometer","spin-moment":"Spin magnetic moment","curie-law":"Curie law","spin-orders":"Cooperative spin order","magnetic":"Magnetic order","hysteresis":"Ferromagnetic hysteresis","meissner":"Meissner effect","critical-field":"Critical field versus temperature","formula-strategy":"Unified geometry strategy"
   };
   const scene = BasicScene({kind}) || SystemsScene({kind}) || PackingScene({kind}) || VoidScene({kind}) || StructureScene({kind}) || DefectScene({kind}) || ElectronicScene({kind}) || MagneticScene({kind});
-  return <Frame title={titles[kind] ?? kind} subtitle="Diagram reconstructed from the KOHINOOR concept sequence">{scene ?? <Svg><text x="400" y="160" textAnchor="middle" fill={C.white} fontSize="20">{titles[kind] ?? kind}</text><text x="400" y="205" textAnchor="middle" fill={C.dim} fontSize="14">concept diagram</text></Svg>}</Frame>;
+  return <Frame title={titles[kind] ?? kind} subtitle="Diagram reconstructed for this concept sequence">{scene ?? <Svg><text x="400" y="160" textAnchor="middle" fill={C.white} fontSize="20">{titles[kind] ?? kind}</text><text x="400" y="205" textAnchor="middle" fill={C.dim} fontSize="14">concept diagram</text></Svg>}</Frame>;
 }

@@ -14,6 +14,8 @@ const content = String.raw`
 
 ## 1. Complete analytical architecture
 
+[VISUAL:test-family-map]
+
 ### Stage A — original observations
 
 1. Record colour, texture and hydration.
@@ -44,6 +46,8 @@ const content = String.raw`
 9. Group VI: individual Mg, Na and K tests.
 
 ## 2. Dilute-acid anion flow
+
+[VISUAL:anion-gas-flow]
 
 ### Observation: no gas
 

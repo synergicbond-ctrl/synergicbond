@@ -11,7 +11,7 @@ const data = {
   "slug": "density-of-unit-cell",
   "title": "Density of Unit Cell",
   "sourcePages": "p. 20",
-  "intro": "KOHINOOR derives the theoretical density formula and combines it with a BCC surface-gap calculation.",
+  "intro": "This part derives the theoretical density formula and combines it with a BCC surface-gap calculation.",
   "sections": [
     {
       "title": "1. Density Derivation",
@@ -76,7 +76,7 @@ const data = {
   ],
   "examples": [
     {
-      "title": "Example 1 — KOHINOOR numerical",
+      "title": "Example 1 — numerical",
       "question": "A BCC metal has adjacent-corner surface gap 60.3 pm and atomic mass 48. Find density.",
       "steps": [
         "0.134a≈60.3 pm ⇒ a≈450 pm.",

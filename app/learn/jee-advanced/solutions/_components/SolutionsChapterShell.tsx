@@ -58,11 +58,6 @@ function Formula({ children }: { children: ReactNode }) {
   );
 }
 
-function SourceBadge({ pages }: { pages?: string }) {
-  if (!pages) return null;
-  return <span className="ls-source-badge">SOURCE PDF · {pages}</span>;
-}
-
 function Visual({ visual }: { visual?: VisualKey }) {
   if (!visual) return null;
   const render = visualMap[visual];
@@ -78,7 +73,6 @@ function Block({ block }: { block: NoteBlock }) {
             <span className="ls-example-kicker">SOLVED QUESTION {block.number}</span>
             <h3>{block.title}</h3>
           </div>
-          <SourceBadge pages={block.sourcePages} />
         </div>
         <p className="ls-question"><ChemText text={block.question} /></p>
         {block.given?.length ? (
@@ -104,7 +98,6 @@ function Block({ block }: { block: NoteBlock }) {
             <span className="ls-card-kicker">DERIVATION</span>
             <h3>{block.title}</h3>
           </div>
-          <SourceBadge pages={block.sourcePages} />
         </div>
         {block.introduction ? <p><ChemText text={block.introduction} /></p> : null}
         <ol className="ls-steps">
@@ -127,7 +120,6 @@ function Block({ block }: { block: NoteBlock }) {
       <article className="ls-card ls-table-card">
         <div className="ls-card-head">
           <h3>{block.title}</h3>
-          <SourceBadge pages={block.sourcePages} />
         </div>
         <div className="ls-table-wrap">
           <table>
@@ -162,7 +154,6 @@ function Block({ block }: { block: NoteBlock }) {
           </span>
           <h3>{block.title}</h3>
         </div>
-        <SourceBadge pages={block.sourcePages} />
       </div>
       {block.paragraphs.map((paragraph, index) => <p key={index}><ChemText text={paragraph} /></p>)}
       {block.equations?.map((equation) => <Formula key={equation}>{equation}</Formula>)}
@@ -195,7 +186,6 @@ export function SolutionsChapterShell({
           <p className="ls-part-line">Part {String(part.number).padStart(2, "0")} · {part.title}</p>
           <p className="ls-subtitle">{part.subtitle}</p>
           <div className="ls-meta-row">
-            <span>Current part source: {part.sourcePages}</span>
             <span>77-page source reconstructed</span>
             <span>≈27 pages of added reference depth</span>
             <span>65 descriptive solved questions</span>
@@ -410,16 +400,6 @@ const styles = `
   .ls-card h3, .ls-example h3 { margin: 3px 0 12px; font-size: clamp(22px, 2.5vw, 31px); line-height: 1.2; }
   .ls-card p, .ls-example p { color: #cbd9e7; }
   .ls-card-head, .ls-example-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 20px; }
-  .ls-source-badge {
-    flex: 0 0 auto;
-    border: 1px solid rgba(247,190,69,.42);
-    border-radius: 999px;
-    padding: 5px 10px;
-    color: var(--amber);
-    font-size: 10px;
-    font-weight: 900;
-    letter-spacing: .12em;
-  }
   .ls-reference { border-left-color: var(--violet); background: linear-gradient(145deg, rgba(39,31,72,.72), rgba(9,24,42,.95)); }
   .ls-reference .ls-card-kicker { color: var(--violet); }
   .ls-checkpoint { border-left-color: var(--green); }
@@ -498,7 +478,6 @@ const styles = `
     .ls-hero { padding-top: 24px; }
     .ls-card, .ls-example, .ls-objectives { padding: 18px; border-radius: 20px; }
     .ls-card-head, .ls-example-head { flex-direction: column; gap: 8px; }
-    .ls-source-badge { align-self: flex-start; }
     .ls-footer-nav { grid-template-columns: 1fr 1fr; }
     .ls-index-link { grid-column: 1 / -1; grid-row: 1; }
     .ls-footer-link { grid-row: 2; min-width: 0; }

@@ -116,9 +116,6 @@ export function SolidStatePartPage({ data }: { data: SolidStatePartData }) {
         <p className="text-xs font-semibold uppercase tracking-[0.24em] text-cyan-300">JEE Advanced · Solid State · Part {data.part}</p>
         <h1 className="mt-3 text-3xl font-semibold tracking-tight text-white md:text-4xl">{data.title}</h1>
         <p className="mt-4 max-w-4xl text-sm leading-7 text-zinc-300">{data.intro}</p>
-        <div className="mt-4 inline-flex rounded-full border border-white/10 bg-black/20 px-3 py-1 text-xs text-zinc-400">
-          Primary KOHINOOR mapping: {data.sourcePages}
-        </div>
       </header>
 
       {data.sections.map((section) => (

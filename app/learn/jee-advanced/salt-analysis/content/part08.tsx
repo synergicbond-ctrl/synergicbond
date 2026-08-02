@@ -84,6 +84,8 @@ It can dissolve noble metals and very resistant sulphides such as mercury sulphi
 
 Refractory solids may require fusion with sodium carbonate, potassium pyrosulphate or another specified flux. Fusion fundamentally changes the sample and must be followed by a planned separation.
 
+> **Precautions for dissolution and group separation:** aqua regia and fusion mixtures are prepared and handled only in small quantity, added slowly, and never sealed or heated in a closed vessel — both release corrosive, oxidising fumes. $\mathrm{H_2S}$ (used for Group II and Group IV) is toxic and must be generated and used in a fume hood, in the minimum quantity needed, never inhaled directly to "check" the smell. Concentrated acids are always added to water, not the reverse, and along the side of a tilted tube for tests like the brown-ring test where two layers must form without mixing violently. Cyanide-based confirmatory steps are treated theoretically in this course rather than performed, because cyanide is highly toxic and reacts with acid to release HCN gas.
+
 ## 3. Soda extract
 
 Soda extract transfers anions of an insoluble salt into soluble sodium salts.
@@ -183,6 +185,10 @@ The group numbering used here is the common JEE/coaching convention:
 | V | $\mathrm{Ba^{2+},Sr^{2+},Ca^{2+}}$ | $(\mathrm{NH_4})_2\mathrm{CO_3}$ in ammonium buffer | Carbonates |
 | VI | $\mathrm{Mg^{2+},Na^+,K^+}$ | Individual tests after Group V | Phosphate/complex/flame tests |
 
+[VISUAL:cation-groups]
+
+> **Mnemonic — the six group reagents in order:** "**H**appy **H**ippos **A**lways **H**ug **C**arbon **M**onkeys" tracks the reagent that changes at each step: **H**Cl (I) → **H**₂S in acid (II) → **A**mmonium chloride/hydroxide (III) → **H**₂S in base (IV) → **C**arbonate buffer (V) → **M**g/Na/K individual tests (VI). The point of the device is the *pattern*, not the words: each step either adds a stronger base (raising pH to bring the next, less soluble group of ions out of solution) or switches which anion is doing the precipitating — never both at once.
+
 Ammonium is tested before adding ammonium salts as group reagents.
 
 ## 6. Why the reagent order cannot be changed
@@ -194,6 +200,8 @@ If $\mathrm{H_2S}$ is added first, Group I ions also form sulphides. Their chlor
 ### 6.2 Group II before Group III
 
 Group II sulphides require low $\mathrm{S^{2-}}$ in acid. Making the solution ammoniacal first precipitates additional sulphides and hydroxides.
+
+[VISUAL:sulfide-ph-graph]
 
 ### 6.3 Group III before Group IV
 

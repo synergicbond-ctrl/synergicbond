@@ -11,7 +11,7 @@ const data = {
   "slug": "packing-in-solids",
   "title": "Packing in Solids",
   "sourcePages": "pp. 23–45 and 50–54",
-  "intro": "KOHINOOR develops packing fraction, 1D and 2D arrangements, then 3D SC/BCC/HCP/CCP stacking and the ideal HCP geometry.",
+  "intro": "This part develops packing fraction, 1D and 2D arrangements, then 3D SC/BCC/HCP/CCP stacking and the ideal HCP geometry.",
   "sections": [
     {
       "title": "1. Packing Fraction / Efficiency",

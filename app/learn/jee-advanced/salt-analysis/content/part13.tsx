@@ -75,6 +75,8 @@ because carbonate is protonated as bicarbonate when acidity rises.
 
 ## 3. Separation of Ba, Sr and Ca
 
+[VISUAL:group-v-separation]
+
 Several classical schemes exist. One common sequence uses chromate for barium and sulphate for strontium, leaving calcium.
 
 ### 3.1 Dissolve the carbonate precipitate
@@ -345,6 +347,8 @@ These anomalies follow the small size and high polarising power of Li$^+$.
 
 [FIGURE:flame-emission-spectrum]
 
+[VISUAL:flame-colors]
+
 | Ion | Colour | Masking/confirmation issue |
 |---|---|---|
 | Li$^+$ | Crimson | Sr also red; compare spectrum/other tests |
@@ -354,6 +358,8 @@ These anomalies follow the small size and high polarising power of Li$^+$.
 | Sr$^{2+}$ | Scarlet/crimson | Can be confused with Li |
 | Ba$^{2+}$ | Apple green | Copper may give blue-green |
 | Cu$^{2+}$ | Blue-green | Depends on volatile halide formation |
+
+> **Mnemonic — telling the two "red" flames apart:** Li$^+$ and Sr$^{2+}$ are the pair students confuse most, because both are commonly described as "crimson red." Anchor it by group: Li is in Group 1 (period 2, small ion) and gives the *purer, brighter* crimson; Sr is in Group 2 (period 5, larger ion) and gives a *deeper, more scarlet* red closer to Ca's brick-red neighbour. If in doubt in a real test, the question will supply a wavelength or spectrum, not just a colour name — use that instead of guessing from memory.
 
 ## 14. Fractional precipitation example
 

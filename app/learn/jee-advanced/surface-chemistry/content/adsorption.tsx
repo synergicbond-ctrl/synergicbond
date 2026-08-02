@@ -577,6 +577,19 @@ export function Part04Content() {
           <p>Equal masses of activated charcoal are equilibrated with acetic-acid solutions of different initial concentrations. After filtration, the equilibrium concentration is obtained by titration with standard alkali.</p>
           <p>A plot of <K>{String.raw`\log(x/m)`}</K> against <K>{String.raw`\log C_e`}</K> tests the Freundlich relation. The filtrate must be free from charcoal particles because they continue to adsorb during titration.</p>
         </Card>
+        <Example
+          number={4}
+          title="Mass of acid adsorbed per gram of carbon"
+          question={<>200 mL of 0.2 M acetic acid is shaken with 0.6 g of activated charcoal until equilibrium. The equilibrium concentration is found by titration to be 0.1 M. Find the mass of acetic acid adsorbed per gram of carbon.</>}
+          solution={
+            <>
+              <p>Moles adsorbed <K>{String.raw`=(0.2-0.1)\times0.200=0.020\ \mathrm{mol}`}</K>.</p>
+              <p>Mass of acetic acid (M = 60 g mol⁻¹) adsorbed <K>{String.raw`=0.020\times60=1.20\ \mathrm{g}`}</K>.</p>
+              <p>Per gram of carbon: <K>{String.raw`1.20/0.6=2.0\ \mathrm{g\,g^{-1}}`}</K>.</p>
+            </>
+          }
+          answer={<>2.0 g of acetic acid per gram of charcoal.</>}
+        />
         <Card title="Competitive adsorption" tone="violet">
           <p>In a mixture, different solutes compete for the same sites. A strongly adsorbed impurity can displace a weakly adsorbed solute even when its bulk concentration is smaller.</p>
           <p>pH can alter both surface charge and solute ionisation, so adsorption from solution often changes sharply with pH.</p>

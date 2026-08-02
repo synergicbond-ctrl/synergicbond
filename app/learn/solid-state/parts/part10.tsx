@@ -11,7 +11,7 @@ const data = {
   "slug": "fourteen-bravais-lattices",
   "title": "Fourteen Bravais Lattices",
   "sourcePages": "pp. 11–14",
-  "intro": "After the seven crystal systems, KOHINOOR emphasizes that not every centring can be combined independently with every system. The standard result is exactly 14 Bravais lattices.",
+  "intro": "After the seven crystal systems, this part emphasizes that not every centring can be combined independently with every system. The standard result is exactly 14 Bravais lattices.",
   "sections": [
     {
       "title": "1. Allowed Bravais Types",

@@ -559,6 +559,39 @@ export function Part10Content() {
 
       <Section
         index="02"
+        eyebrow="Liquid interfaces"
+        title="Surface tension response and the Gibbs adsorption equation"
+        intro={<>Before the CMC break-point can be read off a property plot, it helps to know why the plot has the shape it does. Surface tension against concentration falls into three characteristic patterns, and the Gibbs adsorption equation is the quantitative link between the two.</>}
+      >
+        <p>Surface tension (γ) is the surface free energy per unit area of a liquid interface. Any solute that changes the balance of residual forces at that interface changes γ. Three broad classes of aqueous solute give three characteristic γ-versus-concentration curves.</p>
+        <DataTable
+          headers={["Solute class", "Effect on γ", "Molecular reason", "Example"]}
+          rows={[
+            ["Inorganic electrolytes", "Rises slightly, nearly linear", "Strongly hydrated ions prefer the bulk; the surface is relatively depleted of solute (negative adsorption)", "KCl, NaCl, K₂SO₄"],
+            ["Organic solutes of moderate polarity", "Falls gradually and continuously", "Molecules accumulate at the surface, lowering surface free energy (positive adsorption)", "CH₃OH, C₂H₅OH, acetone, sugar"],
+            ["Surfactants", "Falls sharply at very low concentration, then plateaus", "A monolayer saturates the interface; further surfactant forms micelles in the bulk instead", "Sodium dodecyl sulphate"],
+          ]}
+        />
+        <Trap>Do not confuse the gradual fall produced by an ordinary organic solute with the sharp fall-then-plateau of a true surfactant. The plateau is the signature of micelle formation and marks the CMC.</Trap>
+        <FormulaCard title="Gibbs adsorption equation">
+          <KB>{String.raw`\Gamma_2=-\frac{1}{RT}\left(\frac{\partial \gamma}{\partial \ln a_2}\right)_T`}</KB>
+          <p className="text-sm leading-6 text-slate-300">For a dilute solution, activity a₂ can be approximated by concentration c₂:</p>
+          <KB>{String.raw`\Gamma_2=-\frac{c_2}{RT}\left(\frac{\partial \gamma}{\partial c_2}\right)_T`}</KB>
+          <p className="text-sm leading-6 text-slate-300"><K>{String.raw`\Gamma_2`}</K> is the surface excess of the solute — its concentration at the interface in excess of its bulk concentration, in moles per unit area.</p>
+        </FormulaCard>
+        <div className="grid gap-5 xl:grid-cols-2">
+          <Card title="Positive adsorption" tone="emerald">
+            <p>If γ decreases as concentration increases (<K>{String.raw`\partial\gamma/\partial c<0`}</K>), then <K>{String.raw`\Gamma_2>0`}</K>: the solute concentrates at the surface. This is the organic-solute and surfactant case.</p>
+          </Card>
+          <Card title="Negative adsorption" tone="rose">
+            <p>If γ increases as concentration increases (<K>{String.raw`\partial\gamma/\partial c>0`}</K>), then <K>{String.raw`\Gamma_2<0`}</K>: the solute is depleted at the surface relative to the bulk. This is the simple-electrolyte case.</p>
+          </Card>
+        </div>
+        <Key>The sign of the slope of the γ-versus-concentration curve is enough, on its own, to tell you whether adsorption at that interface is positive or negative — no separate experiment is needed.</Key>
+      </Section>
+
+      <Section
+        index="03"
         eyebrow="Self-assembly"
         title="Critical micelle concentration and Krafft temperature"
         intro={<>Micelles form only when both concentration and temperature conditions permit aggregation.</>}
@@ -586,7 +619,7 @@ export function Part10Content() {
       </Section>
 
       <Section
-        index="03"
+        index="04"
         eyebrow="Thermodynamics"
         title="Why micellisation can be entropy driven"
         intro={<>Micelle formation is not explained simply by attraction between hydrocarbon tails. The solvent structure surrounding isolated tails is equally important.</>}
@@ -605,7 +638,7 @@ export function Part10Content() {
       </Section>
 
       <Section
-        index="04"
+        index="05"
         eyebrow="Cleansing"
         title="How soaps and detergents remove grease"
         intro={<>Cleansing combines interfacial adsorption, emulsification and micellar solubilisation.</>}
@@ -630,7 +663,7 @@ export function Part10Content() {
       </Section>
 
       <Section
-        index="05"
+        index="06"
         eyebrow="Liquid–liquid colloids"
         title="Emulsions, emulsification and identification tests"
         intro={<>An emulsion contains droplets of one liquid dispersed in another immiscible liquid. The identity of the continuous phase controls conductivity, dilution and many practical properties.</>}
@@ -659,7 +692,7 @@ export function Part10Content() {
       </Section>
 
       <Section
-        index="06"
+        index="07"
         eyebrow="Semi-solid dispersions"
         title="Gels, swelling, syneresis and thixotropy"
         intro={<>A gel contains a continuous three-dimensional network that immobilises a large amount of liquid and gives the system solid-like mechanical behaviour.</>}
@@ -683,7 +716,7 @@ export function Part10Content() {
       </Section>
 
       <Section
-        index="07"
+        index="08"
         eyebrow="Worked examples"
         title="CMC, emulsion tests and gel behaviour"
         intro={<>The examples emphasise experimental interpretation rather than memorised definitions.</>}
@@ -720,6 +753,18 @@ export function Part10Content() {
             </>
           }
           answer={<>Counter-ion screening reduces head-group repulsion and lowers the CMC.</>}
+        />
+        <Example
+          number={4}
+          title="Surface excess from the Gibbs adsorption equation"
+          question={<>For a dilute aqueous solution of a non-electrolyte, <K>{String.raw`\partial\gamma/\partial c=-0.025\ \mathrm{N\,m^{-1}\,(mol\,L^{-1})^{-1}}`}</K> at <K>{String.raw`c=0.10\ \mathrm{mol\,L^{-1}}`}</K> and 298 K. Estimate the surface excess Γ.</>}
+          solution={
+            <>
+              <p>For a dilute solution the Gibbs equation may be applied directly in terms of concentration:</p>
+              <KB>{String.raw`\Gamma=-\frac{c}{RT}\left(\frac{\partial \gamma}{\partial c}\right)=-\frac{0.10}{8.314\times298}\times(-0.025)`}</KB>
+            </>
+          }
+          answer={<>Γ ≈ 1.0 × 10⁻⁶ mol m⁻² (positive — the solute lowers γ and concentrates at the surface).</>}
         />
       </Section>
     </>

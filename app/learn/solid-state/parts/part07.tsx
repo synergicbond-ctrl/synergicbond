@@ -11,7 +11,7 @@ const data = {
   "slug": "primitive-and-centred-unit-cells",
   "title": "Primitive and Centred Unit Cells",
   "sourcePages": "pp. 7–9",
-  "intro": "KOHINOOR classifies unit cells as primitive/simple or centred: body-centred, face-centred and base/end-centred.",
+  "intro": "This part classifies unit cells as primitive/simple or centred: body-centred, face-centred and base/end-centred.",
   "sections": [
     {
       "title": "1. Primitive / Simple Cell (P)",

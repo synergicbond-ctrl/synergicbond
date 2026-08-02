@@ -93,6 +93,8 @@ phosphorus.
    The double-bonded oxygen has two lone pairs and two bond lines.
                                                 FC(O) = 6 - 4 - 2 = 0
    Each chlorine remains neutral. Thus all atoms have zero formal charge.
+
+[STRUCTURE:opcl3-comparison]
                   Representation                           Formal charges                          Charge separation
       O⁻-P⁺Cl₃                                           P = +1, O = -1, Cl = 0                           Present
 
@@ -146,6 +148,8 @@ and the negative charge lies on oxygen.
                                  Preferred connectivity: N-N-O, not N-O-N
  Reason: The N-N-O topology gives smaller formal charges and places the negative charge on oxygen instead of
  forcing oxygen to carry +2.
+
+[STRUCTURE:n2o-skeleton-comparison]
 
 
 
@@ -316,6 +320,8 @@ Why cyanate is more stable
  • Negative charge is delocalised over terminal electronegative atoms.
  • Fulminate requires strong charge separation and may place -2 or -3 on carbon and positive charge on oxygen.
   Lewis/formal-charge conclusion: cyanate is much more favourably stabilised than fulminate
+
+[STRUCTURE:cyanate-fulminate-comparison]
  Explosive behaviour: Metal fulminates are sensitive explosives, but explosiveness cannot be predicted from formal
  charge alone. Bond strengths, decomposition pathways, activation energy, crystal packing and rapid gas formation also
  matter.
@@ -341,6 +347,8 @@ each equivalent atom may be fractional.
 
 
 Example 1: Carbonate ion, CO₃²⁻
+
+[STRUCTURE:carbonate-resonance]
   Each of the three equivalent contributors contains one C=O bond and two C-O⁻ bonds. In one contributor, one
 oxygen has formal charge zero and two oxygens have formal charge -1.
    Follow one labelled oxygen through all three contributors. It has formal charge zero in one structure and -1 in the
@@ -351,6 +359,8 @@ other two.
 draws one oxygen differently from the other two.
 
 Example 2: Sulphate ion, SO₄²⁻
+
+[STRUCTURE:sulphate-resonance]
   In the classical two-double-bond representation, each contributor contains two S=O bonds and two S-O⁻ bonds.
 Any two of the four oxygens may be selected as the double-bonded pair, giving C(4,2) = 6 equivalent contributors.
    For any one oxygen, it is double bonded with formal charge zero in three of the six forms and singly bonded with

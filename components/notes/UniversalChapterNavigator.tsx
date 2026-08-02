@@ -37,7 +37,7 @@ const CHAPTER_ROUTES: ChapterRoute[] = [
   { prefix: "/notes/electrochemistry", family: "JEE Physical Chemistry", title: "Electrochemistry" },
 
   { prefix: "/notes/hydrogen", family: "JEE Inorganic Chemistry", title: "Hydrogen and Its Compounds" },
-  { prefix: "/notes/s-block", family: "JEE Inorganic Chemistry", title: "S-Block Elements" },
+  { prefix: "/learn/jee-advanced/inorganic-chemistry/s-block", family: "JEE Inorganic Chemistry", title: "S-Block Elements" },
   { prefix: "/notes/p-block", family: "JEE Inorganic Chemistry", title: "P-Block Elements" },
   { prefix: "/notes/d-block", family: "JEE Inorganic Chemistry", title: "D- and F-Block Elements" },
   { prefix: "/notes/metallurgy", family: "JEE Inorganic Chemistry", title: "Isolation of Metals" },

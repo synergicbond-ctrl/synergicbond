@@ -101,6 +101,39 @@ export const AUTHORED_COURSES: AuthoredCourse[] = [
     description:
       "Complete JEE Advanced treatment of liquid solutions, Henry’s law, Raoult’s law, ideal and non-ideal behaviour, phase diagrams, distillation, azeotropes and all colligative properties.",
   },
+  // ── Surface Chemistry ──────────────────────────────────────────────────────
+  {
+    id: "surface-chemistry",
+    syllabusId: "surface-chemistry",
+    title: "Surface Chemistry",
+    href: "/learn/jee-advanced/surface-chemistry",
+    lessonLabel: "12 parts",
+    premium: true,
+    description:
+      "Complete JEE Advanced Surface Chemistry course: adsorption, physisorption and chemisorption, isotherms, catalysis, colloids, preparation and purification, electrical and optical properties, coagulation, emulsions and micelles — including a dedicated Adsorption deep-dive.",
+  },
+  // ── Chemical Kinetics ──────────────────────────────────────────────────────
+  {
+    id: "chemical-kinetics",
+    syllabusId: "chemical-kinetics",
+    title: "Chemical Kinetics",
+    href: "/learn/jee-advanced/chemical-kinetics",
+    lessonLabel: "20 parts",
+    premium: true,
+    description:
+      "Complete JEE Advanced Chemical Kinetics course: rate laws, order and molecularity, integrated rate equations, half-life, Arrhenius theory, collision and transition-state theory, and complex (consecutive, parallel, reversible) reactions.",
+  },
+  // ── Gaseous State ──────────────────────────────────────────────────────────
+  {
+    id: "states-of-matter",
+    syllabusId: "states-of-matter",
+    title: "Gaseous State",
+    href: "/learn/gaseous-state",
+    lessonLabel: "16 parts",
+    premium: true,
+    description:
+      "Complete JEE Advanced Gaseous State course: gas laws, kinetic theory, Maxwell speed distribution, real gases, van der Waals equation, critical constants and liquefaction.",
+  },
   // ── Solid State ────────────────────────────────────────────────────────────
   {
     id: "solid-state",
@@ -208,10 +241,10 @@ export const AUTHORED_COURSES: AuthoredCourse[] = [
     id: "s-block-elements",
     syllabusId: "s-block-elements",
     title: "S-block Elements",
-    href: "/notes/s-block",
-    lessonLabel: "18 lessons",
+    href: "/learn/jee-advanced/inorganic-chemistry/s-block",
+    lessonLabel: "20 sections",
     premium: true,
-    description: "JEE Advanced notes for Groups 1 and 2: periodic trends, lithium and beryllium anomalies, diagonal relationships, hydrides, halides, oxoanion salts and named sodium and calcium compounds.",
+    description: "JEE Advanced integrated master textbook for Groups 1 and 2: periodic trends, lithium and beryllium anomalies, diagonal relationships, hydrides, halides, oxoanion salts, liquid ammonia solutions, crown ethers, sodium and calcium industrial chemistry, and biological roles.",
   },
   // ── D-block Elements ──────────────────────────────────────────────────────
   {

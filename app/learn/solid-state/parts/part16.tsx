@@ -11,7 +11,7 @@ const data = {
   "slug": "crystal-stoichiometry-and-atom-removal-problems",
   "title": "Crystal Stoichiometry and Atom-Removal Problems",
   "sourcePages": "p. 21",
-  "intro": "KOHINOOR gives a canonical unit-cell formula problem and then removes atoms along a face diagonal or from an entire face. Coordinate tracking is the safest method.",
+  "intro": "This part gives a canonical unit-cell formula problem and then removes atoms along a face diagonal or from an entire face. Coordinate tracking is the safest method.",
   "sections": [
     {
       "title": "1. Base Cell",

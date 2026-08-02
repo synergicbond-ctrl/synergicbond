@@ -11,7 +11,7 @@ const data = {
   "slug": "effective-number-of-atoms-per-unit-cell-z",
   "title": "Effective Number of Atoms per Unit Cell (Z)",
   "sourcePages": "p. 17",
-  "intro": "Immediately after symmetry, KOHINOOR calculates Z for simple cubic, face-centred cubic and body-centred cubic cells.",
+  "intro": "Immediately after symmetry, this part calculates Z for simple cubic, face-centred cubic and body-centred cubic cells.",
   "sections": [
     {
       "title": "1. Simple Cubic (SC)",

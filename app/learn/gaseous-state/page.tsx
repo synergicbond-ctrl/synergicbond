@@ -20,7 +20,7 @@ export default function GaseousStateHub() {
           <span className="kicker">JEE Advanced · Physical Chemistry</span>
           <h1>Gaseous State</h1>
           <p className="heroLead">
-            A complete reconstruction of the 169-page Kohinoor source: every non-blank theory point, derivation, graph family,
+            A complete reconstruction of the 169-page source material: every non-blank theory point, derivation, graph family,
             special case and problem archetype has been rewritten into readable textbook form. Deeper reference material is
             inserted exactly where each concept is taught.
           </p>
@@ -58,7 +58,6 @@ export default function GaseousStateHub() {
               <h3>{part.title}</h3>
               <p>{part.subtitle}</p>
               <div className="partFoot">
-                <span>Source {part.sourcePages}</span>
                 <b>Open part →</b>
               </div>
             </Link>

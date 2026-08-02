@@ -11,7 +11,7 @@ const data = {
   "slug": "electrical-properties-of-solids",
   "title": "Electrical Properties of Solids",
   "sourcePages": "pp. 81–85",
-  "intro": "The final KOHINOOR source section on electrical behaviour uses band ideas to distinguish metallic conductors, insulators, semiconductors and superconductors, then treats intrinsic/extrinsic doping and p–n junctions.",
+  "intro": "The final section on electrical behaviour uses band ideas to distinguish metallic conductors, insulators, semiconductors and superconductors, then treats intrinsic/extrinsic doping and p–n junctions.",
   "sections": [
     {
       "title": "1. Temperature Signature",

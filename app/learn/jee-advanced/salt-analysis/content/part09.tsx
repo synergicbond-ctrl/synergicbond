@@ -46,6 +46,8 @@ Cool before filtration when lead is suspected.
 
 ## 2. Group I separation scheme
 
+[VISUAL:group-i-separation]
+
 The mixed precipitate may contain:
 
 $$

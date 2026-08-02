@@ -11,7 +11,7 @@ const data = {
   "slug": "defects-in-solids",
   "title": "Defects in Solids",
   "sourcePages": "pp. 74–80",
-  "intro": "KOHINOOR classifies defects, then develops vacancy/interstitial, Schottky, Frenkel, non-stoichiometric metal excess/deficiency and impurity defects with charge-compensation logic.",
+  "intro": "This part classifies defects, then develops vacancy/interstitial, Schottky, Frenkel, non-stoichiometric metal excess/deficiency and impurity defects with charge-compensation logic.",
   "sections": [
     {
       "title": "1. Classification",

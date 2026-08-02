@@ -11,7 +11,7 @@ const data = {
   "slug": "dimensional-development-of-crystal-lattices",
   "title": "Dimensional Development of Crystal Lattices",
   "sourcePages": "pp. 10–11",
-  "intro": "KOHINOOR moves from one-dimensional repetition to five two-dimensional lattice geometries and then to three-dimensional crystal systems described by six lattice parameters.",
+  "intro": "This part moves from one-dimensional repetition to five two-dimensional lattice geometries and then to three-dimensional crystal systems described by six lattice parameters.",
   "sections": [
     {
       "title": "1. One-Dimensional Lattice",

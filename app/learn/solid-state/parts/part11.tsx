@@ -11,7 +11,7 @@ const data = {
   "slug": "symmetry-of-a-cube",
   "title": "Symmetry Elements of a Cube",
   "sourcePages": "pp. 15–17",
-  "intro": "KOHINOOR counts mirror planes, rotational axes and the centre of inversion of a cube, giving the classroom total of 23 geometrical symmetry elements.",
+  "intro": "This part counts mirror planes, rotational axes and the centre of inversion of a cube, giving the classroom total of 23 geometrical symmetry elements.",
   "sections": [
     {
       "title": "1. Planes of Symmetry (POS): 9",
@@ -111,7 +111,7 @@ const data = {
     },
     {
       "title": "Example 2 — Total",
-      "question": "Using the KOHINOOR geometrical-element convention, find the total symmetry elements.",
+      "question": "Using the standard geometrical-element convention, find the total symmetry elements.",
       "steps": [
         "Mirror planes = 9.",
         "Rotational axes = 13.",

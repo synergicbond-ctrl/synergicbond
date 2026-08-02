@@ -74,6 +74,8 @@ A Group III precipitate formed without prior removal of interfering radicals may
 
 ## 3. Separation of Fe, Al and Cr
 
+[VISUAL:group-iii-separation]
+
 A standard conceptual separation uses excess sodium hydroxide plus an oxidant.
 
 ### 3.1 Treat with excess NaOH

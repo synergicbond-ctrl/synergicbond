@@ -15,7 +15,7 @@ means exactly that — no claim of correctness is made either way.
 | 2 | Surface Chemistry (12-part) | **Audited, clean — no changes needed** | See below. |
 | 3 | S-Block Elements | **Done (this branch)** | Route de-duplication only — see below. Content itself (both old and new versions) not independently fact-checked against a primary source in this pass. |
 | 4 | Environmental Chemistry | **Fixed (this branch)** | See below. |
-| 5 | Salt Analysis | **Audited — narrower gap than first reported (see logged correction below)** | See below. |
+| 5 | Salt Analysis | **Gaps closed (this branch)** | 7 structures + 8 visuals activated, 2 mnemonics, 1 precautions block added. See below. |
 | 6 | Hydrogen | **Audited, clean — minor orphan-asset cleanup only** | See below. |
 | 7 | Polymers | **Audited, clean** | See below. |
 | 8 | Formal Charges | **Gap fixed (this branch)** | 3 Lewis-structure diagrams added — see below. |
@@ -140,9 +140,17 @@ means exactly that — no claim of correctness is made either way.
 - **What genuinely is still missing**: "mnemonic" (and synonyms — "memory aid", "memory device",
   "acronym") still return zero hits with a corrected, broader search. So the mnemonics half of
   the founder's complaint holds up; the traps half doesn't.
-- **Not fixed this pass**: writing genuine mnemonic content and placing the existing
-  structure/visual components at the right points across 18 parts is real content-authoring
-  work — flagged rather than rushed. Given how much of this chapter already has real trap
+- **Update — closed in a later pass on this same branch**: all 7 structures and 8 visuals are
+  now placed at their correct narrative points (nickel-DMG, brown-ring, chromate-dichromate,
+  nitroprusside, thiosulfate, tetrathionate, permanganate structures; cation-groups,
+  sulfide-ph-graph, group-i/iii/v-separation, flame-colors, anion-gas-flow, test-family-map
+  visuals). Added 2 original mnemonics (cation-group reagent sequence, Li/Sr flame-colour
+  distinction), each with the underlying chemistry logic spelled out rather than just an
+  invented phrase. Added one consolidated precautions block (H₂S handling, aqua regia/fusion,
+  acid addition order, cyanide kept theoretical) — safety content existed scattered through
+  individual reactions (16 hazard/toxic/caution mentions on recheck) but was never consolidated.
+  Rechecked reactions (406 equation blocks), colours (199), solubility (322 mentions + a
+  dedicated "Master solubility rules" section) and named tests (27) — all already comprehensive. Given how much of this chapter already has real trap
   coverage, the remaining gap is narrower than originally reported.
 
 ### Hydrogen (8 parts, 22-section master markdown) — audited, clean
@@ -208,10 +216,11 @@ means exactly that — no claim of correctness is made either way.
 - Verified: `tsc --noEmit` clean, all 3 SVGs well-formed XML, all 3 visually inspected in a
   standalone render extracted directly from the shipped `page.tsx` (not a separate scratch copy,
   to make sure the check matches what's actually committed).
-- **Not done**: the other ~15 species this chapter discusses (N₂O's 3-contributor resonance set,
-  carbonate, sulphate, SO₂, SO₃, XeO₃, NH₄⁺, CO, HNCS, HNCO, etc.) still have no diagrams — the 3
-  added cover the chapter's central worked examples, not every formula mentioned. Extending
-  further is straightforward with the same `[STRUCTURE:id]` mechanism now in place.
+- **Update**: added 2 more diagrams in a later pass — `carbonate-resonance` (3 equivalent
+  contributors) and `sulphate-resonance` (2 of the 6 equivalent contributors, matching the
+  chapter's own C(4,2)=6 count), placed at the exact worked examples that already discuss them
+  in prose. 5 diagrams total now. Still not done: N₂O's 3-contributor resonance set, SO₂, SO₃,
+  XeO₃, NH₄⁺, CO, HNCS, HNCO — the mechanism is in place, extending further is mechanical.
 
 ### Liquid Solutions (17 parts) — fixed
 - Confirmed exactly **17 parts**, matching the handover doc's expected count.

@@ -2,23 +2,23 @@
 
 import { createContext, useContext, useEffect, useState, ReactNode } from "react";
 
-export type Lang =
-  | "english" | "hindi" | "hinglish"
-  | "spanish" | "arabic" | "french" | "german";
+// Only languages with hand-written translations are selectable. Spanish,
+// Arabic, French and German strings are still carried in DICT below, but they
+// are not offered until their content translations exist.
+export type Lang = "english" | "hindi" | "hinglish";
 
 export const LANGS: { code: Lang; label: string; short: string; flag: string }[] = [
   { code: "english",  label: "English",  short: "EN", flag: "🇬🇧" },
   { code: "hindi",    label: "हिन्दी",     short: "HI", flag: "🇮🇳" },
   { code: "hinglish", label: "Hinglish", short: "HX", flag: "🇮🇳" },
-  { code: "spanish",  label: "Español",  short: "ES", flag: "🇪🇸" },
-  { code: "arabic",   label: "العربية",   short: "AR", flag: "🇸🇦" },
-  { code: "french",   label: "Français", short: "FR", flag: "🇫🇷" },
-  { code: "german",   label: "Deutsch",  short: "DE", flag: "🇩🇪" },
 ];
 
 // Translation dictionary. UI chrome only — technical chemistry content stays English.
-// Order per entry: english, hindi, hinglish, spanish, arabic, french, german
-const DICT: Record<string, Record<Lang, string>> = {
+// Every entry must cover the three selectable languages; the parked ones
+// (spanish, arabic, french, german) are kept so re-enabling them is a one-line change.
+type Entry = Record<Lang, string> & Record<string, string>;
+
+const DICT: Record<string, Entry> = {
   "nav.notes":        { english: "Notes", hindi: "नोट्स", hinglish: "Notes", spanish: "Notas", arabic: "ملاحظات", french: "Notes", german: "Notizen" },
   "nav.assignments":  { english: "Assignments", hindi: "असाइनमेंट", hinglish: "Assignments", spanish: "Tareas", arabic: "واجبات", french: "Devoirs", german: "Aufgaben" },
   "nav.quiz":         { english: "Quiz", hindi: "क्विज़", hinglish: "Quiz", spanish: "Examen", arabic: "اختبار", french: "Quiz", german: "Quiz" },
@@ -166,26 +166,44 @@ type Ctx = { lang: Lang; setLang: (l: Lang) => void; t: (key: string) => string 
 
 const LangContext = createContext<Ctx>({ lang: "english", setLang: () => {}, t: (k) => k });
 
-export function LanguageProvider({ children }: { children: ReactNode }) {
-  const [lang, setLangState] = useState<Lang>(() => {
-    const saved = (typeof window !== "undefined" && localStorage.getItem("sb_lang")) as Lang | null;
-    return saved && LANGS.some((l) => l.code === saved) ? saved : "english";
-  });
+const HTML_LANG: Record<Lang, string> = { english: "en", hindi: "hi", hinglish: "en" };
 
-  // apply direction (RTL for Arabic) + html lang
+// A previous build machine-translated the page via Google Translate, which
+// needed a `googtrans` cookie plus a full reload to apply it. Clear any
+// leftover cookie once so stale visitors are not left in a translated DOM.
+function clearStaleGoogTrans() {
+  if (!document.cookie.includes("googtrans")) return;
+  const expire = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/";
+  const host = window.location.hostname;
+  document.cookie = expire;
+  document.cookie = `${expire}; domain=${host}`;
+  document.cookie = `${expire}; domain=.${host}`;
+}
+
+export function LanguageProvider({ children }: { children: ReactNode }) {
+  // Always starts English so the client's first render matches the server HTML;
+  // the saved preference is applied right after mount. Reading localStorage in
+  // the initializer instead would desync hydration.
+  const [lang, setLangState] = useState<Lang>("english");
+
   useEffect(() => {
-    if (typeof document === "undefined") return;
-    document.documentElement.dir = lang === "arabic" ? "rtl" : "ltr";
-    const map: Record<Lang, string> = {
-      english: "en", hindi: "hi", hinglish: "en", spanish: "es",
-      arabic: "ar", french: "fr", german: "de",
-    };
-    document.documentElement.lang = map[lang];
+    clearStaleGoogTrans();
+    const saved = localStorage.getItem("sb_lang") as Lang | null;
+    if (saved && LANGS.some((l) => l.code === saved)) {
+      setLangState(saved);
+    } else if (saved) {
+      // A parked language (e.g. spanish) saved by an older build.
+      localStorage.removeItem("sb_lang");
+    }
+  }, []);
+
+  useEffect(() => {
+    document.documentElement.lang = HTML_LANG[lang];
   }, [lang]);
 
   function setLang(l: Lang) {
     setLangState(l);
-    if (typeof window !== "undefined") localStorage.setItem("sb_lang", l);
+    localStorage.setItem("sb_lang", l);
   }
 
   const t = (key: string) => DICT[key]?.[lang] ?? DICT[key]?.english ?? key;

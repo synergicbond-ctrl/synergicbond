@@ -171,13 +171,21 @@ const HTML_LANG: Record<Lang, string> = { english: "en", hindi: "hi", hinglish: 
 // A previous build machine-translated the page via Google Translate, which
 // needed a `googtrans` cookie plus a full reload to apply it. Clear any
 // leftover cookie once so stale visitors are not left in a translated DOM.
+//
+// A cookie is only removable from the exact domain it was set on. Google's
+// widget sets googtrans on the registrable domain (.synergicbond.com) while
+// the page runs on www.synergicbond.com, so the parent domain must be tried
+// too — that mismatch is why the old code could never clear its own cookie.
 function clearStaleGoogTrans() {
   if (!document.cookie.includes("googtrans")) return;
   const expire = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/";
   const host = window.location.hostname;
-  document.cookie = expire;
-  document.cookie = `${expire}; domain=${host}`;
-  document.cookie = `${expire}; domain=.${host}`;
+  const parent = host.split(".").slice(1).join(".");
+  const domains = ["", host, `.${host}`];
+  if (parent.includes(".")) domains.push(parent, `.${parent}`);
+  for (const domain of domains) {
+    document.cookie = domain ? `${expire}; domain=${domain}` : expire;
+  }
 }
 
 export function LanguageProvider({ children }: { children: ReactNode }) {

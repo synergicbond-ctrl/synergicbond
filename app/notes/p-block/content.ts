@@ -188,6 +188,52 @@ B₂H₆ has **4 terminal 2-centre-2-electron B–H bonds** and **2 bridging 3-c
 >
 > **General method:** never assume density tracks atomic size alone within a group — always check whether every member shares the same structural motif (as most metallic groups do) or whether one member is a genuine structural outlier (as gallium is here). This is the same Ga₂-molecular-solid fact tested from a different angle than the melting-point argument in §2.2, showing how one structural fact answers multiple different exam questions.
 
+## 2.9 Complete named-reaction reference — Group 13 element reactivity
+
+A consolidated, exam-ready reference of every named/numbered reaction touching Group 13 elements directly with common reagents, gathered in one place rather than scattered across subsections:
+
+**Boron with non-metals (amorphous form, all previously introduced individually in §3.1, restated here as a single lookup table):**
+
+| Reagent | Product | Condition |
+|---|---|---|
+| O₂ | B₂O₃ | 700 °C |
+| N₂ | BN | Very high T |
+| S | B₂S₃ | 1200 °C |
+| C | B₄C | Electric furnace |
+| F₂, Cl₂, Br₂, I₂ | BX₃ | Direct combination |
+| NH₃ | BN | Very high T |
+
+**Boron with acids/alkali:**
+
+| Reagent | Product |
+|---|---|
+| Conc. HNO₃ | H₃BO₃ + NO₂ |
+| Conc. H₂SO₄ | H₃BO₃ + SO₂ |
+| Fused NaOH | Na₃BO₃ + H₂ |
+
+**Aluminium's complete reactivity table** (consolidating §3.7's prose into lookup form):
+
+| Reagent | Product | Notes |
+|---|---|---|
+| Dil. HCl / dil. H₂SO₄ | AlCl₃ / Al₂(SO₄)₃ + H₂ | Standard dissolution |
+| Conc. HNO₃ | — (no reaction) | Passivation, protective oxide film |
+| NaOH (aq) | NaAlO₂ + H₂ | Amphoteric dissolution |
+| N₂ (hot) | AlN | Al absorbs N₂ at high T |
+| O₂ (hot) | Al₂O₃ | Highly exothermic |
+| Cl₂ (dry, heated) | AlCl₃ (anhydrous) | Direct halogenation route |
+| Less reactive metal oxide (MnO₂, Cr₂O₃, Fe₂O₃) | Al₂O₃ + M | Thermite/Goldschmidt reduction |
+| Steam | Al(OH)₃ + H₂ | Very slow; no reaction with cold water |
+
+> **Worked Example — a multi-step "identify the sequence" problem.** Element M reacts with dilute HCl to give a colourless gas and a salt solution; the same element, when treated with concentrated HNO₃, shows no visible reaction. When M's oxide is heated with powdered chromium(III) oxide, a vigorous exothermic reaction gives molten chromium metal. Identify M and write all three equations.
+>
+> The "no reaction with conc. HNO₃ despite reacting with dilute HCl" signature is the passivation behaviour unique to a small set of metals (Al, Fe, Cr) in this syllabus — combined with the final clue (reducing Cr₂O₃ to chromium metal, a classic thermite-type reduction), **M = aluminium**.
+>
+> 1. 2Al + 6HCl → 2AlCl₃ + 3H₂↑ (colourless gas = H₂)
+> 2. Al + conc. HNO₃ → no reaction (passivation, protective Al₂O₃ layer)
+> 3. Cr₂O₃ + 2Al → Al₂O₃ + 2Cr (thermite-type reduction, highly exothermic)
+>
+> **General method:** "reacts with dilute acid, passive in concentrated oxidising acid" is a reusable identification signature for Al, Fe or Cr specifically — narrow further using any accompanying clue (here, the successful thermite reduction, which rules out Fe and Cr acting as the reducing agent since they are less reactive than Al on the activity series).
+
 # 3. Group 13 deep dive: borax, boric acid, BF₃, diborane and alums
 
 ## 3.1 Minerals and extraction of boron
@@ -357,6 +403,45 @@ General formula **M₂SO₄·M′₂(SO₄)₃·24H₂O** (M univalent, M′ tri
 23. Distinguish α-Al₂O₃ from γ-Al₂O₃ by BOTH their formation temperature and their industrial use. *(γ-Al₂O₃: from Al(OH)₃ at 450°C, used as a dehydrating agent/catalyst support/chromatography adsorbent. α-Al₂O₃: from Al(OH)₃ at 1000°C, used as an abrasive/refractory — see §3.6.)*
 24. Why is the borax bead test unable to distinguish Na⁺ or Al³⁺ salts, even though the test is otherwise very sensitive? *(Their metaborates are colourless — the test only works for transition-metal ions whose metaborates are visibly coloured — see §3.2.)*
 25. A student titrates borax against HCl using phenolphthalein and gets an endpoint at exactly half the expected volume. Suggest the most likely experimental error. *(Most likely they used the wrong molar-ratio assumption — e.g. treated borax as monoacidic (1:1 with HCl) instead of diacidic (1:2) — see the worked example in §3.2.)*
+
+## 3.11 Comprehensive comparison charts — cross-topic recall
+
+**Bond-type summary across every Group 13 dimer/bridge discussed in this chapter:**
+
+| Species | Bridge type | Electron count | Bridging atom's lone pair used? |
+|---|---|---:|---|
+| B₂H₆ | B–H–B | 3c-2e | No (H has none) |
+| Al₂Cl₆ | Al–Cl–Al | 3c-4e | Yes (Cl donates) |
+| Al₂(CH₃)₆ | Al–C–Al | 3c-2e | No (C has none available) |
+| Ga₂H₆ | Ga–H–Ga | 3c-2e | No (H has none) |
+
+**Complete oxidation-state stability summary (ties together §2.3, §2.8, §3.5's Tl trap):**
+
+| Element | Preferred oxidation state | Behaviour of the OTHER state |
+|---|---|---|
+| B, Al | +3 (exclusively) | +1 essentially unknown |
+| Ga | +3 (Ga⁺ less stable) | Ga⁺ is a reducing agent, disproportionates in water |
+| In | +3 (In⁺ less stable) | In⁺ is a weaker reducing agent than Ga⁺ |
+| Tl | +1 (Tl³⁺ less stable) | Tl³⁺ is an oxidising agent |
+
+> **Worked Example — predicting an unknown reaction from the oxidation-state summary table alone.** Without looking up any further data, predict whether InCl solution is stable in water, and if not, write the expected products.
+>
+> From the table, In's PREFERRED state is +3, meaning In⁺ (like Ga⁺, but even more so, since indium's ΔE is smaller than gallium's own inert-pair-favouring case is for Tl) is the LESS stable oxidation state relative to the group state. Following the same disproportionation pattern explicitly given for gallium in §2.3 (3GaX → 2Ga + GaX₃), indium should behave analogously: **3InCl → 2In + InCl₃** — indium metal precipitates and indium(III) chloride remains in solution. This is exactly the reaction stated in §2.3's original trap block, now derived from the summary table rather than simply recalled.
+>
+> **General method:** once the oxidation-state stability table is memorised, ANY new halide/salt question for Ga, In or Tl can be answered by analogy without needing to separately memorise each individual equation — the disproportionation pattern generalises directly.
+
+## 3.12 Final extended practice set — problems 26-35
+
+26. Boron reacts with hot concentrated NaOH. Write the balanced equation and identify the oxidation state change of boron. *(2B + 6NaOH → 2Na₃BO₃ + 3H₂; B goes from 0 to +3, oxidised; H in NaOH/H₂O is reduced from +1 to 0.)*
+27. Using the complete reactivity table in §2.9, predict the product when aluminium metal is heated in dry chlorine gas. *(AlCl₃, anhydrous — direct halogenation, no water present so no hydrate forms.)*
+28. A metal M reacts with dilute HCl liberating H₂, dissolves readily in NaOH solution also liberating H₂, and its anhydrous chloride is a fuming liquid that dimerises in non-polar solvents. Identify M and justify each clue against the tables in §2.9/§3.5. *(M = aluminium. Dissolves in both dilute acid AND alkali → amphoteric metal, §3.7. The dimerising fuming-liquid chloride is Al₂Cl₆, §3.5 — boron's own trihalides are monomeric and cannot be the answer here, which is exactly why this clue narrows the identification to Al rather than B.)*
+29. Explain, using the bridge-bond summary table in §3.11, why Ga₂H₆'s bridge is classified the same way as B₂H₆'s despite gallium being a much larger atom. *(Both bridges use hydrogen, which has no lone pair to donate regardless of the size of the metal atom it bridges — bridge classification depends on the BRIDGING ATOM's electron availability, not the metal's size.)*
+30. Predict whether GaCl (gallium(I) chloride) is stable in aqueous solution, and justify using the oxidation-state summary table. *(Unstable — disproportionates: 3GaCl → 2Ga + GaCl₃, since Ga's preferred state is +3 and Ga⁺ is the less stable, "wants to disproportionate" state — see §3.11's worked example for the analogous indium case.)*
+31. A student says "TlF₃ should be more stable than TlCl₃ because F is more electronegative and forms stronger ionic bonds with Tl³⁺." Evaluate this claim using the inert-pair effect. *(The claim ignores that Tl³⁺ itself is intrinsically unstable regardless of the counter-ion, due to the large deltaE = 7.0 eV inert-pair gap — while lattice energy differences between TlF3 and TlCl3 exist, the DOMINANT factor is Tl's own electronic preference for +1, so TlF3 remains an oxidising agent just as TlCl3 is, not a stable +3 compound merely because fluoride is used.)*
+32. Give the complete set of conditions (temperature, pressure, ratio) for converting B2O3 to elemental boron via the electrolytic route. *(Fused B2O3 + MgO + MgF2 mixture, electrolysed at approximately 1373 K — see §3.1.)*
+33. Write balanced equations for BOTH the acid role and base role of B2O3, and state which partner triggers each role. *(Base role, with a stronger acidic oxide: B2O3 + 3SO3 -> B2(SO4)3. Acid role, with a basic oxide: B2O3 + 3CaO -> Ca3(BO3)2 -- see §3.6.)*
+34. Explain why LiAlH4 must be handled under strictly anhydrous conditions, using its bonding character. *(The Al-H bonds are strongly hydridic/reducing, similar in character to diborane's B-H bonds -- LiAlH4 reacts vigorously and exothermically with any trace of water, releasing H2 and posing a fire/explosion hazard, exactly analogous to B2H6's own vigorous hydrolysis in section 2.5.)*
+35. Using only the data tables from §2.1 and §2.3 (no new information), rank B, Al, Ga, In and Tl by how strongly each resists forming a simple M3+(aq) ion, and justify your ranking with the specific E° values used. *(Tl strongest resistance, E°(Tl3+/Tl) = +1.26 V, positive; then B, whose covalent-only bonding makes M3+ formation essentially impossible despite no tabulated E° value being directly comparable; then Ga (-0.56 V), then In (-0.34 V), then Al showing the LEAST resistance at -1.66 V, the most negative and most spontaneous.)*
 # 4. Group 14: carbon, silicon, catenation and the inert-pair effect
 
 Members are C, Si, Ge, Sn, Pb. Configuration ns²np². Classification runs cleanly from non-metal to metal: C, Si non-metals; Ge metalloid; Sn, Pb metals — sharper than Group 13's messier progression. The group oxidation state is +4 (mostly covalent); +2 becomes progressively more important and is dominant at Pb — the inert-pair effect here is stronger than in Group 13, since it is the ns² pair alone resisting ionisation after both np electrons are already lost.

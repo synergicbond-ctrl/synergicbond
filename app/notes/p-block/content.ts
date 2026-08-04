@@ -428,133 +428,158 @@ Synthetic polymers (R₂SiO)ₙ with a repeating –Si–O–Si–O– backbone 
 13. Why is ordinary glass not considered a true crystalline solid? *(It is an amorphous, supercooled liquid with no sharp melting point, only a softening range.)*
 # 7. Group 15: nitrogen, ammonia and nitrogen oxides
 
-Members are N, P, As, Sb and Bi. Nitrogen is anomalous for the reasons in §1.2: small size, high electronegativity, no d orbitals, and a very strong N≡N triple bond (bond enthalpy ≈ 946 kJ mol⁻¹, among the strongest of any diatomic molecule). Common oxidation states span −3 to +5, with −3, +3 and +5 the most exam-relevant.
+Members are N, P, As, Sb, Bi. Configuration ns²np³ — a *stable, half-filled* p subshell, which is why Group 15's IE₁ values are anomalously *higher* than Group 16's despite Group 16 being one place further right (removing an electron from a half-filled shell costs extra exchange energy). Classification: N, P non-metals; As, Sb metalloids; Bi a metal. Oxidation states range from −3 to +5; the inert-pair effect makes +3 increasingly stable relative to +5 down the group, culminating in Bi(V) being a powerful oxidant.
 
-## 7.1 Dinitrogen: why it is inert yet essential
+## 7.1 Quantitative periodic trends
 
-N₂ is comparatively unreactive at room temperature purely because of the enormous N≡N bond enthalpy (a **kinetic/thermodynamic bond-strength** argument, not a lack of a possible reaction pathway). High temperature, pressure and a catalyst are required to break this bond industrially.
+| Property | N | P | As | Sb | Bi |
+|---|---:|---:|---:|---:|---:|
+| Atomic radius (pm) | 74 | 110 | 121 | 141 | 148 |
+| IE₁ (kJ/mol) | 1402 | 1012 | 947 | 834 | 703 |
+| Electronegativity | 3.0 | 2.1 | 2.0 | 1.9 | 1.9 |
+| Melting point (K) | 63 (N₂) | 317 (white P) | 1090 (sublimes) | 904 | 544 |
 
-## 7.2 Ammonia and the Haber process
+Nitrogen's IE₁ (1402 kJ/mol) is the highest of any p-block element outside Group 18 — the half-filled 2p³ exceptional stability, combined with nitrogen's very small size. This is also *why* nitrogen exists as a strongly triple-bonded, highly inert N₂ diatomic gas, while phosphorus and heavier members exist as more reactive polyatomic solids (P₄, As₄, Sb₄).
 
-Ammonia (NH₃) is trigonal pyramidal (sp³ N, one lone pair), highly water-soluble due to hydrogen bonding, a Lewis/Brønsted base, and a mild reducing agent in several reactions.
+## 7.2 Why nitrogen cannot mimic phosphorus's pentahalides
 
-\[\mathrm{N_2+3H_2\rightleftharpoons2NH_3\qquad\Delta H^\ominus=-92.4\ \text{kJ mol}^{-1}}\]
+Nitrogen has **no accessible d-orbitals** (n = 2), so its maximum covalency is 4 — NCl₅ and NF₅ do not exist. Phosphorus and heavier members (n ≥ 3) can expand their octet and readily form pentahalides: PCl₅, PF₅, AsF₅. This single fact — accessible vs inaccessible d-orbitals — is the same explanation used throughout this chapter for period-2-vs-heavier contrasts (compare §4.5's CCl₄/SiCl₄ discussion).
 
-Because the forward reaction is exothermic and reduces gas moles (4 mol → 2 mol), **high pressure and low temperature favour equilibrium yield** (Le Chatelier). Industrially, a compromise temperature (≈ 700 K) and pressure (≈ 200 atm) with an iron catalyst (promoted with Mo/K₂O/Al₂O₃) is used because very low temperature gives a high equilibrium yield but an impractically slow rate.
+**Catenation:** nitrogen shows almost none (N–N single bonds are weak due to lone-pair/lone-pair repulsion between adjacent small, electronegative atoms); phosphorus shows moderate catenation (P–P chains in polyphosphates, P₄ itself).
 
-Ammonia reacts with excess chlorine to give nitrogen and HCl, but with excess ammonia (ammonia in excess over chlorine) the HCl formed is neutralised by the extra ammonia and **chloramine**, NH₂Cl, results instead:
+## 7.3 Hydrides — the NH₃ anomaly
 
-\[\mathrm{8NH_3+3Cl_2\rightarrow N_2+6NH_4Cl\quad(\text{excess }NH_3)}\]
-\[\mathrm{NH_3+Cl_2\rightarrow NH_2Cl+HCl\quad(\text{excess }Cl_2)}\]
+| Property | NH₃ | PH₃ | AsH₃ | SbH₃ | BiH₃ |
+|---|---:|---:|---:|---:|---:|
+| Boiling point (K) | 240 | 185 | 218 | 256 | 290 |
+| Bond angle | 107.8° | 93.5° | 91.8° | 91.3° | 90° |
+| Thermal stability | highest | — | — | — | lowest |
+| Basicity/reducing power | most basic, least reducing | — | — | — | least basic, most reducing |
 
-**Always name which reagent is in excess before writing the product** — this reagent-ratio discipline recurs throughout p-block chemistry (§4.2, §5.3).
+**Boiling point anomaly:** NH₃'s boiling point (240 K) breaks the expected smooth trend (which would predict NH₃ lowest) because of strong hydrogen bonding, absent in the heavier hydrides — exactly analogous to the H₂O/H₂S anomaly in Group 16.
 
-## 7.3 Nitric acid and nitrogen oxides
+**Bond angle:** falls from 107.8° (NH₃) toward 90° down the group. Nitrogen's small size gives strong lone-pair repulsion pushing the bond angle well above the "pure p-orbital" 90°, close to tetrahedral; as the central atom grows, bonding electron pairs sit farther from the nucleus and closer to pure p-orbital (90°) bonding, with progressively less lone-pair compression.
 
-Concentrated HNO₃ is a strong, oxidising acid. It **passivates** Fe, Cr and Al: a thin, adherent, unreactive oxide layer forms on the metal surface and prevents further reaction, which is why concentrated (cold) HNO₃ can be transported in aluminium/iron containers even though dilute HNO₃ attacks these metals vigorously.
+**Basicity/reducing power:** exactly reversed trends — NH₃ is the strongest base (small, high electron density on N, effective lone-pair donation) and the weakest reducing agent; BiH₃ is a negligible base but the strongest reducing agent (large, diffuse, weakly held lone pair; weak, easily broken Bi–H bonds).
 
-NO is colourless and paramagnetic (odd number of valence electrons) and rapidly oxidises in air to brown NO₂:
+## 7.4 Oxides of nitrogen
 
-\[\mathrm{2NO+O_2\rightarrow2NO_2}\]
+| Oxide | Name | N oxidation state | Nature |
+|---|---|---:|---|
+| N₂O | Nitrous oxide | +1 | Neutral |
+| NO | Nitric oxide | +2 | Neutral |
+| N₂O₃ | Dinitrogen trioxide | +3 | Acidic |
+| NO₂ | Nitrogen dioxide | +4 | Acidic (mixed) |
+| N₂O₅ | Dinitrogen pentoxide | +5 | Acidic |
 
-NO₂ and N₂O₄ exist in a temperature-dependent equilibrium; N₂O₄ has a direct N–N bond joining two planar NO₂ units. **NO₂ is paramagnetic (odd-electron radical); N₂O₄ is diamagnetic** because the two odd electrons pair up across the new N–N bond. Lower temperature and higher pressure favour the diamagnetic dimer.
+**NO is paramagnetic** (an odd-electron molecule, 11 valence electrons, one unpaired) — a favourite MOT question, directly parallel to O₂'s paramagnetism (§16, Group 16). NO dimerises weakly to N₂O₂ at low temperature, pairing the odd electrons.
 
-## 7.4 Phosphorus: white vs red, and PH₃ vs NH₃
-
-White phosphorus contains discrete, strained P₄ tetrahedra (each P–P–P angle only 60°, far from the ideal ~109.5°, so the molecule is highly reactive and stored under water to prevent spontaneous aerial oxidation/ignition). Red phosphorus is a polymeric chain structure formed by opening one P–P bond per P₄ unit and linking units together; it is far less reactive, has a higher melting point, and is not phosphorescent or poisonous in the way white phosphorus is.
-
-PH₃ is a much weaker base than NH₃: nitrogen's lone pair (small atom, high electronegativity, no diffuse orbital) is far more concentrated and available for donation than phosphorus's lone pair (larger atom, lower electronegativity, lone pair in a more diffuse, more s-character-dominated orbital). This also explains why NH₃ hydrogen-bonds extensively (high boiling point, 240 K vs the "expected" much lower value) while PH₃ shows negligible hydrogen bonding and boils near 185 K.
-
-PCl₅ is trigonal bipyramidal (sp³d, 3 equatorial + 2 axial, D₃ₕ) in the gas phase; in the solid state it exists as the ionic lattice **[PCl₄]⁺[PCl₆]⁻** (tetrahedral cation + octahedral anion) — always specify the phase before assigning shape.
+**NO₂ is a mixed anhydride:** 2NO₂ + H₂O → HNO₃ + HNO₂ (nitrogen simultaneously going to +5 and +3 from +4) — a **disproportionation**, not simple hydration, exactly the same diagnostic (same element, two different oxidation-state products) used for XeF₄ hydrolysis in §18 and for the pseudohalogen (CN)₂ + NaOH reaction in Group 17.
 
 # 8. Group 15 deep dive: nitrogen, ammonia, nitrides and nitric acid
 
-## 8.1 Nitrogen fixation and the different classes of nitride
+## 8.1 Preparation and properties of ammonia
 
-The very large N≡N bond enthalpy (≈ 946 kJ mol⁻¹) makes atmospheric dinitrogen kinetically inert at ordinary temperatures despite the overall thermodynamics of many of its reactions being favourable. Biological nitrogen fixation (nitrogenase enzymes), atmospheric fixation by lightning, and the industrial Haber process are the three routes that convert this kinetically stable N₂ into more reactive, combined nitrogen. **Nitrides are not a single structural class**: ionic nitrides (Mg₃N₂, Ca₃N₂ — formed from a reactive metal and N₂ directly, containing discrete N³⁻ ions and hydrolysing cleanly to ammonia and the metal hydroxide), covalent nitrides (BN, with graphite-like and diamond-like polymorphs, §Group 13 diagonal relationship), and interstitial nitrides (formed by transition metals, where small N atoms occupy octahedral holes in the metal lattice, giving very hard, chemically inert, metallic-conducting solids) all have fundamentally different bonding, structure and hydrolysis behaviour, and must never be treated as one uniform "nitride" category:
+**Lab preparation:** heating an ammonium salt with a base — 2NH₄Cl + Ca(OH)₂ →(Δ) CaCl₂ + 2NH₃ + 2H₂O.
 
-\[\mathrm{Mg_3N_2+6H_2O\rightarrow3Mg(OH)_2+2NH_3}\]
+**Industrial — Haber process:** N₂ + 3H₂ ⇌ 2NH₃, ΔH = −92 kJ/mol, catalysed by finely divided iron with Mo/K₂O promoters, run at ~450 °C and ~200 atm.
 
-## 8.2 Ammonia: laboratory preparation and diagnostic reactions
+> **Worked Example — Le Chatelier reasoning for Haber-process conditions.** The forward reaction is exothermic (favours low T) and reduces gas moles 4→2 (favours high P). Why is 450 °C used rather than a lower temperature that would give a higher equilibrium yield?
+>
+> Equilibrium *position* and reaction *rate* are separate questions. A lower temperature would indeed push the equilibrium further toward NH₃ (Le Chatelier: exothermic forward reaction favoured by removing heat), but the **rate** of approach to that equilibrium would become impractically slow — nitrogen's N≡N triple bond (among the strongest known, ~945 kJ/mol) needs significant thermal/catalytic activation to break at all. 450 °C is a compromise: high enough for a commercially useful rate, with the iron catalyst lowering the activation energy without shifting the equilibrium position itself (a catalyst never changes K, only the rate of reaching it). High pressure (~200 atm) is used because it *does* genuinely shift equilibrium toward the side with fewer gas moles (product side), so pressure and temperature are pulling toward the same commercial goal for different reasons — one via kinetics, one via thermodynamics.
 
-In the laboratory, ammonia is generated by heating an ammonium salt with a strong base such as slaked lime:
+**Structure:** NH₃ is trigonal pyramidal (AX₃E), sp³ nitrogen, bond angle 107.8° (compressed from ideal tetrahedral 109.5° by lone-pair repulsion). Highly soluble in water (extensive H-bonding); weak base, Kb ≈ 1.8 × 10⁻⁵.
 
-\[\mathrm{2NH_4Cl+Ca(OH)_2\xrightarrow{\Delta}2NH_3+CaCl_2+2H_2O}\]
+## 8.2 Nitrides
 
-Being lighter than air and extremely soluble in water, ammonia is collected by the **downward-displacement-of-air** method (never over water, into which it would simply dissolve). It turns moist red litmus paper blue (confirming its basic character) and forms dense white fumes of ammonium chloride on contact with HCl gas — a standard identification test:
+Direct combination of nitrogen with reactive metals gives ionic nitrides: 6Li + N₂ → 2Li₃N (lithium is the only alkali metal reactive enough at ordinary conditions to combine directly with N₂). 3Mg + N₂ → Mg₃N₂ (magnesium nitride). Ionic nitrides hydrolyse to give ammonia — a general diagnostic: Mg₃N₂ + 6H₂O → 3Mg(OH)₂ + 2NH₃, and Li₃N + 3H₂O → 3LiOH + NH₃.
 
-\[\mathrm{NH_3+HCl\rightarrow NH_4Cl}\]
+**Covalent nitrides** (B, Si) behave differently — boron nitride (BN)ₓ is chemically robust (§2.6), unlike the readily-hydrolysed ionic nitrides.
 
-Drying the evolved ammonia gas requires a **basic** drying agent such as quicklime (CaO); acidic drying agents (conc. H₂SO₄, P₂O₅) react with and absorb the ammonia itself, while anhydrous CaCl₂ is unsuitable because it forms an addition compound, CaCl₂·8NH₃, rather than simply drying the gas.
+## 8.3 Nitric acid manufacture — the Ostwald process
 
-## 8.3 The Ostwald process for nitric acid
+**Step 1 (catalytic oxidation of ammonia):** 4NH₃ + 5O₂ →(Pt/Rh gauze, 500 K, 9 bar) 4NO + 6H₂O
 
-Industrial nitric acid manufacture proceeds through three conceptual stages: catalytic oxidation of ammonia to NO (Pt/Rh gauze catalyst, ~ 500 K, ~ 9 atm), rapid non-catalytic oxidation of NO to NO₂ in air, and absorption of NO₂ in water to give nitric acid, with the by-product NO recycled back into the second stage:
+**Step 2 (oxidation of NO):** 2NO + O₂ → 2NO₂ (fast, spontaneous at ordinary temperature)
 
-\[\mathrm{4NH_3+5O_2\xrightarrow{Pt/Rh,\ \Delta}4NO+6H_2O}\]
-\[\mathrm{2NO+O_2\rightarrow2NO_2}\]
-\[\mathrm{3NO_2+H_2O\rightarrow2HNO_3+NO}\]
+**Step 3 (absorption in water):** 3NO₂ + H₂O → 2HNO₃ + NO — the regenerated NO recycles into Step 2, making the process continuous.
 
-Because the NO liberated in the final absorption step is fed straight back into the second oxidation stage, a nitrogen-atom mass-balance across the recycled loop — rather than treating each equation as a one-way, terminal consumption of nitrogen — is the correct way to answer any "overall yield" or stoichiometry question on this process.
+The dilute HNO₃ produced (~68%) is concentrated to ~98% by distillation with conc. H₂SO₄ acting as a dehydrating agent. Tracked across the whole process, nitrogen is oxidised from −3 (in NH₃) through +2 (NO) and +4 (NO₂) to +5 (in HNO₃) — a clean example for tracking oxidation state across a multi-step industrial sequence.
+
+## 8.4 Nitric acid reactions and the brown ring test
+
+**With metals — dilute vs concentrated matters:**
+
+| Metal | Dilute HNO₃ | Conc. HNO₃ |
+|---|---|---|
+| Copper | NO | NO₂ |
+| Zinc | N₂O | NO₂ |
+| Very dilute + active metal | NH₄NO₃ | — |
+
+Al, Cr and Fe are **passivated** by conc. HNO₃ (a protective oxide layer forms) and do not dissolve — the same passivation seen for Al in §3.7.
+
+**Brown ring test for nitrate:** relies on reduction of nitrate to NO by Fe²⁺ in the presence of dilute H₂SO₄, followed by NO coordinating to unreacted Fe²⁺ at the interface between the two liquid layers: FeSO₄ + NO → [Fe(H₂O)₅(NO)]²⁺(brown), formed as [Fe(NO)(H₂O)₅]SO₄. The iron in this complex is formally **+1** (NO is treated as NO⁺ donating one electron to Fe²⁺, giving Fe¹⁺) — one of the most frequently mis-assigned oxidation states in the whole syllabus; do not default to +2 or +3 by pattern-matching Fe's usual states.
 
 # 9. Nitrogen oxides, phosphorus allotropes and chlorides
 
-## 9.1 Comparing the nitrogen oxides
+## 9.1 Allotropes of phosphorus
 
-| Oxide | Common name | Key feature |
-|---|---|---|
-| N₂O | nitrous oxide | neutral oxide; supports combustion of a glowing splint under suitable conditions; used as a mild anaesthetic |
-| NO | nitric oxide | colourless, paramagnetic (odd electron); rapidly oxidised by air to brown NO₂ |
-| N₂O₃ | dinitrogen trioxide | conventionally treated as the acid anhydride of nitrous acid, HNO₂ |
-| NO₂ / N₂O₄ | nitrogen dioxide / dinitrogen tetroxide | brown, paramagnetic monomer in equilibrium with a colourless, diamagnetic dimer joined by a direct N–N bond |
-| N₂O₅ | dinitrogen pentoxide | conventionally treated as the acid anhydride of nitric acid, HNO₃ |
+**White phosphorus (P₄):** discrete tetrahedral molecules, each P bonded to 3 others with a strained 60° P–P–P bond angle (far from the ideal ~99° for pure p-orbital bonding — this "banana bond" strain is exactly why white P is so reactive). Waxy, soft, translucent solid; **highly toxic**; glows in the dark (chemiluminescence from slow aerial oxidation, giving the name "phosphorus" — light-bearer); spontaneously ignites in air above ~35 °C, so it is stored under water. Soluble in CS₂.
 
-Lower temperature and higher pressure both favour the diamagnetic dimer, N₂O₄, over the paramagnetic monomer, NO₂. The associated colour change (brown ⇌ colourless) and the magnetic change (paramagnetic ⇌ diamagnetic) both arise purely from this dimerisation **equilibrium**, not from any change in the oxidation number of nitrogen (which remains +4 throughout).
+**Red phosphorus:** a polymeric chain structure formed by breaking one P–P bond per P₄ tetrahedron and linking the units — no ring strain, hence far less reactive, non-toxic, does not glow, does not ignite spontaneously. Obtained by heating white P in an inert atmosphere at ~573 K.
 
-## 9.2 Phosphorus allotropes, compared precisely
+**Black phosphorus:** the thermodynamically most stable allotrope, with a layered structure resembling graphite; obtained from red or white phosphorus under high pressure. Densest and least reactive form.
 
-White phosphorus is a molecular solid of discrete, highly strained P₄ tetrahedra (P–P–P bond angle only 60°, far below the natural ~ 100° preferred by phosphorus's bonding orbitals); this ring strain is exactly why it is so reactive, self-igniting in air near 303 K and consequently stored under water. Red phosphorus is a polymeric, chain-like structure obtained by breaking one P–P bond per P₄ unit and linking the resulting fragments; it is far less reactive, non-poisonous (unlike white phosphorus), does not glow in the dark, and has a substantially higher melting point. Black phosphorus, the thermodynamically most stable form, is a layered, graphite-like structure with the lowest reactivity of the three. **When a question asks which form is "most reactive," the correct answer must specify the particular allotrope and its structural reason (ring strain in P₄), never simply "phosphorus" as an unqualified element name.**
+> **Fast recall:** reactivity order white ≫ red > black, mirroring exactly how ring/lattice strain (not oxidation state or formula) governs reactivity — the same "small, strained unit is more reactive" logic as diborane's electron deficiency or borazine's polar bonds.
 
-## 9.3 PCl₃ and PCl₅: hydrolysis and phase-dependent shape
+## 9.2 Phosphorus halides
 
-PCl₃ hydrolyses completely and cleanly to phosphorous acid:
+**PCl₃ (phosphorus trichloride):** P₄ + 6Cl₂ → 4PCl₃ (limited chlorine). Trigonal pyramidal, sp³ P with one lone pair. Hydrolyses readily: PCl₃ + 3H₂O → H₃PO₃ + 3HCl.
 
-\[\mathrm{PCl_3+3H_2O\rightarrow H_3PO_3+3HCl}\]
+**PCl₅ (phosphorus pentachloride):** P₄ + 10Cl₂ → 4PCl₅ (excess chlorine), or PCl₃ + Cl₂ → PCl₅. In the **gas phase**, PCl₅ is trigonal bipyramidal (sp³d) — the two axial P–Cl bonds (219 pm) are *longer* than the three equatorial bonds (204 pm), because axial bonds experience more electron-pair repulsion (90° to three equatorial pairs) than equatorial bonds do (only 120° to their neighbours). In the **solid state**, PCl₅ exists as an ionic lattice, [PCl₄]⁺[PCl₆]⁻ — tetrahedral cation, octahedral anion — a frequently tested structure-changes-with-state question, directly parallel to AlCl₃'s dimer-in-vapour/ionic-tending-in-water duality (§3.5) and BeCl₂'s own state-dependent structure.
 
-PCl₅ hydrolyses completely (excess water) to phosphoric acid, though partial/controlled hydrolysis (limited water) instead gives phosphorus oxychloride, POCl₃, as an intermediate:
+Hydrolysis: PCl₅ + 4H₂O → H₃PO₄ + 5HCl (complete hydrolysis, unlike BF₃'s partial hydrolysis in §3.4 — phosphorus has accessible d-orbitals throughout, so no stable intermediate fluoro/chloro-complex analogous to BF₄⁻ forms to arrest the reaction).
 
-\[\mathrm{PCl_5+4H_2O\rightarrow H_3PO_4+5HCl}\]
-\[\mathrm{PCl_5+H_2O\rightarrow POCl_3+2HCl}\quad(\text{limited water})\]
+## 9.3 Phosphine, PH₃
 
-PCl₅'s structure is strictly **phase-dependent**: in the gas phase it is a discrete, trigonal-bipyramidal, sp³d-hybridised molecule (three equatorial + two longer axial P–Cl bonds — the axial bonds are longer and weaker because of greater repulsion from the three equatorial substituents); in the solid state it exists instead as an ionic lattice of tetrahedral [PCl₄]⁺ cations and octahedral [PCl₆]⁻ anions. The standard JEE hybridisation/VSEPR language predicts the gas-phase shape correctly, but **the phase must always be stated** before quoting a structure for PCl₅.
+Prepared by Ca₃P₂ + 6H₂O → 3Ca(OH)₂ + 2PH₃ (calcium phosphide hydrolysis), or by heating white phosphorus with concentrated NaOH: P₄ + 3NaOH + 3H₂O → 3NaH₂PO₂ + PH₃ (a disproportionation of phosphorus, 0 → +1 in hypophosphite and 0 → −3 in phosphine). Colourless, extremely toxic gas with a garlic-like odour; weaker base than NH₃ (P is larger, less electronegative, holds its lone pair less tightly available for donation); burns in air, P₄ + 5O₂ → forms P₄O₁₀ pathway when impure (traces of P₂H₄ cause spontaneous ignition — the basis of the *Holmes' signal*, a marine distress flare using calcium phosphide + water).
 
 # 10. Group 15: phosphorus oxoacids and high-yield comparisons
 
-In every phosphorus oxoacid, **only an O–H hydrogen is ionisable; a P–H hydrogen is not** (P–H is a genuine covalent bond to phosphorus with negligible polarity toward loss as H⁺). Drawing the structure and counting O–H groups gives basicity directly and reliably.
+## 10.1 Phosphorus oxoacids — basicity and reducing power from structure
 
-| Acid | Structural formula (bonds to P) | Basicity | Oxidation state of P | Reducing character |
-|---|---|---:|---:|---|
-| H₃PO₂ (hypophosphorous) | 1 O–H, 2 P–H, 1 P=O | 1 | +1 | Strongly reducing |
-| H₃PO₃ (phosphorous) | 2 O–H, 1 P–H, 1 P=O | 2 | +3 | Reducing |
-| H₃PO₄ (orthophosphoric) | 3 O–H, 0 P–H, 1 P=O | 3 | +5 | Not reducing |
-| H₄P₂O₇ (pyrophosphoric) | 4 O–H, one P–O–P bridge | 4 | +5 | Not reducing |
+| Acid | Basicity | P–OH count | P–H count | Nature |
+|---|---:|---:|---:|---|
+| H₃PO₂ (hypophosphorous) | 1 | 1 | 2 | Strong reducing agent |
+| H₃PO₃ (phosphorous) | 2 | 2 | 1 | Reducing agent |
+| H₃PO₄ (orthophosphoric) | 3 | 3 | 0 | Non-reducing |
 
-Heating H₃PO₃ causes **disproportionation** (phosphorus simultaneously oxidised and reduced) to phosphoric acid and phosphine:
+**The organising rule: basicity = number of P–OH groups (not the number of H atoms in the formula); reducing power ∝ number of P–H bonds.** H₃PO₂ has 3 hydrogens but only 1 is acidic (P–OH); the other 2 are P–H, directly bonded to phosphorus, and it is exactly those P–H bonds that make it such a powerful reductant (they are hydridic, easily donated to an oxidant).
 
-\[\mathrm{4H_3PO_3\xrightarrow{\Delta}3H_3PO_4+PH_3}\]
+> **Worked Example — disproportionation of phosphorous acid.** H₃PO₃ disproportionates on heating: 4H₃PO₃ → 3H₃PO₄ + PH₃. Assign oxidation states and confirm this is disproportionation.
+>
+> H₃PO₃ has 2 P–OH and 1 P–H: charge balance 3(+1) + x + 3(−2) = 0 ⇒ x = +3. H₃PO₄ has 3 P–OH, 0 P–H: 3(+1) + x + 4(−2) = 0 ⇒ x = +5. PH₃: 3(+1) + x = 0 ⇒ x = −3.
+>
+> P at +3 splits into +5 (oxidised, in H₃PO₄) and −3 (reduced, in PH₃) — the defining disproportionation signature. Electron balance: per P going +3→+5, 2e⁻ lost; per P going +3→−3, 6e⁻ gained. Balancing 3 oxidised : 1 reduced (3×2 = 6 = 1×6) gives the observed 4H₃PO₃ → 3H₃PO₄ + PH₃.
+>
+> **H₃PO₂ also disproportionates**, but to the *adjacent* accessible states: 2H₃PO₂ → H₃PO₃ + PH₃ (P: +1→+3 and +1→−3), not straight to H₃PO₄ — a common false belief is that only H₃PO₃ disproportionates.
 
-Hypophosphorous acid, H₃PO₂, is **monobasic despite the formula containing three hydrogens** — because two of its three hydrogens are bonded directly to phosphorus (P–H) and are not ionisable; only the single O–H hydrogen dissociates.
+## 10.2 As, Sb, Bi — why the +3 state stops disproportionating
 
-## 10.1 Oxidation-state discipline vs structural (basicity) discipline
+Unlike nitrogen and phosphorus, the intermediate +3 oxidation state of arsenic, antimony and bismuth is **stable and does not disproportionate** — the inert-pair effect (§4, applied here to Group 15's heaviest members) makes +3 the preferred state rather than an unstable midpoint between −3 and +5. Bi(V) compounds (e.g. NaBiO₃) are instead strong oxidising agents, readily reduced to the stable Bi(III), directly parallel to Tl³⁺ (§2.3) and PbO₂ (§4.2).
 
-For a **redox** question, assign the oxidation number of phosphorus first (use the whole-molecule formula and standard rules). For an **acidity/basicity** question, draw the actual connectivity first (identify how many oxygens carry an ionisable H). A bare molecular formula is not sufficient for either task in isolation — H₃PO₂ and H₃PO₃ both "look" like they could be tribasic from the formula alone, but structural analysis shows 1 and 2 respectively.
+## 10.3 Practice problems
 
-## 10.2 JEE trap
-
-The word **"basicity"** of an acid asks strictly how many protons the acid can donate (i.e., how many replaceable/ionisable H atoms it has) — it is *not* the total count of H atoms in the formula, and it is *not* the oxidation number of phosphorus. Confusing any two of these three ideas is the single most common Group 15 error.
-
-**Worked example 5.1.** *What is the basicity of pyrophosphorous acid, H₄P₂O₅?* Its structure has two PO(OH)(H) units bridged by one P–O–P oxygen, giving 2 ionisable O–H hydrogens and 2 non-ionisable P–H hydrogens — basicity = 2, even though the formula shows four hydrogens total.
-
+1. Why does nitrogen not form NCl₅, while phosphorus readily forms PCl₅? *(Nitrogen has no accessible d-orbitals at n=2; maximum covalency 4.)*
+2. What is the oxidation state of iron in the brown ring complex [Fe(H₂O)₅(NO)]²⁺? *(+1 — NO is treated as NO⁺, reducing Fe from +2 to +1.)*
+3. Why is ammonia's boiling point anomalously high compared to PH₃, AsH₃, SbH₃? *(Strong intermolecular hydrogen bonding in NH₃, absent in the heavier hydrides.)*
+4. Identify the structure of PCl₅ in the gas phase vs the solid state. *(Gas: trigonal bipyramidal, sp³d. Solid: ionic, [PCl₄]⁺[PCl₆]⁻.)*
+5. Which phosphorus oxoacid is non-reducing, and why? *(H₃PO₄ — it has zero P–H bonds; all three hydrogens are P–OH.)*
+6. Why does white phosphorus ignite spontaneously in air while red phosphorus does not? *(White P's P₄ tetrahedra have highly strained ~60° bond angles, making it far more reactive; red P's polymeric chain structure has no such strain.)*
+7. Explain why NO₂ dissolving in water is a disproportionation, not simple hydration. *(3NO₂ + H₂O → 2HNO₃ + HNO₂ — nitrogen splits from +4 into +5 and +3, the same-element-splits-both-ways signature.)*
+8. Why is Bi(V) a strong oxidising agent while N(V) (as HNO₃) and P(V) (as H₃PO₄) are comparatively stable? *(Inert-pair effect at the bottom of the group makes Bi(III) the preferred, more stable state, so Bi(V) readily accepts electrons to fall back to it.)*
+9. State the Haber process conditions and explain, using Le Chatelier and rate reasoning, why 450 °C (not a lower temperature) is used. *(~450 °C, ~200 atm, Fe catalyst with Mo/K₂O promoters — see the worked example in §8.1: lower T would raise equilibrium yield but make the rate impractically slow, since the N≡N bond needs significant activation.)*
+10. Give the products of P₄ + 3NaOH + 3H₂O and identify the reaction type. *(3NaH₂PO₂ + PH₃ — a disproportionation of phosphorus from 0 to +1 and 0 to −3.)*
 # 11. Group 16: oxygen, ozone and sulphur
 
 Members are O, S, Se, Te and Po. Oxygen is anomalous (§1.2): small, highly electronegative, capable of strong hydrogen bonding, and — critically — **has no accessible valence d orbital**, so its maximum covalency is capped near 2–4 depending on the species, unlike sulphur which readily reaches covalency/coordination 6 (SF₆). Use the school-level "octet expansion" model carefully: do not infer that oxygen can expand its octet the way sulphur or phosphorus can.

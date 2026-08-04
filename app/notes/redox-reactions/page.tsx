@@ -1,8 +1,7 @@
-import React from "react";
-import Link from "next/link";
+import { ChapterHero, ChapterLessonGroups, ChapterShell } from "@/components/notes/canonical";
+import { ChemistryTable } from "@/components/notes/ChemistryTable";
 import { getNotesChapter } from "@/lib/notesEngine";
-import { CanonicalNotesStyles, ChapterLessonGroups } from "@/components/notes/canonical";
-import { redoxLessonGroups } from "./_chapter";
+import { REDOX_GROUPS, REDOX_LESSONS, redoxLessonGroups, redoxTabs } from "./_chapter";
 
 export const metadata = {
   title: "Redox Reactions — SYNERGIC BOND",
@@ -12,87 +11,81 @@ export const metadata = {
 
 export default function RedoxReactionsHubPage() {
   const chapter = getNotesChapter("redox-reactions");
+  const lessonGroups = redoxLessonGroups();
+  const structureRows = REDOX_GROUPS.map((group) => [
+    group.label,
+    `${group.to - group.from + 1} lessons`,
+    `${REDOX_LESSONS.filter((lesson) => lesson.number >= group.from && lesson.number <= group.to)
+      .reduce((total, lesson) => total + lesson.sections.length, 0)} sections`,
+  ]);
 
   return (
-    <main className="min-h-screen bg-[#0a1622] text-white">
-      <div className="mx-auto max-w-5xl px-4 py-8 sm:px-6 md:py-12 space-y-8">
-        {/* Breadcrumb Navigation */}
-        <nav className="flex items-center gap-2 text-xs font-semibold text-slate-400">
-          <Link href="/notes" className="hover:text-cyan-400 transition">
-            Notes Hub
-          </Link>
-          <span>/</span>
-          <span className="text-purple-300">Physical Chemistry</span>
-          <span>/</span>
-          <span className="text-white">Redox Reactions</span>
-        </nav>
+    <ChapterShell kicker="JEE Physical Chemistry" subtitle="Redox Reactions" tabs={redoxTabs()}>
+      <div className="mx-auto max-w-5xl space-y-10">
+        <ChapterHero
+          title="Redox Reactions"
+          meta="Chapter 2 · Physical Chemistry"
+          description="Complete foundation covering oxidation-reduction dynamics, equivalent concept (`n`-factor calculations across all functional groups), and volumetric titration analysis."
+          breadcrumbs={[
+            { href: "/notes", label: "Notes Hub" },
+            { label: "Physical Chemistry" },
+            { label: "Redox Reactions" },
+          ]}
+          badges={[
+            { label: "JEE & NEET Core", tone: "cyan" },
+            { label: `${REDOX_LESSONS.length} verified lessons`, tone: "gold" },
+          ]}
+        />
 
-        {/* Hero Banner */}
-        <header className="rounded-[2.5rem] bg-gradient-to-br from-purple-900/40 via-slate-900 to-indigo-900/40 border border-purple-500/30 p-8 sm:p-10 shadow-2xl relative overflow-hidden">
-          <div className="absolute -right-10 -top-10 h-64 w-64 rounded-full bg-purple-500/10 blur-3xl pointer-events-none" />
-          <div className="relative z-10 space-y-4">
-            <div className="flex flex-wrap items-center gap-2">
-              <span className="rounded-full bg-purple-500/20 px-3 py-1 text-xs font-bold uppercase tracking-wider text-purple-300 border border-purple-500/30">
-                Chapter 2 • Physical Chemistry
-              </span>
-              <span className="rounded-full bg-lime-500/20 px-3 py-1 text-xs font-bold uppercase tracking-wider text-lime-300 border border-lime-500/30">
-                JEE & NEET Core
-              </span>
+        <section aria-labelledby="redox-lessons-heading">
+          <div className="flex flex-col gap-3 border-b border-[var(--sb-border)] pb-4 sm:flex-row sm:items-end sm:justify-between">
+            <div>
+              <p className="sb-eyebrow">Reading Sequence</p>
+              <h2 id="redox-lessons-heading" className="mt-2 font-[family-name:var(--sb-font-display)] text-2xl font-semibold text-[var(--sb-text)] sm:text-3xl">
+                Chapter Lessons
+              </h2>
             </div>
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-black tracking-tight text-white">
-              Redox Reactions
-            </h1>
-            <p className="max-w-2xl text-base sm:text-lg text-slate-300 font-medium leading-relaxed">
-              Complete foundation covering oxidation-reduction dynamics, equivalent concept (`n`-factor calculations across all functional groups), and volumetric titration analysis.
-            </p>
+            <span className="font-mono text-xs font-bold uppercase tracking-[0.08em] text-[var(--sb-text-muted)]">
+              10 lessons · 2 units
+            </span>
           </div>
-        </header>
-
-        {/* Canonical 10-lesson grid, grouped by unit */}
-        <section className="space-y-4">
-          <div className="flex items-center justify-between border-b border-slate-800 pb-3">
-            <h2 className="text-xl font-bold tracking-tight text-white flex items-center gap-2">
-              <span className="inline-block h-2.5 w-2.5 rounded-full bg-purple-400" />
-              Chapter Lessons
-            </h2>
-            <span className="text-xs font-bold text-slate-400">10 lessons · 2 units</span>
-          </div>
-          <CanonicalNotesStyles />
-          <ChapterLessonGroups groups={redoxLessonGroups()} />
+          <ChapterLessonGroups groups={lessonGroups} />
         </section>
 
-        {/* Overview of Syllabus & Solved Skeletons */}
+        <section aria-labelledby="redox-structure-heading" className="sb-surface p-5 sm:p-7">
+          <p className="sb-eyebrow">At a Glance</p>
+          <h2 id="redox-structure-heading" className="mt-2 font-[family-name:var(--sb-font-display)] text-2xl font-semibold text-[var(--sb-text)]">
+            Chapter structure
+          </h2>
+          <p className="sb-body mt-3 max-w-2xl text-sm">The existing lesson and source-section coverage, grouped by the chapter’s two verified units.</p>
+          <ChemistryTable headers={["Unit", "Lessons", "Source sections"]} rows={structureRows} />
+        </section>
+
         {chapter && (
-          <section className="mt-10 rounded-3xl border border-slate-800 bg-slate-900/60 p-6 sm:p-8 space-y-6">
-            <div className="flex items-center justify-between border-b border-slate-800 pb-3">
-              <h2 className="text-xl font-bold tracking-tight text-white flex items-center gap-2">
-                <span className="inline-block h-2.5 w-2.5 rounded-full bg-cyan-400" />
+          <section className="sb-surface overflow-hidden" aria-labelledby="redox-summary-heading">
+            <div className="border-b border-[var(--sb-border)] p-5 sm:p-7">
+              <p className="sb-eyebrow">Syllabus Reference</p>
+              <h2 id="redox-summary-heading" className="mt-2 font-[family-name:var(--sb-font-display)] text-2xl font-semibold text-[var(--sb-text)]">
                 Chapter Knowledge Summary
               </h2>
-              <span className="text-xs font-bold text-slate-400">Syllabus Reference</span>
             </div>
-
-            <div className="grid gap-6 md:grid-cols-2 text-sm">
-              <div className="space-y-2">
-                <h3 className="font-bold text-pink-300">Core Concepts Covered</h3>
-                <ul className="list-disc pl-5 text-slate-300 space-y-1 text-xs">
-                  {chapter.syllabus.map((t: string, i: number) => (
-                    <li key={i}>{t}</li>
-                  ))}
+            <div className="grid gap-0 md:grid-cols-2">
+              <div className="border-b border-[var(--sb-border)] p-5 sm:p-7 md:border-b-0 md:border-r">
+                <h3 className="font-mono text-xs font-bold uppercase tracking-[0.1em] text-[var(--sb-cyan)]">Core Concepts Covered</h3>
+                <ul className="mt-4 list-disc space-y-2 pl-5 text-sm leading-6 text-[var(--sb-text-body)]">
+                  {chapter.syllabus.map((topic: string) => <li key={topic}>{topic}</li>)}
                 </ul>
               </div>
-              <div className="space-y-2">
-                <h3 className="font-bold text-amber-300">Common Student Traps to Avoid</h3>
-                <ul className="list-disc pl-5 text-slate-300 space-y-1 text-xs">
-                  {chapter.commonMistakes.map((m: string, i: number) => (
-                    <li key={i}>{m}</li>
-                  ))}
+              <div className="p-5 sm:p-7">
+                <h3 className="font-mono text-xs font-bold uppercase tracking-[0.1em] text-[var(--sb-gold)]">Common Student Traps to Avoid</h3>
+                <ul className="mt-4 list-disc space-y-2 pl-5 text-sm leading-6 text-[var(--sb-text-body)]">
+                  {chapter.commonMistakes.map((mistake: string) => <li key={mistake}>{mistake}</li>)}
                 </ul>
               </div>
             </div>
           </section>
         )}
       </div>
-    </main>
+    </ChapterShell>
   );
 }

@@ -15,20 +15,20 @@ import type { CSSProperties, ReactNode } from "react";
 // ─────────────────────────────────────────────────────────────────────────────
 
 export const NT = {
-  bg: "#0a1622",
-  bgGrid: "#0d1c2b",
-  surface: "#122232",
-  surface2: "#182b3e",
-  border: "#24405c",
-  borderSoft: "#1c3049",
-  text: "#eef3f8",
-  textDim: "#c3d1dd",
-  textFaint: "#91a9bc",
-  gold: "#e8b84b",
-  cyan: "#5fd4ea",
-  serif: "Georgia, 'Iowan Old Style', 'Times New Roman', serif",
-  mono: "'SFMono-Regular',Consolas,'Liberation Mono',monospace",
-  sans: "-apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'Helvetica Neue', Arial, system-ui, sans-serif",
+  bg: "var(--sb-bg)",
+  bgGrid: "var(--sb-bg-grid)",
+  surface: "var(--sb-surface-1)",
+  surface2: "var(--sb-surface-2)",
+  border: "var(--sb-border)",
+  borderSoft: "var(--sb-border-strong)",
+  text: "var(--sb-text)",
+  textDim: "var(--sb-text-body)",
+  textFaint: "var(--sb-text-muted)",
+  gold: "var(--sb-gold)",
+  cyan: "var(--sb-cyan)",
+  serif: "var(--sb-font-display)",
+  mono: "var(--sb-font-mono)",
+  sans: "var(--sb-font-ui)",
 } as const;
 
 export interface ChapterTab {
@@ -55,7 +55,7 @@ const CANONICAL_CSS = `
 .sbnHeader {
   width: 100%;
   border-bottom: 1px solid ${NT.border};
-  background: linear-gradient(180deg, ${NT.surface2}, ${NT.bg});
+  background: color-mix(in srgb, ${NT.surface} 94%, transparent);
   padding: clamp(18px, 3vw, 34px) clamp(14px, 3vw, 42px);
 }
 .sbnHeaderInner { max-width: 1560px; margin: 0 auto; }
@@ -65,7 +65,7 @@ const CANONICAL_CSS = `
 }
 .sbnKicker {
   color: ${NT.text}; font-family: ${NT.serif};
-  font-size: clamp(1.35rem, 2.4vw, 2rem); font-weight: 900;
+  font-size: clamp(1.35rem, 2.4vw, 2rem); font-weight: 650; letter-spacing: -.025em;
 }
 .sbnSubtitle {
   margin-top: 4px; color: ${NT.cyan}; font-family: ${NT.sans};
@@ -80,7 +80,7 @@ const CANONICAL_CSS = `
   display: inline-block;
   border: 1px solid ${NT.border};
   border-left: 4px solid ${NT.cyan};
-  border-radius: 13px;
+  border-radius: var(--sb-radius-sm);
   padding: 10px 13px;
   background: rgba(18,34,50,.9);
   color: ${NT.textDim};
@@ -92,13 +92,14 @@ const CANONICAL_CSS = `
   cursor: pointer;
 }
 .sbnTab:hover { color: ${NT.text}; border-color: ${NT.cyan}; }
+.sbnTab:focus-visible { border-color: ${NT.cyan}; }
 .sbnTabActive {
   border-color: ${NT.gold};
   border-left-color: ${NT.gold};
   background: rgba(232,184,75,.15);
   color: ${NT.gold};
   font-weight: 900;
-  box-shadow: 0 8px 24px rgba(232,184,75,.12);
+  box-shadow: none;
 }
 .sbnTabActive:hover { color: ${NT.gold}; border-color: ${NT.gold}; }
 .sbnMain { width: 100%; min-width: 0; max-width: 1500px; margin: 0 auto; padding: 28px 24px 92px; }
@@ -109,6 +110,33 @@ const CANONICAL_CSS = `
 .sbnShell .katex-display { overflow-x: auto; overflow-y: hidden; max-width: 100%; }
 .sbnShell table { max-width: 100%; }
 .sbnPartChrome { width: 100%; min-width: 0; max-width: 1500px; margin: 0 auto; padding: 22px 24px; }
+.sbnChapterHero {
+  margin: 0 auto 28px;
+  border: 1px solid ${NT.border};
+  border-left: 4px solid ${NT.cyan};
+  border-radius: var(--sb-radius-lg);
+  padding: clamp(20px, 4vw, 34px);
+  background: ${NT.surface};
+}
+.sbnBreadcrumbs {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 7px;
+  margin-bottom: 18px; color: ${NT.textFaint}; font: 650 12px/1.4 ${NT.sans};
+}
+.sbnBreadcrumbs a:hover { color: ${NT.cyan}; }
+.sbnHeroMeta {
+  color: ${NT.cyan}; font: 800 11.5px/1.5 ${NT.mono};
+  letter-spacing: .13em; text-transform: uppercase;
+}
+.sbnHeroTitle {
+  margin: 9px 0 0; max-width: 22ch; color: ${NT.text};
+  font: 650 clamp(2rem, 5vw, 4.2rem)/1.02 ${NT.serif}; letter-spacing: -.035em;
+  text-wrap: balance;
+}
+.sbnHeroDescription {
+  margin: 16px 0 0; max-width: 72ch; color: ${NT.textDim};
+  font: 500 clamp(.94rem, 1.4vw, 1.05rem)/1.7 ${NT.sans};
+}
+.sbnHeroBadges { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
 .sbnLessonGroup { margin: 34px 0 10px; }
 .sbnLessonGroupLabel {
   color: ${NT.gold}; font-family: ${NT.serif}; font-size: 22px; font-weight: 700;
@@ -121,7 +149,7 @@ const CANONICAL_CSS = `
   background: ${NT.surface};
   border: 1px solid ${NT.border};
   border-left: 4px solid ${NT.cyan};
-  border-radius: 13px;
+  border-radius: var(--sb-radius);
   padding: 16px 18px;
   text-decoration: none;
   transition: border-color .15s ease, background .15s ease;
@@ -130,7 +158,7 @@ const CANONICAL_CSS = `
 .sbnLessonCardCurrent {
   border-color: ${NT.gold}; border-left-color: ${NT.gold};
   background: rgba(232,184,75,.12);
-  box-shadow: 0 8px 24px rgba(232,184,75,.12);
+  box-shadow: none;
 }
 .sbnLessonCardCurrent:hover { border-color: ${NT.gold}; background: rgba(232,184,75,.16); }
 .sbnLessonNumber {
@@ -149,11 +177,11 @@ const CANONICAL_CSS = `
 }
 .sbnPagerCard {
   display: flex; flex-direction: column; gap: 6px; min-width: 0; justify-content: center;
-  border: 1px solid rgba(95,212,234,.5); border-radius: 12px;
+  border: 1px solid color-mix(in srgb, ${NT.cyan} 50%, transparent); border-radius: var(--sb-radius);
   padding: 12px 15px;
-  background: linear-gradient(135deg, ${NT.surface2}, ${NT.surface});
+  background: ${NT.surface};
   text-decoration: none;
-  box-shadow: 0 10px 28px rgba(0,0,0,.18);
+  box-shadow: none;
 }
 .sbnPagerCard:hover { border-color: ${NT.cyan}; }
 .sbnPagerNext { border-color: rgba(232,184,75,.5); text-align: right; }
@@ -166,14 +194,14 @@ const CANONICAL_CSS = `
 .sbnPagerTitle { color: ${NT.text}; font-family: ${NT.sans}; font-size: 13.5px; font-weight: 800; line-height: 1.35; }
 .sbnPagerHub {
   display: flex; align-items: center; justify-content: center;
-  border: 1px solid ${NT.border}; border-radius: 12px;
+  border: 1px solid ${NT.border}; border-radius: var(--sb-radius);
   padding: 12px 15px;
-  background: linear-gradient(135deg, ${NT.surface2}, ${NT.surface});
+  background: ${NT.surface};
   color: ${NT.text}; font-family: ${NT.sans}; font-size: 13px; font-weight: 800;
-  text-decoration: none; box-shadow: 0 10px 28px rgba(0,0,0,.18);
+  text-decoration: none; box-shadow: none;
 }
 .sbnPagerHub:hover { border-color: ${NT.textFaint}; }
-.sbnPagerSpacer { border: 1px dashed ${NT.borderSoft}; border-radius: 12px; opacity: .35; }
+.sbnPagerSpacer { border: 1px dashed ${NT.borderSoft}; border-radius: var(--sb-radius); opacity: .35; }
 @media (max-width: 900px) {
   .sbnLessonGrid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .sbnMain { padding: 20px 15px 78px; }
@@ -191,6 +219,45 @@ const CANONICAL_CSS = `
 
 export function CanonicalNotesStyles() {
   return <style>{CANONICAL_CSS}</style>;
+}
+
+export function ChapterHero({
+  title,
+  meta,
+  description,
+  breadcrumbs,
+  badges,
+}: {
+  title: string;
+  meta: string;
+  description?: string;
+  breadcrumbs?: { href?: string; label: string }[];
+  badges?: { label: string; tone?: "cyan" | "gold" }[];
+}) {
+  return (
+    <header className="sbnChapterHero">
+      {breadcrumbs && breadcrumbs.length > 0 && (
+        <nav className="sbnBreadcrumbs" aria-label="Breadcrumb">
+          {breadcrumbs.map((crumb, index) => (
+            <span key={`${crumb.label}-${index}`} className="contents">
+              {index > 0 && <span aria-hidden>/</span>}
+              {crumb.href ? <Link href={crumb.href}>{crumb.label}</Link> : <span aria-current="page">{crumb.label}</span>}
+            </span>
+          ))}
+        </nav>
+      )}
+      <p className="sbnHeroMeta">{meta}</p>
+      <h1 className="sbnHeroTitle">{title}</h1>
+      {description && <p className="sbnHeroDescription">{description}</p>}
+      {badges && badges.length > 0 && (
+        <div className="sbnHeroBadges" aria-label="Chapter attributes">
+          {badges.map((badge) => (
+            <span key={badge.label} className={`sb-badge sb-badge--${badge.tone ?? "cyan"}`}>{badge.label}</span>
+          ))}
+        </div>
+      )}
+    </header>
+  );
 }
 
 /**

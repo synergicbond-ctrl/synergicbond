@@ -3,37 +3,77 @@
 :root {
   color-scheme: dark;
 
-  /* ── SYNERGIC BOND DESIGN SYSTEM ──────────────────────────────
-     Direction: Linear + Notion + Apple. 80% calm, 20% accent.
-     Accents are CYAN + PURPLE only. Semantic colors (chemistry
-     compounds, warnings) live in content, never in UI chrome. */
+  /* Premium chemistry foundation: observatory navy, spectral cyan, warm gold. */
+  --sb-bg: #07121f;
+  --sb-bg-grid: #0a1826;
+  --sb-surface-1: #0d1c2b;
+  --sb-surface-2: #122538;
+  --sb-surface-3: #193146;
+  --sb-text: #f3f1e9;
+  --sb-text-body: #c6d2db;
+  --sb-text-muted: #8fa4b4;
+  --sb-cyan: #65cddd;
+  --sb-cyan-soft: rgba(101, 205, 221, 0.12);
+  --sb-gold: #d8b460;
+  --sb-gold-soft: rgba(216, 180, 96, 0.12);
+  --sb-success: #63b993;
+  --sb-warning: #d39a58;
+  --sb-error: #c97676;
+  --sb-violet: #9d90bc;
+  --sb-border: rgba(157, 186, 204, 0.18);
+  --sb-border-strong: rgba(157, 186, 204, 0.32);
+  --sb-shadow: 0 18px 55px rgba(1, 8, 15, 0.28);
+  --sb-radius-sm: 8px;
+  --sb-radius: 12px;
+  --sb-radius-lg: 16px;
+  --sb-font-display: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
+  --sb-font-ui: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", system-ui, sans-serif;
+  --sb-font-mono: "SFMono-Regular", "Cascadia Code", "Fira Code", Menlo, Consolas, monospace;
+  --sb-duration-fast: 140ms;
+  --sb-duration: 200ms;
 
-  /* Surfaces — single calm dark base */
-  --background: #0b0f19;          /* page */
-  --surface: #111827;             /* cards / panels (the ONE card color) */
-  --surface-2: rgba(255, 255, 255, 0.03);
-  --surface-hover: rgba(255, 255, 255, 0.06);
+  /* Compatibility aliases for established screens. */
+  --background: var(--sb-bg);
+  --surface: var(--sb-surface-1);
+  --surface-2: var(--sb-surface-2);
+  --surface-hover: var(--sb-surface-3);
+  --foreground: var(--sb-text);
+  --text-body: var(--sb-text-body);
+  --text-muted: var(--sb-text-muted);
+  --accent-cyan: var(--sb-cyan);
+  --accent-blue: #6aaed1;
+  --accent-purple: var(--sb-violet);
+  --border: var(--sb-border);
+  --border-strong: var(--sb-border-strong);
+  --shadow: var(--sb-shadow);
+  --glow-cyan: 0 0 24px rgba(101, 205, 221, 0.14);
+  --radius: var(--sb-radius-lg);
+}
 
-  /* Text hierarchy — pure white for titles only, gray for the rest */
-  --foreground: #ffffff;          /* titles / active / hovered */
-  --text-body: rgba(255, 255, 255, 0.70);  /* body copy */
-  --text-muted: #9ca3af;          /* captions / meta */
-
-  /* Accents — cyan + purple ONLY */
-  --accent-cyan: #00f5d4;
-  --accent-blue: #00bbf9;
-  --accent-purple: #9b5de5;
-
-  /* Borders */
-  --border: rgba(255, 255, 255, 0.08);
-  --border-strong: rgba(255, 255, 255, 0.12);
-
-  /* Shadows — soft, calm. Glow is reserved for :hover / active only */
-  --shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
-  --glow-cyan: 0 0 24px rgba(0, 245, 212, 0.18);
-
-  /* Radius */
-  --radius: 16px;
+/* Theme-ready warm paper mode. Existing theme controls may apply .light;
+   no new client-side theme state is introduced by this pilot. */
+.light,
+[data-reading-mode="paper"] {
+  color-scheme: light;
+  --sb-bg: #f3efe5;
+  --sb-bg-grid: #ece5d7;
+  --sb-surface-1: #fbf8f0;
+  --sb-surface-2: #eee7d8;
+  --sb-surface-3: #e5dccb;
+  --sb-text: #192936;
+  --sb-text-body: #405361;
+  --sb-text-muted: #657681;
+  --sb-cyan: #167b8b;
+  --sb-cyan-soft: rgba(22, 123, 139, 0.09);
+  --sb-gold: #8a6523;
+  --sb-gold-soft: rgba(138, 101, 35, 0.1);
+  --sb-success: #347a5d;
+  --sb-warning: #8a5f2f;
+  --sb-error: #a24e4e;
+  --sb-violet: #6d608a;
+  --sb-border: rgba(47, 70, 83, 0.2);
+  --sb-border-strong: rgba(47, 70, 83, 0.34);
+  --sb-shadow: 0 18px 45px rgba(69, 57, 37, 0.12);
 }
 
 *,
@@ -45,85 +85,62 @@
 html,
 body {
   margin: 0;
-  padding: 0;
-  width: 100%;
   min-height: 100%;
-  background: var(--background);
-  color: var(--foreground);
+  width: 100%;
+  background: var(--sb-bg);
+  color: var(--sb-text);
   scroll-behavior: smooth;
 }
 
 body {
-  /* Apple SF Pro on Apple devices, Segoe UI on Windows, Roboto on Android */
-  font-family:
-    -apple-system,
-    BlinkMacSystemFont,
-    "SF Pro Display",
-    "SF Pro Text",
-    "Helvetica Neue",
-    system-ui,
-    sans-serif;
+  font-family: var(--sb-font-ui);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
   font-feature-settings: "kern" 1, "liga" 1, "calt" 1;
 }
 
-/* SF Pro dynamic optical sizing — matches Apple's automatic size/spacing behavior */
-h1, h2, h3 {
-  font-family:
-    -apple-system,
-    BlinkMacSystemFont,
-    "SF Pro Display",
-    "Helvetica Neue",
-    system-ui,
-    sans-serif;
+h1,
+h2,
+h3 {
+  font-family: var(--sb-font-ui);
   font-optical-sizing: auto;
-  letter-spacing: -0.02em;
   font-weight: 700;
+  letter-spacing: -0.02em;
 }
 
-h4, h5, h6 {
-  font-family:
-    -apple-system,
-    BlinkMacSystemFont,
-    "SF Pro Display",
-    "Helvetica Neue",
-    system-ui,
-    sans-serif;
+h4,
+h5,
+h6 {
+  font-family: var(--sb-font-ui);
   font-optical-sizing: auto;
+  font-weight: 650;
   letter-spacing: -0.01em;
-  font-weight: 600;
 }
 
-p, li, span, label, input, textarea, select, button {
-  font-family:
-    -apple-system,
-    BlinkMacSystemFont,
-    "SF Pro Text",
-    "Helvetica Neue",
-    system-ui,
-    sans-serif;
+p,
+li,
+span,
+label,
+input,
+textarea,
+select,
+button {
+  font-family: var(--sb-font-ui);
   font-optical-sizing: auto;
 }
 
-/* SF Mono for code/LaTeX blocks */
-code, pre, kbd, .katex {
-  font-family:
-    "SF Mono",
-    ui-monospace,
-    "Cascadia Code",
-    "Fira Code",
-    Menlo,
-    Monaco,
-    monospace;
+code,
+pre,
+kbd {
+  font-family: var(--sb-font-mono);
   font-feature-settings: "liga" 0;
 }
 
 a {
   color: inherit;
   text-decoration: none;
-  transition: color 0.2s ease;
+  transition: color var(--sb-duration-fast) ease;
 }
 
 button,
@@ -144,55 +161,215 @@ video {
   max-width: 100%;
 }
 
+:focus-visible {
+  border-radius: var(--sb-radius-sm);
+  outline: 2px solid var(--sb-cyan);
+  outline-offset: 3px;
+}
+
 ::selection {
-  background: rgba(0, 229, 255, 0.3);
-  color: white;
+  background: rgba(101, 205, 221, 0.28);
+  color: var(--sb-text);
 }
 
-/* No visible scrollbars anywhere on the site.
-   Scrollable regions (wide tables, formula overflow, tab strips, modals) still
-   scroll normally by wheel, trackpad, touch and keyboard — only the visual
-   scrollbar is hidden. This removes the dark pill-shaped bars that KaTeX's
-   sub-pixel overflow used to render beneath formulas and content blocks. */
-*,
-*::before,
-*::after {
-  scrollbar-width: none;        /* Firefox */
-  -ms-overflow-style: none;     /* IE/Edge */
+/* Scrollbars remain visible in content regions so horizontal overflow is
+   discoverable with mouse, touch, and keyboard. */
+* {
+  scrollbar-color: var(--sb-border-strong) transparent;
+  scrollbar-width: thin;
 }
+
 *::-webkit-scrollbar {
-  width: 0;
-  height: 0;
-  display: none;                /* Chrome/Safari */
+  width: 8px;
+  height: 8px;
 }
 
-/* Retained for components that reference it explicitly. */
+*::-webkit-scrollbar-thumb {
+  border: 2px solid transparent;
+  border-radius: 99px;
+  background: var(--sb-border-strong);
+  background-clip: padding-box;
+}
+
 .scrollbar-none {
   scrollbar-width: none;
   -ms-overflow-style: none;
 }
+
 .scrollbar-none::-webkit-scrollbar {
   display: none;
 }
 
-/* ── Modal open animations (no external plugin needed) ──────────── */
+/* Shared editorial primitives. */
+.sb-page {
+  min-height: 100vh;
+  background:
+    linear-gradient(var(--sb-border) 1px, transparent 1px),
+    linear-gradient(90deg, var(--sb-border) 1px, transparent 1px),
+    var(--sb-bg);
+  background-size: 80px 80px;
+  background-position: center top;
+  color: var(--sb-text);
+}
+
+.sb-page-inner {
+  margin: 0 auto;
+  max-width: 80rem;
+  padding: clamp(2rem, 5vw, 4.75rem) clamp(1rem, 4vw, 2rem) 6rem;
+}
+
+.sb-display,
+.sbnShell .sb-display {
+  color: var(--sb-text);
+  font-family: var(--sb-font-display);
+  font-weight: 650;
+  letter-spacing: -0.035em;
+  line-height: 0.98;
+  text-wrap: balance;
+}
+
+.sb-eyebrow {
+  color: var(--sb-gold);
+  font-family: var(--sb-font-mono);
+  font-size: 0.72rem;
+  font-weight: 750;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.sb-body {
+  color: var(--sb-text-body);
+  line-height: 1.7;
+}
+
+.sb-surface {
+  border: 1px solid var(--sb-border);
+  border-radius: var(--sb-radius-lg);
+  background: color-mix(in srgb, var(--sb-surface-1) 96%, transparent);
+  box-shadow: var(--sb-shadow);
+}
+
+.sb-surface--quiet {
+  box-shadow: none;
+}
+
+.sb-section-rule {
+  border-top: 1px solid var(--sb-border);
+}
+
+.sb-badge {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid var(--sb-border-strong);
+  border-radius: 999px;
+  padding: 0.34rem 0.62rem;
+  color: var(--sb-text-muted);
+  font-family: var(--sb-font-mono);
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.sb-badge--cyan {
+  border-color: color-mix(in srgb, var(--sb-cyan) 42%, transparent);
+  background: var(--sb-cyan-soft);
+  color: var(--sb-cyan);
+}
+
+.sb-badge--gold {
+  border-color: color-mix(in srgb, var(--sb-gold) 42%, transparent);
+  background: var(--sb-gold-soft);
+  color: var(--sb-gold);
+}
+
+.sb-link-row {
+  transition: background var(--sb-duration-fast) ease, border-color var(--sb-duration-fast) ease;
+}
+
+.sb-link-row:hover {
+  border-color: var(--sb-border-strong);
+  background: var(--sb-surface-2);
+}
+
+.sb-link-row:focus-visible {
+  border-color: var(--sb-cyan);
+}
+
+/* Notes content keeps KaTeX's own glyph families and scrolls wide equations. */
+.sb-equation-block,
+.sbnShell .katex-display {
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding-block: 0.25rem;
+}
+
+.sb-notes-reading {
+  color: var(--sb-text-body);
+  line-height: 1.72;
+}
+
+.sb-notes-reading p,
+.sb-notes-reading li {
+  max-width: 78ch;
+}
+
+.sb-notes-reading sub,
+.sb-notes-reading sup {
+  line-height: 0;
+}
+
+/* Legacy authored emphasis keeps its meaning while inheriting accessible
+   pilot colors on the dark reading surface. */
+.sb-notes-reading .text-red-600,
+.sb-notes-reading .text-pink-600,
+.sb-notes-reading .text-pink-700 {
+  color: var(--sb-error) !important;
+}
+
+.sb-notes-reading .text-amber-800 {
+  color: var(--sb-gold) !important;
+}
+
 @keyframes sb-overlay-in {
   from { opacity: 0; }
-  to   { opacity: 1; }
+  to { opacity: 1; }
 }
+
 @keyframes sb-panel-in {
   from { opacity: 0; transform: translateY(16px) scale(0.98); }
-  to   { opacity: 1; transform: translateY(0) scale(1); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
 }
+
 .sb-modal-overlay {
-  animation: sb-overlay-in 0.2s ease-out;
+  animation: sb-overlay-in var(--sb-duration) ease-out;
 }
+
 .sb-modal-panel {
-  animation: sb-panel-in 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+  animation: sb-panel-in 220ms cubic-bezier(0.16, 1, 0.3, 1);
 }
+
 @media (prefers-reduced-motion: reduce) {
-  .sb-modal-overlay,
-  .sb-modal-panel {
-    animation: none;
+  html,
+  body {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-delay: 0ms !important;
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 1ms !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .sb-page {
+    background-size: 56px 56px;
   }
 }

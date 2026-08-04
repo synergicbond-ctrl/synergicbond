@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import { ChapterShell, ChapterLessonPager, ChapterPartStrip } from "@/components/notes/canonical";
+import { ChapterHero, ChapterShell, ChapterLessonPager, ChapterPartStrip } from "@/components/notes/canonical";
 import { NotesContentCard, NumberedSectionHeader } from "@/components/notes/chemistry";
 import { REDOX_LESSONS, redoxLessonRef, redoxTabs, type RedoxLessonMeta } from "../_chapter";
 import EquivalentConceptPart1 from "../equivalent-weight/part1";
@@ -51,23 +51,20 @@ export default async function RedoxLessonPage({ params }: { params: Promise<{ pa
         hubLabel="Redox Reactions — all lessons"
         positionLabel={`Lesson ${lesson.number} of ${REDOX_LESSONS.length}`}
       />
-      <article className="mx-auto max-w-5xl space-y-6 text-white">
-        <header
-          style={{
-            background: "#122232",
-            border: "1px solid #24405c",
-            borderLeft: "4px solid #5fd4ea",
-            borderRadius: 13,
-            padding: "18px 20px",
-          }}
-        >
-          <p style={{ color: "#5fd4ea", fontSize: 11.5, fontWeight: 900, letterSpacing: ".14em", textTransform: "uppercase", fontFamily: "'SFMono-Regular',Consolas,'Liberation Mono',monospace" }}>
-            Redox Reactions · {unitLabel} · Lesson {lesson.number}
-          </p>
-          <h1 style={{ marginTop: 8, color: "#eef3f8", fontSize: 30, fontWeight: 900, lineHeight: 1.15, fontFamily: "Georgia, 'Iowan Old Style', 'Times New Roman', serif" }}>
-            {lesson.title}
-          </h1>
-        </header>
+      <article className="mx-auto max-w-5xl space-y-6 text-[var(--sb-text)]">
+        <ChapterHero
+          title={lesson.title}
+          meta={`Redox Reactions · ${unitLabel} · Lesson ${lesson.number}`}
+          breadcrumbs={[
+            { href: "/notes", label: "Notes Hub" },
+            { href: "/notes/redox-reactions", label: "Redox Reactions" },
+            { label: `Lesson ${lesson.number}` },
+          ]}
+          badges={[
+            { label: "Physical Chemistry", tone: "cyan" },
+            { label: `Lesson ${lesson.number} of ${REDOX_LESSONS.length}`, tone: "gold" },
+          ]}
+        />
         {lesson.sections.map((section) => {
           const Section = SECTION_COMPONENTS[lesson.unit][section.id];
           if (!Section) return null;

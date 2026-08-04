@@ -2,7 +2,9 @@
 
 import React from "react";
 import Link from "next/link";
-import { InlineMath, BlockMath } from "@/components/math/react-katex";
+import { CheckCircle2, CircleHelp, FlaskConical, Lightbulb, TriangleAlert } from "lucide-react";
+
+export { ChemistryTable } from "@/components/notes/ChemistryTable";
 
 // ─────────────────────────────────────────────────────────────────────────────
 // Chemistry Notes Shared Design System (SSOT) - Dark Branded Theme
@@ -241,11 +243,11 @@ export function NumberedSectionFooter({
 
 export function NumberedSectionHeader({ number, title }: { number: number; title: string }) {
   return (
-    <div className="scroll-mt-28 flex items-center gap-3.5 border-b border-slate-800 pb-4 mb-6">
-      <span className="flex shrink-0 h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-violet-600 to-blue-600 text-white font-black text-lg shadow-md border border-purple-500/20">
-        {number}
+    <div className="scroll-mt-28 mb-6 flex items-center gap-3.5 border-b border-[var(--sb-border)] pb-4">
+      <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-[var(--sb-radius-sm)] border border-[var(--sb-border-strong)] bg-[var(--sb-cyan-soft)] font-mono text-sm font-black text-[var(--sb-cyan)]">
+        {String(number).padStart(2, "0")}
       </span>
-      <h2 className="text-xl sm:text-2xl font-extrabold tracking-tight text-white">
+      <h2 className="font-[family-name:var(--sb-font-display)] text-xl font-semibold tracking-tight text-[var(--sb-text)] sm:text-2xl">
         {title}
       </h2>
     </div>
@@ -260,9 +262,9 @@ export function NotesContentCard({
   className?: string;
 }) {
   return (
-    <div className={`space-y-8 text-[15px] sm:text-base leading-relaxed text-slate-200 ${className}`}>
+    <section className={`sb-notes-reading space-y-8 rounded-[var(--sb-radius-lg)] border border-[var(--sb-border)] bg-[var(--sb-surface-1)] p-5 text-[15px] shadow-[var(--sb-shadow)] sm:p-8 sm:text-base ${className}`}>
       {children}
-    </div>
+    </section>
   );
 }
 
@@ -276,9 +278,9 @@ export function ConceptCard({
   className?: string;
 }) {
   return (
-    <section className={`py-4 space-y-3.5 text-slate-200 ${className}`}>
+    <section className={`space-y-3.5 border-t border-[var(--sb-border)] py-5 text-[var(--sb-text-body)] first:border-t-0 ${className}`}>
       {title && (
-        <h3 className="text-lg font-bold text-white border-b border-slate-800 pb-2 mb-2">
+        <h3 className="mb-2 border-b border-[var(--sb-border)] pb-2 font-[family-name:var(--sb-font-display)] text-lg font-semibold text-[var(--sb-text)]">
           {title}
         </h3>
       )}
@@ -297,9 +299,9 @@ export function FormulaCard({
   className?: string;
 }) {
   return (
-    <div className={`border-l-4 border-cyan-400 bg-cyan-950/10 px-5 py-4 my-4 space-y-2 text-cyan-200 overflow-x-auto font-medium ${className}`}>
-      {title && <div className="text-xs font-bold uppercase tracking-wider text-cyan-300 mb-1">{title}</div>}
-      <div className="text-white space-y-1.5">{children}</div>
+    <div className={`sb-equation-block my-4 space-y-2 rounded-r-[var(--sb-radius)] border border-l-4 border-[var(--sb-border)] border-l-[var(--sb-cyan)] bg-[var(--sb-cyan-soft)] px-5 py-4 font-medium text-[var(--sb-text-body)] ${className}`}>
+      {title && <div className="mb-1 font-mono text-xs font-bold uppercase tracking-wider text-[var(--sb-cyan)]">{title}</div>}
+      <div className="space-y-1.5 text-[var(--sb-text)]">{children}</div>
     </div>
   );
 }
@@ -314,8 +316,8 @@ export function ExampleCard({
   className?: string;
 }) {
   return (
-    <div className={`border-l-4 border-violet-400 bg-violet-950/10 p-5 my-4 space-y-3 text-slate-200 ${className}`}>
-      {title && <div className="font-bold text-white">{title}</div>}
+    <div className={`my-4 space-y-3 rounded-r-[var(--sb-radius)] border border-l-4 border-[var(--sb-border)] border-l-[var(--sb-violet)] bg-[var(--sb-surface-2)] p-5 text-[var(--sb-text-body)] ${className}`}>
+      {title && <div className="flex items-center gap-2 font-semibold text-[var(--sb-text)]"><FlaskConical className="h-4 w-4 text-[var(--sb-violet)]" aria-hidden="true" />{title}</div>}
       <div className="space-y-2">{children}</div>
     </div>
   );
@@ -331,8 +333,8 @@ export function QuestionCard({
   className?: string;
 }) {
   return (
-    <div className={`border-l-4 border-rose-400 bg-rose-500/5 p-5 my-4 space-y-2 text-slate-100 ${className}`}>
-      <div className="font-bold text-rose-300 text-sm uppercase tracking-wider">{title}</div>
+    <div className={`my-4 space-y-2 rounded-r-[var(--sb-radius)] border border-l-4 border-[var(--sb-border)] border-l-[var(--sb-violet)] bg-[var(--sb-surface-2)] p-5 text-[var(--sb-text)] ${className}`}>
+      <div className="flex items-center gap-2 text-sm font-bold uppercase tracking-wider text-[var(--sb-violet)]"><CircleHelp className="h-4 w-4" aria-hidden="true" />{title}</div>
       <div className="space-y-2 font-medium leading-relaxed">{children}</div>
     </div>
   );
@@ -348,8 +350,8 @@ export function SolutionSteps({
   className?: string;
 }) {
   return (
-    <div className={`py-3 space-y-2.5 text-slate-300 border-t border-slate-800/60 mt-3 ${className}`}>
-      {title && <div className="text-xs font-bold uppercase tracking-wider text-slate-500 mb-1">{title}</div>}
+    <div className={`mt-3 space-y-2.5 border-t border-[var(--sb-border)] py-3 text-[var(--sb-text-body)] ${className}`}>
+      {title && <div className="mb-1 font-mono text-xs font-bold uppercase tracking-wider text-[var(--sb-text-muted)]">{title}</div>}
       <div className="space-y-2 font-normal leading-relaxed">{children}</div>
     </div>
   );
@@ -363,8 +365,8 @@ export function FinalAnswerCard({
   className?: string;
 }) {
   return (
-    <div className={`border-l-4 border-emerald-400 bg-emerald-500/10 p-4 my-3.5 font-bold text-emerald-100 flex items-start sm:items-center gap-2.5 ${className}`}>
-      <span className="flex shrink-0 h-6 w-6 rounded-full bg-emerald-600 text-white items-center justify-center text-xs font-extrabold">✓</span>
+    <div className={`my-3.5 flex items-start gap-2.5 rounded-r-[var(--sb-radius)] border border-l-4 border-[var(--sb-border)] border-l-[var(--sb-success)] bg-[color-mix(in_srgb,var(--sb-success)_10%,transparent)] p-4 font-bold text-[var(--sb-text)] sm:items-center ${className}`}>
+      <CheckCircle2 className="h-5 w-5 shrink-0 text-[var(--sb-success)]" aria-hidden="true" />
       <div className="flex-1 text-[15px] sm:text-base">{children}</div>
     </div>
   );
@@ -380,14 +382,14 @@ export function ImportantNoteCard({
   className?: string;
 }) {
   return (
-    <div className={`border-l-4 border-amber-400 bg-amber-500/5 p-5 my-4 space-y-2.5 text-amber-200 ${className}`}>
+    <aside className={`my-4 space-y-2.5 rounded-r-[var(--sb-radius)] border border-l-4 border-[var(--sb-border)] border-l-[var(--sb-gold)] bg-[var(--sb-gold-soft)] p-5 text-[var(--sb-text-body)] ${className}`}>
       {title && (
-        <div className="font-bold text-amber-300 flex items-center gap-1.5 text-sm uppercase tracking-wider">
-          <span>★</span> {title}
+        <div className="flex items-center gap-2 text-sm font-bold uppercase tracking-wider text-[var(--sb-gold)]">
+          <Lightbulb className="h-4 w-4" aria-hidden="true" /> {title}
         </div>
       )}
       <div className="space-y-2 leading-relaxed">{children}</div>
-    </div>
+    </aside>
   );
 }
 
@@ -401,14 +403,14 @@ export function WarningCard({
   className?: string;
 }) {
   return (
-    <div className={`border-l-4 border-red-400 bg-red-500/5 p-5 my-4 space-y-2.5 text-red-200 ${className}`}>
+    <aside className={`my-4 space-y-2.5 rounded-r-[var(--sb-radius)] border border-l-4 border-[var(--sb-border)] border-l-[var(--sb-warning)] bg-[color-mix(in_srgb,var(--sb-warning)_9%,transparent)] p-5 text-[var(--sb-text-body)] ${className}`}>
       {title && (
-        <div className="font-bold text-red-300 flex items-center gap-1.5 text-sm uppercase tracking-wider">
-          <span>⚠️</span> {title}
+        <div className="flex items-center gap-2 text-sm font-bold uppercase tracking-wider text-[var(--sb-warning)]">
+          <TriangleAlert className="h-4 w-4" aria-hidden="true" /> {title}
         </div>
       )}
       <div className="space-y-2 leading-relaxed">{children}</div>
-    </div>
+    </aside>
   );
 }
 
@@ -422,46 +424,9 @@ export function DiagramPanel({
   className?: string;
 }) {
   return (
-    <div className={`py-4 my-4 text-center space-y-3 overflow-x-auto ${className}`}>
-      {title && <div className="text-xs font-bold uppercase tracking-widest text-purple-400 mb-2">{title}</div>}
-      <div className="text-slate-200 flex flex-col items-center justify-center gap-3">{children}</div>
-    </div>
-  );
-}
-
-export function ChemistryTable({
-  headers,
-  rows,
-  className = "",
-}: {
-  headers: string[];
-  rows: (string | React.ReactNode)[][];
-  className?: string;
-}) {
-  return (
-    <div className={`my-6 w-full overflow-x-auto rounded-xl border border-slate-800 bg-slate-950/20 shadow-sm ${className}`}>
-      <table className="w-full min-w-[360px] border-collapse text-left text-sm text-slate-300">
-        <thead>
-          <tr className="border-b border-slate-800 bg-slate-900/60 text-white font-semibold">
-            {headers.map((h, i) => (
-              <th key={i} className="px-4 py-3.5">
-                {h}
-              </th>
-            ))}
-          </tr>
-        </thead>
-        <tbody>
-          {rows.map((row, rIdx) => (
-            <tr key={rIdx} className="border-b border-slate-800 last:border-none even:bg-slate-950/40 hover:bg-slate-900/40 transition-colors">
-              {row.map((cell, cIdx) => (
-                <td key={cIdx} className="px-4 py-3 align-top">
-                  {cell}
-                </td>
-              ))}
-            </tr>
-          ))}
-        </tbody>
-      </table>
+    <div className={`sb-equation-block my-4 space-y-3 py-4 text-center ${className}`}>
+      {title && <div className="mb-2 font-mono text-xs font-bold uppercase tracking-widest text-[var(--sb-violet)]">{title}</div>}
+      <div className="flex flex-col items-center justify-center gap-3 text-[var(--sb-text-body)]">{children}</div>
     </div>
   );
 }
@@ -575,6 +540,7 @@ export function MiniStructure({ title, children }: { title?: string; children: R
   return <DiagramPanel title={title}>{children}</DiagramPanel>;
 }
 
-export function SourceNote({ children }: { children?: React.ReactNode }) {
+export function SourceNote(props: { children?: React.ReactNode }) {
+  void props;
   return null; // Strict Rule 6: Remove student-facing source-file and PDF-page wording
 }

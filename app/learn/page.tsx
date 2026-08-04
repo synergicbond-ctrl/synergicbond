@@ -1,5 +1,6 @@
 import Link from "next/link";
 import {
+  ArrowUpRight,
   Atom,
   Beaker,
   BookOpen,
@@ -10,6 +11,7 @@ import {
   Sigma,
   Table2,
 } from "lucide-react";
+import { EditorialBadge, PageShell, SectionHeader, Surface } from "@/components/ui/editorial";
 import { formulaCards } from "@/lib/chemistry/formulas";
 import { highYieldReactions } from "@/lib/chemistry/reactions";
 import { IMPORTANT_ORDERS } from "@/lib/importantOrders";
@@ -17,6 +19,14 @@ import { NAME_REACTIONS } from "@/lib/nameReactions";
 import { pyqDatabase } from "@/lib/pyqDatabase";
 
 const pyqCount = Object.values(pyqDatabase).reduce((sum, questions) => sum + questions.length, 0);
+
+const premiumChapters = [
+  { href: "/learn/mole-concept", title: "Mole Concept", tag: "Physical · Class 11" },
+  { href: "/learn/atomic-structure", title: "Atomic Structure", tag: "Physical · Class 11" },
+  { href: "/learn/chemical-bonding", title: "Chemical Bonding", tag: "Physical · Class 11" },
+  { href: "/learn/thermodynamics", title: "Thermodynamics", tag: "Physical · Class 11" },
+  { href: "/learn/periodic-table", title: "Periodic Table", tag: "Inorganic · Class 11" },
+];
 
 const modules = [
   {
@@ -86,89 +96,114 @@ const modules = [
 
 export default function LearnPage() {
   return (
-    <main className="min-h-screen bg-[#0B0F19] text-white">
-      <section className="mx-auto flex max-w-7xl flex-col gap-8 px-4 py-8 sm:px-6 lg:px-8">
-        <header className="border-b border-white/[0.06] pb-6">
-          <p className="text-xs font-black uppercase tracking-[0.32em] text-cyan-300">Learning Hub</p>
-          <h1 className="mt-3 max-w-3xl text-3xl font-black tracking-tight sm:text-5xl">
-            Chemistry learning modules
-          </h1>
-          <p className="mt-3 max-w-2xl text-sm font-medium leading-relaxed text-white/60">
-            Open the verified chemistry systems that are already connected to search, formulas, PYQs, reactions, and orders.
-          </p>
-        </header>
+    <PageShell>
+      <div className="space-y-14 sm:space-y-20">
+        <SectionHeader
+          level="h1"
+          eyebrow="Learning Hub · Verified Systems"
+          title="Chemistry learning modules"
+          description="Open the verified chemistry systems that are already connected to search, formulas, PYQs, reactions, and orders."
+          action={<EditorialBadge tone="gold">Structured for revision</EditorialBadge>}
+        />
 
-        {/* Premium visual chapters (new notes template) */}
-        <section>
-          <div className="mb-4 flex items-center gap-2">
-            <h2 className="text-xl font-black text-white">Premium Chapters</h2>
-            <span className="rounded-full border border-amber-400/30 bg-amber-400/10 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide text-amber-300">New</span>
+        <section aria-labelledby="premium-chapters-heading" className="grid gap-7 xl:grid-cols-[minmax(0,0.72fr)_minmax(0,1.28fr)]">
+          <div className="max-w-md self-start xl:sticky xl:top-28">
+            <p className="sb-eyebrow">Curated Path</p>
+            <h2 id="premium-chapters-heading" className="sb-display mt-3 text-3xl sm:text-4xl">
+              Premium Chapters
+            </h2>
+            <p className="sb-body mt-4 text-sm">
+              Five foundational chapters presented as a deliberate reading sequence, with the subject and class level visible before you enter.
+            </p>
+            <div className="mt-6">
+              <EditorialBadge tone="cyan">New chapter format</EditorialBadge>
+            </div>
           </div>
-          <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-3">
-            {[
-              { href: "/learn/mole-concept", title: "Mole Concept", tag: "Physical · Class 11" },
-              { href: "/learn/atomic-structure", title: "Atomic Structure", tag: "Physical · Class 11" },
-              { href: "/learn/chemical-bonding", title: "Chemical Bonding", tag: "Physical · Class 11" },
-              { href: "/learn/thermodynamics", title: "Thermodynamics", tag: "Physical · Class 11" },
-              { href: "/learn/periodic-table", title: "Periodic Table", tag: "Inorganic · Class 11" },
-            ].map((c) => (
-              <Link key={c.href} href={c.href}
-                className="group flex flex-col justify-between rounded-lg border border-white/[0.08] bg-gradient-to-br from-cyan-500/[0.06] to-white/[0.02] p-5 transition hover:-translate-y-0.5 hover:border-cyan-400/40">
-                <div>
-                  <div className="text-[11px] font-bold uppercase tracking-wider text-cyan-300/80">{c.tag}</div>
-                  <div className="mt-1.5 text-lg font-black text-white">{c.title}</div>
-                </div>
-                <span className="mt-4 text-xs font-black uppercase tracking-wide text-cyan-300">Read chapter →</span>
+
+          <Surface className="overflow-hidden" as="div">
+            {premiumChapters.map((chapter, index) => (
+              <Link
+                key={chapter.href}
+                href={chapter.href}
+                className="sb-link-row group grid min-h-24 grid-cols-[2.5rem_minmax(0,1fr)_auto] items-center gap-4 border-b border-[var(--sb-border)] px-5 py-5 last:border-b-0 sm:grid-cols-[3rem_minmax(0,1fr)_auto] sm:px-7"
+              >
+                <span className="font-mono text-xs font-bold tracking-[0.12em] text-[var(--sb-gold)]">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+                <span className="min-w-0">
+                  <span className="block text-xs font-semibold uppercase tracking-[0.1em] text-[var(--sb-text-muted)]">
+                    {chapter.tag}
+                  </span>
+                  <span className="mt-1 block font-[family-name:var(--sb-font-display)] text-xl font-semibold text-[var(--sb-text)] sm:text-2xl">
+                    {chapter.title}
+                  </span>
+                </span>
+                <ArrowUpRight className="h-4 w-4 text-[var(--sb-cyan)] transition-transform duration-150 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" aria-hidden="true" />
               </Link>
             ))}
+          </Surface>
+        </section>
+
+        <section aria-labelledby="learning-tools-heading" className="space-y-7">
+          <SectionHeader
+            id="learning-tools-heading"
+            eyebrow="Reference Systems"
+            title="Connected learning tools"
+            description="Move between concise revision surfaces without losing the chemistry context that links them."
+          />
+
+          <div className="grid overflow-hidden rounded-[var(--sb-radius-lg)] border border-[var(--sb-border)] bg-[var(--sb-surface-1)] sm:grid-cols-2 xl:grid-cols-3">
+            {modules.map((item) => {
+              const Icon = item.icon;
+              return (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className="sb-link-row group flex min-h-52 min-w-0 flex-col border-b border-r border-[var(--sb-border)] p-5 sm:p-6"
+                >
+                  <div className="flex items-start justify-between gap-4">
+                    <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-[var(--sb-radius-sm)] border border-[var(--sb-border-strong)] bg-[var(--sb-cyan-soft)]">
+                      <Icon className="h-[18px] w-[18px] text-[var(--sb-cyan)]" aria-hidden="true" />
+                    </span>
+                    <span className="font-mono text-[11px] font-semibold uppercase tracking-[0.08em] text-[var(--sb-text-muted)]">
+                      {item.metric}
+                    </span>
+                  </div>
+                  <h3 className="mt-6 font-[family-name:var(--sb-font-display)] text-xl font-semibold text-[var(--sb-text)]">
+                    {item.title}
+                  </h3>
+                  <p className="mt-2 text-sm leading-6 text-[var(--sb-text-body)]">{item.description}</p>
+                  <span className="mt-auto flex items-center gap-1.5 pt-5 text-xs font-bold uppercase tracking-[0.1em] text-[var(--sb-cyan)]">
+                    Open module <ArrowUpRight className="h-3.5 w-3.5" aria-hidden="true" />
+                  </span>
+                </Link>
+              );
+            })}
           </div>
         </section>
 
-        <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
-          {modules.map((item) => {
-            const Icon = item.icon;
-            return (
-              <Link
-                key={item.href}
-                href={item.href}
-                className="group flex min-h-44 min-w-0 flex-col rounded-lg border border-white/[0.08] bg-white/[0.035] p-5 transition hover:-translate-y-0.5 hover:border-cyan-400/40"
-              >
-                <div className="flex items-start justify-between gap-3">
-                  <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg border border-cyan-400/25 bg-cyan-500/10">
-                    <Icon className="h-5 w-5 text-cyan-300" />
-                  </span>
-                  <span className="rounded-md bg-white/[0.06] px-2 py-1 text-[11px] font-black text-white/55">
-                    {item.metric}
-                  </span>
-                </div>
-                <h2 className="mt-4 break-words text-lg font-black text-white">{item.title}</h2>
-                <p className="mt-2 break-words text-sm leading-relaxed text-white/58">{item.description}</p>
-                <span className="mt-auto pt-4 text-xs font-black uppercase tracking-wide text-cyan-300">
-                  Open module
-                </span>
-              </Link>
-            );
-          })}
-        </div>
-
-        <section className="rounded-lg border border-white/[0.08] bg-white/[0.03] p-5">
-          <p className="text-xs font-black uppercase tracking-[0.28em] text-white/35">Knowledge Core</p>
-          <div className="mt-4 grid gap-3 sm:grid-cols-3">
-            <div className="rounded-md bg-black/20 p-4">
-              <p className="text-2xl font-black text-cyan-300">{highYieldReactions.length}</p>
-              <p className="mt-1 text-xs font-bold text-white/55">High-yield reactions</p>
-            </div>
-            <div className="rounded-md bg-black/20 p-4">
-              <p className="text-2xl font-black text-cyan-300">{formulaCards.length}</p>
-              <p className="mt-1 text-xs font-bold text-white/55">Formula cards</p>
-            </div>
-            <div className="rounded-md bg-black/20 p-4">
-              <p className="text-2xl font-black text-cyan-300">{IMPORTANT_ORDERS.length}</p>
-              <p className="mt-1 text-xs font-bold text-white/55">Verified order records</p>
-            </div>
+        <Surface className="grid overflow-hidden lg:grid-cols-[minmax(0,1fr)_minmax(0,1.35fr)]">
+          <div className="border-b border-[var(--sb-border)] p-6 sm:p-8 lg:border-b-0 lg:border-r">
+            <p className="sb-eyebrow">Knowledge Core</p>
+            <h2 id="knowledge-core-heading" className="sb-display mt-3 text-3xl">
+              Verified reference depth
+            </h2>
+            <p className="sb-body mt-4 text-sm">The current corpus available across the connected revision systems.</p>
           </div>
-        </section>
-      </section>
-    </main>
+          <dl className="grid grid-cols-1 sm:grid-cols-3">
+            {[
+              [highYieldReactions.length, "High-yield reactions"],
+              [formulaCards.length, "Formula cards"],
+              [IMPORTANT_ORDERS.length, "Verified order records"],
+            ].map(([value, label]) => (
+              <div key={label} className="border-b border-[var(--sb-border)] p-6 last:border-b-0 sm:border-b-0 sm:border-r sm:last:border-r-0 sm:p-8">
+                <dt className="text-xs font-semibold uppercase tracking-[0.1em] text-[var(--sb-text-muted)]">{label}</dt>
+                <dd className="mt-3 font-[family-name:var(--sb-font-display)] text-4xl font-semibold text-[var(--sb-cyan)]">{value}</dd>
+              </div>
+            ))}
+          </dl>
+        </Surface>
+      </div>
+    </PageShell>
   );
 }

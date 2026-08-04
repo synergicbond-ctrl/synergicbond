@@ -16,7 +16,7 @@ import {
   GraduationCap, Microscope, Trophy, Atom, School, Landmark,
   // WEEK 13 final navbar (Roadmap Phase 9)
   Home, Sigma, FlaskConical, FileText, Calendar, History, Heart,
-  CreditCard, Gift,
+  CreditCard,
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 
@@ -50,7 +50,7 @@ const MEGA_MENUS: MegaMenu[] = [
     pinned: { href: "/programs", label: "All Programs", desc: "NEET · JEE · Olympiad · Boards — choose your exam", icon: GraduationCap },
     groups: [
       {
-        title: "🇮🇳 Entrance & Olympiad",
+        title: "Entrance & Olympiad",
         items: [
           { href: "/programs/neet",         label: "NEET",         desc: "Medical entrance track",     icon: Microscope },
           { href: "/programs/jee-main",     label: "JEE Main",     desc: "NTA engineering entrance",   icon: GraduationCap },
@@ -59,7 +59,7 @@ const MEGA_MENUS: MegaMenu[] = [
         ],
       },
       {
-        title: "🏫 School Boards",
+        title: "School Boards",
         items: [
           { href: "/dashboard/boards",      label: "Board Dashboards", desc: "Full Class 11 & 12 dashboards", icon: LayoutDashboard },
           { href: "/programs/cbse",         label: "CBSE",         desc: "Class 11–12 · NCERT first",  icon: BookOpen },
@@ -68,7 +68,7 @@ const MEGA_MENUS: MegaMenu[] = [
         ],
       },
       {
-        title: "🎓 Graduate & International",
+        title: "Graduate & International",
         items: [
           { href: "/programs/gate",          label: "GATE",          desc: "GATE Chemistry (CY)",       icon: Medal },
           { href: "/programs/international",  label: "International",  desc: "AP · IB · A-Level · MCAT",  icon: Globe },
@@ -82,7 +82,7 @@ const MEGA_MENUS: MegaMenu[] = [
     pinned: featuresPinned,
     groups: [
       {
-        title: "📖 Learn Ecosystem",
+        title: "Learn Ecosystem",
         items: [
           { href: "/notes",            label: "Chapter Notes",    desc: "Verified exam notes",        icon: BookOpen },
           { href: "/formula-cards",    label: "Formula Cards",    desc: "Verified formula library",   icon: Sigma },
@@ -93,14 +93,14 @@ const MEGA_MENUS: MegaMenu[] = [
         ],
       },
       {
-        title: "🎯 Practice Ecosystem",
+        title: "Practice Ecosystem",
         items: [
           { href: "/pyq",   label: "PYQ Center",     desc: "Previous-year intelligence", icon: Target },
           { href: "/tests", label: "Practice Tests", desc: "Chapter · topic · papers",   icon: ClipboardList },
         ],
       },
       {
-        title: "🤖 AI Ecosystem",
+        title: "AI Ecosystem",
         items: [
           { href: "/snap-solve",   label: "Snap & Solve",  desc: "Photo → verified solution", icon: Camera },
           { href: "/tutor",        label: "AI Tutor",      desc: "Step-by-step explanations", icon: Bot },
@@ -109,7 +109,7 @@ const MEGA_MENUS: MegaMenu[] = [
         ],
       },
       {
-        title: "📊 Performance Ecosystem",
+        title: "Performance Ecosystem",
         items: [
           { href: "/dashboard",   label: "Mission Control", desc: "Your study command centre",  icon: LayoutDashboard },
           { href: "/performance", label: "Progress",        desc: "Readiness · weak topics",    icon: Activity },
@@ -280,19 +280,19 @@ export default function Navbar() {
   ];
 
   return (
-    <header className="sticky top-0 z-50 border-b border-white/[0.06] bg-[#0B0F19]/90 backdrop-blur-2xl">
+    <header className="sticky top-0 z-50 border-b border-[var(--sb-border)] bg-[color-mix(in_srgb,var(--sb-bg)_94%,transparent)] backdrop-blur-md">
       <div className="mx-auto flex h-16 max-w-[1400px] items-center justify-between gap-2 px-3 sm:gap-4 sm:px-4 md:px-6">
 
-        {/* Brand Logo — animated network molecule in top-left corner */}
+        {/* Brand Logo */}
         <Link href="/" aria-label="SYNERGIC BOND Chemistry OS" className="group flex shrink-0 items-center gap-2 sm:gap-3">
-          <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-cyan-400/30 bg-cyan-950/40 shadow-[0_0_16px_rgba(34,211,238,0.2)] transition group-hover:shadow-[0_0_24px_rgba(34,211,238,0.35)]">
+          <div className="flex h-11 w-11 items-center justify-center rounded-[var(--sb-radius)] border border-[var(--sb-border-strong)] bg-[var(--sb-surface-1)] transition-colors group-hover:border-[var(--sb-cyan)]">
             <MoleculeLogo size={40} />
           </div>
           <div className="hidden min-[360px]:block">
-            <p className="text-lg font-extrabold tracking-widest bg-gradient-to-r from-[#00F5D4] via-[#00BBF9] to-[#9B5DE5] bg-clip-text text-transparent leading-none">
+            <p className="font-[family-name:var(--sb-font-display)] text-lg font-semibold tracking-[0.08em] text-[var(--sb-text)] leading-none">
               SYNERGIC BOND
             </p>
-            <p className="text-[9px] font-bold uppercase tracking-[0.35em] text-cyan-400/50 hidden sm:block mt-1">
+            <p className="mt-1 hidden font-mono text-[9px] font-bold uppercase tracking-[0.32em] text-[var(--sb-cyan)] sm:block">
               Chemistry OS
             </p>
           </div>
@@ -302,7 +302,7 @@ export default function Navbar() {
             marketing IA (Home · Programs · Features · Pricing · Support)
             for everyone else. */}
         {portalMode ? (
-          <nav className="hidden lg:flex items-center justify-center flex-1 gap-1" aria-label="Portal">
+          <nav className="hidden xl:flex items-center justify-center flex-1 gap-1" aria-label="Portal">
             {portalLinks.map((l) => {
               const Icon = l.icon;
               const active = pathname === l.href || (l.href !== "/dashboard" && pathname?.startsWith(`${l.href}/`));
@@ -320,7 +320,7 @@ export default function Navbar() {
             })}
           </nav>
         ) : (
-        <nav className="hidden lg:flex items-center justify-center flex-1 gap-1">
+        <nav className="hidden xl:flex items-center justify-center flex-1 gap-1" aria-label="Primary">
           {/* Home */}
           <Link
             href="/"
@@ -339,6 +339,10 @@ export default function Navbar() {
             return (
               <div key={menu.title} className="relative" onMouseEnter={() => setOpenMenu(menu.title)} onMouseLeave={() => setOpenMenu(null)}>
                 <button
+                  type="button"
+                  aria-haspopup="menu"
+                  aria-expanded={open}
+                  onClick={() => setOpenMenu(open ? null : menu.title)}
                   className={`flex items-center gap-1 px-3 py-2 rounded-lg text-sm font-medium transition ${
                     open || hasActive ? "text-white bg-white/[0.06]" : "text-gray-300 hover:text-white hover:bg-white/[0.05]"
                   }`}
@@ -347,20 +351,16 @@ export default function Navbar() {
                 </button>
                 {open && (
                   <div className="absolute left-1/2 -translate-x-1/2 top-full pt-2 z-50">
-                    <div className={`${menu.wide ? "w-[620px]" : "w-[340px]"} rounded-2xl border border-white/[0.08] bg-[#111827]/98 backdrop-blur-xl shadow-2xl shadow-black/50 p-3`}>
+                    <div role="menu" className={`${menu.wide ? "w-[620px]" : "w-[340px]"} rounded-[var(--sb-radius-lg)] border border-[var(--sb-border)] bg-[var(--sb-surface-1)] p-3 shadow-[var(--sb-shadow)]`}>
                       {/* Pinned flagship (Periodic Table in Features, All Programs in Programs) */}
                       {menu.pinned && (
-                        <Link href={menu.pinned.href} onClick={() => setOpenMenu(null)} className="group flex items-center gap-3 rounded-xl p-3 mb-2 border border-cyan-400/25 bg-gradient-to-r from-cyan-500/15 to-purple-500/10 hover:from-cyan-500/20 transition">
-                          <span className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-xl bg-cyan-500/20 border border-cyan-400/30">
-                            <menu.pinned.icon className="h-5 w-5 text-cyan-300" />
+                        <Link role="menuitem" href={menu.pinned.href} onClick={() => setOpenMenu(null)} className="group mb-2 flex items-center gap-3 rounded-[var(--sb-radius)] border border-[var(--sb-border-strong)] bg-[var(--sb-cyan-soft)] p-3 transition-colors hover:border-[var(--sb-cyan)]">
+                          <span className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-[var(--sb-radius-sm)] border border-[var(--sb-border-strong)] bg-[var(--sb-surface-2)]">
+                            <menu.pinned.icon className="h-5 w-5 text-[var(--sb-cyan)]" />
                           </span>
                           <span className="flex-1 min-w-0">
-                            <span className="flex items-center gap-2 text-sm font-black text-white">{menu.pinned.label}<span className="text-[8px] font-bold tracking-wider text-cyan-300 bg-cyan-500/15 px-1.5 py-0.5 rounded-full">PINNED</span></span>
-                            <span className="block text-xs text-white/55">{menu.pinned.desc}</span>
-                          </span>
-                          {/* mini grid motif */}
-                          <span className="hidden sm:grid grid-cols-6 gap-[2px] flex-shrink-0">
-                            {Array.from({ length: 18 }).map((_, i) => <span key={i} className="h-1.5 w-1.5 rounded-[1px]" style={{ background: `hsl(${185 + (i / 18) * 120},70%,55%)`, opacity: 0.7 }} />)}
+                            <span className="flex items-center gap-2 text-sm font-black text-[var(--sb-text)]">{menu.pinned.label}<span className="rounded-full border border-[var(--sb-border-strong)] px-1.5 py-0.5 font-mono text-[8px] font-bold tracking-wider text-[var(--sb-gold)]">PINNED</span></span>
+                            <span className="block text-xs text-[var(--sb-text-muted)]">{menu.pinned.desc}</span>
                           </span>
                         </Link>
                       )}
@@ -368,16 +368,16 @@ export default function Navbar() {
                       <div className={menu.wide ? "grid grid-cols-2 gap-x-3" : ""}>
                         {menu.groups.map((g) => (
                           <div key={g.title} className="py-1">
-                            <p className="text-[10px] font-bold uppercase tracking-wider text-white/35 px-2 mt-1 mb-0.5">{g.title}</p>
+                            <p className="mb-0.5 mt-1 px-2 font-mono text-[10px] font-bold uppercase tracking-wider text-[var(--sb-text-muted)]">{g.title}</p>
                             {g.items.map((it) => {
                               const Icon = it.icon;
                               const active = pathname === it.href;
                               return (
-                                <Link key={it.label} href={it.href} onClick={() => setOpenMenu(null)} className={`flex items-center gap-2.5 px-2 py-1.5 rounded-lg transition ${active ? "bg-cyan-500/10" : "hover:bg-white/[0.05]"}`}>
-                                  <Icon className={`h-4 w-4 flex-shrink-0 ${active ? "text-cyan-400" : "text-gray-400"}`} />
+                                <Link role="menuitem" key={it.label} href={it.href} onClick={() => setOpenMenu(null)} className={`flex items-center gap-2.5 rounded-[var(--sb-radius-sm)] px-2 py-1.5 transition ${active ? "bg-[var(--sb-cyan-soft)]" : "hover:bg-[var(--sb-surface-2)]"}`}>
+                                  <Icon className={`h-4 w-4 flex-shrink-0 ${active ? "text-[var(--sb-cyan)]" : "text-[var(--sb-text-muted)]"}`} />
                                   <span className="min-w-0">
-                                    <span className={`block text-[13px] font-semibold leading-tight ${active ? "text-cyan-300" : "text-white"}`}>{it.label}</span>
-                                    <span className="block text-[10px] text-gray-500 leading-tight">{it.desc}</span>
+                                    <span className={`block text-[13px] font-semibold leading-tight ${active ? "text-[var(--sb-cyan)]" : "text-[var(--sb-text)]"}`}>{it.label}</span>
+                                    <span className="block text-[10px] leading-tight text-[var(--sb-text-muted)]">{it.desc}</span>
                                   </span>
                                 </Link>
                               );
@@ -448,10 +448,13 @@ export default function Navbar() {
           {/* Language dropdown */}
           <div className="hidden sm:block relative">
             <button
+              type="button"
               onClick={() => setLangOpen(!langOpen)}
-              className="flex items-center gap-1.5 rounded-xl border border-white/[0.08] bg-white/[0.04] px-2.5 py-1.5 text-[11px] font-bold text-white/70 hover:text-white hover:border-cyan-400/30 transition"
+              aria-haspopup="menu"
+              aria-expanded={langOpen}
+              className="flex items-center gap-1.5 rounded-[var(--sb-radius-sm)] border border-[var(--sb-border)] bg-[var(--sb-surface-1)] px-2.5 py-1.5 text-[11px] font-bold text-[var(--sb-text-body)] transition hover:border-[var(--sb-cyan)] hover:text-[var(--sb-text)]"
             >
-              <Globe className="h-3.5 w-3.5 text-cyan-400" />
+              <Globe className="h-3.5 w-3.5 text-[var(--sb-cyan)]" />
               {currentLang.short}
               <ChevronDown className={`h-3 w-3 transition-transform ${langOpen ? "rotate-180" : ""}`} />
             </button>
@@ -459,9 +462,12 @@ export default function Navbar() {
             {langOpen && (
               <>
                 <div className="fixed inset-0 z-40" onClick={() => setLangOpen(false)} />
-                <div className="absolute right-0 mt-2 w-44 z-50 rounded-xl border border-white/[0.08] bg-[#111827] shadow-2xl shadow-black/50 p-1.5">
+                <div role="menu" className="absolute right-0 z-50 mt-2 w-44 rounded-[var(--sb-radius)] border border-[var(--sb-border)] bg-[var(--sb-surface-1)] p-1.5 shadow-[var(--sb-shadow)]">
                   {LANGS.map((l) => (
                     <button
+                      type="button"
+                      role="menuitemradio"
+                      aria-checked={lang === l.code}
                       key={l.code}
                       onClick={() => switchLang(l.code)}
                       className={`flex items-center gap-2.5 w-full px-3 py-2 rounded-lg text-xs font-medium transition ${
@@ -470,7 +476,7 @@ export default function Navbar() {
                           : "text-gray-400 hover:text-white hover:bg-white/5"
                       }`}
                     >
-                      <span className="text-sm">{l.flag}</span>
+                      <Globe className="h-3.5 w-3.5 text-[var(--sb-text-muted)]" aria-hidden="true" />
                       {l.label}
                     </button>
                   ))}
@@ -481,7 +487,8 @@ export default function Navbar() {
 
           <Link
             href="/achievements"
-            className="hidden sm:flex items-center justify-center h-8 w-8 rounded-xl border border-yellow-500/20 bg-yellow-950/20 text-yellow-400 hover:border-yellow-400/40 hover:bg-yellow-950/40 transition"
+            aria-label="Achievements"
+            className="hidden h-8 w-8 items-center justify-center rounded-[var(--sb-radius-sm)] border border-[var(--sb-border)] bg-[var(--sb-surface-1)] text-[var(--sb-gold)] transition hover:border-[var(--sb-gold)] sm:flex"
           >
             <Medal className="h-3.5 w-3.5" />
           </Link>
@@ -490,10 +497,13 @@ export default function Navbar() {
             /* Signed-in account chip + dropdown */
             <div className="relative">
               <button
+                type="button"
                 onClick={() => setAcctOpen(!acctOpen)}
-                className="flex items-center gap-2 rounded-xl border border-white/[0.08] bg-white/[0.04] pl-1 pr-2.5 py-1 hover:border-cyan-400/30 transition"
+                aria-haspopup="menu"
+                aria-expanded={acctOpen}
+                className="flex items-center gap-2 rounded-[var(--sb-radius-sm)] border border-[var(--sb-border)] bg-[var(--sb-surface-1)] py-1 pl-1 pr-2.5 transition hover:border-[var(--sb-cyan)]"
               >
-                <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-gradient-to-br from-cyan-400 to-sky-500 text-black text-xs font-black">
+                <span className="flex h-7 w-7 items-center justify-center rounded-[6px] bg-[var(--sb-cyan)] text-xs font-black text-[var(--sb-bg)]">
                   {email[0].toUpperCase()}
                 </span>
                 <span className="hidden md:block text-xs font-semibold text-white/80 max-w-[120px] truncate">{email.split("@")[0]}</span>
@@ -535,23 +545,26 @@ export default function Navbar() {
               <span className="hidden sm:flex items-center gap-1.5 rounded-xl border border-white/[0.08] bg-white/[0.04] px-2.5 py-1.5 text-[11px] font-semibold text-white/60">
                 <UserCircle className="h-3.5 w-3.5" /> Guest
               </span>
-              <Link href="/auth/signup" className="rounded-xl bg-gradient-to-r from-cyan-400 to-sky-500 px-2 py-1.5 text-xs font-semibold text-black shadow-lg shadow-cyan-500/20 transition hover:-translate-y-0.5 sm:px-3">
+              <Link href="/auth/signup" className="rounded-[var(--sb-radius-sm)] border border-[var(--sb-gold)] bg-[var(--sb-gold)] px-2 py-1.5 text-xs font-semibold text-[var(--sb-bg)] transition-colors hover:bg-[var(--sb-text)] sm:px-3">
                 Sign Up →
               </Link>
             </div>
           ) : (
             <Link
               href="/auth/signin"
-              className="rounded-xl bg-gradient-to-r from-cyan-400 to-sky-500 px-2 py-1.5 text-xs font-semibold text-black shadow-lg shadow-cyan-500/20 transition hover:-translate-y-0.5 sm:px-3"
+              className="rounded-[var(--sb-radius-sm)] border border-[var(--sb-gold)] bg-[var(--sb-gold)] px-2 py-1.5 text-xs font-semibold text-[var(--sb-bg)] transition-colors hover:bg-[var(--sb-text)] sm:px-3"
             >
               {t("nav.signIn")} →
             </Link>
           )}
 
           <button
+            type="button"
             onClick={() => setMenuOpen(!menuOpen)}
-            className="flex h-10 w-10 items-center justify-center rounded-xl text-gray-400 transition hover:bg-white/[0.05] hover:text-white sm:h-11 sm:w-11 lg:hidden"
+            className="flex h-10 w-10 items-center justify-center rounded-[var(--sb-radius-sm)] text-[var(--sb-text-muted)] transition hover:bg-[var(--sb-surface-2)] hover:text-[var(--sb-text)] sm:h-11 sm:w-11 xl:hidden"
             aria-label="Menu"
+            aria-controls="mobile-navigation"
+            aria-expanded={menuOpen}
           >
             {menuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </button>
@@ -560,16 +573,17 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {menuOpen && (
-        <div className="lg:hidden border-t border-white/[0.06] bg-[#0B0F19]/98 px-4 py-4">
+        <div id="mobile-navigation" className="border-t border-[var(--sb-border)] bg-[var(--sb-bg)] px-4 py-4 xl:hidden">
           <div className="grid grid-cols-3 gap-2 mb-4">
             {LANGS.map((l) => (
               <button
+                type="button"
                 key={l.code}
                 onClick={() => switchLang(l.code)}
                 className={`py-1.5 rounded-xl text-xs font-bold transition ${
                   lang === l.code
-                    ? "bg-cyan-500 text-black"
-                    : "border border-white/10 text-white/50"
+                    ? "bg-[var(--sb-cyan)] text-[var(--sb-bg)]"
+                    : "border border-[var(--sb-border)] text-[var(--sb-text-muted)]"
                 }`}
               >
                 {l.short}

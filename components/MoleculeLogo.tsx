@@ -2,9 +2,8 @@
 import { useEffect, useRef } from "react";
 
 /**
- * Compact animated NETWORK molecule for the navbar / top-left corner.
- * Mini version of the hero network: rotating 3D node cluster with
- * connecting edges, colorful nodes, orbital ring + pulsing nucleus.
+ * Compact network molecule for the navbar / top-left corner.
+ * Motion is disabled when the user requests reduced motion.
  * Transparent background, no text.
  */
 export default function MoleculeLogo({ size = 44 }: { size?: number }) {
@@ -24,7 +23,8 @@ export default function MoleculeLogo({ size = 44 }: { size?: number }) {
     let t = 0;
     let animId: number;
 
-    const palette = ["#00F5D4", "#00BBF9", "#9B5DE5", "#F472B6", "#FFD700", "#69F0AE"];
+    const palette = ["#65cddd", "#d8b460", "#8fa4b4", "#63b993"];
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
     // Icosahedron vertices + center
     const phi = (1 + Math.sqrt(5)) / 2;
@@ -60,7 +60,7 @@ export default function MoleculeLogo({ size = 44 }: { size?: number }) {
 
     function draw() {
       ctx.clearRect(0, 0, W, H);
-      t += 0.012;
+      if (!reduceMotion) t += 0.012;
       const ax = t * 0.7, ay = t;
 
       const pts = nodes.map((n) => {
@@ -94,19 +94,21 @@ export default function MoleculeLogo({ size = 44 }: { size?: number }) {
         ctx.globalAlpha = 1;
       });
 
-      // Pulsing nucleus
-      const pulse = 0.85 + 0.15 * Math.sin(t * 3);
+      // Restrained nucleus; pulse only when motion is allowed.
+      const pulse = reduceMotion ? 1 : 0.9 + 0.1 * Math.sin(t * 3);
       const ng = ctx.createRadialGradient(CX, CY, 0, CX, CY, 4 * pulse);
-      ng.addColorStop(0, "#ff6b6b");
+      ng.addColorStop(0, "#d8b460");
       ng.addColorStop(1, "transparent");
       ctx.beginPath(); ctx.arc(CX, CY, 4 * pulse, 0, Math.PI * 2); ctx.fillStyle = ng; ctx.fill();
-      ctx.beginPath(); ctx.arc(CX, CY, 1.6, 0, Math.PI * 2); ctx.fillStyle = "#ff8787"; ctx.fill();
+      ctx.beginPath(); ctx.arc(CX, CY, 1.6, 0, Math.PI * 2); ctx.fillStyle = "#d8b460"; ctx.fill();
 
-      animId = requestAnimationFrame(draw);
+      if (!reduceMotion) animId = requestAnimationFrame(draw);
     }
     draw();
-    return () => cancelAnimationFrame(animId);
+    return () => {
+      if (animId) cancelAnimationFrame(animId);
+    };
   }, [size]);
 
-  return <canvas ref={canvasRef} style={{ width: size, height: size }} />;
+  return <canvas ref={canvasRef} aria-hidden="true" style={{ width: size, height: size }} />;
 }

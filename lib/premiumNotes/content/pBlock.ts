@@ -507,7 +507,7 @@ export const P_BLOCK_NOTES: PremiumChapterNotes = {
                 "• Phosphorus: Apatite family (Ca₉ (PO₄)₆ .CaX₂). Found in bones/cells.",
                 "• As, Sb, Bi: Found mainly as Sulphide minerals .",
                 "• Classification: • Non-Metals: N, P • Metalloids: As, Sb • Metals: Bi, Mc",
-                "• Polyatomic Nature: N₂is a gas (diatomic). P₄, As₄, Sb₄are solids (polyatomic).",
+                "• Polyatomic Nature: N₂ is a gas (diatomic). P₄, As₄, Sb₄ are solids (polyatomic).",
                 "Moscovium (Mc) - Z=115: • Mass No: 289 (Isobar with Flerovium, Fl). • Config: [Rn] 5f¹⁴ 6d¹⁰ 7s² 7p³ . • Radioactive, short half-life.",
                 "◆ A. Natural Occurrence (NCERT)",
                 "• Nitrogen: 78% of atmosphere (by vol). • Chile Saltpetre: NaNO₃ • Indian Saltpetre: KNO₃ • Found in proteins (plants/animals).",
@@ -594,11 +594,11 @@ export const P_BLOCK_NOTES: PremiumChapterNotes = {
               "heading": "Core Notes",
               "points": [
                 "◆ A. Trihalides (EX₃)",
-                "• Stability: All trihalides are stable EXCEPT those of Nitrogen. Only NF₃is known to be stable.",
-                "• Nature: Predominantly Covalent. EXCEPTION BiF₃is Ionic.",
+                "• Stability: All trihalides are stable EXCEPT those of Nitrogen. Only NF₃ is known to be stable.",
+                "• Nature: Predominantly Covalent. EXCEPTION BiF₃ is Ionic.",
                 "◆ B. Pentahalides (EX₅)",
                 "• N cannot form pentahalides (Absence of d-orbitals).",
-                "• Bi rarely forms pentahalides (Inert Pair Effect). Only BiF₅is known.",
+                "• Bi rarely forms pentahalides (Inert Pair Effect). Only BiF₅ is known.",
                 "• Character: Pentahalides are more covalent than trihalides (Higher polarizing power of +5 state).",
                 "• Structure: Trigonal Bipyramidal (Gas). Axial bonds longer than equatorial.",
                 "IMP Solid State Structures: 1. PCl₅ (s) is Ionic: [PCl₄ ]⁺ [PCl₆ ]⁻·2. PBr₅ (s) is Ionic: [PBr₄ ]⁺Br⁻ .",
@@ -617,7 +617,7 @@ export const P_BLOCK_NOTES: PremiumChapterNotes = {
                 "Sb/BiCl₃  •  SbOCl / BiOCl (White Turbidity)",
                 "◆ A. Pentahalides (EX₅)",
                 "• Formation: Formed by P, As, Sb. N cannot form (no d-orbitals).",
-                "• Stability: Bi rarely forms pentahalides due to Inert Pair Effect (only BiF₅is known).",
+                "• Stability: Bi rarely forms pentahalides due to Inert Pair Effect (only BiF₅ is known).",
                 "• Nature: More Covalent than Trihalides.",
                 "• Structure (Gas): Trigonal Bipyramidal. Axial bonds longer than equatorial.",
                 "JEE FAVORITE Solid State Structures: 1. PCl₅ (s) is Ionic: [PCl₄ ]⁺ (Tetrahedral) & [PCl₆ ]⁻ (Octahedral). 2. PBr₅ (s) is Ionic: [PBr₄ ]⁺Br⁻ .",
@@ -632,7 +632,7 @@ export const P_BLOCK_NOTES: PremiumChapterNotes = {
               "heading": "Continued",
               "points": [
                 "• Structure: Pyramidal (sp³).",
-                "• Nature: Covalent. EXCEPTION BiF₃is Ionic .",
+                "• Nature: Covalent. EXCEPTION BiF₃ is Ionic .",
                 "• Hydrolysis (Memorize Products): • NCl₃ → NH₃ + HOCl (Water attacks Cl) • PCl₃ → H₃PO₃ + HCl (Water attacks P) • SbCl₃ /BiCl₃ → SbOCl / BiOCl (White Turbidity)"
               ],
               "exams": [
@@ -659,8 +659,8 @@ export const P_BLOCK_NOTES: PremiumChapterNotes = {
                 "Reducing Nature  •  NH₃ < PH₃ < AsH₃ < SbH₃ < BiH₃",
                 "Basic Strength  •  BiH₃ < SbH₃ < AsH₃ < PH₃ < NH₃",
                 "Bond Angle  •  BiH₃ ≈ 90° < PH₃ < NH₃ (107.8°)",
-                "IMP Boiling/Melting Anomaly: NH₃has higher MP/BP than expected due to Hydrogen Bonding .",
-                "Ligands: PH₃acts as a ligand in coordination compounds.",
+                "IMP Boiling/Melting Anomaly: NH₃ has higher MP/BP than expected due to Hydrogen Bonding .",
+                "Ligands: PH₃ acts as a ligand in coordination compounds.",
                 "Bond Angle  •  BiH₃ ≈ 90° < PH₃ < NH₃ (107.8°) (Drago's Rule: No hybridization below P)"
               ],
               "exams": [
@@ -671,7 +671,7 @@ export const P_BLOCK_NOTES: PremiumChapterNotes = {
               "kind": "detailed",
               "heading": "Continued",
               "points": [
-                "IMP Boiling Point Anomaly: PH₃ < AsH₃ < NH₃ < SbH₃ < BiH₃ (NH₃higher due to H-Bonding)."
+                "IMP Boiling Point Anomaly: PH₃ < AsH₃ < NH₃ < SbH₃ < BiH₃ (NH₃ higher due to H-Bonding)."
               ],
               "exams": [
                 "JEE Advanced"
@@ -898,7 +898,7 @@ export const P_BLOCK_NOTES: PremiumChapterNotes = {
                 { "label": "Oxidation state in PH₃", "work": "3(+1) + x = 0 → x = −3." },
                 { "label": "Confirm disproportionation", "work": "P goes from +3 (in H₃PO₃) to BOTH +5 (in H₃PO₄, oxidised) and −3 (in PH₃, reduced) — the defining signature of disproportionation: the same starting oxidation state splits into a higher and a lower product." },
                 { "label": "Balance by electron transfer", "work": "Per P atom going +3→+5: loses 2e⁻. Per P atom going +3→−3: gains 6e⁻. To balance electrons, 3 molecules must be oxidised for every 1 reduced (3×2e⁻ lost = 6e⁻ gained): 4H₃PO₃ → 3H₃PO₄ + PH₃." },
-                { "label": "Why H₃PO₂ does not follow the same path", "work": "H₃PO₂ has P at +1 (1 P–OH, 2 P–H: 1 + x − 4 = 0 → x = +3... actually recompute: 3(+1) + x + 2(−2) = 0 → 3 + x − 4 = 0 → x = +1). On heating, H₃PO₂ disproportionates differently: 2H₃PO₂ → H₃PO₃ + PH₃ (P: +1 → +3 and +1 → −3) — it DOES disproportionate, just to phosphorous acid, not directly to phosphoric acid, because that is the electron-balanced pair available one oxidation step up and down from +1." }
+                { "label": "Why H₃PO₂ does not follow the same path", "work": "H₃PO₂ is monobasic — 1 P–OH and 2 P–H. Charge balance: 3(+1) + x + 2(−2) = 0 → 3 + x − 4 = 0 → x = +1. On heating, H₃PO₂ disproportionates too, but to a different pair: 2H₃PO₂ → H₃PO₃ + PH₃ (P: +1 → +3 oxidised, and +1 → −3 reduced). It goes to phosphorous acid, not directly to phosphoric acid, because +3 and −3 are the electron-balanced states accessible one step up and down from +1." }
               ],
               "answer": "P: +3 in H₃PO₃, +5 in H₃PO₄, −3 in PH₃. Balanced: 4H₃PO₃ → 3H₃PO₄ + PH₃. H₃PO₂ disproportionates too, but to H₃PO₃ + PH₃ (2H₃PO₂ → H₃PO₃ + PH₃), not to H₃PO₄, because it disproportionates to its adjacent accessible oxidation states.",
               "insight": "Reducing power ∝ number of P–H bonds is the shortcut, but disproportionation questions require the actual oxidation-state arithmetic — don't skip straight to the memorised rule when a question asks you to justify it.",
@@ -980,7 +980,7 @@ export const P_BLOCK_NOTES: PremiumChapterNotes = {
                 "Melting Point  •  O < S < Se < Te > Po Increases up to Te, then decreases. Anomaly: Po has lower MP than Te.",
                 "Boiling Point  •  O < S < Se < Te > Po Increases up to Te, then decreases.",
                 "Allotropy  •  All elements of the group exhibit allotropy.",
-                "MP/BP Data Highlights (NCERT Table 7.6): 1. Large jump from O to S (due to O₂gas vs S₈solid). 2. Polonium Anomaly: MP: Te (725 K) > Po (520 K) . BP: Te (1260 K) > Po (1235 K) .",
+                "MP/BP Data Highlights (NCERT Table 7.6): 1. Large jump from O to S (due to O₂ gas vs S₈ solid). 2. Polonium Anomaly: MP: Te (725 K) > Po (520 K) . BP: Te (1260 K) > Po (1235 K) .",
                 "Property  •  Trend / Notes"
               ],
               "exams": [
@@ -992,9 +992,9 @@ export const P_BLOCK_NOTES: PremiumChapterNotes = {
               "heading": "Continued",
               "points": [
                 "Atomic Radius  •  Increases Down (Regular).",
-                "Ionization Energy  •  O > S > Se > Te > Po Lower than Grp 15 (due to p⁴vs stable p³).",
+                "Ionization Energy  •  O > S > Se > Te > Po Lower than Grp 15 (due to p⁴ vs stable p³).",
                 "Electron Gain Enthalpy  •  S > Se > Te > Po > O TRAP S is most negative . Oxygen is less negative due to small size/repulsion.",
-                "Melting/Boiling Pt  •  Increases with size. NOTE Large diff between O and S (O₂gas vs S₈solid).",
+                "Melting/Boiling Pt  •  Increases with size. NOTE Large diff between O and S (O₂ gas vs S₈ solid).",
                 "Anomalous Behavior of Oxygen: 1. Small size, High EN. 2. Strong H-Bonding (H₂O is liquid, H₂S is gas). 3. Absence of d -orbitals (Max covalency = 4). 4. Paramagnetic in nature (O₂)."
               ],
               "exams": [
@@ -1016,8 +1016,8 @@ export const P_BLOCK_NOTES: PremiumChapterNotes = {
               "points": [
                 "• -2 State: Stability decreases down the group. Po hardly shows -2.",
                 "• Oxygen: Shows -2 mostly. • In OF₂: +2 • In O₂F₂: +1 • In Peroxides: -1",
-                "• +4 State: Stability Increases down (Inert Pair Effect). SO₂is stable gas.",
-                "• +6 State: Stability Decreases down. SF₆is very stable.",
+                "• +4 State: Stability Increases down (Inert Pair Effect). SO₂ is stable gas.",
+                "• +6 State: Stability Decreases down. SF₆ is very stable.",
                 "Stability with O and F: • Higher oxidation states (+4, +6) are more stable with Fluorine and Oxygen because they are highly electronegative. • Bonding with F is mostly covalent; with O it can be multiple bonds (dπ–pπ)."
               ],
               "exams": [
@@ -1088,13 +1088,13 @@ export const P_BLOCK_NOTES: PremiumChapterNotes = {
               "heading": "Core Notes",
               "points": [
                 "◆ A. Dioxides (EO₂)",
-                "• States: O₃, SO₂are Gases . SeO₂is a Solid .",
-                "• Redox Nature (Trend): • SO₂is Reducing . • TeO₂is Oxidizing .",
+                "• States: O₃, SO₂ are Gases . SeO₂ is a Solid .",
+                "• Redox Nature (Trend): • SO₂ is Reducing . • TeO₂ is Oxidizing .",
                 "• Reducing property decreases down the group.",
                 "◆ B. Acidic Character",
                 "• Trend: Acidic character decreases down the group.",
-                "• SO₂is purely acidic.",
-                "• TeO₂is amphoteric.",
+                "• SO₂ is purely acidic.",
+                "• TeO₂ is amphoteric.",
                 "Elements: SO₂, SeO₂, TeO₂",
                 "Property  •  Trend"
               ],
@@ -1106,7 +1106,7 @@ export const P_BLOCK_NOTES: PremiumChapterNotes = {
               "kind": "detailed",
               "heading": "Continued",
               "points": [
-                "Reducing Nature  •  Decreases Down group. SO₂is Reducing . TeO₂is Oxidizing .",
+                "Reducing Nature  •  Decreases Down group. SO₂ is Reducing . TeO₂ is Oxidizing .",
                 "Physical State  •  SO₂ (Gas) → SeO₂ (Solid).",
                 "Acidic Nature  •  Decreases down group."
               ],
@@ -1148,7 +1148,7 @@ export const P_BLOCK_NOTES: PremiumChapterNotes = {
               "points": [
                 "• Monohalides (E₂X₂): Dimeric in nature. Examples: S₂F₂, S₂Cl₂, S₂Br₂, Se₂Cl₂, Se₂Br₂ .",
                 "• Disproportionation (NCERT): Dimeric halides disproportionate on heating: 2Se₂Cl₂ → SeCl₄ + 3Se",
-                "• Hexafluorides (SF₆): • Structure: Octahedral . • Inertness: SF₆is chemically inert due to steric protection of S by 6 F atoms.",
+                "• Hexafluorides (SF₆): • Structure: Octahedral . • Inertness: SF₆ is chemically inert due to steric protection of S by 6 F atoms.",
                 "• Tetrafluorides (SF₄): • Structure: See-Saw (Trigonal Bipyramidal geometry with 1 Lone Pair at equatorial). • Physical State: SF₄ (Gas), SeF₄ (Liquid), TeF₄ (Solid).",
                 "Hydrolysis: SF₆: No Hydrolysis. SF₄ + H₂O → SO₂ + HF (Easy Hydrolysis). TeF₆: Hydrolyses slowly."
               ],
@@ -1169,9 +1169,9 @@ export const P_BLOCK_NOTES: PremiumChapterNotes = {
               "kind": "detailed",
               "heading": "Core Notes",
               "points": [
-                "• Prep: Heating Chlorates/Nitrates/Permanganates. 2KClO₃ → 2KCl + 3O₂ (MnO₂catalyst). Thermal decomposition: 2Ag₂O → 4Ag + O₂ .",
+                "• Prep: Heating Chlorates/Nitrates/Permanganates. 2KClO₃ → 2KCl + 3O₂ (MnO₂ catalyst). Thermal decomposition: 2Ag₂O → 4Ag + O₂ .",
                 "• Nature: Paramagnetic (even electrons, but unpaired in π*).",
-                "• Reactions: • 4Al + 3O₂ → 2Al₂O₃ • 2ZnS + 3O₂ → 2ZnO + 2SO₂ • 2SO₂ + O₂ → 2SO₃ (V₂O₅cat). • 4HCl + O₂ → 2Cl₂ + 2H₂O (CuCl₂cat).",
+                "• Reactions: • 4Al + 3O₂ → 2Al₂O₃ • 2ZnS + 3O₂ → 2ZnO + 2SO₂ • 2SO₂ + O₂ → 2SO₃ (V₂O₅ cat). • 4HCl + O₂ → 2Cl₂ + 2H₂O (CuCl₂ cat).",
                 "• Prep: 3O₂ ↔ 2O₃ (ΔH = +142 kJ). Silent electric discharge.",
                 "• Props: Pale blue gas, dark blue liquid, violet black solid.",
                 "• Thermodynamics: Unstable vs O₂ . Decomposition is exothermic (ΔH -ve) and entropy increases (ΔS +ve). Large -ve ΔG.",
@@ -1189,13 +1189,13 @@ export const P_BLOCK_NOTES: PremiumChapterNotes = {
               "heading": "Continued",
               "points": [
                 "◆ A. Dioxygen (O₂)",
-                "• Prep: Heating Chlorates/Nitrates (KClO₃ → KCl + O₂with MnO₂).",
-                "• Nature: Paramagnetic (even though even electrons). Unpaired electrons in Anti-bonding $\\pi^*$ orbitals.",
+                "• Prep: Heating Chlorates/Nitrates (KClO₃ → KCl + O₂ with MnO₂).",
+                "• Nature: Paramagnetic (even though even electrons). Unpaired electrons in Anti-bonding π* orbitals.",
                 "◆ B. Ozone (O₃)",
                 "• Prep: Silent electric discharge on pure O₂ (Endothermic).",
-                "• Structure: Bent ($117^\\circ$), Resonance Hybrid. Diamagnetic.",
+                "• Structure: Bent (117°), Resonance Hybrid. Diamagnetic.",
                 "• Test (Tailing of Mercury): 2Hg + O₃ → Hg₂O (Meniscus lost).",
-                "• Estimation (Quantitative): O₃ + 2I⁻ + H₂O → I₂ + O₂ + 2OH⁻ (Titrate liberated I₂with Na₂S₂O₃).",
+                "• Estimation (Quantitative): O₃ + 2I⁻ + H₂O → I₂ + O₂ + 2OH⁻ (Titrate liberated I₂ with Na₂S₂O₃).",
                 "• Depletion: By NO (Supersonic jets) and Freons. NO + O₃ → NO₂ + O₂"
               ],
               "exams": [
@@ -1209,7 +1209,8 @@ export const P_BLOCK_NOTES: PremiumChapterNotes = {
                 "• Lewis structure (O=O) predicts ALL electrons paired — it cannot explain O₂'s paramagnetism, which is exactly why this is a favourite JEE Advanced 'Lewis structure fails, MO theory succeeds' question.",
                 "• O₂ has 16 electrons total (8 from each O). MO filling order for O₂ (and F₂, since Z > 7): σ1s² σ*1s² σ2s² σ*2s² σ2pz² π2px²=π2py² π*2px¹=π*2py².",
                 "• The KEY result: the two highest-energy electrons occupy the DEGENERATE π*2px and π*2py antibonding orbitals SEPARATELY (Hund's rule — maximum multiplicity), one electron each, both with parallel spin. Two unpaired electrons = paramagnetic.",
-                "• Bond order calculation: BO = ½(bonding electrons − antibonding electrons) = ½[(2+2+2+2) − (2+2+2)] = ½[8 − 6] = 1 — wait, recompute correctly counting core electrons too: total bonding pairs (σ1s, σ2s, σ2pz, π2px, π2py) = 5 pairs = 10 electrons; total antibonding pairs (σ*1s, σ*2s, π*2px¹, π*2py¹) = 2 full pairs (4e⁻) + 2 single electrons (2e⁻) = 6 electrons. BO = ½(10 − 6) = 2 — matches the simple Lewis double bond, but ONLY MO theory correctly shows this bond order of 2 is achieved with 2 electrons unpaired, not 0.",
+                "• Bond order calculation: BO = ½(bonding electrons − antibonding electrons). Count VALENCE electrons only — the filled core σ1s²/σ*1s² pair cancels exactly and can always be ignored. Bonding: σ2s² + σ2pz² + π2px² + π2py² = 8 electrons. Antibonding: σ*2s² + π*2px¹ + π*2py¹ = 4 electrons. BO = ½(8 − 4) = 2.",
+                "• So MO theory reproduces the Lewis double bond (BO = 2) but adds what Lewis cannot: that this bond order of 2 is achieved with TWO electrons unpaired, not zero. Same bond order, completely different magnetic prediction — and experiment (liquid O₂ sticking to a magnet) backs MO theory.",
                 "• This is also why O₂⁺ (dioxygenyl cation, removing one π* electron) has a HIGHER bond order (2.5) and shorter, stronger bond than neutral O₂ — a very common bond-order comparison question, and directly explains why Bartlett used PtF₆ (which is a strong enough oxidiser to form O₂⁺) to first predict Xe could also be oxidised, since Xe's first ionisation energy is close to O₂'s."
               ],
               "exams": [
@@ -1235,10 +1236,9 @@ export const P_BLOCK_NOTES: PremiumChapterNotes = {
                 "Solubility  •  Insol water, Sol CS₂  •  Sol CS₂",
                 "Preparation  •  Evap of roll sulphur in CS₂  •  Melting rhombic & cooling",
                 "Structure  •  S₈ (Puckered Crown)  •  S₈ (Puckered)",
-                "Transition Temp: 369 K. Both stable at this temp. Cyclo-S₆: Chair form. IMP S₂ (Vapor): At high temp (~1000K), S₂is dominant species. It is Paramagnetic like O₂ (unpaired e⁻in π*).",
+                "Transition Temp: 369 K. Both stable at this temp. Cyclo-S₆: Chair form. IMP S₂ (Vapor): At high temp (~1000K), S₂ is dominant species. It is Paramagnetic like O₂ (unpaired e⁻ in π*).",
                 "• Prep: • Burning S. • Roasting: 4FeS₂ + 11O₂ → 2Fe₂O₃ + 8SO₂ • Lab: SO₃²⁻ + 2H⁺ → H₂O + SO₂",
-                "• Reactions: • With NaOH: Na₂SO₃ → NaHSO₃ . • With Cl₂</",
-                "Rhombic (α-Sulfur)  •  Monoclinic (β-Sulfur)"
+                "• SO₂ reactions: • With NaOH (limited SO₂): SO₂ + 2NaOH → Na₂SO₃ + H₂O; with EXCESS SO₂ the sulphite converts to bisulphite: Na₂SO₃ + SO₂ + H₂O → 2NaHSO₃. • With Cl₂ (charcoal catalyst): SO₂ + Cl₂ → SO₂Cl₂ (sulphuryl chloride). • With O₂ (V₂O₅ catalyst): 2SO₂ + O₂ ⇌ 2SO₃ — the key Contact Process step."
               ],
               "exams": [
                 "JEE Advanced"
@@ -1251,8 +1251,8 @@ export const P_BLOCK_NOTES: PremiumChapterNotes = {
                 "Yellow, Rhombic crystals  •  Colorless needle-like",
                 "Stable below 369K  •  Stable above 369K",
                 "Insol in water, Sol in CS₂  •  Sol in CS₂",
-                "Transition Temp: 369K ($96^\\circ$C). Both stable at this temp. Structure: Both exist as S₈puckered (crown) rings.",
-                "JEE TRAP Vapor Phase Sulfur (S₂): At high temp (~1000K), S₈dissociates to S₂ . Nature: S₂is Paramagnetic (like O₂) due to unpaired electrons in $\\pi^*$ orbitals.",
+                "Transition Temp: 369K (96°C). Both stable at this temp. Structure: Both exist as S₈ puckered (crown) rings.",
+                "JEE TRAP Vapor Phase Sulfur (S₂): At high temp (~1000K), S₈ dissociates to S₂ . Nature: S₂ is Paramagnetic (like O₂) due to unpaired electrons in π* orbitals.",
                 "◆ Sulfur Dioxide (SO₂)",
                 "• Prep: Roasting sulphide ores (FeS₂ + O₂ → Fe₂O₃ + SO₂).",
                 "• Properties: Angular shape. Reducing agent. Bleaching action (temporary, due to reduction).",
@@ -1313,7 +1313,7 @@ export const P_BLOCK_NOTES: PremiumChapterNotes = {
                 "Sulfuric  •  H₂SO₄  •  King of chemicals.",
                 "Peroxodisulfuric  •  H₂S₂O₈  •  Marshall's Acid . Contains -O-O- linkage.",
                 "Pyrosulfuric  •  H₂S₂O₇  •  Oleum . Contains S-O-S linkage.",
-                "Contact Process (H₂SO₄): Catalyst: V₂O₅ . Temp: 720K. Pressure: 2 bar. Step: Dissolve SO₃in H₂SO₄to make Oleum, then dilute."
+                "Contact Process (H₂SO₄): Catalyst: V₂O₅ . Temp: 720K. Pressure: 2 bar. Step: Dissolve SO₃ in H₂SO₄ to make Oleum, then dilute."
               ],
               "exams": [
                 "JEE Advanced"
@@ -1434,7 +1434,7 @@ export const P_BLOCK_NOTES: PremiumChapterNotes = {
                 "Atomic Radius  •  F < Cl < Br < I Halogens have the smallest atomic radii in their respective periods (effective nuclear charge).",
                 "Ionization Energy  •  I < Br < Cl < F (Decreases down)",
                 "Electronegativity  •  I(2.7) < Br(3.0) < Cl(3.2) < F(4.0)",
-                "Electron Gain  •  I < Br < F < Cl (Negative value) Halogens have maximum negative electron gain enthalpy in their corresponding periods. TRAP F is less negative than Cl due to small size (e⁻repulsion).",
+                "Electron Gain  •  I < Br < F < Cl (Negative value) Halogens have maximum negative electron gain enthalpy in their corresponding periods. TRAP F is less negative than Cl due to small size (e⁻ repulsion).",
                 "Bond Dissoc. Enth.  •  I-I < F-F < Br-Br < Cl-Cl V.IMP F-F bond is weaker than Cl-Cl and Br-Br due to lone pair repulsion.",
                 "◆ B. Macroscopic Trends",
                 "Element  •  Color  •  State  •  Solubility in H₂O",
@@ -1515,7 +1515,7 @@ export const P_BLOCK_NOTES: PremiumChapterNotes = {
               "kind": "detailed",
               "heading": "Continued",
               "points": [
-                "• F₂: Oxidizes water to Oxygen. 2F₂ (g) + 2H₂O(l) → 4H⁺ (aq) + 4F⁻ (aq) + O₂ (g) • Cl₂ / Br₂: Reacts to form Hypohalous acid. X₂ (g) + H₂O(l) → HX(aq) + HOX(aq) • I₂: Reaction is non-spontaneous . Reverse reaction occurs (I⁻oxidized by O₂in acid). 4I⁻ (aq) + 4H⁺ (aq) + O₂ (g) → 2I₂ (s) + 2H₂O(l)",
+                "• F₂: Oxidizes water to Oxygen. 2F₂ (g) + 2H₂O(l) → 4H⁺ (aq) + 4F⁻ (aq) + O₂ (g) • Cl₂ / Br₂: Reacts to form Hypohalous acid. X₂ (g) + H₂O(l) → HX(aq) + HOX(aq) • I₂: Reaction is non-spontaneous . Reverse reaction occurs (I⁻ oxidized by O₂ in acid). 4I⁻ (aq) + 4H⁺ (aq) + O₂ (g) → 2I₂ (s) + 2H₂O(l)",
                 "◆ D. Anomalous Fluorine",
                 "• Only -1 OS. Low F-F bond energy.",
                 "• Forms H-Bonds (HF is liquid).",
@@ -1750,7 +1750,7 @@ export const P_BLOCK_NOTES: PremiumChapterNotes = {
                 "◆ B. Properties & Uses",
                 "• Reactivity: XX' > X₂ (except F₂) because X-X' bond is weaker.",
                 "• Hydrolysis: XX' + H₂O → HX' + HOX (Oxyacid from larger halogen).",
-                "• Uses: ClF₃ / BrF₃used for U enrichment (UF₆)."
+                "• Uses: ClF₃ / BrF₃ used for U enrichment (UF₆)."
               ],
               "exams": [
                 "JEE Advanced"
@@ -1942,11 +1942,11 @@ export const P_BLOCK_NOTES: PremiumChapterNotes = {
               "heading": "Core Notes",
               "points": [
                 "◆ A. Why Inert?",
-                "• Completely filled ns²np⁶shell.",
+                "• Completely filled ns²np⁶ shell.",
                 "• High Ionization Enthalpy.",
                 "• Positive Electron Gain Enthalpy.",
                 "◆ B. Neil Bartlett's Experiment (1962)",
-                "• Bartlett observed the reaction of PtF₆with Oxygen to form O₂⁺ [PtF₆ ]⁻ . • Logic: First I.E. of O₂ (1175 kJ/mol) ≈ I.E. of Xe (1170 kJ/mol).",
+                "• Bartlett observed the reaction of PtF₆ with Oxygen to form O₂⁺ [PtF₆ ]⁻ . • Logic: First I.E. of O₂ (1175 kJ/mol) ≈ I.E. of Xe (1170 kJ/mol).",
                 "• First Compound: Xe + PtF₆ → Xe⁺ [PtF₆ ]⁻ (Red Solid)",
                 "• Scope: Compounds mostly formed by Xe (with F, O) and Kr (only KrF₂).",
                 "◆ A. Powerful Fluorinating Agents",
@@ -2080,7 +2080,7 @@ export const P_BLOCK_NOTES: PremiumChapterNotes = {
                 "XeF₆  •  sp³d³  •  Pentagonal Bipyramidal  •  Distorted Octahedral (1 LP)",
                 "XeOF₄  •  sp³d²  •  Octahedral  •  Square Pyramidal",
                 "XeO₃  •  sp³  •  Tetrahedral  •  Pyramidal",
-                "Note: XeO₃is a colorless explosive solid."
+                "Note: XeO₃ is a colorless explosive solid."
               ],
               "exams": [
                 "JEE Advanced"

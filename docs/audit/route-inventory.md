@@ -243,7 +243,7 @@ Regenerate after any route change; do not edit by hand.
 | `/learn/thermodynamics/part28` | learn |  | no |  | `app/learn/thermodynamics/part28/page.tsx` |
 | `/learn/thermodynamics/part29` | learn |  | no |  | `app/learn/thermodynamics/part29/page.tsx` |
 | `/learn/thermodynamics/part30` | learn |  | no |  | `app/learn/thermodynamics/part30/page.tsx` |
-| `/library` | reference |  | yes |  | `app/library/page.tsx` |
+| `/library` | reference |  | yes | yes | `app/library/page.tsx` |
 | `/live` | unknown |  | yes |  | `app/live/page.tsx` |
 | `/memory` | revise |  | yes |  | `app/memory/page.tsx` |
 | `/mistakes` | revise |  | yes |  | `app/mistakes/page.tsx` |

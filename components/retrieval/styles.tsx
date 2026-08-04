@@ -7,6 +7,7 @@ import { NT } from "@/components/notes/canonical";
 
 const RETRIEVAL_CSS = `
 .sbrCard {
+  min-width: 0;
   border: 1px solid ${NT.border}; border-left: 3px solid ${NT.cyan};
   border-radius: 13px; background: ${NT.surface};
   padding: 15px 18px 16px; margin: 18px 0;
@@ -17,7 +18,7 @@ const RETRIEVAL_CSS = `
   letter-spacing: .15em; text-transform: uppercase; color: ${NT.cyan};
   margin-bottom: 9px;
 }
-.sbrPrompt { color: ${NT.text}; font-family: ${NT.sans}; font-size: 14.5px; line-height: 1.6; margin: 0 0 12px; }
+.sbrPrompt { color: ${NT.text}; font-family: ${NT.sans}; font-size: 14.5px; line-height: 1.6; margin: 0 0 12px; overflow-wrap: anywhere; }
 .sbrOptions { display: flex; flex-direction: column; gap: 8px; border: 0; padding: 0; margin: 0; }
 .sbrOptions legend { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
 .sbrOpt {
@@ -29,6 +30,7 @@ const RETRIEVAL_CSS = `
   transition: border-color .15s ease, background .15s ease; min-height: 44px;
 }
 .sbrOpt:hover { border-color: ${NT.cyan}; }
+.sbrOpt > span:last-child { overflow-wrap: anywhere; min-width: 0; }
 .sbrOpt:focus-visible { outline: 2px solid ${NT.cyan}; outline-offset: 2px; }
 .sbrOpt[disabled] { cursor: default; }
 .sbrOptKey {
@@ -87,6 +89,10 @@ const RETRIEVAL_CSS = `
 .sbrSummaryRow:last-child { border-bottom: none; }
 .sbrDot { width: 10px; height: 10px; border-radius: 50%; align-self: center; }
 .sbrStat { font-family: ${NT.mono}; font-size: 11px; color: ${NT.textFaint}; white-space: nowrap; }
+@media (pointer: coarse) {
+  .sbrConfBtn { min-height: 44px; padding: 9px 16px; }
+  .sbrBtn { min-height: 48px; }
+}
 @media (prefers-reduced-motion: reduce) {
   .sbrCard *, .sbrCard { transition: none !important; }
 }

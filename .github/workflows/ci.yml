@@ -83,5 +83,8 @@ jobs:
       - name: Route-audit unit tests
         run: npm run test:route-audit
 
+      - name: Feature-flag unit tests
+        run: npm run test:feature-flags
+
       - name: Internal-link integrity (ratchet)
         run: npm run audit:links

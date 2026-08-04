@@ -86,5 +86,8 @@ jobs:
       - name: Feature-flag unit tests
         run: npm run test:feature-flags
 
+      - name: Retrieval-schema unit tests
+        run: npm run test:retrieval-schema
+
       - name: Internal-link integrity (ratchet)
         run: npm run audit:links

@@ -708,7 +708,39 @@ export const P_BLOCK_NOTES: PremiumChapterNotes = {
                 "• With alcohols: B₂H₆ + 6ROH → 2B(OR)₃ + 6H₂",
                 "• With LiH (complex hydride formation): BX₃ + LiH → BH₃ + LiX, then BH₃ + LiH → LiBH₄",
                 "• STABILITY OF BOROHYDRIDES: LiBH₄ < NaBH₄ < KBH₄. BH₄⁻ is a large anion and is better stabilised by a larger cation — the standard 'like stabilises like' lattice argument.",
-                "• On controlled heating, diborane gives higher boranes (B₄H₁₀, B₅H₉, …) and eventually boron: B₂H₆ →(Δ) 2B + 3H₂."
+                "• On controlled heating, diborane gives higher boranes (B₄H₁₀, B₅H₉, …) and eventually boron: B₂H₆ →(Δ) 2B + 3H₂.",
+                "• With HX (X = Cl, Br): B₂H₆ + HX → B₂H₅X + H₂",
+                "• With LiH in ether: B₂H₆ + 2LiH → 2Li[BH₄]",
+                "• With sodium amalgam: B₂H₆ + Na/Hg → Na[BH₄] + Na[B₃H₈]",
+                "• With CO under pressure (470 K, 20 bar): B₂H₆ + 2CO → 2H₃B·CO",
+                "• With methanol: B₂H₆ + 6MeOH → 2B(OMe)₃ + 6H₂",
+                "• With Lewis bases L (NEt₃, SEt₂, PMe₃): B₂H₆ + 2L → 2L·BH₃ (symmetrical cleavage)"
+              ],
+              "exams": ["JEE Advanced"]
+            },
+            {
+              "kind": "detailed",
+              "heading": "Digallane Ga₂H₆ — contrast with diborane",
+              "points": [
+                "• Ga₂H₆ is structurally analogous to B₂H₆ (two 3-centre-2-electron Ga–H–Ga bridges) but is MUCH less stable: it decomposes above 253 K to the elements — Ga₂H₆ → 2Ga + 3H₂. Every reaction of digallane must therefore be run at low temperature, which is itself the examinable contrast with diborane.",
+                "• With NH₃ at 195 K (unsymmetrical cleavage, as with diborane): Ga₂H₆ + 2NH₃ → [(H₃N)₂GaH₂]⁺[GaH₄]⁻",
+                "• With HCl at 178 K: Ga₂H₆ + 6HCl → Ga₂Cl₆ + 6H₂",
+                "• With NMe₃ at 178 K (symmetrical cleavage): Ga₂H₆ + 2NMe₃ → 2Me₃N·GaH₃",
+                "• With PH₃ at low temperature: Ga₂H₆ + 2PH₃ → 2H₃P·GaH₃",
+                "• With ethene at 243 K: gives the polymeric alkylgallium hydride {(CH₃CH₂)₂GaH}ₙ.",
+                "• Summary of the comparison: same bridged structure and the same symmetrical/unsymmetrical cleavage pattern, but far lower thermal stability — because the Ga–H–Ga bridge is weaker than B–H–B (larger, more diffuse orbitals give poorer 3-centre overlap)."
+              ],
+              "exams": ["JEE Advanced"]
+            },
+            {
+              "kind": "detailed",
+              "heading": "Mohs hardness scale — where the Group 13 materials sit",
+              "points": [
+                "MOHS SCALE  •  1 Talc  •  2 Gypsum  •  3 Calcite  •  4 Fluorite  •  5 Apatite  •  6 Feldspar (orthoclase)  •  7 Quartz  •  8 Topaz  •  9 CORUNDUM (α-Al₂O₃, incl. ruby and sapphire)  •  10 Diamond",
+                "• CORUNDUM at 9 is why α-Al₂O₃ is used as an abrasive and refractory — it scratches almost everything except diamond.",
+                "• Boron itself is among the hardest elements (its icosahedral B₁₂ network), second only to diamond among the elements.",
+                "• CUBIC BORON NITRIDE (c-BN, borazon) has hardness comparable to — and in some measures exceeding — diamond, and unlike diamond it is chemically stable toward hot iron, which is why c-BN rather than diamond is used for machining steel.",
+                "• Synthetic (HPHT or CVD) diamond can be engineered to exceed natural diamond's hardness."
               ],
               "exams": ["JEE Advanced"]
             },

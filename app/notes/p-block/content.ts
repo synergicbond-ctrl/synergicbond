@@ -716,84 +716,136 @@ Sulphurous acid (S at +4) is both an oxidising and reducing agent depending on t
 9. A sample of ozonised oxygen liberates I₂ that requires 15.0 mL of 0.2 M Na₂S₂O₃ for titration. Find the moles of O₃. *(Moles S₂O₃²⁻ = 3.0×10⁻³; moles I₂ = 1.5×10⁻³; moles O₃ = 1.5×10⁻³ mol, using the 1:1 O₃:I₂ and 1:2 I₂:S₂O₃²⁻ ratios from §12.1.)*
 # 15. Group 17: halogens, interhalogens and oxoacids
 
-Halogens have valence configuration ns²np⁵. Fluorine is anomalous (§1.2): highest electronegativity of any element, very small atomic/ionic size, **no positive oxidation state in any of its compounds** (it is always −1 or 0, since it is the most electronegative element and has no accessible d orbital to support a higher oxidation state), and an unexpectedly weak F–F bond compared with Cl–Cl (small size → strong lone-pair/lone-pair repulsion between the two fluorine atoms across the short bond).
+Members are F, Cl, Br, I, At. Configuration ns²np⁵ — one electron short of a noble-gas shell, making halogens the most reactive non-metals and the strongest oxidising family in the periodic table. Astatine is intensely radioactive with no stable isotope. Halogens have the smallest atomic radii in their respective periods (highest effective nuclear charge for a given shell among non-metals) and the highest electronegativities.
 
-## 15.1 The electron-gain-enthalpy vs electronegativity trap
+## 15.1 Quantitative periodic trends
 
-**Electron gain enthalpy of Cl is more negative than that of F**, even though **F is more electronegative than Cl** — these are two different, non-interchangeable quantities. Chlorine's larger 3p orbital experiences less electron–electron repulsion when accepting an extra electron than fluorine's compact 2p orbital does, so Cl releases more energy on electron capture. Electronegativity, by contrast, measures the tendency to attract shared bonding electron density within a molecule (a periodic-table-position-based, Pauling/Mulliken-scale property) and F wins that comparison because of its extremely small size and high effective nuclear charge, independent of the isolated-atom electron-gain-enthalpy argument.
+| Property | F | Cl | Br | I |
+|---|---:|---:|---:|---:|
+| Atomic radius (pm) | 72 | 99 | 114 | 133 |
+| IE₁ (kJ/mol) | 1681 | 1251 | 1140 | 1008 |
+| Electronegativity | 4.0 | 3.2 | 3.0 | 2.7 |
+| Electron gain enthalpy (kJ/mol) | −328 | −349 | −325 | −295 |
+| Bond dissociation enthalpy, X–X (kJ/mol) | 159 | 243 | 193 | 151 |
 
-## 15.2 Hydrogen halides
+## 15.2 Three critical anomalies — memorise as one cluster
 
-Acid strength in water increases HF < HCl < HBr < HI, tracking the fall in H–X bond dissociation enthalpy down the group (weaker bond → easier heterolytic cleavage → stronger acid in the leveling solvent water). HF itself is a comparatively weak acid in water (unlike the other three, which are all fully strong) yet has an unusually high boiling point for its molar mass because of extensive hydrogen bonding, including the formation of the bifluoride ion, [HF₂]⁻, in concentrated solution.
+**1. Electron gain enthalpy: Cl > F > Br > I (Cl most negative, NOT F).** Fluorine's tiny 2p subshell is already electron-dense; the incoming electron meets significant inter-electronic repulsion, partly offsetting the energy released. Chlorine's larger, less crowded 3p subshell accepts the electron more exothermically — the exact same mechanism as sulphur's electron gain beating oxygen's (§11.1) and is worth recognising as one recurring 2nd-period-smallness effect across three different groups (N/O/F all show it relative to their period-3 neighbours in some property).
 
-## 15.3 Chlorine, disproportionation and bleaching powder
+**2. Oxidising power is still F₂ > Cl₂ > Br₂ > I₂, despite Cl's better electron gain enthalpy.** Oxidising power depends on the *whole* thermodynamic cycle — bond dissociation + electron gain + hydration enthalpy — not electron gain enthalpy alone. F₂'s F–F bond is exceptionally weak (159 kJ/mol, weaker even than Br–Br, due to strong lone-pair/lone-pair repulsion between the small, adjacent fluorine atoms) so it dissociates easily, and F⁻'s very high hydration enthalpy (tiny ion, high charge density) releases a great deal of energy. Both effects overwhelm the electron-gain-enthalpy deficit relative to chlorine.
 
-Chlorine disproportionates in water and even more so in alkali, with the **product distribution controlled by temperature**:
+**3. Bond dissociation enthalpy order: Cl₂ > Br₂ > F₂ > I₂ — F₂ is anomalously weak.** Again the lone-pair repulsion argument: fluorine's small size forces its 3 non-bonding lone pairs on each atom uncomfortably close to the bonding pair, weakening the F–F single bond well below what its short bond length alone would predict.
 
-\[\mathrm{Cl_2+H_2O\rightleftharpoons HCl+HOCl}\]
-\[\mathrm{Cl_2+2NaOH\xrightarrow{cold,dilute}NaCl+NaOCl+H_2O}\]
-\[\mathrm{3Cl_2+6NaOH\xrightarrow{hot,conc.}5NaCl+NaClO_3+3H_2O}\]
+## 15.3 Hydrogen halides
 
-Bleaching powder (calcium oxychloride, commonly written CaOCl₂, best regarded as a mixed salt of Ca(OCl)Cl rather than a simple molecular compound) is manufactured by passing Cl₂ over slaked lime. Its bleaching action proceeds via the hypochlorite/HOCl oxidising species released on treatment with dilute acid — treat it through its **"available chlorine"** behaviour in reaction/titration questions rather than as a single pure covalent molecule.
+| Property | HF | HCl | HBr | HI |
+|---|---:|---:|---:|---:|
+| Acidic strength | weakest | — | — | strongest |
+| Thermal stability | highest | — | — | lowest |
+| Reducing power | none | — | — | strongest |
+| Boiling point (K) | 293 | 188 | 206 | 238 |
 
-## 15.4 Interhalogens
+**HF is the weakest hydrohalic acid**, despite fluorine's extreme electronegativity — acid strength here tracks how easily the H–X bond breaks (bond dissociation ease), and H–F is exceptionally strong; HF also hydrogen-bonds into ion pairs in water, further suppressing dissociation. **HF has the highest boiling point** of the four (293 K, an outlier breaking the smooth HCl<HBr<HI trend) for the same reason water and ammonia are anomalous — strong hydrogen bonding.
 
-Interhalogens (XY, XY₃, XY₅, XY₇, where X is the larger, less electronegative halogen) are generally **more reactive than the parent halogens (except F₂ itself)**, because the X–Y bond is weaker and more polar than the X–X bond in the more electronegative parent halogen, making it easier to cleave. Molecular shapes strictly follow VSEPR (count σ-bond pairs + lone pairs on the central, larger halogen):
-
-| Molecule | Central-atom steric number | Shape |
-|---|---:|---|
-| ClF (XY) | 4 (3 lp + 1 bp) | linear (diatomic — shape is trivially linear) |
-| ClF₃ (XY₃) | 5 (2 lp + 3 bp) | T-shaped |
-| BrF₅ (XY₅) | 6 (1 lp + 5 bp) | square pyramidal |
-| IF₇ (XY₇) | 7 (0 lp + 7 bp) | pentagonal bipyramidal |
-
-## 15.5 Oxoacid comparison
-
-For the chlorine oxoacid series HOCl < HClO₂ < HClO₃ < HClO₄, **acid strength increases with the number of oxygen atoms (i.e., with the oxidation state of chlorine)** because additional highly electronegative oxygens withdraw electron density and delocalise negative charge over more atoms in the conjugate base, stabilising it. Do not extend this "more oxygens ⇒ stronger acid" rule unconditionally **across different central atoms** without separately checking electronegativity and structure — it is valid only when comparing oxoacids of the *same* central atom.
-
-### Trap bank — Group 17
-
-- F has no positive oxidation state in any compound; Cl, Br, I do (up to +7 in perhalates).
-- Electron gain enthalpy: Cl more negative than F. Electronegativity: F greater than Cl. Never conflate the two.
-- HF is a weak acid in water despite being the most reactive/hydrogen-bonded hydrogen halide; HCl, HBr, HI are all strong.
-- Interhalogens are more reactive than the parent halogens (except F₂, which remains the most reactive elemental halogen).
+> **Worked Example — why HBr and HI cannot be made the same way as HCl.** NaCl + conc. H₂SO₄ →(Δ) NaHSO₄ + HCl works cleanly, but the analogous reaction with NaBr or NaI does not give clean HBr/HI. Why, and what is used instead?
+>
+> Concentrated H₂SO₄ is itself a moderately strong **oxidising** agent, and HBr and HI are strong **reducing** agents (§15.2's reducing-power trend) — so the acid oxidises its own product: 2HBr + H₂SO₄ → Br₂ + SO₂ + 2H₂O, and even more vigorously, 8HI + H₂SO₄ → 4I₂ + H₂S + 4H₂O. HCl survives because Cl⁻ is too weak a reducing agent to be oxidised by H₂SO₄ under these conditions.
+>
+> **Fix:** HBr and HI are instead prepared using **non-oxidising phosphoric acid**, e.g. NaBr + H₃PO₄ →(Δ) NaH₂PO₄ + HBr, which cannot oxidise the halide product. This is one of the most frequently tested preparation-method questions in the whole halogen chapter.
 
 # 16. Group 17 deep dive: chlorine, HCl and oxyacids
 
-## 16.1 Chlorine preparation and its temperature-dependent disproportionation
+## 16.1 Chlorine chemistry — condition-dependent products
 
-Laboratory-scale chlorine is most commonly generated by oxidising concentrated HCl with manganese dioxide (or, on a larger/purer scale, with potassium permanganate or potassium dichromate):
+**Preparation (lab):** MnO₂ + 4HCl(conc.) →(Δ) MnCl₂ + Cl₂ + 2H₂O. **Industrial:** the chlor-alkali process (electrolysis of brine) — see §16.2.
 
-\[\mathrm{MnO_2+4HCl\rightarrow MnCl_2+Cl_2+2H_2O}\]
+**Reaction with NaOH — a classic condition-switch question:**
 
-Chlorine disproportionates in alkali with the product distribution controlled strictly by temperature and concentration: cold, dilute alkali gives chloride and hypochlorite, while hot, concentrated alkali instead gives chloride and chlorate (chlorine going, respectively, to a mixture of −1/+1 or −1/+5 oxidation states):
+| Condition | Products |
+|---|---|
+| Cold, dilute NaOH | NaCl + NaOCl (sodium hypochlorite) |
+| Hot, concentrated NaOH | NaCl + NaClO₃ (sodium chlorate) |
+| Dry slaked lime | Ca(OCl)Cl (bleaching powder) |
 
-\[\mathrm{Cl_2+2OH^-\xrightarrow{cold,\ dilute}Cl^-+ClO^-+H_2O}\]
-\[\mathrm{3Cl_2+6OH^-\xrightarrow{hot,\ conc.}5Cl^-+ClO_3^-+3H_2O}\]
+Both are disproportionations of chlorine (0 → −1 and 0 → +1, or 0 → −1 and 0 → +5) — exactly the same X₂ + 2OH⁻ → X⁻ + OX⁻ + H₂O skeleton seen for cyanogen (a pseudohalogen, §17.2) and for bromine/iodine under equivalent conditions. **Bleaching powder** is CaOCl₂, more precisely a mixed salt Ca(OCl)Cl, formally the calcium salt of both HCl and HOCl: Cl₂ + Ca(OH)₂ → CaOCl₂ + H₂O.
 
-**The stated reaction conditions are as much a part of the "answer" as the equation itself** for this pair of reactions — a favourite JEE Advanced condition-matching question.
+## 16.2 Chlor-alkali process — industrial electrolysis of brine
 
-## 16.2 HCl behaviour and chloride identification
+Concentrated aqueous NaCl is electrolysed in a membrane cell, simultaneously producing **three** major chemicals — hence the name (chlor- for chlorine, -alkali for NaOH), plus hydrogen: **Cathode:** 2H₂O + 2e⁻ → H₂ + 2OH⁻ (water is reduced in preference to Na⁺, which is far harder to reduce). **Anode:** 2Cl⁻ → Cl₂ + 2e⁻ (Cl⁻ is oxidised in preference to water, despite O₂ evolution being thermodynamically easier, due to a large kinetic overpotential for O₂ at the electrode). Na⁺ migrates through the membrane to combine with the cathode-generated OH⁻. **Net:** 2NaCl + 2H₂O → 2NaOH + H₂ + Cl₂ — chlorine here is really a *co-product* of NaOH manufacture, not the primary target, which is exactly why this single electrolysis is economically central to the chemical industry.
 
-HCl is exceptionally soluble in water and behaves there as a strong acid, fully ionised. **Dry HCl gas does not turn dry litmus paper red** — ionisation into H⁺ and Cl⁻ (the species actually responsible for acidic behaviour) requires an ionising medium such as water, so gaseous, moisture-free HCl shows no acidic character to a dry indicator. Chloride ion gives a characteristic white, curdy precipitate of AgCl with silver nitrate solution; this precipitate is distinguished from AgBr (pale yellow) and AgI (yellow) by colour, and dissolves readily in dilute aqueous ammonia through formation of the soluble diammine complex, [Ag(NH₃)₂]⁺ (AgBr dissolves only in concentrated ammonia; AgI is insoluble even in concentrated ammonia) — this solubility gradation in ammonia is the standard confirmatory qualitative-analysis test distinguishing the three silver halides.
+## 16.3 Oxoacids of chlorine — the acid-strength ladder
 
-## 16.3 Oxoacid strength: same-central-atom comparisons only
+| Oxidation state | Acid | Name | Strength |
+|---:|---|---|---|
+| +1 | HOCl | Hypochlorous | Weakest |
+| +3 | HOClO | Chlorous | Weak |
+| +5 | HOClO₂ | Chloric | Strong |
+| +7 | HOClO₃ | Perchloric | Strongest |
 
-For a series of oxyacids built on the *same* halogen (e.g., HOCl, HClO₂, HClO₃, HClO₄), acid strength rises with the number of oxygen atoms present, because each additional highly electronegative oxygen both withdraws electron density inductively from the O–H bond and delocalises the resulting negative charge over more atoms in the conjugate base, stabilising it. **This "more oxygens ⇒ stronger acid" rule must not be extended unconditionally across oxyacids of different central atoms** (comparing, say, an oxyacid of chlorine against one of sulphur) without separately accounting for the central atom's electronegativity and the acid's actual structure.
+> **Worked Example — why acid strength rises with oxidation state.** Explain, using conjugate-base stability, why HClO₄ is far stronger than HOCl even though both have exactly one ionisable O–H bond.
+>
+> Count non-ionisable Cl=O bonds: HOCl has 0; HClO₄ has 3 (as HOClO₃). After deprotonation, ClO⁻ (from HOCl) carries its negative charge almost entirely on one oxygen — poorly stabilised, high energy, wants the proton back. ClO₄⁻ (from HClO₄) delocalises the charge over 4 equivalent oxygens by resonance (each Cl–O bond has partial double-bond character) — far more stable. The 3 additional electronegative Cl=O groups also inductively withdraw density through the framework, weakening the O–H bond and easing the initial ionisation. Both effects compound with rising oxidation state: HOCl < HOClO < HOClO₂ < HOClO₃.
+>
+> **General method:** for every oxoacid family in this chapter (nitrogen, phosphorus, sulphur, chlorine), "more terminal O atoms on the central atom → stronger acid" follows this same conjugate-base-delocalisation-plus-induction argument, virtually without exception.
 
-# 17. Interhalogens: structure, hydrolysis and reactivity
+**Fluorine's exception:** forms only ONE oxoacid, HOF (fluorine's extreme electronegativity means it never takes a positive oxidation state relative to oxygen, so no higher chlorine-style series exists for F).
 
-Interhalogens have the general formulae XY, XY₃, XY₅ and XY₇, where X is always the larger, less electronegative halogen (providing the central atom) and Y is the smaller, more electronegative halogen (always F in the XY₅ and XY₇ classes, since only fluorine is small enough to pack five or seven atoms around a single central halogen). They are typically **more reactive than the parent halogens themselves (with the sole exception of F₂, which remains the most reactive elemental halogen)**, because the X–Y bond is both more polar and generally weaker than the X–X bond of the more electronegative parent halogen, making it comparatively easy to cleave homolytically or heterolytically.
+# 17. Interhalogens, pseudohalogens, and Group 17 traps
 
-| Molecule | VSEPR steric number (bp + lp) on central halogen | Molecular shape |
+## 17.1 Interhalogen compounds — deriving shape by steric number, not memorising
+
+General type XX'ₙ, where X is the larger, less electronegative halogen (the central atom). Preparation: direct combination in varying ratios sets the product, e.g. Cl₂ + F₂(1:1) → 2ClF, while Cl₂ + 3F₂(excess) → 2ClF₃. Interhalogens are *more* reactive than the parent halogens (except F₂ itself), because the X–X' bond is weaker than either parent X–X bond.
+
+| Type | Shape | Example |
 |---|---|---|
-| ICl | 1 bp (diatomic) | linear |
-| ClF₃ | 3 bp + 2 lp | T-shaped |
-| BrF₅ | 5 bp + 1 lp | square pyramidal |
-| IF₇ | 7 bp + 0 lp | pentagonal bipyramidal |
+| XX' | Linear | ClF, ICl |
+| XX'₃ | Bent T-shape | ClF₃, BrF₃ |
+| XX'₅ | Square pyramidal | BrF₅, IF₅ |
+| XX'₇ | Pentagonal bipyramidal | IF₇ |
 
-Hydrolysis of any interhalogen must be balanced systematically from atom counts and oxidation-state changes, never guessed by pattern-matching. For example, a fluorinating interhalogen in water can furnish HF together with an oxoacid or oxoanion of the *central* halogen, with the exact product depending sensitively on the quantity of water and the reaction conditions — for instance, ClF₃ hydrolyses to give a mixture including HF, HOCl/chlorate-type species and further redox products depending on conditions, rather than a single universal equation. **Never invent a hydrolysis equation simply by mechanically replacing every terminal F with OH** — always check first whether disproportionation or another redox pathway is operating, since interhalogens frequently disproportionate on hydrolysis rather than undergoing simple substitution.
+> **Worked Example — deriving BrF₅'s shape and explaining why "ClF₇" cannot exist.**
+>
+> Br has 7 valence electrons; forming 5 Br–F bonds uses 5, leaving 7−5 = 2 electrons = 1 lone pair. Steric number = 5 bonding + 1 lone pair = 6 ⇒ **sp³d² hybridisation** (octahedral electron geometry). With one of the 6 positions occupied by a lone pair, the molecular shape (atoms only) is **square pyramidal** — basal angles compressed slightly below 90° (~84.8°) by the extra lone-pair/bond-pair repulsion. The lone pair sits opposite the apical F, so bond dipoles cannot cancel — **BrF₅ is polar**.
+>
+> IF₇ needs steric number 7 (sp³d³) — this requires central-atom d-orbitals large and energetically accessible enough to genuinely accommodate 7 surrounding atoms without severe crowding. Iodine's large radius makes this possible; chlorine (much smaller, period 3) cannot sterically fit 7 fluorines around it, so "ClF₇" does not exist, despite the formula pattern looking extendable.
+>
+> **Fast method:** steric number = (bonded atoms) + (remaining lone pairs, found from central-atom valence electrons minus electrons used in bonds, divided by 2). SN 4/5/6/7 → sp³/sp³d/sp³d²/sp³d³. This single method derives every interhalogen and xenon-compound shape in the syllabus — learn it once.
 
+**Hydrolysis:** XX' + H₂O → HX' + HOX — the oxyacid always comes from the *larger* (central) halogen, since it retains the positive-character bond to oxygen, while the smaller halogen leaves as the simple halide acid. **Uses:** ClF₃/BrF₃ for uranium enrichment (as UF₆ generation agents).
+
+## 17.2 Pseudohalogens — molecules that mimic halogen behaviour
+
+A pseudohalogen is a molecule built from two or more electronegative atoms that, as a unit, behaves chemically like a halogen molecule X₂; its anion is a pseudohalide, behaving like X⁻.
+
+**Pseudohalogens:** cyanogen (CN)₂, thiocyanogen (SCN)₂. **Pseudohalide ions:** CN⁻ (cyanide), SCN⁻ (thiocyanate), N₃⁻ (azide), OCN⁻ (cyanate).
+
+**Why the analogy holds — point by point:** they dimerise like X₂ (2CN⁻ → (CN)₂ + 2e⁻, paralleling 2Cl⁻ → Cl₂ + 2e⁻); they form HX-type acids (HCN, HSCN, HN₃, paralleling HCl); they form insoluble silver salts (AgCN, AgSCN, paralleling AgCl — and this is exactly why cyanide/thiocyanate must be removed before testing for halides, or they give false positives); they form inter-pseudohalogens with real halogens (ClCN, BrCN, ICN, paralleling ICl); and critically, they **disproportionate in alkali the same way**: (CN)₂ + 2NaOH → NaCN + NaOCN + H₂O, structurally identical to Cl₂ + 2NaOH → NaCl + NaOCl + H₂O (§16.1).
+
+> **Worked Example — proving cyanogen is a pseudohalogen by oxidation-state bookkeeping.** Assign C's oxidation state in (CN)₂, CN⁻, and OCN⁻, and confirm the alkaline reaction is a disproportionation.
+>
+> (CN)₂: N is −3; per CN unit, C + (−3) = 0 ⇒ C = **+3**. CN⁻: C + (−3) = −1 ⇒ C = **+2** (reduced). OCN⁻: C + (−2) + (−3) = −1 ⇒ C = **+4** (oxidised). Carbon splits from +3 into both +2 and +4 — the same-element-splits-both-ways signature of disproportionation, structurally identical to Cl₂'s own alkaline disproportionation.
+>
+> **Cyanogen itself:** linear N≡C–C≡N, both carbons sp, prepared by heating Hg(CN)₂ →(Δ) Hg + (CN)₂; burns with a rose-red flame; highly toxic.
+
+**Trap — do not confuse interhalogens with inter-pseudohalogens.** ICl is a genuine interhalogen (two real halogens). ClCN is an *inter-pseudohalogen* (one real halogen + one pseudohalide) — pseudohalogens themselves, like (CN)₂, contain no halogen atom at all.
+
+## 17.3 Traps to memorise as a cluster
+
+1. **F is not the most negative electron gain enthalpy — Cl is** (§15.2, point 1).
+2. **F₂ is still the strongest oxidant** despite that, because oxidising power is a whole-cycle property, not just electron gain enthalpy (§15.2, point 2).
+3. **Interhalogen hydrolysis gives the oxyacid from the LARGER halogen**, not the smaller one (§17.1).
+4. **HF is the weakest hydrohalic acid**, not the strongest, despite F's extreme electronegativity (§15.3).
+
+## 17.4 Practice problems
+
+1. Arrange F₂, Cl₂, Br₂, I₂ by oxidising power and explain why the order doesn't track electron gain enthalpy. *(F₂ > Cl₂ > Br₂ > I₂ — governed by the whole thermodynamic cycle: weak F–F bond + huge F⁻ hydration enthalpy override Cl's better electron gain enthalpy.)*
+2. Why can't HBr be prepared by heating NaBr with concentrated H₂SO₄? *(H₂SO₄ oxidises the reducing HBr product to Br₂; use non-oxidising H₃PO₄ instead.)*
+3. Derive the hybridisation and shape of ClF₃ from first principles. *(Cl: 7 valence e⁻, 3 bonds used, 4 remain = 2 lone pairs; steric number 5 ⇒ sp³d, trigonal bipyramidal electron geometry, bent T-shape molecular shape.)*
+4. Write the hydrolysis of ICl and state which product is the oxyacid. *(ICl + H₂O → HCl + HOI — iodine, the larger/central halogen, retains the OH.)*
+5. Distinguish an interhalogen from an inter-pseudohalogen with one example each. *(ICl = interhalogen, two real halogens. ClCN = inter-pseudohalogen, one halogen + one pseudohalide.)*
+6. Why must cyanide be removed before testing a solution for chloride ions? *(AgCN precipitates like AgCl, giving a false positive.)*
+7. Give the products of Cl₂ + cold dilute NaOH and Cl₂ + hot concentrated NaOH. *(Cold dilute: NaCl + NaOCl. Hot concentrated: NaCl + NaClO₃.)*
+8. Explain, using conjugate-base delocalisation, why HClO₄ is a far stronger acid than HOCl. *(See the worked example in §16.3 — charge delocalised over 4 oxygens in ClO₄⁻ vs localised on one in ClO⁻.)*
 # 18. Group 18: noble gases and xenon compounds
 
 Noble gases have closed-shell ns²np⁶ (He: 1s²) configurations and the highest ionisation enthalpies in their respective periods, which is why they were long considered chemically "inert." Xenon forms the most important class of real, stable compounds because (a) its ionisation enthalpy (1170 kJ mol⁻¹) is markedly lower than that of the lighter noble gases (He, Ne, Ar) and (b) the resulting Xe–F and Xe–O bonds are thermodynamically strong enough to be stabilised at accessible temperatures/pressures. Neil Bartlett's 1962 synthesis of Xe⁺[PtF₆]⁻ (by analogy with O₂⁺[PtF₆]⁻) was the first proof that noble-gas compounds could exist and directly triggered the discovery of the xenon fluorides.

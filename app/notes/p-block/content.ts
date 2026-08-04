@@ -287,15 +287,18 @@ Electrolysis is carried out in a steel cell lined with graphite, which itself ac
 
 ## 2.13 Higher boranes, named
 
-Beyond diborane, a genuine series of higher boranes exists, most obtained by controlled pyrolysis of B₂H₆ itself:
+Beyond diborane, a genuine series of higher boranes exists, most obtained by controlled pyrolysis of B₂H₆ itself. Boron hydride chemistry was pioneered almost single-handedly by **Alfred Stock** between 1912 and 1936 — of the roughly 20 boranes reported since, about 11 are well characterised, falling into two clean families by melting/boiling point:
 
-| Borane | Family (by BₙHₙ₊ₓ) | Note |
-|---|---|---|
-| B₄H₁₀ | arachno (n+6) | Colourless liquid |
-| B₅H₉ | nido (n+4) | Thermally the most stable of the lower boranes |
-| B₅H₁₁ | arachno (n+6) | Reactive, unstable at room temperature |
-| B₆H₁₀ | nido (n+4) | — |
-| B₁₀H₁₄ (decaborane) | nido (n+4) | Solid at room temperature, unusually stable and air-tolerant for a borane — historically the most-studied higher borane precisely because it can be handled without special precautions |
+| Borane | Family (by BₙHₙ₊ₓ) | M.p. (°C) | B.p. (°C) |
+|---|---|---:|---:|
+| B₂H₆ | *nido* (n+4) | −165 | −93 |
+| B₄H₁₀ | *arachno* (n+6) | −120 | 18 |
+| B₅H₉ (pentaborane-9) | *nido* (n+4) | −47 | 60 |
+| B₅H₁₁ (pentaborane-11) | *arachno* (n+6) | −122 | 65 |
+| B₆H₁₀ | *nido* (n+4) | −62 | 108 |
+| B₁₀H₁₄ (decaborane) | *nido* (n+4) | −100 | 213 |
+
+**B₅H₉ is the thermally most stable of the lower boranes**; **decaborane (B₁₀H₁₄) is solid at room temperature and unusually air-tolerant for a borane**, which is exactly why it was historically the most-studied higher borane — it can be handled without the special precautions diborane itself demands.
 
 Pyrolysis route (illustrative, not exhaustive): 2B₂H₆ →(≈100–120 °C) B₄H₁₀ + H₂, with further heating driving the sequence toward progressively larger cages as H₂ is eliminated — the general pattern throughout this family is that mild heating of a smaller borane builds a larger one with loss of hydrogen, mirroring how borazine itself forms from diborane's diammoniate (§2.6) by the same elimination logic.
 
@@ -374,7 +377,7 @@ Prepared by 2B + 3X₂ → 2BX₃; BF₃ specifically via B₂O₃ + 3CaF₂ + 3
 
 > **Worked Example — back-bonding explains three separate facts at once.**
 >
-> **(a) B–F bond order = 1.33.** Boron's empty 2p orbital accepts π density from a fluorine lone pair; three equivalent resonance structures spread one π bond over three B–F bonds, giving bond order 1 + 1/3.
+> **(a) B–F bond order = 1.33.** Boron's empty 2p orbital accepts π density from a fluorine lone pair; three equivalent resonance structures spread one π bond over three B–F bonds, giving bond order 1 + 1/3. This is not just a bookkeeping device — it is measurable. Free BF₃ has a B–F bond length of just 130 pm, distinctly shorter than the sum of the covalent radii of B and F (≈152 pm) and an unusually high bond energy (≈646 kJ/mol, higher than typical single bonds), both of which are exactly what added π character predicts. The direct experimental proof comes from adduct formation: once boron accepts a donor lone pair (from NH₃ or NMe₃, say) and becomes tetrahedral, the empty 2p orbital is gone and back-bonding can no longer operate — the B–F bond promptly *lengthens* to 138 pm in H₃N·BF₃ and 139 pm in Me₃N·BF₃. The bond changing length depending on whether π back-donation is available is the strongest possible evidence that the effect is real, not merely a resonance-structure convenience.
 >
 > **(b) Lewis acidity order is the reverse of electronegativity: BF₃ < BCl₃ < BBr₃ < BI₃.** Fluorine's 2p orbital overlaps boron's compact 2p orbital efficiently, so back-donation is strongest for BF₃ — this partially satisfies boron and makes it the *weakest* Lewis acid despite F being most electronegative. Back-donation falls off sharply for the larger, more diffuse 3p/4p/5p orbitals of Cl/Br/I, so BI₃ (weakest back-donation, strongest genuine electron deficiency) is the strongest Lewis acid. Direct evidence: BCl₃ and BBr₃ form adducts with the weak base AsH₃, but **BF₃ does not** — it is already too electron-satisfied.
 >
@@ -385,6 +388,23 @@ Halide scrambling: mixing two boron halides at room temperature reaches a statis
 ## 3.5 Halides of the heavier members — a comparative view
 
 **Ionic vs covalent:** AlF₃, GaF₃, InF₃ are ionic; every other Group 13 trihalide is covalent, and boron's are always **monomeric** — boron is too small to bridge.
+
+**Physical state and monomer/dimer status across the full trihalide grid:**
+
+| Compound | Physical state | Vapour phase | Coordination no. of metal |
+|---|---|---|---:|
+| BF₃ | Gas | Monomer | 3 |
+| BCl₃ | Gas | Monomer | 3 |
+| BBr₃ | Liquid | Monomer | 3 |
+| BI₃ | Solid | Monomer | 3 |
+| AlF₃ | Solid, ionic | Monomer | 6 |
+| AlCl₃ | Solid | Dimer (Al₂Cl₆) below ≈400 °C | 6 (solid) / 4 (dimer) |
+| AlBr₃ | Solid | Dimer (Al₂Br₆) | 4 |
+| GaCl₃ | Solid | Dimer (Ga₂Cl₆) | 4 |
+| InCl₃ | Solid | Monomer/some dimer | 6 |
+| TlF, TlCl, TlBr, TlI | Solids | — (fully ionic lattices) | ≥8 |
+
+Two things worth reading off this table beyond the individual rows already discussed: **gallium trihalides dimerise too**, following the same electron-deficiency logic as aluminium's (Ga₂Cl₆ is structurally analogous to Al₂Cl₆); and **thallium's halides are simple ionic salts** with high coordination numbers, consistent with Tl⁺ behaving like an alkali-metal-sized cation (§2.10) rather than participating in any covalent bridging at all.
 
 > **Trap — TlI₃ is not thallium(III) iodide.** It is **Tl⁺(I₃)⁻**, thallium(I) tri-iodide, containing the linear triiodide ion. True Tl³⁺(I⁻)₃ cannot exist: Tl³⁺ is a strong oxidant and I⁻ a good reductant, so they redox-collapse (Tl³⁺ + 2I⁻ → Tl⁺ + I₂, then I₂ + I⁻ → I₃⁻). The same logic rules out any strongly-oxidising-cation/strongly-reducing-anion pairing (Cu²⁺ with I⁻, Fe³⁺ with I⁻ behave the same way).
 
@@ -423,7 +443,9 @@ Silvery-white, density 2.7 g/cm³, m.p. 660 °C, an excellent conductor, malleab
 
 **Two qualitative-analysis tests worth memorising as a pair:** with NaOH, Al(OH)₃↓ forms and *dissolves in excess* NaOH (→ NaAlO₂) — this distinguishes Al³⁺ from Mg²⁺/Ca²⁺/Sr²⁺/Ba²⁺, whose hydroxides do not redissolve. With NH₄OH, Al(OH)₃↓ forms and *does not* dissolve in excess NH₄OH — this distinguishes Al³⁺ from Zn²⁺, whose hydroxide *does* redissolve (as the ammine complex).
 
-Hydrolysis makes AlCl₃ solution acidic: [Al(H₂O)₆]³⁺ ⇌ [Al(H₂O)₅OH]²⁺ + H⁺, and the hydroxo cation dimerises. With LiH: 4LiH + AlCl₃ → LiAlH₄ + 3LiCl, the standard LAH synthesis. AlCl₃ is the classic **Friedel-Crafts catalyst** — alkylation via R–Cl + AlCl₃ → R⁺ + AlCl₄⁻, acylation via R–COCl + AlCl₃ → R–C⁺=O (acylium, resonance-stabilised, so it avoids the rearrangement that plagues alkylation).
+Hydrolysis makes AlCl₃ solution acidic: [Al(H₂O)₆]³⁺ ⇌ [Al(H₂O)₅OH]²⁺ + H⁺, and the hydroxo cation dimerises. With LiH: 4LiH + AlCl₃ → LiAlH₄ + 3LiCl, the standard LAH synthesis. AlCl₃ is the classic **Friedel-Crafts catalyst** — alkylation via C₆H₆ + RCl + AlCl₃ → C₆H₅R + H⁺ + [AlCl₄]⁻, acylation via C₆H₆ + RCOCl + AlCl₃ → RCOC₆H₅ + H⁺ + [AlCl₄]⁻ (the acylium intermediate is resonance-stabilised, so it avoids the rearrangement that plagues alkylation).
+
+> **Trap — AlCl₃ is not a true catalyst in Friedel-Crafts reactions**, despite being called one. A genuine catalyst is regenerated unchanged at the end. Here, AlCl₃ is consumed stoichiometrically as [AlCl₄]⁻, one mole per mole of substrate — the tetrachloroaluminate anion is not decomposed back to free AlCl₃ + Cl⁻ under the reaction conditions. This is exactly why Friedel-Crafts reactions need at least a stoichiometric (often more than stoichiometric, to account for complexation with the product) quantity of AlCl₃, not a catalytic trace of it.
 
 ## 3.8 Alums
 

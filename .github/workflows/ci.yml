@@ -89,5 +89,8 @@ jobs:
       - name: Retrieval-schema unit tests
         run: npm run test:retrieval-schema
 
+      - name: Retrieval-submission unit tests
+        run: npm run test:retrieval-submission
+
       - name: Internal-link integrity (ratchet)
         run: npm run audit:links

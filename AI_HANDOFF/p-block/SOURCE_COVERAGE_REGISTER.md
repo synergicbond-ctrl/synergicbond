@@ -1,0 +1,556 @@
+# P-block Course — Source Coverage Register
+
+Working document for the master p-block build. **Updated as pages are actually
+inspected.** Nothing is marked inspected unless it was read in this session's
+transcript. "Text" = read via extracted text layer; "Vision" = read as page
+images (required for scans and handwriting).
+
+Last updated: 2026-07-26.
+
+---
+
+## 0. Blockers to record before anything else
+
+| Requirement in the spec | Status |
+|---|---|
+| **Greenwood & Earnshaw, *Chemistry of the Elements*** | **NOT UPLOADED — verification unavailable.** No claim of Greenwood verification appears anywhere in the course. |
+| **NCERT textbook (Class 11/12 p-block chapters)** | **NOT UPLOADED.** `Downloads` holds `ncert_tables.pdf` and four Arihant *NCERT Solutions* volumes, but none was attached to the project, and solution books are not the NCERT text. "NCERT-first" therefore cannot be sourced or audited. Points that need NCERT confirmation are flagged in §5 below. |
+| **J.D. Lee** | **AVAILABLE and used.** Three separate copies in the project (see files 6, 7, 8). Verification performed and cited internally. |
+
+---
+
+## 1. File-by-file coverage
+
+### File 1 — `Boron Family Kohinoor .pdf` (user's own handwritten notes)
+- **Pages:** 50 · **Inspected:** **50 / 50 (Vision)** — complete
+- **Groups:** 13
+- **Topics:** atomic/physical data tables; B₁₂ icosahedron; electropositive character; ΔE(np−ns) promotion gaps; reactivity with air/water/acid/alkali/non-metals/metals/NH₃/H₂; B vs Al; B–Si diagonal; minerals; extraction; B₂O₃; borax; H₃BO₃; borates; peroxoborate; boron halides; dihalides; BN; borazine; boranes; STYX; hydroboration; AlCl₃; alums; α/γ-Al₂O₃; Al(BH₄)₃; Be(BH₄)₂; BH₃·CO donor/acceptor analysis
+- **Unique to this file:** ΔE promotion-gap values (B 4.5 → Tl 7.0 eV); HSAB-dependent Lewis-acidity reversal; borosalicylic acid as the optically active B compound; halide redistribution equilibrium; Ga[AlCl₄] as Ga(I); STYX code
+- **Suspected errors found:** `4HBO₂ → H₂B₄O₇ + 2H₂O` — hydrogen does not balance; corrected to **+ H₂O**. Borazine mp given as −5 to −6 °C — literature is ≈ −58 °C; mp omitted from the course, bp 53 °C used
+- **Destination:** Sections 2, 3, 4 — **DONE** (commits d97c167, bb242b0)
+
+### File 2 — `P-BLOCK SHEET (ENTHUSE)-THEORY.pdf` (ALLEN)
+- **Pages:** 92 · **Inspected:** **~75 / 92 (Text)**
+- **Not yet inspected:** the Group 14 stretch (extracted lines ≈ 560–1485: silicone types, lead compounds). Equivalent content was taken from Files 3 and 4 instead, so no gap in the course — but this file is **not** fully read.
+- **Groups:** 13, 14, 15, 16, 17, 18
+- **Destination:** Sections 2–19 — **DONE for Groups 15–18** (dde2d9f, ce565e8, 6c8a52c)
+
+### File 3 — `The P-Block Elements ( Group 13–14) - Theory.pdf`
+- **Pages:** 84 · **Inspected:** **~35 / 84 (Text)**
+- **Not yet inspected:** extracted lines 1769–4983 = its **entire Groups 15–18 half** (the title understates the contents). Headings were indexed only.
+- **Destination:** Sections 2–6 — **DONE**. Groups 15–18 portion **UNREAD**.
+
+### File 4 — `BORON AND CARBON FAMILY.pdf` (textbook, scanned)
+- **Pages:** 80 · **Inspected:** **~34 / 80 (Vision)** — pp. 1–3, 30–33, 38–55, 56–64
+- **Not yet inspected:** pp. 4–29 (Ch. 9 body + exercises), 34–37, 65–80 (Ch. 10 exercises/answers)
+- **Suspected errors found:** Mn²⁺/PbO₂ permanganate equation unbalanced in nitrogen — replaced with the ionic form. "Boron nitride > diamond" hardness claim — restated as c-BN second to diamond. "Gelignite = nitrobenzene" — nitroglycerine; omitted.
+- **Destination:** Sections 5, 6 — **DONE**
+
+### File 5 — `Boron Family SG.pdf` (J.D. Lee, adapted ed., Ch. 10 Group 13 extract)
+- **Pages:** 22 · **Inspected:** **22 / 22 (Text)** — complete
+- **Destination:** Sections 2–4 — **DONE**
+
+### File 6 — `asli jd lee.pdf` (J.D. Lee 5th ed., Chapters 12–13)
+- **Pages:** 109 · **Inspected:** **109 / 109 (Vision)** — complete
+- **Groups:** 13, 14
+- **Unique:** mean M–Cl bond energies behind the inert-pair effect; Al³⁺ hydration vs ΣIE arithmetic; 37 % icosahedral space filling; graphite intercalation compounds (three classes, C₈K conductivity, AAAA stacking); graphite oxide and (CF)ₙ; carbon dating; charge-transfer spectra; carboranes; five borane bond types; Zintl clusters; Walden inversion at Si; lead tetraacetate
+- **Suspected errors found:** Si–Si/Ge–Ge/Sn–Sn bond energies differ from the coaching set — both recorded, JEE-standard set retained, discrepancy flagged in the course. States only PbI₄ unknown (coaching texts say PbBr₄ too) — both positions flagged.
+- **Destination:** Sections 2–6 — **DONE** (commit bb242b0)
+
+### File 7 — `JD Lee Inorganic 5th Edition.pdf` (complete book, scanned)
+- **Pages:** 1057 · **Inspected:** **5 / 1057 (Vision)** — pp. 7–11, contents only
+- **Confirmed:** same 5th edition as File 6. Ch. 11 (Group 2) ends p. 354, so p-block begins at Ch. 12. Files 6 covered **Ch. 12–13 (Groups 13–14)** already.
+- **STILL UNREAD:** **Ch. 14–17 = Groups 15, 16, 17, 18** in the original 5th-edition wording.
+- **Note on efficiency:** File 8 is the same author's p-block chapter in *clean extractable text* covering all six groups, so File 8 should be read first and this scan used only to check for material the adapted edition trimmed.
+- **Destination:** Sections 7–19 — **PENDING**
+
+### File 8 — `151716181314.pdf` (J.D. Lee adapted ed., Ch. 10 — **all six groups**)
+- **Pages:** 172 · **Inspected: 172 / 172 — COMPLETE.**
+- **Page accounting, done properly.** The PDF's 172 pages carry printed page numbers
+  **387 to 558 inclusive**, and 558 − 387 + 1 = **172**, so printed pages map 1:1 onto
+  PDF pages for this file. Earlier revisions of this register counted the contents and
+  section index as extra pages on top of the six Parts, which inflated the total to 113
+  before Groups 13–14 were read. **Corrected here: the six Parts alone account for all
+  172 pages.**
+
+| Part | Group | Printed pages | Extracted lines | Sections | Pages |
+|---|---|---|---|---|---|
+| 1 | 13 | 387–412 | 107–1748 | 10.1–10.15 | 26 |
+| 2 | 14 | 413–447 | 1749–4002 | 10.16–10.34 | 35 |
+| 3 | 15 | 448–482 | 4003–6220 | 10.35–10.45 | 35 |
+| 4 | 16 | 483–512 | 6221–8088 | 10.46–10.55 | 30 |
+| 5 | 17 | 513–541 | 8089–9991 | 10.56–10.66 | 29 |
+| 6 | 18 | 542–558 | 9992–11169 | 10.67–10.74 + chapter-wide Miscellaneous Questions | 17 |
+| | | | | **Total** | **172** |
+
+- **Every Part was read end to end, including its question sets and answer key**, and the
+  chapter-wide Miscellaneous Questions on pp. 553–558, which range over all six groups.
+  The extracted text ends at line 11169; nothing follows.
+- **Cumulative harvest** recorded in `MASTER_REGISTERS.md` (main body + Addenda 1–6):
+  **176 topics, ~600 species, ~430 reactions, 96 structures, 38 MO cases, 84 visuals,
+  150 JEE traps, 53 contradictions/source errors**, plus dedicated colour-and-observation
+  and uses-and-hazards registers for Groups 13, 14, 17 and 18.
+- **All named course gaps in this file are now closed:** §10.32 Internal π Bonding Using
+  d Orbitals, §10.34 Organic Derivatives, §10.50 General Properties of Oxides, §10.53
+  Oxohalides, §10.65 Polyhalides, §10.66 Pseudohalogens, and §10.73 Structure and Bonding
+  in Xenon Compounds — the MOT section flagged at the very start of this project.
+- **Verification status:** everything registered from this file is verified against the
+  accessible J.D. Lee text and nothing else. Modern bonding re-interpretations recorded
+  alongside the source's pπ–dπ and sp³dⁿ language are marked **PENDING VERIFICATION**;
+  no NCERT or Greenwood corroboration is claimed, because neither is in the corpus.
+- **Register-integrity note (2026-07-27):** the two commits that closed Groups 15 and 16
+  updated the summary table at the foot of this file but their scripted edit to *this*
+  block silently no-matched, so the narrative sat at "~25 / 172" for two parts. Repaired
+  here and re-verified by reading the file back. Page counts above are the honest totals.
+- **Structure mapped** (extracted-line anchors): Part 1 G13 @107 · Part 2 G14 @1749 · Part 3 G15 @4003 · Part 4 G16 @6221 · Part 5 G17 @8089 · Part 6 G18 @9992; sections 10.1–10.74
+- **Sections that cover topics absent from the course today:**
+  - **10.38 Hydrogen azide and the azides** — not in the course at all
+  - **10.39 Nitrogen fixation** — not in the course
+  - **10.40 NPK fertilizers** — not in the course
+  - **10.53 Oxohalides** (SOCl₂, SO₂Cl₂ etc.) — only glancingly present
+  - **10.73 Structure and bonding in xenon compounds** — the MOT treatment the spec asks for
+  - 10.32 internal π bonding using d orbitals; 10.34 organic derivatives; 10.65 polyhalides; 10.66 pseudohalogens (deeper than current)
+- **Destination:** Sections 7–19 + new MOT material — **HIGHEST PRIORITY, PENDING**
+
+### File 9 — `annotated p block/Note 6 Mar 2026 20_18_57.pdf` (user's annotated notes)
+- **Pages:** 40 · **Inspected:** **0 / 40**
+- OCR layer is **garbled** (`xÉ Ptto`, `koFalunstable`) → **Vision required**, per spec item 5
+- **Destination:** PENDING
+
+### File 10 — `annotated p block/Note 7 Mar 2026 20_56_21.pdf` (user's annotated notes)
+- **Pages:** 11 · **Inspected:** **0 / 11** — Vision required
+- **Destination:** PENDING
+
+### File 11 — `Noble Gas For Adv and Olympiad.pdf`
+- **Pages:** 14 · **Inspected:** **14 / 14 (Vision)** — complete
+- **Actual path:** `Downloads/p block/Noble Gas For Adv and Olympiad.pdf` (the attachment path was wrong)
+- **Compiled from:** Cotton & Wilkinson, Housecroft, Shriver, Miessler & Tarr, Holleman–Wiberg — with the user's handwritten overlay
+- **Unique:** KAgF₄/BF₃ → AgF₃ route to XeF₂; E°(XeF₂/Xe) = **+2.64 V**; Housecroft thermochemistry (Xe–F shortens 200→189 pm while weakening 133→126 kJ/mol, which *derives* XeF₆ > XeF₄ > XeF₂); oxidation-state/lone-pair classification table; **XeF₅⁻ pentagonal planar**, **XeF₈²⁻ square antiprismatic**; why **XeF₃⁻ cannot exist** (lone pairs at 90°); **XeF₂ is donor-only**; Xe₂F₃⁺ bridged cation; Cs₂XeF₈ yellow and stable to 400 °C vs CsXeF₇ dec > 50 °C; why XeO and XeO₂ do not exist (hybridisation energy vs radial distance); XeF₂/XeF₄/XeF₆ reaction fans incl. BrO₃⁻ → BrO₄⁻; Lux–Flood acidity order; **SiF₄ > SiCl₄ order inverting the boron series**; F-vs-H high-coordination table; clathrates in phenol/hydroquinone; thermal vs electrical conductivity opposite trends; Ne has the highest EGE
+- **Destination:** Sections 18, 19 (+ the Lewis-acidity contrast into Section 4) — **DONE**
+
+---
+
+## 2. Aggregate coverage
+
+| | Pages | Inspected | % |
+|---|---|---|---|
+| Files 1–6 (original six) | 437 | **325** | 74 % |
+| Files 7–11 (new five) | 1294 | **191** | 14.8 % |
+| File 12 (`15161718.pdf`, p-block part only) | 184 | **94** | 51.1 % |
+| **Total project** | **1915** | **610** | **32 %** |
+
+Files 7–12 breakdown: file 7 (JD Lee 5th ed., whole book) 5 / 1057 · **file 8 (JD Lee
+adapted Ch. 10) 172 / 172 — COMPLETE** · file 9 (annotated notes) 0 / 40 · file 10
+(annotated notes) 0 / 11 · file 11 (noble-gas notes) 14 / 14 · **file 12 (JD Lee 5th ed.
+Ch. 14–17 extract) 94 / 184 deeply read, **209 / 209 triaged**.
+
+**Denominator history, so the movement is auditable.** Locating file 12 added its pages to
+a corpus that had been missing them, taking the total from 1731 to 1940 and the completion
+figure from 30 % to 27 %. Triaging the file then showed that **25 of its 209 pages are
+d-block (Ch. 18) and outside this project**, so its p-block contribution is 184 pages and
+the total settles at **1915**. Neither movement is a regression — the first corrected a
+missing file, the second removed out-of-scope pages.
+
+**The project has NOT been fully reviewed.** No statement in the course may claim otherwise.
+
+---
+
+## 3. Course state today
+
+45,046 words, 20 lessons, all six groups, shipped on branch
+`feat/p-block-groups-13-14` (PR #22, open, CI green). Verified each commit
+through the chapter's real render pipeline: zero KaTeX errors, all internal
+cross-references resolving, all 20 lessons non-empty.
+
+## 4. What the spec still requires that does not exist yet
+
+1. Read Files 8–11 in full, then File 7 Ch. 14–17 (≈ 1,290 pages).
+2. Master Topic / Compound / Reaction / Visual registers (spec §4).
+3. Full mandatory compound profiles (spec §6) — identity, occurrence, every
+   preparation with conditions and reasons, physical properties. Current
+   coverage is trend- and mechanism-led, not profile-led.
+4. ~~**Diagrams.**~~ **DONE — infrastructure shipped.** `app/notes/p-block/_visuals/`
+   provides a themed SVG system (theme, Frame, MoleculeDiagram, StructureGallery,
+   MODiagram, OxidationStateMap, TrendChart, ProcessFlow/ReactionNetwork/HydrolysisMap,
+   ComparisonGraphic) plus a registry and a `~~~viz` fence bridge in the p-block renderer.
+   Three visuals are live. Remaining: author the other 14 registered visuals.
+5. Molecular Orbital Theory depth beyond the O₂ paramagnetism case.
+
+## 4a. File 12 — `15161718.pdf` (now located, identified and entered)
+
+- **Actual path:** `/Users/mritunjayshukla/Downloads/p block/15161718.pdf`
+- **Pages: 209.** Verified three ways — `mdls kMDItemNumberOfPages`, a count of
+  `/Type /Page` objects, and the top-level `/Count`. All give 209.
+- **Format: a PURE SCAN.** `pdftotext` over the whole document returns **zero
+  characters** (209 page-break bytes and nothing else). Every page needs vision;
+  there is no OCR text layer to fall back on.
+- **Identity:** **J.D. Lee, *Concise Inorganic Chemistry*, 5th edition,
+  Chapters 14–17** — Groups 15, 16, 17 and 18. The filename is the group list.
+- **Printed page range:** ≈**469–677**. Offset is printed = PDF + 467 at the
+  front and printed = PDF + 468 from about PDF p. 140, so one page is inserted
+  between those points. Chapter starts: Ch. 14 Group 15 at PDF p. 1; Group 16
+  reached by PDF p. 100; Ch. 16 Group 17 by PDF p. 140; Ch. 17 Group 18 by
+  PDF p. 175.
+- **Relationship to file 7 — do not double-count.** File 7 is the *whole*
+  1057-page 5th edition, whose Ch. 14–17 was recorded as unread. **This file is
+  an extract of exactly those chapters.** They are the same printed pages. Pages
+  completed here therefore also discharge file 7's Ch. 14–17 obligation, and
+  file 7's own tally is deliberately left at 5/1057 so the same paper is not
+  counted twice.
+- **Relationship to file 8 — this is a differential pass.** File 8 is the
+  *adapted Indian edition* of this same text. Spot checks at PDF p. 140
+  (printed 608) and PDF p. 175 (printed 643) match file 8 **almost word for
+  word**, and those passages are already registered in Addenda 3 and 4. This
+  source is therefore read for **material the adapted edition trimmed**, and
+  Addendum 7 records only what is genuinely new.
+- **The trimming is heavy in the front matter of each chapter.** Chapter 14
+  occupies ~99 PDF pages here against 35 printed pages in the adapted edition.
+  Occurrence, extraction, world production figures and the whole of
+  arsenic/antimony/bismuth metallurgy were cut.
+- **ALL 209 PAGES TRIAGED.** Every page carries a status label, derived from the
+  scan itself: all 209 pages were rendered, the running-header band cropped at
+  150 dpi, and the headers read in seven stacked montages. The full page map,
+  chapter boundaries, section list and per-range status table are in
+  **`MASTER_REGISTERS.md` Addendum 8**.
+- **CORRECTION — only 184 of the 209 pages are p-block.** PDF **185–209**
+  (printed 654–678) are **Chapter 18, "An Introduction to the Transition
+  Elements"** — d-block, and outside this project. The p-block denominator for
+  this file is therefore **184**. *Those 25 pages are directly useful to the
+  d-block work another session is running.*
+- **Chapter boundaries, confirmed from the scan** (not inferred from lengths):
+  Ch. 14 Group 15 = PDF 1–64 (printed 468–531) · Ch. 15 Group 16 = PDF 65–113
+  (printed 532–580) · Ch. 16 Group 17 = PDF 114–166 (printed 582–634) ·
+  Ch. 17 Group 18 = PDF 167–184 (printed 635–651).
+- **Page offset shifts by one.** printed = PDF + 467 up to ≈PDF 65, then
+  printed = PDF + 468 from ≈PDF 90. Confirmed at p3→470, p29→496, p65→532 and
+  at p90→558, p140→608, p175→643. Recorded, not smoothed over.
+- **Triage totals** (recounted range by range and asserted to sum to 209, with no page
+  double-labelled and none unlabelled): `FULL — UNIQUE` **38** ·
+  `FULL — PARTIALLY UNIQUE` **98** · `SAMPLED — DUPLICATE OF FILE 8` **32** ·
+  `VISUAL ONLY` **2** · `QUESTION GAP` **9** · `NOT RELEVANT` **30** (5
+  further-reading/chapter-close + 25 d-block) · `UNCLEAR` **0**.
+- **Deeply inspected and fully registered: 94 / 184 (Vision).** *(This figure had
+  gone stale at "8 / 184" while the addenda accumulated; the authoritative count
+  has always been the recounted-in-code block further down, which read 39 before
+  Addendum 20 and reads 48 after it. Corrected here rather than left to diverge.)*
+  - **PDF 1–6 = printed 468–473** (Addenda 7, 7a): 14 topics, ~50 species, 13
+    preparations/reactions, a melting/boiling table, 6 colour observations, a
+    uses-and-hazards block, 5 visuals, 9 JEE traps, 0 new contradictions.
+  - **PDF 58–59 = printed 525–526** (Addendum 9), `FULL — UNIQUE`, both sections
+    absent from file 8: 8 topics, ~30 species, 8 reactions, phosphazene bond-length
+    data, 4 visuals, 7 JEE traps, **1 new contradiction (item 54)**. Adds two
+    compound classes (phosphazenes, pnictogen organometallics) and a **third
+    back-bonding type, dπ–dπ**, which the registers did not have.
+  - **PDF 107–108 = printed 575–576** (Addendum 10). p107 `FULL — PARTIALLY
+    UNIQUE` (halides tail), p108 `FULL — UNIQUE` (sulphur–nitrogen compounds,
+    absent from file 8): 6 topics, ~20 species, 8 reactions, the S₄N₄ bond-length
+    argument, 1 MO case (E41), 3 visuals, 7 JEE traps, **2 `[UNCLEAR]` items**
+    and 0 new contradictions.
+  - **PDF 145–146 = printed 613–614** (Addendum 11). Halogen **standard reduction
+    potentials**, absent from file 8. Identified as **Latimer diagrams**, not
+    Frost/Ebsworth, with separate **acid (H⁺ activity 1)** and **basic (OH⁻
+    activity 1)** versions. Every adjacent and skip-step potential transcribed for
+    F, Cl, Br and I; the four species the source flags as disproportionating in
+    base recorded; 7 topics, ~12 new species, 4 reactions, 1 MO cross-reference
+    (E42, held at pending verification), 3 visuals, 8 JEE traps, **1 new
+    `[UNCLEAR]`** (the acid-diagram asterisk legend), 0 new contradictions.
+  - **PDF 161–162 = printed 629–630** (Addendum 12). **Halogen cations and
+    superacid media**, absent from file 8: 9 topics, ~35 species, 10 reactions,
+    the [Br₂]⁺ 2.15 Å / Br₂ 2.27 Å bond-length evidence, 1 MO case (**E43**),
+    4 visuals, 9 JEE traps, **1 new contradiction (item 55)**.
+  - **PDF 95–96 = printed 563–564** (Addendum 13). **Selenium and tellurium
+    oxoacids and the selenyl oxohalides**, absent from file 8: 4 topics, ~20
+    species, the coordination-number change from tetrahedral H₂SO₄/H₂SeO₄ to
+    **octahedral Te(OH)₆**, 3 visuals, 7 JEE traps, **1 new contradiction (item
+    56)**. p95's polythionate and peroxoacid material duplicates §10.52 and is
+    cross-referenced, not re-registered.
+  - **PDF 68–73 = printed 535–540** (Addendum 14), the six-page **Group 16
+    occurrence, extraction and industrial recovery** range, absent from file 8
+    entirely: 16 topics, ~30 new species (plus 8 expanded), the six-route sulphur
+    share table, the Frasch three-pipe mechanism, Table 15.3's 17 sulphide ores,
+    the wet-versus-dry deposition distinction, Se/Te recovery from copper anode
+    sludge, and a complete **polonium** section. 5 visuals, 11 JEE traps, **0 new
+    contradictions** — every printed equation balances.
+  - **PDF 20–23 = printed 487–490** (Addendum 15). Liquid ammonia as a solvent
+    system, **hydrogen azide and the azides in full**, fertilisers, and a **second
+    set of Latimer diagrams — Group 15, acid and basic** — all absent from file 8:
+    11 topics (A239–A249), ~20 species each registered separately, 5 balance-checked
+    equations, **1 MO case (E44)**, 6 visuals, 9 JEE traps, **1 new contradiction
+    (item 57)**. Printed 490 was re-rendered at 300 dpi and rotated because the
+    165 dpi image was not safe to transcribe.
+  - **PDF 24–27 = printed 491–494** (Addendum 16), closing range 20–27. Biological
+    fixation (*Rhizobium*, nitrification), transition-metal dinitrogen complexes and
+    the titanium cycle, the cyanamide process, **Haber–Bosch in full** with catalyst
+    preparation and hydrogen sourcing, ammonia production and uses, nitrate
+    environmental chemistry, and **urea and the superphosphates with their
+    compositions and balanced equations**: 16 topics (A250–A265), 5 visuals,
+    9 JEE traps, **2 new contradictions (items 58, 59)**. All five fertiliser and
+    cyanamide equations balance-checked; all balance.
+  - **PDF 54–57 = printed 521–524** (Addendum 17). Phosphoric-acid use breakdown,
+    **the phosphorus sulphides each registered separately** (P₄S₃, P₄S₅, P₄S₇,
+    P₄S₁₀, plus P₄S₄/P₄S₉ named and **P₄S₆ registered as an absence**), the
+    thiophosphate industry, and the **opening of the phosphazene section**:
+    14 topics (A266–A279), 6 visuals, 9 JEE traps, **2 new contradictions (items
+    60, 61)**. Five equations balance-checked; all balance. **Map refinement:** the
+    phosphazene section starts on printed 524, one page earlier than the Addendum 8
+    map placed it, so Addendum 9 covered only its later half.
+  - **PDF 109–110 = printed 577–578** (Addendum 18). **Polythiazyl (SN)ₓ** — a
+    main-group polymer that conducts like a metal and superconducts at **0.26 K** —
+    plus organosulphur derivatives and dioxygen binding: 7 topics, 1 MO case (E45),
+    4 visuals, 6 traps, **2 new contradictions (62, 63)**. **The two PDF-108
+    `[UNCLEAR]` items were checked for here and are NOT resolved.**
+  - **PDF 114–116 = printed 582–584** (Addendum 19). PDF 114 returned
+    **`DEEP READ — NO NEW CONTENT`** — the first such page in the audit — and it
+    confirms the Br(+VII) omission of contradiction 18 is the author's own, present
+    in both editions. PDF 115 partial (NMR-active isotopes, production tonnages),
+    PDF 116 unique (**halogen crustal abundance, fluorspar, why fluoroapatite is
+    not used for HF, cryolite, salinity, and why sea water is fluoride-poor**):
+    10 topics, 4 visuals, 6 traps, **1 new contradiction (64)**.
+  - **PDF 62–64, 112–113, 165–166, 181–182 = printed 529–531, 580–581, 633–634,
+    649–650** (Addendum 20), the whole **`QUESTION GAP`** queue in one pass. The
+    end-of-chapter `PROBLEMS` sets of Chapters 14–17. **Tested chemistry
+    registered, question wording never.** The book prints **no answer key**, so
+    where a question asks for a product rather than stating one, the pairing is
+    registered and the product is not: 12 topics (A297–A308), 5 visuals,
+    10 traps, **2 new contradictions (65, 66)**, 5 source defects with their
+    corrections, **1 new `[UNCLEAR]`**, 0 new MO cases. **PDF 62 returned
+    `AUDITED — NO NEW CHEMISTRY`** — the second page in the file-12 audit to
+    return nothing new, after PDF 114.
+
+**CLOSURE: `FULL — UNIQUE` = 37 / 37 deeply inspected.** Enumerated page by page
+in `MASTER_REGISTERS.md`, not derived by subtraction. The Addendum-8 triage listed
+38; **PDF 107 was reclassified to partially unique in Addendum 10** and was still
+deeply read, so 38 − 1 = 37 and all 37 are closed. No page in the set remains
+triage-only and none was read without being registered.
+
+**Page-status fields for the deeply read pages** (triage label kept visible
+alongside the deep-read outcome, as required):
+
+| PDF | Printed | Triage label | Deep-read outcome |
+|---|---|---|---|
+| 1–5 | 468–472 | `FULL — UNIQUE` | `DEEP READ — UNIQUE REGISTERED` |
+| 6 | 473 | `FULL — PARTIALLY UNIQUE` | `DEEP READ — PARTIAL ADDITIONS REGISTERED` |
+| 58 | 525 | `FULL — UNIQUE` | `DEEP READ — UNIQUE REGISTERED` |
+| 59 | 526 | `FULL — UNIQUE` | `DEEP READ — UNIQUE REGISTERED` |
+| 107 | 575 | `FULL — PARTIALLY UNIQUE` | `DEEP READ — PARTIAL ADDITIONS REGISTERED` |
+| 108 | 576 | `FULL — UNIQUE` | `DEEP READ — UNIQUE REGISTERED` |
+| 145 | 613 | `FULL — UNIQUE` | `DEEP READ — UNIQUE REGISTERED` |
+| 146 | 614 | `FULL — UNIQUE` | `DEEP READ — PARTIAL ADDITIONS REGISTERED` (lower half duplicates §10.63) |
+| 161 | 629 | `FULL — UNIQUE` | `DEEP READ — UNIQUE REGISTERED` |
+| 162 | 630 | `FULL — UNIQUE` | `DEEP READ — UNIQUE REGISTERED` |
+| 95 | 563 | `FULL — UNIQUE` | `DEEP READ — PARTIAL ADDITIONS REGISTERED` (polythionates/peroxoacids duplicate §10.52) |
+| 96 | 564 | `FULL — UNIQUE` | `DEEP READ — UNIQUE REGISTERED` |
+| 20 | 487 | `FULL — UNIQUE` | `DEEP READ — UNIQUE REGISTERED` |
+| 21 | 488 | `FULL — UNIQUE` | `DEEP READ — UNIQUE REGISTERED` |
+| 22 | 489 | `FULL — UNIQUE` | `DEEP READ — UNIQUE REGISTERED` |
+| 23 | 490 | `FULL — UNIQUE` | `DEEP READ — UNIQUE REGISTERED` |
+| 24 | 491 | `FULL — UNIQUE` | `DEEP READ — UNIQUE REGISTERED` |
+| 25 | 492 | `FULL — UNIQUE` | `DEEP READ — UNIQUE REGISTERED` |
+| 26 | 493 | `FULL — UNIQUE` | `DEEP READ — UNIQUE REGISTERED` |
+| 27 | 494 | `FULL — UNIQUE` | `DEEP READ — UNIQUE REGISTERED` |
+| 54 | 521 | `FULL — UNIQUE` | `DEEP READ — UNIQUE REGISTERED` |
+| 55 | 522 | `FULL — UNIQUE` | `DEEP READ — UNIQUE REGISTERED` |
+| 56 | 523 | `FULL — UNIQUE` | `DEEP READ — UNIQUE REGISTERED` |
+| 57 | 524 | `FULL — UNIQUE` | `DEEP READ — UNIQUE REGISTERED` |
+| 109 | 577 | `FULL — UNIQUE` | `DEEP READ — UNIQUE REGISTERED` |
+| 110 | 578 | `FULL — UNIQUE` | `DEEP READ — UNIQUE REGISTERED` |
+| 114 | 582 | `FULL — UNIQUE` | **`DEEP READ — NO NEW CONTENT`** |
+| 115 | 583 | `FULL — UNIQUE` | `DEEP READ — PARTIAL ADDITIONS REGISTERED` |
+| 116 | 584 | `FULL — UNIQUE` | `DEEP READ — UNIQUE REGISTERED` |
+| 68 | 535 | `FULL — UNIQUE` | `DEEP READ — UNIQUE REGISTERED` |
+| 69 | 536 | `FULL — UNIQUE` | `DEEP READ — UNIQUE REGISTERED` |
+| 70 | 537 | `FULL — UNIQUE` | `DEEP READ — UNIQUE REGISTERED` |
+| 71 | 538 | `FULL — UNIQUE` | `DEEP READ — UNIQUE REGISTERED` |
+| 72 | 539 | `FULL — UNIQUE` | `DEEP READ — UNIQUE REGISTERED` |
+| 73 | 540 | `FULL — UNIQUE` | `DEEP READ — UNIQUE REGISTERED` |
+
+**Separate counts, recounted in code rather than tallied by hand.** All pages
+triaged **209** · p-block pages **184** · **fully unique pages 37** (the Addendum-8
+figure was 38; **PDF 107 was reclassified to partially unique in Addendum 10**
+once the S–N section turned out to start in its last paragraph) · **fully unique
+pages deeply inspected 37 — COMPLETE** · **fully unique pages remaining 0** · partially
+unique pages compared **36 of 99** · duplicate pages sampled **33** · visual-only
+pages inspected **2 of 2 — COMPLETE** · question-gap pages audited **9 of 9 — COMPLETE** ·
+not-relevant pages **30** · pages with unclear content **5**.
+
+**Total pages deeply inspected 76** = 37 fully unique + **24** partially unique
+(PDF 6, 107, **117–122**, **131–136**, **137–138**, **139–144** and **123–124**)
++ **9 question-gap (Addendum 20)** + **2 visual-only (Addendum 21)** + **4
+re-read from the `SAMPLED` bucket (PDF 167–170, Addendum 25)**. **72 of the 76
+yielded additions; exactly four returned nothing beyond a minor confirmation or
+no new content at all — PDF 114 (`DEEP READ — NO NEW CONTENT`), PDF 62
+(`AUDITED — NO NEW CHEMISTRY`), Table 17.2 within PDF 169 (`DEEP READ — NO NEW
+CONTENT`, already registered verbatim; the rest of that page did yield
+additions), and PDF 123 (`DEEP READ — NO NEW CONTENT` beyond one electron-affinity
+value, confirming Tables 16.3–16.4 against the pre-existing registers).** The
+audited-page denominator is not reduced for any page.
+
+**Addendum 25 (PDF 167–170, printed 635–638) also resolved a bookkeeping fault:
+the "boiling point of helium" gap, carried as open across Addenda 20–24, had
+in fact been closed since before this shift began — A179 already registered
+He's boiling point at −269.0 °C from file 8. The gap is removed from the open
+list; remaining open gaps are HF with graphite and the AgNO₃ colour/ammonia
+ladder (A352).**
+
+**Zero fully unique pages outstanding. The queue is closed at 37 / 37.**
+**Zero question-gap pages outstanding. That queue is closed at 9 / 9** — PDF 62,
+63, 64, 112, 113, 165, 166, 181, 182, enumerated in `MASTER_REGISTERS.md`
+Addendum 20 and not derived by subtraction.
+
+**Page-status fields for the question-gap pages:**
+
+| PDF | Printed | Triage label | Deep-read outcome |
+|---|---|---|---|
+| 62 | 529 | `QUESTION GAP` | **`AUDITED — NO NEW CHEMISTRY`** |
+| 63 | 530 | `QUESTION GAP` | `AUDITED — CONCEPT REGISTERED` |
+| 64 | 531 | `QUESTION GAP` | `AUDITED — CONCEPT REGISTERED` |
+| 112 | 580 | `QUESTION GAP` | `AUDITED — CONCEPT REGISTERED` |
+| 113 | 581 | `QUESTION GAP` | `AUDITED — CONCEPT REGISTERED` |
+| 165 | 633 | `QUESTION GAP` | `AUDITED — CONCEPT REGISTERED` |
+| 166 | 634 | `QUESTION GAP` | `AUDITED — CONCEPT REGISTERED` |
+| 181 | 649 | `QUESTION GAP` | `AUDITED — CONCEPT REGISTERED` |
+| 182 | 650 | `QUESTION GAP` | `AUDITED — CONCEPT REGISTERED` |
+- **Sections found to be absent from file 8 altogether** — the queue that
+  justifies reading this file at all: **Phosphazenes and cyclophosphazenes**
+  (PDF 58–59) · **Compounds of sulphur and nitrogen, S₄N₄** (107–108) ·
+  **Standard reduction potentials, acidic and basic diagrams** (145–146) ·
+  **Basic properties of the halogens — halogen cations I₂⁺** (161–162) ·
+  **Oxoacids of selenium and tellurium** (95–96) · **Group 16 extraction and
+  uses** (68–73) · **Sulphides of phosphorus** (54–57) · **Organo derivatives
+  and haemoglobin** (109–110), plus **Nitrogen fixation** (22–27) and
+  **Hydrogen azide and the azides** (20–21), both flagged absent from the course
+  since the first register.
+- **Map refinement from the deep read:** printed 526 carries the tail of the
+  phosphazene section *and* the opening of **Organometallic compounds**, which the
+  Addendum 8 map did not separate. Corrected: **PDF 59–60 = Organometallic
+  compounds (`FULL — UNIQUE`), PDF 61 = Further reading (`NOT RELEVANT`)**. Bucket
+  totals unchanged.
+- **`[UNCLEAR]` items outstanding — 4.** Two on PDF 108 / printed 576: the four
+  larger bicyclo S–N formulae, and the coefficients of the S₄N₄ + NaOH + H₂O
+  hydrolysis equation. One on PDF 145 / printed 613: whether the asterisk-like
+  marks beside HClO₂, HOBr and HOI in the **acid** Latimer diagram carry the same
+  "disproportionates" meaning as the footnoted asterisks on the basic diagram —
+  that page shows no legend. **One new, on PDF 166 / printed 634, problem 16(a):
+  the polyiodide anion's subscript digit is not readable even at 1600 dpi (I₃⁻ or
+  I₅⁻, both in the source's own polyhalide list) and it carries an unexplained
+  superscript "14" with no legend on the page or in the chapter.** **None is
+  guessed; all four are marked unsafe to publish until re-read.**
+- **`FULL — UNIQUE`: 37 / 37 — CLOSED.**
+- **`FULL — PARTIALLY UNIQUE`: 36 / 99 read, 63 remaining — unchanged by the
+  three items below, all drawn from outside this bucket.**
+  **PDF 163–164 = printed 631–632** (Addendum 32), the tenth range and the
+  close of Chapter 16 (Group 17) for deep reading: I⁺ chemistry completed
+  (ion-exchange preparation, pyridine complexes, ICl₃'s own self-ionisation,
+  I³⁺ evidence explicitly unconfirmed structurally) and **pseudohalogens
+  opened as a wholly new topic** — confirmed zero prior presence anywhere in
+  the corpus before writing. 10 topics (A451–A460), 1 visual, 7 traps, **1 new
+  contradiction (82 — the fourth "missing coefficient of 2" defect found in
+  this audit, after 55, 79 and 81)**.
+  **Correction (Addendum 31):** re-checking PDF 161–162 before starting a new
+  range found it was **already fully read in pre-existing Addendum 12**
+  (predating this shift); no new reading was needed, but the check surfaced
+  **one new contradiction (81)** — the `[Br₂]⁺[Sb₃F₁₆]⁻` preparation on that
+  page was transcribed in Addendum 12 but never balance-checked; corrected to
+  `2Br₂+7SbF₅→2[Br₂]⁺[Sb₃F₁₆]⁻+SbF₃` by the same conservation-plus-electron-
+  balance method already used for the adjacent, already-known contradiction 55.
+  **PDF 159–160 = printed 627–628** (Addendum 30), the second range drawn from
+  the `SAMPLED` bucket: IF₅/IF₇'s completed orbital derivations (two genuine
+  structural figures) and polyhalides in full — 10 topics (A441–A450), 3
+  visuals, 7 traps, **zero new contradictions** (the first range since
+  Addendum 22 with none), and **E17 expanded** with an explicit MO-derived
+  bond order (0.5) for I₃⁻ rather than a new MO case.
+  Seventh post-queue
+  range **PDF 153–158 = printed 621–626** (Addendum 29), interhalogen compounds
+  in full: 26 topics (A415–A440), 4 visuals, 10 traps, **2 new contradictions
+  (79 — six related interhalogen-synthesis equations under-coefficented against
+  their X₂ reactant, treated as one systematic-pattern contradiction rather than
+  six; 80 — `IF₅+KI→K⁺[IF₆]⁻` names iodide where fluoride is required)**, **1
+  new source defect (D14 — an illegible subscript resolved by conservation to
+  BrF₅)**. Two genuine source structural figures registered (ClF₃'s orbital-box
+  T-shape derivation and measured structure, I₂Cl₆'s bridged dimer) plus the
+  AX₅ square-pyramidal family.
+  Sixth post-queue
+  range **PDF 145–152 = printed 613–620** (Addendum 28), reduction-potential
+  diagrams and the oxoacids in full: 24 topics (A391–A414), 4 visuals, 11 traps,
+  **2 new contradictions (77, 78 — both fully written equations with wrong
+  coefficients, both settled by conservation)**. **Major negative finding:**
+  PDF 145–146's acid and basic Latimer diagrams, mapped `FULL — UNIQUE`/"absent
+  entirely" against file 8, turned out to already be registered in full at
+  A205–A211 from elsewhere in the corpus, value for value — corrected the
+  triage record (Addendum 28 §M) rather than re-registering matched data as new.
+  PDF 147–152 (hypohalous/halous/halic/perhalic acids, Table 16.15, Figure 16.9)
+  was almost entirely new.
+  Fifth post-queue
+  range **PDF 123–124 = printed 591–592** (Addendum 27), electronegativity and
+  electrode potentials: PDF 123 confirmed the pre-existing radii/IE/EA/hydration
+  tables value-for-value (`DEEP READ — NO NEW CONTENT` beyond At's electron
+  affinity, −270); PDF 124 added Table 16.5 (Pauling electronegativity and
+  standard electrode potential, F 4.0/+2.87 V to At 2.2/+0.3 V), the
+  ΔG° = −nFE° conversion, and **one contradiction (76): the Faraday constant is
+  printed as "96 486 kJ mol⁻¹" — the number is right, the unit is wrong (should
+  be C mol⁻¹), settled by dimensional analysis of the source's own equation.**
+  Fourth post-queue
+  range **PDF 139–144 = printed 607–612** (Addendum 26), general anhydrous-halide
+  preparation plus the halogen oxides in full: 16 topics (A370–A385), 5 visuals,
+  8 traps. **One contradiction (75) found in an equation both editions print and
+  no earlier pass had flagged** — `Cl₂O₆ + N₂O₄ → ClO₂ + [NO₂]⁺[ClO₄]⁻` is
+  unbalanced in N, O and (coincidentally not) Cl; corrected to
+  `2Cl₂O₆ + N₂O₄ → 2ClO₂ + 2[NO₂]⁺[ClO₄]⁻` and the pre-existing main-body line
+  fixed to match. Table 16.14 (halogen/oxygen oxidation-state table) registered
+  in full with a scan-split-subscript note (Cl₂O₆, not "ClO₆", resolved from
+  adjacent prose).
+  Third post-queue range
+  **PDF 137–138 = printed 605–606** (Addendum 24), halides: 9 topics (A351–A359),
+  3 visuals, 7 traps, **2 new contradictions (72, 73 — a solubility sequence that
+  contradicts its own stated reason, and `Fe + I₂ → FeI`)**, both settled from
+  within the source. **The AgNO₃ silver-halide gap is narrowed, not closed**: the
+  source names AgCl/AgBr/AgI as insoluble and, by omission, AgF as the exception,
+  but gives neither colours nor ammonia behaviour.
+  Second post-queue range
+  **PDF 131–136 = printed 599–604** (Addendum 23), the hydrogen halides: 16 topics
+  (A335–A350), 4 visuals, 10 traps, **3 new contradictions (69, 70, 71 — all three
+  found by running Table 16.13's own arithmetic in code, none resolved)**, 2 source
+  defects (D11, D12), **1 new `[UNCLEAR]`**. **Table 16.13's six components fail to
+  sum to its own totals by exactly 9 kJ mol⁻¹ in all four rows; its iodide hydration
+  enthalpy (−394) contradicts file 8's (−274) and breaks the size trend; and its
+  quoted dissociation constants match neither its ΔG column nor the book's own pKₐ
+  table.** The qualitative three-factor explanation of HF's weakness (A350) is
+  unaffected and is safe to teach.
+  First post-queue range
+  **PDF 117–122 = printed 585–590** (Addendum 22), halogen extraction and uses:
+  24 topics (A311–A334), 6 visuals, 12 traps, **2 new contradictions (67, 68 —
+  both unbalanced equations, both settled by conservation alone)**, **4 source
+  defects (D7–D10)**, 8 existing topics expanded with their IDs kept.
+  **Three registered gaps closed from source prose: the fluorine-cell reason and
+  names, the fluorinating agents, and HF with uranium.**
+- **`VISUAL ONLY`: 2 / 2 — CLOSED (Addendum 21).**
+- **`QUESTION GAP`: 9 / 9 — CLOSED (Addendum 20).** 8 pages returned
+  `AUDITED — CONCEPT REGISTERED`, PDF 62 returned `AUDITED — NO NEW CHEMISTRY`.
+  Yield: topics **A297–A308**, visuals **V137–V141**, traps **248–257**,
+  contradictions **65** (printed 530, ammonia with *acidified* hypochlorite
+  against the chapter's own alkaline Raschig conditions) and **66** (printed 650,
+  "fluorides and oxides of Kr, Xe and Rn" — no krypton or radon oxide exists in
+  the source or the registers), **5 source defects** recorded with their
+  corrections, **1 new `[UNCLEAR]`**, and **0 new MO cases** (the OF₆ argument is
+  an extension of **E16**, deliberately not promoted to E46).
+- **Gaps the question pages exposed, recorded and *not* filled by guessing:** the
+  fluorine-cell electrolyte (KHF₂) and Moissan apparatus · the roster of
+  fluorinating agents used instead of F₂ · HF with uranium and with graphite ·
+  the AgNO₃ silver-halide ladder and what ammonia does to each precipitate · the
+  boiling point of helium. All but the last should come from unread
+  `FULL — PARTIALLY UNIQUE` pages of the same chapters.
+- **Next work in file 12, in priority order:** the **2 `VISUAL ONLY` pages**
+  (PDF 171–172, Table 17.3 and the xenon structures), then the **95 remaining
+  `FULL — PARTIALLY UNIQUE` pages** in section-sized ranges, highest marginal
+  value first. **Prioritise PDF 117–120 (fluorine production) and the
+  silver-halide pages**, because five registered gaps point straight at them.
+- **Destination:** Sections 7–19, as gap-fill on top of Addenda 1–4 — **IN
+  PROGRESS**
+
+## 5. Points needing NCERT confirmation (source absent)
+
+- CO/haemoglobin affinity: 200× vs 300× — course uses ~300 with the range noted.
+- Graphite interlayer spacing: 335 vs 340 pm — course leads with 335.
+- Electronegativity sets (Pauling vs oxidation-state-specific) differ between
+  sources — course uses the NCERT-style set from the coaching material.
+- Whether PbBr₄ is to be treated as non-existent alongside PbI₄.

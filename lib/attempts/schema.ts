@@ -20,12 +20,16 @@ import { z } from "zod";
 //     they ride in attempts.metadata and re-hydrate from the PYQ SSOT.
 // ─────────────────────────────────────────────────────────────────────────────
 
-export const AttemptSourceSchema = z.enum(["exam", "test", "practice"]);
+export const AttemptSourceSchema = z.enum(["exam", "test", "practice", "embedded"]);
 export type AttemptSource = z.infer<typeof AttemptSourceSchema>;
 
-/** attempts.kind check-constraint values (live DB). */
+/**
+ * attempts.kind check-constraint values (live DB — only 'test' | 'practice').
+ * "embedded" (in-lesson retrieval checks, IA rollout Phase 4) grades like
+ * practice; the finer source string still separates it in analytics.
+ */
 export function kindForSource(source: AttemptSource): "test" | "practice" {
-  return source === "practice" ? "practice" : "test";
+  return source === "exam" || source === "test" ? "test" : "practice";
 }
 
 /** One answered (or skipped) question inside a submission. */
@@ -43,6 +47,8 @@ export const AnswerInputSchema = z.object({
   topic: z.string().optional(),
   difficulty: z.string().optional(),
   timeSpentMs: z.number().int().min(0).max(7_200_000).default(0),
+  /** Pre-answer confidence tap (embedded retrieval checks). */
+  confident: z.boolean().optional(),
 });
 export type AnswerInput = z.infer<typeof AnswerInputSchema>;
 
@@ -62,6 +68,8 @@ export interface AnswerExtra {
   timeSpentMs?: number;
   /** Snapshot for AI-generated questions only — PYQ options re-hydrate from the SSOT. */
   options?: Record<string, string>;
+  /** Pre-answer confidence (embedded retrieval checks) — calibration signal. */
+  confident?: boolean;
 }
 
 export interface AttemptMetadata {

@@ -1,0 +1,22 @@
+[
+  {
+    "file": "app/page.before-hero-extraction.tsx",
+    "path": "/resources",
+    "note": "Unrouted backup of the old homepage (not imported anywhere); /resources route never existed in this tree. Fix or archive in Phase 1."
+  },
+  {
+    "file": "app/page.legacy.tsx",
+    "path": "/resources",
+    "note": "Unrouted legacy homepage backup (not imported anywhere). Fix or archive in Phase 1."
+  },
+  {
+    "file": "components/Navbar.v1.tsx",
+    "path": "/resources",
+    "note": "Unrouted v1 navbar backup (not imported anywhere). Fix or archive in Phase 1."
+  },
+  {
+    "file": "components/ControlCenter.tsx",
+    "path": "/login",
+    "note": "Rendered surface (imported by app/page.tsx and app/control-center/page.tsx). /login does not exist — auth lives under /auth/*. Real link fix, deferred to Phase 1 because Phase 0 ships zero behaviour changes."
+  }
+]

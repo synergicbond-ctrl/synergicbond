@@ -31,7 +31,6 @@ export const STRICT_NOTE_SECTIONS = [
   { key: "formulas", label: "Formula Sheets", icon: "🧮", description: "Pure mathematical equations & constants only" },
   { key: "pyqs", label: "PYQ Section", icon: "🎯", description: "Previous year questions for target exams" },
   { key: "practice", label: "Practice Section", icon: "✍️", description: "Chapter-wise concept practice & question banks" },
-  { key: "mocks", label: "Mock Tests", icon: "🧪", description: "Timed examination simulations" },
 ] as const;
 
 export type StrictNoteSectionKey = (typeof STRICT_NOTE_SECTIONS)[number]["key"];
@@ -212,24 +211,6 @@ function StrictSectionBody({ chapter, section }: { chapter: NotesChapter; sectio
         </div>
       );
 
-    case "mocks":
-      return (
-        <div className="space-y-3">
-          <h4 className="text-xs font-bold uppercase tracking-wider text-white/40">🧪 Mocks &amp; Timed Tests</h4>
-          {chapter.tests.map((t, i) => (
-            <div key={i} className="flex items-center justify-between gap-3 rounded-xl border border-white/[0.08] bg-white/[0.03] p-3.5">
-              <span className="min-w-0">
-                <span className="block text-sm font-semibold text-white">{t.label}</span>
-                <span className="mt-0.5 block text-xs text-white/50">{t.questions} questions</span>
-              </span>
-              <span className="shrink-0 rounded-full border border-white/15 bg-white/[0.06] px-2.5 py-1 text-[10px] font-bold uppercase tracking-wide text-white/60">
-                Coming soon
-              </span>
-            </div>
-          ))}
-        </div>
-      );
-
     default:
       return null;
   }
@@ -274,49 +255,11 @@ interface ChapterCardAccent {
   glow: string;
 }
 
-const CHAPTER_CARD_ACCENTS: Record<string, ChapterCardAccent> = {
-  default: {
-    main: "#5fd4ea",
-    background: "linear-gradient(145deg, rgba(18,34,50,.98), rgba(10,20,32,.98))",
-    selected: "linear-gradient(145deg, rgba(22,78,99,.52), rgba(18,34,50,.98))",
-    glow: "rgba(95,212,234,.18)",
-  },
-  hydrogen: {
-    main: "#67e8f9",
-    background: "linear-gradient(145deg, rgba(8,47,73,.72), rgba(49,46,129,.30))",
-    selected: "linear-gradient(145deg, rgba(8,145,178,.36), rgba(76,29,149,.34))",
-    glow: "rgba(103,232,249,.22)",
-  },
-  "s-block-elements": {
-    main: "#a3e635",
-    background: "linear-gradient(145deg, rgba(26,46,5,.72), rgba(69,26,3,.34))",
-    selected: "linear-gradient(145deg, rgba(77,124,15,.40), rgba(180,83,9,.28))",
-    glow: "rgba(163,230,53,.20)",
-  },
-  "f-block-elements": {
-    main: "#e879f9",
-    background: "linear-gradient(145deg, rgba(74,20,84,.72), rgba(8,47,73,.38))",
-    selected: "linear-gradient(145deg, rgba(162,28,175,.38), rgba(8,145,178,.28))",
-    glow: "rgba(232,121,249,.22)",
-  },
-  polymers: {
-    main: "#fbbf24",
-    background: "linear-gradient(145deg, rgba(69,26,3,.70), rgba(76,29,149,.30))",
-    selected: "linear-gradient(145deg, rgba(180,83,9,.36), rgba(109,40,217,.32))",
-    glow: "rgba(251,191,36,.22)",
-  },
-  "environmental-chemistry": {
-    main: "#34d399",
-    background: "linear-gradient(145deg, rgba(6,78,59,.62), rgba(8,47,73,.42))",
-    selected: "linear-gradient(145deg, rgba(5,150,105,.34), rgba(14,116,144,.32))",
-    glow: "rgba(52,211,153,.22)",
-  },
-  "qualitative-analysis": {
-    main: "#60a5fa",
-    background: "linear-gradient(145deg, rgba(23,37,84,.75), rgba(88,28,135,.28))",
-    selected: "linear-gradient(145deg, rgba(37,99,235,.34), rgba(126,34,206,.30))",
-    glow: "rgba(96,165,250,.22)",
-  },
+const CHAPTER_CARD_ACCENT: ChapterCardAccent = {
+  main: "#5fd4ea",
+  background: "#122232",
+  selected: "#17364a",
+  glow: "rgba(95,212,234,.18)",
 };
 
 interface ChapterCardData {
@@ -371,7 +314,7 @@ function ChapterCard({
   selected: boolean;
   onSelect: () => void;
 }) {
-  const accent = CHAPTER_CARD_ACCENTS[card.syllabusId] ?? CHAPTER_CARD_ACCENTS.default;
+  const accent = CHAPTER_CARD_ACCENT;
   const statusColour = card.status === "syllabus" ? "#91a9bc" : accent.main;
 
   const cardClass =

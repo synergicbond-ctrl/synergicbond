@@ -848,75 +848,86 @@ A pseudohalogen is a molecule built from two or more electronegative atoms that,
 8. Explain, using conjugate-base delocalisation, why HClO₄ is a far stronger acid than HOCl. *(See the worked example in §16.3 — charge delocalised over 4 oxygens in ClO₄⁻ vs localised on one in ClO⁻.)*
 # 18. Group 18: noble gases and xenon compounds
 
-Noble gases have closed-shell ns²np⁶ (He: 1s²) configurations and the highest ionisation enthalpies in their respective periods, which is why they were long considered chemically "inert." Xenon forms the most important class of real, stable compounds because (a) its ionisation enthalpy (1170 kJ mol⁻¹) is markedly lower than that of the lighter noble gases (He, Ne, Ar) and (b) the resulting Xe–F and Xe–O bonds are thermodynamically strong enough to be stabilised at accessible temperatures/pressures. Neil Bartlett's 1962 synthesis of Xe⁺[PtF₆]⁻ (by analogy with O₂⁺[PtF₆]⁻) was the first proof that noble-gas compounds could exist and directly triggered the discovery of the xenon fluorides.
+Members are He, Ne, Ar, Kr, Xe, Rn. Configuration ns²np⁶ (He: 1s²) — a completely filled shell, giving the group its defining inertness: very high ionisation enthalpy and strongly *positive* electron gain enthalpy (energy must be *added* to force an electron on, not released — never "zero," which is a common misreading).
 
-## 18.1 Preparation of xenon fluorides
+## 18.1 Occurrence and abundance
 
-Direct combination of Xe and F₂ under varying conditions gives different fluorides, with **higher F₂ ratio, pressure and/or temperature favouring the higher fluoride**:
+Argon is by far the most abundant noble gas in the atmosphere (~0.93% by volume); xenon is the least abundant (~0.0000087%) — an abundance-vs-chemical-importance inversion worth noting, since Xe is nonetheless the noble gas with by far the richest chemistry. Helium's chief commercial source is natural gas deposits (from α-particle/⁴He accumulation via radioactive decay of uranium/thorium minerals over geological time), not the atmosphere. Radon is a decay product of radium: ²²⁶Ra → ²²²Rn + ⁴He.
 
-\[\mathrm{Xe+F_2\xrightarrow{673\ K,\ 1\ bar,\ Xe:F_2=1:5}XeF_2}\]
-\[\mathrm{Xe+2F_2\xrightarrow{573\ K,\ 7\ bar,\ Xe:F_2=1:20}XeF_4}\]
-\[\mathrm{Xe+3F_2\xrightarrow{573\ K,\ 60–70\ bar,\ Xe:F_2=1:20}XeF_6}\]
+| Property | He | Ne | Ar | Kr | Xe |
+|---|---:|---:|---:|---:|---:|
+| Atomic radius (pm) | 50 | 65 | 95 | 110 | 130 |
+| IE₁ (kJ/mol) | 2372 | 2081 | 1521 | 1351 | 1170 |
+| Boiling point (K) | 4.2 | 27 | 87 | 120 | 165 |
 
-## 18.2 VSEPR precision for xenon species
+**Helium's boiling point (4.2 K) is the lowest of any known substance** — the reason liquid helium is the standard cryogenic coolant for superconducting MRI/NMR magnets. Ionisation enthalpy falls smoothly down the group, which is *why* only the heaviest, most polarisable members (Kr, and especially Xe) form genuine compounds — their outermost electrons are held loosely enough to be removed or shared under the right conditions.
 
-| Species | Total electron-pair regions on Xe | Electron-pair geometry | Molecular shape |
-|---|---:|---|---|
-| XeF₂ | 5 (2 bp + 3 lp) | trigonal bipyramidal | linear |
-| XeF₄ | 6 (4 bp + 2 lp) | octahedral | square planar |
-| XeF₆ | 7 (6 bp + 1 lp) | distorted (capped) octahedral | distorted octahedral |
-| XeOF₄ | 6 (5 bp + 1 lp) | octahedral | square pyramidal |
-| XeO₃ | 4 (3 bp + 1 lp) | tetrahedral | trigonal pyramidal |
-| XeO₄ | 4 (4 bp + 0 lp) | tetrahedral | tetrahedral |
+## 18.2 Bartlett's discovery — the opening of noble-gas chemistry
 
-For XeF₂: five electron pairs adopt a trigonal-bipyramidal arrangement; placing all **three lone pairs in the equatorial plane** (where lone-pair/lone-pair repulsion is minimised, each 120° apart) leaves the two bonding fluorine atoms axial — hence the molecule is linear. For XeF₆, one lone pair distorts an otherwise regular octahedron; do not force a perfectly symmetric octahedral shape onto it.
+Neil Bartlett (1962) observed that PtF₆ could oxidise O₂ to the dioxygenyl cation: O₂ + PtF₆ → O₂⁺[PtF₆]⁻ (a red solid). Reasoning that Xe's first ionisation energy (1170 kJ/mol) was remarkably close to O₂'s (1175 kJ/mol) — see the O₂ MOT discussion in §11.4 for exactly how that number arises — Bartlett predicted PtF₆ should be able to oxidise xenon too, and confirmed it: Xe + PtF₆ → Xe⁺[PtF₆]⁻, the first noble-gas compound ever prepared. This single inference — matching one element's known ionisation energy against another's oxidising power — is worth remembering as a method, not just a historical fact: it is the same "compare IE to a known oxidant's capability" reasoning used throughout inorganic redox prediction.
 
-## 18.3 Hydrolysis reasoning
+Noble-gas compounds form almost exclusively with **F and O**, the two most electronegative elements, and almost exclusively for **Xe** (Kr forms only KrF₂, under forcing conditions).
 
-Xenon fluorides hydrolyse because forming strong new Xe–O and H–F bonds is thermodynamically very favourable. Balance every hydrolysis systematically by atom count and oxidation-state bookkeeping rather than memorising a half-balanced line:
+## 18.3 Clathrates — physical trapping, not chemistry
 
-\[\mathrm{2XeF_2+2H_2O\rightarrow2Xe+4HF+O_2}\] (Xe is *reduced* to the element; here water is oxidised)
-\[\mathrm{XeF_4+6H_2O\rightarrow2Xe+XeO_3+12HF+3O_2}\] (a disproportionation among three Xe centres overall)
-\[\mathrm{XeF_6+3H_2O\rightarrow XeO_3+6HF}\] (complete hydrolysis; controlled partial hydrolysis instead gives the oxyfluoride XeOF₄)
-
-## 18.4 Clathrates
-
-Larger noble-gas atoms (Ar, Kr, Xe) can be **physically trapped** inside cavities of an ice or quinol (hydroquinone) crystal lattice as it forms around them, giving **clathrates**. These are not covalent compounds — no chemical bond forms to the noble gas atom, the oxidation state of the trapped gas remains 0, and the clathrate decomposes back to free gas plus host lattice on melting/dissolving. Do not describe a clathrate as a "xenon compound" in the same sense as XeF₂ or XeO₃.
-
-### Trap bank — Group 18
-
-- XeF₂ is linear because three lone pairs occupy the equatorial positions of a trigonal bipyramid, not because Xe "has no lone pairs."
-- Report **molecular shape**, not electron-pair geometry, whenever a question asks for "shape" — XeOF₄ has octahedral electron geometry but square-pyramidal molecular shape.
-- A clathrate involves no bond formation and no oxidation-state change; a true xenon fluoride/oxide does.
-- Xenon's compound-forming ability is due to its comparatively low ionisation enthalpy among noble gases, not to any special reactivity of fluorine alone (fluorine also fails to react with He, Ne, Ar under ordinary conditions).
+Clathrates are **not true chemical compounds** — no covalent or ionic bond forms to the noble-gas atom. Instead, a noble-gas atom of the right size is physically trapped inside a cage-like void in a host lattice (classically an ice/water cage, a gas hydrate, formed under pressure). Formation depends critically on size: the atom must be large enough to be held by weak van der Waals trapping but small enough to fit — He and Ne are too small and do **not** form stable clathrates, while Ar, Kr and Xe do. Because there is no true bonding, clathrates decompose on melting or on dissolving the host lattice — a purely physical (host–guest) phenomenon, and this exact "is it a compound or just physically trapped" distinction is the standard conceptual test built around this topic.
 
 # 19. Group 18 deep dive: xenon fluorides, oxides and hydrolysis
 
-## 19.1 Preparation and the bonding context
+## 19.1 Preparation — conditions determine the product
 
-Xenon reacts directly with fluorine gas under carefully controlled temperature, pressure and stoichiometric ratio to give XeF₂, XeF₄ or XeF₆ selectively (§18.1); broadly, higher fluorine partial pressure, higher total pressure and/or higher reaction temperature all favour formation of the higher fluoride. All three are covalent, molecular compounds in the standard textbook treatment (not ionic lattices in the solid state, though XeF₆ shows some ionic character/self-ionisation in the liquid and solid phases, e.g. forming [XeF₅]⁺[F]⁻-type species).
+| Product | Xe : F₂ ratio | Conditions |
+|---|---:|---|
+| XeF₂ | Excess Xe : 1 | 673 K, 1 bar |
+| XeF₄ | 1 : 5 | 873 K, 7 bar |
+| XeF₆ | 1 : 20 | 573 K, 60–70 bar |
 
-## 19.2 VSEPR precision, restated with full reasoning
+An alternative route to XeF₆: XeF₄ + O₂F₂ → XeF₆ + O₂ (at 143 K). The pattern — richer fluorine ratio and generally higher pressure giving a higher fluoride — is itself worth internalising rather than memorising each condition set independently.
 
-XeF₂ has five total electron-pair regions around xenon (two bonding pairs to F, three lone pairs); in the trigonal-bipyramidal electron-pair arrangement that minimises repulsion, **all three lone pairs occupy the equatorial positions** (each 120° from the next, where lone-pair/lone-pair repulsion — the strongest of the three repulsion types — is minimised), leaving the two fluorine atoms in the axial positions 180° apart. The resulting **molecular shape is therefore linear**, even though the *electron-pair* arrangement is trigonal bipyramidal — the standard illustration of why electron-pair geometry and molecular shape must be reported separately.
+## 19.2 Structures — derived by steric number, exactly as for interhalogens
 
-XeF₄ has six total electron-pair regions (four bonding pairs, two lone pairs); the two lone pairs occupy mutually *trans* (opposite) positions of the octahedron to minimise their mutual repulsion, leaving the four fluorine atoms in a plane — hence **square planar** molecular shape. XeF₆ has seven total electron-pair regions (six bonding pairs, one lone pair); with no perfectly symmetric seven-region arrangement available, the single lone pair distorts an otherwise regular octahedron, giving a **distorted octahedral** shape that should never be drawn as a perfect, undistorted octahedron.
+| Compound | Steric no. | Hybridisation | Shape |
+|---|---:|---|---|
+| XeF₂ | 5 | sp³d | Linear (3 lone pairs equatorial) |
+| XeF₄ | 6 | sp³d² | Square planar (2 lone pairs axial) |
+| XeF₆ | 7 | sp³d³ | Distorted octahedral (1 lone pair) |
+| XeOF₄ | 6 | sp³d² | Square pyramidal |
+| XeO₃ | 4 | sp³ | Pyramidal (1 lone pair) |
 
-## 19.3 Xenon oxyfluorides and oxides
+Xe contributes 8 valence electrons in each case; subtract one per Xe–F (or Xe=O, counted as one bonding domain) bond, and whatever remains in pairs is lone pairs — exactly the same steric-number method used for BrF₅ and IF₇ in §17.1. XeO₃ (steric number 4, sp³, pyramidal) is isostructural with NH₃ and with XeF₃⁺ — but NOT with XeF₄, whose steric number is 6.
 
-XeOF₄ has six electron-pair regions (one Xe=O, four Xe–F, one lone pair) in an overall octahedral electron-pair arrangement, with the single lone pair giving a **square-pyramidal** molecular shape. XeO₃ has four electron-pair regions (three Xe=O, one lone pair) in a tetrahedral electron-pair arrangement, giving a **trigonal-pyramidal** molecular shape (directly analogous to NH₃'s shape derivation). XeO₄ has four bonding regions and no lone pair, giving a regular **tetrahedral** molecular shape. In every case, the examiner is asking for the **molecular shape** (what an X-ray structure would actually show), never the underlying electron-pair geometry alone.
+**Modern bonding view (beyond simple d-orbital VSEPR):** XeF₂'s "sp³d" label is a useful VSEPR bookkeeping device, but Xe's 5d orbitals are in fact too high in energy to meaningfully participate. A more physically accurate description is a linear **3-centre-4-electron (3c-4e) bond** across F–Xe–F: one Xe p-orbital combines with one p-orbital from each F to give 3 molecular orbitals (bonding, non-bonding, antibonding); 4 electrons fill the bonding and non-bonding MOs, leaving the antibonding MO empty. Net bonding is real but *weaker* than two ordinary 2-centre bonds — exactly why Xe–F bonds are unusually long/weak and why XeF₂ is such an effective fluorinating agent. The same 3c-4e logic extends to other hypervalent species (I₃⁻, ClF₃, SF₄, PF₅) without invoking d-orbitals at all.
 
-## 19.4 Advanced edge: a safe, general hydrolysis workflow
+## 19.3 Hydrolysis — simple substitution vs disproportionation
 
-For any xenon fluoride or oxyfluoride hydrolysis, work through this four-step method rather than memorising several superficially similar-looking equations:
+**XeF₂ (simple substitution):** 2XeF₂ + 2H₂O → 2Xe + 4HF + O₂
 
-1. **Count** every Xe, F, H and O atom present in the reactants.
-2. **Decide** whether the xenon oxidation state is retained unchanged through to the product, or whether a disproportionation among multiple Xe centres is occurring instead (as happens, for example, in the hydrolysis of XeF₄, where some xenon is reduced all the way to the element while some is oxidised up to XeO₃).
-3. **Include HF explicitly** as the fluorine-containing product of any aqueous hydrolysis (fluorine essentially never survives hydrolysis as F⁻ alone without protonation to HF under these acidic conditions).
-4. **Balance** the remaining H and O atoms using water molecules, and finally verify any residual charge balance if ionic species are written into the equation.
+**XeF₆ (complete, simple substitution):** XeF₆ + 3H₂O → XeO₃ + 6HF
 
-This atom-count-and-oxidation-state method is considerably safer under exam pressure than attempting to recall several nearly identical xenon hydrolysis equations by rote, since a single misremembered coefficient in a memorised equation is very easy to produce but very hard to self-detect.
+**Partial hydrolysis of XeF₆:** XeF₆ + H₂O → XeOF₄ + 2HF; XeF₆ + 2H₂O → XeO₂F₂ + 4HF
 
+**XeF₄ (disproportionation, not simple substitution):** 6XeF₄ + 12H₂O → 4Xe + 2XeO₃ + 24HF + 3O₂
+
+> **Worked Example — proving XeF₄ hydrolysis is a disproportionation.** Assign Xe's oxidation state in XeF₄ and XeO₃, and confirm the equation above is not a simple substitution.
+>
+> XeF₄: Xe + 4(−1) = 0 ⇒ Xe = **+4**. XeO₃: Xe + 3(−2) = 0 ⇒ Xe = **+6**. Elemental Xe (a product) = **0**. Starting Xe(+4) splits into Xe(0) (reduced, gained 4e⁻) and Xe(+6) (oxidised, lost 2e⁻) — the same-element-splits-both-ways signature used throughout this chapter (NO₂ + H₂O in §7.4, H₃PO₃ in §10.1, (CN)₂ + NaOH in §17.2). The 4:2 ratio of Xe⁰:XeO₃ in the balanced equation matches the electron bookkeeping (4×4e⁻ gained = 16e⁻; 2×2e⁻ lost = 4e⁻; the remaining electrons balance via O₂ evolution, since O in H₂O is −2 and O in O₂ is 0).
+>
+> **General rule:** any time a "hydrolysis" equation produces the *same* element in two different products (here, both Xe⁰ and XeO₃), check oxidation states before assuming simple substitution — it is almost always secretly a disproportionation.
+
+## 19.4 Reactions with fluoride donors/acceptors
+
+**With Lewis acids (fluoride acceptors):** XeF₂ + PF₅ → [XeF]⁺[PF₆]⁻. **With fluoride donors (alkali fluorides):** XeF₆ + MF → M⁺[XeF₇]⁻ (M = Na, K, Rb, Cs). Xenon fluorides are strong oxidising and fluorinating agents generally, readily fluorinating hydrogen-donor substrates.
+
+## 19.5 Practice problems
+
+1. Why is argon the most abundant noble gas in air, yet xenon has by far the richest chemistry? *(Abundance and chemical reactivity are unrelated — Xe's much lower ionisation energy, from being the largest easily-obtained noble gas, is what makes it uniquely reactive, regardless of scarcity.)*
+2. What made Bartlett predict that Xe could be oxidised by PtF₆? *(Xe's first ionisation energy, 1170 kJ/mol, is close to O₂'s, 1175 kJ/mol — PtF₆ had just been shown to oxidise O₂.)*
+3. Are clathrate compounds true chemical compounds? Justify. *(No — no covalent/ionic bond forms; the noble gas is physically trapped in a host lattice cage and the arrangement decomposes on melting or dissolving the host.)*
+4. Derive the hybridisation and shape of XeF₄ from steric number. *(Xe: 8 valence e⁻, 4 Xe–F bonds use 4, 4 remain = 2 lone pairs; steric number 6 ⇒ sp³d², square planar with 2 axial lone pairs.)*
+5. Why is XeF₄'s hydrolysis called a disproportionation while XeF₂'s and XeF₆'s are not? *(See the worked example in §19.3 — Xe splits from +4 into both 0 and +6, unlike the single-product substitutions for XeF₂ and XeF₆.)*
+6. What is the more physically accurate bonding description of XeF₂ than "sp³d," and why is the traditional label kept anyway? *(A linear 3-centre-4-electron bond across F–Xe–F, since Xe's 5d orbitals are too high in energy to truly participate; sp³d survives as a convenient VSEPR bookkeeping device.)*
+7. Why do He and Ne not form stable clathrates while Ar, Kr and Xe do? *(He and Ne are too small to be held by the weak van der Waals trapping in the host cage.)*
+8. State the exact Xe:F₂ ratio and conditions for preparing XeF₆. *(1:20, 573 K, 60–70 bar — or via XeF₄ + O₂F₂ → XeF₆ + O₂ at 143 K.)*
 # 20. JEE Advanced synthesis: decision trees, traps and final recall
 
 ## 20.1 Three decision trees for any p-block question

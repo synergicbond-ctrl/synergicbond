@@ -281,121 +281,151 @@ General formula **M₂SO₄·M′₂(SO₄)₃·24H₂O** (M univalent, M′ tri
 10. Why does aluminium chloride exist as a dimer in benzene but not in water? *(Al completes its octet via Cl-bridging in non-donor solvents; water solvates/ionises it to [Al(H₂O)₆]³⁺ instead.)*
 # 4. Group 14: carbon, silicon, catenation and the inert-pair effect
 
-Members are C, Si, Ge, Sn and Pb. The oxidation states +4 and +2 are central; +4 is more stable for the lighter members (C, Si) while +2 gains stability down the group, becoming dominant for Pb (inert-pair effect, §1.3). Carbon strongly favours covalency, **catenation** (self-linking into chains/rings) and pπ–pπ multiple bonds; none of the heavier congeners catenate to a comparable extent because M–M bond strength falls down the group (C–C ≫ Si–Si > Ge–Ge > Sn–Sn).
+Members are C, Si, Ge, Sn, Pb. Configuration ns²np². Classification runs cleanly from non-metal to metal: C, Si non-metals; Ge metalloid; Sn, Pb metals — sharper than Group 13's messier progression. The group oxidation state is +4 (mostly covalent); +2 becomes progressively more important and is dominant at Pb — the inert-pair effect here is stronger than in Group 13, since it is the ns² pair alone resisting ionisation after both np electrons are already lost.
 
-## 4.1 General trends and the classic tetrahalide-hydrolysis exception
+## 4.1 Quantitative periodic trends
 
-Covalent/ionic character, acidic/basic character of oxides, and coordination-number ceiling (4 for C vs up to 6 for Si onward) all follow directly from §1.2's "no d orbital in n = 2" rule. The single most tested consequence:
+| Property | C | Si | Ge | Sn | Pb |
+|---|---:|---:|---:|---:|---:|
+| Atomic radius (pm) | 77 | 118 | 122 | 141 | 175 |
+| IE₁ (kJ/mol) | 1086 | 786 | 762 | 709 | 716 |
+| Electronegativity | 2.5 | 1.8 | 1.8 | 1.8 | 1.9 |
+| Melting point (K) | 3820 (diamond) | 1683 | 1211 | 505 | 601 |
+| C–C / Si–Si bond enthalpy (kJ/mol) | 346 | 226 | — | — | — |
 
-**CCl₄ does not hydrolyse in water, but SiCl₄ hydrolyses instantly.** Carbon has no vacant, low-energy 3d/d-type orbital to accept a lone pair from an incoming water molecule and form the five-coordinate transition state required for nucleophilic substitution at carbon; silicon (period 3) can access such orbitals/hybrid pathways and hydrolyses via a pentacoordinate intermediate:
+**Atomic radius** rises fairly regularly (C < Si < Ge < Sn < Pb) — no Ga-style dip here, since the d-block contraction affects Ge only mildly and is outweighed by the added shell. **IE₁** falls steadily then flattens at the bottom (Sn ≈ Pb), reflecting the inert-pair effect making the heaviest members reluctant to lose *any* electron easily, not just the ns² pair.
 
-\[\mathrm{SiCl_4+2H_2O\rightarrow SiO_2+4HCl}\]
+## 4.2 Catenation collapse and the inert-pair effect at its strongest
 
-Tin and lead show the inert-pair effect directly in their halides: SnCl₂ is a common, stable, reducing salt (Sn²⁺ is a mild reducing agent, reducing Hg²⁺ to Hg and Fe³⁺ to Fe²⁺), while SnCl₄ is a strong Lewis acid/covalent liquid; PbCl₂ is far more stable than the strongly oxidising PbCl₄, and PbO₂ readily oxidises concentrated HCl to Cl₂ while itself being reduced to Pb²⁺.
+**Catenation** (element–element self-linking) falls off sharply: C ≫ Si > Ge ≈ Sn ≫ Pb. Carbon's C–C bond (346 kJ/mol) is far stronger than Si–Si (226 kJ/mol) because carbon's small 2p orbitals overlap efficiently, while silicon's larger, more diffuse 3p orbitals overlap poorly and the bond is further weakened by significant nucleus–nucleus repulsion at bonding distance. By lead, catenation is essentially absent — Pb–Pb chains are unknown outside a few exotic clusters.
 
-## 4.2 Carbon oxides
+> **Worked Example — the Sn²⁺/Pb⁴⁺ redox pairing.** Equal moles of SnCl₂ and PbO₂ are each treated with excess conc. HCl. Identify oxidant/reductant in each case and explain why these are opposite ends of the same couple.
+>
+> Sn²⁺ + Hg²⁺ → Sn⁴⁺ + Hg — tin is *oxidised*; SnCl₂ is a reducing agent, because +2 is *less* stable than the group state +4 for tin.
+>
+> PbO₂ + 4HCl → PbCl₂ + Cl₂ + 2H₂O — lead goes from +4 to +2, *reduced*; chlorine is oxidised. PbO₂ is an oxidant, exactly analogous to MnO₂, because +2 is *more* stable than +4 for lead (inert-pair effect dominates at the group's heaviest member).
+>
+> **Fast method:** any time you see Sn²⁺ with a decent oxidant, assume oxidation to Sn⁴⁺. Any time you see Pb⁴⁺ (PbO₂, Pb₃O₄) with any decent reductant — even just conc. HCl — assume reduction to Pb²⁺.
 
-CO is neutral (does not react with water, acid or base under ordinary conditions — an exception to "all p-block oxides are acidic/basic/amphoteric"), poisonous, and a strong reducing agent at high temperature:
+**Multiple bonding:** only carbon forms strong pπ–pπ bonds (C=C, C≡C, C=O). Silicon and heavier members cannot — their larger, more diffuse p orbitals overlap poorly with a neighbour's compact 2p orbital — and instead satisfy higher bond order through pπ–dπ donation into empty d-orbitals (available from Si onward) or simply by using more single bonds in an extended network.
 
-\[\mathrm{Fe_2O_3+3CO\rightarrow2Fe+3CO_2}\]
+## 4.3 Diagonal relationship and the CO₂ vs SiO₂ contrast
 
-It binds haemoglobin roughly 200 times more strongly than O₂ (forming stable carboxyhaemoglobin), which is the basis of its physiological toxicity. CO₂ is an acidic oxide and reacts with limewater in a ratio-dependent way:
+> **Worked Example — why CO₂ is a gas but SiO₂ is a solid melting above 1900 K, despite the identical XO₂ formula.**
+>
+> Carbon's compact 2p orbitals form strong C=O π bonds, so CO₂ is O=C=O — a small, discrete, linear molecule held to its neighbours only by weak van der Waals forces, hence gaseous. Silicon's 3p orbitals are too large and diffuse for efficient π overlap with oxygen's 2p orbital, so silicon instead satisfies all 4 bonds with FOUR single Si–O bonds, each oxygen bridging to a second silicon — forcing an extended 3-D network of corner-sharing SiO₄ tetrahedra, a single giant covalent "molecule" spanning the whole crystal.
+>
+> **Reactivity consequence:** both react with NaOH, but SiO₂ needs *hot, concentrated* NaOH (SiO₂ + 2NaOH → Na₂SiO₃ + H₂O — the reason NaOH solution is stored in polyethylene, not glass, bottles) while CO₂ reacts even with cold, dilute NaOH (CO₂ + 2NaOH → Na₂CO₃ + H₂O).
+>
+> **General method:** whenever comparing a 2nd-period p-block compound to its heavier analogue, check first whether pπ–pπ multiple bonding is possible for the heavier element — it almost never is, and that is usually the whole explanation.
 
-\[\mathrm{Ca(OH)_2+CO_2\rightarrow CaCO_3\downarrow+H_2O}\]
-\[\mathrm{CaCO_3+CO_2+H_2O\rightarrow Ca(HCO_3)_2}\]
+## 4.4 Hydrides — thermal stability and reducing power
 
-The second reaction (limited CaCO₃ dissolving as soluble bicarbonate in excess CO₂) explains the clearing of milkiness on prolonged passage of CO₂ through limewater.
+**MH₄ hydrides:** CH₄, SiH₄, GeH₄, SnH₄, PbH₄. Thermal stability falls sharply down the group (CH₄ ≫ SiH₄ > GeH₄ > SnH₄ > PbH₄, which barely exists) as M–H bond strength weakens with increasing atomic size. Reducing power *rises* down the group in exactly the opposite order — SiH₄ ignites spontaneously in air (SiH₄ + 2O₂ → SiO₂ + 2H₂O), while CH₄ needs a spark. This pairing (stability falls, reducing power rises) recurs throughout the p-block hydrides and is worth recognising as a single pattern rather than five separate facts.
 
-## 4.3 Silicon chemistry: SiO₂, silicates and zeolites
+**Catenation ceiling by element:** carbon forms hydrocarbon chains of essentially unlimited length; silicon forms silanes SiₙH₂ₙ₊₂ only up to about n = 8 before Si–Si bonds become too weak and reactive to isolate; germanium reaches a similarly short chain limit; tin and lead form no significant hydride chains at all.
 
-SiO₂ is a giant covalent, three-dimensional network solid built from corner-shared SiO₄ tetrahedra (every oxygen bridges exactly two silicon atoms in pure quartz). It resists most acids but reacts with HF — an important exception to "glass/silica resist acid attack":
+## 4.5 Halides — SiCl₄ vs CCl₄, a hydrolysis contrast that mirrors CO₂ vs SiO₂
 
-\[\mathrm{SiO_2+6HF\rightarrow H_2SiF_6+2H_2O}\]
+> **Worked Example — CCl₄ resists hydrolysis; SiCl₄ hydrolyses instantly. Why, given both are MX₄ tetrahedral molecules?**
+>
+> SiCl₄ + 3H₂O → H₂SiO₃ + 4HCl proceeds readily, but CCl₄ is completely inert to water even on boiling. The difference is *not* electronegativity or bond polarity — both are covalent MX₄ molecules — it is **orbital availability**. Silicon (n = 3) has empty, energetically accessible 3d orbitals that a water oxygen lone pair can attack first, forming a 5-coordinate transition state before Cl⁻ leaves (an associative, SN2-like mechanism). Carbon (n = 2) has no d-orbitals and cannot expand its coordination past 4 — with no accessible pathway for the incoming nucleophile, hydrolysis simply cannot proceed, regardless of how thermodynamically favourable the products would be.
+>
+> **General rule:** whenever a period-3-onward MX₄ halide hydrolyses easily but its period-2 analogue does not, suspect exactly this — d-orbital availability enabling nucleophilic attack, not a difference in bond strength or polarity.
 
-**Silicates** are built from [SiO₄]⁴⁻ tetrahedra. The number of corners each tetrahedron shares with neighbours (0 through 4) fixes the anion topology:
-
-| Corners shared | Structural class | Example anion |
-|---|---|---|
-| 0 | orthosilicate (isolated tetrahedra) | [SiO₄]⁴⁻ |
-| 2 (single strand) | pyroxene-type chain | [SiO₃²⁻]ₙ |
-| 2, doubled | amphibole-type double chain | [Si₄O₁₁⁶⁻]ₙ |
-| 3 | mica/clay-type sheet | [Si₂O₅²⁻]ₙ |
-| 4 | quartz/feldspar/zeolite framework | (SiO₂)ₙ or aluminosilicate |
-
-**Zeolites** are microporous, crystalline **aluminosilicates** in which some Si(IV) is isomorphously replaced by Al(III). Each substitution leaves one unit of negative framework charge, balanced by an exchangeable cation (Na⁺, Ca²⁺) sitting in the pores. This is why zeolites function as ion exchangers (water softening — the basis of "permutit," a synthetic zeolite) and as **shape-selective catalysts** (e.g., ZSM-5 in petroleum cracking): only molecules of the right size can enter/leave the pore network to react at the internal aluminosilicate acid sites.
-
-## 4.4 Silicones
-
-Silicones are synthetic organosilicon polymers containing repeating **–Si–O–Si–** (siloxane) linkages with organic groups (commonly methyl) bonded directly to silicon. They are made by hydrolysing organochlorosilanes, R\_nSiCl₍₄₋ₙ₎, followed by condensation:
-
-\[\mathrm{R_2SiCl_2+2H_2O\rightarrow R_2Si(OH)_2+2HCl}\]
-
-Two R₂Si(OH)₂ units then condense, eliminating water and forming a Si–O–Si link; repeated condensation builds linear chains (from R₂SiCl₂), cross-linked networks (from RSiCl₃, which has three hydrolysable chlorines), or terminates chains (from R₃SiCl, monofunctional). Their thermal stability, hydrophobicity and chemical inertness follow directly from the strong, polar Si–O bond and the flexible, freely rotating siloxane backbone; they are used as water-repellent coatings, high-temperature lubricants/greases, and in surgical/cosmetic implants.
-
-### Trap bank — Group 14
-
-- CCl₄ resists hydrolysis; SiCl₄ hydrolyses instantly — always give the "no d/vacant orbital at carbon" reason, not just "carbon is different."
-- CO is neutral; do not classify it as acidic merely because it contains oxygen.
-- SnCl₂ is reducing (Sn²⁺ → Sn⁴⁺); PbO₂ is oxidising (Pb⁴⁺ → Pb²⁺) — both are inert-pair-effect consequences but act in opposite roles.
-- The functionality of the chlorosilane (mono-, di- or tri-functional) controls whether the silicone product is a chain terminator, linear polymer, or cross-linked network.
+**PbCl₄ vs PbCl₂:** PbCl₄ is thermally unstable and decomposes on warming, PbCl₄ → PbCl₂ + Cl₂ — the inert-pair effect again, now expressed as a halide's own decomposition rather than just a redox reaction with an external agent.
 
 # 5. Group 14 deep dive: allotropes, carbon oxides and silicon materials
 
-## 5.1 Carbon allotropes and structure–property links
+## 5.1 Allotropes of carbon
 
-Diamond is a three-dimensional network in which every carbon is tetrahedrally sp³-bonded to four others (C–C = 154 pm), giving exceptional hardness and a very high melting point; because all valence electrons are localised in strong, directional σ bonds, diamond is an electrical insulator, yet it conducts heat exceptionally well through efficient lattice-phonon transmission through the rigid covalent framework. Graphite consists of parallel sp² layers (each carbon bonded to three neighbours, C–C = 141 pm within a layer) with one delocalised π electron per carbon spread over the whole sheet; the layers themselves are held together only by weak van der Waals forces (interlayer spacing ≈ 335 pm), so they slide over one another easily — graphite is therefore soft and a good lubricant, and it conducts electricity well *within* a layer (from the delocalised π system) but poorly *between* layers. Fullerenes (C₆₀, "buckminsterfullerene," a closed cage of fused pentagons and hexagons) and graphene (a single isolated graphite layer) extend this structural range; every stated property must be traced back to bonding type and dimensionality rather than asserted from the allotrope's name alone.
+**Diamond:** every carbon sp³, tetrahedrally bonded to 4 others (C–C = 154 pm) in a rigid extended 3-D network. Hardest known natural substance; poor electrical conductor (every valence electron is localised in a σ bond, none free); excellent thermal conductor (vibrations propagate efficiently through the rigid lattice).
 
-**JEE trap:** both diamond and graphite are giant *covalent* network solids, not ionic or metallic lattices — their very different electrical conductivities arise purely from the availability (or absence) of delocalised electrons, never from a difference in bond type.
+**Graphite:** every carbon sp², bonded to 3 others in flat hexagonal sheets (C–C = 141.5 pm, shorter than diamond's due to partial double-bond character from the delocalised 4th electron). That delocalised electron makes graphite conduct *along* the sheet and gives it its soft, slippery feel — layers held only by weak van der Waals forces slide over each other, hence its use as a dry lubricant and pencil "lead." Graphite is thermodynamically *more* stable than diamond at room temperature and pressure, though the interconversion is immeasurably slow without extreme conditions.
 
-## 5.2 Carbon monoxide: formation, reactivity and toxicity
+**Fullerenes:** C₆₀ (Buckminsterfullerene) is a closed cage of 20 hexagons + 12 pentagons, all sp² carbon, shaped like a football. It is the *only* crystalline allotrope of carbon with a well-defined, finite molecular formula — diamond and graphite are giant covalent networks with no fixed formula. C₆₀ contains both single and double C–C bonds; it does not have graphite's fully delocalised aromatic system.
 
-CO forms in incomplete combustion (limited O₂ supply) and by the reduction of CO₂ over hot carbon (the reverse Boudouard-type equilibrium, favoured at high temperature):
+> **Fast recall:** sp³ tetrahedral network = hardest insulator (diamond); sp² sheets + van der Waals gaps = soft conductor (graphite).
 
-\[\mathrm{CO_2+C\xrightarrow{high\ T}2CO}\]
+## 5.2 Oxides of carbon
 
-It is a strong reducing agent at elevated temperature, exploited in blast-furnace iron extraction:
+**Carbon monoxide, CO** is a **neutral** oxide — it does *not* react with water, dilute acid or dilute base under normal conditions, despite being a non-metal oxide (a classic trap). Prepared by incomplete combustion, or in the lab by dehydrating formic acid with hot conc. H₂SO₄: HCOOH → CO + H₂O. CO is isoelectronic with N₂ and CN⁻, bonding to transition metals through the lone pair on carbon to form very stable metal carbonyls — exactly why CO poisoning is dangerous (it binds haemoglobin roughly 200× more strongly than O₂).
 
-\[\mathrm{Fe_2O_3+3CO\rightarrow2Fe+3CO_2}\]
+**Carbon dioxide, CO₂** is acidic, linear (O=C=O), sp-hybridised carbon; forms carbonic acid in water, CO₂ + H₂O ⇌ H₂CO₃.
 
-Its physiological toxicity arises from very strong, essentially irreversible-at-normal-partial-pressures binding to the iron centre of haemoglobin, forming carboxyhaemoglobin and blocking normal O₂ transport. In coordination chemistry, CO is also an important σ-donor/π-acceptor ligand (forming metal carbonyls such as Ni(CO)₄) — a distinct, separate phenomenon from its physiological binding, driven by back-donation from filled metal d orbitals into CO's empty π* orbital rather than simple Lewis acid–base donation alone.
+**Industrial CO sources — producer gas and water gas:** producer gas passes air over red-hot coke: C + O₂ → CO₂ (exothermic), immediately followed by CO₂ + C → 2CO (endothermic), giving a cheap CO + N₂ fuel/reducing mixture. Water gas passes steam over red-hot coke: C + H₂O → CO + H₂ (endothermic), giving CO + H₂ — an important feedstock for methanol synthesis and Fischer-Tropsch chemistry. Both are the same underlying idea: excess hot carbon reduces an oxidant while itself reaching only +2 (CO), because any CO₂ formed is immediately reduced back to CO by the surrounding coke.
 
-## 5.3 Carbon dioxide: ratio-dependent reactions
+## 5.3 Silicon carbide and silica gel
 
-CO₂ is an acidic oxide; its reaction with hydroxide is strictly dependent on the relative quantities of each reagent:
+**Silicon carbide (SiC, carborundum):** extremely hard, made by heating SiO₂ with excess coke at high temperature (SiO₂ + 3C →(Δ) SiC + 2CO); used as an abrasive.
 
-\[\mathrm{CO_2+OH^-\rightarrow HCO_3^-}\qquad(\text{limited base, i.e. CO}_2\text{ in excess})\]
-\[\mathrm{CO_2+2OH^-\rightarrow CO_3^{2-}+H_2O}\qquad(\text{excess base})\]
+**Silica gel:** amorphous (non-crystalline) SiO₂, prepared by acidifying sodium silicate solution; the resulting gel dries to a highly porous solid with enormous internal surface area. It works as a desiccant/adsorbent purely by physical adsorption of moisture into its pores — not by any special chemical reactivity.
 
-For a **limited quantity of base relative to CO₂**, the bicarbonate ion is favoured; for **excess base**, the fully deprotonated carbonate ion is favoured. This reagent-ratio discipline — identical in spirit to the ammonia/chlorine excess rule (§7.2) — is essential across essentially every p-block acid–base and redox reaction in this syllabus.
+## 5.4 Producer/water gas numerical and the CO/CO₂ mixture problem
 
-## 5.4 Silicon tetrachloride, silica and glass
+> **Worked Example — separating CO from CO₂ in a gas mixture (a classic quantitative-analysis question).** A gas mixture of CO and CO₂ is passed first through Ca(OH)₂ solution, then the residual gas through hot I₂O₅. How is each component quantified?
+>
+> **Step 1 — remove and quantify CO₂:** Ca(OH)₂ + CO₂ → CaCO₃↓ + H₂O. The residual gas volume after this step is entirely CO; the mass of CaCO₃ precipitated gives the original moles of CO₂ directly.
+>
+> **Step 2 — quantify the remaining CO:** the residual CO reduces iodine pentoxide, 5CO + I₂O₅ → I₂ + 5CO₂. The I₂ liberated is titrated against standard sodium thiosulphate, I₂ + 2Na₂S₂O₃ → 2NaI + Na₂S₄O₆, and the thiosulphate volume back-calculates the moles of CO via the 5:1 (CO:I₂) then 1:2 (I₂:S₂O₃²⁻) stoichiometric chain.
+>
+> **General method:** this two-reagent strategy — a basic hydroxide to remove the acidic component, then a selective oxidant/reductant coupled to an iodometric titration for the other — is the standard template for separating and quantifying any acidic/neutral gas pair in a mixture.
 
-SiCl₄ hydrolyses readily and completely because silicon (unlike carbon) can accept incoming electron density from a water oxygen into a low-energy vacant orbital, forming a pentacoordinate transition state en route to the strong Si–O bonds of the product:
+## 5.5 Glass and cement — two industrial silicate materials
 
-\[\mathrm{SiCl_4+2H_2O\rightarrow SiO_2+4HCl}\]
+**Ordinary (soda-lime) glass** is a mixture of sodium and calcium silicates, made by fusing sand (SiO₂), soda ash (Na₂CO₃) and limestone (CaCO₃): Na₂CO₃ + SiO₂ →(Δ) Na₂SiO₃ + CO₂, and CaCO₃ + SiO₂ →(Δ) CaSiO₃ + CO₂. Glass is not a true crystalline solid but an **amorphous, supercooled liquid** — it has no sharp melting point, only a softening range, which is why old window panes can be measurably thicker at the bottom.
 
-Silica (SiO₂) is chemically inert to most acids but is attacked by hydrofluoric acid (§4.3); consequently, HF is stored in polyethylene or wax-lined containers rather than ordinary glass. **Glass is itself a supercooled, amorphous silicate mixture** (not a single stoichiometric compound): its exact blend of network-former (SiO₂) and network-modifier oxides (Na₂O, CaO, B₂O₃, PbO, depending on the type of glass — soda-lime, borosilicate/Pyrex, or lead/flint glass) controls its softening point, chemical resistance and optical properties. Avoid ever quoting a single universal molecular formula for "glass."
+**Portland cement**, similarly silicate-based, sets by hydrating calcium silicates (Ca₃SiO₅, Ca₂SiO₄) into an interlocking network of hydrated calcium silicate gel — the same SiO₄-tetrahedron logic underlies both materials, just with different cation frameworks and degrees of cross-linking.
 
 # 6. Silicates, zeolites and silicones: framework logic
 
-The universal silicate building block is the [SiO₄]⁴⁻ tetrahedron. Each tetrahedron may share 0, 1, 2, 3 or 4 of its corner oxygens with neighbouring tetrahedra; sharing a corner means that single oxygen atom is bonded to two silicon centres simultaneously, which both lowers the overall oxygen-to-silicon ratio and changes the residual anionic charge per silicon.
+## 6.1 Silicate classification by shared oxygens
 
-| Corners shared per tetrahedron | Representative structural pattern | Resulting anion / material |
-|---|---|---|
-| 0 | orthosilicate — fully isolated tetrahedra | [SiO₄]⁴⁻ (e.g., in zircon, olivine) |
-| 2 (single chain) | pyroxene-type infinite single chain | [(SiO₃)ₙ]²ⁿ⁻ |
-| 2 (paired into a double chain) | amphibole-type double chain | [(Si₄O₁₁)ₙ]⁶ⁿ⁻ |
-| 3 | mica/clay-type infinite sheet | [(Si₂O₅)ₙ]²ⁿ⁻ |
-| 4 | three-dimensional framework | quartz (SiO₂, neutral) or aluminosilicate zeolites (anionic) |
+Every silicate is built from the **SiO₄ tetrahedron**. The number of oxygens *shared* between adjacent tetrahedra sets the structure type — the single organising idea of this whole topic:
 
-**Zeolites** are crystalline, porous **aluminosilicate** frameworks formed when some Si(IV) tetrahedral sites are isomorphously replaced by Al(III). Each such substitution leaves one unit of negative framework charge, which is balanced by a mobile, exchangeable cation (commonly Na⁺ or Ca²⁺) residing within the pore system. This dual feature — a fixed, rigid, size-selective pore architecture plus mobile, exchangeable cations — is exactly what gives zeolites both **ion-exchange capacity** (synthetic zeolites, "permutit," soften hard water by swapping their Na⁺ for dissolved Ca²⁺/Mg²⁺) and **shape-selective catalytic activity** (ZSM-5 and related zeolites in petroleum cracking and methanol-to-gasoline processes, where only molecules of the right size and shape can diffuse to and from the internal acid sites). The most reliable approach to any zeolite question is to work through, in order: **(1) identify the framework/substitution pattern, (2) establish the charge balance, (3) then reason about the resulting pore/ion-exchange/catalytic function.**
+| Shared O per tetrahedron | Structure type | Example |
+|---:|---|---|
+| 0 | Orthosilicate (isolated SiO₄⁴⁻) | Zircon, olivine |
+| 1 | Pyrosilicate (Si₂O₇⁶⁻) | Thortveitite |
+| 2 | Chain/pyroxene silicate | Enstatite (single chain), asbestos (double chain) |
+| 3 | Sheet silicate | Mica, talc, kaolin |
+| 4 | 3-D framework silicate | Quartz, feldspar |
 
-Silicones are synthetic organosilicon polymers built from repeating **–Si–O–Si–** (siloxane) linkages carrying organic substituents (typically methyl groups) directly bonded to silicon. They are manufactured by hydrolysing organochlorosilanes, R\_nSiCl₍₄₋ₙ₎, and then allowing the resulting silanols to condense:
+All of these, remarkably, share the *same* empirical formula ratio SiO₂ once fully cross-linked, despite radically different structures — the shared-oxygen count, not the formula, is what the question is really asking about.
 
-\[\mathrm{R_2SiCl_2+2H_2O\rightarrow R_2Si(OH)_2+2HCl}\]
+## 6.2 Zeolites
 
-followed by intermolecular condensation (loss of water) to build up –Si–O–Si– links. The **number of hydrolysable Cl atoms on the starting chlorosilane directly controls the resulting polymer topology**: R₃SiCl (one hydrolysable Cl) can only terminate a growing chain; R₂SiCl₂ (two hydrolysable Cl) builds linear chains; RSiCl₃ (three hydrolysable Cl) introduces cross-links and produces a three-dimensional network. Silicones combine high thermal stability, marked hydrophobicity and chemical inertness — properties that follow directly from the strong, polar Si–O bond and the flexible, freely-rotating backbone — and are used as water-repellent coatings, high-temperature lubricants and greases, and in medical/cosmetic implants.
+3-D aluminosilicate frameworks in which some Si⁴⁺ is replaced by Al³⁺, giving the framework a net negative charge balanced by mobile cations (Na⁺, Ca²⁺) sitting in cavities. That mobility is exactly what makes zeolites useful as **ion-exchangers** (water softening) and **molecular sieves** (size-selective adsorption/catalysis, since the cavity size can be tuned by composition).
 
+## 6.3 Silicones
+
+Synthetic polymers (R₂SiO)ₙ with a repeating –Si–O–Si–O– backbone and organic groups (commonly methyl) attached to silicon. Prepared by hydrolysis of R₂SiCl₂ followed by condensation polymerisation: nR₂SiCl₂ + 2nH₂O → n R₂Si(OH)₂ + 2nHCl, then condensation eliminates water to build the chain. Water-repellent, thermally stable, chemically inert — used as sealants, lubricants, waterproofing agents, and in medical implants.
+
+## 6.4 Tin and lead compounds
+
+**SnCl₂:** a reducing agent, readily oxidised to Sn⁴⁺ — used to reduce Hg²⁺ to Hg and Fe³⁺ to Fe²⁺ in qualitative tests.
+
+**PbO₂:** a strong oxidising agent, readily reduced to Pb²⁺ — oxidises conc. HCl to Cl₂ and Mn²⁺ to MnO₄⁻ (see the worked Sn²⁺/Pb⁴⁺ example in §4.2).
+
+**Pb₃O₄ (red lead):** a mixed oxide, effectively 2PbO·PbO₂. With dilute HNO₃: Pb₃O₄ + 4HNO₃ → 2Pb(NO₃)₂ + PbO₂ + 2H₂O — a classic piece of evidence for its mixed +2/+4 oxidation states, since only the +4 portion survives as insoluble PbO₂ while the +2 portion dissolves as the nitrate.
+
+**PbS:** occurs naturally as galena, the chief ore of lead.
+
+## 6.5 Practice problems
+
+1. Why is graphite a better conductor than diamond? *(Graphite's sp² carbons each leave one electron delocalised across the sheet; diamond's sp³ carbons use every valence electron in a localised σ bond.)*
+2. Is CO acidic, basic or neutral? *(Neutral — a well-known exception to "non-metal oxide = acidic.")*
+3. Distinguish producer gas from water gas by the oxidant used. *(Producer gas: O₂ from air. Water gas: H₂O steam.)*
+4. Classify a silicate containing the ion Si₂O₇⁶⁻. *(Pyrosilicate — one shared oxygen between two tetrahedra.)*
+5. What makes zeolites useful as molecular sieves? *(Their cavity size, tunable via Al-for-Si substitution, allows size-selective adsorption.)*
+6. Sn²⁺ or Pb²⁺ — which is the more powerful reducing agent, and why? *(Sn²⁺ — for tin, +2 is the less stable, "eager to be oxidised" state; for lead, +2 is the stable state and does not reduce readily.)*
+7. Write the reaction of Pb₃O₄ with dilute HNO₃ and state what it proves. *(Pb₃O₄ + 4HNO₃ → 2Pb(NO₃)₂ + PbO₂ + 2H₂O — proves Pb₃O₄ is a mixed +2/+4 oxide, not a single oxidation state.)*
+8. Why can silicon not form an Si=O double bond the way carbon forms C=O? *(Silicon's 3p orbitals are too large/diffuse for efficient π overlap with oxygen's compact 2p orbital.)*
+9. CCl₄ does not hydrolyse but SiCl₄ does — explain in terms of orbital availability. *(Silicon has empty accessible 3d orbitals allowing water to attack before Cl⁻ leaves; carbon has none and cannot expand past 4-coordinate.)*
+10. Why is SiH₄ a stronger reducing agent than CH₄, even though CH₄ is thermally more stable? *(Thermal stability and reducing power are opposite trends down the group — SiH₄'s weaker Si–H bond both destabilises it thermally and makes it more readily oxidised.)*
+11. What happens to PbCl₄ on gentle warming, and why? *(PbCl₄ → PbCl₂ + Cl₂ — the inert-pair effect makes Pb²⁺ more stable than Pb⁴⁺, so the tetrahalide spontaneously loses Cl₂.)*
+12. A gas mixture of CO and CO₂ is passed through Ca(OH)₂ then hot I₂O₅. What does each step measure? *(Ca(OH)₂ removes and quantifies CO₂ as CaCO₃; I₂O₅ oxidises the remaining CO to CO₂, liberating I₂ that is titrated against thiosulphate to quantify CO.)*
+13. Why is ordinary glass not considered a true crystalline solid? *(It is an amorphous, supercooled liquid with no sharp melting point, only a softening range.)*
 # 7. Group 15: nitrogen, ammonia and nitrogen oxides
 
 Members are N, P, As, Sb and Bi. Nitrogen is anomalous for the reasons in §1.2: small size, high electronegativity, no d orbitals, and a very strong N≡N triple bond (bond enthalpy ≈ 946 kJ mol⁻¹, among the strongest of any diatomic molecule). Common oxidation states span −3 to +5, with −3, +3 and +5 the most exam-relevant.

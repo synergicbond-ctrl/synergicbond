@@ -1,55 +1,27 @@
-"use client";
-
-// LoopPilotSection — the Learn→Retrieve→Revise pilot surface for ONE lesson
-// (Phase 5 of the IA rollout). Rendered ONLY when loop_pilot_v1 is enabled;
-// the lesson page returns its exact pre-pilot tree otherwise.
+// LoopPilotSection — SERVER component shell for the Learn→Retrieve→Revise
+// pilot on one lesson (Phase 5; server/client split added in Phase 7).
+//
+// Everything static — the scoped style block and the placeholder notice —
+// renders on the server so its code never reaches the browser. Only
+// LoopPilotRunner (the answering flow) is a client component.
 //
 // Content is PLACEHOLDER ONLY (visibly marked). Faculty-authored items
-// replace components/retrieval/fixtures.ts imports under founder decision
-// F6 — this file changes by swapping the imported items, nothing else.
+// replace the fixtures import under founder decision F6; nothing else in
+// this file changes when they land.
 
-import { useState } from "react";
-import {
-  RetrievalStyles,
-  RetrievalQuestion,
-  RetrievalCard,
-  SessionSummary,
-  type RetrievalResult,
-  type SessionSummaryRow,
-} from "@/components/retrieval";
+import { RetrievalStyles } from "@/components/retrieval/styles";
+import { RetrievalCard } from "@/components/retrieval/RetrievalCard";
 import { PLACEHOLDER_ITEMS } from "@/components/retrieval/fixtures";
-import { recordRetrievalResult } from "@/lib/retrieval/record";
+import type { RetrievalContext } from "@/lib/retrieval/submission";
+import { LoopPilotRunner } from "./LoopPilotRunner";
 
-const CONTEXT = {
+const CONTEXT: RetrievalContext = {
   contextId: "ceq-part01",
   exam: "jee",
   chapterId: "chemical-equilibrium",
 };
 
 export function LoopPilotSection() {
-  const [results, setResults] = useState<Record<string, RetrievalResult>>({});
-  const items = PLACEHOLDER_ITEMS;
-  const allAnswered = items.every((item) => results[item.id] !== undefined);
-
-  const summaryRows: SessionSummaryRow[] = items.map((item) => {
-    const r = results[item.id];
-    return {
-      itemId: item.id,
-      label: item.prompt,
-      correct: r?.correct ?? false,
-      note:
-        r?.confident === undefined
-          ? undefined
-          : r.confident && r.correct
-            ? "sure & right"
-            : r.confident
-              ? "sure but wrong"
-              : r.correct
-                ? "unsure but right"
-                : "unsure & wrong",
-    };
-  });
-
   return (
     <section
       aria-label="Retrieval pilot (placeholder content)"
@@ -63,25 +35,7 @@ export function LoopPilotSection() {
           cohort sees this lesson (decision F6).
         </p>
       </RetrievalCard>
-      {items.map((item) => (
-        <RetrievalQuestion
-          key={item.id}
-          item={item}
-          tag={`Check yourself · ${CONTEXT.contextId}`}
-          onResult={(result) => {
-            setResults((prev) =>
-              prev[result.itemId] ? prev : { ...prev, [result.itemId]: result }
-            );
-            recordRetrievalResult(item, result, CONTEXT);
-          }}
-        />
-      ))}
-      {allAnswered && (
-        <SessionSummary
-          rows={summaryRows}
-          takeaway="Placeholder run complete — results recorded to the attempts layer."
-        />
-      )}
+      <LoopPilotRunner items={PLACEHOLDER_ITEMS} context={CONTEXT} />
     </section>
   );
 }

@@ -1,13 +1,20 @@
 import Part from "../_components/Part01";
 import { isFeatureEnabled } from "@/lib/featureFlags";
-import { LoopPilotSection } from "../_components/LoopPilotSection";
 
-// loop_pilot_v1 (OFF by default): the flag is a build-time constant, so the
-// disabled build renders this page's exact pre-pilot DOM and dead-code
-// eliminates the pilot branch; the enabled build server-renders the pilot
-// section below the lesson (no client-side pop-in).
-export default function Page() {
+// loop_pilot_v1 — OFF by default.
+//
+// Flag off: this page renders the pre-pilot tree and the pilot's rendered
+// output is entirely absent (verified against a pre-pilot build).
+//
+// It is NOT byte-free when disabled, and Phase 7 measured why: Turbopack
+// groups this route's client modules into one chunk, so ~5.1 KB of never-
+// executed pilot code rides inside a chunk the lesson downloads anyway.
+// Neither a dynamic import nor a bundler-foldable env literal removes it —
+// both were measured. Accepted for a flag-gated pilot; the cost disappears
+// when the pilot is either promoted (flag retired) or reverted.
+export default async function Page() {
   if (!isFeatureEnabled("loop_pilot_v1")) return <Part />;
+  const { LoopPilotSection } = await import("../_components/LoopPilotSection");
   return (
     <>
       <Part />

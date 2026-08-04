@@ -4,7 +4,7 @@
 // names (or selects) where they think it went wrong before moving on. The
 // note is reported upward; nothing is stored here (Phase 4 owns persistence).
 
-import { useState } from "react";
+import { useId, useState } from "react";
 
 export function MistakeReflection({
   prompt = "Where do you think it went wrong?",
@@ -19,6 +19,7 @@ export function MistakeReflection({
   const [choiceId, setChoiceId] = useState<string | undefined>(undefined);
   const [note, setNote] = useState("");
   const [done, setDone] = useState(false);
+  const noteId = useId();
 
   if (done) {
     return (
@@ -50,11 +51,11 @@ export function MistakeReflection({
         </div>
       )}
       <div className="sbrReflect">
-        <label className="sbrConfLabel" htmlFor="sbr-reflection-note">
+        <label className="sbrConfLabel" htmlFor={noteId}>
           In your own words (optional)
         </label>
         <textarea
-          id="sbr-reflection-note"
+          id={noteId}
           value={note}
           onChange={(e) => setNote(e.target.value)}
           placeholder="One line is enough."

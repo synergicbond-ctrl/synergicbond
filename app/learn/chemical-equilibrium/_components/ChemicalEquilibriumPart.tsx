@@ -22,6 +22,28 @@ export default function ChemicalEquilibriumPart({ part, title, sourcePages, html
       ],
       throwOnError: false,
       strict: false,
+      // Default output already includes MathML, which is what screen readers
+      // announce; stated explicitly so a future config edit can't silently
+      // drop it and make every equation unreadable to assistive tech.
+      output: "htmlAndMathml",
+    });
+
+    // WCAG 2.1.1: a horizontally scrollable region must be reachable by
+    // keyboard. Equations and (since the mobile pass) wide tables scroll
+    // inside their own box, so give the ones that actually overflow a focus
+    // stop and an accessible name. Runs after KaTeX, which creates
+    // .katex-display.
+    const scrollers = ref.current.querySelectorAll<HTMLElement>(".katex-display, table");
+    scrollers.forEach((el) => {
+      if (el.scrollWidth <= el.clientWidth) return;
+      el.tabIndex = 0;
+      el.setAttribute("role", "region");
+      if (!el.getAttribute("aria-label")) {
+        el.setAttribute(
+          "aria-label",
+          el.tagName === "TABLE" ? "Data table, scrollable" : "Equation, scrollable"
+        );
+      }
     });
   }, [html]);
 

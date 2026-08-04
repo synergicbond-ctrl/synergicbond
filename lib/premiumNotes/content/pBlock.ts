@@ -447,7 +447,13 @@ export const P_BLOCK_NOTES: PremiumChapterNotes = {
                 "• Na₂B₄O₇·10H₂O →(≈60 °C) Na₂B₄O₇·5H₂O →(Δ) Na₂B₄O₇ →(Δ, strong) 2NaBO₂ + B₂O₃ — the transparent GLASSY MASS used in the bead test.",
                 "• Alkaline solution (salt of strong base + weak acid): Na₂B₄O₇ + 7H₂O ⇌ 2NaOH + 4H₃BO₃",
                 "• With acids, borax gives boric acid: Na₂B₄O₇ + H₂SO₄ + 5H₂O → Na₂SO₄ + 4H₃BO₃, and Na₂B₄O₇ + 2HCl + 5H₂O → 2NaCl + 4H₃BO₃",
-                "• With ammonium chloride on strong heating: Na₂B₄O₇ + 2NH₄Cl → 2BN + B₂O₃ + 2NaCl + 4H₂O — a standard laboratory route to boron nitride."
+                "• With ammonium chloride on strong heating: Na₂B₄O₇ + 2NH₄Cl → 2BN + B₂O₃ + 2NaCl + 4H₂O — a standard laboratory route to boron nitride.",
+                "• EXACT BEAD TEMPERATURE: Na₂B₄O₇ →(740 °C) 2NaBO₂ + B₂O₃ (glassy mass). Below this the powder merely swells as it loses steam; the transparent bead forms at 740 °C.",
+                "• STRUCTURE COUNT: the correct formula Na₂[B₄O₅(OH)₄]·8H₂O contains both planar BO₃ and tetrahedral BO₄ units, and exactly FIVE B–O–B linkages — a precise counting question.",
+                "• BORAX AS A BUFFER: its aqueous solution contains equal amounts of a weak acid, B(OH)₃, and its salt, [B(OH)₄]⁻ — the textbook definition of a buffer.",
+                "• SODIUM PERBORATE (peroxoborate): 2NaBO₂ + 2H₂O₂ + 6H₂O → Na₂[(OH)₂B(O–O)₂B(OH)₂]·6H₂O. Used as a BRIGHTENER in washing powder; in very hot water (above 80 °C) the –O–O– linkages break down to release H₂O₂, which is the actual bleaching agent.",
+                "• With HF: Na₂[B₄O₅(OH)₄] + 12HF →(−H₂O) Na₂O(BF₃)₄, which with H₂SO₄ gives 4BF₃ + 2NaHSO₄ + H₂O.",
+                "• Uses of borax: borax bead test · purifying gold · flux during welding of metals · manufacture of glass (borosilicate) · as a primary standard and buffer."
               ],
               "exams": ["JEE Advanced"]
             },
@@ -773,6 +779,150 @@ export const P_BLOCK_NOTES: PremiumChapterNotes = {
           ]
         },
         {
+          "id": "g13-halides-comparative",
+          "title": "Group 13 Halides — Comparative Behaviour & Coordination",
+          "exams": ["JEE Advanced"],
+          "blocks": [
+            {
+              "kind": "detailed",
+              "heading": "Ionic vs covalent, and the TlI₃ trap",
+              "points": [
+                "• The FLUORIDES of Al, Ga and In are IONIC; all other Group 13 trihalides are covalent. Boron's halides are covalent without exception.",
+                "• Boron trihalides are always MONOMERS — boron is too small to accommodate the bridging needed for dimerisation. AlCl₃ and AlBr₃ dimerise; this contrast is regularly examined.",
+                "• TlI₃ IS NOT THALLIUM(III) IODIDE. It is Tl⁺(I₃)⁻ — thallium(I) TRI-IODIDE, containing the linear triiodide ion. Genuine Tl³⁺(I⁻)₃ does not exist.",
+                "• The reason is a redox incompatibility: Tl³⁺ is a strong OXIDISING agent and I⁻ is a good REDUCING agent, so they cannot coexist — an internal redox reaction would occur immediately (Tl³⁺ + 2I⁻ → Tl⁺ + I₂, and the I₂ then binds a further I⁻ to give I₃⁻).",
+                "• Same logic to remember: any combination of a strongly oxidising cation with a strongly reducing anion (Cu²⁺ with I⁻, Fe³⁺ with I⁻, Tl³⁺ with I⁻) is unstable and redox-collapses."
+              ],
+              "exams": ["JEE Advanced"]
+            },
+            {
+              "kind": "detailed",
+              "heading": "Lewis acidity — the order REVERSES between hard and soft bases",
+              "points": [
+                "• Toward HARD bases (F⁻, O-donors such as ethers, amines): BX₃ > AlX₃ > GaX₃ > InX₃ — boron, the smallest and hardest acceptor, binds hard bases best.",
+                "• Toward SOFT bases (S-donors, P-donors, large polarisable ligands): BX₃ < AlX₃ < GaX₃ < InX₃ — the order completely inverts, because larger, softer acceptors match soft donors better.",
+                "• This is the Hard-Soft Acid-Base (HSAB) principle applied inside a single group; a question that specifies the base type is testing whether you noticed the reversal.",
+                "• Maximum coordination number: for B and Al the maximum CN is satisfied only by FLUORINE (BF₄⁻ with CN 4; AlF₆³⁻ with CN 6). For Ga and In, CN 6 can be reached with either F or Cl: [GaX₆]³⁻ and [InX₆]³⁻ where X = F, Cl."
+              ],
+              "exams": ["JEE Advanced"]
+            },
+            {
+              "kind": "detailed",
+              "heading": "Coordination number of aluminium halides by state",
+              "points": [
+                "STATE  •  AlF₃  •  AlCl₃  •  AlBr₃  •  AlI₃",
+                "SOLID  •  CN 6  •  CN 6  •  CN 4  •  CN 4",
+                "MELT / FUSED  •  —  •  CN 4  •  CN 4  •  CN 4",
+                "VAPOUR  •  monomer  •  CN 4  •  CN 4  •  CN 4",
+                "• AlF₃ is ionic with a 6-coordinate lattice and does not melt to a molecular liquid; it passes to a monomeric vapour.",
+                "• AlCl₃ is 6-coordinate in the SOLID (ionic-like layer lattice) but converts to 4-coordinate dimeric Al₂Cl₆ on melting — which is why molten AlCl₃ is a poor electrical conductor while solid AlCl₃ conducts: a favourite conceptual question.",
+                "• Temperature dependence in the vapour: BELOW ≈350 °C the dimer Al₂Cl₆ predominates; ABOVE ≈350 °C it dissociates to the monomer AlCl₃."
+              ],
+              "exams": ["JEE Advanced"]
+            }
+          ]
+        },
+        {
+          "id": "g13-oxides-hydroxides-alumina",
+          "title": "Oxides & Hydroxides — Acid-Base Gradation and Alumina",
+          "exams": ["JEE Advanced"],
+          "blocks": [
+            {
+              "kind": "detailed",
+              "heading": "The acid → amphoteric → base gradation",
+              "points": [
+                "OXIDES  •  B₂O₃ ACIDIC  •  Al₂O₃, Ga₂O₃ AMPHOTERIC  •  In₂O₃, Tl₂O BASIC",
+                "HYDROXIDES  •  B(OH)₃ ACIDIC  •  Al(OH)₃, Ga(OH)₃ AMPHOTERIC  •  In(OH)₃, TlOH BASIC",
+                "• The gradation follows metallic character: as the element becomes more metallic down the group, its oxide/hydroxide becomes more basic. This one pattern repeats in every p-block group and is worth internalising once.",
+                "• B₂O₃ is acidic in general, but in the presence of a STRONGER acidic oxide it behaves as a BASE:",
+                "  B₂O₃ + 3SO₃ → B₂(SO₄)₃",
+                "  B₂O₃ + P₄O₁₀ → 4BPO₄",
+                "• TlOH is a strong base, fully comparable to an alkali metal hydroxide — the far end of the gradation."
+              ],
+              "exams": ["JEE Advanced"]
+            },
+            {
+              "kind": "detailed",
+              "heading": "Aluminium oxide — α vs γ alumina",
+              "points": [
+                "• Al₂O₃ (alumina) occurs as BAUXITE and CORUNDUM. It is a white amorphous powder, insoluble in water, soluble in both acids (→ AlCl₃) and alkalis (→ NaAlO₂) — i.e. AMPHOTERIC. It is a polar covalent compound.",
+                "TWO FORMS:",
+                "• γ-Al₂O₃ — from 2Al(OH)₃ →(450 °C) γ-Al₂O₃ + 3H₂O. SOFT; high surface area and porosity; used as a DEHYDRATING AGENT, ADSORBENT, CATALYST SUPPORT and in CHROMATOGRAPHY.",
+                "• α-Al₂O₃ — from Al(OH)₃ →(1000 °C) α-Al₂O₃. VERY HARD; hexagonal (corundum) structure; the thermodynamically stable form; used as an ABRASIVE and REFRACTORY (furnace linings).",
+                "• Interconversion: γ-Al₂O₃ →(1000 °C) α-Al₂O₃ — the soft, high-surface form converts irreversibly to the hard, dense form on strong heating.",
+                "PRECIOUS GEMS ARE Al₂O₃ WITH TRACE TRANSITION-METAL IMPURITIES:",
+                "• Ruby — RED — Cr³⁺",
+                "• Sapphire — BLUE — Fe²⁺/Fe³⁺ and Ti⁴⁺",
+                "• Oriental topaz — YELLOW — Fe³⁺",
+                "• Oriental emerald — GREEN — Cr³⁺/V³⁺",
+                "• Other preparations: Al₂(SO₄)₃ →(Δ) Al₂O₃ + 3SO₃; 2Al(OH)₃ →(Δ) Al₂O₃ + 3H₂O.",
+                "• Corundum is used as 'jewellers rouge' for polishing glass."
+              ],
+              "exams": ["JEE Advanced"]
+            }
+          ]
+        },
+        {
+          "id": "g13-aluminium-metal-compounds",
+          "title": "Aluminium Metal, AlCl₃·6H₂O & Alums",
+          "exams": ["JEE Advanced"],
+          "blocks": [
+            {
+              "kind": "detailed",
+              "heading": "Aluminium — physical data and reactions",
+              "points": [
+                "• Silvery-white metal; DENSITY 2.7 g/cm³; MELTING POINT 660 °C; excellent conductor of heat and electricity; malleable and ductile.",
+                "• With air: DRY air has no action. MOIST air forms a thin protective Al₂O₃ film (loss of lustre). At very high temperature it burns to give BOTH Al₂O₃ AND AlN.",
+                "• With halogens: 2Al + 3Cl₂ → 2AlCl₃ (anhydrous)",
+                "• With alkali: 2Al + 2NaOH + 2H₂O → 2NaAlO₂ + 3H₂↑ (sodium meta-aluminate)",
+                "• With acids: 2Al + 3H₂SO₄ → Al₂(SO₄)₃ + 3H₂↑ and 2Al + 6HCl → 2AlCl₃ + 3H₂↑. But CONC. HNO₃ does NOT react — it PASSIVATES aluminium by forming a protective oxide layer.",
+                "• With nitrogen: 2Al + N₂ → 2AlN. Hot aluminium therefore acts as an ABSORBING AGENT for N₂. The nitride hydrolyses: AlN + 3H₂O → Al(OH)₃ + NH₃.",
+                "• With water: NO reaction with cold water; very slowly attacked by boiling water or steam: 2Al + 6H₂O → 2Al(OH)₃ + 3H₂↑",
+                "• THERMITE / GOLDSCHMIDT reduction — aluminium reduces the oxide of any less reactive metal: 3MnO₂ + 4Al → 2Al₂O₃ + 3Mn; Cr₂O₃ + 2Al → Al₂O₃ + 2Cr; Fe₂O₃ + 2Al → Al₂O₃ + 2Fe (railway-track welding).",
+                "• Uses: utensils, anti-corrosion plating for steel, aluminium cables, precision instruments, surgical apparatus, aircraft bodies, rail coaches, motorboats."
+              ],
+              "exams": ["JEE Advanced"]
+            },
+            {
+              "kind": "detailed",
+              "heading": "Aluminium chloride hexahydrate & the qualitative-analysis tests",
+              "points": [
+                "• AlCl₃·6H₂O is a colourless crystalline solid, soluble in water. ANHYDROUS AlCl₃ is a deliquescent white solid.",
+                "• Preparations: 2Al + 6HCl → 2AlCl₃ + 3H₂↑; Al₂O₃ + 6HCl → 2AlCl₃ + 3H₂O; Al(OH)₃ + 3HCl → AlCl₃ + 3H₂O. Anhydrous forms need Cl₂ on heated Al, or Al₂O₃ + 3C + 3Cl₂ → 2AlCl₃ + 3CO.",
+                "• Action of heat on the hydrate: 2AlCl₃·6H₂O →(Δ) Al₂O₃ + 6HCl↑ + 9H₂O. You CANNOT obtain anhydrous AlCl₃ by heating the hydrate — a classic trap.",
+                "• In moist air: AlCl₃ + 3H₂O ⇌ Al(OH)₃ + 3HCl↑ — white fumes of HCl.",
+                "• With ammonia: AlCl₃ + 6NH₃ → AlCl₃·6NH₃ (white solid), since AlCl₃ is a Lewis acid.",
+                "TWO DISTINGUISHING TESTS (learn the pairing, not just the reaction):",
+                "• With NaOH: AlCl₃ + 3NaOH → Al(OH)₃↓ + 3NaCl, and the precipitate DISSOLVES in excess NaOH: Al(OH)₃ + NaOH → NaAlO₂ + 2H₂O. This distinguishes Al³⁺ from Mg²⁺, Ca²⁺, Sr²⁺, Ba²⁺, whose hydroxides do NOT dissolve in excess NaOH.",
+                "• With NH₄OH: AlCl₃ + 3NH₄OH → Al(OH)₃↓ (white gelatinous) + 3NH₄Cl, and the precipitate does NOT dissolve in excess NH₄OH. This distinguishes Al³⁺ from Zn²⁺, because Zn(OH)₂ DOES dissolve in excess NH₄OH (forming the ammine complex).",
+                "• Hydrolysis makes the solution acidic to litmus: [Al(H₂O)₆]³⁺ ⇌ [Al(H₂O)₅OH]²⁺ + H⁺; the hydroxo cation then dimerises: 2[Al(H₂O)₅OH]²⁺ → [(H₂O)₄Al(OH)₂Al(H₂O)₄]⁴⁺ + 2H₂O.",
+                "• With lithium hydride: 4LiH + AlCl₃ → LiAlH₄ + 3LiCl — the standard laboratory synthesis of LAH.",
+                "• Uses: catalyst for petroleum cracking, Friedel-Crafts catalyst, preparation of aluminium compounds."
+              ],
+              "exams": ["JEE Advanced"]
+            },
+            {
+              "kind": "detailed",
+              "heading": "Alums — general formula, members and uses",
+              "points": [
+                "• GENERAL FORMULA: M₂SO₄·M′₂(SO₄)₃·24H₂O, equivalently MM′(SO₄)₂·12H₂O.",
+                "• M = a UNIVALENT cation — K⁺, Na⁺, NH₄⁺, Rb⁺, Cs⁺, Tl⁺. LITHIUM IS EXCLUDED: Li⁺ is too small to meet the structural requirements of the alum lattice.",
+                "• M′ = a TRIVALENT cation — Al³⁺, Ti³⁺, V³⁺, Cr³⁺, Fe³⁺, Mn³⁺, Co³⁺, Ga³⁺.",
+                "• Structurally an alum contains [M(H₂O)₆]⁺, [M′(H₂O)₆]³⁺ and SO₄²⁻ in the ratio 1 : 1 : 2 — which accounts for all 12 (or 24) waters of crystallisation.",
+                "NAMED ALUMS:",
+                "• Potash alum — K₂SO₄·Al₂(SO₄)₃·24H₂O",
+                "• Chrome alum — K₂SO₄·Cr₂(SO₄)₃·24H₂O",
+                "• Ferric alum — K₂SO₄·Fe₂(SO₄)₃·24H₂O",
+                "• Ammonium alum — (NH₄)₂SO₄·Al₂(SO₄)₃·24H₂O",
+                "• Alums are DOUBLE SALTS: in solution they dissociate completely into all their constituent ions, so every ion gives its normal test. (Contrast a complex salt, where the coordinated ion is not detectable.)",
+                "• Preparation: equimolar M₂SO₄ and M′₂(SO₄)₃ are fused, dissolved in water and crystallised.",
+                "• Uses: MORDANT in dyeing (hydrolysis deposits Al(OH)₃ into the fibre, which then adsorbs the dye); GERMICIDE in water purification; COAGULATING AGENT for precipitating colloidal impurities from water."
+              ],
+              "exams": ["JEE Advanced"]
+            }
+          ]
+        },
+        {
           "id": "g13-problem-bank",
           "title": "Group 13 — JEE Problem Bank",
           "exams": ["JEE Advanced"],
@@ -853,6 +1003,91 @@ export const P_BLOCK_NOTES: PremiumChapterNotes = {
               "answer": "672 mL of H₂ at STP in BOTH cases — proving aluminium is amphoteric.",
               "insight": "Because the electron count per metal atom is what fixes the H₂ yield, any amphoteric metal (Al, Zn, Sn, Pb) gives identical gas volumes in acid and alkali. Examiners exploit this by asking for a 'ratio' — the answer is 1:1.",
               "fastMethod": "n(H₂) = n(metal) × (electrons lost per atom) / 2. For Al that is 3/2 in either medium."
+            },
+            {
+              "kind": "illustration",
+              "level": "advanced",
+              "concept": "Why 1 mole of borax neutralises exactly 2 moles of acid",
+              "tricky": true,
+              "question": "An aqueous solution containing 1 mole of borax reacts with exactly 2 moles of a strong acid. Which statement explains this? (A) formation of 2 mol B(OH)₃ only (B) formation of 2 mol [B(OH)₄]⁻ only (C) formation of 1 mol each of B(OH)₃ and [B(OH)₄]⁻ (D) formation of 2 mol each of [B(OH)₄]⁻ and B(OH)₃, of which only [B(OH)₄]⁻ reacts with the acid.",
+              "thinking": "Do not guess from the 1:2 ratio alone — several options could produce a 2. Write out what borax actually becomes on dissolution, then ask which of those species is basic enough to consume H₃O⁺.",
+              "steps": [
+                { "label": "Dissolve the borax anion", "work": "[B₄O₅(OH)₄]²⁻ + 5H₂O ⇌ 2B(OH)₃ + 2[B(OH)₄]⁻. So ONE borax unit gives TWO of each species — the solution contains equal amounts of the weak acid B(OH)₃ and its conjugate base [B(OH)₄]⁻ (which is also why borax acts as a buffer)." },
+                { "label": "Identify what reacts with acid", "work": "B(OH)₃ is itself a (very weak) ACID — it cannot neutralise added H₃O⁺. Only the borate anion [B(OH)₄]⁻ is basic: 2[B(OH)₄]⁻ + 2H₃O⁺ → 2B(OH)₃ + 4H₂O." },
+                { "label": "Count the equivalents", "work": "2 mol of [B(OH)₄]⁻ consume 2 mol of H₃O⁺. Hence 1 mol borax ≡ 2 mol acid — borax behaves as a DIACIDIC base." },
+                { "label": "Select the option", "work": "Option (D) is the only one that states both facts correctly: 2 mol of each species form, and only the borate anion reacts with acid." }
+              ],
+              "answer": "(D). Overall: Na₂B₄O₇ + 2HCl + 5H₂O → 2NaCl + 4H₃BO₃. On cooling, white flakes of boric acid separate.",
+              "insight": "This is precisely why borax is a PRIMARY STANDARD for standardising acids — the stoichiometry is exactly 1:2, and its high molar mass keeps weighing errors small.",
+              "commonMistakes": [
+                "Choosing (A) or (B) by matching the number 2 without checking WHICH species is basic.",
+                "Using a 1:1 borax:acid ratio, which halves every answer in a titration numerical."
+              ]
+            },
+            {
+              "kind": "illustration",
+              "level": "advanced",
+              "concept": "Multi-step reaction chain: identifying products from borax",
+              "question": "(a) Na₂B₄O₇ + conc. H₂SO₄ + H₂O → (A). Product (A) is then treated with C₂H₅OH and ignited, giving (B), identified by a characteristic flame colour. Identify (A) and (B). (b) Na₂B₄O₇ on strong heating gives (C); (C) with NaOH gives (D), and (C) with HF/H₂SO₄ gives (E). Identify (C), (D), (E).",
+              "thinking": "Reaction-chain questions are the most common p-block format. Work strictly one arrow at a time, writing the balanced equation before moving on — never jump to the final answer.",
+              "steps": [
+                { "label": "(a) Borax with strong acid", "work": "Na₂B₄O₇ + H₂SO₄ + 5H₂O → Na₂SO₄ + 4H₃BO₃. So (A) = ORTHOBORIC ACID, H₃BO₃." },
+                { "label": "(a) Boric acid with ethanol", "work": "Esterification: H₃BO₃ + 3C₂H₅OH → B(OC₂H₅)₃ + 3H₂O. So (B) = TRIETHYL BORATE, which is volatile and burns with a GREEN-EDGED FLAME — the classical test for the borate radical." },
+                { "label": "(b) Borax on strong heating", "work": "Na₂B₄O₇ →(740 °C) 2NaBO₂ + B₂O₃. Taking the boron-containing oxide, (C) = B₂O₃." },
+                { "label": "(b) B₂O₃ with NaOH", "work": "The acidic oxide is neutralised: B₂O₃ + 2NaOH → 2NaBO₂ + H₂O. So (D) = SODIUM METABORATE, NaBO₂." },
+                { "label": "(b) B₂O₃ with HF/H₂SO₄", "work": "B₂O₃ + 6HF → 2BF₃ + 3H₂O (H₂SO₄ acts as the dehydrating agent). So (E) = BORON TRIFLUORIDE, BF₃." }
+              ],
+              "answer": "(a) A = H₃BO₃, B = B(OC₂H₅)₃ (green-edged flame). (b) C = B₂O₃, D = NaBO₂, E = BF₃.",
+              "insight": "The green-edged flame of an alkyl borate is the standard identification of a borate in an unknown salt — pair it with the borax bead test as your two borate confirmations.",
+              "fastMethod": "In any 'borax + strong acid' step, the boron always ends up as H₃BO₃; in any 'borax + strong heat' step, it always ends up as NaBO₂ + B₂O₃."
+            },
+            {
+              "kind": "misc",
+              "level": "medium",
+              "question": "Which cation does NOT give the borax bead test: Cr³⁺, Co²⁺, Ag⁺, or Mn²⁺?",
+              "answer": "Ag⁺",
+              "explanation": "The bead test works only where the metal metaborate is COLOURED. Silver metaborate AgBO₂ is white/colourless, so no distinguishing bead colour appears. Cr³⁺ (green), Co²⁺ (blue) and Mn²⁺ all give coloured beads.",
+              "exams": ["JEE Advanced"]
+            },
+            {
+              "kind": "misc",
+              "level": "medium",
+              "question": "When borax is dissolved in water, which boron species are present?",
+              "answer": "BOTH B(OH)₃ and [B(OH)₄]⁻, in equal amounts",
+              "explanation": "[B₄O₅(OH)₄]²⁻ + 5H₂O ⇌ 2B(OH)₃ + 2[B(OH)₄]⁻. The equal weak-acid/conjugate-base pair is also why borax solution acts as a buffer.",
+              "exams": ["JEE Advanced"]
+            },
+            {
+              "kind": "misc",
+              "level": "hard",
+              "question": "BF₃ + LiAlH₄ →(ether) X. For X, state the total number of bonding electrons, 2-centre-2-electron bonds and 3-centre-2-electron bonds, and say whether X reacts with NH₃.",
+              "answer": "X = B₂H₆; 12 bonding electrons; 4 two-centre-2e bonds; 2 three-centre-2e bonds; YES it reacts with NH₃",
+              "explanation": "4BF₃ + 3LiAlH₄ → 2B₂H₆ + 3LiF + 3AlF₃. Diborane has 12 valence electrons (6 pairs): 4 pairs in terminal 2c-2e bonds and 2 pairs in the bridging 3c-2e bonds. It does react with ammonia — B₂H₆ + 2NH₃ → [BH₂(NH₃)₂]⁺[BH₄]⁻, which on heating to about 200 °C gives borazine.",
+              "exams": ["JEE Advanced"]
+            },
+            {
+              "kind": "misc",
+              "level": "hard",
+              "question": "What happens when boron trifluoride is kept in moist air — no reaction, partial hydrolysis, or complete hydrolysis?",
+              "answer": "It fumes strongly and is PARTIALLY hydrolysed",
+              "explanation": "4BF₃ + 6H₂O → 3H₃O⁺ + 3BF₄⁻ + B(OH)₃. The HF released immediately converts most of the boric acid to the very stable fluoroborate ion, so hydrolysis stops short of completion — unlike BCl₃/BBr₃/BI₃, which hydrolyse fully.",
+              "exams": ["JEE Advanced"]
+            },
+            {
+              "kind": "misc",
+              "level": "challenge",
+              "question": "True or false: (i) BCl₃ in aqueous solution exists as B³⁺ and Cl⁻. (ii) AlX₃ (X = Cl, Br) exists as a dimer in non-polar solvents. (iii) Be₂C is an acetylide because it gives ethyne with water.",
+              "answer": "(i) FALSE  (ii) TRUE  (iii) FALSE",
+              "explanation": "(i) BCl₃ hydrolyses to boric acid; B³⁺ never forms because boron's ionisation enthalpies are far too high (hydration could not compensate). (ii) Al₂Cl₆/Al₂Br₆ dimers persist in ether, benzene and similar non-polar media. (iii) Be₂C is a METHANIDE — it gives METHANE, not ethyne: Be₂C + 4H₂O → 2Be(OH)₂ + CH₄. Al₄C₃ behaves the same way; CaC₂ is the true acetylide.",
+              "exams": ["JEE Advanced"]
+            },
+            {
+              "kind": "misc",
+              "level": "challenge",
+              "question": "Write the equations for preparing elemental boron starting from the mineral colemanite.",
+              "answer": "Ca₂B₆O₁₁ + 4SO₂ + 11H₂O → 2Ca(HSO₃)₂ + 6H₃BO₃ ; 2H₃BO₃ → B₂O₃ + 3H₂O ; B₂O₃ + 2Al → Al₂O₃ + 2B",
+              "explanation": "Three stages: liberate boric acid from the mineral, dehydrate it to the oxide, then reduce the oxide with a reactive metal (Al, Mg, Na or K all work).",
+              "exams": ["JEE Advanced"]
             },
             {
               "kind": "misc",

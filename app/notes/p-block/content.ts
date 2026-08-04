@@ -154,11 +154,11 @@ B₂H₆ has **4 terminal 2-centre-2-electron B–H bonds** and **2 bridging 3-c
 
 **Boron nitride, (BN)ₓ** — "inorganic graphite." B–N bond order 1.33 (same back-donation logic as B–F). Hexagonal BN (h-BN) is sheet-like, alternating B/N hexagons stacked like graphite, but with layers **eclipsed** (each B directly above an N; graphite's are staggered) — B–N distance 145 pm, interlayer spacing 330 pm. h-BN is a soft lubricant ("white graphite"), an excellent electrical *insulator* yet an outstanding thermal conductor — the opposite of graphite's conductivity, because the polar B–N bond localises the π electrons on nitrogen instead of leaving them free. Cubic BN (borazon), made by compressing h-BN at high pressure/temperature, is the second-hardest known material after diamond and — unlike diamond — chemically stable toward hot iron, which is why it (not diamond) is used to machine steel.
 
+## 2.7 Organoboron and organoaluminium chemistry
+
+**Trialkyl/triaryl derivatives (R₃M):** made by Grignard-type routes, 3RMgX + MCl₃ → R₃M + 3MgXCl (M = B, Al, Ga), or by hydroboration for boron specifically (below). Like the trihalides, R₃B and R₃Al are electron-deficient at the metal and readily form Lewis adducts — R₃B·NR₃′ is the standard example of a simple donor-acceptor complex used to teach the concept before diborane's more complex 3c-2e bridging is introduced.
+
 **Hydroboration**, the organic pay-off of diborane: B–H adds across C=C with boron on the *less* substituted carbon (anti-Markovnikov, syn addition) — CH₂=CH₂ + BH₃·THF → CH₃CH₂BH₂ → (CH₃CH₂)₃B. Oxidation (HBO): BR₃ + H₂O₂/OH⁻ → B(OH)₃ + 3ROH gives the anti-Markovnikov alcohol with no carbocation rearrangement. Protonolysis (HBR): BR₃ + 3CH₃COOH → 3RH + B(CH₃COO)₃ reduces the alkene to an alkane.
-
-## 2.7 Organometallic and complex-hydride chemistry of Group 13
-
-**Trialkyl/triaryl derivatives (R₃M):** made by Grignard-type routes, 3RMgX + MCl₃ → R₃M + 3MgXCl (M = B, Al, Ga), or by direct hydroboration-type addition for boron. Like the trihalides, R₃B and R₃Al are electron-deficient at the metal and readily form Lewis adducts — R₃B·NR₃′ is the standard example of a simple donor-acceptor complex used to teach the concept before diborane's more complex 3c-2e bridging is introduced.
 
 **Trimethylaluminium, Al₂(CH₃)₆**, is the organometallic parallel to Al₂Cl₆, but the bridge bonding differs sharply: chlorine bridges donate a genuine lone pair (3-centre-4-electron, §3.5), while methyl bridges have no lone pair to donate — instead a C–H σ-bond electron pair is shared across both aluminiums, making Al₂(CH₃)₆'s bridges **3-centre-2-electron**, structurally analogous to diborane's B–H–B bridges rather than to Al₂Cl₆'s own Cl bridges. This is a frequently tested "same molecule family, different bridge electron count" question — always check whether the bridging atom/group actually has a lone pair available before assuming 3c-4e.
 
@@ -451,6 +451,8 @@ Hydrolysis makes AlCl₃ solution acidic: [Al(H₂O)₆]³⁺ ⇌ [Al(H₂O)₅O
 
 General formula **M₂SO₄·M′₂(SO₄)₃·24H₂O** (M univalent, M′ trivalent), containing [M(H₂O)₆]⁺, [M′(H₂O)₆]³⁺ and SO₄²⁻ in the ratio 1:1:2. M can be K⁺, Na⁺, NH₄⁺, Rb⁺, Cs⁺, Tl⁺ — **not Li⁺**, which is too small for the lattice. M′ can be Al³⁺, Ti³⁺, V³⁺, Cr³⁺, Fe³⁺, Mn³⁺, Co³⁺, Ga³⁺. Named alums: potash (K₂SO₄·Al₂(SO₄)₃·24H₂O), chrome (…Cr₂(SO₄)₃…), ferric (…Fe₂(SO₄)₃…), ammonium ((NH₄)₂SO₄·Al₂(SO₄)₃·24H₂O). Alums are **double salts** — they dissociate completely in solution, so every ion gives its normal test (unlike a complex salt, whose coordinated ion is masked). Prepared by fusing equimolar M₂SO₄ and M′₂(SO₄)₃ then crystallising. Uses: mordant in dyeing (Al(OH)₃ deposits into fibre and adsorbs the dye), germicide in water purification, coagulating agent for colloidal impurities.
 
+## 3.9 Three fully worked examples spanning extraction, buffers and qualitative analysis
+
 > **Worked Example — yield calculation through the colemanite extraction route.** 100 kg of pure colemanite (Ca₂B₆O₁₁·5H₂O, M = 412 g/mol) is processed via the SO₂ route: Ca₂B₆O₁₁ + 4SO₂ + 11H₂O → 2Ca(HSO₃)₂ + 6H₃BO₃, followed by dehydration 2H₃BO₃ → B₂O₃ + 3H₂O, followed by magnesium reduction B₂O₃ + 3Mg → 2B + 3MgO. Assuming 100% yield at every step, calculate the mass of elemental boron obtainable.
 >
 > **Step 1 — moles of colemanite:** n = 100,000 g ÷ 412 g/mol ≈ 242.7 mol.
@@ -479,7 +481,7 @@ General formula **M₂SO₄·M′₂(SO₄)₃·24H₂O** (M univalent, M′ tri
 >
 > **General method:** whenever a qualitative-analysis question gives a "barely reacts" or "very slow" observation alongside a positive confirmatory test (like the flame test here), suspect a genuinely weak acid/base rather than concluding "no acid/base present" — cross-check the Ka/Kb value before ruling anything out.
 
-## 3.9 Practice problems
+## 3.10 Group 13 problem bank (35 questions, consolidated)
 
 1. Which cation does *not* give the borax bead test? *(Ag⁺ — its metaborate AgBO₂ is colourless.)*
 2. BF₃ + LiAlH₄ →(ether) X. Identify X and count its 2c-2e and 3c-2e bonds. *(X = B₂H₆; 4 terminal 2c-2e bonds, 2 bridging 3c-2e bonds, 12 bonding electrons total.)*
@@ -491,18 +493,15 @@ General formula **M₂SO₄·M′₂(SO₄)₃·24H₂O** (M univalent, M′ tri
 8. Why is TlI₃ not thallium(III) iodide? *(It is Tl⁺(I₃)⁻ — see the trap in §3.5.)*
 9. Distinguish an Al³⁺ salt from a Zn²⁺ salt using NH₄OH. *(Al(OH)₃ stays precipitated in excess NH₄OH; Zn(OH)₂ redissolves — see §3.7.)*
 10. Why does aluminium chloride exist as a dimer in benzene but not in water? *(Al completes its octet via Cl-bridging in non-donor solvents; water solvates/ionises it to [Al(H₂O)₆]³⁺ instead.)*
-
-## 3.10 Extended practice problems — mixed-concept, JEE Advanced style
-
 11. 50 g of borax (M = 381 g/mol) is dissolved completely in water and titrated against 0.5 M HCl. Calculate the volume of HCl required at the equivalence point. *(n(borax) = 50/381 ≈ 0.1313 mol; since 1 mol borax ≡ 2 mol HCl, n(HCl) = 0.2626 mol; V = 0.2626/0.5 = 0.525 L = 525 mL.)*
 12. A 1.0 g sample of impure boric acid is dissolved in water containing excess mannitol and titrated against 0.2 M NaOH, requiring 28.6 mL for the equivalence point. Calculate the % purity of the boric acid sample (M = 61.8 g/mol). *(n(NaOH) = 0.2 × 0.0286 = 5.72×10⁻³ mol; since mannitol makes H₃BO₃ effectively monoprotic 1:1 with NaOH, n(H₃BO₃) = 5.72×10⁻³ mol; mass = 5.72×10⁻³ × 61.8 ≈ 0.3535 g; purity = 0.3535/1.0 × 100 ≈ 35.4%.)*
 13. Write the balanced equation for the reaction of diborane with excess water, and calculate the volume of H₂ (at STP) liberated from 5.6 g of B₂H₆ (M = 27.7 g/mol). *(B₂H₆ + 6H₂O → 2H₃BO₃ + 6H₂; n(B₂H₆) = 5.6/27.7 ≈ 0.202 mol; n(H₂) = 0.202 × 6 ≈ 1.213 mol; V = 1.213 × 22.4 ≈ 27.2 L.)*
 14. In the compound Al₂(CH₃)₆, identify the type of bridging bond and contrast it with Al₂Cl₆. *(3-centre-2-electron via the bridging methyl's single shared bonding pair, vs Al₂Cl₆'s 3-centre-4-electron via Cl's donated lone pair — see §2.7.)*
 15. Rank InCl₃ and TlCl₃ by thermal stability, citing the specific ΔE values that justify your answer. *(InCl₃ more stable; ΔE(In) = 5.3 eV < ΔE(Tl) = 7.0 eV, so thallium resists the +3 state more strongly — see §2.8.)*
 16. Explain, using packing efficiency, why gallium has a lower density than indium despite being the smaller atom. *(Gallium's discrete Ga₂-molecule solid packs less efficiently than indium's true CCP metallic lattice — see §2.8.)*
-17. State the pH of a freshly prepared borax buffer solution given pKa(H₃BO₃) = 9.25, and explain your reasoning. *(pH ≈ 9.25, since [B(OH)₃] = [B(OH)₄]⁻] makes the Henderson-Hasselbalch log term zero — see §3.10's worked example.)*
+17. State the pH of a freshly prepared borax buffer solution given pKa(H₃BO₃) = 9.25, and explain your reasoning. *(pH ≈ 9.25, since [B(OH)₃] = [B(OH)₄]⁻] makes the Henderson-Hasselbalch log term zero — see §3.9's worked example.)*
 18. A student claims boric acid should turn litmus sharply red because it is a confirmed acid (positive flame test). Explain why this reasoning is flawed. *(H₃BO₃'s very high pKa, ~9.25, means minimal ionisation and near-neutral solution pH — a positive confirmatory test does not imply strong acidity.)*
-19. 100 kg of pure colemanite is processed through the full SO₂-hydrolysis-then-magnesium-reduction route. Calculate the mass of boron obtained, assuming 100% yield at each step. *(≈15.7 kg — see the full worked example in §3.10.)*
+19. 100 kg of pure colemanite is processed through the full SO₂-hydrolysis-then-magnesium-reduction route. Calculate the mass of boron obtained, assuming 100% yield at each step. *(≈15.7 kg — see the full worked example in §3.9.)*
 20. Explain why LiAlH₄ reduces esters and carboxylic acids completely to alcohols, while NaBH₄ typically cannot. *(Al–H bonds are weaker/more hydridic than B–H bonds, since Al is less electronegative than B — see §2.7.)*
 21. A Group 13 trihalide MX₃ is found to be ionic in the solid state with the metal 6-coordinate, yet exists as a discrete monomer in the vapour phase with no bridging. Identify M and X. *(AlF₃ — the only Group 13 trihalide combination that is both genuinely ionic AND a simple monomer in vapour, since it has no accessible bridging mechanism the way AlCl₃ has via Cl lone-pair donation; see §3.5's CN-by-state table.)*
 22. Explain why B₂O₃ can act as EITHER an acid or a base depending on the reaction partner, giving one equation for each role. *(As acid: B₂O₃ + 3SO₃ → B₂(SO₄)₃, since SO₃ is a stronger acidic oxide. As base: reacting with a weaker acidic oxide or basic species, e.g. B₂O₃ + CaO → Ca(BO₂)₂ — see §3.6.)*
@@ -535,8 +534,6 @@ General formula **M₂SO₄·M′₂(SO₄)₃·24H₂O** (M univalent, M′ tri
 > From the table, In's PREFERRED state is +3, meaning In⁺ (like Ga⁺, but even more so, since indium's ΔE is smaller than gallium's own inert-pair-favouring case is for Tl) is the LESS stable oxidation state relative to the group state. Following the same disproportionation pattern explicitly given for gallium in §2.3 (3GaX → 2Ga + GaX₃), indium should behave analogously: **3InCl → 2In + InCl₃** — indium metal precipitates and indium(III) chloride remains in solution. This is exactly the reaction stated in §2.3's original trap block, now derived from the summary table rather than simply recalled.
 >
 > **General method:** once the oxidation-state stability table is memorised, ANY new halide/salt question for Ga, In or Tl can be answered by analogy without needing to separately memorise each individual equation — the disproportionation pattern generalises directly.
-
-## 3.12 Final extended practice set — problems 26-35
 
 26. Boron reacts with hot concentrated NaOH. Write the balanced equation and identify the oxidation state change of boron. *(2B + 6NaOH → 2Na₃BO₃ + 3H₂; B goes from 0 to +3, oxidised; H in NaOH/H₂O is reduced from +1 to 0.)*
 27. Using the complete reactivity table in §2.9, predict the product when aluminium metal is heated in dry chlorine gas. *(AlCl₃, anhydrous — direct halogenation, no water present so no hydrate forms.)*

@@ -234,6 +234,90 @@ A consolidated, exam-ready reference of every named/numbered reaction touching G
 >
 > **General method:** "reacts with dilute acid, passive in concentrated oxidising acid" is a reusable identification signature for Al, Fe or Cr specifically — narrow further using any accompanying clue (here, the successful thermite reduction, which rules out Fe and Cr acting as the reducing agent since they are less reactive than Al on the activity series).
 
+## 2.10 Radii, precisely: covalent, metallic and ionic distinguished
+
+The single "atomic radius" figure in §2.1 hides three genuinely different measurements, and JEE Advanced questions increasingly test which one applies:
+
+- **Covalent radius** — half the internuclear distance in a homonuclear covalent bond (relevant for B, whose chemistry is exclusively covalent).
+- **Metallic radius** — half the internuclear distance between adjacent atoms in the metallic lattice (relevant for Al, Ga, In, Tl).
+- **Ionic radius** — the radius of the actual ion in a crystal lattice, and it is NOT one number per element: M³⁺ is always markedly smaller than the corresponding M⁺, because removing two additional electrons shrinks the remaining electron cloud substantially while the nuclear charge stays fixed.
+
+| Ion | Ionic radius (pm) |
+|---|---:|
+| Al³⁺ | 53 |
+| Ga³⁺ | 62 |
+| Ga⁺ | 120 |
+| In³⁺ | 80 |
+| In⁺ | 132 |
+| Tl³⁺ | 88 |
+| Tl⁺ | 150 |
+
+**Tl⁺ (150 pm) is close in size to K⁺ (138 pm)** — this near-match is precisely why Tl⁺ substitutes for K⁺ in biological systems and is the chemical basis of thallium's toxicity (it is taken up by K⁺ transport pathways and then cannot be removed the way K⁺ is regulated).
+
+## 2.11 Fajans' rule, named and applied
+
+§2.3 already showed *why* boron never forms B³⁺ (the sum of ionisation enthalpies is too large to be compensated by any lattice or hydration energy) — **Fajans' rule** is the general framework that statement belongs to. It predicts when a bond that "should" be ionic (a metal + a non-metal) instead behaves covalently, based on three factors that all increase covalent character:
+
+1. **Small cation size** — concentrates charge, increasing polarising power.
+2. **High cation charge** — a 3+ ion polarises far more strongly than a 1+ ion of similar size.
+3. **Large, easily-deformed (polarisable) anion** — its electron cloud distorts more readily under the cation's pull.
+
+Applied to Group 13: M³⁺ has both a small size (relative to typical cations) and a high +3 charge, so Fajans' rule predicts strong polarisation of any anion it approaches — which is exactly why anhydrous AlCl₃, GaCl₃ and InCl₃ are covalent rather than simple ionic lattices (§3.5), and why this covalent tendency is strongest for the smallest, most charge-dense M³⁺ (boron) and weakens down the group as the cation grows. The trend BF₃-type covalency being strongest at boron and metallic/ionic character strengthening toward thallium (§4) is Fajans' rule operating across the whole group, not a separate coincidental pattern.
+
+## 2.12 Extraction of aluminium — Bayer process then Hall-Héroult
+
+Aluminium's extraction is two independent stages: **purifying** the ore (Bayer process) and then **reducing** the purified oxide to metal (Hall-Héroult process). Conflating them is a common error — the Bayer process produces pure Al₂O₃, not aluminium metal.
+
+**Bayer process — purifying bauxite:**
+
+1. Crushed bauxite (impure Al₂O₃·2H₂O, containing Fe₂O₃ and SiO₂ impurities) is digested in hot concentrated NaOH under pressure: Al₂O₃ + 2NaOH → 2NaAlO₂ + H₂O. Amphoteric Al₂O₃ dissolves as soluble sodium aluminate; basic Fe₂O₃ does **not** dissolve and is filtered off as "red mud."
+2. The filtered aluminate solution is diluted and seeded with Al(OH)₃ crystals to precipitate pure aluminium hydroxide: NaAlO₂ + 2H₂O → Al(OH)₃↓ + NaOH (the NaOH is recovered and recycled — the process is closed-loop for its base).
+3. The precipitate is calcined (strongly heated): 2Al(OH)₃ →(Δ) Al₂O₃ + 3H₂O, giving pure alumina.
+
+**Hall-Héroult process — reducing Al₂O₃ to aluminium:**
+
+Pure Al₂O₃ has a melting point near 2345 K — far too high to melt economically for electrolysis on its own. It is instead dissolved in molten **cryolite**, Na₃AlF₆ (with some CaF₂ added), which lowers the effective melting point to around 1220 K and improves the melt's electrical conductivity.
+
+Electrolysis is carried out in a steel cell lined with graphite, which itself acts as the **cathode**; graphite rods dipped into the melt act as the **anode**.
+
+- **Cathode:** Al³⁺ + 3e⁻ → Al (molten aluminium, denser than the melt, collects at the bottom and is tapped off periodically).
+- **Anode:** 2O²⁻ → O₂ + 4e⁻ — but this oxygen immediately attacks the carbon anode itself, C + O₂ → CO₂, **consuming the anode**, which must therefore be replaced periodically. This is why Hall-Héroult cells need continuous anode maintenance, unlike electrolyses using genuinely inert electrodes.
+
+**Why not simply electrolyse aqueous Al³⁺?** Water is far easier to reduce than Al³⁺ (H₂O/H₂ has a much less negative reduction potential than Al³⁺/Al, §2.3's own E° table shows Al³⁺/Al at −1.66 V), so aqueous electrolysis would simply liberate H₂ at the cathode and never deposit aluminium metal at all — molten-salt electrolysis is not a matter of convenience but of thermodynamic necessity here.
+
+## 2.13 Higher boranes, named
+
+Beyond diborane, a genuine series of higher boranes exists, most obtained by controlled pyrolysis of B₂H₆ itself:
+
+| Borane | Family (by BₙHₙ₊ₓ) | Note |
+|---|---|---|
+| B₄H₁₀ | arachno (n+6) | Colourless liquid |
+| B₅H₉ | nido (n+4) | Thermally the most stable of the lower boranes |
+| B₅H₁₁ | arachno (n+6) | Reactive, unstable at room temperature |
+| B₆H₁₀ | nido (n+4) | — |
+| B₁₀H₁₄ (decaborane) | nido (n+4) | Solid at room temperature, unusually stable and air-tolerant for a borane — historically the most-studied higher borane precisely because it can be handled without special precautions |
+
+Pyrolysis route (illustrative, not exhaustive): 2B₂H₆ →(≈100–120 °C) B₄H₁₀ + H₂, with further heating driving the sequence toward progressively larger cages as H₂ is eliminated — the general pattern throughout this family is that mild heating of a smaller borane builds a larger one with loss of hydrogen, mirroring how borazine itself forms from diborane's diammoniate (§2.6) by the same elimination logic.
+
+## 2.14 JEE Advanced / Olympiad Extension — Wade's rules and skeletal electron counting
+
+Neither of the two standard coaching sources cross-checked for this rebuild (ALLEN's Group 13–14 theory module, Prabhat Kumar's Boron & Carbon Family notes) names Wade's rules or STYX by name — this genuinely sits above the mainstream JEE Advanced syllabus and belongs here as an extension, not as core material. It is real, well-established chemistry, and worth knowing for Olympiad-level questions or the rare JEE Advanced question that borrows its logic without naming it.
+
+**The rule:** count total valence electrons (3 per B, 1 per H, plus/minus the ion's charge), convert to pairs, then subtract one pair for each terminal B–H bond (one per boron vertex) — what remains is the skeletal electron pair (SEP) count available for cage bonding. The SEP count classifies the cluster:
+
+| SEP relative to vertex count (n) | Classification | Structure |
+|---|---|---|
+| n+1 pairs | *closo* | Complete, closed deltahedron |
+| n+2 pairs | *nido* | Deltahedron missing one vertex |
+| n+3 pairs | *arachno* | Deltahedron missing two vertices |
+| n+4 pairs | *hypho* | Deltahedron missing three vertices |
+
+> **Worked example — classifying B₅H₉.** n = 5 borons. Total valence electrons: 5×3 (from B) + 9×1 (from H) = 15 + 9 = 24 electrons = 12 pairs. Of these, 5 pairs are used for the 5 terminal B–H bonds (one per boron), leaving 12 − 5 = 7 skeletal pairs. Compare 7 to n+1=6, n+2=7, n+3=8: **7 = n+2, so B₅H₉ is nido** — consistent with its formula already matching the BₙHₙ₊₄ nido pattern given in the table above, cross-checking the electron-counting method against the simpler formula-based rule.
+
+## 2.15 JEE Advanced / Olympiad Extension — Carboranes
+
+Carboranes are mixed boron-carbon cage clusters, formally derived by replacing one or more BH vertices in a borane cage with an isoelectronic CH vertex (a CH unit contributes the same number of skeletal electrons as a BH⁻ unit, keeping the cage electron count — and hence its closo/nido/arachno classification — unchanged). The best-known example is *ortho*-carborane, C₂B₁₀H₁₂, a closo cluster (icosahedral, 12 vertices, matching B₁₂H₁₂²⁻'s own closo icosahedral cage) that is remarkably thermally and chemically stable — carboranes are used as heat-resistant polymer components and in boron neutron-capture therapy research (§14, applications) precisely because of this stability.
+
 # 3. Group 13 deep dive: borax, boric acid, BF₃, diborane and alums
 
 ## 3.1 Minerals and extraction of boron

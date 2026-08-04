@@ -4,13 +4,29 @@
 // confidence capture before the answer is revealed/graded. Content-agnostic:
 // renders exactly the RetrievalItem it is given (faculty-authored, F6) and
 // reports a RetrievalResult upward. No persistence here — Phase 4 owns that.
+//
+// Accessibility (Phase 8):
+//   • Options stay focusable after answering (aria-disabled, not a disabled
+//     fieldset) so keyboard and screen-reader users can review the result.
+//   • Correct/incorrect is announced in text, never by colour alone.
+//   • The status region is always present in the DOM so its aria-live update
+//     is reliably announced.
 
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState, type CSSProperties } from "react";
 import type { RetrievalItem, RetrievalResult } from "./types";
 import { ConfidenceSelector } from "./ConfidenceSelector";
 import { RevealAnswer } from "./RevealAnswer";
 
 const OPTION_KEYS = ["A", "B", "C", "D", "E"];
+
+const SR_ONLY: CSSProperties = {
+  position: "absolute",
+  width: 1,
+  height: 1,
+  overflow: "hidden",
+  clip: "rect(0 0 0 0)",
+  whiteSpace: "nowrap",
+};
 
 export function RetrievalQuestion({
   item,
@@ -33,7 +49,10 @@ export function RetrievalQuestion({
   }, []);
   const answered = item.mode === "mcq" ? selected !== undefined : selfVerdict !== undefined;
 
-  const emit = (partial: Pick<RetrievalResult, "correct" | "selectedOptionId">, now: number) => {
+  const emit = (
+    partial: Pick<RetrievalResult, "correct" | "selectedOptionId">,
+    now: number
+  ) => {
     onResult?.({
       itemId: item.id,
       conceptId: item.conceptId,
@@ -62,7 +81,7 @@ export function RetrievalQuestion({
       )}
 
       {item.mode === "mcq" && item.options && (
-        <fieldset className="sbrOptions" disabled={answered}>
+        <fieldset className="sbrOptions">
           <legend>Answer options</legend>
           {item.options.map((option, index) => {
             const isSelected = selected === option.id;
@@ -77,6 +96,9 @@ export function RetrievalQuestion({
                 type="button"
                 className={cls}
                 aria-pressed={isSelected}
+                // Focusable after answering so the result can be reviewed with
+                // a keyboard; the click handler is what locks the answer.
+                aria-disabled={answered}
                 onClick={() => {
                   if (answered) return;
                   setSelected(option.id);
@@ -92,7 +114,11 @@ export function RetrievalQuestion({
                 <span className="sbrOptKey" aria-hidden>
                   {OPTION_KEYS[index] ?? "•"}
                 </span>
-                <span>{option.label}</span>
+                <span>
+                  {option.label}
+                  {isRight && <span style={SR_ONLY}> — correct answer</span>}
+                  {isWrong && <span style={SR_ONLY}> — your answer, incorrect</span>}
+                </span>
               </button>
             );
           })}
@@ -134,11 +160,17 @@ export function RetrievalQuestion({
         </RevealAnswer>
       )}
 
-      <p role="status" aria-live="polite" className="sbrExplain" style={!answered ? { display: "none" } : undefined}>
+      {/* Always in the DOM (never display:none) so the live-region update is
+          announced rather than swallowed together with the visibility change. */}
+      <p
+        role="status"
+        aria-live="polite"
+        className={answered ? "sbrExplain" : undefined}
+        style={answered ? undefined : SR_ONLY}
+      >
         {answered && (
           <>
-            <strong>{statusText}</strong>{" "}
-            {item.explanation ?? ""}
+            <strong>{statusText}</strong> {item.explanation ?? ""}
           </>
         )}
       </p>

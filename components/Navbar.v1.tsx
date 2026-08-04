@@ -27,7 +27,7 @@ export default function Navbar() {
             Olympiads
           </Link>
 
-          <Link href="/resources" className="hover:text-white/70 transition">
+          <Link href="/library" className="hover:text-white/70 transition">
             Resources
           </Link>
 

@@ -2272,7 +2272,7 @@
       "dynamic": false,
       "studentFacing": true,
       "linkedInternally": true,
-      "linkedFromNavigation": false
+      "linkedFromNavigation": true
     },
     {
       "pattern": "/live",

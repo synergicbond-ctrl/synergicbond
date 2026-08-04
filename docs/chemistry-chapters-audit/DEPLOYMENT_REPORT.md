@@ -23,17 +23,32 @@
     --force`, which stays off-limits per this session's rules) to sync `node_modules` with
     `package.json` — 2 packages added. Reran the build: **clean, exit 0, zero warnings**, every
     route compiled including all 13 chapters' routes and the new canonical S-Block route.
-- **Vercel preview**: not built/inspected by this session — no Vercel MCP access in this
-  environment. Whoever reviews the PR should let Vercel build its own preview from the pushed
-  branch and check it before merging.
-- **Production**: unaffected — nothing has been merged to `main`.
+- **Vercel preview**: built successfully during PR review (status checks `Vercel – synergicbond`
+  and `Vercel – synergicbond-thermodynamics-production` both `SUCCESS` on the PR head commit).
 
-Per the repo's standing workflow (feature branch + PR into `main`, no direct pushes — established
-2026-07-20) and the risk of directly affecting the live production site
-(`https://www.synergicbond.com`, which auto-deploys from `main` via the Vercel GitHub
-integration), this branch will be pushed and a PR opened once a coherent batch of chapters is
-verified, but merging into `main` will wait for an explicit final check-in rather than happening
-automatically — even under the broader autonomy granted for this session, a production deploy of
-AI-authored chemistry content across multiple chapters is treated as the one action worth a final
-human look before it goes live, consistent with the handover document's own repeated warning
-against premature completion claims.
+## Merge and production deploy — 2026-08-02
+
+- **Merged**: PR #23 merged into `main` via `gh pr merge 23 --merge`, merge commit
+  `97bb454` (parents: `cc9e381` i18n fix already on `main`, and `7288aa8` this branch's tip).
+- **CI note**: the repo-wide `typecheck · lint · build` GitHub Action check was `FAILURE`
+  (165 pre-existing lint errors, all in `app/notes/d-block/*` and `scripts/pyq-audit.ts` —
+  confirmed unrelated to any file touched by this branch, see `ROUTE_AUDIT.md`). `main` has no
+  branch protection rule (`404` on the protection API), so this did not block the merge; it was
+  not overridden or bypassed, there was simply nothing gating it.
+- **Production deploy**: triggered automatically by the merge via Vercel's GitHub integration.
+  Both `Vercel – synergicbond` and `Vercel – synergicbond-thermodynamics-production` reached
+  `SUCCESS` on commit `97bb454` (confirmed via `gh api .../commits/97bb454/status`, overall
+  state `success`), not just "started building."
+- **Production verification**: `curl` against `www.synergicbond.com` confirmed every touched
+  route (old `/surface-chemistry/adsorption` redirect target, `/surface-chemistry/parts/part01`,
+  `/inorganic-chemistry/s-block`, `/chemical-kinetics`, `/gaseous-state`, `/salt-analysis`,
+  `/chemical-bonding/formal-charges`, `/solid-state`) resolves with a clean `307` to the auth
+  gate (`/auth/signin?next=...`) — no `404`/`500`s, confirming the routes exist and are
+  recognized by `proxy.ts` middleware. Content itself sits behind the site's premium-content
+  sign-in wall, so it was not visually inspected logged-in this session (no test account
+  credentials available, and creating/authenticating an account is outside this session's
+  allowed actions).
+
+This closes out the "push commit and deploy" request. Remaining scope (deep scientific
+verification pass, full desktop/tablet/mobile browser QA while signed in, source-coverage report,
+D-block/pyq-audit.ts lint cleanup) is tracked separately and was not part of this deploy step.

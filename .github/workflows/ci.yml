@@ -75,3 +75,13 @@ jobs:
       - name: PYQ distribution audit (report only)
         run: npm run audit-pyq
         continue-on-error: true
+
+      # Phase 0 route integrity (IA & Migration Map). Deterministic and
+      # secret-free. audit:links is a ratchet: pre-existing findings live in
+      # scripts/audit/link-check-baseline.json and only NEW broken internal
+      # links fail the job.
+      - name: Route-audit unit tests
+        run: npm run test:route-audit
+
+      - name: Internal-link integrity (ratchet)
+        run: npm run audit:links

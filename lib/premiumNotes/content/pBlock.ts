@@ -40,13 +40,87 @@ export const P_BLOCK_NOTES: PremiumChapterNotes = {
               "kind": "detailed",
               "heading": "Core Notes",
               "points": [
-                "Property  •  Trend / Notes",
-                "Atomic Radius  •  B < Al > Ga < In < Tl. TRAP Ga is SMALLER than Al — poor shielding by the filled 3d¹⁰ subshell in Ga lets effective nuclear charge rise.",
-                "Ionization Enthalpy  •  B > Tl > Ga > Al > In (irregular). B has the highest IE of the group due to its very small size; the d/f-block contraction disturbs the simple decreasing trend for Ga and Tl.",
-                "Electronegativity  •  B(2.0) is distinctly highest; roughly constant/slightly irregular afterward (Al ≈ Ga ≈ In ≈ Tl).",
-                "Melting Point  •  Sharp drop from B (2453°C, giant covalent) to Al, then irregular (Ga has an unusually LOW melting point, 30°C — melts in the hand).",
+                "ATOMIC RADIUS (pm)  •  B 88  •  Al 143  •  Ga 135  •  In 167  •  Tl 170",
+                "→ Order: B < Ga < Al < In < Tl. TRAP Ga is SMALLER than Al (135 < 143) — the filled 3d¹⁰ subshell in Ga shields poorly, so effective nuclear charge rises and the atom contracts despite the extra shell.",
+                "IONIZATION ENTHALPY IE₁ (kJ/mol)  •  B 801  •  Al 577  •  Ga 579  •  In 558  •  Tl 589",
+                "→ Order: B > Tl > Ga > Al > In. Not a smooth decrease: d-block contraction lifts Ga above Al, and f-block (lanthanoid) contraction lifts Tl above In.",
+                "ΣIE (IE₁+IE₂+IE₃) (kJ/mol)  •  B 6887  •  Al 5139  •  Ga 5529  •  In 5029  •  Tl 5438",
+                "→ Boron's total is by far the largest — this is the quantitative reason B³⁺ never forms and boron is exclusively covalent.",
+                "ELECTRONEGATIVITY (Pauling)  •  B 2.0  •  Al 1.5  •  Ga 1.6  •  In 1.7  •  Tl 1.8",
+                "→ Falls sharply B → Al, then rises slightly down the group (Al < Ga < In < Tl) — again a d/f-contraction effect.",
+                "DENSITY (g/cm³)  •  B 2.35 → Tl 11.85, increasing steadily down the group (B < Al < Ga < In < Tl).",
+                "MELTING POINT (K)  •  B 2453  •  Al 933  •  Ga 303  •  In 430  •  Tl 576",
+                "→ Huge drop B → Al (giant covalent icosahedral lattice → metallic lattice). Ga's 303 K (≈30 °C) is the group minimum — it melts in the hand — because solid Ga is built from discrete Ga₂ molecules, not a normal metallic lattice.",
+                "BOILING POINT (K)  •  B 3923  •  Al 2740  •  Ga 2676  •  In 2356  •  Tl 1730 — decreases steadily.",
+                "→ Ga therefore has the LARGEST liquid range of any element (303 K to 2676 K), a favourite one-mark fact.",
                 "Metallic Character  •  Increases down the group: B (metalloid) → Al, Ga, In, Tl (metals).",
                 "Catenation  •  Far weaker than carbon; B–B and Al–Al chains are rare — boron instead forms icosahedral B₁₂ cluster units in its allotropes."
+              ],
+              "exams": ["JEE Advanced"]
+            },
+            {
+              "kind": "detailed",
+              "heading": "Structure of the elements — why Ga is the odd one out",
+              "points": [
+                "• Boron: polymeric, built from icosahedral B₁₂ units (12 boron atoms at the vertices of a regular icosahedron) covalently linked into a rigid infinite lattice. This is why B is extremely hard and melts at 2453 K.",
+                "• Aluminium, Indium, Thallium: normal metallic lattices — cubic close packed (CCP).",
+                "• Gallium: unique — the solid contains DISCRETE DIATOMIC Ga₂ molecules. Only weak forces hold the molecules together, so very little energy is needed to melt it (303 K), yet breaking the strong covalent Ga–Ga bond to vaporise it needs a great deal (2676 K).",
+                "• Density anomaly: V(solid Ga) > V(liquid Ga), i.e. solid gallium is LESS dense than its liquid and floats on it — the same anomaly water shows (V_ice > V_water). Gallium therefore expands on freezing, so it must not be stored in glass or metal containers filled to the brim."
+              ],
+              "exams": ["JEE Advanced"]
+            },
+            {
+              "kind": "detailed",
+              "heading": "Electropositive character — standard electrode potentials",
+              "points": [
+                "E°(M³⁺/M) in volts  •  B −0.87  •  Al −1.66  •  Ga −0.56  •  In −0.34  •  Tl +1.26",
+                "→ Aluminium is the most electropositive (most negative E°), so Al³⁺ forms readily in solution. Thallium's E° is POSITIVE, so Tl³⁺ does NOT form spontaneously from the metal — instead Tl³⁺ is a strong oxidising agent.",
+                "E°(M⁺/M) in volts  •  Al +0.55  •  Ga −0.79  •  In −0.18  •  Tl −0.34",
+                "→ Compare the two rows: for Al the +3 route is hugely favourable and the +1 route is not; for Tl it is the reverse. This is the inert-pair effect expressed in measurable numbers rather than as an assertion.",
+                "• Reading the sign: for M³⁺ + 3e⁻ → M with E° negative, the reverse (M → M³⁺ + 3e⁻) has E° positive, so ΔG° = −nFE° is negative and oxidation to M³⁺ is spontaneous. For Tl the arithmetic flips and Tl³⁺ formation is non-spontaneous."
+              ],
+              "exams": ["JEE Advanced"]
+            },
+            {
+              "kind": "illustration",
+              "level": "advanced",
+              "concept": "Using E° and ΔG° = −nFE° to predict whether M³⁺ forms in solution",
+              "tricky": true,
+              "question": "Given E°(Al³⁺/Al) = −1.66 V and E°(Tl³⁺/Tl) = +1.26 V, predict whether Al³⁺ and Tl³⁺ are formed spontaneously when the respective metals are placed in aqueous acid. Support your answer with the sign of ΔG°. (F = 96500 C/mol)",
+              "thinking": "The tabulated E° is always for the REDUCTION half-reaction M³⁺ + 3e⁻ → M. The question asks about the metal dissolving, which is OXIDATION — so reverse the sign of E° before substituting into ΔG° = −nFE°.",
+              "steps": [
+                { "label": "Write the process asked about", "work": "Dissolution is oxidation: M → M³⁺ + 3e⁻, with n = 3. E°(oxidation) = −E°(reduction)." },
+                { "label": "Aluminium", "work": "E°(reduction) = −1.66 V ⇒ E°(oxidation) = +1.66 V. ΔG° = −nFE° = −(3)(96500)(+1.66) = −480,570 J/mol ≈ −480.6 kJ/mol. NEGATIVE ⇒ spontaneous. Al³⁺ forms readily." },
+                { "label": "Thallium", "work": "E°(reduction) = +1.26 V ⇒ E°(oxidation) = −1.26 V. ΔG° = −(3)(96500)(−1.26) = +364,770 J/mol ≈ +364.8 kJ/mol. POSITIVE ⇒ non-spontaneous. Tl³⁺ does NOT form from the metal." },
+                { "label": "Interpret chemically", "work": "Because Tl³⁺ is thermodynamically unwilling to exist, it readily accepts electrons to fall back to Tl⁺ — i.e. Tl³⁺ acts as a strong OXIDISING agent. This is exactly the inert-pair effect, now quantified rather than merely stated." }
+              ],
+              "answer": "Al: ΔG° ≈ −481 kJ/mol, spontaneous — Al³⁺ forms readily. Tl: ΔG° ≈ +365 kJ/mol, non-spontaneous — Tl³⁺ does not form; it is instead a strong oxidising agent.",
+              "insight": "Any 'will this ion form / is this reaction feasible' question in inorganic chemistry reduces to this two-line calculation. Getting the sign convention right (reverse E° for oxidation) is where nearly all marks are lost.",
+              "fastMethod": "E°(oxidation) positive ⇒ ΔG° negative ⇒ spontaneous. You can often answer without computing the number at all."
+            },
+            {
+              "kind": "detailed",
+              "heading": "Inert-pair effect — the quantitative basis (ΔE = E_np − E_ns)",
+              "points": [
+                "• The inert-pair effect is usually asserted ('the ns² pair is reluctant to bond'). The measurable quantity behind it is the ns–np energy separation ΔE = E_np − E_ns: the larger this gap, the more energy is needed to promote an ns electron into an np orbital, and the less willing the ns² pair is to participate in bonding.",
+                "ΔE (eV)  •  B 4.5  •  Al 4.5  •  Ga 6.0  •  In 5.3  •  Tl 7.0",
+                "• Thallium's gap (7.0 eV) is far larger than boron's or aluminium's (4.5 eV) — hence Tl⁺ dominates while B and Al are locked into the +3 state.",
+                "• The same quantity explains the effect across the whole p-block, growing steadily toward the bottom right: Pb 9.0 · Bi 10.0 · Po 12.0 · At 16.0 eV. This is why Pb²⁺ and Bi³⁺ (rather than Pb⁴⁺ and Bi⁵⁺) are the stable states.",
+                "• Stability of the +3 state DECREASES down the group (B → Tl); stability of the +1 state INCREASES down the group.",
+                "• Consequences: Tl³⁺ < Tl⁺ in stability (so Tl³⁺ is an oxidising agent), while Ga⁺ < Ga³⁺ (so Ga⁺ is a reducing agent). General rule — the less stable the oxidation state, the more strongly the species pushes toward the stable one.",
+                "• Ga⁺ is a stronger reducing agent than In⁺, because Ga⁺ is the less stable of the two."
+              ],
+              "exams": ["JEE Advanced"]
+            },
+            {
+              "kind": "detailed",
+              "heading": "Subvalent halides — why GaX₂ is NOT gallium(II)",
+              "points": [
+                "• GaCl₂ looks like a gallium(+2) compound, but gallium does not adopt +2. The compound is actually a MIXED-VALENCE salt: Ga⁺[Ga³⁺Cl₄]⁻ — one gallium in +1 and one in +3, averaging to the deceptive +2.",
+                "• Consequence: in Ga[AlCl₄] the oxidation state of gallium is +1 (the AlCl₄⁻ carries the charge), not +2 or +3.",
+                "• Preparation of the gallium(I) tetrachloroaluminate: 2Ga + Ga[GaCl₄] + 2Al₂Cl₆ →(≈190 °C) 4Ga[AlCl₄] (gallous tetrachloroaluminate).",
+                "• Ga⁺ and In⁺ halides are unstable in aqueous solution and DISPROPORTIONATE: 3GaX → 2Ga + GaX₃, and 3InX → 2In + InX₃ — the +1 state collapses into the metal plus the +3 state.",
+                "• The same 'apparent oxidation state' trap appears with TlI₃, which is NOT thallium(III) iodide — see the Tl chemistry notes."
               ],
               "exams": ["JEE Advanced"]
             }
@@ -268,6 +342,896 @@ export const P_BLOCK_NOTES: PremiumChapterNotes = {
                 "Boric acid as a Lewis (not Brønsted) acid — one of the most repeated conceptual traps in the whole p-block.",
                 "AlCl₃ dimer structure and why the bridging happens (Al accepting a Cl lone pair, not H like diborane)."
               ]
+            }
+          ]
+        },
+        {
+          "id": "g13-boron-minerals-extraction",
+          "title": "Chemistry of Boron — Minerals & Extraction",
+          "exams": ["JEE Advanced"],
+          "blocks": [
+            {
+              "kind": "detailed",
+              "heading": "Minerals of boron (formulae are direct recall targets)",
+              "points": [
+                "1. Borax (Tincal / Suhaga)  •  Na₂B₄O₇·10H₂O  ≡  Na₂[B₄O₅(OH)₄]·8H₂O",
+                "2. Colemanite  •  Ca₂B₆O₁₁·5H₂O",
+                "3. Boric acid / Sassolite  •  H₃BO₃",
+                "4. Boronatrocalcite  •  CaB₄O₇·NaBO₂·8H₂O",
+                "5. Boracite  •  2Mg₃B₈O₁₅·MgCl₂",
+                "6. Kernite  •  Na₂B₄O₇·4H₂O",
+                "7. Mohavite (tincalconite)  •  Na₂B₄O₇·5H₂O",
+                "• Boron never occurs free in nature — it is always found combined as a borate."
+              ],
+              "exams": ["JEE Advanced"]
+            },
+            {
+              "kind": "detailed",
+              "heading": "Extraction — Step I: preparing B₂O₃",
+              "points": [
+                "Route (a) From borax, via boric acid:",
+                "• Na₂B₄O₇ + 2HCl → 2NaCl + H₂B₄O₇   (conc. HCl or conc. H₂SO₄ may be used)",
+                "• H₂B₄O₇ + 5H₂O → 4H₃BO₃   (hydrolysis)",
+                "• 2H₃BO₃ →(Δ) B₂O₃ + 3H₂O",
+                "Route (b) From colemanite, by fusion with sodium carbonate:",
+                "• Ca₂B₆O₁₁ + 2Na₂CO₃ →(fusion) 2CaCO₃↓ (insoluble) + Na₂B₄O₇ + 2NaBO₂ (both soluble)",
+                "• The soluble metaborate is converted back to borax by passing CO₂: 4NaBO₂ + CO₂ → Na₂B₄O₇ + Na₂CO₃",
+                "Route (c) From colemanite, using sulphur dioxide:",
+                "• Ca₂B₆O₁₁ + 11H₂O + 4SO₂ → 2Ca(HSO₃)₂ + 6H₃BO₃"
+              ],
+              "exams": ["JEE Advanced"]
+            },
+            {
+              "kind": "detailed",
+              "heading": "Extraction — Step II: reducing B₂O₃ to boron",
+              "points": [
+                "• With sodium: B₂O₃ + 6Na → 2B + 3Na₂O",
+                "• With potassium: B₂O₃ + 6K → 2B + 3K₂O",
+                "• With magnesium: B₂O₃ + 3Mg → 2B + 3MgO — this gives AMORPHOUS boron of about 95–98% purity, historically called MOISSAN BORON.",
+                "• Electrolytic method: electrolysis of a fused mixture of B₂O₃ + MgO + MgF₂ at about 1373 K. Magnesium discharged at the cathode reduces B₂O₃ to boron.",
+                "Crystalline boron (small quantities only):",
+                "• 1. Reduction of BCl₃ by hydrogen on a red-hot tungsten or tantalum filament: 2BCl₃ + 3H₂ → 2B + 6HCl",
+                "• 2. Van Arkel method — pyrolysis of BI₃ on a red-hot W or Ta filament: 2BI₃ → 2B + 3I₂",
+                "• 3. Thermal decomposition of diborane or another boron hydride: B₂H₆ →(Δ) 2B + 3H₂"
+              ],
+              "exams": ["JEE Advanced"]
+            },
+            {
+              "kind": "detailed",
+              "heading": "Reactions of amorphous boron — the complete set",
+              "points": [
+                "• With oxygen (700 °C): 4B + 3O₂ → 2B₂O₃",
+                "• With sulphur (1200 °C): 2B + 3S → B₂S₃",
+                "• With nitrogen (very high temperature): 2B + N₂ → 2BN",
+                "• With halogens: 2B + 3X₂ → 2BX₃  (X = F, Cl, Br, I)",
+                "• With ammonia (very high temperature): 2B + 2NH₃ → 2BN + 3H₂",
+                "• With magnesium: 3Mg + 2B → Mg₃B₂ (magnesium boride)",
+                "• With carbon (electric furnace): 4B + C → B₄C (boron carbide, 'norbide')",
+                "• With conc. HNO₃: B + 3HNO₃ → H₃BO₃ + 3NO₂  — boron is oxidised, not dissolved as a cation",
+                "• With conc. H₂SO₄: 2B + 3H₂SO₄ → 2H₃BO₃ + 3SO₂",
+                "• With fused alkali: 2B + 6NaOH → 2Na₃BO₃ + 3H₂",
+                "• With water/steam: NO reaction — boron is not decomposed by water or even steam.",
+                "• Crystalline boron is almost unreactive at room temperature; amorphous boron is the reactive form. This distinction is itself a common exam point."
+              ],
+              "exams": ["JEE Advanced"]
+            }
+          ]
+        },
+        {
+          "id": "g13-b2o3-borax-boric-acid-detail",
+          "title": "B₂O₃, Borax, Boric Acid & Borates — In Depth",
+          "exams": ["JEE Advanced"],
+          "blocks": [
+            {
+              "kind": "detailed",
+              "heading": "B₂O₃ — boron sesquioxide",
+              "points": [
+                "• Hygroscopic; hydrolyses back to boric acid: B₂O₃ + 3H₂O → 2H₃BO₃",
+                "• Forms METABORATES with metal oxides (B₂O₃ behaving as the ACID): CoO + B₂O₃ → Co(BO₂)₂ (cobalt metaborate); CuO + B₂O₃ → Cu(BO₂)₂.",
+                "• But against a stronger acidic oxide, B₂O₃ behaves as the BASE: 2B₂O₃ + P₄O₁₀ → 4BPO₄. Being able to switch roles depending on the partner is the point being tested.",
+                "• Obtained by heating boric acid, and reduced back to boron by Mg/Na/K (see extraction)."
+              ],
+              "exams": ["JEE Advanced"]
+            },
+            {
+              "kind": "detailed",
+              "heading": "Borax — preparation, forms and thermal behaviour",
+              "points": [
+                "• From boric acid: 4H₃BO₃ + Na₂CO₃ → Na₂B₄O₇ + 6H₂O + CO₂",
+                "• Also obtained from tincal (contains ~50% borax with sand/clay impurities) and from colemanite (see extraction).",
+                "Three crystalline forms:",
+                "• Prismatic borax — Na₂B₄O₇·10H₂O (the ordinary form)",
+                "• Octahedral borax — Na₂B₄O₇·5H₂O",
+                "• Borax glass — Na₂B₄O₇ (anhydrous)",
+                "Thermal sequence (a very frequently asked chain):",
+                "• Na₂B₄O₇·10H₂O →(≈60 °C) Na₂B₄O₇·5H₂O →(Δ) Na₂B₄O₇ →(Δ, strong) 2NaBO₂ + B₂O₃ — the transparent GLASSY MASS used in the bead test.",
+                "• Alkaline solution (salt of strong base + weak acid): Na₂B₄O₇ + 7H₂O ⇌ 2NaOH + 4H₃BO₃",
+                "• With acids, borax gives boric acid: Na₂B₄O₇ + H₂SO₄ + 5H₂O → Na₂SO₄ + 4H₃BO₃, and Na₂B₄O₇ + 2HCl + 5H₂O → 2NaCl + 4H₃BO₃",
+                "• With ammonium chloride on strong heating: Na₂B₄O₇ + 2NH₄Cl → 2BN + B₂O₃ + 2NaCl + 4H₂O — a standard laboratory route to boron nitride.",
+                "• EXACT BEAD TEMPERATURE: Na₂B₄O₇ →(740 °C) 2NaBO₂ + B₂O₃ (glassy mass). Below this the powder merely swells as it loses steam; the transparent bead forms at 740 °C.",
+                "• STRUCTURE COUNT: the correct formula Na₂[B₄O₅(OH)₄]·8H₂O contains both planar BO₃ and tetrahedral BO₄ units, and exactly FIVE B–O–B linkages — a precise counting question.",
+                "• BORAX AS A BUFFER: its aqueous solution contains equal amounts of a weak acid, B(OH)₃, and its salt, [B(OH)₄]⁻ — the textbook definition of a buffer.",
+                "• SODIUM PERBORATE (peroxoborate): 2NaBO₂ + 2H₂O₂ + 6H₂O → Na₂[(OH)₂B(O–O)₂B(OH)₂]·6H₂O. Used as a BRIGHTENER in washing powder; in very hot water (above 80 °C) the –O–O– linkages break down to release H₂O₂, which is the actual bleaching agent.",
+                "• With HF: Na₂[B₄O₅(OH)₄] + 12HF →(−H₂O) Na₂O(BF₃)₄, which with H₂SO₄ gives 4BF₃ + 2NaHSO₄ + H₂O.",
+                "• Uses of borax: borax bead test · purifying gold · flux during welding of metals · manufacture of glass (borosilicate) · as a primary standard and buffer."
+              ],
+              "exams": ["JEE Advanced"]
+            },
+            {
+              "kind": "detailed",
+              "heading": "Borax bead test — the reactions and the colours",
+              "points": [
+                "• Step 1 (bead formation): Na₂B₄O₇ →(Δ) 2NaBO₂ + B₂O₃",
+                "• Step 2 (colour development): CuO + B₂O₃ → Cu(BO₂)₂ — blue bead. Generally: MO + B₂O₃ → M(BO₂)₂.",
+                "BEAD COLOURS (oxidising flame)  •  Cu blue  •  Fe green  •  Co blue  •  Ni brown  •  Cr green",
+                "• In the REDUCING flame copper gives a red-brown bead (Cu₂O / metallic Cu) instead of blue — the flame type genuinely changes the answer.",
+                "• The test works only for metals whose metaborates are coloured, so it identifies transition metals; it fails for colourless ions such as Na⁺, Ca²⁺, Al³⁺."
+              ],
+              "exams": ["JEE Advanced"]
+            },
+            {
+              "kind": "detailed",
+              "heading": "Orthoboric acid H₃BO₃ — properties and thermal chain",
+              "points": [
+                "• Physical: white, soft, needle-shaped crystals with a soapy/greasy touch; STEAM VOLATILE; sparingly soluble in cold water but highly soluble in hot water.",
+                "Effect of heat (learn as one chain):",
+                "• H₃BO₃ →(100 °C) HBO₂ (metaboric acid) →(160 °C) H₂B₄O₇ (tetraboric acid) →(red hot) B₂O₃",
+                "• Metaboric acid is HO–B=O; four of them condense: 4HBO₂ → H₂B₄O₇ + H₂O",
+                "Acidity (Lewis, not Brønsted):",
+                "• H₃BO₃ + 2H₂O ⇌ [B(OH)₄]⁻ + H₃O⁺, pK = 9.25 — a very weak monobasic acid.",
+                "• At higher concentration, polymeric metaborate species form: 3B(OH)₃ ⇌ H₃O⁺ + [B₃O₃(OH)₄]⁻ + H₂O, pK = 6.84 — note the polymer is a STRONGER acid than the monomer.",
+                "• Structure: planar triangular BO₃ units hydrogen-bonded into two-dimensional sheets of almost hexagonal symmetry. The layers lie about 3.18 Å apart and are held only by weak forces, so crystals cleave easily into fine flakes — the structural reason for the soapy feel.",
+                "• Titration: boric acid can only be titrated sharply against NaOH (phenolphthalein) in the presence of a cis-1,2-diol — glycerol, mannitol, catechol, salicylic acid or sugar. ETHANOL DOES NOT WORK, because it is monohydric and cannot chelate."
+              ],
+              "exams": ["JEE Advanced"]
+            },
+            {
+              "kind": "detailed",
+              "heading": "Reactions of boric acid",
+              "points": [
+                "• With alcohols (esterification): H₃BO₃ + 3ROH → B(OR)₃ + 3H₂O — e.g. ethyl borate. The vapour burns with a GREEN-EDGED flame, which is the classical test for borate.",
+                "• With glycerol / cis-diols: forms the chelated boron–glycerol complex, releasing H⁺ — the basis of the sharpened titration above.",
+                "• With ammonium hydrogen fluoride: H₃BO₃ + NH₄HF₂ → NH₄BF₄ →(Δ) NH₄F + BF₃",
+                "• With metal oxides: 2H₃BO₃ + MO → M(BO₂)₂ + 3H₂O",
+                "• With sodium peroxide: gives sodium peroxoborate (see borates below).",
+                "• With NaOH: B(OH)₃ + NaOH → Na[B(OH)₄], and on further reaction NaBO₂ + 2H₂O.",
+                "• Optically active boron compound: BOROSALICYLIC ACID — the borosalicylate anion has boron as a tetrahedral centre chelated by two salicylate ligands, making the complex chiral. This is the standard example when asked for an optically active compound of boron."
+              ],
+              "exams": ["JEE Advanced"]
+            },
+            {
+              "kind": "detailed",
+              "heading": "Classification of borates",
+              "points": [
+                "• Orthoborate  •  BO₃³⁻  •  e.g. Ca₃(BO₃)₂ — isolated planar triangular units.",
+                "• Metaborate  •  BO₂⁻ (chain/ring polymers, (BO₂)ₙⁿ⁻ and cyclic B₃O₆³⁻).",
+                "• Pyroborate  •  B₂O₅⁴⁻ — two BO₃ units sharing one oxygen.",
+                "• Complex borates  •  contain BOTH three- and four-coordinate boron — borax's [B₄O₅(OH)₄]²⁻ is the classic example (2 sp² + 2 sp³ boron).",
+                "• Peroxoborates  •  [B₂(O₂)₂(OH)₄]²⁻ — contain genuine peroxo (–O–O–) linkages.",
+                "• Sodium peroxoborate preparation: 2NaBO₂ + 2H₂O₂ + 6H₂O → Na₂[(OH)₂B(O–O)₂B(OH)₂]·6H₂O — the active oxygen source in washing powders.",
+                "• Stepwise acid hydrolysis of borax (worth tracing once): Na₂[B₄O₅(OH)₄]·8H₂O + 2HCl → 2NaCl + 4H₃BO₃ + 5H₂O; ionically, [B₄O₅(OH)₄]²⁻ + 5H₂O ⇌ 2H₃BO₃ + 2[B(OH)₄]⁻, then 2[B(OH)₄]⁻ + 2H₃O⁺ → 2B(OH)₃ + 4H₂O."
+              ],
+              "exams": ["JEE Advanced"]
+            }
+          ]
+        },
+        {
+          "id": "g13-boron-halides",
+          "title": "Boron Halides — BX₃, Back-Bonding & Hydrolysis",
+          "exams": ["JEE Advanced"],
+          "blocks": [
+            {
+              "kind": "detailed",
+              "heading": "Preparation & physical states",
+              "points": [
+                "• Direct combination: 2B + 3X₂ → 2BX₃",
+                "• BF₃ specifically: B₂O₃ + 3CaF₂ + 3H₂SO₄ → 2BF₃ + 3CaSO₄ + 3H₂O",
+                "• For the heavier halides (NOT BF₃): B₂O₃ + 3C + 3X₂ → 2BX₃ + 3CO",
+                "PHYSICAL STATE  •  BF₃ colourless GAS  •  BCl₃ and BBr₃ fuming LIQUIDS  •  BI₃ fusible SOLID",
+                "• The trend follows molecular mass and van der Waals forces — a clean one-mark recall."
+              ],
+              "exams": ["JEE Advanced"]
+            },
+            {
+              "kind": "detailed",
+              "heading": "Back-bonding — the quantitative consequences",
+              "points": [
+                "• B–F BOND ORDER = 1.33, not 1. Boron's empty 2p orbital accepts π density from a fluorine lone pair. Three equivalent resonance structures spread ONE π bond over THREE B–F bonds: bond order = 1 + 1/3 = 1.33.",
+                "• Because back-bonding partly satisfies boron in BF₃, its Lewis acidity is the LOWEST of the series: BF₃ < BCl₃ < BBr₃ < BI₃ (the reverse of the electronegativity prediction).",
+                "• Direct experimental consequence: BCl₃ and BBr₃ both form complexes with AsH₃, but BF₃ DOES NOT — boron in BF₃ is already too electron-satisfied by back-donation to accept the weakly basic arsine lone pair.",
+                "• Halide redistribution (scrambling): mixing two boron halides at room temperature causes exchange of halogen atoms until a statistical equilibrium mixture of all species is reached — BF₃ + BCl₃ ⇌ BFCl₂ + BF₂Cl. In a three-halide mixture, the mixed halide BFClBr has been reported."
+              ],
+              "exams": ["JEE Advanced"]
+            },
+            {
+              "kind": "detailed",
+              "heading": "Hydrolysis — why BF₃ behaves differently from the rest",
+              "points": [
+                "• BCl₃, BBr₃, BI₃ hydrolyse COMPLETELY: BCl₃ + 3H₂O → H₃BO₃ + 3HCl",
+                "• BF₃ undergoes only PARTIAL hydrolysis, because the HF released immediately attacks the boric acid formed:",
+                "  Step 1:  4BF₃ + 12H₂O → 4H₃BO₃ + 12HF",
+                "  Step 2:  12HF + 3H₃BO₃ → 3H₃O⁺ + 3BF₄⁻ + 9H₂O",
+                "  Net:     4BF₃ + 3H₂O → H₃BO₃ + 3HBF₄  (fluoroboric acid)",
+                "• So a mole of BF₃ does NOT give a mole of H₃BO₃ — only one quarter does. Stoichiometry questions built on 'hydrolyse BF₃' are testing exactly this.",
+                "• In excess water HBF₄ is in equilibrium with [B(OH)₄]⁻."
+              ],
+              "exams": ["JEE Advanced"]
+            },
+            {
+              "kind": "detailed",
+              "heading": "Boron dihalides (B₂X₄) & boron carbide",
+              "points": [
+                "• Boron forms B₂X₄-type DIHALIDES containing a genuine B–B bond: 2BCl₃ + 2Hg →(electric discharge, low pressure) B₂Cl₄ + Hg₂Cl₂",
+                "• B₂Cl₄ is planar in the solid but rotation about the B–B bond is possible; the dihalides decompose slowly at room temperature.",
+                "• Gallium and indium also form 'dihalides', but these are the mixed-valence salts Ga⁺[GaCl₄]⁻ and In⁺[InCl₄]⁻ — NOT true M(II) compounds (contrast with boron's genuine B–B bonded B₂X₄).",
+                "• Boron carbide (norbide), B₄C: 4BCl₃ + 6H₂ + C →(1700–1800 °C, carbon fibre) B₄C + 12HCl. Extremely hard — used in bulletproof clothing and armour plate."
+              ],
+              "exams": ["JEE Advanced"]
+            },
+            {
+              "kind": "illustration",
+              "level": "advanced",
+              "concept": "Bond order from back-bonding, and why BF₃ resists both AsH₃ and complete hydrolysis",
+              "tricky": true,
+              "question": "(a) Show that the B–F bond order in BF₃ is 1.33. (b) BCl₃ and BBr₃ form adducts with AsH₃, but BF₃ does not — explain. (c) Explain why hydrolysis of BF₃ yields only ¼ mole of H₃BO₃ per mole of BF₃, and write the net equation.",
+              "thinking": "All three parts are the SAME phenomenon seen from different angles: pπ–pπ back-donation from fluorine into boron's empty 2p orbital. Establish it once quantitatively, then apply it twice.",
+              "steps": [
+                { "label": "Set up the resonance", "work": "BF₃ is trigonal planar, sp², with one empty 2p orbital perpendicular to the molecular plane. Any one of the three fluorines can donate a lone pair into it, giving F=B, so there are THREE equivalent resonance structures, each with one B=F and two B–F." },
+                { "label": "Compute the bond order", "work": "Across the three structures, each particular B–F bond is double in 1 structure and single in 2. Bond order = (2 + 1 + 1)/3 = 4/3 = 1.33." },
+                { "label": "Explain the AsH₃ result", "work": "Back-donation partially fills boron's empty orbital, so BF₃ is the WEAKEST Lewis acid of the boron trihalides. AsH₃ is a poor donor (arsenic's lone pair is diffuse and weakly basic). A weak acid plus a weak base gives no adduct. In BCl₃/BBr₃ the 3p/4p–2p overlap is poor, back-donation is weak, boron stays genuinely electron-deficient, and the adduct forms." },
+                { "label": "Trace the hydrolysis", "work": "4BF₃ + 12H₂O → 4H₃BO₃ + 12HF. The 12 HF then attack 3 of the 4 H₃BO₃: 12HF + 3H₃BO₃ → 3H₃O⁺ + 3BF₄⁻ + 9H₂O. Adding: 4BF₃ + 3H₂O → H₃BO₃ + 3HBF₄." },
+                { "label": "Read off the stoichiometry", "work": "4 mol BF₃ give only 1 mol H₃BO₃ — i.e. ¼ mol per mol of BF₃ — with the other three-quarters locked up as fluoroboric acid. The B–F bond's strength (partly from the same back-bonding) is what makes BF₄⁻ so stable and drives step 2." }
+              ],
+              "answer": "(a) 1.33, from 3 equivalent resonance structures sharing one π bond over three B–F bonds. (b) Back-donation makes BF₃ too weak a Lewis acid to bind the weakly basic AsH₃. (c) HF from step 1 converts ¾ of the boric acid to HBF₄; net 4BF₃ + 3H₂O → H₃BO₃ + 3HBF₄.",
+              "insight": "One concept — back-bonding — answers a structural question, a reactivity question and a stoichiometry question. Examiners bundle them precisely because students who memorise the acidity ORDER without the MECHANISM can only answer the first.",
+              "commonMistakes": [
+                "Assuming all boron trihalides hydrolyse completely to H₃BO₃ — only BCl₃, BBr₃ and BI₃ do.",
+                "Quoting bond order 1 for B–F by ignoring back-bonding, which then contradicts the observed short B–F distance."
+              ]
+            }
+          ]
+        },
+        {
+          "id": "g13-aluminium-halides",
+          "title": "Halides of Aluminium — Al₂Cl₆ & Friedel-Crafts",
+          "exams": ["JEE Advanced"],
+          "blocks": [
+            {
+              "kind": "detailed",
+              "heading": "Bonding & structure",
+              "points": [
+                "• AlF₃ is IONIC (high lattice energy, small F⁻, large electronegativity difference); AlCl₃, AlBr₃ and AlI₃ are COVALENT.",
+                "• AlCl₃ and AlBr₃ exist as DIMERS Al₂X₆ in the vapour phase and in non-polar solvents. The dimer is NON-PLANAR — each aluminium is roughly tetrahedral.",
+                "• Bond count in Al₂Cl₆: 4 terminal Al–Cl bonds that are ordinary 2-centre-2-electron, plus 2 bridging Al–Cl–Al units. Because chlorine HAS lone pairs to donate, the bridges are electron-PRECISE (commonly described as 3-centre-4-electron), unlike diborane's electron-DEFICIENT 3-centre-2-electron B–H–B bridges. This contrast is the single most-asked comparison between the two dimers.",
+                "• Behaviour by medium: dimeric in non-polar solvents · sublimes at about 180 °C · in water Al³⁺ is hydrated to [Al(H₂O)₆]³⁺ and the dimer is destroyed · soluble in organic solvents (alcohol, ether) because it is covalent."
+              ],
+              "exams": ["JEE Advanced"]
+            },
+            {
+              "kind": "detailed",
+              "heading": "Preparation & reactions",
+              "points": [
+                "• From the metal with dry HCl: 2Al + 6HCl →(dry, overheated) 2AlCl₃ + 3H₂↑",
+                "• From alumina: Al₂O₃ + 3C + 3Cl₂ → 2AlCl₃ + 3CO",
+                "• With ammonia: Al₂Cl₆ + 12NH₃ → 2[AlCl₃·6NH₃]",
+                "• With ammonium hydroxide: AlCl₃ + 3NH₄OH → Al(OH)₃↓ + 3NH₄Cl — a WHITE GELATINOUS precipitate.",
+                "• That precipitate is amphoteric and dissolves in excess NaOH: Al(OH)₃ + NaOH → NaAlO₂ + 2H₂O — which is exactly why NH₄OH (not NaOH) is used to precipitate Al³⁺ in qualitative analysis."
+              ],
+              "exams": ["JEE Advanced"]
+            },
+            {
+              "kind": "detailed",
+              "heading": "Friedel-Crafts catalysis — AlCl₃ as the Lewis acid",
+              "points": [
+                "• AlCl₃ is the classic Friedel-Crafts catalyst precisely because aluminium has an empty orbital and chloride is a good leaving group, so it can abstract Cl⁻ to generate an electrophile.",
+                "• ALKYLATION: R–Cl + AlCl₃ → R⁺ + AlCl₄⁻. The carbocation attacks benzene, and H⁺[AlCl₄]⁻ regenerates the catalyst.",
+                "• ACYLATION: R–COCl + AlCl₃ → R–C⁺=O (acylium ion) + AlCl₄⁻, which then attacks benzene to give the aryl ketone.",
+                "• The acylium ion is resonance-stabilised, which is why acylation avoids the carbocation rearrangement that plagues alkylation — a direct bridge between this inorganic topic and organic chemistry."
+              ],
+              "exams": ["JEE Advanced"]
+            }
+          ]
+        },
+        {
+          "id": "g13-boron-hydrides-detail",
+          "title": "Boron Hydrides — Preparation, STYX, Classification & Cleavage",
+          "exams": ["JEE Advanced"],
+          "blocks": [
+            {
+              "kind": "detailed",
+              "heading": "Preparations of diborane — all six standard routes",
+              "points": [
+                "• Classical (from magnesium boride): 3Mg + 2B → Mg₃B₂; then Mg₃B₂ + H₃PO₄ → a mixture of boranes, which on heating gives B₂H₆.",
+                "1. B₂O₃ + 2Al + 3H₂ →(750 atm, 150 °C) B₂H₆ + Al₂O₃",
+                "2. 2BF₃ + 6NaH →(180 °C) B₂H₆ + 6NaF",
+                "3. 2BCl₃ + 6H₂ →(electric discharge) B₂H₆ + 6HCl",
+                "4. 2NaBH₄ + I₂ →(diglyme) B₂H₆ + H₂ + 2NaI",
+                "5. 4Et₂O·BF₃ + 3LiAlH₄ →(ether) 4Et₂O + 3LiAlF₄ + 2B₂H₆",
+                "6. 4Et₂O·BF₃ + 3NaBH₄ →(ether) 4Et₂O + 3NaBF₄ + 2B₂H₆",
+                "• Note routes 5 and 6 differ only in the hydride source (LiAlH₄ vs NaBH₄) and hence in the fluoro-salt by-product."
+              ],
+              "exams": ["JEE Advanced"]
+            },
+            {
+              "kind": "detailed",
+              "heading": "Structure — exact geometry (numbers are examinable)",
+              "points": [
+                "• TERMINAL B–H bond length = 119 pm; BRIDGING B–H bond length = 133 pm. The bridge bonds are LONGER and weaker, as expected for 3-centre-2-electron bonds spreading 2 electrons over 3 atoms.",
+                "• B···B distance = 177 pm.",
+                "• Terminal H–B–H bond angle = 121.5°; bridging H–B–H angle = 97°.",
+                "• Each boron is approximately sp³ hybridised. The two BH₂ units and the two borons are coplanar; the two bridging hydrogens lie above and below that plane.",
+                "• MAXIMUM NUMBER OF ATOMS IN ONE PLANE = 6 (2 boron + 4 terminal hydrogen). A very frequently asked counting question."
+              ],
+              "exams": ["JEE Advanced"]
+            },
+            {
+              "kind": "detailed",
+              "heading": "STYX code & classification of boranes",
+              "points": [
+                "STYX NOTATION — a four-digit bonding code for any borane:",
+                "• S = number of B–H–B (3-centre-2-electron hydrogen bridge) bonds",
+                "• T = number of B–B–B (3-centre-2-electron boron bridge) bonds",
+                "• Y = number of ordinary 2-centre B–B bonds",
+                "• X = number of BH₂ groups",
+                "• For DIBORANE B₂H₆ the code is 2002 — S = 2, T = 0, Y = 0, X = 2.",
+                "CLASSIFICATION BY STRUCTURE (five families):",
+                "• 1. Closo (Greek closo = cage): BₙHₙ²⁻, n = 6–12 — a complete closed polyhedron.",
+                "• 2. Nido (Latin nidus = nest): BₙHₙ₊₄ — a polyhedron with one vertex missing.",
+                "• 3. Arachno (Greek arachne = spider's web): BₙHₙ₊₆ — two vertices missing.",
+                "• 4. Hypho: BₙHₙ₊₈ — three vertices missing.",
+                "• 5. Conjuncto (Latin conjucto = join together): two or more cages joined.",
+                "• Diborane itself is the simplest member of the arachno family (n = 2: B₂H₂₊₆ = B₂H₈? — in practice B₂H₆ is treated as the parent electron-deficient hydride and the series is applied from B₄ upward)."
+              ],
+              "exams": ["JEE Advanced"]
+            },
+            {
+              "kind": "detailed",
+              "heading": "Cleavage of diborane — symmetrical vs unsymmetrical",
+              "points": [
+                "• SYMMETRICAL cleavage — given by LARGE / bulky bases: Me₃N, CO, PF₃, THF. The bridge splits evenly to give two neutral adducts: B₂H₆ + 2L → 2 H₃B·L.",
+                "  Examples: B₂H₆ + 2CO → 2 H₃B·CO (borane carbonyl); B₂H₆ + 2PMe₃ → 2 H₃B·PMe₃.",
+                "• UNSYMMETRICAL cleavage — given by SMALL, strongly basic amines: NH₃, MeNH₂, Me₂NH. The products are IONIC: B₂H₆ + 2NH₃ → [BH₂(NH₃)₂]⁺[BH₄]⁻ (the diammoniate of diborane, B₂H₆·2NH₃).",
+                "• The discriminator is SIZE and BASE STRENGTH, not simply 'which base'. A small strong base can force a hydride to migrate, splitting the molecule into a cation and the borohydride anion; a bulky base cannot approach closely enough and settles for even cleavage.",
+                "• Heating the unsymmetrical product gives borazine: [BH₂(NH₃)₂]⁺[BH₄]⁻ →(Δ) B₃N₃H₆."
+              ],
+              "exams": ["JEE Advanced"]
+            },
+            {
+              "kind": "detailed",
+              "heading": "Reactions of diborane",
+              "points": [
+                "• Combustion (spontaneous in air, strongly exothermic): B₂H₆ + 3O₂ → B₂O₃ + 3H₂O, ΔH = −1976 kJ/mol — the basis of its study as a rocket fuel.",
+                "• Hydrolysis: B₂H₆ + 6H₂O → 2H₃BO₃ + 6H₂↑",
+                "• With aqueous alkali: B₂H₆ + 6NaOH → 2Na₃BO₃ + 6H₂↑",
+                "• With HCl: B₂H₆ + HCl → B₂H₅Cl + H₂",
+                "• With Cl₂ (vigorous): B₂H₆ + 6Cl₂ → 2BCl₃ + 6HCl",
+                "• With alcohols: B₂H₆ + 6ROH → 2B(OR)₃ + 6H₂",
+                "• With LiH (complex hydride formation): BX₃ + LiH → BH₃ + LiX, then BH₃ + LiH → LiBH₄",
+                "• STABILITY OF BOROHYDRIDES: LiBH₄ < NaBH₄ < KBH₄. BH₄⁻ is a large anion and is better stabilised by a larger cation — the standard 'like stabilises like' lattice argument.",
+                "• On controlled heating, diborane gives higher boranes (B₄H₁₀, B₅H₉, …) and eventually boron: B₂H₆ →(Δ) 2B + 3H₂.",
+                "• With HX (X = Cl, Br): B₂H₆ + HX → B₂H₅X + H₂",
+                "• With LiH in ether: B₂H₆ + 2LiH → 2Li[BH₄]",
+                "• With sodium amalgam: B₂H₆ + Na/Hg → Na[BH₄] + Na[B₃H₈]",
+                "• With CO under pressure (470 K, 20 bar): B₂H₆ + 2CO → 2H₃B·CO",
+                "• With methanol: B₂H₆ + 6MeOH → 2B(OMe)₃ + 6H₂",
+                "• With Lewis bases L (NEt₃, SEt₂, PMe₃): B₂H₆ + 2L → 2L·BH₃ (symmetrical cleavage)"
+              ],
+              "exams": ["JEE Advanced"]
+            },
+            {
+              "kind": "detailed",
+              "heading": "Digallane Ga₂H₆ — contrast with diborane",
+              "points": [
+                "• Ga₂H₆ is structurally analogous to B₂H₆ (two 3-centre-2-electron Ga–H–Ga bridges) but is MUCH less stable: it decomposes above 253 K to the elements — Ga₂H₆ → 2Ga + 3H₂. Every reaction of digallane must therefore be run at low temperature, which is itself the examinable contrast with diborane.",
+                "• With NH₃ at 195 K (unsymmetrical cleavage, as with diborane): Ga₂H₆ + 2NH₃ → [(H₃N)₂GaH₂]⁺[GaH₄]⁻",
+                "• With HCl at 178 K: Ga₂H₆ + 6HCl → Ga₂Cl₆ + 6H₂",
+                "• With NMe₃ at 178 K (symmetrical cleavage): Ga₂H₆ + 2NMe₃ → 2Me₃N·GaH₃",
+                "• With PH₃ at low temperature: Ga₂H₆ + 2PH₃ → 2H₃P·GaH₃",
+                "• With ethene at 243 K: gives the polymeric alkylgallium hydride {(CH₃CH₂)₂GaH}ₙ.",
+                "• Summary of the comparison: same bridged structure and the same symmetrical/unsymmetrical cleavage pattern, but far lower thermal stability — because the Ga–H–Ga bridge is weaker than B–H–B (larger, more diffuse orbitals give poorer 3-centre overlap)."
+              ],
+              "exams": ["JEE Advanced"]
+            },
+            {
+              "kind": "detailed",
+              "heading": "Mohs hardness scale — where the Group 13 materials sit",
+              "points": [
+                "MOHS SCALE  •  1 Talc  •  2 Gypsum  •  3 Calcite  •  4 Fluorite  •  5 Apatite  •  6 Feldspar (orthoclase)  •  7 Quartz  •  8 Topaz  •  9 CORUNDUM (α-Al₂O₃, incl. ruby and sapphire)  •  10 Diamond",
+                "• CORUNDUM at 9 is why α-Al₂O₃ is used as an abrasive and refractory — it scratches almost everything except diamond.",
+                "• Boron itself is among the hardest elements (its icosahedral B₁₂ network), second only to diamond among the elements.",
+                "• CUBIC BORON NITRIDE (c-BN, borazon) has hardness comparable to — and in some measures exceeding — diamond, and unlike diamond it is chemically stable toward hot iron, which is why c-BN rather than diamond is used for machining steel.",
+                "• Synthetic (HPHT or CVD) diamond can be engineered to exceed natural diamond's hardness."
+              ],
+              "exams": ["JEE Advanced"]
+            },
+            {
+              "kind": "detailed",
+              "heading": "Hydrides of the heavier Group 13 elements",
+              "points": [
+                "• Names: BH₃ borane · (AlH₃)ₙ ALANE · (GaH₃)₂ GALLANE · (InH₃)ₙ INDANE.",
+                "• None of the Group 13 elements forms its hydride by direct combination with hydrogen — all require indirect routes.",
+                "• (AlH₃)ₙ is POLYMERIC, with every aluminium 6-coordinate (CN = 6) and all bridges being 3-centre-2-electron Al–H–Al.",
+                "• GaH₃ is DIMERIC in the vapour state, (GaH₃)₂, structurally analogous to diborane.",
+                "• InH₃ exists as a POLYMER in both the vapour and the solid state.",
+                "• So the trend is: boron dimeric · gallium dimeric · aluminium and indium polymeric — 'except boron, the others tend toward polymeric hydrides'.",
+                "• Mixed complex hydrides: Al(BH₄)₃ has CN(Al) = 6 through three bidentate BH₄ groups. Be(BH₄)₂ is prepared as BeCl₂ + 2LiBH₄ → Be(BH₄)₂ + 2LiCl."
+              ],
+              "exams": ["JEE Advanced"]
+            }
+          ]
+        },
+        {
+          "id": "g13-borazine-boron-nitride",
+          "title": "Borazine & Boron Nitride — Inorganic Benzene and Inorganic Graphite",
+          "exams": ["JEE Advanced"],
+          "blocks": [
+            {
+              "kind": "detailed",
+              "heading": "Borazine (borazole), B₃N₃H₆",
+              "points": [
+                "• Names: inorganic benzene · borazole · triborane triamine · borazine.",
+                "• Preparation 1 (from diborane): 3B₂H₆ + 6NH₃ →(450 K) 2B₃N₃H₆ + 12H₂",
+                "• Preparation 2 (from BCl₃, two steps): 3NH₄Cl + 3BCl₃ → B₃N₃H₃Cl₃ (trichloroborazine) + 9HCl, then reduction: B₃N₃H₃Cl₃ + NaBH₄/ether → B₃N₃H₆.",
+                "PHYSICAL DATA  •  colourless liquid  •  m.p. −5 to −6 °C  •  b.p. 53–56 °C  •  density 0.787 g/cm³  •  faint ammonia-like odour  •  slightly soluble in water, readily soluble in benzene/toluene/hexane.",
+                "• AROMATICITY ≈ 36% that of benzene — aromatic, but distinctly less so, because nitrogen (EN 3.0) holds the π density more than boron (EN 2.0), so delocalisation is uneven.",
+                "• Consequence: borazine UNDERGOES ADDITION where benzene does not. B₃N₃H₆ + 3HCl → B₃N₃H₉Cl₃, with Cl⁻ adding to the electron-poor boron and H⁺ to the electron-rich nitrogen.",
+                "• Hydrolysis (benzene does not do this): B₃N₃H₆ + 9H₂O →(elevated temperature) 3H₃BO₃ + 3NH₃ + 3H₂",
+                "• Counting trap: the number of DIHALO derivatives is 3 for benzene (ortho, meta, para) but 4 for borazine, because the ring atoms alternate B and N and are therefore not all equivalent. |x − y| = 1."
+              ],
+              "exams": ["JEE Advanced"]
+            },
+            {
+              "kind": "detailed",
+              "heading": "Boron nitride (BN)ₓ — 'inorganic graphite'",
+              "points": [
+                "• B–N BOND ORDER = 1.33, same as the B–F case, arising from nitrogen lone-pair donation into boron's empty p orbital.",
+                "• HEXAGONAL BN (h-BN): sheets of alternating B and N in hexagonal rings, stacked like graphite. In-plane B–N distance 145 pm; interlayer separation 330 pm.",
+                "• KEY STRUCTURAL DIFFERENCE FROM GRAPHITE: in h-BN the layers are ECLIPSED — each boron lies directly above a nitrogen — whereas graphite's layers are staggered. This electrostatic B···N alignment is why h-BN is a better insulator.",
+                "• Properties of h-BN: soft, slippery lubricant, called WHITE GRAPHITE; an excellent ELECTRICAL INSULATOR yet an outstanding THERMAL conductor; chemically inert; hydrophobic; transparent in UV/visible/IR; biocompatible.",
+                "• Contrast with graphite: graphite CONDUCTS electricity (delocalised electrons) but h-BN does NOT — because the B–N bond is polar, the π electrons are localised on nitrogen instead of being free to move.",
+                "• CUBIC BN (c-BN, borazon): made by compressing h-BN at high pressure and temperature; adopts a diamond-like structure and is the SECOND HARDEST known material after diamond. Used as an abrasive and in cutting tools.",
+                "Preparations: B + N₂ · B + NH₃ · B₂H₆ + NH₃ · BCl₃ + NH₃ · Na₂B₄O₇ + NH₄Cl.",
+                "Reactions: 2BN + 3H₂O → B₂O₃ + 2NH₃ · BN + 4HF → NH₄BF₄ · BN + K₂CO₃ → KCNO + KBO₂."
+              ],
+              "exams": ["JEE Advanced"]
+            },
+            {
+              "kind": "detailed",
+              "heading": "Hydroboration — the organic pay-off of diborane",
+              "points": [
+                "• Addition of B–H across a C=C, with boron adding to the LESS substituted carbon (anti-Markovnikov orientation, syn addition):",
+                "  CH₂=CH₂ + BH₃·THF → CH₃CH₂–BH₂, and with further alkene → (CH₃CH₂)₃B (a trialkylborane, BR₃).",
+                "• HBO — hydroboration-OXIDATION: BR₃ + H₂O₂/OH⁻ → B(OH)₃ + 3ROH. Net result: alkene → ANTI-MARKOVNIKOV alcohol, with syn stereochemistry and no carbocation rearrangement.",
+                "• HBR — hydroboration-REDUCTION (protonolysis): BR₃ + 3CH₃COOH → 3RH + B(CH₃COO)₃. Net result: alkene → alkane.",
+                "• Oxidation of a secondary alkylborane with H₂CrO₄ gives the KETONE directly.",
+                "• Why it matters: hydroboration is the standard counterpoint to acid-catalysed hydration (which is Markovnikov and does rearrange), so this inorganic reagent is examined inside organic questions."
+              ],
+              "exams": ["JEE Advanced"]
+            }
+          ]
+        },
+        {
+          "id": "g13-halides-comparative",
+          "title": "Group 13 Halides — Comparative Behaviour & Coordination",
+          "exams": ["JEE Advanced"],
+          "blocks": [
+            {
+              "kind": "detailed",
+              "heading": "Ionic vs covalent, and the TlI₃ trap",
+              "points": [
+                "• The FLUORIDES of Al, Ga and In are IONIC; all other Group 13 trihalides are covalent. Boron's halides are covalent without exception.",
+                "• Boron trihalides are always MONOMERS — boron is too small to accommodate the bridging needed for dimerisation. AlCl₃ and AlBr₃ dimerise; this contrast is regularly examined.",
+                "• TlI₃ IS NOT THALLIUM(III) IODIDE. It is Tl⁺(I₃)⁻ — thallium(I) TRI-IODIDE, containing the linear triiodide ion. Genuine Tl³⁺(I⁻)₃ does not exist.",
+                "• The reason is a redox incompatibility: Tl³⁺ is a strong OXIDISING agent and I⁻ is a good REDUCING agent, so they cannot coexist — an internal redox reaction would occur immediately (Tl³⁺ + 2I⁻ → Tl⁺ + I₂, and the I₂ then binds a further I⁻ to give I₃⁻).",
+                "• Same logic to remember: any combination of a strongly oxidising cation with a strongly reducing anion (Cu²⁺ with I⁻, Fe³⁺ with I⁻, Tl³⁺ with I⁻) is unstable and redox-collapses."
+              ],
+              "exams": ["JEE Advanced"]
+            },
+            {
+              "kind": "detailed",
+              "heading": "Lewis acidity — the order REVERSES between hard and soft bases",
+              "points": [
+                "• Toward HARD bases (F⁻, O-donors such as ethers, amines): BX₃ > AlX₃ > GaX₃ > InX₃ — boron, the smallest and hardest acceptor, binds hard bases best.",
+                "• Toward SOFT bases (S-donors, P-donors, large polarisable ligands): BX₃ < AlX₃ < GaX₃ < InX₃ — the order completely inverts, because larger, softer acceptors match soft donors better.",
+                "• This is the Hard-Soft Acid-Base (HSAB) principle applied inside a single group; a question that specifies the base type is testing whether you noticed the reversal.",
+                "• Maximum coordination number: for B and Al the maximum CN is satisfied only by FLUORINE (BF₄⁻ with CN 4; AlF₆³⁻ with CN 6). For Ga and In, CN 6 can be reached with either F or Cl: [GaX₆]³⁻ and [InX₆]³⁻ where X = F, Cl."
+              ],
+              "exams": ["JEE Advanced"]
+            },
+            {
+              "kind": "detailed",
+              "heading": "Coordination number of aluminium halides by state",
+              "points": [
+                "STATE  •  AlF₃  •  AlCl₃  •  AlBr₃  •  AlI₃",
+                "SOLID  •  CN 6  •  CN 6  •  CN 4  •  CN 4",
+                "MELT / FUSED  •  —  •  CN 4  •  CN 4  •  CN 4",
+                "VAPOUR  •  monomer  •  CN 4  •  CN 4  •  CN 4",
+                "• AlF₃ is ionic with a 6-coordinate lattice and does not melt to a molecular liquid; it passes to a monomeric vapour.",
+                "• AlCl₃ is 6-coordinate in the SOLID (ionic-like layer lattice) but converts to 4-coordinate dimeric Al₂Cl₆ on melting — which is why molten AlCl₃ is a poor electrical conductor while solid AlCl₃ conducts: a favourite conceptual question.",
+                "• Temperature dependence in the vapour: BELOW ≈350 °C the dimer Al₂Cl₆ predominates; ABOVE ≈350 °C it dissociates to the monomer AlCl₃."
+              ],
+              "exams": ["JEE Advanced"]
+            }
+          ]
+        },
+        {
+          "id": "g13-oxides-hydroxides-alumina",
+          "title": "Oxides & Hydroxides — Acid-Base Gradation and Alumina",
+          "exams": ["JEE Advanced"],
+          "blocks": [
+            {
+              "kind": "detailed",
+              "heading": "The acid → amphoteric → base gradation",
+              "points": [
+                "OXIDES  •  B₂O₃ ACIDIC  •  Al₂O₃, Ga₂O₃ AMPHOTERIC  •  In₂O₃, Tl₂O BASIC",
+                "HYDROXIDES  •  B(OH)₃ ACIDIC  •  Al(OH)₃, Ga(OH)₃ AMPHOTERIC  •  In(OH)₃, TlOH BASIC",
+                "• The gradation follows metallic character: as the element becomes more metallic down the group, its oxide/hydroxide becomes more basic. This one pattern repeats in every p-block group and is worth internalising once.",
+                "• B₂O₃ is acidic in general, but in the presence of a STRONGER acidic oxide it behaves as a BASE:",
+                "  B₂O₃ + 3SO₃ → B₂(SO₄)₃",
+                "  B₂O₃ + P₄O₁₀ → 4BPO₄",
+                "• TlOH is a strong base, fully comparable to an alkali metal hydroxide — the far end of the gradation."
+              ],
+              "exams": ["JEE Advanced"]
+            },
+            {
+              "kind": "detailed",
+              "heading": "Aluminium oxide — α vs γ alumina",
+              "points": [
+                "• Al₂O₃ (alumina) occurs as BAUXITE and CORUNDUM. It is a white amorphous powder, insoluble in water, soluble in both acids (→ AlCl₃) and alkalis (→ NaAlO₂) — i.e. AMPHOTERIC. It is a polar covalent compound.",
+                "TWO FORMS:",
+                "• γ-Al₂O₃ — from 2Al(OH)₃ →(450 °C) γ-Al₂O₃ + 3H₂O. SOFT; high surface area and porosity; used as a DEHYDRATING AGENT, ADSORBENT, CATALYST SUPPORT and in CHROMATOGRAPHY.",
+                "• α-Al₂O₃ — from Al(OH)₃ →(1000 °C) α-Al₂O₃. VERY HARD; hexagonal (corundum) structure; the thermodynamically stable form; used as an ABRASIVE and REFRACTORY (furnace linings).",
+                "• Interconversion: γ-Al₂O₃ →(1000 °C) α-Al₂O₃ — the soft, high-surface form converts irreversibly to the hard, dense form on strong heating.",
+                "PRECIOUS GEMS ARE Al₂O₃ WITH TRACE TRANSITION-METAL IMPURITIES:",
+                "• Ruby — RED — Cr³⁺",
+                "• Sapphire — BLUE — Fe²⁺/Fe³⁺ and Ti⁴⁺",
+                "• Oriental topaz — YELLOW — Fe³⁺",
+                "• Oriental emerald — GREEN — Cr³⁺/V³⁺",
+                "• Other preparations: Al₂(SO₄)₃ →(Δ) Al₂O₃ + 3SO₃; 2Al(OH)₃ →(Δ) Al₂O₃ + 3H₂O.",
+                "• Corundum is used as 'jewellers rouge' for polishing glass."
+              ],
+              "exams": ["JEE Advanced"]
+            }
+          ]
+        },
+        {
+          "id": "g13-aluminium-metal-compounds",
+          "title": "Aluminium Metal, AlCl₃·6H₂O & Alums",
+          "exams": ["JEE Advanced"],
+          "blocks": [
+            {
+              "kind": "detailed",
+              "heading": "Aluminium — physical data and reactions",
+              "points": [
+                "• Silvery-white metal; DENSITY 2.7 g/cm³; MELTING POINT 660 °C; excellent conductor of heat and electricity; malleable and ductile.",
+                "• With air: DRY air has no action. MOIST air forms a thin protective Al₂O₃ film (loss of lustre). At very high temperature it burns to give BOTH Al₂O₃ AND AlN.",
+                "• With halogens: 2Al + 3Cl₂ → 2AlCl₃ (anhydrous)",
+                "• With alkali: 2Al + 2NaOH + 2H₂O → 2NaAlO₂ + 3H₂↑ (sodium meta-aluminate)",
+                "• With acids: 2Al + 3H₂SO₄ → Al₂(SO₄)₃ + 3H₂↑ and 2Al + 6HCl → 2AlCl₃ + 3H₂↑. But CONC. HNO₃ does NOT react — it PASSIVATES aluminium by forming a protective oxide layer.",
+                "• With nitrogen: 2Al + N₂ → 2AlN. Hot aluminium therefore acts as an ABSORBING AGENT for N₂. The nitride hydrolyses: AlN + 3H₂O → Al(OH)₃ + NH₃.",
+                "• With water: NO reaction with cold water; very slowly attacked by boiling water or steam: 2Al + 6H₂O → 2Al(OH)₃ + 3H₂↑",
+                "• THERMITE / GOLDSCHMIDT reduction — aluminium reduces the oxide of any less reactive metal: 3MnO₂ + 4Al → 2Al₂O₃ + 3Mn; Cr₂O₃ + 2Al → Al₂O₃ + 2Cr; Fe₂O₃ + 2Al → Al₂O₃ + 2Fe (railway-track welding).",
+                "• Uses: utensils, anti-corrosion plating for steel, aluminium cables, precision instruments, surgical apparatus, aircraft bodies, rail coaches, motorboats."
+              ],
+              "exams": ["JEE Advanced"]
+            },
+            {
+              "kind": "detailed",
+              "heading": "Aluminium chloride hexahydrate & the qualitative-analysis tests",
+              "points": [
+                "• AlCl₃·6H₂O is a colourless crystalline solid, soluble in water. ANHYDROUS AlCl₃ is a deliquescent white solid.",
+                "• Preparations: 2Al + 6HCl → 2AlCl₃ + 3H₂↑; Al₂O₃ + 6HCl → 2AlCl₃ + 3H₂O; Al(OH)₃ + 3HCl → AlCl₃ + 3H₂O. Anhydrous forms need Cl₂ on heated Al, or Al₂O₃ + 3C + 3Cl₂ → 2AlCl₃ + 3CO.",
+                "• Action of heat on the hydrate: 2AlCl₃·6H₂O →(Δ) Al₂O₃ + 6HCl↑ + 9H₂O. You CANNOT obtain anhydrous AlCl₃ by heating the hydrate — a classic trap.",
+                "• In moist air: AlCl₃ + 3H₂O ⇌ Al(OH)₃ + 3HCl↑ — white fumes of HCl.",
+                "• With ammonia: AlCl₃ + 6NH₃ → AlCl₃·6NH₃ (white solid), since AlCl₃ is a Lewis acid.",
+                "TWO DISTINGUISHING TESTS (learn the pairing, not just the reaction):",
+                "• With NaOH: AlCl₃ + 3NaOH → Al(OH)₃↓ + 3NaCl, and the precipitate DISSOLVES in excess NaOH: Al(OH)₃ + NaOH → NaAlO₂ + 2H₂O. This distinguishes Al³⁺ from Mg²⁺, Ca²⁺, Sr²⁺, Ba²⁺, whose hydroxides do NOT dissolve in excess NaOH.",
+                "• With NH₄OH: AlCl₃ + 3NH₄OH → Al(OH)₃↓ (white gelatinous) + 3NH₄Cl, and the precipitate does NOT dissolve in excess NH₄OH. This distinguishes Al³⁺ from Zn²⁺, because Zn(OH)₂ DOES dissolve in excess NH₄OH (forming the ammine complex).",
+                "• Hydrolysis makes the solution acidic to litmus: [Al(H₂O)₆]³⁺ ⇌ [Al(H₂O)₅OH]²⁺ + H⁺; the hydroxo cation then dimerises: 2[Al(H₂O)₅OH]²⁺ → [(H₂O)₄Al(OH)₂Al(H₂O)₄]⁴⁺ + 2H₂O.",
+                "• With lithium hydride: 4LiH + AlCl₃ → LiAlH₄ + 3LiCl — the standard laboratory synthesis of LAH.",
+                "• Uses: catalyst for petroleum cracking, Friedel-Crafts catalyst, preparation of aluminium compounds."
+              ],
+              "exams": ["JEE Advanced"]
+            },
+            {
+              "kind": "detailed",
+              "heading": "Alums — general formula, members and uses",
+              "points": [
+                "• GENERAL FORMULA: M₂SO₄·M′₂(SO₄)₃·24H₂O, equivalently MM′(SO₄)₂·12H₂O.",
+                "• M = a UNIVALENT cation — K⁺, Na⁺, NH₄⁺, Rb⁺, Cs⁺, Tl⁺. LITHIUM IS EXCLUDED: Li⁺ is too small to meet the structural requirements of the alum lattice.",
+                "• M′ = a TRIVALENT cation — Al³⁺, Ti³⁺, V³⁺, Cr³⁺, Fe³⁺, Mn³⁺, Co³⁺, Ga³⁺.",
+                "• Structurally an alum contains [M(H₂O)₆]⁺, [M′(H₂O)₆]³⁺ and SO₄²⁻ in the ratio 1 : 1 : 2 — which accounts for all 12 (or 24) waters of crystallisation.",
+                "NAMED ALUMS:",
+                "• Potash alum — K₂SO₄·Al₂(SO₄)₃·24H₂O",
+                "• Chrome alum — K₂SO₄·Cr₂(SO₄)₃·24H₂O",
+                "• Ferric alum — K₂SO₄·Fe₂(SO₄)₃·24H₂O",
+                "• Ammonium alum — (NH₄)₂SO₄·Al₂(SO₄)₃·24H₂O",
+                "• Alums are DOUBLE SALTS: in solution they dissociate completely into all their constituent ions, so every ion gives its normal test. (Contrast a complex salt, where the coordinated ion is not detectable.)",
+                "• Preparation: equimolar M₂SO₄ and M′₂(SO₄)₃ are fused, dissolved in water and crystallised.",
+                "• Uses: MORDANT in dyeing (hydrolysis deposits Al(OH)₃ into the fibre, which then adsorbs the dye); GERMICIDE in water purification; COAGULATING AGENT for precipitating colloidal impurities from water."
+              ],
+              "exams": ["JEE Advanced"]
+            }
+          ]
+        },
+        {
+          "id": "g13-problem-bank",
+          "title": "Group 13 — JEE Problem Bank",
+          "exams": ["JEE Advanced"],
+          "blocks": [
+            {
+              "kind": "illustration",
+              "level": "advanced",
+              "concept": "Borax structure — counting sp² vs sp³ boron and explaining alkaline hydrolysis",
+              "tricky": true,
+              "question": "Borax is Na₂B₄O₇·10H₂O, better written as Na₂[B₄O₅(OH)₄]·8H₂O. (a) How many boron atoms in the anion are sp² and how many are sp³? (b) How many B–OH groups are present? (c) An aqueous borax solution is alkaline and can be titrated against HCl using methyl orange. Write the hydrolysis equation and explain why the solution is basic. (d) How many moles of HCl neutralise 1 mole of borax?",
+              "thinking": "Do not memorise the borax anion — build it. The formula [B₄O₅(OH)₄]²⁻ carries a 2− charge on 4 boron atoms. Neutral boron is trigonal (BO₃, sp²); boron becomes tetrahedral (BO₄, sp³) exactly when it accepts an extra donor and picks up the formal negative charge. So the number of sp³ borons equals the magnitude of the anion charge.",
+              "steps": [
+                { "label": "Use the charge to find sp³ centres", "work": "The anion charge is 2−. Each tetrahedral (sp³, 4-coordinate) boron carries one formal negative charge; each trigonal (sp², 3-coordinate) boron is neutral. Charge 2− ⇒ exactly 2 sp³ borons, and therefore 4 − 2 = 2 sp² borons." },
+                { "label": "Locate the OH groups", "work": "The formula shows (OH)₄ — 4 hydroxyl groups, two on each of the two tetrahedral borons. The two trigonal borons carry no OH; they are linked only through bridging oxygens of the B₄O₅ core." },
+                { "label": "Write the hydrolysis", "work": "Borax is the salt of a STRONG base (NaOH) and a WEAK acid (boric acid), so the anion hydrolyses: B₄O₇²⁻ + 7H₂O ⇌ 4H₃BO₃ + 2OH⁻. The liberated OH⁻ is what makes the solution alkaline." },
+                { "label": "Count the HCl equivalents", "work": "The 2 OH⁻ released per borax unit consume 2 HCl: Na₂B₄O₇ + 2HCl + 5H₂O → 4H₃BO₃ + 2NaCl. So 1 mol borax ≡ 2 mol HCl — borax is a DIACIDIC base, which is precisely why it is used as a primary standard for standardising acids." }
+              ],
+              "answer": "(a) 2 sp² and 2 sp³ boron. (b) 4 B–OH groups. (c) B₄O₇²⁻ + 7H₂O ⇌ 4H₃BO₃ + 2OH⁻ — salt of strong base + weak acid, so anion hydrolysis liberates OH⁻. (d) 2 mol HCl per mol borax.",
+              "insight": "The charge-counting shortcut (anion charge = number of sp³/tetrahedral boron centres) works for every borate and is far more reliable than trying to recall the drawn structure under exam pressure.",
+              "fastMethod": "In any borate anion, #(4-coordinate sp³ B) = magnitude of the negative charge; the rest are 3-coordinate sp².",
+              "commonMistakes": [
+                "Saying all 4 borons are equivalent — borax deliberately mixes BO₃ and BO₄ environments, and questions are built on exactly that asymmetry.",
+                "Using 1:1 borax:HCl stoichiometry — it is 1:2, which changes every titration numerical built on borax."
+              ]
+            },
+            {
+              "kind": "illustration",
+              "level": "advanced",
+              "concept": "Why glycerol/mannitol sharpens the titration of boric acid",
+              "tricky": true,
+              "question": "Boric acid cannot be titrated sharply against NaOH using phenolphthalein, but the titration becomes sharp on adding excess glycerol (or mannitol). Explain, using the mechanism of boric acid's acidity, why a polyhydroxy compound has this effect. Would adding ethanol (a monohydric alcohol) work equally well?",
+              "thinking": "The key is that boric acid is a LEWIS acid, not a Brønsted acid — its acidity comes from B accepting OH⁻ from water, which only weakly releases H₃O⁺. Anything that pulls that equilibrium to the right increases the effective acid strength. So ask: what would stabilise the [B(OH)₄]⁻ product?",
+              "steps": [
+                { "label": "Write the actual acid equilibrium", "work": "B(OH)₃ + 2H₂O ⇌ [B(OH)₄]⁻ + H₃O⁺. Because B(OH)₃ is a very weak Lewis acid (Ka ≈ 5.8 × 10⁻¹⁰), this equilibrium lies far LEFT — too few H₃O⁺ ions exist for a sharp endpoint." },
+                { "label": "Introduce the polyol", "work": "A cis-diol (two OH groups on adjacent carbons, as in glycerol or mannitol) chelates the tetrahedral borate centre, forming a stable 5-membered cyclic borate ester — a bidentate chelate. Two diol molecules can bind one boron, giving a stable 1:2 borate-diol complex anion." },
+                { "label": "Apply Le Chatelier", "work": "By consuming [B(OH)₄]⁻ as a stable chelate, the polyol pulls the equilibrium strongly to the RIGHT, releasing far more H₃O⁺. The effective acid strength rises by several orders of magnitude, converting boric acid into a titratable strong-enough monoprotic acid with a sharp phenolphthalein endpoint." },
+                { "label": "Test ethanol", "work": "No. Ethanol is MONOhydric — it has only one OH and cannot chelate. Chelation (the entropy-favoured ring closure by a cis-diol) is the entire source of the stabilisation, so a monohydric alcohol gives no meaningful enhancement. The requirement is specifically a cis-1,2-diol." }
+              ],
+              "answer": "Glycerol/mannitol chelate the [B(OH)₄]⁻ anion as a stable cyclic borate ester, pulling B(OH)₃ + 2H₂O ⇌ [B(OH)₄]⁻ + H₃O⁺ to the right and sharply raising effective acidity. Ethanol will NOT work — it is monohydric and cannot chelate.",
+              "insight": "This problem is the practical pay-off of knowing boric acid is a Lewis (not Brønsted) acid. If you believed it simply donated H⁺ from its OH groups, the glycerol effect would be inexplicable.",
+              "commonMistakes": [
+                "Claiming glycerol 'increases ionisation of the O–H bonds' — the O–H bonds never ionise; the boron centre accepts OH⁻.",
+                "Assuming any alcohol works — the cis-diol geometry is essential."
+              ]
+            },
+            {
+              "kind": "illustration",
+              "level": "advanced",
+              "concept": "Borazine vs benzene — isoelectronic but not equally aromatic",
+              "question": "Borazine (B₃N₃H₆) is called 'inorganic benzene'. (a) Show that it is isoelectronic with benzene. (b) Despite the analogy, borazine adds 3 moles of HCl readily whereas benzene does not undergo addition. Explain. (c) Write the preparation of borazine from diborane.",
+              "thinking": "'Isoelectronic' guarantees the same electron count and a similar planar 6-membered ring — it does NOT guarantee equal delocalisation. The moment two ring atoms differ in electronegativity, the π cloud stops being uniform, and uneven π density is what permits addition.",
+              "steps": [
+                { "label": "Establish the isoelectronic relationship", "work": "Benzene C₆H₆: 6 C (4 valence e⁻ each) + 6 H = 24 + 6 = 30 valence electrons. Borazine B₃N₃H₆: 3 B (3 e⁻) + 3 N (5 e⁻) + 6 H = 9 + 15 + 6 = 30 valence electrons. A B–N unit supplies the same 8 electrons as a C–C unit, so the two rings are isoelectronic and both planar 6-membered." },
+                { "label": "Explain the reactivity difference", "work": "In benzene all six carbons are identical, so the π electrons are perfectly, symmetrically delocalised — full aromatic stabilisation, and addition would destroy it. In borazine, nitrogen (EN 3.0) is much more electronegative than boron (EN 2.0). The π density is drawn toward N, leaving B centres δ+ and N centres δ−. The ring is therefore polarised, delocalisation is incomplete, and aromatic stabilisation is significantly weaker." },
+                { "label": "Predict the addition regiochemistry", "work": "Because B is δ+ and N is δ−, addition is polar and regioselective: the nucleophilic Cl⁻ adds to boron and H⁺ adds to nitrogen. B₃N₃H₆ + 3HCl → B₃N₃H₉Cl₃ (each B picks up Cl, each N picks up H)." },
+                { "label": "Write the preparation", "work": "Diborane + ammonia at low temperature gives the adduct, which on strong heating cyclises: 3B₂H₆ + 6NH₃ → 2B₃N₃H₆ + 12H₂ (via the intermediate B₂H₆·2NH₃, heated to ~450 K)." }
+              ],
+              "answer": "(a) Both have 30 valence electrons and a planar 6-ring. (b) B–N electronegativity difference polarises the ring (B δ+, N δ−), weakening delocalisation, so polar addition occurs: Cl to B, H to N. (c) 3B₂H₆ + 6NH₃ → 2B₃N₃H₆ + 12H₂.",
+              "insight": "Isoelectronic ≠ identical properties. Whenever an inorganic ring is offered as an analogue of an aromatic organic ring, check the electronegativity difference between ring atoms — that difference is almost always the intended answer.",
+              "commonMistakes": [
+                "Calling borazine 'fully aromatic like benzene' — it has only partial aromatic character.",
+                "Getting the addition orientation backwards; Cl⁻ (nucleophile) must go to the electron-poor boron."
+              ]
+            },
+            {
+              "kind": "illustration",
+              "level": "intermediate",
+              "concept": "Amphoterism of aluminium — a gas-volume numerical",
+              "question": "Two identical 0.54 g samples of aluminium foil are taken. Sample A is dissolved in excess dilute HCl; sample B is dissolved in excess aqueous NaOH. Calculate the volume of H₂ liberated at STP in each case, and state what this proves about aluminium. (Al = 27 g/mol; molar volume at STP = 22.4 L)",
+              "thinking": "Amphoteric metals give the SAME hydrogen stoichiometry with acid and with alkali, because in both cases the oxidation half-reaction is identical: Al → Al³⁺ + 3e⁻. Only the fate of the aluminium (as Al³⁺ or as aluminate) differs. Predict equal volumes before calculating.",
+              "steps": [
+                { "label": "Moles of Al", "work": "n(Al) = 0.54 / 27 = 0.020 mol." },
+                { "label": "Reaction with HCl", "work": "2Al + 6HCl → 2AlCl₃ + 3H₂. Ratio Al : H₂ = 2 : 3, so n(H₂) = 0.020 × 3/2 = 0.030 mol." },
+                { "label": "Reaction with NaOH", "work": "2Al + 2NaOH + 6H₂O → 2Na[Al(OH)₄] + 3H₂. Ratio Al : H₂ = 2 : 3 again, so n(H₂) = 0.020 × 3/2 = 0.030 mol — identical." },
+                { "label": "Convert to volume", "work": "V = 0.030 × 22.4 = 0.672 L = 672 mL at STP, in BOTH cases." },
+                { "label": "Interpret", "work": "Equal H₂ from acid and from base is the operational definition of an amphoteric metal: Al is oxidised Al⁰ → Al³⁺ (losing 3e⁻) regardless of medium; only the product changes (AlCl₃ in acid, aluminate in alkali)." }
+              ],
+              "answer": "672 mL of H₂ at STP in BOTH cases — proving aluminium is amphoteric.",
+              "insight": "Because the electron count per metal atom is what fixes the H₂ yield, any amphoteric metal (Al, Zn, Sn, Pb) gives identical gas volumes in acid and alkali. Examiners exploit this by asking for a 'ratio' — the answer is 1:1.",
+              "fastMethod": "n(H₂) = n(metal) × (electrons lost per atom) / 2. For Al that is 3/2 in either medium."
+            },
+            {
+              "kind": "illustration",
+              "level": "advanced",
+              "concept": "Why 1 mole of borax neutralises exactly 2 moles of acid",
+              "tricky": true,
+              "question": "An aqueous solution containing 1 mole of borax reacts with exactly 2 moles of a strong acid. Which statement explains this? (A) formation of 2 mol B(OH)₃ only (B) formation of 2 mol [B(OH)₄]⁻ only (C) formation of 1 mol each of B(OH)₃ and [B(OH)₄]⁻ (D) formation of 2 mol each of [B(OH)₄]⁻ and B(OH)₃, of which only [B(OH)₄]⁻ reacts with the acid.",
+              "thinking": "Do not guess from the 1:2 ratio alone — several options could produce a 2. Write out what borax actually becomes on dissolution, then ask which of those species is basic enough to consume H₃O⁺.",
+              "steps": [
+                { "label": "Dissolve the borax anion", "work": "[B₄O₅(OH)₄]²⁻ + 5H₂O ⇌ 2B(OH)₃ + 2[B(OH)₄]⁻. So ONE borax unit gives TWO of each species — the solution contains equal amounts of the weak acid B(OH)₃ and its conjugate base [B(OH)₄]⁻ (which is also why borax acts as a buffer)." },
+                { "label": "Identify what reacts with acid", "work": "B(OH)₃ is itself a (very weak) ACID — it cannot neutralise added H₃O⁺. Only the borate anion [B(OH)₄]⁻ is basic: 2[B(OH)₄]⁻ + 2H₃O⁺ → 2B(OH)₃ + 4H₂O." },
+                { "label": "Count the equivalents", "work": "2 mol of [B(OH)₄]⁻ consume 2 mol of H₃O⁺. Hence 1 mol borax ≡ 2 mol acid — borax behaves as a DIACIDIC base." },
+                { "label": "Select the option", "work": "Option (D) is the only one that states both facts correctly: 2 mol of each species form, and only the borate anion reacts with acid." }
+              ],
+              "answer": "(D). Overall: Na₂B₄O₇ + 2HCl + 5H₂O → 2NaCl + 4H₃BO₃. On cooling, white flakes of boric acid separate.",
+              "insight": "This is precisely why borax is a PRIMARY STANDARD for standardising acids — the stoichiometry is exactly 1:2, and its high molar mass keeps weighing errors small.",
+              "commonMistakes": [
+                "Choosing (A) or (B) by matching the number 2 without checking WHICH species is basic.",
+                "Using a 1:1 borax:acid ratio, which halves every answer in a titration numerical."
+              ]
+            },
+            {
+              "kind": "illustration",
+              "level": "advanced",
+              "concept": "Multi-step reaction chain: identifying products from borax",
+              "question": "(a) Na₂B₄O₇ + conc. H₂SO₄ + H₂O → (A). Product (A) is then treated with C₂H₅OH and ignited, giving (B), identified by a characteristic flame colour. Identify (A) and (B). (b) Na₂B₄O₇ on strong heating gives (C); (C) with NaOH gives (D), and (C) with HF/H₂SO₄ gives (E). Identify (C), (D), (E).",
+              "thinking": "Reaction-chain questions are the most common p-block format. Work strictly one arrow at a time, writing the balanced equation before moving on — never jump to the final answer.",
+              "steps": [
+                { "label": "(a) Borax with strong acid", "work": "Na₂B₄O₇ + H₂SO₄ + 5H₂O → Na₂SO₄ + 4H₃BO₃. So (A) = ORTHOBORIC ACID, H₃BO₃." },
+                { "label": "(a) Boric acid with ethanol", "work": "Esterification: H₃BO₃ + 3C₂H₅OH → B(OC₂H₅)₃ + 3H₂O. So (B) = TRIETHYL BORATE, which is volatile and burns with a GREEN-EDGED FLAME — the classical test for the borate radical." },
+                { "label": "(b) Borax on strong heating", "work": "Na₂B₄O₇ →(740 °C) 2NaBO₂ + B₂O₃. Taking the boron-containing oxide, (C) = B₂O₃." },
+                { "label": "(b) B₂O₃ with NaOH", "work": "The acidic oxide is neutralised: B₂O₃ + 2NaOH → 2NaBO₂ + H₂O. So (D) = SODIUM METABORATE, NaBO₂." },
+                { "label": "(b) B₂O₃ with HF/H₂SO₄", "work": "B₂O₃ + 6HF → 2BF₃ + 3H₂O (H₂SO₄ acts as the dehydrating agent). So (E) = BORON TRIFLUORIDE, BF₃." }
+              ],
+              "answer": "(a) A = H₃BO₃, B = B(OC₂H₅)₃ (green-edged flame). (b) C = B₂O₃, D = NaBO₂, E = BF₃.",
+              "insight": "The green-edged flame of an alkyl borate is the standard identification of a borate in an unknown salt — pair it with the borax bead test as your two borate confirmations.",
+              "fastMethod": "In any 'borax + strong acid' step, the boron always ends up as H₃BO₃; in any 'borax + strong heat' step, it always ends up as NaBO₂ + B₂O₃."
+            },
+            {
+              "kind": "misc",
+              "level": "medium",
+              "question": "Which cation does NOT give the borax bead test: Cr³⁺, Co²⁺, Ag⁺, or Mn²⁺?",
+              "answer": "Ag⁺",
+              "explanation": "The bead test works only where the metal metaborate is COLOURED. Silver metaborate AgBO₂ is white/colourless, so no distinguishing bead colour appears. Cr³⁺ (green), Co²⁺ (blue) and Mn²⁺ all give coloured beads.",
+              "exams": ["JEE Advanced"]
+            },
+            {
+              "kind": "misc",
+              "level": "medium",
+              "question": "When borax is dissolved in water, which boron species are present?",
+              "answer": "BOTH B(OH)₃ and [B(OH)₄]⁻, in equal amounts",
+              "explanation": "[B₄O₅(OH)₄]²⁻ + 5H₂O ⇌ 2B(OH)₃ + 2[B(OH)₄]⁻. The equal weak-acid/conjugate-base pair is also why borax solution acts as a buffer.",
+              "exams": ["JEE Advanced"]
+            },
+            {
+              "kind": "misc",
+              "level": "hard",
+              "question": "BF₃ + LiAlH₄ →(ether) X. For X, state the total number of bonding electrons, 2-centre-2-electron bonds and 3-centre-2-electron bonds, and say whether X reacts with NH₃.",
+              "answer": "X = B₂H₆; 12 bonding electrons; 4 two-centre-2e bonds; 2 three-centre-2e bonds; YES it reacts with NH₃",
+              "explanation": "4BF₃ + 3LiAlH₄ → 2B₂H₆ + 3LiF + 3AlF₃. Diborane has 12 valence electrons (6 pairs): 4 pairs in terminal 2c-2e bonds and 2 pairs in the bridging 3c-2e bonds. It does react with ammonia — B₂H₆ + 2NH₃ → [BH₂(NH₃)₂]⁺[BH₄]⁻, which on heating to about 200 °C gives borazine.",
+              "exams": ["JEE Advanced"]
+            },
+            {
+              "kind": "misc",
+              "level": "hard",
+              "question": "What happens when boron trifluoride is kept in moist air — no reaction, partial hydrolysis, or complete hydrolysis?",
+              "answer": "It fumes strongly and is PARTIALLY hydrolysed",
+              "explanation": "4BF₃ + 6H₂O → 3H₃O⁺ + 3BF₄⁻ + B(OH)₃. The HF released immediately converts most of the boric acid to the very stable fluoroborate ion, so hydrolysis stops short of completion — unlike BCl₃/BBr₃/BI₃, which hydrolyse fully.",
+              "exams": ["JEE Advanced"]
+            },
+            {
+              "kind": "misc",
+              "level": "challenge",
+              "question": "True or false: (i) BCl₃ in aqueous solution exists as B³⁺ and Cl⁻. (ii) AlX₃ (X = Cl, Br) exists as a dimer in non-polar solvents. (iii) Be₂C is an acetylide because it gives ethyne with water.",
+              "answer": "(i) FALSE  (ii) TRUE  (iii) FALSE",
+              "explanation": "(i) BCl₃ hydrolyses to boric acid; B³⁺ never forms because boron's ionisation enthalpies are far too high (hydration could not compensate). (ii) Al₂Cl₆/Al₂Br₆ dimers persist in ether, benzene and similar non-polar media. (iii) Be₂C is a METHANIDE — it gives METHANE, not ethyne: Be₂C + 4H₂O → 2Be(OH)₂ + CH₄. Al₄C₃ behaves the same way; CaC₂ is the true acetylide.",
+              "exams": ["JEE Advanced"]
+            },
+            {
+              "kind": "misc",
+              "level": "challenge",
+              "question": "Write the equations for preparing elemental boron starting from the mineral colemanite.",
+              "answer": "Ca₂B₆O₁₁ + 4SO₂ + 11H₂O → 2Ca(HSO₃)₂ + 6H₃BO₃ ; 2H₃BO₃ → B₂O₃ + 3H₂O ; B₂O₃ + 2Al → Al₂O₃ + 2B",
+              "explanation": "Three stages: liberate boric acid from the mineral, dehydrate it to the oxide, then reduce the oxide with a reactive metal (Al, Mg, Na or K all work).",
+              "exams": ["JEE Advanced"]
+            },
+            {
+              "kind": "misc",
+              "level": "easy",
+              "question": "Arrange BF₃, BCl₃, BBr₃, BI₃ in increasing order of Lewis acid strength.",
+              "answer": "BF₃ < BCl₃ < BBr₃ < BI₃",
+              "explanation": "Back-bonding (halogen lone pair → empty 2p of B) is strongest for F (best 2p–2p overlap) and weakest for I, so BF₃'s boron is least electron-hungry. This REVERSES the electronegativity prediction.",
+              "exams": ["JEE Advanced"]
+            },
+            {
+              "kind": "misc",
+              "level": "easy",
+              "question": "How many 3-centre-2-electron bonds and how many 2-centre-2-electron B–H bonds are present in diborane?",
+              "answer": "2 three-centre-2-electron (bridging) and 4 two-centre-2-electron (terminal)",
+              "explanation": "Total valence electrons = 2(3) + 6(1) = 12 = 6 pairs. Four pairs form the 4 terminal B–H bonds; the remaining 2 pairs are spread over the two B–H–B bridges.",
+              "exams": ["JEE Advanced"]
+            },
+            {
+              "kind": "misc",
+              "level": "easy",
+              "question": "State the hybridisation of boron in BF₃ and in BF₄⁻.",
+              "answer": "sp² in BF₃ (trigonal planar); sp³ in BF₄⁻ (tetrahedral)",
+              "explanation": "BF₃ has 3 bond pairs and no lone pair (steric number 3). On accepting F⁻ the steric number becomes 4, so boron rehybridises to sp³ and the geometry becomes tetrahedral.",
+              "exams": ["JEE Advanced"]
+            },
+            {
+              "kind": "misc",
+              "level": "medium",
+              "question": "Boric acid has three OH groups yet is monobasic. Explain in one line and give its reaction with water.",
+              "answer": "It is a Lewis acid: B(OH)₃ + 2H₂O ⇌ [B(OH)₄]⁻ + H₃O⁺",
+              "explanation": "It does not donate H⁺ from its own OH groups. Electron-deficient boron accepts OH⁻ from water, releasing exactly one H₃O⁺ per molecule — hence monobasic.",
+              "exams": ["JEE Advanced"]
+            },
+            {
+              "kind": "misc",
+              "level": "medium",
+              "question": "In the borax bead test, what colour does a copper salt give in (i) the oxidising flame and (ii) the reducing flame?",
+              "answer": "(i) Blue-green [Cu(BO₂)₂]; (ii) red-brown (Cu₂O, or metallic Cu)",
+              "explanation": "The oxidising flame preserves Cu(II) as blue-green copper metaborate; the reducing flame reduces it to Cu(I)/Cu(0), giving an opaque red-brown bead.",
+              "exams": ["JEE Advanced"]
+            },
+            {
+              "kind": "misc",
+              "level": "medium",
+              "question": "What is formed when borax is heated strongly, and why is this the basis of the bead test?",
+              "answer": "NaBO₂ + B₂O₃ (a transparent glassy bead)",
+              "explanation": "Na₂B₄O₇·10H₂O loses water, then melts to sodium metaborate + boric anhydride. The B₂O₃ in the bead dissolves coloured metal oxides as characteristic coloured metaborates.",
+              "exams": ["JEE Advanced"]
+            },
+            {
+              "kind": "misc",
+              "level": "medium",
+              "question": "Why is anhydrous AlCl₃ a dimer in benzene but exists as [Al(H₂O)₆]³⁺ in water?",
+              "answer": "In benzene Al completes its octet by Cl-bridging (Al₂Cl₆); water is a better donor and solvates/ionises it",
+              "explanation": "Aluminium in AlCl₃ has only 6 valence electrons. In a non-donor solvent it accepts a chlorine lone pair from a neighbour forming two Al–Cl–Al bridges. Water, a stronger Lewis base, displaces the bridges to give the hexaaqua ion.",
+              "exams": ["JEE Advanced"]
+            },
+            {
+              "kind": "misc",
+              "level": "hard",
+              "question": "Which of BF₄⁻, AlF₆³⁻, BF₆³⁻ and AlCl₄⁻ does NOT exist, and why?",
+              "answer": "BF₆³⁻ — boron cannot exceed covalency 4",
+              "explanation": "Boron is in period 2 with no accessible d-orbitals, so its maximum covalency is 4 (BF₄⁻). Aluminium (period 3) can use d-orbitals and reach 6-coordination, so AlF₆³⁻ is fine.",
+              "exams": ["JEE Advanced"]
+            },
+            {
+              "kind": "misc",
+              "level": "hard",
+              "question": "Between Tl⁺ and Tl³⁺, which is more stable, and what does this imply about the oxidising nature of Tl³⁺?",
+              "answer": "Tl⁺ is more stable; therefore Tl³⁺ is a strong oxidising agent",
+              "explanation": "The inert-pair effect is strongest at the bottom of Group 13: the 6s² pair resists ionisation. Tl³⁺ readily accepts 2 electrons to revert to Tl⁺, so it oxidises other species (e.g. TlCl₃ → TlCl + Cl₂).",
+              "exams": ["JEE Advanced"]
+            },
+            {
+              "kind": "misc",
+              "level": "hard",
+              "question": "Diborane is treated with (i) CO and (ii) excess NH₃ at high temperature. Give the products.",
+              "answer": "(i) 2 BH₃·CO (borane carbonyl); (ii) B₃N₃H₆ (borazine) + H₂",
+              "explanation": "CO is a small donor that cleaves the bridges to give two borane–carbonyl adducts. Excess ammonia at high temperature gives the cyclic 'inorganic benzene', borazine.",
+              "exams": ["JEE Advanced"]
+            },
+            {
+              "kind": "misc",
+              "level": "hard",
+              "question": "Explain why the atomic radius of gallium is smaller than that of aluminium.",
+              "answer": "Poor shielding by the filled 3d¹⁰ subshell in Ga raises the effective nuclear charge",
+              "explanation": "Ga is preceded by the first transition series. d-electrons shield the nucleus poorly, so Z_eff felt by Ga's outer electrons exceeds that in Al, contracting the atom despite the extra shell. Order: B < Ga < Al < In < Tl.",
+              "exams": ["JEE Advanced"]
+            },
+            {
+              "kind": "misc",
+              "level": "challenge",
+              "question": "1 mole of borax is titrated with HCl using methyl orange. How many moles of HCl are consumed, and why is borax a primary standard?",
+              "answer": "2 moles of HCl; it is pure, stable, non-hygroscopic and of high, exactly known equivalent mass",
+              "explanation": "Na₂B₄O₇ + 2HCl + 5H₂O → 4H₃BO₃ + 2NaCl. Hydrolysis releases 2 OH⁻ per formula unit, making borax diacidic. Its high molar mass keeps weighing errors small — hence its use as a primary standard.",
+              "exams": ["JEE Advanced"]
+            },
+            {
+              "kind": "misc",
+              "level": "challenge",
+              "question": "Write the formula of potash alum and state what makes a salt a 'double salt' rather than a complex.",
+              "answer": "K₂SO₄·Al₂(SO₄)₃·24H₂O — a double salt gives ALL its constituent ions in solution",
+              "explanation": "Double salts exist only in the solid lattice; on dissolving they dissociate completely into K⁺, Al³⁺ and SO₄²⁻ (each detectable). A complex salt keeps its coordination sphere intact in solution, so the bound ion is not detectable by normal tests.",
+              "exams": ["JEE Advanced"]
+            },
+            {
+              "kind": "misc",
+              "level": "challenge",
+              "question": "Why does B₂H₆ hydrolyse vigorously while BF₃ merely forms an adduct with water?",
+              "answer": "The hydridic B–H bonds react with H⁺ of water to release H₂; B–F bonds have no such hydride",
+              "explanation": "B₂H₆ + 6H₂O → 2B(OH)₃ + 6H₂ — the H on boron is hydridic (δ−) and combines with the protic H (δ+) of water, an energetically large driving force. BF₃ has no hydride, so it only forms BF₃·OH₂ (and slowly gives fluoroboric acid).",
+              "exams": ["JEE Advanced"]
             }
           ]
         }
@@ -1574,6 +2538,29 @@ export const P_BLOCK_NOTES: PremiumChapterNotes = {
               "exams": [
                 "JEE Advanced"
               ]
+            },
+            {
+              "kind": "detailed",
+              "heading": "Hydrogen Chloride — preparation, drying and tests",
+              "points": [
+                "• Laboratory preparation: NaCl + conc. H₂SO₄ → NaHSO₄ + HCl↑ (below 420 K). On stronger heating (823 K) the bisulphate reacts further: NaCl + NaHSO₄ → Na₂SO₄ + HCl↑. The low-temperature step is the one used, because it is easier to control.",
+                "• Drying: HCl gas is dried by passing through concentrated H₂SO₄. It must NOT be dried over quicklime (CaO) or any basic drying agent, because HCl is acidic and would be absorbed and neutralised; P₄O₁₀ is also avoided in practice.",
+                "• Properties: colourless, pungent gas; fumes strongly in moist air (forms acid mist); extremely soluble in water (fountain experiment) giving hydrochloric acid, a strong monobasic acid.",
+                "• Test with ammonia: HCl + NH₃ → NH₄Cl — dense WHITE FUMES. This is the standard identification of HCl gas.",
+                "• Test with silver nitrate: Cl⁻ + AgNO₃ → AgCl↓ (curdy white precipitate) which is SOLUBLE in dilute NH₄OH — this solubility distinguishes chloride from bromide (pale yellow, sparingly soluble) and iodide (yellow, insoluble in NH₄OH).",
+                "• Aqua regia: 3 parts conc. HCl + 1 part conc. HNO₃, dissolves Au and Pt (see Group 15 notes for the oxidation-plus-complexation mechanism).",
+                "• Uses: manufacture of chlorine, NH₄Cl and glucose (from corn starch); pickling/descaling of steel; extracting glue from bones; purifying bone black."
+              ],
+              "exams": [
+                "JEE Advanced"
+              ]
+            },
+            {
+              "kind": "trap",
+              "items": [
+                { "trap": "HBr and HI can be prepared the same way as HCl, by heating the metal bromide/iodide with concentrated H₂SO₄.", "reality": "NO — concentrated H₂SO₄ is an OXIDISING agent and HBr/HI are strong reducing agents, so it oxidises the product: 2HBr + H₂SO₄ → Br₂ + SO₂ + 2H₂O, and 8HI + H₂SO₄ → 4I₂ + H₂S + 4H₂O. HBr and HI are therefore prepared using non-oxidising phosphoric acid (H₃PO₄) instead. This is one of the most repeated Group 17 preparation questions." },
+                { "trap": "HF is the strongest hydrohalic acid because fluorine is the most electronegative halogen.", "reality": "HF is the WEAKEST (HF ≪ HCl < HBr < HI). Acid strength here tracks how easily the H–X bond breaks, and H–F is by far the strongest bond; HF also hydrogen-bonds into ion pairs in water, further suppressing dissociation." }
+              ]
             }
           ]
         },
@@ -1832,6 +2819,117 @@ export const P_BLOCK_NOTES: PremiumChapterNotes = {
                 "Bleaching powder's real composition and available-chlorine logic.",
                 "Oxoacid strength ordering by conjugate-base delocalisation — asked as 'arrange and justify', not just 'arrange'."
               ]
+            }
+          ]
+        },
+        {
+          "id": "g17-pseudohalogens",
+          "title": "Pseudohalogens & Pseudohalide Ions",
+          "exams": ["JEE Advanced"],
+          "blocks": [
+            {
+              "kind": "detailed",
+              "heading": "Definition & Members",
+              "points": [
+                "• A PSEUDOHALOGEN is a molecule built from two or more electronegative atoms that, as a unit, behaves chemically like a halogen molecule (X₂). The corresponding anion is a PSEUDOHALIDE ion, behaving like X⁻.",
+                "• Pseudohalogens (the X₂ analogues): cyanogen (CN)₂, thiocyanogen (SCN)₂, selenocyanogen (SeCN)₂, oxycyanogen (OCN)₂, and azidocarbondisulphide (SCSN₃)₂.",
+                "• Pseudohalide ions (the X⁻ analogues): cyanide CN⁻, thiocyanate SCN⁻, cyanate OCN⁻, azide N₃⁻, isocyanate NCO⁻, and cyanamide NCN²⁻.",
+                "• Note the pattern: every pseudohalide is a small, univalent, electronegative anion that can form a stable HX-type acid and a stable X₂-type dimer — exactly the two structural requirements for halogen-like behaviour."
+              ],
+              "exams": ["JEE Advanced"]
+            },
+            {
+              "kind": "detailed",
+              "heading": "Why they mimic halogens — the point-by-point analogy",
+              "points": [
+                "• Form the free dimer X₂: like Cl₂, they exist as (CN)₂, (SCN)₂ — formed by oxidation of the anion, e.g. 2CN⁻ → (CN)₂ + 2e⁻ (parallel to 2Cl⁻ → Cl₂ + 2e⁻).",
+                "• Form HX-type acids: HCN (hydrocyanic acid), HSCN (thiocyanic acid), HN₃ (hydrazoic acid) — directly parallel to HCl, HBr.",
+                "• Form insoluble silver salts: AgCN, AgSCN are insoluble precipitates, exactly like AgCl/AgBr — and this is why they interfere in halide qualitative analysis.",
+                "• Form INTER-pseudohalogen compounds with real halogens: ClCN, BrCN, ICN — the direct analogues of the interhalogens ICl, BrF.",
+                "• Disproportionate in alkali exactly like halogens: (CN)₂ + 2OH⁻ → CN⁻ + OCN⁻ + H₂O. Compare Cl₂ + 2OH⁻ → Cl⁻ + OCl⁻ + H₂O — same pattern, one atom reduced and one oxidised.",
+                "• Act as ligands in coordination compounds: CN⁻ and SCN⁻ are classic strong-field/ambidentate ligands (e.g. [Fe(CN)₆]³⁻, [Fe(SCN)]²⁺ blood-red complex used to test Fe³⁺)."
+              ],
+              "exams": ["JEE Advanced"]
+            },
+            {
+              "kind": "detailed",
+              "heading": "Cyanogen (CN)₂ — the exemplar",
+              "points": [
+                "• Preparation: heating mercury(II) cyanide — Hg(CN)₂ →(Δ) Hg + (CN)₂. Also from Cu²⁺ + CN⁻: 2Cu²⁺ + 4CN⁻ → 2CuCN + (CN)₂.",
+                "• Structure: linear, N≡C–C≡N — the two carbons are joined by a single C–C bond, each carbon triply bonded to its nitrogen. Both carbons are sp hybridised.",
+                "• Combustion: burns in air with a characteristic ROSE-RED (peach) flame — 'cyanogen' literally means 'blue-producing' from its Prussian-blue chemistry, but the flame colour is the exam-relevant fact.",
+                "• Highly toxic, colourless gas with a pungent almond-like odour.",
+                "• Alkaline hydrolysis (disproportionation): (CN)₂ + 2NaOH → NaCN + NaOCN + H₂O — carbon goes from +3 in (CN)₂ to +2 in CN⁻ and +4 in OCN⁻."
+              ],
+              "exams": ["JEE Advanced"]
+            },
+            {
+              "kind": "trap",
+              "items": [
+                { "trap": "Pseudohalogens are just another name for interhalogen compounds.", "reality": "Completely different. INTERhalogens (ICl, BrF₃) are made of TWO REAL halogens. PSEUDOhalogens ((CN)₂, (SCN)₂) contain NO halogen at all — they merely behave like halogens. A compound like ClCN, containing one real halogen and one pseudohalide, is an INTER-PSEUDOhalogen." },
+                { "trap": "Because CN⁻ resembles Cl⁻, AgCN behaves like AgCl and dissolves in dilute ammonia during salt analysis.", "reality": "The analogy is chemical, not identical. Pseudohalides genuinely interfere with halide tests (both give white/pale silver precipitates), which is exactly why cyanide and thiocyanate must be removed before testing for halides — do not assume matching NH₄OH solubility." }
+              ]
+            },
+            {
+              "kind": "illustration",
+              "level": "advanced",
+              "concept": "Proving cyanogen is a pseudohalogen by oxidation-state bookkeeping",
+              "tricky": true,
+              "question": "Cyanogen reacts with hot aqueous NaOH: (CN)₂ + 2NaOH → NaCN + NaOCN + H₂O. (a) Assign the oxidation state of carbon in (CN)₂, CN⁻ and OCN⁻. (b) Prove this is a disproportionation. (c) Show that this reaction is structurally the same as the reaction of Cl₂ with cold dilute NaOH.",
+              "thinking": "The whole claim 'cyanogen is a pseudohalogen' rests on it reproducing halogen REACTION PATTERNS, not on looking like a halogen. So the way to prove it is to run the oxidation-state bookkeeping on both reactions and show the pattern is identical.",
+              "steps": [
+                { "label": "Carbon in (CN)₂", "work": "N is −3 (more electronegative than C, triple-bonded). The molecule is neutral and the C–C bond contributes nothing to either carbon's oxidation state. Per CN unit: C + (−3) = 0 ⇒ C = +3." },
+                { "label": "Carbon in CN⁻", "work": "N = −3, total charge −1: C + (−3) = −1 ⇒ C = +2. Carbon has been REDUCED (+3 → +2, gained 1 e⁻)." },
+                { "label": "Carbon in OCN⁻", "work": "O = −2, N = −3, total charge −1: C + (−2) + (−3) = −1 ⇒ C = +4. Carbon has been OXIDISED (+3 → +4, lost 1 e⁻)." },
+                { "label": "Confirm disproportionation", "work": "One carbon at +3 goes down to +2 while another goes up to +4 — the same element, same starting oxidation state, splitting into a higher and a lower product. Electrons balance 1:1, matching the 1:1 NaCN : NaOCN stoichiometry." },
+                { "label": "Compare with chlorine", "work": "Cl₂ + 2NaOH → NaCl + NaOCl + H₂O. Cl at 0 splits into −1 (in Cl⁻, reduced) and +1 (in OCl⁻, oxidised), again 1:1. Identical structural pattern: X₂ + 2OH⁻ → X⁻ + OX⁻ + H₂O. This shared behaviour is precisely what earns (CN)₂ the label 'pseudohalogen'." }
+              ],
+              "answer": "(a) C is +3 in (CN)₂, +2 in CN⁻, +4 in OCN⁻. (b) Same element goes both up and down from +3 ⇒ disproportionation. (c) Both follow X₂ + 2OH⁻ → X⁻ + OX⁻ + H₂O, the defining halogen pattern.",
+              "insight": "Whenever a question asks you to JUSTIFY the pseudohalogen label rather than just state it, the alkaline-disproportionation parallel is the cleanest single piece of evidence you can give.",
+              "commonMistakes": [
+                "Assigning C = +2 in (CN)₂ by forgetting that the C–C bond is between identical atoms and contributes zero.",
+                "Calling the alkaline reaction a simple hydrolysis — it changes carbon's oxidation state, so it is redox."
+              ]
+            },
+            {
+              "kind": "misc",
+              "level": "easy",
+              "question": "Name any three pseudohalide ions.",
+              "answer": "CN⁻ (cyanide), SCN⁻ (thiocyanate), N₃⁻ (azide) — also OCN⁻, NCN²⁻",
+              "explanation": "Each is a small univalent electronegative anion forming a stable HX-type acid and an X₂-type dimer, the two criteria for halogen-like behaviour.",
+              "exams": ["JEE Advanced"]
+            },
+            {
+              "kind": "misc",
+              "level": "medium",
+              "question": "Write the product of (CN)₂ with aqueous NaOH and name the reaction type.",
+              "answer": "NaCN + NaOCN + H₂O — a disproportionation",
+              "explanation": "Carbon at +3 in (CN)₂ goes to +2 (CN⁻) and +4 (OCN⁻). Exactly parallel to Cl₂ + 2NaOH → NaCl + NaOCl + H₂O.",
+              "exams": ["JEE Advanced"]
+            },
+            {
+              "kind": "misc",
+              "level": "medium",
+              "question": "What is the difference between an interhalogen and an inter-pseudohalogen? Give one example of each.",
+              "answer": "Interhalogen = two real halogens (e.g. ICl); inter-pseudohalogen = one halogen + one pseudohalide (e.g. ClCN)",
+              "explanation": "Pseudohalogens themselves ((CN)₂, (SCN)₂) contain no halogen at all — they only mimic halogen chemistry.",
+              "exams": ["JEE Advanced"]
+            },
+            {
+              "kind": "misc",
+              "level": "hard",
+              "question": "Give the structure and hybridisation of cyanogen, and state its flame colour.",
+              "answer": "Linear N≡C–C≡N, both carbons sp hybridised; burns with a rose-red (peach) flame",
+              "explanation": "Each carbon forms one triple bond to N and one single bond to the other carbon — 2 sigma domains ⇒ sp, giving a fully linear molecule.",
+              "exams": ["JEE Advanced"]
+            },
+            {
+              "kind": "misc",
+              "level": "challenge",
+              "question": "Why must cyanide and thiocyanate be removed before testing a solution for halide ions?",
+              "answer": "Their silver salts (AgCN, AgSCN) precipitate like silver halides and give false positives",
+              "explanation": "Pseudohalides mimic halides closely enough to form insoluble white/pale silver salts, so an unremoved CN⁻ or SCN⁻ would be mistaken for Cl⁻ or Br⁻ in qualitative analysis.",
+              "exams": ["JEE Advanced"]
             }
           ]
         }

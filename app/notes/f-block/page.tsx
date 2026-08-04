@@ -8,16 +8,16 @@ import { FBlockVisual } from "./visuals";
 export const metadata = {
   title: "F-block Elements — NCERT-first JEE Advanced Notes | SYNERGIC BOND",
   description:
-    "A four-part, approximately 15-page NCERT-first F-block course covering lanthanoids, actinoids, electronic configurations, oxidation states, contraction, colour, magnetism, separation and JEE Advanced problems.",
+    "Premium NCERT-first JEE Advanced F-block notes with 21 original scientific visuals covering lanthanoids, actinoids, configurations, oxidation states, contraction, colour, magnetism, bonding, separation and applications.",
 };
 
 export const dynamic = "force-dynamic";
 
 const STATS = [
   ["4", "substantial parts"],
-  ["≈15", "print-page equivalent"],
+  ["21", "original teaching visuals"],
   ["100%", "NCERT core coverage"],
-  ["4", "dark scientific visuals"],
+  ["SVG", "editable masters"],
 ];
 
 export default function FBlockHubPage() {
@@ -42,7 +42,7 @@ export default function FBlockHubPage() {
           F-block chemistry organised around configuration, contraction and oxidation-state logic
         </h1>
         <p className="mt-5 max-w-4xl text-base font-medium leading-8 text-slate-300 sm:text-lg">
-          Four substantial parts covering the complete NCERT core, lanthanoid and actinoid trends, colour, magnetism, contraction, separation methods, applications, exam traps and worked JEE Advanced reasoning.
+          Four substantial parts covering the complete NCERT core, lanthanoid and actinoid trends, colour, magnetism, contraction, separation methods, applications, exam traps and worked JEE Advanced reasoning—supported by 21 exact, chapter-specific visual explanations.
         </p>
 
         <div className="mt-7 grid grid-cols-2 gap-3 lg:grid-cols-4">
@@ -56,7 +56,7 @@ export default function FBlockHubPage() {
       </header>
 
       <div className="mb-8">
-        <FBlockVisual part={1} />
+        <FBlockVisual part={1} heroOnly />
       </div>
 
       <section className="mb-8 grid gap-3 md:grid-cols-3">

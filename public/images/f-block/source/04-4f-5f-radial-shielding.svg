@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+<rect x="0" y="0" width="1600" height="900" rx="0" fill="#07131F" stroke="#07131F" stroke-width="0"/>
+<path d="M0 0H1600V122H0Z" fill="#091B2A"/>
+<text x="62" y="64" font-family="Aptos,Arial,sans-serif" font-size="40" fill="#F4FAFF" font-weight="750" text-anchor="start">Why 4f and 5f chemistry differs</text>
+<text x="62" y="101" font-family="Aptos,Arial,sans-serif" font-size="20" fill="#A6BDD0" font-weight="400" text-anchor="start">Radial exposure—not a slogan—controls ligand interaction and oxidation-state diversity</text>
+<text x="430" y="190" font-family="Aptos,Arial,sans-serif" font-size="29" fill="#39D9FF" font-weight="800" text-anchor="middle">4f: shielded</text>
+<circle cx="430" cy="475" r="250" fill="#102C40" stroke="#29475C" stroke-width="3"/>
+<circle cx="430" cy="475" r="185" fill="#16445A" stroke="#39D9FF" stroke-width="3"/>
+<circle cx="430" cy="475" r="105" fill="#39D9FF" stroke="none" stroke-width="0"/>
+<circle cx="430" cy="475" r="42" fill="#FFC857" stroke="none" stroke-width="0"/>
+<rect x="220" y="735" width="420" height="34" rx="8" fill="#0C2537" stroke="#39D9FF" stroke-width="1"/>
+<text x="430" y="759" font-family="Aptos,Arial,sans-serif" font-size="17" fill="#F4FAFF" font-weight="650" text-anchor="middle">inside 5s/5p</text>
+<rect x="220" y="778" width="420" height="34" rx="8" fill="#0C2537" stroke="#39D9FF" stroke-width="1"/>
+<text x="430" y="802" font-family="Aptos,Arial,sans-serif" font-size="17" fill="#F4FAFF" font-weight="650" text-anchor="middle">weak ligand overlap</text>
+<rect x="220" y="821" width="420" height="34" rx="8" fill="#0C2537" stroke="#39D9FF" stroke-width="1"/>
+<text x="430" y="845" font-family="Aptos,Arial,sans-serif" font-size="17" fill="#F4FAFF" font-weight="650" text-anchor="middle">Ln³⁺ uniformity</text>
+<text x="1170" y="190" font-family="Aptos,Arial,sans-serif" font-size="29" fill="#FF4FD8" font-weight="800" text-anchor="middle">5f: more exposed</text>
+<circle cx="1170" cy="475" r="250" fill="#102C40" stroke="#29475C" stroke-width="3"/>
+<circle cx="1170" cy="475" r="185" fill="#16445A" stroke="#FF4FD8" stroke-width="3"/>
+<circle cx="1170" cy="475" r="155" fill="#FF4FD8" stroke="none" stroke-width="0"/>
+<circle cx="1170" cy="475" r="42" fill="#FFC857" stroke="none" stroke-width="0"/>
+<rect x="960" y="735" width="420" height="34" rx="8" fill="#0C2537" stroke="#FF4FD8" stroke-width="1"/>
+<text x="1170" y="759" font-family="Aptos,Arial,sans-serif" font-size="17" fill="#F4FAFF" font-weight="650" text-anchor="middle">less completely buried</text>
+<rect x="960" y="778" width="420" height="34" rx="8" fill="#0C2537" stroke="#FF4FD8" stroke-width="1"/>
+<text x="1170" y="802" font-family="Aptos,Arial,sans-serif" font-size="17" fill="#F4FAFF" font-weight="650" text-anchor="middle">greater ligand overlap</text>
+<rect x="960" y="821" width="420" height="34" rx="8" fill="#0C2537" stroke="#FF4FD8" stroke-width="1"/>
+<text x="1170" y="845" font-family="Aptos,Arial,sans-serif" font-size="17" fill="#F4FAFF" font-weight="650" text-anchor="middle">variable actinoid states</text>
+<line x1="680" y1="475" x2="915" y2="475" stroke="#FFC857" stroke-width="5" /><polygon points="915,475 899,466 899,484" fill="#FFC857"/>
+<text x="800" y="435" font-family="Aptos,Arial,sans-serif" font-size="22" fill="#FFC857" font-weight="750" text-anchor="middle">increasing chemical availability</text>
+</svg>

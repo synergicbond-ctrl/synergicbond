@@ -1,177 +1,70 @@
-import type { ReactNode } from "react";
+import Image from "next/image";
 
-function Frame({ title, caption, children }: { title: string; caption: string; children: ReactNode }) {
+type FBlockVisualDef = {
+  id: string;
+  part: number;
+  src: string;
+  title: string;
+  caption: string;
+  alt: string;
+};
+
+export const F_BLOCK_VISUALS: FBlockVisualDef[] = [
+  { id: "master-overview", part: 1, src: "/images/f-block/00-f-block-master-overview.webp", title: "The F-block at one glance", caption: "A concept-first map linking periodic position, inner-orbital filling, lanthanoid contraction, oxidation states and applications.", alt: "Dark scientific overview of the central concepts in F-block chemistry" },
+  { id: "periodic-placement", part: 1, src: "/images/f-block/01-f-block-periodic-placement.webp", title: "Where the two series belong", caption: "The detached rows are continuations of periods 6 and 7; their placement keeps the 18-column table compact without changing atomic-number order.", alt: "Periodic table placement of lanthanoids and actinoids with insertion points" },
+  { id: "configuration-property", part: 1, src: "/images/f-block/02-configuration-to-property.webp", title: "Configuration controls property", caption: "Follow the differentiating f electron from orbital occupation to oxidation state, colour, magnetism and bonding.", alt: "Flow map from 4f and 5f configurations to F-block chemical properties" },
+  { id: "aufbau", part: 1, src: "/images/f-block/03-aufbau-filling-and-exceptions.webp", title: "Aufbau filling and verified exceptions", caption: "Near-degenerate f, d and s levels create irregular neutral-atom configurations; ion configurations must be written after removing outer electrons first.", alt: "Electronic configuration anchors for lanthanoids and actinoids including modern lawrencium convention" },
+  { id: "shielding", part: 1, src: "/images/f-block/04-4f-5f-radial-shielding.webp", title: "Why 4f and 5f chemistry differs", caption: "The more buried 4f shell is weakly ligand-sensitive, whereas the more radially extended 5f shell participates more readily in bonding.", alt: "Radial shielding comparison between 4f and 5f orbitals" },
+
+  { id: "contraction", part: 2, src: "/images/f-block/05-lanthanoid-contraction.webp", title: "Lanthanoid contraction", caption: "Poor 4f shielding lets effective nuclear charge rise from La to Lu, gradually shrinking atoms and especially Ln³⁺ ions.", alt: "Scientific illustration explaining lanthanoid contraction across the series" },
+  { id: "contraction-consequences", part: 2, src: "/images/f-block/06-contraction-consequences.webp", title: "Contraction is a cause, not an isolated fact", caption: "Increasing charge density explains decreasing hydroxide basicity, stronger hydration and complex formation, difficult separation and Zr–Hf similarity.", alt: "Cause and consequence map for lanthanoid contraction" },
+  { id: "lanthanoid-oxidation", part: 2, src: "/images/f-block/07-lanthanoid-oxidation-state-map.webp", title: "Lanthanoid oxidation-state map", caption: "+3 dominates. Selected +2 and +4 states are favoured by f⁰, f⁷ or f¹⁴ counts, but lattice, hydration and redox energies decide real stability.", alt: "Oxidation-state map for lanthanoids from lanthanum to lutetium" },
+  { id: "exceptions", part: 2, src: "/images/f-block/09-f0-f7-f14-exceptions.webp", title: "The f⁰–f⁷–f¹⁴ stability anchors", caption: "Ce⁴⁺, Eu²⁺, Tb⁴⁺ and Yb²⁺ become easier to remember when they are derived from empty, half-filled or filled f shells.", alt: "F-block stability exceptions derived from f0 f7 and f14 configurations" },
+  { id: "lanthanoid-colour", part: 2, src: "/images/f-block/10-lanthanoid-colour-mechanism.webp", title: "Colour of lanthanoid ions", caption: "Shielded 4f–4f transitions are usually weak and sharp; f⁰ and f¹⁴ ions are normally colourless unless charge transfer or another chromophore intervenes.", alt: "Energy-level explanation of lanthanoid ion colours" },
+  { id: "lanthanoid-magnetism", part: 2, src: "/images/f-block/11-lanthanoid-magnetism.webp", title: "Magnetism across Ln³⁺", caption: "The unpaired-electron count rises to Gd³⁺ and then falls, but quantitative moments generally require L–S–J coupling because orbital angular momentum is not quenched.", alt: "Bar chart of unpaired electrons for trivalent lanthanoid ions" },
+  { id: "hydroxide-basicity", part: 2, src: "/images/f-block/17-hydroxide-basicity-trend.webp", title: "Why hydroxide basicity decreases", caption: "As Ln³⁺ becomes smaller, polarising power and Ln–O interaction increase, so ionic character and basicity decrease from La(OH)₃ to Lu(OH)₃.", alt: "Decreasing basicity trend of lanthanoid hydroxides" },
+
+  { id: "actinoid-oxidation", part: 3, src: "/images/f-block/08-actinoid-oxidation-state-matrix.webp", title: "Actinoid oxidation-state landscape", caption: "Early actinoids access high oxidation states using comparable 5f, 6d and 7s energies; the +3 state dominates increasingly toward the later members.", alt: "Matrix of important actinoid oxidation states" },
+  { id: "actinoid-colour-magnetism", part: 3, src: "/images/f-block/12-actinoid-colour-and-magnetism.webp", title: "Actinoid colour and magnetism", caption: "5f transitions are more environment-sensitive than 4f transitions; spin–orbit coupling and covalency make simple spin-only predictions unreliable.", alt: "Mechanism map for colour and magnetism of actinoid ions" },
+  { id: "actinyl", part: 3, src: "/images/f-block/13-actinyl-ion-structures.webp", title: "Linear actinyl ions", caption: "UO₂²⁺, NpO₂⁺ and PuO₂²⁺ share a strong approximately linear O–An–O unit, while ligands commonly bind in an equatorial plane.", alt: "Structures of uranyl neptunyl and plutonyl ions" },
+  { id: "comparison", part: 3, src: "/images/f-block/14-lanthanoids-vs-actinoids.webp", title: "Lanthanoids versus actinoids", caption: "The greater radial reach of 5f orbitals is the master reason for broader oxidation states, stronger covalency and greater complex formation among actinoids.", alt: "Detailed comparison of lanthanoids and actinoids" },
+  { id: "reactions", part: 3, src: "/images/f-block/16-important-compounds-and-reactions.webp", title: "High-value compounds and balanced reactions", caption: "A compact, medium-aware reaction board covering normal lanthanoid products, Ce(IV) redox, ceria oxygen storage and uranium oxide reduction.", alt: "Balanced important reactions and compounds of F-block elements" },
+  { id: "complex-formation", part: 3, src: "/images/f-block/18-complex-formation.webp", title: "Complex formation: hard-ion logic", caption: "Ln³⁺ ions prefer hard oxygen donors and often high coordination numbers; actinoids add stronger covalency and actinyl-specific equatorial coordination.", alt: "Comparison of complex formation by lanthanoids and actinoids" },
+
+  { id: "separation", part: 4, src: "/images/f-block/15-lanthanoid-separation.webp", title: "Why separation is difficult—and how it works", caption: "Near-identical +3 chemistry makes simple precipitation weakly selective; repeated ion exchange or solvent extraction amplifies small size and complex-stability differences.", alt: "Lanthanoid separation by ion exchange and solvent extraction" },
+  { id: "applications", part: 4, src: "/images/f-block/19-f-block-applications.webp", title: "Applications tied to electronic structure", caption: "Magnets, phosphors, lasers, catalysts, MRI contrast chemistry and nuclear-energy materials all follow from f-electron magnetism, spectra, redox and radioactivity.", alt: "Real applications of lanthanoids and actinoids" },
+  { id: "jee-traps", part: 4, src: "/images/f-block/20-jee-exception-trap-map.webp", title: "JEE Advanced exception and trap map", caption: "A decision tree for the statements most often confused: d-block placement, colourless ions, magnetic formulae, contraction consequences and oxidation-state stability.", alt: "JEE Advanced decision tree for F-block exceptions and common traps" },
+];
+
+function VisualCard({ visual, priority = false }: { visual: FBlockVisualDef; priority?: boolean }) {
   return (
-    <figure className="overflow-hidden rounded-3xl border border-fuchsia-300/15 bg-[#080d19] shadow-2xl shadow-black/25">
+    <figure className="group overflow-hidden rounded-3xl border border-fuchsia-300/15 bg-[#080d19] shadow-2xl shadow-black/25">
       <div className="border-b border-white/10 px-5 py-4 sm:px-7">
         <p className="text-[11px] font-black uppercase tracking-[.18em] text-fuchsia-300">F-block visual atlas</p>
-        <h3 className="mt-1 text-xl font-black text-white sm:text-2xl">{title}</h3>
+        <h3 className="mt-1 text-xl font-black text-white sm:text-2xl">{visual.title}</h3>
       </div>
-      <div className="overflow-x-auto p-4 sm:p-6">{children}</div>
-      <figcaption className="border-t border-white/10 px-5 py-3 text-sm leading-6 text-slate-400 sm:px-7">{caption}</figcaption>
+      <div className="relative aspect-video overflow-hidden bg-[#07111d]">
+        <Image
+          src={visual.src}
+          alt={visual.alt}
+          fill
+          priority={priority}
+          sizes="(max-width: 1024px) 100vw, 1100px"
+          className="object-contain transition-transform duration-500 group-hover:scale-[1.01]"
+        />
+      </div>
+      <figcaption className="border-t border-white/10 px-5 py-3 text-sm leading-6 text-slate-400 sm:px-7">{visual.caption}</figcaption>
     </figure>
   );
 }
 
-function PositionVisual() {
-  const lanthanoids = ["Ce","Pr","Nd","Pm","Sm","Eu","Gd","Tb","Dy","Ho","Er","Tm","Yb","Lu"];
-  const actinoids = ["Th","Pa","U","Np","Pu","Am","Cm","Bk","Cf","Es","Fm","Md","No","Lr"];
+export function FBlockVisual({ part, heroOnly = false }: { part: number; heroOnly?: boolean }) {
+  const visuals = F_BLOCK_VISUALS.filter((visual) => visual.part === part);
+  const shown = heroOnly ? visuals.slice(0, 1) : visuals;
+
   return (
-    <Frame title="The two inner-transition rows" caption="The detached rows are inserted into Periods 6 and 7. The differentiating electron enters 4f for lanthanoids and 5f for actinoids.">
-      <svg viewBox="0 0 1080 430" className="min-w-[820px] w-full" role="img" aria-label="Periodic placement of lanthanoids and actinoids">
-        <rect width="1080" height="430" rx="28" fill="#070d18"/>
-        <text x="540" y="42" textAnchor="middle" fill="#f6efff" fontSize="25" fontWeight="800">Inner-transition architecture</text>
-        <rect x="92" y="78" width="896" height="70" rx="18" fill="#102032" stroke="#31516d"/>
-        <text x="145" y="119" fill="#93a9ba" fontSize="18" fontWeight="800">Period 6</text>
-        <rect x="270" y="91" width="88" height="44" rx="10" fill="#183247" stroke="#57d4ec"/>
-        <text x="314" y="119" textAnchor="middle" fill="#e8fbff" fontWeight="800">Ba</text>
-        <path d="M365 113 H470" stroke="#d66cff" strokeWidth="4" markerEnd="url(#farr)"/>
-        <rect x="478" y="91" width="88" height="44" rx="10" fill="#4b1d60" stroke="#e879f9"/>
-        <text x="522" y="119" textAnchor="middle" fill="#ffeaff" fontWeight="800">4f row</text>
-        <path d="M574 113 H680" stroke="#d66cff" strokeWidth="4" markerEnd="url(#farr)"/>
-        <rect x="688" y="91" width="88" height="44" rx="10" fill="#173b4c" stroke="#57d4ec"/>
-        <text x="732" y="119" textAnchor="middle" fill="#e8fbff" fontWeight="800">Hf</text>
-        <text x="870" y="119" textAnchor="middle" fill="#93a9ba" fontSize="15">regular 5d sequence</text>
-
-        <rect x="92" y="167" width="896" height="70" rx="18" fill="#102032" stroke="#31516d"/>
-        <text x="145" y="208" fill="#93a9ba" fontSize="18" fontWeight="800">Period 7</text>
-        <rect x="270" y="180" width="88" height="44" rx="10" fill="#183247" stroke="#57d4ec"/>
-        <text x="314" y="208" textAnchor="middle" fill="#e8fbff" fontWeight="800">Ra</text>
-        <path d="M365 202 H470" stroke="#d66cff" strokeWidth="4" markerEnd="url(#farr)"/>
-        <rect x="478" y="180" width="88" height="44" rx="10" fill="#4b1d60" stroke="#e879f9"/>
-        <text x="522" y="208" textAnchor="middle" fill="#ffeaff" fontWeight="800">5f row</text>
-        <path d="M574 202 H680" stroke="#d66cff" strokeWidth="4" markerEnd="url(#farr)"/>
-        <rect x="688" y="180" width="88" height="44" rx="10" fill="#173b4c" stroke="#57d4ec"/>
-        <text x="732" y="208" textAnchor="middle" fill="#e8fbff" fontWeight="800">Rf</text>
-        <text x="870" y="208" textAnchor="middle" fill="#93a9ba" fontSize="15">regular 6d sequence</text>
-
-        <g transform="translate(66 282)">
-          {lanthanoids.map((el, i) => (
-            <g key={el} transform={`translate(${i * 68} 0)`}>
-              <rect width="58" height="52" rx="10" fill="#4b1d60" stroke="#e879f9"/>
-              <text x="29" y="32" textAnchor="middle" fill="#ffeaff" fontSize="16" fontWeight="800">{el}</text>
-            </g>
-          ))}
-          {actinoids.map((el, i) => (
-            <g key={el} transform={`translate(${i * 68} 68)`}>
-              <rect width="58" height="52" rx="10" fill="#123d4d" stroke="#57d4ec"/>
-              <text x="29" y="32" textAnchor="middle" fill="#e8fbff" fontSize="16" fontWeight="800">{el}</text>
-            </g>
-          ))}
-        </g>
-        <defs><marker id="farr" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#d66cff"/></marker></defs>
-      </svg>
-    </Frame>
+    <section aria-label={`F-block part ${part} visual atlas`} className="space-y-5">
+      {shown.map((visual, index) => <VisualCard key={visual.id} visual={visual} priority={part === 1 && index === 0} />)}
+    </section>
   );
-}
-
-function ContractionVisual() {
-  const points = [0,1,2,3,4,5,6,7,8,9,10,11,12,13];
-  return (
-    <Frame title="Lanthanoid contraction drives the chemistry" caption="Poor 4f shielding allows effective nuclear charge to rise. The gradual radius decrease explains weaker hydroxide basicity, stronger complexing and the Zr–Hf size similarity.">
-      <svg viewBox="0 0 1080 430" className="min-w-[820px] w-full" role="img" aria-label="Lanthanoid contraction trend and consequences">
-        <rect width="1080" height="430" rx="28" fill="#070d18"/>
-        <text x="330" y="42" textAnchor="middle" fill="#f6efff" fontSize="24" fontWeight="800">Radius of Ln³⁺ decreases</text>
-        <path d="M90 105 H590 V335 H90 Z" fill="#0c1725" stroke="#29455e"/>
-        <path d="M125 135 C240 165,355 205,555 300" fill="none" stroke="#e879f9" strokeWidth="6"/>
-        {points.map((p) => {
-          const x = 125 + p * 33;
-          const y = 135 + p * 12.7;
-          return <circle key={p} cx={x} cy={y} r="5.5" fill="#f5d0fe"/>;
-        })}
-        <text x="115" y="365" fill="#91a9bc" fontSize="15">La³⁺</text>
-        <text x="535" y="365" fill="#91a9bc" fontSize="15">Lu³⁺</text>
-        <text x="54" y="200" fill="#91a9bc" fontSize="14" transform="rotate(-90 54 200)">ionic radius</text>
-
-        <g transform="translate(650 75)">
-          {[
-            ["Poor 4f shielding", "#4b1d60", "#e879f9"],
-            ["Zeff increases", "#27314e", "#a78bfa"],
-            ["Charge density rises", "#15384b", "#57d4ec"],
-            ["Basicity falls", "#4a3420", "#f5bd55"],
-          ].map(([label, fill, stroke], i) => (
-            <g key={label} transform={`translate(0 ${i * 78})`}>
-              <rect width="330" height="56" rx="14" fill={fill} stroke={stroke}/>
-              <text x="165" y="35" textAnchor="middle" fill="#f8fafc" fontSize="17" fontWeight="800">{label}</text>
-              {i < 3 && <path d="M165 57 V74" stroke="#70879a" strokeWidth="3"/>}
-            </g>
-          ))}
-        </g>
-      </svg>
-    </Frame>
-  );
-}
-
-function OxidationVisual() {
-  return (
-    <Frame title="Actinoid oxidation-state landscape" caption="Early actinoids use 5f, 6d and 7s electrons and reach high oxidation states. Later members increasingly stabilise the +3 state as 5f orbitals contract.">
-      <svg viewBox="0 0 1080 430" className="min-w-[820px] w-full" role="img" aria-label="Actinoid oxidation states">
-        <rect width="1080" height="430" rx="28" fill="#070d18"/>
-        <text x="540" y="44" textAnchor="middle" fill="#f6efff" fontSize="24" fontWeight="800">Accessible oxidation states</text>
-        {["+7","+6","+5","+4","+3","+2"].map((state, i) => (
-          <g key={state}>
-            <line x1="115" y1={90+i*50} x2="1000" y2={90+i*50} stroke="#203548"/>
-            <text x="72" y={97+i*50} fill="#a9bdcc" fontSize="16" fontWeight="800">{state}</text>
-          </g>
-        ))}
-        {[
-          ["Th",[3]],["Pa",[2,3]],["U",[1,2,3,4]],["Np",[0,1,2,3,4]],["Pu",[0,1,2,3,4]],["Am",[2,3,4]],["Cm",[3,4]],["Bk",[2,3]],["Cf",[3,4]],["Es",[3]],["Fm",[3]],["Md",[3,5]],["No",[3,5]],["Lr",[3]]
-        ].map(([el, levels], idx) => {
-          const x = 135 + idx*63;
-          return (
-            <g key={String(el)}>
-              <text x={x} y="397" textAnchor="middle" fill="#d8e4ed" fontSize="15" fontWeight="800">{String(el)}</text>
-              {(levels as number[]).map((lev) => <circle key={lev} cx={x} cy={90+lev*50} r="10" fill={lev===3 ? "#e879f9" : "#57d4ec"} stroke="#f8fafc" strokeWidth="1.5"/>)}
-            </g>
-          );
-        })}
-        <rect x="120" y="330" width="560" height="34" rx="10" fill="#15384b" opacity=".9"/>
-        <text x="400" y="352" textAnchor="middle" fill="#dff9ff" fontSize="14" fontWeight="700">wide range early in the series</text>
-        <rect x="720" y="330" width="280" height="34" rx="10" fill="#4b1d60" opacity=".9"/>
-        <text x="860" y="352" textAnchor="middle" fill="#ffeaff" fontSize="14" fontWeight="700">+3 dominates later</text>
-      </svg>
-    </Frame>
-  );
-}
-
-function ComparisonVisual() {
-  const rows = [
-    ["Orbital", "4f buried", "5f more extended"],
-    ["Main state", "+3", "+3 plus higher states"],
-    ["Bonding", "mostly ionic", "more covalent"],
-    ["Spectra", "sharp, weak ligand effect", "stronger ligand effect"],
-    ["Radioactivity", "mostly stable isotopes", "all radioactive"],
-  ];
-  return (
-    <Frame title="Lanthanoids and actinoids at one glance" caption="Use orbital extension and shielding as the master explanation. Most comparative properties follow from the greater availability of 5f electrons.">
-      <svg viewBox="0 0 1080 430" className="min-w-[820px] w-full" role="img" aria-label="Comparison of lanthanoids and actinoids">
-        <rect width="1080" height="430" rx="28" fill="#070d18"/>
-        <text x="540" y="42" textAnchor="middle" fill="#f6efff" fontSize="24" fontWeight="800">Master comparison</text>
-        <rect x="80" y="70" width="920" height="54" rx="14" fill="#18273a"/>
-        <text x="230" y="103" textAnchor="middle" fill="#9db2c2" fontSize="17" fontWeight="800">Property</text>
-        <text x="530" y="103" textAnchor="middle" fill="#f5d0fe" fontSize="18" fontWeight="900">Lanthanoids</text>
-        <text x="820" y="103" textAnchor="middle" fill="#b7f3ff" fontSize="18" fontWeight="900">Actinoids</text>
-        {rows.map((row, i) => {
-          const y = 137 + i*55;
-          return (
-            <g key={row[0]}>
-              <rect x="80" y={y} width="920" height="46" rx="10" fill={i%2===0 ? "#0c1725" : "#101d2d"} stroke="#1f3447"/>
-              <text x="230" y={y+29} textAnchor="middle" fill="#d7e2ea" fontSize="16" fontWeight="800">{row[0]}</text>
-              <text x="530" y={y+29} textAnchor="middle" fill="#f3d6fa" fontSize="15">{row[1]}</text>
-              <text x="820" y={y+29} textAnchor="middle" fill="#d8f8ff" fontSize="15">{row[2]}</text>
-            </g>
-          );
-        })}
-        <rect x="225" y="366" width="630" height="42" rx="12" fill="#422052" stroke="#e879f9"/>
-        <text x="540" y="392" textAnchor="middle" fill="#fff0ff" fontSize="15" fontWeight="800">Master cause: 5f orbitals participate in bonding more than 4f orbitals</text>
-      </svg>
-    </Frame>
-  );
-}
-
-export function FBlockVisual({ part }: { part: number }) {
-  if (part === 1) return <PositionVisual />;
-  if (part === 2) return <ContractionVisual />;
-  if (part === 3) return <OxidationVisual />;
-  return <ComparisonVisual />;
 }

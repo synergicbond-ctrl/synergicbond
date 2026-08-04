@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+<rect x="0" y="0" width="1600" height="900" rx="0" fill="#07131f" fill-opacity="1" stroke="#07131f" stroke-width="2"/>
+<rect x="0" y="0" width="1600" height="118" rx="0" fill="#091b2a" fill-opacity="1" stroke="#091b2a" stroke-width="2"/>
+<text x="62" y="66" font-family="Aptos,Arial,sans-serif" font-size="40" fill="#f4faff" font-weight="800" text-anchor="start">Why lanthanoid ions are coloured</text>
+<text x="62" y="101" font-family="Aptos,Arial,sans-serif" font-size="19" fill="#a6bdd0" font-weight="450" text-anchor="start">Shielded 4f orbitals produce weak, sharp and comparatively ligand-insensitive absorption bands</text>
+<rect x="70" y="180" width="600" height="570" rx="22" fill="#0d2233" fill-opacity="1" stroke="#39d9ff" stroke-width="2"/>
+<text x="370" y="230" font-family="Aptos,Arial,sans-serif" font-size="25" fill="#39d9ff" font-weight="850" text-anchor="middle">f–f ABSORPTION</text>
+<rect x="135" y="300" width="52" height="300" rx="4" fill="#694cff" fill-opacity="1" stroke="#694cff" stroke-width="2"/>
+<rect x="213" y="300" width="52" height="300" rx="4" fill="#3187ff" fill-opacity="1" stroke="#3187ff" stroke-width="2"/>
+<rect x="291" y="300" width="52" height="300" rx="4" fill="#24d6d0" fill-opacity="1" stroke="#24d6d0" stroke-width="2"/>
+<rect x="369" y="300" width="52" height="300" rx="4" fill="#73de77" fill-opacity="1" stroke="#73de77" stroke-width="2"/>
+<rect x="447" y="300" width="52" height="300" rx="4" fill="#ffc857" fill-opacity="1" stroke="#ffc857" stroke-width="2"/>
+<rect x="525" y="300" width="52" height="300" rx="4" fill="#ff785a" fill-opacity="1" stroke="#ff785a" stroke-width="2"/>
+<text x="370" y="650" font-family="Aptos,Arial,sans-serif" font-size="20" fill="#f4faff" font-weight="750" text-anchor="middle">narrow absorption bands</text>
+<text x="370" y="685" font-family="Aptos,Arial,sans-serif" font-size="17" fill="#a6bdd0" font-weight="550" text-anchor="middle">outer 5s/5p shells shield the 4f levels</text>
+<rect x="740" y="180" width="790" height="570" rx="22" fill="#102b40" fill-opacity="1" stroke="#ff4fd8" stroke-width="2"/>
+<text x="1135" y="230" font-family="Aptos,Arial,sans-serif" font-size="25" fill="#ff4fd8" font-weight="850" text-anchor="middle">SELECTION-RULE LOGIC</text>
+<circle cx="800" cy="285" r="18" fill="#39d9ff" stroke="none" stroke-width="0"/>
+<text x="840" y="281" font-family="Aptos,Arial,sans-serif" font-size="20" fill="#39d9ff" font-weight="800" text-anchor="start">Partially filled 4f</text>
+<text x="840" y="312" font-family="Aptos,Arial,sans-serif" font-size="17" fill="#f4faff" font-weight="550" text-anchor="start">f–f transitions become possible</text>
+<circle cx="800" cy="390" r="18" fill="#ff5a68" stroke="none" stroke-width="0"/>
+<text x="840" y="386" font-family="Aptos,Arial,sans-serif" font-size="20" fill="#ff5a68" font-weight="800" text-anchor="start">Laporte forbidden</text>
+<text x="840" y="417" font-family="Aptos,Arial,sans-serif" font-size="17" fill="#f4faff" font-weight="550" text-anchor="start">bands are usually weak</text>
+<circle cx="800" cy="495" r="18" fill="#1ed6c0" stroke="none" stroke-width="0"/>
+<text x="840" y="491" font-family="Aptos,Arial,sans-serif" font-size="20" fill="#1ed6c0" font-weight="800" text-anchor="start">4f shielded</text>
+<text x="840" y="522" font-family="Aptos,Arial,sans-serif" font-size="17" fill="#f4faff" font-weight="550" text-anchor="start">ligand changes shift bands only slightly</text>
+<circle cx="800" cy="600" r="18" fill="#ffc857" stroke="none" stroke-width="0"/>
+<text x="840" y="596" font-family="Aptos,Arial,sans-serif" font-size="20" fill="#ffc857" font-weight="800" text-anchor="start">f⁰ or f¹⁴</text>
+<text x="840" y="627" font-family="Aptos,Arial,sans-serif" font-size="17" fill="#f4faff" font-weight="550" text-anchor="start">no f–f transition; charge transfer may still colour</text>
+<rect x="335" y="796" width="930" height="54" rx="12" fill="#0a1d2b" fill-opacity="1" stroke="#ff5a68" stroke-width="2"/>
+<text x="800" y="830" font-family="Aptos,Arial,sans-serif" font-size="18" fill="#ff5a68" font-weight="750" text-anchor="middle">Exam trap: “f⁰/f¹⁴ ion” does not guarantee a colourless compound if charge transfer occurs.</text>
+</svg>

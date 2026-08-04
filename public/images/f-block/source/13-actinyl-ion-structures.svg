@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+<rect x="0" y="0" width="1600" height="900" rx="0" fill="#07131F" stroke="#07131F" stroke-width="0"/>
+<path d="M0 0H1600V122H0Z" fill="#091B2A"/>
+<text x="62" y="64" font-family="Aptos,Arial,sans-serif" font-size="40" fill="#F4FAFF" font-weight="750" text-anchor="start">Actinyl ions: linear O–An–O cores</text>
+<text x="62" y="101" font-family="Aptos,Arial,sans-serif" font-size="20" fill="#A6BDD0" font-weight="400" text-anchor="start">High oxidation states of U, Np and Pu are stabilised as strongly bonded dioxo cations</text>
+<rect x="90" y="220" width="420" height="500" rx="20" fill="#0C2537" stroke="#39D9FF" stroke-width="3"/>
+<text x="300" y="275" font-family="Aptos,Arial,sans-serif" font-size="31" fill="#39D9FF" font-weight="850" text-anchor="middle">UO₂²⁺</text>
+<text x="300" y="315" font-family="Aptos,Arial,sans-serif" font-size="22" fill="#F4FAFF" font-weight="650" text-anchor="middle">U(VI)</text>
+<circle cx="180" cy="470" r="42" fill="#FF8A3D" stroke="none" stroke-width="0"/>
+<circle cx="300" cy="470" r="66" fill="#39D9FF" stroke="none" stroke-width="0"/>
+<circle cx="420" cy="470" r="42" fill="#FF8A3D" stroke="none" stroke-width="0"/>
+<line x1="222" y1="460" x2="238" y2="460" stroke="#F4FAFF" stroke-width="8" />
+<line x1="222" y1="480" x2="238" y2="480" stroke="#F4FAFF" stroke-width="8" />
+<line x1="362" y1="460" x2="378" y2="460" stroke="#F4FAFF" stroke-width="8" />
+<line x1="362" y1="480" x2="378" y2="480" stroke="#F4FAFF" stroke-width="8" />
+<text x="300" y="580" font-family="Aptos,Arial,sans-serif" font-size="24" fill="#F4FAFF" font-weight="750" text-anchor="middle">linear O=An=O</text>
+<text x="300" y="620" font-family="Aptos,Arial,sans-serif" font-size="19" fill="#A6BDD0" font-weight="500" text-anchor="middle">strong axial bonds</text>
+<text x="300" y="660" font-family="Aptos,Arial,sans-serif" font-size="18" fill="#A6BDD0" font-weight="500" text-anchor="middle">equatorial ligands surround An</text>
+<rect x="590" y="220" width="420" height="500" rx="20" fill="#0C2537" stroke="#1ED6C0" stroke-width="3"/>
+<text x="800" y="275" font-family="Aptos,Arial,sans-serif" font-size="31" fill="#1ED6C0" font-weight="850" text-anchor="middle">NpO₂⁺</text>
+<text x="800" y="315" font-family="Aptos,Arial,sans-serif" font-size="22" fill="#F4FAFF" font-weight="650" text-anchor="middle">Np(V)</text>
+<circle cx="680" cy="470" r="42" fill="#FF8A3D" stroke="none" stroke-width="0"/>
+<circle cx="800" cy="470" r="66" fill="#1ED6C0" stroke="none" stroke-width="0"/>
+<circle cx="920" cy="470" r="42" fill="#FF8A3D" stroke="none" stroke-width="0"/>
+<line x1="722" y1="460" x2="738" y2="460" stroke="#F4FAFF" stroke-width="8" />
+<line x1="722" y1="480" x2="738" y2="480" stroke="#F4FAFF" stroke-width="8" />
+<line x1="862" y1="460" x2="878" y2="460" stroke="#F4FAFF" stroke-width="8" />
+<line x1="862" y1="480" x2="878" y2="480" stroke="#F4FAFF" stroke-width="8" />
+<text x="800" y="580" font-family="Aptos,Arial,sans-serif" font-size="24" fill="#F4FAFF" font-weight="750" text-anchor="middle">linear O=An=O</text>
+<text x="800" y="620" font-family="Aptos,Arial,sans-serif" font-size="19" fill="#A6BDD0" font-weight="500" text-anchor="middle">strong axial bonds</text>
+<text x="800" y="660" font-family="Aptos,Arial,sans-serif" font-size="18" fill="#A6BDD0" font-weight="500" text-anchor="middle">equatorial ligands surround An</text>
+<rect x="1090" y="220" width="420" height="500" rx="20" fill="#0C2537" stroke="#FF4FD8" stroke-width="3"/>
+<text x="1300" y="275" font-family="Aptos,Arial,sans-serif" font-size="31" fill="#FF4FD8" font-weight="850" text-anchor="middle">PuO₂²⁺</text>
+<text x="1300" y="315" font-family="Aptos,Arial,sans-serif" font-size="22" fill="#F4FAFF" font-weight="650" text-anchor="middle">Pu(VI)</text>
+<circle cx="1180" cy="470" r="42" fill="#FF8A3D" stroke="none" stroke-width="0"/>
+<circle cx="1300" cy="470" r="66" fill="#FF4FD8" stroke="none" stroke-width="0"/>
+<circle cx="1420" cy="470" r="42" fill="#FF8A3D" stroke="none" stroke-width="0"/>
+<line x1="1222" y1="460" x2="1238" y2="460" stroke="#F4FAFF" stroke-width="8" />
+<line x1="1222" y1="480" x2="1238" y2="480" stroke="#F4FAFF" stroke-width="8" />
+<line x1="1362" y1="460" x2="1378" y2="460" stroke="#F4FAFF" stroke-width="8" />
+<line x1="1362" y1="480" x2="1378" y2="480" stroke="#F4FAFF" stroke-width="8" />
+<text x="1300" y="580" font-family="Aptos,Arial,sans-serif" font-size="24" fill="#F4FAFF" font-weight="750" text-anchor="middle">linear O=An=O</text>
+<text x="1300" y="620" font-family="Aptos,Arial,sans-serif" font-size="19" fill="#A6BDD0" font-weight="500" text-anchor="middle">strong axial bonds</text>
+<text x="1300" y="660" font-family="Aptos,Arial,sans-serif" font-size="18" fill="#A6BDD0" font-weight="500" text-anchor="middle">equatorial ligands surround An</text>
+<rect x="420" y="775" width="760" height="67" rx="12" fill="#0A1D2B" stroke="#FFC857" stroke-width="2"/>
+<text x="800" y="817" font-family="Aptos,Arial,sans-serif" font-size="20" fill="#FFC857" font-weight="750" text-anchor="middle">Oxidation state comes from charge balance—not from memorising the ion name.</text>
+</svg>

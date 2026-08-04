@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+<rect x="0" y="0" width="1600" height="900" rx="0" fill="#07131F" stroke="#07131F" stroke-width="0"/>
+<path d="M0 0H1600V122H0Z" fill="#091B2A"/>
+<text x="62" y="64" font-family="Aptos,Arial,sans-serif" font-size="40" fill="#F4FAFF" font-weight="750" text-anchor="start">Actinoid oxidation-state map</text>
+<text x="62" y="101" font-family="Aptos,Arial,sans-serif" font-size="20" fill="#A6BDD0" font-weight="400" text-anchor="start">Accessible states broaden through Np/Pu, then +3 dominates as 5f electrons localise</text>
+<text x="85" y="728" font-family="Aptos,Arial,sans-serif" font-size="20" fill="#F4FAFF" font-weight="700" text-anchor="middle">+2</text>
+<line x1="115" y1="720" x2="1535" y2="720" stroke="#29475C" stroke-width="2" />
+<text x="85" y="640" font-family="Aptos,Arial,sans-serif" font-size="20" fill="#F4FAFF" font-weight="700" text-anchor="middle">+3</text>
+<line x1="115" y1="632" x2="1535" y2="632" stroke="#29475C" stroke-width="2" />
+<text x="85" y="552" font-family="Aptos,Arial,sans-serif" font-size="20" fill="#F4FAFF" font-weight="700" text-anchor="middle">+4</text>
+<line x1="115" y1="544" x2="1535" y2="544" stroke="#29475C" stroke-width="2" />
+<text x="85" y="464" font-family="Aptos,Arial,sans-serif" font-size="20" fill="#F4FAFF" font-weight="700" text-anchor="middle">+5</text>
+<line x1="115" y1="456" x2="1535" y2="456" stroke="#29475C" stroke-width="2" />
+<text x="85" y="376" font-family="Aptos,Arial,sans-serif" font-size="20" fill="#F4FAFF" font-weight="700" text-anchor="middle">+6</text>
+<line x1="115" y1="368" x2="1535" y2="368" stroke="#29475C" stroke-width="2" />
+<text x="85" y="288" font-family="Aptos,Arial,sans-serif" font-size="20" fill="#F4FAFF" font-weight="700" text-anchor="middle">+7</text>
+<line x1="115" y1="280" x2="1535" y2="280" stroke="#29475C" stroke-width="2" />
+<text x="145" y="777" font-family="Aptos,Arial,sans-serif" font-size="19" fill="#F4FAFF" font-weight="750" text-anchor="middle">Ac</text>
+<rect x="123" y="610" width="44" height="44" rx="7" fill="#1ED6C0" stroke="#1ED6C0" stroke-width="1"/>
+<text x="145" y="639" font-family="Aptos,Arial,sans-serif" font-size="17" fill="#07131F" font-weight="800" text-anchor="middle">3</text>
+<text x="237" y="777" font-family="Aptos,Arial,sans-serif" font-size="19" fill="#F4FAFF" font-weight="750" text-anchor="middle">Th</text>
+<rect x="215" y="522" width="44" height="44" rx="7" fill="#1ED6C0" stroke="#1ED6C0" stroke-width="1"/>
+<text x="237" y="551" font-family="Aptos,Arial,sans-serif" font-size="17" fill="#07131F" font-weight="800" text-anchor="middle">4</text>
+<text x="329" y="777" font-family="Aptos,Arial,sans-serif" font-size="19" fill="#F4FAFF" font-weight="750" text-anchor="middle">Pa</text>
+<rect x="307" y="610" width="44" height="44" rx="7" fill="#1ED6C0" stroke="#1ED6C0" stroke-width="1"/>
+<text x="329" y="639" font-family="Aptos,Arial,sans-serif" font-size="17" fill="#07131F" font-weight="800" text-anchor="middle">3</text>
+<rect x="307" y="522" width="44" height="44" rx="7" fill="#1ED6C0" stroke="#1ED6C0" stroke-width="1"/>
+<text x="329" y="551" font-family="Aptos,Arial,sans-serif" font-size="17" fill="#07131F" font-weight="800" text-anchor="middle">4</text>
+<rect x="307" y="434" width="44" height="44" rx="7" fill="#FF4FD8" stroke="#FF4FD8" stroke-width="1"/>
+<text x="329" y="463" font-family="Aptos,Arial,sans-serif" font-size="17" fill="#07131F" font-weight="800" text-anchor="middle">5</text>
+<text x="421" y="777" font-family="Aptos,Arial,sans-serif" font-size="19" fill="#F4FAFF" font-weight="750" text-anchor="middle">U</text>
+<rect x="399" y="610" width="44" height="44" rx="7" fill="#1ED6C0" stroke="#1ED6C0" stroke-width="1"/>
+<text x="421" y="639" font-family="Aptos,Arial,sans-serif" font-size="17" fill="#07131F" font-weight="800" text-anchor="middle">3</text>
+<rect x="399" y="522" width="44" height="44" rx="7" fill="#1ED6C0" stroke="#1ED6C0" stroke-width="1"/>
+<text x="421" y="551" font-family="Aptos,Arial,sans-serif" font-size="17" fill="#07131F" font-weight="800" text-anchor="middle">4</text>
+<rect x="399" y="434" width="44" height="44" rx="7" fill="#FF4FD8" stroke="#FF4FD8" stroke-width="1"/>
+<text x="421" y="463" font-family="Aptos,Arial,sans-serif" font-size="17" fill="#07131F" font-weight="800" text-anchor="middle">5</text>
+<rect x="399" y="346" width="44" height="44" rx="7" fill="#FF4FD8" stroke="#FF4FD8" stroke-width="1"/>
+<text x="421" y="375" font-family="Aptos,Arial,sans-serif" font-size="17" fill="#07131F" font-weight="800" text-anchor="middle">6</text>
+<text x="513" y="777" font-family="Aptos,Arial,sans-serif" font-size="19" fill="#F4FAFF" font-weight="750" text-anchor="middle">Np</text>
+<rect x="491" y="610" width="44" height="44" rx="7" fill="#1ED6C0" stroke="#1ED6C0" stroke-width="1"/>
+<text x="513" y="639" font-family="Aptos,Arial,sans-serif" font-size="17" fill="#07131F" font-weight="800" text-anchor="middle">3</text>
+<rect x="491" y="522" width="44" height="44" rx="7" fill="#1ED6C0" stroke="#1ED6C0" stroke-width="1"/>
+<text x="513" y="551" font-family="Aptos,Arial,sans-serif" font-size="17" fill="#07131F" font-weight="800" text-anchor="middle">4</text>
+<rect x="491" y="434" width="44" height="44" rx="7" fill="#FF4FD8" stroke="#FF4FD8" stroke-width="1"/>
+<text x="513" y="463" font-family="Aptos,Arial,sans-serif" font-size="17" fill="#07131F" font-weight="800" text-anchor="middle">5</text>
+<rect x="491" y="346" width="44" height="44" rx="7" fill="#FF4FD8" stroke="#FF4FD8" stroke-width="1"/>
+<text x="513" y="375" font-family="Aptos,Arial,sans-serif" font-size="17" fill="#07131F" font-weight="800" text-anchor="middle">6</text>
+<rect x="491" y="258" width="44" height="44" rx="7" fill="#FF4FD8" stroke="#FF4FD8" stroke-width="1"/>
+<text x="513" y="287" font-family="Aptos,Arial,sans-serif" font-size="17" fill="#07131F" font-weight="800" text-anchor="middle">7</text>
+<text x="605" y="777" font-family="Aptos,Arial,sans-serif" font-size="19" fill="#F4FAFF" font-weight="750" text-anchor="middle">Pu</text>
+<rect x="583" y="610" width="44" height="44" rx="7" fill="#1ED6C0" stroke="#1ED6C0" stroke-width="1"/>
+<text x="605" y="639" font-family="Aptos,Arial,sans-serif" font-size="17" fill="#07131F" font-weight="800" text-anchor="middle">3</text>
+<rect x="583" y="522" width="44" height="44" rx="7" fill="#1ED6C0" stroke="#1ED6C0" stroke-width="1"/>
+<text x="605" y="551" font-family="Aptos,Arial,sans-serif" font-size="17" fill="#07131F" font-weight="800" text-anchor="middle">4</text>
+<rect x="583" y="434" width="44" height="44" rx="7" fill="#FF4FD8" stroke="#FF4FD8" stroke-width="1"/>
+<text x="605" y="463" font-family="Aptos,Arial,sans-serif" font-size="17" fill="#07131F" font-weight="800" text-anchor="middle">5</text>
+<rect x="583" y="346" width="44" height="44" rx="7" fill="#FF4FD8" stroke="#FF4FD8" stroke-width="1"/>
+<text x="605" y="375" font-family="Aptos,Arial,sans-serif" font-size="17" fill="#07131F" font-weight="800" text-anchor="middle">6</text>
+<rect x="583" y="258" width="44" height="44" rx="7" fill="#FF4FD8" stroke="#FF4FD8" stroke-width="1"/>
+<text x="605" y="287" font-family="Aptos,Arial,sans-serif" font-size="17" fill="#07131F" font-weight="800" text-anchor="middle">7</text>
+<text x="697" y="777" font-family="Aptos,Arial,sans-serif" font-size="19" fill="#F4FAFF" font-weight="750" text-anchor="middle">Am</text>
+<rect x="675" y="610" width="44" height="44" rx="7" fill="#1ED6C0" stroke="#1ED6C0" stroke-width="1"/>
+<text x="697" y="639" font-family="Aptos,Arial,sans-serif" font-size="17" fill="#07131F" font-weight="800" text-anchor="middle">3</text>
+<rect x="675" y="522" width="44" height="44" rx="7" fill="#1ED6C0" stroke="#1ED6C0" stroke-width="1"/>
+<text x="697" y="551" font-family="Aptos,Arial,sans-serif" font-size="17" fill="#07131F" font-weight="800" text-anchor="middle">4</text>
+<rect x="675" y="434" width="44" height="44" rx="7" fill="#FF4FD8" stroke="#FF4FD8" stroke-width="1"/>
+<text x="697" y="463" font-family="Aptos,Arial,sans-serif" font-size="17" fill="#07131F" font-weight="800" text-anchor="middle">5</text>
+<rect x="675" y="346" width="44" height="44" rx="7" fill="#FF4FD8" stroke="#FF4FD8" stroke-width="1"/>
+<text x="697" y="375" font-family="Aptos,Arial,sans-serif" font-size="17" fill="#07131F" font-weight="800" text-anchor="middle">6</text>
+<text x="789" y="777" font-family="Aptos,Arial,sans-serif" font-size="19" fill="#F4FAFF" font-weight="750" text-anchor="middle">Cm</text>
+<rect x="767" y="610" width="44" height="44" rx="7" fill="#1ED6C0" stroke="#1ED6C0" stroke-width="1"/>
+<text x="789" y="639" font-family="Aptos,Arial,sans-serif" font-size="17" fill="#07131F" font-weight="800" text-anchor="middle">3</text>
+<rect x="767" y="522" width="44" height="44" rx="7" fill="#1ED6C0" stroke="#1ED6C0" stroke-width="1"/>
+<text x="789" y="551" font-family="Aptos,Arial,sans-serif" font-size="17" fill="#07131F" font-weight="800" text-anchor="middle">4</text>
+<text x="881" y="777" font-family="Aptos,Arial,sans-serif" font-size="19" fill="#F4FAFF" font-weight="750" text-anchor="middle">Bk</text>
+<rect x="859" y="610" width="44" height="44" rx="7" fill="#1ED6C0" stroke="#1ED6C0" stroke-width="1"/>
+<text x="881" y="639" font-family="Aptos,Arial,sans-serif" font-size="17" fill="#07131F" font-weight="800" text-anchor="middle">3</text>
+<rect x="859" y="522" width="44" height="44" rx="7" fill="#1ED6C0" stroke="#1ED6C0" stroke-width="1"/>
+<text x="881" y="551" font-family="Aptos,Arial,sans-serif" font-size="17" fill="#07131F" font-weight="800" text-anchor="middle">4</text>
+<text x="973" y="777" font-family="Aptos,Arial,sans-serif" font-size="19" fill="#F4FAFF" font-weight="750" text-anchor="middle">Cf</text>
+<rect x="951" y="610" width="44" height="44" rx="7" fill="#1ED6C0" stroke="#1ED6C0" stroke-width="1"/>
+<text x="973" y="639" font-family="Aptos,Arial,sans-serif" font-size="17" fill="#07131F" font-weight="800" text-anchor="middle">3</text>
+<text x="1065" y="777" font-family="Aptos,Arial,sans-serif" font-size="19" fill="#F4FAFF" font-weight="750" text-anchor="middle">Es</text>
+<rect x="1043" y="610" width="44" height="44" rx="7" fill="#1ED6C0" stroke="#1ED6C0" stroke-width="1"/>
+<text x="1065" y="639" font-family="Aptos,Arial,sans-serif" font-size="17" fill="#07131F" font-weight="800" text-anchor="middle">3</text>
+<text x="1157" y="777" font-family="Aptos,Arial,sans-serif" font-size="19" fill="#F4FAFF" font-weight="750" text-anchor="middle">Fm</text>
+<rect x="1135" y="610" width="44" height="44" rx="7" fill="#1ED6C0" stroke="#1ED6C0" stroke-width="1"/>
+<text x="1157" y="639" font-family="Aptos,Arial,sans-serif" font-size="17" fill="#07131F" font-weight="800" text-anchor="middle">3</text>
+<text x="1249" y="777" font-family="Aptos,Arial,sans-serif" font-size="19" fill="#F4FAFF" font-weight="750" text-anchor="middle">Md</text>
+<rect x="1227" y="610" width="44" height="44" rx="7" fill="#1ED6C0" stroke="#1ED6C0" stroke-width="1"/>
+<text x="1249" y="639" font-family="Aptos,Arial,sans-serif" font-size="17" fill="#07131F" font-weight="800" text-anchor="middle">3</text>
+<text x="1341" y="777" font-family="Aptos,Arial,sans-serif" font-size="19" fill="#F4FAFF" font-weight="750" text-anchor="middle">No</text>
+<rect x="1319" y="610" width="44" height="44" rx="7" fill="#1ED6C0" stroke="#1ED6C0" stroke-width="1"/>
+<text x="1341" y="639" font-family="Aptos,Arial,sans-serif" font-size="17" fill="#07131F" font-weight="800" text-anchor="middle">3</text>
+<text x="1433" y="777" font-family="Aptos,Arial,sans-serif" font-size="19" fill="#F4FAFF" font-weight="750" text-anchor="middle">Lr</text>
+<rect x="1411" y="610" width="44" height="44" rx="7" fill="#1ED6C0" stroke="#1ED6C0" stroke-width="1"/>
+<text x="1433" y="639" font-family="Aptos,Arial,sans-serif" font-size="17" fill="#07131F" font-weight="800" text-anchor="middle">3</text>
+<rect x="320" y="805" width="960" height="55" rx="12" fill="#0A1D2B" stroke="#FFC857" stroke-width="2"/>
+<text x="800" y="840" font-family="Aptos,Arial,sans-serif" font-size="22" fill="#FFC857" font-weight="750" text-anchor="middle">High states: early actinoids   |   +3 dominance: later actinoids</text>
+</svg>

@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+<rect x="0" y="0" width="1600" height="900" rx="0" fill="#07131f" fill-opacity="1" stroke="#07131f" stroke-width="2"/>
+<rect x="0" y="0" width="1600" height="118" rx="0" fill="#091b2a" fill-opacity="1" stroke="#091b2a" stroke-width="2"/>
+<text x="62" y="66" font-family="Aptos,Arial,sans-serif" font-size="40" fill="#f4faff" font-weight="800" text-anchor="start">High-value F-block compounds and reactions</text>
+<text x="62" y="101" font-family="Aptos,Arial,sans-serif" font-size="19" fill="#a6bdd0" font-weight="450" text-anchor="start">Balanced, syllabus-relevant patterns—medium and oxidation state are part of every equation</text>
+<rect x="65" y="170" width="710" height="180" rx="18" fill="#0d2233" fill-opacity="1" stroke="#39d9ff" stroke-width="2"/>
+<text x="95" y="214" font-family="Aptos,Arial,sans-serif" font-size="20" fill="#39d9ff" font-weight="800" text-anchor="start">Oxidation of metal</text>
+<text x="420" y="268" font-family="Aptos,Arial,sans-serif" font-size="24" fill="#f4faff" font-weight="750" text-anchor="middle">4Ln + 3O₂ → 2Ln₂O₃</text>
+<text x="420" y="310" font-family="Aptos,Arial,sans-serif" font-size="16" fill="#a6bdd0" font-weight="550" text-anchor="middle">normal +3 oxide</text>
+<rect x="825" y="170" width="710" height="180" rx="18" fill="#0d2233" fill-opacity="1" stroke="#1ed6c0" stroke-width="2"/>
+<text x="855" y="214" font-family="Aptos,Arial,sans-serif" font-size="20" fill="#1ed6c0" font-weight="800" text-anchor="start">Halogenation</text>
+<text x="1180" y="268" font-family="Aptos,Arial,sans-serif" font-size="24" fill="#f4faff" font-weight="750" text-anchor="middle">2Ln + 3X₂ → 2LnX₃</text>
+<text x="1180" y="310" font-family="Aptos,Arial,sans-serif" font-size="16" fill="#a6bdd0" font-weight="550" text-anchor="middle">X = F, Cl, Br, I</text>
+<rect x="65" y="395" width="710" height="180" rx="18" fill="#0d2233" fill-opacity="1" stroke="#63e69b" stroke-width="2"/>
+<text x="95" y="439" font-family="Aptos,Arial,sans-serif" font-size="20" fill="#63e69b" font-weight="800" text-anchor="start">Water reaction</text>
+<text x="420" y="493" font-family="Aptos,Arial,sans-serif" font-size="24" fill="#f4faff" font-weight="750" text-anchor="middle">2Ln + 6H₂O → 2Ln(OH)₃ + 3H₂</text>
+<text x="420" y="535" font-family="Aptos,Arial,sans-serif" font-size="16" fill="#a6bdd0" font-weight="550" text-anchor="middle">electropositive metal</text>
+<rect x="825" y="395" width="710" height="180" rx="18" fill="#0d2233" fill-opacity="1" stroke="#ffc857" stroke-width="2"/>
+<text x="855" y="439" font-family="Aptos,Arial,sans-serif" font-size="20" fill="#ffc857" font-weight="800" text-anchor="start">Ce(IV) redox</text>
+<text x="1180" y="493" font-family="Aptos,Arial,sans-serif" font-size="24" fill="#f4faff" font-weight="750" text-anchor="middle">Ce⁴⁺ + e⁻ → Ce³⁺</text>
+<text x="1180" y="535" font-family="Aptos,Arial,sans-serif" font-size="16" fill="#a6bdd0" font-weight="550" text-anchor="middle">one-electron oxidant</text>
+<rect x="65" y="620" width="710" height="180" rx="18" fill="#0d2233" fill-opacity="1" stroke="#ff8a3d" stroke-width="2"/>
+<text x="95" y="664" font-family="Aptos,Arial,sans-serif" font-size="20" fill="#ff8a3d" font-weight="800" text-anchor="start">Ceria oxygen storage</text>
+<text x="420" y="718" font-family="Aptos,Arial,sans-serif" font-size="24" fill="#f4faff" font-weight="750" text-anchor="middle">2CeO₂ ⇌ Ce₂O₃ + ½O₂</text>
+<text x="420" y="760" font-family="Aptos,Arial,sans-serif" font-size="16" fill="#a6bdd0" font-weight="550" text-anchor="middle">Ce⁴⁺/Ce³⁺ cycle</text>
+<rect x="825" y="620" width="710" height="180" rx="18" fill="#0d2233" fill-opacity="1" stroke="#ff4fd8" stroke-width="2"/>
+<text x="855" y="664" font-family="Aptos,Arial,sans-serif" font-size="20" fill="#ff4fd8" font-weight="800" text-anchor="start">Uranium reduction</text>
+<text x="1180" y="718" font-family="Aptos,Arial,sans-serif" font-size="24" fill="#f4faff" font-weight="750" text-anchor="middle">UO₃ + H₂ → UO₂ + H₂O</text>
+<text x="1180" y="760" font-family="Aptos,Arial,sans-serif" font-size="16" fill="#a6bdd0" font-weight="550" text-anchor="middle">heat; U(VI) → U(IV)</text>
+<rect x="330" y="835" width="940" height="38" rx="10" fill="#0a1d2b" fill-opacity="1" stroke="#ff5a68" stroke-width="2"/>
+<text x="800" y="861" font-family="Aptos,Arial,sans-serif" font-size="17" fill="#ff5a68" font-weight="700" text-anchor="middle">Do not infer one universal product for carbides, hydrides or mixed-valence oxides.</text>
+</svg>

@@ -279,4 +279,36 @@ Before finishing the chapter, verify that you can:
 - recognise actinyl ions and calculate central oxidation state;
 - distinguish chemical redox from nuclear transformation;
 - solve order, statement, matching and configuration questions without memorised colour lists.
+
+## 15. Original JEE-style practice set
+
+### Questions
+
+1. **Single correct:** Which ion is both diamagnetic and normally colourless because of an $f^{14}$ configuration?  
+   (A) $\mathrm{Eu^{2+}}$ (B) $\mathrm{Yb^{2+}}$ (C) $\mathrm{Gd^{3+}}$ (D) $\mathrm{Ce^{3+}}$
+2. **Single correct:** The most direct cause of lanthanoid contraction is:  
+   (A) strong 4f shielding (B) poor 4f shielding (C) decreasing nuclear charge (D) loss of all 4f electrons
+3. **Multiple correct:** Select the valid consequences of lanthanoid contraction.  
+   (A) Zr–Hf size similarity (B) decreasing basicity of $\mathrm{Ln(OH)_3}$ (C) easier simple precipitation separation (D) increasing charge density of $\mathrm{Ln^{3+}}$
+4. **Multiple correct:** Which statements are correct?  
+   (A) $\mathrm{Ce^{4+}}$ is an oxidising agent. (B) $\mathrm{Eu^{2+}}$ is commonly reducing. (C) $\mathrm{Lu^{3+}}$ is $4f^{14}$. (D) every $f^0$ species must be colourless in every compound.
+5. **Integer type:** How many unpaired electrons are present in free $\mathrm{Dy^{3+}}$ if its configuration is $4f^9$?
+6. **Assertion–reason:** Assertion: actinoids show a wider range of oxidation states than lanthanoids. Reason: 5f, 6d and 7s levels are relatively close in energy in early actinoids.
+7. **Order:** Arrange $\mathrm{La(OH)_3}$, $\mathrm{Gd(OH)_3}$ and $\mathrm{Lu(OH)_3}$ in decreasing basicity.
+8. **Structure:** Determine the oxidation state of uranium in $\mathrm{UO_2^{2+}}$ and state the approximate O–U–O geometry.
+9. **Statement test:** “Spin-only magnetic moment is generally sufficient for quantitative prediction of lanthanoid-ion moments.” True or false? Justify.
+10. **Application logic:** Match the property with the application: (i) sharp $4f$ emission, (ii) strong 4f-derived magnetic anisotropy, (iii) reversible Ce(IV)/Ce(III) redox; (a) phosphors, (b) permanent magnets, (c) ceria oxygen storage.
+
+### Answer key and explanations
+
+1. **B.** $\mathrm{Yb^{2+}}=[Xe]4f^{14}$, so it has no unpaired electrons and no $f-f$ excitation. $\mathrm{Eu^{2+}}$ and $\mathrm{Gd^{3+}}$ are $4f^7$; $\mathrm{Ce^{3+}}$ is $4f^1$.
+2. **B.** Successive 4f electrons shield nuclear charge inefficiently, so effective nuclear charge rises across the series.
+3. **A, B and D.** Similar radii make separation more difficult, not easier; selective methods must amplify small differences.
+4. **A, B and C.** Charge-transfer transitions or another chromophore can colour an $f^0$ compound, so D is too absolute.
+5. **5.** Seven f orbitals fill singly, then two additional electrons pair in two orbitals: $14-9=5$ unpaired electrons.
+6. **Both are true, and the reason explains the assertion.** Similar orbital energies allow different numbers of 5f, 6d and 7s electrons to participate in bonding.
+7. $\mathrm{La(OH)_3>Gd(OH)_3>Lu(OH)_3}$. Smaller $\mathrm{Ln^{3+}}$ ions polarise hydroxide more strongly, decreasing ionic character and basicity.
+8. Uranium is **+6** because $x+2(-2)=+2$; the actinyl unit is approximately **linear**.
+9. **False.** The orbital contribution of 4f electrons is usually not quenched, so $L$, $S$ and $J$ coupling must be considered for quantitative free-ion moments.
+10. **(i)–(a), (ii)–(b), (iii)–(c).** The application follows directly from spectral sharpness, magnetic anisotropy and accessible redox cycling, respectively.
 `;

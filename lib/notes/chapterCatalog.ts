@@ -260,13 +260,13 @@ export const AUTHORED_COURSES: AuthoredCourse[] = [
   // ── F-block Elements ──────────────────────────────────────────────────────
   {
     id: "f-block-elements",
-    syllabusId: "f-block-elements",
+    syllabusId: "d-and-f-block-elements",
     title: "F-block Elements",
     href: "/notes/f-block",
-    lessonLabel: "4 parts · approximately 15 pages",
+    lessonLabel: "4 parts · 21 visual lessons",
     premium: true,
     description:
-      "NCERT-first JEE Advanced notes on lanthanoids and actinoids: configurations, oxidation states, colour, magnetism, contraction, separation, applications, traps and worked problems.",
+      "Premium NCERT-first JEE Advanced chapter on lanthanoids and actinoids with exact visual maps for configurations, oxidation states, colour, magnetism, contraction, bonding, separation, applications and exam traps.",
   },
 
   // ── Principles of Qualitative Analysis / Salt Analysis ───────────────────

@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+<rect x="0" y="0" width="1600" height="900" rx="0" fill="#07131f" fill-opacity="1" stroke="#07131f" stroke-width="2"/>
+<rect x="0" y="0" width="1600" height="118" rx="0" fill="#091b2a" fill-opacity="1" stroke="#091b2a" stroke-width="2"/>
+<text x="62" y="66" font-family="Aptos,Arial,sans-serif" font-size="40" fill="#f4faff" font-weight="800" text-anchor="start">Magnetism of Ln³⁺ ions</text>
+<text x="62" y="101" font-family="Aptos,Arial,sans-serif" font-size="19" fill="#a6bdd0" font-weight="450" text-anchor="start">Count unpaired electrons first; use L–S–J coupling because orbital angular momentum is not generally quenched</text>
+<rect x="78" y="620" width="60" height="0" rx="8" fill="#39d9ff" fill-opacity="1" stroke="none" stroke-width="2"/>
+<text x="108" y="660" font-family="Aptos,Arial,sans-serif" font-size="17" fill="#f4faff" font-weight="750" text-anchor="middle">La</text>
+<text x="108" y="608" font-family="Aptos,Arial,sans-serif" font-size="16" fill="#a6bdd0" font-weight="700" text-anchor="middle">0</text>
+<rect x="178" y="565" width="60" height="55" rx="8" fill="#39d9ff" fill-opacity="1" stroke="none" stroke-width="2"/>
+<text x="208" y="660" font-family="Aptos,Arial,sans-serif" font-size="17" fill="#f4faff" font-weight="750" text-anchor="middle">Ce</text>
+<text x="208" y="553" font-family="Aptos,Arial,sans-serif" font-size="16" fill="#a6bdd0" font-weight="700" text-anchor="middle">1</text>
+<rect x="278" y="510" width="60" height="110" rx="8" fill="#39d9ff" fill-opacity="1" stroke="none" stroke-width="2"/>
+<text x="308" y="660" font-family="Aptos,Arial,sans-serif" font-size="17" fill="#f4faff" font-weight="750" text-anchor="middle">Pr</text>
+<text x="308" y="498" font-family="Aptos,Arial,sans-serif" font-size="16" fill="#a6bdd0" font-weight="700" text-anchor="middle">2</text>
+<rect x="378" y="455" width="60" height="165" rx="8" fill="#39d9ff" fill-opacity="1" stroke="none" stroke-width="2"/>
+<text x="408" y="660" font-family="Aptos,Arial,sans-serif" font-size="17" fill="#f4faff" font-weight="750" text-anchor="middle">Nd</text>
+<text x="408" y="443" font-family="Aptos,Arial,sans-serif" font-size="16" fill="#a6bdd0" font-weight="700" text-anchor="middle">3</text>
+<rect x="478" y="400" width="60" height="220" rx="8" fill="#39d9ff" fill-opacity="1" stroke="none" stroke-width="2"/>
+<text x="508" y="660" font-family="Aptos,Arial,sans-serif" font-size="17" fill="#f4faff" font-weight="750" text-anchor="middle">Pm</text>
+<text x="508" y="388" font-family="Aptos,Arial,sans-serif" font-size="16" fill="#a6bdd0" font-weight="700" text-anchor="middle">4</text>
+<rect x="578" y="345" width="60" height="275" rx="8" fill="#39d9ff" fill-opacity="1" stroke="none" stroke-width="2"/>
+<text x="608" y="660" font-family="Aptos,Arial,sans-serif" font-size="17" fill="#f4faff" font-weight="750" text-anchor="middle">Sm</text>
+<text x="608" y="333" font-family="Aptos,Arial,sans-serif" font-size="16" fill="#a6bdd0" font-weight="700" text-anchor="middle">5</text>
+<rect x="678" y="290" width="60" height="330" rx="8" fill="#39d9ff" fill-opacity="1" stroke="none" stroke-width="2"/>
+<text x="708" y="660" font-family="Aptos,Arial,sans-serif" font-size="17" fill="#f4faff" font-weight="750" text-anchor="middle">Eu</text>
+<text x="708" y="278" font-family="Aptos,Arial,sans-serif" font-size="16" fill="#a6bdd0" font-weight="700" text-anchor="middle">6</text>
+<rect x="778" y="235" width="60" height="385" rx="8" fill="#ffc857" fill-opacity="1" stroke="none" stroke-width="2"/>
+<text x="808" y="660" font-family="Aptos,Arial,sans-serif" font-size="17" fill="#f4faff" font-weight="750" text-anchor="middle">Gd</text>
+<text x="808" y="223" font-family="Aptos,Arial,sans-serif" font-size="16" fill="#a6bdd0" font-weight="700" text-anchor="middle">7</text>
+<rect x="878" y="290" width="60" height="330" rx="8" fill="#39d9ff" fill-opacity="1" stroke="none" stroke-width="2"/>
+<text x="908" y="660" font-family="Aptos,Arial,sans-serif" font-size="17" fill="#f4faff" font-weight="750" text-anchor="middle">Tb</text>
+<text x="908" y="278" font-family="Aptos,Arial,sans-serif" font-size="16" fill="#a6bdd0" font-weight="700" text-anchor="middle">6</text>
+<rect x="978" y="345" width="60" height="275" rx="8" fill="#39d9ff" fill-opacity="1" stroke="none" stroke-width="2"/>
+<text x="1008" y="660" font-family="Aptos,Arial,sans-serif" font-size="17" fill="#f4faff" font-weight="750" text-anchor="middle">Dy</text>
+<text x="1008" y="333" font-family="Aptos,Arial,sans-serif" font-size="16" fill="#a6bdd0" font-weight="700" text-anchor="middle">5</text>
+<rect x="1078" y="400" width="60" height="220" rx="8" fill="#39d9ff" fill-opacity="1" stroke="none" stroke-width="2"/>
+<text x="1108" y="660" font-family="Aptos,Arial,sans-serif" font-size="17" fill="#f4faff" font-weight="750" text-anchor="middle">Ho</text>
+<text x="1108" y="388" font-family="Aptos,Arial,sans-serif" font-size="16" fill="#a6bdd0" font-weight="700" text-anchor="middle">4</text>
+<rect x="1178" y="455" width="60" height="165" rx="8" fill="#39d9ff" fill-opacity="1" stroke="none" stroke-width="2"/>
+<text x="1208" y="660" font-family="Aptos,Arial,sans-serif" font-size="17" fill="#f4faff" font-weight="750" text-anchor="middle">Er</text>
+<text x="1208" y="443" font-family="Aptos,Arial,sans-serif" font-size="16" fill="#a6bdd0" font-weight="700" text-anchor="middle">3</text>
+<rect x="1278" y="510" width="60" height="110" rx="8" fill="#39d9ff" fill-opacity="1" stroke="none" stroke-width="2"/>
+<text x="1308" y="660" font-family="Aptos,Arial,sans-serif" font-size="17" fill="#f4faff" font-weight="750" text-anchor="middle">Tm</text>
+<text x="1308" y="498" font-family="Aptos,Arial,sans-serif" font-size="16" fill="#a6bdd0" font-weight="700" text-anchor="middle">2</text>
+<rect x="1378" y="565" width="60" height="55" rx="8" fill="#39d9ff" fill-opacity="1" stroke="none" stroke-width="2"/>
+<text x="1408" y="660" font-family="Aptos,Arial,sans-serif" font-size="17" fill="#f4faff" font-weight="750" text-anchor="middle">Yb</text>
+<text x="1408" y="553" font-family="Aptos,Arial,sans-serif" font-size="16" fill="#a6bdd0" font-weight="700" text-anchor="middle">1</text>
+<rect x="1478" y="620" width="60" height="0" rx="8" fill="#39d9ff" fill-opacity="1" stroke="none" stroke-width="2"/>
+<text x="1508" y="660" font-family="Aptos,Arial,sans-serif" font-size="17" fill="#f4faff" font-weight="750" text-anchor="middle">Lu</text>
+<text x="1508" y="608" font-family="Aptos,Arial,sans-serif" font-size="16" fill="#a6bdd0" font-weight="700" text-anchor="middle">0</text>
+<line x1="55" y1="620" x2="1540" y2="620" stroke="#f4faff" stroke-width="3"/>
+<text x="800" y="710" font-family="Aptos,Arial,sans-serif" font-size="21" fill="#f4faff" font-weight="750" text-anchor="middle">unpaired count: n for fⁿ (n ≤ 7); 14 − n for n &gt; 7</text>
+<rect x="70" y="760" width="700" height="95" rx="14" fill="#0d2233" fill-opacity="1" stroke="#ff4fd8" stroke-width="2"/>
+<text x="95" y="797" font-family="Aptos,Arial,sans-serif" font-size="18" fill="#ff4fd8" font-weight="800" text-anchor="start">FREE-ION MOMENT</text>
+<text x="95" y="830" font-family="Aptos,Arial,sans-serif" font-size="24" fill="#f4faff" font-weight="750" text-anchor="start">μeff = gJ √[J(J+1)] BM</text>
+<rect x="830" y="760" width="700" height="95" rx="14" fill="#0d2233" fill-opacity="1" stroke="#ffc857" stroke-width="2"/>
+<text x="855" y="797" font-family="Aptos,Arial,sans-serif" font-size="18" fill="#ffc857" font-weight="800" text-anchor="start">Gd³⁺ SPECIAL CASE</text>
+<text x="855" y="830" font-family="Aptos,Arial,sans-serif" font-size="20" fill="#f4faff" font-weight="700" text-anchor="start">4f⁷: seven unpaired; ground-state L = 0</text>
+</svg>

@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+<rect x="0" y="0" width="1600" height="900" rx="0" fill="#07131f" fill-opacity="1" stroke="#07131f" stroke-width="2"/>
+<rect x="0" y="0" width="1600" height="118" rx="0" fill="#091b2a" fill-opacity="1" stroke="#091b2a" stroke-width="2"/>
+<text x="62" y="66" font-family="Aptos,Arial,sans-serif" font-size="40" fill="#f4faff" font-weight="800" text-anchor="start">Consequences of lanthanoid contraction</text>
+<text x="62" y="101" font-family="Aptos,Arial,sans-serif" font-size="19" fill="#a6bdd0" font-weight="450" text-anchor="start">One cause—poor 4f shielding—creates a connected family of JEE trends</text>
+<rect x="65" y="180" width="460" height="245" rx="20" fill="#0d2233" fill-opacity="1" stroke="#39d9ff" stroke-width="2"/>
+<circle cx="130" cy="248" r="34" fill="#39d9ff" stroke="none" stroke-width="0"/>
+<text x="185" y="242" font-family="Aptos,Arial,sans-serif" font-size="25" fill="#39d9ff" font-weight="850" text-anchor="start">Separation</text>
+<line x1="99" y1="292" x2="490" y2="292" stroke="#29475c" stroke-width="2"/>
+<text x="99" y="334" font-family="Aptos,Arial,sans-serif" font-size="17" fill="#f4faff" font-weight="600" text-anchor="start">Neighbouring Ln³⁺ ions have almost identical charge and size</text>
+<text x="99" y="374" font-family="Aptos,Arial,sans-serif" font-size="16" fill="#a6bdd0" font-weight="500" text-anchor="start">La³⁺ → Lu³⁺: radius decreases</text>
+<rect x="575" y="180" width="460" height="245" rx="20" fill="#0d2233" fill-opacity="1" stroke="#ffc857" stroke-width="2"/>
+<circle cx="640" cy="248" r="34" fill="#ffc857" stroke="none" stroke-width="0"/>
+<text x="695" y="242" font-family="Aptos,Arial,sans-serif" font-size="25" fill="#ffc857" font-weight="850" text-anchor="start">Zr ≈ Hf</text>
+<line x1="609" y1="292" x2="1000" y2="292" stroke="#29475c" stroke-width="2"/>
+<text x="609" y="334" font-family="Aptos,Arial,sans-serif" font-size="17" fill="#f4faff" font-weight="600" text-anchor="start">Hf contracts to nearly the radius of Zr</text>
+<text x="609" y="374" font-family="Aptos,Arial,sans-serif" font-size="16" fill="#a6bdd0" font-weight="500" text-anchor="start">La³⁺ → Lu³⁺: radius decreases</text>
+<rect x="1085" y="180" width="460" height="245" rx="20" fill="#0d2233" fill-opacity="1" stroke="#ff5a68" stroke-width="2"/>
+<circle cx="1150" cy="248" r="34" fill="#ff5a68" stroke="none" stroke-width="0"/>
+<text x="1205" y="242" font-family="Aptos,Arial,sans-serif" font-size="25" fill="#ff5a68" font-weight="850" text-anchor="start">Basicity ↓</text>
+<line x1="1119" y1="292" x2="1510" y2="292" stroke="#29475c" stroke-width="2"/>
+<text x="1119" y="334" font-family="Aptos,Arial,sans-serif" font-size="17" fill="#f4faff" font-weight="600" text-anchor="start">La(OH)₃ &gt; … &gt; Lu(OH)₃</text>
+<text x="1119" y="374" font-family="Aptos,Arial,sans-serif" font-size="16" fill="#a6bdd0" font-weight="500" text-anchor="start">La³⁺ → Lu³⁺: radius decreases</text>
+<rect x="65" y="475" width="460" height="245" rx="20" fill="#0d2233" fill-opacity="1" stroke="#1ed6c0" stroke-width="2"/>
+<circle cx="130" cy="543" r="34" fill="#1ed6c0" stroke="none" stroke-width="0"/>
+<text x="185" y="537" font-family="Aptos,Arial,sans-serif" font-size="25" fill="#1ed6c0" font-weight="850" text-anchor="start">Complexing ↑</text>
+<line x1="99" y1="587" x2="490" y2="587" stroke="#29475c" stroke-width="2"/>
+<text x="99" y="629" font-family="Aptos,Arial,sans-serif" font-size="17" fill="#f4faff" font-weight="600" text-anchor="start">Smaller Ln³⁺ raises charge density for a fixed hard ligand</text>
+<text x="99" y="669" font-family="Aptos,Arial,sans-serif" font-size="16" fill="#a6bdd0" font-weight="500" text-anchor="start">La³⁺ → Lu³⁺: radius decreases</text>
+<rect x="575" y="475" width="460" height="245" rx="20" fill="#0d2233" fill-opacity="1" stroke="#63e69b" stroke-width="2"/>
+<circle cx="640" cy="543" r="34" fill="#63e69b" stroke="none" stroke-width="0"/>
+<text x="695" y="537" font-family="Aptos,Arial,sans-serif" font-size="25" fill="#63e69b" font-weight="850" text-anchor="start">Density / hardness</text>
+<line x1="609" y1="587" x2="1000" y2="587" stroke="#29475c" stroke-width="2"/>
+<text x="609" y="629" font-family="Aptos,Arial,sans-serif" font-size="17" fill="#f4faff" font-weight="600" text-anchor="start">Generally increase, with structural exceptions</text>
+<text x="609" y="669" font-family="Aptos,Arial,sans-serif" font-size="16" fill="#a6bdd0" font-weight="500" text-anchor="start">La³⁺ → Lu³⁺: radius decreases</text>
+<rect x="1085" y="475" width="460" height="245" rx="20" fill="#0d2233" fill-opacity="1" stroke="#ff4fd8" stroke-width="2"/>
+<circle cx="1150" cy="543" r="34" fill="#ff4fd8" stroke="none" stroke-width="0"/>
+<text x="1205" y="537" font-family="Aptos,Arial,sans-serif" font-size="25" fill="#ff4fd8" font-weight="850" text-anchor="start">5d similarity</text>
+<line x1="1119" y1="587" x2="1510" y2="587" stroke="#29475c" stroke-width="2"/>
+<text x="1119" y="629" font-family="Aptos,Arial,sans-serif" font-size="17" fill="#f4faff" font-weight="600" text-anchor="start">4d/5d congeners become unusually close in size</text>
+<text x="1119" y="669" font-family="Aptos,Arial,sans-serif" font-size="16" fill="#a6bdd0" font-weight="500" text-anchor="start">La³⁺ → Lu³⁺: radius decreases</text>
+<rect x="330" y="806" width="940" height="50" rx="12" fill="#0a1d2b" fill-opacity="1" stroke="#39d9ff" stroke-width="2"/>
+<text x="800" y="838" font-family="Aptos,Arial,sans-serif" font-size="20" fill="#39d9ff" font-weight="800" text-anchor="middle">Z ↑ + weak 4f shielding → Zₑff ↑ → radius ↓ → polarising power ↑</text>
+</svg>

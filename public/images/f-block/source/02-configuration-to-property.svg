@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+<rect x="0" y="0" width="1600" height="900" rx="0" fill="#07131F" stroke="#07131F" stroke-width="0"/>
+<path d="M0 0H1600V122H0Z" fill="#091B2A"/>
+<text x="62" y="64" font-family="Aptos,Arial,sans-serif" font-size="40" fill="#F4FAFF" font-weight="750" text-anchor="start">Electronic structure: atom → ion → property</text>
+<text x="62" y="101" font-family="Aptos,Arial,sans-serif" font-size="20" fill="#A6BDD0" font-weight="400" text-anchor="start">Separate the neutral-atom configuration from the configuration of the chemically relevant ion</text>
+<rect x="80" y="220" width="330" height="150" rx="18" fill="#0C2537" stroke="#39D9FF" stroke-width="3"/>
+<text x="245" y="268" font-family="Aptos,Arial,sans-serif" font-size="25" fill="#39D9FF" font-weight="750" text-anchor="middle">Neutral atom</text>
+<text x="245" y="320" font-family="Aptos,Arial,sans-serif" font-size="21" fill="#F4FAFF" font-weight="600" text-anchor="middle">[Xe] 4fⁿ 5d⁰–¹ 6s²</text>
+<line x1="410" y1="295" x2="455" y2="295" stroke="#39D9FF" stroke-width="5" /><polygon points="455,295 439,286 439,304" fill="#39D9FF"/>
+<rect x="465" y="220" width="330" height="150" rx="18" fill="#0C2537" stroke="#FFC857" stroke-width="3"/>
+<text x="630" y="268" font-family="Aptos,Arial,sans-serif" font-size="25" fill="#FFC857" font-weight="750" text-anchor="middle">Remove 6s²</text>
+<text x="630" y="320" font-family="Aptos,Arial,sans-serif" font-size="21" fill="#F4FAFF" font-weight="600" text-anchor="middle">outer shell ionises first</text>
+<line x1="795" y1="295" x2="840" y2="295" stroke="#FFC857" stroke-width="5" /><polygon points="840,295 824,286 824,304" fill="#FFC857"/>
+<rect x="850" y="220" width="330" height="150" rx="18" fill="#0C2537" stroke="#1ED6C0" stroke-width="3"/>
+<text x="1015" y="268" font-family="Aptos,Arial,sans-serif" font-size="25" fill="#1ED6C0" font-weight="750" text-anchor="middle">Common Ln³⁺</text>
+<text x="1015" y="320" font-family="Aptos,Arial,sans-serif" font-size="21" fill="#F4FAFF" font-weight="600" text-anchor="middle">[Xe] 4fⁿ</text>
+<line x1="1180" y1="295" x2="1225" y2="295" stroke="#1ED6C0" stroke-width="5" /><polygon points="1225,295 1209,286 1209,304" fill="#1ED6C0"/>
+<rect x="1235" y="220" width="330" height="150" rx="18" fill="#0C2537" stroke="#FF4FD8" stroke-width="3"/>
+<text x="1400" y="268" font-family="Aptos,Arial,sans-serif" font-size="25" fill="#FF4FD8" font-weight="750" text-anchor="middle">Predict property</text>
+<text x="1400" y="320" font-family="Aptos,Arial,sans-serif" font-size="21" fill="#F4FAFF" font-weight="600" text-anchor="middle">f count → colour + magnetism</text>
+<text x="80" y="455" font-family="Aptos,Arial,sans-serif" font-size="27" fill="#F4FAFF" font-weight="750" text-anchor="start">Near-degenerate energy competition</text>
+<line x1="120" y1="510" x2="630" y2="510" stroke="#FFC857" stroke-width="8" />
+<text x="155" y="494" font-family="Aptos,Arial,sans-serif" font-size="22" fill="#FFC857" font-weight="750" text-anchor="start">6s / 7s</text>
+<text x="655" y="518" font-family="Aptos,Arial,sans-serif" font-size="21" fill="#A6BDD0" font-weight="500" text-anchor="start">outer; removed early</text>
+<line x1="120" y1="600" x2="630" y2="600" stroke="#39D9FF" stroke-width="8" />
+<text x="155" y="584" font-family="Aptos,Arial,sans-serif" font-size="22" fill="#39D9FF" font-weight="750" text-anchor="start">5d / 6d</text>
+<text x="655" y="608" font-family="Aptos,Arial,sans-serif" font-size="21" fill="#A6BDD0" font-weight="500" text-anchor="start">close to f in neutral atoms</text>
+<line x1="120" y1="690" x2="630" y2="690" stroke="#FF4FD8" stroke-width="8" />
+<text x="155" y="674" font-family="Aptos,Arial,sans-serif" font-size="22" fill="#FF4FD8" font-weight="750" text-anchor="start">4f / 5f</text>
+<text x="655" y="698" font-family="Aptos,Arial,sans-serif" font-size="21" fill="#A6BDD0" font-weight="500" text-anchor="start">special stability and bonding</text>
+<rect x="1040" y="470" width="455" height="255" rx="18" fill="#0A1D2B" stroke="#FF5A68" stroke-width="2"/>
+<text x="1267" y="520" font-family="Aptos,Arial,sans-serif" font-size="27" fill="#FF5A68" font-weight="800" text-anchor="middle">JEE-safe rule</text>
+<text x="1075" y="575" font-family="Aptos,Arial,sans-serif" font-size="21" fill="#F4FAFF" font-weight="600" text-anchor="start">1. Identify the species and charge.</text>
+<text x="1075" y="620" font-family="Aptos,Arial,sans-serif" font-size="21" fill="#F4FAFF" font-weight="600" text-anchor="start">2. Remove outer ns electrons first.</text>
+<text x="1075" y="665" font-family="Aptos,Arial,sans-serif" font-size="21" fill="#F4FAFF" font-weight="600" text-anchor="start">3. Recalculate the f count.</text>
+<text x="1075" y="710" font-family="Aptos,Arial,sans-serif" font-size="21" fill="#F4FAFF" font-weight="600" text-anchor="start">4. Then infer colour and magnetism.</text>
+</svg>

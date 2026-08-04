@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+<rect x="0" y="0" width="1600" height="900" rx="0" fill="#07131f" fill-opacity="1" stroke="#07131f" stroke-width="2"/>
+<rect x="0" y="0" width="1600" height="118" rx="0" fill="#091b2a" fill-opacity="1" stroke="#091b2a" stroke-width="2"/>
+<text x="62" y="66" font-family="Aptos,Arial,sans-serif" font-size="40" fill="#f4faff" font-weight="800" text-anchor="start">Complex formation and coordination</text>
+<text x="62" y="101" font-family="Aptos,Arial,sans-serif" font-size="19" fill="#a6bdd0" font-weight="450" text-anchor="start">Hard-acid lanthanoids prefer oxygen donors; actinoids add stronger covalent and ligand-selective effects</text>
+<circle cx="420" cy="420" r="82" fill="#39d9ff" stroke="none" stroke-width="0"/>
+<text x="420" y="430" font-family="Aptos,Arial,sans-serif" font-size="28" fill="#07131f" font-weight="850" text-anchor="middle">Ln³⁺</text>
+<line x1="510" y1="420" x2="690" y2="238" stroke="#39d9ff" stroke-width="3"/>
+<rect x="540" y="210" width="350" height="58" rx="12" fill="#0d2233" fill-opacity="1" stroke="#39d9ff" stroke-width="2"/>
+<text x="715" y="246" font-family="Aptos,Arial,sans-serif" font-size="17" fill="#f4faff" font-weight="650" text-anchor="middle">hard Lewis acid</text>
+<line x1="510" y1="420" x2="690" y2="383" stroke="#39d9ff" stroke-width="3"/>
+<rect x="540" y="355" width="350" height="58" rx="12" fill="#0d2233" fill-opacity="1" stroke="#39d9ff" stroke-width="2"/>
+<text x="715" y="391" font-family="Aptos,Arial,sans-serif" font-size="17" fill="#f4faff" font-weight="650" text-anchor="middle">O/F donors preferred</text>
+<line x1="510" y1="420" x2="690" y2="528" stroke="#39d9ff" stroke-width="3"/>
+<rect x="540" y="500" width="350" height="58" rx="12" fill="#0d2233" fill-opacity="1" stroke="#39d9ff" stroke-width="2"/>
+<text x="715" y="536" font-family="Aptos,Arial,sans-serif" font-size="17" fill="#f4faff" font-weight="650" text-anchor="middle">coordination number often 8–10</text>
+<line x1="510" y1="420" x2="690" y2="673" stroke="#39d9ff" stroke-width="3"/>
+<rect x="540" y="645" width="350" height="58" rx="12" fill="#0d2233" fill-opacity="1" stroke="#39d9ff" stroke-width="2"/>
+<text x="715" y="681" font-family="Aptos,Arial,sans-serif" font-size="17" fill="#f4faff" font-weight="650" text-anchor="middle">bonding largely electrostatic</text>
+<circle cx="1180" cy="420" r="82" fill="#ff4fd8" stroke="none" stroke-width="0"/>
+<text x="1180" y="430" font-family="Aptos,Arial,sans-serif" font-size="28" fill="#07131f" font-weight="850" text-anchor="middle">An³⁺ / An⁴⁺</text>
+<line x1="1090" y1="420" x2="910" y2="238" stroke="#ff4fd8" stroke-width="3"/>
+<rect x="710" y="210" width="350" height="58" rx="12" fill="#0d2233" fill-opacity="1" stroke="#ff4fd8" stroke-width="2"/>
+<text x="885" y="246" font-family="Aptos,Arial,sans-serif" font-size="17" fill="#f4faff" font-weight="650" text-anchor="middle">higher covalent contribution</text>
+<line x1="1090" y1="420" x2="910" y2="383" stroke="#ff4fd8" stroke-width="3"/>
+<rect x="710" y="355" width="350" height="58" rx="12" fill="#0d2233" fill-opacity="1" stroke="#ff4fd8" stroke-width="2"/>
+<text x="885" y="391" font-family="Aptos,Arial,sans-serif" font-size="17" fill="#f4faff" font-weight="650" text-anchor="middle">O, N and softer donors possible</text>
+<line x1="1090" y1="420" x2="910" y2="528" stroke="#ff4fd8" stroke-width="3"/>
+<rect x="710" y="500" width="350" height="58" rx="12" fill="#0d2233" fill-opacity="1" stroke="#ff4fd8" stroke-width="2"/>
+<text x="885" y="536" font-family="Aptos,Arial,sans-serif" font-size="17" fill="#f4faff" font-weight="650" text-anchor="middle">strong hydrolysis at high charge</text>
+<line x1="1090" y1="420" x2="910" y2="673" stroke="#ff4fd8" stroke-width="3"/>
+<rect x="710" y="645" width="350" height="58" rx="12" fill="#0d2233" fill-opacity="1" stroke="#ff4fd8" stroke-width="2"/>
+<text x="885" y="681" font-family="Aptos,Arial,sans-serif" font-size="17" fill="#f4faff" font-weight="650" text-anchor="middle">actinyl equatorial coordination</text>
+<rect x="280" y="800" width="1040" height="56" rx="12" fill="#0a1d2b" fill-opacity="1" stroke="#ffc857" stroke-width="2"/>
+<text x="800" y="835" font-family="Aptos,Arial,sans-serif" font-size="17" fill="#ffc857" font-weight="700" text-anchor="middle">Across Ln³⁺: smaller radius generally strengthens a fixed hard-donor complex; geometry still depends on ligand size.</text>
+</svg>

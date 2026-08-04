@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+<rect x="0" y="0" width="1600" height="900" rx="0" fill="#07131f" fill-opacity="1" stroke="#07131f" stroke-width="2"/>
+<rect x="0" y="0" width="1600" height="118" rx="0" fill="#091b2a" fill-opacity="1" stroke="#091b2a" stroke-width="2"/>
+<text x="62" y="66" font-family="Aptos,Arial,sans-serif" font-size="40" fill="#f4faff" font-weight="800" text-anchor="start">Aufbau filling across the two f-series</text>
+<text x="62" y="101" font-family="Aptos,Arial,sans-serif" font-size="19" fill="#a6bdd0" font-weight="450" text-anchor="start">Use verified anchor atoms; near-degenerate f/d/s energies prevent a perfectly mechanical pattern</text>
+<text x="75" y="205" font-family="Aptos,Arial,sans-serif" font-size="22" fill="#39d9ff" font-weight="800" text-anchor="start">LANTHANOID ANCHORS</text>
+<line x1="75" y1="229" x2="1525" y2="229" stroke="#39d9ff" stroke-width="3"/>
+<rect x="95.0" y="260" width="321.0" height="140" rx="18" fill="#102b40" fill-opacity="1" stroke="#39d9ff" stroke-width="2"/>
+<text x="255.5" y="313" font-family="Aptos,Arial,sans-serif" font-size="27" fill="#39d9ff" font-weight="850" text-anchor="middle">La</text>
+<text x="255.5" y="358" font-family="Aptos,Arial,sans-serif" font-size="21" fill="#f4faff" font-weight="650" text-anchor="middle">4f⁰5d¹</text>
+<text x="255.5" y="386" font-family="Aptos,Arial,sans-serif" font-size="14" fill="#a6bdd0" font-weight="500" text-anchor="middle">outer ns² omitted</text>
+<rect x="440.0" y="260" width="321.0" height="140" rx="18" fill="#102b40" fill-opacity="1" stroke="#39d9ff" stroke-width="2"/>
+<text x="600.5" y="313" font-family="Aptos,Arial,sans-serif" font-size="27" fill="#39d9ff" font-weight="850" text-anchor="middle">Ce</text>
+<text x="600.5" y="358" font-family="Aptos,Arial,sans-serif" font-size="21" fill="#f4faff" font-weight="650" text-anchor="middle">4f¹5d¹</text>
+<text x="600.5" y="386" font-family="Aptos,Arial,sans-serif" font-size="14" fill="#a6bdd0" font-weight="500" text-anchor="middle">outer ns² omitted</text>
+<rect x="785.0" y="260" width="321.0" height="140" rx="18" fill="#102b40" fill-opacity="1" stroke="#39d9ff" stroke-width="2"/>
+<text x="945.5" y="313" font-family="Aptos,Arial,sans-serif" font-size="27" fill="#39d9ff" font-weight="850" text-anchor="middle">Gd</text>
+<text x="945.5" y="358" font-family="Aptos,Arial,sans-serif" font-size="21" fill="#f4faff" font-weight="650" text-anchor="middle">4f⁷5d¹</text>
+<text x="945.5" y="386" font-family="Aptos,Arial,sans-serif" font-size="14" fill="#a6bdd0" font-weight="500" text-anchor="middle">outer ns² omitted</text>
+<rect x="1130.0" y="260" width="321.0" height="140" rx="18" fill="#102b40" fill-opacity="1" stroke="#39d9ff" stroke-width="2"/>
+<text x="1290.5" y="313" font-family="Aptos,Arial,sans-serif" font-size="27" fill="#39d9ff" font-weight="850" text-anchor="middle">Lu</text>
+<text x="1290.5" y="358" font-family="Aptos,Arial,sans-serif" font-size="21" fill="#f4faff" font-weight="650" text-anchor="middle">4f¹⁴5d¹</text>
+<text x="1290.5" y="386" font-family="Aptos,Arial,sans-serif" font-size="14" fill="#a6bdd0" font-weight="500" text-anchor="middle">outer ns² omitted</text>
+<text x="75" y="485" font-family="Aptos,Arial,sans-serif" font-size="22" fill="#ff8a3d" font-weight="800" text-anchor="start">ACTINOID ANCHORS</text>
+<line x1="75" y1="509" x2="1525" y2="509" stroke="#ff8a3d" stroke-width="3"/>
+<rect x="95.0" y="540" width="173.14285714285714" height="140" rx="18" fill="#102b40" fill-opacity="1" stroke="#ff8a3d" stroke-width="2"/>
+<text x="181.57142857142856" y="593" font-family="Aptos,Arial,sans-serif" font-size="27" fill="#ff8a3d" font-weight="850" text-anchor="middle">Ac</text>
+<text x="181.57142857142856" y="638" font-family="Aptos,Arial,sans-serif" font-size="21" fill="#f4faff" font-weight="650" text-anchor="middle">5f⁰6d¹</text>
+<text x="181.57142857142856" y="666" font-family="Aptos,Arial,sans-serif" font-size="14" fill="#a6bdd0" font-weight="500" text-anchor="middle">outer ns² omitted</text>
+<rect x="292.1428571428571" y="540" width="173.14285714285714" height="140" rx="18" fill="#102b40" fill-opacity="1" stroke="#ff8a3d" stroke-width="2"/>
+<text x="378.71428571428567" y="593" font-family="Aptos,Arial,sans-serif" font-size="27" fill="#ff8a3d" font-weight="850" text-anchor="middle">Th</text>
+<text x="378.71428571428567" y="638" font-family="Aptos,Arial,sans-serif" font-size="21" fill="#f4faff" font-weight="650" text-anchor="middle">5f⁰6d²</text>
+<text x="378.71428571428567" y="666" font-family="Aptos,Arial,sans-serif" font-size="14" fill="#a6bdd0" font-weight="500" text-anchor="middle">outer ns² omitted</text>
+<rect x="489.2857142857143" y="540" width="173.14285714285714" height="140" rx="18" fill="#102b40" fill-opacity="1" stroke="#ff8a3d" stroke-width="2"/>
+<text x="575.8571428571429" y="593" font-family="Aptos,Arial,sans-serif" font-size="27" fill="#ff8a3d" font-weight="850" text-anchor="middle">Pa</text>
+<text x="575.8571428571429" y="638" font-family="Aptos,Arial,sans-serif" font-size="21" fill="#f4faff" font-weight="650" text-anchor="middle">5f²6d¹</text>
+<text x="575.8571428571429" y="666" font-family="Aptos,Arial,sans-serif" font-size="14" fill="#a6bdd0" font-weight="500" text-anchor="middle">outer ns² omitted</text>
+<rect x="686.4285714285714" y="540" width="173.14285714285714" height="140" rx="18" fill="#102b40" fill-opacity="1" stroke="#ff8a3d" stroke-width="2"/>
+<text x="773.0" y="593" font-family="Aptos,Arial,sans-serif" font-size="27" fill="#ff8a3d" font-weight="850" text-anchor="middle">U</text>
+<text x="773.0" y="638" font-family="Aptos,Arial,sans-serif" font-size="21" fill="#f4faff" font-weight="650" text-anchor="middle">5f³6d¹</text>
+<text x="773.0" y="666" font-family="Aptos,Arial,sans-serif" font-size="14" fill="#a6bdd0" font-weight="500" text-anchor="middle">outer ns² omitted</text>
+<rect x="883.5714285714286" y="540" width="173.14285714285714" height="140" rx="18" fill="#102b40" fill-opacity="1" stroke="#ff8a3d" stroke-width="2"/>
+<text x="970.1428571428571" y="593" font-family="Aptos,Arial,sans-serif" font-size="27" fill="#ff8a3d" font-weight="850" text-anchor="middle">Am</text>
+<text x="970.1428571428571" y="638" font-family="Aptos,Arial,sans-serif" font-size="21" fill="#f4faff" font-weight="650" text-anchor="middle">5f⁷</text>
+<text x="970.1428571428571" y="666" font-family="Aptos,Arial,sans-serif" font-size="14" fill="#a6bdd0" font-weight="500" text-anchor="middle">outer ns² omitted</text>
+<rect x="1080.7142857142858" y="540" width="173.14285714285714" height="140" rx="18" fill="#102b40" fill-opacity="1" stroke="#ff8a3d" stroke-width="2"/>
+<text x="1167.2857142857144" y="593" font-family="Aptos,Arial,sans-serif" font-size="27" fill="#ff8a3d" font-weight="850" text-anchor="middle">Cm</text>
+<text x="1167.2857142857144" y="638" font-family="Aptos,Arial,sans-serif" font-size="21" fill="#f4faff" font-weight="650" text-anchor="middle">5f⁷6d¹</text>
+<text x="1167.2857142857144" y="666" font-family="Aptos,Arial,sans-serif" font-size="14" fill="#a6bdd0" font-weight="500" text-anchor="middle">outer ns² omitted</text>
+<rect x="1277.857142857143" y="540" width="173.14285714285714" height="140" rx="18" fill="#102b40" fill-opacity="1" stroke="#ff8a3d" stroke-width="2"/>
+<text x="1364.4285714285716" y="593" font-family="Aptos,Arial,sans-serif" font-size="27" fill="#ff8a3d" font-weight="850" text-anchor="middle">Lr</text>
+<text x="1364.4285714285716" y="638" font-family="Aptos,Arial,sans-serif" font-size="21" fill="#f4faff" font-weight="650" text-anchor="middle">5f¹⁴7p¹*</text>
+<text x="1364.4285714285716" y="666" font-family="Aptos,Arial,sans-serif" font-size="14" fill="#a6bdd0" font-weight="500" text-anchor="middle">outer ns² omitted</text>
+<rect x="255" y="785" width="1090" height="67" rx="14" fill="#0a1d2b" fill-opacity="1" stroke="#ffc857" stroke-width="2"/>
+<text x="800" y="826" font-family="Aptos,Arial,sans-serif" font-size="19" fill="#ffc857" font-weight="750" text-anchor="middle">*Modern Lr ground state uses 7p¹; many school tables retain the older 6d¹ convention.</text>
+</svg>

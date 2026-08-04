@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+<rect x="0" y="0" width="1600" height="900" rx="0" fill="#07131f" fill-opacity="1" stroke="#07131f" stroke-width="2"/>
+<rect x="0" y="0" width="1600" height="118" rx="0" fill="#091b2a" fill-opacity="1" stroke="#091b2a" stroke-width="2"/>
+<text x="62" y="66" font-family="Aptos,Arial,sans-serif" font-size="40" fill="#f4faff" font-weight="800" text-anchor="start">Lanthanoid oxidation-state map</text>
+<text x="62" y="101" font-family="Aptos,Arial,sans-serif" font-size="19" fill="#a6bdd0" font-weight="450" text-anchor="start">+3 dominates; selected +2 and +4 states gain support from f⁰, f⁷ or f¹⁴ counts and the chemical medium</text>
+<text x="70" y="258" font-family="Aptos,Arial,sans-serif" font-size="23" fill="#f4faff" font-weight="800" text-anchor="middle">+4</text>
+<line x1="105" y1="250" x2="1535" y2="250" stroke="#29475c" stroke-width="2"/>
+<text x="70" y="438" font-family="Aptos,Arial,sans-serif" font-size="23" fill="#f4faff" font-weight="800" text-anchor="middle">+3</text>
+<line x1="105" y1="430" x2="1535" y2="430" stroke="#29475c" stroke-width="2"/>
+<text x="70" y="618" font-family="Aptos,Arial,sans-serif" font-size="23" fill="#f4faff" font-weight="800" text-anchor="middle">+2</text>
+<line x1="105" y1="610" x2="1535" y2="610" stroke="#29475c" stroke-width="2"/>
+<text x="125" y="700" font-family="Aptos,Arial,sans-serif" font-size="19" fill="#f4faff" font-weight="750" text-anchor="middle">La</text>
+<rect x="100" y="405" width="50" height="50" rx="8" fill="#39d9ff" fill-opacity="1" stroke="#39d9ff" stroke-width="2"/>
+<text x="125" y="438" font-family="Aptos,Arial,sans-serif" font-size="18" fill="#07131f" font-weight="850" text-anchor="middle">3</text>
+<text x="220" y="700" font-family="Aptos,Arial,sans-serif" font-size="19" fill="#f4faff" font-weight="750" text-anchor="middle">Ce</text>
+<rect x="195" y="405" width="50" height="50" rx="8" fill="#39d9ff" fill-opacity="1" stroke="#39d9ff" stroke-width="2"/>
+<text x="220" y="438" font-family="Aptos,Arial,sans-serif" font-size="18" fill="#07131f" font-weight="850" text-anchor="middle">3</text>
+<rect x="195" y="225" width="50" height="50" rx="8" fill="#ffc857" fill-opacity="1" stroke="#ffc857" stroke-width="2"/>
+<text x="220" y="258" font-family="Aptos,Arial,sans-serif" font-size="18" fill="#07131f" font-weight="850" text-anchor="middle">4</text>
+<text x="315" y="700" font-family="Aptos,Arial,sans-serif" font-size="19" fill="#f4faff" font-weight="750" text-anchor="middle">Pr</text>
+<rect x="290" y="405" width="50" height="50" rx="8" fill="#39d9ff" fill-opacity="1" stroke="#39d9ff" stroke-width="2"/>
+<text x="315" y="438" font-family="Aptos,Arial,sans-serif" font-size="18" fill="#07131f" font-weight="850" text-anchor="middle">3</text>
+<rect x="290" y="225" width="50" height="50" rx="8" fill="#ffc857" fill-opacity="1" stroke="#ffc857" stroke-width="2"/>
+<text x="315" y="258" font-family="Aptos,Arial,sans-serif" font-size="18" fill="#07131f" font-weight="850" text-anchor="middle">4</text>
+<text x="410" y="700" font-family="Aptos,Arial,sans-serif" font-size="19" fill="#f4faff" font-weight="750" text-anchor="middle">Nd</text>
+<rect x="385" y="405" width="50" height="50" rx="8" fill="#39d9ff" fill-opacity="1" stroke="#39d9ff" stroke-width="2"/>
+<text x="410" y="438" font-family="Aptos,Arial,sans-serif" font-size="18" fill="#07131f" font-weight="850" text-anchor="middle">3</text>
+<text x="505" y="700" font-family="Aptos,Arial,sans-serif" font-size="19" fill="#f4faff" font-weight="750" text-anchor="middle">Pm</text>
+<rect x="480" y="405" width="50" height="50" rx="8" fill="#39d9ff" fill-opacity="1" stroke="#39d9ff" stroke-width="2"/>
+<text x="505" y="438" font-family="Aptos,Arial,sans-serif" font-size="18" fill="#07131f" font-weight="850" text-anchor="middle">3</text>
+<text x="600" y="700" font-family="Aptos,Arial,sans-serif" font-size="19" fill="#f4faff" font-weight="750" text-anchor="middle">Sm</text>
+<rect x="575" y="585" width="50" height="50" rx="8" fill="#1ed6c0" fill-opacity="1" stroke="#1ed6c0" stroke-width="2"/>
+<text x="600" y="618" font-family="Aptos,Arial,sans-serif" font-size="18" fill="#07131f" font-weight="850" text-anchor="middle">2</text>
+<rect x="575" y="405" width="50" height="50" rx="8" fill="#39d9ff" fill-opacity="1" stroke="#39d9ff" stroke-width="2"/>
+<text x="600" y="438" font-family="Aptos,Arial,sans-serif" font-size="18" fill="#07131f" font-weight="850" text-anchor="middle">3</text>
+<text x="695" y="700" font-family="Aptos,Arial,sans-serif" font-size="19" fill="#f4faff" font-weight="750" text-anchor="middle">Eu</text>
+<rect x="670" y="585" width="50" height="50" rx="8" fill="#1ed6c0" fill-opacity="1" stroke="#1ed6c0" stroke-width="2"/>
+<text x="695" y="618" font-family="Aptos,Arial,sans-serif" font-size="18" fill="#07131f" font-weight="850" text-anchor="middle">2</text>
+<rect x="670" y="405" width="50" height="50" rx="8" fill="#39d9ff" fill-opacity="1" stroke="#39d9ff" stroke-width="2"/>
+<text x="695" y="438" font-family="Aptos,Arial,sans-serif" font-size="18" fill="#07131f" font-weight="850" text-anchor="middle">3</text>
+<text x="790" y="700" font-family="Aptos,Arial,sans-serif" font-size="19" fill="#f4faff" font-weight="750" text-anchor="middle">Gd</text>
+<rect x="765" y="405" width="50" height="50" rx="8" fill="#39d9ff" fill-opacity="1" stroke="#39d9ff" stroke-width="2"/>
+<text x="790" y="438" font-family="Aptos,Arial,sans-serif" font-size="18" fill="#07131f" font-weight="850" text-anchor="middle">3</text>
+<text x="885" y="700" font-family="Aptos,Arial,sans-serif" font-size="19" fill="#f4faff" font-weight="750" text-anchor="middle">Tb</text>
+<rect x="860" y="405" width="50" height="50" rx="8" fill="#39d9ff" fill-opacity="1" stroke="#39d9ff" stroke-width="2"/>
+<text x="885" y="438" font-family="Aptos,Arial,sans-serif" font-size="18" fill="#07131f" font-weight="850" text-anchor="middle">3</text>
+<rect x="860" y="225" width="50" height="50" rx="8" fill="#ffc857" fill-opacity="1" stroke="#ffc857" stroke-width="2"/>
+<text x="885" y="258" font-family="Aptos,Arial,sans-serif" font-size="18" fill="#07131f" font-weight="850" text-anchor="middle">4</text>
+<text x="980" y="700" font-family="Aptos,Arial,sans-serif" font-size="19" fill="#f4faff" font-weight="750" text-anchor="middle">Dy</text>
+<rect x="955" y="405" width="50" height="50" rx="8" fill="#39d9ff" fill-opacity="1" stroke="#39d9ff" stroke-width="2"/>
+<text x="980" y="438" font-family="Aptos,Arial,sans-serif" font-size="18" fill="#07131f" font-weight="850" text-anchor="middle">3</text>
+<text x="1075" y="700" font-family="Aptos,Arial,sans-serif" font-size="19" fill="#f4faff" font-weight="750" text-anchor="middle">Ho</text>
+<rect x="1050" y="405" width="50" height="50" rx="8" fill="#39d9ff" fill-opacity="1" stroke="#39d9ff" stroke-width="2"/>
+<text x="1075" y="438" font-family="Aptos,Arial,sans-serif" font-size="18" fill="#07131f" font-weight="850" text-anchor="middle">3</text>
+<text x="1170" y="700" font-family="Aptos,Arial,sans-serif" font-size="19" fill="#f4faff" font-weight="750" text-anchor="middle">Er</text>
+<rect x="1145" y="405" width="50" height="50" rx="8" fill="#39d9ff" fill-opacity="1" stroke="#39d9ff" stroke-width="2"/>
+<text x="1170" y="438" font-family="Aptos,Arial,sans-serif" font-size="18" fill="#07131f" font-weight="850" text-anchor="middle">3</text>
+<text x="1265" y="700" font-family="Aptos,Arial,sans-serif" font-size="19" fill="#f4faff" font-weight="750" text-anchor="middle">Tm</text>
+<rect x="1240" y="585" width="50" height="50" rx="8" fill="#1ed6c0" fill-opacity="1" stroke="#1ed6c0" stroke-width="2"/>
+<text x="1265" y="618" font-family="Aptos,Arial,sans-serif" font-size="18" fill="#07131f" font-weight="850" text-anchor="middle">2</text>
+<rect x="1240" y="405" width="50" height="50" rx="8" fill="#39d9ff" fill-opacity="1" stroke="#39d9ff" stroke-width="2"/>
+<text x="1265" y="438" font-family="Aptos,Arial,sans-serif" font-size="18" fill="#07131f" font-weight="850" text-anchor="middle">3</text>
+<text x="1360" y="700" font-family="Aptos,Arial,sans-serif" font-size="19" fill="#f4faff" font-weight="750" text-anchor="middle">Yb</text>
+<rect x="1335" y="585" width="50" height="50" rx="8" fill="#1ed6c0" fill-opacity="1" stroke="#1ed6c0" stroke-width="2"/>
+<text x="1360" y="618" font-family="Aptos,Arial,sans-serif" font-size="18" fill="#07131f" font-weight="850" text-anchor="middle">2</text>
+<rect x="1335" y="405" width="50" height="50" rx="8" fill="#39d9ff" fill-opacity="1" stroke="#39d9ff" stroke-width="2"/>
+<text x="1360" y="438" font-family="Aptos,Arial,sans-serif" font-size="18" fill="#07131f" font-weight="850" text-anchor="middle">3</text>
+<text x="1455" y="700" font-family="Aptos,Arial,sans-serif" font-size="19" fill="#f4faff" font-weight="750" text-anchor="middle">Lu</text>
+<rect x="1430" y="405" width="50" height="50" rx="8" fill="#39d9ff" fill-opacity="1" stroke="#39d9ff" stroke-width="2"/>
+<text x="1455" y="438" font-family="Aptos,Arial,sans-serif" font-size="18" fill="#07131f" font-weight="850" text-anchor="middle">3</text>
+<rect x="260" y="770" width="1080" height="82" rx="14" fill="#0a1d2b" fill-opacity="1" stroke="#ffc857" stroke-width="2"/>
+<text x="800" y="805" font-family="Aptos,Arial,sans-serif" font-size="21" fill="#ffc857" font-weight="800" text-anchor="middle">Key anchors: Ce⁴⁺ = f⁰ · Eu²⁺ = f⁷ · Tb⁴⁺ = f⁷ · Yb²⁺ = f¹⁴</text>
+<text x="800" y="835" font-family="Aptos,Arial,sans-serif" font-size="17" fill="#a6bdd0" font-weight="600" text-anchor="middle">Configuration helps; ionisation, hydration, lattice and redox energies decide actual stability.</text>
+</svg>

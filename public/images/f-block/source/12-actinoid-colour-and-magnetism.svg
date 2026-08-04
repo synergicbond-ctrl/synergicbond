@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+<rect x="0" y="0" width="1600" height="900" rx="0" fill="#07131f" fill-opacity="1" stroke="#07131f" stroke-width="2"/>
+<rect x="0" y="0" width="1600" height="118" rx="0" fill="#091b2a" fill-opacity="1" stroke="#091b2a" stroke-width="2"/>
+<text x="62" y="66" font-family="Aptos,Arial,sans-serif" font-size="40" fill="#f4faff" font-weight="800" text-anchor="start">Actinoid colour and magnetism</text>
+<text x="62" y="101" font-family="Aptos,Arial,sans-serif" font-size="19" fill="#a6bdd0" font-weight="450" text-anchor="start">Less-shielded 5f orbitals make spectra and magnetic behaviour more sensitive to bonding and the lattice</text>
+<rect x="70" y="180" width="700" height="170" rx="18" fill="#0d2233" fill-opacity="1" stroke="#ff4fd8" stroke-width="2"/>
+<circle cx="130" cy="240" r="28" fill="#ff4fd8" stroke="none" stroke-width="0"/>
+<text x="180" y="235" font-family="Aptos,Arial,sans-serif" font-size="23" fill="#ff4fd8" font-weight="820" text-anchor="start">5f–5f transitions</text>
+<text x="180" y="276" font-family="Aptos,Arial,sans-serif" font-size="18" fill="#f4faff" font-weight="550" text-anchor="start">Often broader and more ligand-sensitive than 4f–4f bands</text>
+<rect x="830" y="180" width="700" height="170" rx="18" fill="#0d2233" fill-opacity="1" stroke="#ff8a3d" stroke-width="2"/>
+<circle cx="890" cy="240" r="28" fill="#ff8a3d" stroke="none" stroke-width="0"/>
+<text x="940" y="235" font-family="Aptos,Arial,sans-serif" font-size="23" fill="#ff8a3d" font-weight="820" text-anchor="start">Charge transfer</text>
+<text x="940" y="276" font-family="Aptos,Arial,sans-serif" font-size="18" fill="#f4faff" font-weight="550" text-anchor="start">Can dominate colour in high oxidation states</text>
+<rect x="70" y="395" width="700" height="170" rx="18" fill="#0d2233" fill-opacity="1" stroke="#39d9ff" stroke-width="2"/>
+<circle cx="130" cy="455" r="28" fill="#39d9ff" stroke="none" stroke-width="0"/>
+<text x="180" y="450" font-family="Aptos,Arial,sans-serif" font-size="23" fill="#39d9ff" font-weight="820" text-anchor="start">Spin–orbit coupling</text>
+<text x="180" y="491" font-family="Aptos,Arial,sans-serif" font-size="18" fill="#f4faff" font-weight="550" text-anchor="start">Strong; simple spin-only predictions are unsafe</text>
+<rect x="830" y="395" width="700" height="170" rx="18" fill="#0d2233" fill-opacity="1" stroke="#1ed6c0" stroke-width="2"/>
+<circle cx="890" cy="455" r="28" fill="#1ed6c0" stroke="none" stroke-width="0"/>
+<text x="940" y="450" font-family="Aptos,Arial,sans-serif" font-size="23" fill="#1ed6c0" font-weight="820" text-anchor="start">Crystal-field influence</text>
+<text x="940" y="491" font-family="Aptos,Arial,sans-serif" font-size="18" fill="#f4faff" font-weight="550" text-anchor="start">Greater than for shielded lanthanoid 4f levels</text>
+<rect x="70" y="610" width="700" height="170" rx="18" fill="#0d2233" fill-opacity="1" stroke="#ffc857" stroke-width="2"/>
+<circle cx="130" cy="670" r="28" fill="#ffc857" stroke="none" stroke-width="0"/>
+<text x="180" y="665" font-family="Aptos,Arial,sans-serif" font-size="23" fill="#ffc857" font-weight="820" text-anchor="start">Covalency</text>
+<text x="180" y="706" font-family="Aptos,Arial,sans-serif" font-size="18" fill="#f4faff" font-weight="550" text-anchor="start">Changes orbital populations and magnetic response</text>
+<rect x="830" y="610" width="700" height="170" rx="18" fill="#0d2233" fill-opacity="1" stroke="#ff5a68" stroke-width="2"/>
+<circle cx="890" cy="670" r="28" fill="#ff5a68" stroke="none" stroke-width="0"/>
+<text x="940" y="665" font-family="Aptos,Arial,sans-serif" font-size="23" fill="#ff5a68" font-weight="820" text-anchor="start">Radioactivity</text>
+<text x="940" y="706" font-family="Aptos,Arial,sans-serif" font-size="18" fill="#f4faff" font-weight="550" text-anchor="start">Self-heating and sample scarcity complicate measurements</text>
+<rect x="345" y="820" width="910" height="45" rx="10" fill="#0a1d2b" fill-opacity="1" stroke="#39d9ff" stroke-width="2"/>
+<text x="800" y="850" font-family="Aptos,Arial,sans-serif" font-size="17" fill="#39d9ff" font-weight="750" text-anchor="middle">5f is chemically available: bonding and spectroscopy cannot be treated as purely free-ion phenomena.</text>
+</svg>

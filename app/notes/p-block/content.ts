@@ -582,93 +582,138 @@ Unlike nitrogen and phosphorus, the intermediate +3 oxidation state of arsenic, 
 10. Give the products of P₄ + 3NaOH + 3H₂O and identify the reaction type. *(3NaH₂PO₂ + PH₃ — a disproportionation of phosphorus from 0 to +1 and 0 to −3.)*
 # 11. Group 16: oxygen, ozone and sulphur
 
-Members are O, S, Se, Te and Po. Oxygen is anomalous (§1.2): small, highly electronegative, capable of strong hydrogen bonding, and — critically — **has no accessible valence d orbital**, so its maximum covalency is capped near 2–4 depending on the species, unlike sulphur which readily reaches covalency/coordination 6 (SF₆). Use the school-level "octet expansion" model carefully: do not infer that oxygen can expand its octet the way sulphur or phosphorus can.
+Members are O, S, Se, Te, Po — the chalcogens. Configuration ns²np⁴. Classification: O, S non-metals; Se, Te metalloids; Po a metal. Oxidation states span −2 to +6; −2 is dominant for O (its small size and high electronegativity strongly favour gaining 2 electrons), while +4 and +6 become the important positive states from S onward.
 
-## 11.1 Dioxygen and ozone
+## 11.1 Quantitative periodic trends
 
-Molecular orbital theory correctly predicts that O₂ is **paramagnetic**, with two unpaired electrons in the degenerate π*2p orbitals — a result that simple Lewis/VBT structures (which draw O=O with all electrons paired) fail to explain, making O₂ the classic textbook justification for MOT over VBT.
+| Property | O | S | Se | Te | Po |
+|---|---:|---:|---:|---:|---:|
+| Atomic radius (pm) | 66 | 104 | 117 | 137 | 153 |
+| IE₁ (kJ/mol) | 1314 | 1000 | 941 | 869 | 812 |
+| Electronegativity | 3.5 | 2.6 | 2.6 | 2.1 | 2.0 |
+| Electron gain enthalpy (kJ/mol) | −141 | −200 | −195 | −190 | −183 |
 
-Ozone, O₃, is a bent, resonance-hybrid molecule (O–O–O ≈ 116.8°) and is diamagnetic. It is a substantially stronger oxidising agent than O₂ in aqueous conditions and is the standard reagent for liberating iodine from iodide (a quantitative test/titration basis):
+**IE₁ is lower than Group 15's corresponding member at every row** (compare N 1402 vs O 1314; P 1012 vs S 1000) — the reverse of the usual left-to-right rise across a period, because Group 15's np³ is a stable half-filled configuration (§7) that Group 16's np⁴ has already disturbed by adding a 4th electron into an already-occupied p-orbital.
 
-\[\mathrm{O_3+2I^-+H_2O\rightarrow O_2+I_2+2OH^-}\]
+**Electron gain enthalpy — the oxygen anomaly:** sulphur's is *more* negative than oxygen's (−200 vs −141 kJ/mol), even though oxygen is more electronegative. Oxygen's very small 2p subshell already carries considerable electron density; adding one more electron meets significant inter-electronic repulsion that partly offsets the energy released. Sulphur's larger, less crowded 3p subshell accepts the extra electron more exothermically. This exactly parallels the F vs Cl electron-gain-enthalpy inversion in Group 17 (§15) — recognise it as the *same* general phenomenon (2nd-period smallness penalising electron gain) recurring in both groups.
 
-## 11.2 Sulphur dioxide and sulphuric acid
+## 11.2 The anomalous behaviour of oxygen
 
-Sulphur in SO₂ sits at the intermediate oxidation state +4, so SO₂ can act as **either a reducing agent or, against a stronger reductant, an oxidising agent**. Its most common exam role is reducing: it decolourises acidified KMnO₄ (Mn⁷⁺ → Mn²⁺) and acidified potassium dichromate.
+1. Small size, high electronegativity — strong hydrogen bonding wherever O–H bonds exist (H₂O boiling at 373 K vs H₂S at 213 K, exactly parallel to the NH₃/PH₃ anomaly).
+2. Absence of d-orbitals — maximum covalency of oxygen is limited (typically 2, occasionally higher through coordinate bonds, e.g. H₃O⁺), unlike sulphur which reaches 6 (SF₆).
+3. Strong pπ–pπ multiple bonding (O=O, O=C) — the same 2nd-period-vs-heavier contrast used throughout this chapter (§4.3, §7.2).
+4. O₂ is paramagnetic (§11.4) — inexplicable from a simple Lewis structure.
 
-In the **contact process**, SO₂ is catalytically, reversibly oxidised to SO₃ (V₂O₅ catalyst, ~ 700 K, ~ 2 atm — moderate conditions chosen for the same rate/yield compromise logic as the Haber process):
+## 11.3 Hydrides — parallel to Group 15's NH₃ anomaly
 
-\[\mathrm{2SO_2+O_2\rightleftharpoons2SO_3\qquad\Delta H^\ominus<0}\]
+| Property | H₂O | H₂S | H₂Se | H₂Te |
+|---|---:|---:|---:|---:|
+| Boiling point (K) | 373 | 213 | 232 | 271 |
+| Bond angle | 104.5° | 92° | 91° | 90° |
+| Acidic strength | weakest | — | — | strongest |
+| Reducing power | none | — | — | strongest |
 
-SO₃ is then absorbed **in concentrated H₂SO₄ (not water directly, to avoid a dense, hard-to-condense acidic mist)** to give oleum (fuming sulphuric acid, H₂S₂O₇-rich), which is subsequently diluted carefully with water to the required concentration of H₂SO₄.
+The pattern is a direct structural echo of NH₃/PH₃/AsH₃/SbH₃ (§7.3): boiling point is anomalously high for the smallest hydride (hydrogen bonding), bond angle falls toward 90° down the group (less lone-pair compression as the central atom grows), and acidic strength/reducing power both *rise* down the group as the H–X bond weakens and becomes easier to break heterolytically (acidity) or donate electrons from (reduction).
 
-Concentrated H₂SO₄ is a strong acid, a powerful dehydrating agent (chars sugar/carbohydrates by removing H and O as H₂O), and an oxidising agent when hot and concentrated. It is also **non-volatile**, which is why it can displace more volatile acids like HCl and HNO₃ from their salts on heating — but this displacement logic **fails for bromides and iodides**, where hot concentrated H₂SO₄ instead oxidises Br⁻/I⁻ to Br₂/I₂ (itself being reduced to SO₂), so HBr and HI cannot be prepared this way.
+## 11.4 Dioxygen and its paramagnetism
+
+**Preparation:** thermal decomposition of chlorates/permanganates: 2KClO₃ →(MnO₂ catalyst, Δ) 2KCl + 3O₂; or 2Ag₂O →(Δ) 4Ag + O₂.
+
+**MOT explanation for paramagnetism:** the Lewis structure O=O predicts all electrons paired — it cannot explain O₂'s observed paramagnetism, which is exactly why this is a favourite "Lewis fails, MOT succeeds" question. Filling molecular orbitals in energy order for O₂ (16 valence + core electrons total), the two highest-energy electrons occupy the *degenerate* π*2px and π*2py orbitals *separately* (Hund's rule), each unpaired with parallel spin.
+
+**Bond order, counted correctly (valence electrons only — the core σ1s/σ*1s pair always cancels and can be ignored):** bonding pairs σ2s² + σ2pz² + π2px² + π2py² = 8 electrons; antibonding σ*2s² + π*2px¹ + π*2py¹ = 4 electrons. BO = ½(8 − 4) = **2**, matching the simple Lewis double bond — but MOT alone shows this bond order of 2 is achieved with 2 unpaired electrons, not 0. Removing one π* electron to form O₂⁺ (dioxygenyl) *raises* the bond order to 2.5, giving a shorter, stronger bond — directly relevant to Bartlett's 1962 discovery that PtF₆ could oxidise O₂ to O₂⁺[PtF₆]⁻, which led him to reason that Xe (whose first ionisation energy, 1170 kJ/mol, is close to O₂'s, 1175 kJ/mol) should also be oxidisable — the historical opening move of noble-gas chemistry (§18).
 
 # 12. Group 16 deep dive: oxygen chemistry, ozone and sulphur allotropes
 
-## 12.1 Molecular oxygen and the reactive-oxygen-species ladder
+## 12.1 Ozone
 
-The molecular orbital treatment of O₂ correctly assigns two unpaired electrons to the degenerate π*2p antibonding orbitals, explaining its observed paramagnetism — a result the simple Lewis dot structure (O=O, all electrons paired) cannot reproduce. Beyond neutral O₂, the reactive-oxygen-species ladder runs through **superoxide** (O₂⁻, oxidation state −½, one unpaired electron, e.g. in KO₂), **peroxide** (O₂²⁻, oxidation state −1, e.g. in Na₂O₂ and H₂O₂), and simple **oxide** (O²⁻, oxidation state −2, e.g. in MgO). Their reactivity with water and their oxidising/reducing behaviour differ sharply across this ladder (KO₂ reacts with water to liberate O₂ and H₂O₂ reacts with water is trivial since it is already aqueous-compatible, but reacts characteristically with oxidants/reductants depending on partner) — **never label an oxygen-rich salt "peroxide" purely from its formula without first checking the actual O–O bonding** (§13.1's rule applies identically here).
+**Preparation:** 3O₂ ⇌ 2O₃, ΔH = +142 kJ/mol, via silent electric discharge on pure, dry O₂ (a "silent" — non-sparking — discharge is essential; a spark would decompose O₃ as fast as it forms).
 
-## 12.2 Ozone in depth
+**Structure:** bent, bond angle 117°, a resonance hybrid of two structures with the terminal-to-central O–O bonds equal in length (128 pm, intermediate between a single and double bond) — the classic resonance-structure question in this chapter, parallel to CO₃²⁻/NO₃⁻ in earlier chapters.
 
-Ozone is a bent (∠O–O–O ≈ 116.8°), resonance-hybrid molecule, thermodynamically less stable than O₂ (ΔG°f is positive) but kinetically persistent enough at ordinary conditions to be isolated and studied. Its strong oxidising action — and specifically its ability to liberate iodine from iodide solution — is a direct consequence of ozone's own facile reduction back to the more stable O₂ (§11.1). It decolourises many organic dyes through genuine **oxidative** bleaching, in direct qualitative contrast to SO₂'s largely **reductive** (and often reversible) bleaching action (§13, trap bank) — this oxidative-vs-reductive contrast between O₃/Cl₂ on one side and SO₂ on the other is one of the most frequently tested qualitative-analysis distinctions in this chapter.
+**Thermodynamics:** unstable relative to O₂; decomposition is exothermic (ΔH negative) *and* increases entropy (ΔS positive, since 2 mol O₃ → 3 mol O₂), so ΔG is large and negative — ozone is thermodynamically unstable but kinetically persistent enough to be isolated and studied.
 
-## 12.3 Sulphur allotropic forms
+**Oxidising action — the standard estimation:** O₃ + 2KI + H₂O → I₂ + O₂ + 2KOH. The liberated I₂ is titrated against standard sodium thiosulphate using starch indicator: I₂ + 2Na₂S₂O₃ → 2NaI + Na₂S₄O₆.
 
-Rhombic sulphur (α-sulphur, stable below ~ 369 K) and monoclinic sulphur (β-sulphur, stable above ~ 369 K) both contain puckered, crown-shaped S₈ rings and are **enantiotropic** — meaning each form is the thermodynamically stable one over its own defined temperature range, and the two interconvert reversibly at the transition temperature. Plastic sulphur is formed by rapidly cooling (quenching) molten sulphur that has been heated close to its boiling point; it is a polymeric, amorphous, elastic solid that slowly reverts back toward the more stable rhombic ring form on standing. **"Allotrope" is reserved strictly for genuinely different structural forms of the same element in the same physical state category** (e.g., different ring/chain/network arrangements) — it should not be used loosely for merely different physical states (solid/liquid/gas) of one and the same structural form.
+> **Worked Example — iodometric ozone estimation.** A sample of ozonised oxygen is passed into excess acidified KI; the liberated I₂ needs 20.0 mL of 0.1 M Na₂S₂O₃ for complete titration. Find the moles of O₃.
+>
+> Step 1: O₃ + 2I⁻ + H₂O → I₂ + O₂ + 2OH⁻ — each mole of O₃ liberates exactly 1 mole of I₂ (1:1).
+> Step 2: I₂ + 2S₂O₃²⁻ → 2I⁻ + S₄O₆²⁻ — each mole of I₂ needs 2 moles of thiosulphate.
+> Moles Na₂S₂O₃ = 0.1 × 0.020 = 2.0 × 10⁻³ mol ⇒ moles I₂ = 1.0 × 10⁻³ mol ⇒ moles O₃ = **1.0 × 10⁻³ mol** (1:1 with I₂).
+>
+> **General method:** every "estimation via liberated iodine" problem (ozone, chlorine, hypochlorite, dichromate, Cu²⁺) reduces to this same two-step skeleton — find the analyte:I₂ ratio from the first reaction, then apply the fixed I₂:thiosulphate 1:2 ratio. Learn the skeleton once.
+
+**Test:** tailing of mercury — 2Hg + O₃ → Hg₂O + O₂, which destroys mercury's meniscus (loss of surface tension), a classical qualitative test. **Depletion:** by NO from supersonic jets and by CFCs ("Freons"), NO + O₃ → NO₂ + O₂ — the same NO chemistry as §7.4, now acting catalytically in the stratosphere.
+
+## 12.2 Allotropes of sulphur
+
+**Rhombic (α) sulphur:** yellow, stable below 369 K, m.p. 385.8 K; insoluble in water, soluble in CS₂; S₈ puckered crown-ring molecules.
+
+**Monoclinic (β) sulphur:** colourless/pale yellow needles, stable above 369 K, m.p. 393 K; also S₈ puckered rings — the two forms differ only in crystal packing, not molecular structure. 369 K is the transition temperature at which both forms are simultaneously stable (a genuine equilibrium point, occasionally tested as a phase-diagram question).
+
+**Vapour-phase sulphur (S₂):** at very high temperature (~1000 K), S₈ dissociates to the diatomic S₂ molecule, which — like O₂ — is **paramagnetic**, having unpaired electrons in degenerate π* orbitals by the same MOT argument as §11.4. This is a frequently tested trap: students assume only O₂ shows this MOT-predicted paramagnetism, but any Group 16 diatomic with the right electron count can.
+
+## 12.3 Frasch process — extraction of elemental sulphur
+
+Used for underground deposits too deep for conventional mining (historically the US Gulf Coast, exploiting salt-dome geology). Three concentric pipes are sunk into the deposit: superheated water (~443 K, under pressure to stay liquid above 373 K) is forced down the **outer** pipe to melt the sulphur (m.p. only ~393 K); compressed hot air down the **inner** pipe; the resulting molten-sulphur/water froth is forced **up** the **middle** pipe by the air pressure. Gives ~99.5% pure sulphur directly, with no further purification needed — the reason it dominated extraction for decades. Distinguish sharply from the Contact process (§14): Frasch extracts the *element*; Contact converts that element into H₂SO₄.
 
 # 13. Group 16: oxoacids of sulphur and redox logic
 
-The sulphur oxoacids most frequently compared in JEE questions are H₂SO₄ (sulphuric), H₂SO₃ (sulphurous), H₂S₂O₇ (pyrosulphuric/oleum acid), H₂S₂O₃ (thiosulphuric), H₂S₂O₈ (peroxodisulphuric) and H₂SO₅ (peroxomonosulphuric, Caro's acid).
+## 13.1 Oxidation states across sulphur's oxoacids
 
-## 13.1 Peroxo acids: never assume every oxygen is −2
+| Acid | Formula | S oxidation state | Key feature |
+|---|---|---:|---|
+| Sulphurous | H₂SO₃ | +4 | Lone pair remains on S |
+| Sulphuric | H₂SO₄ | +6 | "King of chemicals" |
+| Thiosulphuric | H₂S₂O₃ | see below | Two non-equivalent S atoms |
+| Pyrosulphuric (oleum) | H₂S₂O₇ | +6 | S–O–S linkage |
+| Peroxodisulphuric (Marshall's acid) | H₂S₂O₈ | +6 | –O–O– peroxo linkage |
 
-In **peroxodisulphuric acid**, H₂S₂O₈, one O–O peroxide linkage bridges the two SO₄ units; the two oxygens of that linkage are at oxidation state −1, not −2. This makes H₂S₂O₈ a powerful oxidant (used to prepare O₃ and to oxidise Mn²⁺ to MnO₄⁻ in the presence of Ag⁺ catalyst — a classic qualitative test). **Caro's acid, H₂SO₅**, similarly contains one peroxide O–O linkage per molecule and is likewise strongly oxidising. The rule: **whenever an oxyanion/oxyacid contains an explicit O–O bond, assign those two oxygens −1 before computing the oxidation state of the central atom** — otherwise the central-atom oxidation state comes out impossibly high.
+> **Worked Example — the peroxo/thio oxidation-state trap.** Find the oxidation state of S in (a) H₂S₂O₃ and (b) H₂S₂O₈, and explain why a naive whole-molecule average is misleading for (a).
+>
+> **Naive average for H₂S₂O₃:** treating both S as identical and all 4 O as −2: 2(+1) + 2x + 4(−2) = 0 ⇒ x = +3 — but this hides the real structure.
+>
+> **Actual structure:** H₂S₂O₃ (thiosulphuric acid) is literally H₂SO₄ with *one oxygen replaced by sulphur*. The central sulphur keeps sulphuric acid's own environment (+6); the replacing (terminal, thio) sulphur sits where an oxygen normally would, and is assigned −2 by the same convention oxygen always gets. **Central S = +6, terminal S = −2** — the two sulphurs are genuinely NOT equivalent, and the true average, (+6 + (−2))/2 = +2, differs from the naive +3.
+>
+> **H₂S₂O₈ (peroxodisulphuric acid):** here both sulphurs ARE equivalent (two SO₄ groups joined by a peroxo –O–O– bridge, no S–S bond). Peroxo oxygens are −1 each, not −2. 2(+1) + 2x + 6(−2) + 2(−1) = 0 ⇒ x = **+6** for both.
+>
+> **General rule:** whenever a formula contains a peroxo (–O–O–) or thio (S-for-O substitution) group, the shortcut whole-molecule average either needs a modified O oxidation state (peroxo O = −1) or breaks down entirely (thio S ≠ regular S) — always check the real structure before averaging.
 
-## 13.2 Thiosulphate: two inequivalent sulphur atoms
+## 13.2 Redox behaviour of the sulphur oxoacids
 
-Thiosulphate, S₂O₃²⁻, has a structure formally derived from sulphate by replacing one bridging oxygen with sulphur: one S sits at the same site as sulphate's central S (formal oxidation state +5 by the "replace O with S, treat S like O for bookkeeping" convention, or +6 by strict electronegativity-based counting depending on convention used) and the other S is terminal (oxidation state −1 in the same convention) — the commonly quoted **average** oxidation state of +2 masks this real structural inequivalence. Acidification of thiosulphate disproportionates it instantly to sulphur dioxide and elemental sulphur (visible as a milky precipitate):
-
-\[\mathrm{S_2O_3^{2-}+2H^+\rightarrow SO_2+S\downarrow+H_2O}\]
-
-This reaction is the standard illustration that **a single average oxidation state can conceal chemically and structurally distinct atoms of the same element within one ion** — always check connectivity before trusting an averaged number for a mechanistic argument.
-
-## 13.3 Revision rule
-
-When an oxyanion or oxyacid contains an O–O bond, mark those oxygens −1 first; only then calculate the oxidation state of the central atom from the remaining, normal (−2) oxygens.
-
-### Trap bank — Group 16
-
-- O₂ is paramagnetic (MOT); O₃ is diamagnetic — do not assume all oxygen allotropes share the same magnetic behaviour.
-- SO₂ bleaching is typically **reductive and often reversible** (the bleached dye can be reoxidised by air and the colour returns), unlike Cl₂'s **oxidative and typically permanent** bleaching — a frequently tested qualitative-analysis contrast.
-- Concentrated H₂SO₄ cannot be used to prepare HBr or HI from bromide/iodide salts because it oxidises Br⁻/I⁻ instead of simply displacing the volatile acid.
-- Peroxo-oxygen is −1, never −2 — apply this before any redox-counting question involving H₂SO₅, H₂S₂O₈ or H₂O₂ itself.
+Sulphurous acid (S at +4) is both an oxidising and reducing agent depending on the partner — it can be oxidised to sulphate (+6) by strong oxidants (decolorises acidified KMnO₄, 5SO₃²⁻ + 2MnO₄⁻ + ... → 5SO₄²⁻ + 2Mn²⁺, a standard titration), or reduced to sulphur/H₂S by strong reductants. Sulphuric acid at +6 is the group's terminal, non-reducible state, mirroring H₃PO₄'s non-reducing status in Group 15 (§10.1) — the "all the oxidisable hydrogens are gone" pattern recurs across every oxoacid family in this chapter.
 
 # 14. Sulphur dioxide, sulphuric acid and contact-process mastery
 
-## 14.1 SO₂ as both reducing and oxidising agent
+## 14.1 Sulphur dioxide, SO₂
 
-Sulphur in SO₂ sits at the intermediate oxidation state +4, giving it access to both higher (+6, e.g. sulphate) and lower (0 or −2, e.g. elemental sulphur or sulphide) states — so SO₂ can be oxidised or reduced depending on the partner reagent. Its textbook redox role is usually as a **reducing agent**, for instance decolourising acidified potassium permanganate:
+**Preparation:** roasting sulphide ores, 4FeS₂ + 11O₂ → 2Fe₂O₃ + 8SO₂; in the lab, Na₂SO₃ + H₂SO₄(dilute) → Na₂SO₄ + H₂O + SO₂.
 
-\[\mathrm{5SO_2+2MnO_4^-+2H_2O\rightarrow5SO_4^{2-}+4H^++2Mn^{2+}}\]
+**Structure:** bent (AX₂E), S at +4, one lone pair remains on sulphur — steric number 3, sp². **Contrast with SO₃** (S at +6, no lone pair, also steric number 3 but all-bonding) which is trigonal planar (AX₃) — same steric number, different shape, because the underlying oxidation state (and hence electron count) genuinely differs, not merely a different drawing convention.
 
-This decolourisation is a genuine **redox** change (Mn⁷⁺ → Mn²⁺, S⁴⁺ → S⁶⁺); by contrast, SO₂'s bleaching of organic dyes is often only **temporary** because the reduced, colourless product can be slowly reoxidised by atmospheric O₂, restoring the original colour — an important practical/qualitative distinction from the permanent, oxidative bleaching of chlorine.
+**Reactions:** with NaOH (limited SO₂), SO₂ + 2NaOH → Na₂SO₃ + H₂O; with *excess* SO₂, the sulphite converts to bisulphite, Na₂SO₃ + SO₂ + H₂O → 2NaHSO₃ — the same limited-vs-excess-reagent pattern as CO₂/Ca(OH)₂ and Cl₂/NaOH (§16). Bleaching action is temporary (by reduction, not oxidation like chlorine's bleaching) — SO₂ reduces coloured organic matter to a colourless compound that can slowly re-oxidise and regain colour in air, unlike chlorine bleaching, which is permanent (oxidative destruction of the chromophore).
 
-## 14.2 The contact-process sequence, stage by stage
+**SO₃ — the monomer/trimer duality:** gas-phase SO₃ is trigonal planar, genuinely sp² with 3 bonding domains and no lone pair. On cooling, sulphur can expand its coordination by accepting a lone pair from a neighbouring SO₃'s oxygen, forming S–O–S bridges — the solid exists as a cyclic trimer (S₃O₉) with each sulphur now roughly tetrahedral (sp³), the lower-energy solid-state arrangement.
 
-1. Produce SO₂ by burning elemental sulphur in air, or by roasting a sulphide ore (e.g., iron pyrites, FeS₂) in air.
-2. Purify and thoroughly dry the resulting SO₂/air gas mixture (removing dust and moisture, both catalyst poisons).
-3. Catalytically, reversibly oxidise SO₂ to SO₃ over V₂O₅ at a moderate, compromise temperature (~ 700 K) and pressure (~ 2 atm).
-4. Absorb the SO₃ produced in concentrated H₂SO₄ (never directly in water) to form oleum, avoiding the dense corrosive mist that direct water absorption would create.
-5. Carefully dilute the oleum with the calculated quantity of water to obtain sulphuric acid of the required, specified concentration.
+## 14.2 Contact process — industrial H₂SO₄ manufacture
 
-Direct absorption of SO₃ in water is avoided industrially because it produces a fine, hard-to-condense acidic mist rather than a clean liquid product. In any related equilibrium question, remember that **lowering temperature favours the exothermic forward (SO₃-forming) reaction thermodynamically**, while the actual industrial operating temperature is chosen as a practical balance between this favourable low-temperature equilibrium position and an acceptably fast reaction rate (identical logic to the Haber-process compromise, §7.2).
+**Step 1:** S (or sulphide ores) + O₂ → SO₂ (as above).
 
-## 14.3 Concentrated sulphuric acid: choosing the right reagent-selection argument
+**Step 2 (the yield-determining step):** 2SO₂ + O₂ ⇌ 2SO₃, ΔH = −196 kJ/mol, catalysed by **V₂O₅**, run at ~720 K and ~2 bar. Exothermic + reduces gas moles (3→2), so — exactly as with the Haber process (§8.1) — low temperature would favour a higher equilibrium yield, but 720 K is chosen as the practical compromise between equilibrium position and an acceptable reaction rate; moderate pressure (~2 bar, not extreme) is used because the equilibrium is already reasonably favourable at 1 atm and the marginal yield gain from higher pressure does not justify the extra engineering cost.
 
-Concentrated H₂SO₄ is non-volatile and can displace more volatile acids such as HCl and HNO₃ from their solid salts on gentle heating (a straightforward acid-displacement argument, requiring no redox reasoning). With bromide or iodide salts, however, a **redox** reaction intervenes instead: hot, concentrated H₂SO₄ oxidises Br⁻ to Br₂ and I⁻ to I₂ (itself being reduced, typically to SO₂, though further reduction to S or even H₂S can occur with excess reducing halide), so the simple non-redox "volatile-acid-displacement" logic fails here and HBr/HI cannot be cleanly prepared by this route. **Always check first whether the anion present is readily oxidisable before applying the acid-displacement shortcut** — this is the single most tested Group 16/17 crossover trap in the whole syllabus.
+**Step 3:** SO₃ is *not* dissolved directly in water (the reaction is too violently exothermic and produces an uncontrollable acid mist). Instead, SO₃ is dissolved in existing concentrated H₂SO₄ to give **oleum** (pyrosulphuric acid, H₂S₂O₇), which is then diluted carefully with water to the desired concentration: SO₃ + H₂SO₄ → H₂S₂O₇, then H₂S₂O₇ + H₂O → 2H₂SO₄.
 
+## 14.3 Practice problems
+
+1. Why is sulphur's electron gain enthalpy more negative than oxygen's, despite oxygen being more electronegative? *(Oxygen's small, already electron-dense 2p subshell meets significant inter-electronic repulsion on adding another electron; sulphur's larger 3p subshell does not.)*
+2. Explain why S₂ vapour, like O₂, is paramagnetic. *(Same MOT argument — degenerate π* orbitals half-filled by Hund's rule.)*
+3. Distinguish the Frasch process from the Contact process in one line. *(Frasch extracts elemental sulphur from underground deposits; Contact converts elemental sulphur into H₂SO₄.)*
+4. Assign the oxidation state of sulphur in H₂S₂O₃ and explain why the naive average is wrong. *(Central S = +6, terminal (thio) S = −2 — the two sulphurs are structurally non-equivalent.)*
+5. Why do SO₂ and SO₃ have different shapes despite the same steric number logic being nearby? *(SO₂'s S is +4 with a remaining lone pair — bent, AX₂E; SO₃'s S is +6 with no lone pair — trigonal planar, AX₃.)*
+6. State the Contact process's key step, catalyst and conditions. *(2SO₂ + O₂ ⇌ 2SO₃, V₂O₅ catalyst, ~720 K, ~2 bar.)*
+7. Why is SO₃ absorbed into H₂SO₄ (giving oleum) rather than directly into water? *(Direct water absorption is too violently exothermic, producing an uncontrollable corrosive mist.)*
+8. Why is SO₂'s bleaching action temporary while chlorine's is permanent? *(SO₂ bleaches by reduction — a reversible process that can slowly re-oxidise in air; Cl₂ bleaches by oxidative, irreversible destruction of the chromophore.)*
+9. A sample of ozonised oxygen liberates I₂ that requires 15.0 mL of 0.2 M Na₂S₂O₃ for titration. Find the moles of O₃. *(Moles S₂O₃²⁻ = 3.0×10⁻³; moles I₂ = 1.5×10⁻³; moles O₃ = 1.5×10⁻³ mol, using the 1:1 O₃:I₂ and 1:2 I₂:S₂O₃²⁻ ratios from §12.1.)*
 # 15. Group 17: halogens, interhalogens and oxoacids
 
 Halogens have valence configuration ns²np⁵. Fluorine is anomalous (§1.2): highest electronegativity of any element, very small atomic/ionic size, **no positive oxidation state in any of its compounds** (it is always −1 or 0, since it is the most electronegative element and has no accessible d orbital to support a higher oxidation state), and an unexpectedly weak F–F bond compared with Cl–Cl (small size → strong lone-pair/lone-pair repulsion between the two fluorine atoms across the short bond).

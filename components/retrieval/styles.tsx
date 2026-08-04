@@ -30,6 +30,10 @@ const RETRIEVAL_CSS = `
   transition: border-color .15s ease, background .15s ease; min-height: 44px;
 }
 .sbrOpt:hover { border-color: ${NT.cyan}; }
+.sbrOpt[aria-disabled="true"] { cursor: default; }
+.sbrOpt[aria-disabled="true"]:hover { border-color: ${NT.borderSoft}; }
+.sbrOpt[aria-disabled="true"].sbrOptRight:hover { border-color: #5FBF8F; }
+.sbrOpt[aria-disabled="true"].sbrOptWrong:hover { border-color: #E06E6E; }
 .sbrOpt > span:last-child { overflow-wrap: anywhere; min-width: 0; }
 .sbrOpt:focus-visible { outline: 2px solid ${NT.cyan}; outline-offset: 2px; }
 .sbrOpt[disabled] { cursor: default; }

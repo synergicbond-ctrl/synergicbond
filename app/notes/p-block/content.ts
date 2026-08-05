@@ -780,7 +780,7 @@ Nitrogen has **no accessible d-orbitals** (n = 2), so its maximum covalency is 4
 
 Direct combination of nitrogen with reactive metals gives ionic nitrides: 6Li + N₂ → 2Li₃N (lithium is the only alkali metal reactive enough at ordinary conditions to combine directly with N₂). 3Mg + N₂ → Mg₃N₂ (magnesium nitride). Ionic nitrides hydrolyse to give ammonia — a general diagnostic: Mg₃N₂ + 6H₂O → 3Mg(OH)₂ + 2NH₃, and Li₃N + 3H₂O → 3LiOH + NH₃.
 
-**Covalent nitrides** (B, Si) behave differently — boron nitride (BN)ₓ is chemically robust (§2.6), unlike the readily-hydrolysed ionic nitrides.
+**Covalent nitrides** (B, Si) behave differently — boron nitride (BN)ₓ is chemically robust (Group 13, Part 10), unlike the readily-hydrolysed ionic nitrides.
 
 ## 8.3 Nitric acid manufacture — the Ostwald process
 
@@ -802,7 +802,7 @@ The dilute HNO₃ produced (~68%) is concentrated to ~98% by distillation with c
 | Zinc | N₂O | NO₂ |
 | Very dilute + active metal | NH₄NO₃ | — |
 
-Al, Cr and Fe are **passivated** by conc. HNO₃ (a protective oxide layer forms) and do not dissolve — the same passivation seen for Al in §3.7.
+Al, Cr and Fe are **passivated** by conc. HNO₃ (a protective oxide layer forms) and do not dissolve — the same passivation seen for Al in Group 13, Part 6.
 
 **Brown ring test for nitrate:** relies on reduction of nitrate to NO by Fe²⁺ in the presence of dilute H₂SO₄, followed by NO coordinating to unreacted Fe²⁺ at the interface between the two liquid layers: FeSO₄ + NO → [Fe(H₂O)₅(NO)]²⁺(brown), formed as [Fe(NO)(H₂O)₅]SO₄. The iron in this complex is formally **+1** (NO is treated as NO⁺ donating one electron to Fe²⁺, giving Fe¹⁺) — one of the most frequently mis-assigned oxidation states in the whole syllabus; do not default to +2 or +3 by pattern-matching Fe's usual states.
 
@@ -822,9 +822,9 @@ Al, Cr and Fe are **passivated** by conc. HNO₃ (a protective oxide layer forms
 
 **PCl₃ (phosphorus trichloride):** P₄ + 6Cl₂ → 4PCl₃ (limited chlorine). Trigonal pyramidal, sp³ P with one lone pair. Hydrolyses readily: PCl₃ + 3H₂O → H₃PO₃ + 3HCl.
 
-**PCl₅ (phosphorus pentachloride):** P₄ + 10Cl₂ → 4PCl₅ (excess chlorine), or PCl₃ + Cl₂ → PCl₅. In the **gas phase**, PCl₅ is trigonal bipyramidal (sp³d) — the two axial P–Cl bonds (219 pm) are *longer* than the three equatorial bonds (204 pm), because axial bonds experience more electron-pair repulsion (90° to three equatorial pairs) than equatorial bonds do (only 120° to their neighbours). In the **solid state**, PCl₅ exists as an ionic lattice, [PCl₄]⁺[PCl₆]⁻ — tetrahedral cation, octahedral anion — a frequently tested structure-changes-with-state question, directly parallel to AlCl₃'s dimer-in-vapour/ionic-tending-in-water duality (§3.5) and BeCl₂'s own state-dependent structure.
+**PCl₅ (phosphorus pentachloride):** P₄ + 10Cl₂ → 4PCl₅ (excess chlorine), or PCl₃ + Cl₂ → PCl₅. In the **gas phase**, PCl₅ is trigonal bipyramidal (sp³d) — the two axial P–Cl bonds (219 pm) are *longer* than the three equatorial bonds (204 pm), because axial bonds experience more electron-pair repulsion (90° to three equatorial pairs) than equatorial bonds do (only 120° to their neighbours). In the **solid state**, PCl₅ exists as an ionic lattice, [PCl₄]⁺[PCl₆]⁻ — tetrahedral cation, octahedral anion — a frequently tested structure-changes-with-state question, directly parallel to AlCl₃'s dimer-in-vapour/ionic-tending-in-water duality (Group 13, Part 9) and BeCl₂'s own state-dependent structure.
 
-Hydrolysis: PCl₅ + 4H₂O → H₃PO₄ + 5HCl (complete hydrolysis, unlike BF₃'s partial hydrolysis in §3.4 — phosphorus has accessible d-orbitals throughout, so no stable intermediate fluoro/chloro-complex analogous to BF₄⁻ forms to arrest the reaction).
+Hydrolysis: PCl₅ + 4H₂O → H₃PO₄ + 5HCl (complete hydrolysis, unlike BF₃'s partial hydrolysis in Group 13, Part 9 — phosphorus has accessible d-orbitals throughout, so no stable intermediate fluoro/chloro-complex analogous to BF₄⁻ forms to arrest the reaction).
 
 ## 9.3 Phosphine, PH₃
 
@@ -852,7 +852,7 @@ Prepared by Ca₃P₂ + 6H₂O → 3Ca(OH)₂ + 2PH₃ (calcium phosphide hydrol
 
 ## 10.2 As, Sb, Bi — why the +3 state stops disproportionating
 
-Unlike nitrogen and phosphorus, the intermediate +3 oxidation state of arsenic, antimony and bismuth is **stable and does not disproportionate** — the inert-pair effect (§4, applied here to Group 15's heaviest members) makes +3 the preferred state rather than an unstable midpoint between −3 and +5. Bi(V) compounds (e.g. NaBiO₃) are instead strong oxidising agents, readily reduced to the stable Bi(III), directly parallel to Tl³⁺ (§2.3) and PbO₂ (§4.2).
+Unlike nitrogen and phosphorus, the intermediate +3 oxidation state of arsenic, antimony and bismuth is **stable and does not disproportionate** — the inert-pair effect (§4, applied here to Group 15's heaviest members) makes +3 the preferred state rather than an unstable midpoint between −3 and +5. Bi(V) compounds (e.g. NaBiO₃) are instead strong oxidising agents, readily reduced to the stable Bi(III), directly parallel to Tl³⁺ (Group 13, Part 3) and PbO₂ (§4.2).
 
 ## 10.3 Practice problems
 

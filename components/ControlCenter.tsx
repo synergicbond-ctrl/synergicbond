@@ -277,7 +277,7 @@ export default function ControlCenter({ progress }: { progress?: ControlCenterPr
                 <h2 className="text-xs font-bold uppercase tracking-[0.3em] text-cyan-300">What should I do next?</h2>
                 <span className="rounded-full bg-cyan-500/15 px-2.5 py-0.5 text-[10px] font-bold text-cyan-300 border border-cyan-400/30 shadow-sm">AI&nbsp;GUIDED</span>
                 {!isReal && (
-                  <Link href="/login" className="ml-auto inline-flex items-center gap-1.5 rounded-full border border-amber-400/30 bg-amber-500/[0.1] px-3 py-1 text-[11px] font-semibold text-amber-200/90 transition hover:bg-amber-500/20 hover:scale-105">
+                  <Link href="/auth/signin" className="ml-auto inline-flex items-center gap-1.5 rounded-full border border-amber-400/30 bg-amber-500/[0.1] px-3 py-1 text-[11px] font-semibold text-amber-200/90 transition hover:bg-amber-500/20 hover:scale-105">
                     <Lock className="h-3 w-3" /> Demo — <span className="underline underline-offset-2">sign in to personalise</span>
                   </Link>
                 )}

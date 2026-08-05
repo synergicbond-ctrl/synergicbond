@@ -14,7 +14,7 @@ export default function Home() {
             <Link href="/jee" className="hover:text-white/70 transition">JEE</Link>
             <Link href="/neet" className="hover:text-white/70 transition">NEET</Link>
             <Link href="/olympiads" className="hover:text-white/70 transition">Olympiads</Link>
-            <Link href="/resources" className="hover:text-white/70 transition">Resources</Link>
+            <Link href="/library" className="hover:text-white/70 transition">Resources</Link>
             <Link href="/donate" className="hover:text-white/70 transition">Donate</Link>
           </div>
         </div>

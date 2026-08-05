@@ -151,6 +151,68 @@ function B12IcosahedronVisual() {
   );
 }
 
+function BoronLatticeVisual() {
+  // Simplified schematic: each icosahedron drawn as a compact vertex cluster,
+  // linked to neighbouring clusters by the two bonding environments from Fig. above.
+  const clusters = [
+    { cx: 140, cy: 160 }, { cx: 300, cy: 100 }, { cx: 460, cy: 160 }, { cx: 300, cy: 230 },
+  ];
+  const links: [number, number, "short" | "long"][] = [[0, 1, "short"], [1, 2, "long"], [0, 3, "long"], [2, 3, "short"], [1, 3, "short"]];
+  return (
+    <ShapeCard title="β-rhombohedral boron lattice — each icosahedron links to 12 neighbours (schematic)">
+      <g strokeWidth="2.5">
+        {links.map(([a, b, kind], i) => (
+          <line key={i} x1={clusters[a].cx} y1={clusters[a].cy} x2={clusters[b].cx} y2={clusters[b].cy}
+            stroke={kind === "short" ? "#57d4ec" : "#fde68a"} strokeDasharray={kind === "long" ? "5 4" : undefined} />
+        ))}
+      </g>
+      {clusters.map((c, ci) => (
+        <g key={ci}>
+          {Array.from({ length: 6 }, (_, k) => {
+            const v = polar(c.cx, c.cy, 22, k * 60);
+            return <circle key={k} cx={v.x} cy={v.y} r="6" fill="#3a2059" stroke="#e879f9" strokeWidth="1.5" />;
+          })}
+          <text x={c.cx} y={c.cy + 42} textAnchor="middle" fill="#8fa4b4" fontSize="10">B₁₂</text>
+        </g>
+      ))}
+      <text x="300" y="20" textAnchor="middle" fill="#c9d6df" fontSize="11">— 1.72 Å (short, direct)   ┄ 2.02 Å (long, to a separate icosahedron)</text>
+      <text x="300" y="300" textAnchor="middle" fill="#c9d6df" fontSize="11">giant covalent lattice → extreme hardness, very high melting point</text>
+    </ShapeCard>
+  );
+}
+
+function BF3BackBondingVisual() {
+  const positions: [number, number, number][] = [0, 120, 240].map((deg, i) => [deg, i, 0] as [number, number, number]);
+  return (
+    <ShapeCard title="BF₃ back-bonding — one π bond delocalised over all three B–F bonds (bond order 1.33)">
+      {positions.map(([deg], i) => {
+        const cx = 130 + i * 175, cy = 165;
+        const dblIndex = i; // which B–F bond carries the "formal" double bond in this resonance structure
+        return (
+          <g key={i}>
+            {[0, 120, 240].map((a, li) => {
+              const p = polar(cx, cy, 65, a);
+              const isDouble = li === dblIndex;
+              return (
+                <g key={li}>
+                  <line x1={cx} y1={cy} x2={p.x} y2={p.y} stroke="#57d4ec" strokeWidth={isDouble ? 5 : 3} />
+                  {isDouble ? <line x1={cx} y1={cy} x2={p.x} y2={p.y} stroke="#0a1220" strokeWidth="1.5" strokeDasharray="1 3" /> : null}
+                  <circle cx={p.x} cy={p.y} r="16" fill="#122232" stroke="#57d4ec" strokeWidth="2" />
+                  <text x={p.x} y={p.y + 4} textAnchor="middle" fill="#eaf7fb" fontSize="12" fontWeight="800">F</text>
+                </g>
+              );
+            })}
+            <circle cx={cx} cy={cy} r="20" fill="#3a2059" stroke="#e879f9" strokeWidth="2.5" />
+            <text x={cx} y={cy + 5} textAnchor="middle" fill="#ffeaff" fontSize="13" fontWeight="900">B</text>
+            {i < 2 ? <text x={cx + 87} y={cy + 4} fill="#c9d6df" fontSize="18" fontWeight="800">⇌</text> : null}
+          </g>
+        );
+      })}
+      <text x="300" y="270" textAnchor="middle" fill="#c9d6df" fontSize="11.5">3 equivalent resonance structures ≡ one 4-centre π MO — all 3 B–F bonds equal (130 pm)</text>
+    </ShapeCard>
+  );
+}
+
 function Part2Visual() {
   return (
     <Frame title="Electron deficiency and elemental boron's cage structure" caption="Every Group 13 element has only 3 valence electrons for 4 orbitals (one s + three p) — trihalides and trialkyls are electron-deficient, a vacant p-orbital making them strong Lewis acids. Elemental boron itself is built from B₁₂ icosahedra covalently linked into a rigid lattice, the structural reason for its extreme hardness and high melting point.">
@@ -177,7 +239,11 @@ function Part2Visual() {
         </ShapeCard>
       </div>
       <div className="mt-4">
+        <BF3BackBondingVisual />
+      </div>
+      <div className="mt-4 grid gap-4 sm:grid-cols-2">
         <B12IcosahedronVisual />
+        <BoronLatticeVisual />
       </div>
     </Frame>
   );
@@ -277,6 +343,36 @@ function Al2Cl6Visual() {
   );
 }
 
+function Al2Me6Visual() {
+  return (
+    <ShapeCard title="Al₂(CH₃)₆ — bridging methyl carbon has no spare lone pair, so the bridge is 3c-2e (like diborane)">
+      <g transform="translate(300,170)">
+        {[[-90, 0], [90, 0]].map(([dx], i) => (
+          <circle key={i} cx={dx} cy="0" r="24" fill="#173247" stroke="#57d4ec" strokeWidth="3" />
+        ))}
+        <text x="-90" y="6" textAnchor="middle" fill="#eaf7fb" fontSize="15" fontWeight="900">Al</text>
+        <text x="90" y="6" textAnchor="middle" fill="#eaf7fb" fontSize="15" fontWeight="900">Al</text>
+        {[[-150, -70], [-150, 70], [150, -70], [150, 70]].map(([x, y], i) => (
+          <g key={i}>
+            <line x1={x > 0 ? 90 : -90} y1="0" x2={x} y2={y} stroke="#57d4ec" strokeWidth="3.5" />
+            <circle cx={x} cy={y} r="18" fill="#122232" stroke="#57d4ec" strokeWidth="2" />
+            <text x={x} y={y + 5} textAnchor="middle" fill="#eaf7fb" fontSize="11.5" fontWeight="800">CH₃</text>
+          </g>
+        ))}
+        {[-1, 1].map((s) => (
+          <g key={s}>
+            <path d={`M -90 0 Q 0 ${s * 90} 90 0`} fill="none" stroke="#e879f9" strokeWidth="3.5" />
+            <circle cx="0" cy={s * 62} r="18" fill="#211235" stroke="#e879f9" strokeWidth="2.5" />
+            <text x="0" y={s * 62 + 5} textAnchor="middle" fill="#ffeaff" fontSize="11.5" fontWeight="800">CH₃</text>
+          </g>
+        ))}
+        <text x="0" y="-118" textAnchor="middle" fill="#e879f9" fontSize="12" fontWeight="800">bridging CH₃ shares its one C–Al bonding pair — 3c-2e</text>
+        <text x="0" y="130" textAnchor="middle" fill="#c9d6df" fontSize="11.5">contrast Al₂Cl₆: Cl's spare lone pair makes that bridge 3c-4e instead</text>
+      </g>
+    </ShapeCard>
+  );
+}
+
 function BorazineVisual() {
   const cx = 300, cy = 170, r = 90;
   const pts = Array.from({ length: 6 }, (_, i) => polar(cx, cy, r, i * 60));
@@ -349,6 +445,31 @@ function HbnVisual() {
   );
 }
 
+function CbnVisual() {
+  // Cubic BN (borazon): zinc-blende-type network — each B tetrahedrally bonded to 4 N and vice versa.
+  const cx = 300, cy = 165;
+  const corners = [
+    { x: cx - 110, y: cy - 70, label: "N" }, { x: cx + 20, y: cy - 100, label: "N" },
+    { x: cx + 110, y: cy - 20, label: "N" }, { x: cx - 20, y: cy + 90, label: "N" },
+  ];
+  return (
+    <ShapeCard title="Cubic boron nitride (borazon) — diamond-like sp³ network, second-hardest known material">
+      {corners.map((c, i) => (
+        <line key={i} x1={cx} y1={cy} x2={c.x} y2={c.y} stroke="#57d4ec" strokeWidth="3" />
+      ))}
+      <circle cx={cx} cy={cy} r="20" fill="#3a2059" stroke="#e879f9" strokeWidth="2.5" />
+      <text x={cx} y={cy + 5} textAnchor="middle" fill="#ffeaff" fontSize="13" fontWeight="900">B</text>
+      {corners.map((c, i) => (
+        <g key={i}>
+          <circle cx={c.x} cy={c.y} r="16" fill="#173247" stroke="#57d4ec" strokeWidth="2" />
+          <text x={c.x} y={c.y + 4} textAnchor="middle" fill="#eaf7fb" fontSize="12" fontWeight="800">{c.label}</text>
+        </g>
+      ))}
+      <text x="300" y="280" textAnchor="middle" fill="#c9d6df" fontSize="11.5">every B tetrahedrally bonded to 4 N (and vice versa) — unlike diamond, stable toward hot iron</text>
+    </ShapeCard>
+  );
+}
+
 function CageClassificationVisual() {
   const cages = [
     { label: "closo", n: 6, missing: 0 },
@@ -402,11 +523,15 @@ function Part3Visual() {
       </div>
       <div className="mt-4 grid gap-4 sm:grid-cols-2">
         <Al2Cl6Visual />
-        <TetrahedralAnionsVisual />
+        <Al2Me6Visual />
       </div>
       <div className="mt-4 grid gap-4 sm:grid-cols-2">
+        <TetrahedralAnionsVisual />
         <BorazineVisual />
+      </div>
+      <div className="mt-4 grid gap-4 sm:grid-cols-2">
         <HbnVisual />
+        <CbnVisual />
       </div>
       <div className="mt-4">
         <CageClassificationVisual />

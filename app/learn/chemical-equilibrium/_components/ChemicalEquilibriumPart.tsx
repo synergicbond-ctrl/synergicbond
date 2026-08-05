@@ -22,6 +22,28 @@ export default function ChemicalEquilibriumPart({ part, title, sourcePages, html
       ],
       throwOnError: false,
       strict: false,
+      // Default output already includes MathML, which is what screen readers
+      // announce; stated explicitly so a future config edit can't silently
+      // drop it and make every equation unreadable to assistive tech.
+      output: "htmlAndMathml",
+    });
+
+    // WCAG 2.1.1: a horizontally scrollable region must be reachable by
+    // keyboard. Equations and (since the mobile pass) wide tables scroll
+    // inside their own box, so give the ones that actually overflow a focus
+    // stop and an accessible name. Runs after KaTeX, which creates
+    // .katex-display.
+    const scrollers = ref.current.querySelectorAll<HTMLElement>(".katex-display, table");
+    scrollers.forEach((el) => {
+      if (el.scrollWidth <= el.clientWidth) return;
+      el.tabIndex = 0;
+      el.setAttribute("role", "region");
+      if (!el.getAttribute("aria-label")) {
+        el.setAttribute(
+          "aria-label",
+          el.tagName === "TABLE" ? "Data table, scrollable" : "Equation, scrollable"
+        );
+      }
     });
   }, [html]);
 
@@ -47,6 +69,12 @@ export default function ChemicalEquilibriumPart({ part, title, sourcePages, html
         .ce-note th, .ce-note td { border: 1px solid #cbd5e1; padding: .65rem .72rem; vertical-align: top; }
         .ce-note blockquote { border-left: 4px solid #8b5cf6; background: #f5f3ff; padding: .8rem 1rem; margin: 1rem 0; }
         .ce-note .katex-display { overflow-x: auto; overflow-y: hidden; padding: .4rem 0; }
+        /* Mobile: wide data tables pan horizontally instead of crushing
+           columns or overflowing the page (chemistry is never shrunk). */
+        @media (max-width: 720px) {
+          .ce-note table { display: block; max-width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+          .ce-note th, .ce-note td { white-space: nowrap; }
+        }
         .ce-note code { border-radius: .35rem; background: #f1f5f9; padding: .12rem .32rem; }
       `}</style>
     </article>

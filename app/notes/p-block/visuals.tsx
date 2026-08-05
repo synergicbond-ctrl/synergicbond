@@ -120,9 +120,40 @@ function Part1Visual() {
 // ============================================================================
 // PART 2 — Group 13: trends & bonding (electron deficiency)
 // ============================================================================
+function B12IcosahedronVisual() {
+  // Icosahedron as a top pole + upper pentagon + lower pentagon (rotated 36°) + bottom pole —
+  // 12 vertices, 30 edges, the standard wireframe schematic for this cage.
+  const cx = 300, cyTop = 60, cyUp = 130, cyLow = 220, cyBot = 290;
+  const rUp = 90, rLow = 90;
+  const upper = Array.from({ length: 5 }, (_, i) => polar(cx, cyUp, rUp, i * 72));
+  const lower = Array.from({ length: 5 }, (_, i) => polar(cx, cyLow, rLow, i * 72 + 36));
+  const top = { x: cx, y: cyTop };
+  const bottom = { x: cx, y: cyBot };
+  const ring = (pts: { x: number; y: number }[]) => pts.map((p, i) => `${p.x},${p.y}${i === pts.length - 1 ? "" : " "}`).join("L");
+  return (
+    <ShapeCard title="B₁₂ icosahedron — 12 vertices, 20 triangular faces, 30 edges (the building block of every boron allotrope)">
+      <g stroke="#57d4ec" strokeWidth="1.75" fill="none" opacity="0.85">
+        <path d={`M ${ring(upper)} Z`} />
+        <path d={`M ${ring(lower)} Z`} />
+        {upper.map((p, i) => <line key={`t${i}`} x1={top.x} y1={top.y} x2={p.x} y2={p.y} />)}
+        {lower.map((p, i) => <line key={`b${i}`} x1={bottom.x} y1={bottom.y} x2={p.x} y2={p.y} />)}
+        {upper.map((p, i) => {
+          const l1 = lower[i];
+          const l2 = lower[(i + 4) % 5];
+          return <g key={`z${i}`}><line x1={p.x} y1={p.y} x2={l1.x} y2={l1.y} /><line x1={p.x} y1={p.y} x2={l2.x} y2={l2.y} /></g>;
+        })}
+      </g>
+      {[top, ...upper, ...lower, bottom].map((p, i) => (
+        <circle key={i} cx={p.x} cy={p.y} r="9" fill="#3a2059" stroke="#e879f9" strokeWidth="2" />
+      ))}
+      <text x={cx} y="20" textAnchor="middle" fill="#fde68a" fontSize="11" fontWeight="800">two bonding environments: 1.72 Å (short) and 2.02 Å (long)</text>
+    </ShapeCard>
+  );
+}
+
 function Part2Visual() {
   return (
-    <Frame title="Electron deficiency drives Group 13 chemistry" caption="Every Group 13 element has only 3 valence electrons for 4 orbitals (one s + three p). Trihalides and trialkyls are therefore electron-deficient — a vacant p-orbital remains, making them strong Lewis acids.">
+    <Frame title="Electron deficiency and elemental boron's cage structure" caption="Every Group 13 element has only 3 valence electrons for 4 orbitals (one s + three p) — trihalides and trialkyls are electron-deficient, a vacant p-orbital making them strong Lewis acids. Elemental boron itself is built from B₁₂ icosahedra covalently linked into a rigid lattice, the structural reason for its extreme hardness and high melting point.">
       <div className="grid gap-4 sm:grid-cols-2">
         <ShapeCard title="BF₃ — trigonal planar, sp² B, empty pz orbital (strong Lewis acid)">
           <VseprShape cx={220} cy={170} centralLabel="B" geometryLabel="Trigonal planar" angleLabel="∠F–B–F = 120°"
@@ -144,6 +175,9 @@ function Part2Visual() {
           </g>
           <text x="300" y="260" textAnchor="middle" fill="#c9d6df" fontSize="13" fontWeight="700">3 electrons fill s + 2p → 1 p-orbital stays empty</text>
         </ShapeCard>
+      </div>
+      <div className="mt-4">
+        <B12IcosahedronVisual />
       </div>
     </Frame>
   );
@@ -211,9 +245,141 @@ function BoraxVisual() {
   );
 }
 
+function Al2Cl6Visual() {
+  return (
+    <ShapeCard title="Al₂Cl₆ — two 3-centre-4-electron (Cl lone pair donated) bridges, unlike diborane's 3c-2e">
+      <g transform="translate(300,170)">
+        {[[-90, 0], [90, 0]].map(([dx], i) => (
+          <circle key={i} cx={dx} cy="0" r="24" fill="#173247" stroke="#57d4ec" strokeWidth="3" />
+        ))}
+        <text x="-90" y="6" textAnchor="middle" fill="#eaf7fb" fontSize="15" fontWeight="900">Al</text>
+        <text x="90" y="6" textAnchor="middle" fill="#eaf7fb" fontSize="15" fontWeight="900">Al</text>
+        {/* terminal Cl, normal 2c-2e, 206 pm */}
+        {[[-150, -70], [-150, 70], [150, -70], [150, 70]].map(([x, y], i) => (
+          <g key={i}>
+            <line x1={x > 0 ? 90 : -90} y1="0" x2={x} y2={y} stroke="#57d4ec" strokeWidth="3.5" />
+            <circle cx={x} cy={y} r="16" fill="#122232" stroke="#57d4ec" strokeWidth="2" />
+            <text x={x} y={y + 5} textAnchor="middle" fill="#eaf7fb" fontSize="12.5" fontWeight="800">Cl</text>
+          </g>
+        ))}
+        {/* bridging Cl, 3c-4e, 221 pm, lone pair donated */}
+        {[-1, 1].map((s) => (
+          <g key={s}>
+            <path d={`M -90 0 Q 0 ${s * 90} 90 0`} fill="none" stroke="#fde68a" strokeWidth="3.5" />
+            <circle cx="0" cy={s * 62} r="16" fill="#211235" stroke="#fde68a" strokeWidth="2.5" />
+            <text x="0" y={s * 62 + 5} textAnchor="middle" fill="#fde68a" fontSize="12.5" fontWeight="800">Cl</text>
+          </g>
+        ))}
+        <text x="0" y="-118" textAnchor="middle" fill="#fde68a" fontSize="12" fontWeight="800">bridging Cl (221 pm) donates a lone pair — 3c-4e</text>
+        <text x="0" y="130" textAnchor="middle" fill="#c9d6df" fontSize="11.5">terminal Al–Cl = 206 pm, shorter than the bridge</text>
+      </g>
+    </ShapeCard>
+  );
+}
+
+function BorazineVisual() {
+  const cx = 300, cy = 170, r = 90;
+  const pts = Array.from({ length: 6 }, (_, i) => polar(cx, cy, r, i * 60));
+  return (
+    <ShapeCard title="Borazine B₃N₃H₆ — 'inorganic benzene,' alternating B and N around the ring">
+      <g>
+        {pts.map((p, i) => {
+          const next = pts[(i + 1) % 6];
+          return <line key={i} x1={p.x} y1={p.y} x2={next.x} y2={next.y} stroke="#57d4ec" strokeWidth="2.5" />;
+        })}
+        {pts.map((p, i) => {
+          const isB = i % 2 === 0;
+          const h = polar(cx, cy, r + 42, i * 60);
+          return (
+            <g key={i}>
+              <line x1={p.x} y1={p.y} x2={h.x} y2={h.y} stroke="#8fa4b4" strokeWidth="2" />
+              <text x={h.x} y={h.y + 4} textAnchor="middle" fill="#8fa4b4" fontSize="11" fontWeight="700">H</text>
+              <circle cx={p.x} cy={p.y} r="18" fill={isB ? "#3a2059" : "#173247"} stroke={isB ? "#e879f9" : "#57d4ec"} strokeWidth="2.5" />
+              <text x={p.x} y={p.y + 5} textAnchor="middle" fill={isB ? "#ffeaff" : "#eaf7fb"} fontSize="13" fontWeight="900">{isB ? "B" : "N"}</text>
+            </g>
+          );
+        })}
+        <text x={cx} y="30" textAnchor="middle" fill="#c9d6df" fontSize="12">isoelectronic with benzene (30 valence e⁻) — but only ~36% as aromatic</text>
+      </g>
+    </ShapeCard>
+  );
+}
+
+function TetrahedralAnionsVisual() {
+  return (
+    <ShapeCard title="[BF₄]⁻ and [MH₄]⁻ (M = B, Al) — both simple tetrahedral ions">
+      <VseprShape cx={175} cy={190} centralLabel="B" geometryLabel="[BF₄]⁻" angleLabel="tetrahedral, 109.5°"
+        ligands={[
+          { label: "F", angleDeg: 45, dist: 95 }, { label: "F", angleDeg: 135, dist: 95 },
+          { label: "F", angleDeg: 225, dist: 95 }, { label: "F", angleDeg: 315, dist: 95 },
+        ]} />
+      <VseprShape cx={430} cy={190} centralLabel="M" geometryLabel="[MH₄]⁻" angleLabel="tetrahedral, 109.5°"
+        ligands={[
+          { label: "H", angleDeg: 45, dist: 95 }, { label: "H", angleDeg: 135, dist: 95 },
+          { label: "H", angleDeg: 225, dist: 95 }, { label: "H", angleDeg: 315, dist: 95 },
+        ]} />
+      <text x="300" y="290" textAnchor="middle" fill="#c9d6df" fontSize="11.5">LiAlH₄ (M = Al) is the stronger reducing agent — Al–H is more hydridic than B–H</text>
+    </ShapeCard>
+  );
+}
+
+function HbnVisual() {
+  const rows = 2, cols = 3, dx = 78, dy = 68;
+  const cells: { x: number; y: number }[] = [];
+  for (let r = 0; r < rows; r++) for (let c = 0; c < cols; c++) cells.push({ x: 130 + c * dx * 1.5 + (r % 2 ? dx * 0.75 : 0), y: 90 + r * dy });
+  return (
+    <ShapeCard title="Hexagonal boron nitride — alternating B/N hexagons, layers stack eclipsed (unlike graphite)">
+      <g stroke="#57d4ec" strokeWidth="1.75" opacity="0.9">
+        {cells.map((p, i) => {
+          const hex = Array.from({ length: 6 }, (_, k) => polar(p.x, p.y, 38, k * 60));
+          return <polygon key={i} points={hex.map((h) => `${h.x},${h.y}`).join(" ")} fill="none" />;
+        })}
+      </g>
+      {cells.flatMap((p, ci) =>
+        Array.from({ length: 6 }, (_, k) => {
+          const v = polar(p.x, p.y, 38, k * 60);
+          const isB = (ci + k) % 2 === 0;
+          return (
+            <circle key={`${ci}-${k}`} cx={v.x} cy={v.y} r="9" fill={isB ? "#3a2059" : "#173247"} stroke={isB ? "#e879f9" : "#57d4ec"} strokeWidth="1.5" />
+          );
+        })
+      )}
+      <text x="300" y="230" textAnchor="middle" fill="#c9d6df" fontSize="11.5">soft, slippery lubricant ("white graphite") — an electrical insulator, unlike graphite</text>
+    </ShapeCard>
+  );
+}
+
+function CageClassificationVisual() {
+  const cages = [
+    { label: "closo", n: 6, missing: 0 },
+    { label: "nido", n: 6, missing: 1 },
+    { label: "arachno", n: 6, missing: 2 },
+  ];
+  return (
+    <ShapeCard title="closo / nido / arachno — a complete deltahedron vs one or two vertices removed">
+      {cages.map((cage, ci) => {
+        const cx = 110 + ci * 190, cy = 170, r = 65;
+        const pts = Array.from({ length: cage.n }, (_, i) => polar(cx, cy, r, i * (360 / cage.n)));
+        const shown = pts.slice(0, cage.n - cage.missing);
+        return (
+          <g key={cage.label}>
+            <polygon points={shown.map((p) => `${p.x},${p.y}`).join(" ")} fill="#173247" fillOpacity="0.4" stroke="#57d4ec" strokeWidth="2" />
+            {shown.map((p, i) => <circle key={i} cx={p.x} cy={p.y} r="8" fill="#3a2059" stroke="#e879f9" strokeWidth="1.75" />)}
+            {pts.slice(cage.n - cage.missing).map((p, i) => (
+              <circle key={`m${i}`} cx={p.x} cy={p.y} r="8" fill="none" stroke="#8fa4b4" strokeWidth="1.5" strokeDasharray="2 2" />
+            ))}
+            <text x={cx} y={cy + 100} textAnchor="middle" fill="#eaf7fb" fontSize="13" fontWeight="800">{cage.label}</text>
+            <text x={cx} y={cy + 116} textAnchor="middle" fill="#8fa4b4" fontSize="10.5">{cage.missing === 0 ? "complete cage" : `${cage.missing} vertex${cage.missing > 1 ? "es" : ""} removed`}</text>
+          </g>
+        );
+      })}
+    </ShapeCard>
+  );
+}
+
 function Part3Visual() {
   return (
-    <Frame title="Boron's signature structures" caption="Diborane's electron-deficient bridge, borax's mixed sp²/sp³ boron framework, and boric acid's planar, H-bonded sheets are the three structures examiners return to every year.">
+    <Frame title="Boron's signature structures" caption="Diborane's electron-deficient bridge, borax's mixed sp²/sp³ boron framework, boric acid's planar H-bonded sheets, and the halide, hydride and cage structures covered in Parts 9–15.">
       <div className="grid gap-4 sm:grid-cols-2">
         <DiboraneVisual />
         <BoraxVisual />
@@ -233,6 +399,17 @@ function Part3Visual() {
             <text y="80" textAnchor="middle" fill="#c9d6df" fontSize="12">acts as a Lewis acid: B(OH)₃ + 2H₂O ⇌ [B(OH)₄]⁻ + H₃O⁺ (not proton donor)</text>
           </g>
         </ShapeCard>
+      </div>
+      <div className="mt-4 grid gap-4 sm:grid-cols-2">
+        <Al2Cl6Visual />
+        <TetrahedralAnionsVisual />
+      </div>
+      <div className="mt-4 grid gap-4 sm:grid-cols-2">
+        <BorazineVisual />
+        <HbnVisual />
+      </div>
+      <div className="mt-4">
+        <CageClassificationVisual />
       </div>
     </Frame>
   );

@@ -25,6 +25,8 @@ const eslintConfig = defineConfig([
     // glue) whose style violations are not ours to fix and which otherwise
     // fail the lint step.
     "public/**",
+    // Exclude temporary Claude Code worktrees used during development.
+    ".claude/worktrees/**",
   ]),
 ]);
 

@@ -367,7 +367,7 @@ function Al2Me6Visual() {
           </g>
         ))}
         <text x="0" y="-118" textAnchor="middle" fill="#e879f9" fontSize="12" fontWeight="800">bridging CH₃ shares its one C–Al bonding pair — 3c-2e</text>
-        <text x="0" y="130" textAnchor="middle" fill="#c9d6df" fontSize="11.5">contrast Al₂Cl₆: Cl's spare lone pair makes that bridge 3c-4e instead</text>
+        <text x="0" y="130" textAnchor="middle" fill="#c9d6df" fontSize="11.5">contrast Al₂Cl₆: Cl&apos;s spare lone pair makes that bridge 3c-4e instead</text>
       </g>
     </ShapeCard>
   );
@@ -440,7 +440,7 @@ function HbnVisual() {
           );
         })
       )}
-      <text x="300" y="230" textAnchor="middle" fill="#c9d6df" fontSize="11.5">soft, slippery lubricant ("white graphite") — an electrical insulator, unlike graphite</text>
+      <text x="300" y="230" textAnchor="middle" fill="#c9d6df" fontSize="11.5">soft, slippery lubricant (&quot;white graphite&quot;) — an electrical insulator, unlike graphite</text>
     </ShapeCard>
   );
 }

@@ -491,7 +491,7 @@ export const P_BLOCK_NOTES: PremiumChapterNotes = {
               "points": [
                 "• With alcohols (esterification): H₃BO₃ + 3ROH → B(OR)₃ + 3H₂O — e.g. ethyl borate. The vapour burns with a GREEN-EDGED flame, which is the classical test for borate.",
                 "• With glycerol / cis-diols: forms the chelated boron–glycerol complex, releasing H⁺ — the basis of the sharpened titration above.",
-                "• With ammonium hydrogen fluoride: H₃BO₃ + NH₄HF₂ → NH₄BF₄ →(Δ) NH₄F + BF₃",
+                "• With ammonium hydrogen fluoride: H₃BO₃ + 3NH₄HF₂ → NH₄BF₄ + 2NH₄F + 3H₂O, and NH₄BF₄ →(Δ) NH₄F + BF₃",
                 "• With metal oxides: 2H₃BO₃ + MO → M(BO₂)₂ + 3H₂O",
                 "• With sodium peroxide: gives sodium peroxoborate (see borates below).",
                 "• With NaOH: B(OH)₃ + NaOH → Na[B(OH)₄], and on further reaction NaBO₂ + 2H₂O.",
@@ -880,7 +880,7 @@ export const P_BLOCK_NOTES: PremiumChapterNotes = {
                 "• Al₂O₃ (alumina) occurs as BAUXITE and CORUNDUM. It is a white amorphous powder, insoluble in water, soluble in both acids (→ AlCl₃) and alkalis (→ NaAlO₂) — i.e. AMPHOTERIC. It is a polar covalent compound.",
                 "TWO FORMS:",
                 "• γ-Al₂O₃ — from 2Al(OH)₃ →(450 °C) γ-Al₂O₃ + 3H₂O. SOFT; high surface area and porosity; used as a DEHYDRATING AGENT, ADSORBENT, CATALYST SUPPORT and in CHROMATOGRAPHY.",
-                "• α-Al₂O₃ — from Al(OH)₃ →(1000 °C) α-Al₂O₃. VERY HARD; hexagonal (corundum) structure; the thermodynamically stable form; used as an ABRASIVE and REFRACTORY (furnace linings).",
+                "• α-Al₂O₃ — from 2Al(OH)₃ →(1000 °C) α-Al₂O₃ + 3H₂O. VERY HARD; hexagonal (corundum) structure; the thermodynamically stable form; used as an ABRASIVE and REFRACTORY (furnace linings).",
                 "• Interconversion: γ-Al₂O₃ →(1000 °C) α-Al₂O₃ — the soft, high-surface form converts irreversibly to the hard, dense form on strong heating.",
                 "PRECIOUS GEMS ARE Al₂O₃ WITH TRACE TRANSITION-METAL IMPURITIES:",
                 "• Ruby — RED — Cr³⁺",

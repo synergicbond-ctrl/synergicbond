@@ -52,482 +52,903 @@ Down heavier p-block groups, the valence ns² electron pair increasingly resists
 
 **Worked example 1.1.** *Arrange in order of increasing first ionisation enthalpy: B, Be, C, N, O.* Reasoning: Be (fully filled 2s²) > B (2s²2p¹, easy to lose the single p electron) but B's IE is still higher than expected only relative to its own period trend continuing upward; the accepted JEE order is B < Be < C < O < N, because Be and N both benefit from extra stability (filled and half-filled subshells respectively) that momentarily reverses the raw periodic increase.
 
-# 2. Group 13 — Boron Family (Part 1 of 15 – Part 8 of 15): position, trends, bonding and elemental chemistry
+# 2. Group 13 — Boron Family: premium textbook, Parts 1–8
 
-Members are B, Al, Ga, In, Tl. Boron is the only true metalloid of the group — small, hard, exclusively covalent; Al, Ga, In, Tl are metals, though Al₂O₃/Al(OH)₃ stay amphoteric. Configuration is ns²np¹. The group oxidation state is +3; +1 becomes progressively more important down the group and is the *dominant, most stable* state for Tl (inert-pair effect). This is a two-part chapter — this page covers Parts 1–8 (position through halides); [Part 9 of 15 continues on the next page](/notes/p-block/part3) with hydrides through the full examination set.
+> **BIG PICTURE — Why is boron unlike every other member?**  Four ideas organise the whole chapter: **(i)** the energy cost of making B³⁺ is prohibitively high, **(ii)** Group 13 has only three valence electrons and therefore forms electron-deficient compounds, **(iii)** the +1 oxidation state becomes progressively more stable down the group because of the inert-pair effect, and **(iv)** boron solves electron deficiency by multicentre bonding. Every trend, structure and reaction below should be connected back to one of these four ideas.
 
-## Part 1 — Position in the periodic table and natural occurrence
+This page contains Parts 1–8. [Continue to Parts 9–15: halides, hydrides, aluminium compounds and examination](/notes/p-block/part3).
 
-Group 13 (old IUPAC IIIA) sits immediately after the alkaline-earth-to-transition-metal run, valence configuration ns²np¹, between Group 12/the transition block and Group 14. Boron never occurs free in nature; the heavier members occur chiefly as oxides, hydroxides and — for aluminium specifically — as bauxite.
+## Part 1 — Position, members, occurrence and chapter map
 
-**Principal minerals:**
+### 1.1 Position and valence-shell configuration
 
-| Mineral | Formula |
-|---|---|
-| Borax (Tincal) | Na₂B₄O₇·10H₂O ≡ Na₂[B₄O₅(OH)₄]·8H₂O |
-| Colemanite | Ca₂B₆O₁₁·5H₂O |
-| Boric acid (sassolite) | H₃BO₃ |
-| Boronatrocalcite | CaB₄O₇·NaBO₂·8H₂O |
-| Boracite | 2Mg₃B₈O₁₅·MgCl₂ |
-| Kernite | Na₂B₄O₇·4H₂O |
-| Mohavite | Na₂B₄O₇·5H₂O |
+| Element | Ground-state configuration | Valence shell | Broad character |
+|---|---|---|---|
+| B | [He] 2s²2p¹ | 2s²2p¹ | non-metallic metalloid; covalent |
+| Al | [Ne] 3s²3p¹ | 3s²3p¹ | metal; strongly electropositive |
+| Ga | [Ar] 3d¹⁰4s²4p¹ | 4s²4p¹ | metal; contracted by 3d electrons |
+| In | [Kr] 4d¹⁰5s²5p¹ | 5s²5p¹ | metal; +1 increasingly important |
+| Tl | [Xe] 4f¹⁴5d¹⁰6s²6p¹ | 6s²6p¹ | metal; +1 most stable |
 
-Aluminium, by contrast, is the most abundant metal in the Earth's crust (about 8% by mass) and occurs principally as **bauxite**, impure Al₂O₃·2H₂O — its extraction is covered in full in Part 6.
+> **CORE THEORY.** The expected oxidation state is +3 because all three valence electrons can participate in bonding. Down the group, the ns² pair becomes increasingly difficult to use, so +1 becomes more stable.
 
-## Part 2 — Electronic structure and periodic trends
+### 1.2 Natural occurrence
+
+Boron does not occur free because of its strong affinity for oxygen. Aluminium is the most abundant metal in Earth’s crust and occurs mainly as hydrated alumina and aluminosilicates.
+
+| Important source | Formula | Main significance |
+|---|---|---|
+| Borax or tincal | Na₂B₄O₇·10H₂O | boric acid, borates, glass |
+| Kernite | Na₂B₄O₇·4H₂O | concentrated borax mineral |
+| Colemanite | Ca₂B₆O₁₁·5H₂O | industrial source of boric acid |
+| Boracite | 2Mg₃B₈O₁₅·MgCl₂ | magnesium borate mineral |
+| Sassolite | H₃BO₃ | natural boric acid |
+| Bauxite | Al₂O₃·xH₂O with impurities | principal aluminium ore |
+| Cryolite | Na₃AlF₆ | solvent/electrolyte in aluminium extraction |
+| Corundum | Al₂O₃ | abrasive and refractory material |
+| Kaolinite | Al₂Si₂O₅(OH)₄ | clay mineral |
+
+> **JEE TRAP.** “Boron family” does not mean all members resemble boron. Boron is the anomalous first member; aluminium is the chemically representative member for metallic behaviour.
+
+### Rapid revision — Part 1
+
+- General configuration: **ns²np¹**.
+- Common oxidation states: **+3 and +1**.
+- Stability of +1 increases down the group.
+- Boron is covalent; heavier members are metallic.
+
+---
+
+## Part 2 — Master trends and orders of Group 13
+
+### 2.1 Verified numerical data
 
 | Property | B | Al | Ga | In | Tl |
 |---|---:|---:|---:|---:|---:|
 | Atomic radius (pm) | 88 | 143 | 135 | 167 | 170 |
-| IE₁ (kJ/mol) | 801 | 577 | 579 | 558 | 589 |
-| ΣIE₁₊₂₊₃ (kJ/mol) | 6887 | 5139 | 5529 | 5029 | 5438 |
+| IE₁ (kJ mol⁻¹) | 801 | 577 | 579 | 558 | 589 |
+| Σ(IE₁+IE₂+IE₃) (kJ mol⁻¹) | 6887 | 5139 | 5529 | 5029 | 5438 |
 | Electronegativity | 2.0 | 1.5 | 1.6 | 1.7 | 1.8 |
-| Density (g/cm³) | 2.35 | 2.70 | 5.91 | 7.31 | 11.85 |
+| Density (g cm⁻³) | 2.35 | 2.70 | 5.91 | 7.31 | 11.85 |
 | Melting point (K) | 2453 | 933 | 303 | 430 | 576 |
 | Boiling point (K) | 3923 | 2740 | 2676 | 2356 | 1730 |
 
-**Atomic radius order: B < Ga < Al < In < Tl.** Gallium is *smaller* than aluminium (135 pm vs 143 pm) despite sitting directly below it — the filled 3d¹⁰ subshell in Ga shields the nucleus poorly, so effective nuclear charge rises and the atom contracts. The same d/f-block contraction disturbs IE₁ (B > Tl > Ga > Al > In, not a smooth decrease) and pushes Tl's electronegativity above what a simple group trend would predict.
+### 2.2 Master order sheet — size, energy and metallic character
 
-Boron's ΣIE (6887 kJ/mol) dwarfs every other member's — this is the quantitative reason **B³⁺ never forms**: no realistic lattice or hydration energy can compensate for removing three electrons from an atom this small. Boron bonds exclusively by covalent/coordinate means (developed further in Part 3).
+| Property | Order / trend | Why the order is not perfectly regular |
+|---|---|---|
+| Atomic/metallic radius | **B < Ga < Al < In < Tl** | Ga is contracted by poor shielding of 3d¹⁰; Tl is contracted by 4f/5d shielding and relativistic effects |
+| M³⁺ ionic radius | **Al³⁺ < Ga³⁺ < In³⁺ < Tl³⁺** | shells are added down the group |
+| M⁺ ionic radius | **Ga⁺ < In⁺ < Tl⁺** | normal shell increase |
+| First ionisation enthalpy | **In < Al < Ga < Tl < B** | d/f contraction raises Ga and Tl relative to the simple trend |
+| Sum of first three IE | **In < Al < Tl < Ga < B** (using the table above) | very high value for B makes free B³⁺ impossible |
+| Electronegativity | **Al < Ga < In < Tl < B** | poor d/f shielding reverses the expected decrease after Al |
+| Metallic character | **B ≪ Al < Ga < In < Tl** (broadly increases) | B is a covalent metalloid; heavier members are metals |
+| Electropositive character | generally increases from B to Tl, with irregularity | contraction and inert-pair effects disturb smoothness |
+| Density | **B < Al < Ga < In < Tl** | atomic mass rises strongly down the group |
+| Melting point | **Ga < In < Tl < Al ≪ B** | B has a giant covalent lattice; Ga has an unusual molecular-like solid structure |
+| Boiling point | **Tl < In < Ga < Al < B** | cohesive energy falls broadly down the group |
 
-**Melting point** falls sharply from B (giant covalent B₁₂-icosahedral lattice, 2453 K, Part 5) to Al (metallic lattice, 933 K), then dips further at Ga to a group-minimum 303 K — gallium melts in the hand. **Boiling point** falls smoothly instead (Ga: 2676 K), so gallium has the *largest liquid range of any element*, from 303 K to 2676 K — the structural reason is given in full in Part 6.
+### 2.3 Master order sheet — oxidation states, oxides, halides and hydrides
 
-**Radii, precisely — covalent, metallic and ionic distinguished.** The single "atomic radius" row above hides three genuinely different measurements, and JEE Advanced questions increasingly test which one applies:
+| Property | Verified trend/order | Exam meaning |
+|---|---|---|
+| Stability of +3 state | **B ≈ Al > Ga > In > Tl** | Tl(III) is strongly oxidising |
+| Stability of +1 state | **Ga < In < Tl** | Tl(I) is the dominant thallium state |
+| Reducing strength of M(I) compounds | **Ga(I) > In(I) > Tl(I)** | least-stable +1 state reduces most readily |
+| Oxidising strength of M(III) compounds | increases down the group; **Tl(III) strongest** | Tl³⁺ readily becomes Tl⁺ |
+| Acidic character of M₂O₃ | **B₂O₃ > Al₂O₃ > Ga₂O₃ > In₂O₃ > Tl₂O₃** | acidic → amphoteric → basic |
+| Basic character of M₂O₃ | reverse of acidity | grows with metallic character |
+| Acidic character of hydroxides | **B(OH)₃ > Al(OH)₃ > Ga(OH)₃ > In(OH)₃** | boric acid is a weak Lewis acid |
+| Lewis acidity of BX₃ | **BF₃ < BCl₃ < BBr₃ < BI₃** | back bonding is strongest in BF₃ |
+| Covalent character of MX₃ | highest for B; fluorides of heavier members are most ionic | small/high-charge cations polarise anions strongly |
+| Hydrolysis tendency of BX₃ | BCl₃, BBr₃, BI₃ hydrolyse completely; BF₃ gives fluoroborate chemistry | strong B–F bond and stable BF₄⁻ modify the outcome |
+| Thermal stability of simple hydrides | decreases down the group | E–H bonds weaken with size |
+| Complex-forming tendency | high for small/high-charge M³⁺; Al³⁺ forms stable fluoro and aqua complexes | charge density controls Lewis acidity |
+| Coordination number | B usually 3 or 4; Al/Ga/In can reach 6; Tl(I) often higher in ionic lattices | boron cannot expand beyond four-coordinate valence-shell bonding |
 
-- **Covalent radius** — half the internuclear distance in a homonuclear covalent bond (relevant for B, whose chemistry is exclusively covalent).
-- **Metallic radius** — half the internuclear distance between adjacent atoms in the metallic lattice (relevant for Al, Ga, In, Tl).
-- **Ionic radius** — the radius of the actual ion in a crystal lattice, and it is NOT one number per element: M³⁺ is always markedly smaller than the corresponding M⁺, because removing two additional electrons shrinks the remaining electron cloud substantially while the nuclear charge stays fixed.
+> **MEMORY AID.** Down Group 13: **size and metallic character rise; +1 stability rises; +3 stability, oxide acidity and hydride stability fall.**
 
-| Ion | Ionic radius (pm) |
-|---|---:|
-| Al³⁺ | 53 |
-| Ga³⁺ | 62 |
-| Ga⁺ | 120 |
-| In³⁺ | 80 |
-| In⁺ | 132 |
-| Tl³⁺ | 88 |
-| Tl⁺ | 150 |
+### 2.4 Why gallium is smaller than aluminium
 
-**Tl⁺ (150 pm) is close in size to K⁺ (138 pm)** — this near-match is precisely why Tl⁺ substitutes for K⁺ in biological systems and is the chemical basis of thallium's toxicity (it is taken up by K⁺ transport pathways and then cannot be removed the way K⁺ is regulated; see Part 14 for this and other applications).
+The 3d¹⁰ electrons in Ga shield the nucleus poorly. The 4s and 4p electrons therefore experience a larger effective nuclear charge than a simple shell-count argument predicts. The result is **d-block contraction**, giving Ga a smaller quoted metallic radius than Al.
 
-> **Worked Example — density and structure cross-check.** Gallium's density (5.91 g/cm³) is notably lower than indium's (7.31 g/cm³) despite gallium having a smaller atomic radius (135 pm vs 167 pm) — smaller atoms usually pack to HIGHER density, not lower. Resolve this apparent contradiction using the structural information from Part 6.
+> **WORKED EXAMPLE 2.1**
 >
-> Density depends on both atomic mass/size AND how efficiently the atoms pack in the solid-state structure — packing efficiency is not automatically the same across a group. Indium adopts a normal metallic CCP (cubic close-packed) lattice, one of the most space-efficient arrangements possible (~74% packing efficiency). Gallium, however, is built from discrete Ga₂ diatomic molecules (Part 6) held together only by weak intermolecular forces — this molecular solid packs far less efficiently than a true metallic lattice, leaving more empty space per unit volume. The lower packing efficiency more than compensates for gallium's smaller atomic size, giving it the lower observed density despite being the smaller atom.
+> **Question.** Arrange B, Al, Ga, In and Tl in increasing atomic radius.
 >
-> **General method:** never assume density tracks atomic size alone within a group — always check whether every member shares the same structural motif (as most metallic groups do) or whether one member is a genuine structural outlier (as gallium is here).
-
-## Part 3 — Oxidation states and bonding character
-
-| | B | Al | Ga | In | Tl |
-|---|---:|---:|---:|---:|---:|
-| E°(M³⁺/M) (V) | −0.87 | −1.66 | −0.56 | −0.34 | +1.26 |
-| E°(M⁺/M) (V) | — | +0.55 | −0.79 | −0.18 | −0.34 |
-
-Aluminium's E°(M³⁺/M) is strongly negative, so Al³⁺ forms readily in solution. **Thallium's is positive** — Tl³⁺ does *not* form spontaneously from the metal; instead Tl³⁺ is a strong oxidising agent that is readily reduced back to Tl⁺.
-
-> **Worked Example — feasibility from E° and ΔG° = −nFE°.** Given E°(Al³⁺/Al) = −1.66 V and E°(Tl³⁺/Tl) = +1.26 V, is M³⁺ formed spontaneously when each metal dissolves in acid?
+> **Concept tested.** d-block and lanthanoid contraction.
 >
-> The tabulated E° is always for *reduction*, M³⁺ + 3e⁻ → M. Dissolution is *oxidation*, so reverse the sign before substituting: E°(oxidation) = −E°(reduction).
+> **Reasoning.** B is smallest. Ga is anomalously smaller than Al because 3d¹⁰ shields poorly. In and Tl are larger because new shells are added, although Tl is only slightly larger than In.
 >
-> **Aluminium:** E°(oxidation) = +1.66 V. ΔG° = −nFE° = −(3)(96500)(+1.66) ≈ **−480.6 kJ/mol** — negative, spontaneous. Al³⁺ forms readily.
+> **Final answer.** **B < Ga < Al < In < Tl.**
 >
-> **Thallium:** E°(oxidation) = −1.26 V. ΔG° = −(3)(96500)(−1.26) ≈ **+364.8 kJ/mol** — positive, non-spontaneous. Tl³⁺ does *not* form from the metal; it instead acts as an oxidant, accepting electrons to fall back to Tl⁺.
+> **JEE trap.** Do not write B < Al < Ga < In < Tl.
+
+> **WORKED EXAMPLE 2.2**
 >
-> **Fast method:** E°(oxidation) positive ⇒ ΔG° negative ⇒ spontaneous — you can often answer without the arithmetic.
-
-The measurable quantity *behind* the inert-pair effect is the ns–np promotion energy, ΔE = E(np) − E(ns):
-
-| | B | Al | Ga | In | Tl | Pb | Bi | Po | At |
-|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| ΔE (eV) | 4.5 | 4.5 | 6.0 | 5.3 | 7.0 | 9.0 | 10.0 | 12.0 | 16.0 |
-
-A larger gap means more energy is needed to promote an ns electron into bonding, so the ns² pair stays "inert." Thallium's 7.0 eV gap (vs boron/aluminium's 4.5 eV) is why Tl⁺ dominates while B and Al are locked at +3. The same widening gap running toward the bottom-right of the p-block (Pb 9.0, Bi 10.0, Po 12.0, At 16.0) is why Pb²⁺/Bi³⁺, not Pb⁴⁺/Bi⁵⁺, are the stable states there.
-
-**Consequences to memorise:** stability of +3 falls, stability of +1 rises, down the group. Tl³⁺ < Tl⁺ in stability (Tl³⁺ oxidises); Ga⁺ < Ga³⁺ in stability (Ga⁺ reduces, and is a stronger reducing agent than In⁺, being the less stable of the pair).
-
-> **Trap — GaX₂ is not gallium(II).** GaCl₂ looks like Ga(+2), but gallium never adopts +2. It is the mixed-valence salt **Ga⁺[Ga³⁺Cl₄]⁻** — one gallium at +1, one at +3, averaging to the deceptive +2. Consistently, in Ga[AlCl₄] the oxidation state of gallium is +1. Ga⁺ and In⁺ halides are unstable in water and disproportionate: 3GaX → 2Ga + GaX₃, and 3InX → 2In + InX₃.
-
-> **Worked Example — using ΔE to rank inert-pair strength quantitatively.** Using the ΔE table above, predict which halide is more likely to be found as the pure +3 compound at room temperature: InCl₃ or TlCl₃. Justify using the actual eV values, not just the general trend.
+> **Question.** Why does boron not form B³⁺ although aluminium forms Al³⁺ readily?
 >
-> ΔE(In) = 5.3 eV; ΔE(Tl) = 7.0 eV. A larger ΔE means the ns² pair is harder to promote into bonding, so the element more strongly resists using both its ns and np electrons together (i.e. resists reaching +3) and instead prefers to keep the ns² pair inert, settling at +1. Since Tl's gap (7.0 eV) is markedly larger than In's (5.3 eV), thallium resists the +3 state more strongly — **InCl₃ is the genuinely stable, common +3 compound; TlCl₃ is comparatively unstable** and decomposes on mild heating to TlCl + Cl₂, releasing chlorine as the compound relaxes to the preferred +1 state. This matches the E° data above: E°(Tl³⁺/Tl) is positive (+1.26 V, non-spontaneous formation) while no such reversal occurs for indium.
+> **Stepwise reasoning.** Boron is extremely small; the sum of its first three ionisation enthalpies is about 6887 kJ mol⁻¹. No realistic lattice or hydration enthalpy compensates for this. Aluminium has a much smaller three-electron ionisation cost and Al³⁺ is strongly hydrated.
 >
-> **Fast method:** whenever comparing inert-pair strength between two adjacent-group members, the LARGER ΔE value always identifies the element whose lower oxidation state is preferentially stable — no need to separately recall each element's chemistry if the ΔE table is available.
-
-**Fajans' rule, named and applied.** The fact above — that boron never forms B³⁺ because the sum of ionisation enthalpies is too large to be compensated by any lattice or hydration energy — is a specific case of the general framework called **Fajans' rule**. It predicts when a bond that "should" be ionic (a metal + a non-metal) instead behaves covalently, based on three factors that all increase covalent character:
-
-1. **Small cation size** — concentrates charge, increasing polarising power.
-2. **High cation charge** — a 3+ ion polarises far more strongly than a 1+ ion of similar size.
-3. **Large, easily-deformed (polarisable) anion** — its electron cloud distorts more readily under the cation's pull.
-
-Applied to Group 13: M³⁺ has both a small size (relative to typical cations) and a high +3 charge, so Fajans' rule predicts strong polarisation of any anion it approaches — which is exactly why anhydrous AlCl₃, GaCl₃ and InCl₃ are covalent rather than simple ionic lattices (Part 9), and why this covalent tendency is strongest for the smallest, most charge-dense M³⁺ (boron) and weakens down the group as the cation grows. The trend of BF₃-type covalency being strongest at boron and metallic/ionic character strengthening toward thallium is Fajans' rule operating across the whole group, not a separate coincidental pattern.
-
-## Part 4 — Anomalous boron and the boron–silicon diagonal relationship
-
-Diagonal neighbours share similar size *and* similar charge density (charge/radius ratio), because shrinking across a period and enlarging down a group roughly cancel on the diagonal. B ↔ Si, not B ↔ Al:
-
-- Both form covalent, electron-deficient/electron-precise hydrides that ignite spontaneously in air (B₂H₆, SiH₄) — unlike AlH₃, which is a polymeric covalent network, not a discrete molecular gas.
-- Both B₂O₃ and SiO₂ are acidic oxides forming oxoacid-like species, unlike amphoteric Al₂O₃.
-- Both boric and silicic acid are weak; both borates and silicates build extended chain/network structures from BO₃/BO₄ or SiO₄ units.
-- Both give anionic complex fluorides, [BF₄]⁻ and [SiF₆]²⁻.
-
-Contrast Al, which behaves like a typical metal — amphoteric oxide/hydroxide, forms simple Al³⁺(aq), reacts with both acid and base. Boron's anomalous position within its own group (exclusively covalent, non-metallic, far higher ΣIE than any other member, Part 2) plus this diagonal kinship with silicon are the two facts that most reliably distinguish boron from "just the first member of a metal group" in exam reasoning.
-
-## Part 5 — Elemental boron: allotropes and extraction
-
-**Boron is polymeric:** B₁₂ icosahedra (12 boron atoms at the vertices of a regular icosahedron, 20 triangular faces meeting at those 12 corners) covalently linked into a rigid infinite lattice — hence its extreme hardness. In β-rhombohedral boron (the most stable allotrope), each icosahedron bonds to 12 neighbouring icosahedra: six via a genuine two-centre bond (1.72 Å) and six via a longer bond to a separate icosahedron (2.02 Å) — two distinct bonding environments coexisting in one structure, part of why boron's crystal chemistry is unusually intricate for a single element. *(Note on the melting point: published figures vary — commonly cited values range from about 2349 K/2076 °C to 2453 K, depending on allotrope and measurement method; this reflects genuine literature variance for a notoriously hard-to-purify element, not an error in this text.)*
-
-Boron never occurs free (Part 1). **Extraction, Step I — B₂O₃:** from borax, Na₂B₄O₇ + 2HCl → 2NaCl + H₂B₄O₇, then H₂B₄O₇ + 5H₂O → 4H₃BO₃, then 2H₃BO₃ →(Δ) B₂O₃ + 3H₂O; or from colemanite by fusion, Ca₂B₆O₁₁ + 2Na₂CO₃ →(fusion) 2CaCO₃↓ + Na₂B₄O₇ + 2NaBO₂, with 4NaBO₂ + CO₂ → Na₂B₄O₇ + Na₂CO₃ recovering more borax; or Ca₂B₆O₁₁ + 4SO₂ + 11H₂O → 2Ca(HSO₃)₂ + 6H₃BO₃.
-
-**Step II — reduction to boron:** B₂O₃ + 6Na (or 6K) → 2B + 3Na₂O (or 3K₂O); B₂O₃ + 3Mg → 2B + 3MgO gives ~95–98% pure **amorphous ("Moissan") boron**; electrolysis of fused B₂O₃ + MgO + MgF₂ at ~1373 K also works. **Crystalline boron** (small quantities): 2BCl₃ + 3H₂ →(red-hot W/Ta) 2B + 6HCl; the **Van Arkel method**, 2BI₃ →(red-hot W/Ta) 2B + 3I₂; or thermal decomposition B₂H₆ →(Δ) 2B + 3H₂.
-
-**Reactions of amorphous boron:** 4B + 3O₂ →(700 °C) 2B₂O₃ · 2B + 3S →(1200 °C) B₂S₃ · 2B + N₂ →(very high T) 2BN · 2B + 3X₂ → 2BX₃ · 3Mg + 2B → Mg₃B₂ · 4B + C →(electric furnace) B₄C (norbide, used in bulletproof armour — Part 14) · B + 3HNO₃ → H₃BO₃ + 3NO₂ · 2B + 3H₂SO₄ → 2H₃BO₃ + 3SO₂ · 2B + 6NaOH → 2Na₃BO₃ + 3H₂. Water/steam: no reaction. Crystalline boron is almost unreactive at room temperature — the reactive form is amorphous.
-
-## Part 6 — Chemistry of aluminium, gallium, indium and thallium
-
-- **Al, In, Tl** adopt normal metallic lattices — cubic close packed (CCP), also called face-centred cubic (FCC).
-- **Gallium** is unique: the solid is built from discrete **Ga₂ diatomic molecules** held together only by weak forces. Little energy is needed to melt it (303 K), but a great deal is needed to break the strong covalent Ga–Ga bond and vaporise it (2676 K) — this single fact explains both anomalies (low MP, huge liquid range) at once. Gallium is liquid from 303 K up to almost 2273 K (2000 °C) — the largest liquid range of any element — and readily **supercools**, remaining liquid several degrees below its true freezing point until disturbed.
-- Gallium also shows the water-like density anomaly: V(solid Ga) > V(liquid Ga) — it expands on freezing and must never be stored brim-full in a sealed glass container.
-
-**Aluminium metal:** silvery-white, density 2.7 g/cm³, m.p. 660 °C, an excellent conductor, malleable and ductile. Dry air: no action. Moist air: a thin protective Al₂O₃ film forms. Very high temperature: burns to give *both* Al₂O₃ and AlN (hot aluminium absorbs N₂). With alkali: 2Al + 2NaOH + 2H₂O → 2NaAlO₂ + 3H₂. With acid: dissolves in dilute H₂SO₄/HCl, but **conc. HNO₃ passivates** it. With water: no reaction cold; slowly attacked by steam. **Thermite (Goldschmidt) reduction:** Al reduces the oxide of any less reactive metal — Fe₂O₃ + 2Al → Al₂O₃ + 2Fe, Cr₂O₃ + 2Al → Al₂O₃ + 2Cr, 3MnO₂ + 4Al → 2Al₂O₃ + 3Mn (industrial use in Part 14).
-
-**Extraction of aluminium — Bayer process then Hall-Héroult.** Aluminium's extraction is two independent stages: **purifying** the ore (Bayer process) and then **reducing** the purified oxide to metal (Hall-Héroult process). Conflating them is a common error — the Bayer process produces pure Al₂O₃, not aluminium metal.
-
-**Bayer process — purifying bauxite:**
-
-1. Crushed bauxite (impure Al₂O₃·2H₂O, containing Fe₂O₃ and SiO₂ impurities) is digested in hot concentrated NaOH under pressure: Al₂O₃ + 2NaOH → 2NaAlO₂ + H₂O. Amphoteric Al₂O₃ dissolves as soluble sodium aluminate; basic Fe₂O₃ does **not** dissolve and is filtered off as "red mud."
-2. The filtered aluminate solution is diluted and seeded with Al(OH)₃ crystals to precipitate pure aluminium hydroxide: NaAlO₂ + 2H₂O → Al(OH)₃↓ + NaOH (the NaOH is recovered and recycled — the process is closed-loop for its base).
-3. The precipitate is calcined (strongly heated): 2Al(OH)₃ →(Δ) Al₂O₃ + 3H₂O, giving pure alumina.
-
-**Hall-Héroult process — reducing Al₂O₃ to aluminium:**
-
-Pure Al₂O₃ has a melting point near 2345 K — far too high to melt economically for electrolysis on its own. It is instead dissolved in molten **cryolite**, Na₃AlF₆ (with some CaF₂ added), which lowers the effective melting point to around 1220 K and improves the melt's electrical conductivity.
-
-Electrolysis is carried out in a steel cell lined with graphite, which itself acts as the **cathode**; graphite rods dipped into the melt act as the **anode**.
-
-- **Cathode:** Al³⁺ + 3e⁻ → Al (molten aluminium, denser than the melt, collects at the bottom and is tapped off periodically).
-- **Anode:** 2O²⁻ → O₂ + 4e⁻ — but this oxygen immediately attacks the carbon anode itself, C + O₂ → CO₂, **consuming the anode**, which must therefore be replaced periodically. This is why Hall-Héroult cells need continuous anode maintenance, unlike electrolyses using genuinely inert electrodes.
-
-**Why not simply electrolyse aqueous Al³⁺?** Water is far easier to reduce than Al³⁺ (H₂O/H₂ has a much less negative reduction potential than Al³⁺/Al, Part 3's own E° table shows Al³⁺/Al at −1.66 V), so aqueous electrolysis would simply liberate H₂ at the cathode and never deposit aluminium metal at all — molten-salt electrolysis is not a matter of convenience but of thermodynamic necessity here.
-
-## Part 7 — Oxides and hydroxides: the acid–amphoteric–base gradation
-
-| | B | Al | Ga | In | Tl |
-|---|---|---|---|---|---|
-| Oxide | B₂O₃ acidic | Al₂O₃ amphoteric | Ga₂O₃ amphoteric | In₂O₃ basic | Tl₂O basic |
-| Hydroxide | B(OH)₃ acidic | Al(OH)₃ amphoteric | Ga(OH)₃ amphoteric | In(OH)₃ basic | TlOH basic (strong, like an alkali hydroxide) |
-
-The gradation tracks metallic character. B₂O₃, though generally acidic, behaves as a *base* toward a stronger acidic oxide: B₂O₃ + 3SO₃ → B₂(SO₄)₃, and 2B₂O₃ + P₄O₁₀ → 4BPO₄.
-
-**Alumina, Al₂O₃**, occurs as bauxite and corundum (Part 1); amphoteric (→ AlCl₃ with acid, → NaAlO₂ with alkali); polar covalent. Two forms: **γ-Al₂O₃**, from 2Al(OH)₃ →(450 °C) γ-Al₂O₃ + 3H₂O — soft, high surface area, used as a *dehydrating agent, adsorbent, catalyst support and in chromatography*; **α-Al₂O₃**, from 2Al(OH)₃ →(1000 °C) α-Al₂O₃ + 3H₂O — very hard corundum structure, the thermodynamically stable form, used as an *abrasive and refractory*. γ converts irreversibly to α on strong heating. Precious corundum gems get their colour from trace transition-metal ions: ruby (red, Cr³⁺), sapphire (blue, Fe²⁺/Fe³⁺ and Ti⁴⁺), oriental topaz (yellow, Fe³⁺), oriental emerald (green, Cr³⁺/V³⁺).
-
-**Mohs hardness scale:** 1 talc · 2 gypsum · 3 calcite · 4 fluorite · 5 apatite · 6 feldspar · 7 quartz · 8 topaz · **9 corundum (α-Al₂O₃)** · 10 diamond. Cubic boron nitride (borazon) rivals diamond in hardness and — unlike diamond — is chemically stable toward hot iron, which is why it, not diamond, machines steel (Part 14).
-
-## Part 8 — Borax and the borate family
-
-Three crystalline forms of borax: prismatic Na₂B₄O₇·10H₂O, octahedral Na₂B₄O₇·5H₂O, and anhydrous borax glass Na₂B₄O₇. From boric acid: 4H₃BO₃ + Na₂CO₃ → Na₂B₄O₇ + 6H₂O + CO₂.
-
-**Thermal chain:** Na₂B₄O₇·10H₂O →(~60 °C) Na₂B₄O₇·5H₂O →(Δ) Na₂B₄O₇ →(**740 °C**) 2NaBO₂ + B₂O₃, the transparent **glassy mass** used in the bead test.
-
-**Alkaline hydrolysis (buffer action):** Na₂B₄O₇ + 7H₂O ⇌ 2NaOH + 4H₃BO₃ — equal amounts of the weak acid B(OH)₃ and its conjugate base [B(OH)₄]⁻ form, which is exactly why borax solution acts as a buffer.
-
-> **Worked Example — why 1 mol borax neutralises 2 mol acid.** Dissolving borax gives [B₄O₅(OH)₄]²⁻ + 5H₂O ⇌ 2B(OH)₃ + 2[B(OH)₄]⁻ — equal amounts of each. B(OH)₃ is itself an acid and cannot neutralise H₃O⁺; only the basic [B(OH)₄]⁻ reacts: 2[B(OH)₄]⁻ + 2H₃O⁺ → 2B(OH)₃ + 4H₂O. So 2 mol of borate anion consume 2 mol acid — borax is a **diacidic base**, which is exactly why it is a primary standard: Na₂B₄O₇ + 2HCl + 5H₂O → 2NaCl + 4H₃BO₃ (white flakes of boric acid separate on cooling).
-
-**Bead test:** Na₂B₄O₇ →(Δ) 2NaBO₂ + B₂O₃, then MO + B₂O₃ → M(BO₂)₂. Oxidising-flame colours: Cu blue, Fe green, Co blue, Ni brown, Cr green. In the *reducing* flame copper instead gives red-brown (Cu₂O/Cu). The test fails for colourless-ion metals (Na⁺, Ca²⁺, Al³⁺) since their metaborates are colourless — Ag⁺, for instance, gives no distinguishing colour because AgBO₂ is white.
-
-Other reactions: with NH₄Cl on strong heating, Na₂B₄O₇ + 2NH₄Cl → 2BN + B₂O₃ + 2NaCl + 4H₂O (a lab route to BN); sodium perborate (the washing-powder brightener), 2NaBO₂ + 2H₂O₂ + 6H₂O → Na₂[(OH)₂B(O–O)₂B(OH)₂]·6H₂O, releases H₂O₂ above 80 °C as the –O–O– linkages break down.
-
-**Orthoboric acid, H₃BO₃.** White, soft, needle-shaped, soapy-feeling crystals; steam volatile; sparingly soluble in cold water, freely soluble in hot. **Thermal chain:** H₃BO₃ →(100 °C) HBO₂ (metaboric acid) →(160 °C) H₂B₄O₇ (tetraboric acid) →(red hot) B₂O₃.
-
-It is a **Lewis acid, not a Brønsted acid**: B(OH)₃ + 2H₂O ⇌ [B(OH)₄]⁻ + H₃O⁺, pK = 9.25 (monomer). At higher concentration a *stronger* polymeric species forms: 3B(OH)₃ ⇌ H₃O⁺ + [B₃O₃(OH)₄]⁻ + H₂O, pK = 6.84.
-
-**Structure:** planar BO₃ triangles, hydrogen-bonded into 2-D sheets of near-hexagonal symmetry, layers ~3.18 Å apart — the structural reason for the soapy feel and easy cleavage into fine flakes.
-
-> **Worked Example — the glycerol titration.** Boric acid cannot be titrated sharply against NaOH with phenolphthalein alone, but becomes sharp with excess glycerol or mannitol. Why, and would ethanol work?
->
-> A cis-1,2-diol chelates the tetrahedral borate centre, forming a stable 5-membered cyclic ester (two diols can bind one boron). By Le Chatelier, consuming [B(OH)₄]⁻ as this chelate pulls B(OH)₃ + 2H₂O ⇌ [B(OH)₄]⁻ + H₃O⁺ far to the right, releasing far more H₃O⁺ and giving a sharp endpoint. **Ethanol will not work** — it is monohydric and cannot chelate; the requirement is specifically a cis-1,2-diol (glycerol, mannitol, catechol, salicylic acid, sugar).
-
-Other reactions: esterification, H₃BO₃ + 3ROH → B(OR)₃ + 3H₂O, whose vapour burns with a **green-edged flame** — the classical borate test; with ammonium bifluoride, H₃BO₃ + 3NH₄HF₂ → NH₄BF₄ + 2NH₄F + 3H₂O, and NH₄BF₄ itself decomposes on heating, NH₄BF₄ →(Δ) NH₄F + BF₃; with metal oxides, 2H₃BO₃ + MO → M(BO₂)₂ + 3H₂O. **Borosalicylic acid**, where a tetrahedral boron is chelated by two salicylate ligands, is the standard example of an *optically active* boron compound.
-
-**Borate classification:** orthoborate BO₃³⁻ (isolated, e.g. Ca₃(BO₃)₂); metaborate BO₂⁻ (chain/ring, including cyclic B₃O₆³⁻); pyroborate B₂O₅⁴⁻ (two BO₃ sharing one O); complex borates with both 3- and 4-coordinate B (borax's own anion); peroxoborates [B₂(O₂)₂(OH)₄]²⁻ with genuine –O–O– links.
+> **Final answer.** Boron remains covalent; simple B³⁺ is not chemically accessible.
 
 ---
 
-**Continued in Part 9 of 15 →** [Halides, hydrides, borohydrides, aluminium compounds, complexes, applications and the full 35-question examination set continue on the next page.](/notes/p-block/part3)
+## Part 3 — Oxidation states, inert-pair effect and bonding logic
 
-# 3. Group 13 — Boron Family (Part 9 of 15 – Part 15 of 15): halides, hydrides, aluminium compounds and examination
+### 3.1 The +3 and +1 oxidation states
 
-**← Continued from [Part 1–8](/notes/p-block/part2)** — position, trends, oxidation states, elemental boron, Al/Ga/In/Tl chemistry, oxides and borates. This page covers halides through the complete 35-question examination set.
+In the +3 state, all three valence electrons participate. In the +1 state, only the np¹ electron is used while the ns² pair remains non-bonding.
 
-## Part 9 — Halides
+| Element | Most characteristic state | Important secondary state | Behaviour |
+|---|---|---|---|
+| B | +3 | — | exclusively covalent |
+| Al | +3 | +1 very unstable | Al³⁺ strongly hydrated |
+| Ga | +3 | +1 | Ga(I) compounds often reduce/disproportionate |
+| In | +3 | +1 | both accessible; +1 more stable than for Ga |
+| Tl | +1 | +3 | Tl(III) compounds are oxidising |
 
-**Boron halides — back-bonding, acidity order, hydrolysis.** Prepared by 2B + 3X₂ → 2BX₃; BF₃ specifically via B₂O₃ + 3CaF₂ + 3H₂SO₄ → 2BF₃ + 3CaSO₄ + 3H₂O; the heavier halides via B₂O₃ + 3C + 3X₂ → 2BX₃ + 3CO. States: BF₃ colourless gas; BCl₃, BBr₃ fuming liquids; BI₃ fusible solid.
+### 3.2 Inert-pair effect — energetic explanation
 
-> **Worked Example — back-bonding explains three separate facts at once.**
+> **CORE THEORY.** “The ns² electrons remain inert” is only the observation. The cause is the increasing energetic separation and stabilisation of the ns orbital, enhanced by poor d/f shielding and relativistic contraction for the sixth period. Bond formation in the higher oxidation state no longer compensates fully for promoting and using the ns² pair.
+
+**Consequence map**
+
+- +3 stability decreases down the group.
+- +1 stability increases down the group.
+- Ga(I) and In(I) compounds tend to be reducing.
+- Tl(III) compounds tend to be oxidising.
+
+### 3.3 Redox interpretation
+
+| Couple | E° (V) | Meaning |
+|---|---:|---|
+| Al³⁺/Al | −1.66 | Al metal is a strong reductant; Al³⁺ formation is favourable |
+| Ga³⁺/Ga | −0.56 | Ga³⁺ is stable relative to Ga(I) |
+| In³⁺/In | −0.34 | +1 becomes more competitive |
+| Tl³⁺/Tl | +1.26 | Tl³⁺ strongly accepts electrons; it is oxidising |
+
+### 3.4 Mixed-valence “dihalides”
+
+> **JEE TRAP.** GaCl₂ is not a normal Ga(II) chloride. It is represented as **Ga⁺[GaCl₄]⁻**, containing Ga(I) and Ga(III). The average oxidation state is +2, but no individual gallium atom is +2.
+
+Disproportionation of unstable monohalides:
+
+\[
+3\,\mathrm{GaX}\;\longrightarrow\;2\,\mathrm{Ga}+\mathrm{GaX_3}
+\]
+
+\[
+3\,\mathrm{InX}\;\longrightarrow\;2\,\mathrm{In}+\mathrm{InX_3}
+\]
+
+> **WORKED EXAMPLE 3.1**
 >
-> **(a) B–F bond order = 1.33.** Boron's empty 2p orbital accepts π density from a fluorine lone pair; three equivalent resonance structures spread one π bond over three B–F bonds, giving bond order 1 + 1/3. This is not just a bookkeeping device — it is measurable. Free BF₃ has a B–F bond length of just 130 pm, distinctly shorter than the sum of the covalent radii of B and F (≈152 pm) and an unusually high bond energy (≈646 kJ/mol, higher than typical single bonds), both of which are exactly what added π character predicts. The direct experimental proof comes from adduct formation: once boron accepts a donor lone pair (from NH₃ or NMe₃, say) and becomes tetrahedral, the empty 2p orbital is gone and back-bonding can no longer operate — the B–F bond promptly *lengthens* to 138 pm in H₃N·BF₃ and 139 pm in Me₃N·BF₃. The bond changing length depending on whether π back-donation is available is the strongest possible evidence that the effect is real, not merely a resonance-structure convenience.
+> **Question.** Which is the stronger reducing agent: Ga(I) or In(I)?
 >
-> **(b) Lewis acidity order is the reverse of electronegativity: BF₃ < BCl₃ < BBr₃ < BI₃.** Fluorine's 2p orbital overlaps boron's compact 2p orbital efficiently, so back-donation is strongest for BF₃ — this partially satisfies boron and makes it the *weakest* Lewis acid despite F being most electronegative. Back-donation falls off sharply for the larger, more diffuse 3p/4p/5p orbitals of Cl/Br/I, so BI₃ (weakest back-donation, strongest genuine electron deficiency) is the strongest Lewis acid. Direct evidence: BCl₃ and BBr₃ form adducts with the weak base AsH₃, but **BF₃ does not** — it is already too electron-satisfied.
+> **Reasoning.** +1 is less stable for Ga than for In. The less-stable lower oxidation state more readily converts to the more-stable +3 state and therefore behaves as the stronger reductant.
 >
-> **(c) BF₃ hydrolyses only partially.** 4BF₃ + 12H₂O → 4H₃BO₃ + 12HF, then the HF attacks most of that boric acid: 12HF + 3H₃BO₃ → 3H₃O⁺ + 3BF₄⁻ + 9H₂O. Net: **4BF₃ + 3H₂O → H₃BO₃ + 3HBF₄** — only ¼ mole of H₃BO₃ per mole of BF₃, the rest locked up as very stable fluoroboric acid. BCl₃, BBr₃, BI₃ all hydrolyse *completely* instead: BCl₃ + 3H₂O → H₃BO₃ + 3HCl.
+> **Final answer.** **Ga(I) > In(I)** in reducing strength.
 
-Halide scrambling: mixing two boron halides at room temperature reaches a statistical equilibrium of all species, BF₃ + BCl₃ ⇌ BFCl₂ + BF₂Cl (a mixed BFClBr has even been reported from a three-halide mixture). Boron also forms genuine B–B-bonded **dihalides**, B₂X₄: 2BCl₃ + 2Hg →(electric discharge, low pressure) B₂Cl₄ + Hg₂Cl₂ — planar but free to rotate about the B–B bond, decomposing slowly at room temperature. (Contrast Ga/In "dihalides," which are the mixed-valence salts Ga⁺[GaCl₄]⁻/In⁺[InCl₄]⁻, not true M(II) species — Part 3.)
+> **WORKED EXAMPLE 3.2**
+>
+> **Question.** Why is TlCl stable but TlCl₃ comparatively unstable?
+>
+> **Reasoning.** Tl strongly stabilises the 6s² pair. Tl(I) retains 6s²; Tl(III) requires using the pair. Tl(III) therefore tends to accept electrons and return to Tl(I).
+>
+> **Final answer.** TlCl is the normal stable chloride; TlCl₃ is oxidising and thermally less stable.
 
-**Halides of the heavier members — a comparative view.** **Ionic vs covalent:** AlF₃, GaF₃, InF₃ are ionic; every other Group 13 trihalide is covalent, and boron's are always **monomeric** — boron is too small to bridge.
+### Rapid revision — Part 3
 
-**Physical state and monomer/dimer status across the full trihalide grid:**
+- +1 stability: **Ga < In < Tl**.
+- +3 oxidising character increases down the group.
+- “M(II)” halides may be mixed-valence salts.
+- TlI₃ is best regarded as **Tl⁺I₃⁻**, not Tl(III) iodide.
 
-| Compound | Physical state | Vapour phase | Coordination no. of metal |
-|---|---|---|---:|
-| BF₃ | Gas | Monomer | 3 |
-| BCl₃ | Gas | Monomer | 3 |
-| BBr₃ | Liquid | Monomer | 3 |
-| BI₃ | Solid | Monomer | 3 |
-| AlF₃ | Solid, ionic | Monomer | 6 |
-| AlCl₃ | Solid | Dimer (Al₂Cl₆) below ≈400 °C | 6 (solid) / 4 (dimer) |
-| AlBr₃ | Solid | Dimer (Al₂Br₆) | 4 |
-| GaCl₃ | Solid | Dimer (Ga₂Cl₆) | 4 |
-| InCl₃ | Solid | Monomer/some dimer | 6 |
-| TlF, TlCl, TlBr, TlI | Solids | — (fully ionic lattices) | ≥8 |
+---
 
-Two things worth reading off this table beyond the individual rows already discussed: **gallium trihalides dimerise too**, following the same electron-deficiency logic as aluminium's (Ga₂Cl₆ is structurally analogous to Al₂Cl₆); and **thallium's halides are simple ionic salts** with high coordination numbers, consistent with Tl⁺ behaving like an alkali-metal-sized cation (Part 2) rather than participating in any covalent bridging at all.
+## Part 4 — Anomalous behaviour of boron and B–Si diagonal relationship
 
-> **Trap — TlI₃ is not thallium(III) iodide.** It is **Tl⁺(I₃)⁻**, thallium(I) tri-iodide, containing the linear triiodide ion. True Tl³⁺(I⁻)₃ cannot exist: Tl³⁺ is a strong oxidant and I⁻ a good reductant, so they redox-collapse (Tl³⁺ + 2I⁻ → Tl⁺ + I₂, then I₂ + I⁻ → I₃⁻). The same logic rules out any strongly-oxidising-cation/strongly-reducing-anion pairing (Cu²⁺ with I⁻, Fe³⁺ with I⁻ behave the same way).
+### 4.1 Why boron is anomalous
 
-**Lewis acidity reverses with base hardness (HSAB):** toward hard bases (F⁻, O-donors), BX₃ > AlX₃ > GaX₃ > InX₃; toward soft bases (S-, P-donors), the order **inverts** to BX₃ < AlX₃ < GaX₃ < InX₃. Maximum coordination for B and Al is satisfied only by F (BF₄⁻, AlF₆³⁻); for Ga and In, CN 6 is reached with either F or Cl ([GaX₆]³⁻, [InX₆]³⁻).
+| Cause | Direct consequence |
+|---|---|
+| Very small size | high ionisation enthalpy and high charge density |
+| Relatively high electronegativity | covalent rather than ionic chemistry |
+| No simple B³⁺ | boron uses shared-electron and coordinate bonding |
+| Only 2s and 2p valence orbitals | coordination commonly limited to 3 or 4 |
+| Three valence electrons | electron-deficient compounds such as BX₃ and boranes |
+| Effective 2p–2p overlap | strong pπ–pπ back bonding in BF₃ |
 
-**Coordination number of AlX₃ by state:**
+### 4.2 Boron versus aluminium
 
-| State | AlF₃ | AlCl₃ | AlBr₃ | AlI₃ |
-|---|---:|---:|---:|---:|
-| Solid | CN 6 | CN 6 | CN 4 | CN 4 |
-| Melt | — | CN 4 | CN 4 | CN 4 |
-| Vapour | monomer | CN 4 | CN 4 | CN 4 |
-
-AlCl₃ is 6-coordinate in the solid (an ionic-like layer lattice — hence conducting) but drops to 4-coordinate dimeric Al₂Cl₆ on melting (a poor conductor) — a favourite conceptual contrast. In the vapour, Al₂Cl₆ predominates at lower temperature and dissociates to the monomer at higher temperature; *the exact crossover temperature is another figure where sources vary (commonly cited values range from roughly 200 °C to 350 °C), so treat "dissociates on strong heating, well below its own melting-adjacent range" as the reliable qualitative statement rather than memorising one precise number.* The bridging Al–Cl bond (≈221 pm) is measurably longer than the terminal Al–Cl bond (≈206 pm) — direct structural confirmation that the bridge bond is genuinely weaker, consistent with it being the one that breaks first as the dimer dissociates into monomers at high temperature.
-
-**Al₂Cl₆'s bridges are electron-precise** (chlorine genuinely donates a lone pair, 3-centre-4-electron), unlike diborane's electron-*deficient* 3-centre-2-electron B–H–B bridges (Part 10) — the single most-asked comparison between the two dimers.
-
-## Part 10 — Hydrides of boron: boranes, borazine and boron nitride
-
-**Diborane, B₂H₆ — structure and electron count.** B₂H₆ has **4 terminal 2-centre-2-electron B–H bonds** and **2 bridging 3-centre-2-electron B–H–B bonds**. Electron count: each B contributes 3, each H contributes 1 → 2(3) + 6(1) = 12 electrons = 6 pairs; 4 pairs fill the terminal bonds, the remaining 2 pairs are spread over the two bridges.
-
-**Exact geometry (examinable numbers):** terminal B–H = 119 pm; bridging B–H = 133 pm (longer/weaker, as expected for a 2-electron bond spread over 3 atoms); B···B = 177 pm; terminal H–B–H angle = 121.5°; bridging H–B–H angle = 97°. Each boron is roughly sp³. The two BH₂ units and both borons are coplanar; the bridging hydrogens sit above and below that plane — the **maximum number of atoms in one plane is 6** (2 B + 4 terminal H).
-
-**STYX notation** codes any borane's bonding: S = number of B–H–B bridges, T = number of B–B–B bridges, Y = number of ordinary B–B bonds, X = number of BH₂ groups. Diborane's code is **2002**.
-
-**Structural families** (by vertices removed from a closed polyhedron): *closo* (BₙHₙ²⁻, n = 6–12, complete cage), *nido* (BₙHₙ₊₄, one vertex missing), *arachno* (BₙHₙ₊₆, two vertices missing), *hypho* (BₙHₙ₊₈, three vertices missing), *conjuncto* (two or more cages joined).
-
-**Six standard preparations:**
-
-1. Mg₃B₂ + H₃PO₄ → mixture of boranes →(Δ) B₂H₆ (classical route via magnesium boride)
-2. B₂O₃ + 2Al + 3H₂ →(750 atm, 150 °C) B₂H₆ + Al₂O₃
-3. 2BF₃ + 6NaH →(180 °C) B₂H₆ + 6NaF
-4. 2BCl₃ + 6H₂ →(electric discharge) B₂H₆ + 6HCl
-5. 2NaBH₄ + I₂ →(diglyme) B₂H₆ + H₂ + 2NaI
-6. 4Et₂O·BF₃ + 3LiAlH₄ →(ether) 4Et₂O + 3LiAlF₄ + 2B₂H₆ (or with 3NaBH₄ → 3NaBF₄ instead)
-
-**Reactions:** combustion is spontaneous and strongly exothermic — B₂H₆ + 3O₂ → B₂O₃ + 3H₂O, ΔH = −1976 kJ/mol (studied as a rocket fuel, Part 14; a Housecroft & Sharpe-style source cross-checked for this rebuild instead gives ≈−2165 kJ/mol for the same reaction — another case of genuine literature variance rather than an error, so treat "strongly exothermic, among the highest for a hydride combustion" as the reliable statement); hydrolysis B₂H₆ + 6H₂O → 2H₃BO₃ + 6H₂; with alkali B₂H₆ + 6NaOH → 2Na₃BO₃ + 6H₂; with Cl₂ (vigorous) B₂H₆ + 6Cl₂ → 2BCl₃ + 6HCl; with LiH → LiBH₄ (stability order LiBH₄ < NaBH₄ < KBH₄, since the large BH₄⁻ anion is better stabilised by a larger cation, developed further in Part 11); with CO (470 K, 20 bar) → 2H₃B·CO; with alcohols → 2B(OR)₃ + 6H₂.
-
-**Cleavage of the bridge by Lewis bases** splits into two families: **symmetrical** cleavage by *large/bulky* bases (Me₃N, CO, PF₃, THF) gives two neutral adducts, B₂H₆ + 2L → 2H₃B·L; **unsymmetrical** cleavage by *small, strongly basic* amines (NH₃, MeNH₂, Me₂NH) gives an ionic product, B₂H₆ + 2NH₃ → [BH₂(NH₃)₂]⁺[BH₄]⁻. Heating the unsymmetrical product eliminates H₂ to give borazine (below).
-
-**Hydrides of heavier members:** BH₃ borane, (AlH₃)ₙ alane, (GaH₃)₂ gallane, (InH₃)ₙ indane — none forms by direct combination with H₂. Alane is polymeric with 6-coordinate Al through 3-centre-2-electron Al–H–Al bridges; gallane is dimeric like diborane; indane is polymeric in both vapour and solid. **Digallane Ga₂H₆** mirrors diborane's structure but decomposes above 253 K (Ga₂H₆ → 2Ga + 3H₂), so every one of its reactions must be run cold: with NH₃ at 195 K, HCl at 178 K, NMe₃ at 178 K, PH₃ at low temperature — the weaker, more diffuse Ga–H–Ga bridge is why it is so much less stable than boron's.
-
-Diborane itself has solid-state polymorphism worth knowing: it freezes at 108.3 K into an **α-form** (stable at low temperature) which converts to a **β-form** on warming toward the melting point — the same molecule, two distinct crystal packings, analogous in spirit to boron's own α/β allotropy (Part 5).
-
-**Higher boranes, named.** Beyond diborane, a genuine series of higher boranes exists, most obtained by controlled pyrolysis of B₂H₆ itself. Boron hydride chemistry was pioneered almost single-handedly by **Alfred Stock** between 1912 and 1936 — of the roughly 20 boranes reported since, about 11 are well characterised, falling into two clean families by melting/boiling point:
-
-| Borane | Family (by BₙHₙ₊ₓ) | M.p. (°C) | B.p. (°C) |
-|---|---|---:|---:|
-| B₂H₆ | *nido* (n+4) | −165 | −93 |
-| B₄H₁₀ | *arachno* (n+6) | −120 | 18 |
-| B₅H₉ (pentaborane-9) | *nido* (n+4) | −47 | 60 |
-| B₅H₁₁ (pentaborane-11) | *arachno* (n+6) | −122 | 65 |
-| B₆H₁₀ | *nido* (n+4) | −62 | 108 |
-| B₁₀H₁₄ (decaborane) | *nido* (n+4) | −100 | 213 |
-
-**B₅H₉ is the thermally most stable of the lower boranes**; **decaborane (B₁₀H₁₄) is solid at room temperature and unusually air-tolerant for a borane**, which is exactly why it was historically the most-studied higher borane — it can be handled without the special precautions diborane itself demands.
-
-Pyrolysis route (illustrative, not exhaustive): 2B₂H₆ →(≈100–120 °C) B₄H₁₀ + H₂, with further heating driving the sequence toward progressively larger cages as H₂ is eliminated — the general pattern throughout this family is that mild heating of a smaller borane builds a larger one with loss of hydrogen, mirroring how borazine itself forms from diborane's diammoniate (below) by the same elimination logic.
-
-**JEE Advanced / Olympiad Extension — Wade's rules and skeletal electron counting.** Neither of the two standard coaching sources cross-checked for this rebuild (ALLEN's Group 13–14 theory module, Prabhat Kumar's Boron & Carbon Family notes) names Wade's rules or STYX by name — this genuinely sits above the mainstream JEE Advanced syllabus and belongs here as an extension, not as core material. It is real, well-established chemistry, and worth knowing for Olympiad-level questions or the rare JEE Advanced question that borrows its logic without naming it.
-
-**The rule:** count total valence electrons (3 per B, 1 per H, plus/minus the ion's charge), convert to pairs, then subtract one pair for each terminal B–H bond (one per boron vertex) — what remains is the skeletal electron pair (SEP) count available for cage bonding. The SEP count classifies the cluster:
-
-| SEP relative to vertex count (n) | Classification | Structure |
+| Property | Boron | Aluminium |
 |---|---|---|
-| n+1 pairs | *closo* | Complete, closed deltahedron |
-| n+2 pairs | *nido* | Deltahedron missing one vertex |
-| n+3 pairs | *arachno* | Deltahedron missing two vertices |
-| n+4 pairs | *hypho* | Deltahedron missing three vertices |
+| Nature | hard covalent metalloid | metal |
+| Simple cation | B³⁺ absent | Al³⁺ common in solution |
+| Oxide | B₂O₃ acidic | Al₂O₃ amphoteric |
+| Hydroxide | B(OH)₃ weak Lewis acid | Al(OH)₃ amphoteric |
+| Halides | monomeric BX₃ | AlCl₃ dimerises as Al₂Cl₆ |
+| Hydride | molecular boranes | polymeric AlH₃ / complex hydrides |
 
-> **Worked example — classifying B₅H₉.** n = 5 borons. Total valence electrons: 5×3 (from B) + 9×1 (from H) = 15 + 9 = 24 electrons = 12 pairs. Of these, 5 pairs are used for the 5 terminal B–H bonds (one per boron), leaving 12 − 5 = 7 skeletal pairs. Compare 7 to n+1=6, n+2=7, n+3=8: **7 = n+2, so B₅H₉ is nido** — consistent with its formula already matching the BₙHₙ₊₄ nido pattern given in the table above, cross-checking the electron-counting method against the simpler formula-based rule.
+### 4.3 Diagonal relationship: B and Si
 
-**JEE Advanced / Olympiad Extension — Carboranes.** Carboranes are mixed boron-carbon cage clusters, formally derived by replacing one or more BH vertices in a borane cage with an isoelectronic CH vertex (a CH unit contributes the same number of skeletal electrons as a BH⁻ unit, keeping the cage electron count — and hence its closo/nido/arachno classification — unchanged). The best-known example is *ortho*-carborane, C₂B₁₀H₁₂, a closo cluster (icosahedral, 12 vertices, matching B₁₂H₁₂²⁻'s own closo icosahedral cage) that is remarkably thermally and chemically stable — carboranes are used as heat-resistant polymer components and in boron neutron-capture therapy research (Part 14) precisely because of this stability.
+Both are hard covalent elements; their oxides are acidic; their halides hydrolyse; their hydrides are volatile/reactive; and their oxoanions form chains, rings or networks. Both form stable fluoro complexes: **BF₄⁻** and **SiF₆²⁻**.
 
-**Borazine and boron nitride.** **Borazine (borazole), B₃N₃H₆** — "inorganic benzene." Isoelectronic with benzene (both 30 valence electrons, planar 6-ring), prepared by 3B₂H₆ + 6NH₃ →(450 K) 2B₃N₃H₆ + 12H₂, or from 3NH₄Cl + 3BCl₃ → trichloroborazine, reduced by NaBH₄. Colourless liquid, m.p. −5 to −6 °C, b.p. 53–56 °C, density 0.787 g/cm³. Its aromaticity is only ~36% that of benzene, because nitrogen (EN 3.0) holds the π density more than boron (EN 2.0) — delocalisation is uneven. Consequently borazine, unlike benzene, undergoes **addition**: B₃N₃H₆ + 3HCl → B₃N₃H₉Cl₃, with Cl⁻ adding to the electron-poor boron and H⁺ to the electron-rich nitrogen. It also hydrolyses (benzene does not): B₃N₃H₆ + 9H₂O →(Δ) 3H₃BO₃ + 3NH₃ + 3H₂. Because the ring alternates B and N, it has **4** dihalo derivatives where benzene has only 3 (ortho/meta/para) — a frequent counting trap.
+> **JEE TRAP.** Diagonal relationship means selected similarities, not identical chemistry. Boron is three-coordinate in BF₃, while silicon commonly reaches coordination number six in SiF₆²⁻.
 
-**Boron nitride, (BN)ₓ** — "inorganic graphite." B–N bond order 1.33 (same back-donation logic as B–F, Part 9). Hexagonal BN (h-BN) is sheet-like, alternating B/N hexagons stacked like graphite, but with layers **eclipsed** (each B directly above an N; graphite's are staggered) — B–N distance 145 pm, interlayer spacing 330 pm. h-BN is a soft lubricant ("white graphite," Part 14), an excellent electrical *insulator* yet an outstanding thermal conductor — the opposite of graphite's conductivity, because the polar B–N bond localises the π electrons on nitrogen instead of leaving them free. Cubic BN (borazon), made by compressing h-BN at high pressure/temperature, is the second-hardest known material after diamond and — unlike diamond — chemically stable toward hot iron, which is why it (not diamond) is used to machine steel.
+---
 
-## Part 11 — Borohydrides and complex hydride reducing agents
+## Part 5 — Elemental boron: preparation, structure and reactions
 
-**Complex hydrides as reducing agents:** LiAlH₄ (LAH) and NaBH₄ are both built on the same Group 13 tetrahedral MH₄⁻ anion (Part 3's electropositive-character discussion extends naturally here). LiAlH₄ is the far stronger reducing agent of the two — Al–H bonds are weaker/more hydridic than B–H bonds (aluminium is less electronegative than boron), so LAH reduces esters, carboxylic acids and amides all the way to alcohols/amines, while NaBH₄ is milder and typically stops at reducing aldehydes/ketones without touching esters. This reactivity gap is a direct, testable consequence of B vs Al electronegativity (Part 2's table) rather than an arbitrary fact to memorise.
+### 5.1 Preparation of amorphous boron
 
-**LiAlH₄'s substrate scope, in full** (the actual reason it's called a "universal" reducing agent): RCHO + 2[H] → RCH₂OH (aldehyde → 1° alcohol); R₂CO + 2[H] → RCHOHR (ketone → 2° alcohol); RCOCl + 4[H] → RCH₂OH + HCl (acyl chloride, all the way to alcohol); RCOOH + 4[H] → RCH₂OH + H₂O (carboxylic acid → alcohol, unlike NaBH₄); RCONH₂ + 4[H] → RCH₂NH₂ (amide → amine); RNO₂ + 6[H] → RNH₂ (nitro → amine); RC≡N + 4[H] → RCH₂NH₂ (nitrile → 1° amine). One notable exception: an isolated C=C double bond is **not** reduced by LiAlH₄ — only polarised multiple bonds (C=O, C≡N, N=O) are attacked, since the mechanism is nucleophilic hydride attack on an electrophilic centre, and a plain alkene carbon isn't electrophilic enough. LiAlH₄ is also water- and protic-solvent-sensitive in the extreme — it must be handled in ether, THF or similar aprotic solvents, reacting violently with even trace moisture (LiAlH₄ + 4H₂O → LiOH + Al(OH)₃ + 4H₂, an explosion hazard at scale, exactly analogous to diborane's own vigorous hydrolysis in Part 10).
+**Step 1: mineral to boric acid**
 
-## Part 12 — Aluminium compounds: chloride, alums and derived materials
+\[
+\mathrm{Ca_2B_6O_{11}\cdot5H_2O+4SO_2+16H_2O\rightarrow2Ca(HSO_3)_2+6H_3BO_3}
+\]
 
-**AlCl₃·6H₂O** is colourless and water-soluble; anhydrous AlCl₃ is deliquescent. You **cannot** obtain the anhydrous salt by heating the hydrate — 2AlCl₃·6H₂O →(Δ) Al₂O₃ + 6HCl + 9H₂O instead; anhydrous AlCl₃ needs Cl₂ on heated Al, or Al₂O₃ + 3C + 3Cl₂ → 2AlCl₃ + 3CO. In moist air: AlCl₃ + 3H₂O ⇌ Al(OH)₃ + 3HCl (white fumes). As a Lewis acid it absorbs ammonia: AlCl₃ + 6NH₃ → AlCl₃·6NH₃.
+**Step 2: dehydration**
 
-**Two qualitative-analysis tests worth memorising as a pair:** with NaOH, Al(OH)₃↓ forms and *dissolves in excess* NaOH (→ NaAlO₂) — this distinguishes Al³⁺ from Mg²⁺/Ca²⁺/Sr²⁺/Ba²⁺, whose hydroxides do not redissolve. With NH₄OH, Al(OH)₃↓ forms and *does not* dissolve in excess NH₄OH — this distinguishes Al³⁺ from Zn²⁺, whose hydroxide *does* redissolve (as the ammine complex).
+\[
+2\,\mathrm{H_3BO_3}\xrightarrow{\Delta}\mathrm{B_2O_3}+3\,\mathrm{H_2O}
+\]
 
-Hydrolysis makes AlCl₃ solution acidic: [Al(H₂O)₆]³⁺ ⇌ [Al(H₂O)₅OH]²⁺ + H⁺, and the hydroxo cation dimerises. With LiH: 4LiH + AlCl₃ → LiAlH₄ + 3LiCl, the standard LAH synthesis (Part 11). AlCl₃ is the classic **Friedel-Crafts catalyst** — alkylation via C₆H₆ + RCl + AlCl₃ → C₆H₅R + H⁺ + [AlCl₄]⁻, acylation via C₆H₆ + RCOCl + AlCl₃ → RCOC₆H₅ + H⁺ + [AlCl₄]⁻ (the acylium intermediate is resonance-stabilised, so it avoids the rearrangement that plagues alkylation).
+**Step 3: reduction**
 
-> **Trap — AlCl₃ is not a true catalyst in Friedel-Crafts reactions**, despite being called one. A genuine catalyst is regenerated unchanged at the end. Here, AlCl₃ is consumed stoichiometrically as [AlCl₄]⁻, one mole per mole of substrate — the tetrachloroaluminate anion is not decomposed back to free AlCl₃ + Cl⁻ under the reaction conditions. This is exactly why Friedel-Crafts reactions need at least a stoichiometric (often more than stoichiometric, to account for complexation with the product) quantity of AlCl₃, not a catalytic trace of it.
+\[
+\mathrm{B_2O_3+3Mg\xrightarrow{\Delta}2B+3MgO}
+\]
 
-**Alums.** General formula **M₂SO₄·M′₂(SO₄)₃·24H₂O** (M univalent, M′ trivalent), containing [M(H₂O)₆]⁺, [M′(H₂O)₆]³⁺ and SO₄²⁻ in the ratio 1:1:2. M can be K⁺, Na⁺, NH₄⁺, Rb⁺, Cs⁺, Tl⁺ — **not Li⁺**, which is too small for the lattice. M′ can be Al³⁺, Ti³⁺, V³⁺, Cr³⁺, Fe³⁺, Mn³⁺, Co³⁺, Ga³⁺. Named alums: potash (K₂SO₄·Al₂(SO₄)₃·24H₂O), chrome (…Cr₂(SO₄)₃…), ferric (…Fe₂(SO₄)₃…), ammonium ((NH₄)₂SO₄·Al₂(SO₄)₃·24H₂O). Alums are **double salts** — they dissociate completely in solution, so every ion gives its normal test (unlike a complex salt, whose coordinated ion is masked). Prepared by fusing equimolar M₂SO₄ and M′₂(SO₄)₃ then crystallising. Uses (Part 14): mordant in dyeing, germicide in water purification, coagulating agent for colloidal impurities.
+The crude product is washed with acid to remove magnesium oxide and residual magnesium.
 
-**Pseudo-alums** are the same general lattice type but with a *divalent* cation in place of the univalent one — general formula MSO₄·M′₂(SO₄)₃·24H₂O (M = Zn²⁺, Fe²⁺, Mg²⁺, etc.). They are structurally isomorphous with true alums (the crystal lattice doesn't distinguish the charge type as long as the ionic radii fit) but are not "alums" in the strict univalent-cation sense — a distinction worth knowing since exam questions sometimes ask you to identify the odd one out in a list of alum-like formulas by checking whether M is univalent or divalent.
+### 5.2 Preparation of crystalline high-purity boron
 
-**Burnt alum:** potash alum loses all its water of crystallisation on strong heating (≈473 K) to give the anhydrous salt K₂SO₄·Al₂(SO₄)₃, a white porous mass — used medicinally as a mild astringent/styptic.
+| Method | Reaction / principle | Product quality |
+|---|---|---|
+| Hydrogen reduction | 2BCl₃ + 3H₂ → 2B + 6HCl on heated W/Ta | crystalline, high purity |
+| Iodide decomposition | 2BI₃ → 2B + 3I₂ on hot filament | very high purity |
+| Borane pyrolysis | B₂H₆ → 2B + 3H₂ at high temperature | finely divided boron |
+| Electrolytic route | electrolysis of fused borate/oxide mixture | crystalline deposit |
 
-**"Fibrous alumina":** if the surface of aluminium metal is rubbed with mercury (amalgamation), the protective Al₂O₃ film can no longer form as a coherent layer — instead, loose white threads of aluminium hydroxide grow continuously on the amalgamated surface as the metal keeps reacting with moist air, since amalgamation prevents the passivating oxide from ever sealing the surface the way it does on ordinary aluminium (Part 6's passivation discussion). This "wool of aluminium" growth is the named, visible demonstration of just how reactive Al genuinely is once its protective film is disabled.
+### 5.3 Structure and physical properties
 
-## Part 13 — Complexes and organometallic chemistry
+Boron allotropes are built from **B₁₂ icosahedra**. Strong intra- and inter-icosahedral covalent bonding explains the high melting point, hardness and semiconductor behaviour.
 
-**Trialkyl/triaryl derivatives (R₃M):** made by Grignard-type routes, 3RMgX + MCl₃ → R₃M + 3MgXCl (M = B, Al, Ga), or by hydroboration for boron specifically (below). Like the trihalides, R₃B and R₃Al are electron-deficient at the metal and readily form Lewis adducts — R₃B·NR₃′ is the standard example of a simple donor-acceptor complex used to teach the concept before diborane's more complex 3c-2e bridging is introduced (Part 10).
+### 5.4 Chemical reactions of boron
 
-**Hydroboration**, the organic pay-off of diborane: B–H adds across C=C with boron on the *less* substituted carbon (anti-Markovnikov, syn addition) — CH₂=CH₂ + BH₃·THF → CH₃CH₂BH₂ → (CH₃CH₂)₃B. Oxidation (HBO): BR₃ + H₂O₂/OH⁻ → B(OH)₃ + 3ROH gives the anti-Markovnikov alcohol with no carbocation rearrangement. Protonolysis (HBR): BR₃ + 3CH₃COOH → 3RH + B(CH₃COO)₃ reduces the alkene to an alkane.
+| Reagent | Balanced reaction | Conditions / observation |
+|---|---|---|
+| Oxygen | 4B + 3O₂ → 2B₂O₃ | burns on strong heating |
+| Nitrogen | 2B + N₂ → 2BN | high temperature |
+| Chlorine | 2B + 3Cl₂ → 2BCl₃ | heated boron |
+| Sulphur | 2B + 3S → B₂S₃ | high temperature |
+| Fused NaOH | 2B + 6NaOH → 2Na₃BO₃ + 3H₂ | boron oxidised to +3 |
+| Conc. HNO₃ | B → H₃BO₃ with NO₂ formation | oxidative dissolution |
+| Metals | metal borides | high temperature |
 
-**Trimethylaluminium, Al₂(CH₃)₆**, is the organometallic parallel to Al₂Cl₆, but the bridge bonding differs sharply: chlorine bridges donate a genuine lone pair (3-centre-4-electron, Part 9), while methyl bridges have no lone pair to donate — instead a C–H σ-bond electron pair is shared across both aluminiums, making Al₂(CH₃)₆'s bridges **3-centre-2-electron**, structurally analogous to diborane's B–H–B bridges rather than to Al₂Cl₆'s own Cl bridges. This is a frequently tested "same molecule family, different bridge electron count" question — always check whether the bridging atom/group actually has a lone pair available before assuming 3c-4e.
-
-> **Worked Example — deriving the electron count in Al₂(CH₃)₆'s bridge.** Show that each Al–C(bridge)–Al unit in trimethylaluminium is a 3-centre-2-electron bond, and contrast this explicitly with the 3-centre-4-electron Al–Cl–Al bridge in Al₂Cl₆.
+> **WORKED EXAMPLE 5.1**
 >
-> Each terminal methyl carbon contributes a normal 2-electron Al–C bond (2c-2e), using one of aluminium's three valence electrons plus one from carbon's sp³ hybrid. For the *bridging* methyl groups, the CH₃⁻-type carbon has only ONE electron pair available for bonding to Al on the SAME orbital it uses for its terminal C–H bonds — there is no extra lone pair to donate to a second aluminium the way chlorine's third lone pair does in Al₂Cl₆. Instead, the single C–Al σ-bonding electron pair is delocalised over BOTH aluminium centres simultaneously: one electron pair, three atoms (Al–C–Al) = **3-centre-2-electron**, identical in electron-counting logic to diborane's B–H–B bridge (Part 10).
+> **Question.** In the reaction with fused NaOH, identify oxidation and reduction.
 >
-> **Contrast:** chlorine in Al₂Cl₆ has THREE lone pairs total; one is used for the normal terminal Al–Cl bond, and a SECOND, otherwise-unused lone pair is donated wholesale into the second aluminium's empty orbital — that donated pair plus the original bonding pair gives 4 electrons spread over the 3-atom Al–Cl–Al unit, i.e. 3-centre-4-electron. Methyl carbon has no such spare lone pair to donate, so it must fall back to sharing its single existing bonding pair — exactly like hydrogen does in diborane.
+> **Equation.** 2B + 6NaOH → 2Na₃BO₃ + 3H₂.
 >
-> **General rule:** whenever asked to classify a bridging bond as 3c-2e or 3c-4e, check whether the bridging atom/group has an independent lone pair beyond what its terminal bonds already use. Halogens (Cl, Br, I) and O/N/P-donors typically do (→ 3c-4e); H and alkyl/aryl carbanions typically do not (→ 3c-2e).
+> **Reasoning.** B changes 0 → +3 and is oxidised. Hydrogen changes +1 → 0 and is reduced.
 >
-> **Answer:** Al₂(CH₃)₆'s bridge is 3c-2e (like B₂H₆); Al₂Cl₆'s bridge is 3c-4e (like a normal donor-acceptor adduct) — same general "dimer via bridging" strategy, two structurally different electron-counting outcomes.
+> **Final answer.** Boron is the reducing agent.
 
-## Part 14 — Applications
+---
 
-Group 13 chemistry's real-world uses are woven throughout Parts 1–13; this section consolidates them into one lookup rather than duplicating the underlying chemistry (each entry cross-links back to where it is actually explained):
+## Part 6 — Aluminium, gallium, indium and thallium
 
-- **Nuclear shielding and control rods** — the ¹⁰B isotope (19% of natural boron, Part 2) has an unusually high cross-section for absorbing thermal neutrons, ¹⁰B(n,α)⁷Li; metal borides are used as neutron-absorbing shields and reactor control rods, and the same nuclear property underlies boron neutron-capture therapy research using carboranes (Part 10).
-- **Bulletproof armour and aerospace composites** — boron carbide, B₄C ("norbide"), from 4B + C →(electric furnace) B₄C (Part 5), is used in lightweight ceramic armour; separately, high-strength boron fibres (drawn boron, not B₄C) are used in bullet-proof vests and in light composite materials for aircraft.
-- **Abrasives and refractories** — α-Al₂O₃ (corundum) and cubic boron nitride (borazon) both rival diamond in hardness (Mohs 9, Part 7); borazon's chemical stability toward hot iron (unlike diamond) is why it, not diamond, is used to machine steel.
-- **Lubricants and insulation** — hexagonal BN ("white graphite," Part 10) is a soft solid lubricant and an excellent electrical insulator despite being an outstanding thermal conductor.
-- **Rocket fuel research** — diborane's strongly exothermic combustion (ΔH = −1976 kJ/mol, Part 10) made it a studied (though ultimately impractical) high-energy rocket propellant.
-- **Industrial catalysis** — AlCl₃ as the stoichiometric Lewis-acid promoter in Friedel-Crafts alkylation/acylation (Part 12).
-- **Metallurgy** — the thermite (Goldschmidt) reaction, Al reducing the oxide of a less reactive metal (Fe₂O₃, Cr₂O₃, MnO₂, Part 6), is used for on-site welding of railway track and for producing chromium/manganese metal.
-- **Water treatment and dyeing** — alums act as coagulants for colloidal impurities in water purification and as mordants in dyeing, where Al(OH)₃ deposits into the fibre and adsorbs the dye (Part 12).
-- **Glass, ceramics and adsorbents** — borax's glassy melt is used in the bead test (Part 8); borax and boric acid together are the main industrial route to heat-resistant glasses (e.g. Pyrex), glass-wool and fibreglass, and borax is separately used as a soldering flux and in scratch/stain-resistant glazes for earthenware; γ-Al₂O₃'s high surface area makes it a dehydrating agent, catalyst support and chromatography adsorbent (Part 7).
-- **Antiseptic use** — dilute aqueous orthoboric acid is a traditional mild antiseptic (Part 8), historically also used as an antiseptic talcum powder, though this specific use has fallen out of favour due to occasional skin irritation.
-- **Aluminium in industry and everyday life** — beyond its extraction and metallurgical uses above, aluminium's high tensile strength combined with high electrical and thermal conductivity (roughly twice copper's conductivity on a weight-for-weight basis) is why it is drawn into wires, rolled into foil and sheet, and alloyed with Cu, Mn, Mg, Si or Zn for packaging, utensils, construction and the aerospace/transport industry.
-- **Biological/toxicological relevance** — Tl⁺'s close ionic-radius match to K⁺ (150 pm vs 138 pm, Part 2) is the chemical basis of thallium's toxicity, since it is taken up by K⁺ transport pathways in place of the real ion.
+### 6.1 Aluminium: apparent inertness and real reactivity
+
+Aluminium has a strongly negative electrode potential, but a thin adherent Al₂O₃ film blocks further reaction. Scratching, powdering or amalgamating the metal exposes fresh aluminium and reveals its high reactivity.
+
+### 6.2 Aluminium reaction table
+
+| Reaction type | Balanced equation | Condition / significance |
+|---|---|---|
+| With acid | 2Al + 6HCl → 2AlCl₃ + 3H₂ | oxide film must be penetrated |
+| With alkali | 2Al + 2NaOH + 6H₂O → 2Na[Al(OH)₄] + 3H₂ | amphoteric metal behaviour |
+| With oxygen | 4Al + 3O₂ → 2Al₂O₃ | highly exothermic |
+| With nitrogen | 2Al + N₂ → 2AlN | strong heating |
+| With chlorine | 2Al + 3Cl₂ → 2AlCl₃ | dry chlorine, heated |
+| Thermite | 2Al + Fe₂O₃ → Al₂O₃ + 2Fe | very high temperature; molten iron |
+
+> **EXCEPTION.** Concentrated HNO₃ passivates aluminium by reinforcing the oxide film. Do not write H₂ evolution under ordinary conditions.
+
+### 6.3 Gallium, indium and thallium — comparison
+
+- Gallium has an unusually low melting point because its solid structure contains paired Ga atoms and weak inter-pair interactions.
+- Ga(I) and In(I) are less stable than their +3 states and may disproportionate.
+- Tl(I) is stable; Tl(III) is oxidising.
+
+> **WORKED EXAMPLE 6.1**
+>
+> **Question.** Why does gallium melt in the hand but boil only at a very high temperature?
+>
+> **Reasoning.** Weak interactions between paired units are disrupted at low temperature during melting, but complete separation into gaseous atoms requires breaking much stronger bonding interactions.
+>
+> **Final answer.** Low melting point and high boiling point arise from different structural energy requirements.
+
+### 6.4 Extraction of aluminium
+
+#### Bayer process — purification of bauxite
+
+1. Digest crushed bauxite with hot concentrated NaOH under pressure.
+2. Amphoteric alumina dissolves as sodium aluminate; Fe₂O₃ remains as red mud.
+3. Dilution/seeding precipitates Al(OH)₃.
+4. Calcination gives pure Al₂O₃.
+
+\[
+\mathrm{Al_2O_3+2NaOH+3H_2O\rightarrow2Na[Al(OH)_4]}
+\]
+
+\[
+\mathrm{Na[Al(OH)_4]\rightarrow Al(OH)_3\downarrow+NaOH}
+\]
+
+\[
+2\,\mathrm{Al(OH)_3}\xrightarrow{\Delta}\mathrm{Al_2O_3}+3\,\mathrm{H_2O}
+\]
+
+#### Hall–Héroult process — electrolytic reduction
+
+Al₂O₃ is dissolved in molten cryolite; CaF₂ may be added to improve fluidity. The electrolyte lowers the working temperature and increases conductivity.
+
+**Cathode**
+
+\[
+\mathrm{Al^{3+}+3e^-\rightarrow Al(l)}
+\]
+
+**Anode (net carbon consumption)**
+
+\[
+\mathrm{C+2O^{2-}\rightarrow CO_2+4e^-}
+\]
+
+> **JEE TRAP.** Aqueous electrolysis cannot produce aluminium because water is reduced preferentially.
+
+---
+
+## Part 7 — Oxides, hydroxides and boric acid
+
+### 7.1 Acid–base gradation
+
+| Compound | Character | Representative reaction |
+|---|---|---|
+| B₂O₃ | acidic | B₂O₃ + CaO → Ca(BO₂)₂ |
+| Al₂O₃ | amphoteric | reacts with both HCl and NaOH |
+| Ga₂O₃ | amphoteric | similar to Al₂O₃, less acidic |
+| In₂O₃ | weakly amphoteric/basic | greater basicity |
+| Tl₂O / TlOH | basic | Tl(I) resembles a heavy alkali-metal cation |
+
+### 7.2 Aluminium oxide and hydroxide
+
+**With acid**
+
+\[
+\mathrm{Al_2O_3+6HCl\rightarrow2AlCl_3+3H_2O}
+\]
+
+\[
+\mathrm{Al(OH)_3+3H^+\rightarrow Al^{3+}+3H_2O}
+\]
+
+**With base**
+
+\[
+\mathrm{Al_2O_3+2OH^-+3H_2O\rightarrow2[Al(OH)_4]^-}
+\]
+
+\[
+\mathrm{Al(OH)_3+OH^-\rightarrow[Al(OH)_4]^-}
+\]
+
+### 7.3 Boric acid, H₃BO₃
+
+#### Structure
+
+Boric acid contains planar BO₃ units. Molecules form hydrogen-bonded layers, accounting for its flaky feel and easy cleavage.
+
+#### Nature of acidity
+
+Boric acid is **monobasic but not a conventional proton donor**. It accepts OH⁻ from water:
+
+\[
+\mathrm{B(OH)_3+2H_2O\rightleftharpoons[B(OH)_4]^-+H_3O^+}
+\]
+
+#### Preparation
+
+| Method | Equation |
+|---|---|
+| From borax | Na₂B₄O₇·10H₂O + 2HCl → 4H₃BO₃ + 2NaCl + 5H₂O |
+| From boron halide | BCl₃ + 3H₂O → H₃BO₃ + 3HCl |
+
+#### Heating sequence
+
+\[
+\mathrm{H_3BO_3\xrightarrow{373K}HBO_2+H_2O}
+\]
+
+\[
+4\,\mathrm{HBO_2}\xrightarrow{\Delta}\mathrm{H_2B_4O_7}+\mathrm{H_2O}
+\]
+
+\[
+\mathrm{H_2B_4O_7\xrightarrow{red\ heat}2B_2O_3+H_2O}
+\]
+
+#### Polyhydric alcohol effect
+
+Glycerol or mannitol forms a chelated borate complex, increasing acidity and permitting titration with NaOH.
+
+> **WORKED EXAMPLE 7.1**
+>
+> **Question.** Why is H₃BO₃ monobasic although it contains three OH groups?
+>
+> **Reasoning.** It does not lose three protons. One boron centre accepts one OH⁻ to form [B(OH)₄]⁻, producing one H₃O⁺ equivalent.
+>
+> **Final answer.** Basicity = 1.
+
+---
+
+## Part 8 — Borax, borates and borax-bead chemistry
+
+### 8.1 Formula and structure
+
+Conventional formula:
+
+\[
+\mathrm{Na_2B_4O_7\cdot10H_2O}
+\]
+
+More informative structural representation:
+
+\[
+\mathrm{Na_2[B_4O_5(OH)_4]\cdot8H_2O}
+\]
+
+The tetraborate ion contains **two trigonal sp² boron centres and two tetrahedral sp³ boron centres**.
+
+### 8.2 Hydrolysis and buffer action
+
+Borax solution is alkaline because tetraborate hydrolyses to a mixture of boric acid and tetrahydroxyborate. This conjugate pair buffers near the pKa of boric acid.
+
+### 8.3 Action of heat
+
+\[
+\mathrm{Na_2B_4O_7\cdot10H_2O\xrightarrow{\Delta}Na_2B_4O_7+10H_2O}
+\]
+
+\[
+\mathrm{Na_2B_4O_7\xrightarrow{strong\ heat}2NaBO_2+B_2O_3}
+\]
+
+The B₂O₃ forms a transparent glassy bead that dissolves coloured metal oxides.
+
+### 8.4 Borax-bead test — reaction architecture
+
+| Stage | Chemical event | Purpose |
+|---|---|---|
+| 1 | loss of water | dry bead formation |
+| 2 | Na₂B₄O₇ → 2NaBO₂ + B₂O₃ | produces glass-forming acidic oxide |
+| 3 | MO + B₂O₃ → M(BO₂)₂ | coloured metaborate forms |
+| 4 | oxidising/reducing flame | oxidation state and colour may change |
+
+| Ion | Typical bead colour (oxidising flame) | High-yield note |
+|---|---|---|
+| Co²⁺ | deep blue | highly characteristic |
+| Cr³⁺ | green | chromium borate/metaborate colour |
+| Cu²⁺ | blue-green | may become red/opaque in reducing flame |
+| Mn²⁺ | amethyst/violet | oxidation-state dependent |
+| Fe³⁺ | yellow-brown | weaker colour than cobalt |
+| Ni²⁺ | brown | less diagnostic |
+
+> **JEE TRAP.** Colourless metaborates do not provide a useful bead test. The test is mainly valuable for coloured transition-metal ions.
+
+> **WORKED EXAMPLE 8.1**
+>
+> **Question.** Why does one mole of borax consume two moles of strong acid in its usual acidification reaction?
+>
+> **Reasoning.** Acid converts tetraborate-derived basic borate species into four molecules of boric acid; two proton equivalents are required per tetraborate formula unit.
+>
+> **Reaction.** Na₂B₄O₇·10H₂O + 2HCl → 4H₃BO₃ + 2NaCl + 5H₂O.
+>
+> **Final answer.** Borax : HCl = **1 : 2**.
+
+### Reaction map — borax to elemental boron
+
+\[
+\mathrm{Borax\xrightarrow{HCl}H_3BO_3\xrightarrow{\Delta}B_2O_3\xrightarrow{Mg,\Delta}B}
+\]
+
+# 3. Group 13 — Boron Family: premium textbook, Parts 9–15
+
+> **CONTINUITY MAP.** Parts 1–8 established periodic trends, oxidation-state logic, elemental boron, aluminium, oxides, boric acid and borax. Parts 9–15 now apply those principles to halides, hydrides, boranes, complex hydrides, aluminium compounds and examination synthesis.
+
+## Part 9 — Halides: electron deficiency, back bonding and hydrolysis
+
+### 9.1 The central question
+
+Why is BF₃, despite containing the most electronegative halogen, the **weakest Lewis acid** among BX₃? The answer is not inductive effect alone; it is the competition between electron withdrawal and pπ–pπ back donation.
+
+### 9.2 Preparation of boron trihalides
+
+| Halide | Preparation | Conditions |
+|---|---|---|
+| BF₃ | B₂O₃ + 3CaF₂ + 3H₂SO₄ → 2BF₃ + 3CaSO₄ + 3H₂O | heated, anhydrous apparatus |
+| BCl₃ | 2B + 3Cl₂ → 2BCl₃ | direct chlorination |
+| BCl₃/BBr₃ | B₂O₃ + 3C + 3X₂ → 2BX₃ + 3CO | high temperature |
+| BI₃ | direct combination of B and I₂ | heated, controlled conditions |
+
+### 9.3 Structure and electron deficiency of BX₃
+
+BX₃ molecules are trigonal planar with sp² boron and an empty perpendicular 2p orbital. Boron has only six electrons around it and accepts a donor pair to form tetrahedral adducts such as F₃B←NH₃ and BF₄⁻.
+
+### 9.4 Back bonding in BF₃
+
+A filled fluorine 2p orbital overlaps with the empty boron 2p orbital. The π donation is delocalised over all three B–F bonds.
+
+| Evidence | Observation | Interpretation |
+|---|---|---|
+| B–F length in free BF₃ | about 130 pm | shorter than a normal single bond |
+| B–F bond energy | unusually high | partial π character |
+| B–F length in H₃N·BF₃ | about 138 pm | adduct formation removes the empty p orbital and weakens back bonding |
+| Equality of all three bonds | identical bond lengths | delocalised π interaction, not one fixed double bond |
+
+### 9.5 Lewis acidity order
+
+\[
+\boxed{\mathrm{BF_3<BCl_3<BBr_3<BI_3}}
+\]
+
+- B and F both use compact 2p orbitals: strongest overlap and strongest back donation.
+- Cl, Br and I use progressively larger p orbitals: poorer overlap with B 2p.
+- Weaker back donation leaves boron more electron deficient, increasing Lewis acidity.
+
+> **JEE TRAP.** Do not predict Lewis acidity only from the −I effect of halogens. That gives the wrong order.
+
+### 9.6 Hydrolysis
+
+**BCl₃, BBr₃ and BI₃**
+
+\[
+\mathrm{BX_3+3H_2O\rightarrow H_3BO_3+3HX}
+\]
+
+**BF₃ — fluoroborate complication**
+
+\[
+\mathrm{4BF_3+3H_2O\rightarrow H_3BO_3+3HBF_4}
+\]
+
+Stable BF₄⁻ formation means hydrolysis is not represented simply as complete conversion of every BF₃ molecule to boric acid.
+
+### 9.7 Aluminium chloride and dimerisation
+
+Anhydrous AlCl₃ is electron deficient. In non-donor media it forms Al₂Cl₆ using two bridging chlorines. Terminal Al–Cl bonds are shorter than bridge bonds.
+
+\[
+\mathrm{2AlCl_3\rightleftharpoons Al_2Cl_6}
+\]
+
+| Environment | Predominant behaviour |
+|---|---|
+| non-polar solvent / lower-temperature vapour | dimeric Al₂Cl₆ |
+| high-temperature vapour | monomeric AlCl₃ increases |
+| water | hydrolysis/solvation; dimer does not persist |
+| Friedel–Crafts system | strong Lewis-acid activation of acyl/alkyl halide |
+
+### 9.8 Gallium, indium and thallium halides
+
+- GaCl₃ forms a dimer analogous to Al₂Cl₆.
+- “GaCl₂” and “InCl₂” may be mixed-valence salts rather than true +2 compounds.
+- Tl(I) halides are stable ionic solids.
+- TlI₃ is represented as Tl⁺(I₃)⁻; Tl³⁺ and I⁻ are mutually redox-incompatible.
+
+> **WORKED EXAMPLE 9.1**
+>
+> **Question.** Arrange BF₃, BCl₃, BBr₃ and BI₃ in increasing Lewis acidity.
+>
+> **Concept tested.** pπ–pπ back bonding.
+>
+> **Reasoning.** Back donation is strongest for 2p(F)–2p(B) and decreases as the donor p orbital becomes larger.
+>
+> **Final answer.** **BF₃ < BCl₃ < BBr₃ < BI₃.**
+>
+> **JEE trap.** Electronegativity alone predicts the opposite and is therefore insufficient.
+
+> **WORKED EXAMPLE 9.2**
+>
+> **Question.** Why does AlCl₃ dimerise but BCl₃ does not?
+>
+> **Reasoning.** Aluminium is large enough to accept bridging chloride donation and become four-coordinate. Boron is too small; efficient B–Cl π interaction and steric/electronic constraints favour monomeric trigonal BCl₃.
+>
+> **Final answer.** AlCl₃ forms Al₂Cl₆; BCl₃ remains monomeric.
+
+### Halide reaction map
+
+\[
+\mathrm{B\xrightarrow{X_2}BX_3\xrightarrow{H_2O}H_3BO_3}
+\]
+
+\[
+\mathrm{BF_3\xrightarrow{F^-}BF_4^-\qquad AlCl_3\xrightleftharpoons[high\ T]{low\ T}Al_2Cl_6}
+\]
+
+### Rapid revision — Part 9
+
+- BX₃: trigonal planar, sp², electron deficient.
+- Lewis acidity: BF₃ < BCl₃ < BBr₃ < BI₃.
+- AlCl₃ dimerises; BCl₃ does not.
+- TlI₃ = Tl⁺I₃⁻.
+
+---
+
+## Part 10 — Boranes, diborane, borazine and boron nitride
+
+### 10.1 Why BH₃ does not remain monomeric
+
+BH₃ has only six electrons around boron. Two BH₃ units combine to form B₂H₆, using two bridging hydrogens and two three-centre-two-electron bonds.
+
+### 10.2 Preparation of diborane
+
+| Method | Balanced equation | Conditions |
+|---|---|---|
+| Reduction of BF₃ etherate | 4BF₃·OEt₂ + 3LiAlH₄ → 2B₂H₆ + 3LiAlF₄ + 4OEt₂ | dry ether |
+| Oxidation of borohydride | 2NaBH₄ + I₂ → B₂H₆ + H₂ + 2NaI | diglyme |
+| Laboratory hydride route | boron halide + metal hydride | strictly anhydrous |
+
+### 10.3 Structure and bonding of B₂H₆
+
+| Feature | Value / description |
+|---|---|
+| Terminal B–H bonds | four normal 2c–2e bonds |
+| Bridge B–H–B bonds | two 3c–2e bonds |
+| Bridge hydrogen | shares one electron pair between two B atoms |
+| Electron deficiency | insufficient electrons for seven ordinary 2c–2e bonds |
+| Shape | two bridging H atoms lie above and below the B–B region |
+
+> **CORE THEORY.** In a 3c–2e bond, two electrons occupy a bonding molecular orbital spread over B–H–B. “Banana bond” is a shape description, not a different electron count.
+
+### 10.4 Reactions of diborane
+
+| Reaction type | Balanced equation | Condition / observation |
+|---|---|---|
+| Combustion | B₂H₆ + 3O₂ → B₂O₃ + 3H₂O | highly exothermic |
+| Hydrolysis | B₂H₆ + 6H₂O → 2H₃BO₃ + 6H₂ | vigorous |
+| Alkali hydrolysis | B₂H₆ + 6NaOH → 2Na₃BO₃ + 6H₂ | hydrogen evolved |
+| Chlorination | B₂H₆ + 6Cl₂ → 2BCl₃ + 6HCl | vigorous |
+| Alcoholysis | B₂H₆ + 6ROH → 2B(OR)₃ + 6H₂ | borate ester formed |
+| Lewis-base adduct | B₂H₆ + 2CO → 2BH₃·CO | elevated pressure/temperature |
+| Borohydride formation | B₂H₆ + 2LiH → 2LiBH₄ | hydride addition |
+
+### 10.5 Diborane with ammonia
+
+The product depends strongly on temperature and stoichiometry. Low-temperature adducts and the diammoniate of diborane form first; controlled heating can produce borazine, while stronger heating ultimately gives BN.
+
+\[
+\mathrm{3B_2H_6+6NH_3\xrightarrow{\Delta}2B_3N_3H_6+12H_2}
+\]
+
+### 10.6 Borazine
+
+Borazine, B₃N₃H₆, is planar and isoelectronic with benzene, but B–N bond polarity makes it less aromatic and more reactive toward polar reagents.
+
+| Comparison | Benzene | Borazine |
+|---|---|---|
+| Ring atoms | C₆ | alternating B₃N₃ |
+| Bond polarity | low | Bδ⁺–Nδ⁻ |
+| Aromatic stabilisation | strong | weaker |
+| Hydrolysis | resistant | readily hydrolysed |
+
+### 10.7 Boron nitride
+
+| Form | Structure | Property/use |
+|---|---|---|
+| h-BN | layered hexagonal, graphite-like | lubricant, electrical insulator, thermally conductive |
+| c-BN | tetrahedral diamond-like network | very hard abrasive; stable toward hot iron |
+
+> **WORKED EXAMPLE 10.1**
+>
+> **Question.** Count the 2c–2e and 3c–2e bonds in B₂H₆.
+>
+> **Reasoning.** Four terminal B–H bonds are ordinary; two B–H–B bridges are multicentre.
+>
+> **Final answer.** **4 two-centre bonds and 2 three-centre bonds.**
+
+> **WORKED EXAMPLE 10.2**
+>
+> **Question.** Calculate H₂ at STP from 5.6 g B₂H₆ (M = 27.7 g mol⁻¹) on complete hydrolysis.
+>
+> **Equation.** B₂H₆ + 6H₂O → 2H₃BO₃ + 6H₂.
+>
+> **Calculation.** n(B₂H₆)=5.6/27.7=0.202 mol; n(H₂)=1.213 mol; V≈27.2 L at 22.4 L mol⁻¹.
+>
+> **Final answer.** **≈27.2 L H₂.**
+
+### 10.8 Higher boranes and cage classification — JEE Advanced/Olympiad extension
+
+| Family | General relationship | Cage description |
+|---|---|---|
+| closo | skeletal pairs = n+1 | complete deltahedron |
+| nido | n+2 | one vertex missing |
+| arachno | n+3 | two vertices missing |
+| hypho | n+4 | three vertices missing |
+
+This material should be treated as advanced extension after core diborane chemistry, not as a replacement for basic bonding.
+
+---
+
+## Part 11 — Borohydrides and complex hydrides
+
+### 11.1 Sodium borohydride
+
+NaBH₄ contains tetrahedral BH₄⁻. It is a comparatively mild hydride donor and is commonly used in protic or moderately polar media for aldehydes and ketones.
+
+### 11.2 Lithium aluminium hydride
+
+LiAlH₄ contains tetrahedral AlH₄⁻. The Al–H bond is more hydridic than B–H, making LiAlH₄ a stronger and less selective reducing agent. It must be handled under strictly anhydrous conditions.
+
+### 11.3 Comparison
+
+| Feature | NaBH₄ | LiAlH₄ |
+|---|---|---|
+| Hydride donor strength | moderate | very strong |
+| Moisture sensitivity | lower | very high |
+| Typical solvent | alcohol/water-compatible systems in controlled use | dry ether/THF |
+| Aldehydes/ketones | reduced | reduced |
+| Esters/acids/amides | usually not under ordinary conditions | generally reduced |
+| Handling | easier | strictly anhydrous |
+
+**Hydrolysis of LiAlH₄**
+
+\[
+\mathrm{LiAlH_4+4H_2O\rightarrow LiOH+Al(OH)_3+4H_2}
+\]
+
+> **JEE TRAP.** Never write an oxygen-unbalanced hydrolysis equation. Count four water molecules for one LiAlH₄ in the minimal balanced form above.
+
+---
+
+## Part 12 — Important aluminium compounds
+
+### 12.1 Aluminium chloride
+
+- Anhydrous AlCl₃ is covalent and Lewis acidic.
+- It dimerises in non-donor environments.
+- Hydrated aluminium chloride behaves as an ionic aqua complex and hydrolyses, making solution acidic.
+
+### 12.2 Alumina and aluminium hydroxide
+
+| Form | Preparation/condition | Main use |
+|---|---|---|
+| γ-Al₂O₃ | dehydration of Al(OH)₃ at moderate temperature | catalyst support, adsorbent |
+| α-Al₂O₃ | strong calcination near 1000 °C | abrasive, refractory, corundum |
+| Al(OH)₃ | precipitation from Al³⁺ | amphoteric hydroxide, water treatment |
+
+### 12.3 Alums
+
+General type:
+
+\[
+\mathrm{M^IM^{III}(SO_4)_2\cdot12H_2O}
+\]
+
+Examples include potash alum KAl(SO₄)₂·12H₂O, ammonium alum and chrome alum. Alums are double salts; in water they dissociate into constituent ions.
+
+### 12.4 Water treatment
+
+Aluminium sulphate/alum hydrolyses to gelatinous Al(OH)₃, which traps suspended particles by flocculation.
+
+---
+
+## Part 13 — Complexes and organometallic compounds
+
+### 13.1 Important complexes
+
+| Species | Geometry | Significance |
+|---|---|---|
+| BF₄⁻ | tetrahedral | stable fluoro complex of boron |
+| BH₄⁻ | tetrahedral | hydride donor |
+| AlH₄⁻ | tetrahedral | stronger hydride donor |
+| AlF₆³⁻ | octahedral | high coordination of aluminium |
+| [Al(H₂O)₆]³⁺ | octahedral | acidic aqua ion |
+
+### 13.2 Hydroboration–oxidation
+
+Hydroboration adds B–H across C=C in a concerted syn process. Boron attaches to the less substituted carbon; oxidation replaces C–B by C–OH, giving an anti-Markovnikov alcohol without carbocation rearrangement.
+
+\[
+\mathrm{alkene\xrightarrow{BH_3\cdot THF}trialkylborane\xrightarrow{H_2O_2/OH^-}alcohol}
+\]
+
+### 13.3 Organoaluminium compounds
+
+Al₂(CH₃)₆ contains terminal and bridging methyl groups. The bridge is electron deficient and is described by a 3c–2e interaction, unlike the 3c–4e chloride bridge in Al₂Cl₆.
+
+> **WORKED EXAMPLE 13.1**
+>
+> **Question.** Contrast the bridge bonds in Al₂(CH₃)₆ and Al₂Cl₆.
+>
+> **Final answer.** Bridging CH₃ gives a 3c–2e interaction; bridging Cl donates a lone pair and gives a 3c–4e interaction.
+
+---
+
+## Part 14 — Applications and modern materials
+
+| Material/compound | Chemistry behind the use | Application |
+|---|---|---|
+| Borosilicate glass | B₂O₃ lowers thermal expansion | laboratory glassware and cookware |
+| B₄C | hard covalent solid; neutron absorption | armour, abrasives, reactor control |
+| ¹⁰B compounds | high neutron-capture cross-section | neutron shielding and BNCT research |
+| h-BN | layered, insulating, thermally conductive | lubricant and thermal-management ceramic |
+| c-BN | diamond-like, very hard | high-temperature cutting tools |
+| Boron fibres | low density and high stiffness | aerospace composites |
+| Aluminium alloys | low density, protective oxide | transport and structural materials |
+| GaN/GaAs | tunable semiconductor band structure | LEDs, laser diodes, high-frequency electronics |
+| ITO (indium tin oxide) | conductive and transparent | touchscreens and displays |
+| Tl(I) salts | K⁺ mimicry and high toxicity | no routine student-lab use; toxicology relevance |
+
+> **SAFETY NOTE.** Thallium compounds are highly toxic because Tl⁺ can enter biological K⁺ transport pathways.
+
+---
 
 ## Part 15 — Examination consolidation
 
-**Complete named-reaction reference — Group 13 element reactivity.** A consolidated, exam-ready reference of every named/numbered reaction touching Group 13 elements directly with common reagents, gathered in one place rather than scattered across earlier Parts:
+### 15.1 One-page master map
 
-**Boron with non-metals (amorphous form, all previously introduced individually in Part 5, restated here as a single lookup table):**
+**Boron:** covalent → electron deficient → BX₃, boranes, multicentre bonding.
 
-| Reagent | Product | Condition |
-|---|---|---|
-| O₂ | B₂O₃ | 700 °C |
-| N₂ | BN | Very high T |
-| S | B₂S₃ | 1200 °C |
-| C | B₄C | Electric furnace |
-| F₂, Cl₂, Br₂, I₂ | BX₃ | Direct combination |
-| NH₃ | BN | Very high T |
+**Aluminium:** Al³⁺ stable → amphoteric oxide/hydroxide → strong reducing metal protected by oxide film.
 
-**Boron with acids/alkali:**
+**Ga/In:** +1 appears but often disproportionates.
 
-| Reagent | Product |
-|---|---|
-| Conc. HNO₃ | H₃BO₃ + NO₂ |
-| Conc. H₂SO₄ | H₃BO₃ + SO₂ |
-| Fused NaOH | Na₃BO₃ + H₂ |
+**Thallium:** +1 dominant → Tl(III) oxidising.
 
-**Aluminium's complete reactivity table** (consolidating Part 6's prose into lookup form):
+### 15.2 Complete high-yield orders
 
-| Reagent | Product | Notes |
-|---|---|---|
-| Dil. HCl / dil. H₂SO₄ | AlCl₃ / Al₂(SO₄)₃ + H₂ | Standard dissolution |
-| Conc. HNO₃ | — (no reaction) | Passivation, protective oxide film |
-| NaOH (aq) | NaAlO₂ + H₂ | Amphoteric dissolution |
-| N₂ (hot) | AlN | Al absorbs N₂ at high T |
-| O₂ (hot) | Al₂O₃ | Highly exothermic |
-| Cl₂ (dry, heated) | AlCl₃ (anhydrous) | Direct halogenation route |
-| Less reactive metal oxide (MnO₂, Cr₂O₃, Fe₂O₃) | Al₂O₃ + M | Thermite/Goldschmidt reduction |
-| Steam | Al(OH)₃ + H₂ | Very slow; no reaction with cold water |
+1. Radius: **B < Ga < Al < In < Tl**.
+2. IE₁: **In < Al < Ga < Tl < B**.
+3. Electronegativity: **Al < Ga < In < Tl < B**.
+4. +1 stability: **Ga < In < Tl**.
+5. +3 stability: **Tl < In < Ga < Al ≈ B**.
+6. Oxide acidity: **B₂O₃ > Al₂O₃ > Ga₂O₃ > In₂O₃ > Tl oxides**.
+7. Lewis acidity of BX₃: **BF₃ < BCl₃ < BBr₃ < BI₃**.
+8. Hydride thermal stability: decreases down the group.
+9. Reducing strength of M(I): **Ga(I) > In(I) > Tl(I)**.
+10. Oxidising strength of M(III): increases down the group; **Tl(III)** strongest.
 
-> **Worked Example — a multi-step "identify the sequence" problem.** Element M reacts with dilute HCl to give a colourless gas and a salt solution; the same element, when treated with concentrated HNO₃, shows no visible reaction. When M's oxide is heated with powdered chromium(III) oxide, a vigorous exothermic reaction gives molten chromium metal. Identify M and write all three equations.
->
-> The "no reaction with conc. HNO₃ despite reacting with dilute HCl" signature is the passivation behaviour unique to a small set of metals (Al, Fe, Cr) in this syllabus — combined with the final clue (reducing Cr₂O₃ to chromium metal, a classic thermite-type reduction), **M = aluminium**.
->
-> 1. 2Al + 6HCl → 2AlCl₃ + 3H₂↑ (colourless gas = H₂)
-> 2. Al + conc. HNO₃ → no reaction (passivation, protective Al₂O₃ layer)
-> 3. Cr₂O₃ + 2Al → Al₂O₃ + 2Cr (thermite-type reduction, highly exothermic)
->
-> **General method:** "reacts with dilute acid, passive in concentrated oxidising acid" is a reusable identification signature for Al, Fe or Cr specifically — narrow further using any accompanying clue (here, the successful thermite reduction, which rules out Fe and Cr acting as the reducing agent since they are less reactive than Al on the activity series).
+### 15.3 Complete reaction sheet
 
-**Three fully worked examples spanning extraction, buffers and qualitative analysis.**
+\[
+\mathrm{Borax\xrightarrow{HCl}H_3BO_3\xrightarrow{\Delta}B_2O_3\xrightarrow{Mg}B}
+\]
 
-> **Worked Example — yield calculation through the colemanite extraction route.** 100 kg of pure colemanite (Ca₂B₆O₁₁·5H₂O, M = 412 g/mol) is processed via the SO₂ route: Ca₂B₆O₁₁ + 4SO₂ + 11H₂O → 2Ca(HSO₃)₂ + 6H₃BO₃, followed by dehydration 2H₃BO₃ → B₂O₃ + 3H₂O, followed by magnesium reduction B₂O₃ + 3Mg → 2B + 3MgO. Assuming 100% yield at every step, calculate the mass of elemental boron obtainable.
->
-> **Step 1 — moles of colemanite:** n = 100,000 g ÷ 412 g/mol ≈ 242.7 mol.
->
-> **Step 2 — moles of boric acid:** each mole of colemanite (containing 6 B atoms in the B₆O₁₁ unit) gives 6 mol H₃BO₃ directly by the stoichiometry shown: n(H₃BO₃) = 242.7 × 6 ≈ 1456.3 mol.
->
-> **Step 3 — moles of B₂O₃:** 2H₃BO₃ → B₂O₃ (1:2 ratio, i.e. 2 mol acid gives 1 mol oxide): n(B₂O₃) = 1456.3 ÷ 2 ≈ 728.2 mol.
->
-> **Step 4 — moles of elemental boron:** B₂O₃ + 3Mg → 2B (1:2 ratio): n(B) = 728.2 × 2 ≈ 1456.3 mol.
->
-> **Step 5 — mass of boron:** mass = 1456.3 mol × 10.8 g/mol ≈ **15,728 g ≈ 15.7 kg** of elemental boron from 100 kg of colemanite.
->
-> **Insight:** notice the mole count of boron atoms is conserved exactly from colemanite through to elemental boron (242.7 mol colemanite × 6 B atoms = 1456.3 mol B, matching the final answer) — in any multi-step extraction problem where boron is never lost as a by-product, the fastest check is simply "moles of boron atoms in = moles of boron atoms out," letting you skip the intermediate stoichiometry entirely for a sanity check.
+\[
+\mathrm{B\xrightarrow{Cl_2}BCl_3\xrightarrow{LiAlH_4}B_2H_6\xrightarrow{LiH}LiBH_4}
+\]
 
-> **Worked Example — full pH-style reasoning for the borax buffer.** Borax solution contains B(OH)₃ (Ka ≈ 5.8 × 10⁻¹⁰, pKa = 9.25) and its conjugate base [B(OH)₄]⁻ in equal concentration (Part 8). Using the Henderson-Hasselbalch approach, find the pH of this buffer, and explain qualitatively what happens to the pH if a small amount of HCl is added.
->
-> **Henderson-Hasselbalch:** pH = pKa + log([base]/[acid]). Since [B(OH)₄]⁻] = [B(OH)₃] (equal amounts, as derived in Part 8's own worked example), the ratio is 1, and log(1) = 0. So **pH = pKa = 9.25** for borax solution — this is in fact the textbook justification for why standard "borax buffer" solutions used in pH-meter calibration are pinned at pH 9.18 (the slightly adjusted literature value accounts for ionic-strength corrections beyond this simplified treatment).
->
-> **Adding HCl:** the added H₃O⁺ is consumed by the basic component, [B(OH)₄]⁻ + H₃O⁺ → B(OH)₃ + 2H₂O, converting some conjugate base into the weak acid. Because both buffer components remain present (just in a slightly different ratio), the pH shifts only slightly rather than dropping sharply the way it would for unbuffered water — the defining behaviour of a buffer solution, and precisely why borax is used as a pH standard in the first place, not merely as a titration primary standard (Part 8).
+\[
+\mathrm{Al\xrightarrow{O_2}Al_2O_3\xrightleftharpoons[OH^-]{H^+}Al^{3+}/[Al(OH)_4]^-}
+\]
 
-> **Worked Example — complete decision-tree question spanning boric acid AND boron halide concepts.** A white crystalline solid X is soluble in hot water, gives a green-edged flame test on treatment with ethanol and conc. H₂SO₄, and its aqueous solution turns red litmus... no change, but blue litmus paper very slightly reddens over time. Identify X, and explain why it does NOT turn blue litmus sharply red despite being acidic.
->
-> **Identify X:** the green-edged flame with ethanol/H₂SO₄ is the classical borate test (Part 8) — X is **orthoboric acid, H₃BO₃** (or a borate that releases it in acid). White, crystalline, hot-water-soluble — all consistent.
->
-> **Why litmus barely responds:** H₃BO₃ is a very weak Lewis acid (Ka ≈ 5.8 × 10⁻¹⁰, pKa 9.25, Part 8) — its degree of ionisation in water is tiny, so the H₃O⁺ concentration it generates is far too low to sharply redden litmus the way a strong or even moderately weak Brønsted acid (like acetic acid, Ka ≈ 1.8 × 10⁻⁵) would. Litmus responds crudely to pH and needs roughly pH < 6 for a clear colour change; H₃BO₃'s very high pKa keeps typical solution pH close to neutral, explaining the barely perceptible litmus response despite the acid unambiguously being present (confirmed by the flame test).
->
-> **General method:** whenever a qualitative-analysis question gives a "barely reacts" or "very slow" observation alongside a positive confirmatory test (like the flame test here), suspect a genuinely weak acid/base rather than concluding "no acid/base present" — cross-check the Ka/Kb value before ruling anything out.
+### 15.4 Important structures gallery — recall list
 
-**Comprehensive comparison charts — cross-topic recall.**
-
-**Bond-type summary across every Group 13 dimer/bridge discussed in this chapter:**
-
-| Species | Bridge type | Electron count | Bridging atom's lone pair used? |
-|---|---|---:|---|
-| B₂H₆ | B–H–B | 3c-2e | No (H has none) |
-| Al₂Cl₆ | Al–Cl–Al | 3c-4e | Yes (Cl donates) |
-| Al₂(CH₃)₆ | Al–C–Al | 3c-2e | No (C has none available) |
-| Ga₂H₆ | Ga–H–Ga | 3c-2e | No (H has none) |
-
-**Complete oxidation-state stability summary (ties together Parts 3, 2 and 9's Tl trap):**
-
-| Element | Preferred oxidation state | Behaviour of the OTHER state |
-|---|---|---|
-| B, Al | +3 (exclusively) | +1 essentially unknown |
-| Ga | +3 (Ga⁺ less stable) | Ga⁺ is a reducing agent, disproportionates in water |
-| In | +3 (In⁺ less stable) | In⁺ is a weaker reducing agent than Ga⁺ |
-| Tl | +1 (Tl³⁺ less stable) | Tl³⁺ is an oxidising agent |
-
-> **Worked Example — predicting an unknown reaction from the oxidation-state summary table alone.** Without looking up any further data, predict whether InCl solution is stable in water, and if not, write the expected products.
->
-> From the table, In's PREFERRED state is +3, meaning In⁺ (like Ga⁺, but even more so, since indium's ΔE is smaller than gallium's own inert-pair-favouring case is for Tl) is the LESS stable oxidation state relative to the group state. Following the same disproportionation pattern explicitly given for gallium in Part 3 (3GaX → 2Ga + GaX₃), indium should behave analogously: **3InCl → 2In + InCl₃** — indium metal precipitates and indium(III) chloride remains in solution. This is exactly the reaction stated in Part 3's original trap block, now derived from the summary table rather than simply recalled.
->
-> **General method:** once the oxidation-state stability table is memorised, ANY new halide/salt question for Ga, In or Tl can be answered by analogy without needing to separately memorise each individual equation — the disproportionation pattern generalises directly.
+- BF₃: trigonal planar, empty p orbital.
+- BF₄⁻: tetrahedral.
+- Al₂Cl₆: chloride bridges, 3c–4e.
+- B₂H₆: hydrogen bridges, 3c–2e.
+- Borax ion: two sp² and two sp³ boron centres.
+- H₃BO₃: planar molecules in H-bonded layers.
+- Borazine: polar B–N ring, weaker aromaticity than benzene.
+- Al₂(CH₃)₆: methyl bridges, 3c–2e.
 
 **Group 13 problem bank (35 questions, consolidated).**
 

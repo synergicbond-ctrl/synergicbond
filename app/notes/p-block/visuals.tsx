@@ -213,6 +213,60 @@ function BF3BackBondingVisual() {
   );
 }
 
+
+function Group13TrendMapVisual() {
+  const rows = [
+    ["Atomic radius", "B < Ga < Al < In < Tl", "Ga contracts because 3d¹⁰ shields poorly"],
+    ["IE₁", "In < Al < Ga < Tl < B", "B is exceptionally small; Ga/Tl are contracted"],
+    ["Electronegativity", "Al < Ga < In < Tl < B", "d/f contraction reverses a simple down-group fall"],
+    ["+1 stability", "Ga < In < Tl", "inert-pair effect increases down the group"],
+    ["Oxide acidity", "B₂O₃ > Al₂O₃ > Ga₂O₃ > In₂O₃", "metallic character increases down the group"],
+  ];
+  return (
+    <ShapeCard title="Master Group 13 orders — observation, anomaly and cause">
+      <g transform="translate(28,42)">
+        {rows.map((r, i) => {
+          const y = i * 48;
+          return (
+            <g key={r[0]}>
+              <rect x="0" y={y} width="544" height="39" rx="9" fill={i % 2 ? "#0d1b2a" : "#122232"} stroke="#24405c" />
+              <text x="14" y={y + 16} fill="#fde68a" fontSize="11" fontWeight="900">{r[0]}</text>
+              <text x="14" y={y + 31} fill="#eaf7fb" fontSize="12" fontWeight="800">{r[1]}</text>
+              <text x="260" y={y + 25} fill="#9fb2c1" fontSize="10.5">{r[2]}</text>
+            </g>
+          );
+        })}
+      </g>
+    </ShapeCard>
+  );
+}
+
+function InertPairEnergyVisual() {
+  return (
+    <ShapeCard title="Inert-pair effect — why +1 becomes stable down Group 13">
+      <defs>
+        <marker id="g13-arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#57d4ec" /></marker>
+      </defs>
+      <g transform="translate(40,36)">
+        {[0,1,2,3,4].map((i) => {
+          const x=40+i*108;
+          const gap=[52,56,72,66,94][i];
+          const label=["B","Al","Ga","In","Tl"][i];
+          return <g key={label}>
+            <line x1={x} y1="200" x2={x+55} y2="200" stroke="#e879f9" strokeWidth="4" />
+            <text x={x+28} y="222" textAnchor="middle" fill="#f4d7ff" fontSize="12" fontWeight="900">ns²</text>
+            <line x1={x} y1={200-gap} x2={x+55} y2={200-gap} stroke="#57d4ec" strokeWidth="4" />
+            <text x={x+28} y={188-gap} textAnchor="middle" fill="#dff8ff" fontSize="12" fontWeight="900">np</text>
+            <line x1={x+28} y1="190" x2={x+28} y2={210-gap} stroke="#57d4ec" strokeWidth="2" markerEnd="url(#g13-arrow)" />
+            <text x={x+28} y="260" textAnchor="middle" fill="#eaf7fb" fontSize="13" fontWeight="900">{label}</text>
+          </g>;
+        })}
+        <text x="270" y="285" textAnchor="middle" fill="#fde68a" fontSize="12" fontWeight="800">larger ns–np separation → ns² pair harder to use → +1 state stabilised</text>
+      </g>
+    </ShapeCard>
+  );
+}
+
 function Part2Visual() {
   return (
     <Frame title="Electron deficiency and elemental boron's cage structure" caption="Every Group 13 element has only 3 valence electrons for 4 orbitals (one s + three p) — trihalides and trialkyls are electron-deficient, a vacant p-orbital making them strong Lewis acids. Elemental boron itself is built from B₁₂ icosahedra covalently linked into a rigid lattice, the structural reason for its extreme hardness and high melting point.">
@@ -237,6 +291,10 @@ function Part2Visual() {
           </g>
           <text x="300" y="260" textAnchor="middle" fill="#c9d6df" fontSize="13" fontWeight="700">3 electrons fill s + 2p → 1 p-orbital stays empty</text>
         </ShapeCard>
+      </div>
+      <div className="mt-4 grid gap-4 sm:grid-cols-2">
+        <Group13TrendMapVisual />
+        <InertPairEnergyVisual />
       </div>
       <div className="mt-4">
         <BF3BackBondingVisual />
@@ -498,9 +556,44 @@ function CageClassificationVisual() {
   );
 }
 
+
+function HalideLogicVisual() {
+  return (
+    <ShapeCard title="Halide decision map — back bonding, Lewis acidity and hydrolysis">
+      <defs>
+        <marker id="hal-arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#57d4ec" /></marker>
+      </defs>
+      <g transform="translate(35,44)">
+        <rect x="0" y="55" width="125" height="58" rx="12" fill="#3a2059" stroke="#e879f9" />
+        <text x="62" y="78" textAnchor="middle" fill="#ffeaff" fontSize="13" fontWeight="900">BX₃</text>
+        <text x="62" y="98" textAnchor="middle" fill="#d8c7e6" fontSize="10.5">sp², empty p</text>
+        <line x1="126" y1="84" x2="218" y2="84" stroke="#57d4ec" strokeWidth="2.5" markerEnd="url(#hal-arrow)" />
+        <rect x="222" y="25" width="150" height="58" rx="12" fill="#122232" stroke="#57d4ec" />
+        <text x="297" y="48" textAnchor="middle" fill="#eaf7fb" fontSize="12" fontWeight="900">back donation strong</text>
+        <text x="297" y="68" textAnchor="middle" fill="#fde68a" fontSize="11">BF₃: weakest acid</text>
+        <rect x="222" y="108" width="150" height="58" rx="12" fill="#122232" stroke="#57d4ec" />
+        <text x="297" y="131" textAnchor="middle" fill="#eaf7fb" fontSize="12" fontWeight="900">back donation weak</text>
+        <text x="297" y="151" textAnchor="middle" fill="#fde68a" fontSize="11">BI₃: strongest acid</text>
+        <line x1="375" y1="54" x2="468" y2="54" stroke="#57d4ec" strokeWidth="2.5" markerEnd="url(#hal-arrow)" />
+        <line x1="375" y1="137" x2="468" y2="137" stroke="#57d4ec" strokeWidth="2.5" markerEnd="url(#hal-arrow)" />
+        <rect x="472" y="25" width="95" height="58" rx="12" fill="#173247" stroke="#57d4ec" />
+        <text x="520" y="49" textAnchor="middle" fill="#eaf7fb" fontSize="11" fontWeight="900">adduct</text>
+        <text x="520" y="67" textAnchor="middle" fill="#c9d6df" fontSize="10">BF₄⁻ / F₃B←L</text>
+        <rect x="472" y="108" width="95" height="58" rx="12" fill="#173247" stroke="#57d4ec" />
+        <text x="520" y="132" textAnchor="middle" fill="#eaf7fb" fontSize="11" fontWeight="900">hydrolysis</text>
+        <text x="520" y="150" textAnchor="middle" fill="#c9d6df" fontSize="10">H₃BO₃ + HX</text>
+        <text x="285" y="220" textAnchor="middle" fill="#fde68a" fontSize="12" fontWeight="900">Lewis acidity: BF₃ &lt; BCl₃ &lt; BBr₃ &lt; BI₃</text>
+      </g>
+    </ShapeCard>
+  );
+}
+
 function Part3Visual() {
   return (
     <Frame title="Boron's signature structures" caption="Diborane's electron-deficient bridge, borax's mixed sp²/sp³ boron framework, boric acid's planar H-bonded sheets, and the halide, hydride and cage structures covered in Parts 9–15.">
+      <div className="mb-4">
+        <HalideLogicVisual />
+      </div>
       <div className="grid gap-4 sm:grid-cols-2">
         <DiboraneVisual />
         <BoraxVisual />

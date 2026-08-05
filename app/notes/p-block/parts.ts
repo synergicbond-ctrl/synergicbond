@@ -7,8 +7,8 @@ export const P_BLOCK_PARTS: PBlockPartDef[] = [
   // Ordered group by group — foundations then deep dive within each group,
   // Groups 13 → 18, closing with the cross-group synthesis lesson.
   { slug: "part1", number: 1, title: "P-block map, trends & first-element anomaly", fromSection: 1, toSection: 1 },
-  { slug: "part2", number: 2, title: "Group 13 — Boron family (1/2): position, trends, bonding & elemental chemistry", fromSection: 2, toSection: 2 },
-  { slug: "part3", number: 3, title: "Group 13 — Boron family (2/2): halides, hydrides, aluminium chemistry & practice", fromSection: 3, toSection: 3 },
+  { slug: "part2", number: 2, title: "Group 13 Premium Textbook I — trends, bonding, boron & borates", fromSection: 2, toSection: 2 },
+  { slug: "part3", number: 3, title: "Group 13 Premium Textbook II — halides, boranes, aluminium & mastery", fromSection: 3, toSection: 3 },
   { slug: "part4", number: 4, title: "Group 14 — Carbon, silicon & the inert-pair effect", fromSection: 4, toSection: 4 },
   { slug: "part5", number: 5, title: "Group 14 — Allotropes, carbon oxides & silicon materials", fromSection: 5, toSection: 5 },
   { slug: "part6", number: 6, title: "Group 14 — Silicates, zeolites & silicones", fromSection: 6, toSection: 6 },

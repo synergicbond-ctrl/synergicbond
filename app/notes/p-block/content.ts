@@ -194,6 +194,8 @@ Diborane itself has solid-state polymorphism worth knowing: it freezes at 108.3 
 
 ## 2.9 Complete named-reaction reference — Group 13 element reactivity
 
+**¹⁰B and neutron absorption:** the ¹⁰B isotope (19% of natural boron, §2.1) has an unusually high cross-section for absorbing thermal neutrons, ¹⁰B(n,α)⁷Li. This is the basic, widely-tested fact behind boron's nuclear applications — metal borides are used as neutron-absorbing shields and control rods in nuclear reactors — and is the same underlying nuclear property that makes the more specialised carboranes useful in boron neutron-capture therapy (§2.15).
+
 A consolidated, exam-ready reference of every named/numbered reaction touching Group 13 elements directly with common reagents, gathered in one place rather than scattered across subsections:
 
 **Boron with non-metals (amorphous form, all previously introduced individually in §3.1, restated here as a single lookup table):**

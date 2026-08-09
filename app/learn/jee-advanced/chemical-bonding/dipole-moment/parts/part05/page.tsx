@@ -40,6 +40,9 @@ export default function DipoleMomentPart05() {
           <p>Same mechanism as NH₃/NF₃: in H₂O, the O lone-pair resultant reinforces the O–H bond resultant; in F₂O it opposes it. Additionally, O–F (Δχ = 0.5) is intrinsically a weaker bond moment than O–H (Δχ = 1.4).</p>
         </ConceptCard>
 
+        <FigureFrame title="N₂F₂ cis vs. trans" caption="trans-N₂F₂ (μ = 0) and cis-N₂F₂ (μ ≈ 0.16 D) — both far smaller than naive bond-vector reasoning alone would predict.">
+          <DipoleStructureFigure id="n2f2-cis-trans" />
+        </FigureFrame>
         <ConceptCard title="N₂F₂ cis vs. trans — lone pairs defeat the naive prediction" tone="rose" eyebrow="Both nearly zero">
           <p>Naive vector reasoning predicts trans-N₂F₂ (F atoms opposite) should have small/zero μ and cis-N₂F₂ (F atoms same side) should have a large μ — but the observed trans is exactly zero while cis is also nearly zero (0.16 D), because nitrogen lone-pair contributions substantially offset the bond-moment picture in <strong className="text-white">both</strong> isomers.</p>
         </ConceptCard>

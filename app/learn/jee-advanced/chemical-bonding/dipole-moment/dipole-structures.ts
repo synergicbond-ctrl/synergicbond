@@ -77,9 +77,9 @@ export const DIPOLE_STRUCTURES: Record<string, { svg: string; caption: string; s
 
 <text x="160" y="20" font-size="13" font-weight="bold" text-anchor="middle" fill="#d3dbe6">Origin of the Intrinsic Homopolar Dipole</text>
 <circle cx="220" cy="95" r="55" fill="none" stroke="#f4a94f" stroke-width="2" stroke-dasharray="4,3"/>
-<text x="220" y="45" font-size="11" text-anchor="middle" fill="#d3dbe6">A (larger/diffuse orbital)</text>
+<text x="220" y="32" font-size="11" text-anchor="middle" fill="#d3dbe6">A (larger/diffuse orbital)</text>
 <circle cx="110" cy="95" r="32" fill="none" stroke="#76dce8" stroke-width="2" stroke-dasharray="4,3"/>
-<text x="110" y="150" font-size="11" text-anchor="middle" fill="#d3dbe6">B (compact orbital)</text>
+<text x="110" y="160" font-size="11" text-anchor="middle" fill="#d3dbe6">B (compact orbital)</text>
 <ellipse cx="165" cy="95" rx="26" ry="30" fill="#cfe8f7" opacity="0.7"/>
 <line x1="185" y1="120" x2="145" y2="120" stroke="#76dce8" stroke-width="2.2" marker-end="url(#arrH)"/>
 <text x="165" y="140" font-size="11" text-anchor="middle" fill="#76dce8">μ<tspan baseline-shift="sub" font-size="9">h</tspan> (toward B)</text>
@@ -89,21 +89,21 @@ export const DIPOLE_STRUCTURES: Record<string, { svg: string; caption: string; s
   },
   "hcl-lone-pairs": {
     size: "sm",
-    svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 190" width="100%">
-<rect x="1" y="1" width="258.0" height="188.0" rx="14" fill="#07131f" stroke="#213449" stroke-width="1.5"/>
+    svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 205" width="100%">
+<rect x="1" y="1" width="258.0" height="203.0" rx="14" fill="#07131f" stroke="#213449" stroke-width="1.5"/>
 
 <text x="130" y="18" font-size="12" text-anchor="middle" font-weight="bold" fill="#d3dbe6">Cl in sp³ hybridisation</text>
 <line x1="130" y1="30" x2="130" y2="170" stroke="#999" stroke-width="1" stroke-dasharray="2,2"/>
-<text x="135" y="35" font-size="10" fill="#d3dbe6">z</text>
+<text x="139" y="35" font-size="10" fill="#d3dbe6">z</text>
 <circle cx="130" cy="70" r="7" fill="#1c2b3a" stroke="#d3dbe6" stroke-width="1.5"/><text x="126" y="74" font-size="11" fill="#d3dbe6">H</text>
 <circle cx="130" cy="110" r="11" fill="#5fd382" stroke="#d3dbe6" stroke-width="1.5"/><text x="124" y="115" font-size="11" fill="#fff">Cl</text>
 <line x1="130" y1="77" x2="130" y2="100" stroke="#d3dbe6" stroke-width="2"/>
 <path d="M 130 122 L 90 150" stroke="#76dce8" stroke-width="1.5" marker-end="url(#arrLp)"/>
 <path d="M 130 122 L 130 165" stroke="#76dce8" stroke-width="1.5" marker-end="url(#arrLp)"/>
 <path d="M 130 122 L 170 150" stroke="#76dce8" stroke-width="1.5" marker-end="url(#arrLp)"/>
-<text x="60" y="150" font-size="9" fill="#d3dbe6">lone pair (sp³)</text>
 <path d="M 130 118 A 15 15 0 0 1 105 140" fill="none" stroke="#ff6b6b" stroke-width="1"/>
-<text x="98" y="132" font-size="10" fill="#ff6b6b">71°</text>
+<text x="94" y="130" font-size="10" fill="#ff6b6b">71°</text>
+<text x="130" y="190" font-size="10" text-anchor="middle" fill="#8fa0b3">three lone pairs (sp³)</text>
 <defs><marker id="arrLp" markerWidth="8" markerHeight="8" refX="7" refY="2.5" orient="auto"><polygon points="0 0,8 2.5,0 5" fill="#76dce8"/></marker></defs>
 </svg>`,
     caption: "HCl: three sp3 lone pairs on Cl, each at about 71 degrees from the H-Cl bond axis, reinforcing the electronegativity-based bond moment.",
@@ -171,10 +171,10 @@ export const DIPOLE_STRUCTURES: Record<string, { svg: string; caption: string; s
 <line x1="105" y1="91" x2="105" y2="128" stroke="#d3dbe6" stroke-width="1.5"/>
 <line x1="112" y1="88" x2="140" y2="113" stroke="#d3dbe6" stroke-width="1.5"/>
 <line x1="105" y1="55" x2="105" y2="42" stroke="#76dce8" stroke-width="2" marker-end="url(#aN1b)"/>
-<text x="115" y="50" font-size="9" fill="#76dce8">μ_L</text>
+<text x="115" y="50" font-size="9" fill="#76dce8">μ<tspan baseline-shift="sub" font-size="7">L</tspan></text>
 <line x1="105" y1="95" x2="105" y2="175" stroke="#ff6b6b" stroke-width="2.5" marker-end="url(#aN1r)"/>
-<text x="115" y="150" font-size="10" fill="#ff6b6b">μ_R</text>
-<text x="105" y="195" font-size="10" text-anchor="middle" fill="#d3dbe6">μ_L and μ_R REINFORCE</text>
+<text x="115" y="150" font-size="10" fill="#ff6b6b">μ<tspan baseline-shift="sub" font-size="8">R</tspan></text>
+<text x="105" y="195" font-size="10" text-anchor="middle" fill="#d3dbe6">μ<tspan baseline-shift="sub" font-size="8">L</tspan> and μ<tspan baseline-shift="sub" font-size="8">R</tspan> REINFORCE</text>
 
 <text x="315" y="20" font-size="12" font-weight="bold" text-anchor="middle" fill="#d3dbe6">NF₃ (μ = 0.20 D)</text>
 <circle cx="315" cy="80" r="11" fill="#7aa2ff" stroke="#d3dbe6" stroke-width="1.5"/><text x="310" y="85" font-size="11" fill="#fff">N</text>
@@ -186,10 +186,10 @@ export const DIPOLE_STRUCTURES: Record<string, { svg: string; caption: string; s
 <line x1="315" y1="91" x2="315" y2="128" stroke="#d3dbe6" stroke-width="1.5"/>
 <line x1="322" y1="88" x2="350" y2="113" stroke="#d3dbe6" stroke-width="1.5"/>
 <line x1="315" y1="55" x2="315" y2="42" stroke="#76dce8" stroke-width="2" marker-end="url(#aN1b)"/>
-<text x="325" y="50" font-size="9" fill="#76dce8">μ_L</text>
+<text x="325" y="50" font-size="9" fill="#76dce8">μ<tspan baseline-shift="sub" font-size="7">L</tspan></text>
 <line x1="315" y1="95" x2="315" y2="130" stroke="#ff6b6b" stroke-width="2.5" marker-end="url(#aN1r)"/>
-<text x="325" y="118" font-size="10" fill="#ff6b6b">μ_R</text>
-<text x="315" y="195" font-size="10" text-anchor="middle" fill="#d3dbe6">μ_L and μ_R nearly CANCEL</text>
+<text x="325" y="118" font-size="10" fill="#ff6b6b">μ<tspan baseline-shift="sub" font-size="8">R</tspan></text>
+<text x="315" y="195" font-size="10" text-anchor="middle" fill="#d3dbe6">μ<tspan baseline-shift="sub" font-size="8">L</tspan> and μ<tspan baseline-shift="sub" font-size="8">R</tspan> nearly CANCEL</text>
 <defs>
 <marker id="aN1b" markerWidth="8" markerHeight="8" refX="7" refY="2.5" orient="auto"><polygon points="0 0,8 2.5,0 5" fill="#76dce8"/></marker>
 <marker id="aN1r" markerWidth="8" markerHeight="8" refX="7" refY="2.5" orient="auto"><polygon points="0 0,8 2.5,0 5" fill="#ff6b6b"/></marker>
@@ -456,66 +456,106 @@ export const DIPOLE_STRUCTURES: Record<string, { svg: string; caption: string; s
   },
   "pclxfy-series": {
     size: "lg",
-    svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 140" width="100%">
-<rect x="1" y="1" width="598.0" height="138.0" rx="14" fill="#07131f" stroke="#213449" stroke-width="1.5"/>
-
-<!-- PCl5 -->
-<g transform="translate(30,20)"><text x="35" y="0" font-size="10" text-anchor="middle" fill="#d3dbe6">PCl₅</text>
-<circle cx="35" cy="55" r="9" fill="#f4a94f" stroke="#d3dbe6"/><text x="31" y="59" font-size="8" fill="#fff">P</text>
-<circle cx="35" cy="20" r="6" fill="#5fd382" stroke="#d3dbe6"/><circle cx="35" cy="90" r="6" fill="#5fd382" stroke="#d3dbe6"/>
-<circle cx="5" cy="45" r="6" fill="#5fd382" stroke="#d3dbe6"/><circle cx="65" cy="45" r="6" fill="#5fd382" stroke="#d3dbe6"/><circle cx="35" cy="55" r="0"/>
-<circle cx="20" cy="70" r="6" fill="#5fd382" stroke="#d3dbe6" opacity="0"/>
-<line x1="35" y1="46" x2="35" y2="26" stroke="#d3dbe6"/><line x1="35" y1="64" x2="35" y2="84" stroke="#d3dbe6"/>
-<line x1="27" y1="50" x2="10" y2="46" stroke="#d3dbe6"/><line x1="43" y1="50" x2="60" y2="46" stroke="#d3dbe6"/>
-<line x1="30" y1="60" x2="18" y2="68" stroke="#d3dbe6" stroke-dasharray="2,1"/><circle cx="12" cy="72" r="6" fill="#5fd382" stroke="#d3dbe6"/>
-<text x="35" y="115" font-size="10" text-anchor="middle" fill="#d3dbe6">μ=0</text></g>
-
-<g transform="translate(130,20)"><text x="35" y="0" font-size="10" text-anchor="middle" fill="#d3dbe6">PCl₄F</text>
-<circle cx="35" cy="55" r="9" fill="#f4a94f" stroke="#d3dbe6"/><text x="31" y="59" font-size="8" fill="#fff">P</text>
-<circle cx="35" cy="20" r="6" fill="#a8e6a1" stroke="#d3dbe6"/><circle cx="35" cy="90" r="6" fill="#5fd382" stroke="#d3dbe6"/>
-<circle cx="5" cy="45" r="6" fill="#5fd382" stroke="#d3dbe6"/><circle cx="65" cy="45" r="6" fill="#5fd382" stroke="#d3dbe6"/>
-<line x1="35" y1="46" x2="35" y2="26" stroke="#d3dbe6"/><line x1="35" y1="64" x2="35" y2="84" stroke="#d3dbe6"/>
-<line x1="27" y1="50" x2="10" y2="46" stroke="#d3dbe6"/><line x1="43" y1="50" x2="60" y2="46" stroke="#d3dbe6"/>
-<line x1="30" y1="60" x2="18" y2="68" stroke="#d3dbe6" stroke-dasharray="2,1"/><circle cx="12" cy="72" r="6" fill="#5fd382" stroke="#d3dbe6"/>
-<text x="35" y="115" font-size="10" text-anchor="middle" fill="#d3dbe6">μ≠0 (F axial)</text></g>
-
-<g transform="translate(230,20)"><text x="35" y="0" font-size="10" text-anchor="middle" fill="#d3dbe6">PCl₃F₂</text>
-<circle cx="35" cy="55" r="9" fill="#f4a94f" stroke="#d3dbe6"/><text x="31" y="59" font-size="8" fill="#fff">P</text>
-<circle cx="35" cy="20" r="6" fill="#a8e6a1" stroke="#d3dbe6"/><circle cx="35" cy="90" r="6" fill="#a8e6a1" stroke="#d3dbe6"/>
-<circle cx="5" cy="45" r="6" fill="#5fd382" stroke="#d3dbe6"/><circle cx="65" cy="45" r="6" fill="#5fd382" stroke="#d3dbe6"/>
-<line x1="35" y1="46" x2="35" y2="26" stroke="#d3dbe6"/><line x1="35" y1="64" x2="35" y2="84" stroke="#d3dbe6"/>
-<line x1="27" y1="50" x2="10" y2="46" stroke="#d3dbe6"/><line x1="43" y1="50" x2="60" y2="46" stroke="#d3dbe6"/>
-<line x1="30" y1="60" x2="18" y2="68" stroke="#d3dbe6" stroke-dasharray="2,1"/><circle cx="12" cy="72" r="6" fill="#5fd382" stroke="#d3dbe6"/>
-<text x="35" y="115" font-size="10" text-anchor="middle" fill="#d3dbe6">μ=0 (F,F axial)</text></g>
-
-<g transform="translate(330,20)"><text x="35" y="0" font-size="10" text-anchor="middle" fill="#d3dbe6">PCl₂F₃</text>
-<circle cx="35" cy="55" r="9" fill="#f4a94f" stroke="#d3dbe6"/><text x="31" y="59" font-size="8" fill="#fff">P</text>
-<circle cx="35" cy="20" r="6" fill="#a8e6a1" stroke="#d3dbe6"/><circle cx="35" cy="90" r="6" fill="#a8e6a1" stroke="#d3dbe6"/>
-<circle cx="5" cy="45" r="6" fill="#a8e6a1" stroke="#d3dbe6"/><circle cx="65" cy="45" r="6" fill="#5fd382" stroke="#d3dbe6"/>
-<line x1="35" y1="46" x2="35" y2="26" stroke="#d3dbe6"/><line x1="35" y1="64" x2="35" y2="84" stroke="#d3dbe6"/>
-<line x1="27" y1="50" x2="10" y2="46" stroke="#d3dbe6"/><line x1="43" y1="50" x2="60" y2="46" stroke="#d3dbe6"/>
-<line x1="30" y1="60" x2="18" y2="68" stroke="#d3dbe6" stroke-dasharray="2,1"/><circle cx="12" cy="72" r="6" fill="#5fd382" stroke="#d3dbe6"/>
-<text x="35" y="115" font-size="10" text-anchor="middle" fill="#d3dbe6">μ≠0</text></g>
-
-<g transform="translate(430,20)"><text x="35" y="0" font-size="10" text-anchor="middle" fill="#d3dbe6">PClF₄</text>
-<circle cx="35" cy="55" r="9" fill="#f4a94f" stroke="#d3dbe6"/><text x="31" y="59" font-size="8" fill="#fff">P</text>
-<circle cx="35" cy="20" r="6" fill="#a8e6a1" stroke="#d3dbe6"/><circle cx="35" cy="90" r="6" fill="#a8e6a1" stroke="#d3dbe6"/>
-<circle cx="5" cy="45" r="6" fill="#a8e6a1" stroke="#d3dbe6"/><circle cx="65" cy="45" r="6" fill="#a8e6a1" stroke="#d3dbe6"/>
-<line x1="35" y1="46" x2="35" y2="26" stroke="#d3dbe6"/><line x1="35" y1="64" x2="35" y2="84" stroke="#d3dbe6"/>
-<line x1="27" y1="50" x2="10" y2="46" stroke="#d3dbe6"/><line x1="43" y1="50" x2="60" y2="46" stroke="#d3dbe6"/>
-<line x1="30" y1="60" x2="18" y2="68" stroke="#d3dbe6" stroke-dasharray="2,1"/><circle cx="12" cy="72" r="6" fill="#5fd382" stroke="#d3dbe6"/>
-<text x="35" y="115" font-size="10" text-anchor="middle" fill="#d3dbe6">μ≠0</text></g>
-
-<g transform="translate(530,20)"><text x="35" y="0" font-size="10" text-anchor="middle" fill="#d3dbe6">PF₅</text>
-<circle cx="35" cy="55" r="9" fill="#f4a94f" stroke="#d3dbe6"/><text x="31" y="59" font-size="8" fill="#fff">P</text>
-<circle cx="35" cy="20" r="6" fill="#a8e6a1" stroke="#d3dbe6"/><circle cx="35" cy="90" r="6" fill="#a8e6a1" stroke="#d3dbe6"/>
-<circle cx="5" cy="45" r="6" fill="#a8e6a1" stroke="#d3dbe6"/><circle cx="65" cy="45" r="6" fill="#a8e6a1" stroke="#d3dbe6"/>
-<line x1="35" y1="46" x2="35" y2="26" stroke="#d3dbe6"/><line x1="35" y1="64" x2="35" y2="84" stroke="#d3dbe6"/>
-<line x1="27" y1="50" x2="10" y2="46" stroke="#d3dbe6"/><line x1="43" y1="50" x2="60" y2="46" stroke="#d3dbe6"/>
-<line x1="30" y1="60" x2="18" y2="68" stroke="#d3dbe6" stroke-dasharray="2,1"/><circle cx="12" cy="72" r="6" fill="#a8e6a1" stroke="#d3dbe6"/>
-<text x="35" y="115" font-size="10" text-anchor="middle" fill="#d3dbe6">μ=0</text></g>
+    svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 995 166" width="100%">
+<rect x="1" y="1" width="993.0" height="164.0" rx="14" fill="#07131f" stroke="#213449" stroke-width="1.5"/>
+<g transform="translate(60,0)">
+<text x="0" y="14" font-size="13" font-weight="bold" text-anchor="middle" fill="#d3dbe6">PCl₅</text>
+<line x1="0" y1="59" x2="0" y2="43" stroke="#9fb0c0" stroke-width="1.6"/>
+<line x1="0" y1="77" x2="0" y2="93" stroke="#9fb0c0" stroke-width="1.6"/>
+<line x1="-8" y1="68" x2="-31" y2="68" stroke="#9fb0c0" stroke-width="1.6"/>
+<line x1="8" y1="68" x2="31" y2="68" stroke="#9fb0c0" stroke-width="1.6"/>
+<line x1="-7" y1="74" x2="-24" y2="87" stroke="#9fb0c0" stroke-width="1.6" stroke-dasharray="2.5,2.5"/>
+<circle cx="0" cy="68" r="11" fill="#f4a94f" stroke="#0d1620" stroke-width="1.3"/>
+<text x="0" y="72" font-size="10" font-weight="bold" text-anchor="middle" fill="#0d1620">P</text>
+<circle cx="0" cy="34" r="9" fill="#5fd382" stroke="#0d1620" stroke-width="1.2"/><text x="0" y="38" font-size="9" font-weight="bold" text-anchor="middle" fill="#fff">Cl</text>
+<circle cx="0" cy="102" r="9" fill="#5fd382" stroke="#0d1620" stroke-width="1.2"/><text x="0" y="106" font-size="9" font-weight="bold" text-anchor="middle" fill="#fff">Cl</text>
+<circle cx="-39" cy="68" r="9" fill="#5fd382" stroke="#0d1620" stroke-width="1.2"/><text x="-39" y="72" font-size="9" font-weight="bold" text-anchor="middle" fill="#fff">Cl</text>
+<circle cx="39" cy="68" r="9" fill="#5fd382" stroke="#0d1620" stroke-width="1.2"/><text x="39" y="72" font-size="9" font-weight="bold" text-anchor="middle" fill="#fff">Cl</text>
+<circle cx="-30" cy="93" r="9" fill="#5fd382" stroke="#0d1620" stroke-width="1.2"/><text x="-30" y="97" font-size="9" font-weight="bold" text-anchor="middle" fill="#fff">Cl</text>
+<text x="0" y="146" font-size="11" text-anchor="middle" font-weight="bold" fill="#d3dbe6">μ=0</text>
+</g>
+<g transform="translate(235,0)">
+<text x="0" y="14" font-size="13" font-weight="bold" text-anchor="middle" fill="#d3dbe6">PCl₄F</text>
+<line x1="0" y1="59" x2="0" y2="43" stroke="#9fb0c0" stroke-width="1.6"/>
+<line x1="0" y1="77" x2="0" y2="93" stroke="#9fb0c0" stroke-width="1.6"/>
+<line x1="-8" y1="68" x2="-31" y2="68" stroke="#9fb0c0" stroke-width="1.6"/>
+<line x1="8" y1="68" x2="31" y2="68" stroke="#9fb0c0" stroke-width="1.6"/>
+<line x1="-7" y1="74" x2="-24" y2="87" stroke="#9fb0c0" stroke-width="1.6" stroke-dasharray="2.5,2.5"/>
+<circle cx="0" cy="68" r="11" fill="#f4a94f" stroke="#0d1620" stroke-width="1.3"/>
+<text x="0" y="72" font-size="10" font-weight="bold" text-anchor="middle" fill="#0d1620">P</text>
+<circle cx="0" cy="34" r="8" fill="#a8e6a1" stroke="#0d1620" stroke-width="1.2"/><text x="0" y="38" font-size="9" font-weight="bold" text-anchor="middle" fill="#0d1620">F</text>
+<circle cx="0" cy="102" r="9" fill="#5fd382" stroke="#0d1620" stroke-width="1.2"/><text x="0" y="106" font-size="9" font-weight="bold" text-anchor="middle" fill="#fff">Cl</text>
+<circle cx="-39" cy="68" r="9" fill="#5fd382" stroke="#0d1620" stroke-width="1.2"/><text x="-39" y="72" font-size="9" font-weight="bold" text-anchor="middle" fill="#fff">Cl</text>
+<circle cx="39" cy="68" r="9" fill="#5fd382" stroke="#0d1620" stroke-width="1.2"/><text x="39" y="72" font-size="9" font-weight="bold" text-anchor="middle" fill="#fff">Cl</text>
+<circle cx="-30" cy="93" r="9" fill="#5fd382" stroke="#0d1620" stroke-width="1.2"/><text x="-30" y="97" font-size="9" font-weight="bold" text-anchor="middle" fill="#fff">Cl</text>
+<text x="0" y="146" font-size="11" text-anchor="middle" font-weight="bold" fill="#d3dbe6">μ≠0 (F axial)</text>
+</g>
+<g transform="translate(410,0)">
+<text x="0" y="14" font-size="13" font-weight="bold" text-anchor="middle" fill="#d3dbe6">PCl₃F₂</text>
+<line x1="0" y1="59" x2="0" y2="43" stroke="#9fb0c0" stroke-width="1.6"/>
+<line x1="0" y1="77" x2="0" y2="93" stroke="#9fb0c0" stroke-width="1.6"/>
+<line x1="-8" y1="68" x2="-31" y2="68" stroke="#9fb0c0" stroke-width="1.6"/>
+<line x1="8" y1="68" x2="31" y2="68" stroke="#9fb0c0" stroke-width="1.6"/>
+<line x1="-7" y1="74" x2="-24" y2="87" stroke="#9fb0c0" stroke-width="1.6" stroke-dasharray="2.5,2.5"/>
+<circle cx="0" cy="68" r="11" fill="#f4a94f" stroke="#0d1620" stroke-width="1.3"/>
+<text x="0" y="72" font-size="10" font-weight="bold" text-anchor="middle" fill="#0d1620">P</text>
+<circle cx="0" cy="34" r="8" fill="#a8e6a1" stroke="#0d1620" stroke-width="1.2"/><text x="0" y="38" font-size="9" font-weight="bold" text-anchor="middle" fill="#0d1620">F</text>
+<circle cx="0" cy="102" r="8" fill="#a8e6a1" stroke="#0d1620" stroke-width="1.2"/><text x="0" y="106" font-size="9" font-weight="bold" text-anchor="middle" fill="#0d1620">F</text>
+<circle cx="-39" cy="68" r="9" fill="#5fd382" stroke="#0d1620" stroke-width="1.2"/><text x="-39" y="72" font-size="9" font-weight="bold" text-anchor="middle" fill="#fff">Cl</text>
+<circle cx="39" cy="68" r="9" fill="#5fd382" stroke="#0d1620" stroke-width="1.2"/><text x="39" y="72" font-size="9" font-weight="bold" text-anchor="middle" fill="#fff">Cl</text>
+<circle cx="-30" cy="93" r="9" fill="#5fd382" stroke="#0d1620" stroke-width="1.2"/><text x="-30" y="97" font-size="9" font-weight="bold" text-anchor="middle" fill="#fff">Cl</text>
+<text x="0" y="146" font-size="11" text-anchor="middle" font-weight="bold" fill="#d3dbe6">μ=0 (F,F axial)</text>
+</g>
+<g transform="translate(585,0)">
+<text x="0" y="14" font-size="13" font-weight="bold" text-anchor="middle" fill="#d3dbe6">PCl₂F₃</text>
+<line x1="0" y1="59" x2="0" y2="43" stroke="#9fb0c0" stroke-width="1.6"/>
+<line x1="0" y1="77" x2="0" y2="93" stroke="#9fb0c0" stroke-width="1.6"/>
+<line x1="-8" y1="68" x2="-31" y2="68" stroke="#9fb0c0" stroke-width="1.6"/>
+<line x1="8" y1="68" x2="31" y2="68" stroke="#9fb0c0" stroke-width="1.6"/>
+<line x1="-7" y1="74" x2="-24" y2="87" stroke="#9fb0c0" stroke-width="1.6" stroke-dasharray="2.5,2.5"/>
+<circle cx="0" cy="68" r="11" fill="#f4a94f" stroke="#0d1620" stroke-width="1.3"/>
+<text x="0" y="72" font-size="10" font-weight="bold" text-anchor="middle" fill="#0d1620">P</text>
+<circle cx="0" cy="34" r="8" fill="#a8e6a1" stroke="#0d1620" stroke-width="1.2"/><text x="0" y="38" font-size="9" font-weight="bold" text-anchor="middle" fill="#0d1620">F</text>
+<circle cx="0" cy="102" r="8" fill="#a8e6a1" stroke="#0d1620" stroke-width="1.2"/><text x="0" y="106" font-size="9" font-weight="bold" text-anchor="middle" fill="#0d1620">F</text>
+<circle cx="-39" cy="68" r="8" fill="#a8e6a1" stroke="#0d1620" stroke-width="1.2"/><text x="-39" y="72" font-size="9" font-weight="bold" text-anchor="middle" fill="#0d1620">F</text>
+<circle cx="39" cy="68" r="9" fill="#5fd382" stroke="#0d1620" stroke-width="1.2"/><text x="39" y="72" font-size="9" font-weight="bold" text-anchor="middle" fill="#fff">Cl</text>
+<circle cx="-30" cy="93" r="9" fill="#5fd382" stroke="#0d1620" stroke-width="1.2"/><text x="-30" y="97" font-size="9" font-weight="bold" text-anchor="middle" fill="#fff">Cl</text>
+<text x="0" y="146" font-size="11" text-anchor="middle" font-weight="bold" fill="#d3dbe6">μ≠0</text>
+</g>
+<g transform="translate(760,0)">
+<text x="0" y="14" font-size="13" font-weight="bold" text-anchor="middle" fill="#d3dbe6">PClF₄</text>
+<line x1="0" y1="59" x2="0" y2="43" stroke="#9fb0c0" stroke-width="1.6"/>
+<line x1="0" y1="77" x2="0" y2="93" stroke="#9fb0c0" stroke-width="1.6"/>
+<line x1="-8" y1="68" x2="-31" y2="68" stroke="#9fb0c0" stroke-width="1.6"/>
+<line x1="8" y1="68" x2="31" y2="68" stroke="#9fb0c0" stroke-width="1.6"/>
+<line x1="-7" y1="74" x2="-24" y2="87" stroke="#9fb0c0" stroke-width="1.6" stroke-dasharray="2.5,2.5"/>
+<circle cx="0" cy="68" r="11" fill="#f4a94f" stroke="#0d1620" stroke-width="1.3"/>
+<text x="0" y="72" font-size="10" font-weight="bold" text-anchor="middle" fill="#0d1620">P</text>
+<circle cx="0" cy="34" r="8" fill="#a8e6a1" stroke="#0d1620" stroke-width="1.2"/><text x="0" y="38" font-size="9" font-weight="bold" text-anchor="middle" fill="#0d1620">F</text>
+<circle cx="0" cy="102" r="8" fill="#a8e6a1" stroke="#0d1620" stroke-width="1.2"/><text x="0" y="106" font-size="9" font-weight="bold" text-anchor="middle" fill="#0d1620">F</text>
+<circle cx="-39" cy="68" r="8" fill="#a8e6a1" stroke="#0d1620" stroke-width="1.2"/><text x="-39" y="72" font-size="9" font-weight="bold" text-anchor="middle" fill="#0d1620">F</text>
+<circle cx="39" cy="68" r="8" fill="#a8e6a1" stroke="#0d1620" stroke-width="1.2"/><text x="39" y="72" font-size="9" font-weight="bold" text-anchor="middle" fill="#0d1620">F</text>
+<circle cx="-30" cy="93" r="9" fill="#5fd382" stroke="#0d1620" stroke-width="1.2"/><text x="-30" y="97" font-size="9" font-weight="bold" text-anchor="middle" fill="#fff">Cl</text>
+<text x="0" y="146" font-size="11" text-anchor="middle" font-weight="bold" fill="#d3dbe6">μ≠0</text>
+</g>
+<g transform="translate(935,0)">
+<text x="0" y="14" font-size="13" font-weight="bold" text-anchor="middle" fill="#d3dbe6">PF₅</text>
+<line x1="0" y1="59" x2="0" y2="43" stroke="#9fb0c0" stroke-width="1.6"/>
+<line x1="0" y1="77" x2="0" y2="93" stroke="#9fb0c0" stroke-width="1.6"/>
+<line x1="-8" y1="68" x2="-31" y2="68" stroke="#9fb0c0" stroke-width="1.6"/>
+<line x1="8" y1="68" x2="31" y2="68" stroke="#9fb0c0" stroke-width="1.6"/>
+<line x1="-7" y1="74" x2="-24" y2="87" stroke="#9fb0c0" stroke-width="1.6" stroke-dasharray="2.5,2.5"/>
+<circle cx="0" cy="68" r="11" fill="#f4a94f" stroke="#0d1620" stroke-width="1.3"/>
+<text x="0" y="72" font-size="10" font-weight="bold" text-anchor="middle" fill="#0d1620">P</text>
+<circle cx="0" cy="34" r="8" fill="#a8e6a1" stroke="#0d1620" stroke-width="1.2"/><text x="0" y="38" font-size="9" font-weight="bold" text-anchor="middle" fill="#0d1620">F</text>
+<circle cx="0" cy="102" r="8" fill="#a8e6a1" stroke="#0d1620" stroke-width="1.2"/><text x="0" y="106" font-size="9" font-weight="bold" text-anchor="middle" fill="#0d1620">F</text>
+<circle cx="-39" cy="68" r="8" fill="#a8e6a1" stroke="#0d1620" stroke-width="1.2"/><text x="-39" y="72" font-size="9" font-weight="bold" text-anchor="middle" fill="#0d1620">F</text>
+<circle cx="39" cy="68" r="8" fill="#a8e6a1" stroke="#0d1620" stroke-width="1.2"/><text x="39" y="72" font-size="9" font-weight="bold" text-anchor="middle" fill="#0d1620">F</text>
+<circle cx="-30" cy="93" r="8" fill="#a8e6a1" stroke="#0d1620" stroke-width="1.2"/><text x="-30" y="97" font-size="9" font-weight="bold" text-anchor="middle" fill="#0d1620">F</text>
+<text x="0" y="146" font-size="11" text-anchor="middle" font-weight="bold" fill="#d3dbe6">μ=0</text>
+</g>
 </svg>`,
-    caption: "The PClxFy series: axial/equatorial fluorine substitution pattern determines whether mu is zero or nonzero.",
+    caption: "The PClxFy series: axial (top/bottom) and equatorial (left/right/back) fluorine substitution determines whether mu is zero or nonzero -- symmetric axial-only substitution (PCl3F2, PF5) cancels; asymmetric mixed substitution does not.",
   },
   "sf4-clf3-brf5": {
     size: "md",
@@ -659,22 +699,29 @@ export const DIPOLE_STRUCTURES: Record<string, { svg: string; caption: string; s
   },
   "so2": {
     size: "sm",
-    svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 200" width="100%">
-<rect x="1" y="1" width="258.0" height="198.0" rx="14" fill="#07131f" stroke="#213449" stroke-width="1.5"/>
+    svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 190" width="100%">
+<rect x="1" y="1" width="218.0" height="188.0" rx="14" fill="#07131f" stroke="#213449" stroke-width="1.5"/>
 
-<text x="130" y="20" font-size="12" font-weight="bold" text-anchor="middle" fill="#d3dbe6">SO₂ (μ = 1.63 D)</text>
-<circle cx="130" cy="80" r="10" fill="#f9dc5c" stroke="#d3dbe6" stroke-width="1.5"/><text x="126" y="84" font-size="10" fill="#d3dbe6">S</text>
-<circle cx="127" cy="50" r="2.5" fill="#d3dbe6"/><circle cx="133" cy="50" r="2.5" fill="#d3dbe6"/>
-<text x="145" y="48" font-size="9" fill="#8fa0b3">lone pair</text>
-<circle cx="90" cy="130" r="9" fill="#ff7a68" stroke="#d3dbe6" stroke-width="1.5"/><text x="86" y="134" font-size="10" fill="#d3dbe6">O</text>
-<circle cx="170" cy="130" r="9" fill="#ff7a68" stroke="#d3dbe6" stroke-width="1.5"/><text x="166" y="134" font-size="10" fill="#d3dbe6">O</text>
-<line x1="122" y1="87" x2="97" y2="122" stroke="#d3dbe6" stroke-width="2"/>
-<line x1="126" y1="90" x2="101" y2="125" stroke="#d3dbe6" stroke-width="1.3"/>
-<line x1="138" y1="87" x2="163" y2="122" stroke="#d3dbe6" stroke-width="2"/>
-<line x1="134" y1="90" x2="159" y2="125" stroke="#d3dbe6" stroke-width="1.3"/>
-<line x1="130" y1="68" x2="130" y2="30" stroke="#ff6b6b" stroke-width="2.5" marker-end="url(#arrSO)"/>
-<text x="150" y="35" font-size="10" fill="#ff6b6b">μ (toward lone pair)</text>
-<defs><marker id="arrSO" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><polygon points="0 0,10 3,0 6" fill="#ff6b6b"/></marker></defs>
+<text x="110" y="18" font-size="12" font-weight="bold" text-anchor="middle" fill="#d3dbe6">SO₂ (μ = 1.63 D)</text>
+
+<circle cx="106" cy="34" r="2.2" fill="#d3dbe6"/><circle cx="114" cy="34" r="2.2" fill="#d3dbe6"/>
+<path d="M110 42 L100 62 L120 62 Z" fill="#ff6b6b"/>
+<text x="132" y="52" font-size="10" fill="#ff6b6b">μ (toward lone pair)</text>
+
+<circle cx="110" cy="85" r="11" fill="#f9dc5c" stroke="#0d1620" stroke-width="1.3"/>
+<text x="110" y="89" font-size="10" font-weight="bold" text-anchor="middle" fill="#0d1620">S</text>
+
+<circle cx="72" cy="140" r="9" fill="#ff7a68" stroke="#0d1620" stroke-width="1.3"/>
+<text x="72" y="144" font-size="10" font-weight="bold" text-anchor="middle" fill="#0d1620">O</text>
+<circle cx="148" cy="140" r="9" fill="#ff7a68" stroke="#0d1620" stroke-width="1.3"/>
+<text x="148" y="144" font-size="10" font-weight="bold" text-anchor="middle" fill="#0d1620">O</text>
+
+<line x1="102" y1="93" x2="79" y2="133" stroke="#d3dbe6" stroke-width="2"/>
+<line x1="107" y1="96" x2="84" y2="136" stroke="#d3dbe6" stroke-width="1.3"/>
+<line x1="118" y1="93" x2="141" y2="133" stroke="#d3dbe6" stroke-width="2"/>
+<line x1="113" y1="96" x2="136" y2="136" stroke="#d3dbe6" stroke-width="1.3"/>
+
+<text x="110" y="172" font-size="10" text-anchor="middle" fill="#8fa0b3">bent, AX₂E</text>
 </svg>`,
     caption: "SO2: bent AX2E geometry. The S=O bond resultant is opposed by the sulfur lone-pair moment, and the net dipole ends up pointing away from the two S=O bonds, along the lone-pair direction.",
   },
@@ -711,5 +758,198 @@ export const DIPOLE_STRUCTURES: Record<string, { svg: string; caption: string; s
 <defs><marker id="arrClF" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><polygon points="0 0,10 3,0 6" fill="#ff6b6b"/></marker></defs>
 </svg>`,
     caption: "Bond dipole of Cl-F: every interhalogen X-Y is necessarily polar, since the two atoms are never identical and always differ in electronegativity.",
+  },
+  "n2f2-cis-trans": {
+    size: "md",
+    svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 170" width="100%">
+<rect x="1" y="1" width="418.0" height="168.0" rx="14" fill="#07131f" stroke="#213449" stroke-width="1.5"/>
+<text x="105" y="20" font-size="12" font-weight="bold" text-anchor="middle" fill="#d3dbe6">trans-N₂F₂ (μ = 0)</text>
+<circle cx="80" cy="70" r="3" fill="#d3dbe6"/><circle cx="87" cy="65" r="3" fill="#d3dbe6"/>
+<circle cx="85" cy="72" r="10" fill="#7aa2ff" stroke="#0d1620" stroke-width="1.3"/><text x="81" y="76" font-size="10" font-weight="bold" fill="#fff">N</text>
+<circle cx="135" cy="72" r="10" fill="#7aa2ff" stroke="#0d1620" stroke-width="1.3"/><text x="131" y="76" font-size="10" font-weight="bold" fill="#fff">N</text>
+<line x1="95" y1="72" x2="125" y2="72" stroke="#d3dbe6" stroke-width="2"/>
+<circle cx="163" cy="66" r="3" fill="#d3dbe6"/><circle cx="163" cy="58" r="3" fill="#d3dbe6"/>
+<circle cx="60" cy="105" r="9" fill="#a8e6a1" stroke="#0d1620" stroke-width="1.3"/><text x="56" y="109" font-size="10" font-weight="bold" fill="#0d1620">F</text>
+<line x1="79" y1="80" x2="65" y2="98" stroke="#d3dbe6" stroke-width="1.8"/>
+<circle cx="160" cy="40" r="9" fill="#a8e6a1" stroke="#0d1620" stroke-width="1.3"/><text x="156" y="44" font-size="10" font-weight="bold" fill="#0d1620">F</text>
+<line x1="141" y1="64" x2="155" y2="46" stroke="#d3dbe6" stroke-width="1.8"/>
+<text x="105" y="150" font-size="10" text-anchor="middle" fill="#8fa0b3">F atoms opposite</text>
+
+<text x="315" y="20" font-size="12" font-weight="bold" text-anchor="middle" fill="#d3dbe6">cis-N₂F₂ (μ ≈ 0.16 D)</text>
+<circle cx="290" cy="60" r="3" fill="#d3dbe6"/><circle cx="283" cy="53" r="3" fill="#d3dbe6"/>
+<circle cx="295" cy="70" r="10" fill="#7aa2ff" stroke="#0d1620" stroke-width="1.3"/><text x="291" y="74" font-size="10" font-weight="bold" fill="#fff">N</text>
+<circle cx="345" cy="70" r="10" fill="#7aa2ff" stroke="#0d1620" stroke-width="1.3"/><text x="341" y="74" font-size="10" font-weight="bold" fill="#fff">N</text>
+<line x1="305" y1="70" x2="335" y2="70" stroke="#d3dbe6" stroke-width="2"/>
+<circle cx="350" cy="60" r="3" fill="#d3dbe6"/><circle cx="357" cy="53" r="3" fill="#d3dbe6"/>
+<circle cx="270" cy="105" r="9" fill="#a8e6a1" stroke="#0d1620" stroke-width="1.3"/><text x="266" y="109" font-size="10" font-weight="bold" fill="#0d1620">F</text>
+<line x1="289" y1="78" x2="275" y2="98" stroke="#d3dbe6" stroke-width="1.8"/>
+<circle cx="370" cy="105" r="9" fill="#a8e6a1" stroke="#0d1620" stroke-width="1.3"/><text x="366" y="109" font-size="10" font-weight="bold" fill="#0d1620">F</text>
+<line x1="351" y1="78" x2="365" y2="98" stroke="#d3dbe6" stroke-width="1.8"/>
+<text x="320" y="150" font-size="10" text-anchor="middle" fill="#8fa0b3">F atoms same side</text>
+</svg>`,
+    caption: "trans-N2F2 (F atoms opposite, mu=0) vs cis-N2F2 (F atoms same side, mu=0.16 D) -- nitrogen lone-pair contributions substantially offset the naive bond-vector prediction in both isomers.",
+  },
+  "ethyl-vinyl-chloroacetylene": {
+    size: "lg",
+    svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 140" width="100%">
+<rect x="1" y="1" width="638.0" height="138.0" rx="14" fill="#07131f" stroke="#213449" stroke-width="1.5"/>
+<text x="105" y="28" font-size="13" text-anchor="middle" fill="#d3dbe6">CH₃–CH₂–Cl</text>
+<line x1="30" y1="60" x2="180" y2="60" stroke="#3a4a5c" stroke-width="2"/>
+<line x1="30" y1="80" x2="130" y2="80" stroke="#ff6b6b" stroke-width="2.5" marker-end="url(#arrEV1)"/>
+<text x="105" y="105" font-size="11" text-anchor="middle" fill="#d3dbe6">μ = 2.05 D (inductive only)</text>
+
+<text x="320" y="28" font-size="13" text-anchor="middle" fill="#d3dbe6">CH₂=CH–Cl (vinyl chloride)</text>
+<line x1="245" y1="60" x2="395" y2="60" stroke="#3a4a5c" stroke-width="2"/>
+<line x1="245" y1="80" x2="345" y2="80" stroke="#ff6b6b" stroke-width="2.5" marker-end="url(#arrEV1)"/>
+<text x="320" y="105" font-size="11" text-anchor="middle" fill="#d3dbe6">μ = 1.44 D (+R opposes −I)</text>
+
+<text x="535" y="28" font-size="13" text-anchor="middle" fill="#d3dbe6">HC≡C–Cl</text>
+<line x1="460" y1="60" x2="610" y2="60" stroke="#3a4a5c" stroke-width="2"/>
+<line x1="560" y1="80" x2="460" y2="80" stroke="#bca7f7" stroke-width="2.5" marker-end="url(#arrEV2)"/>
+<text x="535" y="105" font-size="11" text-anchor="middle" fill="#bca7f7">direction REVERSED</text>
+<defs>
+<marker id="arrEV1" markerWidth="9" markerHeight="9" refX="8" refY="2.5" orient="auto"><polygon points="0 0,9 2.5,0 5" fill="#ff6b6b"/></marker>
+<marker id="arrEV2" markerWidth="9" markerHeight="9" refX="8" refY="2.5" orient="auto"><polygon points="0 0,9 2.5,0 5" fill="#bca7f7"/></marker>
+</defs>
+</svg>`,
+    caption: "Ethyl chloride (mu=2.05 D, inductive only) vs vinyl chloride (mu=1.44 D, +R opposes -I) vs chloroacetylene (direction reversed -- -I is too weak at an sp carbon to compete with the mesomeric contribution).",
+  },
+  "pyrrole-furan": {
+    size: "md",
+    svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 210" width="100%">
+<rect x="1" y="1" width="378.0" height="208.0" rx="14" fill="#07131f" stroke="#213449" stroke-width="1.5"/>
+<text x="95" y="24" font-size="13" font-weight="bold" text-anchor="middle" fill="#d3dbe6">Pyrrole (μ = 1.8 D)</text>
+<text x="95" y="42" font-size="10" text-anchor="middle" fill="#ff6b6b">toward ring</text>
+<line x1="95" y1="50" x2="95" y2="78" stroke="#ff6b6b" stroke-width="2.5" marker-end="url(#arrPF)"/>
+<polygon points="95.0,150.0 64.6,127.9 76.2,92.1 113.8,92.1 125.4,127.9" fill="none" stroke="#d3dbe6" stroke-width="2"/>
+<text x="95" y="182" font-size="11" text-anchor="middle" fill="#d3dbe6">N</text>
+<text x="95" y="198" font-size="11" text-anchor="middle" fill="#8fa0b3">H</text>
+
+<text x="285" y="24" font-size="13" font-weight="bold" text-anchor="middle" fill="#d3dbe6">Furan (μ = 0.7 D)</text>
+<text x="285" y="42" font-size="10" text-anchor="middle" fill="#ff6b6b">away, toward O</text>
+<line x1="285" y1="50" x2="285" y2="78" stroke="#ff6b6b" stroke-width="2.5" marker-end="url(#arrPF)"/>
+<polygon points="285.0,150.0 254.6,127.9 266.2,92.1 303.8,92.1 315.4,127.9" fill="none" stroke="#d3dbe6" stroke-width="2"/>
+<text x="285" y="182" font-size="11" text-anchor="middle" fill="#ff7a68">O</text>
+<defs><marker id="arrPF" markerWidth="9" markerHeight="9" refX="8" refY="2.5" orient="auto"><polygon points="0 0,9 2.5,0 5" fill="#ff6b6b"/></marker></defs>
+</svg>`,
+    caption: "Pyrrole (mu=1.8 D, net toward the ring) vs furan (mu=0.7 D, net toward O) -- the -I effect is stronger for O than N, so furan's inductive pull wins while pyrrole's ring delocalisation wins.",
+  },
+  "p-nitroaniline-resonance": {
+    size: "sm",
+    svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" width="100%">
+<rect x="1" y="1" width="238.0" height="238.0" rx="14" fill="#07131f" stroke="#213449" stroke-width="1.5"/>
+<text x="120" y="24" font-size="12" font-weight="bold" text-anchor="middle" fill="#d3dbe6">p-Nitroaniline (μ = 6.2 D)</text>
+<line x1="120" y1="65" x2="141.6" y2="77.5" stroke="#d3dbe6" stroke-width="2"/>
+<line x1="141.6" y1="77.5" x2="141.6" y2="102.5" stroke="#d3dbe6" stroke-width="2"/>
+<line x1="141.6" y1="102.5" x2="120" y2="115" stroke="#d3dbe6" stroke-width="2"/>
+<line x1="120" y1="115" x2="98.4" y2="102.5" stroke="#d3dbe6" stroke-width="2"/>
+<line x1="98.4" y1="102.5" x2="98.4" y2="77.5" stroke="#d3dbe6" stroke-width="2"/>
+<line x1="98.4" y1="77.5" x2="120" y2="65" stroke="#d3dbe6" stroke-width="2"/>
+<line x1="122.6" y1="72.6" x2="136.5" y2="80.6" stroke="#d3dbe6" stroke-width="1.5"/>
+<line x1="136.5" y1="99.4" x2="122.6" y2="107.4" stroke="#d3dbe6" stroke-width="1.5"/>
+<line x1="103.9" y1="95.4" x2="103.9" y2="84.6" stroke="#d3dbe6" stroke-width="1.5"/>
+<line x1="120" y1="65" x2="120" y2="45" stroke="#d3dbe6" stroke-width="1.8"/>
+<text x="120" y="35" font-size="11" text-anchor="middle" font-weight="bold" fill="#8be2a8">H₂N</text>
+<line x1="120" y1="115" x2="120" y2="135" stroke="#d3dbe6" stroke-width="1.8"/>
+<text x="120" y="150" font-size="11" text-anchor="middle" font-weight="bold" fill="#f4c96b">NO₂</text>
+<path d="M 100 55 A 40 40 0 0 0 88 95" fill="none" stroke="#bca7f7" stroke-width="2" marker-end="url(#arrPNA)"/>
+<defs><marker id="arrPNA" markerWidth="8" markerHeight="8" refX="7" refY="2.5" orient="auto"><polygon points="0 0,8 2.5,0 5" fill="#bca7f7"/></marker></defs>
+<text x="120" y="200" font-size="10" text-anchor="middle" fill="#8fa0b3">+R(NH₂) / −R(NO₂) coupled</text>
+<text x="120" y="216" font-size="10" text-anchor="middle" fill="#8fa0b3">through the ring</text>
+</svg>`,
+    caption: "p-Nitroaniline: the +R donation of -NH2 and -R withdrawal of -NO2 are electronically coupled through the ring, pushing the observed moment (6.2 D) above the simple group-vector sum (5.48 D).",
+  },
+  "butanedione-trans-cis": {
+    size: "md",
+    svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 150" width="100%">
+<rect x="1" y="1" width="418.0" height="148.0" rx="14" fill="#07131f" stroke="#213449" stroke-width="1.5"/>
+<text x="105" y="24" font-size="12" font-weight="bold" text-anchor="middle" fill="#d3dbe6">trans (μ = 0, more stable)</text>
+<circle cx="70" cy="65" r="8" fill="#3a4a5c" stroke="#0d1620" stroke-width="1.2"/><text x="66" y="69" font-size="9" fill="#fff">C</text>
+<circle cx="140" cy="65" r="8" fill="#3a4a5c" stroke="#0d1620" stroke-width="1.2"/><text x="136" y="69" font-size="9" fill="#fff">C</text>
+<line x1="78" y1="65" x2="132" y2="65" stroke="#d3dbe6" stroke-width="2"/>
+<circle cx="45" cy="42" r="7" fill="#ff7a68" stroke="#0d1620" stroke-width="1.1"/><text x="41" y="46" font-size="8" fill="#0d1620">O</text>
+<line x1="60" y1="55" x2="52" y2="47" stroke="#d3dbe6" stroke-width="1.6"/>
+<circle cx="165" cy="88" r="7" fill="#ff7a68" stroke="#0d1620" stroke-width="1.1"/><text x="161" y="92" font-size="8" fill="#0d1620">O</text>
+<line x1="150" y1="75" x2="158" y2="83" stroke="#d3dbe6" stroke-width="1.6"/>
+<line x1="40" y1="52" x2="25" y2="65" stroke="#ff6b6b" stroke-width="2" marker-end="url(#arrBD)"/>
+<line x1="170" y1="78" x2="185" y2="65" stroke="#ff6b6b" stroke-width="2" marker-end="url(#arrBD)"/>
+<text x="105" y="130" font-size="10" text-anchor="middle" fill="#8fa0b3">C=O dipoles opposed</text>
+
+<text x="315" y="24" font-size="12" font-weight="bold" text-anchor="middle" fill="#d3dbe6">cis (μ ≠ 0, less stable)</text>
+<circle cx="280" cy="65" r="8" fill="#3a4a5c" stroke="#0d1620" stroke-width="1.2"/><text x="276" y="69" font-size="9" fill="#fff">C</text>
+<circle cx="350" cy="65" r="8" fill="#3a4a5c" stroke="#0d1620" stroke-width="1.2"/><text x="346" y="69" font-size="9" fill="#fff">C</text>
+<line x1="288" y1="65" x2="342" y2="65" stroke="#d3dbe6" stroke-width="2"/>
+<circle cx="270" cy="38" r="7" fill="#ff7a68" stroke="#0d1620" stroke-width="1.1"/><text x="266" y="42" font-size="8" fill="#0d1620">O</text>
+<line x1="277" y1="58" x2="273" y2="45" stroke="#d3dbe6" stroke-width="1.6"/>
+<circle cx="360" cy="38" r="7" fill="#ff7a68" stroke="#0d1620" stroke-width="1.1"/><text x="356" y="42" font-size="8" fill="#0d1620">O</text>
+<line x1="353" y1="58" x2="357" y2="45" stroke="#d3dbe6" stroke-width="1.6"/>
+<line x1="268" y1="45" x2="255" y2="30" stroke="#ff6b6b" stroke-width="2" marker-end="url(#arrBD)"/>
+<line x1="362" y1="45" x2="375" y2="30" stroke="#ff6b6b" stroke-width="2" marker-end="url(#arrBD)"/>
+<text x="315" y="130" font-size="10" text-anchor="middle" fill="#8fa0b3">C=O dipoles reinforcing</text>
+<defs><marker id="arrBD" markerWidth="8" markerHeight="8" refX="7" refY="2.5" orient="auto"><polygon points="0 0,8 2.5,0 5" fill="#ff6b6b"/></marker></defs>
+</svg>`,
+    caption: "Butane-2,3-dione: trans-form (mu=0, more stable) has the two C=O dipoles opposed, minimising repulsion; cis-form (mu != 0, less stable) has them reinforcing.",
+  },
+  "dichloroethane-anti-gauche": {
+    size: "md",
+    svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 190" width="100%">
+<rect x="1" y="1" width="418.0" height="188.0" rx="14" fill="#07131f" stroke="#213449" stroke-width="1.5"/>
+<text x="105" y="24" font-size="12" font-weight="bold" text-anchor="middle" fill="#d3dbe6">anti (μ = 0, more stable)</text>
+<circle cx="105" cy="105" r="52" fill="none" stroke="#9fb0c0" stroke-width="1.6"/>
+<circle cx="105" cy="105" r="4" fill="#3a4a5c" stroke="#0d1620"/>
+<line x1="105" y1="105" x2="105" y2="55" stroke="#d3dbe6" stroke-width="1.6"/><circle cx="105" cy="55" r="7" fill="#1c2b3a" stroke="#0d1620"/><text x="101" y="59" font-size="8" fill="#d3dbe6">H</text>
+<line x1="105" y1="105" x2="60" y2="130" stroke="#d3dbe6" stroke-width="1.6"/><circle cx="60" cy="130" r="7" fill="#1c2b3a" stroke="#0d1620"/><text x="56" y="134" font-size="8" fill="#d3dbe6">H</text>
+<line x1="105" y1="105" x2="150" y2="130" stroke="#d3dbe6" stroke-width="1.6" stroke-dasharray="3,2"/><circle cx="150" cy="130" r="9" fill="#5fd382" stroke="#0d1620"/><text x="145" y="134" font-size="8" fill="#fff">Cl</text>
+<line x1="98" y1="112" x2="66" y2="151" stroke="#9fb0c0" stroke-width="1.4"/><circle cx="60" cy="157" r="9" fill="#5fd382" stroke="#0d1620"/><text x="55" y="161" font-size="8" fill="#fff">Cl</text>
+<line x1="112" y1="112" x2="144" y2="151" stroke="#9fb0c0" stroke-width="1.4"/><circle cx="150" cy="157" r="7" fill="#1c2b3a" stroke="#0d1620"/><text x="146" y="161" font-size="8" fill="#d3dbe6">H</text>
+<text x="105" y="175" font-size="10" text-anchor="middle" fill="#8fa0b3">Cl–C–C–Cl = 180°</text>
+
+<text x="315" y="24" font-size="12" font-weight="bold" text-anchor="middle" fill="#d3dbe6">gauche (μ = 3.2 D)</text>
+<circle cx="315" cy="105" r="52" fill="none" stroke="#9fb0c0" stroke-width="1.6"/>
+<circle cx="315" cy="105" r="4" fill="#3a4a5c" stroke="#0d1620"/>
+<line x1="315" y1="105" x2="315" y2="55" stroke="#d3dbe6" stroke-width="1.6"/><circle cx="315" cy="55" r="7" fill="#1c2b3a" stroke="#0d1620"/><text x="311" y="59" font-size="8" fill="#d3dbe6">H</text>
+<line x1="315" y1="105" x2="270" y2="130" stroke="#d3dbe6" stroke-width="1.6"/><circle cx="270" cy="130" r="7" fill="#1c2b3a" stroke="#0d1620"/><text x="266" y="134" font-size="8" fill="#d3dbe6">H</text>
+<line x1="315" y1="105" x2="360" y2="130" stroke="#d3dbe6" stroke-width="1.6" stroke-dasharray="3,2"/><circle cx="360" cy="130" r="9" fill="#5fd382" stroke="#0d1620"/><text x="355" y="134" font-size="8" fill="#fff">Cl</text>
+<line x1="308" y1="112" x2="276" y2="151" stroke="#9fb0c0" stroke-width="1.4"/><circle cx="270" cy="157" r="7" fill="#1c2b3a" stroke="#0d1620"/><text x="266" y="161" font-size="8" fill="#d3dbe6">H</text>
+<line x1="322" y1="112" x2="336" y2="128" stroke="#9fb0c0" stroke-width="1.4"/><circle cx="345" cy="145" r="9" fill="#5fd382" stroke="#0d1620"/><text x="340" y="149" font-size="8" fill="#fff">Cl</text>
+<text x="315" y="175" font-size="10" text-anchor="middle" fill="#8fa0b3">Cl–C–C–Cl ≈ 60°</text>
+</svg>`,
+    caption: "Newman projections of 1,2-dichloroethane: anti (mu=0, intrinsically more stable) vs gauche (mu=3.2 D) -- the nonzero observed gas-phase moment (1.2 D) proves a real gauche population is thermally accessible.",
+  },
+  "n2h4-h2o2-conformations": {
+    size: "md",
+    svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 210" width="100%">
+<rect x="1" y="1" width="418.0" height="208.0" rx="14" fill="#07131f" stroke="#213449" stroke-width="1.5"/>
+<text x="105" y="20" font-size="12" font-weight="bold" text-anchor="middle" fill="#d3dbe6">N₂H₄ — gauche/skew, ≈95°</text>
+<circle cx="105" cy="75" r="10" fill="#7aa2ff" stroke="#0d1620" stroke-width="1.3"/><text x="101" y="79" font-size="10" font-weight="bold" fill="#fff">N</text>
+<circle cx="105" cy="115" r="10" fill="#7aa2ff" stroke="#0d1620" stroke-width="1.3"/><text x="101" y="119" font-size="10" font-weight="bold" fill="#fff">N</text>
+<line x1="105" y1="85" x2="105" y2="105" stroke="#d3dbe6" stroke-width="2"/>
+<circle cx="70" cy="50" r="3" fill="#d3dbe6"/><circle cx="78" cy="55" r="3" fill="#d3dbe6"/>
+<circle cx="70" cy="45" r="7" fill="#1c2b3a" stroke="#0d1620"/><text x="66" y="49" font-size="9" fill="#d3dbe6">H</text>
+<line x1="97" y1="68" x2="76" y2="52" stroke="#d3dbe6" stroke-width="1.6"/>
+<circle cx="140" cy="45" r="7" fill="#1c2b3a" stroke="#0d1620"/><text x="136" y="49" font-size="9" fill="#d3dbe6">H</text>
+<line x1="113" y1="68" x2="134" y2="50" stroke="#d3dbe6" stroke-width="1.6"/>
+<path d="M 92 55 A 24 24 0 0 1 118 55" fill="none" stroke="#ff6b6b" stroke-width="1.3"/>
+<text x="105" y="42" font-size="9" text-anchor="middle" fill="#ff6b6b">95°</text>
+<circle cx="70" cy="145" r="7" fill="#1c2b3a" stroke="#0d1620"/><text x="66" y="149" font-size="9" fill="#d3dbe6">H</text>
+<line x1="97" y1="122" x2="76" y2="140" stroke="#d3dbe6" stroke-width="1.6"/>
+<circle cx="140" cy="145" r="7" fill="#1c2b3a" stroke="#0d1620"/><text x="136" y="149" font-size="9" fill="#d3dbe6">H</text>
+<line x1="113" y1="122" x2="134" y2="140" stroke="#d3dbe6" stroke-width="1.6"/>
+<text x="105" y="185" font-size="10" text-anchor="middle" fill="#8fa0b3">μ ≈ 1.85 D</text>
+
+<text x="315" y="20" font-size="12" font-weight="bold" text-anchor="middle" fill="#d3dbe6">H₂O₂ — open-book, O–O spine</text>
+<circle cx="315" cy="75" r="9" fill="#ff7a68" stroke="#0d1620" stroke-width="1.3"/><text x="311" y="79" font-size="10" font-weight="bold" fill="#0d1620">O</text>
+<circle cx="315" cy="115" r="9" fill="#ff7a68" stroke="#0d1620" stroke-width="1.3"/><text x="311" y="119" font-size="10" font-weight="bold" fill="#0d1620">O</text>
+<line x1="315" y1="84" x2="315" y2="106" stroke="#d3dbe6" stroke-width="2"/>
+<circle cx="280" cy="50" r="7" fill="#1c2b3a" stroke="#0d1620"/><text x="276" y="54" font-size="9" fill="#d3dbe6">H</text>
+<line x1="307" y1="68" x2="286" y2="53" stroke="#d3dbe6" stroke-width="1.6" stroke-dasharray="2.5,2"/>
+<circle cx="350" cy="140" r="7" fill="#1c2b3a" stroke="#0d1620"/><text x="346" y="144" font-size="9" fill="#d3dbe6">H</text>
+<line x1="323" y1="122" x2="344" y2="137" stroke="#d3dbe6" stroke-width="1.6"/>
+<path d="M 300 60 L 260 70" stroke="#9fb0c0" stroke-width="1" stroke-dasharray="2,2"/>
+<path d="M 330 130 L 370 120" stroke="#9fb0c0" stroke-width="1" stroke-dasharray="2,2"/>
+<text x="315" y="182" font-size="10" text-anchor="middle" fill="#8fa0b3">dihedral ≈ 111.5° (gas)</text>
+<text x="315" y="196" font-size="10" text-anchor="middle" fill="#8fa0b3">μ ≈ 2.0 D</text>
+</svg>`,
+    caption: "N2H4 adopts a gauche/skew conformation (H-N-N-H dihedral about 95 degrees); H2O2 adopts an open-book conformation about the O-O spine (dihedral about 111.5 degrees, gas phase) -- both driven by lone-pair repulsion.",
   },
 };

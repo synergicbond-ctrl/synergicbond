@@ -4,7 +4,7 @@ import { DIPOLE_MOMENT_PARTS } from "./part-metadata";
 export const metadata: Metadata = {
   title: "Dipole Moment | Chemical Bonding | JEE Advanced",
   description:
-    "Complete textbook-style JEE Advanced dipole moment notes in 9 parts: foundation, vector addition, percentage ionic character, the six factors determining molecular polarity, classic JEE comparisons, structural and organic applications, advanced exceptions, and full revision tables.",
+    "Complete textbook-style JEE Advanced dipole moment notes in 4 parts: foundation, vector addition and percentage ionic character; the six factors determining molecular polarity and classic JEE comparisons; structural and organic applications; advanced exceptions and full revision tables.",
 };
 
 export default function DipoleMomentIndexPage() {
@@ -28,13 +28,13 @@ export default function DipoleMomentIndexPage() {
               Dipole Moment
             </h1>
             <p className="mt-6 max-w-4xl text-lg leading-9 text-slate-300">
-              A complete textbook chapter on molecular polarity, in nine sequential parts: foundation and vector
-              addition, percentage ionic character, the six factors that determine every observed moment, classic
-              JEE comparisons, structural and organic applications, advanced exceptions, and a full revision-table
-              reference bank.
+              A complete textbook chapter on molecular polarity, in four sequential parts: foundation, vector
+              addition and percentage ionic character; the six factors that determine every observed moment and the
+              classic JEE comparisons built on them; structural and organic applications; and advanced exceptions
+              with a full revision-table reference bank.
             </p>
             <div className="mt-8 flex flex-wrap gap-2 text-sm text-slate-300">
-              {["9 sequential parts", "23 original chemistry diagrams", "40+ classic JEE comparisons", "Full bond/group/molecular-dipole data banks"].map((item) => (
+              {["4 sequential parts", "30 original chemistry diagrams", "40+ classic JEE comparisons", "Full bond/group/molecular-dipole data banks"].map((item) => (
                 <span key={item} className="rounded-full border border-white/10 bg-white/[0.045] px-3 py-1.5">
                   {item}
                 </span>

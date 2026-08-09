@@ -6,11 +6,8 @@ import {
   DataTable,
   DipoleStructureFigure,
   ExamTrap,
-  FactorHeading,
   FigureFrame,
-  FormulaCard,
   K,
-  KB,
   KeyIdea,
   PartShell,
 } from "../../dipole-moment-shared";
@@ -19,101 +16,358 @@ export default function DipoleMomentPart04() {
   return (
     <PartShell
       part={4}
-      title="Factors Determining Molecular Dipole"
-      description="The six physical contributions that combine into every observed molecular moment — worked one at a time, in the order they matter most."
+      title="Advanced Exceptions & JEE Revision"
+      description="CO, B–N, Pt complexes, ozone, SO₂, interhalogens, TBP phosphorus systems, and maleic vs. fumaric acid, plus the full quick-reference tables and data banks."
     >
       <ChapterSection
-        id="six-factors"
+        id="co-and-bn"
         index="01"
-        eyebrow="The six contributions"
-        title="Factors Affecting Dipole Moment"
-        intro="The observed molecular dipole moment is the resultant of six distinct physical contributions. Treating polarity as 'electronegativity difference alone' is the single most common error in this topic."
+        eyebrow="Advanced exceptions"
+        title="CO and B–N — dative bonds fighting the naive prediction"
+        intro="Two molecules where the μd factor from Part 2 isn't a minor correction — it's the whole story."
       >
-        <FormulaCard title="The complete resultant">
-          <KB>{String.raw`\vec\mu = \vec\mu_e + \vec\mu_h + \vec\mu_L + \vec\mu_g + \vec\mu_d + \vec\mu_{\text{induced}}`}</KB>
-        </FormulaCard>
+        <FigureFrame title="CO resonance" caption="Structure I (:C≡O:) versus Structure II, the dative contributor (⁻C≡O⁺). The dative moment opposes the electronegativity-based moment, nearly cancelling it.">
+          <DipoleStructureFigure id="co-resonance" />
+        </FigureFrame>
 
-        <div className="space-y-10">
-          <div className="space-y-4">
-            <FactorHeading symbol="μe" title="Electronegativity / bond-pair moment" />
-            <ConceptCard title="The familiar contribution" tone="cyan">
-              <p>Unequal sharing of the bonding electron pair shifts density toward the more electronegative atom. This is usually — but not always — the dominant term.</p>
-              <p>Generally <K>{String.raw`\mu_e > \mu_h`}</K> in magnitude, so the net bond moment is directed toward the more electronegative atom. But as the next factor shows, <K>{String.raw`\mu_h`}</K> is never negligible in a rigorous treatment.</p>
-            </ConceptCard>
-          </div>
+        <ConceptCard title="CO — three competing effects nearly cancel" tone="rose" eyebrow="μ ≈ 0.11–0.12 D, toward carbon">
+          <p>Directed toward carbon — opposite the electronegativity prediction.</p>
+        </ConceptCard>
 
-          <div className="space-y-4">
-            <FactorHeading symbol="μh" title="Intrinsic homopolar dipole" />
-            <FigureFrame title="Origin of the intrinsic homopolar dipole" caption="The overlap electron cloud shifts toward the atom using the more compact orbital, even at zero electronegativity difference.">
-              <DipoleStructureFigure id="homopolar-origin" />
-            </FigureFrame>
-            <ConceptCard title="Arises purely from orbital-size mismatch" tone="violet">
-              <p>Exists even when <K>{String.raw`\Delta\chi = 0`}</K> (pure covalent bond). When one atom uses a more compact orbital, the overlap electron cloud is displaced toward it.</p>
-              <p>In every H–X hydrogen halide, hydrogen&apos;s 1s orbital is far more compact than any halogen orbital, so <K>{String.raw`\mu_h`}</K> always acts <strong className="text-white">toward H</strong> — directly opposing the electronegativity-based moment, which acts toward X.</p>
-            </ConceptCard>
-          </div>
+        <DataTable
+          headers={["Contribution", "Direction", "Reasoning"]}
+          rows={[
+            ["Lone-pair moments (μL)", "≈ cancel", "Lone pair on C opposes lone pair on O"],
+            ["Intrinsic homopolar (μh)", "toward O", "O uses more compact orbitals than C"],
+            ["σ/π electronegativity (μe)", "toward O", "O is more electronegative than C"],
+            ["Dative bond (μd): ⁻C≡O⁺", "toward C", "Opposes and nearly cancels all of the above"],
+          ]}
+        />
 
-          <div className="space-y-4">
-            <FactorHeading symbol="μL" title="Hybrid lone-pair moment" />
-            <FigureFrame title="HCl — three sp³ lone pairs on Cl" caption="Each lone pair sits ≈71° from the H–Cl bond axis, reinforcing the electronegativity-based bond moment.">
-              <DipoleStructureFigure id="hcl-lone-pairs" />
-            </FigureFrame>
-            <ConceptCard title="Only a hybrid lone pair has a net moment" tone="amber">
-              <p>A lone pair contributes <strong className="text-white">zero</strong> dipole moment if it occupies a pure s or p orbital: the s-orbital is spherically symmetric, and a pure p-orbital&apos;s two lobes point in exactly opposite directions and cancel. Only a lone pair housed in a hybrid orbital has a net directional moment.</p>
-              <KB>{String.raw`sp > sp^2 > sp^3`}</KB>
-              <p className="text-sm text-slate-400">Lone-pair moment order for carbon-type hybrids: 4.4 D → 3.7 D.</p>
-            </ConceptCard>
-            <ConceptCard title="HCl in full: the three-way tug-of-war" tone="rose" eyebrow="The one full derivation">
-              <p>If Cl used pure 3s/3p orbitals for its lone pairs, they would contribute nothing. Using sp³ hybrids instead, all three lone pairs point into the hemisphere opposite the H–Cl bond, each making ≈71° with the −z axis.</p>
-              <p>Their combined contribution — <K>{String.raw`3\mu_L\cos71°`}</K> — <strong className="text-white">reinforces</strong> <K>{String.raw`\mu_e`}</K> but is <strong className="text-white">opposed</strong> by <K>{String.raw`\mu_h`}</K> (which points toward H, per the previous factor).</p>
-              <p>The low observed <K>{String.raw`\mu(\text{HCl}) = 1.03\ \text{D}`}</K> reflects this three-way tug-of-war between <K>{String.raw`\mu_e`}</K>, <K>{String.raw`\mu_h`}</K> and <K>{String.raw`\mu_L`}</K> — not electronegativity alone. This is the only place in the chapter this full three-factor HCl breakdown is worked; the bare bond value (Part A) and the %ionic calculation (Part C) both build on it without repeating it.</p>
-            </ConceptCard>
-          </div>
-
-          <div className="space-y-4">
-            <FactorHeading symbol="μg" title="Group moment" />
-            <ConceptCard title="Functional groups behave as one vector" tone="emerald">
-              <p>Groups such as –CH₃, –OH, –NH₂, –NO₂, –Cl behave as a single vector — the resultant of all bond/electronic moments inside that group — and this vector is approximately transferable between different parent molecules.</p>
-              <KB>{String.raw`\mu_{CH_3} = 3\mu_{C\text{–}H}\cos70°32' = \mu_{C\text{–}H} \approx 0.4\ \text{D}`}</KB>
-            </ConceptCard>
-            <DataTable
-              headers={["Group", "μ (D)", "Direction (aromatic ring)"]}
-              rows={[
-                ["–NO₂", "3.95", "away (−I and −R same direction)"],
-                ["–CHO", "2.8", "away"],
-                ["–OH", "1.7", "away (−I predominates over +R)"],
-                ["–Cl", "1.55", "away"],
-                ["–CO₂H", "0.9", "away"],
-                ["–CH₃", "0.4", "toward"],
-                ["–NH₂", "1.53", "toward (+R predominates over −I)"],
-              ]}
-            />
-          </div>
-
-          <div className="space-y-4">
-            <FactorHeading symbol="μd" title="Dative / coordinate-bond moment" />
-            <ConceptCard title="Charge separation from a coordinate bond" tone="violet">
-              <p>Arises from charge separation associated with a coordinate bond or a charge-separated resonance contributor. Important in CO and B–N systems.</p>
-              <p>In CO, the dative contribution nearly cancels the ordinary electronegativity-based moment, explaining CO&apos;s remarkably small <K>{String.raw`\mu \approx 0.11\text{–}0.12\ \text{D}`}</K> — the full structure, resonance diagram, and three-way competing-effects breakdown are in Part H, which is where this factor gets its complete worked treatment.</p>
-            </ConceptCard>
-          </div>
-
-          <div className="space-y-4">
-            <FactorHeading symbol="μᵢ" title="Induced dipole moment" />
-            <ConceptCard title="Field-driven, not always external" tone="cyan">
-              <p>An external electric field — or the field of a neighbouring polar bond — can separate the charge centroids of an otherwise nonpolar region, creating an induced dipole.</p>
-              <KB>{String.raw`\mu_{\text{induced}} = \alpha E`}</KB>
-              <p>No external field is even required in some cases: in the chloromethane series (Part E), polarisation of one C–Cl bond electronically induces a moment in the other C–Cl bonds, opposing them and steadily reducing the net dipole as chlorination increases.</p>
-            </ConceptCard>
-          </div>
-        </div>
-
-        <ExamTrap>
-          Six factors, one resultant. When a comparison &ldquo;shouldn&apos;t&rdquo; work by electronegativity alone (NH₃ vs. NF₃, CO&apos;s tiny μ, the chloromethane order), the explanation is always one of these other five factors overriding or reinforcing <K>{String.raw`\mu_e`}</K> — never a new rule.
-        </ExamTrap>
+        <ConceptCard title="B–N dative linkage" tone="violet" eyebrow="A coordinate π-bond partially cancels the σ moment">
+          <p><K>{String.raw`R_3B \leftarrow NR_3 \leftrightarrow R_3\bar{B}=N^+R_3`}</K>: the dative N→B π-contribution opposes the σ-bond moment generated by the electronegativity difference (N more electronegative than B), lowering the net B–N moment below the naive electronegativity-only prediction.</p>
+        </ConceptCard>
 
         <KeyIdea>
-          Parts E through H are, structurally, this same six-factor toolkit applied to specific molecules. Recognising <em>which</em> factor is doing the work in each comparison is the actual JEE skill — the factor names themselves are just vocabulary.
+          CO&apos;s final vector sum is small and points toward carbon precisely because the dative contribution overwhelms the sum of the other three — the same μd factor introduced generically in Part 2, now shown doing all the work.
+        </KeyIdea>
+      </ChapterSection>
+
+      <ChapterSection
+        id="coordination-resonance"
+        index="02"
+        eyebrow="Advanced exceptions"
+        title="Coordination and resonance exceptions"
+        intro="A rigid ligand lone pair, a resonance-charged ozone, and a lone-pair-directed SO₂ — three more cases where the naive symmetry or electronegativity picture fails."
+      >
+        <FigureFrame title="trans-PtCl₂(PEt₃)₂ vs. trans-PtCl₂(SEt₂)₂" caption="μ = 0 versus μ = 2.4 D — the S lone pair is not cancelled by the trans arrangement.">
+          <DipoleStructureFigure id="pt-complexes" />
+        </FigureFrame>
+        <ConceptCard title="A rigid-ligand lone-pair exception" tone="cyan">
+          <p>Both are square-planar complexes where naive symmetry predicts μ = 0. This holds for PEt₃ (P has no lone pair left after coordinate bonding). But sulfur in SEt₂ retains an unshared lone pair whose moment — plus the rigid, non-freely-rotating S–Et bond moments — is not fully cancelled by the trans arrangement, giving a substantial residual μ = 2.4 D.</p>
+        </ConceptCard>
+
+        <FigureFrame title="Ozone resonance" caption="Formal positive charge on the central O, formal negative charge on a terminal O.">
+          <DipoleStructureFigure id="ozone" />
+        </FigureFrame>
+        <ConceptCard title="Bent, resonance-stabilised, and unavoidably polar" tone="violet">
+          <p>Lewis resonance places formal + charge on the central O and formal − on a terminal O. The two O–O bond moments are not fully cancelled by the lone-pair moment on the central atom, leaving ozone measurably polar despite consisting of only one element.</p>
+        </ConceptCard>
+
+        <FigureFrame title="SO₂" caption="Bent AX₂E geometry. The S=O bond resultant is opposed by the sulfur lone-pair moment, and the net dipole points away from the two S=O bonds, along the lone-pair direction.">
+          <DipoleStructureFigure id="so2" />
+        </FigureFrame>
+        <ConceptCard title="SO₂ — net dipole points toward the S lone pair" tone="amber" eyebrow="μ = 1.63 D">
+          <p>The same lone-pair-vs-bond-resultant tug-of-war as NH₃/H₂O (Part 2), now in a molecule with two double bonds instead of two single bonds: the sulfur lone-pair moment reinforces against the S=O bond resultant strongly enough to set the direction of the net molecular dipole.</p>
+        </ConceptCard>
+      </ChapterSection>
+
+      <ChapterSection
+        id="conformations-interhalogens"
+        index="03"
+        eyebrow="Advanced exceptions"
+        title="Nonplanar conformations and interhalogens"
+        intro="Four related hydrides/fluorides that adopt nonplanar shapes from lone-pair repulsion, plus the interhalogen family as a clean generalisation of the bond-moment framework."
+      >
+        <FigureFrame title="N₂H₄ and H₂O₂ conformations" caption="N₂H₄: gauche/skew, H–N–N–H dihedral ≈95°. H₂O₂: open-book about the O–O spine, dihedral ≈111.5° (gas).">
+          <DipoleStructureFigure id="n2h4-h2o2-conformations" />
+        </FigureFrame>
+
+        <div className="grid gap-5 xl:grid-cols-2">
+          <ConceptCard title="N₂H₄, H₂O₂" tone="cyan" eyebrow="Gauche/skew, open-book">
+            <p><strong className="text-white">N₂H₄</strong>: μ ≈ 1.85 D; gas-phase gauche/skew conformation, NH₂ halves rotated ≈95° from eclipsed. Rotation barrier: through-trans ≈16 kJ/mol; through-cis ≈49.8 kJ/mol.</p>
+            <p><strong className="text-white">H₂O₂</strong>: μ ≈ 2.0 D; open-book structure with O–O as spine, dihedral ≈111.5° (gas), ≈90–94.8° (crystalline), 80–145° range in organic peroxides. Rotation barrier: trans ≈4.6 kJ/mol; cis ≈29.5 kJ/mol.</p>
+          </ConceptCard>
+          <ConceptCard title="N₂F₄, P₂H₄" tone="violet" eyebrow="Related fluorides/hydrides">
+            <p><strong className="text-white">N₂F₄(g)</strong> exists as a mixture of gauche and staggered forms, showing anomalous dipole behaviour.</p>
+            <p><strong className="text-white">P₂H₄(g)</strong> exists predominantly in the gauche form.</p>
+          </ConceptCard>
+        </div>
+
+        <FigureFrame title="Bond dipole of Cl–F" caption="Every interhalogen X–Y is necessarily polar, since the two atoms are never identical and always differ in electronegativity.">
+          <DipoleStructureFigure id="clf-bond" />
+        </FigureFrame>
+        <ConceptCard title="Interhalogen ClF" tone="amber" eyebrow="μ ≈ 0.88 D">
+          <p>The same <K>{String.raw`\mu = q\times d`}</K> bond-moment framework built in Part 1, applied here to a family beyond the hydrogen halides — confirming the concept generalises cleanly to any two different halogens.</p>
+        </ConceptCard>
+      </ChapterSection>
+
+      <ChapterSection
+        id="tbp-fluorine-systems"
+        index="04"
+        eyebrow="Advanced exceptions"
+        title="Trigonal-bipyramidal phosphorus and fluorine geometry exceptions"
+        intro="Real dipole moments that give the AX₄E/AX₃E₂/AX₅E geometry rules from Part 3 concrete experimental teeth."
+      >
+        <FigureFrame title="The PClₓFᵧ series" caption="Axial/equatorial fluorine substitution pattern determines whether μ is zero or nonzero.">
+          <DipoleStructureFigure id="pclxfy-series" />
+        </FigureFrame>
+        <ConceptCard title="Polarity depends on position, not formula" tone="cyan">
+          <p>Trigonal bipyramidal geometry: three equatorial positions (120° apart) + two axial positions (180° apart). Substituting F for Cl gives μ = 0 only when the substitution pattern preserves an axis or plane of symmetry (PCl₅, PCl₃F₂ with both F axial, PF₅) and μ ≠ 0 for asymmetric patterns (PCl₄F, PCl₂F₃, PClF₄).</p>
+        </ConceptCard>
+
+        <ExamTrap>
+          P(CH₃)₃(CF₃)₂ and P(CH₃)₂(CF₃)₃ test the same axial/equatorial group-vector cancellation: CF₃ is a strong electron-withdrawing group while CH₃ is weakly donating, so their placement — not the formula alone — determines whether the molecule&apos;s overall vector arrangement cancels to zero.
+        </ExamTrap>
+
+        <FigureFrame title="SF₄, ClF₃, BrF₅" caption="See-saw (AX₄E, μ≈0.63 D), T-shaped (AX₃E₂, μ≈0.56 D), square pyramidal (AX₅E, μ≈1.51 D) — lone pairs shown explicitly.">
+          <DipoleStructureFigure id="sf4-clf3-brf5" />
+        </FigureFrame>
+        <ConceptCard title="Lone pairs break the parent symmetry" tone="violet">
+          <p>Each species has a lone pair occupying a nominal vertex, breaking the symmetry that would otherwise cancel the fluorine bond moments — unlike the parent-symmetry cases PF₅ and SF₆ (μ = 0).</p>
+        </ConceptCard>
+      </ChapterSection>
+
+      <ChapterSection
+        id="maleic-fumaric"
+        index="05"
+        eyebrow="Advanced exceptions"
+        title="Maleic acid vs. fumaric acid"
+        intro="A biologically relevant cis/trans pair — the same geometric-isomer logic as 1,2-dichloroethene (Part 3), applied to a real, well-known molecule pair."
+      >
+        <FigureFrame title="Maleic acid (cis) vs. fumaric acid (trans)" caption="Maleic acid, cis (μ ≠ 0) vs. fumaric acid, trans (μ ≈ 0).">
+          <DipoleStructureFigure id="maleic-fumaric" />
+        </FigureFrame>
+        <ConceptCard title="Using dipole moment to assign configuration" tone="amber">
+          <p>Maleic acid (cis) is polar; fumaric acid (trans) is essentially nonpolar — a textbook illustration of using dipole moment to assign geometrical configuration in real, biologically important molecules.</p>
+        </ConceptCard>
+      </ChapterSection>
+
+      <ChapterSection
+        id="comparisons-by-factor"
+        index="06"
+        eyebrow="Revision"
+        title="Quick-reference comparisons, grouped by deciding factor"
+        intro="Every comparison below isolates one specific factor from Part 2 — resonance/conjugation, geometry/symmetry, lone-pair placement, or plain bond polarity — that decides which of two related molecules has the larger dipole moment. In several cases a larger μ does not imply greater chemical reactivity."
+      >
+        <ConceptCard title="Resonance & conjugation decides" tone="violet">
+          <DataTable
+            headers={["Comparison", "μ values", "Order", "Why"]}
+            rows={[
+              ["DMF vs. acetone", "3.82 D vs. 2.88 D", "DMF > acetone", "Amide resonance (⁻O–C=N⁺) increases charge separation, yet N→C=O donation makes DMF the poorer electrophile — larger μ ≠ more reactive carbonyl."],
+              ["Furan vs. tetrahydrofuran", "0.66 D vs. ≈1.6–1.8 D", "THF > furan", "In furan, an O lone pair delocalises into the aromatic π system and resonance partly offsets the local C–O polarisation; THF lacks that delocalisation."],
+              ["Thiophene vs. tetrahydrothiophene", "0.55 D vs. ≈1.8–2 D", "THT > thiophene", "Aromatic conjugation in thiophene redistributes the S lone-pair density and reduces the local C–S resultant."],
+              ["Pyrrole vs. cyclopentadiene", "1.84 D vs. much smaller", "pyrrole > cyclopentadiene", "N contributes a lone pair to the aromatic π sextet, producing substantial internal charge redistribution."],
+              ["Acrolein vs. acetaldehyde", "≈3 D vs. 2.75 D", "acrolein ≳ acetaldehyde", "Conjugation lets the C=O polarisation extend into the C=C bond — explains why acrolein's β-carbon is electrophilic."],
+              ["Methyl vinyl ketone vs. acetone", "≈3 D vs. 2.88 D", "MVK ≳ acetone", "Conjugation spreads carbonyl polarisation into the alkene while keeping a strong C=O contribution — links to Michael (1,4)-addition."],
+              ["Cyclohexanone vs. cyclohex-2-en-1-one", "both strongly polar", "condition-dependent", "Conjugation changes both magnitude and direction of individual bond contributions — better taught as a polarisation pattern than a numerical order."],
+              ["Benzaldehyde vs. acetaldehyde", "≈3.0 D vs. 2.75 D", "benzaldehyde > acetaldehyde (usually)", "Phenyl–C=O conjugation adds charge-separated contributors — yet benzaldehyde can be less reactive toward many nucleophiles despite the larger μ."],
+              ["Acetophenone vs. acetone", "≈3 D vs. 2.88 D", "acetophenone usually slightly higher", "Phenyl–carbonyl conjugation modifies charge distribution, but the total vector difference stays small."],
+              ["Benzophenone vs. acetone", "≈3 D vs. 2.88 D", "comparable", "Additional phenyl groups increase delocalisation but also introduce vector/conformational effects — more conjugation does not mean much larger μ."],
+              ["p-Nitroaniline vs. nitrobenzene", "≈6.2 D vs. ≈4.0 D", "p-nitroaniline > nitrobenzene", "−NH₂ (π-donor) and −NO₂ (π-acceptor) reinforce through the para-conjugated ring — push–pull enhancement beyond simple group-vector addition."],
+              ["p-Nitroaniline vs. aniline", "≈6.2 D vs. ≈1.5 D", "p-nitroaniline ≫ aniline", "The para nitro acceptor converts aniline into a donor–π–acceptor system with much greater charge separation."],
+              ["p-Dimethylaminobenzaldehyde vs. benzaldehyde", "donor–acceptor compound appreciably higher", "p-DMAB > benzaldehyde", "–NMe₂ donates while –CHO withdraws through the conjugated π system, reinforcing long-range charge transfer — a chromophore/solvatochromism example."],
+            ]}
+          />
+        </ConceptCard>
+
+        <ConceptCard title="Geometry & symmetry decides" tone="cyan">
+          <DataTable
+            headers={["Comparison", "μ values", "Order", "Why"]}
+            rows={[
+              ["Nitrobenzene vs. benzene", "≈4.0 D vs. 0 D", "nitrobenzene ≫ benzene", "Benzene is perfectly symmetric; −NO₂ introduces strong −I/−R withdrawal and N⁺O⁻ character."],
+              ["Pyridine vs. benzene", "≈2.2 D vs. 0 D", "pyridine ≫ benzene", "Replacing one CH by N destroys hexagonal charge symmetry — a small structural substitution converts μ from zero to substantial."],
+              ["DMSO vs. dimethyl sulfone", "≈4.0 D vs. ≈4–5 D (phase-dependent)", "close — not simply 'two S=O ⟹ double μ'", "The two S–O bond vectors in the sulfone are not parallel; geometry causes substantial vector cancellation."],
+              ["cis- vs. trans-1,2-difluoroethene", "cis ≠ 0; trans ≈ 0", "cis > trans", "C–F vectors cancel by symmetry in trans, reinforce in cis — the fluorine analogue of the dichloroethene case."],
+              ["SOCl₂ vs. POCl₃", "≈1.45 D vs. ≈2–2.5 D", "POCl₃ > SOCl₂", "POCl₃'s strong P–O polarisation isn't fully cancelled by the three P–Cl vectors; in SOCl₂ the S=O, S–Cl and lone-pair contributions cancel more strongly."],
+              ["SOCl₂ vs. POF₃", "≈1.45 D vs. ≈2 D+", "POF₃ > SOCl₂", "POF₃'s strongly polarised P–O bond plus an asymmetric one-O/three-F ligand set keeps the resultant along the C₃ axis large."],
+              ["NO₂F", "0.466 D", "small but nonzero", "Asymmetric, so μ ≠ 0 — but the N–F and two N–O contributions substantially oppose one another, leaving only a small resultant."],
+              ["COF₂ vs. CO₂", "0.950 D vs. 0", "COF₂ > CO₂", "CO₂'s two identical C=O vectors cancel exactly; COF₂ has one C=O and two C–F bonds, so the non-equivalent vectors cannot cancel."],
+            ]}
+          />
+        </ConceptCard>
+
+        <ConceptCard title="Lone-pair placement decides" tone="amber">
+          <DataTable
+            headers={["Comparison", "μ values", "Order", "Why"]}
+            rows={[
+              ["SF₄ vs. PF₅", "0.632 D vs. 0", "SF₄ > PF₅", "PF₅'s ideal D₃ₕ symmetry cancels completely; SF₄'s equatorial lone pair destroys that cancellation — electron-pair geometry ≠ molecular symmetry."],
+              ["ClF₃ vs. IF₅", "≈0.5–0.6 D vs. ≈2.1 D", "IF₅ ≫ ClF₃", "T-shaped ClF₃ cancels more than square-pyramidal IF₅, whose four basal vectors cancel in-plane but leave a substantial axial resultant."],
+              ["SOCl₂ vs. SO₂Cl₂", "≈1.4–1.5 D vs. 1.81 D", "SO₂Cl₂ > SOCl₂", "'Having a lone pair' does not guarantee a larger μ — the full vector resultant matters, and SO₂Cl₂'s two strongly polar S=O bonds dominate."],
+            ]}
+          />
+        </ConceptCard>
+
+        <ConceptCard title="Bond polarity / induced effects decide" tone="emerald">
+          <DataTable
+            headers={["Comparison", "μ values", "Order", "Why"]}
+            rows={[
+              ["Acetonitrile vs. propyne", "≈3.9 D vs. 0.78 D", "CH₃CN ≫ propyne", "C≡N has very strong Cᵟ⁺–Nᵟ⁻ polarisation; the C≡C unit of propyne has no comparable heteronuclear dipole."],
+              ["Thiophene vs. furan", "0.55 D vs. 0.66 D", "furan > thiophene", "O's stronger inductive pull outweighs S's greater polarizability."],
+              ["DMSO vs. dimethyl sulfide", "≈3.96 D vs. 1.50 D", "DMSO ≫ DMS", "Oxidation introduces a strongly polarised S⁺–O⁻ linkage."],
+              ["Acetaldehyde vs. acetone", "2.75 D vs. 2.88 D", "acetone > acetaldehyde", "The second methyl group modifies the resultant — yet acetaldehyde is normally the more electrophilic despite the smaller μ."],
+              ["Propanal vs. acetone", "2.52 D vs. 2.88 D", "acetone > propanal", "Total molecular μ depends on the vector sum of all bond contributions, not carbonyl polarity alone — aldehyde/ketone reactivity order can't be read off μ."],
+              ["1,2-Difluoroethane vs. 1,2-dichloroethane", "strongly conformer-dependent", "no single order to memorise", "Each exists as a population of conformers; 1,2-difluoroethane's gauche conformer is unusually stabilised by stereoelectronic effects — minimum μ need not mean maximum conformational stability."],
+              ["H₂CO vs. H₂CS", "2.332 D vs. 1.647 D", "H₂CO > H₂CS", "O's much greater electronegativity beats S's greater polarizability — a direct counterexample to 'more polarizable ⟹ larger μ.'"],
+              ["NOCl vs. NOBr", "both ≈1.8 D, values close", "no strong simple order", "Replacing Cl with Br changes bond polarity and bond length in opposite ways, and the strongly polarised N–O contribution dominates either way — a warning against ranking μ from Δχ alone."],
+            ]}
+          />
+        </ConceptCard>
+      </ChapterSection>
+
+      <ChapterSection
+        id="bond-moments-bank"
+        index="07"
+        eyebrow="Revision"
+        title="Bond moments data bank"
+        intro="Approximately transferable bond moments (Debye), the building blocks for every vector-addition calculation in this chapter."
+      >
+        <DataTable
+          headers={["Bond", "μ (D)", "Bond", "μ (D)"]}
+          rows={[
+            ["H–C", "0.39", "H–N", "1.33"],
+            ["N–O", "1.51", "H–P", "0.36"],
+            ["H–S", "0.69", "C–N", "0.22"],
+            ["C–O", "0.75", "C–F", "1.39"],
+            ["C–Cl", "1.47", "C–Br", "1.42"],
+            ["Si–H", "0.99", "Si–N", "1.55"],
+            ["Sn–Cl", "3.00", "N–F", "0.17"],
+            ["P–Cl", "0.80", "C=N", "0.90"],
+            ["C=O", "2.30", "P=O", "2.70"],
+            ["S=O", "3.00", "C≡N", "3.53"],
+            ["N→O", "4.28", "O→B", "3.60"],
+            ["N→B", "2.55", "P→B", "4.40–4.44"],
+          ]}
+        />
+      </ChapterSection>
+
+      <ChapterSection
+        id="group-moments-bank"
+        index="08"
+        eyebrow="Revision"
+        title="Group moments data bank"
+        intro="Group moments toward benzene (Part 2) plus a homologous-series check: the same group's moment stays essentially constant as the alkyl chain lengthens."
+      >
+        <DataTable
+          headers={["Group", "μ (D)", "Direction (aromatic ring)"]}
+          rows={[
+            ["–NO₂", "3.95", "away"],
+            ["–CHO", "2.8", "away"],
+            ["–OH", "1.7", "away"],
+            ["–Cl", "1.55", "away"],
+            ["–CO₂H", "0.9", "away"],
+            ["–CH₃", "0.4", "toward"],
+            ["–NH₂", "1.53", "toward"],
+            ["–H", "0", "—"],
+          ]}
+        />
+        <ConceptCard title="Homologous-series alkyl group moments" tone="cyan" eyebrow="Constant within a series">
+          <DataTable
+            headers={["Alkyl group", "Alcohol (–OH)", "Amine (–NH₂)", "Chloride (–Cl)", "Nitrile (–C≡N)"]}
+            rows={[
+              ["C₂H₅–", "1.70", "1.30", "2.04", "3.56"],
+              ["n-C₃H₇–", "1.67", "1.40", "2.04", "3.56"],
+              ["n-C₄H₉–", "1.66", "1.30", "2.04", "3.56"],
+            ]}
+          />
+        </ConceptCard>
+      </ChapterSection>
+
+      <ChapterSection
+        id="molecular-dipole-master"
+        index="09"
+        eyebrow="Revision"
+        title="Molecular dipole moments — master reference"
+        intro="Every molecular μ used across all four parts, collected into one lookup reference."
+      >
+        <ConceptCard title="Zero-dipole molecules (symmetry cancellation)" tone="navy">
+          <DataTable
+            headers={["Molecule", "μ (D)"]}
+            rows={[
+              ["H₂, Cl₂, Br₂, I₂, N₂", "0"],
+              ["CH₄, C₃H₈, C₂H₄, C₂H₂, C₂H₆", "0"],
+              ["CO₂, CS₂, CCl₄, CBr₄, SnCl₄", "0"],
+              ["C₆H₆ (benzene), naphthalene", "0"],
+              ["PCl₅, SF₆, PF₅, BF₃, SO₃ (planar D₃ₕ)", "0"],
+            ]}
+          />
+        </ConceptCard>
+
+        <ConceptCard title="Hydrides and simple diatomics/triatomics" tone="cyan">
+          <DataTable
+            headers={["Molecule", "μ (D)", "Molecule", "μ (D)"]}
+            rows={[
+              ["HF", "1.98–2.0", "HCl", "1.03"],
+              ["HBr", "0.78–0.79", "HI", "0.38"],
+              ["CO", "0.10–0.12", "HCN", "2.92"],
+              ["H₂O", "1.84–1.85", "H₂S", "1.10"],
+              ["NH₃", "1.46–1.50", "NF₃", "0.20"],
+              ["PH₃", "0.55", "AsH₃", "0.16"],
+              ["SbH₃", "≈0.12", "H₂Se", "≈0.24"],
+              ["H₂Te", "≈0.20", "SO₂", "1.63"],
+              ["N₂O", "0.17", "OF₂ (F₂O)", "0.3"],
+              ["O₃", "small, nonzero", "N₂F₂ (trans)", "0"],
+              ["N₂F₂ (cis)", "≈0.16", "N₂H₄", "≈1.85"],
+              ["H₂O₂", "≈2.0", "PCl₃", "0.78"],
+              ["ClF (interhalogen)", "≈0.88", "KCl, CsCl (gas, ionic)", "≈10.3–10.4"],
+            ]}
+          />
+        </ConceptCard>
+
+        <ConceptCard title="Halomethanes and simple organics" tone="violet">
+          <DataTable
+            headers={["Molecule", "μ (D)", "Molecule", "μ (D)"]}
+            rows={[
+              ["CH₃OH", "1.65", "CH₃Cl", "1.86–1.87"],
+              ["CH₂Cl₂", "1.55", "CHCl₃", "1.02–1.15"],
+              ["CCl₄", "0", "CH₃Br", "1.80"],
+              ["C₂H₅Br", "2.03", "CH₃NH₂", "1.25"],
+              ["CH₃CO₂H", "1.74", "Ethyl chloride", "2.05"],
+              ["Vinyl chloride", "1.44", "1,2-dichloroethane (gas, avg)", "1.2"],
+              ["1,2-dichloroethane, gauche", "3.2", "1,2-dichloroethane, anti", "0"],
+              ["cis-1,2-C₂H₂Cl₂", "1.86–1.90", "trans-1,2-C₂H₂Cl₂", "0"],
+              ["Maleic acid (cis)", "≠ 0", "Fumaric acid (trans)", "≈ 0"],
+              ["Butane-2,3-dione, trans", "0", "Butane-2,3-dione, cis", "≠ 0"],
+              ["Acetone", "2.88", "Acetonitrile", "3.92"],
+              ["DMSO", "3.96", "Ethanol", "1.69"],
+              ["Formaldehyde", "2.33", "Acetaldehyde", "2.75"],
+              ["DMF", "≈3.82", "Diethyl ether", "1.15"],
+              ["H₂CO", "2.332", "H₂CS", "1.647"],
+            ]}
+          />
+        </ConceptCard>
+
+        <ConceptCard title="Aromatics, complexes and fluorine/phosphorus systems" tone="amber">
+          <DataTable
+            headers={["Molecule", "μ (D)", "Molecule", "μ (D)"]}
+            rows={[
+              ["Pyrrole", "1.8", "Furan", "0.7"],
+              ["Fluorobenzene", "1.63", "Chlorobenzene", "1.70–1.75"],
+              ["Phenol", "1.40", "Nitrobenzene", "3.90"],
+              ["Aniline", "1.50", "Toluene", "0.40"],
+              ["p-Nitroaniline", "6.2", "o-Nitroaniline", "3.64–4.26"],
+              ["Hydroquinone", "1.64", "Pyridine", "2.19"],
+              ["cis-Pt(PEt₃)₂Cl₂", "9.9", "trans-Pt(PEt₃)₂Cl₂", "0"],
+              ["cis-Pt(SEt₂)₂Cl₂", "9.5", "trans-Pt(SEt₂)₂Cl₂", "2.4"],
+              ["SF₄ (see-saw, AX₄E)", "≈0.63", "ClF₃ (T-shaped, AX₃E₂)", "≈0.56"],
+              ["BrF₅ (sq. pyramidal, AX₅E)", "≈1.51", "IF₅", "≈2.1"],
+              ["NO₂F", "0.466", "COF₂", "0.950"],
+            ]}
+          />
+        </ConceptCard>
+
+        <KeyIdea>
+          The alkali-halide gas-phase values (KCl, CsCl, ≈10 D) are included to give a sense of scale: these diatomics are close to 100% ionic, in sharp contrast to the &lt;50% ionic character of HF/HCl/HBr/HI worked out in Part 1 — even though both series are &ldquo;diatomic halides.&rdquo;
         </KeyIdea>
       </ChapterSection>
     </PartShell>

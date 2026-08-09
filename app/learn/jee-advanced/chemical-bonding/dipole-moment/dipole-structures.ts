@@ -2,9 +2,10 @@
 // Each entry's geometry is verified chemistry, converted from the master notes' light-theme
 // figures. Only the color palette changed to match the site's dark textbook theme.
 
-export const DIPOLE_STRUCTURES: Record<string, { svg: string; caption: string }> = {
+export const DIPOLE_STRUCTURES: Record<string, { svg: string; caption: string; size?: "sm" | "md" | "lg" }> = {
   "dipole-arrow": {
-    svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 90" width="380">
+    size: "md",
+    svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 90" width="100%">
 <rect x="1" y="1" width="378.0" height="88.0" rx="14" fill="#07131f" stroke="#213449" stroke-width="1.5"/>
 
   <title>Dipole arrow convention</title>
@@ -22,7 +23,8 @@ export const DIPOLE_STRUCTURES: Record<string, { svg: string; caption: string }>
     caption: "Dipole arrow convention — the arrow points toward the more electronegative atom; the crossed tail marks the electropositive end.",
   },
   "vector-triangle": {
-    svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 150" width="320">
+    size: "md",
+    svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 150" width="100%">
 <rect x="1" y="1" width="318.0" height="148.0" rx="14" fill="#07131f" stroke="#213449" stroke-width="1.5"/>
 
   <title>Vector addition triangle</title>
@@ -37,7 +39,8 @@ export const DIPOLE_STRUCTURES: Record<string, { svg: string; caption: string }>
     caption: "Two bond-moment vectors mu1 and mu2 separated by angle theta, added by the parallelogram rule.",
   },
   "hcl-bond": {
-    svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 110" width="260">
+    size: "sm",
+    svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 110" width="100%">
 <rect x="1" y="1" width="258.0" height="108.0" rx="14" fill="#07131f" stroke="#213449" stroke-width="1.5"/>
 
 <circle cx="70" cy="55" r="10" fill="#1c2b3a" stroke="#d3dbe6" stroke-width="2"/><text x="66" y="60" font-size="13" fill="#d3dbe6">H</text>
@@ -50,7 +53,8 @@ export const DIPOLE_STRUCTURES: Record<string, { svg: string; caption: string }>
     caption: "Bond dipole of H-Cl: mu = 1.03 D, directed toward chlorine.",
   },
   "co2-cancellation": {
-    svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 150" width="300">
+    size: "md",
+    svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 150" width="100%">
 <rect x="1" y="1" width="298.0" height="148.0" rx="14" fill="#07131f" stroke="#213449" stroke-width="1.5"/>
 
 <text x="150" y="20" font-size="13" font-weight="bold" text-anchor="middle" fill="#d3dbe6">CO₂ — polar bonds, nonpolar molecule</text>
@@ -67,7 +71,8 @@ export const DIPOLE_STRUCTURES: Record<string, { svg: string; caption: string }>
     caption: "CO2: polar C=O bonds, but the linear geometry forces the two bond moments to cancel exactly.",
   },
   "homopolar-origin": {
-    svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 170" width="320">
+    size: "md",
+    svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 170" width="100%">
 <rect x="1" y="1" width="318.0" height="168.0" rx="14" fill="#07131f" stroke="#213449" stroke-width="1.5"/>
 
 <text x="160" y="20" font-size="13" font-weight="bold" text-anchor="middle" fill="#d3dbe6">Origin of the Intrinsic Homopolar Dipole</text>
@@ -83,7 +88,8 @@ export const DIPOLE_STRUCTURES: Record<string, { svg: string; caption: string }>
     caption: "Origin of the intrinsic homopolar dipole: the overlap electron cloud shifts toward the atom using the more compact orbital, even at zero electronegativity difference.",
   },
   "hcl-lone-pairs": {
-    svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 190" width="260">
+    size: "sm",
+    svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 190" width="100%">
 <rect x="1" y="1" width="258.0" height="188.0" rx="14" fill="#07131f" stroke="#213449" stroke-width="1.5"/>
 
 <text x="130" y="18" font-size="12" text-anchor="middle" font-weight="bold" fill="#d3dbe6">Cl in sp³ hybridisation</text>
@@ -103,7 +109,8 @@ export const DIPOLE_STRUCTURES: Record<string, { svg: string; caption: string }>
     caption: "HCl: three sp3 lone pairs on Cl, each at about 71 degrees from the H-Cl bond axis, reinforcing the electronegativity-based bond moment.",
   },
   "co-resonance": {
-    svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 110" width="340">
+    size: "md",
+    svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 110" width="100%">
 <rect x="1" y="1" width="338.0" height="108.0" rx="14" fill="#07131f" stroke="#213449" stroke-width="1.5"/>
 
 <text x="70" y="20" font-size="11" fill="#d3dbe6">Structure I: <tspan font-family="serif">:C≡O:</tspan></text>
@@ -130,7 +137,8 @@ export const DIPOLE_STRUCTURES: Record<string, { svg: string; caption: string }>
     caption: "CO resonance: the covalent triple-bond form versus the dative-bond contributor. The dative moment opposes the electronegativity-based moment, nearly cancelling it.",
   },
   "cis-trans-dichloroethene": {
-    svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 130" width="340">
+    size: "md",
+    svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 130" width="100%">
 <rect x="1" y="1" width="338.0" height="128.0" rx="14" fill="#07131f" stroke="#213449" stroke-width="1.5"/>
 
 <text x="80" y="18" font-size="11" text-anchor="middle" font-weight="bold" fill="#d3dbe6">cis (μ≠0)</text>
@@ -149,7 +157,8 @@ export const DIPOLE_STRUCTURES: Record<string, { svg: string; caption: string }>
     caption: "1,2-dichloroethene: cis (mu is not 0) versus trans (mu = 0).",
   },
   "nh3-nf3": {
-    svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 210" width="420">
+    size: "md",
+    svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 210" width="100%">
 <rect x="1" y="1" width="418.0" height="208.0" rx="14" fill="#07131f" stroke="#213449" stroke-width="1.5"/>
 
 <text x="105" y="20" font-size="12" font-weight="bold" text-anchor="middle" fill="#d3dbe6">NH₃ (μ = 1.46–1.50 D)</text>
@@ -189,7 +198,8 @@ export const DIPOLE_STRUCTURES: Record<string, { svg: string; caption: string }>
     caption: "NH3 (mu = 1.46-1.50 D): lone-pair and bond-resultant moments reinforce. NF3 (mu = 0.20 D): they nearly cancel.",
   },
   "h2o-of2": {
-    svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 190" width="420">
+    size: "md",
+    svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 190" width="100%">
 <rect x="1" y="1" width="418.0" height="188.0" rx="14" fill="#07131f" stroke="#213449" stroke-width="1.5"/>
 
 <text x="105" y="20" font-size="12" font-weight="bold" text-anchor="middle" fill="#d3dbe6">H₂O (μ = 1.84–1.85 D)</text>
@@ -221,7 +231,8 @@ export const DIPOLE_STRUCTURES: Record<string, { svg: string; caption: string }>
     caption: "H2O (mu = 1.84-1.85 D): lone-pair resultant reinforces the bond resultant. F2O (mu = 0.3 D): they nearly cancel.",
   },
   "chloromethane-series": {
-    svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 590 190" width="590">
+    size: "md",
+    svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 590 190" width="100%">
 <rect x="1" y="1" width="588.0" height="188.0" rx="14" fill="#07131f" stroke="#213449" stroke-width="1.5"/>
 
 <text x="90" y="20" font-size="13" font-weight="bold" text-anchor="middle" fill="#d3dbe6">CH₃Cl</text>
@@ -283,7 +294,8 @@ export const DIPOLE_STRUCTURES: Record<string, { svg: string; caption: string }>
     caption: "The chloromethane series, each carbon drawn in genuine tetrahedral wedge/hash perspective: CH3Cl > CH2Cl2 > CHCl3 > CCl4 (0 D).",
   },
   "benzene-mono": {
-    svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 730 165" width="730">
+    size: "lg",
+    svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 730 165" width="100%">
 <rect x="1" y="1" width="728.0" height="163.0" rx="14" fill="#07131f" stroke="#213449" stroke-width="1.5"/>
 
 <text x="65" y="14" font-size="10" text-anchor="middle" fill="#d3dbe6">benzene</text>
@@ -324,7 +336,8 @@ export const DIPOLE_STRUCTURES: Record<string, { svg: string; caption: string }>
     caption: "Monosubstituted benzenes as true Kekule rings with alternating double bonds.",
   },
   "dichlorobenzene": {
-    svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 165" width="560">
+    size: "md",
+    svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 165" width="100%">
 <rect x="1" y="1" width="558.0" height="163.0" rx="14" fill="#07131f" stroke="#213449" stroke-width="1.5"/>
 
 <text x="85" y="18" font-size="12" text-anchor="middle" font-weight="bold" fill="#d3dbe6">ortho</text>
@@ -382,7 +395,8 @@ export const DIPOLE_STRUCTURES: Record<string, { svg: string; caption: string }>
     caption: "Dichlorobenzene: ortho, meta and para isomers, illustrating the ortho > meta > para trend to zero.",
   },
   "hydroquinone": {
-    svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 175" width="200">
+    size: "sm",
+    svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 175" width="100%">
 <rect x="1" y="1" width="198.0" height="173.0" rx="14" fill="#07131f" stroke="#213449" stroke-width="1.5"/>
 
 <line x1="100.0" y1="58.0" x2="127.7" y2="74.0" stroke="#d3dbe6" stroke-width="2"/>
@@ -402,7 +416,8 @@ export const DIPOLE_STRUCTURES: Record<string, { svg: string; caption: string }>
     caption: "Hydroquinone (para-dihydroxybenzene): both -OH groups drawn on the ring.",
   },
   "pt-complexes": {
-    svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 130" width="340">
+    size: "md",
+    svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 130" width="100%">
 <rect x="1" y="1" width="338.0" height="128.0" rx="14" fill="#07131f" stroke="#213449" stroke-width="1.5"/>
 
 <text x="80" y="18" font-size="11" font-weight="bold" text-anchor="middle" fill="#d3dbe6">trans-PtCl₂(PEt₃)₂</text>
@@ -425,7 +440,8 @@ export const DIPOLE_STRUCTURES: Record<string, { svg: string; caption: string }>
     caption: "trans-PtCl2(PEt3)2 (mu = 0) versus trans-PtCl2(SEt2)2 (mu = 2.4 D, sulfur lone pair not cancelled).",
   },
   "ozone": {
-    svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 110" width="220">
+    size: "sm",
+    svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 110" width="100%">
 <rect x="1" y="1" width="218.0" height="108.0" rx="14" fill="#07131f" stroke="#213449" stroke-width="1.5"/>
 
 <circle cx="110" cy="35" r="9" fill="#ff7a68" stroke="#d3dbe6" stroke-width="1.5"/><text x="105" y="40" font-size="10" fill="#d3dbe6">O</text>
@@ -439,7 +455,8 @@ export const DIPOLE_STRUCTURES: Record<string, { svg: string; caption: string }>
     caption: "Ozone resonance: formal positive charge on the central O, formal negative charge on a terminal O.",
   },
   "pclxfy-series": {
-    svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 140" width="600">
+    size: "lg",
+    svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 140" width="100%">
 <rect x="1" y="1" width="598.0" height="138.0" rx="14" fill="#07131f" stroke="#213449" stroke-width="1.5"/>
 
 <!-- PCl5 -->
@@ -501,7 +518,8 @@ export const DIPOLE_STRUCTURES: Record<string, { svg: string; caption: string }>
     caption: "The PClxFy series: axial/equatorial fluorine substitution pattern determines whether mu is zero or nonzero.",
   },
   "sf4-clf3-brf5": {
-    svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 190" width="560">
+    size: "md",
+    svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 190" width="100%">
 <rect x="1" y="1" width="558.0" height="188.0" rx="14" fill="#07131f" stroke="#213449" stroke-width="1.5"/>
 
 <text x="90" y="20" font-size="12" font-weight="bold" text-anchor="middle" fill="#d3dbe6">SF₄ (see-saw, AX₄E)</text>
@@ -548,7 +566,8 @@ export const DIPOLE_STRUCTURES: Record<string, { svg: string; caption: string }>
     caption: "SF4 (see-saw, AX4E), ClF3 (T-shaped, AX3E2), BrF5 (square pyramidal, AX5E) - lone pairs shown explicitly.",
   },
   "group15-hydrides": {
-    svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 150" width="600">
+    size: "lg",
+    svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 150" width="100%">
 <rect x="1" y="1" width="598.0" height="148.0" rx="14" fill="#07131f" stroke="#213449" stroke-width="1.5"/>
 
 <text x="85" y="14" font-size="11" text-anchor="middle" font-weight="bold" fill="#d3dbe6">NH₃</text>
@@ -595,7 +614,8 @@ export const DIPOLE_STRUCTURES: Record<string, { svg: string; caption: string }>
     caption: "The complete Group 15 hydride family, decreasing monotonically from 1.47 D to 0.12 D.",
   },
   "group16-hydrides": {
-    svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 165" width="600">
+    size: "lg",
+    svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 165" width="100%">
 <rect x="1" y="1" width="598.0" height="163.0" rx="14" fill="#07131f" stroke="#213449" stroke-width="1.5"/>
 
 <text x="85" y="14" font-size="11" text-anchor="middle" font-weight="bold" fill="#d3dbe6">H₂O</text>
@@ -636,5 +656,60 @@ export const DIPOLE_STRUCTURES: Record<string, { svg: string; caption: string }>
 <text x="520" y="145" font-size="9" text-anchor="middle" fill="#8fa0b3">90°</text>
 </svg>`,
     caption: "The complete Group 16 hydride family, with the bond angle closing toward 90 degrees down the group.",
+  },
+  "so2": {
+    size: "sm",
+    svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 200" width="100%">
+<rect x="1" y="1" width="258.0" height="198.0" rx="14" fill="#07131f" stroke="#213449" stroke-width="1.5"/>
+
+<text x="130" y="20" font-size="12" font-weight="bold" text-anchor="middle" fill="#d3dbe6">SO₂ (μ = 1.63 D)</text>
+<circle cx="130" cy="80" r="10" fill="#f9dc5c" stroke="#d3dbe6" stroke-width="1.5"/><text x="126" y="84" font-size="10" fill="#d3dbe6">S</text>
+<circle cx="127" cy="50" r="2.5" fill="#d3dbe6"/><circle cx="133" cy="50" r="2.5" fill="#d3dbe6"/>
+<text x="145" y="48" font-size="9" fill="#8fa0b3">lone pair</text>
+<circle cx="90" cy="130" r="9" fill="#ff7a68" stroke="#d3dbe6" stroke-width="1.5"/><text x="86" y="134" font-size="10" fill="#d3dbe6">O</text>
+<circle cx="170" cy="130" r="9" fill="#ff7a68" stroke="#d3dbe6" stroke-width="1.5"/><text x="166" y="134" font-size="10" fill="#d3dbe6">O</text>
+<line x1="122" y1="87" x2="97" y2="122" stroke="#d3dbe6" stroke-width="2"/>
+<line x1="126" y1="90" x2="101" y2="125" stroke="#d3dbe6" stroke-width="1.3"/>
+<line x1="138" y1="87" x2="163" y2="122" stroke="#d3dbe6" stroke-width="2"/>
+<line x1="134" y1="90" x2="159" y2="125" stroke="#d3dbe6" stroke-width="1.3"/>
+<line x1="130" y1="68" x2="130" y2="30" stroke="#ff6b6b" stroke-width="2.5" marker-end="url(#arrSO)"/>
+<text x="150" y="35" font-size="10" fill="#ff6b6b">μ (toward lone pair)</text>
+<defs><marker id="arrSO" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><polygon points="0 0,10 3,0 6" fill="#ff6b6b"/></marker></defs>
+</svg>`,
+    caption: "SO2: bent AX2E geometry. The S=O bond resultant is opposed by the sulfur lone-pair moment, and the net dipole ends up pointing away from the two S=O bonds, along the lone-pair direction.",
+  },
+  "maleic-fumaric": {
+    size: "md",
+    svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 150" width="100%">
+<rect x="1" y="1" width="458.0" height="148.0" rx="14" fill="#07131f" stroke="#213449" stroke-width="1.5"/>
+
+<text x="110" y="18" font-size="11" text-anchor="middle" font-weight="bold" fill="#d3dbe6">maleic acid — cis (μ≠0)</text>
+<line x1="70" y1="70" x2="150" y2="70" stroke="#d3dbe6" stroke-width="2.5"/>
+<line x1="50" y1="45" x2="70" y2="70" stroke="#d3dbe6" stroke-width="2"/><circle cx="45" cy="40" r="7" fill="#1c2b3a" stroke="#d3dbe6"/><text x="41" y="44" font-size="9" fill="#d3dbe6">H</text>
+<line x1="50" y1="95" x2="70" y2="70" stroke="#d3dbe6" stroke-width="2"/><text x="15" y="102" font-size="9" fill="#ff8a8a" font-weight="bold">HOOC</text>
+<line x1="170" y1="45" x2="150" y2="70" stroke="#d3dbe6" stroke-width="2"/><circle cx="175" cy="40" r="7" fill="#1c2b3a" stroke="#d3dbe6"/><text x="171" y="44" font-size="9" fill="#d3dbe6">H</text>
+<line x1="170" y1="95" x2="150" y2="70" stroke="#d3dbe6" stroke-width="2"/><text x="163" y="102" font-size="9" fill="#ff8a8a" font-weight="bold">COOH</text>
+<text x="350" y="18" font-size="11" text-anchor="middle" font-weight="bold" fill="#d3dbe6">fumaric acid — trans (μ≈0)</text>
+<line x1="310" y1="70" x2="390" y2="70" stroke="#d3dbe6" stroke-width="2.5"/>
+<line x1="290" y1="45" x2="310" y2="70" stroke="#d3dbe6" stroke-width="2"/><circle cx="285" cy="40" r="7" fill="#1c2b3a" stroke="#d3dbe6"/><text x="281" y="44" font-size="9" fill="#d3dbe6">H</text>
+<line x1="290" y1="95" x2="310" y2="70" stroke="#d3dbe6" stroke-width="2"/><text x="255" y="102" font-size="9" fill="#ff8a8a" font-weight="bold">HOOC</text>
+<line x1="410" y1="45" x2="390" y2="70" stroke="#d3dbe6" stroke-width="2"/><text x="403" y="44" font-size="9" fill="#ff8a8a" font-weight="bold">COOH</text>
+<line x1="410" y1="95" x2="390" y2="70" stroke="#d3dbe6" stroke-width="2"/><circle cx="415" cy="100" r="7" fill="#1c2b3a" stroke="#d3dbe6"/><text x="411" y="104" font-size="9" fill="#d3dbe6">H</text>
+</svg>`,
+    caption: "Maleic acid (cis, HOOC-CH=CH-COOH) is polar; fumaric acid (trans) is essentially nonpolar — the same geometric-isomer logic as cis/trans-1,2-dichloroethene, applied to a biologically relevant pair.",
+  },
+  "clf-bond": {
+    size: "sm",
+    svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 110" width="100%">
+<rect x="1" y="1" width="258.0" height="108.0" rx="14" fill="#07131f" stroke="#213449" stroke-width="1.5"/>
+
+<circle cx="70" cy="55" r="11" fill="#5fd382" stroke="#d3dbe6" stroke-width="2"/><text x="63" y="60" font-size="12" fill="#fff">Cl</text>
+<circle cx="150" cy="55" r="9" fill="#a8e6a1" stroke="#d3dbe6" stroke-width="2"/><text x="146" y="60" font-size="12" fill="#0d1620">F</text>
+<line x1="82" y1="55" x2="140" y2="55" stroke="#d3dbe6" stroke-width="2"/>
+<line x1="70" y1="85" x2="150" y2="85" stroke="#ff6b6b" stroke-width="2.5" marker-end="url(#arrClF)"/>
+<text x="80" y="103" font-size="12" fill="#ff6b6b">μ(Cl–F) ≈ 0.88 D</text>
+<defs><marker id="arrClF" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><polygon points="0 0,10 3,0 6" fill="#ff6b6b"/></marker></defs>
+</svg>`,
+    caption: "Bond dipole of Cl-F: every interhalogen X-Y is necessarily polar, since the two atoms are never identical and always differ in electronegativity.",
   },
 };

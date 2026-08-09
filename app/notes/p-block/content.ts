@@ -572,122 +572,250 @@ The B₂O₃ forms a transparent glassy bead that dissolves coloured metal oxide
 
 > **CONTINUITY MAP.** Parts 1–8 established periodic trends, oxidation-state logic, elemental boron, aluminium, oxides, boric acid and borax. Parts 9–15 now apply those principles to halides, hydrides, boranes, complex hydrides, aluminium compounds and examination synthesis.
 
-## Part 9 — Halides: electron deficiency, back bonding and hydrolysis
+## Part 9 — Halides: Lewis acidity, bonding and hydrolysis
 
-### 9.1 The central question
+### 9.1 Master Trends in Group 13 Halides
 
-Why is BF₃, despite containing the most electronegative halogen, the **weakest Lewis acid** among BX₃? The answer is not inductive effect alone; it is the competition between electron withdrawal and pπ–pπ back donation.
+Before exploring individual compounds, here are the verified trend orders for halide chemistry:
 
-### 9.2 Preparation of boron trihalides
+| Property | Order | Regularity | Why |
+|---|---|---|---|
+| **Physical state** (trihalide) | BF₃(gas) < BCl₃(gas) < BBr₃(liquid) < BI₃(solid) | Regular increase | Stronger intermolecular forces down the series |
+| **Lewis acidity** (toward hard O-donor bases) | BF₃ < BCl₃ < BBr₃ < BI₃ | Reverse of electronegativity | Back-bonding dominates Lewis acidity ranking |
+| **Hydrolysis completeness** | BF₃(partial) < BCl₃(complete) | Clear split | HF competitively binds B, preventing hydrolysis |
 
-| Halide | Preparation | Conditions |
+### 9.2 Boron Halides: BX₃ — Theory and Structure
+
+**Geometry and valence-electron count:**
+
+| Property | Value | Significance |
 |---|---|---|
-| BF₃ | B₂O₃ + 3CaF₂ + 3H₂SO₄ → 2BF₃ + 3CaSO₄ + 3H₂O | heated, anhydrous apparatus |
-| BCl₃ | 2B + 3Cl₂ → 2BCl₃ | direct chlorination |
-| BCl₃/BBr₃ | B₂O₃ + 3C + 3X₂ → 2BX₃ + 3CO | high temperature |
-| BI₃ | direct combination of B and I₂ | heated, controlled conditions |
+| **Boron coordination** | CN 3 | Only 3 halide ligands fit around small boron |
+| **Hybridisation** | sp² | Three sp² hybrid orbitals for three B–X bonds; empty p orbital perpendicular |
+| **Geometry** | Planar trigonal | All atoms lie in one plane |
+| **H–B–H angle** | 120° | Ideal trigonal geometry |
+| **Valence electrons on B** | 6 (incomplete octet) | Why BX₃ are all electron-deficient |
 
-### 9.3 Structure and electron deficiency of BX₃
+**Molecular orbital picture:** Each B–X bond is a σ-bond from boron's sp² hybrid and halogen's p-orbital. The remaining empty **2p orbital on boron sits perpendicular to the BX₃ plane** and is high in energy — it becomes the source of BX₃'s Lewis acidity.
 
-BX₃ molecules are trigonal planar with sp² boron and an empty perpendicular 2p orbital. Boron has only six electrons around it and accepts a donor pair to form tetrahedral adducts such as F₃B←NH₃ and BF₄⁻.
+### 9.3 Back-bonding and partial π-character: The B–F case study
 
-### 9.4 Back bonding in BF₃
+**Definition:** Back-bonding is the donation of electron density from a filled lone pair on the halogen back into boron's empty p-orbital, creating partial π-character.
 
-A filled fluorine 2p orbital overlaps with the empty boron 2p orbital. The π donation is delocalised over all three B–F bonds.
+**Experimental evidence for B–F back-bonding:**
 
 | Evidence | Observation | Interpretation |
 |---|---|---|
-| B–F length in free BF₃ | about 130 pm | shorter than a normal single bond |
-| B–F bond energy | unusually high | partial π character |
-| B–F length in H₃N·BF₃ | about 138 pm | adduct formation removes the empty p orbital and weakens back bonding |
-| Equality of all three bonds | identical bond lengths | delocalised π interaction, not one fixed double bond |
+| **Bond length** | B–F in BF₃ = 130 pm; sum of covalent radii ≈ 152 pm | Shorter than single bond → partial π-character |
+| **Bond energy** | B–F ≈ 646 kJ/mol (higher than typical B–X single bonds) | Stronger than σ-bond alone → π-contribution |
+| **Bond order from resonance** | 1 + ⅓ (three equivalent B–F bonds each share one π electron) | Measured π-character ≈ 0.33 |
+| **Upon adduct formation** | H₃N·BF₃: B–F lengthens to 138 pm; Me₃N·BF₃: lengthens to 139 pm | When NH₃ fills the empty p-orbital, π back-donation stops → bond lengthens |
 
-### 9.5 Lewis acidity order
+**The key insight:** The **bond length change upon adduct formation is the strongest proof that back-bonding is real**. Once boron's empty p-orbital is occupied by the donor's lone pair, there is no longer an empty orbital to accept π-density from fluorine — the B–F bonds immediately lengthen.
 
-\[
-\boxed{\mathrm{BF_3<BCl_3<BBr_3<BI_3}}
-\]
+### 9.4 Lewis acidity order: Why BF₃ is the **weakest** Lewis acid
 
-- B and F both use compact 2p orbitals: strongest overlap and strongest back donation.
-- Cl, Br and I use progressively larger p orbitals: poorer overlap with B 2p.
-- Weaker back donation leaves boron more electron deficient, increasing Lewis acidity.
+**Order of Lewis acidity (toward hard O-donor bases):**
 
-> **JEE TRAP.** Do not predict Lewis acidity only from the −I effect of halogens. That gives the wrong order.
+BF₃ < BCl₃ < BBr₃ < BI₃
 
-### 9.6 Hydrolysis
+**This order is the REVERSE of electronegativity.**
 
-**BCl₃, BBr₃ and BI₃**
+**Why:**
+- **BF₃:** F is small and has excellent orbital overlap with boron's compact 2p orbital → strong back-bonding → partial π-character → boron is partially electron-satisfied → weak Lewis acid
+- **BI₃:** I is large with diffuse 5p orbital → poor overlap with boron's 2p → weak back-bonding → boron remains electron-hungry → strong Lewis acid
 
-\[
-\mathrm{BX_3+3H_2O\rightarrow H_3BO_3+3HX}
-\]
+**Direct experimental proof:**
+- BCl₃ and BBr₃ **do form** adducts with weak bases (AsH₃)
+- BF₃ **does not form** an adduct with AsH₃ — it is already too satisfied by back-bonding
 
-**BF₃ — fluoroborate complication**
+### 9.5 Preparation and Physical Properties
 
-\[
-\mathrm{4BF_3+3H_2O\rightarrow H_3BO_3+3HBF_4}
-\]
+**Preparation routes:**
 
-Stable BF₄⁻ formation means hydrolysis is not represented simply as complete conversion of every BF₃ molecule to boric acid.
+BX₃ industrial synthesis:
 
-### 9.7 Aluminium chloride and dimerisation
+$$2\text{B} + 3\text{X}_2 \rightarrow 2\text{BX}_3 \quad \text{(direct combination)}$$
 
-Anhydrous AlCl₃ is electron deficient. In non-donor media it forms Al₂Cl₆ using two bridging chlorines. Terminal Al–Cl bonds are shorter than bridge bonds.
+$$\text{B}_2\text{O}_3 + 3\text{CaF}_2 + 3\text{H}_2\text{SO}_4 \rightarrow 2\text{BF}_3 + 3\text{CaSO}_4 + 3\text{H}_2\text{O} \quad \text{(BF}_3\text{ route)}$$
 
-\[
-\mathrm{2AlCl_3\rightleftharpoons Al_2Cl_6}
-\]
+$$\text{B}_2\text{O}_3 + 3\text{C} + 3\text{X}_2 \rightarrow 2\text{BX}_3 + 3\text{CO} \quad \text{(BCl}_3\text{, BBr}_3\text{, BI}_3\text{ route)}$$
 
-| Environment | Predominant behaviour |
-|---|---|
-| non-polar solvent / lower-temperature vapour | dimeric Al₂Cl₆ |
-| high-temperature vapour | monomeric AlCl₃ increases |
-| water | hydrolysis/solvation; dimer does not persist |
-| Friedel–Crafts system | strong Lewis-acid activation of acyl/alkyl halide |
+| Property | BF₃ | BCl₃ | BBr₃ | BI₃ |
+|---|---|---|---|---|
+| **Physical state (STP)** | Colourless gas | Colourless fuming liquid | Brownish fuming liquid | Brown solid |
+| **Melting point (°C)** | −127 | −107 | −46 | 50 |
+| **Boiling point (°C)** | −101 | 12 | 91 | — (sublimes) |
 
-### 9.8 Gallium, indium and thallium halides
+### 9.6 Hydrolysis: Partial vs. Complete
 
-- GaCl₃ forms a dimer analogous to Al₂Cl₆.
-- “GaCl₂” and “InCl₂” may be mixed-valence salts rather than true +2 compounds.
-- Tl(I) halides are stable ionic solids.
-- TlI₃ is represented as Tl⁺(I₃)⁻; Tl³⁺ and I⁻ are mutually redox-incompatible.
+**BF₃ — Partial hydrolysis:**
 
-> **WORKED EXAMPLE 9.1**
->
-> **Question.** Arrange BF₃, BCl₃, BBr₃ and BI₃ in increasing Lewis acidity.
->
-> **Concept tested.** pπ–pπ back bonding.
->
-> **Reasoning.** Back donation is strongest for 2p(F)–2p(B) and decreases as the donor p orbital becomes larger.
->
-> **Final answer.** **BF₃ < BCl₃ < BBr₃ < BI₃.**
->
-> **JEE trap.** Electronegativity alone predicts the opposite and is therefore insufficient.
+$$4\text{BF}_3 + 12\text{H}_2\text{O} \rightarrow 4\text{H}_3\text{BO}_3 + 12\text{HF}$$
 
-> **WORKED EXAMPLE 9.2**
->
-> **Question.** Why does AlCl₃ dimerise but BCl₃ does not?
->
-> **Reasoning.** Aluminium is large enough to accept bridging chloride donation and become four-coordinate. Boron is too small; efficient B–Cl π interaction and steric/electronic constraints favour monomeric trigonal BCl₃.
->
-> **Final answer.** AlCl₃ forms Al₂Cl₆; BCl₃ remains monomeric.
+**But then** — HF attacks the boric acid:
 
-### Halide reaction map
+$$12\text{HF} + 3\text{H}_3\text{BO}_3 \rightarrow 3\text{H}_3\text{O}^+ + 3\text{[BF}_4]^- + 9\text{H}_2\text{O}$$
 
-\[
-\mathrm{B\xrightarrow{X_2}BX_3\xrightarrow{H_2O}H_3BO_3}
-\]
+**Net result:**
 
-\[
-\mathrm{BF_3\xrightarrow{F^-}BF_4^-\qquad AlCl_3\xrightleftharpoons[high\ T]{low\ T}Al_2Cl_6}
-\]
+$$4\text{BF}_3 + 3\text{H}_2\text{O} \rightarrow \text{H}_3\text{BO}_3 + 3\text{HBF}_4$$
 
-### Rapid revision — Part 9
+Only **¼ mole** of H₃BO₃ per mole of BF₃. The rest is locked up as the very stable **fluoroboric acid [HBF₄]** complex.
 
-- BX₃: trigonal planar, sp², electron deficient.
-- Lewis acidity: BF₃ < BCl₃ < BBr₃ < BI₃.
-- AlCl₃ dimerises; BCl₃ does not.
-- TlI₃ = Tl⁺I₃⁻.
+**BCl₃, BBr₃, BI₃ — Complete hydrolysis:**
+
+$$\text{BCl}_3 + 3\text{H}_2\text{O} \rightarrow \text{H}_3\text{BO}_3 + 3\text{HCl}$$
+
+Complete formation of boric acid. No stabilisation of the BX₄⁻ anion.
+
+### 9.7 Important Reactions and Transformations
+
+| Reaction type | Equation | Conditions | Significance |
+|---|---|---|---|
+| **Halide scrambling** | BF₃ + BCl₃ ⇌ BFCl₂ + BF₂Cl | Room temperature | Statistical equilibrium of mixed halides |
+| **Adduct formation** | BF₃ + NH₃ → H₃N·BF₃ | Room temperature | Tetrahedral, CN 4 at B; bond lengthens to 138 pm |
+| **Selective adduct** | BCl₃ + AsH₃ → Cl₃B·AsH₃ | Selective reaction | Demonstrates BF₃'s lower Lewis acidity |
+
+### 9.8 JEE Traps and Important Distinctions
+
+**Trap 1 — “BF₃ is the strongest Lewis acid of the BX₃ series.”**
+**False.** BF₃ is the *weakest* because back-bonding partially satisfies boron's electron deficiency. BI₃ is the strongest.
+
+**Trap 2 — “BF₃ hydrolyses completely like the other BX₃.”**
+**False.** HF competitively binds boron, forming the very stable [BF₄]⁻ anion. Only ¼ of the boron appears as H₃BO₃; the rest remains as HBF₄.
+
+### 9.9 Aluminium Halides: Al₂Cl₆ Dimer Structure
+
+**AlCl₃ — Bridged dimer in solid and vapour:**
+
+| State | Structure | CN of Al | Key property |
+|---|---|---|---|
+| **Solid** | Layer lattice (ionic-like) | 6 | Conducting |
+| **Melt** | Al₂Cl₆ dimer | 4 | Nonconducting |
+| **Vapour** | Mostly Al₂Cl₆ dimer | 4 | Dissociates at high temperature |
+
+**Al₂Cl₆ structure — Chlorine bridges:**
+
+Each dimer has 2 **bridging** Al–Cl–Al bonds where chlorine acts as a bridge.
+
+**Bond length evidence:**
+- Terminal Al–Cl: 206 pm
+- Bridging Al–Cl: 221 pm (longer, weaker)
+
+The bridging bond is weaker, which is why it **breaks first** on heating.
+
+### 9.10 3c-4e bonding in Al₂Cl₆: Chlorine's role
+
+**Electron count for Al–Cl–Al bridge:**
+
+Chlorine has **three** lone pairs:
+- One lone pair is used for the **terminal** Al–Cl bond (2c-2e)
+- A **second, independent lone pair** is donated to the second aluminium's empty p-orbital
+- The original bonding pair + the donated pair = **4 electrons, 3 atoms (Al–Cl–Al)**
+
+This is a **3-centre-4-electron (3c-4e) bond**.
+
+### 9.11 Heavier Halides: GaCl₃, InCl₃, TlF/TlCl/TlBr/TlI
+
+| Compound | Solid-state CN | Vapour behaviour | Bonding type | Why |
+|---|---|---|---|---|
+| **GaCl₃** | 6 | Monomer (dimer contribution) | Polar covalent | Larger Ga can dimerise like Al |
+| **InCl₃** | 6 | Mostly monomer | Polar covalent | Even larger In prefers CN 6 as monomer |
+| **TlF, TlCl, TlBr, TlI** | 8+ (simple ionic) | — (fully ionic) | Ionic, no dimers | Tl⁺ behaves like K⁺; simple cation |
+
+**Thallium's unique position:** Tl⁺ is only slightly larger than K⁺ (150 pm vs 138 pm), so Tl⁺ behaves like a simple alkali-metal cation.
+
+### 9.12 Important trap: TlI₃ is not Tl³⁺I₃⁻
+
+**Reality:**
+$$\text{TlI}_3 = \text{Tl}^+(\text{I}_3^-)$$
+
+**Why:** Tl³⁺ oxidises I⁻ to I₂:
+$$\text{Tl}^{3+} + 2\text{I}^- \rightarrow \text{Tl}^+ + \text{I}_2$$
+
+The iodine then forms the triiodide complex: **I₂ + I⁻ → I₃⁻**
+
+### 9.13 Worked Examples
+
+**Worked Example 1: Back-bonding explains three separate facts**
+
+**Question:** Back-bonding in BF₃ accounts for three distinct observations. Derive bond order from resonance structures, explain the bond-length change upon adduct formation, and predict Lewis acidity order.
+
+**Concept tested:** π-bonding contributions, orbital availability, evidence for non-classical bonding.
+
+**Solution:**
+
+**Part A — Bond order from resonance:**
+Three equivalent resonance structures distribute one π electron over the three B–F bonds:
+$$\text{Bond order} = 1 + \frac{1}{3} = 1.33$$
+
+**Part B — Bond length evidence:**
+- Measured B–F in free BF₃: **130 pm** ← 22 pm shorter than theoretical single-bond length (152 pm), confirming π-character
+- B–F in H₃N·BF₃ adduct: **138 pm** ← 8 pm longer than free BF₃
+
+**Explanation:** In the adduct, NH₃'s lone pair occupies boron's empty p-orbital. Back-bonding stops. The B–F bonds revert toward single-bond character, lengthening from 130 pm to 138 pm.
+
+**Part C — Lewis acidity order:**
+$$\text{BF}_3 < \text{BCl}_3 < \text{BBr}_3 < \text{BI}_3$$
+
+Back-bonding partially satisfies BF₃'s electron deficiency → weakest Lewis acid.
+
+---
+
+**Worked Example 2: AlCl₃ dimer dissociation and conductivity**
+
+**Question:** Solid AlCl₃ melts at 192°C. In the melt, conductivity drops sharply. Explain using structure and coordination number.
+
+**Concept tested:** Phase transitions, coordination-number changes, relationship between structure and electrical properties.
+
+**Solution:**
+
+**In the solid (≤ 192°C):**
+- 3D layer lattice, ionic-like
+- CN of Al: **6** (octahedral)
+- Conducts electricity reasonably well
+
+**At the melt (> 192°C):**
+- Discrete Al₂Cl₆ dimers form
+- CN of Al: **4** (tetrahedral in each dimer)
+- Structure: molecular dimers held by van der Waals forces
+- **Poor electrical conductivity** (no free ions)
+
+**Conductivity drop explained:** The melt contains discrete Al₂Cl₆ molecules, not free Al³⁺ and Cl⁻ ions.
+
+---
+
+**Worked Example 3: TlI₃ and redox collapse**
+
+**Question:** Thallium forms TlI₃. Is this Tl³⁺I₃⁻? Use standard potentials to justify.
+
+**Concept tested:** Oxidation-state assignments, redox thermodynamics.
+
+**Solution:**
+
+Standard redox potentials:
+- Tl³⁺ + 2e⁻ → Tl⁺, E° = +1.26 V (strong oxidiser)
+- I₂ + 2e⁻ → 2I⁻, E° = +0.54 V (I⁻ is a good reductant)
+
+If Tl³⁺ and I⁻ meet:
+$$\text{Tl}^{3+} + 2\text{I}^- \rightarrow \text{Tl}^+ + \text{I}_2$$
+
+ΔE° = 1.26 − 0.54 = 0.72 V (strongly positive, spontaneous).
+
+**What TlI₃ actually is:**
+$$\text{TlI}_3 = \text{Tl}^+(\text{I}_3^-)$$
+
+Thallium(I) tri-iodide, containing the linear [I₃]⁻ complex ion.
+
+### 9.14 Rapid-Revision Summary
+
+- **Boron halides** are trigonal, electron-deficient (6 e⁻ on B).
+- **Back-bonding** makes BF₃ the *weakest* Lewis acid, not the strongest.
+- **Lewis acidity order:** BF₃ < BCl₃ < BBr₃ < BI₃ (reverse of electronegativity).
+- **Hydrolysis:** BF₃ is only *partially* hydrolysed (HF sequesters boron as [BF₄]⁻); BCl₃/BBr₃/BI₃ are *complete*.
+- **Al₂Cl₆ dimer:** Contains 3c-4e bridging Cl bonds. In solid, AlCl₃ is 6-coordinate ionic; in melt, it's 4-coordinate dimeric.
+- **TlI₃ trap:** Not Tl³⁺I₃⁻; actually Tl⁺[I₃]⁻.
 
 ---
 

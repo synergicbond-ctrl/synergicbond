@@ -73,6 +73,19 @@ export default function DipoleMomentPart07() {
           <p>Simple collinear cancellation predicts μ = 0 for para-identical substituents, but hydroquinone shows μ ≈ 1.64 D. Reason: the O–H group moment is not collinear with the ring diagonal — the O lone pair (not delocalised into the ring) tilts the –OH group moment to ≈83° from the diagonal, so the two group vectors do not fully cancel.</p>
         </ConceptCard>
 
+        <div className="grid gap-5 lg:grid-cols-2">
+          <FigureFrame title="p-Nitroaniline" caption="+R(NH₂) and −R(NO₂) are electronically coupled through the ring — a push–pull pair, not two independent group vectors.">
+            <DipoleStructureFigure id="p-nitroaniline-resonance" />
+          </FigureFrame>
+          <FigureFrame title="Ethyl chloride → vinyl chloride → chloroacetylene" caption="μ = 2.05 D (inductive only) → 1.44 D (+R opposes −I) → direction reversed (mesomeric dominates at an sp carbon).">
+            <DipoleStructureFigure id="ethyl-vinyl-chloroacetylene" />
+          </FigureFrame>
+        </div>
+
+        <FigureFrame title="Pyrrole vs. furan" caption="Pyrrole (μ = 1.8 D, net toward ring) vs. furan (μ = 0.7 D, net toward O) — the −I effect is stronger for O than N.">
+          <DipoleStructureFigure id="pyrrole-furan" />
+        </FigureFrame>
+
         <div className="grid gap-5 xl:grid-cols-2">
           <ConceptCard title="p- and o-Nitroaniline" tone="cyan" eyebrow="Coupled +R/−R">
             <p>Simple addition predicts <K>{String.raw`\mu \approx 5.48\ \text{D}`}</K> (1.53 + 3.95), but observed p-nitroaniline is <K>{String.raw`6.2\ \text{D}`}</K> — the +R(NH₂) and −R(NO₂) effects are electronically coupled through the ring, enhancing charge separation beyond simple group-vector addition.</p>

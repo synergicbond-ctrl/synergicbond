@@ -89,6 +89,15 @@ export default function DipoleMomentPart06() {
         title="Dipolar repulsion and conformational stability"
         intro="Minimising repulsion between like-charged bond-dipole ends often — but not always — picks the more stable conformer."
       >
+        <div className="grid gap-5 lg:grid-cols-2">
+          <FigureFrame title="Butane-2,3-dione: trans vs. cis" caption="trans (μ = 0, more stable) vs. cis (μ ≠ 0, less stable) — opposed vs. reinforcing C=O dipoles.">
+            <DipoleStructureFigure id="butanedione-trans-cis" />
+          </FigureFrame>
+          <FigureFrame title="1,2-Dichloroethane: anti vs. gauche" caption="Newman projections — anti (μ = 0, more stable) vs. gauche (μ = 3.2 D).">
+            <DipoleStructureFigure id="dichloroethane-anti-gauche" />
+          </FigureFrame>
+        </div>
+
         <div className="grid gap-5 xl:grid-cols-3">
           <ConceptCard title="Butane-2,3-dione" tone="cyan" eyebrow="Repulsion wins">
             <p><strong className="text-white">trans</strong>-form (μ = 0, more stable): the two C=O dipoles point opposite ways, minimising repulsion between the negative O centres.</p>

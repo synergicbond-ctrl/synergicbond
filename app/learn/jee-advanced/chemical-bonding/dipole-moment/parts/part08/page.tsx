@@ -89,6 +89,10 @@ export default function DipoleMomentPart08() {
         title="Nonplanar conformations and interhalogens"
         intro="Four related hydrides/fluorides that adopt nonplanar shapes from lone-pair repulsion, plus the interhalogen family as a clean generalisation of the bond-moment framework."
       >
+        <FigureFrame title="N₂H₄ and H₂O₂ conformations" caption="N₂H₄: gauche/skew, H–N–N–H dihedral ≈95°. H₂O₂: open-book about the O–O spine, dihedral ≈111.5° (gas).">
+          <DipoleStructureFigure id="n2h4-h2o2-conformations" />
+        </FigureFrame>
+
         <div className="grid gap-5 xl:grid-cols-2">
           <ConceptCard title="N₂H₄, H₂O₂" tone="cyan" eyebrow="Gauche/skew, open-book">
             <p><strong className="text-white">N₂H₄</strong>: μ ≈ 1.85 D; gas-phase gauche/skew conformation, NH₂ halves rotated ≈95° from eclipsed. Rotation barrier: through-trans ≈16 kJ/mol; through-cis ≈49.8 kJ/mol.</p>

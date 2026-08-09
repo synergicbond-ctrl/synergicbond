@@ -26,6 +26,8 @@ const sections: SectionLink[] = [
   { id: "calcium", label: "18. Calcium, hardness and cement" },
   { id: "biology", label: "19. Biological importance" },
   { id: "atlas", label: "20. Reaction atlas and JEE problems" },
+  { id: "uses", label: "21. Compendium of uses" },
+  { id: "orders", label: "22. Master order bank" },
 ];
 
 function Formula({ children }: { children: React.ReactNode }) {
@@ -256,6 +258,100 @@ export default function SBlockMasterTextbook() {
           <ol className="my-5 space-y-4 pl-6 text-slate-200 marker:font-bold marker:text-cyan-300"><li>Identify A–F when lithium is heated in air, products are treated separately with water and hydrochloric acid, and white fumes are observed.</li><li>Construct the sodium reaction network involving NaCl, NaNH₂, Na₂O, NaOH, Na₂CO₃ and NaHCO₃.</li><li>Explain why KO₂ is paramagnetic and write its reactions with water and carbon dioxide.</li><li>Compare structures of BeCl₂ in high-temperature vapour, cooler vapour and solid state.</li><li>Calculate hardness as CaCO₃ when a sample contains a specified concentration of Mg²⁺ or Ca²⁺.</li><li>Explain the opposite solubility trends of Group 2 hydroxides and sulfates using lattice and hydration enthalpies.</li></ol>
           <H3>Master exam traps</H3><Callout title="Do not confuse" tone="rose"><Points><li>Lowest ionisation enthalpy with strongest aqueous reducing agent.</li><li>Bare ionic radius with hydrated ionic radius.</li><li>Thermodynamic feasibility with visible reaction rate.</li><li>Discrete molecular structure with an infinite crystal lattice.</li><li>Basic strength with solubility.</li><li>NCERT trend statements with first-member anomalies.</li></Points></Callout>
           <Visual src="/images/s-block/maverick-14.png" alt="Anomaly and diagonal relationship summary" caption="Integrated comparison of first-member anomalies and diagonal relationships." />
+        </section>
+
+        <section><H2 id="uses">21. Compendium of Industrial, Laboratory and Everyday Uses</H2>
+          <p className="mt-5 leading-8 text-slate-300">Uses questions are asked directly and as distractors inside assertion–reason and match-the-column items. This section collects every s-block use worth knowing, organised by element and then by compound, so nothing has to be hunted through the theory sections above.</p>
+          <H3>The metals themselves</H3>
+          <DataTable headers={["Metal","Principal uses"]} rows={[
+            ["Lithium","Li–Pb white-metal bearing alloys; Li–Al alloys for aircraft parts; Li–Mg armour plate; anode in high-energy-density Li-ion and Li-primary batteries; thermonuclear (fusion) fuel as ⁶Li; lithium carbonate is used in psychiatric medicine to treat bipolar disorder."],
+            ["Sodium","Reducing agent in the extraction of metals (e.g. Ti, Zr via the Na-reduction route); Na–Pb alloy historically made PbEt₄/PbMe₄ antiknock petrol additives; liquid Na is the coolant in fast-breeder nuclear reactors; sodium-vapour lamps for street lighting; laboratory drying agent (Na wire) for inert solvents."],
+            ["Potassium","Essential macronutrient — KCl and K₂SO₄ are major fertilisers; KOH manufactures soft soap and absorbs CO₂/acid gases; K and Na together maintain nerve/muscle electrophysiology (Section 19)."],
+            ["Rubidium / caesium","Very low ionisation enthalpy makes Cs (with K) the classic photoelectric-cell metal; ¹³³Cs defines the SI second in atomic clocks."],
+            ["Beryllium","Cu–Be alloys for non-sparking, high-strength springs and tools; window material for X-ray tubes (low atomic number, high transparency to X-rays); moderator/reflector in some nuclear reactors."],
+            ["Magnesium","Mg–Al–Zn–Mn alloys for lightweight aircraft and automotive parts; ribbon/powder in flash photography, flares, incendiary bombs and fireworks (dazzling white light on burning); Grignard-reagent chemistry (organic synthesis) is built on magnesium metal."],
+            ["Calcium","Reducing agent for extracting metals whose oxides resist carbon reduction (e.g. Cr, Th, U from their halides); Ca and Ba are used as \"getters\" to scavenge residual O₂/N₂ from vacuum tubes."],
+            ["Radium","Radiotherapy — historically used to treat cancer via its ionising radiation, now largely superseded by other isotopes."],
+          ]} />
+          <H3>Sodium and potassium compounds</H3>
+          <DataTable headers={["Compound","Uses"]} rows={[
+            ["Na₂O₂","Preparing H₂O₂ and O₂ in the lab; oxygenating air and scrubbing CO₂ in submarines/space capsules; bleaching agent (via benzoyl peroxide route) and laboratory oxidising agent."],
+            ["KO₂","Air purifier in submarines, spacecraft and breathing apparatus — it absorbs CO₂ and moisture while releasing O₂."],
+            ["NaOH (caustic soda)","Manufacture of soap, paper, rayon (artificial silk) and dyes; petroleum refining; purification of bauxite (Bayer process); mercerising cotton textiles; laboratory reagent."],
+            ["KOH (caustic potash)","Manufacture of soft soap; absorbing CO₂/SO₂/NO gases (preferred over NaOH because KHCO₃ is soluble and will not choke apparatus); alcoholic KOH is the classic organic-chemistry reagent for dehydrohalogenation/elimination."],
+            ["Na₂CO₃ (washing soda)","Water softening, laundering; manufacture of glass, soap, borax and caustic soda; paper, paint and textile industries; primary/secondary standard in acid–base titrations."],
+            ["NaHCO₃ (baking soda)","Leavening agent in baking (releases CO₂ on heating/with acid); mild antiseptic for skin; component of dry-powder fire extinguishers and ORS (oral rehydration) formulations; antacid."],
+            ["K₂CO₃ (pearl ash)","Glass manufacture (potash glass); soft-soap manufacture."],
+            ["NaCl","Table/food salt; feedstock for NaOH, Na₂CO₃, Na₂O₂ and Cl₂ manufacture; freezing-mixture component (ice–salt, down to about −23 °C); de-icing roads."],
+            ["KCl","Fertiliser; source of potassium in KOH/K₂CO₃ manufacture."],
+            ["Na₂SO₄ (Glauber's salt)","Manufacture of glass, dyes and detergents; mild laxative in medicine; kraft (paper-pulping) process."],
+            ["K₂SO₄","Fertiliser (tobacco, wheat — chloride-sensitive crops); manufacture of potassium alum."],
+          ]} />
+          <H3>Magnesium and calcium compounds</H3>
+          <DataTable headers={["Compound","Uses"]} rows={[
+            ["MgO","Refractory bricks/linings for furnaces (very high m.p.); basic flux removing acidic Si/P/S impurities during steel-making."],
+            ["Mg(OH)₂","\"Milk of magnesia\" — antacid and mild laxative in medicine."],
+            ["MgCO₃","Ingredient of toothpaste (mild abrasive/antacid); with MgO it forms Sorel cement (magnesium oxychloride), used in dental fillings and flooring."],
+            ["MgSO₄·7H₂O (Epsom salt)","Medicinal purgative/laxative; bath salts; mordant in dyeing and tanning; magnesia mixtures."],
+            ["CaO (quicklime)","Manufacturing cement and Na₂CO₃ (Gossage/causticisation route); purifying sugar; dye manufacture; drying agent; lime-light illumination."],
+            ["Ca(OH)₂ (slaked lime)","Mortar (with sand); whitewash (disinfectant); glass-making; tanning; sugar-refining; manufacture of bleaching powder; softening temporary hard water (lime-soda process)."],
+            ["CaCO₃","Building material (marble/limestone); manufacture of quicklime and cement; flux in iron extraction; antacid; mild abrasive in toothpaste; filler in cosmetics, paints, distempers and chewing gum."],
+            ["CaSO₄·½H₂O (plaster of Paris)","Surgical/orthopaedic casts; dentistry; statues, moulds and decorative casts; blackboard chalk."],
+            ["CaCl₂","Laboratory/industrial drying agent for gases and solvents (not NH₃ or alcohols, which it forms adducts with); de-icing roads; refrigeration brine."],
+            ["CaOCl₂ (bleaching powder)","Bleaching textiles, wood pulp and paper; disinfecting water supplies and sewage; laboratory oxidant; manufacture of chloroform."],
+            ["CaC₂","Manufacture of acetylene (C₂H₂) and, via the nitrogen-fixation route, calcium cyanamide (CaCN₂) fertiliser."],
+          ]} />
+        </section>
+
+        <section><H2 id="orders">22. Master Order Bank — Every High-Frequency Ranking Question</H2>
+          <p className="mt-5 leading-8 text-slate-300">"Arrange in increasing/decreasing order of…" is the single most repeated s-block question format in JEE Advanced. Every order below follows directly from the reasoning already built in Sections 1–20 — use this table to drill them, not to memorise them blind.</p>
+          <H3>Physical and atomic properties</H3>
+          <DataTable headers={["Property (increasing →)","Order"]} rows={[
+            ["Atomic / ionic radius, Group 1","Li < Na < K < Rb < Cs"],
+            ["Atomic / ionic radius, Group 2","Be < Mg < Ca < Sr < Ba"],
+            ["Density, Group 1","Li < K < Na < Rb < Cs (K breaks the simple trend)"],
+            ["First ionisation enthalpy, Group 1","Cs < Rb < K < Na < Li"],
+            ["First ionisation enthalpy, Group 2","Ba < Sr < Ca < Mg < Be"],
+            ["Melting point, Group 1","Cs < Rb < K < Na < Li"],
+            ["Boiling point, Group 1","Rb < Cs < K < Na < Li"],
+            ["Melting point, Group 2","Mg < Ba < Sr < Ca < Be"],
+            ["Metallic / electropositive character, Group 1","Li < Na < K < Rb < Cs"],
+            ["Hydration enthalpy of M⁺","Cs⁺ < Rb⁺ < K⁺ < Na⁺ < Li⁺"],
+            ["Hydration enthalpy of M²⁺","Ba²⁺ < Sr²⁺ < Ca²⁺ < Mg²⁺ < Be²⁺"],
+            ["Ionic (hydrated-shell-free) size in water — mobility of hydrated ion","Li⁺ < Na⁺ < K⁺ < Rb⁺ < Cs⁺ (opposite of bare-ion radius — the small ion drags the biggest hydration shell)"],
+            ["Effective hydrated radius","Cs⁺ < Rb⁺ < K⁺ < Na⁺ < Li⁺"],
+          ]} />
+          <H3>Reducing power and reactivity</H3>
+          <DataTable headers={["Property (increasing →)","Order"]} rows={[
+            ["Reducing power, gas phase (Group 1)","Li < Na < K < Rb < Cs"],
+            ["Reducing power, aqueous solution (Group 1)","Na < K < Rb < Cs < Li (lithium flips to the top — hydration enthalpy dominates)"],
+            ["Reactivity toward cold water, Group 1","Li < Na < K < Rb < Cs"],
+            ["Reactivity toward water, Group 2","Be(none) < Mg(steam only) < Ca < Sr < Ba"],
+            ["Thermal stability of M–H bond (hydrides), Group 1","CsH < RbH < KH < NaH < LiH"],
+          ]} />
+          <H3>Basicity, solubility and thermal stability of compounds</H3>
+          <DataTable headers={["Property (increasing →)","Order"]} rows={[
+            ["Basic strength of oxides, Group 2","BeO < MgO < CaO < SrO < BaO"],
+            ["Basic strength / solubility / thermal stability of hydroxides, Group 1","LiOH < NaOH < KOH < RbOH < CsOH"],
+            ["Basic strength / solubility of hydroxides, Group 2","Be(OH)₂ < Mg(OH)₂ < Ca(OH)₂ < Sr(OH)₂ < Ba(OH)₂"],
+            ["Thermal stability of carbonates, Group 1","Li₂CO₃ < Na₂CO₃ < K₂CO₃ < Rb₂CO₃ < Cs₂CO₃"],
+            ["Thermal stability of carbonates, Group 2","BeCO₃ < MgCO₃ < CaCO₃ < SrCO₃ < BaCO₃"],
+            ["Solubility of carbonates, Group 2","BeCO₃ < MgCO₃ < CaCO₃ < BaCO₃ (all sparingly soluble; this is the relative order)"],
+            ["Thermal stability of nitrates","LiNO₃ (behaves like Group 2) < NaNO₃ ≈ KNO₃ ≈ RbNO₃ ≈ CsNO₃ (all give nitrite + O₂; Li alone jumps straight to oxide + NO₂ + O₂)"],
+            ["Solubility of fluorides, Group 1","LiF < NaF < KF < RbF < CsF"],
+            ["Solubility / covalent character, lithium halides","LiF < LiCl < LiBr < LiI"],
+            ["Solubility of sulfates, Group 2","BaSO₄ < SrSO₄ < CaSO₄ < MgSO₄ (Be²⁺/Mg²⁺ sulfates dissolve; heavier members precipitate)"],
+          ]} />
+          <H3>Structural and bonding character</H3>
+          <DataTable headers={["Property (increasing →)","Order"]} rows={[
+            ["Ionic character of alkali halides, fixed anion","LiX < NaX < KX < RbX < CsX"],
+            ["Covalent character of alkali halides, fixed cation","MF < MCl < MBr < MI (polarisability of the anion rises down the halogen group)"],
+            ["Ionic character / melting point of Group 2 chlorides","BeCl₂ < MgCl₂ < CaCl₂ < SrCl₂ < BaCl₂"],
+            ["Melting point of sodium halides","NaI < NaBr < NaCl < NaF"],
+            ["Melting point of calcium halides","CaI₂ < CaBr₂ < CaCl₂ < CaF₂"],
+            ["Polarising power (Fajans) of the cation","Cs⁺ < Rb⁺ < K⁺ < Na⁺ < Li⁺ < Be²⁺ (Be²⁺ is the single most polarising s-block cation)"],
+          ]} />
+          <Callout title="How to derive an order you don't remember" tone="emerald"><Points><li><b>Size-only properties</b> (atomic/ionic radius, hydration enthalpy magnitude, polarising power) always run smoothly with the periodic position — no exceptions inside a group.</li><li><b>Energetics that combine two competing terms</b> (aqueous reducing power, solubility of hydroxides vs sulfates, melting point) can reverse or show a blip (K density, Group-2 melting point) — identify which two enthalpy terms are racing before trusting a "smooth" order.</li><li><b>Lithium and beryllium are first-member exceptions</b> almost every time a Group-1/Group-2 order is asked — check Sections 12 and 17 before answering.</li></Points></Callout>
         </section>
       </article>
     </div>

@@ -3,6 +3,8 @@ import { REACTIONS_SECTIONS } from "./reactions";
 import { SALTS_INDUSTRY_SECTIONS } from "./salts-industry";
 import { ANOMALIES_SECTIONS } from "./anomalies";
 import { APPLICATIONS_SECTIONS } from "./applications";
+import { USES_SECTIONS } from "./uses";
+import { ORDER_BANK_SECTIONS } from "./order-bank";
 import type { SBlockSection } from "./types";
 
 export type { SBlockBlock, SBlockSection } from "./types";
@@ -10,7 +12,7 @@ export type { SBlockBlock, SBlockSection } from "./types";
 // Ordered so the chapter reads as one continuous narrative: foundations and
 // data first, then the full reaction chemistry, then the two first-member
 // anomalies (which lean on everything before them), then industrial salts,
-// then applications, then the closing order bank and problem lab.
+// then applications, uses, and finally the closing order bank.
 export const S_BLOCK_SECTIONS: SBlockSection[] = [
   ...FOUNDATIONS_SECTIONS,
   ...REACTIONS_SECTIONS,
@@ -18,4 +20,6 @@ export const S_BLOCK_SECTIONS: SBlockSection[] = [
   ...ANOMALIES_SECTIONS,
   ...SALTS_INDUSTRY_SECTIONS.slice(2), // sodium-chemistry, carbonate-industry
   ...APPLICATIONS_SECTIONS,
+  ...USES_SECTIONS,
+  ...ORDER_BANK_SECTIONS,
 ];

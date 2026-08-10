@@ -5,32 +5,32 @@
 export const DIPOLE_STRUCTURES: Record<string, { svg: string; caption: string; size?: "sm" | "md" | "lg" }> = {
   "dipole-arrow": {
     size: "md",
-    svg: `<div style="background:#f7f7f5;border-radius:12px;padding:20px;display:flex;align-items:center;justify-content:center;"><img src="/dipole-figures/dipole-arrow.png" alt="dipole arrow" style="max-width:100%;height:auto;display:block;" /></div>`,
+    svg: `<div style="display:flex;align-items:center;justify-content:center;padding:8px;"><img src="/dipole-figures/dipole-arrow.png" alt="dipole arrow convention, dark theme" style="max-width:100%;height:auto;display:block;border-radius:8px;" /></div>`,
     caption: "Dipole arrow convention — the arrow points toward the more electronegative atom; the crossed tail marks the electropositive end.",
   },
   "vector-triangle": {
     size: "md",
-    svg: `<div style="background:#f7f7f5;border-radius:12px;padding:20px;display:flex;align-items:center;justify-content:center;"><img src="/dipole-figures/vector-triangle.png" alt="vector triangle" style="max-width:100%;height:auto;display:block;" /></div>`,
+    svg: `<div style="display:flex;align-items:center;justify-content:center;padding:8px;"><img src="/dipole-figures/vector-triangle.png" alt="vector triangle, dark theme" style="max-width:100%;height:auto;display:block;border-radius:8px;" /></div>`,
     caption: "Two bond-moment vectors mu1 and mu2 separated by angle theta, added by the parallelogram rule.",
   },
   "hcl-bond": {
     size: "sm",
-    svg: `<div style="background:#f7f7f5;border-radius:12px;padding:20px;display:flex;align-items:center;justify-content:center;"><img src="/dipole-figures/hcl-bond.png" alt="hcl bond" style="max-width:100%;height:auto;display:block;" /></div>`,
+    svg: `<div style="display:flex;align-items:center;justify-content:center;padding:8px;"><img src="/dipole-figures/hcl-bond.png" alt="hcl bond moment, dark theme" style="max-width:100%;height:auto;display:block;border-radius:8px;" /></div>`,
     caption: "Bond dipole of H-Cl: mu = 1.03 D, directed toward chlorine.",
   },
   "co2-cancellation": {
     size: "md",
-    svg: `<div style="background:#f7f7f5;border-radius:12px;padding:20px;display:flex;align-items:center;justify-content:center;"><img src="/dipole-figures/co2-cancellation.png" alt="co2 cancellation" style="max-width:100%;height:auto;display:block;" /></div>`,
+    svg: `<div style="display:flex;align-items:center;justify-content:center;padding:8px;"><img src="/dipole-figures/co2-cancellation.png" alt="co2 cancellation, dark theme" style="max-width:100%;height:auto;display:block;border-radius:8px;" /></div>`,
     caption: "CO2: polar C=O bonds, but the linear geometry forces the two bond moments to cancel exactly.",
   },
   "homopolar-origin": {
     size: "md",
-    svg: `<div style="background:#f7f7f5;border-radius:12px;padding:20px;display:flex;align-items:center;justify-content:center;"><img src="/dipole-figures/homopolar-origin.png" alt="homopolar origin" style="max-width:100%;height:auto;display:block;" /></div>`,
+    svg: `<div style="display:flex;align-items:center;justify-content:center;padding:8px;"><img src="/dipole-figures/homopolar-origin.png" alt="homopolar origin, dark theme" style="max-width:100%;height:auto;display:block;border-radius:8px;" /></div>`,
     caption: "Origin of the intrinsic homopolar dipole: the overlap electron cloud shifts toward the atom using the more compact orbital, even at zero electronegativity difference.",
   },
   "hcl-lone-pairs": {
     size: "sm",
-    svg: `<div style="background:#f7f7f5;border-radius:12px;padding:20px;display:flex;align-items:center;justify-content:center;"><img src="/dipole-figures/hcl-lone-pairs.png" alt="hcl lone pairs" style="max-width:100%;height:auto;display:block;" /></div>`,
+    svg: `<div style="display:flex;align-items:center;justify-content:center;padding:8px;"><img src="/dipole-figures/hcl-lone-pairs.png" alt="hcl lone pairs, dark theme" style="max-width:100%;height:auto;display:block;border-radius:8px;" /></div>`,
     caption: "HCl: three sp3 lone pairs on Cl, each at about 71 degrees from the H-Cl bond axis, reinforcing the electronegativity-based bond moment.",
   },
   "co-resonance": {
@@ -165,7 +165,7 @@ export const DIPOLE_STRUCTURES: Record<string, { svg: string; caption: string; s
   },
   "pauling-hannay-smyth-chart": {
     size: "lg",
-    svg: `<div style="background:#f7f7f5;border-radius:12px;padding:20px;display:flex;align-items:center;justify-content:center;"><img src="/dipole-figures/pauling-hannay-smyth-chart.png" alt="Pauling and Hannay-Smyth percent ionic character comparison" style="max-width:100%;height:auto;display:block;" /></div>`,
+    svg: `<div style="display:flex;align-items:center;justify-content:center;padding:8px;"><img src="/dipole-figures/pauling-hannay-smyth-chart.png" alt="Pauling vs Hannay-Smyth chart, dark theme" style="max-width:100%;height:auto;display:block;border-radius:8px;" /></div>`,
     caption: "Percent ionic character compared across the Pauling and Hannay-Smyth treatments for common bonds.",
   },
   "p-ch3-cf3-phosphoranes": {
@@ -182,5 +182,20 @@ export const DIPOLE_STRUCTURES: Record<string, { svg: string; caption: string; s
     size: "lg",
     svg: `<div style="background:#f7f7f5;border-radius:12px;padding:20px;display:flex;align-items:center;justify-content:center;"><img src="/dipole-figures/formaldehyde-series.png" alt="formaldehyde to acetaldehyde to acetone to DMF carbonyl series" style="max-width:100%;height:auto;display:block;" /></div>`,
     caption: "Carbonyl dipole rises formaldehyde < acetaldehyde < acetone < DMF, but DMF's N lone-pair donation lowers its carbonyl electrophilicity despite the larger dipole -- magnitude is not the same as reactivity.",
+  },
+  "symmetry-gallery": {
+    size: "md",
+    svg: `<div style="display:flex;align-items:center;justify-content:center;padding:8px;"><img src="/dipole-figures/symmetry-gallery.png" alt="symmetry cancellation gallery: CO2, CS2, BX3" style="max-width:100%;height:auto;display:block;border-radius:8px;" /></div>`,
+    caption: "Symmetry forces mu=0 regardless of individual bond polarity: linear O=C=O and S=C=S, and trigonal-planar BX3 all cancel by geometry alone.",
+  },
+  "induced-dipole-diagram": {
+    size: "lg",
+    svg: `<div style="display:flex;align-items:center;justify-content:center;padding:8px;"><img src="/dipole-figures/induced-dipole-diagram.png" alt="induced dipole moment: external field and neighbouring polar bond induction" style="max-width:100%;height:auto;display:block;border-radius:8px;" /></div>`,
+    caption: "Induced dipole moment (mu_induced = alpha E): an external field or a neighbouring polar bond can separate charge in an otherwise nonpolar region -- the same mechanism behind the chloromethane series' induced-dipole opposition.",
+  },
+  "disubstituted-benzene-worked-examples": {
+    size: "lg",
+    svg: `<div style="background:#f7f7f5;border-radius:12px;padding:20px;display:flex;align-items:center;justify-content:center;"><img src="/dipole-figures/disubstituted-benzene-worked-examples.png" alt="worked vector-sum examples for disubstituted benzenes" style="max-width:100%;height:auto;display:block;" /></div>`,
+    caption: "Full law-of-cosines vector sums for five disubstituted benzenes, worked from the same group-moment data bank used throughout this chapter.",
   },
 };

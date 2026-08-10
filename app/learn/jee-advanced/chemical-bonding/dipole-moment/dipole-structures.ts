@@ -198,4 +198,89 @@ export const DIPOLE_STRUCTURES: Record<string, { svg: string; caption: string; s
     svg: `<div style="background:#f7f7f5;border-radius:12px;padding:20px;display:flex;align-items:center;justify-content:center;"><img src="/dipole-figures/disubstituted-benzene-worked-examples.png" alt="worked vector-sum examples for disubstituted benzenes" style="max-width:100%;height:auto;display:block;" /></div>`,
     caption: "Full law-of-cosines vector sums for five disubstituted benzenes, worked from the same group-moment data bank used throughout this chapter.",
   },
+  "six-factor-equation": {
+    size: "md",
+    svg: `<div style="display:flex;align-items:center;justify-content:center;padding:8px;"><img src="/dipole-figures/six-factor-equation.png" alt="six-factor master equation, boxed" style="max-width:100%;height:auto;display:block;border-radius:8px;" /></div>`,
+    caption: "The full molecular dipole equation, boxed: mu_molecule = mu_h + mu_e + mu_L + mu_g + mu_d + mu_induced.",
+  },
+  "six-factor-legend": {
+    size: "md",
+    svg: `<div style="display:flex;align-items:center;justify-content:center;padding:8px;"><img src="/dipole-figures/six-factor-legend.png" alt="six-factor legend" style="max-width:100%;height:auto;display:block;border-radius:8px;" /></div>`,
+    caption: "What each of the six contributions physically represents: homopolar, electronegativity, lone-pair, group-moment, dative and induced-dipole.",
+  },
+  "vector-sum-equation": {
+    size: "sm",
+    svg: `<div style="display:flex;align-items:center;justify-content:center;padding:8px;"><img src="/dipole-figures/vector-sum-equation.png" alt="vector sum equation" style="max-width:100%;height:auto;display:block;border-radius:8px;" /></div>`,
+    caption: "The molecular dipole as a vector sum over every individual bond dipole.",
+  },
+  "polar-bond-nonpolar-molecule": {
+    size: "md",
+    svg: `<div style="display:flex;align-items:center;justify-content:center;padding:8px;"><img src="/dipole-figures/polar-bond-nonpolar-molecule.png" alt="polar bonds, nonpolar molecule text" style="max-width:100%;height:auto;display:block;border-radius:8px;" /></div>`,
+    caption: "Because dipole moment is a vector quantity, a molecule can contain strongly polar bonds yet still have mu_molecule = 0 if symmetry cancels them.",
+  },
+  "electronegativity-homopolar-competition": {
+    size: "md",
+    svg: `<div style="display:flex;align-items:center;justify-content:center;padding:8px;"><img src="/dipole-figures/electronegativity-homopolar-competition.png" alt="electronegativity vs homopolar competition" style="max-width:100%;height:auto;display:block;border-radius:8px;" /></div>`,
+    caption: "mu_e (toward the more electronegative atom) and mu_h (an intrinsic orbital-size effect) can compete; the observed bond moment is their sum, mu_bond = mu_e + mu_h.",
+  },
+  "hybrid-orbital-lone-pair-theory": {
+    size: "md",
+    svg: `<div style="display:flex;align-items:center;justify-content:center;padding:8px;"><img src="/dipole-figures/hybrid-orbital-lone-pair-theory.png" alt="hybrid orbital lone pair theory" style="max-width:100%;height:auto;display:block;border-radius:8px;" /></div>`,
+    caption: "Only a lone pair in a hybrid orbital (unequal lobes) has a net directional moment; s-character increasing along sp > sp^2 > sp^3 changes that magnitude.",
+  },
+  "71-degree-derivation": {
+    size: "md",
+    svg: `<div style="display:flex;align-items:center;justify-content:center;padding:8px;"><img src="/dipole-figures/71-degree-derivation.png" alt="71 degree angle derivation" style="max-width:100%;height:auto;display:block;border-radius:8px;" /></div>`,
+    caption: "Deriving the 71 degree lone-pair angle: each sp^3 hybrid makes 109.47 degrees with the H-Cl bond itself; measured from the opposite (lone-pair) hemisphere, theta = 180 - 109.47 = 70.5 approx 71 degrees.",
+  },
+  "hcl-lone-pair-resultant-equation": {
+    size: "sm",
+    svg: `<div style="display:flex;align-items:center;justify-content:center;padding:8px;"><img src="/dipole-figures/hcl-lone-pair-resultant-equation.png" alt="HCl lone pair resultant equation" style="max-width:100%;height:auto;display:block;border-radius:8px;" /></div>`,
+    caption: "The resultant of three sp3 lone pairs: mu_L,resultant = 3 mu_L cos(theta), feeding into the full mu_HCl sum.",
+  },
+  "hcl-lone-pair-caution": {
+    size: "md",
+    svg: `<div style="display:flex;align-items:center;justify-content:center;padding:8px;"><img src="/dipole-figures/hcl-lone-pair-caution.png" alt="HCl lone pair model caution" style="max-width:100%;height:auto;display:block;border-radius:8px;" /></div>`,
+    caption: "mu(HCl) approx 1.03 D. Caution: numbers like 4.4 D, 3.7 D or a specific 71 degree angle are model-dependent orbital quantities, not directly measured constants.",
+  },
+  "group-moment-derivation": {
+    size: "md",
+    svg: `<div style="display:flex;align-items:center;justify-content:center;padding:8px;"><img src="/dipole-figures/group-moment-derivation.png" alt="group moment CH3 derivation" style="max-width:100%;height:auto;display:block;border-radius:8px;" /></div>`,
+    caption: "A group moment is the transferable resultant vector of all bond and electronic contributions within a functional group; for -CH3, mu = 3 mu(C-H) cos(70 deg 32') approx 0.4 D.",
+  },
+  "dative-moment-co-bn": {
+    size: "md",
+    svg: `<div style="display:flex;align-items:center;justify-content:center;padding:8px;"><img src="/dipole-figures/dative-moment-co-bn.png" alt="dative moment in CO and B-N systems" style="max-width:100%;height:auto;display:block;border-radius:8px;" /></div>`,
+    caption: "The dative/coordinate-bond moment arises from donor-to-acceptor electron-pair donation or a charge-separated resonance contributor -- central to CO and B-N systems.",
+  },
+  "co-detailed-breakdown": {
+    size: "lg",
+    svg: `<div style="display:flex;align-items:center;justify-content:center;padding:8px;"><img src="/dipole-figures/co-detailed-breakdown.png" alt="CO detailed four-contribution breakdown" style="max-width:100%;height:auto;display:block;border-radius:8px;" /></div>`,
+    caption: "CO's four competing contributions: lone-pair moments nearly cancel, the homopolar moment points toward O (more compact orbitals), the electronegativity moment also points toward O, but the dative moment (2p(O) to 2p(C)) points toward C and dominates, leaving a small residual moment toward carbon.",
+  },
+  "percentage-ionic-character-intro": {
+    size: "md",
+    svg: `<div style="display:flex;align-items:center;justify-content:center;padding:8px;"><img src="/dipole-figures/percentage-ionic-character-intro.png" alt="percentage ionic character introduction" style="max-width:100%;height:auto;display:block;border-radius:8px;" /></div>`,
+    caption: "The basic percent-ionic-character method: mu_ionic = e times d for a hypothetical 100% ionic bond, then %ionic = (mu_observed / mu_ionic) x 100 -- worked for HCl to approx 17%.",
+  },
+  "lif-charge-ratio-crosscheck": {
+    size: "md",
+    svg: `<div style="display:flex;align-items:center;justify-content:center;padding:8px;"><img src="/dipole-figures/lif-charge-ratio-crosscheck.png" alt="LiF charge-ratio cross-check" style="max-width:100%;height:auto;display:block;border-radius:8px;" /></div>`,
+    caption: "LiF cross-checked by the simple charge-separation method: mu_ionic = ed approx 7.50 D, giving %ionic character approx 84.3%, consistent with the Hannay-Smyth result.",
+  },
+  "pauling-equation-table": {
+    size: "lg",
+    svg: `<div style="display:flex;align-items:center;justify-content:center;padding:8px;"><img src="/dipole-figures/pauling-equation-table.png" alt="Pauling equation and percent ionic character table" style="max-width:100%;height:auto;display:block;border-radius:8px;" /></div>`,
+    caption: "The Pauling empirical equation for percent ionic character versus electronegativity difference, tabulated from Delta-chi = 0.1 up to 3.0.",
+  },
+  "hannay-smyth-equation-table": {
+    size: "lg",
+    svg: `<div style="display:flex;align-items:center;justify-content:center;padding:8px;"><img src="/dipole-figures/hannay-smyth-equation-table.png" alt="Hannay-Smyth equation and hydrogen halide table" style="max-width:100%;height:auto;display:block;border-radius:8px;" /></div>`,
+    caption: "The Hannay-Smyth equation, tabulated for HF, HCl, HBr and HI, plus a worked HCl example giving approx 17.2% ionic character.",
+  },
+  "lif-electronegativity-determination": {
+    size: "lg",
+    svg: `<div style="display:flex;align-items:center;justify-content:center;padding:8px;"><img src="/dipole-figures/lif-electronegativity-determination.png" alt="LiF electronegativity of lithium determination" style="max-width:100%;height:auto;display:block;border-radius:8px;" /></div>`,
+    caption: "Solving the Hannay-Smyth equation backwards for chi(Li) from LiF's observed 84.3% ionic character, including the corrected quadratic (roots approx 0.87 and 11.7; only 0.87 is chemically meaningful).",
+  },
 };

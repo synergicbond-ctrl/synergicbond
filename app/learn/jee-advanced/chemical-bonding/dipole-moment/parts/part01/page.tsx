@@ -97,6 +97,10 @@ export default function DipoleMomentPart01() {
           <DipoleStructureFigure id="vector-triangle" />
         </FigureFrame>
 
+        <FigureFrame title="Molecular dipole as a vector sum" caption="The molecular dipole is a vector sum over every individual bond dipole.">
+          <DipoleStructureFigure id="vector-sum-equation" />
+        </FigureFrame>
+
         <FormulaCard title="General case">
           <KB>{String.raw`\mu_R = \sqrt{\mu_1^2 + \mu_2^2 + 2\mu_1\mu_2\cos\theta}`}</KB>
         </FormulaCard>
@@ -140,6 +144,10 @@ export default function DipoleMomentPart01() {
           A polar bond does not imply a polar molecule, and a nonpolar molecule does not imply nonpolar bonds — only the vector resultant decides <K>{String.raw`\mu`}</K>. CO₂, CCl₄, BF₃ and PF₅ are all built from strongly polar bonds yet are all μ = 0.
         </ExamTrap>
 
+        <FigureFrame title="Polar bonds, nonpolar molecule" caption="Because dipole moment is a vector quantity, mu_molecule = 0 is possible even with strongly polar individual bonds, if symmetry cancels them.">
+          <DipoleStructureFigure id="polar-bond-nonpolar-molecule" />
+        </FigureFrame>
+
         <FigureFrame title="Symmetry cancellation gallery" caption="Linear O=C=O and S=C=S, and trigonal-planar BX₃ — all μ = 0 by geometry alone, regardless of individual bond polarity.">
           <DipoleStructureFigure id="symmetry-gallery" />
         </FigureFrame>
@@ -162,6 +170,10 @@ export default function DipoleMomentPart01() {
         <FormulaCard title="Percentage ionic character">
           <KB>{String.raw`\%\ \text{ionic character} = \frac{\mu_{\text{observed}}}{\mu_{\text{ionic}}}\times 100`}</KB>
         </FormulaCard>
+
+        <FigureFrame title="Percentage ionic character, worked for HCl" caption="mu_ionic = e·d for a hypothetical 100% ionic bond, then %ionic = (mu_observed / mu_ionic) × 100 — worked here for HCl to ≈17%.">
+          <DipoleStructureFigure id="percentage-ionic-character-intro" />
+        </FigureFrame>
 
         <WorkedExample
           number={1}
@@ -189,6 +201,10 @@ export default function DipoleMomentPart01() {
         <KeyIdea>
           Cross-check via charge ratio: <K>{String.raw`\%\ \text{ionic} = (q_{\text{obs}}/q_{\text{calc}})\times100`}</K>. For LiF, <K>{String.raw`\mu_{\text{obs}} = 6.32\ \text{D}`}</K>, <K>{String.raw`d = 0.156\ \text{nm}`}</K> ⟹ <K>{String.raw`\mu_{\text{ionic}} = (1.602\times10^{-19}\,\text{C})(0.156\times10^{-9}\,\text{m}) = 2.496\times10^{-29}\ \text{C·m}`}</K>. <K>{String.raw`\%\ \text{ionic} = (6.32\times3.33\times10^{-30})/(2.496\times10^{-29})\times100 = 84.3\%`}</K> — the identical numeric result as the Hannay–Smyth cross-check below.
         </KeyIdea>
+
+        <FigureFrame title="LiF charge-ratio cross-check" caption="mu_ionic = ed ≈ 7.50 D, giving %ionic character ≈ 84.3% — consistent with the Hannay–Smyth result below.">
+          <DipoleStructureFigure id="lif-charge-ratio-crosscheck" />
+        </FigureFrame>
       </ChapterSection>
 
       <ChapterSection
@@ -207,6 +223,10 @@ export default function DipoleMomentPart01() {
           rows={[["% ionic", "0.5", "6", "22", "43", "50", "63", "79", "89"]]}
         />
 
+        <FigureFrame title="Pauling equation and table" caption="The Pauling empirical equation for percent ionic character versus electronegativity difference.">
+          <DipoleStructureFigure id="pauling-equation-table" />
+        </FigureFrame>
+
         <ExamTrap>
           Agreement is poor at high Δχ. Alkali-metal hydrides and hydrides of Ca, Sr, Ba are predominantly ionic even though Δχ &lt; 1.7. HF: Δχ = 1.9 predicts 60% ionic character, but the true value is only ≈45%. The Δχ ≈ 1.7 &ldquo;50% ionic&rdquo; boundary is an empirical guideline, not an absolute law.
         </ExamTrap>
@@ -222,6 +242,10 @@ export default function DipoleMomentPart01() {
             ["% covalent (approx.)", "57", "83", "87", "93"],
           ]}
         />
+
+        <FigureFrame title="Hannay–Smyth equation and table" caption="The Hannay–Smyth equation, tabulated for HF/HCl/HBr/HI, plus a worked HCl example giving ≈17.2% ionic character.">
+          <DipoleStructureFigure id="hannay-smyth-equation-table" />
+        </FigureFrame>
 
         <FigureFrame title="Pauling vs. Hannay–Smyth" caption="Percent ionic character compared across the two treatments for common bonds.">
           <DipoleStructureFigure id="pauling-hannay-smyth-chart" />
@@ -245,6 +269,10 @@ export default function DipoleMomentPart01() {
           </>}
           answer={<><K>{String.raw`\chi_{\text{Li}} \approx 11.7`}</K> is rejected — electronegativity cannot exceed 4.0 (the scale maximum, set by fluorine). The chemically acceptable root, <K>{String.raw`\chi_{\text{Li}} \approx 0.87`}</K>, is in excellent agreement with the accepted value for lithium (≈0.98).</>}
         />
+
+        <FigureFrame title="LiF: determination of χ(Li)" caption="The full worked derivation, including the corrected quadratic — roots ≈0.87 and ≈11.7, only 0.87 chemically meaningful.">
+          <DipoleStructureFigure id="lif-electronegativity-determination" />
+        </FigureFrame>
       </ChapterSection>
     </PartShell>
   );

@@ -33,6 +33,15 @@ export default function DipoleMomentPart02() {
           <KB>{String.raw`\vec\mu = \vec\mu_e + \vec\mu_h + \vec\mu_L + \vec\mu_g + \vec\mu_d + \vec\mu_{\text{induced}}`}</KB>
         </FormulaCard>
 
+        <div className="grid gap-5 lg:grid-cols-2">
+          <FigureFrame title="Six-factor equation" caption="The full molecular dipole equation, boxed.">
+            <DipoleStructureFigure id="six-factor-equation" />
+          </FigureFrame>
+          <FigureFrame title="Six-factor legend" caption="What each of the six contributions physically represents.">
+            <DipoleStructureFigure id="six-factor-legend" />
+          </FigureFrame>
+        </div>
+
         <div className="space-y-10">
           <div className="space-y-4">
             <FactorHeading symbol="μe" title="Electronegativity / bond-pair moment" />
@@ -46,6 +55,9 @@ export default function DipoleMomentPart02() {
             <FactorHeading symbol="μh" title="Intrinsic homopolar dipole" />
             <FigureFrame title="Origin of the intrinsic homopolar dipole" caption="The overlap electron cloud shifts toward the atom using the more compact orbital, even at zero electronegativity difference.">
               <DipoleStructureFigure id="homopolar-origin" />
+            </FigureFrame>
+            <FigureFrame title="μe vs. μh: how the two contributions combine" caption="mu_bond = mu_e + mu_h — the two contributions can reinforce or oppose depending on which atom has the more compact orbital.">
+              <DipoleStructureFigure id="electronegativity-homopolar-competition" />
             </FigureFrame>
             <ConceptCard title="Arises purely from orbital-size mismatch" tone="violet">
               <p>Exists even when <K>{String.raw`\Delta\chi = 0`}</K> (pure covalent bond). When one atom uses a more compact orbital, the overlap electron cloud is displaced toward it.</p>
@@ -64,12 +76,26 @@ export default function DipoleMomentPart02() {
               <p className="text-sm text-slate-400">Lone-pair moment order for carbon-type hybrids: 4.4 D → 3.7 D.</p>
               <p className="text-sm text-slate-400">Important caution: numbers like 4.4 D, 3.7 D, or a specific 71° lone-pair angle are model-dependent orbital quantities from a simplified localized-orbital picture — not directly measured, universal experimental constants.</p>
             </ConceptCard>
+            <FigureFrame title="Hybrid-orbital lone-pair theory" caption="Only a lone pair in a hybrid orbital has a net directional moment; s-character increasing along sp > sp² > sp³ changes its magnitude.">
+              <DipoleStructureFigure id="hybrid-orbital-lone-pair-theory" />
+            </FigureFrame>
             <ConceptCard title="HCl in full: the three-way tug-of-war" tone="rose" eyebrow="The one full derivation">
               <p>If Cl used pure 3s/3p orbitals for its lone pairs, they would contribute nothing. Using sp³ hybrids instead, all three lone pairs point into the hemisphere opposite the H–Cl bond, each making ≈71° with the −z axis.</p>
               <p className="text-sm text-slate-400">Where 71° comes from: each sp³ hybrid makes the tetrahedral angle <K>{String.raw`109.47°`}</K> with the H–Cl bond itself (the +z axis). Measured instead from the opposite direction (−z axis, the lone-pair hemisphere), <K>{String.raw`\theta = 180° - 109.47° \approx 70.5° \approx 71°`}</K>.</p>
               <p>Their combined contribution — <K>{String.raw`3\mu_L\cos71°`}</K> — <strong className="text-white">reinforces</strong> <K>{String.raw`\mu_e`}</K> but is <strong className="text-white">opposed</strong> by <K>{String.raw`\mu_h`}</K> (which points toward H, per the previous factor).</p>
               <p>The low observed <K>{String.raw`\mu(\text{HCl}) = 1.03\ \text{D}`}</K> reflects this three-way tug-of-war between <K>{String.raw`\mu_e`}</K>, <K>{String.raw`\mu_h`}</K> and <K>{String.raw`\mu_L`}</K> — not electronegativity alone. This is the only place in the chapter this full three-factor HCl breakdown is worked; the bare bond value and the %ionic calculation (both Part 1) build on it without repeating it.</p>
             </ConceptCard>
+            <div className="grid gap-5 lg:grid-cols-2">
+              <FigureFrame title="71° angle derivation" caption="theta = 180° − 109.47° ≈ 71°, measured from the lone-pair hemisphere.">
+                <DipoleStructureFigure id="71-degree-derivation" />
+              </FigureFrame>
+              <FigureFrame title="Lone-pair resultant equation" caption="mu_L,resultant = 3 mu_L cos(theta), feeding into the full HCl sum.">
+                <DipoleStructureFigure id="hcl-lone-pair-resultant-equation" />
+              </FigureFrame>
+            </div>
+            <FigureFrame title="Model-dependence caution" caption="mu(HCl) ≈ 1.03 D — but 4.4 D, 3.7 D and the 71° angle are model-dependent orbital quantities, not directly measured constants.">
+              <DipoleStructureFigure id="hcl-lone-pair-caution" />
+            </FigureFrame>
           </div>
 
           <div className="space-y-4">
@@ -80,6 +106,9 @@ export default function DipoleMomentPart02() {
             </ConceptCard>
             <FigureFrame title="Group moment concept" caption="A functional group behaves as a single resultant vector, transferable between different parent molecules.">
               <DipoleStructureFigure id="group-moment-ch3" />
+            </FigureFrame>
+            <FigureFrame title="Group moment derivation" caption="For -CH3: mu = 3 mu(C-H) cos(70°32') ≈ 0.4 D, the three C-H moments combining along the group axis.">
+              <DipoleStructureFigure id="group-moment-derivation" />
             </FigureFrame>
             <DataTable
               headers={["Group", "μ (D)", "Direction (aromatic ring)"]}
@@ -101,6 +130,9 @@ export default function DipoleMomentPart02() {
               <p>Arises from charge separation associated with a coordinate bond or a charge-separated resonance contributor. Important in CO and B–N systems.</p>
               <p>In CO, the dative contribution nearly cancels the ordinary electronegativity-based moment, explaining CO&apos;s remarkably small <K>{String.raw`\mu \approx 0.11\text{–}0.12\ \text{D}`}</K> — the full structure, resonance diagram, and three-way competing-effects breakdown are in Part 4, which is where this factor gets its complete worked treatment.</p>
             </ConceptCard>
+            <FigureFrame title="Dative moment in CO and B–N systems" caption="Donor-to-acceptor electron-pair donation, or a charge-separated resonance contributor, is central to CO and B–N systems.">
+              <DipoleStructureFigure id="dative-moment-co-bn" />
+            </FigureFrame>
           </div>
 
           <div className="space-y-4">

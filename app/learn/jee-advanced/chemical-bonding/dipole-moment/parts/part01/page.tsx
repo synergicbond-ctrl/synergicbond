@@ -140,6 +140,10 @@ export default function DipoleMomentPart01() {
           A polar bond does not imply a polar molecule, and a nonpolar molecule does not imply nonpolar bonds — only the vector resultant decides <K>{String.raw`\mu`}</K>. CO₂, CCl₄, BF₃ and PF₅ are all built from strongly polar bonds yet are all μ = 0.
         </ExamTrap>
 
+        <FigureFrame title="Symmetry cancellation gallery" caption="Linear O=C=O and S=C=S, and trigonal-planar BX₃ — all μ = 0 by geometry alone, regardless of individual bond polarity.">
+          <DipoleStructureFigure id="symmetry-gallery" />
+        </FigureFrame>
+
         <KeyIdea>
           Cancellation requires both equal-magnitude vectors <strong className="text-white">and</strong> the right geometry. Change either — swap one substituent, or distort the angle — and the cancellation breaks. This is exactly the lever the chloromethane series and the substituted-benzene o/m/p trend (both Part 2/3) exploit.
         </KeyIdea>

@@ -162,6 +162,10 @@ export default function DipoleMomentPart03() {
             ["Cl, CN", "4.75", "3.40", "2.50", "o>m>p"],
           ]}
         />
+
+        <FigureFrame title="Worked vector sums for five disubstituted benzenes" caption="The same law-of-cosines method — μ = √(a² + b² + 2ab cos θ) — applied directly to 1,3-dichlorobenzene, 1-chloro-4-nitrobenzene, p-nitrotoluene, p-hydroxyphenoxybenzene and p-dichlorobenzene, using the group-moment data bank above.">
+          <DipoleStructureFigure id="disubstituted-benzene-worked-examples" />
+        </FigureFrame>
       </ChapterSection>
 
       <ChapterSection

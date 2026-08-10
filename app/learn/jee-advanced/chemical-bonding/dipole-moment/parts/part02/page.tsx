@@ -66,6 +66,7 @@ export default function DipoleMomentPart02() {
             </ConceptCard>
             <ConceptCard title="HCl in full: the three-way tug-of-war" tone="rose" eyebrow="The one full derivation">
               <p>If Cl used pure 3s/3p orbitals for its lone pairs, they would contribute nothing. Using sp³ hybrids instead, all three lone pairs point into the hemisphere opposite the H–Cl bond, each making ≈71° with the −z axis.</p>
+              <p className="text-sm text-slate-400">Where 71° comes from: each sp³ hybrid makes the tetrahedral angle <K>{String.raw`109.47°`}</K> with the H–Cl bond itself (the +z axis). Measured instead from the opposite direction (−z axis, the lone-pair hemisphere), <K>{String.raw`\theta = 180° - 109.47° \approx 70.5° \approx 71°`}</K>.</p>
               <p>Their combined contribution — <K>{String.raw`3\mu_L\cos71°`}</K> — <strong className="text-white">reinforces</strong> <K>{String.raw`\mu_e`}</K> but is <strong className="text-white">opposed</strong> by <K>{String.raw`\mu_h`}</K> (which points toward H, per the previous factor).</p>
               <p>The low observed <K>{String.raw`\mu(\text{HCl}) = 1.03\ \text{D}`}</K> reflects this three-way tug-of-war between <K>{String.raw`\mu_e`}</K>, <K>{String.raw`\mu_h`}</K> and <K>{String.raw`\mu_L`}</K> — not electronegativity alone. This is the only place in the chapter this full three-factor HCl breakdown is worked; the bare bond value and the %ionic calculation (both Part 1) build on it without repeating it.</p>
             </ConceptCard>
@@ -109,6 +110,9 @@ export default function DipoleMomentPart02() {
               <KB>{String.raw`\mu_{\text{induced}} = \alpha E`}</KB>
               <p>No external field is even required in some cases: in the chloromethane series (below), polarisation of one C–Cl bond electronically induces a moment in the other C–Cl bonds, opposing them and steadily reducing the net dipole as chlorination increases.</p>
             </ConceptCard>
+            <FigureFrame title="Induced dipole moment" caption="α = polarizability (grows with size / electron-cloud diffuseness), E = field intensity. Right: an external field polarising Cl₂; a neighbouring C–Cl bond inducing an opposing moment in the next C–Cl bond.">
+              <DipoleStructureFigure id="induced-dipole-diagram" />
+            </FigureFrame>
           </div>
         </div>
 

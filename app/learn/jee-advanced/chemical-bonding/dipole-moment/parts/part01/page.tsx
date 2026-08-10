@@ -219,6 +219,10 @@ export default function DipoleMomentPart01() {
           ]}
         />
 
+        <FigureFrame title="Pauling vs. Hannay–Smyth" caption="Percent ionic character compared across the two treatments for common bonds.">
+          <DipoleStructureFigure id="pauling-hannay-smyth-chart" />
+        </FigureFrame>
+
         <WorkedExample
           number={2}
           title="LiF, solving for χ(Li)"

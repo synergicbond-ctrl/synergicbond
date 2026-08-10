@@ -130,6 +130,10 @@ export default function DipoleMomentPart04() {
           P(CH₃)₃(CF₃)₂ and P(CH₃)₂(CF₃)₃ test the same axial/equatorial group-vector cancellation: CF₃ is a strong electron-withdrawing group while CH₃ is weakly donating, so their placement — not the formula alone — determines whether the molecule&apos;s overall vector arrangement cancels to zero.
         </ExamTrap>
 
+        <FigureFrame title="P(CH₃)ₓ(CF₃)ᵧ phosphoranes" caption="Mixed-ligand TBP phosphoranes — axial/equatorial placement of the withdrawing CF₃ and donating CH₃ groups determines the resultant.">
+          <DipoleStructureFigure id="p-ch3-cf3-phosphoranes" />
+        </FigureFrame>
+
         <FigureFrame title="SF₄, ClF₃, BrF₅" caption="See-saw (AX₄E, μ≈0.63 D), T-shaped (AX₃E₂, μ≈0.56 D), square pyramidal (AX₅E, μ≈1.51 D) — lone pairs shown explicitly.">
           <DipoleStructureFigure id="sf4-clf3-brf5" />
         </FigureFrame>
@@ -180,6 +184,10 @@ export default function DipoleMomentPart04() {
             ]}
           />
         </ConceptCard>
+
+        <FigureFrame title="Formaldehyde → acetaldehyde → acetone → DMF" caption="Carbonyl dipole rises across the series, but DMF's N lone-pair donation lowers its electrophilicity despite the largest dipole — magnitude is not the same as reactivity.">
+          <DipoleStructureFigure id="formaldehyde-series" />
+        </FigureFrame>
 
         <ConceptCard title="Geometry & symmetry decides" tone="cyan">
           <DataTable

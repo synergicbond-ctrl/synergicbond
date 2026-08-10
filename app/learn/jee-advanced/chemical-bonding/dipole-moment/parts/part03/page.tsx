@@ -53,6 +53,10 @@ export default function DipoleMomentPart03() {
         <ExamTrap>
           A nonzero dipole moment alone cannot distinguish cis-1,2-dichloroethene from the constitutionally different isomer 1,1-dichloroethene, which is also polar. Dipole moment must always be interpreted together with connectivity, not geometry alone.
         </ExamTrap>
+
+        <FigureFrame title="The third-isomer trap for C₂H₂Cl₂" caption="A nonzero μ alone does not prove the 'cis' isomer — 1,1-dichloroethene must be ruled out by connectivity, not geometry.">
+          <DipoleStructureFigure id="dichloroethene-third-isomer" />
+        </FigureFrame>
       </ChapterSection>
 
       <ChapterSection

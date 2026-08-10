@@ -77,6 +77,9 @@ export default function DipoleMomentPart02() {
               <p>Groups such as –CH₃, –OH, –NH₂, –NO₂, –Cl behave as a single vector — the resultant of all bond/electronic moments inside that group — and this vector is approximately transferable between different parent molecules.</p>
               <KB>{String.raw`\mu_{CH_3} = 3\mu_{C\text{–}H}\cos70°32' = \mu_{C\text{–}H} \approx 0.4\ \text{D}`}</KB>
             </ConceptCard>
+            <FigureFrame title="Group moment concept" caption="A functional group behaves as a single resultant vector, transferable between different parent molecules.">
+              <DipoleStructureFigure id="group-moment-ch3" />
+            </FigureFrame>
             <DataTable
               headers={["Group", "μ (D)", "Direction (aromatic ring)"]}
               rows={[
@@ -166,6 +169,9 @@ export default function DipoleMomentPart02() {
         <ConceptCard title="CH₃OH — full geometric vector calculation" tone="amber">
           <p>Using <K>{String.raw`\mu(\text{O–H})=1.7\,\text{D}`}</K>, <K>{String.raw`\mu(\text{C–O})=0.7\,\text{D}`}</K>, <K>{String.raw`\mu(\text{CH}_3)=0.4\,\text{D}`}</K> and the 110° C–O–H angle: geometric summation gives <K>{String.raw`\mu_{\text{calc}}\approx1.56\ \text{D}`}</K> vs. <K>{String.raw`\mu_{\text{obs}}=1.65\ \text{D}`}</K> — the small gap is the (here-omitted) oxygen lone-pair contribution.</p>
         </ConceptCard>
+        <FigureFrame title="CH₃OH vector calculation" caption="Full geometric combination of the C–O, O–H and C–H bond moments at their tetrahedral angles.">
+          <DipoleStructureFigure id="ch3oh-vector-calc" />
+        </FigureFrame>
       </ChapterSection>
 
       <ChapterSection

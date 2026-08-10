@@ -62,6 +62,7 @@ export default function DipoleMomentPart02() {
               <p>A lone pair contributes <strong className="text-white">zero</strong> dipole moment if it occupies a pure s or p orbital: the s-orbital is spherically symmetric, and a pure p-orbital&apos;s two lobes point in exactly opposite directions and cancel. Only a lone pair housed in a hybrid orbital has a net directional moment.</p>
               <KB>{String.raw`sp > sp^2 > sp^3`}</KB>
               <p className="text-sm text-slate-400">Lone-pair moment order for carbon-type hybrids: 4.4 D → 3.7 D.</p>
+              <p className="text-sm text-slate-400">Important caution: numbers like 4.4 D, 3.7 D, or a specific 71° lone-pair angle are model-dependent orbital quantities from a simplified localized-orbital picture — not directly measured, universal experimental constants.</p>
             </ConceptCard>
             <ConceptCard title="HCl in full: the three-way tug-of-war" tone="rose" eyebrow="The one full derivation">
               <p>If Cl used pure 3s/3p orbitals for its lone pairs, they would contribute nothing. Using sp³ hybrids instead, all three lone pairs point into the hemisphere opposite the H–Cl bond, each making ≈71° with the −z axis.</p>

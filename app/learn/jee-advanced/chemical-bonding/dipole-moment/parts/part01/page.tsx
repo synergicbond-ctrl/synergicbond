@@ -232,10 +232,10 @@ export default function DipoleMomentPart01() {
             <KB>{String.raw`\frac{6.32 \times 3.34\times10^{-30}}{2.496\times10^{-29}} \times 100 = 84.33\%`}</KB>
             <p>Substitute into Hannay–Smyth and expand the quadratic:</p>
             <KB>{String.raw`84.33 = 16(4.0-\chi_{\text{Li}}) + 3.5(4.0-\chi_{\text{Li}})^2`}</KB>
-            <KB>{String.raw`3.5\chi_{\text{Li}}^2 - 24\chi_{\text{Li}} + 35.67 = 0`}</KB>
-            <p>Roots: <K>{String.raw`\chi_{\text{Li}} = 0.9`}</K> or <K>{String.raw`\chi_{\text{Li}} = 13.5`}</K>.</p>
+            <KB>{String.raw`3.5\chi_{\text{Li}}^2 - 44\chi_{\text{Li}} + 35.67 = 0`}</KB>
+            <p>Roots: <K>{String.raw`\chi_{\text{Li}} \approx 0.87`}</K> or <K>{String.raw`\chi_{\text{Li}} \approx 11.7`}</K>.</p>
           </>}
-          answer={<><K>{String.raw`\chi_{\text{Li}} = 13.5`}</K> is rejected — electronegativity cannot exceed 4.0 (the scale maximum, set by fluorine). The chemically acceptable root, <K>{String.raw`\chi_{\text{Li}} = 0.9`}</K>, is in excellent agreement with the accepted value for lithium (≈0.98).</>}
+          answer={<><K>{String.raw`\chi_{\text{Li}} \approx 11.7`}</K> is rejected — electronegativity cannot exceed 4.0 (the scale maximum, set by fluorine). The chemically acceptable root, <K>{String.raw`\chi_{\text{Li}} \approx 0.87`}</K>, is in excellent agreement with the accepted value for lithium (≈0.98).</>}
         />
       </ChapterSection>
     </PartShell>

@@ -132,6 +132,8 @@ export default function DipoleMomentPart03() {
           <DipoleStructureFigure id="dichlorobenzene" />
         </FigureFrame>
 
+        <p className="text-sm text-slate-400">Dichlorobenzene literature values are widely reproduced with minor variation (illustrative rounded figures: ortho≈2.0, meta≈1.5, para≈0), but every reported set shows the same correct qualitative order ortho &gt; meta &gt; para → 0; small numeric differences reflect different measurement/rounding conventions and are not chemically significant.</p>
+
         <ConceptCard title="Vector addition at fixed ring angles" tone="cyan">
           <p>θ<sub>ortho</sub> = 60°, θ<sub>meta</sub> = 120°, θ<sub>para</sub> = 180°:</p>
           <p><K>{String.raw`\mu = \sqrt{\mu_X^2+\mu_Y^2+2\mu_X\mu_Y\cos\theta}`}</K></p>

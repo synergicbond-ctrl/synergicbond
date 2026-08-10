@@ -101,6 +101,7 @@ export async function submitAttempt(
         timeSpentMs: a.timeSpentMs,
         // Snapshot options only when the SSOT can't re-hydrate them (AI questions).
         options: ssot?.options ? undefined : a.options,
+        confident: a.confident,
       } satisfies AnswerExtra,
     };
   });

@@ -1,0 +1,3473 @@
+{
+  "summary": {
+    "generatedAt": "2026-08-04",
+    "totalRoutePatterns": 405,
+    "pageRoutes": 364,
+    "apiHandlerRoutes": 41,
+    "studentFacingPages": 359,
+    "byFamily": {
+      "account": 10,
+      "ai": 8,
+      "content-legacy": 5,
+      "home": 1,
+      "internal": 5,
+      "learn": 181,
+      "notes": 69,
+      "practice": 12,
+      "programs": 17,
+      "progress": 23,
+      "reference": 16,
+      "revise": 13,
+      "unknown": 4
+    },
+    "learnNotesCounterpartCandidates": [
+      "mole-concept"
+    ],
+    "unlinkedStudentFacingPages": [
+      "/activity",
+      "/benchmark/isomerism-textbook",
+      "/chapter",
+      "/concept",
+      "/exam-center",
+      "/handwritten-notes",
+      "/learn",
+      "/learn/chemical-equilibrium/part01",
+      "/learn/chemical-equilibrium/part02",
+      "/learn/chemical-equilibrium/part03",
+      "/learn/chemical-equilibrium/part04",
+      "/learn/chemical-equilibrium/part05",
+      "/learn/chemical-equilibrium/part06",
+      "/learn/chemical-equilibrium/part07",
+      "/learn/chemical-equilibrium/part08",
+      "/learn/chemical-equilibrium/part09",
+      "/learn/chemical-equilibrium/part10",
+      "/learn/chemical-equilibrium/part11",
+      "/learn/chemical-equilibrium/part12",
+      "/learn/chemical-equilibrium/part13",
+      "/learn/chemical-equilibrium/part14",
+      "/learn/chemical-equilibrium/part15",
+      "/learn/chemical-equilibrium/part16",
+      "/learn/chemical-equilibrium/part17",
+      "/learn/chemical-equilibrium/part18",
+      "/learn/jee-advanced/chemical-bonding/formal-charges",
+      "/learn/jee-advanced/chemical-kinetics/parts/part01",
+      "/learn/jee-advanced/chemical-kinetics/parts/part02",
+      "/learn/jee-advanced/chemical-kinetics/parts/part03",
+      "/learn/jee-advanced/chemical-kinetics/parts/part04",
+      "/learn/jee-advanced/chemical-kinetics/parts/part05",
+      "/learn/jee-advanced/chemical-kinetics/parts/part06",
+      "/learn/jee-advanced/chemical-kinetics/parts/part07",
+      "/learn/jee-advanced/chemical-kinetics/parts/part08",
+      "/learn/jee-advanced/chemical-kinetics/parts/part09",
+      "/learn/jee-advanced/chemical-kinetics/parts/part10",
+      "/learn/jee-advanced/chemical-kinetics/parts/part11",
+      "/learn/jee-advanced/chemical-kinetics/parts/part12",
+      "/learn/jee-advanced/chemical-kinetics/parts/part13",
+      "/learn/jee-advanced/chemical-kinetics/parts/part14",
+      "/learn/jee-advanced/chemical-kinetics/parts/part15",
+      "/learn/jee-advanced/chemical-kinetics/parts/part16",
+      "/learn/jee-advanced/chemical-kinetics/parts/part17",
+      "/learn/jee-advanced/chemical-kinetics/parts/part18",
+      "/learn/jee-advanced/chemical-kinetics/parts/part19",
+      "/learn/jee-advanced/chemical-kinetics/parts/part20",
+      "/learn/jee-advanced/surface-chemistry/adsorption",
+      "/learn/jee-advanced/surface-chemistry/parts/part01",
+      "/learn/jee-advanced/surface-chemistry/parts/part02",
+      "/learn/jee-advanced/surface-chemistry/parts/part03",
+      "/learn/jee-advanced/surface-chemistry/parts/part04",
+      "/learn/jee-advanced/surface-chemistry/parts/part05",
+      "/learn/jee-advanced/surface-chemistry/parts/part06",
+      "/learn/jee-advanced/surface-chemistry/parts/part07",
+      "/learn/jee-advanced/surface-chemistry/parts/part08",
+      "/learn/jee-advanced/surface-chemistry/parts/part09",
+      "/learn/jee-advanced/surface-chemistry/parts/part10",
+      "/learn/jee-advanced/surface-chemistry/parts/part11",
+      "/learn/jee-advanced/surface-chemistry/parts/part12",
+      "/learn/solid-state/master/part01",
+      "/learn/solid-state/master/part02",
+      "/learn/solid-state/master/part03",
+      "/learn/solid-state/master/part04",
+      "/learn/solid-state/master/part05",
+      "/learn/solid-state/master/part06",
+      "/learn/solid-state/master/part07",
+      "/learn/solid-state/master/part08",
+      "/learn/solid-state/master/part09",
+      "/learn/solid-state/master/part10",
+      "/learn/thermodynamics-local-review",
+      "/learn/thermodynamics-local-review/part01",
+      "/learn/thermodynamics-local-review/part02",
+      "/learn/thermodynamics-local-review/part03",
+      "/learn/thermodynamics-local-review/part04",
+      "/learn/thermodynamics-local-review/part05",
+      "/learn/thermodynamics-local-review/part06",
+      "/learn/thermodynamics-local-review/part07",
+      "/learn/thermodynamics-local-review/part08",
+      "/learn/thermodynamics-local-review/part09",
+      "/learn/thermodynamics-local-review/part10",
+      "/learn/thermodynamics-local-review/part11",
+      "/learn/thermodynamics-local-review/part12",
+      "/learn/thermodynamics-local-review/part13",
+      "/learn/thermodynamics-local-review/part14",
+      "/learn/thermodynamics-local-review/part15",
+      "/learn/thermodynamics-local-review/part16",
+      "/learn/thermodynamics-local-review/part17",
+      "/learn/thermodynamics-local-review/part18",
+      "/learn/thermodynamics-local-review/part19",
+      "/learn/thermodynamics-local-review/part20",
+      "/learn/thermodynamics-local-review/part21",
+      "/learn/thermodynamics-local-review/part22",
+      "/learn/thermodynamics-local-review/part23",
+      "/learn/thermodynamics-local-review/part24",
+      "/learn/thermodynamics-local-review/part25",
+      "/learn/thermodynamics-local-review/part26",
+      "/learn/thermodynamics-local-review/part27",
+      "/learn/thermodynamics-local-review/part28",
+      "/learn/thermodynamics-local-review/part29",
+      "/learn/thermodynamics-local-review/part30",
+      "/learn/thermodynamics/part01",
+      "/learn/thermodynamics/part02",
+      "/learn/thermodynamics/part03",
+      "/learn/thermodynamics/part04",
+      "/learn/thermodynamics/part05",
+      "/learn/thermodynamics/part06",
+      "/learn/thermodynamics/part07",
+      "/learn/thermodynamics/part08",
+      "/learn/thermodynamics/part09",
+      "/learn/thermodynamics/part10",
+      "/learn/thermodynamics/part11",
+      "/learn/thermodynamics/part12",
+      "/learn/thermodynamics/part13",
+      "/learn/thermodynamics/part14",
+      "/learn/thermodynamics/part15",
+      "/learn/thermodynamics/part16",
+      "/learn/thermodynamics/part17",
+      "/learn/thermodynamics/part18",
+      "/learn/thermodynamics/part19",
+      "/learn/thermodynamics/part20",
+      "/learn/thermodynamics/part21",
+      "/learn/thermodynamics/part22",
+      "/learn/thermodynamics/part23",
+      "/learn/thermodynamics/part24",
+      "/learn/thermodynamics/part25",
+      "/learn/thermodynamics/part26",
+      "/learn/thermodynamics/part27",
+      "/learn/thermodynamics/part28",
+      "/learn/thermodynamics/part29",
+      "/learn/thermodynamics/part30",
+      "/notes/d-block/part1",
+      "/notes/d-block/part10",
+      "/notes/d-block/part2",
+      "/notes/d-block/part3",
+      "/notes/d-block/part4",
+      "/notes/d-block/part5",
+      "/notes/d-block/part6",
+      "/notes/d-block/part7",
+      "/notes/d-block/part8",
+      "/notes/d-block/part9",
+      "/programs/jee-advanced/chapter/chemical-equilibrium",
+      "/programs/jee-advanced/chapter/chemical-kinetics",
+      "/programs/jee-advanced/chapter/gaseous-state",
+      "/programs/jee-advanced/chapter/general-inorganic-chemistry",
+      "/programs/jee-advanced/chapter/surface-chemistry",
+      "/readiness",
+      "/reset-password",
+      "/study-tools",
+      "/teachers"
+    ]
+  },
+  "routes": [
+    {
+      "pattern": "/",
+      "family": "home",
+      "sourceFile": "app/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": true,
+      "linkedFromNavigation": true
+    },
+    {
+      "pattern": "/about",
+      "family": "account",
+      "sourceFile": "app/about/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": true,
+      "linkedFromNavigation": true
+    },
+    {
+      "pattern": "/achievements",
+      "family": "progress",
+      "sourceFile": "app/achievements/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": true,
+      "linkedFromNavigation": true
+    },
+    {
+      "pattern": "/activity",
+      "family": "progress",
+      "sourceFile": "app/activity/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": false,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/admin/pyq-audit",
+      "family": "internal",
+      "sourceFile": "app/admin/pyq-audit/page.tsx",
+      "dynamic": false,
+      "studentFacing": false,
+      "linkedInternally": false,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/ai-lab",
+      "family": "ai",
+      "sourceFile": "app/ai-lab/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": true,
+      "linkedFromNavigation": true
+    },
+    {
+      "pattern": "/ai-lab/notes",
+      "family": "ai",
+      "sourceFile": "app/ai-lab/notes/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": true,
+      "linkedFromNavigation": true
+    },
+    {
+      "pattern": "/analytics",
+      "family": "progress",
+      "sourceFile": "app/analytics/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": true,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/assignment",
+      "family": "practice",
+      "sourceFile": "app/assignment/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": true,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/auth/signin",
+      "family": "account",
+      "sourceFile": "app/auth/signin/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": true,
+      "linkedFromNavigation": true
+    },
+    {
+      "pattern": "/auth/signup",
+      "family": "account",
+      "sourceFile": "app/auth/signup/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": true,
+      "linkedFromNavigation": true
+    },
+    {
+      "pattern": "/benchmark/isomerism-textbook",
+      "family": "practice",
+      "sourceFile": "app/benchmark/isomerism-textbook/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": false,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/beta-analytics",
+      "family": "internal",
+      "sourceFile": "app/beta-analytics/page.tsx",
+      "dynamic": false,
+      "studentFacing": false,
+      "linkedInternally": false,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/beta-proof",
+      "family": "internal",
+      "sourceFile": "app/beta-proof/page.tsx",
+      "dynamic": false,
+      "studentFacing": false,
+      "linkedInternally": false,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/board-examiner",
+      "family": "practice",
+      "sourceFile": "app/board-examiner/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": true,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/chapter",
+      "family": "content-legacy",
+      "sourceFile": "app/chapter/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": false,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/chapter/:id",
+      "family": "content-legacy",
+      "sourceFile": "app/chapter/[id]/page.tsx",
+      "dynamic": true,
+      "studentFacing": true,
+      "linkedInternally": false,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/chapter/atomic-structure",
+      "family": "content-legacy",
+      "sourceFile": "app/chapter/atomic-structure/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": true,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/chemistry-tools",
+      "family": "reference",
+      "sourceFile": "app/chemistry-tools/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": true,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/coach",
+      "family": "ai",
+      "sourceFile": "app/coach/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": true,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/concept",
+      "family": "content-legacy",
+      "sourceFile": "app/concept/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": false,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/concept/:id",
+      "family": "content-legacy",
+      "sourceFile": "app/concept/[id]/page.tsx",
+      "dynamic": true,
+      "studentFacing": true,
+      "linkedInternally": false,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/control-center",
+      "family": "internal",
+      "sourceFile": "app/control-center/page.tsx",
+      "dynamic": false,
+      "studentFacing": false,
+      "linkedInternally": false,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/daily-challenge",
+      "family": "practice",
+      "sourceFile": "app/daily-challenge/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": true,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/dashboard",
+      "family": "progress",
+      "sourceFile": "app/dashboard/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": true,
+      "linkedFromNavigation": true
+    },
+    {
+      "pattern": "/dashboard/:board",
+      "family": "progress",
+      "sourceFile": "app/dashboard/[board]/page.tsx",
+      "dynamic": true,
+      "studentFacing": true,
+      "linkedInternally": false,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/dashboard/:board/:class",
+      "family": "progress",
+      "sourceFile": "app/dashboard/[board]/[class]/page.tsx",
+      "dynamic": true,
+      "studentFacing": true,
+      "linkedInternally": false,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/dashboard/:board/:class/analytics",
+      "family": "progress",
+      "sourceFile": "app/dashboard/[board]/[class]/analytics/page.tsx",
+      "dynamic": true,
+      "studentFacing": true,
+      "linkedInternally": false,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/dashboard/:board/:class/custom-test",
+      "family": "progress",
+      "sourceFile": "app/dashboard/[board]/[class]/custom-test/page.tsx",
+      "dynamic": true,
+      "studentFacing": true,
+      "linkedInternally": false,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/dashboard/:board/:class/full-syllabus",
+      "family": "progress",
+      "sourceFile": "app/dashboard/[board]/[class]/full-syllabus/page.tsx",
+      "dynamic": true,
+      "studentFacing": true,
+      "linkedInternally": false,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/dashboard/:board/:class/mentorship",
+      "family": "progress",
+      "sourceFile": "app/dashboard/[board]/[class]/mentorship/page.tsx",
+      "dynamic": true,
+      "studentFacing": true,
+      "linkedInternally": false,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/dashboard/:board/:class/practical",
+      "family": "progress",
+      "sourceFile": "app/dashboard/[board]/[class]/practical/page.tsx",
+      "dynamic": true,
+      "studentFacing": true,
+      "linkedInternally": false,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/dashboard/:board/:class/practice",
+      "family": "progress",
+      "sourceFile": "app/dashboard/[board]/[class]/practice/page.tsx",
+      "dynamic": true,
+      "studentFacing": true,
+      "linkedInternally": false,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/dashboard/:board/:class/projects",
+      "family": "progress",
+      "sourceFile": "app/dashboard/[board]/[class]/projects/page.tsx",
+      "dynamic": true,
+      "studentFacing": true,
+      "linkedInternally": false,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/dashboard/boards",
+      "family": "progress",
+      "sourceFile": "app/dashboard/boards/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": true,
+      "linkedFromNavigation": true
+    },
+    {
+      "pattern": "/dashboard/profile",
+      "family": "progress",
+      "sourceFile": "app/dashboard/profile/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": true,
+      "linkedFromNavigation": true
+    },
+    {
+      "pattern": "/dashboard/programs",
+      "family": "progress",
+      "sourceFile": "app/dashboard/programs/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": true,
+      "linkedFromNavigation": true
+    },
+    {
+      "pattern": "/dashboard/subscription",
+      "family": "progress",
+      "sourceFile": "app/dashboard/subscription/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": true,
+      "linkedFromNavigation": true
+    },
+    {
+      "pattern": "/dashboard/subscription/admin",
+      "family": "progress",
+      "sourceFile": "app/dashboard/subscription/admin/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": true,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/donate",
+      "family": "account",
+      "sourceFile": "app/donate/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": true,
+      "linkedFromNavigation": true
+    },
+    {
+      "pattern": "/doubt-solver",
+      "family": "ai",
+      "sourceFile": "app/doubt-solver/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": true,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/exam",
+      "family": "practice",
+      "sourceFile": "app/exam/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": true,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/exam-center",
+      "family": "practice",
+      "sourceFile": "app/exam-center/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": false,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/exam-predictor",
+      "family": "ai",
+      "sourceFile": "app/exam-predictor/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": true,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/formula-cards",
+      "family": "revise",
+      "sourceFile": "app/formula-cards/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": true,
+      "linkedFromNavigation": true
+    },
+    {
+      "pattern": "/gate",
+      "family": "unknown",
+      "sourceFile": "app/gate/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": true,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/handwritten-notes",
+      "family": "reference",
+      "sourceFile": "app/handwritten-notes/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": false,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/important-orders",
+      "family": "reference",
+      "sourceFile": "app/important-orders/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": true,
+      "linkedFromNavigation": true
+    },
+    {
+      "pattern": "/jee",
+      "family": "programs",
+      "sourceFile": "app/jee/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": true,
+      "linkedFromNavigation": true
+    },
+    {
+      "pattern": "/lab",
+      "family": "unknown",
+      "sourceFile": "app/lab/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": true,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/leaderboard",
+      "family": "progress",
+      "sourceFile": "app/leaderboard/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": true,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/learn",
+      "family": "learn",
+      "sourceFile": "app/learn/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": false,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/learn/atomic-structure",
+      "family": "learn",
+      "sourceFile": "app/learn/atomic-structure/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": true,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/learn/atomic-structure/:part",
+      "family": "learn",
+      "sourceFile": "app/learn/atomic-structure/[part]/page.tsx",
+      "dynamic": true,
+      "studentFacing": true,
+      "linkedInternally": true,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/learn/chemical-bonding",
+      "family": "learn",
+      "sourceFile": "app/learn/chemical-bonding/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": true,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/learn/chemical-bonding/:part",
+      "family": "learn",
+      "sourceFile": "app/learn/chemical-bonding/[part]/page.tsx",
+      "dynamic": true,
+      "studentFacing": true,
+      "linkedInternally": true,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/learn/chemical-equilibrium",
+      "family": "learn",
+      "sourceFile": "app/learn/chemical-equilibrium/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": true,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/learn/chemical-equilibrium/part01",
+      "family": "learn",
+      "sourceFile": "app/learn/chemical-equilibrium/part01/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": false,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/learn/chemical-equilibrium/part02",
+      "family": "learn",
+      "sourceFile": "app/learn/chemical-equilibrium/part02/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": false,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/learn/chemical-equilibrium/part03",
+      "family": "learn",
+      "sourceFile": "app/learn/chemical-equilibrium/part03/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": false,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/learn/chemical-equilibrium/part04",
+      "family": "learn",
+      "sourceFile": "app/learn/chemical-equilibrium/part04/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": false,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/learn/chemical-equilibrium/part05",
+      "family": "learn",
+      "sourceFile": "app/learn/chemical-equilibrium/part05/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": false,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/learn/chemical-equilibrium/part06",
+      "family": "learn",
+      "sourceFile": "app/learn/chemical-equilibrium/part06/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": false,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/learn/chemical-equilibrium/part07",
+      "family": "learn",
+      "sourceFile": "app/learn/chemical-equilibrium/part07/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": false,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/learn/chemical-equilibrium/part08",
+      "family": "learn",
+      "sourceFile": "app/learn/chemical-equilibrium/part08/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": false,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/learn/chemical-equilibrium/part09",
+      "family": "learn",
+      "sourceFile": "app/learn/chemical-equilibrium/part09/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": false,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/learn/chemical-equilibrium/part10",
+      "family": "learn",
+      "sourceFile": "app/learn/chemical-equilibrium/part10/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": false,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/learn/chemical-equilibrium/part11",
+      "family": "learn",
+      "sourceFile": "app/learn/chemical-equilibrium/part11/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": false,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/learn/chemical-equilibrium/part12",
+      "family": "learn",
+      "sourceFile": "app/learn/chemical-equilibrium/part12/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": false,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/learn/chemical-equilibrium/part13",
+      "family": "learn",
+      "sourceFile": "app/learn/chemical-equilibrium/part13/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": false,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/learn/chemical-equilibrium/part14",
+      "family": "learn",
+      "sourceFile": "app/learn/chemical-equilibrium/part14/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": false,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/learn/chemical-equilibrium/part15",
+      "family": "learn",
+      "sourceFile": "app/learn/chemical-equilibrium/part15/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": false,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/learn/chemical-equilibrium/part16",
+      "family": "learn",
+      "sourceFile": "app/learn/chemical-equilibrium/part16/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": false,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/learn/chemical-equilibrium/part17",
+      "family": "learn",
+      "sourceFile": "app/learn/chemical-equilibrium/part17/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": false,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/learn/chemical-equilibrium/part18",
+      "family": "learn",
+      "sourceFile": "app/learn/chemical-equilibrium/part18/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": false,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/learn/gaseous-state",
+      "family": "learn",
+      "sourceFile": "app/learn/gaseous-state/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": true,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/learn/gaseous-state/parts/:part",
+      "family": "learn",
+      "sourceFile": "app/learn/gaseous-state/parts/[part]/page.tsx",
+      "dynamic": true,
+      "studentFacing": true,
+      "linkedInternally": false,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/learn/isomerism",
+      "family": "learn",
+      "sourceFile": "app/learn/isomerism/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": true,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/learn/isomerism/:part",
+      "family": "learn",
+      "sourceFile": "app/learn/isomerism/[part]/page.tsx",
+      "dynamic": true,
+      "studentFacing": true,
+      "linkedInternally": true,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/learn/jee-advanced/chemical-bonding/formal-charges",
+      "family": "learn",
+      "sourceFile": "app/learn/jee-advanced/chemical-bonding/formal-charges/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": false,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/learn/jee-advanced/chemical-kinetics",
+      "family": "learn",
+      "sourceFile": "app/learn/jee-advanced/chemical-kinetics/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": true,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/learn/jee-advanced/chemical-kinetics/parts/part01",
+      "family": "learn",
+      "sourceFile": "app/learn/jee-advanced/chemical-kinetics/parts/part01/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": false,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/learn/jee-advanced/chemical-kinetics/parts/part02",
+      "family": "learn",
+      "sourceFile": "app/learn/jee-advanced/chemical-kinetics/parts/part02/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": false,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/learn/jee-advanced/chemical-kinetics/parts/part03",
+      "family": "learn",
+      "sourceFile": "app/learn/jee-advanced/chemical-kinetics/parts/part03/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": false,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/learn/jee-advanced/chemical-kinetics/parts/part04",
+      "family": "learn",
+      "sourceFile": "app/learn/jee-advanced/chemical-kinetics/parts/part04/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": false,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/learn/jee-advanced/chemical-kinetics/parts/part05",
+      "family": "learn",
+      "sourceFile": "app/learn/jee-advanced/chemical-kinetics/parts/part05/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": false,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/learn/jee-advanced/chemical-kinetics/parts/part06",
+      "family": "learn",
+      "sourceFile": "app/learn/jee-advanced/chemical-kinetics/parts/part06/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": false,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/learn/jee-advanced/chemical-kinetics/parts/part07",
+      "family": "learn",
+      "sourceFile": "app/learn/jee-advanced/chemical-kinetics/parts/part07/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": false,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/learn/jee-advanced/chemical-kinetics/parts/part08",
+      "family": "learn",
+      "sourceFile": "app/learn/jee-advanced/chemical-kinetics/parts/part08/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": false,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/learn/jee-advanced/chemical-kinetics/parts/part09",
+      "family": "learn",
+      "sourceFile": "app/learn/jee-advanced/chemical-kinetics/parts/part09/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": false,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/learn/jee-advanced/chemical-kinetics/parts/part10",
+      "family": "learn",
+      "sourceFile": "app/learn/jee-advanced/chemical-kinetics/parts/part10/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": false,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/learn/jee-advanced/chemical-kinetics/parts/part11",
+      "family": "learn",
+      "sourceFile": "app/learn/jee-advanced/chemical-kinetics/parts/part11/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": false,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/learn/jee-advanced/chemical-kinetics/parts/part12",
+      "family": "learn",
+      "sourceFile": "app/learn/jee-advanced/chemical-kinetics/parts/part12/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": false,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/learn/jee-advanced/chemical-kinetics/parts/part13",
+      "family": "learn",
+      "sourceFile": "app/learn/jee-advanced/chemical-kinetics/parts/part13/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": false,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/learn/jee-advanced/chemical-kinetics/parts/part14",
+      "family": "learn",
+      "sourceFile": "app/learn/jee-advanced/chemical-kinetics/parts/part14/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": false,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/learn/jee-advanced/chemical-kinetics/parts/part15",
+      "family": "learn",
+      "sourceFile": "app/learn/jee-advanced/chemical-kinetics/parts/part15/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": false,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/learn/jee-advanced/chemical-kinetics/parts/part16",
+      "family": "learn",
+      "sourceFile": "app/learn/jee-advanced/chemical-kinetics/parts/part16/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": false,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/learn/jee-advanced/chemical-kinetics/parts/part17",
+      "family": "learn",
+      "sourceFile": "app/learn/jee-advanced/chemical-kinetics/parts/part17/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": false,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/learn/jee-advanced/chemical-kinetics/parts/part18",
+      "family": "learn",
+      "sourceFile": "app/learn/jee-advanced/chemical-kinetics/parts/part18/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": false,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/learn/jee-advanced/chemical-kinetics/parts/part19",
+      "family": "learn",
+      "sourceFile": "app/learn/jee-advanced/chemical-kinetics/parts/part19/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": false,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/learn/jee-advanced/chemical-kinetics/parts/part20",
+      "family": "learn",
+      "sourceFile": "app/learn/jee-advanced/chemical-kinetics/parts/part20/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": false,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/learn/jee-advanced/environmental-chemistry",
+      "family": "learn",
+      "sourceFile": "app/learn/jee-advanced/environmental-chemistry/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": true,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/learn/jee-advanced/environmental-chemistry/parts/part01",
+      "family": "learn",
+      "sourceFile": "app/learn/jee-advanced/environmental-chemistry/parts/part01/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": true,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/learn/jee-advanced/environmental-chemistry/parts/part02",
+      "family": "learn",
+      "sourceFile": "app/learn/jee-advanced/environmental-chemistry/parts/part02/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": true,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/learn/jee-advanced/environmental-chemistry/parts/part03",
+      "family": "learn",
+      "sourceFile": "app/learn/jee-advanced/environmental-chemistry/parts/part03/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": true,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/learn/jee-advanced/environmental-chemistry/parts/part04",
+      "family": "learn",
+      "sourceFile": "app/learn/jee-advanced/environmental-chemistry/parts/part04/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": true,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/learn/jee-advanced/environmental-chemistry/parts/part05",
+      "family": "learn",
+      "sourceFile": "app/learn/jee-advanced/environmental-chemistry/parts/part05/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": true,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/learn/jee-advanced/environmental-chemistry/parts/part06",
+      "family": "learn",
+      "sourceFile": "app/learn/jee-advanced/environmental-chemistry/parts/part06/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": true,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/learn/jee-advanced/environmental-chemistry/parts/part07",
+      "family": "learn",
+      "sourceFile": "app/learn/jee-advanced/environmental-chemistry/parts/part07/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": true,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/learn/jee-advanced/environmental-chemistry/parts/part08",
+      "family": "learn",
+      "sourceFile": "app/learn/jee-advanced/environmental-chemistry/parts/part08/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": true,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/learn/jee-advanced/environmental-chemistry/parts/part09",
+      "family": "learn",
+      "sourceFile": "app/learn/jee-advanced/environmental-chemistry/parts/part09/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": true,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/learn/jee-advanced/environmental-chemistry/parts/part10",
+      "family": "learn",
+      "sourceFile": "app/learn/jee-advanced/environmental-chemistry/parts/part10/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": true,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/learn/jee-advanced/environmental-chemistry/parts/part11",
+      "family": "learn",
+      "sourceFile": "app/learn/jee-advanced/environmental-chemistry/parts/part11/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": true,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/learn/jee-advanced/environmental-chemistry/parts/part12",
+      "family": "learn",
+      "sourceFile": "app/learn/jee-advanced/environmental-chemistry/parts/part12/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": true,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/learn/jee-advanced/environmental-chemistry/parts/part13",
+      "family": "learn",
+      "sourceFile": "app/learn/jee-advanced/environmental-chemistry/parts/part13/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": true,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/learn/jee-advanced/environmental-chemistry/parts/part14",
+      "family": "learn",
+      "sourceFile": "app/learn/jee-advanced/environmental-chemistry/parts/part14/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": true,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/learn/jee-advanced/environmental-chemistry/parts/part15",
+      "family": "learn",
+      "sourceFile": "app/learn/jee-advanced/environmental-chemistry/parts/part15/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": true,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/learn/jee-advanced/inorganic-chemistry/s-block",
+      "family": "learn",
+      "sourceFile": "app/learn/jee-advanced/inorganic-chemistry/s-block/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": true,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/learn/jee-advanced/polymers",
+      "family": "learn",
+      "sourceFile": "app/learn/jee-advanced/polymers/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": true,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/learn/jee-advanced/salt-analysis",
+      "family": "learn",
+      "sourceFile": "app/learn/jee-advanced/salt-analysis/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": true,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/learn/jee-advanced/salt-analysis/parts/part01",
+      "family": "learn",
+      "sourceFile": "app/learn/jee-advanced/salt-analysis/parts/part01/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": true,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/learn/jee-advanced/salt-analysis/parts/part02",
+      "family": "learn",
+      "sourceFile": "app/learn/jee-advanced/salt-analysis/parts/part02/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": true,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/learn/jee-advanced/salt-analysis/parts/part03",
+      "family": "learn",
+      "sourceFile": "app/learn/jee-advanced/salt-analysis/parts/part03/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": true,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/learn/jee-advanced/salt-analysis/parts/part04",
+      "family": "learn",
+      "sourceFile": "app/learn/jee-advanced/salt-analysis/parts/part04/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": true,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/learn/jee-advanced/salt-analysis/parts/part05",
+      "family": "learn",
+      "sourceFile": "app/learn/jee-advanced/salt-analysis/parts/part05/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": true,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/learn/jee-advanced/salt-analysis/parts/part06",
+      "family": "learn",
+      "sourceFile": "app/learn/jee-advanced/salt-analysis/parts/part06/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": true,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/learn/jee-advanced/salt-analysis/parts/part07",
+      "family": "learn",
+      "sourceFile": "app/learn/jee-advanced/salt-analysis/parts/part07/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": true,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/learn/jee-advanced/salt-analysis/parts/part08",
+      "family": "learn",
+      "sourceFile": "app/learn/jee-advanced/salt-analysis/parts/part08/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": true,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/learn/jee-advanced/salt-analysis/parts/part09",
+      "family": "learn",
+      "sourceFile": "app/learn/jee-advanced/salt-analysis/parts/part09/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": true,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/learn/jee-advanced/salt-analysis/parts/part10",
+      "family": "learn",
+      "sourceFile": "app/learn/jee-advanced/salt-analysis/parts/part10/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": true,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/learn/jee-advanced/salt-analysis/parts/part11",
+      "family": "learn",
+      "sourceFile": "app/learn/jee-advanced/salt-analysis/parts/part11/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": true,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/learn/jee-advanced/salt-analysis/parts/part12",
+      "family": "learn",
+      "sourceFile": "app/learn/jee-advanced/salt-analysis/parts/part12/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": true,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/learn/jee-advanced/salt-analysis/parts/part13",
+      "family": "learn",
+      "sourceFile": "app/learn/jee-advanced/salt-analysis/parts/part13/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": true,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/learn/jee-advanced/salt-analysis/parts/part14",
+      "family": "learn",
+      "sourceFile": "app/learn/jee-advanced/salt-analysis/parts/part14/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": true,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/learn/jee-advanced/salt-analysis/parts/part15",
+      "family": "learn",
+      "sourceFile": "app/learn/jee-advanced/salt-analysis/parts/part15/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": true,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/learn/jee-advanced/salt-analysis/parts/part16",
+      "family": "learn",
+      "sourceFile": "app/learn/jee-advanced/salt-analysis/parts/part16/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": true,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/learn/jee-advanced/salt-analysis/parts/part17",
+      "family": "learn",
+      "sourceFile": "app/learn/jee-advanced/salt-analysis/parts/part17/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": true,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/learn/jee-advanced/salt-analysis/parts/part18",
+      "family": "learn",
+      "sourceFile": "app/learn/jee-advanced/salt-analysis/parts/part18/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": true,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/learn/jee-advanced/solutions",
+      "family": "learn",
+      "sourceFile": "app/learn/jee-advanced/solutions/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": true,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/learn/jee-advanced/solutions/:part",
+      "family": "learn",
+      "sourceFile": "app/learn/jee-advanced/solutions/[part]/page.tsx",
+      "dynamic": true,
+      "studentFacing": true,
+      "linkedInternally": false,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/learn/jee-advanced/surface-chemistry",
+      "family": "learn",
+      "sourceFile": "app/learn/jee-advanced/surface-chemistry/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": true,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/learn/jee-advanced/surface-chemistry/adsorption",
+      "family": "learn",
+      "sourceFile": "app/learn/jee-advanced/surface-chemistry/adsorption/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": false,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/learn/jee-advanced/surface-chemistry/parts/part01",
+      "family": "learn",
+      "sourceFile": "app/learn/jee-advanced/surface-chemistry/parts/part01/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": false,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/learn/jee-advanced/surface-chemistry/parts/part02",
+      "family": "learn",
+      "sourceFile": "app/learn/jee-advanced/surface-chemistry/parts/part02/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": false,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/learn/jee-advanced/surface-chemistry/parts/part03",
+      "family": "learn",
+      "sourceFile": "app/learn/jee-advanced/surface-chemistry/parts/part03/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": false,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/learn/jee-advanced/surface-chemistry/parts/part04",
+      "family": "learn",
+      "sourceFile": "app/learn/jee-advanced/surface-chemistry/parts/part04/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": false,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/learn/jee-advanced/surface-chemistry/parts/part05",
+      "family": "learn",
+      "sourceFile": "app/learn/jee-advanced/surface-chemistry/parts/part05/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": false,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/learn/jee-advanced/surface-chemistry/parts/part06",
+      "family": "learn",
+      "sourceFile": "app/learn/jee-advanced/surface-chemistry/parts/part06/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": false,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/learn/jee-advanced/surface-chemistry/parts/part07",
+      "family": "learn",
+      "sourceFile": "app/learn/jee-advanced/surface-chemistry/parts/part07/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": false,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/learn/jee-advanced/surface-chemistry/parts/part08",
+      "family": "learn",
+      "sourceFile": "app/learn/jee-advanced/surface-chemistry/parts/part08/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": false,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/learn/jee-advanced/surface-chemistry/parts/part09",
+      "family": "learn",
+      "sourceFile": "app/learn/jee-advanced/surface-chemistry/parts/part09/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": false,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/learn/jee-advanced/surface-chemistry/parts/part10",
+      "family": "learn",
+      "sourceFile": "app/learn/jee-advanced/surface-chemistry/parts/part10/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": false,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/learn/jee-advanced/surface-chemistry/parts/part11",
+      "family": "learn",
+      "sourceFile": "app/learn/jee-advanced/surface-chemistry/parts/part11/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": false,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/learn/jee-advanced/surface-chemistry/parts/part12",
+      "family": "learn",
+      "sourceFile": "app/learn/jee-advanced/surface-chemistry/parts/part12/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": false,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/learn/mole-concept",
+      "family": "learn",
+      "sourceFile": "app/learn/mole-concept/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": true,
+      "linkedFromNavigation": false,
+      "counterpartCandidate": true
+    },
+    {
+      "pattern": "/learn/periodic-table",
+      "family": "learn",
+      "sourceFile": "app/learn/periodic-table/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": true,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/learn/reactions/:slug",
+      "family": "learn",
+      "sourceFile": "app/learn/reactions/[slug]/page.tsx",
+      "dynamic": true,
+      "studentFacing": true,
+      "linkedInternally": false,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/learn/solid-state",
+      "family": "learn",
+      "sourceFile": "app/learn/solid-state/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": true,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/learn/solid-state/:part",
+      "family": "learn",
+      "sourceFile": "app/learn/solid-state/[part]/page.tsx",
+      "dynamic": true,
+      "studentFacing": true,
+      "linkedInternally": false,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/learn/solid-state/master",
+      "family": "learn",
+      "sourceFile": "app/learn/solid-state/master/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": true,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/learn/solid-state/master/part01",
+      "family": "learn",
+      "sourceFile": "app/learn/solid-state/master/part01/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": false,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/learn/solid-state/master/part02",
+      "family": "learn",
+      "sourceFile": "app/learn/solid-state/master/part02/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": false,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/learn/solid-state/master/part03",
+      "family": "learn",
+      "sourceFile": "app/learn/solid-state/master/part03/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": false,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/learn/solid-state/master/part04",
+      "family": "learn",
+      "sourceFile": "app/learn/solid-state/master/part04/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": false,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/learn/solid-state/master/part05",
+      "family": "learn",
+      "sourceFile": "app/learn/solid-state/master/part05/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": false,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/learn/solid-state/master/part06",
+      "family": "learn",
+      "sourceFile": "app/learn/solid-state/master/part06/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": false,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/learn/solid-state/master/part07",
+      "family": "learn",
+      "sourceFile": "app/learn/solid-state/master/part07/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": false,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/learn/solid-state/master/part08",
+      "family": "learn",
+      "sourceFile": "app/learn/solid-state/master/part08/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": false,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/learn/solid-state/master/part09",
+      "family": "learn",
+      "sourceFile": "app/learn/solid-state/master/part09/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": false,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/learn/solid-state/master/part10",
+      "family": "learn",
+      "sourceFile": "app/learn/solid-state/master/part10/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": false,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/learn/thermodynamics",
+      "family": "learn",
+      "sourceFile": "app/learn/thermodynamics/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": true,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/learn/thermodynamics-local-review",
+      "family": "learn",
+      "sourceFile": "app/learn/thermodynamics-local-review/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": false,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/learn/thermodynamics-local-review/part01",
+      "family": "learn",
+      "sourceFile": "app/learn/thermodynamics-local-review/part01/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": false,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/learn/thermodynamics-local-review/part02",
+      "family": "learn",
+      "sourceFile": "app/learn/thermodynamics-local-review/part02/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": false,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/learn/thermodynamics-local-review/part03",
+      "family": "learn",
+      "sourceFile": "app/learn/thermodynamics-local-review/part03/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": false,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/learn/thermodynamics-local-review/part04",
+      "family": "learn",
+      "sourceFile": "app/learn/thermodynamics-local-review/part04/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": false,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/learn/thermodynamics-local-review/part05",
+      "family": "learn",
+      "sourceFile": "app/learn/thermodynamics-local-review/part05/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": false,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/learn/thermodynamics-local-review/part06",
+      "family": "learn",
+      "sourceFile": "app/learn/thermodynamics-local-review/part06/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": false,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/learn/thermodynamics-local-review/part07",
+      "family": "learn",
+      "sourceFile": "app/learn/thermodynamics-local-review/part07/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": false,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/learn/thermodynamics-local-review/part08",
+      "family": "learn",
+      "sourceFile": "app/learn/thermodynamics-local-review/part08/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": false,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/learn/thermodynamics-local-review/part09",
+      "family": "learn",
+      "sourceFile": "app/learn/thermodynamics-local-review/part09/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": false,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/learn/thermodynamics-local-review/part10",
+      "family": "learn",
+      "sourceFile": "app/learn/thermodynamics-local-review/part10/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": false,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/learn/thermodynamics-local-review/part11",
+      "family": "learn",
+      "sourceFile": "app/learn/thermodynamics-local-review/part11/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": false,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/learn/thermodynamics-local-review/part12",
+      "family": "learn",
+      "sourceFile": "app/learn/thermodynamics-local-review/part12/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": false,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/learn/thermodynamics-local-review/part13",
+      "family": "learn",
+      "sourceFile": "app/learn/thermodynamics-local-review/part13/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": false,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/learn/thermodynamics-local-review/part14",
+      "family": "learn",
+      "sourceFile": "app/learn/thermodynamics-local-review/part14/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": false,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/learn/thermodynamics-local-review/part15",
+      "family": "learn",
+      "sourceFile": "app/learn/thermodynamics-local-review/part15/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": false,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/learn/thermodynamics-local-review/part16",
+      "family": "learn",
+      "sourceFile": "app/learn/thermodynamics-local-review/part16/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": false,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/learn/thermodynamics-local-review/part17",
+      "family": "learn",
+      "sourceFile": "app/learn/thermodynamics-local-review/part17/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": false,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/learn/thermodynamics-local-review/part18",
+      "family": "learn",
+      "sourceFile": "app/learn/thermodynamics-local-review/part18/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": false,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/learn/thermodynamics-local-review/part19",
+      "family": "learn",
+      "sourceFile": "app/learn/thermodynamics-local-review/part19/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": false,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/learn/thermodynamics-local-review/part20",
+      "family": "learn",
+      "sourceFile": "app/learn/thermodynamics-local-review/part20/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": false,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/learn/thermodynamics-local-review/part21",
+      "family": "learn",
+      "sourceFile": "app/learn/thermodynamics-local-review/part21/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": false,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/learn/thermodynamics-local-review/part22",
+      "family": "learn",
+      "sourceFile": "app/learn/thermodynamics-local-review/part22/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": false,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/learn/thermodynamics-local-review/part23",
+      "family": "learn",
+      "sourceFile": "app/learn/thermodynamics-local-review/part23/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": false,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/learn/thermodynamics-local-review/part24",
+      "family": "learn",
+      "sourceFile": "app/learn/thermodynamics-local-review/part24/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": false,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/learn/thermodynamics-local-review/part25",
+      "family": "learn",
+      "sourceFile": "app/learn/thermodynamics-local-review/part25/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": false,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/learn/thermodynamics-local-review/part26",
+      "family": "learn",
+      "sourceFile": "app/learn/thermodynamics-local-review/part26/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": false,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/learn/thermodynamics-local-review/part27",
+      "family": "learn",
+      "sourceFile": "app/learn/thermodynamics-local-review/part27/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": false,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/learn/thermodynamics-local-review/part28",
+      "family": "learn",
+      "sourceFile": "app/learn/thermodynamics-local-review/part28/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": false,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/learn/thermodynamics-local-review/part29",
+      "family": "learn",
+      "sourceFile": "app/learn/thermodynamics-local-review/part29/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": false,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/learn/thermodynamics-local-review/part30",
+      "family": "learn",
+      "sourceFile": "app/learn/thermodynamics-local-review/part30/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": false,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/learn/thermodynamics/part01",
+      "family": "learn",
+      "sourceFile": "app/learn/thermodynamics/part01/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": false,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/learn/thermodynamics/part02",
+      "family": "learn",
+      "sourceFile": "app/learn/thermodynamics/part02/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": false,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/learn/thermodynamics/part03",
+      "family": "learn",
+      "sourceFile": "app/learn/thermodynamics/part03/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": false,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/learn/thermodynamics/part04",
+      "family": "learn",
+      "sourceFile": "app/learn/thermodynamics/part04/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": false,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/learn/thermodynamics/part05",
+      "family": "learn",
+      "sourceFile": "app/learn/thermodynamics/part05/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": false,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/learn/thermodynamics/part06",
+      "family": "learn",
+      "sourceFile": "app/learn/thermodynamics/part06/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": false,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/learn/thermodynamics/part07",
+      "family": "learn",
+      "sourceFile": "app/learn/thermodynamics/part07/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": false,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/learn/thermodynamics/part08",
+      "family": "learn",
+      "sourceFile": "app/learn/thermodynamics/part08/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": false,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/learn/thermodynamics/part09",
+      "family": "learn",
+      "sourceFile": "app/learn/thermodynamics/part09/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": false,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/learn/thermodynamics/part10",
+      "family": "learn",
+      "sourceFile": "app/learn/thermodynamics/part10/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": false,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/learn/thermodynamics/part11",
+      "family": "learn",
+      "sourceFile": "app/learn/thermodynamics/part11/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": false,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/learn/thermodynamics/part12",
+      "family": "learn",
+      "sourceFile": "app/learn/thermodynamics/part12/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": false,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/learn/thermodynamics/part13",
+      "family": "learn",
+      "sourceFile": "app/learn/thermodynamics/part13/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": false,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/learn/thermodynamics/part14",
+      "family": "learn",
+      "sourceFile": "app/learn/thermodynamics/part14/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": false,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/learn/thermodynamics/part15",
+      "family": "learn",
+      "sourceFile": "app/learn/thermodynamics/part15/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": false,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/learn/thermodynamics/part16",
+      "family": "learn",
+      "sourceFile": "app/learn/thermodynamics/part16/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": false,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/learn/thermodynamics/part17",
+      "family": "learn",
+      "sourceFile": "app/learn/thermodynamics/part17/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": false,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/learn/thermodynamics/part18",
+      "family": "learn",
+      "sourceFile": "app/learn/thermodynamics/part18/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": false,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/learn/thermodynamics/part19",
+      "family": "learn",
+      "sourceFile": "app/learn/thermodynamics/part19/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": false,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/learn/thermodynamics/part20",
+      "family": "learn",
+      "sourceFile": "app/learn/thermodynamics/part20/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": false,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/learn/thermodynamics/part21",
+      "family": "learn",
+      "sourceFile": "app/learn/thermodynamics/part21/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": false,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/learn/thermodynamics/part22",
+      "family": "learn",
+      "sourceFile": "app/learn/thermodynamics/part22/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": false,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/learn/thermodynamics/part23",
+      "family": "learn",
+      "sourceFile": "app/learn/thermodynamics/part23/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": false,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/learn/thermodynamics/part24",
+      "family": "learn",
+      "sourceFile": "app/learn/thermodynamics/part24/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": false,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/learn/thermodynamics/part25",
+      "family": "learn",
+      "sourceFile": "app/learn/thermodynamics/part25/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": false,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/learn/thermodynamics/part26",
+      "family": "learn",
+      "sourceFile": "app/learn/thermodynamics/part26/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": false,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/learn/thermodynamics/part27",
+      "family": "learn",
+      "sourceFile": "app/learn/thermodynamics/part27/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": false,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/learn/thermodynamics/part28",
+      "family": "learn",
+      "sourceFile": "app/learn/thermodynamics/part28/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": false,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/learn/thermodynamics/part29",
+      "family": "learn",
+      "sourceFile": "app/learn/thermodynamics/part29/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": false,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/learn/thermodynamics/part30",
+      "family": "learn",
+      "sourceFile": "app/learn/thermodynamics/part30/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": false,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/library",
+      "family": "reference",
+      "sourceFile": "app/library/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": true,
+      "linkedFromNavigation": true
+    },
+    {
+      "pattern": "/live",
+      "family": "unknown",
+      "sourceFile": "app/live/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": true,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/memory",
+      "family": "revise",
+      "sourceFile": "app/memory/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": true,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/mistakes",
+      "family": "revise",
+      "sourceFile": "app/mistakes/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": true,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/molecule",
+      "family": "reference",
+      "sourceFile": "app/molecule/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": true,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/name-reactions",
+      "family": "reference",
+      "sourceFile": "app/name-reactions/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": true,
+      "linkedFromNavigation": true
+    },
+    {
+      "pattern": "/ncert",
+      "family": "reference",
+      "sourceFile": "app/ncert/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": true,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/neet",
+      "family": "programs",
+      "sourceFile": "app/neet/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": true,
+      "linkedFromNavigation": true
+    },
+    {
+      "pattern": "/notes",
+      "family": "notes",
+      "sourceFile": "app/notes/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": true,
+      "linkedFromNavigation": true
+    },
+    {
+      "pattern": "/notes/concentration-terms",
+      "family": "notes",
+      "sourceFile": "app/notes/concentration-terms/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": true,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/notes/concentration-terms/part1",
+      "family": "notes",
+      "sourceFile": "app/notes/concentration-terms/part1/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": true,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/notes/concentration-terms/part2",
+      "family": "notes",
+      "sourceFile": "app/notes/concentration-terms/part2/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": true,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/notes/concentration-terms/part3",
+      "family": "notes",
+      "sourceFile": "app/notes/concentration-terms/part3/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": true,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/notes/concentration-terms/part4",
+      "family": "notes",
+      "sourceFile": "app/notes/concentration-terms/part4/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": true,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/notes/concentration-terms/part5",
+      "family": "notes",
+      "sourceFile": "app/notes/concentration-terms/part5/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": true,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/notes/concentration-terms/part6",
+      "family": "notes",
+      "sourceFile": "app/notes/concentration-terms/part6/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": true,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/notes/d-block",
+      "family": "notes",
+      "sourceFile": "app/notes/d-block/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": true,
+      "linkedFromNavigation": true
+    },
+    {
+      "pattern": "/notes/d-block/part1",
+      "family": "notes",
+      "sourceFile": "app/notes/d-block/part1/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": false,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/notes/d-block/part10",
+      "family": "notes",
+      "sourceFile": "app/notes/d-block/part10/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": false,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/notes/d-block/part2",
+      "family": "notes",
+      "sourceFile": "app/notes/d-block/part2/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": false,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/notes/d-block/part3",
+      "family": "notes",
+      "sourceFile": "app/notes/d-block/part3/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": false,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/notes/d-block/part4",
+      "family": "notes",
+      "sourceFile": "app/notes/d-block/part4/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": false,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/notes/d-block/part5",
+      "family": "notes",
+      "sourceFile": "app/notes/d-block/part5/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": false,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/notes/d-block/part6",
+      "family": "notes",
+      "sourceFile": "app/notes/d-block/part6/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": false,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/notes/d-block/part7",
+      "family": "notes",
+      "sourceFile": "app/notes/d-block/part7/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": false,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/notes/d-block/part8",
+      "family": "notes",
+      "sourceFile": "app/notes/d-block/part8/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": false,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/notes/d-block/part9",
+      "family": "notes",
+      "sourceFile": "app/notes/d-block/part9/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": false,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/notes/electrochemistry",
+      "family": "notes",
+      "sourceFile": "app/notes/electrochemistry/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": true,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/notes/electrochemistry/:part",
+      "family": "notes",
+      "sourceFile": "app/notes/electrochemistry/[part]/page.tsx",
+      "dynamic": true,
+      "studentFacing": true,
+      "linkedInternally": false,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/notes/eudiometry",
+      "family": "notes",
+      "sourceFile": "app/notes/eudiometry/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": true,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/notes/eudiometry/part1",
+      "family": "notes",
+      "sourceFile": "app/notes/eudiometry/part1/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": true,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/notes/eudiometry/part2",
+      "family": "notes",
+      "sourceFile": "app/notes/eudiometry/part2/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": true,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/notes/eudiometry/part3",
+      "family": "notes",
+      "sourceFile": "app/notes/eudiometry/part3/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": true,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/notes/eudiometry/part4",
+      "family": "notes",
+      "sourceFile": "app/notes/eudiometry/part4/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": true,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/notes/eudiometry/part5",
+      "family": "notes",
+      "sourceFile": "app/notes/eudiometry/part5/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": true,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/notes/eudiometry/part6",
+      "family": "notes",
+      "sourceFile": "app/notes/eudiometry/part6/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": true,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/notes/f-block",
+      "family": "notes",
+      "sourceFile": "app/notes/f-block/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": true,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/notes/f-block/:part",
+      "family": "notes",
+      "sourceFile": "app/notes/f-block/[part]/page.tsx",
+      "dynamic": true,
+      "studentFacing": true,
+      "linkedInternally": false,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/notes/hydrogen",
+      "family": "notes",
+      "sourceFile": "app/notes/hydrogen/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": true,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/notes/hydrogen/:part",
+      "family": "notes",
+      "sourceFile": "app/notes/hydrogen/[part]/page.tsx",
+      "dynamic": true,
+      "studentFacing": true,
+      "linkedInternally": false,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/notes/metallurgy",
+      "family": "notes",
+      "sourceFile": "app/notes/metallurgy/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": true,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/notes/metallurgy/:part",
+      "family": "notes",
+      "sourceFile": "app/notes/metallurgy/[part]/page.tsx",
+      "dynamic": true,
+      "studentFacing": true,
+      "linkedInternally": false,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/notes/mole-concept",
+      "family": "notes",
+      "sourceFile": "app/notes/mole-concept/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": true,
+      "linkedFromNavigation": false,
+      "counterpartCandidate": true
+    },
+    {
+      "pattern": "/notes/mole-concept/part1",
+      "family": "notes",
+      "sourceFile": "app/notes/mole-concept/part1/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": true,
+      "linkedFromNavigation": false,
+      "counterpartCandidate": true
+    },
+    {
+      "pattern": "/notes/mole-concept/part10",
+      "family": "notes",
+      "sourceFile": "app/notes/mole-concept/part10/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": true,
+      "linkedFromNavigation": false,
+      "counterpartCandidate": true
+    },
+    {
+      "pattern": "/notes/mole-concept/part11",
+      "family": "notes",
+      "sourceFile": "app/notes/mole-concept/part11/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": true,
+      "linkedFromNavigation": false,
+      "counterpartCandidate": true
+    },
+    {
+      "pattern": "/notes/mole-concept/part12",
+      "family": "notes",
+      "sourceFile": "app/notes/mole-concept/part12/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": true,
+      "linkedFromNavigation": false,
+      "counterpartCandidate": true
+    },
+    {
+      "pattern": "/notes/mole-concept/part13",
+      "family": "notes",
+      "sourceFile": "app/notes/mole-concept/part13/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": true,
+      "linkedFromNavigation": false,
+      "counterpartCandidate": true
+    },
+    {
+      "pattern": "/notes/mole-concept/part14",
+      "family": "notes",
+      "sourceFile": "app/notes/mole-concept/part14/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": true,
+      "linkedFromNavigation": false,
+      "counterpartCandidate": true
+    },
+    {
+      "pattern": "/notes/mole-concept/part15",
+      "family": "notes",
+      "sourceFile": "app/notes/mole-concept/part15/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": true,
+      "linkedFromNavigation": false,
+      "counterpartCandidate": true
+    },
+    {
+      "pattern": "/notes/mole-concept/part2",
+      "family": "notes",
+      "sourceFile": "app/notes/mole-concept/part2/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": true,
+      "linkedFromNavigation": false,
+      "counterpartCandidate": true
+    },
+    {
+      "pattern": "/notes/mole-concept/part3",
+      "family": "notes",
+      "sourceFile": "app/notes/mole-concept/part3/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": true,
+      "linkedFromNavigation": false,
+      "counterpartCandidate": true
+    },
+    {
+      "pattern": "/notes/mole-concept/part4",
+      "family": "notes",
+      "sourceFile": "app/notes/mole-concept/part4/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": true,
+      "linkedFromNavigation": false,
+      "counterpartCandidate": true
+    },
+    {
+      "pattern": "/notes/mole-concept/part5",
+      "family": "notes",
+      "sourceFile": "app/notes/mole-concept/part5/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": true,
+      "linkedFromNavigation": false,
+      "counterpartCandidate": true
+    },
+    {
+      "pattern": "/notes/mole-concept/part6",
+      "family": "notes",
+      "sourceFile": "app/notes/mole-concept/part6/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": true,
+      "linkedFromNavigation": false,
+      "counterpartCandidate": true
+    },
+    {
+      "pattern": "/notes/mole-concept/part7",
+      "family": "notes",
+      "sourceFile": "app/notes/mole-concept/part7/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": true,
+      "linkedFromNavigation": false,
+      "counterpartCandidate": true
+    },
+    {
+      "pattern": "/notes/mole-concept/part8",
+      "family": "notes",
+      "sourceFile": "app/notes/mole-concept/part8/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": true,
+      "linkedFromNavigation": false,
+      "counterpartCandidate": true
+    },
+    {
+      "pattern": "/notes/mole-concept/part9",
+      "family": "notes",
+      "sourceFile": "app/notes/mole-concept/part9/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": true,
+      "linkedFromNavigation": false,
+      "counterpartCandidate": true
+    },
+    {
+      "pattern": "/notes/p-block",
+      "family": "notes",
+      "sourceFile": "app/notes/p-block/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": true,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/notes/p-block/:part",
+      "family": "notes",
+      "sourceFile": "app/notes/p-block/[part]/page.tsx",
+      "dynamic": true,
+      "studentFacing": true,
+      "linkedInternally": false,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/notes/redox-reactions",
+      "family": "notes",
+      "sourceFile": "app/notes/redox-reactions/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": true,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/notes/redox-reactions/:part",
+      "family": "notes",
+      "sourceFile": "app/notes/redox-reactions/[part]/page.tsx",
+      "dynamic": true,
+      "studentFacing": true,
+      "linkedInternally": false,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/notes/redox-reactions/equivalent-weight",
+      "family": "notes",
+      "sourceFile": "app/notes/redox-reactions/equivalent-weight/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": true,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/notes/redox-reactions/titration",
+      "family": "notes",
+      "sourceFile": "app/notes/redox-reactions/titration/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": true,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/notes/s-block",
+      "family": "notes",
+      "sourceFile": "app/notes/s-block/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": true,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/notes/s-block/:part",
+      "family": "notes",
+      "sourceFile": "app/notes/s-block/[part]/page.tsx",
+      "dynamic": true,
+      "studentFacing": true,
+      "linkedInternally": false,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/notes/some-basic-concepts-of-chemistry",
+      "family": "notes",
+      "sourceFile": "app/notes/some-basic-concepts-of-chemistry/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": true,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/notes/stoichiometry",
+      "family": "notes",
+      "sourceFile": "app/notes/stoichiometry/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": true,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/notes/stoichiometry/part1",
+      "family": "notes",
+      "sourceFile": "app/notes/stoichiometry/part1/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": true,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/notes/stoichiometry/part2",
+      "family": "notes",
+      "sourceFile": "app/notes/stoichiometry/part2/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": true,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/notes/stoichiometry/part3",
+      "family": "notes",
+      "sourceFile": "app/notes/stoichiometry/part3/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": true,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/notes/stoichiometry/part4",
+      "family": "notes",
+      "sourceFile": "app/notes/stoichiometry/part4/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": true,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/notes/stoichiometry/part5",
+      "family": "notes",
+      "sourceFile": "app/notes/stoichiometry/part5/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": true,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/notes/stoichiometry/part6",
+      "family": "notes",
+      "sourceFile": "app/notes/stoichiometry/part6/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": true,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/notes/stoichiometry/part7",
+      "family": "notes",
+      "sourceFile": "app/notes/stoichiometry/part7/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": true,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/notes/stoichiometry/part8",
+      "family": "notes",
+      "sourceFile": "app/notes/stoichiometry/part8/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": true,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/notes/stoichiometry/part9",
+      "family": "notes",
+      "sourceFile": "app/notes/stoichiometry/part9/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": true,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/olympiad",
+      "family": "practice",
+      "sourceFile": "app/olympiad/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": true,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/olympiads",
+      "family": "practice",
+      "sourceFile": "app/olympiads/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": true,
+      "linkedFromNavigation": true
+    },
+    {
+      "pattern": "/performance",
+      "family": "progress",
+      "sourceFile": "app/performance/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": true,
+      "linkedFromNavigation": true
+    },
+    {
+      "pattern": "/periodic-table",
+      "family": "reference",
+      "sourceFile": "app/periodic-table/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": true,
+      "linkedFromNavigation": true
+    },
+    {
+      "pattern": "/periodic-trends",
+      "family": "reference",
+      "sourceFile": "app/periodic-trends/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": true,
+      "linkedFromNavigation": true
+    },
+    {
+      "pattern": "/pricing",
+      "family": "account",
+      "sourceFile": "app/pricing/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": true,
+      "linkedFromNavigation": true
+    },
+    {
+      "pattern": "/privacy",
+      "family": "account",
+      "sourceFile": "app/privacy/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": true,
+      "linkedFromNavigation": true
+    },
+    {
+      "pattern": "/programs",
+      "family": "programs",
+      "sourceFile": "app/programs/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": true,
+      "linkedFromNavigation": true
+    },
+    {
+      "pattern": "/programs/:slug",
+      "family": "programs",
+      "sourceFile": "app/programs/[slug]/page.tsx",
+      "dynamic": true,
+      "studentFacing": true,
+      "linkedInternally": true,
+      "linkedFromNavigation": true
+    },
+    {
+      "pattern": "/programs/:slug/chapter/:id",
+      "family": "programs",
+      "sourceFile": "app/programs/[slug]/chapter/[id]/page.tsx",
+      "dynamic": true,
+      "studentFacing": true,
+      "linkedInternally": true,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/programs/:slug/full-syllabus",
+      "family": "programs",
+      "sourceFile": "app/programs/[slug]/full-syllabus/page.tsx",
+      "dynamic": true,
+      "studentFacing": true,
+      "linkedInternally": false,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/programs/:slug/learn",
+      "family": "programs",
+      "sourceFile": "app/programs/[slug]/learn/page.tsx",
+      "dynamic": true,
+      "studentFacing": true,
+      "linkedInternally": true,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/programs/:slug/practice",
+      "family": "programs",
+      "sourceFile": "app/programs/[slug]/practice/page.tsx",
+      "dynamic": true,
+      "studentFacing": true,
+      "linkedInternally": false,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/programs/:slug/progress",
+      "family": "programs",
+      "sourceFile": "app/programs/[slug]/progress/page.tsx",
+      "dynamic": true,
+      "studentFacing": true,
+      "linkedInternally": false,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/programs/:slug/speed",
+      "family": "programs",
+      "sourceFile": "app/programs/[slug]/speed/page.tsx",
+      "dynamic": true,
+      "studentFacing": true,
+      "linkedInternally": false,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/programs/:slug/syllabus",
+      "family": "programs",
+      "sourceFile": "app/programs/[slug]/syllabus/page.tsx",
+      "dynamic": true,
+      "studentFacing": true,
+      "linkedInternally": false,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/programs/:slug/tests",
+      "family": "programs",
+      "sourceFile": "app/programs/[slug]/tests/page.tsx",
+      "dynamic": true,
+      "studentFacing": true,
+      "linkedInternally": false,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/programs/jee-advanced/chapter/chemical-equilibrium",
+      "family": "programs",
+      "sourceFile": "app/programs/jee-advanced/chapter/chemical-equilibrium/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": false,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/programs/jee-advanced/chapter/chemical-kinetics",
+      "family": "programs",
+      "sourceFile": "app/programs/jee-advanced/chapter/chemical-kinetics/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": false,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/programs/jee-advanced/chapter/gaseous-state",
+      "family": "programs",
+      "sourceFile": "app/programs/jee-advanced/chapter/gaseous-state/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": false,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/programs/jee-advanced/chapter/general-inorganic-chemistry",
+      "family": "programs",
+      "sourceFile": "app/programs/jee-advanced/chapter/general-inorganic-chemistry/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": false,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/programs/jee-advanced/chapter/surface-chemistry",
+      "family": "programs",
+      "sourceFile": "app/programs/jee-advanced/chapter/surface-chemistry/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": false,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/properties",
+      "family": "reference",
+      "sourceFile": "app/properties/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": true,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/pyq",
+      "family": "practice",
+      "sourceFile": "app/pyq/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": true,
+      "linkedFromNavigation": true
+    },
+    {
+      "pattern": "/quiz",
+      "family": "practice",
+      "sourceFile": "app/quiz/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": true,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/reaction-predictor",
+      "family": "ai",
+      "sourceFile": "app/reaction-predictor/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": true,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/readiness",
+      "family": "progress",
+      "sourceFile": "app/readiness/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": false,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/reagents",
+      "family": "reference",
+      "sourceFile": "app/reagents/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": true,
+      "linkedFromNavigation": true
+    },
+    {
+      "pattern": "/redox-reactions",
+      "family": "reference",
+      "sourceFile": "app/redox-reactions/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": true,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/refund",
+      "family": "account",
+      "sourceFile": "app/refund/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": true,
+      "linkedFromNavigation": true
+    },
+    {
+      "pattern": "/reset-password",
+      "family": "account",
+      "sourceFile": "app/reset-password/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": false,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/revision",
+      "family": "revise",
+      "sourceFile": "app/revision/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": true,
+      "linkedFromNavigation": true
+    },
+    {
+      "pattern": "/revision/:type",
+      "family": "revise",
+      "sourceFile": "app/revision/[type]/page.tsx",
+      "dynamic": true,
+      "studentFacing": true,
+      "linkedInternally": false,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/revision/attempt/:id",
+      "family": "revise",
+      "sourceFile": "app/revision/attempt/[id]/page.tsx",
+      "dynamic": true,
+      "studentFacing": true,
+      "linkedInternally": false,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/revision/recall-decks",
+      "family": "revise",
+      "sourceFile": "app/revision/recall-decks/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": true,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/salt-colors",
+      "family": "reference",
+      "sourceFile": "app/salt-colors/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": true,
+      "linkedFromNavigation": true
+    },
+    {
+      "pattern": "/search",
+      "family": "reference",
+      "sourceFile": "app/search/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": true,
+      "linkedFromNavigation": true
+    },
+    {
+      "pattern": "/snap-solve",
+      "family": "ai",
+      "sourceFile": "app/snap-solve/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": true,
+      "linkedFromNavigation": true
+    },
+    {
+      "pattern": "/solubility",
+      "family": "reference",
+      "sourceFile": "app/solubility/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": true,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/study-plan",
+      "family": "progress",
+      "sourceFile": "app/study-plan/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": true,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/study-tools",
+      "family": "reference",
+      "sourceFile": "app/study-tools/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": false,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/support",
+      "family": "account",
+      "sourceFile": "app/support/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": true,
+      "linkedFromNavigation": true
+    },
+    {
+      "pattern": "/teachers",
+      "family": "unknown",
+      "sourceFile": "app/teachers/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": false,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/terms",
+      "family": "account",
+      "sourceFile": "app/terms/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": true,
+      "linkedFromNavigation": true
+    },
+    {
+      "pattern": "/tests",
+      "family": "practice",
+      "sourceFile": "app/tests/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": true,
+      "linkedFromNavigation": true
+    },
+    {
+      "pattern": "/tests/history",
+      "family": "practice",
+      "sourceFile": "app/tests/history/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": true,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/timers",
+      "family": "progress",
+      "sourceFile": "app/timers/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": true,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/tutor",
+      "family": "ai",
+      "sourceFile": "app/tutor/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": true,
+      "linkedFromNavigation": true
+    },
+    {
+      "pattern": "/upload",
+      "family": "internal",
+      "sourceFile": "app/upload/page.tsx",
+      "dynamic": false,
+      "studentFacing": false,
+      "linkedInternally": false,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/vault",
+      "family": "revise",
+      "sourceFile": "app/vault/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": true,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/vault/concepts",
+      "family": "revise",
+      "sourceFile": "app/vault/concepts/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": true,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/vault/exceptions",
+      "family": "revise",
+      "sourceFile": "app/vault/exceptions/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": true,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/vault/facts",
+      "family": "revise",
+      "sourceFile": "app/vault/facts/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": true,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/vault/favorites",
+      "family": "revise",
+      "sourceFile": "app/vault/favorites/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": true,
+      "linkedFromNavigation": false
+    },
+    {
+      "pattern": "/vault/formulas",
+      "family": "revise",
+      "sourceFile": "app/vault/formulas/page.tsx",
+      "dynamic": false,
+      "studentFacing": true,
+      "linkedInternally": true,
+      "linkedFromNavigation": false
+    }
+  ]
+}

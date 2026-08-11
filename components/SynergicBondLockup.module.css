@@ -1,0 +1,174 @@
+.lockup {
+  display: inline-flex;
+  height: 42px;
+  min-width: 0;
+  align-items: center;
+  gap: 11px;
+  color: var(--foreground);
+}
+
+.mark {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  flex: 0 0 40px;
+  isolation: isolate;
+}
+
+.letterS,
+.bSpine,
+.bBowl,
+.doubleBond {
+  position: absolute;
+  display: block;
+  box-sizing: border-box;
+}
+
+.letterS {
+  z-index: 2;
+  top: -1px;
+  left: -1px;
+  width: 25px;
+  height: 40px;
+  overflow: hidden;
+  color: var(--foreground);
+  font-family: var(--font-display), Georgia, "Times New Roman", serif;
+  font-size: 42px;
+  font-weight: 600;
+  font-optical-sizing: auto;
+  line-height: 40px;
+  letter-spacing: -0.055em;
+}
+
+.bSpine {
+  z-index: 1;
+  top: 4px;
+  left: 16px;
+  width: 2px;
+  height: 32px;
+  background: #cdaa58;
+}
+
+.bBowl {
+  left: 16px;
+  width: 22px;
+  height: 16px;
+  border: 2px solid #cdaa58;
+  border-left: 0;
+  border-radius: 0 10px 10px 0;
+}
+
+.bBowlUpper {
+  z-index: 1;
+  top: 4px;
+  border-bottom: 0;
+}
+
+.bBowlLower {
+  z-index: 3;
+  top: 20px;
+  border-top: 0;
+}
+
+.doubleBond {
+  z-index: 4;
+  left: 16px;
+  width: 22px;
+  height: 2px;
+  background: var(--accent);
+}
+
+.doubleBondUpper {
+  top: 18px;
+}
+
+.doubleBondLower {
+  top: 22px;
+}
+
+.copy {
+  display: grid;
+  min-width: 0;
+  gap: 3px;
+}
+
+.wordmark {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+  color: var(--foreground);
+  font-family: var(--font-display), Georgia, "Times New Roman", serif;
+  font-size: 15px;
+  font-optical-sizing: auto;
+  line-height: 1;
+}
+
+.synergic {
+  font-family: inherit;
+  font-weight: 510;
+  letter-spacing: 0.16em;
+}
+
+.wordmarkBond {
+  width: 10px;
+  height: 1px;
+  flex: 0 0 10px;
+  background: #cdaa58;
+}
+
+.bond {
+  font-family: inherit;
+  font-weight: 650;
+  letter-spacing: 0.11em;
+}
+
+.subtitle {
+  display: grid;
+  gap: 1px;
+  color: var(--text-muted);
+  font-family: var(--font-mono), ui-monospace, "SF Mono", Menlo, monospace;
+  font-size: 9px;
+  font-weight: 650;
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+  letter-spacing: 0.14em;
+  white-space: nowrap;
+}
+
+.subtitle span {
+  font-family: inherit;
+}
+
+.subtitle span:first-child {
+  color: #cdaa58;
+}
+
+@media (max-width: 380px) {
+  .lockup {
+    gap: 8px;
+  }
+
+  .wordmark {
+    gap: 6px;
+    font-size: 12px;
+  }
+
+  .synergic {
+    letter-spacing: 0.12em;
+  }
+
+  .wordmarkBond {
+    width: 7px;
+    flex-basis: 7px;
+  }
+
+  .bond {
+    letter-spacing: 0.08em;
+  }
+
+  .subtitle {
+    font-size: 8.5px;
+    letter-spacing: 0.11em;
+  }
+}

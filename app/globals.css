@@ -14,36 +14,36 @@
      cards; the gold accent must never encode chemical meaning. */
 
   /* ── Chrome: surfaces ── */
-  --background: #0a0a0c;          /* page */
-  --surface: #121216;             /* cards / panels (the ONE card colour) */
-  --surface-2: rgba(255, 255, 255, 0.025);
-  --surface-hover: rgba(255, 255, 255, 0.05);
+  --background: #060708;          /* page */
+  --surface: #0e1112;             /* cards / panels (the ONE card colour) */
+  --surface-2: rgba(245, 239, 227, 0.035);
+  --surface-hover: rgba(245, 239, 227, 0.065);
 
   /* ── Chrome: text hierarchy ── */
-  --foreground: #fafafa;                   /* titles / active */
-  --text-body: rgba(255, 255, 255, 0.72);  /* body copy */
-  --text-muted: rgba(255, 255, 255, 0.48); /* captions / meta */
-  --text-faint: rgba(255, 255, 255, 0.32); /* rules / disabled */
+  --foreground: #f5efe3;                   /* titles / active */
+  --text-body: rgba(245, 239, 227, 0.88);  /* body copy */
+  --text-muted: rgba(245, 239, 227, 0.68); /* captions / meta */
+  --text-faint: rgba(245, 239, 227, 0.52); /* rules / disabled */
 
   /* ── Chrome: the single brand accent ──
      Used for interactive + active states and the brand mark. Nothing else. */
   --accent: #e3b341;
-  --accent-dim: rgba(227, 179, 65, 0.55);
-  --accent-wash: rgba(227, 179, 65, 0.08);
+  --accent-dim: rgba(227, 179, 65, 0.68);
+  --accent-wash: rgba(227, 179, 65, 0.1);
 
   /* ── Chrome: hairlines ──
      Elevation comes from these, not from shadow. */
-  --border: rgba(255, 255, 255, 0.07);
-  --border-strong: rgba(255, 255, 255, 0.12);
+  --border: rgba(245, 239, 227, 0.11);
+  --border-strong: rgba(245, 239, 227, 0.19);
 
   /* ── Content: semantic chemistry scale ──
      Desaturated on purpose — these sit inside long-form reading and
      must not vibrate against a near-black page. CONTENT ONLY. */
-  --chem-bond: #6fb3d9;      /* bonding, structure, geometry */
-  --chem-energy: #e08d4b;    /* energetics, thermodynamics */
-  --chem-orbital: #a98bd9;   /* orbitals, resonance, quantum */
-  --chem-trap: #d96f6f;      /* exam traps, cautions, exceptions */
-  --chem-rule: #6fbf8f;      /* rules, verified results */
+  --chem-bond: #62b9ce;      /* bonding, structure, geometry */
+  --chem-energy: #dda05a;    /* energetics, thermodynamics */
+  --chem-orbital: #a68bd3;   /* orbitals, resonance, quantum */
+  --chem-trap: #d77868;      /* exam traps, cautions, exceptions */
+  --chem-rule: #70b98a;      /* rules, verified results */
 
   /* ── Legacy aliases ──
      Retained so the handful of files still reading the old cyan/purple
@@ -63,7 +63,7 @@
 
   /* Kept for components that still reference them. Deliberately faint —
      depth is a hairline job, not a shadow job. */
-  --shadow: 0 1px 0 rgba(255, 255, 255, 0.04);
+  --shadow: 0 1px 0 rgba(245, 239, 227, 0.05);
 }
 
 *,

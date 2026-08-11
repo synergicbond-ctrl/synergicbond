@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { LinkButton } from "@/components/ui/Button";
 
 // WEEK 13 (Roadmap Phase 9) — "What is Synergic Bond?" homepage section.
 // The 60–90s intro video is not produced yet, so the player area is an HONEST
@@ -8,35 +8,36 @@ const VIDEO_URL: string | null = null;
 
 export default function WhatIsSynergicBond() {
   return (
-    <section className="border-t border-white/[0.06] py-12">
-      <div className="mx-auto max-w-5xl px-4 sm:px-6">
-        <div className="grid items-center gap-8 md:grid-cols-2">
+    <section>
+      <div className="mx-auto max-w-[1400px] px-6">
+        <div className="grid items-center gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-20">
           <div>
-            <p className="mb-2 text-xs font-bold uppercase tracking-[0.4em] text-[var(--text-muted)]">What is Synergic Bond?</p>
-            <h2 className="text-2xl font-black md:text-3xl">The Complete Chemistry Learning Platform</h2>
-            <p className="mt-3 text-sm leading-relaxed text-white/60">
+            <p className="font-data mb-3 text-[11px] font-bold uppercase tracking-[0.18em] text-[var(--chem-bond)]">What is Synergic Bond?</p>
+            <h2 className="font-display max-w-[18ch] text-[34px] font-semibold leading-[1.05] tracking-[-0.025em] text-[var(--foreground)] md:text-[46px]">The complete chemistry learning platform</h2>
+            <p className="mt-5 max-w-[62ch] text-[16px] leading-[1.7] text-[var(--text-body)]">
               Not a NEET platform. Not a JEE platform. A chemistry operating system — where every
               question connects to its concept, formula, mechanism, reaction, notes, PYQs, tests and
               analytics. Built by an 18-year JEE Advanced chemistry faculty.
             </p>
-            <div className="mt-5 flex flex-wrap gap-2">
-              <Link href="/snap-solve" className="rounded-xl bg-[var(--surface)] -500 px-4 py-2 text-sm font-bold text-black transition hover:opacity-90">
+            <div className="mt-7 flex flex-wrap gap-2">
+              <LinkButton href="/snap-solve" variant="primary" size="md">
                 Try Snap &amp; Solve →
-              </Link>
-              <Link href="/notes" className="rounded-xl border border-white/15 bg-white/[0.04] px-4 py-2 text-sm font-semibold text-white/80 transition hover:border-[var(--border-strong)] hover:text-white">
+              </LinkButton>
+              <LinkButton href="/notes" variant="secondary" size="md">
                 Start a free chapter
-              </Link>
+              </LinkButton>
             </div>
           </div>
 
           {/* Video slot — real embed once produced; honest placeholder until then */}
           {VIDEO_URL ? (
-            <video controls preload="metadata" className="aspect-video w-full rounded-[var(--radius)] border border-white/[0.08] bg-black" src={VIDEO_URL} />
+            <video controls preload="metadata" className="aspect-video w-full rounded-[var(--radius)] border border-[var(--border-strong)] bg-black" src={VIDEO_URL} />
           ) : (
-            <div className="flex aspect-video w-full flex-col items-center justify-center rounded-[var(--radius)] border border-dashed border-white/15 bg-[var(--surface)] text-center">
-              <span className="flex h-14 w-14 items-center justify-center rounded-full border border-[var(--border-strong)] bg-[var(--surface-2)] text-2xl">▶</span>
-              <p className="mt-3 text-sm font-bold text-white/70">60–90 second intro video</p>
-              <p className="mt-1 text-xs text-white/40">In production — coming with launch</p>
+            <div className="relative flex aspect-video w-full flex-col items-center justify-center overflow-hidden rounded-[var(--radius)] border border-dashed border-[var(--border-strong)] bg-[var(--surface)] text-center">
+              <span aria-hidden className="absolute inset-x-0 top-0 h-[2px] bg-[linear-gradient(90deg,var(--accent),var(--chem-bond),var(--chem-orbital),var(--chem-rule))]" />
+              <span className="flex h-14 w-14 items-center justify-center border border-[var(--border-strong)] bg-[var(--surface-2)] text-2xl text-[var(--accent)]">▶</span>
+              <p className="mt-4 text-[15px] font-bold text-[var(--foreground)]">60–90 second intro video</p>
+              <p className="mt-1 text-[12px] text-[var(--text-muted)]">In production — coming with launch</p>
             </div>
           )}
         </div>

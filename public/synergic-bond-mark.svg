@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title desc">
+  <title id="title">Synergic Bond</title>
+  <desc id="desc">An interwoven S and B joined by a gold double bond.</desc>
+  <rect width="64" height="64" fill="#060708"/>
+  <path d="M43 12C37 6 22 6 16 14C9 24 18 29 30 31C43 33 51 38 47 48C43 58 25 59 15 51" fill="none" stroke="#f5efe3" stroke-width="4" stroke-linecap="square" stroke-linejoin="round"/>
+  <path d="M30 10V54M30 10H40C49 10 52 16 52 22C52 28 48 31 40 31H30M30 31H41C50 31 53 36 53 42C53 50 48 54 39 54H30" fill="none" stroke="#cdaa58" stroke-width="3" stroke-linecap="square" stroke-linejoin="round"/>
+  <path d="M29 28H46M29 34H46" fill="none" stroke="#e3b341" stroke-width="3" stroke-linecap="square"/>
+</svg>

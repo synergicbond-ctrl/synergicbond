@@ -1,35 +1,38 @@
 "use client";
 
-import { Fragment } from "react";
+import Link from "next/link";
+import { Fragment, type CSSProperties } from "react";
 import { LinkButton } from "@/components/ui/Button";
+import BenzeneInstrument from "@/components/home/BenzeneInstrument";
 import { useT } from "@/lib/i18n";
+import styles from "./HomeHero.module.css";
 
-/**
- * The four stages arrive as one bullet-separated string from i18n. Rendering
- * them as a bond chain — nodes joined by hairlines — is the brand idea stated
- * literally: separate things connected into something stronger.
- */
+const STAGE_TONES = [
+  "var(--chem-bond)",
+  "var(--chem-orbital)",
+  "var(--chem-rule)",
+  "var(--chem-energy)",
+] as const;
+
+const LEARNING_PATHS = [
+  { index: "01", label: "Chapter Notes", href: "/notes", tone: "var(--chem-bond)" },
+  { index: "02", label: "Practice Center", href: "/pyq", tone: "var(--chem-orbital)" },
+  { index: "03", label: "Formula Cards", href: "/formula-cards", tone: "var(--chem-rule)" },
+  { index: "04", label: "Periodic Table", href: "/periodic-table", tone: "var(--chem-energy)" },
+] as const;
+
 function BondChain({ stages }: { stages: string[] }) {
   return (
-    <div className="flex flex-wrap items-center gap-y-3">
-      {stages.map((stage, i) => (
+    <div className={styles.bondChain} aria-label={stages.join(", ")}>
+      {stages.map((stage, index) => (
         <Fragment key={stage}>
-          {i > 0 ? (
-            <span
-              aria-hidden
-              className="mx-3 h-px w-5 shrink-0 sm:mx-4 sm:w-10"
-              style={{ background: "var(--border-strong)" }}
-            />
-          ) : null}
-          <span className="flex items-center gap-2">
-            <span
-              aria-hidden
-              className="h-[5px] w-[5px] shrink-0 rotate-45"
-              style={{ background: "var(--accent)" }}
-            />
-            <span className="font-data text-[11px] uppercase tracking-[0.18em] text-[var(--text-muted)] sm:text-[12px]">
-              {stage}
-            </span>
+          {index > 0 ? <span aria-hidden className={styles.stageBond} /> : null}
+          <span
+            className={styles.stage}
+            style={{ "--stage-tone": STAGE_TONES[index % STAGE_TONES.length] } as CSSProperties}
+          >
+            <span aria-hidden className={styles.stageDot} />
+            {stage}
           </span>
         </Fragment>
       ))}
@@ -37,80 +40,64 @@ function BondChain({ stages }: { stages: string[] }) {
   );
 }
 
-/** The lattice: the page's column grid, made visible rather than implied. */
-function Lattice() {
-  return (
-    <div aria-hidden className="pointer-events-none absolute inset-0 overflow-hidden">
-      <div className="mx-auto flex h-full max-w-[1400px] px-6">
-        <div className="flex h-full w-full md:hidden">
-          {Array.from({ length: 4 }).map((_, i) => (
-            <div
-              key={i}
-              className="h-full flex-1"
-              style={{ borderLeft: i === 0 ? "none" : "1px solid var(--border)" }}
-            />
-          ))}
-        </div>
-        <div className="hidden h-full w-full md:flex">
-          {Array.from({ length: 12 }).map((_, i) => (
-            <div
-              key={i}
-              className="h-full flex-1"
-              style={{ borderLeft: i === 0 ? "none" : "1px solid var(--border)" }}
-            />
-          ))}
-        </div>
-      </div>
-    </div>
-  );
-}
-
 export default function HomeHero() {
   const { t } = useT();
-
   const stages = t("hero.tagline")
     .split("•")
-    .map((s) => s.trim())
+    .map((stage) => stage.trim())
     .filter(Boolean);
 
   return (
-    <section
-      className="relative"
-      style={{ borderBottom: "1px solid var(--border)" }}
-    >
-      <Lattice />
+    <section className={styles.hero} aria-labelledby="chemistry-os-title">
+      <span aria-hidden className={styles.spectrum} />
 
-      <div className="relative mx-auto max-w-[1400px] px-6 py-24 md:py-36">
-        <div className="flex items-center gap-3">
-          <span
-            aria-hidden
-            className="h-[5px] w-[5px] shrink-0 rotate-45"
-            style={{ background: "var(--accent)" }}
-          />
-          <span className="font-data text-[11px] uppercase tracking-[0.2em] text-[var(--text-muted)]">
-            {t("hero.badge")}
-          </span>
-        </div>
+      <div className={styles.inner}>
+        <div className={styles.copy}>
+          <div className={styles.kicker}>
+            <span className={styles.eyebrowCode}>SB / 06-C</span>
+            <span>{t("hero.badge")}</span>
+          </div>
 
-        <h1 className="font-display mt-8 max-w-[15ch] text-[52px] font-semibold leading-[1.02] tracking-[-0.035em] text-[var(--foreground)] sm:text-[76px] lg:text-[104px]">
-          {t("hero.headline1")}
-          <br />
-          {t("hero.headline2")}
-        </h1>
+          <h1 id="chemistry-os-title" className={styles.title}>
+            <span>{t("hero.headline1")}</span>
+            <span>{t("hero.headline2")}</span>
+          </h1>
 
-        <div className="mt-10">
+          <p className={styles.promise}>
+            <strong>Read verified notes.</strong> Practise with purpose, connect every
+            question to its chemistry, and always know what to learn next.
+          </p>
+
           <BondChain stages={stages} />
+
+          <div className={styles.actions}>
+            <LinkButton href="/notes" variant="primary" size="md" className={styles.primaryAction}>
+              {t("hero.startLearning")}
+            </LinkButton>
+            <LinkButton href="/vault" variant="secondary" size="md" className={styles.secondaryAction}>
+              {t("hero.exploreVault")}
+            </LinkButton>
+          </div>
         </div>
 
-        <div className="mt-12 flex flex-wrap items-center gap-3">
-          <LinkButton href="/learn" variant="primary" size="md">
-            {t("hero.startLearning")}
-          </LinkButton>
-          <LinkButton href="/vault" variant="secondary" size="md">
-            {t("hero.exploreVault")}
-          </LinkButton>
+        <div className={styles.instrument}>
+          <BenzeneInstrument />
         </div>
       </div>
+
+      <nav className={styles.pathRail} aria-label="Core chemistry tools">
+        {LEARNING_PATHS.map((path) => (
+          <Link
+            key={path.href}
+            href={path.href}
+            style={{ "--path-tone": path.tone } as CSSProperties}
+          >
+            <span className={styles.pathIndex}>{path.index}</span>
+            <span className={styles.pathLabel}>{path.label}</span>
+            <span aria-hidden className={styles.pathArrow}>↗</span>
+          </Link>
+        ))}
+      </nav>
     </section>
   );
 }

@@ -43,6 +43,10 @@ export const metadata: Metadata = {
   },
   description: "The Chemistry Operating System for NEET, JEE, Olympiad and GATE. AI-powered, expert-built.",
   applicationName: "SYNERGIC BOND",
+  icons: {
+    icon: [{ url: "/synergic-bond-mark.svg", type: "image/svg+xml" }],
+    shortcut: "/synergic-bond-mark.svg",
+  },
   alternates: {
     canonical: "/",
   },

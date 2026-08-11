@@ -9,10 +9,15 @@ interface CardProps {
 
 const paddingClasses = {
   sm: "p-5",
-  md: "p-7",
-  lg: "p-9",
+  md: "p-6",
+  lg: "p-8",
 };
 
+/**
+ * A flat panel bounded by a hairline. Elevation is expressed by the border and
+ * a small surface shift on hover — deliberately no blur, gradient overlay,
+ * coloured glow or translate, all of which the design system rules out.
+ */
 export default function Card({
   children,
   className = "",
@@ -22,25 +27,18 @@ export default function Card({
   return (
     <div
       className={[
-        "relative overflow-hidden",
-        "rounded-3xl",
-        "border border-white/10",
-        "bg-white/[0.04]",
-        "backdrop-blur-2xl",
-        "shadow-[0_8px_40px_rgba(0,0,0,0.35)]",
+        "relative rounded-[var(--radius)]",
+        "border border-[var(--border)]",
+        "bg-[var(--surface)]",
         paddingClasses[padding],
-        "transition-all duration-300 ease-out",
+        "transition-colors duration-200",
         hover
-          ? "hover:-translate-y-1.5 hover:border-cyan-400/40 hover:bg-white/[0.06] hover:shadow-[0_16px_60px_rgba(0,229,255,0.10)]"
+          ? "hover:border-[var(--border-strong)] hover:bg-[var(--surface-hover)]"
           : "",
         className,
       ].join(" ")}
     >
-      <div className="pointer-events-none absolute inset-0 rounded-3xl bg-gradient-to-br from-white/5 via-transparent to-cyan-500/5" />
-
-      <div className="relative z-10">
-        {children}
-      </div>
+      {children}
     </div>
   );
 }

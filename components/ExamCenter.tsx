@@ -16,16 +16,16 @@ type Exam = {
 
 const indiaExams: Exam[] = [
   { name: "NEET",         eligibility: "Class 12 / PCB / Pre-Med",       website: "https://neet.nta.nic.in",        opens: "Feb 2026", closes: "Mar 2026", fee: "₹1,700",  accent: "#10B981" },
-  { name: "JEE Main",     eligibility: "Class 12 / PCM",                 website: "https://jeemain.nta.nic.in",     opens: "Nov 2025", closes: "Dec 2025", fee: "₹1,000",  accent: "#00BBF9" },
+  { name: "JEE Main",     eligibility: "Class 12 / PCM",                 website: "https://jeemain.nta.nic.in",     opens: "Nov 2025", closes: "Dec 2025", fee: "₹1,000",  accent: "var(--text-muted)" },
   { name: "JEE Advanced", eligibility: "JEE Main Top 2.5L Qualifiers",   website: "https://jeeadv.ac.in",           opens: "Apr 2026", closes: "May 2026", fee: "₹3,200",  accent: "#3B82F6" },
   { name: "GATE",         eligibility: "B.E / B.Tech / B.Sc Final Year", website: "https://gate.iitk.ac.in",        opens: "Aug 2025", closes: "Oct 2025", fee: "₹1,800",  accent: "#F97316" },
   { name: "INChO",        eligibility: "Class 11-12 via NSEC",           website: "https://olympiads.hbcse.tifr.res.in", opens: "Sep 2025", closes: "Nov 2025", fee: "₹200", accent: "#F59E0B" },
 ];
 
 const intlExams: Exam[] = [
-  { name: "AP Chemistry",         eligibility: "High School (US/Canada)",   website: "https://apstudents.collegeboard.org", opens: "Sep 2025", closes: "Nov 2025", fee: "$99",   accent: "#00F5D4" },
-  { name: "MCAT Chemistry",       eligibility: "Pre-Med Undergraduate",     website: "https://students-residents.aamc.org/mcat", opens: "Rolling", closes: "Rolling", fee: "$345",  accent: "#00BBF9" },
-  { name: "Waterloo Avogadro",    eligibility: "Grade 11-12 (Canada)",      website: "https://cemc.uwaterloo.ca",      opens: "Mar 2026", closes: "Apr 2026", fee: "Free",  accent: "#9B5DE5" },
+  { name: "AP Chemistry",         eligibility: "High School (US/Canada)",   website: "https://apstudents.collegeboard.org", opens: "Sep 2025", closes: "Nov 2025", fee: "$99",   accent: "var(--text-muted)" },
+  { name: "MCAT Chemistry",       eligibility: "Pre-Med Undergraduate",     website: "https://students-residents.aamc.org/mcat", opens: "Rolling", closes: "Rolling", fee: "$345",  accent: "var(--text-muted)" },
+  { name: "Waterloo Avogadro",    eligibility: "Grade 11-12 (Canada)",      website: "https://cemc.uwaterloo.ca",      opens: "Mar 2026", closes: "Apr 2026", fee: "Free",  accent: "var(--text-muted)" },
   { name: "A-Levels Chemistry",   eligibility: "Year 12-13 (UK)",           website: "https://www.cambridgeinternational.org", opens: "Jan 2026", closes: "Feb 2026", fee: "£120", accent: "#F59E0B" },
   { name: "IB Diploma Chem HL/SL",eligibility: "IB Programme (Global)",      website: "https://www.ibo.org",            opens: "Oct 2025", closes: "Nov 2025", fee: "$119",  accent: "#EC4899" },
   { name: "Singapore GCE A-Level",eligibility: "JC H2/H3 (Singapore)",      website: "https://www.seab.gov.sg",        opens: "Mar 2026", closes: "Apr 2026", fee: "S$130", accent: "#10B981" },
@@ -40,8 +40,8 @@ export default function ExamCenter() {
   return (
     <section className="mx-auto max-w-7xl px-6 py-12">
       <div className="mb-8 text-center">
-        <div className="inline-flex items-center gap-2 rounded-full border border-cyan-400/30 bg-cyan-500/10 px-4 py-1.5 text-cyan-300 text-xs font-bold tracking-widest uppercase mb-4 backdrop-blur-md shadow-sm">
-          <Globe className="h-3.5 w-3.5 text-cyan-400" />
+        <div className="inline-flex items-center gap-2 rounded-full border border-[var(--border-strong)] bg-[var(--surface-2)] px-4 py-1.5 text-[var(--text-muted)] text-xs font-bold tracking-widest uppercase mb-4 shadow-sm">
+          <Globe className="h-3.5 w-3.5 text-[var(--text-muted)]" />
           {t("exam.eyebrow")}
         </div>
         <h2 className="text-3xl font-black md:text-5xl text-white tracking-tight drop-shadow-sm">
@@ -54,20 +54,20 @@ export default function ExamCenter() {
 
       {/* Region toggle with OS glassmorphic depth */}
       <div className="flex justify-center mb-10">
-        <div className="inline-flex rounded-full bg-[#0B0F19]/90 border border-white/15 p-1.5 backdrop-blur-xl shadow-2xl">
+        <div className="inline-flex rounded-full bg-[var(--background)]/90 border border-white/15 p-1.5 shadow-2xl">
           <button
             onClick={() => setRegion("india")}
             className={`flex items-center gap-2 px-7 py-2.5 rounded-full text-xs font-bold transition-all duration-300 ${
-              region === "india" ? "bg-gradient-to-r from-cyan-400 to-sky-500 text-black shadow-lg scale-105" : "text-gray-400 hover:text-white"
-            }`}
+ region === "india" ? "bg-[var(--surface)] -400 text-black shadow-lg scale-105" : "text-gray-400 hover:text-white"
+ }`}
           >
             <span>🇮🇳</span> {t("exam.india")}
           </button>
           <button
             onClick={() => setRegion("intl")}
             className={`flex items-center gap-2 px-7 py-2.5 rounded-full text-xs font-bold transition-all duration-300 ${
-              region === "intl" ? "bg-gradient-to-r from-cyan-400 to-sky-500 text-black shadow-lg scale-105" : "text-gray-400 hover:text-white"
-            }`}
+ region === "intl" ? "bg-[var(--surface)] -400 text-black shadow-lg scale-105" : "text-gray-400 hover:text-white"
+ }`}
           >
             <span>🌍</span> {t("exam.intl")}
           </button>
@@ -79,7 +79,7 @@ export default function ExamCenter() {
         {exams.map((exam) => (
           <div
             key={exam.name}
-            className="group relative overflow-hidden rounded-3xl bg-gradient-to-b from-[#111827]/95 to-[#0B0F19]/95 border p-6 backdrop-blur-2xl transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl flex flex-col justify-between"
+            className="group relative overflow-hidden rounded-[var(--radius)] bg-[var(--surface)] border p-6 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl flex flex-col justify-between"
             style={{ borderColor: `${exam.accent}33`, boxShadow: `0 10px 30px -15px ${exam.accent}33` }}
           >
             <div className="absolute -right-12 -top-12 h-36 w-36 rounded-full blur-3xl opacity-20 pointer-events-none transition-transform duration-500 group-hover:scale-150" style={{ background: exam.accent }} />
@@ -87,7 +87,7 @@ export default function ExamCenter() {
             <div>
               <div className="flex items-start justify-between mb-5">
                 <div className="flex items-center gap-3.5">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-2xl shadow-inner border border-white/10 group-hover:scale-110 transition-transform" style={{ background: `${exam.accent}26` }}>
+                  <div className="flex h-12 w-12 items-center justify-center rounded-[var(--radius)] shadow-inner border border-white/10 group-hover:scale-110 transition-transform" style={{ background: `${exam.accent}26` }}>
                     <GraduationCap className="h-6 w-6" style={{ color: exam.accent }} />
                   </div>
                   <div>

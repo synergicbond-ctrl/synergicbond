@@ -14,21 +14,29 @@ import type { CSSProperties, ReactNode } from "react";
 // only; never import content or access-control code here.
 // ─────────────────────────────────────────────────────────────────────────────
 
+// These now read from the site token layer in app/globals.css rather than
+// carrying a second, competing palette. Every value below is consumed inside
+// the CSS template literal further down, so `var(--…)` resolves normally.
+//
+// `cyan` deliberately maps to neutral text rather than a chemistry hue: this
+// object styles CHROME (tabs, cards, pagers), and the system reserves the
+// --chem-* scale for content. Chrome gets neutral by default and gold when
+// active, which is what keeps a dense chapter index calm.
 export const NT = {
-  bg: "#0a1622",
-  bgGrid: "#0d1c2b",
-  surface: "#122232",
-  surface2: "#182b3e",
-  border: "#24405c",
-  borderSoft: "#1c3049",
-  text: "#eef3f8",
-  textDim: "#c3d1dd",
-  textFaint: "#91a9bc",
-  gold: "#e8b84b",
-  cyan: "#5fd4ea",
-  serif: "Georgia, 'Iowan Old Style', 'Times New Roman', serif",
-  mono: "'SFMono-Regular',Consolas,'Liberation Mono',monospace",
-  sans: "-apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'Helvetica Neue', Arial, system-ui, sans-serif",
+  bg: "var(--background)",
+  bgGrid: "var(--surface-2)",
+  surface: "var(--surface)",
+  surface2: "var(--surface-2)",
+  border: "var(--border)",
+  borderSoft: "var(--border)",
+  text: "var(--foreground)",
+  textDim: "var(--text-body)",
+  textFaint: "var(--text-muted)",
+  gold: "var(--accent)",
+  cyan: "var(--text-muted)",
+  serif: "var(--font-display), Georgia, 'Times New Roman', serif",
+  mono: "var(--font-mono), ui-monospace, Consolas, monospace",
+  sans: "var(--font-sans), -apple-system, BlinkMacSystemFont, system-ui, sans-serif",
 } as const;
 
 export interface ChapterTab {
@@ -55,7 +63,7 @@ const CANONICAL_CSS = `
 .sbnHeader {
   width: 100%;
   border-bottom: 1px solid ${NT.border};
-  background: linear-gradient(180deg, ${NT.surface2}, ${NT.bg});
+  background: ${NT.surface};
   padding: clamp(18px, 3vw, 34px) clamp(14px, 3vw, 42px);
 }
 .sbnHeaderInner { max-width: 1560px; margin: 0 auto; }
@@ -82,7 +90,7 @@ const CANONICAL_CSS = `
   border-left: 4px solid ${NT.cyan};
   border-radius: 13px;
   padding: 10px 13px;
-  background: rgba(18,34,50,.9);
+  background: ${NT.surface};
   color: ${NT.textDim};
   font-family: ${NT.sans};
   font-size: clamp(.82rem, 1.1vw, .96rem);
@@ -95,11 +103,10 @@ const CANONICAL_CSS = `
 .sbnTabActive {
   border-color: ${NT.gold};
   border-left-color: ${NT.gold};
-  background: rgba(232,184,75,.15);
+  background: var(--accent-wash);
   color: ${NT.gold};
   font-weight: 900;
-  box-shadow: 0 8px 24px rgba(232,184,75,.12);
-}
+   }
 .sbnTabActive:hover { color: ${NT.gold}; border-color: ${NT.gold}; }
 .sbnMain { width: 100%; min-width: 0; max-width: 1500px; margin: 0 auto; padding: 28px 24px 92px; }
 .sbnMainBleed { width: 100%; min-width: 0; }
@@ -129,10 +136,9 @@ const CANONICAL_CSS = `
 .sbnLessonCard:hover { border-color: ${NT.cyan}; background: ${NT.surface2}; }
 .sbnLessonCardCurrent {
   border-color: ${NT.gold}; border-left-color: ${NT.gold};
-  background: rgba(232,184,75,.12);
-  box-shadow: 0 8px 24px rgba(232,184,75,.12);
-}
-.sbnLessonCardCurrent:hover { border-color: ${NT.gold}; background: rgba(232,184,75,.16); }
+  background: var(--accent-wash);
+   }
+.sbnLessonCardCurrent:hover { border-color: ${NT.gold}; background: var(--accent-wash); }
 .sbnLessonNumber {
   color: ${NT.cyan}; font-family: ${NT.mono}; font-size: 11.5px;
   font-weight: 900; letter-spacing: .14em; text-transform: uppercase;
@@ -149,14 +155,14 @@ const CANONICAL_CSS = `
 }
 .sbnPagerCard {
   display: flex; flex-direction: column; gap: 6px; min-width: 0; justify-content: center;
-  border: 1px solid rgba(95,212,234,.5); border-radius: 12px;
+  border: 1px solid ${NT.border}; border-radius: 12px;
   padding: 12px 15px;
-  background: linear-gradient(135deg, ${NT.surface2}, ${NT.surface});
+  background: ${NT.surface};
   text-decoration: none;
   box-shadow: 0 10px 28px rgba(0,0,0,.18);
 }
 .sbnPagerCard:hover { border-color: ${NT.cyan}; }
-.sbnPagerNext { border-color: rgba(232,184,75,.5); text-align: right; }
+.sbnPagerNext { border-color: var(--accent-dim); text-align: right; }
 .sbnPagerNext:hover { border-color: ${NT.gold}; }
 .sbnPagerLabel {
   font-family: ${NT.mono}; font-size: 11px; font-weight: 900;
@@ -168,7 +174,7 @@ const CANONICAL_CSS = `
   display: flex; align-items: center; justify-content: center;
   border: 1px solid ${NT.border}; border-radius: 12px;
   padding: 12px 15px;
-  background: linear-gradient(135deg, ${NT.surface2}, ${NT.surface});
+  background: ${NT.surface};
   color: ${NT.text}; font-family: ${NT.sans}; font-size: 13px; font-weight: 800;
   text-decoration: none; box-shadow: 0 10px 28px rgba(0,0,0,.18);
 }

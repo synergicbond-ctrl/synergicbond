@@ -18,6 +18,7 @@ interface TopicLink {
 const CHAPTER_ROUTES: ChapterRoute[] = [
   { prefix: "/learn/jee-advanced/chemical-bonding/formal-charges", family: "JEE Inorganic Chemistry", title: "Formal Charges" },
   { prefix: "/learn/jee-advanced/chemical-bonding/dipole-moment", family: "JEE Inorganic Chemistry", title: "Dipole Moment" },
+  { prefix: "/learn/jee-advanced/chemical-bonding/bridge-bonding", family: "JEE Inorganic Chemistry", title: "Bridge Bonding" },
   { prefix: "/learn/jee-advanced/environmental-chemistry", family: "JEE Inorganic Chemistry", title: "Environmental Chemistry" },
   { prefix: "/learn/jee-advanced/salt-analysis", family: "JEE Inorganic Chemistry", title: "Principles of Qualitative Analysis" },
   { prefix: "/learn/jee-advanced/polymers", family: "JEE Organic Chemistry", title: "Polymers" },

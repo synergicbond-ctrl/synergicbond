@@ -15,7 +15,7 @@ const tabs = [
     icon: Atom,
     count: "2000+",
     href: "/vault/concepts",
-    accent: "#00F5D4",
+    accent: "var(--text-muted)",
     blurb: "Core chemistry concepts explained from first principles — atomic structure, bonding, periodicity, thermodynamics and beyond.",
     items: ["Atomic Structure & Quantum Numbers", "Chemical Bonding & VSEPR", "Periodic Trends", "Thermodynamics & Entropy", "Chemical Equilibrium", "Coordination Compounds"],
   },
@@ -26,7 +26,7 @@ const tabs = [
     icon: GitBranch,
     count: "500+",
     href: "/vault",
-    accent: "#9B5DE5",
+    accent: "var(--text-muted)",
     blurb: "Every named reaction and mechanism with full arrow-pushing — organic, inorganic and the exam-critical conversions.",
     items: ["Aldol Condensation", "SN1 / SN2 Mechanisms", "Cannizzaro Reaction", "Friedel-Crafts Acylation", "Grignard Reactions", "Markovnikov Addition"],
   },
@@ -37,7 +37,7 @@ const tabs = [
     icon: Sigma,
     count: "800+",
     href: "/vault/formulas",
-    accent: "#00BBF9",
+    accent: "var(--text-muted)",
     blurb: "Essential equations, shortcuts and derivations — the formulas that win marks under time pressure.",
     items: ["Nernst Equation", "Arrhenius Equation", "Henderson-Hasselbalch", "Raoult's Law", "Gibbs Free Energy", "Rate Law Expressions"],
   },
@@ -90,8 +90,8 @@ export default function KnowledgeVault() {
   return (
     <section className="mx-auto max-w-7xl px-6 py-8">
       <div className="mb-8 text-center">
-        <div className="inline-flex items-center gap-2 rounded-full border border-cyan-400/30 bg-cyan-500/10 px-4 py-1.5 text-cyan-300 text-xs font-bold tracking-widest uppercase mb-4 backdrop-blur-md shadow-sm">
-          <Sparkles className="h-3.5 w-3.5 text-cyan-400" />
+        <div className="inline-flex items-center gap-2 rounded-full border border-[var(--border-strong)] bg-[var(--surface-2)] px-4 py-1.5 text-[var(--text-muted)] text-xs font-bold tracking-widest uppercase mb-4 shadow-sm">
+          <Sparkles className="h-3.5 w-3.5 text-[var(--text-muted)]" />
           {t("vault.eyebrow")}
         </div>
         <h2 className="text-3xl font-black md:text-5xl text-white tracking-tight drop-shadow-sm">
@@ -105,7 +105,7 @@ export default function KnowledgeVault() {
       {/* Floating tab bar with glowing active states */}
       <div className="flex justify-center mb-10">
         <div
-          className="flex items-center gap-1.5 overflow-x-auto scrollbar-none rounded-full bg-[#0B0F19]/90 border border-white/15 p-2 max-w-full backdrop-blur-xl shadow-2xl"
+          className="flex items-center gap-1.5 overflow-x-auto scrollbar-none rounded-full bg-[var(--background)]/90 border border-white/15 p-2 max-w-full shadow-2xl"
           style={{ scrollbarWidth: "none" }}
         >
           {tabs.map((tab) => {
@@ -116,8 +116,8 @@ export default function KnowledgeVault() {
                 key={tab.id}
                 onClick={() => setActive(tab.id)}
                 className={`relative flex items-center gap-2.5 whitespace-nowrap px-5 py-2.5 rounded-full text-xs font-bold transition-all duration-300 ${
-                  isActive ? "text-white bg-white/10 shadow-lg scale-105" : "text-gray-400 hover:text-white hover:bg-white/[0.04]"
-                }`}
+ isActive ? "text-white bg-white/10 shadow-lg scale-105" : "text-gray-400 hover:text-white hover:bg-white/[0.04]"
+ }`}
                 style={{
                   borderColor: isActive ? `${tab.accent}66` : "transparent",
                   borderWidth: "1px",
@@ -130,7 +130,7 @@ export default function KnowledgeVault() {
                 />
                 {t(tab.tkey)}
                 {isActive && (
-                  <span className="h-1.5 w-1.5 rounded-full animate-ping" style={{ background: tab.accent }} />
+                  <span className="h-1.5 w-1.5 rounded-full" style={{ background: tab.accent }} />
                 )}
               </button>
             );
@@ -140,7 +140,7 @@ export default function KnowledgeVault() {
 
       {/* Dynamic content panel with deep glassmorphism and category glow */}
       <div 
-        className="relative overflow-hidden rounded-3xl bg-gradient-to-b from-[#111827]/95 to-[#0B0F19]/95 border border-white/15 p-8 md:p-12 min-h-[380px] backdrop-blur-2xl shadow-2xl transition-all duration-500"
+        className="relative overflow-hidden rounded-[var(--radius)] bg-[var(--surface)] border border-white/15 p-8 md:p-12 min-h-[380px] shadow-2xl transition-all duration-500"
         style={{ borderColor: `${current.accent}33` }}
       >
         {/* Ambient background glow matching category color */}
@@ -159,7 +159,7 @@ export default function KnowledgeVault() {
           <div>
             <div className="flex items-center gap-4 mb-6">
               <div
-                className="flex h-16 w-16 items-center justify-center rounded-2xl shadow-lg border border-white/10"
+                className="flex h-16 w-16 items-center justify-center rounded-[var(--radius)] shadow-lg border border-white/10"
                 style={{ background: `${current.accent}26`, borderColor: `${current.accent}4d` }}
               >
                 <Icon className="h-8 w-8 transition-transform duration-300 hover:scale-110" style={{ color: current.accent }} />
@@ -195,7 +195,7 @@ export default function KnowledgeVault() {
               return (
                 <div
                   key={item}
-                  className="group relative flex items-center justify-between gap-3 rounded-2xl bg-[#0B0F19]/80 border border-white/10 px-5 py-4 backdrop-blur-md shadow-md transition-all duration-300 hover:-translate-y-1 hover:border-white/30 hover:bg-[#111827] hover:shadow-xl"
+                  className="group relative flex items-center justify-between gap-3 rounded-[var(--radius)] bg-[var(--background)]/80 border border-white/10 px-5 py-4 shadow-md transition-all duration-300 hover:-translate-y-1 hover:border-white/30 hover:bg-[var(--surface)] hover:shadow-xl"
                 >
                   <div className="flex items-center gap-3 min-w-0">
                     <span
@@ -210,12 +210,12 @@ export default function KnowledgeVault() {
                     onClick={() => toggleBookmark(item)}
                     title={isMarked ? "Remove bookmark" : "Bookmark this knowledge item"}
                     className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border transition-all duration-200 ${
-                      isMarked 
-                        ? "border-rose-500/50 bg-rose-500/20 text-rose-400 scale-110 shadow-[0_0_12px_rgba(244,63,94,0.3)]" 
-                        : "border-white/10 bg-white/[0.03] text-white/30 hover:border-white/30 hover:text-white/80"
-                    }`}
+ isMarked 
+ ? "border-[var(--border-strong)] bg-[var(--surface-2)] text-[var(--text-muted)] scale-110 " 
+ : "border-white/10 bg-white/[0.03] text-white/30 hover:border-white/30 hover:text-white/80"
+ }`}
                   >
-                    <Bookmark className={`h-4 w-4 ${isMarked ? "fill-rose-400" : ""}`} />
+                    <Bookmark className={`h-4 w-4 ${isMarked ? "fill-[var(--text-muted)]" : ""}`} />
                   </button>
                 </div>
               );

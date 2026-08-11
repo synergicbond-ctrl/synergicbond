@@ -24,13 +24,13 @@ const socials = [
 
 export default function Footer() {
   return (
-    <footer className="mt-24 border-t border-white/[0.06] bg-[#0B0F19]">
+    <footer className="mt-24 border-t border-[var(--border)] bg-[var(--background)]">
 
       {/* Live visitor strip */}
-      <div className="border-b border-white/[0.04] py-3 px-6">
+      <div className="border-b border-[var(--border)] py-3 px-6">
         <div className="mx-auto max-w-7xl flex items-center justify-between flex-wrap gap-3">
           <div className="flex items-center gap-3 text-xs text-white/40">
-            <Users className="h-3.5 w-3.5 text-cyan-400" />
+            <Users className="h-3.5 w-3.5 text-[var(--accent)]" />
             <span>
               <span className="text-white/70 font-semibold">👥 Total Platform Journeys:</span>{" "}
               142,850+ Active Scholars
@@ -53,18 +53,18 @@ export default function Footer() {
           {/* Brand */}
           <div className="col-span-1">
             <div className="flex items-center gap-2.5 mb-4">
-              <div className="flex h-8 w-8 items-center justify-center rounded-xl border border-cyan-400/30 bg-cyan-950/40">
+              <div className="flex h-8 w-8 items-center justify-center rounded-xl border border-[var(--border-strong)]">
                 <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none">
-                  <circle cx="12" cy="12" r="2.5" fill="#00F5D4"/>
-                  <ellipse cx="12" cy="12" rx="9" ry="3.5" stroke="#00F5D4" strokeWidth="1.2" strokeOpacity="0.7" transform="rotate(-45 12 12)"/>
-                  <ellipse cx="12" cy="12" rx="9" ry="3.5" stroke="#9B5DE5" strokeWidth="1.2" strokeOpacity="0.7" transform="rotate(45 12 12)"/>
+                  <circle cx="12" cy="12" r="2.5" fill="var(--accent)"/>
+                  <ellipse cx="12" cy="12" rx="9" ry="3.5" stroke="var(--accent)" strokeWidth="1.2" strokeOpacity="0.7" transform="rotate(-45 12 12)"/>
+                  <ellipse cx="12" cy="12" rx="9" ry="3.5" stroke="var(--text-muted)" strokeWidth="1.2" strokeOpacity="0.7" transform="rotate(45 12 12)"/>
                 </svg>
               </div>
               <div>
-                <p className="text-sm font-extrabold tracking-widest bg-gradient-to-r from-[#00F5D4] to-[#9B5DE5] bg-clip-text text-transparent">
+                <p className="font-display text-[15px] font-semibold tracking-[-0.01em] text-[var(--foreground)]">
                   SYNERGIC BOND
                 </p>
-                <p className="text-[8px] font-bold uppercase tracking-[0.3em] text-cyan-400/50">Chemistry OS</p>
+                <p className="text-[8px] font-data uppercase tracking-[0.28em] text-[var(--text-muted)]">Chemistry OS</p>
               </div>
             </div>
             <p className="text-sm text-gray-400 leading-relaxed max-w-xs">
@@ -79,7 +79,7 @@ export default function Footer() {
                   key={s.label}
                   href={s.href}
                   aria-label={s.label}
-                  className="flex h-8 w-8 items-center justify-center rounded-lg border border-white/[0.08] bg-white/[0.04] text-xs font-bold text-gray-400 hover:border-cyan-400/30 hover:text-white transition"
+                  className="flex h-8 w-8 items-center justify-center rounded-lg border border-white/[0.08] bg-white/[0.04] text-xs font-bold text-gray-400 hover:border-[var(--border-strong)] hover:text-white transition"
                 >
                   {s.letter}
                 </a>
@@ -91,7 +91,7 @@ export default function Footer() {
           <div className="col-span-2">
             <div className="grid gap-8 sm:grid-cols-3">
               <div className="sm:col-span-2">
-                <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-gray-500 mb-5">
+                <p className="text-[10px] font-data uppercase tracking-[0.28em] text-gray-500 mb-5">
                   Platform
                 </p>
                 <div className="grid grid-cols-2 gap-2">
@@ -111,13 +111,13 @@ export default function Footer() {
                 </div>
               </div>
               <div className="sm:col-span-1">
-                <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-gray-500 mb-5">
+                <p className="text-[10px] font-data uppercase tracking-[0.28em] text-gray-500 mb-5">
                   Contact Us
                 </p>
                 <p className="text-xs text-gray-400 leading-relaxed mb-3">
                   For support, subscription assistance, academic queries, and partnerships, contact:
                 </p>
-                <a href="mailto:hello@synergicbond.com" className="text-xs font-bold text-cyan-400 hover:text-cyan-300 transition">
+                <a href="mailto:hello@synergicbond.com" className="text-xs font-bold text-[var(--accent)] hover:text-[var(--accent)] transition">
                   hello@synergicbond.com
                 </a>
               </div>
@@ -127,7 +127,7 @@ export default function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="mt-14 border-t border-white/[0.06] pt-6 flex items-center justify-between flex-wrap gap-3">
+        <div className="mt-14 border-t border-[var(--border)] pt-6 flex items-center justify-between flex-wrap gap-3">
           <p className="text-xs text-gray-500">
             Copyright © 2026 SYNERGIC BOND. All Rights Reserved.
           </p>

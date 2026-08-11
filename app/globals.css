@@ -4,36 +4,66 @@
   color-scheme: dark;
 
   /* ── SYNERGIC BOND DESIGN SYSTEM ──────────────────────────────
-     Direction: Linear + Notion + Apple. 80% calm, 20% accent.
-     Accents are CYAN + PURPLE only. Semantic colors (chemistry
-     compounds, warnings) live in content, never in UI chrome. */
+     Direction: scientific publishing. Structure is expressed with
+     hairlines that CONNECT, never with glow, blur or gradient fill.
 
-  /* Surfaces — single calm dark base */
-  --background: #0b0f19;          /* page */
-  --surface: #111827;             /* cards / panels (the ONE card color) */
-  --surface-2: rgba(255, 255, 255, 0.03);
-  --surface-hover: rgba(255, 255, 255, 0.06);
+     Two colour layers, kept strictly apart:
+       1. CHROME  — near-black + one gold accent. Interaction only.
+       2. CONTENT — the semantic chemistry scale below. Meaning only.
+     A chemistry hue must never appear in navigation, buttons or
+     cards; the gold accent must never encode chemical meaning. */
 
-  /* Text hierarchy — pure white for titles only, gray for the rest */
-  --foreground: #ffffff;          /* titles / active / hovered */
-  --text-body: rgba(255, 255, 255, 0.70);  /* body copy */
-  --text-muted: #9ca3af;          /* captions / meta */
+  /* ── Chrome: surfaces ── */
+  --background: #0a0a0c;          /* page */
+  --surface: #121216;             /* cards / panels (the ONE card colour) */
+  --surface-2: rgba(255, 255, 255, 0.025);
+  --surface-hover: rgba(255, 255, 255, 0.05);
 
-  /* Accents — cyan + purple ONLY */
-  --accent-cyan: #00f5d4;
-  --accent-blue: #00bbf9;
-  --accent-purple: #9b5de5;
+  /* ── Chrome: text hierarchy ── */
+  --foreground: #fafafa;                   /* titles / active */
+  --text-body: rgba(255, 255, 255, 0.72);  /* body copy */
+  --text-muted: rgba(255, 255, 255, 0.48); /* captions / meta */
+  --text-faint: rgba(255, 255, 255, 0.32); /* rules / disabled */
 
-  /* Borders */
-  --border: rgba(255, 255, 255, 0.08);
+  /* ── Chrome: the single brand accent ──
+     Used for interactive + active states and the brand mark. Nothing else. */
+  --accent: #e3b341;
+  --accent-dim: rgba(227, 179, 65, 0.55);
+  --accent-wash: rgba(227, 179, 65, 0.08);
+
+  /* ── Chrome: hairlines ──
+     Elevation comes from these, not from shadow. */
+  --border: rgba(255, 255, 255, 0.07);
   --border-strong: rgba(255, 255, 255, 0.12);
 
-  /* Shadows — soft, calm. Glow is reserved for :hover / active only */
-  --shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
-  --glow-cyan: 0 0 24px rgba(0, 245, 212, 0.18);
+  /* ── Content: semantic chemistry scale ──
+     Desaturated on purpose — these sit inside long-form reading and
+     must not vibrate against a near-black page. CONTENT ONLY. */
+  --chem-bond: #6fb3d9;      /* bonding, structure, geometry */
+  --chem-energy: #e08d4b;    /* energetics, thermodynamics */
+  --chem-orbital: #a98bd9;   /* orbitals, resonance, quantum */
+  --chem-trap: #d96f6f;      /* exam traps, cautions, exceptions */
+  --chem-rule: #6fbf8f;      /* rules, verified results */
 
-  /* Radius */
-  --radius: 16px;
+  /* ── Legacy aliases ──
+     Retained so the handful of files still reading the old cyan/purple
+     names inherit the restrained palette instead of the old neon. */
+  --accent-cyan: var(--chem-bond);
+  --accent-blue: var(--chem-bond);
+  --accent-purple: var(--chem-orbital);
+
+  /* ── Geometry ──
+     Tight radii; the brief rules out oversized rounded containers. */
+  --radius: 8px;
+  --radius-sm: 4px;
+
+  /* ── Lattice ── */
+  --unit: 8px;              /* baseline; all spacing is a multiple */
+  --measure: 72ch;          /* max comfortable reading line length */
+
+  /* Kept for components that still reference them. Deliberately faint —
+     depth is a hairline job, not a shadow job. */
+  --shadow: 0 1px 0 rgba(255, 255, 255, 0.04);
 }
 
 *,
@@ -53,71 +83,102 @@ body {
   scroll-behavior: smooth;
 }
 
+/* ── Typography ───────────────────────────────────────────────────
+   Three families, three jobs, so hierarchy reads without relying on
+   size alone:
+     display — section + page headings   (serif, editorial authority)
+     sans    — prose, UI, labels          (neutral, long-session legible)
+     mono    — numerals, data, formula labels
+   Maths is deliberately absent from this list: KaTeX ships its own
+   faces and must be left alone (see the code rule below).
+   Variables are supplied by next/font in app/layout.tsx. */
+
 body {
-  /* Apple SF Pro on Apple devices, Segoe UI on Windows, Roboto on Android */
-  font-family:
-    -apple-system,
-    BlinkMacSystemFont,
-    "SF Pro Display",
-    "SF Pro Text",
-    "Helvetica Neue",
-    system-ui,
-    sans-serif;
+  font-family: var(--font-sans), -apple-system, BlinkMacSystemFont, "Segoe UI",
+    system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
   font-feature-settings: "kern" 1, "liga" 1, "calt" 1;
 }
 
-/* SF Pro dynamic optical sizing — matches Apple's automatic size/spacing behavior */
-h1, h2, h3 {
-  font-family:
-    -apple-system,
-    BlinkMacSystemFont,
-    "SF Pro Display",
-    "Helvetica Neue",
-    system-ui,
-    sans-serif;
+h1,
+h2,
+h3 {
+  font-family: var(--font-display), Georgia, "Times New Roman", serif;
   font-optical-sizing: auto;
   letter-spacing: -0.02em;
-  font-weight: 700;
+  font-weight: 600;
 }
 
-h4, h5, h6 {
-  font-family:
-    -apple-system,
-    BlinkMacSystemFont,
-    "SF Pro Display",
-    "Helvetica Neue",
-    system-ui,
-    sans-serif;
+h4,
+h5,
+h6 {
+  font-family: var(--font-display), Georgia, "Times New Roman", serif;
   font-optical-sizing: auto;
   letter-spacing: -0.01em;
   font-weight: 600;
 }
 
-p, li, span, label, input, textarea, select, button {
-  font-family:
-    -apple-system,
-    BlinkMacSystemFont,
-    "SF Pro Text",
-    "Helvetica Neue",
-    system-ui,
-    sans-serif;
+p,
+li,
+span,
+label,
+input,
+textarea,
+select,
+button {
+  font-family: var(--font-sans), -apple-system, BlinkMacSystemFont, "Segoe UI",
+    system-ui, sans-serif;
   font-optical-sizing: auto;
 }
 
-/* SF Mono for code/LaTeX blocks */
-code, pre, kbd, .katex {
-  font-family:
-    "SF Mono",
-    ui-monospace,
-    "Cascadia Code",
-    "Fira Code",
-    Menlo,
-    Monaco,
+/* Mono for code and data.
+   NOTE: `.katex` is intentionally NOT in this selector. KaTeX ships its
+   own metric-matched fonts (KaTeX_Main / KaTeX_Math); overriding them
+   with a UI mono breaks glyph metrics, italic variables and operator
+   spacing. Maths renders in KaTeX's faces — leave it alone. */
+code,
+pre,
+kbd,
+samp {
+  font-family: var(--font-mono), ui-monospace, "SF Mono", Menlo, Monaco,
     monospace;
   font-feature-settings: "liga" 0;
+}
+
+/* Tabular figures wherever numbers are compared vertically. */
+table,
+[data-numeric] {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Named role classes so components ask for a JOB, not a font stack.
+   `.font-data` rather than `.font-mono` to avoid colliding with Tailwind's. */
+.font-display {
+  font-family: var(--font-display), Georgia, "Times New Roman", serif;
+  font-optical-sizing: auto;
+}
+.font-body {
+  font-family: var(--font-sans), -apple-system, BlinkMacSystemFont, "Segoe UI",
+    system-ui, sans-serif;
+}
+.font-data {
+  font-family: var(--font-mono), ui-monospace, "SF Mono", Menlo, monospace;
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "liga" 0;
+}
+
+/* ── Authored figure SVGs ─────────────────────────────────────────
+   Structure figures were authored against the older navy theme and each
+   draws its own rounded card as the first child of the <svg>. The figure
+   frame is now the Figure component's job, so that inner card is knocked
+   out here — presentation only, so the chemistry files stay untouched.
+   Scoped to a first-child rect WITH a corner radius, which is the card
+   and never a bond, atom or axis. */
+.sb-figure svg > rect:first-child[rx] {
+  fill: transparent;
+  stroke: transparent;
 }
 
 a {
@@ -145,8 +206,15 @@ video {
 }
 
 ::selection {
-  background: rgba(0, 229, 255, 0.3);
-  color: white;
+  background: rgba(227, 179, 65, 0.26);
+  color: var(--foreground);
+}
+
+/* Visible focus for keyboard users, suppressed for pointer users. */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
 }
 
 /* No visible scrollbars anywhere on the site.

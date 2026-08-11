@@ -1,7 +1,7 @@
 import { Megaphone, Newspaper, PenSquare, ArrowUpRight } from "lucide-react";
 
 const updates = [
-  { tag: "Platform Update", icon: Megaphone, accent: "#00F5D4", lines: [
+  { tag: "Platform Update", icon: Megaphone, accent: "var(--text-muted)", lines: [
     "Virtual Lab Simulator now live with EN/Hinglish audio",
     "Multimodal Doubt Solver supports image + voice input",
     "7-language interface dropdown rolled out",
@@ -11,7 +11,7 @@ const updates = [
     "NEET 2026 syllabus revision confirmed by NTA",
     "INChO selection via NSEC — register before Nov",
   ]},
-  { tag: "Academic Blog", icon: PenSquare, accent: "#9B5DE5", lines: [
+  { tag: "Academic Blog", icon: PenSquare, accent: "var(--text-muted)", lines: [
     "How to master Inorganic Qualitative Analysis in 7 days",
     "Why multicolor notes boost retention by 40%",
     "Dropper strategy: the 3-day recovery method",
@@ -20,7 +20,7 @@ const updates = [
 
 export default function NewsSidebar() {
   return (
-    <aside className="rounded-3xl bg-[#111827] border border-white/[0.06] p-6">
+    <aside className="rounded-[var(--radius)] bg-[var(--surface)] border border-white/[0.06] p-6">
       <h3 className="text-sm font-bold text-white mb-1">Latest Operations Hub</h3>
       <p className="text-xs text-white/40 mb-5">Updates · Exam News · Blogs</p>
 

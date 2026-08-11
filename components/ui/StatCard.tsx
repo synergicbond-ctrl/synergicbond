@@ -22,7 +22,7 @@ export default function StatCard({
       </div>
 
       {description && (
-        <p className="mt-2 text-sm leading-6 text-white/60">
+        <p className="mt-2 text-sm leading-6 text-[var(--text-muted)]">
           {description}
         </p>
       )}

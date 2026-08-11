@@ -33,7 +33,7 @@ const testimonials = [
     name: "Beta Testing Families",
     role: "Parental Engagement",
     program: "Student Mastery Tracking",
-    accent: "#9B5DE5",
+    accent: "var(--text-muted)",
     location: "Community Network",
     hasVideo: false,
   },
@@ -54,8 +54,8 @@ export default function Testimonials() {
   return (
     <section className="mx-auto max-w-7xl px-6 py-12">
       <div className="mb-8 text-center">
-        <div className="inline-flex items-center gap-2 rounded-full border border-cyan-400/30 bg-cyan-500/10 px-4 py-1.5 text-cyan-300 text-xs font-bold tracking-widest uppercase mb-4 backdrop-blur-md shadow-sm">
-          <Sparkles className="h-3.5 w-3.5 text-cyan-400" />
+        <div className="inline-flex items-center gap-2 rounded-full border border-[var(--border-strong)] bg-[var(--surface-2)] px-4 py-1.5 text-[var(--text-muted)] text-xs font-bold tracking-widest uppercase mb-4 shadow-sm">
+          <Sparkles className="h-3.5 w-3.5 text-[var(--text-muted)]" />
           {t("testi.eyebrow")}
         </div>
         <h2 className="text-3xl font-black md:text-5xl text-white tracking-tight drop-shadow-sm">
@@ -65,14 +65,14 @@ export default function Testimonials() {
 
       {/* Persona filter with OS glassmorphic styling */}
       <div className="flex justify-center mb-10">
-        <div className="inline-flex rounded-full bg-[#0B0F19]/90 border border-white/15 p-1.5 gap-1.5 backdrop-blur-xl shadow-2xl">
+        <div className="inline-flex rounded-full bg-[var(--background)]/90 border border-white/15 p-1.5 gap-1.5 shadow-2xl">
           {filters.map((f) => (
             <button
               key={f.id}
               onClick={() => setFilter(f.id)}
               className={`px-6 py-2.5 rounded-full text-xs font-bold transition-all duration-300 ${
-                filter === f.id ? "bg-gradient-to-r from-cyan-400 to-sky-500 text-black shadow-lg scale-105" : "text-gray-400 hover:text-white hover:bg-white/[0.04]"
-              }`}
+ filter === f.id ? "bg-[var(--surface)] -400 text-black shadow-lg scale-105" : "text-gray-400 hover:text-white hover:bg-white/[0.04]"
+ }`}
             >
               {t(f.tkey)}
             </button>
@@ -84,7 +84,7 @@ export default function Testimonials() {
         {shown.map((item, i) => (
           <div
             key={i}
-            className="group relative overflow-hidden rounded-3xl bg-gradient-to-b from-[#111827]/95 to-[#0B0F19]/95 border border-white/15 p-7 flex flex-col justify-between backdrop-blur-2xl transition-all duration-500 hover:-translate-y-2 hover:border-white/30 hover:shadow-[0_20px_40px_rgba(0,0,0,0.6)]"
+            className="group relative overflow-hidden rounded-[var(--radius)] bg-[var(--surface)] border border-white/15 p-7 flex flex-col justify-between transition-all duration-500 hover:-translate-y-2 hover:border-white/30 hover:shadow-[0_20px_40px_rgba(0,0,0,0.6)]"
             style={{ boxShadow: `0 10px 30px -15px ${item.accent}33` }}
           >
             {/* Giant decorative quotation mark background */}
@@ -102,7 +102,7 @@ export default function Testimonials() {
                 {/* Star rating glow */}
                 <div className="flex gap-1" style={{ filter: "drop-shadow(0 0 6px rgba(251,191,36,0.6))" }}>
                   {[...Array(5)].map((_, s) => (
-                    <Star key={s} className="h-3.5 w-3.5 fill-amber-400 text-amber-400 transition-transform duration-300 hover:scale-125" />
+                    <Star key={s} className="h-3.5 w-3.5 fill-[var(--text-muted)] text-[var(--text-muted)] transition-transform duration-300 hover:scale-125" />
                   ))}
                 </div>
               </div>
@@ -113,15 +113,15 @@ export default function Testimonials() {
 
             <div className="relative z-10">
               {item.hasVideo && (
-                <button className="relative rounded-xl bg-black/50 border border-white/10 h-12 mb-5 flex items-center justify-between w-full px-4 group/btn cursor-pointer overflow-hidden transition-all duration-300 hover:border-cyan-400/50 hover:bg-black/70 shadow-inner">
-                  <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 via-purple-500/10 to-transparent opacity-50 group-hover/btn:opacity-100 transition-opacity" />
+                <button className="relative rounded-xl bg-black/50 border border-white/10 h-12 mb-5 flex items-center justify-between w-full px-4 group/btn cursor-pointer overflow-hidden transition-all duration-300 hover:border-[var(--border-strong)] hover:bg-black/70 shadow-inner">
+                  <div className="absolute inset-0 bg-[var(--surface)] -500/10 to-transparent opacity-50 group-hover/btn:opacity-100 transition-opacity" />
                   <div className="flex items-center gap-3">
-                    <div className="relative flex h-7 w-7 items-center justify-center rounded-full bg-cyan-500/20 border border-cyan-400/40 group-hover/btn:scale-110 group-hover/btn:bg-cyan-500/40 transition">
-                      <Play className="h-3.5 w-3.5 text-cyan-300 fill-cyan-300 ml-0.5" />
+                    <div className="relative flex h-7 w-7 items-center justify-center rounded-full bg-[var(--surface-2)] border border-[var(--border-strong)] group-hover/btn:scale-110 group-hover/btn:bg-[var(--surface-2)] transition">
+                      <Play className="h-3.5 w-3.5 text-[var(--text-muted)] fill-[var(--text-muted)] ml-0.5" />
                     </div>
                     <span className="relative text-xs text-white/80 font-bold group-hover/btn:text-white transition">Watch Video Testimonial</span>
                   </div>
-                  <span className="relative text-[10px] text-cyan-400 font-extrabold uppercase tracking-widest opacity-80">0:45</span>
+                  <span className="relative text-[10px] text-[var(--text-muted)] font-extrabold uppercase tracking-widest opacity-80">0:45</span>
                 </button>
               )}
 
@@ -131,7 +131,7 @@ export default function Testimonials() {
                   <div className="flex items-center gap-1.5">
                     <p className="text-base font-black text-white">{item.name}</p>
                     <span title="Verified User" className="inline-flex items-center">
-                      <CheckCircle2 className="h-4 w-4 text-cyan-400 shrink-0" style={{ filter: "drop-shadow(0 0 6px rgba(34,211,238,0.5))" }} />
+                      <CheckCircle2 className="h-4 w-4 text-[var(--text-muted)] shrink-0" style={{ filter: "drop-shadow(0 0 6px rgba(34,211,238,0.5))" }} />
                     </span>
                   </div>
                   <p className="text-xs font-bold mt-0.5" style={{ color: item.accent }}>{item.role}</p>

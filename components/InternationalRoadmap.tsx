@@ -14,17 +14,17 @@ const regions: { id: Region; label: string }[] = [
 
 const data: Record<Region, { country: string; exams: string[]; accent: string }[]> = {
   na: [
-    { country: "Canada", exams: ["MCAT (Biochem / Organic)", "Waterloo Avogadro Exam", "Canadian Chemistry Contest (CCC)"], accent: "#00BBF9" },
-    { country: "USA", exams: ["AP Chemistry", "USNCO Olympiad", "SAT Subject Chemistry"], accent: "#00BBF9" },
+    { country: "Canada", exams: ["MCAT (Biochem / Organic)", "Waterloo Avogadro Exam", "Canadian Chemistry Contest (CCC)"], accent: "var(--text-muted)" },
+    { country: "USA", exams: ["AP Chemistry", "USNCO Olympiad", "SAT Subject Chemistry"], accent: "var(--text-muted)" },
   ],
   ukeu: [
-    { country: "France", exams: ["Concours Général (Chemistry)", "Baccalauréat (Physique-Chimie)"], accent: "#9B5DE5" },
-    { country: "Germany", exams: ["Abitur Chemistry (Leistungskurs)", "German National Chemistry Olympiad"], accent: "#9B5DE5" },
-    { country: "United Kingdom", exams: ["A-Levels Chemistry", "Cambridge Chemistry Challenge"], accent: "#00F5D4" },
+    { country: "France", exams: ["Concours Général (Chemistry)", "Baccalauréat (Physique-Chimie)"], accent: "var(--text-muted)" },
+    { country: "Germany", exams: ["Abitur Chemistry (Leistungskurs)", "German National Chemistry Olympiad"], accent: "var(--text-muted)" },
+    { country: "United Kingdom", exams: ["A-Levels Chemistry", "Cambridge Chemistry Challenge"], accent: "var(--text-muted)" },
   ],
   apac: [
-    { country: "Singapore", exams: ["GCE A-Levels (H2/H3 Chemistry)", "Singapore Chemistry Olympiad (SChO)"], accent: "#00BBF9" },
-    { country: "Global", exams: ["IB Diploma Chemistry HL/SL", "International Chemistry Olympiad (IChO)"], accent: "#9B5DE5" },
+    { country: "Singapore", exams: ["GCE A-Levels (H2/H3 Chemistry)", "Singapore Chemistry Olympiad (SChO)"], accent: "var(--text-muted)" },
+    { country: "Global", exams: ["IB Diploma Chemistry HL/SL", "International Chemistry Olympiad (IChO)"], accent: "var(--text-muted)" },
   ],
 };
 
@@ -35,9 +35,9 @@ export default function InternationalRoadmap() {
   return (
     <section className="mx-auto max-w-7xl px-6 py-8">
       <div className="mb-6 text-center">
-        <p className="mb-3 text-xs font-bold uppercase tracking-[0.4em] text-cyan-300">{t("intl.eyebrow")}</p>
+        <p className="mb-3 text-xs font-bold uppercase tracking-[0.4em] text-[var(--text-muted)]">{t("intl.eyebrow")}</p>
         <h2 className="text-3xl font-black md:text-4xl text-white flex items-center justify-center gap-3">
-          <Globe2 className="h-7 w-7 text-cyan-400" /> {t("intl.title")}
+          <Globe2 className="h-7 w-7 text-[var(--text-muted)]" /> {t("intl.title")}
         </h2>
         <p className="mx-auto mt-4 max-w-2xl text-white/70 text-sm">
           {t("intl.desc")}
@@ -46,14 +46,14 @@ export default function InternationalRoadmap() {
 
       {/* Region tabs */}
       <div className="flex justify-center mb-8">
-        <div className="inline-flex rounded-full bg-[#111827] border border-white/[0.06] p-1 gap-1 flex-wrap justify-center">
+        <div className="inline-flex rounded-full bg-[var(--surface)] border border-white/[0.06] p-1 gap-1 flex-wrap justify-center">
           {regions.map((r) => (
             <button
               key={r.id}
               onClick={() => setRegion(r.id)}
               className={`px-4 py-2 rounded-full text-xs font-semibold transition-all ${
-                region === r.id ? "bg-cyan-500 text-black" : "text-gray-300 hover:text-white"
-              }`}
+ region === r.id ? "bg-[var(--surface)] text-black" : "text-gray-300 hover:text-white"
+ }`}
             >
               {r.label}
             </button>
@@ -66,7 +66,7 @@ export default function InternationalRoadmap() {
         {data[region].map((c) => (
           <div
             key={c.country}
-            className="relative rounded-2xl bg-[#111827] border p-5 overflow-hidden"
+            className="relative rounded-[var(--radius)] bg-[var(--surface)] border p-5 overflow-hidden"
             style={{ borderColor: `${c.accent}30`, boxShadow: `0 0 30px ${c.accent}12` }}
           >
             {/* status tag */}

@@ -1,3 +1,4 @@
+import type { ReactNode } from "react";
 import HomeHero from "@/components/HomeHero";
 import WhatIsSynergicBond from "@/components/home/WhatIsSynergicBond";
 import ControlCenter from "@/components/ControlCenter";
@@ -18,87 +19,146 @@ import FAQ from "@/components/FAQ";
 import ContactFeedback from "@/components/ContactFeedback";
 import Footer from "@/components/Footer";
 
+/**
+ * One rhythm for the whole page. The previous layout repeated an identical
+ * `py-24 border-t` band fifteen times, which flattened everything into an
+ * undifferentiated scroll; here weight varies and a mono label names each
+ * region, so the page reads as a structured document rather than a stack.
+ */
+function Band({
+  label,
+  children,
+  size = "md",
+  divide = true,
+}: {
+  label?: string;
+  children: ReactNode;
+  size?: "sm" | "md" | "lg";
+  divide?: boolean;
+}) {
+  const pad =
+    size === "lg" ? "py-24 md:py-32" : size === "sm" ? "py-12 md:py-16" : "py-16 md:py-24";
+
+  return (
+    <section
+      className={pad}
+      style={divide ? { borderTop: "1px solid var(--border)" } : undefined}
+    >
+      {label ? (
+        <div className="mx-auto mb-12 max-w-[1400px] px-6">
+          <div className="flex items-center gap-3">
+            <span
+              aria-hidden
+              className="h-[5px] w-[5px] shrink-0 rotate-45"
+              style={{ background: "var(--accent)" }}
+            />
+            <span className="font-data text-[11px] uppercase tracking-[0.2em] text-[var(--text-muted)]">
+              {label}
+            </span>
+            <span
+              aria-hidden
+              className="h-px flex-1"
+              style={{ background: "var(--border)" }}
+            />
+          </div>
+        </div>
+      ) : null}
+      {children}
+    </section>
+  );
+}
+
 export default async function Home() {
   const progress = await fetchControlCenterProgress();
 
   return (
-    <main className="min-h-screen bg-[#0B0F19] text-white antialiased overflow-x-hidden">
+    <main className="min-h-screen overflow-x-hidden bg-[var(--background)] text-[var(--foreground)] antialiased">
+      <HomeHero />
 
-      {/* Hero section wrapper */}
-      <div className="relative">
-        <HomeHero />
-      </div>
-
-      {/* Structured, beautifully spaced sections */}
-      <section className="py-16 md:py-24 border-t border-white/[0.04] bg-gradient-to-b from-black/20 to-transparent">
+      <Band divide={false}>
         <WhatIsSynergicBond />
-      </section>
+      </Band>
 
-      <section className="py-16 md:py-24 border-t border-white/[0.04]">
+      <Band>
         <ControlCenter progress={progress} />
-      </section>
+      </Band>
 
-      <section className="py-16 md:py-24 border-t border-white/[0.04] bg-gradient-to-b from-black/10 to-transparent">
+      <Band>
         <KnowledgeVault />
-      </section>
+      </Band>
 
-      <section className="py-16 md:py-24 border-t border-white/[0.04]">
+      <Band size="sm">
         <Stats />
-      </section>
+      </Band>
 
-      <section className="py-16 md:py-24 border-t border-white/[0.04] bg-gradient-to-b from-black/20 to-transparent">
-        <JeeSection />
-      </section>
+      {/* Programs — the four exam tracks read as one region rather than four
+          interchangeable bands, separated internally by hairlines. */}
+      <Band label="Programs" size="lg">
+        <div className="space-y-20 md:space-y-28">
+          <JeeSection />
+          <div className="mx-auto max-w-[1400px] px-6">
+            <div style={{ borderTop: "1px solid var(--border)" }} />
+          </div>
+          <NeetSection />
+          <div className="mx-auto max-w-[1400px] px-6">
+            <div style={{ borderTop: "1px solid var(--border)" }} />
+          </div>
+          <OlympiadSection />
+          <div className="mx-auto max-w-[1400px] px-6">
+            <div style={{ borderTop: "1px solid var(--border)" }} />
+          </div>
+          <InternationalRoadmap />
+        </div>
+      </Band>
 
-      <section className="py-16 md:py-24 border-t border-white/[0.04]">
-        <NeetSection />
-      </section>
-
-      <section className="py-16 md:py-24 border-t border-white/[0.04] bg-gradient-to-b from-black/20 to-transparent">
-        <OlympiadSection />
-      </section>
-
-      <section className="py-16 md:py-24 border-t border-white/[0.04]">
+      <Band label="Resources">
         <ResourcesSection />
-      </section>
+      </Band>
 
-      <section className="py-16 md:py-24 border-t border-white/[0.04] bg-gradient-to-b from-black/20 to-transparent">
+      <Band label="Exam centre">
         <ExamCenter />
-      </section>
+      </Band>
 
-      <section className="py-16 md:py-24 border-t border-white/[0.04]">
-        <InternationalRoadmap />
-      </section>
-
-      {/* Latest Operations Hub — news/blogs sidebar layout */}
-      <section className="py-16 md:py-24 border-t border-white/[0.04]">
-        <div className="mx-auto max-w-7xl px-6 grid gap-8 lg:grid-cols-[1.6fr_1fr]">
-          <div className="rounded-3xl bg-[#111827] border border-white/[0.06] p-8 flex flex-col justify-center shadow-2xl">
-            <p className="text-xs font-bold uppercase tracking-[0.4em] text-cyan-300 mb-3">Stay Ahead</p>
-            <h2 className="text-3xl font-black text-white mb-3">Never Miss an Exam Update</h2>
-            <p className="text-white/70 text-sm leading-relaxed">
-              Registration windows, syllabus changes, and high-yield strategy blogs — tracked live in the Operations Hub. Bookmark this page so you&apos;re always a step ahead of every deadline.
+      <Band label="Operations hub">
+        <div className="mx-auto grid max-w-[1400px] gap-8 px-6 lg:grid-cols-[1.6fr_1fr]">
+          <div
+            className="flex flex-col justify-center rounded-[var(--radius)] p-8"
+            style={{
+              border: "1px solid var(--border)",
+              background: "var(--surface)",
+            }}
+          >
+            <span className="font-data text-[11px] uppercase tracking-[0.2em] text-[var(--text-muted)]">
+              Stay ahead
+            </span>
+            <h2 className="font-display mt-3 text-[30px] font-semibold leading-tight tracking-[-0.02em] text-[var(--foreground)]">
+              Never miss an exam update
+            </h2>
+            <p className="mt-3 max-w-[var(--measure)] text-[15px] leading-relaxed text-[var(--text-body)]">
+              Registration windows, syllabus changes, and high-yield strategy
+              blogs — tracked live in the Operations Hub. Bookmark this page so
+              you&apos;re always a step ahead of every deadline.
             </p>
           </div>
           <NewsSidebar />
         </div>
-      </section>
+      </Band>
 
-      <section className="py-16 md:py-24 border-t border-white/[0.04] bg-gradient-to-b from-black/20 to-transparent">
+      <Band label="Students">
         <Testimonials />
-      </section>
+      </Band>
 
-      <section className="py-16 md:py-24 border-t border-white/[0.04]">
+      <Band size="sm">
         <Donation />
-      </section>
+      </Band>
 
-      <section className="py-12 md:py-16 border-t border-white/[0.04] bg-black/10">
+      <Band label="Questions" size="sm">
         <FAQ />
-      </section>
+      </Band>
 
-      <section className="py-12 md:py-16 border-t border-white/[0.04]">
+      <Band size="sm">
         <ContactFeedback />
-      </section>
+      </Band>
 
       <FloatingCTAs />
       <Footer />

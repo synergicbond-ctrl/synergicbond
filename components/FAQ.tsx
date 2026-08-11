@@ -38,7 +38,7 @@ export default function FAQ() {
   return (
     <section className="mx-auto max-w-3xl px-6 py-16">
       <div className="mb-10 text-center">
-        <p className="mb-3 text-xs font-bold uppercase tracking-[0.4em] text-cyan-300">
+        <p className="mb-3 text-xs font-bold uppercase tracking-[0.4em] text-[var(--text-muted)]">
           {t("faq.eyebrow")}
         </p>
         <h2 className="text-4xl font-black text-white">{t("faq.title")}</h2>
@@ -50,7 +50,7 @@ export default function FAQ() {
           return (
             <div
               key={i}
-              className="rounded-2xl bg-[#111827] border border-white/[0.06] overflow-hidden transition"
+              className="rounded-[var(--radius)] bg-[var(--surface)] border border-white/[0.06] overflow-hidden transition"
             >
               <button
                 onClick={() => setOpen(isOpen ? null : i)}
@@ -60,7 +60,7 @@ export default function FAQ() {
                   {faq.q}
                 </span>
                 <ChevronDown
-                  className={`h-4 w-4 flex-shrink-0 text-cyan-400 transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`}
+                  className={`h-4 w-4 flex-shrink-0 text-[var(--text-muted)] transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`}
                 />
               </button>
               <div

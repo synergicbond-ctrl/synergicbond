@@ -25,7 +25,7 @@ export default function Heading({
       </h2>
 
       {subtitle && (
-        <p className="mx-auto mt-5 max-w-3xl text-lg leading-8 text-white/65">
+        <p className="mx-auto mt-5 max-w-3xl text-lg leading-8 text-[var(--text-body)]">
           {subtitle}
         </p>
       )}

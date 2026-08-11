@@ -7,22 +7,22 @@ const stats = [
   {
     icon: Atom, value: "10,000+", num: 10000, suffix: "+", title: "Chemistry Resources",
     subtitle: "Concepts, reactions, mechanisms & PYQs",
-    icon_color: "text-cyan-300", tile: "from-cyan-400/20 to-cyan-500/5 border-cyan-400/30", glow: "rgba(34,211,238,0.25)", ring: "#00F5D4", pct: 85,
+    icon_color: "text-[var(--text-muted)]", tile: "border-[var(--border-strong)] bg-[var(--surface-2)]", glow: "transparent", ring: "var(--accent)", pct: 85,
   },
   {
     icon: BrainCircuit, value: "500+", num: 500, suffix: "+", title: "JEE / NEET Topics",
     subtitle: "Mapped chapter-wise syllabus",
-    icon_color: "text-violet-300", tile: "from-violet-400/20 to-violet-500/5 border-violet-400/30", glow: "rgba(155,93,229,0.25)", ring: "#9B5DE5", pct: 75,
+    icon_color: "text-[var(--text-muted)]", tile: "border-[var(--border-strong)] bg-[var(--surface-2)]", glow: "transparent", ring: "var(--accent)", pct: 75,
   },
   {
     icon: Trophy, value: "200+", num: 200, suffix: "+", title: "Olympiad Problems",
     subtitle: "National & International level",
-    icon_color: "text-cyan-300", tile: "from-cyan-400/20 to-cyan-500/5 border-cyan-400/30", glow: "rgba(34,211,238,0.25)", ring: "#00BBF9", pct: 65,
+    icon_color: "text-[var(--text-muted)]", tile: "border-[var(--border-strong)] bg-[var(--surface-2)]", glow: "transparent", ring: "var(--accent)", pct: 65,
   },
   {
     icon: Clock3, value: "24×7", num: 24, suffix: "×7", title: "AI Learning",
     subtitle: "Instant chemistry assistance",
-    icon_color: "text-violet-300", tile: "from-violet-400/20 to-violet-500/5 border-violet-400/30", glow: "rgba(155,93,229,0.25)", ring: "#9B5DE5", pct: 100,
+    icon_color: "text-[var(--text-muted)]", tile: "border-[var(--border-strong)] bg-[var(--surface-2)]", glow: "transparent", ring: "var(--accent)", pct: 100,
   },
 ];
 
@@ -76,11 +76,11 @@ export default function Stats() {
           return (
             <div
               key={item.title}
-              className="group relative overflow-hidden rounded-3xl border border-white/15 bg-gradient-to-b from-white/[0.08] to-white/[0.02] p-7 backdrop-blur-2xl transition-all duration-500 hover:-translate-y-2 hover:border-white/30 hover:shadow-[0_20px_40px_rgba(0,0,0,0.6)]"
+              className="group relative overflow-hidden rounded-[var(--radius)] border border-white/15 bg-[var(--surface)] [0.08] to-white/[0.02] p-7 transition-all duration-500 hover:-translate-y-2 hover:border-white/30 hover:shadow-[0_20px_40px_rgba(0,0,0,0.6)]"
               style={{ boxShadow: `0 10px 30px -10px ${item.glow}` }}
             >
               {/* Glossy top reflection highlight */}
-              <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/30 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+              <div className="absolute inset-x-0 top-0 h-px bg-[var(--surface)] opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
               <div className="absolute -right-12 -top-12 h-32 w-32 rounded-full blur-2xl opacity-20 transition-transform duration-500 group-hover:scale-150" style={{ background: item.ring }} />
 
               {/* Glossy icon tile with animated progress ring */}
@@ -97,7 +97,7 @@ export default function Stats() {
                   />
                 </svg>
                 <div
-                  className={`flex h-12 w-12 items-center justify-center rounded-2xl border bg-gradient-to-br ${item.tile}`}
+                  className={`flex h-12 w-12 items-center justify-center rounded-[var(--radius)] border `}
                   style={{ boxShadow: `0 6px 20px ${item.glow}, inset 0 1px 0 rgba(255,255,255,0.2)` }}
                 >
                   <Icon className={`h-6 w-6 ${item.icon_color} transition-transform duration-300 group-hover:scale-110`} />

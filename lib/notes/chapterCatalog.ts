@@ -242,9 +242,9 @@ export const AUTHORED_COURSES: AuthoredCourse[] = [
     syllabusId: "s-block-elements",
     title: "S-block Elements",
     href: "/learn/jee-advanced/inorganic-chemistry/s-block",
-    lessonLabel: "20 sections",
+    lessonLabel: "27 sections",
     premium: true,
-    description: "JEE Advanced integrated master textbook for Groups 1 and 2: periodic trends, lithium and beryllium anomalies, diagonal relationships, hydrides, halides, oxoanion salts, liquid ammonia solutions, crown ethers, sodium and calcium industrial chemistry, and biological roles.",
+    description: "JEE Advanced integrated master textbook for Groups 1 and 2: periodic trends, lithium and beryllium anomalies, diagonal relationships, hydrides, halides, oxoanion salts, liquid ammonia solutions, crown ethers, organolithium and Grignard chemistry, sodium and calcium industrial chemistry, complexometric water hardness, and biological roles.",
   },
   // ── D-block Elements ──────────────────────────────────────────────────────
   {

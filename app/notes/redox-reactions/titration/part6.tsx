@@ -129,10 +129,10 @@ export default function TitrationPart6() {
           <div className="grid gap-4 md:grid-cols-2">
             <DiagramBox title="Soap molecule">
               <div className="mx-auto flex max-w-md items-center justify-center gap-4">
-                <div className="h-10 w-40 rounded-full border-2 border-slate-700 bg-slate-900/30">
+                <div className="h-10 w-40 rounded-full border-2 border-[var(--border-strong)] bg-[var(--surface)]/30">
                   <div className="mt-2 text-sm font-semibold">zig-zag hydrocarbon chain</div>
                 </div>
-                <div className="rounded-full border-2 border-blue-500/30 bg-slate-950/40 px-4 py-3 font-bold">
+                <div className="rounded-full border-2 border-blue-500/30 bg-[var(--background)]/40 px-4 py-3 font-bold">
                   COO<sup>-</sup>
                 </div>
                 <div className="text-2xl font-black">—</div>
@@ -146,7 +146,7 @@ export default function TitrationPart6() {
             </DiagramBox>
 
             <DiagramBox title="Soap at water surface">
-              <div className="mx-auto h-40 max-w-sm rounded-xl border-2 border-blue-500/30 bg-slate-950/40 p-3">
+              <div className="mx-auto h-40 max-w-sm rounded-xl border-2 border-blue-500/30 bg-[var(--background)]/40 p-3">
                 <div className="h-16 border-b border-blue-400">
                   <div className="flex justify-around pt-3 text-pink-600">
                     <span>⊖</span>
@@ -172,7 +172,7 @@ export default function TitrationPart6() {
                 {Array.from({ length: 12 }).map((_, index) => (
                   <span
                     key={index}
-                    className="absolute rounded-full bg-slate-800/80 px-2 py-1 text-pink-600 shadow-sm"
+                    className="absolute rounded-full bg-[var(--surface-2)]/80 px-2 py-1 text-pink-600 shadow-sm"
                     style={{
                       left: `${50 + 42 * Math.cos((index * Math.PI) / 6)}%`,
                       top: `${50 + 42 * Math.sin((index * Math.PI) / 6)}%`,
@@ -189,13 +189,13 @@ export default function TitrationPart6() {
                   <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 font-bold text-pink-700">
                     oil
                   </div>
-                  <span className="absolute right-0 top-1/2 rounded-full bg-slate-800/80 px-2 py-1 text-pink-600">
+                  <span className="absolute right-0 top-1/2 rounded-full bg-[var(--surface-2)]/80 px-2 py-1 text-pink-600">
                     ⊖
                   </span>
-                  <span className="absolute left-3 top-5 rounded-full bg-slate-800/80 px-2 py-1 text-pink-600">
+                  <span className="absolute left-3 top-5 rounded-full bg-[var(--surface-2)]/80 px-2 py-1 text-pink-600">
                     ⊖
                   </span>
-                  <span className="absolute bottom-3 left-1/2 rounded-full bg-slate-800/80 px-2 py-1 text-pink-600">
+                  <span className="absolute bottom-3 left-1/2 rounded-full bg-[var(--surface-2)]/80 px-2 py-1 text-pink-600">
                     ⊖
                   </span>
                 </div>
@@ -206,13 +206,13 @@ export default function TitrationPart6() {
                   <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 font-bold text-pink-700">
                     oil
                   </div>
-                  <span className="absolute right-0 top-1/2 rounded-full bg-slate-800/80 px-2 py-1 text-pink-600">
+                  <span className="absolute right-0 top-1/2 rounded-full bg-[var(--surface-2)]/80 px-2 py-1 text-pink-600">
                     ⊖
                   </span>
-                  <span className="absolute left-3 top-5 rounded-full bg-slate-800/80 px-2 py-1 text-pink-600">
+                  <span className="absolute left-3 top-5 rounded-full bg-[var(--surface-2)]/80 px-2 py-1 text-pink-600">
                     ⊖
                   </span>
-                  <span className="absolute bottom-3 left-1/2 rounded-full bg-slate-800/80 px-2 py-1 text-pink-600">
+                  <span className="absolute bottom-3 left-1/2 rounded-full bg-[var(--surface-2)]/80 px-2 py-1 text-pink-600">
                     ⊖
                   </span>
                 </div>

@@ -26,7 +26,7 @@ export default function SavedRevisionList() {
   }, []);
 
   return (
-    <section className="rounded-2xl border border-slate-100 bg-white p-6 shadow-sm">
+    <section className="rounded-2xl border border-[var(--border)] bg-white p-6 shadow-sm">
       <div className="flex items-center justify-between">
         <h2 className="text-2xl font-bold text-slate-800">Saved for Revision</h2>
         {items && items.length > 0 && (
@@ -36,7 +36,7 @@ export default function SavedRevisionList() {
       <p className="mt-1 text-sm text-slate-600">Anything you tapped “Add to Revision” on — PYQs, notes and more.</p>
 
       {items === null ? (
-        <p className="mt-4 text-sm text-slate-400">Loading…</p>
+        <p className="mt-4 text-sm text-[var(--text-muted)]">Loading…</p>
       ) : items.length === 0 ? (
         <p className="mt-4 text-sm text-slate-600">
           Nothing saved yet — tap <span className="font-semibold text-amber-700">Add to Revision</span> on any question in the{" "}
@@ -55,7 +55,7 @@ export default function SavedRevisionList() {
               </Link>
               <button
                 onClick={() => removeRevision(it.id)}
-                className="shrink-0 text-xs font-semibold text-slate-400 transition hover:text-rose-500"
+                className="shrink-0 text-xs font-semibold text-[var(--text-muted)] transition hover:text-rose-500"
                 aria-label={`Remove ${it.title}`}
               >
                 Remove

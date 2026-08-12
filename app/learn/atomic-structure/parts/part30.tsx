@@ -39,7 +39,7 @@ export default function Part30() {
           <FormulaLine math="(n+l):\ 1s=1;\ 2s=2;\ 2p,3s=3;\ 3p,4s=4;\ 3d,4p,5s=5;\ 4d,5p,6s=6;\ 4f,5d,6p,7s=7;\ 5f,6d,7p=8" />
           <DiagramBox title="Aufbau diagonal filling chart">
             <AufbauFillingVisual />
-            <p className="mt-3 text-sm text-slate-300">
+            <p className="mt-3 text-sm text-[var(--text-body)]">
               Red diagonal arrows sweep through equal-<MathText math="(n+l)" /> groups from top to bottom.
               Within a group, lower n fills first. This generates the filling sequence above.
             </p>
@@ -69,7 +69,7 @@ export default function Part30() {
         </NoteBlock>
 
         <FormulaCard label="Degeneracy in hydrogen (single electron)">
-          <p className="mb-3 text-sm text-slate-200">
+          <p className="mb-3 text-sm text-[var(--foreground)]">
             Degenerate orbitals are orbitals of the same energy. For hydrogen, all orbitals within a shell are
             degenerate:
           </p>

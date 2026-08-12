@@ -51,7 +51,7 @@ function DeckProgress({ cards, progress }: { cards: RecallCard[]; progress: Save
 function CardPalette({ cards, current, progress, sessionResults, onJump, onClose }: { cards: RecallCard[]; current: number; progress: SavedProgress; sessionResults: Record<string, CardResult>; onJump: (index: number) => void; onClose: () => void }) {
   return (
     <div className="fixed inset-0 z-50 flex items-end bg-black/65 p-0 sm:items-center sm:justify-center sm:p-6" onMouseDown={(event: ReactMouseEvent<HTMLDivElement>) => { if (event.currentTarget === event.target) onClose(); }}>
-      <div className="max-h-[82vh] w-full overflow-y-auto rounded-t-3xl border border-white/10 bg-[#111827] p-5 shadow-2xl sm:max-w-xl sm:rounded-3xl">
+      <div className="max-h-[82vh] w-full overflow-y-auto rounded-t-3xl border border-white/10 bg-[var(--surface)] p-5 shadow-2xl sm:max-w-xl sm:rounded-3xl">
         <div className="flex items-center justify-between"><div><h3 className="font-black text-white">All cards</h3><p className="mt-1 text-xs text-white/40">Jump directly to any card.</p></div><button type="button" onClick={onClose} className="rounded-lg border border-white/10 px-3 py-1.5 text-sm text-white/60">Close</button></div>
         <div className="mt-4 grid grid-cols-6 gap-2 sm:grid-cols-10">
           {cards.map((card, index) => {
@@ -178,12 +178,12 @@ export default function RecallDecksExperience() {
           </div>
         </div>
 
-        <div className="rounded-2xl border border-white/[0.08] bg-[#111827] p-4">
+        <div className="rounded-2xl border border-white/[0.08] bg-[var(--surface)] p-4">
           <div className="flex items-center justify-between text-xs text-white/45"><span>Got: <strong className="text-emerald-300">{gotThisSession}</strong> · Practice: <strong className="text-rose-300">{practiseThisSession}</strong></span><span>{current + 1}/{sessionCards.length}</span></div>
           <div className="mt-3 h-1.5 overflow-hidden rounded-full bg-white/[0.07]"><div className="h-full rounded-full bg-cyan-400" style={{ width: `${percentage}%` }} /></div>
         </div>
 
-        <button type="button" onClick={() => { if (!flipped) setFlipped(true); }} className="block min-h-[360px] w-full rounded-3xl border border-white/[0.1] bg-[#111827] p-6 text-left shadow-2xl shadow-black/20 transition hover:border-cyan-400/25 sm:min-h-[430px] sm:p-10">
+        <button type="button" onClick={() => { if (!flipped) setFlipped(true); }} className="block min-h-[360px] w-full rounded-3xl border border-white/[0.1] bg-[var(--surface)] p-6 text-left shadow-2xl shadow-black/20 transition hover:border-cyan-400/25 sm:min-h-[430px] sm:p-10">
           <div className="flex flex-wrap items-center justify-between gap-2">
             <span className="rounded-full border border-cyan-400/20 bg-cyan-500/10 px-3 py-1 text-[11px] font-bold text-cyan-300">{RECALL_DECKS.find((deck) => deck.key === card.deck)?.title}</span>
             <span className="text-[11px] text-white/35">{card.chapter}{card.important ? " · Important" : ""}</span>
@@ -220,8 +220,8 @@ export default function RecallDecksExperience() {
       </header>
 
       <div className="grid gap-3 sm:grid-cols-[minmax(0,1fr)_auto]">
-        <label className="relative"><span className="pointer-events-none absolute left-4 top-3.5 text-white/30">⌕</span><input value={search} onChange={(event: ChangeEvent<HTMLInputElement>) => setSearch(event.target.value)} placeholder="Search cards, chapters, reagents or reactions…" className="w-full rounded-xl border border-white/10 bg-[#111827] py-3 pl-10 pr-4 text-sm text-white outline-none placeholder:text-white/25 focus:border-cyan-300/50" /></label>
-        <label className="flex items-center justify-center gap-2 rounded-xl border border-white/10 bg-[#111827] px-4 py-3 text-sm font-bold text-white/60"><input type="checkbox" checked={importantOnly} onChange={(event: ChangeEvent<HTMLInputElement>) => setImportantOnly(event.target.checked)} className="accent-amber-400" /> Important only</label>
+        <label className="relative"><span className="pointer-events-none absolute left-4 top-3.5 text-white/30">⌕</span><input value={search} onChange={(event: ChangeEvent<HTMLInputElement>) => setSearch(event.target.value)} placeholder="Search cards, chapters, reagents or reactions…" className="w-full rounded-xl border border-white/10 bg-[var(--surface)] py-3 pl-10 pr-4 text-sm text-white outline-none placeholder:text-white/25 focus:border-cyan-300/50" /></label>
+        <label className="flex items-center justify-center gap-2 rounded-xl border border-white/10 bg-[var(--surface)] px-4 py-3 text-sm font-bold text-white/60"><input type="checkbox" checked={importantOnly} onChange={(event: ChangeEvent<HTMLInputElement>) => setImportantOnly(event.target.checked)} className="accent-amber-400" /> Important only</label>
       </div>
 
       {search.trim() ? (
@@ -229,7 +229,7 @@ export default function RecallDecksExperience() {
           <div className="mb-3 flex items-center justify-between"><h2 className="font-black text-white">Search results</h2><span className="text-xs text-white/35">{searchMatches.length} shown</span></div>
           {searchMatches.length === 0 ? <div className="rounded-2xl border border-dashed border-white/10 p-8 text-center text-sm text-white/45">No matching recall cards.</div> : (
             <div className="grid gap-2 md:grid-cols-2">
-              {searchMatches.map((card) => <button type="button" key={card.id} onClick={() => startCards([card, ...ALL_RECALL_CARDS.filter((item) => item.deck === card.deck && item.id !== card.id)])} className="rounded-xl border border-white/[0.08] bg-[#111827] p-4 text-left transition hover:border-cyan-400/30"><p className="text-xs font-bold text-cyan-300">{card.chapter}</p><div className="mt-2 line-clamp-2 text-sm font-semibold leading-6 text-white/75">{renderChemistry(card.front)}</div></button>)}
+              {searchMatches.map((card) => <button type="button" key={card.id} onClick={() => startCards([card, ...ALL_RECALL_CARDS.filter((item) => item.deck === card.deck && item.id !== card.id)])} className="rounded-xl border border-white/[0.08] bg-[var(--surface)] p-4 text-left transition hover:border-cyan-400/30"><p className="text-xs font-bold text-cyan-300">{card.chapter}</p><div className="mt-2 line-clamp-2 text-sm font-semibold leading-6 text-white/75">{renderChemistry(card.front)}</div></button>)}
             </div>
           )}
         </section>
@@ -239,7 +239,7 @@ export default function RecallDecksExperience() {
             const cards = ALL_RECALL_CARDS.filter((card) => card.deck === deck.key);
             const visible = importantOnly ? cards.filter((card) => card.important) : cards;
             return (
-              <button type="button" key={deck.key} onClick={() => startDeck(deck.key)} disabled={visible.length === 0} className="rounded-2xl border border-white/[0.08] bg-[#111827] p-5 text-left transition hover:-translate-y-0.5 hover:border-cyan-400/30 disabled:cursor-not-allowed disabled:opacity-45">
+              <button type="button" key={deck.key} onClick={() => startDeck(deck.key)} disabled={visible.length === 0} className="rounded-2xl border border-white/[0.08] bg-[var(--surface)] p-5 text-left transition hover:-translate-y-0.5 hover:border-cyan-400/30 disabled:cursor-not-allowed disabled:opacity-45">
                 <div className="flex items-start justify-between gap-3"><div className="flex items-start gap-3"><span className="flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 bg-white/[0.04] text-lg text-cyan-300">{deck.icon}</span><div><h2 className="font-black text-white">{deck.title}</h2><p className="mt-1 text-xs leading-5 text-white/45">{deck.description}</p></div></div><span className="shrink-0 rounded-full border border-white/10 bg-white/[0.04] px-2.5 py-1 text-[11px] font-bold text-white/50">{visible.length} cards</span></div>
                 <div className="mt-5"><DeckProgress cards={visible} progress={progress} /></div>
               </button>

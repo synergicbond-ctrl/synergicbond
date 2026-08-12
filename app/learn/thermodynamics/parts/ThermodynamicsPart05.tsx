@@ -33,17 +33,17 @@ function Section({
   children: React.ReactNode;
 }) {
   return (
-    <section className="rounded-[2rem] border border-white/10 bg-slate-950/80 p-5 shadow-2xl shadow-black/20 backdrop-blur md:p-8">
+    <section className="rounded-[2rem] border border-white/10 bg-[var(--background)]/80 p-5 shadow-2xl shadow-black/20 backdrop-blur md:p-8">
       <div className="flex items-start gap-4">
         <span className="grid h-10 w-10 shrink-0 place-items-center rounded-2xl border border-cyan-300/30 bg-cyan-300/10 text-sm font-black text-cyan-200">
           {index}
         </span>
         <div>
           <h2 className="text-2xl font-black tracking-tight text-white md:text-3xl">{title}</h2>
-          {subtitle ? <p className="mt-1 text-sm leading-6 text-slate-400">{subtitle}</p> : null}
+          {subtitle ? <p className="mt-1 text-sm leading-6 text-[var(--text-muted)]">{subtitle}</p> : null}
         </div>
       </div>
-      <div className="mt-6 space-y-5 text-[15px] leading-7 text-slate-200 md:text-base">{children}</div>
+      <div className="mt-6 space-y-5 text-[15px] leading-7 text-[var(--foreground)] md:text-base">{children}</div>
     </section>
   );
 }
@@ -61,7 +61,7 @@ function ConceptLens({
     <aside className={`rounded-2xl border p-5 ${toneMap[tone]}`}>
       <p className="text-xs font-black uppercase tracking-[0.2em]">Concept lens</p>
       <h3 className="mt-2 text-lg font-black text-white">{title}</h3>
-      <div className="mt-2 text-sm leading-6 text-slate-200">{children}</div>
+      <div className="mt-2 text-sm leading-6 text-[var(--foreground)]">{children}</div>
     </aside>
   );
 }
@@ -210,7 +210,7 @@ function DerivativeToolkit() {
           <div className="mt-4 overflow-x-auto rounded-xl bg-black/25 p-3 text-center font-mono font-black text-white">
             {tool.formula}
           </div>
-          <p className="mt-3 text-sm leading-6 text-slate-200">{tool.explanation}</p>
+          <p className="mt-3 text-sm leading-6 text-[var(--foreground)]">{tool.explanation}</p>
         </article>
       ))}
     </div>
@@ -250,8 +250,8 @@ function CoefficientCard({
         {definition}
       </div>
 
-      <p className="mt-4 text-sm leading-6 text-slate-200">{interpretation}</p>
-      <p className="mt-3 text-xs font-bold uppercase tracking-[0.14em] text-slate-300">Typical sign: {sign}</p>
+      <p className="mt-4 text-sm leading-6 text-[var(--foreground)]">{interpretation}</p>
+      <p className="mt-3 text-xs font-bold uppercase tracking-[0.14em] text-[var(--text-body)]">Typical sign: {sign}</p>
     </article>
   );
 }
@@ -397,7 +397,7 @@ function DailyLifeGrid() {
       {dailyLifeExamples.map((example) => (
         <article key={example.title} className={`rounded-3xl border p-5 ${toneMap[example.tone]}`}>
           <h3 className="text-xl font-black text-white">{example.title}</h3>
-          <p className="mt-2 text-sm leading-6 text-slate-200">{example.text}</p>
+          <p className="mt-2 text-sm leading-6 text-[var(--foreground)]">{example.text}</p>
         </article>
       ))}
     </div>
@@ -467,15 +467,15 @@ function ProblemLadder() {
   return (
     <div className="grid gap-4 lg:grid-cols-2">
       {problems.map((item) => (
-        <article key={item.title} className="group rounded-2xl border border-white/10 bg-slate-900/70 p-5">
+        <article key={item.title} className="group rounded-2xl border border-white/10 bg-[var(--surface)]/70 p-5">
           <h3 className=" font-black text-white">
             <span className="mr-2 text-amber-300">◆</span>
             {item.title}
           </h3>
-          <p className="mt-4 leading-7 text-slate-200">{item.question}</p>
+          <p className="mt-4 leading-7 text-[var(--foreground)]">{item.question}</p>
           <div className="mt-4 rounded-xl border border-emerald-300/20 bg-emerald-300/[0.06] p-4">
             <p className="text-xs font-black uppercase tracking-[0.2em] text-emerald-300">Solution</p>
-            <p className="mt-2 text-sm leading-6 text-slate-200">{item.solution}</p>
+            <p className="mt-2 text-sm leading-6 text-[var(--foreground)]">{item.solution}</p>
           </div>
         </article>
       ))}
@@ -520,21 +520,21 @@ function TrapTable() {
   return (
     <div className="overflow-x-auto rounded-2xl border border-white/10">
       <table className="min-w-full border-collapse text-left text-sm">
-        <thead className="bg-slate-900">
+        <thead className="bg-[var(--surface)]">
           <tr>
             <th className="px-4 py-3 font-black text-white">Tempting statement</th>
             <th className="px-4 py-3 font-black text-white">Verdict</th>
             <th className="px-4 py-3 font-black text-white">Correction</th>
           </tr>
         </thead>
-        <tbody className="divide-y divide-white/10 bg-slate-950/70">
+        <tbody className="divide-y divide-white/10 bg-[var(--background)]/70">
           {traps.map(([statement, verdict, correction]) => (
             <tr key={statement}>
               <td className="px-4 py-3 font-semibold text-slate-100">{statement}</td>
               <td className="px-4 py-3">
                 <span className="rounded-full bg-rose-400/15 px-3 py-1 text-xs font-black text-rose-300">{verdict}</span>
               </td>
-              <td className="px-4 py-3 leading-6 text-slate-300">{correction}</td>
+              <td className="px-4 py-3 leading-6 text-[var(--text-body)]">{correction}</td>
             </tr>
           ))}
         </tbody>
@@ -566,7 +566,7 @@ export default function ThermodynamicsPart05() {
               <h1 className="mt-4 max-w-4xl text-4xl font-black tracking-[-0.045em] text-white md:text-6xl">
                 How strongly does a system respond?
               </h1>
-              <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-300">
+              <p className="mt-6 max-w-3xl text-lg leading-8 text-[var(--text-body)]">
                 Thermodynamic response coefficients convert qualitative ideas—expansion, compression, pressure rise—
                 into measurable constrained derivatives.
               </p>
@@ -579,15 +579,15 @@ export default function ThermodynamicsPart05() {
               <div className="mt-4 space-y-3">
                 <div className="rounded-xl bg-amber-400/10 p-4">
                   <p className="font-black text-amber-200">α</p>
-                  <p className="mt-1 text-sm text-slate-300">fractional volume change per kelvin at constant pressure</p>
+                  <p className="mt-1 text-sm text-[var(--text-body)]">fractional volume change per kelvin at constant pressure</p>
                 </div>
                 <div className="rounded-xl bg-cyan-400/10 p-4">
                   <p className="font-black text-cyan-200">κT</p>
-                  <p className="mt-1 text-sm text-slate-300">fractional compression per pascal at constant temperature</p>
+                  <p className="mt-1 text-sm text-[var(--text-body)]">fractional compression per pascal at constant temperature</p>
                 </div>
                 <div className="rounded-xl bg-violet-400/10 p-4">
                   <p className="font-black text-violet-200">(∂P/∂T)V</p>
-                  <p className="mt-1 text-sm text-slate-300">pressure rise per kelvin at fixed volume</p>
+                  <p className="mt-1 text-sm text-[var(--text-body)]">pressure rise per kelvin at fixed volume</p>
                 </div>
               </div>
             </div>
@@ -913,7 +913,7 @@ export default function ThermodynamicsPart05() {
             ].map(([term, meaning]) => (
               <div key={term} className="rounded-2xl border border-white/10 bg-black/25 p-4">
                 <p className="font-black text-white">{term}</p>
-                <p className="mt-1 text-sm leading-6 text-slate-300">{meaning}</p>
+                <p className="mt-1 text-sm leading-6 text-[var(--text-body)]">{meaning}</p>
               </div>
             ))}
           </div>

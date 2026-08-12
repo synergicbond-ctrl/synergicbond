@@ -24,8 +24,8 @@ export default async function BoardPage({ params }: { params: Promise<{ board: s
   const purchasedHere = purchased.filter((p) => p.board === b.slug).map((p) => p.class);
 
   return (
-    <main className="min-h-screen bg-[#0B1220] text-white">
-      <div className="border-b border-white/10 bg-gradient-to-b from-amber-950/20 to-[#0B1220] px-6 py-12">
+    <main className="min-h-screen bg-[var(--background)] text-white">
+      <div className="border-b border-white/10 bg-gradient-to-b from-amber-950/20 to-[#0b0f10] px-6 py-12">
         <div className="mx-auto max-w-5xl">
           <nav className="mb-4 text-sm text-white/45">
             <Link href="/dashboard/boards" className="hover:text-white">School Boards</Link>

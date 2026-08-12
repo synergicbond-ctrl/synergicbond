@@ -139,7 +139,7 @@ export default function MyProgramsGrid({ activeKeys, isPro }: MyProgramsGridProp
   }
 
   return (
-    <div className="rounded-3xl border border-white/10 bg-[#111827] p-6 space-y-5">
+    <div className="rounded-3xl border border-white/10 bg-[var(--surface)] p-6 space-y-5">
       <div className="flex items-center justify-between">
         <div>
           <h3 className="text-xl font-black text-white flex items-center gap-2">

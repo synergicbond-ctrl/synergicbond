@@ -50,7 +50,7 @@ type ChapterSectionProps = {
 };
 
 const toneClass: Record<CardTone, string> = {
-  navy: "border-slate-700/80 bg-slate-950/70",
+  navy: "border-[var(--border-strong)]/80 bg-[var(--background)]/70",
   cyan: "border-cyan-400/25 bg-cyan-400/[0.055]",
   violet: "border-violet-400/25 bg-violet-400/[0.055]",
   amber: "border-amber-400/25 bg-amber-400/[0.055]",
@@ -59,7 +59,7 @@ const toneClass: Record<CardTone, string> = {
 };
 
 const badgeClass: Record<CardTone, string> = {
-  navy: "border-slate-600 bg-slate-900 text-slate-300",
+  navy: "border-slate-600 bg-[var(--surface)] text-[var(--text-body)]",
   cyan: "border-cyan-400/25 bg-cyan-400/10 text-cyan-200",
   violet: "border-violet-400/25 bg-violet-400/10 text-violet-200",
   amber: "border-amber-400/25 bg-amber-400/10 text-amber-200",
@@ -84,7 +84,7 @@ function ConceptCard({ title, tone = "navy", eyebrow, children }: ConceptCardPro
         </div>
       ) : null}
       <h3 className="text-lg font-semibold tracking-tight text-white sm:text-xl">{title}</h3>
-      <div className="mt-3 space-y-3 text-[15px] leading-7 text-slate-300">{children}</div>
+      <div className="mt-3 space-y-3 text-[15px] leading-7 text-[var(--text-body)]">{children}</div>
     </article>
   );
 }
@@ -94,7 +94,7 @@ function FormulaCard({ title, children, note }: { title: string; children: React
     <div className="overflow-hidden rounded-3xl border border-cyan-300/20 bg-gradient-to-br from-cyan-300/[0.08] via-slate-950/80 to-violet-400/[0.08] shadow-[0_24px_80px_-48px_rgba(34,211,238,0.5)]">
       <div className="border-b border-white/10 px-5 py-3 text-xs font-bold uppercase tracking-[0.18em] text-cyan-200">{title}</div>
       <div className="formula-scroll overflow-x-auto px-4 py-5 text-slate-100 sm:px-6">{children}</div>
-      {note ? <div className="border-t border-white/10 px-5 py-3 text-sm leading-6 text-slate-400">{note}</div> : null}
+      {note ? <div className="border-t border-white/10 px-5 py-3 text-sm leading-6 text-[var(--text-muted)]">{note}</div> : null}
     </div>
   );
 }
@@ -121,10 +121,10 @@ function DataTable({ headers, rows }: { headers: ReactNode[]; rows: ReactNode[][
   return (
     <div className="overflow-x-auto rounded-2xl border border-white/10">
       <table className="min-w-full border-collapse text-left text-sm">
-        <thead className="bg-white/[0.055] text-slate-200">
+        <thead className="bg-white/[0.055] text-[var(--foreground)]">
           <tr>{headers.map((header, i) => <th key={i} className="border-b border-white/10 px-4 py-3 font-semibold">{header}</th>)}</tr>
         </thead>
-        <tbody className="divide-y divide-white/[0.075] text-slate-300">
+        <tbody className="divide-y divide-white/[0.075] text-[var(--text-body)]">
           {rows.map((row, r) => (
             <tr key={r} className="transition hover:bg-white/[0.025]">
               {row.map((cell, c) => <td key={c} className="px-4 py-3 align-top">{cell}</td>)}
@@ -138,10 +138,10 @@ function DataTable({ headers, rows }: { headers: ReactNode[]; rows: ReactNode[][
 
 function FigureFrame({ title, caption, children }: { title: string; caption: ReactNode; children: ReactNode }) {
   return (
-    <figure className="overflow-hidden rounded-3xl border border-white/10 bg-slate-950/75">
-      <div className="border-b border-white/10 px-5 py-3 text-sm font-semibold text-slate-200">{title}</div>
+    <figure className="overflow-hidden rounded-3xl border border-white/10 bg-[var(--background)]/75">
+      <div className="border-b border-white/10 px-5 py-3 text-sm font-semibold text-[var(--foreground)]">{title}</div>
       <div className="overflow-x-auto p-3 sm:p-5">{children}</div>
-      <figcaption className="border-t border-white/10 px-5 py-3 text-sm leading-6 text-slate-400">{caption}</figcaption>
+      <figcaption className="border-t border-white/10 px-5 py-3 text-sm leading-6 text-[var(--text-muted)]">{caption}</figcaption>
     </figure>
   );
 }
@@ -158,10 +158,10 @@ function DipoleStructureFigure({ id }: { id: string }) {
 
   return (
     <figure
-      className={`mx-auto w-full overflow-hidden rounded-3xl border border-white/10 bg-slate-950/75 ${structureSizeClass[entry.size ?? "md"]}`}
+      className={`mx-auto w-full overflow-hidden rounded-3xl border border-white/10 bg-[var(--background)]/75 ${structureSizeClass[entry.size ?? "md"]}`}
     >
       <div className="p-3 sm:p-5" dangerouslySetInnerHTML={{ __html: entry.svg }} />
-      <figcaption className="border-t border-white/10 px-5 py-3 text-sm leading-6 text-slate-400">{entry.caption}</figcaption>
+      <figcaption className="border-t border-white/10 px-5 py-3 text-sm leading-6 text-[var(--text-muted)]">{entry.caption}</figcaption>
     </figure>
   );
 }
@@ -176,7 +176,7 @@ function ChapterSection({ id, index, eyebrow, title, intro, children }: ChapterS
           <h2 className="mt-2 bg-gradient-to-r from-[#67e4ef] via-[#92baff] to-[#c6a6f7] bg-clip-text text-3xl font-bold tracking-[-0.035em] text-transparent sm:text-4xl">
             {title}
           </h2>
-          <div className="mt-4 max-w-4xl text-base leading-8 text-slate-300">{intro}</div>
+          <div className="mt-4 max-w-4xl text-base leading-8 text-[var(--text-body)]">{intro}</div>
         </div>
       </div>
       <div className="space-y-6">{children}</div>
@@ -206,24 +206,24 @@ function WorkedExample({ number, title, difficulty = "JEE Advanced", concept, qu
       : "border-violet-400/25 bg-violet-400/10 text-violet-100";
 
   return (
-    <details className="group overflow-hidden rounded-3xl border border-white/10 bg-slate-950/70 shadow-[0_24px_100px_-60px_rgba(139,92,246,0.8)]" open={number <= 1}>
+    <details className="group overflow-hidden rounded-3xl border border-white/10 bg-[var(--background)]/70 shadow-[0_24px_100px_-60px_rgba(139,92,246,0.8)]" open={number <= 1}>
       <summary className="cursor-pointer list-none px-5 py-5 transition hover:bg-white/[0.025] sm:px-6">
         <div className="flex flex-wrap items-start justify-between gap-4">
           <div className="flex min-w-0 gap-4">
             <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl border border-violet-300/20 bg-violet-400/10 font-bold text-violet-200">{number}</div>
             <div>
               <h3 className="text-lg font-semibold text-white sm:text-xl">{title}</h3>
-              <p className="mt-1 text-sm leading-6 text-slate-400">{concept}</p>
+              <p className="mt-1 text-sm leading-6 text-[var(--text-muted)]">{concept}</p>
             </div>
           </div>
           <span className={`rounded-full border px-3 py-1 text-xs font-bold ${difficultyClass}`}>{difficulty}</span>
         </div>
-        <div className="mt-4 text-[15px] leading-7 text-slate-200">{question}</div>
+        <div className="mt-4 text-[15px] leading-7 text-[var(--foreground)]">{question}</div>
         <div className="mt-3 text-xs font-bold uppercase tracking-[0.16em] text-cyan-300 group-open:hidden">Open full solution</div>
       </summary>
       <div className="border-t border-white/10 px-5 py-5 sm:px-6">
         <div className="mb-3 text-xs font-black uppercase tracking-[0.18em] text-violet-300">Solution</div>
-        <div className="space-y-3 text-[15px] leading-7 text-slate-300">{solution}</div>
+        <div className="space-y-3 text-[15px] leading-7 text-[var(--text-body)]">{solution}</div>
         <div className="mt-5 rounded-2xl border border-emerald-400/25 bg-emerald-400/[0.065] px-4 py-3 text-[15px] leading-7 text-emerald-100">
           <span className="mr-2 font-black uppercase tracking-[0.14em] text-emerald-300">Answer</span>
           {answer}
@@ -283,11 +283,11 @@ function PartShell({
               <h1 className="mt-5 bg-gradient-to-r from-[#68e2ed] via-[#8fb9f5] to-[#c2a5f3] bg-clip-text text-4xl font-black tracking-[-0.045em] text-transparent sm:text-5xl lg:text-6xl">
                 {title}
               </h1>
-              <p className="mt-4 max-w-4xl text-base leading-8 text-slate-300 sm:text-lg">{description}</p>
+              <p className="mt-4 max-w-4xl text-base leading-8 text-[var(--text-body)] sm:text-lg">{description}</p>
             </div>
             <div className="rounded-3xl border border-cyan-300/20 bg-cyan-300/[0.055] p-4 text-sm leading-6 text-cyan-50">
               <div className="font-semibold text-cyan-200">Dipole Moment</div>
-              <div className="mt-1 text-slate-300">Chemical Bonding · JEE Advanced</div>
+              <div className="mt-1 text-[var(--text-body)]">Chemical Bonding · JEE Advanced</div>
             </div>
           </div>
         </div>
@@ -303,7 +303,7 @@ function PartShell({
               title={item.title}
               className={item.part === part
                 ? "rounded-full border border-cyan-300/35 bg-cyan-300/15 px-3 py-1.5 text-xs font-bold text-cyan-100"
-                : "rounded-full border border-white/10 bg-slate-900/80 px-3 py-1.5 text-xs text-slate-400 transition hover:text-white"}
+                : "rounded-full border border-white/10 bg-[var(--surface)]/80 px-3 py-1.5 text-xs text-[var(--text-muted)] transition hover:text-white"}
             >
               {String(item.part).padStart(2, "0")}
             </a>
@@ -316,7 +316,7 @@ function PartShell({
 
         <div className="part-navigation mt-14 grid gap-4 border-t border-white/10 pt-8 sm:grid-cols-2">
           {previous ? (
-            <a href={`/learn/jee-advanced/chemical-bonding/dipole-moment/parts/${previous.slug}`} className="rounded-3xl border border-white/10 bg-slate-950/70 p-5 transition hover:border-cyan-300/25 hover:bg-white/[0.035]">
+            <a href={`/learn/jee-advanced/chemical-bonding/dipole-moment/parts/${previous.slug}`} className="rounded-3xl border border-white/10 bg-[var(--background)]/70 p-5 transition hover:border-cyan-300/25 hover:bg-white/[0.035]">
               <div className="text-xs font-bold uppercase tracking-[0.16em] text-slate-500">Previous part</div>
               <div className="mt-2 font-semibold text-white">{String(previous.part).padStart(2, "0")} · {previous.title}</div>
             </a>

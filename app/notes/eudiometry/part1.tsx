@@ -5,21 +5,21 @@ import { InlineMath, BlockMath } from "@/components/math/react-katex";
 
 /* Clean UI Cards & Boxes for Student-Facing Course Lesson */
 const ConceptCard = ({ title, children }: { title: string; children: React.ReactNode }) => (
-  <div className="my-6 rounded-2xl border border-cyan-400/30 bg-slate-900/90 p-6 shadow-xl">
-    <h3 className="border-b border-slate-800 pb-3 text-lg font-bold text-cyan-300">{title}</h3>
-    <div className="mt-4 space-y-3 text-sm leading-relaxed text-slate-200">{children}</div>
+  <div className="my-6 rounded-2xl border border-cyan-400/30 bg-[var(--surface)]/90 p-6 shadow-xl">
+    <h3 className="border-b border-[var(--border)] pb-3 text-lg font-bold text-cyan-300">{title}</h3>
+    <div className="mt-4 space-y-3 text-sm leading-relaxed text-[var(--foreground)]">{children}</div>
   </div>
 );
 
 const FormulaBox = ({ title, formula, description }: { title: string; formula: string; description?: string }) => (
-  <div className="my-6 rounded-2xl border border-amber-400/30 bg-slate-950 p-6 shadow-lg text-center space-y-3">
+  <div className="my-6 rounded-2xl border border-amber-400/30 bg-[var(--background)] p-6 shadow-lg text-center space-y-3">
     <span className="rounded-full bg-amber-500/20 px-3 py-1 text-xs font-bold uppercase tracking-widest text-amber-300">
       {title}
     </span>
     <div className="overflow-x-auto py-2">
       <BlockMath math={formula} />
     </div>
-    {description && <p className="text-xs text-slate-400 font-sans">{description}</p>}
+    {description && <p className="text-xs text-[var(--text-muted)] font-sans">{description}</p>}
   </div>
 );
 
@@ -35,14 +35,14 @@ const WorkedExample = ({
   result: React.ReactNode;
 }) => (
   <div className="my-8 rounded-3xl border border-rose-400/30 bg-gradient-to-b from-slate-900 via-slate-900 to-slate-950 p-6 shadow-2xl md:p-8 space-y-5">
-    <div className="flex items-center justify-between border-b border-slate-800 pb-4">
+    <div className="flex items-center justify-between border-b border-[var(--border)] pb-4">
       <span className="rounded-full bg-rose-500/20 px-3 py-1 text-xs font-bold uppercase tracking-widest text-rose-300">
         Worked Example
       </span>
-      <span className="text-xs font-bold text-slate-400">{title}</span>
+      <span className="text-xs font-bold text-[var(--text-muted)]">{title}</span>
     </div>
     <div className="text-sm font-medium leading-relaxed text-slate-100">{problem}</div>
-    <div className="rounded-2xl border border-slate-800/80 bg-slate-950/80 p-5 space-y-3 font-mono text-xs text-slate-300">
+    <div className="rounded-2xl border border-[var(--border)]/80 bg-[var(--background)]/80 p-5 space-y-3 font-mono text-xs text-[var(--text-body)]">
       {steps}
     </div>
     <div className="rounded-xl border border-emerald-500/30 bg-emerald-500/10 p-4 text-center text-xs font-bold text-emerald-300">
@@ -58,7 +58,7 @@ const StepBox = ({ number, title, children }: { number: number; title: string; c
     </span>
     <div>
       <h4 className="text-xs font-bold text-white mb-1">{title}</h4>
-      <div className="text-xs text-slate-300 leading-relaxed">{children}</div>
+      <div className="text-xs text-[var(--text-body)] leading-relaxed">{children}</div>
     </div>
   </div>
 );
@@ -75,7 +75,7 @@ const CautionBox = ({ title, children }: { title: string; children: React.ReactN
 
 export default function EudiometryPart1() {
   return (
-    <main className="min-h-screen bg-slate-950 px-4 py-8 text-slate-100 md:px-10">
+    <main className="min-h-screen bg-[var(--background)] px-4 py-8 text-slate-100 md:px-10">
       <article className="mx-auto max-w-5xl space-y-10">
         {/* Module Header */}
         <header className="rounded-3xl border border-cyan-400/30 bg-gradient-to-br from-slate-900 via-slate-900 to-slate-950 p-6 shadow-2xl md:p-8">
@@ -83,14 +83,14 @@ export default function EudiometryPart1() {
             <span className="rounded-full bg-cyan-500/20 px-3 py-1 text-xs font-bold uppercase tracking-[0.2em] text-cyan-300">
               Module 1 of 6
             </span>
-            <span className="text-xs font-bold text-slate-400">Synergic Bond Course Lesson</span>
+            <span className="text-xs font-bold text-[var(--text-muted)]">Synergic Bond Course Lesson</span>
           </div>
 
           <h1 className="mt-4 text-3xl font-black text-white md:text-4xl">
             Gas Volume Foundations &amp; Eudiometry Principles
           </h1>
 
-          <p className="mt-3 text-sm leading-relaxed text-slate-300 md:text-base">
+          <p className="mt-3 text-sm leading-relaxed text-[var(--text-body)] md:text-base">
             Introduction to Eudiometry and quantitative gas phase analysis. Explore how Gay-Lussac&apos;s Law of Combining Volumes, Avogadro&apos;s Hypothesis, and Amagat&apos;s Law allow chemists to analyze reacting gaseous mixtures directly in volumetric units without converting to mass or moles.
           </p>
         </header>
@@ -128,7 +128,7 @@ export default function EudiometryPart1() {
               <p>
                 When gases react chemically, they combine in simple, whole-number volumetric ratios, provided that all reactants and gaseous products are measured at identical temperature and pressure.
               </p>
-              <div className="mt-3 rounded-xl bg-slate-950 p-3 border border-slate-800 text-center font-mono text-xs text-amber-300">
+              <div className="mt-3 rounded-xl bg-[var(--background)] p-3 border border-[var(--border)] text-center font-mono text-xs text-amber-300">
                 <BlockMath math={String.raw`V_1 : V_2 : V_3 = n_1 : n_2 : n_3`} />
               </div>
             </ConceptCard>
@@ -137,10 +137,10 @@ export default function EudiometryPart1() {
               <p>
                 Equal volumes of all ideal gases measured under identical conditions of temperature and pressure contain exactly equal numbers of molecules (and moles):
               </p>
-              <div className="mt-3 rounded-xl bg-slate-950 p-3 border border-slate-800 text-center font-mono text-xs text-emerald-300">
+              <div className="mt-3 rounded-xl bg-[var(--background)] p-3 border border-[var(--border)] text-center font-mono text-xs text-emerald-300">
                 <BlockMath math={String.raw`V \propto n \implies V = \left(\frac{RT}{P}\right) n`} />
               </div>
-              <p className="text-xs text-slate-400 mt-1">
+              <p className="text-xs text-[var(--text-muted)] mt-1">
                 Therefore, stoichiometric mole coefficients in balanced equations directly equal gas volume coefficients.
               </p>
             </ConceptCard>
@@ -164,12 +164,12 @@ export default function EudiometryPart1() {
               <p>
                 In eudiometer calculations, the physical volume occupied by solid and liquid products (such as condensed water <InlineMath math="\text{H}_2\text{O (l)}" /> or precipitated salts) is orders of magnitude smaller than the volume occupied by gases.
               </p>
-              <div className="mt-3 rounded-lg bg-slate-950 p-3 border border-slate-800 font-mono text-xs text-cyan-300">
+              <div className="mt-3 rounded-lg bg-[var(--background)] p-3 border border-[var(--border)] font-mono text-xs text-cyan-300">
                 For 1 mole of <InlineMath math="\text{H}_2\text{O}" /> at STP:
                 <br />
                 <InlineMath math="V_{\text{gas}} \approx 22,400\text{ mL}" /> vs <InlineMath math="V_{\text{liquid}} \approx 18\text{ mL}" /> (<InlineMath math="< 0.1\%" />).
               </div>
-              <p className="mt-2 text-xs text-slate-300 font-semibold">
+              <p className="mt-2 text-xs text-[var(--text-body)] font-semibold">
                 Rule: Unless the problem explicitly specifies a temperature above <InlineMath math="100^\circ\text{C}" /> where water remains steam (<InlineMath math="\text{H}_2\text{O (g)}" />), always treat water formed during room-temperature eudiometric explosions as a liquid occupying <InlineMath math="V = 0\text{ mL}" />.
               </p>
             </CautionBox>
@@ -178,7 +178,7 @@ export default function EudiometryPart1() {
               <p>
                 Molecular nitrogen (<InlineMath math="\text{N}_2" />) possesses a very high triple-bond dissociation energy (<InlineMath math="\approx 948\text{ kJ/mol}" />) and remains completely inert during standard hydrocarbon combustion sparks inside glass eudiometer tubes (which would shatter at the extreme temperatures needed to oxidize <InlineMath math="\text{N}_2" />).
               </p>
-              <div className="mt-3 space-y-1 text-xs text-slate-300">
+              <div className="mt-3 space-y-1 text-xs text-[var(--text-body)]">
                 <div className="font-bold text-amber-300">Standard Air Composition by Volume:</div>
                 <ul className="list-disc ml-5 space-y-1">
                   <li>Oxygen (<InlineMath math="\text{O}_2" />): Exactly <InlineMath math="20\%" /> (or <InlineMath math="21\%" /> if specified).</li>
@@ -223,7 +223,7 @@ export default function EudiometryPart1() {
         </section>
 
         {/* Footer info */}
-        <footer className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 text-center text-xs text-slate-400">
+        <footer className="rounded-2xl border border-[var(--border)] bg-[var(--surface)]/60 p-6 text-center text-xs text-[var(--text-muted)]">
           <p>Synergic Bond Eudiometry Module • Module 1: Gas Volume Foundations &amp; Eudiometry Principles</p>
         </footer>
       </article>

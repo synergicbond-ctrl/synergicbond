@@ -27,7 +27,7 @@ export function Part05Content() {
           <FormulaCard title="Arrhenius comparison">
             <KB>{String.raw`k=Ae^{-E_a/RT}`}</KB>
             <KB>{String.raw`\frac{k_{\mathrm{cat}}}{k_{\mathrm{uncat}}}\approx\frac{A_{\mathrm{cat}}}{A_{\mathrm{uncat}}}\exp\left(\frac{E_{a,\mathrm{uncat}}-E_{a,\mathrm{cat}}}{RT}\right)`}</KB>
-            <p className="text-sm leading-6 text-slate-300">Even a modest barrier reduction can produce a very large rate enhancement.</p>
+            <p className="text-sm leading-6 text-[var(--text-body)]">Even a modest barrier reduction can produce a very large rate enhancement.</p>
           </FormulaCard>
           <Card title="Catalyst regeneration" tone="emerald">
             <p>A catalyst is not necessarily absent from the reaction mechanism. It may be consumed in an early step and regenerated later.</p>
@@ -249,7 +249,7 @@ export function Part06Content() {
         <div className="grid gap-5 xl:grid-cols-2">
           <FormulaCard title="General framework composition">
             <KB>{String.raw`M_{x/n}[(AlO_2)_x(SiO_2)_y]\cdot zH_2O`}</KB>
-            <p className="text-sm leading-6 text-slate-300">Substitution of <K>{String.raw`Al^{3+}`}</K> for <K>{String.raw`Si^{4+}`}</K> creates negative framework charge balanced by exchangeable cations or protons.</p>
+            <p className="text-sm leading-6 text-[var(--text-body)]">Substitution of <K>{String.raw`Al^{3+}`}</K> for <K>{String.raw`Si^{4+}`}</K> creates negative framework charge balanced by exchangeable cations or protons.</p>
           </FormulaCard>
           <Card title="Three kinds of shape selectivity" tone="violet">
             <p><b className="text-white">Reactant selectivity:</b> only molecules that fit can enter.</p>

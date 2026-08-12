@@ -27,13 +27,13 @@ export default function DipoleMomentIndexPage() {
             <h1 className="mt-6 max-w-5xl bg-gradient-to-r from-[#68e2ed] via-[#8fb9f5] to-[#c2a5f3] bg-clip-text text-5xl font-black tracking-[-0.05em] text-transparent sm:text-6xl lg:text-7xl">
               Dipole Moment
             </h1>
-            <p className="mt-6 max-w-4xl text-lg leading-9 text-slate-300">
+            <p className="mt-6 max-w-4xl text-lg leading-9 text-[var(--text-body)]">
               A complete textbook chapter on molecular polarity, in four sequential parts: foundation, vector
               addition and percentage ionic character; the six factors that determine every observed moment and the
               classic JEE comparisons built on them; structural and organic applications; and advanced exceptions
               with a full revision-table reference bank.
             </p>
-            <div className="mt-8 flex flex-wrap gap-2 text-sm text-slate-300">
+            <div className="mt-8 flex flex-wrap gap-2 text-sm text-[var(--text-body)]">
               {["4 sequential parts", "30 original chemistry diagrams", "40+ classic JEE comparisons", "Full bond/group/molecular-dipole data banks"].map((item) => (
                 <span key={item} className="rounded-full border border-white/10 bg-white/[0.045] px-3 py-1.5">
                   {item}
@@ -42,7 +42,7 @@ export default function DipoleMomentIndexPage() {
             </div>
 
             <div className="mt-9 border-l-4 border-cyan-300/60 bg-[linear-gradient(90deg,rgba(8,25,39,0.9),rgba(4,10,17,0.2))] px-6 py-5">
-              <p className="text-[17px] leading-[1.7] text-slate-200 sm:text-[18px]">
+              <p className="text-[17px] leading-[1.7] text-[var(--foreground)] sm:text-[18px]">
                 <strong className="text-white">Central idea:</strong> dipole moment is never a single readout of
                 &ldquo;which atom is more electronegative.&rdquo; It is the vector resultant of bond polarity,
                 geometry, lone-pair orientation, group additivity, dative/resonance charge separation and induced
@@ -58,14 +58,14 @@ export default function DipoleMomentIndexPage() {
               <a
                 key={item.part}
                 href={`/learn/jee-advanced/chemical-bonding/dipole-moment/parts/${item.slug}`}
-                className="group rounded-3xl border border-white/10 bg-slate-950/70 p-5 transition hover:-translate-y-0.5 hover:border-cyan-300/25 hover:bg-white/[0.04] sm:p-6"
+                className="group rounded-3xl border border-white/10 bg-[var(--background)]/70 p-5 transition hover:-translate-y-0.5 hover:border-cyan-300/25 hover:bg-white/[0.04] sm:p-6"
               >
                 <div className="flex items-start justify-between gap-4">
                   <span className="font-mono text-sm font-bold text-cyan-300">{String(item.part).padStart(2, "0")}</span>
                   <span className="text-sm text-slate-600 transition group-hover:text-cyan-300">Open →</span>
                 </div>
                 <h2 className="mt-5 text-xl font-semibold tracking-tight text-white">{item.title}</h2>
-                <p className="mt-3 text-sm leading-7 text-slate-400">{item.description}</p>
+                <p className="mt-3 text-sm leading-7 text-[var(--text-muted)]">{item.description}</p>
               </a>
             ))}
           </div>

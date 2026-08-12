@@ -13,7 +13,7 @@ const T = { fontFamily: "ui-sans-serif, system-ui", fill: "rgba(255,255,255,0.85
 const TS = { ...T, fontSize: 11 };
 const TXS = { ...T, fontSize: 9.5, fill: MUTE };
 
-function Atom({ x, y, r = 9, label, fill = "#0B1220" }: { x: number; y: number; r?: number; label: string; fill?: string }) {
+function Atom({ x, y, r = 9, label, fill = "#0b0f10" }: { x: number; y: number; r?: number; label: string; fill?: string }) {
   return (
     <g>
       <circle cx={x} cy={y} r={r} fill={fill} stroke={AX} strokeWidth="1.3" />

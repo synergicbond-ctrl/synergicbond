@@ -268,7 +268,7 @@ export default function SubscriptionDashboardClient({ user, subscription, entitl
         </h2>
 
         {!allAccess && activeEntitlements.length === 0 ? (
-          <div className="p-8 rounded-3xl border border-white/[0.06] bg-[#111827] text-center max-w-lg mx-auto">
+          <div className="p-8 rounded-3xl border border-white/[0.06] bg-[var(--surface)] text-center max-w-lg mx-auto">
             <Lock className="h-10 w-10 text-white/30 mx-auto mb-3" />
             <h3 className="font-bold">No Active Subscriptions</h3>
             <p className="text-white/50 text-xs mt-1 leading-relaxed">
@@ -353,7 +353,7 @@ export default function SubscriptionDashboardClient({ user, subscription, entitl
               const isInfinite = days === Infinity;
 
               return (
-                <div key={ent.program_key} className="rounded-2xl border border-white/[0.08] bg-[#111827] p-5">
+                <div key={ent.program_key} className="rounded-2xl border border-white/[0.08] bg-[var(--surface)] p-5">
                   <h3 className="font-black text-white text-base leading-tight">
                     {progInfo?.name || ent.program_key.toUpperCase().replace(":", " ")}
                   </h3>
@@ -417,7 +417,7 @@ export default function SubscriptionDashboardClient({ user, subscription, entitl
 
         <div className="grid gap-6 md:grid-cols-2">
           {/* Boards Section */}
-          <div className="rounded-2xl border border-white/[0.08] bg-[#111827] p-6">
+          <div className="rounded-2xl border border-white/[0.08] bg-[var(--surface)] p-6">
             <h3 className="font-black text-sm text-white/40 uppercase tracking-widest mb-4">School Board Programs</h3>
             <div className="space-y-4">
               {PROGRAMS_LIST.filter(p => p.category === "Boards").map(p =>
@@ -427,7 +427,7 @@ export default function SubscriptionDashboardClient({ user, subscription, entitl
           </div>
 
           {/* Entrance Exams Section */}
-          <div className="rounded-2xl border border-white/[0.08] bg-[#111827] p-6">
+          <div className="rounded-2xl border border-white/[0.08] bg-[var(--surface)] p-6">
             <h3 className="font-black text-sm text-white/40 uppercase tracking-widest mb-4">Entrance Prep Programs</h3>
             <div className="space-y-4">
               {PROGRAMS_LIST.filter(p => p.category === "Entrance").map(p =>
@@ -441,7 +441,7 @@ export default function SubscriptionDashboardClient({ user, subscription, entitl
       {/* Confirmation Modal */}
       {confirmOpen && selectedPlan && (
         <div className="fixed inset-0 z-[110] flex items-center justify-center p-6 bg-black/80 backdrop-blur-sm">
-          <div className="relative max-w-md w-full rounded-3xl bg-[#111827] border border-white/[0.08] p-7 shadow-2xl">
+          <div className="relative max-w-md w-full rounded-3xl bg-[var(--surface)] border border-white/[0.08] p-7 shadow-2xl">
             <div className="mb-5">
               <h3 className="text-xl font-black">Confirm Purchase</h3>
               <p className="text-white/60 text-xs mt-1">Review the details before proceeding to payment.</p>

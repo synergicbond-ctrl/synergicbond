@@ -1047,7 +1047,7 @@ export default function IsomerismPart12() {
             <h2 className="text-xl font-black text-cyan-200">
               Plane of symmetry (σ)
             </h2>
-            <p className="mt-2 text-sm leading-7 text-slate-300">
+            <p className="mt-2 text-sm leading-7 text-[var(--text-body)]">
               A plane of symmetry divides the complete three-dimensional
               molecular graph into two mirror-related halves. The symmetry test
               must include stereobond direction, not connectivity alone.
@@ -1061,7 +1061,7 @@ export default function IsomerismPart12() {
             <div className="mt-3 overflow-x-auto rounded-xl border border-cyan-300/20 bg-[#050b16] p-3">
               <POSCountingGallery />
             </div>
-            <ul className="mt-4 list-disc space-y-2 pl-5 text-sm leading-6 text-slate-300">
+            <ul className="mt-4 list-disc space-y-2 pl-5 text-sm leading-6 text-[var(--text-body)]">
               <li>CH₄ (4 identical groups): 6 planes of symmetry.</li>
               <li>CHDTF (4 completely different groups): 0 planes — this is the chiral test case.</li>
               <li>CX₃Y (3 identical + 1 different): 3 planes.</li>
@@ -1080,7 +1080,7 @@ export default function IsomerismPart12() {
             <div className="mt-4 overflow-x-auto rounded-xl border border-cyan-300/20 bg-[#050b16] p-3">
               <ProperAxes />
             </div>
-            <p className="mt-3 text-sm leading-7 text-slate-300">
+            <p className="mt-3 text-sm leading-7 text-[var(--text-body)]">
               Rotation through 360°/n must return an indistinguishable
               orientation. A Cₙ axis by itself does not make a molecule
               achiral — it merely relabels equivalent atoms.
@@ -1091,7 +1091,7 @@ export default function IsomerismPart12() {
             <div className="mt-4 overflow-x-auto rounded-xl border border-cyan-300/20 bg-[#050b16] p-3">
               <CubeAOSDiagram />
             </div>
-            <p className="mt-3 text-sm leading-7 text-slate-300">
+            <p className="mt-3 text-sm leading-7 text-[var(--text-body)]">
               <span className="font-bold text-cyan-200">Rule:</span> if a
               molecule possesses a Cₙ axis, it either has exactly n perpendicular
               C₂ axes, or none at all — never a number in between. XeF₄ (C₄) has
@@ -1107,7 +1107,7 @@ export default function IsomerismPart12() {
             <div className="mt-4 overflow-x-auto rounded-xl border border-violet-300/20 bg-[#050b16] p-3">
               <ImproperAxisS4 />
             </div>
-            <p className="mt-3 text-sm leading-7 text-slate-300">
+            <p className="mt-3 text-sm leading-7 text-[var(--text-body)]">
               A molecule possesses an n-fold AAOS if rotation by 360°/n about
               the axis, followed by reflection in the plane perpendicular to
               that axis, reproduces a molecule indistinguishable from the
@@ -1118,7 +1118,7 @@ export default function IsomerismPart12() {
             <div className="mt-4 overflow-x-auto rounded-xl border border-cyan-300/20 bg-[#050b16] p-3">
               <SnCyclobutaneDemo />
             </div>
-            <p className="mt-3 text-sm leading-7 text-slate-300">
+            <p className="mt-3 text-sm leading-7 text-[var(--text-body)]">
               The decisive example is the 3,4,3′,4′-tetramethyl-[4.4]spirodipyrrolidinium
               ion: it has no plane of symmetry and no centre of symmetry, yet it
               is achiral because it possesses an S₄ axis through the spiro
@@ -1133,7 +1133,7 @@ export default function IsomerismPart12() {
             <h2 className="text-xl font-black text-cyan-200">
               Centre of symmetry (i) — inversion centre
             </h2>
-            <p className="mt-2 text-sm leading-7 text-slate-300">
+            <p className="mt-2 text-sm leading-7 text-[var(--text-body)]">
               A centre of symmetry is a point from which lines drawn to one
               side and produced an equal distance on the other side meet an
               identical point of the molecule. A compound can have{" "}
@@ -1143,7 +1143,7 @@ export default function IsomerismPart12() {
             <div className="mt-4 overflow-x-auto rounded-xl border border-cyan-300/20 bg-[#050b16] p-3">
               <CentreOfInversion />
             </div>
-            <p className="mt-4 text-sm leading-7 text-slate-300">
+            <p className="mt-4 text-sm leading-7 text-[var(--text-body)]">
               Testing symmetric versus unsymmetric allene-type centres:
             </p>
             <div className="mt-3 overflow-x-auto rounded-xl border border-violet-300/20 bg-[#050b16] p-3">
@@ -1164,7 +1164,7 @@ export default function IsomerismPart12() {
             <div className="mt-4 overflow-x-auto rounded-xl border border-cyan-300/20 bg-[#050b16] p-3">
               <FischerMirrorPair />
             </div>
-            <p className="mt-3 text-sm leading-7 text-slate-300">
+            <p className="mt-3 text-sm leading-7 text-[var(--text-body)]">
               In a Fischer projection, horizontal bonds point toward the
               observer and vertical bonds point away. A 180° rotation of the
               complete Fischer projection preserves configuration; a 90°
@@ -1179,7 +1179,7 @@ export default function IsomerismPart12() {
             <div className="mt-4 overflow-x-auto rounded-xl border border-cyan-300/20 bg-[#050b16] p-3">
               <WedgeDashMirrorPair />
             </div>
-            <p className="mt-3 text-sm leading-7 text-slate-300">
+            <p className="mt-3 text-sm leading-7 text-[var(--text-body)]">
               A solid wedge projects toward the observer; a hashed wedge
               projects behind the drawing plane. Mirror reflection reverses the
               handedness of the complete tetrahedral arrangement.
@@ -1199,7 +1199,7 @@ export default function IsomerismPart12() {
             <h2 className="text-xl font-black text-cyan-200">
               Enantiomers
             </h2>
-            <p className="mt-2 text-sm leading-7 text-slate-300">
+            <p className="mt-2 text-sm leading-7 text-[var(--text-body)]">
               Optically active compounds that are non-superimposable mirror
               images of each other are called enantiomers.
             </p>
@@ -1207,12 +1207,12 @@ export default function IsomerismPart12() {
               <GlyceraldehydeMirrorTest />
             </div>
             <p className="mt-4 text-sm font-bold text-cyan-200">Properties of enantiomers</p>
-            <ul className="mt-3 list-disc space-y-3 pl-5 text-sm leading-6 text-slate-300">
+            <ul className="mt-3 list-disc space-y-3 pl-5 text-sm leading-6 text-[var(--text-body)]">
               <li>
                 Identical physical and chemical properties (m.p., b.p., density,
                 refractive index) except optical rotation, which is equal in
                 magnitude but opposite in sign.{" "}
-                <span className="text-slate-400">
+                <span className="text-[var(--text-muted)]">
                   e.g. (+)-limonene smells of orange, (−)-limonene smells of lemon.
                 </span>
               </li>
@@ -1226,7 +1226,7 @@ export default function IsomerismPart12() {
                 tasteless.
               </li>
             </ul>
-            <p className="mt-4 text-sm leading-7 text-slate-300">
+            <p className="mt-4 text-sm leading-7 text-[var(--text-body)]">
               There are three equivalent ways to draw an enantiomeric pair,
               because the mirror can conceptually be placed at any of three
               positions around the stereocentre — the molecule and its
@@ -1242,7 +1242,7 @@ export default function IsomerismPart12() {
             <div className="mt-4 overflow-x-auto rounded-xl border border-cyan-300/20 bg-[#050b16] p-3">
               <MesoVsEnantiomer />
             </div>
-            <ul className="mt-4 list-disc space-y-2 pl-5 text-sm leading-6 text-slate-300">
+            <ul className="mt-4 list-disc space-y-2 pl-5 text-sm leading-6 text-[var(--text-body)]">
               <li>Enantiomers: non-superimposable mirror images.</li>
               <li>
                 Diastereomers: stereoisomers that are not mirror images.
@@ -1264,7 +1264,7 @@ export default function IsomerismPart12() {
         <nav className="mt-8 flex justify-between border-t border-white/10 pt-6">
           <Link
             href="/learn/isomerism/11"
-            className="rounded-xl border border-white/15 px-4 py-3 text-sm font-bold text-slate-200"
+            className="rounded-xl border border-white/15 px-4 py-3 text-sm font-bold text-[var(--foreground)]"
           >
             ← 11
           </Link>

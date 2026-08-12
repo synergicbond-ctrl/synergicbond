@@ -36,7 +36,7 @@ export default function ChapterHero({
         </div>
 
         <div className="rounded-xl border border-gray-700 p-6 text-center min-w-[170px]">
-          <p className="text-sm text-gray-400">
+          <p className="text-sm text-[var(--text-muted)]">
             Difficulty
           </p>
 

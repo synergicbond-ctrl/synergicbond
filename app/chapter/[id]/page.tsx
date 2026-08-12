@@ -75,13 +75,13 @@ export default async function ChapterPage({ params }: PageProps) {
     <div className="min-h-screen p-6 md:p-12 max-w-7xl mx-auto space-y-12">
       <StudySessionTracker chapterId={chapter.id} />
       
-      <header className="pb-6 border-b border-slate-200 dark:border-slate-800 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+      <header className="pb-6 border-b border-[var(--border)] dark:border-[var(--border)] flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
         <div>
           <h1 className="text-4xl font-extrabold tracking-tight">
             {chapter.title}
           </h1>
-          <div className="mt-2 flex items-center gap-3 text-sm font-medium text-slate-600 dark:text-slate-400">
-            <span className="bg-slate-200 dark:bg-slate-800 px-2.5 py-0.5 rounded uppercase font-bold">
+          <div className="mt-2 flex items-center gap-3 text-sm font-medium text-slate-600 dark:text-[var(--text-muted)]">
+            <span className="bg-slate-200 dark:bg-[var(--surface-2)] px-2.5 py-0.5 rounded uppercase font-bold">
               {chapter.category}
             </span>
             <span>Difficulty: {chapter.difficulty}/5</span>
@@ -122,27 +122,27 @@ export default async function ChapterPage({ params }: PageProps) {
 
         <div className="lg:col-span-2 space-y-10">
 
-          <section className="p-6 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800 bg-white dark:bg-slate-900">
+          <section className="p-6 rounded-2xl shadow-sm border border-[var(--border)] dark:border-[var(--border)] bg-white dark:bg-[var(--surface)]">
             <h2 className="text-2xl font-bold mb-4">Core Concepts</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {chapter.concepts.map((concept, idx) => (
-                <div key={idx} className="p-4 rounded-xl border border-slate-100 dark:border-slate-800 bg-slate-50 dark:bg-slate-950">
+                <div key={idx} className="p-4 rounded-xl border border-[var(--border)] dark:border-[var(--border)] bg-slate-50 dark:bg-[var(--background)]">
                   <h3 className="font-bold text-indigo-700 dark:text-indigo-400">{concept.title}</h3>
-                  <p className="text-sm text-slate-600 dark:text-slate-400 mt-1">{concept.description}</p>
+                  <p className="text-sm text-slate-600 dark:text-[var(--text-muted)] mt-1">{concept.description}</p>
                 </div>
               ))}
             </div>
           </section>
 
           {formulas.length > 0 && (
-            <section className="p-6 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800 bg-white dark:bg-slate-900">
+            <section className="p-6 rounded-2xl shadow-sm border border-[var(--border)] dark:border-[var(--border)] bg-white dark:bg-[var(--surface)]">
               <h2 className="text-2xl font-bold mb-4">Formula Sheet</h2>
               <div className="space-y-4">
                 {formulas.map((f, idx) => (
                   <div key={idx} className="p-4 rounded-xl border border-indigo-50 dark:border-indigo-950 bg-indigo-50/30 dark:bg-indigo-950/20 flex justify-between items-center">
                     <div>
                       <h4 className="font-bold">{f.title}</h4>
-                      <code className="text-sm font-mono bg-white dark:bg-slate-950 px-2 py-0.5 rounded border border-slate-200 dark:border-slate-700 mt-1 inline-block text-indigo-600 dark:text-indigo-400">
+                      <code className="text-sm font-mono bg-white dark:bg-[var(--background)] px-2 py-0.5 rounded border border-[var(--border)] dark:border-[var(--border-strong)] mt-1 inline-block text-indigo-600 dark:text-indigo-400">
                         {f.expression}
                       </code>
                     </div>
@@ -158,11 +158,11 @@ export default async function ChapterPage({ params }: PageProps) {
           )}
 
           {reactions.length > 0 && (
-            <section className="p-6 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800 bg-white dark:bg-slate-900">
+            <section className="p-6 rounded-2xl shadow-sm border border-[var(--border)] dark:border-[var(--border)] bg-white dark:bg-[var(--surface)]">
               <h2 className="text-2xl font-bold mb-4">Important Reactions</h2>
               <div className="space-y-4">
                 {reactions.map((rxn, idx) => (
-                  <div key={idx} className="p-4 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50/40 dark:bg-slate-950/40">
+                  <div key={idx} className="p-4 rounded-xl border border-[var(--border)] dark:border-[var(--border-strong)] bg-slate-50/40 dark:bg-[var(--background)]/40">
                     <h4 className="font-bold">{rxn.name}</h4>
                     <p className="text-xs text-slate-500 mt-1 font-mono">
                       Reactants: {rxn.reactants.join(" + ")} → Products: {rxn.products.join(" + ")}
@@ -174,13 +174,13 @@ export default async function ChapterPage({ params }: PageProps) {
           )}
 
           {mechanisms.length > 0 && (
-            <section className="p-6 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800 bg-white dark:bg-slate-900">
+            <section className="p-6 rounded-2xl shadow-sm border border-[var(--border)] dark:border-[var(--border)] bg-white dark:bg-[var(--surface)]">
               <h2 className="text-2xl font-bold mb-4">Mechanisms & Pathways</h2>
               <div className="space-y-4">
                 {mechanisms.map((m: Mechanism, idx) => (
                   <div key={idx} className="p-4 rounded-xl border border-rose-100 dark:border-rose-950 bg-rose-50/20 dark:bg-rose-950/20">
                     <h4 className="font-bold text-rose-800 dark:text-rose-400">{m.name ?? m.title} Mechanism</h4>
-                    <p className="text-xs text-slate-600 dark:text-slate-400 mt-1 leading-relaxed">{m.description ?? m.steps?.join(" ")}</p>
+                    <p className="text-xs text-slate-600 dark:text-[var(--text-muted)] mt-1 leading-relaxed">{m.description ?? m.steps?.join(" ")}</p>
                   </div>
                 ))}
               </div>
@@ -188,13 +188,13 @@ export default async function ChapterPage({ params }: PageProps) {
           )}
 
           {notes.length > 0 && (
-            <section className="p-6 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800 bg-white dark:bg-slate-900">
+            <section className="p-6 rounded-2xl shadow-sm border border-[var(--border)] dark:border-[var(--border)] bg-white dark:bg-[var(--surface)]">
               <h2 className="text-2xl font-bold mb-4">NCERT Notes & Exceptions</h2>
               <div className="space-y-4">
                 {notes.map((note, idx) => (
                   <div key={idx} className="p-4 rounded-xl bg-amber-50/40 dark:bg-amber-950/20 border border-amber-100 dark:border-amber-900">
                     <h4 className="font-bold text-amber-800 dark:text-amber-400">{note.title}</h4>
-                    <p className="text-sm text-slate-700 dark:text-slate-300 mt-1 leading-relaxed">{note.content}</p>
+                    <p className="text-sm text-slate-700 dark:text-[var(--text-body)] mt-1 leading-relaxed">{note.content}</p>
                   </div>
                 ))}
               </div>
@@ -202,12 +202,12 @@ export default async function ChapterPage({ params }: PageProps) {
           )}
 
           {chapter.pyqTags && chapter.pyqTags.length > 0 && (
-            <section className="p-6 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800 bg-white dark:bg-slate-900">
+            <section className="p-6 rounded-2xl shadow-sm border border-[var(--border)] dark:border-[var(--border)] bg-white dark:bg-[var(--surface)]">
               <h2 className="text-2xl font-bold mb-2">Previous Year Question Tags (PYQs)</h2>
-              <p className="text-xs text-slate-500 dark:text-slate-400 mb-4">High-yield meta-tags analyzed from NEET and JEE exams.</p>
+              <p className="text-xs text-slate-500 dark:text-[var(--text-muted)] mb-4">High-yield meta-tags analyzed from NEET and JEE exams.</p>
               <div className="flex flex-wrap gap-2">
                 {chapter.pyqTags.map((tag) => (
-                  <span key={tag} className="bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 font-semibold text-slate-700 dark:text-slate-300 text-xs px-3 py-1.5 rounded-xl uppercase tracking-wider">
+                  <span key={tag} className="bg-slate-100 dark:bg-[var(--surface-2)] border border-[var(--border)] dark:border-[var(--border-strong)] font-semibold text-slate-700 dark:text-[var(--text-body)] text-xs px-3 py-1.5 rounded-xl uppercase tracking-wider">
                     {tag}
                   </span>
                 ))}
@@ -218,7 +218,7 @@ export default async function ChapterPage({ params }: PageProps) {
           <section className="bg-indigo-50/20 dark:bg-indigo-950/10 p-8 rounded-3xl border border-dashed border-indigo-200 dark:border-indigo-800 space-y-4">
             <div className="text-center max-w-md mx-auto mb-4">
               <h2 className="text-xl font-black">Adaptive Practice Test Loop</h2>
-              <p className="text-xs text-slate-600 dark:text-slate-400">Test conceptual understanding of formulas and mechanisms interactively.</p>
+              <p className="text-xs text-slate-600 dark:text-[var(--text-muted)]">Test conceptual understanding of formulas and mechanisms interactively.</p>
             </div>
             <QuizAndFeedback questions={sampleQuizQuestions} chapterId={lookupId} />
           </section>
@@ -228,9 +228,9 @@ export default async function ChapterPage({ params }: PageProps) {
         <div className="space-y-6">
           <AiTutorBox chapter={chapter.title} concepts={conceptStrings} />
           <VisionUploader />
-          <div className="p-6 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800 bg-white dark:bg-slate-900 text-center space-y-3"> 
+          <div className="p-6 rounded-2xl shadow-sm border border-[var(--border)] dark:border-[var(--border)] bg-white dark:bg-[var(--surface)] text-center space-y-3">
             <h3 className="font-bold">Progress Dashboard Link</h3>
-            <p className="text-xs text-slate-500 dark:text-slate-400">Review chapter analytics and accuracy percentages.</p>
+            <p className="text-xs text-slate-500 dark:text-[var(--text-muted)]">Review chapter analytics and accuracy percentages.</p>
             <Link href="/dashboard" className="block w-full py-3 bg-indigo-600 hover:bg-indigo-700 text-white font-bold rounded-xl transition shadow-sm">
               View Student Dashboard
             </Link>

@@ -40,7 +40,7 @@ function ProgramCard({ owned, ...p }: (typeof PROGRAMS)[number] & { owned: boole
         )}
       </div>
       <h2 className="mt-2 text-2xl font-black tracking-tight text-white">{name}</h2>
-      <p className="mt-2 flex-1 text-sm leading-relaxed text-zinc-400">{tagline}</p>
+      <p className="mt-2 flex-1 text-sm leading-relaxed text-[var(--text-muted)]">{tagline}</p>
       <div className="mt-4 flex flex-wrap gap-1.5">
         {chips.map((chip) => (
           <span key={chip} className={`rounded-full border px-2.5 py-0.5 text-[11px] ${accent.chip}`}>
@@ -67,7 +67,7 @@ export default async function ProgramsPage() {
       <div className="border-b border-white/10 bg-gradient-to-b from-cyan-950/20 to-black px-6 py-16 text-center">
         <div className="mb-3 text-xs font-bold uppercase tracking-widest text-cyan-400">Choose Your Exam</div>
         <h1 className="mb-4 text-4xl font-black tracking-tight sm:text-5xl">Programs</h1>
-        <p className="mx-auto max-w-2xl text-lg text-zinc-400">
+        <p className="mx-auto max-w-2xl text-lg text-[var(--text-muted)]">
           Every program organises the same verified chemistry library — notes, formula cards, PYQs and
           tests — around one exam, at that exam&apos;s depth and pattern.
         </p>

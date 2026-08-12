@@ -18,11 +18,11 @@ export default function BrainModeModal({
       onClick={onClose}
     >
       <div
-        className="w-full max-w-lg max-h-[88vh] overflow-y-auto rounded-3xl border border-cyan-400/20 bg-[#0B0F19] shadow-[0_0_60px_-12px_rgba(34,211,238,0.4)]"
+        className="w-full max-w-lg max-h-[88vh] overflow-y-auto rounded-3xl border border-cyan-400/20 bg-[var(--background)] shadow-[0_0_60px_-12px_rgba(34,211,238,0.4)]"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Header */}
-        <div className="sticky top-0 z-10 flex items-start justify-between gap-4 border-b border-white/[0.06] bg-[#0B0F19]/95 px-5 py-4 backdrop-blur">
+        <div className="sticky top-0 z-10 flex items-start justify-between gap-4 border-b border-white/[0.06] bg-[var(--background)]/95 px-5 py-4 backdrop-blur">
           <div className="flex items-center gap-3">
             {/* Bold symbol accent box */}
             <div className="flex h-16 w-16 shrink-0 flex-col items-center justify-center rounded-2xl border border-cyan-400/30 bg-gradient-to-br from-cyan-500/20 to-violet-500/10">
@@ -68,7 +68,7 @@ export default function BrainModeModal({
             <div className="space-y-2.5">
               {data.reactions.map((r, i) => (
                 <div key={i} className="rounded-xl border border-white/[0.06] bg-white/[0.02] p-3">
-                  <div className="font-mono bg-slate-950 px-3 py-1.5 rounded text-rose-400 text-xs tracking-wide overflow-x-auto whitespace-nowrap">
+                  <div className="font-mono bg-[var(--background)] px-3 py-1.5 rounded text-rose-400 text-xs tracking-wide overflow-x-auto whitespace-nowrap">
                     {renderChemistry(r.equation)}
                   </div>
                   <p className="mt-1.5 text-xs text-white/50">{r.mechanismContext}</p>

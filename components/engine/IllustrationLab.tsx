@@ -89,7 +89,7 @@ export default function IllustrationLab({
         ))}
         {topics.length > 0 && (
           <select value={topic} onChange={(e) => setTopic(e.target.value)}
-            className="rounded-lg border border-white/10 bg-[#0B1220] px-2 py-1.5 text-xs text-white/80">
+            className="rounded-lg border border-white/10 bg-[var(--background)] px-2 py-1.5 text-xs text-white/80">
             <option value="">Whole chapter</option>
             {topics.map((t) => <option key={t} value={t}>{t}</option>)}
           </select>

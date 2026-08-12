@@ -67,7 +67,7 @@ export default function ChemicalKineticsPart16() {
               ].map(([n, text]) => (
                 <div key={n} className="rounded-2xl border border-white/10 bg-white/[0.035] p-4">
                   <div className="font-mono text-xs text-rose-300">TRAP {n}</div>
-                  <p className="mt-2 text-sm leading-6 text-slate-300">{text}</p>
+                  <p className="mt-2 text-sm leading-6 text-[var(--text-body)]">{text}</p>
                 </div>
               ))}
             </div>

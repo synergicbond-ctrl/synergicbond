@@ -14,7 +14,7 @@ const ions = [
   { ion: "Ni²⁺", solution: "Green", ppt: "Ni(OH)₂ — green ppt", c: "#22C55E" },
   { ion: "Co²⁺", solution: "Pink", ppt: "Co(OH)₂ — blue/pink ppt", c: "#F472B6" },
   { ion: "Mn²⁺", solution: "Pale pink", ppt: "Mn(OH)₂ — white→brown ppt", c: "#FBCFE8" },
-  { ion: "Cr³⁺", solution: "Green / violet", ppt: "Cr(OH)₃ — green ppt", c: "#10B981" },
+  { ion: "Cr³⁺", solution: "Green / violet", ppt: "Cr(OH)₃ — green ppt", c: "#50dc7b" },
   { ion: "MnO₄⁻", solution: "Intense purple", ppt: "—", c: "#A855F7" },
   { ion: "Cr₂O₇²⁻", solution: "Orange", ppt: "—", c: "#FB923C" },
   { ion: "CrO₄²⁻", solution: "Yellow", ppt: "—", c: "#FDE047" },
@@ -101,7 +101,7 @@ function tone(name: string): string {
   if (s.includes("brown")) return "#92400e";
   if (s.includes("crimson") || s.includes("carmine") || s.includes("brick") || s.includes("red")) return "#dc2626";
   if (s.includes("grey") || s.includes("gray")) return "#9ca3af";
-  if (s.includes("black")) return "#1f2937";
+  if (s.includes("black")) return "#101516";
   if (s.includes("white")) return "#f8fafc";
   return "#94a3b8";
 }
@@ -112,7 +112,7 @@ function Swatch({ c }: { c: string }) {
 
 export default function SaltColorsPage() {
   return (
-    <main className="min-h-screen bg-[#0B0F19] text-white">
+    <main className="min-h-screen bg-[var(--background)] text-white">
       <div className="mx-auto max-w-5xl px-6 py-6">
         <ReferenceTabs />
         <p className="text-[11px] font-bold uppercase tracking-[0.35em] text-cyan-300 mb-1.5">Knowledge Vault · Inorganic</p>
@@ -132,11 +132,11 @@ export default function SaltColorsPage() {
           <h2 className="text-lg font-black text-cyan-300 mb-3">🧪 Ion Colors (aqueous + hydroxide ppt)</h2>
           <div className="grid gap-2 md:grid-cols-2">
             {ions.map((i) => (
-              <div key={i.ion} className="flex items-center gap-3 rounded-xl bg-[#111827] border border-white/[0.06] px-4 py-3">
+              <div key={i.ion} className="flex items-center gap-3 rounded-xl bg-[var(--surface)] border border-white/[0.06] px-4 py-3">
                 <Swatch c={i.c} />
                 <div className="flex-1 min-w-0">
                   <p className="text-sm font-bold text-white">{i.ion} — <span className="font-normal text-white/70">{i.solution}</span></p>
-                  {i.ppt !== "—" && <p className="text-xs text-gray-400 mt-0.5">{i.ppt}</p>}
+                  {i.ppt !== "—" && <p className="text-xs text-[var(--text-muted)] mt-0.5">{i.ppt}</p>}
                 </div>
               </div>
             ))}
@@ -157,7 +157,7 @@ export default function SaltColorsPage() {
               </thead>
               <tbody>
                 {carbonates.map((r, i) => (
-                  <tr key={r.reagent} className={i % 2 ? "bg-[#111827]" : "bg-[#0e1421]"}>
+                  <tr key={r.reagent} className={i % 2 ? "bg-[var(--surface)]" : "bg-[var(--surface)]"}>
                     <td className="px-4 py-2.5 font-mono font-bold text-cyan-300">{r.reagent}</td>
                     <td className="px-3 py-2.5 font-mono text-white/80">{r.ppt}</td>
                     <td className="px-3 py-2.5"><span className="flex items-center gap-2 text-white/80"><Swatch c={r.c} /> {r.color}</span></td>
@@ -183,7 +183,7 @@ export default function SaltColorsPage() {
               </thead>
               <tbody>
                 {sulfides.map((s, i) => (
-                  <tr key={s.ion} className={i % 2 ? "bg-[#111827]" : "bg-[#0e1421]"}>
+                  <tr key={s.ion} className={i % 2 ? "bg-[var(--surface)]" : "bg-[var(--surface)]"}>
                     <td className="px-4 py-2.5 font-bold text-white">{s.ion}</td>
                     <td className="px-3 py-2.5 font-mono text-white/70">{s.white}</td>
                     <td className="px-3 py-2.5 font-mono text-white/70">{s.black}</td>
@@ -200,7 +200,7 @@ export default function SaltColorsPage() {
           <h2 className="text-lg font-black text-cyan-300 mb-3">🔥 Flame Test Colors</h2>
           <div className="grid gap-2 md:grid-cols-2 lg:grid-cols-4">
             {flame.map((f) => (
-              <div key={f.el} className="flex items-center gap-3 rounded-xl bg-[#111827] border border-white/[0.06] px-4 py-2.5">
+              <div key={f.el} className="flex items-center gap-3 rounded-xl bg-[var(--surface)] border border-white/[0.06] px-4 py-2.5">
                 <Swatch c={f.c} />
                 <p className="text-sm text-white/80"><span className="font-bold text-white">{f.el}</span> — {f.color}</p>
               </div>
@@ -229,7 +229,7 @@ export default function SaltColorsPage() {
               </thead>
               <tbody>
                 {guhaSublimates.map((r, i) => (
-                  <tr key={r.salt} className={i % 2 ? "bg-[#111827]" : "bg-[#0e1421]"}>
+                  <tr key={r.salt} className={i % 2 ? "bg-[var(--surface)]" : "bg-[var(--surface)]"}>
                     <td className="px-4 py-2.5 font-mono font-bold text-cyan-300">{r.salt}</td>
                     <td className="px-3 py-2.5 font-mono text-white/80">{r.formula}</td>
                     <td className="px-3 py-2.5"><span className="flex items-center gap-2 text-white/80"><Swatch c={tone(r.color)} /> {r.color}</span></td>
@@ -256,7 +256,7 @@ export default function SaltColorsPage() {
               </thead>
               <tbody>
                 {guhaBoraxBeads.map((r, i) => (
-                  <tr key={r.metal} className={i % 2 ? "bg-[#111827]" : "bg-[#0e1421]"}>
+                  <tr key={r.metal} className={i % 2 ? "bg-[var(--surface)]" : "bg-[var(--surface)]"}>
                     <td className="px-4 py-2.5 font-mono font-bold text-cyan-300">{r.metal}</td>
                     {[r.oxHot, r.oxCold, r.redHot, r.redCold].map((cval, j) => (
                       <td key={j} className="px-3 py-2.5"><span className="flex items-center gap-2 text-white/80"><Swatch c={tone(cval)} /> {cval}</span></td>

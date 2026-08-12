@@ -166,7 +166,7 @@ export default function EquivalentConceptPart6() {
             </FormulaBox>
           </div>
 
-          <div className="space-y-4 rounded-2xl border border-slate-800 bg-slate-950/30 p-4">
+          <div className="space-y-4 rounded-2xl border border-[var(--border)] bg-[var(--background)]/30 p-4">
             <h3 className="font-bold text-slate-900">
               Example: Pb + PbO<sub>2</sub> + H<sub>2</sub>SO<sub>4</sub>
             </h3>

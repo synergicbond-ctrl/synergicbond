@@ -58,13 +58,13 @@ function Section({ title, accent, data, q }: { title: string; accent: string; da
       <h2 className="text-lg font-black mb-3" style={{ color: accent }}>{title}</h2>
       <div className="grid gap-2.5 md:grid-cols-2">
         {rows.map((r, i) => (
-          <div key={i} className="rounded-2xl bg-[#111827] border border-white/[0.06] p-4">
+          <div key={i} className="rounded-2xl bg-[var(--surface)] border border-white/[0.06] p-4">
             <div className="flex items-center gap-2 flex-wrap mb-2">
               <span className="text-sm font-bold text-white">{r.substrate}</span>
               <ArrowRight className="h-3.5 w-3.5" style={{ color: accent }} />
               <span className="text-sm font-bold" style={{ color: accent }}>{r.product}</span>
             </div>
-            <p className="text-xs text-gray-300"><span className="text-gray-500">Reagent:</span> {r.reagent}</p>
+            <p className="text-xs text-[var(--text-body)]"><span className="text-gray-500">Reagent:</span> {r.reagent}</p>
             <span className="inline-block mt-2 text-[9px] font-bold px-2 py-0.5 rounded-full" style={{ background: `${accent}14`, color: accent }}>{r.level}</span>
           </div>
         ))}
@@ -76,7 +76,7 @@ function Section({ title, accent, data, q }: { title: string; accent: string; da
 export default function RedoxPage() {
   const [q, setQ] = useState("");
   return (
-    <main className="min-h-screen bg-[#0B0F19] text-white">
+    <main className="min-h-screen bg-[var(--background)] text-white">
       <div className="mx-auto max-w-5xl px-6 py-12">
         <ReferenceTabs />
         <p className="text-xs font-bold uppercase tracking-[0.4em] text-cyan-300 mb-3">Knowledge Vault · Organic</p>
@@ -88,11 +88,11 @@ export default function RedoxPage() {
         <div className="relative mb-6 sticky top-16 z-30">
           <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 h-4 w-4 text-white/30" />
           <input value={q} onChange={(e) => setQ(e.target.value)} placeholder="Search substrate, product or reagent — alcohol, LiAlH4, alkene…"
-            className="w-full rounded-xl border border-white/[0.08] bg-[#111827] pl-10 pr-4 py-2.5 text-sm text-white placeholder-white/30 outline-none focus:border-cyan-400/50" />
+            className="w-full rounded-xl border border-white/[0.08] bg-[var(--surface)] pl-10 pr-4 py-2.5 text-sm text-white placeholder-white/30 outline-none focus:border-cyan-400/50" />
         </div>
 
-        <Section title="🔼 Oxidation" accent="#00F5D4" data={oxidation} q={q} />
-        <Section title="🔽 Reduction" accent="#9B5DE5" data={reduction} q={q} />
+        <Section title="🔼 Oxidation" accent="#50dc7b" data={oxidation} q={q} />
+        <Section title="🔽 Reduction" accent="#b376ff" data={reduction} q={q} />
       </div>
     </main>
   );

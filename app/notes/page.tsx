@@ -32,7 +32,7 @@ export default async function NotesPage() {
     : NOTES_CHAPTERS.filter((chapter) => !isFreeChapter(chapter.id)).map((chapter) => chapter.id);
 
   return (
-    <main className="min-h-screen bg-[#0B0F19] text-white">
+    <main className="min-h-screen bg-[var(--background)] text-white">
       <div className="mx-auto max-w-5xl px-4 py-8 sm:px-6 md:py-12">
         <NotesExplorer
           chapters={chapters}

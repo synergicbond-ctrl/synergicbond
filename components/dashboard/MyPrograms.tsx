@@ -41,7 +41,7 @@ export function MyPrograms({ programs, isOwner }: { programs: OwnedProgram[]; is
       </div>
 
       {programs.length === 0 ? (
-        <div className="p-8 rounded-3xl border border-white/[0.06] bg-[#111827] text-center">
+        <div className="p-8 rounded-3xl border border-white/[0.06] bg-[var(--surface)] text-center">
           <BookOpen className="h-10 w-10 text-white/30 mx-auto mb-3" />
           <h3 className="font-bold">No programs yet</h3>
           <p className="text-white/50 text-xs mt-1 leading-relaxed max-w-sm mx-auto">
@@ -62,7 +62,7 @@ export function MyPrograms({ programs, isOwner }: { programs: OwnedProgram[]; is
             return (
               <div
                 key={p.key}
-                className="rounded-2xl border border-white/[0.08] bg-[#111827] p-5 flex flex-col justify-between hover:border-cyan-500/30 transition"
+                className="rounded-2xl border border-white/[0.08] bg-[var(--surface)] p-5 flex flex-col justify-between hover:border-cyan-500/30 transition"
               >
                 <div>
                   <div className="flex items-start justify-between gap-2">

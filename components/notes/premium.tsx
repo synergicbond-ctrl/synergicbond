@@ -8,7 +8,7 @@ import { renderChemistry } from "@/lib/renderChemistry";
 // Premium Visual Notes — shared design system (reusable template).
 //
 // The reference-quality chapter shell + primitives every chapter plugs into:
-// dark navy #0B1220, soft glass cards, restrained accents (no neon glow),
+// dark navy #0b0f10, soft glass cards, restrained accents (no neon glow),
 // eye-friendly for long sessions, mobile-first. A chapter page = <PremiumNotes>
 // wrapping the section primitives below. Chemistry text passes through
 // renderChemistry for sub/superscripts.
@@ -41,7 +41,7 @@ export function PremiumNotes({ sections, children }: { sections: NoteSection[]; 
   }, [sections]);
 
   return (
-    <div className="min-h-screen bg-[#0B1220] text-white">
+    <div className="min-h-screen bg-[var(--background)] text-white">
       <div className="fixed inset-x-0 top-0 z-50 h-1 bg-transparent">
         <div className="h-full bg-gradient-to-r from-cyan-400 to-sky-500 transition-[width] duration-150" style={{ width: `${progress}%` }} />
       </div>
@@ -105,7 +105,7 @@ export function FormulaCard({ name, formula, vars }: { name: string; formula: st
   return (
     <Glass className="p-5">
       <div className="text-xs font-bold uppercase tracking-wider text-white/40">{name}</div>
-      <div className="mt-2 rounded-xl bg-[#0B1220] px-4 py-3 text-center text-xl font-black text-cyan-200">{renderChemistry(formula)}</div>
+      <div className="mt-2 rounded-xl bg-[var(--background)] px-4 py-3 text-center text-xl font-black text-cyan-200">{renderChemistry(formula)}</div>
       <div className="mt-3 space-y-1">
         {vars.map((v) => (
           <div key={v.sym} className="flex items-baseline gap-2 text-sm">

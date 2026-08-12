@@ -5,14 +5,14 @@ export type Cat =
   | "nm" | "ng" | "am" | "ae" | "tm" | "ptm" | "ml" | "hl" | "ln" | "ac";
 
 export const CATS: Record<Cat, { label: string; color: string }> = {
-  nm:  { label: "Nonmetal",            color: "#00F5D4" },
-  ng:  { label: "Noble gas",           color: "#9B5DE5" },
+  nm:  { label: "Nonmetal",            color: "#50dc7b" },
+  ng:  { label: "Noble gas",           color: "#b376ff" },
   am:  { label: "Alkali metal",        color: "#F472B6" },
   ae:  { label: "Alkaline earth",      color: "#FB923C" },
   tm:  { label: "Transition metal",    color: "#34D399" },
   ptm: { label: "Post-transition",     color: "#818CF8" },
-  ml:  { label: "Metalloid",           color: "#FFD700" },
-  hl:  { label: "Halogen",             color: "#00BBF9" },
+  ml:  { label: "Metalloid",           color: "#e3b341" },
+  hl:  { label: "Halogen",             color: "#37c8f4" },
   ln:  { label: "Lanthanide",          color: "#C084FC" },
   ac:  { label: "Actinide",            color: "#F9A8D4" },
 };

@@ -53,7 +53,7 @@ export default function ContactFeedback() {
             </div>
             <div className="flex-1">
               <h3 className="text-sm font-bold text-white">AI Live Chat</h3>
-              <p className="text-xs text-gray-400 mt-0.5">Instant answers, 24/7 — powered by our chemistry AI.</p>
+              <p className="text-xs text-[var(--text-muted)] mt-0.5">Instant answers, 24/7 — powered by our chemistry AI.</p>
             </div>
             <button className="text-xs font-semibold bg-[var(--surface)] text-black px-4 py-2 rounded-lg hover:bg-[var(--surface)] transition">
               Launch
@@ -67,7 +67,7 @@ export default function ContactFeedback() {
             </div>
             <div className="flex-1">
               <h3 className="text-sm font-bold text-white">Email Support</h3>
-              <p className="text-xs text-gray-400 mt-0.5">hello@synergicbond.com</p>
+              <p className="text-xs text-[var(--text-muted)] mt-0.5">hello@synergicbond.com</p>
             </div>
             <span className="text-[10px] font-bold text-[var(--text-muted)] bg-[var(--surface-2)] px-2.5 py-1 rounded-full">ACTIVE</span>
           </div>
@@ -79,7 +79,7 @@ export default function ContactFeedback() {
             </div>
             <div className="flex-1">
               <h3 className="text-sm font-bold text-white">Phone Support</h3>
-              <p className="text-xs text-gray-400 mt-0.5">Direct line to our academic team.</p>
+              <p className="text-xs text-[var(--text-muted)] mt-0.5">Direct line to our academic team.</p>
             </div>
             <span className="text-[10px] font-bold text-white/50 bg-white/[0.06] px-2.5 py-1 rounded-full">SOON</span>
           </div>
@@ -90,7 +90,7 @@ export default function ContactFeedback() {
           <h3 className="text-sm font-bold text-white mb-1">Send Anonymous Feedback</h3>
           <p className="text-xs text-gray-500 mb-5">Help us improve. No login required — fully anonymous.</p>
 
-          <label className="block text-xs font-semibold text-gray-400 mb-2">Feedback Type</label>
+          <label className="block text-xs font-semibold text-[var(--text-muted)] mb-2">Feedback Type</label>
           <select
             value={type}
             onChange={(e) => setType(e.target.value)}
@@ -101,7 +101,7 @@ export default function ContactFeedback() {
             ))}
           </select>
 
-          <label className="block text-xs font-semibold text-gray-400 mb-2">Your Message</label>
+          <label className="block text-xs font-semibold text-[var(--text-muted)] mb-2">Your Message</label>
           <textarea
             value={message}
             onChange={(e) => setMessage(e.target.value)}

@@ -44,7 +44,7 @@ export default function Part29() {
           </p>
           <DiagramBox title="Space quantisation — five orientations for d orbital (l = 2)">
             <MagneticQuantumNumberVisual />
-            <p className="mt-3 text-sm text-slate-300">
+            <p className="mt-3 text-sm text-[var(--text-body)]">
               Each arrow shows the orbital angular momentum vector <MathText math="\mathbf{L}" /> precessing around the
               field direction z at one of five allowed angles. The z-projection equals m in units of{" "}
               <MathText math="h/2\pi" />. Dashed horizontal lines show these quantised projections onto the z-axis.

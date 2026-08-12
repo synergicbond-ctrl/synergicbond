@@ -2202,7 +2202,7 @@ function RelationGraph({ part, graph }: { part: number; graph: PartData["graph"]
         <circle cx="760" cy="118" r="7" fill="#fbbf24" />
         <text x="778" y="126" fill="#fde68a" fontSize="21">{curveB}</text>
       </svg>
-      <figcaption className="mt-2 text-sm leading-6 text-slate-400">{title}. The curves are schematic; equations and validity conditions determine the quantitative result.</figcaption>
+      <figcaption className="mt-2 text-sm leading-6 text-[var(--text-muted)]">{title}. The curves are schematic; equations and validity conditions determine the quantitative result.</figcaption>
     </figure>
   );
 }
@@ -2214,13 +2214,13 @@ export default function ThermodynamicsCompleteDerivations({ part }: { part: numb
     <section className="border-y border-cyan-300/20 py-8" data-complete-derivations={part}>
       <p className="text-xs font-black uppercase tracking-[0.22em] text-cyan-300">Complete theory and derivations</p>
       <h2 className="mt-2 text-3xl font-black tracking-tight text-white md:text-4xl">{data.title}</h2>
-      <p className="mt-3 max-w-5xl leading-7 text-slate-300">Every relation below is developed from its assumptions through intermediate mathematics to the final usable result.</p>
+      <p className="mt-3 max-w-5xl leading-7 text-[var(--text-body)]">Every relation below is developed from its assumptions through intermediate mathematics to the final usable result.</p>
       <RelationGraph part={part} graph={data.graph} />
       <div className="space-y-8">
         {data.derivations.map((derivation, index) => (
           <article key={derivation.title} className="border-b border-white/10 pb-7 last:border-b-0">
             <h3 className="text-xl font-black text-white">{index + 1}. {derivation.title}</h3>
-            <p className="mt-2 leading-7 text-slate-300">{derivation.intro}</p>
+            <p className="mt-2 leading-7 text-[var(--text-body)]">{derivation.intro}</p>
             <div className="mt-3 space-y-1.5 border-l-2 border-cyan-400/40 pl-4 font-mono text-[15px] leading-7 text-slate-100">
               {derivation.steps.map((step) => <p key={step}>{step}</p>)}
             </div>
@@ -2235,7 +2235,7 @@ export default function ThermodynamicsCompleteDerivations({ part }: { part: numb
           {data.examples.map((example, index) => (
             <article key={example.title} className="border-b border-white/10 pb-5 last:border-b-0">
               <h4 className="font-black text-white">Example {index + 1} — {example.title}</h4>
-              <p className="mt-2 leading-7 text-slate-300">{example.question}</p>
+              <p className="mt-2 leading-7 text-[var(--text-body)]">{example.question}</p>
               <p className="mt-2 leading-7 text-emerald-200"><strong>Solution:</strong> {example.solution}</p>
             </article>
           ))}

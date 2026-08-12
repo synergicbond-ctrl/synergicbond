@@ -16,7 +16,7 @@ export interface NumberedSectionItem {
 
 export function ChemistryNotesShell({ children }: { children: React.ReactNode }) {
   return (
-    <div className="min-h-screen bg-[#0a1622] pt-10 sm:pt-14 pb-16 px-4 sm:px-6 lg:px-8 text-slate-200 font-sans selection:bg-cyan-500/20 selection:text-cyan-200">
+    <div className="min-h-screen bg-[#0a1622] pt-10 sm:pt-14 pb-16 px-4 sm:px-6 lg:px-8 text-[var(--foreground)] font-sans selection:bg-cyan-500/20 selection:text-cyan-200">
       <div className="mx-auto max-w-5xl space-y-8">{children}</div>
     </div>
   );
@@ -241,7 +241,7 @@ export function NumberedSectionFooter({
 
 export function NumberedSectionHeader({ number, title }: { number: number; title: string }) {
   return (
-    <div className="scroll-mt-28 flex items-center gap-3.5 border-b border-slate-800 pb-4 mb-6">
+    <div className="scroll-mt-28 flex items-center gap-3.5 border-b border-[var(--border)] pb-4 mb-6">
       <span className="flex shrink-0 h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-violet-600 to-blue-600 text-white font-black text-lg shadow-md border border-purple-500/20">
         {number}
       </span>
@@ -260,7 +260,7 @@ export function NotesContentCard({
   className?: string;
 }) {
   return (
-    <div className={`space-y-8 text-[15px] sm:text-base leading-relaxed text-slate-200 ${className}`}>
+    <div className={`space-y-8 text-[15px] sm:text-base leading-relaxed text-[var(--foreground)] ${className}`}>
       {children}
     </div>
   );
@@ -276,9 +276,9 @@ export function ConceptCard({
   className?: string;
 }) {
   return (
-    <section className={`py-4 space-y-3.5 text-slate-200 ${className}`}>
+    <section className={`py-4 space-y-3.5 text-[var(--foreground)] ${className}`}>
       {title && (
-        <h3 className="text-lg font-bold text-white border-b border-slate-800 pb-2 mb-2">
+        <h3 className="text-lg font-bold text-white border-b border-[var(--border)] pb-2 mb-2">
           {title}
         </h3>
       )}
@@ -314,7 +314,7 @@ export function ExampleCard({
   className?: string;
 }) {
   return (
-    <div className={`border-l-4 border-violet-400 bg-violet-950/10 p-5 my-4 space-y-3 text-slate-200 ${className}`}>
+    <div className={`border-l-4 border-violet-400 bg-violet-950/10 p-5 my-4 space-y-3 text-[var(--foreground)] ${className}`}>
       {title && <div className="font-bold text-white">{title}</div>}
       <div className="space-y-2">{children}</div>
     </div>
@@ -348,7 +348,7 @@ export function SolutionSteps({
   className?: string;
 }) {
   return (
-    <div className={`py-3 space-y-2.5 text-slate-300 border-t border-slate-800/60 mt-3 ${className}`}>
+    <div className={`py-3 space-y-2.5 text-[var(--text-body)] border-t border-[var(--border)]/60 mt-3 ${className}`}>
       {title && <div className="text-xs font-bold uppercase tracking-wider text-slate-500 mb-1">{title}</div>}
       <div className="space-y-2 font-normal leading-relaxed">{children}</div>
     </div>
@@ -424,7 +424,7 @@ export function DiagramPanel({
   return (
     <div className={`py-4 my-4 text-center space-y-3 overflow-x-auto ${className}`}>
       {title && <div className="text-xs font-bold uppercase tracking-widest text-purple-400 mb-2">{title}</div>}
-      <div className="text-slate-200 flex flex-col items-center justify-center gap-3">{children}</div>
+      <div className="text-[var(--foreground)] flex flex-col items-center justify-center gap-3">{children}</div>
     </div>
   );
 }
@@ -439,10 +439,10 @@ export function ChemistryTable({
   className?: string;
 }) {
   return (
-    <div className={`my-6 w-full overflow-x-auto rounded-xl border border-slate-800 bg-slate-950/20 shadow-sm ${className}`}>
-      <table className="w-full min-w-[360px] border-collapse text-left text-sm text-slate-300">
+    <div className={`my-6 w-full overflow-x-auto rounded-xl border border-[var(--border)] bg-[var(--background)]/20 shadow-sm ${className}`}>
+      <table className="w-full min-w-[360px] border-collapse text-left text-sm text-[var(--text-body)]">
         <thead>
-          <tr className="border-b border-slate-800 bg-slate-900/60 text-white font-semibold">
+          <tr className="border-b border-[var(--border)] bg-[var(--surface)]/60 text-white font-semibold">
             {headers.map((h, i) => (
               <th key={i} className="px-4 py-3.5">
                 {h}
@@ -452,7 +452,7 @@ export function ChemistryTable({
         </thead>
         <tbody>
           {rows.map((row, rIdx) => (
-            <tr key={rIdx} className="border-b border-slate-800 last:border-none even:bg-slate-950/40 hover:bg-slate-900/40 transition-colors">
+            <tr key={rIdx} className="border-b border-[var(--border)] last:border-none even:bg-[var(--background)]/40 hover:bg-[var(--surface)]/40 transition-colors">
               {row.map((cell, cIdx) => (
                 <td key={cIdx} className="px-4 py-3 align-top">
                   {cell}
@@ -489,7 +489,7 @@ export function Highlight({ children }: { children: React.ReactNode }) {
 }
 
 export function NoteBox({ children }: { children: React.ReactNode }) {
-  return <ConceptCard className="border-slate-800 bg-slate-900/30">{children}</ConceptCard>;
+  return <ConceptCard className="border-[var(--border)] bg-[var(--surface)]/30">{children}</ConceptCard>;
 }
 
 export function PinkBox({ children }: { children: React.ReactNode }) {
@@ -530,8 +530,8 @@ export function YellowNote({ children }: { children: React.ReactNode }) {
 
 export function ChecklistItem({ checked = true, children }: { checked?: boolean; done?: boolean; children: React.ReactNode }) {
   return (
-    <div className="flex items-start gap-2.5 my-2 text-slate-300">
-      <span className={`flex shrink-0 h-5 w-5 rounded-full items-center justify-center text-xs font-bold mt-0.5 ${checked ? "bg-emerald-600 text-white border border-emerald-500/20" : "bg-slate-800 text-slate-400 border border-slate-700/60"}`}>
+    <div className="flex items-start gap-2.5 my-2 text-[var(--text-body)]">
+      <span className={`flex shrink-0 h-5 w-5 rounded-full items-center justify-center text-xs font-bold mt-0.5 ${checked ? "bg-emerald-600 text-white border border-emerald-500/20" : "bg-[var(--surface-2)] text-[var(--text-muted)] border border-[var(--border-strong)]/60"}`}>
         {checked ? "✓" : "•"}
       </span>
       <span className="flex-1">{children}</span>
@@ -549,7 +549,7 @@ export function StatusBadge({ status }: { status: string }) {
 
 export function Tag({ children }: { children: React.ReactNode }) {
   return (
-    <span className="inline-flex items-center rounded-md bg-slate-800 px-2.5 py-1 text-xs font-semibold text-slate-300 border border-slate-700/60">
+    <span className="inline-flex items-center rounded-md bg-[var(--surface-2)] px-2.5 py-1 text-xs font-semibold text-[var(--text-body)] border border-[var(--border-strong)]/60">
       {children}
     </span>
   );
@@ -557,18 +557,18 @@ export function Tag({ children }: { children: React.ReactNode }) {
 
 export function LabelPill({ children }: { children: React.ReactNode }) {
   return (
-    <span className="inline-flex items-center rounded-full bg-slate-800 px-3 py-1 text-xs font-semibold text-slate-300 border border-slate-700/60">
+    <span className="inline-flex items-center rounded-full bg-[var(--surface-2)] px-3 py-1 text-xs font-semibold text-[var(--text-body)] border border-[var(--border-strong)]/60">
       {children}
     </span>
   );
 }
 
 export function CrossedOut({ children }: { children: React.ReactNode }) {
-  return <div className="my-2 p-3 rounded-lg bg-slate-900/40 border border-slate-800 text-slate-500 line-through text-sm">{children}</div>;
+  return <div className="my-2 p-3 rounded-lg bg-[var(--surface)]/40 border border-[var(--border)] text-slate-500 line-through text-sm">{children}</div>;
 }
 
 export function CrossedRelation({ children }: { children: React.ReactNode }) {
-  return <div className="my-2 p-3 rounded-lg bg-slate-900/40 border border-slate-800 text-slate-500 line-through text-sm">{children}</div>;
+  return <div className="my-2 p-3 rounded-lg bg-[var(--surface)]/40 border border-[var(--border)] text-slate-500 line-through text-sm">{children}</div>;
 }
 
 export function MiniStructure({ title, children }: { title?: string; children: React.ReactNode }) {

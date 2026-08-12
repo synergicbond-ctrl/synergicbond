@@ -85,7 +85,7 @@ export default function PropertiesPage() {
   }, [q]);
 
   return (
-    <main className="min-h-screen bg-[#0B0F19] text-white">
+    <main className="min-h-screen bg-[var(--background)] text-white">
       <div className="mx-auto max-w-5xl px-6 py-12">
         <ReferenceTabs />
         <p className="text-xs font-bold uppercase tracking-[0.4em] text-cyan-300 mb-3">Knowledge Vault · Physical</p>
@@ -97,7 +97,7 @@ export default function PropertiesPage() {
         <div className="relative mb-6">
           <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 h-4 w-4 text-white/30" />
           <input value={q} onChange={(e) => setQ(e.target.value)} placeholder="Search molecule — H2O, BF3, XeF4…"
-            className="w-full rounded-xl border border-white/[0.08] bg-[#111827] pl-10 pr-4 py-2.5 text-sm text-white placeholder-white/30 outline-none focus:border-cyan-400/50" />
+            className="w-full rounded-xl border border-white/[0.08] bg-[var(--surface)] pl-10 pr-4 py-2.5 text-sm text-white placeholder-white/30 outline-none focus:border-cyan-400/50" />
         </div>
 
         {/* Geometry table */}
@@ -116,7 +116,7 @@ export default function PropertiesPage() {
             </thead>
             <tbody>
               {filtered.map((m, i) => (
-                <tr key={m.f} className={i % 2 ? "bg-[#111827]" : "bg-[#0e1421]"}>
+                <tr key={m.f} className={i % 2 ? "bg-[var(--surface)]" : "bg-[var(--surface)]"}>
                   <td className="px-4 py-2.5"><span className="font-mono font-bold text-cyan-300">{m.f}</span> <span className="text-white/40 text-xs">{m.name}</span></td>
                   <td className="px-3 py-2.5 text-white/80">{m.geometry}</td>
                   <td className="px-3 py-2.5 text-white/80 font-mono">{m.hybrid}</td>
@@ -146,12 +146,12 @@ export default function PropertiesPage() {
             </thead>
             <tbody>
               {bpmp.map((b, i) => (
-                <tr key={b.c} className={i % 2 ? "bg-[#111827]" : "bg-[#0e1421]"}>
+                <tr key={b.c} className={i % 2 ? "bg-[var(--surface)]" : "bg-[var(--surface)]"}>
                   <td className="px-4 py-2.5 font-mono font-bold text-cyan-300">{b.c}</td>
                   <td className="px-3 py-2.5 text-white/80">{b.bp}</td>
                   <td className="px-3 py-2.5 text-white/80">{b.mp}</td>
                   <td className="px-3 py-2.5 text-white/70">{b.state}</td>
-                  <td className="px-3 py-2.5 text-gray-400 text-xs">{b.reason}</td>
+                  <td className="px-3 py-2.5 text-[var(--text-muted)] text-xs">{b.reason}</td>
                 </tr>
               ))}
             </tbody>
@@ -172,11 +172,11 @@ export default function PropertiesPage() {
             </thead>
             <tbody>
               {elements.map((e, i) => (
-                <tr key={e.el} className={i % 2 ? "bg-[#111827]" : "bg-[#0e1421]"}>
+                <tr key={e.el} className={i % 2 ? "bg-[var(--surface)]" : "bg-[var(--surface)]"}>
                   <td className="px-4 py-2.5 font-mono font-bold text-cyan-300">{e.el}</td>
                   <td className="px-3 py-2.5 text-white/80">{e.mp}</td>
                   <td className="px-3 py-2.5 text-white/80">{e.bp}</td>
-                  <td className="px-3 py-2.5 text-gray-400 text-xs">{e.note}</td>
+                  <td className="px-3 py-2.5 text-[var(--text-muted)] text-xs">{e.note}</td>
                 </tr>
               ))}
             </tbody>

@@ -14,7 +14,7 @@ export const dynamic = "force-dynamic";
 export default function HydrogenChapterHub() {
   return (
     <ChapterShell kicker="Chemistry" subtitle="Hydrogen" tabs={hydrogenTabs()}>
-      <nav className="mb-6 flex items-center gap-2 text-xs font-semibold text-slate-400 sm:text-sm" aria-label="Breadcrumb">
+      <nav className="mb-6 flex items-center gap-2 text-xs font-semibold text-[var(--text-muted)] sm:text-sm" aria-label="Breadcrumb">
         <Link href="/" className="hover:text-white">Home</Link><span>/</span>
         <Link href="/notes" className="hover:text-white">Chapter Notes</Link><span>/</span>
         <span className="text-cyan-300">Hydrogen</span>
@@ -24,7 +24,7 @@ export default function HydrogenChapterHub() {
         <h1 className="max-w-5xl bg-gradient-to-r from-cyan-200 via-violet-200 to-amber-200 bg-clip-text text-4xl font-black leading-tight text-transparent sm:text-5xl lg:text-6xl">
           Hydrogen and Its Compounds
         </h1>
-        <p className="mt-5 max-w-4xl text-base font-medium leading-8 text-slate-300 sm:text-lg">
+        <p className="mt-5 max-w-4xl text-base font-medium leading-8 text-[var(--text-body)] sm:text-lg">
           Atomic structure and isotopes lead naturally to dihydrogen, hydrides, hydrogen bonding, water, heavy water and hydrogen peroxide. Each lesson develops the theory, equations, mechanisms, data and exceptions in a continuous chemistry-first sequence.
         </p>
       </header>

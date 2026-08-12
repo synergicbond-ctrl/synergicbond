@@ -44,8 +44,8 @@ function CIPExample({ title, priorities, front, hashedLabel, verdict }: {
   const clockwise = verdict === "R";
   return (
     <div className="rounded-xl border border-white/10 bg-[#050b16] p-4">
-      <p className="text-sm font-bold text-slate-200">{title}</p>
-      <p className="mt-1 text-xs leading-5 text-slate-400">Priority: {priorities}</p>
+      <p className="text-sm font-bold text-[var(--foreground)]">{title}</p>
+      <p className="mt-1 text-xs leading-5 text-[var(--text-muted)]">Priority: {priorities}</p>
       <div className="mt-3 grid grid-cols-2 gap-3">
         <svg fill="currentColor" viewBox="0 0 160 150" className="h-auto w-full text-slate-100" role="img" aria-label={`${title} tetrahedral centre with lowest priority hashed to the back`}>
           <g fontSize="12">
@@ -77,8 +77,8 @@ function CIPExample({ title, priorities, front, hashedLabel, verdict }: {
 function PhantomAtomRow({ real, expanded, priority }: { real: string; expanded: string; priority: string }) {
   return (
     <div className="grid grid-cols-3 items-center gap-2 rounded-lg bg-white/[.03] p-2.5 text-xs sm:text-sm">
-      <span className="font-mono text-slate-200">{real}</span>
-      <span className="text-center text-slate-400">≡ {expanded}</span>
+      <span className="font-mono text-[var(--foreground)]">{real}</span>
+      <span className="text-center text-[var(--text-muted)]">≡ {expanded}</span>
       <span className="text-right text-cyan-300">{priority}</span>
     </div>
   );
@@ -97,23 +97,23 @@ export default function IsomerismPart14() {
         <section className="mt-7 space-y-6">
           <section className="rounded-2xl border border-white/10 bg-white/[.035] p-5">
             <h2 className="text-xl font-black text-cyan-200">Nomenclature overview</h2>
-            <p className="mt-2 text-sm leading-7 text-slate-300">Optical isomers are named by two systems: <b className="text-white">relative naming</b> (D,L-nomenclature, and the related erythro/threo system) and <b className="text-white">absolute naming</b> (R,S-nomenclature via the CIP rules).</p>
+            <p className="mt-2 text-sm leading-7 text-[var(--text-body)]">Optical isomers are named by two systems: <b className="text-white">relative naming</b> (D,L-nomenclature, and the related erythro/threo system) and <b className="text-white">absolute naming</b> (R,S-nomenclature via the CIP rules).</p>
           </section>
 
           <section className="rounded-2xl border border-white/10 bg-white/[.035] p-5">
             <h2 className="text-xl font-black text-cyan-200">D, L-nomenclature</h2>
-            <p className="mt-2 text-sm leading-7 text-slate-300">D,L-nomenclature is based on the relative position of the OH group compared to D/L-glyceraldehyde, the reference standard.</p>
+            <p className="mt-2 text-sm leading-7 text-[var(--text-body)]">D,L-nomenclature is based on the relative position of the OH group compared to D/L-glyceraldehyde, the reference standard.</p>
             <div className="mt-4 grid gap-4 sm:grid-cols-2">
               <div className="rounded-xl border border-cyan-300/20 bg-[#050b16] p-3"><DLFischer top="CHO" arm1={[H, "OH"]} arm2={["", ""]} bottom="CH₃" label="D-glyceraldehyde" /><p className="mt-1 text-center text-xs text-cyan-300">D-glyceraldehyde</p></div>
               <div className="rounded-xl border border-cyan-300/20 bg-[#050b16] p-3"><DLFischer top="CHO" arm1={["HO", H]} arm2={["", ""]} bottom="CH₃" label="L-glyceraldehyde" /><p className="mt-1 text-center text-xs text-cyan-300">L-glyceraldehyde</p></div>
             </div>
-            <p className="mt-4 text-sm leading-7 text-slate-300">If more than one OH group is present, check the position of the <b className="text-white">bottom-most</b> OH group attached to a chiral centre (nearest the higher-numbered/CH₂OH end): OH on the right → D; OH on the left → L. E.g. D(+)-glucose has its bottom stereocentre OH on the right; its mirror image L(−)-glucose has all four OH groups reversed, while L(+)-glucose is a diastereomer sharing the bottom-OH-left criterion but differing at the other centres. This convention is generally applied to carbohydrates and amino acids — for amino acids, priority NH₂ &gt; OH decides D/L the same way when both groups are present in a molecule (e.g. in serine-like structures the amino group, not a hydroxyl, is checked at the bottom stereocentre).</p>
+            <p className="mt-4 text-sm leading-7 text-[var(--text-body)]">If more than one OH group is present, check the position of the <b className="text-white">bottom-most</b> OH group attached to a chiral centre (nearest the higher-numbered/CH₂OH end): OH on the right → D; OH on the left → L. E.g. D(+)-glucose has its bottom stereocentre OH on the right; its mirror image L(−)-glucose has all four OH groups reversed, while L(+)-glucose is a diastereomer sharing the bottom-OH-left criterion but differing at the other centres. This convention is generally applied to carbohydrates and amino acids — for amino acids, priority NH₂ &gt; OH decides D/L the same way when both groups are present in a molecule (e.g. in serine-like structures the amino group, not a hydroxyl, is checked at the bottom stereocentre).</p>
           </section>
 
           <section className="rounded-2xl border border-white/10 bg-white/[.035] p-5">
             <h2 className="text-xl font-black text-cyan-200">Absolute naming / R-S naming / CIP rule</h2>
-            <p className="mt-2 text-sm leading-7 text-slate-300">R = Rectus (clockwise) · S = Sinister (anticlockwise). There are two steps: (1) assign <b className="text-white">priority</b> to the four ligands, (2) trace the <b className="text-white">sequence</b> 1→2→3 with the lowest-priority group pointed away from the viewer.</p>
-            <ol className="mt-3 list-[lower-alpha] space-y-2 pl-5 text-sm leading-6 text-slate-300">
+            <p className="mt-2 text-sm leading-7 text-[var(--text-body)]">R = Rectus (clockwise) · S = Sinister (anticlockwise). There are two steps: (1) assign <b className="text-white">priority</b> to the four ligands, (2) trace the <b className="text-white">sequence</b> 1→2→3 with the lowest-priority group pointed away from the viewer.</p>
+            <ol className="mt-3 list-[lower-alpha] space-y-2 pl-5 text-sm leading-6 text-[var(--text-body)]">
               <li>Priority is assigned on the basis of the atomic number of the atom directly attached to the stereocentre.</li>
               <li>If isotopes are present, priority is assigned on the basis of atomic mass (e.g. T &gt; D &gt; H).</li>
               <li>If priority is not settled by the first atom, check the atomic number of the 2nd, then 3rd atom outward along each branch, and so on.</li>
@@ -139,7 +139,7 @@ export default function IsomerismPart14() {
 
           <section className="rounded-2xl border border-white/10 bg-white/[.035] p-5">
             <h2 className="text-xl font-black text-cyan-200">Worked R/S assignments</h2>
-            <p className="text-sm leading-7 text-slate-300">The source works through the same method — priority → orient lowest priority away (directly, by an even interchange, or by a single-swap-then-invert shortcut) → trace 1→2→3 — on eighteen varied stereocentres. A representative set:</p>
+            <p className="text-sm leading-7 text-[var(--text-body)]">The source works through the same method — priority → orient lowest priority away (directly, by an even interchange, or by a single-swap-then-invert shortcut) → trace 1→2→3 — on eighteen varied stereocentres. A representative set:</p>
             <div className="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
               <CIPExample title="(a) 1-(chloromethyl)cyclobutan-1-ol-type centre" priorities="CH₂OH &gt; cyclobutyl &gt; CH₃ &gt; H" front={["CH₂OH", "cyclobutyl", "CH₃"]} hashedLabel="H" verdict="R" />
               <CIPExample title="(b) 2-bromocyclopentan-1-one" priorities="Br &gt; CH₂C(=O)– &gt; CH₂CH₂– &gt; H" front={["Br", "ring-C=O side", "ring-CH₂ side"]} hashedLabel="H" verdict="R" />
@@ -157,43 +157,43 @@ export default function IsomerismPart14() {
 
           <section className="rounded-2xl border border-white/10 bg-white/[.035] p-5">
             <h2 className="text-xl font-black text-cyan-200">Worked example: even-interchange shortcut</h2>
-            <p className="text-sm leading-7 text-slate-300">For (2R,3R)-2,3-dihydroxybutanoic acid (COOH–C2(OH)(H)–C3(OH)(H)–CH₃), both stereocentres have OH on the right in the standard Fischer projection. Reading each centre directly (H toward viewer) gives an apparent S; inverting once (the single-swap-then-invert shortcut) gives the true configuration R at both C2 and C3 — hence (2R,3R). The same bottom-up method applied to a Fischer projection with three consecutive OH-right centres over a CH₃ terminus, and to a four-stereocentre CH₂OH-terminated hexose-like chain, both extend directly from this one worked template.</p>
+            <p className="text-sm leading-7 text-[var(--text-body)]">For (2R,3R)-2,3-dihydroxybutanoic acid (COOH–C2(OH)(H)–C3(OH)(H)–CH₃), both stereocentres have OH on the right in the standard Fischer projection. Reading each centre directly (H toward viewer) gives an apparent S; inverting once (the single-swap-then-invert shortcut) gives the true configuration R at both C2 and C3 — hence (2R,3R). The same bottom-up method applied to a Fischer projection with three consecutive OH-right centres over a CH₃ terminus, and to a four-stereocentre CH₂OH-terminated hexose-like chain, both extend directly from this one worked template.</p>
           </section>
 
           <section className="rounded-2xl border border-white/10 bg-white/[.035] p-5">
             <h2 className="text-xl font-black text-cyan-200">Erythro and threo nomenclature</h2>
-            <p className="text-sm leading-7 text-slate-300">In a Fischer projection of a compound with two adjacent stereocentres bearing one identical substituent pair (e.g. two OH groups, or two Br groups) plus two different end groups R/R′: the <b className="text-white">erythro</b> diastereomer has the identical substituents on the <i>same</i> side (like erythrose); the <b className="text-white">threo</b> diastereomer has them on <i>opposite</i> sides (like threose).</p>
+            <p className="text-sm leading-7 text-[var(--text-body)]">In a Fischer projection of a compound with two adjacent stereocentres bearing one identical substituent pair (e.g. two OH groups, or two Br groups) plus two different end groups R/R′: the <b className="text-white">erythro</b> diastereomer has the identical substituents on the <i>same</i> side (like erythrose); the <b className="text-white">threo</b> diastereomer has them on <i>opposite</i> sides (like threose).</p>
             <div className="mt-4 grid gap-4 sm:grid-cols-2">
               <div className="rounded-xl border border-cyan-300/20 bg-[#050b16] p-3"><DLFischer top="CHO" arm1={[H, "OH"]} arm2={[H, "OH"]} bottom="CH₂OH" label="erythrose" /><p className="mt-1 text-center text-xs text-cyan-300">erythrose — OH/OH same side</p></div>
               <div className="rounded-xl border border-cyan-300/20 bg-[#050b16] p-3"><DLFischer top="CHO" arm1={[H, "OH"]} arm2={["HO", H]} bottom="CH₂OH" label="threose" /><p className="mt-1 text-center text-xs text-cyan-300">threose — OH/OH opposite sides</p></div>
             </div>
-            <p className="mt-3 text-sm leading-7 text-slate-300">Worked example: (±)-erythro-4-bromo-3-hexanol and (±)-threo-4-bromo-3-hexanol are non-identical diastereomers of one another — each erythro/threo label denotes a racemic pair of enantiomers, and an erythro isomer is diastereomeric with the corresponding threo isomer (never identical, never enantiomeric).</p>
+            <p className="mt-3 text-sm leading-7 text-[var(--text-body)]">Worked example: (±)-erythro-4-bromo-3-hexanol and (±)-threo-4-bromo-3-hexanol are non-identical diastereomers of one another — each erythro/threo label denotes a racemic pair of enantiomers, and an erythro isomer is diastereomeric with the corresponding threo isomer (never identical, never enantiomeric).</p>
           </section>
 
           <section className="rounded-2xl border border-white/10 bg-white/[.035] p-5">
             <h2 className="text-xl font-black text-cyan-200">Rₐ / Sₐ: CIP naming for a chiral axis (allenes)</h2>
-            <p className="text-sm leading-7 text-slate-300">To assign Rₐ/Sₐ to an allene with a chiral axis, picture the allene as an elongated tetrahedron and view the molecule along the chiral axis (the viewpoint chosen does not affect the outcome). The four groups — two on each terminal sp² carbon — project onto a plane perpendicular to the axis, giving a Newman-like circle exactly as for a point stereocentre; the near-carbon substituents get priorities 1 and 2 (or 1 and higher), the far-carbon substituents complete the set, and the same clockwise = R / counter-clockwise = S trace applies (subscript &apos;a&apos; marks it as an axial, not a point, designation).</p>
-            <p className="mt-3 text-sm leading-7 text-slate-300">Worked example: hexa-2,3-dienoic acid, CH₃CH₂–CH=C=CH–CO₂H. Viewing along the axis from each side and applying CH₃CH₂– &gt; H– and –COOH &gt; –H at the respective termini, one enantiomer (I) traces 1→2→3 clockwise → <b className="text-white">Rₐ</b>; its mirror image (II) traces counter-clockwise → <b className="text-white">Sₐ</b>.</p>
-            <p className="mt-3 text-sm leading-7 text-slate-300">The identical method extends to ortho-substituted biphenyl atropisomers, viewed along the 1–1′ biaryl bond: (Sₐ)-6,6′-dinitrobiphenyl-2,2′-dicarboxylic acid (NO₂ and CO₂H at both ortho pairs) and a related 6,6′-dinitro-2,2′-dichloro-2′-methylbiphenyl example both trace counter-clockwise 1→2→3 when viewed end-on along the restricted biaryl bond, giving the Sₐ configuration for the drawn enantiomer in each case.</p>
+            <p className="text-sm leading-7 text-[var(--text-body)]">To assign Rₐ/Sₐ to an allene with a chiral axis, picture the allene as an elongated tetrahedron and view the molecule along the chiral axis (the viewpoint chosen does not affect the outcome). The four groups — two on each terminal sp² carbon — project onto a plane perpendicular to the axis, giving a Newman-like circle exactly as for a point stereocentre; the near-carbon substituents get priorities 1 and 2 (or 1 and higher), the far-carbon substituents complete the set, and the same clockwise = R / counter-clockwise = S trace applies (subscript &apos;a&apos; marks it as an axial, not a point, designation).</p>
+            <p className="mt-3 text-sm leading-7 text-[var(--text-body)]">Worked example: hexa-2,3-dienoic acid, CH₃CH₂–CH=C=CH–CO₂H. Viewing along the axis from each side and applying CH₃CH₂– &gt; H– and –COOH &gt; –H at the respective termini, one enantiomer (I) traces 1→2→3 clockwise → <b className="text-white">Rₐ</b>; its mirror image (II) traces counter-clockwise → <b className="text-white">Sₐ</b>.</p>
+            <p className="mt-3 text-sm leading-7 text-[var(--text-body)]">The identical method extends to ortho-substituted biphenyl atropisomers, viewed along the 1–1′ biaryl bond: (Sₐ)-6,6′-dinitrobiphenyl-2,2′-dicarboxylic acid (NO₂ and CO₂H at both ortho pairs) and a related 6,6′-dinitro-2,2′-dichloro-2′-methylbiphenyl example both trace counter-clockwise 1→2→3 when viewed end-on along the restricted biaryl bond, giving the Sₐ configuration for the drawn enantiomer in each case.</p>
           </section>
 
           <section className="rounded-2xl border border-white/10 bg-white/[.035] p-5">
             <h2 className="text-xl font-black text-cyan-200">Calculation of the number of stereoisomers</h2>
-            <p className="text-sm leading-7 text-slate-300">First determine n = the number of sites that can show optical isomerism (stereocentres).</p>
-            <p className="mt-2 text-sm font-bold text-slate-200">Case 1 — the compound is unsymmetrical (the two halves of the molecule are constitutionally different):</p>
+            <p className="text-sm leading-7 text-[var(--text-body)]">First determine n = the number of sites that can show optical isomerism (stereocentres).</p>
+            <p className="mt-2 text-sm font-bold text-[var(--foreground)]">Case 1 — the compound is unsymmetrical (the two halves of the molecule are constitutionally different):</p>
             <BlockMath math="\\text{Total optical isomers}=2^{n}\\qquad \\text{Enantiomeric pairs}=\\frac{2^{n}}{2}=2^{n-1}\\qquad \\text{Meso forms}=0" />
-            <p className="mt-2 text-sm leading-6 text-slate-300">Worked example: a branched heptane-type chain with n = 3 unsymmetrical stereocentres gives 2³ = 8 total optical isomers, 4 enantiomeric pairs, and 0 meso forms.</p>
+            <p className="mt-2 text-sm leading-6 text-[var(--text-body)]">Worked example: a branched heptane-type chain with n = 3 unsymmetrical stereocentres gives 2³ = 8 total optical isomers, 4 enantiomeric pairs, and 0 meso forms.</p>
             <p className="mt-3 text-sm leading-6 text-amber-100/90 rounded-xl border border-amber-300/25 bg-amber-300/[.07] p-3">2ⁿ only ever counts <i>unsymmetrical</i> compounds correctly. When the two halves of the molecule are identical or related by an internal symmetry element (as in tartaric-acid-type cases, Part 13), some of the 2ⁿ Fischer arrangements collapse onto each other and one or more become meso — the true isomer count and enantiomeric-pair count must then be worked out case by case, never by blindly applying 2ⁿ.</p>
           </section>
 
           <section className="rounded-2xl border border-white/10 bg-white/[.035] p-5">
             <h2 className="text-xl font-black text-cyan-200">Practice sets in the source</h2>
-            <p className="text-sm leading-7 text-slate-300">The source continues with a 45-compound unsolved &quot;write the R,S name&quot; bank (simple acyclic centres through N/S-containing ions, epoxides, alkenyl and cyclobutenyl-substituted centres, and isotope-labelled examples) and a 38-pair isomeric-relationship classification bank (label each pair Enantiomers / Diastereomers / Identical / Constitutional / Positional / meso) — both applying exactly the priority-assignment and Fischer/Newman-comparison methods already worked through above.</p>
+            <p className="text-sm leading-7 text-[var(--text-body)]">The source continues with a 45-compound unsolved &quot;write the R,S name&quot; bank (simple acyclic centres through N/S-containing ions, epoxides, alkenyl and cyclobutenyl-substituted centres, and isotope-labelled examples) and a 38-pair isomeric-relationship classification bank (label each pair Enantiomers / Diastereomers / Identical / Constitutional / Positional / meso) — both applying exactly the priority-assignment and Fischer/Newman-comparison methods already worked through above.</p>
           </section>
         </section>
 
         <nav className="mt-8 flex justify-between border-t border-white/10 pt-6">
-          <Link href="/learn/isomerism/13" className="rounded-xl border border-white/15 px-4 py-3 text-sm font-bold text-slate-200">← 13</Link>
+          <Link href="/learn/isomerism/13" className="rounded-xl border border-white/15 px-4 py-3 text-sm font-bold text-[var(--foreground)]">← 13</Link>
           <Link href="/learn/isomerism/15" className="rounded-xl border border-cyan-300/30 bg-cyan-300/10 px-4 py-3 text-sm font-bold text-cyan-100">15 →</Link>
         </nav>
       </article>

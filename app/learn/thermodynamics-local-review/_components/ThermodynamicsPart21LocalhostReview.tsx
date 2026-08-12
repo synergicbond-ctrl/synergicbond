@@ -34,17 +34,17 @@ function Section({
   children: React.ReactNode;
 }) {
   return (
-    <section className="rounded-[2rem] border border-white/10 bg-slate-950/80 p-5 shadow-2xl shadow-black/20 backdrop-blur md:p-8">
+    <section className="rounded-[2rem] border border-white/10 bg-[var(--background)]/80 p-5 shadow-2xl shadow-black/20 backdrop-blur md:p-8">
       <div className="flex items-start gap-4">
         <span className="grid h-10 w-10 shrink-0 place-items-center rounded-2xl border border-cyan-300/30 bg-cyan-300/10 text-sm font-black text-cyan-200">
           {index}
         </span>
         <div>
           <h2 className="text-2xl font-black tracking-tight text-white md:text-3xl">{title}</h2>
-          {subtitle ? <p className="mt-1 text-sm leading-6 text-slate-400">{subtitle}</p> : null}
+          {subtitle ? <p className="mt-1 text-sm leading-6 text-[var(--text-muted)]">{subtitle}</p> : null}
         </div>
       </div>
-      <div className="mt-6 space-y-5 text-[15px] leading-7 text-slate-200 md:text-base">{children}</div>
+      <div className="mt-6 space-y-5 text-[15px] leading-7 text-[var(--foreground)] md:text-base">{children}</div>
     </section>
   );
 }
@@ -62,7 +62,7 @@ function ConceptLens({
     <aside className={`rounded-2xl border p-5 ${toneMap[tone]}`}>
       <p className="text-xs font-black uppercase tracking-[0.2em]">Synergic Bond Concept Lens</p>
       <h3 className="mt-2 text-lg font-black text-white">{title}</h3>
-      <div className="mt-2 text-sm leading-6 text-slate-200">{children}</div>
+      <div className="mt-2 text-sm leading-6 text-[var(--foreground)]">{children}</div>
     </aside>
   );
 }
@@ -456,19 +456,19 @@ function AbsoluteEntropyTrendTable() {
   return (
     <div className="overflow-x-auto rounded-2xl border border-white/10">
       <table className="min-w-full border-collapse text-left text-sm">
-        <thead className="bg-slate-900">
+        <thead className="bg-[var(--surface)]">
           <tr>
             <th className="px-4 py-3 font-black text-white">Comparison factor</th>
             <th className="px-4 py-3 font-black text-white">Predicted trend</th>
             <th className="px-4 py-3 font-black text-white">Scientific interpretation</th>
           </tr>
         </thead>
-        <tbody className="divide-y divide-white/10 bg-slate-950/70">
+        <tbody className="divide-y divide-white/10 bg-[var(--background)]/70">
           {rows.map(([factor, trend, meaning]) => (
             <tr key={factor}>
               <td className="px-4 py-3 font-semibold text-slate-100">{factor}</td>
               <td className="px-4 py-3 font-mono text-cyan-200">{trend}</td>
-              <td className="px-4 py-3 text-slate-300">{meaning}</td>
+              <td className="px-4 py-3 text-[var(--text-body)]">{meaning}</td>
             </tr>
           ))}
         </tbody>
@@ -552,7 +552,7 @@ function RetainedDataAtlas() {
           <h3 className="text-lg font-black text-white">{group.title}</h3>
           <div className="mt-4 space-y-2">
             {group.lines.map((line) => (
-              <p key={line} className="rounded-xl bg-black/20 px-3 py-2 text-sm text-slate-200">
+              <p key={line} className="rounded-xl bg-black/20 px-3 py-2 text-sm text-[var(--foreground)]">
                 {line}
               </p>
             ))}
@@ -599,7 +599,7 @@ function PredictionHeuristics() {
           <div className="mt-3 rounded-xl bg-black/25 p-3 text-center font-mono text-sm font-black text-white">
             {card.sign}
           </div>
-          <p className="mt-3 text-sm leading-6 text-slate-200">{card.text}</p>
+          <p className="mt-3 text-sm leading-6 text-[var(--foreground)]">{card.text}</p>
         </article>
       ))}
     </div>
@@ -634,7 +634,7 @@ function RetainedReactionExamples() {
         <article key={item.reaction} className={`rounded-3xl border p-5 ${toneMap[item.tone]}`}>
           <h3 className="font-mono text-base font-black text-white">{item.reaction}</h3>
           <p className="mt-3 text-sm font-bold text-slate-100">{item.trend}</p>
-          <p className="mt-3 text-sm leading-6 text-slate-300">{item.audit}</p>
+          <p className="mt-3 text-sm leading-6 text-[var(--text-body)]">{item.audit}</p>
         </article>
       ))}
     </div>
@@ -656,7 +656,7 @@ function SourceQuadrantExamplesTable() {
   return (
     <div className="overflow-x-auto rounded-2xl border border-white/10">
       <table className="min-w-[1100px] border-collapse text-left text-xs">
-        <thead className="bg-slate-900">
+        <thead className="bg-[var(--surface)]">
           <tr>
             <th className="px-3 py-3 font-black text-white">ΔH</th>
             <th className="px-3 py-3 font-black text-white">ΔS</th>
@@ -667,16 +667,16 @@ function SourceQuadrantExamplesTable() {
             <th className="px-3 py-3 font-black text-white">Audit note</th>
           </tr>
         </thead>
-        <tbody className="divide-y divide-white/10 bg-slate-950/70">
+        <tbody className="divide-y divide-white/10 bg-[var(--background)]/70">
           {rows.map(([h, s, tendency, reaction, hv, sv, note]) => (
             <tr key={reaction}>
               <td className="px-3 py-3 font-black text-cyan-200">{h}</td>
               <td className="px-3 py-3 font-black text-violet-200">{s}</td>
-              <td className="px-3 py-3 text-slate-200">{tendency}</td>
+              <td className="px-3 py-3 text-[var(--foreground)]">{tendency}</td>
               <td className="px-3 py-3 font-mono text-slate-100">{reaction}</td>
               <td className="px-3 py-3 text-amber-200">{hv}</td>
               <td className="px-3 py-3 text-emerald-300">{sv}</td>
-              <td className="px-3 py-3 leading-5 text-slate-400">{note}</td>
+              <td className="px-3 py-3 leading-5 text-[var(--text-muted)]">{note}</td>
             </tr>
           ))}
         </tbody>
@@ -734,15 +734,15 @@ function WorkedExamples() {
   return (
     <div className="grid gap-4 lg:grid-cols-2">
       {examples.map((item) => (
-        <article key={item.title} className="rounded-2xl border border-white/10 bg-slate-900/70 p-5">
+        <article key={item.title} className="rounded-2xl border border-white/10 bg-[var(--surface)]/70 p-5">
           <h3 className=" font-black text-white">
             <span className="mr-2 text-amber-300">◆</span>
             {item.title}
           </h3>
-          <p className="mt-4 leading-7 text-slate-200">{item.question}</p>
+          <p className="mt-4 leading-7 text-[var(--foreground)]">{item.question}</p>
           <div className="mt-4 rounded-xl border border-emerald-300/20 bg-emerald-300/[0.06] p-4">
             <p className="text-xs font-black uppercase tracking-[0.2em] text-emerald-300">Solution</p>
-            <p className="mt-2 text-sm leading-6 text-slate-200">{item.solution}</p>
+            <p className="mt-2 text-sm leading-6 text-[var(--foreground)]">{item.solution}</p>
           </div>
         </article>
       ))}
@@ -869,15 +869,15 @@ function ProblemLadder() {
   return (
     <div className="grid gap-4 lg:grid-cols-2">
       {problems.map((item) => (
-        <article key={item.title} className="group rounded-2xl border border-white/10 bg-slate-900/70 p-5">
+        <article key={item.title} className="group rounded-2xl border border-white/10 bg-[var(--surface)]/70 p-5">
           <h3 className=" font-black text-white">
             <span className="mr-2 text-amber-300">◆</span>
             {item.title}
           </h3>
-          <p className="mt-4 leading-7 text-slate-200">{item.question}</p>
+          <p className="mt-4 leading-7 text-[var(--foreground)]">{item.question}</p>
           <div className="mt-4 rounded-xl border border-emerald-300/20 bg-emerald-300/[0.06] p-4">
             <p className="text-xs font-black uppercase tracking-[0.2em] text-emerald-300">Solution</p>
-            <p className="mt-2 text-sm leading-6 text-slate-200">{item.solution}</p>
+            <p className="mt-2 text-sm leading-6 text-[var(--foreground)]">{item.solution}</p>
           </div>
         </article>
       ))}
@@ -932,21 +932,21 @@ function TrapTable() {
   return (
     <div className="overflow-x-auto rounded-2xl border border-white/10">
       <table className="min-w-full border-collapse text-left text-sm">
-        <thead className="bg-slate-900">
+        <thead className="bg-[var(--surface)]">
           <tr>
             <th className="px-4 py-3 font-black text-white">Tempting statement</th>
             <th className="px-4 py-3 font-black text-white">Verdict</th>
             <th className="px-4 py-3 font-black text-white">Correction</th>
           </tr>
         </thead>
-        <tbody className="divide-y divide-white/10 bg-slate-950/70">
+        <tbody className="divide-y divide-white/10 bg-[var(--background)]/70">
           {traps.map(([statement, verdict, correction]) => (
             <tr key={statement}>
               <td className="px-4 py-3 font-semibold text-slate-100">{statement}</td>
               <td className="px-4 py-3">
                 <span className="rounded-full bg-rose-400/15 px-3 py-1 text-xs font-black text-rose-300">{verdict}</span>
               </td>
-              <td className="px-4 py-3 leading-6 text-slate-300">{correction}</td>
+              <td className="px-4 py-3 leading-6 text-[var(--text-body)]">{correction}</td>
             </tr>
           ))}
         </tbody>
@@ -984,7 +984,7 @@ function DailyLifeGrid() {
       {items.map((item) => (
         <article key={item.title} className={`rounded-3xl border p-5 ${toneMap[item.tone]}`}>
           <h3 className="text-xl font-black text-white">{item.title}</h3>
-          <p className="mt-2 text-sm leading-6 text-slate-200">{item.text}</p>
+          <p className="mt-2 text-sm leading-6 text-[var(--foreground)]">{item.text}</p>
         </article>
       ))}
     </div>
@@ -1014,7 +1014,7 @@ export default function ThermodynamicsPart21() {
               <h1 className="mt-4 max-w-4xl text-4xl font-black tracking-[-0.045em] text-white md:text-6xl">
                 Absolute entropy describes the state; Gibbs energy predicts the direction
               </h1>
-              <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-300">
+              <p className="mt-6 max-w-3xl text-lg leading-8 text-[var(--text-body)]">
                 Third-Law molar entropies quantify reactants and products. Reaction enthalpy determines the
                 surroundings contribution. At constant temperature and pressure, both combine into the Gibbs criterion.
               </p>
@@ -1252,7 +1252,7 @@ export default function ThermodynamicsPart21() {
             ].map(([term, meaning]) => (
               <div key={term} className="rounded-2xl border border-white/10 bg-black/25 p-4">
                 <p className="font-black text-white">{term}</p>
-                <p className="mt-1 text-sm leading-6 text-slate-300">{meaning}</p>
+                <p className="mt-1 text-sm leading-6 text-[var(--text-body)]">{meaning}</p>
               </div>
             ))}
           </div>

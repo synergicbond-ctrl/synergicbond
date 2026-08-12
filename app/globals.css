@@ -169,6 +169,94 @@ table,
   font-feature-settings: "liga" 0;
 }
 
+/* ── Chemistry OS compatibility layer ─────────────────────────────
+   The original app predates the current design system and many independent
+   tools still carry Tailwind's slate/zinc palette in their markup. Mapping
+   those legacy utility tokens here gives every existing route the approved
+   Chemistry OS field, panel and signal colours without changing its study
+   content, data visualisations or route logic. New components should use the
+   design tokens above directly. */
+:root :is(
+  [class~="bg-[#0B0F19]"], [class~="bg-[#0B1220]"], [class~="bg-[#0e1421]"],
+  [class~="bg-slate-950"], [class~="bg-zinc-950"], [class~="dark:bg-slate-950"],
+  [class~="bg-black"]
+) {
+  background-color: var(--background) !important;
+}
+
+:root :is(
+  [class~="bg-[#111827]"], [class~="bg-[#0d1b29]"], [class~="bg-[#0b1a28]"],
+  [class~="bg-slate-900"], [class~="bg-zinc-900"], [class~="dark:bg-slate-900"],
+  [class~="bg-white"]
+) {
+  background-color: var(--surface) !important;
+}
+
+:root :is(
+  [class~="bg-slate-800"], [class~="bg-zinc-800"], [class~="dark:bg-slate-800"],
+  [class~="bg-slate-50"], [class~="bg-zinc-50"], [class~="dark:bg-slate-800"]
+) {
+  background-color: var(--surface-2) !important;
+}
+
+:root :is(
+  [class~="text-slate-900"], [class~="text-slate-800"], [class~="text-slate-700"],
+  [class~="text-slate-300"], [class~="text-slate-200"], [class~="text-zinc-300"],
+  [class~="text-zinc-200"], [class~="text-gray-300"], [class~="text-white"],
+  [class~="dark:text-white"], [class~="dark:text-slate-100"]
+) {
+  color: var(--foreground) !important;
+}
+
+:root :is(
+  [class~="text-slate-600"], [class~="text-slate-500"], [class~="text-slate-400"],
+  [class~="text-zinc-500"], [class~="text-zinc-400"], [class~="text-gray-500"],
+  [class~="text-gray-400"], [class~="dark:text-slate-400"], [class~="dark:text-slate-300"]
+) {
+  color: var(--text-muted) !important;
+}
+
+:root :is(
+  [class~="border-slate-200"], [class~="border-slate-100"], [class~="border-slate-800"],
+  [class~="border-slate-700"], [class~="border-zinc-800"], [class~="border-zinc-700"],
+  [class~="border-zinc-600"], [class~="border-white/[0.06]"], [class~="border-white/[0.08]"],
+  [class~="border-white/10"], [class~="dark:border-slate-800"]
+) {
+  border-color: var(--border) !important;
+}
+
+:root :is([class~="bg-cyan-500"], [class~="bg-cyan-400"], [class~="text-cyan-500"], [class~="text-cyan-400"]) {
+  color: var(--chem-bond) !important;
+}
+
+:root :is([class~="bg-cyan-500"], [class~="bg-cyan-400"]) {
+  background-color: var(--chem-bond) !important;
+  color: var(--background) !important;
+}
+
+:root :is([class~="bg-purple-500"], [class~="text-purple-500"], [class~="text-purple-400"]) {
+  color: var(--chem-orbital) !important;
+}
+
+:root [class~="bg-purple-500"] {
+  background-color: var(--chem-orbital) !important;
+  color: var(--background) !important;
+}
+
+:root :is([class~="text-green-500"], [class~="text-green-400"], [class~="border-green-700"]) {
+  color: var(--chem-rule) !important;
+  border-color: var(--chem-rule) !important;
+}
+
+:root :is([class~="text-yellow-500"], [class~="text-amber-500"], [class~="text-amber-400"]) {
+  color: var(--accent) !important;
+}
+
+:root :is([class~="text-red-500"], [class~="text-rose-500"], [class~="border-red-800"]) {
+  color: var(--chem-trap) !important;
+  border-color: var(--chem-trap) !important;
+}
+
 /* ── Authored figure SVGs ─────────────────────────────────────────
    Structure figures were authored against the older navy theme and each
    draws its own rounded card as the first child of the <svg>. The figure

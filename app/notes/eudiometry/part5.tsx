@@ -5,9 +5,9 @@ import { InlineMath, BlockMath } from "@/components/math/react-katex";
 
 /* Reusable UI Components */
 const ConceptCard = ({ title, children }: { title: string; children: React.ReactNode }) => (
-  <div className="my-6 rounded-2xl border border-cyan-400/30 bg-slate-900/90 p-6 shadow-xl">
-    <h3 className="border-b border-slate-800 pb-3 text-lg font-bold text-cyan-300">{title}</h3>
-    <div className="mt-4 space-y-3 text-sm leading-relaxed text-slate-200">{children}</div>
+  <div className="my-6 rounded-2xl border border-cyan-400/30 bg-[var(--surface)]/90 p-6 shadow-xl">
+    <h3 className="border-b border-[var(--border)] pb-3 text-lg font-bold text-cyan-300">{title}</h3>
+    <div className="mt-4 space-y-3 text-sm leading-relaxed text-[var(--foreground)]">{children}</div>
   </div>
 );
 
@@ -23,14 +23,14 @@ const WorkedExample = ({
   result: React.ReactNode;
 }) => (
   <div className="my-8 rounded-3xl border border-rose-400/30 bg-gradient-to-b from-slate-900 via-slate-900 to-slate-950 p-6 shadow-2xl md:p-8 space-y-5">
-    <div className="flex items-center justify-between border-b border-slate-800 pb-4">
+    <div className="flex items-center justify-between border-b border-[var(--border)] pb-4">
       <span className="rounded-full bg-rose-500/20 px-3 py-1 text-xs font-bold uppercase tracking-widest text-rose-300">
         Worked Example
       </span>
-      <span className="text-xs font-bold text-slate-400">{title}</span>
+      <span className="text-xs font-bold text-[var(--text-muted)]">{title}</span>
     </div>
     <div className="text-sm font-medium leading-relaxed text-slate-100">{problem}</div>
-    <div className="rounded-2xl border border-slate-800/80 bg-slate-950/80 p-5 space-y-3 font-mono text-xs text-slate-300">
+    <div className="rounded-2xl border border-[var(--border)]/80 bg-[var(--background)]/80 p-5 space-y-3 font-mono text-xs text-[var(--text-body)]">
       {steps}
     </div>
     <div className="rounded-xl border border-emerald-500/30 bg-emerald-500/10 p-4 text-center text-xs font-bold text-emerald-300">
@@ -46,14 +46,14 @@ const StepBox = ({ number, title, children }: { number: number; title: string; c
     </span>
     <div>
       <h4 className="text-xs font-bold text-white mb-1">{title}</h4>
-      <div className="text-xs text-slate-300 leading-relaxed">{children}</div>
+      <div className="text-xs text-[var(--text-body)] leading-relaxed">{children}</div>
     </div>
   </div>
 );
 
 export default function EudiometryPart5() {
   return (
-    <main className="min-h-screen bg-slate-950 px-4 py-8 text-slate-100 md:px-10">
+    <main className="min-h-screen bg-[var(--background)] px-4 py-8 text-slate-100 md:px-10">
       <article className="mx-auto max-w-5xl space-y-10">
         {/* Module Header */}
         <header className="rounded-3xl border border-cyan-400/30 bg-gradient-to-br from-slate-900 via-slate-900 to-slate-950 p-6 shadow-2xl md:p-8">
@@ -61,14 +61,14 @@ export default function EudiometryPart5() {
             <span className="rounded-full bg-cyan-500/20 px-3 py-1 text-xs font-bold uppercase tracking-[0.2em] text-cyan-300">
               Module 5 of 6
             </span>
-            <span className="text-xs font-bold text-slate-400">Synergic Bond Course Lesson</span>
+            <span className="text-xs font-bold text-[var(--text-muted)]">Synergic Bond Course Lesson</span>
           </div>
 
           <h1 className="mt-4 text-3xl font-black text-white md:text-4xl">
             Absorption-Based Gas Analysis &amp; Selective Scrubbing
           </h1>
 
-          <p className="mt-3 text-sm leading-relaxed text-slate-300 md:text-base">
+          <p className="mt-3 text-sm leading-relaxed text-[var(--text-body)] md:text-base">
             Master the quantitative determination of complex gas mixtures using selective chemical absorbents. Learn how sequential scrubbing with aqueous potassium hydroxide (<InlineMath math="\text{KOH}" />), alkaline pyrogallol, ammoniacal cuprous chloride (<InlineMath math="\text{Cu}_2\text{Cl}_2" />), and turpentine oil allows precise isolation of individual gas volumes without combustion sparks.
           </p>
         </header>
@@ -85,21 +85,21 @@ export default function EudiometryPart5() {
             </p>
           </ConceptCard>
 
-          <div className="rounded-2xl border border-slate-800 bg-slate-900 p-6 space-y-4">
-            <h3 className="text-base font-bold text-white border-b border-slate-800 pb-3">
+          <div className="rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-6 space-y-4">
+            <h3 className="text-base font-bold text-white border-b border-[var(--border)] pb-3">
               Comprehensive Reference Table of Selective Absorbents
             </h3>
 
             <div className="overflow-x-auto">
               <table className="w-full text-left border-collapse text-xs font-mono">
                 <thead>
-                  <tr className="border-b border-slate-700 bg-slate-950/60 text-slate-300">
+                  <tr className="border-b border-[var(--border-strong)] bg-[var(--background)]/60 text-[var(--text-body)]">
                     <th className="p-3">Reagent / Absorbent</th>
                     <th className="p-3">Gases Selectively Absorbed</th>
                     <th className="p-3">Underlying Chemical Mechanism</th>
                   </tr>
                 </thead>
-                <tbody className="divide-y divide-slate-800 text-slate-200">
+                <tbody className="divide-y divide-slate-800 text-[var(--foreground)]">
                   <tr>
                     <td className="p-3 font-bold text-cyan-300">1. Aqueous / Alcoholic KOH (or NaOH)</td>
                     <td className="p-3 font-bold text-rose-300"><InlineMath math="\text{CO}_2, \text{SO}_2, \text{Cl}_2, \text{NO}_2, \text{H}_2\text{S}" /></td>
@@ -182,7 +182,7 @@ export default function EudiometryPart5() {
         </section>
 
         {/* Footer info */}
-        <footer className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 text-center text-xs text-slate-400">
+        <footer className="rounded-2xl border border-[var(--border)] bg-[var(--surface)]/60 p-6 text-center text-xs text-[var(--text-muted)]">
           <p>Synergic Bond Eudiometry Module • Module 5: Absorption-Based Gas Analysis &amp; Selective Scrubbing</p>
         </footer>
       </article>

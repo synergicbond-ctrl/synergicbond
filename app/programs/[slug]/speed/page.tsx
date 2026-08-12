@@ -36,8 +36,8 @@ export default async function SpeedPage({ params }: { params: Promise<{ slug: st
   const { data: answers, error } = await getAllUserAnswersWithTime();
 
   const shell = (children: React.ReactNode) => (
-    <main className="min-h-screen bg-[#0B1220] text-white">
-      <div className="border-b border-white/10 bg-gradient-to-b from-cyan-950/20 to-[#0B1220] px-4 py-8 sm:px-6 sm:py-10">
+    <main className="min-h-screen bg-[var(--background)] text-white">
+      <div className="border-b border-white/10 bg-gradient-to-b from-cyan-950/20 to-[#0b0f10] px-4 py-8 sm:px-6 sm:py-10">
         <div className="mx-auto max-w-4xl">
           <nav className="mb-3 text-sm text-white/45">
             <Link href={base} className="hover:text-white">{engine.name}</Link>

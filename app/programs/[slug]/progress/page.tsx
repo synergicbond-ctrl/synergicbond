@@ -130,7 +130,7 @@ export default async function ProgressDashboardPage({ params }: { params: Promis
     masteryContent = !report.hasData ? (
       <div className="rounded-2xl border border-white/10 bg-white/[0.02] p-8 text-center">
         <h3 className="text-lg font-bold">No attempts yet</h3>
-        <p className="mx-auto mt-2 max-w-md text-sm text-zinc-400">
+        <p className="mx-auto mt-2 max-w-md text-sm text-[var(--text-muted)]">
           Answer questions in a <Link href="/tests" className="font-bold text-cyan-400 hover:underline">practice test</Link>,{" "}
           <Link href="/pyq" className="font-bold text-cyan-400 hover:underline">PYQ</Link> set or{" "}
           <Link href="/exam" className="font-bold text-cyan-400 hover:underline">mock exam</Link> — your mastery map builds automatically.
@@ -217,7 +217,7 @@ export default async function ProgressDashboardPage({ params }: { params: Promis
       readinessContent = (
         <div className="rounded-2xl border border-white/10 bg-white/[0.02] p-8 text-center">
           <h3 className="text-lg font-bold">No readiness score yet</h3>
-          <p className="mx-auto mt-2 max-w-md text-sm text-zinc-400">
+          <p className="mx-auto mt-2 max-w-md text-sm text-[var(--text-muted)]">
             Attempt a <Link href="/tests" className="font-bold text-cyan-400 hover:underline">test</Link> or{" "}
             <Link href="/pyq" className="font-bold text-cyan-400 hover:underline">PYQ</Link> set — your readiness score builds automatically.
           </p>
@@ -300,7 +300,7 @@ export default async function ProgressDashboardPage({ params }: { params: Promis
     ncertContent = !report.hasData ? (
       <div className="rounded-2xl border border-white/10 bg-white/[0.02] p-8 text-center">
         <h3 className="text-lg font-bold">No coverage yet</h3>
-        <p className="mx-auto mt-2 max-w-md text-sm text-zinc-400">
+        <p className="mx-auto mt-2 max-w-md text-sm text-[var(--text-muted)]">
           Answer NCERT-linked questions in a <Link href="/pyq" className="font-bold text-cyan-400 hover:underline">PYQ</Link> set or{" "}
           <Link href="/tests" className="font-bold text-cyan-400 hover:underline">test</Link> — your NCERT map builds automatically across {report.totalLines} tracked lines.
         </p>

@@ -103,14 +103,14 @@ function ToolCard({
     </>
   );
   const cls =
-    "block w-full rounded-2xl border border-white/[0.08] bg-[#111827] p-4 text-left transition hover:border-cyan-400/40 hover:bg-white/[0.04]";
+    "block w-full rounded-2xl border border-white/[0.08] bg-[var(--surface)] p-4 text-left transition hover:border-cyan-400/40 hover:bg-white/[0.04]";
   if (href) {
     return <Link href={href} className={cls}>{body}</Link>;
   }
   if (onOpen) {
     return <button onClick={onOpen} className={cls}>{body}</button>;
   }
-  return <div className={`${cls} cursor-default opacity-70 hover:border-white/[0.08] hover:bg-[#111827]`}>{body}</div>;
+  return <div className={`${cls} cursor-default opacity-70 hover:border-white/[0.08] hover:bg-[var(--surface)]`}>{body}</div>;
 }
 
 // ── Study Planner (deterministic, chapter data only) ──────────────────────────

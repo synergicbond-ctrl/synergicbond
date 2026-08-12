@@ -47,14 +47,14 @@ export default function TitrationPart1() {
 
           <div className="grid gap-4 md:grid-cols-2">
             <DiagramBox title="Unknown solution">
-              <div className="rounded-2xl border border-slate-800 bg-slate-950/40 p-4">
+              <div className="rounded-2xl border border-[var(--border)] bg-[var(--background)]/40 p-4">
                 <p className="font-bold">Acid sol<sup>n</sup></p>
                 <p className="mt-2 text-lg font-black">C = ?</p>
               </div>
             </DiagramBox>
 
             <DiagramBox title="Standard solution">
-              <div className="rounded-2xl border border-slate-800 bg-slate-950/40 p-4">
+              <div className="rounded-2xl border border-[var(--border)] bg-[var(--background)]/40 p-4">
                 <p className="font-bold">Basic sol<sup>n</sup></p>
                 <p className="mt-2">
                   <LabelPill>standard sol<sup>n</sup></LabelPill>
@@ -85,7 +85,7 @@ export default function TitrationPart1() {
 
           <div className="grid gap-4 md:grid-cols-2">
             <DiagramBox title="Beaker">
-              <div className="mx-auto h-40 w-32 rounded-b-3xl border-4 border-blue-500 border-t-0 bg-slate-950/40 p-3">
+              <div className="mx-auto h-40 w-32 rounded-b-3xl border-4 border-blue-500 border-t-0 bg-[var(--background)]/40 p-3">
                 <div className="mt-20 h-12 rounded-lg bg-blue-100">
                   <div className="pt-2 text-xs text-blue-700">solution</div>
                 </div>
@@ -96,7 +96,7 @@ export default function TitrationPart1() {
             <DiagramBox title="Conical flask">
               <div className="mx-auto flex h-40 w-48 flex-col items-center justify-end">
                 <div className="h-8 w-8 border-4 border-blue-500 border-b-0" />
-                <div className="h-28 w-44 rounded-b-[4rem] border-4 border-blue-500 bg-slate-950/40 p-4">
+                <div className="h-28 w-44 rounded-b-[4rem] border-4 border-blue-500 bg-[var(--background)]/40 p-4">
                   <div className="mt-10 h-10 rounded-lg bg-blue-100" />
                 </div>
               </div>
@@ -112,18 +112,18 @@ export default function TitrationPart1() {
           <div className="grid gap-4 md:grid-cols-2">
             <DiagramBox title="Pipette">
               <div className="mx-auto flex h-72 w-20 flex-col items-center">
-                <div className="h-20 w-4 rounded-full border-4 border-blue-500/30 bg-slate-950/40" />
-                <div className="flex h-24 w-14 items-center justify-center rounded-full border-4 border-blue-500/30 bg-slate-950/40 text-sm font-bold text-blue-700">
+                <div className="h-20 w-4 rounded-full border-4 border-blue-500/30 bg-[var(--background)]/40" />
+                <div className="flex h-24 w-14 items-center justify-center rounded-full border-4 border-blue-500/30 bg-[var(--background)]/40 text-sm font-bold text-blue-700">
                   25 ml
                 </div>
-                <div className="h-24 w-4 rounded-full border-4 border-blue-500/30 bg-slate-950/40" />
+                <div className="h-24 w-4 rounded-full border-4 border-blue-500/30 bg-[var(--background)]/40" />
               </div>
               <p className="mt-3 text-xl font-bold text-blue-800">Pipette</p>
             </DiagramBox>
 
             <DiagramBox title="Burette setup">
               <div className="mx-auto grid max-w-md gap-4 md:grid-cols-[80px_1fr]">
-                <div className="relative mx-auto h-72 w-12 rounded-full border-4 border-blue-500/30 bg-slate-950/40">
+                <div className="relative mx-auto h-72 w-12 rounded-full border-4 border-blue-500/30 bg-[var(--background)]/40">
                   <div className="absolute left-full top-4 ml-3 whitespace-nowrap rounded-full bg-orange-100 px-3 py-1 text-sm font-bold text-orange-700">
                     75.0 ml
                   </div>
@@ -203,7 +203,7 @@ export default function TitrationPart1() {
             </WorkingLine>
           </div>
 
-          <div className="rounded-2xl border border-slate-800 bg-slate-950/30 p-4">
+          <div className="rounded-2xl border border-[var(--border)] bg-[var(--background)]/30 p-4">
             <p>
               After a lot of data collection for V<sub>2</sub> doing exp.
               several times, the <b>three same consecutive values</b> of V

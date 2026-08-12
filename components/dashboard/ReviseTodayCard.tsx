@@ -39,7 +39,7 @@ export default function ReviseTodayCard() {
   const caughtUp = due === 0;
 
   return (
-    <section className="flex flex-col rounded-3xl border border-white/[0.08] bg-[#111827] p-5">
+    <section className="flex flex-col rounded-3xl border border-white/[0.08] bg-[var(--surface)] p-5">
       <h3 className="flex items-center gap-2 text-lg font-black">
         <History className="h-5 w-5 text-violet-400" /> Revise Today
       </h3>

@@ -88,7 +88,7 @@ export default function SaltAnalysisPage() {
           Salt Analysis / Qualitative Analysis
         </h1>
 
-        <p className="mt-5 max-w-4xl text-base leading-8 text-slate-300 sm:text-lg">
+        <p className="mt-5 max-w-4xl text-base leading-8 text-[var(--text-body)] sm:text-lg">
           A complete JEE Advanced chapter on{" "}
           <strong className="text-cyan-300">systematic separation</strong>,{" "}
           <strong className="text-violet-300">selective reactions</strong>,{" "}
@@ -98,7 +98,7 @@ export default function SaltAnalysisPage() {
         </p>
 
         <div className="mt-6 rounded-2xl bg-gradient-to-r from-cyan-400/55 via-violet-400/45 to-amber-400/55 p-px">
-          <div className="rounded-[15px] bg-[#07101c]/95 px-5 py-4 text-sm leading-7 text-slate-300 sm:text-base">
+          <div className="rounded-[15px] bg-[#07101c]/95 px-5 py-4 text-sm leading-7 text-[var(--text-body)] sm:text-base">
             <strong className="text-cyan-300">Scope:</strong> preliminary
             examination, dry and wet tests, anion analysis, cation group
             separation, interfering radicals, solubility logic, complexes,
@@ -122,7 +122,7 @@ export default function SaltAnalysisPage() {
                     {String(part.id).padStart(2, "0")}
                   </span>
                   <span
-                    className={`mt-2 block leading-6 text-slate-200 transition ${theme.hover}`}
+                    className={`mt-2 block leading-6 text-[var(--foreground)] transition ${theme.hover}`}
                   >
                     {part.title}
                   </span>

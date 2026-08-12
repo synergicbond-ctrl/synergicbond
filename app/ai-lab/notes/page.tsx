@@ -57,30 +57,30 @@ export default function NotesPage() {
     <main className="min-h-screen bg-black text-white p-6 max-w-5xl mx-auto">
       <div className="mb-8">
         <h1 className="text-3xl font-bold tracking-tight mb-2">AI Notes Generator</h1>
-        <p className="text-zinc-400">Generate exam-focused chemistry notes for any topic, at any difficulty level.</p>
+        <p className="text-[var(--text-muted)]">Generate exam-focused chemistry notes for any topic, at any difficulty level.</p>
       </div>
 
-      <div className="bg-zinc-900 border border-zinc-800 rounded-2xl p-6 mb-8">
+      <div className="bg-[var(--surface)] border border-[var(--border)] rounded-2xl p-6 mb-8">
         <div className="grid gap-4 md:grid-cols-2">
           {/* Topic Input */}
           <div className="md:col-span-2">
-            <label className="block text-sm font-medium text-zinc-300 mb-2">Topic / Query</label>
+            <label className="block text-sm font-medium text-[var(--text-body)] mb-2">Topic / Query</label>
             <input
               type="text"
               value={topic}
               onChange={(e) => setTopic(e.target.value)}
               placeholder='e.g. "SN2 Mechanism", "Electrochemistry revision", "Surface chemistry NEET"'
-              className="w-full bg-black border border-zinc-700 rounded-xl px-4 py-3 text-white placeholder-zinc-600 focus:outline-none focus:border-cyan-500 transition"
+              className="w-full bg-black border border-[var(--border-strong)] rounded-xl px-4 py-3 text-white placeholder-zinc-600 focus:outline-none focus:border-cyan-500 transition"
             />
           </div>
 
           {/* Or select chapter */}
           <div>
-            <label className="block text-sm font-medium text-zinc-300 mb-2">Or Select Chapter</label>
+            <label className="block text-sm font-medium text-[var(--text-body)] mb-2">Or Select Chapter</label>
             <select
               value={chapterId}
               onChange={(e) => setChapterId(e.target.value)}
-              className="w-full bg-black border border-zinc-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-cyan-500 transition"
+              className="w-full bg-black border border-[var(--border-strong)] rounded-xl px-4 py-3 text-white focus:outline-none focus:border-cyan-500 transition"
             >
               <option value="">— Select Chapter —</option>
               {masterSyllabus.map((ch) => (
@@ -93,11 +93,11 @@ export default function NotesPage() {
 
           {/* Exam Type */}
           <div>
-            <label className="block text-sm font-medium text-zinc-300 mb-2">Exam</label>
+            <label className="block text-sm font-medium text-[var(--text-body)] mb-2">Exam</label>
             <select
               value={examType}
               onChange={(e) => setExamType(e.target.value)}
-              className="w-full bg-black border border-zinc-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-cyan-500 transition"
+              className="w-full bg-black border border-[var(--border-strong)] rounded-xl px-4 py-3 text-white focus:outline-none focus:border-cyan-500 transition"
             >
               {EXAMS.map((e) => <option key={e}>{e}</option>)}
             </select>
@@ -105,7 +105,7 @@ export default function NotesPage() {
 
           {/* Difficulty */}
           <div>
-            <label className="block text-sm font-medium text-zinc-300 mb-2">Difficulty Level</label>
+            <label className="block text-sm font-medium text-[var(--text-body)] mb-2">Difficulty Level</label>
             <div className="flex flex-wrap gap-2">
               {DIFFICULTIES.map((d) => (
                 <button
@@ -114,7 +114,7 @@ export default function NotesPage() {
                   className={`px-3 py-1.5 rounded-lg text-sm font-medium border transition ${
                     difficulty === d.value
                       ? "bg-cyan-500 border-cyan-500 text-black"
-                      : "border-zinc-700 text-zinc-400 hover:border-zinc-500"
+                      : "border-[var(--border-strong)] text-[var(--text-muted)] hover:border-zinc-500"
                   }`}
                 >
                   {d.label}
@@ -125,7 +125,7 @@ export default function NotesPage() {
 
           {/* Language */}
           <div>
-            <label className="block text-sm font-medium text-zinc-300 mb-2">Language</label>
+            <label className="block text-sm font-medium text-[var(--text-body)] mb-2">Language</label>
             <div className="flex gap-2">
               {LANGUAGES.map((l) => (
                 <button
@@ -134,7 +134,7 @@ export default function NotesPage() {
                   className={`px-4 py-2 rounded-lg text-sm font-medium border transition ${
                     language === l.value
                       ? "bg-violet-600 border-violet-600 text-white"
-                      : "border-zinc-700 text-zinc-400 hover:border-zinc-500"
+                      : "border-[var(--border-strong)] text-[var(--text-muted)] hover:border-zinc-500"
                   }`}
                 >
                   {l.label}
@@ -162,14 +162,14 @@ export default function NotesPage() {
 
       {/* Notes Output */}
       {notes && (
-        <div className="bg-zinc-900 border border-zinc-800 rounded-2xl p-6">
+        <div className="bg-[var(--surface)] border border-[var(--border)] rounded-2xl p-6">
           {cached && (
             <div className="text-xs text-cyan-400 mb-4 flex items-center gap-1">
               ⚡ Loaded from your saved notes
             </div>
           )}
           <div
-            className="prose prose-invert max-w-none text-zinc-200 leading-relaxed"
+            className="prose prose-invert max-w-none text-[var(--foreground)] leading-relaxed"
             style={{ whiteSpace: "pre-wrap", fontFamily: "-apple-system, BlinkMacSystemFont, 'SF Pro Text', system-ui, sans-serif" }}
           >
             {notes}

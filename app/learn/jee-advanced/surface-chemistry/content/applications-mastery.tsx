@@ -182,12 +182,12 @@ export function Part12Content() {
           <FormulaCard title="Adsorption measurement">
             <KB>{String.raw`n_{ads}=\frac{(P_i-P_f)V}{RT}`}</KB>
             <KB>{String.raw`q=\frac{(C_0-C_e)V}{m}`}</KB>
-            <p className="text-sm leading-6 text-slate-300">Rigid vessel, fixed temperature for the gas equation; equilibrium concentration for solution uptake.</p>
+            <p className="text-sm leading-6 text-[var(--text-body)]">Rigid vessel, fixed temperature for the gas equation; equilibrium concentration for solution uptake.</p>
           </FormulaCard>
           <FormulaCard title="Specific area">
             <KB>{String.raw`a_s=\frac{A}{m},\qquad a_s(\text{spheres})=\frac{6}{\rho d}`}</KB>
             <KB>{String.raw`A=n_mN_Aa_{molecule}`}</KB>
-            <p className="text-sm leading-6 text-slate-300">The monolayer method requires a known molecular cross-sectional area.</p>
+            <p className="text-sm leading-6 text-[var(--text-body)]">The monolayer method requires a known molecular cross-sectional area.</p>
           </FormulaCard>
           <FormulaCard title="Freundlich and Langmuir">
             <KB>{String.raw`q=kP^{1/n}`}</KB>

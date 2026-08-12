@@ -40,7 +40,7 @@ export default function ExamCountdown({ storageKey, examName }: { storageKey: st
         <label className="text-sm text-white/70">
           <span className="mr-2">Exam date</span>
           <input type="date" value={date} onChange={(e) => save(e.target.value)}
-            className="rounded-lg border border-white/15 bg-[#0B1220] px-3 py-1.5 text-white/90" />
+            className="rounded-lg border border-white/15 bg-[var(--background)] px-3 py-1.5 text-white/90" />
         </label>
       </div>
     </div>

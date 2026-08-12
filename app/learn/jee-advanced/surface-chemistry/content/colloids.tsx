@@ -249,7 +249,7 @@ export function Part08Content() {
         </div>
         <FormulaCard title="Stokes–Einstein relation — enrichment">
           <KB>{String.raw`D=\frac{k_BT}{6\pi\eta r}`}</KB>
-          <p className="text-sm leading-6 text-slate-300">The diffusion coefficient decreases with particle radius <K>{String.raw`r`}</K> and medium viscosity <K>{String.raw`\eta`}</K>.</p>
+          <p className="text-sm leading-6 text-[var(--text-body)]">The diffusion coefficient decreases with particle radius <K>{String.raw`r`}</K> and medium viscosity <K>{String.raw`\eta`}</K>.</p>
         </FormulaCard>
       </Section>
 
@@ -280,11 +280,11 @@ export function Part08Content() {
         <div className="grid gap-5 xl:grid-cols-2">
           <FormulaCard title="Negative AgI sol">
             <KB>{String.raw`[AgI]_n\cdot xI^-\mid xK^+`}</KB>
-            <p className="text-sm leading-6 text-slate-300">I⁻ forms the potential-determining layer; K⁺ ions are counter-ions.</p>
+            <p className="text-sm leading-6 text-[var(--text-body)]">I⁻ forms the potential-determining layer; K⁺ ions are counter-ions.</p>
           </FormulaCard>
           <FormulaCard title="Positive AgI sol">
             <KB>{String.raw`[AgI]_n\cdot xAg^+\mid xNO_3^-`}</KB>
-            <p className="text-sm leading-6 text-slate-300">Ag⁺ is preferentially adsorbed when AgNO₃ is in excess.</p>
+            <p className="text-sm leading-6 text-[var(--text-body)]">Ag⁺ is preferentially adsorbed when AgNO₃ is in excess.</p>
           </FormulaCard>
         </div>
         <Trap>The charge of AgI is not an intrinsic permanent property. It depends on which potential-determining ion is preferentially adsorbed under the preparation conditions.</Trap>
@@ -437,7 +437,7 @@ export function Part09Content() {
         <FormulaCard title="Definitions">
           <KB>{String.raw`\text{Coagulation value}=\frac{\text{millimoles of electrolyte}}{\text{litre of sol}}`}</KB>
           <KB>{String.raw`\text{Coagulating power}\propto\frac{1}{\text{coagulation value}}`}</KB>
-          <p className="text-sm leading-6 text-slate-300">A smaller coagulation value means a more effective electrolyte.</p>
+          <p className="text-sm leading-6 text-[var(--text-body)]">A smaller coagulation value means a more effective electrolyte.</p>
         </FormulaCard>
         <Card title="Specific adsorption and limitations" tone="violet">
           <p>Valency is the dominant textbook trend, but ion size, hydration and specific adsorption can cause deviations. Organic ions and multidentate species may be unusually effective even when simple valency comparison is insufficient.</p>
@@ -471,7 +471,7 @@ export function Part09Content() {
             <p>Macromolecules such as gelatin, gum or albumin form a hydrated coating around lyophobic particles. The coating prevents close contact and reduces the ability of electrolyte ions to collapse the dispersion.</p>
           </Card>
           <FormulaCard title="Gold number">
-            <p className="text-sm leading-6 text-slate-300">Gold number is the minimum mass in milligrams of a protective colloid required to prevent the colour change of 10 mL standard red gold sol after addition of 1 mL of 10% NaCl solution.</p>
+            <p className="text-sm leading-6 text-[var(--text-body)]">Gold number is the minimum mass in milligrams of a protective colloid required to prevent the colour change of 10 mL standard red gold sol after addition of 1 mL of 10% NaCl solution.</p>
             <KB>{String.raw`\text{Protective power}\propto\frac{1}{\text{gold number}}`}</KB>
           </FormulaCard>
         </div>
@@ -575,9 +575,9 @@ export function Part10Content() {
         <Trap>Do not confuse the gradual fall produced by an ordinary organic solute with the sharp fall-then-plateau of a true surfactant. The plateau is the signature of micelle formation and marks the CMC.</Trap>
         <FormulaCard title="Gibbs adsorption equation">
           <KB>{String.raw`\Gamma_2=-\frac{1}{RT}\left(\frac{\partial \gamma}{\partial \ln a_2}\right)_T`}</KB>
-          <p className="text-sm leading-6 text-slate-300">For a dilute solution, activity a₂ can be approximated by concentration c₂:</p>
+          <p className="text-sm leading-6 text-[var(--text-body)]">For a dilute solution, activity a₂ can be approximated by concentration c₂:</p>
           <KB>{String.raw`\Gamma_2=-\frac{c_2}{RT}\left(\frac{\partial \gamma}{\partial c_2}\right)_T`}</KB>
-          <p className="text-sm leading-6 text-slate-300"><K>{String.raw`\Gamma_2`}</K> is the surface excess of the solute — its concentration at the interface in excess of its bulk concentration, in moles per unit area.</p>
+          <p className="text-sm leading-6 text-[var(--text-body)]"><K>{String.raw`\Gamma_2`}</K> is the surface excess of the solute — its concentration at the interface in excess of its bulk concentration, in moles per unit area.</p>
         </FormulaCard>
         <div className="grid gap-5 xl:grid-cols-2">
           <Card title="Positive adsorption" tone="emerald">
@@ -627,7 +627,7 @@ export function Part10Content() {
         <div className="grid gap-5 xl:grid-cols-2">
           <FormulaCard title="Free energy of micellisation">
             <KB>{String.raw`\Delta G_{mic}=\Delta H_{mic}-T\Delta S_{mic}`}</KB>
-            <p className="text-sm leading-6 text-slate-300">Micellisation is favourable when <K>{String.raw`\Delta G_{mic}<0`}</K>. The enthalpy may be positive or negative depending on surfactant and temperature.</p>
+            <p className="text-sm leading-6 text-[var(--text-body)]">Micellisation is favourable when <K>{String.raw`\Delta G_{mic}<0`}</K>. The enthalpy may be positive or negative depending on surfactant and temperature.</p>
           </FormulaCard>
           <Card title="Hydrophobic effect" tone="emerald">
             <p>Water molecules near an isolated hydrocarbon tail adopt restricted arrangements. Aggregation reduces the total tail–water contact area and releases some of this structured water into the bulk.</p>

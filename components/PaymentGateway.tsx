@@ -264,7 +264,7 @@ export default function PaymentGateway({
       aria-labelledby="payment-title"
     >
       <div
-        className="sb-modal-panel relative flex max-h-[90vh] w-full max-w-md flex-col overflow-hidden rounded-t-3xl border border-white/[0.08] bg-[#111827] shadow-2xl sm:rounded-3xl"
+        className="sb-modal-panel relative flex max-h-[90vh] w-full max-w-md flex-col overflow-hidden rounded-t-3xl border border-white/[0.08] bg-[var(--surface)] shadow-2xl sm:rounded-3xl"
         onClick={(e) => e.stopPropagation()}
       >
         <button
@@ -330,7 +330,7 @@ export default function PaymentGateway({
         </div>
 
         {/* Sticky footer — consent + pay stay visible on every screen */}
-        <div className="shrink-0 border-t border-white/[0.08] bg-[#111827] px-6 pt-4 pb-6 sm:px-7">
+        <div className="shrink-0 border-t border-white/[0.08] bg-[var(--surface)] px-6 pt-4 pb-6 sm:px-7">
           {/* Legal Consent Checkbox */}
           <label className="flex items-start gap-2.5 mb-4 cursor-pointer select-none">
             <input

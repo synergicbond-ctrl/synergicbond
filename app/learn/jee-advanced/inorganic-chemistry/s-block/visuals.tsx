@@ -110,7 +110,7 @@ function TrendVisual() {
             <div key={property} className={`grid grid-cols-[1fr_44px] gap-3 px-4 py-3 ${index ? "border-t border-white/[.07]" : ""}`}>
               <div>
                 <p className="font-extrabold text-slate-100">{property}</p>
-                <p className="mt-1 text-xs leading-5 text-slate-400">{reason}</p>
+                <p className="mt-1 text-xs leading-5 text-[var(--text-muted)]">{reason}</p>
               </div>
               <span className={`flex h-10 w-10 items-center justify-center rounded-xl text-2xl font-black ${direction === "↑" ? "bg-cyan-400/10 text-cyan-300" : "bg-violet-400/10 text-violet-300"}`}>{direction}</span>
             </div>
@@ -512,7 +512,7 @@ function HardnessVisual() {
           <div key={title} className="relative overflow-hidden rounded-2xl border border-white/10 bg-[#08111c] p-4">
             <span className="flex h-9 w-9 items-center justify-center rounded-full text-sm font-black text-[#020617]" style={{ background: tone }}>{index + 1}</span>
             <h3 className="mt-4 font-black text-white">{title}</h3>
-            <p className="mt-2 text-xs leading-5 text-slate-400">{sub}</p>
+            <p className="mt-2 text-xs leading-5 text-[var(--text-muted)]">{sub}</p>
           </div>
         ))}
       </div>
@@ -564,7 +564,7 @@ function TrapVisual() {
         {cards.map(([top, bottom], index) => (
           <div key={top} className="rounded-2xl border border-white/10 bg-[linear-gradient(135deg,rgba(34,211,238,.08),rgba(139,92,246,.07))] p-5">
             <p className={`text-2xl font-black ${index % 2 ? "text-violet-200" : "text-cyan-200"}`}>{top}</p>
-            <p className="mt-2 text-sm leading-6 text-slate-400">{bottom}</p>
+            <p className="mt-2 text-sm leading-6 text-[var(--text-muted)]">{bottom}</p>
           </div>
         ))}
       </div>

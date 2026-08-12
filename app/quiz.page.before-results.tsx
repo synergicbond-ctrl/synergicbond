@@ -71,7 +71,7 @@ export default function QuizPage() {
 
   if (finished) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-slate-950 text-white">
+      <div className="min-h-screen flex items-center justify-center bg-[var(--background)] text-white">
         <div className="text-center">
           <h1 className="text-3xl font-bold">Quiz Finished 🎯</h1>
           <p className="mt-4 text-xl">
@@ -91,11 +91,11 @@ export default function QuizPage() {
   }
 
   return (
-    <div className="min-h-screen bg-slate-950 text-white p-6 flex flex-col items-center">
+    <div className="min-h-screen bg-[var(--background)] text-white p-6 flex flex-col items-center">
       
       <h1 className="text-2xl font-bold mb-6">🧠 Quiz Mode</h1>
 
-      <div className="w-full max-w-2xl bg-slate-900 p-6 rounded-xl">
+      <div className="w-full max-w-2xl bg-[var(--surface)] p-6 rounded-xl">
 
         <h2 className="text-lg font-semibold mb-4">
           Q{current + 1}. {currentQ.question}
@@ -111,7 +111,7 @@ export default function QuizPage() {
                   ? key === currentQ.answer
                     ? "bg-green-600"
                     : "bg-red-600"
-                  : "bg-slate-800 hover:bg-slate-700"
+                  : "bg-[var(--surface-2)] hover:bg-slate-700"
               }`}
             >
               {key}: {value}
@@ -121,7 +121,7 @@ export default function QuizPage() {
 
       </div>
 
-      <div className="mt-6 text-sm text-slate-400">
+      <div className="mt-6 text-sm text-[var(--text-muted)]">
         Score: {score}
       </div>
 

@@ -63,7 +63,7 @@ export default function ChemicalBondingNotes() {
         <div className="space-y-2">
           {SHAPES.map((s) => (
             <Glass key={s.sn} className="flex items-center gap-4 p-3.5">
-              <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-[#0B1220] text-lg font-black text-cyan-200">{s.sn}</span>
+              <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-[var(--background)] text-lg font-black text-cyan-200">{s.sn}</span>
               <div className="min-w-0 flex-1"><span className="font-bold text-white">{s.shape}</span><span className="ml-2 text-sm text-white/55">{renderChemistry(s.ex)}</span></div>
               <span className="shrink-0 rounded-full border border-white/10 bg-white/[0.04] px-2.5 py-0.5 text-xs font-bold text-amber-300">{s.ang}</span>
             </Glass>

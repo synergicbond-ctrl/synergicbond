@@ -28,7 +28,7 @@ function Frame({
   viewBox?: string;
 }) {
   return (
-    <figure className="my-6 overflow-hidden rounded-2xl border border-cyan-400/20 bg-slate-950/80 p-4">
+    <figure className="my-6 overflow-hidden rounded-2xl border border-cyan-400/20 bg-[var(--background)]/80 p-4">
       <svg
         viewBox={viewBox}
         role="img"
@@ -37,7 +37,7 @@ function Frame({
       >
         {children}
       </svg>
-      <figcaption className="mt-2 text-center text-sm text-slate-400">
+      <figcaption className="mt-2 text-center text-sm text-[var(--text-muted)]">
         {title}
       </figcaption>
     </figure>

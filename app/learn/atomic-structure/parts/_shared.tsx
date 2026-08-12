@@ -181,7 +181,7 @@ export function NoteBlock({ title, children }: { title?: string; children: React
 }
 
 export function LearningObjectives({ items }: { items: ReactNode[] }) {
-  return <aside aria-label="Learning objectives" className="rounded-2xl border border-violet-300/20 bg-violet-400/[0.06] p-5"><p className="text-xs font-black uppercase tracking-[0.18em] text-violet-200">In this part</p><ul className="mt-3 grid gap-2 text-sm leading-relaxed text-slate-200 sm:grid-cols-3">{items.map((item, index) => <li key={index} className="border-l-2 border-violet-300/60 pl-3">{item}</li>)}</ul></aside>;
+  return <aside aria-label="Learning objectives" className="rounded-2xl border border-violet-300/20 bg-violet-400/[0.06] p-5"><p className="text-xs font-black uppercase tracking-[0.18em] text-violet-200">In this part</p><ul className="mt-3 grid gap-2 text-sm leading-relaxed text-[var(--foreground)] sm:grid-cols-3">{items.map((item, index) => <li key={index} className="border-l-2 border-violet-300/60 pl-3">{item}</li>)}</ul></aside>;
 }
 
 export function ImportantNote({ title, children }: { title: string; children: ReactNode }) {

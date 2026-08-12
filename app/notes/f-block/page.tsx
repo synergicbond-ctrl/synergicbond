@@ -23,7 +23,7 @@ const STATS = [
 export default function FBlockHubPage() {
   return (
     <ChapterShell kicker="JEE Advanced Inorganic Chemistry" subtitle="F-block Elements" tabs={fBlockTabs()}>
-      <nav className="mb-6 flex items-center gap-2 text-xs font-semibold text-slate-400 sm:text-sm">
+      <nav className="mb-6 flex items-center gap-2 text-xs font-semibold text-[var(--text-muted)] sm:text-sm">
         <Link href="/" className="hover:text-white">Home</Link>
         <span>/</span>
         <Link href="/notes" className="hover:text-white">Chapter Notes</Link>
@@ -41,7 +41,7 @@ export default function FBlockHubPage() {
         <h1 className="mt-5 max-w-5xl font-serif text-4xl font-black leading-tight text-white sm:text-5xl">
           F-block chemistry organised around configuration, contraction and oxidation-state logic
         </h1>
-        <p className="mt-5 max-w-4xl text-base font-medium leading-8 text-slate-300 sm:text-lg">
+        <p className="mt-5 max-w-4xl text-base font-medium leading-8 text-[var(--text-body)] sm:text-lg">
           Four substantial parts covering the complete NCERT core, lanthanoid and actinoid trends, colour, magnetism, contraction, separation methods, applications, exam traps and worked JEE Advanced reasoning—supported by 21 exact, chapter-specific visual explanations.
         </p>
 
@@ -49,7 +49,7 @@ export default function FBlockHubPage() {
           {STATS.map(([value, label]) => (
             <div key={label} className="rounded-2xl border border-white/10 bg-white/[.045] px-4 py-4">
               <p className="text-2xl font-black text-fuchsia-200">{value}</p>
-              <p className="mt-1 text-xs font-bold uppercase tracking-[.12em] text-slate-400">{label}</p>
+              <p className="mt-1 text-xs font-bold uppercase tracking-[.12em] text-[var(--text-muted)]">{label}</p>
             </div>
           ))}
         </div>
@@ -67,7 +67,7 @@ export default function FBlockHubPage() {
         ].map(([title, copy]) => (
           <article key={title} className="rounded-2xl border border-white/10 bg-[#0a1220] p-5">
             <h2 className="font-black text-white">{title}</h2>
-            <p className="mt-2 text-sm leading-6 text-slate-400">{copy}</p>
+            <p className="mt-2 text-sm leading-6 text-[var(--text-muted)]">{copy}</p>
           </article>
         ))}
       </section>

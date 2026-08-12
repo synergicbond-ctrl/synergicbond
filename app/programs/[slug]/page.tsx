@@ -45,7 +45,7 @@ export default async function ProgramHubPage({ params }: { params: Promise<{ slu
       <div className={`border-b border-white/10 bg-gradient-to-b ${accent.gradient} to-black px-6 py-14 text-center`}>
         <div className={`mb-3 text-xs font-bold uppercase tracking-widest ${accent.text}`}>{kicker}</div>
         <h1 className="mb-4 text-4xl font-black tracking-tight sm:text-5xl">{name} Chemistry</h1>
-        <p className="mx-auto max-w-xl text-lg text-zinc-400">{tagline}</p>
+        <p className="mx-auto max-w-xl text-lg text-[var(--text-muted)]">{tagline}</p>
         <div className="mt-6 flex flex-wrap justify-center gap-3">
           {chips.map((chip) => (
             <span key={chip} className={`rounded-full border px-3 py-1 text-sm ${accent.chip}`}>
@@ -69,7 +69,7 @@ export default async function ProgramHubPage({ params }: { params: Promise<{ slu
           <div className="flex flex-wrap items-center justify-between gap-3">
             <div>
               <p className="text-xs font-bold uppercase tracking-wider text-white/40">Exam Readiness</p>
-              <p className="mt-1 text-sm text-zinc-400">
+              <p className="mt-1 text-sm text-[var(--text-muted)]">
                 Your {name} readiness score appears here once you attempt tests — no simulated numbers.
               </p>
             </div>
@@ -92,7 +92,7 @@ export default async function ProgramHubPage({ params }: { params: Promise<{ slu
               <h2 className="mt-1 text-2xl font-black text-white">
                 Advanced Inorganic Chemistry Notes
               </h2>
-              <p className="mt-2 text-sm text-zinc-400">
+              <p className="mt-2 text-sm text-[var(--text-muted)]">
                 Complete authored notes arranged as separate JEE Advanced chapters.
               </p>
             </div>
@@ -106,7 +106,7 @@ export default async function ProgramHubPage({ params }: { params: Promise<{ slu
                   Full Notes · Separate Chapter
                 </div>
                 <h3 className="mt-2 text-xl font-black text-white">P-Block Elements</h3>
-                <p className="mt-2 text-sm leading-relaxed text-zinc-400">
+                <p className="mt-2 text-sm leading-relaxed text-[var(--text-muted)]">
                   Groups 15, 16, 17 and 18 — trends, structures, preparations,
                   reactions, exceptions and comparison orders.
                 </p>
@@ -123,7 +123,7 @@ export default async function ProgramHubPage({ params }: { params: Promise<{ slu
                 <h3 className="mt-2 text-xl font-black text-white">
                   Salt Analysis / Qualitative Analysis
                 </h3>
-                <p className="mt-2 text-sm leading-relaxed text-zinc-400">
+                <p className="mt-2 text-sm leading-relaxed text-[var(--text-muted)]">
                   Dry tests, anion analysis, cation groups, confirmatory tests,
                   interfering radicals and mixture analysis.
                 </p>

@@ -13,37 +13,37 @@
      A chemistry hue must never appear in navigation, buttons or
      cards; the gold accent must never encode chemical meaning. */
 
-  /* ── Chrome: surfaces ── */
-  --background: #060708;          /* page */
-  --surface: #0e1112;             /* cards / panels (the ONE card colour) */
-  --surface-2: rgba(245, 239, 227, 0.035);
-  --surface-hover: rgba(245, 239, 227, 0.065);
+  /* ── Chemistry OS demo palette ── */
+  --background: #040606;
+  --surface: #0b0f10;
+  --surface-2: #101516;
+  --surface-hover: #151b1c;
 
   /* ── Chrome: text hierarchy ── */
-  --foreground: #f5efe3;                   /* titles / active */
-  --text-body: rgba(245, 239, 227, 0.88);  /* body copy */
-  --text-muted: rgba(245, 239, 227, 0.68); /* captions / meta */
-  --text-faint: rgba(245, 239, 227, 0.52); /* rules / disabled */
+  --foreground: #f6efdf;
+  --text-body: #f1eee7;
+  --text-muted: #b9b5ad;
+  --text-faint: #d7d2c8;
 
   /* ── Chrome: the single brand accent ──
      Used for interactive + active states and the brand mark. Nothing else. */
   --accent: #e3b341;
-  --accent-dim: rgba(227, 179, 65, 0.68);
-  --accent-wash: rgba(227, 179, 65, 0.1);
+  --accent-dim: rgba(227, 179, 65, 0.76);
+  --accent-wash: rgba(227, 179, 65, 0.14);
 
   /* ── Chrome: hairlines ──
      Elevation comes from these, not from shadow. */
-  --border: rgba(245, 239, 227, 0.11);
-  --border-strong: rgba(245, 239, 227, 0.19);
+  --border: #f6efdf2b;
+  --border-strong: #f6efdf57;
 
   /* ── Content: semantic chemistry scale ──
      Desaturated on purpose — these sit inside long-form reading and
      must not vibrate against a near-black page. CONTENT ONLY. */
-  --chem-bond: #62b9ce;      /* bonding, structure, geometry */
-  --chem-energy: #dda05a;    /* energetics, thermodynamics */
-  --chem-orbital: #a68bd3;   /* orbitals, resonance, quantum */
-  --chem-trap: #d77868;      /* exam traps, cautions, exceptions */
-  --chem-rule: #70b98a;      /* rules, verified results */
+  --chem-bond: #37c8f4;
+  --chem-energy: #e3b341;
+  --chem-orbital: #b376ff;
+  --chem-trap: #ff775d;
+  --chem-rule: #50dc7b;
 
   /* ── Legacy aliases ──
      Retained so the handful of files still reading the old cyan/purple
@@ -63,7 +63,7 @@
 
   /* Kept for components that still reference them. Deliberately faint —
      depth is a hairline job, not a shadow job. */
-  --shadow: 0 1px 0 rgba(245, 239, 227, 0.05);
+  --shadow: 0 1px 0 rgba(246, 239, 223, 0.08);
 }
 
 *,

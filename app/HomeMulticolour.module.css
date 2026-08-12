@@ -1,0 +1,56 @@
+.home {
+  --home-cyan: #37c8f4;
+  --home-gold: #f0bd36;
+  --home-violet: #b889ff;
+  --home-green: #65d69a;
+  --home-coral: #ff8b6b;
+}
+
+.band {
+  position: relative;
+  --home-tone: var(--home-cyan);
+  --home-tone-wash: rgb(55 200 244 / 8%);
+}
+
+.toneCyan { --home-tone: var(--home-cyan); --home-tone-wash: rgb(55 200 244 / 8%); }
+.toneGold { --home-tone: var(--home-gold); --home-tone-wash: rgb(240 189 54 / 8%); }
+.toneViolet { --home-tone: var(--home-violet); --home-tone-wash: rgb(184 137 255 / 8%); }
+.toneGreen { --home-tone: var(--home-green); --home-tone-wash: rgb(101 214 154 / 8%); }
+.toneCoral { --home-tone: var(--home-coral); --home-tone-wash: rgb(255 139 107 / 8%); }
+
+.band::before {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: linear-gradient(105deg, var(--home-tone-wash), transparent 38%);
+  content: "";
+  opacity: .45;
+  pointer-events: none;
+}
+
+.band > * { position: relative; z-index: 1; }
+.bandHeader { color: var(--home-tone); }
+
+/* Labels, values, and headings carry the section's chemistry signal.
+   Paragraphs deliberately retain the high-contrast reading colour. */
+.band :global(h2) {
+  color: var(--home-tone) !important;
+  text-shadow: 0 0 26px color-mix(in srgb, var(--home-tone) 14%, transparent);
+}
+
+.band :global(h3) { color: color-mix(in srgb, var(--home-tone) 82%, var(--foreground)) !important; }
+.band :global(.font-data),
+.band :global(.font-mono) { color: var(--home-tone); }
+
+.band :global(a:hover h3),
+.band :global(button:hover h3) { color: var(--home-tone) !important; }
+
+.band :global([class~="text-cyan-400"]),
+.band :global([class~="text-cyan-300"]),
+.band :global([class~="text-blue-400"]) { color: var(--home-tone) !important; }
+
+.band :global(svg) { color: var(--home-tone); }
+
+@media (max-width: 760px) {
+  .band::before { background: linear-gradient(135deg, var(--home-tone-wash), transparent 64%); }
+}

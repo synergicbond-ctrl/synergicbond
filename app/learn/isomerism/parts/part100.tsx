@@ -360,7 +360,7 @@ export default function IsomerismPart80() {
                 <Structure number={example.number} />
               </div>
 
-              <p className="mt-3 text-sm leading-7 text-[var(--text-body)]">
+              <p className="mt-3 text-sm leading-7 text-slate-300">
                 {example.note}
               </p>
             </article>
@@ -370,7 +370,7 @@ export default function IsomerismPart80() {
             <h2 className="text-xl font-black text-violet-200">
               Symmetric counting rule
             </h2>
-            <p className="mt-2 text-sm leading-7 text-[var(--text-body)]">
+            <p className="mt-2 text-sm leading-7 text-slate-300">
               A simple 2ⁿ count is valid only when all geometrical
               stereoelements are independent and no whole-molecule symmetry
               identifies configurations. In the symmetric three-element source
@@ -385,7 +385,7 @@ export default function IsomerismPart80() {
         <nav className="mt-8 flex justify-between border-t border-white/10 pt-6">
           <Link
             href="/learn/isomerism/79"
-            className="rounded-xl border border-white/15 px-4 py-3 text-sm font-bold text-[var(--foreground)]"
+            className="rounded-xl border border-white/15 px-4 py-3 text-sm font-bold text-slate-200"
           >
             ← 79
           </Link>

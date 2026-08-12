@@ -3,7 +3,7 @@ import { Zap, ArrowRight } from "lucide-react";
 export default function SponsoredMock() {
   return (
     <div className="relative rounded-2xl p-[1px] overflow-hidden bg-gradient-to-r from-cyan-500/60 to-purple-500/60">
-      <div className="rounded-2xl bg-[var(--surface)] px-6 py-5 flex items-center justify-between flex-wrap gap-4">
+      <div className="rounded-2xl bg-[#111827] px-6 py-5 flex items-center justify-between flex-wrap gap-4">
         <div className="flex items-center gap-4">
           <div className="p-2.5 rounded-xl bg-gradient-to-br from-cyan-500/15 to-purple-500/15 border border-cyan-400/15">
             <Zap className="h-5 w-5 text-cyan-300" />

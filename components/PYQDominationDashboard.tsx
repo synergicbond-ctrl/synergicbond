@@ -393,7 +393,7 @@ export default function PYQDominationDashboard() {
                 
                 {/* Phase A */}
                 <div className="relative pl-8">
-                  <div className="absolute -left-[9px] top-1.5 h-4 w-4 rounded-full bg-cyan-400 border-4 border-[#040606]" />
+                  <div className="absolute -left-[9px] top-1.5 h-4 w-4 rounded-full bg-cyan-400 border-4 border-[#0B0F19]" />
                   <div className="flex items-center gap-2">
                     <span className="text-xs font-bold text-cyan-400 uppercase tracking-widest">Phase A</span>
                     <span className="text-xs bg-cyan-400/10 text-cyan-300 px-2 py-0.5 rounded">High Priority</span>
@@ -406,7 +406,7 @@ export default function PYQDominationDashboard() {
 
                 {/* Phase B */}
                 <div className="relative pl-8">
-                  <div className="absolute -left-[9px] top-1.5 h-4 w-4 rounded-full bg-violet-400 border-4 border-[#040606]" />
+                  <div className="absolute -left-[9px] top-1.5 h-4 w-4 rounded-full bg-violet-400 border-4 border-[#0B0F19]" />
                   <div className="flex items-center gap-2">
                     <span className="text-xs font-bold text-violet-400 uppercase tracking-widest">Phase B</span>
                     <span className="text-xs bg-violet-400/10 text-violet-300 px-2 py-0.5 rounded">Gap Elimination</span>
@@ -419,7 +419,7 @@ export default function PYQDominationDashboard() {
 
                 {/* Phase C */}
                 <div className="relative pl-8">
-                  <div className="absolute -left-[9px] top-1.5 h-4 w-4 rounded-full bg-emerald-400 border-4 border-[#040606]" />
+                  <div className="absolute -left-[9px] top-1.5 h-4 w-4 rounded-full bg-emerald-400 border-4 border-[#0B0F19]" />
                   <div className="flex items-center gap-2">
                     <span className="text-xs font-bold text-emerald-400 uppercase tracking-widest">Phase C</span>
                     <span className="text-xs bg-emerald-400/10 text-emerald-300 px-2 py-0.5 rounded">Bulk Expansion</span>
@@ -432,7 +432,7 @@ export default function PYQDominationDashboard() {
 
                 {/* Phase D */}
                 <div className="relative pl-8">
-                  <div className="absolute -left-[9px] top-1.5 h-4 w-4 rounded-full bg-amber-400 border-4 border-[#040606]" />
+                  <div className="absolute -left-[9px] top-1.5 h-4 w-4 rounded-full bg-amber-400 border-4 border-[#0B0F19]" />
                   <div className="flex items-center gap-2">
                     <span className="text-xs font-bold text-amber-400 uppercase tracking-widest">Phase D</span>
                     <span className="text-xs bg-amber-400/10 text-amber-300 px-2 py-0.5 rounded">Deep History</span>

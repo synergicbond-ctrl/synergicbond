@@ -26,8 +26,8 @@ export default async function GeneralInorganicChemistryPage() {
   await requireProgramEntitlement("jee-advanced", route);
 
   return (
-    <main className="min-h-screen bg-[var(--background)] text-white">
-      <header className="border-b border-white/10 bg-gradient-to-b from-cyan-950/30 to-[#0b0f10]">
+    <main className="min-h-screen bg-[#0B1220] text-white">
+      <header className="border-b border-white/10 bg-gradient-to-b from-cyan-950/30 to-[#0B1220]">
         <div className="mx-auto max-w-5xl px-4 py-8 sm:px-6 sm:py-10">
           <nav aria-label="Breadcrumb" className="mb-4 text-sm text-white/45">
             <Link href="/programs/jee-advanced" className="transition hover:text-white">JEE Advanced</Link>

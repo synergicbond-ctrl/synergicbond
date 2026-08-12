@@ -8,7 +8,7 @@ export const metadata = {
 
 export default function StudyToolsPage() {
   return (
-    <main className="min-h-screen bg-[var(--background)] text-white">
+    <main className="min-h-screen bg-[#0B0F19] text-white">
       <div className="mx-auto max-w-5xl px-6 py-12 space-y-8">
         <div>
           <p className="text-xs font-bold uppercase tracking-[0.4em] text-cyan-300 mb-2">Study Workspace</p>

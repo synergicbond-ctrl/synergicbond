@@ -13,7 +13,7 @@ const domains: Domain[] = [
   {
     name: "Inorganic Chemistry",
     tag: "🟦",
-    accent: "#50dc7b",
+    accent: "#00F5D4",
     books: [
       { title: "Concise Inorganic Chemistry", author: "J.D. Lee", level: "Foundation → Advanced", country: "UK", flag: "🇬🇧", rank: 1 },
       { title: "Advanced Inorganic Chemistry", author: "Cotton & Wilkinson", level: "Research", country: "USA", flag: "🇺🇸", rank: 2 },
@@ -37,7 +37,7 @@ const domains: Domain[] = [
   {
     name: "Organic Chemistry",
     tag: "🟩",
-    accent: "#37c8f4",
+    accent: "#00BBF9",
     books: [
       { title: "Organic Chemistry", author: "Clayden, Greeves & Warren", level: "Advanced / Olympiad", country: "UK", flag: "🇬🇧", rank: 1 },
       { title: "Advanced Organic Chemistry", author: "Jerry March", level: "Research", country: "USA", flag: "🇺🇸", rank: 2 },
@@ -67,7 +67,7 @@ const domains: Domain[] = [
   {
     name: "Physical & Quantum Chemistry",
     tag: "🟨",
-    accent: "#b376ff",
+    accent: "#9B5DE5",
     books: [
       { title: "Physical Chemistry", author: "Atkins & de Paula", level: "Advanced", country: "UK", flag: "🇬🇧", rank: 1 },
       { title: "Physical Chemistry", author: "Walter J. Moore", level: "Advanced", country: "USA", flag: "🇺🇸", rank: 2 },
@@ -112,7 +112,7 @@ const domains: Domain[] = [
   {
     name: "Analytical & Practical Chemistry",
     tag: "🟪",
-    accent: "#37c8f4",
+    accent: "#00BBF9",
     books: [
       { title: "Vogel's Quantitative Chemical Analysis", author: "Mendham, Denney, Barnes & Thomas", level: "Advanced / Research", country: "UK", flag: "🇬🇧", rank: 1 },
       { title: "Vogel's Qualitative Inorganic Analysis", author: "G. Svehla", level: "Advanced", country: "UK", flag: "🇬🇧", rank: 2 },
@@ -125,7 +125,7 @@ const domains: Domain[] = [
   {
     name: "General & Foundational",
     tag: "🟫",
-    accent: "#50dc7b",
+    accent: "#00F5D4",
     books: [
       { title: "General Chemistry", author: "Linus Pauling", level: "Foundation (classic)", country: "USA", flag: "🇺🇸", rank: 1 },
       { title: "General Chemistry (Vol 1 & 2, MIR)", author: "N.L. Glinka", level: "Foundation", country: "Russia", flag: "🇷🇺", rank: 2 },
@@ -146,7 +146,7 @@ export default function LibraryPage() {
   const total = domains.reduce((n, d) => n + d.books.length, 0);
 
   return (
-    <main className="min-h-screen bg-[var(--background)] text-white">
+    <main className="min-h-screen bg-[#0B0F19] text-white">
       <div className="mx-auto max-w-6xl px-6 py-12">
         {/* Header */}
         <div className="mb-10">
@@ -179,7 +179,7 @@ export default function LibraryPage() {
                     href={googleLink(b)}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group flex items-start gap-3 rounded-2xl bg-[var(--surface)] border border-white/[0.06] p-4 transition-all duration-200 hover:-translate-y-0.5"
+                    className="group flex items-start gap-3 rounded-2xl bg-[#111827] border border-white/[0.06] p-4 transition-all duration-200 hover:-translate-y-0.5"
                     style={{ borderColor: "rgba(255,255,255,0.06)" }}
                   >
                     {/* Spine icon */}
@@ -201,7 +201,7 @@ export default function LibraryPage() {
                         <span className="text-[10px] font-semibold text-white/50 ml-auto">{b.flag} {b.country}</span>
                       </div>
                       <h3 className="text-sm font-bold text-white leading-snug mt-1">{b.title}</h3>
-                      <p className="text-xs text-[var(--text-muted)] mt-0.5">{b.author}</p>
+                      <p className="text-xs text-gray-400 mt-0.5">{b.author}</p>
                       <span className="mt-2 inline-flex items-center gap-1 text-[11px] font-semibold transition group-hover:gap-1.5" style={{ color: d.accent }}>
                         Find on Google <ExternalLink className="h-3 w-3" />
                       </span>
@@ -214,9 +214,9 @@ export default function LibraryPage() {
         </div>
 
         {/* Curator notes */}
-        <div className="mt-12 rounded-2xl bg-[var(--surface)] border border-white/[0.06] p-6">
+        <div className="mt-12 rounded-2xl bg-[#111827] border border-white/[0.06] p-6">
           <h3 className="text-sm font-bold text-white mb-3">📌 Curator Notes</h3>
-          <ul className="space-y-2 text-xs text-[var(--text-body)] leading-relaxed">
+          <ul className="space-y-2 text-xs text-gray-300 leading-relaxed">
             <li>• <span className="text-white/80 font-semibold">Why only textbooks:</span> SYNERGIC BOND replaces exam-cram guides — here we point you to the deep conceptual sources the best ranks are actually built on.</li>
             <li>• <span className="text-white/80 font-semibold">Core conceptual stack:</span> J.D. Lee (Inorganic) · Clayden + Sykes (Organic) · Atkins (Physical).</li>
             <li>• <span className="text-white/80 font-semibold">Russian (MIR) classics:</span> Nesmeyanov, Reutov, Akhmetov and Landau-Lifshitz — legendary for first-principles depth.</li>

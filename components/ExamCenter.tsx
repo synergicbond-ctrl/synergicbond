@@ -15,7 +15,7 @@ type Exam = {
 };
 
 const indiaExams: Exam[] = [
-  { name: "NEET",         eligibility: "Class 12 / PCB / Pre-Med",       website: "https://neet.nta.nic.in",        opens: "Feb 2026", closes: "Mar 2026", fee: "₹1,700",  accent: "#50dc7b" },
+  { name: "NEET",         eligibility: "Class 12 / PCB / Pre-Med",       website: "https://neet.nta.nic.in",        opens: "Feb 2026", closes: "Mar 2026", fee: "₹1,700",  accent: "#10B981" },
   { name: "JEE Main",     eligibility: "Class 12 / PCM",                 website: "https://jeemain.nta.nic.in",     opens: "Nov 2025", closes: "Dec 2025", fee: "₹1,000",  accent: "var(--text-muted)" },
   { name: "JEE Advanced", eligibility: "JEE Main Top 2.5L Qualifiers",   website: "https://jeeadv.ac.in",           opens: "Apr 2026", closes: "May 2026", fee: "₹3,200",  accent: "#3B82F6" },
   { name: "GATE",         eligibility: "B.E / B.Tech / B.Sc Final Year", website: "https://gate.iitk.ac.in",        opens: "Aug 2025", closes: "Oct 2025", fee: "₹1,800",  accent: "#F97316" },
@@ -28,7 +28,7 @@ const intlExams: Exam[] = [
   { name: "Waterloo Avogadro",    eligibility: "Grade 11-12 (Canada)",      website: "https://cemc.uwaterloo.ca",      opens: "Mar 2026", closes: "Apr 2026", fee: "Free",  accent: "var(--text-muted)" },
   { name: "A-Levels Chemistry",   eligibility: "Year 12-13 (UK)",           website: "https://www.cambridgeinternational.org", opens: "Jan 2026", closes: "Feb 2026", fee: "£120", accent: "#F59E0B" },
   { name: "IB Diploma Chem HL/SL",eligibility: "IB Programme (Global)",      website: "https://www.ibo.org",            opens: "Oct 2025", closes: "Nov 2025", fee: "$119",  accent: "#EC4899" },
-  { name: "Singapore GCE A-Level",eligibility: "JC H2/H3 (Singapore)",      website: "https://www.seab.gov.sg",        opens: "Mar 2026", closes: "Apr 2026", fee: "S$130", accent: "#50dc7b" },
+  { name: "Singapore GCE A-Level",eligibility: "JC H2/H3 (Singapore)",      website: "https://www.seab.gov.sg",        opens: "Mar 2026", closes: "Apr 2026", fee: "S$130", accent: "#10B981" },
   { name: "Abitur Chemistry",     eligibility: "Gymnasium LK (Germany)",    website: "https://www.kmk.org",            opens: "Varies",   closes: "Varies",   fee: "Free",  accent: "#38BDF8" },
 ];
 
@@ -58,7 +58,7 @@ export default function ExamCenter() {
           <button
             onClick={() => setRegion("india")}
             className={`flex items-center gap-2 px-7 py-2.5 rounded-full text-xs font-bold transition-all duration-300 ${
- region === "india" ? "bg-[var(--surface)] -400 text-black shadow-lg scale-105" : "text-[var(--text-muted)] hover:text-white"
+ region === "india" ? "bg-[var(--surface)] -400 text-black shadow-lg scale-105" : "text-gray-400 hover:text-white"
  }`}
           >
             <span>🇮🇳</span> {t("exam.india")}
@@ -66,7 +66,7 @@ export default function ExamCenter() {
           <button
             onClick={() => setRegion("intl")}
             className={`flex items-center gap-2 px-7 py-2.5 rounded-full text-xs font-bold transition-all duration-300 ${
- region === "intl" ? "bg-[var(--surface)] -400 text-black shadow-lg scale-105" : "text-[var(--text-muted)] hover:text-white"
+ region === "intl" ? "bg-[var(--surface)] -400 text-black shadow-lg scale-105" : "text-gray-400 hover:text-white"
  }`}
           >
             <span>🌍</span> {t("exam.intl")}
@@ -99,7 +99,7 @@ export default function ExamCenter() {
                 </div>
               </div>
 
-              <p className="text-xs text-[var(--text-body)] mb-5 flex items-center gap-1.5 font-medium">
+              <p className="text-xs text-gray-300 mb-5 flex items-center gap-1.5 font-medium">
                 <span className="text-white/40">{t("exam.eligibility")}</span> <span className="text-white/90">{exam.eligibility}</span>
               </p>
 

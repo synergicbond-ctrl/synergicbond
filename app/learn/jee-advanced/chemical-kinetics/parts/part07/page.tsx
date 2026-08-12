@@ -121,7 +121,7 @@ export default function ChemicalKineticsPart07() {
               <FormulaCard title="Relation to Arrhenius parameters">
                 <KB>{String.raw`E_a=\Delta H^{\ddagger}+RT`}</KB>
                 <KB>{String.raw`A\approx e\,\kappa\frac{k_BT}{h}\exp\left(\frac{\Delta S^{\ddagger}}R\right)`}</KB>
-                <p className="text-center text-sm text-[var(--text-muted)]">For a simple elementary reaction over a limited temperature range.</p>
+                <p className="text-center text-sm text-slate-400">For a simple elementary reaction over a limited temperature range.</p>
               </FormulaCard>
             </div>
             <ConceptCard title="Transition state versus intermediate" tone="violet">

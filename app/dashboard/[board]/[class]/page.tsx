@@ -46,8 +46,8 @@ export default async function ClassDashboard({ params }: { params: Promise<{ boa
   const scopedHref = (href: string) => BOARD_SCOPE_REMAP[href] ?? href;
 
   return (
-    <main className="min-h-screen bg-[var(--background)] text-white">
-      <div className="border-b border-white/10 bg-gradient-to-b from-amber-950/20 to-[#0b0f10] px-6 py-12">
+    <main className="min-h-screen bg-[#0B1220] text-white">
+      <div className="border-b border-white/10 bg-gradient-to-b from-amber-950/20 to-[#0B1220] px-6 py-12">
         <div className="mx-auto max-w-5xl">
           <nav className="mb-4 text-sm text-white/45">
             <Link href="/dashboard/boards" className="hover:text-white">School Boards</Link>
@@ -102,7 +102,7 @@ export default async function ClassDashboard({ params }: { params: Promise<{ boa
               {section.items.map((it) =>
                 it.status === "available" && it.href ? (
                   <Link key={it.label} href={scopedHref(it.href)}
-                    className="flex items-center justify-between rounded-lg border border-white/[0.08] bg-[var(--background)] px-3 py-2.5 text-sm font-semibold text-white/85 transition hover:border-cyan-400/40 hover:text-cyan-200">
+                    className="flex items-center justify-between rounded-lg border border-white/[0.08] bg-[#0B1220] px-3 py-2.5 text-sm font-semibold text-white/85 transition hover:border-cyan-400/40 hover:text-cyan-200">
                     {it.label}<span className="text-cyan-400">→</span>
                   </Link>
                 ) : (

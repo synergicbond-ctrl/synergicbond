@@ -203,7 +203,7 @@ export default function EquivalentConceptPart5() {
         </PageCard>
 
         <PageCard title="General Formula for Disproportionation and Examples">
-          <div className="space-y-4 rounded-2xl border border-[var(--border)] bg-[var(--background)]/30 p-4">
+          <div className="space-y-4 rounded-2xl border border-slate-800 bg-slate-950/30 p-4">
             <h3 className="font-bold text-slate-900">
               General disproportionation case
             </h3>

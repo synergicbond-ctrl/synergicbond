@@ -12,15 +12,15 @@ const toneStyles: Record<Tone, string> = {
 };
 function Section({ index, title, subtitle, children }: { index: string; title: string; subtitle?: string; children: React.ReactNode }) {
   return (
-    <section className="rounded-[2rem] border border-white/10 bg-[var(--background)]/80 p-5 shadow-2xl shadow-black/20 backdrop-blur md:p-8">
+    <section className="rounded-[2rem] border border-white/10 bg-slate-950/80 p-5 shadow-2xl shadow-black/20 backdrop-blur md:p-8">
       <div className="flex items-start gap-4">
         <span className="grid h-11 w-11 shrink-0 place-items-center rounded-2xl border border-cyan-300/30 bg-cyan-300/10 text-sm font-black text-cyan-200">{index}</span>
         <div>
           <h2 className="text-2xl font-black tracking-tight text-white md:text-3xl">{title}</h2>
-          {subtitle && <p className="mt-1 max-w-4xl text-sm leading-6 text-[var(--text-muted)]">{subtitle}</p>}
+          {subtitle && <p className="mt-1 max-w-4xl text-sm leading-6 text-slate-400">{subtitle}</p>}
         </div>
       </div>
-      <div className="mt-6 space-y-5 text-[15px] leading-7 text-[var(--foreground)] md:text-base">{children}</div>
+      <div className="mt-6 space-y-5 text-[15px] leading-7 text-slate-200 md:text-base">{children}</div>
     </section>
   );
 }
@@ -37,7 +37,7 @@ function Lens({ title, children, tone = "cyan" }: { title: string; children: Rea
     <aside className={`rounded-2xl border p-5 ${toneStyles[tone]}`}>
       <p className="text-xs font-black uppercase tracking-[0.2em]">Concept</p>
       <h3 className="mt-2 text-lg font-black text-white">{title}</h3>
-      <div className="mt-2 text-sm leading-6 text-[var(--foreground)]">{children}</div>
+      <div className="mt-2 text-sm leading-6 text-slate-200">{children}</div>
     </aside>
   );
 }
@@ -201,12 +201,12 @@ export default function ThermodynamicsPart29() {
     <main className="min-h-screen bg-[#020617] text-slate-100">
       <div className="mx-auto max-w-5xl space-y-6 px-4 py-10 md:px-8">
 
-        <header className="rounded-[2rem] border border-white/10 bg-[var(--background)]/80 p-6 shadow-2xl shadow-black/20 md:p-10">
+        <header className="rounded-[2rem] border border-white/10 bg-slate-950/80 p-6 shadow-2xl shadow-black/20 md:p-10">
           <p className="text-xs font-black uppercase tracking-[0.25em] text-fuchsia-300">Part 29</p>
           <h1 className="mt-3 text-4xl font-black tracking-tight text-white md:text-5xl">
             Reaction Gibbs Energy, Reaction Quotient and Equilibrium Constant
           </h1>
-          <p className="mt-4 max-w-3xl text-lg leading-8 text-[var(--text-body)]">
+          <p className="mt-4 max-w-3xl text-lg leading-8 text-slate-300">
             Complete derivations of ΔrG = ΔrG° + RT ln Q, the equilibrium condition ΔrG = 0 → K = e^&#123;−ΔrG°/RT&#125;,
             and direction tests using Q and K.
           </p>
@@ -216,7 +216,7 @@ export default function ThermodynamicsPart29() {
           subtitle="Exact derived result: ΔrG = (∂G/∂ξ)_&#123;T,P&#125; — the slope of G vs extent of reaction">
           <GvsXiSVG />
           <p>For a reaction with stoichiometric coefficients νᵢ and extent of reaction ξ (dξ = dnᵢ/νᵢ):</p>
-          <div className="space-y-1 rounded-2xl border border-white/10 bg-[var(--surface)]/60 p-4 font-mono text-sm">
+          <div className="space-y-1 rounded-2xl border border-white/10 bg-slate-900/60 p-4 font-mono text-sm">
             <p>At constant T, P: dG = Σᵢ μᵢ dnᵢ = Σᵢ μᵢ νᵢ dξ</p>
             <p>ΔrG = (∂G/∂ξ)_&#123;T,P&#125; = Σᵢ νᵢ μᵢ</p>
           </div>
@@ -230,7 +230,7 @@ export default function ThermodynamicsPart29() {
 
         <Section index="2" title="Derivation of ΔrG = ΔrG° + RT ln Q">
           <p>Substitute μᵢ = μ°ᵢ + RT ln aᵢ into ΔrG = Σνᵢμᵢ:</p>
-          <div className="space-y-1 rounded-2xl border border-white/10 bg-[var(--surface)]/60 p-4 font-mono text-sm">
+          <div className="space-y-1 rounded-2xl border border-white/10 bg-slate-900/60 p-4 font-mono text-sm">
             <p>ΔrG = Σᵢ νᵢ(μ°ᵢ + RT ln aᵢ)</p>
             <p>= Σᵢ νᵢ μ°ᵢ + RT Σᵢ νᵢ ln aᵢ</p>
             <p>= ΔrG° + RT Σᵢ ln aᵢ^&#123;νᵢ&#125;</p>
@@ -243,7 +243,7 @@ export default function ThermodynamicsPart29() {
 
         <Section index="3" title="Equilibrium: ΔrG = 0 → K = e^{−ΔrG°/RT}">
           <p>At equilibrium, G is at its minimum with respect to ξ, so ΔrG = 0 and Q = K:</p>
-          <div className="space-y-1 rounded-2xl border border-white/10 bg-[var(--surface)]/60 p-4 font-mono text-sm">
+          <div className="space-y-1 rounded-2xl border border-white/10 bg-slate-900/60 p-4 font-mono text-sm">
             <p>0 = ΔrG° + RT ln K</p>
             <p>ΔrG° = −RT ln K</p>
             <p>K = exp(−ΔrG°/RT)</p>
@@ -272,10 +272,10 @@ export default function ThermodynamicsPart29() {
 
         <Section index="5" title="Worked Examples">
           {examples.map(ex => (
-            <article key={ex.title} className="rounded-2xl border border-white/10 bg-[var(--surface)]/70 p-5 mb-4">
+            <article key={ex.title} className="rounded-2xl border border-white/10 bg-slate-900/70 p-5 mb-4">
               <h3 className="font-black text-white">{ex.title}</h3>
-              <p className="mt-2 text-sm font-semibold text-[var(--foreground)]">{ex.given}</p>
-              <div className="mt-3 rounded-xl border border-emerald-300/20 bg-emerald-300/[0.06] p-3 text-sm leading-6 text-[var(--foreground)]">{ex.solution}</div>
+              <p className="mt-2 text-sm font-semibold text-slate-200">{ex.given}</p>
+              <div className="mt-3 rounded-xl border border-emerald-300/20 bg-emerald-300/[0.06] p-3 text-sm leading-6 text-slate-200">{ex.solution}</div>
               <p className="mt-2 text-xs text-amber-300"><span className="font-black">Trap: </span>{ex.trap}</p>
             </article>
           ))}
@@ -292,15 +292,15 @@ export default function ThermodynamicsPart29() {
               ["Write the K expression for: Fe₂O₃(s) + 3CO(g) ⇌ 2Fe(s) + 3CO₂(g).", "Pure solids have activity 1: K = a_{CO₂}³/a_{CO}³ = (P_{CO₂}/P°)³ / (P_{CO}/P°)³ = (P_{CO₂}/P_{CO})³."],
               ["ΔrG° = +20 kJ mol⁻¹ at 298 K. Find K. Is the reaction feasible?", "K = exp(−20000/8.314×298) = exp(−8.07) = 3.1 × 10⁻⁴. K ≪ 1 means products are not favoured at standard conditions. The reaction is thermodynamically unfeasible under standard conditions."],
             ].map(([q, a], i) => (
-              <article key={i} className="rounded-2xl border border-white/10 bg-[var(--surface)]/60 p-4">
+              <article key={i} className="rounded-2xl border border-white/10 bg-slate-900/60 p-4">
                 <p className="font-semibold text-white"><span className="mr-2 text-amber-300">{i+1}.</span>{q}</p>
-                <div className="mt-2 rounded-xl border border-emerald-300/20 bg-emerald-300/[0.06] p-3 text-sm text-[var(--foreground)]">{a}</div>
+                <div className="mt-2 rounded-xl border border-emerald-300/20 bg-emerald-300/[0.06] p-3 text-sm text-slate-200">{a}</div>
               </article>
             ))}
           </div>
         </section>
 
-        <section className="rounded-[2rem] border border-white/10 bg-[var(--background)] p-6">
+        <section className="rounded-[2rem] border border-white/10 bg-slate-950 p-6">
           <p className="text-xs font-black uppercase tracking-[0.2em] text-fuchsia-300">Part 29 Complete</p>
           <h2 className="mt-2 text-2xl font-black text-white">Next: van&apos;t Hoff equation and Clapeyron equation</h2>
         </section>

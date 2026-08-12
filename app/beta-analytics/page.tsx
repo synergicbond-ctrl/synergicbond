@@ -78,7 +78,7 @@ export default function BetaAnalyticsPage() {
   ];
 
   return (
-    <main className="min-h-screen bg-[var(--background)] px-4 py-8 text-white sm:px-6 lg:px-10">
+    <main className="min-h-screen bg-slate-950 px-4 py-8 text-white sm:px-6 lg:px-10">
       <div className="mx-auto max-w-7xl space-y-8">
         <header className="flex flex-col gap-4 border-b border-white/10 pb-6 md:flex-row md:items-end md:justify-between">
           <div>

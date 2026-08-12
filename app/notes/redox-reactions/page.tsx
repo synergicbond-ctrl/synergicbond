@@ -17,7 +17,7 @@ export default function RedoxReactionsHubPage() {
     <main className="min-h-screen bg-[#0a1622] text-white">
       <div className="mx-auto max-w-5xl px-4 py-8 sm:px-6 md:py-12 space-y-8">
         {/* Breadcrumb Navigation */}
-        <nav className="flex items-center gap-2 text-xs font-semibold text-[var(--text-muted)]">
+        <nav className="flex items-center gap-2 text-xs font-semibold text-slate-400">
           <Link href="/notes" className="hover:text-cyan-400 transition">
             Notes Hub
           </Link>
@@ -42,7 +42,7 @@ export default function RedoxReactionsHubPage() {
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-black tracking-tight text-white">
               Redox Reactions
             </h1>
-            <p className="max-w-2xl text-base sm:text-lg text-[var(--text-body)] font-medium leading-relaxed">
+            <p className="max-w-2xl text-base sm:text-lg text-slate-300 font-medium leading-relaxed">
               Complete foundation covering oxidation-reduction dynamics, equivalent concept (`n`-factor calculations across all functional groups), and volumetric titration analysis.
             </p>
           </div>
@@ -50,12 +50,12 @@ export default function RedoxReactionsHubPage() {
 
         {/* Canonical 10-lesson grid, grouped by unit */}
         <section className="space-y-4">
-          <div className="flex items-center justify-between border-b border-[var(--border)] pb-3">
+          <div className="flex items-center justify-between border-b border-slate-800 pb-3">
             <h2 className="text-xl font-bold tracking-tight text-white flex items-center gap-2">
               <span className="inline-block h-2.5 w-2.5 rounded-full bg-purple-400" />
               Chapter Lessons
             </h2>
-            <span className="text-xs font-bold text-[var(--text-muted)]">10 lessons · 2 units</span>
+            <span className="text-xs font-bold text-slate-400">10 lessons · 2 units</span>
           </div>
           <CanonicalNotesStyles />
           <ChapterLessonGroups groups={redoxLessonGroups()} />
@@ -63,19 +63,19 @@ export default function RedoxReactionsHubPage() {
 
         {/* Overview of Syllabus & Solved Skeletons */}
         {chapter && (
-          <section className="mt-10 rounded-3xl border border-[var(--border)] bg-[var(--surface)]/60 p-6 sm:p-8 space-y-6">
-            <div className="flex items-center justify-between border-b border-[var(--border)] pb-3">
+          <section className="mt-10 rounded-3xl border border-slate-800 bg-slate-900/60 p-6 sm:p-8 space-y-6">
+            <div className="flex items-center justify-between border-b border-slate-800 pb-3">
               <h2 className="text-xl font-bold tracking-tight text-white flex items-center gap-2">
                 <span className="inline-block h-2.5 w-2.5 rounded-full bg-cyan-400" />
                 Chapter Knowledge Summary
               </h2>
-              <span className="text-xs font-bold text-[var(--text-muted)]">Syllabus Reference</span>
+              <span className="text-xs font-bold text-slate-400">Syllabus Reference</span>
             </div>
 
             <div className="grid gap-6 md:grid-cols-2 text-sm">
               <div className="space-y-2">
                 <h3 className="font-bold text-pink-300">Core Concepts Covered</h3>
-                <ul className="list-disc pl-5 text-[var(--text-body)] space-y-1 text-xs">
+                <ul className="list-disc pl-5 text-slate-300 space-y-1 text-xs">
                   {chapter.syllabus.map((t: string, i: number) => (
                     <li key={i}>{t}</li>
                   ))}
@@ -83,7 +83,7 @@ export default function RedoxReactionsHubPage() {
               </div>
               <div className="space-y-2">
                 <h3 className="font-bold text-amber-300">Common Student Traps to Avoid</h3>
-                <ul className="list-disc pl-5 text-[var(--text-body)] space-y-1 text-xs">
+                <ul className="list-disc pl-5 text-slate-300 space-y-1 text-xs">
                   {chapter.commonMistakes.map((m: string, i: number) => (
                     <li key={i}>{m}</li>
                   ))}

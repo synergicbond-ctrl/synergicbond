@@ -53,7 +53,7 @@ function VisualCard({ visual, priority = false }: { visual: FBlockVisualDef; pri
           className="object-contain transition-transform duration-500 group-hover:scale-[1.01]"
         />
       </div>
-      <figcaption className="border-t border-white/10 px-5 py-3 text-sm leading-6 text-[var(--text-muted)] sm:px-7">{visual.caption}</figcaption>
+      <figcaption className="border-t border-white/10 px-5 py-3 text-sm leading-6 text-slate-400 sm:px-7">{visual.caption}</figcaption>
     </figure>
   );
 }

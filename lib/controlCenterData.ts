@@ -158,7 +158,7 @@ export async function fetchControlCenterProgress(): Promise<ControlCenterProgres
       reason: "Your most-missed topic — high impact",
       href: "/vault",
       icon: "revise",
-      tone: "#ff775d",
+      tone: "#F87171",
     });
   }
 
@@ -169,7 +169,7 @@ export async function fetchControlCenterProgress(): Promise<ControlCenterProgres
       reason: "Find your weak spots in 10 questions",
       href: "/quiz",
       icon: "quiz",
-      tone: "#37c8f4",
+      tone: "#00BBF9",
     });
   } else if (overallAccuracy < 60) {
     nextActions.push({
@@ -177,7 +177,7 @@ export async function fetchControlCenterProgress(): Promise<ControlCenterProgres
       reason: `Accuracy is ${pct(overallAccuracy)}% — let's lift it`,
       href: "/quiz",
       icon: "quiz",
-      tone: "#37c8f4",
+      tone: "#00BBF9",
     });
   }
 
@@ -188,7 +188,7 @@ export async function fetchControlCenterProgress(): Promise<ControlCenterProgres
       reason: "Pick up where you left off",
       href: "/vault",
       icon: "learn",
-      tone: "#50dc7b",
+      tone: "#00F5D4",
     });
   } else if (learnPct < 30) {
     nextActions.push({
@@ -196,7 +196,7 @@ export async function fetchControlCenterProgress(): Promise<ControlCenterProgres
       reason: "Build your foundation in the Knowledge Vault",
       href: "/vault",
       icon: "learn",
-      tone: "#50dc7b",
+      tone: "#00F5D4",
     });
   }
 
@@ -209,7 +209,7 @@ export async function fetchControlCenterProgress(): Promise<ControlCenterProgres
       reason: "A 5-minute daily challenge counts",
       href: "/quiz",
       icon: "streak",
-      tone: "#e3b341",
+      tone: "#FBBF24",
     });
   }
 
@@ -219,7 +219,7 @@ export async function fetchControlCenterProgress(): Promise<ControlCenterProgres
     reason: "Simulate real exam pressure",
     href: "/exam",
     icon: "mock",
-    tone: "#b376ff",
+    tone: "#9B5DE5",
   });
 
   return {

@@ -9,7 +9,7 @@ export const partInfo = {
 const Section = ({ title, children }: { title: string; children: ReactNode }) => (
   <section className="rounded-2xl border border-white/10 bg-white/[0.035] p-5 md:p-6">
     <h2 className="text-xl font-semibold tracking-tight text-white">{title}</h2>
-    <div className="mt-4 space-y-4 text-[15px] leading-7 text-[var(--text-body)]">{children}</div>
+    <div className="mt-4 space-y-4 text-[15px] leading-7 text-zinc-300">{children}</div>
   </section>
 );
 
@@ -19,7 +19,7 @@ export default function SolidStatePart02() {
       <header className="rounded-3xl border border-violet-400/20 bg-gradient-to-b from-violet-400/10 to-transparent p-6 md:p-8">
         <p className="text-xs font-semibold uppercase tracking-[0.24em] text-violet-300">JEE Advanced · Solid State · Part 2</p>
         <h1 className="mt-3 text-3xl font-semibold tracking-tight text-white md:text-4xl">Crystalline and Amorphous Solids</h1>
-        <p className="mt-4 max-w-3xl text-sm leading-7 text-[var(--text-body)]">
+        <p className="mt-4 max-w-3xl text-sm leading-7 text-zinc-300">
           This part follows the opening comparison only, without leaking later crystal-lattice or unit-cell theory.
         </p>
       </header>
@@ -43,7 +43,7 @@ export default function SolidStatePart02() {
         <div className="overflow-x-auto">
           <table className="w-full min-w-[620px] border-collapse text-left text-sm">
             <thead>
-              <tr className="border-b border-white/10 text-[var(--foreground)]">
+              <tr className="border-b border-white/10 text-zinc-200">
                 <th className="px-3 py-3">Property</th>
                 <th className="px-3 py-3">Crystalline</th>
                 <th className="px-3 py-3">Amorphous</th>
@@ -79,15 +79,15 @@ export default function SolidStatePart02() {
       <Section title="4. True Solid and Pseudo-Solid Terminology">
         <div className="grid gap-4 md:grid-cols-2">
           <div className="rounded-xl border border-cyan-400/20 bg-cyan-400/[0.04] p-4 text-center">
-            <div className="text-sm text-[var(--text-muted)]">Crystalline solid</div>
+            <div className="text-sm text-zinc-400">Crystalline solid</div>
             <div className="mt-1 text-lg font-semibold text-cyan-200">True solid</div>
           </div>
           <div className="rounded-xl border border-amber-400/20 bg-amber-400/[0.04] p-4 text-center">
-            <div className="text-sm text-[var(--text-muted)]">Amorphous solid</div>
+            <div className="text-sm text-zinc-400">Amorphous solid</div>
             <div className="mt-1 text-lg font-semibold text-amber-200">Pseudo-solid / supercooled-liquid-like</div>
           </div>
         </div>
-        <p className="text-sm text-[var(--text-muted)]">
+        <p className="text-sm text-zinc-400">
           Use the conventional exam terminology, but do not infer that ordinary glass behaves as a freely flowing liquid at room temperature.
         </p>
       </Section>
@@ -97,14 +97,14 @@ export default function SolidStatePart02() {
           <div className="rounded-xl border border-violet-400/20 bg-violet-400/[0.04] p-4">
             <h3 className="font-semibold text-violet-200">Anisotropy</h3>
             <p className="mt-2">A physical property may have different values along different directions.</p>
-            <p className="mt-2 font-mono text-sm text-[var(--foreground)]">Pₓ ≠ Pᵧ</p>
-            <p className="mt-2 text-sm text-[var(--text-muted)]">Crystalline solids are generally treated as anisotropic at JEE level.</p>
+            <p className="mt-2 font-mono text-sm text-zinc-200">Pₓ ≠ Pᵧ</p>
+            <p className="mt-2 text-sm text-zinc-400">Crystalline solids are generally treated as anisotropic at JEE level.</p>
           </div>
           <div className="rounded-xl border border-emerald-400/20 bg-emerald-400/[0.04] p-4">
             <h3 className="font-semibold text-emerald-200">Isotropy</h3>
             <p className="mt-2">A physical property has the same macroscopic value in all directions.</p>
-            <p className="mt-2 font-mono text-sm text-[var(--foreground)]">Pₓ = Pᵧ = P_z</p>
-            <p className="mt-2 text-sm text-[var(--text-muted)]">Amorphous solids are generally isotropic.</p>
+            <p className="mt-2 font-mono text-sm text-zinc-200">Pₓ = Pᵧ = P_z</p>
+            <p className="mt-2 text-sm text-zinc-400">Amorphous solids are generally isotropic.</p>
           </div>
         </div>
         <p>Relevant directional properties include mechanical strength and refractive index, exactly in the opening source sequence.</p>
@@ -115,12 +115,12 @@ export default function SolidStatePart02() {
           <table className="w-full min-w-[720px] border-collapse text-left text-sm">
             <thead>
               <tr className="border-b border-white/10">
-                <th className="px-3 py-3 text-[var(--foreground)]">Property</th>
+                <th className="px-3 py-3 text-zinc-200">Property</th>
                 <th className="px-3 py-3 text-cyan-200">Crystalline</th>
                 <th className="px-3 py-3 text-amber-200">Amorphous</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-white/10 text-[var(--text-body)]">
+            <tbody className="divide-y divide-white/10 text-zinc-300">
               {[
                 ["Arrangement", "Regular/ordered", "Non-periodic"],
                 ["Range of order", "Long-range", "Short-range"],
@@ -186,7 +186,7 @@ export default function SolidStatePart02() {
 
       <aside className="rounded-2xl border border-fuchsia-400/20 bg-fuchsia-400/[0.045] p-5">
         <p className="text-xs font-semibold uppercase tracking-[0.2em] text-fuchsia-300">Next in this chapter</p>
-        <p className="mt-2 text-sm leading-7 text-[var(--text-body)]">
+        <p className="mt-2 text-sm leading-7 text-zinc-300">
           Polycrystalline solids, followed by the examples and then classification of crystalline solids into ionic,
           molecular, metallic, and covalent/network solids.
         </p>

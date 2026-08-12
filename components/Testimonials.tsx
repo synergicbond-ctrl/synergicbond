@@ -23,7 +23,7 @@ const testimonials = [
     name: "Academic Review Board",
     role: "Faculty Evaluation",
     program: "Curriculum Standards",
-    accent: "#50dc7b",
+    accent: "#10B981",
     location: "Academic Partners",
     hasVideo: false,
   },
@@ -71,7 +71,7 @@ export default function Testimonials() {
               key={f.id}
               onClick={() => setFilter(f.id)}
               className={`px-6 py-2.5 rounded-full text-xs font-bold transition-all duration-300 ${
- filter === f.id ? "bg-[var(--surface)] -400 text-black shadow-lg scale-105" : "text-[var(--text-muted)] hover:text-white hover:bg-white/[0.04]"
+ filter === f.id ? "bg-[var(--surface)] -400 text-black shadow-lg scale-105" : "text-gray-400 hover:text-white hover:bg-white/[0.04]"
  }`}
             >
               {t(f.tkey)}

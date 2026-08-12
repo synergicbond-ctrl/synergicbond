@@ -5,14 +5,14 @@ import { useEffect, useState } from "react";
 const LEVELS = [
   { level: 1, name: "Atom", minXP: 0, maxXP: 99, color: "#6B7280" },
   { level: 2, name: "Ion", minXP: 100, maxXP: 249, color: "#3B82F6" },
-  { level: 3, name: "Molecule", minXP: 250, maxXP: 499, color: "#50dc7b" },
+  { level: 3, name: "Molecule", minXP: 250, maxXP: 499, color: "#10B981" },
   { level: 4, name: "Compound", minXP: 500, maxXP: 999, color: "#F59E0B" },
-  { level: 5, name: "Element", minXP: 1000, maxXP: 1999, color: "#ff775d" },
+  { level: 5, name: "Element", minXP: 1000, maxXP: 1999, color: "#EF4444" },
   { level: 6, name: "Reaction", minXP: 2000, maxXP: 3999, color: "#8B5CF6" },
   { level: 7, name: "Catalyst", minXP: 4000, maxXP: 7999, color: "#EC4899" },
   { level: 8, name: "Chemist", minXP: 8000, maxXP: 15999, color: "#F97316" },
   { level: 9, name: "Professor", minXP: 16000, maxXP: 31999, color: "#06B6D4" },
-  { level: 10, name: "Nobel Laureate", minXP: 32000, maxXP: 999999, color: "#e3b341" },
+  { level: 10, name: "Nobel Laureate", minXP: 32000, maxXP: 999999, color: "#FFD700" },
 ];
 
 const ALL_BADGES = [

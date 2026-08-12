@@ -164,7 +164,7 @@ export default function DoubtSolverPage() {
   }
 
   return (
-    <main className="min-h-screen bg-[var(--background)] text-white">
+    <main className="min-h-screen bg-[#0B0F19] text-white">
 
       <div className="mx-auto max-w-5xl px-6 py-12">
 
@@ -182,7 +182,7 @@ export default function DoubtSolverPage() {
 
         {/* Token wallet */}
         <div className="flex justify-center mb-8">
-          <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-[var(--surface)] border border-white/[0.06]">
+          <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-[#111827] border border-white/[0.06]">
             <Zap className={`h-4 w-4 ${credits > 0 ? "text-violet-400" : "text-red-400"}`} />
             <span className="text-sm font-semibold">
               <span className={credits > 0 ? "text-violet-400" : "text-red-400"}>{credits}</span>
@@ -193,7 +193,7 @@ export default function DoubtSolverPage() {
         </div>
 
         {/* Workspace — uniform bg */}
-        <div className="rounded-3xl bg-[var(--surface)] border border-white/[0.06] p-6 md:p-8">
+        <div className="rounded-3xl bg-[#111827] border border-white/[0.06] p-6 md:p-8">
 
           {/* Drop zone */}
           <div
@@ -265,13 +265,13 @@ export default function DoubtSolverPage() {
             <div className="inline-flex rounded-xl bg-black/40 border border-white/[0.08] p-1">
               <button
                 onClick={() => toggleLang("english")}
-                className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold transition ${language === "english" ? "bg-cyan-500 text-black" : "text-[var(--text-muted)]"}`}
+                className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold transition ${language === "english" ? "bg-cyan-500 text-black" : "text-gray-400"}`}
               >
                 <Languages className="h-3.5 w-3.5" /> English
               </button>
               <button
                 onClick={() => toggleLang("hinglish")}
-                className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold transition ${language === "hinglish" ? "bg-cyan-500 text-black" : "text-[var(--text-muted)]"}`}
+                className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold transition ${language === "hinglish" ? "bg-cyan-500 text-black" : "text-gray-400"}`}
               >
                 Hinglish
               </button>
@@ -306,7 +306,7 @@ export default function DoubtSolverPage() {
       {/* Paywall modal */}
       {showPaywall && (
         <div className="fixed inset-0 z-[100] flex items-center justify-center p-6 bg-black/70 backdrop-blur-sm">
-          <div className="relative max-w-md w-full rounded-3xl bg-[var(--surface)] border border-cyan-500/20 p-8 text-center shadow-2xl">
+          <div className="relative max-w-md w-full rounded-3xl bg-[#111827] border border-cyan-500/20 p-8 text-center shadow-2xl">
             <button onClick={() => setShowPaywall(false)} className="absolute top-4 right-4 text-white/40 hover:text-white">
               <X className="h-5 w-5" />
             </button>
@@ -332,7 +332,7 @@ export default function DoubtSolverPage() {
       {/* Rate-limit cooldown overlay */}
       {cooldown > 0 && (
         <div className="fixed inset-0 z-[100] flex items-center justify-center p-6 bg-black/70 backdrop-blur-sm">
-          <div className="max-w-sm w-full rounded-3xl bg-[var(--surface)] border border-violet-500/30 p-8 text-center shadow-2xl">
+          <div className="max-w-sm w-full rounded-3xl bg-[#111827] border border-violet-500/30 p-8 text-center shadow-2xl">
             <p className="text-4xl mb-3">⚠️</p>
             <h3 className="text-lg font-black mb-2">Security Threshold Engaged</h3>
             <p className="text-sm text-white/50 mb-5">

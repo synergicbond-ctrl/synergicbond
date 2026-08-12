@@ -27,7 +27,7 @@ export default function ChemicalEquilibriumPart({ part, title, sourcePages, html
 
   return (
     <article ref={ref} className="ce-note mx-auto w-full max-w-5xl px-4 py-8 sm:px-6 lg:px-8">
-      <header className="mb-8 border-b border-[var(--border)] pb-5">
+      <header className="mb-8 border-b border-slate-200 pb-5">
         <p className="text-sm font-semibold uppercase tracking-[0.16em] text-indigo-700">Chemical Equilibrium · Part {String(part).padStart(2, "0")}</p>
         <h1 className="mt-2 text-3xl font-black tracking-tight text-slate-950 sm:text-4xl">{title}</h1>
         <p className="sr-only">Source pages {sourcePages}</p>

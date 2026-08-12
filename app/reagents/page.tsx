@@ -62,7 +62,7 @@ export default function ReagentsPage() {
   const { visible: filtered, locked } = slicePreview(matches, PREVIEW_LIMITS.reagents, unlocked);
 
   return (
-    <main className="min-h-screen bg-[var(--background)] text-white">
+    <main className="min-h-screen bg-[#0B0F19] text-white">
       <div className="mx-auto max-w-5xl px-6 py-12">
         <ReferenceTabs />
         <p className="text-xs font-bold uppercase tracking-[0.4em] text-cyan-300 mb-3">Knowledge Vault · Organic</p>
@@ -74,12 +74,12 @@ export default function ReagentsPage() {
         <div className="relative mb-6 sticky top-16 z-30">
           <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 h-4 w-4 text-white/30" />
           <input value={q} onChange={(e) => setQ(e.target.value)} placeholder="Search reagent, formula or function…"
-            className="w-full rounded-xl border border-white/[0.08] bg-[var(--surface)] pl-10 pr-4 py-2.5 text-sm text-white placeholder-white/30 outline-none focus:border-cyan-400/50" />
+            className="w-full rounded-xl border border-white/[0.08] bg-[#111827] pl-10 pr-4 py-2.5 text-sm text-white placeholder-white/30 outline-none focus:border-cyan-400/50" />
         </div>
 
         <div className="grid gap-3 md:grid-cols-2">
           {filtered.map((r) => (
-            <div key={r.name} className="rounded-2xl bg-[var(--surface)] border border-white/[0.06] p-4">
+            <div key={r.name} className="rounded-2xl bg-[#111827] border border-white/[0.06] p-4">
               <div className="flex items-start justify-between gap-2 mb-1.5">
                 <h3 className="text-sm font-bold text-white leading-snug flex items-center gap-2">
                   <FlaskConical className="h-4 w-4 text-cyan-400 flex-shrink-0" /> {r.name}
@@ -87,7 +87,7 @@ export default function ReagentsPage() {
                 <span className={`text-[9px] font-bold px-2 py-0.5 rounded-full whitespace-nowrap ${lvlColor[r.level] || "text-white/50 bg-white/5"}`}>{r.level}</span>
               </div>
               <p className="text-xs font-mono text-cyan-300/80 mb-1.5">{r.formula}</p>
-              <p className="text-xs text-[var(--text-body)] leading-relaxed">{r.fn}</p>
+              <p className="text-xs text-gray-300 leading-relaxed">{r.fn}</p>
             </div>
           ))}
         </div>

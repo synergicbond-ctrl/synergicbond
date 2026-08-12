@@ -88,7 +88,7 @@ export default function EquivalentConceptPart2() {
             </div>
           </div>
 
-          <div className="rounded-2xl border border-[var(--border)] bg-[var(--background)]/40 p-4">
+          <div className="rounded-2xl border border-slate-800 bg-slate-950/40 p-4">
             <h3 className="font-bold text-slate-900">
               Q. 0.36 gm of a metal is reacted with excess of dil. acid by which
               336 mL H<sub>2</sub> gas is produced at 0°C and 1 atm. What is the

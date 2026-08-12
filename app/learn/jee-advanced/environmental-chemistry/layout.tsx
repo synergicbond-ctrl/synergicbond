@@ -28,7 +28,7 @@ function CompactPartNavigation({ part }: { part: number }) {
         <span>Back</span>
       </Link>
 
-      <span className="text-[11px] font-bold uppercase tracking-[0.16em] text-[var(--text-muted)]">
+      <span className="text-[11px] font-bold uppercase tracking-[0.16em] text-slate-400">
         {part} / {totalParts}
       </span>
 

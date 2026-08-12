@@ -233,7 +233,7 @@ export default function IsomerismPart47() {
         <header className="mt-6 rounded-3xl border border-cyan-300/15 bg-[radial-gradient(circle_at_top_right,_rgba(34,211,238,.18),_transparent_35%),linear-gradient(135deg,rgba(34,211,238,.08),rgba(2,6,23,.7),rgba(139,92,246,.1))] p-6 sm:p-9">
           <p className="text-xs font-black uppercase tracking-[.24em] text-cyan-200">Optical Isomerism source · page 118 · items 204–226</p>
           <h1 className="mt-3 text-3xl font-black sm:text-5xl">Chirality exercise: pyranoses, Newman rotamers and constrained rings</h1>
-          <p className="mt-3 text-sm leading-7 text-[var(--text-body)]">
+          <p className="mt-3 text-sm leading-7 text-slate-300">
             Every printed structure is transcribed individually: six pyranose rings (204–209), seven Newman items
             (210–216), seven substituted cyclohexadienes (217–223) and three skeletal cases (224–226). The printed
             answer key marks 204–209, 211, 212, 215 and 218 as chiral.
@@ -248,18 +248,18 @@ export default function IsomerismPart47() {
             <article key={item.n} className="flex flex-col rounded-2xl border border-white/10 bg-white/[.035] p-4">
               <div className="flex items-start justify-between gap-2">
                 <b className="text-sm leading-5">({item.n}) {item.title}</b>
-                <span className={sourceChiral.has(item.n) ? "shrink-0 rounded-full bg-emerald-300/15 px-2 py-1 text-xs font-bold text-emerald-200" : "shrink-0 rounded-full bg-slate-400/10 px-2 py-1 text-xs font-bold text-[var(--text-body)]"}>
+                <span className={sourceChiral.has(item.n) ? "shrink-0 rounded-full bg-emerald-300/15 px-2 py-1 text-xs font-bold text-emerald-200" : "shrink-0 rounded-full bg-slate-400/10 px-2 py-1 text-xs font-bold text-slate-300"}>
                   {sourceChiral.has(item.n) ? "Chiral" : "Not chiral"}
                 </span>
               </div>
               <div className="mt-2">{item.art}</div>
-              <p className="mt-auto pt-2 text-sm leading-6 text-[var(--text-body)]">{item.note}</p>
+              <p className="mt-auto pt-2 text-sm leading-6 text-slate-300">{item.note}</p>
             </article>
           ))}
         </section>
         <nav className="mt-8 flex justify-between border-t border-white/10 pt-6">
-          <Link href="/learn/isomerism/40" className="rounded-xl border border-white/15 px-4 py-3 text-sm font-bold text-[var(--foreground)]">← Part 40 hub</Link>
-          <Link href="/learn/isomerism" className="rounded-xl border border-white/15 px-4 py-3 text-sm font-bold text-[var(--foreground)]">All parts</Link>
+          <Link href="/learn/isomerism/40" className="rounded-xl border border-white/15 px-4 py-3 text-sm font-bold text-slate-200">← Part 40 hub</Link>
+          <Link href="/learn/isomerism" className="rounded-xl border border-white/15 px-4 py-3 text-sm font-bold text-slate-200">All parts</Link>
         </nav>
       </article>
     </main>

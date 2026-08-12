@@ -129,7 +129,7 @@ export default function ControlCenter({ progress }: { progress?: ControlCenterPr
             <Link 
               key={a.href} 
               href={a.href} 
-              className="group flex items-center gap-2 rounded-xl border border-white/10 bg-[var(--surface)]/80 px-4 py-2.5 text-sm font-semibold text-white/80 transition-all duration-300 hover:-translate-y-1 hover:border-white/30 hover:bg-[#101516]/90 hover:text-white hover:shadow-xl"
+              className="group flex items-center gap-2 rounded-xl border border-white/10 bg-[var(--surface)]/80 px-4 py-2.5 text-sm font-semibold text-white/80 transition-all duration-300 hover:-translate-y-1 hover:border-white/30 hover:bg-[#1f2937]/90 hover:text-white hover:shadow-xl" 
               style={{ borderColor: `${a.c}33` }}
             >
               <Icon className="h-4 w-4 transition-transform duration-300 group-hover:scale-110" style={{ color: a.c }} />
@@ -388,7 +388,7 @@ export default function ControlCenter({ progress }: { progress?: ControlCenterPr
                 {weak.length ? weak.map((w) => {
                   const s = IMPACT_STYLE[w.impact];
                   return (
-                    <div key={w.name} className={`flex items-center justify-between p-2.5 bg-[var(--background)]/60 border rounded-xl transition ${s.cls}`}>
+                    <div key={w.name} className={`flex items-center justify-between p-2.5 bg-slate-950/60 border rounded-xl transition ${s.cls}`}>
                       <span className="min-w-0 truncate pr-2">
                         <span className="block truncate text-xs font-bold text-white/90">{w.name}</span>
                         <span className="block truncate text-[10px] text-white/50 mt-0.5">{w.recommendation}</span>
@@ -438,3 +438,4 @@ export default function ControlCenter({ progress }: { progress?: ControlCenterPr
     </section>
   );
 }
+

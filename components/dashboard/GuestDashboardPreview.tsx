@@ -5,10 +5,10 @@ import {
 } from "lucide-react";
 
 const stats = [
-  { icon: Target, label: "Questions Solved", value: "1,248", sub: "84% accuracy", accent: "#50dc7b" },
-  { icon: Flame, label: "Day Streak", value: "23", sub: "Personal best: 31", accent: "#37c8f4" },
-  { icon: TrendingUp, label: "XP / Level", value: "Lvl 7", sub: "8,420 XP · Catalyst", accent: "#b376ff" },
-  { icon: Trophy, label: "Est. National Rank", value: "#2,140", sub: "after full mock", accent: "#e3b341" },
+  { icon: Target, label: "Questions Solved", value: "1,248", sub: "84% accuracy", accent: "#00F5D4" },
+  { icon: Flame, label: "Day Streak", value: "23", sub: "Personal best: 31", accent: "#00BBF9" },
+  { icon: TrendingUp, label: "XP / Level", value: "Lvl 7", sub: "8,420 XP · Catalyst", accent: "#9B5DE5" },
+  { icon: Trophy, label: "Est. National Rank", value: "#2,140", sub: "after full mock", accent: "#FFD700" },
 ];
 
 const recentTests = [
@@ -28,7 +28,7 @@ const activity = [
 
 export default function GuestDashboardPreview() {
   return (
-    <main className="min-h-screen bg-[var(--background)] text-white">
+    <main className="min-h-screen bg-[#0B0F19] text-white">
       <div className="mx-auto max-w-6xl px-6 py-10">
 
         {/* Preview banner */}
@@ -58,7 +58,7 @@ export default function GuestDashboardPreview() {
           {stats.map((s) => {
             const Icon = s.icon;
             return (
-              <div key={s.label} className="rounded-2xl bg-[var(--surface)] border border-white/[0.06] p-5">
+              <div key={s.label} className="rounded-2xl bg-[#111827] border border-white/[0.06] p-5">
                 <div className="flex h-10 w-10 items-center justify-center rounded-xl mb-3" style={{ background: `${s.accent}1a` }}>
                   <Icon className="h-5 w-5" style={{ color: s.accent }} />
                 </div>
@@ -72,7 +72,7 @@ export default function GuestDashboardPreview() {
 
         <div className="grid gap-6 lg:grid-cols-[1.5fr_1fr]">
           {/* Recent tests */}
-          <div className="rounded-2xl bg-[var(--surface)] border border-white/[0.06] p-6">
+          <div className="rounded-2xl bg-[#111827] border border-white/[0.06] p-6">
             <h3 className="text-sm font-bold text-white mb-4">Recent Mock Tests</h3>
             <div className="space-y-3">
               {recentTests.map((t) => (
@@ -94,7 +94,7 @@ export default function GuestDashboardPreview() {
 
           {/* Weak topics + activity */}
           <div className="space-y-6">
-            <div className="rounded-2xl bg-[var(--surface)] border border-white/[0.06] p-6">
+            <div className="rounded-2xl bg-[#111827] border border-white/[0.06] p-6">
               <h3 className="text-sm font-bold text-white mb-3">Focus Areas</h3>
               <div className="flex flex-wrap gap-2">
                 {weak.map((w) => (
@@ -102,7 +102,7 @@ export default function GuestDashboardPreview() {
                 ))}
               </div>
             </div>
-            <div className="rounded-2xl bg-[var(--surface)] border border-white/[0.06] p-6">
+            <div className="rounded-2xl bg-[#111827] border border-white/[0.06] p-6">
               <h3 className="text-sm font-bold text-white mb-3">Recent Activity</h3>
               <div className="space-y-3">
                 {activity.map((a, i) => {

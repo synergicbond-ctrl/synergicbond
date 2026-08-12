@@ -11,7 +11,7 @@ export default function ChemicalKineticsPart11() {
     <ConceptCard title="Test limiting forms" tone="cyan"><p>A composite expression should reduce to the correct low- and high-concentration orders. Saturation, inhibition and fall-off are mechanistic signatures.</p></ConceptCard>
     <ConceptCard title="Keep dimensions visible" tone="amber"><p>Every added term in a denominator must have matching dimensions. Dimensional failure is often the fastest way to reject an algebraic derivation.</p></ConceptCard>
   </div>
-  <FormulaCard title="Generic composite law"><KB>{String.raw`v=\frac{kK[A][B]}{1+K[A]}`}</KB><p className="mt-3 text-sm leading-7 text-[var(--text-muted)]">Low <K>{String.raw`[A]`}</K>: first order in A. High <K>{String.raw`[A]`}</K>: saturation and zero order in A.</p></FormulaCard>
+  <FormulaCard title="Generic composite law"><KB>{String.raw`v=\frac{kK[A][B]}{1+K[A]}`}</KB><p className="mt-3 text-sm leading-7 text-slate-400">Low <K>{String.raw`[A]`}</K>: first order in A. High <K>{String.raw`[A]`}</K>: saturation and zero order in A.</p></FormulaCard>
 </ChapterSection>
       
       <IntegratedSourcePages start={139} end={151} />

@@ -117,7 +117,7 @@ export function SaltAnalysisFigure({ id }: { id: string }) {
         decoding="async"
         className="h-auto w-full"
       />
-      <figcaption className="border-t border-cyan-300/15 px-4 py-3 text-center text-sm leading-6 text-[var(--text-body)]">
+      <figcaption className="border-t border-cyan-300/15 px-4 py-3 text-center text-sm leading-6 text-slate-300">
         {figure.caption}
       </figcaption>
     </figure>

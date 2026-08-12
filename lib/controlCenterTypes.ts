@@ -63,8 +63,8 @@ export interface ControlCenterProgress {
 
 // Default actions shown to guests (not logged in) — mirrors the engine's tone.
 export const GUEST_NEXT_ACTIONS: NextAction[] = [
-  { label: "Take a diagnostic quiz", reason: "10 questions to map your weak spots", href: "/quiz", icon: "quiz", tone: "#37c8f4" },
-  { label: "Explore the Periodic Table", reason: "Your navigation brain for chemistry", href: "/periodic-table", icon: "learn", tone: "#50dc7b" },
-  { label: "Ask the AI Tutor a doubt", reason: "Instant step-by-step solutions", href: "/doubt-solver", icon: "tutor", tone: "#b376ff" },
+  { label: "Take a diagnostic quiz", reason: "10 questions to map your weak spots", href: "/quiz", icon: "quiz", tone: "#00BBF9" },
+  { label: "Explore the Periodic Table", reason: "Your navigation brain for chemistry", href: "/periodic-table", icon: "learn", tone: "#00F5D4" },
+  { label: "Ask the AI Tutor a doubt", reason: "Instant step-by-step solutions", href: "/doubt-solver", icon: "tutor", tone: "#9B5DE5" },
   { label: "Start a 15-min mock", reason: "Feel real exam pressure", href: "/exam", icon: "mock", tone: "#C084FC" },
 ];

@@ -33,7 +33,7 @@ export default function MatterClassificationTree({ onNodeSelect }: MatterClassif
   const isExpanded = (id: string) => expandedNodes.has(id);
 
   return (
-    <div className="p-6 rounded-2xl bg-white dark:bg-[var(--surface)] border border-[var(--border)] dark:border-[var(--border-strong)] shadow-sm">
+    <div className="p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 shadow-sm">
       <h2 className="text-2xl font-bold mb-6 text-slate-900 dark:text-white">
         Categorizing the Material Universe
       </h2>
@@ -61,7 +61,7 @@ export default function MatterClassificationTree({ onNodeSelect }: MatterClassif
           {isExpanded("matter") && (
             <div className="ml-4 mt-3 border-l-2 border-indigo-200 dark:border-indigo-800 pl-4 space-y-3">
               {/* Pure vs Mixture - Decision point */}
-              <div className="text-sm font-semibold text-slate-600 dark:text-[var(--text-muted)] py-2">
+              <div className="text-sm font-semibold text-slate-600 dark:text-slate-400 py-2">
                 ❓ Is it uniform throughout?
               </div>
 
@@ -86,7 +86,7 @@ export default function MatterClassificationTree({ onNodeSelect }: MatterClassif
 
                 {isExpanded("mixture") && (
                   <div className="ml-4 mt-2 border-l-2 border-orange-200 dark:border-orange-800 pl-3 space-y-2">
-                    <div className="text-xs font-semibold text-slate-600 dark:text-[var(--text-muted)] py-1">
+                    <div className="text-xs font-semibold text-slate-600 dark:text-slate-400 py-1">
                       Is it visually uniform?
                     </div>
                     <div className="p-3 rounded-lg bg-teal-50 dark:bg-teal-950 border border-teal-200 dark:border-teal-800">
@@ -122,7 +122,7 @@ export default function MatterClassificationTree({ onNodeSelect }: MatterClassif
 
                 {isExpanded("pure") && (
                   <div className="ml-4 mt-2 border-l-2 border-emerald-200 dark:border-emerald-800 pl-3 space-y-2">
-                    <div className="text-xs font-semibold text-slate-600 dark:text-[var(--text-muted)] py-1">
+                    <div className="text-xs font-semibold text-slate-600 dark:text-slate-400 py-1">
                       Can it be decomposed?
                     </div>
                     <div className="p-3 rounded-lg bg-blue-50 dark:bg-blue-950 border border-blue-200 dark:border-blue-800">
@@ -141,7 +141,7 @@ export default function MatterClassificationTree({ onNodeSelect }: MatterClassif
         </div>
       </div>
 
-      <p className="text-xs text-slate-500 dark:text-[var(--text-muted)] mt-6 italic">
+      <p className="text-xs text-slate-500 dark:text-slate-400 mt-6 italic">
         Tap boxes to expand and explore the classification hierarchy.
       </p>
     </div>

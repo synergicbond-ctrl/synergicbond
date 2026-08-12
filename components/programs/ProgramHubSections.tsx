@@ -54,7 +54,7 @@ function Card({ card, accentText, accentCard }: { card: HubCard; accentText: str
         <StatusBadge status={card.status} />
       </div>
       <div className={`mt-3 font-bold ${card.status === "coming-soon" ? "text-white/60" : "text-white"}`}>{card.title}</div>
-      <div className="mt-1 flex-1 text-sm text-[var(--text-muted)]">{card.description}</div>
+      <div className="mt-1 flex-1 text-sm text-zinc-400">{card.description}</div>
       {isLink ? (
         <div className={`mt-3 text-sm font-semibold ${accentText}`}>
           {card.status === "premium" ? "Unlock" : "Open"}{" "}

@@ -28,8 +28,8 @@ export default async function CustomTestPage({ params }: { params: Promise<{ boa
   const chapters = getBoardChapters(b.slug, c.slug);
 
   return (
-    <main className="min-h-screen bg-[var(--background)] text-white">
-      <div className="border-b border-white/10 bg-gradient-to-b from-amber-950/20 to-[#0b0f10] px-6 py-10">
+    <main className="min-h-screen bg-[#0B1220] text-white">
+      <div className="border-b border-white/10 bg-gradient-to-b from-amber-950/20 to-[#0B1220] px-6 py-10">
         <div className="mx-auto max-w-4xl">
           <nav className="mb-4 text-sm text-white/45">
             <Link href={base} className="hover:text-white">{b.name} {c.name}</Link>

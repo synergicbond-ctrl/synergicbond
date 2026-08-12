@@ -427,7 +427,7 @@ function EnrichmentCard({ item }: { item: EnrichItem }) {
   return (
     <article className="rounded-2xl border border-sky-400/20 bg-sky-400/[0.04] p-5">
       <h3 className="font-black text-sky-200">{item.title}</h3>
-      <p className="mt-3 text-sm leading-6 text-[var(--text-body)]">{item.body}</p>
+      <p className="mt-3 text-sm leading-6 text-slate-300">{item.body}</p>
       {item.connection ? (
         <p className="mt-3 text-xs text-slate-500">
           <span className="font-black text-sky-400/70">Connects → </span>
@@ -445,14 +445,14 @@ export default function ThermodynamicsIntegratedEnrichment({ part }: { part: num
   return (
     <section className="bg-[#020617] pb-14 pt-2">
       <div className="mx-auto max-w-7xl px-5 md:px-8">
-        <div className="rounded-[2rem] border border-sky-400/20 bg-[var(--background)]/80 p-5 shadow-2xl shadow-black/20 md:p-8">
+        <div className="rounded-[2rem] border border-sky-400/20 bg-slate-950/80 p-5 shadow-2xl shadow-black/20 md:p-8">
           <p className="text-xs font-black uppercase tracking-[0.2em] text-sky-300">
             Integrated Enrichment
           </p>
           <h2 className="mt-2 text-2xl font-black tracking-tight text-white md:text-3xl">
             {data.heading}
           </h2>
-          <p className="mt-2 max-w-3xl text-sm leading-6 text-[var(--text-muted)]">
+          <p className="mt-2 max-w-3xl text-sm leading-6 text-slate-400">
             Extended connections, applications and deeper insights for advanced understanding.
           </p>
           <div className="mt-6 grid gap-4 md:grid-cols-2">

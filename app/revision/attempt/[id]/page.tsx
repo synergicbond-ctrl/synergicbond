@@ -41,7 +41,7 @@ export default async function AttemptReviewPage({ params }: { params: Promise<{ 
         <nav className="mb-6 text-sm text-zinc-500">
           <Link href="/revision" className="transition hover:text-white">Revision</Link>
           <span className="mx-1.5">/</span>
-          <span className="text-[var(--text-body)]">Attempt review</span>
+          <span className="text-zinc-300">Attempt review</span>
         </nav>
 
         <p className="mb-2 text-xs font-bold uppercase tracking-[0.3em] text-cyan-300">{attempt.source} · {attempt.exam}</p>
@@ -73,7 +73,7 @@ export default async function AttemptReviewPage({ params }: { params: Promise<{ 
         <h2 className="mt-10 mb-4 text-xl font-bold">Questions</h2>
         <div className="space-y-4">
           {answers.map((a) => (
-            <div key={a.answerId} className="rounded-2xl border border-white/[0.08] bg-[var(--surface)] p-4">
+            <div key={a.answerId} className="rounded-2xl border border-white/[0.08] bg-[#111827] p-4">
               <div className="mb-2 flex flex-wrap items-center gap-2 text-[11px]">
                 <span className="font-bold text-cyan-300">Q{a.position}</span>
                 {a.chapter && <span className="rounded bg-white/5 px-2 py-0.5 text-white/60">{a.chapter}</span>}

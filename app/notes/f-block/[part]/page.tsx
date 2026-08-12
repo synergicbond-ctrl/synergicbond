@@ -40,7 +40,7 @@ export default async function FBlockPartPage({ params }: { params: Promise<{ par
             F-block Elements · Part {part.number} · {part.printPages}
           </p>
           <h1 className="mt-2 font-serif text-3xl font-black leading-tight text-[#f7f2fb] sm:text-4xl">{part.title}</h1>
-          <p className="mt-3 max-w-4xl text-sm leading-6 text-[var(--text-body)] sm:text-base">{part.focus}</p>
+          <p className="mt-3 max-w-4xl text-sm leading-6 text-slate-300 sm:text-base">{part.focus}</p>
         </header>
 
         <FBlockVisual part={part.number} />

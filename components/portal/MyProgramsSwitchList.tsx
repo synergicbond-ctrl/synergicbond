@@ -51,7 +51,7 @@ export default function MyProgramsSwitchList({ programs }: { programs: MyProgram
         <div
           key={p.key}
           className={`flex flex-wrap items-center justify-between gap-3 rounded-2xl border p-4 ${
-            p.isActive ? "border-cyan-400/30 bg-cyan-500/[0.06]" : "border-white/[0.08] bg-[var(--surface)]"
+            p.isActive ? "border-cyan-400/30 bg-cyan-500/[0.06]" : "border-white/[0.08] bg-[#111827]"
           }`}
         >
           <div className="min-w-0">

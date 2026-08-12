@@ -71,10 +71,10 @@ export function SummaryCards({
         return (
           <div
             key={card.title}
-            className="rounded-xl border border-[var(--border)] bg-[var(--surface)] p-5"
+            className="rounded-xl border border-slate-800 bg-slate-900 p-5"
           >
             <div className="mb-4 flex items-center justify-between">
-              <h3 className="text-sm text-[var(--text-muted)]">
+              <h3 className="text-sm text-slate-400">
                 {card.title}
               </h3>
 

@@ -52,7 +52,7 @@ export default function InternationalRoadmap() {
               key={r.id}
               onClick={() => setRegion(r.id)}
               className={`px-4 py-2 rounded-full text-xs font-semibold transition-all ${
- region === r.id ? "bg-[var(--surface)] text-black" : "text-[var(--text-body)] hover:text-white"
+ region === r.id ? "bg-[var(--surface)] text-black" : "text-gray-300 hover:text-white"
  }`}
             >
               {r.label}

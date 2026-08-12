@@ -110,7 +110,7 @@ export default function BetaTracker() {
   if (!showFeedback) return null;
 
   return (
-    <div className="fixed inset-x-3 bottom-3 z-[120] mx-auto max-w-md rounded-2xl border border-white/10 bg-[var(--background)] p-4 text-white shadow-2xl sm:right-4 sm:left-auto sm:mx-0">
+    <div className="fixed inset-x-3 bottom-3 z-[120] mx-auto max-w-md rounded-2xl border border-white/10 bg-slate-950 p-4 text-white shadow-2xl sm:right-4 sm:left-auto sm:mx-0">
       <button
         type="button"
         aria-label="Close feedback"

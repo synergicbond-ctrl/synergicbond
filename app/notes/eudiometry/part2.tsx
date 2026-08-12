@@ -5,9 +5,9 @@ import { InlineMath, BlockMath } from "@/components/math/react-katex";
 
 /* Reusable UI Components */
 const ConceptCard = ({ title, children }: { title: string; children: React.ReactNode }) => (
-  <div className="my-6 rounded-2xl border border-amber-400/30 bg-[var(--surface)]/90 p-6 shadow-xl">
-    <h3 className="border-b border-[var(--border)] pb-3 text-lg font-bold text-amber-300">{title}</h3>
-    <div className="mt-4 space-y-3 text-sm leading-relaxed text-[var(--foreground)]">{children}</div>
+  <div className="my-6 rounded-2xl border border-amber-400/30 bg-slate-900/90 p-6 shadow-xl">
+    <h3 className="border-b border-slate-800 pb-3 text-lg font-bold text-amber-300">{title}</h3>
+    <div className="mt-4 space-y-3 text-sm leading-relaxed text-slate-200">{children}</div>
   </div>
 );
 
@@ -23,14 +23,14 @@ const WorkedExample = ({
   result: React.ReactNode;
 }) => (
   <div className="my-8 rounded-3xl border border-rose-400/30 bg-gradient-to-b from-slate-900 via-slate-900 to-slate-950 p-6 shadow-2xl md:p-8 space-y-5">
-    <div className="flex items-center justify-between border-b border-[var(--border)] pb-4">
+    <div className="flex items-center justify-between border-b border-slate-800 pb-4">
       <span className="rounded-full bg-rose-500/20 px-3 py-1 text-xs font-bold uppercase tracking-widest text-rose-300">
         Worked Example
       </span>
-      <span className="text-xs font-bold text-[var(--text-muted)]">{title}</span>
+      <span className="text-xs font-bold text-slate-400">{title}</span>
     </div>
     <div className="text-sm font-medium leading-relaxed text-slate-100">{problem}</div>
-    <div className="rounded-2xl border border-[var(--border)]/80 bg-[var(--background)]/80 p-5 space-y-3 font-mono text-xs text-[var(--text-body)]">
+    <div className="rounded-2xl border border-slate-800/80 bg-slate-950/80 p-5 space-y-3 font-mono text-xs text-slate-300">
       {steps}
     </div>
     <div className="rounded-xl border border-emerald-500/30 bg-emerald-500/10 p-4 text-center text-xs font-bold text-emerald-300">
@@ -46,14 +46,14 @@ const StepBox = ({ number, title, children }: { number: number; title: string; c
     </span>
     <div>
       <h4 className="text-xs font-bold text-white mb-1">{title}</h4>
-      <div className="text-xs text-[var(--text-body)] leading-relaxed">{children}</div>
+      <div className="text-xs text-slate-300 leading-relaxed">{children}</div>
     </div>
   </div>
 );
 
 export default function EudiometryPart2() {
   return (
-    <main className="min-h-screen bg-[var(--background)] px-4 py-8 text-slate-100 md:px-10">
+    <main className="min-h-screen bg-slate-950 px-4 py-8 text-slate-100 md:px-10">
       <article className="mx-auto max-w-5xl space-y-10">
         {/* Module Header */}
         <header className="rounded-3xl border border-amber-400/30 bg-gradient-to-br from-slate-900 via-slate-900 to-slate-950 p-6 shadow-2xl md:p-8">
@@ -61,14 +61,14 @@ export default function EudiometryPart2() {
             <span className="rounded-full bg-amber-500/20 px-3 py-1 text-xs font-bold uppercase tracking-[0.2em] text-amber-300">
               Module 2 of 6
             </span>
-            <span className="text-xs font-bold text-[var(--text-muted)]">Synergic Bond Course Lesson</span>
+            <span className="text-xs font-bold text-slate-400">Synergic Bond Course Lesson</span>
           </div>
 
           <h1 className="mt-4 text-3xl font-black text-white md:text-4xl">
             Combustion &amp; Final Gas Composition Analysis
           </h1>
 
-          <p className="mt-3 text-sm leading-relaxed text-[var(--text-body)] md:text-base">
+          <p className="mt-3 text-sm leading-relaxed text-slate-300 md:text-base">
             Systematic treatment of gas-phase combustion reactions. Learn how to identify limiting reagents directly from volume ratios, solve simultaneous equations for multi-component gas mixtures, and track changes in total volume during high-temperature carbon reductions and electric discharge transformations.
           </p>
         </header>
@@ -233,7 +233,7 @@ export default function EudiometryPart2() {
         </section>
 
         {/* Footer info */}
-        <footer className="rounded-2xl border border-[var(--border)] bg-[var(--surface)]/60 p-6 text-center text-xs text-[var(--text-muted)]">
+        <footer className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 text-center text-xs text-slate-400">
           <p>Synergic Bond Eudiometry Module • Module 2: Combustion &amp; Final Gas Composition Analysis</p>
         </footer>
       </article>

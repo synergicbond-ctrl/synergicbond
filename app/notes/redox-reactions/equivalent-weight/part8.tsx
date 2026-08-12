@@ -199,7 +199,7 @@ export default function EquivalentConceptPart8() {
             </WorkingLine>
           </div>
 
-          <div className="space-y-4 rounded-2xl border border-[var(--border)] bg-[var(--background)]/30 p-4">
+          <div className="space-y-4 rounded-2xl border border-slate-800 bg-slate-950/30 p-4">
             <h3 className="font-bold text-slate-900">
               Bottom rough-note relation shown:
             </h3>

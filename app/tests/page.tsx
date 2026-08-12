@@ -7,7 +7,7 @@ export const metadata = {
 
 export default function TestsPage() {
   return (
-    <main className="min-h-screen bg-[var(--background)] text-white">
+    <main className="min-h-screen bg-[#0B0F19] text-white">
       <div className="mx-auto max-w-6xl px-4 py-8 sm:px-6 md:py-12">
         <TestEngine />
       </div>

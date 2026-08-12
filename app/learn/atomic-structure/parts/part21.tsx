@@ -23,7 +23,7 @@ export default function Part21() {
         </NoteBlock>
         <ConceptCard title="Geometry before arithmetic">
           <p>The photon-rate calculation has two separate ideas: isotropic spreading sets the intensity at the eye, then the pupil&apos;s area selects a small part of that flux.</p>
-          <DiagramBox title="Isotropic photon flux and pupil aperture"><PhotonFluxGeometryVisual /><p className="mt-3 text-sm text-[var(--text-body)]">The diagram explains why the inverse-square factor belongs to intensity, while the pupil enters only through <MathText math="A=\pi r_{\rm pupil}^{2}" />.</p></DiagramBox>
+          <DiagramBox title="Isotropic photon flux and pupil aperture"><PhotonFluxGeometryVisual /><p className="mt-3 text-sm text-slate-300">The diagram explains why the inverse-square factor belongs to intensity, while the pupil enters only through <MathText math="A=\pi r_{\rm pupil}^{2}" />.</p></DiagramBox>
         </ConceptCard>
         <NoteBlock title="Problem — photons striking the eye">
           <p>

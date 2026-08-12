@@ -30,17 +30,17 @@ function Section({
   children: React.ReactNode;
 }) {
   return (
-    <section className="rounded-[2rem] border border-white/10 bg-[var(--background)]/80 p-5 shadow-2xl md:p-8">
+    <section className="rounded-[2rem] border border-white/10 bg-slate-950/80 p-5 shadow-2xl md:p-8">
       <div className="flex gap-4">
         <span className="grid h-10 w-10 shrink-0 place-items-center rounded-2xl border border-cyan-300/30 bg-cyan-300/10 text-sm font-black text-cyan-200">
           {index}
         </span>
         <div>
           <h2 className="text-2xl font-black text-white md:text-3xl">{title}</h2>
-          {subtitle ? <p className="mt-1 text-sm text-[var(--text-muted)]">{subtitle}</p> : null}
+          {subtitle ? <p className="mt-1 text-sm text-slate-400">{subtitle}</p> : null}
         </div>
       </div>
-      <div className="mt-6 space-y-5 text-[15px] leading-7 text-[var(--foreground)]">{children}</div>
+      <div className="mt-6 space-y-5 text-[15px] leading-7 text-slate-200">{children}</div>
     </section>
   );
 }
@@ -67,7 +67,7 @@ function Lens({
     <aside className={`rounded-2xl border p-5 ${toneMap[tone]}`}>
       <p className="text-xs font-black uppercase tracking-[0.2em]">Concept lens</p>
       <h3 className="mt-2 text-lg font-black text-white">{title}</h3>
-      <div className="mt-2 text-sm leading-6 text-[var(--foreground)]">{children}</div>
+      <div className="mt-2 text-sm leading-6 text-slate-200">{children}</div>
     </aside>
   );
 }
@@ -175,19 +175,19 @@ function FreeEnergyDerivationTable() {
   return (
     <div className="overflow-x-auto rounded-2xl border border-white/10">
       <table className="min-w-full border-collapse text-left text-sm">
-        <thead className="bg-[var(--surface)]">
+        <thead className="bg-slate-900">
           <tr>
             <th className="px-4 py-3 font-black text-white">Item</th>
             <th className="px-4 py-3 font-black text-white">Expression</th>
             <th className="px-4 py-3 font-black text-white">Meaning</th>
           </tr>
         </thead>
-        <tbody className="divide-y divide-white/10 bg-[var(--background)]/70">
+        <tbody className="divide-y divide-white/10 bg-slate-950/70">
           {rows.map(([item, expression, meaning]) => (
             <tr key={item}>
               <td className="px-4 py-3 font-semibold text-slate-100">{item}</td>
               <td className="px-4 py-3 font-mono text-cyan-200">{expression}</td>
-              <td className="px-4 py-3 text-[var(--text-body)]">{meaning}</td>
+              <td className="px-4 py-3 text-slate-300">{meaning}</td>
             </tr>
           ))}
         </tbody>
@@ -209,19 +209,19 @@ function SignCriteriaTable() {
   return (
     <div className="overflow-x-auto rounded-2xl border border-white/10">
       <table className="min-w-full border-collapse text-left text-sm">
-        <thead className="bg-[var(--surface)]">
+        <thead className="bg-slate-900">
           <tr>
             <th className="px-4 py-3 font-black text-white">Condition</th>
             <th className="px-4 py-3 font-black text-white">Criterion</th>
             <th className="px-4 py-3 font-black text-white">Interpretation</th>
           </tr>
         </thead>
-        <tbody className="divide-y divide-white/10 bg-[var(--background)]/70">
+        <tbody className="divide-y divide-white/10 bg-slate-950/70">
           {rows.map(([condition, criterion, interpretation]) => (
             <tr key={condition}>
               <td className="px-4 py-3 font-semibold text-slate-100">{condition}</td>
               <td className="px-4 py-3 font-mono text-emerald-300">{criterion}</td>
-              <td className="px-4 py-3 text-[var(--text-body)]">{interpretation}</td>
+              <td className="px-4 py-3 text-slate-300">{interpretation}</td>
             </tr>
           ))}
         </tbody>
@@ -289,7 +289,7 @@ export default function ThermodynamicsPart24() {
           <h1 className="mt-7 max-w-5xl text-4xl font-black tracking-tight text-white md:text-6xl">
             Free energy converts the universe’s entropy test into a system-only criterion
           </h1>
-          <p className="mt-5 max-w-3xl text-lg leading-8 text-[var(--text-body)]">
+          <p className="mt-5 max-w-3xl text-lg leading-8 text-slate-300">
             Helmholtz energy governs constant-temperature, constant-volume change. Gibbs energy governs
             constant-temperature, constant-pressure change and measures the maximum reversible non-expansion work.
           </p>
@@ -390,10 +390,10 @@ export default function ThermodynamicsPart24() {
         <Section index="10" title="Original worked examples">
           <div className="grid gap-4 lg:grid-cols-2">
             {worked.map((item) => (
-              <article key={item.title} className="rounded-2xl border border-white/10 bg-[var(--surface)]/70 p-5">
+              <article key={item.title} className="rounded-2xl border border-white/10 bg-slate-900/70 p-5">
                 <h3 className="cursor-pointer font-black text-white">{item.title}</h3>
-                <p className="mt-3 text-[var(--foreground)]">{item.question}</p>
-                <div className="mt-4 rounded-xl border border-emerald-300/20 bg-emerald-300/[0.06] p-4 text-sm text-[var(--foreground)]">
+                <p className="mt-3 text-slate-200">{item.question}</p>
+                <div className="mt-4 rounded-xl border border-emerald-300/20 bg-emerald-300/[0.06] p-4 text-sm text-slate-200">
                   {item.solution}
                 </div>
               </article>
@@ -407,10 +407,10 @@ export default function ThermodynamicsPart24() {
 <Section index="11" title="Complete worked examples and applications">
           <div className="grid gap-4 lg:grid-cols-2">
             {problems.map(([title, q, a]) => (
-              <article key={title} className="rounded-2xl border border-white/10 bg-[var(--surface)]/70 p-5">
+              <article key={title} className="rounded-2xl border border-white/10 bg-slate-900/70 p-5">
                 <h3 className="cursor-pointer font-black text-white">{title}</h3>
-                <p className="mt-3 text-[var(--foreground)]">{q}</p>
-                <div className="mt-4 rounded-xl border border-emerald-300/20 bg-emerald-300/[0.06] p-4 text-sm text-[var(--foreground)]">
+                <p className="mt-3 text-slate-200">{q}</p>
+                <div className="mt-4 rounded-xl border border-emerald-300/20 bg-emerald-300/[0.06] p-4 text-sm text-slate-200">
                   {a}
                 </div>
               </article>
@@ -418,7 +418,7 @@ export default function ThermodynamicsPart24() {
           </div>
         </Section>
 
-        <section className="rounded-[2rem] border border-white/10 bg-[var(--background)] p-6">
+        <section className="rounded-[2rem] border border-white/10 bg-slate-950 p-6">
           <div className="flex flex-wrap items-center justify-between gap-4">
             <div>
               <p className="text-xs font-black uppercase tracking-[0.2em] text-fuchsia-300">Rapid recall</p>

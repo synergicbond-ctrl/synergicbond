@@ -129,7 +129,7 @@ export default function ReactionLessonPage() {
 
   if (!name) {
     return (
-      <main className="min-h-screen bg-[var(--background)] text-white">
+      <main className="min-h-screen bg-[#0B0F19] text-white">
         <div className="mx-auto max-w-3xl px-6 py-20 text-center">
           <p className="text-white/60">Reaction not found.</p>
           <Link href="/name-reactions" className="mt-4 inline-block rounded-xl border border-white/10 px-4 py-2 text-sm text-cyan-300 hover:bg-white/5">← Back to Name Reactions</Link>
@@ -139,9 +139,9 @@ export default function ReactionLessonPage() {
   }
 
   return (
-    <main className="min-h-screen bg-[var(--background)] text-white">
+    <main className="min-h-screen bg-[#0B0F19] text-white">
       {/* Sticky learning header */}
-      <div className="sticky top-0 z-40 border-b border-white/[0.07] bg-[var(--background)]/90 backdrop-blur">
+      <div className="sticky top-0 z-40 border-b border-white/[0.07] bg-[#0B0F19]/90 backdrop-blur">
         <div className="mx-auto flex max-w-3xl items-center justify-between gap-3 px-4 py-2.5">
           <button onClick={() => router.back()} className="flex items-center gap-1.5 rounded-lg px-2 py-1.5 text-sm text-white/70 transition hover:bg-white/5 hover:text-white">
             <ArrowLeft className="h-4 w-4" /> <span className="hidden sm:inline">Back</span>
@@ -193,7 +193,7 @@ export default function ReactionLessonPage() {
           </div>
         )}
         {!mech && !loading && error && (
-          <div className="mt-6 rounded-2xl border border-white/[0.08] bg-[var(--surface)] p-6 text-center text-white/60">
+          <div className="mt-6 rounded-2xl border border-white/[0.08] bg-[#111827] p-6 text-center text-white/60">
             ⚠️ This reaction isn’t ready yet. Please try again in a few moments.
           </div>
         )}

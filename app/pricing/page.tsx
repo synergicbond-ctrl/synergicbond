@@ -150,23 +150,23 @@ export default function PricingPage() {
         <h1 className="text-4xl font-bold tracking-tight mb-4">
           Simple, Program-Based Pricing
         </h1>
-        <p className="text-[var(--text-muted)] text-base max-w-2xl mx-auto">
+        <p className="text-zinc-400 text-base max-w-2xl mx-auto">
           Get complete annual access to your specific chemistry exam program. No recurring monthly bills, no bundled bloat — pay only for what you study.
         </p>
       </div>
 
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
         {/* Free Plan */}
-        <div className="bg-[var(--surface)] border border-[var(--border)] rounded-3xl p-7 flex flex-col justify-between">
+        <div className="bg-zinc-900 border border-zinc-800 rounded-3xl p-7 flex flex-col justify-between">
           <div>
             <div className="mb-6">
-              <div className="text-sm font-semibold text-[var(--text-muted)] uppercase tracking-wide mb-2">Free Plan</div>
+              <div className="text-sm font-semibold text-zinc-400 uppercase tracking-wide mb-2">Free Plan</div>
               <div className="text-4xl font-bold">₹0</div>
               <div className="text-zinc-500 text-xs mt-1">Free forever — no credit card needed</div>
             </div>
             <div className="space-y-3 mb-8">
               {FREE_FEATURES.map((f) => (
-                <div key={f} className="flex items-start gap-3 text-xs text-[var(--text-body)]">
+                <div key={f} className="flex items-start gap-3 text-xs text-zinc-300">
                   <span className="text-green-400 mt-0.5 flex-shrink-0">✓</span>
                   {f}
                 </div>
@@ -175,7 +175,7 @@ export default function PricingPage() {
           </div>
           <a
             href="/auth/signup"
-            className="block w-full text-center border border-[var(--border-strong)] hover:border-zinc-500 text-white py-3 rounded-xl transition text-xs font-bold"
+            className="block w-full text-center border border-zinc-700 hover:border-zinc-500 text-white py-3 rounded-xl transition text-xs font-bold"
           >
             Get Started Free
           </a>
@@ -189,7 +189,7 @@ export default function PricingPage() {
             : p.key;
           const cardComingSoon = COMING_SOON_PROGRAM_KEYS.has(resolvedKey);
           return (
-          <div key={p.key} className="bg-[var(--surface)] border border-white/[0.08] rounded-3xl p-7 flex flex-col justify-between hover:border-cyan-500/30 transition">
+          <div key={p.key} className="bg-zinc-900 border border-white/[0.08] rounded-3xl p-7 flex flex-col justify-between hover:border-cyan-500/30 transition">
             <div>
               <div className="mb-5">
                 <div className="text-sm font-semibold text-cyan-400 uppercase tracking-wide mb-2">{p.name}</div>
@@ -197,7 +197,7 @@ export default function PricingPage() {
                   <div className="text-4xl font-black">₹{p.price}</div>
                   <div className="text-zinc-500 text-xs mb-1">/ year</div>
                 </div>
-                <p className="text-[var(--text-muted)] text-xs mt-2 leading-relaxed">{p.desc}</p>
+                <p className="text-zinc-400 text-xs mt-2 leading-relaxed">{p.desc}</p>
               </div>
 
               {/* Board Selector for School Boards */}
@@ -229,7 +229,7 @@ export default function PricingPage() {
 
               <div className="space-y-3 mb-6">
                 {p.features.map((f) => (
-                  <div key={f} className="flex items-start gap-3 text-xs text-[var(--text-body)]">
+                  <div key={f} className="flex items-start gap-3 text-xs text-zinc-300">
                     <span className="text-cyan-400 mt-0.5 flex-shrink-0">✓</span>
                     {f}
                   </div>
@@ -281,9 +281,9 @@ export default function PricingPage() {
               a: "No. Your streak, quiz history, mistake journal, and stats remain securely saved. They will be immediately accessible again when you renew your program access.",
             },
           ].map(({ q, a }) => (
-            <div key={q} className="bg-[var(--surface)] border border-[var(--border)] rounded-xl p-5">
+            <div key={q} className="bg-zinc-900 border border-zinc-800 rounded-xl p-5">
               <div className="font-semibold text-white mb-2">{q}</div>
-              <div className="text-[var(--text-muted)] text-xs leading-relaxed">{a}</div>
+              <div className="text-zinc-400 text-xs leading-relaxed">{a}</div>
             </div>
           ))}
         </div>

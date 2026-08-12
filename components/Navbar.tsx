@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState, useEffect, useCallback } from "react";
-import MoleculeLogo from "@/components/MoleculeLogo";
+import SynergicBondLockup from "@/components/SynergicBondLockup";
 import ProgramSwitcher, { type SwitcherProgram } from "@/components/portal/ProgramSwitcher";
 import { useT, LANGS, type Lang } from "@/lib/i18n";
 import { supabase } from "@/lib/supabase";
@@ -16,7 +16,7 @@ import {
   GraduationCap, Microscope, Trophy, Atom, School, Landmark,
   // WEEK 13 final navbar (Roadmap Phase 9)
   Home, Sigma, FlaskConical, FileText, Calendar, History, Heart,
-  CreditCard, Gift,
+  CreditCard,
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 
@@ -283,26 +283,16 @@ export default function Navbar() {
     <header className="sticky top-0 z-50 border-b border-[var(--border)] bg-[var(--background)]">
       <div className="mx-auto flex h-16 max-w-[1400px] items-center justify-between gap-2 px-3 sm:gap-4 sm:px-4 md:px-6">
 
-        {/* Brand Logo — animated network molecule in top-left corner */}
-        <Link href="/" aria-label="SYNERGIC BOND Chemistry OS" className="group flex shrink-0 items-center gap-2 sm:gap-3">
-          <div className="flex h-10 w-10 items-center justify-center rounded-[var(--radius-sm)] border border-[var(--border-strong)] transition-colors group-hover:border-[var(--accent-dim)]">
-            <MoleculeLogo size={34} />
-          </div>
-          <div className="hidden min-[360px]:block">
-            <p className="font-display text-[19px] font-semibold leading-none tracking-[-0.01em] text-[var(--foreground)]">
-              Synergic Bond
-            </p>
-            <p className="font-data mt-1 hidden text-[9px] uppercase tracking-[0.3em] text-[var(--text-muted)] sm:block">
-              Chemistry OS
-            </p>
-          </div>
+        {/* Brand signature — static SB ligature, wordmark and two-line descriptor. */}
+        <Link href="/" aria-label="SYNERGIC BOND — The Chemistry Operating System" className="shrink-0">
+          <SynergicBondLockup />
         </Link>
 
         {/* Desktop Nav — portal chrome for signed-in students, WEEK 13
             marketing IA (Home · Programs · Features · Pricing · Support)
             for everyone else. */}
         {portalMode ? (
-          <nav className="hidden lg:flex items-center justify-center flex-1 gap-1" aria-label="Portal">
+          <nav className="hidden xl:flex items-center justify-center flex-1 gap-1" aria-label="Portal">
             {portalLinks.map((l) => {
               const Icon = l.icon;
               const active = pathname === l.href || (l.href !== "/dashboard" && pathname?.startsWith(`${l.href}/`));
@@ -310,7 +300,7 @@ export default function Navbar() {
                 <Link
                   key={l.label}
                   href={l.href}
-                  className={`flex items-center gap-1.5 px-3 py-2 rounded-lg text-sm font-medium transition ${
+                  className={`flex items-center gap-1.5 whitespace-nowrap px-3 py-2 rounded-lg text-sm font-medium transition ${
                     active ? "text-[var(--accent)] bg-[var(--accent-wash)]" : "text-gray-300 hover:text-white hover:bg-white/[0.05]"
                   }`}
                 >
@@ -320,11 +310,11 @@ export default function Navbar() {
             })}
           </nav>
         ) : (
-        <nav className="hidden lg:flex items-center justify-center flex-1 gap-1">
+        <nav className="hidden xl:flex items-center justify-center flex-1 gap-1">
           {/* Home */}
           <Link
             href="/"
-            className={`flex items-center gap-1.5 px-3 py-2 rounded-lg text-sm font-medium transition ${
+            className={`flex items-center gap-1.5 whitespace-nowrap px-2.5 2xl:px-3 py-2 rounded-lg text-sm font-medium transition ${
               pathname === "/" ? "text-white bg-white/[0.06]" : "text-gray-300 hover:text-white hover:bg-white/[0.05]"
             }`}
           >
@@ -339,7 +329,7 @@ export default function Navbar() {
             return (
               <div key={menu.title} className="relative" onMouseEnter={() => setOpenMenu(menu.title)} onMouseLeave={() => setOpenMenu(null)}>
                 <button
-                  className={`flex items-center gap-1 px-3 py-2 rounded-lg text-sm font-medium transition ${
+                  className={`flex items-center gap-1 whitespace-nowrap px-2.5 2xl:px-3 py-2 rounded-lg text-sm font-medium transition ${
                     open || hasActive ? "text-white bg-white/[0.06]" : "text-gray-300 hover:text-white hover:bg-white/[0.05]"
                   }`}
                 >
@@ -347,16 +337,16 @@ export default function Navbar() {
                 </button>
                 {open && (
                   <div className="absolute left-1/2 -translate-x-1/2 top-full pt-2 z-50">
-                    <div className={`${menu.wide ? "w-[620px]" : "w-[340px]"} rounded-2xl border border-white/[0.08] bg-[var(--surface)]/98 shadow-2xl shadow-black/50 p-3`}>
+                    <div className={`${menu.wide ? "w-[660px]" : "w-[360px]"} max-h-[calc(100vh-80px)] overflow-y-auto rounded-[var(--radius)] border border-[var(--border-strong)] bg-[var(--surface)]/98 shadow-2xl shadow-black/50 p-3`}>
                       {/* Pinned flagship (Periodic Table in Features, All Programs in Programs) */}
                       {menu.pinned && (
-                        <Link href={menu.pinned.href} onClick={() => setOpenMenu(null)} className="group flex items-center gap-3 rounded-xl p-3 mb-2 border border-[var(--border-strong)] bg-[var(--accent-wash)] hover:bg-[var(--surface-hover)] transition">
-                          <span className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-xl bg-[var(--surface-2)] border border-[var(--border-strong)]">
+                        <Link href={menu.pinned.href} onClick={() => setOpenMenu(null)} className="group flex items-center gap-3 rounded-[var(--radius-sm)] p-3 mb-2 border border-[var(--border-strong)] bg-[var(--accent-wash)] hover:bg-[var(--surface-hover)] transition">
+                          <span className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-[var(--radius-sm)] bg-[var(--surface-2)] border border-[var(--border-strong)]">
                             <menu.pinned.icon className="h-5 w-5 text-[var(--accent)]" />
                           </span>
                           <span className="flex-1 min-w-0">
-                            <span className="flex items-center gap-2 text-sm font-black text-white">{menu.pinned.label}<span className="text-[8px] font-bold tracking-wider text-[var(--accent)] bg-[var(--accent-wash)] px-1.5 py-0.5 rounded-full">PINNED</span></span>
-                            <span className="block text-xs text-white/55">{menu.pinned.desc}</span>
+                            <span className="flex items-center gap-2 text-[14px] font-black text-[var(--foreground)]">{menu.pinned.label}<span className="text-[10px] font-bold tracking-wider text-[var(--accent)] bg-[var(--accent-wash)] px-1.5 py-0.5 rounded-[var(--radius-sm)]">PINNED</span></span>
+                            <span className="block text-[12px] leading-[1.4] text-[var(--text-body)]">{menu.pinned.desc}</span>
                           </span>
                           {/* mini grid motif */}
                           <span className="hidden sm:grid grid-cols-6 gap-[2px] flex-shrink-0">
@@ -368,16 +358,16 @@ export default function Navbar() {
                       <div className={menu.wide ? "grid grid-cols-2 gap-x-3" : ""}>
                         {menu.groups.map((g) => (
                           <div key={g.title} className="py-1">
-                            <p className="text-[10px] font-bold uppercase tracking-wider text-white/35 px-2 mt-1 mb-0.5">{g.title}</p>
+                            <p className="text-[11px] font-bold uppercase tracking-[0.1em] text-[var(--text-muted)] px-2 mt-2 mb-1">{g.title}</p>
                             {g.items.map((it) => {
                               const Icon = it.icon;
                               const active = pathname === it.href;
                               return (
-                                <Link key={it.label} href={it.href} onClick={() => setOpenMenu(null)} className={`flex items-center gap-2.5 px-2 py-1.5 rounded-lg transition ${active ? "bg-[var(--accent-wash)]" : "hover:bg-white/[0.05]"}`}>
+                                <Link key={it.label} href={it.href} onClick={() => setOpenMenu(null)} className={`flex items-center gap-2.5 px-2 py-2 rounded-[var(--radius-sm)] transition ${active ? "bg-[var(--accent-wash)]" : "hover:bg-white/[0.05]"}`}>
                                   <Icon className={`h-4 w-4 flex-shrink-0 ${active ? "text-[var(--accent)]" : "text-gray-400"}`} />
                                   <span className="min-w-0">
-                                    <span className={`block text-[13px] font-semibold leading-tight ${active ? "text-[var(--accent)]" : "text-white"}`}>{it.label}</span>
-                                    <span className="block text-[10px] text-gray-500 leading-tight">{it.desc}</span>
+                                    <span className={`block text-[14px] font-semibold leading-[1.25] ${active ? "text-[var(--accent)]" : "text-[var(--foreground)]"}`}>{it.label}</span>
+                                    <span className="block text-[12px] text-[var(--text-muted)] leading-[1.35]">{it.desc}</span>
                                   </span>
                                 </Link>
                               );
@@ -387,7 +377,7 @@ export default function Navbar() {
                       </div>
                       {/* Honest coming-soon footnote (International programs) */}
                       {menu.note && (
-                        <p className="mt-2 border-t border-white/[0.06] px-2 pt-2 text-[11px] text-white/40">{menu.note}</p>
+                        <p className="mt-2 border-t border-[var(--border)] px-2 pt-2 text-[12px] leading-[1.45] text-[var(--text-muted)]">{menu.note}</p>
                       )}
                     </div>
                   </div>
@@ -399,7 +389,7 @@ export default function Navbar() {
           {/* Snap & Solve — permanent flagship, stays top-level (Phase 7 rule) */}
           <Link
             href="/snap-solve"
-            className={`flex items-center gap-1.5 px-3 py-2 rounded-lg text-sm font-semibold transition ${
+            className={`flex items-center gap-1.5 whitespace-nowrap px-2.5 2xl:px-3 py-2 rounded-lg text-sm font-semibold transition ${
               pathname === "/snap-solve"
                 ? "text-[var(--accent)] bg-[var(--accent-wash)]"
                 : "text-gray-200 hover:text-white hover:bg-white/[0.05]"
@@ -417,7 +407,7 @@ export default function Navbar() {
               <Link
                 key={l.href}
                 href={l.href}
-                className={`flex items-center gap-1.5 px-3 py-2 rounded-lg text-sm font-medium transition ${
+                className={`flex items-center gap-1.5 whitespace-nowrap px-2.5 2xl:px-3 py-2 rounded-lg text-sm font-medium transition ${
                   pathname === l.href ? "text-white bg-white/[0.06]" : "text-gray-300 hover:text-white hover:bg-white/[0.05]"
                 }`}
               >
@@ -427,7 +417,7 @@ export default function Navbar() {
           })}
 
           {/* Search quick-link (utility) */}
-          <Link href="/search" className="flex items-center gap-1.5 px-3 py-2 rounded-lg text-sm font-medium text-gray-300 hover:text-white hover:bg-white/[0.05] transition">
+          <Link href="/search" className="flex items-center gap-1.5 whitespace-nowrap px-2.5 2xl:px-3 py-2 rounded-lg text-sm font-medium text-gray-300 hover:text-white hover:bg-white/[0.05] transition">
             <Search className="h-4 w-4" /> {t("nav.search")}
           </Link>
         </nav>
@@ -550,7 +540,7 @@ export default function Navbar() {
 
           <button
             onClick={() => setMenuOpen(!menuOpen)}
-            className="flex h-10 w-10 items-center justify-center rounded-xl text-gray-400 transition hover:bg-white/[0.05] hover:text-white sm:h-11 sm:w-11 lg:hidden"
+            className="flex h-10 w-10 items-center justify-center rounded-xl text-gray-400 transition hover:bg-white/[0.05] hover:text-white sm:h-11 sm:w-11 xl:hidden"
             aria-label="Menu"
           >
             {menuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
@@ -560,7 +550,7 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {menuOpen && (
-        <div className="lg:hidden border-t border-white/[0.06] bg-[var(--background)]/98 px-4 py-4">
+        <div className="xl:hidden border-t border-white/[0.06] bg-[var(--background)]/98 px-4 py-4">
           <div className="grid grid-cols-3 gap-2 mb-4">
             {LANGS.map((l) => (
               <button

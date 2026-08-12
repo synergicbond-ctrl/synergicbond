@@ -22,18 +22,18 @@ const ACTION_ICONS: Record<ActionIcon, typeof Sparkles> = {
 };
 
 const quickActions = [
-  { href: "/doubt-solver", label: "Solve Doubt", icon: Sparkles, c: "var(--text-muted)" },
-  { href: "/quiz",         label: "Start Quiz",  icon: FlaskConical, c: "var(--text-muted)" },
-  { href: "/periodic-table", label: "Periodic Table", icon: Table2, c: "var(--text-muted)" },
-  { href: "/molecule",     label: "Molecule Explorer", icon: Atom, c: "var(--text-muted)" },
-  { href: "/exam",         label: "Mock Exam",   icon: FileText, c: "var(--text-muted)" },
+  { href: "/doubt-solver", label: "Solve Doubt", icon: Sparkles, c: "#b889ff" },
+  { href: "/quiz",         label: "Start Quiz",  icon: FlaskConical, c: "#37c8f4" },
+  { href: "/periodic-table", label: "Periodic Table", icon: Table2, c: "#65d69a" },
+  { href: "/molecule",     label: "Molecule Explorer", icon: Atom, c: "#f0bd36" },
+  { href: "/exam",         label: "Mock Exam",   icon: FileText, c: "#ff8b6b" },
 ];
 
 // Static presentation meta + demo values (shown to guests). Real values are merged from props.
 const coreCards = [
-  { key: "learn" as const,    title: "Learn Progress",    pct: 62, last: "Coordination Compounds", href: "/vault", cta: "Continue", icon: BookOpen, c: "var(--text-muted)" },
-  { key: "practice" as const, title: "Practice Progress", pct: 48, last: "JEE Mock #4 — 168/180", href: "/quiz", cta: "Practice", icon: FlaskConical, c: "var(--text-muted)" },
-  { key: "aiLab" as const,    title: "AI Lab & Momentum", pct: 70, last: "Level 4 · 7-day streak", href: "/doubt-solver", cta: "Open AI Lab", icon: Sparkles, c: "var(--text-muted)" },
+  { key: "learn" as const,    title: "Learn Progress",    pct: 62, last: "Coordination Compounds", href: "/vault", cta: "Continue", icon: BookOpen, c: "#37c8f4" },
+  { key: "practice" as const, title: "Practice Progress", pct: 48, last: "JEE Mock #4 — 168/180", href: "/quiz", cta: "Practice", icon: FlaskConical, c: "#f0bd36" },
+  { key: "aiLab" as const,    title: "AI Lab & Momentum", pct: 70, last: "Level 4 · 7-day streak", href: "/doubt-solver", cta: "Open AI Lab", icon: Sparkles, c: "#b889ff" },
 ];
 
 const examIntel: {
@@ -43,32 +43,32 @@ const examIntel: {
   { key: "neet",     exam: "NEET", href: "/neet", readiness: 74, weak: [
     { name: "Qualitative Analysis", impact: "high", recommendation: "Revise + 15 MCQs" },
     { name: "Thermodynamics", impact: "medium", recommendation: "10 MCQs today" },
-  ], icon: Microscope, c: "var(--text-muted)" },
+  ], icon: Microscope, c: "#65d69a" },
   { key: "jee",      exam: "JEE", href: "/jee", readiness: 61, weak: [
     { name: "Chemical Kinetics", impact: "high", recommendation: "Revise + 15 MCQs" },
     { name: "GOC", impact: "medium", recommendation: "10 MCQs today" },
-  ], icon: Atom, c: "var(--text-muted)" },
+  ], icon: Atom, c: "#37c8f4" },
   { key: "olympiad", exam: "Olympiad", href: "/olympiads", readiness: 38, weak: [
     { name: "Coordination", impact: "high", recommendation: "Revise + 15 MCQs" },
     { name: "Stereochemistry", impact: "low", recommendation: "Quick review" },
-  ], icon: Trophy, c: "var(--text-muted)" },
+  ], icon: Trophy, c: "#f0bd36" },
   { key: "gate",     exam: "GATE", href: "/gate", readiness: 22, weak: [
     { name: "Spectroscopy", impact: "high", recommendation: "Revise + 15 MCQs" },
     { name: "Quantum", impact: "medium", recommendation: "10 MCQs today" },
-  ], icon: GraduationCap, c: "#C084FC" },
+  ], icon: GraduationCap, c: "#b889ff" },
 ];
 
 const IMPACT_STYLE: Record<WeakTopicInsight["impact"], { label: string; cls: string }> = {
-  high:   { label: "High impact", cls: "bg-[var(--surface-2)] text-[var(--text-muted)] border-[var(--border-strong)] " },
-  medium: { label: "Medium",      cls: "bg-[var(--surface-2)] text-[var(--text-muted)] border-[var(--border-strong)] " },
-  low:    { label: "Low",         cls: "bg-[var(--surface-2)] text-[var(--text-muted)] border-[var(--border-strong)] " },
+  high:   { label: "High impact", cls: "bg-[var(--surface-2)] text-[#ff8b6b] border-[#ff8b6b]/60 " },
+  medium: { label: "Medium",      cls: "bg-[var(--surface-2)] text-[#f0bd36] border-[#f0bd36]/60 " },
+  low:    { label: "Low",         cls: "bg-[var(--surface-2)] text-[#65d69a] border-[#65d69a]/60 " },
 };
 
 const features = [
-  { href: "/periodic-table", label: "Periodic Table", desc: "Interactive trends & data", icon: Table2, c: "var(--text-muted)" },
-  { href: "/molecule", label: "Molecule Explorer", desc: "Look up any compound", icon: Atom, c: "var(--text-muted)" },
-  { href: "/reaction-predictor", label: "Reaction Predictor", desc: "A + B → ? (AI · soon)", icon: GitBranch, c: "var(--text-muted)", soon: true },
-  { href: "/library", label: "Book Library", desc: "70+ world-class textbooks", icon: BookMarked, c: "#C084FC" },
+  { href: "/periodic-table", label: "Periodic Table", desc: "Interactive trends & data", icon: Table2, c: "#65d69a" },
+  { href: "/molecule", label: "Molecule Explorer", desc: "Look up any compound", icon: Atom, c: "#37c8f4" },
+  { href: "/reaction-predictor", label: "Reaction Predictor", desc: "A + B → ? (AI · soon)", icon: GitBranch, c: "#ff8b6b", soon: true },
+  { href: "/library", label: "Book Library", desc: "70+ world-class textbooks", icon: BookMarked, c: "#b889ff" },
 ];
 
 export default function ControlCenter({ progress }: { progress?: ControlCenterProgress | null }) {
@@ -373,9 +373,9 @@ export default function ControlCenter({ progress }: { progress?: ControlCenterPr
           const readiness = real?.readiness ?? e.readiness;
           const weak = real && real.weak.length ? real.weak : isReal ? [] : e.weak;
           return (
-            <Link key={e.exam} href={e.href} className="group rounded-[var(--radius)] bg-[var(--surface)]/80 border p-6 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl" style={{ borderColor: `${e.c}33` }}>
+            <Link key={e.exam} href={e.href} className="group rounded-[var(--radius)] border p-6 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl" style={{ borderColor: `${e.c}80`, background: `linear-gradient(145deg, ${e.c}12, var(--surface) 34%)`, boxShadow: `inset 0 1px 0 ${e.c}1a` }}>
               <div className="flex items-center justify-between mb-4">
-                <span className="flex items-center gap-2.5 font-black text-base text-white">
+                <span className="flex items-center gap-2.5 font-black text-base" style={{ color: e.c }}>
                   <Icon className="h-5 w-5 transition-transform duration-300 group-hover:scale-110" style={{ color: e.c }} /> {e.exam}
                 </span>
                 <span className="text-xs font-extrabold px-2 py-0.5 rounded-md" style={{ color: e.c, background: `${e.c}1a` }}>{readiness}% ready</span>
@@ -383,12 +383,12 @@ export default function ControlCenter({ progress }: { progress?: ControlCenterPr
               <div className="h-2 rounded-full bg-white/10 overflow-hidden mb-4 p-0.5">
                 <div className="h-full rounded-full transition-all duration-1000 ease-out" style={{ width: `${readiness}%`, background: e.c }} />
               </div>
-              <p className="text-[10px] uppercase tracking-wider text-white/40 font-bold mb-2">Weak topics</p>
+              <p className="text-[10px] uppercase tracking-wider font-bold mb-2" style={{ color: e.c }}>Weak topics</p>
               <div className="flex flex-col gap-2">
                 {weak.length ? weak.map((w) => {
                   const s = IMPACT_STYLE[w.impact];
                   return (
-                    <div key={w.name} className={`flex items-center justify-between p-2.5 bg-slate-950/60 border rounded-xl transition ${s.cls}`}>
+                    <div key={w.name} className={`flex items-center justify-between p-2.5 bg-slate-950/60 border rounded-xl transition ${s.cls}`} style={{ borderColor: `${e.c}55` }}>
                       <span className="min-w-0 truncate pr-2">
                         <span className="block truncate text-xs font-bold text-white/90">{w.name}</span>
                         <span className="block truncate text-[10px] text-white/50 mt-0.5">{w.recommendation}</span>
@@ -438,4 +438,3 @@ export default function ControlCenter({ progress }: { progress?: ControlCenterPr
     </section>
   );
 }
-

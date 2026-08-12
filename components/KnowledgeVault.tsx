@@ -15,7 +15,7 @@ const tabs = [
     icon: Atom,
     count: "2000+",
     href: "/vault/concepts",
-    accent: "var(--text-muted)",
+    accent: "#37c8f4",
     blurb: "Core chemistry concepts explained from first principles — atomic structure, bonding, periodicity, thermodynamics and beyond.",
     items: ["Atomic Structure & Quantum Numbers", "Chemical Bonding & VSEPR", "Periodic Trends", "Thermodynamics & Entropy", "Chemical Equilibrium", "Coordination Compounds"],
   },
@@ -26,7 +26,7 @@ const tabs = [
     icon: GitBranch,
     count: "500+",
     href: "/vault",
-    accent: "var(--text-muted)",
+    accent: "#b889ff",
     blurb: "Every named reaction and mechanism with full arrow-pushing — organic, inorganic and the exam-critical conversions.",
     items: ["Aldol Condensation", "SN1 / SN2 Mechanisms", "Cannizzaro Reaction", "Friedel-Crafts Acylation", "Grignard Reactions", "Markovnikov Addition"],
   },
@@ -37,7 +37,7 @@ const tabs = [
     icon: Sigma,
     count: "800+",
     href: "/vault/formulas",
-    accent: "var(--text-muted)",
+    accent: "#f0bd36",
     blurb: "Essential equations, shortcuts and derivations — the formulas that win marks under time pressure.",
     items: ["Nernst Equation", "Arrhenius Equation", "Henderson-Hasselbalch", "Raoult's Law", "Gibbs Free Energy", "Rate Law Expressions"],
   },
@@ -48,7 +48,7 @@ const tabs = [
     icon: AlertTriangle,
     count: "300+",
     href: "/vault/exceptions",
-    accent: "#F59E0B",
+    accent: "#ff8b6b",
     blurb: "The anomalies that trip up rankers — exceptional configurations, anomalous trends and the traps examiners love.",
     items: ["Cr & Cu Electronic Config", "Inert Pair Effect", "Anomalous Boiling Point of H₂O", "Lithium Diagonal Relationship", "Beryllium Anomaly", "Back Bonding in BF₃"],
   },
@@ -59,7 +59,7 @@ const tabs = [
     icon: Zap,
     count: "1500+",
     href: "/vault/facts",
-    accent: "#10B981",
+    accent: "#65d69a",
     blurb: "High-yield facts for rapid last-minute revision — colors, smells, uses and the one-liners that fetch easy marks.",
     items: ["Flame Test Colors", "Colored Ions & Compounds", "Common Ore Names", "IUPAC Nomenclature Rules", "Hybridization Shortcuts", "Magnetic Behavior Facts"],
   },
@@ -227,4 +227,3 @@ export default function KnowledgeVault() {
     </section>
   );
 }
-

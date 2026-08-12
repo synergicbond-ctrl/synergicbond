@@ -2,7 +2,7 @@ import { Trophy, Award, Crown, Sparkles } from "lucide-react";
 
 export default function OlympiadSection() {
   return (
-    <section className="relative max-w-7xl mx-auto px-6 py-12 mt-20 overflow-hidden rounded-[40px] border border-[var(--border-strong)] bg-[var(--surface)]">
+    <section className="relative max-w-7xl mx-auto px-6 py-12 mt-20 overflow-hidden rounded-[40px] border border-[#f0bd36]/60 bg-[var(--surface)]" style={{ boxShadow: "inset 0 1px 0 #f0bd3626, 0 24px 70px -50px #f0bd36" }}>
       {/* Championship Gold & Royal Violet Ambient Glow */}
       <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
         <div className="absolute left-1/2 top-0 h-80 w-80 -translate-x-1/2 rounded-full bg-[var(--surface-2)] blur-[130px]" />
@@ -11,13 +11,13 @@ export default function OlympiadSection() {
       </div>
 
       <div className="text-center max-w-3xl mx-auto relative z-10">
-        <div className="inline-flex items-center gap-2 rounded-full border border-[var(--border-strong)] bg-[var(--surface-2)] px-4 py-1.5 text-xs font-bold uppercase tracking-[0.4em] text-[var(--text-muted)] shadow-sm mb-4">
-          <Crown className="h-3.5 w-3.5 text-[var(--text-muted)]" />
+        <div className="inline-flex items-center gap-2 rounded-full border border-[#f0bd36]/60 bg-[#f0bd36]/10 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.4em] text-[#f0bd36] shadow-sm mb-4">
+          <Crown className="h-3.5 w-3.5 text-[#f0bd36]" />
           CHAMPIONSHIP PRESTIGE
         </div>
 
         <h2 className="text-4xl sm:text-5xl font-black text-white tracking-tight drop-shadow-sm">
-          <span className="bg-[var(--surface)] -400  bg-clip-text text-transparent">
+            <span className="text-[#f0bd36]">
             Olympiad CHEMISTRY
           </span>
         </h2>

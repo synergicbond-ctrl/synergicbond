@@ -204,17 +204,16 @@
   --fact-tone: var(--chem-bond);
 }
 
-.hydrogenFact {
-  --fact-tone: var(--benzene-neutral);
+.energyFact {
+  --fact-tone: var(--chem-energy);
 }
 
-.geometryFact {
-  --fact-tone: var(--chem-rule);
-}
-
-.hybridFact,
 .orbitalFact {
   --fact-tone: var(--chem-orbital);
+}
+
+.ruleFact {
+  --fact-tone: var(--chem-rule);
 }
 
 .fact dt {

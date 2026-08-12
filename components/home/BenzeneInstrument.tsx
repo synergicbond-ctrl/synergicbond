@@ -26,31 +26,31 @@ const facts = [
     value: "1.397",
     unit: "Å",
     note: "representative",
-    tone: styles.bondFact,
+    tone: styles.energyFact,
   },
   {
     label: "C–H bond",
     value: "1.09",
     unit: "Å",
-    tone: styles.hydrogenFact,
+    tone: styles.bondFact,
   },
   {
     label: "Bond angle",
     value: "120",
     unit: "°",
-    tone: styles.geometryFact,
+    tone: styles.orbitalFact,
   },
   {
     label: "Carbon hybridisation",
     value: "sp²",
     unit: "",
-    tone: styles.hybridFact,
+    tone: styles.ruleFact,
   },
   {
     label: "Delocalised π electrons",
     value: "6",
     unit: "e⁻",
-    tone: styles.orbitalFact,
+    tone: styles.bondFact,
   },
 ] as const;
 

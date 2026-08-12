@@ -7,43 +7,41 @@
      Direction: scientific publishing. Structure is expressed with
      hairlines that CONNECT, never with glow, blur or gradient fill.
 
-     Two colour layers, kept strictly apart:
-       1. CHROME  — near-black + one gold accent. Interaction only.
-       2. CONTENT — the semantic chemistry scale below. Meaning only.
-     A chemistry hue must never appear in navigation, buttons or
-     cards; the gold accent must never encode chemical meaning. */
+     The palette follows the original Chemistry OS demo: a deep teal-black
+     field, warm ivory typography, gold as the brand signal, and clear
+     spectral chemistry accents for information hierarchy. */
 
   /* ── Chrome: surfaces ── */
-  --background: #060708;          /* page */
-  --surface: #0e1112;             /* cards / panels (the ONE card colour) */
-  --surface-2: rgba(245, 239, 227, 0.035);
-  --surface-hover: rgba(245, 239, 227, 0.065);
+  --background: #030908;          /* deep teal-black page field */
+  --surface: #081110;             /* panels retain the green-black depth */
+  --surface-2: rgba(14, 44, 40, 0.58);
+  --surface-hover: rgba(20, 66, 59, 0.48);
 
   /* ── Chrome: text hierarchy ── */
-  --foreground: #f5efe3;                   /* titles / active */
-  --text-body: rgba(245, 239, 227, 0.88);  /* body copy */
-  --text-muted: rgba(245, 239, 227, 0.68); /* captions / meta */
-  --text-faint: rgba(245, 239, 227, 0.52); /* rules / disabled */
+  --foreground: #f7f1e6;                   /* warm ivory titles */
+  --text-body: rgba(247, 241, 230, 0.86);  /* body copy */
+  --text-muted: rgba(218, 229, 222, 0.70); /* captions / meta */
+  --text-faint: rgba(185, 207, 198, 0.52); /* rules / disabled */
 
   /* ── Chrome: the single brand accent ──
      Used for interactive + active states and the brand mark. Nothing else. */
-  --accent: #e3b341;
-  --accent-dim: rgba(227, 179, 65, 0.68);
-  --accent-wash: rgba(227, 179, 65, 0.1);
+  --accent: #e5b83f;
+  --accent-dim: rgba(229, 184, 63, 0.76);
+  --accent-wash: rgba(229, 184, 63, 0.14);
 
   /* ── Chrome: hairlines ──
      Elevation comes from these, not from shadow. */
-  --border: rgba(245, 239, 227, 0.11);
-  --border-strong: rgba(245, 239, 227, 0.19);
+  --border: rgba(112, 162, 149, 0.20);
+  --border-strong: rgba(190, 211, 199, 0.34);
 
   /* ── Content: semantic chemistry scale ──
      Desaturated on purpose — these sit inside long-form reading and
      must not vibrate against a near-black page. CONTENT ONLY. */
-  --chem-bond: #62b9ce;      /* bonding, structure, geometry */
-  --chem-energy: #dda05a;    /* energetics, thermodynamics */
-  --chem-orbital: #a68bd3;   /* orbitals, resonance, quantum */
-  --chem-trap: #d77868;      /* exam traps, cautions, exceptions */
-  --chem-rule: #70b98a;      /* rules, verified results */
+  --chem-bond: #22c7f3;      /* cyan: bonding, structure, geometry */
+  --chem-energy: #e5b83f;    /* gold: energetics, thermodynamics */
+  --chem-orbital: #aa69ef;   /* violet: orbitals, resonance, quantum */
+  --chem-trap: #ef6e55;      /* coral: exam traps, cautions, exceptions */
+  --chem-rule: #40ce89;      /* green: rules, verified results */
 
   /* ── Legacy aliases ──
      Retained so the handful of files still reading the old cyan/purple
@@ -63,7 +61,7 @@
 
   /* Kept for components that still reference them. Deliberately faint —
      depth is a hairline job, not a shadow job. */
-  --shadow: 0 1px 0 rgba(245, 239, 227, 0.05);
+  --shadow: 0 1px 0 rgba(181, 229, 211, 0.08);
 }
 
 *,

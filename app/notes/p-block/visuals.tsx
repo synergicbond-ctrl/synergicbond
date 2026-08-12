@@ -8,7 +8,7 @@ function Frame({ title, caption, children }: { title: string; caption: string; c
         <h3 className="mt-1 text-xl font-black text-white sm:text-2xl">{title}</h3>
       </div>
       <div className="overflow-x-auto p-4 sm:p-6">{children}</div>
-      <figcaption className="border-t border-white/10 px-5 py-3 text-sm leading-6 text-[var(--text-muted)] sm:px-7">{caption}</figcaption>
+      <figcaption className="border-t border-white/10 px-5 py-3 text-sm leading-6 text-slate-400 sm:px-7">{caption}</figcaption>
     </figure>
   );
 }
@@ -77,7 +77,7 @@ function ShapeCard({ title, children }: { title: string; children: ReactNode }) 
         <rect width="600" height="320" rx="20" fill="#0a1220" />
         {children}
       </svg>
-      <p className="mt-1 text-center text-xs font-bold text-[var(--text-muted)]">{title}</p>
+      <p className="mt-1 text-center text-xs font-bold text-slate-400">{title}</p>
     </div>
   );
 }

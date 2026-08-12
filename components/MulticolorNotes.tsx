@@ -8,7 +8,7 @@ const COMPOUND_COLORS: Record<string, string> = {
   "KMnO₄": "#A855F7", "KMnO4": "#A855F7",
   "Cu²⁺": "#38BDF8", "Cu2+": "#38BDF8",
   "Cr₂O₇²⁻": "#FB923C", "Cr2O7": "#FB923C",
-  "Fe³⁺": "#e3b341", "Fe2+": "#34D399",
+  "Fe³⁺": "#FBBF24", "Fe2+": "#34D399",
   "Ni²⁺": "#22C55E", "Co²⁺": "#F472B6",
   "I₂": "#7C3AED", "Br₂": "#B45309", "Cl₂": "#A3E635",
 };
@@ -39,7 +39,7 @@ export default function MulticolorNotes() {
   }, []);
 
   return (
-    <div className="rounded-3xl bg-[var(--surface)] border border-white/[0.06] p-6 md:p-8">
+    <div className="rounded-3xl bg-[#111827] border border-white/[0.06] p-6 md:p-8">
       {/* Focus timer */}
       <div className="flex items-center justify-between mb-6 pb-4 border-b border-white/[0.06]">
         <div className="flex items-center gap-2">

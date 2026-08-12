@@ -28,7 +28,7 @@ export default function Hero() {
           </Badge>
 
           {/* SYNERGIC BOND brand name — largest, leads the hero (cyan→purple) */}
-          <p className="mt-6 text-6xl md:text-8xl font-black tracking-[0.08em] bg-gradient-to-r from-[#50dc7b] via-[#37c8f4] to-[#b376ff] bg-clip-text text-transparent drop-shadow-[0_0_24px_rgba(0,245,212,0.18)]">
+          <p className="mt-6 text-6xl md:text-8xl font-black tracking-[0.08em] bg-gradient-to-r from-[#00F5D4] via-[#00BBF9] to-[#9B5DE5] bg-clip-text text-transparent drop-shadow-[0_0_24px_rgba(0,245,212,0.18)]">
             SYNERGIC BOND
           </p>
 

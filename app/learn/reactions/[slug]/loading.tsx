@@ -1,8 +1,8 @@
 // Route-segment skeleton — shown instantly while the page chunk loads (no spinner).
 export default function Loading() {
   return (
-    <main className="min-h-screen bg-[var(--background)] text-white">
-      <div className="sticky top-0 z-40 border-b border-white/[0.07] bg-[var(--background)]/90 backdrop-blur">
+    <main className="min-h-screen bg-[#0B0F19] text-white">
+      <div className="sticky top-0 z-40 border-b border-white/[0.07] bg-[#0B0F19]/90 backdrop-blur">
         <div className="mx-auto flex h-12 max-w-3xl items-center justify-between px-4">
           <div className="h-5 w-14 rounded bg-white/5" />
           <div className="h-6 w-6 rounded-full bg-white/5" />
@@ -21,12 +21,12 @@ export default function Loading() {
         </div>
         <div className="mt-6 grid grid-cols-2 gap-2 sm:grid-cols-3">
           {Array.from({ length: 9 }).map((_, i) => (
-            <div key={i} className="h-16 animate-pulse rounded-xl bg-[var(--surface)]" />
+            <div key={i} className="h-16 animate-pulse rounded-xl bg-[#111827]" />
           ))}
         </div>
         <div className="mt-6 space-y-3">
           {Array.from({ length: 3 }).map((_, i) => (
-            <div key={i} className="h-32 animate-pulse rounded-2xl bg-[var(--surface)]" />
+            <div key={i} className="h-32 animate-pulse rounded-2xl bg-[#111827]" />
           ))}
         </div>
       </div>

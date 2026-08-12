@@ -259,7 +259,7 @@ export default function ExamPage() {
           <h2 className="mt-10 mb-4 text-xl font-bold">Review</h2>
           <div className="space-y-4">
             {graded.map(({ q, i, selected, isCorrect }) => (
-              <div key={q.id} className="rounded-2xl border border-white/[0.08] bg-[var(--surface)] p-4">
+              <div key={q.id} className="rounded-2xl border border-white/[0.08] bg-[#111827] p-4">
                 <div className="mb-2 flex flex-wrap items-center gap-2 text-[11px]">
                   <span className="font-bold text-cyan-300">Q{i + 1}</span>
                   <span className="rounded bg-white/5 px-2 py-0.5 text-white/60">{q.chapter}</span>
@@ -362,7 +362,7 @@ export default function ExamPage() {
         </div>
 
         {/* Question */}
-        <div className="mt-5 rounded-2xl border border-white/[0.08] bg-[var(--surface)] p-4 sm:p-5">
+        <div className="mt-5 rounded-2xl border border-white/[0.08] bg-[#111827] p-4 sm:p-5">
           <div className="mb-2 flex flex-wrap items-center gap-2 text-[11px]">
             <span className="font-bold text-cyan-300">Q{current + 1} of {paper.questions.length}</span>
             <span className="rounded bg-white/5 px-2 py-0.5 text-white/60">{q.chapter}</span>
@@ -400,7 +400,7 @@ export default function ExamPage() {
       </div>
 
       {/* Sticky action bar */}
-      <div className="fixed inset-x-0 bottom-0 z-40 border-t border-white/10 bg-[var(--background)]/95 backdrop-blur">
+      <div className="fixed inset-x-0 bottom-0 z-40 border-t border-white/10 bg-[#0B0F19]/95 backdrop-blur">
         <div className="mx-auto flex max-w-3xl items-center gap-2 px-4 py-3 sm:px-6">
           <button
             onClick={() => goTo(current - 1)}

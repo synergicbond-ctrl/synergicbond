@@ -30,10 +30,10 @@ const TESTIMONIALS = [
 
 export default function SupportPage() {
   return (
-    <main className="min-h-screen bg-[var(--background)] text-white selection:bg-cyan-500/30 font-sans pb-16">
+    <main className="min-h-screen bg-[#0B0F19] text-white selection:bg-cyan-500/30 font-sans pb-16">
       
       {/* ── SECTION 1: HERO ───────────────────────────────────────────── */}
-      <header className="relative overflow-hidden border-b border-white/[0.06] bg-gradient-to-b from-[#101516]/40 to-transparent py-16 md:py-24 px-4 sm:px-6">
+      <header className="relative overflow-hidden border-b border-white/[0.06] bg-gradient-to-b from-[#111827]/40 to-transparent py-16 md:py-24 px-4 sm:px-6">
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute left-10 top-10 h-64 w-64 rounded-full bg-cyan-500/10 blur-3xl" />
           <div className="absolute right-10 top-20 h-64 w-64 rounded-full bg-violet-500/10 blur-3xl" />
@@ -65,25 +65,25 @@ export default function SupportPage() {
             <h2 className="text-2xl font-black text-white">Addressing Core Challenges in Student Prep</h2>
           </div>
           <div className="grid gap-4 sm:grid-cols-2">
-            <div className="p-5 rounded-2xl border border-white/[0.06] bg-[var(--surface)] space-y-2">
+            <div className="p-5 rounded-2xl border border-white/[0.06] bg-[#111827] space-y-2">
               <h3 className="text-sm font-bold text-white">Limited Access to Experienced Teachers</h3>
               <p className="text-xs text-white/50 leading-relaxed">
                 Top-tier pedagogy is often clustered in a few education hubs, leaving millions of students with restricted academic support.
               </p>
             </div>
-            <div className="p-5 rounded-2xl border border-white/[0.06] bg-[var(--surface)] space-y-2">
+            <div className="p-5 rounded-2xl border border-white/[0.06] bg-[#111827] space-y-2">
               <h3 className="text-sm font-bold text-white">Expensive Coaching Ecosystems</h3>
               <p className="text-xs text-white/50 leading-relaxed">
                 Conventional preparatory institutes charge massive tuition fees, turning quality guidance into a luxury resource.
               </p>
             </div>
-            <div className="p-5 rounded-2xl border border-white/[0.06] bg-[var(--surface)] space-y-2">
+            <div className="p-5 rounded-2xl border border-white/[0.06] bg-[#111827] space-y-2">
               <h3 className="text-sm font-bold text-white">Lack of Quality Study Material</h3>
               <p className="text-xs text-white/50 leading-relaxed">
                 Many online resources are copy-pasted, inconsistent, or lack verified, single-source-of-truth depth.
               </p>
             </div>
-            <div className="p-5 rounded-2xl border border-white/[0.06] bg-[var(--surface)] space-y-2">
+            <div className="p-5 rounded-2xl border border-white/[0.06] bg-[#111827] space-y-2">
               <h3 className="text-sm font-bold text-white">Balancing Boards &amp; Entrance Prep</h3>
               <p className="text-xs text-white/50 leading-relaxed">
                 Students are forced to jump between subjective school boards curricula and objective competitive patterns, creating massive cognitive load.
@@ -96,7 +96,7 @@ export default function SupportPage() {
         </section>
 
         {/* ── SECTION 3: THE PROBLEM WE ARE TRYING TO SOLVE ────────────── */}
-        <section className="rounded-3xl border border-white/[0.08] bg-[var(--surface)] p-6 md:p-8 space-y-6">
+        <section className="rounded-3xl border border-white/[0.08] bg-[#111827] p-6 md:p-8 space-y-6">
           <div className="space-y-2">
             <div className="flex items-center gap-2 text-rose-400 font-bold text-xs uppercase tracking-wider">
               <AlertCircle className="h-4.5 w-4.5" /> The Problem We Are Trying to Solve
@@ -180,14 +180,14 @@ export default function SupportPage() {
             <h2 className="text-2xl font-black text-white">Supporting Every Chemistry Learner</h2>
           </div>
           <div className="grid gap-3 grid-cols-2 sm:grid-cols-4 text-center text-xs">
-            <div className="p-4 rounded-xl border border-white/[0.06] bg-[var(--surface)] font-semibold text-white/80">Board Students</div>
-            <div className="p-4 rounded-xl border border-white/[0.06] bg-[var(--surface)] font-semibold text-white/80">JEE Aspirants</div>
-            <div className="p-4 rounded-xl border border-white/[0.06] bg-[var(--surface)] font-semibold text-white/80">NEET Aspirants</div>
-            <div className="p-4 rounded-xl border border-white/[0.06] bg-[var(--surface)] font-semibold text-white/80">Olympiad Students</div>
-            <div className="p-4 rounded-xl border border-white/[0.06] bg-[var(--surface)] font-semibold text-white/80">Small-Town Students</div>
-            <div className="p-4 rounded-xl border border-white/[0.06] bg-[var(--surface)] font-semibold text-white/80">Rural Students</div>
-            <div className="p-4 rounded-xl border border-white/[0.06] bg-[var(--surface)] font-semibold text-white/80">Govt School Students</div>
-            <div className="p-4 rounded-xl border border-white/[0.06] bg-[var(--surface)] font-semibold text-white/80">Self Learners</div>
+            <div className="p-4 rounded-xl border border-white/[0.06] bg-[#111827] font-semibold text-white/80">Board Students</div>
+            <div className="p-4 rounded-xl border border-white/[0.06] bg-[#111827] font-semibold text-white/80">JEE Aspirants</div>
+            <div className="p-4 rounded-xl border border-white/[0.06] bg-[#111827] font-semibold text-white/80">NEET Aspirants</div>
+            <div className="p-4 rounded-xl border border-white/[0.06] bg-[#111827] font-semibold text-white/80">Olympiad Students</div>
+            <div className="p-4 rounded-xl border border-white/[0.06] bg-[#111827] font-semibold text-white/80">Small-Town Students</div>
+            <div className="p-4 rounded-xl border border-white/[0.06] bg-[#111827] font-semibold text-white/80">Rural Students</div>
+            <div className="p-4 rounded-xl border border-white/[0.06] bg-[#111827] font-semibold text-white/80">Govt School Students</div>
+            <div className="p-4 rounded-xl border border-white/[0.06] bg-[#111827] font-semibold text-white/80">Self Learners</div>
           </div>
         </section>
 
@@ -201,7 +201,7 @@ export default function SupportPage() {
           </div>
           <div className="grid gap-4 sm:grid-cols-3">
             {TESTIMONIALS.map((t, i) => (
-              <div key={i} className="p-5 rounded-2xl border border-white/[0.06] bg-[var(--surface)] flex flex-col justify-between space-y-4">
+              <div key={i} className="p-5 rounded-2xl border border-white/[0.06] bg-[#111827] flex flex-col justify-between space-y-4">
                 <p className="text-xs text-white/70 italic leading-relaxed">&ldquo;{t.quote}&rdquo;</p>
                 <div>
                   <span className="block text-xs font-bold text-white">{t.author}</span>
@@ -213,7 +213,7 @@ export default function SupportPage() {
         </section>
 
         {/* ── SECTION 7: LONG-TERM VISION ─────────────────────────────── */}
-        <section className="rounded-3xl border border-white/[0.08] bg-[var(--surface)] p-6 md:p-8 space-y-6">
+        <section className="rounded-3xl border border-white/[0.08] bg-[#111827] p-6 md:p-8 space-y-6">
           <div className="space-y-2">
             <div className="flex items-center gap-2 text-yellow-400 font-bold text-xs uppercase tracking-wider">
               <Eye className="h-4.5 w-4.5" /> Long-Term Vision

@@ -92,7 +92,7 @@ export default function AboutVision() {
                 </div>
                 <div>
                   <h3 className="font-bold text-base text-white mb-1.5 group-hover:text-white transition-colors">{t(p.tkey)}</h3>
-                  <p className="text-xs text-[var(--text-body)] leading-relaxed font-medium">{t(p.bodyKey)}</p>
+                  <p className="text-xs text-gray-300 leading-relaxed font-medium">{t(p.bodyKey)}</p>
                 </div>
               </div>
             );
@@ -101,7 +101,7 @@ export default function AboutVision() {
       </div>
 
       {/* Why Synergic Bond — Platform Excellence Block */}
-      <div className="relative overflow-hidden rounded-[36px] border border-cyan-500/30 bg-gradient-to-br from-[#101516] via-[#0F172A] to-[#1E1B4B] p-8 sm:p-12 backdrop-blur-2xl shadow-[0_0_80px_-15px_rgba(34,211,238,0.2)]">
+      <div className="relative overflow-hidden rounded-[36px] border border-cyan-500/30 bg-gradient-to-br from-[#111827] via-[#0F172A] to-[#1E1B4B] p-8 sm:p-12 backdrop-blur-2xl shadow-[0_0_80px_-15px_rgba(34,211,238,0.2)]">
         <div className="absolute -right-20 -bottom-20 h-96 w-96 rounded-full bg-purple-500/15 blur-[140px] pointer-events-none" />
         <div className="absolute -left-20 -top-20 h-96 w-96 rounded-full bg-cyan-500/15 blur-[140px] pointer-events-none" />
         <Quote className="absolute right-8 top-8 h-36 w-36 text-white/[0.03] pointer-events-none transform -rotate-12" />
@@ -111,7 +111,7 @@ export default function AboutVision() {
           <div className="flex flex-col items-center sm:items-start text-center sm:text-left">
             <div className="relative mb-5 group">
               <div className="absolute -inset-1 rounded-3xl bg-gradient-to-r from-cyan-400 via-sky-400 to-purple-500 opacity-75 blur-md transition duration-500 group-hover:opacity-100" />
-              <div className="relative flex h-32 w-32 items-center justify-center rounded-2xl bg-[var(--background)] border border-white/20 shadow-2xl">
+              <div className="relative flex h-32 w-32 items-center justify-center rounded-2xl bg-[#0B0F19] border border-white/20 shadow-2xl">
                 <BrainCircuit className="h-16 w-16 text-cyan-300 drop-shadow-[0_0_15px_rgba(34,211,238,0.5)]" />
               </div>
               <div className="absolute -bottom-3 -right-3 flex items-center gap-1 rounded-full bg-cyan-500 border border-black px-3 py-1 text-[10px] font-black uppercase text-black shadow-lg">
@@ -122,7 +122,7 @@ export default function AboutVision() {
 
             <h3 className="text-2xl font-black text-white mt-2">Why Synergic Bond</h3>
             <p className="text-sm font-semibold text-cyan-400 mt-0.5">The Chemistry Operating System</p>
-            <div className="mt-3 inline-flex items-center gap-2 rounded-full bg-white/[0.05] border border-white/10 px-3.5 py-1 text-xs font-bold text-[var(--text-body)]">
+            <div className="mt-3 inline-flex items-center gap-2 rounded-full bg-white/[0.05] border border-white/10 px-3.5 py-1 text-xs font-bold text-gray-300">
               Verified Chemistry Only
             </div>
           </div>

@@ -15,7 +15,7 @@ const T = { fontFamily: "ui-sans-serif, system-ui", fill: "rgba(255,255,255,0.85
 const TS = { ...T, fontSize: 11 };
 const TXS = { ...T, fontSize: 9.5, fill: MUTE };
 
-function Atom({ x, y, r = 9, label, fill = "#0b0f10", stroke = AX }: { x: number; y: number; r?: number; label: string; fill?: string; stroke?: string }) {
+function Atom({ x, y, r = 9, label, fill = "#0B1220", stroke = AX }: { x: number; y: number; r?: number; label: string; fill?: string; stroke?: string }) {
   return (
     <g>
       <circle cx={x} cy={y} r={r} fill={fill} stroke={stroke} strokeWidth="1.3" />
@@ -85,8 +85,8 @@ export function DiboraneBridgeVisual() {
       {/* bridge hydrogens: 3c-2e banana bonds */}
       <path d="M 110 60 Q 155 130 200 130 Q 245 130 310 60" fill="none" stroke={VEC} strokeWidth="1.6" strokeDasharray="4 3" />
       <path d="M 110 60 Q 155 150 200 150 Q 245 150 310 60" fill="none" stroke={VEC} strokeWidth="1.6" strokeDasharray="4 3" />
-      <Atom x={175} y={128} label="H" r={8} fill="#0b0f10" stroke={VEC} />
-      <Atom x={245} y={128} label="H" r={8} fill="#0b0f10" stroke={VEC} />
+      <Atom x={175} y={128} label="H" r={8} fill="#0B1220" stroke={VEC} />
+      <Atom x={245} y={128} label="H" r={8} fill="#0B1220" stroke={VEC} />
       <text x="210" y="185" textAnchor="middle" style={TXS}>2 bridging H (3c–2e, dashed) + 4 terminal H (ordinary 2c–2e)</text>
       <text x="210" y="200" textAnchor="middle" style={TXS}>12 valence e⁻ total · each bridge bond uses 2 electrons shared over 3 nuclei</text>
     </svg>
@@ -166,7 +166,7 @@ export function HydrogenBondingVisual() {
 
 /** Metallic bonding: electron-sea model with delocalised electrons and mobile cores. */
 export function MetallicBondingVisual() {
-  const ion = (x: number, y: number) => <circle cx={x} cy={y} r="9" fill="#0b0f10" stroke={POS} strokeWidth="1.3" />;
+  const ion = (x: number, y: number) => <circle cx={x} cy={y} r="9" fill="#0B1220" stroke={POS} strokeWidth="1.3" />;
   const dot = (x: number, y: number) => <circle cx={x} cy={y} r="2" fill={AX} opacity="0.85" />;
   const ions: [number, number][] = [];
   for (let row = 0; row < 3; row++) for (let col = 0; col < 5; col++) ions.push([40 + col * 45 + (row % 2 ? 22 : 0), 40 + row * 45]);

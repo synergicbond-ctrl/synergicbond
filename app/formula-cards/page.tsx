@@ -17,7 +17,7 @@ const totalFormulaCount = chapters.reduce((sum, chapter) => sum + chapter.count,
 
 function FormulaCardView({ card }: { card: FormulaSearchResult }) {
   return (
-    <article className="flex h-full min-w-0 flex-col rounded-2xl border border-white/[0.08] bg-[var(--surface)] p-5 shadow-sm hover:border-white/15 transition duration-200">
+    <article className="flex h-full min-w-0 flex-col rounded-2xl border border-white/[0.08] bg-[#111827] p-5 shadow-sm hover:border-white/15 transition duration-200">
       <div className="flex flex-wrap items-start justify-between gap-3">
         <div className="min-w-0">
           <p className="break-words text-[11px] font-bold uppercase tracking-wide text-cyan-400">{card.topic}</p>
@@ -98,7 +98,7 @@ function FormulaCardsContent() {
   const { visible: formulas, locked } = slicePreview(allMatches, PREVIEW_LIMITS.formulas, unlocked);
 
   return (
-    <main className="min-h-screen bg-[var(--background)] text-white px-4 py-6 sm:px-6 lg:px-8">
+    <main className="min-h-screen bg-[#0B0F19] text-white px-4 py-6 sm:px-6 lg:px-8">
       <div className="mx-auto max-w-7xl space-y-6">
         <header className="flex flex-col gap-4 border-b border-white/[0.08] pb-5 md:flex-row md:items-end md:justify-between">
           <div>
@@ -112,7 +112,7 @@ function FormulaCardsContent() {
           </Link>
         </header>
 
-        <section className="grid gap-3 rounded-2xl border border-white/[0.08] bg-[var(--surface)] p-3 shadow-sm md:grid-cols-[1fr_280px]">
+        <section className="grid gap-3 rounded-2xl border border-white/[0.08] bg-[#111827] p-3 shadow-sm md:grid-cols-[1fr_280px]">
           <input
             value={query}
             onChange={(event) => setQuery(event.target.value)}
@@ -124,9 +124,9 @@ function FormulaCardsContent() {
             onChange={(event) => setChapter(event.target.value)}
             className="min-h-11 rounded-xl border border-white/10 bg-black/20 px-3 text-sm font-semibold text-white/80 outline-none focus:border-cyan-400/40"
           >
-            <option value="" className="bg-[var(--surface)]">All chapters</option>
+            <option value="" className="bg-[#111827]">All chapters</option>
             {chapters.map((item) => (
-              <option key={item.chapter} value={item.chapter} className="bg-[var(--surface)]">
+              <option key={item.chapter} value={item.chapter} className="bg-[#111827]">
                 {item.chapter} ({item.count})
               </option>
             ))}
@@ -160,7 +160,7 @@ function FormulaCardsContent() {
         </div>
 
         {formulas.length === 0 ? (
-          <div className="rounded-2xl border border-dashed border-white/10 bg-[var(--surface)] p-10 text-center text-sm font-bold text-white/40">
+          <div className="rounded-2xl border border-dashed border-white/10 bg-[#111827] p-10 text-center text-sm font-bold text-white/40">
             No formula cards match this filter.
           </div>
         ) : (
@@ -181,7 +181,7 @@ function FormulaCardsContent() {
 
 export default function FormulaCardsPage() {
   return (
-    <Suspense fallback={<main className="min-h-screen bg-[var(--background)]" />}>
+    <Suspense fallback={<main className="min-h-screen bg-[#0B0F19]" />}>
       <FormulaCardsContent />
     </Suspense>
   );

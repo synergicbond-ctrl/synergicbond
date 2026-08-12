@@ -24,8 +24,8 @@ export async function generateMetadata({ params }: { params: Promise<{ board: st
 
 function Shell({ children, crumb }: { children: React.ReactNode; crumb: React.ReactNode }) {
   return (
-    <main className="min-h-screen bg-[var(--background)] text-white">
-      <div className="border-b border-white/10 bg-gradient-to-b from-amber-950/20 to-[#0b0f10] px-6 py-10">
+    <main className="min-h-screen bg-[#0B1220] text-white">
+      <div className="border-b border-white/10 bg-gradient-to-b from-amber-950/20 to-[#0B1220] px-6 py-10">
         <div className="mx-auto max-w-5xl">
           <nav className="mb-4 text-sm text-white/45">{crumb}</nav>
           <h1 className="text-3xl font-black tracking-tight sm:text-4xl">Performance Analytics</h1>

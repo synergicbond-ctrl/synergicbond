@@ -19,7 +19,7 @@ export default function ReactionSection({
           Important Reactions
         </h2>
 
-        <p className="text-[var(--text-muted)]">
+        <p className="text-gray-400">
           Frequently tested reactions from this chapter.
         </p>
       </div>
@@ -50,7 +50,7 @@ export default function ReactionSection({
               )}
 
               {reaction.description && (
-                <p className="mt-2 text-sm text-[var(--text-muted)]">
+                <p className="mt-2 text-sm text-gray-400">
                   {reaction.description}
                 </p>
               )}

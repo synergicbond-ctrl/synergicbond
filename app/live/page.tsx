@@ -36,7 +36,7 @@ export default function LivePage() {
   const solving = useCounter(1290, 40);
 
   return (
-    <main className="min-h-screen bg-[var(--background)] text-white">
+    <main className="min-h-screen bg-[#0B0F19] text-white">
       <div className="mx-auto max-w-5xl px-6 py-12">
 
         {/* Header */}
@@ -52,14 +52,14 @@ export default function LivePage() {
 
         {/* Live counters */}
         <div className="grid gap-4 sm:grid-cols-2 mb-8">
-          <div className="rounded-2xl bg-[var(--surface)] border border-white/[0.06] p-6 flex items-center gap-4">
+          <div className="rounded-2xl bg-[#111827] border border-white/[0.06] p-6 flex items-center gap-4">
             <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-green-500/10"><Users className="h-6 w-6 text-green-400" /></div>
             <div>
               <p className="text-3xl font-black text-white tabular-nums">{online.toLocaleString()}</p>
               <p className="text-sm text-white/50">Scholars online now</p>
             </div>
           </div>
-          <div className="rounded-2xl bg-[var(--surface)] border border-white/[0.06] p-6 flex items-center gap-4">
+          <div className="rounded-2xl bg-[#111827] border border-white/[0.06] p-6 flex items-center gap-4">
             <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-cyan-500/10"><Zap className="h-6 w-6 text-cyan-400" /></div>
             <div>
               <p className="text-3xl font-black text-white tabular-nums">{solving.toLocaleString()}</p>
@@ -74,7 +74,7 @@ export default function LivePage() {
           {events.map((e) => {
             const Icon = e.icon;
             return (
-              <div key={e.name} className="rounded-2xl bg-[var(--surface)] border border-white/[0.06] p-4 flex items-center gap-4 flex-wrap">
+              <div key={e.name} className="rounded-2xl bg-[#111827] border border-white/[0.06] p-4 flex items-center gap-4 flex-wrap">
                 <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-cyan-500/10 flex-shrink-0"><Icon className="h-5 w-5 text-cyan-400" /></div>
                 <div className="flex-1 min-w-0">
                   <p className="text-sm font-bold text-white">{e.name}</p>
@@ -89,7 +89,7 @@ export default function LivePage() {
         {/* Arenas */}
         <div className="grid gap-4 md:grid-cols-2">
           <div className="rounded-2xl p-[1px] bg-gradient-to-br from-cyan-500/50 to-purple-500/50">
-            <div className="rounded-2xl bg-[var(--surface)] p-6 h-full">
+            <div className="rounded-2xl bg-[#111827] p-6 h-full">
               <Swords className="h-6 w-6 text-cyan-400 mb-3" />
               <h3 className="text-base font-black text-white">Weekly Challenge Arena</h3>
               <p className="text-sm text-white/55 mt-1 mb-4">A fresh 25-question gauntlet every week. Climb the weekly board.</p>
@@ -97,7 +97,7 @@ export default function LivePage() {
             </div>
           </div>
           <div className="rounded-2xl p-[1px] bg-gradient-to-br from-purple-500/50 to-amber-500/50">
-            <div className="rounded-2xl bg-[var(--surface)] p-6 h-full">
+            <div className="rounded-2xl bg-[#111827] p-6 h-full">
               <Trophy className="h-6 w-6 text-amber-400 mb-3" />
               <h3 className="text-base font-black text-white">Rank Rush Event</h3>
               <p className="text-sm text-white/55 mt-1 mb-4">Timed sprint — fastest accurate solvers top the national leaderboard.</p>

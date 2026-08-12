@@ -12,15 +12,15 @@ const toneStyles: Record<Tone, string> = {
 };
 function Section({ index, title, subtitle, children }: { index: string; title: string; subtitle?: string; children: React.ReactNode }) {
   return (
-    <section className="rounded-[2rem] border border-white/10 bg-[var(--background)]/80 p-5 shadow-2xl shadow-black/20 backdrop-blur md:p-8">
+    <section className="rounded-[2rem] border border-white/10 bg-slate-950/80 p-5 shadow-2xl shadow-black/20 backdrop-blur md:p-8">
       <div className="flex items-start gap-4">
         <span className="grid h-11 w-11 shrink-0 place-items-center rounded-2xl border border-cyan-300/30 bg-cyan-300/10 text-sm font-black text-cyan-200">{index}</span>
         <div>
           <h2 className="text-2xl font-black tracking-tight text-white md:text-3xl">{title}</h2>
-          {subtitle && <p className="mt-1 max-w-4xl text-sm leading-6 text-[var(--text-muted)]">{subtitle}</p>}
+          {subtitle && <p className="mt-1 max-w-4xl text-sm leading-6 text-slate-400">{subtitle}</p>}
         </div>
       </div>
-      <div className="mt-6 space-y-5 text-[15px] leading-7 text-[var(--foreground)] md:text-base">{children}</div>
+      <div className="mt-6 space-y-5 text-[15px] leading-7 text-slate-200 md:text-base">{children}</div>
     </section>
   );
 }
@@ -37,7 +37,7 @@ function Lens({ title, children, tone = "cyan" }: { title: string; children: Rea
     <aside className={`rounded-2xl border p-5 ${toneStyles[tone]}`}>
       <p className="text-xs font-black uppercase tracking-[0.2em]">Concept</p>
       <h3 className="mt-2 text-lg font-black text-white">{title}</h3>
-      <div className="mt-2 text-sm leading-6 text-[var(--foreground)]">{children}</div>
+      <div className="mt-2 text-sm leading-6 text-slate-200">{children}</div>
     </aside>
   );
 }
@@ -171,12 +171,12 @@ export default function ThermodynamicsPart27() {
     <main className="min-h-screen bg-[#020617] text-slate-100">
       <div className="mx-auto max-w-5xl space-y-6 px-4 py-10 md:px-8">
 
-        <header className="rounded-[2rem] border border-white/10 bg-[var(--background)]/80 p-6 shadow-2xl shadow-black/20 md:p-10">
+        <header className="rounded-[2rem] border border-white/10 bg-slate-950/80 p-6 shadow-2xl shadow-black/20 md:p-10">
           <p className="text-xs font-black uppercase tracking-[0.25em] text-fuchsia-300">Part 27</p>
           <h1 className="mt-3 text-4xl font-black tracking-tight text-white md:text-5xl">
             Chemical Potential and Gibbs Energy of Pure Ideal Gases
           </h1>
-          <p className="mt-4 max-w-3xl text-lg leading-8 text-[var(--text-body)]">
+          <p className="mt-4 max-w-3xl text-lg leading-8 text-slate-300">
             Definition and physical interpretation of chemical potential, its derivation for ideal gases
             and mixtures, standard states, and the Euler relation G = Σnᵢμᵢ.
           </p>
@@ -206,7 +206,7 @@ export default function ThermodynamicsPart27() {
           subtitle="Exact derived result from integrating dμ = V_m dP at constant T">
           <MuVsPSVG />
           <p>For a pure ideal gas at constant T:</p>
-          <div className="space-y-1 rounded-2xl border border-white/10 bg-[var(--surface)]/60 p-4 font-mono text-sm">
+          <div className="space-y-1 rounded-2xl border border-white/10 bg-slate-900/60 p-4 font-mono text-sm">
             <p>dμ = V_m dP = (RT/P) dP</p>
             <p>Integrate from P° (standard) to P:</p>
             <p>μ(T,P) − μ°(T) = RT ∫_&#123;P°&#125;^&#123;P&#125; dP/P = RT ln(P/P°)</p>
@@ -242,20 +242,20 @@ export default function ThermodynamicsPart27() {
           </p>
           <div className="overflow-x-auto rounded-2xl border border-white/10">
             <table className="min-w-[700px] border-collapse text-left text-sm">
-              <thead className="bg-[var(--surface)]">
+              <thead className="bg-slate-900">
                 <tr>
                   {["Phase", "Standard state", "Activity", "μ form"].map(h => (
                     <th key={h} className="border-b border-white/10 px-4 py-3 font-black text-white">{h}</th>
                   ))}
                 </tr>
               </thead>
-              <tbody className="divide-y divide-white/5 bg-[var(--background)]/70">
+              <tbody className="divide-y divide-white/5 bg-slate-950/70">
                 {stdStateTable.map(row => (
                   <tr key={row.phase}>
                     <td className="px-4 py-3 text-cyan-200 font-semibold">{row.phase}</td>
-                    <td className="px-4 py-3 text-[var(--text-body)]">{row.standard}</td>
-                    <td className="px-4 py-3 font-mono text-[var(--foreground)]">{row.activity}</td>
-                    <td className="px-4 py-3 font-mono text-[var(--foreground)]">{row.muForm}</td>
+                    <td className="px-4 py-3 text-slate-300">{row.standard}</td>
+                    <td className="px-4 py-3 font-mono text-slate-200">{row.activity}</td>
+                    <td className="px-4 py-3 font-mono text-slate-200">{row.muForm}</td>
                   </tr>
                 ))}
               </tbody>
@@ -266,10 +266,10 @@ export default function ThermodynamicsPart27() {
         <Section index="5" title="Worked Examples">
           <div className="space-y-4">
             {examples.map(ex => (
-              <article key={ex.title} className="rounded-2xl border border-white/10 bg-[var(--surface)]/70 p-5">
+              <article key={ex.title} className="rounded-2xl border border-white/10 bg-slate-900/70 p-5">
                 <h3 className="font-black text-white">{ex.title}</h3>
-                <p className="mt-2 text-sm font-semibold text-[var(--foreground)]">{ex.given}</p>
-                <div className="mt-3 rounded-xl border border-emerald-300/20 bg-emerald-300/[0.06] p-3 text-sm leading-6 text-[var(--foreground)]">{ex.solution}</div>
+                <p className="mt-2 text-sm font-semibold text-slate-200">{ex.given}</p>
+                <div className="mt-3 rounded-xl border border-emerald-300/20 bg-emerald-300/[0.06] p-3 text-sm leading-6 text-slate-200">{ex.solution}</div>
                 <p className="mt-2 text-xs text-amber-300"><span className="font-black">Trap: </span>{ex.trap}</p>
               </article>
             ))}
@@ -287,15 +287,15 @@ export default function ThermodynamicsPart27() {
               ["For a pure solid, what is its contribution to the equilibrium constant expression?", "Activity of pure solid = 1, so its contribution is 1^ν = 1. Pure solids (and pure liquids) do not appear in equilibrium constant expressions."],
               ["Explain why chemical potential → −∞ as P → 0 for an ideal gas.", "μ = μ° + RT ln(P/P°). As P → 0, ln(P/P°) → −∞. This reflects that an infinitely dilute gas has maximum entropy and minimum order — adding it releases maximum free energy."],
             ].map(([q, a], i) => (
-              <article key={i} className="rounded-2xl border border-white/10 bg-[var(--surface)]/60 p-4">
+              <article key={i} className="rounded-2xl border border-white/10 bg-slate-900/60 p-4">
                 <p className="font-semibold text-white"><span className="mr-2 text-amber-300">{i + 1}.</span>{q}</p>
-                <div className="mt-2 rounded-xl border border-emerald-300/20 bg-emerald-300/[0.06] p-3 text-sm text-[var(--foreground)]">{a}</div>
+                <div className="mt-2 rounded-xl border border-emerald-300/20 bg-emerald-300/[0.06] p-3 text-sm text-slate-200">{a}</div>
               </article>
             ))}
           </div>
         </section>
 
-        <section className="rounded-[2rem] border border-white/10 bg-[var(--background)] p-6">
+        <section className="rounded-[2rem] border border-white/10 bg-slate-950 p-6">
           <p className="text-xs font-black uppercase tracking-[0.2em] text-fuchsia-300">Part 27 Complete</p>
           <h2 className="mt-2 text-2xl font-black text-white">Next: Gibbs energy of mixing and ideal solutions</h2>
         </section>

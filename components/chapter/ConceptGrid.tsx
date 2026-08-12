@@ -12,7 +12,7 @@ export default function ConceptGrid({
           Concepts
         </h2>
 
-        <p className="text-[var(--text-muted)]">
+        <p className="text-gray-400">
           Master every important concept before attempting questions.
         </p>
       </div>
@@ -32,7 +32,7 @@ export default function ConceptGrid({
                 {concept}
               </h3>
 
-              <p className="mt-2 text-sm text-[var(--text-muted)]">
+              <p className="mt-2 text-sm text-gray-400">
                 Study this concept thoroughly before moving to advanced problems.
               </p>
             </div>

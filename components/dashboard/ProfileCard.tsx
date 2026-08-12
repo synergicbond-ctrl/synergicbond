@@ -24,7 +24,7 @@ export function ProfileCard({
   return (
     <Link
       href="/dashboard/profile"
-      className="block rounded-2xl border border-white/[0.08] bg-[var(--surface)] p-5 hover:border-cyan-500/30 transition group"
+      className="block rounded-2xl border border-white/[0.08] bg-[#111827] p-5 hover:border-cyan-500/30 transition group"
     >
       <div className="flex items-center gap-3.5">
         <div className="h-12 w-12 rounded-xl bg-gradient-to-br from-cyan-500/25 to-purple-500/25 border border-cyan-400/20 flex items-center justify-center text-lg font-black text-cyan-300 flex-shrink-0">

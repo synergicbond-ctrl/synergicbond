@@ -11,7 +11,7 @@ export default function PracticePanel({
         Practice This Chapter
       </h2>
 
-      <p className="mt-2 text-[var(--text-muted)]">
+      <p className="mt-2 text-gray-400">
         Generate AI-powered practice questions based on this chapter.
       </p>
 

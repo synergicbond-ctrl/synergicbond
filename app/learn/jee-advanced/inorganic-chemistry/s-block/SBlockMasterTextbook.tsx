@@ -44,7 +44,7 @@ export default function SBlockMasterTextbook() {
               <a
                 key={s.id}
                 href={`#${s.id}`}
-                className="block rounded-xl px-3 py-2.5 text-sm leading-5 text-[var(--text-muted)] transition hover:bg-cyan-300/10 hover:text-cyan-100"
+                className="block rounded-xl px-3 py-2.5 text-sm leading-5 text-slate-400 transition hover:bg-cyan-300/10 hover:text-cyan-100"
               >
                 {s.label}
               </a>
@@ -56,7 +56,7 @@ export default function SBlockMasterTextbook() {
           <section className="rounded-3xl border border-cyan-300/20 bg-gradient-to-br from-cyan-300/10 via-slate-900 to-blue-500/10 p-7 sm:p-10">
             <p className="text-sm font-bold uppercase tracking-[0.24em] text-cyan-300">NCERT core · JD Lee · classroom problem banks · cross-verified</p>
             <h2 className="mt-3 text-4xl font-black leading-tight sm:text-6xl">One continuous chapter, not a gallery of cards</h2>
-            <p className="mt-5 max-w-4xl text-base leading-8 text-[var(--text-body)]">
+            <p className="mt-5 max-w-4xl text-base leading-8 text-slate-300">
               Every periodic trend, preparation, reaction, exception, structure, industrial process, biological role and JEE Advanced problem sits
               inside the topic where it belongs — Group 1 and Group 2 built up from the same six governing principles (Section 1), so an exception
               like lithium or beryllium reads as a consequence of those principles rather than a fact to memorise separately. All diagrams below are

@@ -73,7 +73,7 @@ export default function BoardExaminerPage() {
         <div className="mx-auto max-w-3xl">
           <p className="mb-2 text-xs font-bold uppercase tracking-[0.3em] text-amber-300">Boards score what you write</p>
           <h1 className="text-3xl font-black tracking-tight sm:text-4xl">AI Board Examiner</h1>
-          <p className="mt-2 max-w-2xl text-[var(--text-muted)]">
+          <p className="mt-2 max-w-2xl text-zinc-400">
             Paste a board question and your written answer. The examiner marks it to the scheme, flags the keywords you
             missed, and shows a full-marks model answer.
           </p>
@@ -83,10 +83,10 @@ export default function BoardExaminerPage() {
       <div className="mx-auto max-w-3xl px-6 py-10 space-y-5">
         <div className="flex flex-wrap gap-3">
           <select value={exam} onChange={(e) => setExam(e.target.value)} className="rounded-xl border border-white/10 bg-white/[0.04] px-3 py-2 text-sm font-semibold">
-            {EXAMS.map((x) => <option key={x} className="bg-[var(--surface)]">{x}</option>)}
+            {EXAMS.map((x) => <option key={x} className="bg-slate-900">{x}</option>)}
           </select>
           <select value={maxMarks} onChange={(e) => setMaxMarks(Number(e.target.value))} className="rounded-xl border border-white/10 bg-white/[0.04] px-3 py-2 text-sm font-semibold">
-            {MARKS.map((m) => <option key={m} value={m} className="bg-[var(--surface)]">{m} marks</option>)}
+            {MARKS.map((m) => <option key={m} value={m} className="bg-slate-900">{m} marks</option>)}
           </select>
         </div>
 
@@ -108,7 +108,7 @@ export default function BoardExaminerPage() {
         </button>
 
         {result && (
-          <div className="space-y-5 rounded-2xl border border-white/[0.08] bg-[var(--surface)] p-5">
+          <div className="space-y-5 rounded-2xl border border-white/[0.08] bg-[#111827] p-5">
             <div className="flex items-center gap-4">
               <div className="text-4xl font-black text-amber-300">{result.marksAwarded}<span className="text-lg text-white/40">/{result.maxMarks}</span></div>
               <div className="flex-1">

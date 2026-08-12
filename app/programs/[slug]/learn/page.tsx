@@ -81,7 +81,7 @@ export default async function ProgramLearnPage({ params }: { params: Promise<{ s
                   <span className="rounded-md bg-white/[0.06] px-2 py-1 text-[11px] font-bold text-white/55">{mod.metric}</span>
                 </div>
                 <div className="mt-3 font-bold text-white">{mod.title}</div>
-                <div className="mt-1 flex-1 text-sm text-[var(--text-muted)]">{mod.desc}</div>
+                <div className="mt-1 flex-1 text-sm text-zinc-400">{mod.desc}</div>
                 <div className={`mt-3 text-sm font-semibold ${accent.text}`}>
                   Open <span className="inline-block transition group-hover:translate-x-1">→</span>
                 </div>
@@ -110,7 +110,7 @@ export default async function ProgramLearnPage({ params }: { params: Promise<{ s
               >
                 <span className="text-[10px] font-black uppercase text-cyan-300">Full Notes</span>
                 <h3 className="mt-3 text-xl font-black">P-Block Elements</h3>
-                <p className="mt-2 text-sm text-[var(--text-muted)]">Groups 15–18 complete notes.</p>
+                <p className="mt-2 text-sm text-zinc-400">Groups 15–18 complete notes.</p>
                 <div className="mt-4 font-bold text-cyan-300">Open full notes →</div>
               </Link>
 
@@ -120,7 +120,7 @@ export default async function ProgramLearnPage({ params }: { params: Promise<{ s
               >
                 <span className="text-[10px] font-black uppercase text-violet-300">Full Notes</span>
                 <h3 className="mt-3 text-xl font-black">Salt Analysis / Qualitative Analysis</h3>
-                <p className="mt-2 text-sm text-[var(--text-muted)]">Complete qualitative analysis notes.</p>
+                <p className="mt-2 text-sm text-zinc-400">Complete qualitative analysis notes.</p>
                 <div className="mt-4 font-bold text-violet-300">Open full notes →</div>
               </Link>
             </div>
@@ -194,7 +194,7 @@ export default async function ProgramLearnPage({ params }: { params: Promise<{ s
           ) : (
             <div className="rounded-2xl border border-white/10 bg-white/[0.02] p-8 text-center">
               <h3 className="text-lg font-bold">Verified chapter mapping in progress</h3>
-              <p className="mx-auto mt-2 max-w-lg text-sm leading-relaxed text-[var(--text-muted)]">
+              <p className="mx-auto mt-2 max-w-lg text-sm leading-relaxed text-zinc-400">
                 The chapter-by-chapter {name} syllabus is being mapped from official sources — no
                 unverified content ships here. The learn modules above are fully available and cover
                 the core Class 11–12 chemistry this program builds on.

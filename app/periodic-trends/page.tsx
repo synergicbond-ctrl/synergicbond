@@ -35,7 +35,7 @@ export default function PeriodicTrendsPage() {
   }
 
   function tileColor(v: number | null): string {
-    if (v == null) return "#101516";
+    if (v == null) return "#1f2937";
     return heat(norm(v));
   }
 
@@ -46,7 +46,7 @@ export default function PeriodicTrendsPage() {
   const highest = meta.invert ? sorted[0] : sorted[sorted.length - 1];
 
   return (
-    <main className="min-h-screen bg-[var(--background)] text-white">
+    <main className="min-h-screen bg-[#0B0F19] text-white">
       <div className="mx-auto max-w-[1300px] px-4 md:px-6 py-10">
         {/* Header */}
         <div className="mb-6">
@@ -76,7 +76,7 @@ export default function PeriodicTrendsPage() {
                 className={`flex items-center gap-2 rounded-xl px-4 py-2.5 text-sm font-bold transition ${
                   on
                     ? "bg-cyan-500 text-black shadow-[0_0_20px_-6px_rgba(34,211,238,0.8)]"
-                    : "border border-white/[0.08] bg-[var(--surface)] text-white/70 hover:text-white hover:border-cyan-400/30"
+                    : "border border-white/[0.08] bg-[#111827] text-white/70 hover:text-white hover:border-cyan-400/30"
                 }`}
               >
                 <span>{m.emoji}</span> {m.label}
@@ -88,7 +88,7 @@ export default function PeriodicTrendsPage() {
         <div className="grid gap-5 lg:grid-cols-2 lg:items-start">
           {/* LEFT — explanation */}
           <div className="space-y-4">
-            <div className="rounded-2xl border border-white/[0.08] bg-[var(--surface)] p-5">
+            <div className="rounded-2xl border border-white/[0.08] bg-[#111827] p-5">
               <h2 className="flex items-center gap-2 text-lg font-black">
                 <span>{meta.emoji}</span> {meta.label}
                 {meta.unit && <span className="text-xs font-semibold text-white/40">({meta.unit})</span>}
@@ -131,7 +131,7 @@ export default function PeriodicTrendsPage() {
               </ul>
             </div>
 
-            <div className="rounded-2xl border border-white/[0.08] bg-[var(--surface)] p-5">
+            <div className="rounded-2xl border border-white/[0.08] bg-[#111827] p-5">
               <h3 className="flex items-center gap-2 text-sm font-black text-white/80">
                 <Sparkles className="h-4 w-4 text-cyan-400" /> Quick facts
               </h3>
@@ -147,7 +147,7 @@ export default function PeriodicTrendsPage() {
 
           {/* RIGHT — heatmap + extremes */}
           <div className="space-y-4">
-            <div className="rounded-2xl border border-white/[0.08] bg-[var(--surface)] p-4">
+            <div className="rounded-2xl border border-white/[0.08] bg-[#111827] p-4">
               <div className="mb-3 flex items-center justify-between">
                 <p className="text-xs font-bold uppercase tracking-wider text-white/40">
                   Periodic table coloured by {meta.short.toLowerCase()}
@@ -185,7 +185,7 @@ export default function PeriodicTrendsPage() {
                 <span className="text-[11px] text-white/50">{meta.highLabel}</span>
               </div>
               <div className="mt-2 flex items-center gap-1.5 text-[10px] text-white/35">
-                <span className="inline-block h-2.5 w-2.5 rounded-[2px]" style={{ backgroundColor: "#101516" }} />
+                <span className="inline-block h-2.5 w-2.5 rounded-[2px]" style={{ backgroundColor: "#1f2937" }} />
                 no standard value in dataset
               </div>
             </div>
@@ -196,7 +196,7 @@ export default function PeriodicTrendsPage() {
                 { label: "Highest", item: highest },
                 { label: "Lowest", item: lowest },
               ].map(({ label, item }) => (
-                <div key={label} className="rounded-2xl border border-white/[0.08] bg-[var(--surface)] p-4">
+                <div key={label} className="rounded-2xl border border-white/[0.08] bg-[#111827] p-4">
                   <p className="text-[11px] font-bold uppercase tracking-wider text-white/40">{label}</p>
                   {item ? (
                     <>

@@ -31,7 +31,7 @@ function Shell({ children }: { children: React.ReactNode }) {
         <div className="mx-auto max-w-5xl">
           <p className="mb-2 text-xs font-bold uppercase tracking-[0.3em] text-emerald-300">Line-level NCERT coverage</p>
           <h1 className="text-3xl font-black tracking-tight sm:text-4xl">NCERT Blind Spots</h1>
-          <p className="mt-2 max-w-2xl text-[var(--text-muted)]">
+          <p className="mt-2 max-w-2xl text-zinc-400">
             Every NCERT line that shows up in exams, tracked against your real attempts — so the lines you&apos;ve never
             touched stop being blind spots.
           </p>
@@ -50,7 +50,7 @@ export default async function NcertPage() {
       <Shell>
         <div className="rounded-2xl border border-white/10 bg-white/[0.02] p-8 text-center">
           <h2 className="text-lg font-bold">Sign in to see your NCERT coverage</h2>
-          <p className="mx-auto mt-2 max-w-md text-sm text-[var(--text-muted)]">Coverage is tracked automatically from tests and practice.</p>
+          <p className="mx-auto mt-2 max-w-md text-sm text-zinc-400">Coverage is tracked automatically from tests and practice.</p>
           <Link href="/auth/signin" className="mt-5 inline-block rounded-xl bg-gradient-to-r from-cyan-400 to-sky-500 px-5 py-2.5 text-sm font-black text-black">
             Sign in →
           </Link>
@@ -76,7 +76,7 @@ export default async function NcertPage() {
       <Shell>
         <div className="rounded-2xl border border-white/10 bg-white/[0.02] p-8 text-center">
           <h2 className="text-lg font-bold">No coverage yet</h2>
-          <p className="mx-auto mt-2 max-w-md text-sm text-[var(--text-muted)]">
+          <p className="mx-auto mt-2 max-w-md text-sm text-zinc-400">
             Answer NCERT-linked questions in a{" "}
             <Link href="/pyq" className="font-bold text-cyan-400 hover:underline">PYQ</Link> set or{" "}
             <Link href="/tests" className="font-bold text-cyan-400 hover:underline">test</Link> — your line-level NCERT map builds automatically across {report.totalLines} tracked lines.

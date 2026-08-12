@@ -168,7 +168,7 @@ export default function ProgramSwitcher({
           role="listbox"
           aria-label="Switch active program"
           onKeyDown={handleListKeyDown}
-          className="absolute right-0 z-50 mt-2 w-72 rounded-xl border border-white/[0.08] bg-[var(--surface)] p-1.5 shadow-2xl shadow-black/50"
+          className="absolute right-0 z-50 mt-2 w-72 rounded-xl border border-white/[0.08] bg-[#111827] p-1.5 shadow-2xl shadow-black/50"
         >
           <p className="px-3 pb-1 pt-2 text-[10px] font-bold uppercase tracking-wider text-white/35">
             {isAllAccess ? "All-access programs" : "Your programs"}
@@ -185,7 +185,7 @@ export default function ProgramSwitcher({
                 disabled={busyKey !== null}
                 onClick={() => switchTo(p.key)}
                 className={`flex w-full items-center justify-between gap-2 rounded-lg px-3 py-2 text-left text-xs font-semibold transition focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400/60 ${
-                  isActive ? "bg-cyan-500/15 text-cyan-300" : "text-[var(--text-body)] hover:bg-white/5 hover:text-white"
+                  isActive ? "bg-cyan-500/15 text-cyan-300" : "text-gray-300 hover:bg-white/5 hover:text-white"
                 } ${busyKey === p.key ? "opacity-60" : ""}`}
               >
                 <span className="truncate">{p.name}</span>

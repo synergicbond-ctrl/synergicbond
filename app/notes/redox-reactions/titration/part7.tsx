@@ -37,7 +37,7 @@ export default function TitrationPart7() {
 
           <div className="grid gap-4 md:grid-cols-2">
             <DiagramBox title="Acidic resin — RH">
-              <div className="mx-auto max-w-sm rounded-2xl border-4 border-blue-400 bg-[var(--background)]/40 p-4">
+              <div className="mx-auto max-w-sm rounded-2xl border-4 border-blue-400 bg-slate-950/40 p-4">
                 <p className="mb-2 font-bold text-amber-800">Hard water ↓</p>
                 <div className="rounded-xl border border-dashed border-blue-300 p-4">
                   <p className="font-bold text-amber-800">Acidic resin</p>
@@ -52,7 +52,7 @@ export default function TitrationPart7() {
             </DiagramBox>
 
             <DiagramBox title="Basic resin — ROH">
-              <div className="mx-auto max-w-sm rounded-2xl border-4 border-blue-400 bg-[var(--background)]/40 p-4">
+              <div className="mx-auto max-w-sm rounded-2xl border-4 border-blue-400 bg-slate-950/40 p-4">
                 <div className="rounded-xl border border-dashed border-blue-300 p-4">
                   <p className="font-bold text-amber-800">Basic resin</p>
                   <p className="text-xl font-black text-amber-900">ROH</p>
@@ -253,7 +253,7 @@ export default function TitrationPart7() {
             m<sub>Ca(OH)₂ needed</sub> = (2 + 2.5) × 74 = 333 gm
           </FormulaBox>
 
-          <div className="rounded-2xl border border-[var(--border)] bg-[var(--background)]/30 p-6 text-center">
+          <div className="rounded-2xl border border-slate-800 bg-slate-950/30 p-6 text-center">
             <p className="text-xl font-black text-pink-600">— x — x —</p>
             <p className="mt-3 font-medium text-slate-600">
               

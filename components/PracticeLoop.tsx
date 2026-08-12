@@ -65,9 +65,9 @@ export default function PracticeLoop({ questions }: { questions: Question[]; cha
             <h4 className="font-bold text-sm text-emerald-900 dark:text-emerald-300">Review Error Drills:</h4>
             <div className="space-y-2">
               {mistakes.map((m, idx) => (
-                <div key={idx} className="p-3 bg-white dark:bg-[var(--surface)] rounded-xl border border-emerald-100 dark:border-emerald-800 text-xs">
+                <div key={idx} className="p-3 bg-white dark:bg-slate-900 rounded-xl border border-emerald-100 dark:border-emerald-800 text-xs">
                   <span className="font-bold text-rose-600 block">Q: {m.text}</span>
-                  <span className="text-slate-600 dark:text-[var(--text-muted)] mt-1 block">Correction: {m.solution}</span>
+                  <span className="text-slate-600 dark:text-slate-400 mt-1 block">Correction: {m.solution}</span>
                 </div>
               ))}
             </div>
@@ -85,14 +85,14 @@ export default function PracticeLoop({ questions }: { questions: Question[]; cha
   }
 
   return (
-    <div className="bg-white dark:bg-[var(--surface)] p-8 rounded-3xl border border-[var(--border)] dark:border-[var(--border)] shadow-sm space-y-6 max-w-2xl mx-auto">
+    <div className="bg-white dark:bg-slate-900 p-8 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-sm space-y-6 max-w-2xl mx-auto">
       <div className="flex justify-between items-center text-[10px] font-extrabold uppercase tracking-widest text-indigo-600 dark:text-indigo-400">
         <span>Active Recall Drill</span>
         <span>Question {currentIndex + 1} of {questions.length}</span>
       </div>
 
       <div className="space-y-2">
-        <span className="text-[10px] font-bold bg-slate-100 dark:bg-[var(--surface-2)] px-2.5 py-0.5 rounded text-slate-600 dark:text-[var(--text-muted)] uppercase tracking-wider">Target: {currentQ.conceptTitle}</span>
+        <span className="text-[10px] font-bold bg-slate-100 dark:bg-slate-800 px-2.5 py-0.5 rounded text-slate-600 dark:text-slate-400 uppercase tracking-wider">Target: {currentQ.conceptTitle}</span>
         <h3 className="text-base font-extrabold text-slate-800 dark:text-slate-100 leading-relaxed">{currentQ.text}</h3>
       </div>
 
@@ -100,15 +100,15 @@ export default function PracticeLoop({ questions }: { questions: Question[]; cha
         {currentQ.options.map((opt) => {
           const isSelected = selectedOption === opt;
           const isAns = opt.startsWith(currentQ.answer);
-          let btnStyle = "border-[var(--border)] dark:border-[var(--border)] hover:border-indigo-500 bg-slate-50/50 dark:bg-[var(--background)] text-slate-700 dark:text-[var(--text-body)]";
+          let btnStyle = "border-slate-200 dark:border-slate-800 hover:border-indigo-500 bg-slate-50/50 dark:bg-slate-950 text-slate-700 dark:text-slate-300";
 
           if (selectedOption) {
             if (isAns) {
               btnStyle = "border-emerald-500 bg-emerald-50 dark:bg-emerald-950/20 text-emerald-700 dark:text-emerald-300 font-bold";
             } else if (isSelected && !isAns) {
-              btnStyle = "border-rose-500 bg-rose-50 dark:bg-rose-950/20 text-rose-700 dark:text-[var(--text-body)] font-bold";
+              btnStyle = "border-rose-500 bg-rose-50 dark:bg-rose-950/20 text-rose-700 dark:text-slate-300 font-bold";
             } else {
-              btnStyle = "opacity-60 border-[var(--border)] dark:border-[var(--border)] bg-slate-50/20 text-slate-500 dark:text-slate-600";
+              btnStyle = "opacity-60 border-slate-200 dark:border-slate-800 bg-slate-50/20 text-slate-500 dark:text-slate-600";
             }
           }
 

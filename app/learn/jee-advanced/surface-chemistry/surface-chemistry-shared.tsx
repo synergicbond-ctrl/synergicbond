@@ -13,7 +13,7 @@ const tones: Record<Tone, string> = {
   amber: "border-amber-400/25 bg-amber-400/[0.055]",
   emerald: "border-emerald-400/25 bg-emerald-400/[0.055]",
   rose: "border-rose-400/25 bg-rose-400/[0.055]",
-  slate: "border-white/10 bg-[var(--background)]/70",
+  slate: "border-white/10 bg-slate-950/70",
 };
 
 export function K({ children }: { children: string }) {
@@ -43,7 +43,7 @@ export function Card({
         </div>
       )}
       <h3 className="text-xl font-bold tracking-tight text-white">{title}</h3>
-      <div className="mt-3 space-y-3 text-[15px] leading-7 text-[var(--text-body)]">{children}</div>
+      <div className="mt-3 space-y-3 text-[15px] leading-7 text-slate-300">{children}</div>
     </article>
   );
 }
@@ -64,7 +64,7 @@ export function FormulaCard({
       </div>
       <div className="overflow-x-auto px-4 py-5 text-slate-100 sm:px-6">{children}</div>
       {note && (
-        <div className="border-t border-white/10 px-5 py-3 text-sm leading-6 text-[var(--text-muted)]">
+        <div className="border-t border-white/10 px-5 py-3 text-sm leading-6 text-slate-400">
           {note}
         </div>
       )}
@@ -92,7 +92,7 @@ export function Section({
         <div>
           <p className="text-xs font-black uppercase tracking-[.22em] text-cyan-300">{eyebrow}</p>
           <h2 className="mt-2 text-3xl font-bold tracking-[-.035em] text-white sm:text-4xl">{title}</h2>
-          <div className="mt-4 max-w-5xl text-base leading-8 text-[var(--text-body)]">{intro}</div>
+          <div className="mt-4 max-w-5xl text-base leading-8 text-slate-300">{intro}</div>
         </div>
       </header>
       <div className="space-y-6">{children}</div>
@@ -113,7 +113,7 @@ export function DataTable({ headers, rows }: { headers: ReactNode[]; rows: React
             ))}
           </tr>
         </thead>
-        <tbody className="divide-y divide-white/[.075] text-[var(--text-body)]">
+        <tbody className="divide-y divide-white/[.075] text-slate-300">
           {rows.map((row, rowIndex) => (
             <tr key={rowIndex}>
               {row.map((cell, cellIndex) => (
@@ -161,7 +161,7 @@ export function Example({
   answer: ReactNode;
 }) {
   return (
-    <details open={number === 1} className="group overflow-hidden rounded-3xl border border-white/10 bg-[var(--background)]/70">
+    <details open={number === 1} className="group overflow-hidden rounded-3xl border border-white/10 bg-slate-950/70">
       <summary className="cursor-pointer list-none p-5 sm:p-6">
         <div className="flex gap-4">
           <span className="grid h-10 w-10 shrink-0 place-items-center rounded-2xl border border-violet-300/20 bg-violet-400/10 font-bold text-violet-200">
@@ -169,7 +169,7 @@ export function Example({
           </span>
           <div>
             <h3 className="text-xl font-semibold text-white">{title}</h3>
-            <div className="mt-2 text-[15px] leading-7 text-[var(--foreground)]">{question}</div>
+            <div className="mt-2 text-[15px] leading-7 text-slate-200">{question}</div>
             <div className="mt-3 text-xs font-bold uppercase tracking-[.16em] text-cyan-300 group-open:hidden">
               Open solution
             </div>
@@ -177,7 +177,7 @@ export function Example({
         </div>
       </summary>
       <div className="border-t border-white/10 p-5 sm:p-6">
-        <div className="space-y-3 text-[15px] leading-7 text-[var(--text-body)]">{solution}</div>
+        <div className="space-y-3 text-[15px] leading-7 text-slate-300">{solution}</div>
         <div className="mt-5 rounded-2xl border border-emerald-400/25 bg-emerald-400/[.065] px-4 py-3 text-emerald-100">
           <b className="mr-2 uppercase tracking-[.14em] text-emerald-300">Answer</b>
           {answer}
@@ -604,7 +604,7 @@ export function PartShell({
               JEE Advanced · Part {String(part).padStart(2, "0")} of {String(total).padStart(2, "0")}
             </div>
             <h1 className="mt-6 max-w-5xl text-4xl font-black tracking-[-.05em] text-white sm:text-6xl">{title}</h1>
-            <p className="mt-5 max-w-4xl text-lg leading-8 text-[var(--text-body)]">{description}</p>
+            <p className="mt-5 max-w-4xl text-lg leading-8 text-slate-300">{description}</p>
           </div>
         </header>
 
@@ -612,7 +612,7 @@ export function PartShell({
 
         <nav className="mx-auto grid max-w-[1320px] gap-4 px-4 pb-16 sm:px-7 md:grid-cols-2 lg:px-10">
           {previous ? (
-            <a href={`/learn/jee-advanced/surface-chemistry/parts/${previous.slug}`} className="rounded-3xl border border-white/10 bg-[var(--background)]/70 p-5">
+            <a href={`/learn/jee-advanced/surface-chemistry/parts/${previous.slug}`} className="rounded-3xl border border-white/10 bg-slate-950/70 p-5">
               <span className="text-xs uppercase tracking-widest text-slate-500">Previous</span>
               <div className="mt-2 font-semibold text-white">{previous.title}</div>
             </a>

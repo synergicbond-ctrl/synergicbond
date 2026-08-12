@@ -43,7 +43,7 @@ export default function TitrationPart2() {
             For primary standard solution:
           </p>
 
-          <div className="space-y-4 rounded-2xl border border-[var(--border)] bg-[var(--background)]/30 p-4">
+          <div className="space-y-4 rounded-2xl border border-slate-800 bg-slate-950/30 p-4">
             <h4 className="font-bold text-slate-900">
               (i) NaOH as solute
             </h4>
@@ -142,7 +142,7 @@ export default function TitrationPart2() {
             </WorkingLine>
 
             <DiagramBox title="Terephthalic acid">
-              <div className="mx-auto w-fit rounded-xl border border-[var(--border)] bg-[var(--background)]/40 p-4 font-mono text-lg">
+              <div className="mx-auto w-fit rounded-xl border border-slate-800 bg-slate-950/40 p-4 font-mono text-lg">
                 &nbsp;&nbsp;&nbsp;COOH
                 <br />
                 &nbsp;&nbsp;&nbsp;&nbsp;|

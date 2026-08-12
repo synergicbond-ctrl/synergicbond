@@ -140,19 +140,19 @@ function SustainabilityVisual() {
 
 export function PolymerVisualGallery() {
   return (
-    <section className="relative z-10 border-b border-[var(--border)]/80 bg-[#040812]/85">
+    <section className="relative z-10 border-b border-slate-800/80 bg-[#040812]/85">
       <div className="mx-auto max-w-7xl px-4 py-7 md:px-8">
         <div className="mb-4 flex items-end justify-between gap-4">
           <div>
             <p className="text-xs font-black uppercase tracking-[0.2em] text-cyan-300">Visual map</p>
             <h2 className="mt-1 text-xl font-black tracking-tight text-white md:text-2xl">Structure becomes material behaviour</h2>
           </div>
-          <p className="hidden max-w-md text-right text-sm leading-6 text-[var(--text-muted)] md:block">Dark scientific visuals connect chain architecture, heating response and sustainable design.</p>
+          <p className="hidden max-w-md text-right text-sm leading-6 text-slate-400 md:block">Dark scientific visuals connect chain architecture, heating response and sustainable design.</p>
         </div>
         <div className="grid gap-4 xl:grid-cols-3">
-          <div className="overflow-hidden rounded-[24px] border border-cyan-400/20 bg-[var(--background)]/70 p-1 shadow-xl shadow-cyan-950/20"><PolymerArchitectureVisual /></div>
-          <div className="overflow-hidden rounded-[24px] border border-rose-400/20 bg-[var(--background)]/70 p-1 shadow-xl shadow-rose-950/20"><ThermalBehaviourVisual /></div>
-          <div className="overflow-hidden rounded-[24px] border border-emerald-400/20 bg-[var(--background)]/70 p-1 shadow-xl shadow-emerald-950/20"><SustainabilityVisual /></div>
+          <div className="overflow-hidden rounded-[24px] border border-cyan-400/20 bg-slate-950/70 p-1 shadow-xl shadow-cyan-950/20"><PolymerArchitectureVisual /></div>
+          <div className="overflow-hidden rounded-[24px] border border-rose-400/20 bg-slate-950/70 p-1 shadow-xl shadow-rose-950/20"><ThermalBehaviourVisual /></div>
+          <div className="overflow-hidden rounded-[24px] border border-emerald-400/20 bg-slate-950/70 p-1 shadow-xl shadow-emerald-950/20"><SustainabilityVisual /></div>
         </div>
       </div>
     </section>

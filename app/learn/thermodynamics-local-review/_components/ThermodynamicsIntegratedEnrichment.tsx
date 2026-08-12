@@ -1163,7 +1163,7 @@ export default function ThermodynamicsIntegratedEnrichment({ part }: { part: num
         </div>
 
         <h2 className="mt-5 text-3xl font-black tracking-tight text-white md:text-4xl">{entry.title}</h2>
-        <p className="mt-3 max-w-4xl leading-7 text-[var(--text-body)]">{entry.subtitle}</p>
+        <p className="mt-3 max-w-4xl leading-7 text-slate-300">{entry.subtitle}</p>
 
         <div className="mt-7">
           <FlowGraphic entry={entry} part={part} />
@@ -1175,7 +1175,7 @@ export default function ThermodynamicsIntegratedEnrichment({ part }: { part: num
               <p className="text-xs font-black uppercase tracking-[0.18em] text-cyan-300">
                 Concept {index + 1}
               </p>
-              <p className="mt-3 text-sm leading-7 text-[var(--foreground)]">{paragraph}</p>
+              <p className="mt-3 text-sm leading-7 text-slate-200">{paragraph}</p>
             </article>
           ))}
         </div>
@@ -1185,7 +1185,7 @@ export default function ThermodynamicsIntegratedEnrichment({ part }: { part: num
             <article key={label} className="overflow-x-auto rounded-2xl border border-cyan-300/20 bg-black/25 p-4">
               <p className="text-xs font-black uppercase tracking-[0.18em] text-cyan-300">{label}</p>
               <p className="mt-3 whitespace-nowrap font-mono text-base font-black text-white">{value}</p>
-              <p className="mt-3 text-xs leading-5 text-[var(--text-body)]">{note}</p>
+              <p className="mt-3 text-xs leading-5 text-slate-300">{note}</p>
             </article>
           ))}
         </div>
@@ -1196,7 +1196,7 @@ export default function ThermodynamicsIntegratedEnrichment({ part }: { part: num
             {entry.traps.map(([term, warning]) => (
               <div key={term} className="rounded-2xl border border-rose-400/20 bg-rose-400/[0.06] p-4">
                 <p className="font-black text-white">{term}</p>
-                <p className="mt-1 text-sm leading-6 text-[var(--text-body)]">{warning}</p>
+                <p className="mt-1 text-sm leading-6 text-slate-300">{warning}</p>
               </div>
             ))}
           </div>
@@ -1206,15 +1206,15 @@ export default function ThermodynamicsIntegratedEnrichment({ part }: { part: num
           <p className="text-xs font-black uppercase tracking-[0.2em] text-amber-300">Original exam applications</p>
           <div className="mt-3 grid gap-4 lg:grid-cols-2">
             {entry.problems.map(([title, question, solution], index) => (
-              <details key={title} className="rounded-2xl border border-white/10 bg-[var(--surface)]/70 p-5">
+              <details key={title} className="rounded-2xl border border-white/10 bg-slate-900/70 p-5">
                 <summary className="cursor-pointer list-none font-black text-white">
                   <span className="mr-2 text-amber-300">◆</span>
                   {index + 1}. {title}
                 </summary>
-                <p className="mt-4 text-sm leading-7 text-[var(--foreground)]">{question}</p>
+                <p className="mt-4 text-sm leading-7 text-slate-200">{question}</p>
                 <div className="mt-4 rounded-xl border border-emerald-300/20 bg-emerald-300/[0.06] p-4">
                   <p className="text-xs font-black uppercase tracking-[0.18em] text-emerald-300">Solution</p>
-                  <p className="mt-2 text-sm leading-6 text-[var(--foreground)]">{solution}</p>
+                  <p className="mt-2 text-sm leading-6 text-slate-200">{solution}</p>
                 </div>
               </details>
             ))}

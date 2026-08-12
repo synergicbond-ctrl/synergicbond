@@ -21,7 +21,7 @@ export default function OlympiadPage() {
       <div className="border-b border-white/10 bg-gradient-to-b from-violet-950/30 to-black px-6 py-16 text-center">
         <div className="text-xs font-bold uppercase tracking-widest text-violet-400 mb-3">International Level</div>
         <h1 className="text-5xl font-black tracking-tight mb-4">Chemistry Olympiad</h1>
-        <p className="text-[var(--text-muted)] max-w-xl mx-auto text-lg">
+        <p className="text-zinc-400 max-w-xl mx-auto text-lg">
           NSEC → INChO → IChO preparation. Advanced theoretical and practical chemistry beyond JEE.
         </p>
         <div className="flex gap-3 justify-center mt-6 flex-wrap">
@@ -39,7 +39,7 @@ export default function OlympiadPage() {
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
             {tools.map((t) => (
               <Link key={t.label} href={t.href}
-                className={`bg-[var(--surface)] border ${t.color} rounded-2xl p-5 transition group`}>
+                className={`bg-zinc-900 border ${t.color} rounded-2xl p-5 transition group`}>
                 <div className="text-3xl mb-3">{t.icon}</div>
                 <div className="font-bold text-white group-hover:text-violet-300 transition">{t.label}</div>
                 <div className="text-zinc-500 text-sm mt-1">{t.desc}</div>
@@ -59,12 +59,12 @@ export default function OlympiadPage() {
           </p>
           <div className="grid md:grid-cols-3 gap-6">
             {topics.map((cat) => (
-              <div key={cat.label} className="bg-[var(--surface)] border border-[var(--border)] rounded-2xl p-5">
+              <div key={cat.label} className="bg-zinc-900 border border-zinc-800 rounded-2xl p-5">
                 <div className="font-bold text-violet-400 mb-3">{cat.label}</div>
                 <div className="space-y-2">
                   {cat.items.map((topic) => (
                     <Link key={topic} href={`/notes?topic=${encodeURIComponent(topic)}&exam=INChO&difficulty=incho`}
-                      className="flex items-center justify-between text-sm text-[var(--text-body)] hover:text-white hover:bg-white/5 px-3 py-2 rounded-lg transition">
+                      className="flex items-center justify-between text-sm text-zinc-300 hover:text-white hover:bg-white/5 px-3 py-2 rounded-lg transition">
                       <span>{topic}</span>
                       <span className="text-zinc-600">→</span>
                     </Link>

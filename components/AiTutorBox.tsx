@@ -60,10 +60,10 @@ export default function AiTutorBox({ chapter }: { chapter: string; concepts: str
   };
 
   return (
-    <div className="bg-white dark:bg-[var(--surface)] p-6 rounded-2xl shadow-sm border border-[var(--border)] dark:border-[var(--border)] space-y-4 animate-fadeIn">
+    <div className="bg-white dark:bg-slate-900 p-6 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800 space-y-4 animate-fadeIn">
       <div>
         <h3 className="text-xl font-black text-slate-800 dark:text-slate-50">Syllabus-Grounded AI Tutor</h3>
-        <p className="text-slate-500 dark:text-[var(--text-muted)] text-xs mt-0.5">Targeting: {chapter}</p>
+        <p className="text-slate-500 dark:text-slate-400 text-xs mt-0.5">Targeting: {chapter}</p>
       </div>
 
       <div className="grid grid-cols-2 gap-2">
@@ -77,7 +77,7 @@ export default function AiTutorBox({ chapter }: { chapter: string; concepts: str
             key={key}
             onClick={() => triggerAction(key)}
             disabled={loading}
-            className={`p-3 bg-slate-50 dark:bg-[var(--background)] border border-[var(--border)] dark:border-[var(--border)] rounded-xl text-[11px] font-bold text-indigo-700 dark:text-indigo-400 hover:border-indigo-300 transition text-left disabled:opacity-50 ${activeAction === key ? "border-indigo-400 bg-indigo-50 dark:bg-indigo-950/20" : ""}`}
+            className={`p-3 bg-slate-50 dark:bg-slate-950 border border-slate-100 dark:border-slate-800 rounded-xl text-[11px] font-bold text-indigo-700 dark:text-indigo-400 hover:border-indigo-300 transition text-left disabled:opacity-50 ${activeAction === key ? "border-indigo-400 bg-indigo-50 dark:bg-indigo-950/20" : ""}`}
           >
             {activeAction === key && loading ? "Loading..." : label}
           </button>
@@ -102,7 +102,7 @@ export default function AiTutorBox({ chapter }: { chapter: string; concepts: str
         <button
           onClick={() => triggerAction("viva")}
           disabled={loading}
-          className="p-3 bg-slate-50 dark:bg-[var(--background)] border border-[var(--border)] dark:border-[var(--border)] rounded-xl text-[11px] font-bold hover:border-slate-300 transition text-left disabled:opacity-50"
+          className="p-3 bg-slate-50 dark:bg-slate-950 border border-slate-100 dark:border-slate-800 rounded-xl text-[11px] font-bold hover:border-slate-300 transition text-left disabled:opacity-50"
         >
           {activeAction === "viva" && loading ? "Loading..." : "5 Viva Questions"}
         </button>
@@ -123,7 +123,7 @@ export default function AiTutorBox({ chapter }: { chapter: string; concepts: str
       )}
 
       {response && (
-        <div className="p-4 bg-slate-50 dark:bg-[var(--surface-2)]/60 border border-[var(--border)] dark:border-[var(--border-strong)] rounded-xl text-slate-700 dark:text-[var(--text-body)] text-xs font-medium leading-relaxed whitespace-pre-line animate-fadeIn">
+        <div className="p-4 bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700 rounded-xl text-slate-700 dark:text-slate-300 text-xs font-medium leading-relaxed whitespace-pre-line animate-fadeIn">
           {response}
           {loading && <span className="animate-pulse">▊</span>}
         </div>

@@ -5,21 +5,21 @@ import { InlineMath, BlockMath } from "@/components/math/react-katex";
 
 /* Reusable UI Components */
 const ConceptCard = ({ title, children }: { title: string; children: React.ReactNode }) => (
-  <div className="my-6 rounded-2xl border border-cyan-400/30 bg-[var(--surface)]/90 p-6 shadow-xl">
-    <h3 className="border-b border-[var(--border)] pb-3 text-lg font-bold text-cyan-300">{title}</h3>
-    <div className="mt-4 space-y-3 text-sm leading-relaxed text-[var(--foreground)]">{children}</div>
+  <div className="my-6 rounded-2xl border border-cyan-400/30 bg-slate-900/90 p-6 shadow-xl">
+    <h3 className="border-b border-slate-800 pb-3 text-lg font-bold text-cyan-300">{title}</h3>
+    <div className="mt-4 space-y-3 text-sm leading-relaxed text-slate-200">{children}</div>
   </div>
 );
 
 const FormulaBox = ({ title, formula, description }: { title: string; formula: string; description?: string }) => (
-  <div className="my-6 rounded-2xl border border-amber-400/30 bg-[var(--background)] p-6 shadow-lg text-center space-y-3">
+  <div className="my-6 rounded-2xl border border-amber-400/30 bg-slate-950 p-6 shadow-lg text-center space-y-3">
     <span className="rounded-full bg-amber-500/20 px-3 py-1 text-xs font-bold uppercase tracking-widest text-amber-300">
       {title}
     </span>
     <div className="overflow-x-auto py-2">
       <BlockMath math={formula} />
     </div>
-    {description && <p className="text-xs text-[var(--text-muted)] font-sans">{description}</p>}
+    {description && <p className="text-xs text-slate-400 font-sans">{description}</p>}
   </div>
 );
 
@@ -35,14 +35,14 @@ const WorkedExample = ({
   result: React.ReactNode;
 }) => (
   <div className="my-8 rounded-3xl border border-rose-400/30 bg-gradient-to-b from-slate-900 via-slate-900 to-slate-950 p-6 shadow-2xl md:p-8 space-y-5">
-    <div className="flex items-center justify-between border-b border-[var(--border)] pb-4">
+    <div className="flex items-center justify-between border-b border-slate-800 pb-4">
       <span className="rounded-full bg-rose-500/20 px-3 py-1 text-xs font-bold uppercase tracking-widest text-rose-300">
         Worked Example
       </span>
-      <span className="text-xs font-bold text-[var(--text-muted)]">{title}</span>
+      <span className="text-xs font-bold text-slate-400">{title}</span>
     </div>
     <div className="text-sm font-medium leading-relaxed text-slate-100">{problem}</div>
-    <div className="rounded-2xl border border-[var(--border)]/80 bg-[var(--background)]/80 p-5 space-y-3 font-mono text-xs text-[var(--text-body)]">
+    <div className="rounded-2xl border border-slate-800/80 bg-slate-950/80 p-5 space-y-3 font-mono text-xs text-slate-300">
       {steps}
     </div>
     <div className="rounded-xl border border-emerald-500/30 bg-emerald-500/10 p-4 text-center text-xs font-bold text-emerald-300">
@@ -58,14 +58,14 @@ const StepBox = ({ number, title, children }: { number: number; title: string; c
     </span>
     <div>
       <h4 className="text-xs font-bold text-white mb-1">{title}</h4>
-      <div className="text-xs text-[var(--text-body)] leading-relaxed">{children}</div>
+      <div className="text-xs text-slate-300 leading-relaxed">{children}</div>
     </div>
   </div>
 );
 
 export default function MoleConceptPart15() {
   return (
-    <main className="min-h-screen bg-[var(--background)] px-4 py-8 text-slate-100 md:px-10">
+    <main className="min-h-screen bg-slate-950 px-4 py-8 text-slate-100 md:px-10">
       <article className="mx-auto max-w-5xl space-y-10">
         {/* Module Header */}
         <header className="rounded-3xl border border-cyan-400/30 bg-gradient-to-br from-slate-900 via-slate-900 to-slate-950 p-6 shadow-2xl md:p-8">
@@ -73,14 +73,14 @@ export default function MoleConceptPart15() {
             <span className="rounded-full bg-cyan-500/20 px-3 py-1 text-xs font-bold uppercase tracking-[0.2em] text-cyan-300">
               Quantitative Chemistry Lesson
             </span>
-            <span className="text-xs font-bold text-[var(--text-muted)]">Dissociation, Association &amp; Final Review</span>
+            <span className="text-xs font-bold text-slate-400">Dissociation, Association &amp; Final Review</span>
           </div>
 
           <h1 className="mt-4 text-3xl font-black text-white md:text-4xl">
             Dissociation Equilibrium, Degree of Dissociation &amp; Complete Course Audit
           </h1>
 
-          <p className="mt-3 text-sm leading-relaxed text-[var(--text-body)] md:text-base">
+          <p className="mt-3 text-sm leading-relaxed text-slate-300 md:text-base">
             The culminating module of the Synergic Bond Mole Concept curriculum. Master how gas dissociation and association alter observed molecular mass and vapour density, quantify the exact degree of dissociation (<InlineMath math="\alpha" />), establish rigorous boundary conditions on apparent mixture weights, and review all core stoichiometric relationships.
           </p>
         </header>
@@ -144,7 +144,7 @@ export default function MoleConceptPart15() {
             <p>
               For any true binary mixture of two distinct gases <InlineMath math="\text{A}" /> (<InlineMath math="M_{\text{A}}" />) and <InlineMath math="\text{B}" /> (<InlineMath math="M_{\text{B}}" /> with <InlineMath math="M_{\text{A}} < M_{\text{B}}" />), the apparent molecular mass of the mixture <strong className="text-amber-300">must strictly lie inside the open interval between the two pure molar masses</strong>:
             </p>
-            <div className="my-2 rounded-xl bg-[var(--background)] p-4 font-mono text-xs text-center text-cyan-300">
+            <div className="my-2 rounded-xl bg-slate-950 p-4 font-mono text-xs text-center text-cyan-300">
               <InlineMath math="M_{\text{A}} < M_{\text{mix}} < M_{\text{B}}" />
             </div>
             <p>
@@ -153,7 +153,7 @@ export default function MoleConceptPart15() {
             <p>
               Furthermore, introducing an inert diluent gas alters the overall average molecular weight:
             </p>
-            <ul className="list-disc ml-5 space-y-1 text-xs text-[var(--text-body)] pt-1">
+            <ul className="list-disc ml-5 space-y-1 text-xs text-slate-300 pt-1">
               <li>
                 <strong className="text-cyan-300">Light Diluents (e.g., Helium <InlineMath math="M = 4" />):</strong> Strictly <strong className="text-white">decrease</strong> the average molecular mass of the system.
               </li>
@@ -175,63 +175,63 @@ export default function MoleConceptPart15() {
               Across this comprehensive curriculum, every concept, derivation, and numerical example has been transformed into a rigorous, interactive masterclass:
             </p>
             <div className="grid gap-3 pt-2 text-xs md:grid-cols-2 font-mono">
-              <div className="rounded-xl border border-[var(--border)] bg-[var(--background)] p-3">
+              <div className="rounded-xl border border-slate-800 bg-slate-950 p-3">
                 <strong className="text-cyan-300 block mb-1">Foundations of the Mole</strong>
                 SI definition, Avogadro constant (<InlineMath math="N_A" />), elementary charge, and particle-to-mole conversions.
               </div>
-              <div className="rounded-xl border border-[var(--border)] bg-[var(--background)] p-3">
+              <div className="rounded-xl border border-slate-800 bg-slate-950 p-3">
                 <strong className="text-amber-300 block mb-1">Avogadro Constant &amp; Counting Particles</strong>
                 Atomic vs mass number, nuclear mass defect (<InlineMath math="\Delta m" />), and Einstein <InlineMath math="E = \Delta m c^2" />.
               </div>
-              <div className="rounded-xl border border-[var(--border)] bg-[var(--background)] p-3">
+              <div className="rounded-xl border border-slate-800 bg-slate-950 p-3">
                 <strong className="text-cyan-300 block mb-1">Atomic Mass &amp; Mass Scale</strong>
                 Historical scales (H, O, C-12), unified mass (<InlineMath math="\text{u}" />), and Gram Atomic Mass (<InlineMath math="\text{GAM}" />).
               </div>
-              <div className="rounded-xl border border-[var(--border)] bg-[var(--background)] p-3">
+              <div className="rounded-xl border border-slate-800 bg-slate-950 p-3">
                 <strong className="text-lime-300 block mb-1">Gram Atomic Mass &amp; Conversions</strong>
                 Atomic radius, crystal packing fractions, line-up calculations, and solid steel ball inventory.
               </div>
-              <div className="rounded-xl border border-[var(--border)] bg-[var(--background)] p-3">
+              <div className="rounded-xl border border-slate-800 bg-slate-950 p-3">
                 <strong className="text-cyan-300 block mb-1">Molecular Mass &amp; Formula Mass</strong>
                 Molecular mass, Gram Molecular Mass (<InlineMath math="\text{GMM}" />), Lavoisier mass conservation, and largest-number ranking.
               </div>
-              <div className="rounded-xl border border-[var(--border)] bg-[var(--background)] p-3">
+              <div className="rounded-xl border border-slate-800 bg-slate-950 p-3">
                 <strong className="text-amber-300 block mb-1">Formula Units &amp; Hydrated Salts</strong>
                 Virus specific volume calculations, formula units in hydrated crystals, and equal-hydrogen stoichiometry.
               </div>
-              <div className="rounded-xl border border-[var(--border)] bg-[var(--background)] p-3">
+              <div className="rounded-xl border border-slate-800 bg-slate-950 p-3">
                 <strong className="text-cyan-300 block mb-1">Charge Counting in Ions</strong>
                 Polyatomic ionic charge/electron inventories, Coulombs of charge, and <InlineMath math="\text{AB}_2/\text{A}_2\text{B}_3" /> algebraic trap analysis.
               </div>
-              <div className="rounded-xl border border-[var(--border)] bg-[var(--background)] p-3">
+              <div className="rounded-xl border border-slate-800 bg-slate-950 p-3">
                 <strong className="text-lime-300 block mb-1">Compound Composition Problems</strong>
                 Simultaneous linear algebraic mass extraction, organometallic analysis, and <InlineMath math="\text{CH}_4" /> molecule extraction.
               </div>
-              <div className="rounded-xl border border-[var(--border)] bg-[var(--background)] p-3">
+              <div className="rounded-xl border border-slate-800 bg-slate-950 p-3">
                 <strong className="text-cyan-300 block mb-1">Gaseous Molar Volume</strong>
                 Standard molar volume (<InlineMath math="22.4\text{ L}" />) at STP/NTP, <InlineMath math="PV = nRT" />, and exact <InlineMath math="R" /> unit conversions.
               </div>
-              <div className="rounded-xl border border-[var(--border)] bg-[var(--background)] p-3">
+              <div className="rounded-xl border border-slate-800 bg-slate-950 p-3">
                 <strong className="text-amber-300 block mb-1">Ideal Gas Applications</strong>
                 Metric volume unit chains, absolute Kelvin transformations, and the Combined Gas Law (<InlineMath math="P_1 V_1 / T_1 = P_2 V_2 / T_2" />).
               </div>
-              <div className="rounded-xl border border-[var(--border)] bg-[var(--background)] p-3">
+              <div className="rounded-xl border border-slate-800 bg-slate-950 p-3">
                 <strong className="text-cyan-300 block mb-1">Gas Density &amp; Vapour Density</strong>
                 Absolute gas density (<InlineMath math="PM = dRT" />), Vapour Density (<InlineMath math="\text{VD} = M/2" />), and mass spectrometry separation physics.
               </div>
-              <div className="rounded-xl border border-[var(--border)] bg-[var(--background)] p-3">
+              <div className="rounded-xl border border-slate-800 bg-slate-950 p-3">
                 <strong className="text-lime-300 block mb-1">Isotopes &amp; Average Atomic Mass</strong>
                 Isotopic abundance weighted averages across Cl, B, Li, O, and N, and average neutron counts in C mixtures.
               </div>
-              <div className="rounded-xl border border-[var(--border)] bg-[var(--background)] p-3">
+              <div className="rounded-xl border border-slate-800 bg-slate-950 p-3">
                 <strong className="text-cyan-300 block mb-1">Gas Mixtures &amp; Partial Pressure</strong>
                 Dalton&apos;s and Amagat&apos;s partial laws, volume vs mole percentage equality, and volumetric mixture analysis.
               </div>
-              <div className="rounded-xl border border-[var(--border)] bg-[var(--background)] p-3">
+              <div className="rounded-xl border border-slate-800 bg-slate-950 p-3">
                 <strong className="text-amber-300 block mb-1">Ozonized Oxygen &amp; Mixture Analysis</strong>
                 Mass composition reciprocal formulas, binary hydrocarbon atomic ratios, and ozonized oxygen kinetics at STP.
               </div>
-              <div className="rounded-xl border border-[var(--border)] bg-[var(--background)] p-3">
+              <div className="rounded-xl border border-slate-800 bg-slate-950 p-3">
                 <strong className="text-cyan-300 block mb-1">Dissociation, Association &amp; Review</strong>
                 Degree of dissociation (<InlineMath math="\alpha" />), apparent molecular weight reduction, and complete curriculum synthesis.
               </div>
@@ -246,7 +246,7 @@ export default function MoleConceptPart15() {
         </section>
 
         {/* Footer info */}
-        <footer className="rounded-2xl border border-[var(--border)] bg-[var(--surface)]/60 p-6 text-center text-xs text-[var(--text-muted)]">
+        <footer className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 text-center text-xs text-slate-400">
           <p>Synergic Bond Quantitative Chemistry • Lesson: Dissociation, Association and Final Review</p>
         </footer>
       </article>

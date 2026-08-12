@@ -301,7 +301,7 @@ export default function Navbar() {
                   key={l.label}
                   href={l.href}
                   className={`flex items-center gap-1.5 whitespace-nowrap px-3 py-2 rounded-lg text-sm font-medium transition ${
-                    active ? "text-[var(--accent)] bg-[var(--accent-wash)]" : "text-[var(--text-body)] hover:text-white hover:bg-white/[0.05]"
+                    active ? "text-[var(--accent)] bg-[var(--accent-wash)]" : "text-gray-300 hover:text-white hover:bg-white/[0.05]"
                   }`}
                 >
                   <Icon className="h-4 w-4" /> {l.label}
@@ -315,7 +315,7 @@ export default function Navbar() {
           <Link
             href="/"
             className={`flex items-center gap-1.5 whitespace-nowrap px-2.5 2xl:px-3 py-2 rounded-lg text-sm font-medium transition ${
-              pathname === "/" ? "text-white bg-white/[0.06]" : "text-[var(--text-body)] hover:text-white hover:bg-white/[0.05]"
+              pathname === "/" ? "text-white bg-white/[0.06]" : "text-gray-300 hover:text-white hover:bg-white/[0.05]"
             }`}
           >
             <Home className="h-4 w-4" /> Home
@@ -330,7 +330,7 @@ export default function Navbar() {
               <div key={menu.title} className="relative" onMouseEnter={() => setOpenMenu(menu.title)} onMouseLeave={() => setOpenMenu(null)}>
                 <button
                   className={`flex items-center gap-1 whitespace-nowrap px-2.5 2xl:px-3 py-2 rounded-lg text-sm font-medium transition ${
-                    open || hasActive ? "text-white bg-white/[0.06]" : "text-[var(--text-body)] hover:text-white hover:bg-white/[0.05]"
+                    open || hasActive ? "text-white bg-white/[0.06]" : "text-gray-300 hover:text-white hover:bg-white/[0.05]"
                   }`}
                 >
                   {menu.title} <ChevronDown className={`h-3.5 w-3.5 transition-transform ${open ? "rotate-180" : ""}`} />
@@ -364,7 +364,7 @@ export default function Navbar() {
                               const active = pathname === it.href;
                               return (
                                 <Link key={it.label} href={it.href} onClick={() => setOpenMenu(null)} className={`flex items-center gap-2.5 px-2 py-2 rounded-[var(--radius-sm)] transition ${active ? "bg-[var(--accent-wash)]" : "hover:bg-white/[0.05]"}`}>
-                                  <Icon className={`h-4 w-4 flex-shrink-0 ${active ? "text-[var(--accent)]" : "text-[var(--text-muted)]"}`} />
+                                  <Icon className={`h-4 w-4 flex-shrink-0 ${active ? "text-[var(--accent)]" : "text-gray-400"}`} />
                                   <span className="min-w-0">
                                     <span className={`block text-[14px] font-semibold leading-[1.25] ${active ? "text-[var(--accent)]" : "text-[var(--foreground)]"}`}>{it.label}</span>
                                     <span className="block text-[12px] text-[var(--text-muted)] leading-[1.35]">{it.desc}</span>
@@ -408,7 +408,7 @@ export default function Navbar() {
                 key={l.href}
                 href={l.href}
                 className={`flex items-center gap-1.5 whitespace-nowrap px-2.5 2xl:px-3 py-2 rounded-lg text-sm font-medium transition ${
-                  pathname === l.href ? "text-white bg-white/[0.06]" : "text-[var(--text-body)] hover:text-white hover:bg-white/[0.05]"
+                  pathname === l.href ? "text-white bg-white/[0.06]" : "text-gray-300 hover:text-white hover:bg-white/[0.05]"
                 }`}
               >
                 <Icon className="h-4 w-4" /> {l.label}
@@ -417,7 +417,7 @@ export default function Navbar() {
           })}
 
           {/* Search quick-link (utility) */}
-          <Link href="/search" className="flex items-center gap-1.5 whitespace-nowrap px-2.5 2xl:px-3 py-2 rounded-lg text-sm font-medium text-[var(--text-body)] hover:text-white hover:bg-white/[0.05] transition">
+          <Link href="/search" className="flex items-center gap-1.5 whitespace-nowrap px-2.5 2xl:px-3 py-2 rounded-lg text-sm font-medium text-gray-300 hover:text-white hover:bg-white/[0.05] transition">
             <Search className="h-4 w-4" /> {t("nav.search")}
           </Link>
         </nav>
@@ -457,7 +457,7 @@ export default function Navbar() {
                       className={`flex items-center gap-2.5 w-full px-3 py-2 rounded-lg text-xs font-medium transition ${
                         lang === l.code
                           ? "bg-[var(--accent-wash)] text-[var(--accent)] font-bold"
-                          : "text-[var(--text-muted)] hover:text-white hover:bg-white/5"
+                          : "text-gray-400 hover:text-white hover:bg-white/5"
                       }`}
                     >
                       <span className="text-sm">{l.flag}</span>
@@ -497,19 +497,19 @@ export default function Navbar() {
                       <p className="text-[10px] text-white/40 uppercase tracking-wider">Signed in as</p>
                       <p className="text-xs font-semibold text-white truncate">{email}</p>
                     </div>
-                    <Link href="/dashboard" onClick={() => setAcctOpen(false)} className="flex items-center gap-2.5 w-full px-3 py-2 rounded-lg text-xs font-medium text-[var(--text-body)] hover:text-white hover:bg-white/5 transition">
+                    <Link href="/dashboard" onClick={() => setAcctOpen(false)} className="flex items-center gap-2.5 w-full px-3 py-2 rounded-lg text-xs font-medium text-gray-300 hover:text-white hover:bg-white/5 transition">
                       <LayoutDashboard className="h-4 w-4 text-[var(--accent)]" /> Home
                     </Link>
-                    <Link href="/dashboard/profile" onClick={() => setAcctOpen(false)} className="flex items-center gap-2.5 w-full px-3 py-2 rounded-lg text-xs font-medium text-[var(--text-body)] hover:text-white hover:bg-white/5 transition">
+                    <Link href="/dashboard/profile" onClick={() => setAcctOpen(false)} className="flex items-center gap-2.5 w-full px-3 py-2 rounded-lg text-xs font-medium text-gray-300 hover:text-white hover:bg-white/5 transition">
                       <UserCircle className="h-4 w-4 text-[var(--accent)]" /> My Profile
                     </Link>
-                    <Link href="/dashboard/programs" onClick={() => setAcctOpen(false)} className="flex items-center gap-2.5 w-full px-3 py-2 rounded-lg text-xs font-medium text-[var(--text-body)] hover:text-white hover:bg-white/5 transition">
+                    <Link href="/dashboard/programs" onClick={() => setAcctOpen(false)} className="flex items-center gap-2.5 w-full px-3 py-2 rounded-lg text-xs font-medium text-gray-300 hover:text-white hover:bg-white/5 transition">
                       <GraduationCap className="h-4 w-4 text-[var(--accent)]" /> My Programs
                     </Link>
-                    <Link href="/dashboard/subscription" onClick={() => setAcctOpen(false)} className="flex items-center gap-2.5 w-full px-3 py-2 rounded-lg text-xs font-medium text-[var(--text-body)] hover:text-white hover:bg-white/5 transition">
+                    <Link href="/dashboard/subscription" onClick={() => setAcctOpen(false)} className="flex items-center gap-2.5 w-full px-3 py-2 rounded-lg text-xs font-medium text-gray-300 hover:text-white hover:bg-white/5 transition">
                       <CreditCard className="h-4 w-4 text-[var(--accent)]" /> Subscription &amp; Billing
                     </Link>
-                    <Link href="/achievements" onClick={() => setAcctOpen(false)} className="flex items-center gap-2.5 w-full px-3 py-2 rounded-lg text-xs font-medium text-[var(--text-body)] hover:text-white hover:bg-white/5 transition">
+                    <Link href="/achievements" onClick={() => setAcctOpen(false)} className="flex items-center gap-2.5 w-full px-3 py-2 rounded-lg text-xs font-medium text-gray-300 hover:text-white hover:bg-white/5 transition">
                       <Medal className="h-4 w-4 text-yellow-400" /> Achievements
                     </Link>
                     <button onClick={signOut} className="flex items-center gap-2.5 w-full px-3 py-2 rounded-lg text-xs font-medium text-red-400 hover:bg-red-500/10 transition">
@@ -540,7 +540,7 @@ export default function Navbar() {
 
           <button
             onClick={() => setMenuOpen(!menuOpen)}
-            className="flex h-10 w-10 items-center justify-center rounded-xl text-[var(--text-muted)] transition hover:bg-white/[0.05] hover:text-white sm:h-11 sm:w-11 xl:hidden"
+            className="flex h-10 w-10 items-center justify-center rounded-xl text-gray-400 transition hover:bg-white/[0.05] hover:text-white sm:h-11 sm:w-11 xl:hidden"
             aria-label="Menu"
           >
             {menuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
@@ -588,7 +588,7 @@ export default function Navbar() {
                   className={`flex items-center gap-2 text-sm px-3 py-2.5 rounded-xl transition border ${
                     active
                       ? "text-white font-bold border-[var(--border-strong)] bg-[var(--accent-wash)]"
-                      : "text-[var(--text-muted)] border-white/[0.06] hover:text-white hover:bg-white/5"
+                      : "text-gray-400 border-white/[0.06] hover:text-white hover:bg-white/5"
                   }`}
                 >
                   <Icon className={`h-3.5 w-3.5 ${active ? "text-[var(--accent)]" : "text-gray-500"}`} />

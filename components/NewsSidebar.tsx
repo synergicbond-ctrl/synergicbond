@@ -6,7 +6,7 @@ const updates = [
     "Multimodal Doubt Solver supports image + voice input",
     "7-language interface dropdown rolled out",
   ]},
-  { tag: "Exam News", icon: Newspaper, accent: "#e3b341", lines: [
+  { tag: "Exam News", icon: Newspaper, accent: "#FFD700", lines: [
     "JEE Main 2026 Session 1 registration window opens Nov",
     "NEET 2026 syllabus revision confirmed by NTA",
     "INChO selection via NSEC — register before Nov",

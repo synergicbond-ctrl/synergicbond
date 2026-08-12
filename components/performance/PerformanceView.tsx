@@ -9,7 +9,7 @@ import type { PerformanceData, PlatformStats } from "@/lib/performance/types";
 
 function Section({ title, icon, children }: { title: string; icon: string; children: React.ReactNode }) {
   return (
-    <section className="rounded-2xl border border-white/[0.08] bg-[var(--surface)] p-4 md:p-5">
+    <section className="rounded-2xl border border-white/[0.08] bg-[#111827] p-4 md:p-5">
       <h2 className="mb-3 text-sm font-bold uppercase tracking-wider text-white/70">
         <span className="mr-1.5">{icon}</span>{title}
       </h2>

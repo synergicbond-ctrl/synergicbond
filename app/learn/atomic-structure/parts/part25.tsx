@@ -22,7 +22,7 @@ export default function Part25() {
             According to deBroglie — like light, material particle also have dual nature of wave as well as particle (wavicle).
           </p>
         </NoteBlock>
-        <DiagramBox title="Electron wavelength set by accelerating voltage"><DeBroglieVoltageVisual /><p className="mt-3 text-sm text-[var(--text-body)]">The curve is generated from the stated non-relativistic relation. It shows why higher accelerating voltage improves electron-beam resolution by reducing <MathText math="\lambda" />.</p></DiagramBox>
+        <DiagramBox title="Electron wavelength set by accelerating voltage"><DeBroglieVoltageVisual /><p className="mt-3 text-sm text-slate-300">The curve is generated from the stated non-relativistic relation. It shows why higher accelerating voltage improves electron-beam resolution by reducing <MathText math="\lambda" />.</p></DiagramBox>
         <NoteBlock title="Derivation of de Broglie equation">
           <p>According to Planck&apos;s quantum theory,</p>
           <FormulaLine math="E=h\nu\qquad\cdots\text{(i)}" />

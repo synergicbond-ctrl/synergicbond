@@ -27,7 +27,7 @@ export default function Part35() {
       <SourcePage page={110}>
         <ConceptCard title="Why a wave packet needs a function">
           <p>A single sinusoid is extended over all space. The function <MathText math="\Psi(x,y,z,t)" /> is introduced here to represent the localised packet and its time evolution.</p>
-          <figure className="mt-4 rounded-2xl border border-cyan-400/20 bg-cyan-400/[0.04] p-4"><WavePacketVisual /><figcaption className="mt-3 text-sm text-[var(--text-body)]">This is a localisation sketch; it does not replace the stated properties of Ψ below.</figcaption></figure>
+          <figure className="mt-4 rounded-2xl border border-cyan-400/20 bg-cyan-400/[0.04] p-4"><WavePacketVisual /><figcaption className="mt-3 text-sm text-slate-300">This is a localisation sketch; it does not replace the stated properties of Ψ below.</figcaption></figure>
         </ConceptCard>
         <NoteBlock title="Schrödinger Wave Equation (boxed heading)">
           <DiagramBox title="Sine wave sketch">

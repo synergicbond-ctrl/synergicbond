@@ -18,7 +18,7 @@ export default function FormulaSection({
           Formula Sheet
         </h2>
 
-        <p className="text-[var(--text-muted)]">
+        <p className="text-gray-400">
           Important formulas for quick revision.
         </p>
       </div>
@@ -43,7 +43,7 @@ export default function FormulaSection({
               </div>
 
               {formula.description && (
-                <p className="mt-3 text-sm text-[var(--text-muted)]">
+                <p className="mt-3 text-sm text-gray-400">
                   {formula.description}
                 </p>
               )}

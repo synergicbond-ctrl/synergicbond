@@ -9,7 +9,7 @@ export default function RelatedReactions({ items }: { items: string[] }) {
         <Link
           key={r}
           href={`/learn/reactions/${reactionSlug(r)}`}
-          className="rounded-xl border border-white/[0.08] bg-[var(--surface)] px-3 py-2 text-[13px] text-white/80 transition hover:border-purple-400/30 hover:text-white"
+          className="rounded-xl border border-white/[0.08] bg-[#111827] px-3 py-2 text-[13px] text-white/80 transition hover:border-purple-400/30 hover:text-white"
         >
           {r} →
         </Link>

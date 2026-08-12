@@ -20,7 +20,7 @@ const CATEGORY_TONE: Record<MistakeCategory, string> = {
 function MistakeRow({ item }: { item: MistakeItem }) {
   const [reattempting, setReattempting] = useState(false);
   return (
-    <div className="rounded-2xl border border-white/[0.08] bg-[var(--surface)] p-4">
+    <div className="rounded-2xl border border-white/[0.08] bg-[#111827] p-4">
       <div className="mb-2 flex flex-wrap items-center gap-2 text-[11px]">
         <span className={`rounded-full border px-2 py-0.5 font-bold ${CATEGORY_TONE[item.category]}`}>{item.category}</span>
         <span className="rounded bg-white/5 px-2 py-0.5 text-white/60">{item.chapter}</span>

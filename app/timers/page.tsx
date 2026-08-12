@@ -10,8 +10,8 @@ export const metadata = {
 
 export default function TimersPage() {
   return (
-    <main className="min-h-screen bg-[var(--background)] text-white">
-      <div className="border-b border-white/10 bg-gradient-to-b from-cyan-950/20 to-[#0b0f10] px-4 py-8 sm:px-6 sm:py-10">
+    <main className="min-h-screen bg-[#0B1220] text-white">
+      <div className="border-b border-white/10 bg-gradient-to-b from-cyan-950/20 to-[#0B1220] px-4 py-8 sm:px-6 sm:py-10">
         <div className="mx-auto max-w-4xl">
           <p className="mb-2 text-xs font-bold uppercase tracking-[0.3em] text-cyan-300">Focus tools</p>
           <h1 className="text-2xl font-black tracking-tight sm:text-4xl">Smart Timers</h1>

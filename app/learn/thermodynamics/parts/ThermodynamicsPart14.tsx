@@ -33,17 +33,17 @@ function Section({
   children: React.ReactNode;
 }) {
   return (
-    <section className="rounded-[2rem] border border-white/10 bg-[var(--background)]/80 p-5 shadow-2xl shadow-black/20 backdrop-blur md:p-8">
+    <section className="rounded-[2rem] border border-white/10 bg-slate-950/80 p-5 shadow-2xl shadow-black/20 backdrop-blur md:p-8">
       <div className="flex items-start gap-4">
         <span className="grid h-10 w-10 shrink-0 place-items-center rounded-2xl border border-cyan-300/30 bg-cyan-300/10 text-sm font-black text-cyan-200">
           {index}
         </span>
         <div>
           <h2 className="text-2xl font-black tracking-tight text-white md:text-3xl">{title}</h2>
-          {subtitle ? <p className="mt-1 text-sm leading-6 text-[var(--text-muted)]">{subtitle}</p> : null}
+          {subtitle ? <p className="mt-1 text-sm leading-6 text-slate-400">{subtitle}</p> : null}
         </div>
       </div>
-      <div className="mt-6 space-y-5 text-[15px] leading-7 text-[var(--foreground)] md:text-base">{children}</div>
+      <div className="mt-6 space-y-5 text-[15px] leading-7 text-slate-200 md:text-base">{children}</div>
     </section>
   );
 }
@@ -61,7 +61,7 @@ function ConceptLens({
     <aside className={`rounded-2xl border p-5 ${toneMap[tone]}`}>
       <p className="text-xs font-black uppercase tracking-[0.2em]">Concept lens</p>
       <h3 className="mt-2 text-lg font-black text-white">{title}</h3>
-      <div className="mt-2 text-sm leading-6 text-[var(--foreground)]">{children}</div>
+      <div className="mt-2 text-sm leading-6 text-slate-200">{children}</div>
     </aside>
   );
 }
@@ -382,7 +382,7 @@ function CarnotDerivation() {
           <div className="mt-3 rounded-xl bg-black/25 p-3 text-center font-mono text-sm font-black text-white">
             {step.equation}
           </div>
-          <p className="mt-3 text-sm leading-6 text-[var(--foreground)]">{step.text}</p>
+          <p className="mt-3 text-sm leading-6 text-slate-200">{step.text}</p>
         </article>
       ))}
     </div>
@@ -460,7 +460,7 @@ function CarnotTheoremCards() {
       {cards.map((card) => (
         <article key={card.title} className={`rounded-3xl border p-5 ${toneMap[card.tone]}`}>
           <h3 className="text-lg font-black text-white">{card.title}</h3>
-          <p className="mt-3 text-sm leading-6 text-[var(--foreground)]">{card.text}</p>
+          <p className="mt-3 text-sm leading-6 text-slate-200">{card.text}</p>
         </article>
       ))}
     </div>
@@ -482,7 +482,7 @@ function VanDerWaalsProof() {
         <Chip tone="violet">WORKING-FLUID INDEPENDENCE</Chip>
       </div>
 
-      <p className="mt-5 leading-7 text-[var(--foreground)]">
+      <p className="mt-5 leading-7 text-slate-200">
         Let the working gas obey
         {String.raw`\((P+a n^2/V^2)(V-nb)=nRT\)`}, with heat capacity {String.raw`\(C_{V,m}\)`} treated as constant.
         The four cycle legs remain reversible.
@@ -543,7 +543,7 @@ function EngineComparisonTable() {
   return (
     <div className="overflow-x-auto rounded-2xl border border-white/10">
       <table className="min-w-full border-collapse text-left text-sm">
-        <thead className="bg-[var(--surface)]">
+        <thead className="bg-slate-900">
           <tr>
             <th className="px-4 py-3 font-black text-white">Engine type</th>
             <th className="px-4 py-3 font-black text-white">Key features</th>
@@ -551,13 +551,13 @@ function EngineComparisonTable() {
             <th className="px-4 py-3 font-black text-white">Meaning</th>
           </tr>
         </thead>
-        <tbody className="divide-y divide-white/10 bg-[var(--background)]/70">
+        <tbody className="divide-y divide-white/10 bg-slate-950/70">
           {rows.map(([type, feature, efficiency, meaning]) => (
             <tr key={type}>
               <td className="px-4 py-3 font-semibold text-slate-100">{type}</td>
-              <td className="px-4 py-3 text-[var(--text-body)]">{feature}</td>
+              <td className="px-4 py-3 text-slate-300">{feature}</td>
               <td className="px-4 py-3 font-mono text-cyan-200">{efficiency}</td>
-              <td className="px-4 py-3 text-[var(--text-body)]">{meaning}</td>
+              <td className="px-4 py-3 text-slate-300">{meaning}</td>
             </tr>
           ))}
         </tbody>
@@ -671,15 +671,15 @@ function ProblemLadder() {
   return (
     <div className="grid gap-4 lg:grid-cols-2">
       {problems.map((item) => (
-        <article key={item.title} className="group rounded-2xl border border-white/10 bg-[var(--surface)]/70 p-5">
+        <article key={item.title} className="group rounded-2xl border border-white/10 bg-slate-900/70 p-5">
           <h3 className=" font-black text-white">
             <span className="mr-2 text-amber-300">◆</span>
             {item.title}
           </h3>
-          <p className="mt-4 leading-7 text-[var(--foreground)]">{item.question}</p>
+          <p className="mt-4 leading-7 text-slate-200">{item.question}</p>
           <div className="mt-4 rounded-xl border border-emerald-300/20 bg-emerald-300/[0.06] p-4">
             <p className="text-xs font-black uppercase tracking-[0.2em] text-emerald-300">Solution</p>
-            <p className="mt-2 text-sm leading-6 text-[var(--foreground)]">{item.solution}</p>
+            <p className="mt-2 text-sm leading-6 text-slate-200">{item.solution}</p>
           </div>
         </article>
       ))}
@@ -734,21 +734,21 @@ function TrapTable() {
   return (
     <div className="overflow-x-auto rounded-2xl border border-white/10">
       <table className="min-w-full border-collapse text-left text-sm">
-        <thead className="bg-[var(--surface)]">
+        <thead className="bg-slate-900">
           <tr>
             <th className="px-4 py-3 font-black text-white">Tempting statement</th>
             <th className="px-4 py-3 font-black text-white">Verdict</th>
             <th className="px-4 py-3 font-black text-white">Correction</th>
           </tr>
         </thead>
-        <tbody className="divide-y divide-white/10 bg-[var(--background)]/70">
+        <tbody className="divide-y divide-white/10 bg-slate-950/70">
           {traps.map(([statement, verdict, correction]) => (
             <tr key={statement}>
               <td className="px-4 py-3 font-semibold text-slate-100">{statement}</td>
               <td className="px-4 py-3">
                 <span className="rounded-full bg-rose-400/15 px-3 py-1 text-xs font-black text-rose-300">{verdict}</span>
               </td>
-              <td className="px-4 py-3 leading-6 text-[var(--text-body)]">{correction}</td>
+              <td className="px-4 py-3 leading-6 text-slate-300">{correction}</td>
             </tr>
           ))}
         </tbody>
@@ -786,7 +786,7 @@ function DailyLifeGrid() {
       {items.map((item) => (
         <article key={item.title} className={`rounded-3xl border p-5 ${toneMap[item.tone]}`}>
           <h3 className="text-xl font-black text-white">{item.title}</h3>
-          <p className="mt-2 text-sm leading-6 text-[var(--foreground)]">{item.text}</p>
+          <p className="mt-2 text-sm leading-6 text-slate-200">{item.text}</p>
         </article>
       ))}
     </div>
@@ -816,7 +816,7 @@ export default function ThermodynamicsPart14() {
               <h1 className="mt-4 max-w-4xl text-4xl font-black tracking-[-0.045em] text-white md:text-6xl">
                 Maximum efficiency is fixed by temperature—not by clever working fluid
               </h1>
-              <p className="mt-6 max-w-3xl text-lg leading-8 text-[var(--text-body)]">
+              <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-300">
                 A heat engine must absorb heat from a hot source, reject part to a cold sink, and convert only the remainder into work.
                 The reversible Carnot cycle establishes the absolute efficiency ceiling.
               </p>
@@ -1055,7 +1055,7 @@ export default function ThermodynamicsPart14() {
             ].map(([term, meaning]) => (
               <div key={term} className="rounded-2xl border border-white/10 bg-black/25 p-4">
                 <p className="font-black text-white">{term}</p>
-                <p className="mt-1 text-sm leading-6 text-[var(--text-body)]">{meaning}</p>
+                <p className="mt-1 text-sm leading-6 text-slate-300">{meaning}</p>
               </div>
             ))}
           </div>

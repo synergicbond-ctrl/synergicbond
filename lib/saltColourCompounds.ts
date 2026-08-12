@@ -205,7 +205,7 @@ export const COMPOUND_COLOURS: CompoundColour[] = [
 export const COLOUR_FAMILIES: { key: string; hex: string }[] = [
   { key: "White", hex: "#f8fafc" },
   { key: "Yellow", hex: "#fde047" },
-  { key: "Black", hex: "#101516" },
+  { key: "Black", hex: "#1f2937" },
   { key: "Brown", hex: "#92400e" },
   { key: "Red", hex: "#dc2626" },
   { key: "Pink", hex: "#f472b6" },

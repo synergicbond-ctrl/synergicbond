@@ -33,17 +33,17 @@ function Section({
   children: React.ReactNode;
 }) {
   return (
-    <section className="rounded-[2rem] border border-white/10 bg-[var(--background)]/80 p-5 shadow-2xl shadow-black/20 backdrop-blur md:p-8">
+    <section className="rounded-[2rem] border border-white/10 bg-slate-950/80 p-5 shadow-2xl shadow-black/20 backdrop-blur md:p-8">
       <div className="flex items-start gap-4">
         <span className="grid h-10 w-10 shrink-0 place-items-center rounded-2xl border border-cyan-300/30 bg-cyan-300/10 text-sm font-black text-cyan-200">
           {index}
         </span>
         <div>
           <h2 className="text-2xl font-black tracking-tight text-white md:text-3xl">{title}</h2>
-          {subtitle ? <p className="mt-1 text-sm leading-6 text-[var(--text-muted)]">{subtitle}</p> : null}
+          {subtitle ? <p className="mt-1 text-sm leading-6 text-slate-400">{subtitle}</p> : null}
         </div>
       </div>
-      <div className="mt-6 space-y-5 text-[15px] leading-7 text-[var(--foreground)] md:text-base">{children}</div>
+      <div className="mt-6 space-y-5 text-[15px] leading-7 text-slate-200 md:text-base">{children}</div>
     </section>
   );
 }
@@ -61,7 +61,7 @@ function ConceptLens({
     <aside className={`rounded-2xl border p-5 ${toneMap[tone]}`}>
       <p className="text-xs font-black uppercase tracking-[0.2em]">Synergic Bond Concept Lens</p>
       <h3 className="mt-2 text-lg font-black text-white">{title}</h3>
-      <div className="mt-2 text-sm leading-6 text-[var(--foreground)]">{children}</div>
+      <div className="mt-2 text-sm leading-6 text-slate-200">{children}</div>
     </aside>
   );
 }
@@ -118,11 +118,11 @@ function ProcessCard({
         {differential}
       </div>
 
-      <p className="mt-4 text-sm leading-6 text-[var(--foreground)]">{meaning}</p>
+      <p className="mt-4 text-sm leading-6 text-slate-200">{meaning}</p>
 
       <div className="mt-4">
-        <p className="text-xs font-black uppercase tracking-[0.18em] text-[var(--text-muted)]">Examples</p>
-        <ul className="mt-2 space-y-2 text-sm leading-6 text-[var(--foreground)]">
+        <p className="text-xs font-black uppercase tracking-[0.18em] text-slate-400">Examples</p>
+        <ul className="mt-2 space-y-2 text-sm leading-6 text-slate-200">
           {examples.map((item) => (
             <li key={item} className="flex gap-2">
               <span className="text-cyan-300">◆</span>
@@ -409,7 +409,7 @@ function EquilibriumCompass() {
             </div>
             <span className="rounded-xl bg-black/25 px-3 py-2 font-mono font-black text-white">{card.symbol}</span>
           </div>
-          <p className="mt-3 text-sm leading-6 text-[var(--foreground)]">{card.absence}</p>
+          <p className="mt-3 text-sm leading-6 text-slate-200">{card.absence}</p>
         </article>
       ))}
     </div>
@@ -552,15 +552,15 @@ function ProblemLadder() {
   return (
     <div className="grid gap-4 lg:grid-cols-2">
       {processProblems.map((item) => (
-        <article key={item.title} className="group rounded-2xl border border-white/10 bg-[var(--surface)]/70 p-5">
+        <article key={item.title} className="group rounded-2xl border border-white/10 bg-slate-900/70 p-5">
           <h3 className=" font-black text-white">
             <span className="mr-2 text-amber-300">◆</span>
             {item.title}
           </h3>
-          <p className="mt-4 leading-7 text-[var(--foreground)]">{item.question}</p>
+          <p className="mt-4 leading-7 text-slate-200">{item.question}</p>
           <div className="mt-4 rounded-xl border border-emerald-300/20 bg-emerald-300/[0.06] p-4">
             <p className="text-xs font-black uppercase tracking-[0.2em] text-emerald-300">Solution</p>
-            <p className="mt-2 text-sm leading-6 text-[var(--foreground)]">{item.solution}</p>
+            <p className="mt-2 text-sm leading-6 text-slate-200">{item.solution}</p>
           </div>
         </article>
       ))}
@@ -605,21 +605,21 @@ function CorrectionTable() {
   return (
     <div className="overflow-x-auto rounded-2xl border border-white/10">
       <table className="min-w-full border-collapse text-left text-sm">
-        <thead className="bg-[var(--surface)]">
+        <thead className="bg-slate-900">
           <tr>
             <th className="px-4 py-3 font-black text-white">Statement</th>
             <th className="px-4 py-3 font-black text-white">Verdict</th>
             <th className="px-4 py-3 font-black text-white">Scientifically correct form</th>
           </tr>
         </thead>
-        <tbody className="divide-y divide-white/10 bg-[var(--background)]/70">
+        <tbody className="divide-y divide-white/10 bg-slate-950/70">
           {correctionRows.map(([statement, verdict, correction]) => (
             <tr key={statement}>
               <td className="px-4 py-3 font-semibold text-slate-100">{statement}</td>
               <td className="px-4 py-3">
                 <span className="rounded-full bg-rose-400/15 px-3 py-1 text-xs font-black text-rose-300">{verdict}</span>
               </td>
-              <td className="px-4 py-3 leading-6 text-[var(--text-body)]">{correction}</td>
+              <td className="px-4 py-3 leading-6 text-slate-300">{correction}</td>
             </tr>
           ))}
         </tbody>
@@ -651,7 +651,7 @@ export default function ThermodynamicsPart04() {
               <h1 className="mt-4 max-w-4xl text-4xl font-black tracking-[-0.045em] text-white md:text-6xl">
                 A process is a path through state space
               </h1>
-              <p className="mt-6 max-w-3xl text-lg leading-8 text-[var(--text-body)]">
+              <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-300">
                 Isothermal, isobaric, isochoric and adiabatic processes impose different constraints.
                 Reversibility asks a deeper question: can an infinitesimal change retrace the path while restoring
                 both the system and the surroundings?
@@ -670,7 +670,7 @@ export default function ThermodynamicsPart04() {
                 ].map(([title, text]) => (
                   <div key={title} className="rounded-xl bg-black/25 p-4">
                     <p className="font-black text-white">{title}</p>
-                    <p className="mt-1 text-sm text-[var(--text-body)]">{text}</p>
+                    <p className="mt-1 text-sm text-slate-300">{text}</p>
                   </div>
                 ))}
               </div>
@@ -773,10 +773,10 @@ export default function ThermodynamicsPart04() {
             </ConceptLens>
           </div>
 
-          <div className="rounded-3xl border border-white/10 bg-[var(--surface)]/70 p-5">
+          <div className="rounded-3xl border border-white/10 bg-slate-900/70 p-5">
             <p className="text-xs font-black uppercase tracking-[0.2em] text-cyan-300">Preview relation</p>
             <p className="mt-3 font-mono text-xl font-black text-white">PV<sup>γ</sup> = constant</p>
-            <p className="mt-2 text-sm leading-6 text-[var(--text-body)]">
+            <p className="mt-2 text-sm leading-6 text-slate-300">
               This relation applies to a reversible adiabatic change of an ideal gas with appropriate heat-capacity assumptions.
               Its complete derivation will appear in the process-calculation module.
             </p>
@@ -859,7 +859,7 @@ export default function ThermodynamicsPart04() {
           <div className="grid gap-4 lg:grid-cols-2">
             <article className="rounded-3xl border border-emerald-300/20 bg-emerald-300/[0.05] p-5">
               <Chip tone="emerald">REVERSIBLE LIMIT</Chip>
-              <ul className="mt-4 space-y-3 text-sm leading-6 text-[var(--foreground)]">
+              <ul className="mt-4 space-y-3 text-sm leading-6 text-slate-200">
                 <li>• Driving and opposing forces differ infinitesimally.</li>
                 <li>• The direction can be reversed by an infinitesimal change.</li>
                 <li>• System passes through a continuous sequence of equilibrium states.</li>
@@ -871,7 +871,7 @@ export default function ThermodynamicsPart04() {
 
             <article className="rounded-3xl border border-rose-300/20 bg-rose-300/[0.05] p-5">
               <Chip tone="rose">IRREVERSIBLE REALITY</Chip>
-              <ul className="mt-4 space-y-3 text-sm leading-6 text-[var(--foreground)]">
+              <ul className="mt-4 space-y-3 text-sm leading-6 text-slate-200">
                 <li>• Finite driving force produces a definite rate.</li>
                 <li>• Reversing one external control does not restore all surroundings.</li>
                 <li>• Intermediate pressure, temperature or composition may be non-uniform.</li>
@@ -908,7 +908,7 @@ export default function ThermodynamicsPart04() {
             </ConceptLens>
           </div>
 
-          <p className="rounded-2xl border border-amber-300/20 bg-amber-300/[0.06] p-4 text-sm leading-6 text-[var(--foreground)]">
+          <p className="rounded-2xl border border-amber-300/20 bg-amber-300/[0.06] p-4 text-sm leading-6 text-slate-200">
             During a strongly irreversible process, the equilibrium equation of state can be used reliably at the initial
             and final equilibrium states. A single uniform bulk pressure or temperature may not exist throughout the
             intermediate non-equilibrium state.
@@ -946,19 +946,19 @@ export default function ThermodynamicsPart04() {
           <div className="grid gap-4 lg:grid-cols-3">
             <article className="rounded-2xl border border-cyan-300/20 bg-cyan-300/[0.05] p-5">
               <p className="text-xs font-black uppercase tracking-[0.2em] text-cyan-300">P–V plane</p>
-              <p className="mt-2 text-sm leading-6 text-[var(--foreground)]">
+              <p className="mt-2 text-sm leading-6 text-slate-200">
                 Isobar: horizontal. Isochore: vertical. Ideal-gas isotherm: rectangular hyperbola.
               </p>
             </article>
             <article className="rounded-2xl border border-amber-300/20 bg-amber-300/[0.05] p-5">
               <p className="text-xs font-black uppercase tracking-[0.2em] text-amber-300">T–V plane</p>
-              <p className="mt-2 text-sm leading-6 text-[var(--foreground)]">
+              <p className="mt-2 text-sm leading-6 text-slate-200">
                 Isotherm: horizontal. Isochore: vertical. Ideal-gas isobar: straight line through the origin in kelvin variables.
               </p>
             </article>
             <article className="rounded-2xl border border-violet-300/20 bg-violet-300/[0.05] p-5">
               <p className="text-xs font-black uppercase tracking-[0.2em] text-violet-300">P–T plane</p>
-              <p className="mt-2 text-sm leading-6 text-[var(--foreground)]">
+              <p className="mt-2 text-sm leading-6 text-slate-200">
                 Isobar: horizontal. Isotherm: vertical. Ideal-gas isochore: straight line through the origin in kelvin variables.
               </p>
             </article>
@@ -999,7 +999,7 @@ export default function ThermodynamicsPart04() {
             ].map(([term, meaning]) => (
               <div key={term} className="rounded-2xl border border-white/10 bg-black/25 p-4">
                 <p className="font-black text-white">{term}</p>
-                <p className="mt-1 text-sm leading-6 text-[var(--text-body)]">{meaning}</p>
+                <p className="mt-1 text-sm leading-6 text-slate-300">{meaning}</p>
               </div>
             ))}
           </div>

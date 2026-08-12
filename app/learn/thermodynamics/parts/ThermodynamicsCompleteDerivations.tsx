@@ -566,13 +566,13 @@ function DerivationBlock({ block, idx }: { block: DerivBlock; idx: number }) {
             key={si}
             className="grid gap-2 border-b border-white/5 pb-2 pt-1 md:grid-cols-[160px_1fr]"
           >
-            <span className="text-xs font-black uppercase tracking-wider text-[var(--text-muted)]">
+            <span className="text-xs font-black uppercase tracking-wider text-slate-400">
               {step.label}
             </span>
             <span className="font-mono text-sm text-slate-100">
               {step.math}
               {step.note ? (
-                <span className="ml-2 text-xs text-[var(--text-muted)] not-italic">
+                <span className="ml-2 text-xs text-slate-400 not-italic">
                   — {step.note}
                 </span>
               ) : null}
@@ -589,14 +589,14 @@ export default function ThermodynamicsCompleteDerivations({ part }: { part: numb
   if (blocks.length === 0) return null;
 
   return (
-    <section className="rounded-[2rem] border border-violet-400/20 bg-[var(--background)]/80 p-5 shadow-2xl shadow-black/20 md:p-8">
+    <section className="rounded-[2rem] border border-violet-400/20 bg-slate-950/80 p-5 shadow-2xl shadow-black/20 md:p-8">
       <p className="text-xs font-black uppercase tracking-[0.2em] text-violet-300">
         Complete Derivations
       </p>
       <h2 className="mt-2 text-2xl font-black tracking-tight text-white md:text-3xl">
         Step-by-step mathematical derivations
       </h2>
-      <p className="mt-2 text-sm leading-6 text-[var(--text-muted)]">
+      <p className="mt-2 text-sm leading-6 text-slate-400">
         Each derivation below shows every intermediate step with stated assumptions, so that a student can follow the logic line by line.
       </p>
       <div className="mt-6 space-y-5">

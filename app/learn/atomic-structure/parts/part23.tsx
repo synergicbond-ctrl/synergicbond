@@ -14,7 +14,7 @@ export default function Part23() {
           </p>
           <FormulaLine math="\text{Distance travelled before disintegration}=(5.86\times10^{-24}\ \text{s})(10^{8}\ \text{m/s})=5.86\times10^{-16}\ \text{m}" />
         </NoteBlock>
-        <DiagramBox title="What a localisation estimate means"><UncertaintyTradeoffVisual /><p className="mt-3 text-sm text-[var(--text-body)]">The extremely small bullet result is physical, not a failure of the calculation: Planck&apos;s constant makes quantum uncertainty negligible on everyday scales.</p></DiagramBox>
+        <DiagramBox title="What a localisation estimate means"><UncertaintyTradeoffVisual /><p className="mt-3 text-sm text-slate-300">The extremely small bullet result is physical, not a failure of the calculation: Planck&apos;s constant makes quantum uncertainty negligible on everyday scales.</p></DiagramBox>
         <NoteBlock title="Problem — bullet uncertainty">
           <p>
             A bullet of mass 0.03 kg is moving with a velocity of 500 m s&#8315;&#185;. The speed is measured up to an accuracy

@@ -41,9 +41,9 @@ export function PaywallGate({ chapterId, children }: Props) {
       <div className="max-w-md w-full text-center">
         {/* Blurred preview hint */}
         <div className="relative mb-8 rounded-2xl overflow-hidden">
-          <div className="blur-sm opacity-30 pointer-events-none select-none bg-[var(--surface)] p-6 rounded-2xl text-left">
+          <div className="blur-sm opacity-30 pointer-events-none select-none bg-zinc-900 p-6 rounded-2xl text-left">
             <h3 className="text-white font-bold mb-2">Chapter Content</h3>
-            <p className="text-[var(--text-muted)] text-sm">This chapter contains comprehensive notes, formulas, reactions, mechanisms, practice questions, and PYQ analysis...</p>
+            <p className="text-zinc-400 text-sm">This chapter contains comprehensive notes, formulas, reactions, mechanisms, practice questions, and PYQ analysis...</p>
             <div className="mt-4 space-y-2">
               {previewLineWidths.map((width, i) => (
                 <div key={i} className="h-3 bg-zinc-700 rounded" style={{ width }} />
@@ -54,14 +54,14 @@ export function PaywallGate({ chapterId, children }: Props) {
         </div>
 
         {/* Lock Icon */}
-        <div className="w-16 h-16 bg-[var(--surface)] border border-[var(--border-strong)] rounded-2xl flex items-center justify-center mx-auto mb-4">
+        <div className="w-16 h-16 bg-zinc-900 border border-zinc-700 rounded-2xl flex items-center justify-center mx-auto mb-4">
           <span className="text-2xl">🔒</span>
         </div>
 
         <h2 className="text-2xl font-bold text-white mb-2">
           {reason === "not_logged_in" ? "Login to Continue" : "Unlock with Pro"}
         </h2>
-        <p className="text-[var(--text-muted)] mb-6 text-sm leading-relaxed">
+        <p className="text-zinc-400 mb-6 text-sm leading-relaxed">
           {reason === "not_logged_in"
             ? "Create a free account to access 2 chapters per subject and 10 AI messages per day."
             : "Upgrade to SYNERGIC BOND Pro to unlock every chapter, unlimited AI tutor, full mock exams, and more."}
@@ -77,7 +77,7 @@ export function PaywallGate({ chapterId, children }: Props) {
             </a>
             <a
               href="/auth/signin"
-              className="w-full border border-[var(--border-strong)] hover:border-zinc-500 text-white py-3 rounded-xl transition text-center text-sm"
+              className="w-full border border-zinc-700 hover:border-zinc-500 text-white py-3 rounded-xl transition text-center text-sm"
             >
               Already have an account? Sign In
             </a>
@@ -97,8 +97,8 @@ export function PaywallGate({ chapterId, children }: Props) {
         )}
 
         {/* Free chapters note */}
-        <div className="mt-6 bg-[var(--surface)] border border-[var(--border)] rounded-xl p-4 text-left">
-          <div className="text-xs font-semibold text-[var(--text-muted)] mb-2">FREE CHAPTERS (no login needed)</div>
+        <div className="mt-6 bg-zinc-900 border border-zinc-800 rounded-xl p-4 text-left">
+          <div className="text-xs font-semibold text-zinc-400 mb-2">FREE CHAPTERS (no login needed)</div>
           <div className="text-xs text-zinc-500 leading-relaxed">
             Mole Concept · Atomic Structure · GOC · Hydrocarbons · Periodic Table · Chemical Bonding · Intro to Spectroscopy · Gravimetric Analysis
           </div>

@@ -12,14 +12,14 @@ const CLASS_STYLE: Record<SnapSolveClassification, { cls: string; emoji: string 
   Inorganic:  { cls: "bg-cyan-500/15 text-cyan-300 border-cyan-500/25", emoji: "⚗️" },
   Physical:   { cls: "bg-violet-500/15 text-violet-300 border-violet-500/25", emoji: "📐" },
   Analytical: { cls: "bg-amber-500/15 text-amber-300 border-amber-500/25", emoji: "🔬" },
-  General:    { cls: "bg-slate-500/15 text-[var(--text-body)] border-slate-500/25", emoji: "🧪" },
+  General:    { cls: "bg-slate-500/15 text-slate-300 border-slate-500/25", emoji: "🧪" },
 };
 
 // Color shifts by accuracy: emerald >= 90%, amber 70-89%, red below.
 function confidenceTone(c: number): string {
   if (c >= 0.9) return "#34D399";
-  if (c >= 0.7) return "#e3b341";
-  return "#ff775d";
+  if (c >= 0.7) return "#FBBF24";
+  return "#F87171";
 }
 
 /**
@@ -211,15 +211,15 @@ export default function SnapSolveResult({ data }: { data: SnapSolveResponse }) {
           Try one of these for an exact solution:
         </p>
         <div className="mt-5 grid w-full max-w-sm gap-2.5 text-left">
-          <div className="flex items-center gap-3 rounded-xl border border-white/[0.06] bg-[var(--surface)] px-4 py-3">
+          <div className="flex items-center gap-3 rounded-xl border border-white/[0.06] bg-[#111827] px-4 py-3">
             <Keyboard className="h-4 w-4 shrink-0 text-cyan-300" />
             <span className="text-sm text-white/80">Type the formula or question manually</span>
           </div>
-          <div className="flex items-center gap-3 rounded-xl border border-white/[0.06] bg-[var(--surface)] px-4 py-3">
+          <div className="flex items-center gap-3 rounded-xl border border-white/[0.06] bg-[#111827] px-4 py-3">
             <SunMedium className="h-4 w-4 shrink-0 text-cyan-300" />
             <span className="text-sm text-white/80">Retake under clearer lighting / higher contrast</span>
           </div>
-          <div className="flex items-center gap-3 rounded-xl border border-white/[0.06] bg-[var(--surface)] px-4 py-3">
+          <div className="flex items-center gap-3 rounded-xl border border-white/[0.06] bg-[#111827] px-4 py-3">
             <Camera className="h-4 w-4 shrink-0 text-cyan-300" />
             <span className="text-sm text-white/80">Crop tightly to a single question</span>
           </div>
@@ -231,7 +231,7 @@ export default function SnapSolveResult({ data }: { data: SnapSolveResponse }) {
   const cls = CLASS_STYLE[data.classification];
 
   return (
-    <div className="rounded-2xl border border-white/[0.08] bg-[var(--surface)] p-5 space-y-5">
+    <div className="rounded-2xl border border-white/[0.08] bg-[#111827] p-5 space-y-5">
       {/* scoped keyframes for the sequential timeline reveal */}
       <style>{`@keyframes snapFadeUp{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}`}</style>
 
@@ -253,19 +253,19 @@ export default function SnapSolveResult({ data }: { data: SnapSolveResponse }) {
       {data.solution.steps.length > 0 && (
         <div>
           <p className="mb-3 text-[10px] font-bold uppercase tracking-wider text-white/40">Step-by-step solution</p>
-          <div className="border-l-2 border-[var(--border)] ml-4 pl-6 space-y-6">
+          <div className="border-l-2 border-slate-800 ml-4 pl-6 space-y-6">
             {data.solution.steps.map((s, i) => (
               <div
                 key={s.stepNumber}
                 className="relative will-change-transform"
                 style={{ animation: "snapFadeUp 0.45s ease-out both", animationDelay: `${i * 0.12}s` }}
               >
-                <span className="absolute -left-[33px] flex h-5 w-5 items-center justify-center rounded-full bg-cyan-500/20 text-[11px] font-black text-cyan-300 ring-4 ring-[#101516]">
+                <span className="absolute -left-[33px] flex h-5 w-5 items-center justify-center rounded-full bg-cyan-500/20 text-[11px] font-black text-cyan-300 ring-4 ring-[#111827]">
                   {s.stepNumber}
                 </span>
                 <h4 className="text-sm font-bold text-white">{s.title}</h4>
                 {s.equation && (
-                  <div className="mt-2 inline-block max-w-full overflow-x-auto whitespace-nowrap font-mono bg-[var(--background)]/60 border border-slate-900 px-3 py-1.5 rounded text-rose-400 text-xs tracking-wide">
+                  <div className="mt-2 inline-block max-w-full overflow-x-auto whitespace-nowrap font-mono bg-slate-950/60 border border-slate-900 px-3 py-1.5 rounded text-rose-400 text-xs tracking-wide">
                     {renderChemistry(s.equation)}
                   </div>
                 )}

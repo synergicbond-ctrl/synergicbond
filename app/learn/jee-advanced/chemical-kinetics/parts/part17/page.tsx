@@ -86,7 +86,7 @@ export default function ChemicalKineticsPart17() {
                 ].map(([a,b]) => (
                   <div key={a} className="rounded-2xl border border-emerald-300/15 bg-emerald-300/[0.04] p-4">
                     <div className="font-semibold text-emerald-200">{a}</div>
-                    <div className="mt-1 text-sm leading-6 text-[var(--text-body)]">{b}</div>
+                    <div className="mt-1 text-sm leading-6 text-slate-300">{b}</div>
                   </div>
                 ))}
               </div>

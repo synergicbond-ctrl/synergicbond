@@ -88,7 +88,7 @@ export default async function ProgramTestsPage({ params }: { params: Promise<{ s
         ) : (
           <div className="rounded-2xl border border-white/10 bg-white/[0.02] p-8 text-center">
             <h2 className="text-xl font-bold">{name} test mapping in progress</h2>
-            <p className="mx-auto mt-2 max-w-lg text-sm leading-relaxed text-[var(--text-muted)]">
+            <p className="mx-auto mt-2 max-w-lg text-sm leading-relaxed text-zinc-400">
               Tests here are built only from verified previous-year questions — nothing is
               fabricated. The {name} question bank is being mapped from official sources.
               Meanwhile the global Test Engine covers JEE Main, JEE Advanced and NEET.

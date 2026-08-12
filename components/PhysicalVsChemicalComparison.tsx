@@ -36,12 +36,12 @@ export default function PhysicalVsChemicalComparison() {
   ];
 
   return (
-    <div className="p-6 rounded-2xl bg-white dark:bg-[var(--surface)] border border-[var(--border)] dark:border-[var(--border-strong)] shadow-sm space-y-6">
+    <div className="p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 shadow-sm space-y-6">
       <div>
         <h2 className="text-2xl font-bold mb-2 text-slate-900 dark:text-white">
           Physical vs. Chemical Properties
         </h2>
-        <p className="text-sm text-slate-600 dark:text-[var(--text-muted)]">
+        <p className="text-sm text-slate-600 dark:text-slate-400">
           Key distinctions every chemist must know
         </p>
       </div>
@@ -58,12 +58,12 @@ export default function PhysicalVsChemicalComparison() {
           </thead>
           <tbody className="space-y-2">
             {properties.map((prop, idx) => (
-              <tr key={idx} className="border-b border-[var(--border)] dark:border-[var(--border-strong)] hover:bg-slate-50 dark:hover:bg-[var(--surface-2)]">
+              <tr key={idx} className="border-b border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-800">
                 <td className="p-3 font-semibold text-slate-900 dark:text-slate-100">{prop.category}</td>
-                <td className="p-3 text-slate-700 dark:text-[var(--text-body)] bg-green-50 dark:bg-green-950 rounded-lg">
+                <td className="p-3 text-slate-700 dark:text-slate-300 bg-green-50 dark:bg-green-950 rounded-lg">
                   {prop.physical}
                 </td>
-                <td className="p-3 text-slate-700 dark:text-[var(--text-body)] bg-red-50 dark:bg-red-950 rounded-lg">
+                <td className="p-3 text-slate-700 dark:text-slate-300 bg-red-50 dark:bg-red-950 rounded-lg">
                   {prop.chemical}
                 </td>
               </tr>
@@ -75,18 +75,18 @@ export default function PhysicalVsChemicalComparison() {
       {/* Mobile cards */}
       <div className="sm:hidden space-y-4">
         {properties.map((prop, idx) => (
-          <div key={idx} className="rounded-xl overflow-hidden border border-[var(--border)] dark:border-[var(--border-strong)]">
-            <div className="bg-slate-100 dark:bg-[var(--surface-2)] p-3">
+          <div key={idx} className="rounded-xl overflow-hidden border border-slate-200 dark:border-slate-700">
+            <div className="bg-slate-100 dark:bg-slate-800 p-3">
               <p className="font-bold text-slate-900 dark:text-white">{prop.category}</p>
             </div>
             <div className="grid grid-cols-2 gap-2 p-3">
               <div className="bg-green-50 dark:bg-green-950 p-3 rounded-lg">
                 <p className="text-xs font-bold text-green-700 dark:text-green-300 mb-1">⚖️ Physical</p>
-                <p className="text-xs text-slate-700 dark:text-[var(--text-body)]">{prop.physical}</p>
+                <p className="text-xs text-slate-700 dark:text-slate-300">{prop.physical}</p>
               </div>
               <div className="bg-red-50 dark:bg-red-950 p-3 rounded-lg">
                 <p className="text-xs font-bold text-red-700 dark:text-red-300 mb-1">🔥 Chemical</p>
-                <p className="text-xs text-slate-700 dark:text-[var(--text-body)]">{prop.chemical}</p>
+                <p className="text-xs text-slate-700 dark:text-slate-300">{prop.chemical}</p>
               </div>
             </div>
           </div>

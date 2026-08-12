@@ -54,7 +54,7 @@ export default async function ProgramPracticePage({ params }: { params: Promise<
         ) : (
           <div className="rounded-2xl border border-white/10 bg-white/[0.02] p-8 text-center">
             <h2 className="text-xl font-bold">No verified {name} questions mapped yet</h2>
-            <p className="mx-auto mt-2 max-w-lg text-sm leading-relaxed text-[var(--text-muted)]">
+            <p className="mx-auto mt-2 max-w-lg text-sm leading-relaxed text-zinc-400">
               Only verified previous-year questions ship on this platform — nothing is fabricated.
               The {name} question bank is being mapped from official sources. Meanwhile the global
               PYQ Center covers JEE Main, JEE Advanced and NEET questions on the same core chemistry.

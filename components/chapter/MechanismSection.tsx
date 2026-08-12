@@ -31,7 +31,7 @@ export default function MechanismSection({
                 {mechanism.name}
               </h3>
 
-              <ol className="list-decimal space-y-2 pl-5 text-[var(--text-body)]">
+              <ol className="list-decimal space-y-2 pl-5 text-gray-300">
                 {mechanism.steps.map((step, index) => (
                   <li key={index}>{step}</li>
                 ))}

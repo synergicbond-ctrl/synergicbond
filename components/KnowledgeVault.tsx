@@ -59,7 +59,7 @@ const tabs = [
     icon: Zap,
     count: "1500+",
     href: "/vault/facts",
-    accent: "#50dc7b",
+    accent: "#10B981",
     blurb: "High-yield facts for rapid last-minute revision — colors, smells, uses and the one-liners that fetch easy marks.",
     items: ["Flame Test Colors", "Colored Ions & Compounds", "Common Ore Names", "IUPAC Nomenclature Rules", "Hybridization Shortcuts", "Magnetic Behavior Facts"],
   },
@@ -116,7 +116,7 @@ export default function KnowledgeVault() {
                 key={tab.id}
                 onClick={() => setActive(tab.id)}
                 className={`relative flex items-center gap-2.5 whitespace-nowrap px-5 py-2.5 rounded-full text-xs font-bold transition-all duration-300 ${
- isActive ? "text-white bg-white/10 shadow-lg scale-105" : "text-[var(--text-muted)] hover:text-white hover:bg-white/[0.04]"
+ isActive ? "text-white bg-white/10 shadow-lg scale-105" : "text-gray-400 hover:text-white hover:bg-white/[0.04]"
  }`}
                 style={{
                   borderColor: isActive ? `${tab.accent}66` : "transparent",

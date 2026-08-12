@@ -16,8 +16,8 @@ export default async function BoardsPage() {
   const purchased = await getPurchasedBoardPrograms();
 
   return (
-    <main className="min-h-screen bg-[#0B1220] text-white">
-      <div className="border-b border-white/10 bg-gradient-to-b from-amber-950/20 to-[#0B1220] px-6 py-12">
+    <main className="min-h-screen bg-[var(--background)] text-white">
+      <div className="border-b border-white/10 bg-gradient-to-b from-amber-950/20 to-[#0b0f10] px-6 py-12">
         <div className="mx-auto max-w-5xl">
           <p className="mb-2 text-xs font-bold uppercase tracking-[0.3em] text-amber-300/80">Board Preparation</p>
           <h1 className="text-3xl font-black tracking-tight sm:text-4xl">School Boards</h1>

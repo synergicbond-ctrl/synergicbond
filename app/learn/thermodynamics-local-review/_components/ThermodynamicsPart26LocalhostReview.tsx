@@ -13,15 +13,15 @@ const toneStyles: Record<Tone, string> = {
 
 function Section({ index, title, subtitle, children }: { index: string; title: string; subtitle?: string; children: React.ReactNode }) {
   return (
-    <section className="rounded-[2rem] border border-white/10 bg-slate-950/80 p-5 shadow-2xl shadow-black/20 backdrop-blur md:p-8">
+    <section className="rounded-[2rem] border border-white/10 bg-[var(--background)]/80 p-5 shadow-2xl shadow-black/20 backdrop-blur md:p-8">
       <div className="flex items-start gap-4">
         <span className="grid h-11 w-11 shrink-0 place-items-center rounded-2xl border border-cyan-300/30 bg-cyan-300/10 text-sm font-black text-cyan-200">{index}</span>
         <div>
           <h2 className="text-2xl font-black tracking-tight text-white md:text-3xl">{title}</h2>
-          {subtitle && <p className="mt-1 max-w-4xl text-sm leading-6 text-slate-400">{subtitle}</p>}
+          {subtitle && <p className="mt-1 max-w-4xl text-sm leading-6 text-[var(--text-muted)]">{subtitle}</p>}
         </div>
       </div>
-      <div className="mt-6 space-y-5 text-[15px] leading-7 text-slate-200 md:text-base">{children}</div>
+      <div className="mt-6 space-y-5 text-[15px] leading-7 text-[var(--foreground)] md:text-base">{children}</div>
     </section>
   );
 }
@@ -40,7 +40,7 @@ function Lens({ title, children, tone = "cyan" }: { title: string; children: Rea
     <aside className={`rounded-2xl border p-5 ${toneStyles[tone]}`}>
       <p className="text-xs font-black uppercase tracking-[0.2em]">Concept</p>
       <h3 className="mt-2 text-lg font-black text-white">{title}</h3>
-      <div className="mt-2 text-sm leading-6 text-slate-200">{children}</div>
+      <div className="mt-2 text-sm leading-6 text-[var(--foreground)]">{children}</div>
     </aside>
   );
 }
@@ -211,12 +211,12 @@ export default function ThermodynamicsPart26LocalhostReview() {
     <main className="min-h-screen bg-[#020617] text-slate-100">
       <div className="mx-auto max-w-5xl space-y-6 px-4 py-10 md:px-8">
 
-        <header className="rounded-[2rem] border border-white/10 bg-slate-950/80 p-6 shadow-2xl shadow-black/20 md:p-10">
+        <header className="rounded-[2rem] border border-white/10 bg-[var(--background)]/80 p-6 shadow-2xl shadow-black/20 md:p-10">
           <p className="text-xs font-black uppercase tracking-[0.25em] text-fuchsia-300">Part 26</p>
           <h1 className="mt-3 text-4xl font-black tracking-tight text-white md:text-5xl">
             Pressure and Temperature Dependence of Gibbs Energy
           </h1>
-          <p className="mt-4 max-w-3xl text-lg leading-8 text-slate-300">
+          <p className="mt-4 max-w-3xl text-lg leading-8 text-[var(--text-body)]">
             Complete derivations of how G depends on T and P, the Gibbs–Helmholtz equation,
             phase stability from G–T slopes, and the ideal-gas logarithmic form.
           </p>
@@ -263,7 +263,7 @@ export default function ThermodynamicsPart26LocalhostReview() {
           <p>Integrating at constant temperature from a reference pressure P₁ to P₂:</p>
           <Formula label="General isothermal Gibbs change">G(T, P₂) − G(T, P₁) = ∫_&#123;P₁&#125;^&#123;P₂&#125; V(T, P) dP</Formula>
           <h3 className="font-black text-white">Ideal Gas (V = nRT/P):</h3>
-          <div className="space-y-1 rounded-2xl border border-white/10 bg-slate-900/60 p-4 font-mono text-sm">
+          <div className="space-y-1 rounded-2xl border border-white/10 bg-[var(--surface)]/60 p-4 font-mono text-sm">
             <p>G(T,P₂) − G(T,P₁) = ∫_&#123;P₁&#125;^&#123;P₂&#125; (nRT/P) dP</p>
             <p>= nRT [ln P]_&#123;P₁&#125;^&#123;P₂&#125;</p>
             <p>= nRT ln(P₂/P₁)</p>
@@ -281,7 +281,7 @@ export default function ThermodynamicsPart26LocalhostReview() {
         <Section index="4" title="The Gibbs–Helmholtz Equation"
           subtitle="Exact derived result connecting G, H and the temperature dependence of G/T">
           <p>Differentiate G/T with respect to T at constant P:</p>
-          <div className="space-y-1 rounded-2xl border border-white/10 bg-slate-900/60 p-4 font-mono text-sm">
+          <div className="space-y-1 rounded-2xl border border-white/10 bg-[var(--surface)]/60 p-4 font-mono text-sm">
             <p>d(G/T)/dT = (T(∂G/∂T)_P − G) / T²</p>
             <p>= (T(−S) − G) / T²</p>
             <p>= (−TS − G) / T²</p>
@@ -291,7 +291,7 @@ export default function ThermodynamicsPart26LocalhostReview() {
           <Formula label="Gibbs–Helmholtz equation">[∂(G/T)/∂T]_P = −H/T²</Formula>
           <Formula label="Reaction form">[∂(ΔG°/T)/∂T]_P = −ΔH°/T²</Formula>
           <p>Integrating between T₁ and T₂ (assuming ΔH° ≈ constant):</p>
-          <div className="space-y-1 rounded-2xl border border-white/10 bg-slate-900/60 p-4 font-mono text-sm">
+          <div className="space-y-1 rounded-2xl border border-white/10 bg-[var(--surface)]/60 p-4 font-mono text-sm">
             <p>ΔG°(T₂)/T₂ − ΔG°(T₁)/T₁ = −ΔH° ∫_&#123;T₁&#125;^&#123;T₂&#125; dT/T²</p>
             <p>= −ΔH° [−1/T]_&#123;T₁&#125;^&#123;T₂&#125;</p>
             <p>= ΔH°(1/T₂ − 1/T₁)</p>
@@ -306,11 +306,11 @@ export default function ThermodynamicsPart26LocalhostReview() {
         <Section index="5" title="Worked Examples">
           <div className="space-y-4">
             {examples.map((ex) => (
-              <article key={ex.title} className="rounded-2xl border border-white/10 bg-slate-900/70 p-5">
+              <article key={ex.title} className="rounded-2xl border border-white/10 bg-[var(--surface)]/70 p-5">
                 <h3 className="font-black text-white">{ex.title}</h3>
-                <p className="mt-2 text-sm font-semibold text-slate-200">{ex.given}</p>
-                <p className="mt-2 text-sm text-slate-400"><span className="font-black text-slate-300">Method: </span>{ex.method}</p>
-                <div className="mt-3 rounded-xl border border-emerald-300/20 bg-emerald-300/[0.06] p-3 text-sm leading-6 text-slate-200">{ex.solution}</div>
+                <p className="mt-2 text-sm font-semibold text-[var(--foreground)]">{ex.given}</p>
+                <p className="mt-2 text-sm text-[var(--text-muted)]"><span className="font-black text-[var(--text-body)]">Method: </span>{ex.method}</p>
+                <div className="mt-3 rounded-xl border border-emerald-300/20 bg-emerald-300/[0.06] p-3 text-sm leading-6 text-[var(--foreground)]">{ex.solution}</div>
                 <p className="mt-2 text-xs text-amber-300"><span className="font-black">Trap: </span>{ex.trap}</p>
               </article>
             ))}
@@ -327,7 +327,7 @@ export default function ThermodynamicsPart26LocalhostReview() {
             ].map(([t, b]) => (
               <aside key={String(t)} className="rounded-2xl border border-amber-400/25 bg-amber-400/[0.06] p-4">
                 <h3 className="font-black text-amber-200">{t}</h3>
-                <p className="mt-2 text-sm text-slate-300">{String(b)}</p>
+                <p className="mt-2 text-sm text-[var(--text-body)]">{String(b)}</p>
               </aside>
             ))}
           </div>
@@ -339,18 +339,18 @@ export default function ThermodynamicsPart26LocalhostReview() {
           <h2 className="text-2xl font-black text-amber-200">Practice Problems</h2>
           <div className="mt-4 space-y-3">
             {practice.map((p, i) => (
-              <article key={i} className="rounded-2xl border border-white/10 bg-slate-900/60 p-4">
+              <article key={i} className="rounded-2xl border border-white/10 bg-[var(--surface)]/60 p-4">
                 <p className="font-semibold text-white"><span className="mr-2 text-amber-300">{i + 1}.</span>{p.q}</p>
                 <div className="mt-2 rounded-xl border border-emerald-300/20 bg-emerald-300/[0.06] p-3">
                   <p className="text-xs font-black uppercase tracking-wider text-emerald-300">Answer</p>
-                  <p className="mt-1 text-sm text-slate-200">{p.a}</p>
+                  <p className="mt-1 text-sm text-[var(--foreground)]">{p.a}</p>
                 </div>
               </article>
             ))}
           </div>
         </section>
 
-        <section className="rounded-[2rem] border border-white/10 bg-slate-950 p-6">
+        <section className="rounded-[2rem] border border-white/10 bg-[var(--background)] p-6">
           <p className="text-xs font-black uppercase tracking-[0.2em] text-fuchsia-300">Part 26 Complete</p>
           <h2 className="mt-2 text-2xl font-black text-white">Next: Chemical potential and standard states</h2>
         </section>

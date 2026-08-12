@@ -9,7 +9,7 @@ export const partInfo = {
 const Card = ({ title, children }: { title: string; children: ReactNode }) => (
   <section className="rounded-2xl border border-white/10 bg-white/[0.035] p-5 md:p-6">
     <h2 className="text-xl font-semibold tracking-tight text-white">{title}</h2>
-    <div className="mt-4 space-y-4 text-[15px] leading-7 text-zinc-300">{children}</div>
+    <div className="mt-4 space-y-4 text-[15px] leading-7 text-[var(--text-body)]">{children}</div>
   </section>
 );
 
@@ -19,7 +19,7 @@ export default function SolidStatePart01() {
       <header className="rounded-3xl border border-cyan-400/20 bg-gradient-to-b from-cyan-400/10 to-transparent p-6 md:p-8">
         <p className="text-xs font-semibold uppercase tracking-[0.24em] text-cyan-300">JEE Advanced · Solid State · Part 1</p>
         <h1 className="mt-3 text-3xl font-semibold tracking-tight text-white md:text-4xl">Solid State — Entry Point</h1>
-        <p className="mt-4 max-w-3xl text-sm leading-7 text-zinc-300">
+        <p className="mt-4 max-w-3xl text-sm leading-7 text-[var(--text-body)]">
           This opening follows the same sequence directly: solids are first divided into crystalline and amorphous solids.
           No later lattice, unit-cell, packing, void, defect, electrical, or magnetic theory is introduced here.
         </p>
@@ -32,11 +32,11 @@ export default function SolidStatePart01() {
           <div className="grid md:grid-cols-2">
             <div className="border-b border-white/10 px-4 py-5 text-center md:border-b-0 md:border-r">
               <div className="text-lg font-semibold text-cyan-300">Crystalline Solid</div>
-              <p className="mt-2 text-sm text-zinc-400">Constituent particles possess an ordered structural arrangement.</p>
+              <p className="mt-2 text-sm text-[var(--text-muted)]">Constituent particles possess an ordered structural arrangement.</p>
             </div>
             <div className="px-4 py-5 text-center">
               <div className="text-lg font-semibold text-amber-300">Amorphous Solid</div>
-              <p className="mt-2 text-sm text-zinc-400">Long-range periodic repetition is absent.</p>
+              <p className="mt-2 text-sm text-[var(--text-muted)]">Long-range periodic repetition is absent.</p>
             </div>
           </div>
         </div>
@@ -54,27 +54,27 @@ export default function SolidStatePart01() {
         <div className="grid gap-4 md:grid-cols-2">
           <div className="rounded-xl border border-cyan-400/20 bg-cyan-400/[0.04] p-4">
             <h3 className="font-semibold text-cyan-200">Crystalline — schematic</h3>
-            <pre className="mt-4 overflow-x-auto text-center font-mono text-sm leading-7 text-zinc-200">{`●   ●   ●   ●
+            <pre className="mt-4 overflow-x-auto text-center font-mono text-sm leading-7 text-[var(--foreground)]">{`●   ●   ●   ●
 ●   ●   ●   ●
 ●   ●   ●   ●
 ●   ●   ●   ●`}</pre>
-            <p className="mt-3 text-sm text-zinc-400">Regular repeating arrangement.</p>
+            <p className="mt-3 text-sm text-[var(--text-muted)]">Regular repeating arrangement.</p>
           </div>
           <div className="rounded-xl border border-amber-400/20 bg-amber-400/[0.04] p-4">
             <h3 className="font-semibold text-amber-200">Amorphous — schematic</h3>
-            <pre className="mt-4 overflow-x-auto text-center font-mono text-sm leading-7 text-zinc-200">{`●      ●   ●
+            <pre className="mt-4 overflow-x-auto text-center font-mono text-sm leading-7 text-[var(--foreground)]">{`●      ●   ●
    ●
        ●      ●
  ●        ●
       ●  ●`}</pre>
-            <p className="mt-3 text-sm text-zinc-400">No long-range periodic repetition.</p>
+            <p className="mt-3 text-sm text-[var(--text-muted)]">No long-range periodic repetition.</p>
           </div>
         </div>
       </Card>
 
       <aside className="rounded-2xl border border-emerald-400/20 bg-emerald-400/[0.045] p-5">
         <p className="text-xs font-semibold uppercase tracking-[0.2em] text-emerald-300">Sequence Lock</p>
-        <p className="mt-2 text-sm leading-7 text-zinc-300">
+        <p className="mt-2 text-sm leading-7 text-[var(--text-body)]">
           Part 2 develops the exact opening comparison: arrangement, melting behaviour, cutting/cleavage,
           long-range vs short-range order, heat of fusion, true/pseudo-solid terminology, anisotropy and isotropy.
         </p>

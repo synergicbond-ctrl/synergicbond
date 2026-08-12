@@ -26,7 +26,7 @@ function Shell({ children }: { children: React.ReactNode }) {
         <div className="mx-auto max-w-5xl">
           <p className="mb-2 text-xs font-bold uppercase tracking-[0.3em] text-rose-300">Learn from every miss</p>
           <h1 className="text-3xl font-black tracking-tight sm:text-4xl">Mistake Journal</h1>
-          <p className="mt-2 max-w-2xl text-zinc-400">
+          <p className="mt-2 max-w-2xl text-[var(--text-muted)]">
             Every question you answered wrong — grouped by what it tests, with a reattempt queue. Fix one and it leaves the journal.
           </p>
         </div>
@@ -44,7 +44,7 @@ export default async function MistakesPage() {
       <Shell>
         <div className="rounded-2xl border border-white/10 bg-white/[0.02] p-8 text-center">
           <h2 className="text-lg font-bold">Sign in to see your Mistake Journal</h2>
-          <p className="mx-auto mt-2 max-w-md text-sm text-zinc-400">Your wrong questions are collected automatically from tests and practice.</p>
+          <p className="mx-auto mt-2 max-w-md text-sm text-[var(--text-muted)]">Your wrong questions are collected automatically from tests and practice.</p>
           <Link href="/auth/signin" className="mt-5 inline-block rounded-xl bg-gradient-to-r from-cyan-400 to-sky-500 px-5 py-2.5 text-sm font-black text-black">
             Sign in →
           </Link>
@@ -70,7 +70,7 @@ export default async function MistakesPage() {
       <Shell>
         <div className="rounded-2xl border border-white/10 bg-white/[0.02] p-8 text-center">
           <h2 className="text-lg font-bold">No mistakes logged yet</h2>
-          <p className="mx-auto mt-2 max-w-md text-sm text-zinc-400">
+          <p className="mx-auto mt-2 max-w-md text-sm text-[var(--text-muted)]">
             {journal.unmappedWrong > 0
               ? "Your recent wrong answers came from AI-generated papers, which aren't in the reattempt bank. "
               : ""}

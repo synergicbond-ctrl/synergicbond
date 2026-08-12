@@ -87,7 +87,7 @@ export default function ChemicalKineticsPart06() {
               <FormulaCard title="Time and value of B maximum">
                 <KB>{String.raw`t_{max}=\frac{\ln(k_2/k_1)}{k_2-k_1}`}</KB>
                 <KB>{String.raw`[B]_{max}=\frac{k_1}{k_2}[A]_0e^{-k_1t_{max}}`}</KB>
-                <p className="text-center text-sm text-slate-400">Equivalent forms are possible after substituting tmax.</p>
+                <p className="text-center text-sm text-[var(--text-muted)]">Equivalent forms are possible after substituting tmax.</p>
               </FormulaCard>
             </div>
             <div className="grid gap-5 xl:grid-cols-2">

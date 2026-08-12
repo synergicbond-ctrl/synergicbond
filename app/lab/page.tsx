@@ -53,7 +53,7 @@ export default function LabPage() {
   }
 
   return (
-    <main className="min-h-screen bg-[#0B0F19] text-white">
+    <main className="min-h-screen bg-[var(--background)] text-white">
       <div className="mx-auto max-w-5xl px-6 py-12">
 
         <div className="text-center mb-8">
@@ -70,7 +70,7 @@ export default function LabPage() {
         <div className="grid gap-6 lg:grid-cols-[1.3fr_1fr]">
 
           {/* Lab bench */}
-          <div className="rounded-3xl bg-[#111827] border border-white/[0.06] p-8 flex flex-col items-center justify-center min-h-[380px]">
+          <div className="rounded-3xl bg-[var(--surface)] border border-white/[0.06] p-8 flex flex-col items-center justify-center min-h-[380px]">
             {/* Beaker */}
             <div className="relative">
               {/* Burette drip */}
@@ -123,7 +123,7 @@ export default function LabPage() {
           {/* Controls */}
           <div className="space-y-4">
             {/* Reagent buttons */}
-            <div className="rounded-2xl bg-[#111827] border border-white/[0.06] p-5">
+            <div className="rounded-2xl bg-[var(--surface)] border border-white/[0.06] p-5">
               <h3 className="text-sm font-bold mb-3">Add Reagent</h3>
               <div className="grid grid-cols-2 gap-2">
                 {reagents.map((r) => (
@@ -146,7 +146,7 @@ export default function LabPage() {
             </div>
 
             {/* Audio console */}
-            <div className="rounded-2xl bg-[#111827] border border-white/[0.06] p-5">
+            <div className="rounded-2xl bg-[var(--surface)] border border-white/[0.06] p-5">
               <h3 className="text-sm font-bold mb-3">Audio Guide</h3>
               <div className="grid grid-cols-2 gap-2">
                 <button

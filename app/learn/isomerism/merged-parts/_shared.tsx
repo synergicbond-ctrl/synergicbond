@@ -17,7 +17,7 @@ export function MergedPartShell({
             Isomerism · Part {partNumber} of 40
           </p>
           <h1 className="mt-3 text-3xl font-black tracking-tight sm:text-5xl">{title}</h1>
-          <p className="mt-3 max-w-3xl text-sm leading-7 text-slate-300">
+          <p className="mt-3 max-w-3xl text-sm leading-7 text-[var(--text-body)]">
             This merged lesson preserves the original source modules while presenting them as one editable chapter part.
           </p>
         </header>

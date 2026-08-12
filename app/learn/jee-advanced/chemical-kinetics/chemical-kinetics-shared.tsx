@@ -62,7 +62,7 @@ type TextbookExtensionRecord = {
 
 
 const toneClass: Record<CardTone, string> = {
-  navy: "border-slate-700/80 bg-slate-950/70",
+  navy: "border-[var(--border-strong)]/80 bg-[var(--background)]/70",
   cyan: "border-cyan-400/25 bg-cyan-400/[0.055]",
   violet: "border-violet-400/25 bg-violet-400/[0.055]",
   amber: "border-amber-400/25 bg-amber-400/[0.055]",
@@ -71,7 +71,7 @@ const toneClass: Record<CardTone, string> = {
 };
 
 const badgeClass: Record<CardTone, string> = {
-  navy: "border-slate-600 bg-slate-900 text-slate-300",
+  navy: "border-slate-600 bg-[var(--surface)] text-[var(--text-body)]",
   cyan: "border-cyan-400/25 bg-cyan-400/10 text-cyan-200",
   violet: "border-violet-400/25 bg-violet-400/10 text-violet-200",
   amber: "border-amber-400/25 bg-amber-400/10 text-amber-200",
@@ -120,7 +120,7 @@ function ConceptCard({ title, tone = "navy", eyebrow, children }: ConceptCardPro
         </div>
       ) : null}
       <h3 className="text-lg font-semibold tracking-tight text-white sm:text-xl">{title}</h3>
-      <div className="mt-3 space-y-3 text-[15px] leading-7 text-slate-300">{children}</div>
+      <div className="mt-3 space-y-3 text-[15px] leading-7 text-[var(--text-body)]">{children}</div>
     </article>
   );
 }
@@ -130,7 +130,7 @@ function FormulaCard({ title, children, note }: { title: string; children: React
     <div className="overflow-hidden rounded-3xl border border-cyan-300/20 bg-gradient-to-br from-cyan-300/[0.08] via-slate-950/80 to-violet-400/[0.08] shadow-[0_24px_80px_-48px_rgba(34,211,238,0.5)]">
       <div className="border-b border-white/10 px-5 py-3 text-xs font-bold uppercase tracking-[0.18em] text-cyan-200">{title}</div>
       <div className="formula-scroll overflow-x-auto px-4 py-5 text-slate-100 sm:px-6">{children}</div>
-      {note ? <div className="border-t border-white/10 px-5 py-3 text-sm leading-6 text-slate-400">{note}</div> : null}
+      {note ? <div className="border-t border-white/10 px-5 py-3 text-sm leading-6 text-[var(--text-muted)]">{note}</div> : null}
     </div>
   );
 }
@@ -157,10 +157,10 @@ function DataTable({ headers, rows }: { headers: ReactNode[]; rows: ReactNode[][
   return (
     <div className="overflow-x-auto rounded-2xl border border-white/10">
       <table className="min-w-full border-collapse text-left text-sm">
-        <thead className="bg-white/[0.055] text-slate-200">
+        <thead className="bg-white/[0.055] text-[var(--foreground)]">
           <tr>{headers.map((header, i) => <th key={i} className="border-b border-white/10 px-4 py-3 font-semibold">{header}</th>)}</tr>
         </thead>
-        <tbody className="divide-y divide-white/[0.075] text-slate-300">
+        <tbody className="divide-y divide-white/[0.075] text-[var(--text-body)]">
           {rows.map((row, r) => (
             <tr key={r} className="transition hover:bg-white/[0.025]">
               {row.map((cell, c) => <td key={c} className="whitespace-nowrap px-4 py-3 align-top">{cell}</td>)}
@@ -174,10 +174,10 @@ function DataTable({ headers, rows }: { headers: ReactNode[]; rows: ReactNode[][
 
 function FigureFrame({ title, caption, children }: { title: string; caption: ReactNode; children: ReactNode }) {
   return (
-    <figure className="overflow-hidden rounded-3xl border border-white/10 bg-slate-950/75">
-      <div className="border-b border-white/10 px-5 py-3 text-sm font-semibold text-slate-200">{title}</div>
+    <figure className="overflow-hidden rounded-3xl border border-white/10 bg-[var(--background)]/75">
+      <div className="border-b border-white/10 px-5 py-3 text-sm font-semibold text-[var(--foreground)]">{title}</div>
       <div className="overflow-x-auto p-3 sm:p-5">{children}</div>
-      <figcaption className="border-t border-white/10 px-5 py-3 text-sm leading-6 text-slate-400">{caption}</figcaption>
+      <figcaption className="border-t border-white/10 px-5 py-3 text-sm leading-6 text-[var(--text-muted)]">{caption}</figcaption>
     </figure>
   );
 }
@@ -190,7 +190,7 @@ function ChapterSection({ id, index, eyebrow, title, intro, children }: ChapterS
         <div>
           <p className="text-xs font-bold uppercase tracking-[0.22em] text-cyan-300">{eyebrow}</p>
           <h2 className="mt-2 text-3xl font-bold tracking-[-0.035em] text-white sm:text-4xl">{title}</h2>
-          <div className="mt-4 max-w-4xl text-base leading-8 text-slate-300">{intro}</div>
+          <div className="mt-4 max-w-4xl text-base leading-8 text-[var(--text-body)]">{intro}</div>
         </div>
       </div>
       <div className="space-y-6">{children}</div>
@@ -206,24 +206,24 @@ function WorkedExample({ number, title, difficulty = "JEE Advanced", concept, qu
       : "border-violet-400/25 bg-violet-400/10 text-violet-100";
 
   return (
-    <details className="group overflow-hidden rounded-3xl border border-white/10 bg-slate-950/70 shadow-[0_24px_100px_-60px_rgba(139,92,246,0.8)]" open={number <= 2}>
+    <details className="group overflow-hidden rounded-3xl border border-white/10 bg-[var(--background)]/70 shadow-[0_24px_100px_-60px_rgba(139,92,246,0.8)]" open={number <= 2}>
       <summary className="cursor-pointer list-none px-5 py-5 transition hover:bg-white/[0.025] sm:px-6">
         <div className="flex flex-wrap items-start justify-between gap-4">
           <div className="flex min-w-0 gap-4">
             <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl border border-violet-300/20 bg-violet-400/10 font-bold text-violet-200">{number}</div>
             <div>
               <h3 className="text-lg font-semibold text-white sm:text-xl">{title}</h3>
-              <p className="mt-1 text-sm leading-6 text-slate-400">{concept}</p>
+              <p className="mt-1 text-sm leading-6 text-[var(--text-muted)]">{concept}</p>
             </div>
           </div>
           <span className={`rounded-full border px-3 py-1 text-xs font-bold ${difficultyClass}`}>{difficulty}</span>
         </div>
-        <div className="mt-4 text-[15px] leading-7 text-slate-200">{question}</div>
+        <div className="mt-4 text-[15px] leading-7 text-[var(--foreground)]">{question}</div>
         <div className="mt-3 text-xs font-bold uppercase tracking-[0.16em] text-cyan-300 group-open:hidden">Open full solution</div>
       </summary>
       <div className="border-t border-white/10 px-5 py-5 sm:px-6">
         <div className="mb-3 text-xs font-black uppercase tracking-[0.18em] text-violet-300">Solution</div>
-        <div className="space-y-3 text-[15px] leading-7 text-slate-300">{solution}</div>
+        <div className="space-y-3 text-[15px] leading-7 text-[var(--text-body)]">{solution}</div>
         <div className="mt-5 rounded-2xl border border-emerald-400/25 bg-emerald-400/[0.065] px-4 py-3 text-[15px] leading-7 text-emerald-100">
           <span className="mr-2 font-black uppercase tracking-[0.14em] text-emerald-300">Answer</span>
           {answer}
@@ -601,11 +601,11 @@ function TextbookExtensionAtlas({ sheets }: { sheets?: readonly number[] }) {
         <div>
           <p className="text-xs font-bold uppercase tracking-[0.22em] text-violet-300">Integrated reference enrichment</p>
           <h2 className="mt-2 text-3xl font-bold tracking-[-0.035em] text-white sm:text-4xl">Deeper treatment inserted at the point of use</h2>
-          <p className="mt-4 max-w-4xl text-base leading-8 text-slate-300">These print-equivalent reference pages are placed inside the relevant topic rather than collected as a detached appendix. They are original, paraphrased syntheses informed by the uploaded compilation and the chemical-kinetics treatment in Paul Monk, with assumptions and JEE diagnostics stated explicitly.</p>
+          <p className="mt-4 max-w-4xl text-base leading-8 text-[var(--text-body)]">These print-equivalent reference pages are placed inside the relevant topic rather than collected as a detached appendix. They are original, paraphrased syntheses informed by the uploaded compilation and the chemical-kinetics treatment in Paul Monk, with assumptions and JEE diagnostics stated explicitly.</p>
         </div>
       </div>
       {selected.map((sheet) => (
-        <article key={sheet.number} className="textbook-sheet break-after-page rounded-[2rem] border border-violet-300/20 bg-slate-950/80 p-5 sm:p-7 lg:p-9">
+        <article key={sheet.number} className="textbook-sheet break-after-page rounded-[2rem] border border-violet-300/20 bg-[var(--background)]/80 p-5 sm:p-7 lg:p-9">
           <div className="grid gap-7 xl:grid-cols-[1.05fr_.95fr] xl:items-start">
             <div>
               <div className="flex flex-wrap items-center gap-3">
@@ -614,14 +614,14 @@ function TextbookExtensionAtlas({ sheets }: { sheets?: readonly number[] }) {
               </div>
               <h3 className="mt-4 text-2xl font-bold tracking-tight text-white sm:text-3xl">{sheet.title}</h3>
               <p className="mt-3 text-base leading-8 text-cyan-100">{sheet.core}</p>
-              <div className="mt-5 space-y-4 text-[15px] leading-7 text-slate-300">
+              <div className="mt-5 space-y-4 text-[15px] leading-7 text-[var(--text-body)]">
                 {sheet.paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
               </div>
               <div className="mt-5 rounded-2xl border border-amber-300/20 bg-amber-300/[0.055] p-4 text-sm leading-7 text-amber-50">
                 <span className="font-black uppercase tracking-[0.13em] text-amber-200">JEE diagnostic</span> {sheet.trap}
               </div>
               <div className="mt-5 grid gap-3 sm:grid-cols-3">
-                {sheet.tasks.map((task, index) => <div key={task} className="rounded-xl border border-white/10 bg-white/[0.035] p-3 text-sm leading-6 text-slate-300"><span className="mr-2 font-mono text-cyan-300">{index + 1}</span>{task}</div>)}
+                {sheet.tasks.map((task, index) => <div key={task} className="rounded-xl border border-white/10 bg-white/[0.035] p-3 text-sm leading-6 text-[var(--text-body)]"><span className="mr-2 font-mono text-cyan-300">{index + 1}</span>{task}</div>)}
               </div>
             </div>
             <div className="space-y-5">
@@ -647,20 +647,20 @@ function ModifiedProblemAtlas({ from = 1, to = 96 }: { from?: number; to?: numbe
   return (
     <div className="space-y-8">
       <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-        {groups.map((group) => <div key={group} className="rounded-2xl border border-violet-300/15 bg-violet-300/[0.045] p-4"><div className="font-semibold text-violet-100">{group}</div><div className="mt-1 text-sm text-slate-400">{selectedProblems.filter((problem) => problem.group === group).length} fully solved drills</div></div>)}
+        {groups.map((group) => <div key={group} className="rounded-2xl border border-violet-300/15 bg-violet-300/[0.045] p-4"><div className="font-semibold text-violet-100">{group}</div><div className="mt-1 text-sm text-[var(--text-muted)]">{selectedProblems.filter((problem) => problem.group === group).length} fully solved drills</div></div>)}
       </div>
       {groups.map((group) => (
         <div key={group} className="space-y-4">
           <h3 className="text-2xl font-bold text-white">{group}</h3>
           {selectedProblems.filter((problem) => problem.group === group).map((problem) => (
-            <details key={problem.number} className="group overflow-hidden rounded-3xl border border-white/10 bg-slate-950/70">
+            <details key={problem.number} className="group overflow-hidden rounded-3xl border border-white/10 bg-[var(--background)]/70">
               <summary className="cursor-pointer list-none px-5 py-5 transition hover:bg-white/[0.025] sm:px-6">
                 <div className="flex items-start gap-4"><div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl border border-cyan-300/20 bg-cyan-300/[0.07] font-bold text-cyan-200">{problem.number}</div><div><h4 className="text-lg font-semibold text-white">{problem.title}</h4></div></div>
-                <p className="mt-4 text-[15px] leading-7 text-slate-200">{problem.question}</p>
+                <p className="mt-4 text-[15px] leading-7 text-[var(--foreground)]">{problem.question}</p>
                 <div className="mt-3 text-xs font-black uppercase tracking-[0.16em] text-cyan-300 group-open:hidden">Open solution</div>
               </summary>
               <div className="border-t border-white/10 px-5 py-5 sm:px-6">
-                <ol className="space-y-2 text-[15px] leading-7 text-slate-300">{problem.steps.map((step, index) => <li key={step}><span className="mr-2 font-mono text-violet-300">{index + 1}.</span>{step}</li>)}</ol>
+                <ol className="space-y-2 text-[15px] leading-7 text-[var(--text-body)]">{problem.steps.map((step, index) => <li key={step}><span className="mr-2 font-mono text-violet-300">{index + 1}.</span>{step}</li>)}</ol>
                 <div className="mt-4 space-y-3">{problem.equations.map((equation) => <div key={equation}><FormulaCard title="Calculation"><KB>{equation}</KB></FormulaCard></div>)}</div>
                 <div className="mt-4 rounded-2xl border border-emerald-400/25 bg-emerald-400/[0.065] px-4 py-3 text-[15px] leading-7 text-emerald-100"><span className="mr-2 font-black uppercase tracking-[0.14em] text-emerald-300">Answer</span>{problem.answer}</div>
               </div>
@@ -689,29 +689,29 @@ function SourceCoverageAtlas({ start = 1, end = 259 }: { start?: number; end?: n
         <div>
           <p className="text-xs font-bold uppercase tracking-[0.22em] text-emerald-300">Complete source reconstruction</p>
           <h2 className="mt-2 text-3xl font-bold tracking-[-0.035em] text-white sm:text-4xl">Original PDF pages {start}–{end}, retained inside this topic</h2>
-          <p className="mt-4 max-w-4xl text-base leading-8 text-slate-300">Every page in this interval appears below in original sequence. Text-rich pages contain their complete machine-extractable teaching material. Every source page additionally includes a collapsible dark reconstruction; page 1 is a clean non-branded title reconstruction and pages 2–259 preserve complete source fidelity so equations, tables, graphs and handwritten work are not silently omitted.</p>
+          <p className="mt-4 max-w-4xl text-base leading-8 text-[var(--text-body)]">Every page in this interval appears below in original sequence. Text-rich pages contain their complete machine-extractable teaching material. Every source page additionally includes a collapsible dark reconstruction; page 1 is a clean non-branded title reconstruction and pages 2–259 preserve complete source fidelity so equations, tables, graphs and handwritten work are not silently omitted.</p>
         </div>
       </div>
       <div className="mb-6 grid gap-3 sm:grid-cols-3">
-        <div className="rounded-2xl border border-emerald-300/20 bg-emerald-300/[0.055] p-4"><div className="text-2xl font-black text-emerald-200">{pages.length}</div><div className="mt-1 text-sm text-slate-400">source pages in this part</div></div>
-        <div className="rounded-2xl border border-cyan-300/20 bg-cyan-300/[0.055] p-4"><div className="text-2xl font-black text-cyan-200">{extractedCharacters.toLocaleString()}</div><div className="mt-1 text-sm text-slate-400">source-derived characters retained</div></div>
-        <div className="rounded-2xl border border-violet-300/20 bg-violet-300/[0.055] p-4"><div className="text-2xl font-black text-violet-200">{visualCount}</div><div className="mt-1 text-sm text-slate-400">complete dark fidelity panels</div></div>
+        <div className="rounded-2xl border border-emerald-300/20 bg-emerald-300/[0.055] p-4"><div className="text-2xl font-black text-emerald-200">{pages.length}</div><div className="mt-1 text-sm text-[var(--text-muted)]">source pages in this part</div></div>
+        <div className="rounded-2xl border border-cyan-300/20 bg-cyan-300/[0.055] p-4"><div className="text-2xl font-black text-cyan-200">{extractedCharacters.toLocaleString()}</div><div className="mt-1 text-sm text-[var(--text-muted)]">source-derived characters retained</div></div>
+        <div className="rounded-2xl border border-violet-300/20 bg-violet-300/[0.055] p-4"><div className="text-2xl font-black text-violet-200">{visualCount}</div><div className="mt-1 text-sm text-[var(--text-muted)]">complete dark fidelity panels</div></div>
       </div>
       <div className="space-y-5">
         {pages.map((page) => {
           const hasVisual = VISUAL_SOURCE_PAGES.has(page.page);
           return (
-            <article id={`source-page-${page.page}`} key={page.page} className="overflow-hidden rounded-3xl border border-white/10 bg-slate-950/72">
+            <article id={`source-page-${page.page}`} key={page.page} className="overflow-hidden rounded-3xl border border-white/10 bg-[var(--background)]/72">
               <div className="flex flex-wrap items-start justify-between gap-4 border-b border-white/10 px-5 py-4 sm:px-6">
                 <div className="flex min-w-0 items-start gap-4">
                   <div className="flex h-11 w-14 shrink-0 items-center justify-center rounded-xl border border-emerald-300/20 bg-emerald-300/[0.06] font-mono text-sm font-black text-emerald-200">{page.page}</div>
                   <div className="min-w-0"><h3 className="text-lg font-semibold leading-7 text-white">{page.title}</h3><p className="mt-1 text-xs leading-5 text-slate-500">{page.range}</p></div>
                 </div>
-                <span className="rounded-full border border-white/10 bg-white/[0.035] px-3 py-1 text-xs text-slate-400">{page.density}</span>
+                <span className="rounded-full border border-white/10 bg-white/[0.035] px-3 py-1 text-xs text-[var(--text-muted)]">{page.density}</span>
               </div>
               <div className="p-5 sm:p-6">
                 <div className="mb-3 text-xs font-black uppercase tracking-[0.16em] text-cyan-300">Typed source-derived reconstruction</div>
-                <pre className="whitespace-pre-wrap break-words font-sans text-[15px] leading-7 text-slate-300">{page.text}</pre>
+                <pre className="whitespace-pre-wrap break-words font-sans text-[15px] leading-7 text-[var(--text-body)]">{page.text}</pre>
                 {hasVisual ? (
                   <details open={page.density !== "text-rich"} className="mt-5 overflow-hidden rounded-2xl border border-violet-300/20 bg-[#030711]">
                     <summary className="cursor-pointer px-4 py-3 text-sm font-semibold text-violet-200">Open dark source-fidelity page {page.page}</summary>
@@ -783,11 +783,11 @@ function PartShell({
                 JEE Advanced · Part {String(part).padStart(2, "0")} of 20
               </div>
               <h1 className="mt-5 text-4xl font-black tracking-[-0.045em] text-white sm:text-5xl lg:text-6xl">{title}</h1>
-              <p className="mt-4 max-w-4xl text-base leading-8 text-slate-300 sm:text-lg">{description}</p>
+              <p className="mt-4 max-w-4xl text-base leading-8 text-[var(--text-body)] sm:text-lg">{description}</p>
             </div>
             <div className="rounded-3xl border border-cyan-300/20 bg-cyan-300/[0.055] p-4 text-sm leading-6 text-cyan-50">
               <div className="font-semibold text-cyan-200">Chemical Kinetics</div>
-              <div className="mt-1 text-slate-300">Forensic 259-page reconstruction · 30 integrated reference pages</div>
+              <div className="mt-1 text-[var(--text-body)]">Forensic 259-page reconstruction · 30 integrated reference pages</div>
             </div>
           </div>
         </div>
@@ -802,7 +802,7 @@ function PartShell({
               aria-current={item.part === part ? "page" : undefined}
               className={item.part === part
                 ? "rounded-full border border-cyan-300/35 bg-cyan-300/15 px-3 py-1.5 text-xs font-bold text-cyan-100"
-                : "rounded-full border border-white/10 bg-slate-900/80 px-3 py-1.5 text-xs text-slate-400 transition hover:text-white"}
+                : "rounded-full border border-white/10 bg-[var(--surface)]/80 px-3 py-1.5 text-xs text-[var(--text-muted)] transition hover:text-white"}
             >
               {String(item.part).padStart(2, "0")}
             </a>
@@ -815,7 +815,7 @@ function PartShell({
 
         <div className="part-navigation mt-14 grid gap-4 border-t border-white/10 pt-8 sm:grid-cols-2">
           {previous ? (
-            <a href={`/learn/jee-advanced/chemical-kinetics/parts/${previous.slug}`} className="rounded-3xl border border-white/10 bg-slate-950/70 p-5 transition hover:border-cyan-300/25 hover:bg-white/[0.035]">
+            <a href={`/learn/jee-advanced/chemical-kinetics/parts/${previous.slug}`} className="rounded-3xl border border-white/10 bg-[var(--background)]/70 p-5 transition hover:border-cyan-300/25 hover:bg-white/[0.035]">
               <div className="text-xs font-bold uppercase tracking-[0.16em] text-slate-500">Previous part</div>
               <div className="mt-2 font-semibold text-white">{String(previous.part).padStart(2, "0")} · {previous.title}</div>
             </a>

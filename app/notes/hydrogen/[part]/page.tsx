@@ -53,7 +53,7 @@ export default async function HydrogenPartPage({ params }: { params: Promise<{ p
               <p className="text-[11px] font-black uppercase tracking-[0.17em] text-cyan-300">Concept diagrams</p>
               <h2 id="visual-atlas-title" className="mt-2 text-2xl font-black text-white sm:text-3xl">Core visuals for this lesson</h2>
             </div>
-            <p className="max-w-xl text-sm leading-6 text-slate-400">The diagrams introduce the structures, energy relationships and mechanisms developed below.</p>
+            <p className="max-w-xl text-sm leading-6 text-[var(--text-muted)]">The diagrams introduce the structures, energy relationships and mechanisms developed below.</p>
           </div>
 
           <div className="grid gap-5 lg:grid-cols-2">
@@ -70,7 +70,7 @@ export default async function HydrogenPartPage({ params }: { params: Promise<{ p
                     unoptimized
                   />
                 </div>
-                <figcaption className="border-t border-white/10 px-5 py-4 text-sm font-medium leading-6 text-slate-300">
+                <figcaption className="border-t border-white/10 px-5 py-4 text-sm font-medium leading-6 text-[var(--text-body)]">
                   <span className="mr-2 font-black text-cyan-300">{String(index + 1).padStart(2, "0")}</span>
                   {visual.caption}
                 </figcaption>

@@ -35,7 +35,7 @@ export default async function MyProgramsPage() {
   const ctx = await getActiveProgramContext();
 
   return (
-    <main className="min-h-screen bg-[#0B0F19] px-4 py-10 text-white md:px-8">
+    <main className="min-h-screen bg-[var(--background)] px-4 py-10 text-white md:px-8">
       <div className="mx-auto max-w-3xl space-y-6">
         <header>
           <h1 className="flex items-center gap-2 text-3xl font-black tracking-tight">
@@ -47,7 +47,7 @@ export default async function MyProgramsPage() {
         </header>
 
         {ctx.entitledPrograms.length === 0 ? (
-          <section className="rounded-3xl border border-white/[0.08] bg-[#111827] p-8 text-center">
+          <section className="rounded-3xl border border-white/[0.08] bg-[var(--surface)] p-8 text-center">
             <h2 className="text-lg font-bold">Free workspace</h2>
             <p className="mx-auto mt-2 max-w-md text-sm text-white/55">
               You&apos;re on the free tier — chapter previews, free notes and the free practice

@@ -75,7 +75,7 @@ function VirtualNumericalKeyboard({
             type="button"
             disabled={disabled}
             onClick={() => handleKeyPress(k)}
-            className="flex h-10 items-center justify-center rounded-lg bg-[#111827] border border-white/10 text-sm font-bold text-white hover:bg-white/[0.1] active:scale-95 transition disabled:opacity-50"
+            className="flex h-10 items-center justify-center rounded-lg bg-[var(--surface)] border border-white/10 text-sm font-bold text-white hover:bg-white/[0.1] active:scale-95 transition disabled:opacity-50"
           >
             {k}
           </button>
@@ -293,7 +293,7 @@ export default function EngineQuestionBank({
               <div className="flex flex-wrap items-center gap-2">
                 <input value={numericInput} onChange={(e) => setNumericInput(e.target.value)}
                   placeholder={activeType.format === "scientific" ? "e.g. 6.02e23 or 6.02×10^23" : "Your answer"}
-                  className="w-56 rounded-lg border border-white/10 bg-[#0B1220] px-3 py-2 text-sm text-white/90 outline-none focus:border-cyan-400/40" />
+                  className="w-56 rounded-lg border border-white/10 bg-[var(--background)] px-3 py-2 text-sm text-white/90 outline-none focus:border-cyan-400/40" />
                 {numeric.unit && <span className="text-sm text-white/50">{numeric.unit}</span>}
                 <button onClick={gradeNumeric} disabled={!numericInput.trim() || numericResult !== null}
                   className="rounded-lg border border-cyan-400/40 bg-cyan-500/10 px-4 py-2 text-sm font-bold text-cyan-300 disabled:opacity-50">Check</button>

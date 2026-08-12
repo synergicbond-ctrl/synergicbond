@@ -84,7 +84,7 @@ export default async function DashboardPage() {
   ];
 
   return (
-    <main className="min-h-screen bg-[#0B0F19] px-4 py-8 text-white md:p-8">
+    <main className="min-h-screen bg-[var(--background)] px-4 py-8 text-white md:p-8">
       <div className="mx-auto max-w-5xl space-y-5">
 
         <header className="flex flex-wrap items-end justify-between gap-2">
@@ -131,7 +131,7 @@ export default async function DashboardPage() {
           <ReviseTodayCard />
 
           {/* 3 ── PRACTICE NOW — real recommendation or honest empty state */}
-          <section className="flex flex-col rounded-3xl border border-white/[0.08] bg-[#111827] p-5">
+          <section className="flex flex-col rounded-3xl border border-white/[0.08] bg-[var(--surface)] p-5">
             <h3 className="flex items-center gap-2 text-lg font-black">
               <Target className="h-5 w-5 text-emerald-400" /> Practice Now
             </h3>
@@ -160,7 +160,7 @@ export default async function DashboardPage() {
         </div>
 
         {/* 4 ── CURRENT PROGRAM */}
-        <section className="rounded-3xl border border-white/[0.08] bg-[#111827] p-5">
+        <section className="rounded-3xl border border-white/[0.08] bg-[var(--surface)] p-5">
           <div className="flex flex-wrap items-center justify-between gap-4">
             <div className="flex min-w-0 items-center gap-3">
               <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-cyan-400/25 bg-cyan-950/40">
@@ -212,7 +212,7 @@ export default async function DashboardPage() {
               <Link
                 key={item.label}
                 href={item.href}
-                className="group rounded-2xl border border-white/[0.08] bg-[#111827] p-4 transition hover:-translate-y-0.5 hover:border-cyan-400/25"
+                className="group rounded-2xl border border-white/[0.08] bg-[var(--surface)] p-4 transition hover:-translate-y-0.5 hover:border-cyan-400/25"
               >
                 <Icon className="h-5 w-5 text-cyan-400" />
                 <p className="mt-2 text-sm font-bold">{item.label}</p>

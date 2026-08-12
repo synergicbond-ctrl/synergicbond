@@ -5,21 +5,21 @@ import { InlineMath, BlockMath } from "@/components/math/react-katex";
 
 /* Reusable UI Components */
 const ConceptCard = ({ title, children }: { title: string; children: React.ReactNode }) => (
-  <div className="my-6 rounded-2xl border border-cyan-400/30 bg-slate-900/90 p-6 shadow-xl">
-    <h3 className="border-b border-slate-800 pb-3 text-lg font-bold text-cyan-300">{title}</h3>
-    <div className="mt-4 space-y-3 text-sm leading-relaxed text-slate-200">{children}</div>
+  <div className="my-6 rounded-2xl border border-cyan-400/30 bg-[var(--surface)]/90 p-6 shadow-xl">
+    <h3 className="border-b border-[var(--border)] pb-3 text-lg font-bold text-cyan-300">{title}</h3>
+    <div className="mt-4 space-y-3 text-sm leading-relaxed text-[var(--foreground)]">{children}</div>
   </div>
 );
 
 const FormulaBox = ({ title, formula, description }: { title: string; formula: string; description?: string }) => (
-  <div className="my-6 rounded-2xl border border-amber-400/30 bg-slate-950 p-6 shadow-lg text-center space-y-3">
+  <div className="my-6 rounded-2xl border border-amber-400/30 bg-[var(--background)] p-6 shadow-lg text-center space-y-3">
     <span className="rounded-full bg-amber-500/20 px-3 py-1 text-xs font-bold uppercase tracking-widest text-amber-300">
       {title}
     </span>
     <div className="overflow-x-auto py-2">
       <BlockMath math={formula} />
     </div>
-    {description && <p className="text-xs text-slate-400 font-sans">{description}</p>}
+    {description && <p className="text-xs text-[var(--text-muted)] font-sans">{description}</p>}
   </div>
 );
 
@@ -35,14 +35,14 @@ const WorkedExample = ({
   result: React.ReactNode;
 }) => (
   <div className="my-8 rounded-3xl border border-rose-400/30 bg-gradient-to-b from-slate-900 via-slate-900 to-slate-950 p-6 shadow-2xl md:p-8 space-y-5">
-    <div className="flex items-center justify-between border-b border-slate-800 pb-4">
+    <div className="flex items-center justify-between border-b border-[var(--border)] pb-4">
       <span className="rounded-full bg-rose-500/20 px-3 py-1 text-xs font-bold uppercase tracking-widest text-rose-300">
         Worked Example
       </span>
-      <span className="text-xs font-bold text-slate-400">{title}</span>
+      <span className="text-xs font-bold text-[var(--text-muted)]">{title}</span>
     </div>
     <div className="text-sm font-medium leading-relaxed text-slate-100">{problem}</div>
-    <div className="rounded-2xl border border-slate-800/80 bg-slate-950/80 p-5 space-y-3 font-mono text-xs text-slate-300">
+    <div className="rounded-2xl border border-[var(--border)]/80 bg-[var(--background)]/80 p-5 space-y-3 font-mono text-xs text-[var(--text-body)]">
       {steps}
     </div>
     <div className="rounded-xl border border-emerald-500/30 bg-emerald-500/10 p-4 text-center text-xs font-bold text-emerald-300">
@@ -58,14 +58,14 @@ const StepBox = ({ number, title, children }: { number: number; title: string; c
     </span>
     <div>
       <h4 className="text-xs font-bold text-white mb-1">{title}</h4>
-      <div className="text-xs text-slate-300 leading-relaxed">{children}</div>
+      <div className="text-xs text-[var(--text-body)] leading-relaxed">{children}</div>
     </div>
   </div>
 );
 
 export default function MoleConceptPart7() {
   return (
-    <main className="min-h-screen bg-slate-950 px-4 py-8 text-slate-100 md:px-10">
+    <main className="min-h-screen bg-[var(--background)] px-4 py-8 text-slate-100 md:px-10">
       <article className="mx-auto max-w-5xl space-y-10">
         {/* Module Header */}
         <header className="rounded-3xl border border-cyan-400/30 bg-gradient-to-br from-slate-900 via-slate-900 to-slate-950 p-6 shadow-2xl md:p-8">
@@ -73,14 +73,14 @@ export default function MoleConceptPart7() {
             <span className="rounded-full bg-cyan-500/20 px-3 py-1 text-xs font-bold uppercase tracking-[0.2em] text-cyan-300">
               Quantitative Chemistry Lesson
             </span>
-            <span className="text-xs font-bold text-slate-400">Charge Counting in Ions</span>
+            <span className="text-xs font-bold text-[var(--text-muted)]">Charge Counting in Ions</span>
           </div>
 
           <h1 className="mt-4 text-3xl font-black text-white md:text-4xl">
             Electron &amp; Charge Counting in Ions &amp; Algebraic Trap Analysis
           </h1>
 
-          <p className="mt-3 text-sm leading-relaxed text-slate-300 md:text-base">
+          <p className="mt-3 text-sm leading-relaxed text-[var(--text-body)] md:text-base">
             Quantifying subatomic particle inventories across complex polyatomic ions. Master systematic counting of electrons, protons, and total Coulombs of charge, while identifying under-constrained algebraic system traps in stoichiometric formulas.
           </p>
         </header>
@@ -95,7 +95,7 @@ export default function MoleConceptPart7() {
             <p>
               When counting total electrons inside an ion, the net electric charge directly modifies the sum of neutral atomic electrons (<InlineMath math="\sum Z_i" />):
             </p>
-            <ul className="list-disc ml-5 space-y-2 text-xs text-slate-300 pt-1">
+            <ul className="list-disc ml-5 space-y-2 text-xs text-[var(--text-body)] pt-1">
               <li>
                 <strong className="text-amber-300">Anions (Negative Ions):</strong> For an anion carrying <InlineMath math="-z" /> charge, <strong className="text-white">add exactly <InlineMath math="z" /> electrons</strong> to the sum of atomic numbers: <InlineMath math="N_e = \sum Z_i + z" />.
               </li>
@@ -148,7 +148,7 @@ export default function MoleConceptPart7() {
             <p>
               In stoichiometry examinations, a classic analytical trap involves presenting only one mass measurement for two unknown elements <InlineMath math="\text{A}" /> and <InlineMath math="\text{B}" />. For example:
             </p>
-            <blockquote className="border-l-2 border-amber-400 pl-4 italic text-slate-300 py-1">
+            <blockquote className="border-l-2 border-amber-400 pl-4 italic text-[var(--text-body)] py-1">
               &quot;0.15 moles of a compound <InlineMath math="\text{A}_2\text{B}_3" /> weigh precisely <InlineMath math="45\text{ g}" />. Determine the individual atomic masses of elements <InlineMath math="\text{A}" /> and <InlineMath math="\text{B}" />.&quot;
             </blockquote>
             <p>
@@ -179,7 +179,7 @@ export default function MoleConceptPart7() {
         </section>
 
         {/* Footer info */}
-        <footer className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 text-center text-xs text-slate-400">
+        <footer className="rounded-2xl border border-[var(--border)] bg-[var(--surface)]/60 p-6 text-center text-xs text-[var(--text-muted)]">
           <p>Synergic Bond Quantitative Chemistry • Lesson: Charge Counting in Ions</p>
         </footer>
       </article>

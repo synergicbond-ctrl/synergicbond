@@ -48,7 +48,7 @@ export default function Part22() {
           <FormulaLine math="\hbar\omega=E," />
           <p>which is the same that holds for photons.</p>
         </NoteBlock>
-        <DiagramBox title="Wave-packet width and spectral spread"><UncertaintyTradeoffVisual /><p className="mt-3 text-sm text-slate-300">A packet confined in position requires a wider range of <MathText math="k" /> values. Since <MathText math="p=\hbar k" /> and <MathText math="E=\hbar\omega" />, that spread becomes a momentum or energy spread.</p></DiagramBox>
+        <DiagramBox title="Wave-packet width and spectral spread"><UncertaintyTradeoffVisual /><p className="mt-3 text-sm text-[var(--text-body)]">A packet confined in position requires a wider range of <MathText math="k" /> values. Since <MathText math="p=\hbar k" /> and <MathText math="E=\hbar\omega" />, that spread becomes a momentum or energy spread.</p></DiagramBox>
         <ImportantNote title="Convention used in this derivation">This worked derivation explicitly starts from <MathText math="\Delta x\,\Delta k=2\pi" />, so it obtains <MathText math="\Delta E\,\Delta t=h" />. In the standard-deviation convention, the familiar lower bound is <MathText math="\Delta E\,\Delta t\ge\hbar/2" />; the numerical factor depends on how widths are defined.</ImportantNote>
         <NoteBlock title="Problem — energy–time uncertainty relation">
           <p>

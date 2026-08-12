@@ -70,7 +70,7 @@ export default function Donation() {
             <form onSubmit={handleSubmit} className="relative z-10 space-y-6">
               {/* Name / Organization Field */}
               <div>
-                <label className="block text-xs font-extrabold uppercase tracking-wider text-gray-300 mb-2">
+                <label className="block text-xs font-extrabold uppercase tracking-wider text-[var(--text-body)] mb-2">
                   Name / Organization <span className="text-[var(--text-muted)]">*</span>
                 </label>
                 <input
@@ -85,7 +85,7 @@ export default function Donation() {
 
               {/* Email Field */}
               <div>
-                <label className="block text-xs font-extrabold uppercase tracking-wider text-gray-300 mb-2">
+                <label className="block text-xs font-extrabold uppercase tracking-wider text-[var(--text-body)] mb-2">
                   Email <span className="text-gray-500 font-normal lowercase">(optional)</span>
                 </label>
                 <input
@@ -99,9 +99,9 @@ export default function Donation() {
 
               {/* Custom Amount Field */}
               <div>
-                <label className="block text-xs font-extrabold uppercase tracking-wider text-gray-300 mb-2">
+                <label className="block text-xs font-extrabold uppercase tracking-wider text-[var(--text-body)] mb-2">
                   Contribution Amount <span className="text-[var(--text-muted)]">*</span>
-                  <span className="ml-2 text-[10px] font-semibold text-gray-400 lowercase">(minimum ₹499)</span>
+                  <span className="ml-2 text-[10px] font-semibold text-[var(--text-muted)] lowercase">(minimum ₹499)</span>
                 </label>
                 <div className="relative flex items-center">
                   <span className="absolute left-5 text-lg font-black text-[var(--text-muted)]">₹</span>
@@ -128,7 +128,7 @@ export default function Donation() {
 
               {/* Message Field */}
               <div>
-                <label className="block text-xs font-extrabold uppercase tracking-wider text-gray-300 mb-2">
+                <label className="block text-xs font-extrabold uppercase tracking-wider text-[var(--text-body)] mb-2">
                   Message <span className="text-gray-500 font-normal lowercase">(optional)</span>
                 </label>
                 <textarea
@@ -151,7 +151,7 @@ export default function Donation() {
                 <ArrowRight className="h-4 w-4 text-black font-black" />
               </button>
 
-              <div className="flex items-center justify-center gap-2 pt-2 text-[11px] text-gray-400 font-medium">
+              <div className="flex items-center justify-center gap-2 pt-2 text-[11px] text-[var(--text-muted)] font-medium">
                 <ShieldCheck className="h-4 w-4 text-[var(--text-muted)] shrink-0" />
                 <span>Direct contribution to student server infrastructure and free tools.</span>
               </div>

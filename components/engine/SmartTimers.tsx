@@ -130,7 +130,7 @@ export default function SmartTimers() {
           <label className="flex items-center gap-2 text-sm text-white/70">Minutes
             <input type="number" min={1} max={300} value={customMin}
               onChange={(e) => setCustomMin(Math.min(300, Math.max(1, Number(e.target.value) || 1)))}
-              className="w-20 rounded-lg border border-white/10 bg-[#0B1220] px-2 py-1.5 text-white/90" />
+              className="w-20 rounded-lg border border-white/10 bg-[var(--background)] px-2 py-1.5 text-white/90" />
           </label>
           <button onClick={() => start(customMin, `Custom ${customMin} min`)}
             className="rounded-xl bg-gradient-to-r from-cyan-400 to-sky-500 px-4 py-2 text-sm font-black text-black">Start</button>

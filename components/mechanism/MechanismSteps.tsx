@@ -7,14 +7,14 @@ import type { MechanismStep } from "@/lib/mechanismSchema";
 
 function StepCard({ s }: { s: MechanismStep }) {
   return (
-    <div className="rounded-2xl border border-purple-400/15 bg-[#111827] p-4">
+    <div className="rounded-2xl border border-purple-400/15 bg-[var(--surface)] p-4">
       <div className="mb-2 flex items-center gap-2">
         <span className="flex h-6 w-6 items-center justify-center rounded-full bg-purple-500/20 text-xs font-black text-purple-200">{s.n}</span>
         <h3 className="text-sm font-black text-white">{s.title}</h3>
       </div>
 
       {(s.beforeSmiles || s.afterSmiles) && (
-        <div className="mb-3 flex flex-wrap items-center justify-center gap-2 rounded-xl bg-[#0B0F19] p-2">
+        <div className="mb-3 flex flex-wrap items-center justify-center gap-2 rounded-xl bg-[var(--background)] p-2">
           <StructureView smiles={s.beforeSmiles} label="before" />
           <ArrowRight className="h-5 w-5 shrink-0 text-purple-300" />
           <StructureView smiles={s.afterSmiles} label="after" />

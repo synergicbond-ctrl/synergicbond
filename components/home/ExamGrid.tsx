@@ -12,13 +12,13 @@ const exams = [
     icon: Microscope,
     pill: "LVL 11-12",
     badge: "NCERT MODE",
-    accent: "#00F5D4",
+    accent: "#50dc7b",
     shadow: "rgba(0,245,212,0.14)",
     border: "rgba(0,245,212,0.3)",
     glow: "group-hover:shadow-[0_0_28px_rgba(0,245,212,0.14)]",
     borderHover: "group-hover:border-[rgba(0,245,212,0.4)]",
     iconBg: "from-cyan-400/20 to-cyan-500/5 border-cyan-400/20",
-    iconColor: "text-[#00F5D4]",
+    iconColor: "text-[#50dc7b]",
     pillColor: "bg-cyan-500/10 text-cyan-300 border-cyan-500/20",
   },
   {
@@ -29,13 +29,13 @@ const exams = [
     icon: Atom,
     pill: "ADV MODE",
     badge: "RANK BOOSTER ACTIVE",
-    accent: "#9B5DE5",
+    accent: "#b376ff",
     shadow: "rgba(155,93,229,0.14)",
     border: "rgba(155,93,229,0.3)",
     glow: "group-hover:shadow-[0_0_28px_rgba(155,93,229,0.14)]",
     borderHover: "group-hover:border-[rgba(155,93,229,0.4)]",
     iconBg: "from-violet-400/20 to-violet-500/5 border-violet-400/20",
-    iconColor: "text-[#9B5DE5]",
+    iconColor: "text-[#b376ff]",
     pillColor: "bg-purple-500/10 text-purple-300 border-purple-500/20",
   },
   {
@@ -46,13 +46,13 @@ const exams = [
     icon: Trophy,
     pill: "ELITE TIER",
     badge: "INTERNATIONAL MODE",
-    accent: "#00F5D4",
+    accent: "#50dc7b",
     shadow: "rgba(0,245,212,0.14)",
     border: "rgba(0,245,212,0.3)",
     glow: "group-hover:shadow-[0_0_28px_rgba(0,245,212,0.14)]",
     borderHover: "group-hover:border-[rgba(0,245,212,0.4)]",
     iconBg: "from-cyan-400/20 to-cyan-500/5 border-cyan-400/20",
-    iconColor: "text-[#00F5D4]",
+    iconColor: "text-[#50dc7b]",
     pillColor: "bg-cyan-500/10 text-cyan-300 border-cyan-500/20",
   },
   {
@@ -63,13 +63,13 @@ const exams = [
     icon: GraduationCap,
     pill: "PG LEVEL",
     badge: "ENGINEERING CORE",
-    accent: "#9B5DE5",
+    accent: "#b376ff",
     shadow: "rgba(155,93,229,0.14)",
     border: "rgba(155,93,229,0.3)",
     glow: "group-hover:shadow-[0_0_28px_rgba(155,93,229,0.14)]",
     borderHover: "group-hover:border-[rgba(155,93,229,0.4)]",
     iconBg: "from-violet-400/20 to-violet-500/5 border-violet-400/20",
-    iconColor: "text-[#9B5DE5]",
+    iconColor: "text-[#b376ff]",
     pillColor: "bg-purple-500/10 text-purple-300 border-purple-500/20",
   },
 ];
@@ -98,7 +98,7 @@ export default function ExamGrid() {
             <Link
               key={exam.title}
               href={exam.href}
-              className={`group relative rounded-2xl border bg-[#111827] p-6 transition-all duration-300 hover:-translate-y-2 ${exam.borderHover} ${exam.glow}`}
+              className={`group relative rounded-2xl border bg-[var(--surface)] p-6 transition-all duration-300 hover:-translate-y-2 ${exam.borderHover} ${exam.glow}`}
               style={{ borderColor: "rgba(255,255,255,0.06)" }}
             >
               {/* Icon + status badge on one row (no overlap) */}

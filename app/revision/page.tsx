@@ -106,7 +106,7 @@ export default function RevisionPage() {
       <SavedRevisionList />
 
       {/* Weak Topic Custom Search */}
-      <section className="bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
+      <section className="bg-white p-6 rounded-2xl shadow-sm border border-[var(--border)]">
         <h2 className="text-2xl font-bold text-slate-800 mb-2">Drill a Custom Weak Topic</h2>
         <p className="text-sm text-slate-600 mb-4">Enter a specific concept, reaction, or formula that needs targeted practice.</p>
         <form action="/revision/weakTopic" method="GET" className="flex gap-4">
@@ -114,7 +114,7 @@ export default function RevisionPage() {
             type="text" 
             name="topic" 
             placeholder="e.g. SN1 vs SN2, Buffer solutions, CFT splitting..." 
-            className="flex-1 p-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-indigo-600"
+            className="flex-1 p-3 rounded-xl border border-[var(--border)] focus:outline-none focus:ring-2 focus:ring-indigo-600"
             required
           />
           <button type="submit" className="px-6 py-3 bg-indigo-600 hover:bg-indigo-700 text-white font-bold rounded-xl transition">

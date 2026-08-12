@@ -12,15 +12,15 @@ const toneStyles: Record<Tone, string> = {
 };
 function Section({ index, title, subtitle, children }: { index: string; title: string; subtitle?: string; children: React.ReactNode }) {
   return (
-    <section className="rounded-[2rem] border border-white/10 bg-slate-950/80 p-5 shadow-2xl shadow-black/20 backdrop-blur md:p-8">
+    <section className="rounded-[2rem] border border-white/10 bg-[var(--background)]/80 p-5 shadow-2xl shadow-black/20 backdrop-blur md:p-8">
       <div className="flex items-start gap-4">
         <span className="grid h-11 w-11 shrink-0 place-items-center rounded-2xl border border-cyan-300/30 bg-cyan-300/10 text-sm font-black text-cyan-200">{index}</span>
         <div>
           <h2 className="text-2xl font-black tracking-tight text-white md:text-3xl">{title}</h2>
-          {subtitle && <p className="mt-1 max-w-4xl text-sm leading-6 text-slate-400">{subtitle}</p>}
+          {subtitle && <p className="mt-1 max-w-4xl text-sm leading-6 text-[var(--text-muted)]">{subtitle}</p>}
         </div>
       </div>
-      <div className="mt-6 space-y-5 text-[15px] leading-7 text-slate-200 md:text-base">{children}</div>
+      <div className="mt-6 space-y-5 text-[15px] leading-7 text-[var(--foreground)] md:text-base">{children}</div>
     </section>
   );
 }
@@ -37,7 +37,7 @@ function Lens({ title, children, tone = "cyan" }: { title: string; children: Rea
     <aside className={`rounded-2xl border p-5 ${toneStyles[tone]}`}>
       <p className="text-xs font-black uppercase tracking-[0.2em]">Concept</p>
       <h3 className="mt-2 text-lg font-black text-white">{title}</h3>
-      <div className="mt-2 text-sm leading-6 text-slate-200">{children}</div>
+      <div className="mt-2 text-sm leading-6 text-[var(--foreground)]">{children}</div>
     </aside>
   );
 }
@@ -208,12 +208,12 @@ export default function ThermodynamicsPart30() {
     <main className="min-h-screen bg-[#020617] text-slate-100">
       <div className="mx-auto max-w-5xl space-y-6 px-4 py-10 md:px-8">
 
-        <header className="rounded-[2rem] border border-white/10 bg-slate-950/80 p-6 shadow-2xl shadow-black/20 md:p-10">
+        <header className="rounded-[2rem] border border-white/10 bg-[var(--background)]/80 p-6 shadow-2xl shadow-black/20 md:p-10">
           <p className="text-xs font-black uppercase tracking-[0.25em] text-fuchsia-300">Part 30</p>
           <h1 className="mt-3 text-4xl font-black tracking-tight text-white md:text-5xl">
             van&apos;t Hoff Equation, Clapeyron Equation and Phase Equilibrium
           </h1>
-          <p className="mt-4 max-w-3xl text-lg leading-8 text-slate-300">
+          <p className="mt-4 max-w-3xl text-lg leading-8 text-[var(--text-body)]">
             Temperature dependence of equilibrium constants, Clausius–Clapeyron vapour pressure,
             the Clapeyron equation for any phase transition, and thermodynamic versus kinetic stability.
           </p>
@@ -223,7 +223,7 @@ export default function ThermodynamicsPart30() {
           subtitle="Exact derived result combining ΔrG° = −RT ln K with the Gibbs–Helmholtz equation">
           <VantHoffPlotSVG />
           <p>Differentiate ΔrG°/T = −R ln K with respect to T at constant pressure, using the Gibbs–Helmholtz equation [∂(ΔG°/T)/∂T]_P = −ΔH°/T²:</p>
-          <div className="space-y-1 rounded-2xl border border-white/10 bg-slate-900/60 p-4 font-mono text-sm">
+          <div className="space-y-1 rounded-2xl border border-white/10 bg-[var(--surface)]/60 p-4 font-mono text-sm">
             <p>∂/∂T[−R ln K] = −ΔrH°/T²</p>
             <p>−R (d ln K/dT) = −ΔrH°/T²</p>
             <p>d ln K/dT = ΔrH°/(RT²)</p>
@@ -238,7 +238,7 @@ export default function ThermodynamicsPart30() {
 
         <Section index="2" title="Integrated van't Hoff Equation">
           <p>Assuming ΔrH° ≈ constant over the temperature range [T₁, T₂]:</p>
-          <div className="space-y-1 rounded-2xl border border-white/10 bg-slate-900/60 p-4 font-mono text-sm">
+          <div className="space-y-1 rounded-2xl border border-white/10 bg-[var(--surface)]/60 p-4 font-mono text-sm">
             <p>∫_&#123;K₁&#125;^&#123;K₂&#125; d(ln K) = (ΔrH°/R) ∫_&#123;T₁&#125;^&#123;T₂&#125; dT/T²</p>
             <p>ln K₂ − ln K₁ = (ΔrH°/R)[−1/T]_&#123;T₁&#125;^&#123;T₂&#125;</p>
             <p>ln(K₂/K₁) = (ΔrH°/R)(1/T₁ − 1/T₂)</p>
@@ -252,7 +252,7 @@ export default function ThermodynamicsPart30() {
           subtitle="Exact derived result — no approximations needed">
           <ClapeyronSVG />
           <p>Two phases α and β coexist when μα = μβ. As T and P change along the coexistence line, the equality must be maintained: dμα = dμβ.</p>
-          <div className="space-y-1 rounded-2xl border border-white/10 bg-slate-900/60 p-4 font-mono text-sm">
+          <div className="space-y-1 rounded-2xl border border-white/10 bg-[var(--surface)]/60 p-4 font-mono text-sm">
             <p>dμ = −S̄_m dT + V̄_m dP for each phase</p>
             <p>Set dμα = dμβ:</p>
             <p>−S̄_α dT + V̄_α dP = −S̄_β dT + V̄_β dP</p>
@@ -271,7 +271,7 @@ export default function ThermodynamicsPart30() {
         <Section index="4" title="Clausius–Clapeyron Approximation for Liquid–Vapour"
           subtitle="Approximate result: valid when ideal-gas vapour and negligible liquid molar volume are assumed">
           <p>For liquid–vapour equilibrium, ΔV_vap ≈ V_gas = RT/P (ideal gas), so:</p>
-          <div className="space-y-1 rounded-2xl border border-white/10 bg-slate-900/60 p-4 font-mono text-sm">
+          <div className="space-y-1 rounded-2xl border border-white/10 bg-[var(--surface)]/60 p-4 font-mono text-sm">
             <p>dP/dT = ΔH_vap P/(RT²)</p>
             <p>Divide both sides by P:</p>
             <p>d(ln P)/dT = ΔH_vap/(RT²)</p>
@@ -301,14 +301,14 @@ export default function ThermodynamicsPart30() {
           </p>
           <div className="overflow-x-auto rounded-2xl border border-white/10">
             <table className="min-w-[600px] border-collapse text-left text-sm">
-              <thead className="bg-slate-900">
+              <thead className="bg-[var(--surface)]">
                 <tr>
                   {["Condition", "ΔrG", "ΔrG°", "Direction"].map(h => (
                     <th key={h} className="border-b border-white/10 px-4 py-3 font-black text-white">{h}</th>
                   ))}
                 </tr>
               </thead>
-              <tbody className="divide-y divide-white/5 bg-slate-950/70">
+              <tbody className="divide-y divide-white/5 bg-[var(--background)]/70">
                 {[
                   ["Q < K", "< 0 (spontaneous)", "independent of Q", "Forward"],
                   ["Q = K", "= 0 (equilibrium)", "independent of Q", "Neither"],
@@ -318,8 +318,8 @@ export default function ThermodynamicsPart30() {
                 ].map(([cond, drg, drgo, dir]) => (
                   <tr key={String(cond)}>
                     <td className="px-4 py-3 font-mono text-cyan-200">{cond}</td>
-                    <td className="px-4 py-3 text-slate-300">{drg}</td>
-                    <td className="px-4 py-3 text-slate-300">{drgo}</td>
+                    <td className="px-4 py-3 text-[var(--text-body)]">{drg}</td>
+                    <td className="px-4 py-3 text-[var(--text-body)]">{drgo}</td>
                     <td className="px-4 py-3 font-semibold text-emerald-300">{dir}</td>
                   </tr>
                 ))}
@@ -330,10 +330,10 @@ export default function ThermodynamicsPart30() {
 
         <Section index="6" title="Worked Examples">
           {examples.map(ex => (
-            <article key={ex.title} className="rounded-2xl border border-white/10 bg-slate-900/70 p-5 mb-4">
+            <article key={ex.title} className="rounded-2xl border border-white/10 bg-[var(--surface)]/70 p-5 mb-4">
               <h3 className="font-black text-white">{ex.title}</h3>
-              <p className="mt-2 text-sm font-semibold text-slate-200">{ex.given}</p>
-              <div className="mt-3 rounded-xl border border-emerald-300/20 bg-emerald-300/[0.06] p-3 text-sm leading-6 text-slate-200">{ex.solution}</div>
+              <p className="mt-2 text-sm font-semibold text-[var(--foreground)]">{ex.given}</p>
+              <div className="mt-3 rounded-xl border border-emerald-300/20 bg-emerald-300/[0.06] p-3 text-sm leading-6 text-[var(--foreground)]">{ex.solution}</div>
               <p className="mt-2 text-xs text-amber-300"><span className="font-black">Trap: </span>{ex.trap}</p>
             </article>
           ))}
@@ -350,9 +350,9 @@ export default function ThermodynamicsPart30() {
               ["The normal boiling point of benzene is 80.1 °C and ΔH_vap = 30.8 kJ mol⁻¹. Find the vapour pressure at 60 °C.", "T₁ = 353.1 K (normal bp, P₁ = 1 atm), T₂ = 333 K. ln(P₂/1) = −(30800/8.314)(1/333 − 1/353.1) = −3705 × (1.700×10⁻⁴) = −0.630. P₂ = e^{−0.630} = 0.532 atm = 404 mmHg."],
               ["Why does the solid–liquid coexistence line for most substances have a very steep positive slope?", "dP/dT = ΔH_fus/(T ΔV_fus). ΔV_fus is small (solid and liquid have similar densities) making dP/dT very large — enormous pressure change is required to shift T_m appreciably."],
             ].map(([q, a], i) => (
-              <article key={i} className="rounded-2xl border border-white/10 bg-slate-900/60 p-4">
+              <article key={i} className="rounded-2xl border border-white/10 bg-[var(--surface)]/60 p-4">
                 <p className="font-semibold text-white"><span className="mr-2 text-amber-300">{i+1}.</span>{q}</p>
-                <div className="mt-2 rounded-xl border border-emerald-300/20 bg-emerald-300/[0.06] p-3 text-sm text-slate-200">{a}</div>
+                <div className="mt-2 rounded-xl border border-emerald-300/20 bg-emerald-300/[0.06] p-3 text-sm text-[var(--foreground)]">{a}</div>
               </article>
             ))}
           </div>
@@ -362,7 +362,7 @@ export default function ThermodynamicsPart30() {
         <section className="rounded-[2rem] border border-emerald-400/20 bg-emerald-400/[0.05] p-8">
           <p className="text-xs font-black uppercase tracking-[0.25em] text-emerald-300">Thermodynamics Complete</p>
           <h2 className="mt-3 text-3xl font-black text-white">Parts 01–30 Complete</h2>
-          <p className="mt-4 max-w-3xl text-lg leading-7 text-slate-300">
+          <p className="mt-4 max-w-3xl text-lg leading-7 text-[var(--text-body)]">
             You have reached the end of the Synergic Bond Thermodynamics chapter. Parts 01 through 30
             cover the complete sequence from system definition and state variables through fundamental
             equations, Maxwell relations, and chemical equilibrium.

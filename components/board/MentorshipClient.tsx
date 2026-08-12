@@ -87,7 +87,7 @@ export default function MentorshipClient({
           <label className="text-sm text-white/70">
             <span className="mr-2">Board exam date</span>
             <input type="date" value={examDate} onChange={(e) => saveDate(e.target.value)}
-              className="rounded-lg border border-white/15 bg-[#0B1220] px-3 py-1.5 text-white/90" />
+              className="rounded-lg border border-white/15 bg-[var(--background)] px-3 py-1.5 text-white/90" />
           </label>
         </div>
       </section>
@@ -146,7 +146,7 @@ export default function MentorshipClient({
         <div className="flex gap-2">
           <input value={draft} onChange={(e) => setDraft(e.target.value)} onKeyDown={(e) => { if (e.key === "Enter") addNote(); }}
             placeholder="e.g. Revise Coordination Compounds nomenclature before mock 2"
-            className="flex-1 rounded-lg border border-white/10 bg-[#0B1220] px-3 py-2 text-sm text-white/90 outline-none focus:border-cyan-400/40" />
+            className="flex-1 rounded-lg border border-white/10 bg-[var(--background)] px-3 py-2 text-sm text-white/90 outline-none focus:border-cyan-400/40" />
           <button onClick={addNote} className="rounded-lg border border-cyan-400/40 bg-cyan-500/10 px-4 py-2 text-sm font-bold text-cyan-300">Add</button>
         </div>
         <div className="mt-3 space-y-2">

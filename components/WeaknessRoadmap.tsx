@@ -29,7 +29,7 @@ export default function WeaknessRoadmap() {
           day: "Day 1",
           icon: BookOpen,
           title: "High-Yield Core Theory",
-          accent: "#00F5D4",
+          accent: "#50dc7b",
           tasks: [
             `Read the complete theory of "${plan}" using the multicolor notes engine`,
             "Highlight every formula in cyan and exception in crimson",
@@ -40,7 +40,7 @@ export default function WeaknessRoadmap() {
           day: "Day 2",
           icon: Layers,
           title: "Flashcards & Exceptions Review",
-          accent: "#9B5DE5",
+          accent: "#b376ff",
           tasks: [
             `Drill 30 flashcards focused on "${plan}"`,
             "Revise all anomalies & edge cases from the Exception Vault",
@@ -51,7 +51,7 @@ export default function WeaknessRoadmap() {
           day: "Day 3",
           icon: ClipboardCheck,
           title: "Adaptive Practice & Mock Drill",
-          accent: "#FFD700",
+          accent: "#e3b341",
           tasks: [
             `Solve 20 adaptive questions on "${plan}" (easy → hard)`,
             "Attempt a sub-syllabus mini-mock (timed)",
@@ -62,7 +62,7 @@ export default function WeaknessRoadmap() {
     : [];
 
   return (
-    <div className="rounded-3xl bg-[#111827] border border-white/[0.06] p-6 md:p-8">
+    <div className="rounded-3xl bg-[var(--surface)] border border-white/[0.06] p-6 md:p-8">
       <div className="flex items-center gap-2 mb-5">
         <div className="p-2 rounded-lg bg-cyan-500/10">
           <Target className="h-4 w-4 text-cyan-400" />

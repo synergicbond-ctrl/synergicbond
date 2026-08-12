@@ -11,7 +11,7 @@ const FREQ: Record<string, string> = {
 
 function Cell({ icon: Icon, label, children }: { icon: LucideIcon; label: string; children: React.ReactNode }) {
   return (
-    <div className="rounded-xl border border-white/[0.06] bg-[#0e1421] p-3">
+    <div className="rounded-xl border border-white/[0.06] bg-[var(--surface)] p-3">
       <div className="mb-1 flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-wider text-white/35">
         <Icon className="h-3 w-3" /> {label}
       </div>

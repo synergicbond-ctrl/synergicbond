@@ -94,7 +94,7 @@ export default function AtomicStructureNotes() {
           {QUANTUM.map((q) => (
             <Glass key={q.sym} className="p-4">
               <div className="flex items-center gap-3">
-                <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-[#0B1220] text-lg font-black text-cyan-200">{renderChemistry(q.sym)}</span>
+                <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-[var(--background)] text-lg font-black text-cyan-200">{renderChemistry(q.sym)}</span>
                 <span className="font-bold text-white">{q.name}</span>
               </div>
               <p className="mt-2 text-sm text-white/65">{renderChemistry(q.role)}</p>

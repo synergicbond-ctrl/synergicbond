@@ -18,7 +18,7 @@ export default function ReferenceTabs() {
   return (
     <div className="mb-8 flex justify-center">
       <div
-        className="flex items-center gap-1 overflow-x-auto scrollbar-none rounded-full bg-[#111827] border border-white/[0.06] p-1.5 max-w-full"
+        className="flex items-center gap-1 overflow-x-auto scrollbar-none rounded-full bg-[var(--surface)] border border-white/[0.06] p-1.5 max-w-full"
         style={{ scrollbarWidth: "none" }}
       >
         {tabs.map((t) => {
@@ -29,7 +29,7 @@ export default function ReferenceTabs() {
               key={t.href}
               href={t.href}
               className={`flex items-center gap-1.5 whitespace-nowrap px-3.5 py-2 rounded-full text-xs font-medium transition-all duration-200 hover:scale-105 ${
-                active ? "bg-cyan-500 text-black font-bold" : "text-gray-400 hover:text-white hover:bg-white/5"
+                active ? "bg-cyan-500 text-black font-bold" : "text-[var(--text-muted)] hover:text-white hover:bg-white/5"
               }`}
             >
               <Icon className="h-3.5 w-3.5 flex-shrink-0" />

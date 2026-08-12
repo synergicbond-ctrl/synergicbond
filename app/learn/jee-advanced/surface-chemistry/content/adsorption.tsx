@@ -39,15 +39,15 @@ export function Part01Content() {
         <div className="overflow-x-auto"><SurfaceVisual mode="surface-area" /></div>
         <div className="grid gap-5 xl:grid-cols-2">
           <FormulaCard title="Cube subdivision">
-            <p className="text-sm leading-6 text-slate-300">For a cube of edge <K>{String.raw`L`}</K> and density <K>{String.raw`\rho`}</K>:</p>
+            <p className="text-sm leading-6 text-[var(--text-body)]">For a cube of edge <K>{String.raw`L`}</K> and density <K>{String.raw`\rho`}</K>:</p>
             <KB>{String.raw`A=6L^2,\qquad m=\rho L^3`}</KB>
             <KB>{String.raw`a_s=\frac{A}{m}=\frac{6}{\rho L}`}</KB>
-            <p className="text-sm leading-6 text-slate-300">Thus the external specific surface area varies inversely with particle size.</p>
+            <p className="text-sm leading-6 text-[var(--text-body)]">Thus the external specific surface area varies inversely with particle size.</p>
           </FormulaCard>
           <FormulaCard title="Spherical particles">
             <KB>{String.raw`A=4\pi r^2,\qquad m=\frac{4}{3}\pi r^3\rho`}</KB>
             <KB>{String.raw`a_s=\frac{3}{\rho r}=\frac{6}{\rho d}`}</KB>
-            <p className="text-sm leading-6 text-slate-300">Real adsorbents may possess internal pores, so the experimentally accessible area can be many times the value predicted from external geometry.</p>
+            <p className="text-sm leading-6 text-[var(--text-body)]">Real adsorbents may possess internal pores, so the experimentally accessible area can be many times the value predicted from external geometry.</p>
           </FormulaCard>
         </div>
         <DataTable
@@ -100,8 +100,8 @@ export function Part01Content() {
         <div className="grid gap-5 xl:grid-cols-2">
           <FormulaCard title="Thermodynamic signs">
             <KB>{String.raw`\Delta G_{\mathrm{ads}}=\Delta H_{\mathrm{ads}}-T\Delta S_{\mathrm{ads}}`}</KB>
-            <p className="text-sm leading-6 text-slate-300">For ordinary adsorption, <K>{String.raw`\Delta S_{\mathrm{ads}}<0`}</K> because translational freedom decreases. Net adsorption is generally exothermic, so <K>{String.raw`\Delta H_{\mathrm{ads}}<0`}</K>.</p>
-            <p className="text-sm leading-6 text-slate-300">Spontaneous adsorption requires <K>{String.raw`\Delta G_{\mathrm{ads}}<0`}</K>. At equilibrium, <K>{String.raw`\Delta G=0`}</K>.</p>
+            <p className="text-sm leading-6 text-[var(--text-body)]">For ordinary adsorption, <K>{String.raw`\Delta S_{\mathrm{ads}}<0`}</K> because translational freedom decreases. Net adsorption is generally exothermic, so <K>{String.raw`\Delta H_{\mathrm{ads}}<0`}</K>.</p>
+            <p className="text-sm leading-6 text-[var(--text-body)]">Spontaneous adsorption requires <K>{String.raw`\Delta G_{\mathrm{ads}}<0`}</K>. At equilibrium, <K>{String.raw`\Delta G=0`}</K>.</p>
           </FormulaCard>
           <Card title="Microscopic equilibrium" tone="emerald">
             <p>Initially the clean surface has many vacant sites, so adsorption is rapid. As coverage rises, vacant sites become less available and the adsorption rate falls.</p>
@@ -367,12 +367,12 @@ export function Part03Content() {
           <FormulaCard title="Gas–solid form">
             <KB>{String.raw`\frac{x}{m}=kP^{1/n}`}</KB>
             <KB>{String.raw`\log\frac{x}{m}=\log k+\frac{1}{n}\log P`}</KB>
-            <p className="text-sm leading-6 text-slate-300">A plot of <K>{String.raw`\log(x/m)`}</K> against <K>{String.raw`\log P`}</K> has slope <K>{String.raw`1/n`}</K> and intercept <K>{String.raw`\log k`}</K>.</p>
+            <p className="text-sm leading-6 text-[var(--text-body)]">A plot of <K>{String.raw`\log(x/m)`}</K> against <K>{String.raw`\log P`}</K> has slope <K>{String.raw`1/n`}</K> and intercept <K>{String.raw`\log k`}</K>.</p>
           </FormulaCard>
           <FormulaCard title="Adsorption from solution">
             <KB>{String.raw`\frac{x}{m}=kC_e^{1/n}`}</KB>
             <KB>{String.raw`\log\frac{x}{m}=\log k+\frac{1}{n}\log C_e`}</KB>
-            <p className="text-sm leading-6 text-slate-300"><K>{String.raw`C_e`}</K> is the equilibrium solute concentration after adsorption.</p>
+            <p className="text-sm leading-6 text-[var(--text-body)]"><K>{String.raw`C_e`}</K> is the equilibrium solute concentration after adsorption.</p>
           </FormulaCard>
         </div>
         <DataTable
@@ -407,7 +407,7 @@ export function Part03Content() {
         <FormulaCard title="Amount adsorbed and linear form">
           <KB>{String.raw`q=q_m\theta=\frac{q_mKP}{1+KP}`}</KB>
           <KB>{String.raw`\frac{P}{q}=\frac{1}{q_mK}+\frac{P}{q_m}`}</KB>
-          <p className="text-sm leading-6 text-slate-300">A plot of <K>{String.raw`P/q`}</K> versus <K>{String.raw`P`}</K> gives slope <K>{String.raw`1/q_m`}</K> and intercept <K>{String.raw`1/(q_mK)`}</K>.</p>
+          <p className="text-sm leading-6 text-[var(--text-body)]">A plot of <K>{String.raw`P/q`}</K> versus <K>{String.raw`P`}</K> gives slope <K>{String.raw`1/q_m`}</K> and intercept <K>{String.raw`1/(q_mK)`}</K>.</p>
         </FormulaCard>
         <DataTable
           headers={["Limit", "Reduction", "Apparent order"]}
@@ -431,7 +431,7 @@ export function Part03Content() {
           </Card>
           <FormulaCard title="BET linear equation">
             <KB>{String.raw`\frac{P}{n(P_0-P)}=\frac{1}{n_mC}+\frac{C-1}{n_mC}\frac{P}{P_0}`}</KB>
-            <p className="text-sm leading-6 text-slate-300"><K>{String.raw`P_0`}</K> is saturation vapour pressure, <K>{String.raw`n_m`}</K> monolayer capacity and <K>{String.raw`C`}</K> a constant related to the first-layer adsorption energy.</p>
+            <p className="text-sm leading-6 text-[var(--text-body)]"><K>{String.raw`P_0`}</K> is saturation vapour pressure, <K>{String.raw`n_m`}</K> monolayer capacity and <K>{String.raw`C`}</K> a constant related to the first-layer adsorption energy.</p>
           </FormulaCard>
         </div>
         <Card title="Hysteresis and capillary condensation" tone="amber">
@@ -448,7 +448,7 @@ export function Part03Content() {
         <FormulaCard title="Isosteric relation">
           <KB>{String.raw`\left(\frac{\partial\ln P}{\partial(1/T)}\right)_{q}=\frac{\Delta H_{\mathrm{ads}}}{R}`}</KB>
           <KB>{String.raw`\ln\frac{P_2}{P_1}=\frac{\Delta H_{\mathrm{ads}}}{R}\left(\frac{1}{T_2}-\frac{1}{T_1}\right)`}</KB>
-          <p className="text-sm leading-6 text-slate-300">Because <K>{String.raw`\Delta H_{\mathrm{ads}}<0`}</K>, the slope of <K>{String.raw`\ln P`}</K> against <K>{String.raw`1/T`}</K> is negative when adsorption enthalpy is written with its thermodynamic sign. Some texts instead define the positive isosteric heat <K>{String.raw`q_{st}=-\Delta H_{\mathrm{ads}}`}</K>.</p>
+          <p className="text-sm leading-6 text-[var(--text-body)]">Because <K>{String.raw`\Delta H_{\mathrm{ads}}<0`}</K>, the slope of <K>{String.raw`\ln P`}</K> against <K>{String.raw`1/T`}</K> is negative when adsorption enthalpy is written with its thermodynamic sign. Some texts instead define the positive isosteric heat <K>{String.raw`q_{st}=-\Delta H_{\mathrm{ads}}`}</K>.</p>
         </FormulaCard>
         <div className="grid gap-5 xl:grid-cols-3">
           <Card title="Integral heat" tone="cyan"><p>Average enthalpy change for adsorbing a finite amount from a clean surface to a stated coverage.</p></Card>
@@ -520,12 +520,12 @@ export function Part04Content() {
           <FormulaCard title="Elementary Langmuir kinetics">
             <KB>{String.raw`r_a=k_aP(1-\theta)`}</KB>
             <KB>{String.raw`r_d=k_d\theta`}</KB>
-            <p className="text-sm leading-6 text-slate-300">The adsorption rate depends on gas pressure and vacant sites. The desorption rate depends on occupied sites.</p>
+            <p className="text-sm leading-6 text-[var(--text-body)]">The adsorption rate depends on gas pressure and vacant sites. The desorption rate depends on occupied sites.</p>
           </FormulaCard>
           <FormulaCard title="Desorption and residence time">
             <KB>{String.raw`k_d=Ae^{-E_d/RT}`}</KB>
             <KB>{String.raw`\tau=\frac{1}{k_d}=A^{-1}e^{E_d/RT}`}</KB>
-            <p className="text-sm leading-6 text-slate-300">A higher desorption barrier or lower temperature gives a longer mean residence time.</p>
+            <p className="text-sm leading-6 text-[var(--text-body)]">A higher desorption barrier or lower temperature gives a longer mean residence time.</p>
           </FormulaCard>
         </div>
         <DataTable
@@ -571,7 +571,7 @@ export function Part04Content() {
         <FormulaCard title="Mass balance">
           <KB>{String.raw`x=(C_0-C_e)V`}</KB>
           <KB>{String.raw`q=\frac{x}{m}=\frac{(C_0-C_e)V}{m}`}</KB>
-          <p className="text-sm leading-6 text-slate-300">Use consistent concentration units. If <K>{String.raw`C`}</K> is molar concentration, <K>{String.raw`x`}</K> is moles; multiply by molar mass when mass uptake is required.</p>
+          <p className="text-sm leading-6 text-[var(--text-body)]">Use consistent concentration units. If <K>{String.raw`C`}</K> is molar concentration, <K>{String.raw`x`}</K> is moles; multiply by molar mass when mass uptake is required.</p>
         </FormulaCard>
         <Card title="Acetic acid–charcoal experiment" tone="cyan">
           <p>Equal masses of activated charcoal are equilibrated with acetic-acid solutions of different initial concentrations. After filtration, the equilibrium concentration is obtained by titration with standard alkali.</p>

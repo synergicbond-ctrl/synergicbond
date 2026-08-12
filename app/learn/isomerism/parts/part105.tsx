@@ -336,7 +336,7 @@ export default function IsomerismPart95() {
               <ParentPhotodimerSkeleton />
             </div>
 
-            <p className="mt-3 text-sm leading-7 text-slate-300">
+            <p className="mt-3 text-sm leading-7 text-[var(--text-body)]">
               The stereochemical information belongs to the four substituted
               cyclobutane carbons. Flattening the ring into a decorative diamond
               loses which phenyl and carboxyl groups occupy the same or opposite
@@ -366,7 +366,7 @@ export default function IsomerismPart95() {
               Rendering rule used here
             </h2>
 
-            <div className="mt-3 grid gap-3 text-sm leading-7 text-slate-300 md:grid-cols-2">
+            <div className="mt-3 grid gap-3 text-sm leading-7 text-[var(--text-body)] md:grid-cols-2">
               <div className="rounded-xl border border-white/10 bg-[#050b16] p-4">
                 <b className="text-cyan-100">Solid triangular wedge</b>
                 <p>
@@ -384,7 +384,7 @@ export default function IsomerismPart95() {
               </div>
             </div>
 
-            <p className="mt-4 text-sm leading-7 text-slate-300">
+            <p className="mt-4 text-sm leading-7 text-[var(--text-body)]">
               The cyclobutane ring is intentionally rendered as a perspective
               parallelogram with a heavy near edge. Face information is encoded
               independently at every substituted carbon, so cis/trans and
@@ -397,7 +397,7 @@ export default function IsomerismPart95() {
         <nav className="mt-8 flex justify-between border-t border-white/10 pt-6">
           <Link
             href="/learn/isomerism/94"
-            className="rounded-xl border border-white/15 px-4 py-3 text-sm font-bold text-slate-200"
+            className="rounded-xl border border-white/15 px-4 py-3 text-sm font-bold text-[var(--foreground)]"
           >
             ← 94
           </Link>

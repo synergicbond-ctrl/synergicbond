@@ -24,7 +24,7 @@ export default function MoleculeLogo({ size = 44 }: { size?: number }) {
     let t = 0;
     let animId: number;
 
-    const palette = ["#00F5D4", "#00BBF9", "#9B5DE5", "#F472B6", "#FFD700", "#69F0AE"];
+    const palette = ["#50dc7b", "#37c8f4", "#b376ff", "#F472B6", "#e3b341", "#69F0AE"];
 
     // Icosahedron vertices + center
     const phi = (1 + Math.sqrt(5)) / 2;

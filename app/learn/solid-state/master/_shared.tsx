@@ -61,7 +61,7 @@ function FigureFrame({ children, caption }: { children: ReactNode; caption: stri
   return (
     <figure className="my-7 overflow-hidden rounded-2xl border border-white/10 bg-[#07131f]">
       <div className="overflow-x-auto p-4 md:p-7">{children}</div>
-      <figcaption className="border-t border-white/10 px-5 py-3 text-sm leading-6 text-slate-400">
+      <figcaption className="border-t border-white/10 px-5 py-3 text-sm leading-6 text-[var(--text-muted)]">
         {caption}
       </figcaption>
     </figure>
@@ -330,7 +330,7 @@ function SolidStateFigure({ id, caption }: { id: string; caption: string }) {
         <svg {...commonSvg} aria-label="F-centre electron in an anion vacancy">
           {Array.from({length:35},(_,i)=>{const col=i%7,row=Math.floor(i/7), missing=i===17; if(missing) return null; return <Dot key={i} x={255+col*62} y={62+row*58} r={17} fill={(col+row)%2?"#c4b5fd":"#67e8f9"}/>;})}
           <circle cx="441" cy="178" r="25" fill="none" stroke="#f87171" strokeWidth="3" strokeDasharray="7 5" />
-          <circle cx="441" cy="178" r="8" fill="#fbbf24" /><text x="441" y="184" textAnchor="middle" fill="#111827" fontSize="12" fontWeight="900">e⁻</text>
+          <circle cx="441" cy="178" r="8" fill="#fbbf24" /><text x="441" y="184" textAnchor="middle" fill="#101516" fontSize="12" fontWeight="900">e⁻</text>
           <text x="700" y="170" fill="#fbbf24" fontSize="21" fontWeight="700">electron trapped</text><text x="700" y="202" fill="#94a3b8" fontSize="17">at an anion vacancy</text>
         </svg>
       </FigureFrame>
@@ -361,25 +361,25 @@ function SolidStateFigure({ id, caption }: { id: string; caption: string }) {
 
 function BlockView({ block, exampleNumber }: { block: SolidStateBlock; exampleNumber: number }) {
   if (block.kind === "paragraph") {
-    return <p className="text-[15.5px] leading-8 text-slate-200 md:text-[16.5px]"><RichText text={block.text} /></p>;
+    return <p className="text-[15.5px] leading-8 text-[var(--foreground)] md:text-[16.5px]"><RichText text={block.text} /></p>;
   }
   if (block.kind === "bullets") {
-    return <ul className="space-y-2.5 pl-6 text-[15.5px] leading-7 text-slate-200 marker:text-cyan-300 md:text-base">{block.items.map((item)=><li key={item} className="list-disc pl-1"><RichText text={item}/></li>)}</ul>;
+    return <ul className="space-y-2.5 pl-6 text-[15.5px] leading-7 text-[var(--foreground)] marker:text-cyan-300 md:text-base">{block.items.map((item)=><li key={item} className="list-disc pl-1"><RichText text={item}/></li>)}</ul>;
   }
   if (block.kind === "formula") {
-    return <div className="my-5 overflow-x-auto border-y border-cyan-300/20 bg-cyan-300/[0.035] px-4 py-4"><MathText latex={block.latex} block />{block.note&&<p className="mt-2 text-center text-sm leading-6 text-slate-400"><RichText text={block.note}/></p>}</div>;
+    return <div className="my-5 overflow-x-auto border-y border-cyan-300/20 bg-cyan-300/[0.035] px-4 py-4"><MathText latex={block.latex} block />{block.note&&<p className="mt-2 text-center text-sm leading-6 text-[var(--text-muted)]"><RichText text={block.note}/></p>}</div>;
   }
   if (block.kind === "table") {
-    return <div className="my-6 overflow-x-auto rounded-xl border border-white/10">{block.caption&&<div className="border-b border-white/10 bg-white/[0.03] px-4 py-3 text-sm font-semibold text-slate-300">{block.caption}</div>}<table className="w-full min-w-[720px] border-collapse text-left text-sm md:text-[15px]"><thead className="bg-[#132638] text-white"><tr>{block.headers.map(h=><th key={h} className="border-b border-white/10 px-4 py-3.5 font-bold"><RichText text={h}/></th>)}</tr></thead><tbody>{block.rows.map((row,ri)=><tr key={ri} className="even:bg-white/[0.025]">{row.map((cell,ci)=><td key={ci} className="border-b border-white/[0.07] px-4 py-3.5 align-top leading-7 text-slate-300"><RichText text={cell}/></td>)}</tr>)}</tbody></table></div>;
+    return <div className="my-6 overflow-x-auto rounded-xl border border-white/10">{block.caption&&<div className="border-b border-white/10 bg-white/[0.03] px-4 py-3 text-sm font-semibold text-[var(--text-body)]">{block.caption}</div>}<table className="w-full min-w-[720px] border-collapse text-left text-sm md:text-[15px]"><thead className="bg-[#132638] text-white"><tr>{block.headers.map(h=><th key={h} className="border-b border-white/10 px-4 py-3.5 font-bold"><RichText text={h}/></th>)}</tr></thead><tbody>{block.rows.map((row,ri)=><tr key={ri} className="even:bg-white/[0.025]">{row.map((cell,ci)=><td key={ci} className="border-b border-white/[0.07] px-4 py-3.5 align-top leading-7 text-[var(--text-body)]"><RichText text={cell}/></td>)}</tr>)}</tbody></table></div>;
   }
   if (block.kind === "note") {
     return <aside className={`my-6 border-l-4 px-5 py-4 ${toneStyle(block.tone)}`}><div className="text-xs font-black uppercase tracking-[.15em] opacity-85">{block.title}</div><p className="mt-2 text-[15px] leading-7"><RichText text={block.text}/></p></aside>;
   }
   if (block.kind === "derivation") {
-    return <div className="my-7 overflow-hidden rounded-xl border border-violet-300/20 bg-violet-300/[0.025]"><div className="border-b border-violet-300/15 px-5 py-3 text-sm font-extrabold text-violet-100">Derivation · {block.title}</div><div className="space-y-4 px-5 py-5 md:px-7">{block.steps.map((step,i)=><div key={`${step.latex}-${i}`} className="grid gap-2 md:grid-cols-[minmax(260px,.85fr)_1fr] md:items-center"><div className="overflow-x-auto rounded-lg bg-black/20 px-3 py-3"><MathText latex={step.latex} block/></div><p className="text-sm leading-6 text-slate-400"><RichText text={step.text}/></p></div>)}<div className="border-t border-emerald-300/20 pt-4"><div className="text-center text-[11px] font-black uppercase tracking-[.16em] text-emerald-300">Result</div><MathText latex={block.result} block/></div></div></div>;
+    return <div className="my-7 overflow-hidden rounded-xl border border-violet-300/20 bg-violet-300/[0.025]"><div className="border-b border-violet-300/15 px-5 py-3 text-sm font-extrabold text-violet-100">Derivation · {block.title}</div><div className="space-y-4 px-5 py-5 md:px-7">{block.steps.map((step,i)=><div key={`${step.latex}-${i}`} className="grid gap-2 md:grid-cols-[minmax(260px,.85fr)_1fr] md:items-center"><div className="overflow-x-auto rounded-lg bg-black/20 px-3 py-3"><MathText latex={step.latex} block/></div><p className="text-sm leading-6 text-[var(--text-muted)]"><RichText text={step.text}/></p></div>)}<div className="border-t border-emerald-300/20 pt-4"><div className="text-center text-[11px] font-black uppercase tracking-[.16em] text-emerald-300">Result</div><MathText latex={block.result} block/></div></div></div>;
   }
   if (block.kind === "example") {
-    return <article className="my-7 overflow-hidden rounded-xl border border-emerald-300/20 bg-emerald-300/[0.025]"><header className="flex items-center gap-3 border-b border-emerald-300/15 px-5 py-4"><span className="flex h-9 w-9 items-center justify-center rounded-full bg-emerald-300/[0.12] text-sm font-black text-emerald-200">{exampleNumber}</span><div><div className="text-[10px] font-black uppercase tracking-[.16em] text-emerald-300/80">Worked example</div><h4 className="mt-0.5 text-lg font-extrabold text-white">{block.title}</h4></div></header><div className="px-5 py-5 md:px-7"><p className="leading-7 text-slate-200"><RichText text={block.question}/></p><ol className="mt-4 space-y-2.5 pl-6 text-[15px] leading-7 text-slate-400">{block.steps.map(step=><li key={step} className="list-decimal pl-1"><RichText text={step}/></li>)}</ol><div className="mt-5 border-l-4 border-emerald-300/45 bg-emerald-300/[0.055] px-4 py-3 font-semibold leading-7 text-emerald-50"><RichText text={block.answer}/></div></div></article>;
+    return <article className="my-7 overflow-hidden rounded-xl border border-emerald-300/20 bg-emerald-300/[0.025]"><header className="flex items-center gap-3 border-b border-emerald-300/15 px-5 py-4"><span className="flex h-9 w-9 items-center justify-center rounded-full bg-emerald-300/[0.12] text-sm font-black text-emerald-200">{exampleNumber}</span><div><div className="text-[10px] font-black uppercase tracking-[.16em] text-emerald-300/80">Worked example</div><h4 className="mt-0.5 text-lg font-extrabold text-white">{block.title}</h4></div></header><div className="px-5 py-5 md:px-7"><p className="leading-7 text-[var(--foreground)]"><RichText text={block.question}/></p><ol className="mt-4 space-y-2.5 pl-6 text-[15px] leading-7 text-[var(--text-muted)]">{block.steps.map(step=><li key={step} className="list-decimal pl-1"><RichText text={step}/></li>)}</ol><div className="mt-5 border-l-4 border-emerald-300/45 bg-emerald-300/[0.055] px-4 py-3 font-semibold leading-7 text-emerald-50"><RichText text={block.answer}/></div></div></article>;
   }
   return <SolidStateFigure id={block.id} caption={block.caption} />;
 }
@@ -388,8 +388,8 @@ function PartNavigation({ active }: { active: number }) {
   return (
     <nav aria-label="Solid State chapter parts" className="sticky top-2 z-30 mt-5 overflow-x-auto rounded-2xl border border-white/10 bg-[#07101a]/95 p-2 shadow-2xl backdrop-blur-xl">
       <div className="flex min-w-max gap-2">
-        <Link href="/learn/solid-state/master" className="flex w-36 shrink-0 items-center justify-center rounded-xl border border-white/10 px-4 py-3 text-sm font-bold text-slate-200 transition hover:border-cyan-300/35">Chapter contents</Link>
-        {SOLID_STATE_PARTS.map((part)=><Link key={part.number} href={`/learn/solid-state/master/part${String(part.number).padStart(2,"0")}`} aria-current={part.number===active?"page":undefined} className={`w-64 shrink-0 rounded-xl border px-4 py-3 transition ${part.number===active?"border-cyan-300/55 bg-cyan-300/10 text-white":"border-white/10 bg-white/[0.015] text-slate-400 hover:border-cyan-300/30 hover:text-white"}`}><div className="text-[10px] font-black uppercase tracking-[.16em] text-cyan-300/75">Part {String(part.number).padStart(2,"0")}</div><div className="mt-1 text-sm font-bold leading-5">{part.shortTitle}</div></Link>)}
+        <Link href="/learn/solid-state/master" className="flex w-36 shrink-0 items-center justify-center rounded-xl border border-white/10 px-4 py-3 text-sm font-bold text-[var(--foreground)] transition hover:border-cyan-300/35">Chapter contents</Link>
+        {SOLID_STATE_PARTS.map((part)=><Link key={part.number} href={`/learn/solid-state/master/part${String(part.number).padStart(2,"0")}`} aria-current={part.number===active?"page":undefined} className={`w-64 shrink-0 rounded-xl border px-4 py-3 transition ${part.number===active?"border-cyan-300/55 bg-cyan-300/10 text-white":"border-white/10 bg-white/[0.015] text-[var(--text-muted)] hover:border-cyan-300/30 hover:text-white"}`}><div className="text-[10px] font-black uppercase tracking-[.16em] text-cyan-300/75">Part {String(part.number).padStart(2,"0")}</div><div className="mt-1 text-sm font-bold leading-5">{part.shortTitle}</div></Link>)}
       </div>
     </nav>
   );
@@ -414,25 +414,25 @@ export function SolidStatePartPage({ part }: { part: SolidStatePart }) {
         <header className="rounded-3xl border border-cyan-300/20 bg-[#0b1a28]/95 px-6 py-8 md:px-10 md:py-11">
           <p className="text-xs font-black uppercase tracking-[.18em] text-cyan-300">JEE Advanced · Solid State · Part {String(part.number).padStart(2,"0")} of 10</p>
           <h1 className="mt-5 max-w-5xl text-4xl font-black tracking-[-.035em] text-white md:text-6xl">{part.title}</h1>
-          <p className="mt-5 max-w-4xl text-lg leading-8 text-slate-300">{part.description}</p>
+          <p className="mt-5 max-w-4xl text-lg leading-8 text-[var(--text-body)]">{part.description}</p>
         </header>
 
         <PartNavigation active={part.number}/>
 
         <div className="mx-auto mt-10 grid max-w-6xl gap-8 lg:grid-cols-[240px_minmax(0,1fr)]">
-          <aside className="hidden lg:block"><div className="sticky top-32 rounded-2xl border border-white/10 bg-[#0a1724]/90 p-5"><div className="text-xs font-black uppercase tracking-[.15em] text-cyan-300">In this part</div><ol className="mt-4 space-y-3 text-sm leading-5 text-slate-400">{part.sections.map((section)=><li key={section.title}><a href={`#${slugify(section.title)}`} className="transition hover:text-white">{section.title}</a></li>)}</ol></div></aside>
+          <aside className="hidden lg:block"><div className="sticky top-32 rounded-2xl border border-white/10 bg-[#0a1724]/90 p-5"><div className="text-xs font-black uppercase tracking-[.15em] text-cyan-300">In this part</div><ol className="mt-4 space-y-3 text-sm leading-5 text-[var(--text-muted)]">{part.sections.map((section)=><li key={section.title}><a href={`#${slugify(section.title)}`} className="transition hover:text-white">{section.title}</a></li>)}</ol></div></aside>
 
           <article className="min-w-0 rounded-3xl border border-white/10 bg-[#0b1724]/[0.88] px-5 py-7 shadow-[0_18px_50px_rgba(0,0,0,.22)] md:px-9 md:py-10">
             {part.sections.map((section,sectionIndex)=><section key={section.title} id={slugify(section.title)} className={`${sectionIndex?"mt-14 border-t border-white/10 pt-12":""} scroll-mt-32`}><h2 className="text-2xl font-black tracking-tight text-white md:text-3xl">{section.title}</h2><div className="mt-6 space-y-5">{section.blocks.map((block,blockIndex)=><BlockView key={`${section.title}-${blockIndex}`} block={block} exampleNumber={block.kind==="example"?getExampleNumber(part,sectionIndex,blockIndex):0}/>)}</div></section>)}
 
-            <section className="mt-14 border-t border-white/10 pt-12"><h2 className="text-2xl font-black text-white md:text-3xl">Part review</h2><div className="mt-6 grid gap-3">{part.review.map((item,index)=><div key={item} className="flex gap-4 rounded-xl border border-white/10 bg-white/[0.02] px-4 py-3.5"><span className="font-black text-cyan-300">{index+1}</span><p className="leading-7 text-slate-300"><RichText text={item}/></p></div>)}</div></section>
+            <section className="mt-14 border-t border-white/10 pt-12"><h2 className="text-2xl font-black text-white md:text-3xl">Part review</h2><div className="mt-6 grid gap-3">{part.review.map((item,index)=><div key={item} className="flex gap-4 rounded-xl border border-white/10 bg-white/[0.02] px-4 py-3.5"><span className="font-black text-cyan-300">{index+1}</span><p className="leading-7 text-[var(--text-body)]"><RichText text={item}/></p></div>)}</div></section>
 
-            <section className="mt-12 border-t border-white/10 pt-12"><h2 className="text-2xl font-black text-white md:text-3xl">Practice questions</h2><ol className="mt-6 space-y-4 pl-7 text-[15.5px] leading-8 text-slate-300 marker:font-black marker:text-cyan-300 md:text-base">{part.practice.map(q=><li key={q} className="list-decimal pl-2"><RichText text={q}/></li>)}</ol></section>
+            <section className="mt-12 border-t border-white/10 pt-12"><h2 className="text-2xl font-black text-white md:text-3xl">Practice questions</h2><ol className="mt-6 space-y-4 pl-7 text-[15.5px] leading-8 text-[var(--text-body)] marker:font-black marker:text-cyan-300 md:text-base">{part.practice.map(q=><li key={q} className="list-decimal pl-2"><RichText text={q}/></li>)}</ol></section>
           </article>
         </div>
 
         <footer className="mx-auto mt-10 flex max-w-6xl items-stretch justify-between gap-4 border-t border-white/10 pt-8">
-          {previous?<Link href={`/learn/solid-state/master/part${String(previous.number).padStart(2,"0")}`} className="max-w-[48%] rounded-xl border border-white/10 px-4 py-3 text-sm font-bold text-slate-200 transition hover:border-cyan-300/30">← {previous.shortTitle}</Link>:<span/>}
+          {previous?<Link href={`/learn/solid-state/master/part${String(previous.number).padStart(2,"0")}`} className="max-w-[48%] rounded-xl border border-white/10 px-4 py-3 text-sm font-bold text-[var(--foreground)] transition hover:border-cyan-300/30">← {previous.shortTitle}</Link>:<span/>}
           {next?<Link href={`/learn/solid-state/master/part${String(next.number).padStart(2,"0")}`} className="max-w-[48%] rounded-xl border border-cyan-300/30 bg-cyan-300/10 px-4 py-3 text-right text-sm font-bold text-cyan-50 transition hover:bg-cyan-300/15">{next.shortTitle} →</Link>:<Link href="/learn/solid-state/master" className="max-w-[48%] rounded-xl border border-cyan-300/30 bg-cyan-300/10 px-4 py-3 text-right text-sm font-bold text-cyan-50">Return to contents</Link>}
         </footer>
       </div>

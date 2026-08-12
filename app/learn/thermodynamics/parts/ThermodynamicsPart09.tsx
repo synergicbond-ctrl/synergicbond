@@ -23,14 +23,14 @@ function Section({
   children: React.ReactNode;
 }) {
   return (
-    <section className="rounded-[2rem] border border-white/10 bg-slate-950/80 p-5 md:p-8">
+    <section className="rounded-[2rem] border border-white/10 bg-[var(--background)]/80 p-5 md:p-8">
       <div className="flex items-center gap-4">
         <span className="grid h-10 w-10 place-items-center rounded-2xl border border-cyan-300/30 bg-cyan-300/10 text-sm font-black text-cyan-200">
           {index}
         </span>
         <h2 className="text-2xl font-black text-white md:text-3xl">{title}</h2>
       </div>
-      <div className="mt-6 space-y-5 text-[15px] leading-7 text-slate-200">{children}</div>
+      <div className="mt-6 space-y-5 text-[15px] leading-7 text-[var(--foreground)]">{children}</div>
     </section>
   );
 }
@@ -57,7 +57,7 @@ function Lens({
     <aside className={`rounded-2xl border p-5 ${toneMap[tone]}`}>
       <p className="text-xs font-black uppercase tracking-[0.2em]">Concept lens</p>
       <h3 className="mt-2 text-lg font-black text-white">{title}</h3>
-      <div className="mt-2 text-sm leading-6 text-slate-200">{children}</div>
+      <div className="mt-2 text-sm leading-6 text-[var(--foreground)]">{children}</div>
     </aside>
   );
 }
@@ -116,7 +116,7 @@ function ThermodynamicsPart09() {
           <h1 className="mt-7 max-w-5xl text-4xl font-black tracking-tight text-white md:text-6xl">
             Isothermal Ideal-Gas Processes
           </h1>
-          <p className="mt-5 max-w-3xl text-lg leading-8 text-slate-300">
+          <p className="mt-5 max-w-3xl text-lg leading-8 text-[var(--text-body)]">
             Constant temperature fixes ideal-gas internal energy, but heat and work remain strongly path dependent.
           </p>
         </div>
@@ -178,9 +178,9 @@ function ThermodynamicsPart09() {
 <Section index="07" title="Complete worked examples and applications">
           <div className="grid gap-4 lg:grid-cols-2">
             {problems.map(([title, question, answer]) => (
-              <article key={title} className="rounded-2xl border border-white/10 bg-slate-900/70 p-5">
+              <article key={title} className="rounded-2xl border border-white/10 bg-[var(--surface)]/70 p-5">
                 <h3 className="cursor-pointer font-black text-white">{title}</h3>
-                <p className="mt-3 text-slate-200">{question}</p>
+                <p className="mt-3 text-[var(--foreground)]">{question}</p>
                 <p className="mt-4 rounded-xl bg-emerald-400/10 p-3 text-sm text-emerald-100">{answer}</p>
               </article>
             ))}
@@ -418,7 +418,7 @@ function Part09BundledPVGraph() {
         </text>
       </svg>
 
-      <figcaption className="px-3 pt-3 text-center text-sm leading-6 text-slate-300">
+      <figcaption className="px-3 pt-3 text-center text-sm leading-6 text-[var(--text-body)]">
         Expansion work is the negative area below the external-pressure path.
       </figcaption>
     </figure>
@@ -567,7 +567,7 @@ function Part09BundledProcessGraphic() {
         </text>
       </svg>
 
-      <figcaption className="px-3 pt-3 text-center text-sm leading-6 text-slate-300">
+      <figcaption className="px-3 pt-3 text-center text-sm leading-6 text-[var(--text-body)]">
         Path functions differ even when the initial and final equilibrium states are identical.
       </figcaption>
     </figure>
@@ -578,21 +578,21 @@ function Part09BundledEnrichment() {
   return (
     <section className="bg-[#020617] pb-16 text-slate-100">
       <div className="mx-auto max-w-5xl space-y-7 px-4 md:px-8">
-        <header className="rounded-[2rem] border border-cyan-300/20 bg-slate-950/85 p-6 md:p-9">
+        <header className="rounded-[2rem] border border-cyan-300/20 bg-[var(--background)]/85 p-6 md:p-9">
           <p className="text-xs font-black uppercase tracking-[0.22em] text-cyan-300">
             Complete visual consolidation
           </p>
           <h2 className="mt-3 text-3xl font-black text-white md:text-4xl">
             Isothermal Ideal-Gas Processes
           </h2>
-          <p className="mt-4 leading-7 text-slate-300">
+          <p className="mt-4 leading-7 text-[var(--text-body)]">
             For a fixed amount of ideal gas, internal energy depends only
             on temperature. Therefore ΔU = 0 for every isothermal path,
             while heat and work retain complete path dependence.
           </p>
         </header>
 
-        <section className="rounded-[2rem] border border-white/10 bg-slate-950/80 p-5 md:p-8">
+        <section className="rounded-[2rem] border border-white/10 bg-[var(--background)]/80 p-5 md:p-8">
           <h3 className="text-2xl font-black text-white">
             Energy balance and exact work relations
           </h3>
@@ -608,7 +608,7 @@ function Part09BundledEnrichment() {
             ].map(([label, equation]) => (
               <article
                 key={label}
-                className="rounded-2xl border border-white/10 bg-slate-900/60 p-5"
+                className="rounded-2xl border border-white/10 bg-[var(--surface)]/60 p-5"
               >
                 <p className="text-xs font-black uppercase tracking-wider text-cyan-300">
                   {label}
@@ -647,7 +647,7 @@ function Part09BundledEnrichment() {
         <Part09BundledPVGraph />
         <Part09BundledProcessGraphic />
 
-        <section className="rounded-[2rem] border border-white/10 bg-slate-950/80 p-5 md:p-8">
+        <section className="rounded-[2rem] border border-white/10 bg-[var(--background)]/80 p-5 md:p-8">
           <h3 className="text-2xl font-black text-white">
             Complete worked examples
           </h3>
@@ -669,7 +669,7 @@ function Part09BundledEnrichment() {
                   <p className="text-xs font-black uppercase text-cyan-300">
                     Given
                   </p>
-                  <p className="mt-2 text-sm leading-6 text-slate-300">
+                  <p className="mt-2 text-sm leading-6 text-[var(--text-body)]">
                     {example.given}
                   </p>
                 </div>
@@ -678,12 +678,12 @@ function Part09BundledEnrichment() {
                   {example.solution.map((step, stepIndex) => (
                     <div
                       key={`${example.title}-${stepIndex}`}
-                      className="grid gap-3 rounded-xl border border-white/10 bg-slate-950/60 p-3 md:grid-cols-[34px_1fr]"
+                      className="grid gap-3 rounded-xl border border-white/10 bg-[var(--background)]/60 p-3 md:grid-cols-[34px_1fr]"
                     >
                       <span className="grid h-8 w-8 place-items-center rounded-lg bg-violet-300/10 text-xs font-black text-violet-200">
                         {stepIndex + 1}
                       </span>
-                      <p className="text-sm leading-6 text-slate-200">
+                      <p className="text-sm leading-6 text-[var(--foreground)]">
                         {step}
                       </p>
                     </div>
@@ -694,7 +694,7 @@ function Part09BundledEnrichment() {
           </div>
         </section>
 
-        <section className="rounded-[2rem] border border-white/10 bg-slate-950/80 p-5 md:p-8">
+        <section className="rounded-[2rem] border border-white/10 bg-[var(--background)]/80 p-5 md:p-8">
           <h3 className="text-2xl font-black text-white">
             Practice questions with visible answers
           </h3>
@@ -711,7 +711,7 @@ function Part09BundledEnrichment() {
                 <h4 className="mt-2 font-black text-white">
                   {item.question}
                 </h4>
-                <p className="mt-3 rounded-xl border border-white/10 bg-black/20 p-4 text-sm leading-6 text-slate-300">
+                <p className="mt-3 rounded-xl border border-white/10 bg-black/20 p-4 text-sm leading-6 text-[var(--text-body)]">
                   <strong className="text-cyan-200">Answer: </strong>
                   {item.answer}
                 </p>

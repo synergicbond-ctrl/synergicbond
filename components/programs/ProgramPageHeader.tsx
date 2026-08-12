@@ -25,13 +25,13 @@ export default function ProgramPageHeader({
             {name}
           </Link>
           <span>/</span>
-          <span className="text-zinc-300">{section}</span>
+          <span className="text-[var(--text-body)]">{section}</span>
         </nav>
         <div className={`mb-3 text-xs font-bold uppercase tracking-widest ${accent.text}`}>{program.kicker}</div>
         <h1 className="text-3xl font-black tracking-tight sm:text-4xl">
           {name} <span className={accent.text}>{section}</span>
         </h1>
-        <p className="mt-3 max-w-2xl text-zinc-400">{blurb}</p>
+        <p className="mt-3 max-w-2xl text-[var(--text-muted)]">{blurb}</p>
       </div>
     </div>
   );

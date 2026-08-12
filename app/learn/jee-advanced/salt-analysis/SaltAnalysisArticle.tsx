@@ -269,7 +269,7 @@ function renderBlocks(markdown: string) {
                   {head?.map((cell, columnIndex) => (
                     <th
                       key={columnIndex}
-                      className={`border-b border-r border-slate-700/70 px-3 py-3 text-left font-bold last:border-r-0 ${
+                      className={`border-b border-r border-[var(--border-strong)]/70 px-3 py-3 text-left font-bold last:border-r-0 ${
                         tableHeaderThemes[
                           (currentTable + columnIndex) % tableHeaderThemes.length
                         ]
@@ -285,12 +285,12 @@ function renderBlocks(markdown: string) {
                 {rest.map((row, rowIndex) => (
                   <tr
                     key={rowIndex}
-                    className="border-b border-slate-800/80 bg-slate-950/35 odd:bg-slate-900/45 last:border-b-0 hover:bg-slate-800/45"
+                    className="border-b border-[var(--border)]/80 bg-[var(--background)]/35 odd:bg-[var(--surface)]/45 last:border-b-0 hover:bg-[var(--surface-2)]/45"
                   >
                     {row.map((cell, columnIndex) => (
                       <td
                         key={columnIndex}
-                        className={`border-r border-slate-800/80 px-3 py-3 align-top leading-6 last:border-r-0 ${
+                        className={`border-r border-[var(--border)]/80 px-3 py-3 align-top leading-6 last:border-r-0 ${
                           columnIndex === 0
                             ? `font-semibold ${
                                 tableCellHighlights[
@@ -298,7 +298,7 @@ function renderBlocks(markdown: string) {
                                     tableCellHighlights.length
                                 ]
                               }`
-                            : "text-slate-200"
+                            : "text-[var(--foreground)]"
                         }`}
                         dangerouslySetInnerHTML={{
                           __html: inlineMarkup(cell),
@@ -337,7 +337,7 @@ function renderBlocks(markdown: string) {
       nodes.push(
         <Tag
           key={`list-${blockIndex++}`}
-          className={`my-5 space-y-2.5 pl-6 leading-7 text-slate-200 ${
+          className={`my-5 space-y-2.5 pl-6 leading-7 text-[var(--foreground)] ${
             ordered ? "list-decimal" : "list-disc"
           } ${markerTheme}`}
         >
@@ -366,7 +366,7 @@ function renderBlocks(markdown: string) {
     nodes.push(
       <p
         key={`paragraph-${blockIndex++}`}
-        className="my-3.5 leading-7 text-slate-200 selection:bg-fuchsia-500/30 selection:text-white"
+        className="my-3.5 leading-7 text-[var(--foreground)] selection:bg-fuchsia-500/30 selection:text-white"
         dangerouslySetInnerHTML={{
           __html: inlineMarkup(para.join(" ")),
         }}
@@ -422,7 +422,7 @@ function PartNavigation({
       className={`${
         position === "top"
           ? "mb-5"
-          : "mt-9 border-t border-slate-700/60 pt-5"
+          : "mt-9 border-t border-[var(--border-strong)]/60 pt-5"
       } flex items-center justify-between gap-3`}
     >
       <Link
@@ -466,7 +466,7 @@ export function SaltAnalysisArticle({
           "radial-gradient(circle at 8% 0%, rgba(34,211,238,0.10), transparent 27%), radial-gradient(circle at 92% 5%, rgba(168,85,247,0.10), transparent 28%), radial-gradient(circle at 50% 100%, rgba(251,146,60,0.07), transparent 32%)",
       }}
     >
-      <header className="relative mb-7 border-b border-slate-700/70 pb-6">
+      <header className="relative mb-7 border-b border-[var(--border-strong)]/70 pb-6">
         <div className="mb-3 flex flex-wrap items-center gap-2 text-[11px] font-bold uppercase tracking-[0.2em]">
           <span className="text-cyan-300">{metadata.exam}</span>
           <span className="text-slate-600">•</span>

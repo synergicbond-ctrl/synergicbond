@@ -45,12 +45,12 @@ export default function SigFigDecisionCards() {
   const selectedRuleObj = rules.find(r => r.operation === selectedRule) || rules[0];
 
   return (
-    <div className="p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 shadow-sm space-y-6">
+    <div className="p-6 rounded-2xl bg-white dark:bg-[var(--surface)] border border-[var(--border)] dark:border-[var(--border-strong)] shadow-sm space-y-6">
       <div>
         <h2 className="text-2xl font-bold mb-2 text-slate-900 dark:text-white">
           Significant Figures Decision Tree
         </h2>
-        <p className="text-sm text-slate-600 dark:text-slate-400">
+        <p className="text-sm text-slate-600 dark:text-[var(--text-muted)]">
           The most common JEE trap: using the wrong rule
         </p>
       </div>
@@ -64,13 +64,13 @@ export default function SigFigDecisionCards() {
             className={`p-4 rounded-xl border-2 transition ${
               selectedRule === rule.operation
                 ? `${rule.bgColor} ${rule.borderColor} border-2`
-                : "bg-slate-100 dark:bg-slate-800 border-slate-300 dark:border-slate-600"
+                : "bg-slate-100 dark:bg-[var(--surface-2)] border-slate-300 dark:border-slate-600"
             }`}
           >
-            <p className={`text-sm font-bold ${selectedRule === rule.operation ? rule.color : "text-slate-700 dark:text-slate-300"}`}>
+            <p className={`text-sm font-bold ${selectedRule === rule.operation ? rule.color : "text-slate-700 dark:text-[var(--text-body)]"}`}>
               {rule.title.split(" /")[0]}
             </p>
-            <p className="text-xs text-slate-600 dark:text-slate-400 mt-1">
+            <p className="text-xs text-slate-600 dark:text-[var(--text-muted)] mt-1">
               {rule.operation === "addition" ? "Addition" : "Multiplication"}
             </p>
           </button>
@@ -84,14 +84,14 @@ export default function SigFigDecisionCards() {
             <h3 className={`text-xl font-bold ${selectedRuleObj.color} mb-2`}>
               {selectedRuleObj.title}
             </h3>
-            <p className={`text-sm font-semibold ${selectedRuleObj.color} mb-4 p-3 bg-white dark:bg-slate-800 rounded-lg`}>
+            <p className={`text-sm font-semibold ${selectedRuleObj.color} mb-4 p-3 bg-white dark:bg-[var(--surface-2)] rounded-lg`}>
               ⚡ {selectedRuleObj.rule}
             </p>
           </div>
 
           {/* Example */}
-          <div className="bg-white dark:bg-slate-800 p-4 rounded-xl space-y-3">
-            <p className="text-sm text-slate-600 dark:text-slate-400">
+          <div className="bg-white dark:bg-[var(--surface-2)] p-4 rounded-xl space-y-3">
+            <p className="text-sm text-slate-600 dark:text-[var(--text-muted)]">
               <span className="font-bold">Example:</span>
             </p>
             <p className="text-lg font-mono font-bold text-slate-900 dark:text-white">
@@ -106,8 +106,8 @@ export default function SigFigDecisionCards() {
 
           {/* Detailed explanation */}
           {selectedRuleObj.details && (
-            <div className="bg-slate-50 dark:bg-slate-800 p-3 rounded-lg border border-slate-200 dark:border-slate-700">
-              <p className="text-xs text-slate-700 dark:text-slate-300">
+            <div className="bg-slate-50 dark:bg-[var(--surface-2)] p-3 rounded-lg border border-[var(--border)] dark:border-[var(--border-strong)]">
+              <p className="text-xs text-slate-700 dark:text-[var(--text-body)]">
                 <span className="font-semibold">Step-by-step: </span>{selectedRuleObj.details}
               </p>
             </div>

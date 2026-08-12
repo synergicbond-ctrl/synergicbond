@@ -73,7 +73,7 @@ export default function HeroSearch() {
       </div>
 
       {/* Search box */}
-      <div className="rounded-2xl border border-white/[0.08] bg-[#111827] p-6 shadow-[0_0_40px_rgba(34,211,238,0.05)]">
+      <div className="rounded-2xl border border-white/[0.08] bg-[var(--surface)] p-6 shadow-[0_0_40px_rgba(34,211,238,0.05)]">
 
         <div className="mb-4 flex items-center gap-3">
           <div className="rounded-xl bg-cyan-500/10 p-2.5">

@@ -92,7 +92,7 @@ function StrictSectionBody({ chapter, section }: { chapter: NotesChapter; sectio
           <div className="space-y-4">
             <h4 className="text-xs font-bold uppercase tracking-wider text-white/40">📖 Core Theory &amp; Concepts</h4>
             {chapter.detailedNotes.map((b, i) => (
-              <div key={i} className="rounded-2xl border border-white/[0.07] bg-[#111827] p-4 space-y-2">
+              <div key={i} className="rounded-2xl border border-white/[0.07] bg-[var(--surface)] p-4 space-y-2">
                 <h5 className="text-sm font-black text-white">{b.heading}</h5>
                 <Bullets items={b.points} />
               </div>
@@ -112,7 +112,7 @@ function StrictSectionBody({ chapter, section }: { chapter: NotesChapter; sectio
             <div className="space-y-3">
               <h4 className="text-xs font-bold uppercase tracking-wider text-white/40">📐 Essential Derivations</h4>
               {chapter.derivations.map((d, i) => (
-                <div key={i} className="rounded-2xl border border-white/[0.07] bg-[#111827] p-4">
+                <div key={i} className="rounded-2xl border border-white/[0.07] bg-[var(--surface)] p-4">
                   <h5 className="mb-2 text-sm font-black text-white">{d.title}</h5>
                   <ol className="space-y-1.5">
                     {d.steps.map((s, j) => (
@@ -150,7 +150,7 @@ function StrictSectionBody({ chapter, section }: { chapter: NotesChapter; sectio
             <div className="space-y-3">
               <h4 className="text-xs font-bold uppercase tracking-wider text-white/40">✍️ Solved Conceptual Examples</h4>
               {chapter.solvedExamples.map((ex, i) => (
-                <div key={i} className="rounded-2xl border border-white/[0.07] bg-[#111827] p-4">
+                <div key={i} className="rounded-2xl border border-white/[0.07] bg-[var(--surface)] p-4">
                   <div className="mb-2 flex items-start justify-between gap-3">
                     <p className="text-sm font-semibold text-white">Q{i + 1}. {ex.q}</p>
                     {ex.tag && (
@@ -634,7 +634,7 @@ export default function NotesExplorer({
               </p>
             </div>
 
-            <div className="rounded-2xl border border-white/[0.08] bg-[#111827] p-4">
+            <div className="rounded-2xl border border-white/[0.08] bg-[var(--surface)] p-4">
               <h2 className="mb-3 flex items-center gap-2 text-lg font-black text-white">📋 Official Syllabus</h2>
               <ul className="space-y-2.5">
                 {syllabusChapter.concepts.map((c) => (

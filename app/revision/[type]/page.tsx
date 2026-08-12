@@ -27,7 +27,7 @@ export default async function RevisionSessionPage({ params, searchParams }: Page
       </div>
 
       {/* Session Header */}
-      <div className="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 text-center space-y-4">
+      <div className="bg-white p-8 rounded-2xl shadow-sm border border-[var(--border)] text-center space-y-4">
         <h1 className="text-3xl font-black tracking-tight text-slate-900">{session.title}</h1>
         <p className="text-slate-600 max-w-xl mx-auto">{session.description}</p>
         
@@ -42,7 +42,7 @@ export default async function RevisionSessionPage({ params, searchParams }: Page
         <div className="grid grid-cols-1 gap-4">
           {session.targetItems.length > 0 ? (
             session.targetItems.map((item, idx) => (
-              <div key={idx} className="p-5 bg-white rounded-xl border border-slate-200/60 shadow-sm flex items-center justify-between">
+              <div key={idx} className="p-5 bg-white rounded-xl border border-[var(--border)]/60 shadow-sm flex items-center justify-between">
                 <span className="font-bold text-slate-700">{item}</span>
                 <span className="text-xs font-medium px-2.5 py-1 bg-slate-100 text-slate-600 rounded-full uppercase tracking-wide">
                   Reviewing
@@ -67,7 +67,7 @@ export default async function RevisionSessionPage({ params, searchParams }: Page
         </Link>
         <Link 
           href="/dashboard" 
-          className="py-4 px-8 bg-white border border-slate-200 hover:bg-slate-50 text-slate-700 font-bold text-center rounded-xl transition"
+          className="py-4 px-8 bg-white border border-[var(--border)] hover:bg-slate-50 text-slate-700 font-bold text-center rounded-xl transition"
         >
           Go to Dashboard
         </Link>

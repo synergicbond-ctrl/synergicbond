@@ -62,7 +62,7 @@ export default function ActivityLog() {
       <div className="grid gap-5 lg:grid-cols-2">
 
         {/* Recently Read */}
-        <div className="rounded-2xl bg-[#111827] border border-white/[0.06] p-5">
+        <div className="rounded-2xl bg-[var(--surface)] border border-white/[0.06] p-5">
           <div className="flex items-center gap-2 mb-4">
             <BookOpen className="h-4 w-4 text-cyan-400" />
             <h3 className="text-sm font-bold text-white">Recently Read</h3>
@@ -81,7 +81,7 @@ export default function ActivityLog() {
         </div>
 
         {/* Search History */}
-        <div className="rounded-2xl bg-[#111827] border border-white/[0.06] p-5">
+        <div className="rounded-2xl bg-[var(--surface)] border border-white/[0.06] p-5">
           <div className="flex items-center gap-2 mb-4">
             <Search className="h-4 w-4 text-purple-400" />
             <h3 className="text-sm font-bold text-white">Search History</h3>
@@ -96,7 +96,7 @@ export default function ActivityLog() {
         </div>
 
         {/* Solved Engine */}
-        <div className="rounded-2xl bg-[#111827] border border-white/[0.06] p-5">
+        <div className="rounded-2xl bg-[var(--surface)] border border-white/[0.06] p-5">
           <div className="flex items-center gap-2 mb-4">
             <Target className="h-4 w-4 text-emerald-400" />
             <h3 className="text-sm font-bold text-white">Solved Engine</h3>
@@ -106,7 +106,7 @@ export default function ActivityLog() {
             <div className="relative h-20 w-20 flex-shrink-0">
               <svg viewBox="0 0 36 36" className="h-20 w-20 -rotate-90">
                 <circle cx="18" cy="18" r="15.9" fill="none" stroke="rgba(255,255,255,0.06)" strokeWidth="3" />
-                <circle cx="18" cy="18" r="15.9" fill="none" stroke="#10B981" strokeWidth="3" strokeDasharray={`${accuracy}, 100`} strokeLinecap="round" />
+                <circle cx="18" cy="18" r="15.9" fill="none" stroke="#50dc7b" strokeWidth="3" strokeDasharray={`${accuracy}, 100`} strokeLinecap="round" />
               </svg>
               <div className="absolute inset-0 flex items-center justify-center">
                 <span className="text-lg font-black text-white">{accuracy}%</span>
@@ -121,7 +121,7 @@ export default function ActivityLog() {
         </div>
 
         {/* Assignments Tracker */}
-        <div className="rounded-2xl bg-[#111827] border border-white/[0.06] p-5">
+        <div className="rounded-2xl bg-[var(--surface)] border border-white/[0.06] p-5">
           <div className="flex items-center gap-2 mb-4">
             <ClipboardCheck className="h-4 w-4 text-amber-400" />
             <h3 className="text-sm font-bold text-white">Assignments Tracker</h3>
@@ -137,7 +137,7 @@ export default function ActivityLog() {
         </div>
 
         {/* Time-Spent on Paper */}
-        <div className="rounded-2xl bg-[#111827] border border-white/[0.06] p-5">
+        <div className="rounded-2xl bg-[var(--surface)] border border-white/[0.06] p-5">
           <div className="flex items-center gap-2 mb-4">
             <Timer className="h-4 w-4 text-cyan-400" />
             <h3 className="text-sm font-bold text-white">Time-Spent on Paper</h3>
@@ -158,7 +158,7 @@ export default function ActivityLog() {
         </div>
 
         {/* National Rank Engine */}
-        <div className="rounded-2xl bg-[#111827] border border-white/[0.06] p-5 relative overflow-hidden">
+        <div className="rounded-2xl bg-[var(--surface)] border border-white/[0.06] p-5 relative overflow-hidden">
           <div className="flex items-center gap-2 mb-4">
             <Trophy className="h-4 w-4 text-amber-400" />
             <h3 className="text-sm font-bold text-white">National Rank Engine</h3>

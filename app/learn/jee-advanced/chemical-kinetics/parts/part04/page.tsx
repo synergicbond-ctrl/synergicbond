@@ -26,11 +26,11 @@ export default function ChemicalKineticsPart04() {
             <div className="grid gap-5 xl:grid-cols-2">
               <FormulaCard title="Logarithmic differential method">
                 <KB>{String.raw`r=k[A]^n\quad\Longrightarrow\quad \ln r=\ln k+n\ln[A]`}</KB>
-                <p className="text-center text-sm text-slate-400">Slope of ln r versus ln[A] = n.</p>
+                <p className="text-center text-sm text-[var(--text-muted)]">Slope of ln r versus ln[A] = n.</p>
               </FormulaCard>
               <FormulaCard title="Two-point order formula">
                 <KB>{String.raw`n=\frac{\ln(r_2/r_1)}{\ln([A]_2/[A]_1)}`}</KB>
-                <p className="text-center text-sm text-slate-400">Valid when every other relevant variable is held fixed.</p>
+                <p className="text-center text-sm text-[var(--text-muted)]">Valid when every other relevant variable is held fixed.</p>
               </FormulaCard>
             </div>
             <ConceptCard title="Choosing among linear plots" tone="cyan">

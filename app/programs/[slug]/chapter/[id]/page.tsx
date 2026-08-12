@@ -124,9 +124,9 @@ export default async function ChapterEnginePage({ params }: { params: Promise<{ 
   const bandTone = mastery.band === "strong" ? "text-emerald-300" : mastery.band === "onTrack" ? "text-amber-300" : "text-white/60";
 
   return (
-    <main className="min-h-screen bg-[#0B1220] text-white">
+    <main className="min-h-screen bg-[var(--background)] text-white">
       {/* Header */}
-      <div className="border-b border-white/10 bg-gradient-to-b from-cyan-950/20 to-[#0B1220] px-4 py-8 sm:px-6 sm:py-10">
+      <div className="border-b border-white/10 bg-gradient-to-b from-cyan-950/20 to-[#0b0f10] px-4 py-8 sm:px-6 sm:py-10">
         <div className="mx-auto max-w-5xl">
           <nav className="mb-3 text-sm text-white/45">
             <Link href={base} className="hover:text-white">{engine.name}</Link>
@@ -146,7 +146,7 @@ export default async function ChapterEnginePage({ params }: { params: Promise<{ 
       </div>
 
       {/* Section nav (mobile-first horizontal scroll) */}
-      <div className="sticky top-0 z-10 border-b border-white/10 bg-[#0B1220]/95 backdrop-blur">
+      <div className="sticky top-0 z-10 border-b border-white/10 bg-[var(--background)]/95 backdrop-blur">
         <div className="mx-auto flex max-w-5xl gap-1.5 overflow-x-auto px-4 py-2 sm:px-6">
           {SECTIONS.map((s) => (
             <a key={s.id} href={`#${s.id}`}

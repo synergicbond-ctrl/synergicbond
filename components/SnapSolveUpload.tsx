@@ -166,7 +166,7 @@ export default function SnapSolveUpload({ onUploadSuccess }: Props) {
   }
 
   return (
-    <div className="rounded-2xl border border-white/[0.08] bg-[#111827] p-5 space-y-4">
+    <div className="rounded-2xl border border-white/[0.08] bg-[var(--surface)] p-5 space-y-4">
       <style>{`
         @keyframes snapFadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
         @keyframes snapBlink { 0%, 49% { opacity: 1; } 50%, 100% { opacity: 0; } }
@@ -181,7 +181,7 @@ export default function SnapSolveUpload({ onUploadSuccess }: Props) {
           </div>
 
           {/* Reasoning tokens (server-streamed) */}
-          <div className="rounded-xl border border-cyan-500/25 bg-[#0B0F19] p-4 shadow-[0_0_45px_-12px_rgba(34,211,238,0.4)]">
+          <div className="rounded-xl border border-cyan-500/25 bg-[var(--background)] p-4 shadow-[0_0_45px_-12px_rgba(34,211,238,0.4)]">
             {reasoning.length === 0 ? (
               <p className="font-mono text-[13px] text-white/40">
                 Connecting to the solver…
@@ -281,7 +281,7 @@ export default function SnapSolveUpload({ onUploadSuccess }: Props) {
         </div>
 
         {/* Formula text box */}
-        <div className="relative flex min-h-44 flex-col rounded-2xl border border-white/[0.08] bg-[#0B0F19] p-3">
+        <div className="relative flex min-h-44 flex-col rounded-2xl border border-white/[0.08] bg-[var(--background)] p-3">
           <div className="mb-1.5 flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-wider text-white/40">
             <Type className="h-3 w-3" /> Type the question
           </div>

@@ -128,7 +128,7 @@ export default function CustomTestClient({
         <div className="flex flex-wrap items-center gap-4">
           <label className="flex items-center gap-2 text-sm text-white/70">Objective Qs
             <input type="number" min={1} max={30} value={count} onChange={(e) => setCount(Math.min(30, Math.max(1, Number(e.target.value) || 1)))}
-              className="w-16 rounded-lg border border-white/10 bg-[#0B1220] px-2 py-1 text-white/90" />
+              className="w-16 rounded-lg border border-white/10 bg-[var(--background)] px-2 py-1 text-white/90" />
           </label>
           <div className="flex items-center gap-1.5">
             {DIFFICULTIES.map((d) => (
@@ -146,7 +146,7 @@ export default function CustomTestClient({
       {paper && (
         <>
           {/* Live scoreboard = performance report */}
-          <div className="sticky top-2 z-10 flex flex-wrap items-center justify-between gap-3 rounded-2xl border border-cyan-400/25 bg-[#0B1220]/95 p-4 backdrop-blur">
+          <div className="sticky top-2 z-10 flex flex-wrap items-center justify-between gap-3 rounded-2xl border border-cyan-400/25 bg-[var(--background)]/95 p-4 backdrop-blur">
             <div className="flex gap-5 text-sm">
               <div><span className="text-2xl font-black text-white">{paper.length}</span><span className="ml-1 text-white/50">Qs</span></div>
               <div><span className="text-2xl font-black text-cyan-300">{score.answered}</span><span className="ml-1 text-white/50">answered</span></div>

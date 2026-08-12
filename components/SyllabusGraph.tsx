@@ -12,10 +12,10 @@ export default function SyllabusGraph() {
   const [activeCategory, setActiveCategory] = useState<string | null>(null);
 
   return (
-    <div className="bg-white dark:bg-slate-900 p-8 rounded-3xl border border-slate-100 dark:border-slate-800 shadow-sm space-y-6">
+    <div className="bg-white dark:bg-[var(--surface)] p-8 rounded-3xl border border-[var(--border)] dark:border-[var(--border)] shadow-sm space-y-6">
       <div className="text-center max-w-xl mx-auto space-y-2">
         <h2 className="text-2xl font-black text-slate-800 dark:text-slate-100">Syllabus Knowledge Graph</h2>
-        <p className="text-xs text-slate-500 dark:text-slate-400">Explore the interconnected web of reactions, mechanisms, and physical laws powering the curriculum.</p>
+        <p className="text-xs text-slate-500 dark:text-[var(--text-muted)]">Explore the interconnected web of reactions, mechanisms, and physical laws powering the curriculum.</p>
       </div>
 
       <div className="flex flex-col md:flex-row items-center justify-center gap-6 py-6">
@@ -35,9 +35,9 @@ export default function SyllabusGraph() {
       </div>
 
       {activeCategory && (
-        <div className="p-6 bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-2xl animate-fadeIn space-y-3">
+        <div className="p-6 bg-slate-50 dark:bg-[var(--background)] border border-[var(--border)] dark:border-[var(--border)] rounded-2xl animate-fadeIn space-y-3">
           <h3 className="font-bold text-sm text-indigo-700 dark:text-indigo-400 uppercase tracking-wider">Node Expansion: {activeCategory}</h3>
-          <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+          <p className="text-xs text-slate-600 dark:text-[var(--text-body)] leading-relaxed">
             {activeCategory === "physical" 
               ? "Nodes hydrate states, thermodynamic laws, and equilibrium parameters mapping directly to numerical calculation engines."
               : activeCategory === "organic" 

@@ -18,7 +18,7 @@ export default async function TestHistoryPage() {
   const attempts = result.data ?? [];
 
   return (
-    <main className="min-h-screen bg-[#0B0F19] text-white">
+    <main className="min-h-screen bg-[var(--background)] text-white">
       <div className="mx-auto max-w-5xl px-4 py-10 sm:px-6">
         <header className="mb-6">
           <p className="text-xs font-bold uppercase tracking-[0.2em] text-cyan-300">Tests</p>
@@ -27,7 +27,7 @@ export default async function TestHistoryPage() {
         </header>
 
         {result.error === "Unauthorized" ? (
-          <section className="rounded-2xl border border-white/[0.08] bg-[#111827] p-8 text-center">
+          <section className="rounded-2xl border border-white/[0.08] bg-[var(--surface)] p-8 text-center">
             <h2 className="font-black">Sign in to save test history</h2>
             <Link href="/auth/signin?next=/tests/history" className="mt-4 inline-block rounded-xl bg-cyan-400 px-5 py-2.5 text-sm font-black text-slate-950">Sign in</Link>
           </section>
@@ -42,7 +42,7 @@ export default async function TestHistoryPage() {
         ) : (
           <section className="space-y-3">
             {attempts.map((attempt) => (
-              <Link key={attempt.attemptId} href={`/revision/attempt/${attempt.attemptId}`} className="flex flex-wrap items-center gap-4 rounded-2xl border border-white/[0.08] bg-[#111827] p-4 transition hover:border-cyan-400/30 hover:bg-white/[0.04] sm:p-5">
+              <Link key={attempt.attemptId} href={`/revision/attempt/${attempt.attemptId}`} className="flex flex-wrap items-center gap-4 rounded-2xl border border-white/[0.08] bg-[var(--surface)] p-4 transition hover:border-cyan-400/30 hover:bg-white/[0.04] sm:p-5">
                 <div className="min-w-0 flex-1">
                   <h2 className="truncate font-black text-white">{attempt.title ?? `${attempt.exam} Test`}</h2>
                   <p className="mt-1 text-xs text-white/40">{new Date(attempt.submittedAt).toLocaleDateString("en-IN", { day: "numeric", month: "short", year: "numeric" })} · {attempt.totalQuestions} questions · {formatDuration(attempt.durationMs)}</p>

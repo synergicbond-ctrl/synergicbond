@@ -3,16 +3,16 @@ import { BookMarked, ArrowRight, Sparkles, BookOpen } from "lucide-react";
 import { useT } from "@/lib/i18n";
 
 const books = [
-  { title: "NCERT Chemistry", author: "NCERT (XI & XII)", subject: "Foundation", difficulty: "Beginner", color: "#00F5D4", affiliate: "#" },
-  { title: "Advanced Problems in Organic Chemistry", author: "M.S. Chouhan", subject: "Organic Practice", difficulty: "Expert", color: "#9B5DE5", affiliate: "#" },
-  { title: "Problems in Physical Chemistry", author: "N. Avasthi", subject: "Physical Practice", difficulty: "Advanced", color: "#00BBF9", affiliate: "#" },
+  { title: "NCERT Chemistry", author: "NCERT (XI & XII)", subject: "Foundation", difficulty: "Beginner", color: "#50dc7b", affiliate: "#" },
+  { title: "Advanced Problems in Organic Chemistry", author: "M.S. Chouhan", subject: "Organic Practice", difficulty: "Expert", color: "#b376ff", affiliate: "#" },
+  { title: "Problems in Physical Chemistry", author: "N. Avasthi", subject: "Physical Practice", difficulty: "Advanced", color: "#37c8f4", affiliate: "#" },
   { title: "Problems in Inorganic Chemistry", author: "V.K. Jaiswal", subject: "Inorganic Practice", difficulty: "Advanced", color: "#F59E0B", affiliate: "#" },
-  { title: "A Guidebook to Mechanism", author: "Peter Sykes", subject: "Organic Mechanisms", difficulty: "Advanced", color: "#10B981", affiliate: "#" },
-  { title: "Organic Chemistry", author: "Clayden et al.", subject: "Organic Theory", difficulty: "Expert", color: "#00BBF9", affiliate: "#" },
+  { title: "A Guidebook to Mechanism", author: "Peter Sykes", subject: "Organic Mechanisms", difficulty: "Advanced", color: "#50dc7b", affiliate: "#" },
+  { title: "Organic Chemistry", author: "Clayden et al.", subject: "Organic Theory", difficulty: "Expert", color: "#37c8f4", affiliate: "#" },
   { title: "Organic Chemistry", author: "Morrison & Boyd", subject: "Organic Theory", difficulty: "Advanced", color: "#EC4899", affiliate: "#" },
-  { title: "Concise Inorganic Chemistry", author: "J.D. Lee", subject: "Inorganic Theory", difficulty: "Advanced", color: "#9B5DE5", affiliate: "#" },
-  { title: "Physical Chemistry", author: "Peter Atkins", subject: "Physical Theory", difficulty: "Expert", color: "#00F5D4", affiliate: "#" },
-  { title: "Modern Approach to Chemical Calculations", author: "R.C. Mukherjee", subject: "Numericals", difficulty: "Intermediate", color: "#9B5DE5", affiliate: "#" },
+  { title: "Concise Inorganic Chemistry", author: "J.D. Lee", subject: "Inorganic Theory", difficulty: "Advanced", color: "#b376ff", affiliate: "#" },
+  { title: "Physical Chemistry", author: "Peter Atkins", subject: "Physical Theory", difficulty: "Expert", color: "#50dc7b", affiliate: "#" },
+  { title: "Modern Approach to Chemical Calculations", author: "R.C. Mukherjee", subject: "Numericals", difficulty: "Intermediate", color: "#b376ff", affiliate: "#" },
   { title: "IChO Preparatory Problems", author: "Olympiad Board", subject: "Olympiad", difficulty: "Expert", color: "#F59E0B", affiliate: "#" },
 ];
 
@@ -43,7 +43,7 @@ export default function ReferenceBooks() {
         {books.map((book) => (
           <div
             key={book.title + book.author}
-            className="group relative rounded-3xl bg-gradient-to-b from-[#111827]/95 to-[#0B0F19]/95 border border-white/15 p-6 flex gap-5 backdrop-blur-2xl transition-all duration-500 hover:-translate-y-2 hover:border-white/30 hover:shadow-[0_20px_40px_rgba(0,0,0,0.6)]"
+            className="group relative rounded-3xl bg-gradient-to-b from-[#101516]/95 to-[#040606]/95 border border-white/15 p-6 flex gap-5 backdrop-blur-2xl transition-all duration-500 hover:-translate-y-2 hover:border-white/30 hover:shadow-[0_20px_40px_rgba(0,0,0,0.6)]"
             style={{ boxShadow: `0 10px 30px -15px ${book.color}26` }}
           >
             {/* Ambient hover glow */}
@@ -76,7 +76,7 @@ export default function ReferenceBooks() {
                   </span>
                 </div>
                 <h3 className="text-base font-black text-white leading-snug mb-1 group-hover:text-white transition-colors line-clamp-2">{book.title}</h3>
-                <p className="text-xs font-medium text-gray-400 mb-3">{book.author}</p>
+                <p className="text-xs font-medium text-[var(--text-muted)] mb-3">{book.author}</p>
               </div>
 
               {/* Affiliate link slot */}

@@ -32,7 +32,7 @@ export default function CompoundColoursPreview() {
             </div>
             <div className="grid gap-1.5 sm:grid-cols-2 lg:grid-cols-3">
               {g.items.map((it) => (
-                <div key={it.name} className="flex items-center gap-2.5 rounded-lg bg-[#111827] border border-white/[0.06] px-3 py-2">
+                <div key={it.name} className="flex items-center gap-2.5 rounded-lg bg-[var(--surface)] border border-white/[0.06] px-3 py-2">
                   <span className="h-3 w-3 shrink-0 rounded-full border border-white/20" style={{ background: g.hex }} />
                   <p className="min-w-0 text-[13px] text-white/85"><span className="font-semibold text-white">{it.name}</span>{!/^(white|yellow|black|green|blue|pink|orange|grey|red)$/i.test(it.color) && <span className="text-white/45"> — {it.color}</span>}</p>
                 </div>

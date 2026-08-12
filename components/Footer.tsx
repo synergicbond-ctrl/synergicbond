@@ -67,7 +67,7 @@ export default function Footer() {
                 <p className="text-[8px] font-data uppercase tracking-[0.28em] text-[var(--text-muted)]">Chemistry OS</p>
               </div>
             </div>
-            <p className="text-sm text-gray-400 leading-relaxed max-w-xs">
+            <p className="text-sm text-[var(--text-muted)] leading-relaxed max-w-xs">
               The Chemistry Operating System built for NEET, JEE, Olympiads and GATE.
               Powered by AI. Designed by expert educators.
             </p>
@@ -79,7 +79,7 @@ export default function Footer() {
                   key={s.label}
                   href={s.href}
                   aria-label={s.label}
-                  className="flex h-8 w-8 items-center justify-center rounded-lg border border-white/[0.08] bg-white/[0.04] text-xs font-bold text-gray-400 hover:border-[var(--border-strong)] hover:text-white transition"
+                  className="flex h-8 w-8 items-center justify-center rounded-lg border border-white/[0.08] bg-white/[0.04] text-xs font-bold text-[var(--text-muted)] hover:border-[var(--border-strong)] hover:text-white transition"
                 >
                   {s.letter}
                 </a>
@@ -101,7 +101,7 @@ export default function Footer() {
                       <Link
                         key={item.title}
                         href={item.href}
-                        className="flex items-center gap-2 text-xs text-gray-400 hover:text-white transition py-1"
+                        className="flex items-center gap-2 text-xs text-[var(--text-muted)] hover:text-white transition py-1"
                       >
                         <Icon className="h-3.5 w-3.5 text-gray-600 flex-shrink-0" />
                         {item.title}
@@ -114,7 +114,7 @@ export default function Footer() {
                 <p className="text-[10px] font-data uppercase tracking-[0.28em] text-gray-500 mb-5">
                   Contact Us
                 </p>
-                <p className="text-xs text-gray-400 leading-relaxed mb-3">
+                <p className="text-xs text-[var(--text-muted)] leading-relaxed mb-3">
                   For support, subscription assistance, academic queries, and partnerships, contact:
                 </p>
                 <a href="mailto:hello@synergicbond.com" className="text-xs font-bold text-[var(--accent)] hover:text-[var(--accent)] transition">

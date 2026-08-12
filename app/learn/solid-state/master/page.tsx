@@ -21,14 +21,14 @@ export default function Page() {
         <header className="rounded-3xl border border-cyan-300/20 bg-[#0b1a28]/95 px-6 py-9 md:px-10 md:py-12">
           <p className="text-xs font-black uppercase tracking-[.2em] text-cyan-300">JEE Advanced · Physical Chemistry</p>
           <h1 className="mt-5 text-5xl font-black tracking-[-.045em] text-white md:text-7xl">Solid State</h1>
-          <p className="mt-6 max-w-4xl text-lg leading-8 text-slate-300 md:text-xl md:leading-9">
+          <p className="mt-6 max-w-4xl text-lg leading-8 text-[var(--text-body)] md:text-xl md:leading-9">
             A continuous textbook chapter from structural order to magnetic solids. The ten parts develop definitions, geometry and derivations before applying them to real crystal structures, defects and electronic properties.
           </p>
           <div className="mt-8 grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
             {strands.map(([title, text]) => (
               <div key={title} className="rounded-xl border border-white/10 bg-white/[0.025] px-4 py-4">
                 <div className="font-extrabold text-cyan-100">{title}</div>
-                <p className="mt-1.5 text-sm leading-6 text-slate-400">{text}</p>
+                <p className="mt-1.5 text-sm leading-6 text-[var(--text-muted)]">{text}</p>
               </div>
             ))}
           </div>
@@ -52,7 +52,7 @@ export default function Page() {
                 </div>
                 <div>
                   <h3 className="text-xl font-extrabold leading-7 text-white transition group-hover:text-cyan-100 md:text-2xl">{part.title}</h3>
-                  <p className="mt-3 text-sm leading-7 text-slate-400 md:text-[15px]">{part.description}</p>
+                  <p className="mt-3 text-sm leading-7 text-[var(--text-muted)] md:text-[15px]">{part.description}</p>
                   <div className="mt-4 text-sm font-bold text-cyan-300">Read this part →</div>
                 </div>
               </Link>

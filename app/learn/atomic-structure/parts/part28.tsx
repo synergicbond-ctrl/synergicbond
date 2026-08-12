@@ -78,7 +78,7 @@ export default function Part28() {
         <NoteBlock title="Orbital shapes">
           <DiagramBox title="s orbital — spherical">
             <OrbitalShapesBasicVisual />
-            <p className="mt-3 text-sm text-slate-300">
+            <p className="mt-3 text-sm text-[var(--text-body)]">
               The s orbital (l = 0) is perfectly spherical, centred on the nucleus. All directions are
               equally probable. Orbital angular momentum = 0.
             </p>

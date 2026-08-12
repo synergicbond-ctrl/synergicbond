@@ -73,15 +73,15 @@ export default function DipoleMomentPart02() {
             <ConceptCard title="Only a hybrid lone pair has a net moment" tone="amber">
               <p>A lone pair contributes <strong className="text-white">zero</strong> dipole moment if it occupies a pure s or p orbital: the s-orbital is spherically symmetric, and a pure p-orbital&apos;s two lobes point in exactly opposite directions and cancel. Only a lone pair housed in a hybrid orbital has a net directional moment.</p>
               <KB>{String.raw`sp > sp^2 > sp^3`}</KB>
-              <p className="text-sm text-slate-400">Lone-pair moment order for carbon-type hybrids: 4.4 D → 3.7 D.</p>
-              <p className="text-sm text-slate-400">Important caution: numbers like 4.4 D, 3.7 D, or a specific 71° lone-pair angle are model-dependent orbital quantities from a simplified localized-orbital picture — not directly measured, universal experimental constants.</p>
+              <p className="text-sm text-[var(--text-muted)]">Lone-pair moment order for carbon-type hybrids: 4.4 D → 3.7 D.</p>
+              <p className="text-sm text-[var(--text-muted)]">Important caution: numbers like 4.4 D, 3.7 D, or a specific 71° lone-pair angle are model-dependent orbital quantities from a simplified localized-orbital picture — not directly measured, universal experimental constants.</p>
             </ConceptCard>
             <FigureFrame title="Hybrid-orbital lone-pair theory" caption="Only a lone pair in a hybrid orbital has a net directional moment; s-character increasing along sp > sp² > sp³ changes its magnitude.">
               <DipoleStructureFigure id="hybrid-orbital-lone-pair-theory" />
             </FigureFrame>
             <ConceptCard title="HCl in full: the three-way tug-of-war" tone="rose" eyebrow="The one full derivation">
               <p>If Cl used pure 3s/3p orbitals for its lone pairs, they would contribute nothing. Using sp³ hybrids instead, all three lone pairs point into the hemisphere opposite the H–Cl bond, each making ≈71° with the −z axis.</p>
-              <p className="text-sm text-slate-400">Where 71° comes from: each sp³ hybrid makes the tetrahedral angle <K>{String.raw`109.47°`}</K> with the H–Cl bond itself (the +z axis). Measured instead from the opposite direction (−z axis, the lone-pair hemisphere), <K>{String.raw`\theta = 180° - 109.47° \approx 70.5° \approx 71°`}</K>.</p>
+              <p className="text-sm text-[var(--text-muted)]">Where 71° comes from: each sp³ hybrid makes the tetrahedral angle <K>{String.raw`109.47°`}</K> with the H–Cl bond itself (the +z axis). Measured instead from the opposite direction (−z axis, the lone-pair hemisphere), <K>{String.raw`\theta = 180° - 109.47° \approx 70.5° \approx 71°`}</K>.</p>
               <p>Their combined contribution — <K>{String.raw`3\mu_L\cos71°`}</K> — <strong className="text-white">reinforces</strong> <K>{String.raw`\mu_e`}</K> but is <strong className="text-white">opposed</strong> by <K>{String.raw`\mu_h`}</K> (which points toward H, per the previous factor).</p>
               <p>The low observed <K>{String.raw`\mu(\text{HCl}) = 1.03\ \text{D}`}</K> reflects this three-way tug-of-war between <K>{String.raw`\mu_e`}</K>, <K>{String.raw`\mu_h`}</K> and <K>{String.raw`\mu_L`}</K> — not electronegativity alone. This is the only place in the chapter this full three-factor HCl breakdown is worked; the bare bond value and the %ionic calculation (both Part 1) build on it without repeating it.</p>
             </ConceptCard>

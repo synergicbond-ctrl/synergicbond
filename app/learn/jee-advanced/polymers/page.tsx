@@ -137,7 +137,7 @@ function RichText({ text }: { text: string }) {
 function BlockRenderer({ block }: { block: Block }) {
   if (block.kind === "p") {
     return (
-      <p className="text-[15px] leading-7 text-slate-200 md:text-base md:leading-8">
+      <p className="text-[15px] leading-7 text-[var(--foreground)] md:text-base md:leading-8">
         <RichText text={block.text} />
       </p>
     );
@@ -145,7 +145,7 @@ function BlockRenderer({ block }: { block: Block }) {
 
   if (block.kind === "bullets") {
     return (
-      <ul className="grid gap-3 text-[15px] leading-7 text-slate-200 md:text-base">
+      <ul className="grid gap-3 text-[15px] leading-7 text-[var(--foreground)] md:text-base">
         {block.items.map((item) => (
           <li key={item} className="flex gap-3">
             <span className="mt-2.5 h-1.5 w-1.5 shrink-0 rounded-full bg-cyan-300 shadow-[0_0_12px_rgba(103,232,249,0.85)]" />
@@ -162,7 +162,7 @@ function BlockRenderer({ block }: { block: Block }) {
         <div className="text-lg text-violet-100 md:text-xl">
           <Latex value={block.latex} block />
         </div>
-        {block.note ? <p className="mt-2 text-center text-sm leading-6 text-slate-400"><RichText text={block.note} /></p> : null}
+        {block.note ? <p className="mt-2 text-center text-sm leading-6 text-[var(--text-muted)]"><RichText text={block.note} /></p> : null}
       </div>
     );
   }
@@ -178,12 +178,12 @@ function BlockRenderer({ block }: { block: Block }) {
 
   if (block.kind === "table") {
     return (
-      <div className="overflow-x-auto rounded-2xl border border-slate-700/80 bg-[#080d18]">
+      <div className="overflow-x-auto rounded-2xl border border-[var(--border-strong)]/80 bg-[#080d18]">
         <table className="min-w-full border-collapse text-left text-sm md:text-[15px]">
           <thead>
             <tr className="bg-gradient-to-r from-cyan-400/15 via-violet-400/15 to-rose-400/15">
               {block.headers.map((header) => (
-                <th key={header} className="border-b border-slate-700 px-4 py-3 font-extrabold text-cyan-100">
+                <th key={header} className="border-b border-[var(--border-strong)] px-4 py-3 font-extrabold text-cyan-100">
                   <RichText text={header} />
                 </th>
               ))}
@@ -191,9 +191,9 @@ function BlockRenderer({ block }: { block: Block }) {
           </thead>
           <tbody>
             {block.rows.map((row, rowIndex) => (
-              <tr key={`${rowIndex}-${row[0]}`} className="border-b border-slate-800 last:border-0 odd:bg-white/[0.015]">
+              <tr key={`${rowIndex}-${row[0]}`} className="border-b border-[var(--border)] last:border-0 odd:bg-white/[0.015]">
                 {row.map((cell, cellIndex) => (
-                  <td key={`${rowIndex}-${cellIndex}`} className={`px-4 py-3 align-top leading-6 ${cellIndex === 0 ? "font-bold text-violet-100" : "text-slate-300"}`}>
+                  <td key={`${rowIndex}-${cellIndex}`} className={`px-4 py-3 align-top leading-6 ${cellIndex === 0 ? "font-bold text-violet-100" : "text-[var(--text-body)]"}`}>
                     <RichText text={cell} />
                   </td>
                 ))}
@@ -209,8 +209,8 @@ function BlockRenderer({ block }: { block: Block }) {
     return (
       <article className="rounded-2xl border border-emerald-400/25 bg-emerald-400/[0.055] p-4 md:p-5">
         <h4 className="font-black text-emerald-200">{block.title}</h4>
-        <p className="mt-3 text-[15px] leading-7 text-slate-200 md:text-base"><span className="font-bold text-white">Question. </span><RichText text={block.question} /></p>
-        <div className="mt-3 border-t border-emerald-300/15 pt-3 text-[15px] leading-7 text-slate-200 md:text-base"><span className="font-bold text-emerald-100">Solution. </span><RichText text={block.answer} /></div>
+        <p className="mt-3 text-[15px] leading-7 text-[var(--foreground)] md:text-base"><span className="font-bold text-white">Question. </span><RichText text={block.question} /></p>
+        <div className="mt-3 border-t border-emerald-300/15 pt-3 text-[15px] leading-7 text-[var(--foreground)] md:text-base"><span className="font-bold text-emerald-100">Solution. </span><RichText text={block.answer} /></div>
       </article>
     );
   }
@@ -218,12 +218,12 @@ function BlockRenderer({ block }: { block: Block }) {
   return (
     <div className="grid gap-3">
       {block.questions.map((item, index) => (
-        <details key={item.q} className="group rounded-xl border border-slate-700 bg-[#090f1c] px-4 py-3 open:border-cyan-400/35 open:bg-cyan-400/[0.04]">
+        <details key={item.q} className="group rounded-xl border border-[var(--border-strong)] bg-[#090f1c] px-4 py-3 open:border-cyan-400/35 open:bg-cyan-400/[0.04]">
           <summary className="cursor-pointer list-none font-bold text-slate-100 marker:hidden">
             <span className="mr-3 inline-flex h-7 w-7 items-center justify-center rounded-lg bg-violet-400/15 text-sm text-violet-200">{index + 1}</span>
             <RichText text={item.q} />
           </summary>
-          <p className="mt-3 border-t border-slate-700/70 pt-3 pl-10 text-[15px] leading-7 text-slate-300"><RichText text={item.a} /></p>
+          <p className="mt-3 border-t border-[var(--border-strong)]/70 pt-3 pl-10 text-[15px] leading-7 text-[var(--text-body)]"><RichText text={item.a} /></p>
         </details>
       ))}
     </div>
@@ -235,7 +235,7 @@ export default function PolymersPage() {
     <main className="min-h-screen bg-[#030712] text-white selection:bg-cyan-300 selection:text-slate-950" style={{ fontFamily: sfProStack }}>
       <div className="fixed inset-0 -z-0 bg-[radial-gradient(circle_at_15%_15%,rgba(34,211,238,0.08),transparent_28%),radial-gradient(circle_at_80%_10%,rgba(167,139,250,0.09),transparent_30%),radial-gradient(circle_at_70%_80%,rgba(251,113,133,0.06),transparent_28%)]" />
 
-      <header className="relative z-10 border-b border-slate-800/80">
+      <header className="relative z-10 border-b border-[var(--border)]/80">
         <div className="mx-auto max-w-7xl px-4 py-10 md:px-8 md:py-14">
           <div className="grid items-center gap-8 lg:grid-cols-[1.05fr_0.95fr]">
             <div>
@@ -246,17 +246,17 @@ export default function PolymersPage() {
               <h1 className="mt-3 bg-gradient-to-r from-cyan-200 via-white to-violet-200 bg-clip-text text-4xl font-black tracking-tight text-transparent md:text-6xl">
                 Polymers
               </h1>
-              <p className="mt-5 max-w-2xl text-base leading-8 text-slate-300 md:text-lg">
+              <p className="mt-5 max-w-2xl text-base leading-8 text-[var(--text-body)] md:text-lg">
                 A complete structure–property chapter covering polymerisation mechanisms, molecular mass, stereochemistry, elastomers, fibres, plastics, thermosets, named polymers and biodegradable materials.
               </p>
-              <div className="mt-6 flex flex-wrap gap-3 text-sm text-slate-300">
-                <span className="rounded-lg border border-slate-700 bg-slate-900/70 px-3 py-2">26 numbered sections</span>
-                <span className="rounded-lg border border-slate-700 bg-slate-900/70 px-3 py-2">Comparison tables</span>
-                <span className="rounded-lg border border-slate-700 bg-slate-900/70 px-3 py-2">Solved examples</span>
-                <span className="rounded-lg border border-slate-700 bg-slate-900/70 px-3 py-2">Exam traps</span>
+              <div className="mt-6 flex flex-wrap gap-3 text-sm text-[var(--text-body)]">
+                <span className="rounded-lg border border-[var(--border-strong)] bg-[var(--surface)]/70 px-3 py-2">26 numbered sections</span>
+                <span className="rounded-lg border border-[var(--border-strong)] bg-[var(--surface)]/70 px-3 py-2">Comparison tables</span>
+                <span className="rounded-lg border border-[var(--border-strong)] bg-[var(--surface)]/70 px-3 py-2">Solved examples</span>
+                <span className="rounded-lg border border-[var(--border-strong)] bg-[var(--surface)]/70 px-3 py-2">Exam traps</span>
               </div>
             </div>
-            <div className="overflow-hidden rounded-[28px] border border-slate-700/80 bg-slate-950/70 p-2 shadow-2xl shadow-violet-950/30">
+            <div className="overflow-hidden rounded-[28px] border border-[var(--border-strong)]/80 bg-[var(--background)]/70 p-2 shadow-2xl shadow-violet-950/30">
               <PolymerChainVisual />
             </div>
           </div>
@@ -267,22 +267,22 @@ export default function PolymersPage() {
 
       <div className="relative z-10 mx-auto grid max-w-[1480px] gap-8 px-4 py-8 md:px-8 lg:grid-cols-[340px_minmax(0,1fr)]">
         <aside className="h-fit lg:sticky lg:top-5">
-          <nav className="overflow-hidden rounded-[28px] border border-slate-700/70 bg-[#070c16]/95 shadow-[0_24px_90px_rgba(0,0,0,0.32)] backdrop-blur-xl">
-            <div className="relative overflow-hidden border-b border-slate-800 px-5 py-5">
+          <nav className="overflow-hidden rounded-[28px] border border-[var(--border-strong)]/70 bg-[#070c16]/95 shadow-[0_24px_90px_rgba(0,0,0,0.32)] backdrop-blur-xl">
+            <div className="relative overflow-hidden border-b border-[var(--border)] px-5 py-5">
               <div className="absolute inset-0 bg-[radial-gradient(circle_at_10%_20%,rgba(34,211,238,0.12),transparent_36%),radial-gradient(circle_at_88%_15%,rgba(168,85,247,0.12),transparent_38%),radial-gradient(circle_at_70%_100%,rgba(244,63,94,0.08),transparent_42%)]" />
               <div className="relative">
                 <div className="flex items-center justify-between gap-3">
                   <p className="text-[11px] font-black uppercase tracking-[0.24em] text-cyan-300">Polymer Atlas</p>
-                  <span className="rounded-full border border-white/10 bg-white/[0.04] px-2.5 py-1 text-[10px] font-bold tracking-[0.12em] text-slate-400">26 TOPICS</span>
+                  <span className="rounded-full border border-white/10 bg-white/[0.04] px-2.5 py-1 text-[10px] font-bold tracking-[0.12em] text-[var(--text-muted)]">26 TOPICS</span>
                 </div>
                 <h3 className="mt-3 text-xl font-black tracking-tight text-white">Your chapter learning trail</h3>
-                <p className="mt-1.5 text-sm leading-6 text-slate-400">Follow six connected tracks—from molecular foundations to examination mastery.</p>
+                <p className="mt-1.5 text-sm leading-6 text-[var(--text-muted)]">Follow six connected tracks—from molecular foundations to examination mastery.</p>
               </div>
             </div>
 
             <div className="flex snap-x snap-mandatory gap-4 overflow-x-auto p-4 lg:max-h-[74vh] lg:block lg:space-y-6 lg:overflow-y-auto lg:overflow-x-hidden">
               {navigationTracks.map((track, trackIndex) => (
-                <section key={track.label} className="min-w-[292px] snap-start rounded-2xl border border-slate-800/90 bg-slate-950/40 p-3 lg:min-w-0 lg:border-0 lg:bg-transparent lg:p-0">
+                <section key={track.label} className="min-w-[292px] snap-start rounded-2xl border border-[var(--border)]/90 bg-[var(--background)]/40 p-3 lg:min-w-0 lg:border-0 lg:bg-transparent lg:p-0">
                   <div className="flex items-start justify-between gap-3 px-1">
                     <div>
                       <p className={`text-[10px] font-black uppercase tracking-[0.2em] ${track.eyebrow}`}>Track {String(trackIndex + 1).padStart(2, "0")}</p>
@@ -308,9 +308,9 @@ export default function PolymersPage() {
                             {id}
                           </span>
                           <span className="min-w-0">
-                            <span className="block text-[13px] font-bold leading-[1.28rem] text-slate-200 transition group-hover:text-white">{navLabels[id] ?? section.title}</span>
+                            <span className="block text-[13px] font-bold leading-[1.28rem] text-[var(--foreground)] transition group-hover:text-white">{navLabels[id] ?? section.title}</span>
                           </span>
-                          <svg viewBox="0 0 20 20" fill="none" aria-hidden="true" className="h-4 w-4 text-slate-700 transition group-hover:translate-x-0.5 group-hover:text-slate-300">
+                          <svg viewBox="0 0 20 20" fill="none" aria-hidden="true" className="h-4 w-4 text-slate-700 transition group-hover:translate-x-0.5 group-hover:text-[var(--text-body)]">
                             <path d="M7.5 4.5 13 10l-5.5 5.5" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" />
                           </svg>
                         </a>
@@ -321,7 +321,7 @@ export default function PolymersPage() {
               ))}
             </div>
 
-            <div className="hidden border-t border-slate-800 px-5 py-3 text-[11px] leading-5 text-slate-500 lg:block">
+            <div className="hidden border-t border-[var(--border)] px-5 py-3 text-[11px] leading-5 text-slate-500 lg:block">
               Select a topic to move directly to that concept.
             </div>
           </nav>
@@ -329,14 +329,14 @@ export default function PolymersPage() {
 
         <article className="min-w-0 space-y-8">
           {polymerSections.map((section) => (
-            <section id={`section-${section.id}`} key={section.id} className="scroll-mt-6 rounded-[28px] border border-slate-800/90 bg-[#060b15]/95 p-5 shadow-[0_20px_80px_rgba(0,0,0,0.22)] md:p-8 print:break-before-page">
-              <div className="mb-6 flex items-start gap-4 border-b border-slate-800 pb-5">
+            <section id={`section-${section.id}`} key={section.id} className="scroll-mt-6 rounded-[28px] border border-[var(--border)]/90 bg-[#060b15]/95 p-5 shadow-[0_20px_80px_rgba(0,0,0,0.22)] md:p-8 print:break-before-page">
+              <div className="mb-6 flex items-start gap-4 border-b border-[var(--border)] pb-5">
                 <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-cyan-400/20 via-violet-400/20 to-rose-400/20 text-lg font-black text-cyan-100 ring-1 ring-white/10">
                   {Number(section.id)}
                 </div>
                 <div>
                   <h2 className="text-2xl font-black tracking-tight text-white md:text-3xl">{section.title}</h2>
-                  <p className="mt-1 text-sm leading-6 text-slate-400 md:text-base">{section.subtitle}</p>
+                  <p className="mt-1 text-sm leading-6 text-[var(--text-muted)] md:text-base">{section.subtitle}</p>
                 </div>
               </div>
               <div className="grid gap-5">
@@ -347,7 +347,7 @@ export default function PolymersPage() {
         </article>
       </div>
 
-      <footer className="relative z-10 border-t border-slate-800 py-8 text-center text-sm text-slate-500">
+      <footer className="relative z-10 border-t border-[var(--border)] py-8 text-center text-sm text-slate-500">
         Synergic Bond · Polymers · Original educational synthesis
       </footer>
     </main>

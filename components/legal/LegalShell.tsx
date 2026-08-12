@@ -24,7 +24,7 @@ export default function LegalShell({
   children: React.ReactNode;
 }) {
   return (
-    <main className="min-h-screen bg-[#0B0F19] text-white">
+    <main className="min-h-screen bg-[var(--background)] text-white">
       <div className="mx-auto max-w-3xl px-5 py-12 sm:py-16">
         <nav className="mb-8 flex items-center gap-2 text-xs font-semibold text-white/40">
           <Link href="/" className="hover:text-white">Home</Link>

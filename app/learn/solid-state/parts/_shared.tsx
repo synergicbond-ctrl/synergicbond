@@ -66,7 +66,7 @@ function Block({ block }: { block: SolidStateBlock }) {
           <thead className="bg-white/[0.045] text-zinc-100">
             <tr>{block.headers.map((h) => <th key={h} className="px-3 py-3 font-semibold">{h}</th>)}</tr>
           </thead>
-          <tbody className="divide-y divide-white/10 text-zinc-300">
+          <tbody className="divide-y divide-white/10 text-[var(--text-body)]">
             {block.rows.map((row, index) => (
               <tr key={`${index}-${row.join("-")}`}>
                 {row.map((cell, i) => <td key={`${i}-${cell}`} className={`px-3 py-3 ${i === 0 ? "font-medium text-white" : ""}`}>{cell}</td>)}
@@ -82,7 +82,7 @@ function Block({ block }: { block: SolidStateBlock }) {
     return (
       <div className="rounded-xl border border-violet-400/20 bg-violet-400/[0.035] p-4">
         {block.title ? <h3 className="mb-3 font-semibold text-violet-200">{block.title}</h3> : null}
-        <pre className="overflow-x-auto whitespace-pre font-mono text-xs leading-6 text-zinc-200 md:text-sm">{block.text}</pre>
+        <pre className="overflow-x-auto whitespace-pre font-mono text-xs leading-6 text-[var(--foreground)] md:text-sm">{block.text}</pre>
       </div>
     );
   }
@@ -91,7 +91,7 @@ function Block({ block }: { block: SolidStateBlock }) {
   return (
     <div className={`rounded-xl border p-4 ${toneClass[tone]}`}>
       <div className="text-xs font-semibold uppercase tracking-[0.18em] opacity-80">{block.label}</div>
-      <p className="mt-2 text-sm leading-7 text-zinc-200">{block.text}</p>
+      <p className="mt-2 text-sm leading-7 text-[var(--foreground)]">{block.text}</p>
     </div>
   );
 }
@@ -100,7 +100,7 @@ function Section({ title, children }: { title: string; children: ReactNode }) {
   return (
     <section className="rounded-2xl border border-white/10 bg-white/[0.035] p-5 md:p-6">
       <h2 className="text-xl font-semibold tracking-tight text-white">{title}</h2>
-      <div className="mt-4 space-y-4 text-[15px] leading-7 text-zinc-300">{children}</div>
+      <div className="mt-4 space-y-4 text-[15px] leading-7 text-[var(--text-body)]">{children}</div>
     </section>
   );
 }
@@ -115,7 +115,7 @@ export function SolidStatePartPage({ data }: { data: SolidStatePartData }) {
       <header className="rounded-3xl border border-cyan-400/20 bg-gradient-to-b from-cyan-400/10 via-violet-400/[0.025] to-transparent p-6 md:p-8">
         <p className="text-xs font-semibold uppercase tracking-[0.24em] text-cyan-300">JEE Advanced · Solid State · Part {data.part}</p>
         <h1 className="mt-3 text-3xl font-semibold tracking-tight text-white md:text-4xl">{data.title}</h1>
-        <p className="mt-4 max-w-4xl text-sm leading-7 text-zinc-300">{data.intro}</p>
+        <p className="mt-4 max-w-4xl text-sm leading-7 text-[var(--text-body)]">{data.intro}</p>
       </header>
 
       {data.sections.map((section) => (
@@ -135,8 +135,8 @@ export function SolidStatePartPage({ data }: { data: SolidStatePartData }) {
           {data.examples.map((example) => (
             <article key={example.title} className="rounded-xl border border-white/10 bg-black/20 p-4">
               <h3 className="font-semibold text-white">{example.title}</h3>
-              <p className="mt-3 text-zinc-300">{example.question}</p>
-              <ol className="mt-3 list-decimal space-y-2 pl-5 text-sm leading-7 text-zinc-400">
+              <p className="mt-3 text-[var(--text-body)]">{example.question}</p>
+              <ol className="mt-3 list-decimal space-y-2 pl-5 text-sm leading-7 text-[var(--text-muted)]">
                 {example.steps.map((step) => <li key={step}>{step}</li>)}
               </ol>
               <div className="mt-4 rounded-lg border border-emerald-400/20 bg-emerald-400/[0.045] px-3 py-2 text-sm font-semibold text-emerald-200">

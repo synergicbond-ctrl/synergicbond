@@ -29,12 +29,12 @@ export default function SurfaceChemistryIndexPage() {
                 complete twelve-part edition
               </span>
             </h1>
-            <p className="mt-5 max-w-4xl text-base font-medium leading-7 text-slate-300 sm:text-lg sm:leading-8">
+            <p className="mt-5 max-w-4xl text-base font-medium leading-7 text-[var(--text-body)] sm:text-lg sm:leading-8">
               Adsorption, catalysis and colloids developed from first principles with molecular-orbital explanations, quantitative derivations, original dark visuals, experiments, applications and JEE Advanced problem solving.
             </p>
             <div className="mt-9 grid max-w-4xl gap-3 sm:grid-cols-2 lg:grid-cols-4">
               {STATS.map(([value, label]) => (
-                <div key={label} className="rounded-2xl border border-white/10 bg-slate-950/70 p-4">
+                <div key={label} className="rounded-2xl border border-white/10 bg-[var(--background)]/70 p-4">
                   <div className="text-3xl font-black tracking-tight text-white">{value}</div>
                   <div className="mt-1 text-xs font-bold uppercase tracking-[.14em] text-slate-500">{label}</div>
                 </div>
@@ -44,7 +44,7 @@ export default function SurfaceChemistryIndexPage() {
         </header>
 
         <section className="mx-auto max-w-[1320px] px-4 py-12 sm:px-7 lg:px-10">
-          <div className="overflow-x-auto rounded-3xl border border-white/10 bg-slate-950/60 p-3 sm:p-5">
+          <div className="overflow-x-auto rounded-3xl border border-white/10 bg-[var(--background)]/60 p-3 sm:p-5">
             <SurfaceVisual mode="interface" />
           </div>
 
@@ -53,14 +53,14 @@ export default function SurfaceChemistryIndexPage() {
               <a
                 key={item.part}
                 href={`/learn/jee-advanced/surface-chemistry/parts/${item.slug}`}
-                className="group rounded-3xl border border-white/10 bg-slate-950/70 p-5 transition hover:-translate-y-0.5 hover:border-cyan-300/25 hover:bg-white/[.04] sm:p-6"
+                className="group rounded-3xl border border-white/10 bg-[var(--background)]/70 p-5 transition hover:-translate-y-0.5 hover:border-cyan-300/25 hover:bg-white/[.04] sm:p-6"
               >
                 <div className="flex items-start justify-between gap-4">
                   <span className="font-mono text-sm font-bold text-cyan-300">{String(item.part).padStart(2, "0")}</span>
                   <span className="text-sm text-slate-600 transition group-hover:text-cyan-300">Open →</span>
                 </div>
                 <h2 className="mt-5 text-xl font-semibold tracking-tight text-white">{item.title}</h2>
-                <p className="mt-3 text-sm leading-7 text-slate-400">{item.description}</p>
+                <p className="mt-3 text-sm leading-7 text-[var(--text-muted)]">{item.description}</p>
               </a>
             ))}
           </div>

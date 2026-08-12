@@ -67,7 +67,7 @@ function Frame({
         <path d="M20 22 H210" stroke={cyan} strokeWidth="3" opacity=".9" filter={`url(#${glowId})`} />
         {children}
       </svg>
-      <figcaption className="mt-2 text-center text-sm font-medium tracking-wide text-slate-300">{title}</figcaption>
+      <figcaption className="mt-2 text-center text-sm font-medium tracking-wide text-[var(--text-body)]">{title}</figcaption>
     </figure>
   );
 }

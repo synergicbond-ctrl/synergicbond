@@ -160,7 +160,7 @@ export default function MemoryReview({ initialDeck }: { initialDeck?: Mode }) {
         </span>
       </div>
 
-      <div className="min-h-[16rem] rounded-2xl border border-white/[0.08] bg-[#111827] p-6">
+      <div className="min-h-[16rem] rounded-2xl border border-white/[0.08] bg-[var(--surface)] p-6">
         {current.hint && <div className="mb-3 text-[11px] font-bold uppercase tracking-wider text-white/35">{current.hint}</div>}
         <div className="text-lg font-bold leading-relaxed text-white">
           {current.render ? renderChemistry(current.front) : current.front}

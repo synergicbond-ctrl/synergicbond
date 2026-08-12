@@ -57,7 +57,7 @@ export default function LeaderboardPage() {
     <main className="min-h-screen bg-black text-white p-6 max-w-3xl mx-auto">
       <div className="mb-8">
         <h1 className="text-3xl font-bold tracking-tight mb-2">Leaderboard</h1>
-        <p className="text-zinc-400">Top students ranked by XP earned through quizzes, exams, and daily study.</p>
+        <p className="text-[var(--text-muted)]">Top students ranked by XP earned through quizzes, exams, and daily study.</p>
       </div>
 
       {/* Scope Toggle */}
@@ -72,7 +72,7 @@ export default function LeaderboardPage() {
             className={`px-5 py-2 rounded-xl text-sm font-medium border capitalize transition ${
               scope === s
                 ? "bg-cyan-500 border-cyan-500 text-black"
-                : "border-zinc-700 text-zinc-400 hover:border-zinc-500"
+                : "border-[var(--border-strong)] text-[var(--text-muted)] hover:border-zinc-500"
             }`}
           >
             {s === "global" ? "All Time" : "This Week"}
@@ -86,11 +86,11 @@ export default function LeaderboardPage() {
           <div>
             <div className="text-xs text-cyan-400 font-medium mb-1">YOUR RANK</div>
             <div className="text-white font-bold">{getRankBadge(currentUserRank.rank)} {currentUserRank.name}</div>
-            <div className="text-zinc-400 text-sm">{currentUserRank.examTarget}</div>
+            <div className="text-[var(--text-muted)] text-sm">{currentUserRank.examTarget}</div>
           </div>
           <div className="text-right">
             <div className="text-2xl font-bold text-cyan-400">{currentUserRank.xp} XP</div>
-            <div className="text-zinc-400 text-sm">Level {currentUserRank.level} — {getLevelTitle(currentUserRank.level)}</div>
+            <div className="text-[var(--text-muted)] text-sm">Level {currentUserRank.level} — {getLevelTitle(currentUserRank.level)}</div>
             <div className="text-violet-400 text-sm">🔥 {currentUserRank.streak} day streak</div>
           </div>
         </div>
@@ -101,7 +101,7 @@ export default function LeaderboardPage() {
       ) : data.length === 0 ? (
         <div className="text-center py-20">
           <div className="text-4xl mb-4">🏆</div>
-          <div className="text-zinc-400">No data yet. Be the first to earn XP!</div>
+          <div className="text-[var(--text-muted)]">No data yet. Be the first to earn XP!</div>
           <a href="/quiz" className="inline-block mt-4 bg-cyan-500 text-black px-6 py-2 rounded-xl font-semibold">Start a Quiz</a>
         </div>
       ) : (
@@ -113,8 +113,8 @@ export default function LeaderboardPage() {
                 entry.isCurrentUser
                   ? "bg-cyan-950 border-cyan-700"
                   : entry.rank <= 3
-                  ? "bg-zinc-900 border-zinc-700"
-                  : "bg-zinc-950 border-zinc-800 hover:border-zinc-700"
+                  ? "bg-[var(--surface)] border-[var(--border-strong)]"
+                  : "bg-[var(--background)] border-[var(--border)] hover:border-[var(--border-strong)]"
               }`}
             >
               {/* Rank */}
@@ -154,9 +154,9 @@ export default function LeaderboardPage() {
       )}
 
       {/* XP Guide */}
-      <div className="mt-8 bg-zinc-900 border border-zinc-800 rounded-2xl p-5">
-        <div className="text-sm font-semibold text-zinc-300 mb-3">How to Earn XP</div>
-        <div className="grid grid-cols-2 gap-2 text-sm text-zinc-400">
+      <div className="mt-8 bg-[var(--surface)] border border-[var(--border)] rounded-2xl p-5">
+        <div className="text-sm font-semibold text-[var(--text-body)] mb-3">How to Earn XP</div>
+        <div className="grid grid-cols-2 gap-2 text-sm text-[var(--text-muted)]">
           <div>✅ Quiz complete → +20 XP</div>
           <div>🎯 Perfect score → +50 XP</div>
           <div>📖 Read a chapter → +10 XP</div>

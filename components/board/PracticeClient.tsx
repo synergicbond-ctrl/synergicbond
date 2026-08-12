@@ -219,7 +219,7 @@ export default function PracticeClient({
       {/* Chapter + difficulty filters */}
       <div className="flex flex-wrap items-center gap-3">
         <select value={chapterId} onChange={(e) => setChapterId(e.target.value)}
-          className="rounded-lg border border-white/10 bg-[#0B1220] px-3 py-2 text-sm text-white/85">
+          className="rounded-lg border border-white/10 bg-[var(--background)] px-3 py-2 text-sm text-white/85">
           <option value="all">All chapters</option>
           {chapters.map((c) => <option key={c.id} value={c.id}>Unit {c.unit}: {c.title}</option>)}
         </select>
@@ -274,7 +274,7 @@ export default function PracticeClient({
               <p className="font-medium leading-relaxed text-white">{subQ.question}</p>
               <textarea value={answer} onChange={(e) => setAnswer(e.target.value)} rows={5}
                 placeholder="Write your answer as you would in the board exam (or upload a PDF/Image below)..."
-                className="w-full rounded-lg border border-white/10 bg-[#0B1220] p-3 text-sm text-white/90 outline-none focus:border-cyan-400/40" />
+                className="w-full rounded-lg border border-white/10 bg-[var(--background)] p-3 text-sm text-white/90 outline-none focus:border-cyan-400/40" />
               
               {/* Subjective answer upload & status UI */}
               <div className="flex flex-col gap-3 p-3 bg-white/[0.02] border border-white/[0.06] rounded-xl">

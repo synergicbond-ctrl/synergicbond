@@ -20,15 +20,15 @@ function Chip({ children, tone = "cyan" }: { children: React.ReactNode; tone?: T
 
 function Section({ index, title, subtitle, children }: { index: string; title: string; subtitle?: string; children: React.ReactNode }) {
   return (
-    <section className="rounded-[2rem] border border-white/10 bg-slate-950/80 p-5 shadow-2xl md:p-8">
+    <section className="rounded-[2rem] border border-white/10 bg-[var(--background)]/80 p-5 shadow-2xl md:p-8">
       <div className="flex gap-4">
         <span className="grid h-10 w-10 shrink-0 place-items-center rounded-2xl border border-cyan-300/30 bg-cyan-300/10 text-sm font-black text-cyan-200">{index}</span>
         <div>
           <h2 className="text-2xl font-black text-white md:text-3xl">{title}</h2>
-          {subtitle ? <p className="mt-1 text-sm text-slate-400">{subtitle}</p> : null}
+          {subtitle ? <p className="mt-1 text-sm text-[var(--text-muted)]">{subtitle}</p> : null}
         </div>
       </div>
-      <div className="mt-6 space-y-5 text-[15px] leading-7 text-slate-200">{children}</div>
+      <div className="mt-6 space-y-5 text-[15px] leading-7 text-[var(--foreground)]">{children}</div>
     </section>
   );
 }
@@ -47,7 +47,7 @@ function Lens({ title, children, tone = "cyan" }: { title: string; children: Rea
     <aside className={`rounded-2xl border p-5 ${tones[tone]}`}>
       <p className="text-xs font-black uppercase tracking-[0.2em]">Concept lens</p>
       <h3 className="mt-2 text-lg font-black text-white">{title}</h3>
-      <div className="mt-2 text-sm leading-6 text-slate-200">{children}</div>
+      <div className="mt-2 text-sm leading-6 text-[var(--foreground)]">{children}</div>
     </aside>
   );
 }
@@ -163,7 +163,7 @@ function ThermodynamicsPart23() {
             <Chip>SYNERGIC BOND MASTER NOTES</Chip><Chip tone="violet">COMPLETE THEORY</Chip><Chip tone="emerald">MICROSTATES & REACTION ENTROPY</Chip>
           </div>
           <h1 className="mt-7 max-w-5xl text-4xl font-black tracking-tight text-white md:text-6xl">From calorimetric absolute entropy to microstate counting and reaction-entropy corrections</h1>
-          <p className="mt-5 max-w-3xl text-lg leading-8 text-slate-300">This part completes the Third-Law numerical sequence, preserves the microstate examples, and derives how temperature and pressure alter reaction entropy.</p>
+          <p className="mt-5 max-w-3xl text-lg leading-8 text-[var(--text-body)]">This part completes the Third-Law numerical sequence, preserves the microstate examples, and derives how temperature and pressure alter reaction entropy.</p>
         </div>
       </header>
 
@@ -223,16 +223,16 @@ function ThermodynamicsPart23() {
 <Section index="08" title="Complete worked examples and applications">
           <div className="grid gap-4 lg:grid-cols-2">
             {problems.map(([title,q,a])=>(
-              <article key={title} className="rounded-2xl border border-white/10 bg-slate-900/70 p-5">
+              <article key={title} className="rounded-2xl border border-white/10 bg-[var(--surface)]/70 p-5">
                 <h3 className="cursor-pointer font-black text-white">{title}</h3>
-                <p className="mt-3 text-slate-200">{q}</p>
-                <div className="mt-4 rounded-xl border border-emerald-300/20 bg-emerald-300/[0.06] p-4 text-sm text-slate-200">{a}</div>
+                <p className="mt-3 text-[var(--foreground)]">{q}</p>
+                <div className="mt-4 rounded-xl border border-emerald-300/20 bg-emerald-300/[0.06] p-4 text-sm text-[var(--foreground)]">{a}</div>
               </article>
             ))}
           </div>
         </Section>
 
-        <section className="rounded-[2rem] border border-white/10 bg-slate-950 p-6">
+        <section className="rounded-[2rem] border border-white/10 bg-[var(--background)] p-6">
           <div className="flex flex-wrap items-center justify-between gap-4">
             <div><p className="text-xs font-black uppercase tracking-[0.2em] text-fuchsia-300">Rapid recall</p><h2 className="mt-2 text-2xl font-black text-white">Absolute entropy adds by thermal route; reaction entropy shifts with temperature and pressure</h2></div>
             <Chip tone="emerald">PART 23 COMPLETE</Chip>
@@ -276,7 +276,7 @@ function Part23BundledApplications() {
   return (
     <section className="bg-[#020617] pb-14 text-slate-100">
       <div className="mx-auto max-w-5xl px-4 md:px-8">
-        <section className="rounded-[2rem] border border-white/10 bg-slate-950/80 p-5 md:p-8">
+        <section className="rounded-[2rem] border border-white/10 bg-[var(--background)]/80 p-5 md:p-8">
           <h2 className="text-2xl font-black text-white">Visible Third-Law, microstate and reaction-entropy applications</h2>
 
           <div className="mt-5 space-y-4">
@@ -296,7 +296,7 @@ function Part23BundledApplications() {
                   <p className="text-xs font-black uppercase text-violet-300">
                     Given
                   </p>
-                  <p className="mt-2 text-sm leading-6 text-slate-300">
+                  <p className="mt-2 text-sm leading-6 text-[var(--text-body)]">
                     {item.given}
                   </p>
                 </div>
@@ -305,7 +305,7 @@ function Part23BundledApplications() {
                   <p className="text-xs font-black uppercase text-emerald-300">
                     Solution
                   </p>
-                  <p className="mt-2 text-sm leading-6 text-slate-300">
+                  <p className="mt-2 text-sm leading-6 text-[var(--text-body)]">
                     {item.solution}
                   </p>
                 </div>

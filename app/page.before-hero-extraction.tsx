@@ -165,24 +165,24 @@ export default function Home() {
         <section className="mx-auto max-w-7xl px-8 py-28 w-full">
           <div className="mb-16">
             <h2 className="mb-4 text-5xl font-bold tracking-tight">📚 Resource Vault</h2>
-            <p className="text-lg text-gray-400">Everything a chemistry student needs in one place.</p>
+            <p className="text-lg text-[var(--text-muted)]">Everything a chemistry student needs in one place.</p>
           </div>
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
             <div className="rounded-3xl border border-white/10 bg-white/5 p-8">
               <h3 className="mb-4 text-2xl font-bold tracking-tight">📄 Papers</h3>
-              <p className="text-gray-400 text-sm">JEE, NEET, NSEC, INChO, IChO</p>
+              <p className="text-[var(--text-muted)] text-sm">JEE, NEET, NSEC, INChO, IChO</p>
             </div>
             <div className="rounded-3xl border border-white/10 bg-white/5 p-8">
               <h3 className="mb-4 text-2xl font-bold tracking-tight">📘 Books</h3>
-              <p className="text-gray-400 text-sm">Physical, Organic and Inorganic Chemistry</p>
+              <p className="text-[var(--text-muted)] text-sm">Physical, Organic and Inorganic Chemistry</p>
             </div>
             <div className="rounded-3xl border border-white/10 bg-white/5 p-8">
               <h3 className="mb-4 text-2xl font-bold tracking-tight">📝 Notes</h3>
-              <p className="text-gray-400 text-sm">Chapter-wise revision notes</p>
+              <p className="text-[var(--text-muted)] text-sm">Chapter-wise revision notes</p>
             </div>
             <div className="rounded-3xl border border-white/10 bg-white/5 p-8">
               <h3 className="mb-4 text-2xl font-bold tracking-tight">📋 Assignments</h3>
-              <p className="text-gray-400 text-sm">NCERT, JEE, Olympiad levels</p>
+              <p className="text-[var(--text-muted)] text-sm">NCERT, JEE, Olympiad levels</p>
             </div>
           </div>
         </section>

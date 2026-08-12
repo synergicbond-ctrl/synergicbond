@@ -206,7 +206,7 @@ function ChoiceCard({
       className={`group w-full rounded-2xl border p-5 text-left transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300/70 ${
         primary
           ? "border-cyan-400/30 bg-gradient-to-br from-cyan-500/15 via-cyan-500/[0.06] to-violet-500/10 hover:border-cyan-300/55"
-          : "border-white/[0.09] bg-[#111827] hover:border-white/20 hover:bg-white/[0.045]"
+          : "border-white/[0.09] bg-[var(--surface)] hover:border-white/20 hover:bg-white/[0.045]"
       }`}
     >
       <p className={`text-[11px] font-bold uppercase tracking-[0.18em] ${primary ? "text-cyan-300" : "text-white/45"}`}>{eyebrow}</p>
@@ -232,7 +232,7 @@ function SelectField({ value, onChange, children, ariaLabel }: { value: string |
       aria-label={ariaLabel}
       value={value}
       onChange={(event: ChangeEvent<HTMLSelectElement>) => onChange(event.target.value)}
-      className="w-full rounded-xl border border-white/10 bg-[#0B1220] px-3 py-3 text-sm font-semibold text-white outline-none transition focus:border-cyan-300/60 focus:ring-2 focus:ring-cyan-300/15"
+      className="w-full rounded-xl border border-white/10 bg-[var(--background)] px-3 py-3 text-sm font-semibold text-white outline-none transition focus:border-cyan-300/60 focus:ring-2 focus:ring-cyan-300/15"
     >
       {children}
     </select>
@@ -311,7 +311,7 @@ function TestBuilder({
         <p className="mt-2 text-sm text-white/50">Choose the essentials. Extra filters stay hidden until you need them.</p>
       </header>
 
-      <section className="rounded-2xl border border-white/[0.08] bg-[#111827] p-4 sm:p-6">
+      <section className="rounded-2xl border border-white/[0.08] bg-[var(--surface)] p-4 sm:p-6">
         <div className="grid gap-4 sm:grid-cols-2">
           {!lockedExam && (
             <label>
@@ -555,14 +555,14 @@ function ResultScreen({
           ["Accuracy", `${accuracy}%`, "text-cyan-300"],
           ["Time", formatDuration(durationMs), "text-violet-300"],
         ].map(([label, value, tone]) => (
-          <div key={label} className="rounded-2xl border border-white/[0.08] bg-[#111827] p-4">
+          <div key={label} className="rounded-2xl border border-white/[0.08] bg-[var(--surface)] p-4">
             <p className={`text-xl font-black ${tone}`}>{value}</p>
             <p className="mt-1 text-xs font-semibold text-white/40">{label}</p>
           </div>
         ))}
       </div>
 
-      <section className="rounded-2xl border border-white/[0.08] bg-[#111827] p-4 sm:p-5">
+      <section className="rounded-2xl border border-white/[0.08] bg-[var(--surface)] p-4 sm:p-5">
         <div className="flex flex-wrap items-center justify-between gap-3">
           <div>
             <h3 className="font-black text-white">What should you do next?</h3>
@@ -609,7 +609,7 @@ function ResultScreen({
             const selected = answers[question.id];
             const correctAnswer = isCorrect(question, selected);
             return (
-              <article key={question.id} className="rounded-2xl border border-white/[0.08] bg-[#111827] p-4 sm:p-5">
+              <article key={question.id} className="rounded-2xl border border-white/[0.08] bg-[var(--surface)] p-4 sm:p-5">
                 <div className="flex flex-wrap items-center justify-between gap-2">
                   <div className="flex flex-wrap items-center gap-2 text-[11px]">
                     <span className="font-black text-cyan-300">Q{index + 1}</span>
@@ -772,7 +772,7 @@ function TestRunner({ session, restore, onExit, onRestart }: { session: TestSess
 
   return (
     <div className="space-y-4">
-      <header className="sticky top-0 z-20 -mx-4 border-b border-white/[0.07] bg-[#0B0F19]/95 px-4 py-3 backdrop-blur sm:static sm:mx-0 sm:rounded-2xl sm:border sm:bg-[#111827] sm:px-5">
+      <header className="sticky top-0 z-20 -mx-4 border-b border-white/[0.07] bg-[var(--background)]/95 px-4 py-3 backdrop-blur sm:static sm:mx-0 sm:rounded-2xl sm:border sm:bg-[var(--surface)] sm:px-5">
         <div className="flex items-center justify-between gap-3">
           <button type="button" onClick={onExit} className="shrink-0 text-sm font-semibold text-white/55 transition hover:text-white">← Exit</button>
           <div className="min-w-0 flex-1 text-center sm:text-left">
@@ -790,7 +790,7 @@ function TestRunner({ session, restore, onExit, onRestart }: { session: TestSess
       </header>
 
       <div className="grid gap-4 lg:grid-cols-[minmax(0,1fr)_250px]">
-        <main className="min-w-0 rounded-2xl border border-white/[0.08] bg-[#111827] p-4 sm:p-6">
+        <main className="min-w-0 rounded-2xl border border-white/[0.08] bg-[var(--surface)] p-4 sm:p-6">
           <div className="flex flex-wrap items-center justify-between gap-3">
             <div className="flex flex-wrap items-center gap-2 text-[11px]">
               <span className="font-black text-cyan-300">Question {current + 1} of {questions.length}</span>
@@ -854,7 +854,7 @@ function TestRunner({ session, restore, onExit, onRestart }: { session: TestSess
           </div>
         </main>
 
-        <aside className="hidden self-start rounded-2xl border border-white/[0.08] bg-[#111827] p-4 lg:block">
+        <aside className="hidden self-start rounded-2xl border border-white/[0.08] bg-[var(--surface)] p-4 lg:block">
           <QuestionPalette questions={questions} current={current} answers={answers} marked={marked} onJump={jumpTo} />
           <div className="mt-5 rounded-xl border border-white/[0.07] bg-white/[0.025] p-3 text-xs leading-5 text-white/45">{session.mode === "exam" ? "Answers and solutions remain hidden until submission." : "Practice mode gives feedback after each answer."}</div>
         </aside>

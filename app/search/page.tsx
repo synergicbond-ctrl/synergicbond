@@ -50,7 +50,7 @@ export default function GlobalSearchPage() {
   };
 
   return (
-    <div className="min-h-screen bg-[#0B0F19] text-white p-6 md:p-12 max-w-5xl mx-auto space-y-10">
+    <div className="min-h-screen bg-[var(--background)] text-white p-6 md:p-12 max-w-5xl mx-auto space-y-10">
       
       {/* Search Header */}
       <header className="space-y-2 text-center">
@@ -61,7 +61,7 @@ export default function GlobalSearchPage() {
       </header>
 
       {/* Search Input Form */}
-      <form onSubmit={handleSearch} className="flex flex-col gap-3 bg-[#111827] p-2 rounded-2xl border border-white/[0.08] max-w-3xl mx-auto sm:flex-row focus-within:border-cyan-400/40 transition">
+      <form onSubmit={handleSearch} className="flex flex-col gap-3 bg-[var(--surface)] p-2 rounded-2xl border border-white/[0.08] max-w-3xl mx-auto sm:flex-row focus-within:border-cyan-400/40 transition">
         <input
           type="text"
           value={query}
@@ -95,7 +95,7 @@ export default function GlobalSearchPage() {
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {results.results.map((c) => (
-                  <Link key={`${c.type ?? "chapter"}-${c.id}`} href={c.href ?? `/chapter/${c.id}`} className={`flex min-w-0 flex-col gap-4 p-5 bg-[#111827] rounded-xl border border-white/[0.08] hover:border-cyan-400/30 transition sm:flex-row sm:items-center sm:justify-between`}>
+                  <Link key={`${c.type ?? "chapter"}-${c.id}`} href={c.href ?? `/chapter/${c.id}`} className={`flex min-w-0 flex-col gap-4 p-5 bg-[var(--surface)] rounded-xl border border-white/[0.08] hover:border-cyan-400/30 transition sm:flex-row sm:items-center sm:justify-between`}>
                     <div className="min-w-0">
                       <h4 className="break-words font-bold text-white">{c.title}</h4>
                       <span className="inline-block mt-1 text-[10px] font-black uppercase px-2 py-0.5 bg-white/[0.06] text-white/60 rounded">
@@ -116,7 +116,7 @@ export default function GlobalSearchPage() {
           )}
 
           {results.results.length === 0 && (
-            <div className="p-12 text-center bg-[#111827] rounded-2xl border border-dashed border-white/[0.08] text-white/40 font-medium">
+            <div className="p-12 text-center bg-[var(--surface)] rounded-2xl border border-dashed border-white/[0.08] text-white/40 font-medium">
               No syllabus elements found matching your query. Try broad topics like Atomic, Organic, or specific laws.
             </div>
           )}

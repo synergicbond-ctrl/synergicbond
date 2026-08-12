@@ -12,19 +12,19 @@ const olympiads = [
 
 export default function OlympiadUniverse() {
   return (
-    <main className="min-h-screen bg-slate-950 text-slate-100 p-6 md:p-12 max-w-7xl mx-auto space-y-12 animate-fadeIn">
-      <nav className="flex justify-between items-center border-b border-slate-800 pb-4">
+    <main className="min-h-screen bg-[var(--background)] text-slate-100 p-6 md:p-12 max-w-7xl mx-auto space-y-12 animate-fadeIn">
+      <nav className="flex justify-between items-center border-b border-[var(--border)] pb-4">
         <div>
           <Link href="/" className="text-xs font-black tracking-widest text-indigo-400 uppercase">Synergic Bond</Link>
           <h1 className="text-4xl font-extrabold tracking-tight mt-1">🌍 Chemistry Olympiad Universe</h1>
-          <p className="text-xs text-slate-400 mt-2 leading-relaxed">Preparation roadmaps, advanced problem sets, and syllabi for international chemical competitions.</p>
+          <p className="text-xs text-[var(--text-muted)] mt-2 leading-relaxed">Preparation roadmaps, advanced problem sets, and syllabi for international chemical competitions.</p>
         </div>
         <ThemeToggle />
       </nav>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {olympiads.map((oly, idx) => (
-          <div key={idx} className="p-6 bg-slate-900/40 border border-slate-800 rounded-3xl space-y-4 hover:border-indigo-500/40 transition">
+          <div key={idx} className="p-6 bg-[var(--surface)]/40 border border-[var(--border)] rounded-3xl space-y-4 hover:border-indigo-500/40 transition">
             <span className={`text-[10px] font-extrabold tracking-widest uppercase px-3 py-1 rounded-full border ${oly.color} self-start inline-block`}>
               {oly.code}
             </span>
@@ -32,7 +32,7 @@ export default function OlympiadUniverse() {
               <h3 className="font-extrabold text-sm tracking-tight text-slate-100">{oly.name}</h3>
               <span className="text-[9px] text-slate-500 font-bold tracking-wider uppercase block">{oly.region}</span>
             </div>
-            <p className="text-xs text-slate-400 leading-relaxed h-12">{oly.desc}</p>
+            <p className="text-xs text-[var(--text-muted)] leading-relaxed h-12">{oly.desc}</p>
             <Link href={`/olympiads/${oly.code.toLowerCase()}`} className="text-[10px] font-black tracking-widest uppercase text-indigo-400 hover:text-indigo-300 block pt-2">
               Access Track &rarr;
             </Link>

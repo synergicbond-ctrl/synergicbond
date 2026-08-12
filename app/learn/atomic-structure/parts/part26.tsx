@@ -44,7 +44,7 @@ export default function Part26() {
           <FormulaLine math="\boxed{mvr = n\frac{h}{2\pi}}" />
           <DiagramBox title="Standing wave on a Bohr orbit (n = 5 shown)">
             <StandingWaveOrbitVisual />
-            <p className="mt-3 text-sm text-slate-300">
+            <p className="mt-3 text-sm text-[var(--text-body)]">
               Exactly five whole wavelengths fit around the orbit circumference. A non-integer number would produce
               destructive self-interference and is forbidden — this is why only discrete orbits exist.
             </p>
@@ -70,7 +70,7 @@ export default function Part26() {
           <FormulaLine math="\lambda = \frac{2L}{n}\qquad L = \frac{n\lambda}{2}" />
           <DiagramBox title="Modes of a vibrating string (n = 1 to 4)">
             <StringStandingWaveVisual />
-            <p className="mt-3 text-sm text-slate-300">
+            <p className="mt-3 text-sm text-[var(--text-body)]">
               Mode n has n half-wavelengths between the fixed ends, with n − 1 interior nodes.
               The span <MathText math="L = n\lambda/2" /> is the string analogue of <MathText math="2\pi r = n\lambda" /> on the Bohr orbit.
             </p>

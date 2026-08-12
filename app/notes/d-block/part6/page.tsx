@@ -20,7 +20,7 @@ function VisualFrame({ title, caption, children }: { title: string; caption: str
         <h3 className="mt-1 text-xl font-black text-white sm:text-2xl">{title}</h3>
       </div>
       <div className="overflow-x-auto p-4 sm:p-7">{children}</div>
-      <figcaption className="border-t border-white/10 bg-white/[0.025] px-5 py-3 text-sm leading-6 text-slate-400 sm:px-7">
+      <figcaption className="border-t border-white/10 bg-white/[0.025] px-5 py-3 text-sm leading-6 text-[var(--text-muted)] sm:px-7">
         {caption}
       </figcaption>
     </figure>
@@ -438,18 +438,18 @@ const markdownComponents = {
   h1: (props: any) => <h2 className="mt-2 text-3xl font-black tracking-tight text-white sm:text-4xl" {...props} />,
   h2: (props: any) => <h3 className="mt-10 border-l-4 border-cyan-400 pl-4 text-2xl font-black text-white" {...props} />,
   h3: (props: any) => <h4 className="mt-8 text-xl font-extrabold text-cyan-200" {...props} />,
-  p: (props: any) => <p className="mt-4 text-[1.02rem] leading-8 text-slate-200" {...props} />,
+  p: (props: any) => <p className="mt-4 text-[1.02rem] leading-8 text-[var(--foreground)]" {...props} />,
   strong: (props: any) => <strong className="font-extrabold text-white" {...props} />,
   em: (props: any) => <em className="text-cyan-100" {...props} />,
-  ul: (props: any) => <ul className="mt-4 space-y-2 pl-6 text-slate-200 marker:text-cyan-300" {...props} />,
-  ol: (props: any) => <ol className="mt-4 space-y-2 pl-6 text-slate-200 marker:font-bold marker:text-amber-300" {...props} />,
+  ul: (props: any) => <ul className="mt-4 space-y-2 pl-6 text-[var(--foreground)] marker:text-cyan-300" {...props} />,
+  ol: (props: any) => <ol className="mt-4 space-y-2 pl-6 text-[var(--foreground)] marker:font-bold marker:text-amber-300" {...props} />,
   li: (props: any) => <li className="leading-7" {...props} />,
   blockquote: (props: any) => (
     <blockquote className="my-6 rounded-2xl border border-amber-300/20 bg-amber-300/[0.07] px-5 py-4 text-amber-50 shadow-inner" {...props} />
   ),
   table: (props: any) => (
     <div className="my-7 overflow-x-auto rounded-2xl border border-white/10">
-      <table className="min-w-full border-collapse text-left text-sm text-slate-200" {...props} />
+      <table className="min-w-full border-collapse text-left text-sm text-[var(--foreground)]" {...props} />
     </div>
   ),
   thead: (props: any) => <thead className="bg-cyan-400/10 text-cyan-100" {...props} />,
@@ -474,7 +474,7 @@ export default function DBlockPart06() {
             </span>
           </div>
           <h1 className="mt-5 max-w-4xl text-3xl font-black leading-tight tracking-tight text-white sm:text-4xl lg:text-5xl">Colour and Magnetic Properties</h1>
-          <p className="mt-5 max-w-4xl text-lg leading-8 text-slate-300">A mechanism-first treatment of visible absorption, ligand-field splitting, selection rules, charge transfer, silver-halide polarisation, aquated-ion colours, spin-only moments and cooperative magnetic order.</p>
+          <p className="mt-5 max-w-4xl text-lg leading-8 text-[var(--text-body)]">A mechanism-first treatment of visible absorption, ligand-field splitting, selection rules, charge transfer, silver-halide polarisation, aquated-ion colours, spin-only moments and cooperative magnetic order.</p>
         </header>
 
         <DBlockPartNavigation part={6} position="top" />
@@ -482,7 +482,7 @@ export default function DBlockPart06() {
         <nav className="sticky top-2 z-20 mt-5 overflow-x-auto rounded-2xl border border-white/10 bg-[#07111f]/95 p-2 shadow-xl backdrop-blur">
           <div className="flex min-w-max gap-2">
             {PAGES.map((page, index) => (
-              <a key={page.id} href={`#${page.id}`} className="rounded-xl border border-white/10 bg-white/[0.04] px-3 py-2 text-xs font-bold text-slate-300 transition hover:border-cyan-300/40 hover:text-white">
+              <a key={page.id} href={`#${page.id}`} className="rounded-xl border border-white/10 bg-white/[0.04] px-3 py-2 text-xs font-bold text-[var(--text-body)] transition hover:border-cyan-300/40 hover:text-white">
                 {index + 1}. {page.label}
               </a>
             ))}
@@ -498,7 +498,7 @@ export default function DBlockPart06() {
                   <span className="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-cyan-300 text-sm font-black text-slate-950">{index + 1}</span>
                   <div>
                     <p className="text-xs font-black uppercase tracking-[0.2em] text-slate-500">Part 6 • Study page</p>
-                    <p className="font-bold text-slate-200">{page.label}</p>
+                    <p className="font-bold text-[var(--foreground)]">{page.label}</p>
                   </div>
                 </div>
                 <ReactMarkdown remarkPlugins={[remarkGfm, remarkMath]} rehypePlugins={[rehypeKatex]} components={createMarkdownComponents(6)}>

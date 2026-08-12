@@ -109,7 +109,7 @@
 }
 
 .carbonRing {
-  stroke: var(--chem-energy);
+  stroke: var(--chem-bond);
   stroke-width: 4;
   stroke-linecap: round;
   stroke-linejoin: round;
@@ -122,7 +122,7 @@
 
 .carbonAtom {
   fill: var(--surface);
-  stroke: var(--chem-energy);
+  stroke: var(--chem-bond);
   stroke-width: 2;
   vector-effect: non-scaling-stroke;
 }
@@ -205,19 +205,19 @@
 }
 
 .hydrogenFact {
-  --fact-tone: #6491ff;
+  --fact-tone: var(--benzene-neutral);
 }
 
 .geometryFact {
-  --fact-tone: var(--chem-orbital);
-}
-
-.hybridFact {
   --fact-tone: var(--chem-rule);
 }
 
+.hybridFact {
+  --fact-tone: var(--chem-orbital);
+}
+
 .orbitalFact {
-  --fact-tone: var(--chem-bond);
+  --fact-tone: var(--chem-orbital);
 }
 
 .fact dt {

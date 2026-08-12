@@ -1,103 +1,65 @@
-"use client";
-
 import Link from "next/link";
-import { Fragment, type CSSProperties } from "react";
-import { LinkButton } from "@/components/ui/Button";
 import BenzeneInstrument from "@/components/home/BenzeneInstrument";
-import { useT } from "@/lib/i18n";
 import styles from "./HomeHero.module.css";
 
-const STAGE_TONES = [
-  "var(--chem-bond)",
-  "var(--chem-orbital)",
-  "var(--chem-rule)",
-  "var(--chem-energy)",
+const SYSTEM_PAGES = [
+  { index: "01", label: "Control Center", href: "/" },
+  { index: "02", label: "Chapter Notes", href: "/notes" },
+  { index: "03", label: "Formula Cards", href: "/formula-cards" },
+  { index: "04", label: "Knowledge Vault", href: "/vault" },
+  { index: "05", label: "Periodic Table", href: "/periodic-table" },
+  { index: "06", label: "Programs", href: "/programs" },
+  { index: "07", label: "Practice Center", href: "/pyq" },
+  { index: "08", label: "AI Lab", href: "/snap-solve" },
+  { index: "09", label: "Performance", href: "/dashboard" },
+  { index: "10", label: "Pricing", href: "/pricing" },
 ] as const;
 
-const LEARNING_PATHS = [
-  { index: "01", label: "Chapter Notes", href: "/notes", tone: "var(--chem-bond)" },
-  { index: "02", label: "Practice Center", href: "/pyq", tone: "var(--chem-orbital)" },
-  { index: "03", label: "Formula Cards", href: "/formula-cards", tone: "var(--chem-rule)" },
-  { index: "04", label: "Periodic Table", href: "/periodic-table", tone: "var(--chem-energy)" },
-] as const;
-
-function BondChain({ stages }: { stages: string[] }) {
-  return (
-    <div className={styles.bondChain} aria-label={stages.join(", ")}>
-      {stages.map((stage, index) => (
-        <Fragment key={stage}>
-          {index > 0 ? <span aria-hidden className={styles.stageBond} /> : null}
-          <span
-            className={styles.stage}
-            style={{ "--stage-tone": STAGE_TONES[index % STAGE_TONES.length] } as CSSProperties}
-          >
-            <span aria-hidden className={styles.stageDot} />
-            {stage}
-          </span>
-        </Fragment>
-      ))}
-    </div>
-  );
-}
-
+/** The visual shell mirrors the approved Chemistry OS demo; links stay on real production routes. */
 export default function HomeHero() {
-  const { t } = useT();
-  const stages = t("hero.tagline")
-    .split("•")
-    .map((stage) => stage.trim())
-    .filter(Boolean);
-
   return (
-    <section className={styles.hero} aria-labelledby="chemistry-os-title">
-      <span aria-hidden className={styles.spectrum} />
-
-      <div className={styles.inner}>
-        <div className={styles.copy}>
-          <div className={styles.kicker}>
-            <span className={styles.eyebrowCode}>SB / 06-C</span>
-            <span>{t("hero.badge")}</span>
-          </div>
-
-          <h1 id="chemistry-os-title" className={styles.title}>
-            <span>{t("hero.headline1")}</span>
-            <span>{t("hero.headline2")}</span>
-          </h1>
-
-          <p className={styles.promise}>
-            <strong>Read verified notes.</strong> Practise with purpose, connect every
-            question to its chemistry, and always know what to learn next.
-          </p>
-
-          <BondChain stages={stages} />
-
-          <div className={styles.actions}>
-            <LinkButton href="/notes" variant="primary" size="md" className={styles.primaryAction}>
-              {t("hero.startLearning")}
-            </LinkButton>
-            <LinkButton href="/vault" variant="secondary" size="md" className={styles.secondaryAction}>
-              {t("hero.exploreVault")}
-            </LinkButton>
-          </div>
+    <>
+      <nav className={styles.systemRail} aria-label="Chemistry OS sections">
+        <div className={styles.railLabel}>
+          <span aria-hidden className={styles.railBond} />
+          <span>Split-valence continuum</span>
+          <strong>01 / Control Center</strong>
         </div>
-
-        <div className={styles.instrument}>
-          <BenzeneInstrument />
+        <div className={styles.railPages}>
+          {SYSTEM_PAGES.map((page) => (
+            <Link href={page.href} key={page.index}>
+              <span>{page.index}</span><em>{page.label}</em>
+            </Link>
+          ))}
         </div>
-      </div>
-
-      <nav className={styles.pathRail} aria-label="Core chemistry tools">
-        {LEARNING_PATHS.map((path) => (
-          <Link
-            key={path.href}
-            href={path.href}
-            style={{ "--path-tone": path.tone } as CSSProperties}
-          >
-            <span className={styles.pathIndex}>{path.index}</span>
-            <span className={styles.pathLabel}>{path.label}</span>
-            <span aria-hidden className={styles.pathArrow}>↗</span>
-          </Link>
-        ))}
       </nav>
-    </section>
+
+      <section className={styles.hero} aria-labelledby="chemistry-os-title">
+        <div className={styles.copy}>
+          <div className={styles.identity}>
+            <div className={styles.carbonTile} aria-label="Carbon, atomic number 6, atomic mass 12.011">
+              <small>6</small><strong>C</strong><span>Carbon</span><em>12.011</em>
+            </div>
+            <div>
+              <span className={styles.microLabel}>The intelligent chemistry platform</span>
+              <h1 id="chemistry-os-title"><span>Synergic</span><span>Bond</span></h1>
+            </div>
+          </div>
+          <div className={styles.osBracket} aria-label="The Chemistry Operating System">
+            <span>The Chemistry</span><span>Operating System</span>
+          </div>
+          <p>Know what to learn. Know what to do next. One connected system for theory, practice, revision and scientific reasoning.</p>
+          <div className={styles.actions}>
+            <Link className={styles.primaryAction} href="/notes">Enter the Chemistry Operating System <span aria-hidden>↗</span></Link>
+            <Link className={styles.secondaryAction} href="/programs">Explore programs</Link>
+          </div>
+          <div className={styles.systemStatus}>
+            <span>Live system</span><strong>One connected chemistry workspace.</strong><small>Notes · practice · revision · exam intelligence</small>
+          </div>
+          <span className={styles.bondBridge} aria-hidden><i /><i /><b>ΣB / 06</b></span>
+        </div>
+        <BenzeneInstrument />
+      </section>
+    </>
   );
 }

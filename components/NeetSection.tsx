@@ -2,7 +2,7 @@ import { Microscope, Dna, Activity, Sparkles } from "lucide-react";
 
 export default function NeetSection() {
   return (
-    <section className="relative max-w-7xl mx-auto px-6 py-12 mt-20 overflow-hidden rounded-[40px] border border-[var(--border-strong)] bg-[var(--surface)]">
+    <section className="relative max-w-7xl mx-auto px-6 py-12 mt-20 overflow-hidden rounded-[40px] border border-[#65d69a]/60 bg-[var(--surface)]" style={{ boxShadow: "inset 0 1px 0 #65d69a26, 0 24px 70px -50px #65d69a" }}>
       {/* Ambient Biological / Molecular Motif Background */}
       <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
         <div className="absolute right-10 top-1/2 h-80 w-80 -translate-y-1/2 rounded-full bg-[var(--surface-2)] blur-[120px]" />
@@ -13,13 +13,13 @@ export default function NeetSection() {
       </div>
 
       <div className="text-center max-w-3xl mx-auto relative z-10">
-        <div className="inline-flex items-center gap-2 rounded-full border border-[var(--border-strong)] bg-[var(--surface-2)] px-4 py-1.5 text-xs font-bold uppercase tracking-[0.4em] text-[var(--text-muted)] shadow-sm mb-4">
-          <Sparkles className="h-3.5 w-3.5 text-[var(--text-muted)]" />
+        <div className="inline-flex items-center gap-2 rounded-full border border-[#65d69a]/60 bg-[#65d69a]/10 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.4em] text-[#65d69a] shadow-sm mb-4">
+          <Sparkles className="h-3.5 w-3.5 text-[#65d69a]" />
           MEDICAL CLARITY
         </div>
 
         <h2 className="text-4xl sm:text-5xl font-black text-white tracking-tight drop-shadow-sm">
-          <span className="bg-[var(--surface)] -400  bg-clip-text text-transparent">
+            <span className="text-[#65d69a]">
             NEET CHEMISTRY
           </span>
         </h2>

@@ -7,22 +7,22 @@ const stats = [
   {
     icon: Atom, value: "10,000+", num: 10000, suffix: "+", title: "Chemistry Resources",
     subtitle: "Concepts, reactions, mechanisms & PYQs",
-    icon_color: "text-[var(--text-muted)]", tile: "border-[var(--border-strong)] bg-[var(--surface-2)]", glow: "transparent", ring: "var(--accent)", pct: 85,
+    icon_color: "text-[#37c8f4]", tile: "border-[#37c8f4]/50 bg-[#37c8f4]/10", glow: "#37c8f433", ring: "#37c8f4", pct: 85,
   },
   {
     icon: BrainCircuit, value: "500+", num: 500, suffix: "+", title: "JEE / NEET Topics",
     subtitle: "Mapped chapter-wise syllabus",
-    icon_color: "text-[var(--text-muted)]", tile: "border-[var(--border-strong)] bg-[var(--surface-2)]", glow: "transparent", ring: "var(--accent)", pct: 75,
+    icon_color: "text-[#65d69a]", tile: "border-[#65d69a]/50 bg-[#65d69a]/10", glow: "#65d69a33", ring: "#65d69a", pct: 75,
   },
   {
     icon: Trophy, value: "200+", num: 200, suffix: "+", title: "Olympiad Problems",
     subtitle: "National & International level",
-    icon_color: "text-[var(--text-muted)]", tile: "border-[var(--border-strong)] bg-[var(--surface-2)]", glow: "transparent", ring: "var(--accent)", pct: 65,
+    icon_color: "text-[#f0bd36]", tile: "border-[#f0bd36]/50 bg-[#f0bd36]/10", glow: "#f0bd3633", ring: "#f0bd36", pct: 65,
   },
   {
     icon: Clock3, value: "24×7", num: 24, suffix: "×7", title: "AI Learning",
     subtitle: "Instant chemistry assistance",
-    icon_color: "text-[var(--text-muted)]", tile: "border-[var(--border-strong)] bg-[var(--surface-2)]", glow: "transparent", ring: "var(--accent)", pct: 100,
+    icon_color: "text-[#b889ff]", tile: "border-[#b889ff]/50 bg-[#b889ff]/10", glow: "#b889ff33", ring: "#b889ff", pct: 100,
   },
 ];
 
@@ -97,7 +97,7 @@ export default function Stats() {
                   />
                 </svg>
                 <div
-                  className={`flex h-12 w-12 items-center justify-center rounded-[var(--radius)] border `}
+                  className={`flex h-12 w-12 items-center justify-center rounded-[var(--radius)] border ${item.tile}`}
                   style={{ boxShadow: `0 6px 20px ${item.glow}, inset 0 1px 0 rgba(255,255,255,0.2)` }}
                 >
                   <Icon className={`h-6 w-6 ${item.icon_color} transition-transform duration-300 group-hover:scale-110`} />
@@ -105,7 +105,7 @@ export default function Stats() {
               </div>
 
               {/* Number ticker with count-up */}
-              <div className="text-4xl sm:text-5xl font-black text-white tracking-tight drop-shadow-sm">
+              <div className="text-4xl sm:text-5xl font-black tracking-tight drop-shadow-sm" style={{ color: item.ring }}>
                 <CountUp target={item.num} suffix={item.suffix} isVisible={isVisible} />
               </div>
               <h3 className="mt-3 text-lg font-bold text-white/90 group-hover:text-white transition-colors">{item.title}</h3>
@@ -117,4 +117,3 @@ export default function Stats() {
     </section>
   );
 }
-

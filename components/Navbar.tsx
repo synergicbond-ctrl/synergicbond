@@ -126,6 +126,46 @@ const NAV_LINKS: { href: string; label: string; icon: LucideIcon }[] = [
   { href: "/support", label: "Support", icon: Heart },
 ];
 
+// The mega-menu is a study map, so each destination gets its own chemistry
+// signal. Descriptions remain neutral for comfortable long-form reading.
+const MENU_ITEM_TONES: Record<string, string> = {
+  "NEET": "#65d69a",
+  "JEE Main": "#37c8f4",
+  "JEE Advanced": "#b889ff",
+  "Olympiad": "#f0bd36",
+  "Board Dashboards": "#ff8b6b",
+  "CBSE": "#37c8f4",
+  "ICSE": "#b889ff",
+  "State Boards": "#65d69a",
+  "GATE": "#f0bd36",
+  "International": "#ff8b6b",
+  "Chapter Notes": "#37c8f4",
+  "Formula Cards": "#b889ff",
+  "Reagents": "#65d69a",
+  "Important Orders": "#f0bd36",
+  "Colours": "#ff8b6b",
+  "Mechanisms": "#37c8f4",
+  "PYQ Center": "#ff8b6b",
+  "Practice Tests": "#b889ff",
+  "Snap & Solve": "#f0bd36",
+  "AI Tutor": "#37c8f4",
+  "AI Notes": "#b889ff",
+  "Study Planner": "#65d69a",
+  "Mission Control": "#ff8b6b",
+  "Progress": "#37c8f4",
+  "Revision Queue": "#f0bd36",
+};
+
+const MENU_GROUP_TONES: Record<string, string> = {
+  "🇮🇳 Entrance & Olympiad": "#f0bd36",
+  "🏫 School Boards": "#37c8f4",
+  "🎓 Graduate & International": "#b889ff",
+  "📖 Learn Ecosystem": "#37c8f4",
+  "🎯 Practice Ecosystem": "#ff8b6b",
+  "🤖 AI Ecosystem": "#b889ff",
+  "📊 Performance Ecosystem": "#65d69a",
+};
+
 // Mobile drawer — final IA flattened (Home · flagship · Programs · Features ·
 // Pricing · Support). Explicit labels (no i18n key dependency).
 const mainLinks: { href: string; label: string; icon: LucideIcon }[] = [
@@ -345,7 +385,7 @@ export default function Navbar() {
                             <menu.pinned.icon className="h-5 w-5 text-[var(--accent)]" />
                           </span>
                           <span className="flex-1 min-w-0">
-                            <span className="flex items-center gap-2 text-[14px] font-black text-[var(--foreground)]">{menu.pinned.label}<span className="text-[10px] font-bold tracking-wider text-[var(--accent)] bg-[var(--accent-wash)] px-1.5 py-0.5 rounded-[var(--radius-sm)]">PINNED</span></span>
+                            <span className="flex items-center gap-2 text-[14px] font-black" style={{ color: menu.title === "Programs" ? "#f0bd36" : "#37c8f4" }}>{menu.pinned.label}<span className="text-[10px] font-bold tracking-wider text-[var(--accent)] bg-[var(--accent-wash)] px-1.5 py-0.5 rounded-[var(--radius-sm)]">PINNED</span></span>
                             <span className="block text-[12px] leading-[1.4] text-[var(--text-body)]">{menu.pinned.desc}</span>
                           </span>
                           {/* mini grid motif */}
@@ -358,15 +398,16 @@ export default function Navbar() {
                       <div className={menu.wide ? "grid grid-cols-2 gap-x-3" : ""}>
                         {menu.groups.map((g) => (
                           <div key={g.title} className="py-1">
-                            <p className="text-[11px] font-bold uppercase tracking-[0.1em] text-[var(--text-muted)] px-2 mt-2 mb-1">{g.title}</p>
+                            <p className="text-[11px] font-bold uppercase tracking-[0.1em] px-2 mt-2 mb-1" style={{ color: MENU_GROUP_TONES[g.title] ?? "var(--text-muted)" }}>{g.title}</p>
                             {g.items.map((it) => {
                               const Icon = it.icon;
                               const active = pathname === it.href;
+                              const tone = MENU_ITEM_TONES[it.label] ?? "var(--foreground)";
                               return (
                                 <Link key={it.label} href={it.href} onClick={() => setOpenMenu(null)} className={`flex items-center gap-2.5 px-2 py-2 rounded-[var(--radius-sm)] transition ${active ? "bg-[var(--accent-wash)]" : "hover:bg-white/[0.05]"}`}>
-                                  <Icon className={`h-4 w-4 flex-shrink-0 ${active ? "text-[var(--accent)]" : "text-gray-400"}`} />
+                                  <Icon className="h-4 w-4 flex-shrink-0" style={{ color: active ? "var(--accent)" : tone }} />
                                   <span className="min-w-0">
-                                    <span className={`block text-[14px] font-semibold leading-[1.25] ${active ? "text-[var(--accent)]" : "text-[var(--foreground)]"}`}>{it.label}</span>
+                                    <span className="block text-[14px] font-semibold leading-[1.25]" style={{ color: active ? "var(--accent)" : tone }}>{it.label}</span>
                                     <span className="block text-[12px] text-[var(--text-muted)] leading-[1.35]">{it.desc}</span>
                                   </span>
                                 </Link>

@@ -145,9 +145,11 @@ export default function PricingPage() {
   }, []);
 
   return (
-    <main className="min-h-screen bg-black text-white p-6 max-w-6xl mx-auto">
+    <main className="min-h-screen bg-[radial-gradient(circle_at_90%_0%,rgba(139,92,246,0.16),transparent_25%),radial-gradient(circle_at_5%_10%,rgba(34,211,238,0.12),transparent_28%),#060808] p-6 text-white">
+    <div className="mx-auto max-w-6xl">
       <div className="text-center mb-12">
-        <h1 className="text-4xl font-bold tracking-tight mb-4">
+        <p className="mb-3 text-[10px] font-black uppercase tracking-[0.4em] text-amber-300">Access architecture</p>
+        <h1 className="font-serif text-4xl font-black tracking-tight mb-4">
           Simple, Program-Based Pricing
         </h1>
         <p className="text-zinc-400 text-base max-w-2xl mx-auto">
@@ -157,10 +159,10 @@ export default function PricingPage() {
 
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
         {/* Free Plan */}
-        <div className="bg-zinc-900 border border-zinc-800 rounded-3xl p-7 flex flex-col justify-between">
+        <div className="bg-[linear-gradient(145deg,rgba(101,214,154,0.12),transparent_46%),#17171b] border border-emerald-400/20 rounded-3xl p-7 flex flex-col justify-between shadow-[0_26px_65px_-50px_rgba(101,214,154,0.8)]">
           <div>
             <div className="mb-6">
-              <div className="text-sm font-semibold text-zinc-400 uppercase tracking-wide mb-2">Free Plan</div>
+              <div className="text-sm font-semibold text-emerald-300 uppercase tracking-wide mb-2">Free Plan</div>
               <div className="text-4xl font-bold">₹0</div>
               <div className="text-zinc-500 text-xs mt-1">Free forever — no credit card needed</div>
             </div>
@@ -182,17 +184,23 @@ export default function PricingPage() {
         </div>
 
         {/* Paid Programs */}
-        {PROGRAMS.map((p) => {
+        {PROGRAMS.map((p, index) => {
           const resolvedKey =
             p.key === "class-11" ? `${class11Board}:class-11`
             : p.key === "class-12" ? `${class12Board}:class-12`
             : p.key;
           const cardComingSoon = COMING_SOON_PROGRAM_KEYS.has(resolvedKey);
           return (
-          <div key={p.key} className="bg-zinc-900 border border-white/[0.08] rounded-3xl p-7 flex flex-col justify-between hover:border-cyan-500/30 transition">
+          <div key={p.key} className={`rounded-3xl border p-7 flex flex-col justify-between transition hover:-translate-y-1 ${[
+            "border-cyan-400/30 bg-[linear-gradient(145deg,rgba(34,211,238,0.15),transparent_45%),#17171b] shadow-[0_26px_65px_-50px_rgba(34,211,238,0.85)]",
+            "border-violet-400/30 bg-[linear-gradient(145deg,rgba(139,92,246,0.16),transparent_45%),#17171b] shadow-[0_26px_65px_-50px_rgba(139,92,246,0.85)]",
+            "border-emerald-400/30 bg-[linear-gradient(145deg,rgba(101,214,154,0.14),transparent_45%),#17171b] shadow-[0_26px_65px_-50px_rgba(101,214,154,0.85)]",
+            "border-amber-300/30 bg-[linear-gradient(145deg,rgba(240,189,54,0.14),transparent_45%),#17171b] shadow-[0_26px_65px_-50px_rgba(240,189,54,0.85)]",
+            "border-rose-400/30 bg-[linear-gradient(145deg,rgba(255,139,107,0.15),transparent_45%),#17171b] shadow-[0_26px_65px_-50px_rgba(255,139,107,0.85)]",
+          ][index]}`}>
             <div>
               <div className="mb-5">
-                <div className="text-sm font-semibold text-cyan-400 uppercase tracking-wide mb-2">{p.name}</div>
+                <div className={`text-sm font-semibold uppercase tracking-wide mb-2 ${["text-cyan-300", "text-violet-300", "text-emerald-300", "text-amber-300", "text-rose-300"][index]}`}>{p.name}</div>
                 <div className="flex items-end gap-2">
                   <div className="text-4xl font-black">₹{p.price}</div>
                   <div className="text-zinc-500 text-xs mb-1">/ year</div>
@@ -215,7 +223,7 @@ export default function PricingPage() {
                           onClick={() => setBoard(b)}
                           className={`py-1 rounded text-[10px] font-extrabold uppercase transition ${
                             active 
-                              ? "bg-cyan-500 text-black" 
+                              ? "bg-amber-300 text-black" 
                               : "bg-white/5 text-white/50 border border-white/5 hover:bg-white/10"
                           }`}
                         >
@@ -230,7 +238,7 @@ export default function PricingPage() {
               <div className="space-y-3 mb-6">
                 {p.features.map((f) => (
                   <div key={f} className="flex items-start gap-3 text-xs text-zinc-300">
-                    <span className="text-cyan-400 mt-0.5 flex-shrink-0">✓</span>
+                    <span className={`mt-0.5 flex-shrink-0 ${["text-cyan-300", "text-violet-300", "text-emerald-300", "text-amber-300", "text-rose-300"][index]}`}>✓</span>
                     {f}
                   </div>
                 ))}
@@ -245,7 +253,9 @@ export default function PricingPage() {
             ) : (
               <button
                 onClick={() => handleBuy(p)}
-                className="block w-full text-center bg-cyan-500 hover:bg-cyan-400 text-black font-bold py-3 rounded-xl transition text-xs hover:-translate-y-0.5"
+                className={`block w-full text-center font-bold py-3 rounded-xl transition text-xs hover:-translate-y-0.5 text-black ${[
+                  "bg-cyan-400 hover:bg-cyan-300", "bg-violet-400 hover:bg-violet-300", "bg-emerald-400 hover:bg-emerald-300", "bg-amber-300 hover:bg-amber-200", "bg-rose-400 hover:bg-rose-300",
+                ][index]}`}
               >
                 Unlock {p.name} →
               </button>
@@ -314,6 +324,7 @@ export default function PricingPage() {
         amount={selectedAmount}
         period="year"
       />
+    </div>
     </main>
   );
 }

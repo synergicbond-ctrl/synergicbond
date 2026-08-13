@@ -16,8 +16,8 @@ export default function OlympiadSection() {
           CHAMPIONSHIP PRESTIGE
         </div>
 
-        <h2 className="text-4xl sm:text-5xl font-black text-white tracking-tight drop-shadow-sm">
-            <span className="text-[#f0bd36]">
+        <h2 className="text-4xl sm:text-5xl font-black tracking-tight drop-shadow-sm">
+            <span className="bg-[linear-gradient(90deg,#f0bd36_0%,#ff8b6b_45%,#b889ff_100%)] bg-clip-text text-transparent">
             Olympiad CHEMISTRY
           </span>
         </h2>
@@ -37,7 +37,7 @@ export default function OlympiadSection() {
               National
             </span>
           </div>
-          <h3 className="text-2xl font-black text-white group-hover:text-[var(--text-muted)] transition-colors">INChO</h3>
+          <h3 className="text-2xl font-black !text-[#f0bd36] group-hover:!text-[#f0bd36] transition-colors">INChO</h3>
           <p className="text-white/70 mt-2.5 text-sm leading-relaxed font-medium">
             Indian National Chemistry Olympiad
           </p>
@@ -52,7 +52,7 @@ export default function OlympiadSection() {
               Global Finals
             </span>
           </div>
-          <h3 className="text-2xl font-black text-white group-hover:text-[var(--text-muted)] transition-colors">IChO</h3>
+          <h3 className="text-2xl font-black !text-[#b889ff] group-hover:!text-[#b889ff] transition-colors">IChO</h3>
           <p className="text-white/70 mt-2.5 text-sm leading-relaxed font-medium">
             International Chemistry Olympiad
           </p>
@@ -67,7 +67,7 @@ export default function OlympiadSection() {
               USA Honors
             </span>
           </div>
-          <h3 className="text-2xl font-black text-white group-hover:text-[var(--text-muted)] transition-colors">USNCO</h3>
+          <h3 className="text-2xl font-black !text-[#ff8b6b] group-hover:!text-[#ff8b6b] transition-colors">USNCO</h3>
           <p className="text-white/70 mt-2.5 text-sm leading-relaxed font-medium">
             US National Chemistry Olympiad
           </p>

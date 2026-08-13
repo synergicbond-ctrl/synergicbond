@@ -12,7 +12,11 @@ export default function WhatIsSynergicBond() {
       <div className="mx-auto max-w-[1400px] px-6">
         <div className="grid items-center gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-20">
           <div>
-            <h2 className="font-display max-w-[18ch] text-[34px] font-semibold leading-[1.05] tracking-[-0.025em] text-[var(--foreground)] md:text-[46px]">The complete chemistry learning platform</h2>
+            <h2 className="font-display max-w-[18ch] text-[34px] font-semibold leading-[1.05] tracking-[-0.025em] md:text-[46px]">
+              <span className="text-[#37c8f4]">The complete</span>{" "}
+              <span className="text-[#f0bd36]">chemistry</span>{" "}
+              <span className="text-[#b889ff]">learning platform</span>
+            </h2>
             <p className="mt-5 max-w-[62ch] text-[16px] leading-[1.7] text-[var(--text-body)]">
               Not a NEET platform. Not a JEE platform. A chemistry operating system — where every
               question connects to its concept, formula, mechanism, reaction, notes, PYQs, tests and

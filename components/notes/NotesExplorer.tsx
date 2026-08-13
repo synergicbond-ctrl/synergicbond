@@ -354,7 +354,7 @@ function ChapterCard({
 
       <h3
         className="mt-3 break-words text-[16px] font-black leading-snug sm:text-[17px]"
-        style={{ color: selected ? accent.main : "#f4f7fb" }}
+        style={{ color: accent.main }}
       >
         {card.title}
       </h3>

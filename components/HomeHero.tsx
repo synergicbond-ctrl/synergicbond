@@ -14,7 +14,7 @@ export default function HomeHero() {
             </div>
             <div>
               <span className={styles.microLabel}>The intelligent chemistry platform</span>
-              <h1 id="chemistry-os-title"><span>Synergic</span><span>Bond</span></h1>
+              <h1 id="chemistry-os-title"><span className={styles.spectrumCyan}>Synergic</span><span className={styles.spectrumGold}>Bond</span></h1>
             </div>
           </div>
           <div className={styles.osBracket} aria-label="The Chemistry Operating System">

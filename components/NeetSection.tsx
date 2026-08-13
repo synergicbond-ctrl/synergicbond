@@ -18,8 +18,8 @@ export default function NeetSection() {
           MEDICAL CLARITY
         </div>
 
-        <h2 className="text-4xl sm:text-5xl font-black text-white tracking-tight drop-shadow-sm">
-            <span className="text-[#65d69a]">
+        <h2 className="text-4xl sm:text-5xl font-black tracking-tight drop-shadow-sm">
+            <span className="bg-[linear-gradient(90deg,#65d69a_0%,#37c8f4_50%,#b889ff_100%)] bg-clip-text text-transparent">
             NEET CHEMISTRY
           </span>
         </h2>
@@ -34,7 +34,7 @@ export default function NeetSection() {
           <div className="flex h-12 w-12 items-center justify-center rounded-[var(--radius)] bg-[var(--surface-2)] border border-[var(--border-strong)] mb-5 text-[var(--text-muted)] group-hover:scale-110 transition-transform">
             <Activity className="h-6 w-6" />
           </div>
-          <h3 className="text-xl font-bold text-white group-hover:text-[var(--text-muted)] transition-colors">Physical Chemistry</h3>
+          <h3 className="text-xl font-bold !text-[#65d69a] group-hover:!text-[#65d69a] transition-colors">Physical Chemistry</h3>
           <p className="text-white/65 mt-2.5 text-sm leading-relaxed font-medium">
             Thermodynamics • Equilibrium • Electrochemistry
           </p>
@@ -44,7 +44,7 @@ export default function NeetSection() {
           <div className="flex h-12 w-12 items-center justify-center rounded-[var(--radius)] bg-[var(--surface-2)] border border-[var(--border-strong)] mb-5 text-[var(--text-muted)] group-hover:scale-110 transition-transform">
             <Dna className="h-6 w-6" />
           </div>
-          <h3 className="text-xl font-bold text-white group-hover:text-[var(--text-muted)] transition-colors">Organic Chemistry</h3>
+          <h3 className="text-xl font-bold !text-[#37c8f4] group-hover:!text-[#37c8f4] transition-colors">Organic Chemistry</h3>
           <p className="text-white/65 mt-2.5 text-sm leading-relaxed font-medium">
             Reactions • Biomolecules • Polymers
           </p>
@@ -54,7 +54,7 @@ export default function NeetSection() {
           <div className="flex h-12 w-12 items-center justify-center rounded-[var(--radius)] bg-[var(--surface-2)] border border-[var(--border-strong)] mb-5 text-[var(--text-muted)] group-hover:scale-110 transition-transform">
             <Microscope className="h-6 w-6" />
           </div>
-          <h3 className="text-xl font-bold text-white group-hover:text-[var(--text-muted)] transition-colors">Inorganic Chemistry</h3>
+          <h3 className="text-xl font-bold !text-[#b889ff] group-hover:!text-[#b889ff] transition-colors">Inorganic Chemistry</h3>
           <p className="text-white/65 mt-2.5 text-sm leading-relaxed font-medium">
             Coordination • Periodic Table • Bonding
           </p>

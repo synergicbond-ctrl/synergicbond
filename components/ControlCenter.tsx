@@ -97,7 +97,7 @@ export default function ControlCenter({ progress }: { progress?: ControlCenterPr
           <span className="relative flex h-2 w-2"><span className="absolute inline-flex h-full w-full rounded-full bg-[var(--surface)] opacity-75" /><span className="relative inline-flex rounded-full h-2 w-2 bg-[var(--surface)]" /></span>
           CONTROL CENTER
         </div>
-        <h2 className="text-3xl md:text-4xl font-black text-white tracking-tight drop-shadow-sm">
+        <h2 className="text-3xl md:text-4xl font-black tracking-tight drop-shadow-sm bg-[linear-gradient(90deg,#b889ff_0%,#37c8f4_52%,#65d69a_100%)] bg-clip-text !text-transparent">
           {isReal ? `Welcome back, ${progress!.name}` : "What do you want to master today?"}
         </h2>
       </div>

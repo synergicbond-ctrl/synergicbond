@@ -94,7 +94,7 @@ export default function KnowledgeVault() {
           <Sparkles className="h-3.5 w-3.5 text-[var(--text-muted)]" />
           {t("vault.eyebrow")}
         </div>
-        <h2 className="text-3xl font-black md:text-5xl text-white tracking-tight drop-shadow-sm">
+        <h2 className="text-3xl font-black md:text-5xl tracking-tight drop-shadow-sm bg-[linear-gradient(90deg,#f0bd36_0%,#ff8b6b_48%,#b889ff_100%)] bg-clip-text !text-transparent">
           {t("vault.title")}
         </h2>
         <p className="mx-auto mt-4 max-w-2xl text-white/70 text-base leading-relaxed">

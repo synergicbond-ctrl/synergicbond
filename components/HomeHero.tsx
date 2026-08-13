@@ -2,38 +2,10 @@ import Link from "next/link";
 import BenzeneInstrument from "@/components/home/BenzeneInstrument";
 import styles from "./HomeHero.module.css";
 
-const SYSTEM_PAGES = [
-  { index: "01", label: "Control Center", href: "/" },
-  { index: "02", label: "Chapter Notes", href: "/notes" },
-  { index: "03", label: "Formula Cards", href: "/formula-cards" },
-  { index: "04", label: "Knowledge Vault", href: "/vault" },
-  { index: "05", label: "Periodic Table", href: "/periodic-table" },
-  { index: "06", label: "Programs", href: "/programs" },
-  { index: "07", label: "Practice Center", href: "/pyq" },
-  { index: "08", label: "AI Lab", href: "/snap-solve" },
-  { index: "09", label: "Performance", href: "/dashboard" },
-  { index: "10", label: "Pricing", href: "/pricing" },
-] as const;
-
 /** Demo-faithful Chemistry OS shell; every destination remains a live route. */
 export default function HomeHero() {
   return (
     <>
-      <nav className={styles.systemRail} aria-label="Chemistry OS sections">
-        <div className={styles.railLabel}>
-          <span aria-hidden className={styles.railBond} />
-          <span>Split-valence continuum</span>
-          <strong>01 / Control Center</strong>
-        </div>
-        <div className={styles.railPages}>
-          {SYSTEM_PAGES.map((page) => (
-            <Link href={page.href} key={page.index}>
-              <span>{page.index}</span><em>{page.label}</em>
-            </Link>
-          ))}
-        </div>
-      </nav>
-
       <section className={styles.hero} aria-labelledby="chemistry-os-title">
         <div className={styles.copy}>
           <div className={styles.identity}>

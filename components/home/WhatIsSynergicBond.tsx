@@ -1,6 +1,6 @@
 import { LinkButton } from "@/components/ui/Button";
 
-// WEEK 13 (Roadmap Phase 9) — "What is Synergic Bond?" homepage section.
+// Homepage overview section.
 // The 60–90s intro video is not produced yet, so the player area is an HONEST
 // placeholder (clearly labelled), never a fake embed. Swap VIDEO_URL in when
 // the founder ships the video.
@@ -12,7 +12,6 @@ export default function WhatIsSynergicBond() {
       <div className="mx-auto max-w-[1400px] px-6">
         <div className="grid items-center gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-20">
           <div>
-            <p className="font-data mb-3 text-[11px] font-bold uppercase tracking-[0.18em] text-[var(--chem-bond)]">What is Synergic Bond?</p>
             <h2 className="font-display max-w-[18ch] text-[34px] font-semibold leading-[1.05] tracking-[-0.025em] text-[var(--foreground)] md:text-[46px]">The complete chemistry learning platform</h2>
             <p className="mt-5 max-w-[62ch] text-[16px] leading-[1.7] text-[var(--text-body)]">
               Not a NEET platform. Not a JEE platform. A chemistry operating system — where every

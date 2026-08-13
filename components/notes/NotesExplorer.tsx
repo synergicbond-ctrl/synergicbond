@@ -9,6 +9,7 @@ import {
 import { masterSyllabus } from "@/lib/masterSyllabus/all";
 import { AUTHORED_COURSES, COURSE_GROUP_CARDS, coursesForSyllabusChapter, groupLessonTotal, type AuthoredCourse } from "@/lib/notes/chapterCatalog";
 import UnlockBanner from "@/components/monetization/UnlockBanner";
+import ChapterCardVisual from "@/components/notes/ChapterCardVisual";
 
 // ─────────────────────────────────────────────────────────────────────────────
 // Notes Explorer — uniform chapter card system.
@@ -255,12 +256,18 @@ interface ChapterCardAccent {
   glow: string;
 }
 
-const CHAPTER_CARD_ACCENT: ChapterCardAccent = {
-  main: "#5fd4ea",
-  background: "#122232",
-  selected: "#17364a",
-  glow: "rgba(95,212,234,.18)",
-};
+const CHAPTER_CARD_ACCENTS: ChapterCardAccent[] = [
+  { main: "#5fd4ea", background: "#122232", selected: "#17364a", glow: "rgba(95,212,234,.18)" },
+  { main: "#e8b84b", background: "#292116", selected: "#3d3019", glow: "rgba(232,184,75,.18)" },
+  { main: "#b58cff", background: "#211a31", selected: "#302448", glow: "rgba(181,140,255,.18)" },
+  { main: "#55d98b", background: "#14271f", selected: "#1c3b2d", glow: "rgba(85,217,139,.18)" },
+  { main: "#f1836d", background: "#2c1b19", selected: "#432522", glow: "rgba(241,131,109,.18)" },
+];
+
+function accentForCard(card: ChapterCardData): ChapterCardAccent {
+  const value = [...card.syllabusId].reduce((total, character) => total + character.charCodeAt(0), 0);
+  return CHAPTER_CARD_ACCENTS[value % CHAPTER_CARD_ACCENTS.length];
+}
 
 interface ChapterCardData {
   key: string;
@@ -304,7 +311,7 @@ function FreeBadge() {
   );
 }
 
-/** ONE canonical chapter card — identical geometry for every state. */
+/** One consistent card shell with a distinct, chapter-specific chemistry visual. */
 function ChapterCard({
   card,
   selected,
@@ -314,11 +321,11 @@ function ChapterCard({
   selected: boolean;
   onSelect: () => void;
 }) {
-  const accent = CHAPTER_CARD_ACCENT;
+  const accent = accentForCard(card);
   const statusColour = card.status === "syllabus" ? "#91a9bc" : accent.main;
 
   const cardClass =
-    "group flex min-h-[180px] w-full min-w-0 transform-gpu flex-col overflow-hidden rounded-[18px] border border-l-[5px] p-4 text-left font-sans transition duration-200 hover:-translate-y-1 hover:shadow-2xl active:translate-y-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300/80 sm:min-h-[205px] sm:p-5";
+    "group flex min-h-[272px] w-full min-w-0 transform-gpu flex-col overflow-hidden rounded-[18px] border border-l-[5px] p-4 text-left font-sans transition duration-200 hover:-translate-y-1 hover:shadow-2xl active:translate-y-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300/80 sm:min-h-[296px] sm:p-5";
 
   const cardStyle = {
     borderColor: selected ? accent.main : `${accent.main}66`,
@@ -329,6 +336,7 @@ function ChapterCard({
 
   const content = (
     <>
+      <ChapterCardVisual chapterId={card.syllabusId} title={card.title} />
       <div className="flex items-start justify-between gap-2">
         <span className="min-w-0 text-[10.5px] font-black uppercase tracking-[0.18em] text-[#a8bfd1]">
           {card.groupLabel

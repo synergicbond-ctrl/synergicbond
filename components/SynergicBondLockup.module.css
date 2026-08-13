@@ -95,7 +95,7 @@
 .wordmark {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
   white-space: nowrap;
   color: var(--foreground);
   font-family: var(--font-display), Georgia, "Times New Roman", serif;
@@ -108,13 +108,6 @@
   font-family: inherit;
   font-weight: 510;
   letter-spacing: 0.16em;
-}
-
-.wordmarkBond {
-  width: 10px;
-  height: 1px;
-  flex: 0 0 10px;
-  background: #cdaa58;
 }
 
 .bond {
@@ -150,17 +143,12 @@
   }
 
   .wordmark {
-    gap: 6px;
+    gap: 7px;
     font-size: 12px;
   }
 
   .synergic {
     letter-spacing: 0.12em;
-  }
-
-  .wordmarkBond {
-    width: 7px;
-    flex-basis: 7px;
   }
 
   .bond {

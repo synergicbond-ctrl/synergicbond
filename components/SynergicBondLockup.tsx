@@ -22,7 +22,6 @@ export default function SynergicBondLockup() {
       <span className={styles.copy}>
         <span className={styles.wordmark}>
           <span className={styles.synergic}>SYNERGIC</span>
-          <span className={styles.wordmarkBond} />
           <span className={styles.bond}>BOND</span>
         </span>
         <span className={styles.subtitle}>

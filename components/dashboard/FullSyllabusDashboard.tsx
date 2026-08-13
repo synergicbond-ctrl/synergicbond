@@ -92,9 +92,9 @@ export default function FullSyllabusDashboard({
     : "text-cyan-400";
 
   return (
-    <div className="min-h-screen bg-[#0B1220] text-white selection:bg-cyan-500/30">
+    <div className="min-h-screen bg-[radial-gradient(circle_at_88%_0%,rgba(139,92,246,0.13),transparent_25%),radial-gradient(circle_at_7%_5%,rgba(34,211,238,0.1),transparent_27%),#0B1220] text-white selection:bg-cyan-500/30">
       {/* ── Top Header Banner ───────────────────────────────────────────── */}
-      <div className={`border-b border-white/[0.08] bg-gradient-to-b ${accentClass} px-4 py-8 sm:px-6 sm:py-12`}>
+      <div className={`border-b border-white/[0.08] bg-gradient-to-b ${accentClass} px-4 py-8 shadow-[0_22px_65px_-52px_rgba(34,211,238,0.8)] sm:px-6 sm:py-12`}>
         <div className="mx-auto max-w-6xl">
           {backUrl && (
             <nav className="mb-5">
@@ -111,7 +111,7 @@ export default function FullSyllabusDashboard({
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/[0.07] text-white/60 text-xs font-bold border border-white/10">
                 <ShieldCheck className="h-3.5 w-3.5 text-cyan-400" /> Program-Isolated · Zero Cross-Program Leakage
               </div>
-              <h1 className="text-2xl sm:text-3xl md:text-4xl font-black tracking-tight text-white leading-tight">
+              <h1 className="font-serif text-2xl font-black tracking-tight text-white leading-tight sm:text-3xl md:text-4xl">
                 {programName}
                 <span className="block text-sm font-semibold text-white/40 mt-1 tracking-normal">Full Syllabus Dashboard · 9 Learning Modules</span>
               </h1>
@@ -120,7 +120,7 @@ export default function FullSyllabusDashboard({
               </p>
             </div>
 
-            <div className="flex items-center gap-3 bg-black/50 border border-white/[0.08] px-4 py-3 rounded-2xl shrink-0 self-start md:self-auto shadow-lg">
+            <div className="flex items-center gap-3 rounded-2xl border border-cyan-400/20 bg-black/50 px-4 py-3 shadow-[0_18px_42px_-30px_rgba(34,211,238,0.6)] shrink-0 self-start md:self-auto">
               <div className="text-center px-2">
                 <div className="text-[10px] font-bold uppercase tracking-wider text-white/40">PYQ Pool</div>
                 <div className={`text-xl font-black ${statColor} mt-0.5`}>{programQuestions.length}</div>

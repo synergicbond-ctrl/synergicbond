@@ -84,12 +84,13 @@ export default async function DashboardPage() {
   ];
 
   return (
-    <main className="min-h-screen bg-[#0B0F19] px-4 py-8 text-white md:p-8">
+    <main className="min-h-screen bg-[radial-gradient(circle_at_8%_0%,rgba(34,211,238,0.13),transparent_26%),radial-gradient(circle_at_93%_12%,rgba(139,92,246,0.14),transparent_25%),#0B0F19] px-4 py-8 text-white md:p-8">
       <div className="mx-auto max-w-5xl space-y-5">
 
-        <header className="flex flex-wrap items-end justify-between gap-2">
+        <header className="flex flex-wrap items-end justify-between gap-2 border-b border-white/[0.08] pb-5">
           <div>
-            <h1 className="text-2xl font-black tracking-tight sm:text-3xl">Welcome back, {studentName}</h1>
+            <p className="mb-2 text-[10px] font-black uppercase tracking-[0.34em] text-cyan-300">Student command centre</p>
+            <h1 className="font-serif text-3xl font-black tracking-tight sm:text-4xl">Welcome back, {studentName}</h1>
             <p className="mt-1 text-sm text-white/50">
               {active ? <>Studying <span className="font-semibold text-cyan-300">{active.name}</span></> : "Your free chemistry workspace"}
             </p>
@@ -97,7 +98,9 @@ export default async function DashboardPage() {
         </header>
 
         {/* 1 ── CONTINUE LEARNING — the primary card (only gradient on page) */}
-        <section className="relative overflow-hidden rounded-3xl border border-cyan-400/25 bg-gradient-to-r from-cyan-500/[0.14] via-sky-500/[0.10] to-violet-500/[0.12] p-6">
+        <section className="relative overflow-hidden rounded-3xl border border-cyan-400/35 bg-gradient-to-r from-cyan-500/[0.18] via-sky-500/[0.12] to-violet-500/[0.18] p-6 shadow-[0_24px_70px_-40px_rgba(34,211,238,0.85)]">
+          <div aria-hidden="true" className="absolute -right-16 -top-20 h-52 w-52 rounded-full border border-violet-300/20 bg-violet-500/10 blur-2xl" />
+          <div aria-hidden="true" className="absolute -bottom-24 right-1/3 h-40 w-40 rounded-full bg-cyan-300/10 blur-3xl" />
           <div className="relative flex flex-wrap items-center justify-between gap-4">
             <div className="min-w-0">
               <p className="text-[11px] font-bold uppercase tracking-wider text-cyan-300/80">Continue Learning</p>
@@ -131,7 +134,7 @@ export default async function DashboardPage() {
           <ReviseTodayCard />
 
           {/* 3 ── PRACTICE NOW — real recommendation or honest empty state */}
-          <section className="flex flex-col rounded-3xl border border-white/[0.08] bg-[#111827] p-5">
+          <section className="flex flex-col rounded-3xl border border-emerald-400/20 bg-gradient-to-br from-[#111827] via-[#111827] to-emerald-950/25 p-5 shadow-[0_24px_55px_-44px_rgba(16,185,129,0.8)]">
             <h3 className="flex items-center gap-2 text-lg font-black">
               <Target className="h-5 w-5 text-emerald-400" /> Practice Now
             </h3>
@@ -160,7 +163,7 @@ export default async function DashboardPage() {
         </div>
 
         {/* 4 ── CURRENT PROGRAM */}
-        <section className="rounded-3xl border border-white/[0.08] bg-[#111827] p-5">
+        <section className="rounded-3xl border border-amber-300/15 bg-[linear-gradient(110deg,rgba(251,191,36,0.07),transparent_32%),#111827] p-5 shadow-[0_24px_55px_-44px_rgba(251,191,36,0.7)]">
           <div className="flex flex-wrap items-center justify-between gap-4">
             <div className="flex min-w-0 items-center gap-3">
               <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-cyan-400/25 bg-cyan-950/40">
@@ -212,9 +215,10 @@ export default async function DashboardPage() {
               <Link
                 key={item.label}
                 href={item.href}
-                className="group rounded-2xl border border-white/[0.08] bg-[#111827] p-4 transition hover:-translate-y-0.5 hover:border-cyan-400/25"
+                className="group relative overflow-hidden rounded-2xl border border-white/[0.08] bg-[#111827]/90 p-4 shadow-[0_18px_42px_-34px_rgba(0,0,0,0.95)] transition hover:-translate-y-1 hover:border-cyan-400/35 hover:bg-[#151d2e]"
               >
-                <Icon className="h-5 w-5 text-cyan-400" />
+                <span aria-hidden="true" className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-cyan-400 via-violet-400 to-amber-300 opacity-70" />
+                <Icon className="h-5 w-5 text-cyan-400 transition group-hover:text-amber-300" />
                 <p className="mt-2 text-sm font-bold">{item.label}</p>
                 <p className="mt-0.5 text-[11px] leading-tight text-white/40">{item.desc}</p>
               </Link>

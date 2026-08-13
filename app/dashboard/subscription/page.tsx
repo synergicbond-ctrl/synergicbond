@@ -60,7 +60,7 @@ export default async function SubscriptionDashboardPage() {
   const nowMs = getTimestamp();
 
   return (
-    <main className="min-h-screen bg-[#0B0F19] text-white py-12">
+    <main className="min-h-screen bg-[radial-gradient(circle_at_90%_0%,rgba(139,92,246,0.14),transparent_24%),radial-gradient(circle_at_5%_8%,rgba(34,211,238,0.1),transparent_26%),#0B0F19] py-12 text-white">
       <SubscriptionDashboardClient
         user={{ id: user.id, email: user.email }}
         subscription={userSub}

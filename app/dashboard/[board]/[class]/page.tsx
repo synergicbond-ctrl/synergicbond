@@ -46,8 +46,8 @@ export default async function ClassDashboard({ params }: { params: Promise<{ boa
   const scopedHref = (href: string) => BOARD_SCOPE_REMAP[href] ?? href;
 
   return (
-    <main className="min-h-screen bg-[#0B1220] text-white">
-      <div className="border-b border-white/10 bg-gradient-to-b from-amber-950/20 to-[#0B1220] px-6 py-12">
+    <main className="min-h-screen bg-[radial-gradient(circle_at_88%_0%,rgba(139,92,246,0.14),transparent_25%),radial-gradient(circle_at_8%_7%,rgba(34,211,238,0.1),transparent_28%),#0B1220] text-white">
+      <div className="border-b border-cyan-400/15 bg-[linear-gradient(118deg,rgba(245,158,11,0.12),rgba(34,211,238,0.06),rgba(139,92,246,0.1))] px-6 py-12 shadow-[0_22px_60px_-48px_rgba(34,211,238,0.75)]">
         <div className="mx-auto max-w-5xl">
           <nav className="mb-4 text-sm text-white/45">
             <Link href="/dashboard/boards" className="hover:text-white">School Boards</Link>
@@ -56,7 +56,7 @@ export default async function ClassDashboard({ params }: { params: Promise<{ boa
             <span className="mx-1.5">/</span><span className="text-white/80">{c.name}</span>
           </nav>
           <div className="text-[11px] font-bold uppercase tracking-[0.3em] text-amber-300/80">{b.name} · {b.desc}</div>
-          <h1 className="mt-2 text-3xl font-black tracking-tight sm:text-4xl">{c.label}</h1>
+          <h1 className="mt-2 font-serif text-3xl font-black tracking-tight sm:text-4xl">{c.label}</h1>
           <p className="mt-2 max-w-2xl text-white/55">Your {b.name} {c.name} class dashboard — learning, tests, projects, practicals, progress and mentorship.</p>
         </div>
       </div>
@@ -64,7 +64,7 @@ export default async function ClassDashboard({ params }: { params: Promise<{ boa
       <div className="mx-auto max-w-5xl space-y-6 px-6 py-10">
         {/* Primary entry — the Full Syllabus Dashboard hub */}
         <Link href={`${base}/full-syllabus`}
-          className="flex items-center justify-between rounded-2xl border border-cyan-400/30 bg-gradient-to-r from-cyan-500/[0.08] to-transparent p-5 transition hover:border-cyan-400/60">
+          className="flex items-center justify-between rounded-2xl border border-cyan-400/30 bg-[linear-gradient(112deg,rgba(34,211,238,0.16),rgba(59,130,246,0.08),rgba(139,92,246,0.12))] p-5 shadow-[0_24px_60px_-48px_rgba(34,211,238,0.88)] transition hover:-translate-y-0.5 hover:border-cyan-300/70">
           <div>
             <div className="text-xs font-bold uppercase tracking-wider text-cyan-300">Start here</div>
             <div className="mt-0.5 text-lg font-black text-white">Full Syllabus Dashboard</div>
@@ -76,7 +76,7 @@ export default async function ClassDashboard({ params }: { params: Promise<{ boa
         {basicConcepts?.learnHref && (
           <Link
             href={basicConcepts.learnHref}
-            className="flex items-center justify-between rounded-2xl border border-amber-400/30 bg-gradient-to-r from-amber-500/[0.08] to-transparent p-5 transition hover:border-amber-400/60"
+            className="flex items-center justify-between rounded-2xl border border-amber-400/30 bg-[linear-gradient(112deg,rgba(251,191,36,0.16),rgba(251,146,60,0.08),rgba(244,63,94,0.11))] p-5 shadow-[0_24px_60px_-48px_rgba(251,191,36,0.82)] transition hover:-translate-y-0.5 hover:border-amber-300/70"
           >
             <div>
               <div className="text-xs font-bold uppercase tracking-wider text-amber-300">Class 11 chapter notes</div>
@@ -90,7 +90,8 @@ export default async function ClassDashboard({ params }: { params: Promise<{ boa
         {CLASS_DASHBOARD_SECTIONS.map((section) => {
           const route = SECTION_ROUTES[section.key]?.(base);
           return (
-          <section key={section.key} className="rounded-2xl border border-white/[0.08] bg-white/[0.03] p-5">
+          <section key={section.key} className="relative overflow-hidden rounded-2xl border border-white/[0.08] bg-[linear-gradient(135deg,rgba(255,255,255,0.04),transparent_40%),rgba(17,24,39,0.8)] p-5 shadow-[0_22px_55px_-45px_rgba(0,0,0,0.95)]">
+            <span aria-hidden="true" className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-cyan-400 via-violet-400 to-amber-300 opacity-55" />
             <div className="mb-3 flex items-start justify-between gap-3">
               <div>
                 <h2 className="text-lg font-black text-white">{section.label}</h2>

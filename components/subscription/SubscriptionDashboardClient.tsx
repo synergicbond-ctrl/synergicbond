@@ -160,7 +160,7 @@ export default function SubscriptionDashboardClient({ user, subscription, entitl
   const renderProgramRow = (p: (typeof PROGRAMS_LIST)[number], blurb: string) => {
     const active = isProgramActive(p.key);
     return (
-      <div key={p.key} className="flex items-center justify-between border-b border-white/[0.04] pb-3 last:border-0 last:pb-0">
+      <div key={p.key} className="flex items-center justify-between border-b border-white/[0.07] pb-3 last:border-0 last:pb-0">
         <div>
           <h4 className="font-bold text-white text-sm">{p.name}</h4>
           <p className="text-xs text-white/40 mt-0.5">{p.comingSoon ? COMING_SOON_NOTE : blurb}</p>
@@ -246,9 +246,10 @@ export default function SubscriptionDashboardClient({ user, subscription, entitl
       )}
 
       {/* Hero Header */}
-      <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 border-b border-white/[0.06] pb-6 mb-8">
+      <div className="mb-8 flex flex-col items-start justify-between gap-4 rounded-3xl border border-cyan-400/15 bg-[linear-gradient(112deg,rgba(34,211,238,0.1),transparent_48%,rgba(139,92,246,0.12)),rgba(17,24,39,0.78)] p-6 shadow-[0_26px_65px_-48px_rgba(34,211,238,0.72)] md:flex-row md:items-center">
         <div>
-          <h1 className="text-3xl font-black tracking-tight">Subscription Management</h1>
+          <p className="mb-2 text-[10px] font-black uppercase tracking-[0.34em] text-cyan-300">Access and entitlements</p>
+          <h1 className="font-serif text-3xl font-black tracking-tight">Subscription Management</h1>
           <p className="text-white/50 text-sm mt-1">View active entitlements, renew plans, or upgrade to new programs.</p>
         </div>
         {isStaff && (
@@ -268,7 +269,7 @@ export default function SubscriptionDashboardClient({ user, subscription, entitl
         </h2>
 
         {!allAccess && activeEntitlements.length === 0 ? (
-          <div className="p-8 rounded-3xl border border-white/[0.06] bg-[#111827] text-center max-w-lg mx-auto">
+          <div className="p-8 rounded-3xl border border-violet-400/20 bg-[linear-gradient(135deg,rgba(139,92,246,0.1),transparent_45%),#111827] text-center max-w-lg mx-auto shadow-[0_22px_55px_-42px_rgba(139,92,246,0.72)]">
             <Lock className="h-10 w-10 text-white/30 mx-auto mb-3" />
             <h3 className="font-bold">No Active Subscriptions</h3>
             <p className="text-white/50 text-xs mt-1 leading-relaxed">
@@ -353,7 +354,7 @@ export default function SubscriptionDashboardClient({ user, subscription, entitl
               const isInfinite = days === Infinity;
 
               return (
-                <div key={ent.program_key} className="rounded-2xl border border-white/[0.08] bg-[#111827] p-5">
+                <div key={ent.program_key} className="rounded-2xl border border-emerald-400/15 bg-[linear-gradient(145deg,rgba(16,185,129,0.08),transparent_45%),#111827] p-5 shadow-[0_22px_55px_-44px_rgba(16,185,129,0.7)]">
                   <h3 className="font-black text-white text-base leading-tight">
                     {progInfo?.name || ent.program_key.toUpperCase().replace(":", " ")}
                   </h3>
@@ -406,7 +407,7 @@ export default function SubscriptionDashboardClient({ user, subscription, entitl
         </h2>
 
         {isOwner ? (
-          <div className="p-5 rounded-2xl border border-cyan-400/20 bg-cyan-500/5 mb-6 text-sm text-cyan-300 leading-relaxed">
+          <div className="p-5 rounded-2xl border border-cyan-400/30 bg-[linear-gradient(105deg,rgba(34,211,238,0.12),rgba(139,92,246,0.08)),rgba(34,211,238,0.04)] mb-6 text-sm text-cyan-200 leading-relaxed shadow-[0_20px_45px_-40px_rgba(34,211,238,0.8)]">
             ✨ You have <strong>Owner all-access</strong>. Every program and tool is unlocked for you at the application layer — nothing to purchase. Programs below are shown for preview only.
           </div>
         ) : isPro && (
@@ -417,8 +418,8 @@ export default function SubscriptionDashboardClient({ user, subscription, entitl
 
         <div className="grid gap-6 md:grid-cols-2">
           {/* Boards Section */}
-          <div className="rounded-2xl border border-white/[0.08] bg-[#111827] p-6">
-            <h3 className="font-black text-sm text-white/40 uppercase tracking-widest mb-4">School Board Programs</h3>
+          <div className="rounded-2xl border border-cyan-400/20 bg-[linear-gradient(145deg,rgba(34,211,238,0.08),transparent_45%),#111827] p-6 shadow-[0_22px_55px_-44px_rgba(34,211,238,0.7)]">
+            <h3 className="font-black text-sm text-cyan-300/80 uppercase tracking-widest mb-4">School Board Programs</h3>
             <div className="space-y-4">
               {PROGRAMS_LIST.filter(p => p.category === "Boards").map(p =>
                 renderProgramRow(p, "Annual plan · access to notes, tests, evaluations")
@@ -427,8 +428,8 @@ export default function SubscriptionDashboardClient({ user, subscription, entitl
           </div>
 
           {/* Entrance Exams Section */}
-          <div className="rounded-2xl border border-white/[0.08] bg-[#111827] p-6">
-            <h3 className="font-black text-sm text-white/40 uppercase tracking-widest mb-4">Entrance Prep Programs</h3>
+          <div className="rounded-2xl border border-violet-400/20 bg-[linear-gradient(145deg,rgba(139,92,246,0.1),transparent_45%),#111827] p-6 shadow-[0_22px_55px_-44px_rgba(139,92,246,0.72)]">
+            <h3 className="font-black text-sm text-violet-300/80 uppercase tracking-widest mb-4">Entrance Prep Programs</h3>
             <div className="space-y-4">
               {PROGRAMS_LIST.filter(p => p.category === "Entrance").map(p =>
                 renderProgramRow(p, "Annual plan · full entrance syllabus access")

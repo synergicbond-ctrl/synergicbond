@@ -24,7 +24,7 @@ function Chip({ active, onClick, children }: { active: boolean; onClick: () => v
   return (
     <button onClick={onClick}
       className={`shrink-0 whitespace-nowrap rounded-lg border px-3 py-1.5 text-xs font-semibold transition ${
-        active ? "border-cyan-400/50 bg-cyan-500/15 text-white" : "border-white/10 bg-white/[0.03] text-white/60 hover:text-white/85"
+        active ? "border-cyan-300/60 bg-[linear-gradient(120deg,rgba(34,211,238,0.22),rgba(139,92,246,0.16))] text-white shadow-[0_12px_25px_-18px_rgba(34,211,238,0.9)]" : "border-white/10 bg-white/[0.03] text-white/60 hover:border-violet-400/35 hover:text-white/85"
       }`}>
       {children}
     </button>
@@ -206,7 +206,7 @@ export default function PracticeClient({
   }, [subQ, answer, activeType.marks, boardName, uploadedFile]);
 
   return (
-    <div className="space-y-5">
+    <div className="space-y-5 rounded-3xl border border-white/[0.07] bg-[#101827]/65 p-4 shadow-[0_30px_75px_-55px_rgba(0,0,0,0.95)] sm:p-5">
       {/* Type tabs */}
       <div className="flex gap-2 overflow-x-auto pb-1">
         {BOARD_QUESTION_TYPES.map((t) => (
@@ -219,7 +219,7 @@ export default function PracticeClient({
       {/* Chapter + difficulty filters */}
       <div className="flex flex-wrap items-center gap-3">
         <select value={chapterId} onChange={(e) => setChapterId(e.target.value)}
-          className="rounded-lg border border-white/10 bg-[#0B1220] px-3 py-2 text-sm text-white/85">
+          className="rounded-lg border border-cyan-400/20 bg-[#0B1220] px-3 py-2 text-sm text-white/85 shadow-inner shadow-black/30">
           <option value="all">All chapters</option>
           {chapters.map((c) => <option key={c.id} value={c.id}>Unit {c.unit}: {c.title}</option>)}
         </select>
@@ -235,7 +235,7 @@ export default function PracticeClient({
       {activeType.kind === "objective" ? (
         <>
           {/* Non-repetition status */}
-          <div className="flex flex-wrap items-center justify-between gap-2 rounded-xl border border-white/10 bg-white/[0.02] p-3 text-xs">
+          <div className="flex flex-wrap items-center justify-between gap-2 rounded-xl border border-violet-400/20 bg-[linear-gradient(100deg,rgba(139,92,246,0.08),transparent_48%),rgba(255,255,255,0.02)] p-3 text-xs">
             <span className="text-white/55">
               {loadingServed ? "Checking your history…" :
                 result ? <>{result.poolSize} in pool · {servedIds.size + sessionServed.size} already served{result.exhausted ? " · pool exhausted" : ""}</> : null}
@@ -270,7 +270,7 @@ export default function PracticeClient({
           </button>
           {subError && <p className="rounded-xl border border-rose-500/30 bg-rose-500/[0.06] p-3 text-sm text-rose-300">{subError}</p>}
           {subQ && (
-            <div className="space-y-3 rounded-2xl border border-white/10 bg-white/[0.02] p-4">
+            <div className="space-y-3 rounded-2xl border border-cyan-400/20 bg-[linear-gradient(135deg,rgba(34,211,238,0.07),transparent_38%),rgba(255,255,255,0.02)] p-4 shadow-inner shadow-black/20">
               <p className="font-medium leading-relaxed text-white">{subQ.question}</p>
               <textarea value={answer} onChange={(e) => setAnswer(e.target.value)} rows={5}
                 placeholder="Write your answer as you would in the board exam (or upload a PDF/Image below)..."

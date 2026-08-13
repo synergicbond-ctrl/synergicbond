@@ -82,6 +82,7 @@ function ToolCard({
   title,
   desc,
   badge,
+  tone,
   href,
   onOpen,
 }: {
@@ -89,21 +90,29 @@ function ToolCard({
   title: string;
   desc: string;
   badge: "live" | "builtin" | "soon";
+  tone: "cyan" | "violet" | "coral" | "emerald" | "gold";
   href?: string;
   onOpen?: () => void;
 }) {
+  const toneClasses = {
+    cyan: "from-cyan-400 via-sky-400 to-violet-400 border-cyan-400/25 hover:border-cyan-300/60",
+    violet: "from-violet-400 via-fuchsia-400 to-cyan-400 border-violet-400/25 hover:border-violet-300/60",
+    coral: "from-orange-300 via-rose-400 to-violet-400 border-rose-400/25 hover:border-orange-300/60",
+    emerald: "from-emerald-300 via-cyan-400 to-sky-400 border-emerald-400/25 hover:border-emerald-300/60",
+    gold: "from-amber-300 via-orange-400 to-rose-400 border-amber-300/25 hover:border-amber-200/60",
+  }[tone];
   const body = (
     <>
       <div className="flex items-start justify-between gap-3">
-        <span className="text-2xl">{icon}</span>
+        <span className="flex h-11 w-11 items-center justify-center rounded-2xl border border-white/10 bg-black/25 text-2xl shadow-inner shadow-black/30">{icon}</span>
         <Badge tone={badge}>{badge === "live" ? "Live" : badge === "builtin" ? "Built-in" : "Coming soon"}</Badge>
       </div>
-      <h3 className="mt-3 text-sm font-bold text-white">{title}</h3>
+      <h3 className="mt-4 font-serif text-lg font-black text-white">{title}</h3>
       <p className="mt-1 text-xs leading-relaxed text-white/50">{desc}</p>
     </>
   );
   const cls =
-    "block w-full rounded-2xl border border-white/[0.08] bg-[#111827] p-4 text-left transition hover:border-cyan-400/40 hover:bg-white/[0.04]";
+    `group relative block w-full overflow-hidden rounded-2xl border bg-[linear-gradient(145deg,rgba(255,255,255,0.04),transparent_45%),#111827] p-4 text-left shadow-[0_22px_55px_-42px_rgba(0,0,0,0.95)] transition duration-300 hover:-translate-y-1 hover:bg-[#151d2e] ${toneClasses}`;
   if (href) {
     return <Link href={href} className={cls}>{body}</Link>;
   }
@@ -271,22 +280,23 @@ export default function AILabHub({ revisionChapters }: { revisionChapters: Revis
 
   return (
     <div className="space-y-6">
-      <div>
-        <p className="mb-2 text-xs font-bold uppercase tracking-[0.4em] text-cyan-300">AI Lab</p>
-        <h1 className="text-3xl font-black md:text-4xl">Your Chemistry AI Toolset</h1>
-        <p className="mt-2 text-sm text-white/55">
+      <div className="relative overflow-hidden rounded-3xl border border-cyan-400/20 bg-[radial-gradient(circle_at_78%_15%,rgba(139,92,246,0.2),transparent_25%),linear-gradient(115deg,rgba(34,211,238,0.12),transparent_50%),#0f1728] p-6 shadow-[0_28px_70px_-48px_rgba(34,211,238,0.8)]">
+        <span aria-hidden="true" className="absolute -right-4 -bottom-10 text-[10rem] font-black leading-none text-cyan-200/[0.035]">AI</span>
+        <p className="relative mb-2 text-xs font-bold uppercase tracking-[0.4em] text-cyan-300">AI Lab</p>
+        <h1 className="relative font-serif text-3xl font-black md:text-4xl">Your Chemistry AI Toolset</h1>
+        <p className="relative mt-2 max-w-3xl text-sm text-white/60">
           One place for every AI-assisted tool — Snap & Solve, the tutor and doubt solver are live;
           the planner and revision generator run on verified syllabus data.
         </p>
       </div>
 
       <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
-        <ToolCard icon="📸" title="Snap & Solve" desc="Photograph a problem — get a verified step-by-step solution with linked notes, PYQs & practice." badge="live" href="/snap-solve" />
-        <ToolCard icon="🤖" title="AI Tutor" desc="Chat with the chemistry tutor — step-by-step explanations for any concept." badge="live" href="/tutor" />
-        <ToolCard icon="💬" title="Doubt Solver" desc="Type or snap a doubt and get an instant structured answer." badge="live" href="/doubt-solver" />
-        <ToolCard icon="🗓️" title="Study Planner" desc="Week-by-week chapter plan built from real syllabus difficulty & hours — no fabricated pacing." badge="builtin" onOpen={() => setOpen(open === "planner" ? null : "planner")} />
-        <ToolCard icon="🔁" title="Revision Generator" desc="One-tap rapid-revision sheets from the verified chapter notes, with linked tests & PYQs." badge="builtin" onOpen={() => setOpen(open === "revision" ? null : "revision")} />
-        <ToolCard icon="📝" title="AI Notes" desc="Generate exam-focused notes for any topic, exam & difficulty. Verified human-authored notes stay at /notes." badge="live" href="/ai-lab/notes" />
+        <ToolCard icon="📸" title="Snap & Solve" desc="Photograph a problem — get a verified step-by-step solution with linked notes, PYQs & practice." badge="live" tone="gold" href="/snap-solve" />
+        <ToolCard icon="🤖" title="AI Tutor" desc="Chat with the chemistry tutor — step-by-step explanations for any concept." badge="live" tone="violet" href="/tutor" />
+        <ToolCard icon="💬" title="Doubt Solver" desc="Type or snap a doubt and get an instant structured answer." badge="live" tone="coral" href="/doubt-solver" />
+        <ToolCard icon="🗓️" title="Study Planner" desc="Week-by-week chapter plan built from real syllabus difficulty & hours — no fabricated pacing." badge="builtin" tone="cyan" onOpen={() => setOpen(open === "planner" ? null : "planner")} />
+        <ToolCard icon="🔁" title="Revision Generator" desc="One-tap rapid-revision sheets from the verified chapter notes, with linked tests & PYQs." badge="builtin" tone="emerald" onOpen={() => setOpen(open === "revision" ? null : "revision")} />
+        <ToolCard icon="📝" title="AI Notes" desc="Generate exam-focused notes for any topic, exam & difficulty. Verified human-authored notes stay at /notes." badge="live" tone="violet" href="/ai-lab/notes" />
       </div>
 
       {open === "planner" && (

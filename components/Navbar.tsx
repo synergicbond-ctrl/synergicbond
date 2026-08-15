@@ -22,7 +22,18 @@ import type { LucideIcon } from "lucide-react";
 
 // Mega-menu building blocks (label + grouped links with descriptions)
 type MenuItem = { href: string; label: string; desc: string; icon: LucideIcon };
-type MenuGroup = { title: string; items: MenuItem[] };
+/** One hue from the site's semantic chemistry scale, used to tell mega-menu
+ *  groups apart at a glance. Group headers and icons carry the tone; item
+ *  labels and descriptions stay neutral so the panel stays readable. */
+type MenuTone = "bond" | "orbital" | "trap" | "rule";
+type MenuGroup = { title: string; items: MenuItem[]; tone: MenuTone };
+
+const TONE_VAR: Record<MenuTone, string> = {
+  bond: "var(--chem-bond)",
+  orbital: "var(--chem-orbital)",
+  trap: "var(--chem-trap)",
+  rule: "var(--chem-rule)",
+};
 type MegaMenu = {
   title: string;
   groups: MenuGroup[];
@@ -51,6 +62,7 @@ const MEGA_MENUS: MegaMenu[] = [
     groups: [
       {
         title: "🇮🇳 Entrance & Olympiad",
+        tone: "bond",
         items: [
           { href: "/programs/neet",         label: "NEET",         desc: "Medical entrance track",     icon: Microscope },
           { href: "/programs/jee-main",     label: "JEE Main",     desc: "NTA engineering entrance",   icon: GraduationCap },
@@ -60,6 +72,7 @@ const MEGA_MENUS: MegaMenu[] = [
       },
       {
         title: "🏫 School Boards",
+        tone: "orbital",
         items: [
           { href: "/dashboard/boards",      label: "Board Dashboards", desc: "Full Class 11 & 12 dashboards", icon: LayoutDashboard },
           { href: "/programs/cbse",         label: "CBSE",         desc: "Class 11–12 · NCERT first",  icon: BookOpen },
@@ -69,6 +82,7 @@ const MEGA_MENUS: MegaMenu[] = [
       },
       {
         title: "🎓 Graduate & International",
+        tone: "rule",
         items: [
           { href: "/programs/gate",          label: "GATE",          desc: "GATE Chemistry (CY)",       icon: Medal },
           { href: "/programs/international",  label: "International",  desc: "AP · IB · A-Level · MCAT",  icon: Globe },
@@ -83,6 +97,7 @@ const MEGA_MENUS: MegaMenu[] = [
     groups: [
       {
         title: "📖 Learn Ecosystem",
+        tone: "bond",
         items: [
           { href: "/notes",            label: "Chapter Notes",    desc: "Verified exam notes",        icon: BookOpen },
           { href: "/formula-cards",    label: "Formula Cards",    desc: "Verified formula library",   icon: Sigma },
@@ -94,6 +109,7 @@ const MEGA_MENUS: MegaMenu[] = [
       },
       {
         title: "🎯 Practice Ecosystem",
+        tone: "trap",
         items: [
           { href: "/pyq",   label: "PYQ Center",     desc: "Previous-year intelligence", icon: Target },
           { href: "/tests", label: "Practice Tests", desc: "Chapter · topic · papers",   icon: ClipboardList },
@@ -101,6 +117,7 @@ const MEGA_MENUS: MegaMenu[] = [
       },
       {
         title: "🤖 AI Ecosystem",
+        tone: "orbital",
         items: [
           { href: "/snap-solve",   label: "Snap & Solve",  desc: "Photo → verified solution", icon: Camera },
           { href: "/tutor",        label: "AI Tutor",      desc: "Step-by-step explanations", icon: Bot },
@@ -110,6 +127,7 @@ const MEGA_MENUS: MegaMenu[] = [
       },
       {
         title: "📊 Performance Ecosystem",
+        tone: "rule",
         items: [
           { href: "/dashboard",   label: "Mission Control", desc: "Your study command centre",  icon: LayoutDashboard },
           { href: "/performance", label: "Progress",        desc: "Readiness · weak topics",    icon: Activity },
@@ -356,15 +374,23 @@ export default function Navbar() {
                       )}
                       {/* Grouped sections */}
                       <div className={menu.wide ? "grid grid-cols-2 gap-x-3" : ""}>
-                        {menu.groups.map((g) => (
+                        {menu.groups.map((g) => {
+                          const toneColor = TONE_VAR[g.tone];
+                          return (
                           <div key={g.title} className="py-1">
-                            <p className="text-[11px] font-bold uppercase tracking-[0.1em] text-[var(--text-muted)] px-2 mt-2 mb-1">{g.title}</p>
+                            <p
+                              className="flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-[0.1em] px-2 mt-2 mb-1"
+                              style={{ color: toneColor }}
+                            >
+                              <span aria-hidden className="h-[5px] w-[5px] rounded-[1px] rotate-45" style={{ background: toneColor }} />
+                              {g.title}
+                            </p>
                             {g.items.map((it) => {
                               const Icon = it.icon;
                               const active = pathname === it.href;
                               return (
                                 <Link key={it.label} href={it.href} onClick={() => setOpenMenu(null)} className={`flex items-center gap-2.5 px-2 py-2 rounded-[var(--radius-sm)] transition ${active ? "bg-[var(--accent-wash)]" : "hover:bg-white/[0.05]"}`}>
-                                  <Icon className={`h-4 w-4 flex-shrink-0 ${active ? "text-[var(--accent)]" : "text-gray-400"}`} />
+                                  <Icon className="h-4 w-4 flex-shrink-0" style={{ color: active ? "var(--accent)" : toneColor }} />
                                   <span className="min-w-0">
                                     <span className={`block text-[14px] font-semibold leading-[1.25] ${active ? "text-[var(--accent)]" : "text-[var(--foreground)]"}`}>{it.label}</span>
                                     <span className="block text-[12px] text-[var(--text-muted)] leading-[1.35]">{it.desc}</span>
@@ -373,7 +399,8 @@ export default function Navbar() {
                               );
                             })}
                           </div>
-                        ))}
+                          );
+                        })}
                       </div>
                       {/* Honest coming-soon footnote (International programs) */}
                       {menu.note && (

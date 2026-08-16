@@ -23,6 +23,7 @@ const CHAPTER_ROUTES: ChapterRoute[] = [
   { prefix: "/learn/jee-advanced/salt-analysis", family: "JEE Inorganic Chemistry", title: "Principles of Qualitative Analysis" },
   { prefix: "/learn/jee-advanced/polymers", family: "JEE Organic Chemistry", title: "Polymers" },
   { prefix: "/learn/jee-advanced/organic-chemistry/goc", family: "JEE Organic Chemistry", title: "General Organic Chemistry" },
+  { prefix: "/learn/jee-advanced/organic-chemistry/hydrocarbons", family: "JEE Organic Chemistry", title: "Hydrocarbons" },
 
   { prefix: "/learn/atomic-structure", family: "JEE Physical Chemistry", title: "Atomic Structure" },
   { prefix: "/learn/chemical-bonding", family: "JEE Inorganic Chemistry", title: "Chemical Bonding and Molecular Structure" },

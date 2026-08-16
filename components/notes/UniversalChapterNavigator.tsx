@@ -24,6 +24,7 @@ const CHAPTER_ROUTES: ChapterRoute[] = [
   { prefix: "/learn/jee-advanced/polymers", family: "JEE Organic Chemistry", title: "Polymers" },
   { prefix: "/learn/jee-advanced/organic-chemistry/goc", family: "JEE Organic Chemistry", title: "General Organic Chemistry" },
   { prefix: "/learn/jee-advanced/organic-chemistry/hydrocarbons", family: "JEE Organic Chemistry", title: "Hydrocarbons" },
+  { prefix: "/learn/jee-advanced/organic-chemistry/haloalkanes-haloarenes", family: "JEE Organic Chemistry", title: "Haloalkanes and Haloarenes" },
 
   { prefix: "/learn/atomic-structure", family: "JEE Physical Chemistry", title: "Atomic Structure" },
   { prefix: "/learn/chemical-bonding", family: "JEE Inorganic Chemistry", title: "Chemical Bonding and Molecular Structure" },

@@ -82,6 +82,27 @@ export const UNIVERSITY_CURRICULUM: UniversityYear[] = [
               },
             ],
           },
+          {
+            code: "C-2",
+            slug: "physical-chemistry-1",
+            title: "Physical Chemistry I",
+            branch: "Physical",
+            status: "available",
+            units: [
+              {
+                title: "Mathematical Concepts for Chemistry",
+                topics: [
+                  "Functions and their graphical behaviour; linearising non-linear chemical relationships",
+                  "Differentiation: standard rules, rates of change, maxima and minima applied to chemical systems",
+                  "Partial derivatives, the total differential, and the test for an exact differential",
+                  "Integration: standard integrals and their use in deriving integrated rate laws and reversible work",
+                  "Taylor and Maclaurin series expansions; the virial equation as a series in 1/V",
+                  "Permutations, combinations and elementary probability; the statistical basis of entropy",
+                  "Significant figures, error propagation, and treatment of experimental uncertainty",
+                ],
+              },
+            ],
+          },
         ],
       },
       {

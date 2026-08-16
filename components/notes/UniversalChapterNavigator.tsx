@@ -29,6 +29,7 @@ const CHAPTER_ROUTES: ChapterRoute[] = [
   { prefix: "/learn/jee-advanced/organic-chemistry/carbonyls", family: "JEE Organic Chemistry", title: "Aldehydes, Ketones and Carboxylic Acids" },
   { prefix: "/learn/jee-advanced/organic-chemistry/amines", family: "JEE Organic Chemistry", title: "Amines and Diazonium Chemistry" },
   { prefix: "/learn/jee-advanced/organic-chemistry/biomolecules", family: "JEE Organic Chemistry", title: "Biomolecules" },
+  { prefix: "/learn/jee-advanced/organic-chemistry/chemistry-in-everyday-life", family: "JEE Organic Chemistry", title: "Chemistry in Everyday Life" },
 
   { prefix: "/learn/atomic-structure", family: "JEE Physical Chemistry", title: "Atomic Structure" },
   { prefix: "/learn/chemical-bonding", family: "JEE Inorganic Chemistry", title: "Chemical Bonding and Molecular Structure" },

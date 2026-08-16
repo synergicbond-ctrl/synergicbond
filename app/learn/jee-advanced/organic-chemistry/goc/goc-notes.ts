@@ -4,6 +4,15 @@
 // aromaticity, and acid-base strength in organic systems.
 // Directly authored, block-model content matching the pattern used across
 // bond-parameters, intermolecular-forces and the University Chemistry unit.
+// Figures are hand-authored inline SVG (goc-structures.ts), same convention
+// as dipole-structures.ts / bridge-structures.ts.
+
+import {
+  ALLYL_RESONANCE,
+  CARBOCATION_STRUCTURE,
+  HUCKEL_BENZENE,
+  HYPERCONJUGATION_OVERLAP,
+} from "./goc-structures";
 
 export type GocBlockKind =
   | "major"
@@ -14,6 +23,7 @@ export type GocBlockKind =
   | "numbered"
   | "table"
   | "formula"
+  | "figure"
   | "paragraph";
 
 export type GocBlock = {
@@ -23,6 +33,8 @@ export type GocBlock = {
   headers?: string[];
   rows?: string[][];
   formulaLabel?: string;
+  svg?: string;
+  caption?: string;
 };
 
 const sections = [
@@ -65,6 +77,9 @@ function table(headers: string[], rows: string[][]): GocBlock {
 function formula(text: string, formulaLabel?: string): GocBlock {
   return { kind: "formula", text, formulaLabel };
 }
+function figure(svg: string, caption: string): GocBlock {
+  return { kind: "figure", svg, caption };
+}
 
 export const gocBlocks: GocBlock[] = [
   // ── Section 1 ─────────────────────────────────────────────────────────────
@@ -100,6 +115,7 @@ export const gocBlocks: GocBlock[] = [
   // ── Section 3 ─────────────────────────────────────────────────────────────
   major(3),
   p("A carbocation is a carbon bearing only three bonds and a formal positive charge. The positively charged carbon is sp2 hybridised, planar, with the empty p orbital perpendicular to the plane of the three sigma bonds — this geometry is central to everything that follows, including why carbocations are attacked equally from either face and why adjacent C-H or C-C bonds can donate into the empty orbital."),
+  figure(CARBOCATION_STRUCTURE, "tert-Butyl cation: the three methyl groups lie in one sp2 plane; the empty p orbital sits perpendicular to it, open to attack from either face."),
   sub("Stability order and why"),
   formula("3^{\\circ} > 2^{\\circ} > 1^{\\circ} > \\text{methyl}"),
   bullets([
@@ -107,6 +123,7 @@ export const gocBlocks: GocBlock[] = [
     "Hyperconjugation (Section 7) — sigma(C-H) or sigma(C-C) bonds on carbons adjacent to the cationic centre overlap with the empty p orbital, delocalising positive charge into the alkyl framework. More adjacent C-H bonds (more alpha-hydrogens) means more hyperconjugative structures possible, which is why a tertiary cation (9 alpha C-H) is more stabilised than a primary one (2 alpha C-H, ethyl cation).",
     "Resonance stabilisation is stronger than either effect where available: an allylic or benzylic cation is more stable than even a simple tertiary alkyl cation, because the positive charge is delocalised over multiple carbons through the pi system rather than merely 'shared' through sigma-bond hyperconjugation.",
   ]),
+  figure(ALLYL_RESONANCE, "The allyl cation's positive charge and pi bond swap ends between the two contributing structures; the real molecule is the resonance hybrid, with charge shared over both terminal carbons."),
   table(
     ["Cation", "Relative stability", "Reason"],
     [
@@ -182,6 +199,7 @@ export const gocBlocks: GocBlock[] = [
   // ── Section 7 ─────────────────────────────────────────────────────────────
   major(7),
   p("Hyperconjugation (also called 'no-bond resonance' or Baker-Nathan effect) is the delocalisation of electron density from a sigma(C-H) or sigma(C-C) bond on a carbon adjacent to a p orbital, a positive charge, an unpaired electron, or a pi system, into that empty/partially-filled orbital or pi system."),
+  figure(HYPERCONJUGATION_OVERLAP, "An adjacent sigma(C-H) bond overlaps with the empty p orbital, delocalising electron density into it — the structural picture behind 'no-bond resonance.'"),
   formula("H_3C\\!-\\!\\overset{+}{\\text{C}}H_2 \\ \\longleftrightarrow\\ H_2C{=}CH_2\\cdots H^{+} \\quad \\text{(a 'no-bond' resonance structure)}"),
   p("The number of hyperconjugative structures possible equals the number of alpha-hydrogens (hydrogens on carbons directly attached to the electron-deficient/pi/radical centre) — more alpha-hydrogens means more stabilisation. This is the quantitative basis for ranking alkene and carbocation stability by substitution pattern."),
   table(
@@ -216,6 +234,7 @@ export const gocBlocks: GocBlock[] = [
     "The ring must be planar (or very close to planar), so the p orbitals can overlap continuously around the ring.",
     "The ring must contain (4n+2) pi electrons, for n = 0, 1, 2, 3, ... (2, 6, 10, 14, ... pi electrons).",
   ]),
+  figure(HUCKEL_BENZENE, "Benzene: cyclic, fully conjugated, planar, and 6 pi electrons (4n+2 with n=1) — all four Huckel conditions satisfied simultaneously."),
   table(
     ["System", "Pi electrons", "4n+2 satisfied?", "Classification"],
     [

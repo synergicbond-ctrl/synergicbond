@@ -4,6 +4,7 @@ import {
   ChapterIndex,
   ChapterRail,
   DataTable,
+  Figure,
   Formula,
   NumberedList,
   Prose,
@@ -59,6 +60,8 @@ function BlockView({ block }: { block: GocBlock }) {
       return <DataTable headers={block.headers ?? []} rows={block.rows ?? []} lexicon={LEXICON} />;
     case "formula":
       return <Formula expression={block.text ?? ""} label={block.formulaLabel} />;
+    case "figure":
+      return <Figure svg={block.svg ?? ""} caption={block.caption} />;
     default:
       return <Prose text={block.text ?? ""} lexicon={LEXICON} />;
   }

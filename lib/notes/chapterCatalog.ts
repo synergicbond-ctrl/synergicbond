@@ -232,9 +232,9 @@ export const AUTHORED_COURSES: AuthoredCourse[] = [
     syllabusId: "hydrogen",
     title: "Hydrogen",
     href: "/notes/hydrogen",
-    lessonLabel: "8 lessons · 22 chapters",
+    lessonLabel: "9 lessons · 23 chapters",
     premium: true,
-    description: "Complete Hydrogen course covering isotopes, H₂ molecular orbitals, ortho–para hydrogen, preparation and reactions, hydrides, diborane, mechanisms, hydrogen bonding, water, heavy water and hydrogen peroxide.",
+    description: "Complete Hydrogen course covering isotopes, H₂ molecular orbitals, ortho–para hydrogen, preparation and reactions, hydrides, diborane, mechanisms, hydrogen bonding, water, heavy water, hydrogen peroxide and a 76-question JEE exam bank.",
   },
   // ── S-block Elements ──────────────────────────────────────────────────────
   {

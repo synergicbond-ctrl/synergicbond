@@ -27,7 +27,7 @@ export function sectionRangeLabel(part: HydrogenPartDef): string {
 
 export function hydrogenTabs(currentPart?: number): ChapterTab[] {
   return [
-    { label: "All 8 lessons", href: "/notes/hydrogen", active: currentPart === undefined },
+    { label: `All ${HYDROGEN_PARTS.length} lessons`, href: "/notes/hydrogen", active: currentPart === undefined },
     ...HYDROGEN_PARTS.map((part) => ({
       label: `${part.number}. ${part.title}`,
       href: hydrogenHref(part.number),

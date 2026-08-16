@@ -24,6 +24,7 @@ export const HYDROGEN_PARTS: HydrogenPartDef[] = [
   { slug: "part6", number: 6, title: "Hydrogen Peroxide, Hard Water & Acid–Base Connections", fromSection: 15, toSection: 18 },
   { slug: "part7", number: 7, title: "Complete Reaction Atlas, Mechanisms & Exceptions", fromSection: 19, toSection: 20 },
   { slug: "part8", number: 8, title: "High-Yield Revision & Advanced Reaction Problems", fromSection: 21, toSection: 22 },
+  { slug: "part9", number: 9, title: "JEE Question Bank: 76 Questions Across Every Exam Format", fromSection: 23, toSection: 23 },
 ];
 
 interface SplitMarkdown {

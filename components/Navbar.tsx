@@ -122,6 +122,7 @@ const MEGA_MENUS: MegaMenu[] = [
 
 // Plain top-level links after the mega-menus (final navbar tail).
 const NAV_LINKS: { href: string; label: string; icon: LucideIcon }[] = [
+  { href: "/university-chemistry", label: "University Chemistry", icon: Landmark },
   { href: "/pricing", label: "Pricing", icon: Gem },
   { href: "/support", label: "Support", icon: Heart },
 ];
@@ -144,6 +145,7 @@ const mainLinks: { href: string; label: string; icon: LucideIcon }[] = [
   { href: "/ai-lab",           label: "AI Lab",           icon: Bot },
   { href: "/dashboard",        label: "Mission Control",  icon: LayoutDashboard },
   { href: "/performance",      label: "Progress",         icon: Activity },
+  { href: "/university-chemistry", label: "University Chemistry", icon: Landmark },
   { href: "/pricing",          label: "Pricing",          icon: Gem },
   { href: "/support",          label: "Support",          icon: Heart },
   { href: "/about",            label: "About",            icon: Info },

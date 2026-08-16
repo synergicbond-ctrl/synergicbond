@@ -22,6 +22,13 @@ const CHAPTER_ROUTES: ChapterRoute[] = [
   { prefix: "/learn/jee-advanced/environmental-chemistry", family: "JEE Inorganic Chemistry", title: "Environmental Chemistry" },
   { prefix: "/learn/jee-advanced/salt-analysis", family: "JEE Inorganic Chemistry", title: "Principles of Qualitative Analysis" },
   { prefix: "/learn/jee-advanced/polymers", family: "JEE Organic Chemistry", title: "Polymers" },
+  { prefix: "/learn/jee-advanced/organic-chemistry/goc", family: "JEE Organic Chemistry", title: "General Organic Chemistry" },
+  { prefix: "/learn/jee-advanced/organic-chemistry/hydrocarbons", family: "JEE Organic Chemistry", title: "Hydrocarbons" },
+  { prefix: "/learn/jee-advanced/organic-chemistry/haloalkanes-haloarenes", family: "JEE Organic Chemistry", title: "Haloalkanes and Haloarenes" },
+  { prefix: "/learn/jee-advanced/organic-chemistry/alcohols-phenols-ethers", family: "JEE Organic Chemistry", title: "Alcohols, Phenols and Ethers" },
+  { prefix: "/learn/jee-advanced/organic-chemistry/carbonyls", family: "JEE Organic Chemistry", title: "Aldehydes, Ketones and Carboxylic Acids" },
+  { prefix: "/learn/jee-advanced/organic-chemistry/amines", family: "JEE Organic Chemistry", title: "Amines and Diazonium Chemistry" },
+  { prefix: "/learn/jee-advanced/organic-chemistry/biomolecules", family: "JEE Organic Chemistry", title: "Biomolecules" },
 
   { prefix: "/learn/atomic-structure", family: "JEE Physical Chemistry", title: "Atomic Structure" },
   { prefix: "/learn/chemical-bonding", family: "JEE Inorganic Chemistry", title: "Chemical Bonding and Molecular Structure" },
@@ -40,6 +47,7 @@ const CHAPTER_ROUTES: ChapterRoute[] = [
 
   { prefix: "/notes/hydrogen", family: "JEE Inorganic Chemistry", title: "Hydrogen and Its Compounds" },
   { prefix: "/learn/jee-advanced/inorganic-chemistry/s-block", family: "JEE Inorganic Chemistry", title: "S-Block Elements" },
+  { prefix: "/learn/jee-advanced/inorganic-chemistry/coordination-compounds", family: "JEE Inorganic Chemistry", title: "Coordination Compounds" },
   { prefix: "/notes/p-block", family: "JEE Inorganic Chemistry", title: "P-Block Elements" },
   { prefix: "/notes/d-block", family: "JEE Inorganic Chemistry", title: "D- and F-Block Elements" },
   { prefix: "/notes/metallurgy", family: "JEE Inorganic Chemistry", title: "Isolation of Metals" },

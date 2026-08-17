@@ -2,10 +2,11 @@ import Link from "next/link";
 import type { ReactNode } from "react";
 import { BlockMath, InlineMath } from "@/components/math/react-katex";
 import {
-  ChapterShell,
+  CanonicalNotesStyles,
+  ChapterIdentityHeader,
   ChapterLessonPager,
-  ChapterPartStrip,
-  type ChapterTab,
+  ChapterContentsRail,
+  TopicHeader,
   type LessonRef,
 } from "@/components/notes/canonical";
 
@@ -37,23 +38,27 @@ export const chemBondPartMeta: ChemBondPartMeta[] = [
   { part: 17, title: "MOT Foundations: LCAO, BMO/ABMO & Overlap", tag: "Topics 131–140", range: "131–140", href: "/learn/chemical-bonding/part17" },
   { part: 18, title: "MOT Diagrams, Bond Order, Magnetism & s–p Mixing", tag: "Topics 141–150", range: "141–150", href: "/learn/chemical-bonding/part18" },
   { part: 19, title: "HOMO/LUMO, Heteronuclear MOT & Pseudohalides", tag: "Topics 151–157", range: "151–157", href: "/learn/chemical-bonding/part19" },
-  { part: 20, title: "Fajans’ Rule, Polarisation & Covalent Character", tag: "Topics 158–162", range: "158–162", href: "/learn/chemical-bonding/part20" },
+  { part: 20, title: "Fajans' Rule, Polarisation & Covalent Character", tag: "Topics 158–162", range: "158–162", href: "/learn/chemical-bonding/part20" },
   { part: 21, title: "Intermolecular Forces & Clathrates", tag: "Topics 163–170", range: "163–170", href: "/learn/chemical-bonding/part21" },
   { part: 22, title: "Carbon Allotropes & Thermodynamics of Ionic Solids", tag: "Topics 171–178", range: "171–178", href: "/learn/chemical-bonding/part22" },
   { part: 23, title: "Silicates, Aluminosilicates & Zeolites", tag: "Topics 179–189", range: "179–189", href: "/learn/chemical-bonding/part23" },
   { part: 24, title: "JEE Advanced Integrated Question Bank", tag: "Practice", href: "/learn/chemical-bonding/part24" },
 ];
 
-export interface ChemBondGroup { label: string; from: number; to: number; }
+export interface ChemBondGroup { label: string; from: number; to: number; accent: string; }
 export const CHEM_BOND_GROUPS: ChemBondGroup[] = [
-  { label: "Foundations & Ionic Bonding", from: 1, to: 4 },
-  { label: "Orbitals, VBT & Hybridisation", from: 5, to: 8 },
-  { label: "VSEPR & Molecular Structures", from: 9, to: 11 },
-  { label: "Bond Parameters & Special Bonding", from: 12, to: 15 },
-  { label: "Hydrogen Bonding & MOT", from: 16, to: 19 },
-  { label: "Polarisation, IMF, Solids & Silicates", from: 20, to: 23 },
-  { label: "Integrated JEE Advanced Practice", from: 24, to: 24 },
+  { label: "Foundations & Ionic Bonding", from: 1, to: 4, accent: "var(--chem-bond)" },
+  { label: "Orbitals, VBT & Hybridisation", from: 5, to: 8, accent: "var(--chem-orbital)" },
+  { label: "VSEPR & Molecular Structures", from: 9, to: 11, accent: "var(--chem-bond)" },
+  { label: "Bond Parameters & Special Bonding", from: 12, to: 15, accent: "var(--chem-rule)" },
+  { label: "Hydrogen Bonding & MOT", from: 16, to: 19, accent: "var(--chem-orbital)" },
+  { label: "Polarisation, IMF, Solids & Silicates", from: 20, to: 23, accent: "var(--chem-energy)" },
+  { label: "Integrated JEE Advanced Practice", from: 24, to: 24, accent: "var(--chem-energy)" },
 ];
+
+export function chemBondGroupForPart(part: number): ChemBondGroup {
+  return CHEM_BOND_GROUPS.find((g) => part >= g.from && part <= g.to) ?? CHEM_BOND_GROUPS[0];
+}
 
 function chemBondLessonRef(index: number): LessonRef | undefined {
   const entry = chemBondPartMeta[index];
@@ -61,89 +66,340 @@ function chemBondLessonRef(index: number): LessonRef | undefined {
   return { href: entry.href, number: `Part ${String(entry.part).padStart(2, "0")}`, title: entry.title, meta: entry.tag };
 }
 
-export function chemBondTabs(currentPart?: number): ChapterTab[] {
-  return [
-    { label: `All ${chemBondPartMeta.length} parts`, href: "/learn/chemical-bonding", active: currentPart === undefined },
-    ...CHEM_BOND_GROUPS.map((group, index) => ({
-      label: group.label,
-      href: `/learn/chemical-bonding#bond-group-${index + 1}`,
-      active: currentPart !== undefined && currentPart >= group.from && currentPart <= group.to,
-    })),
-  ];
-}
+const RAIL_LESSONS = chemBondPartMeta.map((m) => ({ part: m.part, title: m.title, href: m.href }));
 
 export function ChemBondPartShell({ part, title, children }: { part: number; title: string; children: ReactNode }) {
   const currentIndex = chemBondPartMeta.findIndex((entry) => entry.part === part);
+  const group = chemBondGroupForPart(part);
+
   return (
-    <ChapterShell kicker="JEE Advanced Chemistry" subtitle="Chemical Bonding & Molecular Structure" tabs={chemBondTabs(part)} style={{ background: "radial-gradient(circle at 18% 0%, #10263c 0%, #050b13 32rem, #03060a 100%)" }}>
-      <ChapterPartStrip hubHref="/learn/chemical-bonding" hubLabel="Chemical Bonding — all parts" positionLabel={`Part ${String(part).padStart(2, "0")} of ${chemBondPartMeta.length}`} />
-      <article className="mx-auto max-w-7xl text-white">
-        <header className="relative overflow-hidden border-b border-cyan-300/20 pb-7 pt-3">
-          <p className="text-[11px] font-bold uppercase tracking-[0.3em] text-[#5fd4ea]">Chemical Bonding · Part {String(part).padStart(2, "0")}</p>
-          <h1 className="mt-3 max-w-5xl bg-gradient-to-r from-cyan-200 via-blue-300 to-violet-300 bg-clip-text text-4xl font-black tracking-tight text-transparent sm:text-5xl" style={{ fontFamily: "Georgia, 'Iowan Old Style', 'Times New Roman', serif" }}>{title}</h1>
-          <div className="mt-5 h-1 w-40 rounded-full bg-gradient-to-r from-cyan-300 via-violet-400 to-amber-300" />
-          <p className="mt-4 text-sm text-slate-300">Authoritative 189-topic JEE Advanced sequence · part {part} of {chemBondPartMeta.length}</p>
-        </header>
-        <div className="mt-8 space-y-8">{children}</div>
-        <ChapterLessonPager prev={chemBondLessonRef(currentIndex - 1)} next={chemBondLessonRef(currentIndex + 1)} hubHref="/learn/chemical-bonding" hubLabel="All lessons" />
-      </article>
-    </ChapterShell>
+    <>
+      <CanonicalNotesStyles />
+      {/* compact lesson bar */}
+      <div className="sbnLessonBar">
+        <div className="sbnLessonBarInner">
+          <Link href="/learn/chemical-bonding" className="sbnLessonBarBack">← Chemical Bonding</Link>
+          <span className="sbnLessonBarPos">
+            Part {String(part).padStart(2, "0")} / {chemBondPartMeta.length}
+          </span>
+        </div>
+      </div>
+
+      {/* sidebar reading layout */}
+      <div className="sbnSidebarBody">
+        <article className="sbnCanvas" style={{ maxWidth: "720px" }}>
+          <ChapterIdentityHeader
+            subject="Physical Chemistry · JEE Advanced"
+            chapterName="Chemical Bonding & Molecular Structure"
+            descriptor="From Kossel–Lewis to MOT — the 189-topic authoritative sequence covering every bond type, geometry, and concept tested in JEE Advanced."
+            topicCount={chemBondPartMeta.length}
+            accentColor="var(--chem-bond)"
+          />
+
+          <TopicHeader
+            as="h1"
+            eyebrow={group.label.split(",")[0]}
+            title={title}
+            accentColor={group.accent}
+          />
+
+          <div style={{ display: "flex", flexDirection: "column", gap: "2.5rem" }}>
+            {children}
+          </div>
+
+          <ChapterLessonPager
+            prev={chemBondLessonRef(currentIndex - 1)}
+            next={chemBondLessonRef(currentIndex + 1)}
+            hubHref="/learn/chemical-bonding"
+            hubLabel="All parts"
+          />
+        </article>
+
+        <ChapterContentsRail
+          title="Chapter Contents"
+          groups={CHEM_BOND_GROUPS}
+          lessons={RAIL_LESSONS}
+          currentPart={part}
+        />
+      </div>
+    </>
   );
 }
 
 export function NoteBlock({ title, children }: { title?: string; children: ReactNode }) {
-  return <div className="rounded-lg border border-cyan-300/[0.12] bg-[linear-gradient(135deg,rgba(16,33,48,.88),rgba(12,20,35,.9))] p-5 shadow-lg shadow-black/20 sm:p-6">{title ? <h2 className="mb-3 text-lg font-black text-cyan-200">{title}</h2> : null}<div className="space-y-3 text-sm leading-relaxed text-slate-100 sm:text-base">{children}</div></div>;
+  return (
+    <div style={{ display: "flex", flexDirection: "column", gap: "0.6rem" }}>
+      {title ? (
+        <h3
+          className="sb-ui-title"
+          style={{ fontSize: "1.05rem", fontWeight: 600, color: "var(--foreground)", margin: 0 }}
+        >
+          {title}
+        </h3>
+      ) : null}
+      <div style={{ fontSize: "1rem", lineHeight: 1.78, color: "var(--text-body)" }}>{children}</div>
+    </div>
+  );
 }
 
 export function TopicBlock({ number, title, children }: { number: number; title: string; children: ReactNode }) {
   return (
-    <section id={`topic-${number}`} className="scroll-mt-24 border-t border-cyan-300/[0.14] py-7 first:border-t-0 sm:py-9">
-      <div className="mb-5 flex items-start gap-3">
-        <span className="flex h-9 min-w-9 items-center justify-center rounded-lg border border-cyan-300/30 bg-cyan-300/[0.08] px-2 text-xs font-black text-cyan-200">{number}</span>
-        <h2 className="bg-gradient-to-r from-cyan-100 via-sky-200 to-violet-200 bg-clip-text text-2xl font-black leading-tight text-transparent sm:text-3xl">{title}</h2>
+    <section
+      id={`topic-${number}`}
+      style={{
+        scrollMarginTop: "72px",
+        paddingTop: "1.75rem",
+        paddingBottom: "0.5rem",
+        borderTop: "1px solid var(--border)",
+        display: "flex",
+        flexDirection: "column",
+        gap: "1.1rem",
+      }}
+    >
+      <div style={{ display: "flex", alignItems: "baseline", gap: "0.75rem" }}>
+        <span
+          className="sb-tech-label"
+          style={{ fontSize: "9.5px", fontWeight: 900, color: "var(--chem-bond)", opacity: 0.7, flexShrink: 0 }}
+        >
+          {String(number).padStart(2, "0")}
+        </span>
+        <h2
+          className="sb-editorial-title"
+          style={{
+            fontSize: "clamp(1.2rem, 2.4vw, 1.65rem)",
+            fontWeight: 650,
+            color: "var(--foreground)",
+            lineHeight: 1.2,
+            margin: 0,
+          }}
+        >
+          {title}
+        </h2>
       </div>
-      <div className="space-y-4 text-base leading-8 text-slate-100 sm:text-lg sm:leading-8">{children}</div>
+      <div style={{ display: "flex", flexDirection: "column", gap: "0.85rem", fontSize: "1rem", lineHeight: 1.75, color: "var(--text-body)" }}>
+        {children}
+      </div>
     </section>
   );
 }
 
 export function LearningObjectives({ items }: { items: ReactNode[] }) {
-  return <aside aria-label="Learning objectives" className="rounded-lg border border-violet-300/20 bg-violet-400/[0.06] p-5"><p className="text-xs font-black uppercase tracking-[0.18em] text-violet-200">In this part</p><ul className="mt-3 grid gap-2 text-sm leading-relaxed text-slate-200 sm:grid-cols-2">{items.map((item, index) => <li key={index} className="border-l-2 border-violet-300/60 pl-3">{item}</li>)}</ul></aside>;
+  return (
+    <aside
+      aria-label="Learning objectives"
+      style={{ borderLeft: "3px solid var(--chem-orbital)", paddingLeft: "1rem", marginBottom: "0.5rem" }}
+    >
+      <p
+        style={{
+          fontFamily: "var(--font-mono), ui-monospace, monospace",
+          fontSize: "9px",
+          fontWeight: 900,
+          letterSpacing: "0.22em",
+          textTransform: "uppercase",
+          color: "var(--chem-orbital)",
+          marginBottom: "0.7rem",
+        }}
+      >
+        In this part
+      </p>
+      <ul style={{ display: "grid", gap: "0.35rem", gridTemplateColumns: "repeat(auto-fill, minmax(200px, 1fr))", margin: 0, padding: 0, listStyle: "none" }}>
+        {items.map((item, index) => (
+          <li key={index} style={{ display: "flex", gap: "0.45rem", fontSize: "0.875rem", lineHeight: 1.55, color: "var(--text-muted)" }}>
+            <span aria-hidden="true" style={{ color: "var(--chem-orbital)", flexShrink: 0, marginTop: "0.15rem" }}>◆</span>
+            {item}
+          </li>
+        ))}
+      </ul>
+    </aside>
+  );
 }
 
 export function TextbookExamples({ items }: { items: { title: string; body: string }[] }) {
-  return <section className="rounded-lg border border-emerald-300/20 bg-emerald-300/[0.045] p-4 sm:p-5"><p className="text-xs font-black uppercase tracking-[0.18em] text-emerald-200">Textbook examples</p><div className="mt-3 grid gap-3 md:grid-cols-2">{items.map((item) => <article key={item.title} className="rounded-xl border border-emerald-200/15 bg-black/15 p-4"><h3 className="text-sm font-black text-emerald-100">{item.title}</h3><p className="mt-1 text-sm leading-relaxed text-slate-100">{item.body}</p></article>)}</div></section>;
+  return (
+    <section style={{ display: "flex", flexDirection: "column", gap: "0.75rem" }}>
+      <p style={{ fontFamily: "var(--font-mono), ui-monospace, monospace", fontSize: "9px", fontWeight: 900, letterSpacing: "0.2em", textTransform: "uppercase", color: "var(--chem-rule)", marginBottom: "0.25rem" }}>
+        Textbook examples
+      </p>
+      <div style={{ display: "grid", gap: "0.75rem", gridTemplateColumns: "repeat(auto-fill, minmax(240px, 1fr))" }}>
+        {items.map((item) => (
+          <article key={item.title} style={{ borderLeft: "2px solid var(--chem-rule)", paddingLeft: "0.75rem" }}>
+            <h3 style={{ fontSize: "0.9rem", fontWeight: 600, color: "var(--foreground)", marginBottom: "0.25rem" }}>{item.title}</h3>
+            <p style={{ fontSize: "0.875rem", lineHeight: 1.6, color: "var(--text-body)" }}>{item.body}</p>
+          </article>
+        ))}
+      </div>
+    </section>
+  );
 }
 
 export function WorkedExample({ title, children }: { title: string; children: ReactNode }) {
-  return <section className="rounded-lg border border-amber-300/20 bg-amber-300/[0.045] p-5"><p className="text-[11px] font-black uppercase tracking-[0.18em] text-amber-200">Worked example</p><h2 className="mt-1 text-lg font-black text-white">{title}</h2><div className="mt-4 space-y-3 text-sm leading-relaxed text-slate-100 sm:text-base">{children}</div></section>;
+  return (
+    <section style={{ borderLeft: "3px solid var(--chem-energy)", paddingLeft: "1rem" }}>
+      <p style={{ fontFamily: "var(--font-mono), ui-monospace, monospace", fontSize: "9px", fontWeight: 900, letterSpacing: "0.2em", textTransform: "uppercase", color: "var(--chem-energy)", marginBottom: "0.4rem" }}>
+        Worked example
+      </p>
+      <h3 style={{ fontSize: "1rem", fontWeight: 600, color: "var(--foreground)", marginBottom: "0.6rem" }}>{title}</h3>
+      <div style={{ display: "flex", flexDirection: "column", gap: "0.5rem", fontSize: "0.9375rem", lineHeight: 1.7, color: "var(--text-body)" }}>{children}</div>
+    </section>
+  );
 }
 
 export function ImportantNote({ title = "Important note", children }: { title?: string; children: ReactNode }) {
-  return <aside className="rounded-xl border-l-4 border-amber-300 bg-amber-300/[0.08] px-4 py-3 text-sm leading-relaxed text-amber-50"><p className="font-bold text-amber-200">{title}</p><div className="mt-1">{children}</div></aside>;
+  return (
+    <aside style={{ borderLeft: "3px solid var(--chem-energy)", paddingLeft: "1rem" }}>
+      <p style={{ fontFamily: "var(--font-mono), ui-monospace, monospace", fontSize: "9px", fontWeight: 900, letterSpacing: "0.2em", textTransform: "uppercase", color: "var(--chem-energy)", marginBottom: "0.4rem" }}>
+        {title}
+      </p>
+      <div style={{ fontSize: "0.9375rem", lineHeight: 1.7, color: "var(--text-body)" }}>{children}</div>
+    </aside>
+  );
 }
 
 export function ModernNote({ children }: { children: ReactNode }) {
-  return <aside className="rounded-xl border border-violet-300/20 bg-violet-300/[0.06] px-4 py-3 text-sm leading-relaxed text-violet-50"><p className="font-bold text-violet-200">Exam model vs modern view</p><div className="mt-1">{children}</div></aside>;
+  return (
+    <aside style={{ borderLeft: "3px solid var(--chem-orbital)", paddingLeft: "1rem" }}>
+      <p style={{ fontFamily: "var(--font-mono), ui-monospace, monospace", fontSize: "9px", fontWeight: 900, letterSpacing: "0.2em", textTransform: "uppercase", color: "var(--chem-orbital)", marginBottom: "0.4rem" }}>
+        Exam model vs modern view
+      </p>
+      <div style={{ fontSize: "0.9375rem", lineHeight: 1.7, color: "var(--text-body)" }}>{children}</div>
+    </aside>
+  );
 }
 
 export function TrapCallout({ trap, reality }: { trap: ReactNode; reality: ReactNode }) {
-  return <div className="rounded-xl border border-rose-500/25 bg-rose-500/[0.07] p-4"><p className="text-xs font-black uppercase tracking-wider text-rose-300">Common trap</p><p className="mt-1 text-sm text-white/75">{trap}</p><p className="mt-2 text-xs font-black uppercase tracking-wider text-emerald-300">Reality</p><p className="mt-1 text-sm text-white/80">{reality}</p></div>;
+  return (
+    <div style={{ borderLeft: "3px solid var(--chem-trap)", paddingLeft: "1rem", display: "flex", flexDirection: "column", gap: "0.5rem" }}>
+      <div>
+        <p style={{ fontFamily: "var(--font-mono), ui-monospace, monospace", fontSize: "9px", fontWeight: 900, letterSpacing: "0.2em", textTransform: "uppercase", color: "var(--chem-trap)", marginBottom: "0.25rem" }}>Common trap</p>
+        <p style={{ fontSize: "0.875rem", lineHeight: 1.65, color: "var(--text-body)" }}>{trap}</p>
+      </div>
+      <div>
+        <p style={{ fontFamily: "var(--font-mono), ui-monospace, monospace", fontSize: "9px", fontWeight: 900, letterSpacing: "0.2em", textTransform: "uppercase", color: "var(--chem-rule)", marginBottom: "0.25rem" }}>Reality</p>
+        <p style={{ fontSize: "0.875rem", lineHeight: 1.65, color: "var(--text-body)" }}>{reality}</p>
+      </div>
+    </div>
+  );
 }
 
 export function PracticeQuestion({ prompt, answer }: { prompt: ReactNode; answer?: ReactNode }) {
-  return <section className="rounded-lg border border-violet-300/20 bg-violet-300/[0.06] p-5"><p className="text-xs font-black uppercase tracking-[0.18em] text-violet-200">Check your understanding</p><div className="mt-2 text-sm leading-relaxed text-white sm:text-base">{prompt}</div>{answer ? <div className="mt-3 border-t border-white/10 pt-3 text-sm text-violet-100"><span className="font-bold text-emerald-300">Answer: </span><span className="text-emerald-100">{answer}</span></div> : null}</section>;
+  return (
+    <section
+      style={{
+        borderRadius: "var(--radius)",
+        border: "1px solid color-mix(in srgb, var(--chem-orbital) 30%, transparent)",
+        borderLeftWidth: "3px",
+        borderLeftColor: "var(--chem-orbital)",
+        padding: "1rem 1.1rem",
+      }}
+    >
+      <p style={{ fontFamily: "var(--font-mono), ui-monospace, monospace", fontSize: "9px", fontWeight: 900, letterSpacing: "0.22em", textTransform: "uppercase", color: "var(--chem-orbital)", marginBottom: "0.5rem" }}>
+        Check your understanding
+      </p>
+      <div style={{ fontSize: "0.9375rem", lineHeight: 1.65, color: "var(--foreground)" }}>{prompt}</div>
+      {answer ? (
+        <div style={{ marginTop: "0.75rem", paddingTop: "0.75rem", borderTop: "1px solid var(--border)", fontSize: "0.875rem" }}>
+          <span style={{ fontWeight: 700, color: "var(--chem-rule)" }}>Answer: </span>
+          <span style={{ color: "var(--text-body)" }}>{answer}</span>
+        </div>
+      ) : null}
+    </section>
+  );
 }
 
 export function SummaryStrip({ items }: { items: ReactNode[] }) {
-  return <section aria-label="Key takeaways" className="grid gap-px overflow-hidden rounded-lg border border-cyan-300/20 bg-cyan-300/20 sm:grid-cols-3">{items.map((item, index) => <p key={index} className="bg-[#0b1728] p-4 text-sm font-semibold leading-relaxed text-cyan-50">{item}</p>)}</section>;
+  return (
+    <section
+      aria-label="Key takeaways"
+      style={{
+        display: "grid",
+        gridTemplateColumns: "repeat(auto-fill, minmax(200px, 1fr))",
+        gap: "1px",
+        overflow: "hidden",
+        borderRadius: "var(--radius)",
+        border: "1px solid var(--border)",
+        background: "var(--border)",
+      }}
+    >
+      {items.map((item, index) => (
+        <div key={index} style={{ background: "var(--surface)", padding: "1rem 1.1rem" }}>
+          <p style={{ fontFamily: "var(--font-mono), ui-monospace, monospace", fontSize: "9px", fontWeight: 900, letterSpacing: "0.2em", textTransform: "uppercase", color: "var(--chem-bond)", marginBottom: "0.4rem" }}>
+            0{index + 1}
+          </p>
+          <p style={{ fontSize: "0.875rem", lineHeight: 1.6, color: "var(--text-body)" }}>{item}</p>
+        </div>
+      ))}
+    </section>
+  );
 }
 
 export function FormulaLine({ math }: { math: string }) {
-  return <div className="overflow-x-auto text-cyan-100 [&_.katex-display]:my-1"><BlockMath math={math} /></div>;
+  return (
+    <div style={{ borderLeft: "3px solid var(--accent)", paddingLeft: "1rem", overflowX: "auto" }}>
+      <BlockMath math={math} />
+    </div>
+  );
 }
+
 export function MathText({ math }: { math: string }) { return <InlineMath math={math} />; }
-export function BulletList({ items }: { items: ReactNode[] }) { return <ul className="space-y-2">{items.map((item, index) => <li key={index} className="flex gap-3"><span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-fuchsia-400" /><span>{item}</span></li>)}</ul>; }
-export function DataTable({ headers, rows }: { headers: ReactNode[]; rows: ReactNode[][] }) { return <div className="overflow-x-auto rounded-lg border border-white/[0.08]"><table className="min-w-full text-left text-sm"><thead className="bg-white/[0.06] text-white"><tr>{headers.map((header, index) => <th key={index} className="px-4 py-3 font-black">{header}</th>)}</tr></thead><tbody className="divide-y divide-white/[0.06] text-white/75">{rows.map((row, rowIndex) => <tr key={rowIndex}>{row.map((cell, cellIndex) => <td key={cellIndex} className="px-4 py-3 align-top">{cell}</td>)}</tr>)}</tbody></table></div>; }
-export function DiagramBox({ title, children }: { title: string; children: ReactNode }) { return <figure className="rounded-lg border border-cyan-400/20 bg-cyan-400/[0.04] p-4"><figcaption className="mb-3 text-xs font-black uppercase tracking-[0.2em] text-cyan-200">Diagram: {title}</figcaption><div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-3 [&>p]:w-full [&>div]:w-full [&>figure]:w-full [&_svg]:h-auto [&>svg]:w-full [&>svg]:max-w-3xl">{children}</div></figure>; }
-export function PartNavigator({ previous, next }: { previous?: { href: string; label: string }; next?: { href: string; label: string } }) { return <nav aria-label="Continue through Chemical Bonding" className="flex items-stretch justify-between gap-3 border-t border-white/10 pt-6">{previous ? <Link href={previous.href} className="rounded-xl border border-white/15 px-4 py-3 text-sm font-semibold text-slate-200">← {previous.label}</Link> : <span />}{next ? <Link href={next.href} className="rounded-xl border border-cyan-300/30 bg-cyan-300/10 px-4 py-3 text-right text-sm font-semibold text-cyan-100">{next.label} →</Link> : null}</nav>; }
+
+export function BulletList({ items }: { items: ReactNode[] }) {
+  return (
+    <ul style={{ display: "flex", flexDirection: "column", gap: "0.5rem", margin: 0, padding: 0, listStyle: "none" }}>
+      {items.map((item, index) => (
+        <li key={index} style={{ display: "flex", gap: "0.65rem", alignItems: "flex-start" }}>
+          <span aria-hidden="true" style={{ width: "6px", height: "6px", borderRadius: "50%", background: "var(--chem-bond)", opacity: 0.7, flexShrink: 0, marginTop: "0.55rem" }} />
+          <span style={{ fontSize: "1rem", lineHeight: 1.72, color: "var(--text-body)" }}>{item}</span>
+        </li>
+      ))}
+    </ul>
+  );
+}
+
+export function DataTable({ headers, rows }: { headers: ReactNode[]; rows: ReactNode[][] }) {
+  return (
+    <div style={{ overflowX: "auto", borderRadius: "var(--radius)", border: "1px solid var(--border)" }}>
+      <table style={{ minWidth: "38rem", width: "100%", textAlign: "left", fontSize: "0.875rem", borderCollapse: "collapse" }}>
+        <thead style={{ background: "var(--surface-2)", color: "var(--foreground)" }}>
+          <tr>{headers.map((header, index) => <th key={index} scope="col" style={{ padding: "0.75rem 1rem", fontWeight: 600 }}>{header}</th>)}</tr>
+        </thead>
+        <tbody style={{ color: "var(--text-body)" }}>
+          {rows.map((row, rowIndex) => (
+            <tr key={rowIndex} style={{ borderTop: "1px solid var(--border)" }}>
+              {row.map((cell, cellIndex) => <td key={cellIndex} style={{ padding: "0.75rem 1rem", verticalAlign: "top", lineHeight: 1.6 }}>{cell}</td>)}
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  );
+}
+
+export function DiagramBox({ title, children }: { title: string; children: ReactNode }) {
+  return (
+    <figure style={{ border: "1px solid var(--border)", borderRadius: "var(--radius)", overflow: "hidden", margin: 0 }}>
+      <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", justifyContent: "center", gap: "1rem", padding: "1.25rem" }}>
+        {children}
+      </div>
+      <figcaption style={{ borderTop: "1px solid var(--border)", padding: "0.6rem 1rem", fontFamily: "var(--font-mono), ui-monospace, monospace", fontSize: "9.5px", fontWeight: 600, letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--text-muted)" }}>
+        {title}
+      </figcaption>
+    </figure>
+  );
+}
+
+export function PartNavigator({ previous, next }: { previous?: { href: string; label: string }; next?: { href: string; label: string } }) {
+  return (
+    <nav aria-label="Continue through Chemical Bonding" style={{ display: "flex", alignItems: "stretch", justifyContent: "space-between", gap: "0.75rem", borderTop: "1px solid var(--border)", paddingTop: "1.5rem", marginTop: "1rem" }}>
+      {previous ? (
+        <Link href={previous.href} style={{ borderRadius: "var(--radius)", border: "1px solid var(--border)", padding: "0.75rem 1rem", fontSize: "0.875rem", fontWeight: 600, color: "var(--text-muted)", textDecoration: "none" }}>
+          ← {previous.label}
+        </Link>
+      ) : <span />}
+      {next ? (
+        <Link href={next.href} style={{ borderRadius: "var(--radius)", border: "1px solid color-mix(in srgb, var(--chem-bond) 30%, transparent)", padding: "0.75rem 1rem", textAlign: "right", fontSize: "0.875rem", fontWeight: 600, color: "var(--chem-bond)", textDecoration: "none" }}>
+          {next.label} →
+        </Link>
+      ) : null}
+    </nav>
+  );
+}

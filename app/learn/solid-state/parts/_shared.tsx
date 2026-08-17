@@ -1,4 +1,16 @@
+import Link from "next/link";
 import type { ReactNode } from "react";
+import {
+  CanonicalNotesStyles,
+  ChapterIdentityHeader,
+  ChapterLessonPager,
+  ChapterContentsRail,
+  TopicHeader,
+  type ChapterRailGroup,
+  type ChapterRailLesson,
+  type LessonRef,
+} from "@/components/notes/canonical";
+import { SOLID_STATE_PARTS } from "../parts";
 
 export type SolidStateBlock =
   | { type: "p"; text: string }
@@ -31,20 +43,49 @@ export type SolidStatePartData = {
   examples: SolidStateExample[];
 };
 
-const toneClass = {
-  info: "border-cyan-400/20 bg-cyan-400/[0.045] text-cyan-100",
-  trap: "border-red-400/20 bg-red-400/[0.045] text-red-100",
-  result: "border-emerald-400/20 bg-emerald-400/[0.045] text-emerald-100",
-} as const;
+const SOLID_STATE_GROUPS: ChapterRailGroup[] = [
+  { label: "Foundations & crystal classification", from: 1, to: 4, accent: "var(--chem-bond)" },
+  { label: "Lattice, unit cells & crystal systems", from: 5, to: 10, accent: "var(--chem-orbital)" },
+  { label: "Symmetry, Z, radius & density", from: 11, to: 16, accent: "var(--chem-rule)" },
+  { label: "Packing & void geometry", from: 17, to: 18, accent: "var(--chem-bond)" },
+  { label: "Radius ratio & important structures", from: 19, to: 20, accent: "var(--chem-energy)" },
+  { label: "Defects & electrical properties", from: 21, to: 22, accent: "var(--chem-trap)" },
+  { label: "Magnetic properties", from: 23, to: 23, accent: "var(--chem-energy)" },
+];
+
+const RAIL_LESSONS: ChapterRailLesson[] = SOLID_STATE_PARTS.map((p) => ({
+  part: p.part,
+  title: p.title,
+  href: `/learn/solid-state/${p.slug}`,
+}));
+
+function lessonRef(partNumber: number): LessonRef | undefined {
+  const entry = SOLID_STATE_PARTS.find((p) => p.part === partNumber);
+  if (!entry) return undefined;
+  return { href: `/learn/solid-state/${entry.slug}`, number: `Part ${String(entry.part).padStart(2, "0")}`, title: entry.title };
+}
+
+function groupForPart(part: number): ChapterRailGroup {
+  return SOLID_STATE_GROUPS.find((g) => part >= g.from && part <= g.to) ?? SOLID_STATE_GROUPS[0];
+}
 
 function Block({ block }: { block: SolidStateBlock }) {
-  if (block.type === "p") return <p>{block.text}</p>;
+  if (block.type === "p") {
+    return <p style={{ fontSize: "1rem", lineHeight: 1.75, color: "var(--text-body)" }}>{block.text}</p>;
+  }
 
   if (block.type === "formula") {
     return (
       <div
         data-latex={block.latex}
-        className="overflow-x-auto rounded-xl border border-white/10 bg-black/25 px-4 py-3 text-center font-mono text-sm text-zinc-100"
+        style={{
+          borderLeft: "3px solid var(--accent)",
+          paddingLeft: "1rem",
+          overflowX: "auto",
+          fontFamily: "var(--font-mono), ui-monospace, monospace",
+          fontSize: "0.95rem",
+          color: "var(--foreground)",
+        }}
       >
         {block.display}
       </div>
@@ -53,23 +94,30 @@ function Block({ block }: { block: SolidStateBlock }) {
 
   if (block.type === "bullets") {
     return (
-      <ul className="list-disc space-y-2 pl-5 marker:text-cyan-300">
-        {block.items.map((item) => <li key={item}>{item}</li>)}
+      <ul style={{ display: "flex", flexDirection: "column", gap: "0.4rem", margin: 0, padding: 0, listStyle: "none" }}>
+        {block.items.map((item) => (
+          <li key={item} style={{ display: "flex", gap: "0.6rem", alignItems: "flex-start" }}>
+            <span aria-hidden="true" style={{ width: "6px", height: "6px", borderRadius: "50%", background: "var(--chem-bond)", opacity: 0.7, flexShrink: 0, marginTop: "0.55rem" }} />
+            <span style={{ fontSize: "1rem", lineHeight: 1.7, color: "var(--text-body)" }}>{item}</span>
+          </li>
+        ))}
       </ul>
     );
   }
 
   if (block.type === "table") {
     return (
-      <div className="overflow-x-auto rounded-xl border border-white/10">
-        <table className="w-full min-w-[660px] border-collapse text-left text-sm">
-          <thead className="bg-white/[0.045] text-zinc-100">
-            <tr>{block.headers.map((h) => <th key={h} className="px-3 py-3 font-semibold">{h}</th>)}</tr>
+      <div style={{ overflowX: "auto", borderRadius: "var(--radius)", border: "1px solid var(--border)" }}>
+        <table style={{ minWidth: "38rem", width: "100%", textAlign: "left", fontSize: "0.875rem", borderCollapse: "collapse" }}>
+          <thead style={{ background: "var(--surface-2)", color: "var(--foreground)" }}>
+            <tr>{block.headers.map((h) => <th key={h} style={{ padding: "0.75rem 1rem", fontWeight: 600 }}>{h}</th>)}</tr>
           </thead>
-          <tbody className="divide-y divide-white/10 text-zinc-300">
-            {block.rows.map((row, index) => (
-              <tr key={`${index}-${row.join("-")}`}>
-                {row.map((cell, i) => <td key={`${i}-${cell}`} className={`px-3 py-3 ${i === 0 ? "font-medium text-white" : ""}`}>{cell}</td>)}
+          <tbody>
+            {block.rows.map((row, rowIndex) => (
+              <tr key={rowIndex} style={{ borderTop: "1px solid var(--border)" }}>
+                {row.map((cell, cellIndex) => (
+                  <td key={cellIndex} style={{ padding: "0.6rem 1rem", verticalAlign: "top", lineHeight: 1.6, color: "var(--text-body)", fontWeight: cellIndex === 0 ? 500 : 400 }}>{cell}</td>
+                ))}
               </tr>
             ))}
           </tbody>
@@ -80,72 +128,157 @@ function Block({ block }: { block: SolidStateBlock }) {
 
   if (block.type === "ascii") {
     return (
-      <div className="rounded-xl border border-violet-400/20 bg-violet-400/[0.035] p-4">
-        {block.title ? <h3 className="mb-3 font-semibold text-violet-200">{block.title}</h3> : null}
-        <pre className="overflow-x-auto whitespace-pre font-mono text-xs leading-6 text-zinc-200 md:text-sm">{block.text}</pre>
-      </div>
+      <figure style={{ border: "1px solid var(--border)", borderRadius: "var(--radius)", overflow: "hidden", margin: 0 }}>
+        {block.title ? (
+          <div style={{ padding: "0.5rem 1rem", borderBottom: "1px solid var(--border)", fontFamily: "var(--font-mono), ui-monospace, monospace", fontSize: "9.5px", fontWeight: 600, letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--text-muted)" }}>
+            {block.title}
+          </div>
+        ) : null}
+        <pre style={{ overflowX: "auto", whiteSpace: "pre", fontFamily: "var(--font-mono), ui-monospace, monospace", fontSize: "0.8125rem", lineHeight: 1.6, color: "var(--foreground)", padding: "1rem" }}>{block.text}</pre>
+      </figure>
     );
   }
 
   const tone = block.tone ?? "info";
+  const borderColor = tone === "trap" ? "var(--chem-trap)" : tone === "result" ? "var(--chem-rule)" : "var(--chem-bond)";
+  const labelColor = borderColor;
   return (
-    <div className={`rounded-xl border p-4 ${toneClass[tone]}`}>
-      <div className="text-xs font-semibold uppercase tracking-[0.18em] opacity-80">{block.label}</div>
-      <p className="mt-2 text-sm leading-7 text-zinc-200">{block.text}</p>
-    </div>
+    <aside style={{ borderLeft: `3px solid ${borderColor}`, paddingLeft: "1rem" }}>
+      <p style={{ fontFamily: "var(--font-mono), ui-monospace, monospace", fontSize: "9px", fontWeight: 900, letterSpacing: "0.2em", textTransform: "uppercase", color: labelColor, marginBottom: "0.3rem" }}>
+        {block.label}
+      </p>
+      <p style={{ fontSize: "0.9375rem", lineHeight: 1.7, color: "var(--text-body)" }}>{block.text}</p>
+    </aside>
   );
 }
 
 function Section({ title, children }: { title: string; children: ReactNode }) {
   return (
-    <section className="rounded-lg border border-white/10 bg-white/[0.035] p-5 md:p-6">
-      <h2 className="text-xl font-semibold tracking-tight text-white">{title}</h2>
-      <div className="mt-4 space-y-4 text-[15px] leading-7 text-zinc-300">{children}</div>
+    <section style={{ display: "flex", flexDirection: "column", gap: "0.75rem" }}>
+      <h2
+        className="sb-ui-title"
+        style={{ fontSize: "1.05rem", fontWeight: 600, color: "var(--foreground)", paddingBottom: "0.4rem", borderBottom: "1px solid var(--border)" }}
+      >
+        {title}
+      </h2>
+      <div style={{ display: "flex", flexDirection: "column", gap: "0.6rem" }}>
+        {children}
+      </div>
     </section>
   );
 }
 
 export function SolidStatePartPage({ data }: { data: SolidStatePartData }) {
+  const group = groupForPart(data.part);
+
   return (
-    <article
-      data-chapter="solid-state"
-      data-part={String(data.part).padStart(2, "0")}
-      className="mx-auto w-full max-w-5xl space-y-6 px-4 py-8 md:px-6"
-    >
-      <header className="rounded-lg border border-cyan-400/20 bg-gradient-to-b from-cyan-400/10 via-violet-400/[0.025] to-transparent p-6 md:p-8">
-        <p className="text-xs font-semibold uppercase tracking-[0.24em] text-cyan-300">JEE Advanced · Solid State · Part {data.part}</p>
-        <h1 className="mt-3 text-3xl font-semibold tracking-tight text-white md:text-4xl">{data.title}</h1>
-        <p className="mt-4 max-w-4xl text-sm leading-7 text-zinc-300">{data.intro}</p>
-      </header>
-
-      {data.sections.map((section) => (
-        <Section key={section.title} title={section.title}>
-          {section.blocks.map((block, index) => <Block key={`${section.title}-${index}`} block={block} />)}
-        </Section>
-      ))}
-
-      <Section title="JEE Advanced Traps & Edge Cases">
-        <ul className="list-disc space-y-2 pl-5 marker:text-red-300">
-          {data.traps.map((trap) => <li key={trap}>{trap}</li>)}
-        </ul>
-      </Section>
-
-      <Section title="Solved Examples">
-        <div className="space-y-4">
-          {data.examples.map((example) => (
-            <article key={example.title} className="rounded-xl border border-white/10 bg-black/20 p-4">
-              <h3 className="font-semibold text-white">{example.title}</h3>
-              <p className="mt-3 text-zinc-300">{example.question}</p>
-              <ol className="mt-3 list-decimal space-y-2 pl-5 text-sm leading-7 text-zinc-400">
-                {example.steps.map((step) => <li key={step}>{step}</li>)}
-              </ol>
-              <div className="mt-4 rounded-lg border border-emerald-400/20 bg-emerald-400/[0.045] px-3 py-2 text-sm font-semibold text-emerald-200">
-                {example.answer}
-              </div>
-            </article>
-          ))}
+    <>
+      <CanonicalNotesStyles />
+      {/* compact lesson bar */}
+      <div className="sbnLessonBar">
+        <div className="sbnLessonBarInner">
+          <Link href="/learn/solid-state" className="sbnLessonBarBack">← Solid State</Link>
+          <span className="sbnLessonBarPos">
+            Part {String(data.part).padStart(2, "0")} / {SOLID_STATE_PARTS.length}
+          </span>
         </div>
-      </Section>
-    </article>
+      </div>
+
+      {/* sidebar reading layout */}
+      <div className="sbnSidebarBody">
+        <article className="sbnCanvas" style={{ maxWidth: "720px" }}>
+          <ChapterIdentityHeader
+            subject="Physical Chemistry · JEE Advanced"
+            chapterName="Solid State"
+            descriptor="Crystal structure, lattice geometry, packing, defects and properties — the complete 23-part JEE Advanced sequence."
+            topicCount={SOLID_STATE_PARTS.length}
+            accentColor="var(--chem-bond)"
+          />
+
+          <TopicHeader
+            as="h1"
+            eyebrow={group.label}
+            title={data.title}
+            accentColor={group.accent}
+          />
+
+          {data.intro ? (
+            <p style={{ fontSize: "1rem", lineHeight: 1.75, color: "var(--text-muted)", marginBottom: "1.5rem" }}>
+              {data.intro}
+            </p>
+          ) : null}
+
+          <div style={{ display: "flex", flexDirection: "column", gap: "2.5rem" }}>
+            {data.sections.map((section) => (
+              <Section key={section.title} title={section.title}>
+                {section.blocks.map((block, index) => (
+                  <Block key={`${section.title}-${index}`} block={block} />
+                ))}
+              </Section>
+            ))}
+
+            {data.traps.length > 0 ? (
+              <Section title="JEE Advanced Traps & Edge Cases">
+                <ul style={{ display: "flex", flexDirection: "column", gap: "0.4rem", margin: 0, padding: 0, listStyle: "none" }}>
+                  {data.traps.map((trap) => (
+                    <li key={trap} style={{ display: "flex", gap: "0.6rem", alignItems: "flex-start" }}>
+                      <span aria-hidden="true" style={{ color: "var(--chem-trap)", flexShrink: 0, marginTop: "0.1rem", fontSize: "0.8rem" }}>⚠</span>
+                      <span style={{ fontSize: "0.9375rem", lineHeight: 1.7, color: "var(--text-body)" }}>{trap}</span>
+                    </li>
+                  ))}
+                </ul>
+              </Section>
+            ) : null}
+
+            {data.examples.length > 0 ? (
+              <Section title="Solved Examples">
+                <div style={{ display: "flex", flexDirection: "column", gap: "1.25rem" }}>
+                  {data.examples.map((example, exIndex) => (
+                    <article
+                      key={example.title}
+                      style={{
+                        borderRadius: "var(--radius)",
+                        border: "1px solid color-mix(in srgb, var(--chem-rule) 25%, transparent)",
+                        borderLeftWidth: "3px",
+                        borderLeftColor: "var(--chem-rule)",
+                        padding: "1rem 1.1rem",
+                      }}
+                    >
+                      <p style={{ fontFamily: "var(--font-mono), ui-monospace, monospace", fontSize: "9px", fontWeight: 900, letterSpacing: "0.2em", textTransform: "uppercase", color: "var(--chem-rule)", marginBottom: "0.3rem" }}>
+                        Worked example {exIndex + 1}
+                      </p>
+                      <h3 style={{ fontSize: "0.95rem", fontWeight: 600, color: "var(--foreground)", marginBottom: "0.5rem" }}>{example.title}</h3>
+                      <p style={{ fontSize: "0.9375rem", lineHeight: 1.7, color: "var(--text-body)" }}>{example.question}</p>
+                      <ol style={{ marginTop: "0.75rem", paddingLeft: "1.25rem", display: "flex", flexDirection: "column", gap: "0.3rem" }}>
+                        {example.steps.map((step) => (
+                          <li key={step} style={{ fontSize: "0.875rem", lineHeight: 1.65, color: "var(--text-muted)" }}>{step}</li>
+                        ))}
+                      </ol>
+                      <div style={{ marginTop: "0.75rem", paddingTop: "0.75rem", borderTop: "1px solid var(--border)", fontSize: "0.875rem", fontWeight: 600, color: "var(--chem-rule)" }}>
+                        {example.answer}
+                      </div>
+                    </article>
+                  ))}
+                </div>
+              </Section>
+            ) : null}
+          </div>
+
+          <ChapterLessonPager
+            prev={lessonRef(data.part - 1)}
+            next={lessonRef(data.part + 1)}
+            hubHref="/learn/solid-state"
+            hubLabel="All lessons"
+          />
+        </article>
+
+        <ChapterContentsRail
+          title="Chapter Contents"
+          groups={SOLID_STATE_GROUPS}
+          lessons={RAIL_LESSONS}
+          currentPart={data.part}
+        />
+      </div>
+    </>
   );
 }

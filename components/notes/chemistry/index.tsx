@@ -65,7 +65,7 @@ export function NotesChapterHeader({
         </span>
         <h1
           className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-white"
-          style={{ fontFamily: "Georgia, 'Iowan Old Style', 'Times New Roman', serif" }}
+          style={{ fontFamily: "var(--font-display)" }}
         >
           {title}
         </h1>
@@ -78,7 +78,7 @@ export function NotesChapterHeader({
       <div className="pt-4" style={{ borderTop: "1px solid #24405c" }}>
         <div
           className="mb-3 text-xs font-black uppercase"
-          style={{ color: "#e8b84b", letterSpacing: ".1em", fontFamily: "'SFMono-Regular',Consolas,'Liberation Mono',monospace" }}
+          style={{ color: "#e8b84b", letterSpacing: ".1em", fontFamily: "var(--font-mono)" }}
         >
           Top chapter navigation
         </div>
@@ -169,7 +169,7 @@ export function NumberedSectionFooter({
     textAlign: "left" as const,
   };
   const labelBase: React.CSSProperties = {
-    fontFamily: "'SFMono-Regular',Consolas,'Liberation Mono',monospace",
+    fontFamily: "var(--font-mono)",
     fontSize: 11,
     fontWeight: 900,
     letterSpacing: ".12em",

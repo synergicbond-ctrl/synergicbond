@@ -9,7 +9,7 @@ const AX = "#67e8f9"; // cyan-300 — atoms/orbitals
 const VEC = "#c4b5fd"; // violet-300 — dipole vectors
 const MUTE = "rgba(255,255,255,0.45)";
 const LINE = "rgba(255,255,255,0.25)";
-const T = { fontFamily: "ui-sans-serif, system-ui", fill: "rgba(255,255,255,0.85)" };
+const T = { fontFamily: "var(--font-sans), ui-sans-serif, system-ui", fill: "rgba(255,255,255,0.85)" };
 const TS = { ...T, fontSize: 11 };
 const TXS = { ...T, fontSize: 9.5, fill: MUTE };
 

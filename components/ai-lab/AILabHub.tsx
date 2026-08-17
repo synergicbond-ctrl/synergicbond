@@ -107,7 +107,7 @@ function ToolCard({
         <span className="flex h-11 w-11 items-center justify-center rounded-lg border border-white/10 bg-black/25 text-2xl shadow-inner shadow-black/30">{icon}</span>
         <Badge tone={badge}>{badge === "live" ? "Live" : badge === "builtin" ? "Built-in" : "Coming soon"}</Badge>
       </div>
-      <h3 className="mt-4 font-serif text-lg font-black text-white">{title}</h3>
+      <h3 className="mt-4 font-display text-lg font-black text-white">{title}</h3>
       <p className="mt-1 text-xs leading-relaxed text-white/50">{desc}</p>
     </>
   );
@@ -283,7 +283,7 @@ export default function AILabHub({ revisionChapters }: { revisionChapters: Revis
       <div className="relative overflow-hidden rounded-lg border border-cyan-400/20 bg-[radial-gradient(circle_at_78%_15%,rgba(139,92,246,0.2),transparent_25%),linear-gradient(115deg,rgba(34,211,238,0.12),transparent_50%),#0f1728] p-6 shadow-[0_28px_70px_-48px_rgba(34,211,238,0.8)]">
         <span aria-hidden="true" className="absolute -right-4 -bottom-10 text-[10rem] font-black leading-none text-cyan-200/[0.035]">AI</span>
         <p className="relative mb-2 text-xs font-bold uppercase tracking-[0.4em] text-cyan-300">AI Lab</p>
-        <h1 className="relative font-serif text-3xl font-black md:text-4xl">Your Chemistry AI Toolset</h1>
+        <h1 className="relative font-display text-3xl font-black md:text-4xl">Your Chemistry AI Toolset</h1>
         <p className="relative mt-2 max-w-3xl text-sm text-white/60">
           One place for every AI-assisted tool — Snap & Solve, the tutor and doubt solver are live;
           the planner and revision generator run on verified syllabus data.

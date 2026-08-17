@@ -320,7 +320,7 @@ export function ExchangeCountingGuideV4() {
       <div style={{ overflowX: "auto", border: `1px solid ${C.border}`, borderRadius: 16 }}>
         <table style={{ width: "100%", minWidth: 920, borderCollapse: "collapse", color: C.text }}>
           <thead>
-            <tr style={{ background: "#213b57" }}>
+            <tr style={{ background: "var(--surface-2)" }}>
               {["Configuration", "Hund pattern", "n↑", "n↓", "Npair", "Exchange count"].map((heading) => (
                 <th
                   key={heading}

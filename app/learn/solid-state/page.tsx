@@ -43,10 +43,10 @@ export default function SolidStatePage() {
         })),
       ]}
     >
-      <section className="mb-8 rounded-lg border border-[#24405c] bg-[#122232] p-5 md:p-7">
-        <p className="text-xs font-black uppercase tracking-[0.22em] text-[#e8b84b]">JEE Advanced only</p>
-        <h1 className="mt-2 text-3xl font-black tracking-tight text-white md:text-5xl">Solid State — Complete 23-Part Course</h1>
-        <p className="mt-4 max-w-4xl text-sm leading-7 text-[#c3d1dd]">
+      <section className="mb-8 rounded-lg border border-[var(--border)] bg-[var(--surface)] p-5 md:p-7">
+        <p className="text-xs font-bold uppercase tracking-[0.22em] text-[var(--chem-energy)]">JEE Advanced only</p>
+        <h1 className="mt-2 text-3xl font-black tracking-tight text-[var(--foreground)] md:text-5xl">Solid State — Complete 23-Part Course</h1>
+        <p className="mt-4 max-w-4xl text-sm leading-7 text-[var(--text-muted)]">
           A structured sequence from crystalline and amorphous solids through crystal lattices, unit-cell geometry,
           Bravais systems, packing, voids, radius ratio, important structures, defects, electrical properties and magnetism.
         </p>
@@ -54,7 +54,7 @@ export default function SolidStatePage() {
       <section className="mb-8 rounded-lg border border-[var(--border)] bg-[var(--surface)] p-5 md:p-7">
         <p className="text-xs font-black uppercase tracking-[0.22em] text-[var(--text-muted)]">Complete single-page edition</p>
         <h2 className="mt-2 text-2xl font-black tracking-tight text-white md:text-3xl">89-Page Geometry Master + Advanced Extension</h2>
-        <p className="mt-3 max-w-4xl text-sm leading-7 text-[#c3d1dd]">
+        <p className="mt-3 max-w-4xl text-sm leading-7 text-[var(--text-muted)]">
           Read the complete source-mapped course as one continuous chapter with a page-by-page audit, modified worked examples,
           original geometry diagrams, diffraction, polyhedral chemistry, defect thermodynamics and deeper electronic and magnetic theory.
         </p>

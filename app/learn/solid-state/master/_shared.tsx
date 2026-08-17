@@ -59,7 +59,7 @@ function slugify(value: string) {
 
 function FigureFrame({ children, caption }: { children: ReactNode; caption: string }) {
   return (
-    <figure className="my-7 overflow-hidden rounded-lg border border-white/10 bg-[#07131f]">
+    <figure className="my-7 overflow-hidden rounded-lg border border-[var(--border)] bg-[var(--surface)]">
       <div className="overflow-x-auto p-4 md:p-7">{children}</div>
       <figcaption className="border-t border-white/10 px-5 py-3 text-sm leading-6 text-slate-400">
         {caption}
@@ -370,7 +370,7 @@ function BlockView({ block, exampleNumber }: { block: SolidStateBlock; exampleNu
     return <div className="my-5 overflow-x-auto border-y border-cyan-300/20 bg-cyan-300/[0.035] px-4 py-4"><MathText latex={block.latex} block />{block.note&&<p className="mt-2 text-center text-sm leading-6 text-slate-400"><RichText text={block.note}/></p>}</div>;
   }
   if (block.kind === "table") {
-    return <div className="my-6 overflow-x-auto rounded-xl border border-white/10">{block.caption&&<div className="border-b border-white/10 bg-white/[0.03] px-4 py-3 text-sm font-semibold text-slate-300">{block.caption}</div>}<table className="w-full min-w-[720px] border-collapse text-left text-sm md:text-[15px]"><thead className="bg-[#132638] text-white"><tr>{block.headers.map(h=><th key={h} className="border-b border-white/10 px-4 py-3.5 font-bold"><RichText text={h}/></th>)}</tr></thead><tbody>{block.rows.map((row,ri)=><tr key={ri} className="even:bg-white/[0.025]">{row.map((cell,ci)=><td key={ci} className="border-b border-white/[0.07] px-4 py-3.5 align-top leading-7 text-slate-300"><RichText text={cell}/></td>)}</tr>)}</tbody></table></div>;
+    return <div className="my-6 overflow-x-auto rounded-xl border border-white/10">{block.caption&&<div className="border-b border-white/10 bg-white/[0.03] px-4 py-3 text-sm font-semibold text-slate-300">{block.caption}</div>}<table className="w-full min-w-[720px] border-collapse text-left text-sm md:text-[15px]"><thead className="bg-[var(--surface-2)] text-[var(--foreground)]"><tr>{block.headers.map(h=><th key={h} className="border-b border-white/10 px-4 py-3.5 font-bold"><RichText text={h}/></th>)}</tr></thead><tbody>{block.rows.map((row,ri)=><tr key={ri} className="even:bg-white/[0.025]">{row.map((cell,ci)=><td key={ci} className="border-b border-white/[0.07] px-4 py-3.5 align-top leading-7 text-slate-300"><RichText text={cell}/></td>)}</tr>)}</tbody></table></div>;
   }
   if (block.kind === "note") {
     return <aside className={`my-6 border-l-4 px-5 py-4 ${toneStyle(block.tone)}`}><div className="text-xs font-black uppercase tracking-[.15em] opacity-85">{block.title}</div><p className="mt-2 text-[15px] leading-7"><RichText text={block.text}/></p></aside>;

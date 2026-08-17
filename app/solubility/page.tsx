@@ -34,7 +34,7 @@ export default function SolubilityPage() {
     <main className="min-h-screen bg-[var(--background)] text-white">
       <div className="mx-auto max-w-5xl px-6 py-12">
         <ReferenceTabs />
-        <p className="text-xs font-bold uppercase tracking-[0.4em] text-cyan-300 mb-3">Knowledge Vault · Inorganic</p>
+        <p className="text-xs font-bold uppercase tracking-[0.4em] text-[var(--text-muted)] mb-3">Knowledge Vault · Inorganic</p>
         <h1 className="text-4xl font-black md:text-5xl">Solubility Rules</h1>
         <p className="mt-3 text-white/65 text-sm max-w-2xl mb-8">
           The solubility rules with the exact exceptions examiners test. Cyan = soluble, blue = mostly soluble (watch exceptions), purple = mostly insoluble.
@@ -51,7 +51,7 @@ export default function SolubilityPage() {
                 <span className="h-2 w-2 rounded-full flex-shrink-0" style={{ background: r.c }} /> {r.group}
               </span>
               <span className="text-white/70">{r.soluble}</span>
-              <span className="text-gray-400 text-xs">{r.exceptions}</span>
+              <span className="text-[var(--text-muted)] text-xs">{r.exceptions}</span>
             </div>
           ))}
         </div>
@@ -61,8 +61,8 @@ export default function SolubilityPage() {
           <h2 className="text-sm font-bold text-white mb-3">⚠️ High-Yield Tricky Points (JEE/NEET)</h2>
           <ul className="space-y-2">
             {tricky.map((t, i) => (
-              <li key={i} className="flex items-start gap-2 text-xs text-gray-300 leading-relaxed">
-                <span className="text-cyan-400 mt-0.5">▸</span> {t}
+              <li key={i} className="flex items-start gap-2 text-xs text-[var(--foreground)] leading-relaxed">
+                <span className="text-[var(--accent)] mt-0.5">▸</span> {t}
               </li>
             ))}
           </ul>

@@ -150,7 +150,7 @@ export default function LibraryPage() {
       <div className="mx-auto max-w-6xl px-6 py-12">
         {/* Header */}
         <div className="mb-10">
-          <p className="text-xs font-bold uppercase tracking-[0.4em] text-cyan-300 mb-3">Knowledge Vault · Database</p>
+          <p className="text-xs font-bold uppercase tracking-[0.4em] text-[var(--text-muted)] mb-3">Knowledge Vault · Database</p>
           <h1 className="text-4xl font-black md:text-5xl">Chemistry Book Library</h1>
           <p className="mt-3 text-white/65 text-sm max-w-2xl">
             {total} world-class chemistry <span className="text-white/80 font-semibold">textbooks</span> — the foundational treatises serious students actually learn from, by master authors across the UK, USA, Russia, Germany, Japan and India. ★ marks the top 3 picks per domain.
@@ -201,7 +201,7 @@ export default function LibraryPage() {
                         <span className="text-[10px] font-semibold text-white/50 ml-auto">{b.flag} {b.country}</span>
                       </div>
                       <h3 className="text-sm font-bold text-white leading-snug mt-1">{b.title}</h3>
-                      <p className="text-xs text-gray-400 mt-0.5">{b.author}</p>
+                      <p className="text-xs text-[var(--text-muted)] mt-0.5">{b.author}</p>
                       <span className="mt-2 inline-flex items-center gap-1 text-[11px] font-semibold transition group-hover:gap-1.5" style={{ color: d.accent }}>
                         Find on Google <ExternalLink className="h-3 w-3" />
                       </span>
@@ -216,7 +216,7 @@ export default function LibraryPage() {
         {/* Curator notes */}
         <div className="mt-12 rounded-lg bg-[var(--surface)] border border-white/[0.06] p-6">
           <h3 className="text-sm font-bold text-white mb-3">📌 Curator Notes</h3>
-          <ul className="space-y-2 text-xs text-gray-300 leading-relaxed">
+          <ul className="space-y-2 text-xs text-[var(--foreground)] leading-relaxed">
             <li>• <span className="text-white/80 font-semibold">Why only textbooks:</span> SYNERGIC BOND replaces exam-cram guides — here we point you to the deep conceptual sources the best ranks are actually built on.</li>
             <li>• <span className="text-white/80 font-semibold">Core conceptual stack:</span> J.D. Lee (Inorganic) · Clayden + Sykes (Organic) · Atkins (Physical).</li>
             <li>• <span className="text-white/80 font-semibold">Russian (MIR) classics:</span> Nesmeyanov, Reutov, Akhmetov and Landau-Lifshitz — legendary for first-principles depth.</li>

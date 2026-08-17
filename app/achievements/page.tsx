@@ -83,7 +83,7 @@ export default function AchievementsPage() {
   ];
 
   return (
-    <main className="min-h-screen bg-black text-white px-4 py-12">
+    <main className="min-h-screen bg-[var(--background)] text-[var(--foreground)] px-4 py-12">
       <div className="mx-auto max-w-4xl">
         <div className="mb-8">
           <h1 className="text-4xl font-bold tracking-tight">🎮 Achievements</h1>
@@ -166,7 +166,7 @@ export default function AchievementsPage() {
                 {HOW_TO_EARN.map(({ action, xp: x }) => (
                   <div key={action} className="flex justify-between items-center rounded-xl bg-white/5 px-4 py-2">
                     <span className="text-white/80 text-sm">{action}</span>
-                    <span className="text-cyan-400 font-bold text-sm">{x}</span>
+                    <span className="text-[var(--accent)] font-bold text-sm">{x}</span>
                   </div>
                 ))}
               </div>

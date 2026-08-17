@@ -49,8 +49,8 @@ export default function TeachersPage() {
       <div className="mx-auto max-w-6xl px-6 py-12">
 
         <div className="flex items-center gap-3 mb-2">
-          <div className="p-2 rounded-xl bg-cyan-500/10">
-            <GraduationCap className="h-5 w-5 text-cyan-400" />
+          <div className="p-2 rounded-lg bg-[var(--accent)]/10">
+            <GraduationCap className="h-5 w-5 text-[var(--accent)]" />
           </div>
           <h1 className="text-4xl font-black">Teacher &amp; Educator Hub</h1>
         </div>
@@ -68,7 +68,7 @@ export default function TeachersPage() {
                 key={t.id}
                 onClick={() => setTab(t.id)}
                 className={`flex items-center gap-2 px-4 py-2 rounded-full text-xs font-semibold transition-all hover:scale-105 ${
-                  active ? "bg-cyan-500 text-black" : "text-gray-400 hover:text-white"
+                  active ? "bg-[var(--accent)] text-[var(--background)]" : "text-[var(--text-muted)] hover:text-[var(--foreground)]"
                 }`}
               >
                 <Icon className="h-3.5 w-3.5" />
@@ -85,20 +85,20 @@ export default function TeachersPage() {
             <div>
               <div className="flex items-center justify-between mb-6">
                 <h2 className="text-lg font-bold">Lesson Flow Builder</h2>
-                <button className="flex items-center gap-1.5 text-xs font-semibold bg-cyan-500 text-black px-3 py-2 rounded-lg hover:bg-cyan-400 transition">
+                <button className="flex items-center gap-1.5 text-xs font-semibold bg-[var(--accent)] text-[var(--background)] px-3 py-2 rounded-lg hover:brightness-110 transition">
                   <Plus className="h-3.5 w-3.5" /> Add Unit
                 </button>
               </div>
               <div className="space-y-3">
                 {lessons.map((l) => (
-                  <div key={l.unit} className="flex items-center gap-4 rounded-xl bg-black/30 border border-white/[0.06] px-4 py-3 hover:border-white/[0.12] transition">
+                  <div key={l.unit} className="flex items-center gap-4 rounded-lg bg-[var(--surface-2)] border border-[var(--border)] px-4 py-3 hover:border-[var(--border-strong)] transition">
                     <GripVertical className="h-4 w-4 text-white/20 cursor-grab" />
-                    <span className="text-[10px] font-bold text-cyan-400 w-12">{l.unit}</span>
+                    <span className="text-[10px] font-bold text-[var(--accent)] w-12">{l.unit}</span>
                     <div className="flex-1 min-w-0">
                       <p className="text-sm font-semibold text-white truncate">{l.title}</p>
                       <p className="text-xs text-white/40">{l.lessons} lessons</p>
                     </div>
-                    <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full ${l.status === "Published" ? "text-cyan-400 bg-cyan-500/10" : "text-violet-400 bg-violet-500/10"}`}>
+                    <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full ${l.status === "Published" ? "text-[var(--accent)] bg-[var(--accent)]/10" : "text-[var(--text-muted)] bg-[var(--surface-2)]"}`}>
                       {l.status}
                     </span>
                   </div>
@@ -112,7 +112,7 @@ export default function TeachersPage() {
               <h2 className="text-lg font-bold mb-6">Class Performance Overview</h2>
               <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-8">
                 {classStats.map((s) => (
-                  <div key={s.label} className="rounded-xl bg-black/30 border border-white/[0.06] p-4">
+                  <div key={s.label} className="rounded-lg bg-[var(--surface-2)] border border-[var(--border)] p-4">
                     <p className="text-2xl font-black" style={{ color: s.color }}>{s.value}</p>
                     <p className="text-xs text-white/40 mt-1">{s.label}</p>
                   </div>
@@ -143,7 +143,7 @@ export default function TeachersPage() {
               <h2 className="text-lg font-bold mb-6">Doubt Assignment Queue</h2>
               <div className="space-y-3">
                 {doubts.map((d, i) => (
-                  <div key={i} className="flex items-center gap-4 rounded-xl bg-black/30 border border-white/[0.06] px-4 py-3">
+                  <div key={i} className="flex items-center gap-4 rounded-lg bg-[var(--surface-2)] border border-[var(--border)] px-4 py-3">
                     <div className="flex-1 min-w-0">
                       <div className="flex items-center gap-2">
                         <span className="text-sm font-semibold text-white">{d.student}</span>
@@ -152,13 +152,13 @@ export default function TeachersPage() {
                       <p className="text-xs text-white/50 mt-0.5 truncate">{d.topic}</p>
                     </div>
                     {d.status === "resolved" ? (
-                      <span className="flex items-center gap-1 text-[10px] font-bold text-cyan-400 bg-cyan-500/10 px-2.5 py-1 rounded-full">
+                      <span className="flex items-center gap-1 text-[10px] font-bold text-[var(--accent)] bg-[var(--accent)]/10 px-2.5 py-1 rounded-full">
                         <CheckCircle2 className="h-3 w-3" /> Resolved
                       </span>
                     ) : d.status === "assigned" ? (
-                      <span className="text-[10px] font-bold text-violet-400 bg-violet-500/10 px-2.5 py-1 rounded-full">Assigned</span>
+                      <span className="text-[10px] font-bold text-[var(--text-muted)] bg-[var(--surface-2)] border border-[var(--border)] px-2.5 py-1 rounded-full">Assigned</span>
                     ) : (
-                      <button className="flex items-center gap-1 text-[10px] font-bold bg-cyan-500 text-black px-3 py-1.5 rounded-lg hover:bg-cyan-400 transition">
+                      <button className="flex items-center gap-1 text-[10px] font-bold bg-[var(--accent)] text-[var(--background)] px-3 py-1.5 rounded-lg hover:brightness-110 transition">
                         Respond <ArrowRight className="h-3 w-3" />
                       </button>
                     )}

@@ -19,7 +19,7 @@ export default function OrderCard({ order }: { order: ImportantOrder }) {
       <FormulaText
         text={order.order}
         className={`mt-1.5 block font-mono text-[14px] font-semibold leading-relaxed [&_sub]:text-[0.7em] [&_sup]:text-[0.7em] ${
-          exc ? "text-red-400" : "text-cyan-200"
+          exc ? "text-red-400" : "text-[var(--accent)]"
         }`}
       />
 

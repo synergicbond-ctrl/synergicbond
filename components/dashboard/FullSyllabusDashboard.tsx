@@ -97,7 +97,7 @@ export default function FullSyllabusDashboard({
           <div className="flex flex-col gap-5 md:flex-row md:items-end md:justify-between">
             <div className="space-y-2">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/[0.07] text-white/60 text-xs font-bold border border-white/10">
-                <ShieldCheck className="h-3.5 w-3.5 text-cyan-400" /> Program-Isolated · Zero Cross-Program Leakage
+                <ShieldCheck className="h-3.5 w-3.5 text-[var(--accent)]" /> Program-Isolated · Zero Cross-Program Leakage
               </div>
               <h1 className="font-display text-2xl font-black tracking-tight text-white leading-tight sm:text-3xl md:text-4xl">
                 {programName}
@@ -245,7 +245,7 @@ function ShortNotesTab({ programName, chapters }: { programName: string; chapter
           <button
             key={c.id}
             onClick={() => setSelectedCategory(c.id)}
-            className={`shrink-0 px-3 py-1.5 rounded-xl text-xs font-bold transition ${
+            className={`shrink-0 px-3 py-1.5 rounded-lg text-xs font-bold transition ${
               selectedCategory === c.id 
                 ? "bg-[var(--accent)]/15 border border-[var(--accent)]/40 text-[var(--accent)]" 
                 : "bg-white/[0.04] border border-white/10 text-white/60 hover:text-white hover:bg-white/[0.07]"
@@ -261,7 +261,7 @@ function ShortNotesTab({ programName, chapters }: { programName: string; chapter
         <Link href="/notes" className="group p-5 bg-[var(--surface-2)] border border-[var(--accent)]/20 hover:border-[var(--accent)]/50 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-cyan-500/10 rounded-lg transition-all duration-200 space-y-3">
           <div className="flex items-center justify-between">
             <span className="text-xs font-bold px-2.5 py-1 rounded-full bg-[var(--accent)]/10 text-[var(--accent)] border border-[var(--accent)]/20">Featured</span>
-            <ArrowRight className="h-4 w-4 text-cyan-400 group-hover:translate-x-1 transition" />
+            <ArrowRight className="h-4 w-4 text-[var(--accent)] group-hover:translate-x-1 transition" />
           </div>
           <h3 className="text-base font-black text-white">Full Chemistry Notes Explorer</h3>
           <p className="text-xs text-white/60 leading-relaxed">
@@ -271,8 +271,8 @@ function ShortNotesTab({ programName, chapters }: { programName: string; chapter
 
         <Link href="/vault/formulas" className="group p-5 bg-[var(--surface)] border border-white/[0.08] hover:border-[var(--accent)]/30 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-black/20 rounded-lg transition-all duration-200 space-y-3">
           <div className="flex items-center justify-between">
-            <span className="text-xs font-bold px-2.5 py-1 rounded-full bg-emerald-500/10 text-emerald-300 border border-emerald-500/20">Important Formulae</span>
-            <ArrowRight className="h-4 w-4 text-white/40 group-hover:text-emerald-400 group-hover:translate-x-1 transition" />
+            <span className="text-xs font-bold px-2.5 py-1 rounded-full bg-emerald-500/10 text-[var(--text-muted)] border border-emerald-500/20">Important Formulae</span>
+            <ArrowRight className="h-4 w-4 text-white/40 group-hover:text-[var(--accent)] group-hover:translate-x-1 transition" />
           </div>
           <h3 className="text-base font-black text-white">Verified Formula Book</h3>
           <p className="text-xs text-white/60 leading-relaxed">
@@ -295,7 +295,7 @@ function ShortNotesTab({ programName, chapters }: { programName: string; chapter
       {/* Chapter-specific empty state */}
       <div className="py-10 px-6 rounded-lg border border-white/[0.08] bg-[var(--surface)]/70 text-center space-y-3">
         <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[var(--accent)]/10 border border-[var(--accent)]/20 mx-auto">
-          <AlertCircle className="h-6 w-6 text-cyan-400" />
+          <AlertCircle className="h-6 w-6 text-[var(--accent)]" />
         </div>
         <h4 className="text-sm font-bold text-white">Curating Specific Revision Material</h4>
         <p className="text-xs text-white/50 max-w-xl mx-auto leading-relaxed">
@@ -393,9 +393,9 @@ function PracticeProblemsTab({
           <button
             key={f.id}
             onClick={() => setSelectedFormat(f.id)}
-            className={`shrink-0 px-3 py-1.5 rounded-xl text-xs font-bold transition ${
+            className={`shrink-0 px-3 py-1.5 rounded-lg text-xs font-bold transition ${
               selectedFormat === f.id 
-                ? "bg-emerald-500/20 border border-emerald-500/50 text-emerald-300" 
+                ? "bg-emerald-500/20 border border-emerald-500/50 text-[var(--text-muted)]" 
                 : "bg-white/[0.04] border border-white/10 text-white/60 hover:text-white hover:bg-white/[0.07]"
             }`}
           >
@@ -409,13 +409,13 @@ function PracticeProblemsTab({
         <div className="space-y-3">
           <div className="flex items-center justify-between text-xs text-white/50 px-2">
             <span>Showing {filteredQs.length} verified practice problems</span>
-            <span className="text-emerald-400 font-bold">100% Program Isolated</span>
+            <span className="text-[var(--accent)] font-bold">100% Program Isolated</span>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {filteredQs.slice(0, 6).map((q) => (
               <div key={q.id} className="p-4 rounded-lg bg-white/[0.03] border border-white/10 hover:border-emerald-400/30 transition space-y-2">
                 <div className="flex items-center justify-between text-[11px]">
-                  <span className="font-bold text-emerald-300">{q.chapter}</span>
+                  <span className="font-bold text-[var(--text-muted)]">{q.chapter}</span>
                   <span className="px-2 py-0.5 rounded-md bg-white/10 text-white/80 font-mono">{q.marks} Mark(s) &bull; {q.difficulty}</span>
                 </div>
                 <p className="text-xs text-white/80 font-medium line-clamp-2">
@@ -423,7 +423,7 @@ function PracticeProblemsTab({
                 </p>
                 <div className="pt-2 flex items-center justify-between text-[11px] text-white/40">
                   <span>Source: {q.source}</span>
-                  <Link href="/daily-challenge" className="text-emerald-400 font-bold hover:underline">Solve Now &rarr;</Link>
+                  <Link href="/daily-challenge" className="text-[var(--accent)] font-bold hover:underline">Solve Now &rarr;</Link>
                 </div>
               </div>
             ))}
@@ -432,7 +432,7 @@ function PracticeProblemsTab({
       ) : (
         <div className="py-10 px-6 rounded-lg border border-white/[0.08] bg-[var(--surface)]/70 text-center space-y-3">
           <div className="flex h-12 w-12 items-center justify-center rounded-full bg-emerald-500/10 border border-emerald-500/20 mx-auto">
-            <AlertCircle className="h-6 w-6 text-emerald-400" />
+            <AlertCircle className="h-6 w-6 text-[var(--accent)]" />
           </div>
           <h4 className="text-base font-bold text-white">No Matching Practice Sets</h4>
           <p className="text-xs text-white/50 max-w-lg mx-auto leading-relaxed">
@@ -440,7 +440,7 @@ function PracticeProblemsTab({
           </p>
           <button 
             onClick={() => { setSelectedFormat("all"); setSelectedChapter("all"); }}
-            className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-300 text-xs font-bold border border-emerald-500/20 transition mt-1"
+            className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-emerald-500/10 hover:bg-emerald-500/20 text-[var(--text-muted)] text-xs font-bold border border-emerald-500/20 transition mt-1"
           >
             Reset Filters
           </button>
@@ -501,7 +501,7 @@ function PYQsTab({
         </div>
         <div className="p-5 rounded-lg bg-[var(--surface-2)] border border-[var(--border)] space-y-1">
           <div className="text-xs text-white/40 font-bold uppercase tracking-wider">Authenticity Status</div>
-          <div className="text-2xl font-black text-emerald-400">100% Honest</div>
+          <div className="text-2xl font-black text-[var(--accent)]">100% Honest</div>
           <div className="text-[11px] text-white/50">Zero AI-reconstructed replacements</div>
         </div>
         <div className="p-5 rounded-lg bg-[var(--surface-2)] border border-[var(--border)] space-y-1">
@@ -518,7 +518,7 @@ function PYQsTab({
             Search by keyword, filter by difficulty (Easy, Moderate, Hard, Olympiad), or take timed chapter-wise PYQ practice sets.
           </p>
         </div>
-        <Link href="/pyq" className="px-5 py-2.5 rounded-xl bg-yellow-500 hover:bg-yellow-400 text-black font-black text-xs transition shrink-0">
+        <Link href="/pyq" className="px-5 py-2.5 rounded-lg bg-yellow-500 hover:bg-yellow-400 text-black font-black text-xs transition shrink-0">
           Open PYQ Bank &rarr;
         </Link>
       </div>
@@ -553,7 +553,7 @@ function MockTestsTab({
     <div className="space-y-5">
       <div className="bg-[var(--surface)] border border-white/[0.08] p-5 rounded-lg shadow-sm">
         <h2 className="text-xl font-black text-white flex items-center gap-2">
-          <ClipboardList className="h-5 w-5 text-purple-400" /> Mock Test Simulation Center
+          <ClipboardList className="h-5 w-5 text-[var(--accent)]" /> Mock Test Simulation Center
         </h2>
         <p className="text-xs text-white/50 mt-1">
           Select a test format tailored for {programName}. Instant automated scoring and mistake analysis included.
@@ -568,7 +568,7 @@ function MockTestsTab({
                 <span className="font-black text-white text-base">{tc.label}</span>
                 <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full uppercase ${
                   tc.tag === "Essential" || tc.tag === "High Priority" || tc.tag === "Recommended"
-                    ? "bg-purple-500/20 text-purple-300 border border-purple-500/30"
+                    ? "bg-purple-500/20 text-[var(--text-muted)] border border-purple-500/30"
                     : "bg-white/10 text-white/60"
                 }`}>
                   {tc.tag}
@@ -576,7 +576,7 @@ function MockTestsTab({
               </div>
               <p className="text-xs text-white/55 mt-2 leading-relaxed">{tc.desc}</p>
             </div>
-            <Link href="/exam" className="w-full py-2.5 rounded-xl bg-purple-500/10 hover:bg-purple-500/20 text-purple-300 font-bold text-xs text-center border border-purple-500/30 transition block">
+            <Link href="/exam" className="w-full py-2.5 rounded-lg bg-purple-500/10 hover:bg-purple-500/20 text-[var(--text-muted)] font-bold text-xs text-center border border-purple-500/30 transition block">
               Launch Test Engine &rarr;
             </Link>
           </div>
@@ -658,10 +658,10 @@ function CustomTestGeneratorTab({
     <div className="space-y-5">
       <div className="bg-[var(--surface)] border border-white/[0.08] p-5 rounded-lg shadow-sm">
         <h2 className="text-xl font-black text-white flex items-center gap-2">
-          <Settings className="h-5 w-5 text-cyan-400" /> Custom Test Generator
+          <Settings className="h-5 w-5 text-[var(--accent)]" /> Custom Test Generator
         </h2>
         <p className="text-xs text-white/50 mt-1">
-          Build a custom examination paper. <strong className="text-cyan-300">Critical Rule Enforced:</strong> Previously served questions will not repeat across sessions until the unseen pool is exhausted.
+          Build a custom examination paper. <strong className="text-[var(--text-muted)]">Critical Rule Enforced:</strong> Previously served questions will not repeat across sessions until the unseen pool is exhausted.
         </p>
       </div>
 
@@ -674,7 +674,7 @@ function CustomTestGeneratorTab({
 
         <div className="space-y-1.5">
           <label className="text-[10px] font-bold uppercase tracking-wider text-white/50">2. Class Level</label>
-          <select value={selectedClass} onChange={(e) => setSelectedClass(e.target.value)} className="w-full bg-[var(--surface)] border border-white/10 rounded-xl px-3 py-2 text-xs font-bold text-white focus:border-cyan-400">
+          <select value={selectedClass} onChange={(e) => setSelectedClass(e.target.value)} className="w-full bg-[var(--surface)] border border-white/10 rounded-lg px-3 py-2 text-xs font-bold text-white focus:border-cyan-400">
             <option value="All">All Class Levels</option>
             <option value="Class 11">Class 11 Only</option>
             <option value="Class 12">Class 12 Only</option>
@@ -683,7 +683,7 @@ function CustomTestGeneratorTab({
 
         <div className="space-y-1.5">
           <label className="text-[10px] font-bold uppercase tracking-wider text-white/50">3. Chapter</label>
-          <select value={selectedChapter} onChange={(e) => setSelectedChapter(e.target.value)} className="w-full bg-[var(--surface)] border border-white/10 rounded-xl px-3 py-2 text-xs font-bold text-white focus:border-cyan-400">
+          <select value={selectedChapter} onChange={(e) => setSelectedChapter(e.target.value)} className="w-full bg-[var(--surface)] border border-white/10 rounded-lg px-3 py-2 text-xs font-bold text-white focus:border-cyan-400">
             <option value="all">All Chapters ({chapters.length})</option>
             {chapters.map((ch) => (
               <option key={ch.id} value={ch.name}>{ch.name}</option>
@@ -693,7 +693,7 @@ function CustomTestGeneratorTab({
 
         <div className="space-y-1.5">
           <label className="text-[10px] font-bold uppercase tracking-wider text-white/50">4. Unit</label>
-          <select value={selectedUnit} onChange={(e) => setSelectedUnit(e.target.value)} className="w-full bg-[var(--surface)] border border-white/10 rounded-xl px-3 py-2 text-xs font-bold text-white focus:border-cyan-400">
+          <select value={selectedUnit} onChange={(e) => setSelectedUnit(e.target.value)} className="w-full bg-[var(--surface)] border border-white/10 rounded-lg px-3 py-2 text-xs font-bold text-white focus:border-cyan-400">
             <option value="all">All Syllabus Units</option>
             <option value="physical">Physical Chemistry</option>
             <option value="inorganic">Inorganic Chemistry</option>
@@ -703,14 +703,14 @@ function CustomTestGeneratorTab({
 
         <div className="space-y-1.5">
           <label className="text-[10px] font-bold uppercase tracking-wider text-white/50">5. Topic</label>
-          <select value={selectedTopic} onChange={(e) => setSelectedTopic(e.target.value)} className="w-full bg-[var(--surface)] border border-white/10 rounded-xl px-3 py-2 text-xs font-bold text-white focus:border-cyan-400">
+          <select value={selectedTopic} onChange={(e) => setSelectedTopic(e.target.value)} className="w-full bg-[var(--surface)] border border-white/10 rounded-lg px-3 py-2 text-xs font-bold text-white focus:border-cyan-400">
             <option value="all">All Topics</option>
           </select>
         </div>
 
         <div className="space-y-1.5">
           <label className="text-[10px] font-bold uppercase tracking-wider text-white/50">6. Question Type</label>
-          <select value={selectedQType} onChange={(e) => setSelectedQType(e.target.value)} className="w-full bg-[var(--surface)] border border-white/10 rounded-xl px-3 py-2 text-xs font-bold text-white focus:border-cyan-400">
+          <select value={selectedQType} onChange={(e) => setSelectedQType(e.target.value)} className="w-full bg-[var(--surface)] border border-white/10 rounded-lg px-3 py-2 text-xs font-bold text-white focus:border-cyan-400">
             <option value="All">All Types</option>
             <option value="MCQ-Single">MCQ Single Correct</option>
             <option value="MCQ-Multiple">MCQ Multiple Correct</option>
@@ -721,7 +721,7 @@ function CustomTestGeneratorTab({
 
         <div className="space-y-1.5">
           <label className="text-[10px] font-bold uppercase tracking-wider text-white/50">7. Difficulty</label>
-          <select value={selectedDiff} onChange={(e) => setSelectedDiff(e.target.value)} className="w-full bg-[var(--surface)] border border-white/10 rounded-xl px-3 py-2 text-xs font-bold text-white focus:border-cyan-400">
+          <select value={selectedDiff} onChange={(e) => setSelectedDiff(e.target.value)} className="w-full bg-[var(--surface)] border border-white/10 rounded-lg px-3 py-2 text-xs font-bold text-white focus:border-cyan-400">
             <option value="All">All Difficulties</option>
             <option value="Easy">Easy</option>
             <option value="Moderate">Moderate</option>
@@ -732,7 +732,7 @@ function CustomTestGeneratorTab({
 
         <div className="space-y-1.5">
           <label className="text-[10px] font-bold uppercase tracking-wider text-white/50">8. Marks per Q</label>
-          <select value={selectedMarks} onChange={(e) => setSelectedMarks(Number(e.target.value))} className="w-full bg-[var(--surface)] border border-white/10 rounded-xl px-3 py-2 text-xs font-bold text-white focus:border-cyan-400">
+          <select value={selectedMarks} onChange={(e) => setSelectedMarks(Number(e.target.value))} className="w-full bg-[var(--surface)] border border-white/10 rounded-lg px-3 py-2 text-xs font-bold text-white focus:border-cyan-400">
             <option value={1}>1 Mark</option>
             <option value={2}>2 Marks</option>
             <option value={3}>3 Marks</option>
@@ -743,7 +743,7 @@ function CustomTestGeneratorTab({
 
         <div className="space-y-1.5">
           <label className="text-[10px] font-bold uppercase tracking-wider text-white/50">9. No. of Questions</label>
-          <select value={questionCount} onChange={(e) => setQuestionCount(Number(e.target.value))} className="w-full bg-[var(--surface)] border border-white/10 rounded-xl px-3 py-2 text-xs font-bold text-white focus:border-cyan-400">
+          <select value={questionCount} onChange={(e) => setQuestionCount(Number(e.target.value))} className="w-full bg-[var(--surface)] border border-white/10 rounded-lg px-3 py-2 text-xs font-bold text-white focus:border-cyan-400">
             <option value={5}>5 Questions</option>
             <option value={10}>10 Questions</option>
             <option value={15}>15 Questions</option>
@@ -754,7 +754,7 @@ function CustomTestGeneratorTab({
 
         <div className="space-y-1.5">
           <label className="text-[10px] font-bold uppercase tracking-wider text-white/50">10. Duration (Mins)</label>
-          <select value={testDuration} onChange={(e) => setTestDuration(Number(e.target.value))} className="w-full bg-[var(--surface)] border border-white/10 rounded-xl px-3 py-2 text-xs font-bold text-white focus:border-cyan-400">
+          <select value={testDuration} onChange={(e) => setTestDuration(Number(e.target.value))} className="w-full bg-[var(--surface)] border border-white/10 rounded-lg px-3 py-2 text-xs font-bold text-white focus:border-cyan-400">
             <option value={15}>15 Minutes</option>
             <option value={30}>30 Minutes</option>
             <option value={45}>45 Minutes</option>
@@ -786,7 +786,7 @@ function CustomTestGeneratorTab({
                 {generatedTest.newlyServedCount} fresh unseen questions &bull; {generatedTest.recycledCount} recycled (unseen pool exhausted)
               </p>
             </div>
-            <Link href="/exam" className="px-4 py-2 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-black font-bold text-xs transition">
+            <Link href="/exam" className="px-4 py-2 rounded-lg bg-emerald-500 hover:bg-emerald-400 text-black font-bold text-xs transition">
               Start Test Now &rarr;
             </Link>
           </div>
@@ -823,7 +823,7 @@ function AITutorTab({ programName }: { programName: string }) {
     <div className="space-y-5">
       <div className="bg-[var(--surface)] border border-white/[0.08] p-5 rounded-lg shadow-sm">
         <h2 className="text-xl font-black text-white flex items-center gap-2">
-          <Sparkles className="h-5 w-5 text-cyan-400" /> AI Coach &amp; Doubt Solver
+          <Sparkles className="h-5 w-5 text-[var(--accent)]" /> AI Coach &amp; Doubt Solver
         </h2>
         <p className="text-xs text-white/50 mt-1">
           24/7 intelligent tutoring tuned specifically to {programName} curriculum standards and examination depth.
@@ -840,10 +840,10 @@ function AITutorTab({ programName }: { programName: string }) {
             <Link 
               key={idx} 
               href="/tutor" 
-              className="p-3 rounded-xl bg-white/[0.03] hover:bg-white/[0.06] border border-white/[0.06] hover:border-cyan-500/30 text-xs text-white/80 transition flex items-center justify-between group"
+              className="p-3 rounded-lg bg-white/[0.03] hover:bg-white/[0.06] border border-white/[0.06] hover:border-cyan-500/30 text-xs text-white/80 transition flex items-center justify-between group"
             >
               <span>{p}</span>
-              <ArrowRight className="h-4 w-4 text-white/30 group-hover:text-cyan-400 group-hover:translate-x-1 transition" />
+              <ArrowRight className="h-4 w-4 text-white/30 group-hover:text-[var(--accent)] group-hover:translate-x-1 transition" />
             </Link>
           ))}
         </div>
@@ -874,7 +874,7 @@ function AnalyticsTab({ programName, chapters }: { programName: string; chapters
   ];
 
   const metricColors = [
-    "text-emerald-400", "text-cyan-400", "text-sky-400", "text-violet-400",
+    "text-[var(--accent)]", "text-[var(--accent)]", "text-sky-400", "text-[var(--accent)]",
     "text-rose-400", "text-amber-400", "text-indigo-400", "text-teal-400",
   ];
   const metricBg = [
@@ -912,7 +912,7 @@ function AnalyticsTab({ programName, chapters }: { programName: string; chapters
             View chapter-wise speed vs. accuracy scatter plots and mistake root-cause breakdown.
           </p>
         </div>
-        <Link href="/analytics" className="px-5 py-2.5 rounded-xl bg-rose-500 hover:bg-rose-400 text-black font-black text-xs transition shrink-0">
+        <Link href="/analytics" className="px-5 py-2.5 rounded-lg bg-rose-500 hover:bg-rose-400 text-black font-black text-xs transition shrink-0">
           Open Full Analytics Desk &rarr;
         </Link>
       </div>
@@ -937,7 +937,7 @@ function MentorshipTab({ programName }: { programName: string }) {
     <div className="space-y-5">
       <div className="bg-[var(--surface)] border border-white/[0.08] p-5 rounded-lg shadow-sm">
         <h2 className="text-xl font-black text-white flex items-center gap-2">
-          <Users className="h-5 w-5 text-violet-400" /> Mentorship &amp; Guidance Desk
+          <Users className="h-5 w-5 text-[var(--accent)]" /> Mentorship &amp; Guidance Desk
         </h2>
         <p className="text-xs text-white/50 mt-1">
           Structured guidance and support resources for {programName}.
@@ -950,13 +950,13 @@ function MentorshipTab({ programName }: { programName: string }) {
             <div>
               <div className="flex items-center justify-between gap-2">
                 <span className="font-black text-white text-sm">{p.title}</span>
-                <span className="shrink-0 text-[9px] font-bold px-2 py-0.5 rounded-full bg-violet-500/15 text-violet-300 border border-violet-500/25 uppercase">{p.status}</span>
+                <span className="shrink-0 text-[9px] font-bold px-2 py-0.5 rounded-full bg-violet-500/15 text-[var(--text-muted)] border border-violet-500/25 uppercase">{p.status}</span>
               </div>
               <p className="text-xs text-white/55 mt-2 leading-relaxed">{p.desc}</p>
             </div>
             <Link
               href="/coach"
-              className="flex items-center justify-end gap-1 pt-2 border-t border-white/[0.08] text-[11px] font-bold text-violet-400 hover:text-violet-300 transition"
+              className="flex items-center justify-end gap-1 pt-2 border-t border-white/[0.08] text-[11px] font-bold text-[var(--accent)] hover:text-[var(--text-muted)] transition"
             >
               View Portal <ArrowRight className="h-3 w-3" />
             </Link>
@@ -990,7 +990,7 @@ function ProjectsPracticalsTab({
     <div className="space-y-5">
       <div className="bg-[var(--surface)] border border-white/[0.08] p-5 rounded-lg shadow-sm">
         <h2 className="text-xl font-black text-white flex items-center gap-2">
-          <FlaskConical className="h-5 w-5 text-cyan-400" /> Projects &amp; Practicals Center
+          <FlaskConical className="h-5 w-5 text-[var(--accent)]" /> Projects &amp; Practicals Center
         </h2>
         <p className="text-xs text-white/50 mt-1">
           Complete laboratory, investigatory project, and viva preparation suite for {programName}.
@@ -1003,11 +1003,11 @@ function ProjectsPracticalsTab({
             <div>
               <div className="flex items-center justify-between gap-2">
                 <span className="font-black text-white text-sm">{pr.title}</span>
-                <span className="shrink-0 text-[9px] font-bold px-2 py-0.5 rounded-full bg-cyan-500/15 text-cyan-300 border border-cyan-500/25 uppercase">{pr.tag}</span>
+                <span className="shrink-0 text-[9px] font-bold px-2 py-0.5 rounded-full bg-cyan-500/15 text-[var(--text-muted)] border border-cyan-500/25 uppercase">{pr.tag}</span>
               </div>
               <p className="text-xs text-white/55 mt-2 leading-relaxed">{pr.desc}</p>
             </div>
-            <Link href="/lab" className="flex items-center justify-end gap-1 pt-2 border-t border-white/[0.08] text-xs font-bold text-cyan-400 hover:text-cyan-300 transition">
+            <Link href="/lab" className="flex items-center justify-end gap-1 pt-2 border-t border-white/[0.08] text-xs font-bold text-[var(--accent)] hover:text-[var(--text-muted)] transition">
               Open Practical Guide <ArrowRight className="h-3 w-3" />
             </Link>
           </div>

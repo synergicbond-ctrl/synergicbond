@@ -130,7 +130,7 @@ export default function BetaTracker() {
           <select
             value={rating}
             onChange={(event) => setRating(Number(event.target.value))}
-            className="mt-1 w-full rounded-lg border border-white/10 bg-black px-3 py-2 text-sm text-white"
+            className="mt-1 w-full rounded-lg border border-white/10 bg-[var(--background)] px-3 py-2 text-sm text-white"
           >
             {[5, 4, 3, 2, 1].map((value) => (
               <option key={value} value={value}>{value}</option>
@@ -143,7 +143,7 @@ export default function BetaTracker() {
           <input
             value={mostUsefulFeature}
             onChange={(event) => setMostUsefulFeature(event.target.value)}
-            className="mt-1 w-full rounded-lg border border-white/10 bg-black px-3 py-2 text-sm text-white"
+            className="mt-1 w-full rounded-lg border border-white/10 bg-[var(--background)] px-3 py-2 text-sm text-white"
           />
         </label>
 
@@ -152,7 +152,7 @@ export default function BetaTracker() {
           <textarea
             value={biggestIssue}
             onChange={(event) => setBiggestIssue(event.target.value)}
-            className="mt-1 min-h-20 w-full rounded-lg border border-white/10 bg-black px-3 py-2 text-sm text-white"
+            className="mt-1 min-h-20 w-full rounded-lg border border-white/10 bg-[var(--background)] px-3 py-2 text-sm text-white"
           />
         </label>
 

@@ -3,7 +3,7 @@ import type { Mechanism } from "@/lib/mechanismSchema";
 export default function StereoCard({ s }: { s: Mechanism["stereochemistry"] }) {
   return (
     <div className="rounded-lg border border-white/[0.08] bg-[var(--surface)] p-4">
-      <div className="mb-1.5 flex items-center gap-2 text-sm font-black text-cyan-300">🔄 Stereochemistry</div>
+      <div className="mb-1.5 flex items-center gap-2 text-sm font-black text-[var(--accent)]">🔄 Stereochemistry</div>
       {s.applicable ? (
         <>
           <p className="text-[13px] text-white/75">{s.summary}</p>

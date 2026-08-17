@@ -6,7 +6,7 @@ import type { Example } from "@/lib/mechanismSchema";
 
 const TIERS = ["All", "Basic", "JEE Main", "JEE Advanced", "Olympiad", "PYQ"] as const;
 const TIER_TONE: Record<string, string> = {
-  Basic: "text-emerald-300", "JEE Main": "text-cyan-300", "JEE Advanced": "text-amber-300", Olympiad: "text-rose-300", PYQ: "text-violet-300",
+  Basic: "text-emerald-300", "JEE Main": "text-[var(--accent)]", "JEE Advanced": "text-amber-300", Olympiad: "text-rose-300", PYQ: "text-[var(--accent)]",
 };
 
 export default function ExamplesEngine({ examples }: { examples: Example[] }) {

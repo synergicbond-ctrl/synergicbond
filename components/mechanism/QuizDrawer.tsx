@@ -23,7 +23,7 @@ export default function QuizDrawer({ open, onClose, name, examples }: { open: bo
   function restart() { setI(0); setShow(false); setScore(0); setDone(false); }
 
   return (
-    <div className="fixed inset-0 z-[120] flex items-center justify-center bg-black/75 backdrop-blur-sm p-0 sm:p-6" onClick={onClose}>
+    <div className="fixed inset-0 z-[120] flex items-center justify-center bg-[var(--background)]/75 backdrop-blur-sm p-0 sm:p-6" onClick={onClose}>
       <div className="flex h-full w-full flex-col sm:h-auto sm:max-w-md sm:rounded-lg border border-white/[0.08] bg-[var(--surface)] shadow-2xl" onClick={(e) => e.stopPropagation()}>
         <div className="flex items-center justify-between border-b border-white/[0.06] px-5 py-3.5">
           <span className="text-sm font-bold text-white">Quiz · {name}</span>

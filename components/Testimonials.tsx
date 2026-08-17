@@ -113,7 +113,7 @@ export default function Testimonials() {
 
             <div className="relative z-10">
               {item.hasVideo && (
-                <button className="relative rounded-xl bg-black/50 border border-white/10 h-12 mb-5 flex items-center justify-between w-full px-4 group/btn cursor-pointer overflow-hidden transition-all duration-300 hover:border-[var(--border-strong)] hover:bg-black/70 shadow-inner">
+                <button className="relative rounded-lg bg-[var(--background)]/50 border border-white/10 h-12 mb-5 flex items-center justify-between w-full px-4 group/btn cursor-pointer overflow-hidden transition-all duration-300 hover:border-[var(--border-strong)] hover:bg-[var(--background)]/70 shadow-inner">
                   <div className="absolute inset-0 bg-[var(--surface)] -500/10 to-transparent opacity-50 group-hover/btn:opacity-100 transition-opacity" />
                   <div className="flex items-center gap-3">
                     <div className="relative flex h-7 w-7 items-center justify-center rounded-full bg-[var(--surface-2)] border border-[var(--border-strong)] group-hover/btn:scale-110 group-hover/btn:bg-[var(--surface-2)] transition">

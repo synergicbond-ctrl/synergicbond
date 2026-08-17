@@ -30,7 +30,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   if (!program) return {};
   return {
     title: `${program.name} Learn — SYNERGIC BOND`,
-    description: `${program.name} chemistry learning hub — chapters, notes, formula cards, knowledge vault, molecule explorer and NCERT highlights.`,
+    description: `${program.name} chemistry learning hub — chapters, notes, formula cards, knowledge vault, molecule explorer and NCERT intelligence.`,
   };
 }
 
@@ -40,7 +40,7 @@ const LEARN_MODULES = [
   { href: "/formula-cards", icon: "🧮", title: "Formula Cards", desc: "Physical chemistry formulas with variables, units and PYQ links.", metric: `${formulaCards.length} cards` },
   { href: "/vault", icon: "🏛️", title: "Knowledge Vault", desc: "Saved concepts, formula vault, exceptions and quick facts.", metric: "Memory bank" },
   { href: "/molecule", icon: "⚛️", title: "Molecule Explorer", desc: "Look up structures, properties and exam relevance of any compound.", metric: "Explorer" },
-  { href: "/notes", icon: "📗", title: "NCERT Highlights", desc: "Line-by-line NCERT highlight blocks inside every chapter's notes.", metric: "In notes" },
+  { href: "/ncert", icon: "📗", title: "NCERT Intelligence", desc: "Chapter-level NCERT blind-spot analysis and gap identification.", metric: "Intelligence" },
 ] as const;
 
 const BRANCH_LABEL: Record<string, string> = {
@@ -58,7 +58,7 @@ export default async function ProgramLearnPage({ params }: { params: Promise<{ s
   const chapters = examTags.length > 0 ? examChapters(examTags) : [];
 
   return (
-    <main className="min-h-screen bg-black text-white">
+    <main className="min-h-screen bg-[var(--background)] text-white">
       <ProgramPageHeader
         program={program}
         section="Learn"
@@ -68,7 +68,7 @@ export default async function ProgramLearnPage({ params }: { params: Promise<{ s
       <div className="mx-auto max-w-6xl px-6 py-12">
         <section className="mb-12">
           <h2 className="mb-2 text-2xl font-bold">Learn Modules</h2>
-          <p className="mb-6 text-zinc-500">Verified systems already connected to search, PYQs and tests</p>
+          <p className="mb-6 text-[var(--text-muted)]">Verified systems already connected to search, PYQs and tests</p>
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {LEARN_MODULES.map((mod) => (
               <Link
@@ -81,7 +81,7 @@ export default async function ProgramLearnPage({ params }: { params: Promise<{ s
                   <span className="rounded-md bg-white/[0.06] px-2 py-1 text-[11px] font-bold text-white/55">{mod.metric}</span>
                 </div>
                 <div className="mt-3 font-bold text-white">{mod.title}</div>
-                <div className="mt-1 flex-1 text-sm text-zinc-400">{mod.desc}</div>
+                <div className="mt-1 flex-1 text-sm text-[var(--text-muted)]">{mod.desc}</div>
                 <div className={`mt-3 text-sm font-semibold ${accent.text}`}>
                   Open <span className="inline-block transition group-hover:translate-x-1">→</span>
                 </div>
@@ -90,48 +90,13 @@ export default async function ProgramLearnPage({ params }: { params: Promise<{ s
           </div>
         </section>
 
-        {/* JEE_ADVANCED_NOTES_SPOTLIGHT */}
-        {slug === "jee-advanced" && (
-          <section className="mb-12">
-            <div className="mb-5">
-              <div className="text-xs font-black uppercase tracking-[0.25em] text-sky-400">
-                Full JEE Advanced Notes
-              </div>
-              <h2 className="mt-1 text-2xl font-black">Inorganic Chemistry Notes</h2>
-              <p className="mt-2 text-sm text-zinc-500">
-                P-Block and Qualitative Analysis are two independent chapters.
-              </p>
-            </div>
-
-            <div className="grid gap-4 md:grid-cols-2">
-              <Link
-                href="/programs/jee-advanced/chapter/p-block-elements#learn"
-                className="rounded-lg border border-[var(--accent)]/30 bg-[var(--accent)]/10[0.08] p-5 transition hover:border-[var(--accent)]/30"
-              >
-                <span className="text-[10px] font-black uppercase text-[var(--accent)]">Full Notes</span>
-                <h3 className="mt-3 text-xl font-black">P-Block Elements</h3>
-                <p className="mt-2 text-sm text-zinc-400">Groups 15–18 complete notes.</p>
-                <div className="mt-4 font-bold text-[var(--accent)]">Open full notes →</div>
-              </Link>
-
-              <Link
-                href="/programs/jee-advanced/chapter/qualitative-analysis#learn"
-                className="rounded-lg border border-violet-400/30 bg-violet-500/[0.08] p-5 transition hover:border-violet-300/60"
-              >
-                <span className="text-[10px] font-black uppercase text-[var(--text-muted)]">Full Notes</span>
-                <h3 className="mt-3 text-xl font-black">Salt Analysis / Qualitative Analysis</h3>
-                <p className="mt-2 text-sm text-zinc-400">Complete qualitative analysis notes.</p>
-                <div className="mt-4 font-bold text-[var(--text-muted)]">Open full notes →</div>
-              </Link>
-            </div>
-          </section>
-        )}
+        {/* JEE Advanced premium notes are spotlighted on the program hub page — not duplicated here */}
 
         <section>
           <h2 className="mb-2 text-2xl font-bold">Chapters</h2>
           {chapters.length > 0 ? (
             <>
-              <p className="mb-6 text-zinc-500">
+              <p className="mb-6 text-[var(--text-muted)]">
                 {chapters.length} chapters from the verified {name} syllabus — authored chapters open their full
                 notes; every chapter keeps its Chapter Engine (mastery, PYQs, tests, error analysis, AI tutor)
               </p>
@@ -154,7 +119,7 @@ export default async function ProgramLearnPage({ params }: { params: Promise<{ s
                   return (
                     <div
                       key={chapter.id}
-                      className={`group relative flex flex-col rounded-xl border bg-white/[0.02] p-4 transition hover:bg-white/[0.04] ${accent.card}`}
+                      className={`group relative flex flex-col rounded-lg border bg-white/[0.02] p-4 transition hover:bg-white/[0.04] ${accent.card}`}
                     >
                       <div className="flex items-start justify-between gap-2">
                         <div className="text-[11px] font-bold uppercase tracking-wider text-white/40">
@@ -194,7 +159,7 @@ export default async function ProgramLearnPage({ params }: { params: Promise<{ s
           ) : (
             <div className="rounded-lg border border-white/10 bg-white/[0.02] p-8 text-center">
               <h3 className="text-lg font-bold">Verified chapter mapping in progress</h3>
-              <p className="mx-auto mt-2 max-w-lg text-sm leading-relaxed text-zinc-400">
+              <p className="mx-auto mt-2 max-w-lg text-sm leading-relaxed text-[var(--text-muted)]">
                 The chapter-by-chapter {name} syllabus is being mapped from official sources — no
                 unverified content ships here. The learn modules above are fully available and cover
                 the core Class 11–12 chemistry this program builds on.
@@ -204,7 +169,7 @@ export default async function ProgramLearnPage({ params }: { params: Promise<{ s
         </section>
 
         <div className="mt-12 text-center">
-          <Link href={`/programs/${slug}`} className="text-sm text-zinc-500 transition hover:text-white">
+          <Link href={`/programs/${slug}`} className="text-sm text-[var(--text-muted)] transition hover:text-white">
             ← Back to {name} program
           </Link>
         </div>

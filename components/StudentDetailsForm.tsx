@@ -216,14 +216,14 @@ export default function StudentDetailsForm({ open, onClose, onComplete, userEmai
 
   return (
     <div
-      className="sb-modal-overlay fixed inset-0 z-[100] flex items-end justify-center bg-black/70 backdrop-blur-sm sm:items-center sm:p-4"
+      className="sb-modal-overlay fixed inset-0 z-[100] flex items-end justify-center bg-[var(--background)]/70 backdrop-blur-sm sm:items-center sm:p-4"
       onClick={handleClose}
       role="dialog"
       aria-modal="true"
       aria-labelledby="student-details-title"
     >
       <div
-        className="sb-modal-panel relative flex max-h-[90vh] w-full max-w-md flex-col overflow-hidden rounded-t-3xl border border-white/[0.08] bg-[var(--surface)] shadow-2xl sm:rounded-lg"
+        className="sb-modal-panel relative flex max-h-[90vh] w-full max-w-md flex-col overflow-hidden rounded-t-lg border border-white/[0.08] bg-[var(--surface)] shadow-2xl sm:rounded-lg"
         onClick={(e) => e.stopPropagation()}
       >
         <button
@@ -263,7 +263,7 @@ export default function StudentDetailsForm({ open, onClose, onComplete, userEmai
               </a>
               <a
                 href={signUpHref}
-                className="flex w-full items-center justify-center gap-2 rounded-xl border border-white/15 bg-white/5 py-3 text-sm font-bold text-white transition hover:bg-white/10"
+                className="flex w-full items-center justify-center gap-2 rounded-lg border border-white/15 bg-white/5 py-3 text-sm font-bold text-white transition hover:bg-white/10"
               >
                 <UserPlus className="h-4 w-4" /> Create Account
               </a>
@@ -284,7 +284,7 @@ export default function StudentDetailsForm({ open, onClose, onComplete, userEmai
           </div>
 
           {errors.form && (
-            <div className="mb-4 p-3 rounded-xl bg-red-500/10 border border-red-500/20 text-[11px] text-red-400 font-semibold">
+            <div className="mb-4 p-3 rounded-lg bg-red-500/10 border border-red-500/20 text-[11px] text-red-400 font-semibold">
               {errors.form}
             </div>
           )}
@@ -365,7 +365,7 @@ export default function StudentDetailsForm({ open, onClose, onComplete, userEmai
                     key={c.value}
                     type="button"
                     onClick={() => setClassStd(c.value)}
-                    className={`py-2 rounded-xl text-[11px] font-bold transition ${
+                    className={`py-2 rounded-lg text-[11px] font-bold transition ${
                       classStd === c.value
                         ? "bg-cyan-500 text-black"
                         : "bg-white/5 border border-white/5 text-white/50 hover:bg-white/10"
@@ -389,7 +389,7 @@ export default function StudentDetailsForm({ open, onClose, onComplete, userEmai
                     key={b.value}
                     type="button"
                     onClick={() => setBoardProg(b.value)}
-                    className={`py-2 rounded-xl text-[11px] font-bold transition ${
+                    className={`py-2 rounded-lg text-[11px] font-bold transition ${
                       boardProg === b.value
                         ? "bg-cyan-500 text-black"
                         : "bg-white/5 border border-white/5 text-white/50 hover:bg-white/10"
@@ -463,7 +463,7 @@ export default function StudentDetailsForm({ open, onClose, onComplete, userEmai
               type="checkbox"
               checked={confirmed}
               onChange={(e) => setConfirmed(e.target.checked)}
-              className="mt-0.5 rounded border-white/10 bg-black/50 text-cyan-500 focus:ring-0 focus:ring-offset-0 h-3.5 w-3.5"
+              className="mt-0.5 rounded border-white/10 bg-[var(--background)]/50 text-[var(--accent)] focus:ring-0 focus:ring-offset-0 h-3.5 w-3.5"
             />
             <span className="text-[10px] text-white/70 leading-normal">
               I confirm that the above information is correct.

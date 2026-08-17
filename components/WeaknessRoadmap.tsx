@@ -84,7 +84,7 @@ export default function WeaknessRoadmap() {
         />
         <button
           onClick={() => generate(topic)}
-          className="rounded-xl bg-[var(--accent)] px-5 py-2.5 text-sm font-bold text-black transition hover:-translate-y-0.5"
+          className="rounded-lg bg-[var(--accent)] px-5 py-2.5 text-sm font-bold text-black transition hover:-translate-y-0.5"
         >
           Build My Plan
         </button>
@@ -109,7 +109,7 @@ export default function WeaknessRoadmap() {
           {days.map((d) => {
             const Icon = d.icon;
             return (
-              <div key={d.day} className="rounded-lg bg-black/30 border border-white/[0.06] p-4">
+              <div key={d.day} className="rounded-lg bg-[var(--background)]/30 border border-white/[0.06] p-4">
                 <div className="flex items-center gap-2 mb-3">
                   <div className="p-1.5 rounded-lg" style={{ background: `${d.accent}1a` }}>
                     <Icon className="h-4 w-4" style={{ color: d.accent }} />

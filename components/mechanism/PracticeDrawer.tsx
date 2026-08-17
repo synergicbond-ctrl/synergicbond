@@ -10,7 +10,7 @@ export default function PracticeDrawer({ open, onClose, name, examples }: { open
   const [revealed, setRevealed] = useState<Set<number>>(new Set());
   if (!open) return null;
   return (
-    <div className="fixed inset-0 z-[120] flex items-end sm:items-center sm:justify-center bg-black/70 backdrop-blur-sm" onClick={onClose}>
+    <div className="fixed inset-0 z-[120] flex items-end sm:items-center sm:justify-center bg-[var(--background)]/70 backdrop-blur-sm" onClick={onClose}>
       <div
         className="w-full sm:max-w-lg max-h-[85vh] overflow-y-auto rounded-t-lg sm:rounded-lg border border-white/[0.08] bg-[var(--surface)] shadow-2xl"
         onClick={(e) => e.stopPropagation()}

@@ -170,7 +170,8 @@ export function AtomicLessonShell({ lesson, children }: { lesson: number; childr
 
       {/* ── Two-column reading surface ── */}
       <div className="sbnSidebarBody">
-        <article className="sbnCanvas">
+        {/* Prose column: max 720px so lines stay at 65–72 chars */}
+        <article className="sbnCanvas" style={{ maxWidth: "720px" }}>
           {/* Lesson hero — coloured by concept group, open, no card */}
           {meta && (
             <TopicHeader
@@ -218,10 +219,13 @@ export function AtomicLessonShell({ lesson, children }: { lesson: number; childr
 }
 
 export function SourcePage({ page: _page, children }: { page: number; children: ReactNode }) {
+  /* Pure rhythm grouping — no border. The open canvas should read as prose,
+     not as a stack of bordered panels. Vertical spacing separates content
+     groups without adding visual containers. */
   return (
-    <section className="space-y-4 border-l-2 border-cyan-400/30 pl-4 sm:pl-6">
+    <div style={{ display: "flex", flexDirection: "column", gap: "1.25rem" }}>
       {children}
-    </section>
+    </div>
   );
 }
 
@@ -251,9 +255,9 @@ export function NoteBlock({ title, children }: { title?: string; children: React
         style={{
           display: "flex",
           flexDirection: "column",
-          gap: "0.65rem",
-          fontSize: "0.9625rem",
-          lineHeight: 1.72,
+          gap: "0.75rem",
+          fontSize: "1rem",
+          lineHeight: 1.78,
           color: "var(--text-body)",
         }}
       >
@@ -307,7 +311,32 @@ export function LearningObjectives({ items }: { items: ReactNode[] }) {
 }
 
 export function ImportantNote({ title, children }: { title: string; children: ReactNode }) {
-  return <aside className="rounded-xl border border-amber-300/20 bg-amber-300/[0.06] p-4" aria-label={title}><h3 className="text-sm font-black text-amber-100">{title}</h3><div className="mt-2 text-sm leading-relaxed text-amber-50/85">{children}</div></aside>;
+  return (
+    <aside
+      aria-label={title}
+      style={{
+        borderLeft: "3px solid var(--chem-energy)",
+        paddingLeft: "1rem",
+        paddingTop: "0.1rem",
+      }}
+    >
+      <p
+        className="sb-tech-label"
+        style={{
+          fontSize: "9px",
+          fontWeight: 900,
+          letterSpacing: "0.2em",
+          color: "var(--chem-energy)",
+          marginBottom: "0.4rem",
+        }}
+      >
+        {title}
+      </p>
+      <div style={{ fontSize: "0.9375rem", lineHeight: 1.68, color: "var(--text-body)" }}>
+        {children}
+      </div>
+    </aside>
+  );
 }
 
 export function SummaryStrip({ items }: { items: ReactNode[] }) {
@@ -315,8 +344,18 @@ export function SummaryStrip({ items }: { items: ReactNode[] }) {
 }
 
 export function FormulaLine({ math }: { math: string }) {
+  /* Displayed equations deserve their own visual weight — a subtle left accent
+     and breathing room signals "this is a result, not running prose". */
   return (
-    <div className="overflow-x-auto text-cyan-100 [&_.katex-display]:my-1">
+    <div
+      style={{
+        margin: "0.5rem 0",
+        paddingLeft: "1rem",
+        borderLeft: "3px solid var(--accent)",
+        overflowX: "auto",
+      }}
+      className="[&_.katex-display]:my-1 [&_.katex]:text-[var(--foreground)]"
+    >
       <BlockMath math={math} />
     </div>
   );
@@ -328,10 +367,21 @@ export function MathText({ math }: { math: string }) {
 
 export function BulletList({ items }: { items: ReactNode[] }) {
   return (
-    <ul className="space-y-2">
+    <ul style={{ display: "flex", flexDirection: "column", gap: "0.55rem", listStyle: "none", margin: 0, padding: 0 }}>
       {items.map((item, index) => (
-        <li key={index} className="flex gap-3">
-          <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-fuchsia-400" />
+        <li key={index} style={{ display: "flex", gap: "0.75rem", fontSize: "1rem", lineHeight: 1.72, color: "var(--text-body)" }}>
+          <span
+            aria-hidden
+            style={{
+              marginTop: "0.6rem",
+              width: "6px",
+              height: "6px",
+              borderRadius: "50%",
+              flexShrink: 0,
+              background: "var(--chem-bond)",
+              opacity: 0.7,
+            }}
+          />
           <span>{item}</span>
         </li>
       ))}
@@ -375,12 +425,45 @@ export function DataTable({
 }
 
 export function DiagramBox({ title, children }: { title: string; children: ReactNode }) {
+  /* Figures are separated from prose by whitespace and a neutral frame —
+     the diagram is the visual hero, not the container it sits in. */
   return (
-    <figure className="rounded-lg border border-cyan-400/20 bg-cyan-400/[0.04] p-4">
-      <figcaption className="mb-3 text-xs font-black uppercase tracking-[0.2em] text-cyan-200">
-        Diagram: {title}
+    <figure
+      style={{
+        margin: "0.5rem 0",
+        borderRadius: "var(--radius)",
+        border: "1px solid var(--border)",
+        background: "var(--surface)",
+        overflow: "hidden",
+      }}
+    >
+      <div
+        style={{
+          display: "flex",
+          flexWrap: "wrap",
+          alignItems: "center",
+          justifyContent: "center",
+          gap: "1rem",
+          padding: "1.5rem 1.25rem 1rem",
+        }}
+        className="[&>p]:w-full [&>div]:w-full [&>figure]:w-full [&_svg]:h-auto [&>svg]:w-full [&>svg]:max-w-lg"
+      >
+        {children}
+      </div>
+      <figcaption
+        style={{
+          borderTop: "1px solid var(--border)",
+          padding: "0.55rem 1.25rem",
+          fontFamily: "var(--font-mono), ui-monospace, monospace",
+          fontSize: "9.5px",
+          fontWeight: 900,
+          letterSpacing: "0.18em",
+          textTransform: "uppercase",
+          color: "var(--text-muted)",
+        }}
+      >
+        {title}
       </figcaption>
-      <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-3 [&>p]:w-full [&>div]:w-full [&>figure]:w-full [&_svg]:h-auto [&>svg]:w-full [&>svg]:max-w-lg">{children}</div>
     </figure>
   );
 }

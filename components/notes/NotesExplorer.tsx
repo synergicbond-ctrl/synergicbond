@@ -93,7 +93,7 @@ function StrictSectionBody({ chapter, section }: { chapter: NotesChapter; sectio
           <div className="space-y-4">
             <h4 className="text-xs font-bold uppercase tracking-wider text-white/40">📖 Core Theory &amp; Concepts</h4>
             {chapter.detailedNotes.map((b, i) => (
-              <div key={i} className="rounded-2xl border border-white/[0.07] bg-[#111827] p-4 space-y-2">
+              <div key={i} className="rounded-sm border p-4 space-y-2">
                 <h5 className="text-sm font-black text-white">{b.heading}</h5>
                 <Bullets items={b.points} />
               </div>
@@ -113,7 +113,7 @@ function StrictSectionBody({ chapter, section }: { chapter: NotesChapter; sectio
             <div className="space-y-3">
               <h4 className="text-xs font-bold uppercase tracking-wider text-white/40">📐 Essential Derivations</h4>
               {chapter.derivations.map((d, i) => (
-                <div key={i} className="rounded-2xl border border-white/[0.07] bg-[#111827] p-4">
+                <div key={i} className="rounded-sm border p-4">
                   <h5 className="mb-2 text-sm font-black text-white">{d.title}</h5>
                   <ol className="space-y-1.5">
                     {d.steps.map((s, j) => (
@@ -151,7 +151,7 @@ function StrictSectionBody({ chapter, section }: { chapter: NotesChapter; sectio
             <div className="space-y-3">
               <h4 className="text-xs font-bold uppercase tracking-wider text-white/40">✍️ Solved Conceptual Examples</h4>
               {chapter.solvedExamples.map((ex, i) => (
-                <div key={i} className="rounded-2xl border border-white/[0.07] bg-[#111827] p-4">
+                <div key={i} className="rounded-sm border p-4">
                   <div className="mb-2 flex items-start justify-between gap-3">
                     <p className="text-sm font-semibold text-white">Q{i + 1}. {ex.q}</p>
                     {ex.tag && (
@@ -249,25 +249,6 @@ const CATEGORY_LABEL: Record<SyllabusLite["category"], string> = {
 };
 
 
-interface ChapterCardAccent {
-  main: string;
-  background: string;
-  selected: string;
-  glow: string;
-}
-
-const CHAPTER_CARD_ACCENTS: ChapterCardAccent[] = [
-  { main: "#5fd4ea", background: "#122232", selected: "#17364a", glow: "rgba(95,212,234,.18)" },
-  { main: "#e8b84b", background: "#292116", selected: "#3d3019", glow: "rgba(232,184,75,.18)" },
-  { main: "#b58cff", background: "#211a31", selected: "#302448", glow: "rgba(181,140,255,.18)" },
-  { main: "#55d98b", background: "#14271f", selected: "#1c3b2d", glow: "rgba(85,217,139,.18)" },
-  { main: "#f1836d", background: "#2c1b19", selected: "#432522", glow: "rgba(241,131,109,.18)" },
-];
-
-function accentForCard(card: ChapterCardData): ChapterCardAccent {
-  const value = [...card.syllabusId].reduce((total, character) => total + character.charCodeAt(0), 0);
-  return CHAPTER_CARD_ACCENTS[value % CHAPTER_CARD_ACCENTS.length];
-}
 
 interface ChapterCardData {
   key: string;
@@ -289,7 +270,7 @@ interface ChapterCardData {
 
 function PremiumBadge() {
   return (
-    <span className="shrink-0 rounded-full border border-[#e8b84b66] bg-[#e8b84b1f] px-2.5 py-0.5 text-[10px] font-black uppercase tracking-wider text-[#e8b84b]">
+    <span className="shrink-0 rounded-sm px-2 py-0.5 text-[9.5px] font-black uppercase tracking-widest" style={{ border: "1px solid var(--accent)", color: "var(--accent)", background: "var(--accent-wash)" }}>
       Premium
     </span>
   );
@@ -297,7 +278,7 @@ function PremiumBadge() {
 
 function MixedBadge() {
   return (
-    <span className="shrink-0 rounded-full border border-[#e8b84b66] bg-[#e8b84b14] px-2.5 py-0.5 text-[10px] font-black uppercase tracking-wider text-[#c3d1dd]">
+    <span className="shrink-0 rounded-sm px-2 py-0.5 text-[9.5px] font-black uppercase tracking-widest" style={{ border: "1px solid var(--border-strong)", color: "var(--text-faint)", background: "transparent" }}>
       Free + Premium
     </span>
   );
@@ -305,7 +286,7 @@ function MixedBadge() {
 
 function FreeBadge() {
   return (
-    <span className="shrink-0 rounded-full border border-emerald-400/40 bg-emerald-400/10 px-2.5 py-0.5 text-[10px] font-black uppercase tracking-wider text-emerald-300">
+    <span className="shrink-0 rounded-sm px-2 py-0.5 text-[9.5px] font-black uppercase tracking-widest" style={{ border: "1px solid var(--border)", color: "var(--text-muted)", background: "transparent" }}>
       Free
     </span>
   );
@@ -321,24 +302,23 @@ function ChapterCard({
   selected: boolean;
   onSelect: () => void;
 }) {
-  const accent = accentForCard(card);
-  const statusColour = card.status === "syllabus" ? "#91a9bc" : accent.main;
+  const isAuthored = card.status !== "syllabus";
 
   const cardClass =
-    "group flex min-h-[272px] w-full min-w-0 transform-gpu flex-col overflow-hidden rounded-[18px] border border-l-[5px] p-4 text-left font-sans transition duration-200 hover:-translate-y-1 hover:shadow-2xl active:translate-y-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300/80 sm:min-h-[296px] sm:p-5";
+    "group flex min-h-[272px] w-full min-w-0 transform-gpu flex-col overflow-hidden rounded-lg border border-l-[3px] p-4 text-left transition duration-200 hover:-translate-y-0.5 active:translate-y-0 focus-visible:outline-none sm:min-h-[296px] sm:p-5";
 
-  const cardStyle = {
-    borderColor: selected ? accent.main : `${accent.main}66`,
-    borderLeftColor: accent.main,
-    background: selected ? accent.selected : accent.background,
-    boxShadow: selected ? `0 18px 44px ${accent.glow}` : undefined,
+  const cardStyle: React.CSSProperties = {
+    background: selected ? "var(--surface-2)" : "var(--surface)",
+    borderColor: "var(--border)",
+    borderLeftColor: isAuthored ? "var(--accent)" : "var(--border)",
+    ...(selected && { borderColor: "var(--border-strong)", borderLeftColor: isAuthored ? "var(--accent)" : "var(--border-strong)" }),
   };
 
   const content = (
     <>
       <ChapterCardVisual chapterId={card.syllabusId} title={card.title} />
       <div className="flex items-start justify-between gap-2">
-        <span className="min-w-0 text-[10.5px] font-black uppercase tracking-[0.18em] text-[#a8bfd1]">
+        <span className="min-w-0 text-[9.5px] font-bold uppercase tracking-[0.2em]" style={{ color: "var(--text-muted)" }}>
           {card.groupLabel
             ? `${card.groupLabel}${card.sectionLabel ? ` · ${card.sectionLabel}` : ""}`
             : CATEGORY_LABEL[card.category]}
@@ -352,24 +332,21 @@ function ChapterCard({
         ) : null}
       </div>
 
-      <h3
-        className="mt-3 break-words text-[16px] font-black leading-snug sm:text-[17px]"
-        style={{ color: accent.main }}
-      >
+      <h3 className="mt-2.5 break-words text-[15px] font-bold leading-snug sm:text-[16px]" style={{ color: "var(--foreground)" }}>
         {card.title}
       </h3>
 
-      <p className="mt-2 line-clamp-4 min-w-0 flex-1 text-[13px] leading-relaxed text-[#c8d5df] sm:line-clamp-3">
+      <p className="mt-2 line-clamp-4 min-w-0 flex-1 text-[12.5px] leading-relaxed sm:line-clamp-3" style={{ color: "var(--text-muted)" }}>
         {card.description}
       </p>
 
-      <div className="mt-4 flex min-w-0 flex-col items-start gap-2 border-t border-white/10 pt-3.5 sm:flex-row sm:items-center sm:justify-between">
-        <span className="max-w-full break-words text-[11px] font-bold" style={{ color: statusColour }}>
+      <div className="mt-4 flex min-w-0 flex-col items-start gap-2 border-t pt-3 sm:flex-row sm:items-center sm:justify-between" style={{ borderColor: "var(--border)" }}>
+        <span className="max-w-full break-words text-[11px]" style={{ color: "var(--text-muted)" }}>
           {card.statusLine}
         </span>
         <span
-          className="shrink-0 text-xs font-black transition group-hover:translate-x-1"
-          style={{ color: card.href ? accent.main : "#91a9bc" }}
+          className="shrink-0 text-[11px] font-bold transition-transform duration-150 group-hover:translate-x-0.5"
+          style={{ color: card.href ? "var(--accent)" : "var(--text-muted)" }}
         >
           {card.href
             ? "Open full notes →"
@@ -501,18 +478,12 @@ export default function NotesExplorer({
   };
 
   return (
-    <div
-      className="space-y-8 font-sans"
-      style={{
-        fontFamily:
-          '-apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", Arial, system-ui, sans-serif',
-      }}
-    >
+    <div className="space-y-8">
       {/* Header */}
       <div>
-        <p className="mb-2 text-xs font-bold uppercase tracking-[0.4em] text-cyan-300">Notes Engine</p>
-        <h1 className="text-3xl font-black md:text-4xl">Chapter Notes Explorer</h1>
-        <p className="mt-2 text-sm text-white/55">
+        <p className="mb-2 text-[10px] font-bold uppercase tracking-[0.4em]" style={{ color: "var(--text-muted)", fontFamily: "var(--font-mono)" }}>Notes Engine</p>
+        <h1 className="font-display text-3xl font-bold md:text-4xl" style={{ color: "var(--foreground)" }}>Chapter Notes Explorer</h1>
+        <p className="mt-2 text-sm" style={{ color: "var(--text-muted)" }}>
           {AUTHORED_COURSES.length} authored full-notes courses across the JEE syllabus — {fullCardCount} chapter
           cards with verified full notes, every other chapter with its official syllabus. Premium chapters stay
           visible; their content unlocks with your plan.
@@ -525,10 +496,10 @@ export default function NotesExplorer({
         if (categoryCards.length === 0) return null;
         return (
           <section key={category}>
-            <h2 className="mb-3 border-b-2 border-[#24405c] pb-2 font-serif text-xl font-bold text-[#e8b84b]">
+            <h2 className="mb-3 pb-2 font-display text-base font-semibold" style={{ borderBottom: "1px solid var(--border)", color: "var(--foreground)" }}>
               {CATEGORY_LABEL[category]}
             </h2>
-            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
               {categoryCards.map((card) => (
                 <ChapterCard
                   key={card.key}
@@ -543,8 +514,8 @@ export default function NotesExplorer({
       })}
 
       {/* Selected chapter detail */}
-      <div className="border-t border-[#24405c] pt-6">
-        <p className="mb-3 text-xs font-bold uppercase tracking-[0.3em] text-[#91a9bc]">
+      <div className="pt-6" style={{ borderTop: "1px solid var(--border)" }}>
+        <p className="mb-3 text-[10px] font-bold uppercase tracking-[0.3em]" style={{ color: "var(--text-muted)", fontFamily: "var(--font-mono)" }}>
           Selected chapter · {syllabusChapter.title}
         </p>
 
@@ -555,10 +526,11 @@ export default function NotesExplorer({
               <Link
                 key={course.id}
                 href={course.href}
-                className="rounded-[13px] border border-[#24405c] border-l-4 border-l-[#5fd4ea] bg-[#122232] px-3.5 py-2 text-[13px] font-bold text-[#c3d1dd] transition hover:border-[#5fd4ea] hover:text-white"
+                className="rounded-sm border-l-2 px-3.5 py-2 text-[13px] font-semibold transition"
+                style={{ border: "1px solid var(--border)", borderLeftColor: "var(--accent)", background: "var(--surface)", color: "var(--text-faint)" }}
               >
                 {course.title} · {course.lessonLabel}
-                {course.premium && <span className="ml-1.5 text-[10px] font-black uppercase text-[#e8b84b]">Premium</span>}
+                {course.premium && <span className="ml-2 text-[9.5px] font-black uppercase" style={{ color: "var(--accent)" }}>Premium</span>}
               </Link>
             ))}
           </div>
@@ -567,18 +539,18 @@ export default function NotesExplorer({
         {chapter ? (
           <div className="space-y-6">
             {/* Chapter meta */}
-            <div className="rounded-2xl border border-white/[0.07] bg-gradient-to-b from-white/[0.05] to-transparent p-4">
+            <div className="rounded-sm p-4" style={{ border: "1px solid var(--border)", background: "var(--surface)" }}>
               <div className="flex flex-wrap items-center gap-2">
-                <span className={`rounded-full border px-2.5 py-0.5 text-[11px] font-bold capitalize ${CATEGORY_STYLE[chapter.category]}`}>
+                <span className="rounded-sm px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider capitalize" style={{ border: "1px solid var(--border-strong)", color: "var(--text-faint)" }}>
                   {chapter.category}
                 </span>
                 {chapter.exams.map((e) => (
-                  <span key={e} className="rounded-full border border-white/10 bg-white/[0.05] px-2.5 py-0.5 text-[11px] font-semibold text-white/70">
+                  <span key={e} className="rounded-sm px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider" style={{ border: "1px solid var(--border)", color: "var(--text-muted)" }}>
                     {e === "jeeMain" ? "JEE Main" : e === "jeeAdvanced" ? "JEE Advanced" : "NEET"}
                   </span>
                 ))}
               </div>
-              <p className="mt-2.5 text-[13.5px] text-white/70">{chapter.tagline}</p>
+              <p className="mt-2.5 text-[13.5px]" style={{ color: "var(--text-muted)" }}>{chapter.tagline}</p>
             </div>
 
             {/* Section nav */}
@@ -590,11 +562,10 @@ export default function NotesExplorer({
                     <button
                       key={s.key}
                       onClick={() => setSection(s.key)}
-                      className={`shrink-0 whitespace-nowrap rounded-lg border px-3 py-2 text-xs font-semibold transition ${
-                        active
-                          ? "border-cyan-400/50 bg-cyan-500/15 text-white"
-                          : "border-white/10 bg-white/[0.03] text-white/60 hover:text-white/85"
-                      }`}
+                      className="shrink-0 whitespace-nowrap rounded-sm border px-3 py-2 text-xs font-semibold transition"
+                      style={active
+                        ? { borderColor: "var(--accent)", background: "var(--accent-wash)", color: "var(--foreground)" }
+                        : { borderColor: "var(--border)", background: "transparent", color: "var(--text-muted)" }}
                     >
                       <span className="mr-1">{s.icon}</span>{s.label}
                     </button>
@@ -623,7 +594,7 @@ export default function NotesExplorer({
         ) : (
           /* Syllabus state (also shown under authored-course chapters without inline notes) */
           <section className="min-h-[200px] space-y-4">
-            <div className="rounded-2xl border border-white/[0.07] bg-gradient-to-b from-white/[0.05] to-transparent p-4">
+            <div className="rounded-sm border p-4">
               <div className="flex flex-wrap items-center gap-2">
                 <span className={`rounded-full border px-2.5 py-0.5 text-[11px] font-bold capitalize ${CATEGORY_STYLE[syllabusChapter.category]}`}>
                   {syllabusChapter.category}
@@ -642,7 +613,7 @@ export default function NotesExplorer({
               </p>
             </div>
 
-            <div className="rounded-2xl border border-white/[0.08] bg-[#111827] p-4">
+            <div className="rounded-sm border p-4">
               <h2 className="mb-3 flex items-center gap-2 text-lg font-black text-white">📋 Official Syllabus</h2>
               <ul className="space-y-2.5">
                 {syllabusChapter.concepts.map((c) => (
@@ -653,10 +624,10 @@ export default function NotesExplorer({
                 ))}
               </ul>
               <div className="mt-4 flex flex-wrap gap-2 text-[11px]">
-                <Link href={`/chapter/${syllabusChapter.id}`} className="rounded-lg border border-cyan-400/30 bg-cyan-500/10 px-2.5 py-1 font-bold text-cyan-300 transition hover:bg-cyan-500/20">Open chapter page →</Link>
-                <Link href="/pyq" className="rounded-lg border border-white/10 bg-white/[0.04] px-2.5 py-1 text-white/60 transition hover:border-cyan-400/40 hover:text-cyan-300">🎯 PYQs</Link>
-                <Link href="/tests" className="rounded-lg border border-white/10 bg-white/[0.04] px-2.5 py-1 text-white/60 transition hover:border-cyan-400/40 hover:text-cyan-300">🧪 Tests</Link>
-                <Link href="/snap-solve" className="rounded-lg border border-white/10 bg-white/[0.04] px-2.5 py-1 text-white/60 transition hover:border-cyan-400/40 hover:text-cyan-300">📸 Snap & Solve</Link>
+                <Link href={`/chapter/${syllabusChapter.id}`} className="rounded-sm px-2.5 py-1 font-bold transition" style={{ border: "1px solid var(--accent)", color: "var(--accent)", background: "var(--accent-wash)" }}>Open chapter page →</Link>
+                <Link href="/pyq" className="rounded-sm px-2.5 py-1 transition" style={{ border: "1px solid var(--border)", color: "var(--text-muted)", background: "transparent" }}>PYQs</Link>
+                <Link href="/tests" className="rounded-sm px-2.5 py-1 transition" style={{ border: "1px solid var(--border)", color: "var(--text-muted)", background: "transparent" }}>Tests</Link>
+                <Link href="/snap-solve" className="rounded-sm px-2.5 py-1 transition" style={{ border: "1px solid var(--border)", color: "var(--text-muted)", background: "transparent" }}>Snap & Solve</Link>
               </div>
             </div>
           </section>

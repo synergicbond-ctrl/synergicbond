@@ -152,7 +152,7 @@ export default function AchievementsPage() {
                       <div className="text-3xl mb-2">{badge.icon}</div>
                       <p className="font-semibold text-sm">{badge.name}</p>
                       <p className="text-xs text-white/50 mt-0.5">{badge.description}</p>
-                      {isEarned && <p className="text-xs text-violet-400 mt-1">✓ Earned</p>}
+                      {isEarned && <p className="text-xs text-[var(--accent)] mt-1">✓ Earned</p>}
                     </div>
                   );
                 })}

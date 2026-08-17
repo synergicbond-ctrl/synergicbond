@@ -39,7 +39,7 @@ export default function SupportPage() {
           <div className="absolute right-10 top-20 h-64 w-64 rounded-full bg-violet-500/10 blur-3xl" />
         </div>
         <div className="relative mx-auto max-w-4xl text-center space-y-6">
-          <div className="inline-flex items-center gap-2 rounded-full border border-cyan-500/25 bg-cyan-500/10 px-4 py-1.5 text-cyan-300 text-xs font-bold tracking-wider uppercase">
+          <div className="inline-flex items-center gap-2 rounded-full border border-cyan-500/25 bg-cyan-500/10 px-4 py-1.5 text-[var(--text-muted)] text-xs font-bold tracking-wider uppercase">
             Our Mission &amp; Purpose
           </div>
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-black tracking-tight leading-none text-white">
@@ -59,7 +59,7 @@ export default function SupportPage() {
         {/* ── SECTION 2: WHY WE EXIST ──────────────────────────────────── */}
         <section className="space-y-6">
           <div className="space-y-2">
-            <div className="flex items-center gap-2 text-cyan-300 font-bold text-xs uppercase tracking-wider">
+            <div className="flex items-center gap-2 text-[var(--text-muted)] font-bold text-xs uppercase tracking-wider">
               <Compass className="h-4.5 w-4.5" /> Why We Exist
             </div>
             <h2 className="text-2xl font-black text-white">Addressing Core Challenges in Student Prep</h2>
@@ -90,7 +90,7 @@ export default function SupportPage() {
               </p>
             </div>
           </div>
-          <div className="p-5 rounded-lg border border-cyan-500/25 bg-cyan-500/5 text-center text-xs text-cyan-300">
+          <div className="p-5 rounded-lg border border-cyan-500/25 bg-cyan-500/5 text-center text-xs text-[var(--text-muted)]">
             <strong>The Synergic Bond Solution:</strong> We provide a single, unified Chemistry workspace where Board theory, entrance level numerical cards, and AI-powered feedback live together seamlessly.
           </div>
         </section>
@@ -125,7 +125,7 @@ export default function SupportPage() {
         {/* ── SECTION 4: WHAT WE ARE BUILDING ──────────────────────────── */}
         <section className="space-y-6">
           <div className="space-y-2">
-            <div className="flex items-center gap-2 text-cyan-300 font-bold text-xs uppercase tracking-wider">
+            <div className="flex items-center gap-2 text-[var(--text-muted)] font-bold text-xs uppercase tracking-wider">
               <Cpu className="h-4.5 w-4.5" /> What We Are Building
             </div>
             <h2 className="text-2xl font-black text-white">Educational Technology for Deep Chemistry Learning</h2>
@@ -133,13 +133,13 @@ export default function SupportPage() {
           
           <div className="grid gap-4 sm:grid-cols-2">
             <div className="p-5 rounded-lg border border-white/[0.05] bg-black/20 space-y-2">
-              <h3 className="text-sm font-bold text-cyan-300">AI Chemistry Tutor</h3>
+              <h3 className="text-sm font-bold text-[var(--text-muted)]">AI Chemistry Tutor</h3>
               <p className="text-xs text-white/55 leading-relaxed">
                 Step-by-step conceptual chat support capable of detailing reaction pathways, molecular structures, and stoichiometry.
               </p>
             </div>
             <div className="p-5 rounded-lg border border-white/[0.05] bg-black/20 space-y-2">
-              <h3 className="text-sm font-bold text-violet-300">Intelligent Learning Paths</h3>
+              <h3 className="text-sm font-bold text-[var(--text-muted)]">Intelligent Learning Paths</h3>
               <p className="text-xs text-white/55 leading-relaxed">
                 Personalized sequences tailored to direct student performance logs, optimizing weak area coverage.
               </p>
@@ -174,7 +174,7 @@ export default function SupportPage() {
         {/* ── SECTION 5: WHO WE WANT TO REACH ──────────────────────────── */}
         <section className="space-y-6">
           <div className="space-y-2">
-            <div className="flex items-center gap-2 text-cyan-300 font-bold text-xs uppercase tracking-wider">
+            <div className="flex items-center gap-2 text-[var(--text-muted)] font-bold text-xs uppercase tracking-wider">
               <Users className="h-4.5 w-4.5" /> Who We Want to Reach
             </div>
             <h2 className="text-2xl font-black text-white">Supporting Every Chemistry Learner</h2>
@@ -194,7 +194,7 @@ export default function SupportPage() {
         {/* ── SECTION 6: STUDENT IMPACT STORIES ────────────────────────── */}
         <section className="space-y-6">
           <div className="space-y-2">
-            <div className="flex items-center gap-2 text-cyan-300 font-bold text-xs uppercase tracking-wider">
+            <div className="flex items-center gap-2 text-[var(--text-muted)] font-bold text-xs uppercase tracking-wider">
               <Quote className="h-4.5 w-4.5" /> Impact Stories
             </div>
             <h2 className="text-2xl font-black text-white">Feedback From Independent Students</h2>

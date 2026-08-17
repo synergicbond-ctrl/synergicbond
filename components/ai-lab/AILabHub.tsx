@@ -68,7 +68,7 @@ function Badge({ tone, children }: { tone: "live" | "builtin" | "soon"; children
     tone === "live"
       ? "border-emerald-400/30 bg-emerald-500/10 text-emerald-300"
       : tone === "builtin"
-      ? "border-cyan-400/30 bg-cyan-500/10 text-cyan-300"
+      ? "border-cyan-400/30 bg-cyan-500/10 text-[var(--text-muted)]"
       : "border-white/15 bg-white/[0.06] text-white/55";
   return (
     <span className={`rounded-full border px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide ${cls}`}>
@@ -134,7 +134,7 @@ function StudyPlanner() {
       <p className="text-xs text-white/50">
         Built from the master-syllabus chapter data only (difficulty & estimated hours) —
         foundation chapters first. Deterministic, no AI call. The AI-powered planner lives at{" "}
-        <Link href="/study-plan" className="font-semibold text-cyan-300 hover:text-cyan-200">/study-plan</Link>.
+        <Link href="/study-plan" className="font-semibold text-[var(--text-muted)] hover:text-cyan-200">/study-plan</Link>.
       </p>
       <div className="flex flex-wrap gap-2">
         {PLANNER_EXAMS.map((e) => {
@@ -177,7 +177,7 @@ function StudyPlanner() {
         <div className="space-y-3">
           {plan.map((w) => (
             <div key={w.week} className="rounded-xl border border-white/[0.08] bg-white/[0.03] p-3">
-              <p className="mb-2 text-xs font-bold uppercase tracking-wider text-cyan-300">
+              <p className="mb-2 text-xs font-bold uppercase tracking-wider text-[var(--text-muted)]">
                 Week {w.week} · ~{w.hours}h
               </p>
               <ul className="space-y-1.5">
@@ -240,13 +240,13 @@ function RevisionGenerator({ chapters }: { chapters: RevisionChapter[] }) {
       {chapter && (
         <div className="space-y-3">
           <div className="rounded-xl border border-white/[0.08] bg-white/[0.03] p-3">
-            <p className="mb-2 text-xs font-bold uppercase tracking-wider text-cyan-300">
+            <p className="mb-2 text-xs font-bold uppercase tracking-wider text-[var(--text-muted)]">
               🔁 {chapter.title} — rapid revision
             </p>
             <ul className="space-y-1.5">
               {chapter.revisionNotes.map((point, i) => (
                 <li key={i} className="flex gap-2 text-sm text-white/80">
-                  <span className="shrink-0 text-cyan-400">•</span>
+                  <span className="shrink-0 text-[var(--accent)]">•</span>
                   <span>{point}</span>
                 </li>
               ))}
@@ -258,7 +258,7 @@ function RevisionGenerator({ chapters }: { chapters: RevisionChapter[] }) {
                 <Link
                   key={`${n.kind}-${n.refId}`}
                   href={n.href}
-                  className="rounded-lg border border-white/10 bg-white/[0.04] px-2.5 py-1 text-[11px] text-white/70 transition hover:border-cyan-400/40 hover:text-cyan-300"
+                  className="rounded-lg border border-white/10 bg-white/[0.04] px-2.5 py-1 text-[11px] text-white/70 transition hover:border-cyan-400/40 hover:text-[var(--text-muted)]"
                 >
                   {n.label}{typeof n.count === "number" ? ` (${n.count})` : ""}
                 </Link>
@@ -282,7 +282,7 @@ export default function AILabHub({ revisionChapters }: { revisionChapters: Revis
     <div className="space-y-6">
       <div className="relative overflow-hidden rounded-lg border border-cyan-400/20 bg-[radial-gradient(circle_at_78%_15%,rgba(139,92,246,0.2),transparent_25%),linear-gradient(115deg,rgba(34,211,238,0.12),transparent_50%),#0f1728] p-6 shadow-[0_28px_70px_-48px_rgba(34,211,238,0.8)]">
         <span aria-hidden="true" className="absolute -right-4 -bottom-10 text-[10rem] font-black leading-none text-cyan-200/[0.035]">AI</span>
-        <p className="relative mb-2 text-xs font-bold uppercase tracking-[0.4em] text-cyan-300">AI Lab</p>
+        <p className="relative mb-2 text-xs font-bold uppercase tracking-[0.4em] text-[var(--text-muted)]">AI Lab</p>
         <h1 className="relative font-display text-3xl font-black md:text-4xl">Your Chemistry AI Toolset</h1>
         <p className="relative mt-2 max-w-3xl text-sm text-white/60">
           One place for every AI-assisted tool — Snap & Solve, the tutor and doubt solver are live;

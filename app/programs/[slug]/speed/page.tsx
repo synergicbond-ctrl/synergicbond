@@ -37,7 +37,7 @@ export default async function SpeedPage({ params }: { params: Promise<{ slug: st
 
   const shell = (children: React.ReactNode) => (
     <main className="min-h-screen bg-[#0B1220] text-white">
-      <div className="border-b border-white/10 bg-gradient-to-b from-cyan-950/20 to-[#0B1220] px-4 py-8 sm:px-6 sm:py-10">
+      <div className="border-b border-white/10 bg-gradient-to-b from-[var(--surface)]/20 to-[#0B1220] px-4 py-8 sm:px-6 sm:py-10">
         <div className="mx-auto max-w-4xl">
           <nav className="mb-3 text-sm text-white/45">
             <Link href={base} className="hover:text-white">{engine.name}</Link>

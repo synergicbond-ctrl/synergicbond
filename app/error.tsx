@@ -36,7 +36,7 @@ export default function Error({
       <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
         <button
           onClick={() => reset()}
-          className="rounded-xl border border-cyan-400/30 bg-cyan-500/10 px-5 py-2.5 text-sm font-bold text-cyan-300 transition hover:bg-cyan-500/20"
+          className="rounded-xl border border-cyan-400/30 bg-cyan-500/10 px-5 py-2.5 text-sm font-bold text-[var(--text-muted)] transition hover:bg-cyan-500/20"
         >
           Try again
         </button>

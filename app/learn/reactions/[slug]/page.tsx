@@ -132,7 +132,7 @@ export default function ReactionLessonPage() {
       <main className="min-h-screen bg-[var(--background)] text-white">
         <div className="mx-auto max-w-3xl px-6 py-20 text-center">
           <p className="text-white/60">Reaction not found.</p>
-          <Link href="/name-reactions" className="mt-4 inline-block rounded-xl border border-white/10 px-4 py-2 text-sm text-cyan-300 hover:bg-white/5">← Back to Name Reactions</Link>
+          <Link href="/name-reactions" className="mt-4 inline-block rounded-xl border border-white/10 px-4 py-2 text-sm text-[var(--text-muted)] hover:bg-white/5">← Back to Name Reactions</Link>
         </div>
       </main>
     );

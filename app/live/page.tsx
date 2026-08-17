@@ -22,7 +22,7 @@ function Countdown({ minutes }: { minutes: number }) {
   const h = String(Math.floor(s / 3600)).padStart(2, "0");
   const m = String(Math.floor((s % 3600) / 60)).padStart(2, "0");
   const sec = String(s % 60).padStart(2, "0");
-  return <span className="font-mono font-black text-cyan-300 tabular-nums">{h}:{m}:{sec}</span>;
+  return <span className="font-mono font-black text-[var(--text-muted)] tabular-nums">{h}:{m}:{sec}</span>;
 }
 
 const events = [
@@ -53,14 +53,14 @@ export default function LivePage() {
         {/* Live counters */}
         <div className="grid gap-4 sm:grid-cols-2 mb-8">
           <div className="rounded-lg bg-[var(--surface)] border border-white/[0.06] p-6 flex items-center gap-4">
-            <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-green-500/10"><Users className="h-6 w-6 text-green-400" /></div>
+            <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-[var(--surface-2)]"><Users className="h-6 w-6 text-green-400" /></div>
             <div>
               <p className="text-3xl font-black text-white tabular-nums">{online.toLocaleString()}</p>
               <p className="text-sm text-white/50">Scholars online now</p>
             </div>
           </div>
           <div className="rounded-lg bg-[var(--surface)] border border-white/[0.06] p-6 flex items-center gap-4">
-            <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-cyan-500/10"><Zap className="h-6 w-6 text-cyan-400" /></div>
+            <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-[var(--surface-2)]"><Zap className="h-6 w-6 text-[var(--accent)]" /></div>
             <div>
               <p className="text-3xl font-black text-white tabular-nums">{solving.toLocaleString()}</p>
               <p className="text-sm text-white/50">Solving questions right now</p>
@@ -69,18 +69,18 @@ export default function LivePage() {
         </div>
 
         {/* Mock timer events */}
-        <h2 className="text-lg font-black text-cyan-300 mb-3">⏱️ Upcoming Mock Events</h2>
+        <h2 className="text-lg font-black text-[var(--text-muted)] mb-3">⏱️ Upcoming Mock Events</h2>
         <div className="space-y-3 mb-10">
           {events.map((e) => {
             const Icon = e.icon;
             return (
               <div key={e.name} className="rounded-lg bg-[var(--surface)] border border-white/[0.06] p-4 flex items-center gap-4 flex-wrap">
-                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-cyan-500/10 flex-shrink-0"><Icon className="h-5 w-5 text-cyan-400" /></div>
+                <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-[var(--surface-2)] flex-shrink-0"><Icon className="h-5 w-5 text-[var(--accent)]" /></div>
                 <div className="flex-1 min-w-0">
                   <p className="text-sm font-bold text-white">{e.name}</p>
                   <p className="text-xs text-white/40">{e.players} registered · starts in <Countdown minutes={e.mins} /></p>
                 </div>
-                <button className="rounded-xl bg-[var(--accent)] px-4 py-2 text-xs font-bold text-black transition hover:-translate-y-0.5 flex-shrink-0">Register</button>
+                <button className="rounded-lg bg-[var(--accent)] px-4 py-2 text-xs font-bold text-[var(--background)] transition hover:-translate-y-0.5 flex-shrink-0">Register</button>
               </div>
             );
           })}
@@ -88,12 +88,12 @@ export default function LivePage() {
 
         {/* Arenas */}
         <div className="grid gap-4 md:grid-cols-2">
-          <div className="rounded-lg p-[1px] bg-gradient-to-br from-cyan-500/50 to-purple-500/50">
+          <div className="rounded-lg p-[1px] bg-gradient-to-br from-[var(--surface)] to-purple-500/50">
             <div className="rounded-lg bg-[var(--surface)] p-6 h-full">
-              <Swords className="h-6 w-6 text-cyan-400 mb-3" />
+              <Swords className="h-6 w-6 text-[var(--accent)] mb-3" />
               <h3 className="text-base font-black text-white">Weekly Challenge Arena</h3>
               <p className="text-sm text-white/55 mt-1 mb-4">A fresh 25-question gauntlet every week. Climb the weekly board.</p>
-              <Link href="/quiz" className="inline-flex items-center gap-1.5 text-sm font-semibold text-cyan-300 hover:gap-2.5 transition">Enter Arena <ArrowRight className="h-4 w-4" /></Link>
+              <Link href="/quiz" className="inline-flex items-center gap-1.5 text-sm font-semibold text-[var(--text-muted)] hover:gap-2.5 transition">Enter Arena <ArrowRight className="h-4 w-4" /></Link>
             </div>
           </div>
           <div className="rounded-lg p-[1px] bg-gradient-to-br from-purple-500/50 to-amber-500/50">

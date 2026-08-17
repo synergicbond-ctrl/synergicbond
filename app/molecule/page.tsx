@@ -72,7 +72,7 @@ export default function MoleculePage() {
           <input value={compound} onChange={(e) => setCompound(e.target.value)}
             onKeyDown={(e) => e.key === "Enter" && handleSearch()}
             placeholder="Enter compound name or formula (e.g. Benzene, H2SO4)"
-            className="flex-1 rounded-xl border border-white/10 bg-white/5 px-4 py-3 focus:outline-none focus:border-cyan-500" />
+            className="flex-1 rounded-xl border border-white/10 bg-white/5 px-4 py-3 focus:outline-none focus:border-[var(--border)]" />
           <button onClick={() => handleSearch()}
             className="rounded-xl bg-[var(--accent)] px-6 py-3 font-bold text-black">
             {loading ? "..." : "Explore"}
@@ -83,7 +83,7 @@ export default function MoleculePage() {
         <div className="flex flex-wrap gap-2 mb-8">
           {QUICK_COMPOUNDS.map((c) => (
             <button key={c} onClick={() => { setCompound(c); handleSearch(c); }}
-              className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-sm text-white/70 hover:bg-cyan-500/20 hover:text-cyan-300 transition">
+              className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-sm text-white/70 hover:bg-cyan-500/20 hover:text-[var(--text-muted)] transition">
               {c}
             </button>
           ))}
@@ -101,10 +101,10 @@ export default function MoleculePage() {
         {data && (
           <div className="space-y-6">
             {/* Header */}
-            <div className="rounded-lg border border-cyan-500/20 bg-cyan-950/20 p-6">
+            <div className="rounded-lg border border-[var(--border)]/20 bg-cyan-950/20 p-6">
               <div className="flex items-start justify-between flex-wrap gap-4">
                 <div>
-                  <h2 className="text-3xl font-bold text-cyan-300">{data.formula}</h2>
+                  <h2 className="text-3xl font-bold text-[var(--text-muted)]">{data.formula}</h2>
                   <p className="text-xl text-white mt-1">{data.commonName}</p>
                   <p className="text-white/50 text-sm mt-1">{data.name}</p>
                 </div>

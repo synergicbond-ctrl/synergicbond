@@ -122,7 +122,7 @@ export default function DailyChallengePage() {
                   else if (key === selected) style = "border border-red-500 bg-red-500/20";
                   else style = "border border-white/5 bg-white/[0.02] opacity-50";
                 } else if (selected === key) {
-                  style = "border border-cyan-500 bg-[var(--accent)]/10";
+                  style = "border border-[var(--border)] bg-[var(--accent)]/10";
                 }
                 return (
                   <button key={key} onClick={() => !submitted && setSelected(key)}

@@ -84,7 +84,7 @@ export default function PeriodicTablePage() {
     <main className="min-h-screen bg-[var(--background)] text-white">
       <div className="mx-auto max-w-[1400px] px-4 md:px-6 py-10">
         <div className="mb-6">
-          <p className="text-xs font-bold uppercase tracking-[0.4em] text-cyan-300 mb-2">Knowledge Vault · Interactive</p>
+          <p className="text-xs font-bold uppercase tracking-[0.4em] text-[var(--text-muted)] mb-2">Knowledge Vault · Interactive</p>
           <h1 className="text-3xl md:text-4xl font-black">Periodic Table</h1>
           <p className="mt-2 text-white/55 text-sm">Switch modes · tap any element for details · search to jump.</p>
         </div>
@@ -98,14 +98,14 @@ export default function PeriodicTablePage() {
               <button
                 key={m.id}
                 onClick={() => setMode(m.id)}
-                className={`group flex items-center gap-2.5 rounded-xl border px-3 py-2.5 text-left transition ${
+                className={`group flex items-center gap-2.5 rounded-lg border px-3 py-2.5 text-left transition ${
                   on
-                    ? "border-cyan-400/50 bg-cyan-500/10 shadow-[0_0_24px_-6px_rgba(34,211,238,0.5)]"
+                    ? "border-[var(--border)]/50 bg-cyan-500/10 shadow-[0_0_24px_-6px_rgba(34,211,238,0.5)]"
                     : "border-white/[0.07] bg-[var(--surface)] hover:border-white/20"
                 }`}
               >
                 <span className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-lg ${on ? "bg-cyan-500/20" : "bg-white/[0.04]"}`}>
-                  <Icon className={`h-4 w-4 ${on ? "text-cyan-300" : "text-white/50"}`} />
+                  <Icon className={`h-4 w-4 ${on ? "text-[var(--text-muted)]" : "text-white/50"}`} />
                 </span>
                 <span className="min-w-0">
                   <span className={`block text-sm font-bold ${on ? "text-white" : "text-white/80"}`}>{m.label}</span>
@@ -123,7 +123,7 @@ export default function PeriodicTablePage() {
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             placeholder="Search element — Fe, iron, halogen…"
-            className="w-full rounded-xl border border-white/[0.08] bg-[var(--surface)] pl-10 pr-4 py-2.5 text-sm text-white placeholder-white/30 outline-none focus:border-cyan-400/50"
+            className="w-full rounded-lg border border-[var(--border)] bg-[var(--surface)] pl-10 pr-4 py-2.5 text-sm text-white placeholder-white/30 outline-none focus:border-[var(--border)]/50"
           />
         </div>
 
@@ -248,9 +248,9 @@ export default function PeriodicTablePage() {
             </div>
             <div className="px-6 pb-6">
               {/* Electron configuration — full width */}
-              <div className="rounded-xl bg-white/[0.03] border border-white/[0.06] px-3 py-2 mb-3">
+              <div className="rounded-lg bg-[var(--surface-2)] border border-white/[0.06] px-3 py-2 mb-3">
                 <p className="text-[10px] uppercase tracking-wider text-white/40">Electron Configuration</p>
-                <p className="text-sm font-mono font-semibold text-cyan-300 mt-0.5">{electronConfig(active.z)}</p>
+                <p className="text-sm font-mono font-semibold text-[var(--text-muted)] mt-0.5">{electronConfig(active.z)}</p>
               </div>
               <div className="grid grid-cols-2 gap-3 text-sm">
                 <Fact label="Atomic Number" value={String(active.z)} />
@@ -268,7 +268,7 @@ export default function PeriodicTablePage() {
               {ELEMENT_BRAIN_MAP[active.sym] && (
                 <button
                   onClick={() => { setSelectedElementSymbol(active.sym); setActive(null); }}
-                  className="mt-4 flex w-full items-center justify-center gap-2 rounded-xl border border-cyan-400/30 bg-gradient-to-r from-cyan-500/15 to-violet-500/10 px-4 py-2.5 text-sm font-bold text-cyan-200 transition hover:from-cyan-500/25 hover:to-violet-500/20"
+                  className="mt-4 flex w-full items-center justify-center gap-2 rounded-lg border border-[var(--border)] bg-[var(--surface-2)] text-[var(--foreground)] transition hover:from-[var(--surface)] hover:to-violet-500/20"
                 >
                   <Brain className="h-4 w-4" /> Open Brain Mode — reactions & exam intel
                 </button>
@@ -277,17 +277,17 @@ export default function PeriodicTablePage() {
               {/* Connected system — the periodic table as a navigation brain */}
               <p className="text-[10px] uppercase tracking-wider text-white/40 mt-4 mb-2">Explore connections</p>
               <div className="grid grid-cols-2 gap-2">
-                <Link href={`/molecule?q=${active.sym}`} onClick={() => setActive(null)} className="flex items-center gap-2 rounded-lg bg-white/[0.03] border border-white/[0.06] px-3 py-2 text-xs font-semibold text-white/80 hover:border-cyan-400/30 hover:text-white transition">
-                  <Atom className="h-3.5 w-3.5 text-cyan-400" /> Compounds
+                <Link href={`/molecule?q=${active.sym}`} onClick={() => setActive(null)} className="flex items-center gap-2 rounded-lg bg-white/[0.03] border border-white/[0.06] px-3 py-2 text-xs font-semibold text-white/80 hover:border-[var(--border)]/30 hover:text-white transition">
+                  <Atom className="h-3.5 w-3.5 text-[var(--accent)]" /> Compounds
                 </Link>
-                <Link href="/name-reactions" onClick={() => setActive(null)} className="flex items-center gap-2 rounded-lg bg-white/[0.03] border border-white/[0.06] px-3 py-2 text-xs font-semibold text-white/80 hover:border-cyan-400/30 hover:text-white transition">
-                  <Sparkles className="h-3.5 w-3.5 text-violet-400" /> Reactions
+                <Link href="/name-reactions" onClick={() => setActive(null)} className="flex items-center gap-2 rounded-lg bg-white/[0.03] border border-white/[0.06] px-3 py-2 text-xs font-semibold text-white/80 hover:border-[var(--border)]/30 hover:text-white transition">
+                  <Sparkles className="h-3.5 w-3.5 text-[var(--accent)]" /> Reactions
                 </Link>
-                <button onClick={() => { setMode("trend"); setTrendProp("en"); setActive(null); }} className="flex items-center gap-2 rounded-lg bg-white/[0.03] border border-white/[0.06] px-3 py-2 text-xs font-semibold text-white/80 hover:border-cyan-400/30 hover:text-white transition">
-                  <BarChart2 className="h-3.5 w-3.5 text-cyan-400" /> Compare Trends
+                <button onClick={() => { setMode("trend"); setTrendProp("en"); setActive(null); }} className="flex items-center gap-2 rounded-lg bg-white/[0.03] border border-white/[0.06] px-3 py-2 text-xs font-semibold text-white/80 hover:border-[var(--border)]/30 hover:text-white transition">
+                  <BarChart2 className="h-3.5 w-3.5 text-[var(--accent)]" /> Compare Trends
                 </button>
-                <a href={`https://www.google.com/search?q=${encodeURIComponent(active.name + " element properties")}`} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 rounded-lg bg-white/[0.03] border border-white/[0.06] px-3 py-2 text-xs font-semibold text-white/80 hover:border-cyan-400/30 hover:text-white transition">
-                  <ExternalLink className="h-3.5 w-3.5 text-cyan-400" /> More
+                <a href={`https://www.google.com/search?q=${encodeURIComponent(active.name + " element properties")}`} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 rounded-lg bg-white/[0.03] border border-white/[0.06] px-3 py-2 text-xs font-semibold text-white/80 hover:border-[var(--border)]/30 hover:text-white transition">
+                  <ExternalLink className="h-3.5 w-3.5 text-[var(--accent)]" /> More
                 </a>
               </div>
             </div>
@@ -308,7 +308,7 @@ export default function PeriodicTablePage() {
 
 function Fact({ label, value }: { label: string; value: string }) {
   return (
-    <div className="rounded-xl bg-white/[0.03] border border-white/[0.06] px-3 py-2">
+    <div className="rounded-lg bg-[var(--surface-2)] border border-white/[0.06] px-3 py-2">
       <p className="text-[10px] uppercase tracking-wider text-white/40">{label}</p>
       <p className="text-sm font-semibold text-white mt-0.5">{value}</p>
     </div>

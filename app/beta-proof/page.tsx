@@ -98,7 +98,7 @@ export default function BetaProofPage() {
               <div key={item.key} className="rounded-lg border border-white/10 bg-white/[0.03] p-5">
                 <div className="flex items-center justify-between gap-3">
                   <div className="flex items-center gap-3">
-                    <Icon className="h-4 w-4 text-cyan-300" />
+                    <Icon className="h-4 w-4 text-[var(--text-muted)]" />
                     <p className="text-sm font-bold">{item.label}</p>
                   </div>
                   {done ? <CheckCircle2 className="h-5 w-5 text-emerald-300" /> : <Circle className="h-5 w-5 text-white/25" />}

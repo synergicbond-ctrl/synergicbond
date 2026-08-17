@@ -52,13 +52,13 @@ function LinkRow({ links }: { links: NoteLink[] }) {
         <Link
           key={i}
           href={l.href}
-          className="group flex items-center justify-between gap-3 rounded-xl border border-white/[0.08] bg-white/[0.03] p-3.5 transition hover:border-cyan-400/40 hover:bg-white/[0.06]"
+          className="group flex items-center justify-between gap-3 rounded-lg border border-white/[0.08] bg-white/[0.03] p-3.5 transition hover:border-cyan-400/40 hover:bg-white/[0.06]"
         >
           <span className="min-w-0">
-            <span className="block text-sm font-semibold text-white group-hover:text-cyan-300">{l.label}</span>
+            <span className="block text-sm font-semibold text-white group-hover:text-[var(--accent)]">{l.label}</span>
             {l.note && <span className="mt-0.5 block truncate text-xs text-white/50">{l.note}</span>}
           </span>
-          <span className="shrink-0 text-white/40 transition group-hover:translate-x-0.5 group-hover:text-cyan-300">→</span>
+          <span className="shrink-0 text-white/40 transition group-hover:translate-x-0.5 group-hover:text-[var(--accent)]">→</span>
         </Link>
       ))}
     </div>
@@ -84,7 +84,7 @@ function StrictSectionBody({ chapter, section }: { chapter: NotesChapter; sectio
       return (
         <div className="space-y-6">
           {/* Syllabus Scope */}
-          <div className="p-4 rounded-lg border border-white/[0.06] bg-black/25">
+          <div className="p-4 rounded-lg border border-white/[0.06] bg-[var(--background)]/25">
             <h4 className="text-xs font-bold uppercase tracking-wider text-white/40 mb-2">📋 Syllabus Scope</h4>
             <Bullets items={chapter.syllabus} />
           </div>
@@ -137,7 +137,7 @@ function StrictSectionBody({ chapter, section }: { chapter: NotesChapter; sectio
               <h4 className="text-xs font-bold uppercase tracking-wider text-white/40">⚠️ Critical Exceptions &amp; Pitfalls</h4>
               <ul className="space-y-2.5">
                 {chapter.commonMistakes.map((t, i) => (
-                  <li key={i} className="flex gap-2.5 rounded-xl border border-rose-400/15 bg-rose-500/[0.06] p-3 text-[13.5px] leading-relaxed text-rose-100/85">
+                  <li key={i} className="flex gap-2.5 rounded-lg border border-rose-400/15 bg-rose-500/[0.06] p-3 text-[13.5px] leading-relaxed text-rose-100/85">
                     <span className="shrink-0">⚠️</span>
                     <span>{t}</span>
                   </li>
@@ -181,7 +181,7 @@ function StrictSectionBody({ chapter, section }: { chapter: NotesChapter; sectio
     case "short":
       return (
         <div className="space-y-4">
-          <div className="p-4 rounded-lg border border-white/[0.06] bg-black/25">
+          <div className="p-4 rounded-lg border border-white/[0.06] bg-[var(--background)]/25">
             <h4 className="text-xs font-bold uppercase tracking-wider text-white/40 mb-2">⚡ Quick-Recall Revision Summary</h4>
             <Bullets items={[...chapter.shortNotes, ...chapter.revisionNotes]} />
           </div>

@@ -40,7 +40,7 @@ interface Innovation { question: string; answer: string; explanation: string; co
 
 function Block({ label, tone, children }: { label: string; tone: string; children: React.ReactNode }) {
   return (
-    <div className={`rounded-xl border p-3 text-sm ${tone}`}>
+    <div className={`rounded-lg border p-3 text-sm ${tone}`}>
       <div className="mb-1 text-[11px] font-bold uppercase tracking-wider opacity-80">{label}</div>
       <div className="whitespace-pre-wrap text-white/80">{children}</div>
     </div>
@@ -107,7 +107,7 @@ export default function IllustrationLab({
           <p className="whitespace-pre-wrap font-medium leading-relaxed text-white">{item.question}</p>
           {isIll ? (
             <>
-              <Block label="Thinking process" tone="border-cyan-500/20 bg-cyan-500/[0.04] text-cyan-200">{(item as Illustration).thinking}</Block>
+              <Block label="Thinking process" tone="border-cyan-500/20 bg-cyan-500/[0.04] text-[var(--accent)]">{(item as Illustration).thinking}</Block>
               <Block label="Full solution" tone="border-white/10 bg-white/[0.02] text-white">{(item as Illustration).solution}</Block>
               {(item as Illustration).fastMethod && <Block label="Fast method" tone="border-emerald-500/20 bg-emerald-500/[0.04] text-emerald-200">{(item as Illustration).fastMethod}</Block>}
               {(item as Illustration).alternateMethod && <Block label="Alternate method" tone="border-indigo-500/20 bg-indigo-500/[0.04] text-indigo-200">{(item as Illustration).alternateMethod}</Block>}

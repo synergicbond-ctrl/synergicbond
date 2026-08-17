@@ -79,7 +79,7 @@ export default function RedoxPage() {
     <main className="min-h-screen bg-[var(--background)] text-white">
       <div className="mx-auto max-w-5xl px-6 py-12">
         <ReferenceTabs />
-        <p className="text-xs font-bold uppercase tracking-[0.4em] text-cyan-300 mb-3">Knowledge Vault · Organic</p>
+        <p className="text-xs font-bold uppercase tracking-[0.4em] text-[var(--text-muted)] mb-3">Knowledge Vault · Organic</p>
         <h1 className="text-4xl font-black md:text-5xl">Oxidation & Reduction</h1>
         <p className="mt-3 text-white/65 text-sm max-w-2xl mb-6">
           Every exam-critical redox transformation — substrate → product with the exact reagent. Cyan = oxidation, purple = reduction.
@@ -88,7 +88,7 @@ export default function RedoxPage() {
         <div className="relative mb-6 sticky top-16 z-30">
           <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 h-4 w-4 text-white/30" />
           <input value={q} onChange={(e) => setQ(e.target.value)} placeholder="Search substrate, product or reagent — alcohol, LiAlH4, alkene…"
-            className="w-full rounded-xl border border-white/[0.08] bg-[var(--surface)] pl-10 pr-4 py-2.5 text-sm text-white placeholder-white/30 outline-none focus:border-cyan-400/50" />
+            className="w-full rounded-xl border border-white/[0.08] bg-[var(--surface)] pl-10 pr-4 py-2.5 text-sm text-white placeholder-white/30 outline-none focus:border-[var(--border)]/50" />
         </div>
 
         <Section title="🔼 Oxidation" accent="#00F5D4" data={oxidation} q={q} />

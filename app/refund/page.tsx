@@ -51,7 +51,7 @@ export default function RefundPolicyPage() {
       <LegalSection heading="5. How to request a refund">
         <p>
           Email{" "}
-          <a className="text-cyan-400 hover:text-cyan-300" href={`mailto:${LEGAL_SUPPORT_EMAIL}`}>{LEGAL_SUPPORT_EMAIL}</a>{" "}
+          <a className="text-[var(--accent)] hover:text-[var(--text-muted)]" href={`mailto:${LEGAL_SUPPORT_EMAIL}`}>{LEGAL_SUPPORT_EMAIL}</a>{" "}
           from your registered email with your order details and the reason for the
           request. Approved refunds are made to the original payment method through
           our payment gateway; the time to reflect depends on your bank or provider.
@@ -61,7 +61,7 @@ export default function RefundPolicyPage() {
       <LegalSection heading="6. Contact">
         <p>
           For any billing question, reach us at{" "}
-          <a className="text-cyan-400 hover:text-cyan-300" href={`mailto:${LEGAL_SUPPORT_EMAIL}`}>{LEGAL_SUPPORT_EMAIL}</a>.
+          <a className="text-[var(--accent)] hover:text-[var(--text-muted)]" href={`mailto:${LEGAL_SUPPORT_EMAIL}`}>{LEGAL_SUPPORT_EMAIL}</a>.
           We aim to respond promptly and resolve issues fairly.
         </p>
       </LegalSection>

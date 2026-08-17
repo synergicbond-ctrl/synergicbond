@@ -22,7 +22,7 @@ export default function PricingPage() {
   const [selectedBaseKey, setSelectedBaseKey] = useState<string>("");
   const [selectedName, setSelectedName] = useState<string>("");
   const [selectedAmount, setSelectedAmount] = useState<string>("");
-  
+
   // Board states for Class 11 / Class 12
   const [class11Board, setClass11Board] = useState<string>("cbse");
   const [class12Board, setClass12Board] = useState<string>("isc");
@@ -114,7 +114,7 @@ export default function PricingPage() {
   function handleBuy(prog: ProgramOption) {
     let resolvedKey = prog.key;
     let resolvedName = prog.name;
-    
+
     if (prog.key === "class-11") {
       resolvedKey = `${class11Board}:class-11`;
       resolvedName = `${class11Board.toUpperCase()} Class 11 Chemistry`;
@@ -145,31 +145,31 @@ export default function PricingPage() {
   }, []);
 
   return (
-    <main className="min-h-screen bg-[radial-gradient(circle_at_90%_0%,rgba(139,92,246,0.16),transparent_25%),radial-gradient(circle_at_5%_10%,rgba(34,211,238,0.12),transparent_28%),#060808] p-6 text-white">
+    <main className="min-h-screen bg-[var(--background)] p-6 text-[var(--foreground)]">
     <div className="mx-auto max-w-6xl">
       <div className="text-center mb-12">
-        <p className="mb-3 text-[10px] font-black uppercase tracking-[0.4em] text-amber-300">Access architecture</p>
-        <h1 className="font-serif text-4xl font-black tracking-tight mb-4">
+        <p className="mb-3 text-[10px] font-black uppercase tracking-[0.4em] text-[var(--accent)]">Access architecture</p>
+        <h1 className="font-display text-4xl font-black tracking-tight mb-4">
           Simple, Program-Based Pricing
         </h1>
-        <p className="text-zinc-400 text-base max-w-2xl mx-auto">
+        <p className="text-[var(--text-muted)] text-base max-w-2xl mx-auto">
           Get complete annual access to your specific chemistry exam program. No recurring monthly bills, no bundled bloat — pay only for what you study.
         </p>
       </div>
 
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
         {/* Free Plan */}
-        <div className="bg-[linear-gradient(145deg,rgba(101,214,154,0.12),transparent_46%),#17171b] border border-emerald-400/20 rounded-3xl p-7 flex flex-col justify-between shadow-[0_26px_65px_-50px_rgba(101,214,154,0.8)]">
+        <div className="bg-[var(--surface)] border border-[var(--border)] rounded-lg p-7 flex flex-col justify-between">
           <div>
             <div className="mb-6">
-              <div className="text-sm font-semibold text-emerald-300 uppercase tracking-wide mb-2">Free Plan</div>
+              <div className="text-sm font-semibold text-[var(--accent)] uppercase tracking-wide mb-2">Free Plan</div>
               <div className="text-4xl font-bold">₹0</div>
-              <div className="text-zinc-500 text-xs mt-1">Free forever — no credit card needed</div>
+              <div className="text-[var(--text-muted)] text-xs mt-1">Free forever — no credit card needed</div>
             </div>
             <div className="space-y-3 mb-8">
               {FREE_FEATURES.map((f) => (
-                <div key={f} className="flex items-start gap-3 text-xs text-zinc-300">
-                  <span className="text-green-400 mt-0.5 flex-shrink-0">✓</span>
+                <div key={f} className="flex items-start gap-3 text-xs text-[var(--text-muted)]">
+                  <span className="text-[var(--accent)] mt-0.5 flex-shrink-0">✓</span>
                   {f}
                 </div>
               ))}
@@ -177,41 +177,35 @@ export default function PricingPage() {
           </div>
           <a
             href="/auth/signup"
-            className="block w-full text-center border border-zinc-700 hover:border-zinc-500 text-white py-3 rounded-xl transition text-xs font-bold"
+            className="block w-full text-center border border-[var(--border)] hover:border-[var(--accent)]/50 text-[var(--foreground)] py-3 rounded-lg transition text-xs font-bold"
           >
             Get Started Free
           </a>
         </div>
 
         {/* Paid Programs */}
-        {PROGRAMS.map((p, index) => {
+        {PROGRAMS.map((p) => {
           const resolvedKey =
             p.key === "class-11" ? `${class11Board}:class-11`
             : p.key === "class-12" ? `${class12Board}:class-12`
             : p.key;
           const cardComingSoon = COMING_SOON_PROGRAM_KEYS.has(resolvedKey);
           return (
-          <div key={p.key} className={`rounded-3xl border p-7 flex flex-col justify-between transition hover:-translate-y-1 ${[
-            "border-cyan-400/30 bg-[linear-gradient(145deg,rgba(34,211,238,0.15),transparent_45%),#17171b] shadow-[0_26px_65px_-50px_rgba(34,211,238,0.85)]",
-            "border-violet-400/30 bg-[linear-gradient(145deg,rgba(139,92,246,0.16),transparent_45%),#17171b] shadow-[0_26px_65px_-50px_rgba(139,92,246,0.85)]",
-            "border-emerald-400/30 bg-[linear-gradient(145deg,rgba(101,214,154,0.14),transparent_45%),#17171b] shadow-[0_26px_65px_-50px_rgba(101,214,154,0.85)]",
-            "border-amber-300/30 bg-[linear-gradient(145deg,rgba(240,189,54,0.14),transparent_45%),#17171b] shadow-[0_26px_65px_-50px_rgba(240,189,54,0.85)]",
-            "border-rose-400/30 bg-[linear-gradient(145deg,rgba(255,139,107,0.15),transparent_45%),#17171b] shadow-[0_26px_65px_-50px_rgba(255,139,107,0.85)]",
-          ][index]}`}>
+          <div key={p.key} className="rounded-lg border border-[var(--border)] bg-[var(--surface)] p-7 flex flex-col justify-between transition hover:-translate-y-1">
             <div>
               <div className="mb-5">
-                <div className={`text-sm font-semibold uppercase tracking-wide mb-2 ${["text-cyan-300", "text-violet-300", "text-emerald-300", "text-amber-300", "text-rose-300"][index]}`}>{p.name}</div>
+                <div className="text-sm font-semibold text-[var(--accent)] uppercase tracking-wide mb-2">{p.name}</div>
                 <div className="flex items-end gap-2">
                   <div className="text-4xl font-black">₹{p.price}</div>
-                  <div className="text-zinc-500 text-xs mb-1">/ year</div>
+                  <div className="text-[var(--text-muted)] text-xs mb-1">/ year</div>
                 </div>
-                <p className="text-zinc-400 text-xs mt-2 leading-relaxed">{p.desc}</p>
+                <p className="text-[var(--text-muted)] text-xs mt-2 leading-relaxed">{p.desc}</p>
               </div>
 
               {/* Board Selector for School Boards */}
               {p.boardSelect && (
-                <div className="mb-5 bg-black/40 border border-white/5 rounded-xl p-3">
-                  <span className="text-[10px] uppercase font-bold text-white/50 block mb-2">Select Syllabus Track</span>
+                <div className="mb-5 bg-[var(--surface-2)] border border-[var(--border)] rounded-lg p-3">
+                  <span className="text-[10px] uppercase font-bold text-[var(--text-muted)] block mb-2">Select Syllabus Track</span>
                   <div className="grid grid-cols-3 gap-1.5">
                     {["cbse", "isc", "state-boards"].map((b) => {
                       const currentBoard = p.key === "class-11" ? class11Board : class12Board;
@@ -222,9 +216,9 @@ export default function PricingPage() {
                           key={b}
                           onClick={() => setBoard(b)}
                           className={`py-1 rounded text-[10px] font-extrabold uppercase transition ${
-                            active 
-                              ? "bg-amber-300 text-black" 
-                              : "bg-white/5 text-white/50 border border-white/5 hover:bg-white/10"
+                            active
+                              ? "bg-[var(--accent)] text-[var(--background)]"
+                              : "bg-[var(--surface)] text-[var(--text-muted)] border border-[var(--border)] hover:border-[var(--accent)]/40"
                           }`}
                         >
                           {b === "state-boards" ? "State" : b}
@@ -237,8 +231,8 @@ export default function PricingPage() {
 
               <div className="space-y-3 mb-6">
                 {p.features.map((f) => (
-                  <div key={f} className="flex items-start gap-3 text-xs text-zinc-300">
-                    <span className={`mt-0.5 flex-shrink-0 ${["text-cyan-300", "text-violet-300", "text-emerald-300", "text-amber-300", "text-rose-300"][index]}`}>✓</span>
+                  <div key={f} className="flex items-start gap-3 text-xs text-[var(--text-muted)]">
+                    <span className="text-[var(--accent)] mt-0.5 flex-shrink-0">✓</span>
                     {f}
                   </div>
                 ))}
@@ -246,16 +240,14 @@ export default function PricingPage() {
             </div>
 
             {cardComingSoon ? (
-              <div className="w-full text-center border border-white/10 bg-white/[0.04] text-white/60 py-3 rounded-xl text-xs font-bold">
-                <div className="uppercase tracking-wider text-[11px] font-black text-white/70">Coming Soon</div>
-                <div className="text-white/40 text-[10px] mt-1 font-normal leading-relaxed px-2">{COMING_SOON_NOTE}</div>
+              <div className="w-full text-center border border-[var(--border)] bg-[var(--surface-2)] text-[var(--text-muted)] py-3 rounded-lg text-xs font-bold">
+                <div className="uppercase tracking-wider text-[11px] font-black text-[var(--foreground)]">Coming Soon</div>
+                <div className="text-[var(--text-muted)] text-[10px] mt-1 font-normal leading-relaxed px-2">{COMING_SOON_NOTE}</div>
               </div>
             ) : (
               <button
                 onClick={() => handleBuy(p)}
-                className={`block w-full text-center font-bold py-3 rounded-xl transition text-xs hover:-translate-y-0.5 text-black ${[
-                  "bg-cyan-400 hover:bg-cyan-300", "bg-violet-400 hover:bg-violet-300", "bg-emerald-400 hover:bg-emerald-300", "bg-amber-300 hover:bg-amber-200", "bg-rose-400 hover:bg-rose-300",
-                ][index]}`}
+                className="block w-full text-center font-bold py-3 rounded-lg transition text-xs hover:-translate-y-0.5 bg-[var(--accent)] text-[var(--background)] hover:opacity-90"
               >
                 Unlock {p.name} →
               </button>
@@ -291,19 +283,19 @@ export default function PricingPage() {
               a: "No. Your streak, quiz history, mistake journal, and stats remain securely saved. They will be immediately accessible again when you renew your program access.",
             },
           ].map(({ q, a }) => (
-            <div key={q} className="bg-zinc-900 border border-zinc-800 rounded-xl p-5">
-              <div className="font-semibold text-white mb-2">{q}</div>
-              <div className="text-zinc-400 text-xs leading-relaxed">{a}</div>
+            <div key={q} className="bg-[var(--surface)] border border-[var(--border)] rounded-lg p-5">
+              <div className="font-semibold text-[var(--foreground)] mb-2">{q}</div>
+              <div className="text-[var(--text-muted)] text-xs leading-relaxed">{a}</div>
             </div>
           ))}
         </div>
       </div>
 
-      <div className="mx-auto max-w-3xl px-4 pb-12 text-center text-xs text-zinc-500">
+      <div className="mx-auto max-w-3xl px-4 pb-12 text-center text-xs text-[var(--text-muted)]">
         By purchasing you agree to our{" "}
-        <a href="/terms" className="text-cyan-400 hover:text-cyan-300 underline">Terms of Service</a>,{" "}
-        <a href="/privacy" className="text-cyan-400 hover:text-cyan-300 underline">Privacy Policy</a> and{" "}
-        <a href="/refund" className="text-cyan-400 hover:text-cyan-300 underline">Refund &amp; Cancellation Policy</a>.
+        <a href="/terms" className="text-[var(--accent)] hover:underline">Terms of Service</a>,{" "}
+        <a href="/privacy" className="text-[var(--accent)] hover:underline">Privacy Policy</a> and{" "}
+        <a href="/refund" className="text-[var(--accent)] hover:underline">Refund &amp; Cancellation Policy</a>.
       </div>
 
       <StudentDetailsForm

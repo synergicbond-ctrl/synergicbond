@@ -85,11 +85,11 @@ function SignInForm() {
   }
 
   return (
-    <main className="flex min-h-screen items-center justify-center bg-black text-white">
-      <div className="w-full max-w-md rounded-3xl border border-white/10 bg-white/[0.03] p-8">
+    <main className="flex min-h-screen items-center justify-center bg-[var(--background)] text-[var(--foreground)]">
+      <div className="w-full max-w-md rounded-lg border border-[var(--border)] bg-[var(--surface-2)] p-8">
 
         <h1 className="text-3xl font-bold">Student Portal</h1>
-        <p className="mt-2 text-white/60">Sign in to continue your chemistry journey.</p>
+        <p className="mt-2 text-[var(--text-muted)]">Sign in to continue your chemistry journey.</p>
 
         <div className="mt-8 space-y-4">
           <input
@@ -97,7 +97,7 @@ function SignInForm() {
             placeholder="Email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            className="w-full rounded-xl border border-white/10 bg-black/30 px-4 py-3"
+            className="w-full rounded-lg border border-[var(--border)] bg-[var(--surface)] px-4 py-3 text-[var(--foreground)] outline-none focus:border-[var(--accent)]"
           />
 
           <input
@@ -105,7 +105,7 @@ function SignInForm() {
             placeholder="Password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            className="w-full rounded-xl border border-white/10 bg-black/30 px-4 py-3"
+            className="w-full rounded-lg border border-[var(--border)] bg-[var(--surface)] px-4 py-3 text-[var(--foreground)] outline-none focus:border-[var(--accent)]"
           />
 
           <div className="flex justify-end -mt-1">
@@ -113,14 +113,14 @@ function SignInForm() {
               type="button"
               onClick={handleForgotPassword}
               disabled={resetting}
-              className="text-xs text-cyan-300 hover:underline disabled:opacity-50"
+              className="text-xs text-[var(--accent)] hover:underline disabled:opacity-50"
             >
               {resetting ? "Sending…" : "Forgot Password?"}
             </button>
           </div>
 
           {resetSent && (
-            <p className="rounded-xl border border-green-500/20 bg-green-500/10 px-3 py-2 text-xs text-green-300">
+            <p className="rounded-lg border border-[var(--border)] bg-[var(--surface)] px-3 py-2 text-xs text-[var(--text-muted)]">
               Password reset link sent. Check your email and open it on this device.
             </p>
           )}
@@ -130,20 +130,20 @@ function SignInForm() {
           <button
             onClick={handleSignIn}
             disabled={loading}
-            className="w-full rounded-xl bg-gradient-to-r from-cyan-400 to-blue-500 py-3 font-semibold text-black disabled:opacity-60"
+            className="w-full rounded-lg bg-[var(--accent)] py-3 font-semibold text-[var(--background)] disabled:opacity-60"
           >
             {loading ? "Signing In..." : "Sign In"}
           </button>
 
           <div className="relative flex items-center py-2">
-            <div className="flex-grow border-t border-white/10" />
-            <span className="mx-3 text-white/30 text-xs">or</span>
-            <div className="flex-grow border-t border-white/10" />
+            <div className="flex-grow border-t border-[var(--border)]" />
+            <span className="mx-3 text-[var(--text-muted)] text-xs">or</span>
+            <div className="flex-grow border-t border-[var(--border)]" />
           </div>
 
           <button
             onClick={handleGoogleSignIn}
-            className="w-full rounded-xl border border-white/10 bg-white/5 py-3 font-semibold text-white flex items-center justify-center gap-3 hover:bg-white/10 transition"
+            className="w-full rounded-lg border border-[var(--border)] bg-[var(--surface)] py-3 font-semibold text-[var(--foreground)] flex items-center justify-center gap-3 hover:bg-[var(--surface-2)] transition"
           >
             <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
               <path d="M17.64 9.2c0-.637-.057-1.251-.164-1.84H9v3.481h4.844c-.209 1.125-.843 2.078-1.796 2.716v2.259h2.908c1.702-1.567 2.684-3.875 2.684-6.615Z" fill="#4285F4"/>
@@ -156,17 +156,17 @@ function SignInForm() {
 
           <button
             onClick={() => { localStorage.setItem("sb_guest", "1"); window.location.href = "/notes"; }}
-            className="w-full rounded-xl border border-cyan-500/30 bg-cyan-950/30 py-3 font-semibold text-cyan-300 flex items-center justify-center gap-2 hover:bg-cyan-950/50 transition"
+            className="w-full rounded-lg border border-[var(--border)] bg-[var(--surface)] py-3 font-semibold text-[var(--text-muted)] flex items-center justify-center gap-2 hover:bg-[var(--surface-2)] transition"
           >
             ⚡ Try as Guest — No Login Needed
           </button>
-          <p className="text-center text-xs text-white/30">
+          <p className="text-center text-xs text-[var(--text-muted)]">
             Guest access: Free Notes chapters, Assignments, Quiz — no account required
           </p>
 
           <div className="text-center pt-4">
-            <p className="text-white/50">New to SYNERGIC BOND?</p>
-            <Link href="/auth/signup" className="mt-3 inline-block text-cyan-300">
+            <p className="text-[var(--text-muted)]">New to SYNERGIC BOND?</p>
+            <Link href="/auth/signup" className="mt-3 inline-block text-[var(--accent)]">
               Create Account →
             </Link>
           </div>

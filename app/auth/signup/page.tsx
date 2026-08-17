@@ -59,74 +59,70 @@ export default function SignUp() {
   };
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-black px-4 text-white">
-      <div className="absolute inset-0 -z-10 overflow-hidden">
-        <div className="absolute left-1/2 top-1/2 h-[500px] w-[500px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-cyan-500/10 blur-[150px]" />
-      </div>
-
-      <div className="w-full max-w-md rounded-3xl border border-white/10 bg-white/[0.02] p-8 backdrop-blur-2xl">
+    <div className="flex min-h-screen items-center justify-center bg-[var(--background)] px-4 text-[var(--foreground)]">
+      <div className="w-full max-w-md rounded-lg border border-[var(--border)] bg-[var(--surface-2)] p-8">
         <div className="text-center">
-          <h1 className="text-3xl font-black tracking-tight">
-            Chemistry <span className="bg-gradient-to-r from-cyan-400 to-sky-500 bg-clip-text text-transparent">OS</span>
+          <h1 className="text-3xl font-black tracking-tight text-[var(--accent)]">
+            Chemistry OS
           </h1>
-          <p className="mt-2 text-sm text-white/50">Register Account</p>
+          <p className="mt-2 text-sm text-[var(--text-muted)]">Register Account</p>
         </div>
 
         {error && (
-          <div className="mt-6 rounded-xl bg-red-500/10 border border-red-500/20 p-4 text-sm text-red-200">
+          <div className="mt-6 rounded-lg bg-red-500/10 border border-red-500/20 p-4 text-sm text-red-200">
             {error}
           </div>
         )}
 
         <form className="mt-8 space-y-4" onSubmit={handleSignUp}>
           <div>
-            <label className="block text-xs uppercase tracking-wider text-white/60">Full Name</label>
+            <label className="block text-xs uppercase tracking-wider text-[var(--text-muted)]">Full Name</label>
             <input
               type="text"
               required
               value={name}
               onChange={(e) => setName(e.target.value)}
               placeholder="John Doe"
-              className="mt-1 w-full rounded-xl border border-white/10 bg-black/50 px-4 py-3 text-white outline-none focus:border-cyan-400"
+              className="mt-1 w-full rounded-lg border border-[var(--border)] bg-[var(--surface)] px-4 py-3 text-[var(--foreground)] outline-none focus:border-[var(--accent)]"
             />
           </div>
 
           <div>
-            <label className="block text-xs uppercase tracking-wider text-white/60">Email Address</label>
+            <label className="block text-xs uppercase tracking-wider text-[var(--text-muted)]">Email Address</label>
             <input
               type="email"
               required
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder="you@example.com"
-              className="mt-1 w-full rounded-xl border border-white/10 bg-black/50 px-4 py-3 text-white outline-none focus:border-cyan-400"
+              className="mt-1 w-full rounded-lg border border-[var(--border)] bg-[var(--surface)] px-4 py-3 text-[var(--foreground)] outline-none focus:border-[var(--accent)]"
             />
           </div>
 
           <div>
-            <label className="block text-xs uppercase tracking-wider text-white/60">Password</label>
+            <label className="block text-xs uppercase tracking-wider text-[var(--text-muted)]">Password</label>
             <input
               type="password"
               required
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               placeholder="••••••••"
-              className="mt-1 w-full rounded-xl border border-white/10 bg-black/50 px-4 py-3 text-white outline-none focus:border-cyan-400"
+              className="mt-1 w-full rounded-lg border border-[var(--border)] bg-[var(--surface)] px-4 py-3 text-[var(--foreground)] outline-none focus:border-[var(--accent)]"
             />
           </div>
 
           <button
             type="submit"
             disabled={loading}
-            className="w-full rounded-xl bg-gradient-to-r from-cyan-400 to-sky-500 py-4 font-semibold text-black transition hover:brightness-110 disabled:opacity-50"
+            className="w-full rounded-lg bg-[var(--accent)] py-4 font-semibold text-[var(--background)] transition hover:opacity-90 disabled:opacity-50"
           >
             {loading ? "Creating Account..." : "Create Account"}
           </button>
         </form>
 
-        <p className="mt-6 text-center text-sm text-white/60">
+        <p className="mt-6 text-center text-sm text-[var(--text-muted)]">
           Already have an account?{" "}
-          <Link href="/auth/signin" className="text-cyan-400 hover:underline">
+          <Link href="/auth/signin" className="text-[var(--accent)] hover:underline">
             Sign In
           </Link>
         </p>

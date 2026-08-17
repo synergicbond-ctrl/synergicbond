@@ -22,11 +22,11 @@ export default function UnlockBanner({
 }) {
   if (available >= total) return null;
   return (
-    <div className="my-6 rounded-2xl border border-cyan-400/25 bg-gradient-to-r from-cyan-500/10 to-purple-500/10 p-5 text-center">
-      <p className="text-2xl font-black text-white">
-        {available} <span className="text-white/40">of</span> {total}
+    <div className="my-6 rounded-lg border border-[var(--border)] bg-[var(--surface-2)] p-5 text-center">
+      <p className="text-2xl font-black text-[var(--foreground)]">
+        {available} <span className="text-[var(--text-muted)]">of</span> {total}
       </p>
-      <p className="mt-1 text-sm text-white/60">
+      <p className="mt-1 text-sm text-[var(--text-muted)]">
         {itemLabel} available on the free plan
       </p>
       <Link
@@ -35,7 +35,7 @@ export default function UnlockBanner({
           trackBetaEvent("upgrade_intent", { source: itemLabel, available, total });
           track("unlock_banner_click", { source: itemLabel });
         }}
-        className="mt-4 inline-block rounded-xl bg-gradient-to-r from-cyan-500 to-blue-500 px-5 py-2.5 text-sm font-bold text-black transition hover:opacity-90"
+        className="mt-4 inline-block rounded-lg bg-[var(--accent)] px-5 py-2.5 text-sm font-bold text-[var(--background)] transition hover:opacity-90"
       >
         Unlock Complete Library →
       </Link>

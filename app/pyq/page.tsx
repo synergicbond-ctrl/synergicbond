@@ -26,7 +26,7 @@ const VALID_EXAMS: PYQExam[] = ["JEE Main", "JEE Advanced", "NEET"];
 
 export default function PYQPage() {
   return (
-    <Suspense fallback={<main className="min-h-screen bg-black" />}>
+    <Suspense fallback={<main className="min-h-screen bg-[var(--background)]" />}>
       <PYQPageInner />
     </Suspense>
   );
@@ -43,7 +43,7 @@ function PYQPageInner() {
   }, [searchParams]);
 
   return (
-    <main className="min-h-screen bg-black text-white">
+    <main className="min-h-screen bg-[var(--background)] text-[var(--foreground)]">
       <div className="max-w-7xl mx-auto px-4 md:px-6 py-8 md:py-16 space-y-8">
         {/* Header */}
         <div className="space-y-2">
@@ -62,7 +62,7 @@ function PYQPageInner() {
               onClick={() => setTab(t.key)}
               className={`px-3 md:px-4 py-3 text-sm md:text-base font-semibold border-b-2 whitespace-nowrap transition ${
                 tab === t.key
-                  ? "border-cyan-500 text-white"
+                  ? "border-[var(--accent)] text-[var(--foreground)]"
                   : "border-transparent text-white/50 hover:text-white/70"
               }`}
             >

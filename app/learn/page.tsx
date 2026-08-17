@@ -93,7 +93,7 @@ export default function LearnPage() {
           <h1 className="mt-3 max-w-3xl text-3xl font-black tracking-tight sm:text-5xl">
             Chemistry learning modules
           </h1>
-          <p className="mt-3 max-w-2xl text-sm font-medium leading-relaxed text-white/60">
+          <p className="mt-3 max-w-2xl text-sm font-medium leading-relaxed text-[var(--text-muted)]">
             Open the verified chemistry systems that are already connected to search, formulas, PYQs, reactions, and orders.
           </p>
         </header>
@@ -152,19 +152,19 @@ export default function LearnPage() {
         </div>
 
         <section className="rounded-lg border border-white/[0.08] bg-white/[0.03] p-5">
-          <p className="text-xs font-black uppercase tracking-[0.28em] text-white/35">Knowledge Core</p>
+          <p className="text-xs font-bold uppercase tracking-[0.28em] text-[var(--text-muted)]">Knowledge Core</p>
           <div className="mt-4 grid gap-3 sm:grid-cols-3">
             <div className="rounded-md bg-[var(--surface-2)] p-4">
               <p className="text-2xl font-black text-[var(--foreground)]">{highYieldReactions.length}</p>
-              <p className="mt-1 text-xs font-bold text-white/55">High-yield reactions</p>
+              <p className="mt-1 text-xs font-bold text-[var(--text-muted)]">High-yield reactions</p>
             </div>
             <div className="rounded-md bg-[var(--surface-2)] p-4">
               <p className="text-2xl font-black text-[var(--foreground)]">{formulaCards.length}</p>
-              <p className="mt-1 text-xs font-bold text-white/55">Formula cards</p>
+              <p className="mt-1 text-xs font-bold text-[var(--text-muted)]">Formula cards</p>
             </div>
             <div className="rounded-md bg-[var(--surface-2)] p-4">
               <p className="text-2xl font-black text-[var(--foreground)]">{IMPORTANT_ORDERS.length}</p>
-              <p className="mt-1 text-xs font-bold text-white/55">Verified order records</p>
+              <p className="mt-1 text-xs font-bold text-[var(--text-muted)]">Verified order records</p>
             </div>
           </div>
         </section>

@@ -37,9 +37,9 @@ export default function MoleConceptNotes() {
       </div>
 
       <Section id="mole" eyebrow="Core idea" title="What is a mole?">
-        <p className="max-w-2xl leading-relaxed text-white/70">
-          A <span className="font-bold text-white">mole</span> is simply a counting unit — like a dozen (12) or a gross
-          (144), but far larger. One mole is <span className="font-bold text-cyan-300">6.022×10²³</span> particles
+        <p className="max-w-2xl leading-relaxed text-[var(--text-body)]">
+          A <span className="font-bold text-[var(--foreground)]">mole</span> is simply a counting unit — like a dozen (12) or a gross
+          (144), but far larger. One mole is <span className="font-bold text-[var(--chem-bond)]">6.022×10²³</span> particles
           (Avogadro&apos;s number, N<sub>A</sub>). We use it because atoms are so small that lab-sized amounts contain
           astronomically many of them.
         </p>
@@ -51,14 +51,14 @@ export default function MoleConceptNotes() {
           ].map((c) => (
             <Glass key={c.k} className="p-4">
               <div className="text-sm font-bold text-white">{c.k}</div>
-              <div className="mt-1 text-sm text-cyan-200">{renderChemistry(c.v)}</div>
+              <div className="mt-1 text-sm text-[var(--chem-bond)]">{renderChemistry(c.v)}</div>
             </Glass>
           ))}
         </div>
       </Section>
 
       <Section id="map" eyebrow="Visual map" title="The Mole Conversion Wheel">
-        <p className="mb-5 max-w-2xl text-white/65">Every mole problem is one of these four hops. The mole sits at the centre — you always convert to moles first, then out.</p>
+        <p className="mb-5 max-w-2xl text-[var(--text-muted)]">Every mole problem is one of these four hops. The mole sits at the centre — you always convert to moles first, then out.</p>
         <Glass className="p-6">
           <svg viewBox="0 0 340 260" className="mx-auto h-auto w-full max-w-md">
             <g stroke="rgba(255,255,255,0.15)" strokeWidth="1.5">
@@ -92,8 +92,8 @@ export default function MoleConceptNotes() {
           <FormulaCard name="Gas at STP" formula="n = V / 22.7" vars={[{ sym: "V", mean: "volume at STP (L)" }, { sym: "22.7", mean: "molar volume (L/mol)" }]} />
         </div>
         <Glass className="mt-4 border-cyan-400/20 bg-cyan-500/[0.05] p-4">
-          <div className="text-xs font-bold uppercase tracking-wider text-cyan-300">Memory box</div>
-          <p className="mt-1 text-sm text-white/75">Always land on <span className="font-bold text-cyan-200">moles</span> first. Mass → moles → anything. Never jump mass → particles directly.</p>
+          <div className="text-xs font-bold uppercase tracking-wider text-[var(--chem-bond)]">Memory box</div>
+          <p className="mt-1 text-sm text-[var(--text-body)]">Always land on <span className="font-bold text-[var(--chem-bond)]">moles</span> first. Mass → moles → anything. Never jump mass → particles directly.</p>
         </Glass>
       </Section>
 
@@ -107,11 +107,11 @@ export default function MoleConceptNotes() {
           </div>
           <div className="mt-4 rounded-lg border border-emerald-500/25 bg-emerald-500/[0.08] px-4 py-3">
             <span className="text-xs font-bold uppercase text-emerald-300">Final answer</span>
-            <div className="mt-0.5 font-black text-emerald-200">{renderChemistry("≈ 2.41×10²³ oxygen atoms")}</div>
+            <div className="mt-0.5 font-bold text-[var(--chem-rule)]">{renderChemistry("≈ 2.41×10²³ oxygen atoms")}</div>
           </div>
           <div className="mt-3 rounded-lg border border-amber-400/25 bg-amber-400/[0.07] px-4 py-2.5">
             <span className="text-xs font-bold uppercase text-amber-300">JEE shortcut</span>
-            <p className="mt-0.5 text-sm text-white/75">Atoms of an element = (given mass ÷ molar mass) × (atomicity) × Nₐ — chain it in one line.</p>
+            <p className="mt-0.5 text-sm text-[var(--text-body)]">Atoms of an element = (given mass ÷ molar mass) × (atomicity) × Nₐ — chain it in one line.</p>
           </div>
         </Glass>
       </Section>

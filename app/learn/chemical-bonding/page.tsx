@@ -51,7 +51,7 @@ export default function ChemicalBondingNotes() {
             ["131–178", "Full MOT, pseudohalides, Fajans, intermolecular forces, carbon and ionic-solubility thermodynamics"],
             ["179–189", "Silicate tetrahedra → isolated/dimer/ring/chain/sheet/framework → aluminosilicates/zeolites/uses"],
           ].map(([range, text]) => (
-            <Glass key={range} className="p-4"><div className="text-sm font-black text-cyan-200">Topics {range}</div><p className="mt-1 text-sm leading-relaxed text-white/65">{text}</p></Glass>
+            <Glass key={range} className="p-4"><div className="text-sm font-bold text-[var(--chem-bond)]">Topics {range}</div><p className="mt-1 text-sm leading-relaxed text-[var(--text-muted)]">{text}</p></Glass>
           ))}
         </div>
         <Glass className="mt-4 border-violet-300/20 bg-violet-300/[0.05] p-4 text-sm leading-relaxed text-white/75">
@@ -63,7 +63,7 @@ export default function ChemicalBondingNotes() {
         <div className="space-y-2">
           {SHAPES.map((s) => (
             <Glass key={s.sn} className="flex items-center gap-4 p-3.5">
-              <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-[#0B1220] text-lg font-black text-cyan-200">{s.sn}</span>
+              <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-[var(--background)] text-lg font-bold text-[var(--chem-bond)]">{s.sn}</span>
               <div className="min-w-0 flex-1"><span className="font-bold text-white">{s.shape}</span><span className="ml-2 text-sm text-white/55">{renderChemistry(s.ex)}</span></div>
               <span className="shrink-0 rounded-full border border-white/10 bg-white/[0.04] px-2.5 py-0.5 text-xs font-bold text-amber-300">{s.ang}</span>
             </Glass>

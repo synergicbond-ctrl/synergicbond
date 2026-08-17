@@ -49,7 +49,7 @@ export function AtomicStructurePartNavigator({ parts }: { parts: readonly Atomic
           <select
             defaultValue=""
             onChange={(event) => { if (event.target.value) router.push(event.target.value); }}
-            className="w-full rounded-xl border border-cyan-400/30 bg-[#0B1220] px-4 py-2.5 text-sm font-semibold text-cyan-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-300"
+            className="w-full rounded-xl border border-[var(--chem-bond)]/30 bg-[var(--background)] px-4 py-2.5 text-sm font-semibold text-[var(--chem-bond)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--chem-bond)]"
           >
             <option value="" disabled>Jump to lesson…</option>
             {parts.map((part) => (

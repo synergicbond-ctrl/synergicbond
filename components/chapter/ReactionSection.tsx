@@ -19,13 +19,13 @@ export default function ReactionSection({
           Important Reactions
         </h2>
 
-        <p className="text-gray-400">
+        <p className="text-[var(--text-muted)]">
           Frequently tested reactions from this chapter.
         </p>
       </div>
 
       {reactions.length === 0 ? (
-        <div className="rounded-xl border border-dashed border-gray-700 p-6 text-gray-500">
+        <div className="rounded-lg border border-dashed border-[var(--border)] p-6 text-[var(--text-muted)]">
           No reactions available.
         </div>
       ) : (
@@ -33,24 +33,24 @@ export default function ReactionSection({
           {reactions.map((reaction) => (
             <div
               key={reaction.name}
-              className="rounded-xl border border-gray-800 bg-gray-900 p-5"
+              className="rounded-lg border border-[var(--border)] bg-[var(--surface)] p-5"
             >
               <h3 className="text-lg font-semibold">
                 {reaction.name}
               </h3>
 
-              <div className="mt-3 rounded-lg bg-black p-3 font-mono text-cyan-400">
+              <div className="mt-3 rounded-lg bg-[var(--surface-2)] p-3 font-mono text-[var(--foreground)]">
                 {reaction.equation}
               </div>
 
               {reaction.conditions && (
-                <p className="mt-3 text-sm text-yellow-400">
+                <p className="mt-3 text-sm text-[var(--accent)]">
                   Conditions: {reaction.conditions}
                 </p>
               )}
 
               {reaction.description && (
-                <p className="mt-2 text-sm text-gray-400">
+                <p className="mt-2 text-sm text-[var(--text-muted)]">
                   {reaction.description}
                 </p>
               )}

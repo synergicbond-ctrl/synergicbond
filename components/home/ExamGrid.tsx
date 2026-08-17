@@ -17,9 +17,9 @@ const exams = [
     border: "rgba(0,245,212,0.3)",
     glow: "group-hover:shadow-[0_0_28px_rgba(0,245,212,0.14)]",
     borderHover: "group-hover:border-[rgba(0,245,212,0.4)]",
-    iconBg: "from-cyan-400/20 to-cyan-500/5 border-cyan-400/20",
+    iconBg: "from-[var(--surface-2)] to-[var(--surface)] border-[var(--border)]",
     iconColor: "text-[#00F5D4]",
-    pillColor: "bg-cyan-500/10 text-cyan-300 border-cyan-500/20",
+    pillColor: "bg-[var(--surface-2)] text-[var(--accent)] border-[var(--border)]",
   },
   {
     title: "JEE",
@@ -34,9 +34,9 @@ const exams = [
     border: "rgba(155,93,229,0.3)",
     glow: "group-hover:shadow-[0_0_28px_rgba(155,93,229,0.14)]",
     borderHover: "group-hover:border-[rgba(155,93,229,0.4)]",
-    iconBg: "from-violet-400/20 to-violet-500/5 border-violet-400/20",
+    iconBg: "from-[var(--surface-2)] to-[var(--surface)] border-[var(--border)]",
     iconColor: "text-[#9B5DE5]",
-    pillColor: "bg-purple-500/10 text-purple-300 border-purple-500/20",
+    pillColor: "bg-[var(--surface-2)] text-[var(--accent)] border-[var(--border)]",
   },
   {
     title: "Olympiad",
@@ -51,9 +51,9 @@ const exams = [
     border: "rgba(0,245,212,0.3)",
     glow: "group-hover:shadow-[0_0_28px_rgba(0,245,212,0.14)]",
     borderHover: "group-hover:border-[rgba(0,245,212,0.4)]",
-    iconBg: "from-cyan-400/20 to-cyan-500/5 border-cyan-400/20",
+    iconBg: "from-[var(--surface-2)] to-[var(--surface)] border-[var(--border)]",
     iconColor: "text-[#00F5D4]",
-    pillColor: "bg-cyan-500/10 text-cyan-300 border-cyan-500/20",
+    pillColor: "bg-[var(--surface-2)] text-[var(--accent)] border-[var(--border)]",
   },
   {
     title: "GATE",
@@ -68,9 +68,9 @@ const exams = [
     border: "rgba(155,93,229,0.3)",
     glow: "group-hover:shadow-[0_0_28px_rgba(155,93,229,0.14)]",
     borderHover: "group-hover:border-[rgba(155,93,229,0.4)]",
-    iconBg: "from-violet-400/20 to-violet-500/5 border-violet-400/20",
+    iconBg: "from-[var(--surface-2)] to-[var(--surface)] border-[var(--border)]",
     iconColor: "text-[#9B5DE5]",
-    pillColor: "bg-purple-500/10 text-purple-300 border-purple-500/20",
+    pillColor: "bg-[var(--surface-2)] text-[var(--accent)] border-[var(--border)]",
   },
 ];
 
@@ -80,7 +80,7 @@ export default function ExamGrid() {
     <section className="w-full mt-16">
 
       <div className="mb-10 text-center">
-        <p className="text-xs font-bold uppercase tracking-[0.4em] text-cyan-300 mb-3">
+        <p className="text-xs font-bold uppercase tracking-[0.4em] text-[var(--accent)] mb-3">
           {t("journey.eyebrow")}
         </p>
         <h2 className="text-4xl font-black tracking-tight text-white">

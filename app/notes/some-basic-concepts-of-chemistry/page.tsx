@@ -30,15 +30,15 @@ interface ProblemData {
 
 function MathContent({ children, className = "" }: { children: string; className?: string }) {
   return (
-    <div className={`text-slate-300 ${className}`}>
+    <div className={`text-[var(--text-muted)] ${className}`}>
       <ReactMarkdown
         remarkPlugins={[remarkMath]}
         rehypePlugins={[rehypeKatex]}
         components={{
           p: ({ children: value }) => <p className="my-2 leading-7">{value}</p>,
-          strong: ({ children: value }) => <strong className="font-extrabold text-slate-100">{value}</strong>,
+          strong: ({ children: value }) => <strong className="font-extrabold text-[var(--foreground)]">{value}</strong>,
           ul: ({ children: value }) => <ul className="my-2 list-disc space-y-2 pl-5">{value}</ul>,
-          li: ({ children: value }) => <li className="text-slate-300">{value}</li>,
+          li: ({ children: value }) => <li className="text-[var(--text-muted)]">{value}</li>,
         }}
       >
         {children}
@@ -56,14 +56,14 @@ function ParticleGrid({ stateType }: { stateType: "solid" | "liquid" | "gas" }) 
   const { dots, desc } = configs[stateType];
 
   return (
-    <div className="flex flex-col items-center justify-center p-4 rounded-xl border border-slate-700 bg-slate-900/50">
-      <svg viewBox="0 0 130 130" className="w-32 h-32 rounded-xl bg-slate-950/70 shadow-inner">
+    <div className="flex flex-col items-center justify-center p-4 rounded-lg border border-[var(--border)] bg-[var(--surface)]/50">
+      <svg viewBox="0 0 130 130" className="w-32 h-32 rounded-lg bg-[var(--background)]/70 shadow-inner">
         {dots.map(([x, y], i) => (
           <circle key={i} cx={x} cy={y} r="8" fill={i % 2 === 0 ? "#5ee7ff" : "#a78bfa"} className={stateType === "solid" ? "animate-pulse" : stateType === "liquid" ? "animate-[pulse_2.4s_ease-in-out_infinite]" : "animate-[pulse_3.2s_ease-in-out_infinite]"} />
         ))}
       </svg>
       <h4 className="mt-4 font-black text-white capitalize">{stateType}</h4>
-      <p className="mt-1 text-xs text-center text-slate-400">{desc}</p>
+      <p className="mt-1 text-xs text-center text-[var(--text-muted)]">{desc}</p>
     </div>
   );
 }
@@ -92,7 +92,7 @@ function AnalyticalBalance() {
 
 function VolumeEquivalence() {
   return (
-    <article className="rounded-lg border border-slate-700 bg-slate-950/70 p-6 shadow-xl">
+    <article className="rounded-lg border border-[var(--border)] bg-[var(--background)]/70 p-6 shadow-xl">
       <h3 className="mb-4 text-sm font-black uppercase tracking-widest text-amber-300">
         Volume equivalence
       </h3>
@@ -834,7 +834,7 @@ if (ALL_QUESTIONS.length !== 50) {
 
 function Eyebrow({ children }: { children: ReactNode }) {
   return (
-    <span className="inline-flex rounded-full border border-cyan-400/25 bg-cyan-400/5 px-3 py-1 text-[11px] font-black uppercase tracking-[0.22em] text-cyan-300">
+    <span className="inline-flex rounded-full border border-[var(--border)] bg-[var(--surface-2)] px-3 py-1 text-[11px] font-black uppercase tracking-[0.22em] text-[var(--text-muted)]">
       {children}
     </span>
   );
@@ -847,36 +847,36 @@ function SectionHeading({ eyebrow, title, description }: { eyebrow: string; titl
       <h2 className="mt-4 text-4xl font-black tracking-[-0.045em] text-white sm:text-5xl lg:text-7xl">
         {title}
       </h2>
-      <p className="mt-4 max-w-4xl text-base leading-8 text-slate-400 sm:text-lg">{description}</p>
+      <p className="mt-4 max-w-4xl text-base leading-8 text-[var(--text-muted)] sm:text-lg">{description}</p>
     </header>
   );
 }
 
 function InfoCard({ title, children, accent = "cyan" }: { title: string; children: ReactNode; accent?: "cyan" | "amber" | "purple" }) {
   const accents = {
-    cyan: "border-cyan-400/25 bg-cyan-400/[0.045] text-cyan-300",
+    cyan: "border-[var(--border)] bg-[var(--surface-2)][0.045] text-[var(--text-muted)]",
     amber: "border-amber-400/25 bg-amber-400/[0.045] text-amber-300",
-    purple: "border-purple-400/25 bg-purple-400/[0.045] text-purple-300",
+    purple: "border-[var(--border)] bg-[var(--surface-2)] text-[var(--text-muted)]",
   };
   return (
     <aside className={`rounded-lg border p-5 shadow-2xl shadow-black/10 ${accents[accent]}`}>
       <h3 className="text-sm font-black uppercase tracking-[0.16em]">{title}</h3>
-      <div className="mt-3 text-sm leading-7 text-slate-300 sm:text-base">{children}</div>
+      <div className="mt-3 text-sm leading-7 text-[var(--text-muted)] sm:text-base">{children}</div>
     </aside>
   );
 }
 
 function DataTable({ caption, columns, rows }: { caption: string; columns: string[]; rows: Array<Array<ReactNode>> }) {
   return (
-    <div className="my-6 overflow-x-auto rounded-lg border border-slate-700/80 bg-slate-950/65 shadow-2xl shadow-black/20">
+    <div className="my-6 overflow-x-auto rounded-lg border border-[var(--border)] bg-[var(--background)]/65 shadow-2xl shadow-black/20">
       <table className="w-full min-w-[760px] border-collapse text-left">
-        <caption className="border-b border-slate-700/70 bg-gradient-to-r from-cyan-400/10 via-slate-900 to-purple-400/10 px-5 py-4 text-left text-lg font-black text-white">
+        <caption className="border-b border-[var(--border)] bg-[var(--surface)] px-5 py-4 text-left text-lg font-black text-white">
           {caption}
         </caption>
         <thead>
-          <tr className="bg-slate-900/90">
+          <tr className="bg-[var(--surface)]">
             {columns.map((column) => (
-              <th key={column} className="border-b border-slate-700/70 px-4 py-3 text-xs font-black uppercase tracking-[0.16em] text-cyan-300">
+              <th key={column} className="border-b border-[var(--border)] px-4 py-3 text-xs font-black uppercase tracking-[0.16em] text-[var(--text-muted)]">
                 {column}
               </th>
             ))}
@@ -884,11 +884,11 @@ function DataTable({ caption, columns, rows }: { caption: string; columns: strin
         </thead>
         <tbody>
           {rows.map((row, rowIndex) => (
-            <tr key={`row-${rowIndex}`} className="border-b border-slate-800/80 last:border-b-0 hover:bg-slate-800/30 transition-colors">
+            <tr key={`row-${rowIndex}`} className="border-b border-[var(--border)] last:border-b-0 hover:bg-[var(--surface-2)] transition-colors">
               {row.map((cell, cellIndex) => (
                 cellIndex === 0 
-                  ? <th key={cellIndex} className="bg-slate-900/55 px-4 py-4 font-bold text-slate-100">{cell}</th>
-                  : <td key={cellIndex} className="px-4 py-4 leading-7 text-slate-300">{cell}</td>
+                  ? <th key={cellIndex} className="bg-[var(--surface)]/55 px-4 py-4 font-bold text-[var(--foreground)]">{cell}</th>
+                  : <td key={cellIndex} className="px-4 py-4 leading-7 text-[var(--text-muted)]">{cell}</td>
               ))}
             </tr>
           ))}
@@ -900,41 +900,41 @@ function DataTable({ caption, columns, rows }: { caption: string; columns: strin
 
 function ExemplarProblem({ problem }: { problem: ProblemData }) {
   return (
-    <details className="group overflow-hidden rounded-lg border border-slate-700/80 bg-gradient-to-br from-slate-900/95 to-slate-950/95 shadow-xl shadow-black/20 transition hover:border-cyan-400/35">
-      <summary className="flex items-start gap-4 border-b border-slate-800/90 p-5 cursor-pointer outline-none focus:ring-2 focus:ring-cyan-400/50">
-        <span className="grid h-12 w-12 shrink-0 place-items-center rounded-xl border border-cyan-400/25 bg-cyan-400/10 text-sm font-black text-cyan-300">
+    <details className="group overflow-hidden rounded-lg border border-[var(--border)] bg-gradient-to-br from-slate-900/95 to-slate-950/95 shadow-xl shadow-black/20 transition hover:border-[var(--border)]">
+      <summary className="flex items-start gap-4 border-b border-[var(--border)] p-5 cursor-pointer outline-none focus:ring-2 focus:ring-cyan-400/50">
+        <span className="grid h-12 w-12 shrink-0 place-items-center rounded-lg border border-[var(--border)] bg-[var(--surface-2)] text-sm font-black text-[var(--text-muted)]">
           Q{problem.qNumber}
         </span>
         <div className="min-w-0 flex-1">
           <span className="text-[10px] font-black uppercase tracking-[0.2em] text-amber-300">{problem.type}</span>
           <MathContent className="mt-1">{problem.question}</MathContent>
         </div>
-        <span className="text-cyan-400 transition-transform group-open:rotate-180">▼</span>
+        <span className="text-[var(--accent)] transition-transform group-open:rotate-180">▼</span>
       </summary>
 
-      <div className="p-5 bg-slate-900/40">
+      <div className="p-5 bg-[var(--surface-2)]">
         {problem.options.length > 0 && (
           <ol className="grid gap-2 mb-5 sm:grid-cols-2">
             {problem.options.map((option, index) => (
-              <li key={index} className="flex gap-3 rounded-xl border border-slate-800 bg-slate-950/60 p-3 text-sm text-slate-300">
-                <span className="font-black text-purple-300">({["i", "ii", "iii", "iv"][index]})</span>
+              <li key={index} className="flex gap-3 rounded-lg border border-[var(--border)] bg-[var(--background)]/60 p-3 text-sm text-[var(--text-muted)]">
+                <span className="font-black text-[var(--text-muted)]">({["i", "ii", "iii", "iv"][index]})</span>
                 <MathContent>{option}</MathContent>
               </li>
             ))}
           </ol>
         )}
 
-        <div className="border-t border-slate-700/80 pt-5">
-          <div className="rounded-xl border border-amber-400/25 bg-amber-400/[0.06] p-4">
+        <div className="border-t border-[var(--border)] pt-5">
+          <div className="rounded-lg border border-amber-400/25 bg-amber-400/[0.06] p-4">
             <span className="text-[10px] font-black uppercase tracking-[0.2em] text-amber-300">Correct answer</span>
             <MathContent>{problem.answer}</MathContent>
           </div>
           <div className="mt-5">
-            <h4 className="text-sm font-black uppercase tracking-[0.18em] text-cyan-300">Step-by-step solution</h4>
+            <h4 className="text-sm font-black uppercase tracking-[0.18em] text-[var(--text-muted)]">Step-by-step solution</h4>
             <ol className="mt-3 space-y-3">
               {problem.solution.map((step, index) => (
                 <li key={index} className="grid grid-cols-[2rem_1fr] gap-3">
-                  <span className="grid h-8 w-8 place-items-center rounded-lg border border-purple-400/25 bg-purple-400/10 text-xs font-black text-purple-200">
+                  <span className="grid h-8 w-8 place-items-center rounded-lg border border-[var(--border)] bg-[var(--surface-2)] text-xs font-black text-[var(--text-muted)]">
                     {index + 1}
                   </span>
                   <MathContent>{step}</MathContent>
@@ -960,7 +960,7 @@ function SectionProblems({ sectionKey }: { sectionKey: SectionKey }) {
           <Eyebrow>Exemplar & Concept Integration</Eyebrow>
           <h3 className="mt-3 text-2xl font-black text-white">Practice directly after the theory</h3>
         </div>
-        <span className="rounded-full border border-slate-700 bg-slate-800/50 px-3 py-1 text-xs font-bold text-slate-400">
+        <span className="rounded-full border border-[var(--border)] bg-[var(--surface-2)] px-3 py-1 text-xs font-bold text-[var(--text-muted)]">
           {problems.length} problems
         </span>
       </div>
@@ -979,7 +979,7 @@ function SectionProblems({ sectionKey }: { sectionKey: SectionKey }) {
 
 function AtomHero() {
   return (
-    <div className="relative mx-auto aspect-square w-full max-w-[560px] overflow-hidden rounded-[2rem] border border-cyan-400/20 bg-gradient-to-br from-cyan-400/10 via-slate-950 to-purple-400/10 shadow-2xl shadow-cyan-950/30">
+    <div className="relative mx-auto aspect-square w-full max-w-[560px] overflow-hidden rounded-lg border border-[var(--border)] bg-[var(--surface)] shadow-2xl">
       <svg viewBox="0 0 600 600" className="h-full w-full" role="img" aria-label="Atomic blueprint graphic">
         <defs>
           <radialGradient id="nucleus" cx="35%" cy="30%">
@@ -1016,7 +1016,7 @@ function TransformationCards() {
   return (
     <div className="grid gap-4 lg:grid-cols-3">
       {cards.map((card) => (
-        <article key={card.title} className="rounded-lg border border-slate-700 bg-slate-900/70 p-5 shadow-lg">
+        <article key={card.title} className="rounded-lg border border-[var(--border)] bg-[var(--surface)] p-5 shadow-lg">
           <svg viewBox="0 0 280 145" className="h-36 w-full" role="img" aria-label={card.title}>
             {card.kind === "milk" && (
               <>
@@ -1048,7 +1048,7 @@ function TransformationCards() {
             <path d="m160 58 20 16-20 16" fill="none" stroke="#a78bfa" strokeWidth="8" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
           <h3 className="text-lg font-black text-white">{card.title}</h3>
-          <p className="mt-2 leading-7 text-slate-400">{card.note}</p>
+          <p className="mt-2 leading-7 text-[var(--text-muted)]">{card.note}</p>
         </article>
       ))}
     </div>
@@ -1065,16 +1065,16 @@ function HistoryTimeline() {
     ["Ajanta practice", "Resin chemistry", "Durable natural coatings from plant extracts and resins."],
   ];
   return (
-    <ol className="relative space-y-4 before:absolute before:bottom-6 before:left-6 before:top-6 before:w-px before:bg-gradient-to-b before:from-cyan-400 before:via-purple-400 before:to-amber-400">
+    <ol className="relative space-y-4 before:absolute before:bottom-6 before:left-6 before:top-6 before:w-px before:bg-[var(--border-strong)]">
       {items.map(([year, title, text], index) => (
         <li key={title} className="relative grid grid-cols-[3rem_1fr] gap-4">
-          <span className="z-10 grid h-12 w-12 place-items-center rounded-xl border border-cyan-400/30 bg-slate-950 text-xs font-black text-cyan-300">
+          <span className="z-10 grid h-12 w-12 place-items-center rounded-lg border border-[var(--border)] bg-[var(--background)] text-xs font-black text-[var(--text-muted)]">
             {String(index + 1).padStart(2, "0")}
           </span>
-          <div className="rounded-lg border border-slate-700/80 bg-slate-900/65 p-4 shadow-md">
+          <div className="rounded-lg border border-[var(--border)] bg-[var(--surface)]/65 p-4 shadow-md">
             <span className="text-xs font-black uppercase tracking-[0.15em] text-amber-300">{year}</span>
             <h3 className="mt-1 font-black text-white">{title}</h3>
-            <p className="mt-1 leading-7 text-slate-400">{text}</p>
+            <p className="mt-1 leading-7 text-[var(--text-muted)]">{text}</p>
           </div>
         </li>
       ))}
@@ -1084,25 +1084,25 @@ function HistoryTimeline() {
 
 function MatterTree() {
   return (
-    <div className="my-6 rounded-lg border border-slate-700 bg-slate-950/65 p-5 shadow-lg">
-      <div className="mx-auto max-w-sm rounded-xl border border-cyan-400/35 bg-gradient-to-r from-cyan-400/10 to-purple-400/10 p-4 text-center">
-        <b className="text-xl text-white">Matter</b><span className="block text-sm text-slate-400">has mass and occupies space</span>
+    <div className="my-6 rounded-lg border border-[var(--border)] bg-[var(--background)]/65 p-5 shadow-lg">
+      <div className="mx-auto max-w-sm rounded-lg border border-[var(--border)] bg-[var(--surface-2)] p-4 text-center">
+        <b className="text-xl text-white">Matter</b><span className="block text-sm text-[var(--text-muted)]">has mass and occupies space</span>
       </div>
       <div className="mt-6 grid gap-4 md:grid-cols-2">
-        <div className="rounded-xl border border-cyan-400/20 bg-slate-900/80 p-4">
-          <h3 className="text-center text-lg font-black text-cyan-300">Mixtures</h3>
-          <p className="text-center text-sm text-slate-400">variable composition</p>
+        <div className="rounded-lg border border-[var(--border)] bg-[var(--surface)] p-4">
+          <h3 className="text-center text-lg font-black text-[var(--text-muted)]">Mixtures</h3>
+          <p className="text-center text-sm text-[var(--text-muted)]">variable composition</p>
           <div className="mt-4 grid grid-cols-2 gap-3">
-            <span className="rounded-lg bg-slate-800 border border-slate-700 p-3 text-center text-sm font-bold text-slate-200">Homogeneous</span>
-            <span className="rounded-lg bg-slate-800 border border-slate-700 p-3 text-center text-sm font-bold text-slate-200">Heterogeneous</span>
+            <span className="rounded-lg bg-[var(--surface-2)] border border-[var(--border)] p-3 text-center text-sm font-bold text-[var(--foreground)]">Homogeneous</span>
+            <span className="rounded-lg bg-[var(--surface-2)] border border-[var(--border)] p-3 text-center text-sm font-bold text-[var(--foreground)]">Heterogeneous</span>
           </div>
         </div>
-        <div className="rounded-xl border border-purple-400/20 bg-slate-900/80 p-4">
-          <h3 className="text-center text-lg font-black text-purple-300">Pure substances</h3>
-          <p className="text-center text-sm text-slate-400">fixed composition</p>
+        <div className="rounded-lg border border-[var(--border)] bg-[var(--surface)] p-4">
+          <h3 className="text-center text-lg font-black text-[var(--text-muted)]">Pure substances</h3>
+          <p className="text-center text-sm text-[var(--text-muted)]">fixed composition</p>
           <div className="mt-4 grid grid-cols-2 gap-3">
-            <span className="rounded-lg bg-slate-800 border border-slate-700 p-3 text-center text-sm font-bold text-slate-200">Elements</span>
-            <span className="rounded-lg bg-slate-800 border border-slate-700 p-3 text-center text-sm font-bold text-slate-200">Compounds</span>
+            <span className="rounded-lg bg-[var(--surface-2)] border border-[var(--border)] p-3 text-center text-sm font-bold text-[var(--foreground)]">Elements</span>
+            <span className="rounded-lg bg-[var(--surface-2)] border border-[var(--border)] p-3 text-center text-sm font-bold text-[var(--foreground)]">Compounds</span>
           </div>
         </div>
       </div>
@@ -1121,10 +1121,10 @@ function LawsGallery() {
   return (
     <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-5">
       {laws.map(([title,note,example],index)=>(
-        <article key={title} className="flex min-h-48 flex-col rounded-lg border border-slate-700 bg-gradient-to-br from-slate-900 to-slate-950 p-5 shadow-lg">
-          <span className="text-xs font-black text-cyan-300">0{index+1}</span>
+        <article key={title} className="flex min-h-48 flex-col rounded-lg border border-[var(--border)] bg-gradient-to-br from-slate-900 to-slate-950 p-5 shadow-lg">
+          <span className="text-xs font-black text-[var(--text-muted)]">0{index+1}</span>
           <h3 className="mt-3 font-black text-white">{title}</h3>
-          <p className="mt-2 text-sm leading-6 text-slate-400">{note}</p>
+          <p className="mt-2 text-sm leading-6 text-[var(--text-muted)]">{note}</p>
           <strong className="mt-auto pt-5 text-amber-300">{example}</strong>
         </article>
       ))}
@@ -1134,7 +1134,7 @@ function LawsGallery() {
 
 function MoleBridge() {
   return (
-    <div className="grid items-center gap-4 rounded-lg border border-slate-700 bg-slate-950/70 p-5 text-center md:grid-cols-[1fr_auto_1fr_auto_1fr] shadow-lg">
+    <div className="grid items-center gap-4 rounded-lg border border-[var(--border)] bg-[var(--background)]/70 p-5 text-center md:grid-cols-[1fr_auto_1fr_auto_1fr] shadow-lg">
       {[
         ["1", "particle", "atom • molecule • ion"],
         ["mol", "one mole", "$6.022 \\times 10^{23}$"],
@@ -1142,11 +1142,11 @@ function MoleBridge() {
       ].map(([symbol,title,note],index)=>(
         <div key={title} className="contents">
           <div className="grid place-items-center gap-2">
-            <span className="grid h-20 w-20 place-items-center rounded-full bg-gradient-to-br from-cyan-200 via-cyan-400 to-purple-500 font-black text-slate-950 shadow-lg shadow-cyan-500/20">{symbol}</span>
+            <span className="grid h-20 w-20 place-items-center rounded-full bg-[var(--accent)] font-black text-[var(--background)] shadow-lg shadow-cyan-500/20">{symbol}</span>
             <b className="text-white">{title}</b>
-            <MathContent className="text-sm text-slate-400">{note}</MathContent>
+            <MathContent className="text-sm text-[var(--text-muted)]">{note}</MathContent>
           </div>
-          {index < 2 && <span className="hidden md:block text-2xl font-black text-purple-400">›</span>}
+          {index < 2 && <span className="hidden md:block text-2xl font-black text-[var(--accent)]">›</span>}
         </div>
       ))}
     </div>
@@ -1155,11 +1155,11 @@ function MoleBridge() {
 
 function LimitingReagentVisual() {
   return (
-    <div className="grid gap-5 rounded-lg border border-slate-700 bg-slate-950/70 p-5 lg:grid-cols-[1fr_auto_1fr] shadow-lg mt-6">
+    <div className="grid gap-5 rounded-lg border border-[var(--border)] bg-[var(--background)]/70 p-5 lg:grid-cols-[1fr_auto_1fr] shadow-lg mt-6">
       <div>
-        <h3 className="font-black text-cyan-300">Before reaction</h3>
+        <h3 className="font-black text-[var(--text-muted)]">Before reaction</h3>
         <div className="mt-4 flex flex-wrap gap-2">
-          {[1,2,3,4,5].map(i=><span key={`a${i}`} className="grid h-11 w-11 place-items-center rounded-full bg-cyan-400 font-black text-slate-950 shadow-md">A</span>)}
+          {[1,2,3,4,5].map(i=><span key={`a${i}`} className="grid h-11 w-11 place-items-center rounded-full bg-cyan-400 font-black text-[var(--background)] shadow-md">A</span>)}
           {[1,2,3].map(i=><span key={`b${i}`} className="grid h-11 min-w-[2.75rem] place-items-center rounded-full bg-purple-500 px-2 font-black text-white shadow-md">B₂</span>)}
         </div>
       </div>
@@ -1167,10 +1167,10 @@ function LimitingReagentVisual() {
       <div>
         <h3 className="font-black text-amber-300">After reaction</h3>
         <div className="mt-4 flex flex-wrap gap-2">
-          {[1,2,3].map(i=><span key={`p${i}`} className="grid h-11 min-w-[2.75rem] place-items-center rounded-full bg-amber-400 px-2 font-black text-slate-950 shadow-md">AB₂</span>)}
-          {[1,2].map(i=><span key={`e${i}`} className="grid h-11 w-11 place-items-center rounded-full border-2 border-dashed border-cyan-400 text-cyan-300">A</span>)}
+          {[1,2,3].map(i=><span key={`p${i}`} className="grid h-11 min-w-[2.75rem] place-items-center rounded-full bg-amber-400 px-2 font-black text-[var(--background)] shadow-md">AB₂</span>)}
+          {[1,2].map(i=><span key={`e${i}`} className="grid h-11 w-11 place-items-center rounded-full border-2 border-dashed border-[var(--border)] text-[var(--text-muted)]">A</span>)}
         </div>
-        <p className="mt-3 text-sm text-slate-400">B₂ is consumed first; A remains in excess.</p>
+        <p className="mt-3 text-sm text-[var(--text-muted)]">B₂ is consumed first; A remains in excess.</p>
       </div>
     </div>
   );
@@ -1186,10 +1186,10 @@ function ConcentrationDashboard() {
   return (
     <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
       {cards.map(([title,formula,note])=>(
-        <article key={title} className="rounded-lg border border-slate-700 bg-gradient-to-br from-slate-900 to-slate-950 p-5 shadow-lg">
-          <h3 className="font-black text-cyan-300">{title}</h3>
+        <article key={title} className="rounded-lg border border-[var(--border)] bg-gradient-to-br from-slate-900 to-slate-950 p-5 shadow-lg">
+          <h3 className="font-black text-[var(--text-muted)]">{title}</h3>
           <MathContent className="mt-4">{formula}</MathContent>
-          <span className="mt-4 inline-block rounded-full border border-purple-400/20 bg-purple-400/10 px-3 py-1 text-xs font-bold text-purple-200">{note}</span>
+          <span className="mt-4 inline-block rounded-full border border-[var(--border)] bg-[var(--surface-2)] px-3 py-1 text-xs font-bold text-[var(--text-muted)]">{note}</span>
         </article>
       ))}
     </div>
@@ -1231,9 +1231,9 @@ function ImportanceOfChemistry() {
   ] as const;
 
   const accentClasses = {
-    cyan: "border-cyan-400/25 bg-cyan-400/[0.045] text-cyan-300",
+    cyan: "border-[var(--border)] bg-[var(--surface-2)][0.045] text-[var(--text-muted)]",
     amber: "border-amber-400/25 bg-amber-400/[0.045] text-amber-300",
-    purple: "border-purple-400/25 bg-purple-400/[0.045] text-purple-300",
+    purple: "border-[var(--border)] bg-[var(--surface-2)] text-[var(--text-muted)]",
   } as const;
 
   return (
@@ -1241,7 +1241,7 @@ function ImportanceOfChemistry() {
       <div className="mb-5">
         <Eyebrow>Importance of chemistry</Eyebrow>
         <h3 className="mt-3 text-3xl font-black tracking-tight text-white">From life-saving medicines to atmospheric protection</h3>
-        <p className="mt-2 max-w-4xl leading-7 text-slate-400">
+        <p className="mt-2 max-w-4xl leading-7 text-[var(--text-muted)]">
           Chemistry improves health, food production, materials and environmental understanding. The same molecular knowledge that creates useful products must also be used to recognise and reduce harmful effects.
         </p>
       </div>
@@ -1249,12 +1249,12 @@ function ImportanceOfChemistry() {
         {items.map((item) => (
           <article key={item.title} className={`rounded-lg border p-5 shadow-lg ${accentClasses[item.accent]}`}>
             <div className="flex items-center gap-3">
-              <span className="grid h-12 w-12 place-items-center rounded-xl border border-current/25 bg-slate-950/55 text-lg font-black">{item.icon}</span>
+              <span className="grid h-12 w-12 place-items-center rounded-lg border border-current/25 bg-[var(--background)]/55 text-lg font-black">{item.icon}</span>
               <h4 className="text-lg font-black text-white">{item.title}</h4>
             </div>
             <ul className="mt-4 space-y-3">
               {item.points.map((point) => (
-                <li key={point} className="flex gap-3 leading-7 text-slate-300">
+                <li key={point} className="flex gap-3 leading-7 text-[var(--text-muted)]">
                   <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-current" />
                   <span>{point}</span>
                 </li>
@@ -1275,7 +1275,7 @@ function PhaseTransitionMap() {
   ] as const;
 
   return (
-    <section className="my-8 rounded-lg border border-slate-700 bg-slate-950/70 p-5 shadow-xl">
+    <section className="my-8 rounded-lg border border-[var(--border)] bg-[var(--background)]/70 p-5 shadow-xl">
       <div className="mb-5 flex flex-wrap items-end justify-between gap-3">
         <div>
           <Eyebrow>Phase transitions</Eyebrow>
@@ -1287,14 +1287,14 @@ function PhaseTransitionMap() {
       </div>
       <div className="grid gap-4 lg:grid-cols-3">
         {transitions.map(([from, to, forward, reverse]) => (
-          <article key={forward} className="rounded-xl border border-slate-700 bg-slate-900/75 p-4">
+          <article key={forward} className="rounded-lg border border-[var(--border)] bg-[var(--surface)] p-4">
             <div className="grid grid-cols-[1fr_auto_1fr] items-center gap-3 text-center">
-              <span className="rounded-xl bg-slate-800 p-4 font-black text-cyan-200">{from}</span>
-              <div className="text-xs font-bold leading-6 text-purple-300">
+              <span className="rounded-lg bg-[var(--surface-2)] p-4 font-black text-[var(--foreground)]">{from}</span>
+              <div className="text-xs font-bold leading-6 text-[var(--text-muted)]">
                 <span className="block">{forward} →</span>
                 <span className="block">← {reverse}</span>
               </div>
-              <span className="rounded-xl bg-slate-800 p-4 font-black text-amber-200">{to}</span>
+              <span className="rounded-lg bg-[var(--surface-2)] p-4 font-black text-amber-200">{to}</span>
             </div>
           </article>
         ))}
@@ -1344,20 +1344,20 @@ function DimensionalAnalysisPanel() {
       <div className="mb-5">
         <Eyebrow>Dimensional analysis</Eyebrow>
         <h3 className="mt-3 text-3xl font-black text-white">Factor-label method: let units guide the calculation</h3>
-        <p className="mt-2 max-w-4xl leading-7 text-slate-400">
+        <p className="mt-2 max-w-4xl leading-7 text-[var(--text-muted)]">
           Multiply by conversion factors whose numerical value is one. Arrange each factor so unwanted units cancel and the required unit remains.
         </p>
       </div>
       <div className="grid gap-4 xl:grid-cols-3">
         {examples.map((example, exampleIndex) => (
-          <article key={example.title} className="rounded-lg border border-slate-700 bg-slate-900/75 p-5 shadow-lg">
-            <span className="text-xs font-black uppercase tracking-[0.16em] text-cyan-300">Worked chain {exampleIndex + 1}</span>
+          <article key={example.title} className="rounded-lg border border-[var(--border)] bg-[var(--surface)] p-5 shadow-lg">
+            <span className="text-xs font-black uppercase tracking-[0.16em] text-[var(--text-muted)]">Worked chain {exampleIndex + 1}</span>
             <h4 className="mt-2 text-lg font-black text-white">{example.title}</h4>
-            <p className="mt-1 text-sm text-slate-400">{example.prompt}</p>
+            <p className="mt-1 text-sm text-[var(--text-muted)]">{example.prompt}</p>
             <ol className="mt-4 space-y-3">
               {example.steps.map((step, index) => (
                 <li key={step} className="grid grid-cols-[1.8rem_1fr] gap-3">
-                  <span className="grid h-7 w-7 place-items-center rounded-lg bg-purple-400/10 text-xs font-black text-purple-300">{index + 1}</span>
+                  <span className="grid h-7 w-7 place-items-center rounded-lg bg-[var(--surface-2)] text-xs font-black text-[var(--text-muted)]">{index + 1}</span>
                   <MathContent>{step}</MathContent>
                 </li>
               ))}
@@ -1378,16 +1378,16 @@ function DaltonPostulates() {
   ];
 
   return (
-    <section className="mt-10 rounded-lg border border-purple-400/25 bg-gradient-to-br from-purple-400/[0.07] via-slate-950 to-cyan-400/[0.05] p-6 shadow-xl">
+    <section className="mt-10 rounded-lg border border-[var(--border)] bg-gradient-to-br  via-slate-950  p-6 shadow-xl">
       <Eyebrow>Dalton’s atomic theory</Eyebrow>
       <h3 className="mt-3 text-3xl font-black text-white">Four postulates connecting laws to particles</h3>
       <div className="mt-6 grid gap-4 md:grid-cols-2">
         {postulates.map((postulate, index) => (
-          <article key={postulate} className="grid grid-cols-[3rem_1fr] gap-4 rounded-xl border border-slate-700 bg-slate-900/70 p-4">
-            <span className="grid h-12 w-12 place-items-center rounded-xl border border-purple-400/25 bg-purple-400/10 text-sm font-black text-purple-200">
+          <article key={postulate} className="grid grid-cols-[3rem_1fr] gap-4 rounded-lg border border-[var(--border)] bg-[var(--surface)] p-4">
+            <span className="grid h-12 w-12 place-items-center rounded-lg border border-[var(--border)] bg-[var(--surface-2)] text-sm font-black text-[var(--text-muted)]">
               {String(index + 1).padStart(2, "0")}
             </span>
-            <p className="leading-7 text-slate-300">{postulate}</p>
+            <p className="leading-7 text-[var(--text-muted)]">{postulate}</p>
           </article>
         ))}
       </div>
@@ -1416,7 +1416,7 @@ function MassLanguagePanel() {
           Sum of atomic masses represented by the formula unit of an ionic solid. NaCl = 23.0 + 35.5 = 58.5 u; an ionic lattice has no discrete NaCl molecules.
         </InfoCard>
       </div>
-      <div className="mt-4 rounded-lg border border-slate-700 bg-slate-950/70 p-5">
+      <div className="mt-4 rounded-lg border border-[var(--border)] bg-[var(--background)]/70 p-5">
         <MathContent>{String.raw`$$\text{Molar mass in g mol}^{-1}\text{ is numerically equal to atomic, molecular or formula mass in u.}$$`}</MathContent>
       </div>
     </section>
@@ -1442,10 +1442,10 @@ function FormulaGenerationPipeline() {
       </div>
       <div className="grid gap-3 md:grid-cols-2 xl:grid-cols-7">
         {steps.map(([number, title, note]) => (
-          <article key={number} className="rounded-xl border border-slate-700 bg-slate-900/75 p-4">
-            <span className="text-xs font-black text-purple-300">{number}</span>
+          <article key={number} className="rounded-lg border border-[var(--border)] bg-[var(--surface)] p-4">
+            <span className="text-xs font-black text-[var(--text-muted)]">{number}</span>
             <h4 className="mt-2 font-black text-white">{title}</h4>
-            <p className="mt-2 text-sm leading-6 text-slate-400">{note}</p>
+            <p className="mt-2 text-sm leading-6 text-[var(--text-muted)]">{note}</p>
           </article>
         ))}
       </div>
@@ -1469,21 +1469,21 @@ function EquationBalancingDemo() {
     <section className="mt-10 rounded-lg border border-amber-400/25 bg-amber-400/[0.035] p-6 shadow-xl">
       <Eyebrow>Equation balancing</Eyebrow>
       <h3 className="mt-3 text-3xl font-black text-white">Propane combustion, balanced step by step</h3>
-      <p className="mt-2 max-w-4xl leading-7 text-slate-400">
+      <p className="mt-2 max-w-4xl leading-7 text-[var(--text-muted)]">
         Change coefficients only. Never change a chemical formula’s subscripts while balancing.
       </p>
       <div className="mt-6 grid gap-4 lg:grid-cols-2">
         {stages.map(([equation, note], index) => (
-          <article key={equation} className="rounded-xl border border-slate-700 bg-slate-950/75 p-5">
+          <article key={equation} className="rounded-lg border border-[var(--border)] bg-[var(--background)]/75 p-5">
             <span className="text-xs font-black uppercase tracking-[0.16em] text-amber-300">Step {index + 1}</span>
             <MathContent className="mt-3 text-lg">{equation}</MathContent>
-            <p className="mt-3 leading-7 text-slate-400">{note}</p>
+            <p className="mt-3 leading-7 text-[var(--text-muted)]">{note}</p>
           </article>
         ))}
       </div>
-      <div className="mt-5 rounded-xl border border-cyan-400/25 bg-cyan-400/[0.06] p-4">
+      <div className="mt-5 rounded-lg border border-[var(--border)] bg-[var(--surface-2)][0.06] p-4">
         <MathContent>{String.raw`$$\boxed{\mathrm{C_3H_8 + 5O_2 \rightarrow 3CO_2 + 4H_2O}}$$`}</MathContent>
-        <p className="text-center text-sm text-slate-400">Atoms on each side: C = 3, H = 8, O = 10.</p>
+        <p className="text-center text-sm text-[var(--text-muted)]">Atoms on each side: C = 3, H = 8, O = 10.</p>
       </div>
     </section>
   );
@@ -1530,7 +1530,7 @@ export default function ChemistryDashboard() {
   }, [searchQuery]);
 
   return (
-    <main className="min-h-screen overflow-x-hidden bg-slate-950 text-slate-200 font-sans selection:bg-cyan-400/30">
+    <main className="min-h-screen overflow-x-hidden bg-[var(--background)] text-[var(--foreground)] font-sans selection:bg-[var(--surface-2)]">
       {/* Background Decor */}
       <div className="fixed inset-0 z-0 pointer-events-none opacity-40 [background-image:radial-gradient(circle_at_10%_10%,rgba(34,211,238,.10),transparent_28rem),radial-gradient(circle_at_90%_14%,rgba(168,85,247,.10),transparent_32rem),linear-gradient(rgba(56,189,248,.055)_1px,transparent_1px),linear-gradient(90deg,rgba(56,189,248,.055)_1px,transparent_1px)] [background-size:auto,auto,48px_48px,48px_48px]" />
 
@@ -1539,31 +1539,31 @@ export default function ChemistryDashboard() {
         <div>
           <Eyebrow>Class 11 • Board Chemistry</Eyebrow>
           <h1 className="mt-6 text-5xl font-black leading-[.92] tracking-[-0.04em] text-white sm:text-7xl xl:text-[7rem]">
-            Some Basic<br />Concepts of <span className="bg-gradient-to-r from-cyan-400 via-purple-400 to-amber-400 bg-clip-text text-transparent">Chemistry</span>
+            Some Basic<br />Concepts of <span className="bg-gradient-to-r from-[var(--accent)] to-[var(--accent)] bg-clip-text text-transparent">Chemistry</span>
           </h1>
-          <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-400 sm:text-xl">
+          <p className="mt-6 max-w-3xl text-lg leading-8 text-[var(--text-muted)] sm:text-xl">
             A full-theory visual chemistry operating system connecting matter, measurement, atomic laws, the mole and solution calculations—with every Exemplar question fully solved.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
-            <a href="#foundations" className="rounded-xl bg-cyan-400 px-6 py-3.5 font-black text-slate-950 no-underline shadow-lg shadow-cyan-400/20 transition hover:bg-cyan-300">Begin visual chapter</a>
-            <a href="#answer-key" className="rounded-xl border border-slate-600 bg-slate-900/70 px-6 py-3.5 font-black text-white no-underline transition hover:bg-slate-800 hover:border-slate-500">Search 50 Questions</a>
+            <a href="#foundations" className="rounded-lg bg-cyan-400 px-6 py-3.5 font-black text-[var(--background)] no-underline shadow-lg shadow-cyan-400/20 transition hover:bg-cyan-300">Begin visual chapter</a>
+            <a href="#answer-key" className="rounded-lg border border-[var(--border-strong)] bg-[var(--surface)] px-6 py-3.5 font-black text-white no-underline transition hover:bg-[var(--surface-2)] hover:border-[var(--border-strong)]">Search 50 Questions</a>
           </div>
           <div className="mt-12 flex max-w-2xl gap-8">
-            <div><b className="text-3xl text-white">6</b><span className="block text-[10px] font-black uppercase tracking-[0.16em] text-slate-500 mt-1">Theory Systems</span></div>
-            <div><b className="text-3xl text-white">24+</b><span className="block text-[10px] font-black uppercase tracking-[0.16em] text-slate-500 mt-1">Visual Blocks</span></div>
-            <div><b className="text-3xl text-white">50</b><span className="block text-[10px] font-black uppercase tracking-[0.16em] text-slate-500 mt-1">Exemplar Solutions</span></div>
+            <div><b className="text-3xl text-white">6</b><span className="block text-[10px] font-black uppercase tracking-[0.16em] text-[var(--text-muted)] mt-1">Theory Systems</span></div>
+            <div><b className="text-3xl text-white">24+</b><span className="block text-[10px] font-black uppercase tracking-[0.16em] text-[var(--text-muted)] mt-1">Visual Blocks</span></div>
+            <div><b className="text-3xl text-white">50</b><span className="block text-[10px] font-black uppercase tracking-[0.16em] text-[var(--text-muted)] mt-1">Exemplar Solutions</span></div>
           </div>
         </div>
         <AtomHero />
       </header>
 
       {/* Sticky Navigation */}
-      <nav className="sticky top-0 z-50 overflow-x-auto border-y border-slate-800 bg-slate-950/85 px-4 py-3 backdrop-blur-xl" aria-label="Chapter navigation">
+      <nav className="sticky top-0 z-50 overflow-x-auto border-y border-[var(--border)] bg-[var(--background)]/85 px-4 py-3 backdrop-blur-xl" aria-label="Chapter navigation">
         <div className="mx-auto flex w-max min-w-full max-w-[1440px] gap-2">
           {[
             ["foundations","Foundations"],["matter","Matter"],["measurement","Measurement"],["laws","Reaction laws"],["mole","Mole bridge"],["solutions","Solutions"],["answer-key","Answer Search"]
           ].map(([id,label])=>(
-            <a key={id} href={`#${id}`} className="shrink-0 rounded-lg px-3 py-2 text-sm font-bold text-slate-400 no-underline transition hover:bg-slate-800 hover:text-white">{label}</a>
+            <a key={id} href={`#${id}`} className="shrink-0 rounded-lg px-3 py-2 text-sm font-bold text-[var(--text-muted)] no-underline transition hover:bg-[var(--surface-2)] hover:text-white">{label}</a>
           ))}
         </div>
       </nav>
@@ -1584,7 +1584,7 @@ export default function ChemistryDashboard() {
         <SectionProblems sectionKey="foundations" />
       </section>
 
-      <hr className="border-slate-800 max-w-[1440px] mx-auto" />
+      <hr className="border-[var(--border)] max-w-[1440px] mx-auto" />
 
       {/* Section 2: Matter */}
       <section id="matter" className="relative z-10 mx-auto w-full max-w-[1440px] scroll-mt-20 px-4 py-20">
@@ -1614,7 +1614,7 @@ export default function ChemistryDashboard() {
         <SectionProblems sectionKey="matter" />
       </section>
 
-      <hr className="border-slate-800 max-w-[1440px] mx-auto" />
+      <hr className="border-[var(--border)] max-w-[1440px] mx-auto" />
 
       {/* Section 3: Measurement */}
       <section id="measurement" className="relative z-10 mx-auto w-full max-w-[1440px] scroll-mt-20 px-4 py-20">
@@ -1626,8 +1626,8 @@ export default function ChemistryDashboard() {
         ]} />
         
         <div className="grid gap-6 xl:grid-cols-2 mt-8">
-          <article className="rounded-lg border border-slate-700 bg-slate-950/70 p-6 shadow-xl">
-            <h3 className="font-black text-cyan-300 uppercase tracking-widest text-sm mb-4">Analytical balance — working map</h3>
+          <article className="rounded-lg border border-[var(--border)] bg-[var(--background)]/70 p-6 shadow-xl">
+            <h3 className="font-black text-[var(--text-muted)] uppercase tracking-widest text-sm mb-4">Analytical balance — working map</h3>
             <AnalyticalBalance />
           </article>
           <VolumeEquivalence />
@@ -1635,7 +1635,7 @@ export default function ChemistryDashboard() {
 
         <div className="grid gap-4 md:grid-cols-3 mt-8">
           {["$$K = {^{\\circ}\\text{C}} + 273.15$$", "$$^{\\circ}\\text{F} = \\frac{9}{5}(^{\\circ}\\text{C}) + 32$$", "$$\\rho = \\frac{m}{V}$$"].map((formula, idx)=>(
-            <div key={idx} className="rounded-lg border border-purple-400/20 bg-purple-400/[0.05] p-5 text-center text-lg text-purple-100 flex items-center justify-center">
+            <div key={idx} className="rounded-lg border border-[var(--border)] bg-[var(--surface-2)] p-5 text-center text-lg text-[var(--foreground)] flex items-center justify-center">
               <MathContent>{formula}</MathContent>
             </div>
           ))}
@@ -1646,17 +1646,17 @@ export default function ChemistryDashboard() {
         <div className="mt-12">
           <h3 className="text-2xl font-black text-white mb-6">Accuracy vs. Precision Targets</h3>
           <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
-            <article className="rounded-lg border border-slate-700 bg-slate-900/70 p-6 text-center shadow-lg">
+            <article className="rounded-lg border border-[var(--border)] bg-[var(--surface)] p-6 text-center shadow-lg">
               <AccuracyDartboard type="accurate-precise" />
-              <b className="mt-4 block text-sm text-cyan-300 uppercase tracking-wider">Accurate & Precise</b>
+              <b className="mt-4 block text-sm text-[var(--text-muted)] uppercase tracking-wider">Accurate & Precise</b>
             </article>
-            <article className="rounded-lg border border-slate-700 bg-slate-900/70 p-6 text-center shadow-lg">
+            <article className="rounded-lg border border-[var(--border)] bg-[var(--surface)] p-6 text-center shadow-lg">
               <AccuracyDartboard type="precise-not-accurate" />
               <b className="mt-4 block text-sm text-amber-300 uppercase tracking-wider">Precise, Not Accurate</b>
             </article>
-            <article className="rounded-lg border border-slate-700 bg-slate-900/70 p-6 text-center shadow-lg">
+            <article className="rounded-lg border border-[var(--border)] bg-[var(--surface)] p-6 text-center shadow-lg">
               <AccuracyDartboard type="neither" />
-              <b className="mt-4 block text-sm text-slate-400 uppercase tracking-wider">Neither</b>
+              <b className="mt-4 block text-sm text-[var(--text-muted)] uppercase tracking-wider">Neither</b>
             </article>
           </div>
         </div>
@@ -1668,7 +1668,7 @@ export default function ChemistryDashboard() {
         <SectionProblems sectionKey="measurement" />
       </section>
 
-      <hr className="border-slate-800 max-w-[1440px] mx-auto" />
+      <hr className="border-[var(--border)] max-w-[1440px] mx-auto" />
 
       {/* Section 4: Laws */}
       <section id="laws" className="relative z-10 mx-auto w-full max-w-[1440px] scroll-mt-20 px-4 py-20">
@@ -1686,7 +1686,7 @@ export default function ChemistryDashboard() {
         <SectionProblems sectionKey="laws" />
       </section>
 
-      <hr className="border-slate-800 max-w-[1440px] mx-auto" />
+      <hr className="border-[var(--border)] max-w-[1440px] mx-auto" />
 
       {/* Section 5: Mole */}
       <section id="mole" className="relative z-10 mx-auto w-full max-w-[1440px] scroll-mt-20 px-4 py-20">
@@ -1695,7 +1695,7 @@ export default function ChemistryDashboard() {
         
         <div className="my-8 grid gap-4 md:grid-cols-3">
           {["$$1\\,\\text{mol}=6.022\\times10^{23}\\,\\text{entities}$$","$$1\\,\\text{u}=1.66\\times10^{-24}\\,\\text{g}$$","$$n=\\frac{m}{M}$$"].map((formula, idx)=>(
-            <div key={idx} className="rounded-lg border border-cyan-400/20 bg-cyan-400/[0.045] p-5 text-center text-cyan-100 flex items-center justify-center">
+            <div key={idx} className="rounded-lg border border-[var(--border)] bg-[var(--surface-2)][0.045] p-5 text-center text-[var(--foreground)] flex items-center justify-center">
               <MathContent>{formula}</MathContent>
             </div>
           ))}
@@ -1710,8 +1710,8 @@ export default function ChemistryDashboard() {
 
         <EquationBalancingDemo />
 
-        <div className="my-8 rounded-lg bg-gradient-to-r from-cyan-400 via-purple-400 to-amber-400 p-6 text-center shadow-lg">
-          <div className="bg-slate-950 rounded-xl p-4 inline-block">
+        <div className="my-8 rounded-lg bg-gradient-to-r from-[var(--accent)] to-[var(--accent)] p-6 text-center shadow-lg">
+          <div className="bg-[var(--background)] rounded-lg p-4 inline-block">
             <MathContent className="text-2xl font-black text-white">
               {String.raw`$$\mathrm{CH_4+2O_2\rightarrow CO_2+2H_2O}$$`}
             </MathContent>
@@ -1726,7 +1726,7 @@ export default function ChemistryDashboard() {
         <SectionProblems sectionKey="mole" />
       </section>
 
-      <hr className="border-slate-800 max-w-[1440px] mx-auto" />
+      <hr className="border-[var(--border)] max-w-[1440px] mx-auto" />
 
       {/* Section 6: Solutions */}
       <section id="solutions" className="relative z-10 mx-auto w-full max-w-[1440px] scroll-mt-20 px-4 py-20">
@@ -1739,14 +1739,14 @@ export default function ChemistryDashboard() {
         <div className="mt-6">
           <InfoCard title="Dilution equation" accent="purple">
             <MathContent>{"$$M_1V_1=M_2V_2$$"}</MathContent>
-            <p className="mt-2 text-slate-300">The moles of solute remain constant while solvent changes the total volume.</p>
+            <p className="mt-2 text-[var(--text-muted)]">The moles of solute remain constant while solvent changes the total volume.</p>
           </InfoCard>
         </div>
         <SectionProblems sectionKey="solutions" />
       </section>
 
       {/* Section 7: Search Dashboard */}
-      <section id="answer-key" className="relative z-20 border-t-4 border-cyan-400/50 bg-slate-900 px-4 py-24 shadow-[0_-20px_50px_rgba(0,0,0,0.5)]">
+      <section id="answer-key" className="relative z-20 border-t-4 border-[var(--border)] bg-[var(--surface)] px-4 py-24 shadow-[0_-20px_50px_rgba(0,0,0,0.5)]">
         <div className="mx-auto w-full max-w-[1440px]">
           <SectionHeading 
             eyebrow="Complete Searchable Database" 
@@ -1754,11 +1754,11 @@ export default function ChemistryDashboard() {
             description="Find exact NCERT Exemplar solutions and custom concept checks instantly. Type keywords, concepts, or question numbers." 
           />
           
-          <div className="sticky top-20 z-30 mb-8 rounded-lg border border-cyan-400/40 bg-slate-950/80 p-4 backdrop-blur-xl shadow-2xl">
+          <div className="sticky top-20 z-30 mb-8 rounded-lg border border-[var(--border)] bg-[var(--background)]/80 p-4 backdrop-blur-xl shadow-2xl">
             <label htmlFor="search" className="sr-only">Search questions</label>
             <div className="relative">
               <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-4">
-                <svg className="h-6 w-6 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                <svg className="h-6 w-6 text-[var(--accent)]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
               </div>
               <input 
                 id="search"
@@ -1766,24 +1766,24 @@ export default function ChemistryDashboard() {
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 placeholder="Try typing 'limiting reagent', 'significant figures', 'Q43', or 'molarity'..."
-                className="w-full rounded-xl border border-slate-700 bg-slate-900 py-4 pl-12 pr-4 text-lg text-white placeholder-slate-500 focus:border-cyan-400 focus:outline-none focus:ring-2 focus:ring-cyan-400/50 transition-all"
+                className="w-full rounded-lg border border-[var(--border)] bg-[var(--surface)] py-4 pl-12 pr-4 text-lg text-white placeholder-slate-500 focus:border-[var(--border)] focus:outline-none focus:ring-2 focus:ring-cyan-400/50 transition-all"
               />
               {searchQuery && (
                 <button 
                   onClick={() => setSearchQuery("")}
-                  className="absolute inset-y-0 right-4 flex items-center text-slate-400 hover:text-white"
+                  className="absolute inset-y-0 right-4 flex items-center text-[var(--text-muted)] hover:text-white"
                 >
                   Clear
                 </button>
               )}
             </div>
-            <div className="mt-3 flex items-center justify-between text-sm font-bold text-slate-400 px-2">
+            <div className="mt-3 flex items-center justify-between text-sm font-bold text-[var(--text-muted)] px-2">
               <span>Showing {filteredQuestions.length} of {ALL_QUESTIONS.length} questions</span>
             </div>
           </div>
 
           {filteredQuestions.length === 0 ? (
-            <div className="py-20 text-center text-slate-500 border-2 border-dashed border-slate-700 rounded-lg">
+            <div className="py-20 text-center text-[var(--text-muted)] border-2 border-dashed border-[var(--border)] rounded-lg">
               <p className="text-2xl font-bold">No questions found for &ldquo;{searchQuery}&rdquo;</p>
               <p className="mt-2">Try adjusting your keywords.</p>
             </div>
@@ -1797,8 +1797,8 @@ export default function ChemistryDashboard() {
         </div>
       </section>
 
-      <footer className="border-t border-slate-800 bg-slate-950 px-4 py-12 text-center text-slate-500">
-        <p className="font-bold text-slate-400 tracking-widest uppercase text-sm">Synergic Bond • Class 11 Chemistry</p>
+      <footer className="border-t border-[var(--border)] bg-[var(--background)] px-4 py-12 text-center text-[var(--text-muted)]">
+        <p className="font-bold text-[var(--text-muted)] tracking-widest uppercase text-sm">Synergic Bond • Class 11 Chemistry</p>
         <p className="mt-2">Complete visual theory + 45 worked NCERT Exemplar problems + 5 Concept Checks</p>
       </footer>
     </main>

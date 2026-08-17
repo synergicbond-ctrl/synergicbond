@@ -50,7 +50,7 @@ export default function PeriodicTrendsPage() {
       <div className="mx-auto max-w-[1300px] px-4 md:px-6 py-10">
         {/* Header */}
         <div className="mb-6">
-          <p className="text-xs font-bold uppercase tracking-[0.4em] text-cyan-300 mb-2">Learn · Periodic Trends</p>
+          <p className="text-xs font-bold uppercase tracking-[0.4em] text-[var(--text-muted)] mb-2">Learn · Periodic Trends</p>
           <h1 className="text-3xl md:text-4xl font-black">📈 Periodic Trends</h1>
           <p className="mt-2 max-w-2xl text-sm text-white/55">
             How <span className="text-white/80">atomic radius</span>, <span className="text-white/80">ionisation enthalpy</span>,{" "}
@@ -202,7 +202,7 @@ export default function PeriodicTrendsPage() {
                     <>
                       <p className="mt-1 text-2xl font-black text-white">{item.e.sym}</p>
                       <p className="text-xs text-white/55">{item.e.name}</p>
-                      <p className="mt-1 text-sm font-bold text-cyan-300">
+                      <p className="mt-1 text-sm font-bold text-[var(--accent)]">
                         {fmt(item.v, active)}
                         {meta.unit ? ` ${meta.unit}` : ""}
                       </p>

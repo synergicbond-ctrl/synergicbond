@@ -37,7 +37,7 @@ export default async function ProgramPracticePage({ params }: { params: Promise<
   const { name, pyqExam } = program;
 
   return (
-    <main className="min-h-screen bg-black text-white">
+    <main className="min-h-screen bg-[var(--background)] text-[var(--foreground)]">
       <ProgramPageHeader
         program={program}
         section="Practice"
@@ -62,13 +62,13 @@ export default async function ProgramPracticePage({ params }: { params: Promise<
             <div className="mt-5 flex flex-wrap justify-center gap-3">
               <Link
                 href="/pyq"
-                className="rounded-xl border border-[var(--accent)]/30 bg-[var(--accent)]/10 px-4 py-2 text-sm font-semibold text-[var(--accent)] transition hover:bg-[var(--accent)]/10"
+                className="rounded-lg border border-[var(--accent)]/30 bg-[var(--accent)]/10 px-4 py-2 text-sm font-semibold text-[var(--accent)] transition hover:bg-[var(--accent)]/10"
               >
                 Open PYQ Center →
               </Link>
               <Link
                 href={`/programs/${slug}/learn`}
-                className="rounded-xl border border-white/15 bg-white/[0.04] px-4 py-2 text-sm font-semibold text-white/80 transition hover:bg-white/[0.08]"
+                className="rounded-lg border border-white/15 bg-white/[0.04] px-4 py-2 text-sm font-semibold text-white/80 transition hover:bg-white/[0.08]"
               >
                 {name} Learn →
               </Link>

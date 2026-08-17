@@ -15,9 +15,9 @@ const journeys = [
     tools: ["AI Notes", "Quiz", "Mock Exam", "AI Tutor"],
     icon: Microscope,
     href: "/neet",
-    accent: "text-emerald-300",
-    glow: "from-emerald-500/20 to-transparent",
-    border: "hover:border-emerald-400/30",
+    accent: "text-[var(--accent)]",
+    glow: "",
+    border: "hover:border-[var(--border)]",
   },
   {
     title: "JEE",
@@ -26,9 +26,9 @@ const journeys = [
     tools: ["AI Notes", "Assignments", "Mock Exam", "Vision AI"],
     icon: Atom,
     href: "/jee",
-    accent: "text-cyan-300",
-    glow: "from-cyan-500/20 to-transparent",
-    border: "hover:border-cyan-400/30",
+    accent: "text-[var(--accent)]",
+    glow: "",
+    border: "hover:border-[var(--border)]",
   },
   {
     title: "Olympiad",
@@ -37,9 +37,9 @@ const journeys = [
     tools: ["University Notes", "Synthesis Problems", "Mock Papers", "Mechanism AI"],
     icon: Trophy,
     href: "/olympiad",
-    accent: "text-amber-300",
-    glow: "from-amber-500/20 to-transparent",
-    border: "hover:border-amber-400/30",
+    accent: "text-[var(--accent)]",
+    glow: "",
+    border: "hover:border-[var(--border)]",
   },
   {
     title: "GATE",
@@ -48,9 +48,9 @@ const journeys = [
     tools: ["Graduate Notes", "NAT Questions", "Mock Exam", "Formula Vault"],
     icon: GraduationCap,
     href: "/gate",
-    accent: "text-violet-300",
-    glow: "from-violet-500/20 to-transparent",
-    border: "hover:border-violet-400/30",
+    accent: "text-[var(--accent)]",
+    glow: "",
+    border: "hover:border-[var(--border)]",
   },
 ];
 
@@ -59,7 +59,7 @@ export default function ChooseJourney() {
     <section className="mx-auto mt-36 max-w-7xl px-6">
 
       <div className="text-center">
-        <p className="text-sm font-semibold uppercase tracking-[0.4em] text-cyan-300">
+        <p className="text-sm font-semibold uppercase tracking-[0.4em] text-[var(--text-muted)]">
           CHOOSE YOUR JOURNEY
         </p>
 
@@ -84,14 +84,13 @@ export default function ChooseJourney() {
             <Link
               key={item.title}
               href={item.href}
-              className={`group relative overflow-hidden rounded-[30px] border border-white/10 bg-white/[0.03] p-8 transition-all duration-300 hover:-translate-y-2 ${item.border}`}
+              className={`group relative overflow-hidden rounded-lg border border-white/10 bg-white/[0.03] p-8 transition-all duration-300 hover:-translate-y-2 ${item.border}`}
             >
-              <div className={`absolute inset-0 bg-gradient-to-br ${item.glow} opacity-0 transition duration-500 group-hover:opacity-100`} />
 
               <div className="relative">
                 <p className="text-xs font-bold uppercase tracking-widest text-white/30 mb-4">{item.label}</p>
 
-                <div className="flex h-14 w-14 items-center justify-center rounded-lg border border-white/10 bg-black/40">
+                <div className="flex h-14 w-14 items-center justify-center rounded-lg border border-white/10 bg-[var(--surface)]">
                   <Icon className={`h-7 w-7 ${item.accent}`} />
                 </div>
 

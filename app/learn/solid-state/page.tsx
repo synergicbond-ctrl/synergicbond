@@ -51,8 +51,8 @@ export default function SolidStatePage() {
           Bravais systems, packing, voids, radius ratio, important structures, defects, electrical properties and magnetism.
         </p>
       </section>
-      <section className="mb-8 rounded-lg border border-cyan-400/20 bg-gradient-to-br from-cyan-400/10 via-violet-400/[0.04] to-transparent p-5 md:p-7">
-        <p className="text-xs font-black uppercase tracking-[0.22em] text-cyan-300">Complete single-page edition</p>
+      <section className="mb-8 rounded-lg border border-[var(--border)] bg-[var(--surface)] p-5 md:p-7">
+        <p className="text-xs font-black uppercase tracking-[0.22em] text-[var(--text-muted)]">Complete single-page edition</p>
         <h2 className="mt-2 text-2xl font-black tracking-tight text-white md:text-3xl">89-Page Geometry Master + Advanced Extension</h2>
         <p className="mt-3 max-w-4xl text-sm leading-7 text-[#c3d1dd]">
           Read the complete source-mapped course as one continuous chapter with a page-by-page audit, modified worked examples,
@@ -60,7 +60,7 @@ export default function SolidStatePage() {
         </p>
         <Link
           href="/learn/solid-state/master"
-          className="mt-5 inline-flex rounded-xl border border-cyan-300/30 bg-cyan-300/10 px-4 py-3 text-sm font-black text-cyan-100 transition hover:bg-cyan-300/15"
+          className="mt-5 inline-flex rounded-lg border border-[var(--border)] bg-[var(--surface-2)] px-4 py-3 text-sm font-black text-[var(--foreground)] transition hover:border-[var(--accent)]/40"
         >
           Open the Solid State Master →
         </Link>

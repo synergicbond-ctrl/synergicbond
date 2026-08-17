@@ -58,7 +58,7 @@ export default function ProfileEditForm({ userId, initial }: { userId: string; i
     return (
       <button
         onClick={() => { setForm(initial); setOpen(true); }}
-        className="flex items-center gap-1.5 px-4 py-2 rounded-xl border border-cyan-400/30 bg-cyan-500/10 text-cyan-300 font-bold text-xs hover:bg-cyan-500/20 transition"
+        className="flex items-center gap-1.5 px-4 py-2 rounded-lg border border-[var(--border)] bg-[var(--surface-2)] text-[var(--accent)] font-bold text-xs hover:opacity-90 transition"
       >
         <Pencil className="h-3.5 w-3.5" /> Edit Profile
       </button>
@@ -66,7 +66,7 @@ export default function ProfileEditForm({ userId, initial }: { userId: string; i
   }
 
   const inputCls =
-    "w-full rounded-xl bg-black/40 border border-white/10 focus:border-cyan-400/50 outline-none px-3.5 py-2.5 text-sm text-white placeholder:text-white/30 transition";
+    "w-full rounded-lg bg-[var(--surface-2)] border border-[var(--border)] focus:border-[var(--accent)]/50 outline-none px-3.5 py-2.5 text-sm text-white placeholder:text-white/30 transition";
   const labelCls = "block text-[10px] font-black uppercase tracking-wider text-white/50 mb-1.5";
 
   return (
@@ -123,7 +123,7 @@ export default function ProfileEditForm({ userId, initial }: { userId: string; i
         <button
           onClick={save}
           disabled={saving}
-          className="flex-1 py-2.5 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-black font-black text-xs transition disabled:opacity-50 flex items-center justify-center gap-1.5"
+          className="flex-1 py-2.5 rounded-lg bg-[var(--accent)] hover:opacity-90 text-black font-black text-xs transition disabled:opacity-50 flex items-center justify-center gap-1.5"
         >
           {saving ? <Loader2 className="h-3.5 w-3.5 animate-spin" /> : <Check className="h-3.5 w-3.5" />}
           {saving ? "Saving…" : "Save Changes"}

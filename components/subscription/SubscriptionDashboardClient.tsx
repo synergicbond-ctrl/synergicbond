@@ -269,7 +269,7 @@ export default function SubscriptionDashboardClient({ user, subscription, entitl
         </h2>
 
         {!allAccess && activeEntitlements.length === 0 ? (
-          <div className="p-8 rounded-lg border border-[var(--border)] bg-[var(--surface)] text-center max-w-lg mx-auto shadow-[0_22px_55px_-42px_rgba(139,92,246,0.72)]">
+          <div className="p-8 rounded-lg border border-[var(--border)] bg-[var(--surface)] text-center max-w-lg mx-auto">
             <Lock className="h-10 w-10 text-white/30 mx-auto mb-3" />
             <h3 className="font-bold">No Active Subscriptions</h3>
             <p className="text-white/50 text-xs mt-1 leading-relaxed">
@@ -388,7 +388,7 @@ export default function SubscriptionDashboardClient({ user, subscription, entitl
                         PROGRAM_ACCESS_PRICE_PAISE_BY_KEY[ent.program_key] || 49900,
                         true
                       )}
-                      className="w-full mt-4 py-2 rounded-xl border border-white/10 hover:border-white/20 text-white font-extrabold text-xs transition bg-white/5"
+                      className="w-full mt-4 py-2 rounded-lg border border-white/10 hover:border-white/20 text-white font-extrabold text-xs transition bg-white/5"
                     >
                       Extend Access (1 Year)
                     </button>
@@ -464,7 +464,7 @@ export default function SubscriptionDashboardClient({ user, subscription, entitl
             </div>
 
             {/* Term warnings */}
-            <div className="mb-5 bg-white/[0.02] border border-white/5 rounded-xl p-3 text-[10px] text-white/60 leading-relaxed space-y-1">
+            <div className="mb-5 bg-white/[0.02] border border-white/5 rounded-lg p-3 text-[10px] text-white/60 leading-relaxed space-y-1">
               <p className="font-extrabold text-amber-400">Subscription Terms</p>
               <p>
                 This is an annual program subscription. Access remains active for 365 days from activation. 
@@ -476,7 +476,7 @@ export default function SubscriptionDashboardClient({ user, subscription, entitl
             </div>
 
             {/* Irreversible purchase warning */}
-            <div className="flex gap-3 p-3.5 rounded-xl border border-red-500/20 bg-red-500/5 mb-5">
+            <div className="flex gap-3 p-3.5 rounded-lg border border-red-500/20 bg-red-500/5 mb-5">
               <ShieldAlert className="h-5 w-5 text-red-400 flex-shrink-0" />
               <div>
                 <h5 className="text-[10px] font-black text-red-400 uppercase tracking-wide">Irreversible Purchase Warning</h5>
@@ -503,7 +503,7 @@ export default function SubscriptionDashboardClient({ user, subscription, entitl
             <div className="flex gap-3">
               <button 
                 onClick={() => setConfirmOpen(false)}
-                className="flex-1 py-3 rounded-xl border border-white/10 hover:border-white/20 text-white font-bold text-xs transition"
+                className="flex-1 py-3 rounded-lg border border-white/10 hover:border-white/20 text-white font-bold text-xs transition"
               >
                 Cancel
               </button>

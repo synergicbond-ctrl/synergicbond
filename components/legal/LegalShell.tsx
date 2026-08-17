@@ -42,7 +42,7 @@ export default function LegalShell({
 
         <div className="mt-14 rounded-lg border border-white/[0.08] bg-white/[0.03] p-5 text-sm text-white/60">
           Questions about this policy? Write to us at{" "}
-          <a href={`mailto:${LEGAL_SUPPORT_EMAIL}`} className="font-bold text-cyan-400 hover:text-cyan-300">
+          <a href={`mailto:${LEGAL_SUPPORT_EMAIL}`} className="font-bold text-[var(--accent)] hover:opacity-80">
             {LEGAL_SUPPORT_EMAIL}
           </a>
           . We update these policies from time to time; the “Last updated” date

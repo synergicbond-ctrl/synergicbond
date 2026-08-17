@@ -122,7 +122,6 @@ h6 {
 
 p,
 li,
-span,
 label,
 input,
 textarea,
@@ -131,6 +130,12 @@ button {
   font-family: var(--font-sans), -apple-system, BlinkMacSystemFont, "Segoe UI",
     system-ui, sans-serif;
   font-optical-sizing: auto;
+}
+
+/* span inherits from its parent so nested spans inside serif headings
+   stay serif. Never force a font onto span globally. */
+span {
+  font-family: inherit;
 }
 
 /* Mono for code and data.
@@ -165,6 +170,25 @@ table,
 }
 .font-data {
   font-family: var(--font-mono), ui-monospace, "SF Mono", Menlo, monospace;
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "liga" 0;
+}
+
+/* ── Legacy Tailwind font-class compatibility ─────────────────────
+   Old code still uses .font-serif / .font-sans / .font-mono from
+   Tailwind's default utilities. Wire them to the design-system fonts
+   so every old component immediately inherits the correct family. */
+.font-serif {
+  font-family: var(--font-display), Georgia, "Times New Roman", serif;
+  font-optical-sizing: auto;
+}
+.font-sans {
+  font-family: var(--font-sans), -apple-system, BlinkMacSystemFont,
+    "Segoe UI", system-ui, sans-serif;
+}
+.font-mono {
+  font-family: var(--font-mono), ui-monospace, "SF Mono", Menlo, Monaco,
+    monospace;
   font-variant-numeric: tabular-nums;
   font-feature-settings: "liga" 0;
 }

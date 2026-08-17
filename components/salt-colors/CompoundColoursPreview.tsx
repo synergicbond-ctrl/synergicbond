@@ -19,7 +19,7 @@ export default function CompoundColoursPreview() {
 
   return (
     <section className="mb-6">
-      <h2 className="text-base font-black text-cyan-300 mb-0.5">🎨 Colour of Compounds</h2>
+      <h2 className="text-base font-black text-[var(--foreground)] mb-0.5">🎨 Colour of Compounds</h2>
       <p className="text-xs text-white/45 mb-3">{COMPOUND_COLOURS.length} compounds grouped by colour.</p>
       <div className="space-y-4">
         {groups.map((g) => (

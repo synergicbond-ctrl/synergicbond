@@ -21,18 +21,18 @@ export default function SBlockMasterTextbook() {
   );
 
   return (
-    <main className="min-h-screen bg-[#04101d] text-slate-100">
-      <header className="sticky top-0 z-40 border-b border-white/10 bg-[#04101d]/95 backdrop-blur">
+    <main className="min-h-screen bg-[var(--background)] text-[var(--foreground)]">
+      <header className="sticky top-0 z-40 border-b border-white/10 bg-[var(--background)]/95 backdrop-blur-sm">
         <div className="mx-auto flex max-w-7xl flex-col gap-4 px-4 py-4 lg:flex-row lg:items-center lg:justify-between">
           <div>
-            <p className="text-xs font-black uppercase tracking-[0.26em] text-cyan-300">Synergic Bond • JEE Advanced Chemistry</p>
+            <p className="text-xs font-black uppercase tracking-[0.26em] text-[var(--text-muted)]">Synergic Bond • JEE Advanced Chemistry</p>
             <h1 className="mt-1 text-2xl font-black sm:text-3xl">s-Block Elements — Integrated Master Textbook</h1>
           </div>
           <input
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             placeholder="Find a section…"
-            className="w-full rounded-xl border border-white/10 bg-white/[0.06] px-4 py-3 text-sm outline-none placeholder:text-slate-500 focus:border-cyan-300/50 lg:w-80"
+            className="w-full rounded-lg border border-white/10 bg-white/[0.06] px-4 py-3 text-sm outline-none placeholder:text-[var(--text-muted)] focus:border-[var(--accent)]/50 lg:w-80"
           />
         </div>
       </header>
@@ -44,7 +44,7 @@ export default function SBlockMasterTextbook() {
               <a
                 key={s.id}
                 href={`#${s.id}`}
-                className="block rounded-xl px-3 py-2.5 text-sm leading-5 text-slate-400 transition hover:bg-cyan-300/10 hover:text-cyan-100"
+                className="block rounded-lg px-3 py-2.5 text-sm leading-5 text-[var(--text-muted)] transition hover:bg-[var(--surface-2)] hover:text-[var(--foreground)]"
               >
                 {s.label}
               </a>
@@ -53,8 +53,8 @@ export default function SBlockMasterTextbook() {
         </aside>
 
         <article className="min-w-0 space-y-12">
-          <section className="rounded-lg border border-cyan-300/20 bg-gradient-to-br from-cyan-300/10 via-slate-900 to-blue-500/10 p-7 sm:p-10">
-            <p className="text-sm font-bold uppercase tracking-[0.24em] text-cyan-300">NCERT core · JD Lee · classroom problem banks · cross-verified</p>
+          <section className="rounded-lg border border-[var(--border)] bg-[var(--surface)] p-7 sm:p-10">
+            <p className="text-sm font-bold uppercase tracking-[0.24em] text-[var(--text-muted)]">NCERT core · JD Lee · classroom problem banks · cross-verified</p>
             <h2 className="mt-3 text-4xl font-black leading-tight sm:text-6xl">One continuous chapter, not a gallery of cards</h2>
             <p className="mt-5 max-w-4xl text-base leading-8 text-slate-300">
               Every periodic trend, preparation, reaction, exception, structure, industrial process, biological role and JEE Advanced problem sits

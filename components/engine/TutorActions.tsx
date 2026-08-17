@@ -55,13 +55,13 @@ export default function TutorActions({ chapterId, chapterTitle }: { chapterId: s
         {ACTIONS.map((a) => (
           <button key={a.key} onClick={() => run(a.key, a.prompt)} disabled={loading}
             className={`rounded-lg border px-3 py-1.5 text-xs font-semibold transition disabled:opacity-50 ${
-              active === a.key ? "border-cyan-400/50 bg-cyan-500/15 text-white" : "border-white/10 bg-white/[0.03] text-white/60 hover:text-white/85"
+              active === a.key ? "border-[var(--accent)]/50 bg-[var(--accent)]/10 text-white" : "border-white/10 bg-white/[0.03] text-white/60 hover:text-white/85"
             }`}>
             {a.label}
           </button>
         ))}
       </div>
-      {error && <p className="rounded-xl border border-rose-500/30 bg-rose-500/[0.06] p-3 text-sm text-rose-300">{error}</p>}
+      {error && <p className="rounded-lg border border-rose-500/30 bg-rose-500/[0.06] p-3 text-sm text-rose-300">{error}</p>}
       {(output || loading) && (
         <div className="rounded-lg border border-white/10 bg-white/[0.02] p-4">
           <p className="whitespace-pre-wrap text-sm leading-relaxed text-white/80">{output || "Thinking…"}</p>
@@ -69,7 +69,7 @@ export default function TutorActions({ chapterId, chapterTitle }: { chapterId: s
       )}
       <p className="text-xs text-white/40">
         Powered by the live AI tutor (Gemini). Full conversation at{" "}
-        <Link href="/tutor" className="font-semibold text-cyan-300 hover:underline">/tutor</Link>.
+        <Link href="/tutor" className="font-semibold text-[var(--accent)] hover:underline">/tutor</Link>.
       </p>
     </div>
   );

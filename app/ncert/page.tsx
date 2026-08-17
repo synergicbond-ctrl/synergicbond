@@ -26,10 +26,10 @@ const STATUS_META: Record<NcertStatus, { label: string; dot: string; text: strin
 
 function Shell({ children }: { children: React.ReactNode }) {
   return (
-    <main className="min-h-screen bg-black text-white">
-      <div className="border-b border-white/10 bg-gradient-to-b from-emerald-950/20 to-black px-6 py-12">
+    <main className="min-h-screen bg-[var(--background)] text-white">
+      <div className="border-b border-white/10 bg-[var(--surface)] px-6 py-12">
         <div className="mx-auto max-w-5xl">
-          <p className="mb-2 text-xs font-bold uppercase tracking-[0.3em] text-emerald-300">Line-level NCERT coverage</p>
+          <p className="mb-2 text-xs font-bold uppercase tracking-[0.3em] text-[var(--text-muted)]">Line-level NCERT coverage</p>
           <h1 className="text-3xl font-black tracking-tight sm:text-4xl">NCERT Blind Spots</h1>
           <p className="mt-2 max-w-2xl text-zinc-400">
             Every NCERT line that shows up in exams, tracked against your real attempts — so the lines you&apos;ve never
@@ -78,8 +78,8 @@ export default async function NcertPage() {
           <h2 className="text-lg font-bold">No coverage yet</h2>
           <p className="mx-auto mt-2 max-w-md text-sm text-zinc-400">
             Answer NCERT-linked questions in a{" "}
-            <Link href="/pyq" className="font-bold text-cyan-400 hover:underline">PYQ</Link> set or{" "}
-            <Link href="/tests" className="font-bold text-cyan-400 hover:underline">test</Link> — your line-level NCERT map builds automatically across {report.totalLines} tracked lines.
+            <Link href="/pyq" className="font-bold text-[var(--accent)] hover:underline">PYQ</Link> set or{" "}
+            <Link href="/tests" className="font-bold text-[var(--accent)] hover:underline">test</Link> — your line-level NCERT map builds automatically across {report.totalLines} tracked lines.
           </p>
         </div>
       </Shell>
@@ -91,12 +91,12 @@ export default async function NcertPage() {
   return (
     <Shell>
       <div className="mb-8 grid grid-cols-2 gap-3 sm:grid-cols-4">
-        <div className="rounded-lg border border-cyan-500/20 bg-cyan-500/[0.05] p-4 text-center">
-          <div className="text-2xl font-black text-cyan-300">{coveragePct}%</div>
+        <div className="rounded-lg border border-[var(--accent)]/20 bg-[var(--accent)]/[0.05] p-4 text-center">
+          <div className="text-2xl font-black text-[var(--accent)]">{coveragePct}%</div>
           <div className="mt-1 text-xs text-white/50">Coverage ({covered}/{totalLines})</div>
         </div>
         <div className="rounded-lg border border-emerald-500/20 bg-emerald-500/[0.05] p-4 text-center">
-          <div className="text-2xl font-black text-emerald-300">{mastered}</div>
+          <div className="text-2xl font-black text-emerald-200">{mastered}</div>
           <div className="mt-1 text-xs text-white/50">Mastered</div>
         </div>
         <div className="rounded-lg border border-rose-500/20 bg-rose-500/[0.05] p-4 text-center">
@@ -127,7 +127,7 @@ export default async function NcertPage() {
             <div className="mb-3 flex flex-wrap items-center justify-between gap-2">
               <span className="text-sm font-bold text-white">{ch.chapterKey}</span>
               <span className="text-xs text-white/45">
-                <span className="text-emerald-300">{ch.mastered} mastered</span> ·{" "}
+                <span className="text-emerald-200">{ch.mastered} mastered</span> ·{" "}
                 <span className="text-rose-300">{ch.weak} weak</span> ·{" "}
                 <span className="text-white/50">{ch.unseen} not seen</span>
               </span>
@@ -148,7 +148,7 @@ export default async function NcertPage() {
       </div>
 
       <div className="mt-8 flex flex-wrap gap-3">
-        <Link href="/pyq" className="rounded-xl border border-cyan-400/40 bg-cyan-500/10 px-4 py-2 text-sm font-semibold text-cyan-300 transition hover:bg-cyan-500/20">
+        <Link href="/pyq" className="rounded-lg border border-[var(--accent)]/40 bg-[var(--accent)]/10 px-4 py-2 text-sm font-semibold text-[var(--accent)] transition hover:bg-[var(--accent)]/20">
           Close blind spots →
         </Link>
         <Link href="/analytics" className="rounded-xl border border-white/15 bg-white/[0.04] px-4 py-2 text-sm font-semibold text-white/80 transition hover:bg-white/[0.08]">

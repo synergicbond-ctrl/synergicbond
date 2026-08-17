@@ -32,17 +32,17 @@ export default function GuestDashboardPreview() {
       <div className="mx-auto max-w-6xl px-6 py-10">
 
         {/* Preview banner */}
-        <div className="mb-8 rounded-lg border border-cyan-400/25 bg-gradient-to-r from-cyan-500/10 to-purple-500/10 p-5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+        <div className="mb-8 rounded-lg border border-[var(--border)] bg-[var(--surface-2)] p-5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
           <div className="flex items-start gap-3">
-            <span className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl bg-cyan-500/15">
-              <Lock className="h-5 w-5 text-cyan-400" />
+            <span className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-lg bg-[var(--surface)]">
+              <Lock className="h-5 w-5 text-[var(--accent)]" />
             </span>
             <div>
               <h2 className="text-base font-bold text-white">This is a preview with sample data</h2>
-              <p className="text-sm text-white/60 mt-0.5">Sign up free to start tracking <span className="text-cyan-300 font-semibold">your</span> real progress, rank and weak topics.</p>
+              <p className="text-sm text-white/60 mt-0.5">Sign up free to start tracking <span className="text-[var(--accent)] font-semibold">your</span> real progress, rank and weak topics.</p>
             </div>
           </div>
-          <Link href="/auth/signup" className="flex-shrink-0 flex items-center gap-2 rounded-xl bg-[var(--accent)] px-5 py-2.5 text-sm font-bold text-black transition hover:-translate-y-0.5">
+          <Link href="/auth/signup" className="flex-shrink-0 flex items-center gap-2 rounded-lg bg-[var(--accent)] px-5 py-2.5 text-sm font-bold text-black transition hover:-translate-y-0.5">
             Create Free Account <ArrowRight className="h-4 w-4" />
           </Link>
         </div>
@@ -86,7 +86,7 @@ export default function GuestDashboardPreview() {
                       <div className="h-full rounded-full bg-[var(--accent)]" style={{ width: `${t.pct}%` }} />
                     </div>
                   </div>
-                  <span className="text-sm font-bold text-cyan-300 w-20 text-right">{t.score}</span>
+                  <span className="text-sm font-bold text-[var(--accent)] w-20 text-right">{t.score}</span>
                 </div>
               ))}
             </div>
@@ -109,7 +109,7 @@ export default function GuestDashboardPreview() {
                   const Icon = a.icon;
                   return (
                     <div key={i} className="flex items-start gap-2.5">
-                      <Icon className="h-4 w-4 text-cyan-400 flex-shrink-0 mt-0.5" />
+                      <Icon className="h-4 w-4 text-[var(--accent)] flex-shrink-0 mt-0.5" />
                       <div className="min-w-0">
                         <p className="text-xs text-white/70 leading-snug">{a.text}</p>
                         <p className="text-[10px] text-white/35">{a.time}</p>
@@ -124,7 +124,7 @@ export default function GuestDashboardPreview() {
 
         {/* Bottom CTA */}
         <div className="mt-8 text-center">
-          <Link href="/auth/signup" className="inline-flex items-center gap-2 rounded-xl bg-[var(--accent)] px-6 py-3 text-sm font-bold text-black transition hover:-translate-y-0.5">
+          <Link href="/auth/signup" className="inline-flex items-center gap-2 rounded-lg bg-[var(--accent)] px-6 py-3 text-sm font-bold text-black transition hover:-translate-y-0.5">
             Start Tracking My Progress <ArrowRight className="h-4 w-4" />
           </Link>
         </div>

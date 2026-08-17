@@ -8,11 +8,10 @@ import type { PerformanceData, PlatformStats } from "@/lib/performance/types";
 // ─────────────────────────────────────────────────────────────────────────────
 
 function Section({ title, icon, children }: { title: string; icon: string; children: React.ReactNode }) {
-  const accent = title === "Weak Topics" ? "border-rose-400/20" : title === "Strong Topics" ? "border-emerald-400/20" : title === "Revision Queue" ? "border-violet-400/20" : "border-cyan-400/20";
+  const accent = "border-[var(--border)]";
   return (
-    <section className={`relative overflow-hidden rounded-lg border bg-[linear-gradient(140deg,rgba(255,255,255,0.045),transparent_36%),#111827] p-4 shadow-[0_24px_55px_-44px_rgba(0,0,0,0.98)] md:p-5 ${accent}`}>
-      <span aria-hidden="true" className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-cyan-400 via-violet-400 to-amber-300 opacity-60" />
-      <h2 className="relative mb-3 font-serif text-base font-black uppercase tracking-wider text-white/80">
+    <section className={`relative overflow-hidden rounded-lg border bg-[var(--surface)] p-4 md:p-5 ${accent}`}>
+      <h2 className="relative mb-3 font-display text-base font-black uppercase tracking-wider text-white/80">
         <span className="mr-1.5">{icon}</span>{title}
       </h2>
       {children}
@@ -22,11 +21,11 @@ function Section({ title, icon, children }: { title: string; icon: string; child
 
 function EmptyState({ message, hint, cta }: { message: string; hint?: string; cta?: { label: string; href: string } }) {
   return (
-    <div className="rounded-xl border border-dashed border-white/15 bg-black/15 p-5 text-center">
+    <div className="rounded-lg border border-dashed border-white/15 bg-[var(--surface-2)] p-5 text-center">
       <p className="text-sm font-semibold text-white/60">{message}</p>
       {hint && <p className="mt-1 text-xs text-white/35">{hint}</p>}
       {cta && (
-        <Link href={cta.href} className="mt-3 inline-block rounded-lg border border-cyan-400/30 bg-cyan-500/10 px-3 py-1.5 text-xs font-bold text-cyan-300 transition hover:bg-cyan-500/20">
+        <Link href={cta.href} className="mt-3 inline-block rounded-lg border border-[var(--border)] bg-[var(--surface)] px-3 py-1.5 text-xs font-bold text-[var(--accent)] transition hover:bg-[var(--surface-2)]">
           {cta.label}
         </Link>
       )}
@@ -62,8 +61,8 @@ export function GuestPerformanceView({ stats }: { stats: PlatformStats }) {
       <Section title="What's on the platform" icon="🧭">
         <div className="grid grid-cols-2 gap-3 md:grid-cols-4">
           {tiles.map((t, index) => (
-            <Link key={t.label} href={t.href} className="rounded-xl border border-white/[0.08] bg-white/[0.03] p-3 text-center transition hover:-translate-y-0.5 hover:border-cyan-400/40">
-              <p className={`text-2xl font-black ${["text-cyan-300", "text-violet-300", "text-amber-300", "text-emerald-300"][index]}`}>{t.value}</p>
+            <Link key={t.label} href={t.href} className="rounded-lg border border-white/[0.08] bg-white/[0.03] p-3 text-center transition hover:-translate-y-0.5 hover:border-[var(--accent)]/40">
+              <p className="text-2xl font-black text-[var(--foreground)]">{t.value}</p>
               <p className="mt-0.5 text-[11px] text-white/50">{t.label}</p>
             </Link>
           ))}
@@ -97,8 +96,8 @@ export default function PerformanceView({ data, stats }: { data: PerformanceData
       <Section title="Progress Summary" icon="📊">
         <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-5">
           {summaryTiles.map((t, index) => (
-            <div key={t.label} className="rounded-xl border border-white/[0.08] bg-white/[0.03] p-3 text-center shadow-inner shadow-black/20">
-              <p className={`text-xl font-black ${["text-cyan-300", "text-violet-300", "text-amber-300", "text-rose-300", "text-emerald-300"][index]}`}>{t.value}</p>
+            <div key={t.label} className="rounded-lg border border-white/[0.08] bg-white/[0.03] p-3 text-center">
+              <p className="text-xl font-black text-[var(--foreground)]">{t.value}</p>
               <p className="mt-0.5 text-[11px] leading-tight text-white/50">{t.label}</p>
               {t.note && <p className="mt-0.5 text-[10px] text-white/30">{t.note}</p>}
             </div>
@@ -126,7 +125,7 @@ export default function PerformanceView({ data, stats }: { data: PerformanceData
                 </div>
                 <div className="h-2 overflow-hidden rounded-full bg-white/[0.06]">
                   {r.accuracy !== null && (
-                    <div className="h-full rounded-full bg-gradient-to-r from-cyan-400 to-emerald-400" style={{ width: `${r.accuracy}%` }} />
+                    <div className="h-full rounded-full bg-[var(--accent)]" style={{ width: `${r.accuracy}%` }} />
                   )}
                 </div>
               </div>
@@ -143,9 +142,9 @@ export default function PerformanceView({ data, stats }: { data: PerformanceData
           ) : (
             <ul className="space-y-2">
               {weakTopics.map((t) => (
-                <li key={t.chapter} className="flex items-center justify-between rounded-xl border border-rose-500/15 bg-rose-500/[0.05] px-3 py-2">
+                <li key={t.chapter} className="flex items-center justify-between rounded-lg border border-[var(--border)] bg-[var(--surface-2)] px-3 py-2">
                   <span className="text-sm font-semibold text-white">{t.chapter}</span>
-                  <span className="text-xs text-rose-300">{t.mistakes} mistake{t.mistakes === 1 ? "" : "s"}</span>
+                  <span className="text-xs text-[var(--text-muted)]">{t.mistakes} mistake{t.mistakes === 1 ? "" : "s"}</span>
                 </li>
               ))}
             </ul>
@@ -159,9 +158,9 @@ export default function PerformanceView({ data, stats }: { data: PerformanceData
           ) : (
             <ul className="space-y-2">
               {strongTopics.map((t) => (
-                <li key={t.chapter} className="flex items-center justify-between rounded-xl border border-emerald-500/15 bg-emerald-500/[0.05] px-3 py-2">
+                <li key={t.chapter} className="flex items-center justify-between rounded-lg border border-[var(--border)] bg-[var(--surface-2)] px-3 py-2">
                   <span className="text-sm font-semibold text-white">{t.chapter}</span>
-                  <span className="text-xs text-emerald-300">{t.sessions} session{t.sessions === 1 ? "" : "s"} · 0 mistakes</span>
+                  <span className="text-xs text-[var(--text-muted)]">{t.sessions} session{t.sessions === 1 ? "" : "s"} · 0 mistakes</span>
                 </li>
               ))}
             </ul>
@@ -176,7 +175,7 @@ export default function PerformanceView({ data, stats }: { data: PerformanceData
         ) : (
           <ul className="space-y-2">
             {revisionQueue.map((r) => (
-              <li key={r.chapter} className="flex items-center justify-between rounded-xl border border-white/[0.08] bg-white/[0.03] px-3 py-2">
+              <li key={r.chapter} className="flex items-center justify-between rounded-lg border border-white/[0.08] bg-white/[0.03] px-3 py-2">
                 <span className="text-sm font-semibold text-white">{r.chapter}</span>
                 <span className="text-xs text-white/45">last mistake {timeAgo(r.lastMistakeAt)}</span>
               </li>
@@ -192,7 +191,7 @@ export default function PerformanceView({ data, stats }: { data: PerformanceData
         ) : (
           <ul className="space-y-2">
             {recentActivity.map((a, i) => (
-              <li key={`${a.at}-${i}`} className="flex items-center gap-3 rounded-xl border border-white/[0.08] bg-white/[0.03] px-3 py-2">
+              <li key={`${a.at}-${i}`} className="flex items-center gap-3 rounded-lg border border-white/[0.08] bg-white/[0.03] px-3 py-2">
                 <span className="text-base">{a.kind === "test" ? "🧪" : "📖"}</span>
                 <span className="min-w-0 flex-1">
                   <span className="block truncate text-sm font-semibold text-white">{a.label}</span>

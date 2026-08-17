@@ -40,7 +40,7 @@ export default function ProgressTabs({ tabs }: { tabs: ProgressTab[] }) {
                 key={t.key}
                 onClick={() => setActive(t.key)}
                 className={`flex shrink-0 items-center gap-1.5 whitespace-nowrap border-b-2 px-3 py-2.5 text-sm font-semibold transition ${
-                  on ? "border-current text-cyan-300" : "border-transparent text-white/50 hover:text-white/80"
+                  on ? "border-current text-[var(--accent)]" : "border-transparent text-white/50 hover:text-white/80"
                 }`}
               >
                 <Icon className="h-4 w-4" />

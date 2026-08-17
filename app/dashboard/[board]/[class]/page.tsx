@@ -56,7 +56,7 @@ export default async function ClassDashboard({ params }: { params: Promise<{ boa
             <span className="mx-1.5">/</span><span className="text-white/80">{c.name}</span>
           </nav>
           <div className="text-[11px] font-bold uppercase tracking-[0.3em] text-amber-300/80">{b.name} · {b.desc}</div>
-          <h1 className="mt-2 font-serif text-3xl font-black tracking-tight sm:text-4xl">{c.label}</h1>
+          <h1 className="mt-2 font-display text-3xl font-black tracking-tight sm:text-4xl">{c.label}</h1>
           <p className="mt-2 max-w-2xl text-white/55">Your {b.name} {c.name} class dashboard — learning, tests, projects, practicals, progress and mentorship.</p>
         </div>
       </div>
@@ -91,7 +91,7 @@ export default async function ClassDashboard({ params }: { params: Promise<{ boa
           const route = SECTION_ROUTES[section.key]?.(base);
           return (
           <section key={section.key} className="relative overflow-hidden rounded-lg border border-white/[0.08] bg-[linear-gradient(135deg,rgba(255,255,255,0.04),transparent_40%),rgba(17,24,39,0.8)] p-5 shadow-[0_22px_55px_-45px_rgba(0,0,0,0.95)]">
-            <span aria-hidden="true" className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-cyan-400 via-violet-400 to-amber-300 opacity-55" />
+            <span aria-hidden="true" className="absolute inset-x-0 top-0 h-px bg-[var(--accent)] opacity-55" />
             <div className="mb-3 flex items-start justify-between gap-3">
               <div>
                 <h2 className="text-lg font-black text-white">{section.label}</h2>

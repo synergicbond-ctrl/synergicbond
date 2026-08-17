@@ -46,7 +46,7 @@ export default async function CoachPage() {
     mistakes?.map((m) => m.chapter_id) || [];
 
   return (
-    <main className="min-h-screen bg-black text-white p-8">
+    <main className="min-h-screen bg-[var(--background)] text-white p-8">
       <h1 className="text-5xl font-black">
         AI Coach
       </h1>

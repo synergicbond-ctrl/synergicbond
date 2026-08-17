@@ -41,23 +41,23 @@ export default async function ProgramHubPage({ params }: { params: Promise<{ slu
   const hasSyllabus = (HUB_SYLLABUS_MAP[slug] ?? []).length > 0;
 
   return (
-    <main className="min-h-screen bg-black text-white">
-      <div className={`border-b border-white/10 bg-gradient-to-b ${accent.gradient} to-black px-6 py-14 text-center`}>
-        <div className={`mb-3 text-xs font-bold uppercase tracking-widest ${accent.text}`}>{kicker}</div>
+    <main className="min-h-screen bg-[var(--background)] text-[var(--foreground)]">
+      <div className="border-b border-[var(--border)] bg-[var(--surface)] px-6 py-14 text-center">
+        <div className="mb-3 text-xs font-bold uppercase tracking-widest text-[var(--text-muted)]">{kicker}</div>
         <h1 className="mb-4 text-4xl font-black tracking-tight sm:text-5xl">{name} Chemistry</h1>
-        <p className="mx-auto max-w-xl text-lg text-zinc-400">{tagline}</p>
+        <p className="mx-auto max-w-xl text-lg text-[var(--text-muted)]">{tagline}</p>
         <div className="mt-6 flex flex-wrap justify-center gap-3">
           {chips.map((chip) => (
-            <span key={chip} className={`rounded-full border px-3 py-1 text-sm ${accent.chip}`}>
+            <span key={chip} className="rounded-full border border-[var(--border)] bg-[var(--surface-2)] px-3 py-1 text-sm text-[var(--text-muted)]">
               {chip}
             </span>
           ))}
         </div>
         <div className="mt-8 flex flex-wrap justify-center gap-3">
-          <Link href={`/programs/${slug}/learn`} className={`rounded-xl border px-5 py-2.5 text-sm font-bold ${accent.chip} transition hover:bg-white/[0.06]`}>
+          <Link href={`/programs/${slug}/learn`} className="rounded-lg border border-[var(--border)] bg-[var(--surface-2)] px-5 py-2.5 text-sm font-bold text-[var(--foreground)] transition hover:bg-white/[0.06]">
             Start Learning
           </Link>
-          <Link href={`/programs/${slug}/tests`} className="rounded-xl bg-[var(--accent)] px-5 py-2.5 text-sm font-black text-black transition hover:-translate-y-0.5">
+          <Link href={`/programs/${slug}/tests`} className="rounded-lg bg-[var(--accent)] px-5 py-2.5 text-sm font-black text-[var(--background)] transition hover:-translate-y-0.5">
             Take a Test →
           </Link>
         </div>
@@ -73,7 +73,7 @@ export default async function ProgramHubPage({ params }: { params: Promise<{ slu
                 Your {name} readiness score appears here once you attempt tests — no simulated numbers.
               </p>
             </div>
-            <Link href={`/programs/${slug}/practice`} className={`shrink-0 text-sm font-semibold ${accent.text} hover:underline`}>
+            <Link href={`/programs/${slug}/practice`} className="shrink-0 text-sm font-semibold text-[var(--accent)] hover:underline">
               Start practising →
             </Link>
           </div>
@@ -86,7 +86,7 @@ export default async function ProgramHubPage({ params }: { params: Promise<{ slu
         {slug === "jee-advanced" && (
           <section className="mb-10">
             <div className="mb-5">
-              <div className="text-xs font-black uppercase tracking-[0.25em] text-sky-400">
+              <div className="text-xs font-black uppercase tracking-[0.25em] text-[var(--text-muted)]">
                 JEE Advanced Premium Notes
               </div>
               <h2 className="mt-1 text-2xl font-black text-white">
@@ -115,7 +115,7 @@ export default async function ProgramHubPage({ params }: { params: Promise<{ slu
 
               <Link
                 href="/programs/jee-advanced/chapter/qualitative-analysis#learn"
-                className="rounded-lg border border-violet-400/30 bg-violet-500/[0.08] p-5 transition hover:border-violet-300/60 hover:bg-violet-500/[0.13]"
+                className="rounded-lg border border-[var(--border)] bg-[var(--surface)] p-5 transition hover:border-[var(--border-strong)]"
               >
                 <div className="text-[10px] font-black uppercase tracking-[0.22em] text-[var(--text-muted)]">
                   Full Notes · Separate Chapter
@@ -139,7 +139,7 @@ export default async function ProgramHubPage({ params }: { params: Promise<{ slu
           <ProgramHubSections sections={sections} accentText={accent.text} accentCard={accent.card} />
           {hasSyllabus && (
             <p className="mt-6 text-sm text-zinc-500">
-              <Link href={`/programs/${slug}/syllabus`} className={`font-semibold underline-offset-4 hover:underline ${accent.text}`}>
+              <Link href={`/programs/${slug}/syllabus`} className="font-semibold underline-offset-4 hover:underline text-[var(--accent)]">
                 View official syllabus →
               </Link>
             </p>

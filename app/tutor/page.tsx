@@ -235,23 +235,23 @@ export default function AdvancedAITutorPage() {
   };
 
   return (
-    <main className="min-h-screen bg-slate-50 text-slate-900 p-6 md:p-8 lg:p-10 flex flex-col">
+    <main className="min-h-screen bg-[var(--background)] text-[var(--foreground)] p-6 md:p-8 lg:p-10 flex flex-col">
       <div className="max-w-5xl mx-auto w-full flex flex-col h-[90vh]">
         
         {/* Header & Context Selector */}
-        <header className="mb-6 bg-white p-6 rounded-lg shadow-sm border border-slate-100 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+        <header className="mb-6 bg-[var(--surface)] p-6 rounded-lg shadow-sm border border-[var(--border)] flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
           <div>
-            <h1 className="text-3xl font-black tracking-tight text-slate-900">Syllabus-Grounded AI Tutor</h1>
-            <p className="text-slate-600 text-sm mt-0.5">Trained entirely on the NEET/JEE knowledge graph. No hallucinations.</p>
+            <h1 className="text-3xl font-black tracking-tight text-[var(--foreground)]">Syllabus-Grounded AI Tutor</h1>
+            <p className="text-[var(--text-muted)] text-sm mt-0.5">Trained entirely on the NEET/JEE knowledge graph. No hallucinations.</p>
           </div>
-          
+
           <div className="flex items-center gap-3 w-full md:w-auto justify-between md:justify-start">
             <div className="flex items-center gap-2">
-              <label className="text-xs font-bold text-slate-500 uppercase tracking-wider">Targeting:</label>
-              <select 
-                value={chapterId} 
+              <label className="text-xs font-bold text-[var(--text-muted)] uppercase tracking-wider">Targeting:</label>
+              <select
+                value={chapterId}
                 onChange={(e) => setChapterId(e.target.value)}
-                className="p-2.5 rounded-xl border border-slate-200 text-sm font-semibold text-slate-800 bg-slate-50 focus:outline-none focus:ring-2 focus:ring-indigo-600"
+                className="p-2.5 rounded-lg border border-[var(--border)] text-sm font-semibold text-[var(--foreground)] bg-[var(--surface-2)] focus:outline-none focus:ring-2 focus:ring-[var(--accent)]"
               >
                 <option value="mole-concept">Mole Concept & Equivalents</option>
                 <option value="atomic-structure">Atomic Structure & Mechanics</option>
@@ -265,7 +265,7 @@ export default function AdvancedAITutorPage() {
               onClick={regenerateLastAnswer}
               title="Regenerate Last Answer"
               disabled={loading}
-              className="p-2.5 rounded-xl bg-indigo-50 text-indigo-600 hover:bg-indigo-100 border border-indigo-100 transition-colors flex items-center justify-center disabled:cursor-not-allowed disabled:opacity-50"
+              className="p-2.5 rounded-lg bg-[var(--surface-2)] text-[var(--foreground)] hover:bg-[var(--surface)] border border-[var(--border)] transition-colors flex items-center justify-center disabled:cursor-not-allowed disabled:opacity-50"
             >
               <RefreshCw className="w-4 h-4" />
             </button>
@@ -275,7 +275,7 @@ export default function AdvancedAITutorPage() {
               onClick={handleClearChat}
               title="Clear Chat"
               disabled={loading}
-              className="p-2.5 rounded-xl bg-purple-50 text-purple-600 hover:bg-purple-100 border border-purple-100 transition-colors flex items-center justify-center disabled:cursor-not-allowed disabled:opacity-50"
+              className="p-2.5 rounded-lg bg-[var(--surface-2)] text-[var(--accent)] hover:bg-[var(--surface)] border border-[var(--border)] transition-colors flex items-center justify-center disabled:cursor-not-allowed disabled:opacity-50"
             >
               <Trash2 className="w-5 h-5" />
             </button>
@@ -283,11 +283,11 @@ export default function AdvancedAITutorPage() {
         </header>
 
         {/* Chat Messages Panel */}
-        <div className="flex-1 bg-white rounded-lg shadow-sm border border-slate-100 p-6 overflow-y-auto space-y-6 flex flex-col">
+        <div className="flex-1 bg-[var(--surface)] rounded-lg shadow-sm border border-[var(--border)] p-6 overflow-y-auto space-y-6 flex flex-col">
           {messages.map((m, idx) => (
             <div key={idx} className={`flex items-start gap-3 ${m.role === "user" ? "justify-end" : "justify-start"}`}>
               {m.role === "assistant" && (
-                <div className="p-2 bg-slate-100 border border-slate-200 rounded-xl text-slate-700 flex-shrink-0">
+                <div className="p-2 bg-[var(--surface-2)] border border-[var(--border)] rounded-lg text-[var(--foreground)] flex-shrink-0">
                   <Bot className="w-5 h-5" />
                 </div>
               )}
@@ -295,7 +295,7 @@ export default function AdvancedAITutorPage() {
               <div className={`max-w-[80%] p-4 rounded-lg text-sm leading-relaxed border relative group ${
                 m.role === "user" 
                   ? "bg-indigo-600 text-white font-medium rounded-br-none border-indigo-600" 
-                  : "bg-slate-50 text-slate-800 font-medium rounded-bl-none border-slate-200/60"
+                  : "bg-[var(--surface-2)] text-[var(--foreground)] font-medium rounded-bl-none border-[var(--border)]"
               }`}>
                 <div className="prose prose-slate max-w-none overflow-x-auto break-words whitespace-pre-wrap leading-relaxed">
                   <ReactMarkdown remarkPlugins={[remarkMath]} rehypePlugins={[rehypeKatex]}>
@@ -306,7 +306,7 @@ export default function AdvancedAITutorPage() {
                 {m.role === "assistant" && m.content && m.content !== defaultMessages[0].content && (
                   <button
                     onClick={() => copyToClipboard(m.content)}
-                    className="absolute right-2 bottom-2 p-1.5 rounded-lg bg-white/80 hover:bg-white border border-slate-200 shadow-sm text-slate-500 hover:text-slate-700 opacity-0 group-hover:opacity-100 transition-opacity"
+                    className="absolute right-2 bottom-2 p-1.5 rounded-lg bg-[var(--surface)]/80 hover:bg-[var(--surface)] border border-[var(--border)] shadow-sm text-[var(--text-muted)] hover:text-[var(--foreground)] opacity-0 group-hover:opacity-100 transition-opacity"
                     title="Copy answer"
                   >
                     <Copy className="w-3.5 h-3.5" />
@@ -323,10 +323,10 @@ export default function AdvancedAITutorPage() {
           
           {loading && (
             <div className="flex justify-start items-center gap-3">
-              <div className="p-2 bg-slate-100 border border-slate-200 rounded-xl text-slate-700">
+              <div className="p-2 bg-[var(--surface-2)] border border-[var(--border)] rounded-lg text-[var(--foreground)]">
                 <Bot className="w-5 h-5 animate-pulse" />
               </div>
-              <div className="max-w-[80%] p-4 rounded-lg bg-slate-50 border border-slate-200/60 text-slate-500 text-sm flex items-center gap-2.5 rounded-bl-none">
+              <div className="max-w-[80%] p-4 rounded-lg bg-[var(--surface-2)] border border-[var(--border)] text-[var(--text-muted)] text-sm flex items-center gap-2.5 rounded-bl-none">
                 <svg className="animate-spin h-4 w-4 text-indigo-600" fill="none" viewBox="0 0 24 24">
                   <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
                   <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
@@ -339,14 +339,14 @@ export default function AdvancedAITutorPage() {
         </div>
 
         {/* Chat Input Field */}
-        <form onSubmit={handleSend} className="mt-6 flex gap-3 bg-white p-2 rounded-lg shadow-sm border border-slate-200 items-center">
+        <form onSubmit={handleSend} className="mt-6 flex gap-3 bg-[var(--surface)] p-2 rounded-lg shadow-sm border border-[var(--border)] items-center">
           <input
             type="text"
             value={input}
             onChange={(e) => setInput(e.target.value)}
             disabled={loading}
             placeholder="Ask e.g., 'Why does Wurtz reaction fail for odd alkanes?' or 'Explain Bohr radius formula'"
-            className="flex-1 p-3.5 bg-transparent border-0 focus:outline-none focus:ring-0 text-slate-800 placeholder-slate-400 text-sm font-medium disabled:cursor-not-allowed disabled:opacity-50"
+            className="flex-1 p-3.5 bg-transparent border-0 focus:outline-none focus:ring-0 text-[var(--foreground)] placeholder-[var(--text-muted)] text-sm font-medium disabled:cursor-not-allowed disabled:opacity-50"
           />
           <button 
             type="submit" 

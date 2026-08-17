@@ -70,7 +70,7 @@ export default async function HydrogenPartPage({ params }: { params: Promise<{ p
                     unoptimized
                   />
                 </div>
-                <figcaption className="border-t border-white/10 px-5 py-4 text-sm font-medium leading-6 text-slate-300">
+                <figcaption className="border-t border-white/10 px-5 py-4 text-sm font-medium leading-6 text-[var(--text-muted)]">
                   <span className="mr-2 font-black text-cyan-300">{String(index + 1).padStart(2, "0")}</span>
                   {visual.caption}
                 </figcaption>

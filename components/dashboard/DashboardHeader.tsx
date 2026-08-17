@@ -17,7 +17,7 @@ export function DashboardHeader({
   });
 
   return (
-    <section className="relative overflow-hidden rounded-lg border border-white/10 bg-white/[0.03] p-8 backdrop-blur-xl">
+    <section className="relative overflow-hidden rounded-lg border border-white/10 bg-white/[0.03] p-8">
 
       <div className="absolute inset-0">
         <div className="absolute left-0 top-0 h-48 w-48 rounded-full bg-cyan-500/10 blur-3xl" />
@@ -27,7 +27,7 @@ export function DashboardHeader({
       <div className="relative flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
 
         <div>
-          <p className="text-xs font-semibold uppercase tracking-[0.4em] text-cyan-300">
+          <p className="text-xs font-semibold uppercase tracking-[0.4em] text-[var(--text-muted)]">
             Chemistry Operating System
           </p>
 
@@ -46,8 +46,8 @@ export function DashboardHeader({
 
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
 
-          <div className="rounded-lg border border-white/10 bg-black/20 p-5">
-            <Atom className="mb-3 h-6 w-6 text-cyan-300" />
+          <div className="rounded-lg border border-white/10 bg-[var(--surface-2)] p-5">
+            <Atom className="mb-3 h-6 w-6 text-[var(--accent)]" />
             <p className="text-xs uppercase tracking-wider text-white/50">
               Learning Mode
             </p>
@@ -56,8 +56,8 @@ export function DashboardHeader({
             </p>
           </div>
 
-          <div className="rounded-lg border border-white/10 bg-black/20 p-5">
-            <Target className="mb-3 h-6 w-6 text-cyan-300" />
+          <div className="rounded-lg border border-white/10 bg-[var(--surface-2)] p-5">
+            <Target className="mb-3 h-6 w-6 text-[var(--accent)]" />
             <p className="text-xs uppercase tracking-wider text-white/50">
               Daily Goal
             </p>
@@ -66,7 +66,7 @@ export function DashboardHeader({
             </p>
           </div>
 
-          <div className="rounded-lg border border-white/10 bg-black/20 p-5">
+          <div className="rounded-lg border border-white/10 bg-[var(--surface-2)] p-5">
             <Flame className="mb-3 h-6 w-6 text-orange-400" />
             <p className="text-xs uppercase tracking-wider text-white/50">
               Focus

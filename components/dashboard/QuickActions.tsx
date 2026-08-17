@@ -38,7 +38,7 @@ const actions = [
 
 export function QuickActions() {
   return (
-    <div className="rounded-lg border border-white/10 bg-white/[0.03] p-6 backdrop-blur-xl">
+    <div className="rounded-lg border border-[var(--border)] bg-[var(--surface)] p-6">
       <h2 className="mb-2 text-2xl font-bold text-white">
         Mission Actions
       </h2>
@@ -55,11 +55,11 @@ export function QuickActions() {
             <Link
               key={action.title}
               href={action.href}
-              className="group flex items-center justify-between rounded-lg border border-white/10 bg-black/20 p-4 transition-all duration-300 hover:border-cyan-400/30 hover:bg-white/[0.04]"
+              className="group flex items-center justify-between rounded-lg border border-[var(--border)] bg-[var(--surface-2)] p-4 transition-all duration-300 hover:border-[var(--accent)]/30 hover:bg-[var(--surface)]"
             >
               <div className="flex items-center gap-4">
-                <div className="rounded-xl bg-cyan-500/10 p-3">
-                  <Icon className="h-5 w-5 text-cyan-300" />
+                <div className="rounded-lg bg-[var(--surface-2)] p-3">
+                  <Icon className="h-5 w-5 text-[var(--accent)]" />
                 </div>
 
                 <div>
@@ -73,7 +73,7 @@ export function QuickActions() {
                 </div>
               </div>
 
-              <ArrowRight className="h-4 w-4 text-cyan-300 transition group-hover:translate-x-1" />
+              <ArrowRight className="h-4 w-4 text-[var(--accent)] transition group-hover:translate-x-1" />
             </Link>
           );
         })}

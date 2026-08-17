@@ -43,11 +43,11 @@ const reagents: Reagent[] = [
 ];
 
 const lvlColor: Record<string, string> = {
-  "NEET": "text-cyan-300 bg-cyan-500/10",
-  "NEET / JEE": "text-cyan-300 bg-cyan-500/10",
-  "JEE": "text-sky-300 bg-sky-500/10",
-  "JEE Adv": "text-violet-300 bg-violet-500/10",
-  "Olympiad": "text-purple-300 bg-purple-500/10",
+  "NEET": "text-[var(--accent)] bg-[var(--accent)]/10",
+  "NEET / JEE": "text-[var(--accent)] bg-[var(--accent)]/10",
+  "JEE": "text-[var(--accent)] bg-[var(--accent)]/10",
+  "JEE Adv": "text-[var(--text-muted)] bg-white/5",
+  "Olympiad": "text-[var(--text-muted)] bg-white/5",
 };
 
 export default function ReagentsPage() {
@@ -65,7 +65,7 @@ export default function ReagentsPage() {
     <main className="min-h-screen bg-[var(--background)] text-white">
       <div className="mx-auto max-w-5xl px-6 py-12">
         <ReferenceTabs />
-        <p className="text-xs font-bold uppercase tracking-[0.4em] text-cyan-300 mb-3">Knowledge Vault · Organic</p>
+        <p className="text-xs font-bold uppercase tracking-[0.4em] text-[var(--text-muted)] mb-3">Knowledge Vault · Organic</p>
         <h1 className="text-4xl font-black md:text-5xl">Reagent Master List</h1>
         <p className="mt-3 text-white/65 text-sm max-w-2xl mb-6">
           The {reagents.length} reagents you must know cold — what each one does, its formula, and exam relevance.
@@ -82,11 +82,11 @@ export default function ReagentsPage() {
             <div key={r.name} className="rounded-lg bg-[var(--surface)] border border-white/[0.06] p-4">
               <div className="flex items-start justify-between gap-2 mb-1.5">
                 <h3 className="text-sm font-bold text-white leading-snug flex items-center gap-2">
-                  <FlaskConical className="h-4 w-4 text-cyan-400 flex-shrink-0" /> {r.name}
+                  <FlaskConical className="h-4 w-4 text-[var(--accent)] flex-shrink-0" /> {r.name}
                 </h3>
                 <span className={`text-[9px] font-bold px-2 py-0.5 rounded-full whitespace-nowrap ${lvlColor[r.level] || "text-white/50 bg-white/5"}`}>{r.level}</span>
               </div>
-              <p className="text-xs font-mono text-cyan-300/80 mb-1.5">{r.formula}</p>
+              <p className="text-xs font-mono text-[var(--text-muted)] mb-1.5">{r.formula}</p>
               <p className="text-xs text-gray-300 leading-relaxed">{r.fn}</p>
             </div>
           ))}

@@ -78,7 +78,7 @@ export default function PYQPredictionsTab() {
             key={e}
             onClick={() => setExam(e)}
             className={`border rounded-lg p-4 text-left transition ${
-              exam === e ? "border-cyan-500 bg-cyan-950/20" : "border-white/10 hover:border-white/20"
+              exam === e ? "border-[var(--accent)] bg-[var(--surface-2)]" : "border-white/10 hover:border-white/20"
             }`}
           >
             <div className="font-semibold">{e}</div>

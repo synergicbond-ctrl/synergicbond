@@ -26,8 +26,8 @@ export default async function PerformancePage() {
     <main className="min-h-screen bg-[radial-gradient(circle_at_82%_3%,rgba(139,92,246,0.13),transparent_23%),radial-gradient(circle_at_8%_13%,rgba(34,211,238,0.11),transparent_26%),#0B0F19] text-white">
       <div className="mx-auto max-w-5xl px-4 py-8 sm:px-6 md:py-12">
         <div className="mb-6 rounded-lg border border-cyan-400/15 bg-[linear-gradient(105deg,rgba(34,211,238,0.08),transparent_48%),rgba(17,24,39,0.72)] p-5 shadow-[0_26px_65px_-48px_rgba(34,211,238,0.72)]">
-          <p className="mb-2 text-xs font-bold uppercase tracking-[0.4em] text-cyan-300">Performance</p>
-          <h1 className="font-serif text-3xl font-black md:text-4xl">
+          <p className="mb-2 text-xs font-bold uppercase tracking-[0.4em] text-[var(--text-muted)]">Performance</p>
+          <h1 className="font-display text-3xl font-black md:text-4xl">
             {data ? `${data.name}'s Progress` : "Your Progress"}
           </h1>
           <p className="mt-2 text-sm text-white/55">

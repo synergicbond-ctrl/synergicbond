@@ -218,9 +218,9 @@ export default function QuestionCard({
 
       {/* Explanation + knowledge linking */}
       {revealed && (
-        <div className="bg-indigo-950/40 border border-indigo-800 rounded-lg p-4 text-sm text-slate-300 space-y-3">
+        <div className="bg-[var(--surface-2)] border border-[var(--border)] rounded-lg p-4 text-sm text-[var(--text-muted)] space-y-3">
           <div>
-            <span className="font-bold text-indigo-400">Explanation:</span>
+            <span className="font-bold text-[var(--accent)]">Explanation:</span>
             <p className="mt-2">{question.explanation}</p>
           </div>
 
@@ -283,7 +283,7 @@ export default function QuestionCard({
         ) : (
           <button
             onClick={() => setRevealed((r) => !r)}
-            className="text-sm font-semibold text-cyan-400 hover:text-cyan-300 transition"
+            className="text-sm font-semibold text-[var(--accent)] hover:opacity-80 transition"
           >
             {revealed ? "Hide" : "Reveal Answer & Explanation"}
           </button>

@@ -62,9 +62,9 @@ export default function PYQChaptersTab() {
           <button
             key={stat.chapter}
             onClick={() => setActiveChapter(stat.chapter)}
-            className="border border-white/10 rounded-lg p-4 hover:border-cyan-500 transition text-left group space-y-2"
+            className="border border-white/10 rounded-lg p-4 hover:border-[var(--accent)] transition text-left group space-y-2"
           >
-            <h3 className="font-bold group-hover:text-cyan-400 transition">{stat.chapter}</h3>
+            <h3 className="font-bold group-hover:text-[var(--accent)] transition">{stat.chapter}</h3>
             <div className="flex items-center justify-between text-xs text-white/50">
               <span>{stat.totalQuestions} questions</span>
               <span>{Math.round((stat.totalQuestions / PYQ_DB_STATS.total) * 1000) / 10}% weightage</span>
@@ -103,11 +103,11 @@ export default function PYQChaptersTab() {
         {chapterStats && (
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             <div className="bg-white/5 border border-white/10 rounded-lg p-4">
-              <div className="text-2xl font-bold text-cyan-400">{chapterStats.totalQuestions}</div>
+              <div className="text-2xl font-bold text-[var(--foreground)]">{chapterStats.totalQuestions}</div>
               <div className="text-xs text-white/50">Total Questions</div>
             </div>
             <div className="bg-white/5 border border-white/10 rounded-lg p-4">
-              <div className="text-2xl font-bold text-purple-400">{weightagePct}%</div>
+              <div className="text-2xl font-bold text-[var(--foreground)]">{weightagePct}%</div>
               <div className="text-xs text-white/50">Predicted Weightage</div>
             </div>
             <div className="bg-white/5 border border-white/10 rounded-lg p-4">
@@ -115,7 +115,7 @@ export default function PYQChaptersTab() {
               <div className="text-xs text-white/50">Trend Score (last 3 yrs)</div>
             </div>
             <div className="bg-white/5 border border-white/10 rounded-lg p-4">
-              <div className="text-2xl font-bold text-green-400">{chapterStats.lastAsked || "—"}</div>
+              <div className="text-2xl font-bold text-[var(--foreground)]">{chapterStats.lastAsked || "—"}</div>
               <div className="text-xs text-white/50">Last Asked</div>
             </div>
           </div>
@@ -124,15 +124,15 @@ export default function PYQChaptersTab() {
         {chapterStats && (
           <div className="grid grid-cols-3 gap-4">
             <div className="bg-white/5 border border-white/10 rounded-lg p-3 text-center">
-              <div className="text-lg font-bold text-sky-400">{chapterStats.byExam.jeeMain}</div>
+              <div className="text-lg font-bold text-[var(--foreground)]">{chapterStats.byExam.jeeMain}</div>
               <div className="text-xs text-white/50">JEE Main</div>
             </div>
             <div className="bg-white/5 border border-white/10 rounded-lg p-3 text-center">
-              <div className="text-lg font-bold text-violet-400">{chapterStats.byExam.jeeAdvanced}</div>
+              <div className="text-lg font-bold text-[var(--foreground)]">{chapterStats.byExam.jeeAdvanced}</div>
               <div className="text-xs text-white/50">JEE Advanced</div>
             </div>
             <div className="bg-white/5 border border-white/10 rounded-lg p-3 text-center">
-              <div className="text-lg font-bold text-emerald-400">{chapterStats.byExam.neet}</div>
+              <div className="text-lg font-bold text-[var(--foreground)]">{chapterStats.byExam.neet}</div>
               <div className="text-xs text-white/50">NEET</div>
             </div>
           </div>
@@ -173,16 +173,16 @@ export default function PYQChaptersTab() {
                 <span className="text-white/50 w-12 text-sm">{point.year}</span>
                 <div className="flex gap-1 flex-1">
                   {point.jeeMain > 0 && (
-                    <div className="h-6 bg-sky-500/40 rounded" style={{ width: `${Math.min(point.jeeMain * 30, 100)}px` }} />
+                    <div className="h-6 bg-[var(--accent)]/40 rounded" style={{ width: `${Math.min(point.jeeMain * 30, 100)}px` }} />
                   )}
                   {point.jeeAdvanced > 0 && (
                     <div
-                      className="h-6 bg-violet-500/40 rounded"
+                      className="h-6 bg-[var(--accent)]/40 rounded"
                       style={{ width: `${Math.min(point.jeeAdvanced * 30, 100)}px` }}
                     />
                   )}
                   {point.neet > 0 && (
-                    <div className="h-6 bg-emerald-500/40 rounded" style={{ width: `${Math.min(point.neet * 30, 100)}px` }} />
+                    <div className="h-6 bg-[var(--accent)]/40 rounded" style={{ width: `${Math.min(point.neet * 30, 100)}px` }} />
                   )}
                 </div>
                 <span className="text-xs text-white/50 w-16 text-right">{point.total} Qs</span>
@@ -213,7 +213,7 @@ export default function PYQChaptersTab() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
             {chapterStats.topConcepts.map((item) => (
               <div key={item.concept} className="bg-white/5 border border-white/10 rounded-lg p-3">
-                <div className="font-semibold text-cyan-400">{item.concept}</div>
+                <div className="font-semibold text-[var(--foreground)]">{item.concept}</div>
                 <div className="text-xs text-white/50">{item.count} questions</div>
               </div>
             ))}
@@ -239,7 +239,7 @@ export default function PYQChaptersTab() {
                         onClick={() => setActiveTag({ kind: "reaction", value: item.reaction })}
                         className={`px-2 py-1 rounded text-xs bg-orange-900/30 text-orange-300 hover:bg-orange-900/50 transition ${
                           activeTag?.kind === "reaction" && activeTag.value === item.reaction
-                            ? "ring-1 ring-cyan-400"
+                            ? "ring-1 ring-[var(--accent)]"
                             : ""
                         }`}
                       >
@@ -251,7 +251,7 @@ export default function PYQChaptersTab() {
               )}
               {chapterStats.topReagents.length > 0 && (
                 <div className="space-y-2">
-                  <div className="text-xs font-semibold text-sky-300 uppercase tracking-wide">Reagents</div>
+                  <div className="text-xs font-semibold text-[var(--text-muted)] uppercase tracking-wide">Reagents</div>
                   <div className="flex flex-wrap gap-1.5">
                     {chapterStats.topReagents.map((item) => (
                       <button
@@ -259,7 +259,7 @@ export default function PYQChaptersTab() {
                         onClick={() => setActiveTag({ kind: "reagent", value: item.reagent })}
                         className={`px-2 py-1 rounded text-xs bg-sky-900/30 text-sky-300 hover:bg-sky-900/50 transition ${
                           activeTag?.kind === "reagent" && activeTag.value === item.reagent
-                            ? "ring-1 ring-cyan-400"
+                            ? "ring-1 ring-[var(--accent)]"
                             : ""
                         }`}
                       >
@@ -279,7 +279,7 @@ export default function PYQChaptersTab() {
                         onClick={() => setActiveTag({ kind: "exception", value: item.exception })}
                         className={`px-2 py-1 rounded text-xs bg-red-900/30 text-red-300 hover:bg-red-900/50 transition ${
                           activeTag?.kind === "exception" && activeTag.value === item.exception
-                            ? "ring-1 ring-cyan-400"
+                            ? "ring-1 ring-[var(--accent)]"
                             : ""
                         }`}
                       >
@@ -292,9 +292,9 @@ export default function PYQChaptersTab() {
             </div>
 
             {activeTag && (
-              <div className="border border-cyan-900/50 bg-cyan-950/20 rounded-lg p-4 space-y-2">
+              <div className="border border-[var(--border)] bg-[var(--surface-2)] rounded-lg p-4 space-y-2">
                 <div className="flex items-center justify-between">
-                  <span className="text-sm font-semibold text-cyan-300">
+                  <span className="text-sm font-semibold text-[var(--foreground)]">
                     PYQs linked via {activeTag.kind} &ldquo;{activeTag.value}&rdquo; ({relatedForTag(activeTag.kind, activeTag.value)})
                   </span>
                   <button onClick={() => setActiveTag(null)} className="text-xs text-white/40 hover:text-white/70">

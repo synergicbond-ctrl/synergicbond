@@ -136,7 +136,7 @@ export default function Testimonials() {
                   </div>
                   <p className="text-xs font-bold mt-0.5" style={{ color: item.accent }}>{item.role}</p>
                 </div>
-                <p className="text-xs text-gray-500 font-medium">📍 {item.location}</p>
+                <p className="text-xs text-[var(--text-muted)] font-medium">📍 {item.location}</p>
               </div>
             </div>
           </div>

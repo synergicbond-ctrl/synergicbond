@@ -21,7 +21,7 @@ export default async function TestHistoryPage() {
     <main className="min-h-screen bg-[var(--background)] text-white">
       <div className="mx-auto max-w-5xl px-4 py-10 sm:px-6">
         <header className="mb-6">
-          <p className="text-xs font-bold uppercase tracking-[0.2em] text-cyan-300">Tests</p>
+          <p className="text-xs font-bold uppercase tracking-[0.2em] text-[var(--text-muted)]">Tests</p>
           <h1 className="mt-2 text-3xl font-black sm:text-4xl">Test History</h1>
           <p className="mt-2 text-sm text-white/50">Every real submitted attempt, ready for review.</p>
         </header>
@@ -29,7 +29,7 @@ export default async function TestHistoryPage() {
         {result.error === "Unauthorized" ? (
           <section className="rounded-lg border border-white/[0.08] bg-[var(--surface)] p-8 text-center">
             <h2 className="font-black">Sign in to save test history</h2>
-            <Link href="/auth/signin?next=/tests/history" className="mt-4 inline-block rounded-xl bg-cyan-400 px-5 py-2.5 text-sm font-black text-slate-950">Sign in</Link>
+            <Link href="/auth/signin?next=/tests/history" className="mt-4 inline-block rounded-lg bg-[var(--accent)] px-5 py-2.5 text-sm font-black text-black">Sign in</Link>
           </section>
         ) : result.error ? (
           <section className="rounded-lg border border-rose-400/20 bg-rose-500/[0.06] p-6 text-sm text-rose-200">Test history is temporarily unavailable.</section>
@@ -37,7 +37,7 @@ export default async function TestHistoryPage() {
           <section className="rounded-lg border border-dashed border-white/12 bg-white/[0.02] p-8 text-center">
             <h2 className="font-black text-white/75">No completed tests yet</h2>
             <p className="mt-1 text-sm text-white/40">Start with the 10-minute Quick Test.</p>
-            <Link href="/tests" className="mt-4 inline-block rounded-xl bg-cyan-400 px-5 py-2.5 text-sm font-black text-slate-950">Open Tests</Link>
+            <Link href="/tests" className="mt-4 inline-block rounded-lg bg-[var(--accent)] px-5 py-2.5 text-sm font-black text-black">Open Tests</Link>
           </section>
         ) : (
           <section className="space-y-3">
@@ -48,10 +48,10 @@ export default async function TestHistoryPage() {
                   <p className="mt-1 text-xs text-white/40">{new Date(attempt.submittedAt).toLocaleDateString("en-IN", { day: "numeric", month: "short", year: "numeric" })} · {attempt.totalQuestions} questions · {formatDuration(attempt.durationMs)}</p>
                 </div>
                 <div className="grid grid-cols-2 gap-x-5 text-right">
-                  <div><p className="font-black text-cyan-300">{attempt.score}/{attempt.maxScore}</p><p className="text-[10px] text-white/35">Score</p></div>
-                  <div><p className="font-black text-emerald-300">{attempt.accuracy}%</p><p className="text-[10px] text-white/35">Accuracy</p></div>
+                  <div><p className="font-black text-[var(--accent)]">{attempt.score}/{attempt.maxScore}</p><p className="text-[10px] text-white/35">Score</p></div>
+                  <div><p className="font-black text-[var(--accent)]">{attempt.accuracy}%</p><p className="text-[10px] text-white/35">Accuracy</p></div>
                 </div>
-                <span className="text-sm font-bold text-cyan-300">Review →</span>
+                <span className="text-sm font-bold text-[var(--accent)]">Review →</span>
               </Link>
             ))}
           </section>

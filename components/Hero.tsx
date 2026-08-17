@@ -11,7 +11,7 @@ import ExamGrid from "@/components/home/ExamGrid";
 export default function Hero() {
   const { t } = useT();
   return (
-    <section className="relative overflow-hidden bg-black">
+    <section className="relative overflow-hidden bg-[var(--background)]">
 
       {/* Background Effects */}
       <div className="absolute inset-0 -z-10">
@@ -36,7 +36,7 @@ export default function Hero() {
           <h1 className="mt-4 text-4xl font-black leading-[0.95] tracking-[-0.04em] md:text-6xl">
             {t("hero.headline1")}
             <br />
-            <span className="bg-gradient-to-r from-cyan-300 via-sky-400 to-violet-400 bg-clip-text text-transparent">
+            <span className="text-[var(--accent)]">
               {t("hero.headline2")}
             </span>
           </h1>

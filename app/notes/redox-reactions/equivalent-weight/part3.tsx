@@ -189,7 +189,7 @@ export default function EquivalentConceptPart3() {
             </WorkingLine>
           </div>
 
-          <div className="rounded-lg border border-slate-800 bg-slate-950/30 p-4">
+          <div className="rounded-lg border border-[var(--border)] bg-[var(--background)] p-4">
             <WorkingLine>
               E<sub>Al(OH)₃</sub> = 78 / 2
             </WorkingLine>
@@ -238,7 +238,7 @@ export default function EquivalentConceptPart3() {
               Therefore, 111 / 2 gm corresponds to 1 mole e⁻ transfer.
             </WorkingLine>
 
-            <div className="rounded-xl border border-slate-800 bg-slate-950/40 p-3 text-center font-bold">
+            <div className="rounded-lg border border-[var(--border)] bg-[var(--background)] p-3 text-center font-bold">
               Ca₃(PO₄)₂ → 6e⁻
             </div>
           </div>

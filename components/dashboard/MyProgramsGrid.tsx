@@ -143,14 +143,14 @@ export default function MyProgramsGrid({ activeKeys, isPro }: MyProgramsGridProp
       <div className="flex items-center justify-between">
         <div>
           <h3 className="text-xl font-black text-white flex items-center gap-2">
-            <GraduationCap className="h-6 w-6 text-indigo-400" /> My Active Programs
+            <GraduationCap className="h-6 w-6 text-[var(--accent)]" /> My Active Programs
           </h3>
           <p className="text-xs text-white/50 mt-1">
-            Your enrolled curriculum tracks. Select <strong className="text-white">Chapter-wise Learning</strong> for deep topic study or <strong className="text-cyan-300">Full Syllabus Dashboard</strong> for whole-course tools.
+            Your enrolled curriculum tracks. Select <strong className="text-white">Chapter-wise Learning</strong> for deep topic study or <strong className="text-[var(--accent)]">Full Syllabus Dashboard</strong> for whole-course tools.
           </p>
         </div>
         {isPro && (
-          <span className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-indigo-500/10 text-indigo-300 text-xs font-bold border border-indigo-500/20">
+          <span className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[var(--surface-2)] text-[var(--text-muted)] text-xs font-bold border border-[var(--border)]">
             <Sparkles className="h-3.5 w-3.5" /> All-Access Pro Enabled
           </span>
         )}
@@ -161,11 +161,11 @@ export default function MyProgramsGrid({ activeKeys, isPro }: MyProgramsGridProp
           {validCards.map((card) => (
             <div 
               key={card.key} 
-              className="p-5 rounded-lg bg-black/40 border border-white/[0.08] hover:border-cyan-500/40 transition flex flex-col justify-between space-y-4 group"
+              className="p-5 rounded-lg bg-[var(--surface)] border border-white/[0.08] hover:border-[var(--accent)]/40 transition flex flex-col justify-between space-y-4 group"
             >
               <div>
                 <div className="flex items-center justify-between">
-                  <span className="text-base font-black text-white group-hover:text-cyan-300 transition">
+                  <span className="text-base font-black text-white group-hover:text-[var(--accent)] transition">
                     {card.name}
                   </span>
                   <span className="px-2 py-0.5 rounded-md bg-white/10 text-[10px] font-bold uppercase tracking-wider text-white/70">
@@ -181,16 +181,16 @@ export default function MyProgramsGrid({ activeKeys, isPro }: MyProgramsGridProp
               <div className="grid grid-cols-2 gap-2 pt-2 border-t border-white/10">
                 <Link
                   href={card.chapterWiseUrl}
-                  className="flex items-center justify-center gap-1.5 p-2.5 rounded-xl bg-white/[0.04] hover:bg-white/[0.08] border border-white/10 text-xs font-bold text-white transition text-center"
+                  className="flex items-center justify-center gap-1.5 p-2.5 rounded-lg bg-[var(--surface-2)] hover:bg-white/[0.08] border border-[var(--border)] text-xs font-bold text-white transition text-center"
                 >
-                  <BookOpen className="h-3.5 w-3.5 text-cyan-400 shrink-0" />
+                  <BookOpen className="h-3.5 w-3.5 text-[var(--accent)] shrink-0" />
                   <span>Chapter-wise</span>
                 </Link>
                 <Link
                   href={card.fullSyllabusUrl}
-                  className="flex items-center justify-center gap-1.5 p-2.5 rounded-xl bg-cyan-500/15 hover:bg-cyan-500/25 border border-cyan-500/30 text-xs font-black text-cyan-300 transition text-center shadow-sm"
+                  className="flex items-center justify-center gap-1.5 p-2.5 rounded-lg bg-[var(--accent)]/15 hover:bg-[var(--accent)]/25 border border-[var(--accent)]/30 text-xs font-black text-[var(--accent)] transition text-center"
                 >
-                  <Layers className="h-3.5 w-3.5 text-cyan-400 shrink-0" />
+                  <Layers className="h-3.5 w-3.5 text-[var(--accent)] shrink-0" />
                   <span>Full Syllabus</span>
                 </Link>
               </div>
@@ -198,13 +198,13 @@ export default function MyProgramsGrid({ activeKeys, isPro }: MyProgramsGridProp
           ))}
         </div>
       ) : (
-        <div className="p-8 text-center rounded-lg bg-black/30 border border-dashed border-white/15 space-y-3">
+        <div className="p-8 text-center rounded-lg bg-[var(--surface)] border border-dashed border-[var(--border)] space-y-3">
           <p className="text-sm text-white/60 font-semibold">No active program enrollments found.</p>
           <p className="text-xs text-white/40 max-w-md mx-auto">
             Enroll in CBSE, ISC, JEE Main, JEE Advanced, NEET, or Olympiad Chemistry to unlock chapter-wise learning and full-syllabus dashboards.
           </p>
           <div className="pt-2">
-            <Link href="/pricing" className="inline-flex items-center gap-2 px-5 py-2.5 bg-cyan-500 text-black text-xs font-black rounded-xl hover:bg-cyan-400 transition shadow-lg shadow-cyan-500/20">
+            <Link href="/pricing" className="inline-flex items-center gap-2 px-5 py-2.5 bg-[var(--accent)] text-[var(--background)] text-xs font-black rounded-lg hover:opacity-90 transition">
               Explore Programs &amp; Pricing <ArrowRight className="h-4 w-4" />
             </Link>
           </div>

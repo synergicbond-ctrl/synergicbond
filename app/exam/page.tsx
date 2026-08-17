@@ -43,7 +43,7 @@ interface Paper {
 type Phase = "setup" | "loading" | "running" | "submitting" | "review";
 
 const EXAM_ACCENT: Record<PYQExam, string> = {
-  NEET: "border-emerald-700 hover:border-emerald-500 text-emerald-300",
+  NEET: "border-emerald-700 hover:border-emerald-500 text-[var(--accent)]",
   "JEE Main": "border-cyan-700 hover:border-cyan-500 text-[var(--accent)]",
   "JEE Advanced": "border-sky-700 hover:border-sky-500 text-sky-300",
 };
@@ -155,7 +155,7 @@ export default function ExamPage() {
   // ── Setup ──────────────────────────────────────────────────────────────────
   if (phase === "setup" || phase === "loading") {
     return (
-      <main className="min-h-screen bg-black text-white">
+      <main className="min-h-screen bg-[var(--background)] text-white">
         <div className="mx-auto max-w-3xl px-4 py-10 sm:px-6">
           <p className="mb-2 text-xs font-bold uppercase tracking-[0.3em] text-[var(--accent)]">Exam Center</p>
           <h1 className="text-3xl font-black tracking-tight sm:text-4xl">Mock Exam</h1>
@@ -192,7 +192,7 @@ export default function ExamPage() {
 
           {phase === "loading" && (
             <div className="mt-8 rounded-lg border border-white/10 bg-white/[0.02] p-6 text-center">
-              <div className="mx-auto h-8 w-8 animate-spin rounded-full border-2 border-cyan-400 border-t-transparent" />
+              <div className="mx-auto h-8 w-8 animate-spin rounded-full border-2 border-[var(--accent)] border-t-transparent" />
               <p className="mt-3 text-sm font-semibold text-white/70">Building your paper…</p>
               <p className="mt-1 text-xs text-white/40">
                 Takes up to ~20s with AI — falls back to verified PYQs automatically if AI is slow.
@@ -217,7 +217,7 @@ export default function ExamPage() {
   // ── Review (post-submit only) ──────────────────────────────────────────────
   if (phase === "review" || phase === "submitting") {
     return (
-      <main className="min-h-screen bg-black text-white">
+      <main className="min-h-screen bg-[var(--background)] text-white">
         <div className="mx-auto max-w-3xl px-4 py-10 sm:px-6">
           <p className="mb-2 text-xs font-bold uppercase tracking-[0.3em] text-[var(--accent)]">Result</p>
           <h1 className="text-3xl font-black">{paper.exam} Mock Paper</h1>
@@ -249,7 +249,7 @@ export default function ExamPage() {
                 Result shown above, but the attempt could not be saved (are you signed in?).
               </p>
             ) : attemptId ? (
-              <p className="text-emerald-300/80">
+              <p className="text-[var(--accent)]/80">
                 ✓ Attempt saved —{" "}
                 <Link href="/revision" className="font-bold underline underline-offset-4">review anytime in Revision</Link>
               </p>
@@ -320,7 +320,7 @@ export default function ExamPage() {
   const selected = answers[current];
 
   return (
-    <main className="min-h-screen bg-black pb-28 text-white">
+    <main className="min-h-screen bg-[var(--background)] pb-28 text-white">
       <div className="mx-auto max-w-3xl px-4 py-6 sm:px-6">
         {/* Header */}
         <div className="flex flex-wrap items-center justify-between gap-2">
@@ -344,9 +344,9 @@ export default function ExamPage() {
           {paper.questions.map((_, i) => {
             const state =
               i === current
-                ? "border-cyan-400 bg-[var(--accent)]/10 text-white"
+                ? "border-[var(--accent)] bg-[var(--accent)]/10 text-white"
                 : answers[i]
-                  ? "border-emerald-500/40 bg-emerald-500/10 text-emerald-300"
+                  ? "border-emerald-500/40 bg-emerald-500/10 text-emerald-200"
                   : "border-white/10 bg-white/[0.03] text-white/50";
             return (
               <button
@@ -381,12 +381,12 @@ export default function ExamPage() {
                   onClick={() => pick(k)}
                   className={`flex w-full items-start gap-3 rounded-xl border p-3.5 text-left text-sm transition ${
                     isSelected
-                      ? "border-cyan-400 bg-[var(--accent)]/10 text-white ring-2 ring-cyan-400/60"
+                      ? "border-[var(--accent)] bg-[var(--accent)]/10 text-white ring-2 ring-[var(--accent)]/60"
                       : "border-white/10 bg-white/[0.03] text-white/75 hover:border-[var(--accent)]/30 hover:bg-white/[0.06]"
                   }`}
                 >
                   <span className={`flex h-6 w-6 shrink-0 items-center justify-center rounded-full border text-xs font-black ${
-                    isSelected ? "border-cyan-300 bg-cyan-400 text-black" : "border-white/25 text-white/60"
+                    isSelected ? "border-[var(--accent)] bg-[var(--accent)] text-black" : "border-white/25 text-white/60"
                   }`}>
                     {k}
                   </span>
@@ -425,7 +425,7 @@ export default function ExamPage() {
               <button onClick={() => setConfirmSubmit(false)} className="rounded-xl border border-white/15 px-3 py-2.5 text-sm font-semibold text-white/70">
                 Back
               </button>
-              <button onClick={doSubmit} className="rounded-xl bg-gradient-to-r from-emerald-400 to-cyan-400 px-5 py-2.5 text-sm font-black text-black transition hover:-translate-y-0.5">
+              <button onClick={doSubmit} className="rounded-lg bg-[var(--accent)] px-5 py-2.5 text-sm font-black text-black transition hover:-translate-y-0.5">
                 Confirm Submit
               </button>
             </>

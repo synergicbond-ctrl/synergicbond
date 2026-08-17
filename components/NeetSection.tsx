@@ -2,12 +2,9 @@ import { Microscope, Dna, Activity, Sparkles } from "lucide-react";
 
 export default function NeetSection() {
   return (
-    <section className="relative max-w-7xl mx-auto px-6 py-12 mt-20 overflow-hidden rounded-[40px] border border-[#65d69a]/60 bg-[var(--surface)]" style={{ boxShadow: "inset 0 1px 0 #65d69a26, 0 24px 70px -50px #65d69a" }}>
+    <section className="relative max-w-7xl mx-auto px-6 py-12 mt-20 overflow-hidden rounded-lg border border-[#65d69a]/60 bg-[var(--surface)]">
       {/* Ambient Biological / Molecular Motif Background */}
       <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
-        <div className="absolute right-10 top-1/2 h-80 w-80 -translate-y-1/2 rounded-full bg-[var(--surface-2)] blur-[120px]" />
-        <div className="absolute left-10 bottom-0 h-80 w-80 rounded-full bg-[var(--surface-2)] blur-[120px]" />
-        
         {/* Subtle DNA / Molecular Grid */}
         <div className="absolute inset-0 bg-[radial-gradient(#10b9811a_1px,transparent_1px)] [background-size:24px_24px] opacity-60 [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)]" />
       </div>
@@ -30,7 +27,7 @@ export default function NeetSection() {
       </div>
 
       <div className="grid md:grid-cols-3 gap-6 mt-12 relative z-10">
-        <div className="group relative overflow-hidden rounded-[var(--radius)] border border-[var(--border-strong)] bg-[var(--background)]/80 p-7 transition-all duration-300 hover:-translate-y-1.5 hover:border-[var(--border-strong)] hover:bg-[#064E3B]/30 hover:shadow-[0_15px_35px_rgba(16,185,129,0.2)]">
+        <div className="group relative overflow-hidden rounded-[var(--radius)] border border-[var(--border-strong)] bg-[var(--background)]/80 p-7 transition-all duration-300 hover:-translate-y-1.5 hover:border-[var(--border-strong)] hover:bg-[var(--surface-hover)]">
           <div className="flex h-12 w-12 items-center justify-center rounded-[var(--radius)] bg-[var(--surface-2)] border border-[var(--border-strong)] mb-5 text-[var(--text-muted)] group-hover:scale-110 transition-transform">
             <Activity className="h-6 w-6" />
           </div>
@@ -40,7 +37,7 @@ export default function NeetSection() {
           </p>
         </div>
 
-        <div className="group relative overflow-hidden rounded-[var(--radius)] border border-[var(--border-strong)] bg-[var(--background)]/80 p-7 transition-all duration-300 hover:-translate-y-1.5 hover:border-[var(--border-strong)] hover:bg-[#083344]/30 hover:shadow-[0_15px_35px_rgba(6,182,212,0.2)]">
+        <div className="group relative overflow-hidden rounded-[var(--radius)] border border-[var(--border-strong)] bg-[var(--background)]/80 p-7 transition-all duration-300 hover:-translate-y-1.5 hover:border-[var(--border-strong)] hover:bg-[var(--surface-hover)]">
           <div className="flex h-12 w-12 items-center justify-center rounded-[var(--radius)] bg-[var(--surface-2)] border border-[var(--border-strong)] mb-5 text-[var(--text-muted)] group-hover:scale-110 transition-transform">
             <Dna className="h-6 w-6" />
           </div>
@@ -50,7 +47,7 @@ export default function NeetSection() {
           </p>
         </div>
 
-        <div className="group relative overflow-hidden rounded-[var(--radius)] border border-[var(--border-strong)] bg-[var(--background)]/80 p-7 transition-all duration-300 hover:-translate-y-1.5 hover:border-[var(--border-strong)] hover:bg-[#0f766e]/30 hover:shadow-[0_15px_35px_rgba(20,184,166,0.2)]">
+        <div className="group relative overflow-hidden rounded-[var(--radius)] border border-[var(--border-strong)] bg-[var(--background)]/80 p-7 transition-all duration-300 hover:-translate-y-1.5 hover:border-[var(--border-strong)] hover:bg-[var(--surface-hover)]">
           <div className="flex h-12 w-12 items-center justify-center rounded-[var(--radius)] bg-[var(--surface-2)] border border-[var(--border-strong)] mb-5 text-[var(--text-muted)] group-hover:scale-110 transition-transform">
             <Microscope className="h-6 w-6" />
           </div>

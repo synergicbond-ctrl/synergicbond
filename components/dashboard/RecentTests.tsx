@@ -17,7 +17,7 @@ export function RecentTests({ tests }: RecentTestsProps) {
     <div className="rounded-lg border border-white/10 bg-white/[0.03] p-6 backdrop-blur-xl">
 
       <div className="mb-6">
-        <p className="text-xs uppercase tracking-[0.35em] text-cyan-300">
+        <p className="text-xs uppercase tracking-[0.35em] text-[var(--accent)]">
           Assessment History
         </p>
 
@@ -27,7 +27,7 @@ export function RecentTests({ tests }: RecentTestsProps) {
       </div>
 
       {tests.length === 0 ? (
-        <div className="rounded-lg border border-white/10 bg-black/20 p-6">
+        <div className="rounded-lg border border-[var(--border)] bg-[var(--surface-2)] p-6">
           <p className="text-lg font-semibold text-white">
             No tests completed yet
           </p>
@@ -41,7 +41,7 @@ export function RecentTests({ tests }: RecentTestsProps) {
           {tests.map((test) => (
             <div
               key={test.id}
-              className="rounded-lg border border-white/10 bg-black/20 p-5"
+              className="rounded-lg border border-[var(--border)] bg-[var(--surface-2)] p-5"
             >
               <div className="flex items-center justify-between">
 

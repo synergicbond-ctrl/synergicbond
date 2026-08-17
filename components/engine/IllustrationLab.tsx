@@ -82,14 +82,14 @@ export default function IllustrationLab({
         {levels.map((l) => (
           <button key={l.key} onClick={() => setLevel(l.key)}
             className={`rounded-lg border px-3 py-1.5 text-xs font-semibold transition ${
-              level === l.key ? "border-cyan-400/50 bg-cyan-500/15 text-white" : "border-white/10 bg-white/[0.03] text-white/60 hover:text-white/85"
+              level === l.key ? "border-[var(--accent)]/50 bg-[var(--accent)]/10 text-white" : "border-white/10 bg-white/[0.03] text-white/60 hover:text-white/85"
             }`}>
             {l.label}
           </button>
         ))}
         {topics.length > 0 && (
           <select value={topic} onChange={(e) => setTopic(e.target.value)}
-            className="rounded-lg border border-white/10 bg-[#0B1220] px-2 py-1.5 text-xs text-white/80">
+            className="rounded-lg border border-white/10 bg-[var(--surface)] px-2 py-1.5 text-xs text-white/80">
             <option value="">Whole chapter</option>
             {topics.map((t) => <option key={t} value={t}>{t}</option>)}
           </select>
@@ -100,7 +100,7 @@ export default function IllustrationLab({
         </button>
       </div>
 
-      {error && <p className="rounded-xl border border-rose-500/30 bg-rose-500/[0.06] p-3 text-sm text-rose-300">{error}</p>}
+      {error && <p className="rounded-lg border border-rose-500/30 bg-rose-500/[0.06] p-3 text-sm text-rose-300">{error}</p>}
 
       {item && (
         <div className="space-y-2.5 rounded-lg border border-white/10 bg-white/[0.02] p-4">
@@ -120,7 +120,7 @@ export default function IllustrationLab({
           ) : (
             <>
               <details>
-                <summary className="cursor-pointer text-sm font-bold text-cyan-300">Reveal answer & explanation</summary>
+                <summary className="cursor-pointer text-sm font-bold text-[var(--accent)]">Reveal answer & explanation</summary>
                 <div className="mt-2 space-y-2">
                   <Block label="Answer" tone="border-emerald-500/20 bg-emerald-500/[0.04] text-emerald-200">{(item as Innovation).answer}</Block>
                   <Block label="Explanation" tone="border-white/10 bg-white/[0.02] text-white">{(item as Innovation).explanation}</Block>

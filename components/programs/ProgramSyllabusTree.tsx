@@ -35,7 +35,7 @@ export default function ProgramSyllabusTree({ syllabus }: { syllabus: ProgramSyl
       {syllabus.paperPattern && <p className="mb-3 text-xs text-white/50">{syllabus.paperPattern}</p>}
 
       {syllabus.units.length === 0 ? (
-        <p className="rounded-xl border border-white/10 bg-white/[0.02] p-4 text-sm text-white/55">
+        <p className="rounded-lg border border-white/10 bg-white/[0.02] p-4 text-sm text-white/55">
           {syllabus.pendingNote ?? "Official unit list pending."}
         </p>
       ) : (
@@ -47,7 +47,7 @@ export default function ProgramSyllabusTree({ syllabus }: { syllabus: ProgramSyl
               </h3>
               <div className="space-y-1.5">
                 {units.map((u) => (
-                  <details key={u.id} className="group rounded-xl border border-white/[0.07] bg-white/[0.02]">
+                  <details key={u.id} className="group rounded-lg border border-white/[0.07] bg-white/[0.02]">
                     <summary className="flex cursor-pointer list-none items-center gap-3 px-3.5 py-2.5 [&::-webkit-details-marker]:hidden">
                       {u.code && <span className="shrink-0 text-[10px] font-bold uppercase text-white/35">{u.code}</span>}
                       <span className="min-w-0 flex-1 text-sm font-bold text-white">{u.title}</span>

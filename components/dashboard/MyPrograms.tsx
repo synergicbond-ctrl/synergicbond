@@ -30,11 +30,11 @@ export function MyPrograms({ programs, isOwner }: { programs: OwnedProgram[]; is
     <section>
       <div className="flex items-center justify-between mb-4">
         <h2 className="text-lg font-black flex items-center gap-2">
-          <GraduationCap className="h-5 w-5 text-cyan-400" /> My Programs
+          <GraduationCap className="h-5 w-5 text-[var(--accent)]" /> My Programs
         </h2>
         <Link
           href="/dashboard/subscription"
-          className="text-xs font-bold text-cyan-300 hover:text-cyan-200 transition flex items-center gap-1"
+          className="text-xs font-bold text-[var(--accent)] hover:text-[var(--foreground)] transition flex items-center gap-1"
         >
           Manage plans <ArrowRight className="h-3.5 w-3.5" />
         </Link>
@@ -50,7 +50,7 @@ export function MyPrograms({ programs, isOwner }: { programs: OwnedProgram[]; is
           </p>
           <Link
             href="/pricing"
-            className="inline-block mt-4 px-6 py-2.5 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-black font-bold text-xs transition"
+            className="inline-block mt-4 px-6 py-2.5 rounded-lg bg-[var(--accent)] hover:opacity-90 text-black font-bold text-xs transition"
           >
             Browse Programs
           </Link>
@@ -62,7 +62,7 @@ export function MyPrograms({ programs, isOwner }: { programs: OwnedProgram[]; is
             return (
               <div
                 key={p.key}
-                className="rounded-lg border border-white/[0.08] bg-[var(--surface)] p-5 flex flex-col justify-between hover:border-cyan-500/30 transition"
+                className="rounded-lg border border-white/[0.08] bg-[var(--surface)] p-5 flex flex-col justify-between hover:border-[var(--border)] transition"
               >
                 <div>
                   <div className="flex items-start justify-between gap-2">
@@ -72,7 +72,7 @@ export function MyPrograms({ programs, isOwner }: { programs: OwnedProgram[]; is
                         Coming Soon
                       </span>
                     ) : p.ownerPreview ? (
-                      <span className="flex-shrink-0 px-2 py-0.5 rounded text-[9px] font-black uppercase tracking-wider bg-cyan-500/15 text-cyan-300">
+                      <span className="flex-shrink-0 px-2 py-0.5 rounded text-[9px] font-black uppercase tracking-wider bg-[var(--surface-2)] text-[var(--accent)]">
                         Owner
                       </span>
                     ) : (
@@ -90,7 +90,7 @@ export function MyPrograms({ programs, isOwner }: { programs: OwnedProgram[]; is
                 <div className="mt-4 space-y-2">
                   <Link
                     href={actions.notes}
-                    className="flex items-center justify-between w-full px-3.5 py-2.5 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-black font-extrabold text-xs transition"
+                    className="flex items-center justify-between w-full px-3.5 py-2.5 rounded-lg bg-[var(--accent)] hover:opacity-90 text-black font-extrabold text-xs transition"
                   >
                     <span className="flex items-center gap-1.5">
                       <BookOpen className="h-3.5 w-3.5" /> Chapter-wise Notes &amp; Learning

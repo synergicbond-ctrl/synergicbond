@@ -51,12 +51,12 @@ export default function ActivityLog() {
     <div className="space-y-5">
 
       {/* Focus timer */}
-      <div className="flex items-center justify-between rounded-lg bg-gradient-to-r from-cyan-500/10 to-purple-500/10 border border-cyan-500/20 px-5 py-3">
+      <div className="flex items-center justify-between rounded-lg bg-[var(--surface-2)] border border-[var(--border)] px-5 py-3">
         <div className="flex items-center gap-2.5">
-          <Clock className="h-4 w-4 text-cyan-400 animate-pulse" />
+          <Clock className="h-4 w-4 text-[var(--accent)] animate-pulse" />
           <span className="text-xs font-bold text-white/70 tracking-wide">⚡ SESSION FOCUS TIME</span>
         </div>
-        <span className="text-lg font-black font-mono text-cyan-300 tabular-nums">{fmt(seconds)}</span>
+        <span className="text-lg font-black font-mono text-[var(--accent)] tabular-nums">{fmt(seconds)}</span>
       </div>
 
       <div className="grid gap-5 lg:grid-cols-2">
@@ -64,7 +64,7 @@ export default function ActivityLog() {
         {/* Recently Read */}
         <div className="rounded-lg bg-[var(--surface)] border border-white/[0.06] p-5">
           <div className="flex items-center gap-2 mb-4">
-            <BookOpen className="h-4 w-4 text-cyan-400" />
+            <BookOpen className="h-4 w-4 text-[var(--accent)]" />
             <h3 className="text-sm font-bold text-white">Recently Read</h3>
           </div>
           <div className="space-y-2.5">
@@ -83,7 +83,7 @@ export default function ActivityLog() {
         {/* Search History */}
         <div className="rounded-lg bg-[var(--surface)] border border-white/[0.06] p-5">
           <div className="flex items-center gap-2 mb-4">
-            <Search className="h-4 w-4 text-purple-400" />
+            <Search className="h-4 w-4 text-[var(--accent)]" />
             <h3 className="text-sm font-bold text-white">Search History</h3>
           </div>
           <div className="flex flex-wrap gap-2">
@@ -98,7 +98,7 @@ export default function ActivityLog() {
         {/* Solved Engine */}
         <div className="rounded-lg bg-[var(--surface)] border border-white/[0.06] p-5">
           <div className="flex items-center gap-2 mb-4">
-            <Target className="h-4 w-4 text-emerald-400" />
+            <Target className="h-4 w-4 text-[var(--accent)]" />
             <h3 className="text-sm font-bold text-white">Solved Engine</h3>
           </div>
           <div className="flex items-center gap-6">
@@ -115,7 +115,7 @@ export default function ActivityLog() {
             <div className="space-y-2 text-sm">
               <div className="flex items-center gap-2"><CheckCircle2 className="h-4 w-4 text-emerald-400" /><span className="text-white/70">{solved.correct} Correct</span></div>
               <div className="flex items-center gap-2"><XCircle className="h-4 w-4 text-red-400" /><span className="text-white/70">{solved.incorrect} Incorrect</span></div>
-              <div className="flex items-center gap-2"><TrendingUp className="h-4 w-4 text-cyan-400" /><span className="text-white/50 text-xs">{solved.correct + solved.incorrect} total attempts</span></div>
+              <div className="flex items-center gap-2"><TrendingUp className="h-4 w-4 text-[var(--accent)]" /><span className="text-white/50 text-xs">{solved.correct + solved.incorrect} total attempts</span></div>
             </div>
           </div>
         </div>
@@ -139,7 +139,7 @@ export default function ActivityLog() {
         {/* Time-Spent on Paper */}
         <div className="rounded-lg bg-[var(--surface)] border border-white/[0.06] p-5">
           <div className="flex items-center gap-2 mb-4">
-            <Timer className="h-4 w-4 text-cyan-400" />
+            <Timer className="h-4 w-4 text-[var(--accent)]" />
             <h3 className="text-sm font-bold text-white">Time-Spent on Paper</h3>
           </div>
           <div className="space-y-3">

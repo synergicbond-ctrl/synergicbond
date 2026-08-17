@@ -63,16 +63,16 @@ export default function PYQTopicsTab() {
           placeholder="Search topics..."
           value={query}
           onChange={(e) => setQuery(e.target.value)}
-          className="px-3 py-2 bg-white/5 border border-white/10 rounded-lg text-sm text-white placeholder:text-white/40 focus:outline-none focus:border-cyan-500"
+          className="px-3 py-2 bg-[var(--surface-2)] border border-[var(--border)] rounded-lg text-sm text-white placeholder:text-white/40 focus:outline-none focus:border-[var(--accent)]"
         />
         <select
           value={chapterFilter}
           onChange={(e) => setChapterFilter(e.target.value as PYQChapter | "")}
-          className="px-3 py-2 bg-white/5 border border-white/10 rounded-lg text-sm text-white/80 focus:outline-none focus:border-cyan-500"
+          className="px-3 py-2 bg-[var(--surface-2)] border border-[var(--border)] rounded-lg text-sm text-white/80 focus:outline-none focus:border-[var(--accent)]"
         >
           <option value="">All Chapters</option>
           {chapterList.map((ch) => (
-            <option key={ch} value={ch} className="bg-black">
+            <option key={ch} value={ch} className="bg-[var(--background)]">
               {ch}
             </option>
           ))}
@@ -80,11 +80,11 @@ export default function PYQTopicsTab() {
         <select
           value={sortMode}
           onChange={(e) => setSortMode(e.target.value as SortMode)}
-          className="px-3 py-2 bg-white/5 border border-white/10 rounded-lg text-sm text-white/80 focus:outline-none focus:border-cyan-500"
+          className="px-3 py-2 bg-[var(--surface-2)] border border-[var(--border)] rounded-lg text-sm text-white/80 focus:outline-none focus:border-[var(--accent)]"
         >
-          <option value="frequency" className="bg-black">Sort: Frequency</option>
-          <option value="recent" className="bg-black">Sort: Last Appearance</option>
-          <option value="recurrence" className="bg-black">Sort: Recurrence Rate</option>
+          <option value="frequency" className="bg-[var(--background)]">Sort: Frequency</option>
+          <option value="recent" className="bg-[var(--background)]">Sort: Last Appearance</option>
+          <option value="recurrence" className="bg-[var(--background)]">Sort: Recurrence Rate</option>
         </select>
       </div>
 
@@ -99,7 +99,7 @@ export default function PYQTopicsTab() {
             >
               <div className="flex flex-wrap items-center justify-between gap-2">
                 <div>
-                  <div className="font-semibold text-cyan-400">{topic.concept}</div>
+                  <div className="font-semibold text-[var(--foreground)]">{topic.concept}</div>
                   <div className="text-xs text-white/50">{topic.chapter}</div>
                 </div>
                 <div className="flex items-center gap-4 text-xs">
@@ -116,21 +116,21 @@ export default function PYQTopicsTab() {
                     <div className="text-white/40">Recurrence</div>
                   </div>
                   {topic.trending && (
-                    <span className="bg-cyan-900/40 text-cyan-300 px-2 py-1 rounded font-semibold">Trending</span>
+                    <span className="bg-[var(--accent)]/15 text-[var(--accent)] px-2 py-1 rounded font-semibold">Trending</span>
                   )}
                 </div>
               </div>
               <div className="flex gap-2 mt-2 text-[11px]">
                 {topic.byExam.jeeMain > 0 && (
-                  <span className="bg-sky-900/30 text-sky-300 px-1.5 py-0.5 rounded">JEE Main × {topic.byExam.jeeMain}</span>
+                  <span className="bg-[var(--surface-2)] text-[var(--text-muted)] px-1.5 py-0.5 rounded">JEE Main × {topic.byExam.jeeMain}</span>
                 )}
                 {topic.byExam.jeeAdvanced > 0 && (
-                  <span className="bg-violet-900/30 text-violet-300 px-1.5 py-0.5 rounded">
+                  <span className="bg-[var(--surface-2)] text-[var(--text-muted)] px-1.5 py-0.5 rounded">
                     JEE Advanced × {topic.byExam.jeeAdvanced}
                   </span>
                 )}
                 {topic.byExam.neet > 0 && (
-                  <span className="bg-emerald-900/30 text-emerald-300 px-1.5 py-0.5 rounded">NEET × {topic.byExam.neet}</span>
+                  <span className="bg-[var(--surface-2)] text-[var(--text-muted)] px-1.5 py-0.5 rounded">NEET × {topic.byExam.neet}</span>
                 )}
               </div>
             </button>

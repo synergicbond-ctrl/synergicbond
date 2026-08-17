@@ -29,7 +29,7 @@ export default function ReferenceTabs() {
               key={t.href}
               href={t.href}
               className={`flex items-center gap-1.5 whitespace-nowrap px-3.5 py-2 rounded-full text-xs font-medium transition-all duration-200 hover:scale-105 ${
-                active ? "bg-cyan-500 text-black font-bold" : "text-gray-400 hover:text-white hover:bg-white/5"
+                active ? "bg-[var(--accent)] text-[var(--background)] font-bold" : "text-[var(--text-muted)] hover:text-[var(--foreground)] hover:bg-[var(--surface-2)]"
               }`}
             >
               <Icon className="h-3.5 w-3.5 flex-shrink-0" />

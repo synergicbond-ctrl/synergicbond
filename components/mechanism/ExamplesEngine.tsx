@@ -22,7 +22,7 @@ export default function ExamplesEngine({ examples }: { examples: Example[] }) {
           <button
             key={t}
             onClick={() => { setTier(t); setOpen(null); }}
-            className={`rounded-full px-3 py-1 text-xs font-semibold transition ${tier === t ? "bg-purple-500 text-white" : "border border-white/10 bg-[var(--surface)] text-white/60 hover:text-white"}`}
+            className={`rounded-full px-3 py-1 text-xs font-semibold transition ${tier === t ? "bg-[var(--accent)] text-black" : "border border-white/10 bg-[var(--surface)] text-white/60 hover:text-white"}`}
           >
             {t}
           </button>
@@ -30,7 +30,7 @@ export default function ExamplesEngine({ examples }: { examples: Example[] }) {
       </div>
       <div className="space-y-2">
         {list.map((e, i) => (
-          <div key={i} className="rounded-xl border border-white/[0.06] bg-[var(--surface)] overflow-hidden">
+          <div key={i} className="rounded-lg border border-white/[0.06] bg-[var(--surface)] overflow-hidden">
             <button onClick={() => setOpen(open === i ? null : i)} className="flex w-full items-center justify-between gap-2 px-3.5 py-2.5 text-left">
               <span className="min-w-0 text-[13px] text-white/85">
                 <span className={`mr-2 text-[10px] font-bold uppercase ${TIER_TONE[e.tier]}`}>{e.tier}</span>

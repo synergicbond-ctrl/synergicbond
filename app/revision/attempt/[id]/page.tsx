@@ -19,7 +19,7 @@ export default async function AttemptReviewPage({ params }: { params: Promise<{ 
 
   if (error === "Unauthorized") {
     return (
-      <main className="min-h-screen bg-black text-white">
+      <main className="min-h-screen bg-[var(--background)] text-white">
         <div className="mx-auto max-w-3xl px-4 py-16 text-center sm:px-6">
           <h1 className="text-2xl font-black">Sign in to review attempts</h1>
           <p className="mt-2 text-sm text-white/55">Attempt reviews are private to your account.</p>
@@ -36,7 +36,7 @@ export default async function AttemptReviewPage({ params }: { params: Promise<{ 
   const summary = summarizeAnswers(answers);
 
   return (
-    <main className="min-h-screen bg-black text-white">
+    <main className="min-h-screen bg-[var(--background)] text-white">
       <div className="mx-auto max-w-3xl px-4 py-10 sm:px-6">
         <nav className="mb-6 text-sm text-zinc-500">
           <Link href="/revision" className="transition hover:text-white">Revision</Link>
@@ -108,7 +108,7 @@ export default async function AttemptReviewPage({ params }: { params: Promise<{ 
               )}
 
               {a.explanation && (
-                <div className="mt-3 rounded-xl border border-white/[0.08] bg-white/[0.03] p-3 text-sm text-white/65">
+                <div className="mt-3 rounded-lg border border-white/[0.08] bg-white/[0.03] p-3 text-sm text-white/65">
                   <span className="font-semibold text-indigo-300">Explanation: </span>
                   {renderChemistry(a.explanation)}
                 </div>

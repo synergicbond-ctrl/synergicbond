@@ -98,18 +98,18 @@ export default function SmartTimers() {
     <div className="space-y-5">
       {/* Active timer */}
       {running && (
-        <div className={`rounded-lg border p-6 text-center ${finished ? "border-emerald-400/40 bg-emerald-500/[0.07]" : "border-cyan-400/30 bg-cyan-500/[0.05]"}`}>
+        <div className={`rounded-lg border p-6 text-center ${finished ? "border-[var(--accent)]/40 bg-[var(--accent)]/10" : "border-[var(--border)] bg-[var(--surface)]"}`}>
           <div className="text-xs font-bold uppercase tracking-wider text-white/50">{label}</div>
-          <div className={`mt-1 font-mono text-6xl font-black ${finished ? "text-emerald-300" : "text-white"}`}>
+          <div className={`mt-1 font-mono text-6xl font-black ${finished ? "text-[var(--accent)]" : "text-[var(--foreground)]"}`}>
             {finished ? "Done" : fmt(Math.ceil(remainingMs / 1000))}
           </div>
           <div className="mt-4 flex justify-center gap-2">
             {!finished && (paused === null
               ? <button onClick={pause} className="rounded-lg border border-white/15 bg-white/[0.05] px-4 py-2 text-sm font-bold text-white/80">Pause</button>
-              : <button onClick={resume} className="rounded-lg border border-cyan-400/40 bg-cyan-500/10 px-4 py-2 text-sm font-bold text-cyan-300">Resume</button>)}
+              : <button onClick={resume} className="rounded-lg border border-[var(--accent)]/40 bg-[var(--accent)]/10 px-4 py-2 text-sm font-bold text-[var(--accent)]">Resume</button>)}
             <button onClick={stop} className="rounded-lg border border-white/15 bg-white/[0.05] px-4 py-2 text-sm font-bold text-white/60">{finished ? "Clear" : "Stop"}</button>
           </div>
-          {finished && <p className="mt-3 text-sm text-emerald-200/80">Time&apos;s up — take your break or review your answers.</p>}
+          {finished && <p className="mt-3 text-sm text-[var(--text-muted)]">Time&apos;s up — take your break or review your answers.</p>}
         </div>
       )}
 
@@ -118,7 +118,7 @@ export default function SmartTimers() {
         {TABS.map((t) => (
           <button key={t.key} onClick={() => setTab(t.key)}
             className={`shrink-0 rounded-lg border px-3 py-1.5 text-xs font-semibold transition ${
-              tab === t.key ? "border-cyan-400/50 bg-cyan-500/15 text-white" : "border-white/10 bg-white/[0.03] text-white/60 hover:text-white/85"
+              tab === t.key ? "border-[var(--accent)]/50 bg-[var(--accent)]/15 text-white" : "border-white/10 bg-white/[0.03] text-white/60 hover:text-white/85"
             }`}>
             {t.label}
           </button>
@@ -130,18 +130,18 @@ export default function SmartTimers() {
           <label className="flex items-center gap-2 text-sm text-white/70">Minutes
             <input type="number" min={1} max={300} value={customMin}
               onChange={(e) => setCustomMin(Math.min(300, Math.max(1, Number(e.target.value) || 1)))}
-              className="w-20 rounded-lg border border-white/10 bg-[#0B1220] px-2 py-1.5 text-white/90" />
+              className="w-20 rounded-lg border border-[var(--border)] bg-[var(--surface-2)] px-2 py-1.5 text-white/90" />
           </label>
           <button onClick={() => start(customMin, `Custom ${customMin} min`)}
-            className="rounded-xl bg-[var(--accent)] px-4 py-2 text-sm font-black text-black">Start</button>
+            className="rounded-lg bg-[var(--accent)] px-4 py-2 text-sm font-black text-[var(--background)]">Start</button>
         </div>
       ) : (
         <div className="grid gap-2 sm:grid-cols-3">
           {activeTab.presets.map((p) => (
             <button key={p.key} onClick={() => start(p.minutes, p.label)}
-              className="rounded-lg border border-white/[0.08] bg-white/[0.03] p-4 text-left transition hover:-translate-y-0.5 hover:border-cyan-400/40">
+              className="rounded-lg border border-white/[0.08] bg-white/[0.03] p-4 text-left transition hover:-translate-y-0.5 hover:border-[var(--accent)]/40">
               <div className="font-black text-white">{p.label}</div>
-              <div className="text-2xl font-black text-cyan-300">{p.minutes} min</div>
+              <div className="text-2xl font-black text-[var(--foreground)]">{p.minutes} min</div>
               <p className="mt-1 text-xs text-white/50">{p.note}</p>
             </button>
           ))}

@@ -210,7 +210,7 @@ export default function StudentDetailsForm({ open, onClose, onComplete, userEmai
   const signUpHref = `/auth/signup?next=${encodeURIComponent(nextUrl)}`;
 
   const inputBase =
-    "w-full rounded-xl border border-white/10 bg-black/40 px-4 py-2.5 text-sm text-white placeholder:text-white/20 focus:border-cyan-500/50 focus:outline-none transition";
+    "w-full rounded-lg border border-[var(--border)] bg-[var(--surface-2)] px-4 py-2.5 text-sm text-white placeholder:text-white/20 focus:border-[var(--accent)]/50 focus:outline-none transition";
   const labelBase =
     "flex items-center gap-1.5 text-[10px] text-white/60 font-bold uppercase tracking-wider mb-1.5";
 
@@ -236,7 +236,7 @@ export default function StudentDetailsForm({ open, onClose, onComplete, userEmai
 
         {authState === "checking" && (
           <div className="flex flex-col items-center justify-center px-6 py-20 text-center">
-            <div className="h-6 w-6 rounded-full border-2 border-white/20 border-t-cyan-400 animate-spin" />
+            <div className="h-6 w-6 rounded-full border-2 border-white/20 border-t-[var(--accent)] animate-spin" />
             <p className="mt-4 text-xs text-white/50">Checking your account…</p>
           </div>
         )}
@@ -244,11 +244,11 @@ export default function StudentDetailsForm({ open, onClose, onComplete, userEmai
         {authState === "anon" && (
           <div className="px-6 pt-8 pb-8 sm:px-7">
             <div className="mb-5 pr-8">
-              <p className="text-xs font-bold text-cyan-400 uppercase tracking-wider">Sign in required</p>
+              <p className="text-xs font-bold text-[var(--accent)] uppercase tracking-wider">Sign in required</p>
               <h3 id="student-details-title" className="text-xl font-black mt-1">Almost there</h3>
             </div>
-            <div className="mb-6 flex items-start gap-3 rounded-xl border border-white/10 bg-black/40 p-4">
-              <LogIn className="h-4 w-4 shrink-0 text-cyan-400 mt-0.5" />
+            <div className="mb-6 flex items-start gap-3 rounded-lg border border-[var(--border)] bg-[var(--surface-2)] p-4">
+              <LogIn className="h-4 w-4 shrink-0 text-[var(--accent)] mt-0.5" />
               <p className="text-[12px] text-white/70 leading-relaxed">
                 Please sign in or create an account before continuing to payment.
                 Your program will be waiting for you when you return.
@@ -276,7 +276,7 @@ export default function StudentDetailsForm({ open, onClose, onComplete, userEmai
         {/* Scrollable body */}
         <div className="flex-1 overflow-y-auto overscroll-contain px-6 pt-7 pb-5 sm:px-7">
           <div className="mb-6 pr-8">
-            <p className="text-xs font-bold text-cyan-400 uppercase tracking-wider">Step 1 of 2</p>
+            <p className="text-xs font-bold text-[var(--accent)] uppercase tracking-wider">Step 1 of 2</p>
             <h3 id="student-details-title" className="text-xl font-black mt-1">Student Registration</h3>
             <p className="text-[11px] text-white/50 mt-1">
               Required before payment. Used for account recovery and subscription management.
@@ -310,7 +310,7 @@ export default function StudentDetailsForm({ open, onClose, onComplete, userEmai
               <label className={labelBase}>
                 <Phone className="h-3 w-3" /> Phone Number
               </label>
-              <div className="flex items-center rounded-xl border border-white/10 bg-black/40 overflow-hidden focus-within:border-cyan-500/50 transition">
+              <div className="flex items-center rounded-lg border border-[var(--border)] bg-[var(--surface-2)] overflow-hidden focus-within:border-[var(--accent)]/50 transition">
                 <span className="px-3 text-xs text-white/30 font-bold border-r border-white/10">+91</span>
                 <input
                   type="tel"

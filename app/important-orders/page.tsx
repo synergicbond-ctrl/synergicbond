@@ -61,15 +61,15 @@ export default function ImportantOrdersPage() {
       <div className="mx-auto max-w-5xl px-4 md:px-6 py-10">
         {/* Header */}
         <div className="mb-6">
-          <p className="mb-2 text-xs font-bold uppercase tracking-[0.4em] text-cyan-300">Learn · Important Orders</p>
+          <p className="mb-2 text-xs font-bold uppercase tracking-[0.4em] text-[var(--text-muted)]">Learn · Important Orders</p>
           <h1 className="flex items-center gap-2 text-3xl font-black md:text-4xl">
-            <ListOrdered className="h-8 w-8 text-cyan-400" /> Important Orders
+            <ListOrdered className="h-8 w-8 text-[var(--accent)]" /> Important Orders
           </h1>
           <p className="mt-2 max-w-2xl text-sm text-white/55">
             High-yield increasing / decreasing ordering sequences — every entry is extracted and
             verified directly from the uploaded PDFs. Nothing here is generated or summarised.
           </p>
-          <p className="mt-2 inline-flex items-center gap-1.5 rounded-lg border border-emerald-500/25 bg-emerald-500/[0.08] px-2.5 py-1 text-[11px] font-semibold text-emerald-300">
+          <p className="mt-2 inline-flex items-center gap-1.5 rounded-lg border border-[var(--accent)]/25 bg-[var(--accent)]/[0.08] px-2.5 py-1 text-[11px] font-semibold text-[var(--accent)]">
             <BadgeCheck className="h-3.5 w-3.5" /> {IMPORTANT_ORDERS.length} document-verified orders
           </p>
         </div>
@@ -114,7 +114,7 @@ export default function ImportantOrdersPage() {
               <button
                 onClick={() => setSource(null)}
                 className={`rounded-lg px-2.5 py-1 text-[11px] font-semibold transition ${
-                  source === null ? "bg-cyan-500/20 text-cyan-200" : "border border-white/10 bg-white/[0.03] text-white/50 hover:text-white"
+                  source === null ? "bg-[var(--accent)]/20 text-[var(--accent)]" : "border border-white/10 bg-white/[0.03] text-white/50 hover:text-white"
                 }`}
               >
                 All sources
@@ -124,7 +124,7 @@ export default function ImportantOrdersPage() {
                   key={s}
                   onClick={() => setSource(s)}
                   className={`max-w-[220px] truncate rounded-lg px-2.5 py-1 text-[11px] font-semibold transition ${
-                    source === s ? "bg-cyan-500/20 text-cyan-200" : "border border-white/10 bg-white/[0.03] text-white/50 hover:text-white"
+                    source === s ? "bg-[var(--accent)]/20 text-[var(--accent)]" : "border border-white/10 bg-white/[0.03] text-white/50 hover:text-white"
                   }`}
                   title={s}
                 >

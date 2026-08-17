@@ -35,11 +35,11 @@ export default function PYQDashboardTab() {
       {/* Question counts */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
         <div className="bg-white/5 border border-white/10 rounded-lg p-4">
-          <div className="text-2xl font-bold text-cyan-400">{PYQ_DB_STATS.total}</div>
+          <div className="text-2xl font-bold text-[var(--foreground)]">{PYQ_DB_STATS.total}</div>
           <div className="text-xs text-white/50">Total Questions</div>
         </div>
         <div className="bg-white/5 border border-white/10 rounded-lg p-4">
-          <div className="text-2xl font-bold text-purple-400">{PYQ_DB_STATS.chaptersCount}</div>
+          <div className="text-2xl font-bold text-[var(--foreground)]">{PYQ_DB_STATS.chaptersCount}</div>
           <div className="text-xs text-white/50">Chapters Covered</div>
         </div>
         <div className="bg-white/5 border border-white/10 rounded-lg p-4">
@@ -49,7 +49,7 @@ export default function PYQDashboardTab() {
           <div className="text-xs text-white/50">Year Range</div>
         </div>
         <div className="bg-white/5 border border-white/10 rounded-lg p-4">
-          <div className="text-2xl font-bold text-green-400">
+          <div className="text-2xl font-bold text-[var(--foreground)]">
             {Math.round((ncertDirect.length / PYQ_DB_STATS.total) * 100)}%
           </div>
           <div className="text-xs text-white/50">NCERT Direct ({ncertDirect.length})</div>
@@ -61,15 +61,15 @@ export default function PYQDashboardTab() {
         <h3 className="text-lg font-bold">📊 Exam-wise Distribution</h3>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           <div className="bg-white/5 border border-white/10 rounded-lg p-4 text-center">
-            <div className="text-2xl font-bold text-sky-400">{examDist.jeeMain}</div>
+            <div className="text-2xl font-bold text-[var(--foreground)]">{examDist.jeeMain}</div>
             <div className="text-xs text-white/50">JEE Main ({examDist.jeeMainPct}%)</div>
           </div>
           <div className="bg-white/5 border border-white/10 rounded-lg p-4 text-center">
-            <div className="text-2xl font-bold text-violet-400">{examDist.jeeAdvanced}</div>
+            <div className="text-2xl font-bold text-[var(--foreground)]">{examDist.jeeAdvanced}</div>
             <div className="text-xs text-white/50">JEE Advanced ({examDist.jeeAdvancedPct}%)</div>
           </div>
           <div className="bg-white/5 border border-white/10 rounded-lg p-4 text-center">
-            <div className="text-2xl font-bold text-emerald-400">{examDist.neet}</div>
+            <div className="text-2xl font-bold text-[var(--foreground)]">{examDist.neet}</div>
             <div className="text-xs text-white/50">NEET ({examDist.neetPct}%)</div>
           </div>
         </div>

@@ -68,8 +68,8 @@ export default function BoardExaminerPage() {
   const pct = result ? Math.round((result.marksAwarded / result.maxMarks) * 100) : 0;
 
   return (
-    <main className="min-h-screen bg-black text-white">
-      <div className="border-b border-white/10 bg-gradient-to-b from-amber-950/20 to-black px-6 py-12">
+    <main className="min-h-screen bg-[var(--background)] text-white">
+      <div className="bg-[var(--surface)] border-b border-[var(--border)] px-6 py-12">
         <div className="mx-auto max-w-3xl">
           <p className="mb-2 text-xs font-bold uppercase tracking-[0.3em] text-amber-300">Boards score what you write</p>
           <h1 className="text-3xl font-black tracking-tight sm:text-4xl">AI Board Examiner</h1>
@@ -82,28 +82,28 @@ export default function BoardExaminerPage() {
 
       <div className="mx-auto max-w-3xl px-6 py-10 space-y-5">
         <div className="flex flex-wrap gap-3">
-          <select value={exam} onChange={(e) => setExam(e.target.value)} className="rounded-xl border border-white/10 bg-white/[0.04] px-3 py-2 text-sm font-semibold">
-            {EXAMS.map((x) => <option key={x} className="bg-slate-900">{x}</option>)}
+          <select value={exam} onChange={(e) => setExam(e.target.value)} className="rounded-lg border border-white/10 bg-white/[0.04] px-3 py-2 text-sm font-semibold">
+            {EXAMS.map((x) => <option key={x} className="bg-[var(--surface)]">{x}</option>)}
           </select>
-          <select value={maxMarks} onChange={(e) => setMaxMarks(Number(e.target.value))} className="rounded-xl border border-white/10 bg-white/[0.04] px-3 py-2 text-sm font-semibold">
-            {MARKS.map((m) => <option key={m} value={m} className="bg-slate-900">{m} marks</option>)}
+          <select value={maxMarks} onChange={(e) => setMaxMarks(Number(e.target.value))} className="rounded-lg border border-white/10 bg-white/[0.04] px-3 py-2 text-sm font-semibold">
+            {MARKS.map((m) => <option key={m} value={m} className="bg-[var(--surface)]">{m} marks</option>)}
           </select>
         </div>
 
         <textarea value={question} onChange={(e) => setQuestion(e.target.value)} placeholder="Paste the board question…" rows={2}
-          className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm placeholder:text-white/40 focus:border-amber-400 focus:outline-none" />
+          className="w-full rounded-lg border border-white/10 bg-white/5 px-4 py-3 text-sm placeholder:text-white/40 focus:border-[var(--accent)] focus:outline-none" />
         <textarea value={answer} onChange={(e) => setAnswer(e.target.value)} placeholder="Type or paste your written answer…" rows={6}
-          className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm placeholder:text-white/40 focus:border-amber-400 focus:outline-none" />
+          className="w-full rounded-lg border border-white/10 bg-white/5 px-4 py-3 text-sm placeholder:text-white/40 focus:border-[var(--accent)] focus:outline-none" />
 
         {needsSignIn && (
-          <div className="rounded-xl border border-amber-500/30 bg-amber-500/10 p-3 text-sm text-amber-200">
+          <div className="rounded-lg border border-[var(--border)] bg-[var(--surface-2)] p-3 text-sm text-[var(--text-muted)]">
             Sign in to grade answers. <Link href="/auth/signin" className="font-bold underline">Sign in →</Link>
           </div>
         )}
-        {error && <div className="rounded-xl border border-rose-500/30 bg-rose-500/10 p-3 text-sm text-rose-200">{error}</div>}
+        {error && <div className="rounded-lg border border-rose-500/30 bg-rose-500/10 p-3 text-sm text-rose-200">{error}</div>}
 
         <button onClick={submit} disabled={loading || !question.trim() || !answer.trim()}
-          className="w-full rounded-xl bg-gradient-to-r from-amber-400 to-orange-500 py-3.5 text-sm font-black text-black transition hover:-translate-y-0.5 disabled:opacity-50">
+          className="w-full rounded-lg bg-[var(--accent)] py-3.5 text-sm font-black text-[var(--background)] transition hover:-translate-y-0.5 disabled:opacity-50">
           {loading ? "Examiner is marking…" : "Evaluate my answer"}
         </button>
 
@@ -113,15 +113,15 @@ export default function BoardExaminerPage() {
               <div className="text-4xl font-black text-amber-300">{result.marksAwarded}<span className="text-lg text-white/40">/{result.maxMarks}</span></div>
               <div className="flex-1">
                 <div className="h-2.5 w-full overflow-hidden rounded-full bg-white/[0.06]">
-                  <div className="h-full rounded-full bg-gradient-to-r from-amber-400 to-orange-500" style={{ width: `${pct}%` }} />
+                  <div className="h-full rounded-full bg-[var(--accent)]" style={{ width: `${pct}%` }} />
                 </div>
                 {result.verdict && <p className="mt-1.5 text-xs text-white/55">{result.verdict}</p>}
               </div>
             </div>
             <List title="⚠️ Missing keywords (cost you marks)" items={result.missingKeywords} tone="text-rose-300" />
-            <List title="✓ What you did well" items={result.strengths} tone="text-emerald-300" />
+            <List title="✓ What you did well" items={result.strengths} tone="text-[var(--foreground)]" />
             <List title="↗ How to improve" items={result.improvements} tone="text-amber-300" />
-            <List title="📋 Full-marks model points" items={result.modelPoints} tone="text-cyan-300" />
+            <List title="📋 Full-marks model points" items={result.modelPoints} tone="text-[var(--foreground)]" />
           </div>
         )}
 

@@ -32,43 +32,43 @@ export default function ElectrochemistryNotesPage() {
 
         {/* Section Cards */}
         <section className="space-y-6">
-          <div className="flex items-center justify-between border-b border-slate-800 pb-3">
+          <div className="flex items-center justify-between border-b border-[var(--border)] pb-3">
             <h2 className="text-xl font-bold tracking-tight text-white flex items-center gap-2">
               <span className="inline-block h-2.5 w-2.5 rounded-full bg-cyan-400" />
               Core Concepts Summary
             </h2>
-            <span className="text-xs font-bold text-slate-400">Syllabus Reference</span>
+            <span className="text-xs font-bold text-[var(--text-muted)]">Syllabus Reference</span>
           </div>
 
           <div className="grid gap-6 md:grid-cols-2">
-            <div className="rounded-lg border border-slate-800 bg-slate-900/80 p-6 space-y-4">
+            <div className="rounded-lg border border-[var(--border)] bg-[var(--surface)] p-6 space-y-4">
               <h3 className="text-xl font-black text-cyan-300">1. Galvanic Cells & Nernst Equation</h3>
-              <p className="text-sm text-slate-300 leading-relaxed">
+              <p className="text-sm text-[var(--text-muted)] leading-relaxed">
                 In a galvanic cell, chemical energy is converted to electrical energy via spontaneous redox reactions.
                 The standard cell potential is given by:
               </p>
               <BlockMath math="E^\circ_{\text{cell}} = E^\circ_{\text{cathode}} - E^\circ_{\text{anode}}" />
-              <p className="text-sm text-slate-300 leading-relaxed">
+              <p className="text-sm text-[var(--text-muted)] leading-relaxed">
                 At non-standard conditions, the Nernst equation relates cell potential to reaction quotient <InlineMath math="Q" />:
               </p>
               <BlockMath math="E_{\text{cell}} = E^\circ_{\text{cell}} - \frac{0.0591}{n} \log_{10} Q" />
-              <p className="text-sm text-slate-300 leading-relaxed">
+              <p className="text-sm text-[var(--text-muted)] leading-relaxed">
                 And its relation to Gibbs Free Energy change:
               </p>
               <BlockMath math="\Delta G^\circ = -n F E^\circ_{\text{cell}} = -2.303 R T \log_{10} K_c" />
             </div>
 
-            <div className="rounded-lg border border-slate-800 bg-slate-900/80 p-6 space-y-4">
+            <div className="rounded-lg border border-[var(--border)] bg-[var(--surface)] p-6 space-y-4">
               <h3 className="text-xl font-black text-lime-300">2. Conductance & Kohlrausch&apos;s Law</h3>
-              <p className="text-sm text-slate-300 leading-relaxed">
+              <p className="text-sm text-[var(--text-muted)] leading-relaxed">
                 Molar conductivity (<InlineMath math="\Lambda_m" />) increases with dilution due to increased ionic mobility and dissociation:
               </p>
               <BlockMath math="\Lambda_m = \frac{\kappa \times 1000}{M}" />
-              <p className="text-sm text-slate-300 leading-relaxed">
+              <p className="text-sm text-[var(--text-muted)] leading-relaxed">
                 Kohlrausch&apos;s law of independent migration of ions states that at infinite dilution, total molar conductivity is the sum of limiting ionic conductivities:
               </p>
               <BlockMath math="\Lambda^\circ_m(A_x B_y) = x \lambda^\circ(A^{y+}) + y \lambda^\circ(B^{x-})" />
-              <p className="text-sm text-slate-300 leading-relaxed">
+              <p className="text-sm text-[var(--text-muted)] leading-relaxed">
                 Faraday&apos;s First Law of Electrolysis relates deposited mass <InlineMath math="w" /> to charge <InlineMath math="Q" />:
               </p>
               <BlockMath math="w = Z \times I \times t = \frac{E \times I \times t}{96500}" />
@@ -78,14 +78,14 @@ export default function ElectrochemistryNotesPage() {
 
         {/* Detailed Chapter Data from SSOT */}
         {chapter && (
-          <section className="rounded-lg border border-slate-800 bg-slate-900/60 p-6 sm:p-8 space-y-6">
-            <h3 className="text-lg font-bold text-white border-b border-slate-800 pb-2">Important NCERT Highlights & Solved Numericals</h3>
+          <section className="rounded-lg border border-[var(--border)] bg-[var(--surface)] p-6 sm:p-8 space-y-6">
+            <h3 className="text-lg font-bold text-white border-b border-[var(--border)] pb-2">Important NCERT Highlights & Solved Numericals</h3>
             
             <div className="space-y-4">
               {chapter.solvedExamples.map((ex, idx) => (
-                <div key={idx} className="rounded-lg border border-slate-800 bg-slate-950/80 p-5 space-y-3">
+                <div key={idx} className="rounded-lg border border-[var(--border)] bg-[var(--background)] p-5 space-y-3">
                   <p className="text-sm font-bold text-cyan-300">Problem {idx + 1}: {ex.q}</p>
-                  <div className="text-xs text-slate-300 bg-slate-900/60 p-3 rounded-xl border border-slate-800 font-mono space-y-1">
+                  <div className="text-xs text-[var(--text-muted)] bg-[var(--surface)] p-3 rounded-lg border border-[var(--border)] font-mono space-y-1">
                     {ex.steps.map((st, i) => (
                       <p key={i}>• {st}</p>
                     ))}

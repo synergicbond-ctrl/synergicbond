@@ -170,9 +170,9 @@ export default function DoubtSolverPage() {
 
         {/* Header */}
         <div className="text-center mb-8">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20 mb-4">
-            <Sparkles className="h-3.5 w-3.5 text-cyan-400" />
-            <span className="text-xs font-bold text-cyan-300 tracking-wide">MULTIMODAL AI</span>
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[var(--accent)]/10 border border-[var(--accent)]/20 mb-4">
+            <Sparkles className="h-3.5 w-3.5 text-[var(--accent)]" />
+            <span className="text-xs font-bold text-[var(--accent)] tracking-wide">MULTIMODAL AI</span>
           </div>
           <h1 className="text-4xl font-black md:text-5xl">AI Doubt Solver</h1>
           <p className="mt-3 text-white/50 text-sm">
@@ -183,9 +183,9 @@ export default function DoubtSolverPage() {
         {/* Token wallet */}
         <div className="flex justify-center mb-8">
           <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-[var(--surface)] border border-white/[0.06]">
-            <Zap className={`h-4 w-4 ${credits > 0 ? "text-violet-400" : "text-red-400"}`} />
+            <Zap className={`h-4 w-4 ${credits > 0 ? "text-[var(--accent)]" : "text-red-400"}`} />
             <span className="text-sm font-semibold">
-              <span className={credits > 0 ? "text-violet-400" : "text-red-400"}>{credits}</span>
+              <span className={credits > 0 ? "text-[var(--accent)]" : "text-red-400"}>{credits}</span>
               <span className="text-white/40"> / {DAILY_LIMIT}</span>
               <span className="text-white/60"> Free Daily AI Solves Left</span>
             </span>
@@ -202,7 +202,7 @@ export default function DoubtSolverPage() {
             onDrop={(e) => { e.preventDefault(); setDragOver(false); if (e.dataTransfer.files[0]) handleFile(e.dataTransfer.files[0]); }}
             onClick={() => fileInputRef.current?.click()}
             className={`relative cursor-pointer rounded-lg border-2 border-dashed p-8 text-center transition ${
-              dragOver ? "border-cyan-400 bg-cyan-500/5" : "border-white/[0.1] hover:border-white/20"
+              dragOver ? "border-[var(--accent)] bg-[var(--accent)]/5" : "border-white/[0.1] hover:border-white/20"
             }`}
           >
             <input
@@ -214,7 +214,7 @@ export default function DoubtSolverPage() {
             />
             {image ? (
               <div className="relative inline-block">
-                <Image src={image} alt="upload" width={320} height={192} unoptimized className="max-h-48 rounded-xl mx-auto object-contain" />
+                <Image src={image} alt="upload" width={320} height={192} unoptimized className="max-h-48 rounded-lg mx-auto object-contain" />
                 <button
                   onClick={(e) => { e.stopPropagation(); setImage(null); setFileName(""); }}
                   className="absolute -top-2 -right-2 p-1 rounded-full bg-red-500 text-white"
@@ -224,14 +224,14 @@ export default function DoubtSolverPage() {
               </div>
             ) : fileName ? (
               <div className="flex items-center justify-center gap-2 text-white/70">
-                <FileText className="h-6 w-6 text-cyan-400" />
+                <FileText className="h-6 w-6 text-[var(--accent)]" />
                 <span className="text-sm">{fileName}</span>
               </div>
             ) : (
               <>
                 <div className="flex justify-center gap-3 mb-3">
                   <ImageIcon className="h-7 w-7 text-white/30" />
-                  <Upload className="h-7 w-7 text-cyan-400" />
+                  <Upload className="h-7 w-7 text-[var(--accent)]" />
                   <FileText className="h-7 w-7 text-white/30" />
                 </div>
                 <p className="text-sm text-white/60 font-medium">Drop an image or PDF here, or click to browse</p>
@@ -247,13 +247,13 @@ export default function DoubtSolverPage() {
               onChange={(e) => setDoubt(e.target.value)}
               rows={3}
               placeholder="Or describe your doubt here... (you can also dictate by voice)"
-              className="w-full rounded-lg border border-white/[0.08] bg-black/40 px-5 py-4 pr-14 text-sm text-white placeholder-white/30 outline-none focus:border-cyan-400/50 resize-none"
+              className="w-full rounded-lg border border-white/[0.08] bg-[var(--surface-2)] px-5 py-4 pr-14 text-sm text-white placeholder-white/30 outline-none focus:border-[var(--accent)]/50 resize-none"
             />
             <button
               onClick={startVoice}
               title="Voice record"
-              className={`absolute right-3 top-3 p-2 rounded-xl transition ${
-                listening ? "text-cyan-400 bg-cyan-400/10 shadow-[0_0_12px_rgba(34,211,238,0.5)] animate-pulse" : "text-white/30 hover:text-white/70"
+              className={`absolute right-3 top-3 p-2 rounded-lg transition ${
+                listening ? "text-[var(--accent)] bg-[var(--accent)]/10 animate-pulse" : "text-white/30 hover:text-white/70"
               }`}
             >
               <Mic className="h-4 w-4" />
@@ -262,16 +262,16 @@ export default function DoubtSolverPage() {
 
           {/* Language toggle + Solve */}
           <div className="flex flex-col sm:flex-row gap-3 mt-4 items-stretch sm:items-center">
-            <div className="inline-flex rounded-xl bg-black/40 border border-white/[0.08] p-1">
+            <div className="inline-flex rounded-lg bg-[var(--background)]/40 border border-white/[0.08] p-1">
               <button
                 onClick={() => toggleLang("english")}
-                className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold transition ${language === "english" ? "bg-cyan-500 text-black" : "text-gray-400"}`}
+                className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold transition ${language === "english" ? "bg-[var(--accent)] text-[var(--background)]" : "text-[var(--text-muted)]"}`}
               >
                 <Languages className="h-3.5 w-3.5" /> English
               </button>
               <button
                 onClick={() => toggleLang("hinglish")}
-                className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold transition ${language === "hinglish" ? "bg-cyan-500 text-black" : "text-gray-400"}`}
+                className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold transition ${language === "hinglish" ? "bg-[var(--accent)] text-[var(--background)]" : "text-[var(--text-muted)]"}`}
               >
                 Hinglish
               </button>
@@ -280,7 +280,7 @@ export default function DoubtSolverPage() {
             <button
               onClick={() => solve(language)}
               disabled={loading}
-              className="flex-1 flex items-center justify-center gap-2 rounded-xl bg-[var(--accent)] px-6 py-3 text-sm font-bold text-black transition hover:-translate-y-0.5 disabled:opacity-60"
+              className="flex-1 flex items-center justify-center gap-2 rounded-lg bg-[var(--accent)] px-6 py-3 text-sm font-bold text-[var(--background)] transition hover:-translate-y-0.5 disabled:opacity-60"
             >
               {loading ? <><Loader2 className="h-4 w-4 animate-spin" /> Solving...</> : <><Sparkles className="h-4 w-4" /> Solve My Doubt</>}
             </button>
@@ -288,12 +288,12 @@ export default function DoubtSolverPage() {
 
           {/* Answer */}
           {answer && (
-            <div className="mt-6 rounded-lg bg-black/30 border border-white/[0.06] p-5">
+            <div className="mt-6 rounded-lg bg-[var(--surface-2)] border border-white/[0.06] p-5">
               <div className="flex items-center gap-2 mb-3">
-                <span className="text-xs font-bold text-cyan-400 uppercase tracking-wider">Solution</span>
+                <span className="text-xs font-bold text-[var(--accent)] uppercase tracking-wider">Solution</span>
                 <span className="text-[10px] text-white/30">({language === "hinglish" ? "Hinglish" : "English"})</span>
               </div>
-              <div className="prose prose-invert prose-sm max-w-none prose-headings:text-cyan-300 prose-strong:text-white">
+              <div className="prose prose-invert prose-sm max-w-none prose-headings:text-[var(--foreground)] prose-strong:text-white">
                 <ReactMarkdown remarkPlugins={[remarkMath]} rehypePlugins={[rehypeKatex]}>
                   {answer}
                 </ReactMarkdown>
@@ -306,20 +306,20 @@ export default function DoubtSolverPage() {
       {/* Paywall modal */}
       {showPaywall && (
         <div className="fixed inset-0 z-[100] flex items-center justify-center p-6 bg-black/70 backdrop-blur-sm">
-          <div className="relative max-w-md w-full rounded-lg bg-[var(--surface)] border border-cyan-500/20 p-8 text-center shadow-2xl">
+          <div className="relative max-w-md w-full rounded-lg bg-[var(--surface)] border border-[var(--border)] p-8 text-center shadow-2xl">
             <button onClick={() => setShowPaywall(false)} className="absolute top-4 right-4 text-white/40 hover:text-white">
               <X className="h-5 w-5" />
             </button>
             <div className="flex justify-center mb-4">
-              <div className="p-3 rounded-lg bg-gradient-to-br from-violet-400/20 to-violet-600/10">
-                <Crown className="h-8 w-8 text-violet-400" />
+              <div className="p-3 rounded-lg bg-[var(--surface-2)]">
+                <Crown className="h-8 w-8 text-[var(--accent)]" />
               </div>
             </div>
             <h3 className="text-xl font-black mb-2">Daily AI Limit Reached</h3>
             <p className="text-sm text-white/50 mb-6 leading-relaxed">
-              Upgrade to <span className="text-cyan-400 font-bold">SYNERGIC BOND PRO</span> for unlimited instant reasoning engines, verified expert reviews, and full-syllabus national rank analytics.
+              Upgrade to <span className="text-[var(--accent)] font-bold">SYNERGIC BOND PRO</span> for unlimited instant reasoning engines, verified expert reviews, and full-syllabus national rank analytics.
             </p>
-            <button className="w-full rounded-xl bg-gradient-to-r from-violet-400 to-violet-500 py-3 text-sm font-bold text-black mb-3 transition hover:-translate-y-0.5">
+            <button className="w-full rounded-lg bg-[var(--accent)] py-3 text-sm font-bold text-[var(--background)] mb-3 transition hover:-translate-y-0.5">
               ⚡ Upgrade to PRO
             </button>
             <button onClick={() => setShowPaywall(false)} className="text-xs text-white/40 hover:text-white">
@@ -332,13 +332,13 @@ export default function DoubtSolverPage() {
       {/* Rate-limit cooldown overlay */}
       {cooldown > 0 && (
         <div className="fixed inset-0 z-[100] flex items-center justify-center p-6 bg-black/70 backdrop-blur-sm">
-          <div className="max-w-sm w-full rounded-lg bg-[var(--surface)] border border-violet-500/30 p-8 text-center shadow-2xl">
+          <div className="max-w-sm w-full rounded-lg bg-[var(--surface)] border border-[var(--border)] p-8 text-center shadow-2xl">
             <p className="text-4xl mb-3">⚠️</p>
             <h3 className="text-lg font-black mb-2">Security Threshold Engaged</h3>
             <p className="text-sm text-white/50 mb-5">
               High-frequency traffic detected. A short cool-down is active to protect the service.
             </p>
-            <button onClick={() => setCooldown(0)} className="rounded-xl bg-violet-500 text-black font-bold px-5 py-2.5 text-sm">
+            <button onClick={() => setCooldown(0)} className="rounded-lg bg-[var(--accent)] text-[var(--background)] font-bold px-5 py-2.5 text-sm">
               Got it ({cooldown}s)
             </button>
           </div>

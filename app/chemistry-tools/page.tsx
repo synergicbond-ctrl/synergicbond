@@ -31,10 +31,10 @@ const TOOLS: Array<{ href: string; title: string; description: string; icon: Luc
 
 export default function ChemistryToolsPage() {
   return (
-    <main className="min-h-screen bg-black text-white">
-      <div className="border-b border-white/10 bg-gradient-to-b from-cyan-950/20 to-black px-6 py-12">
+    <main className="min-h-screen bg-[var(--background)] text-white">
+      <div className="bg-[var(--surface)] border-b border-[var(--border)] px-6 py-12">
         <div className="mx-auto max-w-5xl">
-          <p className="mb-2 text-xs font-bold uppercase tracking-[0.3em] text-cyan-300">Learn</p>
+          <p className="mb-2 text-xs font-bold uppercase tracking-[0.3em] text-[var(--text-muted)]">Learn</p>
           <h1 className="text-3xl font-black tracking-tight sm:text-4xl">Chemistry Tools</h1>
           <p className="mt-2 max-w-2xl text-zinc-400">
             The reference tools alongside your chapter notes — periodic table, knowledge vault, molecule
@@ -49,14 +49,14 @@ export default function ChemistryToolsPage() {
             <Link
               key={href}
               href={href}
-              className="group flex flex-col rounded-lg border border-white/[0.08] bg-white/[0.02] p-5 transition hover:-translate-y-0.5 hover:bg-white/[0.04] hover:border-cyan-400/40"
+              className="group flex flex-col rounded-lg border border-white/[0.08] bg-white/[0.02] p-5 transition hover:-translate-y-0.5 hover:bg-white/[0.04] hover:border-[var(--accent)]/40"
             >
-              <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-white/15 bg-white/[0.05]">
-                <Icon className="h-5 w-5 text-cyan-300" />
+              <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-white/15 bg-white/[0.05]">
+                <Icon className="h-5 w-5 text-[var(--accent)]" />
               </span>
               <div className="mt-3 font-bold text-white">{title}</div>
               <div className="mt-1 flex-1 text-sm text-zinc-400">{description}</div>
-              <div className="mt-3 text-sm font-semibold text-cyan-300">
+              <div className="mt-3 text-sm font-semibold text-[var(--accent)]">
                 Open <span className="inline-block transition group-hover:translate-x-1">→</span>
               </div>
             </Link>

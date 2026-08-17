@@ -26,8 +26,8 @@ const BAND_META = {
 
 function Shell({ children }: { children: React.ReactNode }) {
   return (
-    <main className="min-h-screen bg-black text-white">
-      <div className="border-b border-white/10 bg-gradient-to-b from-sky-950/20 to-black px-6 py-12">
+    <main className="min-h-screen bg-[var(--background)] text-white">
+      <div className="border-b border-white/10 bg-[var(--surface)] px-6 py-12">
         <div className="mx-auto max-w-4xl">
           <p className="mb-2 text-xs font-bold uppercase tracking-[0.3em] text-sky-300">Where you stand</p>
           <h1 className="text-3xl font-black tracking-tight sm:text-4xl">Readiness Report</h1>
@@ -78,8 +78,8 @@ export default async function ReadinessPage() {
           <h2 className="text-lg font-bold">No readiness score yet</h2>
           <p className="mx-auto mt-2 max-w-md text-sm text-zinc-400">
             Attempt a{" "}
-            <Link href="/tests" className="font-bold text-cyan-400 hover:underline">test</Link> or{" "}
-            <Link href="/pyq" className="font-bold text-cyan-400 hover:underline">PYQ</Link> set — your readiness score builds automatically.
+            <Link href="/tests" className="font-bold text-[var(--accent)] hover:underline">test</Link> or{" "}
+            <Link href="/pyq" className="font-bold text-[var(--accent)] hover:underline">PYQ</Link> set — your readiness score builds automatically.
           </p>
         </div>
       </Shell>
@@ -149,7 +149,7 @@ export default async function ReadinessPage() {
                 <div className="text-sm font-semibold text-white">{s.label}</div>
                 <div className="text-xs text-white/45">{s.reason}</div>
               </div>
-              <span className="text-sm font-semibold text-cyan-300">→</span>
+              <span className="text-sm font-semibold text-[var(--accent)]">→</span>
             </Link>
           ))}
         </div>

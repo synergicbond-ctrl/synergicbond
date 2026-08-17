@@ -10,10 +10,10 @@ import type { Grade } from "@/lib/memory/sm2";
 type Mode = DeckKey | "daily";
 
 const GRADES: { key: Grade; label: string; cls: string }[] = [
-  { key: "again", label: "Again", cls: "border-rose-500/40 bg-rose-500/10 text-rose-300 hover:bg-rose-500/20" },
-  { key: "hard", label: "Hard", cls: "border-amber-500/40 bg-amber-500/10 text-amber-300 hover:bg-amber-500/20" },
-  { key: "good", label: "Good", cls: "border-emerald-500/40 bg-emerald-500/10 text-emerald-300 hover:bg-emerald-500/20" },
-  { key: "easy", label: "Easy", cls: "border-cyan-500/40 bg-cyan-500/10 text-cyan-300 hover:bg-cyan-500/20" },
+  { key: "again", label: "Again", cls: "border-[var(--border)] bg-[var(--surface-2)] text-[var(--text-muted)] hover:bg-[var(--surface)]" },
+  { key: "hard", label: "Hard", cls: "border-[var(--border)] bg-[var(--surface-2)] text-[var(--text-muted)] hover:bg-[var(--surface)]" },
+  { key: "good", label: "Good", cls: "border-[var(--border)] bg-[var(--surface)] text-[var(--foreground)] hover:bg-[var(--surface-2)]" },
+  { key: "easy", label: "Easy", cls: "border-[var(--accent)]/40 bg-[var(--accent)]/10 text-[var(--accent)] hover:bg-[var(--accent)]/20" },
 ];
 
 function cardsFor(mode: Mode): RecallCard[] {
@@ -86,14 +86,14 @@ export default function MemoryReview({ initialDeck }: { initialDeck?: Mode }) {
       <div className="space-y-6">
         <button
           onClick={() => pick("daily")}
-          className="flex w-full items-center justify-between rounded-lg border border-cyan-400/30 bg-gradient-to-r from-cyan-500/15 to-purple-500/10 p-5 text-left transition hover:from-cyan-500/20"
+          className="flex w-full items-center justify-between rounded-lg border border-[var(--border)] bg-[var(--surface-2)] p-5 text-left transition hover:bg-[var(--surface)]"
         >
           <div>
             <div className="text-lg font-black text-white">🔁 Daily Revision Queue</div>
             <div className="mt-1 text-sm text-white/60">Every card due today, across all decks.</div>
           </div>
           <div className="text-right">
-            <div className="text-2xl font-black text-cyan-300">{daily ? daily.due : "—"}</div>
+            <div className="text-2xl font-black text-[var(--accent)]">{daily ? daily.due : "—"}</div>
             <div className="text-[11px] text-white/45">due now</div>
           </div>
         </button>
@@ -113,7 +113,7 @@ export default function MemoryReview({ initialDeck }: { initialDeck?: Mode }) {
                   <div className="mt-1 text-[11px] text-white/35">{DECK_COUNTS[d.key]} cards</div>
                 </div>
                 <div className="ml-3 shrink-0 text-right">
-                  <div className="text-xl font-black text-cyan-300">{c ? c.due : "—"}</div>
+                  <div className="text-xl font-black text-[var(--accent)]">{c ? c.due : "—"}</div>
                   <div className="text-[11px] text-white/45">due</div>
                 </div>
               </button>
@@ -142,7 +142,7 @@ export default function MemoryReview({ initialDeck }: { initialDeck?: Mode }) {
         </p>
         <button
           onClick={exit}
-          className="mt-5 rounded-xl border border-cyan-400/40 bg-cyan-500/10 px-5 py-2.5 text-sm font-bold text-cyan-300 transition hover:bg-cyan-500/20"
+          className="mt-5 rounded-lg border border-[var(--border)] bg-[var(--surface)] px-5 py-2.5 text-sm font-bold text-[var(--text-muted)] transition hover:bg-[var(--surface-2)]"
         >
           ← Back to decks
         </button>
@@ -188,7 +188,7 @@ export default function MemoryReview({ initialDeck }: { initialDeck?: Mode }) {
             <button
               key={g.key}
               onClick={() => grade(g.key)}
-              className={`rounded-xl border py-3 text-sm font-bold transition ${g.cls}`}
+              className={`rounded-lg border py-3 text-sm font-bold transition ${g.cls}`}
             >
               {g.label}
             </button>

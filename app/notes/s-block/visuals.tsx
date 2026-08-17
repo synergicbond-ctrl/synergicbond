@@ -12,7 +12,7 @@ function VisualFrame({
   return (
     <section className="overflow-hidden rounded-lg border border-cyan-300/15 bg-[#07111d] shadow-2xl shadow-black/30">
       <div className="border-b border-white/[.07] bg-[linear-gradient(100deg,rgba(34,211,238,.12),rgba(139,92,246,.10),rgba(251,191,36,.08))] px-5 py-4 sm:px-7">
-        <p className="text-[10px] font-black uppercase tracking-[.22em] text-cyan-300">{eyebrow}</p>
+        <p className="text-[10px] font-black uppercase tracking-[.22em] text-[var(--text-muted)]">{eyebrow}</p>
         <h2 className="mt-1 text-xl font-black text-white sm:text-2xl">{title}</h2>
       </div>
       <div className="p-3 sm:p-5">{children}</div>
@@ -109,8 +109,8 @@ function TrendVisual() {
           {rows.map(([property, direction, reason], index) => (
             <div key={property} className={`grid grid-cols-[1fr_44px] gap-3 px-4 py-3 ${index ? "border-t border-white/[.07]" : ""}`}>
               <div>
-                <p className="font-extrabold text-slate-100">{property}</p>
-                <p className="mt-1 text-xs leading-5 text-slate-400">{reason}</p>
+                <p className="font-extrabold text-[var(--foreground)]">{property}</p>
+                <p className="mt-1 text-xs leading-5 text-[var(--text-muted)]">{reason}</p>
               </div>
               <span className={`flex h-10 w-10 items-center justify-center rounded-xl text-2xl font-black ${direction === "↑" ? "bg-cyan-400/10 text-cyan-300" : "bg-violet-400/10 text-violet-300"}`}>{direction}</span>
             </div>

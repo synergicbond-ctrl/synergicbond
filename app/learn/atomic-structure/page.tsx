@@ -48,7 +48,7 @@ export default function AtomicStructureNotes() {
           lead="Everything you will ever study in chemistry — bonding, periodicity, colour, reactivity — traces back to how electrons are arranged around a nucleus. This chapter is the story of how we went from a solid billiard-ball atom to fuzzy probability clouds, and the small set of rules that predict where every electron lives."
           stats={[
             { v: "−13.6 eV", k: "ground-state energy of H" },
-            { v: "4 numbers", k: "fix every electron", tone: "text-emerald-300" },
+            { v: "4 numbers", k: "fix every electron", tone: "text-[var(--text-muted)]" },
             { v: "Highest yield", k: "most PYQs of any chapter", tone: "text-amber-300" },
           ]}
         />
@@ -81,7 +81,7 @@ export default function AtomicStructureNotes() {
         <div className="space-y-2.5">
           {MODELS.map((m, i) => (
             <Glass key={m.name} className="flex items-center gap-4 p-4">
-              <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-cyan-500/15 text-sm font-black text-cyan-300">{i + 1}</span>
+              <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[var(--accent)]/15 text-sm font-black text-[var(--accent)]">{i + 1}</span>
               <div><span className="font-bold text-white">{m.name}</span><span className="ml-2 text-sm text-white/60">{renderChemistry(m.idea)}</span></div>
             </Glass>
           ))}
@@ -94,15 +94,15 @@ export default function AtomicStructureNotes() {
           {QUANTUM.map((q) => (
             <Glass key={q.sym} className="p-4">
               <div className="flex items-center gap-3">
-                <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-[#0B1220] text-lg font-black text-cyan-200">{renderChemistry(q.sym)}</span>
+                <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-[var(--surface-2)] text-lg font-black text-[var(--foreground)]">{renderChemistry(q.sym)}</span>
                 <span className="font-bold text-white">{q.name}</span>
               </div>
               <p className="mt-2 text-sm text-white/65">{renderChemistry(q.role)}</p>
             </Glass>
           ))}
         </div>
-        <Glass className="mt-4 border-cyan-400/20 bg-cyan-500/[0.05] p-4">
-          <div className="text-xs font-bold uppercase tracking-wider text-cyan-300">Nodes at a glance</div>
+        <Glass className="mt-4 border-[var(--border)] bg-[var(--surface-2)] p-4">
+          <div className="text-xs font-bold uppercase tracking-wider text-[var(--text-muted)]">Nodes at a glance</div>
           <p className="mt-1 text-sm text-white/75">{renderChemistry("Total nodes = n − 1 · Radial (spherical) = n − l − 1 · Angular (planar) = l")}</p>
         </Glass>
       </Section>
@@ -126,11 +126,11 @@ export default function AtomicStructureNotes() {
             <Step n={2}>{renderChemistry("Angular nodes = l = 2.")}</Step>
             <Step n={3}>{renderChemistry("Radial nodes = n − l − 1 = 3 − 2 − 1 = 0.")}</Step>
           </div>
-          <div className="mt-4 rounded-xl border border-emerald-500/25 bg-emerald-500/[0.08] px-4 py-3">
-            <span className="text-xs font-bold uppercase text-emerald-300">Final answer</span>
-            <div className="mt-0.5 font-black text-emerald-200">{renderChemistry("2 angular nodes, 0 radial nodes (total = n − 1 = 2)")}</div>
+          <div className="mt-4 rounded-lg border border-[var(--chem-rule)]/25 bg-[var(--chem-rule)]/[0.08] px-4 py-3">
+            <span className="text-xs font-bold uppercase text-[var(--chem-rule)]">Final answer</span>
+            <div className="mt-0.5 font-black text-[var(--foreground)]">{renderChemistry("2 angular nodes, 0 radial nodes (total = n − 1 = 2)")}</div>
           </div>
-          <div className="mt-3 rounded-xl border border-amber-400/25 bg-amber-400/[0.07] px-4 py-2.5">
+          <div className="mt-3 rounded-lg border border-[var(--chem-energy)]/25 bg-[var(--chem-energy)]/[0.07] px-4 py-2.5">
             <span className="text-xs font-bold uppercase text-amber-300">JEE shortcut</span>
             <p className="mt-0.5 text-sm text-white/75">Read nodes straight off n and l: total = n−1, angular = l, radial = the remainder. No orbital drawing needed.</p>
           </div>

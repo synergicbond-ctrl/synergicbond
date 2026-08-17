@@ -51,7 +51,7 @@ export default function ChemSearch() {
     <div className="w-full max-w-xl mx-auto mt-10 relative">
 
       <input
-        className="w-full p-3 rounded-xl border border-white/20 bg-black text-white"
+        className="w-full p-3 rounded-lg border border-[var(--border-strong)] bg-[var(--background)] text-[var(--foreground)]"
 
         placeholder="Search chemistry..."
 
@@ -92,7 +92,7 @@ export default function ChemSearch() {
 
       {results.length > 0 && (
 
-        <div className="absolute w-full bg-black border border-white/10 mt-2 rounded-xl overflow-hidden">
+        <div className="absolute w-full bg-[var(--surface)] border border-[var(--border)] mt-2 rounded-lg overflow-hidden">
 
           {results.map((item, index) => (
 

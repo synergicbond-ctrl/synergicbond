@@ -39,10 +39,7 @@ export default function Donation() {
       </div>
 
       <div className="max-w-2xl mx-auto">
-        <div className="relative overflow-hidden rounded-[32px] border border-[var(--border-strong)] bg-[var(--surface)] p-8 sm:p-12">
-          {/* Subtle background glow blobs */}
-          <div className="absolute -right-20 -bottom-20 h-80 w-80 rounded-full bg-[var(--surface-2)] blur-[120px] pointer-events-none" />
-          <div className="absolute -left-20 -top-20 h-80 w-80 rounded-full bg-[var(--surface-2)] blur-[120px] pointer-events-none" />
+        <div className="relative overflow-hidden rounded-lg border border-[var(--border-strong)] bg-[var(--surface)] p-8 sm:p-12">
 
           {submitted ? (
             <div className="relative z-10 py-8 text-center flex flex-col items-center justify-center animate-fade-in">
@@ -61,7 +58,7 @@ export default function Donation() {
                   setAmount("");
                   setMessage("");
                 }}
-                className="rounded-xl border border-white/20 bg-white/10 px-6 py-2.5 text-xs font-bold text-white transition hover:bg-white/20"
+                className="rounded-lg border border-white/20 bg-white/10 px-6 py-2.5 text-xs font-bold text-white transition hover:bg-white/20"
               >
                 Make Another Contribution
               </button>
@@ -70,7 +67,7 @@ export default function Donation() {
             <form onSubmit={handleSubmit} className="relative z-10 space-y-6">
               {/* Name / Organization Field */}
               <div>
-                <label className="block text-xs font-extrabold uppercase tracking-wider text-gray-300 mb-2">
+                <label className="block text-xs font-extrabold uppercase tracking-wider text-[var(--text-muted)] mb-2">
                   Name / Organization <span className="text-[var(--text-muted)]">*</span>
                 </label>
                 <input
@@ -79,29 +76,29 @@ export default function Donation() {
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                   placeholder="Enter your name or organization"
-                  className="w-full rounded-[var(--radius)] bg-black/50 border border-white/15 px-5 py-3.5 text-sm text-white placeholder-gray-500 focus:border-[var(--border-strong)] focus:outline-none focus:ring-1 focus:ring-[var(--border-strong)] transition shadow-inner"
+                  className="w-full rounded-[var(--radius)] bg-[var(--surface-2)] border border-white/15 px-5 py-3.5 text-sm text-white placeholder-white/30 focus:border-[var(--border-strong)] focus:outline-none focus:ring-1 focus:ring-[var(--border-strong)] transition shadow-inner"
                 />
               </div>
 
               {/* Email Field */}
               <div>
-                <label className="block text-xs font-extrabold uppercase tracking-wider text-gray-300 mb-2">
-                  Email <span className="text-gray-500 font-normal lowercase">(optional)</span>
+                <label className="block text-xs font-extrabold uppercase tracking-wider text-[var(--text-muted)] mb-2">
+                  Email <span className="text-[var(--text-muted)] font-normal lowercase">(optional)</span>
                 </label>
                 <input
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="your@email.com"
-                  className="w-full rounded-[var(--radius)] bg-black/50 border border-white/15 px-5 py-3.5 text-sm text-white placeholder-gray-500 focus:border-[var(--border-strong)] focus:outline-none focus:ring-1 focus:ring-[var(--border-strong)] transition shadow-inner"
+                  className="w-full rounded-[var(--radius)] bg-[var(--surface-2)] border border-white/15 px-5 py-3.5 text-sm text-white placeholder-white/30 focus:border-[var(--border-strong)] focus:outline-none focus:ring-1 focus:ring-[var(--border-strong)] transition shadow-inner"
                 />
               </div>
 
               {/* Custom Amount Field */}
               <div>
-                <label className="block text-xs font-extrabold uppercase tracking-wider text-gray-300 mb-2">
+                <label className="block text-xs font-extrabold uppercase tracking-wider text-[var(--text-muted)] mb-2">
                   Contribution Amount <span className="text-[var(--text-muted)]">*</span>
-                  <span className="ml-2 text-[10px] font-semibold text-gray-400 lowercase">(minimum ₹499)</span>
+                  <span className="ml-2 text-[10px] font-semibold text-[var(--text-muted)] lowercase">(minimum ₹499)</span>
                 </label>
                 <div className="relative flex items-center">
                   <span className="absolute left-5 text-lg font-black text-[var(--text-muted)]">₹</span>
@@ -112,7 +109,7 @@ export default function Donation() {
                     value={amount}
                     onChange={(e) => setAmount(e.target.value)}
                     placeholder="499"
-                    className={`w-full rounded-[var(--radius)] bg-black/50 border pl-11 pr-5 py-3.5 text-lg font-black text-white placeholder-gray-600 focus:outline-none focus:ring-1 transition shadow-inner ${
+                    className={`w-full rounded-[var(--radius)] bg-[var(--surface-2)] border pl-11 pr-5 py-3.5 text-lg font-black text-white placeholder-white/30 focus:outline-none focus:ring-1 transition shadow-inner ${
  amount !== "" && !isValidAmount
  ? "border-[var(--border-strong)] focus:border-[var(--border-strong)] focus:ring-[var(--border-strong)]"
  : "border-white/15 focus:border-[var(--border-strong)] focus:ring-[var(--border-strong)]"
@@ -128,15 +125,15 @@ export default function Donation() {
 
               {/* Message Field */}
               <div>
-                <label className="block text-xs font-extrabold uppercase tracking-wider text-gray-300 mb-2">
-                  Message <span className="text-gray-500 font-normal lowercase">(optional)</span>
+                <label className="block text-xs font-extrabold uppercase tracking-wider text-[var(--text-muted)] mb-2">
+                  Message <span className="text-[var(--text-muted)] font-normal lowercase">(optional)</span>
                 </label>
                 <textarea
                   rows={3}
                   value={message}
                   onChange={(e) => setMessage(e.target.value)}
                   placeholder="Share a note or dedication with our team..."
-                  className="w-full rounded-[var(--radius)] bg-black/50 border border-white/15 px-5 py-3.5 text-sm text-white placeholder-gray-500 focus:border-[var(--border-strong)] focus:outline-none focus:ring-1 focus:ring-[var(--border-strong)] transition shadow-inner resize-none"
+                  className="w-full rounded-[var(--radius)] bg-[var(--surface-2)] border border-white/15 px-5 py-3.5 text-sm text-white placeholder-white/30 focus:border-[var(--border-strong)] focus:outline-none focus:ring-1 focus:ring-[var(--border-strong)] transition shadow-inner resize-none"
                 />
               </div>
 
@@ -144,14 +141,14 @@ export default function Donation() {
               <button
                 type="submit"
                 disabled={!isFormValid}
-                className="w-full rounded-[var(--radius)] bg-[var(--surface)] -400 py-4 text-base font-black text-black transition-all duration-300 hover:scale-[1.01] hover: disabled:opacity-40 disabled:pointer-events-none disabled:hover:scale-100 flex items-center justify-center gap-2.5 cursor-pointer mt-4"
+                className="w-full rounded-lg bg-[var(--accent)] py-4 text-base font-black text-[var(--background)] transition-all duration-300 hover:scale-[1.01] hover:brightness-110 disabled:opacity-40 disabled:pointer-events-none disabled:hover:scale-100 flex items-center justify-center gap-2.5 cursor-pointer mt-4"
               >
-                <Heart className="h-5 w-5 fill-black text-black" />
+                <Heart className="h-5 w-5 fill-[var(--background)] text-[var(--background)]" />
                 Support the Mission
-                <ArrowRight className="h-4 w-4 text-black font-black" />
+                <ArrowRight className="h-4 w-4 text-[var(--background)] font-black" />
               </button>
 
-              <div className="flex items-center justify-center gap-2 pt-2 text-[11px] text-gray-400 font-medium">
+              <div className="flex items-center justify-center gap-2 pt-2 text-[11px] text-[var(--text-muted)] font-medium">
                 <ShieldCheck className="h-4 w-4 text-[var(--text-muted)] shrink-0" />
                 <span>Direct contribution to student server infrastructure and free tools.</span>
               </div>

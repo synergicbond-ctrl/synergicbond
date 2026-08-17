@@ -127,7 +127,7 @@ export default function EquivalentConceptPart4() {
         </PageCard>
 
         <PageCard title="Complex Salt and Equivalent Weight of O.A. / R.A.">
-          <div className="space-y-4 rounded-lg border border-slate-800 bg-slate-950/30 p-4">
+          <div className="space-y-4 rounded-lg border border-[var(--border)] bg-[var(--background)] p-4">
             <h3 className="font-bold text-slate-900">
               Complex salt example:
             </h3>
@@ -408,7 +408,7 @@ export default function EquivalentConceptPart4() {
             </FormulaBox>
           </div>
 
-          <div className="space-y-4 rounded-lg border border-slate-800 bg-slate-950/30 p-4">
+          <div className="space-y-4 rounded-lg border border-[var(--border)] bg-[var(--background)] p-4">
             <h3 className="font-bold text-slate-900">
               H₂O₂
             </h3>

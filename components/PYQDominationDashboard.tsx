@@ -120,12 +120,12 @@ export default function PYQDominationDashboard() {
     <section className="mx-auto mt-24 max-w-7xl px-6" id="pyq-domination">
       {/* Section Header */}
       <div className="text-center md:text-left mb-12">
-        <div className="inline-flex items-center gap-2 rounded-full border border-cyan-400/20 bg-cyan-400/10 px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-cyan-300">
+        <div className="inline-flex items-center gap-2 rounded-full border border-[var(--border)] bg-[var(--surface-2)] px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-[var(--text-muted)]">
           <Sparkles className="h-3.5 w-3.5" />
           System Health Monitor
         </div>
         <h2 className="mt-4 text-4xl md:text-5xl font-black tracking-tight text-white">
-          PHASE: <span className="bg-gradient-to-r from-red-400 via-pink-500 to-violet-500 bg-clip-text text-transparent">PYQ DOMINATION</span>
+          PHASE: <span className="text-[var(--foreground)]">PYQ DOMINATION</span>
         </h2>
         <p className="mt-4 text-lg text-white/60 max-w-2xl">
           Real-time tracking, gap analysis, and target tracking for our chemistry database expansion.
@@ -141,7 +141,7 @@ export default function PYQDominationDashboard() {
             onClick={() => setActiveTab("status")}
             className={`flex items-center gap-3 w-full px-4 py-3 rounded-lg text-left font-bold transition-all ${
               activeTab === "status"
-                ? "bg-gradient-to-r from-cyan-500/25 to-sky-500/5 border border-cyan-400/30 text-cyan-300"
+                ? "bg-[var(--accent)]/15 border border-[var(--accent)]/40 text-[var(--accent)]"
                 : "text-white/60 hover:text-white hover:bg-white/[0.02]"
             }`}
           >
@@ -153,7 +153,7 @@ export default function PYQDominationDashboard() {
             onClick={() => setActiveTab("gaps")}
             className={`flex items-center gap-3 w-full px-4 py-3 rounded-lg text-left font-bold transition-all ${
               activeTab === "gaps"
-                ? "bg-gradient-to-r from-cyan-500/25 to-sky-500/5 border border-cyan-400/30 text-cyan-300"
+                ? "bg-[var(--accent)]/15 border border-[var(--accent)]/40 text-[var(--accent)]"
                 : "text-white/60 hover:text-white hover:bg-white/[0.02]"
             }`}
           >
@@ -165,7 +165,7 @@ export default function PYQDominationDashboard() {
             onClick={() => setActiveTab("roadmap")}
             className={`flex items-center gap-3 w-full px-4 py-3 rounded-lg text-left font-bold transition-all ${
               activeTab === "roadmap"
-                ? "bg-gradient-to-r from-cyan-500/25 to-sky-500/5 border border-cyan-400/30 text-cyan-300"
+                ? "bg-[var(--accent)]/15 border border-[var(--accent)]/40 text-[var(--accent)]"
                 : "text-white/60 hover:text-white hover:bg-white/[0.02]"
             }`}
           >
@@ -177,7 +177,7 @@ export default function PYQDominationDashboard() {
             onClick={() => setActiveTab("audit")}
             className={`flex items-center gap-3 w-full px-4 py-3 rounded-lg text-left font-bold transition-all ${
               activeTab === "audit"
-                ? "bg-gradient-to-r from-cyan-500/25 to-sky-500/5 border border-cyan-400/30 text-cyan-300"
+                ? "bg-[var(--accent)]/15 border border-[var(--accent)]/40 text-[var(--accent)]"
                 : "text-white/60 hover:text-white hover:bg-white/[0.02]"
             }`}
           >
@@ -197,9 +197,9 @@ export default function PYQDominationDashboard() {
               <div className="grid gap-6 md:grid-cols-3">
                 
                 {/* NEET Card */}
-                <div className="rounded-lg border border-white/10 bg-white/[0.02] p-6 hover:border-emerald-500/20 transition duration-300">
+                <div className="rounded-lg border border-white/10 bg-white/[0.02] p-6 hover:border-[var(--accent)]/20 transition duration-300">
                   <div className="flex justify-between items-start">
-                    <span className="text-xs font-bold tracking-widest text-emerald-400 uppercase">NEET Target</span>
+                    <span className="text-xs font-bold tracking-widest text-[var(--text-muted)] uppercase">NEET Target</span>
                     <span className="text-xs text-white/50">{Math.round((neetCount / 500) * 100)}% Complete</span>
                   </div>
                   <div className="mt-4 flex items-baseline gap-2">
@@ -207,8 +207,8 @@ export default function PYQDominationDashboard() {
                     <span className="text-white/40">/ 500</span>
                   </div>
                   <div className="mt-4 h-2 w-full rounded-full bg-white/5 overflow-hidden">
-                    <div 
-                      className="h-full bg-emerald-500 transition-all duration-1000"
+                    <div
+                      className="h-full bg-[var(--accent)] transition-all duration-1000"
                       style={{ width: `${Math.min((neetCount / 500) * 100, 100)}%` }}
                     />
                   </div>
@@ -218,9 +218,9 @@ export default function PYQDominationDashboard() {
                 </div>
 
                 {/* JEE Main Card */}
-                <div className="rounded-lg border border-white/10 bg-white/[0.02] p-6 hover:border-cyan-500/20 transition duration-300">
+                <div className="rounded-lg border border-white/10 bg-white/[0.02] p-6 hover:border-[var(--accent)]/20 transition duration-300">
                   <div className="flex justify-between items-start">
-                    <span className="text-xs font-bold tracking-widest text-cyan-400 uppercase">JEE Main Target</span>
+                    <span className="text-xs font-bold tracking-widest text-[var(--text-muted)] uppercase">JEE Main Target</span>
                     <span className="text-xs text-white/50">{Math.round((jmCount / 500) * 100)}% Complete</span>
                   </div>
                   <div className="mt-4 flex items-baseline gap-2">
@@ -228,8 +228,8 @@ export default function PYQDominationDashboard() {
                     <span className="text-white/40">/ 500</span>
                   </div>
                   <div className="mt-4 h-2 w-full rounded-full bg-white/5 overflow-hidden">
-                    <div 
-                      className="h-full bg-cyan-500 transition-all duration-1000"
+                    <div
+                      className="h-full bg-[var(--accent)] transition-all duration-1000"
                       style={{ width: `${Math.min((jmCount / 500) * 100, 100)}%` }}
                     />
                   </div>
@@ -239,9 +239,9 @@ export default function PYQDominationDashboard() {
                 </div>
 
                 {/* JEE Advanced Card */}
-                <div className="rounded-lg border border-white/10 bg-white/[0.02] p-6 hover:border-violet-500/20 transition duration-300">
+                <div className="rounded-lg border border-white/10 bg-white/[0.02] p-6 hover:border-[var(--border)] transition duration-300">
                   <div className="flex justify-between items-start">
-                    <span className="text-xs font-bold tracking-widest text-violet-400 uppercase">JEE Advanced Target</span>
+                    <span className="text-xs font-bold tracking-widest text-[var(--text-muted)] uppercase">JEE Advanced Target</span>
                     <span className="text-xs text-white/50">{Math.round((jaCount / 300) * 100)}% Complete</span>
                   </div>
                   <div className="mt-4 flex items-baseline gap-2">
@@ -249,8 +249,8 @@ export default function PYQDominationDashboard() {
                     <span className="text-white/40">/ 300</span>
                   </div>
                   <div className="mt-4 h-2 w-full rounded-full bg-white/5 overflow-hidden">
-                    <div 
-                      className="h-full bg-violet-500 transition-all duration-1000"
+                    <div
+                      className="h-full bg-[var(--accent)] transition-all duration-1000"
                       style={{ width: `${Math.min((jaCount / 300) * 100, 100)}%` }}
                     />
                   </div>
@@ -262,7 +262,7 @@ export default function PYQDominationDashboard() {
               </div>
 
               {/* Total Compliance Banner */}
-              <div className="rounded-lg border border-white/5 bg-gradient-to-r from-violet-500/10 via-cyan-500/5 to-transparent p-8 flex flex-col md:flex-row md:items-center justify-between gap-6">
+              <div className="rounded-lg border border-white/5 bg-[var(--surface-2)] p-8 flex flex-col md:flex-row md:items-center justify-between gap-6">
                 <div>
                   <h3 className="text-lg font-bold text-white flex items-center gap-2">
                     <Flame className="h-5 w-5 text-amber-400" />
@@ -274,7 +274,7 @@ export default function PYQDominationDashboard() {
                 </div>
                 <div className="text-left md:text-right">
                   <div className="text-3xl font-black text-white">{ALL_PYQ_QUESTIONS.length}</div>
-                  <div className="text-xs font-bold uppercase tracking-wider text-cyan-400 mt-1">Verified Chemistry PYQs</div>
+                  <div className="text-xs font-bold uppercase tracking-wider text-[var(--accent)] mt-1">Verified Chemistry PYQs</div>
                 </div>
               </div>
 
@@ -309,7 +309,7 @@ export default function PYQDominationDashboard() {
                   <button
                     key={sub}
                     onClick={() => setSelectedSub(sub)}
-                    className={`px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wider transition ${
+                    className={`px-4 py-2 rounded-lg text-xs font-bold uppercase tracking-wider transition ${
                       selectedSub === sub
                         ? "bg-white/10 text-white"
                         : "text-white/60 hover:text-white"
@@ -345,11 +345,7 @@ export default function PYQDominationDashboard() {
                       >
                         <div>
                           <div className="flex items-center gap-2">
-                            <span className={`text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded ${
-                              category === "Physical" ? "bg-cyan-500/10 text-cyan-400" :
-                              category === "Inorganic" ? "bg-amber-500/10 text-amber-400" :
-                              "bg-violet-500/10 text-violet-400"
-                            }`}>
+                            <span className="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-[var(--surface-2)] text-[var(--text-muted)]">
                               {category}
                             </span>
                             <h4 className="font-bold text-white text-sm sm:text-base">{chap.name}</h4>
@@ -364,15 +360,15 @@ export default function PYQDominationDashboard() {
 
                         <div className="flex items-center gap-3 justify-between sm:justify-end">
                           {isZero ? (
-                            <span className="text-[10px] font-extrabold uppercase tracking-widest px-2.5 py-1 rounded-full bg-red-500/15 text-red-400 border border-red-500/20">
+                            <span className="text-[10px] font-extrabold uppercase tracking-widest px-2.5 py-1 rounded-full bg-[var(--surface-2)] text-[var(--text-muted)] border border-[var(--border)]">
                               Zero Questions
                             </span>
                           ) : isLow ? (
-                            <span className="text-[10px] font-extrabold uppercase tracking-widest px-2.5 py-1 rounded-full bg-amber-500/15 text-amber-400 border border-amber-500/20">
+                            <span className="text-[10px] font-extrabold uppercase tracking-widest px-2.5 py-1 rounded-full bg-[var(--surface-2)] text-[var(--text-muted)] border border-[var(--border)]">
                               {chap.total} / 20 Questions
                             </span>
                           ) : (
-                            <span className="text-[10px] font-extrabold uppercase tracking-widest px-2.5 py-1 rounded-full bg-emerald-500/15 text-emerald-400 border border-emerald-500/20">
+                            <span className="text-[10px] font-extrabold uppercase tracking-widest px-2.5 py-1 rounded-full bg-[var(--accent)]/15 text-[var(--accent)] border border-[var(--accent)]/20">
                               Covered ({chap.total})
                             </span>
                           )}
@@ -389,14 +385,14 @@ export default function PYQDominationDashboard() {
           {activeTab === "roadmap" && (
             <div className="space-y-8 animate-fadeIn">
               
-              <div className="relative border-l-2 border-cyan-400/20 ml-4 space-y-8 py-2">
+              <div className="relative border-l-2 border-[var(--border)] ml-4 space-y-8 py-2">
                 
                 {/* Phase A */}
                 <div className="relative pl-8">
-                  <div className="absolute -left-[9px] top-1.5 h-4 w-4 rounded-full bg-cyan-400 border-4 border-[#0B0F19]" />
+                  <div className="absolute -left-[9px] top-1.5 h-4 w-4 rounded-full bg-[var(--accent)] border-4 border-[var(--background)]" />
                   <div className="flex items-center gap-2">
-                    <span className="text-xs font-bold text-cyan-400 uppercase tracking-widest">Phase A</span>
-                    <span className="text-xs bg-cyan-400/10 text-cyan-300 px-2 py-0.5 rounded">High Priority</span>
+                    <span className="text-xs font-bold text-[var(--accent)] uppercase tracking-widest">Phase A</span>
+                    <span className="text-xs bg-[var(--surface-2)] text-[var(--text-muted)] px-2 py-0.5 rounded">High Priority</span>
                   </div>
                   <h4 className="mt-2 text-lg font-bold text-white">Top 100 Highest-Priority PYQs</h4>
                   <p className="mt-2 text-sm text-white/60 leading-relaxed">
@@ -406,10 +402,10 @@ export default function PYQDominationDashboard() {
 
                 {/* Phase B */}
                 <div className="relative pl-8">
-                  <div className="absolute -left-[9px] top-1.5 h-4 w-4 rounded-full bg-violet-400 border-4 border-[#0B0F19]" />
+                  <div className="absolute -left-[9px] top-1.5 h-4 w-4 rounded-full bg-[var(--accent)] border-4 border-[var(--background)]" />
                   <div className="flex items-center gap-2">
-                    <span className="text-xs font-bold text-violet-400 uppercase tracking-widest">Phase B</span>
-                    <span className="text-xs bg-violet-400/10 text-violet-300 px-2 py-0.5 rounded">Gap Elimination</span>
+                    <span className="text-xs font-bold text-[var(--accent)] uppercase tracking-widest">Phase B</span>
+                    <span className="text-xs bg-[var(--surface-2)] text-[var(--text-muted)] px-2 py-0.5 rounded">Gap Elimination</span>
                   </div>
                   <h4 className="mt-2 text-lg font-bold text-white">Next 200 PYQs</h4>
                   <p className="mt-2 text-sm text-white/60 leading-relaxed">
@@ -419,10 +415,10 @@ export default function PYQDominationDashboard() {
 
                 {/* Phase C */}
                 <div className="relative pl-8">
-                  <div className="absolute -left-[9px] top-1.5 h-4 w-4 rounded-full bg-emerald-400 border-4 border-[#0B0F19]" />
+                  <div className="absolute -left-[9px] top-1.5 h-4 w-4 rounded-full bg-[var(--accent)] border-4 border-[var(--background)]" />
                   <div className="flex items-center gap-2">
-                    <span className="text-xs font-bold text-emerald-400 uppercase tracking-widest">Phase C</span>
-                    <span className="text-xs bg-emerald-400/10 text-emerald-300 px-2 py-0.5 rounded">Bulk Expansion</span>
+                    <span className="text-xs font-bold text-[var(--accent)] uppercase tracking-widest">Phase C</span>
+                    <span className="text-xs bg-[var(--surface-2)] text-[var(--text-muted)] px-2 py-0.5 rounded">Bulk Expansion</span>
                   </div>
                   <h4 className="mt-2 text-lg font-bold text-white">Next 500 PYQs</h4>
                   <p className="mt-2 text-sm text-white/60 leading-relaxed">
@@ -432,9 +428,9 @@ export default function PYQDominationDashboard() {
 
                 {/* Phase D */}
                 <div className="relative pl-8">
-                  <div className="absolute -left-[9px] top-1.5 h-4 w-4 rounded-full bg-amber-400 border-4 border-[#0B0F19]" />
+                  <div className="absolute -left-[9px] top-1.5 h-4 w-4 rounded-full bg-[var(--accent)] border-4 border-[var(--background)]" />
                   <div className="flex items-center gap-2">
-                    <span className="text-xs font-bold text-amber-400 uppercase tracking-widest">Phase D</span>
+                    <span className="text-xs font-bold text-[var(--accent)] uppercase tracking-widest">Phase D</span>
                     <span className="text-xs bg-amber-400/10 text-amber-300 px-2 py-0.5 rounded">Deep History</span>
                   </div>
                   <h4 className="mt-2 text-lg font-bold text-white">Remaining 400 PYQs</h4>
@@ -447,7 +443,7 @@ export default function PYQDominationDashboard() {
 
               {/* Quality Banner */}
               <div className="rounded-lg border border-white/5 bg-white/[0.02] p-5 flex items-start gap-4">
-                <CheckCircle2 className="h-6 w-6 text-emerald-400 shrink-0 mt-0.5" />
+                <CheckCircle2 className="h-6 w-6 text-[var(--accent)] shrink-0 mt-0.5" />
                 <div>
                   <h5 className="font-bold text-white text-sm">Strict Quality Compliance</h5>
                   <p className="mt-1 text-xs text-white/50 leading-relaxed">
@@ -463,17 +459,17 @@ export default function PYQDominationDashboard() {
           {activeTab === "audit" && (
             <div className="space-y-6 animate-fadeIn">
               <div className="grid grid-cols-3 gap-4 mb-6">
-                <div className="rounded-xl border border-emerald-500/20 bg-emerald-500/5 p-4 flex flex-col items-center">
-                  <span className="text-2xl font-bold text-emerald-400">{ALL_PYQ_QUESTIONS.filter(q => q.authenticityStatus === "VERIFIED_PYQ").length}</span>
-                  <span className="text-xs text-emerald-500 uppercase tracking-wider font-semibold mt-1">Verified</span>
+                <div className="rounded-lg border border-[var(--border)] bg-[var(--surface-2)] p-4 flex flex-col items-center">
+                  <span className="text-2xl font-bold text-[var(--accent)]">{ALL_PYQ_QUESTIONS.filter(q => q.authenticityStatus === "VERIFIED_PYQ").length}</span>
+                  <span className="text-xs text-[var(--text-muted)] uppercase tracking-wider font-semibold mt-1">Verified</span>
                 </div>
-                <div className="rounded-xl border border-sky-500/20 bg-sky-500/5 p-4 flex flex-col items-center">
-                  <span className="text-2xl font-bold text-sky-400">{ALL_PYQ_QUESTIONS.filter(q => q.authenticityStatus === "ADAPTED_PYQ").length}</span>
-                  <span className="text-xs text-sky-500 uppercase tracking-wider font-semibold mt-1">Adapted</span>
+                <div className="rounded-lg border border-[var(--border)] bg-[var(--surface-2)] p-4 flex flex-col items-center">
+                  <span className="text-2xl font-bold text-[var(--text-muted)]">{ALL_PYQ_QUESTIONS.filter(q => q.authenticityStatus === "ADAPTED_PYQ").length}</span>
+                  <span className="text-xs text-[var(--text-muted)] uppercase tracking-wider font-semibold mt-1">Adapted</span>
                 </div>
-                <div className="rounded-xl border border-amber-500/20 bg-amber-500/5 p-4 flex flex-col items-center">
-                  <span className="text-2xl font-bold text-amber-400">{ALL_PYQ_QUESTIONS.filter(q => q.authenticityStatus === "NEEDS_MANUAL_REVIEW").length}</span>
-                  <span className="text-xs text-amber-500 uppercase tracking-wider font-semibold mt-1">Needs Review</span>
+                <div className="rounded-lg border border-[var(--border)] bg-[var(--surface-2)] p-4 flex flex-col items-center">
+                  <span className="text-2xl font-bold text-[var(--text-muted)]">{ALL_PYQ_QUESTIONS.filter(q => q.authenticityStatus === "NEEDS_MANUAL_REVIEW").length}</span>
+                  <span className="text-xs text-[var(--text-muted)] uppercase tracking-wider font-semibold mt-1">Needs Review</span>
                 </div>
               </div>
 
@@ -486,7 +482,7 @@ export default function PYQDominationDashboard() {
                       placeholder="Search questions, sources, IDs..." 
                       value={auditSearch}
                       onChange={(e) => setAuditSearch(e.target.value)}
-                      className="w-full bg-white/5 border border-white/10 rounded-xl py-2 pl-10 pr-4 text-sm text-white focus:outline-none focus:border-cyan-500/50 transition-colors"
+                      className="w-full bg-[var(--surface-2)] border border-[var(--border)] rounded-lg py-2 pl-10 pr-4 text-sm text-white focus:outline-none focus:border-[var(--accent)] transition-colors"
                     />
                   </div>
                   <div className="flex flex-wrap gap-3">
@@ -541,17 +537,17 @@ export default function PYQDominationDashboard() {
                             {q.id}
                           </span>
                           {q.authenticityStatus === "NEEDS_MANUAL_REVIEW" && (
-                            <span className="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-amber-500/10 text-amber-400 border border-amber-500/20">
+                            <span className="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-[var(--surface-2)] text-[var(--text-muted)] border border-[var(--border)]">
                               Needs Official Verification
                             </span>
                           )}
                           {q.authenticityStatus === "VERIFIED_PYQ" && (
-                            <span className="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+                            <span className="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-[var(--accent)]/10 text-[var(--accent)] border border-[var(--accent)]/20">
                               Verified Authentic
                             </span>
                           )}
                           {q.authenticityStatus === "ADAPTED_PYQ" && (
-                            <span className="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-sky-500/10 text-sky-400 border border-sky-500/20">
+                            <span className="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-[var(--surface-2)] text-[var(--text-muted)] border border-[var(--border)]">
                               Adapted
                             </span>
                           )}

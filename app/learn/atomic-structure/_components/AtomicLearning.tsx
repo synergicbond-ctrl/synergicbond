@@ -2,11 +2,59 @@ import Link from "next/link";
 import type { ReactNode } from "react";
 
 export function LearningObjectives({ items }: { items: string[] }) {
-  return <section aria-labelledby="objectives" className="rounded-lg border border-cyan-300/20 bg-cyan-300/[0.06] p-5"><p className="text-xs font-black uppercase tracking-[0.18em] text-cyan-200">Learning objectives</p><h2 id="objectives" className="mt-1 text-lg font-bold text-white">By the end, you can</h2><ul className="mt-3 grid gap-2 text-sm text-slate-200 sm:grid-cols-2">{items.map((item) => <li key={item} className="flex gap-2"><span aria-hidden="true" className="text-cyan-300">◆</span>{item}</li>)}</ul></section>;
+  return (
+    <aside
+      aria-label="Learning objectives"
+      style={{
+        borderLeft: "3px solid var(--chem-bond)",
+        paddingLeft: "1rem",
+        marginBottom: "0.5rem",
+      }}
+    >
+      <p
+        style={{
+          fontFamily: "var(--font-mono), ui-monospace, monospace",
+          fontSize: "9px",
+          fontWeight: 900,
+          letterSpacing: "0.22em",
+          textTransform: "uppercase",
+          color: "var(--chem-bond)",
+          marginBottom: "0.7rem",
+        }}
+      >
+        By the end, you can
+      </p>
+      <ul style={{ display: "grid", gap: "0.35rem", gridTemplateColumns: "repeat(auto-fill, minmax(220px, 1fr))", margin: 0, padding: 0, listStyle: "none" }}>
+        {items.map((item) => (
+          <li key={item} style={{ display: "flex", gap: "0.45rem", fontSize: "0.875rem", lineHeight: 1.55, color: "var(--text-muted)" }}>
+            <span aria-hidden="true" style={{ color: "var(--chem-bond)", flexShrink: 0, marginTop: "0.15rem" }}>◆</span>
+            {item}
+          </li>
+        ))}
+      </ul>
+    </aside>
+  );
 }
 
 export function ConceptCard({ title, children }: { title: string; children: ReactNode }) {
-  return <section className="rounded-lg border border-sky-300/20 bg-slate-950/45 p-5 shadow-lg shadow-black/10"><h2 className="text-lg font-black text-sky-200">{title}</h2><div className="mt-3 space-y-3 text-sm leading-relaxed text-slate-200 sm:text-base">{children}</div></section>;
+  return (
+    <section
+      style={{
+        borderLeft: "3px solid var(--chem-bond)",
+        paddingLeft: "1rem",
+        paddingTop: "0.15rem",
+      }}
+    >
+      <h2
+        style={{ fontSize: "1rem", fontWeight: 700, color: "var(--chem-bond)", marginBottom: "0.5rem" }}
+      >
+        {title}
+      </h2>
+      <div style={{ display: "flex", flexDirection: "column", gap: "0.55rem", fontSize: "0.9375rem", lineHeight: 1.7, color: "var(--text-body)" }}>
+        {children}
+      </div>
+    </section>
+  );
 }
 
 export function DefinitionCard({ term, children }: { term: string; children: ReactNode }) {
@@ -38,11 +86,82 @@ export function ImportantNote({ title = "Important note", children }: { title?: 
 }
 
 export function PracticeQuestion({ prompt, answer }: { prompt: ReactNode; answer?: ReactNode }) {
-  return <section className="rounded-lg border border-violet-300/20 bg-violet-300/[0.06] p-5"><p className="text-xs font-black uppercase tracking-[0.18em] text-violet-200">Check your understanding</p><div className="mt-2 text-sm leading-relaxed text-white sm:text-base">{prompt}</div>{answer ? <div className="mt-3 border-t border-white/10 pt-3 text-sm text-violet-100"><span className="font-bold text-emerald-300">Answer: </span><span className="text-emerald-100">{answer}</span></div> : null}</section>;
+  return (
+    <section
+      style={{
+        borderRadius: "var(--radius)",
+        border: "1px solid var(--chem-orbital)",
+        borderLeftWidth: "3px",
+        padding: "1rem 1.1rem",
+        background: "rgba(179, 118, 255, 0.04)",
+      }}
+    >
+      <p
+        style={{
+          fontFamily: "var(--font-mono), ui-monospace, monospace",
+          fontSize: "9px",
+          fontWeight: 900,
+          letterSpacing: "0.22em",
+          textTransform: "uppercase",
+          color: "var(--chem-orbital)",
+          marginBottom: "0.5rem",
+        }}
+      >
+        Check your understanding
+      </p>
+      <div style={{ fontSize: "0.9375rem", lineHeight: 1.65, color: "var(--foreground)" }}>{prompt}</div>
+      {answer ? (
+        <div
+          style={{
+            marginTop: "0.75rem",
+            paddingTop: "0.75rem",
+            borderTop: "1px solid var(--border)",
+            fontSize: "0.875rem",
+            color: "var(--chem-rule)",
+          }}
+        >
+          <span style={{ fontWeight: 700 }}>Answer: </span>
+          <span style={{ color: "var(--text-body)" }}>{answer}</span>
+        </div>
+      ) : null}
+    </section>
+  );
 }
 
 export function SummaryStrip({ items }: { items: string[] }) {
-  return <section aria-label="Quick recap" className="grid gap-px overflow-hidden rounded-lg border border-white/10 bg-white/10 sm:grid-cols-3">{items.map((item, index) => <div key={item} className="bg-[#0b1525] p-4"><p className="text-xs font-bold text-cyan-200">0{index + 1}</p><p className="mt-1 text-sm leading-relaxed text-slate-200">{item}</p></div>)}</section>;
+  return (
+    <section
+      aria-label="Quick recap"
+      style={{
+        display: "grid",
+        gridTemplateColumns: "repeat(auto-fill, minmax(200px, 1fr))",
+        gap: "1px",
+        overflow: "hidden",
+        borderRadius: "var(--radius)",
+        border: "1px solid var(--border)",
+        background: "var(--border)",
+      }}
+    >
+      {items.map((item, index) => (
+        <div key={item} style={{ background: "var(--surface)", padding: "1rem 1.1rem" }}>
+          <p
+            style={{
+              fontFamily: "var(--font-mono), ui-monospace, monospace",
+              fontSize: "9px",
+              fontWeight: 900,
+              letterSpacing: "0.2em",
+              textTransform: "uppercase",
+              color: "var(--chem-bond)",
+              marginBottom: "0.4rem",
+            }}
+          >
+            0{index + 1}
+          </p>
+          <p style={{ fontSize: "0.875rem", lineHeight: 1.6, color: "var(--text-body)" }}>{item}</p>
+        </div>
+      ))}
+    </section>
+  );
 }
 
 export function PartNavigator({ previous, next }: { previous?: { href: string; label: string }; next?: { href: string; label: string } }) {

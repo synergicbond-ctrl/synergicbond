@@ -1,15 +1,16 @@
 
+import Link from "next/link";
 import type { ReactNode } from "react";
 import { BlockMath, InlineMath } from "@/components/math/react-katex";
 import {
-  ChapterShell,
+  CanonicalNotesStyles,
   ChapterLessonPager,
-  ChapterPartStrip,
+  ChapterContentsRail,
   TopicHeader,
   type ChapterTab,
   type LessonRef,
 } from "@/components/notes/canonical";
-import { ATOMIC_CONCEPT_GROUPS } from "./groups";
+import { ATOMIC_CONCEPT_GROUPS, atomicGroupForPart } from "./groups";
 
 export type AtomicPartMeta = {
   part: number;
@@ -79,10 +80,9 @@ export function atomicTabs(currentPart?: number): ChapterTab[] {
 }
 
 /**
- * Inline section block. The 55 authored content files each wrap themselves in
- * AtomicPartShell — since the 55 sections were merged into 25 lessons, this
- * shell now renders only the section's own header (original title + source
- * pages, fully preserved) while AtomicLessonShell carries the page chrome.
+ * Inline section block. Open editorial surface — no container card.
+ * Uses the section's concept group accent colour for the eyebrow and title.
+ * The section ID enables same-page anchor linking from the chapter rail.
  */
 export function AtomicPartShell({
   part,
@@ -95,74 +95,125 @@ export function AtomicPartShell({
   pages: string;
   children: ReactNode;
 }) {
+  const group = atomicGroupForPart(part);
   return (
-    <section className="text-white">
-      <div
-        style={{
-          background: "var(--surface)",
-          border: "1px solid var(--border-strong)",
-          borderLeft: "4px solid var(--chem-bond)",
-          borderRadius: "var(--radius)",
-          padding: "14px 18px",
-        }}
-      >
-        <TopicHeader
-          as="h2"
-          eyebrow={`Section ${String(part).padStart(2, "0")} · Source pages ${pages}`}
-          title={title}
-          accentColor="var(--chem-bond)"
+    <section
+      id={`section-${part}`}
+      style={{ scrollMarginTop: "72px", paddingTop: "0.25rem" }}
+    >
+      {/* Open editorial header: eyebrow → coloured serif title → thin rule */}
+      <header style={{ marginBottom: "1.75rem" }}>
+        <p
+          className="sb-tech-label"
+          style={{
+            color: group.accent,
+            fontSize: "10px",
+            fontWeight: 900,
+            letterSpacing: "0.22em",
+            marginBottom: "0.45rem",
+          }}
+        >
+          Section {String(part).padStart(2, "0")} · Source pages {pages}
+        </p>
+        <h2
+          className="sb-editorial-title"
+          style={{
+            fontSize: "clamp(1.35rem, 2.6vw, 1.9rem)",
+            fontWeight: 800,
+            lineHeight: 1.18,
+            color: group.accent,
+            margin: 0,
+          }}
+        >
+          {title}
+        </h2>
+        <div
+          aria-hidden
+          style={{
+            height: 1,
+            background: group.accent,
+            opacity: 0.18,
+            marginTop: "0.6rem",
+          }}
         />
+      </header>
+      <div style={{ display: "flex", flexDirection: "column", gap: "1.5rem" }}>
+        {children}
       </div>
-      <div className="mt-6 space-y-8">{children}</div>
     </section>
   );
 }
 
-/** Full canonical page chrome for one of the 25 merged lessons. */
+/** Full canonical page chrome for one of the 25 merged lessons.
+ *  Layout: compact lesson bar → two-column (reading canvas + chapter rail).
+ *  The chapter rail lists all 25 lessons grouped by concept section.
+ *  The pill/tab wall is gone — navigation is quiet and always accessible. */
 export function AtomicLessonShell({ lesson, children }: { lesson: number; children: ReactNode }) {
   const currentIndex = atomicPartMeta.findIndex((entry) => entry.part === lesson);
   const meta = atomicPartMeta[currentIndex];
+  const group = atomicGroupForPart(lesson);
 
   return (
-    <ChapterShell
-      kicker="JEE Physical Chemistry"
-      subtitle="Atomic Structure"
-      tabs={atomicTabs(lesson)}
-    >
-      <ChapterPartStrip
-        hubHref="/learn/atomic-structure"
-        hubLabel="Atomic Structure — all lessons"
-        positionLabel={`Lesson ${String(lesson).padStart(2, "0")} of ${atomicPartMeta.length}`}
-      />
-      <article className="mx-auto max-w-6xl text-white">
-        {meta && (
-          <div
-            style={{
-              background: "var(--surface)",
-              border: "1px solid var(--border-strong)",
-              borderLeft: "4px solid var(--accent)",
-              borderRadius: "var(--radius)",
-              padding: "18px 20px",
-            }}
-          >
+    <div style={{ minHeight: "100vh", background: "var(--background)", color: "var(--foreground)" }}>
+      <CanonicalNotesStyles />
+      {/* ── Compact lesson identity bar ── */}
+      <div className="sbnLessonBar">
+        <div className="sbnLessonBarInner">
+          <Link href="/learn/atomic-structure" className="sbnLessonBarBack">
+            ← Atomic Structure
+          </Link>
+          <span className="sbnLessonBarPos">
+            Lesson {String(lesson).padStart(2, "0")} / {atomicPartMeta.length}
+          </span>
+        </div>
+      </div>
+
+      {/* ── Two-column reading surface ── */}
+      <div className="sbnSidebarBody">
+        <article className="sbnCanvas">
+          {/* Lesson hero — coloured by concept group, open, no card */}
+          {meta && (
             <TopicHeader
               as="h1"
               eyebrow={`Atomic Structure · Lesson ${String(lesson).padStart(2, "0")}`}
               title={meta.title}
-              descriptor={`Lesson ${lesson} of ${atomicPartMeta.length} · source pages ${meta.pages} · ${meta.sections.length} study sections`}
-              accentColor="var(--accent)"
+              descriptor={`Source pages ${meta.pages} · ${meta.sections.length} study ${meta.sections.length === 1 ? "section" : "sections"}`}
+              accentColor={group.accent}
             />
+          )}
+
+          {/* Lesson content — sections rendered by the page */}
+          <div style={{ display: "flex", flexDirection: "column", gap: "3.5rem", marginTop: "2.5rem" }}>
+            {children}
           </div>
-        )}
-        <div className="mt-8 space-y-10">{children}</div>
-        <ChapterLessonPager
-          prev={atomicLessonRef(currentIndex - 1)}
-          next={atomicLessonRef(currentIndex + 1)}
-          hubHref="/learn/atomic-structure"
-          hubLabel="All lessons"
+
+          {/* Lesson prev/next pager */}
+          <ChapterLessonPager
+            prev={atomicLessonRef(currentIndex - 1)}
+            next={atomicLessonRef(currentIndex + 1)}
+            hubHref="/learn/atomic-structure"
+            hubLabel="All lessons"
+          />
+        </article>
+
+        {/* ── Chapter contents rail ── */}
+        <ChapterContentsRail
+          title="Atomic Structure"
+          groups={ATOMIC_CONCEPT_GROUPS.map((g) => ({
+            label: g.label,
+            from: g.from,
+            to: g.to,
+            accent: g.accent,
+          }))}
+          lessons={atomicPartMeta.map((m) => ({
+            part: m.part,
+            title: m.title,
+            href: m.href,
+          }))}
+          currentPart={lesson}
         />
-      </article>
-    </ChapterShell>
+      </div>
+    </div>
   );
 }
 
@@ -174,17 +225,85 @@ export function SourcePage({ page: _page, children }: { page: number; children: 
   );
 }
 
+/**
+ * Open note block — no container card. Ordinary theory lives in open space.
+ * title becomes a subsection heading. Cards are reserved for DiagramBox,
+ * WorkedExample, ImportantNote, PracticeQuestion (structural content only).
+ */
 export function NoteBlock({ title, children }: { title?: string; children: ReactNode }) {
   return (
-    <div className="rounded-lg border border-white/[0.09] bg-white/[0.045] p-5 shadow-lg shadow-black/10 sm:p-6">
-      {title ? <h2 className="mb-3 text-lg font-black text-cyan-200">{title}</h2> : null}
-      <div className="space-y-3 text-sm leading-relaxed text-white/78 sm:text-base">{children}</div>
+    <div style={{ display: "flex", flexDirection: "column", gap: "0.75rem" }}>
+      {title ? (
+        <h3
+          className="sb-ui-title"
+          style={{
+            fontSize: "1rem",
+            fontWeight: 700,
+            color: "var(--foreground)",
+            letterSpacing: "-0.01em",
+            margin: 0,
+          }}
+        >
+          {title}
+        </h3>
+      ) : null}
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          gap: "0.65rem",
+          fontSize: "0.9625rem",
+          lineHeight: 1.72,
+          color: "var(--text-body)",
+        }}
+      >
+        {children}
+      </div>
     </div>
   );
 }
 
 export function LearningObjectives({ items }: { items: ReactNode[] }) {
-  return <aside aria-label="Learning objectives" className="rounded-lg border border-violet-300/20 bg-violet-400/[0.06] p-5"><p className="text-xs font-black uppercase tracking-[0.18em] text-violet-200">In this part</p><ul className="mt-3 grid gap-2 text-sm leading-relaxed text-slate-200 sm:grid-cols-3">{items.map((item, index) => <li key={index} className="border-l-2 border-violet-300/60 pl-3">{item}</li>)}</ul></aside>;
+  return (
+    <aside
+      aria-label="Learning objectives"
+      style={{
+        borderLeft: "3px solid var(--chem-orbital)",
+        paddingLeft: "1rem",
+        marginBottom: "0.25rem",
+      }}
+    >
+      <p
+        className="sb-tech-label"
+        style={{
+          fontSize: "9px",
+          fontWeight: 900,
+          letterSpacing: "0.2em",
+          color: "var(--chem-orbital)",
+          marginBottom: "0.6rem",
+        }}
+      >
+        In this lesson
+      </p>
+      <ul style={{ display: "flex", flexDirection: "column", gap: "0.35rem", margin: 0, padding: 0, listStyle: "none" }}>
+        {items.map((item, index) => (
+          <li
+            key={index}
+            style={{
+              fontSize: "0.875rem",
+              lineHeight: 1.55,
+              color: "var(--text-muted)",
+              display: "flex",
+              gap: "0.5rem",
+            }}
+          >
+            <span style={{ color: "var(--chem-orbital)", flexShrink: 0, marginTop: "0.15rem" }}>◆</span>
+            {item}
+          </li>
+        ))}
+      </ul>
+    </aside>
+  );
 }
 
 export function ImportantNote({ title, children }: { title: string; children: ReactNode }) {

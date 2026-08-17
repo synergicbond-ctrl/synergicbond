@@ -193,6 +193,130 @@ const CANONICAL_CSS = `
   .sbnPagerNext { text-align: left; }
   .sbnPagerSpacer { display: none; }
 }
+
+/* ── Chapter reading shell — sidebar variant ─────────────────────
+   Two-column layout: reading canvas (flex-1) + fixed-width chapter rail.
+   Used for full lesson/part pages where the chapter contents belong
+   permanently on the right rather than in a top pill wall. */
+.sbnLessonBar {
+  width: 100%;
+  border-bottom: 1px solid ${NT.border};
+  background: ${NT.surface};
+  padding: 10px 24px;
+}
+.sbnLessonBarInner {
+  max-width: 1440px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.sbnLessonBarBack {
+  font-family: ${NT.mono};
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: ${NT.textFaint};
+  text-decoration: none;
+  transition: color 0.12s;
+}
+.sbnLessonBarBack:hover { color: ${NT.text}; }
+.sbnLessonBarPos {
+  font-family: ${NT.mono};
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: ${NT.gold};
+}
+.sbnSidebarBody {
+  display: grid;
+  grid-template-columns: 1fr 258px;
+  gap: 0;
+  max-width: 1440px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 0 24px;
+  align-items: start;
+}
+.sbnCanvas {
+  min-width: 0;
+  padding: 48px 40px 80px 0;
+}
+.sbnRail {
+  position: sticky;
+  top: 20px;
+  max-height: calc(100vh - 40px);
+  overflow-y: auto;
+  padding: 32px 0 32px 20px;
+  border-left: 1px solid ${NT.border};
+  scrollbar-width: thin;
+  scrollbar-color: ${NT.border} transparent;
+}
+.sbnRailTitle {
+  font-family: ${NT.mono};
+  font-size: 9px;
+  font-weight: 900;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: ${NT.textFaint};
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid ${NT.border};
+}
+.sbnRailGroup { margin-bottom: 20px; }
+.sbnRailGroupLabel {
+  font-family: ${NT.mono};
+  font-size: 8px;
+  font-weight: 900;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+  padding: 0 8px 5px;
+  border-bottom: 1px solid ${NT.border};
+}
+.sbnRailLink {
+  display: flex;
+  align-items: flex-start;
+  gap: 7px;
+  padding: 5px 8px;
+  border-radius: 5px;
+  font-family: ${NT.sans};
+  font-size: 11.5px;
+  font-weight: 450;
+  color: ${NT.textFaint};
+  text-decoration: none;
+  line-height: 1.4;
+  transition: color 0.12s, background 0.12s;
+  border-left: 2px solid transparent;
+}
+.sbnRailLink:hover { color: ${NT.text}; background: rgba(246,239,223,0.04); }
+.sbnRailLinkActive {
+  color: ${NT.text};
+  font-weight: 700;
+  background: rgba(246,239,223,0.05);
+}
+.sbnRailNum {
+  font-family: ${NT.mono};
+  font-size: 9px;
+  font-weight: 900;
+  flex-shrink: 0;
+  margin-top: 1px;
+  opacity: 0.45;
+  min-width: 18px;
+}
+@media (max-width: 960px) {
+  .sbnSidebarBody { grid-template-columns: 1fr; padding: 0 16px; }
+  .sbnRail { display: none; }
+  .sbnCanvas { padding: 32px 0 60px; }
+  .sbnLessonBar { padding: 10px 16px; }
+}
+@media (max-width: 560px) {
+  .sbnCanvas { padding: 24px 0 48px; }
+}
 `;
 
 export function CanonicalNotesStyles() {
@@ -455,5 +579,77 @@ export function ChapterPartStrip({
       </Link>
       <span className="sbnHeaderTag">{positionLabel}</span>
     </div>
+  );
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// Chapter Contents Rail
+//
+// Right-side sticky index used by chapter lesson pages (e.g. Atomic Structure).
+// Shows the chapter's full lesson/topic list grouped by concept sections.
+// Replaces the top tab/pill wall; keeps the reading canvas uncluttered.
+// ─────────────────────────────────────────────────────────────────────────────
+
+export interface ChapterRailGroup {
+  label: string;
+  from: number;
+  to: number;
+  accent: string;
+}
+
+export interface ChapterRailLesson {
+  part: number;
+  title: string;
+  href: string;
+}
+
+/**
+ * Permanent right-side chapter index for desktop reading views.
+ * Groups all lessons by concept section, highlights the current lesson,
+ * and uses each group's semantic accent colour for its label and active item.
+ */
+export function ChapterContentsRail({
+  title = "Chapter Contents",
+  groups,
+  lessons,
+  currentPart,
+}: {
+  title?: string;
+  groups: ChapterRailGroup[];
+  lessons: ChapterRailLesson[];
+  currentPart: number;
+}) {
+  return (
+    <aside className="sbnRail" aria-label="Chapter contents">
+      <div className="sbnRailTitle">{title}</div>
+      {groups.map((group) => {
+        const groupLessons = lessons.filter(
+          (l) => l.part >= group.from && l.part <= group.to
+        );
+        if (groupLessons.length === 0) return null;
+        return (
+          <div key={group.label} className="sbnRailGroup">
+            <div className="sbnRailGroupLabel" style={{ color: group.accent }}>
+              {group.label}
+            </div>
+            {groupLessons.map((lesson) => {
+              const active = lesson.part === currentPart;
+              return (
+                <Link
+                  key={lesson.href}
+                  href={lesson.href}
+                  aria-current={active ? "page" : undefined}
+                  className={`sbnRailLink${active ? " sbnRailLinkActive" : ""}`}
+                  style={active ? { borderLeftColor: group.accent, color: group.accent } : {}}
+                >
+                  <span className="sbnRailNum">{String(lesson.part).padStart(2, "0")}</span>
+                  <span>{lesson.title}</span>
+                </Link>
+              );
+            })}
+          </div>
+        );
+      })}
+    </aside>
   );
 }

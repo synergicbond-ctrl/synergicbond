@@ -194,6 +194,54 @@ const CANONICAL_CSS = `
   .sbnPagerSpacer { display: none; }
 }
 
+/* ── Chapter identity header — orients the reader within the chapter ─
+   Appears at the top of each lesson page: chapter subject + name (large
+   editorial serif) + one-line descriptor + topic count, then a thin
+   accent rule. The lesson/topic hero follows immediately below.
+   Nothing here is a card — typography and spacing carry the identity. */
+.sbnChaptIdent { margin-bottom: 2.25rem; }
+.sbnChaptMeta {
+  font-family: ${NT.mono};
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: ${NT.textFaint};
+  margin-bottom: 0.5rem;
+}
+.sbnChaptName {
+  font-family: ${NT.serif};
+  font-optical-sizing: auto;
+  font-size: clamp(2rem, 4.4vw, 3rem);
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: -0.025em;
+  margin: 0 0 0.55rem;
+}
+.sbnChaptDesc {
+  font-family: ${NT.sans};
+  font-size: 1rem;
+  line-height: 1.62;
+  color: ${NT.textDim};
+  max-width: 50ch;
+  margin: 0 0 0.65rem;
+}
+.sbnChaptFooter {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.sbnChaptBadge {
+  font-family: ${NT.mono};
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: ${NT.textFaint};
+  white-space: nowrap;
+}
+.sbnChaptRule { flex: 1; height: 1px; }
+
 /* ── Chapter reading shell — sidebar variant ─────────────────────
    Two-column layout: reading canvas (flex-1) + fixed-width chapter rail.
    Used for full lesson/part pages where the chapter contents belong
@@ -579,6 +627,42 @@ export function ChapterPartStrip({
       </Link>
       <span className="sbnHeaderTag">{positionLabel}</span>
     </div>
+  );
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// Chapter Identity Header
+// ─────────────────────────────────────────────────────────────────────────────
+
+/**
+ * Chapter-level orientation header for lesson pages.
+ * Appears above the lesson TopicHeader. The chapter name is the large
+ * editorial element; the lesson title (h1) follows below it.
+ * No card, no border — typography and spacing carry the identity.
+ */
+export function ChapterIdentityHeader({
+  subject,
+  chapterName,
+  descriptor,
+  topicCount,
+  accentColor,
+}: {
+  subject: string;
+  chapterName: string;
+  descriptor: string;
+  topicCount: number;
+  accentColor: string;
+}) {
+  return (
+    <header className="sbnChaptIdent">
+      <p className="sbnChaptMeta">{subject}</p>
+      <p className="sbnChaptName" style={{ color: accentColor }}>{chapterName}</p>
+      <p className="sbnChaptDesc">{descriptor}</p>
+      <div className="sbnChaptFooter">
+        <span className="sbnChaptBadge">{topicCount} Topics</span>
+        <div className="sbnChaptRule" style={{ background: accentColor, opacity: 0.15 }} />
+      </div>
+    </header>
   );
 }
 

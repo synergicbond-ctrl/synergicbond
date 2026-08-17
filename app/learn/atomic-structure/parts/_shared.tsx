@@ -4,6 +4,7 @@ import type { ReactNode } from "react";
 import { BlockMath, InlineMath } from "@/components/math/react-katex";
 import {
   CanonicalNotesStyles,
+  ChapterIdentityHeader,
   ChapterLessonPager,
   ChapterContentsRail,
   TopicHeader,
@@ -119,7 +120,7 @@ export function AtomicPartShell({
           className="sb-editorial-title"
           style={{
             fontSize: "clamp(1.35rem, 2.6vw, 1.9rem)",
-            fontWeight: 800,
+            fontWeight: 650,
             lineHeight: 1.18,
             color: group.accent,
             margin: 0,
@@ -172,11 +173,20 @@ export function AtomicLessonShell({ lesson, children }: { lesson: number; childr
       <div className="sbnSidebarBody">
         {/* Prose column: max 720px so lines stay at 65–72 chars */}
         <article className="sbnCanvas" style={{ maxWidth: "720px" }}>
-          {/* Lesson hero — coloured by concept group, open, no card */}
+          {/* Chapter identity — orients the reader before the lesson */}
+          <ChapterIdentityHeader
+            subject="Physical Chemistry · JEE Advanced"
+            chapterName="Atomic Structure"
+            descriptor="From Dalton's indivisible atom to the quantum-mechanical description of matter — the foundation of all chemistry."
+            topicCount={atomicPartMeta.length}
+            accentColor="var(--chem-bond)"
+          />
+
+          {/* Lesson hero — coloured by concept group */}
           {meta && (
             <TopicHeader
               as="h1"
-              eyebrow={`Atomic Structure · Lesson ${String(lesson).padStart(2, "0")}`}
+              eyebrow={`Lesson ${String(lesson).padStart(2, "0")} · ${group.label.split(",")[0]}`}
               title={meta.title}
               descriptor={`Source pages ${meta.pages} · ${meta.sections.length} study ${meta.sections.length === 1 ? "section" : "sections"}`}
               accentColor={group.accent}
@@ -241,8 +251,8 @@ export function NoteBlock({ title, children }: { title?: string; children: React
         <h3
           className="sb-ui-title"
           style={{
-            fontSize: "1rem",
-            fontWeight: 700,
+            fontSize: "1.05rem",
+            fontWeight: 600,
             color: "var(--foreground)",
             letterSpacing: "-0.01em",
             margin: 0,

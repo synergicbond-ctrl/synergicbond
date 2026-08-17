@@ -338,7 +338,7 @@ export function ExchangeCountingGuideV4() {
           </thead>
           <tbody>
             {rows.map((row, index) => (
-              <tr key={row.configuration} style={{ background: index % 2 ? "#142940" : "#102338" }}>
+              <tr key={row.configuration} style={{ background: index % 2 ? "var(--surface)" : "var(--background)" }}>
                 <td style={{ padding: 13, borderBottom: `1px solid ${C.border}`, fontWeight: 850 }}>{row.configuration}</td>
                 <td style={{ padding: 13, borderBottom: `1px solid ${C.border}` }}><BoxRow boxes={row.boxes} /></td>
                 <td style={{ padding: 13, borderBottom: `1px solid ${C.border}` }}>{row.up}</td>

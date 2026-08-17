@@ -44,7 +44,7 @@ export default async function PracticePage({
             <span className="mx-1.5">/</span><span className="text-white/80">Practice</span>
           </nav>
           <p className="mb-2 text-[10px] font-black uppercase tracking-[0.34em] text-amber-300">Verified question studio</p>
-          <h1 className="font-serif text-3xl font-black tracking-tight sm:text-4xl">Practice Problems</h1>
+          <h1 className="font-display text-3xl font-black tracking-tight sm:text-4xl">Practice Problems</h1>
           <p className="mt-2 max-w-2xl text-white/55">
             All eight board question types. Objective questions come from the verified bank and never repeat until you reset; 2/3/5-mark, case-based, competency and HOTS are AI-generated and AI-graded.
           </p>

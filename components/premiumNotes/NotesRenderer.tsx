@@ -48,9 +48,9 @@ function Block({ block }: { block: NoteBlock }) {
   switch (block.kind) {
     case "detailed":
       return (
-        <div className="rounded-lg border border-[#4FD8B8]/25 bg-[var(--surface)] p-4.5 shadow-sm">
+        <div className="rounded-lg border border-[var(--chem-bond)]/25 bg-[var(--surface)] p-4.5 shadow-sm">
           {block.heading && (
-            <div className="mb-3 flex items-center gap-2 border-b border-[#4FD8B8]/15 pb-2 text-[16px] sm:text-[18px] font-bold text-[#4FD8B8]">
+            <div className="mb-3 flex items-center gap-2 border-b border-[var(--chem-bond)]/15 pb-2 text-[16px] sm:text-[18px] font-bold text-[var(--chem-bond)]">
               <span>🟢</span>
               <span>{block.heading}</span>
               <ExamTags exams={block.exams} />
@@ -65,7 +65,7 @@ function Block({ block }: { block: NoteBlock }) {
             <ul className="mt-2 space-y-2">
               {block.points.map((pt, i) => (
                 <li key={i} className="flex gap-2.5 text-[14px] leading-[1.5] text-[var(--foreground)]">
-                  <span className="mt-0.5 shrink-0 text-base font-bold text-[#4FD8B8]">📌</span>
+                  <span className="mt-0.5 shrink-0 text-base font-bold text-[var(--chem-bond)]">📌</span>
                   <span>{pt}</span>
                 </li>
               ))}
@@ -77,8 +77,8 @@ function Block({ block }: { block: NoteBlock }) {
     case "visual": {
       const Visual = VISUAL_REGISTRY[block.visual];
       return (
-        <figure className="rounded-lg border border-[#4FD8B8]/30 bg-[var(--surface)] p-4 sm:p-5 shadow-lg">
-          <figcaption className="mb-3 flex items-center justify-between border-b border-[#4FD8B8]/15 pb-2 text-[14px] font-bold tracking-wide text-[#4FD8B8]">
+        <figure className="rounded-lg border border-[var(--chem-bond)]/30 bg-[var(--surface)] p-4 sm:p-5 shadow-lg">
+          <figcaption className="mb-3 flex items-center justify-between border-b border-[var(--chem-bond)]/15 pb-2 text-[14px] font-bold tracking-wide text-[var(--chem-bond)]">
             <span className="flex items-center gap-2">
               <span>◈</span>
               <span>Visual Note · {block.title}</span>
@@ -95,11 +95,11 @@ function Block({ block }: { block: NoteBlock }) {
 
     case "focus":
       return (
-        <Callout label={block.title ?? "Key Exam Focus"} tone="border-[#4FD8B8]/40 text-[#4FD8B8]" exams={block.exams} icon="🟢">
+        <Callout label={block.title ?? "Key Exam Focus"} tone="border-[var(--chem-bond)]/40 text-[var(--chem-bond)]" exams={block.exams} icon="🟢">
           <ul className="space-y-2">
             {block.points.map((p, i) => (
               <li key={i} className="flex gap-2.5 text-[14px] leading-[1.5] text-[var(--foreground)]">
-                <span className="mt-0.5 shrink-0 text-[#4FD8B8] font-bold">📌</span>
+                <span className="mt-0.5 shrink-0 text-[var(--chem-bond)] font-bold">📌</span>
                 <span>{p}</span>
               </li>
             ))}
@@ -213,27 +213,27 @@ function Block({ block }: { block: NoteBlock }) {
 
     case "decoder":
       return (
-        <div className="rounded-lg border border-[#4FD8B8]/40 bg-[var(--surface)] p-4.5 shadow-lg">
-          <div className="mb-3 flex flex-wrap items-center justify-between gap-2 border-b border-[#4FD8B8]/20 pb-2.5">
+        <div className="rounded-lg border border-[var(--chem-bond)]/40 bg-[var(--surface)] p-4.5 shadow-lg">
+          <div className="mb-3 flex flex-wrap items-center justify-between gap-2 border-b border-[var(--chem-bond)]/20 pb-2.5">
             <div className="flex items-center gap-2">
               <span className="text-lg">🟢</span>
               <span className="text-[16px] sm:text-[18px] font-bold text-white">Formula Decoder · {block.title}</span>
             </div>
             <div className="flex items-center gap-2">
-              <span className="rounded-md border border-[#4FD8B8]/40 bg-[#4FD8B8]/20 px-2.5 py-1 font-mono text-xs font-bold text-[#4FD8B8]">
+              <span className="rounded-md border border-[var(--chem-bond)]/40 bg-[var(--chem-bond)]/20 px-2.5 py-1 font-mono text-xs font-bold text-[var(--chem-bond)]">
                 Label: {block.labelCode}
               </span>
               <ExamTags exams={block.exams} />
             </div>
           </div>
           {block.formula && (
-            <div className="mb-3.5 overflow-x-auto rounded-lg border border-[#4FD8B8]/30 bg-[var(--background)] p-3 text-center font-mono text-[16px] sm:text-[18px] font-bold text-[#4FD8B8] shadow-inner">
+            <div className="mb-3.5 overflow-x-auto rounded-lg border border-[var(--chem-bond)]/30 bg-[var(--background)] p-3 text-center font-mono text-[16px] sm:text-[18px] font-bold text-[var(--chem-bond)] shadow-inner">
               {block.formula}
             </div>
           )}
           <div className="space-y-2.5 text-[14px] leading-[1.5] text-[var(--foreground)]">
             <p>
-              <strong className="text-[#4FD8B8]">What it means: </strong>
+              <strong className="text-[var(--chem-bond)]">What it means: </strong>
               {block.meaning}
             </p>
             {block.example && (
@@ -246,7 +246,7 @@ function Block({ block }: { block: NoteBlock }) {
               <ul className="mt-2 space-y-1.5 border-t border-white/10 pt-2.5">
                 {block.insights.map((ins, i) => (
                   <li key={i} className="flex items-start gap-2 text-xs text-[var(--foreground)]/90">
-                    <span className="mt-0.5 text-[#4FD8B8]">▸</span>
+                    <span className="mt-0.5 text-[var(--chem-bond)]">▸</span>
                     <span>{ins}</span>
                   </li>
                 ))}
@@ -286,7 +286,7 @@ function Block({ block }: { block: NoteBlock }) {
               <p className="mt-1 text-[14px] leading-[1.5] text-[var(--foreground)]">{block.correctApproach}</p>
             </div>
             {block.verificationStep && (
-              <div className="flex items-center gap-2 rounded-lg bg-[var(--background)] p-2.5 text-[13px] text-[#4FD8B8] border border-[#4FD8B8]/20">
+              <div className="flex items-center gap-2 rounded-lg bg-[var(--background)] p-2.5 text-[13px] text-[var(--chem-bond)] border border-[var(--chem-bond)]/20">
                 <span>💡</span>
                 <span><strong className="font-bold">Exam Self-Check: </strong>{block.verificationStep}</span>
               </div>
@@ -297,9 +297,9 @@ function Block({ block }: { block: NoteBlock }) {
 
     case "illustration": {
       const tricky = block.tricky;
-      const edge = tricky ? "border-[#FF6B6B]/40" : "border-[#4FD8B8]/30";
-      const headBg = tricky ? "bg-[#FF6B6B]/15 border-[#FF6B6B]/25" : "bg-[#4FD8B8]/15 border-[#4FD8B8]/20";
-      const headText = tricky ? "text-[#FF6B6B]" : "text-[#4FD8B8]";
+      const edge = tricky ? "border-[#FF6B6B]/40" : "border-[var(--chem-bond)]/30";
+      const headBg = tricky ? "bg-[#FF6B6B]/15 border-[#FF6B6B]/25" : "bg-[var(--chem-bond)]/15 border-[var(--chem-bond)]/20";
+      const headText = tricky ? "text-[#FF6B6B]" : "text-[var(--chem-bond)]";
       return (
         <div className={`overflow-hidden rounded-lg border ${edge} bg-[var(--surface)] shadow-md`}>
           <div className={`flex flex-wrap items-center gap-2 border-b px-4 py-3 ${headBg}`}>
@@ -311,7 +311,7 @@ function Block({ block }: { block: NoteBlock }) {
               {block.level}
             </span>
             {block.concept && (
-              <span className="rounded-full border border-[#4FD8B8]/30 bg-[#4FD8B8]/15 px-2.5 py-0.5 text-[10px] font-bold text-[#4FD8B8]">
+              <span className="rounded-full border border-[var(--chem-bond)]/30 bg-[var(--chem-bond)]/15 px-2.5 py-0.5 text-[10px] font-bold text-[var(--chem-bond)]">
                 ◦ {block.concept}
               </span>
             )}
@@ -319,7 +319,7 @@ function Block({ block }: { block: NoteBlock }) {
           </div>
           <div className="p-4 sm:p-5">
             <div className="flex gap-2.5">
-              <span className="mt-0.5 shrink-0 text-xs font-black text-[#4FD8B8]">Q</span>
+              <span className="mt-0.5 shrink-0 text-xs font-black text-[var(--chem-bond)]">Q</span>
               <p className="text-[15px] sm:text-[16px] font-bold leading-relaxed text-white">{block.question}</p>
             </div>
 
@@ -335,9 +335,9 @@ function Block({ block }: { block: NoteBlock }) {
                 {block.steps.map((s, i) => (
                   <li key={i} className="relative flex gap-3.5 pb-4 last:pb-0">
                     {i < block.steps!.length - 1 && (
-                      <span className="absolute left-[13px] top-7 h-full w-px bg-[#4FD8B8]/30" aria-hidden />
+                      <span className="absolute left-[13px] top-7 h-full w-px bg-[var(--chem-bond)]/30" aria-hidden />
                     )}
-                    <span className="z-10 flex h-7 w-7 shrink-0 items-center justify-center rounded-full border border-[#4FD8B8]/50 bg-[var(--background)] text-xs font-black text-[#4FD8B8]">
+                    <span className="z-10 flex h-7 w-7 shrink-0 items-center justify-center rounded-full border border-[var(--chem-bond)]/50 bg-[var(--background)] text-xs font-black text-[var(--chem-bond)]">
                       {i + 1}
                     </span>
                     <div className="min-w-0 flex-1 pt-0.5">
@@ -351,7 +351,7 @@ function Block({ block }: { block: NoteBlock }) {
 
             {!block.steps && block.solution && (
               <div className="mt-3 rounded-lg border border-white/10 bg-[var(--background)] p-3 text-[14px] leading-relaxed text-[var(--foreground)]">
-                <span className="font-bold text-[#4FD8B8]">Solution · </span>
+                <span className="font-bold text-[var(--chem-bond)]">Solution · </span>
                 {block.solution}
               </div>
             )}
@@ -417,11 +417,11 @@ function Block({ block }: { block: NoteBlock }) {
 
     case "revision":
       return (
-        <Callout label={block.title ?? "One-Screen Revision Notes"} tone="border-[#4FD8B8]/35 bg-[var(--background)] text-white" exams={block.exams} icon="📌">
+        <Callout label={block.title ?? "One-Screen Revision Notes"} tone="border-[var(--chem-bond)]/35 bg-[var(--background)] text-white" exams={block.exams} icon="📌">
           <ul className="space-y-2">
             {block.points.map((p, i) => (
               <li key={i} className="flex gap-2.5 text-[14px] leading-[1.5] text-[var(--foreground)]">
-                <span className="mt-0.5 shrink-0 text-[#4FD8B8] font-bold">▸</span>
+                <span className="mt-0.5 shrink-0 text-[var(--chem-bond)] font-bold">▸</span>
                 <span>{p}</span>
               </li>
             ))}
@@ -443,13 +443,13 @@ function Topic({ topic, index, defaultOpen }: { topic: NoteTopic; index: number;
   );
 
   return (
-    <details open={defaultOpen} className="group rounded-lg border border-white/10 bg-[var(--surface)]/40 open:border-[#4FD8B8]/40 transition-all">
+    <details open={defaultOpen} className="group rounded-lg border border-white/10 bg-[var(--surface)]/40 open:border-[var(--chem-bond)]/40 transition-all">
       <summary className="flex cursor-pointer list-none items-center gap-3.5 p-4 sm:p-5 [&::-webkit-details-marker]:hidden">
-        <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border border-[#4FD8B8]/30 bg-[var(--background)] text-sm font-black text-[#4FD8B8]">
+        <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border border-[var(--chem-bond)]/30 bg-[var(--background)] text-sm font-black text-[var(--chem-bond)]">
           {String(index + 1).padStart(2, "0")}
         </span>
         <span className="min-w-0 flex-1">
-          <span className="block text-[18px] sm:text-[22px] font-bold text-white leading-[1.3] group-open:text-[#4FD8B8] transition-colors">
+          <span className="block text-[18px] sm:text-[22px] font-bold text-white leading-[1.3] group-open:text-[var(--chem-bond)] transition-colors">
             {topic.title}
           </span>
           {topic.intro && <span className="mt-1 block text-xs sm:text-sm text-[var(--foreground)]/70 leading-normal">{topic.intro}</span>}
@@ -460,7 +460,7 @@ function Topic({ topic, index, defaultOpen }: { topic: NoteTopic; index: number;
               </span>
             )}
             {diagrams > 0 && (
-              <span className="rounded-full border border-[#4FD8B8]/30 bg-[#4FD8B8]/15 px-2.5 py-0.5 text-[10px] font-bold tracking-wide text-[#4FD8B8]">
+              <span className="rounded-full border border-[var(--chem-bond)]/30 bg-[var(--chem-bond)]/15 px-2.5 py-0.5 text-[10px] font-bold tracking-wide text-[var(--chem-bond)]">
                 ◈ {diagrams} Diagram{diagrams > 1 ? "s" : ""}
               </span>
             )}
@@ -471,12 +471,12 @@ function Topic({ topic, index, defaultOpen }: { topic: NoteTopic; index: number;
             )}
           </span>
         </span>
-        <span className="shrink-0 text-xl text-[#4FD8B8] transition-transform duration-200 group-open:rotate-90">›</span>
+        <span className="shrink-0 text-xl text-[var(--chem-bond)] transition-transform duration-200 group-open:rotate-90">›</span>
       </summary>
       <div className="space-y-6 border-t border-white/10 p-4 sm:p-6 bg-[var(--background)]">
         {topic.subtopics.map((st) => (
           <section key={st.id} className="space-y-3.5">
-            <h4 className="flex items-center gap-2 text-sm font-bold uppercase tracking-wider text-[#A8E8D8] border-l-2 border-[#4FD8B8] pl-2.5 py-0.5">
+            <h4 className="flex items-center gap-2 text-sm font-bold uppercase tracking-wider text-[#A8E8D8] border-l-2 border-[var(--chem-bond)] pl-2.5 py-0.5">
               <span>{st.title}</span>
             </h4>
             <div className="space-y-4">
@@ -500,14 +500,14 @@ export default function NotesRenderer({ notes, exam }: { notes: PremiumChapterNo
     <div className="space-y-4 text-[var(--foreground)]">
       {/* Derived summary header — exact design system colors */}
       <div className="flex flex-wrap items-center gap-2.5 rounded-lg border border-white/10 bg-[var(--surface)] px-4 py-3 text-xs sm:text-sm shadow-md">
-        <span className="rounded-full border border-[#4FD8B8]/40 bg-[#4FD8B8]/20 px-3 py-1 font-extrabold text-white">
+        <span className="rounded-full border border-[var(--chem-bond)]/40 bg-[var(--chem-bond)]/20 px-3 py-1 font-extrabold text-white">
           {exam} Edition
         </span>
         <span className="font-bold text-white">{stats.topics} Topics</span>
         <span className="text-white/25">•</span>
         <span className="font-semibold text-[#90EE90]">{examples} Worked Examples & Decoders</span>
         <span className="text-white/25">•</span>
-        <span className="font-semibold text-[#4FD8B8]">{diagrams} Visual Notes</span>
+        <span className="font-semibold text-[var(--chem-bond)]">{diagrams} Visual Notes</span>
         {traps > 0 && (
           <>
             <span className="text-white/25">•</span>
@@ -519,8 +519,8 @@ export default function NotesRenderer({ notes, exam }: { notes: PremiumChapterNo
       {scoped.topics.map((t, i) => <Topic key={t.id} topic={t} index={i} defaultOpen={i === 0} />)}
 
       {/* Chapter revision sheet */}
-      <div className="rounded-lg border border-[#4FD8B8]/35 bg-[var(--surface)] p-5 sm:p-6 shadow-xl">
-        <div className="mb-4 flex items-center gap-2.5 border-b border-[#4FD8B8]/20 pb-3">
+      <div className="rounded-lg border border-[var(--chem-bond)]/35 bg-[var(--surface)] p-5 sm:p-6 shadow-xl">
+        <div className="mb-4 flex items-center gap-2.5 border-b border-[var(--chem-bond)]/20 pb-3">
           <span className="text-xl">📌</span>
           <h4 className="text-base sm:text-lg font-extrabold tracking-wide text-white">
             One-Screen Revision Sheet · {notes.title}
@@ -529,7 +529,7 @@ export default function NotesRenderer({ notes, exam }: { notes: PremiumChapterNo
         <ul className="grid grid-cols-1 md:grid-cols-2 gap-2.5">
           {scoped.chapterRevision.map((p, i) => (
             <li key={i} className="flex gap-2.5 rounded-lg border border-white/5 bg-[var(--background)] p-3 text-[14px] leading-[1.5] text-[var(--foreground)]">
-              <span className="mt-0.5 shrink-0 text-[#4FD8B8] font-bold">▸</span>
+              <span className="mt-0.5 shrink-0 text-[var(--chem-bond)] font-bold">▸</span>
               <span>{p}</span>
             </li>
           ))}

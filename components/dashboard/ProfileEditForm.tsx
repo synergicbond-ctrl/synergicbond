@@ -81,11 +81,11 @@ export default function ProfileEditForm({ userId, initial }: { userId: string; i
       <div className="grid gap-4 sm:grid-cols-2">
         <div>
           <label className={labelCls}>Full name</label>
-          <input className={inputCls} value={form.full_name} onChange={(e) => set("full_name")(e.target.value)} placeholder="Your name" />
+          <input className={inputCls} value={form.full_name} onChange={(e) => set("full_name")(e.target.value)} placeholder="Your name" aria-label="Full name" />
         </div>
         <div>
           <label className={labelCls}>Phone</label>
-          <input className={inputCls} value={form.phone} onChange={(e) => set("phone")(e.target.value)} placeholder="10-digit mobile" inputMode="tel" />
+          <input className={inputCls} value={form.phone} onChange={(e) => set("phone")(e.target.value)} placeholder="10-digit mobile" aria-label="Phone number" inputMode="tel" />
         </div>
         <div>
           <label className={labelCls}>Date of birth</label>

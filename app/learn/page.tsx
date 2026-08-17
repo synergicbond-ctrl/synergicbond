@@ -144,7 +144,7 @@ export default function LearnPage() {
                 <h2 className="mt-4 break-words text-lg font-black text-[var(--foreground)]">{item.title}</h2>
                 <p className="mt-2 break-words text-sm leading-relaxed text-[var(--text-muted)]">{item.description}</p>
                 <span className="mt-auto pt-4 text-xs font-black uppercase tracking-wide text-[var(--accent)]">
-                  Open module
+                  Enter →
                 </span>
               </Link>
             );

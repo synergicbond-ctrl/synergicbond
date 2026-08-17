@@ -831,7 +831,7 @@ function TestRunner({ session, restore, onExit, onRestart }: { session: TestSess
           ) : (
             <div className="mt-6">
               <label htmlFor={`answer-${question.id}`} className="text-xs font-bold uppercase tracking-wide text-white/45">Your numerical answer</label>
-              <input id={`answer-${question.id}`} value={answers[question.id] ?? ""} onChange={(event: ChangeEvent<HTMLInputElement>) => setAnswers((previous) => ({ ...previous, [question.id]: event.target.value }))} inputMode="decimal" placeholder="Enter answer" className="mt-2 w-full rounded-lg border border-white/10 bg-[var(--background)]/20 px-4 py-3 text-base text-white outline-none transition placeholder:text-white/25 focus:border-cyan-300/60 focus:ring-2 focus:ring-cyan-300/15" />
+              <input id={`answer-${question.id}`} value={answers[question.id] ?? ""} onChange={(event: ChangeEvent<HTMLInputElement>) => setAnswers((previous) => ({ ...previous, [question.id]: event.target.value }))} inputMode="decimal" placeholder="Enter answer" className="mt-2 w-full rounded-lg border border-white/10 bg-[var(--background)]/20 px-4 py-3 text-base text-white outline-none transition placeholder:text-white/25 focus:border-[var(--accent)]/60 focus:ring-2 focus:ring-[var(--accent)]/15" />
             </div>
           )}
 

@@ -288,3 +288,111 @@ video {
     animation: none;
   }
 }
+
+/* ── Micro-interactions ───────────────────────────────────────────
+   150 ms ease-out on background, border and colour — fast enough to
+   feel instant, slow enough to feel polished. Applied to interactive
+   elements only so layout and transforms stay untouched. */
+a,
+button,
+[role="button"],
+input,
+textarea,
+select {
+  transition:
+    background-color 150ms ease-out,
+    border-color     150ms ease-out,
+    color            150ms ease-out,
+    opacity          150ms ease-out,
+    box-shadow       150ms ease-out;
+}
+
+/* Tab/nav active indicators */
+[aria-selected="true"],
+[data-active="true"] {
+  transition: border-color 150ms ease-out, color 150ms ease-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  a, button, [role="button"], input, textarea, select,
+  [aria-selected="true"], [data-active="true"] {
+    transition: none;
+  }
+}
+
+/* ── KaTeX mobile safety ─────────────────────────────────────────
+   Wide equations overflow gracefully on small screens without breaking
+   the page layout. The outer container scrolls; the body never does. */
+.katex-display {
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding-bottom: 2px; /* prevent clipped descenders */
+}
+
+/* ── Wide content containers ─────────────────────────────────────
+   Tables, code blocks and data panels that can be wider than the
+   viewport scroll internally — never cause body horizontal overflow. */
+table {
+  display: block;
+  width: 100%;
+  overflow-x: auto;
+}
+
+pre {
+  overflow-x: auto;
+}
+
+/* ── Empty-state utility ──────────────────────────────────────────
+   Consistent blank-slate treatment for empty lists, dashboards, etc. */
+.sb-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 3rem 1.5rem;
+  text-align: center;
+  color: var(--text-muted);
+  border: 1px dashed var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+.sb-empty-icon {
+  font-size: 2rem;
+  opacity: 0.5;
+}
+.sb-empty-title {
+  font-family: var(--font-display), Georgia, serif;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--foreground);
+}
+.sb-empty-body {
+  font-size: 0.85rem;
+  max-width: 32ch;
+  line-height: 1.6;
+}
+
+/* ── Skeleton loading utility ────────────────────────────────────
+   Content-shape placeholders. Add .sb-skeleton to any block. */
+@keyframes sb-shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position:  200% center; }
+}
+.sb-skeleton {
+  background: linear-gradient(
+    90deg,
+    var(--surface) 25%,
+    var(--surface-hover) 50%,
+    var(--surface) 75%
+  );
+  background-size: 200% 100%;
+  animation: sb-shimmer 1.6s ease-in-out infinite;
+  border-radius: var(--radius-sm);
+  color: transparent;
+  pointer-events: none;
+  user-select: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  .sb-skeleton { animation: none; background: var(--surface-2); }
+}

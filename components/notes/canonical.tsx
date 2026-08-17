@@ -356,11 +356,64 @@ const CANONICAL_CSS = `
   opacity: 0.45;
   min-width: 18px;
 }
+/* ── Mobile Chapter Contents drawer ─────────────────────────────── */
+.sbnMobileContents { display: none; }
+.sbnMobileContentsSummary {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 0;
+  cursor: pointer;
+  list-style: none;
+  user-select: none;
+}
+.sbnMobileContentsSummary::-webkit-details-marker { display: none; }
+.sbnMobileContentsSummary::marker { display: none; }
+.sbnMobileCLabel {
+  font-family: ${NT.mono};
+  font-size: 9px;
+  font-weight: 900;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: ${NT.textFaint};
+}
+.sbnMobileCPos {
+  font-family: ${NT.mono};
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: ${NT.gold};
+  margin-left: auto;
+}
+.sbnMobileCChevron {
+  font-size: 8px;
+  color: ${NT.textFaint};
+  transition: transform 120ms;
+  flex-shrink: 0;
+}
+details.sbnMobileContentsWrap[open] .sbnMobileCChevron { transform: rotate(180deg); }
+.sbnMobileContentsBody {
+  max-height: 55vh;
+  overflow-y: auto;
+  padding: 6px 0 12px;
+  border-top: 1px solid ${NT.border};
+}
 @media (max-width: 960px) {
   .sbnSidebarBody { grid-template-columns: 1fr; padding: 0 16px; }
   .sbnRail { display: none; }
   .sbnCanvas { padding: 32px 0 60px; }
   .sbnLessonBar { padding: 10px 16px; }
+  .sbnMobileContents {
+    display: block;
+    order: -1;
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    background: ${NT.surface};
+    border-bottom: 1px solid ${NT.border};
+    margin: 0 -16px;
+    padding: 0 16px;
+  }
 }
 @media (max-width: 560px) {
   .sbnCanvas { padding: 24px 0 48px; }
@@ -703,37 +756,58 @@ export function ChapterContentsRail({
   lessons: ChapterRailLesson[];
   currentPart: number;
 }) {
+  const groupedList = groups.map((group) => {
+    const groupLessons = lessons.filter(
+      (l) => l.part >= group.from && l.part <= group.to
+    );
+    if (groupLessons.length === 0) return null;
+    return (
+      <div key={group.label} className="sbnRailGroup">
+        <div className="sbnRailGroupLabel" style={{ color: group.accent }}>
+          {group.label}
+        </div>
+        {groupLessons.map((lesson) => {
+          const active = lesson.part === currentPart;
+          return (
+            <Link
+              key={lesson.href}
+              href={lesson.href}
+              aria-current={active ? "page" : undefined}
+              className={`sbnRailLink${active ? " sbnRailLinkActive" : ""}`}
+              style={active ? { borderLeftColor: group.accent, color: group.accent } : {}}
+            >
+              <span className="sbnRailNum">{String(lesson.part).padStart(2, "0")}</span>
+              <span>{lesson.title}</span>
+            </Link>
+          );
+        })}
+      </div>
+    );
+  });
+
   return (
-    <aside className="sbnRail" aria-label="Chapter contents">
-      <div className="sbnRailTitle">{title}</div>
-      {groups.map((group) => {
-        const groupLessons = lessons.filter(
-          (l) => l.part >= group.from && l.part <= group.to
-        );
-        if (groupLessons.length === 0) return null;
-        return (
-          <div key={group.label} className="sbnRailGroup">
-            <div className="sbnRailGroupLabel" style={{ color: group.accent }}>
-              {group.label}
-            </div>
-            {groupLessons.map((lesson) => {
-              const active = lesson.part === currentPart;
-              return (
-                <Link
-                  key={lesson.href}
-                  href={lesson.href}
-                  aria-current={active ? "page" : undefined}
-                  className={`sbnRailLink${active ? " sbnRailLinkActive" : ""}`}
-                  style={active ? { borderLeftColor: group.accent, color: group.accent } : {}}
-                >
-                  <span className="sbnRailNum">{String(lesson.part).padStart(2, "0")}</span>
-                  <span>{lesson.title}</span>
-                </Link>
-              );
-            })}
+    <>
+      {/* Desktop sticky rail */}
+      <aside className="sbnRail" aria-label="Chapter contents">
+        <div className="sbnRailTitle">{title}</div>
+        {groupedList}
+      </aside>
+
+      {/* Mobile sticky drawer — hidden at desktop, order:-1 puts it above canvas in single-col grid */}
+      <nav className="sbnMobileContents" aria-label="Chapter contents">
+        <details className="sbnMobileContentsWrap">
+          <summary className="sbnMobileContentsSummary">
+            <span className="sbnMobileCLabel">{title}</span>
+            <span className="sbnMobileCPos">
+              {String(currentPart).padStart(2, "0")}&thinsp;/&thinsp;{String(lessons.length).padStart(2, "0")}
+            </span>
+            <span className="sbnMobileCChevron" aria-hidden="true">▾</span>
+          </summary>
+          <div className="sbnMobileContentsBody">
+            {groupedList}
           </div>
-        );
-      })}
-    </aside>
+        </details>
+      </nav>
+    </>
   );
 }

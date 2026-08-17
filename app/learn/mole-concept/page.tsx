@@ -105,11 +105,11 @@ export default function MoleConceptNotes() {
             <Step n={2}>{renderChemistry("Each CO₂ has 2 O atoms → moles of O atoms = 0.2 × 2 = 0.4 mol")}</Step>
             <Step n={3}>{renderChemistry("O atoms = 0.4 × 6.022×10²³ = 2.409×10²³")}</Step>
           </div>
-          <div className="mt-4 rounded-xl border border-emerald-500/25 bg-emerald-500/[0.08] px-4 py-3">
+          <div className="mt-4 rounded-lg border border-emerald-500/25 bg-emerald-500/[0.08] px-4 py-3">
             <span className="text-xs font-bold uppercase text-emerald-300">Final answer</span>
             <div className="mt-0.5 font-black text-emerald-200">{renderChemistry("≈ 2.41×10²³ oxygen atoms")}</div>
           </div>
-          <div className="mt-3 rounded-xl border border-amber-400/25 bg-amber-400/[0.07] px-4 py-2.5">
+          <div className="mt-3 rounded-lg border border-amber-400/25 bg-amber-400/[0.07] px-4 py-2.5">
             <span className="text-xs font-bold uppercase text-amber-300">JEE shortcut</span>
             <p className="mt-0.5 text-sm text-white/75">Atoms of an element = (given mass ÷ molar mass) × (atomicity) × Nₐ — chain it in one line.</p>
           </div>

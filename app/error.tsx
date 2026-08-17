@@ -36,13 +36,13 @@ export default function Error({
       <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
         <button
           onClick={() => reset()}
-          className="rounded-xl border border-cyan-400/30 bg-cyan-500/10 px-5 py-2.5 text-sm font-bold text-[var(--text-muted)] transition hover:bg-cyan-500/20"
+          className="rounded-lg border border-cyan-400/30 bg-cyan-500/10 px-5 py-2.5 text-sm font-bold text-[var(--text-muted)] transition hover:bg-cyan-500/20"
         >
           Try again
         </button>
         <Link
           href="/"
-          className="rounded-xl border border-white/[0.08] bg-white/[0.03] px-5 py-2.5 text-sm font-semibold text-white/70 transition hover:text-white"
+          className="rounded-lg border border-white/[0.08] bg-white/[0.03] px-5 py-2.5 text-sm font-semibold text-white/70 transition hover:text-white"
         >
           Back to home
         </Link>

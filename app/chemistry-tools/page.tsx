@@ -36,7 +36,7 @@ export default function ChemistryToolsPage() {
         <div className="mx-auto max-w-5xl">
           <p className="mb-2 text-xs font-bold uppercase tracking-[0.3em] text-[var(--text-muted)]">Learn</p>
           <h1 className="text-3xl font-black tracking-tight sm:text-4xl">Chemistry Tools</h1>
-          <p className="mt-2 max-w-2xl text-zinc-400">
+          <p className="mt-2 max-w-2xl text-[var(--text-muted)]">
             The reference tools alongside your chapter notes — periodic table, knowledge vault, molecule
             explorer, reagents, important orders and colours.
           </p>
@@ -55,7 +55,7 @@ export default function ChemistryToolsPage() {
                 <Icon className="h-5 w-5 text-[var(--accent)]" />
               </span>
               <div className="mt-3 font-bold text-white">{title}</div>
-              <div className="mt-1 flex-1 text-sm text-zinc-400">{description}</div>
+              <div className="mt-1 flex-1 text-sm text-[var(--text-muted)]">{description}</div>
               <div className="mt-3 text-sm font-semibold text-[var(--accent)]">
                 Open <span className="inline-block transition group-hover:translate-x-1">→</span>
               </div>
@@ -64,7 +64,7 @@ export default function ChemistryToolsPage() {
         </div>
 
         <div className="mt-12 text-center">
-          <Link href="/programs" className="text-sm text-zinc-500 transition hover:text-white">
+          <Link href="/programs" className="text-sm text-[var(--text-muted)] transition hover:text-white">
             ← All programs
           </Link>
         </div>

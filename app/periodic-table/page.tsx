@@ -100,11 +100,11 @@ export default function PeriodicTablePage() {
                 onClick={() => setMode(m.id)}
                 className={`group flex items-center gap-2.5 rounded-lg border px-3 py-2.5 text-left transition ${
                   on
-                    ? "border-[var(--border)]/50 bg-cyan-500/10 shadow-[0_0_24px_-6px_rgba(34,211,238,0.5)]"
+                    ? "border-[var(--accent)]/30 bg-[var(--accent)]/10"
                     : "border-white/[0.07] bg-[var(--surface)] hover:border-white/20"
                 }`}
               >
-                <span className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-lg ${on ? "bg-cyan-500/20" : "bg-white/[0.04]"}`}>
+                <span className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-lg ${on ? "bg-[var(--accent)]/15" : "bg-white/[0.04]"}`}>
                   <Icon className={`h-4 w-4 ${on ? "text-[var(--text-muted)]" : "text-white/50"}`} />
                 </span>
                 <span className="min-w-0">
@@ -136,7 +136,7 @@ export default function PeriodicTablePage() {
                 key={v.id}
                 onClick={() => setTrendProp(v.id)}
                 className={`text-[11px] font-semibold px-3 py-1.5 rounded-full transition ${
-                  trendProp === v.id ? "bg-cyan-500 text-black" : "bg-[var(--surface)] border border-white/[0.06] text-gray-400 hover:text-white"
+                  trendProp === v.id ? "bg-[var(--accent)] text-[var(--background)]" : "bg-[var(--surface)] border border-white/[0.06] text-gray-400 hover:text-white"
                 }`}
               >
                 {v.label}

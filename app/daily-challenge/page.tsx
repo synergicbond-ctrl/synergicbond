@@ -75,7 +75,7 @@ export default function DailyChallengePage() {
           <div className="flex gap-2">
             {["NEET", "JEE Main", "JEE Advanced"].map((e) => (
               <button key={e} onClick={() => { setExam(e); loadChallenge(e); }}
-                className={`rounded-xl px-3 py-1.5 text-sm font-semibold transition ${exam === e ? "bg-cyan-500 text-black" : "border border-white/10 bg-white/5 text-white/70 hover:bg-white/10"}`}>
+                className={`rounded-lg px-3 py-1.5 text-sm font-semibold transition ${exam === e ? "bg-cyan-500 text-black" : "border border-white/10 bg-white/5 text-white/70 hover:bg-white/10"}`}>
                 {e}
               </button>
             ))}
@@ -126,7 +126,7 @@ export default function DailyChallengePage() {
                 }
                 return (
                   <button key={key} onClick={() => !submitted && setSelected(key)}
-                    className={`w-full rounded-xl p-4 text-left transition ${style}`}>
+                    className={`w-full rounded-lg p-4 text-left transition ${style}`}>
                     <span className="font-bold text-[var(--accent)] mr-3">{key})</span>
                     <span className="text-white/90">{value as string}</span>
                   </button>
@@ -142,7 +142,7 @@ export default function DailyChallengePage() {
               </button>
             )}
             {showHint && !submitted && (
-              <div className="rounded-xl border border-violet-500/20 bg-violet-950/20 p-4 text-[var(--text-muted)] text-sm">
+              <div className="rounded-lg border border-violet-500/20 bg-violet-950/20 p-4 text-[var(--text-muted)] text-sm">
                 {challenge.hint}
               </div>
             )}
@@ -167,7 +167,7 @@ export default function DailyChallengePage() {
             )}
 
             <button onClick={() => loadChallenge()}
-              className="w-full rounded-xl border border-white/10 py-3 text-white/50 hover:text-white text-sm transition">
+              className="w-full rounded-lg border border-white/10 py-3 text-white/50 hover:text-white text-sm transition">
               🔄 Generate New Challenge
             </button>
           </div>

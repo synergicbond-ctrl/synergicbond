@@ -2264,7 +2264,7 @@ function Card({
     amber: "border-amber-300/20 bg-amber-300/[.055]",
     emerald: "border-emerald-300/20 bg-emerald-400/[.05]",
   }[tone];
-  return <section className={`rounded-2xl border p-5 sm:p-6 ${classes}`}>{children}</section>;
+  return <section className={`rounded-lg border p-5 sm:p-6 ${classes}`}>{children}</section>;
 }
 
 function FormulaList({ formulas }: { formulas: string[] }) {

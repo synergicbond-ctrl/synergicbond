@@ -45,7 +45,7 @@ export default function SigFigDecisionCards() {
   const selectedRuleObj = rules.find(r => r.operation === selectedRule) || rules[0];
 
   return (
-    <div className="p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 shadow-sm space-y-6">
+    <div className="p-6 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 shadow-sm space-y-6">
       <div>
         <h2 className="text-2xl font-bold mb-2 text-slate-900 dark:text-white">
           Significant Figures Decision Tree
@@ -78,7 +78,7 @@ export default function SigFigDecisionCards() {
       </div>
 
       {/* Rule detail */}
-      <div className={`p-6 rounded-2xl border-2 ${selectedRuleObj.bgColor} ${selectedRuleObj.borderColor}`}>
+      <div className={`p-6 rounded-lg border-2 ${selectedRuleObj.bgColor} ${selectedRuleObj.borderColor}`}>
         <div className="space-y-4">
           <div>
             <h3 className={`text-xl font-bold ${selectedRuleObj.color} mb-2`}>

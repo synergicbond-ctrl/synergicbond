@@ -46,8 +46,8 @@ export default async function ClassDashboard({ params }: { params: Promise<{ boa
   const scopedHref = (href: string) => BOARD_SCOPE_REMAP[href] ?? href;
 
   return (
-    <main className="min-h-screen bg-[radial-gradient(circle_at_88%_0%,rgba(139,92,246,0.14),transparent_25%),radial-gradient(circle_at_8%_7%,rgba(34,211,238,0.1),transparent_28%),#0B1220] text-white">
-      <div className="border-b border-cyan-400/15 bg-[linear-gradient(118deg,rgba(245,158,11,0.12),rgba(34,211,238,0.06),rgba(139,92,246,0.1))] px-6 py-12 shadow-[0_22px_60px_-48px_rgba(34,211,238,0.75)]">
+    <main className="min-h-screen bg-[var(--background)] text-white">
+      <div className="border-b border-[var(--accent)]/30 bg-[linear-gradient(118deg,rgba(245,158,11,0.12),rgba(34,211,238,0.06),rgba(139,92,246,0.1))] px-6 py-12 shadow-[0_22px_60px_-48px_rgba(34,211,238,0.75)]">
         <div className="mx-auto max-w-5xl">
           <nav className="mb-4 text-sm text-white/45">
             <Link href="/dashboard/boards" className="hover:text-white">School Boards</Link>
@@ -64,19 +64,19 @@ export default async function ClassDashboard({ params }: { params: Promise<{ boa
       <div className="mx-auto max-w-5xl space-y-6 px-6 py-10">
         {/* Primary entry — the Full Syllabus Dashboard hub */}
         <Link href={`${base}/full-syllabus`}
-          className="flex items-center justify-between rounded-2xl border border-cyan-400/30 bg-[linear-gradient(112deg,rgba(34,211,238,0.16),rgba(59,130,246,0.08),rgba(139,92,246,0.12))] p-5 shadow-[0_24px_60px_-48px_rgba(34,211,238,0.88)] transition hover:-translate-y-0.5 hover:border-cyan-300/70">
+          className="flex items-center justify-between rounded-lg border border-[var(--accent)]/30 bg-[linear-gradient(112deg,rgba(34,211,238,0.16),rgba(59,130,246,0.08),rgba(139,92,246,0.12))] p-5 shadow-[0_24px_60px_-48px_rgba(34,211,238,0.88)] transition hover:-translate-y-0.5 hover:border-[var(--accent)]/30">
           <div>
-            <div className="text-xs font-bold uppercase tracking-wider text-cyan-300">Start here</div>
+            <div className="text-xs font-bold uppercase tracking-wider text-[var(--accent)]">Start here</div>
             <div className="mt-0.5 text-lg font-black text-white">Full Syllabus Dashboard</div>
             <p className="text-sm text-white/55">Notes, practice, PYQs, mock tests, custom test generator & analytics — all chapters.</p>
           </div>
-          <span className="text-2xl text-cyan-300">→</span>
+          <span className="text-2xl text-[var(--accent)]">→</span>
         </Link>
 
         {basicConcepts?.learnHref && (
           <Link
             href={basicConcepts.learnHref}
-            className="flex items-center justify-between rounded-2xl border border-amber-400/30 bg-[linear-gradient(112deg,rgba(251,191,36,0.16),rgba(251,146,60,0.08),rgba(244,63,94,0.11))] p-5 shadow-[0_24px_60px_-48px_rgba(251,191,36,0.82)] transition hover:-translate-y-0.5 hover:border-amber-300/70"
+            className="flex items-center justify-between rounded-lg border border-amber-400/30 bg-[linear-gradient(112deg,rgba(251,191,36,0.16),rgba(251,146,60,0.08),rgba(244,63,94,0.11))] p-5 shadow-[0_24px_60px_-48px_rgba(251,191,36,0.82)] transition hover:-translate-y-0.5 hover:border-amber-300/70"
           >
             <div>
               <div className="text-xs font-bold uppercase tracking-wider text-amber-300">Class 11 chapter notes</div>
@@ -90,21 +90,21 @@ export default async function ClassDashboard({ params }: { params: Promise<{ boa
         {CLASS_DASHBOARD_SECTIONS.map((section) => {
           const route = SECTION_ROUTES[section.key]?.(base);
           return (
-          <section key={section.key} className="relative overflow-hidden rounded-2xl border border-white/[0.08] bg-[linear-gradient(135deg,rgba(255,255,255,0.04),transparent_40%),rgba(17,24,39,0.8)] p-5 shadow-[0_22px_55px_-45px_rgba(0,0,0,0.95)]">
+          <section key={section.key} className="relative overflow-hidden rounded-lg border border-white/[0.08] bg-[linear-gradient(135deg,rgba(255,255,255,0.04),transparent_40%),rgba(17,24,39,0.8)] p-5 shadow-[0_22px_55px_-45px_rgba(0,0,0,0.95)]">
             <span aria-hidden="true" className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-cyan-400 via-violet-400 to-amber-300 opacity-55" />
             <div className="mb-3 flex items-start justify-between gap-3">
               <div>
                 <h2 className="text-lg font-black text-white">{section.label}</h2>
                 <p className="mt-0.5 text-sm text-white/50">{section.blurb}</p>
               </div>
-              {route && <Link href={route} className="shrink-0 rounded-lg border border-cyan-400/40 bg-cyan-500/10 px-3 py-1.5 text-xs font-bold text-cyan-300 hover:bg-cyan-500/20">Open →</Link>}
+              {route && <Link href={route} className="shrink-0 rounded-lg border border-[var(--accent)]/30 bg-[var(--accent)]/10 px-3 py-1.5 text-xs font-bold text-[var(--accent)] hover:bg-[var(--accent)]/10">Open →</Link>}
             </div>
             <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
               {section.items.map((it) =>
                 it.status === "available" && it.href ? (
                   <Link key={it.label} href={scopedHref(it.href)}
-                    className="flex items-center justify-between rounded-lg border border-white/[0.08] bg-[#0B1220] px-3 py-2.5 text-sm font-semibold text-white/85 transition hover:border-cyan-400/40 hover:text-cyan-200">
-                    {it.label}<span className="text-cyan-400">→</span>
+                    className="flex items-center justify-between rounded-lg border border-white/[0.08] bg-[#0B1220] px-3 py-2.5 text-sm font-semibold text-white/85 transition hover:border-[var(--accent)]/30 hover:text-[var(--accent)]">
+                    {it.label}<span className="text-[var(--accent)]">→</span>
                   </Link>
                 ) : (
                   <div key={it.label} className="flex items-center justify-between rounded-lg border border-white/[0.05] bg-white/[0.01] px-3 py-2.5 text-sm text-white/40">
@@ -117,8 +117,8 @@ export default async function ClassDashboard({ params }: { params: Promise<{ boa
 
             {/* Custom Test Paper Generator — now live under Full Syllabus */}
             {section.key === "full-syllabus" && (
-              <Link href={`${base}/custom-test`} className="mt-3 block rounded-xl border border-cyan-400/25 bg-cyan-500/[0.06] p-3 transition hover:border-cyan-400/50">
-                <p className="text-[11px] font-bold uppercase tracking-wider text-cyan-300">Custom Test Paper Generator — live →</p>
+              <Link href={`${base}/custom-test`} className="mt-3 block rounded-xl border border-[var(--accent)]/30 bg-[var(--accent)]/10[0.06] p-3 transition hover:border-[var(--accent)]/30">
+                <p className="text-[11px] font-bold uppercase tracking-wider text-[var(--accent)]">Custom Test Paper Generator — live →</p>
                 <p className="mt-1 text-xs text-white/60">
                   Pick chapters · difficulty · count, add an AI subjective section, and get a board-style paper with per-student
                   non-repetition and a live performance report. Question types:

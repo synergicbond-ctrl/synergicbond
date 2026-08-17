@@ -58,7 +58,7 @@ export default function DipoleMomentIndexPage() {
               <a
                 key={item.part}
                 href={`/learn/jee-advanced/chemical-bonding/dipole-moment/parts/${item.slug}`}
-                className="group rounded-3xl border border-white/10 bg-slate-950/70 p-5 transition hover:-translate-y-0.5 hover:border-cyan-300/25 hover:bg-white/[0.04] sm:p-6"
+                className="group rounded-lg border border-white/10 bg-slate-950/70 p-5 transition hover:-translate-y-0.5 hover:border-cyan-300/25 hover:bg-white/[0.04] sm:p-6"
               >
                 <div className="flex items-start justify-between gap-4">
                   <span className="font-mono text-sm font-bold text-cyan-300">{String(item.part).padStart(2, "0")}</span>

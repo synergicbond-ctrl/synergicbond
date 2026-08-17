@@ -35,7 +35,7 @@ function Section({
   return (
     <section className="rounded-[2rem] border border-white/10 bg-slate-950/80 p-5 shadow-2xl shadow-black/20 backdrop-blur md:p-8">
       <div className="flex items-start gap-4">
-        <span className="grid h-10 w-10 shrink-0 place-items-center rounded-2xl border border-cyan-300/30 bg-cyan-300/10 text-sm font-black text-cyan-200">
+        <span className="grid h-10 w-10 shrink-0 place-items-center rounded-lg border border-cyan-300/30 bg-cyan-300/10 text-sm font-black text-cyan-200">
           {index}
         </span>
         <div>
@@ -58,7 +58,7 @@ function ConceptLens({
   tone?: Tone;
 }) {
   return (
-    <aside className={`rounded-2xl border p-5 ${toneMap[tone]}`}>
+    <aside className={`rounded-lg border p-5 ${toneMap[tone]}`}>
       <p className="text-xs font-black uppercase tracking-[0.2em]">Synergic Bond Concept Lens</p>
       <h3 className="mt-2 text-lg font-black text-white">{title}</h3>
       <div className="mt-2 text-sm leading-6 text-slate-200">{children}</div>
@@ -74,7 +74,7 @@ function Formula({
   children: React.ReactNode;
 }) {
   return (
-    <div className="overflow-x-auto rounded-2xl border border-cyan-300/20 bg-black/30 p-4 text-center">
+    <div className="overflow-x-auto rounded-lg border border-cyan-300/20 bg-black/30 p-4 text-center">
       {label ? (
         <p className="mb-2 text-xs font-black uppercase tracking-[0.2em] text-cyan-300">{label}</p>
       ) : null}
@@ -404,7 +404,7 @@ function LimitationsGrid() {
   return (
     <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
       {items.map((item) => (
-        <article key={item.title} className={`rounded-3xl border p-5 ${toneMap[item.tone]}`}>
+        <article key={item.title} className={`rounded-lg border p-5 ${toneMap[item.tone]}`}>
           <h3 className="text-lg font-black text-white">{item.title}</h3>
           <p className="mt-3 text-sm leading-6 text-slate-200">{item.text}</p>
         </article>
@@ -424,7 +424,7 @@ function SpontaneityMatrix() {
   ];
 
   return (
-    <div className="overflow-x-auto rounded-2xl border border-white/10">
+    <div className="overflow-x-auto rounded-lg border border-white/10">
       <table className="min-w-full border-collapse text-left text-sm">
         <thead className="bg-slate-900">
           <tr>
@@ -487,7 +487,7 @@ function RetainedFiveRouteExample() {
       </div>
 
       <div className="mt-6 space-y-5">
-        <div className="rounded-2xl border border-emerald-300/20 bg-emerald-300/[0.05] p-5">
+        <div className="rounded-lg border border-emerald-300/20 bg-emerald-300/[0.05] p-5">
           <p className="text-xs font-black uppercase tracking-[0.2em] text-emerald-300">
             Route 1 — reversible isothermal expansion
           </p>
@@ -507,7 +507,7 @@ function RetainedFiveRouteExample() {
           </div>
         </div>
 
-        <div className="rounded-2xl border border-cyan-300/20 bg-cyan-300/[0.05] p-5">
+        <div className="rounded-lg border border-cyan-300/20 bg-cyan-300/[0.05] p-5">
           <p className="text-xs font-black uppercase tracking-[0.2em] text-cyan-300">
             Route 2 — reversible adiabatic expansion
           </p>
@@ -527,7 +527,7 @@ function RetainedFiveRouteExample() {
           </div>
         </div>
 
-        <div className="rounded-2xl border border-violet-300/20 bg-violet-300/[0.05] p-5">
+        <div className="rounded-lg border border-violet-300/20 bg-violet-300/[0.05] p-5">
           <p className="text-xs font-black uppercase tracking-[0.2em] text-violet-300">
             Route 3 — isothermal and adiabatic
           </p>
@@ -547,7 +547,7 @@ function RetainedFiveRouteExample() {
           </div>
         </div>
 
-        <div className="rounded-2xl border border-rose-300/20 bg-rose-300/[0.05] p-5">
+        <div className="rounded-lg border border-rose-300/20 bg-rose-300/[0.05] p-5">
           <p className="text-xs font-black uppercase tracking-[0.2em] text-rose-300">
             Route 4 — adiabatic expansion against constant 0.200 MPa
           </p>
@@ -567,7 +567,7 @@ function RetainedFiveRouteExample() {
           </div>
         </div>
 
-        <div className="rounded-2xl border border-sky-300/20 bg-sky-300/[0.05] p-5">
+        <div className="rounded-lg border border-sky-300/20 bg-sky-300/[0.05] p-5">
           <p className="text-xs font-black uppercase tracking-[0.2em] text-sky-300">
             Route 5 — isothermal expansion against constant 0.200 MPa
           </p>
@@ -599,7 +599,7 @@ function RetainedFiveRouteExample() {
 function PMMGrid() {
   return (
     <div className="grid gap-4 md:grid-cols-2">
-      <article className="rounded-3xl border border-rose-300/25 bg-rose-300/[0.06] p-5">
+      <article className="rounded-lg border border-rose-300/25 bg-rose-300/[0.06] p-5">
         <Chip tone="rose">PMM OF THE FIRST KIND</Chip>
         <h3 className="mt-4 text-xl font-black text-white">Creates work without equivalent energy input</h3>
         <p className="mt-3 text-sm leading-6 text-slate-200">
@@ -610,7 +610,7 @@ function PMMGrid() {
         </Formula>
       </article>
 
-      <article className="rounded-3xl border border-violet-300/25 bg-violet-300/[0.06] p-5">
+      <article className="rounded-lg border border-violet-300/25 bg-violet-300/[0.06] p-5">
         <Chip tone="violet">PMM OF THE SECOND KIND</Chip>
         <h3 className="mt-4 text-xl font-black text-white">Obeys energy balance but violates natural direction</h3>
         <p className="mt-3 text-sm leading-6 text-slate-200">
@@ -633,7 +633,7 @@ function ThermodynamicsVsKinetics() {
   ];
 
   return (
-    <div className="overflow-x-auto rounded-2xl border border-white/10">
+    <div className="overflow-x-auto rounded-lg border border-white/10">
       <table className="min-w-full border-collapse text-left text-sm">
         <thead className="bg-slate-900">
           <tr>
@@ -763,7 +763,7 @@ function ProblemLadder() {
   return (
     <div className="grid gap-4 lg:grid-cols-2">
       {problems.map((item) => (
-        <article key={item.title} className="group rounded-2xl border border-white/10 bg-slate-900/70 p-5">
+        <article key={item.title} className="group rounded-lg border border-white/10 bg-slate-900/70 p-5">
           <h3 className=" font-black text-white">
             <span className="mr-2 text-amber-300">◆</span>
             {item.title}
@@ -824,7 +824,7 @@ const traps = [
 
 function TrapTable() {
   return (
-    <div className="overflow-x-auto rounded-2xl border border-white/10">
+    <div className="overflow-x-auto rounded-lg border border-white/10">
       <table className="min-w-full border-collapse text-left text-sm">
         <thead className="bg-slate-900">
           <tr>
@@ -876,7 +876,7 @@ function DailyLifeGrid() {
   return (
     <div className="grid gap-4 md:grid-cols-2">
       {items.map((item) => (
-        <article key={item.title} className={`rounded-3xl border p-5 ${toneMap[item.tone]}`}>
+        <article key={item.title} className={`rounded-lg border p-5 ${toneMap[item.tone]}`}>
           <h3 className="text-xl font-black text-white">{item.title}</h3>
           <p className="mt-2 text-sm leading-6 text-slate-200">{item.text}</p>
         </article>
@@ -1026,19 +1026,19 @@ export default function ThermodynamicsPart13() {
           </p>
 
           <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-            <article className="rounded-2xl border border-amber-300/20 bg-amber-300/[0.05] p-5">
+            <article className="rounded-lg border border-amber-300/20 bg-amber-300/[0.05] p-5">
               <p className="text-xs font-black uppercase tracking-[0.2em] text-amber-300">Thermal</p>
               <p className="mt-2 text-sm leading-6 text-slate-200">Temperature differences disappear.</p>
             </article>
-            <article className="rounded-2xl border border-cyan-300/20 bg-cyan-300/[0.05] p-5">
+            <article className="rounded-lg border border-cyan-300/20 bg-cyan-300/[0.05] p-5">
               <p className="text-xs font-black uppercase tracking-[0.2em] text-cyan-300">Mechanical</p>
               <p className="mt-2 text-sm leading-6 text-slate-200">Unbalanced pressures and forces vanish.</p>
             </article>
-            <article className="rounded-2xl border border-violet-300/20 bg-violet-300/[0.05] p-5">
+            <article className="rounded-lg border border-violet-300/20 bg-violet-300/[0.05] p-5">
               <p className="text-xs font-black uppercase tracking-[0.2em] text-violet-300">Chemical</p>
               <p className="mt-2 text-sm leading-6 text-slate-200">No net reaction progress remains.</p>
             </article>
-            <article className="rounded-2xl border border-emerald-300/20 bg-emerald-300/[0.05] p-5">
+            <article className="rounded-lg border border-emerald-300/20 bg-emerald-300/[0.05] p-5">
               <p className="text-xs font-black uppercase tracking-[0.2em] text-emerald-300">Phase</p>
               <p className="mt-2 text-sm leading-6 text-slate-200">No net transfer between stable coexisting phases.</p>
             </article>
@@ -1060,13 +1060,13 @@ export default function ThermodynamicsPart13() {
 
         <Section index="07" title="Exothermicity is not a spontaneity criterion">
           <div className="grid gap-4 md:grid-cols-2">
-            <article className="rounded-3xl border border-rose-300/20 bg-rose-300/[0.05] p-5">
+            <article className="rounded-lg border border-rose-300/20 bg-rose-300/[0.05] p-5">
               <h3 className="text-xl font-black text-white">Exothermic but non-spontaneous</h3>
               <p className="mt-3 text-sm leading-6 text-slate-200">
                 Freezing releases heat, yet liquid water does not spontaneously freeze above its melting temperature at the stated pressure.
               </p>
             </article>
-            <article className="rounded-3xl border border-emerald-300/20 bg-emerald-300/[0.05] p-5">
+            <article className="rounded-lg border border-emerald-300/20 bg-emerald-300/[0.05] p-5">
               <h3 className="text-xl font-black text-white">Endothermic but spontaneous</h3>
               <p className="mt-3 text-sm leading-6 text-slate-200">
                 Ice melts spontaneously above its melting temperature even though melting absorbs heat.
@@ -1092,7 +1092,7 @@ export default function ThermodynamicsPart13() {
               ["Conversion limit", "why heat cannot be fully converted into cyclic work"],
               ["Equilibrium criterion", "where spontaneous change stops"],
             ].map(([title, text], index) => (
-              <article key={title} className="rounded-2xl border border-white/10 bg-slate-900/70 p-5">
+              <article key={title} className="rounded-lg border border-white/10 bg-slate-900/70 p-5">
                 <p className="text-xs font-black uppercase tracking-[0.2em] text-cyan-300">Need {index + 1}</p>
                 <h3 className="mt-2 text-lg font-black text-white">{title}</h3>
                 <p className="mt-2 text-sm leading-6 text-slate-300">{text}</p>
@@ -1140,7 +1140,7 @@ export default function ThermodynamicsPart13() {
               ["Kinetics", "rate and activation barrier"],
               ["Equilibrium", "zero macroscopic driving force"],
             ].map(([term, meaning]) => (
-              <div key={term} className="rounded-2xl border border-white/10 bg-black/25 p-4">
+              <div key={term} className="rounded-lg border border-white/10 bg-black/25 p-4">
                 <p className="font-black text-white">{term}</p>
                 <p className="mt-1 text-sm leading-6 text-slate-300">{meaning}</p>
               </div>

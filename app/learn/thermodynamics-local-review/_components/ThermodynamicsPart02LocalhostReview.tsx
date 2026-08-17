@@ -43,7 +43,7 @@ function Section({
   return (
     <section className="rounded-[2rem] border border-white/10 bg-slate-950/80 p-5 shadow-2xl shadow-black/20 backdrop-blur md:p-8">
       <div className="flex items-start gap-4">
-        <span className="grid h-11 w-11 shrink-0 place-items-center rounded-2xl border border-cyan-300/30 bg-cyan-300/10 text-sm font-black text-cyan-200">
+        <span className="grid h-11 w-11 shrink-0 place-items-center rounded-lg border border-cyan-300/30 bg-cyan-300/10 text-sm font-black text-cyan-200">
           {index}
         </span>
         <div>
@@ -76,7 +76,7 @@ function Lens({
   label?: string;
 }) {
   return (
-    <aside className={`rounded-2xl border p-5 ${toneStyles[tone]}`}>
+    <aside className={`rounded-lg border p-5 ${toneStyles[tone]}`}>
       <p className="text-xs font-black uppercase tracking-[0.2em]">{label}</p>
       <h3 className="mt-2 text-lg font-black text-white">{title}</h3>
       <div className="mt-2 text-sm leading-6 text-slate-200">{children}</div>
@@ -92,7 +92,7 @@ function Formula({
   children: React.ReactNode;
 }) {
   return (
-    <div className="overflow-x-auto rounded-2xl border border-cyan-300/20 bg-black/30 p-4 text-center">
+    <div className="overflow-x-auto rounded-lg border border-cyan-300/20 bg-black/30 p-4 text-center">
       <p className="mb-2 text-xs font-black uppercase tracking-[0.2em] text-cyan-300">
         {label}
       </p>
@@ -542,7 +542,7 @@ const phaseRows = [
 
 function PhaseTable() {
   return (
-    <div className="overflow-x-auto rounded-2xl border border-white/10">
+    <div className="overflow-x-auto rounded-lg border border-white/10">
       <table className="min-w-[900px] border-collapse text-left text-sm">
         <thead className="bg-slate-900">
           <tr>
@@ -658,7 +658,7 @@ function PropertyAtlas() {
         {intensiveGroups.map((group) => (
           <article
             key={group.title}
-            className={`rounded-3xl border p-5 ${toneStyles[group.tone]}`}
+            className={`rounded-lg border p-5 ${toneStyles[group.tone]}`}
           >
             <h3 className="text-lg font-black text-white">{group.title}</h3>
             <div className="mt-4 grid gap-2 sm:grid-cols-2">
@@ -672,7 +672,7 @@ function PropertyAtlas() {
         ))}
       </div>
 
-      <article className="rounded-3xl border border-rose-400/25 bg-rose-400/[0.06] p-5">
+      <article className="rounded-lg border border-rose-400/25 bg-rose-400/[0.06] p-5">
         <h3 className="text-lg font-black text-white">Extensive property atlas</h3>
         <div className="mt-4 grid gap-2 sm:grid-cols-2 lg:grid-cols-4">
           {extensiveItems.map((item) => (
@@ -736,7 +736,7 @@ const ambiguousRows = [
 
 function AmbiguousTable() {
   return (
-    <div className="overflow-x-auto rounded-2xl border border-white/10">
+    <div className="overflow-x-auto rounded-lg border border-white/10">
       <table className="min-w-[1000px] border-collapse text-left text-sm">
         <thead className="bg-slate-900">
           <tr>
@@ -774,7 +774,7 @@ const functionRows = [
 
 function FunctionTable() {
   return (
-    <div className="overflow-x-auto rounded-2xl border border-white/10">
+    <div className="overflow-x-auto rounded-lg border border-white/10">
       <table className="min-w-[850px] border-collapse text-left text-sm">
         <thead className="bg-slate-900">
           <tr>
@@ -824,7 +824,7 @@ function ExactnessExamples() {
   return (
     <div className="grid gap-4 lg:grid-cols-2">
       {exactnessExamples.map((item) => (
-        <article key={item.form} className="rounded-2xl border border-white/10 bg-slate-900/70 p-5">
+        <article key={item.form} className="rounded-lg border border-white/10 bg-slate-900/70 p-5">
           <p className="font-mono text-lg font-black text-white">{item.form}</p>
           <p className="mt-3 text-sm leading-6 text-slate-300">{item.test}</p>
           <p className="mt-3 rounded-xl border border-emerald-300/20 bg-emerald-300/[0.06] p-3 text-sm font-semibold text-emerald-200">
@@ -957,7 +957,7 @@ function ProblemLadder() {
       {problems.map((problem, index) => (
         <article
           key={problem.title}
-          className="group rounded-2xl border border-white/10 bg-slate-900/70 p-5"
+          className="group rounded-lg border border-white/10 bg-slate-900/70 p-5"
         >
           <h3 className=" font-black text-white">
             <span className="mr-2 text-amber-300">◆</span>
@@ -1011,7 +1011,7 @@ function DailyLifeGrid() {
       {cases.map((item) => (
         <article
           key={item.title}
-          className={`rounded-3xl border p-5 ${toneStyles[item.tone]}`}
+          className={`rounded-lg border p-5 ${toneStyles[item.tone]}`}
         >
           <h3 className="text-xl font-black text-white">{item.title}</h3>
           <p className="mt-2 text-sm leading-6 text-slate-200">{item.text}</p>
@@ -1341,7 +1341,7 @@ export default function ThermodynamicsPart02LocalhostReview() {
             ].map(([term, meaning]) => (
               <div
                 key={term}
-                className="rounded-2xl border border-white/10 bg-black/25 p-4"
+                className="rounded-lg border border-white/10 bg-black/25 p-4"
               >
                 <p className="font-black text-white">{term}</p>
                 <p className="mt-1 text-sm leading-6 text-slate-300">{meaning}</p>

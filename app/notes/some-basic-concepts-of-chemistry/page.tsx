@@ -92,7 +92,7 @@ function AnalyticalBalance() {
 
 function VolumeEquivalence() {
   return (
-    <article className="rounded-2xl border border-slate-700 bg-slate-950/70 p-6 shadow-xl">
+    <article className="rounded-lg border border-slate-700 bg-slate-950/70 p-6 shadow-xl">
       <h3 className="mb-4 text-sm font-black uppercase tracking-widest text-amber-300">
         Volume equivalence
       </h3>
@@ -859,7 +859,7 @@ function InfoCard({ title, children, accent = "cyan" }: { title: string; childre
     purple: "border-purple-400/25 bg-purple-400/[0.045] text-purple-300",
   };
   return (
-    <aside className={`rounded-2xl border p-5 shadow-2xl shadow-black/10 ${accents[accent]}`}>
+    <aside className={`rounded-lg border p-5 shadow-2xl shadow-black/10 ${accents[accent]}`}>
       <h3 className="text-sm font-black uppercase tracking-[0.16em]">{title}</h3>
       <div className="mt-3 text-sm leading-7 text-slate-300 sm:text-base">{children}</div>
     </aside>
@@ -868,7 +868,7 @@ function InfoCard({ title, children, accent = "cyan" }: { title: string; childre
 
 function DataTable({ caption, columns, rows }: { caption: string; columns: string[]; rows: Array<Array<ReactNode>> }) {
   return (
-    <div className="my-6 overflow-x-auto rounded-2xl border border-slate-700/80 bg-slate-950/65 shadow-2xl shadow-black/20">
+    <div className="my-6 overflow-x-auto rounded-lg border border-slate-700/80 bg-slate-950/65 shadow-2xl shadow-black/20">
       <table className="w-full min-w-[760px] border-collapse text-left">
         <caption className="border-b border-slate-700/70 bg-gradient-to-r from-cyan-400/10 via-slate-900 to-purple-400/10 px-5 py-4 text-left text-lg font-black text-white">
           {caption}
@@ -900,7 +900,7 @@ function DataTable({ caption, columns, rows }: { caption: string; columns: strin
 
 function ExemplarProblem({ problem }: { problem: ProblemData }) {
   return (
-    <details className="group overflow-hidden rounded-2xl border border-slate-700/80 bg-gradient-to-br from-slate-900/95 to-slate-950/95 shadow-xl shadow-black/20 transition hover:border-cyan-400/35">
+    <details className="group overflow-hidden rounded-lg border border-slate-700/80 bg-gradient-to-br from-slate-900/95 to-slate-950/95 shadow-xl shadow-black/20 transition hover:border-cyan-400/35">
       <summary className="flex items-start gap-4 border-b border-slate-800/90 p-5 cursor-pointer outline-none focus:ring-2 focus:ring-cyan-400/50">
         <span className="grid h-12 w-12 shrink-0 place-items-center rounded-xl border border-cyan-400/25 bg-cyan-400/10 text-sm font-black text-cyan-300">
           Q{problem.qNumber}
@@ -1016,7 +1016,7 @@ function TransformationCards() {
   return (
     <div className="grid gap-4 lg:grid-cols-3">
       {cards.map((card) => (
-        <article key={card.title} className="rounded-2xl border border-slate-700 bg-slate-900/70 p-5 shadow-lg">
+        <article key={card.title} className="rounded-lg border border-slate-700 bg-slate-900/70 p-5 shadow-lg">
           <svg viewBox="0 0 280 145" className="h-36 w-full" role="img" aria-label={card.title}>
             {card.kind === "milk" && (
               <>
@@ -1071,7 +1071,7 @@ function HistoryTimeline() {
           <span className="z-10 grid h-12 w-12 place-items-center rounded-xl border border-cyan-400/30 bg-slate-950 text-xs font-black text-cyan-300">
             {String(index + 1).padStart(2, "0")}
           </span>
-          <div className="rounded-2xl border border-slate-700/80 bg-slate-900/65 p-4 shadow-md">
+          <div className="rounded-lg border border-slate-700/80 bg-slate-900/65 p-4 shadow-md">
             <span className="text-xs font-black uppercase tracking-[0.15em] text-amber-300">{year}</span>
             <h3 className="mt-1 font-black text-white">{title}</h3>
             <p className="mt-1 leading-7 text-slate-400">{text}</p>
@@ -1084,7 +1084,7 @@ function HistoryTimeline() {
 
 function MatterTree() {
   return (
-    <div className="my-6 rounded-2xl border border-slate-700 bg-slate-950/65 p-5 shadow-lg">
+    <div className="my-6 rounded-lg border border-slate-700 bg-slate-950/65 p-5 shadow-lg">
       <div className="mx-auto max-w-sm rounded-xl border border-cyan-400/35 bg-gradient-to-r from-cyan-400/10 to-purple-400/10 p-4 text-center">
         <b className="text-xl text-white">Matter</b><span className="block text-sm text-slate-400">has mass and occupies space</span>
       </div>
@@ -1121,7 +1121,7 @@ function LawsGallery() {
   return (
     <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-5">
       {laws.map(([title,note,example],index)=>(
-        <article key={title} className="flex min-h-48 flex-col rounded-2xl border border-slate-700 bg-gradient-to-br from-slate-900 to-slate-950 p-5 shadow-lg">
+        <article key={title} className="flex min-h-48 flex-col rounded-lg border border-slate-700 bg-gradient-to-br from-slate-900 to-slate-950 p-5 shadow-lg">
           <span className="text-xs font-black text-cyan-300">0{index+1}</span>
           <h3 className="mt-3 font-black text-white">{title}</h3>
           <p className="mt-2 text-sm leading-6 text-slate-400">{note}</p>
@@ -1134,7 +1134,7 @@ function LawsGallery() {
 
 function MoleBridge() {
   return (
-    <div className="grid items-center gap-4 rounded-2xl border border-slate-700 bg-slate-950/70 p-5 text-center md:grid-cols-[1fr_auto_1fr_auto_1fr] shadow-lg">
+    <div className="grid items-center gap-4 rounded-lg border border-slate-700 bg-slate-950/70 p-5 text-center md:grid-cols-[1fr_auto_1fr_auto_1fr] shadow-lg">
       {[
         ["1", "particle", "atom • molecule • ion"],
         ["mol", "one mole", "$6.022 \\times 10^{23}$"],
@@ -1155,7 +1155,7 @@ function MoleBridge() {
 
 function LimitingReagentVisual() {
   return (
-    <div className="grid gap-5 rounded-2xl border border-slate-700 bg-slate-950/70 p-5 lg:grid-cols-[1fr_auto_1fr] shadow-lg mt-6">
+    <div className="grid gap-5 rounded-lg border border-slate-700 bg-slate-950/70 p-5 lg:grid-cols-[1fr_auto_1fr] shadow-lg mt-6">
       <div>
         <h3 className="font-black text-cyan-300">Before reaction</h3>
         <div className="mt-4 flex flex-wrap gap-2">
@@ -1186,7 +1186,7 @@ function ConcentrationDashboard() {
   return (
     <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
       {cards.map(([title,formula,note])=>(
-        <article key={title} className="rounded-2xl border border-slate-700 bg-gradient-to-br from-slate-900 to-slate-950 p-5 shadow-lg">
+        <article key={title} className="rounded-lg border border-slate-700 bg-gradient-to-br from-slate-900 to-slate-950 p-5 shadow-lg">
           <h3 className="font-black text-cyan-300">{title}</h3>
           <MathContent className="mt-4">{formula}</MathContent>
           <span className="mt-4 inline-block rounded-full border border-purple-400/20 bg-purple-400/10 px-3 py-1 text-xs font-bold text-purple-200">{note}</span>
@@ -1247,7 +1247,7 @@ function ImportanceOfChemistry() {
       </div>
       <div className="grid gap-4 lg:grid-cols-3">
         {items.map((item) => (
-          <article key={item.title} className={`rounded-2xl border p-5 shadow-lg ${accentClasses[item.accent]}`}>
+          <article key={item.title} className={`rounded-lg border p-5 shadow-lg ${accentClasses[item.accent]}`}>
             <div className="flex items-center gap-3">
               <span className="grid h-12 w-12 place-items-center rounded-xl border border-current/25 bg-slate-950/55 text-lg font-black">{item.icon}</span>
               <h4 className="text-lg font-black text-white">{item.title}</h4>
@@ -1275,7 +1275,7 @@ function PhaseTransitionMap() {
   ] as const;
 
   return (
-    <section className="my-8 rounded-2xl border border-slate-700 bg-slate-950/70 p-5 shadow-xl">
+    <section className="my-8 rounded-lg border border-slate-700 bg-slate-950/70 p-5 shadow-xl">
       <div className="mb-5 flex flex-wrap items-end justify-between gap-3">
         <div>
           <Eyebrow>Phase transitions</Eyebrow>
@@ -1350,7 +1350,7 @@ function DimensionalAnalysisPanel() {
       </div>
       <div className="grid gap-4 xl:grid-cols-3">
         {examples.map((example, exampleIndex) => (
-          <article key={example.title} className="rounded-2xl border border-slate-700 bg-slate-900/75 p-5 shadow-lg">
+          <article key={example.title} className="rounded-lg border border-slate-700 bg-slate-900/75 p-5 shadow-lg">
             <span className="text-xs font-black uppercase tracking-[0.16em] text-cyan-300">Worked chain {exampleIndex + 1}</span>
             <h4 className="mt-2 text-lg font-black text-white">{example.title}</h4>
             <p className="mt-1 text-sm text-slate-400">{example.prompt}</p>
@@ -1378,7 +1378,7 @@ function DaltonPostulates() {
   ];
 
   return (
-    <section className="mt-10 rounded-2xl border border-purple-400/25 bg-gradient-to-br from-purple-400/[0.07] via-slate-950 to-cyan-400/[0.05] p-6 shadow-xl">
+    <section className="mt-10 rounded-lg border border-purple-400/25 bg-gradient-to-br from-purple-400/[0.07] via-slate-950 to-cyan-400/[0.05] p-6 shadow-xl">
       <Eyebrow>Dalton’s atomic theory</Eyebrow>
       <h3 className="mt-3 text-3xl font-black text-white">Four postulates connecting laws to particles</h3>
       <div className="mt-6 grid gap-4 md:grid-cols-2">
@@ -1416,7 +1416,7 @@ function MassLanguagePanel() {
           Sum of atomic masses represented by the formula unit of an ionic solid. NaCl = 23.0 + 35.5 = 58.5 u; an ionic lattice has no discrete NaCl molecules.
         </InfoCard>
       </div>
-      <div className="mt-4 rounded-2xl border border-slate-700 bg-slate-950/70 p-5">
+      <div className="mt-4 rounded-lg border border-slate-700 bg-slate-950/70 p-5">
         <MathContent>{String.raw`$$\text{Molar mass in g mol}^{-1}\text{ is numerically equal to atomic, molecular or formula mass in u.}$$`}</MathContent>
       </div>
     </section>
@@ -1466,7 +1466,7 @@ function EquationBalancingDemo() {
   ] as const;
 
   return (
-    <section className="mt-10 rounded-2xl border border-amber-400/25 bg-amber-400/[0.035] p-6 shadow-xl">
+    <section className="mt-10 rounded-lg border border-amber-400/25 bg-amber-400/[0.035] p-6 shadow-xl">
       <Eyebrow>Equation balancing</Eyebrow>
       <h3 className="mt-3 text-3xl font-black text-white">Propane combustion, balanced step by step</h3>
       <p className="mt-2 max-w-4xl leading-7 text-slate-400">
@@ -1626,7 +1626,7 @@ export default function ChemistryDashboard() {
         ]} />
         
         <div className="grid gap-6 xl:grid-cols-2 mt-8">
-          <article className="rounded-2xl border border-slate-700 bg-slate-950/70 p-6 shadow-xl">
+          <article className="rounded-lg border border-slate-700 bg-slate-950/70 p-6 shadow-xl">
             <h3 className="font-black text-cyan-300 uppercase tracking-widest text-sm mb-4">Analytical balance — working map</h3>
             <AnalyticalBalance />
           </article>
@@ -1635,7 +1635,7 @@ export default function ChemistryDashboard() {
 
         <div className="grid gap-4 md:grid-cols-3 mt-8">
           {["$$K = {^{\\circ}\\text{C}} + 273.15$$", "$$^{\\circ}\\text{F} = \\frac{9}{5}(^{\\circ}\\text{C}) + 32$$", "$$\\rho = \\frac{m}{V}$$"].map((formula, idx)=>(
-            <div key={idx} className="rounded-2xl border border-purple-400/20 bg-purple-400/[0.05] p-5 text-center text-lg text-purple-100 flex items-center justify-center">
+            <div key={idx} className="rounded-lg border border-purple-400/20 bg-purple-400/[0.05] p-5 text-center text-lg text-purple-100 flex items-center justify-center">
               <MathContent>{formula}</MathContent>
             </div>
           ))}
@@ -1646,15 +1646,15 @@ export default function ChemistryDashboard() {
         <div className="mt-12">
           <h3 className="text-2xl font-black text-white mb-6">Accuracy vs. Precision Targets</h3>
           <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
-            <article className="rounded-2xl border border-slate-700 bg-slate-900/70 p-6 text-center shadow-lg">
+            <article className="rounded-lg border border-slate-700 bg-slate-900/70 p-6 text-center shadow-lg">
               <AccuracyDartboard type="accurate-precise" />
               <b className="mt-4 block text-sm text-cyan-300 uppercase tracking-wider">Accurate & Precise</b>
             </article>
-            <article className="rounded-2xl border border-slate-700 bg-slate-900/70 p-6 text-center shadow-lg">
+            <article className="rounded-lg border border-slate-700 bg-slate-900/70 p-6 text-center shadow-lg">
               <AccuracyDartboard type="precise-not-accurate" />
               <b className="mt-4 block text-sm text-amber-300 uppercase tracking-wider">Precise, Not Accurate</b>
             </article>
-            <article className="rounded-2xl border border-slate-700 bg-slate-900/70 p-6 text-center shadow-lg">
+            <article className="rounded-lg border border-slate-700 bg-slate-900/70 p-6 text-center shadow-lg">
               <AccuracyDartboard type="neither" />
               <b className="mt-4 block text-sm text-slate-400 uppercase tracking-wider">Neither</b>
             </article>
@@ -1695,7 +1695,7 @@ export default function ChemistryDashboard() {
         
         <div className="my-8 grid gap-4 md:grid-cols-3">
           {["$$1\\,\\text{mol}=6.022\\times10^{23}\\,\\text{entities}$$","$$1\\,\\text{u}=1.66\\times10^{-24}\\,\\text{g}$$","$$n=\\frac{m}{M}$$"].map((formula, idx)=>(
-            <div key={idx} className="rounded-2xl border border-cyan-400/20 bg-cyan-400/[0.045] p-5 text-center text-cyan-100 flex items-center justify-center">
+            <div key={idx} className="rounded-lg border border-cyan-400/20 bg-cyan-400/[0.045] p-5 text-center text-cyan-100 flex items-center justify-center">
               <MathContent>{formula}</MathContent>
             </div>
           ))}
@@ -1710,7 +1710,7 @@ export default function ChemistryDashboard() {
 
         <EquationBalancingDemo />
 
-        <div className="my-8 rounded-2xl bg-gradient-to-r from-cyan-400 via-purple-400 to-amber-400 p-6 text-center shadow-lg">
+        <div className="my-8 rounded-lg bg-gradient-to-r from-cyan-400 via-purple-400 to-amber-400 p-6 text-center shadow-lg">
           <div className="bg-slate-950 rounded-xl p-4 inline-block">
             <MathContent className="text-2xl font-black text-white">
               {String.raw`$$\mathrm{CH_4+2O_2\rightarrow CO_2+2H_2O}$$`}
@@ -1754,7 +1754,7 @@ export default function ChemistryDashboard() {
             description="Find exact NCERT Exemplar solutions and custom concept checks instantly. Type keywords, concepts, or question numbers." 
           />
           
-          <div className="sticky top-20 z-30 mb-8 rounded-2xl border border-cyan-400/40 bg-slate-950/80 p-4 backdrop-blur-xl shadow-2xl">
+          <div className="sticky top-20 z-30 mb-8 rounded-lg border border-cyan-400/40 bg-slate-950/80 p-4 backdrop-blur-xl shadow-2xl">
             <label htmlFor="search" className="sr-only">Search questions</label>
             <div className="relative">
               <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-4">
@@ -1783,7 +1783,7 @@ export default function ChemistryDashboard() {
           </div>
 
           {filteredQuestions.length === 0 ? (
-            <div className="py-20 text-center text-slate-500 border-2 border-dashed border-slate-700 rounded-2xl">
+            <div className="py-20 text-center text-slate-500 border-2 border-dashed border-slate-700 rounded-lg">
               <p className="text-2xl font-bold">No questions found for &ldquo;{searchQuery}&rdquo;</p>
               <p className="mt-2">Try adjusting your keywords.</p>
             </div>

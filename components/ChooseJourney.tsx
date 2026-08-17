@@ -91,7 +91,7 @@ export default function ChooseJourney() {
               <div className="relative">
                 <p className="text-xs font-bold uppercase tracking-widest text-white/30 mb-4">{item.label}</p>
 
-                <div className="flex h-14 w-14 items-center justify-center rounded-2xl border border-white/10 bg-black/40">
+                <div className="flex h-14 w-14 items-center justify-center rounded-lg border border-white/10 bg-black/40">
                   <Icon className={`h-7 w-7 ${item.accent}`} />
                 </div>
 

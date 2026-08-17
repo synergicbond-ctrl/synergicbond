@@ -14,7 +14,7 @@ function Section({ index, title, subtitle, children }: { index: string; title: s
   return (
     <section className="rounded-[2rem] border border-white/10 bg-slate-950/80 p-5 shadow-2xl shadow-black/20 backdrop-blur md:p-8">
       <div className="flex items-start gap-4">
-        <span className="grid h-11 w-11 shrink-0 place-items-center rounded-2xl border border-cyan-300/30 bg-cyan-300/10 text-sm font-black text-cyan-200">{index}</span>
+        <span className="grid h-11 w-11 shrink-0 place-items-center rounded-lg border border-cyan-300/30 bg-cyan-300/10 text-sm font-black text-cyan-200">{index}</span>
         <div>
           <h2 className="text-2xl font-black tracking-tight text-white md:text-3xl">{title}</h2>
           {subtitle && <p className="mt-1 max-w-4xl text-sm leading-6 text-slate-400">{subtitle}</p>}
@@ -26,7 +26,7 @@ function Section({ index, title, subtitle, children }: { index: string; title: s
 }
 function Formula({ label, children }: { label: string; children: React.ReactNode }) {
   return (
-    <div className="overflow-x-auto rounded-2xl border border-cyan-300/20 bg-black/30 p-4 text-center">
+    <div className="overflow-x-auto rounded-lg border border-cyan-300/20 bg-black/30 p-4 text-center">
       <p className="mb-2 text-xs font-black uppercase tracking-[0.2em] text-cyan-300">{label}</p>
       <div className="whitespace-nowrap font-mono text-lg font-black text-white md:text-xl">{children}</div>
     </div>
@@ -34,7 +34,7 @@ function Formula({ label, children }: { label: string; children: React.ReactNode
 }
 function Lens({ title, children, tone = "cyan" }: { title: string; children: React.ReactNode; tone?: Tone }) {
   return (
-    <aside className={`rounded-2xl border p-5 ${toneStyles[tone]}`}>
+    <aside className={`rounded-lg border p-5 ${toneStyles[tone]}`}>
       <p className="text-xs font-black uppercase tracking-[0.2em]">Concept</p>
       <h3 className="mt-2 text-lg font-black text-white">{title}</h3>
       <div className="mt-2 text-sm leading-6 text-slate-200">{children}</div>
@@ -206,7 +206,7 @@ export default function ThermodynamicsPart27LocalhostReview() {
           subtitle="Exact derived result from integrating dμ = V_m dP at constant T">
           <MuVsPSVG />
           <p>For a pure ideal gas at constant T:</p>
-          <div className="space-y-1 rounded-2xl border border-white/10 bg-slate-900/60 p-4 font-mono text-sm">
+          <div className="space-y-1 rounded-lg border border-white/10 bg-slate-900/60 p-4 font-mono text-sm">
             <p>dμ = V_m dP = (RT/P) dP</p>
             <p>Integrate from P° (standard) to P:</p>
             <p>μ(T,P) − μ°(T) = RT ∫_&#123;P°&#125;^&#123;P&#125; dP/P = RT ln(P/P°)</p>
@@ -240,7 +240,7 @@ export default function ThermodynamicsPart27LocalhostReview() {
             pressures, this is negligible and μ ≈ μ*(T). The activity of a pure standard solid or liquid
             is defined as 1.
           </p>
-          <div className="overflow-x-auto rounded-2xl border border-white/10">
+          <div className="overflow-x-auto rounded-lg border border-white/10">
             <table className="min-w-[700px] border-collapse text-left text-sm">
               <thead className="bg-slate-900">
                 <tr>
@@ -266,7 +266,7 @@ export default function ThermodynamicsPart27LocalhostReview() {
         <Section index="5" title="Worked Examples">
           <div className="space-y-4">
             {examples.map(ex => (
-              <article key={ex.title} className="rounded-2xl border border-white/10 bg-slate-900/70 p-5">
+              <article key={ex.title} className="rounded-lg border border-white/10 bg-slate-900/70 p-5">
                 <h3 className="font-black text-white">{ex.title}</h3>
                 <p className="mt-2 text-sm font-semibold text-slate-200">{ex.given}</p>
                 <div className="mt-3 rounded-xl border border-emerald-300/20 bg-emerald-300/[0.06] p-3 text-sm leading-6 text-slate-200">{ex.solution}</div>
@@ -287,7 +287,7 @@ export default function ThermodynamicsPart27LocalhostReview() {
               ["For a pure solid, what is its contribution to the equilibrium constant expression?", "Activity of pure solid = 1, so its contribution is 1^ν = 1. Pure solids (and pure liquids) do not appear in equilibrium constant expressions."],
               ["Explain why chemical potential → −∞ as P → 0 for an ideal gas.", "μ = μ° + RT ln(P/P°). As P → 0, ln(P/P°) → −∞. This reflects that an infinitely dilute gas has maximum entropy and minimum order — adding it releases maximum free energy."],
             ].map(([q, a], i) => (
-              <article key={i} className="rounded-2xl border border-white/10 bg-slate-900/60 p-4">
+              <article key={i} className="rounded-lg border border-white/10 bg-slate-900/60 p-4">
                 <p className="font-semibold text-white"><span className="mr-2 text-amber-300">{i + 1}.</span>{q}</p>
                 <div className="mt-2 rounded-xl border border-emerald-300/20 bg-emerald-300/[0.06] p-3 text-sm text-slate-200">{a}</div>
               </article>

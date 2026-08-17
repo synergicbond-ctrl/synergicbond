@@ -19,7 +19,7 @@ export default function QuizAndFeedback({ questions, chapterId }: { questions: Q
 
   if (questions.length === 0) {
     return (
-      <div className="p-8 bg-white rounded-2xl border border-slate-200 text-center text-slate-500 font-medium">
+      <div className="p-8 bg-white rounded-lg border border-slate-200 text-center text-slate-500 font-medium">
         No questions loaded for this learning drill.
       </div>
     );
@@ -67,7 +67,7 @@ export default function QuizAndFeedback({ questions, chapterId }: { questions: Q
   const isCorrect = selectedOption ? selectedOption.startsWith(currentQ.answer) : false;
 
   return (
-    <div className="bg-white p-8 rounded-2xl shadow-sm border border-slate-200/80 max-w-2xl mx-auto space-y-6">
+    <div className="bg-white p-8 rounded-lg shadow-sm border border-slate-200/80 max-w-2xl mx-auto space-y-6">
       
       {/* Progress */}
       <div className="flex justify-between text-xs font-bold text-slate-400 uppercase tracking-wider">

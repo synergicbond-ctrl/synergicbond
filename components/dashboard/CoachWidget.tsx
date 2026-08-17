@@ -6,7 +6,7 @@ export function CoachWidget({
   recommendations,
 }: CoachWidgetProps) {
   return (
-    <div className="rounded-3xl border border-white/10 bg-white/[0.03] p-6">
+    <div className="rounded-lg border border-white/10 bg-white/[0.03] p-6">
       <h2 className="text-2xl font-bold text-white">
         AI Coach
       </h2>

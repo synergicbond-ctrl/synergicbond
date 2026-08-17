@@ -10,7 +10,7 @@ import type { PerformanceData, PlatformStats } from "@/lib/performance/types";
 function Section({ title, icon, children }: { title: string; icon: string; children: React.ReactNode }) {
   const accent = title === "Weak Topics" ? "border-rose-400/20" : title === "Strong Topics" ? "border-emerald-400/20" : title === "Revision Queue" ? "border-violet-400/20" : "border-cyan-400/20";
   return (
-    <section className={`relative overflow-hidden rounded-2xl border bg-[linear-gradient(140deg,rgba(255,255,255,0.045),transparent_36%),#111827] p-4 shadow-[0_24px_55px_-44px_rgba(0,0,0,0.98)] md:p-5 ${accent}`}>
+    <section className={`relative overflow-hidden rounded-lg border bg-[linear-gradient(140deg,rgba(255,255,255,0.045),transparent_36%),#111827] p-4 shadow-[0_24px_55px_-44px_rgba(0,0,0,0.98)] md:p-5 ${accent}`}>
       <span aria-hidden="true" className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-cyan-400 via-violet-400 to-amber-300 opacity-60" />
       <h2 className="relative mb-3 font-serif text-base font-black uppercase tracking-wider text-white/80">
         <span className="mr-1.5">{icon}</span>{title}

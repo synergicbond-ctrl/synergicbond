@@ -43,7 +43,7 @@ function Section({
   return (
     <section className="rounded-[2rem] border border-white/10 bg-slate-950/80 p-5 shadow-2xl shadow-black/20 backdrop-blur md:p-8">
       <div className="flex items-start gap-4">
-        <span className="grid h-11 w-11 shrink-0 place-items-center rounded-2xl border border-cyan-300/30 bg-cyan-300/10 text-sm font-black text-cyan-200">
+        <span className="grid h-11 w-11 shrink-0 place-items-center rounded-lg border border-cyan-300/30 bg-cyan-300/10 text-sm font-black text-cyan-200">
           {index}
         </span>
         <div>
@@ -76,7 +76,7 @@ function Lens({
   label?: string;
 }) {
   return (
-    <aside className={`rounded-2xl border p-5 ${toneStyles[tone]}`}>
+    <aside className={`rounded-lg border p-5 ${toneStyles[tone]}`}>
       <p className="text-xs font-black uppercase tracking-[0.2em]">{label}</p>
       <h3 className="mt-2 text-lg font-black text-white">{title}</h3>
       <div className="mt-2 text-sm leading-6 text-slate-200">{children}</div>
@@ -92,7 +92,7 @@ function Formula({
   children: React.ReactNode;
 }) {
   return (
-    <div className="overflow-x-auto rounded-2xl border border-cyan-300/20 bg-black/30 p-4 text-center">
+    <div className="overflow-x-auto rounded-lg border border-cyan-300/20 bg-black/30 p-4 text-center">
       <p className="mb-2 text-xs font-black uppercase tracking-[0.2em] text-cyan-300">
         {label}
       </p>
@@ -1701,7 +1701,7 @@ const classificationRows = [
 
 function ClassificationTable() {
   return (
-    <div className="overflow-x-auto rounded-2xl border border-white/10">
+    <div className="overflow-x-auto rounded-lg border border-white/10">
       <table className="min-w-[980px] border-collapse text-left text-sm">
         <thead className="bg-slate-900">
           <tr>
@@ -1773,7 +1773,7 @@ function TruthTable() {
       {truthRows.map((row, i) => (
         <article
           key={row.statement}
-          className="rounded-2xl border border-white/10 bg-slate-900/70 p-4"
+          className="rounded-lg border border-white/10 bg-slate-900/70 p-4"
         >
           <div className="flex flex-col gap-3 md:flex-row md:items-start md:justify-between">
             <p className="font-semibold text-white">
@@ -1890,7 +1890,7 @@ function ProblemLadder() {
       {problems.map((problem, index) => (
         <article
           key={problem.title}
-          className="group rounded-2xl border border-white/10 bg-slate-900/70 p-5"
+          className="group rounded-lg border border-white/10 bg-slate-900/70 p-5"
         >
           <h3 className=" font-black text-white">
             <span className="mr-2 text-amber-300">◆</span>
@@ -1944,7 +1944,7 @@ function ThermodynamicsAroundYou() {
       {cases.map((item) => (
         <article
           key={item.title}
-          className={`rounded-3xl border p-5 ${toneStyles[item.tone]}`}
+          className={`rounded-lg border p-5 ${toneStyles[item.tone]}`}
         >
           <h3 className="text-xl font-black text-white">{item.title}</h3>
           <p className="mt-2 text-sm leading-6 text-slate-200">{item.text}</p>
@@ -1957,7 +1957,7 @@ function ThermodynamicsAroundYou() {
 function EnergeticsMap() {
   return (
     <div className="grid gap-4 lg:grid-cols-2">
-      <article className="rounded-3xl border border-cyan-400/20 bg-cyan-400/[0.05] p-5">
+      <article className="rounded-lg border border-cyan-400/20 bg-cyan-400/[0.05] p-5">
         <p className="text-xs font-black uppercase tracking-[0.2em] text-cyan-300">
           Thermodynamics note
         </p>
@@ -1980,7 +1980,7 @@ function EnergeticsMap() {
         </div>
       </article>
 
-      <article className="rounded-3xl border border-amber-400/20 bg-amber-400/[0.05] p-5">
+      <article className="rounded-lg border border-amber-400/20 bg-amber-400/[0.05] p-5">
         <p className="text-xs font-black uppercase tracking-[0.2em] text-amber-300">
           Separate Thermochemistry note
         </p>
@@ -2079,7 +2079,7 @@ export default function ThermodynamicsPart01() {
             ].map(([title, text]) => (
               <article
                 key={title}
-                className="rounded-2xl border border-white/10 bg-slate-900/70 p-4"
+                className="rounded-lg border border-white/10 bg-slate-900/70 p-4"
               >
                 <h3 className="font-black text-white">{title}</h3>
                 <p className="mt-2 text-sm leading-6 text-slate-300">{text}</p>
@@ -2131,7 +2131,7 @@ export default function ThermodynamicsPart01() {
             ].map(([title, text, tone]) => (
               <article
                 key={title}
-                className={`rounded-2xl border p-5 ${toneStyles[tone as Tone]}`}
+                className={`rounded-lg border p-5 ${toneStyles[tone as Tone]}`}
               >
                 <h3 className="text-lg font-black text-white">{title}</h3>
                 <p className="mt-2 text-sm leading-6 text-slate-200">{text}</p>
@@ -2225,7 +2225,7 @@ export default function ThermodynamicsPart01() {
           subtitle="Total energy conservation must be separated from changes in individual energy forms."
         >
           <div className="grid gap-4 lg:grid-cols-2">
-            <article className="rounded-3xl border border-violet-400/20 bg-violet-400/[0.05] p-5">
+            <article className="rounded-lg border border-violet-400/20 bg-violet-400/[0.05] p-5">
               <p className="text-xs font-black uppercase tracking-[0.2em] text-violet-300">
                 Isolated composite
               </p>
@@ -2239,7 +2239,7 @@ export default function ThermodynamicsPart01() {
               </p>
             </article>
 
-            <article className="rounded-3xl border border-sky-400/20 bg-sky-400/[0.05] p-5">
+            <article className="rounded-lg border border-sky-400/20 bg-sky-400/[0.05] p-5">
               <p className="text-xs font-black uppercase tracking-[0.2em] text-sky-300">
                 Closed rigid vessel
               </p>
@@ -2319,7 +2319,7 @@ export default function ThermodynamicsPart01() {
             ].map(([term, meaning]) => (
               <div
                 key={term}
-                className="rounded-2xl border border-white/10 bg-black/25 p-4"
+                className="rounded-lg border border-white/10 bg-black/25 p-4"
               >
                 <p className="font-black text-white">{term}</p>
                 <p className="mt-1 text-sm leading-6 text-slate-300">{meaning}</p>

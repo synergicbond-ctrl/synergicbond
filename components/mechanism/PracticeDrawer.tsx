@@ -12,10 +12,10 @@ export default function PracticeDrawer({ open, onClose, name, examples }: { open
   return (
     <div className="fixed inset-0 z-[120] flex items-end sm:items-center sm:justify-center bg-black/70 backdrop-blur-sm" onClick={onClose}>
       <div
-        className="w-full sm:max-w-lg max-h-[85vh] overflow-y-auto rounded-t-3xl sm:rounded-3xl border border-white/[0.08] bg-[#111827] shadow-2xl"
+        className="w-full sm:max-w-lg max-h-[85vh] overflow-y-auto rounded-t-3xl sm:rounded-lg border border-white/[0.08] bg-[var(--surface)] shadow-2xl"
         onClick={(e) => e.stopPropagation()}
       >
-        <div className="sticky top-0 flex items-center justify-between border-b border-white/[0.06] bg-[#111827] px-5 py-3.5">
+        <div className="sticky top-0 flex items-center justify-between border-b border-white/[0.06] bg-[var(--surface)] px-5 py-3.5">
           <span className="text-sm font-bold text-white">Practice · {name}</span>
           <button onClick={onClose} className="p-1 text-white/40 hover:text-white"><X className="h-5 w-5" /></button>
         </div>

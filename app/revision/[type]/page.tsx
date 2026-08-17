@@ -27,7 +27,7 @@ export default async function RevisionSessionPage({ params, searchParams }: Page
       </div>
 
       {/* Session Header */}
-      <div className="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 text-center space-y-4">
+      <div className="bg-white p-8 rounded-lg shadow-sm border border-slate-100 text-center space-y-4">
         <h1 className="text-3xl font-black tracking-tight text-slate-900">{session.title}</h1>
         <p className="text-slate-600 max-w-xl mx-auto">{session.description}</p>
         

@@ -97,7 +97,7 @@ export default function SaltAnalysisPage() {
           <strong className="text-rose-300">analytical reasoning</strong>.
         </p>
 
-        <div className="mt-6 rounded-2xl bg-gradient-to-r from-cyan-400/55 via-violet-400/45 to-amber-400/55 p-px">
+        <div className="mt-6 rounded-lg bg-gradient-to-r from-cyan-400/55 via-violet-400/45 to-amber-400/55 p-px">
           <div className="rounded-[15px] bg-[#07101c]/95 px-5 py-4 text-sm leading-7 text-slate-300 sm:text-base">
             <strong className="text-cyan-300">Scope:</strong> preliminary
             examination, dry and wet tests, anion analysis, cation group
@@ -113,7 +113,7 @@ export default function SaltAnalysisPage() {
               <Link
                 key={part.id}
                 href={part.href}
-                className={`group rounded-2xl bg-gradient-to-br ${theme.border} p-px transition duration-200 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-black/30`}
+                className={`group rounded-lg bg-gradient-to-br ${theme.border} p-px transition duration-200 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-black/30`}
               >
                 <span className="block h-full rounded-[15px] bg-[#060b13]/95 p-4 transition group-hover:bg-[#091322]">
                   <span

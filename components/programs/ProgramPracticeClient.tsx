@@ -179,7 +179,7 @@ export default function ProgramPracticeClient({ exam }: { exam: PYQExam }) {
 
       {/* Results */}
       {shown.length === 0 ? (
-        <div className="rounded-2xl border border-dashed border-white/12 bg-white/[0.02] p-8 text-center">
+        <div className="rounded-lg border border-dashed border-white/12 bg-white/[0.02] p-8 text-center">
           <p className="text-sm font-semibold text-white/60">No questions match these filters.</p>
           <p className="mt-1 text-xs text-white/35">Try clearing a filter — only verified {exam} PYQs are shown.</p>
         </div>

@@ -57,11 +57,11 @@ export default function TransitionMetalIonsTable() {
           value={q}
           onChange={(e) => setQ(e.target.value)}
           placeholder="Search ion or colour…"
-          className="w-full rounded-xl border border-white/10 bg-[#111827] py-2 pl-9 pr-3 text-sm text-white placeholder-white/30 outline-none focus:border-cyan-400/40"
+          className="w-full rounded-xl border border-white/10 bg-[var(--surface)] py-2 pl-9 pr-3 text-sm text-white placeholder-white/30 outline-none focus:border-cyan-400/40"
         />
       </div>
 
-      <div className="overflow-x-auto rounded-2xl border border-white/[0.06]">
+      <div className="overflow-x-auto rounded-lg border border-white/[0.06]">
         <table className="w-full text-sm min-w-[360px]">
           <thead>
             <tr className="bg-white/[0.04] text-[10px] font-bold uppercase tracking-wider text-white/50">
@@ -72,7 +72,7 @@ export default function TransitionMetalIonsTable() {
           </thead>
           <tbody>
             {rows.map((r, i) => (
-              <tr key={r.ion} className={i % 2 ? "bg-[#111827]" : "bg-[#0e1421]"}>
+              <tr key={r.ion} className={i % 2 ? "bg-[var(--surface)]" : "bg-[#0e1421]"}>
                 <td className="px-4 py-2.5">
                   <span className="block h-4 w-4 rounded-full border border-white/20" style={{ background: dotBackground(r.colour) }} />
                 </td>

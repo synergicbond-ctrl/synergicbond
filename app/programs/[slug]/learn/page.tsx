@@ -74,7 +74,7 @@ export default async function ProgramLearnPage({ params }: { params: Promise<{ s
               <Link
                 key={mod.title}
                 href={mod.href}
-                className={`group flex flex-col rounded-2xl border bg-white/[0.02] p-5 transition hover:-translate-y-0.5 hover:bg-white/[0.04] ${accent.card}`}
+                className={`group flex flex-col rounded-lg border bg-white/[0.02] p-5 transition hover:-translate-y-0.5 hover:bg-white/[0.04] ${accent.card}`}
               >
                 <div className="flex items-start justify-between gap-3">
                   <span className="text-2xl">{mod.icon}</span>
@@ -106,22 +106,22 @@ export default async function ProgramLearnPage({ params }: { params: Promise<{ s
             <div className="grid gap-4 md:grid-cols-2">
               <Link
                 href="/programs/jee-advanced/chapter/p-block-elements#learn"
-                className="rounded-2xl border border-cyan-400/30 bg-cyan-500/[0.08] p-5 transition hover:border-cyan-300/60"
+                className="rounded-lg border border-[var(--accent)]/30 bg-[var(--accent)]/10[0.08] p-5 transition hover:border-[var(--accent)]/30"
               >
-                <span className="text-[10px] font-black uppercase text-cyan-300">Full Notes</span>
+                <span className="text-[10px] font-black uppercase text-[var(--accent)]">Full Notes</span>
                 <h3 className="mt-3 text-xl font-black">P-Block Elements</h3>
                 <p className="mt-2 text-sm text-zinc-400">Groups 15–18 complete notes.</p>
-                <div className="mt-4 font-bold text-cyan-300">Open full notes →</div>
+                <div className="mt-4 font-bold text-[var(--accent)]">Open full notes →</div>
               </Link>
 
               <Link
                 href="/programs/jee-advanced/chapter/qualitative-analysis#learn"
-                className="rounded-2xl border border-violet-400/30 bg-violet-500/[0.08] p-5 transition hover:border-violet-300/60"
+                className="rounded-lg border border-violet-400/30 bg-violet-500/[0.08] p-5 transition hover:border-violet-300/60"
               >
-                <span className="text-[10px] font-black uppercase text-violet-300">Full Notes</span>
+                <span className="text-[10px] font-black uppercase text-[var(--text-muted)]">Full Notes</span>
                 <h3 className="mt-3 text-xl font-black">Salt Analysis / Qualitative Analysis</h3>
                 <p className="mt-2 text-sm text-zinc-400">Complete qualitative analysis notes.</p>
-                <div className="mt-4 font-bold text-violet-300">Open full notes →</div>
+                <div className="mt-4 font-bold text-[var(--text-muted)]">Open full notes →</div>
               </Link>
             </div>
           </section>
@@ -163,7 +163,7 @@ export default async function ProgramLearnPage({ params }: { params: Promise<{ s
                         {hasFullNotes ? (
                           <span className="rounded-full border border-[#e8b84b4d] bg-[#e8b84b1a] px-1.5 py-0.5 text-[9px] font-bold uppercase text-[#e8b84b]">Full Notes</span>
                         ) : isEngineSlug(slug) ? (
-                          <span className="rounded-full border border-cyan-400/30 bg-cyan-400/10 px-1.5 py-0.5 text-[9px] font-bold uppercase text-cyan-300">Engine</span>
+                          <span className="rounded-full border border-[var(--accent)]/30 bg-[var(--accent)]/10 px-1.5 py-0.5 text-[9px] font-bold uppercase text-[var(--accent)]">Engine</span>
                         ) : null}
                       </div>
                       <Link href={primaryHref} className="mt-1.5 flex-1 after:absolute after:inset-0">
@@ -180,7 +180,7 @@ export default async function ProgramLearnPage({ params }: { params: Promise<{ s
                         {hasFullNotes && (
                           <Link
                             href={engineHref}
-                            className="relative z-10 rounded-md border border-white/10 bg-white/[0.04] px-2 py-1 text-[10px] font-bold uppercase tracking-wide text-white/55 transition hover:border-cyan-400/40 hover:text-cyan-300"
+                            className="relative z-10 rounded-md border border-white/10 bg-white/[0.04] px-2 py-1 text-[10px] font-bold uppercase tracking-wide text-white/55 transition hover:border-[var(--accent)]/30 hover:text-[var(--accent)]"
                           >
                             Chapter Engine
                           </Link>
@@ -192,7 +192,7 @@ export default async function ProgramLearnPage({ params }: { params: Promise<{ s
               </div>
             </>
           ) : (
-            <div className="rounded-2xl border border-white/10 bg-white/[0.02] p-8 text-center">
+            <div className="rounded-lg border border-white/10 bg-white/[0.02] p-8 text-center">
               <h3 className="text-lg font-bold">Verified chapter mapping in progress</h3>
               <p className="mx-auto mt-2 max-w-lg text-sm leading-relaxed text-zinc-400">
                 The chapter-by-chapter {name} syllabus is being mapped from official sources — no

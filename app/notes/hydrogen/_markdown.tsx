@@ -52,13 +52,13 @@ const markdownComponents: Components = {
   strong: ({ children }) => <strong className="font-black text-slate-50">{children}</strong>,
   em: ({ children }) => <em className="text-violet-100">{children}</em>,
   blockquote: ({ children }) => (
-    <blockquote className="my-5 rounded-2xl border border-cyan-300/20 border-l-4 border-l-cyan-300 bg-[linear-gradient(90deg,rgba(25,116,145,.16),rgba(90,54,138,.1))] px-5 py-4 text-cyan-50 shadow-lg shadow-black/10">
+    <blockquote className="my-5 rounded-lg border border-cyan-300/20 border-l-4 border-l-cyan-300 bg-[linear-gradient(90deg,rgba(25,116,145,.16),rgba(90,54,138,.1))] px-5 py-4 text-cyan-50 shadow-lg shadow-black/10">
       {children}
     </blockquote>
   ),
   hr: () => <hr className="my-10 border-cyan-200/15" />,
   table: ({ children }) => (
-    <div className="my-6 overflow-x-auto rounded-2xl border border-cyan-200/15 bg-[#050b14] shadow-xl shadow-black/20">
+    <div className="my-6 overflow-x-auto rounded-lg border border-cyan-200/15 bg-[#050b14] shadow-xl shadow-black/20">
       <table className="min-w-full border-collapse text-left text-sm sm:text-[15px]">{children}</table>
     </div>
   ),

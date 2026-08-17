@@ -2,15 +2,15 @@ import Link from "next/link";
 import type { ReactNode } from "react";
 
 export function LearningObjectives({ items }: { items: string[] }) {
-  return <section aria-labelledby="objectives" className="rounded-2xl border border-cyan-300/20 bg-cyan-300/[0.06] p-5"><p className="text-xs font-black uppercase tracking-[0.18em] text-cyan-200">Learning objectives</p><h2 id="objectives" className="mt-1 text-lg font-bold text-white">By the end, you can</h2><ul className="mt-3 grid gap-2 text-sm text-slate-200 sm:grid-cols-2">{items.map((item) => <li key={item} className="flex gap-2"><span aria-hidden="true" className="text-cyan-300">◆</span>{item}</li>)}</ul></section>;
+  return <section aria-labelledby="objectives" className="rounded-lg border border-cyan-300/20 bg-cyan-300/[0.06] p-5"><p className="text-xs font-black uppercase tracking-[0.18em] text-cyan-200">Learning objectives</p><h2 id="objectives" className="mt-1 text-lg font-bold text-white">By the end, you can</h2><ul className="mt-3 grid gap-2 text-sm text-slate-200 sm:grid-cols-2">{items.map((item) => <li key={item} className="flex gap-2"><span aria-hidden="true" className="text-cyan-300">◆</span>{item}</li>)}</ul></section>;
 }
 
 export function ConceptCard({ title, children }: { title: string; children: ReactNode }) {
-  return <section className="rounded-2xl border border-sky-300/20 bg-slate-950/45 p-5 shadow-lg shadow-black/10"><h2 className="text-lg font-black text-sky-200">{title}</h2><div className="mt-3 space-y-3 text-sm leading-relaxed text-slate-200 sm:text-base">{children}</div></section>;
+  return <section className="rounded-lg border border-sky-300/20 bg-slate-950/45 p-5 shadow-lg shadow-black/10"><h2 className="text-lg font-black text-sky-200">{title}</h2><div className="mt-3 space-y-3 text-sm leading-relaxed text-slate-200 sm:text-base">{children}</div></section>;
 }
 
 export function DefinitionCard({ term, children }: { term: string; children: ReactNode }) {
-  return <section className="rounded-2xl border border-cyan-300/20 bg-gradient-to-br from-cyan-300/[0.09] to-slate-950/20 p-5"><p className="text-[11px] font-black uppercase tracking-[0.2em] text-cyan-200">Key definition</p><h2 className="mt-1 text-xl font-black text-white">{term}</h2><div className="mt-3 text-sm leading-relaxed text-slate-100 sm:text-base">{children}</div></section>;
+  return <section className="rounded-lg border border-cyan-300/20 bg-gradient-to-br from-cyan-300/[0.09] to-slate-950/20 p-5"><p className="text-[11px] font-black uppercase tracking-[0.2em] text-cyan-200">Key definition</p><h2 className="mt-1 text-xl font-black text-white">{term}</h2><div className="mt-3 text-sm leading-relaxed text-slate-100 sm:text-base">{children}</div></section>;
 }
 
 export function FormulaCard({ label, children }: { label: string; children: ReactNode }) {
@@ -18,11 +18,11 @@ export function FormulaCard({ label, children }: { label: string; children: Reac
 }
 
 export function ComparisonTable({ headers, rows }: { headers: ReactNode[]; rows: ReactNode[][] }) {
-  return <section aria-label="Comparison" className="overflow-x-auto rounded-2xl border border-white/10 bg-slate-950/45"><table className="min-w-[38rem] w-full text-left text-sm sm:text-base"><thead className="bg-cyan-300/[0.08] text-cyan-100"><tr>{headers.map((header) => <th key={String(header)} scope="col" className="px-4 py-3 font-black">{header}</th>)}</tr></thead><tbody className="divide-y divide-white/10 text-slate-200">{rows.map((row, rowIndex) => <tr key={rowIndex}>{row.map((cell, cellIndex) => <td key={cellIndex} className="px-4 py-4 align-top leading-relaxed">{cell}</td>)}</tr>)}</tbody></table></section>;
+  return <section aria-label="Comparison" className="overflow-x-auto rounded-lg border border-white/10 bg-slate-950/45"><table className="min-w-[38rem] w-full text-left text-sm sm:text-base"><thead className="bg-cyan-300/[0.08] text-cyan-100"><tr>{headers.map((header) => <th key={String(header)} scope="col" className="px-4 py-3 font-black">{header}</th>)}</tr></thead><tbody className="divide-y divide-white/10 text-slate-200">{rows.map((row, rowIndex) => <tr key={rowIndex}>{row.map((cell, cellIndex) => <td key={cellIndex} className="px-4 py-4 align-top leading-relaxed">{cell}</td>)}</tr>)}</tbody></table></section>;
 }
 
 export function WorkedExample({ title, children }: { title: string; children: ReactNode }) {
-  return <section className="rounded-2xl border border-amber-300/20 bg-amber-300/[0.045] p-5"><p className="text-[11px] font-black uppercase tracking-[0.18em] text-amber-200">Worked example</p><h2 className="mt-1 text-lg font-black text-white">{title}</h2><div className="mt-4 space-y-3 text-sm leading-relaxed text-slate-100 sm:text-base">{children}</div></section>;
+  return <section className="rounded-lg border border-amber-300/20 bg-amber-300/[0.045] p-5"><p className="text-[11px] font-black uppercase tracking-[0.18em] text-amber-200">Worked example</p><h2 className="mt-1 text-lg font-black text-white">{title}</h2><div className="mt-4 space-y-3 text-sm leading-relaxed text-slate-100 sm:text-base">{children}</div></section>;
 }
 
 export function DerivationPanel({ title, children }: { title: string; children: ReactNode }) {
@@ -38,11 +38,11 @@ export function ImportantNote({ title = "Important note", children }: { title?: 
 }
 
 export function PracticeQuestion({ prompt, answer }: { prompt: ReactNode; answer?: ReactNode }) {
-  return <section className="rounded-2xl border border-violet-300/20 bg-violet-300/[0.06] p-5"><p className="text-xs font-black uppercase tracking-[0.18em] text-violet-200">Check your understanding</p><div className="mt-2 text-sm leading-relaxed text-white sm:text-base">{prompt}</div>{answer ? <div className="mt-3 border-t border-white/10 pt-3 text-sm text-violet-100"><span className="font-bold text-emerald-300">Answer: </span><span className="text-emerald-100">{answer}</span></div> : null}</section>;
+  return <section className="rounded-lg border border-violet-300/20 bg-violet-300/[0.06] p-5"><p className="text-xs font-black uppercase tracking-[0.18em] text-violet-200">Check your understanding</p><div className="mt-2 text-sm leading-relaxed text-white sm:text-base">{prompt}</div>{answer ? <div className="mt-3 border-t border-white/10 pt-3 text-sm text-violet-100"><span className="font-bold text-emerald-300">Answer: </span><span className="text-emerald-100">{answer}</span></div> : null}</section>;
 }
 
 export function SummaryStrip({ items }: { items: string[] }) {
-  return <section aria-label="Quick recap" className="grid gap-px overflow-hidden rounded-2xl border border-white/10 bg-white/10 sm:grid-cols-3">{items.map((item, index) => <div key={item} className="bg-[#0b1525] p-4"><p className="text-xs font-bold text-cyan-200">0{index + 1}</p><p className="mt-1 text-sm leading-relaxed text-slate-200">{item}</p></div>)}</section>;
+  return <section aria-label="Quick recap" className="grid gap-px overflow-hidden rounded-lg border border-white/10 bg-white/10 sm:grid-cols-3">{items.map((item, index) => <div key={item} className="bg-[#0b1525] p-4"><p className="text-xs font-bold text-cyan-200">0{index + 1}</p><p className="mt-1 text-sm leading-relaxed text-slate-200">{item}</p></div>)}</section>;
 }
 
 export function PartNavigator({ previous, next }: { previous?: { href: string; label: string }; next?: { href: string; label: string } }) {

@@ -39,7 +39,7 @@ export default function OlympiadPage() {
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
             {tools.map((t) => (
               <Link key={t.label} href={t.href}
-                className={`bg-zinc-900 border ${t.color} rounded-2xl p-5 transition group`}>
+                className={`bg-zinc-900 border ${t.color} rounded-lg p-5 transition group`}>
                 <div className="text-3xl mb-3">{t.icon}</div>
                 <div className="font-bold text-white group-hover:text-violet-300 transition">{t.label}</div>
                 <div className="text-zinc-500 text-sm mt-1">{t.desc}</div>
@@ -59,7 +59,7 @@ export default function OlympiadPage() {
           </p>
           <div className="grid md:grid-cols-3 gap-6">
             {topics.map((cat) => (
-              <div key={cat.label} className="bg-zinc-900 border border-zinc-800 rounded-2xl p-5">
+              <div key={cat.label} className="bg-zinc-900 border border-zinc-800 rounded-lg p-5">
                 <div className="font-bold text-violet-400 mb-3">{cat.label}</div>
                 <div className="space-y-2">
                   {cat.items.map((topic) => (

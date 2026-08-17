@@ -43,7 +43,7 @@ export default function SolidStatePage() {
         })),
       ]}
     >
-      <section className="mb-8 rounded-2xl border border-[#24405c] bg-[#122232] p-5 md:p-7">
+      <section className="mb-8 rounded-lg border border-[#24405c] bg-[#122232] p-5 md:p-7">
         <p className="text-xs font-black uppercase tracking-[0.22em] text-[#e8b84b]">JEE Advanced only</p>
         <h1 className="mt-2 text-3xl font-black tracking-tight text-white md:text-5xl">Solid State — Complete 23-Part Course</h1>
         <p className="mt-4 max-w-4xl text-sm leading-7 text-[#c3d1dd]">
@@ -51,7 +51,7 @@ export default function SolidStatePage() {
           Bravais systems, packing, voids, radius ratio, important structures, defects, electrical properties and magnetism.
         </p>
       </section>
-      <section className="mb-8 rounded-2xl border border-cyan-400/20 bg-gradient-to-br from-cyan-400/10 via-violet-400/[0.04] to-transparent p-5 md:p-7">
+      <section className="mb-8 rounded-lg border border-cyan-400/20 bg-gradient-to-br from-cyan-400/10 via-violet-400/[0.04] to-transparent p-5 md:p-7">
         <p className="text-xs font-black uppercase tracking-[0.22em] text-cyan-300">Complete single-page edition</p>
         <h2 className="mt-2 text-2xl font-black tracking-tight text-white md:text-3xl">89-Page Geometry Master + Advanced Extension</h2>
         <p className="mt-3 max-w-4xl text-sm leading-7 text-[#c3d1dd]">

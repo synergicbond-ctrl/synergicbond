@@ -35,7 +35,7 @@ function Section({
   return (
     <section className="rounded-[2rem] border border-white/10 bg-slate-950/80 p-5 shadow-2xl shadow-black/20 backdrop-blur md:p-8">
       <div className="flex items-start gap-4">
-        <span className="grid h-10 w-10 shrink-0 place-items-center rounded-2xl border border-cyan-300/30 bg-cyan-300/10 text-sm font-black text-cyan-200">
+        <span className="grid h-10 w-10 shrink-0 place-items-center rounded-lg border border-cyan-300/30 bg-cyan-300/10 text-sm font-black text-cyan-200">
           {index}
         </span>
         <div>
@@ -58,7 +58,7 @@ function ConceptLens({
   tone?: Tone;
 }) {
   return (
-    <aside className={`rounded-2xl border p-5 ${toneMap[tone]}`}>
+    <aside className={`rounded-lg border p-5 ${toneMap[tone]}`}>
       <p className="text-xs font-black uppercase tracking-[0.2em]">Synergic Bond Concept Lens</p>
       <h3 className="mt-2 text-lg font-black text-white">{title}</h3>
       <div className="mt-2 text-sm leading-6 text-slate-200">{children}</div>
@@ -74,7 +74,7 @@ function Formula({
   children: React.ReactNode;
 }) {
   return (
-    <div className="overflow-x-auto rounded-2xl border border-cyan-300/20 bg-black/30 p-4 text-center">
+    <div className="overflow-x-auto rounded-lg border border-cyan-300/20 bg-black/30 p-4 text-center">
       {label ? (
         <p className="mb-2 text-xs font-black uppercase tracking-[0.2em] text-cyan-300">{label}</p>
       ) : null}
@@ -103,7 +103,7 @@ function ProcessCard({
   tone,
 }: ProcessCardProps) {
   return (
-    <article className={`rounded-3xl border p-5 ${toneMap[tone]}`}>
+    <article className={`rounded-lg border p-5 ${toneMap[tone]}`}>
       <div className="flex flex-wrap items-start justify-between gap-3">
         <div>
           <p className="text-xs font-black uppercase tracking-[0.2em]">{graph}</p>
@@ -225,7 +225,7 @@ function ProcessMapAnimation() {
 function HeatFlowAnimation() {
   return (
     <div className="grid gap-4 lg:grid-cols-2">
-      <article className="rounded-3xl border border-cyan-300/20 bg-cyan-300/[0.05] p-5">
+      <article className="rounded-lg border border-cyan-300/20 bg-cyan-300/[0.05] p-5">
         <p className="text-xs font-black uppercase tracking-[0.2em] text-cyan-300">Isothermal control</p>
         <svg viewBox="0 0 620 360" role="img" aria-label="Isothermal piston with heat entering" className="mt-4 h-auto w-full">
         <title>Thermodynamics Part 04 scientific diagram 2</title>
@@ -250,7 +250,7 @@ function HeatFlowAnimation() {
         </svg>
       </article>
 
-      <article className="rounded-3xl border border-emerald-300/20 bg-emerald-300/[0.05] p-5">
+      <article className="rounded-lg border border-emerald-300/20 bg-emerald-300/[0.05] p-5">
         <p className="text-xs font-black uppercase tracking-[0.2em] text-emerald-300">Adiabatic isolation</p>
         <svg viewBox="0 0 620 360" role="img" aria-label="Adiabatic piston with no heat transfer" className="mt-4 h-auto w-full">
         <title>Thermodynamics Part 04 scientific diagram 3</title>
@@ -401,7 +401,7 @@ function EquilibriumCompass() {
   return (
     <div className="grid gap-4 md:grid-cols-2">
       {cards.map((card) => (
-        <article key={card.title} className={`rounded-3xl border p-5 ${toneMap[card.tone]}`}>
+        <article key={card.title} className={`rounded-lg border p-5 ${toneMap[card.tone]}`}>
           <div className="flex items-start justify-between gap-3">
             <div>
               <p className="text-xs font-black uppercase tracking-[0.2em]">{card.criterion}</p>
@@ -552,7 +552,7 @@ function ProblemLadder() {
   return (
     <div className="grid gap-4 lg:grid-cols-2">
       {processProblems.map((item) => (
-        <article key={item.title} className="group rounded-2xl border border-white/10 bg-slate-900/70 p-5">
+        <article key={item.title} className="group rounded-lg border border-white/10 bg-slate-900/70 p-5">
           <h3 className=" font-black text-white">
             <span className="mr-2 text-amber-300">◆</span>
             {item.title}
@@ -603,7 +603,7 @@ const correctionRows = [
 
 function CorrectionTable() {
   return (
-    <div className="overflow-x-auto rounded-2xl border border-white/10">
+    <div className="overflow-x-auto rounded-lg border border-white/10">
       <table className="min-w-full border-collapse text-left text-sm">
         <thead className="bg-slate-900">
           <tr>
@@ -773,7 +773,7 @@ export default function ThermodynamicsPart04() {
             </ConceptLens>
           </div>
 
-          <div className="rounded-3xl border border-white/10 bg-slate-900/70 p-5">
+          <div className="rounded-lg border border-white/10 bg-slate-900/70 p-5">
             <p className="text-xs font-black uppercase tracking-[0.2em] text-cyan-300">Preview relation</p>
             <p className="mt-3 font-mono text-xl font-black text-white">PV<sup>γ</sup> = constant</p>
             <p className="mt-2 text-sm leading-6 text-slate-300">
@@ -857,7 +857,7 @@ export default function ThermodynamicsPart04() {
           <ReversibilityAnimation />
 
           <div className="grid gap-4 lg:grid-cols-2">
-            <article className="rounded-3xl border border-emerald-300/20 bg-emerald-300/[0.05] p-5">
+            <article className="rounded-lg border border-emerald-300/20 bg-emerald-300/[0.05] p-5">
               <Chip tone="emerald">REVERSIBLE LIMIT</Chip>
               <ul className="mt-4 space-y-3 text-sm leading-6 text-slate-200">
                 <li>• Driving and opposing forces differ infinitesimally.</li>
@@ -869,7 +869,7 @@ export default function ThermodynamicsPart04() {
               </ul>
             </article>
 
-            <article className="rounded-3xl border border-rose-300/20 bg-rose-300/[0.05] p-5">
+            <article className="rounded-lg border border-rose-300/20 bg-rose-300/[0.05] p-5">
               <Chip tone="rose">IRREVERSIBLE REALITY</Chip>
               <ul className="mt-4 space-y-3 text-sm leading-6 text-slate-200">
                 <li>• Finite driving force produces a definite rate.</li>
@@ -908,7 +908,7 @@ export default function ThermodynamicsPart04() {
             </ConceptLens>
           </div>
 
-          <p className="rounded-2xl border border-amber-300/20 bg-amber-300/[0.06] p-4 text-sm leading-6 text-slate-200">
+          <p className="rounded-lg border border-amber-300/20 bg-amber-300/[0.06] p-4 text-sm leading-6 text-slate-200">
             During a strongly irreversible process, the equilibrium equation of state can be used reliably at the initial
             and final equilibrium states. A single uniform bulk pressure or temperature may not exist throughout the
             intermediate non-equilibrium state.
@@ -944,19 +944,19 @@ export default function ThermodynamicsPart04() {
           subtitle="Convert process labels between P–V, T–V and P–T representations."
         >
           <div className="grid gap-4 lg:grid-cols-3">
-            <article className="rounded-2xl border border-cyan-300/20 bg-cyan-300/[0.05] p-5">
+            <article className="rounded-lg border border-cyan-300/20 bg-cyan-300/[0.05] p-5">
               <p className="text-xs font-black uppercase tracking-[0.2em] text-cyan-300">P–V plane</p>
               <p className="mt-2 text-sm leading-6 text-slate-200">
                 Isobar: horizontal. Isochore: vertical. Ideal-gas isotherm: rectangular hyperbola.
               </p>
             </article>
-            <article className="rounded-2xl border border-amber-300/20 bg-amber-300/[0.05] p-5">
+            <article className="rounded-lg border border-amber-300/20 bg-amber-300/[0.05] p-5">
               <p className="text-xs font-black uppercase tracking-[0.2em] text-amber-300">T–V plane</p>
               <p className="mt-2 text-sm leading-6 text-slate-200">
                 Isotherm: horizontal. Isochore: vertical. Ideal-gas isobar: straight line through the origin in kelvin variables.
               </p>
             </article>
-            <article className="rounded-2xl border border-violet-300/20 bg-violet-300/[0.05] p-5">
+            <article className="rounded-lg border border-violet-300/20 bg-violet-300/[0.05] p-5">
               <p className="text-xs font-black uppercase tracking-[0.2em] text-violet-300">P–T plane</p>
               <p className="mt-2 text-sm leading-6 text-slate-200">
                 Isobar: horizontal. Isotherm: vertical. Ideal-gas isochore: straight line through the origin in kelvin variables.
@@ -997,7 +997,7 @@ export default function ThermodynamicsPart04() {
               ["Adiabatic", "q = 0"],
               ["Reversible", "no entropy production in the ideal limit"],
             ].map(([term, meaning]) => (
-              <div key={term} className="rounded-2xl border border-white/10 bg-black/25 p-4">
+              <div key={term} className="rounded-lg border border-white/10 bg-black/25 p-4">
                 <p className="font-black text-white">{term}</p>
                 <p className="mt-1 text-sm leading-6 text-slate-300">{meaning}</p>
               </div>

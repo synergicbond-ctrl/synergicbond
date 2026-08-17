@@ -33,7 +33,7 @@ export default function MatterClassificationTree({ onNodeSelect }: MatterClassif
   const isExpanded = (id: string) => expandedNodes.has(id);
 
   return (
-    <div className="p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 shadow-sm">
+    <div className="p-6 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 shadow-sm">
       <h2 className="text-2xl font-bold mb-6 text-slate-900 dark:text-white">
         Categorizing the Material Universe
       </h2>

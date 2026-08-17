@@ -85,7 +85,7 @@ export default async function ProfilePage() {
   ];
 
   return (
-    <main className="min-h-screen bg-[#0B0F19] text-white py-10">
+    <main className="min-h-screen bg-[var(--background)] text-white py-10">
       <div className="max-w-3xl mx-auto px-4">
         <Link
           href="/dashboard"
@@ -97,14 +97,14 @@ export default async function ProfilePage() {
         {/* Identity header */}
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-white/[0.06] pb-6 mb-8">
           <div className="flex items-center gap-4">
-            <div className="h-14 w-14 rounded-2xl bg-gradient-to-br from-cyan-500/25 to-purple-500/25 border border-cyan-400/20 flex items-center justify-center text-xl font-black text-cyan-300">
+            <div className="h-14 w-14 rounded-lg bg-gradient-to-br from-cyan-500/25 to-purple-500/25 border border-[var(--accent)]/30 flex items-center justify-center text-xl font-black text-[var(--accent)]">
               {displayName.charAt(0).toUpperCase()}
             </div>
             <div>
               <h1 className="text-2xl font-black tracking-tight flex items-center gap-2">
                 {displayName}
                 {privileged && (
-                  <span className="px-2 py-0.5 rounded text-[9px] font-black uppercase tracking-wider bg-cyan-500/15 text-cyan-300 flex items-center gap-1">
+                  <span className="px-2 py-0.5 rounded text-[9px] font-black uppercase tracking-wider bg-[var(--accent)]/10 text-[var(--accent)] flex items-center gap-1">
                     <ShieldCheck className="h-3 w-3" /> {role}
                   </span>
                 )}
@@ -127,11 +127,11 @@ export default async function ProfilePage() {
         {/* Personal information */}
         <section className="mb-8">
           <h2 className="text-sm font-black text-white/40 uppercase tracking-widest mb-4">Personal Information</h2>
-          <div className="rounded-2xl border border-white/[0.08] bg-[#111827] divide-y divide-white/[0.04]">
+          <div className="rounded-lg border border-white/[0.08] bg-[var(--surface)] divide-y divide-white/[0.04]">
             {infoRows.map((row) => (
               <div key={row.label} className="flex items-center justify-between gap-4 px-5 py-3.5">
                 <span className="flex items-center gap-2.5 text-xs font-bold text-white/50">
-                  <span className="text-cyan-400/70">{row.icon}</span> {row.label}
+                  <span className="text-[var(--accent)]/70">{row.icon}</span> {row.label}
                 </span>
                 <span className="text-sm font-semibold text-white text-right">
                   {row.value ?? <span className="text-white/30 font-normal">Not added yet</span>}
@@ -144,18 +144,18 @@ export default async function ProfilePage() {
         {/* Subscription + programs */}
         <section>
           <h2 className="text-sm font-black text-white/40 uppercase tracking-widest mb-4">Subscription &amp; Programs</h2>
-          <div className="rounded-2xl border border-white/[0.08] bg-[#111827] p-5">
+          <div className="rounded-lg border border-white/[0.08] bg-[var(--surface)] p-5">
             <div className="flex items-center justify-between gap-4 pb-4 border-b border-white/[0.04]">
               <span className="flex items-center gap-2.5 text-xs font-bold text-white/50">
-                <CreditCard className="h-4 w-4 text-cyan-400/70" /> Subscription status
+                <CreditCard className="h-4 w-4 text-[var(--accent)]/70" /> Subscription status
               </span>
-              <span className="text-sm font-black text-cyan-300">{subscriptionLabel}</span>
+              <span className="text-sm font-black text-[var(--accent)]">{subscriptionLabel}</span>
             </div>
 
             {ownedPrograms.length === 0 ? (
               <div className="pt-4 text-xs text-white/50">
                 No subscribed programs yet.{" "}
-                <Link href="/pricing" className="text-cyan-300 font-bold hover:text-cyan-200 transition">
+                <Link href="/pricing" className="text-[var(--accent)] font-bold hover:text-[var(--accent)] transition">
                   Browse programs →
                 </Link>
               </div>
@@ -177,7 +177,7 @@ export default async function ProfilePage() {
             <div className="pt-4 mt-1">
               <Link
                 href="/dashboard/subscription"
-                className="text-xs font-bold text-cyan-300 hover:text-cyan-200 transition"
+                className="text-xs font-bold text-[var(--accent)] hover:text-[var(--accent)] transition"
               >
                 Manage subscription →
               </Link>

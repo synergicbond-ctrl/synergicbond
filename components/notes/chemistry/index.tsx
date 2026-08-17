@@ -39,7 +39,7 @@ export function NotesChapterHeader({
 }) {
   return (
     <header
-      className="rounded-2xl p-6 sm:p-8 space-y-5"
+      className="rounded-lg p-6 sm:p-8 space-y-5"
       style={{ border: "1px solid #24405c", background: "linear-gradient(180deg, #182b3e, #0a1622)" }}
     >
       {/* Breadcrumb */}

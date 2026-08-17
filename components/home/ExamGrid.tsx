@@ -98,13 +98,13 @@ export default function ExamGrid() {
             <Link
               key={exam.title}
               href={exam.href}
-              className={`group relative rounded-2xl border bg-[#111827] p-6 transition-all duration-300 hover:-translate-y-2 ${exam.borderHover} ${exam.glow}`}
+              className={`group relative rounded-lg border bg-[var(--surface)] p-6 transition-all duration-300 hover:-translate-y-2 ${exam.borderHover} ${exam.glow}`}
               style={{ borderColor: "rgba(255,255,255,0.06)" }}
             >
               {/* Icon + status badge on one row (no overlap) */}
               <div className="flex items-start justify-between mb-5 gap-2">
                 <div
-                  className={`flex h-14 w-14 items-center justify-center rounded-2xl border bg-gradient-to-br ${exam.iconBg}`}
+                  className={`flex h-14 w-14 items-center justify-center rounded-lg border bg-gradient-to-br ${exam.iconBg}`}
                   style={{ boxShadow: `0 6px 20px ${exam.shadow}, inset 0 1px 0 rgba(255,255,255,0.12)` }}
                 >
                   <Icon className={`h-7 w-7 ${exam.iconColor}`} />

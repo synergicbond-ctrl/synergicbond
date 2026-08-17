@@ -182,13 +182,13 @@ export default function IsomerismPart11() {
     <main className="min-h-screen bg-[#08111f] px-4 py-8 text-white sm:px-6 sm:py-12">
       <article className="mx-auto max-w-6xl">
         <Link href="/learn/isomerism" className="rounded-full border border-cyan-300/30 bg-cyan-300/10 px-4 py-2 text-sm font-bold text-cyan-100">Isomerism</Link>
-        <header className="mt-6 rounded-3xl border border-cyan-300/15 bg-[radial-gradient(circle_at_top_right,_rgba(34,211,238,.18),_transparent_35%),linear-gradient(135deg,rgba(34,211,238,.08),rgba(2,6,23,.7),rgba(139,92,246,.1))] p-6 sm:p-9">
+        <header className="mt-6 rounded-lg border border-cyan-300/15 bg-[radial-gradient(circle_at_top_right,_rgba(34,211,238,.18),_transparent_35%),linear-gradient(135deg,rgba(34,211,238,.08),rgba(2,6,23,.7),rgba(139,92,246,.1))] p-6 sm:p-9">
           <p className="text-xs font-black uppercase tracking-[.24em] text-cyan-200">Optical Isomerism source · pages 1–14 · Part 11</p>
           <h1 className="mt-3 text-3xl font-black sm:text-5xl">Optical activity and polarimetry</h1>
         </header>
 
         <section className="mt-7 space-y-6">
-          <section className="rounded-2xl border border-white/10 bg-white/[.035] p-5">
+          <section className="rounded-lg border border-white/10 bg-white/[.035] p-5">
             <h2 className="text-xl font-black text-cyan-200">Plane-polarised light and rotation</h2>
             <p className="mt-3 text-sm leading-7 text-slate-200">Compounds which can rotate plane-polarised light (PPL), either clockwise or anticlockwise, are optically active compounds; this property is called optical activity. Optical isomers have:</p>
             <ol className="mt-2 list-decimal space-y-1 pl-5 text-sm leading-6 text-slate-300">
@@ -202,7 +202,7 @@ export default function IsomerismPart11() {
             <aside className="mt-3 rounded-xl border border-amber-300/25 bg-amber-300/[.07] p-4 text-sm text-amber-50"><b>Critical distinction:</b> (+)/(−) is measured rotation; it is not predicted by R/S or D/L configuration.</aside>
           </section>
 
-          <section className="rounded-2xl border border-white/10 bg-white/[.035] p-5">
+          <section className="rounded-lg border border-white/10 bg-white/[.035] p-5">
             <h2 className="text-xl font-black text-cyan-200">Requirements of the experiment</h2>
             <ol className="list-decimal space-y-3 pl-5 text-sm leading-6 text-slate-300">
               <li><b className="text-white">Monochromatic light</b> — usually the sodium D line (589 nm) so that wavelength is held constant.</li>
@@ -217,7 +217,7 @@ export default function IsomerismPart11() {
             </ol>
           </section>
 
-          <section className="rounded-2xl border border-white/10 bg-white/[.035] p-5">
+          <section className="rounded-lg border border-white/10 bg-white/[.035] p-5">
             <h2 className="text-xl font-black text-cyan-200">Testing the sample: dark-field and bright-field zones</h2>
             <p className="mt-2 text-sm leading-7 text-slate-300">The light coming from the sample compound P is tested through a movable prism, splitting it into a dark-field zone and two bright-field zones.</p>
             <div className="mt-4 overflow-x-auto rounded-xl border border-cyan-300/20 bg-[#050b16] p-3"><ProbePrismZones /></div>
@@ -229,7 +229,7 @@ export default function IsomerismPart11() {
             <p className="mt-3 text-sm leading-7 text-slate-300">The value of α is obtained by rotating the movable prism until a bright-field zone is achieved, but α = θ or π − θ are two possible angles — a single measurement cannot fix the exact angle of rotation. It is impossible to differentiate this reading from the case α<sub>obs</sub> = 0 using a single measurement.</p>
           </section>
 
-          <section className="rounded-2xl border border-white/10 bg-white/[.035] p-5">
+          <section className="rounded-lg border border-white/10 bg-white/[.035] p-5">
             <h2 className="text-xl font-black text-cyan-200">Observed and specific rotation</h2>
             <p className="text-sm leading-7 text-slate-200">α = optical rotation is the angle between the plane of PPL just before and after interaction with the compound. Observed optical rotation α depends on wavelength, temperature, tube length l, concentration c and solvent.</p>
             <h3 className="mt-4 text-sm font-black uppercase tracking-wide text-slate-300">Factors affecting α</h3>
@@ -247,7 +247,7 @@ export default function IsomerismPart11() {
             </div>
           </section>
 
-          <section className="rounded-2xl border border-white/10 bg-white/[.035] p-5">
+          <section className="rounded-lg border border-white/10 bg-white/[.035] p-5">
             <h2 className="text-xl font-black text-cyan-200">Worked example: 0.5 M (+)-2-butanol</h2>
             <p className="text-sm leading-6 text-slate-300">Calculate the specific rotation when a 0.5 M solution of (+)-2-butanol is taken in a 10 cm sample tube, with α<sub>obs</sub> = +20°.</p>
             <ol className="mt-2 list-decimal space-y-2 pl-5 text-sm leading-6 text-slate-300">
@@ -264,7 +264,7 @@ export default function IsomerismPart11() {
             </div>
           </section>
 
-          <section className="rounded-2xl border border-white/10 bg-white/[.035] p-5">
+          <section className="rounded-lg border border-white/10 bg-white/[.035] p-5">
             <h2 className="text-xl font-black text-cyan-200">Fresnel&apos;s explanation of optical activity (crystals)</h2>
             <p className="mt-2 text-sm leading-7 text-slate-300">Fresnel (1822) explained optical activity in crystalline substances such as quartz using the principle that simple harmonic motion along a straight line is the resultant of two opposite circular motions. Plane-polarised light entering along the optic axis resolves into a right-handed (dextro-) and a left-handed (lævo-) circularly polarised beam of the same frequency.</p>
             <div className="mt-4 overflow-x-auto rounded-xl border border-cyan-300/20 bg-[#050b16] p-3"><FresnelCircularComponents /></div>
@@ -278,7 +278,7 @@ export default function IsomerismPart11() {
             <p className="mt-3 text-sm leading-7 text-slate-300">Fresnel&apos;s theory requires that refractive indices for dextro- and lævocircularly polarised light differ for optically active substances; only a small difference gives fairly large rotations. Its weakness is that it does not explain <i>why</i> the two circular components travel at different velocities — though Fresnel (1824) further suggested quartz&apos;s activity arises from a structure built up in right- and left-handed spirals.</p>
           </section>
 
-          <section className="rounded-2xl border border-white/10 bg-white/[.035] p-5">
+          <section className="rounded-lg border border-white/10 bg-white/[.035] p-5">
             <h2 className="text-xl font-black text-cyan-200">Optical activity in solution: statistical (external) compensation</h2>
             <p className="mt-2 text-sm leading-7 text-slate-300">In solution, optical activity is due to the molecules themselves, not crystalline structure. Any crystal — or, by extension, any molecule behaving as an individual crystal — with a plane but not a centre of symmetry rotates PPL, the rotation varying with the direction light travels through it; no rotation occurs when light travels perpendicular or parallel to the plane.</p>
             <p className="mt-3 text-sm leading-7 text-slate-300">Consider molecule Ca₂bd, which has a plane of symmetry: molecule I and its mirror image II are superimposable.</p>
@@ -287,20 +287,20 @@ export default function IsomerismPart11() {
             <p className="mt-3 text-sm leading-7 text-slate-300">When a molecule is <b>not</b> superimposable on its mirror image and only one enantiomorph is present, there is no compensating mirror-image population — hence a net rotation that is <i>not</i> zero, the sum of individual (same-direction) contributions. <b className="text-white">Thus, as a whole, if the molecular structure is asymmetric, the compound will be optically active.</b> A compound composed of molecules with a plane but not a centre of symmetry is, considered as a whole, optically inactive — the net zero rotation being the result of &quot;external compensation&quot;.</p>
           </section>
 
-          <section className="rounded-2xl border border-white/10 bg-white/[.035] p-5">
+          <section className="rounded-lg border border-white/10 bg-white/[.035] p-5">
             <h2 className="text-xl font-black text-cyan-200">Internal compensation: mesotartaric acid</h2>
             <p className="mt-2 text-sm leading-7 text-slate-300">Mesotartaric acid is optically inactive by internal compensation. X-ray studies show the staggered conformation (a) is favoured and has a centre of symmetry, so molecules in this conformation are individually optically inactive. The plane-diagram formula (b) corresponds to the eclipsed form and has a plane of symmetry: individual molecules in this conformation are optically active except when light travels perpendicular or parallel to the plane — net rotation is zero by external compensation. A skewed conformer (c) has no symmetry element at all; if the entire population adopted it there would be a net rotation, but for every such molecule there is (by probability) a mirror-image molecule present too, giving zero by external compensation. Mesotartaric acid&apos;s inactivity is conventionally described as due to <b className="text-white">internal compensation</b>.</p>
             <div className="mt-4 overflow-x-auto rounded-xl border border-cyan-300/20 bg-[#050b16] p-3"><MesotartaricConformers /></div>
           </section>
 
-          <section className="rounded-2xl border border-white/10 bg-white/[.035] p-5">
+          <section className="rounded-lg border border-white/10 bg-white/[.035] p-5">
             <h2 className="text-xl font-black text-cyan-200">Polarised light and the polarimeter (historical note)</h2>
             <p className="mt-2 text-sm leading-7 text-slate-300">An ordinary light beam vibrates in all planes perpendicular to its path; passed through certain substances, the transmitted beam vibrates in one plane only — plane-polarised light. Iceland spar (crystalline calcium carbonate) cut as a Nicol prism (William Nicol, 1828) is one way to polarise light; Polaroid, invented by E. H. Land, is a crystalline organic compound embedded in plastic and used in, e.g., sunglasses. Light passes through two polarising samples only if their polarising axes are aligned; if perpendicular, no light passes — the basis of the polarimeter.</p>
             <p className="mt-3 text-sm leading-7 text-slate-300">With the sample tube empty, the analyser is rotated until the field of view is dark (polariser and analyser axes perpendicular). An optically inactive sample changes nothing. An optically active sample rotates the plane of polarisation, letting light through; rotating the analyser clockwise or counter-clockwise restores the dark field, and that angle is α, the observed rotation. Rotating right (clockwise) is dextrorotatory (+); left (counter-clockwise) is lævorotatory (−).</p>
             <aside className="mt-3 rounded-xl border border-amber-300/25 bg-amber-300/[.07] p-4 text-sm text-amber-50">It is not possible to tell from a single measurement whether a rotation is + or −: is a reading +10° really +10° or −350°? One resolution is to increase the sample concentration by 10% — a true +10° reading becomes +11°, while a true −350° reading becomes −385° (i.e. −25° once reduced mod 360°).</aside>
           </section>
 
-          <section className="rounded-2xl border border-white/10 bg-white/[.035] p-5">
+          <section className="rounded-lg border border-white/10 bg-white/[.035] p-5">
             <h2 className="text-xl font-black text-cyan-200">Conditions for optical activity</h2>
             <p className="text-sm leading-7 text-slate-300">To be optically active, a compound must be <b className="text-white">asymmetric</b> or <b className="text-white">dissymmetric</b>.</p>
             <h3 className="mt-3 text-sm font-black uppercase tracking-wide text-slate-300">Types of symmetry</h3>
@@ -335,7 +335,7 @@ export default function IsomerismPart11() {
             <p className="mt-3 text-sm leading-7 text-slate-300">Compounds having a chiral carbon may or may not be optically active — <b className="text-white">chirality is the essential criterion for optical activity</b>, not merely the presence of a chiral (stereogenic) carbon. Optical activity can also arise from the presence of a <b className="text-white">chiral axis</b> even without any chiral carbon (developed further in Part 13/34).</p>
           </section>
 
-          <section className="rounded-2xl border border-white/10 bg-white/[.035] p-5">
+          <section className="rounded-lg border border-white/10 bg-white/[.035] p-5">
             <h2 className="text-xl font-black text-cyan-200">Plane of symmetry — the alphabet test</h2>
             <p className="text-sm leading-7 text-slate-300">A plane of symmetry (POS) is an imaginary plane which bisects the molecule into equal halves such that each half is the mirror image of the other. A quick way to build intuition for POS is to check which capital letters possess one:</p>
             <div className="mt-4 grid grid-cols-6 gap-2 sm:grid-cols-9 md:grid-cols-13">

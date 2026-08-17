@@ -7,7 +7,7 @@ export const partInfo = {
 } as const;
 
 const Card = ({ title, children }: { title: string; children: ReactNode }) => (
-  <section className="rounded-2xl border border-white/10 bg-white/[0.035] p-5 md:p-6">
+  <section className="rounded-lg border border-white/10 bg-white/[0.035] p-5 md:p-6">
     <h2 className="text-xl font-semibold tracking-tight text-white">{title}</h2>
     <div className="mt-4 space-y-4 text-[15px] leading-7 text-zinc-300">{children}</div>
   </section>
@@ -16,7 +16,7 @@ const Card = ({ title, children }: { title: string; children: ReactNode }) => (
 export default function SolidStatePart01() {
   return (
     <article data-chapter="solid-state" data-part="01" className="mx-auto w-full max-w-5xl space-y-6 px-4 py-8 md:px-6">
-      <header className="rounded-3xl border border-cyan-400/20 bg-gradient-to-b from-cyan-400/10 to-transparent p-6 md:p-8">
+      <header className="rounded-lg border border-cyan-400/20 bg-gradient-to-b from-cyan-400/10 to-transparent p-6 md:p-8">
         <p className="text-xs font-semibold uppercase tracking-[0.24em] text-cyan-300">JEE Advanced · Solid State · Part 1</p>
         <h1 className="mt-3 text-3xl font-semibold tracking-tight text-white md:text-4xl">Solid State — Entry Point</h1>
         <p className="mt-4 max-w-3xl text-sm leading-7 text-zinc-300">
@@ -27,7 +27,7 @@ export default function SolidStatePart01() {
 
       <Card title="1. Classification of Solids">
         <p>On the basis of structural arrangement, solids are introduced in two categories:</p>
-        <div className="overflow-hidden rounded-2xl border border-white/10 bg-black/20">
+        <div className="overflow-hidden rounded-lg border border-white/10 bg-black/20">
           <div className="border-b border-white/10 px-4 py-3 text-center font-semibold text-white">SOLID</div>
           <div className="grid md:grid-cols-2">
             <div className="border-b border-white/10 px-4 py-5 text-center md:border-b-0 md:border-r">
@@ -72,7 +72,7 @@ export default function SolidStatePart01() {
         </div>
       </Card>
 
-      <aside className="rounded-2xl border border-emerald-400/20 bg-emerald-400/[0.045] p-5">
+      <aside className="rounded-lg border border-emerald-400/20 bg-emerald-400/[0.045] p-5">
         <p className="text-xs font-semibold uppercase tracking-[0.2em] text-emerald-300">Sequence Lock</p>
         <p className="mt-2 text-sm leading-7 text-zinc-300">
           Part 2 develops the exact opening comparison: arrangement, melting behaviour, cutting/cleavage,

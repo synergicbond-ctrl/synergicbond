@@ -36,7 +36,7 @@ function Section({
   return (
     <section className="rounded-[2rem] border border-white/10 bg-slate-950/80 p-5 shadow-2xl shadow-black/20 backdrop-blur md:p-8">
       <div className="flex items-start gap-4">
-        <span className="grid h-10 w-10 shrink-0 place-items-center rounded-2xl border border-cyan-300/30 bg-cyan-300/10 text-sm font-black text-cyan-200">
+        <span className="grid h-10 w-10 shrink-0 place-items-center rounded-lg border border-cyan-300/30 bg-cyan-300/10 text-sm font-black text-cyan-200">
           {index}
         </span>
         <div>
@@ -59,7 +59,7 @@ function ConceptLens({
   tone?: Tone;
 }) {
   return (
-    <aside className={`rounded-2xl border p-5 ${toneMap[tone]}`}>
+    <aside className={`rounded-lg border p-5 ${toneMap[tone]}`}>
       <p className="text-xs font-black uppercase tracking-[0.2em]">Synergic Bond Concept Lens</p>
       <h3 className="mt-2 text-lg font-black text-white">{title}</h3>
       <div className="mt-2 text-sm leading-6 text-slate-200">{children}</div>
@@ -75,7 +75,7 @@ function Formula({
   children: React.ReactNode;
 }) {
   return (
-    <div className="overflow-x-auto rounded-2xl border border-cyan-300/20 bg-black/30 p-4 text-center">
+    <div className="overflow-x-auto rounded-lg border border-cyan-300/20 bg-black/30 p-4 text-center">
       {label ? (
         <p className="mb-2 text-xs font-black uppercase tracking-[0.2em] text-cyan-300">{label}</p>
       ) : null}
@@ -267,7 +267,7 @@ type TestCardProps = {
 
 function TestCard({ title, expression, result, tone, children }: TestCardProps) {
   return (
-    <article className={`rounded-3xl border p-5 ${toneMap[tone]}`}>
+    <article className={`rounded-lg border p-5 ${toneMap[tone]}`}>
       <p className="text-xs font-black uppercase tracking-[0.2em]">{result}</p>
       <h3 className="mt-2 text-xl font-black text-white">{title}</h3>
       <div className="mt-4 rounded-xl bg-black/25 p-4 text-center font-mono text-base font-black text-white">
@@ -389,7 +389,7 @@ function ProblemLadder() {
   return (
     <div className="grid gap-4 lg:grid-cols-2">
       {problems.map((item) => (
-        <article key={item.title} className="group rounded-2xl border border-white/10 bg-slate-900/70 p-5">
+        <article key={item.title} className="group rounded-lg border border-white/10 bg-slate-900/70 p-5">
           <h3 className=" font-black text-white">
             <span className="mr-2 text-amber-300">◆</span>
             {item.title}
@@ -419,7 +419,7 @@ const functionTable = [
 
 function FunctionTable() {
   return (
-    <div className="overflow-x-auto rounded-2xl border border-white/10">
+    <div className="overflow-x-auto rounded-lg border border-white/10">
       <table className="min-w-full border-collapse text-left text-sm">
         <thead className="bg-slate-900">
           <tr>
@@ -721,7 +721,7 @@ export default function ThermodynamicsPart03() {
             </Formula>
           </div>
 
-          <p className="rounded-2xl border border-emerald-300/20 bg-emerald-300/[0.06] p-4 text-sm leading-6 text-slate-200">
+          <p className="rounded-lg border border-emerald-300/20 bg-emerald-300/[0.06] p-4 text-sm leading-6 text-slate-200">
             The equality confirms that dV is exact. Volume is a state function.
           </p>
         </Section>
@@ -755,7 +755,7 @@ export default function ThermodynamicsPart03() {
 
         <Section index="10" title="Conservative and non-conservative mechanical work">
           <div className="grid gap-4 lg:grid-cols-2">
-            <article className="rounded-3xl border border-emerald-300/20 bg-emerald-300/[0.05] p-5">
+            <article className="rounded-lg border border-emerald-300/20 bg-emerald-300/[0.05] p-5">
               <Chip tone="emerald">CONSERVATIVE FORCE</Chip>
               <h3 className="mt-4 text-xl font-black text-white">Endpoint-dependent mechanical work</h3>
               <p className="mt-2 text-sm leading-6 text-slate-300">
@@ -767,7 +767,7 @@ export default function ThermodynamicsPart03() {
               </div>
             </article>
 
-            <article className="rounded-3xl border border-rose-300/20 bg-rose-300/[0.05] p-5">
+            <article className="rounded-lg border border-rose-300/20 bg-rose-300/[0.05] p-5">
               <Chip tone="rose">NON-CONSERVATIVE FORCE</Chip>
               <h3 className="mt-4 text-xl font-black text-white">Route-dependent mechanical work</h3>
               <p className="mt-2 text-sm leading-6 text-slate-300">
@@ -833,7 +833,7 @@ export default function ThermodynamicsPart03() {
               ["Exact test", "cross partial derivatives agree"],
               ["Cycle", "∮dΦ = 0 for a state function"],
             ].map(([term, meaning]) => (
-              <div key={term} className="rounded-2xl border border-white/10 bg-black/25 p-4">
+              <div key={term} className="rounded-lg border border-white/10 bg-black/25 p-4">
                 <p className="font-black text-white">{term}</p>
                 <p className="mt-1 text-sm leading-6 text-slate-300">{meaning}</p>
               </div>

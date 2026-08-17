@@ -59,7 +59,7 @@ function slugify(value: string) {
 
 function FigureFrame({ children, caption }: { children: ReactNode; caption: string }) {
   return (
-    <figure className="my-7 overflow-hidden rounded-2xl border border-white/10 bg-[#07131f]">
+    <figure className="my-7 overflow-hidden rounded-lg border border-white/10 bg-[#07131f]">
       <div className="overflow-x-auto p-4 md:p-7">{children}</div>
       <figcaption className="border-t border-white/10 px-5 py-3 text-sm leading-6 text-slate-400">
         {caption}
@@ -386,7 +386,7 @@ function BlockView({ block, exampleNumber }: { block: SolidStateBlock; exampleNu
 
 function PartNavigation({ active }: { active: number }) {
   return (
-    <nav aria-label="Solid State chapter parts" className="sticky top-2 z-30 mt-5 overflow-x-auto rounded-2xl border border-white/10 bg-[#07101a]/95 p-2 shadow-2xl backdrop-blur-xl">
+    <nav aria-label="Solid State chapter parts" className="sticky top-2 z-30 mt-5 overflow-x-auto rounded-lg border border-white/10 bg-[#07101a]/95 p-2 shadow-2xl backdrop-blur-xl">
       <div className="flex min-w-max gap-2">
         <Link href="/learn/solid-state/master" className="flex w-36 shrink-0 items-center justify-center rounded-xl border border-white/10 px-4 py-3 text-sm font-bold text-slate-200 transition hover:border-cyan-300/35">Chapter contents</Link>
         {SOLID_STATE_PARTS.map((part)=><Link key={part.number} href={`/learn/solid-state/master/part${String(part.number).padStart(2,"0")}`} aria-current={part.number===active?"page":undefined} className={`w-64 shrink-0 rounded-xl border px-4 py-3 transition ${part.number===active?"border-cyan-300/55 bg-cyan-300/10 text-white":"border-white/10 bg-white/[0.015] text-slate-400 hover:border-cyan-300/30 hover:text-white"}`}><div className="text-[10px] font-black uppercase tracking-[.16em] text-cyan-300/75">Part {String(part.number).padStart(2,"0")}</div><div className="mt-1 text-sm font-bold leading-5">{part.shortTitle}</div></Link>)}
@@ -411,7 +411,7 @@ export function SolidStatePartPage({ part }: { part: SolidStatePart }) {
   return (
     <main className="min-h-screen bg-[radial-gradient(circle_at_12%_0%,rgba(34,211,238,.08),transparent_30%),radial-gradient(circle_at_88%_4%,rgba(139,92,246,.08),transparent_28%),linear-gradient(#07111d,#060b12)] text-white">
       <div className="mx-auto max-w-7xl px-4 py-8 md:px-6 md:py-12">
-        <header className="rounded-3xl border border-cyan-300/20 bg-[#0b1a28]/95 px-6 py-8 md:px-10 md:py-11">
+        <header className="rounded-lg border border-cyan-300/20 bg-[#0b1a28]/95 px-6 py-8 md:px-10 md:py-11">
           <p className="text-xs font-black uppercase tracking-[.18em] text-cyan-300">JEE Advanced · Solid State · Part {String(part.number).padStart(2,"0")} of 10</p>
           <h1 className="mt-5 max-w-5xl text-4xl font-black tracking-[-.035em] text-white md:text-6xl">{part.title}</h1>
           <p className="mt-5 max-w-4xl text-lg leading-8 text-slate-300">{part.description}</p>
@@ -420,9 +420,9 @@ export function SolidStatePartPage({ part }: { part: SolidStatePart }) {
         <PartNavigation active={part.number}/>
 
         <div className="mx-auto mt-10 grid max-w-6xl gap-8 lg:grid-cols-[240px_minmax(0,1fr)]">
-          <aside className="hidden lg:block"><div className="sticky top-32 rounded-2xl border border-white/10 bg-[#0a1724]/90 p-5"><div className="text-xs font-black uppercase tracking-[.15em] text-cyan-300">In this part</div><ol className="mt-4 space-y-3 text-sm leading-5 text-slate-400">{part.sections.map((section)=><li key={section.title}><a href={`#${slugify(section.title)}`} className="transition hover:text-white">{section.title}</a></li>)}</ol></div></aside>
+          <aside className="hidden lg:block"><div className="sticky top-32 rounded-lg border border-white/10 bg-[#0a1724]/90 p-5"><div className="text-xs font-black uppercase tracking-[.15em] text-cyan-300">In this part</div><ol className="mt-4 space-y-3 text-sm leading-5 text-slate-400">{part.sections.map((section)=><li key={section.title}><a href={`#${slugify(section.title)}`} className="transition hover:text-white">{section.title}</a></li>)}</ol></div></aside>
 
-          <article className="min-w-0 rounded-3xl border border-white/10 bg-[#0b1724]/[0.88] px-5 py-7 shadow-[0_18px_50px_rgba(0,0,0,.22)] md:px-9 md:py-10">
+          <article className="min-w-0 rounded-lg border border-white/10 bg-[#0b1724]/[0.88] px-5 py-7 shadow-[0_18px_50px_rgba(0,0,0,.22)] md:px-9 md:py-10">
             {part.sections.map((section,sectionIndex)=><section key={section.title} id={slugify(section.title)} className={`${sectionIndex?"mt-14 border-t border-white/10 pt-12":""} scroll-mt-32`}><h2 className="text-2xl font-black tracking-tight text-white md:text-3xl">{section.title}</h2><div className="mt-6 space-y-5">{section.blocks.map((block,blockIndex)=><BlockView key={`${section.title}-${blockIndex}`} block={block} exampleNumber={block.kind==="example"?getExampleNumber(part,sectionIndex,blockIndex):0}/>)}</div></section>)}
 
             <section className="mt-14 border-t border-white/10 pt-12"><h2 className="text-2xl font-black text-white md:text-3xl">Part review</h2><div className="mt-6 grid gap-3">{part.review.map((item,index)=><div key={item} className="flex gap-4 rounded-xl border border-white/10 bg-white/[0.02] px-4 py-3.5"><span className="font-black text-cyan-300">{index+1}</span><p className="leading-7 text-slate-300"><RichText text={item}/></p></div>)}</div></section>

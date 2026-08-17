@@ -223,7 +223,7 @@ export default function StudentDetailsForm({ open, onClose, onComplete, userEmai
       aria-labelledby="student-details-title"
     >
       <div
-        className="sb-modal-panel relative flex max-h-[90vh] w-full max-w-md flex-col overflow-hidden rounded-t-3xl border border-white/[0.08] bg-[#111827] shadow-2xl sm:rounded-3xl"
+        className="sb-modal-panel relative flex max-h-[90vh] w-full max-w-md flex-col overflow-hidden rounded-t-3xl border border-white/[0.08] bg-[var(--surface)] shadow-2xl sm:rounded-lg"
         onClick={(e) => e.stopPropagation()}
       >
         <button
@@ -257,7 +257,7 @@ export default function StudentDetailsForm({ open, onClose, onComplete, userEmai
             <div className="space-y-2.5">
               <a
                 href={signInHref}
-                className="flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-cyan-400 to-sky-500 py-3 text-sm font-bold text-black transition hover:-translate-y-0.5"
+                className="flex w-full items-center justify-center gap-2 rounded-lg bg-[var(--accent)] py-3 text-sm font-bold text-black transition hover:-translate-y-0.5"
               >
                 <LogIn className="h-4 w-4" /> Sign In
               </a>
@@ -414,7 +414,7 @@ export default function StudentDetailsForm({ open, onClose, onComplete, userEmai
               >
                 <option value="" disabled>Select an option</option>
                 {DISCOVERY_OPTIONS.map((d) => (
-                  <option key={d} value={d} className="bg-[#111827]">{d}</option>
+                  <option key={d} value={d} className="bg-[var(--surface)]">{d}</option>
                 ))}
               </select>
               {errors.discovery_source && <p className="text-[10px] text-red-400 mt-1">{errors.discovery_source}</p>}
@@ -432,7 +432,7 @@ export default function StudentDetailsForm({ open, onClose, onComplete, userEmai
               >
                 <option value="" disabled>Choose a question</option>
                 {SECURITY_QUESTIONS.map((q) => (
-                  <option key={q} value={q} className="bg-[#111827]">{q}</option>
+                  <option key={q} value={q} className="bg-[var(--surface)]">{q}</option>
                 ))}
               </select>
               {errors.security_question && <p className="text-[10px] text-red-400 mt-1">{errors.security_question}</p>}
@@ -457,7 +457,7 @@ export default function StudentDetailsForm({ open, onClose, onComplete, userEmai
         </div>
 
         {/* Sticky footer — confirmation + continue stay visible */}
-        <div className="shrink-0 border-t border-white/[0.08] bg-[#111827] px-6 pt-4 pb-6 sm:px-7">
+        <div className="shrink-0 border-t border-white/[0.08] bg-[var(--surface)] px-6 pt-4 pb-6 sm:px-7">
           <label className="flex items-start gap-2.5 mb-4 cursor-pointer select-none">
             <input
               type="checkbox"
@@ -474,7 +474,7 @@ export default function StudentDetailsForm({ open, onClose, onComplete, userEmai
           <button
             onClick={handleSubmit}
             disabled={saving}
-            className="w-full rounded-xl bg-gradient-to-r from-cyan-400 to-sky-500 py-3 text-sm font-bold text-black transition hover:-translate-y-0.5 disabled:translate-y-0 disabled:opacity-50 flex items-center justify-center gap-2"
+            className="w-full rounded-lg bg-[var(--accent)] py-3 text-sm font-bold text-black transition hover:-translate-y-0.5 disabled:translate-y-0 disabled:opacity-50 flex items-center justify-center gap-2"
           >
             {saving ? "Saving..." : "Continue to Payment"}
             {!saving && <ArrowRight className="h-4 w-4" />}

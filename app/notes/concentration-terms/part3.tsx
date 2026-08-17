@@ -7,7 +7,7 @@ export default function ConcentrationTermsPart3() {
   return (
     <main className="min-h-screen bg-slate-950 px-4 py-8 text-slate-100 md:px-10">
       <article className="mx-auto max-w-5xl space-y-10">
-        <header className="rounded-3xl border border-cyan-400/30 bg-gradient-to-br from-slate-900 via-slate-900 to-slate-950 p-6 shadow-2xl md:p-8">
+        <header className="rounded-lg border border-cyan-400/30 bg-gradient-to-br from-slate-900 via-slate-900 to-slate-950 p-6 shadow-2xl md:p-8">
           <div className="flex items-center justify-between">
             <span className="rounded-full bg-cyan-500/20 px-3 py-1 text-xs font-bold uppercase tracking-[0.2em] text-cyan-300">
               Concentration Terms — Topic 3
@@ -30,12 +30,12 @@ export default function ConcentrationTermsPart3() {
             1. Gram per Litre Strength (<InlineMath math="S" />)
           </h2>
 
-          <div className="rounded-2xl border border-slate-800 bg-slate-900 p-6 space-y-4 text-sm leading-relaxed text-slate-200">
+          <div className="rounded-lg border border-slate-800 bg-slate-900 p-6 space-y-4 text-sm leading-relaxed text-slate-200">
             <p>
               Strength (<InlineMath math="S" />) represents the absolute mass of solute in grams dissolved per exact litre of solution. Because it depends on solution volume, it is a <strong className="text-cyan-300">temperature-dependent</strong> parameter.
             </p>
 
-            <div className="overflow-x-auto py-3 bg-slate-950 rounded-2xl border border-slate-800 px-4">
+            <div className="overflow-x-auto py-3 bg-slate-950 rounded-lg border border-slate-800 px-4">
               <BlockMath math={String.raw`S (\text{g/L}) = \frac{\text{Mass of solute (g)}}{\text{Volume of solution (L)}} = \frac{w \times 1000}{V (\text{mL})}`} />
             </div>
 
@@ -58,7 +58,7 @@ export default function ConcentrationTermsPart3() {
             2. Molarity (<InlineMath math="M" />) &amp; Direct Formulas
           </h2>
 
-          <div className="rounded-2xl border border-slate-800 bg-slate-900 p-6 space-y-4 text-sm leading-relaxed text-slate-200">
+          <div className="rounded-lg border border-slate-800 bg-slate-900 p-6 space-y-4 text-sm leading-relaxed text-slate-200">
             <p>
               Molarity (<InlineMath math="M" />) is the most widely utilized volumetric concentration scale in chemistry. It represents the exact number of moles of solute dissolved per litre of total solution (<InlineMath math="\text{mol/L}" /> or <InlineMath math="M" />).
             </p>
@@ -109,7 +109,7 @@ export default function ConcentrationTermsPart3() {
             3. Molarity from Mass Percentage &amp; Ionic Equivalencies
           </h2>
 
-          <div className="rounded-2xl border border-slate-800 bg-slate-900 p-6 space-y-4 text-sm leading-relaxed text-slate-200">
+          <div className="rounded-lg border border-slate-800 bg-slate-900 p-6 space-y-4 text-sm leading-relaxed text-slate-200">
             <div className="rounded-xl border border-slate-800 bg-slate-950 p-5 space-y-3">
               <span className="text-xs font-bold uppercase tracking-widest text-amber-300">Master Relation: <InlineMath math="M = \frac{10 \times d \times (\% w/w)}{M'}" /></span>
               <p className="text-xs text-slate-300 leading-relaxed">
@@ -146,7 +146,7 @@ export default function ConcentrationTermsPart3() {
             4. Dilution Conservation &amp; Multi-Component Mixing
           </h2>
 
-          <div className="rounded-2xl border border-slate-800 bg-slate-900 p-6 space-y-4 text-sm leading-relaxed text-slate-200">
+          <div className="rounded-lg border border-slate-800 bg-slate-900 p-6 space-y-4 text-sm leading-relaxed text-slate-200">
             <p>
               Applying conservation of moles (<InlineMath math="n = M \times V" />) across dilution and mixing of solutions:
             </p>
@@ -192,7 +192,7 @@ export default function ConcentrationTermsPart3() {
         </section>
 
         {/* Footer info */}
-        <footer className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 text-center text-xs text-slate-400">
+        <footer className="rounded-lg border border-slate-800 bg-slate-900/60 p-6 text-center text-xs text-slate-400">
           <p>Concentration Terms Module • Topic 3: Gram/Litre Strength &amp; Molarity (M)</p>
         </footer>
       </article>

@@ -48,13 +48,13 @@ export default function Hero() {
           <div className="mt-8 flex flex-wrap justify-center gap-5">
             <Link
               href="/dashboard"
-              className="rounded-2xl bg-gradient-to-r from-cyan-400 to-sky-500 px-8 py-4 font-semibold text-black shadow-lg shadow-cyan-500/20 transition duration-300 hover:-translate-y-1"
+              className="rounded-lg bg-[var(--accent)] px-8 py-4 font-semibold text-black shadow-lg shadow-cyan-500/20 transition duration-300 hover:-translate-y-1"
             >
               {t("hero.startLearning")}
             </Link>
             <Link
               href="/vault"
-              className="rounded-2xl border border-white/10 bg-white/[0.03] px-8 py-4 transition duration-300 hover:-translate-y-1 hover:border-cyan-400/30 hover:bg-white/[0.06]"
+              className="rounded-lg border border-white/10 bg-white/[0.03] px-8 py-4 transition duration-300 hover:-translate-y-1 hover:border-cyan-400/30 hover:bg-white/[0.06]"
             >
               {t("hero.exploreVault")}
             </Link>

@@ -41,7 +41,7 @@ export default function ElectrochemistryNotesPage() {
           </div>
 
           <div className="grid gap-6 md:grid-cols-2">
-            <div className="rounded-3xl border border-slate-800 bg-slate-900/80 p-6 space-y-4">
+            <div className="rounded-lg border border-slate-800 bg-slate-900/80 p-6 space-y-4">
               <h3 className="text-xl font-black text-cyan-300">1. Galvanic Cells & Nernst Equation</h3>
               <p className="text-sm text-slate-300 leading-relaxed">
                 In a galvanic cell, chemical energy is converted to electrical energy via spontaneous redox reactions.
@@ -58,7 +58,7 @@ export default function ElectrochemistryNotesPage() {
               <BlockMath math="\Delta G^\circ = -n F E^\circ_{\text{cell}} = -2.303 R T \log_{10} K_c" />
             </div>
 
-            <div className="rounded-3xl border border-slate-800 bg-slate-900/80 p-6 space-y-4">
+            <div className="rounded-lg border border-slate-800 bg-slate-900/80 p-6 space-y-4">
               <h3 className="text-xl font-black text-lime-300">2. Conductance & Kohlrausch&apos;s Law</h3>
               <p className="text-sm text-slate-300 leading-relaxed">
                 Molar conductivity (<InlineMath math="\Lambda_m" />) increases with dilution due to increased ionic mobility and dissociation:
@@ -78,12 +78,12 @@ export default function ElectrochemistryNotesPage() {
 
         {/* Detailed Chapter Data from SSOT */}
         {chapter && (
-          <section className="rounded-3xl border border-slate-800 bg-slate-900/60 p-6 sm:p-8 space-y-6">
+          <section className="rounded-lg border border-slate-800 bg-slate-900/60 p-6 sm:p-8 space-y-6">
             <h3 className="text-lg font-bold text-white border-b border-slate-800 pb-2">Important NCERT Highlights & Solved Numericals</h3>
             
             <div className="space-y-4">
               {chapter.solvedExamples.map((ex, idx) => (
-                <div key={idx} className="rounded-2xl border border-slate-800 bg-slate-950/80 p-5 space-y-3">
+                <div key={idx} className="rounded-lg border border-slate-800 bg-slate-950/80 p-5 space-y-3">
                   <p className="text-sm font-bold text-cyan-300">Problem {idx + 1}: {ex.q}</p>
                   <div className="text-xs text-slate-300 bg-slate-900/60 p-3 rounded-xl border border-slate-800 font-mono space-y-1">
                     {ex.steps.map((st, i) => (

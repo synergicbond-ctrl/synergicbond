@@ -85,9 +85,9 @@ export default function AboutVision() {
             return (
               <div
                 key={p.title}
-                className={`group rounded-3xl border ${p.border} ${p.bg} p-6 flex gap-5 items-start backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:border-white/30 hover:shadow-xl`}
+                className={`group rounded-lg border ${p.border} ${p.bg} p-6 flex gap-5 items-start backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:border-white/30 hover:shadow-xl`}
               >
-                <div className="flex-shrink-0 p-3 rounded-2xl bg-white/10 border border-white/10 group-hover:scale-110 transition-transform">
+                <div className="flex-shrink-0 p-3 rounded-lg bg-white/10 border border-white/10 group-hover:scale-110 transition-transform">
                   <Icon className={`h-6 w-6 ${p.accent}`} />
                 </div>
                 <div>
@@ -110,8 +110,8 @@ export default function AboutVision() {
           {/* Architectural Elevation & Badge Hierarchy */}
           <div className="flex flex-col items-center sm:items-start text-center sm:text-left">
             <div className="relative mb-5 group">
-              <div className="absolute -inset-1 rounded-3xl bg-gradient-to-r from-cyan-400 via-sky-400 to-purple-500 opacity-75 blur-md transition duration-500 group-hover:opacity-100" />
-              <div className="relative flex h-32 w-32 items-center justify-center rounded-2xl bg-[#0B0F19] border border-white/20 shadow-2xl">
+              <div className="absolute -inset-1 rounded-lg bg-gradient-to-r from-cyan-400 via-sky-400 to-purple-500 opacity-75 blur-md transition duration-500 group-hover:opacity-100" />
+              <div className="relative flex h-32 w-32 items-center justify-center rounded-lg bg-[var(--background)] border border-white/20 shadow-2xl">
                 <BrainCircuit className="h-16 w-16 text-cyan-300 drop-shadow-[0_0_15px_rgba(34,211,238,0.5)]" />
               </div>
               <div className="absolute -bottom-3 -right-3 flex items-center gap-1 rounded-full bg-cyan-500 border border-black px-3 py-1 text-[10px] font-black uppercase text-black shadow-lg">
@@ -139,7 +139,7 @@ export default function AboutVision() {
                 return (
                   <div
                     key={idx}
-                    className={`flex items-center gap-3 rounded-2xl border px-4 py-3.5 backdrop-blur-md transition-all duration-300 hover:scale-[1.02] hover:shadow-lg ${cap.bg}`}
+                    className={`flex items-center gap-3 rounded-lg border px-4 py-3.5 backdrop-blur-md transition-all duration-300 hover:scale-[1.02] hover:shadow-lg ${cap.bg}`}
                   >
                     <CapIcon className={`h-5 w-5 shrink-0 ${cap.color}`} />
                     <span className="text-xs sm:text-sm font-bold text-white/90">{cap.text}</span>

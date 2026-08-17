@@ -425,7 +425,7 @@ type EnrichData = { heading: string; items: EnrichItem[] };
 
 function EnrichmentCard({ item }: { item: EnrichItem }) {
   return (
-    <article className="rounded-2xl border border-sky-400/20 bg-sky-400/[0.04] p-5">
+    <article className="rounded-lg border border-sky-400/20 bg-sky-400/[0.04] p-5">
       <h3 className="font-black text-sky-200">{item.title}</h3>
       <p className="mt-3 text-sm leading-6 text-slate-300">{item.body}</p>
       {item.connection ? (

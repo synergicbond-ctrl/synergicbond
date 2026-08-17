@@ -54,7 +54,7 @@ export default function PracticeLoop({ questions }: { questions: Question[]; cha
 
   if (completed) {
     return (
-      <div className="p-8 bg-emerald-50 dark:bg-emerald-950/20 border-2 border-emerald-200 dark:border-emerald-800 rounded-3xl text-center space-y-4 animate-fadeIn">
+      <div className="p-8 bg-emerald-50 dark:bg-emerald-950/20 border-2 border-emerald-200 dark:border-emerald-800 rounded-lg text-center space-y-4 animate-fadeIn">
         <span className="text-4xl">🎉</span>
         <h3 className="text-xl font-black text-emerald-900 dark:text-emerald-200">Learning Cycle Completed!</h3>
         <p className="text-xs text-emerald-700 dark:text-emerald-400">
@@ -85,7 +85,7 @@ export default function PracticeLoop({ questions }: { questions: Question[]; cha
   }
 
   return (
-    <div className="bg-white dark:bg-slate-900 p-8 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-sm space-y-6 max-w-2xl mx-auto">
+    <div className="bg-white dark:bg-slate-900 p-8 rounded-lg border border-slate-200 dark:border-slate-800 shadow-sm space-y-6 max-w-2xl mx-auto">
       <div className="flex justify-between items-center text-[10px] font-extrabold uppercase tracking-widest text-indigo-600 dark:text-indigo-400">
         <span>Active Recall Drill</span>
         <span>Question {currentIndex + 1} of {questions.length}</span>
@@ -117,7 +117,7 @@ export default function PracticeLoop({ questions }: { questions: Question[]; cha
               key={opt}
               disabled={!!selectedOption}
               onClick={() => handleAnswer(opt)}
-              className={`p-4 text-left border-2 rounded-2xl transition text-xs font-semibold ${btnStyle}`}
+              className={`p-4 text-left border-2 rounded-lg transition text-xs font-semibold ${btnStyle}`}
             >
               {opt}
             </button>
@@ -126,13 +126,13 @@ export default function PracticeLoop({ questions }: { questions: Question[]; cha
       </div>
 
       {aiExplanation && (
-        <div className="p-4 bg-rose-50 dark:bg-rose-950/30 border border-rose-200 dark:border-rose-800 rounded-2xl text-rose-900 dark:text-rose-200 text-xs font-medium leading-relaxed animate-fadeIn">
+        <div className="p-4 bg-rose-50 dark:bg-rose-950/30 border border-rose-200 dark:border-rose-800 rounded-lg text-rose-900 dark:text-rose-200 text-xs font-medium leading-relaxed animate-fadeIn">
           {aiExplanation}
         </div>
       )}
 
       {selectedOption && (
-        <button onClick={nextQuestion} className="w-full py-4 bg-indigo-600 hover:bg-indigo-700 text-white font-black text-xs rounded-2xl shadow-sm transition">
+        <button onClick={nextQuestion} className="w-full py-4 bg-indigo-600 hover:bg-indigo-700 text-white font-black text-xs rounded-lg shadow-sm transition">
           {currentIndex < questions.length - 1 ? "Proceed to Next Drill" : "Finalize Learning Loop"}
         </button>
       )}

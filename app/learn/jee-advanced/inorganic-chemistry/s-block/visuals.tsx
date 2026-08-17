@@ -10,7 +10,7 @@ function VisualFrame({
   children: ReactNode;
 }) {
   return (
-    <section className="overflow-hidden rounded-3xl border border-cyan-300/15 bg-[#07111d] shadow-2xl shadow-black/30">
+    <section className="overflow-hidden rounded-lg border border-cyan-300/15 bg-[#07111d] shadow-2xl shadow-black/30">
       <div className="border-b border-white/[.07] bg-[linear-gradient(100deg,rgba(34,211,238,.12),rgba(139,92,246,.10),rgba(251,191,36,.08))] px-5 py-4 sm:px-7">
         <p className="text-[10px] font-black uppercase tracking-[.22em] text-cyan-300">{eyebrow}</p>
         <h2 className="mt-1 text-xl font-black text-white sm:text-2xl">{title}</h2>
@@ -83,7 +83,7 @@ function TrendVisual() {
   return (
     <VisualFrame eyebrow="Trend engine" title="What changes on descending an s-block group">
       <div className="grid gap-3 lg:grid-cols-[1fr_.85fr]">
-        <svg viewBox="0 0 620 430" className="h-auto w-full rounded-2xl bg-[#050b13]" role="img" aria-label="Trend ladder down an s-block group">
+        <svg viewBox="0 0 620 430" className="h-auto w-full rounded-lg bg-[#050b13]" role="img" aria-label="Trend ladder down an s-block group">
           <defs>
             <linearGradient id="trendArrow" x1="0" y1="0" x2="0" y2="1">
               <stop offset="0%" stopColor="#22d3ee" />
@@ -105,7 +105,7 @@ function TrendVisual() {
           <text x="282" y="286" fill="#e2e8f0" fontSize="21" fontWeight="900">Lower charge density</text>
           <text x="282" y="324" fill="#94a3b8" fontSize="17">weaker hydration/polarisation</text>
         </svg>
-        <div className="overflow-hidden rounded-2xl border border-white/10 bg-[#08101b]">
+        <div className="overflow-hidden rounded-lg border border-white/10 bg-[#08101b]">
           {rows.map(([property, direction, reason], index) => (
             <div key={property} className={`grid grid-cols-[1fr_44px] gap-3 px-4 py-3 ${index ? "border-t border-white/[.07]" : ""}`}>
               <div>
@@ -509,7 +509,7 @@ function HardnessVisual() {
     <VisualFrame eyebrow="Water treatment" title="Choose the method from the ion that causes hardness">
       <div className="grid gap-3 md:grid-cols-5">
         {methods.map(([title, sub, tone], index) => (
-          <div key={title} className="relative overflow-hidden rounded-2xl border border-white/10 bg-[#08111c] p-4">
+          <div key={title} className="relative overflow-hidden rounded-lg border border-white/10 bg-[#08111c] p-4">
             <span className="flex h-9 w-9 items-center justify-center rounded-full text-sm font-black text-[#020617]" style={{ background: tone }}>{index + 1}</span>
             <h3 className="mt-4 font-black text-white">{title}</h3>
             <p className="mt-2 text-xs leading-5 text-slate-400">{sub}</p>
@@ -562,7 +562,7 @@ function TrapVisual() {
     <VisualFrame eyebrow="Final trap wall" title="Pairs JEE Advanced deliberately makes students confuse">
       <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
         {cards.map(([top, bottom], index) => (
-          <div key={top} className="rounded-2xl border border-white/10 bg-[linear-gradient(135deg,rgba(34,211,238,.08),rgba(139,92,246,.07))] p-5">
+          <div key={top} className="rounded-lg border border-white/10 bg-[linear-gradient(135deg,rgba(34,211,238,.08),rgba(139,92,246,.07))] p-5">
             <p className={`text-2xl font-black ${index % 2 ? "text-violet-200" : "text-cyan-200"}`}>{top}</p>
             <p className="mt-2 text-sm leading-6 text-slate-400">{bottom}</p>
           </div>

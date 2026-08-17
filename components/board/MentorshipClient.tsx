@@ -74,7 +74,7 @@ export default function MentorshipClient({
   return (
     <div className="space-y-6">
       {/* Exam Countdown */}
-      <section className="rounded-2xl border border-amber-500/25 bg-amber-500/[0.05] p-5">
+      <section className="rounded-lg border border-amber-500/25 bg-amber-500/[0.05] p-5">
         <div className="flex flex-wrap items-center justify-between gap-3">
           <div>
             <div className="text-xs font-bold uppercase tracking-wider text-amber-300">Exam Countdown</div>
@@ -130,10 +130,10 @@ export default function MentorshipClient({
       </section>
 
       {/* Progress Report */}
-      <section className="rounded-2xl border border-white/10 bg-white/[0.03] p-5">
+      <section className="rounded-lg border border-white/10 bg-white/[0.03] p-5">
         <h2 className="text-lg font-black">Progress Report</h2>
         <p className="mt-1 text-sm text-white/55">Your accuracy, weak areas, predicted board score and attempt history — computed from your real attempts.</p>
-        <Link href={`${base}/analytics`} className="mt-3 inline-block rounded-xl bg-gradient-to-r from-cyan-400 to-sky-500 px-4 py-2 text-sm font-black text-black">Open full report →</Link>
+        <Link href={`${base}/analytics`} className="mt-3 inline-block rounded-xl bg-[var(--accent)] px-4 py-2 text-sm font-black text-black">Open full report →</Link>
       </section>
 
       {/* Mentor Notes */}

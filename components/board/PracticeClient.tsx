@@ -206,7 +206,7 @@ export default function PracticeClient({
   }, [subQ, answer, activeType.marks, boardName, uploadedFile]);
 
   return (
-    <div className="space-y-5 rounded-3xl border border-white/[0.07] bg-[#101827]/65 p-4 shadow-[0_30px_75px_-55px_rgba(0,0,0,0.95)] sm:p-5">
+    <div className="space-y-5 rounded-lg border border-white/[0.07] bg-[#101827]/65 p-4 shadow-[0_30px_75px_-55px_rgba(0,0,0,0.95)] sm:p-5">
       {/* Type tabs */}
       <div className="flex gap-2 overflow-x-auto pb-1">
         {BOARD_QUESTION_TYPES.map((t) => (
@@ -248,7 +248,7 @@ export default function PracticeClient({
           </div>
 
           {batch.length === 0 ? (
-            <div className="rounded-2xl border border-white/10 bg-white/[0.02] p-8 text-center text-sm text-white/55">
+            <div className="rounded-lg border border-white/10 bg-white/[0.02] p-8 text-center text-sm text-white/55">
               {result && result.poolSize === 0
                 ? "No verified questions of this type for the selected chapter yet — try another chapter or type."
                 : result?.exhausted
@@ -265,12 +265,12 @@ export default function PracticeClient({
         /* Subjective (AI) */
         <div className="space-y-4">
           <button onClick={generateSubjective} disabled={subLoading}
-            className="rounded-xl bg-gradient-to-r from-cyan-400 to-sky-500 px-5 py-2.5 text-sm font-black text-black disabled:opacity-60">
+            className="rounded-xl bg-[var(--accent)] px-5 py-2.5 text-sm font-black text-black disabled:opacity-60">
             {subLoading ? "Generating…" : `Generate ${activeType.label} question`}
           </button>
           {subError && <p className="rounded-xl border border-rose-500/30 bg-rose-500/[0.06] p-3 text-sm text-rose-300">{subError}</p>}
           {subQ && (
-            <div className="space-y-3 rounded-2xl border border-cyan-400/20 bg-[linear-gradient(135deg,rgba(34,211,238,0.07),transparent_38%),rgba(255,255,255,0.02)] p-4 shadow-inner shadow-black/20">
+            <div className="space-y-3 rounded-lg border border-cyan-400/20 bg-[linear-gradient(135deg,rgba(34,211,238,0.07),transparent_38%),rgba(255,255,255,0.02)] p-4 shadow-inner shadow-black/20">
               <p className="font-medium leading-relaxed text-white">{subQ.question}</p>
               <textarea value={answer} onChange={(e) => setAnswer(e.target.value)} rows={5}
                 placeholder="Write your answer as you would in the board exam (or upload a PDF/Image below)..."

@@ -18,14 +18,14 @@ export default function BrainModeModal({
       onClick={onClose}
     >
       <div
-        className="w-full max-w-lg max-h-[88vh] overflow-y-auto rounded-3xl border border-cyan-400/20 bg-[#0B0F19] shadow-[0_0_60px_-12px_rgba(34,211,238,0.4)]"
+        className="w-full max-w-lg max-h-[88vh] overflow-y-auto rounded-lg border border-cyan-400/20 bg-[var(--background)] shadow-[0_0_60px_-12px_rgba(34,211,238,0.4)]"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Header */}
-        <div className="sticky top-0 z-10 flex items-start justify-between gap-4 border-b border-white/[0.06] bg-[#0B0F19]/95 px-5 py-4 backdrop-blur">
+        <div className="sticky top-0 z-10 flex items-start justify-between gap-4 border-b border-white/[0.06] bg-[var(--background)]/95 px-5 py-4 backdrop-blur">
           <div className="flex items-center gap-3">
             {/* Bold symbol accent box */}
-            <div className="flex h-16 w-16 shrink-0 flex-col items-center justify-center rounded-2xl border border-cyan-400/30 bg-gradient-to-br from-cyan-500/20 to-violet-500/10">
+            <div className="flex h-16 w-16 shrink-0 flex-col items-center justify-center rounded-lg border border-cyan-400/30 bg-gradient-to-br from-cyan-500/20 to-violet-500/10">
               <span className="text-2xl font-black leading-none text-cyan-300">{data.symbol}</span>
             </div>
             <div>

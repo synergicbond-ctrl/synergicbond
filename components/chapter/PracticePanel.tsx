@@ -6,7 +6,7 @@ export default function PracticePanel({
   onStartPractice,
 }: PracticePanelProps) {
   return (
-    <section className="mb-8 rounded-2xl border border-cyan-700 bg-cyan-950/20 p-6">
+    <section className="mb-8 rounded-lg border border-cyan-700 bg-cyan-950/20 p-6">
       <h2 className="text-2xl font-bold">
         Practice This Chapter
       </h2>

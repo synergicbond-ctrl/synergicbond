@@ -98,7 +98,7 @@ export default function SmartTimers() {
     <div className="space-y-5">
       {/* Active timer */}
       {running && (
-        <div className={`rounded-2xl border p-6 text-center ${finished ? "border-emerald-400/40 bg-emerald-500/[0.07]" : "border-cyan-400/30 bg-cyan-500/[0.05]"}`}>
+        <div className={`rounded-lg border p-6 text-center ${finished ? "border-emerald-400/40 bg-emerald-500/[0.07]" : "border-cyan-400/30 bg-cyan-500/[0.05]"}`}>
           <div className="text-xs font-bold uppercase tracking-wider text-white/50">{label}</div>
           <div className={`mt-1 font-mono text-6xl font-black ${finished ? "text-emerald-300" : "text-white"}`}>
             {finished ? "Done" : fmt(Math.ceil(remainingMs / 1000))}
@@ -126,20 +126,20 @@ export default function SmartTimers() {
       </div>
 
       {tab === "custom" ? (
-        <div className="flex flex-wrap items-center gap-3 rounded-2xl border border-white/10 bg-white/[0.03] p-4">
+        <div className="flex flex-wrap items-center gap-3 rounded-lg border border-white/10 bg-white/[0.03] p-4">
           <label className="flex items-center gap-2 text-sm text-white/70">Minutes
             <input type="number" min={1} max={300} value={customMin}
               onChange={(e) => setCustomMin(Math.min(300, Math.max(1, Number(e.target.value) || 1)))}
               className="w-20 rounded-lg border border-white/10 bg-[#0B1220] px-2 py-1.5 text-white/90" />
           </label>
           <button onClick={() => start(customMin, `Custom ${customMin} min`)}
-            className="rounded-xl bg-gradient-to-r from-cyan-400 to-sky-500 px-4 py-2 text-sm font-black text-black">Start</button>
+            className="rounded-xl bg-[var(--accent)] px-4 py-2 text-sm font-black text-black">Start</button>
         </div>
       ) : (
         <div className="grid gap-2 sm:grid-cols-3">
           {activeTab.presets.map((p) => (
             <button key={p.key} onClick={() => start(p.minutes, p.label)}
-              className="rounded-2xl border border-white/[0.08] bg-white/[0.03] p-4 text-left transition hover:-translate-y-0.5 hover:border-cyan-400/40">
+              className="rounded-lg border border-white/[0.08] bg-white/[0.03] p-4 text-left transition hover:-translate-y-0.5 hover:border-cyan-400/40">
               <div className="font-black text-white">{p.label}</div>
               <div className="text-2xl font-black text-cyan-300">{p.minutes} min</div>
               <p className="mt-1 text-xs text-white/50">{p.note}</p>

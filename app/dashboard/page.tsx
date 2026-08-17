@@ -14,8 +14,8 @@ import {
 // ─────────────────────────────────────────────────────────────────────────────
 // /dashboard — Authenticated homepage (Portal Reorganisation pass).
 //
-// Answers ONE question: “What should I do next?” — via exactly five blocks:
-//   1. Continue Learning   (primary card; the only gradient on the page)
+// Answers ONE question: "What should I do next?" — via exactly five blocks:
+//   1. Continue Learning   (primary card)
 //   2. Revise Today        (real due-count from the SM-2 store — client card)
 //   3. Practice Now        (real weak-topic recommendation or honest empty)
 //   4. Current Program     (active program + access + syllabus/subscription)
@@ -84,37 +84,35 @@ export default async function DashboardPage() {
   ];
 
   return (
-    <main className="min-h-screen bg-[radial-gradient(circle_at_8%_0%,rgba(34,211,238,0.13),transparent_26%),radial-gradient(circle_at_93%_12%,rgba(139,92,246,0.14),transparent_25%),#0B0F19] px-4 py-8 text-white md:p-8">
+    <main className="min-h-screen bg-[var(--background)] px-4 py-8 text-[var(--foreground)] md:p-8">
       <div className="mx-auto max-w-5xl space-y-5">
 
-        <header className="flex flex-wrap items-end justify-between gap-2 border-b border-white/[0.08] pb-5">
+        <header className="flex flex-wrap items-end justify-between gap-2 border-b border-[var(--border)] pb-5">
           <div>
-            <p className="mb-2 text-[10px] font-black uppercase tracking-[0.34em] text-cyan-300">Student command centre</p>
-            <h1 className="font-serif text-3xl font-black tracking-tight sm:text-4xl">Welcome back, {studentName}</h1>
-            <p className="mt-1 text-sm text-white/50">
-              {active ? <>Studying <span className="font-semibold text-cyan-300">{active.name}</span></> : "Your free chemistry workspace"}
+            <p className="mb-2 text-[10px] font-black uppercase tracking-[0.34em] text-[var(--text-muted)]">Student command centre</p>
+            <h1 className="font-display text-3xl font-black tracking-tight sm:text-4xl">Welcome back, {studentName}</h1>
+            <p className="mt-1 text-sm text-[var(--text-muted)]">
+              {active ? <>Studying <span className="font-semibold text-[var(--accent)]">{active.name}</span></> : "Your free chemistry workspace"}
             </p>
           </div>
         </header>
 
-        {/* 1 ── CONTINUE LEARNING — the primary card (only gradient on page) */}
-        <section className="relative overflow-hidden rounded-3xl border border-cyan-400/35 bg-gradient-to-r from-cyan-500/[0.18] via-sky-500/[0.12] to-violet-500/[0.18] p-6 shadow-[0_24px_70px_-40px_rgba(34,211,238,0.85)]">
-          <div aria-hidden="true" className="absolute -right-16 -top-20 h-52 w-52 rounded-full border border-violet-300/20 bg-violet-500/10 blur-2xl" />
-          <div aria-hidden="true" className="absolute -bottom-24 right-1/3 h-40 w-40 rounded-full bg-cyan-300/10 blur-3xl" />
-          <div className="relative flex flex-wrap items-center justify-between gap-4">
+        {/* 1 ── CONTINUE LEARNING */}
+        <section className="rounded-lg border border-[var(--accent)]/30 bg-[var(--surface)] p-6">
+          <div className="flex flex-wrap items-center justify-between gap-4">
             <div className="min-w-0">
-              <p className="text-[11px] font-bold uppercase tracking-wider text-cyan-300/80">Continue Learning</p>
+              <p className="text-[11px] font-bold uppercase tracking-wider text-[var(--accent)]">Continue Learning</p>
               {lastChapter ? (
                 <>
                   <h2 className="mt-1 truncate text-xl font-black sm:text-2xl">{lastChapter.title}</h2>
-                  <p className="mt-1 text-sm text-white/55">
+                  <p className="mt-1 text-sm text-[var(--text-muted)]">
                     Your most recent study session{active ? ` · ${active.name}` : ""} — pick up where you left off.
                   </p>
                 </>
               ) : (
                 <>
                   <h2 className="mt-1 text-xl font-black sm:text-2xl">Start your first chapter</h2>
-                  <p className="mt-1 text-sm text-white/55">
+                  <p className="mt-1 text-sm text-[var(--text-muted)]">
                     No study history yet — open Chapter Notes and begin{active ? ` your ${active.name} preparation` : ""}.
                   </p>
                 </>
@@ -122,7 +120,7 @@ export default async function DashboardPage() {
             </div>
             <Link
               href={continueHref}
-              className="inline-flex shrink-0 items-center gap-2 rounded-xl bg-gradient-to-r from-cyan-400 to-sky-500 px-5 py-2.5 text-sm font-black text-black transition hover:-translate-y-0.5"
+              className="inline-flex shrink-0 items-center gap-2 rounded-lg bg-[var(--accent)] px-5 py-2.5 text-sm font-black text-[var(--background)] transition hover:opacity-90"
             >
               {lastChapter ? "Continue" : "Start learning"} <ArrowRight className="h-4 w-4" />
             </Link>
@@ -134,27 +132,27 @@ export default async function DashboardPage() {
           <ReviseTodayCard />
 
           {/* 3 ── PRACTICE NOW — real recommendation or honest empty state */}
-          <section className="flex flex-col rounded-3xl border border-emerald-400/20 bg-gradient-to-br from-[#111827] via-[#111827] to-emerald-950/25 p-5 shadow-[0_24px_55px_-44px_rgba(16,185,129,0.8)]">
+          <section className="flex flex-col rounded-lg border border-[var(--border)] bg-[var(--surface)] p-5">
             <h3 className="flex items-center gap-2 text-lg font-black">
-              <Target className="h-5 w-5 text-emerald-400" /> Practice Now
+              <Target className="h-5 w-5 text-[var(--accent)]" /> Practice Now
             </h3>
             {weakTopic ? (
               <>
-                <p className="mt-2 flex-1 text-sm text-white/55">
+                <p className="mt-2 flex-1 text-sm text-[var(--text-muted)]">
                   Your weakest topic so far is{" "}
-                  <span className="font-bold text-white">{weakTopic.topic}</span>{" "}
+                  <span className="font-bold text-[var(--foreground)]">{weakTopic.topic}</span>{" "}
                   ({weakTopic.accuracy}% accuracy) — targeted PYQ practice is the fastest fix.
                 </p>
-                <Link href={dest.practice} className="mt-4 inline-flex w-fit items-center gap-1.5 rounded-xl border border-emerald-400/30 bg-emerald-500/10 px-4 py-2 text-xs font-bold text-emerald-300 transition hover:bg-emerald-500/15">
+                <Link href={dest.practice} className="mt-4 inline-flex w-fit items-center gap-1.5 rounded-lg border border-[var(--accent)]/30 bg-[var(--accent)]/10 px-4 py-2 text-xs font-bold text-[var(--accent)] transition hover:bg-[var(--accent)]/15">
                   Practise now <ArrowRight className="h-3.5 w-3.5" />
                 </Link>
               </>
             ) : (
               <>
-                <p className="mt-2 flex-1 text-sm text-white/55">
+                <p className="mt-2 flex-1 text-sm text-[var(--text-muted)]">
                   Choose a topic to practise — recommendations appear here once you have answered enough questions.
                 </p>
-                <Link href={dest.practice} className="mt-4 inline-flex w-fit items-center gap-1.5 rounded-xl border border-emerald-400/30 bg-emerald-500/10 px-4 py-2 text-xs font-bold text-emerald-300 transition hover:bg-emerald-500/15">
+                <Link href={dest.practice} className="mt-4 inline-flex w-fit items-center gap-1.5 rounded-lg border border-[var(--accent)]/30 bg-[var(--accent)]/10 px-4 py-2 text-xs font-bold text-[var(--accent)] transition hover:bg-[var(--accent)]/15">
                   Choose a topic <ArrowRight className="h-3.5 w-3.5" />
                 </Link>
               </>
@@ -163,43 +161,44 @@ export default async function DashboardPage() {
         </div>
 
         {/* 4 ── CURRENT PROGRAM */}
-        <section className="rounded-3xl border border-amber-300/15 bg-[linear-gradient(110deg,rgba(251,191,36,0.07),transparent_32%),#111827] p-5 shadow-[0_24px_55px_-44px_rgba(251,191,36,0.7)]">
+        <section className="rounded-lg border border-[var(--border)] bg-[var(--surface)] p-5">
           <div className="flex flex-wrap items-center justify-between gap-4">
             <div className="flex min-w-0 items-center gap-3">
-              <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-cyan-400/25 bg-cyan-950/40">
-                <GraduationCap className="h-5 w-5 text-cyan-400" />
+              <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-[var(--border)] bg-[var(--surface-2)]">
+                <GraduationCap className="h-5 w-5 text-[var(--accent)]" />
               </span>
               <div className="min-w-0">
-                <p className="text-[11px] font-bold uppercase tracking-wider text-white/40">Current program</p>
+                <p className="text-[11px] font-bold uppercase tracking-wider text-[var(--text-muted)]">Current program</p>
                 {active ? (
-                  <p className="truncate font-black">{active.name}
-                    <span className="ml-2 rounded-full border border-cyan-400/25 bg-cyan-500/10 px-2 py-0.5 text-[10px] font-bold text-cyan-300">{active.category}</span>
+                  <p className="truncate font-black">
+                    {active.name}
+                    <span className="ml-2 rounded-full border border-[var(--accent)]/25 bg-[var(--accent)]/10 px-2 py-0.5 text-[10px] font-bold text-[var(--accent)]">{active.category}</span>
                   </p>
                 ) : (
                   <p className="font-black">Free workspace</p>
                 )}
-                <p className="mt-0.5 flex items-center gap-1 text-xs text-white/45">
-                  <Sparkles className="h-3 w-3 text-amber-300" /> {accessLabel}
+                <p className="mt-0.5 flex items-center gap-1 text-xs text-[var(--text-muted)]">
+                  <Sparkles className="h-3 w-3 text-[var(--accent)]" /> {accessLabel}
                 </p>
               </div>
             </div>
             <div className="flex flex-wrap items-center gap-2">
               {syllabusHref && (
-                <Link href={syllabusHref} className="rounded-xl border border-white/[0.1] bg-white/[0.04] px-3.5 py-2 text-xs font-bold text-white/80 transition hover:bg-white/[0.08]">
+                <Link href={syllabusHref} className="rounded-lg border border-[var(--border)] bg-[var(--surface-2)] px-3.5 py-2 text-xs font-bold text-[var(--text-muted)] transition hover:border-[var(--accent)]/40">
                   View Syllabus
                 </Link>
               )}
               {ctx.canSwitchPrograms && (
-                <Link href="/dashboard/programs" className="rounded-xl border border-white/[0.1] bg-white/[0.04] px-3.5 py-2 text-xs font-bold text-white/80 transition hover:bg-white/[0.08]">
+                <Link href="/dashboard/programs" className="rounded-lg border border-[var(--border)] bg-[var(--surface-2)] px-3.5 py-2 text-xs font-bold text-[var(--text-muted)] transition hover:border-[var(--accent)]/40">
                   Change Program
                 </Link>
               )}
               {active ? (
-                <Link href="/dashboard/subscription" className="inline-flex items-center gap-1.5 rounded-xl border border-white/[0.1] bg-white/[0.04] px-3.5 py-2 text-xs font-bold text-white/80 transition hover:bg-white/[0.08]">
+                <Link href="/dashboard/subscription" className="inline-flex items-center gap-1.5 rounded-lg border border-[var(--border)] bg-[var(--surface-2)] px-3.5 py-2 text-xs font-bold text-[var(--text-muted)] transition hover:border-[var(--accent)]/40">
                   <CreditCard className="h-3.5 w-3.5" /> Manage Subscription
                 </Link>
               ) : (
-                <Link href="/programs" className="rounded-xl bg-gradient-to-r from-cyan-400 to-sky-500 px-3.5 py-2 text-xs font-black text-black transition hover:-translate-y-0.5">
+                <Link href="/programs" className="rounded-lg bg-[var(--accent)] px-3.5 py-2 text-xs font-black text-[var(--background)] transition hover:opacity-90">
                   Explore Programs
                 </Link>
               )}
@@ -215,12 +214,11 @@ export default async function DashboardPage() {
               <Link
                 key={item.label}
                 href={item.href}
-                className="group relative overflow-hidden rounded-2xl border border-white/[0.08] bg-[#111827]/90 p-4 shadow-[0_18px_42px_-34px_rgba(0,0,0,0.95)] transition hover:-translate-y-1 hover:border-cyan-400/35 hover:bg-[#151d2e]"
+                className="group flex flex-col rounded-lg border border-[var(--border)] bg-[var(--surface)] p-4 transition hover:-translate-y-0.5 hover:border-[var(--accent)]/30"
               >
-                <span aria-hidden="true" className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-cyan-400 via-violet-400 to-amber-300 opacity-70" />
-                <Icon className="h-5 w-5 text-cyan-400 transition group-hover:text-amber-300" />
+                <Icon className="h-5 w-5 text-[var(--accent)]" />
                 <p className="mt-2 text-sm font-bold">{item.label}</p>
-                <p className="mt-0.5 text-[11px] leading-tight text-white/40">{item.desc}</p>
+                <p className="mt-0.5 text-[11px] leading-tight text-[var(--text-muted)]">{item.desc}</p>
               </Link>
             );
           })}

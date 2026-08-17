@@ -13,7 +13,7 @@ export default function UploadAnalysisEngine() {
         <ThemeToggle />
       </nav>
 
-      <div className="p-10 bg-slate-900/40 border border-slate-800 rounded-3xl border-dashed border-slate-700 hover:border-indigo-500/50 transition duration-300 text-center space-y-6">
+      <div className="p-10 bg-slate-900/40 border border-slate-800 rounded-lg border-dashed border-slate-700 hover:border-indigo-500/50 transition duration-300 text-center space-y-6">
         <div className="max-w-md mx-auto space-y-2">
           <span className="text-4xl block">📄</span>
           <h3 className="font-extrabold text-sm tracking-tight text-slate-100">Drag & Drop Documents or Handwritten Diagrams</h3>
@@ -23,7 +23,7 @@ export default function UploadAnalysisEngine() {
         <input 
           type="file" 
           multiple
-          className="p-4 bg-slate-950 border border-slate-800 rounded-2xl text-xs text-slate-400 file:mr-4 file:py-3 file:px-6 file:rounded-xl file:border-0 file:text-[10px] file:font-black file:tracking-widest file:uppercase file:bg-indigo-600/20 file:text-indigo-400 hover:file:bg-indigo-600/30 file:cursor-pointer transition w-full max-w-xl" 
+          className="p-4 bg-slate-950 border border-slate-800 rounded-lg text-xs text-slate-400 file:mr-4 file:py-3 file:px-6 file:rounded-xl file:border-0 file:text-[10px] file:font-black file:tracking-widest file:uppercase file:bg-indigo-600/20 file:text-indigo-400 hover:file:bg-indigo-600/30 file:cursor-pointer transition w-full max-w-xl" 
         />
 
         <div className="space-y-3 max-w-xl mx-auto pt-4">
@@ -44,7 +44,7 @@ export default function UploadAnalysisEngine() {
           </div>
         </div>
 
-        <button className="w-full max-w-xl py-4 bg-indigo-600 hover:bg-indigo-700 text-white font-black text-xs rounded-2xl shadow-sm transition tracking-widest uppercase cursor-pointer mt-4">
+        <button className="w-full max-w-xl py-4 bg-indigo-600 hover:bg-indigo-700 text-white font-black text-xs rounded-lg shadow-sm transition tracking-widest uppercase cursor-pointer mt-4">
           Run Autonomous Analysis
         </button>
       </div>

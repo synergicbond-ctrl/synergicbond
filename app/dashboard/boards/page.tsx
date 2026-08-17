@@ -36,7 +36,7 @@ export default async function BoardsPage() {
                 if (!b || !c) return null;
                 return (
                   <Link key={`${p.board}-${p.class}`} href={`/dashboard/${p.board}/${p.class}`}
-                    className="rounded-2xl border border-emerald-500/40 bg-emerald-500/[0.06] p-5 transition hover:-translate-y-0.5">
+                    className="rounded-lg border border-emerald-500/40 bg-emerald-500/[0.06] p-5 transition hover:-translate-y-0.5">
                     <div className="font-black text-white">{b.name} · {c.name}</div>
                     <div className="mt-3 text-sm font-bold text-emerald-300">Open dashboard →</div>
                   </Link>
@@ -54,12 +54,12 @@ export default async function BoardsPage() {
         <div className="grid gap-4 sm:grid-cols-3">
           {BOARDS.map((b) => (
             <Link key={b.slug} href={`/dashboard/${b.slug}`}
-              className="group flex flex-col justify-between rounded-2xl border border-white/[0.08] bg-white/[0.03] p-6 transition hover:-translate-y-0.5 hover:border-cyan-400/40">
+              className="group flex flex-col justify-between rounded-lg border border-white/[0.08] bg-white/[0.03] p-6 transition hover:-translate-y-0.5 hover:border-[var(--accent)]/30">
               <div>
                 <div className="text-lg font-black text-white">{b.name}</div>
                 <p className="mt-1 text-sm text-white/55">{b.desc}</p>
               </div>
-              <span className="mt-5 text-sm font-black uppercase tracking-wide text-cyan-300">Choose class →</span>
+              <span className="mt-5 text-sm font-black uppercase tracking-wide text-[var(--accent)]">Choose class →</span>
             </Link>
           ))}
         </div>

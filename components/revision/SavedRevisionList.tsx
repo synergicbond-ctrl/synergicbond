@@ -26,7 +26,7 @@ export default function SavedRevisionList() {
   }, []);
 
   return (
-    <section className="rounded-2xl border border-slate-100 bg-white p-6 shadow-sm">
+    <section className="rounded-lg border border-slate-100 bg-white p-6 shadow-sm">
       <div className="flex items-center justify-between">
         <h2 className="text-2xl font-bold text-slate-800">Saved for Revision</h2>
         {items && items.length > 0 && (

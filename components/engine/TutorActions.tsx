@@ -63,7 +63,7 @@ export default function TutorActions({ chapterId, chapterTitle }: { chapterId: s
       </div>
       {error && <p className="rounded-xl border border-rose-500/30 bg-rose-500/[0.06] p-3 text-sm text-rose-300">{error}</p>}
       {(output || loading) && (
-        <div className="rounded-2xl border border-white/10 bg-white/[0.02] p-4">
+        <div className="rounded-lg border border-white/10 bg-white/[0.02] p-4">
           <p className="whitespace-pre-wrap text-sm leading-relaxed text-white/80">{output || "Thinking…"}</p>
         </div>
       )}

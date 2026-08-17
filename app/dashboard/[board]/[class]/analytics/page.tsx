@@ -55,16 +55,16 @@ export default async function BoardAnalyticsPage({ params }: { params: Promise<{
   if (error === "Unauthorized") {
     return (
       <Shell crumb={crumb}>
-        <div className="rounded-2xl border border-white/10 bg-white/[0.02] p-8 text-center">
+        <div className="rounded-lg border border-white/10 bg-white/[0.02] p-8 text-center">
           <h2 className="text-lg font-bold">Sign in to see your analytics</h2>
           <p className="mx-auto mt-2 max-w-md text-sm text-white/55">Your board readiness is built automatically from tests and practice.</p>
-          <Link href={`/auth/signin?next=${base}/analytics`} className="mt-5 inline-block rounded-xl bg-gradient-to-r from-cyan-400 to-sky-500 px-5 py-2.5 text-sm font-black text-black">Sign in →</Link>
+          <Link href={`/auth/signin?next=${base}/analytics`} className="mt-5 inline-block rounded-xl bg-[var(--accent)] px-5 py-2.5 text-sm font-black text-black">Sign in →</Link>
         </div>
       </Shell>
     );
   }
   if (error || !answers) {
-    return <Shell crumb={crumb}><p className="rounded-2xl border border-white/10 bg-white/[0.02] p-8 text-center text-sm text-white/55">Analytics is unavailable right now — try again shortly.</p></Shell>;
+    return <Shell crumb={crumb}><p className="rounded-lg border border-white/10 bg-white/[0.02] p-8 text-center text-sm text-white/55">Analytics is unavailable right now — try again shortly.</p></Shell>;
   }
 
   const scoped = scopeAnswersToClass(answers, c.slug);
@@ -75,11 +75,11 @@ export default async function BoardAnalyticsPage({ params }: { params: Promise<{
   if (!analytics.hasData) {
     return (
       <Shell crumb={crumb}>
-        <div className="rounded-2xl border border-white/10 bg-white/[0.02] p-8 text-center">
+        <div className="rounded-lg border border-white/10 bg-white/[0.02] p-8 text-center">
           <h2 className="text-lg font-bold">No {c.name} attempts yet</h2>
           <p className="mx-auto mt-2 max-w-md text-sm text-white/55">
-            Answer questions in <Link href={`${base}/practice`} className="font-bold text-cyan-400 hover:underline">Practice</Link> or a{" "}
-            <Link href={`${base}/custom-test`} className="font-bold text-cyan-400 hover:underline">Custom Test</Link> — your predicted board score and weak areas build automatically.
+            Answer questions in <Link href={`${base}/practice`} className="font-bold text-[var(--accent)] hover:underline">Practice</Link> or a{" "}
+            <Link href={`${base}/custom-test`} className="font-bold text-[var(--accent)] hover:underline">Custom Test</Link> — your predicted board score and weak areas build automatically.
           </p>
         </div>
       </Shell>
@@ -93,8 +93,8 @@ export default async function BoardAnalyticsPage({ params }: { params: Promise<{
     <Shell crumb={crumb}>
       {/* Predicted board score */}
       <section className="mb-8 grid gap-4 sm:grid-cols-3">
-        <div className="rounded-2xl border border-cyan-500/25 bg-cyan-500/[0.05] p-5 sm:col-span-1">
-          <div className="text-xs font-bold uppercase tracking-wider text-cyan-300">Predicted board score</div>
+        <div className="rounded-lg border border-[var(--accent)]/30 bg-[var(--accent)]/10[0.05] p-5 sm:col-span-1">
+          <div className="text-xs font-bold uppercase tracking-wider text-[var(--accent)]">Predicted board score</div>
           <div className="mt-2 flex items-end gap-2">
             <span className={`text-5xl font-black ${bandColor}`}>{boardScore.projectedMarks}</span>
             <span className="mb-1 text-lg font-bold text-white/50">/ 70</span>
@@ -102,7 +102,7 @@ export default async function BoardAnalyticsPage({ params }: { params: Promise<{
           <div className="mt-1 text-sm text-white/60">{boardScore.projectedPct}% · Grade {boardScore.grade}</div>
           {!boardScore.confident && <div className="mt-2 text-[11px] text-amber-300/80">Low confidence — attempt more questions ({boardScore.answeredOnClass}/30) to sharpen this.</div>}
         </div>
-        <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-5 sm:col-span-2">
+        <div className="rounded-lg border border-white/10 bg-white/[0.03] p-5 sm:col-span-2">
           <div className="text-xs font-bold uppercase tracking-wider text-white/40">How it&apos;s computed (transparent)</div>
           <div className="mt-3 grid grid-cols-2 gap-3 text-sm">
             <div><div className="text-2xl font-black text-white/85">{boardScore.accuracy}%</div><div className="text-xs text-white/50">Accuracy · weight 0.75</div></div>
@@ -114,10 +114,10 @@ export default async function BoardAnalyticsPage({ params }: { params: Promise<{
 
       {/* Top stats */}
       <div className="mb-8 grid grid-cols-2 gap-3 sm:grid-cols-4">
-        <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-4 text-center"><div className="text-2xl font-black text-white/85">{analytics.overall.accuracy}%</div><div className="mt-1 text-xs text-white/50">Accuracy</div></div>
-        <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-4 text-center"><div className="text-2xl font-black text-white/85">{analytics.questionsAnswered}</div><div className="mt-1 text-xs text-white/50">Answered</div></div>
-        <div className="rounded-2xl border border-emerald-500/20 bg-emerald-500/[0.05] p-4 text-center"><div className="text-2xl font-black text-emerald-300">{boardScore.chaptersAttempted}/{boardScore.chaptersTotal}</div><div className="mt-1 text-xs text-white/50">Chapters covered</div></div>
-        <div className="rounded-2xl border border-rose-500/20 bg-rose-500/[0.05] p-4 text-center"><div className="text-2xl font-black text-rose-300">{analytics.bandCounts.red}</div><div className="mt-1 text-xs text-white/50">Weak chapters</div></div>
+        <div className="rounded-lg border border-white/10 bg-white/[0.03] p-4 text-center"><div className="text-2xl font-black text-white/85">{analytics.overall.accuracy}%</div><div className="mt-1 text-xs text-white/50">Accuracy</div></div>
+        <div className="rounded-lg border border-white/10 bg-white/[0.03] p-4 text-center"><div className="text-2xl font-black text-white/85">{analytics.questionsAnswered}</div><div className="mt-1 text-xs text-white/50">Answered</div></div>
+        <div className="rounded-lg border border-emerald-500/20 bg-emerald-500/[0.05] p-4 text-center"><div className="text-2xl font-black text-emerald-300">{boardScore.chaptersAttempted}/{boardScore.chaptersTotal}</div><div className="mt-1 text-xs text-white/50">Chapters covered</div></div>
+        <div className="rounded-lg border border-rose-500/20 bg-rose-500/[0.05] p-4 text-center"><div className="text-2xl font-black text-rose-300">{analytics.bandCounts.red}</div><div className="mt-1 text-xs text-white/50">Weak chapters</div></div>
       </div>
 
       {/* Chapter accuracy */}
@@ -165,14 +165,14 @@ export default async function BoardAnalyticsPage({ params }: { params: Promise<{
             {weakChapters.slice(0, 3).map((ch) => {
               const chId = ch.chapter; // pyq chapter name; practice supports chapter filter by cbse id, so link to practice hub
               return (
-                <Link key={chId} href={`${base}/practice`} className="flex items-center justify-between rounded-xl border border-white/[0.08] bg-white/[0.02] p-3 hover:border-cyan-400/40">
+                <Link key={chId} href={`${base}/practice`} className="flex items-center justify-between rounded-xl border border-white/[0.08] bg-white/[0.02] p-3 hover:border-[var(--accent)]/30">
                   <span className="text-sm font-semibold text-white/90">Practise {ch.chapter}</span>
-                  <span className="text-cyan-400">→</span>
+                  <span className="text-[var(--accent)]">→</span>
                 </Link>
               );
             })}
-            <Link href="/mistakes" className="flex items-center justify-between rounded-xl border border-white/[0.08] bg-white/[0.02] p-3 hover:border-cyan-400/40"><span className="text-sm font-semibold text-white/90">Review your Mistake Journal</span><span className="text-cyan-400">→</span></Link>
-            <Link href="/memory?deck=daily" className="flex items-center justify-between rounded-xl border border-white/[0.08] bg-white/[0.02] p-3 hover:border-cyan-400/40"><span className="text-sm font-semibold text-white/90">Run your Daily Revision Queue</span><span className="text-cyan-400">→</span></Link>
+            <Link href="/mistakes" className="flex items-center justify-between rounded-xl border border-white/[0.08] bg-white/[0.02] p-3 hover:border-[var(--accent)]/30"><span className="text-sm font-semibold text-white/90">Review your Mistake Journal</span><span className="text-[var(--accent)]">→</span></Link>
+            <Link href="/memory?deck=daily" className="flex items-center justify-between rounded-xl border border-white/[0.08] bg-white/[0.02] p-3 hover:border-[var(--accent)]/30"><span className="text-sm font-semibold text-white/90">Run your Daily Revision Queue</span><span className="text-[var(--accent)]">→</span></Link>
           </div>
         </div>
       </section>
@@ -190,7 +190,7 @@ export default async function BoardAnalyticsPage({ params }: { params: Promise<{
                   <div className="truncate font-semibold text-white/90">{a.title ?? `${a.exam} · ${a.source}`}</div>
                   <div className="text-xs text-white/40">{new Date(a.submittedAt).toLocaleDateString()} · {a.totalQuestions} Q · {a.accuracy}% accuracy</div>
                 </div>
-                <span className="shrink-0 font-black text-cyan-300">{a.score}/{a.maxScore}</span>
+                <span className="shrink-0 font-black text-[var(--accent)]">{a.score}/{a.maxScore}</span>
               </div>
             ))}
           </div>

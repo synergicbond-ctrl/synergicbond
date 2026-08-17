@@ -14,7 +14,7 @@ const cx = (...classes: Array<string | false | null | undefined>) => classes.fil
 
 function VisualFrame({ title, caption, children }: { title: string; caption: string; children: ReactNode }) {
   return (
-    <figure className="my-8 overflow-hidden rounded-3xl border border-cyan-400/20 bg-[#071321] shadow-[0_24px_80px_rgba(0,0,0,0.28)]">
+    <figure className="my-8 overflow-hidden rounded-lg border border-cyan-400/20 bg-[#071321] shadow-[0_24px_80px_rgba(0,0,0,0.28)]">
       <div className="border-b border-white/10 px-5 py-4 sm:px-7">
         <p className="text-xs font-black uppercase tracking-[0.22em] text-cyan-300">Scientific visual</p>
         <h3 className="mt-1 text-xl font-black text-white sm:text-2xl">{title}</h3>
@@ -373,10 +373,10 @@ const markdownComponents = {
   ol: (props: any) => <ol className="mt-4 space-y-2 pl-6 text-slate-200 marker:font-bold marker:text-amber-300" {...props} />,
   li: (props: any) => <li className="leading-7" {...props} />,
   blockquote: (props: any) => (
-    <blockquote className="my-6 rounded-2xl border border-amber-300/20 bg-amber-300/[0.07] px-5 py-4 text-amber-50 shadow-inner" {...props} />
+    <blockquote className="my-6 rounded-lg border border-amber-300/20 bg-amber-300/[0.07] px-5 py-4 text-amber-50 shadow-inner" {...props} />
   ),
   table: (props: any) => (
-    <div className="my-7 overflow-x-auto rounded-2xl border border-white/10">
+    <div className="my-7 overflow-x-auto rounded-lg border border-white/10">
       <table className="min-w-full border-collapse text-left text-sm text-slate-200" {...props} />
     </div>
   ),
@@ -407,7 +407,7 @@ export default function DBlockPart03() {
 
         <DBlockPartNavigation part={3} position="top" />
 
-        <nav className="sticky top-2 z-20 mt-5 overflow-x-auto rounded-2xl border border-white/10 bg-[#07111f]/95 p-2 shadow-xl backdrop-blur">
+        <nav className="sticky top-2 z-20 mt-5 overflow-x-auto rounded-lg border border-white/10 bg-[#07111f]/95 p-2 shadow-xl backdrop-blur">
           <div className="flex min-w-max gap-2">
             {PAGES.map((page, index) => (
               <a key={page.id} href={`#${page.id}`} className="rounded-xl border border-white/10 bg-white/[0.04] px-3 py-2 text-xs font-bold text-slate-300 transition hover:border-cyan-300/40 hover:text-white">

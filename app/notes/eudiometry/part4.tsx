@@ -5,7 +5,7 @@ import { InlineMath, BlockMath } from "@/components/math/react-katex";
 
 /* Reusable UI Components */
 const ConceptCard = ({ title, children }: { title: string; children: React.ReactNode }) => (
-  <div className="my-6 rounded-2xl border border-violet-400/30 bg-slate-900/90 p-6 shadow-xl">
+  <div className="my-6 rounded-lg border border-violet-400/30 bg-slate-900/90 p-6 shadow-xl">
     <h3 className="border-b border-slate-800 pb-3 text-lg font-bold text-violet-300">{title}</h3>
     <div className="mt-4 space-y-3 text-sm leading-relaxed text-slate-200">{children}</div>
   </div>
@@ -22,7 +22,7 @@ const WorkedExample = ({
   steps: React.ReactNode;
   result: React.ReactNode;
 }) => (
-  <div className="my-8 rounded-3xl border border-rose-400/30 bg-gradient-to-b from-slate-900 via-slate-900 to-slate-950 p-6 shadow-2xl md:p-8 space-y-5">
+  <div className="my-8 rounded-lg border border-rose-400/30 bg-gradient-to-b from-slate-900 via-slate-900 to-slate-950 p-6 shadow-2xl md:p-8 space-y-5">
     <div className="flex items-center justify-between border-b border-slate-800 pb-4">
       <span className="rounded-full bg-rose-500/20 px-3 py-1 text-xs font-bold uppercase tracking-widest text-rose-300">
         Worked Example
@@ -30,7 +30,7 @@ const WorkedExample = ({
       <span className="text-xs font-bold text-slate-400">{title}</span>
     </div>
     <div className="text-sm font-medium leading-relaxed text-slate-100">{problem}</div>
-    <div className="rounded-2xl border border-slate-800/80 bg-slate-950/80 p-5 space-y-3 font-mono text-xs text-slate-300">
+    <div className="rounded-lg border border-slate-800/80 bg-slate-950/80 p-5 space-y-3 font-mono text-xs text-slate-300">
       {steps}
     </div>
     <div className="rounded-xl border border-emerald-500/30 bg-emerald-500/10 p-4 text-center text-xs font-bold text-emerald-300">
@@ -56,7 +56,7 @@ export default function EudiometryPart4() {
     <main className="min-h-screen bg-slate-950 px-4 py-8 text-slate-100 md:px-10">
       <article className="mx-auto max-w-5xl space-y-10">
         {/* Module Header */}
-        <header className="rounded-3xl border border-violet-400/30 bg-gradient-to-br from-slate-900 via-slate-900 to-slate-950 p-6 shadow-2xl md:p-8">
+        <header className="rounded-lg border border-violet-400/30 bg-gradient-to-br from-slate-900 via-slate-900 to-slate-950 p-6 shadow-2xl md:p-8">
           <div className="flex items-center justify-between">
             <span className="rounded-full bg-violet-500/20 px-3 py-1 text-xs font-bold uppercase tracking-[0.2em] text-violet-300">
               Module 4 of 6
@@ -232,7 +232,7 @@ export default function EudiometryPart4() {
         </section>
 
         {/* Footer info */}
-        <footer className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 text-center text-xs text-slate-400">
+        <footer className="rounded-lg border border-slate-800 bg-slate-900/60 p-6 text-center text-xs text-slate-400">
           <p>Synergic Bond Eudiometry Module • Module 4: Hydrogen, Nitrogen &amp; Oxygen Gas Mixture Firing</p>
         </footer>
       </article>

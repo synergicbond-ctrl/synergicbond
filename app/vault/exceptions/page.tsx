@@ -12,7 +12,7 @@ export default function ExceptionsPage() {
 
       <div className="space-y-4">
         {exceptionsList.map((ex) => (
-          <div key={ex.id} className="bg-white dark:bg-slate-900 rounded-2xl p-6 border border-slate-100 dark:border-slate-800">
+          <div key={ex.id} className="bg-white dark:bg-slate-900 rounded-lg p-6 border border-slate-100 dark:border-slate-800">
             <div className="flex items-start gap-4">
               <span className="text-2xl">⚠️</span>
               <div className="space-y-2">

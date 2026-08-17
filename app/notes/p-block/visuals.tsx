@@ -2,7 +2,7 @@ import type { ReactNode } from "react";
 
 function Frame({ title, caption, children }: { title: string; caption: string; children: ReactNode }) {
   return (
-    <figure className="overflow-hidden rounded-3xl border border-violet-300/15 bg-[#080d19] shadow-2xl shadow-black/25">
+    <figure className="overflow-hidden rounded-lg border border-violet-300/15 bg-[#080d19] shadow-2xl shadow-black/25">
       <div className="border-b border-white/10 px-5 py-4 sm:px-7">
         <p className="text-[11px] font-black uppercase tracking-[.18em] text-violet-300">P-block visual atlas</p>
         <h3 className="mt-1 text-xl font-black text-white sm:text-2xl">{title}</h3>
@@ -72,7 +72,7 @@ function VseprShape({
 
 function ShapeCard({ title, children }: { title: string; children: ReactNode }) {
   return (
-    <div className="rounded-2xl border border-white/10 bg-[#0c1725] p-3">
+    <div className="rounded-lg border border-white/10 bg-[#0c1725] p-3">
       <svg viewBox="0 0 600 320" className="w-full">
         <rect width="600" height="320" rx="20" fill="#0a1220" />
         {children}

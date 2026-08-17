@@ -139,7 +139,7 @@ export default function AssignmentPage() {
       </div>
 
       {/* Config Panel */}
-      <div className="bg-zinc-900 border border-zinc-800 rounded-2xl p-6 mb-8">
+      <div className="bg-zinc-900 border border-zinc-800 rounded-lg p-6 mb-8">
         <div className="grid gap-4 md:grid-cols-2">
           <div className="md:col-span-2">
             <label className="block text-sm font-medium text-zinc-300 mb-2">Topic</label>
@@ -198,7 +198,7 @@ export default function AssignmentPage() {
 
           <div>
             <label className="block text-sm font-medium text-zinc-300 mb-2">
-              Questions: <span className="text-cyan-400">{totalQuestions}</span>
+              Questions: <span className="text-[var(--accent)]">{totalQuestions}</span>
             </label>
             <input
               type="range" min="5" max="30" step="5"
@@ -267,7 +267,7 @@ export default function AssignmentPage() {
       {assignment && (
         <div>
           {/* Header */}
-          <div className="bg-zinc-900 border border-zinc-800 rounded-2xl p-5 mb-6">
+          <div className="bg-zinc-900 border border-zinc-800 rounded-lg p-5 mb-6">
             <div className="flex items-start justify-between flex-wrap gap-4">
               <div>
                 <h2 className="text-xl font-bold">{assignment.title}</h2>
@@ -275,7 +275,7 @@ export default function AssignmentPage() {
               </div>
               <div className="flex gap-3 text-sm">
                 <div className="bg-zinc-800 rounded-lg px-3 py-2 text-center">
-                  <div className="font-bold text-cyan-400">{assignment.totalQuestions}</div>
+                  <div className="font-bold text-[var(--accent)]">{assignment.totalQuestions}</div>
                   <div className="text-zinc-500 text-xs">Questions</div>
                 </div>
                 <div className="bg-zinc-800 rounded-lg px-3 py-2 text-center">
@@ -283,7 +283,7 @@ export default function AssignmentPage() {
                   <div className="text-zinc-500 text-xs">Total Marks</div>
                 </div>
                 <div className="bg-zinc-800 rounded-lg px-3 py-2 text-center">
-                  <div className="font-bold text-violet-400">{assignment.duration}</div>
+                  <div className="font-bold text-[var(--text-muted)]">{assignment.duration}</div>
                   <div className="text-zinc-500 text-xs">Duration</div>
                 </div>
               </div>
@@ -304,7 +304,7 @@ export default function AssignmentPage() {
               const userAns = answers[q.id];
               const isCorrect = userAns === q.correct;
               return (
-                <div key={q.id} className={`bg-zinc-900 border rounded-2xl p-5 transition ${
+                <div key={q.id} className={`bg-zinc-900 border rounded-lg p-5 transition ${
                   submitted
                     ? isCorrect ? "border-green-700" : userAns ? "border-red-800" : "border-zinc-700"
                     : "border-zinc-800"
@@ -313,12 +313,12 @@ export default function AssignmentPage() {
                     <span className="text-zinc-500 font-medium text-sm">Q{idx + 1}.</span>
                     <span className={`text-xs px-2 py-0.5 rounded-full border ${
                       q.difficulty === "easy" ? "border-green-700 text-green-400" :
-                      q.difficulty === "medium" ? "border-violet-700 text-violet-400" :
+                      q.difficulty === "medium" ? "border-violet-700 text-[var(--text-muted)]" :
                       "border-red-700 text-red-400"
                     }`}>{q.difficulty}</span>
                     <span className="text-xs px-2 py-0.5 rounded-full border border-zinc-700 text-zinc-400">{q.type.replace("_", " ")}</span>
                     <span className="text-xs text-zinc-600">{q.subTopic}</span>
-                    <span className="ml-auto text-xs text-cyan-400">+{q.marks} / {q.negativeMarks}</span>
+                    <span className="ml-auto text-xs text-[var(--accent)]">+{q.marks} / {q.negativeMarks}</span>
                   </div>
 
                   <p className="text-white mb-4 leading-relaxed">{q.question}</p>
@@ -340,7 +340,7 @@ export default function AssignmentPage() {
                                   : isSelected ? "border-red-700 bg-red-950 text-red-300"
                                   : "border-zinc-800 text-zinc-500"
                                 : isSelected
-                                  ? "border-cyan-500 bg-cyan-950 text-cyan-300"
+                                  ? "border-cyan-500 bg-cyan-950 text-[var(--accent)]"
                                   : "border-zinc-800 text-zinc-300 hover:border-zinc-600"
                             }`}
                           >
@@ -367,7 +367,7 @@ export default function AssignmentPage() {
                       <div className="text-xs font-semibold text-zinc-400 mb-2">SOLUTION</div>
                       <p className="text-zinc-200 text-sm leading-relaxed">{q.solution}</p>
                       {q.tip && (
-                        <div className="mt-2 text-xs text-violet-400">💡 Tip: {q.tip}</div>
+                        <div className="mt-2 text-xs text-[var(--text-muted)]">💡 Tip: {q.tip}</div>
                       )}
                     </div>
                   )}

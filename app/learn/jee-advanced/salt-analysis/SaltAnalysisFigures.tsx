@@ -107,7 +107,7 @@ export function SaltAnalysisFigure({ id }: { id: string }) {
   if (!figure) return null;
 
   return (
-    <figure className="my-7 overflow-hidden rounded-2xl border border-cyan-300/25 bg-[#030a14] shadow-[0_0_34px_rgba(34,211,238,0.10)]">
+    <figure className="my-7 overflow-hidden rounded-lg border border-cyan-300/25 bg-[#030a14] shadow-[0_0_34px_rgba(34,211,238,0.10)]">
       <img
         src={figure.src}
         alt={figure.alt}

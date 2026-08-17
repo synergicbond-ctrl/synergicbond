@@ -86,7 +86,7 @@ export default function MemoryReview({ initialDeck }: { initialDeck?: Mode }) {
       <div className="space-y-6">
         <button
           onClick={() => pick("daily")}
-          className="flex w-full items-center justify-between rounded-2xl border border-cyan-400/30 bg-gradient-to-r from-cyan-500/15 to-purple-500/10 p-5 text-left transition hover:from-cyan-500/20"
+          className="flex w-full items-center justify-between rounded-lg border border-cyan-400/30 bg-gradient-to-r from-cyan-500/15 to-purple-500/10 p-5 text-left transition hover:from-cyan-500/20"
         >
           <div>
             <div className="text-lg font-black text-white">🔁 Daily Revision Queue</div>
@@ -105,7 +105,7 @@ export default function MemoryReview({ initialDeck }: { initialDeck?: Mode }) {
               <button
                 key={d.key}
                 onClick={() => pick(d.key)}
-                className="flex items-center justify-between rounded-2xl border border-white/[0.08] bg-white/[0.02] p-4 text-left transition hover:-translate-y-0.5 hover:bg-white/[0.04]"
+                className="flex items-center justify-between rounded-lg border border-white/[0.08] bg-white/[0.02] p-4 text-left transition hover:-translate-y-0.5 hover:bg-white/[0.04]"
               >
                 <div className="min-w-0">
                   <div className="font-bold text-white">{d.icon} {d.label}</div>
@@ -130,7 +130,7 @@ export default function MemoryReview({ initialDeck }: { initialDeck?: Mode }) {
   // ── Session complete ─────────────────────────────────────────────────────
   if (!current) {
     return (
-      <div className="rounded-2xl border border-white/10 bg-white/[0.02] p-8 text-center">
+      <div className="rounded-lg border border-white/10 bg-white/[0.02] p-8 text-center">
         <div className="text-3xl">✅</div>
         <h2 className="mt-2 text-xl font-black">
           {reviewed > 0 ? `${modeLabel} done for now` : "Nothing due right now"}
@@ -160,7 +160,7 @@ export default function MemoryReview({ initialDeck }: { initialDeck?: Mode }) {
         </span>
       </div>
 
-      <div className="min-h-[16rem] rounded-2xl border border-white/[0.08] bg-[#111827] p-6">
+      <div className="min-h-[16rem] rounded-lg border border-white/[0.08] bg-[var(--surface)] p-6">
         {current.hint && <div className="mb-3 text-[11px] font-bold uppercase tracking-wider text-white/35">{current.hint}</div>}
         <div className="text-lg font-bold leading-relaxed text-white">
           {current.render ? renderChemistry(current.front) : current.front}
@@ -175,7 +175,7 @@ export default function MemoryReview({ initialDeck }: { initialDeck?: Mode }) {
         ) : (
           <button
             onClick={() => setRevealed(true)}
-            className="mt-6 rounded-xl bg-gradient-to-r from-cyan-400 to-sky-500 px-5 py-2.5 text-sm font-black text-black transition hover:-translate-y-0.5"
+            className="mt-6 rounded-xl bg-[var(--accent)] px-5 py-2.5 text-sm font-black text-black transition hover:-translate-y-0.5"
           >
             Show answer
           </button>

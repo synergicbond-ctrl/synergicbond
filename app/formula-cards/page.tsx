@@ -124,9 +124,9 @@ function FormulaCardsContent() {
             onChange={(event) => setChapter(event.target.value)}
             className="min-h-11 rounded-lg border border-[var(--border)] bg-[var(--surface-2)] px-3 text-sm font-semibold text-[var(--text-muted)] outline-none focus:border-[var(--accent)]"
           >
-            <option value="" className="bg-[#0b0f10]">All chapters</option>
+            <option value="" className="bg-[var(--surface-2)]">All chapters</option>
             {chapters.map((item) => (
-              <option key={item.chapter} value={item.chapter} className="bg-[#0b0f10]">
+              <option key={item.chapter} value={item.chapter} className="bg-[var(--surface-2)]">
                 {item.chapter} ({item.count})
               </option>
             ))}

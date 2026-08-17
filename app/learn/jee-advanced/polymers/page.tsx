@@ -158,7 +158,7 @@ function BlockRenderer({ block }: { block: Block }) {
 
   if (block.kind === "formula") {
     return (
-      <div className="overflow-hidden rounded-2xl border border-violet-400/25 bg-[#0a1020] p-4 shadow-[inset_0_0_40px_rgba(139,92,246,0.05)] md:p-5">
+      <div className="overflow-hidden rounded-lg border border-violet-400/25 bg-[#0a1020] p-4 shadow-[inset_0_0_40px_rgba(139,92,246,0.05)] md:p-5">
         <div className="text-lg text-violet-100 md:text-xl">
           <Latex value={block.latex} block />
         </div>
@@ -169,7 +169,7 @@ function BlockRenderer({ block }: { block: Block }) {
 
   if (block.kind === "callout") {
     return (
-      <aside className={`rounded-2xl border p-4 md:p-5 ${toneClasses[block.tone]}`}>
+      <aside className={`rounded-lg border p-4 md:p-5 ${toneClasses[block.tone]}`}>
         <h4 className="text-sm font-black uppercase tracking-[0.16em]">{block.title}</h4>
         <p className="mt-2 text-[15px] leading-7 text-slate-100 md:text-base"><RichText text={block.body} /></p>
       </aside>
@@ -178,7 +178,7 @@ function BlockRenderer({ block }: { block: Block }) {
 
   if (block.kind === "table") {
     return (
-      <div className="overflow-x-auto rounded-2xl border border-slate-700/80 bg-[#080d18]">
+      <div className="overflow-x-auto rounded-lg border border-slate-700/80 bg-[#080d18]">
         <table className="min-w-full border-collapse text-left text-sm md:text-[15px]">
           <thead>
             <tr className="bg-gradient-to-r from-cyan-400/15 via-violet-400/15 to-rose-400/15">
@@ -207,7 +207,7 @@ function BlockRenderer({ block }: { block: Block }) {
 
   if (block.kind === "example") {
     return (
-      <article className="rounded-2xl border border-emerald-400/25 bg-emerald-400/[0.055] p-4 md:p-5">
+      <article className="rounded-lg border border-emerald-400/25 bg-emerald-400/[0.055] p-4 md:p-5">
         <h4 className="font-black text-emerald-200">{block.title}</h4>
         <p className="mt-3 text-[15px] leading-7 text-slate-200 md:text-base"><span className="font-bold text-white">Question. </span><RichText text={block.question} /></p>
         <div className="mt-3 border-t border-emerald-300/15 pt-3 text-[15px] leading-7 text-slate-200 md:text-base"><span className="font-bold text-emerald-100">Solution. </span><RichText text={block.answer} /></div>
@@ -282,7 +282,7 @@ export default function PolymersPage() {
 
             <div className="flex snap-x snap-mandatory gap-4 overflow-x-auto p-4 lg:max-h-[74vh] lg:block lg:space-y-6 lg:overflow-y-auto lg:overflow-x-hidden">
               {navigationTracks.map((track, trackIndex) => (
-                <section key={track.label} className="min-w-[292px] snap-start rounded-2xl border border-slate-800/90 bg-slate-950/40 p-3 lg:min-w-0 lg:border-0 lg:bg-transparent lg:p-0">
+                <section key={track.label} className="min-w-[292px] snap-start rounded-lg border border-slate-800/90 bg-slate-950/40 p-3 lg:min-w-0 lg:border-0 lg:bg-transparent lg:p-0">
                   <div className="flex items-start justify-between gap-3 px-1">
                     <div>
                       <p className={`text-[10px] font-black uppercase tracking-[0.2em] ${track.eyebrow}`}>Track {String(trackIndex + 1).padStart(2, "0")}</p>
@@ -331,7 +331,7 @@ export default function PolymersPage() {
           {polymerSections.map((section) => (
             <section id={`section-${section.id}`} key={section.id} className="scroll-mt-6 rounded-[28px] border border-slate-800/90 bg-[#060b15]/95 p-5 shadow-[0_20px_80px_rgba(0,0,0,0.22)] md:p-8 print:break-before-page">
               <div className="mb-6 flex items-start gap-4 border-b border-slate-800 pb-5">
-                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-cyan-400/20 via-violet-400/20 to-rose-400/20 text-lg font-black text-cyan-100 ring-1 ring-white/10">
+                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-gradient-to-br from-cyan-400/20 via-violet-400/20 to-rose-400/20 text-lg font-black text-cyan-100 ring-1 ring-white/10">
                   {Number(section.id)}
                 </div>
                 <div>

@@ -164,7 +164,7 @@ export default function DoubtSolverPage() {
   }
 
   return (
-    <main className="min-h-screen bg-[#0B0F19] text-white">
+    <main className="min-h-screen bg-[var(--background)] text-white">
 
       <div className="mx-auto max-w-5xl px-6 py-12">
 
@@ -182,7 +182,7 @@ export default function DoubtSolverPage() {
 
         {/* Token wallet */}
         <div className="flex justify-center mb-8">
-          <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-[#111827] border border-white/[0.06]">
+          <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-[var(--surface)] border border-white/[0.06]">
             <Zap className={`h-4 w-4 ${credits > 0 ? "text-violet-400" : "text-red-400"}`} />
             <span className="text-sm font-semibold">
               <span className={credits > 0 ? "text-violet-400" : "text-red-400"}>{credits}</span>
@@ -193,7 +193,7 @@ export default function DoubtSolverPage() {
         </div>
 
         {/* Workspace — uniform bg */}
-        <div className="rounded-3xl bg-[#111827] border border-white/[0.06] p-6 md:p-8">
+        <div className="rounded-lg bg-[var(--surface)] border border-white/[0.06] p-6 md:p-8">
 
           {/* Drop zone */}
           <div
@@ -201,7 +201,7 @@ export default function DoubtSolverPage() {
             onDragLeave={() => setDragOver(false)}
             onDrop={(e) => { e.preventDefault(); setDragOver(false); if (e.dataTransfer.files[0]) handleFile(e.dataTransfer.files[0]); }}
             onClick={() => fileInputRef.current?.click()}
-            className={`relative cursor-pointer rounded-2xl border-2 border-dashed p-8 text-center transition ${
+            className={`relative cursor-pointer rounded-lg border-2 border-dashed p-8 text-center transition ${
               dragOver ? "border-cyan-400 bg-cyan-500/5" : "border-white/[0.1] hover:border-white/20"
             }`}
           >
@@ -247,7 +247,7 @@ export default function DoubtSolverPage() {
               onChange={(e) => setDoubt(e.target.value)}
               rows={3}
               placeholder="Or describe your doubt here... (you can also dictate by voice)"
-              className="w-full rounded-2xl border border-white/[0.08] bg-black/40 px-5 py-4 pr-14 text-sm text-white placeholder-white/30 outline-none focus:border-cyan-400/50 resize-none"
+              className="w-full rounded-lg border border-white/[0.08] bg-black/40 px-5 py-4 pr-14 text-sm text-white placeholder-white/30 outline-none focus:border-cyan-400/50 resize-none"
             />
             <button
               onClick={startVoice}
@@ -280,7 +280,7 @@ export default function DoubtSolverPage() {
             <button
               onClick={() => solve(language)}
               disabled={loading}
-              className="flex-1 flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-cyan-400 to-sky-500 px-6 py-3 text-sm font-bold text-black transition hover:-translate-y-0.5 disabled:opacity-60"
+              className="flex-1 flex items-center justify-center gap-2 rounded-xl bg-[var(--accent)] px-6 py-3 text-sm font-bold text-black transition hover:-translate-y-0.5 disabled:opacity-60"
             >
               {loading ? <><Loader2 className="h-4 w-4 animate-spin" /> Solving...</> : <><Sparkles className="h-4 w-4" /> Solve My Doubt</>}
             </button>
@@ -288,7 +288,7 @@ export default function DoubtSolverPage() {
 
           {/* Answer */}
           {answer && (
-            <div className="mt-6 rounded-2xl bg-black/30 border border-white/[0.06] p-5">
+            <div className="mt-6 rounded-lg bg-black/30 border border-white/[0.06] p-5">
               <div className="flex items-center gap-2 mb-3">
                 <span className="text-xs font-bold text-cyan-400 uppercase tracking-wider">Solution</span>
                 <span className="text-[10px] text-white/30">({language === "hinglish" ? "Hinglish" : "English"})</span>
@@ -306,12 +306,12 @@ export default function DoubtSolverPage() {
       {/* Paywall modal */}
       {showPaywall && (
         <div className="fixed inset-0 z-[100] flex items-center justify-center p-6 bg-black/70 backdrop-blur-sm">
-          <div className="relative max-w-md w-full rounded-3xl bg-[#111827] border border-cyan-500/20 p-8 text-center shadow-2xl">
+          <div className="relative max-w-md w-full rounded-lg bg-[var(--surface)] border border-cyan-500/20 p-8 text-center shadow-2xl">
             <button onClick={() => setShowPaywall(false)} className="absolute top-4 right-4 text-white/40 hover:text-white">
               <X className="h-5 w-5" />
             </button>
             <div className="flex justify-center mb-4">
-              <div className="p-3 rounded-2xl bg-gradient-to-br from-violet-400/20 to-violet-600/10">
+              <div className="p-3 rounded-lg bg-gradient-to-br from-violet-400/20 to-violet-600/10">
                 <Crown className="h-8 w-8 text-violet-400" />
               </div>
             </div>
@@ -332,7 +332,7 @@ export default function DoubtSolverPage() {
       {/* Rate-limit cooldown overlay */}
       {cooldown > 0 && (
         <div className="fixed inset-0 z-[100] flex items-center justify-center p-6 bg-black/70 backdrop-blur-sm">
-          <div className="max-w-sm w-full rounded-3xl bg-[#111827] border border-violet-500/30 p-8 text-center shadow-2xl">
+          <div className="max-w-sm w-full rounded-lg bg-[var(--surface)] border border-violet-500/30 p-8 text-center shadow-2xl">
             <p className="text-4xl mb-3">⚠️</p>
             <h3 className="text-lg font-black mb-2">Security Threshold Engaged</h3>
             <p className="text-sm text-white/50 mb-5">

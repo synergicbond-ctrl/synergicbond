@@ -18,7 +18,7 @@ export default function ReferenceTabs() {
   return (
     <div className="mb-8 flex justify-center">
       <div
-        className="flex items-center gap-1 overflow-x-auto scrollbar-none rounded-full bg-[#111827] border border-white/[0.06] p-1.5 max-w-full"
+        className="flex items-center gap-1 overflow-x-auto scrollbar-none rounded-full bg-[var(--surface)] border border-white/[0.06] p-1.5 max-w-full"
         style={{ scrollbarWidth: "none" }}
       >
         {tabs.map((t) => {

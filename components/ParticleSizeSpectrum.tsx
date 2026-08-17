@@ -42,7 +42,7 @@ export default function ParticleSizeSpectrum() {
   ];
 
   return (
-    <div className="p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 shadow-sm space-y-6">
+    <div className="p-6 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 shadow-sm space-y-6">
       <div>
         <h2 className="text-2xl font-bold mb-2 text-slate-900 dark:text-white">
           Particle Size Spectrum

@@ -173,7 +173,7 @@ export function SourcePage({ page: _page, children }: { page: number; children: 
 
 export function NoteBlock({ title, children }: { title?: string; children: ReactNode }) {
   return (
-    <div className="rounded-2xl border border-white/[0.09] bg-white/[0.045] p-5 shadow-lg shadow-black/10 sm:p-6">
+    <div className="rounded-lg border border-white/[0.09] bg-white/[0.045] p-5 shadow-lg shadow-black/10 sm:p-6">
       {title ? <h2 className="mb-3 text-lg font-black text-cyan-200">{title}</h2> : null}
       <div className="space-y-3 text-sm leading-relaxed text-white/78 sm:text-base">{children}</div>
     </div>
@@ -181,7 +181,7 @@ export function NoteBlock({ title, children }: { title?: string; children: React
 }
 
 export function LearningObjectives({ items }: { items: ReactNode[] }) {
-  return <aside aria-label="Learning objectives" className="rounded-2xl border border-violet-300/20 bg-violet-400/[0.06] p-5"><p className="text-xs font-black uppercase tracking-[0.18em] text-violet-200">In this part</p><ul className="mt-3 grid gap-2 text-sm leading-relaxed text-slate-200 sm:grid-cols-3">{items.map((item, index) => <li key={index} className="border-l-2 border-violet-300/60 pl-3">{item}</li>)}</ul></aside>;
+  return <aside aria-label="Learning objectives" className="rounded-lg border border-violet-300/20 bg-violet-400/[0.06] p-5"><p className="text-xs font-black uppercase tracking-[0.18em] text-violet-200">In this part</p><ul className="mt-3 grid gap-2 text-sm leading-relaxed text-slate-200 sm:grid-cols-3">{items.map((item, index) => <li key={index} className="border-l-2 border-violet-300/60 pl-3">{item}</li>)}</ul></aside>;
 }
 
 export function ImportantNote({ title, children }: { title: string; children: ReactNode }) {
@@ -189,7 +189,7 @@ export function ImportantNote({ title, children }: { title: string; children: Re
 }
 
 export function SummaryStrip({ items }: { items: ReactNode[] }) {
-  return <section aria-label="Key takeaways" className="grid gap-px overflow-hidden rounded-2xl border border-cyan-300/20 bg-cyan-300/20 sm:grid-cols-3">{items.map((item, index) => <p key={index} className="bg-[#0b1728] p-4 text-sm font-semibold leading-relaxed text-cyan-50">{item}</p>)}</section>;
+  return <section aria-label="Key takeaways" className="grid gap-px overflow-hidden rounded-lg border border-cyan-300/20 bg-cyan-300/20 sm:grid-cols-3">{items.map((item, index) => <p key={index} className="bg-[#0b1728] p-4 text-sm font-semibold leading-relaxed text-cyan-50">{item}</p>)}</section>;
 }
 
 export function FormulaLine({ math }: { math: string }) {
@@ -254,7 +254,7 @@ export function DataTable({
 
 export function DiagramBox({ title, children }: { title: string; children: ReactNode }) {
   return (
-    <figure className="rounded-2xl border border-cyan-400/20 bg-cyan-400/[0.04] p-4">
+    <figure className="rounded-lg border border-cyan-400/20 bg-cyan-400/[0.04] p-4">
       <figcaption className="mb-3 text-xs font-black uppercase tracking-[0.2em] text-cyan-200">
         Diagram: {title}
       </figcaption>

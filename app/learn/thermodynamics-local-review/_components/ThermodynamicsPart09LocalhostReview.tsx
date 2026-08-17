@@ -25,7 +25,7 @@ function Section({
   return (
     <section className="rounded-[2rem] border border-white/10 bg-slate-950/80 p-5 md:p-8">
       <div className="flex items-center gap-4">
-        <span className="grid h-10 w-10 place-items-center rounded-2xl border border-cyan-300/30 bg-cyan-300/10 text-sm font-black text-cyan-200">
+        <span className="grid h-10 w-10 place-items-center rounded-lg border border-cyan-300/30 bg-cyan-300/10 text-sm font-black text-cyan-200">
           {index}
         </span>
         <h2 className="text-2xl font-black text-white md:text-3xl">{title}</h2>
@@ -37,7 +37,7 @@ function Section({
 
 function Formula({ label, children }: { label: string; children: React.ReactNode }) {
   return (
-    <div className="overflow-x-auto rounded-2xl border border-cyan-300/20 bg-black/30 p-4 text-center">
+    <div className="overflow-x-auto rounded-lg border border-cyan-300/20 bg-black/30 p-4 text-center">
       <p className="mb-2 text-xs font-black uppercase tracking-[0.2em] text-cyan-300">{label}</p>
       <div className="whitespace-nowrap font-mono text-lg font-black text-white md:text-xl">{children}</div>
     </div>
@@ -54,7 +54,7 @@ function Lens({
   tone?: Tone;
 }) {
   return (
-    <aside className={`rounded-2xl border p-5 ${toneMap[tone]}`}>
+    <aside className={`rounded-lg border p-5 ${toneMap[tone]}`}>
       <p className="text-xs font-black uppercase tracking-[0.2em]">Synergic Bond Concept Lens</p>
       <h3 className="mt-2 text-lg font-black text-white">{title}</h3>
       <div className="mt-2 text-sm leading-6 text-slate-200">{children}</div>
@@ -178,7 +178,7 @@ function ThermodynamicsPart09() {
 <Section index="07" title="Complete worked examples and applications">
           <div className="grid gap-4 lg:grid-cols-2">
             {problems.map(([title, question, answer]) => (
-              <article key={title} className="rounded-2xl border border-white/10 bg-slate-900/70 p-5">
+              <article key={title} className="rounded-lg border border-white/10 bg-slate-900/70 p-5">
                 <h3 className="cursor-pointer font-black text-white">{title}</h3>
                 <p className="mt-3 text-slate-200">{question}</p>
                 <p className="mt-4 rounded-xl bg-emerald-400/10 p-3 text-sm text-emerald-100">{answer}</p>
@@ -608,7 +608,7 @@ function Part09BundledEnrichment() {
             ].map(([label, equation]) => (
               <article
                 key={label}
-                className="rounded-2xl border border-white/10 bg-slate-900/60 p-5"
+                className="rounded-lg border border-white/10 bg-slate-900/60 p-5"
               >
                 <p className="text-xs font-black uppercase tracking-wider text-cyan-300">
                   {label}
@@ -656,7 +656,7 @@ function Part09BundledEnrichment() {
             {part09BundledWorkedExamples.map((example, index) => (
               <article
                 key={example.title}
-                className="rounded-2xl border border-violet-300/20 bg-violet-300/[0.05] p-5"
+                className="rounded-lg border border-violet-300/20 bg-violet-300/[0.05] p-5"
               >
                 <p className="text-xs font-black uppercase tracking-wider text-violet-300">
                   Worked example {index + 1}
@@ -703,7 +703,7 @@ function Part09BundledEnrichment() {
             {part09BundledQuestions.map((item, index) => (
               <article
                 key={item.question}
-                className="rounded-2xl border border-emerald-300/20 bg-emerald-300/[0.05] p-5"
+                className="rounded-lg border border-emerald-300/20 bg-emerald-300/[0.05] p-5"
               >
                 <p className="text-xs font-black uppercase tracking-wider text-emerald-300">
                   Question {index + 1}

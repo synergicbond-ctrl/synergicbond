@@ -38,7 +38,7 @@ export const F_BLOCK_VISUALS: FBlockVisualDef[] = [
 
 function VisualCard({ visual, priority = false }: { visual: FBlockVisualDef; priority?: boolean }) {
   return (
-    <figure className="group overflow-hidden rounded-3xl border border-fuchsia-300/15 bg-[#080d19] shadow-2xl shadow-black/25">
+    <figure className="group overflow-hidden rounded-lg border border-fuchsia-300/15 bg-[#080d19] shadow-2xl shadow-black/25">
       <div className="border-b border-white/10 px-5 py-4 sm:px-7">
         <p className="text-[11px] font-black uppercase tracking-[.18em] text-fuchsia-300">F-block visual atlas</p>
         <h3 className="mt-1 text-xl font-black text-white sm:text-2xl">{visual.title}</h3>

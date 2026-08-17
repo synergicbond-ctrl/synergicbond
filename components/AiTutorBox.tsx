@@ -60,7 +60,7 @@ export default function AiTutorBox({ chapter }: { chapter: string; concepts: str
   };
 
   return (
-    <div className="bg-white dark:bg-slate-900 p-6 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800 space-y-4 animate-fadeIn">
+    <div className="bg-white dark:bg-slate-900 p-6 rounded-lg shadow-sm border border-slate-100 dark:border-slate-800 space-y-4 animate-fadeIn">
       <div>
         <h3 className="text-xl font-black text-slate-800 dark:text-slate-50">Syllabus-Grounded AI Tutor</h3>
         <p className="text-slate-500 dark:text-slate-400 text-xs mt-0.5">Targeting: {chapter}</p>

@@ -86,7 +86,7 @@ export default async function ProgramTestsPage({ params }: { params: Promise<{ s
             <TestEngine exam={pyqExam} />
           </>
         ) : (
-          <div className="rounded-2xl border border-white/10 bg-white/[0.02] p-8 text-center">
+          <div className="rounded-lg border border-white/10 bg-white/[0.02] p-8 text-center">
             <h2 className="text-xl font-bold">{name} test mapping in progress</h2>
             <p className="mx-auto mt-2 max-w-lg text-sm leading-relaxed text-zinc-400">
               Tests here are built only from verified previous-year questions — nothing is
@@ -96,7 +96,7 @@ export default async function ProgramTestsPage({ params }: { params: Promise<{ s
             <div className="mt-5 flex flex-wrap justify-center gap-3">
               <Link
                 href="/tests"
-                className="rounded-xl border border-cyan-400/40 bg-cyan-500/10 px-4 py-2 text-sm font-semibold text-cyan-300 transition hover:bg-cyan-500/20"
+                className="rounded-xl border border-[var(--accent)]/30 bg-[var(--accent)]/10 px-4 py-2 text-sm font-semibold text-[var(--accent)] transition hover:bg-[var(--accent)]/10"
               >
                 Open Test Engine →
               </Link>

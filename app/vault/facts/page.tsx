@@ -12,7 +12,7 @@ export default function FactsPage() {
 
       <div className="space-y-4">
         {highYieldNotes.map((note, i) => (
-          <div key={i} className="bg-white dark:bg-slate-900 rounded-2xl p-6 border border-slate-100 dark:border-slate-800">
+          <div key={i} className="bg-white dark:bg-slate-900 rounded-lg p-6 border border-slate-100 dark:border-slate-800">
             <div className="flex items-start justify-between gap-4 mb-3">
               <h3 className="font-black text-slate-800 dark:text-white">{note.title}</h3>
               <span className="shrink-0 text-xs font-bold px-2 py-1 rounded-lg bg-indigo-100 dark:bg-indigo-900/40 text-indigo-700 dark:text-indigo-300">

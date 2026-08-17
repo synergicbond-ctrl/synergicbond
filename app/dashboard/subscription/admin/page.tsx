@@ -17,19 +17,19 @@ export default async function AdminAnalyticsPage() {
   }
 
   return (
-    <main className="min-h-screen bg-[#0B0F19] text-white py-12">
+    <main className="min-h-screen bg-[var(--background)] text-white py-12">
       <div className="max-w-3xl mx-auto px-4">
-        <div className="flex items-center gap-2 text-cyan-300 text-xs font-black uppercase tracking-widest mb-3">
+        <div className="flex items-center gap-2 text-[var(--accent)] text-xs font-black uppercase tracking-widest mb-3">
           <ShieldCheck className="h-4 w-4" /> Owner / Admin
         </div>
         <h1 className="text-3xl font-black tracking-tight">Admin Console</h1>
         <p className="text-white/50 text-sm mt-1">
           Signed in as <span className="text-white/80 font-semibold">{user!.email}</span> · role{" "}
-          <span className="text-cyan-300 font-bold">{user!.role}</span>. You have unrestricted
+          <span className="text-[var(--accent)] font-bold">{user!.role}</span>. You have unrestricted
           all-access across every program and tool.
         </p>
 
-        <div className="mt-8 rounded-2xl border border-white/[0.08] bg-[#111827] p-6">
+        <div className="mt-8 rounded-lg border border-white/[0.08] bg-[var(--surface)] p-6">
           <h2 className="font-black text-sm text-white/40 uppercase tracking-widest mb-4">
             Management
           </h2>

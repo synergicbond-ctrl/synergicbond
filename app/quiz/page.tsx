@@ -122,7 +122,7 @@ export default function QuizPage() {
           <h1 className="text-3xl font-black text-center">Quiz Mode</h1>
           <p className="text-slate-400 text-center text-sm">5 AI-generated questions per chapter</p>
 
-          <div className="bg-slate-900 rounded-2xl p-6 space-y-4">
+          <div className="bg-slate-900 rounded-lg p-6 space-y-4">
             <label className="text-xs font-bold text-slate-400 uppercase tracking-wider block">Select Chapter</label>
             <div className="grid grid-cols-1 gap-2 max-h-72 overflow-y-auto pr-1">
               {CHAPTERS.map((ch) => (
@@ -196,7 +196,7 @@ export default function QuizPage() {
             style={{ width: `${((current) / questions.length) * 100}%` }} />
         </div>
 
-        <div className="bg-slate-900 p-6 rounded-2xl border border-slate-800 space-y-5">
+        <div className="bg-slate-900 p-6 rounded-lg border border-slate-800 space-y-5">
           <p className="text-base font-semibold leading-relaxed">{currentQ.question}</p>
 
           <div className="space-y-3">

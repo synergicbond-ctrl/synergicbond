@@ -12,7 +12,7 @@ interface WeakTopicsProps {
 
 export function WeakTopics({ topics }: WeakTopicsProps) {
   return (
-    <div className="rounded-3xl border border-white/10 bg-white/[0.03] p-6 backdrop-blur-xl">
+    <div className="rounded-lg border border-white/10 bg-white/[0.03] p-6 backdrop-blur-xl">
 
       <div className="mb-6">
         <p className="text-xs uppercase tracking-[0.35em] text-cyan-300">
@@ -25,7 +25,7 @@ export function WeakTopics({ topics }: WeakTopicsProps) {
       </div>
 
       {topics.length === 0 ? (
-        <div className="rounded-2xl border border-emerald-500/20 bg-emerald-500/5 p-6">
+        <div className="rounded-lg border border-emerald-500/20 bg-emerald-500/5 p-6">
           <p className="text-lg font-semibold text-emerald-300">
             🎉 No weak topics detected
           </p>

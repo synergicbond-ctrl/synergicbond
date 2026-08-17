@@ -7,7 +7,7 @@ export default function ConcentrationTermsPart6() {
   return (
     <main className="min-h-screen bg-slate-950 px-4 py-8 text-slate-100 md:px-10">
       <article className="mx-auto max-w-5xl space-y-10">
-        <header className="rounded-3xl border border-rose-400/30 bg-gradient-to-br from-slate-900 via-slate-900 to-slate-950 p-6 shadow-2xl md:p-8">
+        <header className="rounded-lg border border-rose-400/30 bg-gradient-to-br from-slate-900 via-slate-900 to-slate-950 p-6 shadow-2xl md:p-8">
           <div className="flex items-center justify-between">
             <span className="rounded-full bg-rose-500/20 px-3 py-1 text-xs font-bold uppercase tracking-[0.2em] text-rose-300">
               Concentration Terms — Topic 6
@@ -30,7 +30,7 @@ export default function ConcentrationTermsPart6() {
             1. Master Interconversion Formulas (<InlineMath math="M, m, \chi, d" />)
           </h2>
 
-          <div className="rounded-2xl border border-slate-800 bg-slate-900 p-6 space-y-4 text-sm leading-relaxed text-slate-200">
+          <div className="rounded-lg border border-slate-800 bg-slate-900 p-6 space-y-4 text-sm leading-relaxed text-slate-200">
             <p>
               In competitive JEE &amp; NEET entrance examinations, direct interconversion across volumetric and mass-based concentration scales is crucial for speed. Below are the rigorous mathematical bridges:
             </p>
@@ -76,7 +76,7 @@ export default function ConcentrationTermsPart6() {
             2. Volume Strength of Hydrogen Peroxide (<InlineMath math="V\text{ or } X\text{ V}" />)
           </h2>
 
-          <div className="rounded-2xl border border-slate-800 bg-slate-900 p-6 space-y-4 text-sm leading-relaxed text-slate-200">
+          <div className="rounded-lg border border-slate-800 bg-slate-900 p-6 space-y-4 text-sm leading-relaxed text-slate-200">
             <p>
               Commercially, hydrogen peroxide (<InlineMath math="\text{H}_2\text{O}_2" />) solutions are labeled as <strong className="text-cyan-300">&quot;10 V&quot;, &quot;20 V&quot;, or &quot;30 V&quot;</strong>. This is a volumetric concentration term representing the total volume of oxygen gas (<InlineMath math="\text{O}_2" /> in litres at STP) liberated by the complete thermal decomposition of exactly <InlineMath math="1\text{ L}" /> of that <InlineMath math="\text{H}_2\text{O}_2" /> solution.
             </p>
@@ -128,7 +128,7 @@ export default function ConcentrationTermsPart6() {
             3. Percentage Labeling of Oleum (<InlineMath math="100\% + x\%" />)
           </h2>
 
-          <div className="rounded-2xl border border-slate-800 bg-slate-900 p-6 space-y-4 text-sm leading-relaxed text-slate-200">
+          <div className="rounded-lg border border-slate-800 bg-slate-900 p-6 space-y-4 text-sm leading-relaxed text-slate-200">
             <p>
               Oleum (Fuming Sulfuric Acid, <InlineMath math="\text{H}_2\text{S}_2\text{O}_7" />) is a mixture of concentrated <InlineMath math="\text{H}_2\text{SO}_4" /> containing free dissolved sulfur trioxide (<InlineMath math="\text{SO}_3" />). It is labeled commercially as an apparent percentage exceeding <InlineMath math="100\%" /> (e.g., <strong className="text-amber-300">&quot;109% Oleum&quot;</strong>).
             </p>
@@ -160,7 +160,7 @@ export default function ConcentrationTermsPart6() {
         </section>
 
         {/* Footer info */}
-        <footer className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 text-center text-xs text-slate-400">
+        <footer className="rounded-lg border border-slate-800 bg-slate-900/60 p-6 text-center text-xs text-slate-400">
           <p>Concentration Terms Module • Topic 6: Master Interconversions &amp; Industrial Scales (H₂O₂ / Oleum)</p>
         </footer>
       </article>

@@ -10,7 +10,7 @@ export const metadata = {
 
 export default function PYQAuditAdminPage() {
   return (
-    <main className="min-h-screen bg-[#0B0F19] text-white antialiased py-12 px-4 sm:px-6 lg:px-8">
+    <main className="min-h-screen bg-[var(--background)] text-white antialiased py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto space-y-8">
         {/* Admin Header Bar */}
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-white/[0.08] pb-6">

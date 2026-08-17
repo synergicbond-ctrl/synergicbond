@@ -12,7 +12,7 @@ export function MergedPartShell({
   return (
     <main className="min-h-screen bg-[#08111f] px-4 py-8 text-white sm:px-6 sm:py-12">
       <article className="mx-auto max-w-6xl">
-        <header className="rounded-3xl border border-cyan-300/20 bg-[radial-gradient(circle_at_top_right,_rgba(34,211,238,.18),_transparent_34%),linear-gradient(135deg,rgba(34,211,238,.1),rgba(2,6,23,.8),rgba(139,92,246,.1))] p-6 sm:p-9">
+        <header className="rounded-lg border border-cyan-300/20 bg-[radial-gradient(circle_at_top_right,_rgba(34,211,238,.18),_transparent_34%),linear-gradient(135deg,rgba(34,211,238,.1),rgba(2,6,23,.8),rgba(139,92,246,.1))] p-6 sm:p-9">
           <p className="text-xs font-black uppercase tracking-[.25em] text-cyan-200">
             Isomerism · Part {partNumber} of 40
           </p>
@@ -37,7 +37,7 @@ export function MergedSourceSection({
   return (
     <section
       data-source-part={sourcePart}
-      className="overflow-hidden rounded-3xl border border-white/10 bg-white/[.025]"
+      className="overflow-hidden rounded-lg border border-white/10 bg-white/[.025]"
     >
       <div className="[&_nav]:!hidden [&>main]:!min-h-0 [&>main]:!bg-transparent [&>main]:!px-0 [&>main]:!py-0 [&>main>article]:!max-w-none">
         {children}

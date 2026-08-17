@@ -41,7 +41,7 @@ function Frame({
 
   return (
     <figure
-      className="group my-7 overflow-hidden rounded-2xl border border-cyan-300/30 bg-[#030a14] p-3 shadow-[0_0_36px_rgba(34,211,238,0.10)] sm:p-4"
+      className="group my-7 overflow-hidden rounded-lg border border-cyan-300/30 bg-[#030a14] p-3 shadow-[0_0_36px_rgba(34,211,238,0.10)] sm:p-4"
       style={{ "--sa-arrow": `url(#${arrowId})`, "--sa-glow": `url(#${glowId})` } as React.CSSProperties}
     >
       <svg viewBox={viewBox} role="img" aria-label={title} className="h-auto w-full">

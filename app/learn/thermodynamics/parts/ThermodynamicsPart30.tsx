@@ -14,7 +14,7 @@ function Section({ index, title, subtitle, children }: { index: string; title: s
   return (
     <section className="rounded-[2rem] border border-white/10 bg-slate-950/80 p-5 shadow-2xl shadow-black/20 backdrop-blur md:p-8">
       <div className="flex items-start gap-4">
-        <span className="grid h-11 w-11 shrink-0 place-items-center rounded-2xl border border-cyan-300/30 bg-cyan-300/10 text-sm font-black text-cyan-200">{index}</span>
+        <span className="grid h-11 w-11 shrink-0 place-items-center rounded-lg border border-cyan-300/30 bg-cyan-300/10 text-sm font-black text-cyan-200">{index}</span>
         <div>
           <h2 className="text-2xl font-black tracking-tight text-white md:text-3xl">{title}</h2>
           {subtitle && <p className="mt-1 max-w-4xl text-sm leading-6 text-slate-400">{subtitle}</p>}
@@ -26,7 +26,7 @@ function Section({ index, title, subtitle, children }: { index: string; title: s
 }
 function Formula({ label, children }: { label: string; children: React.ReactNode }) {
   return (
-    <div className="overflow-x-auto rounded-2xl border border-cyan-300/20 bg-black/30 p-4 text-center">
+    <div className="overflow-x-auto rounded-lg border border-cyan-300/20 bg-black/30 p-4 text-center">
       <p className="mb-2 text-xs font-black uppercase tracking-[0.2em] text-cyan-300">{label}</p>
       <div className="whitespace-nowrap font-mono text-lg font-black text-white md:text-xl">{children}</div>
     </div>
@@ -34,7 +34,7 @@ function Formula({ label, children }: { label: string; children: React.ReactNode
 }
 function Lens({ title, children, tone = "cyan" }: { title: string; children: React.ReactNode; tone?: Tone }) {
   return (
-    <aside className={`rounded-2xl border p-5 ${toneStyles[tone]}`}>
+    <aside className={`rounded-lg border p-5 ${toneStyles[tone]}`}>
       <p className="text-xs font-black uppercase tracking-[0.2em]">Concept</p>
       <h3 className="mt-2 text-lg font-black text-white">{title}</h3>
       <div className="mt-2 text-sm leading-6 text-slate-200">{children}</div>
@@ -223,7 +223,7 @@ export default function ThermodynamicsPart30() {
           subtitle="Exact derived result combining ΔrG° = −RT ln K with the Gibbs–Helmholtz equation">
           <VantHoffPlotSVG />
           <p>Differentiate ΔrG°/T = −R ln K with respect to T at constant pressure, using the Gibbs–Helmholtz equation [∂(ΔG°/T)/∂T]_P = −ΔH°/T²:</p>
-          <div className="space-y-1 rounded-2xl border border-white/10 bg-slate-900/60 p-4 font-mono text-sm">
+          <div className="space-y-1 rounded-lg border border-white/10 bg-slate-900/60 p-4 font-mono text-sm">
             <p>∂/∂T[−R ln K] = −ΔrH°/T²</p>
             <p>−R (d ln K/dT) = −ΔrH°/T²</p>
             <p>d ln K/dT = ΔrH°/(RT²)</p>
@@ -238,7 +238,7 @@ export default function ThermodynamicsPart30() {
 
         <Section index="2" title="Integrated van't Hoff Equation">
           <p>Assuming ΔrH° ≈ constant over the temperature range [T₁, T₂]:</p>
-          <div className="space-y-1 rounded-2xl border border-white/10 bg-slate-900/60 p-4 font-mono text-sm">
+          <div className="space-y-1 rounded-lg border border-white/10 bg-slate-900/60 p-4 font-mono text-sm">
             <p>∫_&#123;K₁&#125;^&#123;K₂&#125; d(ln K) = (ΔrH°/R) ∫_&#123;T₁&#125;^&#123;T₂&#125; dT/T²</p>
             <p>ln K₂ − ln K₁ = (ΔrH°/R)[−1/T]_&#123;T₁&#125;^&#123;T₂&#125;</p>
             <p>ln(K₂/K₁) = (ΔrH°/R)(1/T₁ − 1/T₂)</p>
@@ -252,7 +252,7 @@ export default function ThermodynamicsPart30() {
           subtitle="Exact derived result — no approximations needed">
           <ClapeyronSVG />
           <p>Two phases α and β coexist when μα = μβ. As T and P change along the coexistence line, the equality must be maintained: dμα = dμβ.</p>
-          <div className="space-y-1 rounded-2xl border border-white/10 bg-slate-900/60 p-4 font-mono text-sm">
+          <div className="space-y-1 rounded-lg border border-white/10 bg-slate-900/60 p-4 font-mono text-sm">
             <p>dμ = −S̄_m dT + V̄_m dP for each phase</p>
             <p>Set dμα = dμβ:</p>
             <p>−S̄_α dT + V̄_α dP = −S̄_β dT + V̄_β dP</p>
@@ -271,7 +271,7 @@ export default function ThermodynamicsPart30() {
         <Section index="4" title="Clausius–Clapeyron Approximation for Liquid–Vapour"
           subtitle="Approximate result: valid when ideal-gas vapour and negligible liquid molar volume are assumed">
           <p>For liquid–vapour equilibrium, ΔV_vap ≈ V_gas = RT/P (ideal gas), so:</p>
-          <div className="space-y-1 rounded-2xl border border-white/10 bg-slate-900/60 p-4 font-mono text-sm">
+          <div className="space-y-1 rounded-lg border border-white/10 bg-slate-900/60 p-4 font-mono text-sm">
             <p>dP/dT = ΔH_vap P/(RT²)</p>
             <p>Divide both sides by P:</p>
             <p>d(ln P)/dT = ΔH_vap/(RT²)</p>
@@ -299,7 +299,7 @@ export default function ThermodynamicsPart30() {
             G_products, ΔrG°, or K. Only temperature, pressure, or composition changes affect the
             equilibrium position.
           </p>
-          <div className="overflow-x-auto rounded-2xl border border-white/10">
+          <div className="overflow-x-auto rounded-lg border border-white/10">
             <table className="min-w-[600px] border-collapse text-left text-sm">
               <thead className="bg-slate-900">
                 <tr>
@@ -330,7 +330,7 @@ export default function ThermodynamicsPart30() {
 
         <Section index="6" title="Worked Examples">
           {examples.map(ex => (
-            <article key={ex.title} className="rounded-2xl border border-white/10 bg-slate-900/70 p-5 mb-4">
+            <article key={ex.title} className="rounded-lg border border-white/10 bg-slate-900/70 p-5 mb-4">
               <h3 className="font-black text-white">{ex.title}</h3>
               <p className="mt-2 text-sm font-semibold text-slate-200">{ex.given}</p>
               <div className="mt-3 rounded-xl border border-emerald-300/20 bg-emerald-300/[0.06] p-3 text-sm leading-6 text-slate-200">{ex.solution}</div>
@@ -350,7 +350,7 @@ export default function ThermodynamicsPart30() {
               ["The normal boiling point of benzene is 80.1 °C and ΔH_vap = 30.8 kJ mol⁻¹. Find the vapour pressure at 60 °C.", "T₁ = 353.1 K (normal bp, P₁ = 1 atm), T₂ = 333 K. ln(P₂/1) = −(30800/8.314)(1/333 − 1/353.1) = −3705 × (1.700×10⁻⁴) = −0.630. P₂ = e^{−0.630} = 0.532 atm = 404 mmHg."],
               ["Why does the solid–liquid coexistence line for most substances have a very steep positive slope?", "dP/dT = ΔH_fus/(T ΔV_fus). ΔV_fus is small (solid and liquid have similar densities) making dP/dT very large — enormous pressure change is required to shift T_m appreciably."],
             ].map(([q, a], i) => (
-              <article key={i} className="rounded-2xl border border-white/10 bg-slate-900/60 p-4">
+              <article key={i} className="rounded-lg border border-white/10 bg-slate-900/60 p-4">
                 <p className="font-semibold text-white"><span className="mr-2 text-amber-300">{i+1}.</span>{q}</p>
                 <div className="mt-2 rounded-xl border border-emerald-300/20 bg-emerald-300/[0.06] p-3 text-sm text-slate-200">{a}</div>
               </article>

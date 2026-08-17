@@ -555,7 +555,7 @@ type DerivBlock = { title: string; steps: DerivStep[] };
 
 function DerivationBlock({ block, idx }: { block: DerivBlock; idx: number }) {
   return (
-    <div className="rounded-2xl border border-violet-400/20 bg-violet-400/[0.04] p-5">
+    <div className="rounded-lg border border-violet-400/20 bg-violet-400/[0.04] p-5">
       <p className="text-xs font-black uppercase tracking-[0.2em] text-violet-300">
         Derivation {idx + 1}
       </p>

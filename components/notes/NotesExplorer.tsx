@@ -84,7 +84,7 @@ function StrictSectionBody({ chapter, section }: { chapter: NotesChapter; sectio
       return (
         <div className="space-y-6">
           {/* Syllabus Scope */}
-          <div className="p-4 rounded-2xl border border-white/[0.06] bg-black/25">
+          <div className="p-4 rounded-lg border border-white/[0.06] bg-black/25">
             <h4 className="text-xs font-bold uppercase tracking-wider text-white/40 mb-2">📋 Syllabus Scope</h4>
             <Bullets items={chapter.syllabus} />
           </div>
@@ -102,7 +102,7 @@ function StrictSectionBody({ chapter, section }: { chapter: NotesChapter; sectio
 
           {/* NCERT Highlights */}
           {chapter.ncertHighlights && chapter.ncertHighlights.length > 0 && (
-            <div className="rounded-2xl border border-purple-400/20 bg-purple-500/[0.06] p-4 space-y-2">
+            <div className="rounded-lg border border-purple-400/20 bg-purple-500/[0.06] p-4 space-y-2">
               <h4 className="text-xs font-bold uppercase tracking-wider text-purple-300">📕 NCERT Highlights &amp; Core Lines</h4>
               <Bullets items={chapter.ncertHighlights} />
             </div>
@@ -181,7 +181,7 @@ function StrictSectionBody({ chapter, section }: { chapter: NotesChapter; sectio
     case "short":
       return (
         <div className="space-y-4">
-          <div className="p-4 rounded-2xl border border-white/[0.06] bg-black/25">
+          <div className="p-4 rounded-lg border border-white/[0.06] bg-black/25">
             <h4 className="text-xs font-bold uppercase tracking-wider text-white/40 mb-2">⚡ Quick-Recall Revision Summary</h4>
             <Bullets items={[...chapter.shortNotes, ...chapter.revisionNotes]} />
           </div>

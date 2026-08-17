@@ -12,7 +12,7 @@ export default function JeeQuickView({ q }: { q: Mechanism["quickView"] }) {
     { icon: AlertTriangle, label: "Exam trap", value: q.trap, tone: "text-rose-300" },
   ];
   return (
-    <div className="rounded-2xl border border-amber-400/25 bg-gradient-to-br from-amber-500/[0.08] to-transparent p-4">
+    <div className="rounded-lg border border-amber-400/25 bg-gradient-to-br from-amber-500/[0.08] to-transparent p-4">
       <div className="mb-3 flex items-center gap-2 text-sm font-black text-amber-200">⚡ 30-Second Revision</div>
       <div className="space-y-2">
         {rows.map((r) => (

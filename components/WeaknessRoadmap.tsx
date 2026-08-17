@@ -62,7 +62,7 @@ export default function WeaknessRoadmap() {
     : [];
 
   return (
-    <div className="rounded-3xl bg-[#111827] border border-white/[0.06] p-6 md:p-8">
+    <div className="rounded-lg bg-[var(--surface)] border border-white/[0.06] p-6 md:p-8">
       <div className="flex items-center gap-2 mb-5">
         <div className="p-2 rounded-lg bg-cyan-500/10">
           <Target className="h-4 w-4 text-cyan-400" />
@@ -84,7 +84,7 @@ export default function WeaknessRoadmap() {
         />
         <button
           onClick={() => generate(topic)}
-          className="rounded-xl bg-gradient-to-r from-cyan-400 to-sky-500 px-5 py-2.5 text-sm font-bold text-black transition hover:-translate-y-0.5"
+          className="rounded-xl bg-[var(--accent)] px-5 py-2.5 text-sm font-bold text-black transition hover:-translate-y-0.5"
         >
           Build My Plan
         </button>
@@ -109,7 +109,7 @@ export default function WeaknessRoadmap() {
           {days.map((d) => {
             const Icon = d.icon;
             return (
-              <div key={d.day} className="rounded-2xl bg-black/30 border border-white/[0.06] p-4">
+              <div key={d.day} className="rounded-lg bg-black/30 border border-white/[0.06] p-4">
                 <div className="flex items-center gap-2 mb-3">
                   <div className="p-1.5 rounded-lg" style={{ background: `${d.accent}1a` }}>
                     <Icon className="h-4 w-4" style={{ color: d.accent }} />

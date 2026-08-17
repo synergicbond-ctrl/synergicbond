@@ -24,7 +24,7 @@ export default function ProgramSyllabusTree({ syllabus }: { syllabus: ProgramSyl
     .filter((g) => g.units.length > 0);
 
   return (
-    <section className="rounded-2xl border border-white/[0.08] bg-white/[0.02] p-5">
+    <section className="rounded-lg border border-white/[0.08] bg-white/[0.02] p-5">
       <div className="mb-1 flex flex-wrap items-baseline justify-between gap-2">
         <h2 className="text-xl font-black text-white">{syllabus.name} — Official Syllabus</h2>
         {syllabus.units.length > 0 && (

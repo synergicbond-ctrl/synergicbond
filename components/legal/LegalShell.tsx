@@ -24,7 +24,7 @@ export default function LegalShell({
   children: React.ReactNode;
 }) {
   return (
-    <main className="min-h-screen bg-[#0B0F19] text-white">
+    <main className="min-h-screen bg-[var(--background)] text-white">
       <div className="mx-auto max-w-3xl px-5 py-12 sm:py-16">
         <nav className="mb-8 flex items-center gap-2 text-xs font-semibold text-white/40">
           <Link href="/" className="hover:text-white">Home</Link>
@@ -40,7 +40,7 @@ export default function LegalShell({
           {children}
         </div>
 
-        <div className="mt-14 rounded-2xl border border-white/[0.08] bg-white/[0.03] p-5 text-sm text-white/60">
+        <div className="mt-14 rounded-lg border border-white/[0.08] bg-white/[0.03] p-5 text-sm text-white/60">
           Questions about this policy? Write to us at{" "}
           <a href={`mailto:${LEGAL_SUPPORT_EMAIL}`} className="font-bold text-cyan-400 hover:text-cyan-300">
             {LEGAL_SUPPORT_EMAIL}

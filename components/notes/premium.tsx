@@ -43,7 +43,7 @@ export function PremiumNotes({ sections, children }: { sections: NoteSection[]; 
   return (
     <div className="min-h-screen bg-[#0B1220] text-white">
       <div className="fixed inset-x-0 top-0 z-50 h-1 bg-transparent">
-        <div className="h-full bg-gradient-to-r from-cyan-400 to-sky-500 transition-[width] duration-150" style={{ width: `${progress}%` }} />
+        <div className="h-full bg-[var(--accent)] transition-[width] duration-150" style={{ width: `${progress}%` }} />
       </div>
       <div className="mx-auto flex max-w-6xl gap-8 px-5 py-10 sm:px-6">
         <aside className="hidden w-52 shrink-0 lg:block">
@@ -67,7 +67,7 @@ export function PremiumNotes({ sections, children }: { sections: NoteSection[]; 
 }
 
 export function Glass({ children, className = "" }: { children: ReactNode; className?: string }) {
-  return <div className={`rounded-2xl border border-white/[0.07] bg-white/[0.03] backdrop-blur-sm ${className}`}>{children}</div>;
+  return <div className={`rounded-lg border border-white/[0.07] bg-white/[0.03] backdrop-blur-sm ${className}`}>{children}</div>;
 }
 
 export function Hero({ eyebrow, title, accent, lead, stats }: {

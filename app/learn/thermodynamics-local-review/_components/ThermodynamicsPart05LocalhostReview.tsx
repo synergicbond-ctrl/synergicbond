@@ -35,7 +35,7 @@ function Section({
   return (
     <section className="rounded-[2rem] border border-white/10 bg-slate-950/80 p-5 shadow-2xl shadow-black/20 backdrop-blur md:p-8">
       <div className="flex items-start gap-4">
-        <span className="grid h-10 w-10 shrink-0 place-items-center rounded-2xl border border-cyan-300/30 bg-cyan-300/10 text-sm font-black text-cyan-200">
+        <span className="grid h-10 w-10 shrink-0 place-items-center rounded-lg border border-cyan-300/30 bg-cyan-300/10 text-sm font-black text-cyan-200">
           {index}
         </span>
         <div>
@@ -58,7 +58,7 @@ function ConceptLens({
   tone?: Tone;
 }) {
   return (
-    <aside className={`rounded-2xl border p-5 ${toneMap[tone]}`}>
+    <aside className={`rounded-lg border p-5 ${toneMap[tone]}`}>
       <p className="text-xs font-black uppercase tracking-[0.2em]">Synergic Bond Concept Lens</p>
       <h3 className="mt-2 text-lg font-black text-white">{title}</h3>
       <div className="mt-2 text-sm leading-6 text-slate-200">{children}</div>
@@ -74,7 +74,7 @@ function Formula({
   children: React.ReactNode;
 }) {
   return (
-    <div className="overflow-x-auto rounded-2xl border border-cyan-300/20 bg-black/30 p-4 text-center">
+    <div className="overflow-x-auto rounded-lg border border-cyan-300/20 bg-black/30 p-4 text-center">
       {label ? (
         <p className="mb-2 text-xs font-black uppercase tracking-[0.2em] text-cyan-300">{label}</p>
       ) : null}
@@ -205,7 +205,7 @@ function DerivativeToolkit() {
   return (
     <div className="grid gap-4 md:grid-cols-2">
       {tools.map((tool) => (
-        <article key={tool.title} className={`rounded-3xl border p-5 ${toneMap[tool.tone]}`}>
+        <article key={tool.title} className={`rounded-lg border p-5 ${toneMap[tool.tone]}`}>
           <h3 className="text-xl font-black text-white">{tool.title}</h3>
           <div className="mt-4 overflow-x-auto rounded-xl bg-black/25 p-3 text-center font-mono font-black text-white">
             {tool.formula}
@@ -237,7 +237,7 @@ function CoefficientCard({
   tone,
 }: CoefficientCardProps) {
   return (
-    <article className={`rounded-3xl border p-5 ${toneMap[tone]}`}>
+    <article className={`rounded-lg border p-5 ${toneMap[tone]}`}>
       <div className="flex flex-wrap items-start justify-between gap-3">
         <div>
           <p className="text-xs font-black uppercase tracking-[0.2em]">{title}</p>
@@ -259,7 +259,7 @@ function CoefficientCard({
 function CoefficientAnimation() {
   return (
     <div className="grid gap-4 lg:grid-cols-3">
-      <article className="rounded-3xl border border-amber-300/20 bg-amber-300/[0.05] p-4">
+      <article className="rounded-lg border border-amber-300/20 bg-amber-300/[0.05] p-4">
         <p className="text-xs font-black uppercase tracking-[0.2em] text-amber-300">Thermal expansion</p>
         <svg viewBox="0 0 500 330" role="img" aria-label="Container expanding as temperature rises" className="mt-3 h-auto w-full">
         <title>Thermodynamics Part 05 scientific diagram 2</title>
@@ -279,7 +279,7 @@ function CoefficientAnimation() {
         </svg>
       </article>
 
-      <article className="rounded-3xl border border-cyan-300/20 bg-cyan-300/[0.05] p-4">
+      <article className="rounded-lg border border-cyan-300/20 bg-cyan-300/[0.05] p-4">
         <p className="text-xs font-black uppercase tracking-[0.2em] text-cyan-300">Isothermal compression</p>
         <svg viewBox="0 0 500 330" role="img" aria-label="Container compressing as pressure rises at constant temperature" className="mt-3 h-auto w-full">
         <title>Thermodynamics Part 05 scientific diagram 3</title>
@@ -296,7 +296,7 @@ function CoefficientAnimation() {
         </svg>
       </article>
 
-      <article className="rounded-3xl border border-violet-300/20 bg-violet-300/[0.05] p-4">
+      <article className="rounded-lg border border-violet-300/20 bg-violet-300/[0.05] p-4">
         <p className="text-xs font-black uppercase tracking-[0.2em] text-violet-300">Thermal pressure</p>
         <svg viewBox="0 0 500 330" role="img" aria-label="Pressure rising during heating at fixed volume" className="mt-3 h-auto w-full">
         <title>Thermodynamics Part 05 scientific diagram 4</title>
@@ -395,7 +395,7 @@ function DailyLifeGrid() {
   return (
     <div className="grid gap-4 md:grid-cols-2">
       {dailyLifeExamples.map((example) => (
-        <article key={example.title} className={`rounded-3xl border p-5 ${toneMap[example.tone]}`}>
+        <article key={example.title} className={`rounded-lg border p-5 ${toneMap[example.tone]}`}>
           <h3 className="text-xl font-black text-white">{example.title}</h3>
           <p className="mt-2 text-sm leading-6 text-slate-200">{example.text}</p>
         </article>
@@ -467,7 +467,7 @@ function ProblemLadder() {
   return (
     <div className="grid gap-4 lg:grid-cols-2">
       {problems.map((item) => (
-        <article key={item.title} className="group rounded-2xl border border-white/10 bg-slate-900/70 p-5">
+        <article key={item.title} className="group rounded-lg border border-white/10 bg-slate-900/70 p-5">
           <h3 className=" font-black text-white">
             <span className="mr-2 text-amber-300">◆</span>
             {item.title}
@@ -518,7 +518,7 @@ const traps = [
 
 function TrapTable() {
   return (
-    <div className="overflow-x-auto rounded-2xl border border-white/10">
+    <div className="overflow-x-auto rounded-lg border border-white/10">
       <table className="min-w-full border-collapse text-left text-sm">
         <thead className="bg-slate-900">
           <tr>
@@ -911,7 +911,7 @@ export default function ThermodynamicsPart05() {
               ["α/κT", "pressure rise per kelvin at constant V"],
               ["dV/V", "αdT − κT dP"],
             ].map(([term, meaning]) => (
-              <div key={term} className="rounded-2xl border border-white/10 bg-black/25 p-4">
+              <div key={term} className="rounded-lg border border-white/10 bg-black/25 p-4">
                 <p className="font-black text-white">{term}</p>
                 <p className="mt-1 text-sm leading-6 text-slate-300">{meaning}</p>
               </div>

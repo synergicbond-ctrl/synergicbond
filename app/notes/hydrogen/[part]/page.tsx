@@ -58,7 +58,7 @@ export default async function HydrogenPartPage({ params }: { params: Promise<{ p
 
           <div className="grid gap-5 lg:grid-cols-2">
             {visuals.map((visual, index) => (
-              <figure key={`${visual.src}-${index}`} className="group overflow-hidden rounded-3xl border border-white/10 bg-[linear-gradient(145deg,#06101c,#0b1422)] shadow-xl shadow-black/25">
+              <figure key={`${visual.src}-${index}`} className="group overflow-hidden rounded-lg border border-white/10 bg-[linear-gradient(145deg,#06101c,#0b1422)] shadow-xl shadow-black/25">
                 <div className="relative aspect-[16/9] overflow-hidden bg-[#030812]">
                   <Image
                     src={visual.src}

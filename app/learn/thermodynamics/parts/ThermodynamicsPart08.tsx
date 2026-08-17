@@ -35,7 +35,7 @@ function Section({
   return (
     <section className="rounded-[2rem] border border-white/10 bg-slate-950/80 p-5 shadow-2xl shadow-black/20 backdrop-blur md:p-8">
       <div className="flex items-start gap-4">
-        <span className="grid h-10 w-10 shrink-0 place-items-center rounded-2xl border border-cyan-300/30 bg-cyan-300/10 text-sm font-black text-cyan-200">
+        <span className="grid h-10 w-10 shrink-0 place-items-center rounded-lg border border-cyan-300/30 bg-cyan-300/10 text-sm font-black text-cyan-200">
           {index}
         </span>
         <div>
@@ -58,7 +58,7 @@ function ConceptLens({
   tone?: Tone;
 }) {
   return (
-    <aside className={`rounded-2xl border p-5 ${toneMap[tone]}`}>
+    <aside className={`rounded-lg border p-5 ${toneMap[tone]}`}>
       <p className="text-xs font-black uppercase tracking-[0.2em]">Concept lens</p>
       <h3 className="mt-2 text-lg font-black text-white">{title}</h3>
       <div className="mt-2 text-sm leading-6 text-slate-200">{children}</div>
@@ -74,7 +74,7 @@ function Formula({
   children: React.ReactNode;
 }) {
   return (
-    <div className="overflow-x-auto rounded-2xl border border-cyan-300/20 bg-black/30 p-4 text-center">
+    <div className="overflow-x-auto rounded-lg border border-cyan-300/20 bg-black/30 p-4 text-center">
       {label ? (
         <p className="mb-2 text-xs font-black uppercase tracking-[0.2em] text-cyan-300">{label}</p>
       ) : null}
@@ -385,7 +385,7 @@ function SpecialCasesGrid() {
   return (
     <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
       {specialCases.map((item) => (
-        <article key={item.title} className={`rounded-3xl border p-5 ${toneMap[item.tone]}`}>
+        <article key={item.title} className={`rounded-lg border p-5 ${toneMap[item.tone]}`}>
           <h3 className="text-lg font-black text-white">{item.title}</h3>
           <div className="mt-3 rounded-xl bg-black/25 p-3 text-center font-mono text-sm font-black text-slate-100">
             {item.conditions}
@@ -407,7 +407,7 @@ function SystemSurroundingsLedger() {
   ];
 
   return (
-    <div className="overflow-x-auto rounded-2xl border border-white/10">
+    <div className="overflow-x-auto rounded-lg border border-white/10">
       <table className="min-w-full border-collapse text-left text-sm">
         <thead className="bg-slate-900">
           <tr>
@@ -435,7 +435,7 @@ function SystemSurroundingsLedger() {
 function SignDecisionTree() {
   return (
     <div className="grid gap-4 md:grid-cols-2">
-      <article className="rounded-3xl border border-amber-300/20 bg-amber-300/[0.05] p-5">
+      <article className="rounded-lg border border-amber-300/20 bg-amber-300/[0.05] p-5">
         <p className="text-xs font-black uppercase tracking-[0.2em] text-amber-300">Heat q</p>
         <div className="mt-4 grid gap-3 text-sm">
           <div className="rounded-xl bg-black/25 p-4">
@@ -449,7 +449,7 @@ function SignDecisionTree() {
         </div>
       </article>
 
-      <article className="rounded-3xl border border-cyan-300/20 bg-cyan-300/[0.05] p-5">
+      <article className="rounded-lg border border-cyan-300/20 bg-cyan-300/[0.05] p-5">
         <p className="text-xs font-black uppercase tracking-[0.2em] text-cyan-300">Work w</p>
         <div className="mt-4 grid gap-3 text-sm">
           <div className="rounded-xl bg-black/25 p-4">
@@ -543,7 +543,7 @@ function ProblemLadder() {
   return (
     <div className="grid gap-4 lg:grid-cols-2">
       {problems.map((item) => (
-        <article key={item.title} className="group rounded-2xl border border-white/10 bg-slate-900/70 p-5">
+        <article key={item.title} className="group rounded-lg border border-white/10 bg-slate-900/70 p-5">
           <h3 className=" font-black text-white">
             <span className="mr-2 text-amber-300">◆</span>
             {item.title}
@@ -604,7 +604,7 @@ const traps = [
 
 function TrapTable() {
   return (
-    <div className="overflow-x-auto rounded-2xl border border-white/10">
+    <div className="overflow-x-auto rounded-lg border border-white/10">
       <table className="min-w-full border-collapse text-left text-sm">
         <thead className="bg-slate-900">
           <tr>
@@ -656,7 +656,7 @@ function DailyLifeGrid() {
   return (
     <div className="grid gap-4 md:grid-cols-2">
       {items.map((item) => (
-        <article key={item.title} className={`rounded-3xl border p-5 ${toneMap[item.tone]}`}>
+        <article key={item.title} className={`rounded-lg border p-5 ${toneMap[item.tone]}`}>
           <h3 className="text-xl font-black text-white">{item.title}</h3>
           <p className="mt-2 text-sm leading-6 text-slate-200">{item.text}</p>
         </article>
@@ -750,15 +750,15 @@ export default function ThermodynamicsPart08() {
           </p>
 
           <div className="grid gap-4 md:grid-cols-3">
-            <article className="rounded-2xl border border-cyan-300/20 bg-cyan-300/[0.05] p-5">
+            <article className="rounded-lg border border-cyan-300/20 bg-cyan-300/[0.05] p-5">
               <p className="text-xs font-black uppercase tracking-[0.2em] text-cyan-300">Liquid thermometer</p>
               <p className="mt-2 text-sm leading-6 text-slate-200">Thermometric property: liquid volume or column length.</p>
             </article>
-            <article className="rounded-2xl border border-violet-300/20 bg-violet-300/[0.05] p-5">
+            <article className="rounded-lg border border-violet-300/20 bg-violet-300/[0.05] p-5">
               <p className="text-xs font-black uppercase tracking-[0.2em] text-violet-300">Resistance thermometer</p>
               <p className="mt-2 text-sm leading-6 text-slate-200">Thermometric property: electrical resistance.</p>
             </article>
-            <article className="rounded-2xl border border-amber-300/20 bg-amber-300/[0.05] p-5">
+            <article className="rounded-lg border border-amber-300/20 bg-amber-300/[0.05] p-5">
               <p className="text-xs font-black uppercase tracking-[0.2em] text-amber-300">Gas thermometer</p>
               <p className="mt-2 text-sm leading-6 text-slate-200">Thermometric property: gas pressure or volume under controlled conditions.</p>
             </article>
@@ -882,7 +882,7 @@ export default function ThermodynamicsPart08() {
 
         <Section index="10" title="Closed, isolated and open-system energy balances">
           <div className="grid gap-4 lg:grid-cols-3">
-            <article className="rounded-3xl border border-cyan-300/20 bg-cyan-300/[0.05] p-5">
+            <article className="rounded-lg border border-cyan-300/20 bg-cyan-300/[0.05] p-5">
               <Chip tone="cyan">CLOSED SYSTEM</Chip>
               <p className="mt-4 text-sm leading-6 text-slate-200">
                 No matter crosses. Energy may cross as heat or work.
@@ -892,7 +892,7 @@ export default function ThermodynamicsPart08() {
               </div>
             </article>
 
-            <article className="rounded-3xl border border-violet-300/20 bg-violet-300/[0.05] p-5">
+            <article className="rounded-lg border border-violet-300/20 bg-violet-300/[0.05] p-5">
               <Chip tone="violet">ISOLATED SYSTEM</Chip>
               <p className="mt-4 text-sm leading-6 text-slate-200">
                 Neither matter nor energy crosses the external boundary.
@@ -902,7 +902,7 @@ export default function ThermodynamicsPart08() {
               </div>
             </article>
 
-            <article className="rounded-3xl border border-amber-300/20 bg-amber-300/[0.05] p-5">
+            <article className="rounded-lg border border-amber-300/20 bg-amber-300/[0.05] p-5">
               <Chip tone="amber">OPEN SYSTEM</Chip>
               <p className="mt-4 text-sm leading-6 text-slate-200">
                 Matter carries internal, flow, kinetic and potential energy through the boundary.
@@ -921,7 +921,7 @@ export default function ThermodynamicsPart08() {
 
         <Section index="11" title="What the First Law cannot tell us">
           <div className="grid gap-4 md:grid-cols-2">
-            <article className="rounded-2xl border border-emerald-300/20 bg-emerald-300/[0.05] p-5">
+            <article className="rounded-lg border border-emerald-300/20 bg-emerald-300/[0.05] p-5">
               <p className="text-xs font-black uppercase tracking-[0.2em] text-emerald-300">It can determine</p>
               <ul className="mt-3 space-y-2 text-sm leading-6 text-slate-200">
                 <li>• energy conservation;</li>
@@ -930,7 +930,7 @@ export default function ThermodynamicsPart08() {
                 <li>• impossibility of a first-kind perpetual-motion machine.</li>
               </ul>
             </article>
-            <article className="rounded-2xl border border-rose-300/20 bg-rose-300/[0.05] p-5">
+            <article className="rounded-lg border border-rose-300/20 bg-rose-300/[0.05] p-5">
               <p className="text-xs font-black uppercase tracking-[0.2em] text-rose-300">It cannot determine alone</p>
               <ul className="mt-3 space-y-2 text-sm leading-6 text-slate-200">
                 <li>• direction of spontaneous change;</li>
@@ -982,7 +982,7 @@ export default function ThermodynamicsPart08() {
               ["Isolated", "q = w = 0"],
               ["Cycle", "ΔU = 0 but q and w may be non-zero"],
             ].map(([term, meaning]) => (
-              <div key={term} className="rounded-2xl border border-white/10 bg-black/25 p-4">
+              <div key={term} className="rounded-lg border border-white/10 bg-black/25 p-4">
                 <p className="font-black text-white">{term}</p>
                 <p className="mt-1 text-sm leading-6 text-slate-300">{meaning}</p>
               </div>

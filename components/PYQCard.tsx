@@ -20,7 +20,7 @@ export default function PYQCard({
   const isJee = examTag.includes("JEE");
   
   return (
-    <div className={`p-4 rounded-2xl border border-slate-100 dark:border-slate-800 bg-slate-50/40 dark:bg-slate-950/50 space-y-3 ${
+    <div className={`p-4 rounded-lg border border-slate-100 dark:border-slate-800 bg-slate-50/40 dark:bg-slate-950/50 space-y-3 ${
       isJee ? "border-rose-50/50" : "border-indigo-50/50"
     }`}>
       <span className={`text-[9px] font-extrabold tracking-widest uppercase px-2.5 py-1 rounded ${

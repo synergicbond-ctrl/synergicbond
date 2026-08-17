@@ -14,7 +14,7 @@ const CAP_ICONS: Record<CapIcon, typeof Users> = {
 
 export default function ExamCenterPage() {
   return (
-    <main className="min-h-screen bg-[#0B0F19] text-white">
+    <main className="min-h-screen bg-[var(--background)] text-white">
       <div className="mx-auto max-w-6xl px-6 py-12">
         {/* Header */}
         <p className="text-xs font-bold uppercase tracking-[0.4em] text-cyan-300 mb-2">Exam Center · 2026</p>
@@ -32,7 +32,7 @@ export default function ExamCenterPage() {
               <Link
                 key={e.id}
                 href={e.href}
-                className="group rounded-2xl border bg-[#111827] p-6 transition hover:-translate-y-1"
+                className="group rounded-lg border bg-[var(--surface)] p-6 transition hover:-translate-y-1"
                 style={{ borderColor: `${e.accent}30` }}
               >
                 <div className="flex items-start justify-between gap-3">

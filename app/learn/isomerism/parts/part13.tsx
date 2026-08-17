@@ -152,13 +152,13 @@ export default function IsomerismPart13() {
     <main className="min-h-screen bg-[#08111f] px-4 py-8 text-white sm:px-6 sm:py-12">
       <article className="mx-auto max-w-6xl">
         <Link href="/learn/isomerism" className="rounded-full border border-cyan-300/30 bg-cyan-300/10 px-4 py-2 text-sm font-bold text-cyan-100">Isomerism</Link>
-        <header className="mt-6 rounded-3xl border border-cyan-300/15 bg-[radial-gradient(circle_at_top_right,_rgba(34,211,238,.18),_transparent_35%),linear-gradient(135deg,rgba(34,211,238,.08),rgba(2,6,23,.7),rgba(139,92,246,.1))] p-6 sm:p-9">
+        <header className="mt-6 rounded-lg border border-cyan-300/15 bg-[radial-gradient(circle_at_top_right,_rgba(34,211,238,.18),_transparent_35%),linear-gradient(135deg,rgba(34,211,238,.08),rgba(2,6,23,.7),rgba(139,92,246,.1))] p-6 sm:p-9">
           <p className="text-xs font-black uppercase tracking-[.24em] text-cyan-200">Optical Isomerism source · pages 36–58 · Part 13</p>
           <h1 className="mt-3 text-3xl font-black sm:text-5xl">Racemates, meso forms and special chirality</h1>
         </header>
 
         <section className="mt-7 space-y-6">
-          <section className="rounded-2xl border border-white/10 bg-white/[.035] p-5">
+          <section className="rounded-lg border border-white/10 bg-white/[.035] p-5">
             <h2 className="text-xl font-black text-cyan-200">Racemic mixture</h2>
             <p className="mt-2 text-sm leading-7 text-slate-300">An equimolar mixture of a pair of enantiomers is known as a racemic mixture, racemic modification or racemate. Racemic mixtures are optically inactive due to external compensation of the two components, and are designated by the prefix dl, ±, RS or rac-.</p>
             <ul className="mt-2 list-disc space-y-1.5 pl-5 text-sm leading-6 text-slate-300">
@@ -168,7 +168,7 @@ export default function IsomerismPart13() {
             </ul>
           </section>
 
-          <section className="rounded-2xl border border-white/10 bg-white/[.035] p-5">
+          <section className="rounded-lg border border-white/10 bg-white/[.035] p-5">
             <h2 className="text-xl font-black text-cyan-200">Diastereomers</h2>
             <p className="mt-2 text-sm leading-7 text-slate-300">Stereoisomers that are <b className="text-white">not</b> mirror images of each other are known as diastereomers. They may or may not be optically active, and have different physical properties (m.p., b.p., density, solubility, refractive index, etc.) though similar — not identical — chemical properties; their reaction rates differ with chiral as well as achiral reagents and solvents. Because their physical properties differ, diastereomers can easily be separated by fractional distillation, fractional crystallisation and chromatography.</p>
             <div className="mt-4 overflow-x-auto rounded-xl border border-cyan-300/20 bg-[#050b16] p-3">
@@ -176,7 +176,7 @@ export default function IsomerismPart13() {
             </div>
           </section>
 
-          <section className="rounded-2xl border border-white/10 bg-white/[.035] p-5">
+          <section className="rounded-lg border border-white/10 bg-white/[.035] p-5">
             <h2 className="text-xl font-black text-cyan-200">Meso form</h2>
             <p className="mt-2 text-sm leading-7 text-slate-300">Optical isomers which have a chiral carbon but are optically inactive due to the presence of symmetry are known as meso compounds. α<sub>obs</sub> = 0 due to <b className="text-white">internal</b> compensation.</p>
             <div className="mt-4 overflow-x-auto rounded-xl border border-cyan-300/20 bg-[#050b16] p-3">
@@ -197,7 +197,7 @@ export default function IsomerismPart13() {
             </div>
           </section>
 
-          <section className="rounded-2xl border border-white/10 bg-white/[.035] p-5">
+          <section className="rounded-lg border border-white/10 bg-white/[.035] p-5">
             <h2 className="text-xl font-black text-cyan-200">Resolution and racemisation</h2>
             <p className="text-sm leading-7 text-slate-300"><b className="text-white">Resolution</b> — the process of separation of a racemic mixture into its constituent enantiomers.</p>
             <p className="mt-2 text-sm font-bold text-slate-200">Methods of resolution:</p>
@@ -205,7 +205,7 @@ export default function IsomerismPart13() {
             <p className="mt-3 text-sm leading-7 text-slate-300"><b className="text-white">Racemisation</b> — the process of conversion of an optically active compound into the racemic mixture.</p>
           </section>
 
-          <section className="rounded-2xl border border-white/10 bg-white/[.035] p-5">
+          <section className="rounded-lg border border-white/10 bg-white/[.035] p-5">
             <h2 className="text-xl font-black text-cyan-200">Enantiomeric excess / optical purity</h2>
             <BlockMath math="\\%\\,EE=\\frac{\\text{observed specific rotation}}{\\text{specific rotation of pure enantiomer}}\\times100=\\frac{\\%d-\\%l}{\\%d+\\%l}=\\frac{M_d-M_l}{M_d+M_l}=\\frac{n_d-n_l}{n_d+n_l}=\\frac{W_d-W_l}{W_d+W_l}" />
             <p className="text-xs text-slate-400">M = molarity, n = moles, W = mass.</p>
@@ -223,7 +223,7 @@ export default function IsomerismPart13() {
             </div>
           </section>
 
-          <section className="rounded-2xl border border-white/10 bg-white/[.035] p-5">
+          <section className="rounded-lg border border-white/10 bg-white/[.035] p-5">
             <h2 className="text-xl font-black text-cyan-200">Optical isomerism in a compound with only one chiral carbon</h2>
             <ul className="list-disc space-y-1.5 pl-5 text-sm leading-6 text-slate-300">
               <li>They are always optically active.</li>
@@ -238,13 +238,13 @@ export default function IsomerismPart13() {
             <p className="mt-2 text-center text-xs text-slate-400">I, II — enantiomers</p>
           </section>
 
-          <section className="rounded-2xl border border-white/10 bg-white/[.035] p-5">
+          <section className="rounded-lg border border-white/10 bg-white/[.035] p-5">
             <h2 className="text-xl font-black text-cyan-200">Smallest optically active alkane and isomer counting</h2>
             <p className="text-sm leading-7 text-slate-300">3-methylhexane (CH₃CH₂CH₂–C*H(CH₂CH₃)–CH₃, equivalently drawn as the isopropyl/ethyl/methyl/H tetrahedral centre) is the smallest optically active alkane. Alkanes need a minimum of 7 carbons to show optical isomerism (M.F. C₇H₁₆, mm = 100).</p>
             <p className="mt-2 text-sm leading-7 text-slate-300">The total number of optical isomers among alkane derivatives of molecular mass 100 is 4. Compare butan-2-ol (chiral centre present, optically active, two optical isomers) with butan-1-ol (no chiral centre, optically inactive); 2-chlorobutane and 3-methylpent-1-ene each similarly give two optical isomers, while a symmetric branch pattern must be checked carefully for a hidden chiral centre before concluding it is achiral.</p>
           </section>
 
-          <section className="rounded-2xl border border-white/10 bg-white/[.035] p-5">
+          <section className="rounded-lg border border-white/10 bg-white/[.035] p-5">
             <h2 className="text-xl font-black text-cyan-200">Optical isomerism in compounds with two or more chiral centres</h2>
             <h3 className="mt-2 text-sm font-black uppercase tracking-wide text-slate-300">(a) Two identical chiral centres — tartaric acid</h3>
             <div className="mt-3 grid gap-3 sm:grid-cols-3">
@@ -259,13 +259,13 @@ export default function IsomerismPart13() {
             <p className="mt-2 text-sm leading-6 text-slate-300">Total optical isomers = 4 · optically active = 4 · optically inactive = 0 · pairs of enantiomers = 2. Two non-identical stereocentres generally give four active stereoisomers in two enantiomeric pairs and no meso form; two identical stereocentres give three stereoisomers — two active plus one meso.</p>
           </section>
 
-          <section className="rounded-2xl border border-white/10 bg-white/[.035] p-5">
+          <section className="rounded-lg border border-white/10 bg-white/[.035] p-5">
             <h2 className="text-xl font-black text-cyan-200">Optical activity in the absence of a chiral carbon</h2>
             <p className="text-sm leading-7 text-slate-300"><b className="text-white">Axial chirality</b> arises from the non-planar arrangement of four groups in pairs about a chiral axis. A chiral axis is a line in a chiral molecule about which a set of four groups is held in a non-planar arrangement, resulting in a non-superimposable mirror image (contrast a chiral <i>centre</i>, a point).</p>
             <p className="mt-2 text-sm leading-6 text-slate-400">A further element of chirality — helicity — is treated later in this part.</p>
           </section>
 
-          <section className="rounded-2xl border border-white/10 bg-white/[.035] p-5">
+          <section className="rounded-lg border border-white/10 bg-white/[.035] p-5">
             <h2 className="text-xl font-black text-cyan-200">Stereochemistry of allenes</h2>
             <p className="text-sm leading-7 text-slate-300">For a cumulated system a₂C=C=Cb₂ … with terminal groups a, b: consecutive sp/sp² carbons rotate the terminal substituent planes by 90° per cumulated double bond.</p>
             <div className="mt-4 grid gap-4 sm:grid-cols-2">
@@ -278,7 +278,7 @@ export default function IsomerismPart13() {
             </div>
           </section>
 
-          <section className="rounded-2xl border border-white/10 bg-white/[.035] p-5">
+          <section className="rounded-lg border border-white/10 bg-white/[.035] p-5">
             <h2 className="text-xl font-black text-cyan-200">Stereochemistry of spiranes</h2>
             <p className="text-sm leading-7 text-slate-300">The common (spiro) carbon is sp³-hybridised, so the two valencies to one ring are perpendicular to the two valencies to the other ring — the two rings of a spirane are perpendicular to each other. A spirane with a≠b on one ring and A≠B on the other (POS✗, COS✗) is optically active.</p>
             <div className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-4">
@@ -293,7 +293,7 @@ export default function IsomerismPart13() {
             </div>
           </section>
 
-          <section className="rounded-2xl border border-white/10 bg-white/[.035] p-5">
+          <section className="rounded-lg border border-white/10 bg-white/[.035] p-5">
             <h2 className="text-xl font-black text-cyan-200">Stereochemistry of biphenyls: atropisomerism</h2>
             <p className="text-sm leading-7 text-slate-300">The two rings of biphenyl rotate freely about the central C–C bond. If large substituents occupy the ortho positions, they interfere mechanically as obstacles and restrict free rotation — the two rings become forced perpendicular to each other, and the molecule becomes chiral (its mirror image is non-superimposable), showing optical activity. If rotation is only partially restricted, the molecule is not fully coplanar and may still show (temperature-dependent) optical activity. <b className="text-white">Atropisomerism</b> is this phenomenon of stereoisomerism due to restricted rotation.</p>
             <div className="mt-4 grid gap-4 sm:grid-cols-2">
@@ -304,7 +304,7 @@ export default function IsomerismPart13() {
             <p className="mt-3 text-sm leading-7 text-slate-300">For small ortho substituents (a = OH, F, Cl, CH₃, COOH, NO₂) rotation is not restricted enough — optical activity is <b className="text-white">not</b> isolable (OAI = ✗) because the enantiomers interconvert too fast at room temperature. Bulkier or differently-shaped ortho groups (e.g. a = SO₃H) do restrict rotation enough for the atropisomers to be isolated (OAI = ✓). Restricting rotation with an ortho acetyl/ester pair, a fused dinitro-naphthalene bridge, or a −(CH₂)ₙ− bridge with n ≥ 2 across the 8,8′ positions of a binaphthyl likewise locks resolvable atropisomers. Numerous literature examples — resolved biphenyl-, binaphthyl- and heterocyclic-analogue diacids, disulfonic acids, dithiols and quaternary ammonium/arsonium salts — are catalogued in the source as worked exercises in applying this ortho-bulk rule.</p>
           </section>
 
-          <section className="rounded-2xl border border-white/10 bg-white/[.035] p-5">
+          <section className="rounded-lg border border-white/10 bg-white/[.035] p-5">
             <h2 className="text-xl font-black text-cyan-200">Terphenyls: POS / COS worked gallery</h2>
             <p className="text-sm leading-7 text-slate-300">For an o,o′,o″,o‴-tetrasubstituted terphenyl (rings A–B–C), optical activity requires the absence of both a plane of symmetry (POS) and an axis of symmetry (COS) across the whole molecule — not just each biaryl bond in isolation.</p>
             <div className="mt-3 grid grid-cols-2 gap-2 text-xs sm:grid-cols-4">
@@ -318,7 +318,7 @@ export default function IsomerismPart13() {
             </div>
           </section>
 
-          <section className="rounded-2xl border border-white/10 bg-white/[.035] p-5">
+          <section className="rounded-lg border border-white/10 bg-white/[.035] p-5">
             <h2 className="text-xl font-black text-cyan-200">Optical isomerism in hemispiranes / alkylidenecyclohexanes (ring + π)</h2>
             <p className="text-sm leading-7 text-slate-300">A ring carrying an exocyclic C=C at each end (alkylidene termini) is chiral when the two substituents on <i>each</i> terminal alkene carbon are different — the same a≠b logic as allenes, now applied across a ring rather than a cumulated chain.</p>
             <div className="mt-3 grid grid-cols-3 gap-3 sm:grid-cols-5">
@@ -334,7 +334,7 @@ export default function IsomerismPart13() {
             </div>
           </section>
 
-          <section className="rounded-2xl border border-white/10 bg-white/[.035] p-5">
+          <section className="rounded-lg border border-white/10 bg-white/[.035] p-5">
             <h2 className="text-xl font-black text-cyan-200">Optical activity at nitrogen, phosphorus and sulphur</h2>
             <p className="text-sm leading-7 text-slate-300">A pyramidal amine NR₁R₂R₃ (with a lone pair) has R₁≠R₂≠R₃, so POS✗ and COS✗ — it is genuinely chiral at nitrogen — yet it is <b className="text-white">optically inactive</b> in practice.</p>
             <h3 className="mt-3 text-sm font-black text-slate-200">Amine inversion / umbrella flipping / pyramidal inversion</h3>
@@ -350,7 +350,7 @@ export default function IsomerismPart13() {
             <p className="mt-2 text-sm leading-7 text-slate-300">Umbrella flipping is not applicable to compounds of P, S, As (third period onwards) under ordinary conditions, because the inversion barrier is much higher for these larger, heavier atoms. Consequently, chiral phosphine oxides (P=O), phosphine sulfides (P=S), phosphine selenides (P=Se), and quaternary phosphonium salts (P⁺) — as well as chiral sulfonium salts (S⁺) — <b className="text-white">are</b> configurationally stable and resolvable, unlike their nitrogen analogues.</p>
           </section>
 
-          <section className="rounded-2xl border border-white/10 bg-white/[.035] p-5">
+          <section className="rounded-lg border border-white/10 bg-white/[.035] p-5">
             <h2 className="text-xl font-black text-cyan-200">Rigid bridgehead / cage systems</h2>
             <p className="text-sm leading-7 text-slate-300">In a rigid bicyclic (bridgehead) framework, four different substituents held by the cage&apos;s geometry — even without a classical single tetrahedral stereocentre — still produce two non-superimposable, resolvable optical isomers. Camphor-type bicyclo[2.2.1] cages and substituted bicyclo[2.2.2]octanes are classic examples (camphor itself, and a bridged bicyclic ketone from JEE 2015).</p>
             <div className="mt-4 grid gap-4 sm:grid-cols-2">
@@ -359,13 +359,13 @@ export default function IsomerismPart13() {
             </div>
           </section>
 
-          <section className="rounded-2xl border border-white/10 bg-white/[.035] p-5">
+          <section className="rounded-lg border border-white/10 bg-white/[.035] p-5">
             <h2 className="text-xl font-black text-cyan-200">Optical activity due to helicity</h2>
             <p className="text-sm leading-7 text-slate-300">A helix and its mirror image are non-superimposable — right-handed (P) and left-handed (M) helices are genuine enantiomers, a third distinct source of chirality alongside point (chiral-carbon) and axial chirality. Ortho-fused polycyclic aromatics that cannot lie flat because of steric clash at their bay region — e.g. hexahelicene, six angularly-fused rings forming a helical ribbon — twist into a helical shape and are consequently optically active, even though no individual atom is a classical stereocentre.</p>
             <div className="mt-4 overflow-x-auto rounded-xl border border-cyan-300/20 bg-[#050b16] p-3"><HelixPair /></div>
           </section>
 
-          <section className="rounded-2xl border border-white/10 bg-white/[.035] p-5">
+          <section className="rounded-lg border border-white/10 bg-white/[.035] p-5">
             <h2 className="text-xl font-black text-cyan-200">Optical activity without a chiral carbon — summary</h2>
             <ul className="list-disc space-y-2 pl-5 text-sm leading-6 text-slate-300">
               <li>Allenes with a≠b at both termini and an even number of cumulated double bonds.</li>

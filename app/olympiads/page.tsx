@@ -24,7 +24,7 @@ export default function OlympiadUniverse() {
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {olympiads.map((oly, idx) => (
-          <div key={idx} className="p-6 bg-slate-900/40 border border-slate-800 rounded-3xl space-y-4 hover:border-indigo-500/40 transition">
+          <div key={idx} className="p-6 bg-slate-900/40 border border-slate-800 rounded-lg space-y-4 hover:border-indigo-500/40 transition">
             <span className={`text-[10px] font-extrabold tracking-widest uppercase px-3 py-1 rounded-full border ${oly.color} self-start inline-block`}>
               {oly.code}
             </span>

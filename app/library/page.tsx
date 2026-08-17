@@ -146,7 +146,7 @@ export default function LibraryPage() {
   const total = domains.reduce((n, d) => n + d.books.length, 0);
 
   return (
-    <main className="min-h-screen bg-[#0B0F19] text-white">
+    <main className="min-h-screen bg-[var(--background)] text-white">
       <div className="mx-auto max-w-6xl px-6 py-12">
         {/* Header */}
         <div className="mb-10">
@@ -179,7 +179,7 @@ export default function LibraryPage() {
                     href={googleLink(b)}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group flex items-start gap-3 rounded-2xl bg-[#111827] border border-white/[0.06] p-4 transition-all duration-200 hover:-translate-y-0.5"
+                    className="group flex items-start gap-3 rounded-lg bg-[var(--surface)] border border-white/[0.06] p-4 transition-all duration-200 hover:-translate-y-0.5"
                     style={{ borderColor: "rgba(255,255,255,0.06)" }}
                   >
                     {/* Spine icon */}
@@ -214,7 +214,7 @@ export default function LibraryPage() {
         </div>
 
         {/* Curator notes */}
-        <div className="mt-12 rounded-2xl bg-[#111827] border border-white/[0.06] p-6">
+        <div className="mt-12 rounded-lg bg-[var(--surface)] border border-white/[0.06] p-6">
           <h3 className="text-sm font-bold text-white mb-3">📌 Curator Notes</h3>
           <ul className="space-y-2 text-xs text-gray-300 leading-relaxed">
             <li>• <span className="text-white/80 font-semibold">Why only textbooks:</span> SYNERGIC BOND replaces exam-cram guides — here we point you to the deep conceptual sources the best ranks are actually built on.</li>

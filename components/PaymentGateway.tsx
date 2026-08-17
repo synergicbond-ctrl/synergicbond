@@ -264,7 +264,7 @@ export default function PaymentGateway({
       aria-labelledby="payment-title"
     >
       <div
-        className="sb-modal-panel relative flex max-h-[90vh] w-full max-w-md flex-col overflow-hidden rounded-t-3xl border border-white/[0.08] bg-[#111827] shadow-2xl sm:rounded-3xl"
+        className="sb-modal-panel relative flex max-h-[90vh] w-full max-w-md flex-col overflow-hidden rounded-t-lg border border-[var(--border)] bg-[var(--surface)] shadow-2xl sm:rounded-lg"
         onClick={(e) => e.stopPropagation()}
       >
         <button
@@ -278,12 +278,12 @@ export default function PaymentGateway({
         {/* Scrollable body */}
         <div className="flex-1 overflow-y-auto overscroll-contain px-6 pt-7 pb-5 sm:px-7">
           <div className="mb-6 pr-8">
-            <p className="text-xs font-bold text-cyan-400 uppercase tracking-wider">Checkout</p>
+            <p className="text-xs font-bold text-[var(--accent)] uppercase tracking-wider">Checkout</p>
             <h3 id="payment-title" className="text-xl font-black mt-1">{plan}</h3>
-            <p className="text-3xl font-black text-white mt-2">{amount}<span className="text-sm text-white/40 font-normal"> / {period}</span></p>
+            <p className="text-3xl font-black text-[var(--foreground)] mt-2">{amount}<span className="text-sm text-[var(--text-muted)] font-normal"> / {period}</span></p>
           </div>
 
-          <p className="text-xs font-semibold text-white/50 mb-3">Select payment method</p>
+          <p className="text-xs font-semibold text-[var(--text-muted)] mb-3">Select payment method</p>
           <div className="grid grid-cols-2 gap-2 mb-5">
             {methods.map((m) => {
               const Icon = m.icon;
@@ -292,13 +292,13 @@ export default function PaymentGateway({
                 <button
                   key={m.id}
                   onClick={() => setSelected(m.id)}
-                  className={`flex flex-col items-start gap-1 rounded-xl border p-3 text-left transition ${
-                    active ? "border-cyan-400/60 bg-cyan-500/10" : "border-white/[0.08] bg-black/30 hover:border-white/20"
+                  className={`flex flex-col items-start gap-1 rounded-lg border p-3 text-left transition ${
+                    active ? "border-[var(--accent)]/60 bg-[var(--accent)]/10" : "border-[var(--border)] bg-[var(--surface-2)] hover:border-[var(--accent)]/30"
                   }`}
                 >
-                  <Icon className={`h-4 w-4 ${active ? "text-cyan-400" : "text-white/50"}`} />
-                  <span className="text-xs font-semibold text-white/80">{m.label}</span>
-                  <span className="text-[9px] text-white/30">{m.hint}</span>
+                  <Icon className={`h-4 w-4 ${active ? "text-[var(--accent)]" : "text-[var(--text-muted)]"}`} />
+                  <span className="text-xs font-semibold text-[var(--foreground)]">{m.label}</span>
+                  <span className="text-[9px] text-[var(--text-muted)]">{m.hint}</span>
                 </button>
               );
             })}
@@ -306,23 +306,23 @@ export default function PaymentGateway({
 
           {/* Warning Copy */}
           {type === "contribution" ? (
-            <div className="bg-black/40 border border-white/5 rounded-xl p-3 text-[10px] text-white/60 leading-relaxed space-y-1.5">
-              <p className="font-extrabold text-cyan-400">Contribution Terms</p>
+            <div className="bg-[var(--surface-2)] border border-[var(--border)] rounded-lg p-3 text-[10px] text-[var(--text-muted)] leading-relaxed space-y-1.5">
+              <p className="font-extrabold text-[var(--accent)]">Contribution Terms</p>
               <p>
                 Your contribution directly funds student server infrastructure, verified question bank expansion, and free educational tools.
               </p>
-              <p className="text-white/40">
+              <p className="text-[var(--text-muted)]">
                 This is a voluntary contribution to support affordable chemistry education.
               </p>
             </div>
           ) : (
-            <div className="bg-black/40 border border-white/5 rounded-xl p-3 text-[10px] text-white/60 leading-relaxed space-y-1.5">
-              <p className="font-extrabold text-amber-400">Subscription Terms</p>
+            <div className="bg-[var(--surface-2)] border border-[var(--border)] rounded-lg p-3 text-[10px] text-[var(--text-muted)] leading-relaxed space-y-1.5">
+              <p className="font-extrabold text-[var(--accent)]">Subscription Terms</p>
               <p>
                 This is an annual program subscription. Access remains active for 365 days from activation.
                 Once expired, paid content will be locked unless renewed.
               </p>
-              <p className="text-white/40">
+              <p className="text-[var(--text-muted)]">
                 Once added, a program cannot be removed or downgraded. Please confirm before payment.
               </p>
             </div>
@@ -330,16 +330,16 @@ export default function PaymentGateway({
         </div>
 
         {/* Sticky footer — consent + pay stay visible on every screen */}
-        <div className="shrink-0 border-t border-white/[0.08] bg-[#111827] px-6 pt-4 pb-6 sm:px-7">
+        <div className="shrink-0 border-t border-[var(--border)] bg-[var(--surface)] px-6 pt-4 pb-6 sm:px-7">
           {/* Legal Consent Checkbox */}
           <label className="flex items-start gap-2.5 mb-4 cursor-pointer select-none">
             <input
               type="checkbox"
               checked={consentChecked}
               onChange={(e) => setConsentChecked(e.target.checked)}
-              className="mt-0.5 rounded border-white/10 bg-black/50 text-cyan-500 focus:ring-0 focus:ring-offset-0 h-3.5 w-3.5"
+              className="mt-0.5 rounded border-[var(--border)] bg-[var(--surface-2)] text-[var(--accent)] focus:ring-0 focus:ring-offset-0 h-3.5 w-3.5"
             />
-            <span className="text-[10px] text-white/70 leading-normal">
+            <span className="text-[10px] text-[var(--text-muted)] leading-normal">
               {type === "contribution"
                 ? "I understand this is a voluntary contribution to support affordable chemistry education."
                 : "I understand this annual program subscription will be added to my account after payment. It cannot be removed or downgraded during the active period."}
@@ -349,13 +349,13 @@ export default function PaymentGateway({
           <button
             onClick={handlePay}
             disabled={processing || !consentChecked}
-            className="w-full rounded-xl bg-gradient-to-r from-cyan-400 to-sky-500 py-3 text-sm font-bold text-black transition hover:-translate-y-0.5 disabled:translate-y-0 disabled:opacity-50"
+            className="w-full rounded-lg bg-[var(--accent)] py-3 text-sm font-bold text-[var(--background)] transition hover:opacity-90 disabled:opacity-50"
           >
             {processing ? "Processing..." : `Pay ${amount} Securely`}
           </button>
 
-          <p className="flex items-center justify-center gap-1.5 text-[10px] text-white/30 mt-3">
-            <ShieldCheck className="h-3 w-3 text-green-400" />
+          <p className="flex items-center justify-center gap-1.5 text-[10px] text-[var(--text-muted)] mt-3">
+            <ShieldCheck className="h-3 w-3 text-[var(--accent)]" />
             256-bit encrypted · Gateway activates after backend connection
           </p>
         </div>

@@ -443,7 +443,7 @@ function Topic({ topic, index, defaultOpen }: { topic: NoteTopic; index: number;
   );
 
   return (
-    <details open={defaultOpen} className="group rounded-2xl border border-white/10 bg-[#0F2340]/40 open:border-[#4FD8B8]/40 transition-all">
+    <details open={defaultOpen} className="group rounded-lg border border-white/10 bg-[#0F2340]/40 open:border-[#4FD8B8]/40 transition-all">
       <summary className="flex cursor-pointer list-none items-center gap-3.5 p-4 sm:p-5 [&::-webkit-details-marker]:hidden">
         <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-xl border border-[#4FD8B8]/30 bg-[#0A1828] text-sm font-black text-[#4FD8B8]">
           {String(index + 1).padStart(2, "0")}
@@ -519,7 +519,7 @@ export default function NotesRenderer({ notes, exam }: { notes: PremiumChapterNo
       {scoped.topics.map((t, i) => <Topic key={t.id} topic={t} index={i} defaultOpen={i === 0} />)}
 
       {/* Chapter revision sheet */}
-      <div className="rounded-2xl border border-[#4FD8B8]/35 bg-[#0F2340] p-5 sm:p-6 shadow-xl">
+      <div className="rounded-lg border border-[#4FD8B8]/35 bg-[#0F2340] p-5 sm:p-6 shadow-xl">
         <div className="mb-4 flex items-center gap-2.5 border-b border-[#4FD8B8]/20 pb-3">
           <span className="text-xl">📌</span>
           <h4 className="text-base sm:text-lg font-extrabold tracking-wide text-white">

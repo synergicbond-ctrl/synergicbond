@@ -57,7 +57,7 @@ export default async function ProgramHubPage({ params }: { params: Promise<{ slu
           <Link href={`/programs/${slug}/learn`} className={`rounded-xl border px-5 py-2.5 text-sm font-bold ${accent.chip} transition hover:bg-white/[0.06]`}>
             Start Learning
           </Link>
-          <Link href={`/programs/${slug}/tests`} className="rounded-xl bg-gradient-to-r from-cyan-400 to-sky-500 px-5 py-2.5 text-sm font-black text-black transition hover:-translate-y-0.5">
+          <Link href={`/programs/${slug}/tests`} className="rounded-xl bg-[var(--accent)] px-5 py-2.5 text-sm font-black text-black transition hover:-translate-y-0.5">
             Take a Test →
           </Link>
         </div>
@@ -65,7 +65,7 @@ export default async function ProgramHubPage({ params }: { params: Promise<{ slu
 
       <div className="mx-auto max-w-6xl px-6 py-10">
         {/* Readiness placeholder — real analytics wire in later; no fabricated numbers. */}
-        <div className="mb-8 rounded-2xl border border-white/[0.08] bg-white/[0.02] p-5">
+        <div className="mb-8 rounded-lg border border-white/[0.08] bg-white/[0.02] p-5">
           <div className="flex flex-wrap items-center justify-between gap-3">
             <div>
               <p className="text-xs font-bold uppercase tracking-wider text-white/40">Exam Readiness</p>
@@ -100,9 +100,9 @@ export default async function ProgramHubPage({ params }: { params: Promise<{ slu
             <div className="grid gap-4 md:grid-cols-2">
               <Link
                 href="/programs/jee-advanced/chapter/p-block-elements#learn"
-                className="rounded-2xl border border-cyan-400/30 bg-cyan-500/[0.08] p-5 transition hover:border-cyan-300/60 hover:bg-cyan-500/[0.13]"
+                className="rounded-lg border border-[var(--accent)]/30 bg-[var(--accent)]/10[0.08] p-5 transition hover:border-[var(--accent)]/30 hover:bg-[var(--accent)]/10[0.13]"
               >
-                <div className="text-[10px] font-black uppercase tracking-[0.22em] text-cyan-300">
+                <div className="text-[10px] font-black uppercase tracking-[0.22em] text-[var(--accent)]">
                   Full Notes · Separate Chapter
                 </div>
                 <h3 className="mt-2 text-xl font-black text-white">P-Block Elements</h3>
@@ -110,14 +110,14 @@ export default async function ProgramHubPage({ params }: { params: Promise<{ slu
                   Groups 15, 16, 17 and 18 — trends, structures, preparations,
                   reactions, exceptions and comparison orders.
                 </p>
-                <div className="mt-4 font-bold text-cyan-300">Open P-Block Notes →</div>
+                <div className="mt-4 font-bold text-[var(--accent)]">Open P-Block Notes →</div>
               </Link>
 
               <Link
                 href="/programs/jee-advanced/chapter/qualitative-analysis#learn"
-                className="rounded-2xl border border-violet-400/30 bg-violet-500/[0.08] p-5 transition hover:border-violet-300/60 hover:bg-violet-500/[0.13]"
+                className="rounded-lg border border-violet-400/30 bg-violet-500/[0.08] p-5 transition hover:border-violet-300/60 hover:bg-violet-500/[0.13]"
               >
-                <div className="text-[10px] font-black uppercase tracking-[0.22em] text-violet-300">
+                <div className="text-[10px] font-black uppercase tracking-[0.22em] text-[var(--text-muted)]">
                   Full Notes · Separate Chapter
                 </div>
                 <h3 className="mt-2 text-xl font-black text-white">
@@ -127,7 +127,7 @@ export default async function ProgramHubPage({ params }: { params: Promise<{ slu
                   Dry tests, anion analysis, cation groups, confirmatory tests,
                   interfering radicals and mixture analysis.
                 </p>
-                <div className="mt-4 font-bold text-violet-300">
+                <div className="mt-4 font-bold text-[var(--text-muted)]">
                   Open Qualitative Analysis Notes →
                 </div>
               </Link>

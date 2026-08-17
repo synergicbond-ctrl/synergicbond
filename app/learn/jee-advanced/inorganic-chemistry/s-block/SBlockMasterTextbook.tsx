@@ -39,7 +39,7 @@ export default function SBlockMasterTextbook() {
 
       <div className="mx-auto grid max-w-7xl gap-8 px-4 py-8 lg:grid-cols-[290px_minmax(0,1fr)]">
         <aside className="lg:sticky lg:top-28 lg:h-[calc(100vh-8rem)] lg:overflow-y-auto">
-          <nav className="rounded-2xl border border-white/10 bg-white/[0.035] p-3">
+          <nav className="rounded-lg border border-white/10 bg-white/[0.035] p-3">
             {filtered.map((s) => (
               <a
                 key={s.id}
@@ -53,7 +53,7 @@ export default function SBlockMasterTextbook() {
         </aside>
 
         <article className="min-w-0 space-y-12">
-          <section className="rounded-3xl border border-cyan-300/20 bg-gradient-to-br from-cyan-300/10 via-slate-900 to-blue-500/10 p-7 sm:p-10">
+          <section className="rounded-lg border border-cyan-300/20 bg-gradient-to-br from-cyan-300/10 via-slate-900 to-blue-500/10 p-7 sm:p-10">
             <p className="text-sm font-bold uppercase tracking-[0.24em] text-cyan-300">NCERT core · JD Lee · classroom problem banks · cross-verified</p>
             <h2 className="mt-3 text-4xl font-black leading-tight sm:text-6xl">One continuous chapter, not a gallery of cards</h2>
             <p className="mt-5 max-w-4xl text-base leading-8 text-slate-300">

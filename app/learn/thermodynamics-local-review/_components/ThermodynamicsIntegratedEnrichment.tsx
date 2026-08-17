@@ -1171,7 +1171,7 @@ export default function ThermodynamicsIntegratedEnrichment({ part }: { part: num
 
         <div className="mt-7 grid gap-4 md:grid-cols-2">
           {entry.theory.map((paragraph, index) => (
-            <article key={paragraph} className="rounded-2xl border border-white/10 bg-white/[0.04] p-5">
+            <article key={paragraph} className="rounded-lg border border-white/10 bg-white/[0.04] p-5">
               <p className="text-xs font-black uppercase tracking-[0.18em] text-cyan-300">
                 Concept {index + 1}
               </p>
@@ -1182,7 +1182,7 @@ export default function ThermodynamicsIntegratedEnrichment({ part }: { part: num
 
         <div className="mt-7 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
           {entry.formulas.map(([label, value, note]) => (
-            <article key={label} className="overflow-x-auto rounded-2xl border border-cyan-300/20 bg-black/25 p-4">
+            <article key={label} className="overflow-x-auto rounded-lg border border-cyan-300/20 bg-black/25 p-4">
               <p className="text-xs font-black uppercase tracking-[0.18em] text-cyan-300">{label}</p>
               <p className="mt-3 whitespace-nowrap font-mono text-base font-black text-white">{value}</p>
               <p className="mt-3 text-xs leading-5 text-slate-300">{note}</p>
@@ -1194,7 +1194,7 @@ export default function ThermodynamicsIntegratedEnrichment({ part }: { part: num
           <p className="text-xs font-black uppercase tracking-[0.2em] text-rose-300">Trap detector</p>
           <div className="mt-3 grid gap-3 md:grid-cols-2 lg:grid-cols-4">
             {entry.traps.map(([term, warning]) => (
-              <div key={term} className="rounded-2xl border border-rose-400/20 bg-rose-400/[0.06] p-4">
+              <div key={term} className="rounded-lg border border-rose-400/20 bg-rose-400/[0.06] p-4">
                 <p className="font-black text-white">{term}</p>
                 <p className="mt-1 text-sm leading-6 text-slate-300">{warning}</p>
               </div>
@@ -1206,7 +1206,7 @@ export default function ThermodynamicsIntegratedEnrichment({ part }: { part: num
           <p className="text-xs font-black uppercase tracking-[0.2em] text-amber-300">Original exam applications</p>
           <div className="mt-3 grid gap-4 lg:grid-cols-2">
             {entry.problems.map(([title, question, solution], index) => (
-              <details key={title} className="rounded-2xl border border-white/10 bg-slate-900/70 p-5">
+              <details key={title} className="rounded-lg border border-white/10 bg-slate-900/70 p-5">
                 <summary className="cursor-pointer list-none font-black text-white">
                   <span className="mr-2 text-amber-300">◆</span>
                   {index + 1}. {title}

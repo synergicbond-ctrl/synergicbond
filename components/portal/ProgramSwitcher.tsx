@@ -124,7 +124,7 @@ export default function ProgramSwitcher({
         </span>
         <Link
           href="/programs"
-          className="hidden sm:inline-flex rounded-xl bg-gradient-to-r from-cyan-400 to-sky-500 px-2.5 py-1.5 text-[11px] font-bold text-black transition hover:-translate-y-0.5"
+          className="hidden sm:inline-flex rounded-xl bg-[var(--accent)] px-2.5 py-1.5 text-[11px] font-bold text-black transition hover:-translate-y-0.5"
         >
           Explore Programs
         </Link>
@@ -168,7 +168,7 @@ export default function ProgramSwitcher({
           role="listbox"
           aria-label="Switch active program"
           onKeyDown={handleListKeyDown}
-          className="absolute right-0 z-50 mt-2 w-72 rounded-xl border border-white/[0.08] bg-[#111827] p-1.5 shadow-2xl shadow-black/50"
+          className="absolute right-0 z-50 mt-2 w-72 rounded-xl border border-white/[0.08] bg-[var(--surface)] p-1.5 shadow-2xl shadow-black/50"
         >
           <p className="px-3 pb-1 pt-2 text-[10px] font-bold uppercase tracking-wider text-white/35">
             {isAllAccess ? "All-access programs" : "Your programs"}

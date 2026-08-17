@@ -16,16 +16,16 @@ export default function RevisionPage() {
       title: "5-Minute High-Yield Blitz",
       description: "Rapid review of critical physical anomalies, organic name reactions, and inorganic exceptions.",
       time: "5 min",
-      color: "border-cyan-400/30 bg-[linear-gradient(135deg,rgba(34,211,238,0.18),transparent_55%),#111827] text-cyan-200",
-      button: "border-cyan-400/35 text-cyan-200 hover:bg-cyan-500/15",
+      color: "border-[var(--accent)]/30 bg-[linear-gradient(135deg,rgba(34,211,238,0.18),transparent_55%),#111827] text-[var(--accent)]",
+      button: "border-[var(--accent)]/30 text-[var(--accent)] hover:bg-[var(--accent)]/10",
     },
     {
       type: "examDay",
       title: "One-Day-Before-Exam Refresher",
       description: "Comprehensive formula review and reaction pathways consolidation for complete exam confidence.",
       time: "45 min",
-      color: "border-violet-400/30 bg-[linear-gradient(135deg,rgba(139,92,246,0.20),transparent_55%),#111827] text-violet-200",
-      button: "border-violet-400/35 text-violet-200 hover:bg-violet-500/15",
+      color: "border-violet-400/30 bg-[linear-gradient(135deg,rgba(139,92,246,0.20),transparent_55%),#111827] text-[var(--text-muted)]",
+      button: "border-violet-400/35 text-[var(--text-muted)] hover:bg-violet-500/15",
     },
     {
       type: "formula",
@@ -46,12 +46,12 @@ export default function RevisionPage() {
   ];
 
   return (
-    <main className="min-h-screen bg-[radial-gradient(circle_at_92%_0%,rgba(139,92,246,0.14),transparent_25%),radial-gradient(circle_at_5%_8%,rgba(34,211,238,0.11),transparent_28%),#0B0F19] text-white">
+    <main className="min-h-screen bg-[var(--background)] text-white">
     <div className="mx-auto max-w-7xl space-y-10 p-6 md:p-12">
       
       {/* Header */}
-      <header className="rounded-3xl border border-violet-400/20 bg-[linear-gradient(110deg,rgba(139,92,246,0.16),transparent_48%,rgba(34,211,238,0.08)),#111827] p-6 shadow-[0_26px_65px_-48px_rgba(139,92,246,0.85)]">
-        <p className="mb-2 text-[10px] font-black uppercase tracking-[0.34em] text-violet-300">Memory laboratory</p>
+      <header className="rounded-lg border border-violet-400/20 bg-[linear-gradient(110deg,rgba(139,92,246,0.16),transparent_48%,rgba(34,211,238,0.08)),#111827] p-6 shadow-[0_26px_65px_-48px_rgba(139,92,246,0.85)]">
+        <p className="mb-2 text-[10px] font-black uppercase tracking-[0.34em] text-[var(--text-muted)]">Memory laboratory</p>
         <h1 className="font-serif text-4xl font-black tracking-tight text-white">Revision Queue</h1>
         <p className="mt-2 text-white/60">Daily spaced-repetition due cards plus targeted, high-yield revision sessions — in one place.</p>
       </header>
@@ -59,11 +59,11 @@ export default function RevisionPage() {
       {/* Daily Revision Queue (Memory Engine, SM-2) — merged in here, not duplicated */}
       <Link
         href="/memory?deck=daily"
-        className="flex items-center justify-between gap-4 rounded-2xl border border-cyan-400/35 bg-[linear-gradient(115deg,rgba(34,211,238,0.18),rgba(16,185,129,0.08),transparent),#111827] p-6 shadow-[0_24px_60px_-46px_rgba(34,211,238,0.9)] transition hover:-translate-y-0.5 hover:border-cyan-300/75"
+        className="flex items-center justify-between gap-4 rounded-lg border border-[var(--accent)]/30 bg-[linear-gradient(115deg,rgba(34,211,238,0.18),rgba(16,185,129,0.08),transparent),#111827] p-6 shadow-[0_24px_60px_-46px_rgba(34,211,238,0.9)] transition hover:-translate-y-0.5 hover:border-[var(--accent)]/30"
       >
         <div>
-          <h2 className="font-serif text-2xl font-black text-cyan-200">Daily Revision Queue →</h2>
-          <p className="mt-1 text-sm text-cyan-100/75">
+          <h2 className="font-serif text-2xl font-black text-[var(--accent)]">Daily Revision Queue →</h2>
+          <p className="mt-1 text-sm text-[var(--accent)]/75">
             Every spaced-repetition card due today, across all decks — graded with SM-2 so weak cards come back sooner.
           </p>
         </div>
@@ -73,7 +73,7 @@ export default function RevisionPage() {
       {/* Revision Modules Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {revisionModules.map((module, idx) => (
-          <div key={idx} className={`p-6 rounded-2xl border ${module.color} flex flex-col justify-between min-h-52 shadow-[0_24px_60px_-48px_rgba(0,0,0,0.95)]`}>
+          <div key={idx} className={`p-6 rounded-lg border ${module.color} flex flex-col justify-between min-h-52 shadow-[0_24px_60px_-48px_rgba(0,0,0,0.95)]`}>
             <div>
               <div className="flex justify-between items-start">
                 <h3 className="text-xl font-bold">{module.title}</h3>
@@ -97,7 +97,7 @@ export default function RevisionPage() {
       {/* Mistake Journal entry (Week 6) */}
       <Link
         href="/mistakes"
-        className="flex items-center justify-between gap-4 rounded-2xl border border-rose-400/30 bg-[linear-gradient(115deg,rgba(244,63,94,0.16),rgba(251,191,36,0.08),transparent),#111827] p-6 shadow-[0_24px_60px_-46px_rgba(244,63,94,0.8)] transition hover:-translate-y-0.5 hover:border-rose-300/75"
+        className="flex items-center justify-between gap-4 rounded-lg border border-rose-400/30 bg-[linear-gradient(115deg,rgba(244,63,94,0.16),rgba(251,191,36,0.08),transparent),#111827] p-6 shadow-[0_24px_60px_-46px_rgba(244,63,94,0.8)] transition hover:-translate-y-0.5 hover:border-rose-300/75"
       >
         <div>
           <h2 className="font-serif text-2xl font-black text-rose-200">Mistake Journal →</h2>
@@ -112,7 +112,7 @@ export default function RevisionPage() {
       <SavedRevisionList />
 
       {/* Weak Topic Custom Search */}
-      <section className="rounded-2xl border border-amber-300/20 bg-[linear-gradient(135deg,rgba(251,191,36,0.11),transparent_45%),#111827] p-6 shadow-[0_24px_60px_-48px_rgba(251,191,36,0.75)]">
+      <section className="rounded-lg border border-amber-300/20 bg-[linear-gradient(135deg,rgba(251,191,36,0.11),transparent_45%),#111827] p-6 shadow-[0_24px_60px_-48px_rgba(251,191,36,0.75)]">
         <h2 className="mb-2 font-serif text-2xl font-black text-amber-200">Drill a Custom Weak Topic</h2>
         <p className="mb-4 text-sm text-white/60">Enter a specific concept, reaction, or formula that needs targeted practice.</p>
         <form action="/revision/weakTopic" method="GET" className="flex gap-4">
@@ -131,7 +131,7 @@ export default function RevisionPage() {
 
       {/* Smart Timers — a study utility, not a test type, so it lives here not under Tests */}
       <p className="text-center text-sm text-white/45">
-        <Link href="/timers" className="font-semibold text-violet-300 hover:underline">
+        <Link href="/timers" className="font-semibold text-[var(--text-muted)] hover:underline">
           ⏱ Smart Timers — Pomodoro, deep work & exam simulation →
         </Link>
       </p>

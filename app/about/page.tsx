@@ -12,12 +12,10 @@ export const metadata = {
 
 export default function AboutPage() {
   return (
-    <main className="min-h-screen bg-[#0B0F19] text-white flex flex-col justify-between">
+    <main className="min-h-screen bg-[var(--background)] text-white flex flex-col justify-between">
       
       {/* Hero Section */}
       <section className="relative overflow-hidden pt-20 pb-12 text-center px-6">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-cyan-500/5 rounded-full blur-3xl pointer-events-none" />
-        <div className="absolute top-1/3 left-1/4 w-[300px] h-[300px] bg-purple-500/5 rounded-full blur-3xl pointer-events-none" />
 
         <div className="mx-auto max-w-4xl space-y-6 relative z-10">
           <div className="inline-flex items-center gap-2 rounded-full border border-cyan-400/20 bg-cyan-500/10 px-4 py-1.5 text-cyan-300 text-xs font-bold tracking-wider">
@@ -25,7 +23,7 @@ export default function AboutPage() {
           </div>
           <h1 className="text-4xl md:text-7xl font-black leading-tight tracking-tight">
             Democratizing{" "}
-            <span className="bg-gradient-to-r from-[#00F5D4] via-[#00BBF9] to-[#9B5DE5] bg-clip-text text-transparent">
+            <span className="text-[var(--accent)]">
               Elite Chemistry
             </span>{" "}
             Education
@@ -38,9 +36,9 @@ export default function AboutPage() {
 
       {/* The Founder Pedigree Section */}
       <section className="mx-auto max-w-5xl px-6 py-12">
-        <div className="rounded-3xl border border-white/[0.08] bg-gradient-to-b from-[#111827] to-[#111827]/40 p-8 md:p-12 grid md:grid-cols-12 gap-8 items-center">
+        <div className="rounded-lg border border-white/[0.08] bg-[var(--surface)] p-8 md:p-12 grid md:grid-cols-12 gap-8 items-center">
           <div className="md:col-span-5 relative">
-            <div className="aspect-[4/5] rounded-2xl bg-gradient-to-br from-cyan-500/20 to-purple-500/20 border border-white/10 flex items-center justify-center p-6 text-center">
+            <div className="aspect-[4/5] rounded-lg bg-gradient-to-br from-cyan-500/20 to-purple-500/20 border border-white/10 flex items-center justify-center p-6 text-center">
               <div className="space-y-4">
                 <div className="mx-auto h-20 w-20 rounded-full bg-gradient-to-br from-[#00F5D4] to-[#9B5DE5] flex items-center justify-center text-black text-2xl font-black">
                   SB
@@ -79,7 +77,7 @@ export default function AboutPage() {
         </div>
 
         <div className="grid gap-6 md:grid-cols-3">
-          <div className="rounded-2xl border border-white/[0.06] bg-[#111827] p-6 space-y-3">
+          <div className="rounded-lg border border-white/[0.06] bg-[var(--surface)] p-6 space-y-3">
             <div className="h-10 w-10 rounded-xl bg-cyan-500/10 border border-cyan-500/25 flex items-center justify-center text-cyan-300">
               <Bot className="h-5 w-5" />
             </div>
@@ -88,7 +86,7 @@ export default function AboutPage() {
               Our Chemistry Tutor is fine-tuned on core chemistry textbooks and syllabi to give you instant, accurate, step-by-step conceptual breakdowns 24/7.
             </p>
           </div>
-          <div className="rounded-2xl border border-white/[0.06] bg-[#111827] p-6 space-y-3">
+          <div className="rounded-lg border border-white/[0.06] bg-[var(--surface)] p-6 space-y-3">
             <div className="h-10 w-10 rounded-xl bg-purple-500/10 border border-purple-500/25 flex items-center justify-center text-purple-300">
               <Target className="h-5 w-5" />
             </div>
@@ -97,7 +95,7 @@ export default function AboutPage() {
               No mixed questions. If you prepare for NEET, you get NEET-specific questions. If you prepare for JEE Advanced, you get advanced multi-concept match matrices.
             </p>
           </div>
-          <div className="rounded-2xl border border-white/[0.06] bg-[#111827] p-6 space-y-3">
+          <div className="rounded-lg border border-white/[0.06] bg-[var(--surface)] p-6 space-y-3">
             <div className="h-10 w-10 rounded-xl bg-sky-500/10 border border-sky-500/25 flex items-center justify-center text-sky-300">
               <Globe className="h-5 w-5" />
             </div>
@@ -114,9 +112,7 @@ export default function AboutPage() {
 
       {/* Conversion Focused Call-to-Action (CTA) Card */}
       <section className="mx-auto max-w-4xl px-6 py-12">
-        <div className="rounded-3xl border border-cyan-400/20 bg-gradient-to-r from-cyan-950/20 via-purple-950/25 to-[#0B0F19] p-8 md:p-12 text-center space-y-6 relative overflow-hidden">
-          <div className="absolute -top-10 -right-10 w-44 h-44 bg-cyan-400/5 rounded-full blur-2xl" />
-          <div className="absolute -bottom-10 -left-10 w-44 h-44 bg-purple-400/5 rounded-full blur-2xl" />
+        <div className="rounded-lg border border-cyan-400/20 bg-gradient-to-r from-cyan-950/20 via-purple-950/25 to-[#0B0F19] p-8 md:p-12 text-center space-y-6 relative overflow-hidden">
           
           <h2 className="text-3xl md:text-4xl font-black text-white leading-tight">
             Ready to Master Chemistry?
@@ -127,7 +123,7 @@ export default function AboutPage() {
           <div className="flex flex-col sm:flex-row gap-3 justify-center pt-2">
             <Link
               href="/pricing"
-              className="rounded-xl bg-gradient-to-r from-[#00F5D4] to-[#00BBF9] px-6 py-3 text-sm font-bold text-black shadow-lg shadow-cyan-500/20 hover:opacity-90 transition"
+              className="rounded-xl bg-[var(--accent)] px-6 py-3 text-sm font-bold text-black shadow-lg shadow-cyan-500/20 hover:opacity-90 transition"
             >
               Get Premium Access (Pro) →
             </Link>

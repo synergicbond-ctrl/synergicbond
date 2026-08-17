@@ -30,7 +30,7 @@ export default function NameReactionsPage() {
   }, [filtered]);
 
   return (
-    <main className="min-h-screen bg-[#0B0F19] text-white">
+    <main className="min-h-screen bg-[var(--background)] text-white">
       <div className="mx-auto max-w-5xl px-6 py-12">
         <ReferenceTabs />
         {/* Header */}
@@ -43,20 +43,20 @@ export default function NameReactionsPage() {
         </div>
 
         {/* Controls */}
-        <div className="flex flex-col sm:flex-row gap-3 mb-6 sticky top-16 z-30 bg-[#0B0F19]/90 backdrop-blur py-3">
+        <div className="flex flex-col sm:flex-row gap-3 mb-6 sticky top-16 z-30 bg-[var(--background)]/90 backdrop-blur py-3">
           <div className="relative flex-1">
             <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 h-4 w-4 text-white/30" />
             <input
               value={query}
               onChange={(e) => setQuery(e.target.value)}
               placeholder="Search reactions — e.g. Aldol, Cannizzaro, Wittig…"
-              className="w-full rounded-xl border border-white/[0.08] bg-[#111827] pl-10 pr-4 py-2.5 text-sm text-white placeholder-white/30 outline-none focus:border-purple-400/50"
+              className="w-full rounded-xl border border-white/[0.08] bg-[var(--surface)] pl-10 pr-4 py-2.5 text-sm text-white placeholder-white/30 outline-none focus:border-purple-400/50"
             />
           </div>
           <button
             onClick={() => setHighYieldOnly((v) => !v)}
             className={`flex items-center justify-center gap-2 rounded-xl px-4 py-2.5 text-sm font-semibold transition border ${
-              highYieldOnly ? "bg-purple-500 text-white border-purple-500" : "bg-[#111827] text-gray-300 border-white/[0.08] hover:text-white"
+              highYieldOnly ? "bg-purple-500 text-white border-purple-500" : "bg-[var(--surface)] text-gray-300 border-white/[0.08] hover:text-white"
             }`}
           >
             <Star className={`h-4 w-4 ${highYieldOnly ? "fill-white" : ""}`} /> High-Yield
@@ -81,7 +81,7 @@ export default function NameReactionsPage() {
                   <Link
                     key={r}
                     href={`/learn/reactions/${reactionSlug(r)}`}
-                    className="group flex items-start gap-2 text-left rounded-xl bg-[#111827] border border-white/[0.06] px-3.5 py-2.5 transition hover:border-purple-400/30 hover:-translate-y-0.5"
+                    className="group flex items-start gap-2 text-left rounded-xl bg-[var(--surface)] border border-white/[0.06] px-3.5 py-2.5 transition hover:border-purple-400/30 hover:-translate-y-0.5"
                   >
                     {HIGH_YIELD.has(r) && <Star className="h-3 w-3 mt-0.5 flex-shrink-0 fill-amber-400 text-amber-400" />}
                     <span className="text-sm text-white/80 group-hover:text-white leading-snug">{r}</span>

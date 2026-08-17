@@ -70,7 +70,7 @@ export default function ProfileEditForm({ userId, initial }: { userId: string; i
   const labelCls = "block text-[10px] font-black uppercase tracking-wider text-white/50 mb-1.5";
 
   return (
-    <div className="w-full rounded-2xl border border-white/[0.08] bg-[#111827] p-5 mt-2">
+    <div className="w-full rounded-lg border border-white/[0.08] bg-[var(--surface)] p-5 mt-2">
       <div className="flex items-center justify-between mb-4">
         <h3 className="font-black text-sm">Edit Profile</h3>
         <button onClick={() => setOpen(false)} className="text-white/40 hover:text-white transition" aria-label="Cancel editing">

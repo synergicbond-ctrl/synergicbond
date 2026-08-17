@@ -36,7 +36,7 @@ export function Card({
   label?: string;
 }) {
   return (
-    <article className={`rounded-3xl border p-5 sm:p-6 ${tones[tone]}`}>
+    <article className={`rounded-lg border p-5 sm:p-6 ${tones[tone]}`}>
       {label && (
         <div className="mb-3 text-[11px] font-black uppercase tracking-[.18em] text-cyan-300">
           {label}
@@ -58,7 +58,7 @@ export function FormulaCard({
   note?: ReactNode;
 }) {
   return (
-    <div className="overflow-hidden rounded-3xl border border-cyan-300/20 bg-gradient-to-br from-cyan-300/[.08] via-slate-950/85 to-violet-400/[.07]">
+    <div className="overflow-hidden rounded-lg border border-cyan-300/20 bg-gradient-to-br from-cyan-300/[.08] via-slate-950/85 to-violet-400/[.07]">
       <div className="border-b border-white/10 px-5 py-3 text-xs font-black uppercase tracking-[.18em] text-cyan-200">
         {title}
       </div>
@@ -102,7 +102,7 @@ export function Section({
 
 export function DataTable({ headers, rows }: { headers: ReactNode[]; rows: ReactNode[][] }) {
   return (
-    <div className="overflow-x-auto rounded-2xl border border-white/10">
+    <div className="overflow-x-auto rounded-lg border border-white/10">
       <table className="min-w-full border-collapse text-left text-sm">
         <thead className="bg-white/[.055] text-slate-100">
           <tr>
@@ -131,7 +131,7 @@ export function DataTable({ headers, rows }: { headers: ReactNode[]; rows: React
 
 export function Trap({ children }: { children: ReactNode }) {
   return (
-    <div className="rounded-2xl border border-rose-400/25 bg-rose-400/[.065] px-4 py-3 text-sm leading-6 text-rose-100">
+    <div className="rounded-lg border border-rose-400/25 bg-rose-400/[.065] px-4 py-3 text-sm leading-6 text-rose-100">
       <b className="mr-2 uppercase tracking-[.13em] text-rose-300">JEE trap</b>
       {children}
     </div>
@@ -140,7 +140,7 @@ export function Trap({ children }: { children: ReactNode }) {
 
 export function Key({ children }: { children: ReactNode }) {
   return (
-    <div className="rounded-2xl border border-amber-300/25 bg-amber-300/[.06] px-4 py-3 text-sm leading-6 text-amber-50">
+    <div className="rounded-lg border border-amber-300/25 bg-amber-300/[.06] px-4 py-3 text-sm leading-6 text-amber-50">
       <b className="mr-2 uppercase tracking-[.13em] text-amber-200">Key idea</b>
       {children}
     </div>
@@ -161,10 +161,10 @@ export function Example({
   answer: ReactNode;
 }) {
   return (
-    <details open={number === 1} className="group overflow-hidden rounded-3xl border border-white/10 bg-slate-950/70">
+    <details open={number === 1} className="group overflow-hidden rounded-lg border border-white/10 bg-slate-950/70">
       <summary className="cursor-pointer list-none p-5 sm:p-6">
         <div className="flex gap-4">
-          <span className="grid h-10 w-10 shrink-0 place-items-center rounded-2xl border border-violet-300/20 bg-violet-400/10 font-bold text-violet-200">
+          <span className="grid h-10 w-10 shrink-0 place-items-center rounded-lg border border-violet-300/20 bg-violet-400/10 font-bold text-violet-200">
             {number}
           </span>
           <div>
@@ -178,7 +178,7 @@ export function Example({
       </summary>
       <div className="border-t border-white/10 p-5 sm:p-6">
         <div className="space-y-3 text-[15px] leading-7 text-slate-300">{solution}</div>
-        <div className="mt-5 rounded-2xl border border-emerald-400/25 bg-emerald-400/[.065] px-4 py-3 text-emerald-100">
+        <div className="mt-5 rounded-lg border border-emerald-400/25 bg-emerald-400/[.065] px-4 py-3 text-emerald-100">
           <b className="mr-2 uppercase tracking-[.14em] text-emerald-300">Answer</b>
           {answer}
         </div>
@@ -612,7 +612,7 @@ export function PartShell({
 
         <nav className="mx-auto grid max-w-[1320px] gap-4 px-4 pb-16 sm:px-7 md:grid-cols-2 lg:px-10">
           {previous ? (
-            <a href={`/learn/jee-advanced/surface-chemistry/parts/${previous.slug}`} className="rounded-3xl border border-white/10 bg-slate-950/70 p-5">
+            <a href={`/learn/jee-advanced/surface-chemistry/parts/${previous.slug}`} className="rounded-lg border border-white/10 bg-slate-950/70 p-5">
               <span className="text-xs uppercase tracking-widest text-slate-500">Previous</span>
               <div className="mt-2 font-semibold text-white">{previous.title}</div>
             </a>
@@ -620,12 +620,12 @@ export function PartShell({
             <div />
           )}
           {next ? (
-            <a href={`/learn/jee-advanced/surface-chemistry/parts/${next.slug}`} className="rounded-3xl border border-cyan-300/20 bg-cyan-300/[.05] p-5 text-right">
+            <a href={`/learn/jee-advanced/surface-chemistry/parts/${next.slug}`} className="rounded-lg border border-cyan-300/20 bg-cyan-300/[.05] p-5 text-right">
               <span className="text-xs uppercase tracking-widest text-cyan-400">Next</span>
               <div className="mt-2 font-semibold text-white">{next.title}</div>
             </a>
           ) : (
-            <a href="/learn/jee-advanced/surface-chemistry" className="rounded-3xl border border-cyan-300/20 bg-cyan-300/[.05] p-5 text-right">
+            <a href="/learn/jee-advanced/surface-chemistry" className="rounded-lg border border-cyan-300/20 bg-cyan-300/[.05] p-5 text-right">
               <span className="text-xs uppercase tracking-widest text-cyan-400">Complete</span>
               <div className="mt-2 font-semibold text-white">Return to chapter index</div>
             </a>

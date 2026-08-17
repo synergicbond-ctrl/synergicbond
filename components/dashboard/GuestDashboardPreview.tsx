@@ -28,11 +28,11 @@ const activity = [
 
 export default function GuestDashboardPreview() {
   return (
-    <main className="min-h-screen bg-[#0B0F19] text-white">
+    <main className="min-h-screen bg-[var(--background)] text-white">
       <div className="mx-auto max-w-6xl px-6 py-10">
 
         {/* Preview banner */}
-        <div className="mb-8 rounded-2xl border border-cyan-400/25 bg-gradient-to-r from-cyan-500/10 to-purple-500/10 p-5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+        <div className="mb-8 rounded-lg border border-cyan-400/25 bg-gradient-to-r from-cyan-500/10 to-purple-500/10 p-5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
           <div className="flex items-start gap-3">
             <span className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl bg-cyan-500/15">
               <Lock className="h-5 w-5 text-cyan-400" />
@@ -42,7 +42,7 @@ export default function GuestDashboardPreview() {
               <p className="text-sm text-white/60 mt-0.5">Sign up free to start tracking <span className="text-cyan-300 font-semibold">your</span> real progress, rank and weak topics.</p>
             </div>
           </div>
-          <Link href="/auth/signup" className="flex-shrink-0 flex items-center gap-2 rounded-xl bg-gradient-to-r from-cyan-400 to-sky-500 px-5 py-2.5 text-sm font-bold text-black transition hover:-translate-y-0.5">
+          <Link href="/auth/signup" className="flex-shrink-0 flex items-center gap-2 rounded-xl bg-[var(--accent)] px-5 py-2.5 text-sm font-bold text-black transition hover:-translate-y-0.5">
             Create Free Account <ArrowRight className="h-4 w-4" />
           </Link>
         </div>
@@ -58,7 +58,7 @@ export default function GuestDashboardPreview() {
           {stats.map((s) => {
             const Icon = s.icon;
             return (
-              <div key={s.label} className="rounded-2xl bg-[#111827] border border-white/[0.06] p-5">
+              <div key={s.label} className="rounded-lg bg-[var(--surface)] border border-white/[0.06] p-5">
                 <div className="flex h-10 w-10 items-center justify-center rounded-xl mb-3" style={{ background: `${s.accent}1a` }}>
                   <Icon className="h-5 w-5" style={{ color: s.accent }} />
                 </div>
@@ -72,7 +72,7 @@ export default function GuestDashboardPreview() {
 
         <div className="grid gap-6 lg:grid-cols-[1.5fr_1fr]">
           {/* Recent tests */}
-          <div className="rounded-2xl bg-[#111827] border border-white/[0.06] p-6">
+          <div className="rounded-lg bg-[var(--surface)] border border-white/[0.06] p-6">
             <h3 className="text-sm font-bold text-white mb-4">Recent Mock Tests</h3>
             <div className="space-y-3">
               {recentTests.map((t) => (
@@ -83,7 +83,7 @@ export default function GuestDashboardPreview() {
                   </div>
                   <div className="w-28 hidden sm:block">
                     <div className="h-1.5 rounded-full bg-white/10 overflow-hidden">
-                      <div className="h-full rounded-full bg-gradient-to-r from-cyan-400 to-sky-500" style={{ width: `${t.pct}%` }} />
+                      <div className="h-full rounded-full bg-[var(--accent)]" style={{ width: `${t.pct}%` }} />
                     </div>
                   </div>
                   <span className="text-sm font-bold text-cyan-300 w-20 text-right">{t.score}</span>
@@ -94,7 +94,7 @@ export default function GuestDashboardPreview() {
 
           {/* Weak topics + activity */}
           <div className="space-y-6">
-            <div className="rounded-2xl bg-[#111827] border border-white/[0.06] p-6">
+            <div className="rounded-lg bg-[var(--surface)] border border-white/[0.06] p-6">
               <h3 className="text-sm font-bold text-white mb-3">Focus Areas</h3>
               <div className="flex flex-wrap gap-2">
                 {weak.map((w) => (
@@ -102,7 +102,7 @@ export default function GuestDashboardPreview() {
                 ))}
               </div>
             </div>
-            <div className="rounded-2xl bg-[#111827] border border-white/[0.06] p-6">
+            <div className="rounded-lg bg-[var(--surface)] border border-white/[0.06] p-6">
               <h3 className="text-sm font-bold text-white mb-3">Recent Activity</h3>
               <div className="space-y-3">
                 {activity.map((a, i) => {
@@ -124,7 +124,7 @@ export default function GuestDashboardPreview() {
 
         {/* Bottom CTA */}
         <div className="mt-8 text-center">
-          <Link href="/auth/signup" className="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-cyan-400 to-sky-500 px-6 py-3 text-sm font-bold text-black transition hover:-translate-y-0.5">
+          <Link href="/auth/signup" className="inline-flex items-center gap-2 rounded-xl bg-[var(--accent)] px-6 py-3 text-sm font-bold text-black transition hover:-translate-y-0.5">
             Start Tracking My Progress <ArrowRight className="h-4 w-4" />
           </Link>
         </div>

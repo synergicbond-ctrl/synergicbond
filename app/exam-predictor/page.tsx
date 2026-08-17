@@ -67,7 +67,7 @@ export default function ExamPredictorPage() {
 
         {!result && (
           <div className="space-y-6">
-            <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-6">
+            <div className="rounded-lg border border-white/10 bg-white/[0.03] p-6">
               <h3 className="font-bold mb-4">Select Exam</h3>
               <div className="flex flex-wrap gap-2">
                 {["NEET", "JEE Main", "JEE Advanced", "GATE"].map((e) => (
@@ -79,7 +79,7 @@ export default function ExamPredictorPage() {
               </div>
             </div>
 
-            <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-6">
+            <div className="rounded-lg border border-white/10 bg-white/[0.03] p-6">
               <h3 className="font-bold mb-2">Your Recent Quiz Scores (%)</h3>
               <p className="text-white/40 text-sm mb-3">Enter comma-separated scores e.g: 72, 65, 80, 58</p>
               <input value={scores} onChange={(e) => setScores(e.target.value)}
@@ -87,7 +87,7 @@ export default function ExamPredictorPage() {
                 className="w-full rounded-xl border border-white/10 bg-black/30 px-4 py-3 focus:outline-none focus:border-cyan-500" />
             </div>
 
-            <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-6">
+            <div className="rounded-lg border border-white/10 bg-white/[0.03] p-6">
               <h3 className="font-bold mb-3">Daily Study Hours: {hours}h</h3>
               <input type="range" min={1} max={12} value={hours} onChange={(e) => setHours(Number(e.target.value))}
                 className="w-full accent-cyan-500" />
@@ -96,7 +96,7 @@ export default function ExamPredictorPage() {
             {error && <p className="text-red-400">{error}</p>}
 
             <button onClick={predict} disabled={loading}
-              className="w-full rounded-2xl bg-gradient-to-r from-purple-500 to-purple-500 py-4 font-bold text-white text-lg disabled:opacity-40">
+              className="w-full rounded-lg bg-gradient-to-r from-purple-500 to-purple-500 py-4 font-bold text-white text-lg disabled:opacity-40">
               {loading ? "🤖 Analyzing your performance..." : "🔮 Predict My Rank"}
             </button>
           </div>
@@ -107,7 +107,7 @@ export default function ExamPredictorPage() {
             <button onClick={() => setResult(null)} className="text-sm text-white/40 hover:text-white transition">← Try again</button>
 
             {/* Main prediction */}
-            <div className="rounded-2xl border border-purple-500/30 bg-purple-950/20 p-6 text-center">
+            <div className="rounded-lg border border-purple-500/30 bg-purple-950/20 p-6 text-center">
               <p className="text-purple-300 text-sm mb-2">Current Level</p>
               <p className="text-3xl font-bold mb-4">{result.currentLevel}</p>
               <div className="grid grid-cols-3 gap-4">
@@ -141,13 +141,13 @@ export default function ExamPredictorPage() {
             </div>
 
             {/* Improvement potential */}
-            <div className="rounded-2xl border border-cyan-500/20 bg-cyan-950/20 p-5">
+            <div className="rounded-lg border border-cyan-500/20 bg-cyan-950/20 p-5">
               <p className="text-cyan-300 font-semibold">🚀 Improvement Potential</p>
               <p className="text-white mt-1">{result.improvementPotential}</p>
             </div>
 
             {/* Weekly targets */}
-            <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-6">
+            <div className="rounded-lg border border-white/10 bg-white/[0.03] p-6">
               <h3 className="font-bold mb-4">📅 4-Week Target Plan</h3>
               <div className="space-y-3">
                 {result.weeklyTargets?.map((w) => (
@@ -161,7 +161,7 @@ export default function ExamPredictorPage() {
             </div>
 
             {/* Focus topics */}
-            <div className="rounded-2xl border border-red-500/20 bg-red-950/20 p-6">
+            <div className="rounded-lg border border-red-500/20 bg-red-950/20 p-6">
               <h3 className="font-bold mb-3 text-red-300">🔥 Focus on These NOW</h3>
               <div className="flex flex-wrap gap-2">
                 {result.topicsToFocusNow?.map((t: string, i: number) => (
@@ -171,7 +171,7 @@ export default function ExamPredictorPage() {
             </div>
 
             {/* Motivational message */}
-            <div className="rounded-2xl border border-violet-500/20 bg-violet-950/20 p-5">
+            <div className="rounded-lg border border-violet-500/20 bg-violet-950/20 p-5">
               <p className="text-violet-300 font-semibold">💪 Message from AI Mentor</p>
               <p className="text-white/80 mt-2 italic">&quot;{result.motivationalMessage}&quot;</p>
             </div>

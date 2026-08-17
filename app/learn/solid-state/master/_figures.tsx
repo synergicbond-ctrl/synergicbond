@@ -4,7 +4,7 @@ type P = { x: number; y: number };
 const C = { cyan: "#22d3ee", teal: "#2dd4bf", violet: "#a78bfa", amber: "#fbbf24", rose: "#fb7185", white: "#e5eef7", dim: "#678198", bg: "#07131f" };
 
 function Frame({ title, subtitle, children }: { title: string; subtitle?: string; children: ReactNode }) {
-  return <figure className="overflow-hidden rounded-3xl border border-cyan-300/15 bg-[#07131f] shadow-[0_18px_55px_rgba(0,0,0,.28)]">
+  return <figure className="overflow-hidden rounded-lg border border-cyan-300/15 bg-[#07131f] shadow-[0_18px_55px_rgba(0,0,0,.28)]">
     <div className="border-b border-white/10 px-5 py-4"><div className="text-xs font-black uppercase tracking-[.2em] text-cyan-300">Original scalable geometry</div><h3 className="mt-1 text-lg font-black text-white">{title}</h3>{subtitle && <p className="mt-1 text-xs text-zinc-500">{subtitle}</p>}</div>
     <div className="p-3 md:p-5">{children}</div>
   </figure>;

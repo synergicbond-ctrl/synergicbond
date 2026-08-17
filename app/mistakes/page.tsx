@@ -42,10 +42,10 @@ export default async function MistakesPage() {
   if (error === "Unauthorized") {
     return (
       <Shell>
-        <div className="rounded-2xl border border-white/10 bg-white/[0.02] p-8 text-center">
+        <div className="rounded-lg border border-white/10 bg-white/[0.02] p-8 text-center">
           <h2 className="text-lg font-bold">Sign in to see your Mistake Journal</h2>
           <p className="mx-auto mt-2 max-w-md text-sm text-zinc-400">Your wrong questions are collected automatically from tests and practice.</p>
-          <Link href="/auth/signin" className="mt-5 inline-block rounded-xl bg-gradient-to-r from-cyan-400 to-sky-500 px-5 py-2.5 text-sm font-black text-black">
+          <Link href="/auth/signin" className="mt-5 inline-block rounded-xl bg-[var(--accent)] px-5 py-2.5 text-sm font-black text-black">
             Sign in →
           </Link>
         </div>
@@ -56,7 +56,7 @@ export default async function MistakesPage() {
   if (error || !answers) {
     return (
       <Shell>
-        <p className="rounded-2xl border border-white/10 bg-white/[0.02] p-8 text-center text-sm text-white/55">
+        <p className="rounded-lg border border-white/10 bg-white/[0.02] p-8 text-center text-sm text-white/55">
           The Mistake Journal is unavailable right now — try again shortly.
         </p>
       </Shell>
@@ -68,7 +68,7 @@ export default async function MistakesPage() {
   if (journal.total === 0) {
     return (
       <Shell>
-        <div className="rounded-2xl border border-white/10 bg-white/[0.02] p-8 text-center">
+        <div className="rounded-lg border border-white/10 bg-white/[0.02] p-8 text-center">
           <h2 className="text-lg font-bold">No mistakes logged yet</h2>
           <p className="mx-auto mt-2 max-w-md text-sm text-zinc-400">
             {journal.unmappedWrong > 0
@@ -86,19 +86,19 @@ export default async function MistakesPage() {
   return (
     <Shell>
       <div className="mb-8 grid grid-cols-2 gap-3 sm:grid-cols-4">
-        <div className="rounded-2xl border border-rose-500/20 bg-rose-500/5 p-4 text-center">
+        <div className="rounded-lg border border-rose-500/20 bg-rose-500/5 p-4 text-center">
           <div className="text-2xl font-black text-rose-300">{journal.total}</div>
           <div className="mt-1 text-xs text-white/50">Open mistakes</div>
         </div>
-        <div className="rounded-2xl border border-cyan-500/20 bg-cyan-500/5 p-4 text-center">
+        <div className="rounded-lg border border-cyan-500/20 bg-cyan-500/5 p-4 text-center">
           <div className="text-2xl font-black text-cyan-300">{journal.categoryCounts.Concept}</div>
           <div className="mt-1 text-xs text-white/50">Concept</div>
         </div>
-        <div className="rounded-2xl border border-amber-500/20 bg-amber-500/5 p-4 text-center">
+        <div className="rounded-lg border border-amber-500/20 bg-amber-500/5 p-4 text-center">
           <div className="text-2xl font-black text-amber-300">{journal.categoryCounts.Calculation}</div>
           <div className="mt-1 text-xs text-white/50">Calculation</div>
         </div>
-        <div className="rounded-2xl border border-violet-500/20 bg-violet-500/5 p-4 text-center">
+        <div className="rounded-lg border border-violet-500/20 bg-violet-500/5 p-4 text-center">
           <div className="text-2xl font-black text-violet-300">{journal.categoryCounts.Memory}</div>
           <div className="mt-1 text-xs text-white/50">Memory</div>
         </div>

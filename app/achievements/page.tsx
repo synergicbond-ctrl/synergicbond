@@ -95,7 +95,7 @@ export default function AchievementsPage() {
         ) : (
           <div className="space-y-8">
             {/* XP Card */}
-            <div className="rounded-2xl border p-6" style={{ borderColor: currentLevel.color + "40", background: currentLevel.color + "10" }}>
+            <div className="rounded-lg border p-6" style={{ borderColor: currentLevel.color + "40", background: currentLevel.color + "10" }}>
               <div className="flex items-center justify-between flex-wrap gap-4 mb-4">
                 <div>
                   <p className="text-white/50 text-sm">Current Level</p>
@@ -120,7 +120,7 @@ export default function AchievementsPage() {
             </div>
 
             {/* Level roadmap */}
-            <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-6">
+            <div className="rounded-lg border border-white/10 bg-white/[0.03] p-6">
               <h3 className="font-bold text-lg mb-4">🗺️ Level Roadmap</h3>
               <div className="grid gap-2 sm:grid-cols-2">
                 {LEVELS.map((l) => (
@@ -141,7 +141,7 @@ export default function AchievementsPage() {
             </div>
 
             {/* Badges */}
-            <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-6">
+            <div className="rounded-lg border border-white/10 bg-white/[0.03] p-6">
               <h3 className="font-bold text-lg mb-4">🏅 Badges ({earned.length}/{ALL_BADGES.length} earned)</h3>
               <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
                 {ALL_BADGES.map((badge) => {
@@ -160,7 +160,7 @@ export default function AchievementsPage() {
             </div>
 
             {/* How to earn XP */}
-            <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-6">
+            <div className="rounded-lg border border-white/10 bg-white/[0.03] p-6">
               <h3 className="font-bold text-lg mb-4">💡 How to Earn XP</h3>
               <div className="space-y-2">
                 {HOW_TO_EARN.map(({ action, xp: x }) => (

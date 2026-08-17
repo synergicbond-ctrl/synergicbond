@@ -75,7 +75,7 @@ function VirtualNumericalKeyboard({
             type="button"
             disabled={disabled}
             onClick={() => handleKeyPress(k)}
-            className="flex h-10 items-center justify-center rounded-lg bg-[#111827] border border-white/10 text-sm font-bold text-white hover:bg-white/[0.1] active:scale-95 transition disabled:opacity-50"
+            className="flex h-10 items-center justify-center rounded-lg bg-[var(--surface)] border border-white/10 text-sm font-bold text-white hover:bg-white/[0.1] active:scale-95 transition disabled:opacity-50"
           >
             {k}
           </button>
@@ -266,7 +266,7 @@ export default function EngineQuestionBank({
             </div>
           </div>
           {bankBatch.questions.length === 0 ? (
-            <p className="rounded-2xl border border-white/10 bg-white/[0.02] p-6 text-center text-sm text-white/55">
+            <p className="rounded-lg border border-white/10 bg-white/[0.02] p-6 text-center text-sm text-white/55">
               {bankBatch.poolSize === 0
                 ? "No verified questions of this type for this chapter yet."
                 : bankBatch.exhausted
@@ -282,13 +282,13 @@ export default function EngineQuestionBank({
       ) : (
         <div className="space-y-3">
           <button onClick={generateAI} disabled={aiLoading}
-            className="rounded-xl bg-gradient-to-r from-cyan-400 to-sky-500 px-5 py-2.5 text-sm font-black text-black disabled:opacity-60">
+            className="rounded-xl bg-[var(--accent)] px-5 py-2.5 text-sm font-black text-black disabled:opacity-60">
             {aiLoading ? "Generating…" : `Generate ${activeType.label} question`}
           </button>
           {aiError && <p className="rounded-xl border border-rose-500/30 bg-rose-500/[0.06] p-3 text-sm text-rose-300">{aiError}</p>}
 
           {numeric && (
-            <div className="space-y-3 rounded-2xl border border-white/10 bg-white/[0.02] p-4">
+            <div className="space-y-3 rounded-lg border border-white/10 bg-white/[0.02] p-4">
               <p className="font-medium leading-relaxed text-white">{numeric.question}</p>
               <div className="flex flex-wrap items-center gap-2">
                 <input value={numericInput} onChange={(e) => setNumericInput(e.target.value)}
@@ -311,7 +311,7 @@ export default function EngineQuestionBank({
           )}
 
           {selfItem && (
-            <div className="space-y-3 rounded-2xl border border-white/10 bg-white/[0.02] p-4">
+            <div className="space-y-3 rounded-lg border border-white/10 bg-white/[0.02] p-4">
               <p className="whitespace-pre-wrap font-medium leading-relaxed text-white">{selfItem.question}</p>
               {!selfRevealed ? (
                 <button onClick={() => setSelfRevealed(true)} className="rounded-lg border border-cyan-400/40 bg-cyan-500/10 px-4 py-2 text-sm font-bold text-cyan-300">Reveal model answer</button>

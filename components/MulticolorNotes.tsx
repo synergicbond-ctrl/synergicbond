@@ -39,7 +39,7 @@ export default function MulticolorNotes() {
   }, []);
 
   return (
-    <div className="rounded-3xl bg-[#111827] border border-white/[0.06] p-6 md:p-8">
+    <div className="rounded-lg bg-[var(--surface)] border border-white/[0.06] p-6 md:p-8">
       {/* Focus timer */}
       <div className="flex items-center justify-between mb-6 pb-4 border-b border-white/[0.06]">
         <div className="flex items-center gap-2">

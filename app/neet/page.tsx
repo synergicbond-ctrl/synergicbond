@@ -40,7 +40,7 @@ export default function NEETPage() {
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
             {tools.map((t) => (
               <Link key={t.label} href={t.href}
-                className={`bg-zinc-900 border ${t.color} rounded-2xl p-5 transition group`}>
+                className={`bg-zinc-900 border ${t.color} rounded-lg p-5 transition group`}>
                 <div className="text-3xl mb-3">{t.icon}</div>
                 <div className="font-bold text-white group-hover:text-cyan-300 transition">{t.label}</div>
                 <div className="text-zinc-500 text-sm mt-1">{t.desc}</div>

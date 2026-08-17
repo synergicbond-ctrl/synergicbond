@@ -45,7 +45,7 @@ export default function TeachersPage() {
   const [tab, setTab] = useState<Tab>("curriculum");
 
   return (
-    <main className="min-h-screen bg-[#0B0F19] text-white">
+    <main className="min-h-screen bg-[var(--background)] text-white">
       <div className="mx-auto max-w-6xl px-6 py-12">
 
         <div className="flex items-center gap-3 mb-2">
@@ -59,7 +59,7 @@ export default function TeachersPage() {
         </p>
 
         {/* Sub-tabs */}
-        <div className="flex gap-1 mb-6 rounded-full bg-[#111827] border border-white/[0.06] p-1 w-fit">
+        <div className="flex gap-1 mb-6 rounded-full bg-[var(--surface)] border border-white/[0.06] p-1 w-fit">
           {tabs.map((t) => {
             const Icon = t.icon;
             const active = tab === t.id;
@@ -78,8 +78,8 @@ export default function TeachersPage() {
           })}
         </div>
 
-        {/* Panel — uniform bg-[#111827] */}
-        <div className="rounded-3xl bg-[#111827] border border-white/[0.06] p-6 md:p-8 min-h-[400px]">
+        {/* Panel — uniform bg-[var(--surface)] */}
+        <div className="rounded-lg bg-[var(--surface)] border border-white/[0.06] p-6 md:p-8 min-h-[400px]">
 
           {tab === "curriculum" && (
             <div>

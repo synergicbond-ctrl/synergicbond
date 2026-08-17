@@ -81,7 +81,7 @@ export default function PeriodicTablePage() {
   }
 
   return (
-    <main className="min-h-screen bg-[#0B0F19] text-white">
+    <main className="min-h-screen bg-[var(--background)] text-white">
       <div className="mx-auto max-w-[1400px] px-4 md:px-6 py-10">
         <div className="mb-6">
           <p className="text-xs font-bold uppercase tracking-[0.4em] text-cyan-300 mb-2">Knowledge Vault · Interactive</p>
@@ -101,7 +101,7 @@ export default function PeriodicTablePage() {
                 className={`group flex items-center gap-2.5 rounded-xl border px-3 py-2.5 text-left transition ${
                   on
                     ? "border-cyan-400/50 bg-cyan-500/10 shadow-[0_0_24px_-6px_rgba(34,211,238,0.5)]"
-                    : "border-white/[0.07] bg-[#111827] hover:border-white/20"
+                    : "border-white/[0.07] bg-[var(--surface)] hover:border-white/20"
                 }`}
               >
                 <span className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-lg ${on ? "bg-cyan-500/20" : "bg-white/[0.04]"}`}>
@@ -123,7 +123,7 @@ export default function PeriodicTablePage() {
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             placeholder="Search element — Fe, iron, halogen…"
-            className="w-full rounded-xl border border-white/[0.08] bg-[#111827] pl-10 pr-4 py-2.5 text-sm text-white placeholder-white/30 outline-none focus:border-cyan-400/50"
+            className="w-full rounded-xl border border-white/[0.08] bg-[var(--surface)] pl-10 pr-4 py-2.5 text-sm text-white placeholder-white/30 outline-none focus:border-cyan-400/50"
           />
         </div>
 
@@ -136,7 +136,7 @@ export default function PeriodicTablePage() {
                 key={v.id}
                 onClick={() => setTrendProp(v.id)}
                 className={`text-[11px] font-semibold px-3 py-1.5 rounded-full transition ${
-                  trendProp === v.id ? "bg-cyan-500 text-black" : "bg-[#111827] border border-white/[0.06] text-gray-400 hover:text-white"
+                  trendProp === v.id ? "bg-cyan-500 text-black" : "bg-[var(--surface)] border border-white/[0.06] text-gray-400 hover:text-white"
                 }`}
               >
                 {v.label}
@@ -153,7 +153,7 @@ export default function PeriodicTablePage() {
                 key={c}
                 onMouseEnter={() => setHl(c)}
                 onMouseLeave={() => setHl(null)}
-                className="flex items-center gap-1.5 text-[11px] font-medium px-2.5 py-1 rounded-full border border-white/[0.06] bg-[#111827] hover:border-white/20 transition"
+                className="flex items-center gap-1.5 text-[11px] font-medium px-2.5 py-1 rounded-full border border-white/[0.06] bg-[var(--surface)] hover:border-white/20 transition"
               >
                 <span className="h-2.5 w-2.5 rounded-full" style={{ background: CATS[c].color }} />
                 <span className="text-white/70">{CATS[c].label}</span>
@@ -177,7 +177,7 @@ export default function PeriodicTablePage() {
         )}
 
         {/* Grid — darker panel for contrast */}
-        <div className="overflow-x-auto pb-4 rounded-2xl bg-[#06080F] border border-white/[0.05] p-2.5">
+        <div className="overflow-x-auto pb-4 rounded-lg bg-[#06080F] border border-white/[0.05] p-2.5">
           <div
             className="grid gap-[3px] min-w-[820px] group/grid"
             style={{ gridTemplateColumns: "repeat(18, minmax(0, 1fr))", gridTemplateRows: "repeat(10, auto)" }}
@@ -234,7 +234,7 @@ export default function PeriodicTablePage() {
       {/* Element detail */}
       {active && (
         <div className="fixed inset-0 z-[100] flex items-center justify-center p-6 bg-black/70 backdrop-blur-sm" onClick={() => setActive(null)}>
-          <div className="w-full max-w-md rounded-3xl border border-white/[0.08] bg-[#111827] shadow-2xl overflow-hidden" onClick={(e) => e.stopPropagation()}>
+          <div className="w-full max-w-md rounded-lg border border-white/[0.08] bg-[var(--surface)] shadow-2xl overflow-hidden" onClick={(e) => e.stopPropagation()}>
             <div className="p-6 flex items-start justify-between" style={{ background: `linear-gradient(135deg, ${CATS[active.cat].color}22, transparent)` }}>
               <div>
                 <p className="text-sm text-white/50">{active.z}</p>

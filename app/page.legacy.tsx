@@ -31,29 +31,29 @@ export default function Home() {
           <p className="mt-3 text-lg text-white/50 font-normal tracking-wide">One platform for NEET, JEE, GATE & InChO</p>
           
           <div className="mt-12 flex justify-center gap-4 flex-wrap">
-            <Link className="px-8 py-4 bg-white text-black rounded-2xl font-semibold hover:scale-105 transition duration-300 text-sm cursor-pointer" href="/chapter/atomic-structure">
+            <Link className="px-8 py-4 bg-white text-black rounded-lg font-semibold hover:scale-105 transition duration-300 text-sm cursor-pointer" href="/chapter/atomic-structure">
               🚀 Start Learning
             </Link>
-            <Link className="px-8 py-4 border border-white/20 rounded-2xl hover:bg-white/10 transition duration-300 text-sm text-white cursor-pointer" href="/vault">
+            <Link className="px-8 py-4 border border-white/20 rounded-lg hover:bg-white/10 transition duration-300 text-sm text-white cursor-pointer" href="/vault">
               🧪 Explore Vault
             </Link>
           </div>
 
           {/* Exam Matrix Grid (gap-5) */}
           <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-5">
-            <div className="border border-white/10 rounded-2xl p-5">
+            <div className="border border-white/10 rounded-lg p-5">
               <h3 className="text-2xl font-bold mb-2">🟢 NEET</h3>
               <p className="text-white/50 text-sm font-normal">NCERT-focused preparation</p>
             </div>
-            <div className="border border-white/10 rounded-2xl p-5">
+            <div className="border border-white/10 rounded-lg p-5">
               <h3 className="text-2xl font-bold mb-2">🟡 JEE</h3>
               <p className="text-white/50 text-sm font-normal">Advanced problem solving</p>
             </div>
-            <div className="border border-white/10 rounded-2xl p-5">
+            <div className="border border-white/10 rounded-lg p-5">
               <h3 className="text-2xl font-bold mb-2">🟠 GATE</h3>
               <p className="text-white/50 text-sm font-normal">Deep theoretical chemistry</p>
             </div>
-            <div className="border border-white/10 rounded-2xl p-5">
+            <div className="border border-white/10 rounded-lg p-5">
               <h3 className="text-2xl font-bold mb-2">🔴 InChO</h3>
               <p className="text-white/50 text-sm font-normal">Olympiad-level mastery</p>
             </div>
@@ -168,19 +168,19 @@ export default function Home() {
             <p className="text-lg text-gray-400">Everything a chemistry student needs in one place.</p>
           </div>
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
-            <div className="rounded-3xl border border-white/10 bg-white/5 p-8">
+            <div className="rounded-lg border border-white/10 bg-white/5 p-8">
               <h3 className="mb-4 text-2xl font-bold tracking-tight">📄 Papers</h3>
               <p className="text-gray-400 text-sm">JEE, NEET, NSEC, INChO, IChO</p>
             </div>
-            <div className="rounded-3xl border border-white/10 bg-white/5 p-8">
+            <div className="rounded-lg border border-white/10 bg-white/5 p-8">
               <h3 className="mb-4 text-2xl font-bold tracking-tight">📘 Books</h3>
               <p className="text-gray-400 text-sm">Physical, Organic and Inorganic Chemistry</p>
             </div>
-            <div className="rounded-3xl border border-white/10 bg-white/5 p-8">
+            <div className="rounded-lg border border-white/10 bg-white/5 p-8">
               <h3 className="mb-4 text-2xl font-bold tracking-tight">📝 Notes</h3>
               <p className="text-gray-400 text-sm">Chapter-wise revision notes</p>
             </div>
-            <div className="rounded-3xl border border-white/10 bg-white/5 p-8">
+            <div className="rounded-lg border border-white/10 bg-white/5 p-8">
               <h3 className="mb-4 text-2xl font-bold tracking-tight">📋 Assignments</h3>
               <p className="text-gray-400 text-sm">NCERT, JEE, Olympiad levels</p>
             </div>

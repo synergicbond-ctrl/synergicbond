@@ -139,7 +139,7 @@ export default function MyProgramsGrid({ activeKeys, isPro }: MyProgramsGridProp
   }
 
   return (
-    <div className="rounded-3xl border border-white/10 bg-[#111827] p-6 space-y-5">
+    <div className="rounded-lg border border-white/10 bg-[var(--surface)] p-6 space-y-5">
       <div className="flex items-center justify-between">
         <div>
           <h3 className="text-xl font-black text-white flex items-center gap-2">
@@ -161,7 +161,7 @@ export default function MyProgramsGrid({ activeKeys, isPro }: MyProgramsGridProp
           {validCards.map((card) => (
             <div 
               key={card.key} 
-              className="p-5 rounded-2xl bg-black/40 border border-white/[0.08] hover:border-cyan-500/40 transition flex flex-col justify-between space-y-4 group"
+              className="p-5 rounded-lg bg-black/40 border border-white/[0.08] hover:border-cyan-500/40 transition flex flex-col justify-between space-y-4 group"
             >
               <div>
                 <div className="flex items-center justify-between">
@@ -198,7 +198,7 @@ export default function MyProgramsGrid({ activeKeys, isPro }: MyProgramsGridProp
           ))}
         </div>
       ) : (
-        <div className="p-8 text-center rounded-2xl bg-black/30 border border-dashed border-white/15 space-y-3">
+        <div className="p-8 text-center rounded-lg bg-black/30 border border-dashed border-white/15 space-y-3">
           <p className="text-sm text-white/60 font-semibold">No active program enrollments found.</p>
           <p className="text-xs text-white/40 max-w-md mx-auto">
             Enroll in CBSE, ISC, JEE Main, JEE Advanced, NEET, or Olympiad Chemistry to unlock chapter-wise learning and full-syllabus dashboards.

@@ -36,7 +36,7 @@ function Section({
   return (
     <section className="rounded-[2rem] border border-white/10 bg-slate-950/80 p-5 shadow-2xl shadow-black/20 backdrop-blur md:p-8">
       <div className="flex items-start gap-4">
-        <span className="grid h-10 w-10 shrink-0 place-items-center rounded-2xl border border-cyan-300/30 bg-cyan-300/10 text-sm font-black text-cyan-200">
+        <span className="grid h-10 w-10 shrink-0 place-items-center rounded-lg border border-cyan-300/30 bg-cyan-300/10 text-sm font-black text-cyan-200">
           {index}
         </span>
         <div>
@@ -59,7 +59,7 @@ function ConceptLens({
   tone?: Tone;
 }) {
   return (
-    <aside className={`rounded-2xl border p-5 ${toneMap[tone]}`}>
+    <aside className={`rounded-lg border p-5 ${toneMap[tone]}`}>
       <p className="text-xs font-black uppercase tracking-[0.2em]">Synergic Bond Concept Lens</p>
       <h3 className="mt-2 text-lg font-black text-white">{title}</h3>
       <div className="mt-2 text-sm leading-6 text-slate-200">{children}</div>
@@ -75,7 +75,7 @@ function Formula({
   children: React.ReactNode;
 }) {
   return (
-    <div className="overflow-x-auto rounded-2xl border border-cyan-300/20 bg-black/30 p-4 text-center">
+    <div className="overflow-x-auto rounded-lg border border-cyan-300/20 bg-black/30 p-4 text-center">
       {label ? (
         <p className="mb-2 text-xs font-black uppercase tracking-[0.2em] text-cyan-300">{label}</p>
       ) : null}
@@ -437,7 +437,7 @@ function MixingFormulaTable() {
   ];
 
   return (
-    <div className="overflow-x-auto rounded-2xl border border-white/10">
+    <div className="overflow-x-auto rounded-lg border border-white/10">
       <table className="min-w-full border-collapse text-left text-sm">
         <thead className="bg-slate-900">
           <tr>
@@ -646,7 +646,7 @@ function RetainedNeonExample() {
       </p>
 
       <div className="mt-5 space-y-4">
-        <div className="rounded-2xl border border-emerald-300/20 bg-emerald-300/[0.05] p-5">
+        <div className="rounded-lg border border-emerald-300/20 bg-emerald-300/[0.05] p-5">
           <p className="text-xs font-black uppercase tracking-[0.2em] text-emerald-300">A. Reversible adiabatic</p>
           <div className="mt-4 grid gap-4 md:grid-cols-2">
             <Formula label="Entropy">
@@ -658,7 +658,7 @@ function RetainedNeonExample() {
           </div>
         </div>
 
-        <div className="rounded-2xl border border-amber-300/20 bg-amber-300/[0.05] p-5">
+        <div className="rounded-lg border border-amber-300/20 bg-amber-300/[0.05] p-5">
           <p className="text-xs font-black uppercase tracking-[0.2em] text-amber-300">B. Constant external pressure</p>
           <Formula label="Adiabatic energy balance">
             nC<sub>V,m</sub>(T₂−T₁) = −P<sub>ext</sub>(V₂−V₁)
@@ -673,7 +673,7 @@ function RetainedNeonExample() {
           </div>
         </div>
 
-        <div className="rounded-2xl border border-rose-300/20 bg-rose-300/[0.05] p-5">
+        <div className="rounded-lg border border-rose-300/20 bg-rose-300/[0.05] p-5">
           <p className="text-xs font-black uppercase tracking-[0.2em] text-rose-300">C. Free expansion</p>
           <div className="mt-4 grid gap-4 md:grid-cols-2">
             <Formula label="Transfers and temperature">
@@ -740,19 +740,19 @@ function SourceFragmentPreservation() {
       </p>
 
       <div className="mt-5 grid gap-4 md:grid-cols-3">
-        <div className="rounded-2xl border border-emerald-300/20 bg-emerald-300/[0.05] p-4">
+        <div className="rounded-lg border border-emerald-300/20 bg-emerald-300/[0.05] p-4">
           <p className="font-black text-emerald-300">Route I: reversible</p>
           <p className="mt-2 text-sm text-slate-200">ΔSsys = +9.134 J K⁻¹</p>
           <p className="text-sm text-slate-200">ΔSsurr = −9.134 J K⁻¹</p>
           <p className="text-sm text-slate-200">ΔStotal = 0</p>
         </div>
-        <div className="rounded-2xl border border-amber-300/20 bg-amber-300/[0.05] p-4">
+        <div className="rounded-lg border border-amber-300/20 bg-amber-300/[0.05] p-4">
           <p className="font-black text-amber-300">Route II: finite-step</p>
           <p className="mt-2 text-sm text-slate-200">ΔSsys = +9.134 J K⁻¹</p>
           <p className="text-sm text-slate-200">qirr = qrev − 836.8 J</p>
           <p className="text-sm text-slate-200">ΔStotal = +2.808 J K⁻¹</p>
         </div>
-        <div className="rounded-2xl border border-rose-300/20 bg-rose-300/[0.05] p-4">
+        <div className="rounded-lg border border-rose-300/20 bg-rose-300/[0.05] p-4">
           <p className="font-black text-rose-300">Route III: free</p>
           <p className="mt-2 text-sm text-slate-200">ΔSsurr = 0</p>
           <p className="text-sm text-slate-200">ΔStotal = ΔSsys</p>
@@ -888,7 +888,7 @@ function ProblemLadder() {
   return (
     <div className="grid gap-4 lg:grid-cols-2">
       {problems.map((item) => (
-        <article key={item.title} className="group rounded-2xl border border-white/10 bg-slate-900/70 p-5">
+        <article key={item.title} className="group rounded-lg border border-white/10 bg-slate-900/70 p-5">
           <h3 className=" font-black text-white">
             <span className="mr-2 text-amber-300">◆</span>
             {item.title}
@@ -949,7 +949,7 @@ const traps = [
 
 function TrapTable() {
   return (
-    <div className="overflow-x-auto rounded-2xl border border-white/10">
+    <div className="overflow-x-auto rounded-lg border border-white/10">
       <table className="min-w-full border-collapse text-left text-sm">
         <thead className="bg-slate-900">
           <tr>
@@ -1001,7 +1001,7 @@ function DailyLifeGrid() {
   return (
     <div className="grid gap-4 md:grid-cols-2">
       {items.map((item) => (
-        <article key={item.title} className={`rounded-3xl border p-5 ${toneMap[item.tone]}`}>
+        <article key={item.title} className={`rounded-lg border p-5 ${toneMap[item.tone]}`}>
           <h3 className="text-xl font-black text-white">{item.title}</h3>
           <p className="mt-2 text-sm leading-6 text-slate-200">{item.text}</p>
         </article>
@@ -1199,7 +1199,7 @@ export default function ThermodynamicsPart20() {
               ["Thermal contact", "ΣCi ln(Tf/Ti) > 0"],
               ["Adiabatic routes", "less work output means more entropy generation"],
             ].map(([term, meaning]) => (
-              <div key={term} className="rounded-2xl border border-white/10 bg-black/25 p-4">
+              <div key={term} className="rounded-lg border border-white/10 bg-black/25 p-4">
                 <p className="font-black text-white">{term}</p>
                 <p className="mt-1 text-sm leading-6 text-slate-300">{meaning}</p>
               </div>

@@ -177,7 +177,7 @@ function clearPersistedRun(): void {
 
 function EmptyState({ title, message }: { title: string; message: string }) {
   return (
-    <div className="rounded-2xl border border-dashed border-white/12 bg-white/[0.02] p-8 text-center">
+    <div className="rounded-lg border border-dashed border-white/12 bg-white/[0.02] p-8 text-center">
       <p className="font-bold text-white/70">{title}</p>
       <p className="mt-1 text-sm text-white/40">{message}</p>
     </div>
@@ -203,10 +203,10 @@ function ChoiceCard({
     <button
       type="button"
       onClick={onClick}
-      className={`group w-full rounded-2xl border p-5 text-left transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300/70 ${
+      className={`group w-full rounded-lg border p-5 text-left transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300/70 ${
         primary
-          ? "border-cyan-400/30 bg-gradient-to-br from-cyan-500/15 via-cyan-500/[0.06] to-violet-500/10 hover:border-cyan-300/55"
-          : "border-white/[0.09] bg-[#111827] hover:border-white/20 hover:bg-white/[0.045]"
+          ? "border-[var(--accent)]/30 bg-[var(--accent)]/10 hover:border-[var(--accent)]/50"
+          : "border-white/[0.09] bg-[var(--surface)] hover:border-white/20 hover:bg-white/[0.045]"
       }`}
     >
       <p className={`text-[11px] font-bold uppercase tracking-[0.18em] ${primary ? "text-cyan-300" : "text-white/45"}`}>{eyebrow}</p>
@@ -311,7 +311,7 @@ function TestBuilder({
         <p className="mt-2 text-sm text-white/50">Choose the essentials. Extra filters stay hidden until you need them.</p>
       </header>
 
-      <section className="rounded-2xl border border-white/[0.08] bg-[#111827] p-4 sm:p-6">
+      <section className="rounded-lg border border-white/[0.08] bg-[var(--surface)] p-4 sm:p-6">
         <div className="grid gap-4 sm:grid-cols-2">
           {!lockedExam && (
             <label>
@@ -429,7 +429,7 @@ function TestBuilder({
             type="button"
             onClick={start}
             disabled={available === 0}
-            className="rounded-xl bg-cyan-400 px-5 py-2.5 text-sm font-black text-slate-950 transition hover:bg-cyan-300 disabled:cursor-not-allowed disabled:opacity-40"
+            className="rounded-lg bg-[var(--accent)] px-5 py-2.5 text-sm font-black text-[var(--background)] transition hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-40"
           >
             Start Test
           </button>
@@ -461,9 +461,9 @@ function QuestionPalette({
           const answered = Boolean(answers[question.id]);
           const flagged = Boolean(marked[question.id]);
           const tone = active
-            ? "border-cyan-300 bg-cyan-500/20 text-white ring-2 ring-cyan-300/20"
+            ? "border-[var(--accent)] bg-[var(--accent)]/15 text-[var(--foreground)] ring-2 ring-[var(--accent)]/20"
             : flagged && answered
-              ? "border-violet-400/55 bg-violet-500/12 text-violet-200"
+              ? "border-[var(--border)] bg-[var(--surface-2)] text-[var(--text-muted)]"
               : flagged
                 ? "border-amber-400/55 bg-amber-500/12 text-amber-200"
                 : answered
@@ -480,7 +480,7 @@ function QuestionPalette({
         <span><i className="mr-1.5 inline-block h-2 w-2 rounded-full bg-emerald-400" />Answered</span>
         <span><i className="mr-1.5 inline-block h-2 w-2 rounded-full bg-amber-400" />Marked</span>
         <span><i className="mr-1.5 inline-block h-2 w-2 rounded-full bg-violet-400" />Answered + marked</span>
-        <span><i className="mr-1.5 inline-block h-2 w-2 rounded-full bg-cyan-300" />Current</span>
+        <span><i className="mr-1.5 inline-block h-2 w-2 rounded-full bg-[var(--accent)]" />Current</span>
       </div>
     </div>
   );
@@ -528,7 +528,7 @@ function ResultScreen({
 
   return (
     <div className="space-y-6">
-      <div className="rounded-3xl border border-cyan-400/20 bg-gradient-to-br from-cyan-500/12 via-white/[0.025] to-violet-500/10 p-5 sm:p-7">
+      <div className="rounded-lg border border-[var(--border)] bg-[var(--surface)] p-5 sm:p-7">
         <p className="text-xs font-bold uppercase tracking-[0.2em] text-cyan-300">Test complete</p>
         <div className="mt-3 flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
           <div>
@@ -540,7 +540,7 @@ function ResultScreen({
               {submitState === "idle" && "Your result is ready."}
             </p>
           </div>
-          <div className="rounded-2xl border border-white/10 bg-black/15 px-5 py-3 text-center">
+          <div className="rounded-lg border border-white/10 bg-black/15 px-5 py-3 text-center">
             <p className="text-3xl font-black text-white">{score}<span className="text-base text-white/35">/{maxScore}</span></p>
             <p className="mt-0.5 text-[11px] font-semibold uppercase tracking-wide text-white/40">Score</p>
           </div>
@@ -555,14 +555,14 @@ function ResultScreen({
           ["Accuracy", `${accuracy}%`, "text-cyan-300"],
           ["Time", formatDuration(durationMs), "text-violet-300"],
         ].map(([label, value, tone]) => (
-          <div key={label} className="rounded-2xl border border-white/[0.08] bg-[#111827] p-4">
+          <div key={label} className="rounded-lg border border-white/[0.08] bg-[var(--surface)] p-4">
             <p className={`text-xl font-black ${tone}`}>{value}</p>
             <p className="mt-1 text-xs font-semibold text-white/40">{label}</p>
           </div>
         ))}
       </div>
 
-      <section className="rounded-2xl border border-white/[0.08] bg-[#111827] p-4 sm:p-5">
+      <section className="rounded-lg border border-white/[0.08] bg-[var(--surface)] p-4 sm:p-5">
         <div className="flex flex-wrap items-center justify-between gap-3">
           <div>
             <h3 className="font-black text-white">What should you do next?</h3>
@@ -575,12 +575,12 @@ function ResultScreen({
               </button>
             )}
             <button type="button" onClick={() => onRetry(questions, session.title)} className="rounded-xl border border-white/12 bg-white/[0.05] px-4 py-2 text-sm font-bold text-white/75 transition hover:border-white/25 hover:text-white">Retry full test</button>
-            <button type="button" onClick={onBack} className="rounded-xl bg-cyan-400 px-4 py-2 text-sm font-black text-slate-950 transition hover:bg-cyan-300">Tests home</button>
+            <button type="button" onClick={onBack} className="rounded-lg bg-[var(--accent)] px-4 py-2 text-sm font-black text-[var(--background)] transition hover:opacity-90">Tests home</button>
           </div>
         </div>
       </section>
 
-      <section className="rounded-2xl border border-white/[0.08] bg-white/[0.02] p-4 sm:p-5">
+      <section className="rounded-lg border border-white/[0.08] bg-white/[0.02] p-4 sm:p-5">
         <h3 className="font-black text-white">Chapter breakdown</h3>
         <div className="mt-3 space-y-2">
           {chapterRows.map(([chapter, row]) => {
@@ -609,7 +609,7 @@ function ResultScreen({
             const selected = answers[question.id];
             const correctAnswer = isCorrect(question, selected);
             return (
-              <article key={question.id} className="rounded-2xl border border-white/[0.08] bg-[#111827] p-4 sm:p-5">
+              <article key={question.id} className="rounded-lg border border-white/[0.08] bg-[var(--surface)] p-4 sm:p-5">
                 <div className="flex flex-wrap items-center justify-between gap-2">
                   <div className="flex flex-wrap items-center gap-2 text-[11px]">
                     <span className="font-black text-cyan-300">Q{index + 1}</span>
@@ -772,7 +772,7 @@ function TestRunner({ session, restore, onExit, onRestart }: { session: TestSess
 
   return (
     <div className="space-y-4">
-      <header className="sticky top-0 z-20 -mx-4 border-b border-white/[0.07] bg-[#0B0F19]/95 px-4 py-3 backdrop-blur sm:static sm:mx-0 sm:rounded-2xl sm:border sm:bg-[#111827] sm:px-5">
+      <header className="sticky top-0 z-20 -mx-4 border-b border-white/[0.07] bg-[var(--background)]/95 px-4 py-3 backdrop-blur sm:static sm:mx-0 sm:rounded-lg sm:border sm:bg-[var(--surface)] sm:px-5">
         <div className="flex items-center justify-between gap-3">
           <button type="button" onClick={onExit} className="shrink-0 text-sm font-semibold text-white/55 transition hover:text-white">← Exit</button>
           <div className="min-w-0 flex-1 text-center sm:text-left">
@@ -784,13 +784,13 @@ function TestRunner({ session, restore, onExit, onRestart }: { session: TestSess
               {formatTimer(remainingSeconds)}
             </div>
           )}
-          <button type="button" onClick={() => void finishTest()} className="shrink-0 rounded-lg bg-cyan-400 px-3 py-2 text-xs font-black text-slate-950 transition hover:bg-cyan-300 sm:px-4">Submit</button>
+          <button type="button" onClick={() => void finishTest()} className="shrink-0 rounded-lg bg-[var(--accent)] px-3 py-2 text-xs font-black text-[var(--background)] transition hover:opacity-90 sm:px-4">Submit</button>
         </div>
-        <div className="mt-3 h-1.5 overflow-hidden rounded-full bg-white/[0.07]"><div className="h-full rounded-full bg-cyan-400 transition-[width]" style={{ width: `${progress}%` }} /></div>
+        <div className="mt-3 h-1.5 overflow-hidden rounded-full bg-white/[0.07]"><div className="h-full rounded-full bg-[var(--accent)] transition-[width]" style={{ width: `${progress}%` }} /></div>
       </header>
 
       <div className="grid gap-4 lg:grid-cols-[minmax(0,1fr)_250px]">
-        <main className="min-w-0 rounded-2xl border border-white/[0.08] bg-[#111827] p-4 sm:p-6">
+        <main className="min-w-0 rounded-lg border border-white/[0.08] bg-[var(--surface)] p-4 sm:p-6">
           <div className="flex flex-wrap items-center justify-between gap-3">
             <div className="flex flex-wrap items-center gap-2 text-[11px]">
               <span className="font-black text-cyan-300">Question {current + 1} of {questions.length}</span>
@@ -849,12 +849,12 @@ function TestRunner({ session, restore, onExit, onRestart }: { session: TestSess
             </div>
             <div className="flex gap-2">
               <button type="button" onClick={() => { setMarked((previous) => ({ ...previous, [question.id]: !previous[question.id] })); if (current < questions.length - 1) jumpTo(current + 1); }} className={`rounded-xl border px-3 py-2 text-sm font-bold transition ${marked[question.id] ? "border-amber-400/45 bg-amber-500/10 text-amber-200" : "border-white/10 text-white/60 hover:border-amber-400/35 hover:text-amber-200"}`}>{marked[question.id] ? "Unmark" : "Mark"} & Next</button>
-              {current < questions.length - 1 ? <button type="button" onClick={() => jumpTo(current + 1)} className="rounded-xl bg-cyan-400 px-4 py-2 text-sm font-black text-slate-950 transition hover:bg-cyan-300">Save & Next</button> : <button type="button" onClick={() => void finishTest()} className="rounded-xl bg-cyan-400 px-4 py-2 text-sm font-black text-slate-950 transition hover:bg-cyan-300">Finish Test</button>}
+              {current < questions.length - 1 ? <button type="button" onClick={() => jumpTo(current + 1)} className="rounded-lg bg-[var(--accent)] px-4 py-2 text-sm font-black text-[var(--background)] transition hover:opacity-90">Save & Next</button> : <button type="button" onClick={() => void finishTest()} className="rounded-lg bg-[var(--accent)] px-4 py-2 text-sm font-black text-[var(--background)] transition hover:opacity-90">Finish Test</button>}
             </div>
           </div>
         </main>
 
-        <aside className="hidden self-start rounded-2xl border border-white/[0.08] bg-[#111827] p-4 lg:block">
+        <aside className="hidden self-start rounded-lg border border-white/[0.08] bg-[var(--surface)] p-4 lg:block">
           <QuestionPalette questions={questions} current={current} answers={answers} marked={marked} onJump={jumpTo} />
           <div className="mt-5 rounded-xl border border-white/[0.07] bg-white/[0.025] p-3 text-xs leading-5 text-white/45">{session.mode === "exam" ? "Answers and solutions remain hidden until submission." : "Practice mode gives feedback after each answer."}</div>
         </aside>
@@ -879,7 +879,7 @@ function RecentAttempts({ exam }: { exam?: PYQExam }) {
   }, [exam]);
 
   return (
-    <section className="rounded-2xl border border-white/[0.08] bg-white/[0.02] p-4 sm:p-5">
+    <section className="rounded-lg border border-white/[0.08] bg-white/[0.02] p-4 sm:p-5">
       <div className="flex items-center justify-between gap-3">
         <div><h2 className="text-base font-black text-white">Recent Tests</h2><p className="mt-1 text-xs text-white/40">Only your real submitted attempts appear here.</p></div>
         <Link href="/tests/history" className="text-xs font-bold text-cyan-300 hover:text-cyan-200">View history →</Link>
@@ -934,7 +934,7 @@ export default function CompleteTestExperience({ exam }: { exam?: PYQExam } = {}
       </header>
 
       {resume && (
-        <button type="button" onClick={() => setRun({ session: resume.session, restore: resume })} className="flex w-full flex-wrap items-center justify-between gap-3 rounded-2xl border border-violet-400/30 bg-violet-500/10 p-4 text-left transition hover:bg-violet-500/15">
+        <button type="button" onClick={() => setRun({ session: resume.session, restore: resume })} className="flex w-full flex-wrap items-center justify-between gap-3 rounded-lg border border-violet-400/30 bg-violet-500/10 p-4 text-left transition hover:bg-violet-500/15">
           <div><p className="text-xs font-bold uppercase tracking-[0.15em] text-violet-300">Continue Test</p><h2 className="mt-1 font-black text-white">{resume.session.title}</h2><p className="mt-1 text-xs text-white/45">Resume from question {resume.current + 1} of {resume.session.questions.length}.</p></div>
           <span className="text-sm font-black text-violet-200">Resume →</span>
         </button>

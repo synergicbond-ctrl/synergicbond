@@ -49,7 +49,7 @@ export default function ChemistryToolsPage() {
             <Link
               key={href}
               href={href}
-              className="group flex flex-col rounded-2xl border border-white/[0.08] bg-white/[0.02] p-5 transition hover:-translate-y-0.5 hover:bg-white/[0.04] hover:border-cyan-400/40"
+              className="group flex flex-col rounded-lg border border-white/[0.08] bg-white/[0.02] p-5 transition hover:-translate-y-0.5 hover:bg-white/[0.04] hover:border-cyan-400/40"
             >
               <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-white/15 bg-white/[0.05]">
                 <Icon className="h-5 w-5 text-cyan-300" />

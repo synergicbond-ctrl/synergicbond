@@ -7,7 +7,7 @@ export const partInfo = {
 } as const;
 
 const Section = ({ title, children }: { title: string; children: ReactNode }) => (
-  <section className="rounded-2xl border border-white/10 bg-white/[0.035] p-5 md:p-6">
+  <section className="rounded-lg border border-white/10 bg-white/[0.035] p-5 md:p-6">
     <h2 className="text-xl font-semibold tracking-tight text-white">{title}</h2>
     <div className="mt-4 space-y-4 text-[15px] leading-7 text-zinc-300">{children}</div>
   </section>
@@ -16,7 +16,7 @@ const Section = ({ title, children }: { title: string; children: ReactNode }) =>
 export default function SolidStatePart02() {
   return (
     <article data-chapter="solid-state" data-part="02" className="mx-auto w-full max-w-5xl space-y-6 px-4 py-8 md:px-6">
-      <header className="rounded-3xl border border-violet-400/20 bg-gradient-to-b from-violet-400/10 to-transparent p-6 md:p-8">
+      <header className="rounded-lg border border-violet-400/20 bg-gradient-to-b from-violet-400/10 to-transparent p-6 md:p-8">
         <p className="text-xs font-semibold uppercase tracking-[0.24em] text-violet-300">JEE Advanced · Solid State · Part 2</p>
         <h1 className="mt-3 text-3xl font-semibold tracking-tight text-white md:text-4xl">Crystalline and Amorphous Solids</h1>
         <p className="mt-4 max-w-3xl text-sm leading-7 text-zinc-300">
@@ -184,7 +184,7 @@ export default function SolidStatePart02() {
         </div>
       </Section>
 
-      <aside className="rounded-2xl border border-fuchsia-400/20 bg-fuchsia-400/[0.045] p-5">
+      <aside className="rounded-lg border border-fuchsia-400/20 bg-fuchsia-400/[0.045] p-5">
         <p className="text-xs font-semibold uppercase tracking-[0.2em] text-fuchsia-300">Next in this chapter</p>
         <p className="mt-2 text-sm leading-7 text-zinc-300">
           Polycrystalline solids, followed by the examples and then classification of crystalline solids into ionic,

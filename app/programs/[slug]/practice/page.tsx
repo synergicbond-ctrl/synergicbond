@@ -52,7 +52,7 @@ export default async function ProgramPracticePage({ params }: { params: Promise<
         {pyqExam ? (
           <ProgramPracticeClient exam={pyqExam} />
         ) : (
-          <div className="rounded-2xl border border-white/10 bg-white/[0.02] p-8 text-center">
+          <div className="rounded-lg border border-white/10 bg-white/[0.02] p-8 text-center">
             <h2 className="text-xl font-bold">No verified {name} questions mapped yet</h2>
             <p className="mx-auto mt-2 max-w-lg text-sm leading-relaxed text-zinc-400">
               Only verified previous-year questions ship on this platform — nothing is fabricated.
@@ -62,7 +62,7 @@ export default async function ProgramPracticePage({ params }: { params: Promise<
             <div className="mt-5 flex flex-wrap justify-center gap-3">
               <Link
                 href="/pyq"
-                className="rounded-xl border border-cyan-400/40 bg-cyan-500/10 px-4 py-2 text-sm font-semibold text-cyan-300 transition hover:bg-cyan-500/20"
+                className="rounded-xl border border-[var(--accent)]/30 bg-[var(--accent)]/10 px-4 py-2 text-sm font-semibold text-[var(--accent)] transition hover:bg-[var(--accent)]/10"
               >
                 Open PYQ Center →
               </Link>

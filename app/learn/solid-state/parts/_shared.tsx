@@ -98,7 +98,7 @@ function Block({ block }: { block: SolidStateBlock }) {
 
 function Section({ title, children }: { title: string; children: ReactNode }) {
   return (
-    <section className="rounded-2xl border border-white/10 bg-white/[0.035] p-5 md:p-6">
+    <section className="rounded-lg border border-white/10 bg-white/[0.035] p-5 md:p-6">
       <h2 className="text-xl font-semibold tracking-tight text-white">{title}</h2>
       <div className="mt-4 space-y-4 text-[15px] leading-7 text-zinc-300">{children}</div>
     </section>
@@ -112,7 +112,7 @@ export function SolidStatePartPage({ data }: { data: SolidStatePartData }) {
       data-part={String(data.part).padStart(2, "0")}
       className="mx-auto w-full max-w-5xl space-y-6 px-4 py-8 md:px-6"
     >
-      <header className="rounded-3xl border border-cyan-400/20 bg-gradient-to-b from-cyan-400/10 via-violet-400/[0.025] to-transparent p-6 md:p-8">
+      <header className="rounded-lg border border-cyan-400/20 bg-gradient-to-b from-cyan-400/10 via-violet-400/[0.025] to-transparent p-6 md:p-8">
         <p className="text-xs font-semibold uppercase tracking-[0.24em] text-cyan-300">JEE Advanced · Solid State · Part {data.part}</p>
         <h1 className="mt-3 text-3xl font-semibold tracking-tight text-white md:text-4xl">{data.title}</h1>
         <p className="mt-4 max-w-4xl text-sm leading-7 text-zinc-300">{data.intro}</p>

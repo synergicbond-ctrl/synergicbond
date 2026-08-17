@@ -25,7 +25,7 @@ export default function ExamCountdown({ storageKey, examName }: { storageKey: st
   }, [date, now]);
 
   return (
-    <div className="rounded-2xl border border-amber-500/25 bg-amber-500/[0.05] p-5">
+    <div className="rounded-lg border border-amber-500/25 bg-amber-500/[0.05] p-5">
       <div className="flex flex-wrap items-center justify-between gap-3">
         <div>
           <div className="text-xs font-bold uppercase tracking-wider text-amber-300">Exam Countdown</div>

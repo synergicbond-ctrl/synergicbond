@@ -7,7 +7,7 @@ export default function ConcentrationTermsPart2() {
   return (
     <main className="min-h-screen bg-slate-950 px-4 py-8 text-slate-100 md:px-10">
       <article className="mx-auto max-w-5xl space-y-10">
-        <header className="rounded-3xl border border-amber-400/30 bg-gradient-to-br from-slate-900 via-slate-900 to-slate-950 p-6 shadow-2xl md:p-8">
+        <header className="rounded-lg border border-amber-400/30 bg-gradient-to-br from-slate-900 via-slate-900 to-slate-950 p-6 shadow-2xl md:p-8">
           <div className="flex items-center justify-between">
             <span className="rounded-full bg-amber-500/20 px-3 py-1 text-xs font-bold uppercase tracking-[0.2em] text-amber-300">
               Concentration Terms — Topic 2
@@ -30,7 +30,7 @@ export default function ConcentrationTermsPart2() {
             1. Solute Mass Extraction from Percentage Solutions
           </h2>
 
-          <div className="rounded-2xl border border-slate-800 bg-slate-900 p-6 space-y-4 text-sm leading-relaxed text-slate-200">
+          <div className="rounded-lg border border-slate-800 bg-slate-900 p-6 space-y-4 text-sm leading-relaxed text-slate-200">
             <p>
               To extract the absolute mass of solute from any given solution, multiply the total solution mass or volume by the percentage factor (<InlineMath math="\frac{\%}{100}" />):
             </p>
@@ -65,12 +65,12 @@ export default function ConcentrationTermsPart2() {
             2. The Conservation of Solute Mass during Dilution
           </h2>
 
-          <div className="rounded-2xl border border-slate-800 bg-slate-900 p-6 space-y-4 text-sm leading-relaxed text-slate-200">
+          <div className="rounded-lg border border-slate-800 bg-slate-900 p-6 space-y-4 text-sm leading-relaxed text-slate-200">
             <p>
               When pure solvent (water) is added to a solution to dilute it, the <strong className="text-amber-300">total mass (or moles) of solute remains strictly constant</strong>:
             </p>
 
-            <div className="overflow-x-auto py-3 bg-slate-950 rounded-2xl border border-slate-800 px-4">
+            <div className="overflow-x-auto py-3 bg-slate-950 rounded-lg border border-slate-800 px-4">
               <BlockMath math={String.raw`\text{Mass of Solute Before Dilution} = \text{Mass of Solute After Dilution} \implies C_1 V_1 = C_2 V_2`} />
             </div>
 
@@ -119,12 +119,12 @@ export default function ConcentrationTermsPart2() {
             3. Mixing of Multiple Solutions of the Same Solute
           </h2>
 
-          <div className="rounded-2xl border border-slate-800 bg-slate-900 p-6 space-y-4 text-sm leading-relaxed text-slate-200">
+          <div className="rounded-lg border border-slate-800 bg-slate-900 p-6 space-y-4 text-sm leading-relaxed text-slate-200">
             <p>
               When two or more solutions containing identical solutes are mixed together without chemical reaction, the total mass of solute in the mixture is the exact arithmetic sum of the individual solute masses:
             </p>
 
-            <div className="overflow-x-auto py-3 bg-slate-950 rounded-2xl border border-slate-800 px-4">
+            <div className="overflow-x-auto py-3 bg-slate-950 rounded-lg border border-slate-800 px-4">
               <BlockMath math={String.raw`C_{\text{final}} = \frac{C_1 V_1 + C_2 V_2}{V_1 + V_2}`} />
             </div>
 
@@ -146,7 +146,7 @@ export default function ConcentrationTermsPart2() {
             4. Parts per Million (<InlineMath math="\text{ppm}" />) &amp; Trace Concentration Scales
           </h2>
 
-          <div className="rounded-2xl border border-slate-800 bg-slate-900 p-6 space-y-4 text-sm leading-relaxed text-slate-200">
+          <div className="rounded-lg border border-slate-800 bg-slate-900 p-6 space-y-4 text-sm leading-relaxed text-slate-200">
             <p>
               When a solute is present in extremely minute trace quantities (such as pollutants in air or mineral ions in drinking water), percentage scales become impractical. Instead, we use parts per million (<InlineMath math="\text{ppm}" />), parts per billion (<InlineMath math="\text{ppb}" />), and parts per trillion (<InlineMath math="\text{ppt}" />):
             </p>
@@ -200,7 +200,7 @@ export default function ConcentrationTermsPart2() {
         </section>
 
         {/* Footer info */}
-        <footer className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 text-center text-xs text-slate-400">
+        <footer className="rounded-lg border border-slate-800 bg-slate-900/60 p-6 text-center text-xs text-slate-400">
           <p>Concentration Terms Module • Topic 2: Dilution Formulas, Mixing &amp; Trace Scales (ppm / ppb)</p>
         </footer>
       </article>

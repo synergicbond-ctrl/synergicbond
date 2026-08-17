@@ -122,7 +122,7 @@ export default async function ChapterPage({ params }: PageProps) {
 
         <div className="lg:col-span-2 space-y-10">
 
-          <section className="p-6 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800 bg-white dark:bg-slate-900">
+          <section className="p-6 rounded-lg shadow-sm border border-slate-100 dark:border-slate-800 bg-white dark:bg-slate-900">
             <h2 className="text-2xl font-bold mb-4">Core Concepts</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {chapter.concepts.map((concept, idx) => (
@@ -135,7 +135,7 @@ export default async function ChapterPage({ params }: PageProps) {
           </section>
 
           {formulas.length > 0 && (
-            <section className="p-6 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800 bg-white dark:bg-slate-900">
+            <section className="p-6 rounded-lg shadow-sm border border-slate-100 dark:border-slate-800 bg-white dark:bg-slate-900">
               <h2 className="text-2xl font-bold mb-4">Formula Sheet</h2>
               <div className="space-y-4">
                 {formulas.map((f, idx) => (
@@ -158,7 +158,7 @@ export default async function ChapterPage({ params }: PageProps) {
           )}
 
           {reactions.length > 0 && (
-            <section className="p-6 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800 bg-white dark:bg-slate-900">
+            <section className="p-6 rounded-lg shadow-sm border border-slate-100 dark:border-slate-800 bg-white dark:bg-slate-900">
               <h2 className="text-2xl font-bold mb-4">Important Reactions</h2>
               <div className="space-y-4">
                 {reactions.map((rxn, idx) => (
@@ -174,7 +174,7 @@ export default async function ChapterPage({ params }: PageProps) {
           )}
 
           {mechanisms.length > 0 && (
-            <section className="p-6 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800 bg-white dark:bg-slate-900">
+            <section className="p-6 rounded-lg shadow-sm border border-slate-100 dark:border-slate-800 bg-white dark:bg-slate-900">
               <h2 className="text-2xl font-bold mb-4">Mechanisms & Pathways</h2>
               <div className="space-y-4">
                 {mechanisms.map((m: Mechanism, idx) => (
@@ -188,7 +188,7 @@ export default async function ChapterPage({ params }: PageProps) {
           )}
 
           {notes.length > 0 && (
-            <section className="p-6 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800 bg-white dark:bg-slate-900">
+            <section className="p-6 rounded-lg shadow-sm border border-slate-100 dark:border-slate-800 bg-white dark:bg-slate-900">
               <h2 className="text-2xl font-bold mb-4">NCERT Notes & Exceptions</h2>
               <div className="space-y-4">
                 {notes.map((note, idx) => (
@@ -202,7 +202,7 @@ export default async function ChapterPage({ params }: PageProps) {
           )}
 
           {chapter.pyqTags && chapter.pyqTags.length > 0 && (
-            <section className="p-6 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800 bg-white dark:bg-slate-900">
+            <section className="p-6 rounded-lg shadow-sm border border-slate-100 dark:border-slate-800 bg-white dark:bg-slate-900">
               <h2 className="text-2xl font-bold mb-2">Previous Year Question Tags (PYQs)</h2>
               <p className="text-xs text-slate-500 dark:text-slate-400 mb-4">High-yield meta-tags analyzed from NEET and JEE exams.</p>
               <div className="flex flex-wrap gap-2">
@@ -215,7 +215,7 @@ export default async function ChapterPage({ params }: PageProps) {
             </section>
           )}
 
-          <section className="bg-indigo-50/20 dark:bg-indigo-950/10 p-8 rounded-3xl border border-dashed border-indigo-200 dark:border-indigo-800 space-y-4">
+          <section className="bg-indigo-50/20 dark:bg-indigo-950/10 p-8 rounded-lg border border-dashed border-indigo-200 dark:border-indigo-800 space-y-4">
             <div className="text-center max-w-md mx-auto mb-4">
               <h2 className="text-xl font-black">Adaptive Practice Test Loop</h2>
               <p className="text-xs text-slate-600 dark:text-slate-400">Test conceptual understanding of formulas and mechanisms interactively.</p>
@@ -228,7 +228,7 @@ export default async function ChapterPage({ params }: PageProps) {
         <div className="space-y-6">
           <AiTutorBox chapter={chapter.title} concepts={conceptStrings} />
           <VisionUploader />
-          <div className="p-6 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800 bg-white dark:bg-slate-900 text-center space-y-3"> 
+          <div className="p-6 rounded-lg shadow-sm border border-slate-100 dark:border-slate-800 bg-white dark:bg-slate-900 text-center space-y-3"> 
             <h3 className="font-bold">Progress Dashboard Link</h3>
             <p className="text-xs text-slate-500 dark:text-slate-400">Review chapter analytics and accuracy percentages.</p>
             <Link href="/dashboard" className="block w-full py-3 bg-indigo-600 hover:bg-indigo-700 text-white font-bold rounded-xl transition shadow-sm">

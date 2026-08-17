@@ -138,7 +138,7 @@ function Formula({ children }: { children: ReactNode }) {
 
 function TableBlock({ table }: { table: DataTable }) {
   return (
-    <figure className="overflow-hidden rounded-2xl border border-violet-300/20 bg-[#070b12]">
+    <figure className="overflow-hidden rounded-lg border border-violet-300/20 bg-[#070b12]">
       <div className="overflow-x-auto">
         <table className="min-w-full border-collapse text-left text-[15px]">
           {table.caption ? (
@@ -240,7 +240,7 @@ function Section({ section, index }: { section: SectionData; index: number }) {
       {section.structures?.length ? (
         <div className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
           {section.structures.map((structure, structureIndex) => (
-            <div key={structure.name} className={`rounded-2xl border p-5 ${panelThemes[structureIndex % panelThemes.length]}`}>
+            <div key={structure.name} className={`rounded-lg border p-5 ${panelThemes[structureIndex % panelThemes.length]}`}>
               <p className={`text-sm font-extrabold ${cellTones[structureIndex % cellTones.length]}`}>{structure.name}</p>
               <p className="my-4 overflow-x-auto text-center font-['STIX_Two_Math','Cambria_Math',serif] text-xl font-bold text-white">
                 {structure.formula}
@@ -263,7 +263,7 @@ function Section({ section, index }: { section: SectionData; index: number }) {
       ) : null}
 
       {section.image ? (
-        <figure className="mt-6 overflow-hidden rounded-2xl border border-cyan-300/20 bg-[#050910]">
+        <figure className="mt-6 overflow-hidden rounded-lg border border-cyan-300/20 bg-[#050910]">
           <img
             src={section.image.src}
             alt={section.image.alt}
@@ -301,7 +301,7 @@ export default function EnvironmentalChemistryPart({ data }: { data: PartData })
             ))}
           </div>
           {data.heroImage ? (
-            <figure className="relative mt-7 overflow-hidden rounded-2xl border border-cyan-300/20 bg-[#050910]">
+            <figure className="relative mt-7 overflow-hidden rounded-lg border border-cyan-300/20 bg-[#050910]">
               <img
                 src={data.heroImage.src}
                 alt={data.heroImage.alt}
@@ -326,7 +326,7 @@ export default function EnvironmentalChemistryPart({ data }: { data: PartData })
             <div className="mt-4 h-[3px] w-24 rounded-full bg-gradient-to-r from-cyan-300 via-violet-400 to-amber-300" />
             <div className="mt-5 grid gap-4">
               {data.examples.map((example, index) => (
-                <article key={example.title} className={`rounded-2xl border p-5 sm:p-6 ${panelThemes[index % panelThemes.length]}`}>
+                <article key={example.title} className={`rounded-lg border p-5 sm:p-6 ${panelThemes[index % panelThemes.length]}`}>
                   <p className={`text-xs font-black uppercase tracking-[0.16em] ${cellTones[index % cellTones.length]}`}>Example {index + 1}</p>
                   <h3 className="mt-2 text-xl font-extrabold text-cyan-100">{example.title}</h3>
                   <p className="mt-3 text-[16px] leading-8 text-slate-300"><strong className="text-amber-300">Problem:</strong> {example.problem}</p>
@@ -360,7 +360,7 @@ export default function EnvironmentalChemistryPart({ data }: { data: PartData })
             </div>
             <div className="mt-5 grid gap-4">
               {data.questions.map((item, questionIndex) => (
-                <article key={item.number} className={`rounded-2xl border p-5 sm:p-6 ${panelThemes[questionIndex % panelThemes.length]}`}>
+                <article key={item.number} className={`rounded-lg border p-5 sm:p-6 ${panelThemes[questionIndex % panelThemes.length]}`}>
                   <div className="flex gap-3">
                     <span className={`grid h-8 min-w-8 place-items-center rounded-lg border px-2 text-xs font-black ${panelThemes[questionIndex % panelThemes.length]} ${cellTones[questionIndex % cellTones.length]}`}>
                       {item.number}

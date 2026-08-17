@@ -31,7 +31,7 @@ const tricky = [
 
 export default function SolubilityPage() {
   return (
-    <main className="min-h-screen bg-[#0B0F19] text-white">
+    <main className="min-h-screen bg-[var(--background)] text-white">
       <div className="mx-auto max-w-5xl px-6 py-12">
         <ReferenceTabs />
         <p className="text-xs font-bold uppercase tracking-[0.4em] text-cyan-300 mb-3">Knowledge Vault · Inorganic</p>
@@ -41,12 +41,12 @@ export default function SolubilityPage() {
         </p>
 
         {/* Rules table */}
-        <div className="overflow-hidden rounded-2xl border border-white/[0.06]">
+        <div className="overflow-hidden rounded-lg border border-white/[0.06]">
           <div className="grid grid-cols-[1.2fr_1fr_1.6fr] bg-white/[0.04] text-[10px] font-bold uppercase tracking-wider text-white/50 px-4 py-2.5">
             <span>Anion Group</span><span>General Rule</span><span>Key Exceptions</span>
           </div>
           {rules.map((r, i) => (
-            <div key={r.group} className={`grid grid-cols-[1.2fr_1fr_1.6fr] px-4 py-3 text-sm ${i % 2 ? "bg-[#111827]" : "bg-[#0e1421]"}`}>
+            <div key={r.group} className={`grid grid-cols-[1.2fr_1fr_1.6fr] px-4 py-3 text-sm ${i % 2 ? "bg-[var(--surface)]" : "bg-[#0e1421]"}`}>
               <span className="font-bold text-white flex items-center gap-2">
                 <span className="h-2 w-2 rounded-full flex-shrink-0" style={{ background: r.c }} /> {r.group}
               </span>
@@ -57,7 +57,7 @@ export default function SolubilityPage() {
         </div>
 
         {/* Tricky points */}
-        <div className="mt-8 rounded-2xl bg-[#111827] border border-white/[0.06] p-6">
+        <div className="mt-8 rounded-lg bg-[var(--surface)] border border-white/[0.06] p-6">
           <h2 className="text-sm font-bold text-white mb-3">⚠️ High-Yield Tricky Points (JEE/NEET)</h2>
           <ul className="space-y-2">
             {tricky.map((t, i) => (

@@ -48,10 +48,10 @@ export default async function NcertPage() {
   if (error === "Unauthorized") {
     return (
       <Shell>
-        <div className="rounded-2xl border border-white/10 bg-white/[0.02] p-8 text-center">
+        <div className="rounded-lg border border-white/10 bg-white/[0.02] p-8 text-center">
           <h2 className="text-lg font-bold">Sign in to see your NCERT coverage</h2>
           <p className="mx-auto mt-2 max-w-md text-sm text-zinc-400">Coverage is tracked automatically from tests and practice.</p>
-          <Link href="/auth/signin" className="mt-5 inline-block rounded-xl bg-gradient-to-r from-cyan-400 to-sky-500 px-5 py-2.5 text-sm font-black text-black">
+          <Link href="/auth/signin" className="mt-5 inline-block rounded-xl bg-[var(--accent)] px-5 py-2.5 text-sm font-black text-black">
             Sign in →
           </Link>
         </div>
@@ -62,7 +62,7 @@ export default async function NcertPage() {
   if (error || !answers) {
     return (
       <Shell>
-        <p className="rounded-2xl border border-white/10 bg-white/[0.02] p-8 text-center text-sm text-white/55">
+        <p className="rounded-lg border border-white/10 bg-white/[0.02] p-8 text-center text-sm text-white/55">
           NCERT coverage is unavailable right now — try again shortly.
         </p>
       </Shell>
@@ -74,7 +74,7 @@ export default async function NcertPage() {
   if (!report.hasData) {
     return (
       <Shell>
-        <div className="rounded-2xl border border-white/10 bg-white/[0.02] p-8 text-center">
+        <div className="rounded-lg border border-white/10 bg-white/[0.02] p-8 text-center">
           <h2 className="text-lg font-bold">No coverage yet</h2>
           <p className="mx-auto mt-2 max-w-md text-sm text-zinc-400">
             Answer NCERT-linked questions in a{" "}
@@ -91,19 +91,19 @@ export default async function NcertPage() {
   return (
     <Shell>
       <div className="mb-8 grid grid-cols-2 gap-3 sm:grid-cols-4">
-        <div className="rounded-2xl border border-cyan-500/20 bg-cyan-500/[0.05] p-4 text-center">
+        <div className="rounded-lg border border-cyan-500/20 bg-cyan-500/[0.05] p-4 text-center">
           <div className="text-2xl font-black text-cyan-300">{coveragePct}%</div>
           <div className="mt-1 text-xs text-white/50">Coverage ({covered}/{totalLines})</div>
         </div>
-        <div className="rounded-2xl border border-emerald-500/20 bg-emerald-500/[0.05] p-4 text-center">
+        <div className="rounded-lg border border-emerald-500/20 bg-emerald-500/[0.05] p-4 text-center">
           <div className="text-2xl font-black text-emerald-300">{mastered}</div>
           <div className="mt-1 text-xs text-white/50">Mastered</div>
         </div>
-        <div className="rounded-2xl border border-rose-500/20 bg-rose-500/[0.05] p-4 text-center">
+        <div className="rounded-lg border border-rose-500/20 bg-rose-500/[0.05] p-4 text-center">
           <div className="text-2xl font-black text-rose-300">{weak}</div>
           <div className="mt-1 text-xs text-white/50">Weak</div>
         </div>
-        <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-4 text-center">
+        <div className="rounded-lg border border-white/10 bg-white/[0.03] p-4 text-center">
           <div className="text-2xl font-black text-white/70">{unseen}</div>
           <div className="mt-1 text-xs text-white/50">Not seen</div>
         </div>
@@ -123,7 +123,7 @@ export default async function NcertPage() {
 
       <div className="space-y-4">
         {chapters.map((ch) => (
-          <div key={ch.chapterKey} className="rounded-2xl border border-white/[0.08] bg-white/[0.02] p-4">
+          <div key={ch.chapterKey} className="rounded-lg border border-white/[0.08] bg-white/[0.02] p-4">
             <div className="mb-3 flex flex-wrap items-center justify-between gap-2">
               <span className="text-sm font-bold text-white">{ch.chapterKey}</span>
               <span className="text-xs text-white/45">

@@ -166,7 +166,7 @@ export default function SnapSolveUpload({ onUploadSuccess }: Props) {
   }
 
   return (
-    <div className="rounded-2xl border border-white/[0.08] bg-[#111827] p-5 space-y-4">
+    <div className="rounded-lg border border-white/[0.08] bg-[var(--surface)] p-5 space-y-4">
       <style>{`
         @keyframes snapFadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
         @keyframes snapBlink { 0%, 49% { opacity: 1; } 50%, 100% { opacity: 0; } }
@@ -181,7 +181,7 @@ export default function SnapSolveUpload({ onUploadSuccess }: Props) {
           </div>
 
           {/* Reasoning tokens (server-streamed) */}
-          <div className="rounded-xl border border-cyan-500/25 bg-[#0B0F19] p-4 shadow-[0_0_45px_-12px_rgba(34,211,238,0.4)]">
+          <div className="rounded-xl border border-cyan-500/25 bg-[var(--background)] p-4 shadow-[0_0_45px_-12px_rgba(34,211,238,0.4)]">
             {reasoning.length === 0 ? (
               <p className="font-mono text-[13px] text-white/40">
                 Connecting to the solver…
@@ -230,7 +230,7 @@ export default function SnapSolveUpload({ onUploadSuccess }: Props) {
       <button
         onClick={() => !isProcessing && cameraRef.current?.click()}
         disabled={isProcessing}
-        className="flex w-full items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-cyan-400 to-blue-500 py-3.5 font-bold text-black transition disabled:cursor-not-allowed disabled:opacity-40"
+        className="flex w-full items-center justify-center gap-2 rounded-lg bg-[var(--accent)] py-3.5 font-bold text-black transition disabled:cursor-not-allowed disabled:opacity-40"
       >
         <Camera className="h-5 w-5" /> Camera Mode — Snap &amp; Solve
       </button>
@@ -255,7 +255,7 @@ export default function SnapSolveUpload({ onUploadSuccess }: Props) {
           onClick={() => !isProcessing && fileRef.current?.click()}
           onDrop={handleDrop}
           onDragOver={(e) => e.preventDefault()}
-          className={`relative flex min-h-44 flex-col items-center justify-center rounded-2xl border-2 border-dashed p-5 text-center transition ${
+          className={`relative flex min-h-44 flex-col items-center justify-center rounded-lg border-2 border-dashed p-5 text-center transition ${
             isProcessing
               ? "cursor-not-allowed border-white/10 opacity-50"
               : "cursor-pointer border-white/15 bg-white/[0.02] hover:border-cyan-500/50 hover:bg-white/[0.04]"
@@ -281,7 +281,7 @@ export default function SnapSolveUpload({ onUploadSuccess }: Props) {
         </div>
 
         {/* Formula text box */}
-        <div className="relative flex min-h-44 flex-col rounded-2xl border border-white/[0.08] bg-[#0B0F19] p-3">
+        <div className="relative flex min-h-44 flex-col rounded-lg border border-white/[0.08] bg-[var(--background)] p-3">
           <div className="mb-1.5 flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-wider text-white/40">
             <Type className="h-3 w-3" /> Type the question
           </div>
@@ -315,7 +315,7 @@ export default function SnapSolveUpload({ onUploadSuccess }: Props) {
       <button
         onClick={handleSolve}
         disabled={!canSubmit}
-        className="flex w-full items-center justify-center gap-2 rounded-2xl border border-white/10 bg-white/5 py-3 font-bold text-white transition hover:bg-white/10 disabled:opacity-40"
+        className="flex w-full items-center justify-center gap-2 rounded-lg border border-white/10 bg-white/5 py-3 font-bold text-white transition hover:bg-white/10 disabled:opacity-40"
       >
         <Zap className="h-4 w-4" /> Solve This Problem
       </button>
@@ -333,8 +333,8 @@ export default function SnapSolveUpload({ onUploadSuccess }: Props) {
 
       {/* Paywall — free daily limit reached */}
       {paywall && !isProcessing && (
-        <div className="rounded-2xl border border-cyan-500/30 bg-cyan-500/[0.06] p-5 text-center space-y-3">
-          <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-2xl border border-cyan-400/30 bg-cyan-500/10">
+        <div className="rounded-lg border border-cyan-500/30 bg-cyan-500/[0.06] p-5 text-center space-y-3">
+          <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-lg border border-cyan-400/30 bg-cyan-500/10">
             <Lock className="h-5 w-5 text-cyan-300" />
           </div>
           <div>
@@ -344,7 +344,7 @@ export default function SnapSolveUpload({ onUploadSuccess }: Props) {
           <a
             href="/pricing"
             onClick={() => track("upgrade_click", { feature: "snap-solve" })}
-            className="inline-block w-full rounded-xl bg-gradient-to-r from-cyan-400 to-sky-500 py-2.5 text-sm font-bold text-black transition hover:-translate-y-0.5"
+            className="inline-block w-full rounded-xl bg-[var(--accent)] py-2.5 text-sm font-bold text-black transition hover:-translate-y-0.5"
           >
             Upgrade to Pro →
           </a>

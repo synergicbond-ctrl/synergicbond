@@ -51,7 +51,7 @@ export default function ActivityLog() {
     <div className="space-y-5">
 
       {/* Focus timer */}
-      <div className="flex items-center justify-between rounded-2xl bg-gradient-to-r from-cyan-500/10 to-purple-500/10 border border-cyan-500/20 px-5 py-3">
+      <div className="flex items-center justify-between rounded-lg bg-gradient-to-r from-cyan-500/10 to-purple-500/10 border border-cyan-500/20 px-5 py-3">
         <div className="flex items-center gap-2.5">
           <Clock className="h-4 w-4 text-cyan-400 animate-pulse" />
           <span className="text-xs font-bold text-white/70 tracking-wide">⚡ SESSION FOCUS TIME</span>
@@ -62,7 +62,7 @@ export default function ActivityLog() {
       <div className="grid gap-5 lg:grid-cols-2">
 
         {/* Recently Read */}
-        <div className="rounded-2xl bg-[#111827] border border-white/[0.06] p-5">
+        <div className="rounded-lg bg-[var(--surface)] border border-white/[0.06] p-5">
           <div className="flex items-center gap-2 mb-4">
             <BookOpen className="h-4 w-4 text-cyan-400" />
             <h3 className="text-sm font-bold text-white">Recently Read</h3>
@@ -81,7 +81,7 @@ export default function ActivityLog() {
         </div>
 
         {/* Search History */}
-        <div className="rounded-2xl bg-[#111827] border border-white/[0.06] p-5">
+        <div className="rounded-lg bg-[var(--surface)] border border-white/[0.06] p-5">
           <div className="flex items-center gap-2 mb-4">
             <Search className="h-4 w-4 text-purple-400" />
             <h3 className="text-sm font-bold text-white">Search History</h3>
@@ -96,7 +96,7 @@ export default function ActivityLog() {
         </div>
 
         {/* Solved Engine */}
-        <div className="rounded-2xl bg-[#111827] border border-white/[0.06] p-5">
+        <div className="rounded-lg bg-[var(--surface)] border border-white/[0.06] p-5">
           <div className="flex items-center gap-2 mb-4">
             <Target className="h-4 w-4 text-emerald-400" />
             <h3 className="text-sm font-bold text-white">Solved Engine</h3>
@@ -121,7 +121,7 @@ export default function ActivityLog() {
         </div>
 
         {/* Assignments Tracker */}
-        <div className="rounded-2xl bg-[#111827] border border-white/[0.06] p-5">
+        <div className="rounded-lg bg-[var(--surface)] border border-white/[0.06] p-5">
           <div className="flex items-center gap-2 mb-4">
             <ClipboardCheck className="h-4 w-4 text-amber-400" />
             <h3 className="text-sm font-bold text-white">Assignments Tracker</h3>
@@ -137,7 +137,7 @@ export default function ActivityLog() {
         </div>
 
         {/* Time-Spent on Paper */}
-        <div className="rounded-2xl bg-[#111827] border border-white/[0.06] p-5">
+        <div className="rounded-lg bg-[var(--surface)] border border-white/[0.06] p-5">
           <div className="flex items-center gap-2 mb-4">
             <Timer className="h-4 w-4 text-cyan-400" />
             <h3 className="text-sm font-bold text-white">Time-Spent on Paper</h3>
@@ -150,7 +150,7 @@ export default function ActivityLog() {
                   <span className="text-white/40">{t.mins} min</span>
                 </div>
                 <div className="h-1.5 rounded-full bg-white/[0.06] overflow-hidden">
-                  <div className="h-full rounded-full bg-gradient-to-r from-cyan-400 to-sky-500" style={{ width: `${(t.mins / maxMins) * 100}%` }} />
+                  <div className="h-full rounded-full bg-[var(--accent)]" style={{ width: `${(t.mins / maxMins) * 100}%` }} />
                 </div>
               </div>
             ))}
@@ -158,7 +158,7 @@ export default function ActivityLog() {
         </div>
 
         {/* National Rank Engine */}
-        <div className="rounded-2xl bg-[#111827] border border-white/[0.06] p-5 relative overflow-hidden">
+        <div className="rounded-lg bg-[var(--surface)] border border-white/[0.06] p-5 relative overflow-hidden">
           <div className="flex items-center gap-2 mb-4">
             <Trophy className="h-4 w-4 text-amber-400" />
             <h3 className="text-sm font-bold text-white">National Rank Engine</h3>

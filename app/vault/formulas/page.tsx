@@ -29,7 +29,7 @@ export default function FormulasPage() {
           </h2>
           <div className="space-y-4">
             {formulas.map((f, i) => (
-              <div key={i} className="bg-white dark:bg-slate-900 rounded-2xl p-6 border border-slate-100 dark:border-slate-800">
+              <div key={i} className="bg-white dark:bg-slate-900 rounded-lg p-6 border border-slate-100 dark:border-slate-800">
                 <h3 className="font-bold text-slate-800 dark:text-white mb-3">{f.title}</h3>
 
                 <div className="bg-indigo-50 dark:bg-indigo-950/30 border border-indigo-200 dark:border-indigo-800 rounded-xl p-4 font-mono text-sm text-indigo-800 dark:text-indigo-300 mb-4 overflow-x-auto">

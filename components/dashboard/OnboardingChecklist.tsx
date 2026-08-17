@@ -41,7 +41,7 @@ const STEPS = [
 
 export function OnboardingChecklist({ state }: { state: OnboardingState }) {
   return (
-    <section className="rounded-2xl border border-cyan-500/20 bg-cyan-500/[0.05] p-5">
+    <section className="rounded-lg border border-cyan-500/20 bg-cyan-500/[0.05] p-5">
       <h2 className="text-sm font-bold uppercase tracking-wider text-cyan-300">🚀 Getting started</h2>
       <p className="mt-1 text-xs text-white/50">
         Three steps to see what SYNERGIC BOND can do — all free.

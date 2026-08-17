@@ -108,7 +108,7 @@ export default function BoardExaminerPage() {
         </button>
 
         {result && (
-          <div className="space-y-5 rounded-2xl border border-white/[0.08] bg-[#111827] p-5">
+          <div className="space-y-5 rounded-lg border border-white/[0.08] bg-[var(--surface)] p-5">
             <div className="flex items-center gap-4">
               <div className="text-4xl font-black text-amber-300">{result.marksAwarded}<span className="text-lg text-white/40">/{result.maxMarks}</span></div>
               <div className="flex-1">

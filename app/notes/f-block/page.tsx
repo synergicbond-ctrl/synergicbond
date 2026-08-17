@@ -31,7 +31,7 @@ export default function FBlockHubPage() {
         <span className="text-fuchsia-300">F-block Elements</span>
       </nav>
 
-      <header className="mb-8 overflow-hidden rounded-3xl border border-fuchsia-300/15 bg-[radial-gradient(circle_at_top_right,rgba(217,70,239,.20),transparent_34%),radial-gradient(circle_at_bottom_left,rgba(6,182,212,.12),transparent_32%),linear-gradient(135deg,#090d18,#0b1422_60%,#170b20)] p-6 shadow-2xl shadow-black/25 sm:p-8">
+      <header className="mb-8 overflow-hidden rounded-lg border border-fuchsia-300/15 bg-[radial-gradient(circle_at_top_right,rgba(217,70,239,.20),transparent_34%),radial-gradient(circle_at_bottom_left,rgba(6,182,212,.12),transparent_32%),linear-gradient(135deg,#090d18,#0b1422_60%,#170b20)] p-6 shadow-2xl shadow-black/25 sm:p-8">
         <div className="flex flex-wrap gap-2">
           <span className="rounded-full border border-fuchsia-400/25 bg-fuchsia-500/10 px-3 py-1 text-xs font-black text-fuchsia-200">JEE ADVANCED</span>
           <span className="rounded-full border border-emerald-400/25 bg-emerald-500/10 px-3 py-1 text-xs font-black text-emerald-200">NCERT-FIRST</span>
@@ -47,7 +47,7 @@ export default function FBlockHubPage() {
 
         <div className="mt-7 grid grid-cols-2 gap-3 lg:grid-cols-4">
           {STATS.map(([value, label]) => (
-            <div key={label} className="rounded-2xl border border-white/10 bg-white/[.045] px-4 py-4">
+            <div key={label} className="rounded-lg border border-white/10 bg-white/[.045] px-4 py-4">
               <p className="text-2xl font-black text-fuchsia-200">{value}</p>
               <p className="mt-1 text-xs font-bold uppercase tracking-[.12em] text-slate-400">{label}</p>
             </div>
@@ -65,7 +65,7 @@ export default function FBlockHubPage() {
           ["JEE depth", "Orders, exceptions, actinyl ions, redox stability, separation chemistry, assertion–reason checks and integrated examples."],
           ["Revision ready", "Compact tables, configuration atlas, trend matrix and a final checklist for fast advanced-level revision."],
         ].map(([title, copy]) => (
-          <article key={title} className="rounded-2xl border border-white/10 bg-[#0a1220] p-5">
+          <article key={title} className="rounded-lg border border-white/10 bg-[#0a1220] p-5">
             <h2 className="font-black text-white">{title}</h2>
             <p className="mt-2 text-sm leading-6 text-slate-400">{copy}</p>
           </article>

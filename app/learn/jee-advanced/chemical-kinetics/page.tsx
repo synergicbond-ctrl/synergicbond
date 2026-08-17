@@ -36,7 +36,7 @@ export default function ChemicalKineticsIndexPage() {
         <section className="mx-auto max-w-[1320px] px-4 py-12 sm:px-7 lg:px-10">
           <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
             {CHEMICAL_KINETICS_PARTS.map((item) => (
-              <a key={item.part} href={`/learn/jee-advanced/chemical-kinetics/parts/${item.slug}`} className="group rounded-3xl border border-white/10 bg-slate-950/70 p-5 transition hover:-translate-y-0.5 hover:border-cyan-300/25 hover:bg-white/[0.04] sm:p-6">
+              <a key={item.part} href={`/learn/jee-advanced/chemical-kinetics/parts/${item.slug}`} className="group rounded-lg border border-white/10 bg-slate-950/70 p-5 transition hover:-translate-y-0.5 hover:border-cyan-300/25 hover:bg-white/[0.04] sm:p-6">
                 <div className="flex items-start justify-between gap-4">
                   <span className="font-mono text-sm font-bold text-cyan-300">{String(item.part).padStart(2, '0')}</span>
                   <span className="text-sm text-slate-600 transition group-hover:text-cyan-300">Open →</span>

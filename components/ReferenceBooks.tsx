@@ -43,7 +43,7 @@ export default function ReferenceBooks() {
         {books.map((book) => (
           <div
             key={book.title + book.author}
-            className="group relative rounded-3xl bg-gradient-to-b from-[#111827]/95 to-[#0B0F19]/95 border border-white/15 p-6 flex gap-5 backdrop-blur-2xl transition-all duration-500 hover:-translate-y-2 hover:border-white/30 hover:shadow-[0_20px_40px_rgba(0,0,0,0.6)]"
+            className="group relative rounded-lg bg-gradient-to-b from-[#111827]/95 to-[#0B0F19]/95 border border-white/15 p-6 flex gap-5 backdrop-blur-2xl transition-all duration-500 hover:-translate-y-2 hover:border-white/30 hover:shadow-[0_20px_40px_rgba(0,0,0,0.6)]"
             style={{ boxShadow: `0 10px 30px -15px ${book.color}26` }}
           >
             {/* Ambient hover glow */}

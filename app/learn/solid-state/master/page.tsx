@@ -18,7 +18,7 @@ export default function Page() {
   return (
     <main className="min-h-screen bg-[radial-gradient(circle_at_12%_0%,rgba(34,211,238,.08),transparent_30%),radial-gradient(circle_at_88%_4%,rgba(139,92,246,.08),transparent_28%),linear-gradient(#07111d,#060b12)] text-white">
       <div className="mx-auto max-w-7xl px-4 py-10 md:px-6 md:py-14">
-        <header className="rounded-3xl border border-cyan-300/20 bg-[#0b1a28]/95 px-6 py-9 md:px-10 md:py-12">
+        <header className="rounded-lg border border-cyan-300/20 bg-[#0b1a28]/95 px-6 py-9 md:px-10 md:py-12">
           <p className="text-xs font-black uppercase tracking-[.2em] text-cyan-300">JEE Advanced · Physical Chemistry</p>
           <h1 className="mt-5 text-5xl font-black tracking-[-.045em] text-white md:text-7xl">Solid State</h1>
           <p className="mt-6 max-w-4xl text-lg leading-8 text-slate-300 md:text-xl md:leading-9">
@@ -45,7 +45,7 @@ export default function Page() {
               <Link
                 key={part.number}
                 href={`/learn/solid-state/master/part${String(part.number).padStart(2, "0")}`}
-                className="group grid gap-4 rounded-2xl border border-white/10 bg-[#0d1b29]/95 px-6 py-6 transition hover:-translate-y-0.5 hover:border-cyan-300/40 hover:bg-[#102131] sm:grid-cols-[58px_1fr]"
+                className="group grid gap-4 rounded-lg border border-white/10 bg-[#0d1b29]/95 px-6 py-6 transition hover:-translate-y-0.5 hover:border-cyan-300/40 hover:bg-[#102131] sm:grid-cols-[58px_1fr]"
               >
                 <div className="flex h-12 w-12 items-center justify-center rounded-full border border-cyan-300/30 bg-cyan-300/[0.08] text-sm font-black text-cyan-100">
                   {String(part.number).padStart(2, "0")}

@@ -92,7 +92,7 @@ export function ChemBondPartShell({ part, title, children }: { part: number; tit
 }
 
 export function NoteBlock({ title, children }: { title?: string; children: ReactNode }) {
-  return <div className="rounded-2xl border border-cyan-300/[0.12] bg-[linear-gradient(135deg,rgba(16,33,48,.88),rgba(12,20,35,.9))] p-5 shadow-lg shadow-black/20 sm:p-6">{title ? <h2 className="mb-3 text-lg font-black text-cyan-200">{title}</h2> : null}<div className="space-y-3 text-sm leading-relaxed text-slate-100 sm:text-base">{children}</div></div>;
+  return <div className="rounded-lg border border-cyan-300/[0.12] bg-[linear-gradient(135deg,rgba(16,33,48,.88),rgba(12,20,35,.9))] p-5 shadow-lg shadow-black/20 sm:p-6">{title ? <h2 className="mb-3 text-lg font-black text-cyan-200">{title}</h2> : null}<div className="space-y-3 text-sm leading-relaxed text-slate-100 sm:text-base">{children}</div></div>;
 }
 
 export function TopicBlock({ number, title, children }: { number: number; title: string; children: ReactNode }) {
@@ -108,15 +108,15 @@ export function TopicBlock({ number, title, children }: { number: number; title:
 }
 
 export function LearningObjectives({ items }: { items: ReactNode[] }) {
-  return <aside aria-label="Learning objectives" className="rounded-2xl border border-violet-300/20 bg-violet-400/[0.06] p-5"><p className="text-xs font-black uppercase tracking-[0.18em] text-violet-200">In this part</p><ul className="mt-3 grid gap-2 text-sm leading-relaxed text-slate-200 sm:grid-cols-2">{items.map((item, index) => <li key={index} className="border-l-2 border-violet-300/60 pl-3">{item}</li>)}</ul></aside>;
+  return <aside aria-label="Learning objectives" className="rounded-lg border border-violet-300/20 bg-violet-400/[0.06] p-5"><p className="text-xs font-black uppercase tracking-[0.18em] text-violet-200">In this part</p><ul className="mt-3 grid gap-2 text-sm leading-relaxed text-slate-200 sm:grid-cols-2">{items.map((item, index) => <li key={index} className="border-l-2 border-violet-300/60 pl-3">{item}</li>)}</ul></aside>;
 }
 
 export function TextbookExamples({ items }: { items: { title: string; body: string }[] }) {
-  return <section className="rounded-2xl border border-emerald-300/20 bg-emerald-300/[0.045] p-4 sm:p-5"><p className="text-xs font-black uppercase tracking-[0.18em] text-emerald-200">Textbook examples</p><div className="mt-3 grid gap-3 md:grid-cols-2">{items.map((item) => <article key={item.title} className="rounded-xl border border-emerald-200/15 bg-black/15 p-4"><h3 className="text-sm font-black text-emerald-100">{item.title}</h3><p className="mt-1 text-sm leading-relaxed text-slate-100">{item.body}</p></article>)}</div></section>;
+  return <section className="rounded-lg border border-emerald-300/20 bg-emerald-300/[0.045] p-4 sm:p-5"><p className="text-xs font-black uppercase tracking-[0.18em] text-emerald-200">Textbook examples</p><div className="mt-3 grid gap-3 md:grid-cols-2">{items.map((item) => <article key={item.title} className="rounded-xl border border-emerald-200/15 bg-black/15 p-4"><h3 className="text-sm font-black text-emerald-100">{item.title}</h3><p className="mt-1 text-sm leading-relaxed text-slate-100">{item.body}</p></article>)}</div></section>;
 }
 
 export function WorkedExample({ title, children }: { title: string; children: ReactNode }) {
-  return <section className="rounded-2xl border border-amber-300/20 bg-amber-300/[0.045] p-5"><p className="text-[11px] font-black uppercase tracking-[0.18em] text-amber-200">Worked example</p><h2 className="mt-1 text-lg font-black text-white">{title}</h2><div className="mt-4 space-y-3 text-sm leading-relaxed text-slate-100 sm:text-base">{children}</div></section>;
+  return <section className="rounded-lg border border-amber-300/20 bg-amber-300/[0.045] p-5"><p className="text-[11px] font-black uppercase tracking-[0.18em] text-amber-200">Worked example</p><h2 className="mt-1 text-lg font-black text-white">{title}</h2><div className="mt-4 space-y-3 text-sm leading-relaxed text-slate-100 sm:text-base">{children}</div></section>;
 }
 
 export function ImportantNote({ title = "Important note", children }: { title?: string; children: ReactNode }) {
@@ -132,11 +132,11 @@ export function TrapCallout({ trap, reality }: { trap: ReactNode; reality: React
 }
 
 export function PracticeQuestion({ prompt, answer }: { prompt: ReactNode; answer?: ReactNode }) {
-  return <section className="rounded-2xl border border-violet-300/20 bg-violet-300/[0.06] p-5"><p className="text-xs font-black uppercase tracking-[0.18em] text-violet-200">Check your understanding</p><div className="mt-2 text-sm leading-relaxed text-white sm:text-base">{prompt}</div>{answer ? <div className="mt-3 border-t border-white/10 pt-3 text-sm text-violet-100"><span className="font-bold text-emerald-300">Answer: </span><span className="text-emerald-100">{answer}</span></div> : null}</section>;
+  return <section className="rounded-lg border border-violet-300/20 bg-violet-300/[0.06] p-5"><p className="text-xs font-black uppercase tracking-[0.18em] text-violet-200">Check your understanding</p><div className="mt-2 text-sm leading-relaxed text-white sm:text-base">{prompt}</div>{answer ? <div className="mt-3 border-t border-white/10 pt-3 text-sm text-violet-100"><span className="font-bold text-emerald-300">Answer: </span><span className="text-emerald-100">{answer}</span></div> : null}</section>;
 }
 
 export function SummaryStrip({ items }: { items: ReactNode[] }) {
-  return <section aria-label="Key takeaways" className="grid gap-px overflow-hidden rounded-2xl border border-cyan-300/20 bg-cyan-300/20 sm:grid-cols-3">{items.map((item, index) => <p key={index} className="bg-[#0b1728] p-4 text-sm font-semibold leading-relaxed text-cyan-50">{item}</p>)}</section>;
+  return <section aria-label="Key takeaways" className="grid gap-px overflow-hidden rounded-lg border border-cyan-300/20 bg-cyan-300/20 sm:grid-cols-3">{items.map((item, index) => <p key={index} className="bg-[#0b1728] p-4 text-sm font-semibold leading-relaxed text-cyan-50">{item}</p>)}</section>;
 }
 
 export function FormulaLine({ math }: { math: string }) {
@@ -145,5 +145,5 @@ export function FormulaLine({ math }: { math: string }) {
 export function MathText({ math }: { math: string }) { return <InlineMath math={math} />; }
 export function BulletList({ items }: { items: ReactNode[] }) { return <ul className="space-y-2">{items.map((item, index) => <li key={index} className="flex gap-3"><span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-fuchsia-400" /><span>{item}</span></li>)}</ul>; }
 export function DataTable({ headers, rows }: { headers: ReactNode[]; rows: ReactNode[][] }) { return <div className="overflow-x-auto rounded-lg border border-white/[0.08]"><table className="min-w-full text-left text-sm"><thead className="bg-white/[0.06] text-white"><tr>{headers.map((header, index) => <th key={index} className="px-4 py-3 font-black">{header}</th>)}</tr></thead><tbody className="divide-y divide-white/[0.06] text-white/75">{rows.map((row, rowIndex) => <tr key={rowIndex}>{row.map((cell, cellIndex) => <td key={cellIndex} className="px-4 py-3 align-top">{cell}</td>)}</tr>)}</tbody></table></div>; }
-export function DiagramBox({ title, children }: { title: string; children: ReactNode }) { return <figure className="rounded-2xl border border-cyan-400/20 bg-cyan-400/[0.04] p-4"><figcaption className="mb-3 text-xs font-black uppercase tracking-[0.2em] text-cyan-200">Diagram: {title}</figcaption><div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-3 [&>p]:w-full [&>div]:w-full [&>figure]:w-full [&_svg]:h-auto [&>svg]:w-full [&>svg]:max-w-3xl">{children}</div></figure>; }
+export function DiagramBox({ title, children }: { title: string; children: ReactNode }) { return <figure className="rounded-lg border border-cyan-400/20 bg-cyan-400/[0.04] p-4"><figcaption className="mb-3 text-xs font-black uppercase tracking-[0.2em] text-cyan-200">Diagram: {title}</figcaption><div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-3 [&>p]:w-full [&>div]:w-full [&>figure]:w-full [&_svg]:h-auto [&>svg]:w-full [&>svg]:max-w-3xl">{children}</div></figure>; }
 export function PartNavigator({ previous, next }: { previous?: { href: string; label: string }; next?: { href: string; label: string } }) { return <nav aria-label="Continue through Chemical Bonding" className="flex items-stretch justify-between gap-3 border-t border-white/10 pt-6">{previous ? <Link href={previous.href} className="rounded-xl border border-white/15 px-4 py-3 text-sm font-semibold text-slate-200">← {previous.label}</Link> : <span />}{next ? <Link href={next.href} className="rounded-xl border border-cyan-300/30 bg-cyan-300/10 px-4 py-3 text-right text-sm font-semibold text-cyan-100">{next.label} →</Link> : null}</nav>; }

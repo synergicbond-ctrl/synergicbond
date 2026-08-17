@@ -74,7 +74,7 @@ export default function StudyPlanPage() {
         {!plan && (
           <div className="space-y-6">
             {/* Exam */}
-            <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-6">
+            <div className="rounded-lg border border-white/10 bg-white/[0.03] p-6">
               <h3 className="font-bold mb-4">1. Select Your Exam</h3>
               <div className="flex flex-wrap gap-2">
                 {["NEET", "JEE Main", "JEE Advanced", "GATE", "NSEC"].map((e) => (
@@ -87,7 +87,7 @@ export default function StudyPlanPage() {
             </div>
 
             {/* Weak topics */}
-            <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-6">
+            <div className="rounded-lg border border-white/10 bg-white/[0.03] p-6">
               <h3 className="font-bold mb-4">2. Select Your Weak Topics ({selectedTopics.length} selected)</h3>
               <div className="flex flex-wrap gap-2">
                 {WEAK_TOPICS_LIST.map((t) => (
@@ -101,12 +101,12 @@ export default function StudyPlanPage() {
 
             {/* Date & Hours */}
             <div className="grid gap-4 sm:grid-cols-2">
-              <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-6">
+              <div className="rounded-lg border border-white/10 bg-white/[0.03] p-6">
                 <h3 className="font-bold mb-3">3. Exam Date (optional)</h3>
                 <input type="date" value={examDate} onChange={(e) => setExamDate(e.target.value)}
                   className="w-full rounded-xl border border-white/10 bg-black/30 px-4 py-2 text-white" />
               </div>
-              <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-6">
+              <div className="rounded-lg border border-white/10 bg-white/[0.03] p-6">
                 <h3 className="font-bold mb-3">4. Daily Study Hours: {hours}h</h3>
                 <input type="range" min={1} max={12} value={hours} onChange={(e) => setHours(Number(e.target.value))}
                   className="w-full accent-cyan-500" />
@@ -119,7 +119,7 @@ export default function StudyPlanPage() {
             {error && <p className="text-red-400">{error}</p>}
 
             <button onClick={generatePlan} disabled={selectedTopics.length === 0 || loading}
-              className="w-full rounded-2xl bg-gradient-to-r from-cyan-400 to-blue-500 py-4 font-bold text-black disabled:opacity-40 text-lg">
+              className="w-full rounded-lg bg-[var(--accent)] py-4 font-bold text-black disabled:opacity-40 text-lg">
               {loading ? "🤖 AI is building your plan..." : "🚀 Generate My Study Plan"}
             </button>
           </div>
@@ -132,7 +132,7 @@ export default function StudyPlanPage() {
               <button onClick={() => setPlan(null)} className="text-sm text-white/40 hover:text-white transition">← Start over</button>
             </div>
 
-            <div className="rounded-2xl border border-cyan-500/20 bg-cyan-950/20 p-4">
+            <div className="rounded-lg border border-cyan-500/20 bg-cyan-950/20 p-4">
               <p className="text-cyan-300 font-semibold">Strategy</p>
               <p className="text-white/80 mt-1">{plan.strategy}</p>
             </div>
@@ -149,7 +149,7 @@ export default function StudyPlanPage() {
 
             {/* Weeks */}
             {plan.weeks?.map((week) => (
-              <div key={week.week} className="rounded-2xl border border-white/10 bg-white/[0.03] p-6">
+              <div key={week.week} className="rounded-lg border border-white/10 bg-white/[0.03] p-6">
                 <h3 className="font-bold text-lg mb-1">Week {week.week}: {week.theme}</h3>
                 <p className="text-white/50 text-sm mb-4">{week.focus}</p>
                 <div className="space-y-3">
@@ -176,7 +176,7 @@ export default function StudyPlanPage() {
             ))}
 
             {/* Tips */}
-            <div className="rounded-2xl border border-violet-500/20 bg-violet-950/20 p-6">
+            <div className="rounded-lg border border-violet-500/20 bg-violet-950/20 p-6">
               <h3 className="font-bold mb-3 text-violet-300">💡 Expert Tips</h3>
               {plan.tips?.map((tip: string, i: number) => (
                 <p key={i} className="text-white/80 text-sm mb-1">• {tip}</p>

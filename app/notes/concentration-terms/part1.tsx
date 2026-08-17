@@ -7,7 +7,7 @@ export default function ConcentrationTermsPart1() {
   return (
     <main className="min-h-screen bg-slate-950 px-4 py-8 text-slate-100 md:px-10">
       <article className="mx-auto max-w-5xl space-y-10">
-        <header className="rounded-3xl border border-rose-400/30 bg-gradient-to-br from-slate-900 via-slate-900 to-slate-950 p-6 shadow-2xl md:p-8">
+        <header className="rounded-lg border border-rose-400/30 bg-gradient-to-br from-slate-900 via-slate-900 to-slate-950 p-6 shadow-2xl md:p-8">
           <div className="flex items-center justify-between">
             <span className="rounded-full bg-rose-500/20 px-3 py-1 text-xs font-bold uppercase tracking-[0.2em] text-rose-300">
               Concentration Terms — Topic 1
@@ -30,7 +30,7 @@ export default function ConcentrationTermsPart1() {
             1. Solution Definition &amp; Phase Selection Criteria
           </h2>
 
-          <div className="rounded-2xl border border-slate-800 bg-slate-900 p-6 space-y-4 text-sm leading-relaxed text-slate-200">
+          <div className="rounded-lg border border-slate-800 bg-slate-900 p-6 space-y-4 text-sm leading-relaxed text-slate-200">
             <p>
               A <strong className="text-white">Solution</strong> is defined as a homogeneous mixture of two or more pure chemical substances whose composition can be varied continuously within certain limits.
             </p>
@@ -71,7 +71,7 @@ export default function ConcentrationTermsPart1() {
             2. Classification of Binary Solutions across Physical States
           </h2>
 
-          <div className="rounded-2xl border border-slate-800 bg-slate-900 p-6 space-y-4">
+          <div className="rounded-lg border border-slate-800 bg-slate-900 p-6 space-y-4">
             <p className="text-sm text-slate-300 leading-relaxed">
               Depending on the physical state of the solute and solvent, nine distinct types of binary solutions can exist:
             </p>
@@ -147,7 +147,7 @@ export default function ConcentrationTermsPart1() {
             3. The Percentage Concentration Method (<InlineMath math="\% w/w, \% w/v, \% v/v, \% v/w" />)
           </h2>
 
-          <div className="rounded-2xl border border-slate-800 bg-slate-900 p-6 space-y-4 text-sm leading-relaxed text-slate-200">
+          <div className="rounded-lg border border-slate-800 bg-slate-900 p-6 space-y-4 text-sm leading-relaxed text-slate-200">
             <p>
               The percentage method expresses the quantity of solute dissolved in exactly <InlineMath math="100\text{ units}" /> (grams or millilitres) of the total solution.
             </p>
@@ -210,7 +210,7 @@ export default function ConcentrationTermsPart1() {
             4. Solved Application: Density Interconversion
           </h2>
 
-          <div className="rounded-2xl border border-slate-800 bg-slate-900 p-6 space-y-4 text-sm leading-relaxed text-slate-200">
+          <div className="rounded-lg border border-slate-800 bg-slate-900 p-6 space-y-4 text-sm leading-relaxed text-slate-200">
             <div className="rounded-xl border border-slate-800 bg-slate-950 p-5 space-y-3">
               <h3 className="font-bold text-white text-base">Problem Statement</h3>
               <p className="text-slate-300 text-xs leading-relaxed">
@@ -239,7 +239,7 @@ export default function ConcentrationTermsPart1() {
         </section>
 
         {/* Footer info */}
-        <footer className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 text-center text-xs text-slate-400">
+        <footer className="rounded-lg border border-slate-800 bg-slate-900/60 p-6 text-center text-xs text-slate-400">
           <p>Concentration Terms Module • Topic 1: Solute vs Solvent Definitions &amp; Percentage Method</p>
         </footer>
       </article>

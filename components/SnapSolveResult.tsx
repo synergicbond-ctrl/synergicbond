@@ -125,7 +125,7 @@ function SnapSolveDeepLinks({ data }: { data: SnapSolveResponse }) {
   const hasOrders = links.orders.length > 0;
 
   return (
-    <div className="space-y-5 rounded-2xl border border-cyan-500/15 bg-cyan-500/[0.03] p-4">
+    <div className="space-y-5 rounded-lg border border-cyan-500/15 bg-cyan-500/[0.03] p-4">
       <p className="text-[10px] font-black uppercase tracking-[0.3em] text-cyan-300/80">Connected in your Chemistry OS</p>
 
       {/* Concept Detected */}
@@ -201,8 +201,8 @@ export default function SnapSolveResult({ data }: { data: SnapSolveResponse }) {
   // Fallback intercepted → swap the entire viewport to a defensive card.
   if (data.fallbackTriggered) {
     return (
-      <div className="flex flex-col items-center justify-center rounded-2xl border border-amber-500/25 bg-amber-500/[0.06] p-8 text-center">
-        <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-amber-500/15">
+      <div className="flex flex-col items-center justify-center rounded-lg border border-amber-500/25 bg-amber-500/[0.06] p-8 text-center">
+        <div className="flex h-14 w-14 items-center justify-center rounded-lg bg-amber-500/15">
           <Camera className="h-7 w-7 text-amber-300" />
         </div>
         <h3 className="mt-4 text-lg font-black text-amber-100">Couldn’t read that clearly</h3>
@@ -211,15 +211,15 @@ export default function SnapSolveResult({ data }: { data: SnapSolveResponse }) {
           Try one of these for an exact solution:
         </p>
         <div className="mt-5 grid w-full max-w-sm gap-2.5 text-left">
-          <div className="flex items-center gap-3 rounded-xl border border-white/[0.06] bg-[#111827] px-4 py-3">
+          <div className="flex items-center gap-3 rounded-xl border border-white/[0.06] bg-[var(--surface)] px-4 py-3">
             <Keyboard className="h-4 w-4 shrink-0 text-cyan-300" />
             <span className="text-sm text-white/80">Type the formula or question manually</span>
           </div>
-          <div className="flex items-center gap-3 rounded-xl border border-white/[0.06] bg-[#111827] px-4 py-3">
+          <div className="flex items-center gap-3 rounded-xl border border-white/[0.06] bg-[var(--surface)] px-4 py-3">
             <SunMedium className="h-4 w-4 shrink-0 text-cyan-300" />
             <span className="text-sm text-white/80">Retake under clearer lighting / higher contrast</span>
           </div>
-          <div className="flex items-center gap-3 rounded-xl border border-white/[0.06] bg-[#111827] px-4 py-3">
+          <div className="flex items-center gap-3 rounded-xl border border-white/[0.06] bg-[var(--surface)] px-4 py-3">
             <Camera className="h-4 w-4 shrink-0 text-cyan-300" />
             <span className="text-sm text-white/80">Crop tightly to a single question</span>
           </div>
@@ -231,7 +231,7 @@ export default function SnapSolveResult({ data }: { data: SnapSolveResponse }) {
   const cls = CLASS_STYLE[data.classification];
 
   return (
-    <div className="rounded-2xl border border-white/[0.08] bg-[#111827] p-5 space-y-5">
+    <div className="rounded-lg border border-white/[0.08] bg-[var(--surface)] p-5 space-y-5">
       {/* scoped keyframes for the sequential timeline reveal */}
       <style>{`@keyframes snapFadeUp{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}`}</style>
 

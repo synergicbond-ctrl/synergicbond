@@ -39,7 +39,7 @@ export default function ReviseTodayCard() {
   const caughtUp = due === 0;
 
   return (
-    <section className="relative flex flex-col overflow-hidden rounded-3xl border border-violet-400/25 bg-[linear-gradient(135deg,rgba(139,92,246,0.13),transparent_42%),#111827] p-5 shadow-[0_24px_55px_-44px_rgba(139,92,246,0.85)]">
+    <section className="relative flex flex-col overflow-hidden rounded-lg border border-violet-400/25 bg-[linear-gradient(135deg,rgba(139,92,246,0.13),transparent_42%),#111827] p-5 shadow-[0_24px_55px_-44px_rgba(139,92,246,0.85)]">
       <span aria-hidden="true" className="absolute right-5 top-4 text-5xl font-black text-violet-300/[0.06]">R</span>
       <h3 className="relative flex items-center gap-2 font-serif text-xl font-black">
         <History className="h-5 w-5 text-violet-400" /> Revise Today

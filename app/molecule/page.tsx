@@ -74,7 +74,7 @@ export default function MoleculePage() {
             placeholder="Enter compound name or formula (e.g. Benzene, H2SO4)"
             className="flex-1 rounded-xl border border-white/10 bg-white/5 px-4 py-3 focus:outline-none focus:border-cyan-500" />
           <button onClick={() => handleSearch()}
-            className="rounded-xl bg-gradient-to-r from-cyan-400 to-blue-500 px-6 py-3 font-bold text-black">
+            className="rounded-xl bg-[var(--accent)] px-6 py-3 font-bold text-black">
             {loading ? "..." : "Explore"}
           </button>
         </div>
@@ -101,7 +101,7 @@ export default function MoleculePage() {
         {data && (
           <div className="space-y-6">
             {/* Header */}
-            <div className="rounded-2xl border border-cyan-500/20 bg-cyan-950/20 p-6">
+            <div className="rounded-lg border border-cyan-500/20 bg-cyan-950/20 p-6">
               <div className="flex items-start justify-between flex-wrap gap-4">
                 <div>
                   <h2 className="text-3xl font-bold text-cyan-300">{data.formula}</h2>
@@ -141,7 +141,7 @@ export default function MoleculePage() {
             </div>
 
             {/* Uses */}
-            <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-6">
+            <div className="rounded-lg border border-white/10 bg-white/[0.03] p-6">
               <h3 className="font-bold text-lg mb-3">🏭 Uses & Applications</h3>
               <div className="flex flex-wrap gap-2">
                 {data.uses?.map((use: string, i: number) => (
@@ -151,7 +151,7 @@ export default function MoleculePage() {
             </div>
 
             {/* Exam Relevance */}
-            <div className="rounded-2xl border border-yellow-500/20 bg-yellow-950/20 p-6">
+            <div className="rounded-lg border border-yellow-500/20 bg-yellow-950/20 p-6">
               <h3 className="font-bold text-lg mb-4 text-yellow-300">🎯 Exam Relevance</h3>
               <div className="grid gap-4 sm:grid-cols-2">
                 <div>
@@ -170,7 +170,7 @@ export default function MoleculePage() {
             </div>
 
             {/* Fun fact */}
-            <div className="rounded-2xl border border-purple-500/20 bg-purple-950/20 p-4">
+            <div className="rounded-lg border border-purple-500/20 bg-purple-950/20 p-4">
               <p className="text-purple-300 font-semibold">💡 Fun Fact</p>
               <p className="text-white/80 mt-1">{data.funFact}</p>
             </div>

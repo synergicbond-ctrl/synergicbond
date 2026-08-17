@@ -13,7 +13,7 @@ export default function ProgressCard({
       : Math.round((completedConcepts / totalConcepts) * 100);
 
   return (
-    <section className="rounded-2xl border border-green-700 bg-green-950/20 p-6">
+    <section className="rounded-lg border border-green-700 bg-green-950/20 p-6">
       <h2 className="text-2xl font-bold">
         Study Progress
       </h2>

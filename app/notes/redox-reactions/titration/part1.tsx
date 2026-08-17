@@ -31,7 +31,7 @@ export default function TitrationPart1() {
   return (
     <div className="space-y-6 sm:space-y-8">
 <PageCard title="Titration — Volumetric Analysis">
-          <div className="rounded-2xl border border-blue-500/20 bg-blue-950/20 text-blue-200 p-4">
+          <div className="rounded-lg border border-blue-500/20 bg-blue-950/20 text-blue-200 p-4">
             <h3 className="mb-2 text-lg font-bold text-blue-800 underline">
               Titration:
             </h3>
@@ -47,14 +47,14 @@ export default function TitrationPart1() {
 
           <div className="grid gap-4 md:grid-cols-2">
             <DiagramBox title="Unknown solution">
-              <div className="rounded-2xl border border-slate-800 bg-slate-950/40 p-4">
+              <div className="rounded-lg border border-slate-800 bg-slate-950/40 p-4">
                 <p className="font-bold">Acid sol<sup>n</sup></p>
                 <p className="mt-2 text-lg font-black">C = ?</p>
               </div>
             </DiagramBox>
 
             <DiagramBox title="Standard solution">
-              <div className="rounded-2xl border border-slate-800 bg-slate-950/40 p-4">
+              <div className="rounded-lg border border-slate-800 bg-slate-950/40 p-4">
                 <p className="font-bold">Basic sol<sup>n</sup></p>
                 <p className="mt-2">
                   <LabelPill>standard sol<sup>n</sup></LabelPill>
@@ -158,7 +158,7 @@ export default function TitrationPart1() {
             </DiagramBox>
           </div>
 
-          <div className="rounded-2xl border border-rose-500/20 bg-rose-950/20 text-rose-200 p-4">
+          <div className="rounded-lg border border-rose-500/20 bg-rose-950/20 text-rose-200 p-4">
             <h3 className="mb-3 text-lg font-bold text-pink-700">
               Conical flask contents
             </h3>
@@ -203,7 +203,7 @@ export default function TitrationPart1() {
             </WorkingLine>
           </div>
 
-          <div className="rounded-2xl border border-slate-800 bg-slate-950/30 p-4">
+          <div className="rounded-lg border border-slate-800 bg-slate-950/30 p-4">
             <p>
               After a lot of data collection for V<sub>2</sub> doing exp.
               several times, the <b>three same consecutive values</b> of V

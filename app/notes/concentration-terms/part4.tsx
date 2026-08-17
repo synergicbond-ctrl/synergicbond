@@ -7,7 +7,7 @@ export default function ConcentrationTermsPart4() {
   return (
     <main className="min-h-screen bg-slate-950 px-4 py-8 text-slate-100 md:px-10">
       <article className="mx-auto max-w-5xl space-y-10">
-        <header className="rounded-3xl border border-emerald-400/30 bg-gradient-to-br from-slate-900 via-slate-900 to-slate-950 p-6 shadow-2xl md:p-8">
+        <header className="rounded-lg border border-emerald-400/30 bg-gradient-to-br from-slate-900 via-slate-900 to-slate-950 p-6 shadow-2xl md:p-8">
           <div className="flex items-center justify-between">
             <span className="rounded-full bg-emerald-500/20 px-3 py-1 text-xs font-bold uppercase tracking-[0.2em] text-emerald-300">
               Concentration Terms — Topic 4
@@ -30,7 +30,7 @@ export default function ConcentrationTermsPart4() {
             1. Volumetric Ratios &amp; Ionic Mixing in Molar Solutions
           </h2>
 
-          <div className="rounded-2xl border border-slate-800 bg-slate-900 p-6 space-y-4 text-sm leading-relaxed text-slate-200">
+          <div className="rounded-lg border border-slate-800 bg-slate-900 p-6 space-y-4 text-sm leading-relaxed text-slate-200">
             <div className="grid gap-6 md:grid-cols-2">
               <div className="rounded-xl border border-slate-800 bg-slate-950 p-5 space-y-2 text-xs font-mono flex flex-col justify-between">
                 <div>
@@ -74,12 +74,12 @@ export default function ConcentrationTermsPart4() {
             2. Molality (<InlineMath math="m" />) — Definition &amp; Thermal Independence
           </h2>
 
-          <div className="rounded-2xl border border-slate-800 bg-slate-900 p-6 space-y-4 text-sm leading-relaxed text-slate-200">
+          <div className="rounded-lg border border-slate-800 bg-slate-900 p-6 space-y-4 text-sm leading-relaxed text-slate-200">
             <p>
               Molality (<InlineMath math="m" />) is defined as the number of moles of solute dissolved per <strong className="text-emerald-300">exact kilogram (<InlineMath math="1000\text{ g}" />) of pure solvent</strong>.
             </p>
 
-            <div className="overflow-x-auto py-3 bg-slate-950 rounded-2xl border border-slate-800 px-4">
+            <div className="overflow-x-auto py-3 bg-slate-950 rounded-lg border border-slate-800 px-4">
               <BlockMath math={String.raw`m = \frac{\text{Moles of solute } (n)}{\text{Mass of solvent in kilograms } (W_{\text{kg}})} = \frac{w_{\text{solute}} \times 1000}{M_{\text{solute}} \times W_{\text{solvent (g)}}}`} />
             </div>
 
@@ -122,7 +122,7 @@ export default function ConcentrationTermsPart4() {
             3. Mole Fraction (<InlineMath math="\chi" />) &amp; Summation Axioms
           </h2>
 
-          <div className="rounded-2xl border border-slate-800 bg-slate-900 p-6 space-y-4 text-sm leading-relaxed text-slate-200">
+          <div className="rounded-lg border border-slate-800 bg-slate-900 p-6 space-y-4 text-sm leading-relaxed text-slate-200">
             <p>
               Mole fraction (<InlineMath math="\chi_i" />) of any component in a mixture is the dimensionless ratio of the number of moles of that component (<InlineMath math="n_i" />) to the total number of moles of all components present inside the solution (<InlineMath math="n_{\text{total}}" />). Being pure counts of particles, it is <strong className="text-emerald-300">temperature-independent</strong>.
             </p>
@@ -158,7 +158,7 @@ export default function ConcentrationTermsPart4() {
         </section>
 
         {/* Footer info */}
-        <footer className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 text-center text-xs text-slate-400">
+        <footer className="rounded-lg border border-slate-800 bg-slate-900/60 p-6 text-center text-xs text-slate-400">
           <p>Concentration Terms Module • Topic 4: Molality (m), Mole Fraction (χ) &amp; Thermal Independence</p>
         </footer>
       </article>

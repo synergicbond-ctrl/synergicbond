@@ -139,7 +139,7 @@ export default function PYQDominationDashboard() {
         <div className="flex flex-row lg:flex-col gap-2 overflow-x-auto lg:overflow-visible pb-4 lg:pb-0 border-b lg:border-b-0 lg:border-r border-white/10 lg:pr-6">
           <button
             onClick={() => setActiveTab("status")}
-            className={`flex items-center gap-3 w-full px-4 py-3 rounded-2xl text-left font-bold transition-all ${
+            className={`flex items-center gap-3 w-full px-4 py-3 rounded-lg text-left font-bold transition-all ${
               activeTab === "status"
                 ? "bg-gradient-to-r from-cyan-500/25 to-sky-500/5 border border-cyan-400/30 text-cyan-300"
                 : "text-white/60 hover:text-white hover:bg-white/[0.02]"
@@ -151,7 +151,7 @@ export default function PYQDominationDashboard() {
           
           <button
             onClick={() => setActiveTab("gaps")}
-            className={`flex items-center gap-3 w-full px-4 py-3 rounded-2xl text-left font-bold transition-all ${
+            className={`flex items-center gap-3 w-full px-4 py-3 rounded-lg text-left font-bold transition-all ${
               activeTab === "gaps"
                 ? "bg-gradient-to-r from-cyan-500/25 to-sky-500/5 border border-cyan-400/30 text-cyan-300"
                 : "text-white/60 hover:text-white hover:bg-white/[0.02]"
@@ -163,7 +163,7 @@ export default function PYQDominationDashboard() {
           
           <button
             onClick={() => setActiveTab("roadmap")}
-            className={`flex items-center gap-3 w-full px-4 py-3 rounded-2xl text-left font-bold transition-all ${
+            className={`flex items-center gap-3 w-full px-4 py-3 rounded-lg text-left font-bold transition-all ${
               activeTab === "roadmap"
                 ? "bg-gradient-to-r from-cyan-500/25 to-sky-500/5 border border-cyan-400/30 text-cyan-300"
                 : "text-white/60 hover:text-white hover:bg-white/[0.02]"
@@ -175,7 +175,7 @@ export default function PYQDominationDashboard() {
 
           <button
             onClick={() => setActiveTab("audit")}
-            className={`flex items-center gap-3 w-full px-4 py-3 rounded-2xl text-left font-bold transition-all ${
+            className={`flex items-center gap-3 w-full px-4 py-3 rounded-lg text-left font-bold transition-all ${
               activeTab === "audit"
                 ? "bg-gradient-to-r from-cyan-500/25 to-sky-500/5 border border-cyan-400/30 text-cyan-300"
                 : "text-white/60 hover:text-white hover:bg-white/[0.02]"
@@ -197,7 +197,7 @@ export default function PYQDominationDashboard() {
               <div className="grid gap-6 md:grid-cols-3">
                 
                 {/* NEET Card */}
-                <div className="rounded-3xl border border-white/10 bg-white/[0.02] p-6 hover:border-emerald-500/20 transition duration-300">
+                <div className="rounded-lg border border-white/10 bg-white/[0.02] p-6 hover:border-emerald-500/20 transition duration-300">
                   <div className="flex justify-between items-start">
                     <span className="text-xs font-bold tracking-widest text-emerald-400 uppercase">NEET Target</span>
                     <span className="text-xs text-white/50">{Math.round((neetCount / 500) * 100)}% Complete</span>
@@ -218,7 +218,7 @@ export default function PYQDominationDashboard() {
                 </div>
 
                 {/* JEE Main Card */}
-                <div className="rounded-3xl border border-white/10 bg-white/[0.02] p-6 hover:border-cyan-500/20 transition duration-300">
+                <div className="rounded-lg border border-white/10 bg-white/[0.02] p-6 hover:border-cyan-500/20 transition duration-300">
                   <div className="flex justify-between items-start">
                     <span className="text-xs font-bold tracking-widest text-cyan-400 uppercase">JEE Main Target</span>
                     <span className="text-xs text-white/50">{Math.round((jmCount / 500) * 100)}% Complete</span>
@@ -239,7 +239,7 @@ export default function PYQDominationDashboard() {
                 </div>
 
                 {/* JEE Advanced Card */}
-                <div className="rounded-3xl border border-white/10 bg-white/[0.02] p-6 hover:border-violet-500/20 transition duration-300">
+                <div className="rounded-lg border border-white/10 bg-white/[0.02] p-6 hover:border-violet-500/20 transition duration-300">
                   <div className="flex justify-between items-start">
                     <span className="text-xs font-bold tracking-widest text-violet-400 uppercase">JEE Advanced Target</span>
                     <span className="text-xs text-white/50">{Math.round((jaCount / 300) * 100)}% Complete</span>
@@ -262,7 +262,7 @@ export default function PYQDominationDashboard() {
               </div>
 
               {/* Total Compliance Banner */}
-              <div className="rounded-3xl border border-white/5 bg-gradient-to-r from-violet-500/10 via-cyan-500/5 to-transparent p-8 flex flex-col md:flex-row md:items-center justify-between gap-6">
+              <div className="rounded-lg border border-white/5 bg-gradient-to-r from-violet-500/10 via-cyan-500/5 to-transparent p-8 flex flex-col md:flex-row md:items-center justify-between gap-6">
                 <div>
                   <h3 className="text-lg font-bold text-white flex items-center gap-2">
                     <Flame className="h-5 w-5 text-amber-400" />
@@ -287,14 +287,14 @@ export default function PYQDominationDashboard() {
               
               {/* Gap Summary Badges */}
               <div className="grid gap-4 sm:grid-cols-2">
-                <div className="rounded-2xl border border-red-500/10 bg-red-500/5 p-5 flex items-start gap-4">
+                <div className="rounded-lg border border-red-500/10 bg-red-500/5 p-5 flex items-start gap-4">
                   <AlertCircle className="h-6 w-6 text-red-400 shrink-0 mt-0.5" />
                   <div>
                     <h4 className="font-bold text-white">Critical Gaps ({zeroChapters.length} Chapters)</h4>
                     <p className="mt-1 text-xs text-white/60">Chapters containing exactly zero questions in the current database.</p>
                   </div>
                 </div>
-                <div className="rounded-2xl border border-amber-500/10 bg-amber-500/5 p-5 flex items-start gap-4">
+                <div className="rounded-lg border border-amber-500/10 bg-amber-500/5 p-5 flex items-start gap-4">
                   <AlertTriangle className="h-6 w-6 text-amber-400 shrink-0 mt-0.5" />
                   <div>
                     <h4 className="font-bold text-white">Weak Coverage ({lowChapters.length} Chapters)</h4>
@@ -335,7 +335,7 @@ export default function PYQDominationDashboard() {
                     return (
                       <div 
                         key={chap.name}
-                        className={`rounded-2xl border p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-4 transition bg-white/[0.01] ${
+                        className={`rounded-lg border p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-4 transition bg-white/[0.01] ${
                           isZero 
                             ? "border-red-500/20 hover:bg-red-500/[0.02]" 
                             : isLow 
@@ -446,7 +446,7 @@ export default function PYQDominationDashboard() {
               </div>
 
               {/* Quality Banner */}
-              <div className="rounded-2xl border border-white/5 bg-white/[0.02] p-5 flex items-start gap-4">
+              <div className="rounded-lg border border-white/5 bg-white/[0.02] p-5 flex items-start gap-4">
                 <CheckCircle2 className="h-6 w-6 text-emerald-400 shrink-0 mt-0.5" />
                 <div>
                   <h5 className="font-bold text-white text-sm">Strict Quality Compliance</h5>
@@ -477,7 +477,7 @@ export default function PYQDominationDashboard() {
                 </div>
               </div>
 
-              <div className="rounded-2xl border border-white/5 bg-white/[0.02] p-6">
+              <div className="rounded-lg border border-white/5 bg-white/[0.02] p-6">
                 <div className="flex flex-col gap-4 mb-6 pb-6 border-b border-white/10">
                   <div className="relative">
                     <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-white/40" />

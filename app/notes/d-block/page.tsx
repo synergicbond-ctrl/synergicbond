@@ -25,7 +25,7 @@ export default function DBlockHubPage() {
     <main className="dblock-page">
       <DBlockVisualSystem />
       <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
-        <header className="overflow-hidden rounded-2xl border border-[#17364a] bg-[#071321] px-5 py-7 shadow-[0_16px_42px_rgba(0,0,0,0.28)] sm:px-8 sm:py-9">
+        <header className="overflow-hidden rounded-lg border border-[#17364a] bg-[#071321] px-5 py-7 shadow-[0_16px_42px_rgba(0,0,0,0.28)] sm:px-8 sm:py-9">
           <p className="text-xs font-black uppercase tracking-[0.24em] text-[#4ee7ff]">JEE Advanced • Inorganic Chemistry</p>
           <h1 className="mt-3 max-w-4xl text-3xl font-black leading-tight tracking-tight text-[#f5f7fb] sm:text-4xl lg:text-5xl">D-Block Elements</h1>
           <p className="mt-4 max-w-3xl text-base leading-7 text-[#a8b3c1] sm:text-lg">

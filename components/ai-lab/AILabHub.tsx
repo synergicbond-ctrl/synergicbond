@@ -104,7 +104,7 @@ function ToolCard({
   const body = (
     <>
       <div className="flex items-start justify-between gap-3">
-        <span className="flex h-11 w-11 items-center justify-center rounded-2xl border border-white/10 bg-black/25 text-2xl shadow-inner shadow-black/30">{icon}</span>
+        <span className="flex h-11 w-11 items-center justify-center rounded-lg border border-white/10 bg-black/25 text-2xl shadow-inner shadow-black/30">{icon}</span>
         <Badge tone={badge}>{badge === "live" ? "Live" : badge === "builtin" ? "Built-in" : "Coming soon"}</Badge>
       </div>
       <h3 className="mt-4 font-serif text-lg font-black text-white">{title}</h3>
@@ -112,14 +112,14 @@ function ToolCard({
     </>
   );
   const cls =
-    `group relative block w-full overflow-hidden rounded-2xl border bg-[linear-gradient(145deg,rgba(255,255,255,0.04),transparent_45%),#111827] p-4 text-left shadow-[0_22px_55px_-42px_rgba(0,0,0,0.95)] transition duration-300 hover:-translate-y-1 hover:bg-[#151d2e] ${toneClasses}`;
+    `group relative block w-full overflow-hidden rounded-lg border bg-[linear-gradient(145deg,rgba(255,255,255,0.04),transparent_45%),#111827] p-4 text-left shadow-[0_22px_55px_-42px_rgba(0,0,0,0.95)] transition duration-300 hover:-translate-y-1 hover:bg-[#151d2e] ${toneClasses}`;
   if (href) {
     return <Link href={href} className={cls}>{body}</Link>;
   }
   if (onOpen) {
     return <button onClick={onOpen} className={cls}>{body}</button>;
   }
-  return <div className={`${cls} cursor-default opacity-70 hover:border-white/[0.08] hover:bg-[#111827]`}>{body}</div>;
+  return <div className={`${cls} cursor-default opacity-70 hover:border-white/[0.08] hover:bg-[var(--surface)]`}>{body}</div>;
 }
 
 // ── Study Planner (deterministic, chapter data only) ──────────────────────────
@@ -280,7 +280,7 @@ export default function AILabHub({ revisionChapters }: { revisionChapters: Revis
 
   return (
     <div className="space-y-6">
-      <div className="relative overflow-hidden rounded-3xl border border-cyan-400/20 bg-[radial-gradient(circle_at_78%_15%,rgba(139,92,246,0.2),transparent_25%),linear-gradient(115deg,rgba(34,211,238,0.12),transparent_50%),#0f1728] p-6 shadow-[0_28px_70px_-48px_rgba(34,211,238,0.8)]">
+      <div className="relative overflow-hidden rounded-lg border border-cyan-400/20 bg-[radial-gradient(circle_at_78%_15%,rgba(139,92,246,0.2),transparent_25%),linear-gradient(115deg,rgba(34,211,238,0.12),transparent_50%),#0f1728] p-6 shadow-[0_28px_70px_-48px_rgba(34,211,238,0.8)]">
         <span aria-hidden="true" className="absolute -right-4 -bottom-10 text-[10rem] font-black leading-none text-cyan-200/[0.035]">AI</span>
         <p className="relative mb-2 text-xs font-bold uppercase tracking-[0.4em] text-cyan-300">AI Lab</p>
         <h1 className="relative font-serif text-3xl font-black md:text-4xl">Your Chemistry AI Toolset</h1>
@@ -300,13 +300,13 @@ export default function AILabHub({ revisionChapters }: { revisionChapters: Revis
       </div>
 
       {open === "planner" && (
-        <section className="rounded-2xl border border-cyan-500/15 bg-cyan-500/[0.04] p-4 md:p-5">
+        <section className="rounded-lg border border-cyan-500/15 bg-cyan-500/[0.04] p-4 md:p-5">
           <h2 className="mb-3 text-sm font-bold uppercase tracking-wider text-white/70">🗓️ Study Planner</h2>
           <StudyPlanner />
         </section>
       )}
       {open === "revision" && (
-        <section className="rounded-2xl border border-cyan-500/15 bg-cyan-500/[0.04] p-4 md:p-5">
+        <section className="rounded-lg border border-cyan-500/15 bg-cyan-500/[0.04] p-4 md:p-5">
           <h2 className="mb-3 text-sm font-bold uppercase tracking-wider text-white/70">🔁 Revision Generator</h2>
           <RevisionGenerator chapters={revisionChapters} />
         </section>

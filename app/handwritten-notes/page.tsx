@@ -63,7 +63,7 @@ export default function HandwrittenNotesPage() {
                 if (e.dataTransfer.files[0]) handleFile(e.dataTransfer.files[0]);
               }}
               onDragOver={(e) => e.preventDefault()}
-              className="flex min-h-64 cursor-pointer flex-col items-center justify-center rounded-2xl border-2 border-dashed border-white/20 bg-white/[0.03] p-6 text-center hover:border-cyan-500/50 transition">
+              className="flex min-h-64 cursor-pointer flex-col items-center justify-center rounded-lg border-2 border-dashed border-white/20 bg-white/[0.03] p-6 text-center hover:border-cyan-500/50 transition">
               {image ? (
                 <Image src={image} alt="Notes" width={400} height={240} unoptimized className="max-h-60 rounded-xl object-contain" />
               ) : (
@@ -104,7 +104,7 @@ export default function HandwrittenNotesPage() {
             </div>
 
             <button onClick={convert} disabled={!image || loading}
-              className="w-full rounded-2xl bg-gradient-to-r from-purple-500 to-purple-500 py-4 font-bold text-white disabled:opacity-40">
+              className="w-full rounded-lg bg-gradient-to-r from-purple-500 to-purple-500 py-4 font-bold text-white disabled:opacity-40">
               {loading ? "✨ Converting..." : "✨ Convert to Digital Notes"}
             </button>
 
@@ -117,7 +117,7 @@ export default function HandwrittenNotesPage() {
           </div>
 
           {/* Output side */}
-          <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-6 min-h-64">
+          <div className="rounded-lg border border-white/10 bg-white/[0.03] p-6 min-h-64">
             {error && <p className="text-red-400">{error}</p>}
             {loading && (
               <div className="flex flex-col items-center justify-center h-full gap-3 text-white/40">

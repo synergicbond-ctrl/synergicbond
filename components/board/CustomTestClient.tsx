@@ -113,7 +113,7 @@ export default function CustomTestClient({
   return (
     <div className="space-y-6">
       {/* Config */}
-      <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-5 space-y-4">
+      <div className="rounded-lg border border-white/10 bg-white/[0.03] p-5 space-y-4">
         <div>
           <div className="mb-2 text-sm font-bold text-white/70">Chapters <span className="font-normal text-white/40">({selected.size === 0 ? "all" : selected.size} selected)</span></div>
           <div className="flex flex-wrap gap-1.5">
@@ -138,7 +138,7 @@ export default function CustomTestClient({
           <label className="flex items-center gap-2 text-sm text-white/70"><input type="checkbox" checked={includeAR} onChange={(e) => setIncludeAR(e.target.checked)} /> Assertion–Reason</label>
           <label className="flex items-center gap-2 text-sm text-white/70"><input type="checkbox" checked={subjective} onChange={(e) => setSubjective(e.target.checked)} /> AI subjective section</label>
         </div>
-        <button onClick={generate} className="rounded-xl bg-gradient-to-r from-cyan-400 to-sky-500 px-5 py-2.5 text-sm font-black text-black">Generate paper →</button>
+        <button onClick={generate} className="rounded-xl bg-[var(--accent)] px-5 py-2.5 text-sm font-black text-black">Generate paper →</button>
         {signedIn === false && <p className="text-xs text-amber-300/80">Sign in so your answers are scored, saved, and excluded from future papers.</p>}
       </div>
 
@@ -146,7 +146,7 @@ export default function CustomTestClient({
       {paper && (
         <>
           {/* Live scoreboard = performance report */}
-          <div className="sticky top-2 z-10 flex flex-wrap items-center justify-between gap-3 rounded-2xl border border-cyan-400/25 bg-[#0B1220]/95 p-4 backdrop-blur">
+          <div className="sticky top-2 z-10 flex flex-wrap items-center justify-between gap-3 rounded-lg border border-cyan-400/25 bg-[#0B1220]/95 p-4 backdrop-blur">
             <div className="flex gap-5 text-sm">
               <div><span className="text-2xl font-black text-white">{paper.length}</span><span className="ml-1 text-white/50">Qs</span></div>
               <div><span className="text-2xl font-black text-cyan-300">{score.answered}</span><span className="ml-1 text-white/50">answered</span></div>
@@ -157,7 +157,7 @@ export default function CustomTestClient({
           </div>
 
           {paper.length === 0 ? (
-            <p className="rounded-2xl border border-white/10 bg-white/[0.02] p-8 text-center text-sm text-white/55">No fresh verified questions for this selection — widen the chapters/difficulty, or reset served in Practice.</p>
+            <p className="rounded-lg border border-white/10 bg-white/[0.02] p-8 text-center text-sm text-white/55">No fresh verified questions for this selection — widen the chapters/difficulty, or reset served in Practice.</p>
           ) : (
             <div className="space-y-3">
               <h2 className="text-sm font-bold uppercase tracking-wider text-white/40">Section A · Objective (verified bank)</h2>
@@ -172,7 +172,7 @@ export default function CustomTestClient({
               {subLoading && <p className="text-sm text-white/50">Generating subjective questions…</p>}
               {subError && <p className="rounded-xl border border-rose-500/30 bg-rose-500/[0.06] p-3 text-sm text-rose-300">{subError}</p>}
               {subQs.map((s, i) => (
-                <div key={i} className="rounded-2xl border border-white/10 bg-white/[0.02] p-4">
+                <div key={i} className="rounded-lg border border-white/10 bg-white/[0.02] p-4">
                   <div className="mb-1 text-xs font-bold uppercase tracking-wide text-cyan-300/70">{s.label}</div>
                   <p className="font-medium text-white">{s.question}</p>
                   <details className="mt-2 text-sm">

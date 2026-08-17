@@ -56,7 +56,7 @@ export default async function ProgramSyllabusPage({ params }: { params: Promise<
             {syllabuses.map((s) => <ProgramSyllabusTree key={s.programId} syllabus={s} />)}
           </div>
         ) : (
-          <div className="rounded-2xl border border-white/10 bg-white/[0.02] p-8 text-center">
+          <div className="rounded-lg border border-white/10 bg-white/[0.02] p-8 text-center">
             <h2 className="text-xl font-bold">Verified syllabus mapping in progress</h2>
             <p className="mx-auto mt-2 max-w-lg text-sm leading-relaxed text-zinc-400">
               The chapter-by-chapter {name} syllabus is being mapped from official sources — no

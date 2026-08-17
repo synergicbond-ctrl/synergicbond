@@ -95,7 +95,7 @@ export default function IllustrationLab({
           </select>
         )}
         <button onClick={generate} disabled={loading}
-          className="rounded-lg bg-gradient-to-r from-cyan-400 to-sky-500 px-4 py-1.5 text-xs font-black text-black disabled:opacity-60">
+          className="rounded-lg bg-[var(--accent)] px-4 py-1.5 text-xs font-black text-black disabled:opacity-60">
           {loading ? "Generating…" : "Generate"}
         </button>
       </div>
@@ -103,7 +103,7 @@ export default function IllustrationLab({
       {error && <p className="rounded-xl border border-rose-500/30 bg-rose-500/[0.06] p-3 text-sm text-rose-300">{error}</p>}
 
       {item && (
-        <div className="space-y-2.5 rounded-2xl border border-white/10 bg-white/[0.02] p-4">
+        <div className="space-y-2.5 rounded-lg border border-white/10 bg-white/[0.02] p-4">
           <p className="whitespace-pre-wrap font-medium leading-relaxed text-white">{item.question}</p>
           {isIll ? (
             <>

@@ -34,9 +34,10 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   };
 }
 
-// Existing learn ecosystem modules — every href is a live global route.
-const LEARN_MODULES = [
-  { href: "/notes", icon: "📖", title: "Chapter Notes", desc: "Verified exam notes with solved examples, derivations and common mistakes.", metric: "Verified" },
+// Supporting tools — every href is a live global route.
+// Chapter Notes (/notes) is not included here: the chapter grid on this page
+// already IS the program's note library. A secondary link appears below.
+const SUPPORTING_TOOLS = [
   { href: "/formula-cards", icon: "🧮", title: "Formula Cards", desc: "Physical chemistry formulas with variables, units and PYQ links.", metric: `${formulaCards.length} cards` },
   { href: "/vault", icon: "🏛️", title: "Knowledge Vault", desc: "Saved concepts, formula vault, exceptions and quick facts.", metric: "Memory bank" },
   { href: "/molecule", icon: "⚛️", title: "Molecule Explorer", desc: "Look up structures, properties and exam relevance of any compound.", metric: "Explorer" },
@@ -62,37 +63,12 @@ export default async function ProgramLearnPage({ params }: { params: Promise<{ s
       <ProgramPageHeader
         program={program}
         section="Learn"
-        blurb={`Chapters, notes, formula cards, the knowledge vault, molecule explorer and NCERT highlights — the verified library, scoped to ${name}.`}
+        blurb={`Chapters, formula cards, the knowledge vault, molecule explorer and NCERT intelligence — the verified library, scoped to ${name}.`}
       />
 
       <div className="mx-auto max-w-6xl px-6 py-12">
-        <section className="mb-12">
-          <h2 className="mb-2 text-2xl font-bold">Learn Modules</h2>
-          <p className="mb-6 text-[var(--text-muted)]">Verified systems already connected to search, PYQs and tests</p>
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {LEARN_MODULES.map((mod) => (
-              <Link
-                key={mod.title}
-                href={mod.href}
-                className={`group flex flex-col rounded-lg border bg-white/[0.02] p-5 transition hover:-translate-y-0.5 hover:bg-white/[0.04] ${accent.card}`}
-              >
-                <div className="flex items-start justify-between gap-3">
-                  <span className="text-2xl">{mod.icon}</span>
-                  <span className="rounded-md bg-white/[0.06] px-2 py-1 text-[11px] font-bold text-white/55">{mod.metric}</span>
-                </div>
-                <div className="mt-3 font-bold text-white">{mod.title}</div>
-                <div className="mt-1 flex-1 text-sm text-[var(--text-muted)]">{mod.desc}</div>
-                <div className={`mt-3 text-sm font-semibold ${accent.text}`}>
-                  Open <span className="inline-block transition group-hover:translate-x-1">→</span>
-                </div>
-              </Link>
-            ))}
-          </div>
-        </section>
-
-        {/* JEE Advanced premium notes are spotlighted on the program hub page — not duplicated here */}
-
-        <section>
+        {/* ── Chapters — primary content ── */}
+        <section className="mb-14">
           <h2 className="mb-2 text-2xl font-bold">Chapters</h2>
           {chapters.length > 0 ? (
             <>
@@ -161,14 +137,43 @@ export default async function ProgramLearnPage({ params }: { params: Promise<{ s
               <h3 className="text-lg font-bold">Verified chapter mapping in progress</h3>
               <p className="mx-auto mt-2 max-w-lg text-sm leading-relaxed text-[var(--text-muted)]">
                 The chapter-by-chapter {name} syllabus is being mapped from official sources — no
-                unverified content ships here. The learn modules above are fully available and cover
+                unverified content ships here. The supporting tools below are fully available and cover
                 the core Class 11–12 chemistry this program builds on.
               </p>
             </div>
           )}
         </section>
 
-        <div className="mt-12 text-center">
+        {/* ── Supporting Tools ── */}
+        <section className="mb-10">
+          <h2 className="mb-2 text-2xl font-bold">Supporting Tools</h2>
+          <p className="mb-6 text-[var(--text-muted)]">Verified systems connected to search, PYQs and tests</p>
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {SUPPORTING_TOOLS.map((mod) => (
+              <Link
+                key={mod.title}
+                href={mod.href}
+                className={`group flex flex-col rounded-lg border bg-white/[0.02] p-5 transition hover:-translate-y-0.5 hover:bg-white/[0.04] ${accent.card}`}
+              >
+                <div className="flex items-start justify-between gap-3">
+                  <span className="text-2xl">{mod.icon}</span>
+                  <span className="rounded-md bg-white/[0.06] px-2 py-1 text-[11px] font-bold text-white/55">{mod.metric}</span>
+                </div>
+                <div className="mt-3 font-bold text-white">{mod.title}</div>
+                <div className="mt-1 flex-1 text-sm text-[var(--text-muted)]">{mod.desc}</div>
+                <div className={`mt-3 text-sm font-semibold ${accent.text}`}>
+                  Open <span className="inline-block transition group-hover:translate-x-1">→</span>
+                </div>
+              </Link>
+            ))}
+          </div>
+          <p className="mt-4 text-sm text-[var(--text-muted)]">
+            Looking for the full library?{" "}
+            <Link href="/notes" className="underline transition hover:text-white">All Notes Library →</Link>
+          </p>
+        </section>
+
+        <div className="mt-8 text-center">
           <Link href={`/programs/${slug}`} className="text-sm text-[var(--text-muted)] transition hover:text-white">
             ← Back to {name} program
           </Link>

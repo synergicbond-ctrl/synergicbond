@@ -346,6 +346,86 @@ export function ChapterLessonPager({
 }
 
 /**
+ * Canonical topic header primitive.
+ *
+ * Renders the three-layer heading used in chemistry chapter and lesson pages:
+ *   eyebrow  — JetBrains Mono / sb-tech-label / coloured  (e.g. "TOPIC 04 · CHEMICAL BONDING")
+ *   title    — Source Serif 4 / sb-editorial-title          (e.g. "Valence Bond Theory")
+ *   rule     — 1 px hairline in the accent colour
+ *   descriptor — Inter Tight / muted / optional
+ *
+ * Pass `accentColor` as a CSS variable reference (default: `var(--accent)`)
+ * to wire semantic chemistry hues — cyan for bonding topics, violet for orbital
+ * topics, etc. The rule and eyebrow share the same colour.
+ *
+ * Used by chapter lesson shells and section headers. Never placed to the right,
+ * vertically, or floating — always at the top of the article or section.
+ */
+export function TopicHeader({
+  eyebrow,
+  title,
+  descriptor,
+  accentColor = "var(--accent)",
+  as: Tag = "h1",
+}: {
+  eyebrow: string;
+  title: string;
+  descriptor?: string;
+  accentColor?: string;
+  as?: "h1" | "h2" | "h3";
+}) {
+  return (
+    <header style={{ marginBottom: "1.5rem" }}>
+      <p
+        className="sb-tech-label"
+        style={{
+          color: accentColor,
+          fontSize: "11px",
+          fontWeight: 900,
+          marginBottom: "0.5rem",
+          letterSpacing: "0.22em",
+        }}
+      >
+        {eyebrow}
+      </p>
+      <Tag
+        className="sb-editorial-title"
+        style={{
+          fontSize: "clamp(1.6rem, 3.2vw, 2.5rem)",
+          fontWeight: 900,
+          lineHeight: 1.15,
+          color: "var(--foreground)",
+          margin: 0,
+        }}
+      >
+        {title}
+      </Tag>
+      <div
+        style={{
+          height: 1,
+          background: accentColor,
+          opacity: 0.25,
+          marginTop: "0.75rem",
+        }}
+        aria-hidden
+      />
+      {descriptor && (
+        <p
+          style={{
+            marginTop: "0.5rem",
+            fontSize: "0.875rem",
+            color: "var(--text-muted)",
+            fontFamily: NT.sans,
+          }}
+        >
+          {descriptor}
+        </p>
+      )}
+    </header>
+  );
+}
+
+/**
  * Compact top strip for part pages: back-to-chapter link + current position
  * badge, in the canonical language. Sits above the part content, under the
  * chapter header.

@@ -104,19 +104,14 @@ body {
 
 h1,
 h2,
-h3 {
-  font-family: var(--font-display), Georgia, "Times New Roman", serif;
-  font-optical-sizing: auto;
-  letter-spacing: -0.02em;
-  font-weight: 600;
-}
-
+h3,
 h4,
 h5,
 h6 {
-  font-family: var(--font-display), Georgia, "Times New Roman", serif;
+  font-family: var(--font-sans), -apple-system, BlinkMacSystemFont, "Segoe UI",
+    system-ui, sans-serif;
   font-optical-sizing: auto;
-  letter-spacing: -0.01em;
+  letter-spacing: -0.02em;
   font-weight: 600;
 }
 
@@ -191,6 +186,40 @@ table,
     monospace;
   font-variant-numeric: tabular-nums;
   font-feature-settings: "liga" 0;
+}
+
+/* ── Semantic role classes ────────────────────────────────────────
+   Components declare a JOB (editorial, product, tech), not a font stack.
+   Generic unclassified headings default to the sans/UI family above.
+   Editorial chemistry headings explicitly request .sb-editorial-title.
+
+   PRODUCT TITLE — Inter Tight — app/product/hero/pricing UI headings
+   EDITORIAL TITLE — Source Serif 4 — chemistry chapter & topic titles
+   TECH LABEL — JetBrains Mono — eyebrow, lesson numbers, exam labels
+   UI TITLE — Inter Tight — generic interface titles (same as product) */
+.sb-product-title {
+  font-family: var(--font-sans), -apple-system, BlinkMacSystemFont, "Segoe UI",
+    system-ui, sans-serif;
+  font-optical-sizing: auto;
+  letter-spacing: -0.02em;
+}
+.sb-editorial-title {
+  font-family: var(--font-display), Georgia, "Times New Roman", serif;
+  font-optical-sizing: auto;
+  letter-spacing: -0.02em;
+}
+.sb-tech-label {
+  font-family: var(--font-mono), ui-monospace, "SF Mono", Menlo, Monaco,
+    monospace;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.sb-ui-title {
+  font-family: var(--font-sans), -apple-system, BlinkMacSystemFont, "Segoe UI",
+    system-ui, sans-serif;
+  font-optical-sizing: auto;
+  letter-spacing: -0.015em;
 }
 
 /* ── Authored figure SVGs ─────────────────────────────────────────

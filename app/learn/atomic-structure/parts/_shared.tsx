@@ -5,6 +5,7 @@ import {
   ChapterShell,
   ChapterLessonPager,
   ChapterPartStrip,
+  TopicHeader,
   type ChapterTab,
   type LessonRef,
 } from "@/components/notes/canonical";
@@ -96,20 +97,22 @@ export function AtomicPartShell({
 }) {
   return (
     <section className="text-white">
-      <header
+      <div
         style={{
-          background: "#122232",
-          border: "1px solid #24405c",
-          borderLeft: "4px solid #5fd4ea",
-          borderRadius: 13,
+          background: "var(--surface)",
+          border: "1px solid var(--border-strong)",
+          borderLeft: "4px solid var(--chem-bond)",
+          borderRadius: "var(--radius)",
           padding: "14px 18px",
         }}
       >
-        <p className="text-[11px] font-bold uppercase tracking-[0.3em] text-[#5fd4ea]">
-          Section {String(part).padStart(2, "0")} · source pages {pages}
-        </p>
-        <h2 className="mt-2 text-2xl font-black tracking-tight sm:text-3xl" style={{ fontFamily: "Georgia, 'Iowan Old Style', 'Times New Roman', serif" }}>{title}</h2>
-      </header>
+        <TopicHeader
+          as="h2"
+          eyebrow={`Section ${String(part).padStart(2, "0")} · Source pages ${pages}`}
+          title={title}
+          accentColor="var(--chem-bond)"
+        />
+      </div>
       <div className="mt-6 space-y-8">{children}</div>
     </section>
   );
@@ -133,23 +136,23 @@ export function AtomicLessonShell({ lesson, children }: { lesson: number; childr
       />
       <article className="mx-auto max-w-6xl text-white">
         {meta && (
-          <header
+          <div
             style={{
-              background: "#122232",
-              border: "1px solid #24405c",
-              borderLeft: "4px solid #e8b84b",
-              borderRadius: 13,
+              background: "var(--surface)",
+              border: "1px solid var(--border-strong)",
+              borderLeft: "4px solid var(--accent)",
+              borderRadius: "var(--radius)",
               padding: "18px 20px",
             }}
           >
-            <p className="text-[11px] font-bold uppercase tracking-[0.3em] text-[#e8b84b]">
-              Atomic Structure · Lesson {String(lesson).padStart(2, "0")}
-            </p>
-            <h1 className="mt-3 text-3xl font-black tracking-tight sm:text-4xl" style={{ fontFamily: "Georgia, 'Iowan Old Style', 'Times New Roman', serif" }}>{meta.title}</h1>
-            <p className="mt-2 text-sm" style={{ color: "#91a9bc" }}>
-              Lesson {lesson} of {atomicPartMeta.length} · source pages {meta.pages} · {meta.sections.length} study sections
-            </p>
-          </header>
+            <TopicHeader
+              as="h1"
+              eyebrow={`Atomic Structure · Lesson ${String(lesson).padStart(2, "0")}`}
+              title={meta.title}
+              descriptor={`Lesson ${lesson} of ${atomicPartMeta.length} · source pages ${meta.pages} · ${meta.sections.length} study sections`}
+              accentColor="var(--accent)"
+            />
+          </div>
         )}
         <div className="mt-8 space-y-10">{children}</div>
         <ChapterLessonPager
@@ -189,7 +192,7 @@ export function ImportantNote({ title, children }: { title: string; children: Re
 }
 
 export function SummaryStrip({ items }: { items: ReactNode[] }) {
-  return <section aria-label="Key takeaways" className="grid gap-px overflow-hidden rounded-lg border border-cyan-300/20 bg-cyan-300/20 sm:grid-cols-3">{items.map((item, index) => <p key={index} className="bg-[#0b1728] p-4 text-sm font-semibold leading-relaxed text-cyan-50">{item}</p>)}</section>;
+  return <section aria-label="Key takeaways" className="grid gap-px overflow-hidden rounded-lg border border-[var(--chem-bond)]/20 bg-[var(--chem-bond)]/10 sm:grid-cols-3">{items.map((item, index) => <p key={index} className="bg-[var(--surface)] p-4 text-sm font-semibold leading-relaxed text-[var(--foreground)]">{item}</p>)}</section>;
 }
 
 export function FormulaLine({ math }: { math: string }) {

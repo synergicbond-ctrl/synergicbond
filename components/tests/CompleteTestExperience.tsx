@@ -540,7 +540,7 @@ function ResultScreen({
               {submitState === "idle" && "Your result is ready."}
             </p>
           </div>
-          <div className="rounded-lg border border-white/10 bg-black/15 px-5 py-3 text-center">
+          <div className="rounded-lg border border-white/10 bg-[var(--background)]/15 px-5 py-3 text-center">
             <p className="text-3xl font-black text-white">{score}<span className="text-base text-white/35">/{maxScore}</span></p>
             <p className="mt-0.5 text-[11px] font-semibold uppercase tracking-wide text-white/40">Score</p>
           </div>
@@ -552,8 +552,8 @@ function ResultScreen({
           ["Correct", String(correct), "text-emerald-300"],
           ["Incorrect", String(incorrect), "text-rose-300"],
           ["Unanswered", String(unanswered), "text-amber-200"],
-          ["Accuracy", `${accuracy}%`, "text-cyan-300"],
-          ["Time", formatDuration(durationMs), "text-violet-300"],
+          ["Accuracy", `${accuracy}%`, "text-[var(--accent)]"],
+          ["Time", formatDuration(durationMs), "text-[var(--text-muted)]"],
         ].map(([label, value, tone]) => (
           <div key={label} className="rounded-lg border border-white/[0.08] bg-[var(--surface)] p-4">
             <p className={`text-xl font-black ${tone}`}>{value}</p>
@@ -570,11 +570,11 @@ function ResultScreen({
           </div>
           <div className="flex flex-wrap gap-2">
             {retryQuestions.length > 0 && (
-              <button type="button" onClick={() => onRetry(retryQuestions, `${session.title} — Retry`)} className="rounded-xl border border-rose-400/25 bg-rose-500/10 px-4 py-2 text-sm font-bold text-rose-200 transition hover:bg-rose-500/15">
+              <button type="button" onClick={() => onRetry(retryQuestions, `${session.title} — Retry`)} className="rounded-lg border border-rose-400/25 bg-rose-500/10 px-4 py-2 text-sm font-bold text-rose-200 transition hover:bg-rose-500/15">
                 Retry incorrect + skipped ({retryQuestions.length})
               </button>
             )}
-            <button type="button" onClick={() => onRetry(questions, session.title)} className="rounded-xl border border-white/12 bg-white/[0.05] px-4 py-2 text-sm font-bold text-white/75 transition hover:border-white/25 hover:text-white">Retry full test</button>
+            <button type="button" onClick={() => onRetry(questions, session.title)} className="rounded-lg border border-white/12 bg-white/[0.05] px-4 py-2 text-sm font-bold text-white/75 transition hover:border-white/25 hover:text-white">Retry full test</button>
             <button type="button" onClick={onBack} className="rounded-lg bg-[var(--accent)] px-4 py-2 text-sm font-black text-[var(--background)] transition hover:opacity-90">Tests home</button>
           </div>
         </div>
@@ -586,7 +586,7 @@ function ResultScreen({
           {chapterRows.map(([chapter, row]) => {
             const pct = row.answered > 0 ? Math.round((row.correct / row.answered) * 100) : 0;
             return (
-              <div key={chapter} className="flex flex-wrap items-center gap-3 rounded-xl border border-white/[0.07] bg-black/10 p-3">
+              <div key={chapter} className="flex flex-wrap items-center gap-3 rounded-lg border border-white/[0.07] bg-[var(--background)]/10 p-3">
                 <span className="min-w-0 flex-1 text-sm font-semibold text-white/80">{chapter}</span>
                 <span className="text-xs text-white/40">{row.correct}/{row.total} correct</span>
                 <span className={`w-12 text-right text-sm font-black ${pct >= 75 ? "text-emerald-300" : pct >= 50 ? "text-amber-200" : "text-rose-300"}`}>{pct}%</span>
@@ -602,7 +602,7 @@ function ResultScreen({
             <h3 className="text-lg font-black text-white">Question review</h3>
             <p className="mt-1 text-xs text-white/40">Solutions appear only after submission.</p>
           </div>
-          <Link href="/mistakes" className="text-xs font-bold text-cyan-300 hover:text-cyan-200">Open Mistake Journal →</Link>
+          <Link href="/mistakes" className="text-xs font-bold text-[var(--accent)] hover:opacity-80">Open Mistake Journal →</Link>
         </div>
         <div className="space-y-3">
           {questions.map((question, index) => {
@@ -612,7 +612,7 @@ function ResultScreen({
               <article key={question.id} className="rounded-lg border border-white/[0.08] bg-[var(--surface)] p-4 sm:p-5">
                 <div className="flex flex-wrap items-center justify-between gap-2">
                   <div className="flex flex-wrap items-center gap-2 text-[11px]">
-                    <span className="font-black text-cyan-300">Q{index + 1}</span>
+                    <span className="font-black text-[var(--accent)]">Q{index + 1}</span>
                     <span className="rounded bg-white/[0.05] px-2 py-1 text-white/50">{question.exam} {question.year}</span>
                     <span className="rounded bg-white/[0.05] px-2 py-1 text-white/50">{question.chapter}</span>
                   </div>
@@ -622,10 +622,10 @@ function ResultScreen({
                 </div>
                 <div className="mt-3 text-sm font-medium leading-7 text-white">{renderChemistry(question.question)}</div>
                 <div className="mt-3 grid gap-2 text-sm sm:grid-cols-2">
-                  <div className="rounded-xl border border-white/[0.07] bg-white/[0.025] p-3 text-white/55">Your answer: <strong className="text-white/85">{selected || "Not answered"}</strong></div>
-                  <div className="rounded-xl border border-emerald-400/15 bg-emerald-500/[0.055] p-3 text-emerald-100/80">Correct answer: <strong className="text-emerald-200">{question.answer}</strong></div>
+                  <div className="rounded-lg border border-white/[0.07] bg-white/[0.025] p-3 text-white/55">Your answer: <strong className="text-white/85">{selected || "Not answered"}</strong></div>
+                  <div className="rounded-lg border border-emerald-400/15 bg-emerald-500/[0.055] p-3 text-emerald-100/80">Correct answer: <strong className="text-emerald-200">{question.answer}</strong></div>
                 </div>
-                {question.explanation && <div className="mt-3 rounded-xl border border-white/[0.07] bg-white/[0.025] p-3 text-sm leading-6 text-white/60">{renderChemistry(question.explanation)}</div>}
+                {question.explanation && <div className="mt-3 rounded-lg border border-white/[0.07] bg-white/[0.025] p-3 text-sm leading-6 text-white/60">{renderChemistry(question.explanation)}</div>}
                 <div className="mt-3 flex justify-end">
                   <AddToRevision item={{ id: `pyq:${question.id}`, type: "pyq", title: question.question.slice(0, 90), subtitle: `${question.exam} ${question.year} · ${question.chapter}`, href: "/tests" }} />
                 </div>
@@ -793,7 +793,7 @@ function TestRunner({ session, restore, onExit, onRestart }: { session: TestSess
         <main className="min-w-0 rounded-lg border border-white/[0.08] bg-[var(--surface)] p-4 sm:p-6">
           <div className="flex flex-wrap items-center justify-between gap-3">
             <div className="flex flex-wrap items-center gap-2 text-[11px]">
-              <span className="font-black text-cyan-300">Question {current + 1} of {questions.length}</span>
+              <span className="font-black text-[var(--accent)]">Question {current + 1} of {questions.length}</span>
               <span className="rounded bg-white/[0.05] px-2 py-1 text-white/45">{question.exam} {question.year}</span>
               <span className="rounded bg-white/[0.05] px-2 py-1 text-white/45">{question.difficulty}</span>
               <span className="rounded bg-white/[0.05] px-2 py-1 text-white/45">{question.questionType}</span>
@@ -801,7 +801,7 @@ function TestRunner({ session, restore, onExit, onRestart }: { session: TestSess
             <button type="button" onClick={() => setPaletteOpen((value) => !value)} className="rounded-lg border border-white/10 bg-white/[0.035] px-3 py-1.5 text-xs font-semibold text-white/60 lg:hidden">Questions</button>
           </div>
 
-          {paletteOpen && <div className="mt-4 rounded-xl border border-white/[0.08] bg-black/15 p-4 lg:hidden"><QuestionPalette questions={questions} current={current} answers={answers} marked={marked} onJump={jumpTo} /></div>}
+          {paletteOpen && <div className="mt-4 rounded-lg border border-white/[0.08] bg-[var(--background)]/15 p-4 lg:hidden"><QuestionPalette questions={questions} current={current} answers={answers} marked={marked} onJump={jumpTo} /></div>}
 
           <div className="mt-6 text-[15px] font-medium leading-8 text-white sm:text-base">{renderChemistry(question.question)}</div>
           {question.questionType === "MCQ-Multiple" && <p className="mt-3 text-xs font-semibold text-amber-200/80">Select all correct options.</p>}
@@ -818,7 +818,7 @@ function TestRunner({ session, restore, onExit, onRestart }: { session: TestSess
                     type="button"
                     key={key}
                     onClick={() => toggleOption(key)}
-                    className={`rounded-xl border p-3.5 text-left text-sm leading-6 transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300/70 ${
+                    className={`rounded-lg border p-3.5 text-left text-sm leading-6 transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300/70 ${
                       showCorrect ? "border-emerald-400/60 bg-emerald-500/10 text-emerald-100" : showWrong ? "border-rose-400/60 bg-rose-500/10 text-rose-100" : selected ? "border-cyan-300/70 bg-cyan-500/12 text-white" : "border-white/10 bg-white/[0.025] text-white/70 hover:border-white/25 hover:bg-white/[0.045]"
                     }`}
                   >
@@ -831,12 +831,12 @@ function TestRunner({ session, restore, onExit, onRestart }: { session: TestSess
           ) : (
             <div className="mt-6">
               <label htmlFor={`answer-${question.id}`} className="text-xs font-bold uppercase tracking-wide text-white/45">Your numerical answer</label>
-              <input id={`answer-${question.id}`} value={answers[question.id] ?? ""} onChange={(event: ChangeEvent<HTMLInputElement>) => setAnswers((previous) => ({ ...previous, [question.id]: event.target.value }))} inputMode="decimal" placeholder="Enter answer" className="mt-2 w-full rounded-xl border border-white/10 bg-black/20 px-4 py-3 text-base text-white outline-none transition placeholder:text-white/25 focus:border-cyan-300/60 focus:ring-2 focus:ring-cyan-300/15" />
+              <input id={`answer-${question.id}`} value={answers[question.id] ?? ""} onChange={(event: ChangeEvent<HTMLInputElement>) => setAnswers((previous) => ({ ...previous, [question.id]: event.target.value }))} inputMode="decimal" placeholder="Enter answer" className="mt-2 w-full rounded-lg border border-white/10 bg-[var(--background)]/20 px-4 py-3 text-base text-white outline-none transition placeholder:text-white/25 focus:border-cyan-300/60 focus:ring-2 focus:ring-cyan-300/15" />
             </div>
           )}
 
           {practiceRevealed && (
-            <div className={`mt-4 rounded-xl border p-4 ${isCorrect(question, answers[question.id]) ? "border-emerald-400/25 bg-emerald-500/[0.07]" : "border-rose-400/25 bg-rose-500/[0.07]"}`}>
+            <div className={`mt-4 rounded-lg border p-4 ${isCorrect(question, answers[question.id]) ? "border-emerald-400/25 bg-emerald-500/[0.07]" : "border-rose-400/25 bg-rose-500/[0.07]"}`}>
               <p className={`text-sm font-black ${isCorrect(question, answers[question.id]) ? "text-emerald-300" : "text-rose-300"}`}>{isCorrect(question, answers[question.id]) ? "Correct" : `Correct answer: ${question.answer}`}</p>
               {question.explanation && <div className="mt-2 text-sm leading-6 text-white/65">{renderChemistry(question.explanation)}</div>}
             </div>
@@ -844,11 +844,11 @@ function TestRunner({ session, restore, onExit, onRestart }: { session: TestSess
 
           <div className="mt-7 flex flex-wrap items-center justify-between gap-3 border-t border-white/[0.07] pt-4">
             <div className="flex gap-2">
-              <button type="button" onClick={() => jumpTo(current - 1)} disabled={current === 0} className="rounded-xl border border-white/10 px-3 py-2 text-sm font-bold text-white/60 transition hover:border-white/25 hover:text-white disabled:cursor-not-allowed disabled:opacity-30">Previous</button>
-              <button type="button" onClick={() => setAnswers((previous) => { const next = { ...previous }; delete next[question.id]; return next; })} disabled={!answers[question.id]} className="rounded-xl border border-white/10 px-3 py-2 text-sm font-bold text-white/50 transition hover:border-white/25 hover:text-white disabled:cursor-not-allowed disabled:opacity-30">Clear</button>
+              <button type="button" onClick={() => jumpTo(current - 1)} disabled={current === 0} className="rounded-lg border border-white/10 px-3 py-2 text-sm font-bold text-white/60 transition hover:border-white/25 hover:text-white disabled:cursor-not-allowed disabled:opacity-30">Previous</button>
+              <button type="button" onClick={() => setAnswers((previous) => { const next = { ...previous }; delete next[question.id]; return next; })} disabled={!answers[question.id]} className="rounded-lg border border-white/10 px-3 py-2 text-sm font-bold text-white/50 transition hover:border-white/25 hover:text-white disabled:cursor-not-allowed disabled:opacity-30">Clear</button>
             </div>
             <div className="flex gap-2">
-              <button type="button" onClick={() => { setMarked((previous) => ({ ...previous, [question.id]: !previous[question.id] })); if (current < questions.length - 1) jumpTo(current + 1); }} className={`rounded-xl border px-3 py-2 text-sm font-bold transition ${marked[question.id] ? "border-amber-400/45 bg-amber-500/10 text-amber-200" : "border-white/10 text-white/60 hover:border-amber-400/35 hover:text-amber-200"}`}>{marked[question.id] ? "Unmark" : "Mark"} & Next</button>
+              <button type="button" onClick={() => { setMarked((previous) => ({ ...previous, [question.id]: !previous[question.id] })); if (current < questions.length - 1) jumpTo(current + 1); }} className={`rounded-lg border px-3 py-2 text-sm font-bold transition ${marked[question.id] ? "border-amber-400/45 bg-amber-500/10 text-amber-200" : "border-white/10 text-white/60 hover:border-amber-400/35 hover:text-amber-200"}`}>{marked[question.id] ? "Unmark" : "Mark"} & Next</button>
               {current < questions.length - 1 ? <button type="button" onClick={() => jumpTo(current + 1)} className="rounded-lg bg-[var(--accent)] px-4 py-2 text-sm font-black text-[var(--background)] transition hover:opacity-90">Save & Next</button> : <button type="button" onClick={() => void finishTest()} className="rounded-lg bg-[var(--accent)] px-4 py-2 text-sm font-black text-[var(--background)] transition hover:opacity-90">Finish Test</button>}
             </div>
           </div>
@@ -856,7 +856,7 @@ function TestRunner({ session, restore, onExit, onRestart }: { session: TestSess
 
         <aside className="hidden self-start rounded-lg border border-white/[0.08] bg-[var(--surface)] p-4 lg:block">
           <QuestionPalette questions={questions} current={current} answers={answers} marked={marked} onJump={jumpTo} />
-          <div className="mt-5 rounded-xl border border-white/[0.07] bg-white/[0.025] p-3 text-xs leading-5 text-white/45">{session.mode === "exam" ? "Answers and solutions remain hidden until submission." : "Practice mode gives feedback after each answer."}</div>
+          <div className="mt-5 rounded-lg border border-white/[0.07] bg-white/[0.025] p-3 text-xs leading-5 text-white/45">{session.mode === "exam" ? "Answers and solutions remain hidden until submission." : "Practice mode gives feedback after each answer."}</div>
         </aside>
       </div>
     </div>
@@ -882,16 +882,16 @@ function RecentAttempts({ exam }: { exam?: PYQExam }) {
     <section className="rounded-lg border border-white/[0.08] bg-white/[0.02] p-4 sm:p-5">
       <div className="flex items-center justify-between gap-3">
         <div><h2 className="text-base font-black text-white">Recent Tests</h2><p className="mt-1 text-xs text-white/40">Only your real submitted attempts appear here.</p></div>
-        <Link href="/tests/history" className="text-xs font-bold text-cyan-300 hover:text-cyan-200">View history →</Link>
+        <Link href="/tests/history" className="text-xs font-bold text-[var(--accent)] hover:opacity-80">View history →</Link>
       </div>
       {!loaded ? <p className="mt-4 text-sm text-white/35">Loading attempts…</p> : attempts.length === 0 ? (
-        <div className="mt-4 rounded-xl border border-dashed border-white/10 px-4 py-5 text-center"><p className="text-sm font-semibold text-white/55">No completed tests yet.</p><p className="mt-1 text-xs text-white/35">Start with the Quick Test.</p></div>
+        <div className="mt-4 rounded-lg border border-dashed border-white/10 px-4 py-5 text-center"><p className="text-sm font-semibold text-white/55">No completed tests yet.</p><p className="mt-1 text-xs text-white/35">Start with the Quick Test.</p></div>
       ) : (
         <div className="mt-4 divide-y divide-white/[0.07]">
           {attempts.map((attempt) => (
             <Link href={`/revision/attempt/${attempt.attemptId}`} key={attempt.attemptId} className="flex items-center justify-between gap-4 py-3 first:pt-0 last:pb-0 hover:bg-white/[0.02]">
               <div className="min-w-0"><p className="truncate text-sm font-bold text-white/80">{attempt.title || `${attempt.exam} Test`}</p><p className="mt-1 text-[11px] text-white/35">{attempt.totalQuestions} questions · {formatDuration(attempt.durationMs)}</p></div>
-              <div className="shrink-0 text-right"><p className="text-sm font-black text-cyan-300">{attempt.score}/{attempt.maxScore}</p><p className="mt-1 text-[10px] font-semibold text-white/35">{attempt.accuracy}% accuracy</p></div>
+              <div className="shrink-0 text-right"><p className="text-sm font-black text-[var(--accent)]">{attempt.score}/{attempt.maxScore}</p><p className="mt-1 text-[10px] font-semibold text-white/35">{attempt.accuracy}% accuracy</p></div>
             </Link>
           ))}
         </div>
@@ -928,15 +928,15 @@ export default function CompleteTestExperience({ exam }: { exam?: PYQExam } = {}
   return (
     <div className="space-y-6">
       <header>
-        <p className="text-xs font-bold uppercase tracking-[0.22em] text-cyan-300">Tests</p>
+        <p className="text-xs font-bold uppercase tracking-[0.22em] text-[var(--accent)]">Tests</p>
         <h1 className="mt-2 text-3xl font-black text-white sm:text-4xl">Choose one and begin</h1>
         <p className="mt-2 max-w-2xl text-sm leading-6 text-white/50">The main choices stay simple. Advanced filters appear only inside Custom Test.{exam ? ` Showing ${exam} chemistry only.` : ""}</p>
       </header>
 
       {resume && (
         <button type="button" onClick={() => setRun({ session: resume.session, restore: resume })} className="flex w-full flex-wrap items-center justify-between gap-3 rounded-lg border border-violet-400/30 bg-violet-500/10 p-4 text-left transition hover:bg-violet-500/15">
-          <div><p className="text-xs font-bold uppercase tracking-[0.15em] text-violet-300">Continue Test</p><h2 className="mt-1 font-black text-white">{resume.session.title}</h2><p className="mt-1 text-xs text-white/45">Resume from question {resume.current + 1} of {resume.session.questions.length}.</p></div>
-          <span className="text-sm font-black text-violet-200">Resume →</span>
+          <div><p className="text-xs font-bold uppercase tracking-[0.15em] text-[var(--accent)]">Continue Test</p><h2 className="mt-1 font-black text-white">{resume.session.title}</h2><p className="mt-1 text-xs text-white/45">Resume from question {resume.current + 1} of {resume.session.questions.length}.</p></div>
+          <span className="text-sm font-black text-[var(--accent)]">Resume →</span>
         </button>
       )}
 

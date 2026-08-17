@@ -257,7 +257,7 @@ export default function PaymentGateway({
 
   return (
     <div
-      className="sb-modal-overlay fixed inset-0 z-[100] flex items-end justify-center bg-black/70 backdrop-blur-sm sm:items-center sm:p-6"
+      className="sb-modal-overlay fixed inset-0 z-[100] flex items-end justify-center bg-[var(--background)]/70 backdrop-blur-sm sm:items-center sm:p-6"
       onClick={handleClose}
       role="dialog"
       aria-modal="true"

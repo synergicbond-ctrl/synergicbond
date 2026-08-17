@@ -37,7 +37,7 @@ export const STRICT_NOTE_SECTIONS = [
 export type StrictNoteSectionKey = (typeof STRICT_NOTE_SECTIONS)[number]["key"];
 
 const CATEGORY_STYLE: Record<NotesChapter["category"], string> = {
-  physical: "text-cyan-300 border-cyan-400/30 bg-cyan-500/10",
+  physical: "text-[var(--accent)] border-cyan-400/30 bg-cyan-500/10",
   inorganic: "text-blue-300 border-blue-400/30 bg-blue-500/10",
   organic: "text-purple-300 border-purple-400/30 bg-purple-500/10",
 };
@@ -155,7 +155,7 @@ function StrictSectionBody({ chapter, section }: { chapter: NotesChapter; sectio
                   <div className="mb-2 flex items-start justify-between gap-3">
                     <p className="text-sm font-semibold text-white">Q{i + 1}. {ex.q}</p>
                     {ex.tag && (
-                      <span className="shrink-0 rounded-full border border-cyan-400/25 bg-cyan-500/10 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide text-cyan-200">
+                      <span className="shrink-0 rounded-full border border-cyan-400/25 bg-cyan-500/10 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide text-[var(--accent)]">
                         {ex.tag}
                       </span>
                     )}

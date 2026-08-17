@@ -11,7 +11,7 @@ import { BRANCH_LABELS } from "@/lib/programSyllabus";
 const BRANCH_ORDER: SyllabusBranch[] = ["physical", "inorganic", "organic", "general", "practical"];
 
 const BRANCH_TONE: Record<SyllabusBranch, string> = {
-  physical: "text-cyan-300",
+  physical: "text-[var(--accent)]",
   inorganic: "text-blue-300",
   organic: "text-purple-300",
   general: "text-white/60",

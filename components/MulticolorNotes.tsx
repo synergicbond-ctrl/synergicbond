@@ -43,13 +43,13 @@ export default function MulticolorNotes() {
       {/* Focus timer */}
       <div className="flex items-center justify-between mb-6 pb-4 border-b border-white/[0.06]">
         <div className="flex items-center gap-2">
-          <Sparkles className="h-4 w-4 text-cyan-400" />
+          <Sparkles className="h-4 w-4 text-[var(--accent)]" />
           <span className="text-sm font-bold text-white">High-Retention Notes</span>
         </div>
         <div className="flex items-center gap-2">
-          <Clock className="h-3.5 w-3.5 text-cyan-400 animate-pulse" />
+          <Clock className="h-3.5 w-3.5 text-[var(--accent)] animate-pulse" />
           <span className="text-[11px] font-bold text-white/50 tracking-wide">SESSION FOCUS TIME</span>
-          <span className="text-sm font-black font-mono text-cyan-300 tabular-nums">{fmt(seconds)}</span>
+          <span className="text-sm font-black font-mono text-[var(--accent)] tabular-nums">{fmt(seconds)}</span>
         </div>
       </div>
 
@@ -72,7 +72,7 @@ export default function MulticolorNotes() {
         </div>
 
         {/* Formula block */}
-        <div className="rounded-xl bg-cyan-500/5 border border-cyan-500/20 px-4 py-3">
+        <div className="rounded-lg bg-cyan-500/5 border border-cyan-500/20 px-4 py-3">
           <p className="text-cyan-300 font-mono font-semibold">MnO₄⁻ + 8H⁺ + 5e⁻ → Mn²⁺ + 4H₂O &nbsp;&nbsp;(E° = +1.51 V)</p>
         </div>
 
@@ -84,7 +84,7 @@ export default function MulticolorNotes() {
         </div>
 
         {/* Warning / exception box */}
-        <div className="rounded-xl bg-red-500/5 border border-red-500/30 px-4 py-3">
+        <div className="rounded-lg bg-red-500/5 border border-red-500/30 px-4 py-3">
           <p className="text-red-400 font-bold text-xs uppercase tracking-wider mb-1">⚠️ High-Yield Exception</p>
           <p className="text-white/70">
             Cr and Cu show anomalous configurations: Cr = [Ar]3d⁵4s¹ and Cu = [Ar]3d¹⁰4s¹ — half-filled and fully-filled d-orbitals give extra stability. <span className="text-red-400 font-semibold">This is a guaranteed exam trap.</span>
@@ -93,7 +93,7 @@ export default function MulticolorNotes() {
 
         <div>
           <h3 className="text-lg font-black text-cyan-300 mb-2">💧 Precipitate Identification</h3>
-          <div className="rounded-xl border border-dashed border-white/15 px-4 py-3 text-white/70">
+          <div className="rounded-lg border border-dashed border-white/15 px-4 py-3 text-white/70">
             Adding NaOH to {colorize("Cu²⁺")} gives a pale blue precipitate of Cu(OH)₂. With {colorize("Fe³⁺")}, a reddish-brown Fe(OH)₃ precipitate forms.
           </div>
         </div>

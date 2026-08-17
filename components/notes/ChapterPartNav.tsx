@@ -45,7 +45,7 @@ export default function ChapterPartNav({
     <div className="sticky top-0 z-50 border-b border-white/10 bg-[var(--surface)]/95 px-4 py-3 text-white backdrop-blur md:px-10">
       <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-2 text-sm">
         <div className="flex items-center gap-4">
-          <Link href={engineHref} className="font-semibold text-cyan-400 hover:underline">
+          <Link href={engineHref} className="font-semibold text-[var(--accent)] hover:underline">
             {engineLabel}
           </Link>
           <span className="text-slate-500">|</span>
@@ -57,7 +57,7 @@ export default function ChapterPartNav({
           {prev && (
             <Link
               href={prev.href}
-              className="rounded-full bg-slate-800 px-3 py-1 text-xs font-bold text-slate-300 hover:bg-slate-700"
+              className="rounded-full bg-[var(--surface-2)] px-3 py-1 text-xs font-bold text-slate-300 hover:bg-[var(--surface-2)]"
             >
               {prev.label}
             </Link>
@@ -66,7 +66,7 @@ export default function ChapterPartNav({
           {next && (
             <Link
               href={next.href}
-              className="rounded-full bg-slate-800 px-3 py-1 text-xs font-bold text-lime-300 hover:bg-slate-700"
+              className="rounded-full bg-[var(--surface-2)] px-3 py-1 text-xs font-bold text-lime-300 hover:bg-[var(--surface-2)]"
             >
               {next.label}
             </Link>

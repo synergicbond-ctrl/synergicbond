@@ -564,9 +564,9 @@ export function TopicHeader({
         className="sb-editorial-title"
         style={{
           fontSize: Tag === "h1" ? "clamp(2rem, 4vw, 3rem)" : "clamp(1.35rem, 2.6vw, 1.9rem)",
-          fontWeight: 900,
+          fontWeight: 600,
           lineHeight: 1.12,
-          color: "var(--foreground)",
+          color: accentColor,
           margin: 0,
         }}
       >

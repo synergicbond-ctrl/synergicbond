@@ -4,43 +4,71 @@ import type {
 import { filterNotesForExam, notesStats } from "@/lib/premiumNotes/schema";
 import { VISUAL_REGISTRY } from "./visuals";
 
-// ─────────────────────────────────────────────────────────────────────────────
-// Premium Notes renderer — ONE reusable server component for every authored
-// chapter. Topic → Subtopic → ten typed blocks, filtered to the active
-// program's exam. Zero client JS: topics collapse via native <details>, so the
-// chapter engine page stays fast on mobile. Visual blocks resolve through the
-// SVG registry; unknown keys render an honest missing state.
-//
-// Card language (design system): focus=cyan · trap=amber · mistake=rose ·
-// exception=violet · trick=emerald · illustration=structured glass ·
-// revision=glass sheet. Semantic colors are content signals, not decoration.
-// ─────────────────────────────────────────────────────────────────────────────
+// Premium Notes renderer — semantic, open editorial reading surface.
+// No emoji structural UI. Left-rule callout system. One surface nesting depth.
+// Colours carry meaning: cyan=concept, violet=orbital/exception/trick,
+// gold=result/dyk, green=rule/answer, coral=trap/mistake/error.
 
-function Tag({ children }: { children: React.ReactNode }) {
-  return <span className="ml-2 shrink-0 rounded-full border border-white/10 bg-white/[0.05] px-1.5 py-0.5 align-middle text-[9px] font-bold uppercase tracking-wide text-white/45">{children}</span>;
+const MONO = "var(--font-mono), ui-monospace, 'SF Mono', monospace";
+
+function ExamTag({ exam }: { exam: string }) {
+  return (
+    <span style={{
+      fontFamily: MONO,
+      fontSize: "9px",
+      fontWeight: 700,
+      letterSpacing: "0.15em",
+      textTransform: "uppercase",
+      color: "var(--text-muted)",
+      border: "1px solid var(--border)",
+      borderRadius: "4px",
+      padding: "1px 5px",
+    }}>
+      {exam}
+    </span>
+  );
 }
 
-function ExamTags({ exams }: { exams?: NotesExam[] }) {
-  if (!exams) return null;
-  return <>{exams.map((e) => <Tag key={e}>{e}</Tag>)}</>;
+function ExamTags({ exams }: { exams?: string[] }) {
+  if (!exams?.length) return null;
+  return <span style={{ display: "inline-flex", gap: "4px", marginLeft: "6px" }}>{exams.map((e) => <ExamTag key={e} exam={e} />)}</span>;
 }
 
-function Callout({ label, tone, children, exams, icon }: {
+function MonoLabel({ text, color }: { text: string; color: string }) {
+  return (
+    <p style={{
+      fontFamily: MONO,
+      fontSize: "9px",
+      fontWeight: 900,
+      letterSpacing: "0.22em",
+      textTransform: "uppercase",
+      color,
+      marginBottom: "0.4rem",
+    }}>
+      {text}
+    </p>
+  );
+}
+
+function LeftRail({
+  label,
+  color,
+  children,
+  exams,
+}: {
   label: string;
-  tone: string;
+  color: string;
   children: React.ReactNode;
-  exams?: NotesExam[];
-  icon?: string;
+  exams?: string[];
 }) {
   return (
-    <div className={`rounded-lg border p-4 bg-[var(--surface)] shadow-md transition-all hover:border-opacity-80 ${tone}`}>
-      <div className="mb-2.5 flex items-center gap-2 text-[15px] sm:text-[16px] font-bold tracking-wide">
-        {icon && <span className="text-base leading-none">{icon}</span>}
-        <span>{label}</span>
+    <aside style={{ borderLeft: `3px solid ${color}`, paddingLeft: "1rem" }}>
+      <div style={{ display: "flex", alignItems: "center", gap: "0.5rem", marginBottom: "0.4rem" }}>
+        <MonoLabel text={label} color={color} />
         <ExamTags exams={exams} />
       </div>
       {children}
-    </div>
+    </aside>
   );
 }
 
@@ -48,24 +76,21 @@ function Block({ block }: { block: NoteBlock }) {
   switch (block.kind) {
     case "detailed":
       return (
-        <div className="rounded-lg border border-[var(--chem-bond)]/25 bg-[var(--surface)] p-4.5 shadow-sm">
+        <div style={{ display: "flex", flexDirection: "column", gap: "0.55rem" }}>
           {block.heading && (
-            <div className="mb-3 flex items-center gap-2 border-b border-[var(--chem-bond)]/15 pb-2 text-[16px] sm:text-[18px] font-bold text-[var(--chem-bond)]">
-              <span>🟢</span>
-              <span>{block.heading}</span>
+            <h5 style={{ fontSize: "0.9375rem", fontWeight: 600, color: "var(--chem-bond)", margin: 0 }}>
+              {block.heading}
               <ExamTags exams={block.exams} />
-            </div>
+            </h5>
           )}
           {block.paras?.map((p, i) => (
-            <p key={i} className="mb-2.5 text-[14px] leading-[1.5] text-[var(--foreground)] last:mb-0">
-              {p}
-            </p>
+            <p key={i} style={{ fontSize: "1rem", lineHeight: 1.72, color: "var(--text-body)", margin: 0 }}>{p}</p>
           ))}
           {block.points && (
-            <ul className="mt-2 space-y-2">
+            <ul style={{ display: "flex", flexDirection: "column", gap: "0.35rem", margin: 0, padding: 0, listStyle: "none" }}>
               {block.points.map((pt, i) => (
-                <li key={i} className="flex gap-2.5 text-[14px] leading-[1.5] text-[var(--foreground)]">
-                  <span className="mt-0.5 shrink-0 text-base font-bold text-[var(--chem-bond)]">📌</span>
+                <li key={i} style={{ display: "flex", gap: "0.6rem", alignItems: "flex-start", fontSize: "1rem", lineHeight: 1.7, color: "var(--text-body)" }}>
+                  <span aria-hidden style={{ color: "var(--chem-bond)", flexShrink: 0, marginTop: "0.2rem", fontSize: "0.7rem" }}>▸</span>
                   <span>{pt}</span>
                 </li>
               ))}
@@ -77,409 +102,377 @@ function Block({ block }: { block: NoteBlock }) {
     case "visual": {
       const Visual = VISUAL_REGISTRY[block.visual];
       return (
-        <figure className="rounded-lg border border-[var(--chem-bond)]/30 bg-[var(--surface)] p-4 sm:p-5 shadow-lg">
-          <figcaption className="mb-3 flex items-center justify-between border-b border-[var(--chem-bond)]/15 pb-2 text-[14px] font-bold tracking-wide text-[var(--chem-bond)]">
-            <span className="flex items-center gap-2">
-              <span>◈</span>
-              <span>Visual Note · {block.title}</span>
+        <figure style={{ border: "1px solid var(--border)", borderRadius: "var(--radius)", overflow: "hidden", margin: 0 }}>
+          <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "0.5rem 1rem", borderBottom: "1px solid var(--border)" }}>
+            <span style={{ fontFamily: MONO, fontSize: "9.5px", fontWeight: 600, letterSpacing: "0.15em", textTransform: "uppercase", color: "var(--text-muted)" }}>
+              Visual · {block.title}
             </span>
             <ExamTags exams={block.exams} />
-          </figcaption>
-          <div className="my-2 rounded-lg bg-[var(--background)] p-2 border border-white/[0.05]">
-            {Visual ? <Visual /> : <p className="p-4 text-sm text-[var(--text-muted)]">Diagram “{block.visual}” is currently being drawn — core notes above cover the concept.</p>}
           </div>
-          {block.caption && <p className="mt-3 text-[12px] leading-[1.4] text-[var(--text-muted)]">{block.caption}</p>}
+          <div style={{ padding: "1rem", background: "var(--background)" }}>
+            {Visual
+              ? <Visual />
+              : <p style={{ fontSize: "0.875rem", color: "var(--text-muted)", padding: "0.5rem 0" }}>Diagram "{block.visual}" is being produced — core notes above cover the concept.</p>
+            }
+          </div>
+          {block.caption && (
+            <figcaption style={{ padding: "0.5rem 1rem", borderTop: "1px solid var(--border)", fontSize: "0.8125rem", lineHeight: 1.55, color: "var(--text-muted)" }}>
+              {block.caption}
+            </figcaption>
+          )}
         </figure>
       );
     }
 
     case "focus":
       return (
-        <Callout label={block.title ?? "Key Exam Focus"} tone="border-[var(--chem-bond)]/40 text-[var(--chem-bond)]" exams={block.exams} icon="🟢">
-          <ul className="space-y-2">
+        <LeftRail label={block.title ?? "Key exam focus"} color="var(--chem-bond)" exams={block.exams}>
+          <ul style={{ display: "flex", flexDirection: "column", gap: "0.35rem", margin: 0, padding: 0, listStyle: "none" }}>
             {block.points.map((p, i) => (
-              <li key={i} className="flex gap-2.5 text-[14px] leading-[1.5] text-[var(--foreground)]">
-                <span className="mt-0.5 shrink-0 text-[var(--chem-bond)] font-bold">📌</span>
+              <li key={i} style={{ display: "flex", gap: "0.55rem", fontSize: "1rem", lineHeight: 1.7, color: "var(--text-body)" }}>
+                <span aria-hidden style={{ color: "var(--chem-bond)", flexShrink: 0 }}>◆</span>
                 <span>{p}</span>
               </li>
             ))}
           </ul>
-        </Callout>
+        </LeftRail>
       );
 
     case "trap":
       return (
-        <Callout label="JEE / NEET Trap" tone="border-[#FF6B6B]/45 text-[#FF6B6B]" exams={block.exams} icon="🔴">
-          <div className="space-y-3">
+        <LeftRail label="JEE / NEET trap" color="var(--chem-trap)" exams={block.exams}>
+          <div style={{ display: "flex", flexDirection: "column", gap: "0.6rem" }}>
             {block.items.map((t, i) => (
-              <div key={i} className="rounded-lg border border-[#FF6B6B]/20 bg-[#FF6B6B]/[0.06] p-3 text-[14px] leading-[1.5]">
-                <p className="font-bold text-[#FF6B6B]">⚠️ Trap Assumption: {t.trap}</p>
-                <p className="mt-1 font-medium text-[var(--foreground)]">✓ Chemical Reality: {t.reality}</p>
+              <div key={i} style={{ display: "flex", flexDirection: "column", gap: "0.2rem" }}>
+                <p style={{ fontSize: "0.9375rem", fontWeight: 600, color: "var(--chem-trap)", lineHeight: 1.55 }}>Assumption: {t.trap}</p>
+                <p style={{ fontSize: "0.9375rem", color: "var(--text-body)", lineHeight: 1.65 }}>Reality: {t.reality}</p>
               </div>
             ))}
           </div>
-        </Callout>
+        </LeftRail>
       );
 
     case "mistake":
       return (
-        <Callout label="Common Student Mistakes" tone="border-[#FF9500]/45 text-[#FF9500]" exams={block.exams} icon="⚠️">
-          <div className="space-y-3">
+        <LeftRail label="Common mistakes" color="var(--chem-energy)" exams={block.exams}>
+          <div style={{ display: "flex", flexDirection: "column", gap: "0.6rem" }}>
             {block.items.map((m, i) => (
-              <div key={i} className="rounded-lg border border-[#FF9500]/20 bg-[#FF9500]/[0.06] p-3 text-[14px] leading-[1.5]">
-                <p className="font-bold text-[#FF9500]">❌ Wrong Habit: {m.wrong}</p>
-                <p className="mt-1 font-medium text-[#90EE90]">✓ Correction: {m.right}</p>
+              <div key={i} style={{ display: "flex", flexDirection: "column", gap: "0.2rem" }}>
+                <p style={{ fontSize: "0.9375rem", fontWeight: 600, color: "var(--chem-energy)", lineHeight: 1.55 }}>Wrong: {m.wrong}</p>
+                <p style={{ fontSize: "0.9375rem", color: "var(--text-body)", lineHeight: 1.65 }}>Correct: {m.right}</p>
               </div>
             ))}
           </div>
-        </Callout>
+        </LeftRail>
       );
 
     case "exception":
       return (
-        <Callout label="Critical Exceptions" tone="border-[#c4b5fd]/45 text-[#c4b5fd]" exams={block.exams} icon="⚡">
-          <div className="space-y-3">
+        <LeftRail label="Critical exception" color="var(--chem-orbital)" exams={block.exams}>
+          <div style={{ display: "flex", flexDirection: "column", gap: "0.5rem" }}>
             {block.items.map((e, i) => (
-              <div key={i} className="rounded-lg border border-[#c4b5fd]/20 bg-[#c4b5fd]/[0.06] p-3 text-[14px] leading-[1.5]">
-                <p className="font-bold text-[#c4b5fd]">{e.statement}</p>
-                {e.why && <p className="mt-1 text-[var(--foreground)]/85">💡 Why: {e.why}</p>}
+              <div key={i}>
+                <p style={{ fontSize: "0.9375rem", fontWeight: 600, color: "var(--chem-orbital)", lineHeight: 1.55 }}>{e.statement}</p>
+                {e.why && <p style={{ fontSize: "0.9rem", color: "var(--text-muted)", lineHeight: 1.6, marginTop: "0.2rem" }}>Why: {e.why}</p>}
               </div>
             ))}
           </div>
-        </Callout>
+        </LeftRail>
       );
 
     case "trick":
       return (
-        <Callout label="Memory Trick & Anchor" tone="border-[#52B788]/45 text-[#52B788]" exams={block.exams} icon="💡">
-          <div className="space-y-3">
+        <LeftRail label="Memory anchor" color="var(--chem-rule)" exams={block.exams}>
+          <div style={{ display: "flex", flexDirection: "column", gap: "0.5rem" }}>
             {block.items.map((t, i) => (
-              <div key={i} className="rounded-lg border border-[#52B788]/20 bg-[#52B788]/[0.06] p-3 text-[14px] leading-[1.5]">
-                <p className="font-bold text-[#52B788] text-[15px]">🧠 Mnemonic: {t.trick}</p>
-                <p className="mt-1 text-[var(--foreground)]">🎯 What it unlocks: {t.recall}</p>
+              <div key={i}>
+                <p style={{ fontSize: "0.9375rem", fontWeight: 600, color: "var(--chem-rule)", lineHeight: 1.55 }}>Mnemonic: {t.trick}</p>
+                <p style={{ fontSize: "0.9rem", color: "var(--text-muted)", lineHeight: 1.6 }}>Unlocks: {t.recall}</p>
               </div>
             ))}
           </div>
-        </Callout>
+        </LeftRail>
       );
 
     case "scientist":
       return (
-        <div className="rounded-lg border border-[#B89FFF]/40 bg-[var(--surface)] p-4.5 shadow-md">
-          <div className="mb-2.5 flex flex-wrap items-center justify-between border-b border-[#B89FFF]/20 pb-2.5">
-            <div className="flex items-center gap-2">
-              <span className="text-lg">🟣</span>
-              <span className="text-[16px] sm:text-[18px] font-bold text-[#B89FFF]">Scientist Story · {block.scientist}</span>
-            </div>
+        <aside style={{ display: "flex", flexDirection: "column", gap: "0.5rem", borderLeft: "3px solid var(--chem-orbital)", paddingLeft: "1rem" }}>
+          <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: "0.5rem" }}>
+            <p style={{ fontFamily: MONO, fontSize: "9px", fontWeight: 900, letterSpacing: "0.2em", textTransform: "uppercase", color: "var(--chem-orbital)" }}>
+              Scientific history
+            </p>
             {block.year && (
-              <span className="rounded-md border border-[#B89FFF]/30 bg-[#B89FFF]/15 px-2 py-0.5 font-mono text-xs font-bold text-[#B89FFF]">
+              <span style={{ fontFamily: MONO, fontSize: "9.5px", fontWeight: 700, color: "var(--text-muted)", border: "1px solid var(--border)", borderRadius: "4px", padding: "1px 6px" }}>
                 {block.year}
               </span>
             )}
           </div>
-          <p className="text-[14px] leading-[1.5] text-[var(--foreground)]">{block.contribution}</p>
+          <p style={{ fontSize: "1rem", fontWeight: 600, color: "var(--chem-orbital)", lineHeight: 1.4 }}>{block.scientist}</p>
+          <p style={{ fontSize: "0.9375rem", lineHeight: 1.72, color: "var(--text-body)" }}>{block.contribution}</p>
           {block.whyItMattered && (
-            <div className="mt-3 rounded-lg border border-[#B89FFF]/25 bg-[#B89FFF]/[0.07] p-3 text-[14px] text-[var(--foreground)]">
-              <span className="font-bold text-[#B89FFF]">💡 Why it changed chemistry: </span>
+            <p style={{ fontSize: "0.875rem", lineHeight: 1.6, color: "var(--text-muted)", paddingTop: "0.4rem", borderTop: "1px solid var(--border)" }}>
+              <span style={{ fontWeight: 600, color: "var(--chem-orbital)" }}>Why it changed chemistry: </span>
               {block.whyItMattered}
-            </div>
+            </p>
           )}
           {block.funFact && (
-            <div className="mt-2.5 flex items-start gap-2 rounded-lg bg-[var(--background)] p-2.5 text-xs text-[var(--foreground)]/85 border border-white/5">
-              <span className="shrink-0 text-[#B89FFF]">🧑</span>
-              <span><strong className="text-[#B89FFF]">Historical Anecdote: </strong>{block.funFact}</span>
-            </div>
+            <p style={{ fontSize: "0.8125rem", lineHeight: 1.55, color: "var(--text-muted)" }}>
+              <span style={{ fontWeight: 600 }}>Anecdote: </span>{block.funFact}
+            </p>
           )}
-          {block.source && <p className="mt-2 text-[12px] text-[var(--text-muted)] italic">Source: {block.source}</p>}
-        </div>
+        </aside>
       );
 
     case "dyk":
       return (
-        <div className="rounded-lg border border-[#FFD93D]/40 bg-[var(--surface)] p-4 shadow-sm">
-          <div className="mb-2 flex items-center gap-2 text-[16px] font-bold text-[#FFD93D]">
-            <span>🟠</span>
-            <span>Did You Know?</span>
-            <ExamTags exams={block.exams} />
-          </div>
-          <p className="text-[14px] leading-[1.5] text-[var(--foreground)]">{block.fact}</p>
+        <LeftRail label="Did you know" color="var(--chem-energy)" exams={block.exams}>
+          <p style={{ fontSize: "1rem", lineHeight: 1.72, color: "var(--text-body)" }}>{block.fact}</p>
           {block.connection && (
-            <p className="mt-2 text-[13px] font-medium text-[#FFD93D]/90 border-t border-[#FFD93D]/15 pt-2">
-              🔗 Connection: {block.connection}
+            <p style={{ fontSize: "0.875rem", color: "var(--text-muted)", marginTop: "0.3rem" }}>
+              <span style={{ fontWeight: 600, color: "var(--chem-energy)" }}>Connection: </span>
+              {block.connection}
             </p>
           )}
-        </div>
+        </LeftRail>
       );
 
     case "decoder":
       return (
-        <div className="rounded-lg border border-[var(--chem-bond)]/40 bg-[var(--surface)] p-4.5 shadow-lg">
-          <div className="mb-3 flex flex-wrap items-center justify-between gap-2 border-b border-[var(--chem-bond)]/20 pb-2.5">
-            <div className="flex items-center gap-2">
-              <span className="text-lg">🟢</span>
-              <span className="text-[16px] sm:text-[18px] font-bold text-white">Formula Decoder · {block.title}</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <span className="rounded-md border border-[var(--chem-bond)]/40 bg-[var(--chem-bond)]/20 px-2.5 py-1 font-mono text-xs font-bold text-[var(--chem-bond)]">
-                Label: {block.labelCode}
-              </span>
-              <ExamTags exams={block.exams} />
-            </div>
+        <div style={{ display: "flex", flexDirection: "column", gap: "0.6rem", borderLeft: "3px solid var(--accent)", paddingLeft: "1rem" }}>
+          <div style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
+            <MonoLabel text={`Formula · ${block.title}`} color="var(--accent)" />
+            <ExamTags exams={block.exams} />
           </div>
           {block.formula && (
-            <div className="mb-3.5 overflow-x-auto rounded-lg border border-[var(--chem-bond)]/30 bg-[var(--background)] p-3 text-center font-mono text-[16px] sm:text-[18px] font-bold text-[var(--chem-bond)] shadow-inner">
+            <div style={{ fontFamily: MONO, fontSize: "1.1rem", fontWeight: 700, color: "var(--foreground)", padding: "0.5rem 0", overflowX: "auto" }}>
               {block.formula}
             </div>
           )}
-          <div className="space-y-2.5 text-[14px] leading-[1.5] text-[var(--foreground)]">
-            <p>
-              <strong className="text-[var(--chem-bond)]">What it means: </strong>
-              {block.meaning}
+          <p style={{ fontSize: "1rem", lineHeight: 1.72, color: "var(--text-body)" }}>
+            <span style={{ fontWeight: 600, color: "var(--foreground)" }}>Meaning: </span>
+            {block.meaning}
+          </p>
+          {block.example && (
+            <p style={{ fontFamily: MONO, fontSize: "0.875rem", color: "var(--text-muted)", borderTop: "1px solid var(--border)", paddingTop: "0.4rem" }}>
+              Example: {block.example}
             </p>
-            {block.example && (
-              <div className="rounded-lg border border-white/10 bg-[var(--background)] p-3 font-mono text-[13px] text-[#90EE90]">
-                <span className="font-bold text-white">Example Calculation: </span>
-                {block.example}
-              </div>
-            )}
-            {block.insights && block.insights.length > 0 && (
-              <ul className="mt-2 space-y-1.5 border-t border-white/10 pt-2.5">
-                {block.insights.map((ins, i) => (
-                  <li key={i} className="flex items-start gap-2 text-xs text-[var(--foreground)]/90">
-                    <span className="mt-0.5 text-[var(--chem-bond)]">▸</span>
-                    <span>{ins}</span>
-                  </li>
-                ))}
-              </ul>
-            )}
-          </div>
+          )}
+          {block.insights?.length ? (
+            <ul style={{ display: "flex", flexDirection: "column", gap: "0.25rem", margin: 0, padding: 0, listStyle: "none" }}>
+              {block.insights.map((ins, i) => (
+                <li key={i} style={{ display: "flex", gap: "0.5rem", fontSize: "0.875rem", lineHeight: 1.6, color: "var(--text-muted)" }}>
+                  <span aria-hidden style={{ color: "var(--accent)", flexShrink: 0 }}>▸</span>
+                  <span>{ins}</span>
+                </li>
+              ))}
+            </ul>
+          ) : null}
         </div>
       );
 
     case "errorAnalysis":
       return (
-        <div className="rounded-lg border border-[#FF9500]/45 bg-[var(--surface)] p-4.5 shadow-lg">
-          <div className="mb-3 flex flex-wrap items-center justify-between gap-2 border-b border-[#FF9500]/20 pb-2.5">
-            <div className="flex items-center gap-2">
-              <span className="text-lg">⚠️</span>
-              <span className="text-[16px] sm:text-[18px] font-bold text-[#FF9500]">
-                {block.title ?? "Exam Vulnerability & Error Analysis"}
-              </span>
-            </div>
-            {block.examImpact && (
-              <span className="rounded border border-[#FF6B6B]/40 bg-[#FF6B6B]/20 px-2 py-0.5 text-[11px] font-bold uppercase tracking-wider text-[#FF6B6B]">
-                {block.examImpact}
-              </span>
-            )}
+        <aside style={{ display: "flex", flexDirection: "column", gap: "0.6rem", borderLeft: "3px solid var(--chem-trap)", paddingLeft: "1rem" }}>
+          <div style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
+            <MonoLabel text={block.title ?? "Exam vulnerability"} color="var(--chem-trap)" />
           </div>
-          <div className="space-y-3">
-            <div className="rounded-lg border border-[#FF6B6B]/30 bg-[#FF6B6B]/[0.08] p-3">
-              <p className="text-[14px] font-bold text-[#FF6B6B]">❌ The Common Trap / Error Habit</p>
-              <p className="mt-1 text-[14px] leading-[1.5] text-[var(--foreground)]">{block.error}</p>
-            </div>
-            <div className="rounded-lg border border-white/10 bg-[var(--background)] p-3">
-              <p className="text-[14px] font-bold text-[#FFD93D]">🔍 Root Cause (Why students make this mistake)</p>
-              <p className="mt-1 text-[14px] leading-[1.5] text-[var(--foreground)]/90">{block.whyItHappens}</p>
-            </div>
-            <div className="rounded-lg border border-[#52B788]/30 bg-[#52B788]/[0.08] p-3">
-              <p className="text-[14px] font-bold text-[#52B788]">✓ Correct Approach & Verification</p>
-              <p className="mt-1 text-[14px] leading-[1.5] text-[var(--foreground)]">{block.correctApproach}</p>
-            </div>
+          <div style={{ display: "flex", flexDirection: "column", gap: "0.45rem" }}>
+            <p style={{ fontSize: "0.9375rem", fontWeight: 600, color: "var(--chem-trap)", lineHeight: 1.55 }}>The trap: {block.error}</p>
+            <p style={{ fontSize: "0.875rem", lineHeight: 1.65, color: "var(--text-muted)" }}>
+              <span style={{ fontWeight: 600, color: "var(--text-muted)" }}>Why it happens: </span>
+              {block.whyItHappens}
+            </p>
+            <p style={{ fontSize: "0.9375rem", lineHeight: 1.65, color: "var(--chem-rule)" }}>
+              <span style={{ fontWeight: 600 }}>Correct approach: </span>
+              {block.correctApproach}
+            </p>
             {block.verificationStep && (
-              <div className="flex items-center gap-2 rounded-lg bg-[var(--background)] p-2.5 text-[13px] text-[var(--chem-bond)] border border-[var(--chem-bond)]/20">
-                <span>💡</span>
-                <span><strong className="font-bold">Exam Self-Check: </strong>{block.verificationStep}</span>
-              </div>
+              <p style={{ fontSize: "0.875rem", color: "var(--text-muted)", borderTop: "1px solid var(--border)", paddingTop: "0.35rem" }}>
+                <span style={{ fontWeight: 600, color: "var(--chem-bond)" }}>Self-check: </span>
+                {block.verificationStep}
+              </p>
             )}
           </div>
-        </div>
+        </aside>
       );
 
     case "illustration": {
       const tricky = block.tricky;
-      const edge = tricky ? "border-[#FF6B6B]/40" : "border-[var(--chem-bond)]/30";
-      const headBg = tricky ? "bg-[#FF6B6B]/15 border-[#FF6B6B]/25" : "bg-[var(--chem-bond)]/15 border-[var(--chem-bond)]/20";
-      const headText = tricky ? "text-[#FF6B6B]" : "text-[var(--chem-bond)]";
+      const labelColor = tricky ? "var(--chem-trap)" : "var(--chem-rule)";
+      const labelText = tricky ? "Tricky example" : "Solved example";
       return (
-        <div className={`overflow-hidden rounded-lg border ${edge} bg-[var(--surface)] shadow-md`}>
-          <div className={`flex flex-wrap items-center gap-2 border-b px-4 py-3 ${headBg}`}>
-            <span className="text-base leading-none">{tricky ? "🧩" : "✎"}</span>
-            <span className={`text-[12px] font-extrabold uppercase tracking-[0.15em] ${headText}`}>
-              {tricky ? "Tricky / Conceptual Example" : "Solved Example"}
-            </span>
-            <span className="rounded-full border border-white/10 bg-white/[0.08] px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide text-white/75">
+        <section style={{
+          borderRadius: "var(--radius)",
+          border: `1px solid color-mix(in srgb, ${labelColor} 25%, transparent)`,
+          borderLeftWidth: "3px",
+          borderLeftColor: labelColor,
+          overflow: "hidden",
+        }}>
+          <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", gap: "0.5rem", padding: "0.75rem 1rem", borderBottom: "1px solid var(--border)" }}>
+            <MonoLabel text={labelText} color={labelColor} />
+            <span style={{ fontFamily: MONO, fontSize: "9px", fontWeight: 600, letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--text-muted)", border: "1px solid var(--border)", borderRadius: "4px", padding: "1px 5px" }}>
               {block.level}
             </span>
             {block.concept && (
-              <span className="rounded-full border border-[var(--chem-bond)]/30 bg-[var(--chem-bond)]/15 px-2.5 py-0.5 text-[10px] font-bold text-[var(--chem-bond)]">
-                ◦ {block.concept}
+              <span style={{ fontFamily: MONO, fontSize: "9px", fontWeight: 600, letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--chem-bond)", border: "1px solid var(--border)", borderRadius: "4px", padding: "1px 5px" }}>
+                {block.concept}
               </span>
             )}
             <ExamTags exams={block.exams} />
           </div>
-          <div className="p-4 sm:p-5">
-            <div className="flex gap-2.5">
-              <span className="mt-0.5 shrink-0 text-xs font-black text-[var(--chem-bond)]">Q</span>
-              <p className="text-[15px] sm:text-[16px] font-bold leading-relaxed text-white">{block.question}</p>
-            </div>
+          <div style={{ padding: "1rem", display: "flex", flexDirection: "column", gap: "0.75rem" }}>
+            <p style={{ fontSize: "1rem", fontWeight: 600, lineHeight: 1.6, color: "var(--foreground)" }}>{block.question}</p>
 
             {block.thinking && (
-              <div className="mt-3 rounded-lg border border-[#A8E8D8]/20 bg-[var(--background)] p-3 text-[14px] leading-relaxed text-[var(--foreground)]">
-                <span className="font-bold text-[#A8E8D8]">🎯 Approach & Strategy · </span>
+              <p style={{ fontSize: "0.9375rem", lineHeight: 1.7, color: "var(--text-muted)", borderTop: "1px solid var(--border)", paddingTop: "0.6rem" }}>
+                <span style={{ fontWeight: 600, color: "var(--foreground)" }}>Approach: </span>
                 {block.thinking}
-              </div>
+              </p>
             )}
 
-            {block.steps && block.steps.length > 0 && (
-              <ol className="mt-4 space-y-0">
+            {block.steps?.length ? (
+              <ol style={{ display: "flex", flexDirection: "column", gap: "0.5rem", margin: 0, padding: 0, listStyle: "none" }}>
                 {block.steps.map((s, i) => (
-                  <li key={i} className="relative flex gap-3.5 pb-4 last:pb-0">
-                    {i < block.steps!.length - 1 && (
-                      <span className="absolute left-[13px] top-7 h-full w-px bg-[var(--chem-bond)]/30" aria-hidden />
-                    )}
-                    <span className="z-10 flex h-7 w-7 shrink-0 items-center justify-center rounded-full border border-[var(--chem-bond)]/50 bg-[var(--background)] text-xs font-black text-[var(--chem-bond)]">
-                      {i + 1}
+                  <li key={i} style={{ display: "flex", gap: "0.75rem", alignItems: "flex-start" }}>
+                    <span style={{ fontFamily: MONO, fontSize: "9.5px", fontWeight: 700, color: labelColor, flexShrink: 0, marginTop: "0.25rem", minWidth: "1.5rem" }}>
+                      {String(i + 1).padStart(2, "0")}
                     </span>
-                    <div className="min-w-0 flex-1 pt-0.5">
-                      {s.label && <p className="text-[14px] font-bold text-white">{s.label}</p>}
-                      <p className="text-[14px] leading-[1.5] text-[var(--foreground)]/90">{s.work}</p>
+                    <div>
+                      {s.label && <p style={{ fontSize: "0.875rem", fontWeight: 600, color: "var(--foreground)", marginBottom: "0.1rem" }}>{s.label}</p>}
+                      <p style={{ fontSize: "0.9375rem", lineHeight: 1.65, color: "var(--text-body)" }}>{s.work}</p>
                     </div>
                   </li>
                 ))}
               </ol>
-            )}
-
-            {!block.steps && block.solution && (
-              <div className="mt-3 rounded-lg border border-white/10 bg-[var(--background)] p-3 text-[14px] leading-relaxed text-[var(--foreground)]">
-                <span className="font-bold text-[var(--chem-bond)]">Solution · </span>
+            ) : block.solution ? (
+              <p style={{ fontSize: "0.9375rem", lineHeight: 1.7, color: "var(--text-body)" }}>
+                <span style={{ fontWeight: 600, color: "var(--foreground)" }}>Solution: </span>
                 {block.solution}
-              </div>
-            )}
+              </p>
+            ) : null}
 
             {block.answer && (
-              <div className="mt-4 flex flex-wrap items-center gap-2.5 rounded-lg border border-[#90EE90]/40 bg-[#90EE90]/10 px-4 py-3 shadow-inner">
-                <span className="text-[11px] font-black uppercase tracking-[0.15em] text-[#90EE90]">Final Answer</span>
-                <span className="font-mono text-[16px] sm:text-[18px] font-extrabold text-[#90EE90]">{block.answer}</span>
+              <div style={{ display: "flex", alignItems: "center", gap: "0.75rem", paddingTop: "0.6rem", borderTop: "1px solid var(--border)" }}>
+                <span style={{ fontFamily: MONO, fontSize: "9px", fontWeight: 900, letterSpacing: "0.2em", textTransform: "uppercase", color: "var(--chem-rule)" }}>
+                  Final answer
+                </span>
+                <span style={{ fontFamily: MONO, fontSize: "1.05rem", fontWeight: 700, color: "var(--chem-rule)" }}>{block.answer}</span>
               </div>
             )}
 
             {block.insight && (
-              <div className="mt-3 rounded-lg border border-[#B89FFF]/30 bg-[#B89FFF]/10 p-3 text-[14px] leading-relaxed text-[var(--foreground)]">
-                <span className="font-bold text-[#B89FFF]">💡 Key Insight · </span>
+              <p style={{ fontSize: "0.875rem", lineHeight: 1.6, color: "var(--text-muted)", borderTop: "1px solid var(--border)", paddingTop: "0.5rem" }}>
+                <span style={{ fontWeight: 600, color: "var(--chem-orbital)" }}>Key insight: </span>
                 {block.insight}
-              </div>
+              </p>
             )}
 
-            <div className="mt-3 space-y-2">
-              {block.fastMethod && (
-                <div className="rounded-lg border border-[#52B788]/25 bg-[#52B788]/10 p-3 text-[14px] text-[var(--foreground)]">
-                  <span className="font-bold text-[#52B788]">⚡ Fast Method · </span>
-                  {block.fastMethod}
-                </div>
-              )}
-              {block.alternateMethod && (
-                <div className="rounded-lg border border-[#c4b5fd]/25 bg-[#c4b5fd]/10 p-3 text-[14px] text-[var(--foreground)]">
-                  <span className="font-bold text-[#c4b5fd]">🔄 Alternate Method · </span>
-                  {block.alternateMethod}
-                </div>
-              )}
-              {block.commonMistakes && block.commonMistakes.length > 0 && (
-                <div className="rounded-lg border border-[#FF9500]/25 bg-[#FF9500]/10 p-3 text-[14px] text-[var(--foreground)]">
-                  <span className="font-bold text-[#FF9500]">⚠️ Watch out · </span>
-                  {block.commonMistakes.join(" ")}
-                </div>
-              )}
-            </div>
+            {(block.fastMethod || block.alternateMethod || block.commonMistakes?.length) && (
+              <div style={{ display: "flex", flexDirection: "column", gap: "0.35rem", paddingTop: "0.5rem", borderTop: "1px solid var(--border)" }}>
+                {block.fastMethod && (
+                  <p style={{ fontSize: "0.875rem", lineHeight: 1.6, color: "var(--text-muted)" }}>
+                    <span style={{ fontWeight: 600, color: "var(--chem-rule)" }}>Fast method: </span>
+                    {block.fastMethod}
+                  </p>
+                )}
+                {block.alternateMethod && (
+                  <p style={{ fontSize: "0.875rem", lineHeight: 1.6, color: "var(--text-muted)" }}>
+                    <span style={{ fontWeight: 600, color: "var(--chem-orbital)" }}>Alternate: </span>
+                    {block.alternateMethod}
+                  </p>
+                )}
+                {block.commonMistakes?.length ? (
+                  <p style={{ fontSize: "0.875rem", lineHeight: 1.6, color: "var(--text-muted)" }}>
+                    <span style={{ fontWeight: 600, color: "var(--chem-energy)" }}>Watch out: </span>
+                    {block.commonMistakes.join(" ")}
+                  </p>
+                ) : null}
+              </div>
+            )}
           </div>
-        </div>
+        </section>
       );
     }
 
     case "misc":
       return (
-        <div className="rounded-lg border border-white/10 bg-[var(--surface)] p-4 shadow-sm">
-          <div className="mb-2 flex items-center gap-2">
-            <span className="text-[11px] font-bold uppercase tracking-[0.15em] text-white/60">Quick Application</span>
-            <span className="rounded-full border border-white/15 bg-white/[0.06] px-2 py-0.5 text-[9px] font-bold uppercase tracking-wide text-white/70">
-              {block.level}
-            </span>
+        <div style={{ display: "flex", flexDirection: "column", gap: "0.4rem" }}>
+          <div style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
+            <span style={{ fontFamily: MONO, fontSize: "9px", fontWeight: 700, letterSpacing: "0.18em", textTransform: "uppercase", color: "var(--text-muted)" }}>Quick application</span>
+            <span style={{ fontFamily: MONO, fontSize: "9px", color: "var(--text-muted)", border: "1px solid var(--border)", borderRadius: "4px", padding: "1px 5px" }}>{block.level}</span>
             <ExamTags exams={block.exams} />
           </div>
-          <p className="text-[14px] font-semibold leading-relaxed text-white">{block.question}</p>
-          <div className="mt-2.5 flex flex-wrap items-baseline gap-x-3 gap-y-1 border-t border-white/10 pt-2.5 text-[14px] leading-relaxed">
-            <span className="rounded-md bg-[#52B788]/20 px-2 py-1 font-mono text-[14px] font-bold text-[#90EE90]">
-              {block.answer}
-            </span>
-            <span className="text-[var(--foreground)]">{block.explanation}</span>
-          </div>
+          <p style={{ fontSize: "1rem", fontWeight: 600, lineHeight: 1.6, color: "var(--foreground)" }}>{block.question}</p>
+          <p style={{ fontSize: "0.9375rem", lineHeight: 1.7, color: "var(--text-body)" }}>
+            <span style={{ fontFamily: MONO, fontWeight: 700, color: "var(--chem-rule)", marginRight: "0.4rem" }}>{block.answer}</span>
+            {block.explanation}
+          </p>
         </div>
       );
 
     case "revision":
       return (
-        <Callout label={block.title ?? "One-Screen Revision Notes"} tone="border-[var(--chem-bond)]/35 bg-[var(--background)] text-white" exams={block.exams} icon="📌">
-          <ul className="space-y-2">
+        <LeftRail label={block.title ?? "One-screen revision"} color="var(--chem-bond)" exams={block.exams}>
+          <ul style={{ display: "flex", flexDirection: "column", gap: "0.35rem", margin: 0, padding: 0, listStyle: "none" }}>
             {block.points.map((p, i) => (
-              <li key={i} className="flex gap-2.5 text-[14px] leading-[1.5] text-[var(--foreground)]">
-                <span className="mt-0.5 shrink-0 text-[var(--chem-bond)] font-bold">▸</span>
+              <li key={i} style={{ display: "flex", gap: "0.55rem", fontSize: "1rem", lineHeight: 1.7, color: "var(--text-body)" }}>
+                <span aria-hidden style={{ color: "var(--chem-bond)", flexShrink: 0 }}>▸</span>
                 <span>{p}</span>
               </li>
             ))}
           </ul>
-        </Callout>
+        </LeftRail>
       );
   }
 }
 
 function Topic({ topic, index, defaultOpen }: { topic: NoteTopic; index: number; defaultOpen: boolean }) {
-  const examples = topic.subtopics.reduce(
-    (n, st) => n + st.blocks.filter((b) => b.kind === "illustration" || b.kind === "misc" || b.kind === "decoder").length,
-    0,
-  );
-  const diagrams = topic.subtopics.reduce((n, st) => n + st.blocks.filter((b) => b.kind === "visual").length, 0);
-  const trapsAndErrors = topic.subtopics.reduce(
-    (n, st) => n + st.blocks.filter((b) => b.kind === "trap" || b.kind === "mistake" || b.kind === "errorAnalysis").length,
-    0,
-  );
-
   return (
-    <details open={defaultOpen} className="group rounded-lg border border-white/10 bg-[var(--surface)]/40 open:border-[var(--chem-bond)]/40 transition-all">
-      <summary className="flex cursor-pointer list-none items-center gap-3.5 p-4 sm:p-5 [&::-webkit-details-marker]:hidden">
-        <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border border-[var(--chem-bond)]/30 bg-[var(--background)] text-sm font-black text-[var(--chem-bond)]">
+    <details open={defaultOpen} className="group" style={{ borderBottom: "1px solid var(--border)" }}>
+      <summary style={{ cursor: "pointer", listStyle: "none", padding: "1rem 0", display: "flex", alignItems: "flex-start", gap: "0.75rem" }}>
+        <span style={{
+          fontFamily: MONO,
+          fontSize: "10px",
+          fontWeight: 700,
+          color: "var(--chem-bond)",
+          flexShrink: 0,
+          marginTop: "0.35rem",
+          minWidth: "2rem",
+        }}>
           {String(index + 1).padStart(2, "0")}
         </span>
-        <span className="min-w-0 flex-1">
-          <span className="block text-[18px] sm:text-[22px] font-bold text-white leading-[1.3] group-open:text-[var(--chem-bond)] transition-colors">
+        <div style={{ flex: 1, minWidth: 0 }}>
+          <span style={{
+            display: "block",
+            fontSize: "1.1rem",
+            fontWeight: 600,
+            color: "var(--foreground)",
+            lineHeight: 1.35,
+          }} className="group-open:text-[var(--chem-bond)]">
             {topic.title}
           </span>
-          {topic.intro && <span className="mt-1 block text-xs sm:text-sm text-[var(--foreground)]/70 leading-normal">{topic.intro}</span>}
-          <span className="mt-2 flex flex-wrap gap-2">
-            {examples > 0 && (
-              <span className="rounded-full border border-[#52B788]/30 bg-[#52B788]/15 px-2.5 py-0.5 text-[10px] font-bold tracking-wide text-[#90EE90]">
-                ✎ {examples} Worked Example{examples > 1 ? "s" : ""} & Decoder{examples > 1 ? "s" : ""}
-              </span>
-            )}
-            {diagrams > 0 && (
-              <span className="rounded-full border border-[var(--chem-bond)]/30 bg-[var(--chem-bond)]/15 px-2.5 py-0.5 text-[10px] font-bold tracking-wide text-[var(--chem-bond)]">
-                ◈ {diagrams} Diagram{diagrams > 1 ? "s" : ""}
-              </span>
-            )}
-            {trapsAndErrors > 0 && (
-              <span className="rounded-full border border-[#FF6B6B]/30 bg-[#FF6B6B]/15 px-2.5 py-0.5 text-[10px] font-bold tracking-wide text-[#FF6B6B]">
-                ⚠️ {trapsAndErrors} Exam Trap{trapsAndErrors > 1 ? "s" : ""} & Error Analysis
-              </span>
-            )}
-          </span>
-        </span>
-        <span className="shrink-0 text-xl text-[var(--chem-bond)] transition-transform duration-200 group-open:rotate-90">›</span>
+          {topic.intro && (
+            <span style={{ display: "block", fontSize: "0.875rem", color: "var(--text-muted)", lineHeight: 1.55, marginTop: "0.25rem" }}>
+              {topic.intro}
+            </span>
+          )}
+        </div>
+        <span style={{ flexShrink: 0, color: "var(--text-muted)", fontSize: "1.1rem", transition: "transform 150ms" }} className="group-open:rotate-90">›</span>
       </summary>
-      <div className="space-y-6 border-t border-white/10 p-4 sm:p-6 bg-[var(--background)]">
+      <div style={{ paddingBottom: "1.5rem", paddingLeft: "2.75rem", display: "flex", flexDirection: "column", gap: "2rem" }}>
         {topic.subtopics.map((st) => (
-          <section key={st.id} className="space-y-3.5">
-            <h4 className="flex items-center gap-2 text-sm font-bold uppercase tracking-wider text-[#A8E8D8] border-l-2 border-[var(--chem-bond)] pl-2.5 py-0.5">
-              <span>{st.title}</span>
+          <section key={st.id} style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
+            <h4 style={{
+              fontSize: "0.9375rem",
+              fontWeight: 600,
+              color: "var(--foreground)",
+              borderLeft: "2px solid var(--chem-bond)",
+              paddingLeft: "0.6rem",
+              margin: 0,
+            }}>
+              {st.title}
             </h4>
-            <div className="space-y-4">
+            <div style={{ display: "flex", flexDirection: "column", gap: "1.1rem" }}>
               {st.blocks.map((b, i) => <Block key={i} block={b} />)}
             </div>
           </section>
@@ -497,44 +490,57 @@ export default function NotesRenderer({ notes, exam }: { notes: PremiumChapterNo
   const traps = (stats.byKind.get("trap") ?? 0) + (stats.byKind.get("mistake") ?? 0) + (stats.byKind.get("errorAnalysis") ?? 0);
 
   return (
-    <div className="space-y-4 text-[var(--foreground)]">
-      {/* Derived summary header — exact design system colors */}
-      <div className="flex flex-wrap items-center gap-2.5 rounded-lg border border-white/10 bg-[var(--surface)] px-4 py-3 text-xs sm:text-sm shadow-md">
-        <span className="rounded-full border border-[var(--chem-bond)]/40 bg-[var(--chem-bond)]/20 px-3 py-1 font-extrabold text-white">
-          {exam} Edition
-        </span>
-        <span className="font-bold text-white">{stats.topics} Topics</span>
-        <span className="text-white/25">•</span>
-        <span className="font-semibold text-[#90EE90]">{examples} Worked Examples & Decoders</span>
-        <span className="text-white/25">•</span>
-        <span className="font-semibold text-[var(--chem-bond)]">{diagrams} Visual Notes</span>
-        {traps > 0 && (
-          <>
-            <span className="text-white/25">•</span>
-            <span className="font-semibold text-[#FF6B6B]">{traps} Exam Traps / Error Analysis</span>
-          </>
-        )}
+    <div style={{ color: "var(--foreground)" }}>
+      {/* Compact stats strip */}
+      <div style={{
+        display: "flex",
+        flexWrap: "wrap",
+        alignItems: "center",
+        gap: "0.5rem",
+        padding: "0.6rem 0",
+        borderBottom: "1px solid var(--border)",
+        marginBottom: "0.5rem",
+        fontFamily: MONO,
+        fontSize: "9.5px",
+        fontWeight: 700,
+        letterSpacing: "0.15em",
+        textTransform: "uppercase",
+        color: "var(--text-muted)",
+      }}>
+        <span style={{ color: "var(--chem-bond)" }}>{exam}</span>
+        <span>·</span>
+        <span>{stats.topics} topics</span>
+        {examples > 0 && <><span>·</span><span style={{ color: "var(--chem-rule)" }}>{examples} examples</span></>}
+        {diagrams > 0 && <><span>·</span><span style={{ color: "var(--chem-bond)" }}>{diagrams} diagrams</span></>}
+        {traps > 0 && <><span>·</span><span style={{ color: "var(--chem-trap)" }}>{traps} traps</span></>}
       </div>
 
-      {scoped.topics.map((t, i) => <Topic key={t.id} topic={t} index={i} defaultOpen={i === 0} />)}
+      {/* Topic accordions */}
+      <div style={{ display: "flex", flexDirection: "column" }}>
+        {scoped.topics.map((t, i) => <Topic key={t.id} topic={t} index={i} defaultOpen={i === 0} />)}
+      </div>
 
       {/* Chapter revision sheet */}
-      <div className="rounded-lg border border-[var(--chem-bond)]/35 bg-[var(--surface)] p-5 sm:p-6 shadow-xl">
-        <div className="mb-4 flex items-center gap-2.5 border-b border-[var(--chem-bond)]/20 pb-3">
-          <span className="text-xl">📌</span>
-          <h4 className="text-base sm:text-lg font-extrabold tracking-wide text-white">
-            One-Screen Revision Sheet · {notes.title}
-          </h4>
-        </div>
-        <ul className="grid grid-cols-1 md:grid-cols-2 gap-2.5">
-          {scoped.chapterRevision.map((p, i) => (
-            <li key={i} className="flex gap-2.5 rounded-lg border border-white/5 bg-[var(--background)] p-3 text-[14px] leading-[1.5] text-[var(--foreground)]">
-              <span className="mt-0.5 shrink-0 text-[var(--chem-bond)] font-bold">▸</span>
-              <span>{p}</span>
-            </li>
-          ))}
-        </ul>
-      </div>
+      {scoped.chapterRevision.length > 0 && (
+        <section style={{ marginTop: "2rem", borderLeft: "3px solid var(--chem-bond)", paddingLeft: "1rem" }}>
+          <p style={{ fontFamily: MONO, fontSize: "9px", fontWeight: 900, letterSpacing: "0.22em", textTransform: "uppercase", color: "var(--chem-bond)", marginBottom: "0.75rem" }}>
+            Chapter revision · {notes.title}
+          </p>
+          <ul style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))",
+            gap: "0.5rem",
+            margin: 0, padding: 0, listStyle: "none",
+          }}>
+            {scoped.chapterRevision.map((p, i) => (
+              <li key={i} style={{ display: "flex", gap: "0.55rem", fontSize: "0.9375rem", lineHeight: 1.65, color: "var(--text-body)" }}>
+                <span aria-hidden style={{ color: "var(--chem-bond)", flexShrink: 0 }}>▸</span>
+                <span>{p}</span>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
     </div>
   );
 }

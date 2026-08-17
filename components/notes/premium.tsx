@@ -41,23 +41,23 @@ export function PremiumNotes({ sections, children }: { sections: NoteSection[]; 
   }, [sections]);
 
   return (
-    <div className="min-h-screen bg-[#0B1220] text-white">
+    <div className="min-h-screen bg-[var(--background)] text-[var(--foreground)]">
       <div className="fixed inset-x-0 top-0 z-50 h-1 bg-transparent">
         <div className="h-full bg-[var(--accent)] transition-[width] duration-150" style={{ width: `${progress}%` }} />
       </div>
       <div className="mx-auto flex max-w-6xl gap-8 px-5 py-10 sm:px-6">
         <aside className="hidden w-52 shrink-0 lg:block">
           <div className="sticky top-10">
-            <p className="mb-3 text-[11px] font-bold uppercase tracking-widest text-white/35">Contents</p>
+            <p className="mb-3 text-[11px] font-bold uppercase tracking-widest text-[var(--text-muted)]">Contents</p>
             <nav className="space-y-0.5">
               {sections.map((s) => (
                 <a key={s.id} href={`#${s.id}`}
-                  className={`block rounded-lg px-3 py-1.5 text-sm transition ${active === s.id ? "bg-cyan-500/10 font-bold text-[var(--accent)]" : "text-white/50 hover:text-white/80"}`}>
+                  className={`block rounded-lg px-3 py-1.5 text-sm transition ${active === s.id ? "bg-cyan-500/10 font-bold text-[var(--accent)]" : "text-[var(--text-muted)] hover:text-[var(--foreground)]"}`}>
                   {s.label}
                 </a>
               ))}
             </nav>
-            <div className="mt-4 border-t border-white/[0.06] pt-3 text-[11px] text-white/35">{progress}% read</div>
+            <div className="mt-4 border-t border-[var(--border)] pt-3 text-[11px] text-[var(--text-muted)]">{progress}% read</div>
           </div>
         </aside>
         <main className="min-w-0 flex-1 space-y-16">{children}</main>
@@ -67,7 +67,7 @@ export function PremiumNotes({ sections, children }: { sections: NoteSection[]; 
 }
 
 export function Glass({ children, className = "" }: { children: ReactNode; className?: string }) {
-  return <div className={`rounded-lg border border-white/[0.07] bg-white/[0.03] backdrop-blur-sm ${className}`}>{children}</div>;
+  return <div className={`rounded-lg border border-[var(--border)] bg-[var(--surface)] ${className}`}>{children}</div>;
 }
 
 export function Hero({ eyebrow, title, accent, lead, stats }: {
@@ -105,7 +105,7 @@ export function FormulaCard({ name, formula, vars }: { name: string; formula: st
   return (
     <Glass className="p-5">
       <div className="text-xs font-bold uppercase tracking-wider text-white/40">{name}</div>
-      <div className="mt-2 rounded-lg bg-[#0B1220] px-4 py-3 text-center text-xl font-black text-[var(--accent)]">{renderChemistry(formula)}</div>
+      <div className="mt-2 rounded-lg bg-[var(--background)] px-4 py-3 text-center text-xl font-black text-[var(--accent)]">{renderChemistry(formula)}</div>
       <div className="mt-3 space-y-1">
         {vars.map((v) => (
           <div key={v.sym} className="flex items-baseline gap-2 text-sm">

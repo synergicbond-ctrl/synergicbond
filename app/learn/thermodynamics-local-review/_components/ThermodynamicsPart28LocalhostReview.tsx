@@ -12,15 +12,15 @@ const toneStyles: Record<Tone, string> = {
 };
 function Section({ index, title, subtitle, children }: { index: string; title: string; subtitle?: string; children: React.ReactNode }) {
   return (
-    <section className="rounded-[2rem] border border-white/10 bg-slate-950/80 p-5 shadow-2xl shadow-black/20 backdrop-blur md:p-8">
+    <section className="rounded-[2rem] border border-[var(--border)] bg-slate-950/80 p-5 shadow-2xl shadow-black/20 backdrop-blur md:p-8">
       <div className="flex items-start gap-4">
         <span className="grid h-11 w-11 shrink-0 place-items-center rounded-lg border border-cyan-300/30 bg-cyan-300/10 text-sm font-black text-cyan-200">{index}</span>
         <div>
           <h2 className="text-2xl font-black tracking-tight text-white md:text-3xl">{title}</h2>
-          {subtitle && <p className="mt-1 max-w-4xl text-sm leading-6 text-slate-400">{subtitle}</p>}
+          {subtitle && <p className="mt-1 max-w-4xl text-sm leading-6 text-[var(--text-muted)]">{subtitle}</p>}
         </div>
       </div>
-      <div className="mt-6 space-y-5 text-[15px] leading-7 text-slate-200 md:text-base">{children}</div>
+      <div className="mt-6 space-y-5 text-[15px] leading-7 text-[var(--text-body)] md:text-base">{children}</div>
     </section>
   );
 }
@@ -37,7 +37,7 @@ function Lens({ title, children, tone = "cyan" }: { title: string; children: Rea
     <aside className={`rounded-lg border p-5 ${toneStyles[tone]}`}>
       <p className="text-xs font-black uppercase tracking-[0.2em]">Concept</p>
       <h3 className="mt-2 text-lg font-black text-white">{title}</h3>
-      <div className="mt-2 text-sm leading-6 text-slate-200">{children}</div>
+      <div className="mt-2 text-sm leading-6 text-[var(--text-body)]">{children}</div>
     </aside>
   );
 }
@@ -45,7 +45,7 @@ function Lens({ title, children, tone = "cyan" }: { title: string; children: Rea
 // SVG: ΔG_mix vs mole fraction — symmetric parabola-like shape
 function MixingGibbsSVG() {
   return (
-    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
+    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-[var(--border)] bg-[var(--surface)] p-3 md:p-5">
       <svg viewBox="0 0 1200 620" role="img" aria-labelledby="p28-mix-title p28-mix-desc" className="h-auto w-full">
         <title id="p28-mix-title">Gibbs energy of ideal mixing versus mole fraction</title>
         <desc id="p28-mix-desc">
@@ -106,7 +106,7 @@ function MixingGibbsSVG() {
 // SVG 2: Raoult's law vapour pressure diagram
 function RaoultSVG() {
   return (
-    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
+    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-[var(--border)] bg-[var(--surface)] p-3 md:p-5">
       <svg viewBox="0 0 1200 560" role="img" aria-labelledby="p28-raoult-title p28-raoult-desc" className="h-auto w-full">
         <title id="p28-raoult-title">Raoult&apos;s law: partial and total vapour pressure versus liquid mole fraction</title>
         <desc id="p28-raoult-desc">
@@ -181,15 +181,15 @@ const examples = [
 
 export default function ThermodynamicsPart28LocalhostReview() {
   return (
-    <main className="min-h-screen bg-[#020617] text-slate-100">
+    <main className="min-h-screen bg-[var(--background)] text-[var(--foreground)]">
       <div className="mx-auto max-w-5xl space-y-6 px-4 py-10 md:px-8">
 
-        <header className="rounded-[2rem] border border-white/10 bg-slate-950/80 p-6 shadow-2xl shadow-black/20 md:p-10">
+        <header className="rounded-[2rem] border border-[var(--border)] bg-slate-950/80 p-6 shadow-2xl shadow-black/20 md:p-10">
           <p className="text-xs font-black uppercase tracking-[0.25em] text-fuchsia-300">Part 28</p>
           <h1 className="mt-3 text-4xl font-black tracking-tight text-white md:text-5xl">
             Partial Molar Gibbs Energy, Ideal-Gas Mixtures and Entropy of Mixing
           </h1>
-          <p className="mt-4 max-w-3xl text-lg leading-8 text-slate-300">
+          <p className="mt-4 max-w-3xl text-lg leading-8 text-[var(--text-muted)]">
             Derivation of ΔG_mix and ΔS_mix for ideal-gas mixing, Raoult&apos;s law from chemical-potential
             equality, and the Gibbs–Duhem relation.
           </p>
@@ -198,7 +198,7 @@ export default function ThermodynamicsPart28LocalhostReview() {
         <Section index="1" title="Gibbs Energy of Ideal Mixing"
           subtitle="Exact derived result: ΔG_mix = RT Σnᵢ ln yᵢ — always negative for genuine mixing">
           <p>Compare the total G before mixing (each component pure at T,P) with G after mixing at the same T and total P.</p>
-          <div className="space-y-1 rounded-lg border border-white/10 bg-slate-900/60 p-4 font-mono text-sm">
+          <div className="space-y-1 rounded-lg border border-[var(--border)] bg-slate-900/60 p-4 font-mono text-sm">
             <p>Before mixing: Gᵢ(pure) at T, P: μᵢ(pure) = μ°ᵢ + RT ln(P/P°)</p>
             <p>After mixing: μᵢ(mix) = μ°ᵢ + RT ln(yᵢP/P°)</p>
             <p>Difference per mole of i: Δμᵢ = RT ln yᵢ</p>
@@ -210,7 +210,7 @@ export default function ThermodynamicsPart28LocalhostReview() {
 
         <Section index="2" title="Entropy and Enthalpy of Ideal Mixing">
           <p>Since ΔH_mix = 0 for ideal mixing by definition (no interactions between different species):</p>
-          <div className="space-y-1 rounded-lg border border-white/10 bg-slate-900/60 p-4 font-mono text-sm">
+          <div className="space-y-1 rounded-lg border border-[var(--border)] bg-slate-900/60 p-4 font-mono text-sm">
             <p>ΔG_mix = ΔH_mix − T ΔS_mix</p>
             <p>ΔH_mix = 0 (ideal mixing)</p>
             <p>Therefore: ΔS_mix = −ΔG_mix/T = −R Σᵢ nᵢ ln yᵢ &gt; 0</p>
@@ -227,7 +227,7 @@ export default function ThermodynamicsPart28LocalhostReview() {
           subtitle="Phase equilibrium condition μ(liquid) = μ(vapour) at each composition">
           <RaoultSVG />
           <p>At liquid–vapour equilibrium for component i:</p>
-          <div className="space-y-1 rounded-lg border border-white/10 bg-slate-900/60 p-4 font-mono text-sm">
+          <div className="space-y-1 rounded-lg border border-[var(--border)] bg-slate-900/60 p-4 font-mono text-sm">
             <p>Ideal liquid: μᵢ(l) = μ*ᵢ(l) + RT ln xᵢ</p>
             <p>Ideal vapour: μᵢ(g) = μ°ᵢ(g) + RT ln(Pᵢ/P°)</p>
             <p>Pure component at T: μ*ᵢ(l) = μ°ᵢ(g) + RT ln(P*ᵢ/P°)</p>
@@ -246,7 +246,7 @@ export default function ThermodynamicsPart28LocalhostReview() {
 
         <Section index="4" title="Gibbs–Duhem Relation">
           <p>Differentiating Euler&apos;s relation G = Σnᵢ μᵢ at constant T and P:</p>
-          <div className="space-y-1 rounded-lg border border-white/10 bg-slate-900/60 p-4 font-mono text-sm">
+          <div className="space-y-1 rounded-lg border border-[var(--border)] bg-slate-900/60 p-4 font-mono text-sm">
             <p>dG = Σμᵢ dnᵢ + Σnᵢ dμᵢ</p>
             <p>But dG = Σμᵢ dnᵢ (at constant T,P from fundamental relation)</p>
             <p>Subtract: Σnᵢ dμᵢ = 0 at constant T, P</p>
@@ -261,10 +261,10 @@ export default function ThermodynamicsPart28LocalhostReview() {
 
         <Section index="5" title="Worked Examples">
           {examples.map(ex => (
-            <article key={ex.title} className="rounded-lg border border-white/10 bg-slate-900/70 p-5 mb-4">
+            <article key={ex.title} className="rounded-lg border border-[var(--border)] bg-slate-900/70 p-5 mb-4">
               <h3 className="font-black text-white">{ex.title}</h3>
-              <p className="mt-2 text-sm font-semibold text-slate-200">{ex.given}</p>
-              <div className="mt-3 rounded-xl border border-emerald-300/20 bg-emerald-300/[0.06] p-3 text-sm leading-6 text-slate-200">{ex.solution}</div>
+              <p className="mt-2 text-sm font-semibold text-[var(--text-body)]">{ex.given}</p>
+              <div className="mt-3 rounded-xl border border-emerald-300/20 bg-emerald-300/[0.06] p-3 text-sm leading-6 text-[var(--text-body)]">{ex.solution}</div>
               <p className="mt-2 text-xs text-amber-300"><span className="font-black">Trap: </span>{ex.trap}</p>
             </article>
           ))}
@@ -281,15 +281,15 @@ export default function ThermodynamicsPart28LocalhostReview() {
               ["State Raoult's law and identify the condition for its validity.", "Raoult: Pᵢ = xᵢ P*ᵢ. Valid for: (1) liquid solution is ideal (molecules A and B have similar sizes and intermolecular forces); (2) vapour behaves as an ideal gas."],
               ["In a binary mixture at constant T,P, if dμ₁ = +2 J mol⁻¹ and n₁/n₂ = 3, find dμ₂.", "Gibbs–Duhem: n₁ dμ₁ + n₂ dμ₂ = 0 → dμ₂ = −(n₁/n₂) dμ₁ = −3 × (+2) = −6 J mol⁻¹."],
             ].map(([q, a], i) => (
-              <article key={i} className="rounded-lg border border-white/10 bg-slate-900/60 p-4">
+              <article key={i} className="rounded-lg border border-[var(--border)] bg-slate-900/60 p-4">
                 <p className="font-semibold text-white"><span className="mr-2 text-amber-300">{i+1}.</span>{q}</p>
-                <div className="mt-2 rounded-xl border border-emerald-300/20 bg-emerald-300/[0.06] p-3 text-sm text-slate-200">{a}</div>
+                <div className="mt-2 rounded-xl border border-emerald-300/20 bg-emerald-300/[0.06] p-3 text-sm text-[var(--text-body)]">{a}</div>
               </article>
             ))}
           </div>
         </section>
 
-        <section className="rounded-[2rem] border border-white/10 bg-slate-950 p-6">
+        <section className="rounded-[2rem] border border-[var(--border)] bg-slate-950 p-6">
           <p className="text-xs font-black uppercase tracking-[0.2em] text-fuchsia-300">Part 28 Complete</p>
           <h2 className="mt-2 text-2xl font-black text-white">Next: Reaction Gibbs energy and equilibrium constant</h2>
         </section>

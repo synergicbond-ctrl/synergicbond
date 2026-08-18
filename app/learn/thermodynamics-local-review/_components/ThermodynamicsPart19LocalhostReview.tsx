@@ -33,17 +33,17 @@ function Section({
   children: React.ReactNode;
 }) {
   return (
-    <section className="rounded-[2rem] border border-white/10 bg-slate-950/80 p-5 shadow-2xl shadow-black/20 backdrop-blur md:p-8">
+    <section className="rounded-[2rem] border border-[var(--border)] bg-slate-950/80 p-5 shadow-2xl shadow-black/20 backdrop-blur md:p-8">
       <div className="flex items-start gap-4">
         <span className="grid h-10 w-10 shrink-0 place-items-center rounded-lg border border-cyan-300/30 bg-cyan-300/10 text-sm font-black text-cyan-200">
           {index}
         </span>
         <div>
           <h2 className="text-2xl font-black tracking-tight text-white md:text-3xl">{title}</h2>
-          {subtitle ? <p className="mt-1 text-sm leading-6 text-slate-400">{subtitle}</p> : null}
+          {subtitle ? <p className="mt-1 text-sm leading-6 text-[var(--text-muted)]">{subtitle}</p> : null}
         </div>
       </div>
-      <div className="mt-6 space-y-5 text-[15px] leading-7 text-slate-200 md:text-base">{children}</div>
+      <div className="mt-6 space-y-5 text-[15px] leading-7 text-[var(--text-body)] md:text-base">{children}</div>
     </section>
   );
 }
@@ -61,7 +61,7 @@ function ConceptLens({
     <aside className={`rounded-lg border p-5 ${toneMap[tone]}`}>
       <p className="text-xs font-black uppercase tracking-[0.2em]">Synergic Bond Concept Lens</p>
       <h3 className="mt-2 text-lg font-black text-white">{title}</h3>
-      <div className="mt-2 text-sm leading-6 text-slate-200">{children}</div>
+      <div className="mt-2 text-sm leading-6 text-[var(--text-body)]">{children}</div>
     </aside>
   );
 }
@@ -85,7 +85,7 @@ function Formula({
 
 function CoordinateMapAnimation() {
   return (
-    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
+    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-[var(--border)] bg-[var(--surface)] p-3 md:p-5">
       <svg
         viewBox="0 0 1200 760"
         role="img"
@@ -180,7 +180,7 @@ function CoordinateMapAnimation() {
 
 function HeatCapacityIntegralAnimation() {
   return (
-    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
+    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-[var(--border)] bg-[var(--surface)] p-3 md:p-5">
       <svg
         viewBox="0 0 1200 720"
         role="img"
@@ -244,7 +244,7 @@ function HeatCapacityIntegralAnimation() {
 
 function IsothermalRoutesAnimation() {
   return (
-    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
+    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-[var(--border)] bg-[var(--surface)] p-3 md:p-5">
       <svg
         viewBox="0 0 1200 790"
         role="img"
@@ -319,7 +319,7 @@ function IsothermalRoutesAnimation() {
 
 function AdiabaticCancellationAnimation() {
   return (
-    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
+    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-[var(--border)] bg-[var(--surface)] p-3 md:p-5">
       <svg
         viewBox="0 0 1200 750"
         role="img"
@@ -410,7 +410,7 @@ function MasterFormulaTable() {
   ];
 
   return (
-    <div className="overflow-x-auto rounded-lg border border-white/10">
+    <div className="overflow-x-auto rounded-lg border border-[var(--border)]">
       <table className="min-w-full border-collapse text-left text-sm">
         <thead className="bg-slate-900">
           <tr>
@@ -422,9 +422,9 @@ function MasterFormulaTable() {
         <tbody className="divide-y divide-white/10 bg-slate-950/70">
           {rows.map(([process, expression, condition]) => (
             <tr key={process}>
-              <td className="px-4 py-3 font-semibold text-slate-100">{process}</td>
+              <td className="px-4 py-3 font-semibold text-[var(--foreground)]">{process}</td>
               <td className="px-4 py-3 font-mono text-cyan-200">{expression}</td>
-              <td className="px-4 py-3 text-slate-300">{condition}</td>
+              <td className="px-4 py-3 text-[var(--text-muted)]">{condition}</td>
             </tr>
           ))}
         </tbody>
@@ -488,7 +488,7 @@ function IsochoricIsobaricBalanceTable() {
   ];
 
   return (
-    <div className="overflow-x-auto rounded-lg border border-white/10">
+    <div className="overflow-x-auto rounded-lg border border-[var(--border)]">
       <table className="min-w-full border-collapse text-left text-sm">
         <thead className="bg-slate-900">
           <tr>
@@ -501,7 +501,7 @@ function IsochoricIsobaricBalanceTable() {
         <tbody className="divide-y divide-white/10 bg-slate-950/70">
           {rows.map(([path, system, surroundings, universe]) => (
             <tr key={path}>
-              <td className="px-4 py-3 font-semibold text-slate-100">{path}</td>
+              <td className="px-4 py-3 font-semibold text-[var(--foreground)]">{path}</td>
               <td className="px-4 py-3 font-mono text-cyan-200">{system}</td>
               <td className="px-4 py-3 font-mono text-amber-200">{surroundings}</td>
               <td className="px-4 py-3 font-mono text-emerald-300">{universe}</td>
@@ -562,15 +562,15 @@ function WorkedExamples() {
   return (
     <div className="grid gap-4 lg:grid-cols-2">
       {examples.map((item) => (
-        <article key={item.title} className="rounded-lg border border-white/10 bg-slate-900/70 p-5">
+        <article key={item.title} className="rounded-lg border border-[var(--border)] bg-slate-900/70 p-5">
           <h3 className=" font-black text-white">
             <span className="mr-2 text-amber-300">◆</span>
             {item.title}
           </h3>
-          <p className="mt-4 leading-7 text-slate-200">{item.problem}</p>
+          <p className="mt-4 leading-7 text-[var(--text-body)]">{item.problem}</p>
           <div className="mt-4 rounded-xl border border-emerald-300/20 bg-emerald-300/[0.06] p-4">
             <p className="text-xs font-black uppercase tracking-[0.2em] text-emerald-300">Solution</p>
-            <p className="mt-2 text-sm leading-6 text-slate-200">{item.solution}</p>
+            <p className="mt-2 text-sm leading-6 text-[var(--text-body)]">{item.solution}</p>
           </div>
         </article>
       ))}
@@ -697,15 +697,15 @@ function ProblemLadder() {
   return (
     <div className="grid gap-4 lg:grid-cols-2">
       {problems.map((item) => (
-        <article key={item.title} className="group rounded-lg border border-white/10 bg-slate-900/70 p-5">
+        <article key={item.title} className="group rounded-lg border border-[var(--border)] bg-slate-900/70 p-5">
           <h3 className=" font-black text-white">
             <span className="mr-2 text-amber-300">◆</span>
             {item.title}
           </h3>
-          <p className="mt-4 leading-7 text-slate-200">{item.question}</p>
+          <p className="mt-4 leading-7 text-[var(--text-body)]">{item.question}</p>
           <div className="mt-4 rounded-xl border border-emerald-300/20 bg-emerald-300/[0.06] p-4">
             <p className="text-xs font-black uppercase tracking-[0.2em] text-emerald-300">Solution</p>
-            <p className="mt-2 text-sm leading-6 text-slate-200">{item.solution}</p>
+            <p className="mt-2 text-sm leading-6 text-[var(--text-body)]">{item.solution}</p>
           </div>
         </article>
       ))}
@@ -758,7 +758,7 @@ const traps = [
 
 function TrapTable() {
   return (
-    <div className="overflow-x-auto rounded-lg border border-white/10">
+    <div className="overflow-x-auto rounded-lg border border-[var(--border)]">
       <table className="min-w-full border-collapse text-left text-sm">
         <thead className="bg-slate-900">
           <tr>
@@ -770,11 +770,11 @@ function TrapTable() {
         <tbody className="divide-y divide-white/10 bg-slate-950/70">
           {traps.map(([statement, verdict, correction]) => (
             <tr key={statement}>
-              <td className="px-4 py-3 font-semibold text-slate-100">{statement}</td>
+              <td className="px-4 py-3 font-semibold text-[var(--foreground)]">{statement}</td>
               <td className="px-4 py-3">
                 <span className="rounded-full bg-rose-400/15 px-3 py-1 text-xs font-black text-rose-300">{verdict}</span>
               </td>
-              <td className="px-4 py-3 leading-6 text-slate-300">{correction}</td>
+              <td className="px-4 py-3 leading-6 text-[var(--text-muted)]">{correction}</td>
             </tr>
           ))}
         </tbody>
@@ -812,7 +812,7 @@ function DailyLifeGrid() {
       {items.map((item) => (
         <article key={item.title} className={`rounded-lg border p-5 ${toneMap[item.tone]}`}>
           <h3 className="text-xl font-black text-white">{item.title}</h3>
-          <p className="mt-2 text-sm leading-6 text-slate-200">{item.text}</p>
+          <p className="mt-2 text-sm leading-6 text-[var(--text-body)]">{item.text}</p>
         </article>
       ))}
     </div>
@@ -821,8 +821,8 @@ function DailyLifeGrid() {
 
 export default function ThermodynamicsPart19() {
   return (
-    <main className="min-h-screen bg-[#020617] text-slate-100">
-      <header className="relative overflow-hidden border-b border-white/10">
+    <main className="min-h-screen bg-[var(--background)] text-[var(--foreground)]">
+      <header className="relative overflow-hidden border-b border-[var(--border)]">
         <div
           aria-hidden="true"
           className="absolute inset-0 bg-[radial-gradient(circle_at_14%_20%,rgba(34,211,238,0.20),transparent_32%),radial-gradient(circle_at_86%_15%,rgba(217,70,239,0.18),transparent_30%),radial-gradient(circle_at_50%_100%,rgba(52,211,153,0.10),transparent_34%)]"
@@ -842,13 +842,13 @@ export default function ThermodynamicsPart19() {
               <h1 className="mt-4 max-w-4xl text-4xl font-black tracking-[-0.045em] text-white md:text-6xl">
                 Ideal-gas entropy separates temperature effects from expansion and compression effects
               </h1>
-              <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-300">
+              <p className="mt-6 max-w-3xl text-lg leading-8 text-[var(--text-muted)]">
                 Heating changes the distribution of molecular energy. Expansion changes accessible positional space.
                 The ideal-gas entropy equations combine both contributions without depending on the actual path.
               </p>
             </div>
 
-            <div className="rounded-[2rem] border border-white/10 bg-white/[0.05] p-6 shadow-2xl shadow-cyan-950/25">
+            <div className="rounded-[2rem] border border-[var(--border)] bg-white/[0.05] p-6 shadow-2xl shadow-cyan-950/25">
               <p className="text-xs font-black uppercase tracking-[0.22em] text-fuchsia-300">
                 Master endpoint forms
               </p>
@@ -1080,7 +1080,7 @@ export default function ThermodynamicsPart19() {
           <ProblemLadder />
         </Section>
 
-        <section className="rounded-[2rem] border border-white/10 bg-gradient-to-r from-slate-950 via-slate-900 to-slate-950 p-6 md:p-8">
+        <section className="rounded-[2rem] border border-[var(--border)] bg-gradient-to-r from-slate-950 via-slate-900 to-slate-950 p-6 md:p-8">
           <div className="flex flex-wrap items-center justify-between gap-4">
             <div>
               <p className="text-xs font-black uppercase tracking-[0.22em] text-fuchsia-300">
@@ -1100,9 +1100,9 @@ export default function ThermodynamicsPart19() {
               ["Isothermal", "ΔS = nR ln(V₂/V₁)"],
               ["Adiabatic", "reversible: 0; irreversible: positive"],
             ].map(([term, meaning]) => (
-              <div key={term} className="rounded-lg border border-white/10 bg-black/25 p-4">
+              <div key={term} className="rounded-lg border border-[var(--border)] bg-black/25 p-4">
                 <p className="font-black text-white">{term}</p>
-                <p className="mt-1 text-sm leading-6 text-slate-300">{meaning}</p>
+                <p className="mt-1 text-sm leading-6 text-[var(--text-muted)]">{meaning}</p>
               </div>
             ))}
           </div>

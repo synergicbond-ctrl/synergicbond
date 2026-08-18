@@ -30,17 +30,17 @@ function Section({
   children: React.ReactNode;
 }) {
   return (
-    <section className="rounded-[2rem] border border-white/10 bg-slate-950/80 p-5 shadow-2xl md:p-8">
+    <section className="rounded-[2rem] border border-[var(--border)] bg-slate-950/80 p-5 shadow-2xl md:p-8">
       <div className="flex gap-4">
         <span className="grid h-10 w-10 shrink-0 place-items-center rounded-lg border border-cyan-300/30 bg-cyan-300/10 text-sm font-black text-cyan-200">
           {index}
         </span>
         <div>
           <h2 className="text-2xl font-black text-white md:text-3xl">{title}</h2>
-          {subtitle ? <p className="mt-1 text-sm text-slate-400">{subtitle}</p> : null}
+          {subtitle ? <p className="mt-1 text-sm text-[var(--text-muted)]">{subtitle}</p> : null}
         </div>
       </div>
-      <div className="mt-6 space-y-5 text-[15px] leading-7 text-slate-200">{children}</div>
+      <div className="mt-6 space-y-5 text-[15px] leading-7 text-[var(--text-body)]">{children}</div>
     </section>
   );
 }
@@ -67,14 +67,14 @@ function Lens({
     <aside className={`rounded-lg border p-5 ${toneMap[tone]}`}>
       <p className="text-xs font-black uppercase tracking-[0.2em]">Synergic Bond Concept Lens</p>
       <h3 className="mt-2 text-lg font-black text-white">{title}</h3>
-      <div className="mt-2 text-sm leading-6 text-slate-200">{children}</div>
+      <div className="mt-2 text-sm leading-6 text-[var(--text-body)]">{children}</div>
     </aside>
   );
 }
 
 function FreeEnergyMapSVG() {
   return (
-    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
+    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-[var(--border)] bg-[var(--surface)] p-3 md:p-5">
       <svg viewBox="0 0 1200 780" role="img" aria-labelledby="fe-title fe-desc" className="h-auto w-full">
         <title id="fe-title">Map connecting entropy criteria to Helmholtz and Gibbs free energies</title>
         <desc id="fe-desc">
@@ -125,7 +125,7 @@ function FreeEnergyMapSVG() {
 
 function WorkExtractionSVG() {
   return (
-    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
+    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-[var(--border)] bg-[var(--surface)] p-3 md:p-5">
       <svg viewBox="0 0 1200 760" role="img" aria-labelledby="work-title work-desc" className="h-auto w-full">
         <title id="work-title">Maximum useful work from Helmholtz and Gibbs energy decreases</title>
         <desc id="work-desc">
@@ -173,7 +173,7 @@ function FreeEnergyDerivationTable() {
   ];
 
   return (
-    <div className="overflow-x-auto rounded-lg border border-white/10">
+    <div className="overflow-x-auto rounded-lg border border-[var(--border)]">
       <table className="min-w-full border-collapse text-left text-sm">
         <thead className="bg-slate-900">
           <tr>
@@ -185,9 +185,9 @@ function FreeEnergyDerivationTable() {
         <tbody className="divide-y divide-white/10 bg-slate-950/70">
           {rows.map(([item, expression, meaning]) => (
             <tr key={item}>
-              <td className="px-4 py-3 font-semibold text-slate-100">{item}</td>
+              <td className="px-4 py-3 font-semibold text-[var(--foreground)]">{item}</td>
               <td className="px-4 py-3 font-mono text-cyan-200">{expression}</td>
-              <td className="px-4 py-3 text-slate-300">{meaning}</td>
+              <td className="px-4 py-3 text-[var(--text-muted)]">{meaning}</td>
             </tr>
           ))}
         </tbody>
@@ -207,7 +207,7 @@ function SignCriteriaTable() {
   ];
 
   return (
-    <div className="overflow-x-auto rounded-lg border border-white/10">
+    <div className="overflow-x-auto rounded-lg border border-[var(--border)]">
       <table className="min-w-full border-collapse text-left text-sm">
         <thead className="bg-slate-900">
           <tr>
@@ -219,9 +219,9 @@ function SignCriteriaTable() {
         <tbody className="divide-y divide-white/10 bg-slate-950/70">
           {rows.map(([condition, criterion, interpretation]) => (
             <tr key={condition}>
-              <td className="px-4 py-3 font-semibold text-slate-100">{condition}</td>
+              <td className="px-4 py-3 font-semibold text-[var(--foreground)]">{condition}</td>
               <td className="px-4 py-3 font-mono text-emerald-300">{criterion}</td>
-              <td className="px-4 py-3 text-slate-300">{interpretation}</td>
+              <td className="px-4 py-3 text-[var(--text-muted)]">{interpretation}</td>
             </tr>
           ))}
         </tbody>
@@ -278,8 +278,8 @@ const problems = [
 
 export default function ThermodynamicsPart24() {
   return (
-    <main className="min-h-screen bg-[#020617] text-slate-100">
-      <header className="border-b border-white/10 bg-[radial-gradient(circle_at_20%_20%,rgba(34,211,238,.18),transparent_30%),radial-gradient(circle_at_80%_20%,rgba(168,85,247,.16),transparent_30%)]">
+    <main className="min-h-screen bg-[var(--background)] text-[var(--foreground)]">
+      <header className="border-b border-[var(--border)] bg-[radial-gradient(circle_at_20%_20%,rgba(34,211,238,.18),transparent_30%),radial-gradient(circle_at_80%_20%,rgba(168,85,247,.16),transparent_30%)]">
         <div className="mx-auto max-w-7xl px-5 py-16 md:px-8">
           <div className="flex flex-wrap gap-2">
             <Chip>SYNERGIC BOND MASTER NOTES</Chip>
@@ -289,7 +289,7 @@ export default function ThermodynamicsPart24() {
           <h1 className="mt-7 max-w-5xl text-4xl font-black tracking-tight text-white md:text-6xl">
             Free energy converts the universe’s entropy test into a system-only criterion
           </h1>
-          <p className="mt-5 max-w-3xl text-lg leading-8 text-slate-300">
+          <p className="mt-5 max-w-3xl text-lg leading-8 text-[var(--text-muted)]">
             Helmholtz energy governs constant-temperature, constant-volume change. Gibbs energy governs
             constant-temperature, constant-pressure change and measures the maximum reversible non-expansion work.
           </p>
@@ -390,10 +390,10 @@ export default function ThermodynamicsPart24() {
         <Section index="10" title="Original worked examples">
           <div className="grid gap-4 lg:grid-cols-2">
             {worked.map((item) => (
-              <article key={item.title} className="rounded-lg border border-white/10 bg-slate-900/70 p-5">
+              <article key={item.title} className="rounded-lg border border-[var(--border)] bg-slate-900/70 p-5">
                 <h3 className="cursor-pointer font-black text-white">{item.title}</h3>
-                <p className="mt-3 text-slate-200">{item.question}</p>
-                <div className="mt-4 rounded-xl border border-emerald-300/20 bg-emerald-300/[0.06] p-4 text-sm text-slate-200">
+                <p className="mt-3 text-[var(--text-body)]">{item.question}</p>
+                <div className="mt-4 rounded-xl border border-emerald-300/20 bg-emerald-300/[0.06] p-4 text-sm text-[var(--text-body)]">
                   {item.solution}
                 </div>
               </article>
@@ -407,10 +407,10 @@ export default function ThermodynamicsPart24() {
 <Section index="11" title="Complete worked examples and applications">
           <div className="grid gap-4 lg:grid-cols-2">
             {problems.map(([title, q, a]) => (
-              <article key={title} className="rounded-lg border border-white/10 bg-slate-900/70 p-5">
+              <article key={title} className="rounded-lg border border-[var(--border)] bg-slate-900/70 p-5">
                 <h3 className="cursor-pointer font-black text-white">{title}</h3>
-                <p className="mt-3 text-slate-200">{q}</p>
-                <div className="mt-4 rounded-xl border border-emerald-300/20 bg-emerald-300/[0.06] p-4 text-sm text-slate-200">
+                <p className="mt-3 text-[var(--text-body)]">{q}</p>
+                <div className="mt-4 rounded-xl border border-emerald-300/20 bg-emerald-300/[0.06] p-4 text-sm text-[var(--text-body)]">
                   {a}
                 </div>
               </article>
@@ -418,7 +418,7 @@ export default function ThermodynamicsPart24() {
           </div>
         </Section>
 
-        <section className="rounded-[2rem] border border-white/10 bg-slate-950 p-6">
+        <section className="rounded-[2rem] border border-[var(--border)] bg-slate-950 p-6">
           <div className="flex flex-wrap items-center justify-between gap-4">
             <div>
               <p className="text-xs font-black uppercase tracking-[0.2em] text-fuchsia-300">Rapid recall</p>

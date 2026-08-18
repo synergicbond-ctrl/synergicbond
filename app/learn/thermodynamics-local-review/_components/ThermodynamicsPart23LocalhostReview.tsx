@@ -20,15 +20,15 @@ function Chip({ children, tone = "cyan" }: { children: React.ReactNode; tone?: T
 
 function Section({ index, title, subtitle, children }: { index: string; title: string; subtitle?: string; children: React.ReactNode }) {
   return (
-    <section className="rounded-[2rem] border border-white/10 bg-slate-950/80 p-5 shadow-2xl md:p-8">
+    <section className="rounded-[2rem] border border-[var(--border)] bg-slate-950/80 p-5 shadow-2xl md:p-8">
       <div className="flex gap-4">
         <span className="grid h-10 w-10 shrink-0 place-items-center rounded-lg border border-cyan-300/30 bg-cyan-300/10 text-sm font-black text-cyan-200">{index}</span>
         <div>
           <h2 className="text-2xl font-black text-white md:text-3xl">{title}</h2>
-          {subtitle ? <p className="mt-1 text-sm text-slate-400">{subtitle}</p> : null}
+          {subtitle ? <p className="mt-1 text-sm text-[var(--text-muted)]">{subtitle}</p> : null}
         </div>
       </div>
-      <div className="mt-6 space-y-5 text-[15px] leading-7 text-slate-200">{children}</div>
+      <div className="mt-6 space-y-5 text-[15px] leading-7 text-[var(--text-body)]">{children}</div>
     </section>
   );
 }
@@ -47,14 +47,14 @@ function Lens({ title, children, tone = "cyan" }: { title: string; children: Rea
     <aside className={`rounded-lg border p-5 ${tones[tone]}`}>
       <p className="text-xs font-black uppercase tracking-[0.2em]">Synergic Bond Concept Lens</p>
       <h3 className="mt-2 text-lg font-black text-white">{title}</h3>
-      <div className="mt-2 text-sm leading-6 text-slate-200">{children}</div>
+      <div className="mt-2 text-sm leading-6 text-[var(--text-body)]">{children}</div>
     </aside>
   );
 }
 
 function EntropyRouteSVG() {
   return (
-    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
+    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-[var(--border)] bg-[var(--surface)] p-3 md:p-5">
       <svg viewBox="0 0 1200 760" role="img" aria-labelledby="route-title route-desc" className="h-auto w-full">
         <title id="route-title">Five-step Third-Law entropy route</title>
         <desc id="route-desc">A substance is heated as solid, melted, heated as liquid, vaporised, and heated as gas.</desc>
@@ -88,7 +88,7 @@ function EntropyRouteSVG() {
 
 function MicrostateSVG() {
   return (
-    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
+    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-[var(--border)] bg-[var(--surface)] p-3 md:p-5">
       <svg viewBox="0 0 1200 820" role="img" aria-labelledby="micro-title micro-desc" className="h-auto w-full">
         <title id="micro-title">Microstate counting for particles in quantised levels</title>
         <desc id="micro-desc">Distinct and indistinguishable particles distributed among equally spaced energy levels.</desc>
@@ -121,7 +121,7 @@ function MicrostateSVG() {
 function TempPressureGraph() {
   return (
     <div className="grid gap-4 lg:grid-cols-2">
-      <div className="rounded-[2rem] border border-white/10 bg-[#07111f] p-5">
+      <div className="rounded-[2rem] border border-[var(--border)] bg-[var(--surface)] p-5">
         <h3 className="text-xl font-black text-white">Temperature effect on reaction entropy</h3>
         <Formula label="Kirchhoff-type entropy relation">
           Δ<sub>r</sub>S°(T₂)=Δ<sub>r</sub>S°(T₁)+∫<sub>T₁</sub><sup>T₂</sup>Δ<sub>r</sub>C°<sub>p</sub>/T dT
@@ -130,7 +130,7 @@ function TempPressureGraph() {
           Δ<sub>r</sub>S°(T₂)=Δ<sub>r</sub>S°(T₁)+Δ<sub>r</sub>C°<sub>p</sub>ln(T₂/T₁)
         </Formula>
       </div>
-      <div className="rounded-[2rem] border border-white/10 bg-[#07111f] p-5">
+      <div className="rounded-[2rem] border border-[var(--border)] bg-[var(--surface)] p-5">
         <h3 className="text-xl font-black text-white">Pressure effect on ideal-gas reaction entropy</h3>
         <Formula label="At fixed T">
           Δ<sub>r</sub>S(P₂)=Δ<sub>r</sub>S(P₁)−Δn<sub>g</sub>Rln(P₂/P₁)
@@ -156,14 +156,14 @@ const problems = [
 
 function ThermodynamicsPart23() {
   return (
-    <main className="min-h-screen bg-[#020617] text-slate-100">
-      <header className="border-b border-white/10 bg-[radial-gradient(circle_at_20%_20%,rgba(34,211,238,.18),transparent_30%),radial-gradient(circle_at_80%_20%,rgba(168,85,247,.16),transparent_30%)]">
+    <main className="min-h-screen bg-[var(--background)] text-[var(--foreground)]">
+      <header className="border-b border-[var(--border)] bg-[radial-gradient(circle_at_20%_20%,rgba(34,211,238,.18),transparent_30%),radial-gradient(circle_at_80%_20%,rgba(168,85,247,.16),transparent_30%)]">
         <div className="mx-auto max-w-7xl px-5 py-16 md:px-8">
           <div className="flex flex-wrap gap-2">
             <Chip>SYNERGIC BOND MASTER NOTES</Chip><Chip tone="violet">COMPLETE THEORY</Chip><Chip tone="emerald">MICROSTATES & REACTION ENTROPY</Chip>
           </div>
           <h1 className="mt-7 max-w-5xl text-4xl font-black tracking-tight text-white md:text-6xl">From calorimetric absolute entropy to microstate counting and reaction-entropy corrections</h1>
-          <p className="mt-5 max-w-3xl text-lg leading-8 text-slate-300">This part completes the Third-Law numerical sequence, preserves the microstate examples, and derives how temperature and pressure alter reaction entropy.</p>
+          <p className="mt-5 max-w-3xl text-lg leading-8 text-[var(--text-muted)]">This part completes the Third-Law numerical sequence, preserves the microstate examples, and derives how temperature and pressure alter reaction entropy.</p>
         </div>
       </header>
 
@@ -223,16 +223,16 @@ function ThermodynamicsPart23() {
 <Section index="08" title="Complete worked examples and applications">
           <div className="grid gap-4 lg:grid-cols-2">
             {problems.map(([title,q,a])=>(
-              <article key={title} className="rounded-lg border border-white/10 bg-slate-900/70 p-5">
+              <article key={title} className="rounded-lg border border-[var(--border)] bg-slate-900/70 p-5">
                 <h3 className="cursor-pointer font-black text-white">{title}</h3>
-                <p className="mt-3 text-slate-200">{q}</p>
-                <div className="mt-4 rounded-xl border border-emerald-300/20 bg-emerald-300/[0.06] p-4 text-sm text-slate-200">{a}</div>
+                <p className="mt-3 text-[var(--text-body)]">{q}</p>
+                <div className="mt-4 rounded-xl border border-emerald-300/20 bg-emerald-300/[0.06] p-4 text-sm text-[var(--text-body)]">{a}</div>
               </article>
             ))}
           </div>
         </Section>
 
-        <section className="rounded-[2rem] border border-white/10 bg-slate-950 p-6">
+        <section className="rounded-[2rem] border border-[var(--border)] bg-slate-950 p-6">
           <div className="flex flex-wrap items-center justify-between gap-4">
             <div><p className="text-xs font-black uppercase tracking-[0.2em] text-fuchsia-300">Rapid recall</p><h2 className="mt-2 text-2xl font-black text-white">Absolute entropy adds by thermal route; reaction entropy shifts with temperature and pressure</h2></div>
             <Chip tone="emerald">PART 23 COMPLETE</Chip>
@@ -274,9 +274,9 @@ const part23BundledApplications = [
 
 function Part23BundledApplications() {
   return (
-    <section className="bg-[#020617] pb-14 text-slate-100">
+    <section className="bg-[var(--background)] pb-14 text-[var(--foreground)]">
       <div className="mx-auto max-w-5xl px-4 md:px-8">
-        <section className="rounded-[2rem] border border-white/10 bg-slate-950/80 p-5 md:p-8">
+        <section className="rounded-[2rem] border border-[var(--border)] bg-slate-950/80 p-5 md:p-8">
           <h2 className="text-2xl font-black text-white">Visible Third-Law, microstate and reaction-entropy applications</h2>
 
           <div className="mt-5 space-y-4">
@@ -292,20 +292,20 @@ function Part23BundledApplications() {
                   {item.title}
                 </h3>
 
-                <div className="mt-4 rounded-xl border border-white/10 bg-black/20 p-4">
+                <div className="mt-4 rounded-xl border border-[var(--border)] bg-black/20 p-4">
                   <p className="text-xs font-black uppercase text-violet-300">
                     Given
                   </p>
-                  <p className="mt-2 text-sm leading-6 text-slate-300">
+                  <p className="mt-2 text-sm leading-6 text-[var(--text-muted)]">
                     {item.given}
                   </p>
                 </div>
 
-                <div className="mt-4 rounded-xl border border-white/10 bg-black/20 p-4">
+                <div className="mt-4 rounded-xl border border-[var(--border)] bg-black/20 p-4">
                   <p className="text-xs font-black uppercase text-emerald-300">
                     Solution
                   </p>
-                  <p className="mt-2 text-sm leading-6 text-slate-300">
+                  <p className="mt-2 text-sm leading-6 text-[var(--text-muted)]">
                     {item.solution}
                   </p>
                 </div>
@@ -320,7 +320,7 @@ function Part23BundledApplications() {
 
 export default function ThermodynamicsPart23BundledFinal() {
   return (
-    <div className="min-h-screen bg-[#020617]">
+    <div className="min-h-screen bg-[var(--background)]">
       <ThermodynamicsPart23 />
       <Part23BundledApplications />
     </div>

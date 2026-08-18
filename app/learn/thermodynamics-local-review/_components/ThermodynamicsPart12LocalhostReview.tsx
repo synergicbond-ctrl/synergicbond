@@ -33,17 +33,17 @@ function Section({
   children: React.ReactNode;
 }) {
   return (
-    <section className="rounded-[2rem] border border-white/10 bg-slate-950/80 p-5 shadow-2xl shadow-black/20 backdrop-blur md:p-8">
+    <section className="rounded-[2rem] border border-[var(--border)] bg-slate-950/80 p-5 shadow-2xl shadow-black/20 backdrop-blur md:p-8">
       <div className="flex items-start gap-4">
         <span className="grid h-10 w-10 shrink-0 place-items-center rounded-lg border border-cyan-300/30 bg-cyan-300/10 text-sm font-black text-cyan-200">
           {index}
         </span>
         <div>
           <h2 className="text-2xl font-black tracking-tight text-white md:text-3xl">{title}</h2>
-          {subtitle ? <p className="mt-1 text-sm leading-6 text-slate-400">{subtitle}</p> : null}
+          {subtitle ? <p className="mt-1 text-sm leading-6 text-[var(--text-muted)]">{subtitle}</p> : null}
         </div>
       </div>
-      <div className="mt-6 space-y-5 text-[15px] leading-7 text-slate-200 md:text-base">{children}</div>
+      <div className="mt-6 space-y-5 text-[15px] leading-7 text-[var(--text-body)] md:text-base">{children}</div>
     </section>
   );
 }
@@ -61,7 +61,7 @@ function ConceptLens({
     <aside className={`rounded-lg border p-5 ${toneMap[tone]}`}>
       <p className="text-xs font-black uppercase tracking-[0.2em]">Synergic Bond Concept Lens</p>
       <h3 className="mt-2 text-lg font-black text-white">{title}</h3>
-      <div className="mt-2 text-sm leading-6 text-slate-200">{children}</div>
+      <div className="mt-2 text-sm leading-6 text-[var(--text-body)]">{children}</div>
     </aside>
   );
 }
@@ -85,7 +85,7 @@ function Formula({
 
 function CycleDirectionAnimation() {
   return (
-    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
+    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-[var(--border)] bg-[var(--surface)] p-3 md:p-5">
       <svg
         viewBox="0 0 1200 700"
         role="img"
@@ -189,7 +189,7 @@ function CycleDirectionAnimation() {
 
 function StateFunctionClosureAnimation() {
   return (
-    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
+    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-[var(--border)] bg-[var(--surface)] p-3 md:p-5">
       <svg
         viewBox="0 0 1200 680"
         role="img"
@@ -260,7 +260,7 @@ function StateFunctionClosureAnimation() {
 
 function ThreeStateCycleGraph() {
   return (
-    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
+    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-[var(--border)] bg-[var(--surface)] p-3 md:p-5">
       <svg
         viewBox="0 0 1200 760"
         role="img"
@@ -405,7 +405,7 @@ function CycleAuditMethod() {
           <div className="mt-3 rounded-xl bg-black/25 p-3 text-center font-mono text-sm font-black text-white">
             {step.equation}
           </div>
-          <p className="mt-3 text-sm leading-6 text-slate-200">{step.text}</p>
+          <p className="mt-3 text-sm leading-6 text-[var(--text-body)]">{step.text}</p>
         </article>
       ))}
     </div>
@@ -420,7 +420,7 @@ function StateTable() {
   ];
 
   return (
-    <div className="overflow-x-auto rounded-lg border border-white/10">
+    <div className="overflow-x-auto rounded-lg border border-[var(--border)]">
       <table className="min-w-full border-collapse text-left text-sm">
         <thead className="bg-slate-900">
           <tr>
@@ -435,10 +435,10 @@ function StateTable() {
           {rows.map(([state, p, v, t, role]) => (
             <tr key={state}>
               <td className="px-4 py-3 font-black text-cyan-200">{state}</td>
-              <td className="px-4 py-3 text-slate-200">{p}</td>
-              <td className="px-4 py-3 text-slate-200">{v}</td>
-              <td className="px-4 py-3 text-slate-200">{t}</td>
-              <td className="px-4 py-3 text-slate-300">{role}</td>
+              <td className="px-4 py-3 text-[var(--text-body)]">{p}</td>
+              <td className="px-4 py-3 text-[var(--text-body)]">{v}</td>
+              <td className="px-4 py-3 text-[var(--text-body)]">{t}</td>
+              <td className="px-4 py-3 text-[var(--text-muted)]">{role}</td>
             </tr>
           ))}
         </tbody>
@@ -484,7 +484,7 @@ function LegTable() {
   ];
 
   return (
-    <div className="overflow-x-auto rounded-lg border border-white/10">
+    <div className="overflow-x-auto rounded-lg border border-[var(--border)]">
       <table className="min-w-full border-collapse text-left text-sm">
         <thead className="bg-slate-900">
           <tr>
@@ -499,8 +499,8 @@ function LegTable() {
         <tbody className="divide-y divide-white/10 bg-slate-950/70">
           {rows.map(([leg, process, q, w, du, dh]) => (
             <tr key={leg}>
-              <td className="px-4 py-3 font-black text-slate-100">{leg}</td>
-              <td className="px-4 py-3 text-slate-300">{process}</td>
+              <td className="px-4 py-3 font-black text-[var(--foreground)]">{leg}</td>
+              <td className="px-4 py-3 text-[var(--text-muted)]">{process}</td>
               <td className="px-4 py-3 font-mono text-amber-200">{q}</td>
               <td className="px-4 py-3 font-mono text-cyan-200">{w}</td>
               <td className="px-4 py-3 font-mono text-emerald-300">{du}</td>
@@ -528,7 +528,7 @@ function RetainedCycleExample() {
         <Chip tone="amber">FULL STATE & ENERGY TABLE</Chip>
       </div>
 
-      <p className="mt-5 leading-7 text-slate-200">
+      <p className="mt-5 leading-7 text-[var(--text-body)]">
         One mole of a monatomic ideal gas executes a reversible cycle:
         state 1 → state 2 at constant volume, state 2 → state 3 isothermally,
         and state 3 → state 1 at constant pressure.
@@ -666,7 +666,7 @@ function GraphAreaCases() {
           <div className="mt-3 rounded-xl bg-black/25 p-3 text-center font-mono text-sm font-black text-white">
             {card.equation}
           </div>
-          <p className="mt-3 text-sm leading-6 text-slate-200">{card.text}</p>
+          <p className="mt-3 text-sm leading-6 text-[var(--text-body)]">{card.text}</p>
         </article>
       ))}
     </div>
@@ -778,15 +778,15 @@ function ProblemLadder() {
   return (
     <div className="grid gap-4 lg:grid-cols-2">
       {problems.map((item) => (
-        <article key={item.title} className="group rounded-lg border border-white/10 bg-slate-900/70 p-5">
+        <article key={item.title} className="group rounded-lg border border-[var(--border)] bg-slate-900/70 p-5">
           <h3 className=" font-black text-white">
             <span className="mr-2 text-amber-300">◆</span>
             {item.title}
           </h3>
-          <p className="mt-4 leading-7 text-slate-200">{item.question}</p>
+          <p className="mt-4 leading-7 text-[var(--text-body)]">{item.question}</p>
           <div className="mt-4 rounded-xl border border-emerald-300/20 bg-emerald-300/[0.06] p-4">
             <p className="text-xs font-black uppercase tracking-[0.2em] text-emerald-300">Solution</p>
-            <p className="mt-2 text-sm leading-6 text-slate-200">{item.solution}</p>
+            <p className="mt-2 text-sm leading-6 text-[var(--text-body)]">{item.solution}</p>
           </div>
         </article>
       ))}
@@ -839,7 +839,7 @@ const traps = [
 
 function TrapTable() {
   return (
-    <div className="overflow-x-auto rounded-lg border border-white/10">
+    <div className="overflow-x-auto rounded-lg border border-[var(--border)]">
       <table className="min-w-full border-collapse text-left text-sm">
         <thead className="bg-slate-900">
           <tr>
@@ -851,11 +851,11 @@ function TrapTable() {
         <tbody className="divide-y divide-white/10 bg-slate-950/70">
           {traps.map(([statement, verdict, correction]) => (
             <tr key={statement}>
-              <td className="px-4 py-3 font-semibold text-slate-100">{statement}</td>
+              <td className="px-4 py-3 font-semibold text-[var(--foreground)]">{statement}</td>
               <td className="px-4 py-3">
                 <span className="rounded-full bg-rose-400/15 px-3 py-1 text-xs font-black text-rose-300">{verdict}</span>
               </td>
-              <td className="px-4 py-3 leading-6 text-slate-300">{correction}</td>
+              <td className="px-4 py-3 leading-6 text-[var(--text-muted)]">{correction}</td>
             </tr>
           ))}
         </tbody>
@@ -893,7 +893,7 @@ function DailyLifeGrid() {
       {items.map((item) => (
         <article key={item.title} className={`rounded-lg border p-5 ${toneMap[item.tone]}`}>
           <h3 className="text-xl font-black text-white">{item.title}</h3>
-          <p className="mt-2 text-sm leading-6 text-slate-200">{item.text}</p>
+          <p className="mt-2 text-sm leading-6 text-[var(--text-body)]">{item.text}</p>
         </article>
       ))}
     </div>
@@ -902,8 +902,8 @@ function DailyLifeGrid() {
 
 export default function ThermodynamicsPart12() {
   return (
-    <main className="min-h-screen bg-[#020617] text-slate-100">
-      <header className="relative overflow-hidden border-b border-white/10">
+    <main className="min-h-screen bg-[var(--background)] text-[var(--foreground)]">
+      <header className="relative overflow-hidden border-b border-[var(--border)]">
         <div
           aria-hidden="true"
           className="absolute inset-0 bg-[radial-gradient(circle_at_14%_20%,rgba(34,211,238,0.20),transparent_32%),radial-gradient(circle_at_86%_15%,rgba(217,70,239,0.18),transparent_30%),radial-gradient(circle_at_50%_100%,rgba(52,211,153,0.10),transparent_34%)]"
@@ -923,13 +923,13 @@ export default function ThermodynamicsPart12() {
               <h1 className="mt-4 max-w-4xl text-4xl font-black tracking-[-0.045em] text-white md:text-6xl">
                 A cycle forgets every state change—but remembers its heat and work
               </h1>
-              <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-300">
+              <p className="mt-6 max-w-3xl text-lg leading-8 text-[var(--text-muted)]">
                 When the system returns to its starting state, every state function closes.
                 The path still encloses an area, and that area records net pressure–volume work.
               </p>
             </div>
 
-            <div className="rounded-[2rem] border border-white/10 bg-white/[0.05] p-6 shadow-2xl shadow-cyan-950/25">
+            <div className="rounded-[2rem] border border-[var(--border)] bg-white/[0.05] p-6 shadow-2xl shadow-cyan-950/25">
               <p className="text-xs font-black uppercase tracking-[0.22em] text-fuchsia-300">
                 Cycle closure
               </p>
@@ -1046,19 +1046,19 @@ export default function ThermodynamicsPart12() {
           <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
             <article className="rounded-lg border border-emerald-300/20 bg-emerald-300/[0.05] p-5">
               <p className="text-xs font-black uppercase tracking-[0.2em] text-emerald-300">State closure</p>
-              <p className="mt-2 text-sm leading-6 text-slate-200">
+              <p className="mt-2 text-sm leading-6 text-[var(--text-body)]">
                 Sum every {String.raw`\(\Delta U\)`}, {String.raw`\(\Delta H\)`}, {String.raw`\(\Delta S\)`} or other state-function change. Each total must be zero.
               </p>
             </article>
             <article className="rounded-lg border border-cyan-300/20 bg-cyan-300/[0.05] p-5">
               <p className="text-xs font-black uppercase tracking-[0.2em] text-cyan-300">Graph sign</p>
-              <p className="mt-2 text-sm leading-6 text-slate-200">
+              <p className="mt-2 text-sm leading-6 text-[var(--text-body)]">
                 Confirm whether the loop is clockwise or anticlockwise before assigning the chemistry work sign.
               </p>
             </article>
             <article className="rounded-lg border border-amber-300/20 bg-amber-300/[0.05] p-5">
               <p className="text-xs font-black uppercase tracking-[0.2em] text-amber-300">First-Law closure</p>
-              <p className="mt-2 text-sm leading-6 text-slate-200">
+              <p className="mt-2 text-sm leading-6 text-[var(--text-body)]">
                 Check that {String.raw`\(\Sigma q + \Sigma w = 0\)`}. Any residual signals an arithmetic or sign error.
               </p>
             </article>
@@ -1085,15 +1085,15 @@ export default function ThermodynamicsPart12() {
           <div className="grid gap-4 md:grid-cols-3">
             <article className="rounded-lg border border-cyan-300/20 bg-cyan-300/[0.05] p-5">
               <p className="text-xs font-black uppercase tracking-[0.2em] text-cyan-300">Work per cycle</p>
-              <p className="mt-2 text-sm leading-6 text-slate-200">Magnitude of the signed P–V area, plus any non-PV work.</p>
+              <p className="mt-2 text-sm leading-6 text-[var(--text-body)]">Magnitude of the signed P–V area, plus any non-PV work.</p>
             </article>
             <article className="rounded-lg border border-amber-300/20 bg-amber-300/[0.05] p-5">
               <p className="text-xs font-black uppercase tracking-[0.2em] text-amber-300">Power</p>
-              <p className="mt-2 text-sm leading-6 text-slate-200">Work per cycle multiplied by the number of cycles per unit time.</p>
+              <p className="mt-2 text-sm leading-6 text-[var(--text-body)]">Work per cycle multiplied by the number of cycles per unit time.</p>
             </article>
             <article className="rounded-lg border border-emerald-300/20 bg-emerald-300/[0.05] p-5">
               <p className="text-xs font-black uppercase tracking-[0.2em] text-emerald-300">Efficiency</p>
-              <p className="mt-2 text-sm leading-6 text-slate-200">Useful work divided by the relevant energy input; developed fully with heat engines later.</p>
+              <p className="mt-2 text-sm leading-6 text-[var(--text-body)]">Useful work divided by the relevant energy input; developed fully with heat engines later.</p>
             </article>
           </div>
         </Section>
@@ -1113,7 +1113,7 @@ export default function ThermodynamicsPart12() {
           <ProblemLadder />
         </Section>
 
-        <section className="rounded-[2rem] border border-white/10 bg-gradient-to-r from-slate-950 via-slate-900 to-slate-950 p-6 md:p-8">
+        <section className="rounded-[2rem] border border-[var(--border)] bg-gradient-to-r from-slate-950 via-slate-900 to-slate-950 p-6 md:p-8">
           <div className="flex flex-wrap items-center justify-between gap-4">
             <div>
               <p className="text-xs font-black uppercase tracking-[0.22em] text-fuchsia-300">
@@ -1133,9 +1133,9 @@ export default function ThermodynamicsPart12() {
               ["Clockwise", "chemistry wcycle < 0"],
               ["First Law", "qcycle = −wcycle"],
             ].map(([term, meaning]) => (
-              <div key={term} className="rounded-lg border border-white/10 bg-black/25 p-4">
+              <div key={term} className="rounded-lg border border-[var(--border)] bg-black/25 p-4">
                 <p className="font-black text-white">{term}</p>
-                <p className="mt-1 text-sm leading-6 text-slate-300">{meaning}</p>
+                <p className="mt-1 text-sm leading-6 text-[var(--text-muted)]">{meaning}</p>
               </div>
             ))}
           </div>

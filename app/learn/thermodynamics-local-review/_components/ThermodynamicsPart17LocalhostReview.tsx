@@ -33,17 +33,17 @@ function Section({
   children: React.ReactNode;
 }) {
   return (
-    <section className="rounded-[2rem] border border-white/10 bg-slate-950/80 p-5 shadow-2xl shadow-black/20 backdrop-blur md:p-8">
+    <section className="rounded-[2rem] border border-[var(--border)] bg-slate-950/80 p-5 shadow-2xl shadow-black/20 backdrop-blur md:p-8">
       <div className="flex items-start gap-4">
         <span className="grid h-10 w-10 shrink-0 place-items-center rounded-lg border border-cyan-300/30 bg-cyan-300/10 text-sm font-black text-cyan-200">
           {index}
         </span>
         <div>
           <h2 className="text-2xl font-black tracking-tight text-white md:text-3xl">{title}</h2>
-          {subtitle ? <p className="mt-1 text-sm leading-6 text-slate-400">{subtitle}</p> : null}
+          {subtitle ? <p className="mt-1 text-sm leading-6 text-[var(--text-muted)]">{subtitle}</p> : null}
         </div>
       </div>
-      <div className="mt-6 space-y-5 text-[15px] leading-7 text-slate-200 md:text-base">{children}</div>
+      <div className="mt-6 space-y-5 text-[15px] leading-7 text-[var(--text-body)] md:text-base">{children}</div>
     </section>
   );
 }
@@ -61,7 +61,7 @@ function ConceptLens({
     <aside className={`rounded-lg border p-5 ${toneMap[tone]}`}>
       <p className="text-xs font-black uppercase tracking-[0.2em]">Synergic Bond Concept Lens</p>
       <h3 className="mt-2 text-lg font-black text-white">{title}</h3>
-      <div className="mt-2 text-sm leading-6 text-slate-200">{children}</div>
+      <div className="mt-2 text-sm leading-6 text-[var(--text-body)]">{children}</div>
     </aside>
   );
 }
@@ -85,7 +85,7 @@ function Formula({
 
 function ClausiusInequalityAnimation() {
   return (
-    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
+    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-[var(--border)] bg-[var(--surface)] p-3 md:p-5">
       <svg
         viewBox="0 0 1200 760"
         role="img"
@@ -169,7 +169,7 @@ function ClausiusInequalityAnimation() {
 
 function EntropyLedgerAnimation() {
   return (
-    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
+    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-[var(--border)] bg-[var(--surface)] p-3 md:p-5">
       <svg
         viewBox="0 0 1200 760"
         role="img"
@@ -250,7 +250,7 @@ function EntropyLedgerAnimation() {
 
 function ExpansionCompressionAnimation() {
   return (
-    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
+    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-[var(--border)] bg-[var(--surface)] p-3 md:p-5">
       <svg
         viewBox="0 0 1200 850"
         role="img"
@@ -324,7 +324,7 @@ function ExpansionCompressionAnimation() {
 
 function MaximumEntropyAnimation() {
   return (
-    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
+    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-[var(--border)] bg-[var(--surface)] p-3 md:p-5">
       <svg
         viewBox="0 0 1200 740"
         role="img"
@@ -421,7 +421,7 @@ function ClausiusDerivation() {
           <div className="mt-3 rounded-xl bg-black/25 p-3 text-center font-mono text-sm font-black text-white">
             {step.equation}
           </div>
-          <p className="mt-3 text-sm leading-6 text-slate-200">{step.text}</p>
+          <p className="mt-3 text-sm leading-6 text-[var(--text-body)]">{step.text}</p>
         </article>
       ))}
     </div>
@@ -437,7 +437,7 @@ function UniverseCriteriaTable() {
   ];
 
   return (
-    <div className="overflow-x-auto rounded-lg border border-white/10">
+    <div className="overflow-x-auto rounded-lg border border-[var(--border)]">
       <table className="min-w-full border-collapse text-left text-sm">
         <thead className="bg-slate-900">
           <tr>
@@ -450,10 +450,10 @@ function UniverseCriteriaTable() {
         <tbody className="divide-y divide-white/10 bg-slate-950/70">
           {rows.map(([situation, criterion, generation, meaning]) => (
             <tr key={situation}>
-              <td className="px-4 py-3 font-semibold text-slate-100">{situation}</td>
+              <td className="px-4 py-3 font-semibold text-[var(--foreground)]">{situation}</td>
               <td className="px-4 py-3 font-mono text-cyan-200">{criterion}</td>
-              <td className="px-4 py-3 text-slate-300">{generation}</td>
-              <td className="px-4 py-3 text-slate-300">{meaning}</td>
+              <td className="px-4 py-3 text-[var(--text-muted)]">{generation}</td>
+              <td className="px-4 py-3 text-[var(--text-muted)]">{meaning}</td>
             </tr>
           ))}
         </tbody>
@@ -487,7 +487,7 @@ function SurroundingsCorrection() {
   ];
 
   return (
-    <div className="overflow-x-auto rounded-lg border border-white/10">
+    <div className="overflow-x-auto rounded-lg border border-[var(--border)]">
       <table className="min-w-full border-collapse text-left text-sm">
         <thead className="bg-slate-900">
           <tr>
@@ -499,9 +499,9 @@ function SurroundingsCorrection() {
         <tbody className="divide-y divide-white/10 bg-slate-950/70">
           {rows.map(([source, audit, correction]) => (
             <tr key={source}>
-              <td className="px-4 py-3 font-semibold text-slate-100">{source}</td>
+              <td className="px-4 py-3 font-semibold text-[var(--foreground)]">{source}</td>
               <td className="px-4 py-3 text-amber-300">{audit}</td>
-              <td className="px-4 py-3 leading-6 text-slate-300">{correction}</td>
+              <td className="px-4 py-3 leading-6 text-[var(--text-muted)]">{correction}</td>
             </tr>
           ))}
         </tbody>
@@ -525,7 +525,7 @@ function IsothermalExpansionWorkedExample() {
         <Chip tone="emerald">UNIVERSE ENTROPY COMPARISON</Chip>
       </div>
 
-      <p className="mt-5 leading-7 text-slate-200">
+      <p className="mt-5 leading-7 text-[var(--text-body)]">
         One mole of ideal gas expands isothermally at 300 K from 10.0 L to 20.0 L.
         Compare the entropy changes for: (i) reversible expansion, (ii) one-step expansion
         against the final equilibrium pressure, and (iii) insulated free expansion.
@@ -610,7 +610,7 @@ function IsothermalCompressionWorkedExample() {
         <Chip tone="violet">SIGN-CORRECT SOLUTION</Chip>
       </div>
 
-      <p className="mt-5 leading-7 text-slate-200">
+      <p className="mt-5 leading-7 text-[var(--text-body)]">
         One mole of ideal gas at 300 K is compressed isothermally from 20.0 L to 10.0 L
         against a constant external pressure equal to the final gas pressure.
       </p>
@@ -657,7 +657,7 @@ function HeatFlowWorkedExample() {
         <Chip tone="amber">ENTROPY GENERATION</Chip>
       </div>
 
-      <p className="mt-5 leading-7 text-slate-200">
+      <p className="mt-5 leading-7 text-[var(--text-body)]">
         A quantity of 600 J passes directly from a 400 K reservoir to a 300 K reservoir.
       </p>
 
@@ -799,15 +799,15 @@ function ProblemLadder() {
   return (
     <div className="grid gap-4 lg:grid-cols-2">
       {problems.map((item) => (
-        <article key={item.title} className="group rounded-lg border border-white/10 bg-slate-900/70 p-5">
+        <article key={item.title} className="group rounded-lg border border-[var(--border)] bg-slate-900/70 p-5">
           <h3 className=" font-black text-white">
             <span className="mr-2 text-amber-300">◆</span>
             {item.title}
           </h3>
-          <p className="mt-4 leading-7 text-slate-200">{item.question}</p>
+          <p className="mt-4 leading-7 text-[var(--text-body)]">{item.question}</p>
           <div className="mt-4 rounded-xl border border-emerald-300/20 bg-emerald-300/[0.06] p-4">
             <p className="text-xs font-black uppercase tracking-[0.2em] text-emerald-300">Solution</p>
-            <p className="mt-2 text-sm leading-6 text-slate-200">{item.solution}</p>
+            <p className="mt-2 text-sm leading-6 text-[var(--text-body)]">{item.solution}</p>
           </div>
         </article>
       ))}
@@ -860,7 +860,7 @@ const traps = [
 
 function TrapTable() {
   return (
-    <div className="overflow-x-auto rounded-lg border border-white/10">
+    <div className="overflow-x-auto rounded-lg border border-[var(--border)]">
       <table className="min-w-full border-collapse text-left text-sm">
         <thead className="bg-slate-900">
           <tr>
@@ -872,11 +872,11 @@ function TrapTable() {
         <tbody className="divide-y divide-white/10 bg-slate-950/70">
           {traps.map(([statement, verdict, correction]) => (
             <tr key={statement}>
-              <td className="px-4 py-3 font-semibold text-slate-100">{statement}</td>
+              <td className="px-4 py-3 font-semibold text-[var(--foreground)]">{statement}</td>
               <td className="px-4 py-3">
                 <span className="rounded-full bg-rose-400/15 px-3 py-1 text-xs font-black text-rose-300">{verdict}</span>
               </td>
-              <td className="px-4 py-3 leading-6 text-slate-300">{correction}</td>
+              <td className="px-4 py-3 leading-6 text-[var(--text-muted)]">{correction}</td>
             </tr>
           ))}
         </tbody>
@@ -914,7 +914,7 @@ function DailyLifeGrid() {
       {items.map((item) => (
         <article key={item.title} className={`rounded-lg border p-5 ${toneMap[item.tone]}`}>
           <h3 className="text-xl font-black text-white">{item.title}</h3>
-          <p className="mt-2 text-sm leading-6 text-slate-200">{item.text}</p>
+          <p className="mt-2 text-sm leading-6 text-[var(--text-body)]">{item.text}</p>
         </article>
       ))}
     </div>
@@ -923,8 +923,8 @@ function DailyLifeGrid() {
 
 export default function ThermodynamicsPart17() {
   return (
-    <main className="min-h-screen bg-[#020617] text-slate-100">
-      <header className="relative overflow-hidden border-b border-white/10">
+    <main className="min-h-screen bg-[var(--background)] text-[var(--foreground)]">
+      <header className="relative overflow-hidden border-b border-[var(--border)]">
         <div
           aria-hidden="true"
           className="absolute inset-0 bg-[radial-gradient(circle_at_14%_20%,rgba(34,211,238,0.20),transparent_32%),radial-gradient(circle_at_86%_15%,rgba(217,70,239,0.18),transparent_30%),radial-gradient(circle_at_50%_100%,rgba(52,211,153,0.10),transparent_34%)]"
@@ -944,13 +944,13 @@ export default function ThermodynamicsPart17() {
               <h1 className="mt-4 max-w-4xl text-4xl font-black tracking-[-0.045em] text-white md:text-6xl">
                 Entropy is transferred with heat—and generated by irreversibility
               </h1>
-              <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-300">
+              <p className="mt-6 max-w-3xl text-lg leading-8 text-[var(--text-muted)]">
                 Reversible heat defines entropy change. Real processes require an additional non-negative term:
                 entropy generation. That single term separates ideal limits from natural irreversible change.
               </p>
             </div>
 
-            <div className="rounded-[2rem] border border-white/10 bg-white/[0.05] p-6 shadow-2xl shadow-cyan-950/25">
+            <div className="rounded-[2rem] border border-[var(--border)] bg-white/[0.05] p-6 shadow-2xl shadow-cyan-950/25">
               <p className="text-xs font-black uppercase tracking-[0.22em] text-fuchsia-300">
                 Entropy balance
               </p>
@@ -1112,7 +1112,7 @@ export default function ThermodynamicsPart17() {
           <ProblemLadder />
         </Section>
 
-        <section className="rounded-[2rem] border border-white/10 bg-gradient-to-r from-slate-950 via-slate-900 to-slate-950 p-6 md:p-8">
+        <section className="rounded-[2rem] border border-[var(--border)] bg-gradient-to-r from-slate-950 via-slate-900 to-slate-950 p-6 md:p-8">
           <div className="flex flex-wrap items-center justify-between gap-4">
             <div>
               <p className="text-xs font-black uppercase tracking-[0.22em] text-fuchsia-300">
@@ -1132,9 +1132,9 @@ export default function ThermodynamicsPart17() {
               ["Universe", "ΔSuniv = Sgen,total ≥ 0"],
               ["Isolated equilibrium", "S reaches a constrained maximum"],
             ].map(([term, meaning]) => (
-              <div key={term} className="rounded-lg border border-white/10 bg-black/25 p-4">
+              <div key={term} className="rounded-lg border border-[var(--border)] bg-black/25 p-4">
                 <p className="font-black text-white">{term}</p>
-                <p className="mt-1 text-sm leading-6 text-slate-300">{meaning}</p>
+                <p className="mt-1 text-sm leading-6 text-[var(--text-muted)]">{meaning}</p>
               </div>
             ))}
           </div>

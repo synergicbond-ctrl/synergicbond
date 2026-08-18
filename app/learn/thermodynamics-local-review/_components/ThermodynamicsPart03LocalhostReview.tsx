@@ -34,17 +34,17 @@ function Section({
   children: React.ReactNode;
 }) {
   return (
-    <section className="rounded-[2rem] border border-white/10 bg-slate-950/80 p-5 shadow-2xl shadow-black/20 backdrop-blur md:p-8">
+    <section className="rounded-[2rem] border border-[var(--border)] bg-slate-950/80 p-5 shadow-2xl shadow-black/20 backdrop-blur md:p-8">
       <div className="flex items-start gap-4">
         <span className="grid h-10 w-10 shrink-0 place-items-center rounded-lg border border-cyan-300/30 bg-cyan-300/10 text-sm font-black text-cyan-200">
           {index}
         </span>
         <div>
           <h2 className="text-2xl font-black tracking-tight text-white md:text-3xl">{title}</h2>
-          {subtitle ? <p className="mt-1 text-sm leading-6 text-slate-400">{subtitle}</p> : null}
+          {subtitle ? <p className="mt-1 text-sm leading-6 text-[var(--text-muted)]">{subtitle}</p> : null}
         </div>
       </div>
-      <div className="mt-6 space-y-5 text-[15px] leading-7 text-slate-200 md:text-base">{children}</div>
+      <div className="mt-6 space-y-5 text-[15px] leading-7 text-[var(--text-body)] md:text-base">{children}</div>
     </section>
   );
 }
@@ -62,7 +62,7 @@ function ConceptLens({
     <aside className={`rounded-lg border p-5 ${toneMap[tone]}`}>
       <p className="text-xs font-black uppercase tracking-[0.2em]">Synergic Bond Concept Lens</p>
       <h3 className="mt-2 text-lg font-black text-white">{title}</h3>
-      <div className="mt-2 text-sm leading-6 text-slate-200">{children}</div>
+      <div className="mt-2 text-sm leading-6 text-[var(--text-body)]">{children}</div>
     </aside>
   );
 }
@@ -86,7 +86,7 @@ function Formula({
 
 function RouteAnimation() {
   return (
-    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
+    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-[var(--border)] bg-[var(--surface)] p-3 md:p-5">
       <svg
         viewBox="0 0 1200 650"
         role="img"
@@ -191,7 +191,7 @@ function RouteAnimation() {
 
 function DifferentialVisual() {
   return (
-    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
+    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-[var(--border)] bg-[var(--surface)] p-3 md:p-5">
       <svg
         viewBox="0 0 1200 620"
         role="img"
@@ -273,14 +273,14 @@ function TestCard({ title, expression, result, tone, children }: TestCardProps) 
       <div className="mt-4 rounded-xl bg-black/25 p-4 text-center font-mono text-base font-black text-white">
         {expression}
       </div>
-      <div className="mt-3 text-sm leading-6 text-slate-200">{children}</div>
+      <div className="mt-3 text-sm leading-6 text-[var(--text-body)]">{children}</div>
     </article>
   );
 }
 
 function PVPathVisual() {
   return (
-    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
+    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-[var(--border)] bg-[var(--surface)] p-3 md:p-5">
       <svg
         viewBox="0 0 1200 650"
         role="img"
@@ -389,15 +389,15 @@ function ProblemLadder() {
   return (
     <div className="grid gap-4 lg:grid-cols-2">
       {problems.map((item) => (
-        <article key={item.title} className="group rounded-lg border border-white/10 bg-slate-900/70 p-5">
+        <article key={item.title} className="group rounded-lg border border-[var(--border)] bg-slate-900/70 p-5">
           <h3 className=" font-black text-white">
             <span className="mr-2 text-amber-300">◆</span>
             {item.title}
           </h3>
-          <p className="mt-4 leading-7 text-slate-200">{item.question}</p>
+          <p className="mt-4 leading-7 text-[var(--text-body)]">{item.question}</p>
           <div className="mt-4 rounded-xl border border-emerald-300/20 bg-emerald-300/[0.06] p-4">
             <p className="text-xs font-black uppercase tracking-[0.2em] text-emerald-300">Solution</p>
-            <p className="mt-2 text-sm leading-6 text-slate-200">{item.solution}</p>
+            <p className="mt-2 text-sm leading-6 text-[var(--text-body)]">{item.solution}</p>
           </div>
         </article>
       ))}
@@ -419,7 +419,7 @@ const functionTable = [
 
 function FunctionTable() {
   return (
-    <div className="overflow-x-auto rounded-lg border border-white/10">
+    <div className="overflow-x-auto rounded-lg border border-[var(--border)]">
       <table className="min-w-full border-collapse text-left text-sm">
         <thead className="bg-slate-900">
           <tr>
@@ -431,7 +431,7 @@ function FunctionTable() {
         <tbody className="divide-y divide-white/10 bg-slate-950/70">
           {functionTable.map(([quantity, classification, reason]) => (
             <tr key={quantity}>
-              <td className="px-4 py-3 font-semibold text-slate-100">{quantity}</td>
+              <td className="px-4 py-3 font-semibold text-[var(--foreground)]">{quantity}</td>
               <td className="px-4 py-3">
                 <span
                   className={`rounded-full px-3 py-1 text-xs font-black ${
@@ -443,7 +443,7 @@ function FunctionTable() {
                   {classification}
                 </span>
               </td>
-              <td className="px-4 py-3 leading-6 text-slate-300">{reason}</td>
+              <td className="px-4 py-3 leading-6 text-[var(--text-muted)]">{reason}</td>
             </tr>
           ))}
         </tbody>
@@ -454,8 +454,8 @@ function FunctionTable() {
 
 export default function ThermodynamicsPart03() {
   return (
-    <main className="min-h-screen bg-[#020617] text-slate-100">
-      <header className="relative overflow-hidden border-b border-white/10">
+    <main className="min-h-screen bg-[var(--background)] text-[var(--foreground)]">
+      <header className="relative overflow-hidden border-b border-[var(--border)]">
         <div
           aria-hidden="true"
           className="absolute inset-0 bg-[radial-gradient(circle_at_15%_20%,rgba(34,211,238,0.20),transparent_32%),radial-gradient(circle_at_85%_14%,rgba(217,70,239,0.18),transparent_30%),radial-gradient(circle_at_52%_100%,rgba(251,191,36,0.10),transparent_32%)]"
@@ -475,24 +475,24 @@ export default function ThermodynamicsPart03() {
               <h1 className="mt-4 max-w-4xl text-4xl font-black tracking-[-0.045em] text-white md:text-6xl">
                 The destination remembers; the path records the journey
               </h1>
-              <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-300">
+              <p className="mt-6 max-w-3xl text-lg leading-8 text-[var(--text-muted)]">
                 State functions are determined by equilibrium endpoints. Heat and work describe transfers
                 along the chosen route. Exact differentials provide the mathematical test.
               </p>
             </div>
 
-            <div className="rounded-[2rem] border border-white/10 bg-white/[0.05] p-6 shadow-2xl shadow-cyan-950/25">
+            <div className="rounded-[2rem] border border-[var(--border)] bg-white/[0.05] p-6 shadow-2xl shadow-cyan-950/25">
               <p className="text-xs font-black uppercase tracking-[0.22em] text-fuchsia-300">
                 Master distinction
               </p>
               <div className="mt-4 space-y-3">
                 <div className="rounded-xl bg-emerald-400/10 p-4">
                   <p className="font-black text-emerald-200">State function</p>
-                  <p className="mt-1 text-sm text-slate-300">Defined at a state; change depends only on endpoints.</p>
+                  <p className="mt-1 text-sm text-[var(--text-muted)]">Defined at a state; change depends only on endpoints.</p>
                 </div>
                 <div className="rounded-xl bg-rose-400/10 p-4">
                   <p className="font-black text-rose-200">Path function</p>
-                  <p className="mt-1 text-sm text-slate-300">Defined during a process; accumulated value depends on route.</p>
+                  <p className="mt-1 text-sm text-[var(--text-muted)]">Defined during a process; accumulated value depends on route.</p>
                 </div>
               </div>
             </div>
@@ -721,7 +721,7 @@ export default function ThermodynamicsPart03() {
             </Formula>
           </div>
 
-          <p className="rounded-lg border border-emerald-300/20 bg-emerald-300/[0.06] p-4 text-sm leading-6 text-slate-200">
+          <p className="rounded-lg border border-emerald-300/20 bg-emerald-300/[0.06] p-4 text-sm leading-6 text-[var(--text-body)]">
             The equality confirms that dV is exact. Volume is a state function.
           </p>
         </Section>
@@ -758,7 +758,7 @@ export default function ThermodynamicsPart03() {
             <article className="rounded-lg border border-emerald-300/20 bg-emerald-300/[0.05] p-5">
               <Chip tone="emerald">CONSERVATIVE FORCE</Chip>
               <h3 className="mt-4 text-xl font-black text-white">Endpoint-dependent mechanical work</h3>
-              <p className="mt-2 text-sm leading-6 text-slate-300">
+              <p className="mt-2 text-sm leading-6 text-[var(--text-muted)]">
                 Gravity, ideal spring force and electrostatic force admit potential-energy functions.
                 Their work between fixed endpoints equals minus the change in potential energy.
               </p>
@@ -770,7 +770,7 @@ export default function ThermodynamicsPart03() {
             <article className="rounded-lg border border-rose-300/20 bg-rose-300/[0.05] p-5">
               <Chip tone="rose">NON-CONSERVATIVE FORCE</Chip>
               <h3 className="mt-4 text-xl font-black text-white">Route-dependent mechanical work</h3>
-              <p className="mt-2 text-sm leading-6 text-slate-300">
+              <p className="mt-2 text-sm leading-6 text-[var(--text-muted)]">
                 Friction dissipates mechanical energy, and the work depends on travelled distance and path.
               </p>
               <div className="mt-4 rounded-xl bg-black/25 p-3 text-center font-mono font-black text-white">
@@ -813,7 +813,7 @@ export default function ThermodynamicsPart03() {
           <ProblemLadder />
         </Section>
 
-        <section className="rounded-[2rem] border border-white/10 bg-gradient-to-r from-slate-950 via-slate-900 to-slate-950 p-6 md:p-8">
+        <section className="rounded-[2rem] border border-[var(--border)] bg-gradient-to-r from-slate-950 via-slate-900 to-slate-950 p-6 md:p-8">
           <div className="flex flex-wrap items-center justify-between gap-4">
             <div>
               <p className="text-xs font-black uppercase tracking-[0.22em] text-fuchsia-300">
@@ -833,9 +833,9 @@ export default function ThermodynamicsPart03() {
               ["Exact test", "cross partial derivatives agree"],
               ["Cycle", "∮dΦ = 0 for a state function"],
             ].map(([term, meaning]) => (
-              <div key={term} className="rounded-lg border border-white/10 bg-black/25 p-4">
+              <div key={term} className="rounded-lg border border-[var(--border)] bg-black/25 p-4">
                 <p className="font-black text-white">{term}</p>
-                <p className="mt-1 text-sm leading-6 text-slate-300">{meaning}</p>
+                <p className="mt-1 text-sm leading-6 text-[var(--text-muted)]">{meaning}</p>
               </div>
             ))}
           </div>

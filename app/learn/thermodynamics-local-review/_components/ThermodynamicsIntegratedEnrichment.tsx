@@ -1104,7 +1104,7 @@ const ENRICHMENT: Record<number, Entry> = {
 function FlowGraphic({ entry, part }: { entry: Entry; part: number }) {
   const [left, center, right] = entry.flow;
   return (
-    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-4 md:p-6">
+    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-[var(--border)] bg-[var(--surface)] p-4 md:p-6">
       <svg viewBox="0 0 1200 620" role="img" aria-label={`${entry.title} concept flow`} className="h-auto w-full">
         <defs>
           <linearGradient id={`integrated-bg-${part}`} x1="0" x2="1">
@@ -1163,7 +1163,7 @@ export default function ThermodynamicsIntegratedEnrichment({ part }: { part: num
         </div>
 
         <h2 className="mt-5 text-3xl font-black tracking-tight text-white md:text-4xl">{entry.title}</h2>
-        <p className="mt-3 max-w-4xl leading-7 text-slate-300">{entry.subtitle}</p>
+        <p className="mt-3 max-w-4xl leading-7 text-[var(--text-muted)]">{entry.subtitle}</p>
 
         <div className="mt-7">
           <FlowGraphic entry={entry} part={part} />
@@ -1171,11 +1171,11 @@ export default function ThermodynamicsIntegratedEnrichment({ part }: { part: num
 
         <div className="mt-7 grid gap-4 md:grid-cols-2">
           {entry.theory.map((paragraph, index) => (
-            <article key={paragraph} className="rounded-lg border border-white/10 bg-white/[0.04] p-5">
+            <article key={paragraph} className="rounded-lg border border-[var(--border)] bg-white/[0.04] p-5">
               <p className="text-xs font-black uppercase tracking-[0.18em] text-cyan-300">
                 Concept {index + 1}
               </p>
-              <p className="mt-3 text-sm leading-7 text-slate-200">{paragraph}</p>
+              <p className="mt-3 text-sm leading-7 text-[var(--text-body)]">{paragraph}</p>
             </article>
           ))}
         </div>
@@ -1185,7 +1185,7 @@ export default function ThermodynamicsIntegratedEnrichment({ part }: { part: num
             <article key={label} className="overflow-x-auto rounded-lg border border-cyan-300/20 bg-black/25 p-4">
               <p className="text-xs font-black uppercase tracking-[0.18em] text-cyan-300">{label}</p>
               <p className="mt-3 whitespace-nowrap font-mono text-base font-black text-white">{value}</p>
-              <p className="mt-3 text-xs leading-5 text-slate-300">{note}</p>
+              <p className="mt-3 text-xs leading-5 text-[var(--text-muted)]">{note}</p>
             </article>
           ))}
         </div>
@@ -1196,7 +1196,7 @@ export default function ThermodynamicsIntegratedEnrichment({ part }: { part: num
             {entry.traps.map(([term, warning]) => (
               <div key={term} className="rounded-lg border border-rose-400/20 bg-rose-400/[0.06] p-4">
                 <p className="font-black text-white">{term}</p>
-                <p className="mt-1 text-sm leading-6 text-slate-300">{warning}</p>
+                <p className="mt-1 text-sm leading-6 text-[var(--text-muted)]">{warning}</p>
               </div>
             ))}
           </div>
@@ -1206,15 +1206,15 @@ export default function ThermodynamicsIntegratedEnrichment({ part }: { part: num
           <p className="text-xs font-black uppercase tracking-[0.2em] text-amber-300">Original exam applications</p>
           <div className="mt-3 grid gap-4 lg:grid-cols-2">
             {entry.problems.map(([title, question, solution], index) => (
-              <details key={title} className="rounded-lg border border-white/10 bg-slate-900/70 p-5">
+              <details key={title} className="rounded-lg border border-[var(--border)] bg-slate-900/70 p-5">
                 <summary className="cursor-pointer list-none font-black text-white">
                   <span className="mr-2 text-amber-300">◆</span>
                   {index + 1}. {title}
                 </summary>
-                <p className="mt-4 text-sm leading-7 text-slate-200">{question}</p>
+                <p className="mt-4 text-sm leading-7 text-[var(--text-body)]">{question}</p>
                 <div className="mt-4 rounded-xl border border-emerald-300/20 bg-emerald-300/[0.06] p-4">
                   <p className="text-xs font-black uppercase tracking-[0.18em] text-emerald-300">Solution</p>
-                  <p className="mt-2 text-sm leading-6 text-slate-200">{solution}</p>
+                  <p className="mt-2 text-sm leading-6 text-[var(--text-body)]">{solution}</p>
                 </div>
               </details>
             ))}

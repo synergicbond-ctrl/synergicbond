@@ -176,9 +176,29 @@ function SignInForm() {
   );
 }
 
+function SignInFallback() {
+  return (
+    <main className="flex min-h-screen items-center justify-center bg-[var(--background)] px-4 text-[var(--foreground)]">
+      <div
+        aria-busy="true"
+        aria-label="Loading sign in"
+        className="w-full max-w-md rounded-lg border border-[var(--border)] bg-[var(--surface-2)] p-8"
+      >
+        <h1 className="text-3xl font-bold">Student Portal</h1>
+        <p className="mt-2 text-[var(--text-muted)]">Preparing secure sign-in…</p>
+        <div className="mt-8 space-y-4" aria-hidden="true">
+          <div className="h-12 rounded-lg border border-[var(--border)] bg-[var(--surface)]" />
+          <div className="h-12 rounded-lg border border-[var(--border)] bg-[var(--surface)]" />
+          <div className="h-12 rounded-lg bg-[var(--accent-wash)]" />
+        </div>
+      </div>
+    </main>
+  );
+}
+
 export default function SignInPage() {
   return (
-    <Suspense>
+    <Suspense fallback={<SignInFallback />}>
       <SignInForm />
     </Suspense>
   );

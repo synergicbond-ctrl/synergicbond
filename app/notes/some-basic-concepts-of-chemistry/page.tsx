@@ -854,7 +854,7 @@ function SectionHeading({ eyebrow, title, description }: { eyebrow: string; titl
 
 function InfoCard({ title, children, accent = "cyan" }: { title: string; children: ReactNode; accent?: "cyan" | "amber" | "purple" }) {
   const accents = {
-    cyan: "border-[var(--border)] bg-[var(--surface-2)][0.045] text-[var(--text-muted)]",
+    cyan: "border-[var(--border)] bg-[var(--surface-2)] text-[var(--text-muted)]",
     amber: "border-amber-400/25 bg-amber-400/[0.045] text-amber-300",
     purple: "border-[var(--border)] bg-[var(--surface-2)] text-[var(--text-muted)]",
   };
@@ -1231,7 +1231,7 @@ function ImportanceOfChemistry() {
   ] as const;
 
   const accentClasses = {
-    cyan: "border-[var(--border)] bg-[var(--surface-2)][0.045] text-[var(--text-muted)]",
+    cyan: "border-[var(--border)] bg-[var(--surface-2)] text-[var(--text-muted)]",
     amber: "border-amber-400/25 bg-amber-400/[0.045] text-amber-300",
     purple: "border-[var(--border)] bg-[var(--surface-2)] text-[var(--text-muted)]",
   } as const;
@@ -1481,7 +1481,7 @@ function EquationBalancingDemo() {
           </article>
         ))}
       </div>
-      <div className="mt-5 rounded-lg border border-[var(--border)] bg-[var(--surface-2)][0.06] p-4">
+      <div className="mt-5 rounded-lg border border-[var(--border)] bg-[var(--surface-2)] p-4">
         <MathContent>{String.raw`$$\boxed{\mathrm{C_3H_8 + 5O_2 \rightarrow 3CO_2 + 4H_2O}}$$`}</MathContent>
         <p className="text-center text-sm text-[var(--text-muted)]">Atoms on each side: C = 3, H = 8, O = 10.</p>
       </div>
@@ -1695,7 +1695,7 @@ export default function ChemistryDashboard() {
         
         <div className="my-8 grid gap-4 md:grid-cols-3">
           {["$$1\\,\\text{mol}=6.022\\times10^{23}\\,\\text{entities}$$","$$1\\,\\text{u}=1.66\\times10^{-24}\\,\\text{g}$$","$$n=\\frac{m}{M}$$"].map((formula, idx)=>(
-            <div key={idx} className="rounded-lg border border-[var(--border)] bg-[var(--surface-2)][0.045] p-5 text-center text-[var(--foreground)] flex items-center justify-center">
+            <div key={idx} className="rounded-lg border border-[var(--border)] bg-[var(--surface-2)] p-5 text-center text-[var(--foreground)] flex items-center justify-center">
               <MathContent>{formula}</MathContent>
             </div>
           ))}

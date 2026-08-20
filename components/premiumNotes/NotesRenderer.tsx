@@ -112,7 +112,7 @@ function Block({ block }: { block: NoteBlock }) {
           <div style={{ padding: "1rem", background: "var(--background)" }}>
             {Visual
               ? <Visual />
-              : <p style={{ fontSize: "0.875rem", color: "var(--text-muted)", padding: "0.5rem 0" }}>Diagram "{block.visual}" is being produced — core notes above cover the concept.</p>
+              : <p style={{ fontSize: "0.875rem", color: "var(--text-muted)", padding: "0.5rem 0" }}>Diagram &quot;{block.visual}&quot; is being produced — core notes above cover the concept.</p>
             }
           </div>
           {block.caption && (

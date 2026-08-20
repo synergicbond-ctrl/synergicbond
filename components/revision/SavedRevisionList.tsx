@@ -33,7 +33,7 @@ export default function SavedRevisionList() {
           <span className="rounded-full bg-amber-100 px-2.5 py-0.5 text-xs font-bold text-amber-700">{items.length}</span>
         )}
       </div>
-      <p className="mt-1 text-sm text-[var(--text-muted)]">Anything you tapped "Add to Revision" on — PYQs, notes and more.</p>
+      <p className="mt-1 text-sm text-[var(--text-muted)]">Anything you tapped &quot;Add to Revision&quot; on — PYQs, notes and more.</p>
 
       {items === null ? (
         <p className="mt-4 text-sm text-[var(--text-muted)]">Loading…</p>

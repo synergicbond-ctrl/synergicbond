@@ -50,14 +50,14 @@ export default async function GeneralInorganicChemistryPage() {
             <h2 className="text-lg font-black">Chapter roadmap</h2>
             <p className="mt-1 text-sm text-white/45">Build the patterns first, then use them to predict unfamiliar reactions.</p>
           </div>
-          <span className="rounded-full border border-[var(--accent)]/30 bg-[var(--accent)]/10[0.08] px-3 py-1 text-xs font-semibold text-[var(--accent)]">JEE Advanced</span>
+          <span className="rounded-full border border-[var(--accent)]/30 bg-[var(--accent)]/[0.08] px-3 py-1 text-xs font-semibold text-[var(--accent)]">JEE Advanced</span>
         </div>
 
         <div className="grid gap-3 md:grid-cols-2">
           {sections.map((section, index) => (
-            <section key={section.title} className="rounded-xl border border-white/[0.09] bg-white/[0.025] p-4 transition hover:border-[var(--accent)]/30 hover:bg-[var(--accent)]/10[0.035]">
+            <section key={section.title} className="rounded-xl border border-white/[0.09] bg-white/[0.025] p-4 transition hover:border-[var(--accent)]/30 hover:bg-[var(--accent)]/[0.035]">
               <div className="flex gap-3">
-                <span aria-hidden="true" className="flex h-7 w-7 shrink-0 items-center justify-center rounded-md border border-[var(--accent)]/30 bg-[var(--accent)]/10[0.08] text-xs font-black text-[var(--accent)]">{index + 1}</span>
+                <span aria-hidden="true" className="flex h-7 w-7 shrink-0 items-center justify-center rounded-md border border-[var(--accent)]/30 bg-[var(--accent)]/[0.08] text-xs font-black text-[var(--accent)]">{index + 1}</span>
                 <div className="min-w-0">
                   <h3 className="text-sm font-bold leading-snug text-white">{section.title}</h3>
                   <ul className="mt-2 space-y-1 text-xs leading-relaxed text-white/55">

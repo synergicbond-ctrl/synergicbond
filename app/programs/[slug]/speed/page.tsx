@@ -84,7 +84,7 @@ export default async function SpeedPage({ params }: { params: Promise<{ slug: st
   return shell(
     <>
       <div className="mb-8 grid grid-cols-2 gap-3 sm:grid-cols-4">
-        <div className="rounded-lg border border-[var(--accent)]/30 bg-[var(--accent)]/10[0.05] p-4 text-center">
+        <div className="rounded-lg border border-[var(--accent)]/30 bg-[var(--accent)]/[0.05] p-4 text-center">
           <div className="text-2xl font-black text-[var(--accent)]">{fmt(report.avgSeconds)}</div>
           <div className="mt-1 text-xs text-white/50">Avg per question</div>
         </div>

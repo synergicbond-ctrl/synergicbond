@@ -100,7 +100,7 @@ export default async function ProgramHubPage({ params }: { params: Promise<{ slu
             <div className="grid gap-4 md:grid-cols-2">
               <Link
                 href="/programs/jee-advanced/chapter/p-block-elements#learn"
-                className="rounded-lg border border-[var(--accent)]/30 bg-[var(--accent)]/10[0.08] p-5 transition hover:border-[var(--accent)]/30 hover:bg-[var(--accent)]/10[0.13]"
+                className="rounded-lg border border-[var(--accent)]/30 bg-[var(--accent)]/[0.08] p-5 transition hover:border-[var(--accent)]/30 hover:bg-[var(--accent)]/[0.13]"
               >
                 <div className="text-[10px] font-black uppercase tracking-[0.22em] text-[var(--accent)]">
                   Full Notes · Separate Chapter

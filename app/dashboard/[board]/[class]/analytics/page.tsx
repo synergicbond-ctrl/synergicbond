@@ -93,7 +93,7 @@ export default async function BoardAnalyticsPage({ params }: { params: Promise<{
     <Shell crumb={crumb}>
       {/* Predicted board score */}
       <section className="mb-8 grid gap-4 sm:grid-cols-3">
-        <div className="rounded-lg border border-[var(--accent)]/30 bg-[var(--accent)]/10[0.05] p-5 sm:col-span-1">
+        <div className="rounded-lg border border-[var(--accent)]/30 bg-[var(--accent)]/[0.05] p-5 sm:col-span-1">
           <div className="text-xs font-bold uppercase tracking-wider text-[var(--accent)]">Predicted board score</div>
           <div className="mt-2 flex items-end gap-2">
             <span className={`text-5xl font-black ${bandColor}`}>{boardScore.projectedMarks}</span>

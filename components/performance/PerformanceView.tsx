@@ -60,7 +60,7 @@ export function GuestPerformanceView({ stats }: { stats: PlatformStats }) {
       />
       <Section title="What's on the platform" icon="🧭">
         <div className="grid grid-cols-2 gap-3 md:grid-cols-4">
-          {tiles.map((t, index) => (
+          {tiles.map((t) => (
             <Link key={t.label} href={t.href} className="rounded-lg border border-white/[0.08] bg-white/[0.03] p-3 text-center transition hover:-translate-y-0.5 hover:border-[var(--accent)]/40">
               <p className="text-2xl font-black text-[var(--foreground)]">{t.value}</p>
               <p className="mt-0.5 text-[11px] text-white/50">{t.label}</p>
@@ -95,7 +95,7 @@ export default function PerformanceView({ data, stats }: { data: PerformanceData
       {/* 6 — Progress Summary (leads on mobile: the at-a-glance row) */}
       <Section title="Progress Summary" icon="📊">
         <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-5">
-          {summaryTiles.map((t, index) => (
+          {summaryTiles.map((t) => (
             <div key={t.label} className="rounded-lg border border-white/[0.08] bg-white/[0.03] p-3 text-center">
               <p className="text-xl font-black text-[var(--foreground)]">{t.value}</p>
               <p className="mt-0.5 text-[11px] leading-tight text-white/50">{t.label}</p>

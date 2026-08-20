@@ -139,7 +139,7 @@ export default async function ProgressDashboardPage({ params }: { params: Promis
     ) : (
       <div className="space-y-8">
         <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
-          <div className="rounded-lg border border-[var(--accent)]/30 bg-[var(--accent)]/10[0.05] p-4 text-center">
+          <div className="rounded-lg border border-[var(--accent)]/30 bg-[var(--accent)]/[0.05] p-4 text-center">
             <div className="text-2xl font-black text-[var(--accent)]">{report.overall.accuracy}%</div>
             <div className="mt-1 text-xs text-white/50">Overall accuracy</div>
           </div>
@@ -308,7 +308,7 @@ export default async function ProgressDashboardPage({ params }: { params: Promis
     ) : (
       <div className="space-y-6">
         <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
-          <div className="rounded-lg border border-[var(--accent)]/30 bg-[var(--accent)]/10[0.05] p-4 text-center">
+          <div className="rounded-lg border border-[var(--accent)]/30 bg-[var(--accent)]/[0.05] p-4 text-center">
             <div className="text-2xl font-black text-[var(--accent)]">{report.coveragePct}%</div>
             <div className="mt-1 text-xs text-white/50">Coverage ({report.covered}/{report.totalLines})</div>
           </div>
@@ -375,7 +375,7 @@ export default async function ProgressDashboardPage({ params }: { params: Promis
       ) : (
         <div className="space-y-8">
           <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
-            <div className="rounded-lg border border-[var(--accent)]/30 bg-[var(--accent)]/10[0.05] p-4 text-center">
+            <div className="rounded-lg border border-[var(--accent)]/30 bg-[var(--accent)]/[0.05] p-4 text-center">
               <div className="text-2xl font-black text-[var(--accent)]">{fmtSeconds(report.avgSeconds)}</div>
               <div className="mt-1 text-xs text-white/50">Avg per question</div>
             </div>

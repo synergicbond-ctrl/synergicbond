@@ -88,7 +88,7 @@ export function PaywallGate({ chapterId, children }: Props) {
               href="/pricing"
               className="w-full bg-[var(--accent)] hover:opacity-90 text-[var(--background)] font-semibold py-3 rounded-lg transition text-center"
             >
-              Upgrade to Pro →
+              Upgrade to Pro — ₹149/month
             </a>
             <div className="text-xs text-[var(--text-muted)]">
               ✅ Every chapter &nbsp;·&nbsp; ✅ Unlimited AI tutor &nbsp;·&nbsp; ✅ Full mock exams

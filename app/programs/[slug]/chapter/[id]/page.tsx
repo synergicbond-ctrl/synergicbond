@@ -167,7 +167,7 @@ export default async function ChapterEnginePage({ params }: { params: Promise<{ 
             </p>
           ) : (
             <div className="grid gap-3 sm:grid-cols-5">
-              <div className="rounded-lg border border-[var(--accent)]/30 bg-[var(--accent)]/10[0.05] p-4 text-center">
+              <div className="rounded-lg border border-[var(--accent)]/30 bg-[var(--accent)]/[0.05] p-4 text-center">
                 <div className={`text-3xl font-black ${bandTone}`}>{mastery.overall}%</div>
                 <div className="mt-1 text-xs text-white/50">Overall Mastery</div>
               </div>

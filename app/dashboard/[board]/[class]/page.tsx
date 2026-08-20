@@ -117,7 +117,7 @@ export default async function ClassDashboard({ params }: { params: Promise<{ boa
 
             {/* Custom Test Paper Generator — now live under Full Syllabus */}
             {section.key === "full-syllabus" && (
-              <Link href={`${base}/custom-test`} className="mt-3 block rounded-xl border border-[var(--accent)]/30 bg-[var(--accent)]/10[0.06] p-3 transition hover:border-[var(--accent)]/30">
+              <Link href={`${base}/custom-test`} className="mt-3 block rounded-xl border border-[var(--accent)]/30 bg-[var(--accent)]/[0.06] p-3 transition hover:border-[var(--accent)]/30">
                 <p className="text-[11px] font-bold uppercase tracking-wider text-[var(--accent)]">Custom Test Paper Generator — live →</p>
                 <p className="mt-1 text-xs text-white/60">
                   Pick chapters · difficulty · count, add an AI subjective section, and get a board-style paper with per-student

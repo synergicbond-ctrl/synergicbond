@@ -121,7 +121,7 @@ function MicrostateSVG() {
 function TempPressureGraph() {
   return (
     <div className="grid gap-4 lg:grid-cols-2">
-      <div className="rounded-xl border border-[var(--border)] bg-[var(--surface)] p-5">
+      <div className="min-w-0 rounded-xl border border-[var(--border)] bg-[var(--surface)] p-5">
         <h3 className="font-display text-xl font-semibold text-[var(--foreground)]">Temperature effect on reaction entropy</h3>
         <Formula label="Kirchhoff-type entropy relation">
           Δ<sub>r</sub>S°(T₂)=Δ<sub>r</sub>S°(T₁)+∫<sub>T₁</sub><sup>T₂</sup>Δ<sub>r</sub>C°<sub>p</sub>/T dT
@@ -130,7 +130,7 @@ function TempPressureGraph() {
           Δ<sub>r</sub>S°(T₂)=Δ<sub>r</sub>S°(T₁)+Δ<sub>r</sub>C°<sub>p</sub>ln(T₂/T₁)
         </Formula>
       </div>
-      <div className="rounded-xl border border-[var(--border)] bg-[var(--surface)] p-5">
+      <div className="min-w-0 rounded-xl border border-[var(--border)] bg-[var(--surface)] p-5">
         <h3 className="font-display text-xl font-semibold text-[var(--foreground)]">Pressure effect on ideal-gas reaction entropy</h3>
         <Formula label="At fixed T">
           Δ<sub>r</sub>S(P₂)=Δ<sub>r</sub>S(P₁)−Δn<sub>g</sub>Rln(P₂/P₁)

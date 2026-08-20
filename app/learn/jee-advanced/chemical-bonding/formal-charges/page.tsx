@@ -500,7 +500,7 @@ function FormalChargeStructure({ id }: { id: string }) {
   if (!entry) return null;
 
   return (
-    <figure className="my-9 overflow-hidden rounded-2xl border border-[#213449] bg-[#050b14] shadow-[0_18px_50px_rgba(0,0,0,0.18)]">
+    <figure className="my-9 overflow-hidden rounded-lg border border-[#213449] bg-[#050b14] shadow-[0_18px_50px_rgba(0,0,0,0.18)]">
       <div dangerouslySetInnerHTML={{ __html: entry.svg }} />
       <figcaption className="border-t border-[#213449] px-5 py-4 text-sm leading-6 text-[#9db0c4] sm:px-7">
         {entry.caption}

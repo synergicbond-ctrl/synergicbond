@@ -31,9 +31,9 @@ const LINK_CHIP_CLASS: Record<LinkKind, string> = {
   reaction: "bg-orange-900/30 text-orange-300 hover:bg-orange-900/50",
   reagent: "bg-sky-900/30 text-sky-300 hover:bg-sky-900/50",
   exception: "bg-red-900/30 text-red-300 hover:bg-red-900/50",
-  formula: "bg-purple-900/30 text-purple-300 hover:bg-purple-900/50",
-  ncert: "bg-emerald-900/30 text-emerald-300 hover:bg-emerald-900/50",
-  concept: "bg-cyan-900/30 text-cyan-300 hover:bg-cyan-900/50",
+  formula: "bg-purple-900/30 text-[var(--text-muted)] hover:bg-purple-900/50",
+  ncert: "bg-emerald-900/30 text-[var(--text-muted)] hover:bg-emerald-900/50",
+  concept: "bg-cyan-900/30 text-[var(--text-muted)] hover:bg-cyan-900/50",
 };
 
 function getLinkedQuestions(
@@ -166,10 +166,10 @@ export default function QuestionCard({
           ⏱ ~{expectedSeconds(question.difficulty)}s
         </span>
         {question.ncertDirect && (
-          <span className="bg-purple-900/40 text-purple-400 px-2 py-1 rounded">NCERT Direct</span>
+          <span className="bg-purple-900/40 text-[var(--accent)] px-2 py-1 rounded">NCERT Direct</span>
         )}
         {question.trending && (
-          <span className="bg-cyan-900/40 text-cyan-300 px-2 py-1 rounded">Trending</span>
+          <span className="bg-cyan-900/40 text-[var(--text-muted)] px-2 py-1 rounded">Trending</span>
         )}
       </div>
 
@@ -218,9 +218,9 @@ export default function QuestionCard({
 
       {/* Explanation + knowledge linking */}
       {revealed && (
-        <div className="bg-indigo-950/40 border border-indigo-800 rounded-lg p-4 text-sm text-slate-300 space-y-3">
+        <div className="bg-[var(--surface-2)] border border-[var(--border)] rounded-lg p-4 text-sm text-[var(--text-muted)] space-y-3">
           <div>
-            <span className="font-bold text-indigo-400">Explanation:</span>
+            <span className="font-bold text-[var(--accent)]">Explanation:</span>
             <p className="mt-2">{question.explanation}</p>
           </div>
 
@@ -247,7 +247,7 @@ export default function QuestionCard({
           {activeLink && (
             <div className="border border-cyan-900/50 bg-cyan-950/20 rounded-lg p-3 space-y-2">
               <div className="flex items-center justify-between">
-                <span className="text-xs font-semibold text-cyan-300">
+                <span className="text-xs font-semibold text-[var(--text-muted)]">
                   🔗 Other PYQs linked via {LINK_LABEL[activeLink.kind].toLowerCase()} &ldquo;{activeLink.value}&rdquo;
                 </span>
                 <button
@@ -263,7 +263,7 @@ export default function QuestionCard({
                 <ul className="space-y-1.5">
                   {linkedQuestions.map((lq) => (
                     <li key={lq.id} className="text-xs text-white/60 border-l-2 border-cyan-700/50 pl-2">
-                      <span className="text-cyan-400 font-semibold">
+                      <span className="text-[var(--accent)] font-semibold">
                         {lq.exam} {lq.year}
                       </span>{" "}
                       · {lq.chapter} — {lq.question.slice(0, 90)}
@@ -283,7 +283,7 @@ export default function QuestionCard({
         ) : (
           <button
             onClick={() => setRevealed((r) => !r)}
-            className="text-sm font-semibold text-cyan-400 hover:text-cyan-300 transition"
+            className="text-sm font-semibold text-[var(--accent)] hover:opacity-80 transition"
           >
             {revealed ? "Hide" : "Reveal Answer & Explanation"}
           </button>

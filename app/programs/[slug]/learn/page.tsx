@@ -30,17 +30,18 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   if (!program) return {};
   return {
     title: `${program.name} Learn — SYNERGIC BOND`,
-    description: `${program.name} chemistry learning hub — chapters, notes, formula cards, knowledge vault, molecule explorer and NCERT highlights.`,
+    description: `${program.name} chemistry learning hub — chapters, notes, formula cards, knowledge vault, molecule explorer and NCERT intelligence.`,
   };
 }
 
-// Existing learn ecosystem modules — every href is a live global route.
-const LEARN_MODULES = [
-  { href: "/notes", icon: "📖", title: "Chapter Notes", desc: "Verified exam notes with solved examples, derivations and common mistakes.", metric: "Verified" },
+// Supporting tools — every href is a live global route.
+// Chapter Notes (/notes) is not included here: the chapter grid on this page
+// already IS the program's note library. A secondary link appears below.
+const SUPPORTING_TOOLS = [
   { href: "/formula-cards", icon: "🧮", title: "Formula Cards", desc: "Physical chemistry formulas with variables, units and PYQ links.", metric: `${formulaCards.length} cards` },
   { href: "/vault", icon: "🏛️", title: "Knowledge Vault", desc: "Saved concepts, formula vault, exceptions and quick facts.", metric: "Memory bank" },
   { href: "/molecule", icon: "⚛️", title: "Molecule Explorer", desc: "Look up structures, properties and exam relevance of any compound.", metric: "Explorer" },
-  { href: "/notes", icon: "📗", title: "NCERT Highlights", desc: "Line-by-line NCERT highlight blocks inside every chapter's notes.", metric: "In notes" },
+  { href: "/ncert", icon: "📗", title: "NCERT Intelligence", desc: "Chapter-level NCERT blind-spot analysis and gap identification.", metric: "Intelligence" },
 ] as const;
 
 const BRANCH_LABEL: Record<string, string> = {
@@ -58,80 +59,20 @@ export default async function ProgramLearnPage({ params }: { params: Promise<{ s
   const chapters = examTags.length > 0 ? examChapters(examTags) : [];
 
   return (
-    <main className="min-h-screen bg-black text-white">
+    <main className="min-h-screen bg-[var(--background)] text-white">
       <ProgramPageHeader
         program={program}
         section="Learn"
-        blurb={`Chapters, notes, formula cards, the knowledge vault, molecule explorer and NCERT highlights — the verified library, scoped to ${name}.`}
+        blurb={`Chapters, formula cards, the knowledge vault, molecule explorer and NCERT intelligence — the verified library, scoped to ${name}.`}
       />
 
       <div className="mx-auto max-w-6xl px-6 py-12">
-        <section className="mb-12">
-          <h2 className="mb-2 text-2xl font-bold">Learn Modules</h2>
-          <p className="mb-6 text-zinc-500">Verified systems already connected to search, PYQs and tests</p>
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {LEARN_MODULES.map((mod) => (
-              <Link
-                key={mod.title}
-                href={mod.href}
-                className={`group flex flex-col rounded-2xl border bg-white/[0.02] p-5 transition hover:-translate-y-0.5 hover:bg-white/[0.04] ${accent.card}`}
-              >
-                <div className="flex items-start justify-between gap-3">
-                  <span className="text-2xl">{mod.icon}</span>
-                  <span className="rounded-md bg-white/[0.06] px-2 py-1 text-[11px] font-bold text-white/55">{mod.metric}</span>
-                </div>
-                <div className="mt-3 font-bold text-white">{mod.title}</div>
-                <div className="mt-1 flex-1 text-sm text-zinc-400">{mod.desc}</div>
-                <div className={`mt-3 text-sm font-semibold ${accent.text}`}>
-                  Open <span className="inline-block transition group-hover:translate-x-1">→</span>
-                </div>
-              </Link>
-            ))}
-          </div>
-        </section>
-
-        {/* JEE_ADVANCED_NOTES_SPOTLIGHT */}
-        {slug === "jee-advanced" && (
-          <section className="mb-12">
-            <div className="mb-5">
-              <div className="text-xs font-black uppercase tracking-[0.25em] text-sky-400">
-                Full JEE Advanced Notes
-              </div>
-              <h2 className="mt-1 text-2xl font-black">Inorganic Chemistry Notes</h2>
-              <p className="mt-2 text-sm text-zinc-500">
-                P-Block and Qualitative Analysis are two independent chapters.
-              </p>
-            </div>
-
-            <div className="grid gap-4 md:grid-cols-2">
-              <Link
-                href="/programs/jee-advanced/chapter/p-block-elements#learn"
-                className="rounded-2xl border border-cyan-400/30 bg-cyan-500/[0.08] p-5 transition hover:border-cyan-300/60"
-              >
-                <span className="text-[10px] font-black uppercase text-cyan-300">Full Notes</span>
-                <h3 className="mt-3 text-xl font-black">P-Block Elements</h3>
-                <p className="mt-2 text-sm text-zinc-400">Groups 15–18 complete notes.</p>
-                <div className="mt-4 font-bold text-cyan-300">Open full notes →</div>
-              </Link>
-
-              <Link
-                href="/programs/jee-advanced/chapter/qualitative-analysis#learn"
-                className="rounded-2xl border border-violet-400/30 bg-violet-500/[0.08] p-5 transition hover:border-violet-300/60"
-              >
-                <span className="text-[10px] font-black uppercase text-violet-300">Full Notes</span>
-                <h3 className="mt-3 text-xl font-black">Salt Analysis / Qualitative Analysis</h3>
-                <p className="mt-2 text-sm text-zinc-400">Complete qualitative analysis notes.</p>
-                <div className="mt-4 font-bold text-violet-300">Open full notes →</div>
-              </Link>
-            </div>
-          </section>
-        )}
-
-        <section>
+        {/* ── Chapters — primary content ── */}
+        <section className="mb-14">
           <h2 className="mb-2 text-2xl font-bold">Chapters</h2>
           {chapters.length > 0 ? (
             <>
-              <p className="mb-6 text-zinc-500">
+              <p className="mb-6 text-[var(--text-muted)]">
                 {chapters.length} chapters from the verified {name} syllabus — authored chapters open their full
                 notes; every chapter keeps its Chapter Engine (mastery, PYQs, tests, error analysis, AI tutor)
               </p>
@@ -154,7 +95,7 @@ export default async function ProgramLearnPage({ params }: { params: Promise<{ s
                   return (
                     <div
                       key={chapter.id}
-                      className={`group relative flex flex-col rounded-xl border bg-white/[0.02] p-4 transition hover:bg-white/[0.04] ${accent.card}`}
+                      className={`group relative flex flex-col rounded-lg border bg-white/[0.02] p-4 transition hover:bg-white/[0.04] ${accent.card}`}
                     >
                       <div className="flex items-start justify-between gap-2">
                         <div className="text-[11px] font-bold uppercase tracking-wider text-white/40">
@@ -163,7 +104,7 @@ export default async function ProgramLearnPage({ params }: { params: Promise<{ s
                         {hasFullNotes ? (
                           <span className="rounded-full border border-[#e8b84b4d] bg-[#e8b84b1a] px-1.5 py-0.5 text-[9px] font-bold uppercase text-[#e8b84b]">Full Notes</span>
                         ) : isEngineSlug(slug) ? (
-                          <span className="rounded-full border border-cyan-400/30 bg-cyan-400/10 px-1.5 py-0.5 text-[9px] font-bold uppercase text-cyan-300">Engine</span>
+                          <span className="rounded-full border border-[var(--accent)]/30 bg-[var(--accent)]/10 px-1.5 py-0.5 text-[9px] font-bold uppercase text-[var(--accent)]">Engine</span>
                         ) : null}
                       </div>
                       <Link href={primaryHref} className="mt-1.5 flex-1 after:absolute after:inset-0">
@@ -180,7 +121,7 @@ export default async function ProgramLearnPage({ params }: { params: Promise<{ s
                         {hasFullNotes && (
                           <Link
                             href={engineHref}
-                            className="relative z-10 rounded-md border border-white/10 bg-white/[0.04] px-2 py-1 text-[10px] font-bold uppercase tracking-wide text-white/55 transition hover:border-cyan-400/40 hover:text-cyan-300"
+                            className="relative z-10 rounded-md border border-white/10 bg-white/[0.04] px-2 py-1 text-[10px] font-bold uppercase tracking-wide text-white/55 transition hover:border-[var(--accent)]/30 hover:text-[var(--accent)]"
                           >
                             Chapter Engine
                           </Link>
@@ -192,19 +133,48 @@ export default async function ProgramLearnPage({ params }: { params: Promise<{ s
               </div>
             </>
           ) : (
-            <div className="rounded-2xl border border-white/10 bg-white/[0.02] p-8 text-center">
+            <div className="rounded-lg border border-white/10 bg-white/[0.02] p-8 text-center">
               <h3 className="text-lg font-bold">Verified chapter mapping in progress</h3>
-              <p className="mx-auto mt-2 max-w-lg text-sm leading-relaxed text-zinc-400">
+              <p className="mx-auto mt-2 max-w-lg text-sm leading-relaxed text-[var(--text-muted)]">
                 The chapter-by-chapter {name} syllabus is being mapped from official sources — no
-                unverified content ships here. The learn modules above are fully available and cover
+                unverified content ships here. The supporting tools below are fully available and cover
                 the core Class 11–12 chemistry this program builds on.
               </p>
             </div>
           )}
         </section>
 
-        <div className="mt-12 text-center">
-          <Link href={`/programs/${slug}`} className="text-sm text-zinc-500 transition hover:text-white">
+        {/* ── Supporting Tools ── */}
+        <section className="mb-10">
+          <h2 className="mb-2 text-2xl font-bold">Supporting Tools</h2>
+          <p className="mb-6 text-[var(--text-muted)]">Verified systems connected to search, PYQs and tests</p>
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {SUPPORTING_TOOLS.map((mod) => (
+              <Link
+                key={mod.title}
+                href={mod.href}
+                className={`group flex flex-col rounded-lg border bg-white/[0.02] p-5 transition hover:-translate-y-0.5 hover:bg-white/[0.04] ${accent.card}`}
+              >
+                <div className="flex items-start justify-between gap-3">
+                  <span className="text-2xl">{mod.icon}</span>
+                  <span className="rounded-md bg-white/[0.06] px-2 py-1 text-[11px] font-bold text-white/55">{mod.metric}</span>
+                </div>
+                <div className="mt-3 font-bold text-white">{mod.title}</div>
+                <div className="mt-1 flex-1 text-sm text-[var(--text-muted)]">{mod.desc}</div>
+                <div className={`mt-3 text-sm font-semibold ${accent.text}`}>
+                  Open <span className="inline-block transition group-hover:translate-x-1">→</span>
+                </div>
+              </Link>
+            ))}
+          </div>
+          <p className="mt-4 text-sm text-[var(--text-muted)]">
+            Looking for the full library?{" "}
+            <Link href="/notes" className="underline transition hover:text-white">All Notes Library →</Link>
+          </p>
+        </section>
+
+        <div className="mt-8 text-center">
+          <Link href={`/programs/${slug}`} className="text-sm text-[var(--text-muted)] transition hover:text-white">
             ← Back to {name} program
           </Link>
         </div>

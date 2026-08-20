@@ -12,7 +12,7 @@ const WARN = "#fbbf24"; // amber — semantic caution (limiting reagent)
 const MUTE = "rgba(255,255,255,0.45)";
 const LINE = "rgba(255,255,255,0.25)";
 const CARD = "rgba(255,255,255,0.04)";
-const T = { fontFamily: "ui-sans-serif, system-ui", fill: "rgba(255,255,255,0.85)" };
+const T = { fontFamily: "var(--font-sans), ui-sans-serif, system-ui", fill: "rgba(255,255,255,0.85)" };
 const TS = { ...T, fontSize: 11 };
 const TB = { ...T, fontSize: 12, fontWeight: 700 as const };
 const TXS = { ...T, fontSize: 9.5, fill: MUTE };
@@ -62,7 +62,7 @@ export function MoleConversionMap() {
       {/* Central glowing hub: Moles (n) */}
       <circle cx={360} cy={200} r={65} fill="url(#hubGrad)" />
       <circle cx={360} cy={200} r={52} fill="#0F2340" stroke="#4FD8B8" strokeWidth="3" filter="url(#glow)" />
-      <text x={360} y={196} textAnchor="middle" style={{ fontFamily: "monospace", fontSize: 20, fontWeight: 800, fill: "#4FD8B8" }}>
+      <text x={360} y={196} textAnchor="middle" style={{ fontFamily: "var(--font-mono), ui-monospace, monospace", fontSize: 20, fontWeight: 800, fill: "#4FD8B8" }}>
         n (mol)
       </text>
       <text x={360} y={216} textAnchor="middle" style={{ ...T, fontSize: 11, fontWeight: 700, fill: "#E8E8E8" }}>
@@ -115,7 +115,7 @@ export function MoleConversionMap() {
       <g transform="translate(265, 12)">
         <rect x={0} y={0} width={190} height={66} rx="14" fill="#0F2340" stroke="#FF6B6B" strokeWidth="2" filter="url(#glow)" />
         <text x={95} y={24} textAnchor="middle" style={{ ...TB, fontSize: 14, fill: "#FF6B6B" }}>Any Condition Gas</text>
-        <text x={95} y={42} textAnchor="middle" style={{ fontFamily: "monospace", fontSize: 13, fontWeight: 800, fill: "#E8E8E8" }}>PV = nRT</text>
+        <text x={95} y={42} textAnchor="middle" style={{ fontFamily: "var(--font-mono), ui-monospace, monospace", fontSize: 13, fontWeight: 800, fill: "#E8E8E8" }}>PV = nRT</text>
         <text x={95} y={57} textAnchor="middle" style={{ ...TXS, fill: "#FF6B6B" }}>R = 0.0821 L·atm/mol·K</text>
       </g>
       {/* Spokes NORTH */}
@@ -414,7 +414,7 @@ export function ConcentrationTermsMap() {
           <g key={r[0]} transform={`translate(15, ${64 + i * 36})`}>
             <circle cx={6} cy={-4} r={3.5} fill="#E85D6A" />
             <text x={18} y={0} style={{ ...TB, fontSize: 13, fill: "#FFFFFF" }}>{r[0]}</text>
-            <text x={160} y={0} style={{ fontFamily: "monospace", fontSize: 11.5, fontWeight: 700, fill: "#FFB3B8" }}>{r[1]}</text>
+            <text x={160} y={0} style={{ fontFamily: "var(--font-mono), ui-monospace, monospace", fontSize: 11.5, fontWeight: 700, fill: "#FFB3B8" }}>{r[1]}</text>
             <text x={18} y={15} style={{ ...TXS, fontSize: 10, fill: "#A0AEC0" }}>{r[2]}</text>
           </g>
         ))}
@@ -434,7 +434,7 @@ export function ConcentrationTermsMap() {
           <g key={r[0]} transform={`translate(15, ${68 + i * 42})`}>
             <circle cx={6} cy={-4} r={3.5} fill="#5E9FFF" />
             <text x={18} y={0} style={{ ...TB, fontSize: 13, fill: "#FFFFFF" }}>{r[0]}</text>
-            <text x={160} y={0} style={{ fontFamily: "monospace", fontSize: 11.5, fontWeight: 700, fill: "#B3D4FF" }}>{r[1]}</text>
+            <text x={160} y={0} style={{ fontFamily: "var(--font-mono), ui-monospace, monospace", fontSize: 11.5, fontWeight: 700, fill: "#B3D4FF" }}>{r[1]}</text>
             <text x={18} y={16} style={{ ...TXS, fontSize: 10, fill: "#A0AEC0" }}>{r[2]}</text>
           </g>
         ))}
@@ -444,7 +444,7 @@ export function ConcentrationTermsMap() {
       <g transform="translate(325, 140)">
         <rect x={0} y={0} width={90} height={60} rx="12" fill="#0A1828" stroke="#FFD93D" strokeWidth="2" />
         <text x={45} y={22} textAnchor="middle" style={{ ...TB, fontSize: 12, fill: "#FFD93D" }}>DENSITY</text>
-        <text x={45} y={38} textAnchor="middle" style={{ fontFamily: "monospace", fontSize: 13, fontWeight: 800, fill: "#FFFFFF" }}>d (g/mL)</text>
+        <text x={45} y={38} textAnchor="middle" style={{ fontFamily: "var(--font-mono), ui-monospace, monospace", fontSize: 13, fontWeight: 800, fill: "#FFFFFF" }}>d (g/mL)</text>
         <text x={45} y={52} textAnchor="middle" style={{ ...TXS, fontSize: 9, fill: "#FFD93D" }}>THE BRIDGE</text>
       </g>
       <Arrow x1={325} y1={170} x2={305} y2={170} color="#FFD93D" w={2} />

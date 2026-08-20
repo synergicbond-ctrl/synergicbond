@@ -9,10 +9,10 @@ import { deriveSnapSolveLinks, type SnapLink } from "@/lib/ai/snapSolveLinks";
 
 const CLASS_STYLE: Record<SnapSolveClassification, { cls: string; emoji: string }> = {
   Organic:    { cls: "bg-emerald-500/15 text-emerald-300 border-emerald-500/25", emoji: "🧬" },
-  Inorganic:  { cls: "bg-cyan-500/15 text-cyan-300 border-cyan-500/25", emoji: "⚗️" },
-  Physical:   { cls: "bg-violet-500/15 text-violet-300 border-violet-500/25", emoji: "📐" },
+  Inorganic:  { cls: "bg-cyan-500/15 text-[var(--accent)] border-cyan-500/25", emoji: "⚗️" },
+  Physical:   { cls: "bg-violet-500/15 text-[var(--accent)] border-violet-500/25", emoji: "📐" },
   Analytical: { cls: "bg-amber-500/15 text-amber-300 border-amber-500/25", emoji: "🔬" },
-  General:    { cls: "bg-slate-500/15 text-slate-300 border-slate-500/25", emoji: "🧪" },
+  General:    { cls: "bg-[var(--surface-2)] text-slate-300 border-[var(--border)]", emoji: "🧪" },
 };
 
 // Color shifts by accuracy: emerald >= 90%, amber 70-89%, red below.
@@ -87,13 +87,13 @@ function LinkList({ links }: { links: SnapLink[] }) {
         <Link
           key={i}
           href={l.href}
-          className="group flex items-center justify-between gap-3 rounded-xl border border-white/[0.07] bg-white/[0.03] px-3.5 py-2.5 transition hover:border-cyan-400/40 hover:bg-white/[0.06]"
+          className="group flex items-center justify-between gap-3 rounded-lg border border-white/[0.07] bg-white/[0.03] px-3.5 py-2.5 transition hover:border-cyan-400/40 hover:bg-white/[0.06]"
         >
           <span className="min-w-0">
-            <span className="block truncate text-sm font-semibold text-white group-hover:text-cyan-300">{l.label}</span>
+            <span className="block truncate text-sm font-semibold text-white group-hover:text-[var(--accent)]">{l.label}</span>
             {l.note && <span className="mt-0.5 block truncate text-[11px] text-white/50">{l.note}</span>}
           </span>
-          <span className="shrink-0 text-white/40 transition group-hover:translate-x-0.5 group-hover:text-cyan-300">→</span>
+          <span className="shrink-0 text-white/40 transition group-hover:translate-x-0.5 group-hover:text-[var(--accent)]">→</span>
         </Link>
       ))}
     </div>
@@ -102,7 +102,7 @@ function LinkList({ links }: { links: SnapLink[] }) {
 
 function EmptyLink({ message }: { message: string }) {
   return (
-    <div className="rounded-xl border border-dashed border-white/10 bg-white/[0.02] px-3.5 py-3 text-xs text-white/35">
+    <div className="rounded-lg border border-dashed border-white/10 bg-white/[0.02] px-3.5 py-3 text-xs text-white/35">
       {message}
     </div>
   );
@@ -125,8 +125,8 @@ function SnapSolveDeepLinks({ data }: { data: SnapSolveResponse }) {
   const hasOrders = links.orders.length > 0;
 
   return (
-    <div className="space-y-5 rounded-2xl border border-cyan-500/15 bg-cyan-500/[0.03] p-4">
-      <p className="text-[10px] font-black uppercase tracking-[0.3em] text-cyan-300/80">Connected in your Chemistry OS</p>
+    <div className="space-y-5 rounded-lg border border-cyan-500/15 bg-cyan-500/[0.03] p-4">
+      <p className="text-[10px] font-black uppercase tracking-[0.3em] text-[var(--accent)]">Connected in your Chemistry OS</p>
 
       {/* Concept Detected */}
       <DeepLinkPanel icon="🧭" title="Concept Detected">
@@ -135,7 +135,7 @@ function SnapSolveDeepLinks({ data }: { data: SnapSolveResponse }) {
             {data.classification}
           </span>
           {links.detectedChapter ? (
-            <span className="rounded-full border border-cyan-400/25 bg-cyan-500/10 px-2.5 py-1 text-xs font-semibold text-cyan-200">
+            <span className="rounded-full border border-cyan-400/25 bg-cyan-500/10 px-2.5 py-1 text-xs font-semibold text-[var(--accent)]">
               {links.detectedChapter}
             </span>
           ) : (
@@ -186,7 +186,7 @@ function SnapSolveDeepLinks({ data }: { data: SnapSolveResponse }) {
             ))}
           </div>
         )}
-        <div className="flex items-center justify-between gap-3 rounded-xl border border-white/[0.08] bg-white/[0.03] px-3.5 py-2.5">
+        <div className="flex items-center justify-between gap-3 rounded-lg border border-white/[0.08] bg-white/[0.03] px-3.5 py-2.5">
           <span className="text-sm text-white/70">Topic-wise practice tests</span>
           <span className="shrink-0 rounded-full border border-white/15 bg-white/[0.06] px-2.5 py-1 text-[10px] font-bold uppercase tracking-wide text-white/55">
             Coming soon
@@ -201,8 +201,8 @@ export default function SnapSolveResult({ data }: { data: SnapSolveResponse }) {
   // Fallback intercepted → swap the entire viewport to a defensive card.
   if (data.fallbackTriggered) {
     return (
-      <div className="flex flex-col items-center justify-center rounded-2xl border border-amber-500/25 bg-amber-500/[0.06] p-8 text-center">
-        <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-amber-500/15">
+      <div className="flex flex-col items-center justify-center rounded-lg border border-amber-500/25 bg-amber-500/[0.06] p-8 text-center">
+        <div className="flex h-14 w-14 items-center justify-center rounded-lg bg-amber-500/15">
           <Camera className="h-7 w-7 text-amber-300" />
         </div>
         <h3 className="mt-4 text-lg font-black text-amber-100">Couldn’t read that clearly</h3>
@@ -211,16 +211,16 @@ export default function SnapSolveResult({ data }: { data: SnapSolveResponse }) {
           Try one of these for an exact solution:
         </p>
         <div className="mt-5 grid w-full max-w-sm gap-2.5 text-left">
-          <div className="flex items-center gap-3 rounded-xl border border-white/[0.06] bg-[#111827] px-4 py-3">
-            <Keyboard className="h-4 w-4 shrink-0 text-cyan-300" />
+          <div className="flex items-center gap-3 rounded-lg border border-white/[0.06] bg-[var(--surface)] px-4 py-3">
+            <Keyboard className="h-4 w-4 shrink-0 text-[var(--accent)]" />
             <span className="text-sm text-white/80">Type the formula or question manually</span>
           </div>
-          <div className="flex items-center gap-3 rounded-xl border border-white/[0.06] bg-[#111827] px-4 py-3">
-            <SunMedium className="h-4 w-4 shrink-0 text-cyan-300" />
+          <div className="flex items-center gap-3 rounded-lg border border-white/[0.06] bg-[var(--surface)] px-4 py-3">
+            <SunMedium className="h-4 w-4 shrink-0 text-[var(--accent)]" />
             <span className="text-sm text-white/80">Retake under clearer lighting / higher contrast</span>
           </div>
-          <div className="flex items-center gap-3 rounded-xl border border-white/[0.06] bg-[#111827] px-4 py-3">
-            <Camera className="h-4 w-4 shrink-0 text-cyan-300" />
+          <div className="flex items-center gap-3 rounded-lg border border-white/[0.06] bg-[var(--surface)] px-4 py-3">
+            <Camera className="h-4 w-4 shrink-0 text-[var(--accent)]" />
             <span className="text-sm text-white/80">Crop tightly to a single question</span>
           </div>
         </div>
@@ -231,7 +231,7 @@ export default function SnapSolveResult({ data }: { data: SnapSolveResponse }) {
   const cls = CLASS_STYLE[data.classification];
 
   return (
-    <div className="rounded-2xl border border-white/[0.08] bg-[#111827] p-5 space-y-5">
+    <div className="rounded-lg border border-white/[0.08] bg-[var(--surface)] p-5 space-y-5">
       {/* scoped keyframes for the sequential timeline reveal */}
       <style>{`@keyframes snapFadeUp{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}`}</style>
 
@@ -253,19 +253,19 @@ export default function SnapSolveResult({ data }: { data: SnapSolveResponse }) {
       {data.solution.steps.length > 0 && (
         <div>
           <p className="mb-3 text-[10px] font-bold uppercase tracking-wider text-white/40">Step-by-step solution</p>
-          <div className="border-l-2 border-slate-800 ml-4 pl-6 space-y-6">
+          <div className="border-l-2 border-[var(--border)] ml-4 pl-6 space-y-6">
             {data.solution.steps.map((s, i) => (
               <div
                 key={s.stepNumber}
                 className="relative will-change-transform"
                 style={{ animation: "snapFadeUp 0.45s ease-out both", animationDelay: `${i * 0.12}s` }}
               >
-                <span className="absolute -left-[33px] flex h-5 w-5 items-center justify-center rounded-full bg-cyan-500/20 text-[11px] font-black text-cyan-300 ring-4 ring-[#111827]">
+                <span className="absolute -left-[33px] flex h-5 w-5 items-center justify-center rounded-full bg-cyan-500/20 text-[11px] font-black text-[var(--accent)] ring-4 ring-[#111827]">
                   {s.stepNumber}
                 </span>
                 <h4 className="text-sm font-bold text-white">{s.title}</h4>
                 {s.equation && (
-                  <div className="mt-2 inline-block max-w-full overflow-x-auto whitespace-nowrap font-mono bg-slate-950/60 border border-slate-900 px-3 py-1.5 rounded text-rose-400 text-xs tracking-wide">
+                  <div className="mt-2 inline-block max-w-full overflow-x-auto whitespace-nowrap font-mono bg-[var(--background)]/60 border border-[var(--border)] px-3 py-1.5 rounded text-rose-400 text-xs tracking-wide">
                     {renderChemistry(s.equation)}
                   </div>
                 )}
@@ -278,14 +278,14 @@ export default function SnapSolveResult({ data }: { data: SnapSolveResponse }) {
 
       {/* High-yield exception */}
       {data.solution.exceptionFlag && (
-        <div className="rounded-xl border border-rose-500/25 bg-rose-500/[0.08] px-4 py-3">
+        <div className="rounded-lg border border-rose-500/25 bg-rose-500/[0.08] px-4 py-3">
           <p className="mb-1 text-[10px] font-bold uppercase tracking-wider text-rose-300">⚡ High-yield exception</p>
           <p className="text-sm text-rose-100">{renderChemistry(data.solution.exceptionFlag)}</p>
         </div>
       )}
 
       {/* Core answer */}
-      <div className="rounded-xl border border-emerald-500/25 bg-emerald-500/[0.08] px-4 py-3">
+      <div className="rounded-lg border border-emerald-500/25 bg-emerald-500/[0.08] px-4 py-3">
         <p className="mb-1 text-[10px] font-bold uppercase tracking-wider text-emerald-300">✅ Final answer</p>
         <p className="text-base font-semibold text-emerald-100">{renderChemistry(data.solution.coreAnswer)}</p>
       </div>

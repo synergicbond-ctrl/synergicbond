@@ -18,7 +18,7 @@ function Section({
   return (
     <section className="rounded-[2rem] border border-white/10 bg-slate-950/80 p-5 shadow-2xl shadow-black/20 backdrop-blur md:p-8">
       <div className="flex items-start gap-4">
-        <span className="grid h-11 w-11 shrink-0 place-items-center rounded-2xl border border-cyan-300/30 bg-cyan-300/10 text-sm font-black text-cyan-200">
+        <span className="grid h-11 w-11 shrink-0 place-items-center rounded-lg border border-cyan-300/30 bg-cyan-300/10 text-sm font-black text-cyan-200">
           {index}
         </span>
         <div>
@@ -33,7 +33,7 @@ function Section({
 
 function Formula({ label, children }: { label: string; children: React.ReactNode }) {
   return (
-    <div className="overflow-x-auto rounded-2xl border border-cyan-300/20 bg-black/30 p-4 text-center">
+    <div className="overflow-x-auto rounded-lg border border-cyan-300/20 bg-black/30 p-4 text-center">
       <p className="mb-2 text-xs font-black uppercase tracking-[0.2em] text-cyan-300">{label}</p>
       <div className="whitespace-nowrap font-mono text-lg font-black text-white md:text-xl">{children}</div>
     </div>
@@ -46,7 +46,7 @@ function Lens({
   title: string; children: React.ReactNode; tone?: Tone; label?: string;
 }) {
   return (
-    <aside className={`rounded-2xl border p-5 ${toneStyles[tone]}`}>
+    <aside className={`rounded-lg border p-5 ${toneStyles[tone]}`}>
       <p className="text-xs font-black uppercase tracking-[0.2em]">{label}</p>
       <h3 className="mt-2 text-lg font-black text-white">{title}</h3>
       <div className="mt-2 text-sm leading-6 text-slate-200">{children}</div>
@@ -610,7 +610,7 @@ export default function ThermodynamicsPart25() {
           <p className="text-slate-300">
             <strong>Classification:</strong> Exact derived result from the combined First and Second Laws.
           </p>
-          <div className="space-y-1 rounded-2xl border border-white/10 bg-slate-900/60 p-4">
+          <div className="space-y-1 rounded-lg border border-white/10 bg-slate-900/60 p-4">
             <DerivRow step="First Law" result="dU = δq + δw" />
             <DerivRow step="Reversible heat" result="δq_rev = T dS  (Second Law, Clausius)" />
             <DerivRow step="Reversible PV work" result="δw_rev = −P dV  (mechanical equilibrium)" />
@@ -628,7 +628,7 @@ export default function ThermodynamicsPart25() {
           <p className="text-slate-300">
             <strong>Classification:</strong> Exact derived result via Legendre transform of U.
           </p>
-          <div className="space-y-1 rounded-2xl border border-white/10 bg-slate-900/60 p-4">
+          <div className="space-y-1 rounded-lg border border-white/10 bg-slate-900/60 p-4">
             <DerivRow step="Definition" result="H = U + PV" />
             <DerivRow step="Differentiate" result="dH = dU + P dV + V dP" />
             <DerivRow step="Substitute dU" result="dH = (T dS − P dV) + P dV + V dP" />
@@ -641,7 +641,7 @@ export default function ThermodynamicsPart25() {
           <p className="text-slate-300">
             <strong>Classification:</strong> Exact derived result; A = U − TS (Legendre transform removing S).
           </p>
-          <div className="space-y-1 rounded-2xl border border-white/10 bg-slate-900/60 p-4">
+          <div className="space-y-1 rounded-lg border border-white/10 bg-slate-900/60 p-4">
             <DerivRow step="Definition" result="A = U − TS" />
             <DerivRow step="Differentiate" result="dA = dU − T dS − S dT" />
             <DerivRow step="Substitute dU" result="dA = (T dS − P dV) − T dS − S dT" />
@@ -654,7 +654,7 @@ export default function ThermodynamicsPart25() {
           <p className="text-slate-300">
             <strong>Classification:</strong> Exact derived result; G = H − TS (Legendre transform removing S from H).
           </p>
-          <div className="space-y-1 rounded-2xl border border-white/10 bg-slate-900/60 p-4">
+          <div className="space-y-1 rounded-lg border border-white/10 bg-slate-900/60 p-4">
             <DerivRow step="Definition" result="G = H − TS = U + PV − TS" />
             <DerivRow step="Differentiate" result="dG = dH − T dS − S dT" />
             <DerivRow step="Substitute dH" result="dG = (T dS + V dP) − T dS − S dT" />
@@ -676,7 +676,7 @@ export default function ThermodynamicsPart25() {
           <MaxwellRelationsSVG />
 
           <h3 className="mt-4 font-black text-white">Derivation from U(S,V)</h3>
-          <div className="space-y-1 rounded-2xl border border-white/10 bg-slate-900/60 p-4">
+          <div className="space-y-1 rounded-lg border border-white/10 bg-slate-900/60 p-4">
             <DerivRow step="From dU = T dS − P dV" result="M = T, N = −P for variables x = S, y = V" />
             <DerivRow step="Maxwell condition" result="(∂M/∂y)_x = (∂N/∂x)_y" />
             <DerivRow step="Left side" result="(∂T/∂V)_S" />
@@ -685,7 +685,7 @@ export default function ThermodynamicsPart25() {
           </div>
 
           <h3 className="mt-4 font-black text-white">Derivation from H(S,P)</h3>
-          <div className="space-y-1 rounded-2xl border border-white/10 bg-slate-900/60 p-4">
+          <div className="space-y-1 rounded-lg border border-white/10 bg-slate-900/60 p-4">
             <DerivRow step="From dH = T dS + V dP" result="M = T, N = V for variables x = S, y = P" />
             <DerivRow step="Left side" result="(∂T/∂P)_S" />
             <DerivRow step="Right side" result="(∂V/∂S)_P" />
@@ -693,7 +693,7 @@ export default function ThermodynamicsPart25() {
           </div>
 
           <h3 className="mt-4 font-black text-white">Derivation from A(T,V) — Most useful for PVT work</h3>
-          <div className="space-y-1 rounded-2xl border border-white/10 bg-slate-900/60 p-4">
+          <div className="space-y-1 rounded-lg border border-white/10 bg-slate-900/60 p-4">
             <DerivRow step="From dA = −S dT − P dV" result="M = −S, N = −P for variables x = T, y = V" />
             <DerivRow step="Left side" result="(∂(−S)/∂V)_T = −(∂S/∂V)_T" />
             <DerivRow step="Right side" result="(∂(−P)/∂T)_V = −(∂P/∂T)_V" />
@@ -702,7 +702,7 @@ export default function ThermodynamicsPart25() {
           </div>
 
           <h3 className="mt-4 font-black text-white">Derivation from G(T,P) — Most useful for chemistry</h3>
-          <div className="space-y-1 rounded-2xl border border-white/10 bg-slate-900/60 p-4">
+          <div className="space-y-1 rounded-lg border border-white/10 bg-slate-900/60 p-4">
             <DerivRow step="From dG = −S dT + V dP" result="M = −S, N = V for variables x = T, y = P" />
             <DerivRow step="Left side" result="(∂(−S)/∂P)_T = −(∂S/∂P)_T" />
             <DerivRow step="Right side" result="(∂V/∂T)_P" />
@@ -720,7 +720,7 @@ export default function ThermodynamicsPart25() {
             homogeneous closed system in a stable equilibrium state.
           </p>
 
-          <div className="space-y-1 rounded-2xl border border-white/10 bg-slate-900/60 p-4">
+          <div className="space-y-1 rounded-lg border border-white/10 bg-slate-900/60 p-4">
             <DerivRow step="Write U(T,V)" result="dU = (∂U/∂T)_V dT + (∂U/∂V)_T dV = C_V dT + π_T dV" />
             <DerivRow step="Internal pressure" result="π_T = (∂U/∂V)_T = T(∂P/∂T)_V − P  [from Maxwell + 1st law]" />
             <DerivRow step="H = U + PV → C_P" result="C_P = (∂H/∂T)_P = (∂U/∂T)_P + P(∂V/∂T)_P" />
@@ -734,7 +734,7 @@ export default function ThermodynamicsPart25() {
           <h3 className="mt-4 font-black text-white">Convenient compact form using α and κ_T</h3>
           <Formula label="Isobaric expansion coefficient">α = (1/V)(∂V/∂T)_P</Formula>
           <Formula label="Isothermal compressibility">κ_T = −(1/V)(∂V/∂P)_T</Formula>
-          <div className="space-y-1 rounded-2xl border border-white/10 bg-slate-900/60 p-4">
+          <div className="space-y-1 rounded-lg border border-white/10 bg-slate-900/60 p-4">
             <DerivRow step="Rewrite (∂V/∂T)_P" result="= αV" />
             <DerivRow step="Rewrite −(∂P/∂V)_T" result="= 1/(κ_T V)" />
             <DerivRow step="Substitute" result="C_P − C_V = T · (1/κ_T V) · (αV)² = TVα²/κ_T" />
@@ -742,7 +742,7 @@ export default function ThermodynamicsPart25() {
           <Formula label="General result">C_P − C_V = TVα²/κ_T</Formula>
 
           <h3 className="mt-4 font-black text-white">Ideal-gas special case: C_P − C_V = nR</h3>
-          <div className="space-y-1 rounded-2xl border border-white/10 bg-slate-900/60 p-4">
+          <div className="space-y-1 rounded-lg border border-white/10 bg-slate-900/60 p-4">
             <DerivRow step="Ideal gas V = nRT/P" result="(∂V/∂T)_P = nR/P" />
             <DerivRow step="α" result="= (1/V)(nR/P) = nR/(PV) = 1/T" />
             <DerivRow step="(∂V/∂P)_T = −nRT/P²" result="κ_T = (1/V)(nRT/P²) = 1/P" />
@@ -767,7 +767,7 @@ export default function ThermodynamicsPart25() {
           </p>
           <Formula label="Definition — exact derived result">μ_J = (∂T/∂V)_U</Formula>
 
-          <div className="space-y-1 rounded-2xl border border-white/10 bg-slate-900/60 p-4">
+          <div className="space-y-1 rounded-lg border border-white/10 bg-slate-900/60 p-4">
             <DerivRow step="Cyclic relation in U" result="(∂T/∂V)_U · (∂V/∂U)_T · (∂U/∂T)_V = −1" />
             <DerivRow step="(∂U/∂T)_V = C_V" result="μ_J = −(∂U/∂V)_T / C_V = −π_T / C_V" />
             <DerivRow step="Internal pressure" result="π_T = T(∂P/∂T)_V − P" />
@@ -796,7 +796,7 @@ export default function ThermodynamicsPart25() {
           <Formula label="Definition — exact derived result">μ_JT = (∂T/∂P)_H</Formula>
 
           <h3 className="mt-4 font-black text-white">Complete Derivation</h3>
-          <div className="space-y-1 rounded-2xl border border-white/10 bg-slate-900/60 p-4">
+          <div className="space-y-1 rounded-lg border border-white/10 bg-slate-900/60 p-4">
             <DerivRow step="Cyclic relation at constant H" result="(∂T/∂P)_H · (∂P/∂H)_T · (∂H/∂T)_P = −1" />
             <DerivRow step="(∂H/∂T)_P = C_P" result="μ_JT = −(1/C_P)(∂H/∂P)_T" />
             <DerivRow step="Need (∂H/∂P)_T" result="From dH = T dS + V dP: (∂H/∂P)_T = T(∂S/∂P)_T + V" />
@@ -808,7 +808,7 @@ export default function ThermodynamicsPart25() {
           <Formula label="Joule–Thomson coefficient">μ_JT = (∂T/∂P)_H = (1/C_P)[T(∂V/∂T)_P − V]</Formula>
 
           <h3 className="mt-4 font-black text-white">Inversion Condition and Ideal-Gas Result</h3>
-          <div className="space-y-1 rounded-2xl border border-white/10 bg-slate-900/60 p-4">
+          <div className="space-y-1 rounded-lg border border-white/10 bg-slate-900/60 p-4">
             <DerivRow step="Inversion condition" result="μ_JT = 0 when T(∂V/∂T)_P = V" />
             <DerivRow step="Cooling region" result="μ_JT > 0: gas cools when P drops (inside inversion curve)" />
             <DerivRow step="Heating region" result="μ_JT < 0: gas warms when P drops (outside inversion curve)" />
@@ -836,7 +836,7 @@ export default function ThermodynamicsPart25() {
           <JouleThomsonSVG />
 
           <h3 className="mt-4 font-black text-white">Van der Waals Inversion Temperature (Low-Pressure Limit)</h3>
-          <div className="space-y-1 rounded-2xl border border-white/10 bg-slate-900/60 p-4">
+          <div className="space-y-1 rounded-lg border border-white/10 bg-slate-900/60 p-4">
             <DerivRow step="vdW at low P" result="V ≈ RT/P + b − a/(RT) per mole" />
             <DerivRow step="(∂V/∂T)_P low P" result="≈ R/P + a/(RT²)" />
             <DerivRow step="T(∂V/∂T)_P" result="≈ RT/P + a/(RT)" />
@@ -856,7 +856,7 @@ export default function ThermodynamicsPart25() {
             {workedExamples.map((ex) => (
               <article
                 key={ex.title}
-                className={`rounded-2xl border p-5 ${toneStyles[ex.tone]}`}
+                className={`rounded-lg border p-5 ${toneStyles[ex.tone]}`}
               >
                 <div className="flex items-center gap-3">
                   <span className="rounded-full border px-2 py-0.5 text-xs font-black tracking-wider">{ex.level}</span>
@@ -882,7 +882,7 @@ export default function ThermodynamicsPart25() {
               ["(∂T/∂V)_U is the Joule coefficient; (∂T/∂P)_H is the Joule–Thomson coefficient", "These measure different experimental conditions: free expansion vs. steady throttling."],
               ["The inversion curve is NOT the boiling curve", "The inversion curve exists in the gas phase above the critical point and has no direct connection to the liquid–vapour boundary."],
             ].map(([title, body]) => (
-              <aside key={String(title)} className="rounded-2xl border border-amber-400/25 bg-amber-400/[0.06] p-4">
+              <aside key={String(title)} className="rounded-lg border border-amber-400/25 bg-amber-400/[0.06] p-4">
                 <h3 className="font-black text-amber-200">{title}</h3>
                 <p className="mt-2 text-sm leading-6 text-slate-300">{String(body)}</p>
               </aside>
@@ -895,7 +895,7 @@ export default function ThermodynamicsPart25() {
           <h2 className="text-2xl font-black text-amber-200">Practice Problems</h2>
           <div className="mt-5 space-y-4">
             {practiceProblems.map((p, i) => (
-              <article key={i} className="rounded-2xl border border-white/10 bg-slate-900/60 p-4">
+              <article key={i} className="rounded-lg border border-white/10 bg-slate-900/60 p-4">
                 <p className="font-semibold text-white">
                   <span className="mr-2 text-amber-300">{i + 1}.</span>{p.q}
                 </p>

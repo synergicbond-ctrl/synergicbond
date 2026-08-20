@@ -6,12 +6,12 @@ const DIFF: Record<string, string> = {
   Easy: "text-emerald-300", Moderate: "text-amber-300", Hard: "text-orange-300", Olympiad: "text-rose-300",
 };
 const FREQ: Record<string, string> = {
-  Low: "text-white/50", Medium: "text-cyan-300", High: "text-amber-300", "Very High": "text-rose-300",
+  Low: "text-white/50", Medium: "text-[var(--accent)]", High: "text-amber-300", "Very High": "text-rose-300",
 };
 
 function Cell({ icon: Icon, label, children }: { icon: LucideIcon; label: string; children: React.ReactNode }) {
   return (
-    <div className="rounded-xl border border-white/[0.06] bg-[#0e1421] p-3">
+    <div className="rounded-lg border border-white/[0.06] bg-[var(--surface-2)] p-3">
       <div className="mb-1 flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-wider text-white/35">
         <Icon className="h-3 w-3" /> {label}
       </div>

@@ -22,7 +22,7 @@ export default function SnapSolvePage() {
           {activeSolution ? (
             <SnapSolveResult data={activeSolution} />
           ) : (
-            <div className="flex min-h-44 flex-col items-center justify-center rounded-2xl border border-white/[0.06] bg-white/[0.02] p-6 text-center text-white/25">
+            <div className="flex min-h-44 flex-col items-center justify-center rounded-lg border border-white/[0.06] bg-white/[0.02] p-6 text-center text-white/25">
               <div className="text-4xl">💡</div>
               <p className="mt-2 text-sm">Your structured solution will appear here</p>
             </div>

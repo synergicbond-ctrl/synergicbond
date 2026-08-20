@@ -57,19 +57,19 @@ export default function ImportantOrdersPage() {
   const totalInTab = IMPORTANT_ORDERS.filter((o) => o.category === tab).length;
 
   return (
-    <main className="min-h-screen bg-[#0B0F19] text-white">
+    <main className="min-h-screen bg-[var(--background)] text-white">
       <div className="mx-auto max-w-5xl px-4 md:px-6 py-10">
         {/* Header */}
         <div className="mb-6">
-          <p className="mb-2 text-xs font-bold uppercase tracking-[0.4em] text-cyan-300">Learn · Important Orders</p>
+          <p className="mb-2 text-xs font-bold uppercase tracking-[0.4em] text-[var(--text-muted)]">Learn · Important Orders</p>
           <h1 className="flex items-center gap-2 text-3xl font-black md:text-4xl">
-            <ListOrdered className="h-8 w-8 text-cyan-400" /> Important Orders
+            <ListOrdered className="h-8 w-8 text-[var(--accent)]" /> Important Orders
           </h1>
           <p className="mt-2 max-w-2xl text-sm text-white/55">
             High-yield increasing / decreasing ordering sequences — every entry is extracted and
             verified directly from the uploaded PDFs. Nothing here is generated or summarised.
           </p>
-          <p className="mt-2 inline-flex items-center gap-1.5 rounded-lg border border-emerald-500/25 bg-emerald-500/[0.08] px-2.5 py-1 text-[11px] font-semibold text-emerald-300">
+          <p className="mt-2 inline-flex items-center gap-1.5 rounded-lg border border-[var(--accent)]/25 bg-[var(--accent)]/[0.08] px-2.5 py-1 text-[11px] font-semibold text-[var(--accent)]">
             <BadgeCheck className="h-3.5 w-3.5" /> {IMPORTANT_ORDERS.length} document-verified orders
           </p>
         </div>
@@ -87,7 +87,7 @@ export default function ImportantOrdersPage() {
                 className={`flex items-center gap-2 rounded-xl px-4 py-2.5 text-sm font-bold transition ${
                   on
                     ? "bg-cyan-500 text-black shadow-[0_0_20px_-6px_rgba(34,211,238,0.8)]"
-                    : "border border-white/[0.08] bg-[#111827] text-white/70 hover:border-cyan-400/30 hover:text-white"
+                    : "border border-white/[0.08] bg-[var(--surface)] text-white/70 hover:border-cyan-400/30 hover:text-white"
                 }`}
               >
                 <span>{m.emoji}</span> {m.label}
@@ -107,14 +107,14 @@ export default function ImportantOrdersPage() {
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
                 placeholder="Search within Important Orders — property, species, group…"
-                className="w-full rounded-xl border border-white/[0.08] bg-[#111827] py-2.5 pl-10 pr-3 text-sm text-white placeholder-white/30 outline-none focus:border-cyan-400/40"
+                className="w-full rounded-xl border border-white/[0.08] bg-[var(--surface)] py-2.5 pl-10 pr-3 text-sm text-white placeholder-white/30 outline-none focus:border-cyan-400/40"
               />
             </div>
             <div className="flex flex-wrap gap-2">
               <button
                 onClick={() => setSource(null)}
                 className={`rounded-lg px-2.5 py-1 text-[11px] font-semibold transition ${
-                  source === null ? "bg-cyan-500/20 text-cyan-200" : "border border-white/10 bg-white/[0.03] text-white/50 hover:text-white"
+                  source === null ? "bg-[var(--accent)]/20 text-[var(--accent)]" : "border border-white/10 bg-white/[0.03] text-white/50 hover:text-white"
                 }`}
               >
                 All sources
@@ -124,7 +124,7 @@ export default function ImportantOrdersPage() {
                   key={s}
                   onClick={() => setSource(s)}
                   className={`max-w-[220px] truncate rounded-lg px-2.5 py-1 text-[11px] font-semibold transition ${
-                    source === s ? "bg-cyan-500/20 text-cyan-200" : "border border-white/10 bg-white/[0.03] text-white/50 hover:text-white"
+                    source === s ? "bg-[var(--accent)]/20 text-[var(--accent)]" : "border border-white/10 bg-white/[0.03] text-white/50 hover:text-white"
                   }`}
                   title={s}
                 >
@@ -138,7 +138,7 @@ export default function ImportantOrdersPage() {
         {/* Content */}
         {totalInTab === 0 ? (
           // Governance empty state — no verified content for this category.
-          <div className="rounded-2xl border border-amber-500/25 bg-amber-500/[0.06] p-8 text-center">
+          <div className="rounded-lg border border-amber-500/25 bg-amber-500/[0.06] p-8 text-center">
             <ShieldAlert className="mx-auto h-8 w-8 text-amber-400" />
             <p className="mt-3 text-sm font-bold text-amber-200">
               ⚠ No verified {CATEGORY_META[tab].full} orders in the uploaded PDFs
@@ -150,7 +150,7 @@ export default function ImportantOrdersPage() {
             </p>
           </div>
         ) : grouped.length === 0 ? (
-          <div className="rounded-2xl border border-white/[0.08] bg-[#111827] p-8 text-center text-sm text-white/50">
+          <div className="rounded-lg border border-white/[0.08] bg-[var(--surface)] p-8 text-center text-sm text-white/50">
             No orders match “{query}”.
           </div>
         ) : (

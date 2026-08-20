@@ -86,14 +86,14 @@ const modules = [
 
 export default function LearnPage() {
   return (
-    <main className="min-h-screen bg-[#0B0F19] text-white">
+    <main className="min-h-screen bg-[var(--background)] text-white">
       <section className="mx-auto flex max-w-7xl flex-col gap-8 px-4 py-8 sm:px-6 lg:px-8">
         <header className="border-b border-white/[0.06] pb-6">
-          <p className="text-xs font-black uppercase tracking-[0.32em] text-cyan-300">Learning Hub</p>
+          <p className="text-xs font-black uppercase tracking-[0.32em] text-[var(--text-muted)]">Learning Hub</p>
           <h1 className="mt-3 max-w-3xl text-3xl font-black tracking-tight sm:text-5xl">
             Chemistry learning modules
           </h1>
-          <p className="mt-3 max-w-2xl text-sm font-medium leading-relaxed text-white/60">
+          <p className="mt-3 max-w-2xl text-sm font-medium leading-relaxed text-[var(--text-muted)]">
             Open the verified chemistry systems that are already connected to search, formulas, PYQs, reactions, and orders.
           </p>
         </header>
@@ -113,12 +113,12 @@ export default function LearnPage() {
               { href: "/learn/periodic-table", title: "Periodic Table", tag: "Inorganic · Class 11" },
             ].map((c) => (
               <Link key={c.href} href={c.href}
-                className="group flex flex-col justify-between rounded-lg border border-white/[0.08] bg-gradient-to-br from-cyan-500/[0.06] to-white/[0.02] p-5 transition hover:-translate-y-0.5 hover:border-cyan-400/40">
+                className="group flex flex-col justify-between rounded-lg border border-[var(--border)] bg-[var(--surface)] p-5 transition hover:-translate-y-0.5 hover:border-[var(--accent)]/40">
                 <div>
-                  <div className="text-[11px] font-bold uppercase tracking-wider text-cyan-300/80">{c.tag}</div>
-                  <div className="mt-1.5 text-lg font-black text-white">{c.title}</div>
+                  <div className="text-[11px] font-bold uppercase tracking-wider text-[var(--text-muted)]">{c.tag}</div>
+                  <div className="mt-1.5 text-lg font-black text-[var(--foreground)]">{c.title}</div>
                 </div>
-                <span className="mt-4 text-xs font-black uppercase tracking-wide text-cyan-300">Read chapter →</span>
+                <span className="mt-4 text-xs font-black uppercase tracking-wide text-[var(--accent)]">Read chapter →</span>
               </Link>
             ))}
           </div>
@@ -131,20 +131,20 @@ export default function LearnPage() {
               <Link
                 key={item.href}
                 href={item.href}
-                className="group flex min-h-44 min-w-0 flex-col rounded-lg border border-white/[0.08] bg-white/[0.035] p-5 transition hover:-translate-y-0.5 hover:border-cyan-400/40"
+                className="group flex min-h-44 min-w-0 flex-col rounded-lg border border-[var(--border)] bg-[var(--surface)] p-5 transition hover:-translate-y-0.5 hover:border-[var(--accent)]/40"
               >
                 <div className="flex items-start justify-between gap-3">
-                  <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg border border-cyan-400/25 bg-cyan-500/10">
-                    <Icon className="h-5 w-5 text-cyan-300" />
+                  <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg border border-[var(--border)] bg-[var(--surface-2)]">
+                    <Icon className="h-5 w-5 text-[var(--accent)]" />
                   </span>
-                  <span className="rounded-md bg-white/[0.06] px-2 py-1 text-[11px] font-black text-white/55">
+                  <span className="rounded-md bg-[var(--surface-2)] px-2 py-1 text-[11px] font-black text-[var(--text-muted)]">
                     {item.metric}
                   </span>
                 </div>
-                <h2 className="mt-4 break-words text-lg font-black text-white">{item.title}</h2>
-                <p className="mt-2 break-words text-sm leading-relaxed text-white/58">{item.description}</p>
-                <span className="mt-auto pt-4 text-xs font-black uppercase tracking-wide text-cyan-300">
-                  Open module
+                <h2 className="mt-4 break-words text-lg font-black text-[var(--foreground)]">{item.title}</h2>
+                <p className="mt-2 break-words text-sm leading-relaxed text-[var(--text-muted)]">{item.description}</p>
+                <span className="mt-auto pt-4 text-xs font-black uppercase tracking-wide text-[var(--accent)]">
+                  Enter →
                 </span>
               </Link>
             );
@@ -152,19 +152,19 @@ export default function LearnPage() {
         </div>
 
         <section className="rounded-lg border border-white/[0.08] bg-white/[0.03] p-5">
-          <p className="text-xs font-black uppercase tracking-[0.28em] text-white/35">Knowledge Core</p>
+          <p className="text-xs font-bold uppercase tracking-[0.28em] text-[var(--text-muted)]">Knowledge Core</p>
           <div className="mt-4 grid gap-3 sm:grid-cols-3">
-            <div className="rounded-md bg-black/20 p-4">
-              <p className="text-2xl font-black text-cyan-300">{highYieldReactions.length}</p>
-              <p className="mt-1 text-xs font-bold text-white/55">High-yield reactions</p>
+            <div className="rounded-md bg-[var(--surface-2)] p-4">
+              <p className="text-2xl font-black text-[var(--foreground)]">{highYieldReactions.length}</p>
+              <p className="mt-1 text-xs font-bold text-[var(--text-muted)]">High-yield reactions</p>
             </div>
-            <div className="rounded-md bg-black/20 p-4">
-              <p className="text-2xl font-black text-cyan-300">{formulaCards.length}</p>
-              <p className="mt-1 text-xs font-bold text-white/55">Formula cards</p>
+            <div className="rounded-md bg-[var(--surface-2)] p-4">
+              <p className="text-2xl font-black text-[var(--foreground)]">{formulaCards.length}</p>
+              <p className="mt-1 text-xs font-bold text-[var(--text-muted)]">Formula cards</p>
             </div>
-            <div className="rounded-md bg-black/20 p-4">
-              <p className="text-2xl font-black text-cyan-300">{IMPORTANT_ORDERS.length}</p>
-              <p className="mt-1 text-xs font-bold text-white/55">Verified order records</p>
+            <div className="rounded-md bg-[var(--surface-2)] p-4">
+              <p className="text-2xl font-black text-[var(--foreground)]">{IMPORTANT_ORDERS.length}</p>
+              <p className="mt-1 text-xs font-bold text-[var(--text-muted)]">Verified order records</p>
             </div>
           </div>
         </section>

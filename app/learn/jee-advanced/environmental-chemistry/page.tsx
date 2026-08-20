@@ -44,7 +44,7 @@ export default function EnvironmentalChemistryPage() {
             <Link
               key={part.id}
               href={part.href}
-              className={`group relative overflow-hidden rounded-2xl border p-5 transition duration-200 hover:-translate-y-1 ${partThemes[index % partThemes.length]}`}
+              className={`group relative overflow-hidden rounded-lg border p-5 transition duration-200 hover:-translate-y-1 ${partThemes[index % partThemes.length]}`}
             >
               <div className={`absolute inset-x-0 top-0 h-[3px] bg-gradient-to-r ${lineThemes[index % lineThemes.length]}`} />
               <span className={`text-sm font-extrabold tracking-[0.16em] ${labelThemes[index % labelThemes.length]}`}>

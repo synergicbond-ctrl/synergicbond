@@ -15,18 +15,18 @@ const tools = [
 
 export default function JEEPage() {
   return (
-    <main className="min-h-screen bg-black text-white">
-      <div className="border-b border-white/10 bg-gradient-to-b from-cyan-950/30 to-black px-6 py-16 text-center">
-        <div className="text-xs font-bold uppercase tracking-widest text-cyan-400 mb-3">Advanced Chemistry</div>
+    <main className="min-h-screen bg-[var(--background)] text-white">
+      <div className="border-b border-white/10 bg-[var(--surface)] px-6 py-16 text-center">
+        <div className="text-xs font-bold uppercase tracking-widest text-[var(--text-muted)] mb-3">Advanced Chemistry</div>
         <h1 className="text-5xl font-black tracking-tight mb-4">JEE Chemistry</h1>
         <p className="text-zinc-400 max-w-xl mx-auto text-lg">
           Mechanisms, numerical problems, advanced concepts and rigorous problem solving for JEE Main & Advanced.
         </p>
         <div className="flex gap-3 justify-center mt-6 flex-wrap">
-          <span className="px-3 py-1 rounded-full border border-cyan-700 text-cyan-300 text-sm">JEE Main: +4/-1</span>
-          <span className="px-3 py-1 rounded-full border border-cyan-700 text-cyan-300 text-sm">JEE Advanced: Partial Marking</span>
-          <span className="px-3 py-1 rounded-full border border-cyan-700 text-cyan-300 text-sm">Multi-correct Questions</span>
-          <span className="px-3 py-1 rounded-full border border-cyan-700 text-cyan-300 text-sm">Numerical Answer Type</span>
+          <span className="px-3 py-1 rounded-full border border-[var(--border)] text-[var(--accent)] text-sm">JEE Main: +4/-1</span>
+          <span className="px-3 py-1 rounded-full border border-[var(--border)] text-[var(--accent)] text-sm">JEE Advanced: Partial Marking</span>
+          <span className="px-3 py-1 rounded-full border border-[var(--border)] text-[var(--accent)] text-sm">Multi-correct Questions</span>
+          <span className="px-3 py-1 rounded-full border border-[var(--border)] text-[var(--accent)] text-sm">Numerical Answer Type</span>
         </div>
       </div>
 
@@ -37,9 +37,9 @@ export default function JEEPage() {
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
             {tools.map((t) => (
               <Link key={t.label} href={t.href}
-                className={`bg-zinc-900 border ${t.color} rounded-2xl p-5 transition group`}>
+                className={`bg-[var(--surface)] border ${t.color} rounded-lg p-5 transition group`}>
                 <div className="text-3xl mb-3">{t.icon}</div>
-                <div className="font-bold text-white group-hover:text-cyan-300 transition">{t.label}</div>
+                <div className="font-bold text-white group-hover:text-[var(--accent)] transition">{t.label}</div>
                 <div className="text-zinc-500 text-sm mt-1">{t.desc}</div>
               </Link>
             ))}

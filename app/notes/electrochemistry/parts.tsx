@@ -2264,7 +2264,7 @@ function Card({
     amber: "border-amber-300/20 bg-amber-300/[.055]",
     emerald: "border-emerald-300/20 bg-emerald-400/[.05]",
   }[tone];
-  return <section className={`rounded-2xl border p-5 sm:p-6 ${classes}`}>{children}</section>;
+  return <section className={`rounded-lg border p-5 sm:p-6 ${classes}`}>{children}</section>;
 }
 
 function FormulaList({ formulas }: { formulas: string[] }) {
@@ -2282,12 +2282,12 @@ function LessonSection({ section }: { section: SectionSpec }) {
     <Card>
       <h2 className="text-xl font-black text-cyan-100">{section.heading}</h2>
       {section.paragraphs?.map((paragraph) => (
-        <p key={paragraph} className="mt-3 text-[15px] leading-7 text-slate-200">
+        <p key={paragraph} className="mt-3 text-[15px] leading-7 text-[var(--text-muted)]">
           {paragraph}
         </p>
       ))}
       {section.bullets ? (
-        <ul className="mt-4 space-y-2 pl-5 text-[15px] leading-7 text-slate-200">
+        <ul className="mt-4 space-y-2 pl-5 text-[15px] leading-7 text-[var(--text-muted)]">
           {section.bullets.map((item) => (
             <li key={item} className="list-disc marker:text-cyan-300">
               {item}
@@ -2312,7 +2312,7 @@ function LessonSection({ section }: { section: SectionSpec }) {
               {section.table.rows.map((row, rowIndex) => (
                 <tr key={`${row[0]}-${rowIndex}`} className="odd:bg-black/10">
                   {row.map((cell, cellIndex) => (
-                    <td key={`${cell}-${cellIndex}`} className="border-b border-white/[.06] px-4 py-3 align-top leading-6 text-slate-200">
+                    <td key={`${cell}-${cellIndex}`} className="border-b border-white/[.06] px-4 py-3 align-top leading-6 text-[var(--text-muted)]">
                       {cell}
                     </td>
                   ))}
@@ -2331,8 +2331,8 @@ function WorkedExample({ example }: { example: ExampleSpec }) {
     <Card tone="violet">
       <p className="text-xs font-black uppercase tracking-[.18em] text-violet-200">Worked example</p>
       <h2 className="mt-2 text-xl font-black text-white">{example.title}</h2>
-      <p className="mt-3 text-[15px] leading-7 text-slate-200">{example.question}</p>
-      <ol className="mt-4 space-y-2 pl-5 text-[15px] leading-7 text-slate-200">
+      <p className="mt-3 text-[15px] leading-7 text-[var(--text-muted)]">{example.question}</p>
+      <ol className="mt-4 space-y-2 pl-5 text-[15px] leading-7 text-[var(--text-muted)]">
         {example.steps.map((step) => (
           <li key={step} className="list-decimal marker:font-black marker:text-violet-200">
             {step}
@@ -2355,7 +2355,7 @@ function Lesson({
   return (
     <div className="space-y-5" data-source-pages={spec.sourcePages}>
       <Card tone="emerald">
-        <p className="text-base leading-8 text-slate-100">{spec.overview}</p>
+        <p className="text-base leading-8 text-[var(--foreground)]">{spec.overview}</p>
       </Card>
 
       {spec.sections.map((section) => (
@@ -2383,7 +2383,7 @@ function Lesson({
               <summary className="cursor-pointer font-bold text-white">
                 {index + 1}. {item.question}
               </summary>
-              <p className="mt-3 text-sm leading-6 text-slate-200">
+              <p className="mt-3 text-sm leading-6 text-[var(--text-muted)]">
                 <strong className="text-cyan-200">Answer:</strong> {item.answer}
               </p>
             </details>

@@ -1,14 +1,17 @@
 
+import Link from "next/link";
 import type { ReactNode } from "react";
 import { BlockMath, InlineMath } from "@/components/math/react-katex";
 import {
-  ChapterShell,
+  CanonicalNotesStyles,
+  ChapterIdentityHeader,
   ChapterLessonPager,
-  ChapterPartStrip,
+  ChapterContentsRail,
+  TopicHeader,
   type ChapterTab,
   type LessonRef,
 } from "@/components/notes/canonical";
-import { ATOMIC_CONCEPT_GROUPS } from "./groups";
+import { ATOMIC_CONCEPT_GROUPS, atomicGroupForPart } from "./groups";
 
 export type AtomicPartMeta = {
   part: number;
@@ -78,10 +81,9 @@ export function atomicTabs(currentPart?: number): ChapterTab[] {
 }
 
 /**
- * Inline section block. The 55 authored content files each wrap themselves in
- * AtomicPartShell — since the 55 sections were merged into 25 lessons, this
- * shell now renders only the section's own header (original title + source
- * pages, fully preserved) while AtomicLessonShell carries the page chrome.
+ * Inline section block. Open editorial surface — no container card.
+ * Uses the section's concept group accent colour for the eyebrow and title.
+ * The section ID enables same-page anchor linking from the chapter rail.
  */
 export function AtomicPartShell({
   part,
@@ -94,107 +96,276 @@ export function AtomicPartShell({
   pages: string;
   children: ReactNode;
 }) {
+  const group = atomicGroupForPart(part);
   return (
-    <section className="text-white">
-      <header
-        style={{
-          background: "#122232",
-          border: "1px solid #24405c",
-          borderLeft: "4px solid #5fd4ea",
-          borderRadius: 13,
-          padding: "14px 18px",
-        }}
-      >
-        <p className="text-[11px] font-bold uppercase tracking-[0.3em] text-[#5fd4ea]">
-          Section {String(part).padStart(2, "0")} · source pages {pages}
+    <section
+      id={`section-${part}`}
+      style={{ scrollMarginTop: "72px", paddingTop: "0.25rem" }}
+    >
+      {/* Open editorial header: eyebrow → coloured serif title → thin rule */}
+      <header style={{ marginBottom: "1.75rem" }}>
+        <p
+          className="sb-tech-label"
+          style={{
+            color: group.accent,
+            fontSize: "10px",
+            fontWeight: 900,
+            letterSpacing: "0.22em",
+            marginBottom: "0.45rem",
+          }}
+        >
+          Section {String(part).padStart(2, "0")} · Source pages {pages}
         </p>
-        <h2 className="mt-2 text-2xl font-black tracking-tight sm:text-3xl" style={{ fontFamily: "Georgia, 'Iowan Old Style', 'Times New Roman', serif" }}>{title}</h2>
+        <h2
+          className="sb-editorial-title"
+          style={{
+            fontSize: "clamp(1.35rem, 2.6vw, 1.9rem)",
+            fontWeight: 650,
+            lineHeight: 1.18,
+            color: group.accent,
+            margin: 0,
+          }}
+        >
+          {title}
+        </h2>
+        <div
+          aria-hidden
+          style={{
+            height: 1,
+            background: group.accent,
+            opacity: 0.18,
+            marginTop: "0.6rem",
+          }}
+        />
       </header>
-      <div className="mt-6 space-y-8">{children}</div>
+      <div style={{ display: "flex", flexDirection: "column", gap: "1.5rem" }}>
+        {children}
+      </div>
     </section>
   );
 }
 
-/** Full canonical page chrome for one of the 25 merged lessons. */
+/** Full canonical page chrome for one of the 25 merged lessons.
+ *  Layout: compact lesson bar → two-column (reading canvas + chapter rail).
+ *  The chapter rail lists all 25 lessons grouped by concept section.
+ *  The pill/tab wall is gone — navigation is quiet and always accessible. */
 export function AtomicLessonShell({ lesson, children }: { lesson: number; children: ReactNode }) {
   const currentIndex = atomicPartMeta.findIndex((entry) => entry.part === lesson);
   const meta = atomicPartMeta[currentIndex];
+  const group = atomicGroupForPart(lesson);
 
   return (
-    <ChapterShell
-      kicker="JEE Physical Chemistry"
-      subtitle="Atomic Structure"
-      tabs={atomicTabs(lesson)}
-    >
-      <ChapterPartStrip
-        hubHref="/learn/atomic-structure"
-        hubLabel="Atomic Structure — all lessons"
-        positionLabel={`Lesson ${String(lesson).padStart(2, "0")} of ${atomicPartMeta.length}`}
-      />
-      <article className="mx-auto max-w-6xl text-white">
-        {meta && (
-          <header
-            style={{
-              background: "#122232",
-              border: "1px solid #24405c",
-              borderLeft: "4px solid #e8b84b",
-              borderRadius: 13,
-              padding: "18px 20px",
-            }}
-          >
-            <p className="text-[11px] font-bold uppercase tracking-[0.3em] text-[#e8b84b]">
-              Atomic Structure · Lesson {String(lesson).padStart(2, "0")}
-            </p>
-            <h1 className="mt-3 text-3xl font-black tracking-tight sm:text-4xl" style={{ fontFamily: "Georgia, 'Iowan Old Style', 'Times New Roman', serif" }}>{meta.title}</h1>
-            <p className="mt-2 text-sm" style={{ color: "#91a9bc" }}>
-              Lesson {lesson} of {atomicPartMeta.length} · source pages {meta.pages} · {meta.sections.length} study sections
-            </p>
-          </header>
-        )}
-        <div className="mt-8 space-y-10">{children}</div>
-        <ChapterLessonPager
-          prev={atomicLessonRef(currentIndex - 1)}
-          next={atomicLessonRef(currentIndex + 1)}
-          hubHref="/learn/atomic-structure"
-          hubLabel="All lessons"
+    <div style={{ minHeight: "100vh", background: "var(--background)", color: "var(--foreground)" }}>
+      <CanonicalNotesStyles />
+      {/* ── Compact lesson identity bar ── */}
+      <div className="sbnLessonBar">
+        <div className="sbnLessonBarInner">
+          <Link href="/learn/atomic-structure" className="sbnLessonBarBack">
+            ← Atomic Structure
+          </Link>
+          <span className="sbnLessonBarPos">
+            Lesson {String(lesson).padStart(2, "0")} / {atomicPartMeta.length}
+          </span>
+        </div>
+      </div>
+
+      {/* ── Two-column reading surface ── */}
+      <div className="sbnSidebarBody">
+        {/* Prose column: max 720px so lines stay at 65–72 chars */}
+        <article className="sbnCanvas" style={{ maxWidth: "720px" }}>
+          {/* Chapter identity — orients the reader before the lesson */}
+          <ChapterIdentityHeader
+            subject="Physical Chemistry · JEE Advanced"
+            chapterName="Atomic Structure"
+            descriptor="From Dalton's indivisible atom to the quantum-mechanical description of matter — the foundation of all chemistry."
+            topicCount={atomicPartMeta.length}
+            accentColor="var(--chem-bond)"
+          />
+
+          {/* Lesson hero — coloured by concept group */}
+          {meta && (
+            <TopicHeader
+              as="h1"
+              eyebrow={`Lesson ${String(lesson).padStart(2, "0")} · ${group.label.split(",")[0]}`}
+              title={meta.title}
+              descriptor={`Source pages ${meta.pages} · ${meta.sections.length} study ${meta.sections.length === 1 ? "section" : "sections"}`}
+              accentColor={group.accent}
+            />
+          )}
+
+          {/* Lesson content — sections rendered by the page */}
+          <div style={{ display: "flex", flexDirection: "column", gap: "3.5rem", marginTop: "2.5rem" }}>
+            {children}
+          </div>
+
+          {/* Lesson prev/next pager */}
+          <ChapterLessonPager
+            prev={atomicLessonRef(currentIndex - 1)}
+            next={atomicLessonRef(currentIndex + 1)}
+            hubHref="/learn/atomic-structure"
+            hubLabel="All lessons"
+          />
+        </article>
+
+        {/* ── Chapter contents rail ── */}
+        <ChapterContentsRail
+          title="Atomic Structure"
+          groups={ATOMIC_CONCEPT_GROUPS.map((g) => ({
+            label: g.label,
+            from: g.from,
+            to: g.to,
+            accent: g.accent,
+          }))}
+          lessons={atomicPartMeta.map((m) => ({
+            part: m.part,
+            title: m.title,
+            href: m.href,
+          }))}
+          currentPart={lesson}
         />
-      </article>
-    </ChapterShell>
+      </div>
+    </div>
   );
 }
 
 export function SourcePage({ page: _page, children }: { page: number; children: ReactNode }) {
+  /* Pure rhythm grouping — no border. The open canvas should read as prose,
+     not as a stack of bordered panels. Vertical spacing separates content
+     groups without adding visual containers. */
   return (
-    <section className="space-y-4 border-l-2 border-cyan-400/30 pl-4 sm:pl-6">
+    <div style={{ display: "flex", flexDirection: "column", gap: "1.25rem" }}>
       {children}
-    </section>
+    </div>
   );
 }
 
+/**
+ * Open note block — no container card. Ordinary theory lives in open space.
+ * title becomes a subsection heading. Cards are reserved for DiagramBox,
+ * WorkedExample, ImportantNote, PracticeQuestion (structural content only).
+ */
 export function NoteBlock({ title, children }: { title?: string; children: ReactNode }) {
   return (
-    <div className="rounded-2xl border border-white/[0.09] bg-white/[0.045] p-5 shadow-lg shadow-black/10 sm:p-6">
-      {title ? <h2 className="mb-3 text-lg font-black text-cyan-200">{title}</h2> : null}
-      <div className="space-y-3 text-sm leading-relaxed text-white/78 sm:text-base">{children}</div>
+    <div style={{ display: "flex", flexDirection: "column", gap: "0.75rem" }}>
+      {title ? (
+        <h3
+          className="sb-ui-title"
+          style={{
+            fontSize: "1.05rem",
+            fontWeight: 600,
+            color: "var(--foreground)",
+            letterSpacing: "-0.01em",
+            margin: 0,
+          }}
+        >
+          {title}
+        </h3>
+      ) : null}
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          gap: "0.75rem",
+          fontSize: "1rem",
+          lineHeight: 1.78,
+          color: "var(--text-body)",
+        }}
+      >
+        {children}
+      </div>
     </div>
   );
 }
 
 export function LearningObjectives({ items }: { items: ReactNode[] }) {
-  return <aside aria-label="Learning objectives" className="rounded-2xl border border-violet-300/20 bg-violet-400/[0.06] p-5"><p className="text-xs font-black uppercase tracking-[0.18em] text-violet-200">In this part</p><ul className="mt-3 grid gap-2 text-sm leading-relaxed text-slate-200 sm:grid-cols-3">{items.map((item, index) => <li key={index} className="border-l-2 border-violet-300/60 pl-3">{item}</li>)}</ul></aside>;
+  return (
+    <aside
+      aria-label="Learning objectives"
+      style={{
+        borderLeft: "3px solid var(--chem-orbital)",
+        paddingLeft: "1rem",
+        marginBottom: "0.25rem",
+      }}
+    >
+      <p
+        className="sb-tech-label"
+        style={{
+          fontSize: "9px",
+          fontWeight: 900,
+          letterSpacing: "0.2em",
+          color: "var(--chem-orbital)",
+          marginBottom: "0.6rem",
+        }}
+      >
+        In this lesson
+      </p>
+      <ul style={{ display: "flex", flexDirection: "column", gap: "0.35rem", margin: 0, padding: 0, listStyle: "none" }}>
+        {items.map((item, index) => (
+          <li
+            key={index}
+            style={{
+              fontSize: "0.875rem",
+              lineHeight: 1.55,
+              color: "var(--text-muted)",
+              display: "flex",
+              gap: "0.5rem",
+            }}
+          >
+            <span style={{ color: "var(--chem-orbital)", flexShrink: 0, marginTop: "0.15rem" }}>◆</span>
+            {item}
+          </li>
+        ))}
+      </ul>
+    </aside>
+  );
 }
 
 export function ImportantNote({ title, children }: { title: string; children: ReactNode }) {
-  return <aside className="rounded-xl border border-amber-300/20 bg-amber-300/[0.06] p-4" aria-label={title}><h3 className="text-sm font-black text-amber-100">{title}</h3><div className="mt-2 text-sm leading-relaxed text-amber-50/85">{children}</div></aside>;
+  return (
+    <aside
+      aria-label={title}
+      style={{
+        borderLeft: "3px solid var(--chem-energy)",
+        paddingLeft: "1rem",
+        paddingTop: "0.1rem",
+      }}
+    >
+      <p
+        className="sb-tech-label"
+        style={{
+          fontSize: "9px",
+          fontWeight: 900,
+          letterSpacing: "0.2em",
+          color: "var(--chem-energy)",
+          marginBottom: "0.4rem",
+        }}
+      >
+        {title}
+      </p>
+      <div style={{ fontSize: "0.9375rem", lineHeight: 1.68, color: "var(--text-body)" }}>
+        {children}
+      </div>
+    </aside>
+  );
 }
 
 export function SummaryStrip({ items }: { items: ReactNode[] }) {
-  return <section aria-label="Key takeaways" className="grid gap-px overflow-hidden rounded-2xl border border-cyan-300/20 bg-cyan-300/20 sm:grid-cols-3">{items.map((item, index) => <p key={index} className="bg-[#0b1728] p-4 text-sm font-semibold leading-relaxed text-cyan-50">{item}</p>)}</section>;
+  return <section aria-label="Key takeaways" className="grid gap-px overflow-hidden rounded-lg border border-[var(--chem-bond)]/20 bg-[var(--chem-bond)]/10 sm:grid-cols-3">{items.map((item, index) => <p key={index} className="bg-[var(--surface)] p-4 text-sm font-semibold leading-relaxed text-[var(--foreground)]">{item}</p>)}</section>;
 }
 
 export function FormulaLine({ math }: { math: string }) {
+  /* Displayed equations deserve their own visual weight — a subtle left accent
+     and breathing room signals "this is a result, not running prose". */
   return (
-    <div className="overflow-x-auto text-cyan-100 [&_.katex-display]:my-1">
+    <div
+      style={{
+        margin: "0.5rem 0",
+        paddingLeft: "1rem",
+        borderLeft: "3px solid var(--accent)",
+        overflowX: "auto",
+      }}
+      className="[&_.katex-display]:my-1 [&_.katex]:text-[var(--foreground)]"
+    >
       <BlockMath math={math} />
     </div>
   );
@@ -206,10 +377,21 @@ export function MathText({ math }: { math: string }) {
 
 export function BulletList({ items }: { items: ReactNode[] }) {
   return (
-    <ul className="space-y-2">
+    <ul style={{ display: "flex", flexDirection: "column", gap: "0.55rem", listStyle: "none", margin: 0, padding: 0 }}>
       {items.map((item, index) => (
-        <li key={index} className="flex gap-3">
-          <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-fuchsia-400" />
+        <li key={index} style={{ display: "flex", gap: "0.75rem", fontSize: "1rem", lineHeight: 1.72, color: "var(--text-body)" }}>
+          <span
+            aria-hidden
+            style={{
+              marginTop: "0.6rem",
+              width: "6px",
+              height: "6px",
+              borderRadius: "50%",
+              flexShrink: 0,
+              background: "var(--chem-bond)",
+              opacity: 0.7,
+            }}
+          />
           <span>{item}</span>
         </li>
       ))}
@@ -253,12 +435,45 @@ export function DataTable({
 }
 
 export function DiagramBox({ title, children }: { title: string; children: ReactNode }) {
+  /* Figures are separated from prose by whitespace and a neutral frame —
+     the diagram is the visual hero, not the container it sits in. */
   return (
-    <figure className="rounded-2xl border border-cyan-400/20 bg-cyan-400/[0.04] p-4">
-      <figcaption className="mb-3 text-xs font-black uppercase tracking-[0.2em] text-cyan-200">
-        Diagram: {title}
+    <figure
+      style={{
+        margin: "0.5rem 0",
+        borderRadius: "var(--radius)",
+        border: "1px solid var(--border)",
+        background: "var(--surface)",
+        overflow: "hidden",
+      }}
+    >
+      <div
+        style={{
+          display: "flex",
+          flexWrap: "wrap",
+          alignItems: "center",
+          justifyContent: "center",
+          gap: "1rem",
+          padding: "1.5rem 1.25rem 1rem",
+        }}
+        className="[&>p]:w-full [&>div]:w-full [&>figure]:w-full [&_svg]:h-auto [&>svg]:w-full [&>svg]:max-w-lg"
+      >
+        {children}
+      </div>
+      <figcaption
+        style={{
+          borderTop: "1px solid var(--border)",
+          padding: "0.55rem 1.25rem",
+          fontFamily: "var(--font-mono), ui-monospace, monospace",
+          fontSize: "9.5px",
+          fontWeight: 900,
+          letterSpacing: "0.18em",
+          textTransform: "uppercase",
+          color: "var(--text-muted)",
+        }}
+      >
+        {title}
       </figcaption>
-      <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-3 [&>p]:w-full [&>div]:w-full [&>figure]:w-full [&_svg]:h-auto [&>svg]:w-full [&>svg]:max-w-lg">{children}</div>
     </figure>
   );
 }

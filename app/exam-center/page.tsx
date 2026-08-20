@@ -14,10 +14,10 @@ const CAP_ICONS: Record<CapIcon, typeof Users> = {
 
 export default function ExamCenterPage() {
   return (
-    <main className="min-h-screen bg-[#0B0F19] text-white">
+    <main className="min-h-screen bg-[var(--background)] text-white">
       <div className="mx-auto max-w-6xl px-6 py-12">
         {/* Header */}
-        <p className="text-xs font-bold uppercase tracking-[0.4em] text-cyan-300 mb-2">Exam Center · 2026</p>
+        <p className="text-xs font-bold uppercase tracking-[0.4em] text-[var(--text-muted)] mb-2">Exam Center · 2026</p>
         <h1 className="text-3xl md:text-4xl font-black">Exam Directory</h1>
         <p className="mt-2 max-w-2xl text-sm text-white/55">
           Every track at a glance — key dates, application fees and seats. Dates marked tentative
@@ -32,7 +32,7 @@ export default function ExamCenterPage() {
               <Link
                 key={e.id}
                 href={e.href}
-                className="group rounded-2xl border bg-[#111827] p-6 transition hover:-translate-y-1"
+                className="group rounded-lg border bg-[var(--surface)] p-6 transition hover:-translate-y-1"
                 style={{ borderColor: `${e.accent}30` }}
               >
                 <div className="flex items-start justify-between gap-3">
@@ -72,7 +72,7 @@ export default function ExamCenterPage() {
 
 function KeyValue({ icon, label, value }: { icon: React.ReactNode; label: string; value: string }) {
   return (
-    <div className="flex items-center gap-2.5 rounded-lg border border-slate-900 bg-slate-950/40 px-3 py-2">
+    <div className="flex items-center gap-2.5 rounded-lg border border-[var(--border)] bg-[var(--surface-2)] px-3 py-2">
       <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-md bg-white/[0.04]">{icon}</span>
       <span className="text-xs text-white/45">{label}</span>
       <span className="ml-auto truncate text-sm font-semibold text-white">{value}</span>

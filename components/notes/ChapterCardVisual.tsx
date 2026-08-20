@@ -5,6 +5,7 @@ type VisualProps = {
   title: string;
 };
 
+// These hues carry meaning inside the authored chemistry drawings.
 const C = {
   cyan: "#37c8f0",
   gold: "#e7b842",
@@ -101,16 +102,9 @@ export default function ChapterCardVisual({ chapterId, title }: VisualProps) {
   }
 
   return (
-    <figure aria-hidden className="mb-4 overflow-hidden border-b border-white/10 pb-3">
+    <figure aria-hidden className="mb-4 overflow-hidden pb-3" style={{ borderBottom: "1px solid var(--border)" }}>
       <svg viewBox="0 0 160 92" className="h-[88px] w-full" role="presentation">
-        <defs>
-          <linearGradient id={`chapter-wash-${chapterId}`} x1="0" x2="1">
-            <stop stopColor={C.cyan} stopOpacity=".13" />
-            <stop offset=".5" stopColor={C.violet} stopOpacity=".04" />
-            <stop offset="1" stopColor={C.gold} stopOpacity=".13" />
-          </linearGradient>
-        </defs>
-        <rect x="1" y="1" width="158" height="90" rx="5" fill={`url(#chapter-wash-${chapterId})`} stroke="rgba(216,232,237,.16)" />
+        <rect x="1" y="1" width="158" height="90" rx="6" fill={C.ink} stroke="rgba(246,239,223,0.07)" strokeWidth="1" />
         {drawing}
       </svg>
     </figure>

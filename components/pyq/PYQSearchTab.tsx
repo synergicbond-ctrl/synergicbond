@@ -66,7 +66,7 @@ export default function PYQSearchTab({ initialExam }: { initialExam?: PYQExam | 
           placeholder="Search by concept, reaction, reagent, exception..."
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
-          className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-white placeholder:text-white/40 focus:outline-none focus:border-cyan-500 transition"
+          className="w-full px-4 py-3 bg-[var(--surface-2)] border border-[var(--border)] rounded-lg text-white placeholder:text-white/40 focus:outline-none focus:border-[var(--accent)] transition"
         />
         <div className="flex items-center justify-between">
           <p className="text-xs text-white/50">
@@ -74,7 +74,7 @@ export default function PYQSearchTab({ initialExam }: { initialExam?: PYQExam | 
             {!searchQuery && !hasFilters ? " (showing first 30 — search or filter to refine)" : ""}
           </p>
           {(searchQuery || hasFilters) && (
-            <button onClick={clearFilters} className="text-xs text-cyan-400 hover:text-cyan-300">
+            <button onClick={clearFilters} className="text-xs text-[var(--accent)] hover:opacity-80">
               Clear all filters
             </button>
           )}
@@ -89,7 +89,7 @@ export default function PYQSearchTab({ initialExam }: { initialExam?: PYQExam | 
               key={exam}
               onClick={() => setSelectedExam(selectedExam === exam ? null : exam)}
               className={`px-3 py-2 rounded-lg text-sm font-semibold transition ${
-                selectedExam === exam ? "bg-cyan-600 text-white" : "bg-white/5 text-white/70 hover:bg-white/10"
+                selectedExam === exam ? "bg-[var(--accent)] text-[var(--background)]" : "bg-white/5 text-white/70 hover:bg-white/10"
               }`}
             >
               {exam}
@@ -104,7 +104,7 @@ export default function PYQSearchTab({ initialExam }: { initialExam?: PYQExam | 
               onClick={() => setSelectedDifficulty(selectedDifficulty === diff ? null : diff)}
               className={`px-3 py-2 rounded-lg text-sm font-semibold transition ${
                 selectedDifficulty === diff
-                  ? "bg-purple-600 text-white"
+                  ? "bg-[var(--accent)] text-[var(--background)]"
                   : "bg-white/5 text-white/70 hover:bg-white/10"
               }`}
             >
@@ -117,11 +117,11 @@ export default function PYQSearchTab({ initialExam }: { initialExam?: PYQExam | 
           <select
             value={selectedChapter}
             onChange={(e) => setSelectedChapter(e.target.value as PYQChapter | "")}
-            className="px-3 py-2 bg-white/5 border border-white/10 rounded-lg text-sm text-white/80 focus:outline-none focus:border-cyan-500"
+            className="px-3 py-2 bg-[var(--surface-2)] border border-[var(--border)] rounded-lg text-sm text-white/80 focus:outline-none focus:border-[var(--accent)]"
           >
             <option value="">All Chapters</option>
             {chapterList.map((ch) => (
-              <option key={ch} value={ch} className="bg-black">
+              <option key={ch} value={ch} className="bg-[var(--background)]">
                 {ch}
               </option>
             ))}
@@ -130,11 +130,11 @@ export default function PYQSearchTab({ initialExam }: { initialExam?: PYQExam | 
           <select
             value={selectedYear}
             onChange={(e) => setSelectedYear(e.target.value ? Number(e.target.value) : "")}
-            className="px-3 py-2 bg-white/5 border border-white/10 rounded-lg text-sm text-white/80 focus:outline-none focus:border-cyan-500"
+            className="px-3 py-2 bg-[var(--surface-2)] border border-[var(--border)] rounded-lg text-sm text-white/80 focus:outline-none focus:border-[var(--accent)]"
           >
             <option value="">All Years</option>
             {yearList.map((yr) => (
-              <option key={yr} value={yr} className="bg-black">
+              <option key={yr} value={yr} className="bg-[var(--background)]">
                 {yr}
               </option>
             ))}
@@ -145,7 +145,7 @@ export default function PYQSearchTab({ initialExam }: { initialExam?: PYQExam | 
             placeholder="Filter by topic / subtopic..."
             value={topic}
             onChange={(e) => setTopic(e.target.value)}
-            className="px-3 py-2 bg-white/5 border border-white/10 rounded-lg text-sm text-white placeholder:text-white/40 focus:outline-none focus:border-cyan-500"
+            className="px-3 py-2 bg-[var(--surface-2)] border border-[var(--border)] rounded-lg text-sm text-white placeholder:text-white/40 focus:outline-none focus:border-[var(--accent)]"
           />
         </div>
       </div>

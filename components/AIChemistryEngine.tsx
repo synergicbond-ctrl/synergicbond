@@ -64,12 +64,12 @@ export default function AIChemistryEngine() {
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             placeholder="Search Atomic Structure, Thermodynamics..."
-            className="flex-1 rounded-2xl border border-white/10 bg-white/5 px-5 py-4 text-white outline-none transition focus:border-white/30"
+            className="flex-1 rounded-lg border border-white/10 bg-white/5 px-5 py-4 text-white outline-none transition focus:border-white/30"
           />
 
           <button
             onClick={handleSearch}
-            className="rounded-2xl bg-white px-8 py-4 font-semibold text-black transition hover:scale-105"
+            className="rounded-lg bg-white px-8 py-4 font-semibold text-black transition hover:scale-105"
           >
             Search
           </button>

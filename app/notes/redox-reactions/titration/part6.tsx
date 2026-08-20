@@ -31,7 +31,7 @@ export default function TitrationPart6() {
   return (
     <div className="space-y-6 sm:space-y-8">
 <PageCard title="Fe₂O₃ Sample, Zn Dust and KMnO₄ Titration">
-          <div className="space-y-4 rounded-2xl border border-rose-500/20 bg-rose-950/20 text-rose-200 p-4">
+          <div className="space-y-4 rounded-lg border border-rose-500/20 bg-rose-950/20 text-rose-200 p-4">
             <QuestionBox>
               Q. 4.8 gm Fe<sub>2</sub>O<sub>3</sub> sample{" "}
               <b>(40% pure)</b> is dissolved in excess of dilute acid and then
@@ -228,7 +228,7 @@ export default function TitrationPart6() {
         </PageCard>
 
         <PageCard title="Cause and Types of Hardness">
-          <div className="space-y-4 rounded-2xl border border-rose-500/20 bg-rose-950/20 text-rose-200 p-4">
+          <div className="space-y-4 rounded-lg border border-rose-500/20 bg-rose-950/20 text-rose-200 p-4">
             <p className="text-lg font-semibold text-pink-800">
               Hardness is due to presence of Ca<sup>2+</sup> and Mg
               <sup>2+</sup> ions in water.
@@ -258,7 +258,7 @@ export default function TitrationPart6() {
             Types of Hardness:
           </h3>
 
-          <div className="space-y-4 rounded-2xl border border-green-200 bg-green-50 p-4">
+          <div className="space-y-4 rounded-lg border border-green-200 bg-green-50 p-4">
             <h4 className="text-xl font-black text-green-800 underline">
               1. Temporary or Bicarbonate hardness:
             </h4>
@@ -281,7 +281,7 @@ export default function TitrationPart6() {
             </ReactionBox>
           </div>
 
-          <div className="space-y-4 rounded-2xl border border-blue-500/20 bg-blue-950/20 text-blue-200 p-4">
+          <div className="space-y-4 rounded-lg border border-blue-500/20 bg-blue-950/20 text-blue-200 p-4">
             <h4 className="text-xl font-black text-green-800 underline">
               2. Permanent Hardness:
             </h4>

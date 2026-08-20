@@ -75,7 +75,7 @@ function VirtualNumericalKeyboard({
             type="button"
             disabled={disabled}
             onClick={() => handleKeyPress(k)}
-            className="flex h-10 items-center justify-center rounded-lg bg-[#111827] border border-white/10 text-sm font-bold text-white hover:bg-white/[0.1] active:scale-95 transition disabled:opacity-50"
+            className="flex h-10 items-center justify-center rounded-lg bg-[var(--surface)] border border-white/10 text-sm font-bold text-white hover:bg-white/[0.1] active:scale-95 transition disabled:opacity-50"
           >
             {k}
           </button>
@@ -114,7 +114,7 @@ function Chip({ active, onClick, children }: { active: boolean; onClick: () => v
   return (
     <button onClick={onClick}
       className={`shrink-0 whitespace-nowrap rounded-lg border px-3 py-1.5 text-xs font-semibold transition ${
-        active ? "border-cyan-400/50 bg-cyan-500/15 text-white" : "border-white/10 bg-white/[0.03] text-white/60 hover:text-white/85"
+        active ? "border-[var(--accent)]/50 bg-[var(--accent)]/10 text-white" : "border-white/10 bg-white/[0.03] text-white/60 hover:text-white/85"
       }`}>
       {children}
     </button>
@@ -255,18 +255,18 @@ export default function EngineQuestionBank({
 
       {activeType.source === "bank" ? (
         <>
-          <div className="flex flex-wrap items-center justify-between gap-2 rounded-xl border border-white/10 bg-white/[0.02] p-3 text-xs">
+          <div className="flex flex-wrap items-center justify-between gap-2 rounded-lg border border-white/10 bg-white/[0.02] p-3 text-xs">
             <div className="flex gap-1.5">
               {DIFFS.map((d) => <Chip key={d} active={difficulty === d} onClick={() => setDifficulty(d)}>{d}</Chip>)}
             </div>
             <div className="flex items-center gap-2">
               <span className="text-white/50">{bankBatch.poolSize} in pool{signedIn === false ? " · sign in to save progress" : ""}</span>
-              <button onClick={() => setBatchSeed((s) => s + 1)} className="rounded-lg border border-cyan-400/40 bg-cyan-500/10 px-3 py-1.5 font-bold text-cyan-300 hover:bg-cyan-500/20">Next →</button>
+              <button onClick={() => setBatchSeed((s) => s + 1)} className="rounded-lg border border-[var(--accent)]/40 bg-[var(--accent)]/10 px-3 py-1.5 font-bold text-[var(--accent)] hover:bg-[var(--accent)]/20">Next →</button>
               <button onClick={doReset} className="rounded-lg border border-white/15 bg-white/[0.04] px-3 py-1.5 font-semibold text-white/70 hover:bg-white/[0.08]">Reset served</button>
             </div>
           </div>
           {bankBatch.questions.length === 0 ? (
-            <p className="rounded-2xl border border-white/10 bg-white/[0.02] p-6 text-center text-sm text-white/55">
+            <p className="rounded-lg border border-white/10 bg-white/[0.02] p-6 text-center text-sm text-white/55">
               {bankBatch.poolSize === 0
                 ? "No verified questions of this type for this chapter yet."
                 : bankBatch.exhausted
@@ -282,25 +282,25 @@ export default function EngineQuestionBank({
       ) : (
         <div className="space-y-3">
           <button onClick={generateAI} disabled={aiLoading}
-            className="rounded-xl bg-gradient-to-r from-cyan-400 to-sky-500 px-5 py-2.5 text-sm font-black text-black disabled:opacity-60">
+            className="rounded-lg bg-[var(--accent)] px-5 py-2.5 text-sm font-black text-black disabled:opacity-60">
             {aiLoading ? "Generating…" : `Generate ${activeType.label} question`}
           </button>
-          {aiError && <p className="rounded-xl border border-rose-500/30 bg-rose-500/[0.06] p-3 text-sm text-rose-300">{aiError}</p>}
+          {aiError && <p className="rounded-lg border border-rose-500/30 bg-rose-500/[0.06] p-3 text-sm text-rose-300">{aiError}</p>}
 
           {numeric && (
-            <div className="space-y-3 rounded-2xl border border-white/10 bg-white/[0.02] p-4">
+            <div className="space-y-3 rounded-lg border border-white/10 bg-white/[0.02] p-4">
               <p className="font-medium leading-relaxed text-white">{numeric.question}</p>
               <div className="flex flex-wrap items-center gap-2">
                 <input value={numericInput} onChange={(e) => setNumericInput(e.target.value)}
                   placeholder={activeType.format === "scientific" ? "e.g. 6.02e23 or 6.02×10^23" : "Your answer"}
-                  className="w-56 rounded-lg border border-white/10 bg-[#0B1220] px-3 py-2 text-sm text-white/90 outline-none focus:border-cyan-400/40" />
+                  className="w-56 rounded-lg border border-white/10 bg-[var(--surface)] px-3 py-2 text-sm text-white/90 outline-none focus:border-[var(--accent)]/40" />
                 {numeric.unit && <span className="text-sm text-white/50">{numeric.unit}</span>}
                 <button onClick={gradeNumeric} disabled={!numericInput.trim() || numericResult !== null}
-                  className="rounded-lg border border-cyan-400/40 bg-cyan-500/10 px-4 py-2 text-sm font-bold text-cyan-300 disabled:opacity-50">Check</button>
+                  className="rounded-lg border border-[var(--accent)]/40 bg-[var(--accent)]/10 px-4 py-2 text-sm font-bold text-[var(--accent)] disabled:opacity-50">Check</button>
               </div>
               <VirtualNumericalKeyboard value={numericInput} onChange={setNumericInput} disabled={numericResult !== null} />
               {numericResult && (
-                <div className={`rounded-xl border p-3 text-sm ${numericResult === "correct" ? "border-emerald-500/25 bg-emerald-500/[0.05]" : "border-rose-500/25 bg-rose-500/[0.05]"}`}>
+                <div className={`rounded-lg border p-3 text-sm ${numericResult === "correct" ? "border-emerald-500/25 bg-emerald-500/[0.05]" : "border-rose-500/25 bg-rose-500/[0.05]"}`}>
                   <p className={`font-black ${numericResult === "correct" ? "text-emerald-300" : "text-rose-300"}`}>
                     {numericResult === "correct" ? "✅ Correct" : `❌ Incorrect — answer: ${numeric.answer}${numeric.unit ? " " + numeric.unit : ""}`}
                   </p>
@@ -311,13 +311,13 @@ export default function EngineQuestionBank({
           )}
 
           {selfItem && (
-            <div className="space-y-3 rounded-2xl border border-white/10 bg-white/[0.02] p-4">
+            <div className="space-y-3 rounded-lg border border-white/10 bg-white/[0.02] p-4">
               <p className="whitespace-pre-wrap font-medium leading-relaxed text-white">{selfItem.question}</p>
               {!selfRevealed ? (
-                <button onClick={() => setSelfRevealed(true)} className="rounded-lg border border-cyan-400/40 bg-cyan-500/10 px-4 py-2 text-sm font-bold text-cyan-300">Reveal model answer</button>
+                <button onClick={() => setSelfRevealed(true)} className="rounded-lg border border-[var(--accent)]/40 bg-[var(--accent)]/10 px-4 py-2 text-sm font-bold text-[var(--accent)]">Reveal model answer</button>
               ) : (
-                <div className="rounded-xl border border-indigo-500/25 bg-indigo-500/[0.05] p-3 text-sm">
-                  <p className="font-black text-indigo-300">Model answer: <span className="text-white/90">{selfItem.modelAnswer}</span></p>
+                <div className="rounded-lg border border-white/10 bg-white/[0.03] p-3 text-sm">
+                  <p className="font-black text-[var(--accent)]">Model answer: <span className="text-white/90">{selfItem.modelAnswer}</span></p>
                   <p className="mt-2 whitespace-pre-wrap text-white/70">{selfItem.explanation}</p>
                   <p className="mt-2 text-[11px] text-white/40">Self-graded format — this attempt is not added to your analytics.</p>
                 </div>

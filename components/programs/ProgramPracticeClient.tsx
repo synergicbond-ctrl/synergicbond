@@ -36,7 +36,7 @@ function Chip({
       onClick={onClick}
       className={`shrink-0 whitespace-nowrap rounded-lg border px-3 py-1.5 text-xs font-semibold transition ${
         active
-          ? "border-cyan-400/50 bg-cyan-500/15 text-white"
+          ? "border-[var(--accent)]/50 bg-[var(--accent)]/10 text-white"
           : "border-white/10 bg-white/[0.03] text-white/60 hover:text-white/85"
       }`}
     >
@@ -93,7 +93,7 @@ export default function ProgramPracticeClient({ exam }: { exam: PYQExam }) {
       {/* Basic analytics — most-asked chapters for this exam */}
       <section>
         <h2 className="mb-2 text-lg font-bold">Most asked chapters</h2>
-        <p className="mb-4 text-sm text-zinc-500">
+        <p className="mb-4 text-sm text-[var(--text-muted)]">
           {examQuestions.length} verified {exam} PYQs across {chapterStats.length} chapters
         </p>
         <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
@@ -101,9 +101,9 @@ export default function ProgramPracticeClient({ exam }: { exam: PYQExam }) {
             <button
               key={s.chapter}
               onClick={() => setChapter((prev) => (prev === s.chapter ? null : s.chapter))}
-              className={`rounded-xl border p-3 text-left transition ${
+              className={`rounded-lg border p-3 text-left transition ${
                 chapter === s.chapter
-                  ? "border-cyan-400/50 bg-cyan-500/10"
+                  ? "border-[var(--accent)]/50 bg-[var(--accent)]/10"
                   : "border-white/[0.08] bg-white/[0.02] hover:bg-white/[0.04]"
               }`}
             >
@@ -121,7 +121,7 @@ export default function ProgramPracticeClient({ exam }: { exam: PYQExam }) {
           placeholder="Search by concept, reaction, reagent, exception…"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
-          className="w-full rounded-lg border border-white/10 bg-white/5 px-4 py-3 text-white placeholder:text-white/40 transition focus:border-cyan-500 focus:outline-none"
+          className="w-full rounded-lg border border-white/10 bg-white/5 px-4 py-3 text-white placeholder:text-white/40 transition focus:border-[var(--accent)]/50 focus:outline-none"
         />
 
         <div>
@@ -170,7 +170,7 @@ export default function ProgramPracticeClient({ exam }: { exam: PYQExam }) {
             {results.length > RESULT_CAP ? ` — showing first ${RESULT_CAP}` : ""}
           </p>
           {hasRefinement && (
-            <button onClick={clearAll} className="text-xs text-cyan-400 transition hover:text-cyan-300">
+            <button onClick={clearAll} className="text-xs text-[var(--accent)] transition hover:opacity-80">
               Clear all filters
             </button>
           )}
@@ -179,7 +179,7 @@ export default function ProgramPracticeClient({ exam }: { exam: PYQExam }) {
 
       {/* Results */}
       {shown.length === 0 ? (
-        <div className="rounded-2xl border border-dashed border-white/12 bg-white/[0.02] p-8 text-center">
+        <div className="rounded-lg border border-dashed border-white/12 bg-white/[0.02] p-8 text-center">
           <p className="text-sm font-semibold text-white/60">No questions match these filters.</p>
           <p className="mt-1 text-xs text-white/35">Try clearing a filter — only verified {exam} PYQs are shown.</p>
         </div>

@@ -39,10 +39,10 @@ export default function ReviseTodayCard() {
   const caughtUp = due === 0;
 
   return (
-    <section className="relative flex flex-col overflow-hidden rounded-3xl border border-violet-400/25 bg-[linear-gradient(135deg,rgba(139,92,246,0.13),transparent_42%),#111827] p-5 shadow-[0_24px_55px_-44px_rgba(139,92,246,0.85)]">
-      <span aria-hidden="true" className="absolute right-5 top-4 text-5xl font-black text-violet-300/[0.06]">R</span>
-      <h3 className="relative flex items-center gap-2 font-serif text-xl font-black">
-        <History className="h-5 w-5 text-violet-400" /> Revise Today
+    <section className="relative flex flex-col overflow-hidden rounded-lg border border-[var(--border)] bg-[var(--surface)] p-5">
+      <span aria-hidden="true" className="absolute right-5 top-4 text-5xl font-black text-[var(--foreground)]/[0.06]">R</span>
+      <h3 className="relative flex items-center gap-2 font-display text-xl font-black">
+        <History className="h-5 w-5 text-[var(--accent)]" /> Revise Today
       </h3>
       {state.kind === "loading" ? (
         <p className="mt-2 flex-1 text-sm text-white/55">Checking your revision queue…</p>
@@ -78,7 +78,7 @@ export default function ReviseTodayCard() {
           </p>
           <Link
             href="/memory?deck=daily"
-            className="mt-4 inline-flex w-fit items-center gap-1.5 rounded-xl border border-violet-400/30 bg-violet-500/10 px-4 py-2 text-xs font-bold text-violet-300 transition hover:bg-violet-500/15"
+            className="mt-4 inline-flex w-fit items-center gap-1.5 rounded-lg border border-[var(--border)] bg-[var(--surface-2)] px-4 py-2 text-xs font-bold text-[var(--accent)] transition hover:opacity-90"
           >
             Revise <ArrowRight className="h-3.5 w-3.5" />
           </Link>

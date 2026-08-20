@@ -77,30 +77,18 @@ export default function FullSyllabusDashboard({
   // Isolated question pool for this specific program only
   const programQuestions = useMemo(() => getIsolatedProgramQuestions(programKey), [programKey]);
 
-  // Derive accent color based on program type for visual identity
-  const accentClass = programType === "olympiad"
-    ? "from-amber-950/50 via-[#0B1220]/90 to-[#0B1220] border-amber-500/30"
-    : programType === "entrance" && programKey === "jee-advanced"
-    ? "from-violet-950/50 via-[#0B1220]/90 to-[#0B1220] border-violet-500/30"
-    : programType === "entrance" && programKey === "neet"
-    ? "from-emerald-950/50 via-[#0B1220]/90 to-[#0B1220] border-emerald-500/30"
-    : "from-cyan-950/50 via-[#0B1220]/90 to-[#0B1220] border-cyan-500/30";
-
-  const statColor = programType === "olympiad" ? "text-amber-400"
-    : programType === "entrance" && programKey === "jee-advanced" ? "text-violet-400"
-    : programType === "entrance" && programKey === "neet" ? "text-emerald-400"
-    : "text-cyan-400";
+  const statColor = "text-[var(--accent)]";
 
   return (
-    <div className="min-h-screen bg-[radial-gradient(circle_at_88%_0%,rgba(139,92,246,0.13),transparent_25%),radial-gradient(circle_at_7%_5%,rgba(34,211,238,0.1),transparent_27%),#0B1220] text-white selection:bg-cyan-500/30">
+    <div className="min-h-screen bg-[var(--background)] text-white selection:bg-cyan-500/30">
       {/* ── Top Header Banner ───────────────────────────────────────────── */}
-      <div className={`border-b border-white/[0.08] bg-gradient-to-b ${accentClass} px-4 py-8 shadow-[0_22px_65px_-52px_rgba(34,211,238,0.8)] sm:px-6 sm:py-12`}>
+      <div className={`border-b border-white/[0.08] bg-[var(--surface)] border-b border-[var(--border)] px-4 py-8 sm:px-6 sm:py-12`}>
         <div className="mx-auto max-w-6xl">
           {backUrl && (
             <nav className="mb-5">
               <Link
                 href={backUrl}
-                className="inline-flex items-center gap-1.5 text-sm font-bold text-cyan-400 hover:text-cyan-300 hover:underline underline-offset-2 transition"
+                className="inline-flex items-center gap-1.5 text-sm font-bold text-[var(--accent)] hover:underline underline-offset-2 transition"
               >
                 <span aria-hidden>←</span> {backLabel || "Back to Dashboard"}
               </Link>
@@ -109,9 +97,9 @@ export default function FullSyllabusDashboard({
           <div className="flex flex-col gap-5 md:flex-row md:items-end md:justify-between">
             <div className="space-y-2">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/[0.07] text-white/60 text-xs font-bold border border-white/10">
-                <ShieldCheck className="h-3.5 w-3.5 text-cyan-400" /> Program-Isolated · Zero Cross-Program Leakage
+                <ShieldCheck className="h-3.5 w-3.5 text-[var(--accent)]" /> Program-Isolated · Zero Cross-Program Leakage
               </div>
-              <h1 className="font-serif text-2xl font-black tracking-tight text-white leading-tight sm:text-3xl md:text-4xl">
+              <h1 className="font-display text-2xl font-black tracking-tight text-white leading-tight sm:text-3xl md:text-4xl">
                 {programName}
                 <span className="block text-sm font-semibold text-white/40 mt-1 tracking-normal">Full Syllabus Dashboard · 9 Learning Modules</span>
               </h1>
@@ -120,7 +108,7 @@ export default function FullSyllabusDashboard({
               </p>
             </div>
 
-            <div className="flex items-center gap-3 rounded-2xl border border-cyan-400/20 bg-black/50 px-4 py-3 shadow-[0_18px_42px_-30px_rgba(34,211,238,0.6)] shrink-0 self-start md:self-auto">
+            <div className="flex items-center gap-3 rounded-lg border border-[var(--border)] bg-[var(--surface-2)] px-4 py-3 shrink-0 self-start md:self-auto">
               <div className="text-center px-2">
                 <div className="text-[10px] font-bold uppercase tracking-wider text-white/40">PYQ Pool</div>
                 <div className={`text-xl font-black ${statColor} mt-0.5`}>{programQuestions.length}</div>
@@ -128,7 +116,7 @@ export default function FullSyllabusDashboard({
               <div className="h-10 w-px bg-white/10" />
               <div className="text-center px-2">
                 <div className="text-[10px] font-bold uppercase tracking-wider text-white/40">Syllabus Units</div>
-                <div className="text-xl font-black text-emerald-400 mt-0.5">{chapters.length || "—"}</div>
+                <div className="text-xl font-black text-[var(--accent)] mt-0.5">{chapters.length || "—"}</div>
               </div>
             </div>
           </div>
@@ -136,7 +124,7 @@ export default function FullSyllabusDashboard({
       </div>
 
       {/* ── Navigation Tabs (Horizontal Scrollable on Mobile) ───────────── */}
-      <div className="sticky top-0 z-30 border-b border-white/[0.08] bg-[#0B1220]/97 backdrop-blur-lg shadow-[0_4px_24px_-8px_rgba(0,0,0,0.5)]">
+      <div className="sticky top-0 z-30 border-b border-[var(--border)] bg-[var(--surface)]/97 backdrop-blur-lg shadow-[0_4px_24px_-8px_rgba(0,0,0,0.5)]">
         <div className="mx-auto max-w-6xl px-4 sm:px-6">
           <div className="flex items-center gap-0.5 overflow-x-auto py-2.5 no-scrollbar">
             {TABS.map((tab, i) => {
@@ -148,11 +136,11 @@ export default function FullSyllabusDashboard({
                   onClick={() => setActiveTab(tab.id)}
                   className={`flex items-center gap-1.5 px-3.5 py-2 rounded-lg text-[11px] font-bold whitespace-nowrap transition-all duration-150 shrink-0 ${
                     isActive
-                      ? "bg-cyan-500/15 text-cyan-300 border border-cyan-500/40 shadow-sm"
+                      ? "bg-[var(--accent)]/15 text-[var(--accent)] border border-[var(--accent)]/40"
                       : "text-white/50 hover:text-white/90 hover:bg-white/[0.05] border border-transparent"
                   }`}
                 >
-                  <Icon className={`h-3.5 w-3.5 shrink-0 ${isActive ? "text-cyan-400" : "text-white/30"}`} />
+                  <Icon className={`h-3.5 w-3.5 shrink-0 ${isActive ? "text-[var(--accent)]" : "text-white/30"}`} />
                   {tab.label}
                 </button>
               );
@@ -219,10 +207,10 @@ function ShortNotesTab({ programName, chapters }: { programName: string; chapter
 
   return (
     <div className="space-y-5">
-      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 bg-[#111827] border border-white/[0.08] p-5 rounded-2xl shadow-sm">
+      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 bg-[var(--surface)] border border-white/[0.08] p-5 rounded-lg shadow-sm">
         <div>
           <h2 className="text-xl font-black text-white flex items-center gap-2">
-            <FileText className="h-5 w-5 text-cyan-400" /> Short Notes &amp; Revision Vault
+            <FileText className="h-5 w-5 text-[var(--accent)]" /> Short Notes &amp; Revision Vault
           </h2>
           <p className="text-xs text-white/50 mt-1">
             Verified revision material strictly isolated for {programName}. Filter by revision type or chapter.
@@ -232,20 +220,20 @@ function ShortNotesTab({ programName, chapters }: { programName: string; chapter
           <select 
             value={selectedCategory} 
             onChange={(e) => setSelectedCategory(e.target.value)}
-            className="bg-black/40 border border-white/10 rounded-xl px-3 py-2 text-xs font-bold text-cyan-300 focus:outline-none focus:border-cyan-400"
+            className="bg-[var(--surface-2)] border border-[var(--border)] rounded-lg px-3 py-2 text-xs font-bold text-[var(--text-muted)] focus:outline-none focus:border-cyan-400"
           >
             {categories.map((c) => (
-              <option key={c.id} value={c.id} className="bg-[#111827] text-white">{c.label}</option>
+              <option key={c.id} value={c.id} className="bg-[var(--surface)] text-white">{c.label}</option>
             ))}
           </select>
           <select 
             value={selectedChapter} 
             onChange={(e) => setSelectedChapter(e.target.value)}
-            className="bg-black/40 border border-white/10 rounded-xl px-3 py-2 text-xs font-bold text-white focus:outline-none focus:border-cyan-400 max-w-[200px]"
+            className="bg-[var(--surface-2)] border border-[var(--border)] rounded-lg px-3 py-2 text-xs font-bold text-white focus:outline-none focus:border-[var(--accent)] max-w-[200px]"
           >
-            <option value="all" className="bg-[#111827] text-white">All Chapters ({chapters.length})</option>
+            <option value="all" className="bg-[var(--surface)] text-white">All Chapters ({chapters.length})</option>
             {chapters.map((ch) => (
-              <option key={ch.id} value={ch.name} className="bg-[#111827] text-white">{ch.name}</option>
+              <option key={ch.id} value={ch.name} className="bg-[var(--surface)] text-white">{ch.name}</option>
             ))}
           </select>
         </div>
@@ -257,9 +245,9 @@ function ShortNotesTab({ programName, chapters }: { programName: string; chapter
           <button
             key={c.id}
             onClick={() => setSelectedCategory(c.id)}
-            className={`shrink-0 px-3 py-1.5 rounded-xl text-xs font-bold transition ${
+            className={`shrink-0 px-3 py-1.5 rounded-lg text-xs font-bold transition ${
               selectedCategory === c.id 
-                ? "bg-cyan-500/20 border border-cyan-500/50 text-cyan-300" 
+                ? "bg-[var(--accent)]/15 border border-[var(--accent)]/40 text-[var(--accent)]"
                 : "bg-white/[0.04] border border-white/10 text-white/60 hover:text-white hover:bg-white/[0.07]"
             }`}
           >
@@ -270,10 +258,10 @@ function ShortNotesTab({ programName, chapters }: { programName: string; chapter
 
       {/* Grid of Notes Links */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-        <Link href="/notes" className="group p-5 bg-gradient-to-br from-cyan-950/30 to-black/50 border border-cyan-500/30 hover:border-cyan-400 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-cyan-500/10 rounded-2xl transition-all duration-200 space-y-3">
+        <Link href="/notes" className="group p-5 bg-[var(--surface-2)] border border-[var(--accent)]/20 hover:border-[var(--accent)]/50 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-cyan-500/10 rounded-lg transition-all duration-200 space-y-3">
           <div className="flex items-center justify-between">
-            <span className="text-xs font-bold px-2.5 py-1 rounded-full bg-cyan-500/15 text-cyan-300 border border-cyan-500/20">Featured</span>
-            <ArrowRight className="h-4 w-4 text-cyan-400 group-hover:translate-x-1 transition" />
+            <span className="text-xs font-bold px-2.5 py-1 rounded-full bg-[var(--accent)]/10 text-[var(--accent)] border border-[var(--accent)]/20">Featured</span>
+            <ArrowRight className="h-4 w-4 text-[var(--accent)] group-hover:translate-x-1 transition" />
           </div>
           <h3 className="text-base font-black text-white">Full Chemistry Notes Explorer</h3>
           <p className="text-xs text-white/60 leading-relaxed">
@@ -281,10 +269,10 @@ function ShortNotesTab({ programName, chapters }: { programName: string; chapter
           </p>
         </Link>
 
-        <Link href="/vault/formulas" className="group p-5 bg-[#111827] border border-white/[0.08] hover:border-emerald-400/40 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-black/20 rounded-2xl transition-all duration-200 space-y-3">
+        <Link href="/vault/formulas" className="group p-5 bg-[var(--surface)] border border-white/[0.08] hover:border-[var(--accent)]/30 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-black/20 rounded-lg transition-all duration-200 space-y-3">
           <div className="flex items-center justify-between">
-            <span className="text-xs font-bold px-2.5 py-1 rounded-full bg-emerald-500/10 text-emerald-300 border border-emerald-500/20">Important Formulae</span>
-            <ArrowRight className="h-4 w-4 text-white/40 group-hover:text-emerald-400 group-hover:translate-x-1 transition" />
+            <span className="text-xs font-bold px-2.5 py-1 rounded-full bg-emerald-500/10 text-[var(--text-muted)] border border-emerald-500/20">Important Formulae</span>
+            <ArrowRight className="h-4 w-4 text-white/40 group-hover:text-[var(--accent)] group-hover:translate-x-1 transition" />
           </div>
           <h3 className="text-base font-black text-white">Verified Formula Book</h3>
           <p className="text-xs text-white/60 leading-relaxed">
@@ -292,10 +280,10 @@ function ShortNotesTab({ programName, chapters }: { programName: string; chapter
           </p>
         </Link>
 
-        <Link href="/vault/exceptions" className="group p-5 bg-[#111827] border border-white/[0.08] hover:border-violet-400/40 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-black/20 rounded-2xl transition-all duration-200 space-y-3">
+        <Link href="/vault/exceptions" className="group p-5 bg-[var(--surface)] border border-white/[0.08] hover:border-[var(--accent)]/30 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-black/20 rounded-lg transition-all duration-200 space-y-3">
           <div className="flex items-center justify-between">
-            <span className="text-xs font-bold px-2.5 py-1 rounded-full bg-violet-500/10 text-violet-300 border border-violet-500/20">Key Exceptions</span>
-            <ArrowRight className="h-4 w-4 text-white/40 group-hover:text-violet-400 group-hover:translate-x-1 transition" />
+            <span className="text-xs font-bold px-2.5 py-1 rounded-full bg-[var(--surface-2)] text-[var(--text-muted)] border border-[var(--border)]">Key Exceptions</span>
+            <ArrowRight className="h-4 w-4 text-white/40 group-hover:text-[var(--accent)] group-hover:translate-x-1 transition" />
           </div>
           <h3 className="text-base font-black text-white">Inorganic &amp; Organic Exception Vault</h3>
           <p className="text-xs text-white/60 leading-relaxed">
@@ -305,15 +293,15 @@ function ShortNotesTab({ programName, chapters }: { programName: string; chapter
       </div>
 
       {/* Chapter-specific empty state */}
-      <div className="py-10 px-6 rounded-2xl border border-white/[0.08] bg-[#111827]/70 text-center space-y-3">
-        <div className="flex h-12 w-12 items-center justify-center rounded-full bg-cyan-500/10 border border-cyan-500/20 mx-auto">
-          <AlertCircle className="h-6 w-6 text-cyan-400" />
+      <div className="py-10 px-6 rounded-lg border border-white/[0.08] bg-[var(--surface)]/70 text-center space-y-3">
+        <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[var(--accent)]/10 border border-[var(--accent)]/20 mx-auto">
+          <AlertCircle className="h-6 w-6 text-[var(--accent)]" />
         </div>
         <h4 className="text-sm font-bold text-white">Curating Specific Revision Material</h4>
         <p className="text-xs text-white/50 max-w-xl mx-auto leading-relaxed">
           {selectedChapter === "all" ? "Select a specific chapter above to view granular topic summaries." : `Short notes for "${selectedChapter}" are being verified against official curriculum standards. No unverified summaries are shown.`}
         </p>
-        <Link href="/notes" className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-cyan-500/10 hover:bg-cyan-500/20 border border-cyan-500/20 text-cyan-300 text-xs font-bold transition mt-2">
+        <Link href="/notes" className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-[var(--accent)]/10 hover:bg-[var(--accent)]/15 border border-[var(--accent)]/20 text-[var(--accent)] text-xs font-bold transition mt-2">
           Browse All Notes <ArrowRight className="h-3.5 w-3.5" />
         </Link>
       </div>
@@ -366,10 +354,10 @@ function PracticeProblemsTab({
 
   return (
     <div className="space-y-5">
-      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 bg-[#111827] border border-white/[0.08] p-5 rounded-2xl shadow-sm">
+      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 bg-[var(--surface)] border border-white/[0.08] p-5 rounded-lg shadow-sm">
         <div>
           <h2 className="text-xl font-black text-white flex items-center gap-2">
-            <PenTool className="h-5 w-5 text-emerald-400" /> Practice Problems Suite
+            <PenTool className="h-5 w-5 text-[var(--accent)]" /> Practice Problems Suite
           </h2>
           <p className="text-xs text-white/50 mt-1">
             Solve subjective, objective, competency, and HOTS questions strictly isolated for {programName}.
@@ -379,21 +367,21 @@ function PracticeProblemsTab({
           <select 
             value={selectedScope} 
             onChange={(e) => setSelectedScope(e.target.value)}
-            className="bg-black/40 border border-white/10 rounded-xl px-3 py-2 text-xs font-bold text-emerald-300 focus:outline-none focus:border-emerald-400"
+            className="bg-[var(--surface-2)] border border-[var(--border)] rounded-lg px-3 py-2 text-xs font-bold text-[var(--accent)] focus:outline-none focus:border-[var(--accent)]"
           >
-            <option value="full-syllabus" className="bg-[#111827] text-white">Full Syllabus Scope</option>
-            <option value="chapter-wise" className="bg-[#111827] text-white">Chapter-wise Scope</option>
-            <option value="unit-wise" className="bg-[#111827] text-white">Unit-wise Scope</option>
-            <option value="topic-wise" className="bg-[#111827] text-white">Topic-wise Scope</option>
+            <option value="full-syllabus" className="bg-[var(--surface)] text-white">Full Syllabus Scope</option>
+            <option value="chapter-wise" className="bg-[var(--surface)] text-white">Chapter-wise Scope</option>
+            <option value="unit-wise" className="bg-[var(--surface)] text-white">Unit-wise Scope</option>
+            <option value="topic-wise" className="bg-[var(--surface)] text-white">Topic-wise Scope</option>
           </select>
           <select 
             value={selectedChapter} 
             onChange={(e) => setSelectedChapter(e.target.value)}
-            className="bg-black/40 border border-white/10 rounded-xl px-3 py-2 text-xs font-bold text-white focus:outline-none focus:border-emerald-400 max-w-[200px]"
+            className="bg-[var(--surface-2)] border border-[var(--border)] rounded-lg px-3 py-2 text-xs font-bold text-white focus:outline-none focus:border-[var(--accent)] max-w-[200px]"
           >
-            <option value="all" className="bg-[#111827] text-white">All Chapters</option>
+            <option value="all" className="bg-[var(--surface)] text-white">All Chapters</option>
             {chapters.map((ch) => (
-              <option key={ch.id} value={ch.name} className="bg-[#111827] text-white">{ch.name}</option>
+              <option key={ch.id} value={ch.name} className="bg-[var(--surface)] text-white">{ch.name}</option>
             ))}
           </select>
         </div>
@@ -405,9 +393,9 @@ function PracticeProblemsTab({
           <button
             key={f.id}
             onClick={() => setSelectedFormat(f.id)}
-            className={`shrink-0 px-3 py-1.5 rounded-xl text-xs font-bold transition ${
+            className={`shrink-0 px-3 py-1.5 rounded-lg text-xs font-bold transition ${
               selectedFormat === f.id 
-                ? "bg-emerald-500/20 border border-emerald-500/50 text-emerald-300" 
+                ? "bg-emerald-500/20 border border-emerald-500/50 text-[var(--text-muted)]"
                 : "bg-white/[0.04] border border-white/10 text-white/60 hover:text-white hover:bg-white/[0.07]"
             }`}
           >
@@ -421,13 +409,13 @@ function PracticeProblemsTab({
         <div className="space-y-3">
           <div className="flex items-center justify-between text-xs text-white/50 px-2">
             <span>Showing {filteredQs.length} verified practice problems</span>
-            <span className="text-emerald-400 font-bold">100% Program Isolated</span>
+            <span className="text-[var(--accent)] font-bold">100% Program Isolated</span>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {filteredQs.slice(0, 6).map((q) => (
-              <div key={q.id} className="p-4 rounded-2xl bg-white/[0.03] border border-white/10 hover:border-emerald-400/30 transition space-y-2">
+              <div key={q.id} className="p-4 rounded-lg bg-white/[0.03] border border-white/10 hover:border-emerald-400/30 transition space-y-2">
                 <div className="flex items-center justify-between text-[11px]">
-                  <span className="font-bold text-emerald-300">{q.chapter}</span>
+                  <span className="font-bold text-[var(--text-muted)]">{q.chapter}</span>
                   <span className="px-2 py-0.5 rounded-md bg-white/10 text-white/80 font-mono">{q.marks} Mark(s) &bull; {q.difficulty}</span>
                 </div>
                 <p className="text-xs text-white/80 font-medium line-clamp-2">
@@ -435,16 +423,16 @@ function PracticeProblemsTab({
                 </p>
                 <div className="pt-2 flex items-center justify-between text-[11px] text-white/40">
                   <span>Source: {q.source}</span>
-                  <Link href="/daily-challenge" className="text-emerald-400 font-bold hover:underline">Solve Now &rarr;</Link>
+                  <Link href="/daily-challenge" className="text-[var(--accent)] font-bold hover:underline">Solve Now &rarr;</Link>
                 </div>
               </div>
             ))}
           </div>
         </div>
       ) : (
-        <div className="py-10 px-6 rounded-2xl border border-white/[0.08] bg-[#111827]/70 text-center space-y-3">
+        <div className="py-10 px-6 rounded-lg border border-white/[0.08] bg-[var(--surface)]/70 text-center space-y-3">
           <div className="flex h-12 w-12 items-center justify-center rounded-full bg-emerald-500/10 border border-emerald-500/20 mx-auto">
-            <AlertCircle className="h-6 w-6 text-emerald-400" />
+            <AlertCircle className="h-6 w-6 text-[var(--accent)]" />
           </div>
           <h4 className="text-base font-bold text-white">No Matching Practice Sets</h4>
           <p className="text-xs text-white/50 max-w-lg mx-auto leading-relaxed">
@@ -452,7 +440,7 @@ function PracticeProblemsTab({
           </p>
           <button 
             onClick={() => { setSelectedFormat("all"); setSelectedChapter("all"); }}
-            className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-300 text-xs font-bold border border-emerald-500/20 transition mt-1"
+            className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-emerald-500/10 hover:bg-emerald-500/20 text-[var(--text-muted)] text-xs font-bold border border-emerald-500/20 transition mt-1"
           >
             Reset Filters
           </button>
@@ -484,7 +472,7 @@ function PYQsTab({
 
   return (
     <div className="space-y-6">
-      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 bg-white/[0.02] border border-white/10 p-5 rounded-3xl">
+      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 bg-[var(--surface)] border border-[var(--border)] p-5 rounded-lg">
         <div>
           <h2 className="text-xl font-black text-white flex items-center gap-2">
             <Search className="h-5 w-5 text-yellow-400" /> Official PYQ Bank
@@ -496,41 +484,41 @@ function PYQsTab({
         <select 
           value={selectedChapter} 
           onChange={(e) => setSelectedChapter(e.target.value)}
-          className="bg-black/40 border border-white/10 rounded-xl px-3 py-2 text-xs font-bold text-yellow-300 focus:outline-none focus:border-yellow-400 max-w-[220px]"
+          className="bg-[var(--surface-2)] border border-[var(--border)] rounded-lg px-3 py-2 text-xs font-bold text-[var(--accent)] focus:outline-none focus:border-[var(--accent)] max-w-[220px]"
         >
-          <option value="all" className="bg-[#111827] text-white">All Chapters ({chapters.length})</option>
+          <option value="all" className="bg-[var(--surface)] text-white">All Chapters ({chapters.length})</option>
           {chapters.map((ch) => (
-            <option key={ch.id} value={ch.name} className="bg-[#111827] text-white">{ch.name}</option>
+            <option key={ch.id} value={ch.name} className="bg-[var(--surface)] text-white">{ch.name}</option>
           ))}
         </select>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-        <div className="p-5 rounded-3xl bg-black/40 border border-white/10 space-y-1">
+        <div className="p-5 rounded-lg bg-[var(--surface-2)] border border-[var(--border)] space-y-1">
           <div className="text-xs text-white/40 font-bold uppercase tracking-wider">Total PYQs in Scope</div>
-          <div className="text-2xl font-black text-yellow-400">{filteredPYQs.length}</div>
+          <div className="text-2xl font-black text-[var(--accent)]">{filteredPYQs.length}</div>
           <div className="text-[11px] text-white/50">Verified historical database</div>
         </div>
-        <div className="p-5 rounded-3xl bg-black/40 border border-white/10 space-y-1">
+        <div className="p-5 rounded-lg bg-[var(--surface-2)] border border-[var(--border)] space-y-1">
           <div className="text-xs text-white/40 font-bold uppercase tracking-wider">Authenticity Status</div>
-          <div className="text-2xl font-black text-emerald-400">100% Honest</div>
+          <div className="text-2xl font-black text-[var(--accent)]">100% Honest</div>
           <div className="text-[11px] text-white/50">Zero AI-reconstructed replacements</div>
         </div>
-        <div className="p-5 rounded-3xl bg-black/40 border border-white/10 space-y-1">
+        <div className="p-5 rounded-lg bg-[var(--surface-2)] border border-[var(--border)] space-y-1">
           <div className="text-xs text-white/40 font-bold uppercase tracking-wider">Chapter Coverage</div>
-          <div className="text-2xl font-black text-cyan-400">{chapters.length} Units</div>
+          <div className="text-2xl font-black text-[var(--accent)]">{chapters.length} Units</div>
           <div className="text-[11px] text-white/50">Full curriculum alignment</div>
         </div>
       </div>
 
-      <div className="p-6 rounded-3xl border border-white/10 bg-white/[0.02] flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div className="p-6 rounded-lg border border-[var(--border)] bg-[var(--surface)] flex flex-col sm:flex-row items-center justify-between gap-4">
         <div>
           <h3 className="text-base font-black text-white">Launch Interactive PYQ Search Engine</h3>
           <p className="text-xs text-white/60 mt-1 max-w-xl">
             Search by keyword, filter by difficulty (Easy, Moderate, Hard, Olympiad), or take timed chapter-wise PYQ practice sets.
           </p>
         </div>
-        <Link href="/pyq" className="px-5 py-2.5 rounded-xl bg-yellow-500 hover:bg-yellow-400 text-black font-black text-xs transition shrink-0">
+        <Link href="/pyq" className="px-5 py-2.5 rounded-lg bg-yellow-500 hover:bg-yellow-400 text-black font-black text-xs transition shrink-0">
           Open PYQ Bank &rarr;
         </Link>
       </div>
@@ -563,9 +551,9 @@ function MockTestsTab({
 
   return (
     <div className="space-y-5">
-      <div className="bg-[#111827] border border-white/[0.08] p-5 rounded-2xl shadow-sm">
+      <div className="bg-[var(--surface)] border border-white/[0.08] p-5 rounded-lg shadow-sm">
         <h2 className="text-xl font-black text-white flex items-center gap-2">
-          <ClipboardList className="h-5 w-5 text-purple-400" /> Mock Test Simulation Center
+          <ClipboardList className="h-5 w-5 text-[var(--accent)]" /> Mock Test Simulation Center
         </h2>
         <p className="text-xs text-white/50 mt-1">
           Select a test format tailored for {programName}. Instant automated scoring and mistake analysis included.
@@ -574,13 +562,13 @@ function MockTestsTab({
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {testCategories.map((tc) => (
-          <div key={tc.id} className="p-5 rounded-3xl bg-white/[0.03] border border-white/10 hover:border-purple-400/40 transition flex flex-col justify-between space-y-4">
+          <div key={tc.id} className="p-5 rounded-lg bg-white/[0.03] border border-white/10 hover:border-purple-400/40 transition flex flex-col justify-between space-y-4">
             <div>
               <div className="flex items-center justify-between">
                 <span className="font-black text-white text-base">{tc.label}</span>
                 <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full uppercase ${
                   tc.tag === "Essential" || tc.tag === "High Priority" || tc.tag === "Recommended"
-                    ? "bg-purple-500/20 text-purple-300 border border-purple-500/30"
+                    ? "bg-purple-500/20 text-[var(--text-muted)] border border-purple-500/30"
                     : "bg-white/10 text-white/60"
                 }`}>
                   {tc.tag}
@@ -588,7 +576,7 @@ function MockTestsTab({
               </div>
               <p className="text-xs text-white/55 mt-2 leading-relaxed">{tc.desc}</p>
             </div>
-            <Link href="/exam" className="w-full py-2.5 rounded-xl bg-purple-500/10 hover:bg-purple-500/20 text-purple-300 font-bold text-xs text-center border border-purple-500/30 transition block">
+            <Link href="/exam" className="w-full py-2.5 rounded-lg bg-purple-500/10 hover:bg-purple-500/20 text-[var(--text-muted)] font-bold text-xs text-center border border-purple-500/30 transition block">
               Launch Test Engine &rarr;
             </Link>
           </div>
@@ -668,25 +656,25 @@ function CustomTestGeneratorTab({
 
   return (
     <div className="space-y-5">
-      <div className="bg-[#111827] border border-white/[0.08] p-5 rounded-2xl shadow-sm">
+      <div className="bg-[var(--surface)] border border-white/[0.08] p-5 rounded-lg shadow-sm">
         <h2 className="text-xl font-black text-white flex items-center gap-2">
-          <Settings className="h-5 w-5 text-cyan-400" /> Custom Test Generator
+          <Settings className="h-5 w-5 text-[var(--accent)]" /> Custom Test Generator
         </h2>
         <p className="text-xs text-white/50 mt-1">
-          Build a custom examination paper. <strong className="text-cyan-300">Critical Rule Enforced:</strong> Previously served questions will not repeat across sessions until the unseen pool is exhausted.
+          Build a custom examination paper. <strong className="text-[var(--text-muted)]">Critical Rule Enforced:</strong> Previously served questions will not repeat across sessions until the unseen pool is exhausted.
         </p>
       </div>
 
       {/* 10 Selectors Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 bg-black/40 border border-white/10 p-6 rounded-3xl">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 bg-[var(--surface-2)] border border-[var(--border)] p-6 rounded-lg">
         <div className="space-y-1.5">
           <label className="text-[10px] font-bold uppercase tracking-wider text-white/50">1. Program</label>
-          <input type="text" disabled value={programName} className="w-full bg-white/5 border border-white/10 rounded-xl px-3 py-2 text-xs font-bold text-cyan-300 opacity-80 cursor-not-allowed" />
+          <input type="text" disabled value={programName} className="w-full bg-white/5 border border-[var(--border)] rounded-lg px-3 py-2 text-xs font-bold text-[var(--accent)] opacity-80 cursor-not-allowed" />
         </div>
 
         <div className="space-y-1.5">
           <label className="text-[10px] font-bold uppercase tracking-wider text-white/50">2. Class Level</label>
-          <select value={selectedClass} onChange={(e) => setSelectedClass(e.target.value)} className="w-full bg-[#111827] border border-white/10 rounded-xl px-3 py-2 text-xs font-bold text-white focus:border-cyan-400">
+          <select value={selectedClass} onChange={(e) => setSelectedClass(e.target.value)} className="w-full bg-[var(--surface)] border border-white/10 rounded-lg px-3 py-2 text-xs font-bold text-white focus:border-cyan-400">
             <option value="All">All Class Levels</option>
             <option value="Class 11">Class 11 Only</option>
             <option value="Class 12">Class 12 Only</option>
@@ -695,7 +683,7 @@ function CustomTestGeneratorTab({
 
         <div className="space-y-1.5">
           <label className="text-[10px] font-bold uppercase tracking-wider text-white/50">3. Chapter</label>
-          <select value={selectedChapter} onChange={(e) => setSelectedChapter(e.target.value)} className="w-full bg-[#111827] border border-white/10 rounded-xl px-3 py-2 text-xs font-bold text-white focus:border-cyan-400">
+          <select value={selectedChapter} onChange={(e) => setSelectedChapter(e.target.value)} className="w-full bg-[var(--surface)] border border-white/10 rounded-lg px-3 py-2 text-xs font-bold text-white focus:border-cyan-400">
             <option value="all">All Chapters ({chapters.length})</option>
             {chapters.map((ch) => (
               <option key={ch.id} value={ch.name}>{ch.name}</option>
@@ -705,7 +693,7 @@ function CustomTestGeneratorTab({
 
         <div className="space-y-1.5">
           <label className="text-[10px] font-bold uppercase tracking-wider text-white/50">4. Unit</label>
-          <select value={selectedUnit} onChange={(e) => setSelectedUnit(e.target.value)} className="w-full bg-[#111827] border border-white/10 rounded-xl px-3 py-2 text-xs font-bold text-white focus:border-cyan-400">
+          <select value={selectedUnit} onChange={(e) => setSelectedUnit(e.target.value)} className="w-full bg-[var(--surface)] border border-white/10 rounded-lg px-3 py-2 text-xs font-bold text-white focus:border-cyan-400">
             <option value="all">All Syllabus Units</option>
             <option value="physical">Physical Chemistry</option>
             <option value="inorganic">Inorganic Chemistry</option>
@@ -715,14 +703,14 @@ function CustomTestGeneratorTab({
 
         <div className="space-y-1.5">
           <label className="text-[10px] font-bold uppercase tracking-wider text-white/50">5. Topic</label>
-          <select value={selectedTopic} onChange={(e) => setSelectedTopic(e.target.value)} className="w-full bg-[#111827] border border-white/10 rounded-xl px-3 py-2 text-xs font-bold text-white focus:border-cyan-400">
+          <select value={selectedTopic} onChange={(e) => setSelectedTopic(e.target.value)} className="w-full bg-[var(--surface)] border border-white/10 rounded-lg px-3 py-2 text-xs font-bold text-white focus:border-cyan-400">
             <option value="all">All Topics</option>
           </select>
         </div>
 
         <div className="space-y-1.5">
           <label className="text-[10px] font-bold uppercase tracking-wider text-white/50">6. Question Type</label>
-          <select value={selectedQType} onChange={(e) => setSelectedQType(e.target.value)} className="w-full bg-[#111827] border border-white/10 rounded-xl px-3 py-2 text-xs font-bold text-white focus:border-cyan-400">
+          <select value={selectedQType} onChange={(e) => setSelectedQType(e.target.value)} className="w-full bg-[var(--surface)] border border-white/10 rounded-lg px-3 py-2 text-xs font-bold text-white focus:border-cyan-400">
             <option value="All">All Types</option>
             <option value="MCQ-Single">MCQ Single Correct</option>
             <option value="MCQ-Multiple">MCQ Multiple Correct</option>
@@ -733,7 +721,7 @@ function CustomTestGeneratorTab({
 
         <div className="space-y-1.5">
           <label className="text-[10px] font-bold uppercase tracking-wider text-white/50">7. Difficulty</label>
-          <select value={selectedDiff} onChange={(e) => setSelectedDiff(e.target.value)} className="w-full bg-[#111827] border border-white/10 rounded-xl px-3 py-2 text-xs font-bold text-white focus:border-cyan-400">
+          <select value={selectedDiff} onChange={(e) => setSelectedDiff(e.target.value)} className="w-full bg-[var(--surface)] border border-white/10 rounded-lg px-3 py-2 text-xs font-bold text-white focus:border-cyan-400">
             <option value="All">All Difficulties</option>
             <option value="Easy">Easy</option>
             <option value="Moderate">Moderate</option>
@@ -744,7 +732,7 @@ function CustomTestGeneratorTab({
 
         <div className="space-y-1.5">
           <label className="text-[10px] font-bold uppercase tracking-wider text-white/50">8. Marks per Q</label>
-          <select value={selectedMarks} onChange={(e) => setSelectedMarks(Number(e.target.value))} className="w-full bg-[#111827] border border-white/10 rounded-xl px-3 py-2 text-xs font-bold text-white focus:border-cyan-400">
+          <select value={selectedMarks} onChange={(e) => setSelectedMarks(Number(e.target.value))} className="w-full bg-[var(--surface)] border border-white/10 rounded-lg px-3 py-2 text-xs font-bold text-white focus:border-cyan-400">
             <option value={1}>1 Mark</option>
             <option value={2}>2 Marks</option>
             <option value={3}>3 Marks</option>
@@ -755,7 +743,7 @@ function CustomTestGeneratorTab({
 
         <div className="space-y-1.5">
           <label className="text-[10px] font-bold uppercase tracking-wider text-white/50">9. No. of Questions</label>
-          <select value={questionCount} onChange={(e) => setQuestionCount(Number(e.target.value))} className="w-full bg-[#111827] border border-white/10 rounded-xl px-3 py-2 text-xs font-bold text-white focus:border-cyan-400">
+          <select value={questionCount} onChange={(e) => setQuestionCount(Number(e.target.value))} className="w-full bg-[var(--surface)] border border-white/10 rounded-lg px-3 py-2 text-xs font-bold text-white focus:border-cyan-400">
             <option value={5}>5 Questions</option>
             <option value={10}>10 Questions</option>
             <option value={15}>15 Questions</option>
@@ -766,7 +754,7 @@ function CustomTestGeneratorTab({
 
         <div className="space-y-1.5">
           <label className="text-[10px] font-bold uppercase tracking-wider text-white/50">10. Duration (Mins)</label>
-          <select value={testDuration} onChange={(e) => setTestDuration(Number(e.target.value))} className="w-full bg-[#111827] border border-white/10 rounded-xl px-3 py-2 text-xs font-bold text-white focus:border-cyan-400">
+          <select value={testDuration} onChange={(e) => setTestDuration(Number(e.target.value))} className="w-full bg-[var(--surface)] border border-white/10 rounded-lg px-3 py-2 text-xs font-bold text-white focus:border-cyan-400">
             <option value={15}>15 Minutes</option>
             <option value={30}>30 Minutes</option>
             <option value={45}>45 Minutes</option>
@@ -775,14 +763,14 @@ function CustomTestGeneratorTab({
         </div>
       </div>
 
-      <div className="flex items-center justify-between p-4 rounded-2xl bg-cyan-500/10 border border-cyan-500/20">
-        <div className="flex items-center gap-2 text-xs text-cyan-300">
+      <div className="flex items-center justify-between p-4 rounded-lg bg-[var(--surface-2)] border border-[var(--border)]">
+        <div className="flex items-center gap-2 text-xs text-[var(--accent)]">
           <ShieldCheck className="h-4 w-4 shrink-0" />
           <span>Non-repeating algorithm active: <strong>{servedIds.size}</strong> question IDs previously served in this session will be excluded first.</span>
         </div>
         <button
           onClick={handleGenerateTest}
-          className="px-6 py-2.5 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-black font-black text-xs transition shadow-lg shadow-cyan-500/20 shrink-0"
+          className="px-6 py-2.5 rounded-lg bg-[var(--accent)] hover:opacity-90 text-black font-black text-xs transition shrink-0"
         >
           Generate Custom Test &rarr;
         </button>
@@ -790,7 +778,7 @@ function CustomTestGeneratorTab({
 
       {/* Generated Test Result Preview */}
       {generatedTest && (
-        <div className="p-6 rounded-3xl border border-white/10 bg-white/[0.03] space-y-4">
+        <div className="p-6 rounded-lg border border-white/10 bg-white/[0.03] space-y-4">
           <div className="flex items-center justify-between border-b border-white/10 pb-3">
             <div>
               <h3 className="text-base font-black text-white">Custom Test Generated ({generatedTest.questions.length} Questions)</h3>
@@ -798,15 +786,15 @@ function CustomTestGeneratorTab({
                 {generatedTest.newlyServedCount} fresh unseen questions &bull; {generatedTest.recycledCount} recycled (unseen pool exhausted)
               </p>
             </div>
-            <Link href="/exam" className="px-4 py-2 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-black font-bold text-xs transition">
+            <Link href="/exam" className="px-4 py-2 rounded-lg bg-emerald-500 hover:bg-emerald-400 text-black font-bold text-xs transition">
               Start Test Now &rarr;
             </Link>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
             {generatedTest.questions.map((q, idx) => (
-              <div key={q.id} className="p-3 rounded-xl bg-black/40 border border-white/[0.06] text-xs flex items-center justify-between">
+              <div key={q.id} className="p-3 rounded-lg bg-[var(--surface-2)] border border-[var(--border)] text-xs flex items-center justify-between">
                 <div>
-                  <span className="font-bold text-cyan-300">Q{idx + 1}. {q.chapter}</span>
+                  <span className="font-bold text-[var(--accent)]">Q{idx + 1}. {q.chapter}</span>
                   <div className="text-[10px] text-white/50">{q.questionType} &bull; {q.difficulty} &bull; {q.marks} Marks</div>
                 </div>
                 <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-white/10">ID: {q.id}</span>
@@ -833,17 +821,17 @@ function AITutorTab({ programName }: { programName: string }) {
 
   return (
     <div className="space-y-5">
-      <div className="bg-[#111827] border border-white/[0.08] p-5 rounded-2xl shadow-sm">
+      <div className="bg-[var(--surface)] border border-white/[0.08] p-5 rounded-lg shadow-sm">
         <h2 className="text-xl font-black text-white flex items-center gap-2">
-          <Sparkles className="h-5 w-5 text-cyan-400" /> AI Coach &amp; Doubt Solver
+          <Sparkles className="h-5 w-5 text-[var(--accent)]" /> AI Coach &amp; Doubt Solver
         </h2>
         <p className="text-xs text-white/50 mt-1">
           24/7 intelligent tutoring tuned specifically to {programName} curriculum standards and examination depth.
         </p>
       </div>
 
-      <div className="p-6 rounded-3xl bg-black/40 border border-white/10 space-y-4">
-        <div className="flex items-center gap-3 text-sm text-cyan-300 font-bold">
+      <div className="p-6 rounded-lg bg-[var(--surface-2)] border border-[var(--border)] space-y-4">
+        <div className="flex items-center gap-3 text-sm text-[var(--accent)] font-bold">
           <Sparkles className="h-5 w-5 animate-pulse" />
           <span>Ask anything about your syllabus:</span>
         </div>
@@ -852,15 +840,15 @@ function AITutorTab({ programName }: { programName: string }) {
             <Link 
               key={idx} 
               href="/tutor" 
-              className="p-3 rounded-xl bg-white/[0.03] hover:bg-white/[0.06] border border-white/[0.06] hover:border-cyan-500/30 text-xs text-white/80 transition flex items-center justify-between group"
+              className="p-3 rounded-lg bg-white/[0.03] hover:bg-white/[0.06] border border-white/[0.06] hover:border-cyan-500/30 text-xs text-white/80 transition flex items-center justify-between group"
             >
               <span>{p}</span>
-              <ArrowRight className="h-4 w-4 text-white/30 group-hover:text-cyan-400 group-hover:translate-x-1 transition" />
+              <ArrowRight className="h-4 w-4 text-white/30 group-hover:text-[var(--accent)] group-hover:translate-x-1 transition" />
             </Link>
           ))}
         </div>
         <div className="pt-2 text-center">
-          <Link href="/tutor" className="inline-block px-6 py-2.5 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-black font-black text-xs transition">
+          <Link href="/tutor" className="inline-block px-6 py-2.5 rounded-lg bg-[var(--accent)] hover:opacity-90 text-black font-black text-xs transition">
             Launch AI Tutor Console &rarr;
           </Link>
         </div>
@@ -886,7 +874,7 @@ function AnalyticsTab({ programName, chapters }: { programName: string; chapters
   ];
 
   const metricColors = [
-    "text-emerald-400", "text-cyan-400", "text-sky-400", "text-violet-400",
+    "text-[var(--accent)]", "text-[var(--accent)]", "text-sky-400", "text-[var(--accent)]",
     "text-rose-400", "text-amber-400", "text-indigo-400", "text-teal-400",
   ];
   const metricBg = [
@@ -898,7 +886,7 @@ function AnalyticsTab({ programName, chapters }: { programName: string; chapters
 
   return (
     <div className="space-y-5">
-      <div className="bg-[#111827] border border-white/[0.08] p-5 rounded-2xl shadow-sm">
+      <div className="bg-[var(--surface)] border border-white/[0.08] p-5 rounded-lg shadow-sm">
         <h2 className="text-xl font-black text-white flex items-center gap-2">
           <Activity className="h-5 w-5 text-rose-400" /> Performance Analytics Suite
         </h2>
@@ -909,7 +897,7 @@ function AnalyticsTab({ programName, chapters }: { programName: string; chapters
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
         {metrics.map((m, idx) => (
-          <div key={idx} className={`p-4 rounded-2xl border ${metricBg[idx] || "border-white/10 bg-white/[0.03]"} space-y-1.5`}>
+          <div key={idx} className={`p-4 rounded-lg border ${metricBg[idx] || "border-white/10 bg-white/[0.03]"} space-y-1.5`}>
             <div className="text-[10px] font-bold uppercase tracking-wider text-white/40">{m.label}</div>
             <div className={`text-xl font-black ${metricColors[idx] || "text-white"}`}>{m.val}</div>
             <p className="text-[11px] text-white/55 leading-tight">{m.desc}</p>
@@ -917,14 +905,14 @@ function AnalyticsTab({ programName, chapters }: { programName: string; chapters
         ))}
       </div>
 
-      <div className="p-6 rounded-3xl border border-white/10 bg-white/[0.02] flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div className="p-6 rounded-lg border border-[var(--border)] bg-[var(--surface)] flex flex-col sm:flex-row items-center justify-between gap-4">
         <div>
           <h3 className="text-base font-black text-white">Detailed Diagnostic Reports</h3>
           <p className="text-xs text-white/60 mt-1">
             View chapter-wise speed vs. accuracy scatter plots and mistake root-cause breakdown.
           </p>
         </div>
-        <Link href="/analytics" className="px-5 py-2.5 rounded-xl bg-rose-500 hover:bg-rose-400 text-black font-black text-xs transition shrink-0">
+        <Link href="/analytics" className="px-5 py-2.5 rounded-lg bg-rose-500 hover:bg-rose-400 text-black font-black text-xs transition shrink-0">
           Open Full Analytics Desk &rarr;
         </Link>
       </div>
@@ -947,9 +935,9 @@ function MentorshipTab({ programName }: { programName: string }) {
 
   return (
     <div className="space-y-5">
-      <div className="bg-[#111827] border border-white/[0.08] p-5 rounded-2xl shadow-sm">
+      <div className="bg-[var(--surface)] border border-white/[0.08] p-5 rounded-lg shadow-sm">
         <h2 className="text-xl font-black text-white flex items-center gap-2">
-          <Users className="h-5 w-5 text-violet-400" /> Mentorship &amp; Guidance Desk
+          <Users className="h-5 w-5 text-[var(--accent)]" /> Mentorship &amp; Guidance Desk
         </h2>
         <p className="text-xs text-white/50 mt-1">
           Structured guidance and support resources for {programName}.
@@ -958,17 +946,17 @@ function MentorshipTab({ programName }: { programName: string }) {
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         {pillars.map((p, idx) => (
-          <div key={idx} className="p-5 rounded-2xl bg-[#111827] border border-white/[0.08] hover:border-violet-400/30 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-black/20 flex flex-col justify-between space-y-4 transition-all duration-200">
+          <div key={idx} className="p-5 rounded-lg bg-[var(--surface)] border border-white/[0.08] hover:border-violet-400/30 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-black/20 flex flex-col justify-between space-y-4 transition-all duration-200">
             <div>
               <div className="flex items-center justify-between gap-2">
                 <span className="font-black text-white text-sm">{p.title}</span>
-                <span className="shrink-0 text-[9px] font-bold px-2 py-0.5 rounded-full bg-violet-500/15 text-violet-300 border border-violet-500/25 uppercase">{p.status}</span>
+                <span className="shrink-0 text-[9px] font-bold px-2 py-0.5 rounded-full bg-violet-500/15 text-[var(--text-muted)] border border-violet-500/25 uppercase">{p.status}</span>
               </div>
               <p className="text-xs text-white/55 mt-2 leading-relaxed">{p.desc}</p>
             </div>
             <Link
               href="/coach"
-              className="flex items-center justify-end gap-1 pt-2 border-t border-white/[0.08] text-[11px] font-bold text-violet-400 hover:text-violet-300 transition"
+              className="flex items-center justify-end gap-1 pt-2 border-t border-white/[0.08] text-[11px] font-bold text-[var(--accent)] hover:text-[var(--text-muted)] transition"
             >
               View Portal <ArrowRight className="h-3 w-3" />
             </Link>
@@ -1000,9 +988,9 @@ function ProjectsPracticalsTab({
 
   return (
     <div className="space-y-5">
-      <div className="bg-[#111827] border border-white/[0.08] p-5 rounded-2xl shadow-sm">
+      <div className="bg-[var(--surface)] border border-white/[0.08] p-5 rounded-lg shadow-sm">
         <h2 className="text-xl font-black text-white flex items-center gap-2">
-          <FlaskConical className="h-5 w-5 text-cyan-400" /> Projects &amp; Practicals Center
+          <FlaskConical className="h-5 w-5 text-[var(--accent)]" /> Projects &amp; Practicals Center
         </h2>
         <p className="text-xs text-white/50 mt-1">
           Complete laboratory, investigatory project, and viva preparation suite for {programName}.
@@ -1011,15 +999,15 @@ function ProjectsPracticalsTab({
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         {practicals.map((pr, idx) => (
-          <div key={idx} className="p-5 rounded-2xl bg-[#111827] border border-white/[0.08] hover:border-cyan-400/30 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-black/20 flex flex-col justify-between space-y-4 transition-all duration-200">
+          <div key={idx} className="p-5 rounded-lg bg-[var(--surface)] border border-white/[0.08] hover:border-cyan-400/30 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-black/20 flex flex-col justify-between space-y-4 transition-all duration-200">
             <div>
               <div className="flex items-center justify-between gap-2">
                 <span className="font-black text-white text-sm">{pr.title}</span>
-                <span className="shrink-0 text-[9px] font-bold px-2 py-0.5 rounded-full bg-cyan-500/15 text-cyan-300 border border-cyan-500/25 uppercase">{pr.tag}</span>
+                <span className="shrink-0 text-[9px] font-bold px-2 py-0.5 rounded-full bg-cyan-500/15 text-[var(--text-muted)] border border-cyan-500/25 uppercase">{pr.tag}</span>
               </div>
               <p className="text-xs text-white/55 mt-2 leading-relaxed">{pr.desc}</p>
             </div>
-            <Link href="/lab" className="flex items-center justify-end gap-1 pt-2 border-t border-white/[0.08] text-xs font-bold text-cyan-400 hover:text-cyan-300 transition">
+            <Link href="/lab" className="flex items-center justify-end gap-1 pt-2 border-t border-white/[0.08] text-xs font-bold text-[var(--accent)] hover:text-[var(--text-muted)] transition">
               Open Practical Guide <ArrowRight className="h-3 w-3" />
             </Link>
           </div>

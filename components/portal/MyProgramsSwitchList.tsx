@@ -50,8 +50,8 @@ export default function MyProgramsSwitchList({ programs }: { programs: MyProgram
       {programs.map((p) => (
         <div
           key={p.key}
-          className={`flex flex-wrap items-center justify-between gap-3 rounded-2xl border p-4 ${
-            p.isActive ? "border-cyan-400/30 bg-cyan-500/[0.06]" : "border-white/[0.08] bg-[#111827]"
+          className={`flex flex-wrap items-center justify-between gap-3 rounded-lg border p-4 ${
+            p.isActive ? "border-[var(--accent)]/30 bg-[var(--accent)]/[0.06]" : "border-white/[0.08] bg-[var(--surface)]"
           }`}
         >
           <div className="min-w-0">
@@ -61,7 +61,7 @@ export default function MyProgramsSwitchList({ programs }: { programs: MyProgram
                 {p.category}
               </span>
               {p.isActive && (
-                <span className="inline-flex shrink-0 items-center gap-1 rounded-full border border-cyan-400/30 bg-cyan-500/10 px-2 py-0.5 text-[10px] font-bold text-cyan-300">
+                <span className="inline-flex shrink-0 items-center gap-1 rounded-full border border-[var(--accent)]/30 bg-[var(--accent)]/10 px-2 py-0.5 text-[10px] font-bold text-[var(--accent)]">
                   <Check className="h-2.5 w-2.5" /> Active
                 </span>
               )}
@@ -74,14 +74,14 @@ export default function MyProgramsSwitchList({ programs }: { programs: MyProgram
                 type="button"
                 disabled={busyKey !== null}
                 onClick={() => makeActive(p.key)}
-                className="rounded-xl border border-cyan-400/30 bg-cyan-500/10 px-3.5 py-2 text-xs font-bold text-cyan-300 transition hover:bg-cyan-500/15 disabled:opacity-50"
+                className="rounded-lg border border-[var(--accent)]/30 bg-[var(--accent)]/10 px-3.5 py-2 text-xs font-bold text-[var(--accent)] transition hover:bg-[var(--accent)]/15 disabled:opacity-50"
               >
                 {busyKey === p.key ? "Switching…" : "Make active"}
               </button>
             )}
             <Link
               href={p.href}
-              className="inline-flex items-center gap-1.5 rounded-xl border border-white/[0.1] bg-white/[0.04] px-3.5 py-2 text-xs font-bold text-white/75 transition hover:bg-white/[0.08]"
+              className="inline-flex items-center gap-1.5 rounded-lg border border-white/[0.1] bg-white/[0.04] px-3.5 py-2 text-xs font-bold text-white/75 transition hover:bg-white/[0.08]"
             >
               Open <ArrowRight className="h-3.5 w-3.5" />
             </Link>

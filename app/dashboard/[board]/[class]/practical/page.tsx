@@ -23,14 +23,14 @@ export async function generateMetadata({ params }: { params: Promise<{ board: st
 
 function ExperimentCard({ e }: { e: Experiment }) {
   return (
-    <details className="group rounded-2xl border border-white/[0.08] bg-white/[0.02] p-4 open:border-cyan-400/30">
+    <details className="group rounded-lg border border-white/[0.08] bg-white/[0.02] p-4 open:border-[var(--accent)]/30">
       <summary className="flex cursor-pointer items-center justify-between gap-3 list-none">
         <div className="min-w-0">
-          <div className="text-[10px] font-bold uppercase tracking-wide text-cyan-300/70">{e.category}</div>
+          <div className="text-[10px] font-bold uppercase tracking-wide text-[var(--accent)]/70">{e.category}</div>
           <div className="font-black text-white/90">{e.title}</div>
           <div className="mt-0.5 truncate text-xs text-white/45">{e.aim}</div>
         </div>
-        <span className="shrink-0 text-cyan-400 transition group-open:rotate-90">›</span>
+        <span className="shrink-0 text-[var(--accent)] transition group-open:rotate-90">›</span>
       </summary>
 
       <div className="mt-4 space-y-4 border-t border-white/[0.06] pt-4 text-sm">

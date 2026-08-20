@@ -48,10 +48,10 @@ export default function SubscriptionDashboardClient({ user, subscription, entitl
   if (!user) {
     return (
       <div className="flex flex-col items-center justify-center min-h-[50vh] text-center p-6">
-        <Lock className="h-12 w-12 text-cyan-400 mb-4" />
+        <Lock className="h-12 w-12 text-[var(--accent)] mb-4" />
         <h2 className="text-xl font-black">Authentication Required</h2>
         <p className="text-white/60 text-sm mt-2 max-w-sm">Please sign in to view and manage your subscriptions.</p>
-        <a href="/auth/signin?next=/dashboard/subscription" className="mt-4 px-6 py-2.5 rounded-xl bg-cyan-500 text-black font-bold hover:opacity-90 transition">
+        <a href="/auth/signin?next=/dashboard/subscription" className="mt-4 px-6 py-2.5 rounded-lg bg-[var(--accent)] text-[var(--background)] font-bold hover:opacity-90 transition">
           Sign In
         </a>
       </div>
@@ -185,20 +185,20 @@ export default function SubscriptionDashboardClient({ user, subscription, entitl
             // Owner/admin: no checkout — open the same experience a subscriber gets.
             <Link
               href={programKeyToHref(p.key)}
-              className="inline-block px-4 py-1.5 rounded-lg text-xs font-extrabold bg-cyan-500 hover:bg-cyan-400 text-black transition"
+              className="inline-block px-4 py-1.5 rounded-lg text-xs font-extrabold bg-[var(--accent)] hover:opacity-90 text-[var(--background)] transition"
             >
               Preview →
             </Link>
           ) : (
             <>
-              <div className="font-black text-cyan-400 text-sm">₹{p.price}</div>
+              <div className="font-black text-[var(--accent)] text-sm">₹{p.price}</div>
               <button
                 disabled={active}
                 onClick={() => initiatePurchase(p.key, p.name, p.price * 100, true)}
                 className={`mt-1.5 px-4 py-1.5 rounded-lg font-extrabold text-xs transition ${
                   active
                     ? "bg-white/10 text-white/40 cursor-not-allowed"
-                    : "bg-cyan-500 hover:bg-cyan-400 text-black"
+                    : "bg-[var(--accent)] hover:opacity-90 text-[var(--background)]"
                 }`}
               >
                 {active ? "Owned" : "Add Plan"}
@@ -221,7 +221,7 @@ export default function SubscriptionDashboardClient({ user, subscription, entitl
           {expiringItems.map(item => (
             <div 
               key={item.id} 
-              className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 p-5 rounded-2xl border border-amber-500/30 bg-amber-500/5 backdrop-blur-sm"
+              className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 p-5 rounded-lg border border-amber-500/30 bg-amber-500/5 backdrop-blur-sm"
             >
               <div className="flex gap-3">
                 <AlertTriangle className="h-5 w-5 text-amber-400 flex-shrink-0 mt-0.5" />
@@ -246,16 +246,16 @@ export default function SubscriptionDashboardClient({ user, subscription, entitl
       )}
 
       {/* Hero Header */}
-      <div className="mb-8 flex flex-col items-start justify-between gap-4 rounded-3xl border border-cyan-400/15 bg-[linear-gradient(112deg,rgba(34,211,238,0.1),transparent_48%,rgba(139,92,246,0.12)),rgba(17,24,39,0.78)] p-6 shadow-[0_26px_65px_-48px_rgba(34,211,238,0.72)] md:flex-row md:items-center">
+      <div className="mb-8 flex flex-col items-start justify-between gap-4 rounded-lg border border-[var(--border)] bg-[var(--surface)] p-6  md:flex-row md:items-center">
         <div>
-          <p className="mb-2 text-[10px] font-black uppercase tracking-[0.34em] text-cyan-300">Access and entitlements</p>
-          <h1 className="font-serif text-3xl font-black tracking-tight">Subscription Management</h1>
+          <p className="mb-2 text-[10px] font-black uppercase tracking-[0.34em] text-[var(--accent)]">Access and entitlements</p>
+          <h1 className="font-display text-3xl font-black tracking-tight">Subscription Management</h1>
           <p className="text-white/50 text-sm mt-1">View active entitlements, renew plans, or upgrade to new programs.</p>
         </div>
         {isStaff && (
           <Link
             href="/dashboard/subscription/admin"
-            className="px-4 py-2 rounded-xl border border-cyan-400/30 bg-cyan-500/10 text-cyan-300 font-bold text-xs hover:bg-cyan-500/20 transition flex items-center gap-1.5"
+            className="px-4 py-2 rounded-lg border border-[var(--accent)]/30 bg-[var(--accent)]/10 text-[var(--accent)] font-bold text-xs hover:bg-[var(--accent)]/15 transition flex items-center gap-1.5"
           >
             <Sparkles className="h-3.5 w-3.5" /> Admin Analytics
           </Link>
@@ -265,11 +265,11 @@ export default function SubscriptionDashboardClient({ user, subscription, entitl
       {/* My Plans Area */}
       <section className="mb-10">
         <h2 className="text-lg font-black mb-4 flex items-center gap-2">
-          <CreditCard className="h-5 w-5 text-cyan-400" /> My Active Plans
+          <CreditCard className="h-5 w-5 text-[var(--accent)]" /> My Active Plans
         </h2>
 
         {!allAccess && activeEntitlements.length === 0 ? (
-          <div className="p-8 rounded-3xl border border-violet-400/20 bg-[linear-gradient(135deg,rgba(139,92,246,0.1),transparent_45%),#111827] text-center max-w-lg mx-auto shadow-[0_22px_55px_-42px_rgba(139,92,246,0.72)]">
+          <div className="p-8 rounded-lg border border-[var(--border)] bg-[var(--surface)] text-center max-w-lg mx-auto">
             <Lock className="h-10 w-10 text-white/30 mx-auto mb-3" />
             <h3 className="font-bold">No Active Subscriptions</h3>
             <p className="text-white/50 text-xs mt-1 leading-relaxed">
@@ -280,17 +280,17 @@ export default function SubscriptionDashboardClient({ user, subscription, entitl
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {/* Owner / Admin all-access card (role-based, no subscription needed) */}
             {isOwner && !isPro && (
-              <div className="relative overflow-hidden rounded-2xl border border-cyan-500/30 bg-gradient-to-br from-cyan-950/20 to-sky-950/20 p-5 shadow-lg">
-                <div className="absolute top-0 right-0 bg-cyan-500 text-black text-[9px] font-black px-3 py-1 rounded-bl-xl uppercase tracking-wider">
+              <div className="relative overflow-hidden rounded-lg border border-[var(--accent)]/20 bg-[var(--surface-2)] p-5 shadow-lg">
+                <div className="absolute top-0 right-0 bg-[var(--accent)] text-[var(--background)] text-[9px] font-black px-3 py-1 rounded-bl-xl uppercase tracking-wider">
                   All-Access
                 </div>
-                <h3 className="font-black text-cyan-300 text-lg uppercase tracking-wide">
+                <h3 className="font-black text-[var(--accent)] text-lg uppercase tracking-wide">
                   Owner Access
                 </h3>
                 <div className="mt-3 space-y-2 text-xs text-white/70">
                   <div className="flex justify-between">
                     <span>Access</span>
-                    <span className="font-bold text-cyan-300">All programs &amp; tools</span>
+                    <span className="font-bold text-[var(--accent)]">All programs &amp; tools</span>
                   </div>
                   <div className="flex justify-between">
                     <span>Expires on</span>
@@ -308,17 +308,17 @@ export default function SubscriptionDashboardClient({ user, subscription, entitl
 
             {/* Pro Subscription Card */}
             {isPro && (
-              <div className="relative overflow-hidden rounded-2xl border border-cyan-500/30 bg-gradient-to-br from-cyan-950/20 to-sky-950/20 p-5 shadow-lg">
-                <div className="absolute top-0 right-0 bg-cyan-500 text-black text-[9px] font-black px-3 py-1 rounded-bl-xl uppercase tracking-wider">
+              <div className="relative overflow-hidden rounded-lg border border-[var(--accent)]/20 bg-[var(--surface-2)] p-5 shadow-lg">
+                <div className="absolute top-0 right-0 bg-[var(--accent)] text-[var(--background)] text-[9px] font-black px-3 py-1 rounded-bl-xl uppercase tracking-wider">
                   All-Access
                 </div>
-                <h3 className="font-black text-cyan-300 text-lg uppercase tracking-wide">
+                <h3 className="font-black text-[var(--accent)] text-lg uppercase tracking-wide">
                   {planLabel}
                 </h3>
                 <div className="mt-3 space-y-2 text-xs text-white/70">
                   <div className="flex justify-between">
                     <span>Days remaining</span>
-                    <span className="font-bold text-cyan-300">{isFounder ? "Lifetime" : `${proDaysRemaining} days`}</span>
+                    <span className="font-bold text-[var(--accent)]">{isFounder ? "Lifetime" : `${proDaysRemaining} days`}</span>
                   </div>
                   <div className="flex justify-between">
                     <span>Expires on</span>
@@ -339,7 +339,7 @@ export default function SubscriptionDashboardClient({ user, subscription, entitl
                       subscription!.plan === "pro_annual" ? PLANS.pro_annual.amount : PLANS.pro_monthly.amount,
                       false
                     )}
-                    className="w-full mt-4 py-2 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-black font-extrabold text-xs transition"
+                    className="w-full mt-4 py-2 rounded-lg bg-[var(--accent)] hover:opacity-90 text-[var(--background)] font-extrabold text-xs transition"
                   >
                     Extend Subscription
                   </button>
@@ -354,7 +354,7 @@ export default function SubscriptionDashboardClient({ user, subscription, entitl
               const isInfinite = days === Infinity;
 
               return (
-                <div key={ent.program_key} className="rounded-2xl border border-emerald-400/15 bg-[linear-gradient(145deg,rgba(16,185,129,0.08),transparent_45%),#111827] p-5 shadow-[0_22px_55px_-44px_rgba(16,185,129,0.7)]">
+                <div key={ent.program_key} className="rounded-lg border border-emerald-400/15 bg-[var(--surface)] p-5 ">
                   <h3 className="font-black text-white text-base leading-tight">
                     {progInfo?.name || ent.program_key.toUpperCase().replace(":", " ")}
                   </h3>
@@ -388,7 +388,7 @@ export default function SubscriptionDashboardClient({ user, subscription, entitl
                         PROGRAM_ACCESS_PRICE_PAISE_BY_KEY[ent.program_key] || 49900,
                         true
                       )}
-                      className="w-full mt-4 py-2 rounded-xl border border-white/10 hover:border-white/20 text-white font-extrabold text-xs transition bg-white/5"
+                      className="w-full mt-4 py-2 rounded-lg border border-white/10 hover:border-white/20 text-white font-extrabold text-xs transition bg-white/5"
                     >
                       Extend Access (1 Year)
                     </button>
@@ -403,23 +403,23 @@ export default function SubscriptionDashboardClient({ user, subscription, entitl
       {/* Upgrade Engine */}
       <section>
         <h2 className="text-lg font-black mb-4 flex items-center gap-2">
-          <Sparkles className="h-5 w-5 text-cyan-400" /> Upgrade & Add Programs
+          <Sparkles className="h-5 w-5 text-[var(--accent)]" /> Upgrade & Add Programs
         </h2>
 
         {isOwner ? (
-          <div className="p-5 rounded-2xl border border-cyan-400/30 bg-[linear-gradient(105deg,rgba(34,211,238,0.12),rgba(139,92,246,0.08)),rgba(34,211,238,0.04)] mb-6 text-sm text-cyan-200 leading-relaxed shadow-[0_20px_45px_-40px_rgba(34,211,238,0.8)]">
+          <div className="p-5 rounded-lg border border-[var(--accent)]/20 bg-[var(--surface-2)] mb-6 text-sm text-[var(--foreground)] leading-relaxed ">
             ✨ You have <strong>Owner all-access</strong>. Every program and tool is unlocked for you at the application layer — nothing to purchase. Programs below are shown for preview only.
           </div>
         ) : isPro && (
-          <div className="p-5 rounded-2xl border border-cyan-400/20 bg-cyan-500/5 mb-6 text-sm text-cyan-300 leading-relaxed">
+          <div className="p-5 rounded-lg border border-[var(--accent)]/20 bg-[var(--surface-2)] mb-6 text-sm text-[var(--accent)] leading-relaxed">
             ✨ You currently hold a **Pro All-Access** subscription. Every program (NEET, JEE, CBSE, ISC) is fully unlocked for you at the application layer. You do not need to buy individual programs unless you wish to pre-purchase them to extend access beyond your Pro expiration date.
           </div>
         )}
 
         <div className="grid gap-6 md:grid-cols-2">
           {/* Boards Section */}
-          <div className="rounded-2xl border border-cyan-400/20 bg-[linear-gradient(145deg,rgba(34,211,238,0.08),transparent_45%),#111827] p-6 shadow-[0_22px_55px_-44px_rgba(34,211,238,0.7)]">
-            <h3 className="font-black text-sm text-cyan-300/80 uppercase tracking-widest mb-4">School Board Programs</h3>
+          <div className="rounded-lg border border-[var(--border)] bg-[var(--surface)] p-6 ">
+            <h3 className="font-black text-sm text-[var(--accent)]/80 uppercase tracking-widest mb-4">School Board Programs</h3>
             <div className="space-y-4">
               {PROGRAMS_LIST.filter(p => p.category === "Boards").map(p =>
                 renderProgramRow(p, "Annual plan · access to notes, tests, evaluations")
@@ -428,8 +428,8 @@ export default function SubscriptionDashboardClient({ user, subscription, entitl
           </div>
 
           {/* Entrance Exams Section */}
-          <div className="rounded-2xl border border-violet-400/20 bg-[linear-gradient(145deg,rgba(139,92,246,0.1),transparent_45%),#111827] p-6 shadow-[0_22px_55px_-44px_rgba(139,92,246,0.72)]">
-            <h3 className="font-black text-sm text-violet-300/80 uppercase tracking-widest mb-4">Entrance Prep Programs</h3>
+          <div className="rounded-lg border border-[var(--border)] bg-[var(--surface)] p-6 ">
+            <h3 className="font-black text-sm text-[var(--text-muted)] uppercase tracking-widest mb-4">Entrance Prep Programs</h3>
             <div className="space-y-4">
               {PROGRAMS_LIST.filter(p => p.category === "Entrance").map(p =>
                 renderProgramRow(p, "Annual plan · full entrance syllabus access")
@@ -442,20 +442,20 @@ export default function SubscriptionDashboardClient({ user, subscription, entitl
       {/* Confirmation Modal */}
       {confirmOpen && selectedPlan && (
         <div className="fixed inset-0 z-[110] flex items-center justify-center p-6 bg-black/80 backdrop-blur-sm">
-          <div className="relative max-w-md w-full rounded-3xl bg-[#111827] border border-white/[0.08] p-7 shadow-2xl">
+          <div className="relative max-w-md w-full rounded-lg bg-[var(--surface)] border border-white/[0.08] p-7 shadow-2xl">
             <div className="mb-5">
               <h3 className="text-xl font-black">Confirm Purchase</h3>
               <p className="text-white/60 text-xs mt-1">Review the details before proceeding to payment.</p>
             </div>
 
-            <div className="bg-white/[0.03] border border-white/[0.06] rounded-2xl p-4 mb-6">
+            <div className="bg-white/[0.03] border border-white/[0.06] rounded-lg p-4 mb-6">
               <div className="flex justify-between items-center">
                 <span className="text-xs text-white/60 font-semibold">Selected Program</span>
                 <span className="text-xs text-white font-extrabold text-right max-w-[200px] truncate">{selectedPlan.name}</span>
               </div>
               <div className="flex justify-between items-center mt-3">
                 <span className="text-xs text-white/60 font-semibold">Validity</span>
-                <span className="text-xs text-cyan-400 font-extrabold">365 Days (1 Year)</span>
+                <span className="text-xs text-[var(--accent)] font-extrabold">365 Days (1 Year)</span>
               </div>
               <div className="flex justify-between items-center mt-3 pt-3 border-t border-white/[0.06]">
                 <span className="text-sm text-white/80 font-black">Total Price</span>
@@ -464,7 +464,7 @@ export default function SubscriptionDashboardClient({ user, subscription, entitl
             </div>
 
             {/* Term warnings */}
-            <div className="mb-5 bg-white/[0.02] border border-white/5 rounded-xl p-3 text-[10px] text-white/60 leading-relaxed space-y-1">
+            <div className="mb-5 bg-white/[0.02] border border-white/5 rounded-lg p-3 text-[10px] text-white/60 leading-relaxed space-y-1">
               <p className="font-extrabold text-amber-400">Subscription Terms</p>
               <p>
                 This is an annual program subscription. Access remains active for 365 days from activation. 
@@ -476,7 +476,7 @@ export default function SubscriptionDashboardClient({ user, subscription, entitl
             </div>
 
             {/* Irreversible purchase warning */}
-            <div className="flex gap-3 p-3.5 rounded-xl border border-red-500/20 bg-red-500/5 mb-5">
+            <div className="flex gap-3 p-3.5 rounded-lg border border-red-500/20 bg-red-500/5 mb-5">
               <ShieldAlert className="h-5 w-5 text-red-400 flex-shrink-0" />
               <div>
                 <h5 className="text-[10px] font-black text-red-400 uppercase tracking-wide">Irreversible Purchase Warning</h5>
@@ -492,7 +492,7 @@ export default function SubscriptionDashboardClient({ user, subscription, entitl
                 type="checkbox"
                 checked={consentChecked}
                 onChange={(e) => setConsentChecked(e.target.checked)}
-                className="mt-0.5 rounded border-white/10 bg-black/50 text-cyan-500 focus:ring-0 focus:ring-offset-0 h-3.5 w-3.5"
+                className="mt-0.5 rounded border-white/10 bg-black/50 text-[var(--accent)] focus:ring-0 focus:ring-offset-0 h-3.5 w-3.5"
               />
               <span className="text-[10px] text-white/70 leading-normal">
                 I understand this annual program subscription will be added to my account after payment. 
@@ -503,14 +503,14 @@ export default function SubscriptionDashboardClient({ user, subscription, entitl
             <div className="flex gap-3">
               <button 
                 onClick={() => setConfirmOpen(false)}
-                className="flex-1 py-3 rounded-xl border border-white/10 hover:border-white/20 text-white font-bold text-xs transition"
+                className="flex-1 py-3 rounded-lg border border-white/10 hover:border-white/20 text-white font-bold text-xs transition"
               >
                 Cancel
               </button>
               <button 
                 onClick={handleConfirm}
                 disabled={!consentChecked}
-                className="flex-1 py-3 rounded-xl bg-gradient-to-r from-cyan-400 to-sky-500 text-black font-black text-xs transition hover:brightness-110 flex items-center justify-center gap-1.5 shadow-lg shadow-cyan-500/25 disabled:opacity-50 disabled:cursor-not-allowed"
+                className="flex-1 py-3 rounded-lg bg-[var(--accent)] text-[var(--background)] font-black text-xs transition hover:brightness-110 flex items-center justify-center gap-1.5  disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 Proceed to Pay <ArrowRight className="h-4 w-4" />
               </button>

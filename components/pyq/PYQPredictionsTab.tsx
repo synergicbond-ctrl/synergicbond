@@ -45,7 +45,7 @@ function PredictionCard({ pred }: { pred: Prediction }) {
       {pred.concepts.length > 0 && (
         <div className="flex flex-wrap gap-1">
           {pred.concepts.map((c) => (
-            <span key={c} className="text-[10px] bg-cyan-900/30 text-cyan-300 px-1.5 py-0.5 rounded">
+            <span key={c} className="text-[10px] bg-cyan-900/30 text-[var(--text-muted)] px-1.5 py-0.5 rounded">
               {c}
             </span>
           ))}
@@ -78,7 +78,7 @@ export default function PYQPredictionsTab() {
             key={e}
             onClick={() => setExam(e)}
             className={`border rounded-lg p-4 text-left transition ${
-              exam === e ? "border-cyan-500 bg-cyan-950/20" : "border-white/10 hover:border-white/20"
+              exam === e ? "border-[var(--accent)] bg-[var(--surface-2)]" : "border-white/10 hover:border-white/20"
             }`}
           >
             <div className="font-semibold">{e}</div>
@@ -125,7 +125,7 @@ export default function PYQPredictionsTab() {
           <h3 className="text-sm font-bold text-white/80">🔥 Trending Topics ({trendingPreds.length})</h3>
           <div className="flex flex-wrap gap-1.5">
             {trendingPreds.slice(0, 10).map((p) => (
-              <span key={`${p.chapter}-${p.subtopic}`} className="text-[11px] bg-cyan-900/30 text-cyan-300 px-2 py-1 rounded">
+              <span key={`${p.chapter}-${p.subtopic}`} className="text-[11px] bg-cyan-900/30 text-[var(--text-muted)] px-2 py-1 rounded">
                 {p.subtopic}
               </span>
             ))}

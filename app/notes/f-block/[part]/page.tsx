@@ -35,7 +35,7 @@ export default async function FBlockPartPage({ params }: { params: Promise<{ par
       />
 
       <article className="mx-auto max-w-6xl space-y-6 text-white">
-        <header className="overflow-hidden rounded-2xl border border-fuchsia-300/20 border-l-4 border-l-fuchsia-300 bg-[radial-gradient(circle_at_top_right,rgba(217,70,239,.17),transparent_38%),#0a1220] px-5 py-5 sm:px-7">
+        <header className="overflow-hidden rounded-lg border border-fuchsia-300/20 border-l-4 border-l-fuchsia-300 bg-[radial-gradient(circle_at_top_right,rgba(217,70,239,.17),transparent_38%),#0a1220] px-5 py-5 sm:px-7">
           <p className="text-[11.5px] font-black uppercase tracking-[.14em] text-fuchsia-300">
             F-block Elements · Part {part.number} · {part.printPages}
           </p>
@@ -45,7 +45,7 @@ export default async function FBlockPartPage({ params }: { params: Promise<{ par
 
         <FBlockVisual part={part.number} />
 
-        <div className="space-y-5 rounded-3xl border border-fuchsia-300/15 bg-[#0a1220]/80 px-5 py-8 sm:px-8 lg:px-10">
+        <div className="space-y-5 rounded-lg border border-fuchsia-300/15 bg-[#0a1220]/80 px-5 py-8 sm:px-8 lg:px-10">
           <FBlockMarkdown markdown={part.markdown} />
         </div>
 

@@ -12,15 +12,15 @@ import { MISTAKE_CATEGORIES, type MistakeItem, type MistakeCategory, type WeakCo
 type Filter = "all" | MistakeCategory;
 
 const CATEGORY_TONE: Record<MistakeCategory, string> = {
-  Concept: "border-cyan-500/40 bg-cyan-500/10 text-cyan-300",
+  Concept: "border-cyan-500/40 bg-cyan-500/10 text-[var(--accent)]",
   Calculation: "border-amber-500/40 bg-amber-500/10 text-amber-300",
-  Memory: "border-violet-500/40 bg-violet-500/10 text-violet-300",
+  Memory: "border-violet-500/40 bg-violet-500/10 text-[var(--accent)]",
 };
 
 function MistakeRow({ item }: { item: MistakeItem }) {
   const [reattempting, setReattempting] = useState(false);
   return (
-    <div className="rounded-2xl border border-white/[0.08] bg-[#111827] p-4">
+    <div className="rounded-lg border border-white/[0.08] bg-[var(--surface)] p-4">
       <div className="mb-2 flex flex-wrap items-center gap-2 text-[11px]">
         <span className={`rounded-full border px-2 py-0.5 font-bold ${CATEGORY_TONE[item.category]}`}>{item.category}</span>
         <span className="rounded bg-white/5 px-2 py-0.5 text-white/60">{item.chapter}</span>
@@ -45,7 +45,7 @@ function MistakeRow({ item }: { item: MistakeItem }) {
           </div>
           <button
             onClick={() => setReattempting(true)}
-            className="mt-3 rounded-lg border border-cyan-400/40 bg-cyan-500/10 px-3 py-1.5 text-xs font-bold text-cyan-300 transition hover:bg-cyan-500/20"
+            className="mt-3 rounded-lg border border-cyan-400/40 bg-cyan-500/10 px-3 py-1.5 text-xs font-bold text-[var(--accent)] transition hover:bg-cyan-500/20"
           >
             Reattempt →
           </button>
@@ -80,7 +80,7 @@ export default function MistakeJournalClient({
           <p className="mb-3 text-sm text-zinc-500">Subtopics where your mistakes cluster — start here.</p>
           <div className="flex flex-wrap gap-2">
             {weakConcepts.map((w) => (
-              <span key={`${w.chapter}-${w.topic}`} className="rounded-xl border border-white/[0.1] bg-white/[0.03] px-3 py-1.5 text-sm">
+              <span key={`${w.chapter}-${w.topic}`} className="rounded-lg border border-white/[0.1] bg-white/[0.03] px-3 py-1.5 text-sm">
                 <span className="font-semibold text-white">{w.topic}</span>
                 <span className="ml-2 text-xs text-rose-300">{w.wrong} wrong</span>
               </span>
@@ -107,7 +107,7 @@ export default function MistakeJournalClient({
         </div>
 
         {shown.length === 0 ? (
-          <p className="rounded-2xl border border-dashed border-white/12 bg-white/[0.02] p-8 text-center text-sm text-white/55">
+          <p className="rounded-lg border border-dashed border-white/12 bg-white/[0.02] p-8 text-center text-sm text-white/55">
             No mistakes in this category. 🎉
           </p>
         ) : (

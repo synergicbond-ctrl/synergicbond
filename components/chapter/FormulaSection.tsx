@@ -18,13 +18,13 @@ export default function FormulaSection({
           Formula Sheet
         </h2>
 
-        <p className="text-gray-400">
+        <p className="text-[var(--text-muted)]">
           Important formulas for quick revision.
         </p>
       </div>
 
       {formulas.length === 0 ? (
-        <div className="rounded-xl border border-dashed border-gray-700 p-6 text-gray-500">
+        <div className="rounded-lg border border-dashed border-[var(--border)] p-6 text-[var(--text-muted)]">
           No formulas available for this chapter.
         </div>
       ) : (
@@ -32,18 +32,18 @@ export default function FormulaSection({
           {formulas.map((formula) => (
             <div
               key={formula.name}
-              className="rounded-xl border border-gray-800 bg-gray-900 p-5"
+              className="rounded-lg border border-[var(--border)] bg-[var(--surface)] p-5"
             >
               <h3 className="text-lg font-semibold">
                 {formula.name}
               </h3>
 
-              <div className="mt-2 rounded-lg bg-black p-3 font-mono text-cyan-400">
+              <div className="mt-2 rounded-lg bg-[var(--surface-2)] p-3 font-mono text-[var(--foreground)]">
                 {formula.equation}
               </div>
 
               {formula.description && (
-                <p className="mt-3 text-sm text-gray-400">
+                <p className="mt-3 text-sm text-[var(--text-muted)]">
                   {formula.description}
                 </p>
               )}

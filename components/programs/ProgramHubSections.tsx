@@ -66,7 +66,7 @@ function Card({ card, accentText, accentCard }: { card: HubCard; accentText: str
     </>
   );
 
-  const cls = `flex min-h-[9.5rem] flex-col rounded-2xl border bg-white/[0.02] p-4 ${
+  const cls = `flex min-h-[9.5rem] flex-col rounded-lg border bg-white/[0.02] p-4 ${
     isLink ? `group transition hover:-translate-y-0.5 hover:bg-white/[0.04] ${accentCard}` : "border-white/[0.06] opacity-80"
   }`;
 

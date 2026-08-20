@@ -68,7 +68,7 @@ function Badge({ tone, children }: { tone: "live" | "builtin" | "soon"; children
     tone === "live"
       ? "border-emerald-400/30 bg-emerald-500/10 text-emerald-300"
       : tone === "builtin"
-      ? "border-cyan-400/30 bg-cyan-500/10 text-cyan-300"
+      ? "border-cyan-400/30 bg-cyan-500/10 text-[var(--text-muted)]"
       : "border-white/15 bg-white/[0.06] text-white/55";
   return (
     <span className={`rounded-full border px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide ${cls}`}>
@@ -104,22 +104,22 @@ function ToolCard({
   const body = (
     <>
       <div className="flex items-start justify-between gap-3">
-        <span className="flex h-11 w-11 items-center justify-center rounded-2xl border border-white/10 bg-black/25 text-2xl shadow-inner shadow-black/30">{icon}</span>
+        <span className="flex h-11 w-11 items-center justify-center rounded-lg border border-white/10 bg-black/25 text-2xl shadow-inner shadow-black/30">{icon}</span>
         <Badge tone={badge}>{badge === "live" ? "Live" : badge === "builtin" ? "Built-in" : "Coming soon"}</Badge>
       </div>
-      <h3 className="mt-4 font-serif text-lg font-black text-white">{title}</h3>
+      <h3 className="mt-4 font-display text-lg font-black text-white">{title}</h3>
       <p className="mt-1 text-xs leading-relaxed text-white/50">{desc}</p>
     </>
   );
   const cls =
-    `group relative block w-full overflow-hidden rounded-2xl border bg-[linear-gradient(145deg,rgba(255,255,255,0.04),transparent_45%),#111827] p-4 text-left shadow-[0_22px_55px_-42px_rgba(0,0,0,0.95)] transition duration-300 hover:-translate-y-1 hover:bg-[#151d2e] ${toneClasses}`;
+    `group relative block w-full overflow-hidden rounded-lg border bg-[linear-gradient(145deg,rgba(255,255,255,0.04),transparent_45%),#111827] p-4 text-left shadow-[0_22px_55px_-42px_rgba(0,0,0,0.95)] transition duration-300 hover:-translate-y-1 hover:bg-[#151d2e] ${toneClasses}`;
   if (href) {
     return <Link href={href} className={cls}>{body}</Link>;
   }
   if (onOpen) {
     return <button onClick={onOpen} className={cls}>{body}</button>;
   }
-  return <div className={`${cls} cursor-default opacity-70 hover:border-white/[0.08] hover:bg-[#111827]`}>{body}</div>;
+  return <div className={`${cls} cursor-default opacity-70 hover:border-white/[0.08] hover:bg-[var(--surface)]`}>{body}</div>;
 }
 
 // ── Study Planner (deterministic, chapter data only) ──────────────────────────
@@ -134,7 +134,7 @@ function StudyPlanner() {
       <p className="text-xs text-white/50">
         Built from the master-syllabus chapter data only (difficulty & estimated hours) —
         foundation chapters first. Deterministic, no AI call. The AI-powered planner lives at{" "}
-        <Link href="/study-plan" className="font-semibold text-cyan-300 hover:text-cyan-200">/study-plan</Link>.
+        <Link href="/study-plan" className="font-semibold text-[var(--text-muted)] hover:text-cyan-200">/study-plan</Link>.
       </p>
       <div className="flex flex-wrap gap-2">
         {PLANNER_EXAMS.map((e) => {
@@ -177,7 +177,7 @@ function StudyPlanner() {
         <div className="space-y-3">
           {plan.map((w) => (
             <div key={w.week} className="rounded-xl border border-white/[0.08] bg-white/[0.03] p-3">
-              <p className="mb-2 text-xs font-bold uppercase tracking-wider text-cyan-300">
+              <p className="mb-2 text-xs font-bold uppercase tracking-wider text-[var(--text-muted)]">
                 Week {w.week} · ~{w.hours}h
               </p>
               <ul className="space-y-1.5">
@@ -240,13 +240,13 @@ function RevisionGenerator({ chapters }: { chapters: RevisionChapter[] }) {
       {chapter && (
         <div className="space-y-3">
           <div className="rounded-xl border border-white/[0.08] bg-white/[0.03] p-3">
-            <p className="mb-2 text-xs font-bold uppercase tracking-wider text-cyan-300">
+            <p className="mb-2 text-xs font-bold uppercase tracking-wider text-[var(--text-muted)]">
               🔁 {chapter.title} — rapid revision
             </p>
             <ul className="space-y-1.5">
               {chapter.revisionNotes.map((point, i) => (
                 <li key={i} className="flex gap-2 text-sm text-white/80">
-                  <span className="shrink-0 text-cyan-400">•</span>
+                  <span className="shrink-0 text-[var(--accent)]">•</span>
                   <span>{point}</span>
                 </li>
               ))}
@@ -258,7 +258,7 @@ function RevisionGenerator({ chapters }: { chapters: RevisionChapter[] }) {
                 <Link
                   key={`${n.kind}-${n.refId}`}
                   href={n.href}
-                  className="rounded-lg border border-white/10 bg-white/[0.04] px-2.5 py-1 text-[11px] text-white/70 transition hover:border-cyan-400/40 hover:text-cyan-300"
+                  className="rounded-lg border border-white/10 bg-white/[0.04] px-2.5 py-1 text-[11px] text-white/70 transition hover:border-cyan-400/40 hover:text-[var(--text-muted)]"
                 >
                   {n.label}{typeof n.count === "number" ? ` (${n.count})` : ""}
                 </Link>
@@ -280,10 +280,10 @@ export default function AILabHub({ revisionChapters }: { revisionChapters: Revis
 
   return (
     <div className="space-y-6">
-      <div className="relative overflow-hidden rounded-3xl border border-cyan-400/20 bg-[radial-gradient(circle_at_78%_15%,rgba(139,92,246,0.2),transparent_25%),linear-gradient(115deg,rgba(34,211,238,0.12),transparent_50%),#0f1728] p-6 shadow-[0_28px_70px_-48px_rgba(34,211,238,0.8)]">
+      <div className="relative overflow-hidden rounded-lg border border-cyan-400/20 bg-[radial-gradient(circle_at_78%_15%,rgba(139,92,246,0.2),transparent_25%),linear-gradient(115deg,rgba(34,211,238,0.12),transparent_50%),#0f1728] p-6 shadow-[0_28px_70px_-48px_rgba(34,211,238,0.8)]">
         <span aria-hidden="true" className="absolute -right-4 -bottom-10 text-[10rem] font-black leading-none text-cyan-200/[0.035]">AI</span>
-        <p className="relative mb-2 text-xs font-bold uppercase tracking-[0.4em] text-cyan-300">AI Lab</p>
-        <h1 className="relative font-serif text-3xl font-black md:text-4xl">Your Chemistry AI Toolset</h1>
+        <p className="relative mb-2 text-xs font-bold uppercase tracking-[0.4em] text-[var(--text-muted)]">AI Lab</p>
+        <h1 className="relative font-display text-3xl font-black md:text-4xl">Your Chemistry AI Toolset</h1>
         <p className="relative mt-2 max-w-3xl text-sm text-white/60">
           One place for every AI-assisted tool — Snap & Solve, the tutor and doubt solver are live;
           the planner and revision generator run on verified syllabus data.
@@ -300,13 +300,13 @@ export default function AILabHub({ revisionChapters }: { revisionChapters: Revis
       </div>
 
       {open === "planner" && (
-        <section className="rounded-2xl border border-cyan-500/15 bg-cyan-500/[0.04] p-4 md:p-5">
+        <section className="rounded-lg border border-cyan-500/15 bg-cyan-500/[0.04] p-4 md:p-5">
           <h2 className="mb-3 text-sm font-bold uppercase tracking-wider text-white/70">🗓️ Study Planner</h2>
           <StudyPlanner />
         </section>
       )}
       {open === "revision" && (
-        <section className="rounded-2xl border border-cyan-500/15 bg-cyan-500/[0.04] p-4 md:p-5">
+        <section className="rounded-lg border border-cyan-500/15 bg-cyan-500/[0.04] p-4 md:p-5">
           <h2 className="mb-3 text-sm font-bold uppercase tracking-wider text-white/70">🔁 Revision Generator</h2>
           <RevisionGenerator chapters={revisionChapters} />
         </section>

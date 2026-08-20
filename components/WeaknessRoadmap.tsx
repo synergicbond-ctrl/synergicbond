@@ -62,10 +62,10 @@ export default function WeaknessRoadmap() {
     : [];
 
   return (
-    <div className="rounded-3xl bg-[#111827] border border-white/[0.06] p-6 md:p-8">
+    <div className="rounded-lg bg-[var(--surface)] border border-white/[0.06] p-6 md:p-8">
       <div className="flex items-center gap-2 mb-5">
-        <div className="p-2 rounded-lg bg-cyan-500/10">
-          <Target className="h-4 w-4 text-cyan-400" />
+        <div className="p-2 rounded-lg bg-[var(--surface-2)]">
+          <Target className="h-4 w-4 text-[var(--accent)]" />
         </div>
         <div>
           <h3 className="text-sm font-bold text-white">Weakness Analytics</h3>
@@ -80,11 +80,11 @@ export default function WeaknessRoadmap() {
           onChange={(e) => setTopic(e.target.value)}
           onKeyDown={(e) => e.key === "Enter" && generate(topic)}
           placeholder="Enter your weak topic, e.g. Inorganic Qualitative Analysis"
-          className="flex-1 rounded-xl border border-white/[0.08] bg-black/40 px-4 py-2.5 text-sm text-white placeholder-white/30 outline-none focus:border-cyan-400/50"
+          className="flex-1 rounded-lg border border-[var(--border)] bg-[var(--surface-2)] px-4 py-2.5 text-sm text-white placeholder-white/30 outline-none focus:border-[var(--accent)]/50"
         />
         <button
           onClick={() => generate(topic)}
-          className="rounded-xl bg-gradient-to-r from-cyan-400 to-sky-500 px-5 py-2.5 text-sm font-bold text-black transition hover:-translate-y-0.5"
+          className="rounded-lg bg-[var(--accent)] px-5 py-2.5 text-sm font-bold text-black transition hover:-translate-y-0.5"
         >
           Build My Plan
         </button>
@@ -109,7 +109,7 @@ export default function WeaknessRoadmap() {
           {days.map((d) => {
             const Icon = d.icon;
             return (
-              <div key={d.day} className="rounded-2xl bg-black/30 border border-white/[0.06] p-4">
+              <div key={d.day} className="rounded-lg bg-[var(--background)]/30 border border-white/[0.06] p-4">
                 <div className="flex items-center gap-2 mb-3">
                   <div className="p-1.5 rounded-lg" style={{ background: `${d.accent}1a` }}>
                     <Icon className="h-4 w-4" style={{ color: d.accent }} />

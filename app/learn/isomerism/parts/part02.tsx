@@ -6,7 +6,7 @@ import { ISOMERISM_MOLECULES as M } from "../molecules";
 
 function Section({ title, children }: { title: string; children: ReactNode }) {
   return (
-    <div className="rounded-2xl border border-white/10 bg-white/[.035] p-5">
+    <div className="rounded-lg border border-white/10 bg-white/[.035] p-5">
       <h2 className="text-xl font-black text-cyan-200">{title}</h2>
       {children}
     </div>
@@ -37,7 +37,7 @@ export default function IsomerismPart02() {
     <main className="min-h-screen bg-[#08111f] px-4 py-8 text-white sm:px-6 sm:py-12">
       <article className="mx-auto max-w-6xl">
         <Link href="/learn/isomerism" className="rounded-full border border-cyan-300/30 bg-cyan-300/10 px-4 py-2 text-sm font-bold text-cyan-100">Isomerism</Link>
-        <header className="mt-6 rounded-3xl border border-cyan-300/15 bg-[radial-gradient(circle_at_top_right,_rgba(34,211,238,.18),_transparent_35%),linear-gradient(135deg,rgba(34,211,238,.08),rgba(2,6,23,.7),rgba(139,92,246,.1))] p-6 sm:p-9">
+        <header className="mt-6 rounded-lg border border-cyan-300/15 bg-[radial-gradient(circle_at_top_right,_rgba(34,211,238,.18),_transparent_35%),linear-gradient(135deg,rgba(34,211,238,.08),rgba(2,6,23,.7),rgba(139,92,246,.1))] p-6 sm:p-9">
           <p className="text-xs font-black uppercase tracking-[.24em] text-cyan-200">Isomerism source · pages 8–16 · Part 2</p>
           <h1 className="mt-3 text-3xl font-black sm:text-5xl">Metamerism, complete-isomer counting and tautomerism</h1>
         </header>

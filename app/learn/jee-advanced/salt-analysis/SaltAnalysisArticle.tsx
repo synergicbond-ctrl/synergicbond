@@ -173,7 +173,7 @@ function renderBlocks(markdown: string) {
       nodes.push(
         <div
           key={`equation-${blockIndex++}`}
-          className="my-5 rounded-2xl bg-gradient-to-r from-cyan-400/60 via-violet-400/50 to-amber-400/60 p-px shadow-lg shadow-cyan-950/20"
+          className="my-5 rounded-lg bg-gradient-to-r from-cyan-400/60 via-violet-400/50 to-amber-400/60 p-px shadow-lg shadow-cyan-950/20"
         >
           <div
             className="overflow-x-auto rounded-[15px] bg-[#050b14] px-4 py-3 text-center text-slate-50"
@@ -260,7 +260,7 @@ function renderBlocks(markdown: string) {
       nodes.push(
         <div
           key={`table-${blockIndex++}`}
-          className="my-6 rounded-2xl bg-gradient-to-r from-cyan-400/45 via-violet-400/40 to-amber-400/45 p-px shadow-xl shadow-black/20"
+          className="my-6 rounded-lg bg-gradient-to-r from-cyan-400/45 via-violet-400/40 to-amber-400/45 p-px shadow-xl shadow-black/20"
         >
           <div className="overflow-x-auto rounded-[15px] bg-[#050a12]">
             <table className="w-full border-collapse text-sm">

@@ -48,7 +48,7 @@ export default async function ProjectsPage({ params }: { params: Promise<{ board
             {PROJECT_TEMPLATE.map((t, i) => (
               <li key={t.section} className="rounded-xl border border-white/[0.08] bg-white/[0.02] p-3">
                 <div className="flex items-baseline gap-2">
-                  <span className="text-xs font-black text-cyan-300/70">{String(i + 1).padStart(2, "0")}</span>
+                  <span className="text-xs font-black text-[var(--accent)]/70">{String(i + 1).padStart(2, "0")}</span>
                   <span className="font-bold text-white/90">{t.section}</span>
                 </div>
                 <p className="mt-0.5 pl-6 text-xs text-white/50">{t.note}</p>
@@ -63,13 +63,13 @@ export default async function ProjectsPage({ params }: { params: Promise<{ board
           <p className="mb-4 text-sm text-white/50">{topics.length} standard investigatory projects. Tap to see aim, materials and method.</p>
           <div className="space-y-3">
             {topics.map((p) => (
-              <details key={p.id} className="group rounded-2xl border border-white/[0.08] bg-white/[0.02] p-4 open:border-cyan-400/30">
+              <details key={p.id} className="group rounded-lg border border-white/[0.08] bg-white/[0.02] p-4 open:border-[var(--accent)]/30">
                 <summary className="flex cursor-pointer items-center justify-between gap-3 list-none">
                   <div className="min-w-0">
-                    <div className="text-[10px] font-bold uppercase tracking-wide text-cyan-300/70">{p.category} · {p.level}</div>
+                    <div className="text-[10px] font-bold uppercase tracking-wide text-[var(--accent)]/70">{p.category} · {p.level}</div>
                     <div className="font-black text-white/90">{p.title}</div>
                   </div>
-                  <span className="shrink-0 text-cyan-400 transition group-open:rotate-90">›</span>
+                  <span className="shrink-0 text-[var(--accent)] transition group-open:rotate-90">›</span>
                 </summary>
                 <div className="mt-4 space-y-3 border-t border-white/[0.06] pt-4 text-sm">
                   <div><h4 className="mb-1 text-xs font-bold uppercase tracking-wider text-white/40">Aim</h4><p className="text-white/75">{p.aim}</p></div>

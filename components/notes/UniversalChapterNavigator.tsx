@@ -232,8 +232,7 @@ export default function UniversalChapterNavigator() {
           --sbn-nav-faint: #91a9bc;
           --sbn-nav-gold: #e8b84b;
           --sbn-nav-cyan: #5fd4ea;
-          --sbn-sf: -apple-system, BlinkMacSystemFont, "SF Pro Display",
-            "SF Pro Text", "Helvetica Neue", Arial, system-ui, sans-serif;
+          --sbn-sf: var(--font-sans), -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
         }
 
         .sbn-universal-chapter-active .sbnHeader,

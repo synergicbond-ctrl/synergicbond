@@ -28,7 +28,7 @@ function Frame({
   viewBox?: string;
 }) {
   return (
-    <figure className="my-6 overflow-hidden rounded-2xl border border-cyan-400/20 bg-slate-950/80 p-4">
+    <figure className="my-6 overflow-hidden rounded-lg border border-cyan-400/20 bg-slate-950/80 p-4">
       <svg
         viewBox={viewBox}
         role="img"

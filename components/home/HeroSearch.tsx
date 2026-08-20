@@ -58,9 +58,9 @@ export default function HeroSearch() {
 
       {/* Live metrics ticker */}
       <div className="flex items-center justify-center gap-2 mb-5 px-4 py-2 rounded-full bg-white/[0.03] border border-white/[0.06] w-fit mx-auto">
-        <Zap className="h-3.5 w-3.5 text-cyan-400 flex-shrink-0" />
+        <Zap className="h-3.5 w-3.5 text-[var(--accent)] flex-shrink-0" />
         <p className="text-[11px] font-semibold text-white/60">
-          <span className="text-cyan-400 font-bold">LIVE:</span>{" "}
+          <span className="text-[var(--accent)] font-bold">LIVE:</span>{" "}
           14,250+ Students Online
           <span className="mx-2 text-white/20">|</span>
           Next Mock Challenge in{" "}
@@ -73,14 +73,14 @@ export default function HeroSearch() {
       </div>
 
       {/* Search box */}
-      <div className="rounded-2xl border border-white/[0.08] bg-[#111827] p-6 shadow-[0_0_40px_rgba(34,211,238,0.05)]">
+      <div className="rounded-lg border border-white/[0.08] bg-[var(--surface)] p-6 shadow-[0_0_40px_rgba(34,211,238,0.05)]">
 
         <div className="mb-4 flex items-center gap-3">
-          <div className="rounded-xl bg-cyan-500/10 p-2.5">
-            <Search className="h-5 w-5 text-cyan-300" />
+          <div className="rounded-lg bg-[var(--surface-2)] p-2.5">
+            <Search className="h-5 w-5 text-[var(--accent)]" />
           </div>
           <div className="text-left">
-            <p className="text-[10px] font-bold uppercase tracking-[0.35em] text-cyan-300">
+            <p className="text-[10px] font-bold uppercase tracking-[0.35em] text-[var(--accent)]">
               AI Chemistry Engine
             </p>
             <h2 className="text-xl font-bold text-white">
@@ -99,14 +99,14 @@ export default function HeroSearch() {
               value={query}
               onChange={(e) => setQuery(e.target.value)}
               placeholder="Search Atomic Structure, Thermodynamics..."
-              className="w-full rounded-xl border border-white/[0.08] bg-black/40 px-5 py-3.5 pr-12 text-sm text-white placeholder-white/30 outline-none transition focus:border-cyan-400/50"
+              className="w-full rounded-lg border border-[var(--border)] bg-[var(--surface-2)] px-5 py-3.5 pr-12 text-sm text-white placeholder-white/30 outline-none transition focus:border-[var(--accent)]/50"
             />
             <button
               onClick={startVoice}
               title="Voice search"
               className={`absolute right-3 top-1/2 -translate-y-1/2 p-1.5 rounded-lg transition-all ${
                 listening
-                  ? "text-cyan-400 bg-cyan-400/10 shadow-[0_0_12px_rgba(34,211,238,0.5)] animate-pulse"
+                  ? "text-[var(--accent)] bg-[var(--surface-2)] animate-pulse"
                   : "text-white/30 hover:text-white/70"
               }`}
             >
@@ -114,7 +114,7 @@ export default function HeroSearch() {
             </button>
           </div>
 
-          <button className="rounded-xl bg-gradient-to-r from-cyan-400 to-sky-500 px-7 py-3.5 text-sm font-semibold text-black shadow-lg shadow-cyan-500/20 transition hover:-translate-y-0.5">
+          <button className="rounded-xl bg-[var(--accent)] px-7 py-3.5 text-sm font-semibold text-black shadow-lg shadow-cyan-500/20 transition hover:-translate-y-0.5">
             Ask AI →
           </button>
         </div>

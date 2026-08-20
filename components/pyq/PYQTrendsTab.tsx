@@ -81,9 +81,9 @@ export default function PYQTrendsTab() {
             {trending.map((t) => (
               <span
                 key={t.concept}
-                className="px-3 py-1.5 rounded-full text-xs font-semibold bg-cyan-900/30 text-cyan-300 border border-cyan-800/50"
+                className="px-3 py-1.5 rounded-full text-xs font-semibold bg-[var(--surface-2)] text-[var(--text-muted)] border border-[var(--border)]"
               >
-                {t.concept} <span className="text-cyan-500/70">· {t.chapter}</span>
+                {t.concept} <span className="text-[var(--text-muted)]">· {t.chapter}</span>
               </span>
             ))}
           </div>

@@ -132,32 +132,32 @@ export default function AssignmentPage() {
     : 0;
 
   return (
-    <main className="min-h-screen bg-black text-white p-6 max-w-5xl mx-auto">
+    <main className="min-h-screen bg-[var(--background)] text-[var(--foreground)] p-6 max-w-5xl mx-auto">
       <div className="mb-8">
         <h1 className="text-3xl font-bold tracking-tight mb-2">Assignment Generator</h1>
-        <p className="text-zinc-400">Auto-generate practice assignments with solutions for any topic and exam.</p>
+        <p className="text-[var(--text-muted)]">Auto-generate practice assignments with solutions for any topic and exam.</p>
       </div>
 
       {/* Config Panel */}
-      <div className="bg-zinc-900 border border-zinc-800 rounded-2xl p-6 mb-8">
+      <div className="bg-[var(--surface)] border border-[var(--border)] rounded-lg p-6 mb-8">
         <div className="grid gap-4 md:grid-cols-2">
           <div className="md:col-span-2">
-            <label className="block text-sm font-medium text-zinc-300 mb-2">Topic</label>
+            <label className="block text-sm font-medium text-[var(--foreground)] mb-2">Topic</label>
             <input
               type="text"
               value={topic}
               onChange={(e) => setTopic(e.target.value)}
               placeholder='e.g. "Electrochemistry", "SN1 vs SN2", "Chemical Equilibrium"'
-              className="w-full bg-black border border-zinc-700 rounded-xl px-4 py-3 text-white placeholder-zinc-600 focus:outline-none focus:border-cyan-500 transition"
+              className="w-full bg-[var(--surface-2)] border border-[var(--border)] rounded-lg px-4 py-3 text-[var(--foreground)] placeholder:text-[var(--text-faint)] focus:outline-none focus:border-[var(--accent)] transition"
             />
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-zinc-300 mb-2">Or Select Chapter</label>
+            <label className="block text-sm font-medium text-[var(--foreground)] mb-2">Or Select Chapter</label>
             <select
               value={chapterId}
               onChange={(e) => setChapterId(e.target.value)}
-              className="w-full bg-black border border-zinc-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-cyan-500 transition"
+              className="w-full bg-[var(--surface-2)] border border-[var(--border)] rounded-lg px-4 py-3 text-[var(--foreground)] focus:outline-none focus:border-[var(--accent)] transition"
             >
               <option value="">— Select Chapter —</option>
               {masterSyllabus.map((ch) => (
@@ -167,18 +167,18 @@ export default function AssignmentPage() {
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-zinc-300 mb-2">Exam</label>
+            <label className="block text-sm font-medium text-[var(--foreground)] mb-2">Exam</label>
             <select
               value={examType}
               onChange={(e) => setExamType(e.target.value)}
-              className="w-full bg-black border border-zinc-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-cyan-500 transition"
+              className="w-full bg-[var(--surface-2)] border border-[var(--border)] rounded-lg px-4 py-3 text-[var(--foreground)] focus:outline-none focus:border-[var(--accent)] transition"
             >
               {EXAMS.map((e) => <option key={e}>{e}</option>)}
             </select>
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-zinc-300 mb-2">Difficulty</label>
+            <label className="block text-sm font-medium text-[var(--foreground)] mb-2">Difficulty</label>
             <div className="flex gap-2 flex-wrap">
               {["easy", "medium", "hard", "mixed"].map((d) => (
                 <button
@@ -186,8 +186,8 @@ export default function AssignmentPage() {
                   onClick={() => setDifficulty(d)}
                   className={`px-3 py-1.5 rounded-lg text-sm font-medium border capitalize transition ${
                     difficulty === d
-                      ? "bg-cyan-500 border-cyan-500 text-black"
-                      : "border-zinc-700 text-zinc-400 hover:border-zinc-500"
+                      ? "bg-[var(--accent)] border-[var(--accent)] text-[var(--background)]"
+                      : "border-[var(--border)] text-[var(--text-muted)] hover:border-[var(--border-strong)]"
                   }`}
                 >
                   {d}
@@ -197,22 +197,22 @@ export default function AssignmentPage() {
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-zinc-300 mb-2">
-              Questions: <span className="text-cyan-400">{totalQuestions}</span>
+            <label className="block text-sm font-medium text-[var(--foreground)] mb-2">
+              Questions: <span className="text-[var(--accent)]">{totalQuestions}</span>
             </label>
             <input
               type="range" min="5" max="30" step="5"
               value={totalQuestions}
               onChange={(e) => setTotalQuestions(Number(e.target.value))}
-              className="w-full accent-cyan-500"
+              className="w-full accent-[var(--accent)]"
             />
-            <div className="flex justify-between text-xs text-zinc-600 mt-1">
+            <div className="flex justify-between text-xs text-[var(--text-muted)] mt-1">
               <span>5</span><span>10</span><span>15</span><span>20</span><span>25</span><span>30</span>
             </div>
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-zinc-300 mb-2">Question Types</label>
+            <label className="block text-sm font-medium text-[var(--foreground)] mb-2">Question Types</label>
             <div className="flex flex-wrap gap-2">
               {QUESTION_TYPES.map((t) => (
                 <button
@@ -220,8 +220,8 @@ export default function AssignmentPage() {
                   onClick={() => toggleType(t.value)}
                   className={`px-3 py-1.5 rounded-lg text-xs font-medium border transition ${
                     selectedTypes.includes(t.value)
-                      ? "bg-violet-600 border-violet-600 text-white"
-                      : "border-zinc-700 text-zinc-400 hover:border-zinc-500"
+                      ? "bg-[var(--accent)] border-[var(--accent)] text-[var(--background)]"
+                      : "border-[var(--border)] text-[var(--text-muted)] hover:border-[var(--border-strong)]"
                   }`}
                 >
                   {t.label}
@@ -231,7 +231,7 @@ export default function AssignmentPage() {
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-zinc-300 mb-2">Language</label>
+            <label className="block text-sm font-medium text-[var(--foreground)] mb-2">Language</label>
             <div className="flex gap-2">
               {LANGUAGES.map((l) => (
                 <button
@@ -239,8 +239,8 @@ export default function AssignmentPage() {
                   onClick={() => setLanguage(l.value)}
                   className={`px-4 py-2 rounded-lg text-sm font-medium border transition ${
                     language === l.value
-                      ? "bg-violet-600 border-violet-600 text-white"
-                      : "border-zinc-700 text-zinc-400 hover:border-zinc-500"
+                      ? "bg-[var(--accent)] border-[var(--accent)] text-[var(--background)]"
+                      : "border-[var(--border)] text-[var(--text-muted)] hover:border-[var(--border-strong)]"
                   }`}
                 >
                   {l.label}
@@ -253,45 +253,45 @@ export default function AssignmentPage() {
         <button
           onClick={generate}
           disabled={loading || (!topic && !chapterId)}
-          className="mt-6 w-full bg-cyan-500 hover:bg-cyan-400 disabled:bg-zinc-700 disabled:text-zinc-500 text-black font-semibold py-3 rounded-xl transition"
+          className="mt-6 w-full bg-[var(--accent)] hover:brightness-110 disabled:bg-[var(--surface-2)] disabled:text-[var(--text-muted)] text-[var(--background)] font-semibold py-3 rounded-lg transition"
         >
           {loading ? "Generating Assignment..." : "Generate Assignment"}
         </button>
       </div>
 
       {error && (
-        <div className="bg-red-950 border border-red-800 text-red-300 rounded-xl p-4 mb-6">{error}</div>
+        <div className="bg-red-950 border border-red-800 text-red-300 rounded-lg p-4 mb-6">{error}</div>
       )}
 
       {/* Assignment */}
       {assignment && (
         <div>
           {/* Header */}
-          <div className="bg-zinc-900 border border-zinc-800 rounded-2xl p-5 mb-6">
+          <div className="bg-[var(--surface)] border border-[var(--border)] rounded-lg p-5 mb-6">
             <div className="flex items-start justify-between flex-wrap gap-4">
               <div>
                 <h2 className="text-xl font-bold">{assignment.title}</h2>
-                <p className="text-zinc-400 text-sm mt-1">{assignment.topic} · {assignment.examType}</p>
+                <p className="text-[var(--text-muted)] text-sm mt-1">{assignment.topic} · {assignment.examType}</p>
               </div>
               <div className="flex gap-3 text-sm">
-                <div className="bg-zinc-800 rounded-lg px-3 py-2 text-center">
-                  <div className="font-bold text-cyan-400">{assignment.totalQuestions}</div>
-                  <div className="text-zinc-500 text-xs">Questions</div>
+                <div className="bg-[var(--surface-2)] rounded-lg px-3 py-2 text-center">
+                  <div className="font-bold text-[var(--accent)]">{assignment.totalQuestions}</div>
+                  <div className="text-[var(--text-muted)] text-xs">Questions</div>
                 </div>
-                <div className="bg-zinc-800 rounded-lg px-3 py-2 text-center">
+                <div className="bg-[var(--surface-2)] rounded-lg px-3 py-2 text-center">
                   <div className="font-bold text-green-400">{assignment.totalMarks}</div>
-                  <div className="text-zinc-500 text-xs">Total Marks</div>
+                  <div className="text-[var(--text-muted)] text-xs">Total Marks</div>
                 </div>
-                <div className="bg-zinc-800 rounded-lg px-3 py-2 text-center">
-                  <div className="font-bold text-violet-400">{assignment.duration}</div>
-                  <div className="text-zinc-500 text-xs">Duration</div>
+                <div className="bg-[var(--surface-2)] rounded-lg px-3 py-2 text-center">
+                  <div className="font-bold text-[var(--text-muted)]">{assignment.duration}</div>
+                  <div className="text-[var(--text-muted)] text-xs">Duration</div>
                 </div>
               </div>
             </div>
             {submitted && (
-              <div className={`mt-4 p-4 rounded-xl text-center ${score >= maxScore * 0.7 ? "bg-green-950 border border-green-800" : "bg-red-950 border border-red-800"}`}>
+              <div className={`mt-4 p-4 rounded-lg text-center ${score >= maxScore * 0.7 ? "bg-green-950 border border-green-800" : "bg-red-950 border border-red-800"}`}>
                 <div className="text-2xl font-bold">{score} / {maxScore}</div>
-                <div className="text-sm text-zinc-300 mt-1">
+                <div className="text-sm text-[var(--foreground)]/80 mt-1">
                   {score >= maxScore * 0.7 ? "Excellent work! 🎯" : score >= maxScore * 0.4 ? "Good effort, keep practicing! 💪" : "Needs more practice — review the solutions below"}
                 </div>
               </div>
@@ -304,24 +304,24 @@ export default function AssignmentPage() {
               const userAns = answers[q.id];
               const isCorrect = userAns === q.correct;
               return (
-                <div key={q.id} className={`bg-zinc-900 border rounded-2xl p-5 transition ${
+                <div key={q.id} className={`bg-[var(--surface)] border rounded-lg p-5 transition ${
                   submitted
-                    ? isCorrect ? "border-green-700" : userAns ? "border-red-800" : "border-zinc-700"
-                    : "border-zinc-800"
+                    ? isCorrect ? "border-green-700" : userAns ? "border-red-800" : "border-[var(--border)]"
+                    : "border-[var(--border)]"
                 }`}>
                   <div className="flex items-center gap-2 mb-3 flex-wrap">
-                    <span className="text-zinc-500 font-medium text-sm">Q{idx + 1}.</span>
+                    <span className="text-[var(--text-muted)] font-medium text-sm">Q{idx + 1}.</span>
                     <span className={`text-xs px-2 py-0.5 rounded-full border ${
                       q.difficulty === "easy" ? "border-green-700 text-green-400" :
-                      q.difficulty === "medium" ? "border-violet-700 text-violet-400" :
+                      q.difficulty === "medium" ? "border-[var(--border)] text-[var(--text-muted)]" :
                       "border-red-700 text-red-400"
                     }`}>{q.difficulty}</span>
-                    <span className="text-xs px-2 py-0.5 rounded-full border border-zinc-700 text-zinc-400">{q.type.replace("_", " ")}</span>
-                    <span className="text-xs text-zinc-600">{q.subTopic}</span>
-                    <span className="ml-auto text-xs text-cyan-400">+{q.marks} / {q.negativeMarks}</span>
+                    <span className="text-xs px-2 py-0.5 rounded-full border border-[var(--border)] text-[var(--text-muted)]">{q.type.replace("_", " ")}</span>
+                    <span className="text-xs text-[var(--text-muted)]">{q.subTopic}</span>
+                    <span className="ml-auto text-xs text-[var(--accent)]">+{q.marks} / {q.negativeMarks}</span>
                   </div>
 
-                  <p className="text-white mb-4 leading-relaxed">{q.question}</p>
+                  <p className="text-[var(--foreground)] mb-4 leading-relaxed">{q.question}</p>
 
                   {q.options && (
                     <div className="space-y-2">
@@ -334,14 +334,14 @@ export default function AssignmentPage() {
                             key={oi}
                             onClick={() => !submitted && setAnswers({ ...answers, [q.id]: letter })}
                             disabled={submitted}
-                            className={`w-full text-left px-4 py-2.5 rounded-xl border text-sm transition ${
+                            className={`w-full text-left px-4 py-2.5 rounded-lg border text-sm transition ${
                               submitted
                                 ? isAnswer ? "border-green-600 bg-green-950 text-green-300"
                                   : isSelected ? "border-red-700 bg-red-950 text-red-300"
-                                  : "border-zinc-800 text-zinc-500"
+                                  : "border-[var(--border)] text-[var(--text-muted)]"
                                 : isSelected
-                                  ? "border-cyan-500 bg-cyan-950 text-cyan-300"
-                                  : "border-zinc-800 text-zinc-300 hover:border-zinc-600"
+                                  ? "border-[var(--accent)] bg-[var(--accent)]/10 text-[var(--accent)]"
+                                  : "border-[var(--border)] text-[var(--foreground)] hover:border-[var(--border-strong)]"
                             }`}
                           >
                             {opt}
@@ -358,16 +358,16 @@ export default function AssignmentPage() {
                       value={answers[q.id] || ""}
                       onChange={(e) => setAnswers({ ...answers, [q.id]: e.target.value })}
                       placeholder="Enter numerical answer"
-                      className="bg-black border border-zinc-700 rounded-xl px-4 py-2.5 text-white w-48 focus:outline-none focus:border-cyan-500"
+                      className="bg-[var(--surface-2)] border border-[var(--border)] rounded-lg px-4 py-2.5 text-[var(--foreground)] w-48 focus:outline-none focus:border-[var(--accent)]"
                     />
                   )}
 
                   {submitted && (
-                    <div className="mt-4 bg-zinc-800 rounded-xl p-4">
-                      <div className="text-xs font-semibold text-zinc-400 mb-2">SOLUTION</div>
-                      <p className="text-zinc-200 text-sm leading-relaxed">{q.solution}</p>
+                    <div className="mt-4 bg-[var(--surface-2)] rounded-lg p-4">
+                      <div className="text-xs font-semibold text-[var(--text-muted)] mb-2">SOLUTION</div>
+                      <p className="text-[var(--foreground)] text-sm leading-relaxed">{q.solution}</p>
                       {q.tip && (
-                        <div className="mt-2 text-xs text-violet-400">💡 Tip: {q.tip}</div>
+                        <div className="mt-2 text-xs text-[var(--text-muted)]">💡 Tip: {q.tip}</div>
                       )}
                     </div>
                   )}
@@ -379,7 +379,7 @@ export default function AssignmentPage() {
           {!submitted && (
             <button
               onClick={submit}
-              className="mt-6 w-full bg-green-600 hover:bg-green-500 text-white font-semibold py-3 rounded-xl transition"
+              className="mt-6 w-full bg-green-600 hover:bg-green-500 text-white font-semibold py-3 rounded-lg transition"
             >
               Submit Assignment
             </button>

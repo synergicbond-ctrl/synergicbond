@@ -58,7 +58,7 @@ export default function ProfileEditForm({ userId, initial }: { userId: string; i
     return (
       <button
         onClick={() => { setForm(initial); setOpen(true); }}
-        className="flex items-center gap-1.5 px-4 py-2 rounded-xl border border-cyan-400/30 bg-cyan-500/10 text-cyan-300 font-bold text-xs hover:bg-cyan-500/20 transition"
+        className="flex items-center gap-1.5 px-4 py-2 rounded-lg border border-[var(--border)] bg-[var(--surface-2)] text-[var(--accent)] font-bold text-xs hover:opacity-90 transition"
       >
         <Pencil className="h-3.5 w-3.5" /> Edit Profile
       </button>
@@ -66,11 +66,11 @@ export default function ProfileEditForm({ userId, initial }: { userId: string; i
   }
 
   const inputCls =
-    "w-full rounded-xl bg-black/40 border border-white/10 focus:border-cyan-400/50 outline-none px-3.5 py-2.5 text-sm text-white placeholder:text-white/30 transition";
+    "w-full rounded-lg bg-[var(--surface-2)] border border-[var(--border)] focus:border-[var(--accent)]/50 outline-none px-3.5 py-2.5 text-sm text-white placeholder:text-white/30 transition";
   const labelCls = "block text-[10px] font-black uppercase tracking-wider text-white/50 mb-1.5";
 
   return (
-    <div className="w-full rounded-2xl border border-white/[0.08] bg-[#111827] p-5 mt-2">
+    <div className="w-full rounded-lg border border-white/[0.08] bg-[var(--surface)] p-5 mt-2">
       <div className="flex items-center justify-between mb-4">
         <h3 className="font-black text-sm">Edit Profile</h3>
         <button onClick={() => setOpen(false)} className="text-white/40 hover:text-white transition" aria-label="Cancel editing">
@@ -81,11 +81,11 @@ export default function ProfileEditForm({ userId, initial }: { userId: string; i
       <div className="grid gap-4 sm:grid-cols-2">
         <div>
           <label className={labelCls}>Full name</label>
-          <input className={inputCls} value={form.full_name} onChange={(e) => set("full_name")(e.target.value)} placeholder="Your name" />
+          <input className={inputCls} value={form.full_name} onChange={(e) => set("full_name")(e.target.value)} placeholder="Your name" aria-label="Full name" />
         </div>
         <div>
           <label className={labelCls}>Phone</label>
-          <input className={inputCls} value={form.phone} onChange={(e) => set("phone")(e.target.value)} placeholder="10-digit mobile" inputMode="tel" />
+          <input className={inputCls} value={form.phone} onChange={(e) => set("phone")(e.target.value)} placeholder="10-digit mobile" aria-label="Phone number" inputMode="tel" />
         </div>
         <div>
           <label className={labelCls}>Date of birth</label>
@@ -123,7 +123,7 @@ export default function ProfileEditForm({ userId, initial }: { userId: string; i
         <button
           onClick={save}
           disabled={saving}
-          className="flex-1 py-2.5 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-black font-black text-xs transition disabled:opacity-50 flex items-center justify-center gap-1.5"
+          className="flex-1 py-2.5 rounded-lg bg-[var(--accent)] hover:opacity-90 text-black font-black text-xs transition disabled:opacity-50 flex items-center justify-center gap-1.5"
         >
           {saving ? <Loader2 className="h-3.5 w-3.5 animate-spin" /> : <Check className="h-3.5 w-3.5" />}
           {saving ? "Saving…" : "Save Changes"}

@@ -37,7 +37,7 @@ export default async function SpeedPage({ params }: { params: Promise<{ slug: st
 
   const shell = (children: React.ReactNode) => (
     <main className="min-h-screen bg-[#0B1220] text-white">
-      <div className="border-b border-white/10 bg-gradient-to-b from-cyan-950/20 to-[#0B1220] px-4 py-8 sm:px-6 sm:py-10">
+      <div className="border-b border-white/10 bg-gradient-to-b from-[var(--surface)]/20 to-[#0B1220] px-4 py-8 sm:px-6 sm:py-10">
         <div className="mx-auto max-w-4xl">
           <nav className="mb-3 text-sm text-white/45">
             <Link href={base} className="hover:text-white">{engine.name}</Link>
@@ -55,24 +55,24 @@ export default async function SpeedPage({ params }: { params: Promise<{ slug: st
 
   if (error === "Unauthorized") {
     return shell(
-      <div className="rounded-2xl border border-white/10 bg-white/[0.02] p-8 text-center">
+      <div className="rounded-lg border border-white/10 bg-white/[0.02] p-8 text-center">
         <h2 className="text-lg font-bold">Sign in to see your Speed Analysis</h2>
-        <Link href={`/auth/signin?next=${base}/speed`} className="mt-4 inline-block rounded-xl bg-gradient-to-r from-cyan-400 to-sky-500 px-5 py-2.5 text-sm font-black text-black">Sign in →</Link>
+        <Link href={`/auth/signin?next=${base}/speed`} className="mt-4 inline-block rounded-xl bg-[var(--accent)] px-5 py-2.5 text-sm font-black text-black">Sign in →</Link>
       </div>
     );
   }
   if (error || !answers) {
-    return shell(<p className="rounded-2xl border border-white/10 bg-white/[0.02] p-8 text-center text-sm text-white/55">Speed Analysis is unavailable right now — try again shortly.</p>);
+    return shell(<p className="rounded-lg border border-white/10 bg-white/[0.02] p-8 text-center text-sm text-white/55">Speed Analysis is unavailable right now — try again shortly.</p>);
   }
 
   const report = buildSpeedReport(answers, engine.exam);
 
   if (!report.hasData) {
     return shell(
-      <div className="rounded-2xl border border-white/10 bg-white/[0.02] p-8 text-center">
+      <div className="rounded-lg border border-white/10 bg-white/[0.02] p-8 text-center">
         <h2 className="text-lg font-bold">No timed attempts yet</h2>
         <p className="mx-auto mt-2 max-w-md text-sm text-white/55">
-          Answer questions in <Link href={`${base}/practice`} className="font-bold text-cyan-400 hover:underline">Practice</Link> or the chapter Question Banks — per-question time is recorded automatically and your pace profile builds from it.
+          Answer questions in <Link href={`${base}/practice`} className="font-bold text-[var(--accent)] hover:underline">Practice</Link> or the chapter Question Banks — per-question time is recorded automatically and your pace profile builds from it.
         </p>
       </div>
     );
@@ -84,19 +84,19 @@ export default async function SpeedPage({ params }: { params: Promise<{ slug: st
   return shell(
     <>
       <div className="mb-8 grid grid-cols-2 gap-3 sm:grid-cols-4">
-        <div className="rounded-2xl border border-cyan-500/20 bg-cyan-500/[0.05] p-4 text-center">
-          <div className="text-2xl font-black text-cyan-300">{fmt(report.avgSeconds)}</div>
+        <div className="rounded-lg border border-[var(--accent)]/30 bg-[var(--accent)]/[0.05] p-4 text-center">
+          <div className="text-2xl font-black text-[var(--accent)]">{fmt(report.avgSeconds)}</div>
           <div className="mt-1 text-xs text-white/50">Avg per question</div>
         </div>
-        <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-4 text-center">
+        <div className="rounded-lg border border-white/10 bg-white/[0.03] p-4 text-center">
           <div className="text-2xl font-black text-white/85">{report.timed}</div>
           <div className="mt-1 text-xs text-white/50">Timed answers</div>
         </div>
-        <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-4 text-center">
+        <div className="rounded-lg border border-white/10 bg-white/[0.03] p-4 text-center">
           <div className="text-2xl font-black text-white/60">{report.untimed}</div>
           <div className="mt-1 text-xs text-white/50">Untimed (excluded)</div>
         </div>
-        <div className="rounded-2xl border border-rose-500/20 bg-rose-500/[0.05] p-4 text-center">
+        <div className="rounded-lg border border-rose-500/20 bg-rose-500/[0.05] p-4 text-center">
           <div className="text-2xl font-black text-rose-300">{report.rushedWrong}</div>
           <div className="mt-1 text-xs text-white/50">Rushed & wrong</div>
         </div>
@@ -137,7 +137,7 @@ export default async function SpeedPage({ params }: { params: Promise<{ slug: st
       )}
 
       <div className="flex flex-wrap gap-3">
-        <Link href={`${base}/practice`} className="rounded-xl border border-cyan-400/40 bg-cyan-500/10 px-4 py-2 text-sm font-semibold text-cyan-300 hover:bg-cyan-500/20">Practise for pace →</Link>
+        <Link href={`${base}/practice`} className="rounded-xl border border-[var(--accent)]/30 bg-[var(--accent)]/10 px-4 py-2 text-sm font-semibold text-[var(--accent)] hover:bg-[var(--accent)]/10">Practise for pace →</Link>
         <Link href="/timers" className="rounded-xl border border-white/15 bg-white/[0.04] px-4 py-2 text-sm font-semibold text-white/80 hover:bg-white/[0.08]">Exam-simulation timer →</Link>
       </div>
     </>

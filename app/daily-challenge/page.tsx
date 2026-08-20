@@ -75,7 +75,7 @@ export default function DailyChallengePage() {
           <div className="flex gap-2">
             {["NEET", "JEE Main", "JEE Advanced"].map((e) => (
               <button key={e} onClick={() => { setExam(e); loadChallenge(e); }}
-                className={`rounded-xl px-3 py-1.5 text-sm font-semibold transition ${exam === e ? "bg-cyan-500 text-black" : "border border-white/10 bg-white/5 text-white/70 hover:bg-white/10"}`}>
+                className={`rounded-lg px-3 py-1.5 text-sm font-semibold transition ${exam === e ? "bg-cyan-500 text-black" : "border border-white/10 bg-white/5 text-white/70 hover:bg-white/10"}`}>
                 {e}
               </button>
             ))}
@@ -93,7 +93,7 @@ export default function DailyChallengePage() {
           <div className="space-y-6">
             {/* Topic badge */}
             <div className="flex items-center gap-3">
-              <span className="rounded-full bg-cyan-500/20 border border-cyan-500/30 px-3 py-1 text-sm text-cyan-300">
+              <span className="rounded-full bg-[var(--accent)]/10 border border-[var(--accent)]/30 px-3 py-1 text-sm text-[var(--accent)]">
                 📚 {challenge.topic}
               </span>
               <span className="rounded-full bg-white/10 px-3 py-1 text-sm text-white/50">
@@ -105,7 +105,7 @@ export default function DailyChallengePage() {
             </div>
 
             {/* Question */}
-            <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-6">
+            <div className="rounded-lg border border-white/10 bg-white/[0.03] p-6">
               <div className="prose prose-invert max-w-none text-lg leading-relaxed">
                 <ReactMarkdown remarkPlugins={[remarkMath]} rehypePlugins={[rehypeKatex]}>
                   {challenge.question}
@@ -122,12 +122,12 @@ export default function DailyChallengePage() {
                   else if (key === selected) style = "border border-red-500 bg-red-500/20";
                   else style = "border border-white/5 bg-white/[0.02] opacity-50";
                 } else if (selected === key) {
-                  style = "border border-cyan-500 bg-cyan-500/20";
+                  style = "border border-[var(--border)] bg-[var(--accent)]/10";
                 }
                 return (
                   <button key={key} onClick={() => !submitted && setSelected(key)}
-                    className={`w-full rounded-xl p-4 text-left transition ${style}`}>
-                    <span className="font-bold text-cyan-400 mr-3">{key})</span>
+                    className={`w-full rounded-lg p-4 text-left transition ${style}`}>
+                    <span className="font-bold text-[var(--accent)] mr-3">{key})</span>
                     <span className="text-white/90">{value as string}</span>
                   </button>
                 );
@@ -137,12 +137,12 @@ export default function DailyChallengePage() {
             {/* Hint */}
             {!submitted && (
               <button onClick={() => setShowHint(!showHint)}
-                className="text-sm text-violet-400/70 hover:text-violet-400 transition">
+                className="text-sm text-[var(--text-muted)]/70 hover:text-[var(--text-muted)] transition">
                 {showHint ? "Hide hint" : "💡 Show hint"}
               </button>
             )}
             {showHint && !submitted && (
-              <div className="rounded-xl border border-violet-500/20 bg-violet-950/20 p-4 text-violet-200 text-sm">
+              <div className="rounded-lg border border-violet-500/20 bg-violet-950/20 p-4 text-[var(--text-muted)] text-sm">
                 {challenge.hint}
               </div>
             )}
@@ -150,11 +150,11 @@ export default function DailyChallengePage() {
             {/* Submit / Result */}
             {!submitted ? (
               <button onClick={() => selected && setSubmitted(true)} disabled={!selected}
-                className="w-full rounded-2xl bg-gradient-to-r from-cyan-400 to-blue-500 py-4 font-bold text-black disabled:opacity-40 transition">
+                className="w-full rounded-lg bg-[var(--accent)] py-4 font-bold text-black disabled:opacity-40 transition">
                 Submit Answer
               </button>
             ) : (
-              <div className={`rounded-2xl border p-6 ${isCorrect ? "border-green-500/30 bg-green-950/20" : "border-red-500/30 bg-red-950/20"}`}>
+              <div className={`rounded-lg border p-6 ${isCorrect ? "border-green-500/30 bg-green-950/20" : "border-red-500/30 bg-red-950/20"}`}>
                 <p className="text-xl font-bold mb-3">
                   {isCorrect ? "🎉 Correct! +50 XP" : `❌ Incorrect — Answer: ${challenge.answer}`}
                 </p>
@@ -167,7 +167,7 @@ export default function DailyChallengePage() {
             )}
 
             <button onClick={() => loadChallenge()}
-              className="w-full rounded-xl border border-white/10 py-3 text-white/50 hover:text-white text-sm transition">
+              className="w-full rounded-lg border border-white/10 py-3 text-white/50 hover:text-white text-sm transition">
               🔄 Generate New Challenge
             </button>
           </div>

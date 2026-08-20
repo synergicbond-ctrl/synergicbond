@@ -17,63 +17,63 @@ const totalFormulaCount = chapters.reduce((sum, chapter) => sum + chapter.count,
 
 function FormulaCardView({ card }: { card: FormulaSearchResult }) {
   return (
-    <article className="flex h-full min-w-0 flex-col rounded-2xl border border-white/[0.08] bg-[#111827] p-5 shadow-sm hover:border-white/15 transition duration-200">
+    <article className="flex h-full min-w-0 flex-col rounded-lg border border-[var(--border)] bg-[var(--surface)] p-5 hover:border-[var(--accent)]/30 transition duration-200">
       <div className="flex flex-wrap items-start justify-between gap-3">
         <div className="min-w-0">
-          <p className="break-words text-[11px] font-bold uppercase tracking-wide text-cyan-400">{card.topic}</p>
-          <h2 className="mt-1 break-words text-lg font-black leading-tight text-white">{card.name}</h2>
+          <p className="break-words text-[11px] font-bold uppercase tracking-wide text-[var(--text-muted)]">{card.topic}</p>
+          <h2 className="mt-1 break-words text-lg font-black leading-tight text-[var(--foreground)]">{card.name}</h2>
         </div>
-        <span className="rounded-md bg-white/[0.06] px-2 py-1 text-[11px] font-bold text-white/60">
+        <span className="rounded bg-[var(--surface-2)] px-2 py-1 text-[11px] font-bold text-[var(--text-muted)]">
           Class {card.ncertReference.class}
         </span>
       </div>
 
-      <div className="mt-4 overflow-x-auto rounded-xl border border-cyan-500/20 bg-cyan-950/20 p-3.5 font-mono text-sm font-bold text-cyan-300">
+      <div className="mt-4 overflow-x-auto rounded-lg border border-[var(--border)] bg-[var(--surface-2)] p-3.5 font-mono text-sm font-bold text-[var(--foreground)]">
         {card.formula}
       </div>
 
-      <div className="mt-4 grid gap-3 text-sm text-white/70">
+      <div className="mt-4 grid gap-3 text-sm text-[var(--text-muted)]">
         <div>
-          <p className="text-[10px] font-black uppercase tracking-wide text-white/40">Variables</p>
+          <p className="text-[10px] font-black uppercase tracking-wide text-[var(--text-muted)]">Variables</p>
           <ul className="mt-1 list-inside list-disc space-y-1 text-xs">
             {card.variables.map((variable) => (
-              <li key={variable} className="break-words text-white/60">{variable}</li>
+              <li key={variable} className="break-words text-[var(--text-muted)]">{variable}</li>
             ))}
           </ul>
         </div>
 
         <div className="grid gap-2 sm:grid-cols-2">
-          <div className="rounded-xl bg-white/[0.03] p-3 border border-white/[0.05]">
-            <p className="text-[10px] font-black uppercase tracking-wide text-white/40">Units</p>
-            <p className="mt-1 break-words font-semibold text-white/80 text-xs">{card.units}</p>
+          <div className="rounded-lg bg-[var(--surface-2)] p-3 border border-[var(--border)]">
+            <p className="text-[10px] font-black uppercase tracking-wide text-[var(--text-muted)]">Units</p>
+            <p className="mt-1 break-words font-semibold text-[var(--foreground)] text-xs">{card.units}</p>
           </div>
-          <div className="rounded-xl bg-white/[0.03] p-3 border border-white/[0.05]">
-            <p className="text-[10px] font-black uppercase tracking-wide text-white/40">NCERT</p>
-            <p className="mt-1 break-words font-semibold text-white/80 text-xs">
+          <div className="rounded-lg bg-[var(--surface-2)] p-3 border border-[var(--border)]">
+            <p className="text-[10px] font-black uppercase tracking-wide text-[var(--text-muted)]">NCERT</p>
+            <p className="mt-1 break-words font-semibold text-[var(--foreground)] text-xs">
               {card.ncertReference.chapter}
             </p>
           </div>
         </div>
 
         <div>
-          <p className="text-[10px] font-black uppercase tracking-wide text-white/40">Derivation</p>
-          <p className="mt-1 break-words leading-relaxed text-xs text-white/60">{card.derivation}</p>
+          <p className="text-[10px] font-black uppercase tracking-wide text-[var(--text-muted)]">Derivation</p>
+          <p className="mt-1 break-words leading-relaxed text-xs text-[var(--text-muted)]">{card.derivation}</p>
         </div>
 
         {card.exceptions.length > 0 && (
-          <div className="rounded-xl border border-amber-500/20 bg-amber-500/[0.06] p-3 text-amber-200 text-xs">
+          <div className="rounded-lg border border-amber-500/20 bg-amber-500/[0.06] p-3 text-amber-200 text-xs">
             <p className="text-[10px] font-black uppercase tracking-wide text-amber-400">Exceptions</p>
             <p className="mt-1 break-words leading-relaxed">{card.exceptions.join("; ")}</p>
           </div>
         )}
       </div>
 
-      <div className="mt-auto flex flex-wrap gap-2 pt-4 border-t border-white/[0.06]">
+      <div className="mt-auto flex flex-wrap gap-2 pt-4 border-t border-[var(--border)]">
         {card.relatedPYQ.map((pyqId) => (
           <Link
             key={pyqId}
             href={`/pyq?pyq=${encodeURIComponent(pyqId)}`}
-            className="max-w-full break-words rounded-md border border-cyan-500/20 bg-cyan-500/10 px-2.5 py-1 text-xs font-bold text-cyan-300 transition hover:border-cyan-400/50"
+            className="max-w-full break-words rounded border border-[var(--border)] bg-[var(--surface-2)] px-2.5 py-1 text-xs font-bold text-[var(--accent)] transition hover:border-[var(--accent)]/50"
           >
             PYQ {pyqId}
           </Link>
@@ -98,43 +98,43 @@ function FormulaCardsContent() {
   const { visible: formulas, locked } = slicePreview(allMatches, PREVIEW_LIMITS.formulas, unlocked);
 
   return (
-    <main className="min-h-screen bg-[#0B0F19] text-white px-4 py-6 sm:px-6 lg:px-8">
+    <main className="min-h-screen bg-[var(--background)] text-[var(--foreground)] px-4 py-6 sm:px-6 lg:px-8">
       <div className="mx-auto max-w-7xl space-y-6">
-        <header className="flex flex-col gap-4 border-b border-white/[0.08] pb-5 md:flex-row md:items-end md:justify-between">
+        <header className="flex flex-col gap-4 border-b border-[var(--border)] pb-5 md:flex-row md:items-end md:justify-between">
           <div>
             <h1 className="text-3xl font-black tracking-tight sm:text-4xl">Formula Cards</h1>
-            <p className="mt-2 text-sm font-medium text-white/50">
+            <p className="mt-2 text-sm font-medium text-[var(--text-muted)]">
               {formulas.length} of {totalFormulaCount} verified cards
             </p>
           </div>
-          <Link href="/vault/formulas" className="w-fit rounded-xl border border-white/10 bg-white/[0.04] px-4 py-2 text-sm font-bold text-white/80 hover:bg-white/[0.08] transition">
+          <Link href="/vault/formulas" className="w-fit rounded-lg border border-[var(--border)] bg-[var(--surface)] px-4 py-2 text-sm font-bold text-[var(--text-muted)] hover:border-[var(--accent)]/40 transition">
             Vault
           </Link>
         </header>
 
-        <section className="grid gap-3 rounded-2xl border border-white/[0.08] bg-[#111827] p-3 shadow-sm md:grid-cols-[1fr_280px]">
+        <section className="grid gap-3 rounded-lg border border-[var(--border)] bg-[var(--surface)] p-3 md:grid-cols-[1fr_280px]">
           <input
             value={query}
             onChange={(event) => setQuery(event.target.value)}
             placeholder="Search formula, variable, unit, PYQ, or NCERT topic"
-            className="min-h-11 rounded-xl border border-white/10 bg-black/20 px-3 text-sm font-semibold text-white outline-none focus:border-cyan-400/40 placeholder:text-white/30"
+            className="min-h-11 rounded-lg border border-[var(--border)] bg-[var(--surface-2)] px-3 text-sm font-semibold text-[var(--foreground)] outline-none focus:border-[var(--accent)] placeholder:text-[var(--text-muted)]"
           />
           <select
             value={chapter}
             onChange={(event) => setChapter(event.target.value)}
-            className="min-h-11 rounded-xl border border-white/10 bg-black/20 px-3 text-sm font-semibold text-white/80 outline-none focus:border-cyan-400/40"
+            className="min-h-11 rounded-lg border border-[var(--border)] bg-[var(--surface-2)] px-3 text-sm font-semibold text-[var(--text-muted)] outline-none focus:border-[var(--accent)]"
           >
-            <option value="" className="bg-[#111827]">All chapters</option>
+            <option value="" className="bg-[var(--surface-2)]">All chapters</option>
             {chapters.map((item) => (
-              <option key={item.chapter} value={item.chapter} className="bg-[#111827]">
+              <option key={item.chapter} value={item.chapter} className="bg-[var(--surface-2)]">
                 {item.chapter} ({item.count})
               </option>
             ))}
           </select>
           {pyqId && (
-            <div className="flex items-center justify-between rounded-xl border border-cyan-500/20 bg-cyan-500/10 px-3 py-2 text-sm font-bold text-cyan-300 md:col-span-2">
+            <div className="flex items-center justify-between rounded-lg border border-[var(--border)] bg-[var(--surface-2)] px-3 py-2 text-sm font-bold text-[var(--text-muted)] md:col-span-2">
               <span>PYQ {pyqId}</span>
-              <button onClick={() => setPyqId("")} className="rounded-lg px-2 py-1 text-xs hover:bg-cyan-500/20">
+              <button onClick={() => setPyqId("")} className="rounded px-2 py-1 text-xs hover:bg-[var(--surface)]">
                 Clear
               </button>
             </div>
@@ -144,7 +144,7 @@ function FormulaCardsContent() {
         <div className="flex gap-2 overflow-x-auto pb-1 scrollbar-none">
           <button
             onClick={() => setChapter("")}
-            className={`shrink-0 rounded-xl border px-3 py-2 text-xs font-black transition ${chapter ? "border-white/10 bg-white/[0.03] text-white/60" : "border-cyan-400/40 bg-cyan-500/15 text-cyan-300"}`}
+            className={`shrink-0 rounded-lg border px-3 py-2 text-xs font-black transition ${chapter ? "border-[var(--border)] bg-[var(--surface)] text-[var(--text-muted)]" : "border-[var(--accent)]/40 bg-[var(--accent)]/10 text-[var(--accent)]"}`}
           >
             All
           </button>
@@ -152,7 +152,7 @@ function FormulaCardsContent() {
             <button
               key={item.chapter}
               onClick={() => setChapter(item.chapter)}
-              className={`shrink-0 rounded-xl border px-3 py-2 text-xs font-black transition ${chapter === item.chapter ? "border-cyan-400/40 bg-cyan-500/15 text-cyan-300" : "border-white/10 bg-white/[0.03] text-white/60"}`}
+              className={`shrink-0 rounded-lg border px-3 py-2 text-xs font-black transition ${chapter === item.chapter ? "border-[var(--accent)]/40 bg-[var(--accent)]/10 text-[var(--accent)]" : "border-[var(--border)] bg-[var(--surface)] text-[var(--text-muted)]"}`}
             >
               {item.chapter}
             </button>
@@ -160,7 +160,7 @@ function FormulaCardsContent() {
         </div>
 
         {formulas.length === 0 ? (
-          <div className="rounded-2xl border border-dashed border-white/10 bg-[#111827] p-10 text-center text-sm font-bold text-white/40">
+          <div className="rounded-lg border border-dashed border-[var(--border)] bg-[var(--surface)] p-10 text-center text-sm font-bold text-[var(--text-muted)]">
             No formula cards match this filter.
           </div>
         ) : (
@@ -181,7 +181,7 @@ function FormulaCardsContent() {
 
 export default function FormulaCardsPage() {
   return (
-    <Suspense fallback={<main className="min-h-screen bg-[#0B0F19]" />}>
+    <Suspense fallback={<main className="min-h-screen bg-[var(--background)]" />}>
       <FormulaCardsContent />
     </Suspense>
   );

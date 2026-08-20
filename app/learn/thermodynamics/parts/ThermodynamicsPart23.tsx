@@ -22,7 +22,7 @@ function Section({ index, title, subtitle, children }: { index: string; title: s
   return (
     <section className="rounded-[2rem] border border-white/10 bg-slate-950/80 p-5 shadow-2xl md:p-8">
       <div className="flex gap-4">
-        <span className="grid h-10 w-10 shrink-0 place-items-center rounded-2xl border border-cyan-300/30 bg-cyan-300/10 text-sm font-black text-cyan-200">{index}</span>
+        <span className="grid h-10 w-10 shrink-0 place-items-center rounded-lg border border-cyan-300/30 bg-cyan-300/10 text-sm font-black text-cyan-200">{index}</span>
         <div>
           <h2 className="text-2xl font-black text-white md:text-3xl">{title}</h2>
           {subtitle ? <p className="mt-1 text-sm text-slate-400">{subtitle}</p> : null}
@@ -35,7 +35,7 @@ function Section({ index, title, subtitle, children }: { index: string; title: s
 
 function Formula({ label, children }: { label?: string; children: React.ReactNode }) {
   return (
-    <div className="overflow-x-auto rounded-2xl border border-cyan-300/20 bg-black/30 p-4 text-center">
+    <div className="overflow-x-auto rounded-lg border border-cyan-300/20 bg-black/30 p-4 text-center">
       {label ? <p className="mb-2 text-xs font-black uppercase tracking-[0.2em] text-cyan-300">{label}</p> : null}
       <div className="whitespace-nowrap font-mono text-lg font-black text-white md:text-xl">{children}</div>
     </div>
@@ -44,7 +44,7 @@ function Formula({ label, children }: { label?: string; children: React.ReactNod
 
 function Lens({ title, children, tone = "cyan" }: { title: string; children: React.ReactNode; tone?: Tone }) {
   return (
-    <aside className={`rounded-2xl border p-5 ${tones[tone]}`}>
+    <aside className={`rounded-lg border p-5 ${tones[tone]}`}>
       <p className="text-xs font-black uppercase tracking-[0.2em]">Concept lens</p>
       <h3 className="mt-2 text-lg font-black text-white">{title}</h3>
       <div className="mt-2 text-sm leading-6 text-slate-200">{children}</div>
@@ -223,7 +223,7 @@ function ThermodynamicsPart23() {
 <Section index="08" title="Complete worked examples and applications">
           <div className="grid gap-4 lg:grid-cols-2">
             {problems.map(([title,q,a])=>(
-              <article key={title} className="rounded-2xl border border-white/10 bg-slate-900/70 p-5">
+              <article key={title} className="rounded-lg border border-white/10 bg-slate-900/70 p-5">
                 <h3 className="cursor-pointer font-black text-white">{title}</h3>
                 <p className="mt-3 text-slate-200">{q}</p>
                 <div className="mt-4 rounded-xl border border-emerald-300/20 bg-emerald-300/[0.06] p-4 text-sm text-slate-200">{a}</div>
@@ -283,7 +283,7 @@ function Part23BundledApplications() {
             {part23BundledApplications.map((item, index) => (
               <article
                 key={item.title}
-                className="rounded-2xl border border-cyan-300/20 bg-cyan-300/[0.05] p-5"
+                className="rounded-lg border border-cyan-300/20 bg-cyan-300/[0.05] p-5"
               >
                 <p className="text-xs font-black uppercase tracking-wider text-cyan-300">
                   Worked application {index + 1}

@@ -43,7 +43,7 @@ export default function VisionUploader() {
   };
 
   return (
-    <div className="bg-white dark:bg-slate-900 p-6 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800 space-y-4">
+    <div className="bg-white dark:bg-slate-900 p-6 rounded-lg shadow-sm border border-slate-100 dark:border-slate-800 space-y-4">
       <div>
         <h3 className="text-xl font-black text-slate-800 dark:text-slate-100">AI Chemistry Vision Engine</h3>
         <p className="text-slate-600 dark:text-slate-400 text-xs mt-0.5">Upload or draw a mechanism / reaction to analyze steps instantly.</p>

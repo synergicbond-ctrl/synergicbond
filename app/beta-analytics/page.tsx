@@ -78,11 +78,11 @@ export default function BetaAnalyticsPage() {
   ];
 
   return (
-    <main className="min-h-screen bg-slate-950 px-4 py-8 text-white sm:px-6 lg:px-10">
+    <main className="min-h-screen bg-[var(--background)] px-4 py-8 text-white sm:px-6 lg:px-10">
       <div className="mx-auto max-w-7xl space-y-8">
         <header className="flex flex-col gap-4 border-b border-white/10 pb-6 md:flex-row md:items-end md:justify-between">
           <div>
-            <p className="text-xs font-bold uppercase tracking-[0.2em] text-cyan-300">Internal</p>
+            <p className="text-xs font-bold uppercase tracking-[0.2em] text-[var(--text-muted)]">Internal</p>
             <h1 className="mt-2 text-3xl font-black tracking-tight">Beta Proof Dashboard</h1>
           </div>
           <div className="flex rounded-lg border border-white/10 bg-white/[0.03] p-1">
@@ -92,7 +92,7 @@ export default function BetaAnalyticsPage() {
                 type="button"
                 onClick={() => setDays(filter.days)}
                 className={`rounded-md px-3 py-2 text-xs font-bold transition ${
-                  days === filter.days ? "bg-cyan-400 text-black" : "text-white/60 hover:text-white"
+                  days === filter.days ? "bg-[var(--accent)] text-black" : "text-white/60 hover:text-white"
                 }`}
               >
                 {filter.label}
@@ -114,7 +114,7 @@ export default function BetaAnalyticsPage() {
               <div key={card.label} className="rounded-lg border border-white/10 bg-white/[0.03] p-4">
                 <div className="flex items-center justify-between gap-3">
                   <p className="text-xs font-semibold text-white/50">{card.label}</p>
-                  <Icon className="h-4 w-4 text-cyan-300" />
+                  <Icon className="h-4 w-4 text-[var(--text-muted)]" />
                 </div>
                 <p className="mt-3 text-2xl font-black">{loading ? "..." : card.value}</p>
               </div>
@@ -144,7 +144,7 @@ export default function BetaAnalyticsPage() {
             <div className="mt-4 space-y-3">
               {(data?.recentFeedback ?? []).length ? (
                 data?.recentFeedback.map((feedback) => (
-                  <div key={feedback.id} className="rounded-lg bg-black/30 p-3 text-sm">
+                  <div key={feedback.id} className="rounded-lg bg-[var(--surface)] p-3 text-sm">
                     <div className="flex justify-between gap-3">
                       <span className="font-bold">{feedback.rating}/5</span>
                       <span className="text-xs text-white/45">{new Date(feedback.created_at).toLocaleString()}</span>

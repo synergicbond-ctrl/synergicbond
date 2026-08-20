@@ -1033,7 +1033,7 @@ export default function IsomerismPart12() {
           Isomerism
         </Link>
 
-        <header className="mt-6 rounded-3xl border border-cyan-300/15 bg-[radial-gradient(circle_at_top_right,_rgba(34,211,238,.18),_transparent_35%),linear-gradient(135deg,rgba(34,211,238,.08),rgba(2,6,23,.7),rgba(139,92,246,.1))] p-6 sm:p-9">
+        <header className="mt-6 rounded-lg border border-cyan-300/15 bg-[radial-gradient(circle_at_top_right,_rgba(34,211,238,.18),_transparent_35%),linear-gradient(135deg,rgba(34,211,238,.08),rgba(2,6,23,.7),rgba(139,92,246,.1))] p-6 sm:p-9">
           <p className="text-xs font-black uppercase tracking-[.24em] text-cyan-200">
             Optical Isomerism source · pages 15–35 · Part 12
           </p>
@@ -1043,7 +1043,7 @@ export default function IsomerismPart12() {
         </header>
 
         <section className="mt-7 space-y-6">
-          <section className="rounded-2xl border border-white/10 bg-white/[.035] p-5">
+          <section className="rounded-lg border border-white/10 bg-white/[.035] p-5">
             <h2 className="text-xl font-black text-cyan-200">
               Plane of symmetry (σ)
             </h2>
@@ -1073,7 +1073,7 @@ export default function IsomerismPart12() {
             </div>
           </section>
 
-          <section className="rounded-2xl border border-white/10 bg-white/[.035] p-5">
+          <section className="rounded-lg border border-white/10 bg-white/[.035] p-5">
             <h2 className="text-xl font-black text-cyan-200">
               Proper rotational axes Cₙ
             </h2>
@@ -1100,7 +1100,7 @@ export default function IsomerismPart12() {
             </p>
           </section>
 
-          <section className="rounded-2xl border border-white/10 bg-white/[.035] p-5">
+          <section className="rounded-lg border border-white/10 bg-white/[.035] p-5">
             <h2 className="text-xl font-black text-cyan-200">
               Alternating / improper axis Sₙ (AAOS)
             </h2>
@@ -1129,7 +1129,7 @@ export default function IsomerismPart12() {
             </div>
           </section>
 
-          <section className="rounded-2xl border border-white/10 bg-white/[.035] p-5">
+          <section className="rounded-lg border border-white/10 bg-white/[.035] p-5">
             <h2 className="text-xl font-black text-cyan-200">
               Centre of symmetry (i) — inversion centre
             </h2>
@@ -1157,7 +1157,7 @@ export default function IsomerismPart12() {
             </div>
           </section>
 
-          <section className="rounded-2xl border border-white/10 bg-white/[.035] p-5">
+          <section className="rounded-lg border border-white/10 bg-white/[.035] p-5">
             <h2 className="text-xl font-black text-cyan-200">
               Fischer projection and mirror construction
             </h2>
@@ -1172,7 +1172,7 @@ export default function IsomerismPart12() {
             </p>
           </section>
 
-          <section className="rounded-2xl border border-white/10 bg-white/[.035] p-5">
+          <section className="rounded-lg border border-white/10 bg-white/[.035] p-5">
             <h2 className="text-xl font-black text-cyan-200">
               Wedge–dash mirror pair
             </h2>
@@ -1186,7 +1186,7 @@ export default function IsomerismPart12() {
             </p>
           </section>
 
-          <section className="rounded-2xl border border-white/10 bg-white/[.035] p-5">
+          <section className="rounded-lg border border-white/10 bg-white/[.035] p-5">
             <h2 className="text-xl font-black text-cyan-200">
               Newman geometry: exact staggered 60° relationship
             </h2>
@@ -1195,7 +1195,7 @@ export default function IsomerismPart12() {
             </div>
           </section>
 
-          <section className="rounded-2xl border border-white/10 bg-white/[.035] p-5">
+          <section className="rounded-lg border border-white/10 bg-white/[.035] p-5">
             <h2 className="text-xl font-black text-cyan-200">
               Enantiomers
             </h2>
@@ -1235,7 +1235,7 @@ export default function IsomerismPart12() {
             </p>
           </section>
 
-          <section className="rounded-2xl border border-white/10 bg-white/[.035] p-5">
+          <section className="rounded-lg border border-white/10 bg-white/[.035] p-5">
             <h2 className="text-xl font-black text-cyan-200">
               Enantiomer versus meso relationship
             </h2>

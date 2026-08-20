@@ -46,28 +46,28 @@ export default async function CoachPage() {
     mistakes?.map((m) => m.chapter_id) || [];
 
   return (
-    <main className="min-h-screen bg-black text-white p-8">
+    <main className="min-h-screen bg-[var(--background)] text-white p-8">
       <h1 className="text-5xl font-black">
         AI Coach
       </h1>
 
       <div className="mt-8 grid gap-6 md:grid-cols-3">
 
-        <div className="rounded-2xl border border-white/10 p-6">
+        <div className="rounded-lg border border-white/10 p-6">
           <p className="text-white/50">Average Accuracy</p>
           <p className="mt-3 text-4xl font-bold">
             {avgScore}%
           </p>
         </div>
 
-        <div className="rounded-2xl border border-white/10 p-6">
+        <div className="rounded-lg border border-white/10 p-6">
           <p className="text-white/50">Study Hours</p>
           <p className="mt-3 text-4xl font-bold">
             {studyHours}
           </p>
         </div>
 
-        <div className="rounded-2xl border border-white/10 p-6">
+        <div className="rounded-lg border border-white/10 p-6">
           <p className="text-white/50">Mistakes Logged</p>
           <p className="mt-3 text-4xl font-bold">
             {mistakes?.length || 0}
@@ -76,7 +76,7 @@ export default async function CoachPage() {
 
       </div>
 
-      <div className="mt-10 rounded-2xl border border-white/10 p-6">
+      <div className="mt-10 rounded-lg border border-white/10 p-6">
         <h2 className="text-2xl font-bold">
           Today&apos;s Focus
         </h2>

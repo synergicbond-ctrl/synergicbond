@@ -47,7 +47,7 @@ export default function HandwrittenNotesPage() {
   }
 
   return (
-    <main className="min-h-screen bg-black text-white px-4 py-12">
+    <main className="min-h-screen bg-[var(--background)] text-white px-4 py-12">
       <div className="mx-auto max-w-5xl">
         <div className="mb-8">
           <h1 className="text-4xl font-bold tracking-tight">✍️ Handwritten Notes Converter</h1>
@@ -63,7 +63,7 @@ export default function HandwrittenNotesPage() {
                 if (e.dataTransfer.files[0]) handleFile(e.dataTransfer.files[0]);
               }}
               onDragOver={(e) => e.preventDefault()}
-              className="flex min-h-64 cursor-pointer flex-col items-center justify-center rounded-2xl border-2 border-dashed border-white/20 bg-white/[0.03] p-6 text-center hover:border-cyan-500/50 transition">
+              className="flex min-h-64 cursor-pointer flex-col items-center justify-center rounded-lg border-2 border-dashed border-white/20 bg-white/[0.03] p-6 text-center hover:border-[var(--accent)]/50 transition">
               {image ? (
                 <Image src={image} alt="Notes" width={400} height={240} unoptimized className="max-h-60 rounded-xl object-contain" />
               ) : (
@@ -83,7 +83,7 @@ export default function HandwrittenNotesPage() {
               <div className="flex flex-wrap gap-2">
                 {["NEET", "JEE Main", "JEE Advanced", "GATE", "NSEC"].map((e) => (
                   <button key={e} onClick={() => setExamType(e)}
-                    className={`rounded-xl px-3 py-1.5 text-sm font-semibold transition ${examType === e ? "bg-cyan-500 text-black" : "border border-white/10 bg-white/5 hover:bg-white/10"}`}>
+                    className={`rounded-lg px-3 py-1.5 text-sm font-semibold transition ${examType === e ? "bg-[var(--accent)] text-[var(--background)]" : "border border-white/10 bg-white/5 hover:bg-white/10"}`}>
                     {e}
                   </button>
                 ))}
@@ -96,7 +96,7 @@ export default function HandwrittenNotesPage() {
               <div className="flex gap-2">
                 {["english", "hinglish", "hindi"].map((l) => (
                   <button key={l} onClick={() => setLanguage(l)}
-                    className={`flex-1 rounded-xl py-2 text-sm font-semibold capitalize transition ${language === l ? "bg-purple-500 text-white" : "border border-white/10 bg-white/5 hover:bg-white/10"}`}>
+                    className={`flex-1 rounded-lg py-2 text-sm font-semibold capitalize transition ${language === l ? "bg-[var(--accent)] text-[var(--background)]" : "border border-white/10 bg-white/5 hover:bg-white/10"}`}>
                     {l === "hindi" ? "हिंदी" : l}
                   </button>
                 ))}
@@ -104,20 +104,20 @@ export default function HandwrittenNotesPage() {
             </div>
 
             <button onClick={convert} disabled={!image || loading}
-              className="w-full rounded-2xl bg-gradient-to-r from-purple-500 to-purple-500 py-4 font-bold text-white disabled:opacity-40">
+              className="w-full rounded-lg bg-[var(--accent)] py-4 font-bold text-[var(--background)] disabled:opacity-40">
               {loading ? "✨ Converting..." : "✨ Convert to Digital Notes"}
             </button>
 
             {image && (
               <button onClick={() => { setImage(null); setNotes(""); }}
-                className="w-full rounded-xl border border-white/10 py-2 text-sm text-white/40 hover:text-white transition">
+                className="w-full rounded-lg border border-white/10 py-2 text-sm text-white/40 hover:text-white transition">
                 Clear
               </button>
             )}
           </div>
 
           {/* Output side */}
-          <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-6 min-h-64">
+          <div className="rounded-lg border border-white/10 bg-white/[0.03] p-6 min-h-64">
             {error && <p className="text-red-400">{error}</p>}
             {loading && (
               <div className="flex flex-col items-center justify-center h-full gap-3 text-white/40">
@@ -129,7 +129,7 @@ export default function HandwrittenNotesPage() {
               <>
                 <div className="flex justify-between items-center mb-4">
                   <p className="text-xs text-white/40">Digital Notes</p>
-                  <button onClick={copyNotes} className="text-xs text-cyan-400 hover:text-cyan-300 transition">📋 Copy</button>
+                  <button onClick={copyNotes} className="text-xs text-[var(--accent)] hover:text-[var(--accent)]/80 transition">📋 Copy</button>
                 </div>
                 <div className="prose prose-invert prose-sm max-w-none">
                   <ReactMarkdown remarkPlugins={[remarkMath]} rehypePlugins={[rehypeKatex]}>

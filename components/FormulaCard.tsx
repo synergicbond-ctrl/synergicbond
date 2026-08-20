@@ -22,7 +22,7 @@ export default function FormulaCard({
   pyqContext,
 }: FormulaCardProps) {
   return (
-    <div className="p-6 bg-white dark:bg-slate-900 rounded-3xl border border-slate-100 dark:border-slate-800 shadow-sm grid grid-cols-1 md:grid-cols-3 gap-6 items-center">
+    <div className="p-6 bg-white dark:bg-slate-900 rounded-lg border border-slate-100 dark:border-slate-800 shadow-sm grid grid-cols-1 md:grid-cols-3 gap-6 items-center">
       <div className="md:col-span-2 space-y-4 border-r border-slate-100 dark:border-slate-800 pr-4">
         <div>
           <h3 className="font-extrabold text-sm text-slate-800 dark:text-slate-100">{title}</h3>
@@ -41,11 +41,11 @@ export default function FormulaCard({
         </p>
       </div>
       <div className="space-y-4">
-        <div className="p-4 rounded-2xl bg-slate-50 dark:bg-slate-950 border border-slate-100 dark:border-slate-800 space-y-1">
+        <div className="p-4 rounded-lg bg-slate-50 dark:bg-slate-950 border border-slate-100 dark:border-slate-800 space-y-1">
           <span className="text-[9px] font-extrabold text-slate-400 uppercase tracking-widest">Shortcut / Trick</span>
           <p className="text-xs font-semibold text-slate-700 dark:text-slate-300">{shortcut}</p>
         </div>
-        <div className="p-4 rounded-2xl bg-amber-50/40 dark:bg-amber-950/10 border border-amber-100 dark:border-amber-900 space-y-1">
+        <div className="p-4 rounded-lg bg-amber-50/40 dark:bg-amber-950/10 border border-amber-100 dark:border-amber-900 space-y-1">
           <span className="text-[9px] font-extrabold text-amber-700 dark:text-amber-500 uppercase tracking-widest">Common Mistake</span>
           <p className="text-[11px] font-semibold text-amber-900 dark:text-amber-200 leading-relaxed">{commonMistakes}</p>
         </div>

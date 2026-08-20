@@ -24,7 +24,7 @@ function Chip({ active, onClick, children }: { active: boolean; onClick: () => v
   return (
     <button onClick={onClick}
       className={`shrink-0 whitespace-nowrap rounded-lg border px-3 py-1.5 text-xs font-semibold transition ${
-        active ? "border-cyan-300/60 bg-[linear-gradient(120deg,rgba(34,211,238,0.22),rgba(139,92,246,0.16))] text-white shadow-[0_12px_25px_-18px_rgba(34,211,238,0.9)]" : "border-white/10 bg-white/[0.03] text-white/60 hover:border-violet-400/35 hover:text-white/85"
+        active ? "border-[var(--accent)]/60 bg-[var(--accent)]/10 text-[var(--foreground)]" : "border-white/10 bg-white/[0.03] text-white/60 hover:border-[var(--border-strong)] hover:text-white/85"
       }`}>
       {children}
     </button>
@@ -206,7 +206,7 @@ export default function PracticeClient({
   }, [subQ, answer, activeType.marks, boardName, uploadedFile]);
 
   return (
-    <div className="space-y-5 rounded-3xl border border-white/[0.07] bg-[#101827]/65 p-4 shadow-[0_30px_75px_-55px_rgba(0,0,0,0.95)] sm:p-5">
+    <div className="space-y-5 rounded-lg border border-white/[0.07] bg-[var(--surface)] p-4 sm:p-5">
       {/* Type tabs */}
       <div className="flex gap-2 overflow-x-auto pb-1">
         {BOARD_QUESTION_TYPES.map((t) => (
@@ -219,7 +219,7 @@ export default function PracticeClient({
       {/* Chapter + difficulty filters */}
       <div className="flex flex-wrap items-center gap-3">
         <select value={chapterId} onChange={(e) => setChapterId(e.target.value)}
-          className="rounded-lg border border-cyan-400/20 bg-[#0B1220] px-3 py-2 text-sm text-white/85 shadow-inner shadow-black/30">
+          className="rounded-lg border border-[var(--border)] bg-[var(--surface-2)] px-3 py-2 text-sm text-white/85">
           <option value="all">All chapters</option>
           {chapters.map((c) => <option key={c.id} value={c.id}>Unit {c.unit}: {c.title}</option>)}
         </select>
@@ -235,20 +235,20 @@ export default function PracticeClient({
       {activeType.kind === "objective" ? (
         <>
           {/* Non-repetition status */}
-          <div className="flex flex-wrap items-center justify-between gap-2 rounded-xl border border-violet-400/20 bg-[linear-gradient(100deg,rgba(139,92,246,0.08),transparent_48%),rgba(255,255,255,0.02)] p-3 text-xs">
+          <div className="flex flex-wrap items-center justify-between gap-2 rounded-lg border border-[var(--border)] bg-[var(--surface-2)] p-3 text-xs">
             <span className="text-white/55">
               {loadingServed ? "Checking your history…" :
                 result ? <>{result.poolSize} in pool · {servedIds.size + sessionServed.size} already served{result.exhausted ? " · pool exhausted" : ""}</> : null}
               {signedIn === false && " · sign in to save progress & avoid repeats"}
             </span>
             <div className="flex gap-2">
-              <button onClick={loadBatch} className="rounded-lg border border-cyan-400/40 bg-cyan-500/10 px-3 py-1.5 font-bold text-cyan-300 hover:bg-cyan-500/20">Next batch →</button>
+              <button onClick={loadBatch} className="rounded-lg border border-[var(--border)] bg-[var(--surface)] px-3 py-1.5 font-bold text-[var(--accent)] hover:bg-[var(--surface-2)]">Next batch →</button>
               <button onClick={doReset} className="rounded-lg border border-white/15 bg-white/[0.04] px-3 py-1.5 font-semibold text-white/70 hover:bg-white/[0.08]">Reset served</button>
             </div>
           </div>
 
           {batch.length === 0 ? (
-            <div className="rounded-2xl border border-white/10 bg-white/[0.02] p-8 text-center text-sm text-white/55">
+            <div className="rounded-lg border border-white/10 bg-white/[0.02] p-8 text-center text-sm text-white/55">
               {result && result.poolSize === 0
                 ? "No verified questions of this type for the selected chapter yet — try another chapter or type."
                 : result?.exhausted
@@ -265,39 +265,39 @@ export default function PracticeClient({
         /* Subjective (AI) */
         <div className="space-y-4">
           <button onClick={generateSubjective} disabled={subLoading}
-            className="rounded-xl bg-gradient-to-r from-cyan-400 to-sky-500 px-5 py-2.5 text-sm font-black text-black disabled:opacity-60">
+            className="rounded-lg bg-[var(--accent)] px-5 py-2.5 text-sm font-black text-[var(--background)] disabled:opacity-60">
             {subLoading ? "Generating…" : `Generate ${activeType.label} question`}
           </button>
-          {subError && <p className="rounded-xl border border-rose-500/30 bg-rose-500/[0.06] p-3 text-sm text-rose-300">{subError}</p>}
+          {subError && <p className="rounded-lg border border-[var(--border)] bg-[var(--surface-2)] p-3 text-sm text-[var(--text-muted)]">{subError}</p>}
           {subQ && (
-            <div className="space-y-3 rounded-2xl border border-cyan-400/20 bg-[linear-gradient(135deg,rgba(34,211,238,0.07),transparent_38%),rgba(255,255,255,0.02)] p-4 shadow-inner shadow-black/20">
+            <div className="space-y-3 rounded-lg border border-[var(--border)] bg-[var(--surface-2)] p-4">
               <p className="font-medium leading-relaxed text-white">{subQ.question}</p>
               <textarea value={answer} onChange={(e) => setAnswer(e.target.value)} rows={5}
                 placeholder="Write your answer as you would in the board exam (or upload a PDF/Image below)..."
-                className="w-full rounded-lg border border-white/10 bg-[#0B1220] p-3 text-sm text-white/90 outline-none focus:border-cyan-400/40" />
+                className="w-full rounded-lg border border-[var(--border)] bg-[var(--surface-2)] p-3 text-sm text-white/90 outline-none focus:border-[var(--accent)]" />
               
               {/* Subjective answer upload & status UI */}
-              <div className="flex flex-col gap-3 p-3 bg-white/[0.02] border border-white/[0.06] rounded-xl">
+              <div className="flex flex-col gap-3 p-3 bg-[var(--surface-2)] border border-[var(--border)] rounded-lg">
                 <div className="flex items-center justify-between gap-2">
                   <span className="text-xs font-semibold text-white/70">Upload handwritten page, lab record, or project file (Image or PDF)</span>
-                  <label className="flex items-center gap-1.5 px-3 py-1.5 bg-cyan-500/10 hover:bg-cyan-500/20 text-cyan-300 text-xs font-bold rounded-lg border border-cyan-500/20 cursor-pointer transition">
+                  <label className="flex items-center gap-1.5 px-3 py-1.5 bg-[var(--surface-2)] hover:bg-[var(--surface)] text-[var(--accent)] text-xs font-bold rounded-lg border border-[var(--border)] cursor-pointer transition">
                     <Upload className="h-3.5 w-3.5" /> Select File
                     <input type="file" accept="image/*,application/pdf" onChange={handleFileUpload} className="hidden" />
                   </label>
                 </div>
                 {uploadingState === "uploading" && (
-                  <p className="text-xs text-cyan-300 animate-pulse">Uploading file securely...</p>
+                  <p className="text-xs text-[var(--text-muted)] animate-pulse">Uploading file securely...</p>
                 )}
                 {uploadedFile && (
                   <div className="space-y-2">
-                    <div className="flex items-center gap-2 text-xs text-emerald-300">
+                    <div className="flex items-center gap-2 text-xs text-[var(--accent)]">
                       <Check className="h-4 w-4" />
                       <span>
                         {uploadedFile.name} &middot; {uploadedFile.isLocalFallback ? "Stored in Session — Bucket Pending Migration" : "Uploaded Successfully"}
                       </span>
                     </div>
                     {uploadedFile.localPreview && (
-                      <div className="relative h-32 w-fit max-w-full rounded-lg border border-white/10 overflow-hidden bg-black/40">
+                      <div className="relative h-32 w-fit max-w-full rounded-lg border border-white/10 overflow-hidden bg-[var(--background)]">
                         <img src={uploadedFile.localPreview} alt="Answer Preview" className="h-full object-contain" />
                       </div>
                     )}
@@ -311,21 +311,21 @@ export default function PracticeClient({
 
               <div className="flex flex-wrap gap-2">
                 <button onClick={evaluate} disabled={gradeLoading || (!answer.trim() && !uploadedFile)}
-                  className="rounded-lg border border-cyan-400/40 bg-cyan-500/10 px-4 py-2 text-sm font-bold text-cyan-300 disabled:opacity-50">
+                  className="rounded-lg border border-[var(--border)] bg-[var(--surface)] px-4 py-2 text-sm font-bold text-[var(--accent)] disabled:opacity-50">
                   {gradeLoading ? "Evaluating…" : "Evaluate my answer"}
                 </button>
               </div>
               {grade && (
-                <div className="rounded-xl border border-emerald-500/25 bg-emerald-500/[0.05] p-4 text-sm space-y-3">
+                <div className="rounded-lg border border-[var(--border)] bg-[var(--surface-2)] p-4 text-sm space-y-3">
                   <div className="flex items-center justify-between border-b border-white/[0.06] pb-2">
                     <span className="font-bold text-white text-xs uppercase tracking-wider">AI Evaluation Report</span>
-                    <span className="font-black text-emerald-300 px-2 py-0.5 bg-emerald-500/10 rounded-lg">{grade.marksAwarded} / {grade.maxMarks} Marks</span>
+                    <span className="font-black text-[var(--accent)] px-2 py-0.5 bg-[var(--accent)]/10 rounded-lg">{grade.marksAwarded} / {grade.maxMarks} Marks</span>
                   </div>
                   <p className="text-white/75 italic">&ldquo;{grade.verdict}&rdquo;</p>
                   
                   {grade.strengths?.length > 0 && (
                     <div className="space-y-1">
-                      <span className="font-bold text-emerald-300 text-xs uppercase tracking-wider block">Key Strengths:</span>
+                      <span className="font-bold text-[var(--text-muted)] text-xs uppercase tracking-wider block">Key Strengths:</span>
                       <ul className="list-disc pl-5 text-white/75 space-y-0.5">
                         {grade.strengths.map((str, idx) => <li key={idx}>{str}</li>)}
                       </ul>
@@ -334,8 +334,8 @@ export default function PracticeClient({
                   
                   {grade.missingKeywords?.length > 0 && (
                     <div className="space-y-1">
-                      <span className="font-bold text-rose-300 text-xs uppercase tracking-wider block">Weaknesses / Missing Keywords:</span>
-                      <ul className="list-disc pl-5 text-rose-100/70 space-y-0.5">
+                      <span className="font-bold text-[var(--text-muted)] text-xs uppercase tracking-wider block">Weaknesses / Missing Keywords:</span>
+                      <ul className="list-disc pl-5 text-[var(--text-muted)] space-y-0.5">
                         {grade.missingKeywords.map((kw, idx) => <li key={idx}>{kw}</li>)}
                       </ul>
                     </div>
@@ -343,7 +343,7 @@ export default function PracticeClient({
 
                   {grade.improvements && grade.improvements.length > 0 && (
                     <div className="space-y-1">
-                      <span className="font-bold text-cyan-300 text-xs uppercase tracking-wider block">Suggested Improvements:</span>
+                      <span className="font-bold text-[var(--text-muted)] text-xs uppercase tracking-wider block">Suggested Improvements:</span>
                       <ul className="list-disc pl-5 text-white/70 space-y-0.5">
                         {grade.improvements.map((imp, idx) => <li key={idx}>{imp}</li>)}
                       </ul>

@@ -84,7 +84,7 @@ export default function TermsPage() {
         <p>
           Payments are handled by our payment gateway. Refunds and cancellations are
           governed by our{" "}
-          <a className="text-cyan-400 hover:text-cyan-300" href="/refund">Refund &amp; Cancellation Policy</a>.
+          <a className="text-[var(--accent)] hover:text-[var(--text-muted)]" href="/refund">Refund &amp; Cancellation Policy</a>.
         </p>
       </LegalSection>
 
@@ -101,7 +101,7 @@ export default function TermsPage() {
         <p>
           We may update these Terms; continued use after an update means you accept
           the revised Terms. Questions? Contact{" "}
-          <a className="text-cyan-400 hover:text-cyan-300" href={`mailto:${LEGAL_SUPPORT_EMAIL}`}>{LEGAL_SUPPORT_EMAIL}</a>.
+          <a className="text-[var(--accent)] hover:text-[var(--text-muted)]" href={`mailto:${LEGAL_SUPPORT_EMAIL}`}>{LEGAL_SUPPORT_EMAIL}</a>.
         </p>
       </LegalSection>
     </LegalShell>

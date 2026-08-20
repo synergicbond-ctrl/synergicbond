@@ -14,7 +14,7 @@ function Section({ index, title, subtitle, children }: { index: string; title: s
   return (
     <section className="rounded-[2rem] border border-white/10 bg-slate-950/80 p-5 shadow-2xl shadow-black/20 backdrop-blur md:p-8">
       <div className="flex items-start gap-4">
-        <span className="grid h-11 w-11 shrink-0 place-items-center rounded-2xl border border-cyan-300/30 bg-cyan-300/10 text-sm font-black text-cyan-200">{index}</span>
+        <span className="grid h-11 w-11 shrink-0 place-items-center rounded-lg border border-cyan-300/30 bg-cyan-300/10 text-sm font-black text-cyan-200">{index}</span>
         <div>
           <h2 className="text-2xl font-black tracking-tight text-white md:text-3xl">{title}</h2>
           {subtitle && <p className="mt-1 max-w-4xl text-sm leading-6 text-slate-400">{subtitle}</p>}
@@ -26,7 +26,7 @@ function Section({ index, title, subtitle, children }: { index: string; title: s
 }
 function Formula({ label, children }: { label: string; children: React.ReactNode }) {
   return (
-    <div className="overflow-x-auto rounded-2xl border border-cyan-300/20 bg-black/30 p-4 text-center">
+    <div className="overflow-x-auto rounded-lg border border-cyan-300/20 bg-black/30 p-4 text-center">
       <p className="mb-2 text-xs font-black uppercase tracking-[0.2em] text-cyan-300">{label}</p>
       <div className="whitespace-nowrap font-mono text-lg font-black text-white md:text-xl">{children}</div>
     </div>
@@ -34,7 +34,7 @@ function Formula({ label, children }: { label: string; children: React.ReactNode
 }
 function Lens({ title, children, tone = "cyan" }: { title: string; children: React.ReactNode; tone?: Tone }) {
   return (
-    <aside className={`rounded-2xl border p-5 ${toneStyles[tone]}`}>
+    <aside className={`rounded-lg border p-5 ${toneStyles[tone]}`}>
       <p className="text-xs font-black uppercase tracking-[0.2em]">Concept</p>
       <h3 className="mt-2 text-lg font-black text-white">{title}</h3>
       <div className="mt-2 text-sm leading-6 text-slate-200">{children}</div>
@@ -198,7 +198,7 @@ export default function ThermodynamicsPart28() {
         <Section index="1" title="Gibbs Energy of Ideal Mixing"
           subtitle="Exact derived result: ΔG_mix = RT Σnᵢ ln yᵢ — always negative for genuine mixing">
           <p>Compare the total G before mixing (each component pure at T,P) with G after mixing at the same T and total P.</p>
-          <div className="space-y-1 rounded-2xl border border-white/10 bg-slate-900/60 p-4 font-mono text-sm">
+          <div className="space-y-1 rounded-lg border border-white/10 bg-slate-900/60 p-4 font-mono text-sm">
             <p>Before mixing: Gᵢ(pure) at T, P: μᵢ(pure) = μ°ᵢ + RT ln(P/P°)</p>
             <p>After mixing: μᵢ(mix) = μ°ᵢ + RT ln(yᵢP/P°)</p>
             <p>Difference per mole of i: Δμᵢ = RT ln yᵢ</p>
@@ -210,7 +210,7 @@ export default function ThermodynamicsPart28() {
 
         <Section index="2" title="Entropy and Enthalpy of Ideal Mixing">
           <p>Since ΔH_mix = 0 for ideal mixing by definition (no interactions between different species):</p>
-          <div className="space-y-1 rounded-2xl border border-white/10 bg-slate-900/60 p-4 font-mono text-sm">
+          <div className="space-y-1 rounded-lg border border-white/10 bg-slate-900/60 p-4 font-mono text-sm">
             <p>ΔG_mix = ΔH_mix − T ΔS_mix</p>
             <p>ΔH_mix = 0 (ideal mixing)</p>
             <p>Therefore: ΔS_mix = −ΔG_mix/T = −R Σᵢ nᵢ ln yᵢ &gt; 0</p>
@@ -227,7 +227,7 @@ export default function ThermodynamicsPart28() {
           subtitle="Phase equilibrium condition μ(liquid) = μ(vapour) at each composition">
           <RaoultSVG />
           <p>At liquid–vapour equilibrium for component i:</p>
-          <div className="space-y-1 rounded-2xl border border-white/10 bg-slate-900/60 p-4 font-mono text-sm">
+          <div className="space-y-1 rounded-lg border border-white/10 bg-slate-900/60 p-4 font-mono text-sm">
             <p>Ideal liquid: μᵢ(l) = μ*ᵢ(l) + RT ln xᵢ</p>
             <p>Ideal vapour: μᵢ(g) = μ°ᵢ(g) + RT ln(Pᵢ/P°)</p>
             <p>Pure component at T: μ*ᵢ(l) = μ°ᵢ(g) + RT ln(P*ᵢ/P°)</p>
@@ -246,7 +246,7 @@ export default function ThermodynamicsPart28() {
 
         <Section index="4" title="Gibbs–Duhem Relation">
           <p>Differentiating Euler&apos;s relation G = Σnᵢ μᵢ at constant T and P:</p>
-          <div className="space-y-1 rounded-2xl border border-white/10 bg-slate-900/60 p-4 font-mono text-sm">
+          <div className="space-y-1 rounded-lg border border-white/10 bg-slate-900/60 p-4 font-mono text-sm">
             <p>dG = Σμᵢ dnᵢ + Σnᵢ dμᵢ</p>
             <p>But dG = Σμᵢ dnᵢ (at constant T,P from fundamental relation)</p>
             <p>Subtract: Σnᵢ dμᵢ = 0 at constant T, P</p>
@@ -261,7 +261,7 @@ export default function ThermodynamicsPart28() {
 
         <Section index="5" title="Worked Examples">
           {examples.map(ex => (
-            <article key={ex.title} className="rounded-2xl border border-white/10 bg-slate-900/70 p-5 mb-4">
+            <article key={ex.title} className="rounded-lg border border-white/10 bg-slate-900/70 p-5 mb-4">
               <h3 className="font-black text-white">{ex.title}</h3>
               <p className="mt-2 text-sm font-semibold text-slate-200">{ex.given}</p>
               <div className="mt-3 rounded-xl border border-emerald-300/20 bg-emerald-300/[0.06] p-3 text-sm leading-6 text-slate-200">{ex.solution}</div>
@@ -281,7 +281,7 @@ export default function ThermodynamicsPart28() {
               ["State Raoult's law and identify the condition for its validity.", "Raoult: Pᵢ = xᵢ P*ᵢ. Valid for: (1) liquid solution is ideal (molecules A and B have similar sizes and intermolecular forces); (2) vapour behaves as an ideal gas."],
               ["In a binary mixture at constant T,P, if dμ₁ = +2 J mol⁻¹ and n₁/n₂ = 3, find dμ₂.", "Gibbs–Duhem: n₁ dμ₁ + n₂ dμ₂ = 0 → dμ₂ = −(n₁/n₂) dμ₁ = −3 × (+2) = −6 J mol⁻¹."],
             ].map(([q, a], i) => (
-              <article key={i} className="rounded-2xl border border-white/10 bg-slate-900/60 p-4">
+              <article key={i} className="rounded-lg border border-white/10 bg-slate-900/60 p-4">
                 <p className="font-semibold text-white"><span className="mr-2 text-amber-300">{i+1}.</span>{q}</p>
                 <div className="mt-2 rounded-xl border border-emerald-300/20 bg-emerald-300/[0.06] p-3 text-sm text-slate-200">{a}</div>
               </article>

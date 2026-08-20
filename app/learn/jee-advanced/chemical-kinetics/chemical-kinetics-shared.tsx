@@ -113,7 +113,7 @@ function KB({ children }: { children: string }) {
 
 function ConceptCard({ title, tone = "navy", eyebrow, children }: ConceptCardProps) {
   return (
-    <article className={`rounded-3xl border p-5 shadow-[0_18px_70px_-40px_rgba(0,0,0,0.85)] backdrop-blur-sm sm:p-6 ${toneClass[tone]}`}>
+    <article className={`rounded-lg border p-5 shadow-[0_18px_70px_-40px_rgba(0,0,0,0.85)] backdrop-blur-sm sm:p-6 ${toneClass[tone]}`}>
       {eyebrow ? (
         <div className={`mb-3 inline-flex rounded-full border px-2.5 py-1 text-[11px] font-bold uppercase tracking-[0.17em] ${badgeClass[tone]}`}>
           {eyebrow}
@@ -127,7 +127,7 @@ function ConceptCard({ title, tone = "navy", eyebrow, children }: ConceptCardPro
 
 function FormulaCard({ title, children, note }: { title: string; children: ReactNode; note?: ReactNode }) {
   return (
-    <div className="overflow-hidden rounded-3xl border border-cyan-300/20 bg-gradient-to-br from-cyan-300/[0.08] via-slate-950/80 to-violet-400/[0.08] shadow-[0_24px_80px_-48px_rgba(34,211,238,0.5)]">
+    <div className="overflow-hidden rounded-lg border border-cyan-300/20 bg-gradient-to-br from-cyan-300/[0.08] via-slate-950/80 to-violet-400/[0.08] shadow-[0_24px_80px_-48px_rgba(34,211,238,0.5)]">
       <div className="border-b border-white/10 px-5 py-3 text-xs font-bold uppercase tracking-[0.18em] text-cyan-200">{title}</div>
       <div className="formula-scroll overflow-x-auto px-4 py-5 text-slate-100 sm:px-6">{children}</div>
       {note ? <div className="border-t border-white/10 px-5 py-3 text-sm leading-6 text-slate-400">{note}</div> : null}
@@ -137,7 +137,7 @@ function FormulaCard({ title, children, note }: { title: string; children: React
 
 function ExamTrap({ children }: { children: ReactNode }) {
   return (
-    <div className="rounded-2xl border border-rose-400/25 bg-rose-400/[0.065] px-4 py-3 text-sm leading-6 text-rose-100">
+    <div className="rounded-lg border border-rose-400/25 bg-rose-400/[0.065] px-4 py-3 text-sm leading-6 text-rose-100">
       <span className="mr-2 font-black uppercase tracking-[0.13em] text-rose-300">JEE trap</span>
       {children}
     </div>
@@ -146,7 +146,7 @@ function ExamTrap({ children }: { children: ReactNode }) {
 
 function KeyIdea({ children }: { children: ReactNode }) {
   return (
-    <div className="rounded-2xl border border-amber-300/25 bg-amber-300/[0.06] px-4 py-3 text-sm leading-6 text-amber-50">
+    <div className="rounded-lg border border-amber-300/25 bg-amber-300/[0.06] px-4 py-3 text-sm leading-6 text-amber-50">
       <span className="mr-2 font-black uppercase tracking-[0.13em] text-amber-200">Key idea</span>
       {children}
     </div>
@@ -155,7 +155,7 @@ function KeyIdea({ children }: { children: ReactNode }) {
 
 function DataTable({ headers, rows }: { headers: ReactNode[]; rows: ReactNode[][] }) {
   return (
-    <div className="overflow-x-auto rounded-2xl border border-white/10">
+    <div className="overflow-x-auto rounded-lg border border-white/10">
       <table className="min-w-full border-collapse text-left text-sm">
         <thead className="bg-white/[0.055] text-slate-200">
           <tr>{headers.map((header, i) => <th key={i} className="border-b border-white/10 px-4 py-3 font-semibold">{header}</th>)}</tr>
@@ -174,7 +174,7 @@ function DataTable({ headers, rows }: { headers: ReactNode[]; rows: ReactNode[][
 
 function FigureFrame({ title, caption, children }: { title: string; caption: ReactNode; children: ReactNode }) {
   return (
-    <figure className="overflow-hidden rounded-3xl border border-white/10 bg-slate-950/75">
+    <figure className="overflow-hidden rounded-lg border border-white/10 bg-slate-950/75">
       <div className="border-b border-white/10 px-5 py-3 text-sm font-semibold text-slate-200">{title}</div>
       <div className="overflow-x-auto p-3 sm:p-5">{children}</div>
       <figcaption className="border-t border-white/10 px-5 py-3 text-sm leading-6 text-slate-400">{caption}</figcaption>
@@ -206,11 +206,11 @@ function WorkedExample({ number, title, difficulty = "JEE Advanced", concept, qu
       : "border-violet-400/25 bg-violet-400/10 text-violet-100";
 
   return (
-    <details className="group overflow-hidden rounded-3xl border border-white/10 bg-slate-950/70 shadow-[0_24px_100px_-60px_rgba(139,92,246,0.8)]" open={number <= 2}>
+    <details className="group overflow-hidden rounded-lg border border-white/10 bg-slate-950/70 shadow-[0_24px_100px_-60px_rgba(139,92,246,0.8)]" open={number <= 2}>
       <summary className="cursor-pointer list-none px-5 py-5 transition hover:bg-white/[0.025] sm:px-6">
         <div className="flex flex-wrap items-start justify-between gap-4">
           <div className="flex min-w-0 gap-4">
-            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl border border-violet-300/20 bg-violet-400/10 font-bold text-violet-200">{number}</div>
+            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-violet-300/20 bg-violet-400/10 font-bold text-violet-200">{number}</div>
             <div>
               <h3 className="text-lg font-semibold text-white sm:text-xl">{title}</h3>
               <p className="mt-1 text-sm leading-6 text-slate-400">{concept}</p>
@@ -224,7 +224,7 @@ function WorkedExample({ number, title, difficulty = "JEE Advanced", concept, qu
       <div className="border-t border-white/10 px-5 py-5 sm:px-6">
         <div className="mb-3 text-xs font-black uppercase tracking-[0.18em] text-violet-300">Solution</div>
         <div className="space-y-3 text-[15px] leading-7 text-slate-300">{solution}</div>
-        <div className="mt-5 rounded-2xl border border-emerald-400/25 bg-emerald-400/[0.065] px-4 py-3 text-[15px] leading-7 text-emerald-100">
+        <div className="mt-5 rounded-lg border border-emerald-400/25 bg-emerald-400/[0.065] px-4 py-3 text-[15px] leading-7 text-emerald-100">
           <span className="mr-2 font-black uppercase tracking-[0.14em] text-emerald-300">Answer</span>
           {answer}
         </div>
@@ -617,7 +617,7 @@ function TextbookExtensionAtlas({ sheets }: { sheets?: readonly number[] }) {
               <div className="mt-5 space-y-4 text-[15px] leading-7 text-slate-300">
                 {sheet.paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
               </div>
-              <div className="mt-5 rounded-2xl border border-amber-300/20 bg-amber-300/[0.055] p-4 text-sm leading-7 text-amber-50">
+              <div className="mt-5 rounded-lg border border-amber-300/20 bg-amber-300/[0.055] p-4 text-sm leading-7 text-amber-50">
                 <span className="font-black uppercase tracking-[0.13em] text-amber-200">JEE diagnostic</span> {sheet.trap}
               </div>
               <div className="mt-5 grid gap-3 sm:grid-cols-3">
@@ -647,22 +647,22 @@ function ModifiedProblemAtlas({ from = 1, to = 96 }: { from?: number; to?: numbe
   return (
     <div className="space-y-8">
       <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-        {groups.map((group) => <div key={group} className="rounded-2xl border border-violet-300/15 bg-violet-300/[0.045] p-4"><div className="font-semibold text-violet-100">{group}</div><div className="mt-1 text-sm text-slate-400">{selectedProblems.filter((problem) => problem.group === group).length} fully solved drills</div></div>)}
+        {groups.map((group) => <div key={group} className="rounded-lg border border-violet-300/15 bg-violet-300/[0.045] p-4"><div className="font-semibold text-violet-100">{group}</div><div className="mt-1 text-sm text-slate-400">{selectedProblems.filter((problem) => problem.group === group).length} fully solved drills</div></div>)}
       </div>
       {groups.map((group) => (
         <div key={group} className="space-y-4">
           <h3 className="text-2xl font-bold text-white">{group}</h3>
           {selectedProblems.filter((problem) => problem.group === group).map((problem) => (
-            <details key={problem.number} className="group overflow-hidden rounded-3xl border border-white/10 bg-slate-950/70">
+            <details key={problem.number} className="group overflow-hidden rounded-lg border border-white/10 bg-slate-950/70">
               <summary className="cursor-pointer list-none px-5 py-5 transition hover:bg-white/[0.025] sm:px-6">
-                <div className="flex items-start gap-4"><div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl border border-cyan-300/20 bg-cyan-300/[0.07] font-bold text-cyan-200">{problem.number}</div><div><h4 className="text-lg font-semibold text-white">{problem.title}</h4></div></div>
+                <div className="flex items-start gap-4"><div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-cyan-300/20 bg-cyan-300/[0.07] font-bold text-cyan-200">{problem.number}</div><div><h4 className="text-lg font-semibold text-white">{problem.title}</h4></div></div>
                 <p className="mt-4 text-[15px] leading-7 text-slate-200">{problem.question}</p>
                 <div className="mt-3 text-xs font-black uppercase tracking-[0.16em] text-cyan-300 group-open:hidden">Open solution</div>
               </summary>
               <div className="border-t border-white/10 px-5 py-5 sm:px-6">
                 <ol className="space-y-2 text-[15px] leading-7 text-slate-300">{problem.steps.map((step, index) => <li key={step}><span className="mr-2 font-mono text-violet-300">{index + 1}.</span>{step}</li>)}</ol>
                 <div className="mt-4 space-y-3">{problem.equations.map((equation) => <div key={equation}><FormulaCard title="Calculation"><KB>{equation}</KB></FormulaCard></div>)}</div>
-                <div className="mt-4 rounded-2xl border border-emerald-400/25 bg-emerald-400/[0.065] px-4 py-3 text-[15px] leading-7 text-emerald-100"><span className="mr-2 font-black uppercase tracking-[0.14em] text-emerald-300">Answer</span>{problem.answer}</div>
+                <div className="mt-4 rounded-lg border border-emerald-400/25 bg-emerald-400/[0.065] px-4 py-3 text-[15px] leading-7 text-emerald-100"><span className="mr-2 font-black uppercase tracking-[0.14em] text-emerald-300">Answer</span>{problem.answer}</div>
               </div>
             </details>
           ))}
@@ -693,15 +693,15 @@ function SourceCoverageAtlas({ start = 1, end = 259 }: { start?: number; end?: n
         </div>
       </div>
       <div className="mb-6 grid gap-3 sm:grid-cols-3">
-        <div className="rounded-2xl border border-emerald-300/20 bg-emerald-300/[0.055] p-4"><div className="text-2xl font-black text-emerald-200">{pages.length}</div><div className="mt-1 text-sm text-slate-400">source pages in this part</div></div>
-        <div className="rounded-2xl border border-cyan-300/20 bg-cyan-300/[0.055] p-4"><div className="text-2xl font-black text-cyan-200">{extractedCharacters.toLocaleString()}</div><div className="mt-1 text-sm text-slate-400">source-derived characters retained</div></div>
-        <div className="rounded-2xl border border-violet-300/20 bg-violet-300/[0.055] p-4"><div className="text-2xl font-black text-violet-200">{visualCount}</div><div className="mt-1 text-sm text-slate-400">complete dark fidelity panels</div></div>
+        <div className="rounded-lg border border-emerald-300/20 bg-emerald-300/[0.055] p-4"><div className="text-2xl font-black text-emerald-200">{pages.length}</div><div className="mt-1 text-sm text-slate-400">source pages in this part</div></div>
+        <div className="rounded-lg border border-cyan-300/20 bg-cyan-300/[0.055] p-4"><div className="text-2xl font-black text-cyan-200">{extractedCharacters.toLocaleString()}</div><div className="mt-1 text-sm text-slate-400">source-derived characters retained</div></div>
+        <div className="rounded-lg border border-violet-300/20 bg-violet-300/[0.055] p-4"><div className="text-2xl font-black text-violet-200">{visualCount}</div><div className="mt-1 text-sm text-slate-400">complete dark fidelity panels</div></div>
       </div>
       <div className="space-y-5">
         {pages.map((page) => {
           const hasVisual = VISUAL_SOURCE_PAGES.has(page.page);
           return (
-            <article id={`source-page-${page.page}`} key={page.page} className="overflow-hidden rounded-3xl border border-white/10 bg-slate-950/72">
+            <article id={`source-page-${page.page}`} key={page.page} className="overflow-hidden rounded-lg border border-white/10 bg-slate-950/72">
               <div className="flex flex-wrap items-start justify-between gap-4 border-b border-white/10 px-5 py-4 sm:px-6">
                 <div className="flex min-w-0 items-start gap-4">
                   <div className="flex h-11 w-14 shrink-0 items-center justify-center rounded-xl border border-emerald-300/20 bg-emerald-300/[0.06] font-mono text-sm font-black text-emerald-200">{page.page}</div>
@@ -713,7 +713,7 @@ function SourceCoverageAtlas({ start = 1, end = 259 }: { start?: number; end?: n
                 <div className="mb-3 text-xs font-black uppercase tracking-[0.16em] text-cyan-300">Typed source-derived reconstruction</div>
                 <pre className="whitespace-pre-wrap break-words font-sans text-[15px] leading-7 text-slate-300">{page.text}</pre>
                 {hasVisual ? (
-                  <details open={page.density !== "text-rich"} className="mt-5 overflow-hidden rounded-2xl border border-violet-300/20 bg-[#030711]">
+                  <details open={page.density !== "text-rich"} className="mt-5 overflow-hidden rounded-lg border border-violet-300/20 bg-[#030711]">
                     <summary className="cursor-pointer px-4 py-3 text-sm font-semibold text-violet-200">Open dark source-fidelity page {page.page}</summary>
                     <figure className="border-t border-white/10 p-3 sm:p-4">
                       <img src={sourceImagePath(page.page)} alt={`Dark source-fidelity reconstruction of Chemical Kinetics PDF page ${page.page}`} loading="lazy" className="mx-auto h-auto max-h-[920px] w-auto max-w-full rounded-xl border border-white/10 bg-[#030711] object-contain" />
@@ -726,7 +726,7 @@ function SourceCoverageAtlas({ start = 1, end = 259 }: { start?: number; end?: n
           );
         })}
       </div>
-      <div className="mt-6 rounded-2xl border border-emerald-300/25 bg-emerald-300/[0.06] px-5 py-4 text-sm leading-7 text-emerald-50"><span className="mr-2 font-black uppercase tracking-[0.14em] text-emerald-200">Coverage checkpoint</span>Pages {start}–{end} are represented exactly once in this part. The deployment package contains an external CSV ledger that verifies all pages 1–259 without gaps or overlaps.</div>
+      <div className="mt-6 rounded-lg border border-emerald-300/25 bg-emerald-300/[0.06] px-5 py-4 text-sm leading-7 text-emerald-50"><span className="mr-2 font-black uppercase tracking-[0.14em] text-emerald-200">Coverage checkpoint</span>Pages {start}–{end} are represented exactly once in this part. The deployment package contains an external CSV ledger that verifies all pages 1–259 without gaps or overlaps.</div>
     </section>
   );
 }
@@ -785,7 +785,7 @@ function PartShell({
               <h1 className="mt-5 text-4xl font-black tracking-[-0.045em] text-white sm:text-5xl lg:text-6xl">{title}</h1>
               <p className="mt-4 max-w-4xl text-base leading-8 text-slate-300 sm:text-lg">{description}</p>
             </div>
-            <div className="rounded-3xl border border-cyan-300/20 bg-cyan-300/[0.055] p-4 text-sm leading-6 text-cyan-50">
+            <div className="rounded-lg border border-cyan-300/20 bg-cyan-300/[0.055] p-4 text-sm leading-6 text-cyan-50">
               <div className="font-semibold text-cyan-200">Chemical Kinetics</div>
               <div className="mt-1 text-slate-300">Forensic 259-page reconstruction · 30 integrated reference pages</div>
             </div>
@@ -815,18 +815,18 @@ function PartShell({
 
         <div className="part-navigation mt-14 grid gap-4 border-t border-white/10 pt-8 sm:grid-cols-2">
           {previous ? (
-            <a href={`/learn/jee-advanced/chemical-kinetics/parts/${previous.slug}`} className="rounded-3xl border border-white/10 bg-slate-950/70 p-5 transition hover:border-cyan-300/25 hover:bg-white/[0.035]">
+            <a href={`/learn/jee-advanced/chemical-kinetics/parts/${previous.slug}`} className="rounded-lg border border-white/10 bg-slate-950/70 p-5 transition hover:border-cyan-300/25 hover:bg-white/[0.035]">
               <div className="text-xs font-bold uppercase tracking-[0.16em] text-slate-500">Previous part</div>
               <div className="mt-2 font-semibold text-white">{String(previous.part).padStart(2, "0")} · {previous.title}</div>
             </a>
           ) : <div />}
           {next ? (
-            <a href={`/learn/jee-advanced/chemical-kinetics/parts/${next.slug}`} className="rounded-3xl border border-cyan-300/20 bg-cyan-300/[0.055] p-5 text-right transition hover:bg-cyan-300/[0.09]">
+            <a href={`/learn/jee-advanced/chemical-kinetics/parts/${next.slug}`} className="rounded-lg border border-cyan-300/20 bg-cyan-300/[0.055] p-5 text-right transition hover:bg-cyan-300/[0.09]">
               <div className="text-xs font-bold uppercase tracking-[0.16em] text-cyan-300">Next part</div>
               <div className="mt-2 font-semibold text-white">{String(next.part).padStart(2, "0")} · {next.title}</div>
             </a>
           ) : (
-            <a href="/learn/jee-advanced/chemical-kinetics" className="rounded-3xl border border-emerald-300/20 bg-emerald-300/[0.055] p-5 text-right transition hover:bg-emerald-300/[0.09]">
+            <a href="/learn/jee-advanced/chemical-kinetics" className="rounded-lg border border-emerald-300/20 bg-emerald-300/[0.055] p-5 text-right transition hover:bg-emerald-300/[0.09]">
               <div className="text-xs font-bold uppercase tracking-[0.16em] text-emerald-300">Chapter complete</div>
               <div className="mt-2 font-semibold text-white">Return to the 20-part index</div>
             </a>

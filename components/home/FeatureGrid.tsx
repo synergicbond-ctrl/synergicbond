@@ -22,7 +22,7 @@ export default function FeatureGrid() {
         {features.map((feature) => (
           <div
             key={feature.title}
-            className="rounded-3xl border border-white/10 bg-white/5 p-8 transition hover:border-cyan-400/40 hover:bg-white/10"
+            className="rounded-lg border border-white/10 bg-white/5 p-8 transition hover:border-cyan-400/40 hover:bg-white/10"
           >
             <div className="mb-4 text-4xl">{feature.icon}</div>
 

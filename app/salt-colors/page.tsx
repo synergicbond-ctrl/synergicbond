@@ -112,10 +112,10 @@ function Swatch({ c }: { c: string }) {
 
 export default function SaltColorsPage() {
   return (
-    <main className="min-h-screen bg-[#0B0F19] text-white">
+    <main className="min-h-screen bg-[var(--background)] text-white">
       <div className="mx-auto max-w-5xl px-6 py-6">
         <ReferenceTabs />
-        <p className="text-[11px] font-bold uppercase tracking-[0.35em] text-cyan-300 mb-1.5">Knowledge Vault · Inorganic</p>
+        <p className="text-[11px] font-bold uppercase tracking-[0.35em] text-[var(--text-muted)] mb-1.5">Knowledge Vault · Inorganic</p>
         <h1 className="text-2xl font-black md:text-3xl">Colour of Compounds</h1>
         <p className="mt-1.5 text-white/60 text-[13px] max-w-3xl mb-5">
           Comprehensive colour reference for inorganic compounds, ions, precipitates, complexes, flame tests, borax bead tests, and qualitative analysis observations.
@@ -129,10 +129,10 @@ export default function SaltColorsPage() {
 
         {/* Ion colors */}
         <section className="mb-6">
-          <h2 className="text-lg font-black text-cyan-300 mb-3">🧪 Ion Colors (aqueous + hydroxide ppt)</h2>
+          <h2 className="text-lg font-black text-[var(--text-muted)] mb-3">🧪 Ion Colors (aqueous + hydroxide ppt)</h2>
           <div className="grid gap-2 md:grid-cols-2">
             {ions.map((i) => (
-              <div key={i.ion} className="flex items-center gap-3 rounded-xl bg-[#111827] border border-white/[0.06] px-4 py-3">
+              <div key={i.ion} className="flex items-center gap-3 rounded-xl bg-[var(--surface)] border border-white/[0.06] px-4 py-3">
                 <Swatch c={i.c} />
                 <div className="flex-1 min-w-0">
                   <p className="text-sm font-bold text-white">{i.ion} — <span className="font-normal text-white/70">{i.solution}</span></p>
@@ -145,8 +145,8 @@ export default function SaltColorsPage() {
 
         {/* Carbonate precipitates */}
         <section className="mb-6">
-          <h2 className="text-lg font-black text-cyan-300 mb-3">⚪ Carbonate Precipitates (with (NH₄)₂CO₃ / Na₂CO₃)</h2>
-          <div className="overflow-x-auto rounded-2xl border border-white/[0.06]">
+          <h2 className="text-lg font-black text-[var(--text-muted)] mb-3">⚪ Carbonate Precipitates (with (NH₄)₂CO₃ / Na₂CO₃)</h2>
+          <div className="overflow-x-auto rounded-lg border border-white/[0.06]">
             <table className="w-full text-sm min-w-[480px]">
               <thead>
                 <tr className="bg-white/[0.04] text-[10px] font-bold uppercase tracking-wider text-white/50">
@@ -157,8 +157,8 @@ export default function SaltColorsPage() {
               </thead>
               <tbody>
                 {carbonates.map((r, i) => (
-                  <tr key={r.reagent} className={i % 2 ? "bg-[#111827]" : "bg-[#0e1421]"}>
-                    <td className="px-4 py-2.5 font-mono font-bold text-cyan-300">{r.reagent}</td>
+                  <tr key={r.reagent} className={i % 2 ? "bg-[var(--surface)]" : "bg-[#0e1421]"}>
+                    <td className="px-4 py-2.5 font-mono font-bold text-[var(--text-muted)]">{r.reagent}</td>
                     <td className="px-3 py-2.5 font-mono text-white/80">{r.ppt}</td>
                     <td className="px-3 py-2.5"><span className="flex items-center gap-2 text-white/80"><Swatch c={r.c} /> {r.color}</span></td>
                   </tr>
@@ -170,8 +170,8 @@ export default function SaltColorsPage() {
 
         {/* Sulfide / thiosulfate */}
         <section className="mb-6">
-          <h2 className="text-lg font-black text-cyan-300 mb-3">⚫ Group II — Thiosulfate (white) → Sulfide (black)</h2>
-          <div className="overflow-x-auto rounded-2xl border border-white/[0.06]">
+          <h2 className="text-lg font-black text-[var(--text-muted)] mb-3">⚫ Group II — Thiosulfate (white) → Sulfide (black)</h2>
+          <div className="overflow-x-auto rounded-lg border border-white/[0.06]">
             <table className="w-full text-sm min-w-[560px]">
               <thead>
                 <tr className="bg-white/[0.04] text-[10px] font-bold uppercase tracking-wider text-white/50">
@@ -183,11 +183,11 @@ export default function SaltColorsPage() {
               </thead>
               <tbody>
                 {sulfides.map((s, i) => (
-                  <tr key={s.ion} className={i % 2 ? "bg-[#111827]" : "bg-[#0e1421]"}>
+                  <tr key={s.ion} className={i % 2 ? "bg-[var(--surface)]" : "bg-[#0e1421]"}>
                     <td className="px-4 py-2.5 font-bold text-white">{s.ion}</td>
                     <td className="px-3 py-2.5 font-mono text-white/70">{s.white}</td>
                     <td className="px-3 py-2.5 font-mono text-white/70">{s.black}</td>
-                    <td className="px-3 py-2.5 font-mono text-cyan-300/80">{s.sol}</td>
+                    <td className="px-3 py-2.5 font-mono text-[var(--text-muted)]/80">{s.sol}</td>
                   </tr>
                 ))}
               </tbody>
@@ -197,10 +197,10 @@ export default function SaltColorsPage() {
 
         {/* Flame tests */}
         <section>
-          <h2 className="text-lg font-black text-cyan-300 mb-3">🔥 Flame Test Colors</h2>
+          <h2 className="text-lg font-black text-[var(--text-muted)] mb-3">🔥 Flame Test Colors</h2>
           <div className="grid gap-2 md:grid-cols-2 lg:grid-cols-4">
             {flame.map((f) => (
-              <div key={f.el} className="flex items-center gap-3 rounded-xl bg-[#111827] border border-white/[0.06] px-4 py-2.5">
+              <div key={f.el} className="flex items-center gap-3 rounded-xl bg-[var(--surface)] border border-white/[0.06] px-4 py-2.5">
                 <Swatch c={f.c} />
                 <p className="text-sm text-white/80"><span className="font-bold text-white">{f.el}</span> — {f.color}</p>
               </div>
@@ -211,14 +211,14 @@ export default function SaltColorsPage() {
         {/* ── Additional compound colours ── */}
         <div className="my-6 flex items-center gap-3">
           <span className="h-px flex-1 bg-white/10" />
-          <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-cyan-300/70">Precipitate · Bead · Test Colours</span>
+          <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-[var(--text-muted)]/70">Precipitate · Bead · Test Colours</span>
           <span className="h-px flex-1 bg-white/10" />
         </div>
 
         {/* Sublimate → H₂S precipitate */}
         <section className="mb-6">
-          <h2 className="text-lg font-black text-cyan-300 mb-3">🧫 Sublimate → H₂S Precipitate Colours</h2>
-          <div className="overflow-x-auto rounded-2xl border border-white/[0.06]">
+          <h2 className="text-lg font-black text-[var(--text-muted)] mb-3">🧫 Sublimate → H₂S Precipitate Colours</h2>
+          <div className="overflow-x-auto rounded-lg border border-white/[0.06]">
             <table className="w-full text-sm min-w-[460px]">
               <thead>
                 <tr className="bg-white/[0.04] text-[10px] font-bold uppercase tracking-wider text-white/50">
@@ -229,8 +229,8 @@ export default function SaltColorsPage() {
               </thead>
               <tbody>
                 {guhaSublimates.map((r, i) => (
-                  <tr key={r.salt} className={i % 2 ? "bg-[#111827]" : "bg-[#0e1421]"}>
-                    <td className="px-4 py-2.5 font-mono font-bold text-cyan-300">{r.salt}</td>
+                  <tr key={r.salt} className={i % 2 ? "bg-[var(--surface)]" : "bg-[#0e1421]"}>
+                    <td className="px-4 py-2.5 font-mono font-bold text-[var(--text-muted)]">{r.salt}</td>
                     <td className="px-3 py-2.5 font-mono text-white/80">{r.formula}</td>
                     <td className="px-3 py-2.5"><span className="flex items-center gap-2 text-white/80"><Swatch c={tone(r.color)} /> {r.color}</span></td>
                   </tr>
@@ -242,8 +242,8 @@ export default function SaltColorsPage() {
 
         {/* Borax bead */}
         <section className="mb-6">
-          <h2 className="text-lg font-black text-cyan-300 mb-3">🔵 Borax Bead Colours</h2>
-          <div className="overflow-x-auto rounded-2xl border border-white/[0.06]">
+          <h2 className="text-lg font-black text-[var(--text-muted)] mb-3">🔵 Borax Bead Colours</h2>
+          <div className="overflow-x-auto rounded-lg border border-white/[0.06]">
             <table className="w-full text-sm min-w-[560px]">
               <thead>
                 <tr className="bg-white/[0.04] text-[10px] font-bold uppercase tracking-wider text-white/50">
@@ -256,8 +256,8 @@ export default function SaltColorsPage() {
               </thead>
               <tbody>
                 {guhaBoraxBeads.map((r, i) => (
-                  <tr key={r.metal} className={i % 2 ? "bg-[#111827]" : "bg-[#0e1421]"}>
-                    <td className="px-4 py-2.5 font-mono font-bold text-cyan-300">{r.metal}</td>
+                  <tr key={r.metal} className={i % 2 ? "bg-[var(--surface)]" : "bg-[#0e1421]"}>
+                    <td className="px-4 py-2.5 font-mono font-bold text-[var(--text-muted)]">{r.metal}</td>
                     {[r.oxHot, r.oxCold, r.redHot, r.redCold].map((cval, j) => (
                       <td key={j} className="px-3 py-2.5"><span className="flex items-center gap-2 text-white/80"><Swatch c={tone(cval)} /> {cval}</span></td>
                     ))}

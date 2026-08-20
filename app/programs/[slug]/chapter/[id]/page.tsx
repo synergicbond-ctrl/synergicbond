@@ -126,7 +126,7 @@ export default async function ChapterEnginePage({ params }: { params: Promise<{ 
   return (
     <main className="min-h-screen bg-[#0B1220] text-white">
       {/* Header */}
-      <div className="border-b border-white/10 bg-gradient-to-b from-cyan-950/20 to-[#0B1220] px-4 py-8 sm:px-6 sm:py-10">
+      <div className="border-b border-white/10 bg-gradient-to-b from-[var(--surface)]/20 to-[#0B1220] px-4 py-8 sm:px-6 sm:py-10">
         <div className="mx-auto max-w-5xl">
           <nav className="mb-3 text-sm text-white/45">
             <Link href={base} className="hover:text-white">{engine.name}</Link>
@@ -134,13 +134,13 @@ export default async function ChapterEnginePage({ params }: { params: Promise<{ 
             <Link href={`${base}/learn`} className="hover:text-white">Learn</Link>
             <span className="mx-1.5">/</span><span className="text-white/80">{chapter.title}</span>
           </nav>
-          <div className="text-[11px] font-bold uppercase tracking-[0.3em] text-cyan-300/80">{engine.name} · Chapter Engine</div>
+          <div className="text-[11px] font-bold uppercase tracking-[0.3em] text-[var(--accent)]/80">{engine.name} · Chapter Engine</div>
           <h1 className="mt-1 text-2xl font-black tracking-tight sm:text-4xl">{chapter.title}</h1>
           <div className="mt-2 flex flex-wrap gap-2 text-xs">
             <span className="rounded-full border border-white/10 bg-white/[0.04] px-2 py-0.5 font-semibold text-white/60 capitalize">{chapter.category}</span>
             <span className="rounded-full border border-white/10 bg-white/[0.04] px-2 py-0.5 font-semibold text-white/60">Difficulty {chapter.difficulty}/5</span>
             <span className="rounded-full border border-white/10 bg-white/[0.04] px-2 py-0.5 font-semibold text-white/60">~{chapter.estimatedHours}h</span>
-            <span className="rounded-full border border-cyan-400/30 bg-cyan-400/10 px-2 py-0.5 font-semibold text-cyan-300">{examPool.length} verified {engine.name} PYQs</span>
+            <span className="rounded-full border border-[var(--accent)]/30 bg-[var(--accent)]/10 px-2 py-0.5 font-semibold text-[var(--accent)]">{examPool.length} verified {engine.name} PYQs</span>
           </div>
         </div>
       </div>
@@ -162,17 +162,17 @@ export default async function ChapterEnginePage({ params }: { params: Promise<{ 
         <section id="mastery" className="scroll-mt-16">
           <h2 className="mb-3 text-lg font-black">Chapter Mastery</h2>
           {!mastery.hasData ? (
-            <p className="rounded-2xl border border-white/10 bg-white/[0.02] p-5 text-sm text-white/55">
+            <p className="rounded-lg border border-white/10 bg-white/[0.02] p-5 text-sm text-white/55">
               No attempts on this chapter yet — answer questions below and every mastery component builds from your real activity.
             </p>
           ) : (
             <div className="grid gap-3 sm:grid-cols-5">
-              <div className="rounded-2xl border border-cyan-500/25 bg-cyan-500/[0.05] p-4 text-center">
+              <div className="rounded-lg border border-[var(--accent)]/30 bg-[var(--accent)]/[0.05] p-4 text-center">
                 <div className={`text-3xl font-black ${bandTone}`}>{mastery.overall}%</div>
                 <div className="mt-1 text-xs text-white/50">Overall Mastery</div>
               </div>
               {mastery.components.map((c) => (
-                <div key={c.key} className="rounded-2xl border border-white/10 bg-white/[0.03] p-4 text-center">
+                <div key={c.key} className="rounded-lg border border-white/10 bg-white/[0.03] p-4 text-center">
                   <div className="text-2xl font-black text-white/85">{c.building ? "—" : `${c.value}%`}</div>
                   <div className="mt-1 text-xs font-bold text-white/60">{c.label}</div>
                   <div className="mt-0.5 text-[10px] text-white/35">{c.building ? "building" : c.detail}</div>
@@ -200,7 +200,7 @@ export default async function ChapterEnginePage({ params }: { params: Promise<{ 
                     <Link href="/notes/mole-concept" className="rounded-xl border border-lime-400/30 bg-lime-500/10 px-4 py-2 text-sm font-bold text-lime-300 hover:bg-lime-500/20">1. Mole Concept (15 Topics) →</Link>
                     <Link href="/notes/stoichiometry" className="rounded-xl border border-amber-400/30 bg-amber-500/10 px-4 py-2 text-sm font-bold text-amber-300 hover:bg-amber-500/20">2. Stoichiometry →</Link>
                     <Link href="/notes/concentration-terms" className="rounded-xl border border-red-400/30 bg-red-500/10 px-4 py-2 text-sm font-bold text-red-300 hover:bg-red-500/20">3. Concentration Terms →</Link>
-                    <Link href="/notes/eudiometry" className="rounded-xl border border-cyan-400/30 bg-cyan-500/10 px-4 py-2 text-sm font-bold text-cyan-300 hover:bg-cyan-500/20">4. Eudiometry →</Link>
+                    <Link href="/notes/eudiometry" className="rounded-xl border border-[var(--accent)]/30 bg-[var(--accent)]/10 px-4 py-2 text-sm font-bold text-[var(--accent)] hover:bg-[var(--accent)]/10">4. Eudiometry →</Link>
                   </>
                 )}
                 {id === "redox-reactions" && (
@@ -217,7 +217,7 @@ export default async function ChapterEnginePage({ params }: { params: Promise<{ 
               <p className="mb-3 text-sm text-white/50">Topics & subtopics from the official syllabus. Full premium notes (the Chemical Bonding template) are being authored chapter by chapter.</p>
               <div className="mb-3 flex flex-wrap gap-2">
                 {authoredHref ? (
-                  <Link href={authoredHref} className="rounded-xl bg-gradient-to-r from-cyan-400 to-sky-500 px-4 py-2 text-sm font-black text-black">Open premium visual notes →</Link>
+                  <Link href={authoredHref} className="rounded-xl bg-[var(--accent)] px-4 py-2 text-sm font-black text-black">Open premium visual notes →</Link>
                 ) : (
                   <span className="rounded-xl border border-white/10 bg-white/[0.03] px-4 py-2 text-sm text-white/50">Premium notes for this chapter are being authored — the official syllabus and full question layer below are live.</span>
                 )}
@@ -242,7 +242,7 @@ export default async function ChapterEnginePage({ params }: { params: Promise<{ 
             Every NCERT line the verified bank&apos;s questions cite for this chapter, with importance derived from real question counts per exam — plus {ncert.ncertDirect.length} NCERT-direct questions. (Universe: lines cited by the verified bank; full line-by-line NCERT text is not fabricated.)
           </p>
           {ncert.lines.length === 0 ? (
-            <p className="rounded-2xl border border-white/10 bg-white/[0.02] p-5 text-sm text-white/55">No NCERT citations tagged for this chapter&apos;s bank questions yet.</p>
+            <p className="rounded-lg border border-white/10 bg-white/[0.02] p-5 text-sm text-white/55">No NCERT citations tagged for this chapter&apos;s bank questions yet.</p>
           ) : (
             <div className="space-y-2">
               {ncert.lines.map((l) => (
@@ -256,7 +256,7 @@ export default async function ChapterEnginePage({ params }: { params: Promise<{ 
                   </span>
                 </div>
               ))}
-              <p className="text-xs text-white/35">Counts = real questions citing each line · <Link href="/ncert" className="text-cyan-300 hover:underline">full NCERT blind-spot report →</Link></p>
+              <p className="text-xs text-white/35">Counts = real questions citing each line · <Link href="/ncert" className="text-[var(--accent)] hover:underline">full NCERT blind-spot report →</Link></p>
             </div>
           )}
         </section>
@@ -294,11 +294,11 @@ export default async function ChapterEnginePage({ params }: { params: Promise<{ 
           <h2 className="mb-1 text-lg font-black">PYQ Center</h2>
           <p className="mb-3 text-sm text-white/50">Real frequency, trend and concept data from the verified bank. Practise them in the Question Bank above (SCQ / A–R tabs) — attempts are recorded.</p>
           {stats.length === 0 ? (
-            <p className="rounded-2xl border border-white/10 bg-white/[0.02] p-5 text-sm text-white/55">No PYQ-bank mapping for this chapter yet — honest gap, nothing faked.</p>
+            <p className="rounded-lg border border-white/10 bg-white/[0.02] p-5 text-sm text-white/55">No PYQ-bank mapping for this chapter yet — honest gap, nothing faked.</p>
           ) : (
             <div className="grid gap-3 sm:grid-cols-2">
               {stats.map((s) => (
-                <div key={s.chapter} className="rounded-2xl border border-white/10 bg-white/[0.03] p-4">
+                <div key={s.chapter} className="rounded-lg border border-white/10 bg-white/[0.03] p-4">
                   <div className="flex items-baseline justify-between">
                     <span className="font-black text-white/90">{s.chapter}</span>
                     <span className={`text-xs font-bold ${s.trend === "Increasing" ? "text-emerald-300" : s.trend === "Decreasing" ? "text-rose-300" : "text-white/50"}`}>{s.trend}</span>
@@ -319,16 +319,16 @@ export default async function ChapterEnginePage({ params }: { params: Promise<{ 
               ))}
             </div>
           )}
-          <p className="mt-2 text-xs text-white/35"><Link href={`${base}/practice`} className="text-cyan-300 hover:underline">Full {engine.name} PYQ practice with filters →</Link></p>
+          <p className="mt-2 text-xs text-white/35"><Link href={`${base}/practice`} className="text-[var(--accent)] hover:underline">Full {engine.name} PYQ practice with filters →</Link></p>
         </section>
 
         {/* 8 · Mock Tests */}
         <section id="tests" className="scroll-mt-16">
           <h2 className="mb-1 text-lg font-black">Mock Tests</h2>
           <div className="grid gap-2 sm:grid-cols-3">
-            <Link href={`${base}/tests`} className="rounded-xl border border-white/[0.08] bg-white/[0.02] p-3 text-sm font-semibold text-white/90 hover:border-cyan-400/40">Chapter & topic tests <span className="text-cyan-400">→</span></Link>
-            <Link href="/exam" className="rounded-xl border border-white/[0.08] bg-white/[0.02] p-3 text-sm font-semibold text-white/90 hover:border-cyan-400/40">Full {engine.name} paper (real size & marking) <span className="text-cyan-400">→</span></Link>
-            <Link href="/revision" className="rounded-xl border border-white/[0.08] bg-white/[0.02] p-3 text-sm font-semibold text-white/90 hover:border-cyan-400/40">Review past attempts <span className="text-cyan-400">→</span></Link>
+            <Link href={`${base}/tests`} className="rounded-xl border border-white/[0.08] bg-white/[0.02] p-3 text-sm font-semibold text-white/90 hover:border-[var(--accent)]/30">Chapter & topic tests <span className="text-[var(--accent)]">→</span></Link>
+            <Link href="/exam" className="rounded-xl border border-white/[0.08] bg-white/[0.02] p-3 text-sm font-semibold text-white/90 hover:border-[var(--accent)]/30">Full {engine.name} paper (real size & marking) <span className="text-[var(--accent)]">→</span></Link>
+            <Link href="/revision" className="rounded-xl border border-white/[0.08] bg-white/[0.02] p-3 text-sm font-semibold text-white/90 hover:border-[var(--accent)]/30">Review past attempts <span className="text-[var(--accent)]">→</span></Link>
           </div>
         </section>
 
@@ -336,7 +336,7 @@ export default async function ChapterEnginePage({ params }: { params: Promise<{ 
         <section id="errors" className="scroll-mt-16">
           <h2 className="mb-1 text-lg font-black">Error Analysis</h2>
           {chapterMistakes.length === 0 ? (
-            <p className="rounded-2xl border border-white/10 bg-white/[0.02] p-5 text-sm text-white/55">No wrong answers recorded on this chapter — your error profile builds automatically as you practise.</p>
+            <p className="rounded-lg border border-white/10 bg-white/[0.02] p-5 text-sm text-white/55">No wrong answers recorded on this chapter — your error profile builds automatically as you practise.</p>
           ) : (
             <>
               <div className="mb-3 grid grid-cols-3 gap-2">
@@ -355,7 +355,7 @@ export default async function ChapterEnginePage({ params }: { params: Promise<{ 
                   </div>
                 </>
               )}
-              <p className="mt-3 text-xs text-white/35"><Link href="/mistakes" className="text-cyan-300 hover:underline">Full Mistake Journal with reattempts →</Link></p>
+              <p className="mt-3 text-xs text-white/35"><Link href="/mistakes" className="text-[var(--accent)] hover:underline">Full Mistake Journal with reattempts →</Link></p>
             </>
           )}
         </section>

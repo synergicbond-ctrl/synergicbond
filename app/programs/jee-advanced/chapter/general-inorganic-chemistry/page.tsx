@@ -36,7 +36,7 @@ export default async function GeneralInorganicChemistryPage() {
             <span className="mx-1.5">/</span>
             <span className="text-white/80">General Inorganic Chemistry</span>
           </nav>
-          <p className="text-[11px] font-bold uppercase tracking-[0.3em] text-cyan-300/80">JEE Advanced · Inorganic Chemistry</p>
+          <p className="text-[11px] font-bold uppercase tracking-[0.3em] text-[var(--accent)]/80">JEE Advanced · Inorganic Chemistry</p>
           <h1 className="mt-2 text-3xl font-black tracking-tight sm:text-4xl">General Inorganic Chemistry</h1>
           <p className="mt-3 max-w-3xl text-sm leading-relaxed text-white/60 sm:text-base">
             Master the general reaction patterns of inorganic chemistry, including compound nomenclature, reactions with water, hydrolysis, thermal decomposition, amphoteric behaviour, redox stability and product prediction.
@@ -50,14 +50,14 @@ export default async function GeneralInorganicChemistryPage() {
             <h2 className="text-lg font-black">Chapter roadmap</h2>
             <p className="mt-1 text-sm text-white/45">Build the patterns first, then use them to predict unfamiliar reactions.</p>
           </div>
-          <span className="rounded-full border border-cyan-400/25 bg-cyan-400/[0.08] px-3 py-1 text-xs font-semibold text-cyan-200">JEE Advanced</span>
+          <span className="rounded-full border border-[var(--accent)]/30 bg-[var(--accent)]/[0.08] px-3 py-1 text-xs font-semibold text-[var(--accent)]">JEE Advanced</span>
         </div>
 
         <div className="grid gap-3 md:grid-cols-2">
           {sections.map((section, index) => (
-            <section key={section.title} className="rounded-xl border border-white/[0.09] bg-white/[0.025] p-4 transition hover:border-cyan-400/30 hover:bg-cyan-400/[0.035]">
+            <section key={section.title} className="rounded-xl border border-white/[0.09] bg-white/[0.025] p-4 transition hover:border-[var(--accent)]/30 hover:bg-[var(--accent)]/[0.035]">
               <div className="flex gap-3">
-                <span aria-hidden="true" className="flex h-7 w-7 shrink-0 items-center justify-center rounded-md border border-cyan-400/25 bg-cyan-400/[0.08] text-xs font-black text-cyan-200">{index + 1}</span>
+                <span aria-hidden="true" className="flex h-7 w-7 shrink-0 items-center justify-center rounded-md border border-[var(--accent)]/30 bg-[var(--accent)]/[0.08] text-xs font-black text-[var(--accent)]">{index + 1}</span>
                 <div className="min-w-0">
                   <h3 className="text-sm font-bold leading-snug text-white">{section.title}</h3>
                   <ul className="mt-2 space-y-1 text-xs leading-relaxed text-white/55">

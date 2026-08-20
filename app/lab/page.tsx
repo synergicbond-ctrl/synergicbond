@@ -53,13 +53,13 @@ export default function LabPage() {
   }
 
   return (
-    <main className="min-h-screen bg-[#0B0F19] text-white">
+    <main className="min-h-screen bg-[var(--background)] text-white">
       <div className="mx-auto max-w-5xl px-6 py-12">
 
         <div className="text-center mb-8">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-500/10 border border-purple-500/20 mb-4">
-            <FlaskConical className="h-3.5 w-3.5 text-purple-400" />
-            <span className="text-xs font-bold text-purple-300 tracking-wide">VIRTUAL LAB</span>
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[var(--accent)]/10 border border-[var(--accent)]/20 mb-4">
+            <FlaskConical className="h-3.5 w-3.5 text-[var(--accent)]" />
+            <span className="text-xs font-bold text-[var(--accent)] tracking-wide">VIRTUAL LAB</span>
           </div>
           <h1 className="text-4xl font-black md:text-5xl">Practical Simulator</h1>
           <p className="mt-3 text-white/50 text-sm">
@@ -70,13 +70,13 @@ export default function LabPage() {
         <div className="grid gap-6 lg:grid-cols-[1.3fr_1fr]">
 
           {/* Lab bench */}
-          <div className="rounded-3xl bg-[#111827] border border-white/[0.06] p-8 flex flex-col items-center justify-center min-h-[380px]">
+          <div className="rounded-lg bg-[var(--surface)] border border-white/[0.06] p-8 flex flex-col items-center justify-center min-h-[380px]">
             {/* Beaker */}
             <div className="relative">
               {/* Burette drip */}
               <div className="absolute left-1/2 -top-16 -translate-x-1/2 flex flex-col items-center">
                 <div className="w-2 h-14 rounded-b-full bg-white/10 border-x border-white/10" />
-                <Droplet className="h-3 w-3 text-cyan-400 animate-bounce" style={{ animationDuration: "1.5s" }} />
+                <Droplet className="h-3 w-3 text-[var(--accent)] animate-bounce" style={{ animationDuration: "1.5s" }} />
               </div>
 
               {/* Beaker body */}
@@ -108,7 +108,7 @@ export default function LabPage() {
               </svg>
 
               {activeReagent && (
-                <div className="absolute -right-4 top-1/2 text-xs font-bold px-2 py-1 rounded-lg bg-black/60" style={{ color: solution }}>
+                <div className="absolute -right-4 top-1/2 text-xs font-bold px-2 py-1 rounded-lg bg-[var(--background)]/60" style={{ color: solution }}>
                   {activeReagent}
                 </div>
               )}
@@ -123,14 +123,14 @@ export default function LabPage() {
           {/* Controls */}
           <div className="space-y-4">
             {/* Reagent buttons */}
-            <div className="rounded-2xl bg-[#111827] border border-white/[0.06] p-5">
+            <div className="rounded-lg bg-[var(--surface)] border border-white/[0.06] p-5">
               <h3 className="text-sm font-bold mb-3">Add Reagent</h3>
               <div className="grid grid-cols-2 gap-2">
                 {reagents.map((r) => (
                   <button
                     key={r.name}
                     onClick={() => addReagent(r)}
-                    className="flex items-center gap-2 rounded-xl border border-white/[0.08] bg-black/30 px-3 py-2.5 text-xs font-semibold transition hover:-translate-y-0.5 hover:border-white/20"
+                    className="flex items-center gap-2 rounded-lg border border-white/[0.08] bg-[var(--surface)] px-3 py-2.5 text-xs font-semibold transition hover:-translate-y-0.5 hover:border-white/20"
                   >
                     <span className="h-3 w-3 rounded-full flex-shrink-0" style={{ background: r.color }} />
                     <span className="text-white/80 truncate">{r.name}</span>
@@ -146,13 +146,13 @@ export default function LabPage() {
             </div>
 
             {/* Audio console */}
-            <div className="rounded-2xl bg-[#111827] border border-white/[0.06] p-5">
+            <div className="rounded-lg bg-[var(--surface)] border border-white/[0.06] p-5">
               <h3 className="text-sm font-bold mb-3">Audio Guide</h3>
               <div className="grid grid-cols-2 gap-2">
                 <button
                   onClick={() => speak("english")}
                   className={`flex items-center justify-center gap-1.5 rounded-xl px-3 py-2.5 text-xs font-semibold transition ${
-                    lang === "english" ? "bg-cyan-500 text-black" : "bg-black/30 border border-white/[0.08] text-white/70"
+                    lang === "english" ? "bg-[var(--accent)] text-black" : "bg-[var(--surface)] border border-[var(--border)] text-white/70"
                   }`}
                 >
                   <Volume2 className="h-3.5 w-3.5" /> English
@@ -160,7 +160,7 @@ export default function LabPage() {
                 <button
                   onClick={() => speak("hinglish")}
                   className={`flex items-center justify-center gap-1.5 rounded-xl px-3 py-2.5 text-xs font-semibold transition ${
-                    lang === "hinglish" ? "bg-cyan-500 text-black" : "bg-black/30 border border-white/[0.08] text-white/70"
+                    lang === "hinglish" ? "bg-[var(--accent)] text-black" : "bg-[var(--surface)] border border-[var(--border)] text-white/70"
                   }`}
                 >
                   <Volume2 className="h-3.5 w-3.5" /> Hinglish
@@ -169,8 +169,8 @@ export default function LabPage() {
             </div>
 
             {/* Subtitle / caption */}
-            <div className="rounded-2xl bg-black/40 border border-cyan-500/20 p-4">
-              <p className="text-[10px] font-bold text-cyan-400 uppercase tracking-wider mb-1.5">Live Caption</p>
+            <div className="rounded-lg bg-[var(--surface)] border border-[var(--accent)]/20 p-4">
+              <p className="text-[10px] font-bold text-[var(--accent)] uppercase tracking-wider mb-1.5">Live Caption</p>
               <p className="text-sm text-white/70 leading-relaxed italic">{caption}</p>
             </div>
           </div>

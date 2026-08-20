@@ -77,13 +77,13 @@ export default function ResetPasswordPage() {
   }
 
   const inputClass =
-    "w-full rounded-xl border border-white/10 bg-black/40 px-4 py-3 text-sm text-white placeholder:text-white/25 focus:border-cyan-500/50 focus:outline-none transition";
+    "w-full rounded-xl border border-white/10 bg-black/40 px-4 py-3 text-sm text-white placeholder:text-white/25 focus:border-[var(--border)]/50 focus:outline-none transition";
 
   return (
     <main className="flex min-h-screen items-center justify-center bg-black px-4 py-10 text-white">
-      <div className="w-full max-w-md rounded-3xl border border-white/10 bg-white/[0.03] p-7 sm:p-8 shadow-2xl">
+      <div className="w-full max-w-md rounded-lg border border-white/10 bg-white/[0.03] p-7 sm:p-8 shadow-2xl">
         <div className="mb-6">
-          <p className="text-xs font-bold uppercase tracking-wider text-cyan-400">Account Recovery</p>
+          <p className="text-xs font-bold uppercase tracking-wider text-[var(--accent)]">Account Recovery</p>
           <h1 className="mt-1 text-2xl font-black">Set a New Password</h1>
         </div>
 
@@ -101,7 +101,7 @@ export default function ResetPasswordPage() {
             </div>
             <Link
               href="/auth/signin"
-              className="inline-block w-full rounded-xl bg-gradient-to-r from-cyan-400 to-sky-500 py-3 text-sm font-bold text-black transition hover:-translate-y-0.5"
+              className="inline-block w-full rounded-xl bg-[var(--accent)] py-3 text-sm font-bold text-black transition hover:-translate-y-0.5"
             >
               Back to Sign In
             </Link>
@@ -143,14 +143,14 @@ export default function ResetPasswordPage() {
             <button
               onClick={handleReset}
               disabled={status === "saving" || status === "done"}
-              className="w-full rounded-xl bg-gradient-to-r from-cyan-400 to-sky-500 py-3 text-sm font-bold text-black transition hover:-translate-y-0.5 disabled:translate-y-0 disabled:opacity-50"
+              className="w-full rounded-xl bg-[var(--accent)] py-3 text-sm font-bold text-black transition hover:-translate-y-0.5 disabled:translate-y-0 disabled:opacity-50"
             >
               {status === "saving" ? "Updating…" : status === "done" ? "Redirecting…" : "Update Password"}
             </button>
 
             <p className="text-center text-[11px] text-white/40">
               Remembered it?{" "}
-              <Link href="/auth/signin" className="text-cyan-300 hover:underline">
+              <Link href="/auth/signin" className="text-[var(--text-muted)] hover:underline">
                 Back to Sign In
               </Link>
             </p>

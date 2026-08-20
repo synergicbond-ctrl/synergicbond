@@ -34,7 +34,7 @@ export default function WhatIsSynergicBond() {
 
           {/* Video slot — real embed once produced; honest placeholder until then */}
           {VIDEO_URL ? (
-            <video controls preload="metadata" className="aspect-video w-full rounded-[var(--radius)] border border-[var(--border-strong)] bg-black" src={VIDEO_URL} />
+            <video controls preload="metadata" className="aspect-video w-full rounded-[var(--radius)] border border-[var(--border-strong)] bg-[var(--background)]" src={VIDEO_URL} />
           ) : (
             <div className="relative flex aspect-video w-full flex-col items-center justify-center overflow-hidden rounded-[var(--radius)] border border-dashed border-[var(--border-strong)] bg-[var(--surface)] text-center">
               <span aria-hidden className="absolute inset-x-0 top-0 h-[2px] bg-[linear-gradient(90deg,var(--accent),var(--chem-bond),var(--chem-orbital),var(--chem-rule))]" />

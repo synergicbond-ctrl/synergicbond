@@ -5,9 +5,9 @@ import { InlineMath, BlockMath } from "@/components/math/react-katex";
 
 /* Reusable UI Components */
 const ConceptCard = ({ title, children }: { title: string; children: React.ReactNode }) => (
-  <div className="my-6 rounded-2xl border border-violet-400/30 bg-slate-900/90 p-6 shadow-xl">
-    <h3 className="border-b border-slate-800 pb-3 text-lg font-bold text-violet-300">{title}</h3>
-    <div className="mt-4 space-y-3 text-sm leading-relaxed text-slate-200">{children}</div>
+  <div className="my-6 rounded-lg border border-violet-400/30 bg-[var(--surface)] p-6 shadow-xl">
+    <h3 className="border-b border-[var(--border)] pb-3 text-lg font-bold text-violet-300">{title}</h3>
+    <div className="mt-4 space-y-3 text-sm leading-relaxed text-[var(--foreground)]">{children}</div>
   </div>
 );
 
@@ -22,15 +22,15 @@ const WorkedExample = ({
   steps: React.ReactNode;
   result: React.ReactNode;
 }) => (
-  <div className="my-8 rounded-3xl border border-rose-400/30 bg-gradient-to-b from-slate-900 via-slate-900 to-slate-950 p-6 shadow-2xl md:p-8 space-y-5">
-    <div className="flex items-center justify-between border-b border-slate-800 pb-4">
+  <div className="my-8 rounded-lg border border-rose-400/30 bg-[var(--surface)] p-6 shadow-2xl md:p-8 space-y-5">
+    <div className="flex items-center justify-between border-b border-[var(--border)] pb-4">
       <span className="rounded-full bg-rose-500/20 px-3 py-1 text-xs font-bold uppercase tracking-widest text-rose-300">
         Worked Example
       </span>
-      <span className="text-xs font-bold text-slate-400">{title}</span>
+      <span className="text-xs font-bold text-[var(--text-muted)]">{title}</span>
     </div>
-    <div className="text-sm font-medium leading-relaxed text-slate-100">{problem}</div>
-    <div className="rounded-2xl border border-slate-800/80 bg-slate-950/80 p-5 space-y-3 font-mono text-xs text-slate-300">
+    <div className="text-sm font-medium leading-relaxed text-[var(--foreground)]">{problem}</div>
+    <div className="rounded-lg border border-[var(--border)] bg-[var(--background)] p-5 space-y-3 font-mono text-xs text-[var(--text-muted)]">
       {steps}
     </div>
     <div className="rounded-xl border border-emerald-500/30 bg-emerald-500/10 p-4 text-center text-xs font-bold text-emerald-300">
@@ -46,36 +46,36 @@ const StepBox = ({ number, title, children }: { number: number; title: string; c
     </span>
     <div>
       <h4 className="text-xs font-bold text-white mb-1">{title}</h4>
-      <div className="text-xs text-slate-300 leading-relaxed">{children}</div>
+      <div className="text-xs text-[var(--text-muted)] leading-relaxed">{children}</div>
     </div>
   </div>
 );
 
 export default function EudiometryPart4() {
   return (
-    <main className="min-h-screen bg-slate-950 px-4 py-8 text-slate-100 md:px-10">
+    <main className="min-h-screen bg-[var(--background)] px-4 py-8 text-[var(--foreground)] md:px-10">
       <article className="mx-auto max-w-5xl space-y-10">
         {/* Module Header */}
-        <header className="rounded-3xl border border-violet-400/30 bg-gradient-to-br from-slate-900 via-slate-900 to-slate-950 p-6 shadow-2xl md:p-8">
+        <header className="rounded-lg border border-violet-400/30 bg-[var(--surface)] p-6 shadow-2xl md:p-8">
           <div className="flex items-center justify-between">
             <span className="rounded-full bg-violet-500/20 px-3 py-1 text-xs font-bold uppercase tracking-[0.2em] text-violet-300">
               Module 4 of 6
             </span>
-            <span className="text-xs font-bold text-slate-400">Synergic Bond Course Lesson</span>
+            <span className="text-xs font-bold text-[var(--text-muted)]">Synergic Bond Course Lesson</span>
           </div>
 
           <h1 className="mt-4 text-3xl font-black text-white md:text-4xl">
             Hydrogen, Nitrogen &amp; Oxygen Gas Mixture Firing
           </h1>
 
-          <p className="mt-3 text-sm leading-relaxed text-slate-300 md:text-base">
+          <p className="mt-3 text-sm leading-relaxed text-[var(--text-muted)] md:text-base">
             Advanced analytical techniques for gaseous mixtures containing hydrogen (<InlineMath math="\text{H}_2" />), nitrogen (<InlineMath math="\text{N}_2" />), and oxygen (<InlineMath math="\text{O}_2" />). Master hypothesis testing for unknown limiting reagents and evaluate multi-stage sequential firings with secondary oxygen additions inside eudiometer tubes.
           </p>
         </header>
 
         {/* Section 1: Binary Hydrogen-Nitrogen Combustion */}
         <section className="space-y-6">
-          <h2 className="text-2xl font-bold text-violet-300 border-l-4 border-violet-400 pl-3">
+          <h2 className="text-2xl font-bold text-[var(--accent)] border-l-4 border-[var(--accent)] pl-3">
             Binary Hydrogen-Nitrogen Combustion Analysis
           </h2>
 
@@ -114,7 +114,7 @@ export default function EudiometryPart4() {
 
         {/* Section 2: Hypothesis Testing for Unknown Limiting Reagent */}
         <section className="space-y-6">
-          <h2 className="text-2xl font-bold text-violet-300 border-l-4 border-violet-400 pl-3">
+          <h2 className="text-2xl font-bold text-[var(--accent)] border-l-4 border-[var(--accent)] pl-3">
             Hypothesis Testing for Unknown Limiting Reagents
           </h2>
 
@@ -153,7 +153,7 @@ export default function EudiometryPart4() {
                 <StepBox number={3} title="Calculate Complete Initial &amp; Final Compositions">
                   <BlockMath math={String.raw`V_{\text{H}_2\text{ initial}} = 12\text{ mL}, \quad V_{\text{N}_2\text{ initial}} = 20 - 12 = 8\text{ mL}`} />
                   <BlockMath math={String.raw`V_{\text{N}_2\text{ final}} = 8\text{ mL (spectator)}, \quad V_{\text{O}_2\text{ final unreacted}} = 8 - \frac{12}{2} = 8 - 6 = 2\text{ mL}`} />
-                  <p className="text-slate-400">
+                  <p className="text-[var(--text-muted)]">
                     Verification of final volume: <InlineMath math="8\text{ mL N}_2 + 2\text{ mL O}_2 = 10\text{ mL total final gas}" />.
                   </p>
                 </StepBox>
@@ -165,7 +165,7 @@ export default function EudiometryPart4() {
 
         {/* Section 3: Multi-Stage Sequential Firing Analysis */}
         <section className="space-y-6">
-          <h2 className="text-2xl font-bold text-violet-300 border-l-4 border-violet-400 pl-3">
+          <h2 className="text-2xl font-bold text-[var(--accent)] border-l-4 border-[var(--accent)] pl-3">
             Multi-Stage Sequential Firing &amp; Secondary Oxygen Addition
           </h2>
 
@@ -221,7 +221,7 @@ export default function EudiometryPart4() {
                 </StepBox>
                 <StepBox number={4} title="Solve Initial Nitrogen Volume &amp; Verify Balance">
                   <BlockMath math={String.raw`V_{\text{N}_2} = 90 - (V_{\text{H}_2} + V_{\text{O}_2}) = 90 - (58 + 20) = 12\text{ mL}`} />
-                  <p className="text-slate-400">
+                  <p className="text-[var(--text-muted)]">
                     Verification of Stage 1 residual: <InlineMath math="V_{\text{H}_2\text{ left}} (18\text{ mL}) + V_{\text{N}_2} (12\text{ mL}) = 30\text{ mL}" />. Perfect stoichiometric accounting.
                   </p>
                 </StepBox>
@@ -232,7 +232,7 @@ export default function EudiometryPart4() {
         </section>
 
         {/* Footer info */}
-        <footer className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 text-center text-xs text-slate-400">
+        <footer className="rounded-lg border border-[var(--border)] bg-[var(--surface)] p-6 text-center text-xs text-[var(--text-muted)]">
           <p>Synergic Bond Eudiometry Module • Module 4: Hydrogen, Nitrogen &amp; Oxygen Gas Mixture Firing</p>
         </footer>
       </article>

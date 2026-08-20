@@ -210,20 +210,20 @@ export default function StudentDetailsForm({ open, onClose, onComplete, userEmai
   const signUpHref = `/auth/signup?next=${encodeURIComponent(nextUrl)}`;
 
   const inputBase =
-    "w-full rounded-xl border border-white/10 bg-black/40 px-4 py-2.5 text-sm text-white placeholder:text-white/20 focus:border-cyan-500/50 focus:outline-none transition";
+    "w-full rounded-lg border border-[var(--border)] bg-[var(--surface-2)] px-4 py-2.5 text-sm text-white placeholder:text-white/20 focus:border-[var(--accent)]/50 focus:outline-none transition";
   const labelBase =
     "flex items-center gap-1.5 text-[10px] text-white/60 font-bold uppercase tracking-wider mb-1.5";
 
   return (
     <div
-      className="sb-modal-overlay fixed inset-0 z-[100] flex items-end justify-center bg-black/70 backdrop-blur-sm sm:items-center sm:p-4"
+      className="sb-modal-overlay fixed inset-0 z-[100] flex items-end justify-center bg-[var(--background)]/70 backdrop-blur-sm sm:items-center sm:p-4"
       onClick={handleClose}
       role="dialog"
       aria-modal="true"
       aria-labelledby="student-details-title"
     >
       <div
-        className="sb-modal-panel relative flex max-h-[90vh] w-full max-w-md flex-col overflow-hidden rounded-t-3xl border border-white/[0.08] bg-[#111827] shadow-2xl sm:rounded-3xl"
+        className="sb-modal-panel relative flex max-h-[90vh] w-full max-w-md flex-col overflow-hidden rounded-t-lg border border-white/[0.08] bg-[var(--surface)] shadow-2xl sm:rounded-lg"
         onClick={(e) => e.stopPropagation()}
       >
         <button
@@ -236,7 +236,7 @@ export default function StudentDetailsForm({ open, onClose, onComplete, userEmai
 
         {authState === "checking" && (
           <div className="flex flex-col items-center justify-center px-6 py-20 text-center">
-            <div className="h-6 w-6 rounded-full border-2 border-white/20 border-t-cyan-400 animate-spin" />
+            <div className="h-6 w-6 rounded-full border-2 border-white/20 border-t-[var(--accent)] animate-spin" />
             <p className="mt-4 text-xs text-white/50">Checking your account…</p>
           </div>
         )}
@@ -244,11 +244,11 @@ export default function StudentDetailsForm({ open, onClose, onComplete, userEmai
         {authState === "anon" && (
           <div className="px-6 pt-8 pb-8 sm:px-7">
             <div className="mb-5 pr-8">
-              <p className="text-xs font-bold text-cyan-400 uppercase tracking-wider">Sign in required</p>
+              <p className="text-xs font-bold text-[var(--accent)] uppercase tracking-wider">Sign in required</p>
               <h3 id="student-details-title" className="text-xl font-black mt-1">Almost there</h3>
             </div>
-            <div className="mb-6 flex items-start gap-3 rounded-xl border border-white/10 bg-black/40 p-4">
-              <LogIn className="h-4 w-4 shrink-0 text-cyan-400 mt-0.5" />
+            <div className="mb-6 flex items-start gap-3 rounded-lg border border-[var(--border)] bg-[var(--surface-2)] p-4">
+              <LogIn className="h-4 w-4 shrink-0 text-[var(--accent)] mt-0.5" />
               <p className="text-[12px] text-white/70 leading-relaxed">
                 Please sign in or create an account before continuing to payment.
                 Your program will be waiting for you when you return.
@@ -257,13 +257,13 @@ export default function StudentDetailsForm({ open, onClose, onComplete, userEmai
             <div className="space-y-2.5">
               <a
                 href={signInHref}
-                className="flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-cyan-400 to-sky-500 py-3 text-sm font-bold text-black transition hover:-translate-y-0.5"
+                className="flex w-full items-center justify-center gap-2 rounded-lg bg-[var(--accent)] py-3 text-sm font-bold text-black transition hover:-translate-y-0.5"
               >
                 <LogIn className="h-4 w-4" /> Sign In
               </a>
               <a
                 href={signUpHref}
-                className="flex w-full items-center justify-center gap-2 rounded-xl border border-white/15 bg-white/5 py-3 text-sm font-bold text-white transition hover:bg-white/10"
+                className="flex w-full items-center justify-center gap-2 rounded-lg border border-white/15 bg-white/5 py-3 text-sm font-bold text-white transition hover:bg-white/10"
               >
                 <UserPlus className="h-4 w-4" /> Create Account
               </a>
@@ -276,7 +276,7 @@ export default function StudentDetailsForm({ open, onClose, onComplete, userEmai
         {/* Scrollable body */}
         <div className="flex-1 overflow-y-auto overscroll-contain px-6 pt-7 pb-5 sm:px-7">
           <div className="mb-6 pr-8">
-            <p className="text-xs font-bold text-cyan-400 uppercase tracking-wider">Step 1 of 2</p>
+            <p className="text-xs font-bold text-[var(--accent)] uppercase tracking-wider">Step 1 of 2</p>
             <h3 id="student-details-title" className="text-xl font-black mt-1">Student Registration</h3>
             <p className="text-[11px] text-white/50 mt-1">
               Required before payment. Used for account recovery and subscription management.
@@ -284,7 +284,7 @@ export default function StudentDetailsForm({ open, onClose, onComplete, userEmai
           </div>
 
           {errors.form && (
-            <div className="mb-4 p-3 rounded-xl bg-red-500/10 border border-red-500/20 text-[11px] text-red-400 font-semibold">
+            <div className="mb-4 p-3 rounded-lg bg-red-500/10 border border-red-500/20 text-[11px] text-red-400 font-semibold">
               {errors.form}
             </div>
           )}
@@ -310,7 +310,7 @@ export default function StudentDetailsForm({ open, onClose, onComplete, userEmai
               <label className={labelBase}>
                 <Phone className="h-3 w-3" /> Phone Number
               </label>
-              <div className="flex items-center rounded-xl border border-white/10 bg-black/40 overflow-hidden focus-within:border-cyan-500/50 transition">
+              <div className="flex items-center rounded-lg border border-[var(--border)] bg-[var(--surface-2)] overflow-hidden focus-within:border-[var(--accent)]/50 transition">
                 <span className="px-3 text-xs text-white/30 font-bold border-r border-white/10">+91</span>
                 <input
                   type="tel"
@@ -365,7 +365,7 @@ export default function StudentDetailsForm({ open, onClose, onComplete, userEmai
                     key={c.value}
                     type="button"
                     onClick={() => setClassStd(c.value)}
-                    className={`py-2 rounded-xl text-[11px] font-bold transition ${
+                    className={`py-2 rounded-lg text-[11px] font-bold transition ${
                       classStd === c.value
                         ? "bg-cyan-500 text-black"
                         : "bg-white/5 border border-white/5 text-white/50 hover:bg-white/10"
@@ -389,7 +389,7 @@ export default function StudentDetailsForm({ open, onClose, onComplete, userEmai
                     key={b.value}
                     type="button"
                     onClick={() => setBoardProg(b.value)}
-                    className={`py-2 rounded-xl text-[11px] font-bold transition ${
+                    className={`py-2 rounded-lg text-[11px] font-bold transition ${
                       boardProg === b.value
                         ? "bg-cyan-500 text-black"
                         : "bg-white/5 border border-white/5 text-white/50 hover:bg-white/10"
@@ -414,7 +414,7 @@ export default function StudentDetailsForm({ open, onClose, onComplete, userEmai
               >
                 <option value="" disabled>Select an option</option>
                 {DISCOVERY_OPTIONS.map((d) => (
-                  <option key={d} value={d} className="bg-[#111827]">{d}</option>
+                  <option key={d} value={d} className="bg-[var(--surface)]">{d}</option>
                 ))}
               </select>
               {errors.discovery_source && <p className="text-[10px] text-red-400 mt-1">{errors.discovery_source}</p>}
@@ -432,7 +432,7 @@ export default function StudentDetailsForm({ open, onClose, onComplete, userEmai
               >
                 <option value="" disabled>Choose a question</option>
                 {SECURITY_QUESTIONS.map((q) => (
-                  <option key={q} value={q} className="bg-[#111827]">{q}</option>
+                  <option key={q} value={q} className="bg-[var(--surface)]">{q}</option>
                 ))}
               </select>
               {errors.security_question && <p className="text-[10px] text-red-400 mt-1">{errors.security_question}</p>}
@@ -457,13 +457,13 @@ export default function StudentDetailsForm({ open, onClose, onComplete, userEmai
         </div>
 
         {/* Sticky footer — confirmation + continue stay visible */}
-        <div className="shrink-0 border-t border-white/[0.08] bg-[#111827] px-6 pt-4 pb-6 sm:px-7">
+        <div className="shrink-0 border-t border-white/[0.08] bg-[var(--surface)] px-6 pt-4 pb-6 sm:px-7">
           <label className="flex items-start gap-2.5 mb-4 cursor-pointer select-none">
             <input
               type="checkbox"
               checked={confirmed}
               onChange={(e) => setConfirmed(e.target.checked)}
-              className="mt-0.5 rounded border-white/10 bg-black/50 text-cyan-500 focus:ring-0 focus:ring-offset-0 h-3.5 w-3.5"
+              className="mt-0.5 rounded border-white/10 bg-[var(--background)]/50 text-[var(--accent)] focus:ring-0 focus:ring-offset-0 h-3.5 w-3.5"
             />
             <span className="text-[10px] text-white/70 leading-normal">
               I confirm that the above information is correct.
@@ -474,7 +474,7 @@ export default function StudentDetailsForm({ open, onClose, onComplete, userEmai
           <button
             onClick={handleSubmit}
             disabled={saving}
-            className="w-full rounded-xl bg-gradient-to-r from-cyan-400 to-sky-500 py-3 text-sm font-bold text-black transition hover:-translate-y-0.5 disabled:translate-y-0 disabled:opacity-50 flex items-center justify-center gap-2"
+            className="w-full rounded-lg bg-[var(--accent)] py-3 text-sm font-bold text-black transition hover:-translate-y-0.5 disabled:translate-y-0 disabled:opacity-50 flex items-center justify-center gap-2"
           >
             {saving ? "Saving..." : "Continue to Payment"}
             {!saving && <ArrowRight className="h-4 w-4" />}

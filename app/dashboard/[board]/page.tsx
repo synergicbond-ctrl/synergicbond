@@ -45,8 +45,8 @@ export default async function BoardPage({ params }: { params: Promise<{ board: s
             const owned = purchasedHere.includes(c.slug);
             return (
               <Link key={c.slug} href={`/dashboard/${b.slug}/${c.slug}`}
-                className={`group flex flex-col justify-between rounded-2xl border p-6 transition hover:-translate-y-0.5 ${
-                  owned ? "border-emerald-500/40 bg-emerald-500/[0.06]" : "border-white/[0.08] bg-white/[0.03] hover:border-cyan-400/40"
+                className={`group flex flex-col justify-between rounded-lg border p-6 transition hover:-translate-y-0.5 ${
+                  owned ? "border-emerald-500/40 bg-emerald-500/[0.06]" : "border-white/[0.08] bg-white/[0.03] hover:border-[var(--accent)]/30"
                 }`}>
                 <div>
                   <div className="flex items-center gap-2">
@@ -55,7 +55,7 @@ export default async function BoardPage({ params }: { params: Promise<{ board: s
                   </div>
                   <p className="mt-1.5 text-sm text-white/55">Open the {b.name} {c.name} class dashboard.</p>
                 </div>
-                <span className="mt-5 text-sm font-black uppercase tracking-wide text-cyan-300">Open dashboard →</span>
+                <span className="mt-5 text-sm font-black uppercase tracking-wide text-[var(--accent)]">Open dashboard →</span>
               </Link>
             );
           })}

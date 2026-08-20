@@ -28,7 +28,7 @@ interface SyllabusChapter {
 const CHAPTERS = masterSyllabus as unknown as SyllabusChapter[];
 
 const BRANCH_META: Record<string, { label: string; icon: string; tone: string }> = {
-  physical: { label: "Physical Chemistry", icon: "⚗️", tone: "text-cyan-300 border-cyan-400/30 bg-cyan-500/10" },
+  physical: { label: "Physical Chemistry", icon: "⚗️", tone: "text-[var(--accent)] border-cyan-400/30 bg-cyan-500/10" },
   organic: { label: "Organic Chemistry", icon: "🧬", tone: "text-purple-300 border-purple-400/30 bg-purple-500/10" },
   inorganic: { label: "Inorganic Chemistry", icon: "🧪", tone: "text-blue-300 border-blue-400/30 bg-blue-500/10" },
 };
@@ -47,7 +47,7 @@ export function examChapters(exams: string[]): SyllabusChapter[] {
 
 function ChapterSyllabusCard({ chapter }: { chapter: SyllabusChapter }) {
   return (
-    <details className="group rounded-xl border border-white/[0.08] bg-white/[0.03] open:bg-white/[0.05]">
+    <details className="group rounded-lg border border-white/[0.08] bg-white/[0.03] open:bg-white/[0.05]">
       <summary className="flex cursor-pointer list-none items-center gap-3 px-3.5 py-3 [&::-webkit-details-marker]:hidden">
         <span className="min-w-0 flex-1">
           <span className="block text-sm font-bold text-white">{chapter.title}</span>
@@ -71,7 +71,7 @@ function ChapterSyllabusCard({ chapter }: { chapter: SyllabusChapter }) {
         <div className="mt-3 flex flex-wrap gap-1.5">
           <Link
             href={`/chapter/${chapter.id}`}
-            className="rounded-lg border border-cyan-400/30 bg-cyan-500/10 px-2.5 py-1 text-[11px] font-bold text-cyan-300 transition hover:bg-cyan-500/20"
+            className="rounded-lg border border-cyan-400/30 bg-cyan-500/10 px-2.5 py-1 text-[11px] font-bold text-[var(--accent)] transition hover:bg-cyan-500/20"
           >
             Open chapter →
           </Link>
@@ -79,7 +79,7 @@ function ChapterSyllabusCard({ chapter }: { chapter: SyllabusChapter }) {
             <Link
               key={r.href}
               href={r.href}
-              className="rounded-lg border border-white/10 bg-white/[0.04] px-2.5 py-1 text-[11px] text-white/60 transition hover:border-cyan-400/40 hover:text-cyan-300"
+              className="rounded-lg border border-white/10 bg-white/[0.04] px-2.5 py-1 text-[11px] text-white/60 transition hover:border-cyan-400/40 hover:text-[var(--accent)]"
             >
               {r.label}
             </Link>

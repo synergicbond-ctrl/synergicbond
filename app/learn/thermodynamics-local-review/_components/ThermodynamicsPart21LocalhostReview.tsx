@@ -34,17 +34,17 @@ function Section({
   children: React.ReactNode;
 }) {
   return (
-    <section className="rounded-[2rem] border border-white/10 bg-slate-950/80 p-5 shadow-2xl shadow-black/20 backdrop-blur md:p-8">
+    <section className="border-t border-[var(--border)] py-10 md:py-12">
       <div className="flex items-start gap-4">
-        <span className="grid h-10 w-10 shrink-0 place-items-center rounded-2xl border border-cyan-300/30 bg-cyan-300/10 text-sm font-black text-cyan-200">
+        <span className="font-mono text-[11px] font-bold uppercase tracking-[0.2em] text-[var(--text-muted)]">
           {index}
         </span>
         <div>
-          <h2 className="text-2xl font-black tracking-tight text-white md:text-3xl">{title}</h2>
-          {subtitle ? <p className="mt-1 text-sm leading-6 text-slate-400">{subtitle}</p> : null}
+          <h2 className="font-display mt-1 text-[clamp(1.5rem,2.8vw,2.1rem)] font-semibold leading-tight text-[var(--foreground)]">{title}</h2>
+          {subtitle ? <p className="mt-1 text-sm leading-6 text-[var(--text-muted)]">{subtitle}</p> : null}
         </div>
       </div>
-      <div className="mt-6 space-y-5 text-[15px] leading-7 text-slate-200 md:text-base">{children}</div>
+      <div className="mt-6 space-y-5 text-[15px] leading-7 text-[var(--text-body)] md:text-base">{children}</div>
     </section>
   );
 }
@@ -59,10 +59,10 @@ function ConceptLens({
   tone?: Tone;
 }) {
   return (
-    <aside className={`rounded-2xl border p-5 ${toneMap[tone]}`}>
-      <p className="text-xs font-black uppercase tracking-[0.2em]">Synergic Bond Concept Lens</p>
-      <h3 className="mt-2 text-lg font-black text-white">{title}</h3>
-      <div className="mt-2 text-sm leading-6 text-slate-200">{children}</div>
+    <aside className={`rounded-lg border p-5 ${toneMap[tone]}`}>
+      <p className="font-mono text-xs font-semibold uppercase tracking-[0.18em]">Synergic Bond Concept Lens</p>
+      <h3 className="font-display mt-2 text-lg font-semibold text-[var(--foreground)]">{title}</h3>
+      <div className="mt-2 text-sm leading-6 text-[var(--text-body)]">{children}</div>
     </aside>
   );
 }
@@ -75,18 +75,18 @@ function Formula({
   children: React.ReactNode;
 }) {
   return (
-    <div className="overflow-x-auto rounded-2xl border border-cyan-300/20 bg-black/30 p-4 text-center">
+    <div className="overflow-x-auto rounded-lg border border-cyan-300/20 bg-[var(--surface-2)] p-4 text-center">
       {label ? (
-        <p className="mb-2 text-xs font-black uppercase tracking-[0.2em] text-cyan-300">{label}</p>
+        <p className="mb-2 font-mono text-xs font-semibold uppercase tracking-[0.18em] text-cyan-300">{label}</p>
       ) : null}
-      <div className="whitespace-nowrap font-mono text-lg font-black text-white md:text-xl">{children}</div>
+      <div className="whitespace-nowrap font-mono text-lg font-semibold text-[var(--foreground)] md:text-xl">{children}</div>
     </div>
   );
 }
 
 function AbsoluteEntropyLadderAnimation() {
   return (
-    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
+    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-3 md:p-5">
       <svg
         viewBox="0 0 1200 760"
         role="img"
@@ -162,7 +162,7 @@ function AbsoluteEntropyLadderAnimation() {
 
 function SolvationEntropyAnimation() {
   return (
-    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
+    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-3 md:p-5">
       <svg
         viewBox="0 0 1200 760"
         role="img"
@@ -257,7 +257,7 @@ function SolvationEntropyAnimation() {
 
 function ReactionEntropyLedgerAnimation() {
   return (
-    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
+    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-3 md:p-5">
       <svg
         viewBox="0 0 1200 740"
         role="img"
@@ -322,7 +322,7 @@ function ReactionEntropyLedgerAnimation() {
 
 function UniverseGibbsAnimation() {
   return (
-    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
+    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-3 md:p-5">
       <svg
         viewBox="0 0 1200 780"
         role="img"
@@ -384,7 +384,7 @@ function UniverseGibbsAnimation() {
 
 function SpontaneityQuadrantGraphic() {
   return (
-    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
+    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-3 md:p-5">
       <svg
         viewBox="0 0 1200 820"
         role="img"
@@ -454,21 +454,21 @@ function AbsoluteEntropyTrendTable() {
   ];
 
   return (
-    <div className="overflow-x-auto rounded-2xl border border-white/10">
+    <div className="overflow-x-auto rounded-lg border border-[var(--border)]">
       <table className="min-w-full border-collapse text-left text-sm">
-        <thead className="bg-slate-900">
+        <thead className="bg-[var(--surface-2)]">
           <tr>
-            <th className="px-4 py-3 font-black text-white">Comparison factor</th>
-            <th className="px-4 py-3 font-black text-white">Predicted trend</th>
-            <th className="px-4 py-3 font-black text-white">Scientific interpretation</th>
+            <th className="px-4 py-3 font-semibold text-[var(--foreground)]">Comparison factor</th>
+            <th className="px-4 py-3 font-semibold text-[var(--foreground)]">Predicted trend</th>
+            <th className="px-4 py-3 font-semibold text-[var(--foreground)]">Scientific interpretation</th>
           </tr>
         </thead>
-        <tbody className="divide-y divide-white/10 bg-slate-950/70">
+        <tbody className="divide-y divide-[var(--border)] bg-[var(--surface)]">
           {rows.map(([factor, trend, meaning]) => (
             <tr key={factor}>
-              <td className="px-4 py-3 font-semibold text-slate-100">{factor}</td>
+              <td className="px-4 py-3 font-semibold text-[var(--foreground)]">{factor}</td>
               <td className="px-4 py-3 font-mono text-cyan-200">{trend}</td>
-              <td className="px-4 py-3 text-slate-300">{meaning}</td>
+              <td className="px-4 py-3 text-[var(--text-muted)]">{meaning}</td>
             </tr>
           ))}
         </tbody>
@@ -548,11 +548,11 @@ function RetainedDataAtlas() {
   return (
     <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
       {groups.map((group) => (
-        <article key={group.title} className={`rounded-3xl border p-5 ${toneMap[group.tone]}`}>
-          <h3 className="text-lg font-black text-white">{group.title}</h3>
+        <article key={group.title} className={`rounded-lg border p-5 ${toneMap[group.tone]}`}>
+          <h3 className="font-display text-lg font-semibold text-[var(--foreground)]">{group.title}</h3>
           <div className="mt-4 space-y-2">
             {group.lines.map((line) => (
-              <p key={line} className="rounded-xl bg-black/20 px-3 py-2 text-sm text-slate-200">
+              <p key={line} className="rounded-xl bg-[var(--surface-2)] px-3 py-2 text-sm text-[var(--text-body)]">
                 {line}
               </p>
             ))}
@@ -594,12 +594,12 @@ function PredictionHeuristics() {
   return (
     <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
       {cards.map((card) => (
-        <article key={card.title} className={`rounded-3xl border p-5 ${toneMap[card.tone]}`}>
-          <h3 className="text-lg font-black text-white">{card.title}</h3>
-          <div className="mt-3 rounded-xl bg-black/25 p-3 text-center font-mono text-sm font-black text-white">
+        <article key={card.title} className={`rounded-lg border p-5 ${toneMap[card.tone]}`}>
+          <h3 className="font-display text-lg font-semibold text-[var(--foreground)]">{card.title}</h3>
+          <div className="mt-3 rounded-xl bg-[var(--surface-2)] p-3 text-center font-mono text-sm font-semibold text-[var(--foreground)]">
             {card.sign}
           </div>
-          <p className="mt-3 text-sm leading-6 text-slate-200">{card.text}</p>
+          <p className="mt-3 text-sm leading-6 text-[var(--text-body)]">{card.text}</p>
         </article>
       ))}
     </div>
@@ -631,10 +631,10 @@ function RetainedReactionExamples() {
   return (
     <div className="grid gap-4 lg:grid-cols-3">
       {examples.map((item) => (
-        <article key={item.reaction} className={`rounded-3xl border p-5 ${toneMap[item.tone]}`}>
-          <h3 className="font-mono text-base font-black text-white">{item.reaction}</h3>
-          <p className="mt-3 text-sm font-bold text-slate-100">{item.trend}</p>
-          <p className="mt-3 text-sm leading-6 text-slate-300">{item.audit}</p>
+        <article key={item.reaction} className={`rounded-lg border p-5 ${toneMap[item.tone]}`}>
+          <h3 className="font-mono text-base font-display font-semibold text-[var(--foreground)]">{item.reaction}</h3>
+          <p className="mt-3 text-sm font-bold text-[var(--foreground)]">{item.trend}</p>
+          <p className="mt-3 text-sm leading-6 text-[var(--text-muted)]">{item.audit}</p>
         </article>
       ))}
     </div>
@@ -654,29 +654,29 @@ function SourceQuadrantExamplesTable() {
   ];
 
   return (
-    <div className="overflow-x-auto rounded-2xl border border-white/10">
+    <div className="overflow-x-auto rounded-lg border border-[var(--border)]">
       <table className="min-w-[1100px] border-collapse text-left text-xs">
-        <thead className="bg-slate-900">
+        <thead className="bg-[var(--surface-2)]">
           <tr>
-            <th className="px-3 py-3 font-black text-white">ΔH</th>
-            <th className="px-3 py-3 font-black text-white">ΔS</th>
-            <th className="px-3 py-3 font-black text-white">Forward tendency</th>
-            <th className="px-3 py-3 font-black text-white">Reaction example</th>
-            <th className="px-3 py-3 font-black text-white">ΔH°298<br />kJ mol⁻¹</th>
-            <th className="px-3 py-3 font-black text-white">ΔS°298<br />J mol⁻¹ K⁻¹</th>
-            <th className="px-3 py-3 font-black text-white">Audit note</th>
+            <th className="px-3 py-3 font-semibold text-[var(--foreground)]">ΔH</th>
+            <th className="px-3 py-3 font-semibold text-[var(--foreground)]">ΔS</th>
+            <th className="px-3 py-3 font-semibold text-[var(--foreground)]">Forward tendency</th>
+            <th className="px-3 py-3 font-semibold text-[var(--foreground)]">Reaction example</th>
+            <th className="px-3 py-3 font-semibold text-[var(--foreground)]">ΔH°298<br />kJ mol⁻¹</th>
+            <th className="px-3 py-3 font-semibold text-[var(--foreground)]">ΔS°298<br />J mol⁻¹ K⁻¹</th>
+            <th className="px-3 py-3 font-semibold text-[var(--foreground)]">Audit note</th>
           </tr>
         </thead>
-        <tbody className="divide-y divide-white/10 bg-slate-950/70">
+        <tbody className="divide-y divide-[var(--border)] bg-[var(--surface)]">
           {rows.map(([h, s, tendency, reaction, hv, sv, note]) => (
             <tr key={reaction}>
               <td className="px-3 py-3 font-black text-cyan-200">{h}</td>
               <td className="px-3 py-3 font-black text-violet-200">{s}</td>
-              <td className="px-3 py-3 text-slate-200">{tendency}</td>
-              <td className="px-3 py-3 font-mono text-slate-100">{reaction}</td>
+              <td className="px-3 py-3 text-[var(--text-body)]">{tendency}</td>
+              <td className="px-3 py-3 font-mono text-[var(--foreground)]">{reaction}</td>
               <td className="px-3 py-3 text-amber-200">{hv}</td>
               <td className="px-3 py-3 text-emerald-300">{sv}</td>
-              <td className="px-3 py-3 leading-5 text-slate-400">{note}</td>
+              <td className="px-3 py-3 leading-5 text-[var(--text-muted)]">{note}</td>
             </tr>
           ))}
         </tbody>
@@ -734,15 +734,15 @@ function WorkedExamples() {
   return (
     <div className="grid gap-4 lg:grid-cols-2">
       {examples.map((item) => (
-        <article key={item.title} className="rounded-2xl border border-white/10 bg-slate-900/70 p-5">
-          <h3 className=" font-black text-white">
+        <article key={item.title} className="rounded-lg border border-[var(--border)] bg-[var(--surface)] p-5">
+          <h3 className=" font-display font-semibold text-[var(--foreground)]">
             <span className="mr-2 text-amber-300">◆</span>
             {item.title}
           </h3>
-          <p className="mt-4 leading-7 text-slate-200">{item.question}</p>
+          <p className="mt-4 leading-7 text-[var(--text-body)]">{item.question}</p>
           <div className="mt-4 rounded-xl border border-emerald-300/20 bg-emerald-300/[0.06] p-4">
-            <p className="text-xs font-black uppercase tracking-[0.2em] text-emerald-300">Solution</p>
-            <p className="mt-2 text-sm leading-6 text-slate-200">{item.solution}</p>
+            <p className="font-mono text-xs font-semibold uppercase tracking-[0.18em] text-emerald-300">Solution</p>
+            <p className="mt-2 text-sm leading-6 text-[var(--text-body)]">{item.solution}</p>
           </div>
         </article>
       ))}
@@ -869,15 +869,15 @@ function ProblemLadder() {
   return (
     <div className="grid gap-4 lg:grid-cols-2">
       {problems.map((item) => (
-        <article key={item.title} className="group rounded-2xl border border-white/10 bg-slate-900/70 p-5">
-          <h3 className=" font-black text-white">
+        <article key={item.title} className="group rounded-lg border border-[var(--border)] bg-[var(--surface)] p-5">
+          <h3 className=" font-display font-semibold text-[var(--foreground)]">
             <span className="mr-2 text-amber-300">◆</span>
             {item.title}
           </h3>
-          <p className="mt-4 leading-7 text-slate-200">{item.question}</p>
+          <p className="mt-4 leading-7 text-[var(--text-body)]">{item.question}</p>
           <div className="mt-4 rounded-xl border border-emerald-300/20 bg-emerald-300/[0.06] p-4">
-            <p className="text-xs font-black uppercase tracking-[0.2em] text-emerald-300">Solution</p>
-            <p className="mt-2 text-sm leading-6 text-slate-200">{item.solution}</p>
+            <p className="font-mono text-xs font-semibold uppercase tracking-[0.18em] text-emerald-300">Solution</p>
+            <p className="mt-2 text-sm leading-6 text-[var(--text-body)]">{item.solution}</p>
           </div>
         </article>
       ))}
@@ -930,23 +930,23 @@ const traps = [
 
 function TrapTable() {
   return (
-    <div className="overflow-x-auto rounded-2xl border border-white/10">
+    <div className="overflow-x-auto rounded-lg border border-[var(--border)]">
       <table className="min-w-full border-collapse text-left text-sm">
-        <thead className="bg-slate-900">
+        <thead className="bg-[var(--surface-2)]">
           <tr>
-            <th className="px-4 py-3 font-black text-white">Tempting statement</th>
-            <th className="px-4 py-3 font-black text-white">Verdict</th>
-            <th className="px-4 py-3 font-black text-white">Correction</th>
+            <th className="px-4 py-3 font-semibold text-[var(--foreground)]">Tempting statement</th>
+            <th className="px-4 py-3 font-semibold text-[var(--foreground)]">Verdict</th>
+            <th className="px-4 py-3 font-semibold text-[var(--foreground)]">Correction</th>
           </tr>
         </thead>
-        <tbody className="divide-y divide-white/10 bg-slate-950/70">
+        <tbody className="divide-y divide-[var(--border)] bg-[var(--surface)]">
           {traps.map(([statement, verdict, correction]) => (
             <tr key={statement}>
-              <td className="px-4 py-3 font-semibold text-slate-100">{statement}</td>
+              <td className="px-4 py-3 font-semibold text-[var(--foreground)]">{statement}</td>
               <td className="px-4 py-3">
                 <span className="rounded-full bg-rose-400/15 px-3 py-1 text-xs font-black text-rose-300">{verdict}</span>
               </td>
-              <td className="px-4 py-3 leading-6 text-slate-300">{correction}</td>
+              <td className="px-4 py-3 leading-6 text-[var(--text-muted)]">{correction}</td>
             </tr>
           ))}
         </tbody>
@@ -982,9 +982,9 @@ function DailyLifeGrid() {
   return (
     <div className="grid gap-4 md:grid-cols-2">
       {items.map((item) => (
-        <article key={item.title} className={`rounded-3xl border p-5 ${toneMap[item.tone]}`}>
-          <h3 className="text-xl font-black text-white">{item.title}</h3>
-          <p className="mt-2 text-sm leading-6 text-slate-200">{item.text}</p>
+        <article key={item.title} className={`rounded-lg border p-5 ${toneMap[item.tone]}`}>
+          <h3 className="font-display text-xl font-semibold text-[var(--foreground)]">{item.title}</h3>
+          <p className="mt-2 text-sm leading-6 text-[var(--text-body)]">{item.text}</p>
         </article>
       ))}
     </div>
@@ -993,8 +993,8 @@ function DailyLifeGrid() {
 
 export default function ThermodynamicsPart21() {
   return (
-    <main className="min-h-screen bg-[#020617] text-slate-100">
-      <header className="relative overflow-hidden border-b border-white/10">
+    <main className="min-h-screen bg-[var(--background)] text-[var(--foreground)]">
+      <header className="relative overflow-hidden border-b border-[var(--border)]">
         <div
           aria-hidden="true"
           className="absolute inset-0 bg-[radial-gradient(circle_at_14%_20%,rgba(34,211,238,0.20),transparent_32%),radial-gradient(circle_at_86%_15%,rgba(217,70,239,0.18),transparent_30%),radial-gradient(circle_at_50%_100%,rgba(251,191,36,0.10),transparent_34%)]"
@@ -1006,32 +1006,32 @@ export default function ThermodynamicsPart21() {
             <Chip tone="amber">ABSOLUTE ENTROPY & SPONTANEITY</Chip>
           </div>
 
-          <div className="mt-8 grid gap-10 lg:grid-cols-[1.15fr_0.85fr] lg:items-center">
+          <div className="mt-8 grid grid-cols-1 gap-10 lg:grid-cols-[1.15fr_0.85fr] lg:items-center">
             <div>
-              <p className="text-sm font-black uppercase tracking-[0.3em] text-cyan-300">
+              <p className="font-mono text-xs font-semibold uppercase tracking-[0.2em] text-cyan-300">
                 Thermodynamics • Reaction Direction Layer
               </p>
-              <h1 className="mt-4 max-w-4xl text-4xl font-black tracking-[-0.045em] text-white md:text-6xl">
+              <h1 className="font-display mt-4 max-w-4xl text-4xl font-semibold tracking-[-0.025em] text-[var(--foreground)] md:text-5xl">
                 Absolute entropy describes the state; Gibbs energy predicts the direction
               </h1>
-              <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-300">
+              <p className="mt-6 max-w-3xl text-lg leading-8 text-[var(--text-muted)]">
                 Third-Law molar entropies quantify reactants and products. Reaction enthalpy determines the
                 surroundings contribution. At constant temperature and pressure, both combine into the Gibbs criterion.
               </p>
             </div>
 
-            <div className="rounded-[2rem] border border-white/10 bg-white/[0.05] p-6 shadow-2xl shadow-cyan-950/25">
-              <p className="text-xs font-black uppercase tracking-[0.22em] text-fuchsia-300">
+            <div className="rounded-xl border border-[var(--border)] bg-[var(--surface)] p-6">
+              <p className="font-mono text-xs font-semibold uppercase tracking-[0.22em] text-fuchsia-300">
                 Direction map
               </p>
               <div className="mt-4 space-y-3">
-                <div className="rounded-xl bg-cyan-400/10 p-4 font-mono text-base font-black text-white">
+                <div className="rounded-xl bg-cyan-400/10 p-4 font-mono text-base font-semibold text-[var(--foreground)]">
                   ΔrS° = ΣνS°products − ΣνS°reactants
                 </div>
-                <div className="rounded-xl bg-amber-400/10 p-4 font-mono text-base font-black text-white">
+                <div className="rounded-xl bg-amber-400/10 p-4 font-mono text-base font-semibold text-[var(--foreground)]">
                   ΔSsurr = −ΔrH/T
                 </div>
-                <div className="rounded-xl bg-emerald-400/10 p-4 font-mono text-base font-black text-white">
+                <div className="rounded-xl bg-emerald-400/10 p-4 font-mono text-base font-semibold text-[var(--foreground)]">
                   ΔrG = ΔrH − TΔrS
                 </div>
               </div>
@@ -1230,13 +1230,13 @@ export default function ThermodynamicsPart21() {
           <ProblemLadder />
         </Section>
 
-        <section className="rounded-[2rem] border border-white/10 bg-gradient-to-r from-slate-950 via-slate-900 to-slate-950 p-6 md:p-8">
+        <section className="rounded-xl border border-[var(--border)] bg-[var(--surface)] p-6 md:p-8">
           <div className="flex flex-wrap items-center justify-between gap-4">
             <div>
-              <p className="text-xs font-black uppercase tracking-[0.22em] text-fuchsia-300">
+              <p className="font-mono text-xs font-semibold uppercase tracking-[0.22em] text-fuchsia-300">
                 Synergic Bond rapid recall
               </p>
-              <h2 className="mt-2 text-2xl font-black text-white">
+              <h2 className="mt-2 text-2xl font-semibold text-[var(--foreground)]">
                 System entropy plus reservoir entropy becomes the Gibbs direction test
               </h2>
             </div>
@@ -1250,9 +1250,9 @@ export default function ThermodynamicsPart21() {
               ["Surroundings", "−ΔrH/T at constant T, P"],
               ["Spontaneity", "ΔrG = ΔrH − TΔrS < 0"],
             ].map(([term, meaning]) => (
-              <div key={term} className="rounded-2xl border border-white/10 bg-black/25 p-4">
-                <p className="font-black text-white">{term}</p>
-                <p className="mt-1 text-sm leading-6 text-slate-300">{meaning}</p>
+              <div key={term} className="rounded-lg border border-[var(--border)] bg-[var(--surface-2)] p-4">
+                <p className="font-semibold text-[var(--foreground)]">{term}</p>
+                <p className="mt-1 text-sm leading-6 text-[var(--text-muted)]">{meaning}</p>
               </div>
             ))}
           </div>

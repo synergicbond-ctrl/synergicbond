@@ -317,7 +317,7 @@ export default function IsomerismPart95() {
           Isomerism
         </Link>
 
-        <header className="mt-6 rounded-3xl border border-cyan-300/15 bg-[radial-gradient(circle_at_top_right,_rgba(34,211,238,.16),_transparent_35%),linear-gradient(135deg,rgba(34,211,238,.08),rgba(2,6,23,.72),rgba(139,92,246,.1))] p-6 sm:p-9">
+        <header className="mt-6 rounded-lg border border-cyan-300/15 bg-[radial-gradient(circle_at_top_right,_rgba(34,211,238,.16),_transparent_35%),linear-gradient(135deg,rgba(34,211,238,.08),rgba(2,6,23,.72),rgba(139,92,246,.1))] p-6 sm:p-9">
           <p className="text-xs font-black uppercase tracking-[.24em] text-cyan-200">
             Cyclobutane photodimers · stereochemical matrix
           </p>
@@ -327,7 +327,7 @@ export default function IsomerismPart95() {
         </header>
 
         <section className="mt-7 space-y-6">
-          <section className="rounded-2xl border border-white/10 bg-white/[.035] p-5">
+          <section className="rounded-lg border border-white/10 bg-white/[.035] p-5">
             <h2 className="text-xl font-black text-cyan-200">
               Photochemical cyclobutane framework
             </h2>
@@ -344,7 +344,7 @@ export default function IsomerismPart95() {
             </p>
           </section>
 
-          <section className="rounded-2xl border border-white/10 bg-white/[.035] p-5">
+          <section className="rounded-lg border border-white/10 bg-white/[.035] p-5">
             <h2 className="text-xl font-black text-cyan-200">
               Face-defined stereochemical matrix
             </h2>
@@ -361,7 +361,7 @@ export default function IsomerismPart95() {
             </div>
           </section>
 
-          <section className="rounded-2xl border border-violet-300/20 bg-violet-300/[.05] p-5">
+          <section className="rounded-lg border border-violet-300/20 bg-violet-300/[.05] p-5">
             <h2 className="text-xl font-black text-violet-200">
               Rendering rule used here
             </h2>

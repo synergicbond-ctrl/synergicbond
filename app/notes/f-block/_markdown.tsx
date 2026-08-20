@@ -42,12 +42,12 @@ const components: Components = {
   li: ({ children }) => <li className="pl-1 text-[15.5px] leading-7 sm:text-base">{children}</li>,
   strong: ({ children }) => <strong className="font-black text-slate-50">{children}</strong>,
   blockquote: ({ children }) => (
-    <blockquote className="my-5 rounded-2xl border border-fuchsia-300/20 border-l-4 border-l-fuchsia-300 bg-[linear-gradient(90deg,rgba(134,39,160,.16),rgba(14,116,144,.08))] px-5 py-4 text-fuchsia-50">
+    <blockquote className="my-5 rounded-lg border border-fuchsia-300/20 border-l-4 border-l-fuchsia-300 bg-[linear-gradient(90deg,rgba(134,39,160,.16),rgba(14,116,144,.08))] px-5 py-4 text-fuchsia-50">
       {children}
     </blockquote>
   ),
   table: ({ children }) => (
-    <div className="my-6 overflow-x-auto rounded-2xl border border-fuchsia-200/15 bg-[#050914] shadow-xl shadow-black/20">
+    <div className="my-6 overflow-x-auto rounded-lg border border-fuchsia-200/15 bg-[#050914] shadow-xl shadow-black/20">
       <table className="min-w-full border-collapse text-left text-sm sm:text-[15px]">{children}</table>
     </div>
   ),

@@ -26,8 +26,8 @@ const BAND_META = {
 
 function Shell({ children }: { children: React.ReactNode }) {
   return (
-    <main className="min-h-screen bg-black text-white">
-      <div className="border-b border-white/10 bg-gradient-to-b from-sky-950/20 to-black px-6 py-12">
+    <main className="min-h-screen bg-[var(--background)] text-white">
+      <div className="border-b border-white/10 bg-[var(--surface)] px-6 py-12">
         <div className="mx-auto max-w-4xl">
           <p className="mb-2 text-xs font-bold uppercase tracking-[0.3em] text-sky-300">Where you stand</p>
           <h1 className="text-3xl font-black tracking-tight sm:text-4xl">Readiness Report</h1>
@@ -48,10 +48,10 @@ export default async function ReadinessPage() {
   if (error === "Unauthorized") {
     return (
       <Shell>
-        <div className="rounded-2xl border border-white/10 bg-white/[0.02] p-8 text-center">
+        <div className="rounded-lg border border-white/10 bg-white/[0.02] p-8 text-center">
           <h2 className="text-lg font-bold">Sign in to see your Readiness Report</h2>
           <p className="mx-auto mt-2 max-w-md text-sm text-zinc-400">Your score is built automatically from tests and practice.</p>
-          <Link href="/auth/signin" className="mt-5 inline-block rounded-xl bg-gradient-to-r from-cyan-400 to-sky-500 px-5 py-2.5 text-sm font-black text-black">
+          <Link href="/auth/signin" className="mt-5 inline-block rounded-xl bg-[var(--accent)] px-5 py-2.5 text-sm font-black text-black">
             Sign in →
           </Link>
         </div>
@@ -62,7 +62,7 @@ export default async function ReadinessPage() {
   if (error || !answers) {
     return (
       <Shell>
-        <p className="rounded-2xl border border-white/10 bg-white/[0.02] p-8 text-center text-sm text-white/55">
+        <p className="rounded-lg border border-white/10 bg-white/[0.02] p-8 text-center text-sm text-white/55">
           The Readiness Report is unavailable right now — try again shortly.
         </p>
       </Shell>
@@ -74,12 +74,12 @@ export default async function ReadinessPage() {
   if (!report.hasData) {
     return (
       <Shell>
-        <div className="rounded-2xl border border-white/10 bg-white/[0.02] p-8 text-center">
+        <div className="rounded-lg border border-white/10 bg-white/[0.02] p-8 text-center">
           <h2 className="text-lg font-bold">No readiness score yet</h2>
           <p className="mx-auto mt-2 max-w-md text-sm text-zinc-400">
             Attempt a{" "}
-            <Link href="/tests" className="font-bold text-cyan-400 hover:underline">test</Link> or{" "}
-            <Link href="/pyq" className="font-bold text-cyan-400 hover:underline">PYQ</Link> set — your readiness score builds automatically.
+            <Link href="/tests" className="font-bold text-[var(--accent)] hover:underline">test</Link> or{" "}
+            <Link href="/pyq" className="font-bold text-[var(--accent)] hover:underline">PYQ</Link> set — your readiness score builds automatically.
           </p>
         </div>
       </Shell>
@@ -91,7 +91,7 @@ export default async function ReadinessPage() {
 
   return (
     <Shell>
-      <div className={`mb-8 flex flex-col items-center gap-3 rounded-2xl border p-8 text-center ${m.ring}`}>
+      <div className={`mb-8 flex flex-col items-center gap-3 rounded-lg border p-8 text-center ${m.ring}`}>
         <div className="text-6xl font-black text-white">{score}<span className="text-2xl text-white/40">/100</span></div>
         <div className={`text-sm font-bold uppercase tracking-wider ${m.text}`}>{m.label}</div>
         {!confident && (
@@ -112,7 +112,7 @@ export default async function ReadinessPage() {
                 <span className="text-white/60">{c.value}% <span className="text-white/35">× {Math.round(c.weight * 100)}%</span></span>
               </div>
               <div className="h-2 w-full overflow-hidden rounded-full bg-white/[0.06]">
-                <div className="h-full rounded-full bg-gradient-to-r from-cyan-400 to-sky-500" style={{ width: `${c.value}%` }} />
+                <div className="h-full rounded-full bg-[var(--accent)]" style={{ width: `${c.value}%` }} />
               </div>
             </div>
           ))}
@@ -121,7 +121,7 @@ export default async function ReadinessPage() {
 
       {/* Strong / weak */}
       <section className="mb-8 grid gap-4 sm:grid-cols-2">
-        <div className="rounded-2xl border border-emerald-500/20 bg-emerald-500/[0.04] p-4">
+        <div className="rounded-lg border border-emerald-500/20 bg-emerald-500/[0.04] p-4">
           <h3 className="text-sm font-bold text-emerald-300">Strong chapters</h3>
           {strongChapters.length === 0 ? (
             <p className="mt-2 text-xs text-white/45">None at ≥75% yet — keep practising.</p>
@@ -129,7 +129,7 @@ export default async function ReadinessPage() {
             <ul className="mt-2 space-y-1 text-sm text-white/75">{strongChapters.map((c) => <li key={c}>✓ {c}</li>)}</ul>
           )}
         </div>
-        <div className="rounded-2xl border border-rose-500/20 bg-rose-500/[0.04] p-4">
+        <div className="rounded-lg border border-rose-500/20 bg-rose-500/[0.04] p-4">
           <h3 className="text-sm font-bold text-rose-300">Weak chapters</h3>
           {weakChapters.length === 0 ? (
             <p className="mt-2 text-xs text-white/45">No chapters below 50% with enough attempts.</p>
@@ -149,7 +149,7 @@ export default async function ReadinessPage() {
                 <div className="text-sm font-semibold text-white">{s.label}</div>
                 <div className="text-xs text-white/45">{s.reason}</div>
               </div>
-              <span className="text-sm font-semibold text-cyan-300">→</span>
+              <span className="text-sm font-semibold text-[var(--accent)]">→</span>
             </Link>
           ))}
         </div>

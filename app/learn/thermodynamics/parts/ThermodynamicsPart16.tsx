@@ -35,7 +35,7 @@ function Section({
   return (
     <section className="rounded-[2rem] border border-white/10 bg-slate-950/80 p-5 shadow-2xl shadow-black/20 backdrop-blur md:p-8">
       <div className="flex items-start gap-4">
-        <span className="grid h-10 w-10 shrink-0 place-items-center rounded-2xl border border-cyan-300/30 bg-cyan-300/10 text-sm font-black text-cyan-200">
+        <span className="grid h-10 w-10 shrink-0 place-items-center rounded-lg border border-cyan-300/30 bg-cyan-300/10 text-sm font-black text-cyan-200">
           {index}
         </span>
         <div>
@@ -58,7 +58,7 @@ function ConceptLens({
   tone?: Tone;
 }) {
   return (
-    <aside className={`rounded-2xl border p-5 ${toneMap[tone]}`}>
+    <aside className={`rounded-lg border p-5 ${toneMap[tone]}`}>
       <p className="text-xs font-black uppercase tracking-[0.2em]">Concept lens</p>
       <h3 className="mt-2 text-lg font-black text-white">{title}</h3>
       <div className="mt-2 text-sm leading-6 text-slate-200">{children}</div>
@@ -74,7 +74,7 @@ function Formula({
   children: React.ReactNode;
 }) {
   return (
-    <div className="overflow-x-auto rounded-2xl border border-cyan-300/20 bg-black/30 p-4 text-center">
+    <div className="overflow-x-auto rounded-lg border border-cyan-300/20 bg-black/30 p-4 text-center">
       {label ? (
         <p className="mb-2 text-xs font-black uppercase tracking-[0.2em] text-cyan-300">{label}</p>
       ) : null}
@@ -493,7 +493,7 @@ function SecondLawStatements() {
   return (
     <div className="grid gap-4 lg:grid-cols-3">
       {statements.map((statement) => (
-        <article key={statement.title} className={`rounded-3xl border p-5 ${toneMap[statement.tone]}`}>
+        <article key={statement.title} className={`rounded-lg border p-5 ${toneMap[statement.tone]}`}>
           <h3 className="text-xl font-black text-white">{statement.title}</h3>
           <p className="mt-3 text-sm leading-6 text-slate-200">{statement.text}</p>
         </article>
@@ -515,7 +515,7 @@ function EntropyPropertiesGrid() {
   ];
 
   return (
-    <div className="overflow-x-auto rounded-2xl border border-white/10">
+    <div className="overflow-x-auto rounded-lg border border-white/10">
       <table className="min-w-full border-collapse text-left text-sm">
         <thead className="bg-slate-900">
           <tr>
@@ -615,7 +615,7 @@ function TrendGrid() {
   return (
     <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
       {trendCards.map((item) => (
-        <article key={item.index} className={`rounded-3xl border p-5 ${toneMap[item.tone]}`}>
+        <article key={item.index} className={`rounded-lg border p-5 ${toneMap[item.tone]}`}>
           <p className="text-xs font-black uppercase tracking-[0.2em]">{item.index}</p>
           <h3 className="mt-2 text-lg font-black text-white">{item.title}</h3>
           <div className="mt-3 rounded-xl bg-black/25 p-3 text-center font-mono text-sm font-black text-white">
@@ -638,7 +638,7 @@ function ComplexityExamples() {
   ];
 
   return (
-    <div className="overflow-x-auto rounded-2xl border border-white/10">
+    <div className="overflow-x-auto rounded-lg border border-white/10">
       <table className="min-w-full border-collapse text-left text-sm">
         <thead className="bg-slate-900">
           <tr>
@@ -722,7 +722,7 @@ function RetainedExamplesAtlas() {
   return (
     <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
       {items.map((item) => (
-        <article key={item.title} className={`rounded-3xl border p-5 ${toneMap[item.tone]}`}>
+        <article key={item.title} className={`rounded-lg border p-5 ${toneMap[item.tone]}`}>
           <h3 className="text-lg font-black text-white">{item.title}</h3>
           <div className="mt-3 rounded-xl bg-black/25 p-3 text-center font-mono text-sm font-black text-white">
             {item.sign}
@@ -769,7 +769,7 @@ function WorkedExamples() {
   return (
     <div className="grid gap-4 lg:grid-cols-2">
       {examples.map((item) => (
-        <article key={item.title} className="rounded-2xl border border-white/10 bg-slate-900/70 p-5">
+        <article key={item.title} className="rounded-lg border border-white/10 bg-slate-900/70 p-5">
           <h3 className=" font-black text-white">
             <span className="mr-2 text-amber-300">◆</span>
             {item.title}
@@ -904,7 +904,7 @@ function ProblemLadder() {
   return (
     <div className="grid gap-4 lg:grid-cols-2">
       {problems.map((item) => (
-        <article key={item.title} className="group rounded-2xl border border-white/10 bg-slate-900/70 p-5">
+        <article key={item.title} className="group rounded-lg border border-white/10 bg-slate-900/70 p-5">
           <h3 className=" font-black text-white">
             <span className="mr-2 text-amber-300">◆</span>
             {item.title}
@@ -965,7 +965,7 @@ const traps = [
 
 function TrapTable() {
   return (
-    <div className="overflow-x-auto rounded-2xl border border-white/10">
+    <div className="overflow-x-auto rounded-lg border border-white/10">
       <table className="min-w-full border-collapse text-left text-sm">
         <thead className="bg-slate-900">
           <tr>
@@ -1017,7 +1017,7 @@ function DailyLifeGrid() {
   return (
     <div className="grid gap-4 md:grid-cols-2">
       {items.map((item) => (
-        <article key={item.title} className={`rounded-3xl border p-5 ${toneMap[item.tone]}`}>
+        <article key={item.title} className={`rounded-lg border p-5 ${toneMap[item.tone]}`}>
           <h3 className="text-xl font-black text-white">{item.title}</h3>
           <p className="mt-2 text-sm leading-6 text-slate-200">{item.text}</p>
         </article>
@@ -1266,7 +1266,7 @@ export default function ThermodynamicsPart16() {
               ["Nature", "extensive, additive state function"],
               ["Lost work", "Wlost = T0Sgen"],
             ].map(([term, meaning]) => (
-              <div key={term} className="rounded-2xl border border-white/10 bg-black/25 p-4">
+              <div key={term} className="rounded-lg border border-white/10 bg-black/25 p-4">
                 <p className="font-black text-white">{term}</p>
                 <p className="mt-1 text-sm leading-6 text-slate-300">{meaning}</p>
               </div>

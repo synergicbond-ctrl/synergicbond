@@ -41,23 +41,23 @@ export function PremiumNotes({ sections, children }: { sections: NoteSection[]; 
   }, [sections]);
 
   return (
-    <div className="min-h-screen bg-[#0B1220] text-white">
+    <div className="min-h-screen bg-[var(--background)] text-[var(--foreground)]">
       <div className="fixed inset-x-0 top-0 z-50 h-1 bg-transparent">
-        <div className="h-full bg-gradient-to-r from-cyan-400 to-sky-500 transition-[width] duration-150" style={{ width: `${progress}%` }} />
+        <div className="h-full bg-[var(--accent)] transition-[width] duration-150" style={{ width: `${progress}%` }} />
       </div>
       <div className="mx-auto flex max-w-6xl gap-8 px-5 py-10 sm:px-6">
         <aside className="hidden w-52 shrink-0 lg:block">
           <div className="sticky top-10">
-            <p className="mb-3 text-[11px] font-bold uppercase tracking-widest text-white/35">Contents</p>
+            <p className="mb-3 text-[11px] font-bold uppercase tracking-widest text-[var(--text-muted)]">Contents</p>
             <nav className="space-y-0.5">
               {sections.map((s) => (
                 <a key={s.id} href={`#${s.id}`}
-                  className={`block rounded-lg px-3 py-1.5 text-sm transition ${active === s.id ? "bg-cyan-500/10 font-bold text-cyan-300" : "text-white/50 hover:text-white/80"}`}>
+                  className={`block rounded-lg px-3 py-1.5 text-sm transition ${active === s.id ? "bg-cyan-500/10 font-bold text-[var(--accent)]" : "text-[var(--text-muted)] hover:text-[var(--foreground)]"}`}>
                   {s.label}
                 </a>
               ))}
             </nav>
-            <div className="mt-4 border-t border-white/[0.06] pt-3 text-[11px] text-white/35">{progress}% read</div>
+            <div className="mt-4 border-t border-[var(--border)] pt-3 text-[11px] text-[var(--text-muted)]">{progress}% read</div>
           </div>
         </aside>
         <main className="min-w-0 flex-1 space-y-16">{children}</main>
@@ -67,7 +67,7 @@ export function PremiumNotes({ sections, children }: { sections: NoteSection[]; 
 }
 
 export function Glass({ children, className = "" }: { children: ReactNode; className?: string }) {
-  return <div className={`rounded-2xl border border-white/[0.07] bg-white/[0.03] backdrop-blur-sm ${className}`}>{children}</div>;
+  return <div className={`rounded-lg border border-[var(--border)] bg-[var(--surface)] ${className}`}>{children}</div>;
 }
 
 export function Hero({ eyebrow, title, accent, lead, stats }: {
@@ -75,14 +75,14 @@ export function Hero({ eyebrow, title, accent, lead, stats }: {
 }) {
   return (
     <header className="scroll-mt-10">
-      <div className="text-[11px] font-bold uppercase tracking-[0.3em] text-cyan-300/80">{eyebrow}</div>
+      <div className="text-[11px] font-bold uppercase tracking-[0.3em] text-[var(--accent)]">{eyebrow}</div>
       <h1 className="mt-2 text-4xl font-black leading-[1.05] tracking-tight sm:text-5xl">
-        {title}<span className="text-cyan-400"> {accent}</span>
+        {title}<span className="text-[var(--accent)]"> {accent}</span>
       </h1>
       <p className="mt-4 max-w-2xl text-lg leading-relaxed text-white/65">{lead}</p>
       <Glass className="mt-6 flex flex-wrap gap-6 p-5">
         {stats.map((s) => (
-          <div key={s.k}><div className={`text-2xl font-black ${s.tone ?? "text-cyan-300"}`}>{renderChemistry(s.v)}</div><div className="text-xs text-white/45">{s.k}</div></div>
+          <div key={s.k}><div className={`text-2xl font-black ${s.tone ?? "text-[var(--accent)]"}`}>{renderChemistry(s.v)}</div><div className="text-xs text-white/45">{s.k}</div></div>
         ))}
       </Glass>
     </header>
@@ -93,7 +93,7 @@ export function Section({ id, eyebrow, title, children }: { id: string; eyebrow:
   return (
     <section id={id} className="scroll-mt-10">
       <div className="mb-5">
-        <p className="text-[11px] font-bold uppercase tracking-[0.28em] text-cyan-300/80">{eyebrow}</p>
+        <p className="text-[11px] font-bold uppercase tracking-[0.28em] text-[var(--accent)]">{eyebrow}</p>
         <h2 className="mt-1.5 text-2xl font-black tracking-tight text-white sm:text-3xl">{title}</h2>
       </div>
       {children}
@@ -105,7 +105,7 @@ export function FormulaCard({ name, formula, vars }: { name: string; formula: st
   return (
     <Glass className="p-5">
       <div className="text-xs font-bold uppercase tracking-wider text-white/40">{name}</div>
-      <div className="mt-2 rounded-xl bg-[#0B1220] px-4 py-3 text-center text-xl font-black text-cyan-200">{renderChemistry(formula)}</div>
+      <div className="mt-2 rounded-lg bg-[var(--background)] px-4 py-3 text-center text-xl font-black text-[var(--accent)]">{renderChemistry(formula)}</div>
       <div className="mt-3 space-y-1">
         {vars.map((v) => (
           <div key={v.sym} className="flex items-baseline gap-2 text-sm">
@@ -121,7 +121,7 @@ export function FormulaCard({ name, formula, vars }: { name: string; formula: st
 export function Step({ n, children }: { n: number; children: ReactNode }) {
   return (
     <div className="flex gap-3">
-      <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-cyan-500/15 text-sm font-black text-cyan-300">{n}</span>
+      <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-cyan-500/15 text-sm font-black text-[var(--accent)]">{n}</span>
       <div className="pt-0.5 text-sm leading-relaxed text-white/80">{children}</div>
     </div>
   );
@@ -135,7 +135,7 @@ export function CalloutList({ variant, items }: { variant: "mistake" | "ncert"; 
   return (
     <div className="space-y-3">
       {items.map((t, i) => (
-        <div key={i} className={`flex gap-3 rounded-xl border p-4 ${meta.ring}`}>
+        <div key={i} className={`flex gap-3 rounded-lg border p-4 ${meta.ring}`}>
           <span className={meta.iconCls}>{meta.icon}</span>
           <p className="text-sm text-white/80">{renderChemistry(t)}</p>
         </div>
@@ -164,7 +164,7 @@ export function RevisionSheet({ points, ctas }: { points: string[]; ctas?: { hre
         <div className="grid gap-x-6 gap-y-2 sm:grid-cols-2">
           {points.map((r) => (
             <div key={r} className="flex items-center gap-2 border-b border-white/[0.05] py-1.5 text-sm text-white/75">
-              <span className="text-cyan-400">▸</span>{renderChemistry(r)}
+              <span className="text-[var(--accent)]">▸</span>{renderChemistry(r)}
             </div>
           ))}
         </div>
@@ -173,7 +173,7 @@ export function RevisionSheet({ points, ctas }: { points: string[]; ctas?: { hre
         <div className="mt-6 flex flex-wrap gap-3">
           {ctas.map((c, i) => (
             <Link key={c.href} href={c.href}
-              className={`rounded-xl px-4 py-2 text-sm font-semibold transition ${i === 0 ? "border border-cyan-400/40 bg-cyan-500/10 text-cyan-300 hover:bg-cyan-500/20" : "border border-white/15 bg-white/[0.04] text-white/80 hover:bg-white/[0.08]"}`}>
+              className={`rounded-lg px-4 py-2 text-sm font-semibold transition ${i === 0 ? "border border-cyan-400/40 bg-cyan-500/10 text-[var(--accent)] hover:bg-cyan-500/20" : "border border-white/15 bg-white/[0.04] text-white/80 hover:bg-white/[0.08]"}`}>
               {c.label} →
             </Link>
           ))}

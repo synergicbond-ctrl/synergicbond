@@ -50,7 +50,7 @@ function TableBlock({ rows }: { rows: string[][] }) {
               {row.map((cell, c) => {
                 const Tag = r === 0 ? "th" : "td";
                 return (
-                  <Tag key={c} style={{ border: "1px solid #31516f", padding: "10px 12px", textAlign: "left", verticalAlign: "top", background: r === 0 ? "#183149" : r % 2 ? "#102334" : "#0d1d2c" }}>
+                  <Tag key={c} style={{ border: "1px solid var(--border)", padding: "10px 12px", textAlign: "left", verticalAlign: "top", background: r === 0 ? "var(--surface-2)" : r % 2 ? "var(--surface)" : "var(--background)" }}>
                     <Inline text={cell} />
                   </Tag>
                 );
@@ -75,7 +75,7 @@ export default function PeriodicTableDeepAdditions({ topic }: { topic: PeriodicD
           if (block.kind === "section" || block.kind === "heading") return <h3 key={index} style={{ color: "#dceeff", fontFamily: "Georgia, serif", fontSize: 22, margin: "28px 0 12px", lineHeight: 1.3 }}><Inline text={String(block.value)} /></h3>;
           if (block.kind === "subheading") return <h4 key={index} style={{ color: "#9fdff0", fontSize: 17, margin: "22px 0 9px" }}><Inline text={String(block.value)} /></h4>;
           if (block.kind === "formula") return (
-            <div key={index} style={{ overflowX: "auto", margin: "14px 0", padding: "14px 16px", border: "1px solid #31516f", borderRadius: 10, background: "#0d1d2c", color: "#f4f8fb", fontFamily: "Cambria Math, Georgia, serif", fontSize: 17 }}>
+            <div key={index} style={{ overflowX: "auto", margin: "14px 0", padding: "14px 16px", border: "1px solid var(--border)", borderRadius: 10, background: "var(--surface)", color: "var(--foreground)", fontFamily: "Cambria Math, Georgia, serif", fontSize: 17 }}>
               <span className="sb-katex-block" dangerouslySetInnerHTML={{ __html: renderMath(String(block.value), true) }} />
             </div>
           );

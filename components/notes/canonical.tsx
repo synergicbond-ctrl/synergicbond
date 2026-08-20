@@ -193,6 +193,231 @@ const CANONICAL_CSS = `
   .sbnPagerNext { text-align: left; }
   .sbnPagerSpacer { display: none; }
 }
+
+/* ── Chapter identity header — orients the reader within the chapter ─
+   Appears at the top of each lesson page: chapter subject + name (large
+   editorial serif) + one-line descriptor + topic count, then a thin
+   accent rule. The lesson/topic hero follows immediately below.
+   Nothing here is a card — typography and spacing carry the identity. */
+.sbnChaptIdent { margin-bottom: 2.25rem; }
+.sbnChaptMeta {
+  font-family: ${NT.mono};
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: ${NT.textFaint};
+  margin-bottom: 0.5rem;
+}
+.sbnChaptName {
+  font-family: ${NT.serif};
+  font-optical-sizing: auto;
+  font-size: clamp(2rem, 4.4vw, 3rem);
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: -0.025em;
+  margin: 0 0 0.55rem;
+}
+.sbnChaptDesc {
+  font-family: ${NT.sans};
+  font-size: 1rem;
+  line-height: 1.62;
+  color: ${NT.textDim};
+  max-width: 50ch;
+  margin: 0 0 0.65rem;
+}
+.sbnChaptFooter {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.sbnChaptBadge {
+  font-family: ${NT.mono};
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: ${NT.textFaint};
+  white-space: nowrap;
+}
+.sbnChaptRule { flex: 1; height: 1px; }
+
+/* ── Chapter reading shell — sidebar variant ─────────────────────
+   Two-column layout: reading canvas (flex-1) + fixed-width chapter rail.
+   Used for full lesson/part pages where the chapter contents belong
+   permanently on the right rather than in a top pill wall. */
+.sbnLessonBar {
+  width: 100%;
+  border-bottom: 1px solid ${NT.border};
+  background: ${NT.surface};
+  padding: 10px 24px;
+}
+.sbnLessonBarInner {
+  max-width: 1440px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.sbnLessonBarBack {
+  font-family: ${NT.mono};
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: ${NT.textFaint};
+  text-decoration: none;
+  transition: color 0.12s;
+}
+.sbnLessonBarBack:hover { color: ${NT.text}; }
+.sbnLessonBarPos {
+  font-family: ${NT.mono};
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: ${NT.gold};
+}
+.sbnSidebarBody {
+  display: grid;
+  grid-template-columns: 1fr 258px;
+  gap: 0;
+  max-width: 1440px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 0 24px;
+  align-items: start;
+}
+.sbnCanvas {
+  min-width: 0;
+  padding: 48px 40px 80px 0;
+}
+.sbnRail {
+  position: sticky;
+  top: 20px;
+  max-height: calc(100vh - 40px);
+  overflow-y: auto;
+  padding: 32px 0 32px 20px;
+  border-left: 1px solid ${NT.border};
+  scrollbar-width: thin;
+  scrollbar-color: ${NT.border} transparent;
+}
+.sbnRailTitle {
+  font-family: ${NT.mono};
+  font-size: 9px;
+  font-weight: 900;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: ${NT.textFaint};
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid ${NT.border};
+}
+.sbnRailGroup { margin-bottom: 20px; }
+.sbnRailGroupLabel {
+  font-family: ${NT.mono};
+  font-size: 8px;
+  font-weight: 900;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+  padding: 0 8px 5px;
+  border-bottom: 1px solid ${NT.border};
+}
+.sbnRailLink {
+  display: flex;
+  align-items: flex-start;
+  gap: 7px;
+  padding: 5px 8px;
+  border-radius: 5px;
+  font-family: ${NT.sans};
+  font-size: 11.5px;
+  font-weight: 450;
+  color: ${NT.textFaint};
+  text-decoration: none;
+  line-height: 1.4;
+  transition: color 0.12s, background 0.12s;
+  border-left: 2px solid transparent;
+}
+.sbnRailLink:hover { color: ${NT.text}; background: rgba(246,239,223,0.04); }
+.sbnRailLinkActive {
+  color: ${NT.text};
+  font-weight: 700;
+  background: rgba(246,239,223,0.05);
+}
+.sbnRailNum {
+  font-family: ${NT.mono};
+  font-size: 9px;
+  font-weight: 900;
+  flex-shrink: 0;
+  margin-top: 1px;
+  opacity: 0.45;
+  min-width: 18px;
+}
+/* ── Mobile Chapter Contents drawer ─────────────────────────────── */
+.sbnMobileContents { display: none; }
+.sbnMobileContentsSummary {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 0;
+  cursor: pointer;
+  list-style: none;
+  user-select: none;
+}
+.sbnMobileContentsSummary::-webkit-details-marker { display: none; }
+.sbnMobileContentsSummary::marker { display: none; }
+.sbnMobileCLabel {
+  font-family: ${NT.mono};
+  font-size: 9px;
+  font-weight: 900;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: ${NT.textFaint};
+}
+.sbnMobileCPos {
+  font-family: ${NT.mono};
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: ${NT.gold};
+  margin-left: auto;
+}
+.sbnMobileCChevron {
+  font-size: 8px;
+  color: ${NT.textFaint};
+  transition: transform 120ms;
+  flex-shrink: 0;
+}
+details.sbnMobileContentsWrap[open] .sbnMobileCChevron { transform: rotate(180deg); }
+.sbnMobileContentsBody {
+  max-height: 55vh;
+  overflow-y: auto;
+  padding: 6px 0 12px;
+  border-top: 1px solid ${NT.border};
+}
+@media (max-width: 960px) {
+  .sbnSidebarBody { grid-template-columns: 1fr; padding: 0 16px; }
+  .sbnRail { display: none; }
+  .sbnCanvas { padding: 32px 0 60px; }
+  .sbnLessonBar { padding: 10px 16px; }
+  .sbnMobileContents {
+    display: block;
+    order: -1;
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    background: ${NT.surface};
+    border-bottom: 1px solid ${NT.border};
+    margin: 0 -16px;
+    padding: 0 16px;
+  }
+}
+@media (max-width: 560px) {
+  .sbnCanvas { padding: 24px 0 48px; }
+}
 `;
 
 export function CanonicalNotesStyles() {
@@ -346,6 +571,86 @@ export function ChapterLessonPager({
 }
 
 /**
+ * Canonical topic header primitive.
+ *
+ * Renders the three-layer heading used in chemistry chapter and lesson pages:
+ *   eyebrow  — JetBrains Mono / sb-tech-label / coloured  (e.g. "TOPIC 04 · CHEMICAL BONDING")
+ *   title    — Source Serif 4 / sb-editorial-title          (e.g. "Valence Bond Theory")
+ *   rule     — 1 px hairline in the accent colour
+ *   descriptor — Inter Tight / muted / optional
+ *
+ * Pass `accentColor` as a CSS variable reference (default: `var(--accent)`)
+ * to wire semantic chemistry hues — cyan for bonding topics, violet for orbital
+ * topics, etc. The rule and eyebrow share the same colour.
+ *
+ * Used by chapter lesson shells and section headers. Never placed to the right,
+ * vertically, or floating — always at the top of the article or section.
+ */
+export function TopicHeader({
+  eyebrow,
+  title,
+  descriptor,
+  accentColor = "var(--accent)",
+  as: Tag = "h1",
+}: {
+  eyebrow: string;
+  title: string;
+  descriptor?: string;
+  accentColor?: string;
+  as?: "h1" | "h2" | "h3";
+}) {
+  return (
+    <header style={{ marginBottom: "1.5rem" }}>
+      <p
+        className="sb-tech-label"
+        style={{
+          color: accentColor,
+          fontSize: "11px",
+          fontWeight: 900,
+          marginBottom: "0.5rem",
+          letterSpacing: "0.22em",
+        }}
+      >
+        {eyebrow}
+      </p>
+      <Tag
+        className="sb-editorial-title"
+        style={{
+          fontSize: Tag === "h1" ? "clamp(2rem, 4vw, 3rem)" : "clamp(1.35rem, 2.6vw, 1.9rem)",
+          fontWeight: 600,
+          lineHeight: 1.12,
+          color: accentColor,
+          margin: 0,
+        }}
+      >
+        {title}
+      </Tag>
+      <div
+        style={{
+          height: 1,
+          background: accentColor,
+          opacity: 0.25,
+          marginTop: "0.75rem",
+        }}
+        aria-hidden
+      />
+      {descriptor && (
+        <p
+          style={{
+            marginTop: "0.5rem",
+            fontSize: "0.875rem",
+            color: "var(--text-muted)",
+            fontFamily: NT.sans,
+          }}
+        >
+          {descriptor}
+        </p>
+      )}
+    </header>
+  );
+}
+
+/**
  * Compact top strip for part pages: back-to-chapter link + current position
  * badge, in the canonical language. Sits above the part content, under the
  * chapter header.
@@ -375,5 +680,134 @@ export function ChapterPartStrip({
       </Link>
       <span className="sbnHeaderTag">{positionLabel}</span>
     </div>
+  );
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// Chapter Identity Header
+// ─────────────────────────────────────────────────────────────────────────────
+
+/**
+ * Chapter-level orientation header for lesson pages.
+ * Appears above the lesson TopicHeader. The chapter name is the large
+ * editorial element; the lesson title (h1) follows below it.
+ * No card, no border — typography and spacing carry the identity.
+ */
+export function ChapterIdentityHeader({
+  subject,
+  chapterName,
+  descriptor,
+  topicCount,
+  accentColor,
+}: {
+  subject: string;
+  chapterName: string;
+  descriptor: string;
+  topicCount: number;
+  accentColor: string;
+}) {
+  return (
+    <header className="sbnChaptIdent">
+      <p className="sbnChaptMeta">{subject}</p>
+      <p className="sbnChaptName" style={{ color: accentColor }}>{chapterName}</p>
+      <p className="sbnChaptDesc">{descriptor}</p>
+      <div className="sbnChaptFooter">
+        <span className="sbnChaptBadge">{topicCount} Topics</span>
+        <div className="sbnChaptRule" style={{ background: accentColor, opacity: 0.15 }} />
+      </div>
+    </header>
+  );
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// Chapter Contents Rail
+//
+// Right-side sticky index used by chapter lesson pages (e.g. Atomic Structure).
+// Shows the chapter's full lesson/topic list grouped by concept sections.
+// Replaces the top tab/pill wall; keeps the reading canvas uncluttered.
+// ─────────────────────────────────────────────────────────────────────────────
+
+export interface ChapterRailGroup {
+  label: string;
+  from: number;
+  to: number;
+  accent: string;
+}
+
+export interface ChapterRailLesson {
+  part: number;
+  title: string;
+  href: string;
+}
+
+/**
+ * Permanent right-side chapter index for desktop reading views.
+ * Groups all lessons by concept section, highlights the current lesson,
+ * and uses each group's semantic accent colour for its label and active item.
+ */
+export function ChapterContentsRail({
+  title = "Chapter Contents",
+  groups,
+  lessons,
+  currentPart,
+}: {
+  title?: string;
+  groups: ChapterRailGroup[];
+  lessons: ChapterRailLesson[];
+  currentPart: number;
+}) {
+  const groupedList = groups.map((group) => {
+    const groupLessons = lessons.filter(
+      (l) => l.part >= group.from && l.part <= group.to
+    );
+    if (groupLessons.length === 0) return null;
+    return (
+      <div key={group.label} className="sbnRailGroup">
+        <div className="sbnRailGroupLabel" style={{ color: group.accent }}>
+          {group.label}
+        </div>
+        {groupLessons.map((lesson) => {
+          const active = lesson.part === currentPart;
+          return (
+            <Link
+              key={lesson.href}
+              href={lesson.href}
+              aria-current={active ? "page" : undefined}
+              className={`sbnRailLink${active ? " sbnRailLinkActive" : ""}`}
+              style={active ? { borderLeftColor: group.accent, color: group.accent } : {}}
+            >
+              <span className="sbnRailNum">{String(lesson.part).padStart(2, "0")}</span>
+              <span>{lesson.title}</span>
+            </Link>
+          );
+        })}
+      </div>
+    );
+  });
+
+  return (
+    <>
+      {/* Desktop sticky rail */}
+      <aside className="sbnRail" aria-label="Chapter contents">
+        <div className="sbnRailTitle">{title}</div>
+        {groupedList}
+      </aside>
+
+      {/* Mobile sticky drawer — hidden at desktop, order:-1 puts it above canvas in single-col grid */}
+      <nav className="sbnMobileContents" aria-label="Chapter contents">
+        <details className="sbnMobileContentsWrap">
+          <summary className="sbnMobileContentsSummary">
+            <span className="sbnMobileCLabel">{title}</span>
+            <span className="sbnMobileCPos">
+              {String(currentPart).padStart(2, "0")}&thinsp;/&thinsp;{String(lessons.length).padStart(2, "0")}
+            </span>
+            <span className="sbnMobileCChevron" aria-hidden="true">▾</span>
+          </summary>
+          <div className="sbnMobileContentsBody">
+            {groupedList}
+          </div>
+        </details>
+      </nav>
+    </>
   );
 }

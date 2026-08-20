@@ -34,8 +34,8 @@ export default async function PracticePage({
   const chapters = getBoardChapters(b.slug, c.slug);
 
   return (
-    <main className="min-h-screen bg-[radial-gradient(circle_at_84%_0%,rgba(139,92,246,0.14),transparent_26%),radial-gradient(circle_at_10%_6%,rgba(34,211,238,0.1),transparent_27%),#0B1220] text-white">
-      <div className="border-b border-cyan-400/15 bg-[linear-gradient(118deg,rgba(245,158,11,0.12),rgba(34,211,238,0.07),rgba(139,92,246,0.1))] px-6 py-10 shadow-[0_22px_60px_-45px_rgba(34,211,238,0.7)]">
+    <main className="min-h-screen bg-[var(--background)] text-white">
+      <div className="border-b border-[var(--accent)]/30 bg-[linear-gradient(118deg,rgba(245,158,11,0.12),rgba(34,211,238,0.07),rgba(139,92,246,0.1))] px-6 py-10 shadow-[0_22px_60px_-45px_rgba(34,211,238,0.7)]">
         <div className="mx-auto max-w-4xl">
           <nav className="mb-4 text-sm text-white/45">
             <Link href={base} className="hover:text-white">{b.name} {c.name}</Link>
@@ -44,7 +44,7 @@ export default async function PracticePage({
             <span className="mx-1.5">/</span><span className="text-white/80">Practice</span>
           </nav>
           <p className="mb-2 text-[10px] font-black uppercase tracking-[0.34em] text-amber-300">Verified question studio</p>
-          <h1 className="font-serif text-3xl font-black tracking-tight sm:text-4xl">Practice Problems</h1>
+          <h1 className="font-display text-3xl font-black tracking-tight sm:text-4xl">Practice Problems</h1>
           <p className="mt-2 max-w-2xl text-white/55">
             All eight board question types. Objective questions come from the verified bank and never repeat until you reset; 2/3/5-mark, case-based, competency and HOTS are AI-generated and AI-graded.
           </p>

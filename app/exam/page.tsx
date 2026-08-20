@@ -43,8 +43,8 @@ interface Paper {
 type Phase = "setup" | "loading" | "running" | "submitting" | "review";
 
 const EXAM_ACCENT: Record<PYQExam, string> = {
-  NEET: "border-emerald-700 hover:border-emerald-500 text-emerald-300",
-  "JEE Main": "border-cyan-700 hover:border-cyan-500 text-cyan-300",
+  NEET: "border-emerald-700 hover:border-emerald-500 text-[var(--accent)]",
+  "JEE Main": "border-cyan-700 hover:border-cyan-500 text-[var(--accent)]",
   "JEE Advanced": "border-sky-700 hover:border-sky-500 text-sky-300",
 };
 
@@ -155,9 +155,9 @@ export default function ExamPage() {
   // ── Setup ──────────────────────────────────────────────────────────────────
   if (phase === "setup" || phase === "loading") {
     return (
-      <main className="min-h-screen bg-black text-white">
+      <main className="min-h-screen bg-[var(--background)] text-white">
         <div className="mx-auto max-w-3xl px-4 py-10 sm:px-6">
-          <p className="mb-2 text-xs font-bold uppercase tracking-[0.3em] text-cyan-300">Exam Center</p>
+          <p className="mb-2 text-xs font-bold uppercase tracking-[0.3em] text-[var(--accent)]">Exam Center</p>
           <h1 className="text-3xl font-black tracking-tight sm:text-4xl">Mock Exam</h1>
           <p className="mt-2 text-sm text-white/55">
             Real paper pattern and marking. AI-generated at exam standard — if AI is slow or unavailable,
@@ -165,13 +165,13 @@ export default function ExamPage() {
           </p>
 
           {needsSignIn && (
-            <div className="mt-6 rounded-2xl border border-amber-500/30 bg-amber-500/10 p-4 text-sm text-amber-200">
+            <div className="mt-6 rounded-lg border border-amber-500/30 bg-amber-500/10 p-4 text-sm text-amber-200">
               Sign in to take an exam — attempts are saved to your account for revision.{" "}
               <Link href="/auth/signin" className="font-bold underline underline-offset-4">Sign in →</Link>
             </div>
           )}
           {error && (
-            <div className="mt-6 rounded-2xl border border-rose-500/30 bg-rose-500/10 p-4 text-sm text-rose-200">{error}</div>
+            <div className="mt-6 rounded-lg border border-rose-500/30 bg-rose-500/10 p-4 text-sm text-rose-200">{error}</div>
           )}
 
           <div className="mt-8 grid gap-4 sm:grid-cols-3">
@@ -180,7 +180,7 @@ export default function ExamPage() {
                 key={bp.exam}
                 disabled={phase === "loading"}
                 onClick={() => startExam(bp.exam)}
-                className={`rounded-2xl border bg-white/[0.02] p-5 text-left transition hover:-translate-y-0.5 hover:bg-white/[0.04] disabled:opacity-50 ${EXAM_ACCENT[bp.exam]}`}
+                className={`rounded-lg border bg-white/[0.02] p-5 text-left transition hover:-translate-y-0.5 hover:bg-white/[0.04] disabled:opacity-50 ${EXAM_ACCENT[bp.exam]}`}
               >
                 <div className="text-lg font-black text-white">{bp.exam}</div>
                 <div className="mt-1 text-2xl font-black">{bp.totalQuestions} Qs</div>
@@ -191,8 +191,8 @@ export default function ExamPage() {
           </div>
 
           {phase === "loading" && (
-            <div className="mt-8 rounded-2xl border border-white/10 bg-white/[0.02] p-6 text-center">
-              <div className="mx-auto h-8 w-8 animate-spin rounded-full border-2 border-cyan-400 border-t-transparent" />
+            <div className="mt-8 rounded-lg border border-white/10 bg-white/[0.02] p-6 text-center">
+              <div className="mx-auto h-8 w-8 animate-spin rounded-full border-2 border-[var(--accent)] border-t-transparent" />
               <p className="mt-3 text-sm font-semibold text-white/70">Building your paper…</p>
               <p className="mt-1 text-xs text-white/40">
                 Takes up to ~20s with AI — falls back to verified PYQs automatically if AI is slow.
@@ -202,8 +202,8 @@ export default function ExamPage() {
 
           <p className="mt-8 text-xs text-white/35">
             Looking for short drills instead? Use{" "}
-            <Link href="/quiz" className="text-cyan-400 hover:underline">Quiz</Link> or{" "}
-            <Link href="/tests" className="text-cyan-400 hover:underline">Practice Tests</Link>.
+            <Link href="/quiz" className="text-[var(--accent)] hover:underline">Quiz</Link> or{" "}
+            <Link href="/tests" className="text-[var(--accent)] hover:underline">Practice Tests</Link>.
           </p>
 
           <div className="mt-8"><SponsoredMock /></div>
@@ -217,25 +217,25 @@ export default function ExamPage() {
   // ── Review (post-submit only) ──────────────────────────────────────────────
   if (phase === "review" || phase === "submitting") {
     return (
-      <main className="min-h-screen bg-black text-white">
+      <main className="min-h-screen bg-[var(--background)] text-white">
         <div className="mx-auto max-w-3xl px-4 py-10 sm:px-6">
-          <p className="mb-2 text-xs font-bold uppercase tracking-[0.3em] text-cyan-300">Result</p>
+          <p className="mb-2 text-xs font-bold uppercase tracking-[0.3em] text-[var(--accent)]">Result</p>
           <h1 className="text-3xl font-black">{paper.exam} Mock Paper</h1>
 
           <div className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-4">
-            <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-4 text-center">
-              <div className="text-2xl font-black text-cyan-300">{score}</div>
+            <div className="rounded-lg border border-white/10 bg-white/[0.03] p-4 text-center">
+              <div className="text-2xl font-black text-[var(--accent)]">{score}</div>
               <div className="mt-1 text-xs text-white/50">Score / {paper.questions.length * paper.marksCorrect}</div>
             </div>
-            <div className="rounded-2xl border border-emerald-500/20 bg-emerald-500/5 p-4 text-center">
+            <div className="rounded-lg border border-emerald-500/20 bg-emerald-500/5 p-4 text-center">
               <div className="text-2xl font-black text-emerald-300">{correctCount}</div>
               <div className="mt-1 text-xs text-white/50">Correct</div>
             </div>
-            <div className="rounded-2xl border border-rose-500/20 bg-rose-500/5 p-4 text-center">
+            <div className="rounded-lg border border-rose-500/20 bg-rose-500/5 p-4 text-center">
               <div className="text-2xl font-black text-rose-300">{answeredCount - correctCount}</div>
               <div className="mt-1 text-xs text-white/50">Incorrect</div>
             </div>
-            <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-4 text-center">
+            <div className="rounded-lg border border-white/10 bg-white/[0.03] p-4 text-center">
               <div className="text-2xl font-black text-white/70">{paper.questions.length - answeredCount}</div>
               <div className="mt-1 text-xs text-white/50">Unanswered</div>
             </div>
@@ -249,7 +249,7 @@ export default function ExamPage() {
                 Result shown above, but the attempt could not be saved (are you signed in?).
               </p>
             ) : attemptId ? (
-              <p className="text-emerald-300/80">
+              <p className="text-[var(--accent)]/80">
                 ✓ Attempt saved —{" "}
                 <Link href="/revision" className="font-bold underline underline-offset-4">review anytime in Revision</Link>
               </p>
@@ -259,9 +259,9 @@ export default function ExamPage() {
           <h2 className="mt-10 mb-4 text-xl font-bold">Review</h2>
           <div className="space-y-4">
             {graded.map(({ q, i, selected, isCorrect }) => (
-              <div key={q.id} className="rounded-2xl border border-white/[0.08] bg-[#111827] p-4">
+              <div key={q.id} className="rounded-lg border border-white/[0.08] bg-[var(--surface)] p-4">
                 <div className="mb-2 flex flex-wrap items-center gap-2 text-[11px]">
-                  <span className="font-bold text-cyan-300">Q{i + 1}</span>
+                  <span className="font-bold text-[var(--accent)]">Q{i + 1}</span>
                   <span className="rounded bg-white/5 px-2 py-0.5 text-white/60">{q.chapter}</span>
                   {selected === null ? (
                     <span className="rounded bg-white/10 px-2 py-0.5 font-bold text-white/50">Skipped</span>
@@ -302,7 +302,7 @@ export default function ExamPage() {
           <div className="mt-8 flex flex-wrap gap-3">
             <button
               onClick={() => { setPaper(null); setPhase("setup"); }}
-              className="rounded-xl border border-cyan-400/40 bg-cyan-500/10 px-4 py-2 text-sm font-semibold text-cyan-300 transition hover:bg-cyan-500/20"
+              className="rounded-xl border border-[var(--accent)]/30 bg-[var(--accent)]/10 px-4 py-2 text-sm font-semibold text-[var(--accent)] transition hover:bg-[var(--accent)]/10"
             >
               New exam
             </button>
@@ -320,7 +320,7 @@ export default function ExamPage() {
   const selected = answers[current];
 
   return (
-    <main className="min-h-screen bg-black pb-28 text-white">
+    <main className="min-h-screen bg-[var(--background)] pb-28 text-white">
       <div className="mx-auto max-w-3xl px-4 py-6 sm:px-6">
         {/* Header */}
         <div className="flex flex-wrap items-center justify-between gap-2">
@@ -344,9 +344,9 @@ export default function ExamPage() {
           {paper.questions.map((_, i) => {
             const state =
               i === current
-                ? "border-cyan-400 bg-cyan-500/20 text-white"
+                ? "border-[var(--accent)] bg-[var(--accent)]/10 text-white"
                 : answers[i]
-                  ? "border-emerald-500/40 bg-emerald-500/10 text-emerald-300"
+                  ? "border-emerald-500/40 bg-emerald-500/10 text-emerald-200"
                   : "border-white/10 bg-white/[0.03] text-white/50";
             return (
               <button
@@ -362,9 +362,9 @@ export default function ExamPage() {
         </div>
 
         {/* Question */}
-        <div className="mt-5 rounded-2xl border border-white/[0.08] bg-[#111827] p-4 sm:p-5">
+        <div className="mt-5 rounded-lg border border-white/[0.08] bg-[var(--surface)] p-4 sm:p-5">
           <div className="mb-2 flex flex-wrap items-center gap-2 text-[11px]">
-            <span className="font-bold text-cyan-300">Q{current + 1} of {paper.questions.length}</span>
+            <span className="font-bold text-[var(--accent)]">Q{current + 1} of {paper.questions.length}</span>
             <span className="rounded bg-white/5 px-2 py-0.5 text-white/60">{q.chapter}</span>
             <span className="rounded bg-white/5 px-2 py-0.5 capitalize text-white/60">{q.difficulty}</span>
           </div>
@@ -381,12 +381,12 @@ export default function ExamPage() {
                   onClick={() => pick(k)}
                   className={`flex w-full items-start gap-3 rounded-xl border p-3.5 text-left text-sm transition ${
                     isSelected
-                      ? "border-cyan-400 bg-cyan-500/15 text-white ring-2 ring-cyan-400/60"
-                      : "border-white/10 bg-white/[0.03] text-white/75 hover:border-cyan-400/40 hover:bg-white/[0.06]"
+                      ? "border-[var(--accent)] bg-[var(--accent)]/10 text-white ring-2 ring-[var(--accent)]/60"
+                      : "border-white/10 bg-white/[0.03] text-white/75 hover:border-[var(--accent)]/30 hover:bg-white/[0.06]"
                   }`}
                 >
                   <span className={`flex h-6 w-6 shrink-0 items-center justify-center rounded-full border text-xs font-black ${
-                    isSelected ? "border-cyan-300 bg-cyan-400 text-black" : "border-white/25 text-white/60"
+                    isSelected ? "border-[var(--accent)] bg-[var(--accent)] text-black" : "border-white/25 text-white/60"
                   }`}>
                     {k}
                   </span>
@@ -400,7 +400,7 @@ export default function ExamPage() {
       </div>
 
       {/* Sticky action bar */}
-      <div className="fixed inset-x-0 bottom-0 z-40 border-t border-white/10 bg-[#0B0F19]/95 backdrop-blur">
+      <div className="fixed inset-x-0 bottom-0 z-40 border-t border-white/10 bg-[var(--background)]/95 backdrop-blur">
         <div className="mx-auto flex max-w-3xl items-center gap-2 px-4 py-3 sm:px-6">
           <button
             onClick={() => goTo(current - 1)}
@@ -425,14 +425,14 @@ export default function ExamPage() {
               <button onClick={() => setConfirmSubmit(false)} className="rounded-xl border border-white/15 px-3 py-2.5 text-sm font-semibold text-white/70">
                 Back
               </button>
-              <button onClick={doSubmit} className="rounded-xl bg-gradient-to-r from-emerald-400 to-cyan-400 px-5 py-2.5 text-sm font-black text-black transition hover:-translate-y-0.5">
+              <button onClick={doSubmit} className="rounded-lg bg-[var(--accent)] px-5 py-2.5 text-sm font-black text-black transition hover:-translate-y-0.5">
                 Confirm Submit
               </button>
             </>
           ) : (
             <button
               onClick={() => (answeredCount < paper.questions.length ? setConfirmSubmit(true) : doSubmit())}
-              className="rounded-xl bg-gradient-to-r from-cyan-400 to-sky-500 px-6 py-2.5 text-sm font-black text-black shadow-lg shadow-cyan-500/20 transition hover:-translate-y-0.5"
+              className="rounded-xl bg-[var(--accent)] px-6 py-2.5 text-sm font-black text-black shadow-lg shadow-cyan-500/20 transition hover:-translate-y-0.5"
             >
               Submit Exam
             </button>

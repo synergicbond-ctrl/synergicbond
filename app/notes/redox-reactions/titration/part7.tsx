@@ -37,7 +37,7 @@ export default function TitrationPart7() {
 
           <div className="grid gap-4 md:grid-cols-2">
             <DiagramBox title="Acidic resin — RH">
-              <div className="mx-auto max-w-sm rounded-2xl border-4 border-blue-400 bg-slate-950/40 p-4">
+              <div className="mx-auto max-w-sm rounded-lg border-4 border-blue-400 bg-slate-950/40 p-4">
                 <p className="mb-2 font-bold text-amber-800">Hard water ↓</p>
                 <div className="rounded-xl border border-dashed border-blue-300 p-4">
                   <p className="font-bold text-amber-800">Acidic resin</p>
@@ -52,7 +52,7 @@ export default function TitrationPart7() {
             </DiagramBox>
 
             <DiagramBox title="Basic resin — ROH">
-              <div className="mx-auto max-w-sm rounded-2xl border-4 border-blue-400 bg-slate-950/40 p-4">
+              <div className="mx-auto max-w-sm rounded-lg border-4 border-blue-400 bg-slate-950/40 p-4">
                 <div className="rounded-xl border border-dashed border-blue-300 p-4">
                   <p className="font-bold text-amber-800">Basic resin</p>
                   <p className="text-xl font-black text-amber-900">ROH</p>
@@ -116,7 +116,7 @@ export default function TitrationPart7() {
             contribute to hardness.
           </NoteBox>
 
-          <div className="space-y-4 rounded-2xl border border-green-200 bg-green-50 p-4">
+          <div className="space-y-4 rounded-lg border border-green-200 bg-green-50 p-4">
             <h3 className="font-black text-green-800 underline">
               T.H.:
             </h3>
@@ -140,7 +140,7 @@ export default function TitrationPart7() {
             </FormulaBox>
           </div>
 
-          <div className="space-y-4 rounded-2xl border border-blue-500/20 bg-blue-950/20 text-blue-200 p-4">
+          <div className="space-y-4 rounded-lg border border-blue-500/20 bg-blue-950/20 text-blue-200 p-4">
             <h3 className="font-black text-blue-800 underline">
               P.H.:
             </h3>
@@ -171,7 +171,7 @@ export default function TitrationPart7() {
         </PageCard>
 
         <PageCard title="Hardness from pH after Acidic Resin and Lime Softening">
-          <div className="space-y-4 rounded-2xl border border-rose-500/20 bg-rose-950/20 text-rose-200 p-4">
+          <div className="space-y-4 rounded-lg border border-rose-500/20 bg-rose-950/20 text-rose-200 p-4">
             <QuestionBox>
               Q. 100 L water sample containing only Ca<sup>2+</sup> and Mg
               <sup>2+</sup> ions as cations is passed through acidic resin. If
@@ -211,7 +211,7 @@ export default function TitrationPart7() {
             </FormulaBox>
           </div>
 
-          <div className="mt-6 space-y-4 rounded-2xl border border-violet-500/20 bg-violet-950/20 text-violet-200 p-4">
+          <div className="mt-6 space-y-4 rounded-lg border border-violet-500/20 bg-violet-950/20 text-violet-200 p-4">
             <QuestionBox>
               Q. 5 kg of a hard water sample contains 324 gm Ca(HCO
               <sub>3</sub>)<sub>2</sub> and 365 gm Mg(HCO<sub>3</sub>)
@@ -253,7 +253,7 @@ export default function TitrationPart7() {
             m<sub>Ca(OH)₂ needed</sub> = (2 + 2.5) × 74 = 333 gm
           </FormulaBox>
 
-          <div className="rounded-2xl border border-slate-800 bg-slate-950/30 p-6 text-center">
+          <div className="rounded-lg border border-slate-800 bg-slate-950/30 p-6 text-center">
             <p className="text-xl font-black text-pink-600">— x — x —</p>
             <p className="mt-3 font-medium text-slate-600">
               

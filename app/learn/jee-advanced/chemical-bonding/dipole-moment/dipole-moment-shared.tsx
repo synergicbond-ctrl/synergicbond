@@ -77,7 +77,7 @@ function KB({ children }: { children: string }) {
 
 function ConceptCard({ title, tone = "navy", eyebrow, children }: ConceptCardProps) {
   return (
-    <article className={`rounded-3xl border p-5 shadow-[0_18px_70px_-40px_rgba(0,0,0,0.85)] backdrop-blur-sm sm:p-6 ${toneClass[tone]}`}>
+    <article className={`rounded-lg border p-5 shadow-[0_18px_70px_-40px_rgba(0,0,0,0.85)] backdrop-blur-sm sm:p-6 ${toneClass[tone]}`}>
       {eyebrow ? (
         <div className={`mb-3 inline-flex rounded-full border px-2.5 py-1 text-[11px] font-bold uppercase tracking-[0.17em] ${badgeClass[tone]}`}>
           {eyebrow}
@@ -91,7 +91,7 @@ function ConceptCard({ title, tone = "navy", eyebrow, children }: ConceptCardPro
 
 function FormulaCard({ title, children, note }: { title: string; children: ReactNode; note?: ReactNode }) {
   return (
-    <div className="overflow-hidden rounded-3xl border border-cyan-300/20 bg-gradient-to-br from-cyan-300/[0.08] via-slate-950/80 to-violet-400/[0.08] shadow-[0_24px_80px_-48px_rgba(34,211,238,0.5)]">
+    <div className="overflow-hidden rounded-lg border border-cyan-300/20 bg-gradient-to-br from-cyan-300/[0.08] via-slate-950/80 to-violet-400/[0.08] shadow-[0_24px_80px_-48px_rgba(34,211,238,0.5)]">
       <div className="border-b border-white/10 px-5 py-3 text-xs font-bold uppercase tracking-[0.18em] text-cyan-200">{title}</div>
       <div className="formula-scroll overflow-x-auto px-4 py-5 text-slate-100 sm:px-6">{children}</div>
       {note ? <div className="border-t border-white/10 px-5 py-3 text-sm leading-6 text-slate-400">{note}</div> : null}
@@ -101,7 +101,7 @@ function FormulaCard({ title, children, note }: { title: string; children: React
 
 function ExamTrap({ children }: { children: ReactNode }) {
   return (
-    <div className="rounded-2xl border border-rose-400/25 bg-rose-400/[0.065] px-4 py-3 text-sm leading-6 text-rose-100">
+    <div className="rounded-lg border border-rose-400/25 bg-rose-400/[0.065] px-4 py-3 text-sm leading-6 text-rose-100">
       <span className="mr-2 font-black uppercase tracking-[0.13em] text-rose-300">Warning / limitation</span>
       {children}
     </div>
@@ -110,7 +110,7 @@ function ExamTrap({ children }: { children: ReactNode }) {
 
 function KeyIdea({ children }: { children: ReactNode }) {
   return (
-    <div className="rounded-2xl border border-amber-300/25 bg-amber-300/[0.06] px-4 py-3 text-sm leading-6 text-amber-50">
+    <div className="rounded-lg border border-amber-300/25 bg-amber-300/[0.06] px-4 py-3 text-sm leading-6 text-amber-50">
       <span className="mr-2 font-black uppercase tracking-[0.13em] text-amber-200">JEE key idea</span>
       {children}
     </div>
@@ -119,7 +119,7 @@ function KeyIdea({ children }: { children: ReactNode }) {
 
 function DataTable({ headers, rows }: { headers: ReactNode[]; rows: ReactNode[][] }) {
   return (
-    <div className="overflow-x-auto rounded-2xl border border-white/10">
+    <div className="overflow-x-auto rounded-lg border border-white/10">
       <table className="min-w-full border-collapse text-left text-sm">
         <thead className="bg-white/[0.055] text-slate-200">
           <tr>{headers.map((header, i) => <th key={i} className="border-b border-white/10 px-4 py-3 font-semibold">{header}</th>)}</tr>
@@ -138,7 +138,7 @@ function DataTable({ headers, rows }: { headers: ReactNode[]; rows: ReactNode[][
 
 function FigureFrame({ title, caption, children }: { title: string; caption: ReactNode; children: ReactNode }) {
   return (
-    <figure className="overflow-hidden rounded-3xl border border-white/10 bg-slate-950/75">
+    <figure className="overflow-hidden rounded-lg border border-white/10 bg-slate-950/75">
       <div className="border-b border-white/10 px-5 py-3 text-sm font-semibold text-slate-200">{title}</div>
       <div className="overflow-x-auto p-3 sm:p-5">{children}</div>
       <figcaption className="border-t border-white/10 px-5 py-3 text-sm leading-6 text-slate-400">{caption}</figcaption>
@@ -158,7 +158,7 @@ function DipoleStructureFigure({ id }: { id: string }) {
 
   return (
     <figure
-      className={`mx-auto w-full overflow-hidden rounded-3xl border border-white/10 bg-slate-950/75 ${structureSizeClass[entry.size ?? "md"]}`}
+      className={`mx-auto w-full overflow-hidden rounded-lg border border-white/10 bg-slate-950/75 ${structureSizeClass[entry.size ?? "md"]}`}
     >
       <div className="p-3 sm:p-5" dangerouslySetInnerHTML={{ __html: entry.svg }} />
       <figcaption className="border-t border-white/10 px-5 py-3 text-sm leading-6 text-slate-400">{entry.caption}</figcaption>
@@ -190,7 +190,7 @@ function ChapterSection({ id, index, eyebrow, title, intro, children }: ChapterS
 function FactorHeading({ symbol, title }: { symbol: string; title: string }) {
   return (
     <h3 className="mt-2 flex items-center gap-3 text-2xl font-bold tracking-[-0.02em] text-white sm:text-[26px]">
-      <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl border border-violet-300/30 bg-violet-400/10 text-base font-black text-violet-200">
+      <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-violet-300/30 bg-violet-400/10 text-base font-black text-violet-200">
         {symbol}
       </span>
       {title}
@@ -206,11 +206,11 @@ function WorkedExample({ number, title, difficulty = "JEE Advanced", concept, qu
       : "border-violet-400/25 bg-violet-400/10 text-violet-100";
 
   return (
-    <details className="group overflow-hidden rounded-3xl border border-white/10 bg-slate-950/70 shadow-[0_24px_100px_-60px_rgba(139,92,246,0.8)]" open={number <= 1}>
+    <details className="group overflow-hidden rounded-lg border border-white/10 bg-slate-950/70 shadow-[0_24px_100px_-60px_rgba(139,92,246,0.8)]" open={number <= 1}>
       <summary className="cursor-pointer list-none px-5 py-5 transition hover:bg-white/[0.025] sm:px-6">
         <div className="flex flex-wrap items-start justify-between gap-4">
           <div className="flex min-w-0 gap-4">
-            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl border border-violet-300/20 bg-violet-400/10 font-bold text-violet-200">{number}</div>
+            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-violet-300/20 bg-violet-400/10 font-bold text-violet-200">{number}</div>
             <div>
               <h3 className="text-lg font-semibold text-white sm:text-xl">{title}</h3>
               <p className="mt-1 text-sm leading-6 text-slate-400">{concept}</p>
@@ -224,7 +224,7 @@ function WorkedExample({ number, title, difficulty = "JEE Advanced", concept, qu
       <div className="border-t border-white/10 px-5 py-5 sm:px-6">
         <div className="mb-3 text-xs font-black uppercase tracking-[0.18em] text-violet-300">Solution</div>
         <div className="space-y-3 text-[15px] leading-7 text-slate-300">{solution}</div>
-        <div className="mt-5 rounded-2xl border border-emerald-400/25 bg-emerald-400/[0.065] px-4 py-3 text-[15px] leading-7 text-emerald-100">
+        <div className="mt-5 rounded-lg border border-emerald-400/25 bg-emerald-400/[0.065] px-4 py-3 text-[15px] leading-7 text-emerald-100">
           <span className="mr-2 font-black uppercase tracking-[0.14em] text-emerald-300">Answer</span>
           {answer}
         </div>
@@ -285,7 +285,7 @@ function PartShell({
               </h1>
               <p className="mt-4 max-w-4xl text-base leading-8 text-slate-300 sm:text-lg">{description}</p>
             </div>
-            <div className="rounded-3xl border border-cyan-300/20 bg-cyan-300/[0.055] p-4 text-sm leading-6 text-cyan-50">
+            <div className="rounded-lg border border-cyan-300/20 bg-cyan-300/[0.055] p-4 text-sm leading-6 text-cyan-50">
               <div className="font-semibold text-cyan-200">Dipole Moment</div>
               <div className="mt-1 text-slate-300">Chemical Bonding · JEE Advanced</div>
             </div>
@@ -316,18 +316,18 @@ function PartShell({
 
         <div className="part-navigation mt-14 grid gap-4 border-t border-white/10 pt-8 sm:grid-cols-2">
           {previous ? (
-            <a href={`/learn/jee-advanced/chemical-bonding/dipole-moment/parts/${previous.slug}`} className="rounded-3xl border border-white/10 bg-slate-950/70 p-5 transition hover:border-cyan-300/25 hover:bg-white/[0.035]">
+            <a href={`/learn/jee-advanced/chemical-bonding/dipole-moment/parts/${previous.slug}`} className="rounded-lg border border-white/10 bg-slate-950/70 p-5 transition hover:border-cyan-300/25 hover:bg-white/[0.035]">
               <div className="text-xs font-bold uppercase tracking-[0.16em] text-slate-500">Previous part</div>
               <div className="mt-2 font-semibold text-white">{String(previous.part).padStart(2, "0")} · {previous.title}</div>
             </a>
           ) : <div />}
           {next ? (
-            <a href={`/learn/jee-advanced/chemical-bonding/dipole-moment/parts/${next.slug}`} className="rounded-3xl border border-cyan-300/20 bg-cyan-300/[0.055] p-5 text-right transition hover:bg-cyan-300/[0.09]">
+            <a href={`/learn/jee-advanced/chemical-bonding/dipole-moment/parts/${next.slug}`} className="rounded-lg border border-cyan-300/20 bg-cyan-300/[0.055] p-5 text-right transition hover:bg-cyan-300/[0.09]">
               <div className="text-xs font-bold uppercase tracking-[0.16em] text-cyan-300">Next part</div>
               <div className="mt-2 font-semibold text-white">{String(next.part).padStart(2, "0")} · {next.title}</div>
             </a>
           ) : (
-            <a href="/learn/jee-advanced/chemical-bonding/dipole-moment" className="rounded-3xl border border-emerald-300/20 bg-emerald-300/[0.055] p-5 text-right transition hover:bg-emerald-300/[0.09]">
+            <a href="/learn/jee-advanced/chemical-bonding/dipole-moment" className="rounded-lg border border-emerald-300/20 bg-emerald-300/[0.055] p-5 text-right transition hover:bg-emerald-300/[0.09]">
               <div className="text-xs font-bold uppercase tracking-[0.16em] text-emerald-300">Chapter complete</div>
               <div className="mt-2 font-semibold text-white">Return to the 9-part index</div>
             </a>

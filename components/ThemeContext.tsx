@@ -1,22 +1,12 @@
 'use client';
 
-import React, { createContext, useContext, useEffect, useState, useSyncExternalStore } from 'react';
+import React, { createContext, useContext, useEffect, useState } from 'react';
 
 type Theme = 'dark' | 'light';
 
 const ThemeContext = createContext<{ theme: Theme; toggleTheme: () => void } | undefined>(undefined);
 
-function subscribeToClientReady(callback: () => void) {
-  callback();
-  return () => {};
-}
-
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
-  const mounted = useSyncExternalStore(
-    subscribeToClientReady,
-    () => true,
-    () => false
-  );
   const [theme, setTheme] = useState<Theme>(() => {
     if (typeof window === 'undefined') return 'dark';
     const storedTheme = localStorage.getItem('theme');
@@ -39,10 +29,6 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
     setTheme(nextTheme);
     localStorage.setItem('theme', nextTheme);
   };
-
-  if (!mounted) {
-    return <div style={{ background: '#020617', minHeight: '100vh' }} />;
-  }
 
   return (
     <ThemeContext.Provider value={{ theme, toggleTheme }}>

@@ -119,12 +119,12 @@ export default function ProgramSwitcher({
   if (!activeProgram) {
     return (
       <div className="flex items-center gap-2">
-        <span className="inline-flex items-center gap-1.5 rounded-xl border border-white/[0.08] bg-white/[0.04] px-2.5 py-1.5 text-[11px] font-bold text-white/70">
-          <GraduationCap className="h-3.5 w-3.5 text-cyan-400" /> Free workspace
+        <span className="inline-flex items-center gap-1.5 rounded-lg border border-white/[0.08] bg-white/[0.04] px-2.5 py-1.5 text-[11px] font-bold text-white/70">
+          <GraduationCap className="h-3.5 w-3.5 text-[var(--accent)]" /> Free workspace
         </span>
         <Link
           href="/programs"
-          className="hidden sm:inline-flex rounded-xl bg-gradient-to-r from-cyan-400 to-sky-500 px-2.5 py-1.5 text-[11px] font-bold text-black transition hover:-translate-y-0.5"
+          className="hidden sm:inline-flex rounded-lg bg-[var(--accent)] px-2.5 py-1.5 text-[11px] font-bold text-black transition hover:-translate-y-0.5"
         >
           Explore Programs
         </Link>
@@ -136,10 +136,10 @@ export default function ProgramSwitcher({
   if (entitledPrograms.length <= 1) {
     return (
       <span
-        className="inline-flex max-w-[220px] items-center gap-1.5 truncate rounded-xl border border-cyan-400/25 bg-cyan-950/30 px-2.5 py-1.5 text-[11px] font-bold text-cyan-200"
+        className="inline-flex max-w-[220px] items-center gap-1.5 truncate rounded-lg border border-[var(--accent)]/25 bg-[var(--surface-2)] px-2.5 py-1.5 text-[11px] font-bold text-[var(--foreground)]/80"
         title={`Program: ${activeProgram.name}`}
       >
-        <GraduationCap className="h-3.5 w-3.5 shrink-0 text-cyan-400" />
+        <GraduationCap className="h-3.5 w-3.5 shrink-0 text-[var(--accent)]" />
         <span className="truncate">{activeProgram.name}</span>
       </span>
     );
@@ -155,9 +155,9 @@ export default function ProgramSwitcher({
         aria-expanded={open}
         aria-label={`Active program: ${activeProgram.name}. Change program`}
         onClick={() => setOpen((v) => !v)}
-        className="inline-flex max-w-[240px] items-center gap-1.5 rounded-xl border border-cyan-400/25 bg-cyan-950/30 px-2.5 py-1.5 text-[11px] font-bold text-cyan-200 transition hover:border-cyan-400/50"
+        className="inline-flex max-w-[240px] items-center gap-1.5 rounded-lg border border-[var(--accent)]/25 bg-[var(--surface-2)] px-2.5 py-1.5 text-[11px] font-bold text-[var(--foreground)]/80 transition hover:border-[var(--accent)]/50"
       >
-        <GraduationCap className="h-3.5 w-3.5 shrink-0 text-cyan-400" />
+        <GraduationCap className="h-3.5 w-3.5 shrink-0 text-[var(--accent)]" />
         <span className="truncate">{activeProgram.name}</span>
         <ChevronDown className={`h-3 w-3 shrink-0 transition-transform ${open ? "rotate-180" : ""}`} />
       </button>
@@ -168,7 +168,7 @@ export default function ProgramSwitcher({
           role="listbox"
           aria-label="Switch active program"
           onKeyDown={handleListKeyDown}
-          className="absolute right-0 z-50 mt-2 w-72 rounded-xl border border-white/[0.08] bg-[#111827] p-1.5 shadow-2xl shadow-black/50"
+          className="absolute right-0 z-50 mt-2 w-72 rounded-lg border border-white/[0.08] bg-[var(--surface)] p-1.5 shadow-2xl shadow-black/50"
         >
           <p className="px-3 pb-1 pt-2 text-[10px] font-bold uppercase tracking-wider text-white/35">
             {isAllAccess ? "All-access programs" : "Your programs"}
@@ -184,12 +184,12 @@ export default function ProgramSwitcher({
                 data-active={isActive ? "true" : undefined}
                 disabled={busyKey !== null}
                 onClick={() => switchTo(p.key)}
-                className={`flex w-full items-center justify-between gap-2 rounded-lg px-3 py-2 text-left text-xs font-semibold transition focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400/60 ${
-                  isActive ? "bg-cyan-500/15 text-cyan-300" : "text-gray-300 hover:bg-white/5 hover:text-white"
+                className={`flex w-full items-center justify-between gap-2 rounded-lg px-3 py-2 text-left text-xs font-semibold transition focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)]/60 ${
+                  isActive ? "bg-[var(--accent)]/15 text-[var(--accent)]" : "text-[var(--text-muted)] hover:bg-white/5 hover:text-white"
                 } ${busyKey === p.key ? "opacity-60" : ""}`}
               >
                 <span className="truncate">{p.name}</span>
-                {isActive && <Check className="h-3.5 w-3.5 shrink-0 text-cyan-400" aria-hidden />}
+                {isActive && <Check className="h-3.5 w-3.5 shrink-0 text-[var(--accent)]" aria-hidden />}
               </button>
             );
           })}

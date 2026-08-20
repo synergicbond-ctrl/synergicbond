@@ -60,7 +60,7 @@ export default function NotesPage() {
         <p className="text-zinc-400">Generate exam-focused chemistry notes for any topic, at any difficulty level.</p>
       </div>
 
-      <div className="bg-zinc-900 border border-zinc-800 rounded-2xl p-6 mb-8">
+      <div className="bg-zinc-900 border border-zinc-800 rounded-lg p-6 mb-8">
         <div className="grid gap-4 md:grid-cols-2">
           {/* Topic Input */}
           <div className="md:col-span-2">
@@ -162,7 +162,7 @@ export default function NotesPage() {
 
       {/* Notes Output */}
       {notes && (
-        <div className="bg-zinc-900 border border-zinc-800 rounded-2xl p-6">
+        <div className="bg-zinc-900 border border-zinc-800 rounded-lg p-6">
           {cached && (
             <div className="text-xs text-cyan-400 mb-4 flex items-center gap-1">
               ⚡ Loaded from your saved notes

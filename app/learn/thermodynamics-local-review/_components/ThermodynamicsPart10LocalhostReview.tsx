@@ -34,17 +34,17 @@ function Section({
   children: React.ReactNode;
 }) {
   return (
-    <section className="rounded-[2rem] border border-white/10 bg-slate-950/80 p-5 shadow-2xl shadow-black/20 backdrop-blur md:p-8">
+    <section className="border-t border-[var(--border)] py-10 md:py-12">
       <div className="flex items-start gap-4">
-        <span className="grid h-10 w-10 shrink-0 place-items-center rounded-2xl border border-cyan-300/30 bg-cyan-300/10 text-sm font-black text-cyan-200">
+        <span className="font-mono text-[11px] font-bold uppercase tracking-[0.2em] text-[var(--text-muted)]">
           {index}
         </span>
         <div>
-          <h2 className="text-2xl font-black tracking-tight text-white md:text-3xl">{title}</h2>
-          {subtitle ? <p className="mt-1 text-sm leading-6 text-slate-400">{subtitle}</p> : null}
+          <h2 className="font-display mt-1 text-[clamp(1.5rem,2.8vw,2.1rem)] font-semibold leading-tight text-[var(--foreground)]">{title}</h2>
+          {subtitle ? <p className="mt-1 text-sm leading-6 text-[var(--text-muted)]">{subtitle}</p> : null}
         </div>
       </div>
-      <div className="mt-6 space-y-5 text-[15px] leading-7 text-slate-200 md:text-base">{children}</div>
+      <div className="mt-6 space-y-5 text-[15px] leading-7 text-[var(--text-body)] md:text-base">{children}</div>
     </section>
   );
 }
@@ -59,10 +59,10 @@ function ConceptLens({
   tone?: Tone;
 }) {
   return (
-    <aside className={`rounded-2xl border p-5 ${toneMap[tone]}`}>
-      <p className="text-xs font-black uppercase tracking-[0.2em]">Synergic Bond Concept Lens</p>
-      <h3 className="mt-2 text-lg font-black text-white">{title}</h3>
-      <div className="mt-2 text-sm leading-6 text-slate-200">{children}</div>
+    <aside className={`rounded-lg border p-5 ${toneMap[tone]}`}>
+      <p className="font-mono text-xs font-semibold uppercase tracking-[0.18em]">Synergic Bond Concept Lens</p>
+      <h3 className="font-display mt-2 text-lg font-semibold text-[var(--foreground)]">{title}</h3>
+      <div className="mt-2 text-sm leading-6 text-[var(--text-body)]">{children}</div>
     </aside>
   );
 }
@@ -75,18 +75,18 @@ function Formula({
   children: React.ReactNode;
 }) {
   return (
-    <div className="overflow-x-auto rounded-2xl border border-cyan-300/20 bg-black/30 p-4 text-center">
+    <div className="overflow-x-auto rounded-lg border border-cyan-300/20 bg-[var(--surface-2)] p-4 text-center">
       {label ? (
-        <p className="mb-2 text-xs font-black uppercase tracking-[0.2em] text-cyan-300">{label}</p>
+        <p className="mb-2 font-mono text-xs font-semibold uppercase tracking-[0.18em] text-cyan-300">{label}</p>
       ) : null}
-      <div className="whitespace-nowrap font-mono text-lg font-black text-white md:text-xl">{children}</div>
+      <div className="whitespace-nowrap font-mono text-lg font-semibold text-[var(--foreground)] md:text-xl">{children}</div>
     </div>
   );
 }
 
 function AdiabaticPistonAnimation() {
   return (
-    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
+    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-3 md:p-5">
       <svg
         viewBox="0 0 1200 720"
         role="img"
@@ -216,13 +216,13 @@ function DerivationLadder() {
   return (
     <div className="grid gap-4">
       {steps.map((step) => (
-        <article key={step.title} className="rounded-2xl border border-white/10 bg-slate-900/70 p-5">
+        <article key={step.title} className="rounded-lg border border-[var(--border)] bg-[var(--surface)] p-5">
           <div className="grid gap-4 md:grid-cols-[0.85fr_1.1fr_1.35fr] md:items-center">
-            <h3 className="font-black text-white">{step.title}</h3>
-            <div className="overflow-x-auto rounded-xl bg-black/25 p-3 text-center font-mono text-sm font-black text-cyan-200">
+            <h3 className="font-display font-semibold text-[var(--foreground)]">{step.title}</h3>
+            <div className="overflow-x-auto rounded-xl bg-[var(--surface-2)] p-3 text-center font-mono text-sm font-black text-cyan-200">
               {step.equation}
             </div>
-            <p className="text-sm leading-6 text-slate-300">{step.text}</p>
+            <p className="text-sm leading-6 text-[var(--text-muted)]">{step.text}</p>
           </div>
         </article>
       ))}
@@ -232,7 +232,7 @@ function DerivationLadder() {
 
 function TripleGraphAnimation() {
   return (
-    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
+    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-3 md:p-5">
       <svg
         viewBox="0 0 1200 720"
         role="img"
@@ -321,7 +321,7 @@ function TripleGraphAnimation() {
 
 function PathComparisonAnimation() {
   return (
-    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
+    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-3 md:p-5">
       <svg
         viewBox="0 0 1200 690"
         role="img"
@@ -448,14 +448,14 @@ function GammaCards() {
   return (
     <div className="grid gap-4 lg:grid-cols-3">
       {rows.map((row) => (
-        <article key={row.gas} className={`rounded-3xl border p-5 ${toneMap[row.tone]}`}>
-          <h3 className="text-xl font-black text-white">{row.gas}</h3>
-          <div className="mt-4 space-y-2 font-mono text-sm font-black text-slate-100">
-            <div className="rounded-xl bg-black/25 p-3">{row.cv}</div>
-            <div className="rounded-xl bg-black/25 p-3">{row.cp}</div>
-            <div className="rounded-xl bg-black/25 p-3">{row.gamma}</div>
+        <article key={row.gas} className={`rounded-lg border p-5 ${toneMap[row.tone]}`}>
+          <h3 className="font-display text-xl font-semibold text-[var(--foreground)]">{row.gas}</h3>
+          <div className="mt-4 space-y-2 font-mono text-sm font-black text-[var(--foreground)]">
+            <div className="rounded-xl bg-[var(--surface-2)] p-3">{row.cv}</div>
+            <div className="rounded-xl bg-[var(--surface-2)] p-3">{row.cp}</div>
+            <div className="rounded-xl bg-[var(--surface-2)] p-3">{row.gamma}</div>
           </div>
-          <p className="mt-3 text-xs leading-5 text-slate-300">{row.caution}</p>
+          <p className="mt-3 text-xs leading-5 text-[var(--text-muted)]">{row.caution}</p>
         </article>
       ))}
     </div>
@@ -464,20 +464,20 @@ function GammaCards() {
 
 function RetainedExampleOne() {
   return (
-    <article className="rounded-[2rem] border border-amber-300/25 bg-amber-300/[0.06] p-5 md:p-7">
+    <article className="rounded-2xl border border-amber-300/25 bg-amber-300/[0.06] p-5 md:p-7">
       <div className="flex flex-wrap items-center justify-between gap-3">
         <div>
-          <p className="text-xs font-black uppercase tracking-[0.2em] text-amber-300">
+          <p className="font-mono text-xs font-semibold uppercase tracking-[0.18em] text-amber-300">
             Example 1
           </p>
-          <h3 className="mt-2 text-xl font-black text-white">
+          <h3 className="mt-2 font-display text-xl font-semibold text-[var(--foreground)]">
             Two-mole monatomic gas: three adiabatic routes
           </h3>
         </div>
         <Chip tone="amber">COMPLETE ROUTE COMPARISON</Chip>
       </div>
 
-      <p className="mt-5 leading-7 text-slate-200">
+      <p className="mt-5 leading-7 text-[var(--text-body)]">
         Two moles of an ideal monatomic gas expand adiabatically from 5.0 L at 127°C to 40.0 L.
         Calculate q, ΔU, w and the minimal ideal-gas ΔH result for:
         (i) reversible expansion;
@@ -497,8 +497,8 @@ function RetainedExampleOne() {
         </Formula>
       </div>
 
-      <div className="mt-5 rounded-2xl border border-emerald-300/20 bg-emerald-300/[0.05] p-5">
-        <p className="text-xs font-black uppercase tracking-[0.2em] text-emerald-300">Route (i): reversible</p>
+      <div className="mt-5 rounded-lg border border-emerald-300/20 bg-emerald-300/[0.05] p-5">
+        <p className="font-mono text-xs font-semibold uppercase tracking-[0.18em] text-emerald-300">Route (i): reversible</p>
         <div className="mt-4 space-y-3">
           <Formula label="Final temperature">
             T₂ = T₁(V₁/V₂)^(γ−1) = 400(5/40)^(2/3) = 100 K
@@ -512,8 +512,8 @@ function RetainedExampleOne() {
         </div>
       </div>
 
-      <div className="mt-5 rounded-2xl border border-rose-300/20 bg-rose-300/[0.05] p-5">
-        <p className="text-xs font-black uppercase tracking-[0.2em] text-rose-300">
+      <div className="mt-5 rounded-lg border border-rose-300/20 bg-rose-300/[0.05] p-5">
+        <p className="font-mono text-xs font-semibold uppercase tracking-[0.18em] text-rose-300">
           Route (ii): constant external pressure
         </p>
         <div className="mt-4 space-y-3">
@@ -531,15 +531,15 @@ function RetainedExampleOne() {
           </Formula>
         </div>
 
-        <p className="mt-4 rounded-xl border border-amber-300/20 bg-amber-300/[0.06] p-4 text-sm leading-6 text-slate-200">
+        <p className="mt-4 rounded-xl border border-amber-300/20 bg-amber-300/[0.06] p-4 text-sm leading-6 text-[var(--text-body)]">
           Scientific completion: because the stated final volume is fixed at 40 L while the external pressure is only
           0.10 atm, the process must be stopped mechanically at that volume. Otherwise the listed endpoint is not the
           final mechanical-equilibrium state.
         </p>
       </div>
 
-      <div className="mt-5 rounded-2xl border border-sky-300/20 bg-sky-300/[0.05] p-5">
-        <p className="text-xs font-black uppercase tracking-[0.2em] text-sky-300">Route (iii): free expansion</p>
+      <div className="mt-5 rounded-lg border border-sky-300/20 bg-sky-300/[0.05] p-5">
+        <p className="font-mono text-xs font-semibold uppercase tracking-[0.18em] text-sky-300">Route (iii): free expansion</p>
         <div className="mt-4 grid gap-4 md:grid-cols-2">
           <Formula label="Boundary transfers">
             q = 0 and w = 0
@@ -560,20 +560,20 @@ function RetainedExampleOne() {
 
 function RetainedExampleTwo() {
   return (
-    <article className="rounded-[2rem] border border-violet-300/25 bg-violet-300/[0.06] p-5 md:p-7">
+    <article className="rounded-2xl border border-violet-300/25 bg-violet-300/[0.06] p-5 md:p-7">
       <div className="flex flex-wrap items-center justify-between gap-3">
         <div>
-          <p className="text-xs font-black uppercase tracking-[0.2em] text-violet-300">
+          <p className="font-mono text-xs font-semibold uppercase tracking-[0.18em] text-violet-300">
             Example 2
           </p>
-          <h3 className="mt-2 text-xl font-black text-white">
+          <h3 className="mt-2 font-display text-xl font-semibold text-[var(--foreground)]">
             Final temperature in one-step adiabatic expansion
           </h3>
         </div>
         <Chip tone="violet">IMPLICIT ENDPOINT SOLUTION</Chip>
       </div>
 
-      <p className="mt-5 leading-7 text-slate-200">
+      <p className="mt-5 leading-7 text-[var(--text-body)]">
         Five moles of an ideal monatomic gas expand adiabatically from 12 atm at 27°C against a constant
         external pressure of 1 atm. The final equilibrium pressure is 1 atm. Calculate T₂, q, ΔU, w and the
         minimal ideal-gas ΔH result.
@@ -657,25 +657,25 @@ function ResultMatrix() {
   ];
 
   return (
-    <div className="overflow-x-auto rounded-2xl border border-white/10">
+    <div className="overflow-x-auto rounded-lg border border-[var(--border)]">
       <table className="min-w-full border-collapse text-left text-sm">
-        <thead className="bg-slate-900">
+        <thead className="bg-[var(--surface-2)]">
           <tr>
-            <th className="px-4 py-3 font-black text-white">Process</th>
-            <th className="px-4 py-3 font-black text-white">Heat</th>
-            <th className="px-4 py-3 font-black text-white">Work/internal energy</th>
-            <th className="px-4 py-3 font-black text-white">Temperature behaviour</th>
-            <th className="px-4 py-3 font-black text-white">Equation note</th>
+            <th className="px-4 py-3 font-semibold text-[var(--foreground)]">Process</th>
+            <th className="px-4 py-3 font-semibold text-[var(--foreground)]">Heat</th>
+            <th className="px-4 py-3 font-semibold text-[var(--foreground)]">Work/internal energy</th>
+            <th className="px-4 py-3 font-semibold text-[var(--foreground)]">Temperature behaviour</th>
+            <th className="px-4 py-3 font-semibold text-[var(--foreground)]">Equation note</th>
           </tr>
         </thead>
-        <tbody className="divide-y divide-white/10 bg-slate-950/70">
+        <tbody className="divide-y divide-[var(--border)] bg-[var(--surface)]">
           {rows.map(([process, heat, work, temp, note]) => (
             <tr key={process}>
-              <td className="px-4 py-3 font-semibold text-slate-100">{process}</td>
+              <td className="px-4 py-3 font-semibold text-[var(--foreground)]">{process}</td>
               <td className="px-4 py-3 font-mono text-amber-200">{heat}</td>
               <td className="px-4 py-3 font-mono text-cyan-200">{work}</td>
-              <td className="px-4 py-3 text-slate-300">{temp}</td>
-              <td className="px-4 py-3 text-slate-300">{note}</td>
+              <td className="px-4 py-3 text-[var(--text-muted)]">{temp}</td>
+              <td className="px-4 py-3 text-[var(--text-muted)]">{note}</td>
             </tr>
           ))}
         </tbody>
@@ -775,15 +775,15 @@ function ProblemLadder() {
   return (
     <div className="grid gap-4 lg:grid-cols-2">
       {problems.map((item) => (
-        <article key={item.title} className="group rounded-2xl border border-white/10 bg-slate-900/70 p-5">
-          <h3 className=" font-black text-white">
+        <article key={item.title} className="group rounded-lg border border-[var(--border)] bg-[var(--surface)] p-5">
+          <h3 className=" font-display font-semibold text-[var(--foreground)]">
             <span className="mr-2 text-amber-300">◆</span>
             {item.title}
           </h3>
-          <p className="mt-4 leading-7 text-slate-200">{item.question}</p>
+          <p className="mt-4 leading-7 text-[var(--text-body)]">{item.question}</p>
           <div className="mt-4 rounded-xl border border-emerald-300/20 bg-emerald-300/[0.06] p-4">
-            <p className="text-xs font-black uppercase tracking-[0.2em] text-emerald-300">Solution</p>
-            <p className="mt-2 text-sm leading-6 text-slate-200">{item.solution}</p>
+            <p className="font-mono text-xs font-semibold uppercase tracking-[0.18em] text-emerald-300">Solution</p>
+            <p className="mt-2 text-sm leading-6 text-[var(--text-body)]">{item.solution}</p>
           </div>
         </article>
       ))}
@@ -836,23 +836,23 @@ const traps = [
 
 function TrapTable() {
   return (
-    <div className="overflow-x-auto rounded-2xl border border-white/10">
+    <div className="overflow-x-auto rounded-lg border border-[var(--border)]">
       <table className="min-w-full border-collapse text-left text-sm">
-        <thead className="bg-slate-900">
+        <thead className="bg-[var(--surface-2)]">
           <tr>
-            <th className="px-4 py-3 font-black text-white">Tempting statement</th>
-            <th className="px-4 py-3 font-black text-white">Verdict</th>
-            <th className="px-4 py-3 font-black text-white">Correction</th>
+            <th className="px-4 py-3 font-semibold text-[var(--foreground)]">Tempting statement</th>
+            <th className="px-4 py-3 font-semibold text-[var(--foreground)]">Verdict</th>
+            <th className="px-4 py-3 font-semibold text-[var(--foreground)]">Correction</th>
           </tr>
         </thead>
-        <tbody className="divide-y divide-white/10 bg-slate-950/70">
+        <tbody className="divide-y divide-[var(--border)] bg-[var(--surface)]">
           {traps.map(([statement, verdict, correction]) => (
             <tr key={statement}>
-              <td className="px-4 py-3 font-semibold text-slate-100">{statement}</td>
+              <td className="px-4 py-3 font-semibold text-[var(--foreground)]">{statement}</td>
               <td className="px-4 py-3">
                 <span className="rounded-full bg-rose-400/15 px-3 py-1 text-xs font-black text-rose-300">{verdict}</span>
               </td>
-              <td className="px-4 py-3 leading-6 text-slate-300">{correction}</td>
+              <td className="px-4 py-3 leading-6 text-[var(--text-muted)]">{correction}</td>
             </tr>
           ))}
         </tbody>
@@ -888,9 +888,9 @@ function DailyLifeGrid() {
   return (
     <div className="grid gap-4 md:grid-cols-2">
       {items.map((item) => (
-        <article key={item.title} className={`rounded-3xl border p-5 ${toneMap[item.tone]}`}>
-          <h3 className="text-xl font-black text-white">{item.title}</h3>
-          <p className="mt-2 text-sm leading-6 text-slate-200">{item.text}</p>
+        <article key={item.title} className={`rounded-lg border p-5 ${toneMap[item.tone]}`}>
+          <h3 className="font-display text-xl font-semibold text-[var(--foreground)]">{item.title}</h3>
+          <p className="mt-2 text-sm leading-6 text-[var(--text-body)]">{item.text}</p>
         </article>
       ))}
     </div>
@@ -899,8 +899,8 @@ function DailyLifeGrid() {
 
 export default function ThermodynamicsPart10() {
   return (
-    <main className="min-h-screen bg-[#020617] text-slate-100">
-      <header className="relative overflow-hidden border-b border-white/10">
+    <main className="min-h-screen bg-[var(--background)] text-[var(--foreground)]">
+      <header className="relative overflow-hidden border-b border-[var(--border)]">
         <div
           aria-hidden="true"
           className="absolute inset-0 bg-[radial-gradient(circle_at_14%_20%,rgba(34,211,238,0.20),transparent_32%),radial-gradient(circle_at_86%_15%,rgba(217,70,239,0.18),transparent_30%),radial-gradient(circle_at_50%_100%,rgba(251,191,36,0.10),transparent_34%)]"
@@ -912,36 +912,36 @@ export default function ThermodynamicsPart10() {
             <Chip tone="amber">ADIABATIC PROCESS ENGINE</Chip>
           </div>
 
-          <div className="mt-8 grid gap-10 lg:grid-cols-[1.15fr_0.85fr] lg:items-center">
+          <div className="mt-8 grid grid-cols-1 gap-10 lg:grid-cols-[1.15fr_0.85fr] lg:items-center">
             <div>
-              <p className="text-sm font-black uppercase tracking-[0.3em] text-cyan-300">
+              <p className="font-mono text-xs font-semibold uppercase tracking-[0.2em] text-cyan-300">
                 Thermodynamics • Ideal-Gas Process Layer
               </p>
-              <h1 className="mt-4 max-w-4xl text-4xl font-black tracking-[-0.045em] text-white md:text-6xl">
+              <h1 className="font-display mt-4 max-w-4xl text-4xl font-semibold tracking-[-0.025em] text-[var(--foreground)] md:text-5xl">
                 No heat crosses—so work writes the temperature history
               </h1>
-              <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-300">
+              <p className="mt-6 max-w-3xl text-lg leading-8 text-[var(--text-muted)]">
                 In an adiabatic process, the boundary blocks heat transfer. Expansion spends internal energy and cools
                 the gas; compression stores work as internal energy and warms it.
               </p>
             </div>
 
-            <div className="rounded-[2rem] border border-white/10 bg-white/[0.05] p-6 shadow-2xl shadow-cyan-950/25">
-              <p className="text-xs font-black uppercase tracking-[0.22em] text-fuchsia-300">
+            <div className="rounded-xl border border-[var(--border)] bg-[var(--surface)] p-6">
+              <p className="font-mono text-xs font-semibold uppercase tracking-[0.22em] text-fuchsia-300">
                 Adiabatic core
               </p>
               <div className="mt-4 space-y-3">
                 <div className="rounded-xl bg-amber-400/10 p-4">
                   <p className="font-black text-amber-200">Boundary condition</p>
-                  <p className="mt-1 font-mono text-lg font-black text-white">q = 0</p>
+                  <p className="mt-1 font-mono font-display text-lg font-semibold text-[var(--foreground)]">q = 0</p>
                 </div>
                 <div className="rounded-xl bg-cyan-400/10 p-4">
                   <p className="font-black text-cyan-200">First Law</p>
-                  <p className="mt-1 font-mono text-lg font-black text-white">ΔU = w</p>
+                  <p className="mt-1 font-mono font-display text-lg font-semibold text-[var(--foreground)]">ΔU = w</p>
                 </div>
                 <div className="rounded-xl bg-emerald-400/10 p-4">
                   <p className="font-black text-emerald-200">Reversible ideal gas</p>
-                  <p className="mt-1 font-mono text-lg font-black text-white">PV^γ = constant</p>
+                  <p className="mt-1 font-mono font-display text-lg font-semibold text-[var(--foreground)]">PV^γ = constant</p>
                 </div>
               </div>
             </div>
@@ -1164,13 +1164,13 @@ export default function ThermodynamicsPart10() {
           <ProblemLadder />
         </Section>
 
-        <section className="rounded-[2rem] border border-white/10 bg-gradient-to-r from-slate-950 via-slate-900 to-slate-950 p-6 md:p-8">
+        <section className="rounded-xl border border-[var(--border)] bg-[var(--surface)] p-6 md:p-8">
           <div className="flex flex-wrap items-center justify-between gap-4">
             <div>
-              <p className="text-xs font-black uppercase tracking-[0.22em] text-fuchsia-300">
+              <p className="font-mono text-xs font-semibold uppercase tracking-[0.22em] text-fuchsia-300">
                 Synergic Bond rapid recall
               </p>
-              <h2 className="mt-2 text-2xl font-black text-white">
+              <h2 className="mt-2 text-2xl font-semibold text-[var(--foreground)]">
                 q = 0 for every adiabat; Poisson relations only for the reversible ideal-gas path
               </h2>
             </div>
@@ -1184,9 +1184,9 @@ export default function ThermodynamicsPart10() {
               ["Expansion", "T falls and w < 0"],
               ["Free ideal-gas expansion", "q = w = ΔU = ΔT = 0"],
             ].map(([term, meaning]) => (
-              <div key={term} className="rounded-2xl border border-white/10 bg-black/25 p-4">
-                <p className="font-black text-white">{term}</p>
-                <p className="mt-1 text-sm leading-6 text-slate-300">{meaning}</p>
+              <div key={term} className="rounded-lg border border-[var(--border)] bg-[var(--surface-2)] p-4">
+                <p className="font-semibold text-[var(--foreground)]">{term}</p>
+                <p className="mt-1 text-sm leading-6 text-[var(--text-muted)]">{meaning}</p>
               </div>
             ))}
           </div>

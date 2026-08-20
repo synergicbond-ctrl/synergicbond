@@ -29,7 +29,7 @@ export default function GlobalError({
           background: "#0B0F19",
           color: "#fff",
           fontFamily:
-            "-apple-system, BlinkMacSystemFont, 'SF Pro', 'Segoe UI', sans-serif",
+            "var(--font-sans), -apple-system, BlinkMacSystemFont, system-ui, sans-serif",
           textAlign: "center",
           padding: "0 24px",
         }}

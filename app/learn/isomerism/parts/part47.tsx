@@ -230,7 +230,7 @@ export default function IsomerismPart47() {
     <main className="min-h-screen bg-[#08111f] px-4 py-8 text-white sm:px-6 sm:py-12">
       <article className="mx-auto max-w-6xl">
         <Link href="/learn/isomerism" className="rounded-full border border-cyan-300/30 bg-cyan-300/10 px-4 py-2 text-sm font-bold text-cyan-100">Isomerism</Link>
-        <header className="mt-6 rounded-3xl border border-cyan-300/15 bg-[radial-gradient(circle_at_top_right,_rgba(34,211,238,.18),_transparent_35%),linear-gradient(135deg,rgba(34,211,238,.08),rgba(2,6,23,.7),rgba(139,92,246,.1))] p-6 sm:p-9">
+        <header className="mt-6 rounded-lg border border-cyan-300/15 bg-[radial-gradient(circle_at_top_right,_rgba(34,211,238,.18),_transparent_35%),linear-gradient(135deg,rgba(34,211,238,.08),rgba(2,6,23,.7),rgba(139,92,246,.1))] p-6 sm:p-9">
           <p className="text-xs font-black uppercase tracking-[.24em] text-cyan-200">Optical Isomerism source · page 118 · items 204–226</p>
           <h1 className="mt-3 text-3xl font-black sm:text-5xl">Chirality exercise: pyranoses, Newman rotamers and constrained rings</h1>
           <p className="mt-3 text-sm leading-7 text-slate-300">
@@ -245,7 +245,7 @@ export default function IsomerismPart47() {
         </header>
         <section className="mt-7 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {ITEMS.map((item) => (
-            <article key={item.n} className="flex flex-col rounded-2xl border border-white/10 bg-white/[.035] p-4">
+            <article key={item.n} className="flex flex-col rounded-lg border border-white/10 bg-white/[.035] p-4">
               <div className="flex items-start justify-between gap-2">
                 <b className="text-sm leading-5">({item.n}) {item.title}</b>
                 <span className={sourceChiral.has(item.n) ? "shrink-0 rounded-full bg-emerald-300/15 px-2 py-1 text-xs font-bold text-emerald-200" : "shrink-0 rounded-full bg-slate-400/10 px-2 py-1 text-xs font-bold text-slate-300"}>

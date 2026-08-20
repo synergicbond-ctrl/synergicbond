@@ -320,7 +320,7 @@ export function ExchangeCountingGuideV4() {
       <div style={{ overflowX: "auto", border: `1px solid ${C.border}`, borderRadius: 16 }}>
         <table style={{ width: "100%", minWidth: 920, borderCollapse: "collapse", color: C.text }}>
           <thead>
-            <tr style={{ background: "#213b57" }}>
+            <tr style={{ background: "var(--surface-2)" }}>
               {["Configuration", "Hund pattern", "n↑", "n↓", "Npair", "Exchange count"].map((heading) => (
                 <th
                   key={heading}
@@ -338,7 +338,7 @@ export function ExchangeCountingGuideV4() {
           </thead>
           <tbody>
             {rows.map((row, index) => (
-              <tr key={row.configuration} style={{ background: index % 2 ? "#142940" : "#102338" }}>
+              <tr key={row.configuration} style={{ background: index % 2 ? "var(--surface)" : "var(--background)" }}>
                 <td style={{ padding: 13, borderBottom: `1px solid ${C.border}`, fontWeight: 850 }}>{row.configuration}</td>
                 <td style={{ padding: 13, borderBottom: `1px solid ${C.border}` }}><BoxRow boxes={row.boxes} /></td>
                 <td style={{ padding: 13, borderBottom: `1px solid ${C.border}` }}>{row.up}</td>

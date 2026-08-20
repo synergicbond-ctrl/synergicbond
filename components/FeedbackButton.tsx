@@ -10,10 +10,10 @@ export default function FeedbackButton() {
     <button
       type="button"
       onClick={() => window.dispatchEvent(new Event("beta-feedback-open"))}
-      className="fixed bottom-3 left-3 z-[110] flex items-center gap-1.5 rounded-full border border-white/15 bg-[#111827]/95 px-3 py-2 text-[11px] font-bold text-white/70 shadow-lg backdrop-blur transition hover:border-cyan-400/40 hover:text-white"
+      className="fixed bottom-3 left-3 z-[110] flex items-center gap-1.5 rounded-full border border-white/15 bg-[var(--surface)]/95 px-3 py-2 text-[11px] font-bold text-white/70 shadow-lg backdrop-blur transition hover:border-[var(--border)] hover:text-white"
       aria-label="Send feedback or report a bug"
     >
-      <MessageSquare className="h-3.5 w-3.5 text-cyan-300" />
+      <MessageSquare className="h-3.5 w-3.5 text-[var(--accent)]" />
       <span className="hidden sm:inline">Feedback</span>
     </button>
   );

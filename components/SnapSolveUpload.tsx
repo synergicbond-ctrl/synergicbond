@@ -166,7 +166,7 @@ export default function SnapSolveUpload({ onUploadSuccess }: Props) {
   }
 
   return (
-    <div className="rounded-2xl border border-white/[0.08] bg-[#111827] p-5 space-y-4">
+    <div className="rounded-lg border border-white/[0.08] bg-[var(--surface)] p-5 space-y-4">
       <style>{`
         @keyframes snapFadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
         @keyframes snapBlink { 0%, 49% { opacity: 1; } 50%, 100% { opacity: 0; } }
@@ -175,13 +175,13 @@ export default function SnapSolveUpload({ onUploadSuccess }: Props) {
       {/* Live stream panel — driven by real SSE events from /api/snap-solve */}
       {isProcessing && (
         <div style={{ animation: "snapFadeIn 0.3s ease-out both" }} className="space-y-3 py-2">
-          <div className="flex items-center gap-2 text-sm font-bold text-cyan-300">
+          <div className="flex items-center gap-2 text-sm font-bold text-[var(--accent)]">
             <span className="h-2 w-2 animate-ping rounded-full bg-cyan-400" />
             AI is reasoning…
           </div>
 
           {/* Reasoning tokens (server-streamed) */}
-          <div className="rounded-xl border border-cyan-500/25 bg-[#0B0F19] p-4 shadow-[0_0_45px_-12px_rgba(34,211,238,0.4)]">
+          <div className="rounded-lg border border-[var(--border)] bg-[var(--background)] p-4">
             {reasoning.length === 0 ? (
               <p className="font-mono text-[13px] text-white/40">
                 Connecting to the solver…
@@ -193,11 +193,11 @@ export default function SnapSolveUpload({ onUploadSuccess }: Props) {
                   <li
                     key={i}
                     style={{ animation: "snapFadeIn 0.3s ease-out both" }}
-                    className="font-mono text-[13px] leading-relaxed text-emerald-300/90"
+                    className="font-mono text-[13px] leading-relaxed text-[var(--foreground)]"
                   >
                     {line}
                     {i === reasoning.length - 1 && (
-                      <span style={{ animation: "snapBlink 1s steps(1) infinite" }} className="ml-0.5 text-emerald-300">▍</span>
+                      <span style={{ animation: "snapBlink 1s steps(1) infinite" }} className="ml-0.5 text-[var(--accent)]">▍</span>
                     )}
                   </li>
                 ))}
@@ -207,14 +207,14 @@ export default function SnapSolveUpload({ onUploadSuccess }: Props) {
 
           {/* Solution steps as they stream in */}
           {steps.length > 0 && (
-            <ul className="space-y-2 border-l-2 border-cyan-500/20 pl-4">
+            <ul className="space-y-2 border-l-2 border-[var(--border)] pl-4">
               {steps.map((s) => (
                 <li
                   key={s.stepNumber}
                   style={{ animation: "snapFadeIn 0.3s ease-out both" }}
                   className="flex gap-2 text-sm text-white/80"
                 >
-                  <span className="shrink-0 font-bold text-cyan-400">{s.stepNumber}.</span>
+                  <span className="shrink-0 font-bold text-[var(--accent)]">{s.stepNumber}.</span>
                   {s.text}
                 </li>
               ))}
@@ -230,7 +230,7 @@ export default function SnapSolveUpload({ onUploadSuccess }: Props) {
       <button
         onClick={() => !isProcessing && cameraRef.current?.click()}
         disabled={isProcessing}
-        className="flex w-full items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-cyan-400 to-blue-500 py-3.5 font-bold text-black transition disabled:cursor-not-allowed disabled:opacity-40"
+        className="flex w-full items-center justify-center gap-2 rounded-lg bg-[var(--accent)] py-3.5 font-bold text-black transition disabled:cursor-not-allowed disabled:opacity-40"
       >
         <Camera className="h-5 w-5" /> Camera Mode — Snap &amp; Solve
       </button>
@@ -255,17 +255,17 @@ export default function SnapSolveUpload({ onUploadSuccess }: Props) {
           onClick={() => !isProcessing && fileRef.current?.click()}
           onDrop={handleDrop}
           onDragOver={(e) => e.preventDefault()}
-          className={`relative flex min-h-44 flex-col items-center justify-center rounded-2xl border-2 border-dashed p-5 text-center transition ${
+          className={`relative flex min-h-44 flex-col items-center justify-center rounded-lg border-2 border-dashed p-5 text-center transition ${
             isProcessing
               ? "cursor-not-allowed border-white/10 opacity-50"
-              : "cursor-pointer border-white/15 bg-white/[0.02] hover:border-cyan-500/50 hover:bg-white/[0.04]"
+              : "cursor-pointer border-white/15 bg-white/[0.02] hover:border-[var(--border)] hover:bg-white/[0.04]"
           }`}
         >
           {image ? (
             <Image src={image} alt="Problem" width={320} height={160} unoptimized className="max-h-40 rounded-xl object-contain" />
           ) : (
             <>
-              <Camera className="mb-3 h-8 w-8 text-cyan-400" />
+              <Camera className="mb-3 h-8 w-8 text-[var(--text-muted)]" />
               <p className="text-sm text-white/70">Click or drag &amp; drop</p>
               <p className="mt-1 text-xs text-white/40">Photo of a problem</p>
             </>
@@ -281,7 +281,7 @@ export default function SnapSolveUpload({ onUploadSuccess }: Props) {
         </div>
 
         {/* Formula text box */}
-        <div className="relative flex min-h-44 flex-col rounded-2xl border border-white/[0.08] bg-[#0B0F19] p-3">
+        <div className="relative flex min-h-44 flex-col rounded-lg border border-white/[0.08] bg-[var(--background)] p-3">
           <div className="mb-1.5 flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-wider text-white/40">
             <Type className="h-3 w-3" /> Type the question
           </div>
@@ -302,8 +302,8 @@ export default function SnapSolveUpload({ onUploadSuccess }: Props) {
             key={l}
             onClick={() => setLanguage(l)}
             disabled={isProcessing}
-            className={`flex-1 rounded-xl py-2 text-xs font-semibold capitalize transition disabled:opacity-50 ${
-              language === l ? "bg-cyan-500 text-black" : "border border-white/10 bg-white/5 text-white/70 hover:bg-white/10"
+            className={`flex-1 rounded-lg py-2 text-xs font-semibold capitalize transition disabled:opacity-50 ${
+              language === l ? "bg-[var(--accent)] text-[var(--background)]" : "border border-white/10 bg-white/5 text-white/70 hover:bg-white/10"
             }`}
           >
             {l === "hindi" ? "हिंदी" : l}
@@ -315,7 +315,7 @@ export default function SnapSolveUpload({ onUploadSuccess }: Props) {
       <button
         onClick={handleSolve}
         disabled={!canSubmit}
-        className="flex w-full items-center justify-center gap-2 rounded-2xl border border-white/10 bg-white/5 py-3 font-bold text-white transition hover:bg-white/10 disabled:opacity-40"
+        className="flex w-full items-center justify-center gap-2 rounded-lg border border-white/10 bg-white/5 py-3 font-bold text-white transition hover:bg-white/10 disabled:opacity-40"
       >
         <Zap className="h-4 w-4" /> Solve This Problem
       </button>
@@ -323,7 +323,7 @@ export default function SnapSolveUpload({ onUploadSuccess }: Props) {
       {(image || query) && (
         <button
           onClick={() => { setImage(null); setQuery(""); setError(null); }}
-          className="w-full rounded-xl border border-white/10 py-1.5 text-xs text-white/50 transition hover:text-white"
+          className="w-full rounded-lg border border-white/10 py-1.5 text-xs text-white/50 transition hover:text-white"
         >
           Clear &amp; try another
         </button>
@@ -333,9 +333,9 @@ export default function SnapSolveUpload({ onUploadSuccess }: Props) {
 
       {/* Paywall — free daily limit reached */}
       {paywall && !isProcessing && (
-        <div className="rounded-2xl border border-cyan-500/30 bg-cyan-500/[0.06] p-5 text-center space-y-3">
-          <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-2xl border border-cyan-400/30 bg-cyan-500/10">
-            <Lock className="h-5 w-5 text-cyan-300" />
+        <div className="rounded-lg border border-[var(--border)] bg-[var(--surface-2)] p-5 text-center space-y-3">
+          <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-lg border border-[var(--border)] bg-[var(--surface)]">
+            <Lock className="h-5 w-5 text-[var(--text-muted)]" />
           </div>
           <div>
             <p className="text-sm font-bold text-white">You&apos;ve used your 5 free solves today</p>
@@ -344,7 +344,7 @@ export default function SnapSolveUpload({ onUploadSuccess }: Props) {
           <a
             href="/pricing"
             onClick={() => track("upgrade_click", { feature: "snap-solve" })}
-            className="inline-block w-full rounded-xl bg-gradient-to-r from-cyan-400 to-sky-500 py-2.5 text-sm font-bold text-black transition hover:-translate-y-0.5"
+            className="inline-block w-full rounded-lg bg-[var(--accent)] py-2.5 text-sm font-bold text-[var(--background)] transition hover:-translate-y-0.5"
           >
             Upgrade to Pro →
           </a>
@@ -354,12 +354,12 @@ export default function SnapSolveUpload({ onUploadSuccess }: Props) {
       {/* Network / middleware error boundary — capture stays enabled for retry */}
       {error && !isProcessing && (
         <div className="space-y-2">
-          <div className="flex items-center gap-2 rounded-xl border border-red-500/25 bg-red-500/[0.08] px-3 py-2 text-xs text-red-300">
+          <div className="flex items-center gap-2 rounded-lg border border-red-500/25 bg-red-500/[0.08] px-3 py-2 text-xs text-red-300">
             <AlertTriangle className="h-3.5 w-3.5 shrink-0" /> {error}
           </div>
           <button
             onClick={() => cameraRef.current?.click()}
-            className="flex w-full items-center justify-center gap-2 rounded-xl border border-cyan-500/30 py-2 text-xs font-semibold text-cyan-300 transition hover:bg-cyan-500/10"
+            className="flex w-full items-center justify-center gap-2 rounded-lg border border-[var(--border)] py-2 text-xs font-semibold text-[var(--text-muted)] transition hover:bg-white/5"
           >
             <Camera className="h-3.5 w-3.5" /> Retry capture
           </button>

@@ -33,17 +33,17 @@ function Section({
   children: React.ReactNode;
 }) {
   return (
-    <section className="rounded-[2rem] border border-white/10 bg-slate-950/80 p-5 shadow-2xl shadow-black/20 backdrop-blur md:p-8">
+    <section className="border-t border-[var(--border)] py-10 md:py-12">
       <div className="flex items-start gap-4">
-        <span className="grid h-10 w-10 shrink-0 place-items-center rounded-2xl border border-cyan-300/30 bg-cyan-300/10 text-sm font-black text-cyan-200">
+        <span className="font-mono text-[11px] font-bold uppercase tracking-[0.2em] text-[var(--text-muted)]">
           {index}
         </span>
         <div>
-          <h2 className="text-2xl font-black tracking-tight text-white md:text-3xl">{title}</h2>
-          {subtitle ? <p className="mt-1 text-sm leading-6 text-slate-400">{subtitle}</p> : null}
+          <h2 className="font-display mt-1 text-[clamp(1.5rem,2.8vw,2.1rem)] font-semibold leading-tight text-[var(--foreground)]">{title}</h2>
+          {subtitle ? <p className="mt-1 text-sm leading-6 text-[var(--text-muted)]">{subtitle}</p> : null}
         </div>
       </div>
-      <div className="mt-6 space-y-5 text-[15px] leading-7 text-slate-200 md:text-base">{children}</div>
+      <div className="mt-6 space-y-5 text-[15px] leading-7 text-[var(--text-body)] md:text-base">{children}</div>
     </section>
   );
 }
@@ -58,10 +58,10 @@ function ConceptLens({
   tone?: Tone;
 }) {
   return (
-    <aside className={`rounded-2xl border p-5 ${toneMap[tone]}`}>
-      <p className="text-xs font-black uppercase tracking-[0.2em]">Synergic Bond Concept Lens</p>
-      <h3 className="mt-2 text-lg font-black text-white">{title}</h3>
-      <div className="mt-2 text-sm leading-6 text-slate-200">{children}</div>
+    <aside className={`rounded-lg border p-5 ${toneMap[tone]}`}>
+      <p className="font-mono text-xs font-semibold uppercase tracking-[0.18em]">Synergic Bond Concept Lens</p>
+      <h3 className="font-display mt-2 text-lg font-semibold text-[var(--foreground)]">{title}</h3>
+      <div className="mt-2 text-sm leading-6 text-[var(--text-body)]">{children}</div>
     </aside>
   );
 }
@@ -74,18 +74,18 @@ function Formula({
   children: React.ReactNode;
 }) {
   return (
-    <div className="overflow-x-auto rounded-2xl border border-cyan-300/20 bg-black/30 p-4 text-center">
+    <div className="overflow-x-auto rounded-lg border border-cyan-300/20 bg-[var(--surface-2)] p-4 text-center">
       {label ? (
-        <p className="mb-2 text-xs font-black uppercase tracking-[0.2em] text-cyan-300">{label}</p>
+        <p className="mb-2 font-mono text-xs font-semibold uppercase tracking-[0.18em] text-cyan-300">{label}</p>
       ) : null}
-      <div className="whitespace-nowrap font-mono text-lg font-black text-white md:text-xl">{children}</div>
+      <div className="whitespace-nowrap font-mono text-lg font-semibold text-[var(--foreground)] md:text-xl">{children}</div>
     </div>
   );
 }
 
 function ReversedEngineAnimation() {
   return (
-    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
+    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-3 md:p-5">
       <svg
         viewBox="0 0 1200 780"
         role="img"
@@ -169,7 +169,7 @@ function ReversedEngineAnimation() {
 
 function ReversedCarnotStagesAnimation() {
   return (
-    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
+    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-3 md:p-5">
       <svg
         viewBox="0 0 1200 820"
         role="img"
@@ -301,7 +301,7 @@ function ReversedCarnotStagesAnimation() {
 
 function COPGraph() {
   return (
-    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
+    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-3 md:p-5">
       <svg
         viewBox="0 0 1200 720"
         role="img"
@@ -360,7 +360,7 @@ function COPGraph() {
 
 function EntropyBridgeAnimation() {
   return (
-    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
+    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-3 md:p-5">
       <svg
         viewBox="0 0 1200 720"
         role="img"
@@ -457,12 +457,12 @@ function COPDerivationCards() {
   return (
     <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
       {cards.map((card) => (
-        <article key={card.title} className={`rounded-3xl border p-5 ${toneMap[card.tone]}`}>
-          <h3 className="text-lg font-black text-white">{card.title}</h3>
-          <div className="mt-3 rounded-xl bg-black/25 p-3 text-center font-mono text-sm font-black text-white">
+        <article key={card.title} className={`rounded-lg border p-5 ${toneMap[card.tone]}`}>
+          <h3 className="font-display text-lg font-semibold text-[var(--foreground)]">{card.title}</h3>
+          <div className="mt-3 rounded-xl bg-[var(--surface-2)] p-3 text-center font-mono text-sm font-semibold text-[var(--foreground)]">
             {card.equation}
           </div>
-          <p className="mt-3 text-sm leading-6 text-slate-200">{card.text}</p>
+          <p className="mt-3 text-sm leading-6 text-[var(--text-body)]">{card.text}</p>
         </article>
       ))}
     </div>
@@ -506,13 +506,13 @@ function CarnotCOPDerivation() {
   return (
     <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
       {steps.map((step, index) => (
-        <article key={step.title} className="rounded-2xl border border-white/10 bg-slate-900/70 p-5">
-          <p className="text-xs font-black uppercase tracking-[0.2em] text-cyan-300">Step {index + 1}</p>
-          <h3 className="mt-2 text-lg font-black text-white">{step.title}</h3>
-          <div className="mt-3 rounded-xl bg-black/25 p-3 text-center font-mono text-sm font-black text-cyan-200">
+        <article key={step.title} className="rounded-lg border border-[var(--border)] bg-[var(--surface)] p-5">
+          <p className="font-mono text-xs font-semibold uppercase tracking-[0.18em] text-cyan-300">Step {index + 1}</p>
+          <h3 className="font-display mt-2 text-lg font-semibold text-[var(--foreground)]">{step.title}</h3>
+          <div className="mt-3 rounded-xl bg-[var(--surface-2)] p-3 text-center font-mono text-sm font-black text-cyan-200">
             {step.equation}
           </div>
-          <p className="mt-3 text-sm leading-6 text-slate-300">{step.text}</p>
+          <p className="mt-3 text-sm leading-6 text-[var(--text-muted)]">{step.text}</p>
         </article>
       ))}
     </div>
@@ -527,21 +527,21 @@ function EngineRefrigeratorRelations() {
   ];
 
   return (
-    <div className="overflow-x-auto rounded-2xl border border-white/10">
+    <div className="overflow-x-auto rounded-lg border border-[var(--border)]">
       <table className="min-w-full border-collapse text-left text-sm">
-        <thead className="bg-slate-900">
+        <thead className="bg-[var(--surface-2)]">
           <tr>
-            <th className="px-4 py-3 font-black text-white">Device</th>
-            <th className="px-4 py-3 font-black text-white">Desired effect</th>
-            <th className="px-4 py-3 font-black text-white">Performance definition</th>
-            <th className="px-4 py-3 font-black text-white">Reversible value</th>
+            <th className="px-4 py-3 font-semibold text-[var(--foreground)]">Device</th>
+            <th className="px-4 py-3 font-semibold text-[var(--foreground)]">Desired effect</th>
+            <th className="px-4 py-3 font-semibold text-[var(--foreground)]">Performance definition</th>
+            <th className="px-4 py-3 font-semibold text-[var(--foreground)]">Reversible value</th>
           </tr>
         </thead>
-        <tbody className="divide-y divide-white/10 bg-slate-950/70">
+        <tbody className="divide-y divide-[var(--border)] bg-[var(--surface)]">
           {rows.map(([device, desired, definition, value]) => (
             <tr key={device}>
-              <td className="px-4 py-3 font-semibold text-slate-100">{device}</td>
-              <td className="px-4 py-3 text-slate-300">{desired}</td>
+              <td className="px-4 py-3 font-semibold text-[var(--foreground)]">{device}</td>
+              <td className="px-4 py-3 text-[var(--text-muted)]">{desired}</td>
               <td className="px-4 py-3 font-mono text-cyan-200">{definition}</td>
               <td className="px-4 py-3 font-mono text-emerald-300">{value}</td>
             </tr>
@@ -554,7 +554,7 @@ function EngineRefrigeratorRelations() {
 
 function RealRefrigeratorAnimation() {
   return (
-    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
+    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-3 md:p-5">
       <svg
         viewBox="0 0 1200 760"
         role="img"
@@ -617,20 +617,20 @@ function RealRefrigeratorAnimation() {
 
 function WorkedExample() {
   return (
-    <article className="rounded-[2rem] border border-amber-300/25 bg-amber-300/[0.06] p-5 md:p-7">
+    <article className="rounded-2xl border border-amber-300/25 bg-amber-300/[0.06] p-5 md:p-7">
       <div className="flex flex-wrap items-center justify-between gap-3">
         <div>
-          <p className="text-xs font-black uppercase tracking-[0.2em] text-amber-300">
+          <p className="font-mono text-xs font-semibold uppercase tracking-[0.18em] text-amber-300">
             Original Synergic Bond worked example
           </p>
-          <h3 className="mt-2 text-xl font-black text-white">
+          <h3 className="mt-2 font-display text-xl font-semibold text-[var(--foreground)]">
             Carnot refrigerator and heat-pump performance
           </h3>
         </div>
         <Chip tone="amber">FULL ENERGY AUDIT</Chip>
       </div>
 
-      <p className="mt-5 leading-7 text-slate-200">
+      <p className="mt-5 leading-7 text-[var(--text-body)]">
         A reversible refrigerator operates between a cold compartment at 260 K and a room at 300 K.
         It removes 5.20 kJ of heat from the compartment per cycle. Find the work input, heat rejected,
         refrigerator COP, and heat-pump COP.
@@ -697,12 +697,12 @@ function EntropyTransitionCards() {
   return (
     <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
       {cards.map((card) => (
-        <article key={card.title} className={`rounded-3xl border p-5 ${toneMap[card.tone]}`}>
-          <h3 className="text-lg font-black text-white">{card.title}</h3>
-          <div className="mt-3 rounded-xl bg-black/25 p-3 text-center font-mono text-sm font-black text-white">
+        <article key={card.title} className={`rounded-lg border p-5 ${toneMap[card.tone]}`}>
+          <h3 className="font-display text-lg font-semibold text-[var(--foreground)]">{card.title}</h3>
+          <div className="mt-3 rounded-xl bg-[var(--surface-2)] p-3 text-center font-mono text-sm font-semibold text-[var(--foreground)]">
             {card.equation}
           </div>
-          <p className="mt-3 text-sm leading-6 text-slate-200">{card.text}</p>
+          <p className="mt-3 text-sm leading-6 text-[var(--text-body)]">{card.text}</p>
         </article>
       ))}
     </div>
@@ -828,15 +828,15 @@ function ProblemLadder() {
   return (
     <div className="grid gap-4 lg:grid-cols-2">
       {problems.map((item) => (
-        <article key={item.title} className="group rounded-2xl border border-white/10 bg-slate-900/70 p-5">
-          <h3 className=" font-black text-white">
+        <article key={item.title} className="group rounded-lg border border-[var(--border)] bg-[var(--surface)] p-5">
+          <h3 className=" font-display font-semibold text-[var(--foreground)]">
             <span className="mr-2 text-amber-300">◆</span>
             {item.title}
           </h3>
-          <p className="mt-4 leading-7 text-slate-200">{item.question}</p>
+          <p className="mt-4 leading-7 text-[var(--text-body)]">{item.question}</p>
           <div className="mt-4 rounded-xl border border-emerald-300/20 bg-emerald-300/[0.06] p-4">
-            <p className="text-xs font-black uppercase tracking-[0.2em] text-emerald-300">Solution</p>
-            <p className="mt-2 text-sm leading-6 text-slate-200">{item.solution}</p>
+            <p className="font-mono text-xs font-semibold uppercase tracking-[0.18em] text-emerald-300">Solution</p>
+            <p className="mt-2 text-sm leading-6 text-[var(--text-body)]">{item.solution}</p>
           </div>
         </article>
       ))}
@@ -889,23 +889,23 @@ const traps = [
 
 function TrapTable() {
   return (
-    <div className="overflow-x-auto rounded-2xl border border-white/10">
+    <div className="overflow-x-auto rounded-lg border border-[var(--border)]">
       <table className="min-w-full border-collapse text-left text-sm">
-        <thead className="bg-slate-900">
+        <thead className="bg-[var(--surface-2)]">
           <tr>
-            <th className="px-4 py-3 font-black text-white">Tempting statement</th>
-            <th className="px-4 py-3 font-black text-white">Verdict</th>
-            <th className="px-4 py-3 font-black text-white">Correction</th>
+            <th className="px-4 py-3 font-semibold text-[var(--foreground)]">Tempting statement</th>
+            <th className="px-4 py-3 font-semibold text-[var(--foreground)]">Verdict</th>
+            <th className="px-4 py-3 font-semibold text-[var(--foreground)]">Correction</th>
           </tr>
         </thead>
-        <tbody className="divide-y divide-white/10 bg-slate-950/70">
+        <tbody className="divide-y divide-[var(--border)] bg-[var(--surface)]">
           {traps.map(([statement, verdict, correction]) => (
             <tr key={statement}>
-              <td className="px-4 py-3 font-semibold text-slate-100">{statement}</td>
+              <td className="px-4 py-3 font-semibold text-[var(--foreground)]">{statement}</td>
               <td className="px-4 py-3">
                 <span className="rounded-full bg-rose-400/15 px-3 py-1 text-xs font-black text-rose-300">{verdict}</span>
               </td>
-              <td className="px-4 py-3 leading-6 text-slate-300">{correction}</td>
+              <td className="px-4 py-3 leading-6 text-[var(--text-muted)]">{correction}</td>
             </tr>
           ))}
         </tbody>
@@ -941,9 +941,9 @@ function DailyLifeGrid() {
   return (
     <div className="grid gap-4 md:grid-cols-2">
       {items.map((item) => (
-        <article key={item.title} className={`rounded-3xl border p-5 ${toneMap[item.tone]}`}>
-          <h3 className="text-xl font-black text-white">{item.title}</h3>
-          <p className="mt-2 text-sm leading-6 text-slate-200">{item.text}</p>
+        <article key={item.title} className={`rounded-lg border p-5 ${toneMap[item.tone]}`}>
+          <h3 className="font-display text-xl font-semibold text-[var(--foreground)]">{item.title}</h3>
+          <p className="mt-2 text-sm leading-6 text-[var(--text-body)]">{item.text}</p>
         </article>
       ))}
     </div>
@@ -952,8 +952,8 @@ function DailyLifeGrid() {
 
 export default function ThermodynamicsPart15() {
   return (
-    <main className="min-h-screen bg-[#020617] text-slate-100">
-      <header className="relative overflow-hidden border-b border-white/10">
+    <main className="min-h-screen bg-[var(--background)] text-[var(--foreground)]">
+      <header className="relative overflow-hidden border-b border-[var(--border)]">
         <div
           aria-hidden="true"
           className="absolute inset-0 bg-[radial-gradient(circle_at_14%_20%,rgba(34,211,238,0.20),transparent_32%),radial-gradient(circle_at_86%_15%,rgba(217,70,239,0.18),transparent_30%),radial-gradient(circle_at_50%_100%,rgba(251,191,36,0.10),transparent_34%)]"
@@ -965,32 +965,32 @@ export default function ThermodynamicsPart15() {
             <Chip tone="amber">REFRIGERATOR & HEAT-PUMP EDITION</Chip>
           </div>
 
-          <div className="mt-8 grid gap-10 lg:grid-cols-[1.15fr_0.85fr] lg:items-center">
+          <div className="mt-8 grid grid-cols-1 gap-10 lg:grid-cols-[1.15fr_0.85fr] lg:items-center">
             <div>
-              <p className="text-sm font-black uppercase tracking-[0.3em] text-cyan-300">
+              <p className="font-mono text-xs font-semibold uppercase tracking-[0.2em] text-cyan-300">
                 Thermodynamics • Reversed-Cycle Layer
               </p>
-              <h1 className="mt-4 max-w-4xl text-4xl font-black tracking-[-0.045em] text-white md:text-6xl">
+              <h1 className="font-display mt-4 max-w-4xl text-4xl font-semibold tracking-[-0.025em] text-[var(--foreground)] md:text-5xl">
                 Work does not create cold—it pumps heat uphill
               </h1>
-              <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-300">
+              <p className="mt-6 max-w-3xl text-lg leading-8 text-[var(--text-muted)]">
                 A refrigerator removes heat from a cold region. A heat pump delivers heat to a warm region.
                 Both use the same reversed cycle and must receive work to oppose the natural direction of heat flow.
               </p>
             </div>
 
-            <div className="rounded-[2rem] border border-white/10 bg-white/[0.05] p-6 shadow-2xl shadow-cyan-950/25">
-              <p className="text-xs font-black uppercase tracking-[0.22em] text-fuchsia-300">
+            <div className="rounded-xl border border-[var(--border)] bg-[var(--surface)] p-6">
+              <p className="font-mono text-xs font-semibold uppercase tracking-[0.22em] text-fuchsia-300">
                 Reversed-cycle core
               </p>
               <div className="mt-4 space-y-3">
-                <div className="rounded-xl bg-violet-400/10 p-4 font-mono text-lg font-black text-white">
+                <div className="rounded-xl bg-violet-400/10 p-4 font-mono font-display text-lg font-semibold text-[var(--foreground)]">
                   Q<sub>H</sub> = Q<sub>C</sub> + W<sub>in</sub>
                 </div>
-                <div className="rounded-xl bg-cyan-400/10 p-4 font-mono text-lg font-black text-white">
+                <div className="rounded-xl bg-cyan-400/10 p-4 font-mono font-display text-lg font-semibold text-[var(--foreground)]">
                   COP<sub>R</sub> = Q<sub>C</sub>/W<sub>in</sub>
                 </div>
-                <div className="rounded-xl bg-amber-400/10 p-4 font-mono text-lg font-black text-white">
+                <div className="rounded-xl bg-amber-400/10 p-4 font-mono font-display text-lg font-semibold text-[var(--foreground)]">
                   COP<sub>HP</sub> = Q<sub>H</sub>/W<sub>in</sub>
                 </div>
               </div>
@@ -1161,10 +1161,10 @@ export default function ThermodynamicsPart15() {
               ["Pressure losses", "Flow through pipes and valves destroys useful pressure potential."],
               ["Throttling", "The expansion device is strongly irreversible and produces entropy."],
             ].map(([title, text], index) => (
-              <article key={title} className="rounded-2xl border border-white/10 bg-slate-900/70 p-5">
-                <p className="text-xs font-black uppercase tracking-[0.2em] text-cyan-300">Loss {index + 1}</p>
-                <h3 className="mt-2 text-lg font-black text-white">{title}</h3>
-                <p className="mt-2 text-sm leading-6 text-slate-300">{text}</p>
+              <article key={title} className="rounded-lg border border-[var(--border)] bg-[var(--surface)] p-5">
+                <p className="font-mono text-xs font-semibold uppercase tracking-[0.18em] text-cyan-300">Loss {index + 1}</p>
+                <h3 className="font-display mt-2 text-lg font-semibold text-[var(--foreground)]">{title}</h3>
+                <p className="mt-2 text-sm leading-6 text-[var(--text-muted)]">{text}</p>
               </article>
             ))}
           </div>
@@ -1194,15 +1194,15 @@ export default function ThermodynamicsPart15() {
 
         <Section index="11" title="Clausius and Kelvin–Planck statements are equivalent">
           <div className="grid gap-4 md:grid-cols-2">
-            <article className="rounded-3xl border border-cyan-300/20 bg-cyan-300/[0.05] p-5">
+            <article className="rounded-lg border border-cyan-300/20 bg-cyan-300/[0.05] p-5">
               <Chip tone="cyan">CLAUSIUS STATEMENT</Chip>
-              <p className="mt-4 text-sm leading-6 text-slate-200">
+              <p className="mt-4 text-sm leading-6 text-[var(--text-body)]">
                 No cyclic device can have the sole effect of transferring heat from a colder body to a hotter body.
               </p>
             </article>
-            <article className="rounded-3xl border border-amber-300/20 bg-amber-300/[0.05] p-5">
+            <article className="rounded-lg border border-amber-300/20 bg-amber-300/[0.05] p-5">
               <Chip tone="amber">KELVIN–PLANCK STATEMENT</Chip>
-              <p className="mt-4 text-sm leading-6 text-slate-200">
+              <p className="mt-4 text-sm leading-6 text-[var(--text-body)]">
                 No cyclic device can have the sole effect of absorbing heat from one reservoir and converting it completely into work.
               </p>
             </article>
@@ -1229,13 +1229,13 @@ export default function ThermodynamicsPart15() {
           <ProblemLadder />
         </Section>
 
-        <section className="rounded-[2rem] border border-white/10 bg-gradient-to-r from-slate-950 via-slate-900 to-slate-950 p-6 md:p-8">
+        <section className="rounded-xl border border-[var(--border)] bg-[var(--surface)] p-6 md:p-8">
           <div className="flex flex-wrap items-center justify-between gap-4">
             <div>
-              <p className="text-xs font-black uppercase tracking-[0.22em] text-fuchsia-300">
+              <p className="font-mono text-xs font-semibold uppercase tracking-[0.22em] text-fuchsia-300">
                 Synergic Bond rapid recall
               </p>
-              <h2 className="mt-2 text-2xl font-black text-white">
+              <h2 className="mt-2 text-2xl font-semibold text-[var(--foreground)]">
                 A reversed cycle moves heat uphill; entropy sets the minimum work
               </h2>
             </div>
@@ -1249,9 +1249,9 @@ export default function ThermodynamicsPart15() {
               ["Heat pump", "COPHP = QH/Win = COPR + 1"],
               ["Carnot limit", "COPR,max = TC/(TH−TC)"],
             ].map(([term, meaning]) => (
-              <div key={term} className="rounded-2xl border border-white/10 bg-black/25 p-4">
-                <p className="font-black text-white">{term}</p>
-                <p className="mt-1 text-sm leading-6 text-slate-300">{meaning}</p>
+              <div key={term} className="rounded-lg border border-[var(--border)] bg-[var(--surface-2)] p-4">
+                <p className="font-semibold text-[var(--foreground)]">{term}</p>
+                <p className="mt-1 text-sm leading-6 text-[var(--text-muted)]">{meaning}</p>
               </div>
             ))}
           </div>

@@ -41,23 +41,23 @@ export default async function ProgramHubPage({ params }: { params: Promise<{ slu
   const hasSyllabus = (HUB_SYLLABUS_MAP[slug] ?? []).length > 0;
 
   return (
-    <main className="min-h-screen bg-black text-white">
-      <div className={`border-b border-white/10 bg-gradient-to-b ${accent.gradient} to-black px-6 py-14 text-center`}>
-        <div className={`mb-3 text-xs font-bold uppercase tracking-widest ${accent.text}`}>{kicker}</div>
+    <main className="min-h-screen bg-[var(--background)] text-[var(--foreground)]">
+      <div className="border-b border-[var(--border)] bg-[var(--surface)] px-6 py-14 text-center">
+        <div className="mb-3 text-xs font-bold uppercase tracking-widest text-[var(--text-muted)]">{kicker}</div>
         <h1 className="mb-4 text-4xl font-black tracking-tight sm:text-5xl">{name} Chemistry</h1>
-        <p className="mx-auto max-w-xl text-lg text-zinc-400">{tagline}</p>
+        <p className="mx-auto max-w-xl text-lg text-[var(--text-muted)]">{tagline}</p>
         <div className="mt-6 flex flex-wrap justify-center gap-3">
           {chips.map((chip) => (
-            <span key={chip} className={`rounded-full border px-3 py-1 text-sm ${accent.chip}`}>
+            <span key={chip} className="rounded-full border border-[var(--border)] bg-[var(--surface-2)] px-3 py-1 text-sm text-[var(--text-muted)]">
               {chip}
             </span>
           ))}
         </div>
         <div className="mt-8 flex flex-wrap justify-center gap-3">
-          <Link href={`/programs/${slug}/learn`} className={`rounded-xl border px-5 py-2.5 text-sm font-bold ${accent.chip} transition hover:bg-white/[0.06]`}>
+          <Link href={`/programs/${slug}/learn`} className="rounded-lg border border-[var(--border)] bg-[var(--surface-2)] px-5 py-2.5 text-sm font-bold text-[var(--foreground)] transition hover:bg-white/[0.06]">
             Start Learning
           </Link>
-          <Link href={`/programs/${slug}/tests`} className="rounded-xl bg-gradient-to-r from-cyan-400 to-sky-500 px-5 py-2.5 text-sm font-black text-black transition hover:-translate-y-0.5">
+          <Link href={`/programs/${slug}/tests`} className="rounded-lg bg-[var(--accent)] px-5 py-2.5 text-sm font-black text-[var(--background)] transition hover:-translate-y-0.5">
             Take a Test →
           </Link>
         </div>
@@ -65,15 +65,15 @@ export default async function ProgramHubPage({ params }: { params: Promise<{ slu
 
       <div className="mx-auto max-w-6xl px-6 py-10">
         {/* Readiness placeholder — real analytics wire in later; no fabricated numbers. */}
-        <div className="mb-8 rounded-2xl border border-white/[0.08] bg-white/[0.02] p-5">
+        <div className="mb-8 rounded-lg border border-white/[0.08] bg-white/[0.02] p-5">
           <div className="flex flex-wrap items-center justify-between gap-3">
             <div>
               <p className="text-xs font-bold uppercase tracking-wider text-white/40">Exam Readiness</p>
-              <p className="mt-1 text-sm text-zinc-400">
+              <p className="mt-1 text-sm text-[var(--text-muted)]">
                 Your {name} readiness score appears here once you attempt tests — no simulated numbers.
               </p>
             </div>
-            <Link href={`/programs/${slug}/practice`} className={`shrink-0 text-sm font-semibold ${accent.text} hover:underline`}>
+            <Link href={`/programs/${slug}/practice`} className="shrink-0 text-sm font-semibold text-[var(--accent)] hover:underline">
               Start practising →
             </Link>
           </div>
@@ -86,13 +86,13 @@ export default async function ProgramHubPage({ params }: { params: Promise<{ slu
         {slug === "jee-advanced" && (
           <section className="mb-10">
             <div className="mb-5">
-              <div className="text-xs font-black uppercase tracking-[0.25em] text-sky-400">
+              <div className="text-xs font-black uppercase tracking-[0.25em] text-[var(--text-muted)]">
                 JEE Advanced Premium Notes
               </div>
               <h2 className="mt-1 text-2xl font-black text-white">
                 Advanced Inorganic Chemistry Notes
               </h2>
-              <p className="mt-2 text-sm text-zinc-400">
+              <p className="mt-2 text-sm text-[var(--text-muted)]">
                 Complete authored notes arranged as separate JEE Advanced chapters.
               </p>
             </div>
@@ -100,34 +100,34 @@ export default async function ProgramHubPage({ params }: { params: Promise<{ slu
             <div className="grid gap-4 md:grid-cols-2">
               <Link
                 href="/programs/jee-advanced/chapter/p-block-elements#learn"
-                className="rounded-2xl border border-cyan-400/30 bg-cyan-500/[0.08] p-5 transition hover:border-cyan-300/60 hover:bg-cyan-500/[0.13]"
+                className="rounded-lg border border-[var(--accent)]/30 bg-[var(--accent)]/[0.08] p-5 transition hover:border-[var(--accent)]/30 hover:bg-[var(--accent)]/[0.13]"
               >
-                <div className="text-[10px] font-black uppercase tracking-[0.22em] text-cyan-300">
+                <div className="text-[10px] font-black uppercase tracking-[0.22em] text-[var(--accent)]">
                   Full Notes · Separate Chapter
                 </div>
                 <h3 className="mt-2 text-xl font-black text-white">P-Block Elements</h3>
-                <p className="mt-2 text-sm leading-relaxed text-zinc-400">
+                <p className="mt-2 text-sm leading-relaxed text-[var(--text-muted)]">
                   Groups 15, 16, 17 and 18 — trends, structures, preparations,
                   reactions, exceptions and comparison orders.
                 </p>
-                <div className="mt-4 font-bold text-cyan-300">Open P-Block Notes →</div>
+                <div className="mt-4 font-bold text-[var(--accent)]">Open P-Block Notes →</div>
               </Link>
 
               <Link
                 href="/programs/jee-advanced/chapter/qualitative-analysis#learn"
-                className="rounded-2xl border border-violet-400/30 bg-violet-500/[0.08] p-5 transition hover:border-violet-300/60 hover:bg-violet-500/[0.13]"
+                className="rounded-lg border border-[var(--border)] bg-[var(--surface)] p-5 transition hover:border-[var(--border-strong)]"
               >
-                <div className="text-[10px] font-black uppercase tracking-[0.22em] text-violet-300">
+                <div className="text-[10px] font-black uppercase tracking-[0.22em] text-[var(--text-muted)]">
                   Full Notes · Separate Chapter
                 </div>
                 <h3 className="mt-2 text-xl font-black text-white">
                   Salt Analysis / Qualitative Analysis
                 </h3>
-                <p className="mt-2 text-sm leading-relaxed text-zinc-400">
+                <p className="mt-2 text-sm leading-relaxed text-[var(--text-muted)]">
                   Dry tests, anion analysis, cation groups, confirmatory tests,
                   interfering radicals and mixture analysis.
                 </p>
-                <div className="mt-4 font-bold text-violet-300">
+                <div className="mt-4 font-bold text-[var(--text-muted)]">
                   Open Qualitative Analysis Notes →
                 </div>
               </Link>
@@ -138,8 +138,8 @@ export default async function ProgramHubPage({ params }: { params: Promise<{ slu
         <div className="mb-12">
           <ProgramHubSections sections={sections} accentText={accent.text} accentCard={accent.card} />
           {hasSyllabus && (
-            <p className="mt-6 text-sm text-zinc-500">
-              <Link href={`/programs/${slug}/syllabus`} className={`font-semibold underline-offset-4 hover:underline ${accent.text}`}>
+            <p className="mt-6 text-sm text-[var(--text-muted)]">
+              <Link href={`/programs/${slug}/syllabus`} className="font-semibold underline-offset-4 hover:underline text-[var(--accent)]">
                 View official syllabus →
               </Link>
             </p>
@@ -147,7 +147,7 @@ export default async function ProgramHubPage({ params }: { params: Promise<{ slu
         </div>
 
         <div className="mt-12 text-center">
-          <Link href="/programs" className="text-sm text-zinc-500 transition hover:text-white">
+          <Link href="/programs" className="text-sm text-[var(--text-muted)] transition hover:text-white">
             ← All programs
           </Link>
         </div>

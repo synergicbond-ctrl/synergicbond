@@ -16,11 +16,9 @@ const features = [
 
 export default function JeeSection() {
   return (
-    <section className="relative mx-auto mt-36 max-w-7xl px-6 py-12 overflow-hidden rounded-[40px] border border-[#37c8f4]/60 bg-[var(--surface)]" style={{ boxShadow: "inset 0 1px 0 #37c8f426, 0 24px 70px -50px #37c8f4" }}>
+    <section className="relative mx-auto mt-36 max-w-7xl px-6 py-12 overflow-hidden rounded-lg border border-[#37c8f4]/60 bg-[var(--surface)]">
       {/* High-Tech Grid & Radial Glow Overlay */}
       <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
-        <div className="absolute -left-20 top-1/3 h-96 w-96 rounded-full bg-[var(--surface-2)] blur-[130px]" />
-        <div className="absolute right-0 bottom-0 h-96 w-96 rounded-full bg-[var(--surface-2)] blur-[130px]" />
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#3b82f615_1px,transparent_1px),linear-gradient(to_bottom,#3b82f615_1px,transparent_1px)] bg-[size:3rem_3rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)]" />
       </div>
 
@@ -61,15 +59,14 @@ export default function JeeSection() {
 
           <Link
             href="/dashboard"
-            className="group mt-10 inline-flex items-center gap-2.5 rounded-[var(--radius)] bg-[#37c8f4] px-8 py-4 font-extrabold text-black shadow-[0_10px_30px_rgba(55,200,244,0.35)] transition-all duration-300 hover:-translate-y-1 hover:brightness-110"
+            className="group mt-10 inline-flex items-center gap-2.5 rounded-[var(--radius)] bg-[var(--accent)] px-8 py-4 font-extrabold text-[var(--background)] shadow-none transition-all duration-300 hover:-translate-y-1 hover:brightness-110"
           >
             <span>Start JEE Preparation</span>
             <ArrowRight className="h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
           </Link>
         </div>
 
-        <div className="relative rounded-[36px] border border-[var(--border-strong)] bg-[var(--surface)] -900/40 via-[#0F172A]/80 p-8 sm:p-12 shadow-2xl overflow-hidden">
-          <div className="absolute -right-12 -bottom-12 h-48 w-48 rounded-full bg-[var(--surface-2)] blur-3xl" />
+        <div className="relative rounded-lg border border-[var(--border-strong)] bg-[var(--surface)] p-8 sm:p-12 overflow-hidden">
           
           <div className="grid gap-8 relative z-10">
             <div className="group flex items-start gap-5 rounded-[var(--radius)] border border-white/10 bg-white/[0.03] p-6 transition-all duration-300 hover:border-[var(--border-strong)] hover:bg-white/[0.06]">

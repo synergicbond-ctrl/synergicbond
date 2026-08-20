@@ -19,11 +19,11 @@ export default async function AttemptReviewPage({ params }: { params: Promise<{ 
 
   if (error === "Unauthorized") {
     return (
-      <main className="min-h-screen bg-black text-white">
+      <main className="min-h-screen bg-[var(--background)] text-white">
         <div className="mx-auto max-w-3xl px-4 py-16 text-center sm:px-6">
           <h1 className="text-2xl font-black">Sign in to review attempts</h1>
           <p className="mt-2 text-sm text-white/55">Attempt reviews are private to your account.</p>
-          <Link href="/auth/signin" className="mt-6 inline-block rounded-xl bg-gradient-to-r from-cyan-400 to-sky-500 px-5 py-2.5 text-sm font-black text-black">
+          <Link href="/auth/signin" className="mt-6 inline-block rounded-xl bg-[var(--accent)] px-5 py-2.5 text-sm font-black text-black">
             Sign in →
           </Link>
         </div>
@@ -36,7 +36,7 @@ export default async function AttemptReviewPage({ params }: { params: Promise<{ 
   const summary = summarizeAnswers(answers);
 
   return (
-    <main className="min-h-screen bg-black text-white">
+    <main className="min-h-screen bg-[var(--background)] text-white">
       <div className="mx-auto max-w-3xl px-4 py-10 sm:px-6">
         <nav className="mb-6 text-sm text-zinc-500">
           <Link href="/revision" className="transition hover:text-white">Revision</Link>
@@ -44,7 +44,7 @@ export default async function AttemptReviewPage({ params }: { params: Promise<{ 
           <span className="text-zinc-300">Attempt review</span>
         </nav>
 
-        <p className="mb-2 text-xs font-bold uppercase tracking-[0.3em] text-cyan-300">{attempt.source} · {attempt.exam}</p>
+        <p className="mb-2 text-xs font-bold uppercase tracking-[0.3em] text-[var(--accent)]">{attempt.source} · {attempt.exam}</p>
         <h1 className="text-3xl font-black">{attempt.title ?? `${attempt.exam} attempt`}</h1>
         <p className="mt-1 text-sm text-white/45">
           {new Date(attempt.submittedAt).toLocaleString("en-IN", { dateStyle: "medium", timeStyle: "short" })}
@@ -52,19 +52,19 @@ export default async function AttemptReviewPage({ params }: { params: Promise<{ 
         </p>
 
         <div className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-4">
-          <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-4 text-center">
-            <div className="text-2xl font-black text-cyan-300">{attempt.score}</div>
+          <div className="rounded-lg border border-white/10 bg-white/[0.03] p-4 text-center">
+            <div className="text-2xl font-black text-[var(--accent)]">{attempt.score}</div>
             <div className="mt-1 text-xs text-white/50">Score / {attempt.maxScore}</div>
           </div>
-          <div className="rounded-2xl border border-emerald-500/20 bg-emerald-500/5 p-4 text-center">
+          <div className="rounded-lg border border-emerald-500/20 bg-emerald-500/5 p-4 text-center">
             <div className="text-2xl font-black text-emerald-300">{attempt.correctCount}</div>
             <div className="mt-1 text-xs text-white/50">Correct</div>
           </div>
-          <div className="rounded-2xl border border-rose-500/20 bg-rose-500/5 p-4 text-center">
+          <div className="rounded-lg border border-rose-500/20 bg-rose-500/5 p-4 text-center">
             <div className="text-2xl font-black text-rose-300">{attempt.incorrectCount}</div>
             <div className="mt-1 text-xs text-white/50">Incorrect</div>
           </div>
-          <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-4 text-center">
+          <div className="rounded-lg border border-white/10 bg-white/[0.03] p-4 text-center">
             <div className="text-2xl font-black text-white/70">{summary.accuracy}%</div>
             <div className="mt-1 text-xs text-white/50">Accuracy</div>
           </div>
@@ -73,9 +73,9 @@ export default async function AttemptReviewPage({ params }: { params: Promise<{ 
         <h2 className="mt-10 mb-4 text-xl font-bold">Questions</h2>
         <div className="space-y-4">
           {answers.map((a) => (
-            <div key={a.answerId} className="rounded-2xl border border-white/[0.08] bg-[#111827] p-4">
+            <div key={a.answerId} className="rounded-lg border border-white/[0.08] bg-[var(--surface)] p-4">
               <div className="mb-2 flex flex-wrap items-center gap-2 text-[11px]">
-                <span className="font-bold text-cyan-300">Q{a.position}</span>
+                <span className="font-bold text-[var(--accent)]">Q{a.position}</span>
                 {a.chapter && <span className="rounded bg-white/5 px-2 py-0.5 text-white/60">{a.chapter}</span>}
                 {a.selectedAnswer === null ? (
                   <span className="rounded bg-white/10 px-2 py-0.5 font-bold text-white/50">Skipped</span>
@@ -108,7 +108,7 @@ export default async function AttemptReviewPage({ params }: { params: Promise<{ 
               )}
 
               {a.explanation && (
-                <div className="mt-3 rounded-xl border border-white/[0.08] bg-white/[0.03] p-3 text-sm text-white/65">
+                <div className="mt-3 rounded-lg border border-white/[0.08] bg-white/[0.03] p-3 text-sm text-white/65">
                   <span className="font-semibold text-indigo-300">Explanation: </span>
                   {renderChemistry(a.explanation)}
                 </div>

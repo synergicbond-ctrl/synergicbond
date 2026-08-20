@@ -129,19 +129,19 @@ export default function ReactionLessonPage() {
 
   if (!name) {
     return (
-      <main className="min-h-screen bg-[#0B0F19] text-white">
+      <main className="min-h-screen bg-[var(--background)] text-white">
         <div className="mx-auto max-w-3xl px-6 py-20 text-center">
           <p className="text-white/60">Reaction not found.</p>
-          <Link href="/name-reactions" className="mt-4 inline-block rounded-xl border border-white/10 px-4 py-2 text-sm text-cyan-300 hover:bg-white/5">← Back to Name Reactions</Link>
+          <Link href="/name-reactions" className="mt-4 inline-block rounded-xl border border-white/10 px-4 py-2 text-sm text-[var(--text-muted)] hover:bg-white/5">← Back to Name Reactions</Link>
         </div>
       </main>
     );
   }
 
   return (
-    <main className="min-h-screen bg-[#0B0F19] text-white">
+    <main className="min-h-screen bg-[var(--background)] text-white">
       {/* Sticky learning header */}
-      <div className="sticky top-0 z-40 border-b border-white/[0.07] bg-[#0B0F19]/90 backdrop-blur">
+      <div className="sticky top-0 z-40 border-b border-white/[0.07] bg-[var(--background)]/90 backdrop-blur">
         <div className="mx-auto flex max-w-3xl items-center justify-between gap-3 px-4 py-2.5">
           <button onClick={() => router.back()} className="flex items-center gap-1.5 rounded-lg px-2 py-1.5 text-sm text-white/70 transition hover:bg-white/5 hover:text-white">
             <ArrowLeft className="h-4 w-4" /> <span className="hidden sm:inline">Back</span>
@@ -163,7 +163,7 @@ export default function ReactionLessonPage() {
 
       <div className="mx-auto max-w-3xl px-4 py-5 sm:px-6">
         {/* Hero */}
-        <div className={`rounded-3xl border ${THEME.border} bg-gradient-to-br ${THEME.grad} ${THEME.glow} p-5 sm:p-6`}>
+        <div className={`rounded-lg border ${THEME.border} bg-gradient-to-br ${THEME.grad} ${THEME.glow} p-5 sm:p-6`}>
           <span className={`inline-block rounded-full border px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider ${THEME.chip}`}>Named Reaction</span>
           <h1 className="mt-2 flex items-start gap-2 text-2xl font-black sm:text-3xl"><span>⚗️</span> {name}</h1>
           {highYield && (
@@ -193,7 +193,7 @@ export default function ReactionLessonPage() {
           </div>
         )}
         {!mech && !loading && error && (
-          <div className="mt-6 rounded-2xl border border-white/[0.08] bg-[#111827] p-6 text-center text-white/60">
+          <div className="mt-6 rounded-lg border border-white/[0.08] bg-[var(--surface)] p-6 text-center text-white/60">
             ⚠️ This reaction isn’t ready yet. Please try again in a few moments.
           </div>
         )}
@@ -204,7 +204,7 @@ export default function ReactionLessonPage() {
             <Section title="Reaction Dashboard"><ReactionDashboard d={mech.dashboard} /></Section>
             {reactionGraph && (
               <Section title="Knowledge Graph">
-                <div className="rounded-2xl border border-white/[0.08] bg-white/[0.035] p-4">
+                <div className="rounded-lg border border-white/[0.08] bg-white/[0.035] p-4">
                   <div className="grid grid-cols-2 gap-2 sm:grid-cols-5">
                     {[
                       ["Reagents", reactionGraph.reagents.length],

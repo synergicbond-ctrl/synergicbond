@@ -110,7 +110,7 @@ export default function BetaTracker() {
   if (!showFeedback) return null;
 
   return (
-    <div className="fixed inset-x-3 bottom-3 z-[120] mx-auto max-w-md rounded-2xl border border-white/10 bg-slate-950 p-4 text-white shadow-2xl sm:right-4 sm:left-auto sm:mx-0">
+    <div className="fixed inset-x-3 bottom-3 z-[120] mx-auto max-w-md rounded-lg border border-[var(--border)] bg-[var(--surface)] p-4 text-white shadow-2xl sm:right-4 sm:left-auto sm:mx-0">
       <button
         type="button"
         aria-label="Close feedback"
@@ -120,7 +120,7 @@ export default function BetaTracker() {
         <X className="h-4 w-4" />
       </button>
       <div className="flex items-center gap-2 pr-8">
-        <MessageSquare className="h-4 w-4 text-cyan-300" />
+        <MessageSquare className="h-4 w-4 text-[var(--accent)]" />
         <h2 className="text-sm font-bold">Quick beta feedback</h2>
       </div>
 
@@ -130,7 +130,7 @@ export default function BetaTracker() {
           <select
             value={rating}
             onChange={(event) => setRating(Number(event.target.value))}
-            className="mt-1 w-full rounded-lg border border-white/10 bg-black px-3 py-2 text-sm text-white"
+            className="mt-1 w-full rounded-lg border border-white/10 bg-[var(--background)] px-3 py-2 text-sm text-white"
           >
             {[5, 4, 3, 2, 1].map((value) => (
               <option key={value} value={value}>{value}</option>
@@ -143,7 +143,7 @@ export default function BetaTracker() {
           <input
             value={mostUsefulFeature}
             onChange={(event) => setMostUsefulFeature(event.target.value)}
-            className="mt-1 w-full rounded-lg border border-white/10 bg-black px-3 py-2 text-sm text-white"
+            className="mt-1 w-full rounded-lg border border-white/10 bg-[var(--background)] px-3 py-2 text-sm text-white"
           />
         </label>
 
@@ -152,7 +152,7 @@ export default function BetaTracker() {
           <textarea
             value={biggestIssue}
             onChange={(event) => setBiggestIssue(event.target.value)}
-            className="mt-1 min-h-20 w-full rounded-lg border border-white/10 bg-black px-3 py-2 text-sm text-white"
+            className="mt-1 min-h-20 w-full rounded-lg border border-white/10 bg-[var(--background)] px-3 py-2 text-sm text-white"
           />
         </label>
 

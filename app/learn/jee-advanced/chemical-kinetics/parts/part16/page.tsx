@@ -65,7 +65,7 @@ export default function ChemicalKineticsPart16() {
                 ["14", "Eₐ may be apparent and can change when the dominant pathway changes."],
                 ["15", "At high substrate or surface coverage, saturation produces zero-order limiting behaviour."],
               ].map(([n, text]) => (
-                <div key={n} className="rounded-2xl border border-white/10 bg-white/[0.035] p-4">
+                <div key={n} className="rounded-lg border border-white/10 bg-white/[0.035] p-4">
                   <div className="font-mono text-xs text-rose-300">TRAP {n}</div>
                   <p className="mt-2 text-sm leading-6 text-slate-300">{text}</p>
                 </div>

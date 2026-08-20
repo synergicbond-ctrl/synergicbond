@@ -26,36 +26,36 @@ export default function SavedRevisionList() {
   }, []);
 
   return (
-    <section className="rounded-2xl border border-slate-100 bg-white p-6 shadow-sm">
+    <section className="rounded-lg border border-[var(--border)] bg-[var(--surface)] p-6">
       <div className="flex items-center justify-between">
-        <h2 className="text-2xl font-bold text-slate-800">Saved for Revision</h2>
+        <h2 className="text-2xl font-bold text-[var(--foreground)]">Saved for Revision</h2>
         {items && items.length > 0 && (
           <span className="rounded-full bg-amber-100 px-2.5 py-0.5 text-xs font-bold text-amber-700">{items.length}</span>
         )}
       </div>
-      <p className="mt-1 text-sm text-slate-600">Anything you tapped “Add to Revision” on — PYQs, notes and more.</p>
+      <p className="mt-1 text-sm text-[var(--text-muted)]">Anything you tapped &quot;Add to Revision&quot; on — PYQs, notes and more.</p>
 
       {items === null ? (
-        <p className="mt-4 text-sm text-slate-400">Loading…</p>
+        <p className="mt-4 text-sm text-[var(--text-muted)]">Loading…</p>
       ) : items.length === 0 ? (
-        <p className="mt-4 text-sm text-slate-600">
-          Nothing saved yet — tap <span className="font-semibold text-amber-700">Add to Revision</span> on any question in the{" "}
-          <Link href="/pyq" className="font-bold text-indigo-600 hover:underline">PYQ Center</Link> and it lands here.
+        <p className="mt-4 text-sm text-[var(--text-muted)]">
+          Nothing saved yet — tap <span className="font-semibold text-[var(--accent)]">Add to Revision</span> on any question in the{" "}
+          <Link href="/pyq" className="font-bold text-[var(--accent)] hover:underline">PYQ Center</Link> and it lands here.
         </p>
       ) : (
-        <ul className="mt-4 divide-y divide-slate-100">
+        <ul className="mt-4 divide-y divide-[var(--border)]">
           {items.map((it) => (
             <li key={it.id} className="flex items-center gap-3 py-3">
-              <span className="shrink-0 rounded bg-slate-100 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide text-slate-500">
+              <span className="shrink-0 rounded bg-[var(--surface-2)] px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide text-[var(--text-muted)]">
                 {TYPE_LABEL[it.type]}
               </span>
               <Link href={it.href} className="min-w-0 flex-1">
-                <span className="block truncate text-sm font-semibold text-slate-800 hover:text-indigo-600">{it.title}</span>
-                {it.subtitle && <span className="block truncate text-xs text-slate-500">{it.subtitle}</span>}
+                <span className="block truncate text-sm font-semibold text-[var(--foreground)] hover:text-[var(--accent)]">{it.title}</span>
+                {it.subtitle && <span className="block truncate text-xs text-[var(--text-muted)]">{it.subtitle}</span>}
               </Link>
               <button
                 onClick={() => removeRevision(it.id)}
-                className="shrink-0 text-xs font-semibold text-slate-400 transition hover:text-rose-500"
+                className="shrink-0 text-xs font-semibold text-[var(--text-muted)] transition hover:text-[var(--chem-trap)]"
                 aria-label={`Remove ${it.title}`}
               >
                 Remove

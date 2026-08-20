@@ -86,7 +86,7 @@ export default function PrivacyPolicyPage() {
         <p>
           You may access or update your profile information from your account, and
           you may request correction or deletion of your personal data by writing
-          to <a className="text-cyan-400 hover:text-cyan-300" href={`mailto:${LEGAL_SUPPORT_EMAIL}`}>{LEGAL_SUPPORT_EMAIL}</a>.
+          to <a className="text-[var(--accent)] hover:text-[var(--text-muted)]" href={`mailto:${LEGAL_SUPPORT_EMAIL}`}>{LEGAL_SUPPORT_EMAIL}</a>.
           Some records may be retained where the law requires.
         </p>
       </LegalSection>

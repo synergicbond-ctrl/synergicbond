@@ -83,7 +83,7 @@ export default function AchievementsPage() {
   ];
 
   return (
-    <main className="min-h-screen bg-black text-white px-4 py-12">
+    <main className="min-h-screen bg-[var(--background)] text-[var(--foreground)] px-4 py-12">
       <div className="mx-auto max-w-4xl">
         <div className="mb-8">
           <h1 className="text-4xl font-bold tracking-tight">🎮 Achievements</h1>
@@ -95,7 +95,7 @@ export default function AchievementsPage() {
         ) : (
           <div className="space-y-8">
             {/* XP Card */}
-            <div className="rounded-2xl border p-6" style={{ borderColor: currentLevel.color + "40", background: currentLevel.color + "10" }}>
+            <div className="rounded-lg border p-6" style={{ borderColor: currentLevel.color + "40", background: currentLevel.color + "10" }}>
               <div className="flex items-center justify-between flex-wrap gap-4 mb-4">
                 <div>
                   <p className="text-white/50 text-sm">Current Level</p>
@@ -120,7 +120,7 @@ export default function AchievementsPage() {
             </div>
 
             {/* Level roadmap */}
-            <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-6">
+            <div className="rounded-lg border border-white/10 bg-white/[0.03] p-6">
               <h3 className="font-bold text-lg mb-4">🗺️ Level Roadmap</h3>
               <div className="grid gap-2 sm:grid-cols-2">
                 {LEVELS.map((l) => (
@@ -141,7 +141,7 @@ export default function AchievementsPage() {
             </div>
 
             {/* Badges */}
-            <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-6">
+            <div className="rounded-lg border border-white/10 bg-white/[0.03] p-6">
               <h3 className="font-bold text-lg mb-4">🏅 Badges ({earned.length}/{ALL_BADGES.length} earned)</h3>
               <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
                 {ALL_BADGES.map((badge) => {
@@ -152,7 +152,7 @@ export default function AchievementsPage() {
                       <div className="text-3xl mb-2">{badge.icon}</div>
                       <p className="font-semibold text-sm">{badge.name}</p>
                       <p className="text-xs text-white/50 mt-0.5">{badge.description}</p>
-                      {isEarned && <p className="text-xs text-violet-400 mt-1">✓ Earned</p>}
+                      {isEarned && <p className="text-xs text-[var(--accent)] mt-1">✓ Earned</p>}
                     </div>
                   );
                 })}
@@ -160,13 +160,13 @@ export default function AchievementsPage() {
             </div>
 
             {/* How to earn XP */}
-            <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-6">
+            <div className="rounded-lg border border-white/10 bg-white/[0.03] p-6">
               <h3 className="font-bold text-lg mb-4">💡 How to Earn XP</h3>
               <div className="space-y-2">
                 {HOW_TO_EARN.map(({ action, xp: x }) => (
                   <div key={action} className="flex justify-between items-center rounded-xl bg-white/5 px-4 py-2">
                     <span className="text-white/80 text-sm">{action}</span>
-                    <span className="text-cyan-400 font-bold text-sm">{x}</span>
+                    <span className="text-[var(--accent)] font-bold text-sm">{x}</span>
                   </div>
                 ))}
               </div>

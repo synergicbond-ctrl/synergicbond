@@ -16,7 +16,7 @@ export interface NumberedSectionItem {
 
 export function ChemistryNotesShell({ children }: { children: React.ReactNode }) {
   return (
-    <div className="min-h-screen bg-[#0a1622] pt-10 sm:pt-14 pb-16 px-4 sm:px-6 lg:px-8 text-slate-200 font-sans selection:bg-cyan-500/20 selection:text-cyan-200">
+    <div className="min-h-screen bg-[var(--background)] pt-10 sm:pt-14 pb-16 px-4 sm:px-6 lg:px-8 text-[var(--foreground)] font-sans selection:bg-cyan-500/20 selection:text-cyan-200">
       <div className="mx-auto max-w-5xl space-y-8">{children}</div>
     </div>
   );
@@ -39,11 +39,11 @@ export function NotesChapterHeader({
 }) {
   return (
     <header
-      className="rounded-2xl p-6 sm:p-8 space-y-5"
-      style={{ border: "1px solid #24405c", background: "linear-gradient(180deg, #182b3e, #0a1622)" }}
+      className="rounded-lg p-6 sm:p-8 space-y-5"
+      style={{ border: "1px solid var(--border)", background: "var(--surface)" }}
     >
       {/* Breadcrumb */}
-      <nav className="flex items-center gap-2 text-xs sm:text-sm font-semibold" style={{ color: "#91a9bc" }}>
+      <nav className="flex items-center gap-2 text-xs sm:text-sm font-semibold" style={{ color: "var(--text-muted)" }}>
         <Link href="/notes" className="hover:text-white transition-colors">
           Notes Hub
         </Link>
@@ -52,33 +52,33 @@ export function NotesChapterHeader({
           Redox Reactions
         </Link>
         <span>/</span>
-        <span style={{ color: "#eef3f8" }}>{title}</span>
+        <span style={{ color: "var(--foreground)" }}>{title}</span>
       </nav>
 
       {/* Title & Description */}
       <div className="space-y-2.5">
         <span
           className="inline-flex items-center rounded-full px-3 py-1 text-xs font-bold uppercase tracking-wider"
-          style={{ border: "1px solid rgba(95,212,234,.4)", background: "rgba(95,212,234,.1)", color: "#5fd4ea" }}
+          style={{ border: "1px solid color-mix(in srgb, var(--chem-bond) 40%, transparent)", background: "color-mix(in srgb, var(--chem-bond) 10%, transparent)", color: "var(--chem-bond)" }}
         >
           {category}
         </span>
         <h1
           className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-white"
-          style={{ fontFamily: "Georgia, 'Iowan Old Style', 'Times New Roman', serif" }}
+          style={{ fontFamily: "var(--font-display)" }}
         >
           {title}
         </h1>
-        <p className="text-sm sm:text-base leading-relaxed max-w-3xl" style={{ color: "#c3d1dd" }}>
+        <p className="text-sm sm:text-base leading-relaxed max-w-3xl" style={{ color: "var(--text-body)" }}>
           {description}
         </p>
       </div>
 
       {/* Section tabs */}
-      <div className="pt-4" style={{ borderTop: "1px solid #24405c" }}>
+      <div className="pt-4" style={{ borderTop: "1px solid var(--border)" }}>
         <div
           className="mb-3 text-xs font-black uppercase"
-          style={{ color: "#e8b84b", letterSpacing: ".1em", fontFamily: "'SFMono-Regular',Consolas,'Liberation Mono',monospace" }}
+          style={{ color: "var(--chem-energy)", letterSpacing: ".1em", fontFamily: "var(--font-mono)" }}
         >
           Top chapter navigation
         </div>
@@ -112,12 +112,12 @@ export function NumberedSectionNav({
             aria-current={isActive ? "true" : undefined}
             className="shrink-0 text-left transition-all"
             style={{
-              border: `1px solid ${isActive ? "#e8b84b" : "#24405c"}`,
-              borderLeft: `4px solid ${isActive ? "#e8b84b" : "#5fd4ea"}`,
+              border: `1px solid ${isActive ? "var(--chem-energy)" : "var(--border)"}`,
+              borderLeft: `4px solid ${isActive ? "var(--chem-energy)" : "var(--chem-bond)"}`,
               borderRadius: 13,
               padding: "10px 13px",
-              background: isActive ? "rgba(232,184,75,.15)" : "rgba(18,34,50,.9)",
-              color: isActive ? "#e8b84b" : "#c3d1dd",
+              background: isActive ? "color-mix(in srgb, var(--chem-energy) 12%, transparent)" : "var(--surface)",
+              color: isActive ? "var(--chem-energy)" : "var(--text-body)",
               fontSize: "clamp(.8rem, 1.1vw, .93rem)",
               fontWeight: isActive ? 900 : 700,
               lineHeight: 1.25,
@@ -163,20 +163,20 @@ export function NumberedSectionFooter({
     justifyContent: "center",
     borderRadius: 12,
     padding: "12px 15px",
-    background: "linear-gradient(135deg, #182b3e, #122232)",
+    background: "var(--surface)",
     boxShadow: "0 10px 28px rgba(0,0,0,.18)",
     cursor: "pointer",
     textAlign: "left" as const,
   };
   const labelBase: React.CSSProperties = {
-    fontFamily: "'SFMono-Regular',Consolas,'Liberation Mono',monospace",
+    fontFamily: "var(--font-mono)",
     fontSize: 11,
     fontWeight: 900,
     letterSpacing: ".12em",
     textTransform: "uppercase" as const,
   };
   const titleBase: React.CSSProperties = {
-    color: "#eef3f8",
+    color: "var(--foreground)",
     fontSize: 13.5,
     fontWeight: 800,
     lineHeight: 1.35,
@@ -185,29 +185,29 @@ export function NumberedSectionFooter({
   return (
     <footer
       className="grid gap-3 sm:grid-cols-[1fr_auto_1fr]"
-      style={{ borderTop: "1px solid #24405c", paddingTop: 22 }}
+      style={{ borderTop: "1px solid var(--border)", paddingTop: 22 }}
       aria-label="Section navigation"
     >
       {prev ? (
         <button
           onClick={() => onSelectSection(prev.id)}
-          style={{ ...cardBase, border: "1px solid rgba(95,212,234,.5)" }}
+          style={{ ...cardBase, border: "1px solid color-mix(in srgb, var(--chem-bond) 50%, transparent)" }}
         >
-          <span style={{ ...labelBase, color: "#5fd4ea" }}>← Previous · Section {prev.id}</span>
+          <span style={{ ...labelBase, color: "var(--chem-bond)" }}>← Previous · Section {prev.id}</span>
           <span style={titleBase}>{prev.title}</span>
         </button>
       ) : (
-        <span aria-hidden className="hidden sm:block" style={{ border: "1px dashed #1c3049", borderRadius: 12, opacity: 0.35 }} />
+        <span aria-hidden className="hidden sm:block" style={{ border: "1px dashed var(--border)", borderRadius: 12, opacity: 0.35 }} />
       )}
       <Link
         href={hubHref}
         className="flex items-center justify-center"
         style={{
-          border: "1px solid #24405c",
+          border: "1px solid var(--border)",
           borderRadius: 12,
           padding: "12px 15px",
-          background: "linear-gradient(135deg, #182b3e, #122232)",
-          color: "#eef3f8",
+          background: "var(--surface)",
+          color: "var(--foreground)",
           fontSize: 13,
           fontWeight: 800,
           textDecoration: "none",
@@ -219,21 +219,21 @@ export function NumberedSectionFooter({
       {next ? (
         <button
           onClick={() => onSelectSection(next.id)}
-          style={{ ...cardBase, border: "1px solid rgba(232,184,75,.5)", textAlign: "right" }}
+          style={{ ...cardBase, border: "1px solid color-mix(in srgb, var(--chem-energy) 50%, transparent)", textAlign: "right" }}
         >
-          <span style={{ ...labelBase, color: "#e8b84b" }}>Next · Section {next.id} →</span>
+          <span style={{ ...labelBase, color: "var(--chem-energy)" }}>Next · Section {next.id} →</span>
           <span style={titleBase}>{next.title}</span>
         </button>
       ) : endLink ? (
         <Link
           href={endLink.href}
-          style={{ ...cardBase, border: "1px solid rgba(232,184,75,.5)", textAlign: "right", textDecoration: "none" }}
+          style={{ ...cardBase, border: "1px solid color-mix(in srgb, var(--chem-energy) 50%, transparent)", textAlign: "right", textDecoration: "none" }}
         >
-          <span style={{ ...labelBase, color: "#e8b84b" }}>Continue →</span>
+          <span style={{ ...labelBase, color: "var(--chem-energy)" }}>Continue →</span>
           <span style={titleBase}>{endLink.label}</span>
         </Link>
       ) : (
-        <span aria-hidden className="hidden sm:block" style={{ border: "1px dashed #1c3049", borderRadius: 12, opacity: 0.35 }} />
+        <span aria-hidden className="hidden sm:block" style={{ border: "1px dashed var(--border)", borderRadius: 12, opacity: 0.35 }} />
       )}
     </footer>
   );

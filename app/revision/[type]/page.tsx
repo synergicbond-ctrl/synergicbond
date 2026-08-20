@@ -17,7 +17,7 @@ export default async function RevisionSessionPage({ params, searchParams }: Page
   const session = generateRevisionSession(sessionType, sessionPayload);
 
   return (
-    <div className="min-h-screen bg-slate-50 text-slate-900 p-6 md:p-12 max-w-4xl mx-auto space-y-10">
+    <div className="min-h-screen bg-[var(--background)] text-[var(--foreground)] p-6 md:p-12 max-w-4xl mx-auto space-y-10">
       
       {/* Back to Engine Link */}
       <div>
@@ -27,9 +27,9 @@ export default async function RevisionSessionPage({ params, searchParams }: Page
       </div>
 
       {/* Session Header */}
-      <div className="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 text-center space-y-4">
-        <h1 className="text-3xl font-black tracking-tight text-slate-900">{session.title}</h1>
-        <p className="text-slate-600 max-w-xl mx-auto">{session.description}</p>
+      <div className="bg-[var(--surface)] p-8 rounded-lg shadow-sm border border-[var(--border)] text-center space-y-4">
+        <h1 className="text-3xl font-black tracking-tight text-[var(--foreground)]">{session.title}</h1>
+        <p className="text-[var(--text-muted)] max-w-xl mx-auto">{session.description}</p>
         
         <div className="inline-block bg-indigo-50 text-indigo-700 font-extrabold text-sm px-4 py-2 rounded-full">
           Estimated Time: {session.estimatedTimeMinutes} minutes
@@ -38,19 +38,19 @@ export default async function RevisionSessionPage({ params, searchParams }: Page
 
       {/* Target Items to Review */}
       <section className="space-y-4">
-        <h2 className="text-xl font-bold text-slate-800">High-Yield Focus Items</h2>
+        <h2 className="text-xl font-bold text-[var(--foreground)]">High-Yield Focus Items</h2>
         <div className="grid grid-cols-1 gap-4">
           {session.targetItems.length > 0 ? (
             session.targetItems.map((item, idx) => (
-              <div key={idx} className="p-5 bg-white rounded-xl border border-slate-200/60 shadow-sm flex items-center justify-between">
-                <span className="font-bold text-slate-700">{item}</span>
-                <span className="text-xs font-medium px-2.5 py-1 bg-slate-100 text-slate-600 rounded-full uppercase tracking-wide">
+              <div key={idx} className="p-5 bg-[var(--surface)] rounded-lg border border-[var(--border)] shadow-sm flex items-center justify-between">
+                <span className="font-bold text-[var(--foreground)]">{item}</span>
+                <span className="text-xs font-medium px-2.5 py-1 bg-[var(--surface-2)] text-[var(--text-muted)] rounded-full uppercase tracking-wide">
                   Reviewing
                 </span>
               </div>
             ))
           ) : (
-            <div className="p-8 bg-white rounded-xl border border-dashed border-slate-300 text-center text-slate-500">
+            <div className="p-8 bg-[var(--surface)] rounded-lg border border-dashed border-[var(--border)] text-center text-[var(--text-muted)]">
               No specific items loaded for this session.
             </div>
           )}
@@ -67,7 +67,7 @@ export default async function RevisionSessionPage({ params, searchParams }: Page
         </Link>
         <Link 
           href="/dashboard" 
-          className="py-4 px-8 bg-white border border-slate-200 hover:bg-slate-50 text-slate-700 font-bold text-center rounded-xl transition"
+          className="py-4 px-8 bg-[var(--surface)] border border-[var(--border)] hover:bg-[var(--surface-2)] text-[var(--foreground)] font-bold text-center rounded-lg transition"
         >
           Go to Dashboard
         </Link>

@@ -31,7 +31,7 @@ export default function EquivalentConceptPart2() {
   return (
     <div className="space-y-6 sm:space-y-8">
 <PageCard title="Equivalent Weight from Gaseous Oxide and Hydrogen Gas">
-          <div className="rounded-2xl border border-rose-500/20 bg-rose-950/20 text-rose-200 p-4">
+          <div className="rounded-lg border border-rose-500/20 bg-rose-950/20 text-rose-200 p-4">
             <h3 className="font-bold text-pink-700">
               Q. A solid element combines with excess of oxygen to form a gaseous oxide
               {" "}(V.D. = 50), without any change in volume of system at constant P and T.
@@ -88,7 +88,7 @@ export default function EquivalentConceptPart2() {
             </div>
           </div>
 
-          <div className="rounded-2xl border border-slate-800 bg-slate-950/40 p-4">
+          <div className="rounded-lg border border-slate-800 bg-slate-950/40 p-4">
             <h3 className="font-bold text-slate-900">
               Q. 0.36 gm of a metal is reacted with excess of dil. acid by which
               336 mL H<sub>2</sub> gas is produced at 0°C and 1 atm. What is the
@@ -116,7 +116,7 @@ export default function EquivalentConceptPart2() {
             Eq. wt. of ions:
           </h3>
 
-          <div className="rounded-2xl border border-blue-500/20 bg-blue-950/20 text-blue-200 p-4">
+          <div className="rounded-lg border border-blue-500/20 bg-blue-950/20 text-blue-200 p-4">
             <WorkingLine>
               SO<sub>4</sub><sup>2-</sup>
               <br />
@@ -187,7 +187,7 @@ export default function EquivalentConceptPart2() {
             Eq. wt. of acid:
           </h3>
 
-          <div className="rounded-2xl border border-blue-500/20 bg-blue-950/20 text-blue-200 p-4">
+          <div className="rounded-lg border border-blue-500/20 bg-blue-950/20 text-blue-200 p-4">
             <FormulaBox>
               H<sub>2</sub>SO<sub>4</sub> → 2H<sup>+</sup> + SO<sub>4</sub>
               <sup>2-</sup>
@@ -280,7 +280,7 @@ export default function EquivalentConceptPart2() {
             </MiniStructure>
           </div>
 
-          <div className="rounded-2xl border border-rose-500/20 bg-rose-950/20 text-rose-200 p-4">
+          <div className="rounded-lg border border-rose-500/20 bg-rose-950/20 text-rose-200 p-4">
             <h3 className="font-bold text-pink-700">
               H<sub>3</sub>BO<sub>3</sub> → Lewis acid
             </h3>
@@ -312,7 +312,7 @@ export default function EquivalentConceptPart2() {
             </div>
           </div>
 
-          <div className="rounded-2xl border border-amber-500/20 bg-amber-950/20 text-amber-200 p-4">
+          <div className="rounded-lg border border-amber-500/20 bg-amber-950/20 text-amber-200 p-4">
             <h3 className="font-bold text-amber-800">
               Acidic oxide / acid anhydride example:
             </h3>

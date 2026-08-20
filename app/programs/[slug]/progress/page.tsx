@@ -67,9 +67,9 @@ function fmtSeconds(s: number): string {
 
 function SignInPrompt({ label }: { label: string }) {
   return (
-    <div className="rounded-2xl border border-white/10 bg-white/[0.02] p-8 text-center">
+    <div className="rounded-lg border border-white/10 bg-white/[0.02] p-8 text-center">
       <h3 className="text-lg font-bold">Sign in to see your {label}</h3>
-      <Link href="/auth/signin" className="mt-4 inline-block rounded-xl bg-gradient-to-r from-cyan-400 to-sky-500 px-5 py-2.5 text-sm font-black text-black">
+      <Link href="/auth/signin" className="mt-4 inline-block rounded-xl bg-[var(--accent)] px-5 py-2.5 text-sm font-black text-black">
         Sign in →
       </Link>
     </div>
@@ -78,7 +78,7 @@ function SignInPrompt({ label }: { label: string }) {
 
 function Unavailable() {
   return (
-    <p className="rounded-2xl border border-white/10 bg-white/[0.02] p-8 text-center text-sm text-white/55">
+    <p className="rounded-lg border border-white/10 bg-white/[0.02] p-8 text-center text-sm text-white/55">
       This section is unavailable right now — try again shortly.
     </p>
   );
@@ -108,7 +108,7 @@ export default async function ProgressDashboardPage({ params }: { params: Promis
       {perfData ? <PerformanceView data={perfData} stats={stats} /> : <GuestPerformanceView stats={stats} />}
       <Link
         href="/exam-predictor"
-        className="flex items-center justify-between gap-4 rounded-2xl border border-purple-500/20 bg-purple-500/[0.05] p-5 transition hover:border-purple-400/40"
+        className="flex items-center justify-between gap-4 rounded-lg border border-purple-500/20 bg-purple-500/[0.05] p-5 transition hover:border-purple-400/40"
       >
         <div>
           <h3 className="font-bold text-purple-200">Exam Predictor →</h3>
@@ -128,30 +128,30 @@ export default async function ProgressDashboardPage({ params }: { params: Promis
   } else {
     const report = buildAnalytics(answers);
     masteryContent = !report.hasData ? (
-      <div className="rounded-2xl border border-white/10 bg-white/[0.02] p-8 text-center">
+      <div className="rounded-lg border border-white/10 bg-white/[0.02] p-8 text-center">
         <h3 className="text-lg font-bold">No attempts yet</h3>
         <p className="mx-auto mt-2 max-w-md text-sm text-zinc-400">
-          Answer questions in a <Link href="/tests" className="font-bold text-cyan-400 hover:underline">practice test</Link>,{" "}
-          <Link href="/pyq" className="font-bold text-cyan-400 hover:underline">PYQ</Link> set or{" "}
-          <Link href="/exam" className="font-bold text-cyan-400 hover:underline">mock exam</Link> — your mastery map builds automatically.
+          Answer questions in a <Link href="/tests" className="font-bold text-[var(--accent)] hover:underline">practice test</Link>,{" "}
+          <Link href="/pyq" className="font-bold text-[var(--accent)] hover:underline">PYQ</Link> set or{" "}
+          <Link href="/exam" className="font-bold text-[var(--accent)] hover:underline">mock exam</Link> — your mastery map builds automatically.
         </p>
       </div>
     ) : (
       <div className="space-y-8">
         <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
-          <div className="rounded-2xl border border-cyan-500/20 bg-cyan-500/[0.05] p-4 text-center">
-            <div className="text-2xl font-black text-cyan-300">{report.overall.accuracy}%</div>
+          <div className="rounded-lg border border-[var(--accent)]/30 bg-[var(--accent)]/[0.05] p-4 text-center">
+            <div className="text-2xl font-black text-[var(--accent)]">{report.overall.accuracy}%</div>
             <div className="mt-1 text-xs text-white/50">Overall accuracy</div>
           </div>
-          <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-4 text-center">
+          <div className="rounded-lg border border-white/10 bg-white/[0.03] p-4 text-center">
             <div className="text-2xl font-black text-white/80">{report.questionsAnswered}</div>
             <div className="mt-1 text-xs text-white/50">Questions answered</div>
           </div>
-          <div className="rounded-2xl border border-emerald-500/20 bg-emerald-500/[0.05] p-4 text-center">
+          <div className="rounded-lg border border-emerald-500/20 bg-emerald-500/[0.05] p-4 text-center">
             <div className="text-2xl font-black text-emerald-300">{report.bandCounts.green}</div>
             <div className="mt-1 text-xs text-white/50">Strong chapters</div>
           </div>
-          <div className="rounded-2xl border border-rose-500/20 bg-rose-500/[0.05] p-4 text-center">
+          <div className="rounded-lg border border-rose-500/20 bg-rose-500/[0.05] p-4 text-center">
             <div className="text-2xl font-black text-rose-300">{report.bandCounts.red}</div>
             <div className="mt-1 text-xs text-white/50">Weak chapters</div>
           </div>
@@ -186,7 +186,7 @@ export default async function ProgressDashboardPage({ params }: { params: Promis
         <section>
           <h3 className="mb-1 text-lg font-bold">Weakest Topics</h3>
           {report.weakTopics.length === 0 ? (
-            <p className="rounded-2xl border border-white/10 bg-white/[0.02] p-6 text-center text-sm text-white/55">
+            <p className="rounded-lg border border-white/10 bg-white/[0.02] p-6 text-center text-sm text-white/55">
               No weak topics yet — nothing below 75% with enough attempts.
             </p>
           ) : (
@@ -215,11 +215,11 @@ export default async function ProgressDashboardPage({ params }: { params: Promis
     const report = buildReadiness(answers);
     if (!report.hasData) {
       readinessContent = (
-        <div className="rounded-2xl border border-white/10 bg-white/[0.02] p-8 text-center">
+        <div className="rounded-lg border border-white/10 bg-white/[0.02] p-8 text-center">
           <h3 className="text-lg font-bold">No readiness score yet</h3>
           <p className="mx-auto mt-2 max-w-md text-sm text-zinc-400">
-            Attempt a <Link href="/tests" className="font-bold text-cyan-400 hover:underline">test</Link> or{" "}
-            <Link href="/pyq" className="font-bold text-cyan-400 hover:underline">PYQ</Link> set — your readiness score builds automatically.
+            Attempt a <Link href="/tests" className="font-bold text-[var(--accent)] hover:underline">test</Link> or{" "}
+            <Link href="/pyq" className="font-bold text-[var(--accent)] hover:underline">PYQ</Link> set — your readiness score builds automatically.
           </p>
         </div>
       );
@@ -227,7 +227,7 @@ export default async function ProgressDashboardPage({ params }: { params: Promis
       const m = READINESS_BAND_META[report.band];
       readinessContent = (
         <div className="space-y-8">
-          <div className={`flex flex-col items-center gap-3 rounded-2xl border p-8 text-center ${m.ring}`}>
+          <div className={`flex flex-col items-center gap-3 rounded-lg border p-8 text-center ${m.ring}`}>
             <div className="text-6xl font-black text-white">{report.score}<span className="text-2xl text-white/40">/100</span></div>
             <div className={`text-sm font-bold uppercase tracking-wider ${m.text}`}>{m.label}</div>
             {!report.confident && (
@@ -246,14 +246,14 @@ export default async function ProgressDashboardPage({ params }: { params: Promis
                     <span className="text-white/60">{c.value}% <span className="text-white/35">× {Math.round(c.weight * 100)}%</span></span>
                   </div>
                   <div className="h-2 w-full overflow-hidden rounded-full bg-white/[0.06]">
-                    <div className="h-full rounded-full bg-gradient-to-r from-cyan-400 to-sky-500" style={{ width: `${c.value}%` }} />
+                    <div className="h-full rounded-full bg-[var(--accent)]" style={{ width: `${c.value}%` }} />
                   </div>
                 </div>
               ))}
             </div>
           </section>
           <section className="grid gap-4 sm:grid-cols-2">
-            <div className="rounded-2xl border border-emerald-500/20 bg-emerald-500/[0.04] p-4">
+            <div className="rounded-lg border border-emerald-500/20 bg-emerald-500/[0.04] p-4">
               <h4 className="text-sm font-bold text-emerald-300">Strong chapters</h4>
               {report.strongChapters.length === 0 ? (
                 <p className="mt-2 text-xs text-white/45">None at ≥75% yet.</p>
@@ -261,7 +261,7 @@ export default async function ProgressDashboardPage({ params }: { params: Promis
                 <ul className="mt-2 space-y-1 text-sm text-white/75">{report.strongChapters.map((c) => <li key={c}>✓ {c}</li>)}</ul>
               )}
             </div>
-            <div className="rounded-2xl border border-rose-500/20 bg-rose-500/[0.04] p-4">
+            <div className="rounded-lg border border-rose-500/20 bg-rose-500/[0.04] p-4">
               <h4 className="text-sm font-bold text-rose-300">Weak chapters</h4>
               {report.weakChapters.length === 0 ? (
                 <p className="mt-2 text-xs text-white/45">No chapters below 50% with enough attempts.</p>
@@ -279,7 +279,7 @@ export default async function ProgressDashboardPage({ params }: { params: Promis
                     <div className="text-sm font-semibold text-white">{s.label}</div>
                     <div className="text-xs text-white/45">{s.reason}</div>
                   </div>
-                  <span className="text-sm font-semibold text-cyan-300">→</span>
+                  <span className="text-sm font-semibold text-[var(--accent)]">→</span>
                 </Link>
               ))}
             </div>
@@ -298,36 +298,36 @@ export default async function ProgressDashboardPage({ params }: { params: Promis
   } else {
     const report = buildNcertReport(answers);
     ncertContent = !report.hasData ? (
-      <div className="rounded-2xl border border-white/10 bg-white/[0.02] p-8 text-center">
+      <div className="rounded-lg border border-white/10 bg-white/[0.02] p-8 text-center">
         <h3 className="text-lg font-bold">No coverage yet</h3>
         <p className="mx-auto mt-2 max-w-md text-sm text-zinc-400">
-          Answer NCERT-linked questions in a <Link href="/pyq" className="font-bold text-cyan-400 hover:underline">PYQ</Link> set or{" "}
-          <Link href="/tests" className="font-bold text-cyan-400 hover:underline">test</Link> — your NCERT map builds automatically across {report.totalLines} tracked lines.
+          Answer NCERT-linked questions in a <Link href="/pyq" className="font-bold text-[var(--accent)] hover:underline">PYQ</Link> set or{" "}
+          <Link href="/tests" className="font-bold text-[var(--accent)] hover:underline">test</Link> — your NCERT map builds automatically across {report.totalLines} tracked lines.
         </p>
       </div>
     ) : (
       <div className="space-y-6">
         <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
-          <div className="rounded-2xl border border-cyan-500/20 bg-cyan-500/[0.05] p-4 text-center">
-            <div className="text-2xl font-black text-cyan-300">{report.coveragePct}%</div>
+          <div className="rounded-lg border border-[var(--accent)]/30 bg-[var(--accent)]/[0.05] p-4 text-center">
+            <div className="text-2xl font-black text-[var(--accent)]">{report.coveragePct}%</div>
             <div className="mt-1 text-xs text-white/50">Coverage ({report.covered}/{report.totalLines})</div>
           </div>
-          <div className="rounded-2xl border border-emerald-500/20 bg-emerald-500/[0.05] p-4 text-center">
+          <div className="rounded-lg border border-emerald-500/20 bg-emerald-500/[0.05] p-4 text-center">
             <div className="text-2xl font-black text-emerald-300">{report.mastered}</div>
             <div className="mt-1 text-xs text-white/50">Mastered</div>
           </div>
-          <div className="rounded-2xl border border-rose-500/20 bg-rose-500/[0.05] p-4 text-center">
+          <div className="rounded-lg border border-rose-500/20 bg-rose-500/[0.05] p-4 text-center">
             <div className="text-2xl font-black text-rose-300">{report.weak}</div>
             <div className="mt-1 text-xs text-white/50">Weak</div>
           </div>
-          <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-4 text-center">
+          <div className="rounded-lg border border-white/10 bg-white/[0.03] p-4 text-center">
             <div className="text-2xl font-black text-white/70">{report.unseen}</div>
             <div className="mt-1 text-xs text-white/50">Not seen</div>
           </div>
         </div>
         <div className="space-y-4">
           {report.chapters.map((ch) => (
-            <div key={ch.chapterKey} className="rounded-2xl border border-white/[0.08] bg-white/[0.02] p-4">
+            <div key={ch.chapterKey} className="rounded-lg border border-white/[0.08] bg-white/[0.02] p-4">
               <div className="mb-3 flex flex-wrap items-center justify-between gap-2">
                 <span className="text-sm font-bold text-white">{ch.chapterKey}</span>
                 <span className="text-xs text-white/45">
@@ -366,28 +366,28 @@ export default async function ProgressDashboardPage({ params }: { params: Promis
     } else {
       const report = buildSpeedReport(timedAnswers, engine.exam);
       speedContent = !report.hasData ? (
-        <div className="rounded-2xl border border-white/10 bg-white/[0.02] p-8 text-center">
+        <div className="rounded-lg border border-white/10 bg-white/[0.02] p-8 text-center">
           <h3 className="text-lg font-bold">No timed attempts yet</h3>
           <p className="mx-auto mt-2 max-w-md text-sm text-white/55">
-            Answer questions in <Link href={`/programs/${slug}/practice`} className="font-bold text-cyan-400 hover:underline">Practice</Link> — per-question time is recorded automatically.
+            Answer questions in <Link href={`/programs/${slug}/practice`} className="font-bold text-[var(--accent)] hover:underline">Practice</Link> — per-question time is recorded automatically.
           </p>
         </div>
       ) : (
         <div className="space-y-8">
           <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
-            <div className="rounded-2xl border border-cyan-500/20 bg-cyan-500/[0.05] p-4 text-center">
-              <div className="text-2xl font-black text-cyan-300">{fmtSeconds(report.avgSeconds)}</div>
+            <div className="rounded-lg border border-[var(--accent)]/30 bg-[var(--accent)]/[0.05] p-4 text-center">
+              <div className="text-2xl font-black text-[var(--accent)]">{fmtSeconds(report.avgSeconds)}</div>
               <div className="mt-1 text-xs text-white/50">Avg per question</div>
             </div>
-            <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-4 text-center">
+            <div className="rounded-lg border border-white/10 bg-white/[0.03] p-4 text-center">
               <div className="text-2xl font-black text-white/85">{report.timed}</div>
               <div className="mt-1 text-xs text-white/50">Timed answers</div>
             </div>
-            <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-4 text-center">
+            <div className="rounded-lg border border-white/10 bg-white/[0.03] p-4 text-center">
               <div className="text-2xl font-black text-white/60">{report.untimed}</div>
               <div className="mt-1 text-xs text-white/50">Untimed (excluded)</div>
             </div>
-            <div className="rounded-2xl border border-rose-500/20 bg-rose-500/[0.05] p-4 text-center">
+            <div className="rounded-lg border border-rose-500/20 bg-rose-500/[0.05] p-4 text-center">
               <div className="text-2xl font-black text-rose-300">{report.rushedWrong}</div>
               <div className="mt-1 text-xs text-white/50">Rushed & wrong</div>
             </div>

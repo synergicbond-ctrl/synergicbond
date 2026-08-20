@@ -18,10 +18,10 @@ const books = [
 
 // Difficulty as a calm cyan→purple progression (in-brand)
 const diffColor: Record<string, string> = {
-  Beginner: "text-cyan-300 bg-cyan-500/10 border-cyan-500/20",
-  Intermediate: "text-sky-300 bg-sky-500/10 border-sky-500/20",
-  Advanced: "text-violet-300 bg-violet-500/10 border-violet-500/20",
-  Expert: "text-purple-300 bg-purple-500/10 border-purple-500/20",
+  Beginner: "text-[var(--text-muted)] bg-[var(--surface-2)] border-[var(--border)]",
+  Intermediate: "text-[var(--text-muted)] bg-[var(--surface-2)] border-[var(--border)]",
+  Advanced: "text-[var(--text-muted)] bg-[var(--surface-2)] border-[var(--border)]",
+  Expert: "text-[var(--accent)] bg-[var(--surface-2)] border-[var(--border)]",
 };
 
 export default function ReferenceBooks() {
@@ -29,8 +29,8 @@ export default function ReferenceBooks() {
   return (
     <section className="mx-auto max-w-7xl px-6 py-12">
       <div className="mb-10 text-center">
-        <div className="inline-flex items-center gap-2 rounded-full border border-cyan-400/30 bg-cyan-500/10 px-4 py-1.5 text-cyan-300 text-xs font-bold tracking-widest uppercase mb-4 backdrop-blur-md shadow-sm">
-          <BookOpen className="h-3.5 w-3.5 text-cyan-400" />
+        <div className="inline-flex items-center gap-2 rounded-full border border-[var(--border)] bg-[var(--surface-2)] px-4 py-1.5 text-[var(--text-muted)] text-xs font-bold tracking-widest uppercase mb-4 shadow-sm">
+          <BookOpen className="h-3.5 w-3.5 text-[var(--accent)]" />
           {t("books.eyebrow")}
         </div>
         <h2 className="text-3xl font-black md:text-5xl text-white tracking-tight drop-shadow-sm">{t("books.title")}</h2>
@@ -43,7 +43,7 @@ export default function ReferenceBooks() {
         {books.map((book) => (
           <div
             key={book.title + book.author}
-            className="group relative rounded-3xl bg-gradient-to-b from-[#111827]/95 to-[#0B0F19]/95 border border-white/15 p-6 flex gap-5 backdrop-blur-2xl transition-all duration-500 hover:-translate-y-2 hover:border-white/30 hover:shadow-[0_20px_40px_rgba(0,0,0,0.6)]"
+            className="group relative rounded-lg bg-[var(--surface)] border border-white/15 p-6 flex gap-5 transition-all duration-500 hover:-translate-y-2 hover:border-[var(--border-strong)]"
             style={{ boxShadow: `0 10px 30px -15px ${book.color}26` }}
           >
             {/* Ambient hover glow */}
@@ -76,7 +76,7 @@ export default function ReferenceBooks() {
                   </span>
                 </div>
                 <h3 className="text-base font-black text-white leading-snug mb-1 group-hover:text-white transition-colors line-clamp-2">{book.title}</h3>
-                <p className="text-xs font-medium text-gray-400 mb-3">{book.author}</p>
+                <p className="text-xs font-medium text-[var(--text-muted)] mb-3">{book.author}</p>
               </div>
 
               {/* Affiliate link slot */}
@@ -94,7 +94,7 @@ export default function ReferenceBooks() {
           </div>
         ))}
       </div>
-      <p className="text-center text-xs text-gray-500 mt-10 max-w-xl mx-auto leading-relaxed">
+      <p className="text-center text-xs text-[var(--text-muted)] mt-10 max-w-xl mx-auto leading-relaxed">
         {/* AFFILIATE: replace book.affiliate with Amazon/store partner links to enable passive revenue */}
         As partners, qualifying purchases may support the platform at no extra cost to you.
       </p>

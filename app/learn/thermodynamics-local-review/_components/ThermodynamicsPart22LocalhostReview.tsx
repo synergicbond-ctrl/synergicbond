@@ -34,17 +34,17 @@ function Section({
   children: React.ReactNode;
 }) {
   return (
-    <section className="rounded-[2rem] border border-white/10 bg-slate-950/80 p-5 shadow-2xl shadow-black/20 backdrop-blur md:p-8">
+    <section className="border-t border-[var(--border)] py-10 md:py-12">
       <div className="flex items-start gap-4">
-        <span className="grid h-10 w-10 shrink-0 place-items-center rounded-2xl border border-cyan-300/30 bg-cyan-300/10 text-sm font-black text-cyan-200">
+        <span className="font-mono text-[11px] font-bold uppercase tracking-[0.2em] text-[var(--text-muted)]">
           {index}
         </span>
         <div>
-          <h2 className="text-2xl font-black tracking-tight text-white md:text-3xl">{title}</h2>
-          {subtitle ? <p className="mt-1 text-sm leading-6 text-slate-400">{subtitle}</p> : null}
+          <h2 className="font-display mt-1 text-[clamp(1.5rem,2.8vw,2.1rem)] font-semibold leading-tight text-[var(--foreground)]">{title}</h2>
+          {subtitle ? <p className="mt-1 text-sm leading-6 text-[var(--text-muted)]">{subtitle}</p> : null}
         </div>
       </div>
-      <div className="mt-6 space-y-5 text-[15px] leading-7 text-slate-200 md:text-base">{children}</div>
+      <div className="mt-6 space-y-5 text-[15px] leading-7 text-[var(--text-body)] md:text-base">{children}</div>
     </section>
   );
 }
@@ -59,10 +59,10 @@ function ConceptLens({
   tone?: Tone;
 }) {
   return (
-    <aside className={`rounded-2xl border p-5 ${toneMap[tone]}`}>
-      <p className="text-xs font-black uppercase tracking-[0.2em]">Synergic Bond Concept Lens</p>
-      <h3 className="mt-2 text-lg font-black text-white">{title}</h3>
-      <div className="mt-2 text-sm leading-6 text-slate-200">{children}</div>
+    <aside className={`rounded-lg border p-5 ${toneMap[tone]}`}>
+      <p className="font-mono text-xs font-semibold uppercase tracking-[0.18em]">Synergic Bond Concept Lens</p>
+      <h3 className="font-display mt-2 text-lg font-semibold text-[var(--foreground)]">{title}</h3>
+      <div className="mt-2 text-sm leading-6 text-[var(--text-body)]">{children}</div>
     </aside>
   );
 }
@@ -75,18 +75,18 @@ function Formula({
   children: React.ReactNode;
 }) {
   return (
-    <div className="overflow-x-auto rounded-2xl border border-cyan-300/20 bg-black/30 p-4 text-center">
+    <div className="overflow-x-auto rounded-lg border border-cyan-300/20 bg-[var(--surface-2)] p-4 text-center">
       {label ? (
-        <p className="mb-2 text-xs font-black uppercase tracking-[0.2em] text-cyan-300">{label}</p>
+        <p className="mb-2 font-mono text-xs font-semibold uppercase tracking-[0.18em] text-cyan-300">{label}</p>
       ) : null}
-      <div className="whitespace-nowrap font-mono text-lg font-black text-white md:text-xl">{children}</div>
+      <div className="whitespace-nowrap font-mono text-lg font-semibold text-[var(--foreground)] md:text-xl">{children}</div>
     </div>
   );
 }
 
 function ThirdLawCrystalAnimation() {
   return (
-    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
+    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-3 md:p-5">
       <svg
         viewBox="0 0 1200 780"
         role="img"
@@ -195,7 +195,7 @@ function BoltzmannMultiplicityAnimation() {
   ];
 
   return (
-    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
+    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-3 md:p-5">
       <svg
         viewBox="0 0 1200 820"
         role="img"
@@ -287,7 +287,7 @@ function BoltzmannMultiplicityAnimation() {
 
 function ResidualEntropyAnimation() {
   return (
-    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
+    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-3 md:p-5">
       <svg
         viewBox="0 0 1200 790"
         role="img"
@@ -373,7 +373,7 @@ function ResidualEntropyAnimation() {
 
 function DebyeT3Animation() {
   return (
-    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
+    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-3 md:p-5">
       <svg
         viewBox="0 0 1200 750"
         role="img"
@@ -442,7 +442,7 @@ function DebyeT3Animation() {
 
 function CalorimetricEntropyPathAnimation() {
   return (
-    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
+    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-3 md:p-5">
       <svg
         viewBox="0 0 1200 840"
         role="img"
@@ -521,7 +521,7 @@ function CalorimetricEntropyPathAnimation() {
 function AreaEquivalenceGraphic() {
   return (
     <div className="grid gap-4 lg:grid-cols-2">
-      <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
+      <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-3 md:p-5">
         <svg viewBox="0 0 760 560" role="img" aria-labelledby="cpt-title cpt-description" className="h-auto w-full">
           <title id="cpt-title">Area under heat capacity divided by temperature versus temperature</title>
           <desc id="cpt-description">The area under Cp divided by T from zero to the target temperature equals the entropy increase.</desc>
@@ -541,7 +541,7 @@ function AreaEquivalenceGraphic() {
         </svg>
       </div>
 
-      <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-white/10 bg-[#07111f] p-3 md:p-5">
+      <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-3 md:p-5">
         <svg viewBox="0 0 760 560" role="img" aria-labelledby="cpln-title cpln-description" className="h-auto w-full">
           <title id="cpln-title">Area under heat capacity versus logarithm of temperature</title>
           <desc id="cpln-description">Because d ln T equals dT divided by T, the area under Cp versus ln T gives the same entropy increase.</desc>
@@ -574,21 +574,21 @@ function ThirdLawFormsTable() {
   ];
 
   return (
-    <div className="overflow-x-auto rounded-2xl border border-white/10">
+    <div className="overflow-x-auto rounded-lg border border-[var(--border)]">
       <table className="min-w-full border-collapse text-left text-sm">
-        <thead className="bg-slate-900">
+        <thead className="bg-[var(--surface-2)]">
           <tr>
-            <th className="px-4 py-3 font-black text-white">Formulation</th>
-            <th className="px-4 py-3 font-black text-white">Statement</th>
-            <th className="px-4 py-3 font-black text-white">Role</th>
+            <th className="px-4 py-3 font-semibold text-[var(--foreground)]">Formulation</th>
+            <th className="px-4 py-3 font-semibold text-[var(--foreground)]">Statement</th>
+            <th className="px-4 py-3 font-semibold text-[var(--foreground)]">Role</th>
           </tr>
         </thead>
-        <tbody className="divide-y divide-white/10 bg-slate-950/70">
+        <tbody className="divide-y divide-[var(--border)] bg-[var(--surface)]">
           {rows.map(([form, statement, role]) => (
             <tr key={form}>
-              <td className="px-4 py-3 font-semibold text-slate-100">{form}</td>
+              <td className="px-4 py-3 font-semibold text-[var(--foreground)]">{form}</td>
               <td className="px-4 py-3 font-mono text-cyan-200">{statement}</td>
-              <td className="px-4 py-3 text-slate-300">{role}</td>
+              <td className="px-4 py-3 text-[var(--text-muted)]">{role}</td>
             </tr>
           ))}
         </tbody>
@@ -599,20 +599,20 @@ function ThirdLawFormsTable() {
 
 function RetainedDebyeExample() {
   return (
-    <article className="rounded-[2rem] border border-emerald-300/25 bg-emerald-300/[0.06] p-5 md:p-7">
+    <article className="rounded-2xl border border-emerald-300/25 bg-emerald-300/[0.06] p-5 md:p-7">
       <div className="flex flex-wrap items-center justify-between gap-3">
         <div>
-          <p className="text-xs font-black uppercase tracking-[0.2em] text-emerald-300">
+          <p className="font-mono text-xs font-semibold uppercase tracking-[0.18em] text-emerald-300">
             Chapter numerical
           </p>
-          <h3 className="mt-2 text-xl font-black text-white">
+          <h3 className="mt-2 font-display text-xl font-semibold text-[var(--foreground)]">
             Low-temperature entropy from one heat-capacity measurement
           </h3>
         </div>
         <Chip tone="emerald">DEBYE T³ LAW</Chip>
       </div>
 
-      <p className="mt-5 leading-7 text-slate-200">
+      <p className="mt-5 leading-7 text-[var(--text-body)]">
         The molar constant-pressure heat capacity of a non-metallic solid at {String.raw`\(4.2\ \mathrm K\)`} is
         {String.raw`\(0.43\ \mathrm{J\,K^{-1}mol^{-1}}\)`}. Find its molar entropy at that temperature,
         assuming a perfect crystal and validity of {String.raw`\(C_{p,m}=aT^3\)`} from {String.raw`\(0\)`} to {String.raw`\(4.2\ \mathrm K\)`}.
@@ -645,20 +645,20 @@ function RetainedDebyeExample() {
 
 function ResidualEntropyImperfectCrystals() {
   return (
-    <article className="rounded-[2rem] border border-rose-300/25 bg-rose-300/[0.06] p-5 md:p-7">
+    <article className="rounded-2xl border border-rose-300/25 bg-rose-300/[0.06] p-5 md:p-7">
       <div className="flex flex-wrap items-center justify-between gap-3">
         <div>
-          <p className="text-xs font-black uppercase tracking-[0.2em] text-rose-300">
+          <p className="font-mono text-xs font-semibold uppercase tracking-[0.18em] text-rose-300">
             Exception to the Third Law
           </p>
-          <h3 className="mt-2 text-xl font-black text-white">
+          <h3 className="mt-2 font-display text-xl font-semibold text-[var(--foreground)]">
             Residual entropy of imperfect crystals
           </h3>
         </div>
         <Chip tone="rose">S(0) &gt; 0</Chip>
       </div>
 
-      <p className="mt-4 leading-7 text-slate-300">
+      <p className="mt-4 leading-7 text-[var(--text-muted)]">
         The Third Law statement S<sub>m</sub>(0) = 0 applies strictly to a perfect crystal, meaning every
         lattice site has one unique, ordered orientation. Some molecular solids freeze into a rigid lattice
         before every molecule can settle into its lowest-energy orientation. The disorder becomes trapped, so
@@ -710,10 +710,10 @@ function RetainedSummaryGrid() {
   return (
     <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
       {items.map(([title, text], index) => (
-        <article key={title} className="rounded-2xl border border-white/10 bg-slate-900/70 p-5">
-          <p className="text-xs font-black uppercase tracking-[0.2em] text-cyan-300">{String(index + 1).padStart(2, "0")}</p>
-          <h3 className="mt-2 text-lg font-black text-white">{title}</h3>
-          <p className="mt-2 text-sm leading-6 text-slate-300">{text}</p>
+        <article key={title} className="rounded-lg border border-[var(--border)] bg-[var(--surface)] p-5">
+          <p className="font-mono text-xs font-semibold uppercase tracking-[0.18em] text-cyan-300">{String(index + 1).padStart(2, "0")}</p>
+          <h3 className="font-display mt-2 text-lg font-semibold text-[var(--foreground)]">{title}</h3>
+          <p className="mt-2 text-sm leading-6 text-[var(--text-muted)]">{text}</p>
         </article>
       ))}
     </div>
@@ -769,15 +769,15 @@ function WorkedExamples() {
   return (
     <div className="grid gap-4 lg:grid-cols-2">
       {examples.map((item) => (
-        <article key={item.title} className="rounded-2xl border border-white/10 bg-slate-900/70 p-5">
-          <h3 className=" font-black text-white">
+        <article key={item.title} className="rounded-lg border border-[var(--border)] bg-[var(--surface)] p-5">
+          <h3 className=" font-display font-semibold text-[var(--foreground)]">
             <span className="mr-2 text-amber-300">◆</span>
             {item.title}
           </h3>
-          <p className="mt-4 leading-7 text-slate-200">{item.question}</p>
+          <p className="mt-4 leading-7 text-[var(--text-body)]">{item.question}</p>
           <div className="mt-4 rounded-xl border border-emerald-300/20 bg-emerald-300/[0.06] p-4">
-            <p className="text-xs font-black uppercase tracking-[0.2em] text-emerald-300">Solution</p>
-            <p className="mt-2 text-sm leading-6 text-slate-200">{item.solution}</p>
+            <p className="font-mono text-xs font-semibold uppercase tracking-[0.18em] text-emerald-300">Solution</p>
+            <p className="mt-2 text-sm leading-6 text-[var(--text-body)]">{item.solution}</p>
           </div>
         </article>
       ))}
@@ -904,15 +904,15 @@ function ProblemLadder() {
   return (
     <div className="grid gap-4 lg:grid-cols-2">
       {problems.map((item) => (
-        <article key={item.title} className="group rounded-2xl border border-white/10 bg-slate-900/70 p-5">
-          <h3 className=" font-black text-white">
+        <article key={item.title} className="group rounded-lg border border-[var(--border)] bg-[var(--surface)] p-5">
+          <h3 className=" font-display font-semibold text-[var(--foreground)]">
             <span className="mr-2 text-amber-300">◆</span>
             {item.title}
           </h3>
-          <p className="mt-4 leading-7 text-slate-200">{item.question}</p>
+          <p className="mt-4 leading-7 text-[var(--text-body)]">{item.question}</p>
           <div className="mt-4 rounded-xl border border-emerald-300/20 bg-emerald-300/[0.06] p-4">
-            <p className="text-xs font-black uppercase tracking-[0.2em] text-emerald-300">Solution</p>
-            <p className="mt-2 text-sm leading-6 text-slate-200">{item.solution}</p>
+            <p className="font-mono text-xs font-semibold uppercase tracking-[0.18em] text-emerald-300">Solution</p>
+            <p className="mt-2 text-sm leading-6 text-[var(--text-body)]">{item.solution}</p>
           </div>
         </article>
       ))}
@@ -965,23 +965,23 @@ const traps = [
 
 function TrapTable() {
   return (
-    <div className="overflow-x-auto rounded-2xl border border-white/10">
+    <div className="overflow-x-auto rounded-lg border border-[var(--border)]">
       <table className="min-w-full border-collapse text-left text-sm">
-        <thead className="bg-slate-900">
+        <thead className="bg-[var(--surface-2)]">
           <tr>
-            <th className="px-4 py-3 font-black text-white">Tempting statement</th>
-            <th className="px-4 py-3 font-black text-white">Verdict</th>
-            <th className="px-4 py-3 font-black text-white">Correction</th>
+            <th className="px-4 py-3 font-semibold text-[var(--foreground)]">Tempting statement</th>
+            <th className="px-4 py-3 font-semibold text-[var(--foreground)]">Verdict</th>
+            <th className="px-4 py-3 font-semibold text-[var(--foreground)]">Correction</th>
           </tr>
         </thead>
-        <tbody className="divide-y divide-white/10 bg-slate-950/70">
+        <tbody className="divide-y divide-[var(--border)] bg-[var(--surface)]">
           {traps.map(([statement, verdict, correction]) => (
             <tr key={statement}>
-              <td className="px-4 py-3 font-semibold text-slate-100">{statement}</td>
+              <td className="px-4 py-3 font-semibold text-[var(--foreground)]">{statement}</td>
               <td className="px-4 py-3">
                 <span className="rounded-full bg-rose-400/15 px-3 py-1 text-xs font-black text-rose-300">{verdict}</span>
               </td>
-              <td className="px-4 py-3 leading-6 text-slate-300">{correction}</td>
+              <td className="px-4 py-3 leading-6 text-[var(--text-muted)]">{correction}</td>
             </tr>
           ))}
         </tbody>
@@ -1017,9 +1017,9 @@ function DailyLifeGrid() {
   return (
     <div className="grid gap-4 md:grid-cols-2">
       {items.map((item) => (
-        <article key={item.title} className={`rounded-3xl border p-5 ${toneMap[item.tone]}`}>
-          <h3 className="text-xl font-black text-white">{item.title}</h3>
-          <p className="mt-2 text-sm leading-6 text-slate-200">{item.text}</p>
+        <article key={item.title} className={`rounded-lg border p-5 ${toneMap[item.tone]}`}>
+          <h3 className="font-display text-xl font-semibold text-[var(--foreground)]">{item.title}</h3>
+          <p className="mt-2 text-sm leading-6 text-[var(--text-body)]">{item.text}</p>
         </article>
       ))}
     </div>
@@ -1028,8 +1028,8 @@ function DailyLifeGrid() {
 
 export default function ThermodynamicsPart22() {
   return (
-    <main className="min-h-screen bg-[#020617] text-slate-100">
-      <header className="relative overflow-hidden border-b border-white/10">
+    <main className="min-h-screen bg-[var(--background)] text-[var(--foreground)]">
+      <header className="relative overflow-hidden border-b border-[var(--border)]">
         <div
           aria-hidden="true"
           className="absolute inset-0 bg-[radial-gradient(circle_at_14%_20%,rgba(34,211,238,0.20),transparent_32%),radial-gradient(circle_at_86%_15%,rgba(217,70,239,0.18),transparent_30%),radial-gradient(circle_at_50%_100%,rgba(52,211,153,0.10),transparent_34%)]"
@@ -1041,33 +1041,33 @@ export default function ThermodynamicsPart22() {
             <Chip tone="emerald">THIRD-LAW & STATISTICAL ENTROPY</Chip>
           </div>
 
-          <div className="mt-8 grid gap-10 lg:grid-cols-[1.15fr_0.85fr] lg:items-center">
+          <div className="mt-8 grid grid-cols-1 gap-10 lg:grid-cols-[1.15fr_0.85fr] lg:items-center">
             <div>
-              <p className="text-sm font-black uppercase tracking-[0.3em] text-cyan-300">
+              <p className="font-mono text-xs font-semibold uppercase tracking-[0.2em] text-cyan-300">
                 Thermodynamics • Absolute-Entropy Foundation
               </p>
-              <h1 className="mt-4 max-w-4xl text-4xl font-black tracking-[-0.045em] text-white md:text-6xl">
+              <h1 className="font-display mt-4 max-w-4xl text-4xl font-semibold tracking-[-0.025em] text-[var(--foreground)] md:text-5xl">
                 The Third Law gives entropy a physical zero—and Boltzmann explains when that zero fails
               </h1>
-              <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-300">
+              <p className="mt-6 max-w-3xl text-lg leading-8 text-[var(--text-muted)]">
                 Perfect order with one ground-state arrangement gives {String.raw`\(S(0)=0\)`}.
                 Degenerate frozen arrangements create residual entropy. Calorimetry then builds the entropy upward
                 through {String.raw`\(C_p/T\)`} integrals and equilibrium transition jumps.
               </p>
             </div>
 
-            <div className="rounded-[2rem] border border-white/10 bg-white/[0.05] p-6 shadow-2xl shadow-cyan-950/25">
-              <p className="text-xs font-black uppercase tracking-[0.22em] text-fuchsia-300">
+            <div className="rounded-xl border border-[var(--border)] bg-[var(--surface)] p-6">
+              <p className="font-mono text-xs font-semibold uppercase tracking-[0.22em] text-fuchsia-300">
                 Third-Law core
               </p>
               <div className="mt-4 space-y-3">
-                <div className="rounded-xl bg-cyan-400/10 p-4 font-mono text-base font-black text-white">
+                <div className="rounded-xl bg-cyan-400/10 p-4 font-mono text-base font-semibold text-[var(--foreground)]">
                   S = k<sub>B</sub>lnΩ
                 </div>
-                <div className="rounded-xl bg-violet-400/10 p-4 font-mono text-base font-black text-white">
+                <div className="rounded-xl bg-violet-400/10 p-4 font-mono text-base font-semibold text-[var(--foreground)]">
                   Ω<sub>0</sub> = 1 ⇒ S(0) = 0
                 </div>
-                <div className="rounded-xl bg-emerald-400/10 p-4 font-mono text-base font-black text-white">
+                <div className="rounded-xl bg-emerald-400/10 p-4 font-mono text-base font-semibold text-[var(--foreground)]">
                   S°<sub>m</sub>(T) = S<sub>res,m</sub> + ∫C°<sub>p,m</sub>/T dT + ΣΔH°<sub>tr</sub>/T<sub>tr</sub>
                 </div>
               </div>
@@ -1255,15 +1255,15 @@ export default function ThermodynamicsPart22() {
           subtitle="Two independent routes should agree for an equilibrium substance."
         >
           <div className="grid gap-4 md:grid-cols-2">
-            <article className="rounded-3xl border border-cyan-300/20 bg-cyan-300/[0.05] p-5">
-              <h3 className="text-xl font-black text-white">Calorimetric route</h3>
-              <p className="mt-3 text-sm leading-6 text-slate-200">
+            <article className="rounded-lg border border-cyan-300/20 bg-cyan-300/[0.05] p-5">
+              <h3 className="font-display text-xl font-semibold text-[var(--foreground)]">Calorimetric route</h3>
+              <p className="mt-3 text-sm leading-6 text-[var(--text-body)]">
                 Measure {String.raw`\(C_p(T)\)`}, extrapolate to {String.raw`\(0\ \mathrm K\)`}, and add every phase-transition entropy.
               </p>
             </article>
-            <article className="rounded-3xl border border-violet-300/20 bg-violet-300/[0.05] p-5">
-              <h3 className="text-xl font-black text-white">Statistical/spectroscopic route</h3>
-              <p className="mt-3 text-sm leading-6 text-slate-200">
+            <article className="rounded-lg border border-violet-300/20 bg-violet-300/[0.05] p-5">
+              <h3 className="font-display text-xl font-semibold text-[var(--foreground)]">Statistical/spectroscopic route</h3>
+              <p className="mt-3 text-sm leading-6 text-[var(--text-body)]">
                 Determine molecular energy levels and degeneracies, evaluate state populations, and calculate entropy statistically.
               </p>
             </article>
@@ -1317,13 +1317,13 @@ export default function ThermodynamicsPart22() {
           <ProblemLadder />
         </Section>
 
-        <section className="rounded-[2rem] border border-white/10 bg-gradient-to-r from-slate-950 via-slate-900 to-slate-950 p-6 md:p-8">
+        <section className="rounded-xl border border-[var(--border)] bg-[var(--surface)] p-6 md:p-8">
           <div className="flex flex-wrap items-center justify-between gap-4">
             <div>
-              <p className="text-xs font-black uppercase tracking-[0.22em] text-fuchsia-300">
+              <p className="font-mono text-xs font-semibold uppercase tracking-[0.22em] text-fuchsia-300">
                 Synergic Bond rapid recall
               </p>
-              <h2 className="mt-2 text-2xl font-black text-white">
+              <h2 className="mt-2 text-2xl font-semibold text-[var(--foreground)]">
                 A unique ground state gives zero entropy; measured heat capacities build the absolute entropy upward
               </h2>
             </div>
@@ -1337,9 +1337,9 @@ export default function ThermodynamicsPart22() {
               ["Residual entropy", "Ω0>1 gives Sres>0"],
               ["Calorimetry", "Σ∫Cp/T dT + ΣΔHtr/Ttr"],
             ].map(([term, meaning]) => (
-              <div key={term} className="rounded-2xl border border-white/10 bg-black/25 p-4">
-                <p className="font-black text-white">{term}</p>
-                <p className="mt-1 text-sm leading-6 text-slate-300">{meaning}</p>
+              <div key={term} className="rounded-lg border border-[var(--border)] bg-[var(--surface-2)] p-4">
+                <p className="font-semibold text-[var(--foreground)]">{term}</p>
+                <p className="mt-1 text-sm leading-6 text-[var(--text-muted)]">{meaning}</p>
               </div>
             ))}
           </div>

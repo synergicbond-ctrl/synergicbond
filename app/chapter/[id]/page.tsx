@@ -228,7 +228,7 @@ export default async function ChapterPage({ params }: PageProps) {
         <div className="space-y-6">
           <AiTutorBox chapter={chapter.title} concepts={conceptStrings} />
           <VisionUploader />
-          <div className="p-6 rounded-lg shadow-sm border border-slate-100 dark:border-slate-800 bg-white dark:bg-slate-900 text-center space-y-3"> 
+          <div className="p-6 rounded-lg shadow-sm border border-slate-100 dark:border-slate-800 bg-white dark:bg-slate-900 text-center space-y-3">
             <h3 className="font-bold">Progress Dashboard Link</h3>
             <p className="text-xs text-slate-500 dark:text-slate-400">Review chapter analytics and accuracy percentages.</p>
             <Link href="/dashboard" className="block w-full py-3 bg-indigo-600 hover:bg-indigo-700 text-white font-bold rounded-xl transition shadow-sm">

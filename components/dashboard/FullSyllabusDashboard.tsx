@@ -247,7 +247,7 @@ function ShortNotesTab({ programName, chapters }: { programName: string; chapter
             onClick={() => setSelectedCategory(c.id)}
             className={`shrink-0 px-3 py-1.5 rounded-lg text-xs font-bold transition ${
               selectedCategory === c.id 
-                ? "bg-[var(--accent)]/15 border border-[var(--accent)]/40 text-[var(--accent)]" 
+                ? "bg-[var(--accent)]/15 border border-[var(--accent)]/40 text-[var(--accent)]"
                 : "bg-white/[0.04] border border-white/10 text-white/60 hover:text-white hover:bg-white/[0.07]"
             }`}
           >
@@ -395,7 +395,7 @@ function PracticeProblemsTab({
             onClick={() => setSelectedFormat(f.id)}
             className={`shrink-0 px-3 py-1.5 rounded-lg text-xs font-bold transition ${
               selectedFormat === f.id 
-                ? "bg-emerald-500/20 border border-emerald-500/50 text-[var(--text-muted)]" 
+                ? "bg-emerald-500/20 border border-emerald-500/50 text-[var(--text-muted)]"
                 : "bg-white/[0.04] border border-white/10 text-white/60 hover:text-white hover:bg-white/[0.07]"
             }`}
           >

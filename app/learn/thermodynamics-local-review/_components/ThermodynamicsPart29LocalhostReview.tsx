@@ -12,11 +12,11 @@ const toneStyles: Record<Tone, string> = {
 };
 function Section({ index, title, subtitle, children }: { index: string; title: string; subtitle?: string; children: React.ReactNode }) {
   return (
-    <section className="rounded-[2rem] border border-[var(--border)] bg-slate-950/80 p-5 shadow-2xl shadow-black/20 backdrop-blur md:p-8">
+    <section className="border-t border-[var(--border)] py-10 md:py-12">
       <div className="flex items-start gap-4">
-        <span className="grid h-11 w-11 shrink-0 place-items-center rounded-lg border border-cyan-300/30 bg-cyan-300/10 text-sm font-black text-cyan-200">{index}</span>
+        <span className="font-mono text-[11px] font-bold uppercase tracking-[0.2em] text-[var(--text-muted)]">{index}</span>
         <div>
-          <h2 className="text-2xl font-black tracking-tight text-white md:text-3xl">{title}</h2>
+          <h2 className="font-display mt-1 text-[clamp(1.5rem,2.8vw,2.1rem)] font-semibold leading-tight text-[var(--foreground)]">{title}</h2>
           {subtitle && <p className="mt-1 max-w-4xl text-sm leading-6 text-[var(--text-muted)]">{subtitle}</p>}
         </div>
       </div>
@@ -26,17 +26,17 @@ function Section({ index, title, subtitle, children }: { index: string; title: s
 }
 function Formula({ label, children }: { label: string; children: React.ReactNode }) {
   return (
-    <div className="overflow-x-auto rounded-lg border border-cyan-300/20 bg-black/30 p-4 text-center">
-      <p className="mb-2 text-xs font-black uppercase tracking-[0.2em] text-cyan-300">{label}</p>
-      <div className="whitespace-nowrap font-mono text-lg font-black text-white md:text-xl">{children}</div>
+    <div className="overflow-x-auto rounded-lg border border-cyan-300/20 bg-[var(--surface-2)] p-4 text-center">
+      <p className="mb-2 font-mono text-xs font-semibold uppercase tracking-[0.18em] text-cyan-300">{label}</p>
+      <div className="whitespace-nowrap font-mono text-lg font-semibold text-[var(--foreground)] md:text-xl">{children}</div>
     </div>
   );
 }
 function Lens({ title, children, tone = "cyan" }: { title: string; children: React.ReactNode; tone?: Tone }) {
   return (
     <aside className={`rounded-lg border p-5 ${toneStyles[tone]}`}>
-      <p className="text-xs font-black uppercase tracking-[0.2em]">Concept</p>
-      <h3 className="mt-2 text-lg font-black text-white">{title}</h3>
+      <p className="font-mono text-xs font-semibold uppercase tracking-[0.18em]">Concept</p>
+      <h3 className="font-display mt-2 text-lg font-semibold text-[var(--foreground)]">{title}</h3>
       <div className="mt-2 text-sm leading-6 text-[var(--text-body)]">{children}</div>
     </aside>
   );
@@ -45,7 +45,7 @@ function Lens({ title, children, tone = "cyan" }: { title: string; children: Rea
 // SVG 1: G vs reaction coordinate showing minimum at equilibrium
 function GvsXiSVG() {
   return (
-    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-[var(--border)] bg-[var(--surface)] p-3 md:p-5">
+    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-3 md:p-5">
       <svg viewBox="0 0 1200 620" role="img" aria-labelledby="p29-gxi-title p29-gxi-desc" className="h-auto w-full">
         <title id="p29-gxi-title">Total Gibbs energy versus extent of reaction showing equilibrium minimum</title>
         <desc id="p29-gxi-desc">
@@ -112,7 +112,7 @@ function GvsXiSVG() {
 // SVG 2: Q vs K direction indicator
 function QvsKSVG() {
   return (
-    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-[var(--border)] bg-[var(--surface)] p-3 md:p-5">
+    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-3 md:p-5">
       <svg viewBox="0 0 1200 420" role="img" aria-labelledby="p29-qk-title p29-qk-desc" className="h-auto w-full">
         <title id="p29-qk-title">Reaction direction determined by comparing Q with K</title>
         <desc id="p29-qk-desc">
@@ -201,7 +201,7 @@ export default function ThermodynamicsPart29LocalhostReview() {
     <main className="min-h-screen bg-[var(--background)] text-[var(--foreground)]">
       <div className="mx-auto max-w-5xl space-y-6 px-4 py-10 md:px-8">
 
-        <header className="rounded-[2rem] border border-[var(--border)] bg-slate-950/80 p-6 shadow-2xl shadow-black/20 md:p-10">
+        <header className="border-t border-[var(--border)] py-10 md:py-12">
           <p className="text-xs font-black uppercase tracking-[0.25em] text-fuchsia-300">Part 29</p>
           <h1 className="mt-3 text-4xl font-black tracking-tight text-white md:text-5xl">
             Reaction Gibbs Energy, Reaction Quotient and Equilibrium Constant
@@ -272,8 +272,8 @@ export default function ThermodynamicsPart29LocalhostReview() {
 
         <Section index="5" title="Worked Examples">
           {examples.map(ex => (
-            <article key={ex.title} className="rounded-lg border border-[var(--border)] bg-slate-900/70 p-5 mb-4">
-              <h3 className="font-black text-white">{ex.title}</h3>
+            <article key={ex.title} className="rounded-lg border border-[var(--border)] bg-[var(--surface)] p-5 mb-4">
+              <h3 className="font-display font-semibold text-[var(--foreground)]">{ex.title}</h3>
               <p className="mt-2 text-sm font-semibold text-[var(--text-body)]">{ex.given}</p>
               <div className="mt-3 rounded-xl border border-emerald-300/20 bg-emerald-300/[0.06] p-3 text-sm leading-6 text-[var(--text-body)]">{ex.solution}</div>
               <p className="mt-2 text-xs text-amber-300"><span className="font-black">Trap: </span>{ex.trap}</p>
@@ -283,7 +283,7 @@ export default function ThermodynamicsPart29LocalhostReview() {
 
         <ThermodynamicsCompleteDerivations part={29} />
 
-        <section className="rounded-[2rem] border border-amber-400/20 bg-amber-400/[0.04] p-5 md:p-8">
+        <section className="rounded-2xl border border-amber-400/20 bg-amber-400/[0.04] p-5 md:p-8">
           <h2 className="text-2xl font-black text-amber-200">Practice Problems</h2>
           <div className="mt-4 space-y-3">
             {[
@@ -293,16 +293,16 @@ export default function ThermodynamicsPart29LocalhostReview() {
               ["ΔrG° = +20 kJ mol⁻¹ at 298 K. Find K. Is the reaction feasible?", "K = exp(−20000/8.314×298) = exp(−8.07) = 3.1 × 10⁻⁴. K ≪ 1 means products are not favoured at standard conditions. The reaction is thermodynamically unfeasible under standard conditions."],
             ].map(([q, a], i) => (
               <article key={i} className="rounded-lg border border-[var(--border)] bg-slate-900/60 p-4">
-                <p className="font-semibold text-white"><span className="mr-2 text-amber-300">{i+1}.</span>{q}</p>
+                <p className="font-semibold text-[var(--foreground)]"><span className="mr-2 text-amber-300">{i+1}.</span>{q}</p>
                 <div className="mt-2 rounded-xl border border-emerald-300/20 bg-emerald-300/[0.06] p-3 text-sm text-[var(--text-body)]">{a}</div>
               </article>
             ))}
           </div>
         </section>
 
-        <section className="rounded-[2rem] border border-[var(--border)] bg-slate-950 p-6">
-          <p className="text-xs font-black uppercase tracking-[0.2em] text-fuchsia-300">Part 29 Complete</p>
-          <h2 className="mt-2 text-2xl font-black text-white">Next: van&apos;t Hoff equation and Clapeyron equation</h2>
+        <section className="border-t border-[var(--border)] py-10 md:py-12">
+          <p className="font-mono text-xs font-semibold uppercase tracking-[0.18em] text-fuchsia-300">Part 29 Complete</p>
+          <h2 className="mt-2 text-2xl font-semibold text-[var(--foreground)]">Next: van&apos;t Hoff equation and Clapeyron equation</h2>
         </section>
       </div>
     </main>

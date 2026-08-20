@@ -13,11 +13,11 @@ const toneStyles: Record<Tone, string> = {
 
 function Section({ index, title, subtitle, children }: { index: string; title: string; subtitle?: string; children: React.ReactNode }) {
   return (
-    <section className="rounded-[2rem] border border-[var(--border)] bg-slate-950/80 p-5 shadow-2xl shadow-black/20 backdrop-blur md:p-8">
+    <section className="border-t border-[var(--border)] py-10 md:py-12">
       <div className="flex items-start gap-4">
-        <span className="grid h-11 w-11 shrink-0 place-items-center rounded-lg border border-cyan-300/30 bg-cyan-300/10 text-sm font-black text-cyan-200">{index}</span>
+        <span className="font-mono text-[11px] font-bold uppercase tracking-[0.2em] text-[var(--text-muted)]">{index}</span>
         <div>
-          <h2 className="text-2xl font-black tracking-tight text-white md:text-3xl">{title}</h2>
+          <h2 className="font-display mt-1 text-[clamp(1.5rem,2.8vw,2.1rem)] font-semibold leading-tight text-[var(--foreground)]">{title}</h2>
           {subtitle && <p className="mt-1 max-w-4xl text-sm leading-6 text-[var(--text-muted)]">{subtitle}</p>}
         </div>
       </div>
@@ -28,9 +28,9 @@ function Section({ index, title, subtitle, children }: { index: string; title: s
 
 function Formula({ label, children }: { label: string; children: React.ReactNode }) {
   return (
-    <div className="overflow-x-auto rounded-lg border border-cyan-300/20 bg-black/30 p-4 text-center">
-      <p className="mb-2 text-xs font-black uppercase tracking-[0.2em] text-cyan-300">{label}</p>
-      <div className="whitespace-nowrap font-mono text-lg font-black text-white md:text-xl">{children}</div>
+    <div className="overflow-x-auto rounded-lg border border-cyan-300/20 bg-[var(--surface-2)] p-4 text-center">
+      <p className="mb-2 font-mono text-xs font-semibold uppercase tracking-[0.18em] text-cyan-300">{label}</p>
+      <div className="whitespace-nowrap font-mono text-lg font-semibold text-[var(--foreground)] md:text-xl">{children}</div>
     </div>
   );
 }
@@ -38,8 +38,8 @@ function Formula({ label, children }: { label: string; children: React.ReactNode
 function Lens({ title, children, tone = "cyan" }: { title: string; children: React.ReactNode; tone?: Tone }) {
   return (
     <aside className={`rounded-lg border p-5 ${toneStyles[tone]}`}>
-      <p className="text-xs font-black uppercase tracking-[0.2em]">Concept</p>
-      <h3 className="mt-2 text-lg font-black text-white">{title}</h3>
+      <p className="font-mono text-xs font-semibold uppercase tracking-[0.18em]">Concept</p>
+      <h3 className="font-display mt-2 text-lg font-semibold text-[var(--foreground)]">{title}</h3>
       <div className="mt-2 text-sm leading-6 text-[var(--text-body)]">{children}</div>
     </aside>
   );
@@ -48,7 +48,7 @@ function Lens({ title, children, tone = "cyan" }: { title: string; children: Rea
 // SVG 1: G vs T showing phase crossing
 function GvsTSVG() {
   return (
-    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-[var(--border)] bg-[var(--surface)] p-3 md:p-5">
+    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-3 md:p-5">
       <svg viewBox="0 0 1200 680" role="img" aria-labelledby="p26-gT-title p26-gT-desc" className="h-auto w-full">
         <title id="p26-gT-title">Molar Gibbs energy versus temperature for solid, liquid and gas phases</title>
         <desc id="p26-gT-desc">
@@ -116,7 +116,7 @@ function GvsTSVG() {
 // SVG 2: G vs P
 function GvsPSVG() {
   return (
-    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-[var(--border)] bg-[var(--surface)] p-3 md:p-5">
+    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-3 md:p-5">
       <svg viewBox="0 0 1200 560" role="img" aria-labelledby="p26-gP-title p26-gP-desc" className="h-auto w-full">
         <title id="p26-gP-title">Molar Gibbs energy versus pressure for gas and condensed phases</title>
         <desc id="p26-gP-desc">
@@ -211,7 +211,7 @@ export default function ThermodynamicsPart26LocalhostReview() {
     <main className="min-h-screen bg-[var(--background)] text-[var(--foreground)]">
       <div className="mx-auto max-w-5xl space-y-6 px-4 py-10 md:px-8">
 
-        <header className="rounded-[2rem] border border-[var(--border)] bg-slate-950/80 p-6 shadow-2xl shadow-black/20 md:p-10">
+        <header className="border-t border-[var(--border)] py-10 md:py-12">
           <p className="text-xs font-black uppercase tracking-[0.25em] text-fuchsia-300">Part 26</p>
           <h1 className="mt-3 text-4xl font-black tracking-tight text-white md:text-5xl">
             Pressure and Temperature Dependence of Gibbs Energy
@@ -262,14 +262,14 @@ export default function ThermodynamicsPart26LocalhostReview() {
           <GvsPSVG />
           <p>Integrating at constant temperature from a reference pressure P₁ to P₂:</p>
           <Formula label="General isothermal Gibbs change">G(T, P₂) − G(T, P₁) = ∫_&#123;P₁&#125;^&#123;P₂&#125; V(T, P) dP</Formula>
-          <h3 className="font-black text-white">Ideal Gas (V = nRT/P):</h3>
+          <h3 className="font-display font-semibold text-[var(--foreground)]">Ideal Gas (V = nRT/P):</h3>
           <div className="space-y-1 rounded-lg border border-[var(--border)] bg-slate-900/60 p-4 font-mono text-sm">
             <p>G(T,P₂) − G(T,P₁) = ∫_&#123;P₁&#125;^&#123;P₂&#125; (nRT/P) dP</p>
             <p>= nRT [ln P]_&#123;P₁&#125;^&#123;P₂&#125;</p>
             <p>= nRT ln(P₂/P₁)</p>
           </div>
           <Formula label="Standard-state form for ideal gas">G_m(T,P) = G°_m(T) + RT ln(P/P°)</Formula>
-          <h3 className="font-black text-white">Incompressible Condensed Phase (V ≈ V_m = constant):</h3>
+          <h3 className="font-display font-semibold text-[var(--foreground)]">Incompressible Condensed Phase (V ≈ V_m = constant):</h3>
           <Formula label="Condensed phase approximation">ΔG_m ≈ V_m(P₂ − P₁)</Formula>
           <Lens title="Why V_m for gases and solids/liquids differ so much" tone="amber">
             Gas molar volumes at 1 bar are ~20 L mol⁻¹; liquid and solid molar volumes are typically
@@ -306,8 +306,8 @@ export default function ThermodynamicsPart26LocalhostReview() {
         <Section index="5" title="Worked Examples">
           <div className="space-y-4">
             {examples.map((ex) => (
-              <article key={ex.title} className="rounded-lg border border-[var(--border)] bg-slate-900/70 p-5">
-                <h3 className="font-black text-white">{ex.title}</h3>
+              <article key={ex.title} className="rounded-lg border border-[var(--border)] bg-[var(--surface)] p-5">
+                <h3 className="font-display font-semibold text-[var(--foreground)]">{ex.title}</h3>
                 <p className="mt-2 text-sm font-semibold text-[var(--text-body)]">{ex.given}</p>
                 <p className="mt-2 text-sm text-[var(--text-muted)]"><span className="font-black text-[var(--text-muted)]">Method: </span>{ex.method}</p>
                 <div className="mt-3 rounded-xl border border-emerald-300/20 bg-emerald-300/[0.06] p-3 text-sm leading-6 text-[var(--text-body)]">{ex.solution}</div>
@@ -335,12 +335,12 @@ export default function ThermodynamicsPart26LocalhostReview() {
 
         <ThermodynamicsCompleteDerivations part={26} />
 
-        <section className="rounded-[2rem] border border-amber-400/20 bg-amber-400/[0.04] p-5 md:p-8">
+        <section className="rounded-2xl border border-amber-400/20 bg-amber-400/[0.04] p-5 md:p-8">
           <h2 className="text-2xl font-black text-amber-200">Practice Problems</h2>
           <div className="mt-4 space-y-3">
             {practice.map((p, i) => (
               <article key={i} className="rounded-lg border border-[var(--border)] bg-slate-900/60 p-4">
-                <p className="font-semibold text-white"><span className="mr-2 text-amber-300">{i + 1}.</span>{p.q}</p>
+                <p className="font-semibold text-[var(--foreground)]"><span className="mr-2 text-amber-300">{i + 1}.</span>{p.q}</p>
                 <div className="mt-2 rounded-xl border border-emerald-300/20 bg-emerald-300/[0.06] p-3">
                   <p className="text-xs font-black uppercase tracking-wider text-emerald-300">Answer</p>
                   <p className="mt-1 text-sm text-[var(--text-body)]">{p.a}</p>
@@ -350,9 +350,9 @@ export default function ThermodynamicsPart26LocalhostReview() {
           </div>
         </section>
 
-        <section className="rounded-[2rem] border border-[var(--border)] bg-slate-950 p-6">
-          <p className="text-xs font-black uppercase tracking-[0.2em] text-fuchsia-300">Part 26 Complete</p>
-          <h2 className="mt-2 text-2xl font-black text-white">Next: Chemical potential and standard states</h2>
+        <section className="border-t border-[var(--border)] py-10 md:py-12">
+          <p className="font-mono text-xs font-semibold uppercase tracking-[0.18em] text-fuchsia-300">Part 26 Complete</p>
+          <h2 className="mt-2 text-2xl font-semibold text-[var(--foreground)]">Next: Chemical potential and standard states</h2>
         </section>
 
       </div>

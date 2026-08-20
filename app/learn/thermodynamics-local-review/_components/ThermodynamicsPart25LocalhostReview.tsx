@@ -16,13 +16,13 @@ function Section({
   index: string; title: string; subtitle?: string; children: React.ReactNode;
 }) {
   return (
-    <section className="rounded-[2rem] border border-[var(--border)] bg-slate-950/80 p-5 shadow-2xl shadow-black/20 backdrop-blur md:p-8">
+    <section className="border-t border-[var(--border)] py-10 md:py-12">
       <div className="flex items-start gap-4">
-        <span className="grid h-11 w-11 shrink-0 place-items-center rounded-lg border border-cyan-300/30 bg-cyan-300/10 text-sm font-black text-cyan-200">
+        <span className="font-mono text-[11px] font-bold uppercase tracking-[0.2em] text-[var(--text-muted)]">
           {index}
         </span>
         <div>
-          <h2 className="text-2xl font-black tracking-tight text-white md:text-3xl">{title}</h2>
+          <h2 className="font-display mt-1 text-[clamp(1.5rem,2.8vw,2.1rem)] font-semibold leading-tight text-[var(--foreground)]">{title}</h2>
           {subtitle && <p className="mt-1 max-w-4xl text-sm leading-6 text-[var(--text-muted)]">{subtitle}</p>}
         </div>
       </div>
@@ -33,9 +33,9 @@ function Section({
 
 function Formula({ label, children }: { label: string; children: React.ReactNode }) {
   return (
-    <div className="overflow-x-auto rounded-lg border border-cyan-300/20 bg-black/30 p-4 text-center">
-      <p className="mb-2 text-xs font-black uppercase tracking-[0.2em] text-cyan-300">{label}</p>
-      <div className="whitespace-nowrap font-mono text-lg font-black text-white md:text-xl">{children}</div>
+    <div className="overflow-x-auto rounded-lg border border-cyan-300/20 bg-[var(--surface-2)] p-4 text-center">
+      <p className="mb-2 font-mono text-xs font-semibold uppercase tracking-[0.18em] text-cyan-300">{label}</p>
+      <div className="whitespace-nowrap font-mono text-lg font-semibold text-[var(--foreground)] md:text-xl">{children}</div>
     </div>
   );
 }
@@ -47,8 +47,8 @@ function Lens({
 }) {
   return (
     <aside className={`rounded-lg border p-5 ${toneStyles[tone]}`}>
-      <p className="text-xs font-black uppercase tracking-[0.2em]">{label}</p>
-      <h3 className="mt-2 text-lg font-black text-white">{title}</h3>
+      <p className="font-mono text-xs font-semibold uppercase tracking-[0.18em]">{label}</p>
+      <h3 className="font-display mt-2 text-lg font-semibold text-[var(--foreground)]">{title}</h3>
       <div className="mt-2 text-sm leading-6 text-[var(--text-body)]">{children}</div>
     </aside>
   );
@@ -66,7 +66,7 @@ function DerivRow({ step, result }: { step: string; result: string }) {
 // ─── SVG 1: Four Fundamental Relations ───────────────────────────────────────
 function FundamentalRelationsSVG() {
   return (
-    <figure className="mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-[var(--border)] bg-[var(--surface)] p-3 md:p-5">
+    <figure className="mx-auto w-full max-w-4xl overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-3 md:p-5">
       <svg
         viewBox="0 0 1200 680"
         role="img"
@@ -197,7 +197,7 @@ function FundamentalRelationsSVG() {
 // ─── SVG 2: Maxwell Relations ────────────────────────────────────────────────
 function MaxwellRelationsSVG() {
   return (
-    <figure className="mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-[var(--border)] bg-[var(--surface)] p-3 md:p-5">
+    <figure className="mx-auto w-full max-w-4xl overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-3 md:p-5">
       <svg
         viewBox="0 0 1200 640"
         role="img"
@@ -275,7 +275,7 @@ function MaxwellRelationsSVG() {
 // ─── SVG: Joule Free Expansion vs Joule–Thomson Throttling ──────────────────
 function JouleVsThrottlingSVG() {
   return (
-    <figure className="mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-[var(--border)] bg-[var(--surface)] p-3 md:p-5">
+    <figure className="mx-auto w-full max-w-4xl overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-3 md:p-5">
       <svg
         viewBox="0 0 1200 720"
         role="img"
@@ -361,7 +361,7 @@ function JouleVsThrottlingSVG() {
 // ─── SVG 3: Joule–Thomson Inversion Curve ────────────────────────────────────
 function JouleThomsonSVG() {
   return (
-    <figure className="mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-[var(--border)] bg-[var(--surface)] p-3 md:p-5">
+    <figure className="mx-auto w-full max-w-4xl overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-3 md:p-5">
       <svg
         viewBox="0 0 1200 720"
         role="img"
@@ -582,7 +582,7 @@ export default function ThermodynamicsPart25LocalhostReview() {
       <div className="mx-auto max-w-5xl space-y-6 px-4 py-10 md:px-8">
 
         {/* Header */}
-        <header className="rounded-[2rem] border border-[var(--border)] bg-slate-950/80 p-6 shadow-2xl shadow-black/20 md:p-10">
+        <header className="border-t border-[var(--border)] py-10 md:py-12">
           <p className="text-xs font-black uppercase tracking-[0.25em] text-fuchsia-300">Part 25</p>
           <h1 className="mt-3 text-4xl font-black tracking-tight text-white md:text-5xl">
             Fundamental Equations, Maxwell Relations &amp; Response Coefficients
@@ -606,7 +606,7 @@ export default function ThermodynamicsPart25LocalhostReview() {
 
           <FundamentalRelationsSVG />
 
-          <h3 className="mt-4 font-black text-white">Derivation of dU = T dS − P dV</h3>
+          <h3 className="mt-4 font-display font-semibold text-[var(--foreground)]">Derivation of dU = T dS − P dV</h3>
           <p className="text-[var(--text-muted)]">
             <strong>Classification:</strong> Exact derived result from the combined First and Second Laws.
           </p>
@@ -624,7 +624,7 @@ export default function ThermodynamicsPart25LocalhostReview() {
             (−P {"<"} 0 for P {">"} 0) depending on the relative magnitudes.
           </Lens>
 
-          <h3 className="mt-6 font-black text-white">Derivation of dH = T dS + V dP</h3>
+          <h3 className="mt-6 font-display font-semibold text-[var(--foreground)]">Derivation of dH = T dS + V dP</h3>
           <p className="text-[var(--text-muted)]">
             <strong>Classification:</strong> Exact derived result via Legendre transform of U.
           </p>
@@ -637,7 +637,7 @@ export default function ThermodynamicsPart25LocalhostReview() {
             <DerivRow step="Partials" result="(∂H/∂S)_P = T  and  (∂H/∂P)_S = V" />
           </div>
 
-          <h3 className="mt-6 font-black text-white">Derivation of dA = −S dT − P dV</h3>
+          <h3 className="mt-6 font-display font-semibold text-[var(--foreground)]">Derivation of dA = −S dT − P dV</h3>
           <p className="text-[var(--text-muted)]">
             <strong>Classification:</strong> Exact derived result; A = U − TS (Legendre transform removing S).
           </p>
@@ -650,7 +650,7 @@ export default function ThermodynamicsPart25LocalhostReview() {
             <DerivRow step="Partials" result="(∂A/∂T)_V = −S  and  (∂A/∂V)_T = −P" />
           </div>
 
-          <h3 className="mt-6 font-black text-white">Derivation of dG = −S dT + V dP</h3>
+          <h3 className="mt-6 font-display font-semibold text-[var(--foreground)]">Derivation of dG = −S dT + V dP</h3>
           <p className="text-[var(--text-muted)]">
             <strong>Classification:</strong> Exact derived result; G = H − TS (Legendre transform removing S from H).
           </p>
@@ -675,7 +675,7 @@ export default function ThermodynamicsPart25LocalhostReview() {
 
           <MaxwellRelationsSVG />
 
-          <h3 className="mt-4 font-black text-white">Derivation from U(S,V)</h3>
+          <h3 className="mt-4 font-display font-semibold text-[var(--foreground)]">Derivation from U(S,V)</h3>
           <div className="space-y-1 rounded-lg border border-[var(--border)] bg-slate-900/60 p-4">
             <DerivRow step="From dU = T dS − P dV" result="M = T, N = −P for variables x = S, y = V" />
             <DerivRow step="Maxwell condition" result="(∂M/∂y)_x = (∂N/∂x)_y" />
@@ -684,7 +684,7 @@ export default function ThermodynamicsPart25LocalhostReview() {
             <DerivRow step="Result" result="(∂T/∂V)_S = −(∂P/∂S)_V" />
           </div>
 
-          <h3 className="mt-4 font-black text-white">Derivation from H(S,P)</h3>
+          <h3 className="mt-4 font-display font-semibold text-[var(--foreground)]">Derivation from H(S,P)</h3>
           <div className="space-y-1 rounded-lg border border-[var(--border)] bg-slate-900/60 p-4">
             <DerivRow step="From dH = T dS + V dP" result="M = T, N = V for variables x = S, y = P" />
             <DerivRow step="Left side" result="(∂T/∂P)_S" />
@@ -692,7 +692,7 @@ export default function ThermodynamicsPart25LocalhostReview() {
             <DerivRow step="Result" result="(∂T/∂P)_S = (∂V/∂S)_P" />
           </div>
 
-          <h3 className="mt-4 font-black text-white">Derivation from A(T,V) — Most useful for PVT work</h3>
+          <h3 className="mt-4 font-display font-semibold text-[var(--foreground)]">Derivation from A(T,V) — Most useful for PVT work</h3>
           <div className="space-y-1 rounded-lg border border-[var(--border)] bg-slate-900/60 p-4">
             <DerivRow step="From dA = −S dT − P dV" result="M = −S, N = −P for variables x = T, y = V" />
             <DerivRow step="Left side" result="(∂(−S)/∂V)_T = −(∂S/∂V)_T" />
@@ -701,7 +701,7 @@ export default function ThermodynamicsPart25LocalhostReview() {
             <DerivRow step="Physical use" result="Entropy change with volume = isochoric pressure–temperature coefficient (measurable)" />
           </div>
 
-          <h3 className="mt-4 font-black text-white">Derivation from G(T,P) — Most useful for chemistry</h3>
+          <h3 className="mt-4 font-display font-semibold text-[var(--foreground)]">Derivation from G(T,P) — Most useful for chemistry</h3>
           <div className="space-y-1 rounded-lg border border-[var(--border)] bg-slate-900/60 p-4">
             <DerivRow step="From dG = −S dT + V dP" result="M = −S, N = V for variables x = T, y = P" />
             <DerivRow step="Left side" result="(∂(−S)/∂P)_T = −(∂S/∂P)_T" />
@@ -731,7 +731,7 @@ export default function ThermodynamicsPart25LocalhostReview() {
             <DerivRow step="Always ≥ 0" result="Mechanical stability requires (∂P/∂V)_T ≤ 0, so −(∂P/∂V)_T ≥ 0 ✓" />
           </div>
 
-          <h3 className="mt-4 font-black text-white">Convenient compact form using α and κ_T</h3>
+          <h3 className="mt-4 font-display font-semibold text-[var(--foreground)]">Convenient compact form using α and κ_T</h3>
           <Formula label="Isobaric expansion coefficient">α = (1/V)(∂V/∂T)_P</Formula>
           <Formula label="Isothermal compressibility">κ_T = −(1/V)(∂V/∂P)_T</Formula>
           <div className="space-y-1 rounded-lg border border-[var(--border)] bg-slate-900/60 p-4">
@@ -741,7 +741,7 @@ export default function ThermodynamicsPart25LocalhostReview() {
           </div>
           <Formula label="General result">C_P − C_V = TVα²/κ_T</Formula>
 
-          <h3 className="mt-4 font-black text-white">Ideal-gas special case: C_P − C_V = nR</h3>
+          <h3 className="mt-4 font-display font-semibold text-[var(--foreground)]">Ideal-gas special case: C_P − C_V = nR</h3>
           <div className="space-y-1 rounded-lg border border-[var(--border)] bg-slate-900/60 p-4">
             <DerivRow step="Ideal gas V = nRT/P" result="(∂V/∂T)_P = nR/P" />
             <DerivRow step="α" result="= (1/V)(nR/P) = nR/(PV) = 1/T" />
@@ -795,7 +795,7 @@ export default function ThermodynamicsPart25LocalhostReview() {
           </p>
           <Formula label="Definition — exact derived result">μ_JT = (∂T/∂P)_H</Formula>
 
-          <h3 className="mt-4 font-black text-white">Complete Derivation</h3>
+          <h3 className="mt-4 font-display font-semibold text-[var(--foreground)]">Complete Derivation</h3>
           <div className="space-y-1 rounded-lg border border-[var(--border)] bg-slate-900/60 p-4">
             <DerivRow step="Cyclic relation at constant H" result="(∂T/∂P)_H · (∂P/∂H)_T · (∂H/∂T)_P = −1" />
             <DerivRow step="(∂H/∂T)_P = C_P" result="μ_JT = −(1/C_P)(∂H/∂P)_T" />
@@ -807,7 +807,7 @@ export default function ThermodynamicsPart25LocalhostReview() {
 
           <Formula label="Joule–Thomson coefficient">μ_JT = (∂T/∂P)_H = (1/C_P)[T(∂V/∂T)_P − V]</Formula>
 
-          <h3 className="mt-4 font-black text-white">Inversion Condition and Ideal-Gas Result</h3>
+          <h3 className="mt-4 font-display font-semibold text-[var(--foreground)]">Inversion Condition and Ideal-Gas Result</h3>
           <div className="space-y-1 rounded-lg border border-[var(--border)] bg-slate-900/60 p-4">
             <DerivRow step="Inversion condition" result="μ_JT = 0 when T(∂V/∂T)_P = V" />
             <DerivRow step="Cooling region" result="μ_JT > 0: gas cools when P drops (inside inversion curve)" />
@@ -822,7 +822,7 @@ export default function ThermodynamicsPart25LocalhostReview() {
             cannot change.
           </Lens>
 
-          <h3 className="mt-4 font-black text-white">Molecular Interpretation</h3>
+          <h3 className="mt-4 font-display font-semibold text-[var(--foreground)]">Molecular Interpretation</h3>
           <p>
             A real gas below its inversion temperature has net attractive intermolecular forces. Throttling
             decreases pressure and increases average intermolecular separation. Overcoming these attractive
@@ -835,7 +835,7 @@ export default function ThermodynamicsPart25LocalhostReview() {
 
           <JouleThomsonSVG />
 
-          <h3 className="mt-4 font-black text-white">Van der Waals Inversion Temperature (Low-Pressure Limit)</h3>
+          <h3 className="mt-4 font-display font-semibold text-[var(--foreground)]">Van der Waals Inversion Temperature (Low-Pressure Limit)</h3>
           <div className="space-y-1 rounded-lg border border-[var(--border)] bg-slate-900/60 p-4">
             <DerivRow step="vdW at low P" result="V ≈ RT/P + b − a/(RT) per mole" />
             <DerivRow step="(∂V/∂T)_P low P" result="≈ R/P + a/(RT²)" />
@@ -860,11 +860,11 @@ export default function ThermodynamicsPart25LocalhostReview() {
               >
                 <div className="flex items-center gap-3">
                   <span className="rounded-full border px-2 py-0.5 text-xs font-black tracking-wider">{ex.level}</span>
-                  <h3 className="font-black text-white">{ex.title}</h3>
+                  <h3 className="font-display font-semibold text-[var(--foreground)]">{ex.title}</h3>
                 </div>
                 <p className="mt-3 font-semibold text-[var(--foreground)]">{ex.given}</p>
                 <p className="mt-2 text-sm text-[var(--text-muted)]"><span className="font-black text-[var(--text-body)]">Method: </span>{ex.method}</p>
-                <div className="mt-3 rounded-xl bg-black/20 p-3 text-sm leading-6 text-[var(--foreground)]">{ex.solution}</div>
+                <div className="mt-3 rounded-xl bg-[var(--surface-2)] p-3 text-sm leading-6 text-[var(--foreground)]">{ex.solution}</div>
                 <p className="mt-2 text-xs text-amber-300"><span className="font-black">Concept trap: </span>{ex.trap}</p>
               </article>
             ))}
@@ -891,12 +891,12 @@ export default function ThermodynamicsPart25LocalhostReview() {
         </Section>
 
         {/* Section 8: Practice Problems */}
-        <section className="rounded-[2rem] border border-amber-400/20 bg-amber-400/[0.04] p-5 md:p-8">
+        <section className="rounded-2xl border border-amber-400/20 bg-amber-400/[0.04] p-5 md:p-8">
           <h2 className="text-2xl font-black text-amber-200">Practice Problems</h2>
           <div className="mt-5 space-y-4">
             {practiceProblems.map((p, i) => (
               <article key={i} className="rounded-lg border border-[var(--border)] bg-slate-900/60 p-4">
-                <p className="font-semibold text-white">
+                <p className="font-semibold text-[var(--foreground)]">
                   <span className="mr-2 text-amber-300">{i + 1}.</span>{p.q}
                 </p>
                 <div className="mt-3 rounded-xl border border-emerald-300/20 bg-emerald-300/[0.06] p-3">
@@ -909,9 +909,9 @@ export default function ThermodynamicsPart25LocalhostReview() {
         </section>
 
         {/* Summary */}
-        <section className="rounded-[2rem] border border-[var(--border)] bg-slate-950 p-6">
-          <p className="text-xs font-black uppercase tracking-[0.2em] text-fuchsia-300">Part 25 Complete</p>
-          <h2 className="mt-2 text-2xl font-black text-white">Key results</h2>
+        <section className="border-t border-[var(--border)] py-10 md:py-12">
+          <p className="font-mono text-xs font-semibold uppercase tracking-[0.18em] text-fuchsia-300">Part 25 Complete</p>
+          <h2 className="mt-2 text-2xl font-semibold text-[var(--foreground)]">Key results</h2>
           <ul className="mt-3 space-y-1 text-sm text-[var(--text-muted)]">
             <li>• dU = T dS − P dV  (natural variables S, V)</li>
             <li>• dH = T dS + V dP  (natural variables S, P)</li>

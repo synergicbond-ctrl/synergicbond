@@ -1104,7 +1104,7 @@ const ENRICHMENT: Record<number, Entry> = {
 function FlowGraphic({ entry, part }: { entry: Entry; part: number }) {
   const [left, center, right] = entry.flow;
   return (
-    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-[var(--border)] bg-[var(--surface)] p-4 md:p-6">
+    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-4 md:p-6">
       <svg viewBox="0 0 1200 620" role="img" aria-label={`${entry.title} concept flow`} className="h-auto w-full">
         <defs>
           <linearGradient id={`integrated-bg-${part}`} x1="0" x2="1">
@@ -1149,7 +1149,7 @@ export default function ThermodynamicsIntegratedEnrichment({ part }: { part: num
       data-thermodynamics-integrated-enrichment={part}
       className="mx-auto max-w-7xl px-5 pb-12 md:px-8"
     >
-      <div className="rounded-[2rem] border border-fuchsia-400/20 bg-gradient-to-br from-slate-950 via-slate-950 to-fuchsia-950/20 p-5 shadow-2xl shadow-black/25 md:p-8">
+      <div className="rounded-2xl border border-fuchsia-400/20 bg-gradient-to-br from-slate-950 via-slate-950 to-fuchsia-950/20 p-5 md:p-8">
         <div className="flex flex-wrap gap-2">
           <span className="rounded-full border border-fuchsia-400/25 bg-fuchsia-400/[0.08] px-3 py-1 text-xs font-black tracking-wide text-fuchsia-200">
             INTEGRATED PREMIUM ENRICHMENT
@@ -1182,20 +1182,20 @@ export default function ThermodynamicsIntegratedEnrichment({ part }: { part: num
 
         <div className="mt-7 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
           {entry.formulas.map(([label, value, note]) => (
-            <article key={label} className="overflow-x-auto rounded-lg border border-cyan-300/20 bg-black/25 p-4">
+            <article key={label} className="overflow-x-auto rounded-lg border border-cyan-300/20 bg-[var(--surface-2)] p-4">
               <p className="text-xs font-black uppercase tracking-[0.18em] text-cyan-300">{label}</p>
-              <p className="mt-3 whitespace-nowrap font-mono text-base font-black text-white">{value}</p>
+              <p className="mt-3 whitespace-nowrap font-mono text-base font-semibold text-[var(--foreground)]">{value}</p>
               <p className="mt-3 text-xs leading-5 text-[var(--text-muted)]">{note}</p>
             </article>
           ))}
         </div>
 
         <div className="mt-7">
-          <p className="text-xs font-black uppercase tracking-[0.2em] text-rose-300">Trap detector</p>
+          <p className="font-mono text-xs font-semibold uppercase tracking-[0.18em] text-rose-300">Trap detector</p>
           <div className="mt-3 grid gap-3 md:grid-cols-2 lg:grid-cols-4">
             {entry.traps.map(([term, warning]) => (
               <div key={term} className="rounded-lg border border-rose-400/20 bg-rose-400/[0.06] p-4">
-                <p className="font-black text-white">{term}</p>
+                <p className="font-semibold text-[var(--foreground)]">{term}</p>
                 <p className="mt-1 text-sm leading-6 text-[var(--text-muted)]">{warning}</p>
               </div>
             ))}
@@ -1203,11 +1203,11 @@ export default function ThermodynamicsIntegratedEnrichment({ part }: { part: num
         </div>
 
         <div className="mt-7">
-          <p className="text-xs font-black uppercase tracking-[0.2em] text-amber-300">Original exam applications</p>
+          <p className="font-mono text-xs font-semibold uppercase tracking-[0.18em] text-amber-300">Original exam applications</p>
           <div className="mt-3 grid gap-4 lg:grid-cols-2">
             {entry.problems.map(([title, question, solution], index) => (
-              <details key={title} className="rounded-lg border border-[var(--border)] bg-slate-900/70 p-5">
-                <summary className="cursor-pointer list-none font-black text-white">
+              <details key={title} className="rounded-lg border border-[var(--border)] bg-[var(--surface)] p-5">
+                <summary className="cursor-pointer list-none font-semibold text-[var(--foreground)]">
                   <span className="mr-2 text-amber-300">◆</span>
                   {index + 1}. {title}
                 </summary>

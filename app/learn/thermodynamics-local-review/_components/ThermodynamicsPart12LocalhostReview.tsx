@@ -33,13 +33,13 @@ function Section({
   children: React.ReactNode;
 }) {
   return (
-    <section className="rounded-[2rem] border border-[var(--border)] bg-slate-950/80 p-5 shadow-2xl shadow-black/20 backdrop-blur md:p-8">
+    <section className="border-t border-[var(--border)] py-10 md:py-12">
       <div className="flex items-start gap-4">
-        <span className="grid h-10 w-10 shrink-0 place-items-center rounded-lg border border-cyan-300/30 bg-cyan-300/10 text-sm font-black text-cyan-200">
+        <span className="font-mono text-[11px] font-bold uppercase tracking-[0.2em] text-[var(--text-muted)]">
           {index}
         </span>
         <div>
-          <h2 className="text-2xl font-black tracking-tight text-white md:text-3xl">{title}</h2>
+          <h2 className="font-display mt-1 text-[clamp(1.5rem,2.8vw,2.1rem)] font-semibold leading-tight text-[var(--foreground)]">{title}</h2>
           {subtitle ? <p className="mt-1 text-sm leading-6 text-[var(--text-muted)]">{subtitle}</p> : null}
         </div>
       </div>
@@ -59,8 +59,8 @@ function ConceptLens({
 }) {
   return (
     <aside className={`rounded-lg border p-5 ${toneMap[tone]}`}>
-      <p className="text-xs font-black uppercase tracking-[0.2em]">Synergic Bond Concept Lens</p>
-      <h3 className="mt-2 text-lg font-black text-white">{title}</h3>
+      <p className="font-mono text-xs font-semibold uppercase tracking-[0.18em]">Synergic Bond Concept Lens</p>
+      <h3 className="font-display mt-2 text-lg font-semibold text-[var(--foreground)]">{title}</h3>
       <div className="mt-2 text-sm leading-6 text-[var(--text-body)]">{children}</div>
     </aside>
   );
@@ -74,18 +74,18 @@ function Formula({
   children: React.ReactNode;
 }) {
   return (
-    <div className="overflow-x-auto rounded-lg border border-cyan-300/20 bg-black/30 p-4 text-center">
+    <div className="overflow-x-auto rounded-lg border border-cyan-300/20 bg-[var(--surface-2)] p-4 text-center">
       {label ? (
-        <p className="mb-2 text-xs font-black uppercase tracking-[0.2em] text-cyan-300">{label}</p>
+        <p className="mb-2 font-mono text-xs font-semibold uppercase tracking-[0.18em] text-cyan-300">{label}</p>
       ) : null}
-      <div className="whitespace-nowrap font-mono text-lg font-black text-white md:text-xl">{children}</div>
+      <div className="whitespace-nowrap font-mono text-lg font-semibold text-[var(--foreground)] md:text-xl">{children}</div>
     </div>
   );
 }
 
 function CycleDirectionAnimation() {
   return (
-    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-[var(--border)] bg-[var(--surface)] p-3 md:p-5">
+    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-3 md:p-5">
       <svg
         viewBox="0 0 1200 700"
         role="img"
@@ -189,7 +189,7 @@ function CycleDirectionAnimation() {
 
 function StateFunctionClosureAnimation() {
   return (
-    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-[var(--border)] bg-[var(--surface)] p-3 md:p-5">
+    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-3 md:p-5">
       <svg
         viewBox="0 0 1200 680"
         role="img"
@@ -260,7 +260,7 @@ function StateFunctionClosureAnimation() {
 
 function ThreeStateCycleGraph() {
   return (
-    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-[var(--border)] bg-[var(--surface)] p-3 md:p-5">
+    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-3 md:p-5">
       <svg
         viewBox="0 0 1200 760"
         role="img"
@@ -401,8 +401,8 @@ function CycleAuditMethod() {
     <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
       {steps.map((step) => (
         <article key={step.title} className={`rounded-lg border p-5 ${toneMap[step.tone]}`}>
-          <h3 className="text-lg font-black text-white">{step.title}</h3>
-          <div className="mt-3 rounded-xl bg-black/25 p-3 text-center font-mono text-sm font-black text-white">
+          <h3 className="font-display text-lg font-semibold text-[var(--foreground)]">{step.title}</h3>
+          <div className="mt-3 rounded-xl bg-[var(--surface-2)] p-3 text-center font-mono text-sm font-semibold text-[var(--foreground)]">
             {step.equation}
           </div>
           <p className="mt-3 text-sm leading-6 text-[var(--text-body)]">{step.text}</p>
@@ -422,16 +422,16 @@ function StateTable() {
   return (
     <div className="overflow-x-auto rounded-lg border border-[var(--border)]">
       <table className="min-w-full border-collapse text-left text-sm">
-        <thead className="bg-slate-900">
+        <thead className="bg-[var(--surface-2)]">
           <tr>
-            <th className="px-4 py-3 font-black text-white">State</th>
-            <th className="px-4 py-3 font-black text-white">Pressure</th>
-            <th className="px-4 py-3 font-black text-white">Volume</th>
-            <th className="px-4 py-3 font-black text-white">Temperature</th>
-            <th className="px-4 py-3 font-black text-white">Role</th>
+            <th className="px-4 py-3 font-semibold text-[var(--foreground)]">State</th>
+            <th className="px-4 py-3 font-semibold text-[var(--foreground)]">Pressure</th>
+            <th className="px-4 py-3 font-semibold text-[var(--foreground)]">Volume</th>
+            <th className="px-4 py-3 font-semibold text-[var(--foreground)]">Temperature</th>
+            <th className="px-4 py-3 font-semibold text-[var(--foreground)]">Role</th>
           </tr>
         </thead>
-        <tbody className="divide-y divide-white/10 bg-slate-950/70">
+        <tbody className="divide-y divide-[var(--border)] bg-[var(--surface)]">
           {rows.map(([state, p, v, t, role]) => (
             <tr key={state}>
               <td className="px-4 py-3 font-black text-cyan-200">{state}</td>
@@ -486,17 +486,17 @@ function LegTable() {
   return (
     <div className="overflow-x-auto rounded-lg border border-[var(--border)]">
       <table className="min-w-full border-collapse text-left text-sm">
-        <thead className="bg-slate-900">
+        <thead className="bg-[var(--surface-2)]">
           <tr>
-            <th className="px-4 py-3 font-black text-white">Leg</th>
-            <th className="px-4 py-3 font-black text-white">Process</th>
-            <th className="px-4 py-3 font-black text-white">q</th>
-            <th className="px-4 py-3 font-black text-white">w</th>
-            <th className="px-4 py-3 font-black text-white">ΔU</th>
-            <th className="px-4 py-3 font-black text-white">Minimal ΔH</th>
+            <th className="px-4 py-3 font-semibold text-[var(--foreground)]">Leg</th>
+            <th className="px-4 py-3 font-semibold text-[var(--foreground)]">Process</th>
+            <th className="px-4 py-3 font-semibold text-[var(--foreground)]">q</th>
+            <th className="px-4 py-3 font-semibold text-[var(--foreground)]">w</th>
+            <th className="px-4 py-3 font-semibold text-[var(--foreground)]">ΔU</th>
+            <th className="px-4 py-3 font-semibold text-[var(--foreground)]">Minimal ΔH</th>
           </tr>
         </thead>
-        <tbody className="divide-y divide-white/10 bg-slate-950/70">
+        <tbody className="divide-y divide-[var(--border)] bg-[var(--surface)]">
           {rows.map(([leg, process, q, w, du, dh]) => (
             <tr key={leg}>
               <td className="px-4 py-3 font-black text-[var(--foreground)]">{leg}</td>
@@ -515,13 +515,13 @@ function LegTable() {
 
 function RetainedCycleExample() {
   return (
-    <article className="rounded-[2rem] border border-amber-300/25 bg-amber-300/[0.06] p-5 md:p-7">
+    <article className="rounded-2xl border border-amber-300/25 bg-amber-300/[0.06] p-5 md:p-7">
       <div className="flex flex-wrap items-center justify-between gap-3">
         <div>
-          <p className="text-xs font-black uppercase tracking-[0.2em] text-amber-300">
+          <p className="font-mono text-xs font-semibold uppercase tracking-[0.18em] text-amber-300">
             Chapter cycle example
           </p>
-          <h3 className="mt-2 text-xl font-black text-white">
+          <h3 className="mt-2 font-display text-xl font-semibold text-[var(--foreground)]">
             One mole of a monatomic ideal gas through states 1, 2 and 3
           </h3>
         </div>
@@ -538,7 +538,7 @@ function RetainedCycleExample() {
       <ThreeStateCycleGraph />
 
       <div className="mt-5 space-y-4">
-        <h4 className="text-lg font-black text-white">Step 1 — reconstruct the three states</h4>
+        <h4 className="font-display text-lg font-semibold text-[var(--foreground)]">Step 1 — reconstruct the three states</h4>
         <StateTable />
 
         <div className="grid gap-4 md:grid-cols-3">
@@ -553,10 +553,10 @@ function RetainedCycleExample() {
           </Formula>
         </div>
 
-        <h4 className="pt-2 text-lg font-black text-white">Step 2 — leg-by-leg calculations</h4>
+        <h4 className="pt-2 font-display text-lg font-semibold text-[var(--foreground)]">Step 2 — leg-by-leg calculations</h4>
 
         <div className="rounded-lg border border-cyan-300/20 bg-cyan-300/[0.05] p-5">
-          <p className="text-xs font-black uppercase tracking-[0.2em] text-cyan-300">Leg A: 1 → 2</p>
+          <p className="font-mono text-xs font-semibold uppercase tracking-[0.18em] text-cyan-300">Leg A: 1 → 2</p>
           <div className="mt-4 grid gap-4 md:grid-cols-2">
             <Formula label="Isochoric work">
               w<sub>A</sub> = 0
@@ -574,7 +574,7 @@ function RetainedCycleExample() {
         </div>
 
         <div className="rounded-lg border border-emerald-300/20 bg-emerald-300/[0.05] p-5">
-          <p className="text-xs font-black uppercase tracking-[0.2em] text-emerald-300">Leg B: 2 → 3</p>
+          <p className="font-mono text-xs font-semibold uppercase tracking-[0.18em] text-emerald-300">Leg B: 2 → 3</p>
           <div className="mt-4 grid gap-4 md:grid-cols-2">
             <Formula label="Isothermal state changes">
               ΔU<sub>B</sub> = 0 and ΔH<sub>B</sub> = 0
@@ -592,7 +592,7 @@ function RetainedCycleExample() {
         </div>
 
         <div className="rounded-lg border border-rose-300/20 bg-rose-300/[0.05] p-5">
-          <p className="text-xs font-black uppercase tracking-[0.2em] text-rose-300">Leg C: 3 → 1</p>
+          <p className="font-mono text-xs font-semibold uppercase tracking-[0.18em] text-rose-300">Leg C: 3 → 1</p>
           <div className="mt-4 grid gap-4 md:grid-cols-2">
             <Formula label="Isobaric work">
               w<sub>C</sub> = −P(V₁−V₃) = +R(273)
@@ -609,7 +609,7 @@ function RetainedCycleExample() {
           </div>
         </div>
 
-        <h4 className="pt-2 text-lg font-black text-white">Step 3 — close the complete cycle</h4>
+        <h4 className="pt-2 font-display text-lg font-semibold text-[var(--foreground)]">Step 3 — close the complete cycle</h4>
         <LegTable />
 
         <div className="grid gap-4 md:grid-cols-2">
@@ -662,8 +662,8 @@ function GraphAreaCases() {
     <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
       {cards.map((card) => (
         <article key={card.title} className={`rounded-lg border p-5 ${toneMap[card.tone]}`}>
-          <h3 className="text-lg font-black text-white">{card.title}</h3>
-          <div className="mt-3 rounded-xl bg-black/25 p-3 text-center font-mono text-sm font-black text-white">
+          <h3 className="font-display text-lg font-semibold text-[var(--foreground)]">{card.title}</h3>
+          <div className="mt-3 rounded-xl bg-[var(--surface-2)] p-3 text-center font-mono text-sm font-semibold text-[var(--foreground)]">
             {card.equation}
           </div>
           <p className="mt-3 text-sm leading-6 text-[var(--text-body)]">{card.text}</p>
@@ -778,14 +778,14 @@ function ProblemLadder() {
   return (
     <div className="grid gap-4 lg:grid-cols-2">
       {problems.map((item) => (
-        <article key={item.title} className="group rounded-lg border border-[var(--border)] bg-slate-900/70 p-5">
-          <h3 className=" font-black text-white">
+        <article key={item.title} className="group rounded-lg border border-[var(--border)] bg-[var(--surface)] p-5">
+          <h3 className=" font-display font-semibold text-[var(--foreground)]">
             <span className="mr-2 text-amber-300">◆</span>
             {item.title}
           </h3>
           <p className="mt-4 leading-7 text-[var(--text-body)]">{item.question}</p>
           <div className="mt-4 rounded-xl border border-emerald-300/20 bg-emerald-300/[0.06] p-4">
-            <p className="text-xs font-black uppercase tracking-[0.2em] text-emerald-300">Solution</p>
+            <p className="font-mono text-xs font-semibold uppercase tracking-[0.18em] text-emerald-300">Solution</p>
             <p className="mt-2 text-sm leading-6 text-[var(--text-body)]">{item.solution}</p>
           </div>
         </article>
@@ -841,14 +841,14 @@ function TrapTable() {
   return (
     <div className="overflow-x-auto rounded-lg border border-[var(--border)]">
       <table className="min-w-full border-collapse text-left text-sm">
-        <thead className="bg-slate-900">
+        <thead className="bg-[var(--surface-2)]">
           <tr>
-            <th className="px-4 py-3 font-black text-white">Tempting statement</th>
-            <th className="px-4 py-3 font-black text-white">Verdict</th>
-            <th className="px-4 py-3 font-black text-white">Correction</th>
+            <th className="px-4 py-3 font-semibold text-[var(--foreground)]">Tempting statement</th>
+            <th className="px-4 py-3 font-semibold text-[var(--foreground)]">Verdict</th>
+            <th className="px-4 py-3 font-semibold text-[var(--foreground)]">Correction</th>
           </tr>
         </thead>
-        <tbody className="divide-y divide-white/10 bg-slate-950/70">
+        <tbody className="divide-y divide-[var(--border)] bg-[var(--surface)]">
           {traps.map(([statement, verdict, correction]) => (
             <tr key={statement}>
               <td className="px-4 py-3 font-semibold text-[var(--foreground)]">{statement}</td>
@@ -892,7 +892,7 @@ function DailyLifeGrid() {
     <div className="grid gap-4 md:grid-cols-2">
       {items.map((item) => (
         <article key={item.title} className={`rounded-lg border p-5 ${toneMap[item.tone]}`}>
-          <h3 className="text-xl font-black text-white">{item.title}</h3>
+          <h3 className="font-display text-xl font-semibold text-[var(--foreground)]">{item.title}</h3>
           <p className="mt-2 text-sm leading-6 text-[var(--text-body)]">{item.text}</p>
         </article>
       ))}
@@ -915,12 +915,12 @@ export default function ThermodynamicsPart12() {
             <Chip tone="emerald">CYCLE ENERGY ACCOUNTING</Chip>
           </div>
 
-          <div className="mt-8 grid gap-10 lg:grid-cols-[1.15fr_0.85fr] lg:items-center">
+          <div className="mt-8 grid grid-cols-1 gap-10 lg:grid-cols-[1.15fr_0.85fr] lg:items-center">
             <div>
-              <p className="text-sm font-black uppercase tracking-[0.3em] text-cyan-300">
+              <p className="font-mono text-xs font-semibold uppercase tracking-[0.2em] text-cyan-300">
                 Thermodynamics • Integrated Process Layer
               </p>
-              <h1 className="mt-4 max-w-4xl text-4xl font-black tracking-[-0.045em] text-white md:text-6xl">
+              <h1 className="font-display mt-4 max-w-4xl text-4xl font-semibold tracking-[-0.025em] text-[var(--foreground)] md:text-5xl">
                 A cycle forgets every state change—but remembers its heat and work
               </h1>
               <p className="mt-6 max-w-3xl text-lg leading-8 text-[var(--text-muted)]">
@@ -929,18 +929,18 @@ export default function ThermodynamicsPart12() {
               </p>
             </div>
 
-            <div className="rounded-[2rem] border border-[var(--border)] bg-white/[0.05] p-6 shadow-2xl shadow-cyan-950/25">
-              <p className="text-xs font-black uppercase tracking-[0.22em] text-fuchsia-300">
+            <div className="rounded-xl border border-[var(--border)] bg-[var(--surface)] p-6">
+              <p className="font-mono text-xs font-semibold uppercase tracking-[0.22em] text-fuchsia-300">
                 Cycle closure
               </p>
               <div className="mt-4 space-y-3">
-                <div className="rounded-xl bg-emerald-400/10 p-4 font-mono text-lg font-black text-white">
+                <div className="rounded-xl bg-emerald-400/10 p-4 font-mono font-display text-lg font-semibold text-[var(--foreground)]">
                   ΔU<sub>cycle</sub> = 0
                 </div>
-                <div className="rounded-xl bg-cyan-400/10 p-4 font-mono text-lg font-black text-white">
+                <div className="rounded-xl bg-cyan-400/10 p-4 font-mono font-display text-lg font-semibold text-[var(--foreground)]">
                   w<sub>cycle</sub> = −∮P dV
                 </div>
-                <div className="rounded-xl bg-amber-400/10 p-4 font-mono text-lg font-black text-white">
+                <div className="rounded-xl bg-amber-400/10 p-4 font-mono font-display text-lg font-semibold text-[var(--foreground)]">
                   q<sub>cycle</sub> = −w<sub>cycle</sub>
                 </div>
               </div>
@@ -1045,19 +1045,19 @@ export default function ThermodynamicsPart12() {
         <Section index="07" title="State and path consistency checks">
           <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
             <article className="rounded-lg border border-emerald-300/20 bg-emerald-300/[0.05] p-5">
-              <p className="text-xs font-black uppercase tracking-[0.2em] text-emerald-300">State closure</p>
+              <p className="font-mono text-xs font-semibold uppercase tracking-[0.18em] text-emerald-300">State closure</p>
               <p className="mt-2 text-sm leading-6 text-[var(--text-body)]">
                 Sum every {String.raw`\(\Delta U\)`}, {String.raw`\(\Delta H\)`}, {String.raw`\(\Delta S\)`} or other state-function change. Each total must be zero.
               </p>
             </article>
             <article className="rounded-lg border border-cyan-300/20 bg-cyan-300/[0.05] p-5">
-              <p className="text-xs font-black uppercase tracking-[0.2em] text-cyan-300">Graph sign</p>
+              <p className="font-mono text-xs font-semibold uppercase tracking-[0.18em] text-cyan-300">Graph sign</p>
               <p className="mt-2 text-sm leading-6 text-[var(--text-body)]">
                 Confirm whether the loop is clockwise or anticlockwise before assigning the chemistry work sign.
               </p>
             </article>
             <article className="rounded-lg border border-amber-300/20 bg-amber-300/[0.05] p-5">
-              <p className="text-xs font-black uppercase tracking-[0.2em] text-amber-300">First-Law closure</p>
+              <p className="font-mono text-xs font-semibold uppercase tracking-[0.18em] text-amber-300">First-Law closure</p>
               <p className="mt-2 text-sm leading-6 text-[var(--text-body)]">
                 Check that {String.raw`\(\Sigma q + \Sigma w = 0\)`}. Any residual signals an arithmetic or sign error.
               </p>
@@ -1084,15 +1084,15 @@ export default function ThermodynamicsPart12() {
         <Section index="09" title="Cycle work, power and efficiency are different">
           <div className="grid gap-4 md:grid-cols-3">
             <article className="rounded-lg border border-cyan-300/20 bg-cyan-300/[0.05] p-5">
-              <p className="text-xs font-black uppercase tracking-[0.2em] text-cyan-300">Work per cycle</p>
+              <p className="font-mono text-xs font-semibold uppercase tracking-[0.18em] text-cyan-300">Work per cycle</p>
               <p className="mt-2 text-sm leading-6 text-[var(--text-body)]">Magnitude of the signed P–V area, plus any non-PV work.</p>
             </article>
             <article className="rounded-lg border border-amber-300/20 bg-amber-300/[0.05] p-5">
-              <p className="text-xs font-black uppercase tracking-[0.2em] text-amber-300">Power</p>
+              <p className="font-mono text-xs font-semibold uppercase tracking-[0.18em] text-amber-300">Power</p>
               <p className="mt-2 text-sm leading-6 text-[var(--text-body)]">Work per cycle multiplied by the number of cycles per unit time.</p>
             </article>
             <article className="rounded-lg border border-emerald-300/20 bg-emerald-300/[0.05] p-5">
-              <p className="text-xs font-black uppercase tracking-[0.2em] text-emerald-300">Efficiency</p>
+              <p className="font-mono text-xs font-semibold uppercase tracking-[0.18em] text-emerald-300">Efficiency</p>
               <p className="mt-2 text-sm leading-6 text-[var(--text-body)]">Useful work divided by the relevant energy input; developed fully with heat engines later.</p>
             </article>
           </div>
@@ -1113,13 +1113,13 @@ export default function ThermodynamicsPart12() {
           <ProblemLadder />
         </Section>
 
-        <section className="rounded-[2rem] border border-[var(--border)] bg-gradient-to-r from-slate-950 via-slate-900 to-slate-950 p-6 md:p-8">
+        <section className="rounded-xl border border-[var(--border)] bg-[var(--surface)] p-6 md:p-8">
           <div className="flex flex-wrap items-center justify-between gap-4">
             <div>
-              <p className="text-xs font-black uppercase tracking-[0.22em] text-fuchsia-300">
+              <p className="font-mono text-xs font-semibold uppercase tracking-[0.22em] text-fuchsia-300">
                 Synergic Bond rapid recall
               </p>
-              <h2 className="mt-2 text-2xl font-black text-white">
+              <h2 className="mt-2 text-2xl font-semibold text-[var(--foreground)]">
                 State functions close; the P–V loop area survives as net work
               </h2>
             </div>
@@ -1133,8 +1133,8 @@ export default function ThermodynamicsPart12() {
               ["Clockwise", "chemistry wcycle < 0"],
               ["First Law", "qcycle = −wcycle"],
             ].map(([term, meaning]) => (
-              <div key={term} className="rounded-lg border border-[var(--border)] bg-black/25 p-4">
-                <p className="font-black text-white">{term}</p>
+              <div key={term} className="rounded-lg border border-[var(--border)] bg-[var(--surface-2)] p-4">
+                <p className="font-semibold text-[var(--foreground)]">{term}</p>
                 <p className="mt-1 text-sm leading-6 text-[var(--text-muted)]">{meaning}</p>
               </div>
             ))}

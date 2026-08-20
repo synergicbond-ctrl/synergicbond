@@ -33,13 +33,13 @@ function Section({
   children: React.ReactNode;
 }) {
   return (
-    <section className="rounded-[2rem] border border-[var(--border)] bg-slate-950/80 p-5 shadow-2xl shadow-black/20 backdrop-blur md:p-8">
+    <section className="border-t border-[var(--border)] py-10 md:py-12">
       <div className="flex items-start gap-4">
-        <span className="grid h-10 w-10 shrink-0 place-items-center rounded-lg border border-cyan-300/30 bg-cyan-300/10 text-sm font-black text-cyan-200">
+        <span className="font-mono text-[11px] font-bold uppercase tracking-[0.2em] text-[var(--text-muted)]">
           {index}
         </span>
         <div>
-          <h2 className="text-2xl font-black tracking-tight text-white md:text-3xl">{title}</h2>
+          <h2 className="font-display mt-1 text-[clamp(1.5rem,2.8vw,2.1rem)] font-semibold leading-tight text-[var(--foreground)]">{title}</h2>
           {subtitle ? <p className="mt-1 text-sm leading-6 text-[var(--text-muted)]">{subtitle}</p> : null}
         </div>
       </div>
@@ -59,8 +59,8 @@ function ConceptLens({
 }) {
   return (
     <aside className={`rounded-lg border p-5 ${toneMap[tone]}`}>
-      <p className="text-xs font-black uppercase tracking-[0.2em]">Synergic Bond Concept Lens</p>
-      <h3 className="mt-2 text-lg font-black text-white">{title}</h3>
+      <p className="font-mono text-xs font-semibold uppercase tracking-[0.18em]">Synergic Bond Concept Lens</p>
+      <h3 className="font-display mt-2 text-lg font-semibold text-[var(--foreground)]">{title}</h3>
       <div className="mt-2 text-sm leading-6 text-[var(--text-body)]">{children}</div>
     </aside>
   );
@@ -74,18 +74,18 @@ function Formula({
   children: React.ReactNode;
 }) {
   return (
-    <div className="overflow-x-auto rounded-lg border border-cyan-300/20 bg-black/30 p-4 text-center">
+    <div className="overflow-x-auto rounded-lg border border-cyan-300/20 bg-[var(--surface-2)] p-4 text-center">
       {label ? (
-        <p className="mb-2 text-xs font-black uppercase tracking-[0.2em] text-cyan-300">{label}</p>
+        <p className="mb-2 font-mono text-xs font-semibold uppercase tracking-[0.18em] text-cyan-300">{label}</p>
       ) : null}
-      <div className="whitespace-nowrap font-mono text-lg font-black text-white md:text-xl">{children}</div>
+      <div className="whitespace-nowrap font-mono text-lg font-semibold text-[var(--foreground)] md:text-xl">{children}</div>
     </div>
   );
 }
 
 function FirstLawBoundaryAnimation() {
   return (
-    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-[var(--border)] bg-[var(--surface)] p-3 md:p-5">
+    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-3 md:p-5">
       <svg
         viewBox="0 0 1200 720"
         role="img"
@@ -141,7 +141,7 @@ function FirstLawBoundaryAnimation() {
 
 function HeatWorkAsymmetryAnimation() {
   return (
-    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-[var(--border)] bg-[var(--surface)] p-3 md:p-5">
+    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-3 md:p-5">
       <svg
         viewBox="0 0 1200 740"
         role="img"
@@ -226,7 +226,7 @@ function HeatWorkAsymmetryAnimation() {
 
 function StabilityLandscapeAnimation() {
   return (
-    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-[var(--border)] bg-[var(--surface)] p-3 md:p-5">
+    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-3 md:p-5">
       <svg
         viewBox="0 0 1200 720"
         role="img"
@@ -293,7 +293,7 @@ function StabilityLandscapeAnimation() {
 
 function DiffusionAnimation() {
   return (
-    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-[var(--border)] bg-[var(--surface)] p-3 md:p-5">
+    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-3 md:p-5">
       <svg
         viewBox="0 0 1200 650"
         role="img"
@@ -405,7 +405,7 @@ function LimitationsGrid() {
     <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
       {items.map((item) => (
         <article key={item.title} className={`rounded-lg border p-5 ${toneMap[item.tone]}`}>
-          <h3 className="text-lg font-black text-white">{item.title}</h3>
+          <h3 className="font-display text-lg font-semibold text-[var(--foreground)]">{item.title}</h3>
           <p className="mt-3 text-sm leading-6 text-[var(--text-body)]">{item.text}</p>
         </article>
       ))}
@@ -426,15 +426,15 @@ function SpontaneityMatrix() {
   return (
     <div className="overflow-x-auto rounded-lg border border-[var(--border)]">
       <table className="min-w-full border-collapse text-left text-sm">
-        <thead className="bg-slate-900">
+        <thead className="bg-[var(--surface-2)]">
           <tr>
-            <th className="px-4 py-3 font-black text-white">Process type</th>
-            <th className="px-4 py-3 font-black text-white">Natural direction</th>
-            <th className="px-4 py-3 font-black text-white">Non-spontaneous reverse</th>
-            <th className="px-4 py-3 font-black text-white">Driving imbalance</th>
+            <th className="px-4 py-3 font-semibold text-[var(--foreground)]">Process type</th>
+            <th className="px-4 py-3 font-semibold text-[var(--foreground)]">Natural direction</th>
+            <th className="px-4 py-3 font-semibold text-[var(--foreground)]">Non-spontaneous reverse</th>
+            <th className="px-4 py-3 font-semibold text-[var(--foreground)]">Driving imbalance</th>
           </tr>
         </thead>
-        <tbody className="divide-y divide-white/10 bg-slate-950/70">
+        <tbody className="divide-y divide-[var(--border)] bg-[var(--surface)]">
           {rows.map(([type, natural, reverse, drive]) => (
             <tr key={type}>
               <td className="px-4 py-3 font-semibold text-[var(--foreground)]">{type}</td>
@@ -451,13 +451,13 @@ function SpontaneityMatrix() {
 
 function RetainedFiveRouteExample() {
   return (
-    <article className="rounded-[2rem] border border-amber-300/25 bg-amber-300/[0.06] p-5 md:p-7">
+    <article className="rounded-2xl border border-amber-300/25 bg-amber-300/[0.06] p-5 md:p-7">
       <div className="flex flex-wrap items-center justify-between gap-3">
         <div>
-          <p className="text-xs font-black uppercase tracking-[0.2em] text-amber-300">
+          <p className="font-mono text-xs font-semibold uppercase tracking-[0.18em] text-amber-300">
             Chapter comparison
           </p>
-          <h3 className="mt-2 text-xl font-black text-white">
+          <h3 className="mt-2 font-display text-xl font-semibold text-[var(--foreground)]">
             One initial state, one final pressure, five different paths
           </h3>
         </div>
@@ -488,7 +488,7 @@ function RetainedFiveRouteExample() {
 
       <div className="mt-6 space-y-5">
         <div className="rounded-lg border border-emerald-300/20 bg-emerald-300/[0.05] p-5">
-          <p className="text-xs font-black uppercase tracking-[0.2em] text-emerald-300">
+          <p className="font-mono text-xs font-semibold uppercase tracking-[0.18em] text-emerald-300">
             Route 1 — reversible isothermal expansion
           </p>
           <div className="mt-4 grid gap-4 md:grid-cols-2">
@@ -508,7 +508,7 @@ function RetainedFiveRouteExample() {
         </div>
 
         <div className="rounded-lg border border-cyan-300/20 bg-cyan-300/[0.05] p-5">
-          <p className="text-xs font-black uppercase tracking-[0.2em] text-cyan-300">
+          <p className="font-mono text-xs font-semibold uppercase tracking-[0.18em] text-cyan-300">
             Route 2 — reversible adiabatic expansion
           </p>
           <div className="mt-4 grid gap-4 md:grid-cols-2">
@@ -528,7 +528,7 @@ function RetainedFiveRouteExample() {
         </div>
 
         <div className="rounded-lg border border-violet-300/20 bg-violet-300/[0.05] p-5">
-          <p className="text-xs font-black uppercase tracking-[0.2em] text-violet-300">
+          <p className="font-mono text-xs font-semibold uppercase tracking-[0.18em] text-violet-300">
             Route 3 — isothermal and adiabatic
           </p>
           <div className="mt-4 grid gap-4 md:grid-cols-2">
@@ -548,7 +548,7 @@ function RetainedFiveRouteExample() {
         </div>
 
         <div className="rounded-lg border border-rose-300/20 bg-rose-300/[0.05] p-5">
-          <p className="text-xs font-black uppercase tracking-[0.2em] text-rose-300">
+          <p className="font-mono text-xs font-semibold uppercase tracking-[0.18em] text-rose-300">
             Route 4 — adiabatic expansion against constant 0.200 MPa
           </p>
           <div className="mt-4 grid gap-4 md:grid-cols-2">
@@ -568,7 +568,7 @@ function RetainedFiveRouteExample() {
         </div>
 
         <div className="rounded-lg border border-sky-300/20 bg-sky-300/[0.05] p-5">
-          <p className="text-xs font-black uppercase tracking-[0.2em] text-sky-300">
+          <p className="font-mono text-xs font-semibold uppercase tracking-[0.18em] text-sky-300">
             Route 5 — isothermal expansion against constant 0.200 MPa
           </p>
           <div className="mt-4 grid gap-4 md:grid-cols-2">
@@ -601,7 +601,7 @@ function PMMGrid() {
     <div className="grid gap-4 md:grid-cols-2">
       <article className="rounded-lg border border-rose-300/25 bg-rose-300/[0.06] p-5">
         <Chip tone="rose">PMM OF THE FIRST KIND</Chip>
-        <h3 className="mt-4 text-xl font-black text-white">Creates work without equivalent energy input</h3>
+        <h3 className="mt-4 font-display text-xl font-semibold text-[var(--foreground)]">Creates work without equivalent energy input</h3>
         <p className="mt-3 text-sm leading-6 text-[var(--text-body)]">
           This violates energy conservation. It is forbidden directly by the First Law.
         </p>
@@ -612,7 +612,7 @@ function PMMGrid() {
 
       <article className="rounded-lg border border-violet-300/25 bg-violet-300/[0.06] p-5">
         <Chip tone="violet">PMM OF THE SECOND KIND</Chip>
-        <h3 className="mt-4 text-xl font-black text-white">Obeys energy balance but violates natural direction</h3>
+        <h3 className="mt-4 font-display text-xl font-semibold text-[var(--foreground)]">Obeys energy balance but violates natural direction</h3>
         <p className="mt-3 text-sm leading-6 text-[var(--text-body)]">
           Examples include a cyclic engine converting all heat from one reservoir into work, or a refrigerator moving
           heat from cold to hot without work.
@@ -635,15 +635,15 @@ function ThermodynamicsVsKinetics() {
   return (
     <div className="overflow-x-auto rounded-lg border border-[var(--border)]">
       <table className="min-w-full border-collapse text-left text-sm">
-        <thead className="bg-slate-900">
+        <thead className="bg-[var(--surface-2)]">
           <tr>
-            <th className="px-4 py-3 font-black text-white">Framework</th>
-            <th className="px-4 py-3 font-black text-white">Main question</th>
-            <th className="px-4 py-3 font-black text-white">Focus</th>
-            <th className="px-4 py-3 font-black text-white">Output</th>
+            <th className="px-4 py-3 font-semibold text-[var(--foreground)]">Framework</th>
+            <th className="px-4 py-3 font-semibold text-[var(--foreground)]">Main question</th>
+            <th className="px-4 py-3 font-semibold text-[var(--foreground)]">Focus</th>
+            <th className="px-4 py-3 font-semibold text-[var(--foreground)]">Output</th>
           </tr>
         </thead>
-        <tbody className="divide-y divide-white/10 bg-slate-950/70">
+        <tbody className="divide-y divide-[var(--border)] bg-[var(--surface)]">
           {rows.map(([name, question, focus, output]) => (
             <tr key={name}>
               <td className="px-4 py-3 font-black text-cyan-200">{name}</td>
@@ -763,14 +763,14 @@ function ProblemLadder() {
   return (
     <div className="grid gap-4 lg:grid-cols-2">
       {problems.map((item) => (
-        <article key={item.title} className="group rounded-lg border border-[var(--border)] bg-slate-900/70 p-5">
-          <h3 className=" font-black text-white">
+        <article key={item.title} className="group rounded-lg border border-[var(--border)] bg-[var(--surface)] p-5">
+          <h3 className=" font-display font-semibold text-[var(--foreground)]">
             <span className="mr-2 text-amber-300">◆</span>
             {item.title}
           </h3>
           <p className="mt-4 leading-7 text-[var(--text-body)]">{item.question}</p>
           <div className="mt-4 rounded-xl border border-emerald-300/20 bg-emerald-300/[0.06] p-4">
-            <p className="text-xs font-black uppercase tracking-[0.2em] text-emerald-300">Solution</p>
+            <p className="font-mono text-xs font-semibold uppercase tracking-[0.18em] text-emerald-300">Solution</p>
             <p className="mt-2 text-sm leading-6 text-[var(--text-body)]">{item.solution}</p>
           </div>
         </article>
@@ -826,14 +826,14 @@ function TrapTable() {
   return (
     <div className="overflow-x-auto rounded-lg border border-[var(--border)]">
       <table className="min-w-full border-collapse text-left text-sm">
-        <thead className="bg-slate-900">
+        <thead className="bg-[var(--surface-2)]">
           <tr>
-            <th className="px-4 py-3 font-black text-white">Tempting statement</th>
-            <th className="px-4 py-3 font-black text-white">Verdict</th>
-            <th className="px-4 py-3 font-black text-white">Correction</th>
+            <th className="px-4 py-3 font-semibold text-[var(--foreground)]">Tempting statement</th>
+            <th className="px-4 py-3 font-semibold text-[var(--foreground)]">Verdict</th>
+            <th className="px-4 py-3 font-semibold text-[var(--foreground)]">Correction</th>
           </tr>
         </thead>
-        <tbody className="divide-y divide-white/10 bg-slate-950/70">
+        <tbody className="divide-y divide-[var(--border)] bg-[var(--surface)]">
           {traps.map(([statement, verdict, correction]) => (
             <tr key={statement}>
               <td className="px-4 py-3 font-semibold text-[var(--foreground)]">{statement}</td>
@@ -877,7 +877,7 @@ function DailyLifeGrid() {
     <div className="grid gap-4 md:grid-cols-2">
       {items.map((item) => (
         <article key={item.title} className={`rounded-lg border p-5 ${toneMap[item.tone]}`}>
-          <h3 className="text-xl font-black text-white">{item.title}</h3>
+          <h3 className="font-display text-xl font-semibold text-[var(--foreground)]">{item.title}</h3>
           <p className="mt-2 text-sm leading-6 text-[var(--text-body)]">{item.text}</p>
         </article>
       ))}
@@ -900,12 +900,12 @@ export default function ThermodynamicsPart13() {
             <Chip tone="amber">DIRECTION & SPONTANEITY</Chip>
           </div>
 
-          <div className="mt-8 grid gap-10 lg:grid-cols-[1.15fr_0.85fr] lg:items-center">
+          <div className="mt-8 grid grid-cols-1 gap-10 lg:grid-cols-[1.15fr_0.85fr] lg:items-center">
             <div>
-              <p className="text-sm font-black uppercase tracking-[0.3em] text-cyan-300">
+              <p className="font-mono text-xs font-semibold uppercase tracking-[0.2em] text-cyan-300">
                 Thermodynamics • Direction Layer
               </p>
-              <h1 className="mt-4 max-w-4xl text-4xl font-black tracking-[-0.045em] text-white md:text-6xl">
+              <h1 className="font-display mt-4 max-w-4xl text-4xl font-semibold tracking-[-0.025em] text-[var(--foreground)] md:text-5xl">
                 Energy conservation tells what balances—not what nature chooses
               </h1>
               <p className="mt-6 max-w-3xl text-lg leading-8 text-[var(--text-muted)]">
@@ -914,8 +914,8 @@ export default function ThermodynamicsPart13() {
               </p>
             </div>
 
-            <div className="rounded-[2rem] border border-[var(--border)] bg-white/[0.05] p-6 shadow-2xl shadow-cyan-950/25">
-              <p className="text-xs font-black uppercase tracking-[0.22em] text-fuchsia-300">
+            <div className="rounded-xl border border-[var(--border)] bg-[var(--surface)] p-6">
+              <p className="font-mono text-xs font-semibold uppercase tracking-[0.22em] text-fuchsia-300">
                 Two independent questions
               </p>
               <div className="mt-4 space-y-3">
@@ -1027,19 +1027,19 @@ export default function ThermodynamicsPart13() {
 
           <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
             <article className="rounded-lg border border-amber-300/20 bg-amber-300/[0.05] p-5">
-              <p className="text-xs font-black uppercase tracking-[0.2em] text-amber-300">Thermal</p>
+              <p className="font-mono text-xs font-semibold uppercase tracking-[0.18em] text-amber-300">Thermal</p>
               <p className="mt-2 text-sm leading-6 text-[var(--text-body)]">Temperature differences disappear.</p>
             </article>
             <article className="rounded-lg border border-cyan-300/20 bg-cyan-300/[0.05] p-5">
-              <p className="text-xs font-black uppercase tracking-[0.2em] text-cyan-300">Mechanical</p>
+              <p className="font-mono text-xs font-semibold uppercase tracking-[0.18em] text-cyan-300">Mechanical</p>
               <p className="mt-2 text-sm leading-6 text-[var(--text-body)]">Unbalanced pressures and forces vanish.</p>
             </article>
             <article className="rounded-lg border border-violet-300/20 bg-violet-300/[0.05] p-5">
-              <p className="text-xs font-black uppercase tracking-[0.2em] text-violet-300">Chemical</p>
+              <p className="font-mono text-xs font-semibold uppercase tracking-[0.18em] text-violet-300">Chemical</p>
               <p className="mt-2 text-sm leading-6 text-[var(--text-body)]">No net reaction progress remains.</p>
             </article>
             <article className="rounded-lg border border-emerald-300/20 bg-emerald-300/[0.05] p-5">
-              <p className="text-xs font-black uppercase tracking-[0.2em] text-emerald-300">Phase</p>
+              <p className="font-mono text-xs font-semibold uppercase tracking-[0.18em] text-emerald-300">Phase</p>
               <p className="mt-2 text-sm leading-6 text-[var(--text-body)]">No net transfer between stable coexisting phases.</p>
             </article>
           </div>
@@ -1061,13 +1061,13 @@ export default function ThermodynamicsPart13() {
         <Section index="07" title="Exothermicity is not a spontaneity criterion">
           <div className="grid gap-4 md:grid-cols-2">
             <article className="rounded-lg border border-rose-300/20 bg-rose-300/[0.05] p-5">
-              <h3 className="text-xl font-black text-white">Exothermic but non-spontaneous</h3>
+              <h3 className="font-display text-xl font-semibold text-[var(--foreground)]">Exothermic but non-spontaneous</h3>
               <p className="mt-3 text-sm leading-6 text-[var(--text-body)]">
                 Freezing releases heat, yet liquid water does not spontaneously freeze above its melting temperature at the stated pressure.
               </p>
             </article>
             <article className="rounded-lg border border-emerald-300/20 bg-emerald-300/[0.05] p-5">
-              <h3 className="text-xl font-black text-white">Endothermic but spontaneous</h3>
+              <h3 className="font-display text-xl font-semibold text-[var(--foreground)]">Endothermic but spontaneous</h3>
               <p className="mt-3 text-sm leading-6 text-[var(--text-body)]">
                 Ice melts spontaneously above its melting temperature even though melting absorbs heat.
               </p>
@@ -1092,9 +1092,9 @@ export default function ThermodynamicsPart13() {
               ["Conversion limit", "why heat cannot be fully converted into cyclic work"],
               ["Equilibrium criterion", "where spontaneous change stops"],
             ].map(([title, text], index) => (
-              <article key={title} className="rounded-lg border border-[var(--border)] bg-slate-900/70 p-5">
-                <p className="text-xs font-black uppercase tracking-[0.2em] text-cyan-300">Need {index + 1}</p>
-                <h3 className="mt-2 text-lg font-black text-white">{title}</h3>
+              <article key={title} className="rounded-lg border border-[var(--border)] bg-[var(--surface)] p-5">
+                <p className="font-mono text-xs font-semibold uppercase tracking-[0.18em] text-cyan-300">Need {index + 1}</p>
+                <h3 className="font-display mt-2 text-lg font-semibold text-[var(--foreground)]">{title}</h3>
                 <p className="mt-2 text-sm leading-6 text-[var(--text-muted)]">{text}</p>
               </article>
             ))}
@@ -1120,13 +1120,13 @@ export default function ThermodynamicsPart13() {
           <ProblemLadder />
         </Section>
 
-        <section className="rounded-[2rem] border border-[var(--border)] bg-gradient-to-r from-slate-950 via-slate-900 to-slate-950 p-6 md:p-8">
+        <section className="rounded-xl border border-[var(--border)] bg-[var(--surface)] p-6 md:p-8">
           <div className="flex flex-wrap items-center justify-between gap-4">
             <div>
-              <p className="text-xs font-black uppercase tracking-[0.22em] text-fuchsia-300">
+              <p className="font-mono text-xs font-semibold uppercase tracking-[0.22em] text-fuchsia-300">
                 Synergic Bond rapid recall
               </p>
-              <h2 className="mt-2 text-2xl font-black text-white">
+              <h2 className="mt-2 text-2xl font-semibold text-[var(--foreground)]">
                 The First Law closes the energy ledger; the Second Law chooses the natural direction
               </h2>
             </div>
@@ -1140,8 +1140,8 @@ export default function ThermodynamicsPart13() {
               ["Kinetics", "rate and activation barrier"],
               ["Equilibrium", "zero macroscopic driving force"],
             ].map(([term, meaning]) => (
-              <div key={term} className="rounded-lg border border-[var(--border)] bg-black/25 p-4">
-                <p className="font-black text-white">{term}</p>
+              <div key={term} className="rounded-lg border border-[var(--border)] bg-[var(--surface-2)] p-4">
+                <p className="font-semibold text-[var(--foreground)]">{term}</p>
                 <p className="mt-1 text-sm leading-6 text-[var(--text-muted)]">{meaning}</p>
               </div>
             ))}

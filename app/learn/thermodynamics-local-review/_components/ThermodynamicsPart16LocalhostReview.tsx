@@ -33,13 +33,13 @@ function Section({
   children: React.ReactNode;
 }) {
   return (
-    <section className="rounded-[2rem] border border-[var(--border)] bg-slate-950/80 p-5 shadow-2xl shadow-black/20 backdrop-blur md:p-8">
+    <section className="border-t border-[var(--border)] py-10 md:py-12">
       <div className="flex items-start gap-4">
-        <span className="grid h-10 w-10 shrink-0 place-items-center rounded-lg border border-cyan-300/30 bg-cyan-300/10 text-sm font-black text-cyan-200">
+        <span className="font-mono text-[11px] font-bold uppercase tracking-[0.2em] text-[var(--text-muted)]">
           {index}
         </span>
         <div>
-          <h2 className="text-2xl font-black tracking-tight text-white md:text-3xl">{title}</h2>
+          <h2 className="font-display mt-1 text-[clamp(1.5rem,2.8vw,2.1rem)] font-semibold leading-tight text-[var(--foreground)]">{title}</h2>
           {subtitle ? <p className="mt-1 text-sm leading-6 text-[var(--text-muted)]">{subtitle}</p> : null}
         </div>
       </div>
@@ -59,8 +59,8 @@ function ConceptLens({
 }) {
   return (
     <aside className={`rounded-lg border p-5 ${toneMap[tone]}`}>
-      <p className="text-xs font-black uppercase tracking-[0.2em]">Synergic Bond Concept Lens</p>
-      <h3 className="mt-2 text-lg font-black text-white">{title}</h3>
+      <p className="font-mono text-xs font-semibold uppercase tracking-[0.18em]">Synergic Bond Concept Lens</p>
+      <h3 className="font-display mt-2 text-lg font-semibold text-[var(--foreground)]">{title}</h3>
       <div className="mt-2 text-sm leading-6 text-[var(--text-body)]">{children}</div>
     </aside>
   );
@@ -74,18 +74,18 @@ function Formula({
   children: React.ReactNode;
 }) {
   return (
-    <div className="overflow-x-auto rounded-lg border border-cyan-300/20 bg-black/30 p-4 text-center">
+    <div className="overflow-x-auto rounded-lg border border-cyan-300/20 bg-[var(--surface-2)] p-4 text-center">
       {label ? (
-        <p className="mb-2 text-xs font-black uppercase tracking-[0.2em] text-cyan-300">{label}</p>
+        <p className="mb-2 font-mono text-xs font-semibold uppercase tracking-[0.18em] text-cyan-300">{label}</p>
       ) : null}
-      <div className="whitespace-nowrap font-mono text-lg font-black text-white md:text-xl">{children}</div>
+      <div className="whitespace-nowrap font-mono text-lg font-semibold text-[var(--foreground)] md:text-xl">{children}</div>
     </div>
   );
 }
 
 function StateFunctionCycleAnimation() {
   return (
-    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-[var(--border)] bg-[var(--surface)] p-3 md:p-5">
+    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-3 md:p-5">
       <svg
         viewBox="0 0 1200 760"
         role="img"
@@ -171,7 +171,7 @@ function StateFunctionCycleAnimation() {
 
 function ReversiblePathAnimation() {
   return (
-    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-[var(--border)] bg-[var(--surface)] p-3 md:p-5">
+    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-3 md:p-5">
       <svg
         viewBox="0 0 1200 720"
         role="img"
@@ -244,7 +244,7 @@ function ReversiblePathAnimation() {
 
 function EnergyDispersalAnimation() {
   return (
-    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-[var(--border)] bg-[var(--surface)] p-3 md:p-5">
+    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-3 md:p-5">
       <svg
         viewBox="0 0 1200 760"
         role="img"
@@ -353,7 +353,7 @@ function EnergyDispersalAnimation() {
 
 function UnavailableEnergyAnimation() {
   return (
-    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-[var(--border)] bg-[var(--surface)] p-3 md:p-5">
+    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-3 md:p-5">
       <svg
         viewBox="0 0 1200 720"
         role="img"
@@ -416,7 +416,7 @@ function UnavailableEnergyAnimation() {
 
 function RubberAlignmentGraphic() {
   return (
-    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-[var(--border)] bg-[var(--surface)] p-3 md:p-5">
+    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-3 md:p-5">
       <svg
         viewBox="0 0 1200 650"
         role="img"
@@ -494,7 +494,7 @@ function SecondLawStatements() {
     <div className="grid gap-4 lg:grid-cols-3">
       {statements.map((statement) => (
         <article key={statement.title} className={`rounded-lg border p-5 ${toneMap[statement.tone]}`}>
-          <h3 className="text-xl font-black text-white">{statement.title}</h3>
+          <h3 className="font-display text-xl font-semibold text-[var(--foreground)]">{statement.title}</h3>
           <p className="mt-3 text-sm leading-6 text-[var(--text-body)]">{statement.text}</p>
         </article>
       ))}
@@ -517,14 +517,14 @@ function EntropyPropertiesGrid() {
   return (
     <div className="overflow-x-auto rounded-lg border border-[var(--border)]">
       <table className="min-w-full border-collapse text-left text-sm">
-        <thead className="bg-slate-900">
+        <thead className="bg-[var(--surface-2)]">
           <tr>
-            <th className="px-4 py-3 font-black text-white">Property</th>
-            <th className="px-4 py-3 font-black text-white">Expression</th>
-            <th className="px-4 py-3 font-black text-white">Meaning</th>
+            <th className="px-4 py-3 font-semibold text-[var(--foreground)]">Property</th>
+            <th className="px-4 py-3 font-semibold text-[var(--foreground)]">Expression</th>
+            <th className="px-4 py-3 font-semibold text-[var(--foreground)]">Meaning</th>
           </tr>
         </thead>
-        <tbody className="divide-y divide-white/10 bg-slate-950/70">
+        <tbody className="divide-y divide-[var(--border)] bg-[var(--surface)]">
           {rows.map(([property, expression, meaning]) => (
             <tr key={property}>
               <td className="px-4 py-3 font-semibold text-[var(--foreground)]">{property}</td>
@@ -616,9 +616,9 @@ function TrendGrid() {
     <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
       {trendCards.map((item) => (
         <article key={item.index} className={`rounded-lg border p-5 ${toneMap[item.tone]}`}>
-          <p className="text-xs font-black uppercase tracking-[0.2em]">{item.index}</p>
-          <h3 className="mt-2 text-lg font-black text-white">{item.title}</h3>
-          <div className="mt-3 rounded-xl bg-black/25 p-3 text-center font-mono text-sm font-black text-white">
+          <p className="font-mono text-xs font-semibold uppercase tracking-[0.18em]">{item.index}</p>
+          <h3 className="font-display mt-2 text-lg font-semibold text-[var(--foreground)]">{item.title}</h3>
+          <div className="mt-3 rounded-xl bg-[var(--surface-2)] p-3 text-center font-mono text-sm font-semibold text-[var(--foreground)]">
             {item.relation}
           </div>
           <p className="mt-3 text-sm leading-6 text-[var(--text-body)]">{item.explanation}</p>
@@ -640,14 +640,14 @@ function ComplexityExamples() {
   return (
     <div className="overflow-x-auto rounded-lg border border-[var(--border)]">
       <table className="min-w-full border-collapse text-left text-sm">
-        <thead className="bg-slate-900">
+        <thead className="bg-[var(--surface-2)]">
           <tr>
-            <th className="px-4 py-3 font-black text-white">Comparison</th>
-            <th className="px-4 py-3 font-black text-white">Observed trend</th>
-            <th className="px-4 py-3 font-black text-white">Physical basis</th>
+            <th className="px-4 py-3 font-semibold text-[var(--foreground)]">Comparison</th>
+            <th className="px-4 py-3 font-semibold text-[var(--foreground)]">Observed trend</th>
+            <th className="px-4 py-3 font-semibold text-[var(--foreground)]">Physical basis</th>
           </tr>
         </thead>
-        <tbody className="divide-y divide-white/10 bg-slate-950/70">
+        <tbody className="divide-y divide-[var(--border)] bg-[var(--surface)]">
           {rows.map(([comparison, trend, basis]) => (
             <tr key={comparison}>
               <td className="px-4 py-3 font-semibold text-[var(--foreground)]">{comparison}</td>
@@ -723,8 +723,8 @@ function RetainedExamplesAtlas() {
     <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
       {items.map((item) => (
         <article key={item.title} className={`rounded-lg border p-5 ${toneMap[item.tone]}`}>
-          <h3 className="text-lg font-black text-white">{item.title}</h3>
-          <div className="mt-3 rounded-xl bg-black/25 p-3 text-center font-mono text-sm font-black text-white">
+          <h3 className="font-display text-lg font-semibold text-[var(--foreground)]">{item.title}</h3>
+          <div className="mt-3 rounded-xl bg-[var(--surface-2)] p-3 text-center font-mono text-sm font-semibold text-[var(--foreground)]">
             {item.sign}
           </div>
           <p className="mt-3 text-sm leading-6 text-[var(--text-body)]">{item.text}</p>
@@ -769,14 +769,14 @@ function WorkedExamples() {
   return (
     <div className="grid gap-4 lg:grid-cols-2">
       {examples.map((item) => (
-        <article key={item.title} className="rounded-lg border border-[var(--border)] bg-slate-900/70 p-5">
-          <h3 className=" font-black text-white">
+        <article key={item.title} className="rounded-lg border border-[var(--border)] bg-[var(--surface)] p-5">
+          <h3 className=" font-display font-semibold text-[var(--foreground)]">
             <span className="mr-2 text-amber-300">◆</span>
             {item.title}
           </h3>
           <p className="mt-4 leading-7 text-[var(--text-body)]">{item.question}</p>
           <div className="mt-4 rounded-xl border border-emerald-300/20 bg-emerald-300/[0.06] p-4">
-            <p className="text-xs font-black uppercase tracking-[0.2em] text-emerald-300">Solution</p>
+            <p className="font-mono text-xs font-semibold uppercase tracking-[0.18em] text-emerald-300">Solution</p>
             <p className="mt-2 text-sm leading-6 text-[var(--text-body)]">{item.solution}</p>
           </div>
         </article>
@@ -904,14 +904,14 @@ function ProblemLadder() {
   return (
     <div className="grid gap-4 lg:grid-cols-2">
       {problems.map((item) => (
-        <article key={item.title} className="group rounded-lg border border-[var(--border)] bg-slate-900/70 p-5">
-          <h3 className=" font-black text-white">
+        <article key={item.title} className="group rounded-lg border border-[var(--border)] bg-[var(--surface)] p-5">
+          <h3 className=" font-display font-semibold text-[var(--foreground)]">
             <span className="mr-2 text-amber-300">◆</span>
             {item.title}
           </h3>
           <p className="mt-4 leading-7 text-[var(--text-body)]">{item.question}</p>
           <div className="mt-4 rounded-xl border border-emerald-300/20 bg-emerald-300/[0.06] p-4">
-            <p className="text-xs font-black uppercase tracking-[0.2em] text-emerald-300">Solution</p>
+            <p className="font-mono text-xs font-semibold uppercase tracking-[0.18em] text-emerald-300">Solution</p>
             <p className="mt-2 text-sm leading-6 text-[var(--text-body)]">{item.solution}</p>
           </div>
         </article>
@@ -967,14 +967,14 @@ function TrapTable() {
   return (
     <div className="overflow-x-auto rounded-lg border border-[var(--border)]">
       <table className="min-w-full border-collapse text-left text-sm">
-        <thead className="bg-slate-900">
+        <thead className="bg-[var(--surface-2)]">
           <tr>
-            <th className="px-4 py-3 font-black text-white">Tempting statement</th>
-            <th className="px-4 py-3 font-black text-white">Verdict</th>
-            <th className="px-4 py-3 font-black text-white">Correction</th>
+            <th className="px-4 py-3 font-semibold text-[var(--foreground)]">Tempting statement</th>
+            <th className="px-4 py-3 font-semibold text-[var(--foreground)]">Verdict</th>
+            <th className="px-4 py-3 font-semibold text-[var(--foreground)]">Correction</th>
           </tr>
         </thead>
-        <tbody className="divide-y divide-white/10 bg-slate-950/70">
+        <tbody className="divide-y divide-[var(--border)] bg-[var(--surface)]">
           {traps.map(([statement, verdict, correction]) => (
             <tr key={statement}>
               <td className="px-4 py-3 font-semibold text-[var(--foreground)]">{statement}</td>
@@ -1018,7 +1018,7 @@ function DailyLifeGrid() {
     <div className="grid gap-4 md:grid-cols-2">
       {items.map((item) => (
         <article key={item.title} className={`rounded-lg border p-5 ${toneMap[item.tone]}`}>
-          <h3 className="text-xl font-black text-white">{item.title}</h3>
+          <h3 className="font-display text-xl font-semibold text-[var(--foreground)]">{item.title}</h3>
           <p className="mt-2 text-sm leading-6 text-[var(--text-body)]">{item.text}</p>
         </article>
       ))}
@@ -1041,12 +1041,12 @@ export default function ThermodynamicsPart16() {
             <Chip tone="emerald">ENTROPY FOUNDATIONS</Chip>
           </div>
 
-          <div className="mt-8 grid gap-10 lg:grid-cols-[1.15fr_0.85fr] lg:items-center">
+          <div className="mt-8 grid grid-cols-1 gap-10 lg:grid-cols-[1.15fr_0.85fr] lg:items-center">
             <div>
-              <p className="text-sm font-black uppercase tracking-[0.3em] text-cyan-300">
+              <p className="font-mono text-xs font-semibold uppercase tracking-[0.2em] text-cyan-300">
                 Thermodynamics • Second-Law State Function
               </p>
-              <h1 className="mt-4 max-w-4xl text-4xl font-black tracking-[-0.045em] text-white md:text-6xl">
+              <h1 className="font-display mt-4 max-w-4xl text-4xl font-semibold tracking-[-0.025em] text-[var(--foreground)] md:text-5xl">
                 Entropy converts the arrow of natural change into a calculable state function
               </h1>
               <p className="mt-6 max-w-3xl text-lg leading-8 text-[var(--text-muted)]">
@@ -1055,18 +1055,18 @@ export default function ThermodynamicsPart16() {
               </p>
             </div>
 
-            <div className="rounded-[2rem] border border-[var(--border)] bg-white/[0.05] p-6 shadow-2xl shadow-cyan-950/25">
-              <p className="text-xs font-black uppercase tracking-[0.22em] text-fuchsia-300">
+            <div className="rounded-xl border border-[var(--border)] bg-[var(--surface)] p-6">
+              <p className="font-mono text-xs font-semibold uppercase tracking-[0.22em] text-fuchsia-300">
                 Entropy core
               </p>
               <div className="mt-4 space-y-3">
-                <div className="rounded-xl bg-cyan-400/10 p-4 font-mono text-lg font-black text-white">
+                <div className="rounded-xl bg-cyan-400/10 p-4 font-mono font-display text-lg font-semibold text-[var(--foreground)]">
                   ∮ δq<sub>rev</sub>/T = 0
                 </div>
-                <div className="rounded-xl bg-violet-400/10 p-4 font-mono text-lg font-black text-white">
+                <div className="rounded-xl bg-violet-400/10 p-4 font-mono font-display text-lg font-semibold text-[var(--foreground)]">
                   dS = δq<sub>rev</sub>/T
                 </div>
-                <div className="rounded-xl bg-emerald-400/10 p-4 font-mono text-lg font-black text-white">
+                <div className="rounded-xl bg-emerald-400/10 p-4 font-mono font-display text-lg font-semibold text-[var(--foreground)]">
                   S is extensive and additive
                 </div>
               </div>
@@ -1246,13 +1246,13 @@ export default function ThermodynamicsPart16() {
           <ProblemLadder />
         </Section>
 
-        <section className="rounded-[2rem] border border-[var(--border)] bg-gradient-to-r from-slate-950 via-slate-900 to-slate-950 p-6 md:p-8">
+        <section className="rounded-xl border border-[var(--border)] bg-[var(--surface)] p-6 md:p-8">
           <div className="flex flex-wrap items-center justify-between gap-4">
             <div>
-              <p className="text-xs font-black uppercase tracking-[0.22em] text-fuchsia-300">
+              <p className="font-mono text-xs font-semibold uppercase tracking-[0.22em] text-fuchsia-300">
                 Synergic Bond rapid recall
               </p>
-              <h2 className="mt-2 text-2xl font-black text-white">
+              <h2 className="mt-2 text-2xl font-semibold text-[var(--foreground)]">
                 Entropy is an endpoint property evaluated through reversible heat transfer
               </h2>
             </div>
@@ -1266,8 +1266,8 @@ export default function ThermodynamicsPart16() {
               ["Nature", "extensive, additive state function"],
               ["Lost work", "Wlost = T0Sgen"],
             ].map(([term, meaning]) => (
-              <div key={term} className="rounded-lg border border-[var(--border)] bg-black/25 p-4">
-                <p className="font-black text-white">{term}</p>
+              <div key={term} className="rounded-lg border border-[var(--border)] bg-[var(--surface-2)] p-4">
+                <p className="font-semibold text-[var(--foreground)]">{term}</p>
                 <p className="mt-1 text-sm leading-6 text-[var(--text-muted)]">{meaning}</p>
               </div>
             ))}

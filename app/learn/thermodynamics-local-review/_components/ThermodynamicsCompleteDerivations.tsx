@@ -2219,7 +2219,7 @@ export default function ThermodynamicsCompleteDerivations({ part }: { part: numb
       <div className="space-y-8">
         {data.derivations.map((derivation, index) => (
           <article key={derivation.title} className="border-b border-[var(--border)] pb-7 last:border-b-0">
-            <h3 className="text-xl font-black text-white">{index + 1}. {derivation.title}</h3>
+            <h3 className="font-display text-xl font-semibold text-[var(--foreground)]">{index + 1}. {derivation.title}</h3>
             <p className="mt-2 leading-7 text-[var(--text-muted)]">{derivation.intro}</p>
             <div className="mt-3 space-y-1.5 border-l-2 border-cyan-400/40 pl-4 font-mono text-[15px] leading-7 text-[var(--foreground)]">
               {derivation.steps.map((step) => <p key={step}>{step}</p>)}
@@ -2230,11 +2230,11 @@ export default function ThermodynamicsCompleteDerivations({ part }: { part: numb
         ))}
       </div>
       <div className="mt-8 border-t border-[var(--border)] pt-6">
-        <h3 className="text-2xl font-black text-white">Complete worked examples</h3>
+        <h3 className="text-2xl font-display font-semibold text-[var(--foreground)]">Complete worked examples</h3>
         <div className="mt-4 space-y-6">
           {data.examples.map((example, index) => (
             <article key={example.title} className="border-b border-[var(--border)] pb-5 last:border-b-0">
-              <h4 className="font-black text-white">Example {index + 1} — {example.title}</h4>
+              <h4 className="font-semibold text-[var(--foreground)]">Example {index + 1} — {example.title}</h4>
               <p className="mt-2 leading-7 text-[var(--text-muted)]">{example.question}</p>
               <p className="mt-2 leading-7 text-emerald-200"><strong>Solution:</strong> {example.solution}</p>
             </article>

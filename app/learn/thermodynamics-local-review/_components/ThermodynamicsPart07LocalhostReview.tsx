@@ -33,13 +33,13 @@ function Section({
   children: React.ReactNode;
 }) {
   return (
-    <section className="rounded-[2rem] border border-[var(--border)] bg-slate-950/80 p-5 shadow-2xl shadow-black/20 backdrop-blur md:p-8">
+    <section className="border-t border-[var(--border)] py-10 md:py-12">
       <div className="flex items-start gap-4">
-        <span className="grid h-10 w-10 shrink-0 place-items-center rounded-lg border border-cyan-300/30 bg-cyan-300/10 text-sm font-black text-cyan-200">
+        <span className="font-mono text-[11px] font-bold uppercase tracking-[0.2em] text-[var(--text-muted)]">
           {index}
         </span>
         <div>
-          <h2 className="text-2xl font-black tracking-tight text-white md:text-3xl">{title}</h2>
+          <h2 className="font-display mt-1 text-[clamp(1.5rem,2.8vw,2.1rem)] font-semibold leading-tight text-[var(--foreground)]">{title}</h2>
           {subtitle ? <p className="mt-1 text-sm leading-6 text-[var(--text-muted)]">{subtitle}</p> : null}
         </div>
       </div>
@@ -59,8 +59,8 @@ function ConceptLens({
 }) {
   return (
     <aside className={`rounded-lg border p-5 ${toneMap[tone]}`}>
-      <p className="text-xs font-black uppercase tracking-[0.2em]">Synergic Bond Concept Lens</p>
-      <h3 className="mt-2 text-lg font-black text-white">{title}</h3>
+      <p className="font-mono text-xs font-semibold uppercase tracking-[0.18em]">Synergic Bond Concept Lens</p>
+      <h3 className="font-display mt-2 text-lg font-semibold text-[var(--foreground)]">{title}</h3>
       <div className="mt-2 text-sm leading-6 text-[var(--text-body)]">{children}</div>
     </aside>
   );
@@ -74,18 +74,18 @@ function Formula({
   children: React.ReactNode;
 }) {
   return (
-    <div className="overflow-x-auto rounded-lg border border-cyan-300/20 bg-black/30 p-4 text-center">
+    <div className="overflow-x-auto rounded-lg border border-cyan-300/20 bg-[var(--surface-2)] p-4 text-center">
       {label ? (
-        <p className="mb-2 text-xs font-black uppercase tracking-[0.2em] text-cyan-300">{label}</p>
+        <p className="mb-2 font-mono text-xs font-semibold uppercase tracking-[0.18em] text-cyan-300">{label}</p>
       ) : null}
-      <div className="whitespace-nowrap font-mono text-lg font-black text-white md:text-xl">{children}</div>
+      <div className="whitespace-nowrap font-mono text-lg font-semibold text-[var(--foreground)] md:text-xl">{children}</div>
     </div>
   );
 }
 
 function WorkTransferAnimation() {
   return (
-    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-[var(--border)] bg-[var(--surface)] p-3 md:p-5">
+    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-3 md:p-5">
       <svg
         viewBox="0 0 1200 690"
         role="img"
@@ -232,16 +232,16 @@ function GeneralisedWorkGrid() {
         <article key={item.form} className={`rounded-lg border p-5 ${toneMap[item.tone]}`}>
           <p className="text-xs font-black uppercase tracking-[0.18em]">{item.form}</p>
           <div className="mt-4 grid gap-2 text-sm">
-            <div className="rounded-xl bg-black/25 p-3">
-              <span className="font-black text-white">Intensity factor:</span>
+            <div className="rounded-xl bg-[var(--surface-2)] p-3">
+              <span className="font-semibold text-[var(--foreground)]">Intensity factor:</span>
               <span className="ml-2 text-[var(--text-body)]">{item.intensity}</span>
             </div>
-            <div className="rounded-xl bg-black/25 p-3">
-              <span className="font-black text-white">Capacity factor:</span>
+            <div className="rounded-xl bg-[var(--surface-2)] p-3">
+              <span className="font-semibold text-[var(--foreground)]">Capacity factor:</span>
               <span className="ml-2 text-[var(--text-body)]">{item.capacity}</span>
             </div>
           </div>
-          <div className="mt-3 rounded-xl bg-black/25 p-3 text-center font-mono font-black text-white">
+          <div className="mt-3 rounded-xl bg-[var(--surface-2)] p-3 text-center font-mono font-semibold text-[var(--foreground)]">
             {item.differential}
           </div>
           <p className="mt-3 text-sm leading-6 text-[var(--text-muted)]">{item.example}</p>
@@ -253,7 +253,7 @@ function GeneralisedWorkGrid() {
 
 function SignConventionAnimation() {
   return (
-    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-[var(--border)] bg-[var(--surface)] p-3 md:p-5">
+    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-3 md:p-5">
       <svg
         viewBox="0 0 1200 720"
         role="img"
@@ -321,7 +321,7 @@ function SignConventionAnimation() {
 
 function PVDerivationVisual() {
   return (
-    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-[var(--border)] bg-[var(--surface)] p-3 md:p-5">
+    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-3 md:p-5">
       <svg
         viewBox="0 0 1200 730"
         role="img"
@@ -387,7 +387,7 @@ function PVDerivationVisual() {
 
 function WorkGraphVisual() {
   return (
-    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-[var(--border)] bg-[var(--surface)] p-3 md:p-5">
+    <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-3 md:p-5">
       <svg
         viewBox="0 0 1200 690"
         role="img"
@@ -469,16 +469,16 @@ function SignTable() {
   return (
     <div className="overflow-x-auto rounded-lg border border-[var(--border)]">
       <table className="min-w-full border-collapse text-left text-sm">
-        <thead className="bg-slate-900">
+        <thead className="bg-[var(--surface-2)]">
           <tr>
-            <th className="px-4 py-3 font-black text-white">Case</th>
-            <th className="px-4 py-3 font-black text-white">Volume relation</th>
-            <th className="px-4 py-3 font-black text-white">ΔV</th>
-            <th className="px-4 py-3 font-black text-white">Chemistry w</th>
-            <th className="px-4 py-3 font-black text-white">Meaning</th>
+            <th className="px-4 py-3 font-semibold text-[var(--foreground)]">Case</th>
+            <th className="px-4 py-3 font-semibold text-[var(--foreground)]">Volume relation</th>
+            <th className="px-4 py-3 font-semibold text-[var(--foreground)]">ΔV</th>
+            <th className="px-4 py-3 font-semibold text-[var(--foreground)]">Chemistry w</th>
+            <th className="px-4 py-3 font-semibold text-[var(--foreground)]">Meaning</th>
           </tr>
         </thead>
-        <tbody className="divide-y divide-white/10 bg-slate-950/70">
+        <tbody className="divide-y divide-[var(--border)] bg-[var(--surface)]">
           {signRows.map(([name, relation, dv, work, meaning]) => (
             <tr key={name}>
               <td className="px-4 py-3 font-semibold text-[var(--foreground)]">{name}</td>
@@ -505,14 +505,14 @@ function UnitTable() {
   return (
     <div className="overflow-x-auto rounded-lg border border-[var(--border)]">
       <table className="min-w-full border-collapse text-left text-sm">
-        <thead className="bg-slate-900">
+        <thead className="bg-[var(--surface-2)]">
           <tr>
-            <th className="px-4 py-3 font-black text-white">Work unit</th>
-            <th className="px-4 py-3 font-black text-white">Conversion logic</th>
-            <th className="px-4 py-3 font-black text-white">SI value</th>
+            <th className="px-4 py-3 font-semibold text-[var(--foreground)]">Work unit</th>
+            <th className="px-4 py-3 font-semibold text-[var(--foreground)]">Conversion logic</th>
+            <th className="px-4 py-3 font-semibold text-[var(--foreground)]">SI value</th>
           </tr>
         </thead>
-        <tbody className="divide-y divide-white/10 bg-slate-950/70">
+        <tbody className="divide-y divide-[var(--border)] bg-[var(--surface)]">
           {unitRows.map(([unit, logic, value]) => (
             <tr key={unit}>
               <td className="px-4 py-3 font-semibold text-[var(--foreground)]">{unit}</td>
@@ -603,14 +603,14 @@ function ProblemLadder() {
   return (
     <div className="grid gap-4 lg:grid-cols-2">
       {problems.map((item) => (
-        <article key={item.title} className="group rounded-lg border border-[var(--border)] bg-slate-900/70 p-5">
-          <h3 className=" font-black text-white">
+        <article key={item.title} className="group rounded-lg border border-[var(--border)] bg-[var(--surface)] p-5">
+          <h3 className=" font-display font-semibold text-[var(--foreground)]">
             <span className="mr-2 text-amber-300">◆</span>
             {item.title}
           </h3>
           <p className="mt-4 leading-7 text-[var(--text-body)]">{item.question}</p>
           <div className="mt-4 rounded-xl border border-emerald-300/20 bg-emerald-300/[0.06] p-4">
-            <p className="text-xs font-black uppercase tracking-[0.2em] text-emerald-300">Solution</p>
+            <p className="font-mono text-xs font-semibold uppercase tracking-[0.18em] text-emerald-300">Solution</p>
             <p className="mt-2 text-sm leading-6 text-[var(--text-body)]">{item.solution}</p>
           </div>
         </article>
@@ -666,14 +666,14 @@ function TrapTable() {
   return (
     <div className="overflow-x-auto rounded-lg border border-[var(--border)]">
       <table className="min-w-full border-collapse text-left text-sm">
-        <thead className="bg-slate-900">
+        <thead className="bg-[var(--surface-2)]">
           <tr>
-            <th className="px-4 py-3 font-black text-white">Tempting statement</th>
-            <th className="px-4 py-3 font-black text-white">Verdict</th>
-            <th className="px-4 py-3 font-black text-white">Correction</th>
+            <th className="px-4 py-3 font-semibold text-[var(--foreground)]">Tempting statement</th>
+            <th className="px-4 py-3 font-semibold text-[var(--foreground)]">Verdict</th>
+            <th className="px-4 py-3 font-semibold text-[var(--foreground)]">Correction</th>
           </tr>
         </thead>
-        <tbody className="divide-y divide-white/10 bg-slate-950/70">
+        <tbody className="divide-y divide-[var(--border)] bg-[var(--surface)]">
           {traps.map(([statement, verdict, correction]) => (
             <tr key={statement}>
               <td className="px-4 py-3 font-semibold text-[var(--foreground)]">{statement}</td>
@@ -717,7 +717,7 @@ function DailyLifeGrid() {
     <div className="grid gap-4 md:grid-cols-2">
       {items.map((item) => (
         <article key={item.title} className={`rounded-lg border p-5 ${toneMap[item.tone]}`}>
-          <h3 className="text-xl font-black text-white">{item.title}</h3>
+          <h3 className="font-display text-xl font-semibold text-[var(--foreground)]">{item.title}</h3>
           <p className="mt-2 text-sm leading-6 text-[var(--text-body)]">{item.text}</p>
         </article>
       ))}
@@ -740,12 +740,12 @@ export default function ThermodynamicsPart07() {
             <Chip tone="amber">WORK & SIGN CONVENTION</Chip>
           </div>
 
-          <div className="mt-8 grid gap-10 lg:grid-cols-[1.15fr_0.85fr] lg:items-center">
+          <div className="mt-8 grid grid-cols-1 gap-10 lg:grid-cols-[1.15fr_0.85fr] lg:items-center">
             <div>
-              <p className="text-sm font-black uppercase tracking-[0.3em] text-cyan-300">
+              <p className="font-mono text-xs font-semibold uppercase tracking-[0.2em] text-cyan-300">
                 Thermodynamics • Transfer Layer
               </p>
-              <h1 className="mt-4 max-w-4xl text-4xl font-black tracking-[-0.045em] text-white md:text-6xl">
+              <h1 className="font-display mt-4 max-w-4xl text-4xl font-semibold tracking-[-0.025em] text-[var(--foreground)] md:text-5xl">
                 Work is energy transferred through organised motion
               </h1>
               <p className="mt-6 max-w-3xl text-lg leading-8 text-[var(--text-muted)]">
@@ -754,18 +754,18 @@ export default function ThermodynamicsPart07() {
               </p>
             </div>
 
-            <div className="rounded-[2rem] border border-[var(--border)] bg-white/[0.05] p-6 shadow-2xl shadow-cyan-950/25">
-              <p className="text-xs font-black uppercase tracking-[0.22em] text-fuchsia-300">
+            <div className="rounded-xl border border-[var(--border)] bg-[var(--surface)] p-6">
+              <p className="font-mono text-xs font-semibold uppercase tracking-[0.22em] text-fuchsia-300">
                 Chemistry convention
               </p>
               <div className="mt-4 space-y-3">
                 <div className="rounded-xl bg-emerald-400/10 p-4">
                   <p className="font-black text-emerald-200">Work done on system</p>
-                  <p className="mt-1 font-mono text-lg font-black text-white">w &gt; 0</p>
+                  <p className="mt-1 font-mono font-display text-lg font-semibold text-[var(--foreground)]">w &gt; 0</p>
                 </div>
                 <div className="rounded-xl bg-rose-400/10 p-4">
                   <p className="font-black text-rose-200">Work done by system</p>
-                  <p className="mt-1 font-mono text-lg font-black text-white">w &lt; 0</p>
+                  <p className="mt-1 font-mono font-display text-lg font-semibold text-[var(--foreground)]">w &lt; 0</p>
                 </div>
               </div>
             </div>
@@ -915,7 +915,7 @@ export default function ThermodynamicsPart07() {
                 During expansion, P<sub>ext</sub> is infinitesimally below the gas pressure; during compression,
                 infinitesimally above it. At every step, P<sub>ext</sub> approaches P.
               </p>
-              <div className="mt-4 rounded-xl bg-black/25 p-3 text-center font-mono font-black text-white">
+              <div className="mt-4 rounded-xl bg-[var(--surface-2)] p-3 text-center font-mono font-semibold text-[var(--foreground)]">
                 w<sub>rev</sub> = −∫ P dV
               </div>
             </article>
@@ -926,7 +926,7 @@ export default function ThermodynamicsPart07() {
                 A finite pressure difference drives the process. Work must be calculated from the actual external
                 pressure history, which may be constant, stepwise or time-dependent.
               </p>
-              <div className="mt-4 rounded-xl bg-black/25 p-3 text-center font-mono font-black text-white">
+              <div className="mt-4 rounded-xl bg-[var(--surface-2)] p-3 text-center font-mono font-semibold text-[var(--foreground)]">
                 w<sub>irr</sub> = −∫ P<sub>ext</sub>dV
               </div>
             </article>
@@ -992,13 +992,13 @@ export default function ThermodynamicsPart07() {
           <ProblemLadder />
         </Section>
 
-        <section className="rounded-[2rem] border border-[var(--border)] bg-gradient-to-r from-slate-950 via-slate-900 to-slate-950 p-6 md:p-8">
+        <section className="rounded-xl border border-[var(--border)] bg-[var(--surface)] p-6 md:p-8">
           <div className="flex flex-wrap items-center justify-between gap-4">
             <div>
-              <p className="text-xs font-black uppercase tracking-[0.22em] text-fuchsia-300">
+              <p className="font-mono text-xs font-semibold uppercase tracking-[0.22em] text-fuchsia-300">
                 Synergic Bond rapid recall
               </p>
-              <h2 className="mt-2 text-2xl font-black text-white">
+              <h2 className="mt-2 text-2xl font-semibold text-[var(--foreground)]">
                 External resistance and boundary displacement determine pressure–volume work
               </h2>
             </div>
@@ -1012,8 +1012,8 @@ export default function ThermodynamicsPart07() {
               ["Constant Pext", "w = −PextΔV"],
               ["Reversible", "w = −∫P dV"],
             ].map(([term, meaning]) => (
-              <div key={term} className="rounded-lg border border-[var(--border)] bg-black/25 p-4">
-                <p className="font-black text-white">{term}</p>
+              <div key={term} className="rounded-lg border border-[var(--border)] bg-[var(--surface-2)] p-4">
+                <p className="font-semibold text-[var(--foreground)]">{term}</p>
                 <p className="mt-1 text-sm leading-6 text-[var(--text-muted)]">{meaning}</p>
               </div>
             ))}

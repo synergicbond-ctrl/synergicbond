@@ -232,31 +232,29 @@ function BlockRenderer({ block }: { block: Block }) {
 
 export default function PolymersPage() {
   return (
-    <main className="min-h-screen bg-[#030712] text-white selection:bg-cyan-300 selection:text-slate-950" style={{ fontFamily: sfProStack }}>
-      <div className="fixed inset-0 -z-0 bg-[radial-gradient(circle_at_15%_15%,rgba(34,211,238,0.08),transparent_28%),radial-gradient(circle_at_80%_10%,rgba(167,139,250,0.09),transparent_30%),radial-gradient(circle_at_70%_80%,rgba(251,113,133,0.06),transparent_28%)]" />
-
-      <header className="relative z-10 border-b border-slate-800/80">
+    <main className="min-h-screen bg-[var(--background)] text-[var(--foreground)]">
+      <header className="relative z-10 border-b border-[var(--border)]">
         <div className="mx-auto max-w-7xl px-4 py-10 md:px-8 md:py-14">
           <div className="grid items-center gap-8 lg:grid-cols-[1.05fr_0.95fr]">
             <div>
-              <div className="inline-flex items-center gap-2 rounded-full border border-cyan-400/25 bg-cyan-400/[0.06] px-3 py-1.5 text-xs font-black uppercase tracking-[0.18em] text-cyan-200">
+              <div className="inline-flex items-center gap-2 rounded-lg border border-[var(--border)] bg-[var(--surface)] px-3 py-1.5 text-xs font-black uppercase tracking-[0.18em] text-[var(--text-muted)]">
                 JEE Advanced · JEE Main · NEET · Boards
               </div>
-              <p className="mt-6 text-sm font-bold uppercase tracking-[0.24em] text-violet-300">Organic & Materials Chemistry</p>
-              <h1 className="mt-3 bg-gradient-to-r from-cyan-200 via-white to-violet-200 bg-clip-text text-4xl font-black tracking-tight text-transparent md:text-6xl">
+              <p className="mt-6 text-sm font-bold uppercase tracking-[0.24em] text-[var(--chem-energy)]">Organic & Materials Chemistry</p>
+              <h1 className="font-display mt-3 text-4xl font-black tracking-tight text-[var(--foreground)] md:text-6xl">
                 Polymers
               </h1>
-              <p className="mt-5 max-w-2xl text-base leading-8 text-slate-300 md:text-lg">
+              <p className="mt-5 max-w-2xl text-base leading-8 text-[var(--text-muted)] md:text-lg">
                 A complete structure–property chapter covering polymerisation mechanisms, molecular mass, stereochemistry, elastomers, fibres, plastics, thermosets, named polymers and biodegradable materials.
               </p>
-              <div className="mt-6 flex flex-wrap gap-3 text-sm text-slate-300">
-                <span className="rounded-lg border border-slate-700 bg-slate-900/70 px-3 py-2">26 numbered sections</span>
-                <span className="rounded-lg border border-slate-700 bg-slate-900/70 px-3 py-2">Comparison tables</span>
-                <span className="rounded-lg border border-slate-700 bg-slate-900/70 px-3 py-2">Solved examples</span>
-                <span className="rounded-lg border border-slate-700 bg-slate-900/70 px-3 py-2">Exam traps</span>
+              <div className="mt-6 flex flex-wrap gap-3 text-sm text-[var(--text-muted)]">
+                <span className="rounded-lg border border-[var(--border)] bg-[var(--surface)] px-3 py-2">26 numbered sections</span>
+                <span className="rounded-lg border border-[var(--border)] bg-[var(--surface)] px-3 py-2">Comparison tables</span>
+                <span className="rounded-lg border border-[var(--border)] bg-[var(--surface)] px-3 py-2">Solved examples</span>
+                <span className="rounded-lg border border-[var(--border)] bg-[var(--surface)] px-3 py-2">Exam traps</span>
               </div>
             </div>
-            <div className="overflow-hidden rounded-[28px] border border-slate-700/80 bg-slate-950/70 p-2 shadow-2xl shadow-violet-950/30">
+            <div className="overflow-hidden rounded-lg border border-[var(--border)] bg-[var(--surface)] p-2">
               <PolymerChainVisual />
             </div>
           </div>

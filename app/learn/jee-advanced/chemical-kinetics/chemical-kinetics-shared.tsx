@@ -113,7 +113,7 @@ function KB({ children }: { children: string }) {
 
 function ConceptCard({ title, tone = "navy", eyebrow, children }: ConceptCardProps) {
   return (
-    <article className={`rounded-lg border p-5 shadow-[0_18px_70px_-40px_rgba(0,0,0,0.85)] backdrop-blur-sm sm:p-6 ${toneClass[tone]}`}>
+    <article className={`rounded-lg border p-5 sm:p-6 ${toneClass[tone]}`}>
       {eyebrow ? (
         <div className={`mb-3 inline-flex rounded-full border px-2.5 py-1 text-[11px] font-bold uppercase tracking-[0.17em] ${badgeClass[tone]}`}>
           {eyebrow}
@@ -127,10 +127,10 @@ function ConceptCard({ title, tone = "navy", eyebrow, children }: ConceptCardPro
 
 function FormulaCard({ title, children, note }: { title: string; children: ReactNode; note?: ReactNode }) {
   return (
-    <div className="overflow-hidden rounded-lg border border-cyan-300/20 bg-gradient-to-br from-cyan-300/[0.08] via-slate-950/80 to-violet-400/[0.08] shadow-[0_24px_80px_-48px_rgba(34,211,238,0.5)]">
-      <div className="border-b border-white/10 px-5 py-3 text-xs font-bold uppercase tracking-[0.18em] text-cyan-200">{title}</div>
-      <div className="formula-scroll overflow-x-auto px-4 py-5 text-slate-100 sm:px-6">{children}</div>
-      {note ? <div className="border-t border-white/10 px-5 py-3 text-sm leading-6 text-slate-400">{note}</div> : null}
+    <div className="overflow-hidden rounded-lg border border-[var(--border)] bg-[var(--surface)]">
+      <div className="border-b border-[var(--border)] px-5 py-3 text-xs font-bold uppercase tracking-[0.18em] text-[var(--accent)]">{title}</div>
+      <div className="formula-scroll overflow-x-auto px-4 py-5 text-[var(--foreground)] sm:px-6">{children}</div>
+      {note ? <div className="border-t border-[var(--border)] px-5 py-3 text-sm leading-6 text-[var(--text-muted)]">{note}</div> : null}
     </div>
   );
 }
@@ -206,7 +206,7 @@ function WorkedExample({ number, title, difficulty = "JEE Advanced", concept, qu
       : "border-violet-400/25 bg-violet-400/10 text-violet-100";
 
   return (
-    <details className="group overflow-hidden rounded-lg border border-white/10 bg-slate-950/70 shadow-[0_24px_100px_-60px_rgba(139,92,246,0.8)]" open={number <= 2}>
+    <details className="group overflow-hidden rounded-lg border border-[var(--border)] bg-[var(--surface)]" open={number <= 2}>
       <summary className="cursor-pointer list-none px-5 py-5 transition hover:bg-white/[0.025] sm:px-6">
         <div className="flex flex-wrap items-start justify-between gap-4">
           <div className="flex min-w-0 gap-4">
@@ -750,43 +750,34 @@ function PartShell({
   const next = CHEMICAL_KINETICS_PARTS[part];
 
   return (
-    <main className="kinetics-page min-h-screen overflow-x-hidden bg-[#050914] text-slate-100 antialiased selection:bg-cyan-300/25 selection:text-white">
+    <main className="kinetics-page min-h-screen overflow-x-hidden bg-[var(--background)] text-[var(--foreground)] antialiased selection:bg-[var(--accent)]/25 selection:text-[var(--foreground)]">
       <style>{`
-        .kinetics-page {
-          font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
-          background-image:
-            radial-gradient(circle at 8% 3%, rgba(34,211,238,.12), transparent 30rem),
-            radial-gradient(circle at 93% 9%, rgba(139,92,246,.12), transparent 32rem),
-            linear-gradient(rgba(148,163,184,.035) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(148,163,184,.035) 1px, transparent 1px);
-          background-size: auto, auto, 34px 34px, 34px 34px;
-        }
         .kinetics-page .katex { font-size: 1.06em; }
         .kinetics-page .katex-display { margin: .35rem 0; }
         .kinetics-page summary::-webkit-details-marker { display: none; }
         .kinetics-page .formula-scroll::-webkit-scrollbar { height: 7px; }
-        .kinetics-page .formula-scroll::-webkit-scrollbar-thumb { background: rgba(148,163,184,.35); border-radius: 999px; }
+        .kinetics-page .formula-scroll::-webkit-scrollbar-thumb { background: var(--border); border-radius: 999px; }
         .kinetics-page :target { scroll-margin-top: 6rem; }
         @media print {
-          .kinetics-page { background: #050914 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+          .kinetics-page { background: var(--background) !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
           .textbook-sheet { break-after: page; page-break-after: always; min-height: 94vh; }
           .part-navigation { display: none !important; }
         }
       `}</style>
 
-      <header className="border-b border-white/[0.08]">
+      <header className="border-b border-[var(--border)]">
         <div className="mx-auto max-w-[1320px] px-4 py-10 sm:px-7 sm:py-14 lg:px-10">
-          <a href="/learn/jee-advanced/chemical-kinetics" className="text-sm font-semibold text-cyan-200 transition hover:text-cyan-100">← Chemical Kinetics index</a>
+          <a href="/learn/jee-advanced/chemical-kinetics" className="text-sm font-semibold text-[var(--accent)] transition hover:text-[var(--accent)]">← Chemical Kinetics index</a>
           <div className="mt-6 grid gap-7 lg:grid-cols-[1fr_auto] lg:items-end">
             <div>
-              <div className="inline-flex rounded-full border border-violet-300/25 bg-violet-300/[0.07] px-3 py-1.5 text-xs font-bold uppercase tracking-[0.18em] text-violet-200">
+              <div className="inline-flex rounded-full border border-[var(--chem-orbital)]/25 bg-[var(--chem-orbital)]/[0.07] px-3 py-1.5 text-xs font-bold uppercase tracking-[0.18em] text-[var(--chem-orbital)]">
                 JEE Advanced · Part {String(part).padStart(2, "0")} of 20
               </div>
-              <h1 className="mt-5 text-4xl font-black tracking-[-0.045em] text-white sm:text-5xl lg:text-6xl">{title}</h1>
-              <p className="mt-4 max-w-4xl text-base leading-8 text-slate-300 sm:text-lg">{description}</p>
+              <h1 className="mt-5 text-4xl font-black tracking-[-0.045em] text-[var(--foreground)] sm:text-5xl lg:text-6xl">{title}</h1>
+              <p className="mt-4 max-w-4xl text-base leading-8 text-[var(--text-muted)] sm:text-lg">{description}</p>
             </div>
-            <div className="rounded-lg border border-cyan-300/20 bg-cyan-300/[0.055] p-4 text-sm leading-6 text-cyan-50">
-              <div className="font-semibold text-cyan-200">Chemical Kinetics</div>
+            <div className="rounded-lg border border-[var(--chem-bond)]/20 bg-[var(--chem-bond)]/[0.055] p-4 text-sm leading-6 text-[var(--foreground)]">
+              <div className="font-semibold text-[var(--chem-bond)]">Chemical Kinetics</div>
               <div className="mt-1 text-slate-300">Forensic 259-page reconstruction · 30 integrated reference pages</div>
             </div>
           </div>

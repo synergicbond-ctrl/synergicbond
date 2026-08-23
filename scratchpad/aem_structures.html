@@ -1,0 +1,772 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Alkaline Earth Metals</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --primary:#1f3a4d;
+  --accent:#2980b9;
+  --danger:#c0392b;
+  --warning:#c26a1f;
+  --success:#1e7a4c;
+  --purple:#7d4b9e;
+  --structure:#0e7c72;
+  --bg:#eef1f0;
+  --card-bg:#ffffff;
+  --text:#1f2b30;
+  --text-soft:#5b6b70;
+  --border:#dfe4e2;
+  --table-head-bg:#eef2f5;
+  --alert-bg:#fdf3e3;
+  --diagram-atom-be:#c0392b;
+  --diagram-atom-cl:#2980b9;
+  --diagram-atom-o:#c26a1f;
+  --diagram-fill:#eef1f0;
+}
+:root:not([data-theme="light"]){
+  @media (prefers-color-scheme: dark){
+    --primary:#e7edf1;
+    --accent:#6fb3e0;
+    --danger:#e18b7f;
+    --warning:#e0a563;
+    --success:#6fc79a;
+    --purple:#c4a0e0;
+    --structure:#5fc2b6;
+    --bg:#14191c;
+    --card-bg:#1c2327;
+    --text:#e7edf1;
+    --text-soft:#9fb0b6;
+    --border:#303a3f;
+    --table-head-bg:#232c30;
+    --alert-bg:#2a2419;
+    --diagram-fill:#232c30;
+  }
+}
+:root[data-theme="dark"]{
+  --primary:#e7edf1;
+  --accent:#6fb3e0;
+  --danger:#e18b7f;
+  --warning:#e0a563;
+  --success:#6fc79a;
+  --purple:#c4a0e0;
+  --structure:#5fc2b6;
+  --bg:#14191c;
+  --card-bg:#1c2327;
+  --text:#e7edf1;
+  --text-soft:#9fb0b6;
+  --border:#303a3f;
+  --table-head-bg:#232c30;
+  --alert-bg:#2a2419;
+  --diagram-fill:#232c30;
+}
+
+*{box-sizing:border-box;-webkit-print-color-adjust:exact;}
+body{
+  font-family:'Source Serif 4', Georgia, serif;
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.4;
+  margin:0;
+  padding:20px;
+  font-size:14.5px;
+}
+.mono{font-family:'IBM Plex Mono', 'Courier New', monospace;}
+
+header{
+  max-width:1180px;
+  margin:0 auto 18px;
+  text-align:center;
+  border-bottom:3px solid var(--primary);
+  padding-bottom:10px;
+}
+h1{margin:0;color:var(--primary);font-size:26px;font-weight:700;letter-spacing:0.5px;text-wrap:balance;}
+.subtitle{color:var(--accent);font-weight:600;font-size:13px;margin-top:4px;font-family:'IBM Plex Mono',monospace;letter-spacing:0.3px;}
+
+.container{
+  max-width:1180px;
+  margin:0 auto;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  align-items:start;
+  gap:14px;
+}
+@media (max-width:760px){ .container{grid-template-columns:1fr;} }
+
+.card{
+  background:var(--card-bg);
+  border:1px solid var(--border);
+  border-radius:8px;
+  box-shadow:0 1px 3px rgba(0,0,0,0.06);
+  padding:14px 16px;
+  border-top:4px solid var(--accent);
+  break-inside:avoid;
+  min-width:0;
+}
+.table-wrap{overflow-x:auto;}
+html,body{overflow-x:hidden;}
+.card.wide{grid-column:1 / -1;}
+.card.trends{border-color:var(--primary);}
+.card.hydrides{border-color:var(--danger);}
+.card.halides{border-color:var(--purple);}
+.card.oxides{border-color:var(--warning);}
+.card.compounds{border-color:var(--success);}
+.card.structure{border-color:var(--structure);}
+
+h2{
+  margin:0 0 9px;
+  font-size:14.5px;
+  color:var(--text);
+  border-bottom:1px solid var(--border);
+  padding-bottom:5px;
+  display:flex;
+  align-items:center;
+  font-weight:700;
+  font-family:'IBM Plex Mono',monospace;
+  letter-spacing:0.2px;
+  text-transform:uppercase;
+}
+h2::before{content:'▮ ';margin-right:6px;font-size:0.85em;opacity:0.85;}
+h3{font-size:12.5px;color:var(--text-soft);margin:9px 0 3px;font-weight:700;font-family:'IBM Plex Mono',monospace;letter-spacing:0.2px;}
+
+.card{overflow-x:auto;}
+table{width:100%;border-collapse:collapse;font-size:12.5px;margin-top:5px;table-layout:fixed;}
+td,th{overflow-wrap:break-word;word-break:break-word;}
+th{background:var(--table-head-bg);color:var(--primary);font-weight:700;text-align:left;padding:5px 7px;border-bottom:2px solid var(--border);font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.2px;}
+td{padding:5px 7px;border-bottom:1px solid var(--border);vertical-align:top;}
+tr:last-child td{border-bottom:none;}
+td.num, th.num{font-variant-numeric:tabular-nums;}
+
+.badge{display:inline-block;padding:1.5px 6px;border-radius:3px;font-size:9.5px;font-weight:700;color:#fff;margin-right:4px;vertical-align:middle;font-family:'IBM Plex Mono',monospace;letter-spacing:0.2px;}
+.badge.trap{background:var(--danger);}
+.badge.note{background:var(--accent);}
+.badge.ncert{background:var(--purple);}
+.badge.struct{background:var(--structure);}
+
+.alert-box{background:var(--alert-bg);border-left:3px solid var(--warning);padding:8px 10px;margin:7px 0;font-size:12.5px;border-radius:0 5px 5px 0;}
+
+.chem{font-family:'IBM Plex Mono',monospace;font-weight:600;white-space:nowrap;}
+sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline;}
+sub{bottom:-0.22em;} sup{top:-0.55em;}
+
+ul{margin:5px 0;padding-left:18px;font-size:13px;}
+li{margin-bottom:4px;}
+
+figure{margin:8px 0 4px;text-align:center;}
+figure svg{max-width:100%;height:auto;}
+figcaption{font-size:11px;color:var(--text-soft);margin-top:4px;font-family:'IBM Plex Mono',monospace;}
+
+.diagram-row{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;}
+.diagram-row figure{flex:1 1 auto;min-width:150px;}
+
+.card.fulltext p{font-size:13.5px;line-height:1.55;margin:0 0 9px;}
+.card.fulltext h3{font-size:15px;color:var(--text);margin:16px 0 6px;font-family:'Source Serif 4',serif;font-weight:700;text-transform:none;letter-spacing:0;}
+.card.fulltext h4{font-size:13px;color:var(--text-soft);margin:12px 0 4px;font-weight:700;}
+.card.fulltext ul, .card.fulltext ol{font-size:13px;margin:6px 0 10px;padding-left:20px;}
+.card.fulltext li{margin-bottom:5px;line-height:1.5;}
+.card.fulltext .alert-box{margin:10px 0;}
+.card.fulltext .alert-box p{margin:4px 0;}
+.card.fulltext .alert-box ul, .card.fulltext .alert-box ol{margin:4px 0;}
+.eqline{font-family:'IBM Plex Mono',monospace;font-size:12px;text-align:center;background:var(--table-head-bg);border-radius:5px;padding:7px 10px;margin:8px 0;white-space:normal;word-break:break-word;line-height:1.6;}
+.center-text{text-align:center;}
+.danger-text{color:var(--danger);font-weight:700;}
+.badge.struct, .alert-box.struct .badge{background:var(--structure);}
+.alert-box.struct{border-left-color:var(--structure);}
+.alert-box.ncert{border-left-color:var(--purple);}
+.alert-box.ncert .badge{background:var(--purple);}
+.alert-box.trap{border-left-color:var(--danger);}
+.alert-box.trap .badge{background:var(--danger);}
+
+@media print{
+  body{background:#fff;padding:0;font-size:10.5pt;}
+  .container{display:block;column-count:2;column-gap:14px;}
+  .card{margin-bottom:14px;box-shadow:none;page-break-inside:avoid;}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Alkaline Earth Metals — Group 2</h1>
+  <div class="subtitle">NCERT + ALLEN + J.D. Lee · Structures &amp; Reactions Companion</div>
+</header>
+
+<div class="container">
+  <div class="card wide" style="border-color:var(--structure);grid-column:1/-1;">
+    <h2 style="color:var(--structure)">Part A — Structural Diagrams (Visual Reference)</h2>
+    <p style="font-size:12.5px;color:var(--text-soft);">Key molecular and lattice structures referenced throughout the notes below.</p>
+  </div>
+
+<div class="card structure wide">
+    <h2 style="color:var(--structure)">4 · Structure — BeCl₂: Three Faces of One Molecule</h2>
+    <figure>
+      <svg viewBox="0 0 920 210" role="img" aria-label="BeCl2 exists as an infinite chlorine-bridged chain polymer in the solid state, a chlorine-bridged dimer in vapour at moderate temperature, and dissociates into a linear monomer above 1200 kelvin in the gas phase" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <marker id="arrBe" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+            <path d="M0,0 L10,5 L0,10 z" fill="currentColor"/>
+          </marker>
+        </defs>
+        <text x="60" y="22" font-size="12" font-family="IBM Plex Mono, monospace" font-weight="700" fill="currentColor">SOLID (chain polymer)</text>
+        <g stroke="currentColor" stroke-width="2" fill="none">
+          <path d="M20,60 L55,90 L90,60 L125,90 L160,60 L195,90 L230,60"/>
+        </g>
+        <g font-family="IBM Plex Mono, monospace" font-size="13" font-weight="700">
+          <circle cx="20" cy="60" r="9" fill="var(--diagram-atom-be)"/>
+          <circle cx="90" cy="60" r="9" fill="var(--diagram-atom-be)"/>
+          <circle cx="160" cy="60" r="9" fill="var(--diagram-atom-be)"/>
+          <circle cx="230" cy="60" r="9" fill="var(--diagram-atom-be)"/>
+          <circle cx="55" cy="90" r="7" fill="var(--diagram-atom-cl)"/>
+          <circle cx="125" cy="90" r="7" fill="var(--diagram-atom-cl)"/>
+          <circle cx="195" cy="90" r="7" fill="var(--diagram-atom-cl)"/>
+          <text x="20" y="45" text-anchor="middle" fill="var(--diagram-atom-be)">Be</text>
+          <text x="90" y="45" text-anchor="middle" fill="var(--diagram-atom-be)">Be</text>
+          <text x="160" y="45" text-anchor="middle" fill="var(--diagram-atom-be)">Be</text>
+          <text x="55" y="112" text-anchor="middle" fill="var(--diagram-atom-cl)">Cl</text>
+          <text x="125" y="112" text-anchor="middle" fill="var(--diagram-atom-cl)">Cl</text>
+          <text x="195" y="112" text-anchor="middle" fill="var(--diagram-atom-cl)">Cl</text>
+        </g>
+        <text x="130" y="140" text-anchor="middle" font-size="11.5" fill="currentColor" font-family="IBM Plex Mono, monospace">each Cl: 1 normal bond + 1 dative bond → Be is 4-coordinate</text>
+
+        <line x1="290" y1="75" x2="340" y2="75" stroke="currentColor" stroke-width="2" marker-end="url(#arrBe)"/>
+        <text x="315" y="66" text-anchor="middle" font-size="10.5" fill="currentColor">vaporize</text>
+
+        <text x="430" y="22" font-size="12" font-family="IBM Plex Mono, monospace" font-weight="700" fill="currentColor">VAPOUR (dimer, Be₂Cl₄)</text>
+        <g stroke="currentColor" stroke-width="2" fill="none">
+          <polygon points="400,75 445,55 490,75 445,95" />
+          <line x1="400" y1="75" x2="365" y2="60"/>
+          <line x1="400" y1="75" x2="365" y2="90"/>
+          <line x1="490" y1="75" x2="525" y2="60"/>
+          <line x1="490" y1="75" x2="525" y2="90"/>
+        </g>
+        <circle cx="400" cy="75" r="9" fill="var(--diagram-atom-be)"/>
+        <circle cx="490" cy="75" r="9" fill="var(--diagram-atom-be)"/>
+        <circle cx="445" cy="55" r="7" fill="var(--diagram-atom-cl)"/>
+        <circle cx="445" cy="95" r="7" fill="var(--diagram-atom-cl)"/>
+        <circle cx="365" cy="60" r="7" fill="var(--diagram-atom-cl)"/>
+        <circle cx="365" cy="90" r="7" fill="var(--diagram-atom-cl)"/>
+        <circle cx="525" cy="60" r="7" fill="var(--diagram-atom-cl)"/>
+        <circle cx="525" cy="90" r="7" fill="var(--diagram-atom-cl)"/>
+        <text x="400" y="130" text-anchor="middle" font-size="12" font-family="IBM Plex Mono, monospace" fill="var(--diagram-atom-be)">Be</text>
+        <text x="490" y="130" text-anchor="middle" font-size="12" font-family="IBM Plex Mono, monospace" fill="var(--diagram-atom-be)">Be</text>
+
+        <line x1="600" y1="75" x2="650" y2="75" stroke="currentColor" stroke-width="2" marker-end="url(#arrBe)"/>
+        <text x="625" y="66" text-anchor="middle" font-size="10.5" fill="currentColor">&gt;1200 K</text>
+
+        <text x="750" y="22" text-anchor="middle" font-size="12" font-family="IBM Plex Mono, monospace" font-weight="700" fill="currentColor">GAS (linear monomer)</text>
+        <g stroke="currentColor" stroke-width="2">
+          <line x1="700" y1="75" x2="750" y2="75"/>
+          <line x1="750" y1="75" x2="800" y2="75"/>
+        </g>
+        <circle cx="700" cy="75" r="7" fill="var(--diagram-atom-cl)"/>
+        <circle cx="750" cy="75" r="9" fill="var(--diagram-atom-be)"/>
+        <circle cx="800" cy="75" r="7" fill="var(--diagram-atom-cl)"/>
+        <text x="700" y="100" text-anchor="middle" font-size="12" font-family="IBM Plex Mono, monospace" fill="var(--diagram-atom-cl)">Cl</text>
+        <text x="750" y="55" text-anchor="middle" font-size="12" font-family="IBM Plex Mono, monospace" fill="var(--diagram-atom-be)">Be</text>
+        <text x="800" y="100" text-anchor="middle" font-size="12" font-family="IBM Plex Mono, monospace" fill="var(--diagram-atom-cl)">Cl</text>
+        <text x="750" y="130" text-anchor="middle" font-size="11.5" fill="currentColor" font-family="IBM Plex Mono, monospace">180° · sp hybridised · electron-deficient</text>
+      </svg>
+      <figcaption>Same molecule, three coordination states: 4-fold chain (solid) → 4-fold dimer (vapour) → 2-fold linear (gas, &gt;1200 K)</figcaption>
+    </figure>
+  </div>
+
+<div class="card structure">
+    <h2 style="color:var(--structure)">5 · Structure — BeH₂ &amp; sp-Hybridisation</h2>
+    <figure>
+      <svg viewBox="0 0 260 130" role="img" aria-label="BeH2 polymer chain with three-centre two-electron banana bonds bridging each pair of beryllium atoms through a hydrogen atom" xmlns="http://www.w3.org/2000/svg">
+        <g stroke="currentColor" stroke-width="1.6" fill="none" opacity="0.85">
+          <path d="M30,70 Q52,40 74,70" />
+          <path d="M30,70 Q52,90 74,70" />
+          <path d="M74,70 Q96,40 118,70" />
+          <path d="M74,70 Q96,90 118,70" />
+          <path d="M118,70 Q140,40 162,70" />
+          <path d="M118,70 Q140,90 162,70" />
+        </g>
+        <g font-family="IBM Plex Mono, monospace" font-size="12" font-weight="700">
+          <circle cx="30" cy="70" r="8" fill="var(--diagram-atom-be)"/>
+          <circle cx="74" cy="70" r="6" fill="currentColor" opacity="0.55"/>
+          <circle cx="118" cy="70" r="8" fill="var(--diagram-atom-be)"/>
+          <circle cx="162" cy="70" r="6" fill="currentColor" opacity="0.55"/>
+          <text x="30" y="52" text-anchor="middle" fill="var(--diagram-atom-be)">Be</text>
+          <text x="118" y="52" text-anchor="middle" fill="var(--diagram-atom-be)">Be</text>
+          <text x="74" y="98" text-anchor="middle" fill="currentColor">H</text>
+          <text x="162" y="98" text-anchor="middle" fill="currentColor">H</text>
+        </g>
+        <text x="96" y="118" text-anchor="middle" font-size="10.5" fill="currentColor" font-family="IBM Plex Mono, monospace">3c–2e "banana" bonds — each H bridges 2 Be</text>
+      </svg>
+      <figcaption>Electron-deficient polymer: 2 valence e⁻ per Be spread over 4 bonds</figcaption>
+    </figure>
+    <div class="alert-box">
+      <span class="badge struct">MECHANISM</span> Ground Be (2s²) has 0 unpaired e⁻. Promote 2s→2p: <span class="chem">2s¹2p¹</span>, 2 unpaired e⁻ → <strong>sp hybrid</strong> → linear, 2-coordinate BeX₂ (gas only).
+    </div>
+    <div class="alert-box">
+      <span class="badge struct">SYNTHESIS</span> <span class="chem">2BeCl₂+LiAlH₄→2BeH₂+LiCl+AlCl₃</span> — H⁻ (from LiAlH₄) attacks electrophilic Be, displacing Cl⁻: an <strong>SN2-like</strong> substitution at Be. Purer route: <span class="chem">BeCl₂+2Li[BH₄]→BeB₂H₈+2LiCl</span>, then <span class="chem">+2PPh₃(sealed,Δ)→BeH₂+2Ph₃PBH₃</span>.
+    </div>
+  </div>
+
+<div class="card structure">
+    <h2 style="color:var(--structure)">6 · Structure — Be²⁺ Complexes (CN = 4 always)</h2>
+    <div class="diagram-row">
+      <figure>
+        <svg viewBox="0 0 140 140" role="img" aria-label="Be(H2O)4 2+ tetrahedral complex with beryllium at the centre bonded to four water molecules" xmlns="http://www.w3.org/2000/svg">
+          <g stroke="currentColor" stroke-width="1.8">
+            <line x1="70" y1="70" x2="70" y2="20"/>
+            <line x1="70" y1="70" x2="118" y2="55"/>
+            <line x1="70" y1="70" x2="108" y2="112"/>
+            <line x1="70" y1="70" x2="30" y2="108"/>
+          </g>
+          <circle cx="70" cy="70" r="10" fill="var(--diagram-atom-be)"/>
+          <circle cx="70" cy="20" r="7" fill="var(--diagram-atom-o)"/>
+          <circle cx="118" cy="55" r="7" fill="var(--diagram-atom-o)"/>
+          <circle cx="108" cy="112" r="7" fill="var(--diagram-atom-o)"/>
+          <circle cx="30" cy="108" r="7" fill="var(--diagram-atom-o)"/>
+          <text x="70" y="74" text-anchor="middle" font-size="10.5" font-family="IBM Plex Mono, monospace" fill="#fff">Be</text>
+          <text x="70" y="14" text-anchor="middle" font-size="10" font-family="IBM Plex Mono, monospace" fill="currentColor">OH₂</text>
+          <text x="128" y="52" text-anchor="middle" font-size="10" font-family="IBM Plex Mono, monospace" fill="currentColor">OH₂</text>
+          <text x="112" y="128" text-anchor="middle" font-size="10" font-family="IBM Plex Mono, monospace" fill="currentColor">OH₂</text>
+          <text x="20" y="124" text-anchor="middle" font-size="10" font-family="IBM Plex Mono, monospace" fill="currentColor">OH₂</text>
+        </svg>
+        <figcaption><span class="chem">[Be(H₂O)₄]²⁺</span> — sp³, tetrahedral</figcaption>
+      </figure>
+    </div>
+    <ul>
+      <li>Be has only 4 valence orbitals (2s + 3×2p) — <strong>never</strong> 6-coordinate, unlike Mg–Ba (use d-orbitals).</li>
+      <li>Strong Be–O bond weakens O–H → acidic hydrolysis: <span class="chem">[Be(H₂O)₄]²⁺ ⇌ [Be(H₂O)₃(OH)]⁺ + H₃O⁺</span></li>
+      <li>Alkali gives beryllate: <span class="chem">[Be(OH)₄]²⁻</span> &nbsp;·&nbsp; F⁻ gives <span class="chem">[BeF₄]²⁻</span></li>
+    </ul>
+  </div>
+
+<div class="card structure wide">
+    <h2 style="color:var(--structure)">7 · Structure — Basic Beryllium Acetate [Be₄O(CH₃COO)₆]</h2>
+    <div>
+      <figure style="max-width:280px;margin-left:auto;margin-right:auto;">
+        <svg viewBox="0 0 220 200" role="img" aria-label="Basic beryllium acetate has a central oxide ion surrounded tetrahedrally by four beryllium atoms, with six acetate groups bridging the six edges of the tetrahedron" xmlns="http://www.w3.org/2000/svg">
+          <g stroke="currentColor" stroke-width="1.6" fill="none" opacity="0.75">
+            <line x1="110" y1="100" x2="110" y2="30"/>
+            <line x1="110" y1="100" x2="185" y2="70"/>
+            <line x1="110" y1="100" x2="165" y2="165"/>
+            <line x1="110" y1="100" x2="45" y2="155"/>
+            <line x1="110" y1="30" x2="185" y2="70"/>
+            <line x1="185" y1="70" x2="165" y2="165"/>
+            <line x1="165" y1="165" x2="45" y2="155"/>
+            <line x1="45" y1="155" x2="110" y2="30"/>
+          </g>
+          <circle cx="110" cy="100" r="9" fill="var(--diagram-atom-o)"/>
+          <text x="110" y="104" text-anchor="middle" font-size="9" font-family="IBM Plex Mono, monospace" fill="#fff">O²⁻</text>
+          <circle cx="110" cy="30" r="8" fill="var(--diagram-atom-be)"/>
+          <circle cx="185" cy="70" r="8" fill="var(--diagram-atom-be)"/>
+          <circle cx="165" cy="165" r="8" fill="var(--diagram-atom-be)"/>
+          <circle cx="45" cy="155" r="8" fill="var(--diagram-atom-be)"/>
+          <text x="110" y="16" text-anchor="middle" font-size="10" font-family="IBM Plex Mono, monospace" fill="var(--diagram-atom-be)">Be</text>
+          <text x="200" y="66" text-anchor="middle" font-size="10" font-family="IBM Plex Mono, monospace" fill="var(--diagram-atom-be)">Be</text>
+          <text x="178" y="182" text-anchor="middle" font-size="10" font-family="IBM Plex Mono, monospace" fill="var(--diagram-atom-be)">Be</text>
+          <text x="25" y="172" text-anchor="middle" font-size="10" font-family="IBM Plex Mono, monospace" fill="var(--diagram-atom-be)">Be</text>
+        </svg>
+        <figcaption>4 Be at tetrahedron corners; central O²⁻; 6 acetates bridge the 6 edges</figcaption>
+      </figure>
+      <ul>
+        <li>Covalent, low-melting (285 °C), soluble in organic solvents — can be <strong>distilled</strong>, used to purify beryllium.</li>
+        <li>Prepared by evaporating Be(OH)₂ in acetic acid.</li>
+        <li><strong>Basic beryllium nitrate</strong> <span class="chem">[Be₄O(NO₃)₆]</span> shares the same Be₄O core; NO₃⁻ instead bridges pairs of Be atoms bidentately.</li>
+      </ul>
+    </div>
+  </div>
+
+<div class="card structure wide">
+    <h2 style="color:var(--structure)">8 · Structure — CaC₂ Lattice &amp; the Cyanamide Ion</h2>
+    <div>
+      <figure style="max-width:260px;margin-left:auto;margin-right:auto;">
+        <svg viewBox="0 0 200 160" role="img" aria-label="Calcium carbide adopts a distorted sodium chloride type lattice where linear C2 2- acetylide ions replace chloride ions, elongating the unit cell along the axis where the ions are aligned" xmlns="http://www.w3.org/2000/svg">
+          <g stroke="currentColor" stroke-width="1.3" fill="none" opacity="0.6">
+            <rect x="30" y="20" width="140" height="120"/>
+            <line x1="30" y1="60" x2="170" y2="60"/>
+            <line x1="30" y1="100" x2="170" y2="100"/>
+            <line x1="70" y1="20" x2="70" y2="140"/>
+            <line x1="130" y1="20" x2="130" y2="140"/>
+          </g>
+          <circle cx="30" cy="20" r="6" fill="var(--diagram-atom-be)"/>
+          <circle cx="170" cy="20" r="6" fill="var(--diagram-atom-be)"/>
+          <circle cx="30" cy="140" r="6" fill="var(--diagram-atom-be)"/>
+          <circle cx="170" cy="140" r="6" fill="var(--diagram-atom-be)"/>
+          <circle cx="100" cy="20" r="6" fill="var(--diagram-atom-be)"/>
+          <circle cx="100" cy="140" r="6" fill="var(--diagram-atom-be)"/>
+          <circle cx="30" cy="80" r="6" fill="var(--diagram-atom-be)"/>
+          <circle cx="170" cy="80" r="6" fill="var(--diagram-atom-be)"/>
+          <g stroke="currentColor" stroke-width="3">
+            <line x1="90" y1="52" x2="110" y2="68"/>
+            <line x1="90" y1="132" x2="110" y2="148"/>
+            <line x1="60" y1="92" x2="80" y2="108"/>
+            <line x1="140" y1="92" x2="160" y2="108"/>
+          </g>
+          <text x="100" y="12" text-anchor="middle" font-size="9.5" font-family="IBM Plex Mono, monospace" fill="var(--diagram-atom-be)">Ca²⁺</text>
+          <text x="100" y="80" text-anchor="middle" font-size="9.5" font-family="IBM Plex Mono, monospace" fill="currentColor">C₂²⁻ (tilted)</text>
+        </svg>
+        <figcaption>Distorted NaCl-type: Ca²⁺ ↔ Na⁺, linear C₂²⁻ ↔ Cl⁻ (non-spherical → distortion; >450 °C → tetragonal, disordered)</figcaption>
+      </figure>
+      <div>
+        <p style="margin:0 0 6px;font-size:12.5px;"><span class="chem">CaC₂ + N₂ →(1100°C)→ CaNCN + C</span> — industrial N₂ fixation</p>
+        <figure style="margin:6px auto;max-width:260px;">
+          <svg viewBox="0 0 200 50" role="img" aria-label="The cyanamide ion is linear, N double bond C double bond N, with a 2 minus charge, isoelectronic with carbon dioxide" xmlns="http://www.w3.org/2000/svg">
+            <g stroke="currentColor" stroke-width="2">
+              <line x1="30" y1="25" x2="80" y2="25"/>
+              <line x1="30" y1="19" x2="80" y2="19"/>
+              <line x1="120" y1="25" x2="170" y2="25"/>
+              <line x1="120" y1="19" x2="170" y2="19"/>
+            </g>
+            <text x="20" y="30" text-anchor="middle" font-size="14" font-family="IBM Plex Mono, monospace" fill="currentColor">N</text>
+            <text x="100" y="30" text-anchor="middle" font-size="14" font-family="IBM Plex Mono, monospace" fill="currentColor">C</text>
+            <text x="180" y="30" text-anchor="middle" font-size="14" font-family="IBM Plex Mono, monospace" fill="currentColor">N</text>
+            <text x="192" y="14" font-size="11" font-family="IBM Plex Mono, monospace" fill="currentColor">2−</text>
+          </svg>
+          <figcaption>[N=C=N]²⁻, linear — isoelectronic with CO₂</figcaption>
+        </figure>
+        <p style="font-size:12px;color:var(--text-soft);margin:4px 0;">CaNCN + 5H₂O → CaCO₃ + 2NH₄OH (slow-release fertilizer) · → urea, thiourea, melamine downstream</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="card wide" style="border-color:var(--accent);grid-column:1/-1;">
+    <h2 style="color:var(--accent)">Part B — Complete Notes (Full Text, NCERT + ALLEN + J.D. Lee/Guha)</h2>
+  </div>
+
+<div class="card fulltext trends wide">
+<h2>About These Notes</h2>
+<p class="center-text"><strong>JEE ADVANCED</strong></p>
+<p class="center-text"><strong>MASTER NOTES</strong></p>
+<p class="center-text"><strong>ALKALINE EARTH METALS</strong></p>
+<p class="center-text"><em>Group 2 · s-Block Elements</em></p>
+<p class="center-text"><strong>Be   ·   Mg   ·   Ca   ·   Sr   ·   Ba   ·   Ra</strong></p>
+<div class="alert-box ncert"><span class="badge ncert">NCERT FOCUS — How to read these notes</span><p>Built from NCERT (Unit 10, Class XI Chemistry), J.D. Lee's <em>Concise Inorganic Chemistry</em> (Group 2), and JEE-Advanced coaching sources, cross-checked for consistency. Green boxes mark NCERT-exact scope/definitions/uses; blue boxes give molecular-orbital / valence-bond reasoning for bonding; orange boxes flag traps examiners exploit.</p></div>
+<p class="center-text"><em>Compiled for rigorous, theory-first, reaction-complete revision.</em></p>
+</div>
+
+<div class="card fulltext hydrides wide">
+<h2>1. Introduction &amp; General Trends</h2>
+<p><strong>Group 2 </strong>comprises <strong>Be, Mg, Ca, Sr, Ba, Ra</strong> — general valence configuration <em>n</em>s<em>2</em>. All members except Be are traditionally called <strong>alkaline earth metals</strong> because their oxides/hydroxides are alkaline and the metals occur combined as "earths" (refractory oxide minerals) in nature.</p>
+<h3>1.1 Electronic Configuration &amp; Oxidation State</h3>
+<div class="table-wrap"><table><tr><th>Element</th><th>Symbol</th><th>Configuration</th><th>Atomic No.</th></tr><tr><td>Beryllium</td><td>Be</td><td>[He] 2s²</td><td>4</td></tr><tr><td>Magnesium</td><td>Mg</td><td>[Ne] 3s²</td><td>12</td></tr><tr><td>Calcium</td><td>Ca</td><td>[Ar] 4s²</td><td>20</td></tr><tr><td>Strontium</td><td>Sr</td><td>[Kr] 5s²</td><td>38</td></tr><tr><td>Barium</td><td>Ba</td><td>[Xe] 6s²</td><td>56</td></tr><tr><td>Radium</td><td>Ra</td><td>[Rn] 7s²</td><td>88</td></tr></table></div>
+<p>+2 is the only significant oxidation state. Removing both <em>n</em>s electrons leaves a noble-gas core, so the <strong>third ionization enthalpy is enormous </strong>(e.g. IE₃ of Be ≈ 14,847 kJ/mol, Mg ≈ 7,731 kJ/mol) — M³⁺ is never formed.</p>
+<h3>1.2 Occurrence (minerals worth remembering)</h3>
+<ul><li><strong>Be: </strong>beryl Be₃Al₂Si₆O₁₈ (rare)</li><li><strong>Mg: </strong>magnesite MgCO₃, dolomite CaCO₃·MgCO₃, carnallite KCl·MgCl₂·6H₂O, seawater</li><li><strong>Ca: </strong>limestone/chalk/marble (CaCO₃), gypsum CaSO₄·2H₂O, fluorite CaF₂, fluorapatite 3Ca₃(PO₄)₂·CaF₂</li><li><strong>Sr: </strong>celestite SrSO₄, strontianite SrCO₃</li><li><strong>Ba: </strong>barytes BaSO₄, witherite BaCO₃</li><li><strong>Ra: </strong>extreme trace, radioactive; isolated by the Curies from pitchblende</li></ul>
+<h3>1.3 Atomic &amp; Ionic Radii</h3>
+<p>Radii increase steadily down the group as a new shell is added each period. At the same time, Group 2 atoms/ions are smaller than the corresponding Group 1 element of the same period, because the extra proton (higher nuclear charge) pulls the electron cloud in more tightly.</p>
+<div class="table-wrap"><table><tr><th>Quantity</th><th>Be</th><th>Mg</th><th>Ca</th><th>Sr</th><th>Ba</th></tr><tr><td>Metallic radius (pm)</td><td>111</td><td>160</td><td>197</td><td>215</td><td>222</td></tr><tr><td>M²⁺ ionic radius (pm)</td><td>31</td><td>72</td><td>100</td><td>118</td><td>135</td></tr></table></div>
+<h3>1.4 Ionization Enthalpy</h3>
+<div class="table-wrap"><table><tr><th></th><th>Be</th><th>Mg</th><th>Ca</th><th>Sr</th><th>Ba</th><th>Ra</th></tr><tr><td>IE₁ (kJ/mol)</td><td>899</td><td>737</td><td>590</td><td>549</td><td>503</td><td>509</td></tr><tr><td>IE₂ (kJ/mol)</td><td>1757</td><td>1450</td><td>1145</td><td>1064</td><td>965</td><td>979</td></tr></table></div>
+<p>Ra's IE₁/IE₂ are very slightly <strong>higher</strong> than Ba's — this is not a random anomaly. Radium comes right after the <strong>4f¹⁴ subshell</strong> is filled (through the lanthanides) and after the 5d subshell too; the poorly-shielding, diffuse 4f electrons let the nuclear charge "leak through" more effectively to the outer 7s electrons — the same <em>lanthanide-contraction-type</em> effect responsible for Cs vs. Fr and other 6th/7th-period irregularities. So Ra is very slightly <strong>smaller and harder to ionize</strong> than a naive extrapolation down the group would predict.</p>
+<div class="alert-box ncert"><span class="badge ncert">NCERT FOCUS — Why is IE₁(Group 2) &gt; IE₁(Group 1) but IE₂(Group 2) &lt; IE₂(Group 1) for the same period?</span><p>Group 2 atoms are smaller than the Group 1 atom of the same period (higher nuclear charge), so their <strong>IE₁ is higher</strong>. But a Group 1 atom, having lost one electron, already has a noble-gas core — pulling out a <strong>second</strong> electron from that core (IE₂ of Group 1) is extremely costly. For Group 2, the second electron removed is the one that <em>completes</em> the noble-gas configuration, so <strong>IE₂ of Group 2 &lt; IE₂ of Group 1</strong> for the same period.</p></div>
+<h3>1.5 Hydration Enthalpy</h3>
+<div class="table-wrap"><table><tr><th>M²⁺</th><th>Be²⁺</th><th>Mg²⁺</th><th>Ca²⁺</th><th>Sr²⁺</th><th>Ba²⁺</th></tr><tr><td>ΔH_hyd (kJ/mol)</td><td>−2494</td><td>−1921</td><td>−1577</td><td>−1443</td><td>−1305</td></tr></table></div>
+<p>Hydration enthalpies fall steadily as ionic size increases (weaker ion–dipole pull). Group 2 values run <strong>4–5× larger</strong> than the corresponding Group 1 ion (smaller size, double the charge). This is why Group 2 salts crystallize with far more water of hydration than Group 1 salts: <em>MgCl₂·6H₂O, CaCl₂·6H₂O, SrCl₂·6H₂O, BaCl₂·2H₂O</em> exist, while NaCl and KCl are anhydrous. Note the number of hydrate waters <strong>falls</strong> down the group as hydration enthalpy weakens.</p>
+<h3>1.6 Melting Point, Boiling Point, Density</h3>
+<div class="table-wrap"><table><tr><th></th><th>Be</th><th>Mg</th><th>Ca</th><th>Sr</th><th>Ba</th><th>Ra</th></tr><tr><td>m.p. (K)</td><td>1560</td><td>924</td><td>1124</td><td>1062</td><td>1002</td><td>973</td></tr><tr><td>b.p. (K)</td><td>2745</td><td>1363</td><td>1767</td><td>1655</td><td>2078</td><td>≈1973</td></tr><tr><td>Density (g/cm³)</td><td>1.84</td><td>1.74</td><td>1.55</td><td>2.63</td><td>3.59</td><td>≈5.5</td></tr></table></div>
+<p><strong>The actual crystal structures behind the "different lattice" explanation: </strong>Be and Mg adopt <strong>hexagonal close-packed (hcp, CN = 12)</strong>; Ca and Sr adopt <strong>cubic close-packed (ccp/fcc, CN = 12)</strong> at room temperature; Ba adopts <strong>body-centred cubic (bcc, CN = 8)</strong>. Ca even undergoes its own <em>fcc → bcc phase transition</em> on heating. Since bcc packing is less efficient (lower coordination number, lower packing fraction) than hcp/ccp, the metallic bonding is weaker wherever bcc appears — this is precisely why Ba (bcc) breaks the naive "m.p. falls smoothly down the group" pattern.</p>
+<div class="alert-box trap"><span class="badge trap">JEE TRAP</span><ul><li>The m.p./b.p./density trend down the group is <span class="danger-text"><strong>NOT monotonic</strong></span> — do not force a simple "decreases smoothly" or "increases smoothly" narrative. NCERT itself flags this explicitly: the metals crystallize in <strong>different lattice structures</strong>, so the trend is irregular.</li><li>Group 2 metals are harder and higher-melting than the corresponding Group 1 metals because <strong>two</strong> valence electrons (not one) participate in metallic bonding — roughly double the cohesive energy.</li></ul></div>
+<h3>1.7 Standard Reduction Potential &amp; Reducing Power</h3>
+<div class="table-wrap"><table><tr><th>M²⁺/M</th><th>Be</th><th>Mg</th><th>Ca</th><th>Sr</th><th>Ba</th><th>Ra</th></tr><tr><td>E° (V), J.D. Lee Table 11.9</td><td>−1.85</td><td>−2.37</td><td>−2.87</td><td>−2.89</td><td>−2.91</td><td>−2.92</td></tr></table></div>
+<ul><li>Reducing power broadly increases Be → Ba, but <strong>Be is anomalous</strong> — its E° is <strong>least negative</strong> in the group (weakest reducing agent). This indicates Be is much less electropositive (less "metallic") than the rest of the group.</li><li>Ca, Sr, Ba have reduction potentials <strong>similar to the corresponding Group 1 metals</strong>, and are quite high in the electrochemical series.</li></ul>
+<div class="alert-box ncert"><span class="badge ncert">NCERT FOCUS — NCERT's exact reasoning for Be's weak reducing power (matches J.D. Lee's Born–Haber-type logic)</span><p><em>"Beryllium has less negative value compared to other alkaline earth metals. However, its reducing nature is due to large hydration energy associated with the small size of Be²⁺ ion and relatively large value of the atomization enthalpy of the metal."</em></p><p>Key idea: E° is a <strong>net thermodynamic sum</strong> of atomization enthalpy + IE₁ + IE₂ + hydration enthalpy — it cannot be read off from ionization enthalpy alone. This mirrors the classic Li-anomaly in Group 1.</p></div>
+<div class="alert-box trap"><span class="badge trap">JEE TRAP</span><ul><li>Different textbooks tabulate E°(Be²⁺/Be) as either −1.85 V (J.D. Lee, and used in Be–Al comparisons) or −1.97 V (some standard data tables) — both are legitimate literature values (method-dependent). Use <strong>−1.85 V</strong> as the primary JEE-quotable figure since it is the one that correctly places Be closest to Al (−1.66 V) among all metals.</li></ul></div>
+<h3>1.8 Flame Colours</h3>
+<div class="table-wrap"><table><tr><th>Metal</th><th>Ca</th><th>Sr</th><th>Ba</th><th>Be, Mg</th></tr><tr><td>Flame colour</td><td>Brick red</td><td>Crimson</td><td>Apple green</td><td>None</td></tr></table></div>
+<p>Mechanism: flame heat promotes an outer electron to a higher level; on relaxation the energy is emitted as visible light (E = h<em>ν</em>). <strong>Be and Mg show no flame colour</strong> because their valence electrons are too strongly (tightly) bound by the small, high-charge-density nucleus to be excited at ordinary flame temperatures.</p>
+<div class="alert-box trap"><span class="badge trap">JEE TRAP</span><ul><li>"Mg burns with a dazzling white light" describes <strong>combustion emission</strong> (incandescent MgO), <em>not</em> a flame-test colour for Mg²⁺. Mg still gives <strong>no</strong> characteristic flame-test line.</li></ul></div>
+<h3>1.9 Extraction of the Metals (J.D. Lee)</h3>
+<p>Group 2 metals are themselves strong reducing agents and are strongly electropositive, so aqueous solutions cannot be used to displace them with another metal, and simple chemical reduction of the oxides is not viable. Electrolysis of aqueous solutions is possible using a mercury cathode (giving an amalgam), but recovering the pure metal from the amalgam is difficult. <strong>All the metals can be obtained by electrolysis of the fused chloride</strong>, with NaCl added to lower the melting point, though Sr and Ba tend to form a colloidal suspension during the process.</p>
+<h4>Beryllium</h4>
+<ul><li>Extracted from beryl Be₃Al₂Si₆O₁₈ by fusion or sulphuric acid treatment to give soluble BeSO₄, which is treated with NH₄OH to precipitate the hydroxide Be(OH)₂ (BeO is amphoteric, but the aluminium is removed as the soluble tetrahydroxoaluminate complex).</li><li>Be(OH)₂ is converted to BeF₂ (by treatment with HF), and the metal is obtained either by <strong>reduction with Mg</strong>: <em>BeF₂ + Mg → Be + MgF₂</em>, or by electrolysis of the fused chloride made from BeO + C + Cl₂.</li><li>Both Be and BeO must be handled with extreme purity control — the main use of the metal is as a neutron moderator/reflector in nuclear reactors, and for windows on X-ray tubes because of its very low electron density (low X-ray absorption).</li></ul>
+<h4>Magnesium</h4>
+<div class="eqline">MgO + C<br>→(2000 °C)→<br>Mg + CO<br>(quenched rapidly — the reverse reaction is thermodynamically favoured on cooling)</div>
+<ul><li><strong>Pidgeon process: </strong>calcined dolomite [CaCO₃·MgCO₃ → CaO·MgO] is reduced by heating with <strong>ferrosilicon</strong> at 1150 °C under reduced pressure:</li></ul>
+<div class="eqline">[CaCO₃·MgCO₃]<br>→(heat)→<br>CaO·MgO<br>+Fe/Si→<br>Mg + Ca₂SiO₄ + Fe</div>
+<ul><li><strong>Dow sea water process: </strong>seawater (≈0.13% Mg²⁺) is treated with slaked lime — Mg(OH)₂ is far less soluble than Ca(OH)₂, so it precipitates and is filtered off, then converted to MgCl₂ with HCl and electrolysed:</li></ul>
+<div class="eqline">Ca(OH)₂ + MgCl₂(seawater) → Mg(OH)₂↓ + CaCl₂<br>Mg(OH)₂ + HCl →(heat)→ MgCl₂</div>
+<ul><li><strong>Dow natural brine process: </strong>calcined dolomite (MgO·CaO) is treated with HCl to give a CaCl₂/MgCl₂ solution; adding more calcined dolomite plus CO₂ precipitates CaCO₃, leaving pure MgCl₂ solution for electrolysis:</li></ul>
+<div class="eqline">CaCl₂·MgCl₂ + CaO·MgO + 2CO₂ → 2MgCl₂ + 2CaCO₃↓</div>
+<h4>Calcium, Strontium, Barium</h4>
+<p>Ca metal is obtained by electrolysis of fused CaCl₂ (from the Solvay-process waste stream, or from CaCO₃ + HCl). World production of Ca metal is only about 1000 tonnes/year; it is used in Al alloys, in the iron/steel industry to control carbon and scavenge P, O and S, as a reducing agent for Zr/Cr/Th/U, and to remove traces of N₂ from argon. Sr and Ba are produced on a much smaller scale, by electrolysis of the fused chloride, or by thermite-type reduction of the oxide with aluminium.</p>
+<h3>1.10 Uses of the Group 2 Metals Themselves (NCERT §10.6.7)</h3>
+<div class="alert-box ncert"><span class="badge ncert">NCERT FOCUS — NCERT-exact uses list — the metals, not their compounds</span><ul><li>Beryllium: used in the manufacture of alloys — copper–beryllium alloys are used to prepare high-strength springs. Metallic beryllium is used for making windows of X-ray tubes.</li><li>Magnesium: forms alloys with aluminium, zinc, manganese and tin. Mg–Al alloys, being light in mass, are used in aircraft construction. Magnesium (powder and ribbon) is used in flash powders and bulbs, incendiary bombs, and signals. A suspension of magnesium hydroxide in water ("milk of magnesia") is used as an antacid in medicine. Magnesium carbonate is an ingredient of toothpaste.</li><li>Calcium: used in the extraction of metals from oxides which are difficult to reduce with carbon. Calcium and barium metals, owing to their reactivity with oxygen and nitrogen at elevated temperatures, have often been used to remove the last traces of air from vacuum tubes (as "getters").</li><li>Radium: radium salts are used in radiotherapy, for example in the treatment of cancer.</li></ul></div>
+<h3>1.11 Lattice Energy vs Hydration Energy — The Master Solubility Framework</h3>
+<p>Solubility of Group 2 compounds departs from the usual "heavier = less soluble" intuition and is instead governed entirely by the <strong>competition between lattice energy and hydration energy</strong> as the cation grows down the group.</p>
+<div class="table-wrap"><table><tr><th>Lattice energy (kJ/mol)</th><th>Mg</th><th>Ca</th><th>Sr</th><th>Ba</th></tr><tr><td>MO</td><td>−3923</td><td>−3517</td><td>−3312</td><td>−3120</td></tr><tr><td>MCO₃</td><td>−3078</td><td>−2986</td><td>−2718</td><td>−2614</td></tr><tr><td>MF₂</td><td>−2906</td><td>−2610</td><td>−2496</td><td>−2367</td></tr><tr><td>MCl₂</td><td>−2592</td><td>−2258</td><td>−2159</td><td>−2018 (approx.)</td></tr></table></div>
+<div class="table-wrap"><table><tr><th>ΔH_hydration (kJ/mol)</th><th>Be²⁺</th><th>Mg²⁺</th><th>Ca²⁺</th><th>Sr²⁺</th><th>Ba²⁺</th></tr><tr><td></td><td>−2494</td><td>−1921</td><td>−1577</td><td>−1443</td><td>−1305</td></tr></table></div>
+<div class="alert-box struct"><span class="badge struct">MOT / BONDING — J.D. Lee's exact reasoning (the single most important paragraph in the chapter)</span><p><em>"For a substance to dissolve, the hydration energy must exceed the lattice energy. Consider a related group of compounds, such as the chlorides of all the Group 2 metals. On descending the group, the metal ions become larger and so both the lattice energy and the hydration energy decrease. A decrease in lattice energy favours increased solubility, but a decrease in hydration energy favours decreased solubility. These two factors thus change in opposite directions, and the overall effect depends on which of the two has changed most. With most compounds, on descending the group, the hydration energy decreases more rapidly than the lattice energy: hence the compounds become less soluble as the metal gets larger. However, with fluorides and hydroxides the lattice energy decreases more rapidly than the hydration energy, and so their solubility increases on descending the group."</em></p></div>
+</div>
+
+<div class="card fulltext halides wide">
+<h2>2. Chemical Reactivity</h2>
+<h3>2.1 Reactivity toward Air / O₂ / N₂</h3>
+<ul><li><strong>Be, Mg: </strong>kinetically inert at room temperature — a thin, adherent protective oxide film forms and stops further attack. The metals are relatively unreactive in massive form and do not react below about 600 °C, but powdered metal is far more reactive: powdered Be ignites to give BeO + Be₃N₂. Mg burns with dazzling brilliance, evolving a great deal of heat — this is used to <strong>start a thermite reaction</strong> with aluminium, and to provide light in (old-style) flash photography using light bulbs, not electronics, giving MgO + Mg₃N₂.</li><li><strong>Ca, Sr, Ba: </strong>tarnish readily even at ordinary temperature, forming oxide + nitride.</li><li>Normal oxide MO forms on burning in excess O₂ for all members; <strong>Ba additionally forms the peroxide BaO₂</strong> (2Ba + O₂ → 2BaO₂) — peroxide-forming tendency <strong>increases with cation size</strong> (a larger, less polarizing cation stabilizes the large, diffuse O₂²⁻ ion better).</li></ul>
+<div class="alert-box trap"><span class="badge trap">JEE TRAP</span><ul><li>Burning Mg is <strong>not</strong> extinguished by CO₂ — Mg is a strong enough reductant to reduce it: <em>2Mg + CO₂ → 2MgO + C</em>. CO₂ extinguishers must never be used on a magnesium fire.</li></ul></div>
+<h3>2.2 Reactivity toward Water</h3>
+<div class="table-wrap"><table><tr><th>Metal</th><th>Behaviour</th></tr><tr><td>Be</td><td>Essentially inert; protected by BeO film (sources note some doubt whether it reacts with steam at all)</td></tr><tr><td>Mg</td><td>No reaction with cold water; slowly decomposes hot water → Mg(OH)₂ + H₂; with steam → MgO + H₂</td></tr><tr><td>Ca, Sr, Ba</td><td>React readily with cold water: M + 2H₂O → M(OH)₂ + H₂↑</td></tr></table></div>
+<p>Magnesium's E° (−2.37 V) is actually favourable for reaction, but Mg <strong>forms a protective oxide layer</strong> — so despite this favourable reduction potential it does not readily react with cold water unless the oxide layer is first removed, e.g. by <strong>amalgamating the surface with mercury</strong>. In this particular respect (a favourable driving force blocked by a passivating oxide film), Mg's behaviour resembles that of aluminium.</p>
+<div class="alert-box trap"><span class="badge trap">JEE TRAP</span><ul><li>The isolated solid product from Mg + water depends on <strong>conditions</strong>: <em>hot liquid water</em> → Mg(OH)₂ + H₂, but <em>steam</em> → MgO + H₂ (dehydration favoured at higher T). "Mg + steam → Mg(OH)₂" is a commonly-set wrong option.</li><li>Be doesn't react with water because of <strong>kinetic passivation</strong>, not because it's thermodynamically unreactive — same logic pattern as Li in Group 1 (most negative E°, yet reacts gently with water due to a high melting point/low surface-area factor). Never infer reactivity from E° alone.</li></ul></div>
+<h3>2.3 Reactivity toward Dihydrogen — Hydrides</h3>
+<p>Ca, Sr, Ba (and Mg, with more difficulty) react directly with H₂ on heating to give MH₂: <em>Ca + H₂ → CaH₂</em>. BeH₂ cannot be made this way and must instead be made <strong>indirectly</strong>, by two independent routes:</p>
+<div class="eqline">2BeCl₂ + LiAlH₄ → 2BeH₂ + LiCl + AlCl₃</div>
+<p><em>Mechanistic picture: </em>LiAlH₄ is a source of the hydride nucleophile H⁻. In effect, H⁻ attacks the small, electron-deficient, highly electrophilic Be centre and displaces Cl⁻ — an <strong>SN2-like nucleophilic substitution</strong> at beryllium, repeated until both chlorines are replaced by hydride.</p>
+<p>A purer sample (free of Al/Li contamination) is obtained via a two-step borohydride route:</p>
+<div class="eqline">BeCl₂ + 2Li[BH₄] → BeB₂H₈ + 2LiCl<br>BeB₂H₈ + 2PPh₃<br>→(sealed tube, heat)→<br>BeH₂ + 2Ph₃PBH₃</div>
+<p><strong>Ionic vs covalent nature: </strong>CaH₂, SrH₂, BaH₂ are <strong>ionic</strong> (contain discrete H⁻); BeH₂ and MgH₂ are <strong>covalent and polymeric</strong>. All hydrides are strong reducing agents and hydrolyse in water/dilute acid liberating H₂:</p>
+<div class="eqline">CaH₂ + 2H₂O → Ca(OH)₂ + 2H₂<br>(CaH₂ = "hydrolith")</div>
+<div class="alert-box struct"><span class="badge struct">MOT / BONDING — Why is BeH₂ electron-deficient &amp; polymeric?</span><p>Ground-state Be is 1s²2s² — <strong>no unpaired electrons</strong>, so it cannot form two ordinary covalent bonds directly. Promoting one 2s electron to 2p gives 1s²2s¹2p¹ (two unpaired electrons, <strong>sp hybridisation</strong>) — this lets an <em>isolated gas-phase</em> BeH₂/BeX₂ molecule be <strong>linear</strong> (180°).</p><p>But even after sp-hybridised bonding, Be's outer shell holds only 4 electrons around it — it is <strong>electron-deficient</strong>. In the condensed (solid) phase Be resolves this by forming <strong>3-centre–2-electron ("banana") bonds</strong>: each Be–H–Be bridge is one shared electron pair spread over three atoms, so the polymer chain gives every Be a coordination number of 4 despite Be starting with only 2 valence electrons. This is the same <em>electron-deficient cluster bonding</em> logic used for diborane B₂H₆.</p></div>
+<h3>2.4 Reactivity toward Halogens — Halides</h3>
+<p>M + X₂ → MX₂ for all members. <strong>Except beryllium halides, all Group 2 halides are ionic.</strong> BeCl₂ and BeF₂ are prepared as:</p>
+<div class="eqline">BeO + C + Cl₂<br>→(600–800 K)→<br>BeCl₂ + CO<br>2BeO + CCl₄<br>→(800 °C)→<br>2BeCl₂ + CO₂</div>
+<div class="eqline">BeO + 2NH₃ + 4HF → (NH₄)₂BeF₄<br>→(heat)→<br>BeF₂ + 2NH₄F<br>[(NH₄)₂BeF₄ = ammonium fluoroberyllate]</div>
+<p>Anhydrous Be/Mg halides <strong>cannot</strong> be obtained by simply heating the hydrate — this causes hydrolysis instead of dehydration:</p>
+<div class="eqline">[Be(H₂O)₄]Cl₂<br>→(heat)→<br>Be(OH)₂ + 2HCl + 2H₂O<br>MgCl₂·6H₂O<br>→(heat)→<br>MgO + 2HCl + 5H₂O</div>
+<p>This is a general rule for <strong>small, highly-charged, strongly polarising cations</strong> — the same hydrolysis-on-heating problem is seen with Be²⁺, Mg²⁺, Al³⁺, Cr³⁺, Fe³⁺ and similar high-charge-density ions across the periodic table, not just Group 2. Contrast this with Ca, Sr, Ba, where dehydration proceeds cleanly on heating with no hydrolysis:</p>
+<div class="eqline">CaCl₂·6H₂O<br>→(heat)→<br>CaCl₂ + 6H₂O<br>(simple dehydration — no hydrolysis, because Ca²⁺ is a much weaker polariser)</div>
+<p>(Industrially, anhydrous MgCl₂ is instead made by heating the double salt MgCl₂·NH₄Cl·6H₂O, which loses water first and NH₄Cl only at higher T, avoiding hydrolysis:</p>
+<div class="eqline">MgCl₂·NH₄Cl·6H₂O<br>→(−H₂O, Δ)→<br>MgCl₂·NH₄Cl<br>→(strong Δ)→<br>MgCl₂ + NH₃ + HCl</div>
+<p>Anhydrous CaCl₂ is an excellent drying agent for gases and organic vapours — <strong>but not for NH₃ or ethanol</strong>, since it forms stable adducts instead: CaCl₂·8NH₃ and CaCl₂·4C₂H₅OH. A JEE-favourite exception to "CaCl₂ dries everything."</p>
+<div class="alert-box struct"><span class="badge struct">MOT / BONDING — BeCl₂ structure — solid, dimer, and monomer</span><p><strong>Solid state: </strong>an infinite zig-zag <strong>chain polymer</strong> with chlorine bridges — each Cl makes one normal covalent bond to one Be and donates a lone pair (dative bond) to the next Be, giving every Be a coordination number of 4.</p><p><strong>Vapour, moderate T: </strong>a chloro-bridged <strong>dimer</strong> Be₂Cl₄.</p><p><strong>Vapour, ~1200 K: </strong>dissociates into the <strong>linear monomer</strong> (sp-hybridised, 2-coordinate, electron-deficient).</p><p>Contrast: in Be(CH₃)₂ the bridge is a genuine <strong>3-centre-2-electron bond</strong> spanning Be···CH₃···Be (like BeH₂), <em>not</em> simple lone-pair donation as in the chlorine bridges of (BeCl₂)ₙ — a subtle but real mechanistic difference between halide bridging (dative) and alkyl bridging (electron-deficient).</p></div>
+<h4>Covalency trend (Fajans' rules)</h4>
+<p>Covalent character: <strong>BeX₂ &gt; MgX₂ &gt; CaX₂ &gt; SrX₂ &gt; BaX₂</strong> — the small, highly-charged Be²⁺ polarizes the anion's electron cloud strongly ("small highly charged ions tend to form covalent compounds"). For a fixed cation, covalency rises with anion polarizability: I⁻ &gt; Br⁻ &gt; Cl⁻ &gt; F⁻.</p>
+<div class="alert-box trap"><span class="badge trap">JEE TRAP</span><ul><li>BeF₂ has the <strong>largest</strong> electronegativity difference of any Be halide, yet is still regarded as covalent when fused (very low melt conductivity) — high charge density beats electronegativity difference for Be specifically.</li><li>BeF₂ is, unusually, <strong>very soluble</strong> in water (owing to the huge solvation energy that forms [Be(H₂O)₄]²⁺), even though heavier Group-2 fluorides are all almost insoluble — MF₂ (M = Mg, Ca, Sr, Ba) are white, insoluble, high-melting ionic solids.</li><li>Hydration of halides <strong>decreases</strong> down the group: CaCl₂·6H₂O, SrCl₂·6H₂O, but <strong>BaCl₂·2H₂O</strong> only. For MgCl₂, NCERT itself is internally inconsistent — §10.6.4 states MgCl₂·6H₂O, but the halides table in §10.7 states MgCl₂·8H₂O for the very same salt. Both forms appear in circulation; if a question is drawn straight from NCERT's halides section, expect <strong>8H₂O</strong>; otherwise <strong>6H₂O</strong> is the more common literature value (matching J.D. Lee).</li></ul></div>
+<h4>Chlorides, bromides, iodides — solubility and industrial uses</h4>
+<p>The chlorides, bromides and iodides of Mg, Ca, Sr, Ba are ionic, have much lower melting points than the fluorides, and are readily soluble in water; solubility falls off somewhat with increasing atomic number. All these halides form hydrates and are <strong>hygroscopic</strong> (absorb water vapour from the air). <strong>CaF₂</strong> is the main industrial source of both F₂ and HF:</p>
+<div class="eqline">CaF₂ + H₂SO₄ → 2HF + CaSO₄<br>HF + KF<br>→(electrolysis)→<br>F₂</div>
+<p>Several million tonnes of <strong>CaCl₂</strong> are produced annually, mostly discarded as a low-value Solvay-process by-product. Uses: treating ice on roads (a 30% CaCl₂/H₂O eutectic freezes at −55 °C, vs −18 °C for NaCl/H₂O — far more effective in very cold climates); making concrete set faster and stronger; as a laboratory desiccant (drying agent) owing to its strong hygroscopicity; and (via the electrolytic route) as the feedstock for extracting Ca metal.</p>
+<h3>2.5 Reactivity toward Acids and Alkalis</h3>
+<div class="eqline">M + 2HCl → MCl₂ + H₂↑<br>(Mg, Ca, Sr, Ba)</div>
+<p>Be reacts only after its oxide film is removed, and — like Al — is <strong>rendered passive by concentrated HNO₃</strong> (a thin protective oxide layer forms). <strong>Be is amphoteric even as the metal</strong>, dissolving in NaOH:</p>
+<div class="eqline">Be + 2NaOH + 2H₂O → Na₂[Be(OH)₄] + H₂↑<br>(sodium beryllate)</div>
+<p>Mg, Ca, Sr, Ba do <strong>not</strong> react with NaOH — they are purely basic metals.</p>
+</div>
+
+<div class="card fulltext oxides wide">
+<h2>3. Reducing Nature &amp; Solutions in Liquid Ammonia</h2>
+<p>Ca, Sr, Ba dissolve in liquid NH₃ to give <strong>deep blue</strong> solutions — identical phenomenon to Group 1 — due to <strong>ammoniated (solvated) electrons</strong>:</p>
+<div class="eqline">M + (x+y)NH₃ → [M(NH₃)ₓ]²⁺ + 2[e(NH₃)ᵧ]⁻</div>
+<ul><li>Concentrated solutions turn <strong>bronze-coloured</strong> (metal clusters form).</li><li>On standing/evaporation, Group 2 solutions do <strong>not</strong> simply deposit the metal back (unlike Group 1) — evaporation instead gives crystalline <strong>hexammoniates</strong> M(NH₃)₆, which slowly decompose to the amide:</li></ul>
+<div class="eqline">M(NH₃)₆ → M(NH₂)₂ + 4NH₃ + H₂↑</div>
+<p>Mg is far less soluble in liquid NH₃ under ordinary conditions; Be does not typically show this behaviour. Net reducing action of the solution: 2NH₃ + 2e⁻ → 2NH₂⁻ + H₂ — the ammoniated electron acts as a powerful reducing agent / very strong base.</p>
+</div>
+
+<div class="card fulltext compounds wide">
+<h2>4. Nitrides and Carbides</h2>
+<h3>4.1 Nitrides</h3>
+<p>All Group 2 metals burn in N₂ to form <strong>ionic nitrides M₃N₂</strong> — in sharp contrast to Group 1, where only Li (the smallest, most polarizing) forms a nitride Li₃N. The reason is the same in both groups: nitride formation needs a very large <strong>lattice energy</strong> to overpay for breaking the strong N≡N bond, and lattice energy is large whenever both ions carry high charge (M²⁺, N³⁻) — so it works for the <em>whole</em> of Group 2, not just the smallest member.</p>
+<div class="eqline">Ca₃N₂ + 6H₂O → 3Ca(OH)₂ + 2NH₃↑<br>(all nitrides hydrolyse this way)</div>
+<p>Be₃N₂ is comparatively volatile (greater covalent character of Be); the other nitrides are not.</p>
+<h3>4.2 Carbides</h3>
+<div class="table-wrap"><table><tr><th>Carbide</th><th>Anion</th><th>Hydrolysis product</th><th>Note</th></tr><tr><td>Be₂C</td><td>C⁴⁻ ("methanide")</td><td>CH₄</td><td>Antifluorite structure; Be₂C + 4H₂O → 2Be(OH)₂ + CH₄</td></tr><tr><td>Mg₂C₃</td><td>C₃⁴⁻ ("allylide")</td><td>CH₃–C≡CH (propyne)</td><td>Not on the acetylide pattern</td></tr><tr><td>CaC₂, SrC₂, BaC₂</td><td>C₂²⁻ ("acetylide")</td><td>C₂H₂ (ethyne)</td><td>Distorted NaCl-type lattice (C₂²⁻ is non-spherical)</td></tr></table></div>
+<p>Be₂C is made by heating BeO with carbon at 1900–2000 °C; it is brick-red and adopts an <strong>antifluorite structure</strong> (C⁴⁻ replaces F⁻, Be²⁺ replaces Ca²⁺).</p>
+<div class="eqline">CaC₂ + 2H₂O → Ca(OH)₂ + C₂H₂↑<br>CaO + 3C<br>→(2000°C)→<br>CaC₂ + CO<br>Ca + 2C<br>→(1100°C)→<br>CaC₂</div>
+<p>The MC₂ carbides (Ca, Sr, Ba) all adopt a <strong>distorted sodium chloride-type structure</strong>: M²⁺ replaces Na⁺ and the linear C≡C²⁻ ion replaces Cl⁻, but because C₂²⁻ is not spherical (unlike Cl⁻) the lattice is distorted along the axis where the ions are aligned, and the unit cell is tetragonal at room temperature. <strong>Above 450 °C</strong> the C₂²⁻ ions adopt random orientations rather than staying aligned, and the cell becomes genuinely tetragonal in a different, higher-symmetry sense.</p>
+<p>At one time the main source of ethyne (acetylene) for oxy-acetylene welding was CaC₂; world production peaked at 7 million tonnes/year in 1960, but had declined to 4.9 million tonnes by 1991 as ethyne became more cheaply obtained from processing oil.</p>
+<div class="alert-box trap"><span class="badge trap">JEE TRAP</span><ul><li>Not every Group-2 carbide gives ethyne! Only the true <strong>acetylides</strong> (Ca, Sr, Ba) do. Be₂C gives methane; Mg₂C₃ gives propyne.</li></ul></div>
+<h3>4.3 Calcium Cyanamide — Full Reaction Network</h3>
+<p>CaC₂ is also an important industrial intermediate: heated in an electric furnace with N₂ at 1100 °C, it gives <strong>calcium cyanamide, CaNCN</strong> — an important route of fixing atmospheric nitrogen (an alternative to the Haber process).</p>
+<div class="eqline">CaC₂ + N₂<br>→(1100 °C, electric furnace)→<br>CaNCN + C</div>
+<p>The cyanamide ion [N=C=N]²⁻ is <strong>isoelectronic with CO₂</strong> and linear. CaNCN is produced on a large scale (particularly in locations where there is cheap electricity) and used directly, on a huge scale, as a <strong>slow-acting nitrogenous fertilizer</strong> (widely used in SE Asia and the Far East) — it hydrolyses slowly over months, giving it a genuine advantage over more soluble fertilizers like NH₄NO₃ or urea, which are washed away by the first rainstorm:</p>
+<div class="eqline">CaNCN + 5H₂O → CaCO₃ + 2NH₄OH</div>
+<p>CaNCN is also the starting material for several other important industrial products:</p>
+<div class="eqline">CaNCN + H₂SO₄ → H₂NCN + CaSO₄<br>CaNCN + CO₂ + H₂O → H₂NCN + CaCO₃<br>(cyanamide, H₂NCN)</div>
+<div class="eqline">H₂NCN + H₂O<br>→(pH &lt; 2 or &gt; 12)→<br>H₂N·CO·NH₂<br>(urea)</div>
+<div class="eqline">H₂NCN + H₂S → H₂N·CS·NH₂<br>(thiourea)</div>
+<div class="eqline">H₂NCN<br>→(pH 7–9)→<br>NCNC(NH₂)₂ (dicyanamide)<br>→(pyrolysis)→<br>cyanuric amide (melamine)</div>
+<p>Melamine — the ring compound formed by pyrolysing dicyanamide — reacts with formaldehyde to form hard plastics (melamine resins), so this entire chain traces a path from N₂ gas all the way to a common household plastic.</p>
+<div class="alert-box trap"><span class="badge trap">JEE TRAP</span><ul><li>CaC₂ + N₂ (1100 °C, electric furnace) gives <strong>calcium cyanamide CaNCN</strong> + C, <em>but</em> <strong>BaC₂ + N₂</strong> gives a <strong>cyanide</strong> Ba(CN)₂, <em>not</em> a cyanamide — a genuinely exception-worthy fact worth memorising as a pair.</li><li>Do not confuse the <em>three</em> nitrogen-containing products in this chain: <strong>cyanamide</strong> (H₂NCN, the free acid), <strong>dicyanamide</strong> (NCNC(NH₂)₂, its pH 7–9 dimer), and <strong>melamine</strong> (the pyrolysed cyclic trimer-type product) — each forms under a different, specific condition from the last.</li></ul></div>
+</div>
+
+<div class="card fulltext trends wide">
+<h2>5. Complex-Forming Tendency</h2>
+<p>Group 2 ions form complexes more readily than Group 1 (smaller size → higher charge density), but far less readily than the transition metals. <strong>Be</strong>, being appreciably smaller than the rest, is by far the best complex-former of the group; only Mg and Ca show any real tendency to complex, mostly with O-donor ligands.</p>
+<ul><li><strong>[BeF₄]²⁻</strong> (tetrafluoroberyllate) — Be readily coordinates two extra F⁻ ions; the M₂[BeF₄] salts closely resemble sulphates in their solubility properties, correlating with the fact that Be, uniquely in the group, has empty orbitals available for complex formation.</li><li><strong>BeCl₂·D₂ adducts</strong> (D = an ether, aldehyde or ketone with an O lone pair) — tetrahedral, formed the same way as [BeF₄]²⁻.</li><li><strong>[Be(H₂O)₄]²⁺, [Be(OH)₄]²⁻</strong> — always <strong>tetrahedral</strong>, never 6-coordinate, because Be has only 4 valence orbitals (one 2s + three 2p) available for bonding, with no accessible d-orbitals.</li><li>Stable chelates: <strong>beryllium oxalate [Be(ox)₂]²⁻</strong>, and complexes with <em>β</em>-diketones (acetylacetone) and catechol — all tetrahedral at Be.</li><li><strong>Basic beryllium acetate [Be₄O(CH₃COO)₆]</strong>: a central O²⁻ surrounded tetrahedrally by 4 Be atoms, with 6 acetate groups bridging the 6 tetrahedron edges. Covalent, low-melting (285 °C)/b.p. 330 °C, soluble in organic solvents, and can even be distilled — this volatility/solubility is exploited to <strong>purify beryllium</strong>. Prepared by evaporating Be(OH)₂ in acetic acid. A near-identical structure is adopted by <strong>basic beryllium nitrate [Be₄O(NO₃)₆]</strong>, where each NO₃⁻ instead bridges a pair of Be atoms bidentately.</li><li>Ca²⁺/Mg²⁺ form a stable 1:1 chelate with <strong>EDTA</strong> (hexadentate) — [Ca(EDTA)]²⁻ is <strong>six-coordinate</strong> (octahedral), containing <strong>5 five-membered chelate rings</strong>, the basis of complexometric titration for water-hardness estimation. Interestingly, Be — despite being the strongest complexer in the group — does <strong>not</strong> complex appreciably with EDTA, because EDTA needs 6 coordination sites and Be is invariably 4-coordinate. Ca²⁺/Mg²⁺-EDTA titrations are performed at a <strong>higher pH</strong> than titrations of other metals (e.g. Zn²⁺, Cd²⁺, Pb²⁺), because the Ca/Mg-EDTA complexes are less stable, and at low pH EDTA gets protonated instead of complexing.</li><li><strong>Chlorophyll</strong>: Mg²⁺ sits at the centre of a flat porphyrin ring, bonded to 4 N atoms; the complex absorbs light in the red region and drives photosynthesis, 6CO₂ + 6H₂O → C₆H₁₂O₆ + 6O₂. Mg forms a few halide complexes too, such as [NEt₄]₂[MgCl₄], but Ca, Sr, Ba do not form comparable halide complexes.</li></ul>
+<div class="alert-box trap"><span class="badge trap">JEE TRAP</span><ul><li>Be salts taste sweet but must <em>never</em> be tested by taste — Be compounds are highly toxic (they displace Mg²⁺ from enzymes; inhaling Be dust or smoke causes berylliosis, a disease resembling silicosis; skin contact causes dermatitis).</li></ul></div>
+</div>
+
+<div class="card fulltext hydrides wide">
+<h2>6. Organometallic Compounds — Grignard Reagents &amp; Be/Mg Alkyls</h2>
+<p>Both Be and Mg form an appreciable number of M–C bonded compounds; only a few have been isolated for Ca, Sr, Ba. <strong>Grignard reagents</strong> (organomagnesium halides, RMgX) are probably the single most versatile class of reagent in organic chemistry, and — along with lithium alkyls — provide the two general routes to organometallic compounds across the periodic table. Victor Grignard won the 1912 Nobel Prize in Chemistry for this work.</p>
+<h3>6.1 Preparation</h3>
+<div class="eqline">Mg + RBr<br>→(dry ether)→<br>RMgBr<br>(Grignard reagent)</div>
+<ul><li>Made by the slow addition of an alkyl or aryl halide (Cl, Br or I) to a continuously stirred mixture of magnesium turnings in an absolutely dry organic solvent, usually diethyl ether. The reaction is often slow to start and may require an induction period before it starts — addition of a crystal of iodine, or gently warming, is used to penetrate the metal's oxide film and initiate the reaction.</li><li>Reactivity order: <strong>iodides</strong> are the most reactive, <strong>chlorides</strong> the least reactive; alkyl compounds usually form Grignard reagents more readily than aryl compounds.</li><li>Grignard reagents are rapidly hydrolysed by water to give the parent hydrocarbon, so they are never isolated solid — made and used <em>in situ</em>:</li></ul>
+<div class="eqline">2RMgBr + 2H₂O → 2RH + Mg(OH)₂ + MgBr₂</div>
+<h3>6.2 Structure</h3>
+<p>Grignard reagents are not simple — they are normally solvated/polymerized without halogen bridges. Three-centre structures have long been the subject of controversy; X-ray structures of solid PhMgBr·2Et₂O and EtMgBr·2Et₂O show magnesium is <strong>tetrahedrally coordinated</strong> by the organic group, oxygen from ether molecules, and (in solution) several other species may be present.</p>
+<h3>6.3 Reactions of Grignard Reagents (complete synthetic-use list)</h3>
+<div class="table-wrap"><table><tr><th>Reagent added to RMgBr</th><th>Product (after acid/H₂O work-up)</th></tr><tr><td>CO₂</td><td>R·COOH (carboxylic acid)</td></tr><tr><td>R'₂C=O</td><td>R'₂C(OH)R (tertiary alcohol)</td></tr><tr><td>R'·CHO</td><td>R'CH(OH)R (secondary alcohol)</td></tr><tr><td>HCHO</td><td>R·CH₂OH (primary alcohol)</td></tr><tr><td>O₂</td><td>R·OH</td></tr><tr><td>S₈</td><td>RSH and R₂S</td></tr><tr><td>I₂</td><td>RI</td></tr><tr><td>H⁺</td><td>RH</td></tr></table></div>
+<p>Grignard reagents also transfer their organic group to other element halides, providing routes to a wide range of organometallic and organic products (R = alkyl or aryl):</p>
+<div class="eqline">RMgBr + BeCl₂ → BeR₂<br>RMgBr + LiR → MgR₂<br>RMgBr + BCl₃ → BR₃</div>
+<div class="eqline">RMgBr + SiCl₄ → RSiCl₃, R₂SiCl₂, R₃SiCl, R₄Si<br>(alkyl/aryl chlorosilanes — commercially important in making silicones)</div>
+<h3>6.4 Beryllium and Magnesium Dialkyls/Diaryls</h3>
+<p>BeCl₂ reacts with Grignard reagents to give reactive alkyls and aryls:</p>
+<div class="eqline">BeCl₂ + 2MeMgCl →(Et₂O)→ BeMe₂·(Et₂O)ₙ + 2MgCl₂<br>BeCl₂ + 2LiEt →(Et₂O)→ BeEt₂·(Et₂O)ₙ<br>Be + HgMe₂ →(warm)→ BeMe₂ + Hg</div>
+<p>BeMe₂ is dimeric in the vapour but <strong>polymerized in the solid</strong>, with a chain structure resembling that of BeCl₂ — but the bonding is different: the Be–Me–Be bridge is a genuine <strong>3-centre-2-electron bond</strong> (like BeH₂), unlike the lone-pair-donor halogen bridges of (BeCl₂)ₙ. Similar dialkyl/diaryl compounds of Ca, Sr, Ba can be made using Grignard reagents, lithium alkyls/aryls, or mercury alkyls/aryls — the <strong>Ca, Sr, Ba compounds are much more reactive than the corresponding Mg compound</strong>. The beryllium alkyls further react with BeCl₂ to give "beryllium Grignard" compounds:</p>
+<div class="eqline">BeMe₂ + BeCl₂ → 2MeBeCl<br>(less reactive than the corresponding true Grignard compound)</div>
+</div>
+
+<div class="card fulltext halides wide">
+<h2>7. Oxides and Peroxides</h2>
+<h3>7.1 Normal Oxides MO</h3>
+<p>All burn in O₂ to give MO. <strong>BeO</strong> is usually made instead by igniting gelatinous Be(OH)₂; the other oxides are usually obtained by <strong>thermal decomposition of the carbonates, sulphates, or nitrates</strong> — all of which are <strong>less thermally stable</strong> than the corresponding Group 1 oxosalts, precisely because the Group 2 metals and their hydroxides are less strongly basic than those of Group 1.</p>
+<p><strong>BeO</strong> is covalent (4:4 zinc-blende/wurtzite structure); MgO, CaO, SrO, BaO are ionic (6:6 rock-salt/NaCl structure). Basic strength rises steadily: <strong>BeO (amphoteric) &lt; MgO (weakly basic) &lt; CaO &lt; SrO &lt; BaO</strong> (increasingly strongly basic).</p>
+<div class="alert-box struct"><span class="badge struct">MOT / BONDING — Why does MO + H₂O → M(OH)₂ happen at all? (mechanistic picture)</span><p>The O²⁻ ion in the ionic lattice is an extremely strong <strong>Brønsted base / nucleophile</strong> — far too reactive to survive in water. When water contacts the oxide surface, O²⁻ simply <strong>rips a proton off H₂O</strong>: <em>O²⁻ + H₂O → 2OH⁻</em>. This single proton-transfer step is the real mechanism behind every "basic oxide + water → hydroxide" reaction in this chapter, and it is also exactly why free O²⁻ cannot exist in aqueous solution at all.</p></div>
+<div class="eqline">BeO + 2H⁺ → Be²⁺ + H₂O<br>BeO + 2OH⁻ + H₂O → [Be(OH)₄]²⁻</div>
+<p>BeO and MgO are used as furnace-lining <strong>refractories</strong>: very high melting point (BeO ≈2500 °C, MgO ≈2800 °C), negligible vapour pressure, good thermal conductivity, chemical inertness, and electrical insulation.</p>
+<div class="alert-box trap"><span class="badge trap">JEE TRAP</span><ul><li>Simple radius-ratio rules <strong>predict</strong> 8-coordination for SrO and BaO (given the M²⁺:O²⁻ size ratio), but both are experimentally found to be <strong>6-coordinate</strong> (rock-salt structure) — a known limitation of the radius-ratio approach that advanced questions may test.</li></ul></div>
+<h3>7.2 Peroxides</h3>
+<p>Peroxide stability <strong>increases with cation size</strong> (a larger, less polarizing cation stabilizes the large O₂²⁻ ion better).</p>
+<ul><li><strong>BaO₂: </strong>2BaO + O₂ ⇌ 2BaO₂ (air passed over BaO at 500 °C) — the classical, most stable Group-2 peroxide.</li><li><strong>SrO₂: </strong>forms similarly but needs higher pressure and temperature.</li><li><strong>CaO₂: </strong>not formed by the direct route — instead made as a hydrate by treating Ca(OH)₂ with H₂O₂, then dehydrating.</li><li><strong>MgO₂: </strong>only a crude peroxide obtainable, via H₂O₂ (made by passing H₂O₂ into a suspension of Mg(OH)₂, the same method used for CaO₂ from Ca(OH)₂). MgO₂ is used as a mild <strong>antiseptic in toothpaste</strong> and as a <strong>bleaching agent</strong>.</li><li><strong>BeO₂: </strong>no peroxide of beryllium is known.</li></ul>
+<div class="eqline">BaO₂ + 2HCl → BaCl₂ + H₂O₂<br>BaO₂ + H₂SO₄(dil.) → BaSO₄↓ + H₂O₂</div>
+<div class="alert-box struct"><span class="badge struct">MOT / BONDING — Peroxide vs superoxide — bond order from MOT</span><p><strong>Peroxide ion [O–O]²⁻</strong> (18 electrons): filling gives σ1s²σ*1s²σ2s²σ*2s²σ2pₓ²π2p_y²π2p_z²π*2p_y²π*2p_z² → all π* orbitals fully paired → <strong>bond order = 1</strong>, <strong>diamagnetic</strong> — matches the O–O single bond drawn structurally.</p><p><strong>Superoxide ion [O₂]⁻</strong> (17 electrons): identical filling except the last π* level holds only <strong>one</strong> electron (π*2p_y²π*2p_z¹) → <strong>bond order = 1.5</strong>, <strong>paramagnetic</strong> — this is the standard explanation for why KO₂ is paramagnetic.</p><p>All known Group 2 peroxides (BaO₂, SrO₂, etc.) contain the <em>same</em> peroxide ion — bond order 1, diamagnetic. No Group 2 superoxide is known to exist.</p></div>
+</div>
+
+<div class="card fulltext oxides wide">
+<h2>8. Hydroxides</h2>
+<p>Basicity and solubility <strong>both increase</strong> down the group. Be(OH)₂ is amphoteric; Mg(OH)₂ is weakly basic and only sparingly soluble ("milk of magnesia", an antacid); Ca(OH)₂, Sr(OH)₂, Ba(OH)₂ are strong bases.</p>
+<div class="table-wrap"><table><tr><th>Hydroxide</th><th>Solubility (g/L, ~20 °C)</th></tr><tr><td>Mg(OH)₂</td><td>≈1×10⁻⁴ (essentially insoluble)</td></tr><tr><td>Ca(OH)₂</td><td>≈2</td></tr><tr><td>Sr(OH)₂</td><td>≈8</td></tr><tr><td>Ba(OH)₂</td><td>≈39</td></tr></table></div>
+<div class="eqline">Be(OH)₂ + 2OH⁻ → [Be(OH)₄]²⁻<br>Be(OH)₂ + 2HCl + 2H₂O → [Be(H₂O)₄]Cl₂</div>
+<div class="alert-box ncert"><span class="badge ncert">NCERT FOCUS — Why does hydroxide solubility increase down the group?</span><p>The anion (OH⁻) is common across the series, so only the cation's size varies. As M²⁺ grows, <strong>lattice enthalpy falls faster than hydration enthalpy</strong> — so the net dissolution process becomes more favourable and solubility <strong>rises</strong> down the group. This is the exact reverse of what happens for carbonates/sulphates (§8), where hydration enthalpy falls faster than lattice enthalpy, so solubility <strong>falls</strong> down the group.</p></div>
+<p><strong>Master key (memorize this one sentence): </strong><em>"Which energy — lattice or hydration — falls faster as the cation grows?"</em> governs every Group 2 solubility trend. For OH⁻ and F⁻, lattice energy falls faster → solubility increases down the group. For CO₃²⁻ and SO₄²⁻, hydration energy falls faster → solubility decreases down the group.</p>
+<p>Ca(OH)₂ solution = <strong>lime water</strong>; Ba(OH)₂ solution = <strong>baryta water</strong> — both turn milky with CO₂ (precipitate CaCO₃/BaCO₃), clearing again with excess CO₂ (soluble bicarbonate forms). Baryta water is the more sensitive test — even exhaled breath gives a positive result, whereas lime water needs breath actively bubbled through it.</p>
+<div class="alert-box trap"><span class="badge trap">JEE TRAP</span><ul><li>"Lime water" is a clear <strong>solution</strong>, not a suspension; "milk of lime" is the suspension of excess undissolved Ca(OH)₂. Four genuinely distinct terms exist: quicklime (CaO) ≠ slaked lime (Ca(OH)₂) ≠ lime water (solution) ≠ milk of lime (suspension).</li></ul></div>
+</div>
+
+<div class="card fulltext compounds wide">
+<h2>9. Carbonates, Bicarbonates &amp; Hardness of Water</h2>
+<h3>9.1 Carbonates</h3>
+<p>Solubility <strong>decreases</strong> down the group (hydration energy falls faster than lattice energy for the large CO₃²⁻ ion). All carbonates decompose on heating: MCO₃ → MO + CO₂. Thermal stability <strong>increases</strong> down the group — smaller, more polarizing cations distort CO₃²⁻ more and decompose more readily.</p>
+<div class="table-wrap"><table><tr><th>Carbonate</th><th>BeCO₃</th><th>MgCO₃</th><th>CaCO₃</th><th>SrCO₃</th><th>BaCO₃</th></tr><tr><td>Decomposition temp (°C)</td><td>&lt; 100</td><td>540</td><td>900</td><td>1290</td><td>1360</td></tr></table></div>
+<p><strong>BeCO₃</strong> is so unstable it can only be kept under a CO₂ atmosphere, and is structurally unusual — it retains the hydrated [Be(H₂O)₄]²⁺ unit rather than a simple Be²⁺.</p>
+<p><strong>CaCO₃ crystal chemistry: </strong>calcite (stable form, Ca²⁺ 6-coordinate, matching the CaO-type prediction) vs aragonite (metastable, only ~5 kJ/mol higher in energy but kinetically trapped, Ca²⁺ unusually 9-coordinate).</p>
+<h3>9.2 Bicarbonates &amp; Hardness of Water</h3>
+<p>Bicarbonates exist only in solution, never as isolable solids for Group 2:</p>
+<div class="eqline">CaCO₃ + CO₂ + H₂O ⇌ Ca(HCO₃)₂(aq)<br>(reverse on heating: → CaCO₃↓ + CO₂ + H₂O)</div>
+<p>This equilibrium, run in reverse by slow evaporation/decomposition, deposits limestone caves' <strong>stalactites</strong> (from the roof) and <strong>stalagmites</strong> (from the floor).</p>
+<div class="table-wrap"><table><tr><th>Type</th><th>Cause</th><th>Removed by</th></tr><tr><td>Temporary hardness</td><td>Mg(HCO₃)₂, Ca(HCO₃)₂</td><td>Boiling (drives off CO₂); or adding slaked lime, Ca(HCO₃)₂+Ca(OH)₂ → 2CaCO₃+2H₂O</td></tr><tr><td>Permanent hardness</td><td>MgSO₄, CaSO₄ (soluble sulphates)</td><td>Not removed by boiling — needs ion exchange, phosphates (calgon), or Na₂CO₃ (lime-soda: CaSO₄+Na₂CO₃→CaCO₃↓+Na₂SO₄)</td></tr></table></div>
+<p>Scum in hard water = insoluble calcium/magnesium stearate, formed when Ca²⁺/Mg²⁺ react with soap before true lathering can occur.</p>
+<div class="alert-box trap"><span class="badge trap">JEE TRAP</span><ul><li>Excess CO₂ passed into lime water does <em>not</em> give more precipitate — it <strong>redissolves</strong> the CaCO₃ precipitate as soluble Ca(HCO₃)₂, clearing the milkiness. This is a solubility-equilibrium shift, not a contradiction of the earlier precipitation step.</li></ul></div>
+</div>
+
+<div class="card fulltext trends wide">
+<h2>10. Sulphates and Nitrates</h2>
+<h3>10.1 Sulphates</h3>
+<p>Solubility falls sharply: <strong>BeSO₄ &gt; MgSO₄ ≫ CaSO₄ &gt; SrSO₄ &gt; BaSO₄ </strong>(virtually insoluble). Reason: for the small Be²⁺/Mg²⁺, hydration enthalpy dominates and overcomes lattice enthalpy, favouring dissolution; for the larger cations, hydration falls off while lattice energy (set mainly by the large SO₄²⁻ ion) stays comparatively high, so solubility collapses.</p>
+<div class="table-wrap"><table><tr><th>Salt</th><th>Note</th></tr><tr><td>Epsom salt, MgSO₄·7H₂O</td><td>Mild laxative</td></tr><tr><td>Alabaster, CaSO₄·2H₂O (fine-grained)</td><td>Ornamental; not weatherproof outdoors (CaSO₄ is slightly soluble, ~2 g/L)</td></tr><tr><td>BaSO₄</td><td>Insoluble AND opaque to X-rays → "barium meal" for GI-tract imaging</td></tr></table></div>
+<p>Thermal decomposition MSO₄ → MO + SO₃ becomes harder as basicity rises: BeSO₄ decomposes at 500 °C, MgSO₄ at 895 °C, CaSO₄ at 1149 °C, SrSO₄ at 1374 °C. Heating the sulphates with carbon reduces them to sulphides — <em>BaSO₄ + 4C → BaS + 4CO</em> — and most industrial barium compounds are in fact made starting from BaS.</p>
+<h3>10.2 Perchlorates</h3>
+<p>Group 2 elements also form perchlorates M(ClO₄)₂, which have structures very similar to the sulphates — the ClO₄⁻ ion is tetrahedral and close in size to SO₄²⁻. Chemically, however, they differ sharply: perchlorates are strong oxidizing agents, and anhydrous <strong>Mg(ClO₄)₂ is used as a drying agent</strong> ("Anhydrone"). It must <strong>never</strong> be used with organic materials, since contact between an organic compound and a strong oxidizer of this kind could cause an explosion.</p>
+<h3>10.3 Nitrates</h3>
+<p>Made by dissolving the carbonate/oxide/hydroxide in dilute HNO₃. Hydration of the crystalline nitrate <strong>decreases</strong> down the group: Mg(NO₃)₂ crystallizes with 6H₂O, while Ba(NO₃)₂ is anhydrous.</p>
+<div class="eqline">2M(NO₃)₂ → 2MO + 4NO₂ + O₂<br>(all decompose to the oxide on heating)</div>
+<p>Be is unusual in also forming a <strong>basic nitrate [Be₄O(NO₃)₆]</strong> in addition to the normal salt. Anhydrous Be(NO₃)₂ cannot be obtained by heating the hydrate (decomposition intervenes); instead it is made via liquid N₂O₄:</p>
+<div class="eqline">BeCl₂ →(N₂O₄)→ Be(NO₃)₂·2N₂O₄<br>→(warm to 50 °C, vacuum)→<br>Be(NO₃)₂<br>→(125 °C)→<br>[Be₄O(NO₃)₆]</div>
+<div class="alert-box trap"><span class="badge trap">JEE TRAP</span><ul><li>Group 2 nitrates decompose straight to the <strong>oxide</strong> (like LiNO₃), <em>not</em> to a nitrite the way NaNO₃/KNO₃ do — do not import the Group-1 heavier-metal nitrite pattern here.</li></ul></div>
+<h3>10.4 Insoluble Salts — Qualitative Analysis Summary</h3>
+<p>A single compact fact worth memorizing as a block: the <strong>sulphates</strong> of calcium, strontium and barium are insoluble, and the <strong>carbonates, oxalates, chromates and fluorides</strong> of the <em>whole</em> group are insoluble — this pattern is exactly what is exploited in qualitative inorganic analysis to detect and separate Group 2 cations.</p>
+</div>
+
+<div class="card fulltext hydrides wide">
+<h2>11. Anomalous Behaviour of Beryllium</h2>
+<p>J.D. Lee gives exactly <strong>three</strong> root causes (Group 2, §11.7):</p>
+<ul><li><strong>1. Extremely small size: </strong>Fajans' rules — small, highly-charged ions tend to form covalent compounds.</li><li><strong>2. Comparatively high electronegativity </strong>(1.5, vs Mg 1.2, Ca 1.0, Sr 1.0, Ba 0.9) — when Be reacts with another element the electronegativity difference is seldom very large, again favouring covalency. (Even where the difference <em>is</em> large, as with F, BeF₂ still behaves as covalent when fused.)</li><li><strong>3. Only 2s/2p valence orbitals available: </strong>the outer shell can hold a maximum of <strong>8 electrons</strong> (one 2s + three 2p orbitals). Thus Be can form a maximum of <strong>four</strong> conventional 2-electron bonds/coordinate bonds — a maximum coordination number of 4. The later members have larger outer shells and can accommodate more than 8 outer electrons, using <em>d</em> orbitals in addition to <em>s</em> and <em>p</em>, so higher coordination numbers occur (e.g. in the basic acetate).</li></ul>
+<p>Consequence: anhydrous Be compounds are predominantly <strong>covalent</strong>, and monomeric BeX₂ molecules <em>should</em> be linear — the excited-state Be atom (1s²2s¹2p¹, two unpaired electrons) uses sp hybridisation to form two collinear bonds. In fact, such linear monomeric molecules exist only in the <strong>gas phase</strong>: in the solid state, coordination number 4 is always achieved by one of four routes.</p>
+<div class="alert-box struct"><span class="badge struct">MOT / BONDING — Four ways beryllium reaches 4-coordination in the solid/liquid state</span><p><strong>1. Coordinate bonds from extra ligands: </strong>two ligands with a lone pair use Be's two unfilled orbitals — e.g. two F⁻ ions coordinate to BeF₂ giving [BeF₄]²⁻; diethyl ether coordinates to BeCl₂ giving BeCl₂(OEt₂)₂.</p><p><strong>2. Polymerisation via bridging halogens: </strong>BeX₂ molecules polymerise into chains, e.g. (BeF₂)ₙ, (BeCl₂)ₙ — each bridging halogen forms one normal covalent bond and donates a lone pair as a coordinate bond.</p><p><strong>3. Three-centre two-electron bonding: </strong>(BeMe₂)ₙ has the same chain structure as (BeCl₂)ₙ, but the bonding is instead a 3-centre-2-electron bond covering one Me group and two Be atoms — the same electron-deficient clustering seen in BeH₂.</p><p><strong>4. A covalent lattice: </strong>BeO and BeS adopt a zinc-blende or wurtzite structure (coordination number 4) rather than the 6:6 rock-salt structure of the heavier oxides.</p></div>
+<h3>Hydrolysis of Beryllium Salts</h3>
+<p>In water, beryllium salts are extensively hydrolysed to give polymeric hydroxo complexes of unknown exact structure — J.D. Lee shows two representative dimeric/trimeric fragments, both built from Be centres bridged by OH groups, each Be remaining 4-coordinate:</p>
+<p><em>[(HO)₂Be(μ-OH)₂Be(OH)₂]²⁻-type dimer, and a linear trimer [(HO)₂Be(μ-OH)Be(μ-OH)Be(OH)₂]²⁻ — both retain tetrahedral 4-coordination at every Be centre via hydroxide bridges.</em></p>
+<p>Adding alkali to these hydrolysed solutions breaks the polymers down to the simple mononuclear <strong>beryllate ion [Be(OH)₄]²⁻</strong> (tetrahedral). Many Be salts instead contain the discrete hydrated ion <strong>[Be(H₂O)₄]²⁺</strong> rather than bare Be²⁺ — stable ionic salts such as [Be(H₂O)₄]SO₄, [Be(H₂O)₄](NO₃)₂ and [Be(H₂O)₄]Cl₂ are known. Forming this hydrated complex effectively spreads the charge over a larger ion, which is why it forms so readily.</p>
+<h3>Consolidated Reaction Table (J.D. Lee Table 11.9, complete)</h3>
+<div class="table-wrap"><table><tr><th>Reaction</th><th>Comment</th></tr><tr><td>M + 2H₂O → M(OH)₂ + H₂</td><td>Be probably reacts with steam (doubtful); Mg reacts with hot water; Ca, Sr, Ba react rapidly with cold water</td></tr><tr><td>M + 2HCl → MCl₂ + H₂</td><td>All the metals react with acids liberating hydrogen</td></tr><tr><td>Be + 2NaOH + 2H₂O → Na₂[Be(OH)₄] + H₂</td><td>Be is amphoteric</td></tr><tr><td>2M + O₂ → 2MO (excess dioxygen)</td><td>Normal oxide formed by all group members</td></tr><tr><td>Ba + O₂ → BaO₂</td><td>Ba also forms the peroxide</td></tr><tr><td>M + H₂ → MH₂</td><td>Ionic salt-like hydrides formed at high T by Ca, Sr, Ba</td></tr><tr><td>3M + N₂ → M₃N₂</td><td>All form nitrides at high temperatures</td></tr><tr><td>3M + 2P → M₃P₂</td><td>All the metals form phosphides at high temperatures</td></tr><tr><td>M + S → MS; M + Se → MSe; M + Te → MTe</td><td>All the metals form sulphides/selenides/tellurides</td></tr><tr><td>M + F₂ → MF₂; M + Cl₂ → MCl₂; M + Br₂ → MBr₂; M + I₂ → MI₂</td><td>All the metals form halides</td></tr><tr><td>M + 2NH₃ → M(NH₂)₂ + H₂ (high temperature)</td><td>All the metals form amides at high temperatures</td></tr></table></div>
+<div class="alert-box trap"><span class="badge trap">JEE TRAP</span><ul><li>Consequences of Be's anomaly to keep straight: never exceeds CN = 4; oxide/hydroxide uniquely amphoteric; extensive hydrolysis gives acidic solutions (no other Group-2 salt hydrolyses appreciably); rarely more than 4 waters of crystallisation; halides covalent/polymeric/soluble-in-organic-solvents/fuming/subliming/non-conducting when fused; BeH₂ covalent (not saline); Be₂C a methanide (→ CH₄, unlike acetylide MC₂ → C₂H₂); BeCO₃ stable only under CO₂; no flame colour; unusually strong complex-former; amphoteric as the <em>metal</em> too (dissolves in NaOH); passivated by concentrated HNO₃ like Al.</li></ul></div>
+<h3>The Bigger Picture: Be's Anomaly Is Not a One-Off</h3>
+<p>Be is just one instance of a completely general pattern called the <strong>"first-element" (or second-period) anomaly</strong>: <strong>every</strong> element that heads a group in the second period — Li, Be, B, C, N, O, F — behaves noticeably differently from the rest of its own group, and for exactly the <em>same</em> three root causes seen above for Be: (1) unusually small size, (2) unusually high electronegativity/charge density for the group, and (3) only 2s/2p valence orbitals available, capping the outer shell at 8 electrons and the coordination number at 4 (no accessible <em>d</em> orbitals). Li's anomalous behaviour vs. Na/K (its own hydration-driven E° quirk, its nitride formation, its covalent character) is the exact Group-1 mirror of everything you've just learned about Be — recognizing this pattern turns twelve separate "anomaly facts" into one reusable rule.</p>
+</div>
+
+<div class="card fulltext halides wide">
+<h2>12. Diagonal Relationship: Be and Al</h2>
+<p>Be²⁺ (ionic radius ≈31 pm) and Al³⁺ (≈50 pm) are not close in raw size, but their <strong>charge densities</strong> (charge per unit surface area) are almost identical (Be²⁺ ≈2.36, Al³⁺ ≈2.50 in the same units) — this is the quantitative root of every diagonal relationship, not just Be–Al.</p>
+<div class="table-wrap"><table><tr><th>#</th><th>Similarity</th></tr><tr><td>1</td><td>Neither readily attacked by acids — both passivated by concentrated HNO₃ via a protective oxide film.</td></tr><tr><td>2</td><td>Both oxides (BeO, Al₂O₃) and hydroxides (Be(OH)₂, Al(OH)₃) are amphoteric; both dissolve in excess alkali to give beryllate [Be(OH)₄]²⁻ / aluminate [Al(OH)₄]⁻.</td></tr><tr><td>3</td><td>Both chlorides are Cl-bridged in the vapour phase (BeCl₂ dimer/polymer; Al₂Cl₆ dimer); both soluble in organic solvents, both strong Lewis acids, both used as Friedel–Crafts catalysts.</td></tr><tr><td>4</td><td>Both form complex fluorides readily: [BeF₄]²⁻, [AlF₆]³⁻ — but note Be maxes out at CN = 4 while Al reaches CN = 6, a genuine point of difference within the similarity.</td></tr><tr><td>5</td><td>Both carbides hydrolyse to methane: Be₂C → CH₄; Al₄C₃ → CH₄ (contrast CaC₂ → C₂H₂).</td></tr><tr><td>6</td><td>Both nitrides hydrolyse to NH₃: Be₃N₂ → NH₃; AlN → NH₃.</td></tr><tr><td>7</td><td>Both hydrides are electron-deficient and polymeric with multicentre (3c–2e) bonding: BeH₂ and AlH₃.</td></tr><tr><td>8</td><td>Standard electrode potentials are close: Be −1.85 V, Al −1.66 V — much closer to each other than Be is to Ca/Sr/Ba (−2.87 to −2.90 V).</td></tr><tr><td>9</td><td>Be salts are extensively hydrolysed (acidic in solution), as are Al salts.</td></tr><tr><td>10</td><td>Be salts are among the most soluble known — Al salts show a similar high-solubility tendency.</td></tr></table></div>
+<div class="alert-box trap"><span class="badge trap">JEE TRAP</span><ul><li>A diagonal relationship is a set of <strong>similarities, not identity</strong>. Be still differs from Al in maximum coordination number (4 vs 6) and, of course, in oxidation state (+2 vs +3) — never treat Be and Al as interchangeable.</li></ul></div>
+</div>
+
+<div class="card fulltext oxides wide">
+<h2>13. Differences Between Beryllium and the Other Group 2 Elements</h2>
+<p>A distinct list from the Be–Al diagonal relationship above — this is J.D. Lee's direct within-group comparison (Be vs Mg/Ca/Sr/Ba), given as eight numbered points.</p>
+<div class="table-wrap"><table><tr><th>#</th><th>Difference</th></tr><tr><td>1</td><td>Be is very small and has a high charge density, so by Fajans' rules it has a strong tendency to covalency. Thus the melting points of its compounds are lower — BeF₂ melts at 800 °C, whilst the fluorides of the rest of the group melt about 1300 °C. The Be halides are all soluble in organic solvents and hydrolyse in water, rather like the aluminium halides. The other Group 2 halides are ionic.</td></tr><tr><td>2</td><td>Beryllium hydride is electron-deficient and polymeric, with multicentre bonding, like aluminium hydride.</td></tr><tr><td>3</td><td>The halides of beryllium are electron-deficient and polymeric, with halogen bridges. BeCl₂ usually forms chains but also exists as the dimer; AlCl₃ is dimeric.</td></tr><tr><td>4</td><td>Be forms many complexes — not typical of Groups 1 and 2.</td></tr><tr><td>5</td><td>Be is amphoteric, liberating H₂ with NaOH and forming beryllates; Al forms aluminates similarly.</td></tr><tr><td>6</td><td>Be(OH)₂, like Al(OH)₃, is amphoteric.</td></tr><tr><td>7</td><td>Be, like Al, is rendered passive by nitric acid.</td></tr><tr><td>8</td><td>The standard electrode potentials for Be and Al, −1.85 V and −1.66 V respectively, are much closer to each other than the value for Be is to the values for Ca, Sr and Ba (−2.87, −2.89 and −2.91 V respectively).</td></tr></table></div>
+<p>Three more general points close the chapter's treatment of Be:</p>
+<ul><li>9. Be salts are extensively hydrolysed.</li><li>10. Be salts are among the most soluble known.</li><li>11. Be forms an unusual carbide Be₂C, unlike CaC₂, which yields methane on hydrolysis.</li></ul>
+<div class="alert-box trap"><span class="badge trap">JEE TRAP</span><ul><li>Notice this list (Be vs. the <em>rest of its own group</em>) is distinct from — though it overlaps with — the Be–Al diagonal-relationship list in §12. Examiners sometimes ask "which of these is a difference <em>within</em> Group 2 vs. a similarity <em>across</em> to Group 13" — both framings describe the same underlying facts about Be.</li></ul></div>
+</div>
+
+<div class="card fulltext compounds wide">
+<h2>14. Compounds of Calcium (NCERT Scope)</h2>
+<h3>14.1 Calcium Oxide — Quicklime, CaO</h3>
+<div class="eqline">CaCO₃<br>→(1070–1270 K, rotary kiln)→<br>CaO + CO₂↑<br>(CO₂ removed continuously to drive equilibrium)</div>
+<ul><li>White amorphous solid, m.p. 2870 K; absorbs atmospheric moisture and CO₂ on standing.</li><li><strong>Slaking: </strong>CaO + H₂O → Ca(OH)₂ + heat. Slaking with aqueous NaOH gives <strong>soda lime</strong> (a NaOH/Ca(OH)₂ mixture, easier to handle than pure NaOH).</li><li>Basic oxide — combines with acidic oxides at high T: CaO + SiO₂ → CaSiO₃ (this is also literally the base reaction behind ordinary glass-making); 6CaO + P₄O₁₀ → 2Ca₃(PO₄)₂. The same CaO + SiO₂ → CaSiO₃ reaction is exactly why lime (via CaCO₃) works as a metallurgical <strong>flux</strong>: the acidic silica impurity in an iron ore is converted to molten, low-density calcium silicate ("slag"), which floats on the liquid metal and is skimmed off.</li></ul>
+<div class="alert-box ncert"><span class="badge ncert">NCERT FOCUS — Uses of CaO (NCERT)</span><ul><li>Important raw material for manufacturing cement, and the cheapest form of alkali</li><li>Manufacture of sodium carbonate from caustic soda</li><li>Purification of sugar and manufacture of dyestuffs</li></ul></div>
+<p><strong>J.D. Lee's fuller industrial-use list for lime (CaO)</strong> — worth knowing beyond the NCERT three:</p>
+<ul><li>In steelmaking, to remove phosphates and silicates as slag</li><li>By mixing with SiO₂ and alumina or clay, to make cement</li><li>For making glass</li><li>In the lime-soda process, one of the chlor-alkali industry routes converting Na₂CO₃ to NaOH or vice versa</li><li>For "softening" water</li><li>To make slaked lime Ca(OH)₂, and to make calcium carbide CaC₂</li></ul>
+<h3>14.2 Calcium Hydroxide — Slaked Lime, Ca(OH)₂</h3>
+<p>Prepared as above; white amorphous powder, sparingly soluble. Aqueous <strong>solution</strong> = lime water; <strong>suspension</strong> of excess solid = milk of lime.</p>
+<div class="eqline">Ca(OH)₂ + CO₂ → CaCO₃↓ + H₂O<br>(milky)<br>CaCO₃ + CO₂ + H₂O → Ca(HCO₃)₂<br>(excess CO₂ clears it)</div>
+<div class="alert-box trap"><span class="badge trap">JEE TRAP</span><ul><li>Lime water does <em>not</em> only test for CO₂ — <strong>SO₂ turns it milky too</strong>, by the exactly parallel reaction <em>Ca(OH)₂ + SO₂ → CaSO₃↓ + H₂O</em>, and excess SO₂ likewise clears the milkiness by forming soluble calcium bisulphite: <em>SO₂ + H₂O + CaSO₃ → Ca(HSO₃)₂</em>. If a question says "a gas turns lime water milky," don't jump straight to CO₂ — S in the +4 state (SO₂) behaves the same way.</li></ul></div>
+<div class="eqline">2Ca(OH)₂ + 2Cl₂ → CaCl₂ + Ca(OCl)₂ + 2H₂O<br>(bleaching powder — a simplified representation)</div>
+<p>Bleaching powder is often written as Ca(OCl)₂ but is really a <strong>mixed salt</strong> — worth noting for JEE Advanced precision rather than treating it as one pure compound.</p>
+<div class="alert-box ncert"><span class="badge ncert">NCERT FOCUS — Uses of Ca(OH)₂ (NCERT)</span><ul><li>Manufacture of mortar, a building material</li><li>Whitewashing, due to its disinfectant nature (hardens by chemical carbonation to CaCO₃, not just drying)</li><li>Glass making, tanning industry</li><li>Preparation of bleaching powder</li><li>Purification of sugar</li></ul></div>
+<h3>14.3 Calcium Carbonate, CaCO₃</h3>
+<div class="eqline">Ca(OH)₂ + CO₂ → CaCO₃ + H₂O<br>CaCl₂ + Na₂CO₃ → CaCO₃ + 2NaCl</div>
+<p>White fluffy powder, almost insoluble; decomposes at 1200 K to CaO + CO₂. Reacts with dilute acid: CaCO₃ + 2HCl → CaCl₂ + H₂O + CO₂. With H₂SO₄, an insoluble CaSO₄ coating can passivate the surface and slow the reaction.</p>
+<div class="alert-box ncert"><span class="badge ncert">NCERT FOCUS — Uses of CaCO₃ (NCERT)</span><ul><li>Building material, as marble</li><li>Manufacture of quicklime</li><li>As a flux (with MgCO₃) in extraction of metals such as iron</li><li>Specially precipitated CaCO₃ in high-quality paper manufacture</li><li>Antacid, mild abrasive in toothpaste, constituent of chewing gum, filler in cosmetics</li></ul></div>
+<h3>14.4 Calcium Sulphate System — Gypsum, Plaster of Paris, Anhydrite</h3>
+<div class="eqline">2(CaSO₄·2H₂O)<br>→(393 K)→<br>2(CaSO₄·½H₂O) + 3H₂O<br>(gypsum → Plaster of Paris)</div>
+<p>Staged dehydration on stronger heating: CaSO₄·2H₂O →(150 °C)→ CaSO₄·½H₂O (Plaster of Paris) →(200 °C)→ CaSO₄ ("dead-burnt" anhydrite) →(1100 °C)→ CaO + SO₃.</p>
+<div class="eqline">CaSO₄·½H₂O + 1½H₂O → CaSO₄·2H₂O<br>(sets to a hard mass in 5–15 minutes)</div>
+<p>"Dead-burnt" plaster (fully anhydrous CaSO₄, from overheating past 393 K) has lost the ability to set normally, because rehydration becomes far too slow.</p>
+<div class="alert-box ncert"><span class="badge ncert">NCERT FOCUS — Uses of Plaster of Paris (NCERT)</span><ul><li>Largest use in the building industry, as plaster</li><li>Immobilising broken bones/sprains</li><li>Dentistry, ornamental work, casts of statues and busts</li></ul></div>
+<div class="alert-box trap"><span class="badge trap">JEE TRAP</span><ul><li>Gypsum added to Portland cement (2–3%) plays a <em>different</em> chemical role than PoP's own setting reaction — it <strong>slows</strong> the setting of the cement's aluminate phase, preventing "flash setting"; it is not there to "set" the way PoP itself sets.</li><li>PoP does <em>not</em> set to anhydrous CaSO₄ — it rehydrates <strong>back to gypsum</strong> (CaSO₄·2H₂O). "Dead-burnt" plaster ≠ Plaster of Paris; dead-burnt is the fully anhydrous, non-setting form.</li></ul></div>
+<h3>14.5 Cement (Portland Cement)</h3>
+<p>First made in England in 1824 by <strong>Joseph Aspdin</strong>; named "Portland cement" for its resemblance to limestone quarried on the Isle of Portland. Made by strongly heating limestone with clay to form "cement clinker," then mixing the clinker with 2–3% gypsum.</p>
+<div class="table-wrap"><table><tr><th>Component</th><th>% by mass</th></tr><tr><td>CaO</td><td>50–60</td></tr><tr><td>SiO₂</td><td>20–25</td></tr><tr><td>Al₂O₃</td><td>5–10</td></tr><tr><td>MgO</td><td>2–3</td></tr><tr><td>Fe₂O₃</td><td>1–2</td></tr><tr><td>SO₃</td><td>1–2</td></tr></table></div>
+<p>Quality control ratios (NCERT): silica/alumina ratio between 2.5–4; lime/(silica+alumina+iron oxide) ratio as close to 2 as possible.</p>
+<div class="table-wrap"><table><tr><th>Cement ingredient</th><th>Formula</th><th>% present</th></tr><tr><td>Dicalcium silicate</td><td>Ca₂SiO₄</td><td>26</td></tr><tr><td>Tricalcium silicate</td><td>Ca₃SiO₅</td><td>51</td></tr><tr><td>Tricalcium aluminate</td><td>Ca₃Al₂O₆</td><td>11</td></tr></table></div>
+<p>Setting = hydration of these constituents + their rearrangement into a hard interlocking mass; gypsum's role is purely to slow this down enough to avoid flash-setting.</p>
+<p><strong>Sorel cement</strong> (a different cement entirely, not part of Portland cement chemistry): a paste-like mixture of MgO and MgCl₂ that sets to a hard mass on standing; used in dental filling and flooring.</p>
+</div>
+
+<div class="card fulltext trends wide">
+<h2>15. Biological Importance of Magnesium and Calcium</h2>
+<p>An adult human body contains roughly <strong>25 g of Mg</strong> and <strong>1200 g of Ca</strong> (compare only 5 g Fe, 0.06 g Cu) — daily requirement 200–300 mg.</p>
+<h4>Magnesium</h4>
+<ul><li>Cofactor for <strong>all enzymes that utilise ATP</strong> in phosphate transfer (phosphohydrolases, phosphotransferases).</li><li>The central metal ion of <strong>chlorophyll</strong> — essential for light absorption in photosynthesis.</li><li>Essential for transmission of impulses along nerve fibres; concentrated inside cells, like K⁺.</li></ul>
+<h4>Calcium</h4>
+<ul><li>≈99% of body Ca is in bones and teeth as an apatite-type mineral; tooth enamel specifically is <strong>fluorapatite</strong> [3Ca₃(PO₄)₂·CaF₂]. Bone is metabolically active, not inert — roughly 400 mg/day passes through the plasma pool, being continuously dissolved and redeposited.</li><li>Regulates neuromuscular function, interneuronal transmission, cell-membrane integrity, and <strong>blood coagulation</strong>.</li><li>Plasma calcium is held at ~100 mg/L, regulated by <strong>calcitonin and parathyroid hormone</strong>.</li><li>Concentrated <em>outside</em> cells (in body fluids), like Na⁺; required to trigger <strong>muscle contraction</strong> and to maintain the regular beating of the heart.</li></ul>
+</div>
+
+<div class="card fulltext hydrides wide">
+<h2>16. Master JEE Trap Bank</h2>
+<p>Thirty commonly-tested false statements, consolidated across sources. Read each as "a JEE option that looks true but isn't."</p>
+<ol><li data-ol="1">All Group 2 oxides are basic — FALSE: BeO is amphoteric.</li><li data-ol="1">All Group 2 hydroxides are strong/highly soluble bases — FALSE: Be(OH)₂ is amphoteric, Mg(OH)₂ is weakly basic and only sparingly soluble.</li><li data-ol="1">Hydroxide solubility decreases down the group — FALSE: it increases (lattice energy falls faster than hydration energy for OH⁻/F⁻).</li><li data-ol="1">Sulphate solubility increases down the group — FALSE: it decreases sharply; BaSO₄ is virtually insoluble.</li><li data-ol="1">Carbonate solubility increases down the group — FALSE: it decreases (opposite mechanism to hydroxides — here hydration energy falls faster than lattice energy).</li><li data-ol="1">Mg + steam → Mg(OH)₂ — FALSE: the steam product is MgO + H₂; Mg(OH)₂ forms only with liquid (especially hot) water.</li><li data-ol="1">Be reacts vigorously with water because its E° is very negative — FALSE: kinetic passivation by the BeO film dominates over thermodynamics.</li><li data-ol="1">Burning Mg is extinguished by CO₂ — FALSE: Mg reduces CO₂ (2Mg+CO₂→2MgO+C) and keeps burning; never use CO₂ extinguishers on Mg fires.</li><li data-ol="1">BeH₂ is ionic/saline — FALSE: it is covalent, polymeric, and electron-deficient (3c–2e bonded).</li><li data-ol="1">CaH₂ is covalent like BeH₂ — FALSE: CaH₂/SrH₂/BaH₂ are ionic, containing H⁻.</li><li data-ol="1">BeCl₂ is a simple ionic solid — FALSE: it is strongly covalent — chain-polymeric in the solid, dimeric in vapour at moderate T, monomeric (linear) only above ≈1200 K.</li><li data-ol="1">All Group 2 carbides give ethyne on hydrolysis — FALSE: Be₂C → CH₄ (methanide); Mg₂C₃ → propyne; only CaC₂/SrC₂/BaC₂ (true acetylides) → C₂H₂. Also, BaC₂ + N₂ gives cyanide Ba(CN)₂, not cyanamide, unlike CaC₂.</li><li data-ol="1">Group 2 nitrates decompose to nitrites on heating — FALSE: all give MO + NO₂ + O₂ (like LiNO₃), never a nitrite.</li><li data-ol="1">Blue liquid-ammonia solutions are coloured by M²⁺ — FALSE: the colour is due to solvated/ammoniated electrons.</li><li data-ol="1">Be and Mg show characteristic flame colours — FALSE: their valence electrons are too tightly bound to be excited at flame temperature.</li><li data-ol="1">Lime water is a suspension — FALSE: it is a clear solution; milk of lime is the suspension.</li><li data-ol="1">Excess CO₂ increases the CaCO₃ precipitate — FALSE: excess CO₂ redissolves it as soluble Ca(HCO₃)₂, clearing the milkiness.</li><li data-ol="1">Whitewash hardens purely by water evaporating — FALSE: chemical carbonation of Ca(OH)₂ to CaCO₃ is the key hardening step.</li><li data-ol="1">Gypsum and Plaster of Paris are the same hydration state — FALSE: dihydrate (gypsum) vs hemihydrate (PoP).</li><li data-ol="1">PoP sets to anhydrous CaSO₄ — FALSE: it rehydrates back to gypsum (CaSO₄·2H₂O).</li><li data-ol="1">Dead-burnt plaster = CaSO₄·½H₂O — FALSE: dead-burnt plaster is fully anhydrous CaSO₄, from overheating past the PoP stage.</li><li data-ol="1">More mixing water always gives a stronger PoP set — FALSE: excess water leaves pores after evaporation, generally weakening the set mass.</li><li data-ol="1">Be resembles only Mg, with no special relation to Al — FALSE: the Be–Al diagonal relationship is extensive and well-documented.</li><li data-ol="1">Be²⁺ should show a high coordination number because of its high +2 charge — FALSE: its tiny valence shell (only 2s+2p, no d-orbitals) limits it to CN = 4.</li><li data-ol="1">BaSO₄ dissolves readily because Ba²⁺ is a large, "easy" ion — FALSE: it is precisely the reduced hydration enthalpy of the large Ba²⁺ ion that makes BaSO₄ so insoluble.</li><li data-ol="1">E° order can be predicted from ionization enthalpy alone — FALSE: E° is a thermodynamic sum of atomization enthalpy, IE₁+IE₂, and hydration enthalpy.</li><li data-ol="1">"Lime" is one single substance — FALSE: quicklime (CaO), slaked lime (Ca(OH)₂), lime water (solution), and milk of lime (suspension) are four distinct things.</li><li data-ol="1">Radius-ratio rules always correctly predict ionic coordination number — FALSE: they predict CN = 8 for SrO/BaO, but both are experimentally 6-coordinate.</li><li data-ol="1">Fluoride and hydroxide solubility trends follow the same logic as carbonate/sulphate — FALSE: F⁻/OH⁻ show the reversed (increasing) solubility trend because lattice energy — not hydration energy — falls faster down the group for these two anions.</li><li data-ol="1">Anhydrous MgCl₂ can be made by simply heating MgCl₂·6H₂O in air — FALSE: this causes hydrolysis (→ Mg(OH)Cl → MgO); anhydrous MgCl₂ is made industrially via the double salt MgCl₂·NH₄Cl·6H₂O route.</li></ol>
+<h3>Numerical / Integer-Answer JEE Patterns</h3>
+<p>A recurring JEE Advanced question style asks for a bare integer rather than an MCQ option. These five are drawn directly from the standard Group 2 practice-question banks and are worth memorizing as verified facts, not just methods:</p>
+<ul><li><strong>Number of chelate rings in [Ca(EDTA)]²⁻ = 5</strong> — hexadentate EDTA wraps a metal ion with 5 five-membered rings, regardless of which metal is chelated.</li><li><strong>Total electrons in one molecule of Mg₂C₃ = 42</strong> — a straightforward electron-counting exercise (2×12 + 3×6 = 42) that examiners like precisely because it forces you to first get the correct formula (allylide/sesquicarbide, not MgC₂).</li><li><strong>Number of planes of symmetry in [BeH₄]²⁻ = 6</strong> — a regular tetrahedron (Td point group) has 6 mirror planes, one through each edge-pair.</li><li><strong>Ratio of water of crystallization, gypsum : Plaster of Paris = 4 : 1</strong> — CaSO₄·2H₂O has 2 mol H₂O, CaSO₄·½H₂O has 0.5 mol, so 2/0.5 = 4.</li><li><strong>Number of Group-2/related elements that liberate H₂ with NaOH, from {Be, Al, B, Mg, Ca, Zn, Sn}</strong> — only Be, Al, Zn, Sn are amphoteric enough to do this (Mg, Ca do not react with NaOH; B does not either) — a reminder that amphoterism is the deciding property, not group membership.</li></ul>
+</div>
+
+<div class="card fulltext halides wide">
+<h2>17. Quick-Revision Summary Sheet</h2>
+<h3>Solubility trends (down the group)</h3>
+<div class="table-wrap"><table><tr><th>Species</th><th>Trend</th><th>Governing factor</th></tr><tr><td>Hydroxides M(OH)₂</td><td>Increases</td><td>Lattice energy falls faster than hydration energy</td></tr><tr><td>Fluorides MF₂</td><td>Increases (mostly)</td><td>Same as hydroxides</td></tr><tr><td>Carbonates MCO₃</td><td>Decreases</td><td>Hydration energy falls faster than lattice energy</td></tr><tr><td>Sulphates MSO₄</td><td>Decreases sharply</td><td>Same as carbonates</td></tr><tr><td>Halides other than F (Cl, Br, I)</td><td>Broadly high throughout</td><td>All fairly soluble, ionic for Mg onward</td></tr></table></div>
+<h3>Thermal stability trends (down the group)</h3>
+<div class="table-wrap"><table><tr><th>Species</th><th>Trend</th><th>Reason</th></tr><tr><td>Carbonates</td><td>Increases</td><td>Larger, less polarizing cation distorts CO₃²⁻ less</td></tr><tr><td>Nitrates</td><td>Increases</td><td>Same polarization logic</td></tr><tr><td>Sulphates</td><td>Increases</td><td>Same polarization logic</td></tr><tr><td>Hydroxides</td><td>Increases</td><td>Larger cation polarizes OH⁻ less, resists dehydration</td></tr></table></div>
+<h3>Nature of key compounds</h3>
+<div class="table-wrap"><table><tr><th>Compound class</th><th>Be</th><th>Mg</th><th>Ca / Sr / Ba</th></tr><tr><td>Hydride MH₂</td><td>Covalent, polymeric</td><td>Covalent, polymeric</td><td>Ionic (H⁻)</td></tr><tr><td>Chloride MCl₂</td><td>Covalent, polymeric/dimeric</td><td>Largely ionic</td><td>Ionic</td></tr><tr><td>Oxide MO</td><td>Amphoteric, covalent (4:4)</td><td>Weakly basic, ionic (6:6)</td><td>Strongly basic, ionic (6:6)</td></tr><tr><td>Carbide hydrolysis</td><td>→ CH₄ (methanide)</td><td>Mg₂C₃ → propyne</td><td>→ C₂H₂ (acetylide)</td></tr></table></div>
+<h3>Flame colours</h3>
+<div class="table-wrap"><table><tr><th>Be</th><th>Mg</th><th>Ca</th><th>Sr</th><th>Ba</th></tr><tr><td>None</td><td>None</td><td>Brick red</td><td>Crimson</td><td>Apple green</td></tr></table></div>
+<h3>The one sentence that explains every solubility trend</h3>
+<div class="alert-box struct"><span class="badge struct">MOT / BONDING — Unifying principle</span><p><em>"As the cation grows down the group, does lattice energy or hydration energy fall faster?"</em> For OH⁻/F⁻ — lattice energy falls faster ⇒ solubility <strong>increases</strong>. For CO₃²⁻/SO₄²⁻ — hydration energy falls faster ⇒ solubility <strong>decreases</strong>. Every apparently-contradictory Group 2 solubility trend collapses into this single competing-energies framework.</p></div>
+<p class="center-text"><em>— End of Notes —</em></p>
+</div>
+</div>
+
+</body>
+</html>

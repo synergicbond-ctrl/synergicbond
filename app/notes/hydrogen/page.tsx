@@ -20,8 +20,8 @@ export default function HydrogenChapterHub() {
         <span className="text-cyan-300">Hydrogen</span>
       </nav>
 
-      <header className="mb-9 border-b border-cyan-200/15 pb-8 sm:pb-10">
-        <h1 className="max-w-5xl bg-gradient-to-r from-cyan-200 via-violet-200 to-amber-200 bg-clip-text text-4xl font-black leading-tight text-transparent sm:text-5xl lg:text-6xl">
+      <header className="mb-9 border-b border-[var(--border)] pb-8 sm:pb-10">
+        <h1 className="font-display max-w-5xl text-4xl font-black leading-tight text-[var(--foreground)] sm:text-5xl lg:text-6xl">
           Hydrogen and Its Compounds
         </h1>
         <p className="mt-5 max-w-4xl text-base font-medium leading-8 text-[var(--text-muted)] sm:text-lg">

@@ -69,68 +69,68 @@ export type PartData = {
 };
 
 const boxTone = {
-  concept: "border-cyan-400/30 bg-cyan-400/[0.08] shadow-[inset_4px_0_0_rgba(34,211,238,0.75)]",
-  jee: "border-violet-400/30 bg-violet-400/[0.08] shadow-[inset_4px_0_0_rgba(167,139,250,0.75)]",
-  warning: "border-amber-400/35 bg-amber-400/[0.08] shadow-[inset_4px_0_0_rgba(251,191,36,0.78)]",
-  green: "border-emerald-400/30 bg-emerald-400/[0.08] shadow-[inset_4px_0_0_rgba(52,211,153,0.75)]",
+  concept: "border-[var(--chem-bond)] bg-[var(--surface)] border-l-4",
+  jee: "border-[var(--chem-orbital)] bg-[var(--surface)] border-l-4",
+  warning: "border-[var(--chem-energy)] bg-[var(--surface)] border-l-4",
+  green: "border-[var(--chem-rule)] bg-[var(--surface)] border-l-4",
 };
 
 const sectionThemes = [
   {
-    heading: "from-cyan-200 via-sky-300 to-violet-300",
-    line: "from-cyan-300 via-violet-400 to-amber-300",
-    border: "border-cyan-400/20",
-    glow: "bg-cyan-400/[0.045]",
-    bullet: "bg-cyan-300",
-    eyebrow: "text-violet-300",
+    heading: "text-[var(--chem-bond)]",
+    line: "bg-[var(--chem-bond)]",
+    border: "border-[var(--chem-bond)]",
+    glow: "",
+    bullet: "bg-[var(--chem-bond)]",
+    eyebrow: "text-[var(--chem-bond)]",
   },
   {
-    heading: "from-emerald-200 via-cyan-300 to-blue-300",
-    line: "from-emerald-300 via-cyan-400 to-blue-400",
-    border: "border-emerald-400/20",
-    glow: "bg-emerald-400/[0.04]",
-    bullet: "bg-emerald-300",
-    eyebrow: "text-emerald-300",
+    heading: "text-[var(--chem-rule)]",
+    line: "bg-[var(--chem-rule)]",
+    border: "border-[var(--chem-rule)]",
+    glow: "",
+    bullet: "bg-[var(--chem-rule)]",
+    eyebrow: "text-[var(--chem-rule)]",
   },
   {
-    heading: "from-amber-200 via-orange-300 to-rose-300",
-    line: "from-amber-300 via-orange-400 to-rose-400",
-    border: "border-amber-400/20",
-    glow: "bg-amber-400/[0.04]",
-    bullet: "bg-amber-300",
-    eyebrow: "text-amber-300",
+    heading: "text-[var(--chem-energy)]",
+    line: "bg-[var(--chem-energy)]",
+    border: "border-[var(--chem-energy)]",
+    glow: "",
+    bullet: "bg-[var(--chem-energy)]",
+    eyebrow: "text-[var(--chem-energy)]",
   },
   {
-    heading: "from-fuchsia-200 via-violet-300 to-cyan-300",
-    line: "from-fuchsia-300 via-violet-400 to-cyan-400",
-    border: "border-fuchsia-400/20",
-    glow: "bg-fuchsia-400/[0.04]",
-    bullet: "bg-fuchsia-300",
-    eyebrow: "text-fuchsia-300",
+    heading: "text-[var(--chem-orbital)]",
+    line: "bg-[var(--chem-orbital)]",
+    border: "border-[var(--chem-orbital)]",
+    glow: "",
+    bullet: "bg-[var(--chem-orbital)]",
+    eyebrow: "text-[var(--chem-orbital)]",
   },
   {
-    heading: "from-rose-200 via-pink-300 to-amber-300",
-    line: "from-rose-300 via-pink-400 to-amber-400",
-    border: "border-rose-400/20",
-    glow: "bg-rose-400/[0.04]",
-    bullet: "bg-rose-300",
-    eyebrow: "text-rose-300",
+    heading: "text-[var(--chem-trap)]",
+    line: "bg-[var(--chem-trap)]",
+    border: "border-[var(--chem-trap)]",
+    glow: "",
+    bullet: "bg-[var(--chem-trap)]",
+    eyebrow: "text-[var(--chem-trap)]",
   },
 ];
 
-const headerTones = ["text-cyan-200", "text-violet-200", "text-amber-200", "text-emerald-200", "text-rose-200"];
-const cellTones = ["text-cyan-100", "text-violet-100", "text-amber-100", "text-emerald-100", "text-rose-100"];
+const headerTones = ["text-[var(--chem-bond)]", "text-[var(--chem-orbital)]", "text-[var(--chem-energy)]", "text-[var(--chem-rule)]", "text-[var(--chem-trap)]"];
+const cellTones = ["text-[var(--chem-bond)]", "text-[var(--chem-orbital)]", "text-[var(--chem-energy)]", "text-[var(--chem-rule)]", "text-[var(--chem-trap)]"];
 const panelThemes = [
-  "border-cyan-400/25 bg-cyan-400/[0.055]",
-  "border-violet-400/25 bg-violet-400/[0.055]",
-  "border-amber-400/25 bg-amber-400/[0.055]",
-  "border-emerald-400/25 bg-emerald-400/[0.055]",
-  "border-rose-400/25 bg-rose-400/[0.055]",
+  "border-[var(--chem-bond)] bg-[var(--surface)]",
+  "border-[var(--chem-orbital)] bg-[var(--surface)]",
+  "border-[var(--chem-energy)] bg-[var(--surface)]",
+  "border-[var(--chem-rule)] bg-[var(--surface)]",
+  "border-[var(--chem-trap)] bg-[var(--surface)]",
 ];
 
 function Formula({ children }: { children: ReactNode }) {
   return (
-    <div className="overflow-x-auto rounded-xl border border-violet-300/25 bg-gradient-to-r from-cyan-400/[0.08] via-violet-400/[0.07] to-amber-400/[0.07] px-5 py-4 text-center font-['STIX_Two_Math','Cambria_Math',serif] text-base font-semibold tracking-wide text-cyan-50 shadow-[0_0_28px_rgba(99,102,241,0.08)] sm:text-lg">
+    <div className="overflow-x-auto rounded-lg border border-[var(--border)] bg-[var(--surface)] px-5 py-4 text-center font-mono text-base font-semibold tracking-wide text-[var(--foreground)] sm:text-lg">
       {children}
     </div>
   );
@@ -138,15 +138,15 @@ function Formula({ children }: { children: ReactNode }) {
 
 function TableBlock({ table }: { table: DataTable }) {
   return (
-    <figure className="overflow-hidden rounded-lg border border-violet-300/20 bg-[#070b12]">
+    <figure className="overflow-hidden rounded-lg border border-[var(--border)] bg-[var(--surface)]">
       <div className="overflow-x-auto">
         <table className="min-w-full border-collapse text-left text-[15px]">
           {table.caption ? (
-            <caption className="border-b border-violet-300/20 bg-violet-400/[0.10] px-5 py-4 text-left text-base font-bold text-violet-100">
+            <caption className="border-b border-[var(--border)] bg-[var(--surface)] px-5 py-4 text-left text-base font-bold text-[var(--foreground)]">
               {table.caption}
             </caption>
           ) : null}
-          <thead className="bg-gradient-to-r from-cyan-400/[0.14] via-violet-400/[0.12] to-amber-400/[0.08] text-cyan-100">
+          <thead className="bg-[var(--surface)] text-[var(--foreground)]">
             <tr>
               {table.headers.map((header) => (
                 <th
@@ -158,11 +158,11 @@ function TableBlock({ table }: { table: DataTable }) {
               ))}
             </tr>
           </thead>
-          <tbody className="divide-y divide-white/10">
+          <tbody className="divide-y divide-[var(--border)]">
             {table.rows.map((row, rowIndex) => (
-              <tr key={rowIndex} className="align-top odd:bg-white/[0.02]">
+              <tr key={rowIndex} className="align-top">
                 {row.map((cell, cellIndex) => (
-                  <td key={cellIndex} className="min-w-40 px-5 py-4 leading-7 text-slate-300">
+                  <td key={cellIndex} className="min-w-40 px-5 py-4 leading-7 text-[var(--text-body)]">
                     <span className={cellIndex === 0 ? `font-semibold ${cellTones[rowIndex % cellTones.length]}` : ""}>
                       {cell}
                     </span>
@@ -182,7 +182,6 @@ function Section({ section, index }: { section: SectionData; index: number }) {
 
   return (
     <section className={`relative border-b py-9 last:border-b-0 sm:py-11 ${theme.border}`}>
-      <div className={`pointer-events-none absolute inset-y-5 -left-4 w-1 rounded-full ${theme.glow}`} />
       <div className="mb-7">
         <div>
           {section.eyebrow ? (
@@ -190,15 +189,15 @@ function Section({ section, index }: { section: SectionData; index: number }) {
               {section.eyebrow}
             </p>
           ) : null}
-          <h2 className={`bg-gradient-to-r bg-clip-text text-2xl font-extrabold leading-tight tracking-tight text-transparent sm:text-3xl ${theme.heading}`}>
+          <h2 className={`text-2xl font-extrabold leading-tight tracking-tight sm:text-3xl ${theme.heading}`}>
             {index + 1}. {section.title}
           </h2>
-          <div className={`mt-4 h-[3px] w-28 rounded-full bg-gradient-to-r ${theme.line}`} />
+          <div className={`mt-4 h-[2px] w-28 ${theme.line}`} />
         </div>
       </div>
 
       {section.paragraphs?.length ? (
-        <div className="space-y-4 text-[17px] leading-8 text-slate-300">
+        <div className="space-y-4 text-[17px] leading-8 text-[var(--text-body)]">
           {section.paragraphs.map((paragraph, paragraphIndex) => (
             <p key={paragraphIndex}>{paragraph}</p>
           ))}
@@ -206,7 +205,7 @@ function Section({ section, index }: { section: SectionData; index: number }) {
       ) : null}
 
       {section.bullets?.length ? (
-        <ul className="mt-5 grid gap-3 text-[17px] leading-8 text-slate-300">
+        <ul className="mt-5 grid gap-3 text-[17px] leading-8 text-[var(--text-body)]">
           {section.bullets.map((bullet) => (
             <li key={bullet} className="flex gap-3">
               <span className={`mt-[13px] h-1.5 w-1.5 shrink-0 rounded-full ${theme.bullet}`} />
@@ -281,18 +280,17 @@ function Section({ section, index }: { section: SectionData; index: number }) {
 
 export default function EnvironmentalChemistryPart({ data }: { data: PartData }) {
   return (
-    <main className="min-h-screen bg-[radial-gradient(circle_at_top_left,rgba(34,211,238,0.06),transparent_25%),radial-gradient(circle_at_top_right,rgba(168,85,247,0.07),transparent_28%),radial-gradient(circle_at_bottom_center,rgba(244,63,94,0.045),transparent_32%),#03060b] px-4 py-8 font-['Inter','SF_Pro_Text','Segoe_UI',Arial,sans-serif] text-slate-200 sm:px-6 lg:px-8">
+    <main className="min-h-screen bg-[var(--background)] px-4 py-8 text-[var(--foreground)] sm:px-6 lg:px-8">
       <article className="mx-auto max-w-7xl">
-        <header className="relative overflow-hidden border-b border-slate-800/90 pb-9 pt-3 sm:pb-11">
-          <div className="absolute right-0 top-0 h-52 w-52 rounded-full bg-violet-400/[0.08] blur-3xl" />
-          <p className="relative text-xs font-extrabold uppercase tracking-[0.22em] text-cyan-300 sm:text-sm">
+        <header className="relative overflow-hidden border-b border-[var(--border)] pb-9 pt-3 sm:pb-11">
+          <p className="relative text-xs font-extrabold uppercase tracking-[0.22em] text-[var(--accent)] sm:text-sm">
             JEE Advanced · Environmental Chemistry · {data.part}
           </p>
-          <h1 className="relative mt-3 max-w-6xl bg-gradient-to-r from-cyan-200 via-blue-300 via-violet-300 to-orange-200 bg-clip-text text-4xl font-extrabold leading-tight tracking-tight text-transparent sm:text-5xl lg:text-6xl">
+          <h1 className="relative mt-3 max-w-6xl text-4xl font-extrabold leading-tight tracking-tight text-[var(--foreground)] sm:text-5xl lg:text-6xl">
             {data.title}
           </h1>
-          <p className="relative mt-5 max-w-4xl text-[17px] leading-8 text-slate-300">{data.subtitle}</p>
-          <div className="relative mt-5 h-[3px] w-28 rounded-full bg-gradient-to-r from-cyan-300 via-violet-400 to-amber-300" />
+          <p className="relative mt-5 max-w-4xl text-[17px] leading-8 text-[var(--text-muted)]">{data.subtitle}</p>
+          <div className="relative mt-5 h-[2px] w-28 bg-[var(--accent)]" />
           <div className="relative mt-6 grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
             {data.goals.map((goal, goalIndex) => (
               <div key={goal} className={`rounded-xl border px-4 py-3 text-[15px] leading-7 text-slate-100 ${panelThemes[goalIndex % panelThemes.length]}`}>
@@ -301,13 +299,13 @@ export default function EnvironmentalChemistryPart({ data }: { data: PartData })
             ))}
           </div>
           {data.heroImage ? (
-            <figure className="relative mt-7 overflow-hidden rounded-lg border border-cyan-300/20 bg-[#050910]">
+            <figure className="relative mt-7 overflow-hidden rounded-lg border border-[var(--border)] bg-[var(--surface)]">
               <img
                 src={data.heroImage.src}
                 alt={data.heroImage.alt}
                 className="aspect-video w-full object-cover"
               />
-              <figcaption className="border-t border-white/10 px-5 py-4 text-sm leading-6 text-slate-400">
+              <figcaption className="border-t border-[var(--border)] px-5 py-4 text-sm leading-6 text-[var(--text-muted)]">
                 {data.heroImage.caption}
               </figcaption>
             </figure>
@@ -321,24 +319,24 @@ export default function EnvironmentalChemistryPart({ data }: { data: PartData })
         </div>
 
         {data.examples?.length ? (
-          <section className="mt-10 border-t border-slate-800/90 pt-10">
-            <h2 className="bg-gradient-to-r from-cyan-200 via-blue-300 to-violet-300 bg-clip-text text-3xl font-extrabold text-transparent">Worked Examples</h2>
-            <div className="mt-4 h-[3px] w-24 rounded-full bg-gradient-to-r from-cyan-300 via-violet-400 to-amber-300" />
+          <section className="mt-10 border-t border-[var(--border)] pt-10">
+            <h2 className="text-3xl font-extrabold text-[var(--foreground)]">Worked Examples</h2>
+            <div className="mt-4 h-[2px] w-24 bg-[var(--accent)]" />
             <div className="mt-5 grid gap-4">
               {data.examples.map((example, index) => (
                 <article key={example.title} className={`rounded-lg border p-5 sm:p-6 ${panelThemes[index % panelThemes.length]}`}>
                   <p className={`text-xs font-black uppercase tracking-[0.16em] ${cellTones[index % cellTones.length]}`}>Example {index + 1}</p>
-                  <h3 className="mt-2 text-xl font-extrabold text-cyan-100">{example.title}</h3>
-                  <p className="mt-3 text-[16px] leading-8 text-slate-300"><strong className="text-amber-300">Problem:</strong> {example.problem}</p>
-                  <ol className="mt-4 space-y-2 text-[16px] leading-7 text-slate-300">
+                  <h3 className="mt-2 text-xl font-extrabold text-[var(--foreground)]">{example.title}</h3>
+                  <p className="mt-3 text-[16px] leading-8 text-[var(--text-body)]"><strong className="text-[var(--accent)]">Problem:</strong> {example.problem}</p>
+                  <ol className="mt-4 space-y-2 text-[16px] leading-7 text-[var(--text-body)]">
                     {example.steps.map((step, stepIndex) => (
                       <li key={step} className="flex gap-3">
-                        <span className="font-black text-emerald-300">{stepIndex + 1}.</span>
+                        <span className="font-black text-[var(--chem-rule)]">{stepIndex + 1}.</span>
                         <span>{step}</span>
                       </li>
                     ))}
                   </ol>
-                  <p className="mt-4 rounded-xl border border-emerald-300/20 bg-emerald-400/[0.07] px-4 py-3 text-sm font-bold leading-6 text-emerald-100">
+                  <p className="mt-4 rounded-lg border border-[var(--chem-rule)] bg-[var(--surface)] px-4 py-3 text-sm font-bold leading-6 text-[var(--chem-rule)]">
                     Answer: {example.answer}
                   </p>
                 </article>
@@ -348,13 +346,13 @@ export default function EnvironmentalChemistryPart({ data }: { data: PartData })
         ) : null}
 
         {data.questions?.length ? (
-          <section className="mt-10 border-t border-slate-800/90 pt-10">
+          <section className="mt-10 border-t border-[var(--border)] pt-10">
             <div className="flex flex-wrap items-end justify-between gap-3">
               <div>
-                <p className="text-xs font-black uppercase tracking-[0.18em] text-violet-300">Try first, then check</p>
-                <h2 className="mt-1 bg-gradient-to-r from-cyan-200 via-blue-300 to-violet-300 bg-clip-text text-3xl font-extrabold text-transparent">Practice Questions and PYQs</h2>
+                <p className="text-xs font-black uppercase tracking-[0.18em] text-[var(--chem-orbital)]">Try first, then check</p>
+                <h2 className="mt-1 text-3xl font-extrabold text-[var(--foreground)]">Practice Questions and PYQs</h2>
               </div>
-              <span className="rounded-full border border-white/10 bg-black/20 px-3 py-1 text-xs text-slate-300">
+              <span className="rounded-full border border-[var(--border)] bg-[var(--surface)] px-3 py-1 text-xs text-[var(--text-muted)]">
                 {data.questions.length} questions
               </span>
             </div>
@@ -391,12 +389,12 @@ export default function EnvironmentalChemistryPart({ data }: { data: PartData })
           </section>
         ) : null}
 
-        <section className="mt-10 border-t border-slate-800/90 py-10">
-          <p className="text-xs font-black uppercase tracking-[0.18em] text-rose-300">Part {data.part} quick review</p>
-          <h2 className="mt-1 bg-gradient-to-r from-cyan-200 via-blue-300 to-violet-300 bg-clip-text text-3xl font-extrabold text-transparent">Before You Move On</h2>
+        <section className="mt-10 border-t border-[var(--border)] py-10">
+          <p className="text-xs font-black uppercase tracking-[0.18em] text-[var(--chem-trap)]">Part {data.part} quick review</p>
+          <h2 className="mt-1 text-3xl font-extrabold text-[var(--foreground)]">Before You Move On</h2>
           <ul className="mt-4 grid gap-2 md:grid-cols-2">
             {data.recap.map((item, recapIndex) => (
-              <li key={item} className={`rounded-xl border px-4 py-3 text-[15px] leading-7 text-slate-200 ${panelThemes[recapIndex % panelThemes.length]}`}>
+              <li key={item} className={`rounded-lg border px-4 py-3 text-[15px] leading-7 text-[var(--foreground)] ${panelThemes[recapIndex % panelThemes.length]}`}>
                 {item}
               </li>
             ))}

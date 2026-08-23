@@ -333,7 +333,7 @@ export const AUTHORED_COURSES: AuthoredCourse[] = [
   },
   {
     id: "haloalkanes-haloarenes",
-    syllabusId: "haloalkanes-and-haloarenes",
+    syllabusId: "haloalkanes-haloarenes",
     title: "Haloalkanes and Haloarenes",
     href: "/learn/jee-advanced/organic-chemistry/haloalkanes-haloarenes",
     lessonLabel: "10 sections",
@@ -342,7 +342,7 @@ export const AUTHORED_COURSES: AuthoredCourse[] = [
   },
   {
     id: "alcohols-phenols-ethers",
-    syllabusId: "alcohols-phenols-and-ethers",
+    syllabusId: "alcohols-phenols-ethers",
     title: "Alcohols, Phenols and Ethers",
     href: "/learn/jee-advanced/organic-chemistry/alcohols-phenols-ethers",
     lessonLabel: "10 sections",
@@ -351,7 +351,7 @@ export const AUTHORED_COURSES: AuthoredCourse[] = [
   },
   {
     id: "carbonyls",
-    syllabusId: "aldehydes-ketones-and-carboxylic-acids",
+    syllabusId: "aldehydes-ketones",
     title: "Aldehydes, Ketones and Carboxylic Acids",
     href: "/learn/jee-advanced/organic-chemistry/carbonyls",
     lessonLabel: "11 sections",

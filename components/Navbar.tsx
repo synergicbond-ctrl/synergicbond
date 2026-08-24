@@ -72,6 +72,7 @@ const MEGA_MENUS: MegaMenu[] = [
         items: [
           { href: "/programs/gate",          label: "GATE",          desc: "GATE Chemistry (CY)",       icon: Medal },
           { href: "/programs/international",  label: "International",  desc: "AP · IB · A-Level · MCAT",  icon: Globe },
+          { href: "/university-chemistry",   label: "University Chemistry", desc: "B.Sc semester-wise papers", icon: Landmark },
         ],
       },
     ],
@@ -122,7 +123,6 @@ const MEGA_MENUS: MegaMenu[] = [
 
 // Plain top-level links after the mega-menus (final navbar tail).
 const NAV_LINKS: { href: string; label: string; icon: LucideIcon }[] = [
-  { href: "/university-chemistry", label: "University Chemistry", icon: Landmark },
   { href: "/pricing", label: "Pricing", icon: Gem },
   { href: "/support", label: "Support", icon: Heart },
 ];

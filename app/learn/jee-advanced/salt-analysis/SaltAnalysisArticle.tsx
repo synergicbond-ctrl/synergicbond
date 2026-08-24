@@ -1,5 +1,5 @@
-import Link from "next/link";
 import katex from "katex";
+import { AppShell } from "@/components/AppShell";
 import { saltAnalysisParts } from "./index";
 import { SaltAnalysisStructure } from "./SaltAnalysisStructures";
 import { SaltAnalysisVisual } from "./SaltAnalysisVisuals";
@@ -359,75 +359,6 @@ function renderBlocks(markdown: string) {
   return nodes;
 }
 
-function PartNavigation({
-  part,
-  position,
-}: {
-  part: number;
-  position: "top" | "bottom";
-}) {
-  const currentIndex = saltAnalysisParts.findIndex((item) => item.id === part);
-
-  const previousPart =
-    currentIndex > 0 ? saltAnalysisParts[currentIndex - 1] : null;
-
-  const nextPart =
-    currentIndex >= 0 && currentIndex < saltAnalysisParts.length - 1
-      ? saltAnalysisParts[currentIndex + 1]
-      : null;
-
-  const backHref =
-    previousPart?.href ?? "/learn/jee-advanced/salt-analysis";
-
-  const nextHref = nextPart?.href ?? "/learn/jee-advanced/salt-analysis";
-
-  const backTitle = previousPart
-    ? `Previous: ${previousPart.title}`
-    : "Salt Analysis overview";
-
-  const nextTitle = nextPart
-    ? `Next: ${nextPart.title}`
-    : "Salt Analysis overview";
-
-  const backLabel = previousPart
-    ? `← ${String(previousPart.id).padStart(2, "0")} · Back`
-    : "← Overview";
-
-  const nextLabel = nextPart
-    ? `Next · ${String(nextPart.id).padStart(2, "0")} →`
-    : "Overview →";
-
-  return (
-    <nav
-      aria-label={`${
-        position === "top" ? "Top" : "Bottom"
-      } Salt Analysis navigation`}
-      className={`${
-        position === "top"
-          ? "mb-5"
-          : "mt-9 border-t border-[var(--border)] pt-5"
-      } flex items-center justify-between gap-3`}
-    >
-      <Link
-        href={backHref}
-        title={backTitle}
-        aria-label={backTitle}
-        className="inline-flex w-fit items-center whitespace-nowrap rounded-full border border-[var(--border)] px-3 py-1.5 text-xs font-bold text-[var(--text-muted)] transition hover:border-[var(--border-strong)] hover:text-[var(--foreground)] sm:text-sm"
-      >
-        {backLabel}
-      </Link>
-
-      <Link
-        href={nextHref}
-        title={nextTitle}
-        aria-label={nextTitle}
-        className="inline-flex w-fit items-center whitespace-nowrap rounded-full border border-[var(--border)] px-3 py-1.5 text-xs font-bold text-[var(--text-muted)] transition hover:border-[var(--border-strong)] hover:text-[var(--foreground)] sm:text-sm"
-      >
-        {nextLabel}
-      </Link>
-    </nav>
-  );
-}
 
 export function SaltAnalysisArticle({
   metadata,
@@ -436,30 +367,29 @@ export function SaltAnalysisArticle({
   metadata: Metadata;
   content: string;
 }) {
+  const currentIndex = saltAnalysisParts.findIndex((item) => item.id === metadata.part);
+  const previousPart = currentIndex > 0 ? saltAnalysisParts[currentIndex - 1] : null;
+  const nextPart =
+    currentIndex >= 0 && currentIndex < saltAnalysisParts.length - 1
+      ? saltAnalysisParts[currentIndex + 1]
+      : null;
+
   return (
-    <article className="relative mx-auto max-w-6xl bg-[var(--background)] px-5 py-8 text-[var(--foreground)] sm:px-8 sm:py-10">
-      <header className="relative mb-7 border-b border-[var(--border)] pb-6">
-        <div className="mb-3 flex flex-wrap items-center gap-2 text-[11px] font-bold uppercase tracking-[0.2em] text-[var(--text-muted)]">
-          <span>{metadata.exam}</span>
-          <span>•</span>
-          <span>{metadata.chapter}</span>
-          <span className="rounded-full border border-[var(--border)] bg-[var(--accent-wash)] px-2.5 py-1 text-[var(--accent)]">
-            Part {String(metadata.part).padStart(2, "0")}
-          </span>
-        </div>
-
-        <h1 className="font-display max-w-5xl text-3xl font-black leading-tight tracking-tight text-[var(--foreground)] sm:text-4xl lg:text-5xl">
-          {metadata.title}
-        </h1>
-
-        <div className="mt-4 h-1 w-40 rounded-full bg-[var(--accent)]" />
-      </header>
-
-      <PartNavigation part={metadata.part} position="top" />
-
-      <section className="relative">{renderBlocks(content)}</section>
-
-      <PartNavigation part={metadata.part} position="bottom" />
-    </article>
+    <AppShell
+      discipline={`${metadata.exam} · Inorganic Chemistry`}
+      chapterTitle="Salt Analysis"
+      chapterSlug="salt-analysis"
+      description="Systematic separation, selective reactions, confirmatory tests, ionic equilibria and analytical reasoning."
+      free={false}
+      lessonNumber={`Part ${String(metadata.part).padStart(2, "0")} of ${saltAnalysisParts.length}`}
+      lessonTitle={metadata.title}
+      hubRef={{ href: "/learn/jee-advanced/salt-analysis", label: "All parts" }}
+      prevRef={previousPart ? { href: previousPart.href, label: `Part ${String(previousPart.id).padStart(2, "0")}` } : undefined}
+      nextRef={nextPart ? { href: nextPart.href, label: `Part ${String(nextPart.id).padStart(2, "0")}` } : undefined}
+    >
+      <article className="mx-auto max-w-3xl">
+        <section className="relative">{renderBlocks(content)}</section>
+      </article>
+    </AppShell>
   );
 }

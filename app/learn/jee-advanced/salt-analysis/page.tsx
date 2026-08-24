@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { AppShell } from "@/components/AppShell";
 import { saltAnalysisParts } from "./index";
 
 export const metadata = {
@@ -9,40 +10,22 @@ export const metadata = {
 
 export default function SaltAnalysisPage() {
   return (
-    <main className="min-h-screen bg-[var(--background)] px-4 py-10 text-[var(--foreground)] sm:px-6">
-      <section className="mx-auto max-w-6xl">
-        <div className="flex flex-wrap items-center justify-between gap-3">
-          <p className="text-xs font-bold uppercase tracking-[0.22em] text-[var(--text-muted)]">
-            <span>JEE Advanced</span>
-            <span className="mx-2">·</span>
-            <span>Inorganic Chemistry</span>
-          </p>
-          <span className="rounded-full border border-[var(--border)] bg-[var(--accent-wash)] px-3 py-1 text-xs font-bold text-[var(--accent)]">
-            High-yield chapter
-          </span>
-        </div>
-
-        <h1 className="font-display mt-5 max-w-5xl text-4xl font-black tracking-tight text-[var(--foreground)] sm:text-6xl">
-          Salt Analysis / Qualitative Analysis
-        </h1>
-
-        <p className="mt-5 max-w-4xl text-base leading-8 text-[var(--text-muted)] sm:text-lg">
-          A complete JEE Advanced chapter on{" "}
-          <strong className="text-[var(--chem-bond)]">systematic separation</strong>,{" "}
-          <strong className="text-[var(--chem-orbital)]">selective reactions</strong>,{" "}
-          <strong className="text-[var(--chem-energy)]">confirmatory tests</strong>,{" "}
-          <strong className="text-[var(--chem-rule)]">ionic equilibria</strong> and{" "}
-          <strong className="text-[var(--chem-trap)]">analytical reasoning</strong>.
-        </p>
-
-        <div className="mt-6 rounded-lg border border-[var(--border)] bg-[var(--surface)] px-5 py-4 text-sm leading-7 text-[var(--text-muted)] sm:text-base">
+    <AppShell
+      discipline="JEE Advanced · Inorganic Chemistry"
+      chapterTitle="Salt Analysis / Qualitative Analysis"
+      chapterSlug="salt-analysis"
+      description="A complete JEE Advanced chapter on systematic separation, selective reactions, confirmatory tests, ionic equilibria and analytical reasoning."
+      free={false}
+    >
+      <div className="mx-auto max-w-3xl">
+        <div className="rounded-lg border border-[var(--border)] bg-[var(--surface)] px-5 py-4 text-sm leading-7 text-[var(--text-muted)] sm:text-base">
           <strong className="text-[var(--foreground)]">Scope:</strong> preliminary
           examination, dry and wet tests, anion analysis, cation group
           separation, interfering radicals, solubility logic, complexes,
           exceptions, worked examples and final revision.
         </div>
 
-        <div className="mt-9 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-9 grid gap-3 sm:grid-cols-2">
           {saltAnalysisParts.map((part) => (
             <Link
               key={part.id}
@@ -58,7 +41,7 @@ export default function SaltAnalysisPage() {
             </Link>
           ))}
         </div>
-      </section>
-    </main>
+      </div>
+    </AppShell>
   );
 }

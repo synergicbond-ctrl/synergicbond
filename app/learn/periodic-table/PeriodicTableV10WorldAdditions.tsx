@@ -266,8 +266,8 @@ function CompactTable({ columns, rows, accent = C.green }: { columns: string[]; 
       <table style={{ width: "100%", minWidth: 640, borderCollapse: "collapse", fontFamily: C.sans, tableLayout: "fixed" }}>
         <thead>
           <tr>
-            {columns.map((column) => (
-              <th key={column} style={{ padding: "9px 11px", textAlign: "left", color: accent, borderBottom: `2px solid ${accent}`, fontSize: 11, letterSpacing: .55, textTransform: "uppercase", whiteSpace: "normal", overflowWrap: "anywhere" }}>
+            {columns.map((column, columnIndex) => (
+              <th key={`${column}-${columnIndex}`} style={{ padding: "9px 11px", textAlign: "left", color: accent, borderBottom: `2px solid ${accent}`, fontSize: 11, letterSpacing: .55, textTransform: "uppercase", whiteSpace: "normal", overflowWrap: "anywhere" }}>
                 {column}
               </th>
             ))}

@@ -199,9 +199,9 @@ function DataTable({
       >
         <thead>
           <tr>
-            {columns.map((column) => (
+            {columns.map((column, columnIndex) => (
               <th
-                key={column}
+                key={`${column}-${columnIndex}`}
                 style={{
                   color: accent,
                   textAlign: "left",

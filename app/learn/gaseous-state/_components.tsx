@@ -2,6 +2,7 @@ import type { ReactNode } from "react";
 import Link from "next/link";
 import katex from "katex";
 import "katex/dist/katex.min.css";
+import { AppShell } from "@/components/AppShell";
 import type { Block, PartData, Tone } from "./_types";
 import { parts } from "./_content";
 import { partSlug } from "./_meta";
@@ -156,61 +157,41 @@ function BlockRenderer({ block }: { block: Block }) {
   return null;
 }
 
-function PartNav({ current }: { current: number }) {
-  const previous = parts.find((part) => part.number === current - 1);
-  const next = parts.find((part) => part.number === current + 1);
-  return (
-    <nav className="partNav shell" aria-label="Chapter part navigation">
-      {previous ? (
-        <Link href={`/learn/gaseous-state/parts/${partSlug(previous.number)}`} className="navButton prev">
-          <span>← Previous</span><b>{previous.title}</b>
-        </Link>
-      ) : <Link href="/learn/gaseous-state" className="navButton prev"><span>← Chapter</span><b>Gaseous State hub</b></Link>}
-      {next ? (
-        <Link href={`/learn/gaseous-state/parts/${partSlug(next.number)}`} className="navButton next">
-          <span>Next →</span><b>{next.title}</b>
-        </Link>
-      ) : <Link href="/learn/gaseous-state" className="navButton next"><span>Complete</span><b>Return to chapter hub →</b></Link>}
-    </nav>
-  );
-}
 
 export function PartPage({ data }: { data: PartData }) {
+  const previous = parts.find((part) => part.number === data.number - 1);
+  const next = parts.find((part) => part.number === data.number + 1);
+
   return (
-    <main className="gasPage">
-      <ChapterStyles />
-      <div className="ambientGrid" />
-      <header className="partHero shell">
-        <Link className="backLink" href="/learn/gaseous-state">← Gaseous State</Link>
-        <div className="partHeroGrid">
-          <div>
-            <span className="kicker">JEE Advanced · Part {String(data.number).padStart(2, "0")} of {parts.length}</span>
-            <h1>{data.title}</h1>
-            <p className="heroLead">{data.subtitle}</p>
-          </div>
-          <div className="miniToc">
-            <span>On this page</span>
-            {data.sections.map((section, index) => (
-              <a href={`#${section.id}`} key={section.id}><b>{String(index + 1).padStart(2, "0")}</b>{section.title}</a>
-            ))}
-          </div>
+    <AppShell
+      discipline="JEE Advanced · Physical Chemistry"
+      chapterTitle="Gaseous State"
+      chapterSlug="gaseous-state"
+      description="Complete JEE Advanced Gaseous State textbook chapter"
+      free={false}
+      lessonNumber={`Part ${String(data.number).padStart(2, "0")} of ${parts.length}`}
+      lessonTitle={data.title}
+      hubRef={{ href: "/learn/gaseous-state", label: "All parts" }}
+      prevRef={previous ? { href: `/learn/gaseous-state/parts/${partSlug(previous.number)}`, label: previous.title } : undefined}
+      nextRef={next ? { href: `/learn/gaseous-state/parts/${partSlug(next.number)}`, label: next.title } : undefined}
+    >
+      <div className="gasPage">
+        <ChapterStyles />
+        <div className="mx-auto max-w-3xl">
+          {data.sections.map((section, index) => (
+            <section className="chapterSection" id={section.id} key={section.id}>
+              <header className="sectionHeader">
+                <span className="sectionIndex">{String(index + 1).padStart(2, "0")}</span>
+                <div><small>{section.eyebrow}</small><h2>{section.title}</h2><p>{section.lead}</p></div>
+              </header>
+              <div className="sectionBlocks">
+                {section.blocks.map((block, blockIndex) => <BlockRenderer block={block} key={blockIndex} />)}
+              </div>
+            </section>
+          ))}
         </div>
-      </header>
-      <div className="shell readingShell">
-        {data.sections.map((section, index) => (
-          <section className="chapterSection" id={section.id} key={section.id}>
-            <header className="sectionHeader">
-              <span className="sectionIndex">{String(index + 1).padStart(2, "0")}</span>
-              <div><small>{section.eyebrow}</small><h2>{section.title}</h2><p>{section.lead}</p></div>
-            </header>
-            <div className="sectionBlocks">
-              {section.blocks.map((block, blockIndex) => <BlockRenderer block={block} key={blockIndex} />)}
-            </div>
-          </section>
-        ))}
       </div>
-      <PartNav current={data.number} />
-    </main>
+    </AppShell>
   );
 }
 
@@ -236,18 +217,12 @@ body { margin: 0; }
   --rose: #fb7185;
   --amber: #fbbf24;
   --green: #86efac;
-  min-height: 100vh;
   position: relative;
-  overflow: hidden;
   color: var(--text);
-  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  background:
-    radial-gradient(circle at 8% 2%, rgba(34, 211, 238, .13), transparent 28rem),
-    radial-gradient(circle at 92% 4%, rgba(167, 139, 250, .13), transparent 32rem),
-    radial-gradient(circle at 45% 40%, rgba(59, 130, 246, .06), transparent 42rem),
-    linear-gradient(180deg, #07101f 0%, #030711 44%, #02050c 100%);
+  font-family: inherit;
+  background: transparent;
 }
-.ambientGrid { position: fixed; inset: 0; pointer-events: none; opacity: .27; background-image: linear-gradient(rgba(148,163,184,.05) 1px, transparent 1px), linear-gradient(90deg, rgba(148,163,184,.05) 1px, transparent 1px); background-size: 34px 34px; mask-image: linear-gradient(to bottom, #000 0%, transparent 88%); }
+.ambientGrid { display: none; }
 .shell { width: min(1180px, calc(100% - 32px)); margin-inline: auto; position: relative; z-index: 1; }
 a { color: inherit; }
 .kicker { display: inline-flex; align-items: center; gap: 9px; padding: 8px 13px; border: 1px solid rgba(34,211,238,.28); border-radius: 999px; color: #a5f3fc; background: rgba(34,211,238,.07); font-size: 12px; font-weight: 800; letter-spacing: .09em; text-transform: uppercase; }

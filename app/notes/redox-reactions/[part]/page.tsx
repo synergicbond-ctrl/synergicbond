@@ -45,7 +45,7 @@ export default async function RedoxLessonPage({ params }: { params: Promise<{ pa
     : "Titration and Volumetric Analysis";
 
   return (
-    <ChapterShell kicker="JEE Physical Chemistry" subtitle="Redox Reactions" tabs={redoxTabs(lesson.number)}>
+    <RedoxLessonShell part={number}>
       <ChapterPartStrip
         hubHref="/notes/redox-reactions"
         hubLabel="Redox Reactions — all lessons"
@@ -87,6 +87,6 @@ export default async function RedoxLessonPage({ params }: { params: Promise<{ pa
           hubLabel="All lessons"
         />
       </article>
-    </ChapterShell>
+    </RedoxLessonShell>
   );
 }

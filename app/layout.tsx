@@ -71,12 +71,12 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`h-full dark ${fontDisplay.variable} ${fontSans.variable} ${fontMono.variable}`}
+      className={`h-full overflow-x-hidden dark ${fontDisplay.variable} ${fontSans.variable} ${fontMono.variable}`}
       suppressHydrationWarning
     >
       {/* Typography enforced globally via globals.css, driven by the
           --font-display / --font-sans / --font-mono variables above. */}
-      <body className="min-h-screen bg-[var(--background)] text-[var(--foreground)] flex flex-col m-0 p-0 w-full antialiased">
+      <body className="min-h-screen overflow-x-hidden bg-[var(--background)] text-[var(--foreground)] flex flex-col m-0 p-0 w-full antialiased">
         <ThemeProvider>
           <LanguageProvider>
             <Navbar />

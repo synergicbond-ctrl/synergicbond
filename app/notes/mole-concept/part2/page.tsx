@@ -1,6 +1,5 @@
-import React from "react";
 import MoleConceptPart2 from "../part2";
-import { SbcCoursePartFrame } from "@/components/notes/SbcCourseChrome";
+import { MoleConceptLessonShell } from "../_lesson-helper";
 
 export const metadata = {
   title: "Mole Concept — Avogadro Constant and Counting Particles — SYNERGIC BOND",
@@ -9,8 +8,8 @@ export const metadata = {
 
 export default function Page() {
   return (
-    <SbcCoursePartFrame courseId="mole-concept" part={2}>
+    <MoleConceptLessonShell part={2}>
       <MoleConceptPart2 />
-    </SbcCoursePartFrame>
+    </MoleConceptLessonShell>
   );
 }

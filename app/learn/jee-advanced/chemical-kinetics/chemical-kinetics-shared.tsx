@@ -2,6 +2,7 @@
 /* eslint-disable @next/next/no-img-element */
 
 import { type ReactNode } from "react";
+import { AppShell } from "@/components/AppShell";
 import { CHEMICAL_KINETICS_PARTS } from "./part-metadata";
 import { BlockMath, InlineMath } from "react-katex";
 import "katex/dist/katex.min.css";
@@ -750,81 +751,31 @@ function PartShell({
   const next = CHEMICAL_KINETICS_PARTS[part];
 
   return (
-    <main className="kinetics-page min-h-screen overflow-x-hidden bg-[var(--background)] text-[var(--foreground)] antialiased selection:bg-[var(--accent)]/25 selection:text-[var(--foreground)]">
-      <style>{`
-        .kinetics-page .katex { font-size: 1.06em; }
-        .kinetics-page .katex-display { margin: .35rem 0; }
-        .kinetics-page summary::-webkit-details-marker { display: none; }
-        .kinetics-page .formula-scroll::-webkit-scrollbar { height: 7px; }
-        .kinetics-page .formula-scroll::-webkit-scrollbar-thumb { background: var(--border); border-radius: 999px; }
-        .kinetics-page :target { scroll-margin-top: 6rem; }
-        @media print {
-          .kinetics-page { background: var(--background) !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-          .textbook-sheet { break-after: page; page-break-after: always; min-height: 94vh; }
-          .part-navigation { display: none !important; }
-        }
-      `}</style>
-
-      <header className="border-b border-[var(--border)]">
-        <div className="mx-auto max-w-[1320px] px-4 py-10 sm:px-7 sm:py-14 lg:px-10">
-          <a href="/learn/jee-advanced/chemical-kinetics" className="text-sm font-semibold text-[var(--accent)] transition hover:text-[var(--accent)]">← Chemical Kinetics index</a>
-          <div className="mt-6 grid gap-7 lg:grid-cols-[1fr_auto] lg:items-end">
-            <div>
-              <div className="inline-flex rounded-full border border-[var(--chem-orbital)]/25 bg-[var(--chem-orbital)]/[0.07] px-3 py-1.5 text-xs font-bold uppercase tracking-[0.18em] text-[var(--chem-orbital)]">
-                JEE Advanced · Part {String(part).padStart(2, "0")} of 20
-              </div>
-              <h1 className="mt-5 text-4xl font-black tracking-[-0.045em] text-[var(--foreground)] sm:text-5xl lg:text-6xl">{title}</h1>
-              <p className="mt-4 max-w-4xl text-base leading-8 text-[var(--text-muted)] sm:text-lg">{description}</p>
-            </div>
-            <div className="rounded-lg border border-[var(--chem-bond)]/20 bg-[var(--chem-bond)]/[0.055] p-4 text-sm leading-6 text-[var(--foreground)]">
-              <div className="font-semibold text-[var(--chem-bond)]">Chemical Kinetics</div>
-              <div className="mt-1 text-slate-300">Forensic 259-page reconstruction · 30 integrated reference pages</div>
-            </div>
-          </div>
-        </div>
-      </header>
-
-      <nav className="part-navigation sticky top-0 z-30 overflow-x-auto border-b border-white/10 bg-[#050914]/92 px-4 py-3 backdrop-blur-xl sm:px-7">
-        <div className="mx-auto flex w-max max-w-[1320px] gap-2">
-          {CHEMICAL_KINETICS_PARTS.map((item) => (
-            <a
-              key={item.part}
-              href={`/learn/jee-advanced/chemical-kinetics/parts/${item.slug}`}
-              aria-current={item.part === part ? "page" : undefined}
-              className={item.part === part
-                ? "rounded-full border border-cyan-300/35 bg-cyan-300/15 px-3 py-1.5 text-xs font-bold text-cyan-100"
-                : "rounded-full border border-white/10 bg-slate-900/80 px-3 py-1.5 text-xs text-slate-400 transition hover:text-white"}
-            >
-              {String(item.part).padStart(2, "0")}
-            </a>
-          ))}
-        </div>
-      </nav>
-
-      <div className="mx-auto max-w-[1320px] px-4 pb-20 sm:px-7 lg:px-10">
+    <AppShell
+      discipline="JEE Advanced · Physical Chemistry"
+      chapterTitle="Chemical Kinetics"
+      chapterSlug="chemical-kinetics"
+      description="Forensic 259-page reconstruction · 30 integrated reference pages"
+      free={false}
+      lessonNumber={`Part ${String(part).padStart(2, "0")} of 20`}
+      lessonTitle={title}
+      hubRef={{ href: "/learn/jee-advanced/chemical-kinetics", label: "All 20 parts" }}
+      prevRef={previous ? { href: `/learn/jee-advanced/chemical-kinetics/parts/${previous.slug}`, label: previous.title } : undefined}
+      nextRef={next ? { href: `/learn/jee-advanced/chemical-kinetics/parts/${next.slug}`, label: next.title } : undefined}
+    >
+      <div className="kinetics-page mx-auto max-w-3xl">
+        <style>{`
+          .kinetics-page .katex { font-size: 1.06em; }
+          .kinetics-page .katex-display { margin: .35rem 0; }
+          .kinetics-page summary::-webkit-details-marker { display: none; }
+          .kinetics-page .formula-scroll::-webkit-scrollbar { height: 7px; }
+          .kinetics-page .formula-scroll::-webkit-scrollbar-thumb { background: var(--border); border-radius: 999px; }
+          .kinetics-page :target { scroll-margin-top: 6rem; }
+        `}</style>
+        <p className="mb-8 max-w-4xl text-base leading-8 text-[var(--text-muted)]">{description}</p>
         {children}
-
-        <div className="part-navigation mt-14 grid gap-4 border-t border-white/10 pt-8 sm:grid-cols-2">
-          {previous ? (
-            <a href={`/learn/jee-advanced/chemical-kinetics/parts/${previous.slug}`} className="rounded-lg border border-white/10 bg-slate-950/70 p-5 transition hover:border-cyan-300/25 hover:bg-white/[0.035]">
-              <div className="text-xs font-bold uppercase tracking-[0.16em] text-slate-500">Previous part</div>
-              <div className="mt-2 font-semibold text-white">{String(previous.part).padStart(2, "0")} · {previous.title}</div>
-            </a>
-          ) : <div />}
-          {next ? (
-            <a href={`/learn/jee-advanced/chemical-kinetics/parts/${next.slug}`} className="rounded-lg border border-cyan-300/20 bg-cyan-300/[0.055] p-5 text-right transition hover:bg-cyan-300/[0.09]">
-              <div className="text-xs font-bold uppercase tracking-[0.16em] text-cyan-300">Next part</div>
-              <div className="mt-2 font-semibold text-white">{String(next.part).padStart(2, "0")} · {next.title}</div>
-            </a>
-          ) : (
-            <a href="/learn/jee-advanced/chemical-kinetics" className="rounded-lg border border-emerald-300/20 bg-emerald-300/[0.055] p-5 text-right transition hover:bg-emerald-300/[0.09]">
-              <div className="text-xs font-bold uppercase tracking-[0.16em] text-emerald-300">Chapter complete</div>
-              <div className="mt-2 font-semibold text-white">Return to the 20-part index</div>
-            </a>
-          )}
-        </div>
       </div>
-    </main>
+    </AppShell>
   );
 }
 

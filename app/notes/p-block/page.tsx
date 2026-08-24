@@ -1,7 +1,36 @@
-import Link from "next/link";
-import { ChapterLessonGrid, ChapterShell } from "@/components/notes/canonical";
+import { AppShell } from "@/components/AppShell";
+import { ChapterLessonGrid } from "@/components/notes/canonical";
 import { P_BLOCK_PARTS } from "./parts";
 import { pBlockHref, pBlockTabs, sectionRangeLabel } from "./_chapter";
+
 export const metadata = { title: "P-block Elements — JEE Advanced Notes | SYNERGIC BOND", description: "P-block notes for JEE Advanced: Groups 13–18, structures, oxoacids, redox logic, interhalogens and xenon compounds." };
 export const dynamic = "force-dynamic";
-export default function PBlockHub() { return <ChapterShell kicker="JEE Inorganic Chemistry" subtitle="P-block Elements" tabs={pBlockTabs()}><nav className="mb-6 flex items-center gap-2 text-xs font-semibold text-slate-400 sm:text-sm"><Link href="/" className="hover:text-white">Home</Link><span>/</span><Link href="/notes" className="hover:text-white">Chapter Notes</Link><span>/</span><span className="text-cyan-300">P-block Elements</span></nav><header className="mb-8"><div className="flex flex-wrap gap-2"><span className="rounded-full border border-violet-400/25 bg-violet-500/10 px-3 py-1 text-xs font-black text-violet-200">JEE ADVANCED</span><span className="rounded-full border border-emerald-400/25 bg-emerald-500/10 px-3 py-1 text-xs font-black text-emerald-200">ORIGINAL NOTES</span></div><p className="mt-5 max-w-3xl text-base font-medium leading-7 text-slate-300 sm:text-lg">A concept-first route through Groups 13–18: trends, structures, oxoacids, redox, named reactions and the comparison traps that dominate multi-concept JEE Advanced questions.</p><div className="mt-6 flex flex-wrap gap-3 text-xs font-bold text-slate-300"><span className="rounded-xl bg-white/[.06] px-3 py-2">20 lessons · Groups 13–18</span><span className="rounded-xl bg-white/[.06] px-3 py-2">Structures, oxoacids & redox logic</span><span className="rounded-xl bg-white/[.06] px-3 py-2">Structure + reaction decision trees</span></div></header><ChapterLessonGrid lessons={P_BLOCK_PARTS.map((part) => ({ href: pBlockHref(part.number), number: `Lesson ${part.number}`, title: part.title, meta: sectionRangeLabel(part) }))}/></ChapterShell>; }
+
+export default function PBlockHub() {
+  return (
+    <AppShell
+      discipline="JEE Inorganic Chemistry"
+      chapterTitle="P-block Elements"
+      chapterSlug="p-block"
+      description="A concept-first route through Groups 13–18: trends, structures, oxoacids, redox, named reactions and the comparison traps that dominate multi-concept JEE Advanced questions."
+      free={false}
+      tabs={pBlockTabs()}
+    >
+      <div className="mx-auto max-w-3xl space-y-8">
+        <div className="flex flex-wrap gap-3 text-xs font-bold text-[var(--text-muted)]">
+          <span className="rounded-xl bg-[var(--surface)] px-3 py-2">20 lessons · Groups 13–18</span>
+          <span className="rounded-xl bg-[var(--surface)] px-3 py-2">Structures, oxoacids & redox logic</span>
+          <span className="rounded-xl bg-[var(--surface)] px-3 py-2">Structure + reaction decision trees</span>
+        </div>
+        <ChapterLessonGrid
+          lessons={P_BLOCK_PARTS.map((part) => ({
+            href: pBlockHref(part.number),
+            number: `Lesson ${part.number}`,
+            title: part.title,
+            meta: sectionRangeLabel(part),
+          }))}
+        />
+      </div>
+    </AppShell>
+  );
+}

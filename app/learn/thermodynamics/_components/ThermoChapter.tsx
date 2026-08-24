@@ -1,16 +1,11 @@
-import type { ReactNode } from "react";
 import {
-  ChapterShell,
-  ChapterLessonPager,
-  ChapterPartStrip,
   type ChapterTab,
   type LessonRef,
 } from "@/components/notes/canonical";
 import { THERMO_GROUPS, THERMO_LESSONS, thermoHref } from "../parts/meta";
 
-// Canonical chapter chrome for Thermodynamics — shell, topic-group tabs and
-// lesson pager shared by the hub and all 30 part pages. Lesson content stays
-// untouched inside the frame.
+// Tab and lesson-ref helpers for Thermodynamics, consumed by AppShell via
+// _lesson-helper.tsx. Chrome itself lives in AppShell, not here.
 
 export function thermoLessonRef(index: number): LessonRef | undefined {
   const lesson = THERMO_LESSONS[index];
@@ -34,33 +29,3 @@ export function thermoTabs(currentPart?: number): ChapterTab[] {
   ];
 }
 
-export function ThermoPartFrame({ part, children }: { part: number; children: ReactNode }) {
-  const index = part - 1;
-  const lesson = THERMO_LESSONS[index];
-
-  return (
-    <ChapterShell
-      bleed
-      kicker="JEE Physical Chemistry"
-      subtitle="Thermodynamics"
-      tabs={thermoTabs(part)}
-    >
-      <div className="sbnPartChrome">
-        <ChapterPartStrip
-          hubHref="/learn/thermodynamics"
-          hubLabel="Thermodynamics — all lessons"
-          positionLabel={`Lesson ${lesson?.part ?? String(part).padStart(2, "0")} of ${THERMO_LESSONS.length}`}
-        />
-      </div>
-      {children}
-      <div className="sbnPartChrome">
-        <ChapterLessonPager
-          prev={thermoLessonRef(index - 1)}
-          next={thermoLessonRef(index + 1)}
-          hubHref="/learn/thermodynamics"
-          hubLabel="All lessons"
-        />
-      </div>
-    </ChapterShell>
-  );
-}

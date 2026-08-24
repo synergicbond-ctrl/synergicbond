@@ -429,49 +429,6 @@ export function CanonicalNotesStyles() {
  * kicker + subtitle, gold section tag, and the rectangular rounded top tab
  * navigation (cyan inactive / gold active) from the Periodic Table reference.
  */
-export function ChapterShell({
-  kicker,
-  subtitle,
-  headerTag = "Top chapter navigation",
-  tabs,
-  children,
-  style,
-  bleed,
-}: {
-  /** Big serif line, e.g. "JEE Physical Chemistry". */
-  kicker: string;
-  /** Cyan chapter line, e.g. "Thermodynamics". */
-  subtitle: string;
-  headerTag?: string;
-  tabs?: ChapterTab[];
-  children: ReactNode;
-  style?: CSSProperties;
-  /**
-   * Full-bleed mode for part pages whose content components carry their own
-   * page-width layout; chrome (strip/pager) then uses .sbnPartChrome.
-   */
-  bleed?: boolean;
-}) {
-  return (
-    <div className="sbnShell" style={style}>
-      <CanonicalNotesStyles />
-      <header className="sbnHeader">
-        <div className="sbnHeaderInner">
-          <div className="sbnHeaderRow">
-            <div>
-              <div className="sbnKicker">{kicker}</div>
-              <div className="sbnSubtitle">{subtitle}</div>
-            </div>
-            <div className="sbnHeaderTag">{headerTag}</div>
-          </div>
-          {tabs && tabs.length > 0 && <ChapterTopTabs tabs={tabs} />}
-        </div>
-      </header>
-      <main className={bleed ? "sbnMainBleed" : "sbnMain"}>{children}</main>
-    </div>
-  );
-}
-
 export function ChapterTopTabs({ tabs, ariaLabel = "Chapter sections" }: { tabs: ChapterTab[]; ariaLabel?: string }) {
   return (
     <nav className="sbnTabs" aria-label={ariaLabel}>

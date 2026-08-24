@@ -4,10 +4,10 @@ import { AtomicConceptMapVisual } from "./_components/AtomicVisuals";
 import { AtomicStructurePartNavigator } from "./_components/AtomicStructurePartNavigator";
 import { atomicPartMeta } from "./parts/_shared";
 import {
-  Glass, Hero, Section, FormulaCard, Step, CalloutList, JeeFocus, RevisionSheet,
+  Glass, Section, FormulaCard, Step, CalloutList, JeeFocus, RevisionSheet,
 } from "@/components/notes/premium";
 
-// /learn/atomic-structure — unified canonical shell, premium content preserved.
+// /learn/atomic-structure — unified AppShell chrome, premium content components preserved.
 
 const MODELS = [
   { name: "Dalton", idea: "Atom = indivisible solid sphere." },
@@ -26,19 +26,27 @@ const QUANTUM = [
 
 export default function AtomicStructureNotes() {
   return (
-    <PremiumNotes sections={SECTIONS}>
-      <div id="why" className="scroll-mt-10">
-        <Hero
-          eyebrow="Physical Chemistry · Class 11"
-          title="Atomic"
-          accent="Structure"
-          lead="Everything you will ever study in chemistry — bonding, periodicity, colour, reactivity — traces back to how electrons are arranged around a nucleus. This chapter is the story of how we went from a solid billiard-ball atom to fuzzy probability clouds, and the small set of rules that predict where every electron lives."
-          stats={[
-            { v: "−13.6 eV", k: "ground-state energy of H" },
-            { v: "4 numbers", k: "fix every electron", tone: "text-[var(--text-muted)]" },
-            { v: "Highest yield", k: "most PYQs of any chapter", tone: "text-amber-300" },
-          ]}
-        />
+    <AppShell
+      discipline="Physical Chemistry · Class 11"
+      chapterTitle="Atomic Structure"
+      chapterSlug="atomic-structure"
+      description="Everything you will ever study in chemistry — bonding, periodicity, colour, reactivity — traces back to how electrons are arranged around a nucleus. This chapter is the story of how we went from a solid billiard-ball atom to fuzzy probability clouds, and the small set of rules that predict where every electron lives."
+      free={false}
+    >
+      <div className="mx-auto max-w-3xl space-y-10">
+      <div className="grid gap-3 sm:grid-cols-3">
+        <Glass className="p-4 text-center">
+          <div className="text-2xl font-black text-[var(--foreground)]">−13.6 eV</div>
+          <div className="mt-1 text-xs text-[var(--text-muted)]">ground-state energy of H</div>
+        </Glass>
+        <Glass className="p-4 text-center">
+          <div className="text-2xl font-black text-[var(--foreground)]">4 numbers</div>
+          <div className="mt-1 text-xs text-[var(--text-muted)]">fix every electron</div>
+        </Glass>
+        <Glass className="p-4 text-center">
+          <div className="text-2xl font-black text-[var(--accent)]">Highest yield</div>
+          <div className="mt-1 text-xs text-[var(--text-muted)]">most PYQs of any chapter</div>
+        </Glass>
       </div>
 
       <Section id="concept-map" eyebrow="The route" title="Chapter Concept Map">
@@ -159,6 +167,7 @@ export default function AtomicStructureNotes() {
           ctas={[{ href: "/pyq", label: "Practise PYQs" }, { href: "/memory?deck=formula", label: "Recall these formulas" }]}
         />
       </Section>
-    </PremiumNotes>
+      </div>
+    </AppShell>
   );
 }

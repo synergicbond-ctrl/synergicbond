@@ -2,12 +2,8 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
 import { BlockMath, InlineMath } from "@/components/math/react-katex";
+import { AppShell } from "@/components/AppShell";
 import {
-  CanonicalNotesStyles,
-  ChapterIdentityHeader,
-  ChapterLessonPager,
-  ChapterContentsRail,
-  TopicHeader,
   type ChapterTab,
   type LessonRef,
 } from "@/components/notes/canonical";
@@ -153,78 +149,26 @@ export function AtomicLessonShell({ lesson, children }: { lesson: number; childr
   const currentIndex = atomicPartMeta.findIndex((entry) => entry.part === lesson);
   const meta = atomicPartMeta[currentIndex];
   const group = atomicGroupForPart(lesson);
+  const prevRef = atomicLessonRef(currentIndex - 1);
+  const nextRef = atomicLessonRef(currentIndex + 1);
 
   return (
-    <div style={{ minHeight: "100vh", background: "var(--background)", color: "var(--foreground)" }}>
-      <CanonicalNotesStyles />
-      {/* ── Compact lesson identity bar ── */}
-      <div className="sbnLessonBar">
-        <div className="sbnLessonBarInner">
-          <Link href="/learn/atomic-structure" className="sbnLessonBarBack">
-            ← Atomic Structure
-          </Link>
-          <span className="sbnLessonBarPos">
-            Lesson {String(lesson).padStart(2, "0")} / {atomicPartMeta.length}
-          </span>
-        </div>
+    <AppShell
+      discipline="Physical Chemistry · JEE Advanced"
+      chapterTitle="Atomic Structure"
+      chapterSlug="atomic-structure"
+      description="From Dalton's indivisible atom to the quantum-mechanical description of matter — the foundation of all chemistry."
+      free={false}
+      lessonNumber={`Lesson ${String(lesson).padStart(2, "0")} of ${atomicPartMeta.length} · ${group.label.split(",")[0]}`}
+      lessonTitle={meta?.title}
+      hubRef={{ href: "/learn/atomic-structure", label: "All lessons" }}
+      prevRef={prevRef ? { href: prevRef.href, label: prevRef.number } : undefined}
+      nextRef={nextRef ? { href: nextRef.href, label: nextRef.number } : undefined}
+    >
+      <div className="mx-auto max-w-3xl space-y-14">
+        {children}
       </div>
-
-      {/* ── Two-column reading surface ── */}
-      <div className="sbnSidebarBody">
-        {/* Prose column: max 720px so lines stay at 65–72 chars */}
-        <article className="sbnCanvas" style={{ maxWidth: "720px" }}>
-          {/* Chapter identity — orients the reader before the lesson */}
-          <ChapterIdentityHeader
-            subject="Physical Chemistry · JEE Advanced"
-            chapterName="Atomic Structure"
-            descriptor="From Dalton's indivisible atom to the quantum-mechanical description of matter — the foundation of all chemistry."
-            topicCount={atomicPartMeta.length}
-            accentColor="var(--chem-bond)"
-          />
-
-          {/* Lesson hero — coloured by concept group */}
-          {meta && (
-            <TopicHeader
-              as="h1"
-              eyebrow={`Lesson ${String(lesson).padStart(2, "0")} · ${group.label.split(",")[0]}`}
-              title={meta.title}
-              descriptor={`Source pages ${meta.pages} · ${meta.sections.length} study ${meta.sections.length === 1 ? "section" : "sections"}`}
-              accentColor={group.accent}
-            />
-          )}
-
-          {/* Lesson content — sections rendered by the page */}
-          <div style={{ display: "flex", flexDirection: "column", gap: "3.5rem", marginTop: "2.5rem" }}>
-            {children}
-          </div>
-
-          {/* Lesson prev/next pager */}
-          <ChapterLessonPager
-            prev={atomicLessonRef(currentIndex - 1)}
-            next={atomicLessonRef(currentIndex + 1)}
-            hubHref="/learn/atomic-structure"
-            hubLabel="All lessons"
-          />
-        </article>
-
-        {/* ── Chapter contents rail ── */}
-        <ChapterContentsRail
-          title="Atomic Structure"
-          groups={ATOMIC_CONCEPT_GROUPS.map((g) => ({
-            label: g.label,
-            from: g.from,
-            to: g.to,
-            accent: g.accent,
-          }))}
-          lessons={atomicPartMeta.map((m) => ({
-            part: m.part,
-            title: m.title,
-            href: m.href,
-          }))}
-          currentPart={lesson}
-        />
-      </div>
-    </div>
+    </AppShell>
   );
 }
 

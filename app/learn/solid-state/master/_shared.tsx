@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
-import Link from "next/link";
 import katex from "katex";
+import { AppShell } from "@/components/AppShell";
 import type { NoteTone, SolidStateBlock, SolidStatePart } from "./_content";
 import { SOLID_STATE_PARTS } from "./_content";
 
@@ -384,17 +384,6 @@ function BlockView({ block, exampleNumber }: { block: SolidStateBlock; exampleNu
   return <SolidStateFigure id={block.id} caption={block.caption} />;
 }
 
-function PartNavigation({ active }: { active: number }) {
-  return (
-    <nav aria-label="Solid State chapter parts" className="sticky top-2 z-30 mt-5 overflow-x-auto rounded-lg border border-[var(--border)] bg-[var(--surface)]/95 p-2 shadow-2xl backdrop-blur-xl">
-      <div className="flex min-w-max gap-2">
-        <Link href="/learn/solid-state/master" className="flex w-36 shrink-0 items-center justify-center rounded-xl border border-white/10 px-4 py-3 text-sm font-bold text-slate-200 transition hover:border-cyan-300/35">Chapter contents</Link>
-        {SOLID_STATE_PARTS.map((part)=><Link key={part.number} href={`/learn/solid-state/master/part${String(part.number).padStart(2,"0")}`} aria-current={part.number===active?"page":undefined} className={`w-64 shrink-0 rounded-xl border px-4 py-3 transition ${part.number===active?"border-cyan-300/55 bg-cyan-300/10 text-white":"border-white/10 bg-white/[0.015] text-slate-400 hover:border-cyan-300/30 hover:text-white"}`}><div className="text-[10px] font-black uppercase tracking-[.16em] text-cyan-300/75">Part {String(part.number).padStart(2,"0")}</div><div className="mt-1 text-sm font-bold leading-5">{part.shortTitle}</div></Link>)}
-      </div>
-    </nav>
-  );
-}
-
 function getExampleNumber(part: SolidStatePart, sectionIndex: number, blockIndex: number): number {
   return part.sections
     .slice(0, sectionIndex + 1)
@@ -409,33 +398,25 @@ export function SolidStatePartPage({ part }: { part: SolidStatePart }) {
   const next = SOLID_STATE_PARTS[part.number];
 
   return (
-    <main className="min-h-screen bg-[var(--background)] text-[var(--foreground)]">
-      <div className="mx-auto max-w-7xl px-4 py-8 md:px-6 md:py-12">
-        <header className="rounded-lg border border-[var(--border)] bg-[var(--surface)] px-6 py-8 md:px-10 md:py-11">
-          <p className="sb-tech-label text-xs" style={{ color: "var(--chem-bond)" }}>JEE Advanced · Solid State · Part {String(part.number).padStart(2,"0")} of 10</p>
-          <h1 className="sb-editorial-title mt-5 max-w-5xl" style={{ fontSize: "clamp(2rem, 4vw, 3.5rem)", fontWeight: 600, color: "var(--foreground)" }}>{part.title}</h1>
-          <p className="mt-5 max-w-4xl text-lg leading-8" style={{ color: "var(--text-muted)" }}>{part.description}</p>
-        </header>
+    <AppShell
+      discipline="JEE Advanced · Physical Chemistry"
+      chapterTitle="Solid State — Master Edition"
+      chapterSlug="solid-state"
+      description="10-part continuous textbook chapter"
+      free={true}
+      lessonNumber={`Part ${String(part.number).padStart(2, "0")} of 10`}
+      lessonTitle={part.title}
+      hubRef={{ href: "/learn/solid-state/master", label: "Chapter contents" }}
+      prevRef={previous ? { href: `/learn/solid-state/master/part${String(previous.number).padStart(2, "0")}`, label: previous.shortTitle } : undefined}
+      nextRef={next ? { href: `/learn/solid-state/master/part${String(next.number).padStart(2, "0")}`, label: next.shortTitle } : undefined}
+    >
+      <article className="mx-auto max-w-3xl">
+        {part.sections.map((section,sectionIndex)=><section key={section.title} id={slugify(section.title)} className={`${sectionIndex?"mt-14 border-t border-[var(--border)] pt-12":""} scroll-mt-32`}><h2 className="text-2xl font-black tracking-tight text-[var(--foreground)] md:text-3xl">{section.title}</h2><div className="mt-6 space-y-5">{section.blocks.map((block,blockIndex)=><BlockView key={`${section.title}-${blockIndex}`} block={block} exampleNumber={block.kind==="example"?getExampleNumber(part,sectionIndex,blockIndex):0}/>)}</div></section>)}
 
-        <PartNavigation active={part.number}/>
+        <section className="mt-14 border-t border-[var(--border)] pt-12"><h2 className="text-2xl font-black text-[var(--foreground)] md:text-3xl">Part review</h2><div className="mt-6 grid gap-3">{part.review.map((item,index)=><div key={item} className="flex gap-4 rounded-lg border border-[var(--border)] bg-[var(--surface)] px-4 py-3.5"><span className="font-black text-[var(--accent)]">{index+1}</span><p className="leading-7 text-[var(--text-body)]"><RichText text={item}/></p></div>)}</div></section>
 
-        <div className="mx-auto mt-10 grid max-w-6xl gap-8 lg:grid-cols-[240px_minmax(0,1fr)]">
-          <aside className="hidden lg:block"><div className="sticky top-32 rounded-lg border border-[var(--border)] bg-[var(--surface)] p-5"><div className="text-xs font-black uppercase tracking-[.15em] text-cyan-300">In this part</div><ol className="mt-4 space-y-3 text-sm leading-5 text-slate-400">{part.sections.map((section)=><li key={section.title}><a href={`#${slugify(section.title)}`} className="transition hover:text-white">{section.title}</a></li>)}</ol></div></aside>
-
-          <article className="min-w-0 rounded-lg border border-[var(--border)] bg-[var(--surface)] px-5 py-7 md:px-9 md:py-10">
-            {part.sections.map((section,sectionIndex)=><section key={section.title} id={slugify(section.title)} className={`${sectionIndex?"mt-14 border-t border-white/10 pt-12":""} scroll-mt-32`}><h2 className="text-2xl font-black tracking-tight text-white md:text-3xl">{section.title}</h2><div className="mt-6 space-y-5">{section.blocks.map((block,blockIndex)=><BlockView key={`${section.title}-${blockIndex}`} block={block} exampleNumber={block.kind==="example"?getExampleNumber(part,sectionIndex,blockIndex):0}/>)}</div></section>)}
-
-            <section className="mt-14 border-t border-white/10 pt-12"><h2 className="text-2xl font-black text-white md:text-3xl">Part review</h2><div className="mt-6 grid gap-3">{part.review.map((item,index)=><div key={item} className="flex gap-4 rounded-xl border border-white/10 bg-white/[0.02] px-4 py-3.5"><span className="font-black text-cyan-300">{index+1}</span><p className="leading-7 text-slate-300"><RichText text={item}/></p></div>)}</div></section>
-
-            <section className="mt-12 border-t border-white/10 pt-12"><h2 className="text-2xl font-black text-white md:text-3xl">Practice questions</h2><ol className="mt-6 space-y-4 pl-7 text-[15.5px] leading-8 text-slate-300 marker:font-black marker:text-cyan-300 md:text-base">{part.practice.map(q=><li key={q} className="list-decimal pl-2"><RichText text={q}/></li>)}</ol></section>
-          </article>
-        </div>
-
-        <footer className="mx-auto mt-10 flex max-w-6xl items-stretch justify-between gap-4 border-t border-white/10 pt-8">
-          {previous?<Link href={`/learn/solid-state/master/part${String(previous.number).padStart(2,"0")}`} className="max-w-[48%] rounded-xl border border-white/10 px-4 py-3 text-sm font-bold text-slate-200 transition hover:border-cyan-300/30">← {previous.shortTitle}</Link>:<span/>}
-          {next?<Link href={`/learn/solid-state/master/part${String(next.number).padStart(2,"0")}`} className="max-w-[48%] rounded-xl border border-cyan-300/30 bg-cyan-300/10 px-4 py-3 text-right text-sm font-bold text-cyan-50 transition hover:bg-cyan-300/15">{next.shortTitle} →</Link>:<Link href="/learn/solid-state/master" className="max-w-[48%] rounded-xl border border-cyan-300/30 bg-cyan-300/10 px-4 py-3 text-right text-sm font-bold text-cyan-50">Return to contents</Link>}
-        </footer>
-      </div>
-    </main>
+        <section className="mt-12 border-t border-[var(--border)] pt-12"><h2 className="text-2xl font-black text-[var(--foreground)] md:text-3xl">Practice questions</h2><ol className="mt-6 space-y-4 pl-7 text-[15.5px] leading-8 text-[var(--text-body)] marker:font-black marker:text-[var(--accent)] md:text-base">{part.practice.map(q=><li key={q} className="list-decimal pl-2"><RichText text={q}/></li>)}</ol></section>
+      </article>
+    </AppShell>
   );
 }

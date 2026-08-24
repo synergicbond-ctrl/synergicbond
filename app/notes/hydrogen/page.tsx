@@ -1,42 +1,34 @@
 import Link from "next/link";
-import { ChapterShell, ChapterLessonGrid } from "@/components/notes/canonical";
+import { AppShell } from "@/components/AppShell";
+import { ChapterLessonGrid } from "@/components/notes/canonical";
 import { HYDROGEN_PARTS } from "./parts";
-import { hydrogenHref, hydrogenTabs, sectionRangeLabel } from "./_chapter";
+import { hydrogenTabs } from "./_chapter";
 
 export const metadata = {
-  title: "Hydrogen and Its Compounds | SYNERGIC BOND",
-  description:
-    "Hydrogen chemistry notes covering isotopes, molecular orbitals, ortho-para hydrogen, preparation, reactions, hydrides, diborane, hydrogen bonding, water, heavy water and hydrogen peroxide.",
+  title: "Hydrogen Notes — SYNERGIC BOND",
+  description: "Hydrogen chemistry notes, lessons, and study materials.",
 };
 
-export const dynamic = "force-dynamic";
-
-export default function HydrogenChapterHub() {
+export default function HydrogenPage() {
   return (
-    <ChapterShell kicker="Chemistry" subtitle="Hydrogen" tabs={hydrogenTabs()}>
-      <nav className="mb-6 flex items-center gap-2 text-xs font-semibold text-[var(--text-muted)] sm:text-sm" aria-label="Breadcrumb">
-        <Link href="/" className="hover:text-white">Home</Link><span>/</span>
-        <Link href="/notes" className="hover:text-white">Chapter Notes</Link><span>/</span>
-        <span className="text-cyan-300">Hydrogen</span>
-      </nav>
-
-      <header className="mb-9 border-b border-[var(--border)] pb-8 sm:pb-10">
-        <h1 className="font-display max-w-5xl text-4xl font-black leading-tight text-[var(--foreground)] sm:text-5xl lg:text-6xl">
-          Hydrogen and Its Compounds
-        </h1>
-        <p className="mt-5 max-w-4xl text-base font-medium leading-8 text-[var(--text-muted)] sm:text-lg">
-          Atomic structure and isotopes lead naturally to dihydrogen, hydrides, hydrogen bonding, water, heavy water and hydrogen peroxide. Each lesson develops the theory, equations, mechanisms, data and exceptions in a continuous chemistry-first sequence.
-        </p>
-      </header>
-
-      <ChapterLessonGrid
-        lessons={HYDROGEN_PARTS.map((part) => ({
-          href: hydrogenHref(part.number),
-          number: `${part.number}`,
-          title: part.title,
-          meta: sectionRangeLabel(part),
-        }))}
-      />
-    </ChapterShell>
+    <AppShell
+      discipline="Physical Chemistry · Inorganic Chemistry"
+      chapterTitle="Hydrogen"
+      chapterSlug="hydrogen"
+      description="Complete guide to hydrogen: elemental state, isotopes, reactions, hydrides, and compounds."
+      free={true}
+      tabs={hydrogenTabs(0)}
+    >
+      <div className="mx-auto max-w-3xl">
+        <ChapterLessonGrid
+          lessons={HYDROGEN_PARTS.map((lesson: any) => ({
+            href: `/notes/hydrogen/${lesson.slug}`,
+            number: `Lesson ${lesson.number}`,
+            title: lesson.title,
+            meta: lesson.topics?.join(" · "),
+          }))}
+        />
+      </div>
+    </AppShell>
   );
 }

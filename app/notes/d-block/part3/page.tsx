@@ -4,7 +4,7 @@ import remarkMath from "remark-math";
 import remarkGfm from "remark-gfm";
 import rehypeKatex from "rehype-katex";
 import { createMarkdownComponents } from "../AnchoredMarkdown";
-import DBlockPartNavigation from "../DBlockPartNavigation";
+import { AppShell } from "@/components/AppShell";
 import DBlockVisualSystem from "../DBlockVisualSystem";
 
 type VisualProps = { className?: string };
@@ -389,24 +389,18 @@ const markdownComponents = {
 
 export default function DBlockPart03() {
   return (
-    <main className="dblock-page">
+    <AppShell
+      discipline="D-block • JEE Advanced Theory"
+      chapterTitle="D-Block Elements"
+      chapterSlug="d-block"
+      description="A thermodynamic and electronic explanation of strong transition-metal cohesion, irregular melting patterns, successive ionisation enthalpies, passivity, noble character and standard electrode potentials."
+      free={false}
+      lessonNumber="Part 3 of 10"
+      lessonTitle="Metallic Bonding, Melting Points, Ionisation and Reactivity"
+      hubRef={{ href: "/notes/d-block", label: "All 10 parts" }}
+    >
       <DBlockVisualSystem />
-      <div className="mx-auto max-w-6xl px-4 py-8 sm:px-6 lg:px-8">
-        <header className="overflow-hidden rounded-[2rem] border border-cyan-400/20 bg-[radial-gradient(circle_at_top_left,rgba(34,211,238,0.18),transparent_34%),linear-gradient(135deg,#07111f,#0b1a2c_55%,#10142a)] px-6 py-9 shadow-[0_30px_100px_rgba(0,0,0,0.35)] sm:px-10 sm:py-12">
-          <div className="flex flex-wrap items-center gap-3">
-            <span className="rounded-full border border-cyan-300/30 bg-cyan-300/10 px-3 py-1 text-xs font-black uppercase tracking-[0.2em] text-cyan-200">
-              D-block • Part 3
-            </span>
-            <span className="rounded-full border border-violet-300/30 bg-violet-300/10 px-3 py-1 text-xs font-black uppercase tracking-[0.2em] text-violet-200">
-              JEE Advanced Theory
-            </span>
-          </div>
-          <h1 className="mt-5 max-w-4xl text-3xl font-black leading-tight tracking-tight text-white sm:text-4xl lg:text-5xl">Metallic Bonding, Melting Points, Ionisation and Reactivity</h1>
-          <p className="mt-5 max-w-4xl text-lg leading-8 text-slate-300">A thermodynamic and electronic explanation of strong transition-metal cohesion, irregular melting patterns, successive ionisation enthalpies, passivity, noble character and standard electrode potentials.</p>
-        </header>
-
-        <DBlockPartNavigation part={3} position="top" />
-
+      <div className="mx-auto max-w-3xl">
         <nav className="sticky top-2 z-20 mt-5 overflow-x-auto rounded-lg border border-white/10 bg-[#07111f]/95 p-2 shadow-xl backdrop-blur">
           <div className="flex min-w-max gap-2">
             {PAGES.map((page, index) => (
@@ -437,8 +431,7 @@ export default function DBlockPart03() {
             );
           })}
         </div>
-        <DBlockPartNavigation part={3} position="bottom" />
       </div>
-    </main>
+    </AppShell>
   );
 }

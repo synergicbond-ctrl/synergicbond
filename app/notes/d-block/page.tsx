@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { AppShell } from "@/components/AppShell";
 import DBlockVisualSystem from "./DBlockVisualSystem";
 
 export const metadata = {
@@ -22,41 +23,41 @@ const parts = [
 
 export default function DBlockHubPage() {
   return (
-    <main className="dblock-page">
-      <DBlockVisualSystem />
-      <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
-        <header className="overflow-hidden rounded-lg border border-[#17364a] bg-[#071321] px-5 py-7 shadow-[0_16px_42px_rgba(0,0,0,0.28)] sm:px-8 sm:py-9">
-          <p className="text-xs font-black uppercase tracking-[0.24em] text-[#4ee7ff]">JEE Advanced • Inorganic Chemistry</p>
-          <h1 className="mt-3 max-w-4xl text-3xl font-black leading-tight tracking-tight text-[#f5f7fb] sm:text-4xl lg:text-5xl">D-Block Elements</h1>
-          <p className="mt-4 max-w-3xl text-base leading-7 text-[#a8b3c1] sm:text-lg">
-            Ten substantial theory parts built around electronic structure, periodic trends, redox stability, visual reaction maps and the detailed chemistry of chromium, manganese, silver, zinc, copper and iron.
-          </p>
-          <div className="mt-5 flex flex-wrap gap-2 text-sm font-bold text-[#f5f7fb]">
-            <span className="rounded-full border border-[#17364a] bg-[#02060b] px-3 py-1.5 text-[#4ee7ff]">10 theory parts</span>
-            <span className="rounded-full border border-[#17364a] bg-[#02060b] px-3 py-1.5 text-[#b69aff]">KaTeX chemistry</span>
-            <span className="rounded-full border border-[#17364a] bg-[#02060b] px-3 py-1.5 text-[#f2b84b]">Original scientific visuals</span>
-          </div>
-        </header>
+    <AppShell
+      discipline="JEE Advanced • Inorganic Chemistry"
+      chapterTitle="D-Block Elements"
+      chapterSlug="d-block"
+      description="Ten substantial theory parts built around electronic structure, periodic trends, redox stability, visual reaction maps and the detailed chemistry of chromium, manganese, silver, zinc, copper and iron."
+      free={false}
+    >
+      <div className="mx-auto max-w-3xl space-y-6">
+        <div className="flex flex-wrap gap-2 text-sm font-bold text-[var(--foreground)]">
+          <span className="rounded-full border border-[var(--border)] bg-[var(--surface)] px-3 py-1.5 text-[var(--accent)]">10 theory parts</span>
+          <span className="rounded-full border border-[var(--border)] bg-[var(--surface)] px-3 py-1.5 text-[var(--chem-orbital)]">KaTeX chemistry</span>
+          <span className="rounded-full border border-[var(--border)] bg-[var(--surface)] px-3 py-1.5 text-[var(--chem-energy)]">Original scientific visuals</span>
+        </div>
 
-        <section className="mt-5 grid gap-3 md:grid-cols-2">
+        <DBlockVisualSystem />
+
+        <section className="grid gap-3 md:grid-cols-2">
           {parts.map(([number, title, description]) => (
             <Link
               key={number}
               href={`/notes/d-block/part${number}`}
-              className="group rounded-xl border border-[#17364a] bg-[#071321] p-4 shadow-[0_12px_30px_rgba(0,0,0,0.2)] transition hover:-translate-y-0.5 hover:border-[#4ee7ff] hover:bg-[#071321]"
+              className="group rounded-lg border border-[var(--border)] bg-[var(--surface)] p-4 transition hover:-translate-y-0.5 hover:border-[var(--accent)]/50"
             >
               <div className="flex items-start gap-4">
-                <span className="grid h-10 w-10 shrink-0 place-items-center rounded-lg bg-[#4ee7ff] text-base font-black text-[#02060b]">{number}</span>
+                <span className="grid h-10 w-10 shrink-0 place-items-center rounded-lg bg-[var(--accent)] text-base font-black text-[var(--background)]">{number}</span>
                 <div>
-                  <h2 className="text-lg font-black leading-6 text-[#f5f7fb] group-hover:text-[#4ee7ff]">{title}</h2>
-                  <p className="mt-2 text-sm leading-6 text-[#a8b3c1]">{description}</p>
-                  <p className="mt-3 text-sm font-black text-[#4ee7ff]">Open Part {number} →</p>
+                  <h2 className="text-lg font-black leading-6 text-[var(--foreground)] group-hover:text-[var(--accent)]">{title}</h2>
+                  <p className="mt-2 text-sm leading-6 text-[var(--text-muted)]">{description}</p>
+                  <p className="mt-3 text-sm font-black text-[var(--accent)]">Open Part {number} →</p>
                 </div>
               </div>
             </Link>
           ))}
         </section>
       </div>
-    </main>
+    </AppShell>
   );
 }

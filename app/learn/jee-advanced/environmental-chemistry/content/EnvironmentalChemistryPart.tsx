@@ -1,6 +1,7 @@
 "use client";
 
 import type { ReactNode } from "react";
+import { AppShell } from "@/components/AppShell";
 
 export type DataTable = {
   caption?: string;
@@ -279,19 +280,25 @@ function Section({ section, index }: { section: SectionData; index: number }) {
 }
 
 export default function EnvironmentalChemistryPart({ data }: { data: PartData }) {
+  const prevPart = data.part > 1 ? data.part - 1 : undefined;
+  const nextPart = data.part < 15 ? data.part + 1 : undefined;
+
   return (
-    <main className="min-h-screen bg-[var(--background)] px-4 py-8 text-[var(--foreground)] sm:px-6 lg:px-8">
-      <article className="mx-auto max-w-7xl">
-        <header className="relative overflow-hidden border-b border-[var(--border)] pb-9 pt-3 sm:pb-11">
-          <p className="relative text-xs font-extrabold uppercase tracking-[0.22em] text-[var(--accent)] sm:text-sm">
-            JEE Advanced · Environmental Chemistry · {data.part}
-          </p>
-          <h1 className="relative mt-3 max-w-6xl text-4xl font-extrabold leading-tight tracking-tight text-[var(--foreground)] sm:text-5xl lg:text-6xl">
-            {data.title}
-          </h1>
-          <p className="relative mt-5 max-w-4xl text-[17px] leading-8 text-[var(--text-muted)]">{data.subtitle}</p>
-          <div className="relative mt-5 h-[2px] w-28 bg-[var(--accent)]" />
-          <div className="relative mt-6 grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
+    <AppShell
+      discipline="JEE Advanced · Environmental Chemistry"
+      chapterTitle="Environmental Chemistry"
+      chapterSlug="environmental-chemistry"
+      description={data.subtitle}
+      free={false}
+      lessonNumber={`Part ${String(data.part).padStart(2, "0")} of 15`}
+      lessonTitle={data.title}
+      hubRef={{ href: "/learn/jee-advanced/environmental-chemistry", label: "All parts" }}
+      prevRef={prevPart ? { href: `/learn/jee-advanced/environmental-chemistry/parts/part${String(prevPart).padStart(2, "0")}`, label: `Part ${String(prevPart).padStart(2, "0")}` } : undefined}
+      nextRef={nextPart ? { href: `/learn/jee-advanced/environmental-chemistry/parts/part${String(nextPart).padStart(2, "0")}`, label: `Part ${String(nextPart).padStart(2, "0")}` } : undefined}
+    >
+      <article className="mx-auto max-w-3xl">
+        <div className="mb-8">
+          <div className="grid gap-2 sm:grid-cols-2">
             {data.goals.map((goal, goalIndex) => (
               <div key={goal} className={`rounded-xl border px-4 py-3 text-[15px] leading-7 text-slate-100 ${panelThemes[goalIndex % panelThemes.length]}`}>
                 {goal}
@@ -310,7 +317,7 @@ export default function EnvironmentalChemistryPart({ data }: { data: PartData })
               </figcaption>
             </figure>
           ) : null}
-        </header>
+        </div>
 
         <div className="mt-2">
           {data.sections.map((section, index) => (
@@ -401,6 +408,6 @@ export default function EnvironmentalChemistryPart({ data }: { data: PartData })
           </ul>
         </section>
       </article>
-    </main>
+    </AppShell>
   );
 }

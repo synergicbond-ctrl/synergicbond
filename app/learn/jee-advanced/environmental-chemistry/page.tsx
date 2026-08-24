@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { AppShell } from "@/components/AppShell";
 import { environmentalChemistryParts } from "./index";
 
 export const metadata = {
@@ -26,19 +27,15 @@ const lineThemes = [
 
 export default function EnvironmentalChemistryPage() {
   return (
-    <main className="min-h-screen bg-[var(--background)] px-4 py-10 text-[var(--foreground)] sm:px-6 lg:px-8">
-      <section className="mx-auto max-w-7xl">
-        <header className="relative overflow-hidden border-b border-[var(--border)] pb-9">
-          <p className="relative text-xs font-bold uppercase tracking-[0.24em] text-[var(--accent)] sm:text-sm">
-            JEE Advanced · Environmental Chemistry
-          </p>
-          <h1 className="relative mt-3 max-w-5xl text-4xl font-extrabold leading-tight tracking-tight text-[var(--foreground)] sm:text-5xl lg:text-6xl">
-            Environmental Chemistry
-          </h1>
-          <div className="relative mt-5 h-[2px] w-36 bg-[var(--accent)]" />
-        </header>
-
-        <div className="mt-9 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+    <AppShell
+      discipline="JEE Advanced · Environmental Chemistry"
+      chapterTitle="Environmental Chemistry"
+      chapterSlug="environmental-chemistry"
+      description="Environmental Chemistry notes for JEE Advanced covering air, water and soil pollution, smog, acid rain, ozone depletion, waste management and green chemistry."
+      free={false}
+    >
+      <div className="mx-auto max-w-3xl">
+        <div className="grid gap-4 sm:grid-cols-2">
           {environmentalChemistryParts.map((part, index) => (
             <Link
               key={part.id}
@@ -56,7 +53,7 @@ export default function EnvironmentalChemistryPage() {
             </Link>
           ))}
         </div>
-      </section>
-    </main>
+      </div>
+    </AppShell>
   );
 }

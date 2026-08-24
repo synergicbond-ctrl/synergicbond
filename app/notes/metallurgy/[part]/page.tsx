@@ -1,5 +1,5 @@
 import { notFound, redirect } from "next/navigation";
-import Link from "next/link";
+import { AppShell } from "@/components/AppShell";
 import MetallurgyMarkdown from "../MetallurgyMarkdown";
 
 const loaders: Record<string, () => Promise<{ default: string }>> = {
@@ -50,16 +50,20 @@ export default async function MetallurgyPartPage({
   const next = index >= 0 && index < activeParts.length - 1 ? activeParts[index + 1] : null;
 
   return (
-    <main className="metallurgy-shell">
-      <nav className="part-nav">
-        <Link href="/notes/metallurgy">← Metallurgy</Link>
-        <span>Part {number}</span>
-      </nav>
-      <MetallurgyMarkdown content={content} />
-      <nav className="part-nav bottom">
-        {previous ? <Link href={`/notes/metallurgy/${previous}`}>← Previous</Link> : <span />}
-        {next ? <Link href={`/notes/metallurgy/${next}`}>Next →</Link> : <Link href="/notes/metallurgy">Chapter Hub →</Link>}
-      </nav>
-    </main>
+    <AppShell
+      discipline="Inorganic Chemistry · JEE Advanced"
+      chapterTitle="Metallurgy"
+      chapterSlug="metallurgy"
+      description="Comprehensive metallurgy notes covering concentration, extraction, reduction, refining, iron, steel and reaction chemistry."
+      free={false}
+      lessonNumber={`Part ${number}`}
+      hubRef={{ href: "/notes/metallurgy", label: "Chapter hub" }}
+      prevRef={previous ? { href: `/notes/metallurgy/${previous}`, label: "Previous" } : undefined}
+      nextRef={next ? { href: `/notes/metallurgy/${next}`, label: "Next" } : undefined}
+    >
+      <div className="mx-auto max-w-3xl">
+        <MetallurgyMarkdown content={content} />
+      </div>
+    </AppShell>
   );
 }

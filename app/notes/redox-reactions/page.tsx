@@ -1,7 +1,6 @@
-import Link from "next/link";
 import { AppShell } from "@/components/AppShell";
 import { ChapterLessonGrid } from "@/components/notes/canonical";
-import { REDOX_PARTS, redoxTabs } from "./parts";
+import { REDOX_LESSONS, redoxHref, redoxTabs } from "./_chapter";
 
 export const metadata = {
   title: "Redox Reactions Notes — SYNERGIC BOND",
@@ -20,8 +19,8 @@ export default function RedoxReactionsPage() {
     >
       <div className="mx-auto max-w-3xl">
         <ChapterLessonGrid
-          lessons={REDOX_PARTS.map((lesson: any) => ({
-            href: `/notes/redox-reactions/${lesson.slug}`,
+          lessons={REDOX_LESSONS.map((lesson) => ({
+            href: redoxHref(lesson.number),
             number: `Lesson ${lesson.number}`,
             title: lesson.title,
           }))}

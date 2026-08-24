@@ -1,6 +1,5 @@
 import { AppShell } from "@/components/AppShell";
-import { REDOX_PARTS } from "./parts";
-import { redoxLessonRef, redoxTabs } from "./_chapter";
+import { REDOX_LESSONS, redoxLessonRef, redoxTabs } from "./_chapter";
 import type { ReactNode } from "react";
 
 export function RedoxLessonShell({
@@ -10,12 +9,11 @@ export function RedoxLessonShell({
   part: number;
   children: ReactNode;
 }) {
-  const lesson = REDOX_PARTS.find((l: any) => l.number === part);
+  const lesson = REDOX_LESSONS.find((l) => l.number === part);
   if (!lesson) return null;
 
-  const currentIndex = REDOX_PARTS.findIndex((l: any) => l.number === part);
-  const prevRef = redoxLessonRef(currentIndex - 1);
-  const nextRef = redoxLessonRef(currentIndex + 1);
+  const prevRef = redoxLessonRef(part - 1);
+  const nextRef = redoxLessonRef(part + 1);
 
   return (
     <AppShell
